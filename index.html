@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ZAM Academy</title>
+    <meta
+      name="description"
+      content="ZAM Academy: practise hands-on, then keep it with ZAM."
+    />
+    <style>
+      :root {
+        --bg: #f7f7fb;
+        --fg: #1d1d2b;
+        --muted: #5b5b72;
+        --card: #ffffff;
+        --line: #e2e2ee;
+        --accent: #6d4aff;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #0f0f1a;
+          --fg: #ececf6;
+          --muted: #a3a3bd;
+          --card: #18182a;
+          --line: #2a2a42;
+          --accent: #9b85ff;
+        }
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--fg);
+        font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+        line-height: 1.5;
+      }
+      main {
+        max-width: 44rem;
+        margin: 0 auto;
+        padding: 3rem 1rem 4rem;
+      }
+      h1 {
+        font-size: 2rem;
+        margin: 0 0 0.5rem;
+      }
+      p {
+        color: var(--muted);
+        margin: 0 0 1rem;
+      }
+      .apps {
+        list-style: none;
+        padding: 0;
+        margin: 2rem 0;
+        display: grid;
+        gap: 1rem;
+      }
+      .apps a {
+        display: block;
+        padding: 1.25rem;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        background: var(--card);
+        color: inherit;
+        text-decoration: none;
+      }
+      .apps a:hover,
+      .apps a:focus-visible {
+        border-color: var(--accent);
+      }
+      .apps strong {
+        display: block;
+        font-size: 1.15rem;
+        margin-bottom: 0.25rem;
+      }
+      .apps span {
+        color: var(--muted);
+      }
+      footer {
+        font-size: 0.9rem;
+        color: var(--muted);
+      }
+      footer a {
+        color: var(--accent);
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>ZAM Academy</h1>
+      <p>
+        Practise hands-on until you understand it, then keep it with
+        <a href="https://zam-os.org/">ZAM</a>: every ZAM card links back to
+        the lesson where you practised.
+      </p>
+      <p lang="de">
+        Hier üben, bis du es verstanden hast, und es dann mit ZAM behalten:
+        Jede ZAM-Karte verlinkt die Lektion, in der du geübt hast.
+      </p>
+
+      <ul class="apps">
+        <li>
+          <a href="uml/">
+            <strong>UML 2.5.1</strong>
+            <span
+              >From use cases to component diagrams: 6 stages, 24 lessons,
+              German and English.</span
+            >
+          </a>
+        </li>
+      </ul>
+
+      <footer>
+        No accounts, no cookies, no tracking. Your progress stays in your
+        browser. Source:
+        <a href="https://github.com/zam-os/zam-academy">zam-os/zam-academy</a>
+      </footer>
+    </main>
+  </body>
+</html>

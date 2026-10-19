@@ -1,0 +1,49 @@
+name: Pages
+
+# Builds every app and publishes https://academy.zam-os.org/ (custom domain
+# set in Settings → Pages; source: GitHub Actions).
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: lts/*
+      - name: Build site
+        run: |
+          mkdir -p site
+          cp index.html site/
+          for app in uml; do
+            (cd "$app" && npm ci && npm test && npm run build)
+            mkdir -p "site/$app"
+            cp -R "$app/dist/." "site/$app/"
+          done
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
