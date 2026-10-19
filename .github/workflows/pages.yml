@@ -32,7 +32,9 @@ jobs:
             (cd "$app" && npm ci && npm test && npm run build)
             mkdir -p "site/$app"
             cp -R "$app/dist/." "site/$app/"
+            if [ -f "$app/cell.json" ]; then cp "$app/cell.json" "site/$app/cell.json"; fi
           done
+          node scripts/build-catalog.mjs site/catalog.json
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:

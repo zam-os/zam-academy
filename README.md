@@ -8,10 +8,14 @@ Hands-on training apps that build understanding before [ZAM](https://github.com/
 
 ## How an app and its ZAM cell fit together
 
-- **The app teaches; the cell keeps.** Cards live only in the ZAM cell (in `zam-os/zam`). An app ships no card list or card export of its own.
+The rules come from [ADR 2026-10-19](https://github.com/zam-os/zam/blob/main/docs/adr/2026-10-19-zam-academy-cells.md) in zam-os/zam.
+
+- **The app teaches; the cell keeps.** The cards of a topic live only in `<app>/cell.json`, a KVT tile. An app ships no card list or card export of its own, and app and cell change in the same PR.
 - **Cards cite lessons** as `https://academy.zam-os.org/<app>/#lesson=<lesson id>`. The fragment keeps one app = one library topic in ZAM.
-- **Lesson ids are a public contract.** Renaming or removing a lesson breaks every card that cites it, so change the cell in the same step. Each app has a test that pins its lesson ids.
-- **Getting the cell into ZAM:** the learner asks their agent in ZAM to enrol in the cell. The app explains this in its "Keep it in ZAM" dialog.
+- **Lesson ids are a public contract.** Each app's test pins its lesson ids and checks that every card cites an existing lesson.
+- **CI installs every cell** into a throw-away library with the published `zam-core` (`scripts/validate-cells.mjs`).
+- **Pages publishes** each app, its `cell.json`, and `/catalog.json` (`scripts/build-catalog.mjs`), with the SHA-256 of every cell. ZAM reads the catalog only on a learner's action. ZAM releases bundle a copy of each cell.
+- **A cell is released at its first publication,** in the catalog or in a ZAM release. From then on, its item ids, slugs and cited lessons stay stable; changes use `replaces` and raise the version.
 
 ## Develop
 
