@@ -5,6 +5,7 @@ Hands-on training apps that build understanding before [ZAM](https://github.com/
 | App | Folder | Live | ZAM cell |
 | --- | --- | --- | --- |
 | UML 2.5.1 | [`uml/`](uml/) | https://academy.zam-os.org/uml/ | `zam-academy:uml` |
+| Physik 9 Realschule (LehrplanPLUS Bayern) | [`physik-realschule-9/`](physik-realschule-9/) | https://academy.zam-os.org/physik-realschule-9/ | `zam-academy:physik-realschule-9` |
 
 ## How an app and its ZAM cell fit together
 
@@ -22,7 +23,7 @@ The rules come from [ADR 2026-10-19](https://github.com/zam-os/zam/blob/main/doc
 Each app is its own Vite package:
 
 ```bash
-cd uml
+cd uml                 # or: cd physik-realschule-9 (dev server on :5181)
 npm ci
 npm run dev      # http://localhost:5180/uml/
 npm test
