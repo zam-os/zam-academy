@@ -22,7 +22,7 @@ A deterministic checker evaluates each diagram. Its criteria stay hidden until y
 
 ## Keep it with ZAM
 
-The ZAM cell `zam-academy:uml` ("UML 2.5.1 (ZAM Academy)") holds the review cards. Each card links to its lesson as `https://academy.zam-os.org/uml/#lesson=<lesson id>`, and this app opens that lesson. Lesson ids are pinned in `tests/uml-learning-app.test.ts`, because renaming one breaks every card that cites it.
+The ZAM cell `zam-academy:uml` ("UML 2.5.1 (ZAM Academy)") is `cell.json` in this folder and holds the review cards. Each card links to its lesson as `https://academy.zam-os.org/uml/#lesson=<lesson id>`, and this app opens that lesson. `tests/uml-learning-app.test.ts` pins the lesson ids and checks that every card in `cell.json` cites an existing one, because renaming a lesson breaks every card that cites it.
 
 ## Develop
 

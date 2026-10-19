@@ -1,4 +1,5 @@
 import { describe, expect, it } from "vitest";
+import cellJson from "../cell.json";
 import { evaluateDiagramAgainstCriteria } from "../src/checker/graph-evaluator";
 import {
   getAllLessons,
@@ -232,6 +233,29 @@ describe("Links from ZAM cards", () => {
       expect(link.startsWith(`${ZAM_ACADEMY_UML_URL}#lesson=`)).toBe(true);
       const hash = link.slice(link.indexOf("#"));
       expect(parseTrainingDeepLink(hash).lessonId).toBe(lesson.id);
+    }
+  });
+
+  it("is the lesson every card of the ZAM cell cites", () => {
+    const cell = cellJson as unknown as {
+      tile_id: string;
+      atoms: Array<{
+        id: string;
+        source_link?: string;
+        practice_items: Array<{ id: string; source_link?: string }>;
+      }>;
+    };
+    expect(cell.tile_id).toBe("zam-academy:uml");
+    const lessons = new Set(getAllLessons("de").map((lesson) => lesson.id));
+    const prefix = `${ZAM_ACADEMY_UML_URL}#lesson=`;
+    for (const atom of cell.atoms) {
+      for (const item of [atom, ...atom.practice_items]) {
+        const link = item.source_link ?? "";
+        expect(link.startsWith(prefix), `${item.id}: ${link}`).toBe(true);
+        expect(lessons.has(link.slice(prefix.length)), `${item.id}: ${link}`).toBe(
+          true,
+        );
+      }
     }
   });
 
