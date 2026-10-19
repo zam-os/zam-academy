@@ -73,6 +73,7 @@ class PhysikApp {
       if (this.applyDeepLink()) {
         this.syncHeader();
         this.render();
+        window.scrollTo({ top: 0 });
       }
     });
   }
