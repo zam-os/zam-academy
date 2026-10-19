@@ -1,7 +1,22 @@
 import { describe, expect, it } from "vitest";
 import cellJson from "../cell.json";
 import { ALL_LESSONS, findLessonById, lessonsForTrack, STAGES } from "../src/curriculum";
-import { checkAnswer, parseNumber, parseNumberCandidates, toleranceOf } from "../src/exercises/checker";
+import {
+  checkAnswer,
+  parseNumber,
+  parseNumberCandidates,
+  toleranceOf,
+  wrongAnswerHint,
+} from "../src/exercises/checker";
+import {
+  isLessonComplete,
+  isStageComplete,
+  isTransferDone,
+  type LearnerProgress,
+  overallStats,
+  relevantLessons,
+  stageStats,
+} from "../src/storage/progress";
 import { fmt } from "../src/exercises/format";
 import { createRng, seedFrom } from "../src/exercises/rng";
 import {
@@ -255,31 +270,59 @@ describe("Labore", () => {
 });
 
 describe("Aufgaben", () => {
-  it("generate solvable tasks for many seeds on both levels", () => {
+  it("generate solvable tasks along the task streams learners get, on both levels", () => {
     for (const lesson of ALL_LESSONS) {
-      for (const generator of lesson.exercises) {
-        for (const level of [1, 2] as const) {
-          for (let seed = 1; seed <= 60; seed++) {
-            const task = generator.make(createRng(seedFrom(`${lesson.id}:${generator.id}:${level}:${seed}`)), level);
-            const where = `${lesson.id}/${generator.id} L${level} seed ${seed}`;
-            expect(Number.isFinite(task.answer), where).toBe(true);
-            expect(Math.abs(task.answer), where).toBeGreaterThan(0);
-            expect(task.prompt.length, where).toBeGreaterThan(30);
-            expect(task.unit.length, where).toBeGreaterThan(0);
-            expect(task.given.length, where).toBeGreaterThan(0);
-            expect(task.solutionHtml, where).toContain("<strong>");
-            if (level === 1) expect(task.formulaHint, where).toBeTruthy();
-            // The learner types the rounded result with a decimal comma.
-            expect(checkAnswer(task, fmt(task.answer, task.digits)).status, where).toBe("correct");
-            // and also with a decimal point and no thousands separator.
-            expect(checkAnswer(task, task.answer.toFixed(task.digits)).status, where).toBe("correct");
-            // A value far off is wrong.
-            expect(checkAnswer(task, String(task.answer * 3 + 7)).status, where).toBe("wrong");
-            expect(toleranceOf(task), where).toBeLessThan(Math.abs(task.answer) * 0.2 + 1);
+      for (const level of [1, 2] as const) {
+        // The app seeds task number `counter` of a lesson and level exactly so
+        // (main.ts, startTask), alternating between the lesson's generators.
+        for (let counter = 1; counter <= 120; counter++) {
+          const generator = lesson.exercises[(counter - 1) % lesson.exercises.length];
+          const task = generator.make(createRng(seedFrom(`${lesson.id}:${level}:${counter}`)), level);
+          const where = `${lesson.id}/${generator.id} L${level} task ${counter}`;
+          expect(Number.isFinite(task.answer), where).toBe(true);
+          expect(Math.abs(task.answer), where).toBeGreaterThan(0);
+          expect(task.prompt.length, where).toBeGreaterThan(30);
+          expect(task.unit.length, where).toBeGreaterThan(0);
+          expect(task.given.length, where).toBeGreaterThan(0);
+          expect(task.solutionHtml, where).toContain("<strong>");
+          if (level === 1) expect(task.formulaHint, where).toBeTruthy();
+          // The learner types the rounded result with a decimal comma.
+          expect(checkAnswer(task, fmt(task.answer, task.digits)).status, where).toBe("correct");
+          // and also with a decimal point and no thousands separator.
+          expect(checkAnswer(task, task.answer.toFixed(task.digits)).status, where).toBe("correct");
+          // A value far off is wrong.
+          expect(checkAnswer(task, String(task.answer * 3 + 7)).status, where).toBe("wrong");
+          expect(toleranceOf(task), where).toBeLessThan(Math.abs(task.answer) * 0.2 + 1);
+          // The story matches the numbers the generator drew.
+          const meta = task.meta ?? {};
+          if (meta.V1 !== undefined) {
+            expect(meta.V2, `${where}: "zusammengedrückt" needs V2 < V1`).toBeLessThan(meta.V1);
+          }
+          if (meta.cost !== undefined) {
+            expect(meta.cost, where).toBeGreaterThanOrEqual(0.1);
+            expect(checkAnswer(task, "0").status, `${where}: 0 € is never right`).toBe("wrong");
+          }
+          if (meta.dtheta !== undefined) {
+            expect(meta.dtheta, `${where}: the water stays liquid`).toBeLessThanOrEqual(80);
+          }
+          if (meta.eta !== undefined) {
+            expect(meta.eta, where).toBeGreaterThanOrEqual(50);
+            expect(meta.eta, where).toBeLessThanOrEqual(95);
           }
         }
       }
     }
+  });
+
+  it("tells a learner who divided the wrong way round, and not one who is merely a bit off", () => {
+    const task = { prompt: "", given: [], answer: 50, unit: "Pa", digits: 0, solutionHtml: "" };
+    const swapped = checkAnswer(task, "0,02");
+    expect(swapped.status).toBe("wrong");
+    expect(wrongAnswerHint(swapped, task)).toContain("falschen Wert");
+    const tight = { ...task, answer: 300.15, digits: 2, tolerance: 0.001 };
+    const nearMiss = checkAnswer(tight, "303");
+    expect(nearMiss.status).toBe("wrong");
+    expect(wrongAnswerHint(nearMiss, tight)).not.toContain("falschen Wert");
   });
 
   it("reads numbers the way learners type them", () => {
@@ -318,6 +361,65 @@ describe("Aufgaben", () => {
     const litres = { ...task, answer: 1.636, unit: "L", digits: 3 };
     expect(checkAnswer(litres, "1.636").status).toBe("correct");
     expect(checkAnswer(litres, "1,636").status).toBe("correct");
+  });
+});
+
+describe("Lektionsabschluss", () => {
+  const blank = (): LearnerProgress => ({
+    activeLessonId: "dr-1-druck",
+    difficultyLevel: 1,
+    trackFilter: "alle",
+    quizDone: [],
+    labGoals: {},
+    solved: {},
+    attempts: {},
+    celebratedStageIds: [],
+    celebratedLessonIds: [],
+  });
+  const finish = (progress: LearnerProgress, lessonId: string, level2 = 0) => {
+    const lesson = findLessonById(lessonId)!.lesson;
+    progress.quizDone.push(lesson.id);
+    progress.labGoals[lesson.id] = lesson.lab.goals.map((goal) => goal.id);
+    progress.solved[lesson.id] = { 1: lesson.requiredCorrect, 2: level2 };
+  };
+
+  it("needs the quick check, every lab goal and the required Level-1 tasks; the transfer badge needs Level 2 too", () => {
+    const progress = blank();
+    const lesson = findLessonById("dr-1-druck")!.lesson;
+    expect(isLessonComplete(progress, lesson)).toBe(false);
+    progress.quizDone.push(lesson.id);
+    progress.labGoals[lesson.id] = lesson.lab.goals.map((goal) => goal.id);
+    progress.solved[lesson.id] = { 1: lesson.requiredCorrect - 1, 2: lesson.requiredCorrect };
+    expect(isLessonComplete(progress, lesson)).toBe(false);
+    expect(isTransferDone(progress, lesson)).toBe(false);
+    progress.solved[lesson.id] = { 1: lesson.requiredCorrect, 2: 0 };
+    expect(isLessonComplete(progress, lesson)).toBe(true);
+    expect(isTransferDone(progress, lesson)).toBe(false);
+    progress.labGoals[lesson.id] = progress.labGoals[lesson.id].slice(1);
+    expect(isLessonComplete(progress, lesson), "one lab goal missing").toBe(false);
+    progress.labGoals[lesson.id] = lesson.lab.goals.map((goal) => goal.id);
+    progress.solved[lesson.id] = { 1: lesson.requiredCorrect, 2: lesson.requiredCorrect };
+    expect(isTransferDone(progress, lesson)).toBe(true);
+  });
+
+  it("counts only the lessons of the chosen Zweig for stages, badges and the total", () => {
+    const progress = blank();
+    const mechanik = STAGES[1];
+    expect(relevantLessons(mechanik, "I")).toHaveLength(0);
+    expect(isStageComplete(progress, mechanik, "I")).toBe(false);
+    expect(overallStats(progress, STAGES, "I").totalStages).toBe(3);
+    expect(overallStats(progress, STAGES, "I").total).toBe(lessonsForTrack("I").length);
+    expect(overallStats(progress, STAGES, "alle").total).toBe(21);
+
+    // A Zweig II/III learner finishes Elektrizitätslehre without the Halbleiter lesson.
+    const elektrik = STAGES[3];
+    for (const lesson of relevantLessons(elektrik, "II_III")) finish(progress, lesson.id);
+    expect(isStageComplete(progress, elektrik, "II_III")).toBe(true);
+    expect(isStageComplete(progress, elektrik, "alle")).toBe(false);
+    expect(stageStats(progress, elektrik, "II_III")).toMatchObject({ completed: 5, total: 5, percent: 100 });
+    expect(stageStats(progress, elektrik, "alle")).toMatchObject({ completed: 5, total: 6 });
+    expect(overallStats(progress, STAGES, "II_III").completedStages).toBe(1);
+    expect(overallStats(progress, STAGES, "alle").completedStages).toBe(0);
   });
 });
 

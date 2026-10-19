@@ -28,7 +28,7 @@ const druck: Lesson = {
   `,
   formulas: [
     { name: "Druck", html: "p = F / A", quantities: "p in Pa, F in N, A in m²" },
-    { name: "Einheiten", html: "1 Pa = 1 N/m² · 1 hPa = 100 Pa · 1 bar = 100 000 Pa", quantities: "1 m² = 10 000 cm²" },
+    { name: "Einheiten", html: "1 Pa = 1 N/m²; 1 hPa = 100 Pa; 1 bar = 100 000 Pa", quantities: "1 m² = 10 000 cm²" },
   ],
   quiz: {
     question: "Eine Person steht erst auf beiden Füßen, dann auf einem Fuß. Wie ändert sich der Druck auf den Boden?",
@@ -311,7 +311,7 @@ const schweredruck: Lesson = {
       { key: "pTotalBar", label: "Gesamtdruck (mit Luftdruck 1,013 bar)", unit: "bar", digits: 2, compute: (v) => (P_AIR + v.rho * G * v.h) / 100_000 },
     ],
     goals: [
-      { id: "ein-bar", text: "Finde die Tiefe in Süßwasser, in der der Schweredruck 1 bar erreicht (±3 %).", check: (v, r) => v.rho === 1000 && near(Number(r.pS), 100_000, 0.03) },
+      { id: "ein-bar", text: "Finde die Tiefe in Süßwasser, in der der Schweredruck etwa 1 bar erreicht (±5 %).", check: (v, r) => v.rho === 1000 && near(Number(r.pS), 100_000, 0.05) },
       { id: "vier-bar", text: "Erzeuge in Meerwasser einen Gesamtdruck von mindestens 4 bar.", check: (v, r) => v.rho === 1025 && Number(r.pTotalBar) >= 4 },
       { id: "oel", text: "Zeige: In 20 m Öl ist der Schweredruck kleiner als in 20 m Wasser. Stelle 20 m Öl ein.", check: (v) => v.rho === 900 && v.h === 20 },
     ],
@@ -583,8 +583,10 @@ const boyle: Lesson = {
       make: (rng, level) => {
         if (level === 1) {
           const p1 = rng.pick([1000, 1013, 1200, 1500, 2000]);
-          const V1 = rng.int(6, 20) * 10;
-          const V2 = rng.pick([20, 25, 40, 50, 80]);
+          // V₁ is a multiple of 20 cm³, so every fraction below gives whole cm³
+          // and the piston is always pushed in (V₂ < V₁).
+          const V1 = rng.int(3, 10) * 20;
+          const V2 = Math.round(V1 * rng.pick([0.5, 0.25, 0.2, 0.4]));
           const p2 = (p1 * V1) / V2;
           return {
             prompt: `In einer Spritze befinden sich ${fmtUnit(V1, "cm³", 0)} Luft bei ${fmtUnit(p1, "hPa", 0)}. Der Kolben wird bei gleicher Temperatur auf ${fmtUnit(V2, "cm³", 0)} hineingeschoben. Welcher Druck herrscht jetzt?`,
@@ -594,6 +596,7 @@ const boyle: Lesson = {
             unit: "hPa",
             digits: 0,
             solutionHtml: `p₂ = p₁ · V₁ / V₂ = ${fmt(p1, 0)} hPa · ${fmt(V1, 0)} / ${fmt(V2, 0)} = <strong>${fmtUnit(p2, "hPa", 0)}</strong>`,
+            meta: { V1, V2 },
           };
         }
         const h = rng.pick([10, 20, 30]);

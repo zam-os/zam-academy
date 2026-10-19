@@ -164,7 +164,7 @@ function hydrostatic(v: LabValues, r: ReadoutValues): string {
     open("Taucher in einem Wasserbecken, der Druck wächst mit der Tiefe") +
     layers +
     `<path d="M120 ${surface} V${bottom} H400 V${surface}" class="lab-wall" />` +
-    text(260, surface - 10, `Oberfläche · Luftdruck ${fmtUnit(1013, "hPa", 0)}`, "lab-text-muted", "middle") +
+    text(398, surface - 6, `Oberfläche, Luftdruck ${fmtUnit(1013, "hPa", 0)}`, "lab-text-small", "end") +
     // diver
     `<circle cx="260" cy="${r1(diverY - 10)}" r="8" class="lab-block" />` +
     `<rect x="252" y="${r1(diverY - 2)}" width="16" height="22" rx="4" class="lab-block" />` +
@@ -174,7 +174,7 @@ function hydrostatic(v: LabValues, r: ReadoutValues): string {
     text(438, surface + 4, "0 m", "lab-text-muted") +
     text(438, surface + 100 + 4, "20 m", "lab-text-muted") +
     text(438, bottom + 4, "40 m", "lab-text-muted") +
-    text(20, 40, `Schweredruck ρ·g·h = ${fmtUnit(num(r, "pS") / 100, "hPa", 0)}`, "lab-text lab-text-big") +
+    text(20, 32, `Schweredruck ρ·g·h = ${fmtUnit(num(r, "pS") / 100, "hPa", 0)}`, "lab-text lab-text-big") +
     text(20, 290, `Gesamtdruck = Luftdruck + Schweredruck = ${fmtUnit(num(r, "pTotalBar"), "bar", 2)}`, "lab-text") +
     `</svg>`
   );

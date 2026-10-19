@@ -377,18 +377,22 @@ const energieLeistung: Lesson = {
             solutionHtml: `P = U · I = ${fmt(U, 0)} V · ${fmt(I, 1)} A = <strong>${fmtUnit(U * I, "W", 1)}</strong>`,
           };
         }
-        const P = rng.pick([40, 60, 100, 800, 1200, 2000, 2200]);
+        // Devices of at least 800 W, so the cheapest draw (0,5 h at 28 ct) is
+        // still above 10 cent and a rounding slack of half a cent cannot
+        // accept 0 €.
+        const P = rng.pick([800, 1000, 1200, 1500, 2000, 2200]);
         const h = rng.stepped(0.5, 8, 0.5);
         const price = rng.int(28, 42);
         const kwh = (P * h) / 1000;
         const cost = kwh * (price / 100);
         return {
+          meta: { cost },
           prompt: `Ein Gerät mit ${fmtUnit(P, "W", 0)} läuft ${fmtUnit(h, "h", 1)}. Der Strom kostet ${fmtUnit(price, "ct/kWh", 0)}. Wie viel kostet der Betrieb in Euro?`,
           given: [`P = ${fmtUnit(P, "W", 0)}`, `t = ${fmtUnit(h, "h", 1)}`, `Preis = ${fmtUnit(price, "ct/kWh", 0)}`],
           answer: cost,
           unit: "€",
           digits: 2,
-          absTolerance: 0.01,
+          absTolerance: 0.005,
           solutionHtml: `W = P · t = ${fmt(P, 0)} W · ${fmt(h, 1)} h = ${fmtUnit(P * h, "Wh", 0)} = ${fmtUnit(kwh, "kWh", 3)}<br>Kosten = ${fmt(kwh, 3)} kWh · ${fmt(price, 0)} ct/kWh = ${fmtUnit(kwh * price, "ct", 1)} = <strong>${fmtUnit(cost, "€", 2)}</strong>`,
         };
       },
@@ -586,7 +590,7 @@ const widerstandsgesetz: Lesson = {
       <li><strong>Querschnittsfläche A:</strong> Doppelter Querschnitt, halber Widerstand (R ~ 1/A). Für einen runden Draht gilt A = π · d² / 4.</li>
       <li><strong>Material:</strong> Der <strong>spezifische Widerstand ρ</strong> in Ω · mm²/m. Kupfer 0,0178, Aluminium 0,0278, Eisen etwa 0,10, Konstantan 0,50.</li>
       <li><strong>Temperatur:</strong> Bei Metallen steigt der Widerstand mit der Temperatur (Kaltleiter). Konstantan ist eine Legierung, deren Widerstand kaum von der Temperatur abhängt, deshalb der Name.</li>
-      <li><strong>Supraleitung:</strong> Unterhalb einer Sprungtemperatur nahe dem absoluten Nullpunkt verschwindet der Widerstand mancher Stoffe vollständig.</li>
+      <li><strong>Supraleitung:</strong> Unterhalb einer Sprungtemperatur verschwindet der Widerstand mancher Stoffe vollständig. Bei klassischen Supraleitern liegt sie wenige Kelvin über dem absoluten Nullpunkt, bei Hochtemperatur-Supraleitern bis etwa 135 K (−138 °C).</li>
     </ul>
     <div class="merke"><strong>Merke:</strong> Lang und dünn: großer Widerstand. Kurz und dick: kleiner Widerstand. Material über ρ, Temperatur bei Metallen nach oben.</div>
   `,

@@ -74,13 +74,19 @@ export function showZamDialog(): void {
     </div>`,
   );
   dialog.querySelector("#zam-copy-request-btn")?.addEventListener("click", () => {
-    if (navigator.clipboard?.writeText) void navigator.clipboard.writeText(request);
+    if (navigator.clipboard?.writeText) {
+      void navigator.clipboard.writeText(request).catch(() => {});
+    }
     showToast("Kopiert.", "success");
   });
 }
 
-/** Celebrates a finished stage. */
-export function showStageCelebration(stage: Stage, onContinue: () => void): void {
+/** Celebrates a finished stage; `lessonCount` is how many lessons counted for this learner's Zweig. */
+export function showStageCelebration(
+  stage: Stage,
+  onContinue: () => void,
+  lessonCount = stage.lessons.length,
+): void {
   const dialog = mountDialog(
     "stage-dialog",
     `
@@ -88,7 +94,7 @@ export function showStageCelebration(stage: Stage, onContinue: () => void): void
       <div class="celebration-icon" aria-hidden="true">${stage.icon}</div>
       <span class="dialog-kicker">ETAPPE ${stage.stageNumber} GESCHAFFT</span>
       <h2 class="dialog-title">${esc(stage.badgeTitle)}</h2>
-      <p>Du hast alle ${stage.lessons.length} Lektionen von „${esc(stage.title)}“ abgeschlossen: Schnellcheck, Laboraufträge und Aufgaben.</p>
+      <p>Du hast alle ${lessonCount} Lektionen von „${esc(stage.title)}“ für deinen Zweig abgeschlossen: Schnellcheck, Laboraufträge und Aufgaben.</p>
       <p class="dialog-alt">Damit es bleibt: In ZAM fragt dich eine Karte nach jedem Punkt dieser Etappe genau dann, wenn du ihn vergessen würdest.</p>
       <div class="dialog-actions">
         <button type="button" class="btn btn-secondary" id="stage-zam-btn">🧠 In ZAM festigen</button>

@@ -18,11 +18,13 @@ Every one of the 21 lessons has the same shape:
 - a **Labor**: an SVG simulation with sliders and readouts, plus three **Laboraufträge** that a deterministic check marks as reached,
 - **Aufgaben**: randomised numeric tasks with a tolerant checker (German decimal comma, unit shown next to the field) and a worked solution. Level 1 shows formula and values, Level 2 is a transfer task in words.
 
-A lesson is complete when the quick check is right, every lab goal is reached and three Level-1 tasks are solved. Three Level-2 tasks earn the 🦅 transfer badge. Progress stays in `localStorage`.
+A lesson is complete when the quick check is right, every lab goal is reached and three Level-1 tasks are solved. Three Level-2 tasks earn the 🦅 transfer badge. With a Zweig chosen, progress, badges and the stage celebration count only that Zweig's lessons. Progress stays in `localStorage`.
 
 ## Keep it with ZAM
 
 The ZAM cell `zam-academy:physik-realschule-9` ("Physik 9 Realschule (ZAM Academy)") is `cell.json` in this folder and holds the review cards. Each card links to its lesson as `https://academy.zam-os.org/physik-realschule-9/#lesson=<lesson id>`, and this app opens that lesson. `tests/physik-realschule-9.test.ts` pins the lesson ids and checks that every card in `cell.json` cites an existing one, because renaming a lesson breaks every card that cites it.
+
+Each card asks one point. `concept` is the bare answer that ZAM grades against; the worked derivation sits in `sample_solution`, which zam-core keeps for authors and never installs. Formulas are math segments with spoken text. The two curated distractors of every card are checked in CI with zam-core's own `checkCandidate` and `checkShownSet` (`scripts/validate-cells.mjs`), so none is outside the length band or indistinguishable from the answer once punctuation is dropped; formula alternatives that differ only by an operator therefore live in the `fast_check`, whose options are shown as written.
 
 The cell's atoms also carry the LehrplanPLUS binding (Realschule, Jahrgangsstufe 9, Zweig, Lernbereich), so ZAM can offer the cell to a learner at that curriculum position.
 

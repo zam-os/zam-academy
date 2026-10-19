@@ -17,6 +17,8 @@ export interface LearnerProgress {
   /** Attempt counters that seed the next generated task, per lesson. */
   attempts: Record<string, number>;
   celebratedStageIds: string[];
+  /** Lessons whose completion was already announced. */
+  celebratedLessonIds: string[];
 }
 
 export const DEFAULT_LESSON_ID = "dr-1-druck";
@@ -31,6 +33,7 @@ function defaults(): LearnerProgress {
     solved: {},
     attempts: {},
     celebratedStageIds: [],
+    celebratedLessonIds: [],
   };
 }
 
@@ -81,6 +84,9 @@ export function loadLearnerProgress(): LearnerProgress {
       attempts,
       celebratedStageIds: isStringArray(parsed.celebratedStageIds)
         ? parsed.celebratedStageIds
+        : [],
+      celebratedLessonIds: isStringArray(parsed.celebratedLessonIds)
+        ? parsed.celebratedLessonIds
         : [],
     };
   } catch {
@@ -146,28 +152,50 @@ export interface CompletionStats {
   percent: number;
 }
 
-export function stageStats(progress: LearnerProgress, stage: Stage): CompletionStats {
-  const total = stage.lessons.length;
-  const completed = stage.lessons.filter((lesson) =>
-    isLessonComplete(progress, lesson),
-  ).length;
+/** The lessons of a stage a learner of the given Zweig needs; "alle" keeps all. */
+export function relevantLessons(stage: Stage, filter: TrackFilter = "alle"): Lesson[] {
+  if (filter === "alle") return stage.lessons;
+  return stage.lessons.filter((lesson) => lesson.tracks.includes(filter));
+}
+
+/** Progress in a stage, counting only the lessons of the chosen Zweig. */
+export function stageStats(
+  progress: LearnerProgress,
+  stage: Stage,
+  filter: TrackFilter = "alle",
+): CompletionStats {
+  const lessons = relevantLessons(stage, filter);
+  const total = lessons.length;
+  const completed = lessons.filter((lesson) => isLessonComplete(progress, lesson)).length;
   return { completed, total, percent: total ? Math.round((completed / total) * 100) : 0 };
+}
+
+/** A stage is done when every lesson of the chosen Zweig in it is complete, and there is at least one. */
+export function isStageComplete(
+  progress: LearnerProgress,
+  stage: Stage,
+  filter: TrackFilter = "alle",
+): boolean {
+  const lessons = relevantLessons(stage, filter);
+  return lessons.length > 0 && lessons.every((lesson) => isLessonComplete(progress, lesson));
 }
 
 export function overallStats(
   progress: LearnerProgress,
   stages: Stage[],
+  filter: TrackFilter = "alle",
 ): CompletionStats & { completedStages: number; totalStages: number } {
-  const lessons = stages.flatMap((stage) => stage.lessons);
+  const lessons = stages.flatMap((stage) => relevantLessons(stage, filter));
   const completed = lessons.filter((lesson) => isLessonComplete(progress, lesson)).length;
-  const completedStages = stages.filter((stage) =>
-    stage.lessons.every((lesson) => isLessonComplete(progress, lesson)),
+  const withLessons = stages.filter((stage) => relevantLessons(stage, filter).length > 0);
+  const completedStages = withLessons.filter((stage) =>
+    isStageComplete(progress, stage, filter),
   ).length;
   return {
     completed,
     total: lessons.length,
     percent: lessons.length ? Math.round((completed / lessons.length) * 100) : 0,
     completedStages,
-    totalStages: stages.length,
+    totalStages: withLessons.length,
   };
 }

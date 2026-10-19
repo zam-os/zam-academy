@@ -113,6 +113,8 @@ export interface ExerciseTask {
   absTolerance?: number;
   /** The worked solution as HTML. */
   solutionHtml: string;
+  /** The values the generator drew, so tests can check the scenario (e.g. V2 < V1). */
+  meta?: Record<string, number>;
 }
 
 export interface ExerciseGenerator {

@@ -25,15 +25,16 @@ import type {
 } from "./model/types";
 import { TRACK_LABELS, TRACK_LONG_LABELS } from "./model/types";
 import {
-  allGoalsReached,
   DEFAULT_LESSON_ID,
   goalsReached,
   isLessonComplete,
   isQuizDone,
+  isStageComplete,
   isTransferDone,
   type LearnerProgress,
   loadLearnerProgress,
   overallStats,
+  relevantLessons,
   resetLearnerProgress,
   saveLearnerProgress,
   solvedCount,
@@ -155,7 +156,7 @@ class PhysikApp {
         Number(button.dataset.level) === this.progress.difficultyLevel,
       );
     });
-    const stats = overallStats(this.progress, STAGES);
+    const stats = overallStats(this.progress, STAGES, this.progress.trackFilter);
     const text = document.getElementById("header-progress-text");
     const bar = document.getElementById("header-progress-bar");
     if (text) text.textContent = `${stats.completed} / ${stats.total} Lektionen`;
@@ -213,8 +214,8 @@ class PhysikApp {
   // ─── View 1: Lernpfad ───────────────────────────────────────────────────
 
   private renderPath(host: HTMLElement): void {
-    const stats = overallStats(this.progress, STAGES);
     const filter = this.progress.trackFilter;
+    const stats = overallStats(this.progress, STAGES, filter);
     const relevant = new Set(lessonsForTrack(filter).map((lesson) => lesson.id));
     const active = findLessonById(this.progress.activeLessonId) ?? findLessonById(DEFAULT_LESSON_ID)!;
 
@@ -243,8 +244,10 @@ class PhysikApp {
             <p>${stats.completed} von ${stats.total} Lektionen<br>${stats.completedStages} von ${stats.totalStages} Etappen</p>
             <div class="badge-rack" aria-label="Abzeichen">
               ${STAGES.map((stage) => {
-                const earned = stageStats(this.progress, stage).percent === 100;
-                return `<span class="badge ${earned ? "is-earned" : ""}" title="${esc(stage.badgeTitle)}">${stage.icon}</span>`;
+                const stageDone = isStageComplete(this.progress, stage, filter);
+                const off = relevantLessons(stage, filter).length === 0;
+                const title = off ? `${stage.badgeTitle}: keine Lektion in deinem Zweig` : stage.badgeTitle;
+                return `<span class="badge ${stageDone ? "is-earned" : ""} ${off ? "is-off" : ""}" title="${esc(title)}">${stage.icon}</span>`;
               }).join("")}
             </div>
             <button type="button" class="btn btn-ghost btn-sm" id="reset-progress-btn">Fortschritt zurücksetzen</button>
@@ -259,6 +262,7 @@ class PhysikApp {
       const value = (event.target as HTMLSelectElement).value as TrackFilter;
       this.progress.trackFilter = value;
       saveLearnerProgress(this.progress);
+      this.syncHeader();
       this.render();
     });
     host.querySelector("#continue-btn")?.addEventListener("click", () => this.openLesson(active.lesson.id));
@@ -278,7 +282,9 @@ class PhysikApp {
   }
 
   private renderStageCard(stage: Stage, relevant: Set<string>, filter: TrackFilter): string {
-    const stats = stageStats(this.progress, stage);
+    const stats = stageStats(this.progress, stage, filter);
+    const progressLabel =
+      stats.total === 0 ? "nicht in deinem Zweig" : `${stats.completed} / ${stats.total}`;
     return `
       <section class="stage-card" style="--accent:${stage.accent}">
         <header class="stage-head">
@@ -288,7 +294,7 @@ class PhysikApp {
             <p>${esc(stage.subtitle)} · <span class="muted">${esc(stage.lehrplanLabel)}</span></p>
           </div>
           <div class="stage-progress">
-            <strong>${stats.completed} / ${stats.total}</strong>
+            <strong>${progressLabel}</strong>
             <div class="bar"><div style="width:${stats.percent}%"></div></div>
           </div>
         </header>
@@ -663,23 +669,25 @@ class PhysikApp {
     this.syncHeader();
     const stage = findStageById(lesson.stageId);
     if (!stage) return;
-    const stageDone = stage.lessons.every((l) => isLessonComplete(this.progress, l));
-    if (stageDone && !this.progress.celebratedStageIds.includes(stage.id)) {
+    const filter = this.progress.trackFilter;
+    if (
+      isStageComplete(this.progress, stage, filter) &&
+      !this.progress.celebratedStageIds.includes(stage.id)
+    ) {
       this.progress.celebratedStageIds.push(stage.id);
       saveLearnerProgress(this.progress);
+      const count = relevantLessons(stage, filter).length;
       window.setTimeout(() => {
-        showStageCelebration(stage, () => {
-          this.syncHeader();
-        });
+        showStageCelebration(stage, () => this.syncHeader(), count);
       }, 400);
-    } else if (isLessonComplete(this.progress, lesson) && allGoalsReached(this.progress, lesson)) {
+    } else if (
+      isLessonComplete(this.progress, lesson) &&
+      !this.progress.celebratedLessonIds.includes(lesson.id)
+    ) {
       // The lesson itself: say so once, when the last of the three parts lands.
-      const key = `celebrated:${lesson.id}`;
-      if (!this.progress.attempts[key]) {
-        this.progress.attempts[key] = 1;
-        saveLearnerProgress(this.progress);
-        showToast(`Lektion abgeschlossen: ${lesson.title}`, "success", 4000);
-      }
+      this.progress.celebratedLessonIds.push(lesson.id);
+      saveLearnerProgress(this.progress);
+      showToast(`Lektion abgeschlossen: ${lesson.title}`, "success", 4000);
     }
   }
 

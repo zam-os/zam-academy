@@ -32,12 +32,14 @@ const temperatur: Lesson = {
       <li><strong>Wärme</strong> ist die Energie, die wegen eines Temperaturunterschieds übertragen wird: eine Übertragungsgröße, keine Speichergröße.</li>
       <li>Am <strong>absoluten Nullpunkt</strong> wäre die Teilchenbewegung minimal. Er liegt bei <strong>−273,15 °C = 0 K</strong> und ist unerreichbar.</li>
       <li><strong>Kelvin-Skala:</strong> T in K = ϑ in °C + 273,15. Temperatur<em>unterschiede</em> sind in K und °C gleich groß: Δϑ = 10 °C entspricht ΔT = 10 K.</li>
+      <li><strong>Erster Hauptsatz:</strong> Die innere Energie eines Körpers ändert sich durch <strong>Arbeit</strong> (Reibung, Zusammendrücken) oder durch <strong>Wärme</strong>: ΔU = W + Q.</li>
     </ul>
     <div class="merke"><strong>Merke:</strong> Temperatur ist nicht Energie. Temperatur sagt, wie heftig sich die Teilchen im Mittel bewegen. Innere Energie zählt alle Teilchen zusammen.</div>
   `,
   formulas: [
     { name: "Kelvin und Celsius", html: "T / K = ϑ / °C + 273,15", quantities: "T absolute Temperatur in K, ϑ in °C; 0 K = −273,15 °C" },
     { name: "Temperaturdifferenz", html: "ΔT = Δϑ", quantities: "Differenzen in K und °C sind gleich groß" },
+    { name: "Erster Hauptsatz", html: "ΔU = W + Q", quantities: "Änderung der inneren Energie durch Arbeit W und Wärme Q, in J" },
   ],
   quiz: {
     question: "Ein See (20 °C) und eine Tasse Tee (70 °C). Welche Aussage stimmt?",
@@ -257,11 +259,14 @@ const waermekapazitaet: Lesson = {
             solutionHtml: `c = Q / (m · Δϑ) = ${fmt(Q, 0)} J / (${fmt(m, 1)} kg · ${fmt(d, 0)} K) = <strong>${fmtUnit(mat.c, "J/(kg·K)", 0)}</strong> (das ist ${mat.name})`,
           };
         }
-        const P = rng.pick([300, 500, 800, 1000]);
         const t = rng.int(2, 10) * 60;
         const m = rng.stepped(1, 4, 0.5);
+        // Only powers that keep the water liquid: Δϑ stays below 80 K.
+        const allowed = [300, 500, 800, 1000].filter((p) => (p * t) / (C_WATER * m) <= 80);
+        const P = rng.pick(allowed.length > 0 ? allowed : [300]);
         const d = (P * t) / (C_WATER * m);
         return {
+          meta: { dtheta: d },
           prompt: `Ein Tauchsieder mit ${fmtUnit(P, "W", 0)} heizt ${fmtUnit(m, "kg", 1)} Wasser ${fmtUnit(t / 60, "min", 0)} lang. Um wie viel Kelvin steigt die Temperatur ohne Verluste? (c = 4190 J/(kg·K))`,
           given: [`P = ${fmtUnit(P, "W", 0)}`, `t = ${fmtUnit(t / 60, "min", 0)} = ${fmtUnit(t, "s", 0)}`, `m = ${fmtUnit(m, "kg", 1)}`],
           answer: d,
@@ -435,7 +440,7 @@ const aggregatzustand: Lesson = {
   formulas: [
     { name: "Schmelzenergie", html: "Q = q<sub>s</sub> · m", quantities: "q_s(Eis) = 334 kJ/kg" },
     { name: "Verdampfungsenergie", html: "Q = q<sub>v</sub> · m", quantities: "q_v(Wasser) = 2257 kJ/kg" },
-    { name: "Erwärmen", html: "Q = c · m · Δϑ", quantities: "c_Eis ≈ 2,1 · c_Wasser = 4,19 · c_Dampf ≈ 2,0 kJ/(kg·K)" },
+    { name: "Erwärmen", html: "Q = c · m · Δϑ", quantities: "c(Eis) ≈ 2,1 kJ/(kg·K), c(Wasser) = 4,19 kJ/(kg·K), c(Dampf) ≈ 2,0 kJ/(kg·K)" },
   ],
   quiz: {
     question: "Einem Gemisch aus Eis und Wasser bei 0 °C wird Wärme zugeführt. Was passiert mit der Temperatur, solange noch Eis vorhanden ist?",
@@ -683,7 +688,7 @@ const wasseranomalie: Lesson = {
       },
     },
   ],
-  requiredCorrect: 2,
+  requiredCorrect: 3,
   celebrationMessage: "Du erklärst, wie Wärme wandert, und warum Eis schwimmt.",
 };
 
@@ -711,7 +716,9 @@ const gasgleichung: Lesson = {
   `,
   formulas: [
     { name: "Allgemeine Gasgleichung", html: "p<sub>1</sub> · V<sub>1</sub> / T<sub>1</sub> = p<sub>2</sub> · V<sub>2</sub> / T<sub>2</sub>", quantities: "T in K; p und V in beliebigen, aber gleichen Einheiten" },
-    { name: "Sonderfälle", html: "T konstant: p · V = konst. · V konstant: p / T = konst. · p konstant: V / T = konst.", quantities: "" },
+    { name: "Sonderfall T konstant (Boyle-Mariotte)", html: "p · V = konstant", quantities: "" },
+    { name: "Sonderfall V konstant", html: "p / T = konstant", quantities: "Reifen: Erwärmen erhöht den Druck" },
+    { name: "Sonderfall p konstant", html: "V / T = konstant", quantities: "Ballon: Abkühlen verkleinert das Volumen" },
   ],
   quiz: {
     question: "Ein abgeschlossenes Gas wird bei konstantem Volumen von 20 °C auf 40 °C erwärmt. Wie ändert sich der Druck?",
@@ -748,9 +755,10 @@ const gasgleichung: Lesson = {
       make: (rng, level) => {
         if (level === 1) {
           const p1 = rng.pick([1000, 1013, 1200, 1500]);
-          const V1 = rng.int(2, 10);
+          const V1 = rng.int(4, 10);
           const t1 = rng.int(10, 30);
-          const V2 = rng.pick([1, 2, 4, 5]);
+          // The gas is compressed, so V₂ is strictly below V₁.
+          const V2 = rng.int(1, V1 - 1);
           const t2 = rng.int(40, 150);
           const T1 = t1 + KELVIN_OFFSET;
           const T2 = t2 + KELVIN_OFFSET;
@@ -763,6 +771,7 @@ const gasgleichung: Lesson = {
             unit: "hPa",
             digits: 0,
             solutionHtml: `p₂ = p₁ · V₁ · T₂ / (T₁ · V₂) = ${fmt(p1, 0)} · ${fmt(V1, 0)} · ${fmt(T2, 2)} / (${fmt(T1, 2)} · ${fmt(V2, 0)}) hPa = <strong>${fmtUnit(p2, "hPa", 0)}</strong>`,
+            meta: { V1, V2 },
           };
         }
         const pBar = rng.pick([2.2, 2.4, 2.5, 2.8, 3]);

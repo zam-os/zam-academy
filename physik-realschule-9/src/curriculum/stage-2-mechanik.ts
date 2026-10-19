@@ -29,7 +29,8 @@ const kraftwandler: Lesson = {
   formulas: [
     { name: "Schiefe Ebene", html: "F · l = F<sub>G</sub> · h", quantities: "F Kraft längs der Ebene in N, l Länge, h Höhe in m" },
     { name: "Hebelgesetz", html: "F<sub>1</sub> · a<sub>1</sub> = F<sub>2</sub> · a<sub>2</sub>", quantities: "F in N, Hebelarme a in m oder cm" },
-    { name: "Flaschenzug", html: "F = F<sub>G</sub> / n · s = n · h", quantities: "n tragende Seilstücke" },
+    { name: "Flaschenzug (Kraft)", html: "F = F<sub>G</sub> / n", quantities: "n tragende Seilstücke" },
+    { name: "Flaschenzug (Weg)", html: "s = n · h", quantities: "Seilweg s, Hubhöhe h" },
   ],
   quiz: {
     question: "Du schiebst eine Kiste über eine doppelt so lange Rampe auf dieselbe Höhe. Was ändert sich ohne Reibung?",
@@ -468,18 +469,20 @@ const wirkungsgrad: Lesson = {
         const m = rng.int(10, 50) * 10;
         const h = rng.int(4, 20);
         const t = rng.int(10, 40);
-        const Pzu = rng.pick([1.5, 2, 2.5, 3, 4, 5]);
-        const eta = ((m * G * h) / t / (Pzu * 1000)) * 100;
-        if (eta > 98) {
-          return wirkungsgrad.exercises[0].make(rng, level);
-        }
+        // Draw a realistic motor efficiency and derive the input power from it,
+        // rounded to 0,1 kW, so η lands between about 55 % and 92 %.
+        const target = rng.pick([0.6, 0.7, 0.75, 0.8, 0.85, 0.9]);
+        const Pnutz = (m * G * h) / t;
+        const PzuW = Math.ceil(Pnutz / target / 10) * 10;
+        const eta = (Pnutz / PzuW) * 100;
         return {
-          prompt: `Ein Elektromotor nimmt ${fmtUnit(Pzu, "kW", 1)} auf. Er hebt ${fmtUnit(m, "kg", 0)} in ${fmtUnit(t, "s", 0)} um ${fmtUnit(h, "m", 0)}. Welchen Wirkungsgrad hat der Motor (g = 9,81 N/kg)? Gib ihn in Prozent an.`,
-          given: [`P_zu = ${fmtUnit(Pzu, "kW", 1)}`, `m = ${fmtUnit(m, "kg", 0)}`, `h = ${fmtUnit(h, "m", 0)}`, `t = ${fmtUnit(t, "s", 0)}`],
+          meta: { eta },
+          prompt: `Ein Elektromotor nimmt ${fmtUnit(PzuW / 1000, "kW", 2)} auf. Er hebt ${fmtUnit(m, "kg", 0)} in ${fmtUnit(t, "s", 0)} um ${fmtUnit(h, "m", 0)}. Welchen Wirkungsgrad hat der Motor (g = 9,81 N/kg)? Gib ihn in Prozent an.`,
+          given: [`P_zu = ${fmtUnit(PzuW / 1000, "kW", 2)} = ${fmtUnit(PzuW, "W", 0)}`, `m = ${fmtUnit(m, "kg", 0)}`, `h = ${fmtUnit(h, "m", 0)}`, `t = ${fmtUnit(t, "s", 0)}`],
           answer: eta,
           unit: "%",
           digits: 1,
-          solutionHtml: `W_nutz = m · g · h = ${fmtUnit(m * G * h, "J", 0)}, P_nutz = W / t = ${fmtUnit((m * G * h) / t, "W", 0)}<br>η = P_nutz / P_zu = ${fmt((m * G * h) / t, 0)} / ${fmt(Pzu * 1000, 0)} = <strong>${fmtUnit(eta, "%", 1)}</strong>`,
+          solutionHtml: `W_nutz = m · g · h = ${fmtUnit(m * G * h, "J", 0)}, P_nutz = W / t = ${fmtUnit(Pnutz, "W", 0)}<br>η = P_nutz / P_zu = ${fmt(Pnutz, 0)} / ${fmt(PzuW, 0)} = <strong>${fmtUnit(eta, "%", 1)}</strong>`,
         };
       },
     },

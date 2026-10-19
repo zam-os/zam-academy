@@ -105,7 +105,8 @@ export function wrongAnswerHint(result: CheckResult, task: ExerciseTask): string
   if (Math.abs(ratio * ratio - 1) < 0.001 && ratio < 0) {
     return "Das Vorzeichen stimmt nicht.";
   }
-  if (task.answer !== 0 && near(1 / (ratio * ratio)) && ratio !== 1) {
+  // A swapped division gives the reciprocal: parsed · answer ≈ 1.
+  if (task.answer !== 0 && Math.abs(result.parsed * task.answer - 1) < 0.03) {
     return "Hast du vielleicht durch den falschen Wert geteilt? Prüfe, welche Größe gesucht ist.";
   }
   return "Nicht ganz. Prüfe Formel, Einheiten und die Rechnung Schritt für Schritt.";
