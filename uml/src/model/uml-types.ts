@@ -1176,8 +1176,9 @@ export function createDefaultNode(
   kind: UmlNodeKind,
   x: number,
   y: number,
-  customName?: string,
-  locale: AppLocale = "de",
+  // An options object, not positional strings: a locale passed where the
+  // name belongs named every new element "de".
+  { name: customName, locale = "de" }: { name?: string; locale?: AppLocale } = {},
 ): UmlNode {
   const meta = UML_NODE_KINDS[kind];
   const id = createUmlId("node");
@@ -1310,8 +1311,7 @@ export function createDefaultEdge(
   kind: UmlEdgeKind,
   sourceId: string,
   targetId: string,
-  label?: string,
-  locale: AppLocale = "de",
+  { label, locale = "de" }: { label?: string; locale?: AppLocale } = {},
 ): UmlEdge {
   const meta = UML_EDGE_KINDS[kind];
   return {
@@ -1344,6 +1344,30 @@ export function createDefaultEdge(
     targetMultiplicity:
       kind === "composition" ? "1..*" : kind === "aggregation" ? "0..*" : "",
   };
+}
+
+/**
+ * Repairs the names and labels an earlier version wrote by mistake: it
+ * passed the app's locale where a new element's name or a connector's label
+ * belongs, so they read "de" or "en". Such a text gets the default it should
+ * have had, in that locale.
+ */
+export function repairStrayLocaleText(diagram: UmlDiagram): UmlDiagram {
+  const stray = (text: unknown): text is AppLocale =>
+    text === "de" || text === "en";
+  for (const node of diagram.nodes ?? []) {
+    if (stray(node.name) && UML_NODE_KINDS[node.kind]) {
+      node.name = createDefaultNode(node.kind, 0, 0, { locale: node.name }).name;
+    }
+  }
+  for (const edge of diagram.edges ?? []) {
+    if (stray(edge.label) && UML_EDGE_KINDS[edge.kind]) {
+      edge.label = createDefaultEdge(edge.kind, "", "", {
+        locale: edge.label,
+      }).label;
+    }
+  }
+  return diagram;
 }
 
 export function cloneDiagram(diagram: UmlDiagram): UmlDiagram {

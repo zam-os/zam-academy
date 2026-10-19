@@ -14,6 +14,9 @@ import {
 } from "../src/exporters/code-exporters";
 import {
   cloneDiagram,
+  createDefaultEdge,
+  createDefaultNode,
+  repairStrayLocaleText,
   UML_DIAGRAM_TYPES,
   type UmlDiagram,
 } from "../src/model/uml-types";
@@ -317,3 +320,54 @@ describe("Importing a shared diagram file", () => {
     ).toBeNull();
   });
 });
+
+describe("New elements and connectors", () => {
+  it("get the default name and label of the app's language, never the language code", () => {
+    expect(createDefaultNode("class", 0, 0).name).toBe("NeueKlasse");
+    expect(createDefaultNode("class", 0, 0, { locale: "en" }).name).not.toMatch(
+      /^(de|en)$/,
+    );
+    expect(createDefaultNode("class", 0, 0, { name: "Kunde" }).name).toBe(
+      "Kunde",
+    );
+    expect(createDefaultEdge("association", "a", "b").label).toBe("");
+    expect(
+      createDefaultEdge("sync-message", "a", "b", { locale: "en" }).label,
+    ).toBe("sendRequest()");
+  });
+
+  it("lose the language code an earlier version wrote into saved work", () => {
+    const diagram: UmlDiagram = {
+      ...emptyDiagram(),
+      nodes: [
+        { ...createDefaultNode("class", 0, 0), id: "n1", name: "de" },
+        { ...createDefaultNode("class", 0, 0), id: "n2", name: "Bestellung" },
+      ],
+      edges: [
+        { ...createDefaultEdge("association", "n1", "n2"), label: "de" },
+        { ...createDefaultEdge("sync-message", "n1", "n2"), label: "en" },
+        { ...createDefaultEdge("association", "n1", "n2"), label: "hat" },
+      ],
+    };
+    repairStrayLocaleText(diagram);
+    expect(diagram.nodes.map((node) => node.name)).toEqual([
+      "NeueKlasse",
+      "Bestellung",
+    ]);
+    expect(diagram.edges.map((edge) => edge.label)).toEqual([
+      "",
+      "sendRequest()",
+      "hat",
+    ]);
+  });
+});
+
+function emptyDiagram(): UmlDiagram {
+  return {
+    id: "d",
+    title: "t",
+    diagramType: "class",
+    nodes: [],
+    edges: [],
+  } as unknown as UmlDiagram;
+}

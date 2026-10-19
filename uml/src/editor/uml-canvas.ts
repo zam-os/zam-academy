@@ -256,7 +256,7 @@ export class UmlCanvasController {
     const count = this.diagram.nodes.length;
     const baseX = 90 + ((count * 65) % 420);
     const baseY = 75 + ((count * 55) % 230);
-    const newNode = createDefaultNode(kind, baseX, baseY, this.locale);
+    const newNode = createDefaultNode(kind, baseX, baseY, { locale: this.locale });
 
     // Ensure class/state height fits attributes
     this.autoAdjustNodeDimensions(newNode);
@@ -508,7 +508,7 @@ export class UmlCanvasController {
         kind,
         this.snap(pt.x - meta.defaultWidth / 2),
         this.snap(pt.y - meta.defaultHeight / 2),
-        this.locale,
+        { locale: this.locale },
       );
       this.autoAdjustNodeDimensions(newNode);
       this.diagram.nodes.push(newNode);
@@ -572,7 +572,7 @@ export class UmlCanvasController {
           kind,
           this.snap(pt.x - meta.defaultWidth / 2),
           this.snap(pt.y - meta.defaultHeight / 2),
-          this.locale,
+          { locale: this.locale },
         );
         this.autoAdjustNodeDimensions(newNode);
         this.diagram.nodes.push(newNode);
@@ -847,7 +847,9 @@ export class UmlCanvasController {
     kind: UmlEdgeKind,
   ): void {
     this.pushUndoSnapshot();
-    const edge = createDefaultEdge(kind, sourceId, targetId, this.locale);
+    const edge = createDefaultEdge(kind, sourceId, targetId, {
+      locale: this.locale,
+    });
     if (this.diagram.diagramType === "sequence") {
       edge.sequenceOrder = this.diagram.edges.length + 1;
     }
