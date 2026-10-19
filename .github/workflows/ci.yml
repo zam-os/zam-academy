@@ -15,7 +15,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        app: [uml]
+        app: [uml, physik-realschule-9]
     defaults:
       run:
         working-directory: ${{ matrix.app }}
@@ -42,7 +42,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       # Pinned exactly; raise it when a cell needs a newer tile format.
-      ZAM_CORE_VERSION: 0.53.0
+      ZAM_CORE_VERSION: 0.54.0
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-node@v5
