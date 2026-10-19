@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import cellJson from "../cell.json";
+import replacesJson from "../replaces-de-by.json";
 import { ALL_LESSONS, findLessonById, lessonsForTrack, STAGES } from "../src/curriculum";
 import {
   checkAnswer,
@@ -564,5 +565,59 @@ describe("ZAM-Zelle (cell.json)", () => {
       }
     }
     expect(ids.size).toBe(cell.atoms.length + cell.atoms.reduce((n, atom) => n + atom.practice_items.length, 0));
+  });
+
+  describe("replaces the four de-by Realschule 9 physics cells as approved", () => {
+    interface MappingRow {
+      de_by_cell: string;
+      de_by_id: string;
+      de_by_question: string;
+      category: "A" | "B" | "C";
+      academy_slug?: string;
+      note?: string;
+    }
+    const table = replacesJson as unknown as { approved: string; rows: MappingRow[] };
+    const items = cell.atoms.flatMap((atom) => atom.practice_items);
+    const bySlug = new Map(items.map((item) => [item.slug, item]));
+    const DE_BY = /^01K4[EMWF]9P0000000000000000J\d{2}$/;
+
+    it("lists every de-by item exactly once, 20 A, 12 B and 10 C", () => {
+      expect(table.rows).toHaveLength(42);
+      const ids = table.rows.map((row) => row.de_by_id);
+      expect(new Set(ids).size).toBe(42);
+      for (const id of ids) expect(DE_BY.test(id), id).toBe(true);
+      const counts = { A: 0, B: 0, C: 0 };
+      for (const row of table.rows) counts[row.category] += 1;
+      expect(counts).toEqual({ A: 20, B: 12, C: 10 });
+      for (const row of table.rows) {
+        if (row.category === "C") expect(row.note, `${row.de_by_id} needs a reason`).toBeTruthy();
+      }
+    });
+
+    it("declares exactly the approved replaces, one de-by item per card", () => {
+      const declared = items.flatMap((item) => ((item as { replaces?: string[] }).replaces ?? []).map((id) => [item.slug, id] as const));
+      expect(declared.map(([, id]) => id).sort()).toEqual(
+        table.rows.filter((row) => row.category !== "C").map((row) => row.de_by_id).sort(),
+      );
+      for (const item of items) {
+        expect(((item as { replaces?: string[] }).replaces ?? []).length, `${item.slug} replaces at most one item`).toBeLessThanOrEqual(1);
+      }
+      for (const row of table.rows) {
+        if (row.category === "C") {
+          expect(declared.some(([, id]) => id === row.de_by_id), `${row.de_by_id} has no successor`).toBe(false);
+          continue;
+        }
+        const item = bySlug.get(row.academy_slug ?? "");
+        expect(item, `${row.de_by_id} → ${row.academy_slug}`).toBeDefined();
+        expect((item as { replaces?: string[] }).replaces).toEqual([row.de_by_id]);
+      }
+    });
+
+    it("gives the twelve new cards fixed ids after the published K01–K58", () => {
+      const newSlugs = table.rows.filter((row) => row.category === "B").map((row) => row.academy_slug);
+      const newIds = newSlugs.map((slug) => bySlug.get(slug ?? "")?.id ?? "").sort();
+      expect(newIds).toEqual(Array.from({ length: 12 }, (_, i) => `01K8PHYS9RS000000000000K${59 + i}`));
+      expect(items).toHaveLength(70);
+    });
   });
 });

@@ -178,6 +178,9 @@
               "text": "Bar: 1 bar = 1 N/m²",
               "reason": "Ein Bar sind 100 000 Pascal, nicht ein Newton pro Quadratmeter."
             }
+          ],
+          "replaces": [
+            "01K4F9P0000000000000000J01"
           ]
         },
         {
@@ -295,6 +298,9 @@
               "text": "Kraft mal Fläche: F₁ · A₁ = F₂ · A₂",
               "reason": "Das Produkt aus Kraft und Fläche bleibt nicht gleich; gleich ist der Druck F / A."
             }
+          ],
+          "replaces": [
+            "01K4F9P0000000000000000J02"
           ]
         },
         {
@@ -439,6 +445,9 @@
               "text": "m · g · h",
               "reason": "Das wäre die Lageenergie; beim Schweredruck zählt die Dichte der Flüssigkeit."
             }
+          ],
+          "replaces": [
+            "01K4F9P0000000000000000J04"
           ]
         },
         {
@@ -518,6 +527,9 @@
               "text": "Im schmalsten Gefäß, weil sich das Wasser dort staut.",
               "reason": "Druck breitet sich in Flüssigkeiten nach allen Seiten gleich aus; es staut sich nichts."
             }
+          ],
+          "replaces": [
+            "01K4F9P0000000000000000J03"
           ]
         }
       ]
@@ -593,6 +605,9 @@
               "text": "Umso größer, je tiefer der Körper eingetaucht ist.",
               "reason": "Der Druckunterschied zwischen Ober- und Unterseite bleibt in jeder Tiefe gleich."
             }
+          ],
+          "replaces": [
+            "01K4F9P0000000000000000J05"
           ]
         },
         {
@@ -652,6 +667,9 @@
               "text": "ρ · g · h",
               "reason": "Das ist der Schweredruck in der Tiefe h, keine Kraft."
             }
+          ],
+          "replaces": [
+            "01K4F9P0000000000000000J06"
           ]
         },
         {
@@ -673,6 +691,62 @@
               "text": "Größer als die Dichte des Wassers.",
               "reason": "Dann würde der Körper sinken."
             }
+          ]
+        },
+        {
+          "id": "01K8PHYS9RS000000000000K69",
+          "slug": "ph9-schwimmen-bedingung",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/physik-realschule-9/#lesson=dr-4-auftrieb",
+          "question": "Wann schwimmt ein Körper an der Oberfläche einer Flüssigkeit?",
+          "concept": "Wenn seine Dichte kleiner ist als die der Flüssigkeit.",
+          "sample_solution": "Er taucht so weit ein, bis die Auftriebskraft des eingetauchten Teils seiner Gewichtskraft entspricht; eingetauchter Anteil = ρ_K / ρ_Fl.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Dichte kleiner als die der Flüssigkeit",
+              "Dichte größer als die der Flüssigkeit"
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Wenn seine Dichte größer ist als die der Flüssigkeit.",
+              "reason": "Dann sinkt er."
+            },
+            {
+              "text": "Wenn er leichter ist als 1 kg.",
+              "reason": "Die Masse allein entscheidet nicht; ein Stahlschiff schwimmt, ein Stahlnagel sinkt."
+            }
+          ],
+          "replaces": [
+            "01K4F9P0000000000000000J07"
+          ]
+        },
+        {
+          "id": "01K8PHYS9RS000000000000K70",
+          "slug": "ph9-sinken-schweben-steigen-schwimmen",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "source_link": "https://academy.zam-os.org/physik-realschule-9/#lesson=dr-4-auftrieb",
+          "question": "Welche vier Fälle unterscheidet man, wenn Gewichtskraft und Auftriebskraft eines Körpers verglichen werden?",
+          "concept": "Sinken (F_G > F_A), Schweben (F_G = F_A), Steigen (F_G < F_A), Schwimmen an der Oberfläche (F_A = F_G).",
+          "sample_solution": "Mit Dichten: ρ_K > ρ_Fl sinkt, ρ_K = ρ_Fl schwebt, ρ_K < ρ_Fl steigt und schwimmt dann so weit eingetaucht, dass F_A = F_G.",
+          "choice_distractors": [
+            {
+              "text": "Sinken (F_A > F_G), Schweben (F_A = 0), Steigen (F_G > F_A), Schwimmen (F_G = 0).",
+              "reason": "Sinken heißt Gewichtskraft größer als Auftrieb; keine der Kräfte wird null."
+            },
+            {
+              "text": "Sinken, Schweben und Schwimmen (drei Fälle), Steigen gibt es nur bei Gasen.",
+              "reason": "Steigen gibt es auch in Flüssigkeiten: ein Korken unter Wasser steigt auf."
+            }
+          ],
+          "replaces": [
+            "01K4F9P0000000000000000J08"
           ]
         }
       ]
@@ -1015,6 +1089,9 @@
               "text": "Masse mal Weg",
               "reason": "Arbeit braucht eine Kraft, nicht nur eine Masse."
             }
+          ],
+          "replaces": [
+            "01K4M9P0000000000000000J06"
           ]
         },
         {
@@ -1051,6 +1128,9 @@
               "text": "Arbeit mal Zeit",
               "reason": "Wer dieselbe Arbeit in längerer Zeit schafft, leistet weniger, nicht mehr."
             }
+          ],
+          "replaces": [
+            "01K4M9P0000000000000000J12"
           ]
         },
         {
@@ -1072,6 +1152,38 @@
               "text": "Beide haben die gleiche Leistung.",
               "reason": "Gleiche Arbeit in halber Zeit ist doppelte Leistung."
             }
+          ]
+        },
+        {
+          "id": "01K8PHYS9RS000000000000K63",
+          "slug": "ph9-arbeit-senkrechte-kraft",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 2,
+          "source_link": "https://academy.zam-os.org/physik-realschule-9/#lesson=me-2-arbeit-leistung",
+          "question": "Wird Arbeit verrichtet, wenn die Kraft senkrecht zum Weg steht, etwa beim Tragen einer Tasche auf ebener Strecke?",
+          "concept": "Nein, Arbeit braucht einen Weg in Kraftrichtung.",
+          "sample_solution": "Beim waagrechten Tragen zeigt die Haltekraft nach oben, der Weg geht zur Seite: W = 0. Erst beim Heben wird Hubarbeit verrichtet.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "nein, kein Weg in Kraftrichtung",
+              "ja, die volle Hubarbeit"
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Ja, die volle Hubarbeit m · g · h wie beim Heben.",
+              "reason": "Hubarbeit entsteht nur, wenn die Höhe sich ändert."
+            },
+            {
+              "text": "Ja, aber nur die Hälfte der Hubarbeit.",
+              "reason": "Ohne Weg in Kraftrichtung ist die Arbeit null, nicht halb."
+            }
+          ],
+          "replaces": [
+            "01K4M9P0000000000000000J05"
           ]
         }
       ]
@@ -1177,6 +1289,9 @@
               "text": "m · h ohne g",
               "reason": "Ohne g fehlt die Gewichtskraft; Energie hat die Einheit Joule."
             }
+          ],
+          "replaces": [
+            "01K4M9P0000000000000000J08"
           ]
         },
         {
@@ -1265,6 +1380,98 @@
               "text": "Sie bleibt gleich.",
               "reason": "Bewegungsenergie hängt von Masse und Geschwindigkeit ab."
             }
+          ],
+          "replaces": [
+            "01K4M9P0000000000000000J07"
+          ]
+        },
+        {
+          "id": "01K8PHYS9RS000000000000K64",
+          "slug": "ph9-energieerhaltung",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/physik-realschule-9/#lesson=me-3-energieerhaltung",
+          "question": "Was besagt der Energieerhaltungssatz?",
+          "concept": "Die Gesamtenergie eines abgeschlossenen Systems bleibt gleich.",
+          "sample_solution": "Energie wird nur umgewandelt, nie vernichtet oder erzeugt. Was bei Reibung „verloren“ scheint, steckt als innere Energie in Wärme.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "bleibt gleich, wird nur umgewandelt",
+              "geht bei Reibung verloren"
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Bei Reibung geht Energie unwiederbringlich verloren.",
+              "reason": "Sie wird zu innerer Energie entwertet, geht aber nicht verloren."
+            },
+            {
+              "text": "Energie entsteht neu, sobald sich etwas bewegt.",
+              "reason": "Bewegungsenergie stammt immer aus einer anderen Energieform."
+            }
+          ],
+          "replaces": [
+            "01K4M9P0000000000000000J09"
+          ]
+        },
+        {
+          "id": "01K8PHYS9RS000000000000K65",
+          "slug": "ph9-freier-fall-geschwindigkeit",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 2,
+          "source_link": "https://academy.zam-os.org/physik-realschule-9/#lesson=me-3-energieerhaltung",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Mit welcher Geschwindigkeit kommt ein Körper unten an, der ohne Reibung aus der Höhe "
+            },
+            {
+              "type": "math",
+              "tex": "h",
+              "speech": "h"
+            },
+            {
+              "type": "text",
+              "text": " fällt?"
+            }
+          ],
+          "concept_segments": [
+            {
+              "type": "math",
+              "tex": "v = \\sqrt{2 \\cdot g \\cdot h}",
+              "speech": "v gleich Wurzel aus zwei mal g mal h"
+            },
+            {
+              "type": "text",
+              "text": ", unabhängig von der Masse"
+            }
+          ],
+          "materiality": "material",
+          "sample_solution": "m · g · h = ½ · m · v²; die Masse kürzt sich heraus. Aus 5 m: v = √(2 · 9,81 · 5) m/s ≈ 9,9 m/s.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "v = √(2 · g · h)",
+              "v = 2 · g · h"
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "v = 2 · g · h (ohne Wurzel), abhängig von der Masse",
+              "reason": "Ohne Wurzel stimmt die Einheit nicht, und die Masse kürzt sich heraus."
+            },
+            {
+              "text": "v = √(g · h), mit der halben Fallenergie",
+              "reason": "Die ganze Lageenergie wird zu Bewegungsenergie: der Faktor 2 gehört unter die Wurzel."
+            }
+          ],
+          "replaces": [
+            "01K4M9P0000000000000000J10"
           ]
         }
       ]
@@ -1390,6 +1597,9 @@
               "text": "Ja, wenn die Maschine Energie speichert.",
               "reason": "Gespeicherte Energie wurde vorher zugeführt; sie zählt zu E_zu."
             }
+          ],
+          "replaces": [
+            "01K4M9P0000000000000000J11"
           ]
         }
       ]
@@ -1469,6 +1679,9 @@
               "text": "Celsiuswert mal 273,15.",
               "reason": "Die Skalen sind nur verschoben, nicht gestreckt; ein Kelvin ist so groß wie ein Grad Celsius."
             }
+          ],
+          "replaces": [
+            "01K4W9P0000000000000000J02"
           ]
         },
         {
@@ -1498,6 +1711,9 @@
               "text": "Bei −100 °C.",
               "reason": "Bei −100 °C bewegen sich die Teilchen noch deutlich; der Nullpunkt liegt tiefer."
             }
+          ],
+          "replaces": [
+            "01K4W9P0000000000000000J01"
           ]
         },
         {
@@ -1519,6 +1735,49 @@
               "text": "Beide haben gleich viel innere Energie.",
               "reason": "Die Energiemengen unterscheiden sich um viele Größenordnungen."
             }
+          ]
+        },
+        {
+          "id": "01K8PHYS9RS000000000000K67",
+          "slug": "ph9-erster-hauptsatz",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/physik-realschule-9/#lesson=wl-1-temperatur",
+          "question": "Wodurch ändert sich die innere Energie eines Körpers nach dem ersten Hauptsatz der Wärmelehre?",
+          "concept_segments": [
+            {
+              "type": "text",
+              "text": "Durch Arbeit und Wärme: "
+            },
+            {
+              "type": "math",
+              "tex": "\\Delta U = W + Q",
+              "speech": "Delta U gleich W plus Q"
+            }
+          ],
+          "materiality": "material",
+          "sample_solution": "Reibung oder Zusammendrücken (Arbeit) und Wärmezufuhr erhöhen die innere Energie; beides zusammen ergibt ΔU.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "durch Arbeit und Wärme",
+              "nur durch Wärme"
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Nur durch Wärme: ΔU = Q",
+              "reason": "Auch Arbeit, etwa Reibung oder Zusammendrücken, erhöht die innere Energie."
+            },
+            {
+              "text": "Durch Arbeit mal Wärme: ΔU = W · Q",
+              "reason": "Arbeit und Wärme werden addiert, nicht multipliziert."
+            }
+          ],
+          "replaces": [
+            "01K4W9P0000000000000000J08"
           ]
         }
       ]
@@ -1643,6 +1902,9 @@
               "text": "m · Δϑ ohne c",
               "reason": "Ohne c fehlt der Stoff: Wasser braucht pro Kilogramm und Kelvin fast zehnmal so viel wie Eisen."
             }
+          ],
+          "replaces": [
+            "01K4W9P0000000000000000J04"
           ]
         },
         {
@@ -1683,6 +1945,9 @@
               "text": "Etwa 419 kJ/(kg·K)",
               "reason": "Um den Faktor 100 zu groß; in Joule sind es 4190 J/(kg·K)."
             }
+          ],
+          "replaces": [
+            "01K4W9P0000000000000000J03"
           ]
         },
         {
@@ -1815,6 +2080,9 @@
               "text": "Die Temperaturen addieren sich.",
               "reason": "Energie bleibt erhalten, nicht die Summe der Temperaturen."
             }
+          ],
+          "replaces": [
+            "01K4W9P0000000000000000J07"
           ]
         }
       ]
@@ -1890,6 +2158,9 @@
               "text": "Sie sinkt kurz ab.",
               "reason": "Das Eis hat bereits 0 °C; es kühlt nichts weiter ab."
             }
+          ],
+          "replaces": [
+            "01K4W9P0000000000000000J05"
           ]
         },
         {
@@ -1959,6 +2230,38 @@
               "text": "Dampf hat die größere Wärmekapazität.",
               "reason": "Die Wärmekapazität von Dampf ist sogar kleiner als die von Wasser."
             }
+          ]
+        },
+        {
+          "id": "01K8PHYS9RS000000000000K66",
+          "slug": "ph9-schmelz-verdampfungsenergie",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 2,
+          "source_link": "https://academy.zam-os.org/physik-realschule-9/#lesson=wl-4-aggregatzustand",
+          "question": "Wohin geht die zugeführte Energie beim Schmelzen oder Sieden, obwohl die Temperatur nicht steigt?",
+          "concept": "Sie löst die Bindungen zwischen den Teilchen (Q = q · m).",
+          "sample_solution": "q ist die spezifische Schmelz- oder Verdampfungsenergie; Erstarren und Kondensieren geben dieselbe Energie wieder ab.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "löst die Bindungen zwischen den Teilchen",
+              "geht an die Umgebung verloren"
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Sie geht als Wärme an die Umgebung verloren (Q = 0).",
+              "reason": "Sie steckt im Stoff: Erstarren und Kondensieren geben sie wieder ab."
+            },
+            {
+              "text": "Sie beschleunigt die Teilchen stärker (höhere Temperatur).",
+              "reason": "Schnellere Teilchen hieße höhere Temperatur, die aber beim Umwandeln gleich bleibt."
+            }
+          ],
+          "replaces": [
+            "01K4W9P0000000000000000J06"
           ]
         }
       ]
@@ -2063,6 +2366,9 @@
               "text": "Die Konvektion.",
               "reason": "Konvektion ist die Strömung warmer Flüssigkeit oder warmen Gases, also Stofftransport."
             }
+          ],
+          "replaces": [
+            "01K4W9P0000000000000000J09"
           ]
         },
         {
@@ -2084,6 +2390,30 @@
               "text": "Weil Eis schwerer ist als Wasser und oben festgehalten wird.",
               "reason": "Eis ist leichter (917 kg/m³) und schwimmt."
             }
+          ]
+        },
+        {
+          "id": "01K8PHYS9RS000000000000K68",
+          "slug": "ph9-waermetransport-vergleich",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "source_link": "https://academy.zam-os.org/physik-realschule-9/#lesson=wl-5-wasseranomalie",
+          "question": "Welche drei Arten des Wärmetransports gibt es, und bei welcher wandert Stoff mit?",
+          "concept": "Leitung ohne Stofftransport, Konvektion mit Stofftransport, Strahlung ohne Stoff.",
+          "sample_solution": "Leitung: Teilchen stoßen Nachbarn an. Konvektion: warme Flüssigkeit oder warmes Gas steigt auf. Strahlung: Infrarot, auch im Vakuum.",
+          "choice_distractors": [
+            {
+              "text": "Leitung mit Stofftransport, Konvektion ohne, Strahlung über Teilchenstöße.",
+              "reason": "Genau umgekehrt: Bei der Leitung bleibt der Stoff an Ort und Stelle, bei der Konvektion strömt er."
+            },
+            {
+              "text": "Alle drei brauchen einen Stoff, der die Wärme weiterträgt.",
+              "reason": "Strahlung braucht keinen Stoff; sie erreicht uns durch das Vakuum."
+            }
+          ],
+          "replaces": [
+            "01K4W9P0000000000000000J10"
           ]
         }
       ]
@@ -2525,6 +2855,9 @@
               "text": "U · I · t",
               "reason": "Das ist die elektrische Energie W; Leistung ist Energie pro Zeit."
             }
+          ],
+          "replaces": [
+            "01K4E9P0000000000000000J12"
           ]
         },
         {
@@ -2575,6 +2908,123 @@
               "text": "70 Cent.",
               "reason": "70 ct wären eine ganze Stunde; 30 Minuten ergeben 1 kWh."
             }
+          ]
+        },
+        {
+          "id": "01K8PHYS9RS000000000000K59",
+          "slug": "ph9-voltmeter-anschluss",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/physik-realschule-9/#lesson=el-3-energie-leistung",
+          "question": "Wie wird ein Voltmeter im Stromkreis angeschlossen?",
+          "concept": "Parallel zum Bauteil.",
+          "sample_solution": "Es misst die Spannung zwischen den beiden Anschlüssen des Bauteils. Das Amperemeter dagegen liegt in Reihe im Stromkreis.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "parallel zum Bauteil",
+              "in Reihe mit dem Bauteil"
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "In Reihe mit dem Bauteil.",
+              "reason": "In Reihe liegt das Amperemeter, das den Strom durch das Bauteil misst."
+            },
+            {
+              "text": "Zwischen Pluspol und Erde.",
+              "reason": "Gemessen wird zwischen den beiden Anschlüssen des Bauteils."
+            }
+          ],
+          "replaces": [
+            "01K4E9P0000000000000000J03"
+          ]
+        },
+        {
+          "id": "01K8PHYS9RS000000000000K60",
+          "slug": "ph9-spannung-definition",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/physik-realschule-9/#lesson=el-3-energie-leistung",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Wie ist die elektrische Spannung "
+            },
+            {
+              "type": "math",
+              "tex": "U",
+              "speech": "U"
+            },
+            {
+              "type": "text",
+              "text": " über Energie und Ladung definiert?"
+            }
+          ],
+          "concept_segments": [
+            {
+              "type": "math",
+              "tex": "U = \\frac{W}{Q}",
+              "speech": "U gleich W durch Q"
+            }
+          ],
+          "materiality": "material",
+          "sample_solution": "Energie pro Ladung, Einheit Volt: 1 V = 1 J/C. Die Spannung ist der „Antrieb“ des Stroms.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "U = W / Q",
+              "U = W · Q"
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Q / W",
+              "reason": "Ladung pro Energie ist keine Spannung; Spannung ist Energie pro Ladung."
+            },
+            {
+              "text": "W mal Q",
+              "reason": "Energie mal Ladung hat keine Bedeutung; die Energie wird auf die Ladung bezogen."
+            }
+          ],
+          "replaces": [
+            "01K4E9P0000000000000000J04"
+          ]
+        },
+        {
+          "id": "01K8PHYS9RS000000000000K62",
+          "slug": "ph9-elektrische-leistung-einheit",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/physik-realschule-9/#lesson=el-3-energie-leistung",
+          "question": "Welche Einheit hat die elektrische Leistung?",
+          "concept": "Watt.",
+          "sample_solution": "1 W = 1 V · A = 1 J/s. 1 kW = 1000 W.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Watt",
+              "Joule"
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Joule.",
+              "reason": "Joule ist die Einheit der Energie; Leistung ist Energie pro Zeit."
+            },
+            {
+              "text": "Volt.",
+              "reason": "Volt ist die Einheit der Spannung."
+            }
+          ],
+          "replaces": [
+            "01K4E9P0000000000000000J11"
           ]
         }
       ]
@@ -2667,6 +3117,9 @@
               "text": "U mal I",
               "reason": "U mal I ist die Leistung P."
             }
+          ],
+          "replaces": [
+            "01K4E9P0000000000000000J06"
           ]
         },
         {
@@ -2717,6 +3170,38 @@
               "text": "Er bleibt konstant wie bei jedem Leiter.",
               "reason": "Konstant bleibt er nur bei konstanter Temperatur; der Glühdraht wird heiß."
             }
+          ]
+        },
+        {
+          "id": "01K8PHYS9RS000000000000K61",
+          "slug": "ph9-ohm-verdoppelung",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 2,
+          "source_link": "https://academy.zam-os.org/physik-realschule-9/#lesson=el-4-kennlinie-ohm",
+          "question": "Ein Metalldraht behält seine Temperatur. Was geschieht mit der Stromstärke, wenn die Spannung verdoppelt wird?",
+          "concept": "Sie verdoppelt sich.",
+          "sample_solution": "Gesetz von Ohm: I ist proportional zu U, der Widerstand R = U / I bleibt gleich.",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "sie verdoppelt sich",
+              "sie halbiert sich"
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Sie halbiert sich.",
+              "reason": "Mehr Spannung treibt mehr Strom durch denselben Widerstand, nicht weniger."
+            },
+            {
+              "text": "Sie bleibt gleich.",
+              "reason": "Nur der Widerstand bleibt gleich; die Stromstärke wächst mit der Spannung."
+            }
+          ],
+          "replaces": [
+            "01K4E9P0000000000000000J05"
           ]
         }
       ]

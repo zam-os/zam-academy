@@ -28,6 +28,8 @@ Each card asks one point. `concept` is the bare answer that ZAM grades against; 
 
 The cell's atoms also carry the LehrplanPLUS binding (Realschule, Jahrgangsstufe 9, Zweig, Lernbereich), so ZAM can offer the cell to a learner at that curriculum position.
 
+This cell is the only home of Realschule 9 physics in ZAM. It replaces the four cells `de-by:realschule-9-physik-*` that zam-os/zam used to bundle, so nobody learns the same fact twice: `replaces-de-by.json` is the approved mapping of their 42 items (20 **A**: an existing card asks the same fact and carries `replaces`; 12 **B**: a new card, K59–K70, carries the fact; 10 **C**: Jahrgangsstufe 7/8 content with no successor). The test checks that `cell.json` declares exactly those `replaces`, one de-by item per card, because a learner holding a card on both ids would be a merge that ZAM refuses (ADR 2026-08-14 Decision 9).
+
 ## Develop
 
 ```bash
