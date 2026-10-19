@@ -6,6 +6,7 @@ import type { AppLocale } from "../i18n/translations";
 import {
   cloneDiagram,
   createUmlId,
+  repairStrayLocaleText,
   type UmlDiagram,
   type UmlDiagramType,
 } from "../model/uml-types";
@@ -115,9 +116,9 @@ export function loadLessonDraft(
     if (!raw) return null;
     const map = JSON.parse(raw) as Record<string, UmlDiagram>;
     const key = getDraftKey(lessonId, level, locale);
-    if (map[key]) return cloneDiagram(map[key]);
+    if (map[key]) return repairStrayLocaleText(cloneDiagram(map[key]));
     if (level === 1 && locale === "de" && map[lessonId]) {
-      return cloneDiagram(map[lessonId]);
+      return repairStrayLocaleText(cloneDiagram(map[lessonId]));
     }
     return null;
   } catch {
@@ -269,7 +270,7 @@ export function loadStudioProjects(locale: AppLocale = "de"): UmlDiagram[] {
     if (!raw) return getDefaultStudioProjects(locale);
     const parsed = JSON.parse(raw) as UmlDiagram[];
     return Array.isArray(parsed) && parsed.length > 0
-      ? parsed
+      ? parsed.map(repairStrayLocaleText)
       : getDefaultStudioProjects(locale);
   } catch {
     return getDefaultStudioProjects(locale);

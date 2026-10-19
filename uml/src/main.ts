@@ -17,6 +17,7 @@ import {
   getDiagramTypeMeta,
   getEdgeKindMeta,
   getNodeKindMeta,
+  repairStrayLocaleText,
   UML_DIAGRAM_TYPES,
   UML_EDGE_KINDS,
   UML_NODE_KINDS,
@@ -1355,6 +1356,7 @@ class UmlLearningApp {
         const text = await file.text();
         const parsed = sanitizeImportedDiagram(JSON.parse(text));
         if (!parsed) throw new Error("not a UML diagram");
+        repairStrayLocaleText(parsed);
         {
           parsed.id = `imported_${Date.now()}`;
           this.studioProjects.push(parsed);
