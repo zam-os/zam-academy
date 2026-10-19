@@ -347,7 +347,7 @@ export function showZamConsolidationModal(options: {
           <p>${
             isEn
               ? "ZAM asks short questions just before you would forget. Each card links back to the lesson where you practised it."
-              : "ZAM fragt kurz nach, kurz bevor du es vergessen würdest. Jede Karte verlinkt die Lektion, in der du es geübt hast."
+              : "ZAM fragt nach, kurz bevor du es vergessen würdest. Jede Karte verlinkt die Lektion, in der du es geübt hast."
           }</p>
         </div>
       </div>
