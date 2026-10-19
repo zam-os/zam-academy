@@ -300,8 +300,9 @@ export function showStageCelebrationModal(
 }
 
 /**
- * Explains how ZAM keeps what this app taught: the learner asks their agent in
- * ZAM to take the cell, and every card links back to its lesson here.
+ * Explains how ZAM keeps what this app taught: the learner takes the cell in
+ * ZAM Studio („Aus der ZAM Academy“) or asks their agent, and every card
+ * links back to its lesson here.
  */
 export function showZamConsolidationModal(options: {
   locale: AppLocale;
@@ -354,11 +355,12 @@ export function showZamConsolidationModal(options: {
 
       <div class="zam-action-card">
         <h3>${isEn ? "How to start in ZAM" : "So startest du in ZAM"}</h3>
-        <p>${
+        <p id="zam-studio-path">${
           isEn
-            ? `Open ZAM and tell your agent:`
-            : `Öffne ZAM und sag deinem Agenten:`
+            ? `In ZAM Studio, open <strong>Learning Content → Import → From the ZAM Academy</strong> and click <strong>Take</strong> next to “${escapeText(ZAM_UML_CELL_TITLE)}”. In the ZAM phone app, “From the ZAM Academy” is next to “Choose curriculum”.`
+            : `Öffne in ZAM Studio <strong>Lerninhalte → Importieren → Aus der ZAM Academy</strong> und klicke bei „${escapeText(ZAM_UML_CELL_TITLE)}“ auf <strong>Aufnehmen</strong>. In der ZAM-App auf dem Handy steht „Aus der ZAM Academy“ neben „Lehrplan auswählen“.`
         }</p>
+        <p>${isEn ? "Or tell your agent in ZAM:" : "Oder sag deinem Agenten in ZAM:"}</p>
         <div class="zam-code-row">
           <code id="zam-enrol-request">${escapeText(request)}</code>
           <button type="button" class="btn-secondary btn-sm" id="zam-copy-request-btn">
@@ -367,8 +369,8 @@ export function showZamConsolidationModal(options: {
         </div>
         <small class="zam-hint-note">${
           isEn
-            ? `The cell “${escapeText(ZAM_UML_CELL_TITLE)}” comes with ZAM.`
-            : `Die Zelle „${escapeText(ZAM_UML_CELL_TITLE)}“ ist in ZAM enthalten.`
+            ? `The cell comes with ZAM; “From the ZAM Academy” is there from ZAM 0.54 on.`
+            : `Die Zelle ist in ZAM enthalten; „Aus der ZAM Academy“ gibt es ab ZAM 0.54.`
         }</small>
       </div>
 
