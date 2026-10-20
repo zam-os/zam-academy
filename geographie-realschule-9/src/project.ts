@@ -92,10 +92,12 @@ export function sourceUrl(value: string): string | null {
     return null;
   }
 }
-export function validProjectDate(
-  value: string,
-  today = new Date().toISOString().slice(0, 10),
-): boolean {
+/** The learner's calendar day as YYYY-MM-DD; UTC would lag behind German dates after midnight. */
+export function localDateString(now = new Date()): string {
+  const pad = (n: number) => String(n).padStart(2, "0");
+  return `${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())}`;
+}
+export function validProjectDate(value: string, today = localDateString()): boolean {
   if (!/^\d{4}-\d{2}-\d{2}$/.test(value) || value < "1900-01-01" || value > today) return false;
   const date = new Date(`${value}T12:00:00Z`);
   return Number.isFinite(date.getTime()) && date.toISOString().slice(0, 10) === value;

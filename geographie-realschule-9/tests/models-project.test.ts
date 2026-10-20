@@ -1,4 +1,4 @@
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 import { CORE_LESSONS, LESSONS } from "../src/curriculum";
 import {
   AGE_PROFILES,
@@ -21,6 +21,7 @@ import {
 import {
   freshProject,
   type GeoProject,
+  localDateString,
   missingProjectFields,
   projectReady,
   sanitizeProject,
@@ -161,6 +162,25 @@ describe("actual local research with formal validation", () => {
     expect(validProjectDate("2024-02-29", today)).toBe(true);
     expect(validProjectDate("2026-10-20", today)).toBe(true);
     expect(validProjectDate("20.10.2026", today)).toBe(false);
+  });
+  it("uses the learner's local calendar day, not the UTC date, as today", () => {
+    // Vitest runs in Node; the app has no Node types, so reach the env through globalThis.
+    const env = (globalThis as unknown as { process: { env: Record<string, string | undefined> } })
+      .process.env;
+    const tz = env.TZ;
+    env.TZ = "Europe/Berlin";
+    vi.useFakeTimers();
+    try {
+      // 00:30 on 21 October in Germany (CEST) is still 20 October in UTC.
+      vi.setSystemTime(new Date("2026-10-20T22:30:00Z"));
+      expect(localDateString()).toBe("2026-10-21");
+      expect(validProjectDate("2026-10-21")).toBe(true);
+      expect(validProjectDate("2026-10-22")).toBe(false);
+    } finally {
+      vi.useRealTimers();
+      if (tz === undefined) delete env.TZ;
+      else env.TZ = tz;
+    }
   });
   it("accepts ordinary source URLs and drops unknown or oversized fields", () => {
     for (const url of [
