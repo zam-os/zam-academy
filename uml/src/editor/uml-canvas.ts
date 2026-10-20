@@ -1,5 +1,10 @@
 import type { AppLocale } from "../i18n/translations";
 import {
+  calculateEdgeRouting,
+  getNodeBoundaryPoint,
+  type Point,
+} from "./edge-routing";
+import {
   createDefaultEdge,
   createDefaultNode,
   getEdgeKindMeta,
@@ -27,11 +32,6 @@ export interface CanvasCallbacks {
     selectedEdgeId: string | null,
   ) => void;
   onToolResetToSelect?: () => void;
-}
-
-interface Point {
-  x: number;
-  y: number;
 }
 
 export class UmlCanvasController {
@@ -1357,25 +1357,7 @@ export class UmlCanvasController {
   }
 
   private getNodeBoundaryPoint(node: UmlNode, towards: Point): Point {
-    const cx = node.x + node.width / 2;
-    const cy = node.y + node.height / 2;
-    const dx = towards.x - cx;
-    const dy = towards.y - cy;
-
-    if (Math.abs(dx) < 0.001 && Math.abs(dy) < 0.001) {
-      return { x: cx, y: cy };
-    }
-
-    const hw = node.width / 2 + 2;
-    const hh = node.height / 2 + 2;
-    const scaleX = hw / Math.max(0.001, Math.abs(dx));
-    const scaleY = hh / Math.max(0.001, Math.abs(dy));
-    const scale = Math.min(scaleX, scaleY);
-
-    return {
-      x: cx + dx * scale,
-      y: cy + dy * scale,
-    };
+    return getNodeBoundaryPoint(node, towards);
   }
 
   private renderEdgeElement(edge: UmlEdge, index: number): SVGGElement | null {
@@ -1390,41 +1372,6 @@ export class UmlCanvasController {
     g.setAttribute("data-edge-id", edge.id);
     g.setAttribute("class", `uml-edge${isSelected ? " is-selected" : ""}`);
 
-    let p1: Point;
-    let p2: Point;
-
-    const isLifelinePair =
-      (srcNode.kind === "lifeline" || srcNode.kind === "actor-lifeline") &&
-      (tgtNode.kind === "lifeline" || tgtNode.kind === "actor-lifeline");
-
-    if (isLifelinePair) {
-      // Sequence diagram horizontal message arrow at ordered vertical slot
-      const order = edge.sequenceOrder ?? index + 1;
-      const ySlot = Math.min(
-        srcNode.y + srcNode.height - 25,
-        srcNode.y + 88 + (order - 1) * 52,
-      );
-      const srcCx = srcNode.x + srcNode.width / 2;
-      const tgtCx = tgtNode.x + tgtNode.width / 2;
-      const dir = tgtCx >= srcCx ? 1 : -1;
-      p1 = { x: srcCx + dir * 7, y: ySlot };
-      p2 = { x: tgtCx - dir * 7, y: ySlot };
-    } else {
-      const srcCenter = {
-        x: srcNode.x + srcNode.width / 2,
-        y: srcNode.y + srcNode.height / 2,
-      };
-      const tgtCenter = {
-        x: tgtNode.x + tgtNode.width / 2,
-        y: tgtNode.y + tgtNode.height / 2,
-      };
-      p1 = this.getNodeBoundaryPoint(srcNode, tgtCenter);
-      p2 = this.getNodeBoundaryPoint(tgtNode, srcCenter);
-    }
-
-    const angle = Math.atan2(p2.y - p1.y, p2.x - p1.x);
-    const deg = (angle * 180) / Math.PI;
-
     // Shorten line slightly where hollow/filled markers sit so line doesn't poke through
     const startTrim =
       meta.sourceMarker === "hollow-diamond" ||
@@ -1437,14 +1384,28 @@ export class UmlCanvasController {
         ? 14
         : 0;
 
-    const lineStart = {
-      x: p1.x + Math.cos(angle) * startTrim,
-      y: p1.y + Math.sin(angle) * startTrim,
-    };
-    const lineEnd = {
-      x: p2.x - Math.cos(angle) * endTrim,
-      y: p2.y - Math.sin(angle) * endTrim,
-    };
+    const routing = calculateEdgeRouting({
+      edge,
+      srcNode,
+      tgtNode,
+      allEdges: this.diagram.edges,
+      edgeIndex: index,
+      startTrim,
+      endTrim,
+    });
+
+    const {
+      p1,
+      p2,
+      pathD,
+      hitD,
+      degStart,
+      degEnd,
+      angleStart,
+      angleEnd,
+      midX,
+      midY,
+    } = routing;
 
     const dashAttr =
       meta.lineStyle === "dashed" ? `stroke-dasharray="7 5"` : "";
@@ -1460,7 +1421,7 @@ export class UmlCanvasController {
           ? "uml-marker-filled"
           : "uml-marker-hollow";
       sourceMarkerSvg = `
-        <polygon points="0,0 9,-6 18,0 9,6" class="${cls}" transform="translate(${p1.x}, ${p1.y}) rotate(${deg})" />
+        <polygon points="0,0 9,-6 18,0 9,6" class="${cls}" transform="translate(${p1.x}, ${p1.y}) rotate(${degStart})" />
       `;
     }
 
@@ -1468,26 +1429,24 @@ export class UmlCanvasController {
     let targetMarkerSvg = "";
     if (meta.targetMarker === "open-arrow") {
       targetMarkerSvg = `
-        <polyline points="-12,-6 0,0 -12,6" class="uml-marker-open" transform="translate(${p2.x}, ${p2.y}) rotate(${deg})" />
+        <polyline points="-12,-6 0,0 -12,6" class="uml-marker-open" transform="translate(${p2.x}, ${p2.y}) rotate(${degEnd})" />
       `;
     } else if (meta.targetMarker === "filled-triangle") {
       targetMarkerSvg = `
-        <polygon points="-14,-6 0,0 -14,6" class="uml-marker-filled" transform="translate(${p2.x}, ${p2.y}) rotate(${deg})" />
+        <polygon points="-14,-6 0,0 -14,6" class="uml-marker-filled" transform="translate(${p2.x}, ${p2.y}) rotate(${degEnd})" />
       `;
     } else if (meta.targetMarker === "hollow-triangle") {
       targetMarkerSvg = `
-        <polygon points="-15,-7 0,0 -15,7" class="uml-marker-hollow" transform="translate(${p2.x}, ${p2.y}) rotate(${deg})" />
+        <polygon points="-15,-7 0,0 -15,7" class="uml-marker-hollow" transform="translate(${p2.x}, ${p2.y}) rotate(${degEnd})" />
       `;
     } else if (meta.targetMarker === "lollipop") {
       targetMarkerSvg = `
-        <circle cx="-10" cy="0" r="6" class="uml-marker-hollow" transform="translate(${p2.x}, ${p2.y}) rotate(${deg})" />
-        <path d="M -10 -9 A 9 9 0 0 1 -10 9" class="uml-marker-open" transform="translate(${p2.x}, ${p2.y}) rotate(${deg})" />
+        <circle cx="-10" cy="0" r="6" class="uml-marker-hollow" transform="translate(${p2.x}, ${p2.y}) rotate(${degEnd})" />
+        <path d="M -10 -9 A 9 9 0 0 1 -10 9" class="uml-marker-open" transform="translate(${p2.x}, ${p2.y}) rotate(${degEnd})" />
       `;
     }
 
     // Midpoint label (stereotype + guard + label)
-    const midX = (p1.x + p2.x) / 2;
-    const midY = (p1.y + p2.y) / 2;
     const labelPieces: string[] = [];
     const stereo = edge.stereotype || meta.fixedStereotype;
     if (stereo) {
@@ -1505,9 +1464,9 @@ export class UmlCanvasController {
     if (fullLabel) {
       const boxW = Math.max(54, fullLabel.length * 7 + 16);
       labelSvg = `
-        <g transform="translate(${midX}, ${midY - 10})">
-          <rect x="${-boxW / 2}" y="-13" width="${boxW}" height="20" rx="5" class="uml-edge-label-bg" />
-          <text x="0" y="1" text-anchor="middle" class="uml-edge-label-text">${this.escapeXml(fullLabel)}</text>
+        <g transform="translate(${midX}, ${midY})">
+          <rect x="${-boxW / 2}" y="-11" width="${boxW}" height="22" rx="5" class="uml-edge-label-bg" />
+          <text x="0" y="4" text-anchor="middle" class="uml-edge-label-text">${this.escapeXml(fullLabel)}</text>
         </g>
       `;
     }
@@ -1515,20 +1474,20 @@ export class UmlCanvasController {
     // Multiplicities near endpoints
     let multSvg = "";
     if (edge.sourceMultiplicity) {
-      const mx = p1.x + Math.cos(angle) * 26 - Math.sin(angle) * 14;
-      const my = p1.y + Math.sin(angle) * 26 + Math.cos(angle) * 14;
+      const mx = p1.x + Math.cos(angleStart) * 26 - Math.sin(angleStart) * 14;
+      const my = p1.y + Math.sin(angleStart) * 26 + Math.cos(angleStart) * 14;
       multSvg += `<text x="${mx}" y="${my}" text-anchor="middle" class="uml-edge-mult">${this.escapeXml(edge.sourceMultiplicity)}</text>`;
     }
     if (edge.targetMultiplicity) {
-      const mx = p2.x - Math.cos(angle) * 26 - Math.sin(angle) * 14;
-      const my = p2.y - Math.sin(angle) * 26 + Math.cos(angle) * 14;
+      const mx = p2.x - Math.cos(angleEnd) * 26 - Math.sin(angleEnd) * 14;
+      const my = p2.y - Math.sin(angleEnd) * 26 + Math.cos(angleEnd) * 14;
       multSvg += `<text x="${mx}" y="${my}" text-anchor="middle" class="uml-edge-mult">${this.escapeXml(edge.targetMultiplicity)}</text>`;
     }
 
     g.innerHTML = `
       <!-- Wide transparent hit area for effortless clicking -->
-      <line x1="${p1.x}" y1="${p1.y}" x2="${p2.x}" y2="${p2.y}" class="uml-edge-hitarea" />
-      <line x1="${lineStart.x}" y1="${lineStart.y}" x2="${lineEnd.x}" y2="${lineEnd.y}" class="uml-edge-line" ${dashAttr} />
+      <path d="${hitD}" class="uml-edge-hitarea" fill="none" />
+      <path d="${pathD}" class="uml-edge-line" fill="none" ${dashAttr} />
       ${sourceMarkerSvg}
       ${targetMarkerSvg}
       ${labelSvg}

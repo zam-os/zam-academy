@@ -1208,11 +1208,14 @@ progress.progress-ring[value="100"] {
 }
 .uml-edge-hitarea {
   stroke: transparent;
-  stroke-width: 16px;
+  stroke-width: 18px;
+  fill: none;
+  pointer-events: stroke;
 }
 .uml-edge-line {
   stroke: var(--node-stroke);
   stroke-width: 1.8px;
+  fill: none;
 }
 .uml-edge.is-selected .uml-edge-line {
   stroke: var(--brand-primary);
