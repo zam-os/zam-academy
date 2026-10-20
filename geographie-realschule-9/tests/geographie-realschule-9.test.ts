@@ -222,8 +222,9 @@ describe("conservative migration", () => {
       new Set(oldItems.map((i) => i.id)),
     );
     expect(mapping.rows.map((r) => r.category)).toEqual(["A", "C", "C", "C", "A", "C", "A", "B"]);
-    expect(mapping.approved).toBeNull();
-    expect(mapping.authorization).toContain("steht aus");
+    expect(mapping.approved).toBe("2026-10-20");
+    expect(mapping.authorization).toContain("zam-os/zam-academy#15");
+    expect(mapping.source).toContain("Thomas in diesem Codex-Chat");
   });
   it("moves each explicit history to only one successor and retains the entire B question", () => {
     const successors = items as Array<(typeof items)[number] & { replaces?: string[] }>;
