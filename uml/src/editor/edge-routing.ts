@@ -39,6 +39,10 @@ export interface EdgeRoutingResult {
 
 /** Chord-axis distance between sibling label chips; exceeds the 22px chip height. */
 const LABEL_STAGGER = 34;
+/** Minimum on-face spacing between neighbouring anchors; exceeds the 14px marker extent. */
+const ANCHOR_GAP = 16;
+/** Slide of the first anchor per direction when transitions run both ways. */
+const OPPOSING_ANCHOR_OFFSET = 14;
 
 export interface CalculateEdgeRoutingParams {
   edge: UmlEdge;
@@ -268,73 +272,70 @@ export function calculateEdgeRouting({
     curveOffset = centeredIdx * step * 1.6;
   }
 
-  // Slide anchors directly along each exited face by a fixed pixel distance so marker
-  // separation does not shrink as nodes move further apart.
+  // Desired slide of each anchor from the ray hit, in pixels along the exited face. Fixed
+  // pixel offsets keep marker separation from shrinking as nodes move further apart.
+  const desiredOffsets = (count: number): number[] =>
+    Array.from({ length: count }, (_, i) =>
+      isOpposing
+        ? OPPOSING_ANCHOR_OFFSET + i * ANCHOR_GAP
+        : (i - (count - 1) / 2) * ANCHOR_GAP,
+    );
+
+  // Lays out every transition of the pair on this face together (forward edges slide to the
+  // normal side, reverse edges to the other), so both directions agree on the slots. The
+  // slots are shifted to stay on the face, or spread evenly when they do not fit.
   const computeFaceAnchor = (
     node: UmlNode,
     towards: Point,
     normal: Point,
-    idxInDir: number,
-    countInDir: number,
   ): Point => {
     const baseP = getNodeBoundaryPoint(node, towards);
     const hw = node.width / 2 + 2;
     const hh = node.height / 2 + 2;
-    const dx = towards.x - (node.x + node.width / 2);
-    const dy = towards.y - (node.y + node.height / 2);
-    const scaleX = hw / Math.max(0.001, Math.abs(dx));
-    const scaleY = hh / Math.max(0.001, Math.abs(dy));
+    const cx = node.x + node.width / 2;
+    const cy = node.y + node.height / 2;
+    const scaleX = hw / Math.max(0.001, Math.abs(towards.x - cx));
+    const scaleY = hh / Math.max(0.001, Math.abs(towards.y - cy));
     const isVerticalFace = scaleX <= scaleY;
 
     const availableHalfExtent = isVerticalFace
       ? Math.max(12, node.height / 2 - 4)
       : Math.max(12, node.width / 2 - 4);
+    const faceCenter = isVerticalFace ? cy : cx;
+    const lo = faceCenter - availableHalfExtent;
+    const hi = faceCenter + availableHalfExtent;
+    const base = isVerticalFace ? baseP.y : baseP.x;
+    const dir = (isVerticalFace ? normal.y : normal.x) < 0 ? -1 : 1;
 
-    let offset: number;
-    if (isOpposing) {
-      if (countInDir <= 1) {
-        offset = Math.min(availableHalfExtent - 2, 14);
-      } else {
-        const step = Math.min(
-          16,
-          Math.max(14, (availableHalfExtent - 8) / (countInDir - 1)),
-        );
-        offset = 8 + idxInDir * step;
-      }
-    } else {
-      const maxStep = (2 * availableHalfExtent) / Math.max(1, countInDir);
-      const step = Math.min(16, maxStep);
-      const centeredIdx = idxInDir - (countInDir - 1) / 2;
-      offset = centeredIdx * step;
-    }
-
-    const clampedShift = Math.max(
-      -availableHalfExtent,
-      Math.min(availableHalfExtent, offset),
+    const slots = [
+      ...desiredOffsets(forwardEdges.length).map((o, i) => ({
+        pos: base + dir * o,
+        mine: i === forwardIdx,
+      })),
+      ...desiredOffsets(reverseEdges.length).map((o) => ({
+        pos: base - dir * o,
+        mine: false,
+      })),
+    ].sort((a, b) => a.pos - b.pos);
+    const rank = Math.max(
+      0,
+      slots.findIndex((s) => s.mine),
     );
+    const first = slots[0].pos;
+    const last = slots[slots.length - 1].pos;
 
-    if (isVerticalFace) {
-      const dirY = normal.y < 0 ? -1 : 1;
-      return { x: baseP.x, y: baseP.y + dirY * clampedShift };
+    let pos: number;
+    if (last - first > hi - lo) {
+      pos = lo + (rank * (hi - lo)) / Math.max(1, slots.length - 1);
+    } else {
+      pos = slots[rank].pos + Math.max(lo - first, Math.min(0, hi - last));
     }
-    const dirX = normal.x < 0 ? -1 : 1;
-    return { x: baseP.x + dirX * clampedShift, y: baseP.y };
+
+    return isVerticalFace ? { x: baseP.x, y: pos } : { x: pos, y: baseP.y };
   };
 
-  const p1 = computeFaceAnchor(
-    srcNode,
-    tgtCenter,
-    n,
-    forwardIdx,
-    forwardEdges.length,
-  );
-  const p2 = computeFaceAnchor(
-    tgtNode,
-    srcCenter,
-    n,
-    forwardIdx,
-    forwardEdges.length,
-  );
+  const p1 = computeFaceAnchor(srcNode, tgtCenter, n);
+  const p2 = computeFaceAnchor(tgtNode, srcCenter, n);
 
   const chordMid: Point = {
     x: (p1.x + p2.x) / 2,

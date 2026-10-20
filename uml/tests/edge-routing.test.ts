@@ -250,6 +250,86 @@ describe("UML Edge Routing & Multi-Transition Separation", () => {
     expect(rDown.midX - rUp.midX).toBeGreaterThan(60);
   });
 
+  // getNodeBoundaryPoint expands every node by 2px
+  const isOnBoundary = (node: UmlNode, p: { x: number; y: number }) => {
+    const left = node.x - 2;
+    const right = node.x + node.width + 2;
+    const top = node.y - 2;
+    const bottom = node.y + node.height + 2;
+    const eps = 0.01;
+    const inside =
+      p.x >= left - eps &&
+      p.x <= right + eps &&
+      p.y >= top - eps &&
+      p.y <= bottom + eps;
+    const onFace =
+      Math.abs(p.x - left) < eps ||
+      Math.abs(p.x - right) < eps ||
+      Math.abs(p.y - top) < eps ||
+      Math.abs(p.y - bottom) < eps;
+    return inside && onFace;
+  };
+
+  it.each([
+    ["below-right", { x: 100, y: 180 }, { x: 380, y: 320 }],
+    ["above-right", { x: 100, y: 200 }, { x: 315, y: 80 }],
+  ])(
+    "keeps anchors on the node boundary for diagonally offset states (%s)",
+    (_, posA, posB) => {
+      const a = createMockState("a", "A", posA.x, posA.y, 175, 96);
+      const b = createMockState("b", "B", posB.x, posB.y, 175, 96);
+      const edges = [
+        createMockEdge("f1", "a", "b"),
+        createMockEdge("f2", "a", "b"),
+        createMockEdge("r1", "b", "a"),
+      ];
+
+      for (const edge of edges) {
+        const forward = edge.sourceId === "a";
+        const r = calculateEdgeRouting({
+          edge,
+          srcNode: forward ? a : b,
+          tgtNode: forward ? b : a,
+          allEdges: edges,
+        });
+        expect(isOnBoundary(forward ? a : b, r.p1)).toBe(true);
+        expect(isOnBoundary(forward ? b : a, r.p2)).toBe(true);
+      }
+    },
+  );
+
+  it("spreads four same-direction edges plus a return across the face without stacking", () => {
+    const a = createMockState("a", "A", 100, 200, 175, 96);
+    const b = createMockState("b", "B", 600, 200, 175, 96);
+    const edges = [
+      createMockEdge("f1", "a", "b"),
+      createMockEdge("f2", "a", "b"),
+      createMockEdge("f3", "a", "b"),
+      createMockEdge("f4", "a", "b"),
+      createMockEdge("r1", "b", "a"),
+    ];
+
+    const anchorsOnA: number[] = [];
+    for (const edge of edges) {
+      const forward = edge.sourceId === "a";
+      const r = calculateEdgeRouting({
+        edge,
+        srcNode: forward ? a : b,
+        tgtNode: forward ? b : a,
+        allEdges: edges,
+      });
+      const onA = forward ? r.p1 : r.p2;
+      expect(isOnBoundary(a, onA)).toBe(true);
+      anchorsOnA.push(onA.y);
+    }
+
+    anchorsOnA.sort((m, n) => m - n);
+    for (let i = 1; i < anchorsOnA.length; i++) {
+      // Open arrows are 12px tall, hollow triangles 14px
+      expect(anchorsOnA[i] - anchorsOnA[i - 1]).toBeGreaterThanOrEqual(14);
+    }
+  });
+
   // Mirrors the label chip geometry in UmlCanvasController.renderEdgeElement
   const chipsOverlap = (
     a: { midX: number; midY: number },
