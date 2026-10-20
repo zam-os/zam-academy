@@ -521,4 +521,83 @@ describe("UML Edge Routing & Multi-Transition Separation", () => {
     expect(r.lineStart.x).toBeGreaterThan(r.p1.x);
     expect(r.lineEnd.x).toBeLessThan(r.p2.x);
   });
+
+  it.each([
+    ["short labels", { x: 380, y: 320 }, ["go", "wait", "back"]],
+    [
+      "long labels",
+      { x: 380, y: 320 },
+      [
+        "ereignis [Bedingung] / aktion()",
+        "abbruch [Timeout] / reset()",
+        "zurück / undo()",
+      ],
+    ],
+    [
+      "shallow diagonal",
+      { x: 480, y: 260 },
+      [
+        "ereignis [Bedingung] / aktion()",
+        "abbruch [Timeout] / reset()",
+        "zurück / undo()",
+      ],
+    ],
+  ])(
+    "keeps label chips apart for two forwards plus a return on a diagonal (%s)",
+    (_, posB, labels) => {
+      const a = createMockState("a", "A", 100, 180, 175, 96);
+      const b = createMockState("b", "B", posB.x, posB.y, 175, 96);
+      const edges = [
+        createMockEdge("f1", "a", "b", labels[0]),
+        createMockEdge("f2", "a", "b", labels[1]),
+        createMockEdge("r1", "b", "a", labels[2]),
+      ];
+
+      const routes = edges.map((edge) => {
+        const forward = edge.sourceId === "a";
+        return calculateEdgeRouting({
+          edge,
+          srcNode: forward ? a : b,
+          tgtNode: forward ? b : a,
+          allEdges: edges,
+        });
+      });
+
+      for (let i = 0; i < routes.length; i++) {
+        for (let j = i + 1; j < routes.length; j++) {
+          expect(
+            chipsOverlap(routes[i], labels[i], routes[j], labels[j]),
+          ).toBe(false);
+        }
+      }
+    },
+  );
+
+  it("keeps anchors on fork/join bars whose face is shorter than the corner margin", () => {
+    // Side by side, the 140x16 bars are exited through their 20px vertical faces
+    const left: UmlNode = {
+      ...createMockState("left", "left", 100, 200, 140, 16),
+      kind: "fork-join",
+    };
+    const right: UmlNode = {
+      ...createMockState("right", "right", 500, 200, 140, 16),
+      kind: "fork-join",
+    };
+    const edges = [
+      createMockEdge("lr", "left", "right"),
+      createMockEdge("rl", "right", "left"),
+    ];
+
+    for (const edge of edges) {
+      const ltr = edge.sourceId === "left";
+      const r = calculateEdgeRouting({
+        edge,
+        srcNode: ltr ? left : right,
+        tgtNode: ltr ? right : left,
+        allEdges: edges,
+      });
+      expect(isOnBoundary(ltr ? left : right, r.p1)).toBe(true);
+      expect(isOnBoundary(ltr ? right : left, r.p2)).toBe(true);
+    }
+  });
 });

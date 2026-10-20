@@ -2,6 +2,7 @@ import type { AppLocale } from "../i18n/translations";
 import {
   calculateEdgeRouting,
   getNodeBoundaryPoint,
+  labelChipWidth,
   type Point,
 } from "./edge-routing";
 import {
@@ -1360,6 +1361,22 @@ export class UmlCanvasController {
     return getNodeBoundaryPoint(node, towards);
   }
 
+  /** Stereotype, guard and label of an edge as one chip text, or "" when it has none. */
+  private edgeLabelText(edge: UmlEdge): string {
+    const labelPieces: string[] = [];
+    const stereo = edge.stereotype || UML_EDGE_KINDS[edge.kind].fixedStereotype;
+    if (stereo) {
+      labelPieces.push(`«${stereo}»`);
+    }
+    if (edge.guard) {
+      labelPieces.push(`[${edge.guard}]`);
+    }
+    if (edge.label) {
+      labelPieces.push(edge.label);
+    }
+    return labelPieces.join(" ");
+  }
+
   private renderEdgeElement(edge: UmlEdge, index: number): SVGGElement | null {
     const srcNode = this.diagram.nodes.find((n) => n.id === edge.sourceId);
     const tgtNode = this.diagram.nodes.find((n) => n.id === edge.targetId);
@@ -1392,6 +1409,10 @@ export class UmlCanvasController {
       edgeIndex: index,
       startTrim,
       endTrim,
+      labelWidthOf: (e) => {
+        const text = this.edgeLabelText(e);
+        return text ? labelChipWidth(text) : 0;
+      },
     });
 
     const {
@@ -1447,22 +1468,11 @@ export class UmlCanvasController {
     }
 
     // Midpoint label (stereotype + guard + label)
-    const labelPieces: string[] = [];
-    const stereo = edge.stereotype || meta.fixedStereotype;
-    if (stereo) {
-      labelPieces.push(`«${stereo}»`);
-    }
-    if (edge.guard) {
-      labelPieces.push(`[${edge.guard}]`);
-    }
-    if (edge.label) {
-      labelPieces.push(edge.label);
-    }
-    const fullLabel = labelPieces.join(" ");
+    const fullLabel = this.edgeLabelText(edge);
 
     let labelSvg = "";
     if (fullLabel) {
-      const boxW = Math.max(54, fullLabel.length * 7 + 16);
+      const boxW = labelChipWidth(fullLabel);
       labelSvg = `
         <g transform="translate(${midX}, ${midY})">
           <rect x="${-boxW / 2}" y="-11" width="${boxW}" height="22" rx="5" class="uml-edge-label-bg" />
