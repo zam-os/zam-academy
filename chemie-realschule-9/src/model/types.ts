@@ -131,7 +131,7 @@ export interface LabDefinition {
   actions?: LabAction[];
 }
 
-/** A number the learner types: a coordinate, a length, a probability. */
+/** A number the learner types: a density, a charge or a particle count. */
 export interface NumberField {
   kind: "number";
   /** HTML before the input, e.g. "x =" or "c =". */
@@ -146,8 +146,8 @@ export interface NumberField {
   /** Absolute tolerance in the answer's unit, when rounding conventions differ. */
   absTolerance?: number;
   /**
-   * Typical wrong results and what to say about them, e.g. the value a
-   * calculator in RAD mode gives, or c² instead of c.
+   * Typical wrong results and what to say about them, e.g. volume divided
+   * by mass instead of mass divided by volume.
    */
   slips?: Array<{ value: number; hint: string }>;
 }

@@ -3,7 +3,7 @@
   "source_repository": "zam-os/zam",
   "source_commit": "26d083eefe7fae5a128d2a04cc6897410b50079f",
   "authorization": "Thomas requested implementation with explicit preservation of existing learning evidence on 2026-10-20. This file records the implemented content mapping; it does not claim a separate item-by-item owner approval.",
-  "policy": "A: same atomic retrieval. B: original whole multi-part prompt and answer retained in a dedicated successor; no history is spread across its component cards. C: corrected scope or misconception; no replaces and no mastery transfer. The old card and its review evidence remain on the old id.",
+  "policy": "A: same atomic retrieval. B: original whole multi-part prompt and answer retained in a dedicated successor; no history is spread across its component cards. C: corrected scope or misconception; no replaces and no mastery transfer. The cell declares these old ids in retired_items: their cards and review evidence remain on the old ids, excluded from active reviews.",
   "sources": [
     {
       "file": "tests/fixtures/de-by-realschule-9-chemie-atombau-pse-kvt.json",
@@ -144,9 +144,11 @@
       "de_by_cell": "de-by:realschule-9-chemie-chemische-bindung",
       "de_by_id": "01K4C9B0000000000000000J07",
       "de_by_question": "Welche zwischenmolekulare Wechselwirkung ist die stärkste und erklärt den außergewöhnlich hohen Siedepunkt von flüssigem Wasser?",
-      "category": "A",
-      "academy_slug": "c9-zwischenmolekulare-kraefte-check",
-      "note": "The same atomic question is preserved; no additional retrieval demand or changed scientific scope."
+      "category": "C",
+      "note": "Die alte Frage verlangt eine stärkste Wechselwirkung, die neue fragt nur nach einem wesentlichen Beitrag zum Siedeverhalten von Wasser. Der Gültigkeitsanspruch ist verändert; wegen dieser unsicheren Entsprechung wird vorsichtshalber kein Lernstand übertragen.",
+      "related_new_slugs": [
+        "c9-zwischenmolekulare-kraefte-check"
+      ]
     },
     {
       "de_by_cell": "de-by:realschule-9-chemie-chemische-bindung",

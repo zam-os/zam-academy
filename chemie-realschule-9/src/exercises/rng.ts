@@ -1,3 +1,5 @@
+import { decimalPlaces, round } from "./format";
+
 /**
  * Deterministic random numbers (mulberry32), so a task can be reproduced
  * from its seed, a simulation from its stored seed, and tests can sweep many
@@ -36,8 +38,7 @@ export function createRng(seed: number): Rng {
     stepped(min, max, step) {
       const steps = Math.floor((max - min) / step + 1e-9);
       const value = min + step * Math.floor(next() * (steps + 1));
-      const decimals = Math.max(0, -Math.floor(Math.log10(step) + 1e-9));
-      return Number(value.toFixed(decimals));
+      return round(value, Math.max(decimalPlaces(min), decimalPlaces(step)));
     },
     pick(items) {
       return items[Math.floor(next() * items.length)];

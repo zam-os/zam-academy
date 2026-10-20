@@ -56,7 +56,7 @@ writeFileSync(linuxShPath, linuxSh, "utf8");
 chmodSync(linuxShPath, 0o755);
 
 const readmeTxt = `========================================================================
-ZAM ACADEMY · MATHEMATIK 9 REALSCHULE (LehrplanPLUS Bayern)
+ZAM ACADEMY · CHEMIE 9 REALSCHULE (LehrplanPLUS Bayern)
 ========================================================================
 
 SOFORT-START OHNE INSTALLATION

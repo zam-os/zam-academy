@@ -84,7 +84,17 @@ export const STAGE_STOFFE: Stage = {
                   : `Eine Materialprobe verdrängt ${volume} cm³ Wasser und wiegt ${mass} g. Welche Dichte ergibt sich?`,
               given: level === 1 ? [`Masse: ${mass} g`, `Volumen: ${volume} cm³`] : [],
               formulaHint: "Dichte = Masse / Volumen",
-              fields: [numberField("Dichte", density, "g/cm³", 1)],
+              fields: [
+                {
+                  ...numberField("Dichte", density, "g/cm³", 1),
+                  slips: [
+                    {
+                      value: volume / mass,
+                      hint: "Prüfe den Quotienten: Die Dichte ist Masse geteilt durch Volumen, nicht umgekehrt.",
+                    },
+                  ],
+                },
+              ],
               steps: [
                 "Beziehe die Masse auf eine Volumeneinheit.",
                 `${mass} g / ${volume} cm³`,

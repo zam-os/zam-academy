@@ -896,7 +896,8 @@ class ChemieApp {
           count,
         );
       }, 400);
-    } else if (
+    }
+    if (
       isLessonComplete(this.progress, lesson) &&
       !this.progress.celebratedLessonIds.includes(lesson.id)
     ) {

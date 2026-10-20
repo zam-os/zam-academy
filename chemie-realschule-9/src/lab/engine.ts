@@ -1,4 +1,5 @@
 import type { LabDefinition, LabGoal, LabParam, LabValues, ReadoutValues } from "../model/types";
+import { decimalPlaces, round } from "../exercises/format";
 
 /** The values a lab starts with. */
 export function defaultLabValues(lab: LabDefinition): LabValues {
@@ -15,9 +16,14 @@ export function clampParam(param: LabParam, raw: number): number {
   if (!Number.isFinite(raw)) return param.value;
   if (param.type === "state") return raw;
   const clamped = Math.min(param.max, Math.max(param.min, raw));
-  const steps = Math.round((clamped - param.min) / param.step);
-  const decimals = Math.max(0, -Math.floor(Math.log10(param.step) + 1e-9));
-  return Number((param.min + steps * param.step).toFixed(decimals));
+  const steps = Math.min(
+    Math.floor((param.max - param.min) / param.step + 1e-9),
+    Math.round((clamped - param.min) / param.step),
+  );
+  return round(
+    param.min + steps * param.step,
+    Math.max(decimalPlaces(param.min), decimalPlaces(param.step)),
+  );
 }
 
 /**

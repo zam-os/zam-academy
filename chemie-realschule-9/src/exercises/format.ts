@@ -54,6 +54,12 @@ export function round(value: number, digits = 2): number {
   return Number(value.toFixed(digits));
 }
 
+/** Decimal places in a finite grid step or origin, including scientific notation. */
+export function decimalPlaces(value: number): number {
+  const [coefficient, exponent = "0"] = String(value).split("e");
+  return Math.max(0, (coefficient.split(".")[1]?.length ?? 0) - Number(exponent));
+}
+
 export function gcd(a: number, b: number): number {
   let x = Math.abs(Math.round(a));
   let y = Math.abs(Math.round(b));

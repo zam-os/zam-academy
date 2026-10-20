@@ -24,6 +24,7 @@ import { quizOrder } from "../src/exercises/quiz-order";
 import { EXPERIMENTS, experimentWitness } from "../src/lab/definitions";
 import {
   applyAction,
+  clampParam,
   computeReadouts,
   defaultLabValues,
   enumerateLabGrid,
@@ -252,6 +253,27 @@ describe("Chemie models: scientific edge cases", () => {
 });
 
 describe("Every lab can be completed by interacting with the model", () => {
+  it("preserves quarter steps and decimal origins without leaving the allowed range", () => {
+    const param = {
+      type: "range" as const,
+      key: "x",
+      label: "x",
+      unit: "",
+      min: 0.05,
+      max: 1,
+      step: 0.25,
+      value: 0.05,
+    };
+    expect(clampParam(param, -1)).toBe(0.05);
+    expect(clampParam(param, 0.31)).toBe(0.3);
+    expect(clampParam(param, 0.54)).toBe(0.55);
+    expect(clampParam(param, 10)).toBe(0.8);
+    const rng = createRng(42);
+    const values = new Set(Array.from({ length: 100 }, () => rng.stepped(0.05, 1, 0.25)));
+    expect(values).toEqual(new Set([0.05, 0.3, 0.55, 0.8]));
+    expect(createRng(1).stepped(2.5e-7, 2.5e-7, 2.5e-8)).toBe(2.5e-7);
+  });
+
   for (const lesson of ALL_LESSONS)
     it(lesson.id, () => {
       const lab = lesson.lab;
@@ -308,6 +330,14 @@ describe("Every task generator over varied seeds and both levels", () => {
               checkTask(task, answers).status,
               `${lesson.id} ${generator.id} ${seed} ${level}`,
             ).toBe("correct");
+            const withUnits = task.fields.map((field, index) =>
+              field.kind === "number" && field.unit
+                ? `${answers[index]} ${field.unit}`
+                : answers[index],
+            );
+            expect(checkTask(task, withUnits).status, `${lesson.id}: answers with units`).toBe(
+              "correct",
+            );
             expect(
               checkTask(
                 task,
@@ -340,6 +370,44 @@ describe("Every task generator over varied seeds and both levels", () => {
     const inexact = [...answers];
     inexact[0] = String(Number(inexact[0]) + 0.1);
     expect(checkTask(task, inexact).status).toBe("wrong");
+  });
+
+  it.each([
+    ["3 g/cm³", "g/cm³", 3],
+    ["3g/cm3", "g/cm³", 3],
+    ["3 g/cm^3", "g/cm³", 3],
+    ["3/2 g/cm³", "g/cm³", 1.5],
+    ["ΔE = −200 kJ / mol", "kJ/mol", -200],
+    ["4/3π kJ/mol", "kJ/mol", (4 * Math.PI) / 3],
+    ["60 %", "%", 60],
+    ["60 %", "", 0.6],
+  ])("reads %s with the expected unit %s", (raw, unit, expected) => {
+    expect(parseNumber(raw, unit)).toBeCloseTo(expected);
+  });
+
+  it.each([
+    ["3 g/cm²", "g/cm³"],
+    ["3 mg/cm³", "g/cm³"],
+    ["200 J/mol", "kJ/mol"],
+    ["3//2 g/cm³", "g/cm³"],
+    ["1/0 kJ/mol", "kJ/mol"],
+    ["g/cm³", "g/cm³"],
+  ])("does not silently accept a wrong unit or malformed value: %s", (raw, unit) => {
+    expect(parseNumber(raw, unit)).toBeNull();
+  });
+
+  it("gives the density-specific hint when volume and mass were inverted", () => {
+    const generator = must(findLessonById("ch-stoffeigenschaften")).lesson.exercises[0];
+    const task = must(
+      Array.from({ length: 20 }, (_, seed) => generator.make(createRng(seed), 1)).find(
+        (candidate) => candidate.fields[0].kind === "number" && candidate.fields[0].answer > 1,
+      ),
+    );
+    const field = task.fields[0];
+    if (field.kind !== "number") throw new Error("Expected density field");
+    const result = checkTask(task, [String(1 / field.answer)]);
+    expect(result.status).toBe("wrong");
+    expect(wrongAnswerHint(task, result)).toContain("nicht umgekehrt");
   });
 });
 
@@ -460,6 +528,7 @@ describe("The cell is the only card source, and every card leads to a taught les
         expect(item.choice_distractors).toHaveLength(2);
         for (const distractor of item.choice_distractors ?? [])
           expect(distractor.reason).toBeTruthy();
+        expect(item.fast_check?.options[1]).toBe(item.choice_distractors?.[0].text);
       }
     }
   });
@@ -478,14 +547,14 @@ describe("Explicit history mapping, never similarity matching or partial mastery
     expect(mapping.rows.map((row) => row.de_by_id).sort()).toEqual(
       originals.map((item) => item.id).sort(),
     );
-    expect(mapping.rows.filter((row) => row.category === "A")).toHaveLength(7);
+    expect(mapping.rows.filter((row) => row.category === "A")).toHaveLength(6);
     expect(mapping.rows.filter((row) => row.category === "B")).toHaveLength(5);
-    expect(mapping.rows.filter((row) => row.category === "C")).toHaveLength(4);
+    expect(mapping.rows.filter((row) => row.category === "C")).toHaveLength(5);
   });
 
-  it("declares only the twelve deliberate one-to-one replacements", () => {
+  it("declares only the eleven deliberate one-to-one replacements", () => {
     const declared = items.flatMap((item) => item.replaces ?? []);
-    expect(new Set(declared).size).toBe(12);
+    expect(new Set(declared).size).toBe(11);
     expect(declared.sort()).toEqual(
       mapping.rows
         .filter((row) => row.category !== "C")
@@ -500,6 +569,19 @@ describe("Explicit history mapping, never similarity matching or partial mastery
         for (const slug of row.related_new_slugs ?? []) expect(bySlug.has(slug)).toBe(true);
       } else expect(bySlug.get(row.academy_slug ?? "")?.replaces).toEqual([row.de_by_id]);
     }
+  });
+
+  it("retires exactly the five corrected or uncertain old items without transferring their history", () => {
+    const retired = cell.retired_items.map((item) => item.id).sort();
+    expect(retired).toHaveLength(5);
+    expect(retired).toEqual(
+      mapping.rows
+        .filter((row) => row.category === "C")
+        .map((row) => row.de_by_id)
+        .sort(),
+    );
+    for (const item of cell.retired_items) expect(item.reason).toBeTruthy();
+    expect(must(bySlug.get("c9-zwischenmolekulare-kraefte-check")).replaces).toBeUndefined();
   });
 
   it("preserves the entire demand of each old synthesis question", () => {

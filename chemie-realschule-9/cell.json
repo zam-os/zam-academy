@@ -1,7 +1,7 @@
 {
   "$schema": "https://zam.app/schemas/v1/kvt-tile.json",
   "tile_id": "zam-academy:chemie-realschule-9",
-  "version": "2026.10.1",
+  "version": "2026.10.2",
   "title": "Chemie 9 Realschule (ZAM Academy)",
   "description": "Chemie 9 nach LehrplanPLUS Bayern: getrennte Lernpfade für Zweig I und II/III, digitale Modelle und Aufgaben. Jede Karte führt zur passenden Lektion zurück.",
   "publisher": "ZAM Academy",
@@ -116,8 +116,8 @@
               "reason": "Diese Aussage verwechselt den Zusammenhang. Beobachtung beschreibt Messwerte; Deutung erklärt sie mit einem Modell."
             },
             {
-              "text": "Beobachtung ist eine Vermutung; Deutung ist jede beliebige sichtbare Farbe.",
-              "reason": "Diese Aussage verwechselt den Zusammenhang. Beobachtung beschreibt Messwerte; Deutung erklärt sie mit einem Modell."
+              "text": "Beobachtung und Deutung meinen dasselbe; beide beschreiben nur das Gesehene.",
+              "reason": "Beobachtung und Deutung werden oft vermischt: Die Deutung erklärt das Beobachtete mit einem Modell."
             }
           ]
         }
@@ -257,18 +257,18 @@
             "type": "binary_choice",
             "options": [
               "Abstand und Beweglichkeit der Wassermoleküle ändern sich.",
-              "Die Wassermoleküle werden in neue Atomsorten umgewandelt."
+              "Die Wassermoleküle zerfallen in Wasserstoff und Sauerstoff."
             ],
             "correct_index": 0
           },
           "choice_distractors": [
             {
-              "text": "Die Wassermoleküle werden in neue Atomsorten umgewandelt.",
-              "reason": "Wasser bleibt Wasser; Anordnung und Bewegung ändern sich."
+              "text": "Die Wassermoleküle zerfallen in Wasserstoff und Sauerstoff.",
+              "reason": "Häufige Fehlvorstellung: Beim Sieden zerfällt Wasser. Die Moleküle bleiben aber erhalten, nur ihr Abstand ändert sich."
             },
             {
-              "text": "Die Atome jedes Moleküls verlieren dabei ihre Kernladung.",
-              "reason": "Wasser bleibt Wasser; Anordnung und Bewegung ändern sich."
+              "text": "Die einzelnen Wassermoleküle dehnen sich aus und werden größer.",
+              "reason": "Die Teilchen selbst werden nicht größer; größer wird der Abstand zwischen ihnen."
             }
           ]
         },
@@ -296,8 +296,8 @@
               "reason": "Diese Aussage verwechselt den Zusammenhang. Nein, die Teilchenart bleibt beim Zustandswechsel erhalten."
             },
             {
-              "text": "Ja, die Moleküle zerfallen dabei in einzelne ungeladene Atomkerne.",
-              "reason": "Diese Aussage verwechselt den Zusammenhang. Nein, die Teilchenart bleibt beim Zustandswechsel erhalten."
+              "text": "Ja, die Blasen im kochenden Wasser bestehen aus Wasserstoff und Sauerstoff.",
+              "reason": "Die Blasen sind Wasserdampf; Wasser wird erst durch Elektrolyse in Wasserstoff und Sauerstoff zerlegt."
             }
           ]
         }
@@ -357,8 +357,8 @@
               "reason": "Filtration trennt ungelöste Feststoffe, nicht gelöste Ionen."
             },
             {
-              "text": "Ja, Filterpapier verdampft das Wasser ohne Wärmezufuhr.",
-              "reason": "Filtration trennt ungelöste Feststoffe, nicht gelöste Ionen."
+              "text": "Ja, ein doppelt gefaltetes Filterpapier hält das gelöste Salz zurück.",
+              "reason": "Gelöste Ionen sind viel kleiner als jede Pore im Filterpapier; Faltung ändert daran nichts."
             }
           ]
         },
@@ -376,18 +376,18 @@
             "type": "binary_choice",
             "options": [
               "Die unterschiedliche Löslichkeit der Bestandteile.",
-              "Die unterschiedliche magnetische Kernladung der Stoffe."
+              "Die unterschiedliche Siedetemperatur der Bestandteile."
             ],
             "correct_index": 0
           },
           "choice_distractors": [
             {
-              "text": "Die unterschiedliche magnetische Kernladung der Stoffe.",
-              "reason": "Diese Aussage verwechselt den Zusammenhang. Die unterschiedliche Löslichkeit der Bestandteile."
+              "text": "Die unterschiedliche Siedetemperatur der Bestandteile.",
+              "reason": "Die Siedetemperatur nutzt die Destillation."
             },
             {
-              "text": "Die unterschiedliche Anzahl von Atomkernen im Filterpapier.",
-              "reason": "Diese Aussage verwechselt den Zusammenhang. Die unterschiedliche Löslichkeit der Bestandteile."
+              "text": "Die unterschiedliche Dichte der Bestandteile.",
+              "reason": "Die Dichte nutzen Sedimentieren und Dekantieren."
             }
           ]
         }
@@ -656,8 +656,8 @@
               "reason": "Diese Aussage verwechselt den Zusammenhang. Andere Indizes würden einen anderen Stoff beschreiben."
             },
             {
-              "text": "Die Indizes dürfen nur gemeinsam mit Elementsymbolen verschwinden.",
-              "reason": "Diese Aussage verwechselt den Zusammenhang. Andere Indizes würden einen anderen Stoff beschreiben."
+              "text": "Weil man Gleichungen nur auf der Seite der Ausgangsstoffe ausgleichen darf.",
+              "reason": "Ausgeglichen wird auf beiden Seiten; der Grund ist, dass andere Indizes einen anderen Stoff beschreiben."
             }
           ]
         }
@@ -746,8 +746,8 @@
               "reason": "Diese Aussage verwechselt den Zusammenhang. Nein, er verändert den Weg und dessen Aktivierungsenergie."
             },
             {
-              "text": "Ja, er hebt den Energieerhaltungssatz auf und erzeugt Zusatzenergie.",
-              "reason": "Diese Aussage verwechselt den Zusammenhang. Nein, er verändert den Weg und dessen Aktivierungsenergie."
+              "text": "Ja, er wird bei der Reaktion verbraucht und liefert dabei Energie.",
+              "reason": "Ein Katalysator liegt nach der Reaktion unverändert vor und liefert keine Energie."
             }
           ]
         }
@@ -836,8 +836,8 @@
               "reason": "Diese Aussage verwechselt den Zusammenhang. Durch die jeweils unterschiedliche molare Masse."
             },
             {
-              "text": "Durch die Zahl der Elektronen, die stets aus jedem mol entweichen.",
-              "reason": "Diese Aussage verwechselt den Zusammenhang. Durch die jeweils unterschiedliche molare Masse."
+              "text": "Durch die unterschiedliche Zahl der Teilchen in einem mol.",
+              "reason": "Ein mol enthält bei jedem Stoff gleich viele Teilchen; verschieden ist ihre Masse."
             }
           ]
         },
@@ -1072,8 +1072,8 @@
               "reason": "Diese Aussage verwechselt den Zusammenhang. Die Neutronenzahl bei gleicher Protonenzahl."
             },
             {
-              "text": "Die Kernladungszahl bei gleicher Elektronenzahl.",
-              "reason": "Diese Aussage verwechselt den Zusammenhang. Die Neutronenzahl bei gleicher Protonenzahl."
+              "text": "Die Elektronenzahl bei gleicher Protonenzahl.",
+              "reason": "Eine andere Elektronenzahl bei gleicher Protonenzahl kennzeichnet ein Ion, kein Isotop."
             }
           ]
         },
@@ -1170,18 +1170,18 @@
             "type": "binary_choice",
             "options": [
               "Die Elektronen der äußersten besetzten Energiestufe.",
-              "Die Protonen der äußersten unbesetzten Energiestufe."
+              "Die Elektronen der innersten besetzten Energiestufe."
             ],
             "correct_index": 0
           },
           "choice_distractors": [
             {
-              "text": "Die Protonen der äußersten unbesetzten Energiestufe.",
-              "reason": "Diese Aussage verwechselt den Zusammenhang. Die Elektronen der äußersten besetzten Energiestufe."
+              "text": "Die Elektronen der innersten besetzten Energiestufe.",
+              "reason": "Valenzelektronen liegen auf der äußersten besetzten Stufe, nicht auf der innersten."
             },
             {
-              "text": "Die Neutronen zwischen Atomkern und innerster Elektronenschale.",
-              "reason": "Diese Aussage verwechselt den Zusammenhang. Die Elektronen der äußersten besetzten Energiestufe."
+              "text": "Alle Elektronen eines Atoms zusammen.",
+              "reason": "Nur die Elektronen der äußersten Stufe zählen als Valenzelektronen."
             }
           ]
         },
@@ -1500,18 +1500,18 @@
             "type": "binary_choice",
             "options": [
               "Verschobene Gitterebenen bringen gleichnamige Ladungen nebeneinander.",
-              "Verschobene Gitterebenen verwandeln sämtliche Ionen in neutrale Atome."
+              "Die Ionenbindung ist schwach und bricht schon bei geringer Kraft."
             ],
             "correct_index": 0
           },
           "choice_distractors": [
             {
-              "text": "Verschobene Gitterebenen verwandeln sämtliche Ionen in neutrale Atome.",
-              "reason": "Diese Aussage verwechselt den Zusammenhang. Verschobene Gitterebenen bringen gleichnamige Ladungen nebeneinander."
+              "text": "Die Ionenbindung ist schwach und bricht schon bei geringer Kraft.",
+              "reason": "Die Ionenbindung ist stark (hohe Schmelztemperatur); spröde wird der Kristall durch abstoßende gleichnamige Ladungen."
             },
             {
-              "text": "Verschobene Gitterebenen lösen alle Protonen aus ihren Atomkernen heraus.",
-              "reason": "Diese Aussage verwechselt den Zusammenhang. Verschobene Gitterebenen bringen gleichnamige Ladungen nebeneinander."
+              "text": "Die Ionen sind nur durch schwache zwischenmolekulare Kräfte verbunden.",
+              "reason": "Ein Salzkristall besteht aus Ionen mit Ionenbindung, nicht aus Molekülen."
             }
           ]
         },
@@ -1618,18 +1618,18 @@
             "type": "binary_choice",
             "options": [
               "Delokalisierte Elektronen.",
-              "Bewegliche Metallatomkerne."
+              "Wandernde Metallkationen."
             ],
             "correct_index": 0
           },
           "choice_distractors": [
             {
-              "text": "Bewegliche Metallatomkerne.",
-              "reason": "Diese Aussage verwechselt den Zusammenhang. Delokalisierte Elektronen."
+              "text": "Wandernde Metallkationen.",
+              "reason": "Die Metallkationen bleiben an ihren Gitterplätzen; wandernde Ionen leiten erst in Schmelzen und Lösungen."
             },
             {
-              "text": "Frei wandernde Neutronen.",
-              "reason": "Diese Aussage verwechselt den Zusammenhang. Delokalisierte Elektronen."
+              "text": "Positive Ladungsträger (Protonen).",
+              "reason": "Protonen sitzen fest im Atomkern; im Metall wandern Elektronen."
             }
           ]
         }
@@ -1721,18 +1721,18 @@
             "type": "binary_choice",
             "options": [
               "Ein gemeinsam genutztes Elektronenpaar.",
-              "Ein einzeln im Kern gespeichertes Proton."
+              "Ein einzelnes Elektron, das beide Atome teilen."
             ],
             "correct_index": 0
           },
           "choice_distractors": [
             {
-              "text": "Ein einzeln im Kern gespeichertes Proton.",
-              "reason": "Diese Aussage verwechselt den Zusammenhang. Ein gemeinsam genutztes Elektronenpaar."
+              "text": "Ein einzelnes Elektron, das beide Atome teilen.",
+              "reason": "Ein Bindungsstrich steht für zwei Elektronen, ein bindendes Paar."
             },
             {
-              "text": "Ein zusätzlich entstandenes Neutronenpaar.",
-              "reason": "Diese Aussage verwechselt den Zusammenhang. Ein gemeinsam genutztes Elektronenpaar."
+              "text": "Eine Ionenbindung zwischen zwei geladenen Atomen.",
+              "reason": "Ein Bindungsstrich zeigt eine Elektronenpaarbindung, keine Ionenbindung."
             }
           ]
         },
@@ -1807,18 +1807,18 @@
             "type": "binary_choice",
             "options": [
               "Zwei freie Paare am O beeinflussen die räumliche Anordnung.",
-              "Die beiden Wasserstoffkerne müssen auf einer Geraden liegen."
+              "Die beiden Wasserstoffatome ziehen sich gegenseitig an."
             ],
             "correct_index": 0
           },
           "choice_distractors": [
             {
-              "text": "Die beiden Wasserstoffkerne müssen auf einer Geraden liegen.",
-              "reason": "Die vier Elektronenbereiche liegen ungefähr tetraedrisch; die Atome bilden einen Winkel."
+              "text": "Die beiden Wasserstoffatome ziehen sich gegenseitig an.",
+              "reason": "Den Winkel bestimmen die vier Elektronenbereiche am Sauerstoff, nicht eine Anziehung zwischen den Wasserstoffatomen."
             },
             {
-              "text": "Das Sauerstoffatom besitzt dabei keine Valenzelektronen mehr.",
-              "reason": "Die vier Elektronenbereiche liegen ungefähr tetraedrisch; die Atome bilden einen Winkel."
+              "text": "Eine Doppelbindung zwischen O und H erzwingt einen Knick.",
+              "reason": "Wasser hat zwei Einfachbindungen; der Knick kommt von den freien Elektronenpaaren."
             }
           ]
         },
@@ -1939,18 +1939,18 @@
             "type": "binary_choice",
             "options": [
               "Die gleich starken Bindungsdipole heben sich räumlich auf.",
-              "Die Sauerstoffatome besitzen darin überhaupt keine Elektronen."
+              "Weil Doppelbindungen grundsätzlich unpolar sind."
             ],
             "correct_index": 0
           },
           "choice_distractors": [
             {
-              "text": "Die Sauerstoffatome besitzen darin überhaupt keine Elektronen.",
-              "reason": "Diese Aussage verwechselt den Zusammenhang. Die gleich starken Bindungsdipole heben sich räumlich auf."
+              "text": "Weil Doppelbindungen grundsätzlich unpolar sind.",
+              "reason": "Die C=O-Bindung ist polar; nur der lineare Bau hebt die beiden Bindungsdipole auf."
             },
             {
-              "text": "Die Kohlenstoffatome tragen stets vollständige Ladungen von null.",
-              "reason": "Diese Aussage verwechselt den Zusammenhang. Die gleich starken Bindungsdipole heben sich räumlich auf."
+              "text": "Weil CO₂ ein Gas ist und Gase keine Dipole bilden.",
+              "reason": "Auch gasförmige Moleküle können Dipole sein, zum Beispiel HCl."
             }
           ]
         }
@@ -2023,9 +2023,6 @@
               "text": "Ionenbindungen zwischen neutralen Wassermolekülen.",
               "reason": "Wasserstoffbrücken wirken zwischen den Molekülen, die O–H-Bindungen innerhalb des Moleküls bleiben erhalten."
             }
-          ],
-          "replaces": [
-            "01K4C9B0000000000000000J07"
           ]
         },
         {
@@ -2152,8 +2149,8 @@
               "reason": "Diese Aussage verwechselt den Zusammenhang. Die unterschiedliche Verknüpfung ihrer Atome."
             },
             {
-              "text": "Die unterschiedliche Ladung des Kerns bei derselben Atomsorte.",
-              "reason": "Diese Aussage verwechselt den Zusammenhang. Die unterschiedliche Verknüpfung ihrer Atome."
+              "text": "Die unterschiedliche räumliche Drehung desselben Moleküls.",
+              "reason": "Ein gedrehtes oder anders gezeichnetes Molekül bleibt dasselbe Molekül; Isomere sind anders verknüpft."
             }
           ]
         }
@@ -2252,8 +2249,8 @@
               "reason": "Diese Aussage verwechselt den Zusammenhang. Das Molekül besitzt hydrophile und hydrophobe Bereiche."
             },
             {
-              "text": "Das Molekül besteht ausschließlich aus positiv geladenen Atomkernen.",
-              "reason": "Diese Aussage verwechselt den Zusammenhang. Das Molekül besitzt hydrophile und hydrophobe Bereiche."
+              "text": "Das Molekül löst sich weder in Wasser noch in Fett.",
+              "reason": "Amphiphil heißt, beides zu haben: einen wasserfreundlichen und einen fettfreundlichen Teil."
             }
           ]
         }
@@ -2403,8 +2400,8 @@
               "reason": "Aufnahme bedeutet Reduktion; Abgabe bedeutet Oxidation."
             },
             {
-              "text": "Ein Teilchen nimmt Neutronen auf.",
-              "reason": "Aufnahme bedeutet Reduktion; Abgabe bedeutet Oxidation."
+              "text": "Ein Teilchen nimmt Sauerstoff auf.",
+              "reason": "Sauerstoffaufnahme war die alte Beschreibung der Oxidation; Reduktion heißt Elektronenaufnahme."
             }
           ]
         },
@@ -2432,8 +2429,8 @@
               "reason": "Diese Aussage verwechselt den Zusammenhang. Er wird selbst oxidiert und wirkt als Reduktionsmittel."
             },
             {
-              "text": "Er verliert Protonen und wird dadurch zum neutralen Edelgas.",
-              "reason": "Diese Aussage verwechselt den Zusammenhang. Er wird selbst oxidiert und wirkt als Reduktionsmittel."
+              "text": "Er wird selbst oxidiert und wirkt als Oxidationsmittel.",
+              "reason": "Wer selbst oxidiert wird, reduziert den Partner und ist damit das Reduktionsmittel."
             }
           ]
         }
@@ -2512,18 +2509,18 @@
             "type": "binary_choice",
             "options": [
               "Der Gesamtladungszahl des Teilchens.",
-              "Der Gesamtzahl der Neutronen im Teilchen."
+              "Immer null, auch bei geladenen Ionen."
             ],
             "correct_index": 0
           },
           "choice_distractors": [
             {
-              "text": "Der Gesamtzahl der Neutronen im Teilchen.",
-              "reason": "Diese Aussage verwechselt den Zusammenhang. Der Gesamtladungszahl des Teilchens."
+              "text": "Immer null, auch bei geladenen Ionen.",
+              "reason": "Die Summe ist nur bei neutralen Teilchen null; bei Ionen ergibt sie die Ionenladung."
             },
             {
-              "text": "Der Zahl aller besetzten Elektronenschalen.",
-              "reason": "Diese Aussage verwechselt den Zusammenhang. Der Gesamtladungszahl des Teilchens."
+              "text": "Der Zahl der Valenzelektronen des Teilchens.",
+              "reason": "Die Summe der Oxidationszahlen ergibt die Ladung, nicht die Zahl der Valenzelektronen."
             }
           ]
         }
@@ -2573,18 +2570,18 @@
             "type": "binary_choice",
             "options": [
               "Damit gleich viele Elektronen abgegeben und aufgenommen werden.",
-              "Damit auf einer Seite mehr Elektronen als auf der anderen stehen."
+              "Damit Oxidation und Reduktion gleich viele Teilchen umsetzen."
             ],
             "correct_index": 0
           },
           "choice_distractors": [
             {
-              "text": "Damit auf einer Seite mehr Elektronen als auf der anderen stehen.",
-              "reason": "Die Elektronen werden übertragen, nicht vernichtet."
+              "text": "Damit Oxidation und Reduktion gleich viele Teilchen umsetzen.",
+              "reason": "Gleich sein muss die Zahl der übertragenen Elektronen, nicht die Zahl der umgesetzten Teilchen."
             },
             {
-              "text": "Damit sich bei der Reaktion die Zahl der Atomkerne verändern darf.",
-              "reason": "Die Elektronen werden übertragen, nicht vernichtet."
+              "text": "Damit die Zahl der Atome jeder Sorte ausgeglichen ist.",
+              "reason": "Das Vervielfachen gleicht die Elektronen aus; die Atomzahlen stimmen in jeder Teilgleichung schon vorher."
             }
           ]
         },
@@ -2602,18 +2599,18 @@
             "type": "binary_choice",
             "options": [
               "Die Atomzahlen und die Gesamtladungen.",
-              "Die Zahl der Moleküle und die sichtbaren Farben."
+              "Die Zahl der Moleküle und die Atomzahlen."
             ],
             "correct_index": 0
           },
           "choice_distractors": [
             {
-              "text": "Die Zahl der Moleküle und die sichtbaren Farben.",
-              "reason": "Diese Aussage verwechselt den Zusammenhang. Die Atomzahlen und die Gesamtladungen."
+              "text": "Die Zahl der Moleküle und die Atomzahlen.",
+              "reason": "Die Zahl der Moleküle darf sich ändern; erhalten bleiben Atomzahlen und Ladungen."
             },
             {
-              "text": "Die Anzahl der Protonenabgaben und die Temperaturwerte.",
-              "reason": "Diese Aussage verwechselt den Zusammenhang. Die Atomzahlen und die Gesamtladungen."
+              "text": "Die Massen der Stoffe und die Zahl der Moleküle.",
+              "reason": "Die Massenerhaltung folgt aus den Atomzahlen; die Zahl der Moleküle muss nicht gleich bleiben."
             }
           ]
         }
@@ -2702,8 +2699,8 @@
               "reason": "Diese Aussage verwechselt den Zusammenhang. Die negativ polarisierte Sauerstoffseite."
             },
             {
-              "text": "Eine vollständig ungeladene metallische Kernseite.",
-              "reason": "Diese Aussage verwechselt den Zusammenhang. Die negativ polarisierte Sauerstoffseite."
+              "text": "Keine bestimmte Seite; die Moleküle ordnen sich zufällig an.",
+              "reason": "Wasser ist ein Dipol; zum Kation richtet sich die negativ polarisierte Sauerstoffseite aus."
             }
           ]
         }
@@ -2763,8 +2760,8 @@
               "reason": "Die freiwillige Redoxreaktion treibt den äußeren Strom."
             },
             {
-              "text": "Kernenergie wird in neue chemische Elemente umgewandelt.",
-              "reason": "Die freiwillige Redoxreaktion treibt den äußeren Strom."
+              "text": "Thermische Energie wird in elektrische Energie umgewandelt.",
+              "reason": "Eine galvanische Zelle wandelt chemische Energie in elektrische um, nicht Wärme."
             }
           ]
         },
@@ -2782,14 +2779,14 @@
             "type": "binary_choice",
             "options": [
               "Die für die Entladung geeigneten Stoffanteile sind umgesetzt.",
-              "Sein Gehäuse enthält danach keine Stoffe und keine Atome mehr."
+              "Die gespeicherte Elektrizität ist verbraucht, die Stoffe sind unverändert."
             ],
             "correct_index": 0
           },
           "choice_distractors": [
             {
-              "text": "Sein Gehäuse enthält danach keine Stoffe und keine Atome mehr.",
-              "reason": "Diese Aussage verwechselt den Zusammenhang. Die für die Entladung geeigneten Stoffanteile sind umgesetzt."
+              "text": "Die gespeicherte Elektrizität ist verbraucht, die Stoffe sind unverändert.",
+              "reason": "Ein Akku speichert keine Elektrizität; beim Entladen werden die Elektrodenstoffe umgesetzt."
             },
             {
               "text": "Alle Elektronen haben das Gerät verlassen und fehlen vollständig.",
@@ -2962,18 +2959,18 @@
             "type": "binary_choice",
             "options": [
               "Das unedlere Schutzmetall wird selbst oxidiert.",
-              "Das geschützte Eisen nimmt alle Kerne der Opferanode auf."
+              "Das Schutzmetall wird reduziert und löst sich dabei auf."
             ],
             "correct_index": 0
           },
           "choice_distractors": [
             {
-              "text": "Das geschützte Eisen nimmt alle Kerne der Opferanode auf.",
-              "reason": "Diese Aussage verwechselt den Zusammenhang. Das unedlere Schutzmetall wird selbst oxidiert."
+              "text": "Das Schutzmetall wird reduziert und löst sich dabei auf.",
+              "reason": "Das unedlere Metall gibt Elektronen ab und wird oxidiert, nicht reduziert."
             },
             {
-              "text": "Das Schutzmetall verdampft ohne jede chemische Veränderung.",
-              "reason": "Diese Aussage verwechselt den Zusammenhang. Das unedlere Schutzmetall wird selbst oxidiert."
+              "text": "Das Wasser trägt das Metall rein mechanisch ab.",
+              "reason": "Die Opferanode löst sich durch Oxidation auf, nicht durch Abrieb."
             }
           ]
         }
@@ -3023,14 +3020,14 @@
             "type": "binary_choice",
             "options": [
               "Weil seine Herstellung zunächst Energie benötigt.",
-              "Weil seine Atomkerne im Betrieb vollständig zerfallen."
+              "Weil bei seiner Verbrennung Kohlenstoffdioxid entsteht."
             ],
             "correct_index": 0
           },
           "choice_distractors": [
             {
-              "text": "Weil seine Atomkerne im Betrieb vollständig zerfallen.",
-              "reason": "Wasserstoff transportiert zuvor bereitgestellte Energie."
+              "text": "Weil bei seiner Verbrennung Kohlenstoffdioxid entsteht.",
+              "reason": "Wasserstoff enthält keinen Kohlenstoff; es entsteht Wasser. Der Grund ist der Energieaufwand bei der Herstellung."
             },
             {
               "text": "Weil seine Moleküle keine chemische Energie tragen können.",
@@ -3052,18 +3049,18 @@
             "type": "binary_choice",
             "options": [
               "Die Herkunft der zu seiner Herstellung eingesetzten Energie.",
-              "Die Farbe des Gehäuses der später eingesetzten Brennstoffzelle."
+              "Das Kohlenstoffdioxid, das in der Brennstoffzelle entsteht."
             ],
             "correct_index": 0
           },
           "choice_distractors": [
             {
-              "text": "Die Farbe des Gehäuses der später eingesetzten Brennstoffzelle.",
-              "reason": "Diese Aussage verwechselt den Zusammenhang. Die Herkunft der zu seiner Herstellung eingesetzten Energie."
+              "text": "Das Kohlenstoffdioxid, das in der Brennstoffzelle entsteht.",
+              "reason": "In der Brennstoffzelle entsteht nur Wasser; CO₂ kann bei der Herstellung des Wasserstoffs anfallen."
             },
             {
-              "text": "Die Tatsache, dass jedes Wasserstoffatom dabei spurlos verschwindet.",
-              "reason": "Diese Aussage verwechselt den Zusammenhang. Die Herkunft der zu seiner Herstellung eingesetzten Energie."
+              "text": "Die Wassermenge, die als Abfallprodukt die Umwelt belastet.",
+              "reason": "Das entstehende Wasser belastet die Umwelt nicht; entscheidend ist die Energiequelle der Herstellung."
             }
           ]
         }
@@ -3152,8 +3149,8 @@
               "reason": "Diese Aussage verwechselt den Zusammenhang. Ja, beide Ionenarten liegen in gleicher Konzentration vor."
             },
             {
-              "text": "Nein, neutrale Lösungen enthalten ausschließlich ungeladene Atomkerne.",
-              "reason": "Diese Aussage verwechselt den Zusammenhang. Ja, beide Ionenarten liegen in gleicher Konzentration vor."
+              "text": "Nein, sie enthält nur Oxoniumionen, aber keine Hydroxidionen.",
+              "reason": "In neutralem Wasser liegen beide Ionenarten in gleicher, kleiner Konzentration vor."
             }
           ]
         }
@@ -3232,14 +3229,14 @@
             "type": "binary_choice",
             "options": [
               "Die Aufnahme eines Protons.",
-              "Die Aufnahme eines Neutrons."
+              "Die Abgabe eines Protons."
             ],
             "correct_index": 0
           },
           "choice_distractors": [
             {
-              "text": "Die Aufnahme eines Neutrons.",
-              "reason": "Diese Aussage verwechselt den Zusammenhang. Die Aufnahme eines Protons."
+              "text": "Die Abgabe eines Protons.",
+              "reason": "Ein Proton abgeben kennzeichnet die Säure; die Base nimmt es auf."
             },
             {
               "text": "Die Abgabe eines Elektrons.",
@@ -3428,6 +3425,28 @@
           ]
         }
       ]
+    }
+  ],
+  "retired_items": [
+    {
+      "id": "01K4C9A0000000000000000J07",
+      "reason": "Die alte Aussage ordnet jeder Hauptgruppe ausnahmslos die Valenzelektronenzahl zu. Helium in Hauptgruppe VIII besitzt aber zwei Elektronen; die korrigierte Frage ist kein sicher gleicher Abruf."
+    },
+    {
+      "id": "01K4C9A0000000000000000J08",
+      "reason": "Die alte Sammelantwort enthält dieselbe nicht eingeschränkte Hauptgruppenregel. Für den korrigierten Umfang einschließlich der Helium-Ausnahme wird keine Beherrschung übertragen."
+    },
+    {
+      "id": "01K4C9B0000000000000000J06",
+      "reason": "Starre EN-Grenzen werden im alten Inhalt als universelle Klassifikation dargestellt. Die fachlich korrigierte neue Frage hat einen anderen Gültigkeitsbereich."
+    },
+    {
+      "id": "01K4C9B0000000000000000J07",
+      "reason": "Die alte Frage verlangt eine stärkste Wechselwirkung, die neue fragt nur nach einem wesentlichen Beitrag zum Siedeverhalten von Wasser. Der Gültigkeitsanspruch ist verändert; wegen dieser unsicheren Entsprechung wird vorsichtshalber kein Lernstand übertragen."
+    },
+    {
+      "id": "01K4C9B0000000000000000J08",
+      "reason": "Eine universelle Stärkerangfolge der zwischenmolekularen Kräfte ist ohne Molekülgröße und Kontaktfläche nicht gültig. Die korrigierte Aussage erhält einen frischen Lernstand."
     }
   ]
 }

@@ -104,8 +104,24 @@ try {
     for (const row of mapping.rows) {
       const token = await zam.getTokenById(db, row.de_by_id);
       assert.ok(token, "an old token must never be deleted");
-      assert.equal(Boolean(token.deprecated_at), row.category !== "C");
+      assert.ok(token.deprecated_at, "superseded and corrected old items must leave active use");
+      if (row.category === "C") assert.equal(token.editorial_state, "deprecated");
     }
+    const correctedIds = mapping.rows
+      .filter((row) => row.category === "C")
+      .map((row) => row.de_by_id);
+    const queue = await zam.buildReviewQueue(db, {
+      userId,
+      tokenIds: correctedIds,
+      now: new Date(Math.max(...after.cards.map((card) => Date.parse(card.due_at))) + 86_400_000),
+      buryNewSiblings: false,
+      buryReviewSiblings: false,
+    });
+    assert.equal(
+      queue.items.length,
+      0,
+      "retired old questions must never return to active reviews",
+    );
     await zam.installKvtTile(db, cell);
     assert.deepEqual(
       await snapshot(db),
@@ -113,7 +129,7 @@ try {
       "a repeated install must preserve every schedule and review",
     );
     console.log(
-      "ok   Chemie: 12 complete histories moved, 4 corrected items untouched, 32 review events preserved; repeated install is idempotent",
+      "ok   Chemie: 11 complete histories moved, 5 old histories untouched and retired from active review, 32 review events preserved; repeated install is idempotent",
     );
   } finally {
     await db.close();
@@ -133,7 +149,7 @@ try {
     await reviewedCard(collision, bySlug.get(row.academy_slug).id, userId, 3);
     const before = await snapshot(collision);
     await assert.rejects(
-      () => zam.installKvtTile(collision, { ...cell, version: "2026.10.2" }),
+      () => zam.installKvtTile(collision, { ...cell, version: "2026.10.3" }),
       /holds a card on both|merge/i,
     );
     assert.deepEqual(

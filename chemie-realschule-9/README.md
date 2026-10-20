@@ -79,18 +79,21 @@ erhalten und erhalten keine künstlichen Antwortoptionen.
 `de-by:realschule-9-chemie-atombau-pse` und
 `de-by:realschule-9-chemie-chemische-bindung` ausdrücklich zu:
 
-- **7 A:** Derselbe einzelne Abruf erhält eine Nachfolgekarte mit genau
+- **6 A:** Derselbe einzelne Abruf erhält eine Nachfolgekarte mit genau
   einer `replaces`-Deklaration.
 - **5 B:** Die gesamte alte mehrteilige Frage **und** Antwort bleiben
   unverändert in einer eigenen Synthesekarte erhalten. Ihr Lernstand geht
   ausschließlich dorthin; die neuen Einzelkarten erhalten keine anteilig
   abgeleitete Beherrschung.
-- **4 C:** Die beiden uneingeschränkten Hauptgruppenregeln, die starren
+- **5 C:** Die beiden uneingeschränkten Hauptgruppenregeln, die starren
   EN-Grenzen und die universelle Kräftestärkerangfolge benötigen fachliche
-  Korrektur. Sie haben **keine** `replaces`-Deklaration. Die ursprünglichen
-  Karten und ihre Review-Evidenz bleiben auf den alten IDs; die korrigierten
-  neuen Fragen beginnen frisch. Zugehörige neue Slugs sind zur Nachprüfung
-  angegeben und bewirken selbst keine Migration.
+  Korrektur. Beim Wasser-Abruf ist die geänderte Prämisse von „stärkste“ zu
+  „wesentlicher Beitrag“ keine sicher gleiche Abrufanforderung. Diese fünf
+  Items haben **keine** `replaces`-Deklaration. `retired_items` nimmt sie
+  aus dem aktiven Review-Plan; ihre Karten, FSRS-Zustände und Review-Evidenz
+  bleiben unverändert auf den alten IDs. Die neuen Fragen beginnen frisch.
+  Zugehörige neue Slugs sind zur Nachprüfung angegeben und bewirken selbst
+  keine Migration.
 
 Die Quellkopien in `tests/fixtures/` sind ausschließlich Testdaten mit
 aufgezeichnetem Quellcommit und SHA-256, keine zweite Kartenquelle der App.
@@ -99,10 +102,11 @@ behauptet keine zusätzliche Einzelabnahme durch den Eigentümer.
 
 `scripts/validate-migration.mjs` prüft mit dem veröffentlichten `zam-core`
 0.54.0 die vollständigen Kartenzeilen und Review-Ereignisse vor/nach der
-Übernahme: zwölf Historien wechseln nur ihre Token-ID, vier bleiben
-unverändert, Wiederholung ist idempotent. Hält eine Person alte und neue
-Karte bereits gleichzeitig, verweigert der Kernel die automatische
-Zusammenführung und erhält beide Historien.
+Übernahme: elf Historien wechseln nur ihre Token-ID, fünf bleiben
+unverändert und werden aus aktiven Reviews ausgeschlossen. Alle 32
+Review-Ereignisse bleiben erhalten; Wiederholung ist idempotent. Hält eine
+Person alte und neue Karte bereits gleichzeitig, verweigert der Kernel die
+automatische Zusammenführung und erhält beide Historien.
 
 Nach der ersten Veröffentlichung bleiben Item-IDs, Slugs und zitierte
 Lektions-IDs stabil; Änderungen erhöhen die Zellversion.
@@ -134,8 +138,12 @@ der Pages-Workflow App, `cell.json` und Katalogeintrag gemeinsam.
 beiden bisherigen Chemie-Zellen aus dem aktiven Bundle nehmen, ihre
 Testkopien für die Migration behalten und den Curriculum-Positionstest
 auf die Academy-Zelle umstellen. Gebündelte Academy-Kopien werden nicht
-von Hand bearbeitet. Dieses Paket verändert keine persönliche Bibliothek
-und veröffentlicht selbst nichts.
+von Hand bearbeitet. Das LehrplanPLUS-Manifest muss dabei Realschule 9
+Chemie für beide Zweige samt Lernbereichen anbieten; die bisherigen
+Chemie-8-Einträge reichen dafür nicht. Die Stilllegung der fünf Altkarten
+ist bereits in dieser Zelle deklariert und wird vom veröffentlichten
+`zam-core` 0.54.0 beim Installieren angewandt. Dieses Paket verändert beim
+Entwickeln keine persönliche Bibliothek und veröffentlicht selbst nichts.
 
 ## Quellen
 

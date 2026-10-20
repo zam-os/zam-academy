@@ -50,25 +50,33 @@ function simpleCandidates(text: string): number[] {
  * Every reading of what a learner typed into a number field: a decimal
  * number, a fraction ("3/5", "-7/2"), a multiple of π ("12π", "π/2"), or a
  * percentage ("60 %", read as 0,6 unless the field's unit is %). A leading
- * "x =" and a trailing unit are ignored. Empty when there is no number.
+ * "x =" and the field's expected unit are ignored. Empty when there is no
+ * number or a different unit was supplied; no unit conversion is inferred.
  */
 export function parseNumberCandidates(raw: string, unit = ""): number[] {
   let text = raw
+    .normalize("NFKC")
     .trim()
     .replace(/[−–]/g, "-")
     .replace(/\s+/g, "")
+    .replace(/\^([23])/g, "$1")
     .replace(/pi/gi, "π")
     .replace(/(\d)[·*]π/g, "$1π");
   if (!text) return [];
   // "x=3" or "c=7,2": keep what follows the last "=".
   if (text.includes("=")) text = text.slice(text.lastIndexOf("=") + 1);
+  const expectedUnit = unit
+    .normalize("NFKC")
+    .replace(/\s+/g, "")
+    .replace(/\^([23])/g, "$1");
+  if (expectedUnit && expectedUnit !== "%" && text.endsWith(expectedUnit)) {
+    text = text.slice(0, -expectedUnit.length);
+  }
   let percent = false;
   if (text.endsWith("%")) {
     percent = unit !== "%";
     text = text.slice(0, -1);
   }
-  // Drop a trailing unit such as "cm²" or "m³", but keep digits, signs, π and "/".
-  text = text.replace(/[^0-9.,+\-π/]+$/u, "");
   if (!text) return [];
 
   let values: number[];
@@ -199,6 +207,13 @@ export function wrongAnswerHint(task: ExerciseTask, result: TaskResult): string 
     if (field.kind === "choice")
       return `Prüfe die Auswahl bei „${plain(field.label)}“. Vergleiche die Teilchenrolle oder die Beobachtung mit dem Modell.`;
     const value = result.fields[index].parsed;
+    for (const slip of field.slips ?? []) {
+      if (
+        value !== null &&
+        Math.abs(value - slip.value) <= toleranceOf({ ...field, answer: slip.value })
+      )
+        return slip.hint;
+    }
     if (value !== null && field.answer !== 0 && Math.abs(value + field.answer) < 1e-8)
       return "Prüfe das Vorzeichen: Ladung und Energieaufnahme werden mit Vorzeichen bilanziert.";
   }
