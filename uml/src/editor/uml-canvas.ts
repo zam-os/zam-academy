@@ -1,5 +1,15 @@
 import type { AppLocale } from "../i18n/translations";
 import {
+  BALL_RADIUS,
+  dockedInterfaces,
+  dockInterface,
+  SOCKET_RADIUS,
+  snapToSide,
+  stickSide,
+  stickSides,
+  type StickSide,
+} from "./interface-docking";
+import {
   calculateEdgeRouting,
   getNodeBoundaryPoint,
   labelChipWidth,
@@ -64,6 +74,8 @@ export class UmlCanvasController {
   private panX = 0;
   private panY = 0;
   private snapToGrid = true;
+  /** Stick side of every lollipop and socket, resolved once per render */
+  private stickSideById = new Map<string, StickSide>();
 
   /** Undo / Redo stacks */
   private undoStack: string[] = [];
@@ -77,12 +89,16 @@ export class UmlCanvasController {
         startPointer: Point;
         startNodePos: Point;
         hasMoved: boolean;
+        /** Docked lollipops and sockets with their start position, moved along */
+        followers: { id: string; start: Point }[];
       }
     | {
         type: "resize-node";
         nodeId: string;
         startPointer: Point;
         startSize: { width: number; height: number };
+        /** Docked lollipops and sockets, kept flush against their side */
+        followers: { id: string; side: StickSide }[];
       }
     | {
         type: "connect-drag";
@@ -262,6 +278,7 @@ export class UmlCanvasController {
     // Ensure class/state height fits attributes
     this.autoAdjustNodeDimensions(newNode);
     this.diagram.nodes.push(newNode);
+    dockInterface(newNode, this.diagram);
     this.diagram.updatedAt = new Date().toISOString();
     this.selectedNodeId = newNode.id;
     this.selectedEdgeId = null;
@@ -513,6 +530,7 @@ export class UmlCanvasController {
       );
       this.autoAdjustNodeDimensions(newNode);
       this.diagram.nodes.push(newNode);
+      dockInterface(newNode, this.diagram);
       this.diagram.updatedAt = new Date().toISOString();
       this.selectedNodeId = newNode.id;
       this.selectedEdgeId = null;
@@ -539,6 +557,10 @@ export class UmlCanvasController {
             nodeId: node.id,
             startPointer: pt,
             startSize: { width: node.width, height: node.height },
+            followers: dockedInterfaces(node, this.diagram).map((f) => ({
+              id: f.node.id,
+              side: f.side,
+            })),
           };
         }
         return;
@@ -577,6 +599,7 @@ export class UmlCanvasController {
         );
         this.autoAdjustNodeDimensions(newNode);
         this.diagram.nodes.push(newNode);
+        dockInterface(newNode, this.diagram);
         this.diagram.updatedAt = new Date().toISOString();
         this.selectedNodeId = newNode.id;
         this.selectedEdgeId = null;
@@ -631,6 +654,10 @@ export class UmlCanvasController {
             startPointer: pt,
             startNodePos: { x: node.x, y: node.y },
             hasMoved: false,
+            followers: dockedInterfaces(node, this.diagram).map((f) => ({
+              id: f.node.id,
+              start: { x: f.node.x, y: f.node.y },
+            })),
           };
           this.render();
           this.callbacks.onSelectionChange(node.id, null);
@@ -700,6 +727,15 @@ export class UmlCanvasController {
               10,
               this.snap(this.dragState.startNodePos.y + dy),
             );
+            const movedX = node.x - this.dragState.startNodePos.x;
+            const movedY = node.y - this.dragState.startNodePos.y;
+            for (const f of this.dragState.followers) {
+              const follower = this.diagram.nodes.find((n) => n.id === f.id);
+              if (follower) {
+                follower.x = f.start.x + movedX;
+                follower.y = f.start.y + movedY;
+              }
+            }
             this.render();
           }
         }
@@ -718,6 +754,10 @@ export class UmlCanvasController {
             60,
             this.snap(this.dragState.startSize.height + dy),
           );
+          for (const f of this.dragState.followers) {
+            const follower = this.diagram.nodes.find((n) => n.id === f.id);
+            if (follower) snapToSide(follower, node, f.side);
+          }
           this.render();
         }
       } else if (this.dragState.type === "connect-drag") {
@@ -738,9 +778,17 @@ export class UmlCanvasController {
       this.dragState = null;
 
       if (state.type === "move-node" && state.hasMoved) {
+        const moved = this.diagram.nodes.find((n) => n.id === state.nodeId);
+        if (moved && dockInterface(moved, this.diagram)) {
+          this.render();
+        }
         this.diagram.updatedAt = new Date().toISOString();
         this.callbacks.onDiagramChange(this.diagram, "Position verschoben");
       } else if (state.type === "resize-node") {
+        const resized = this.diagram.nodes.find((n) => n.id === state.nodeId);
+        if (resized && dockInterface(resized, this.diagram)) {
+          this.render();
+        }
         this.diagram.updatedAt = new Date().toISOString();
         this.callbacks.onDiagramChange(this.diagram, "Größe angepasst");
       } else if (state.type === "connect-drag") {
@@ -974,6 +1022,10 @@ export class UmlCanvasController {
 
     for (const node of this.diagram.nodes) {
       this.autoAdjustNodeDimensions(node);
+    }
+    this.stickSideById = stickSides(this.diagram);
+
+    for (const node of this.diagram.nodes) {
       const isContainer = Boolean(UML_NODE_KINDS[node.kind]?.isContainer);
       const g = this.renderNodeElement(node);
       if (isContainer) {
@@ -992,6 +1044,48 @@ export class UmlCanvasController {
 
     // 4. Render interactive overlay (ports, temporary connection line)
     this.renderOverlay();
+  }
+
+  /**
+   * Lollipop (provided) or socket (required) symbol whose stick reaches the box side that
+   * faces its component, so a docked symbol touches the component's border.
+   */
+  private renderBallOrSocket(node: UmlNode): string {
+    const w = node.width;
+    const h = node.height;
+    const side =
+      this.stickSideById.get(node.id) ?? stickSide(node, this.diagram);
+    const isBall = node.kind === "provided-interface";
+    const r = isBall ? BALL_RADIUS : SOCKET_RADIUS;
+    // Centered, so edges can meet the ball or socket around the node center
+    const cx = w / 2;
+    const cy = h / 2;
+
+    const stick = {
+      left: { x1: 0, y1: cy, x2: cx - r, y2: cy },
+      right: { x1: cx + r, y1: cy, x2: w, y2: cy },
+      top: { x1: cx, y1: 0, x2: cx, y2: cy - r },
+      bottom: { x1: cx, y1: cy + r, x2: cx, y2: h },
+    }[side];
+
+    // The socket bulges towards the component and opens away from it
+    const socketArc = {
+      left: `M ${cx} ${cy - r} A ${r} ${r} 0 0 0 ${cx} ${cy + r}`,
+      right: `M ${cx} ${cy - r} A ${r} ${r} 0 0 1 ${cx} ${cy + r}`,
+      top: `M ${cx - r} ${cy} A ${r} ${r} 0 0 1 ${cx + r} ${cy}`,
+      bottom: `M ${cx - r} ${cy} A ${r} ${r} 0 0 0 ${cx + r} ${cy}`,
+    }[side];
+    const symbol = isBall
+      ? `<circle cx="${cx}" cy="${cy}" r="${r}" class="uml-shape-box" />`
+      : `<path d="${socketArc}" fill="none" class="uml-shape-actor" />`;
+
+    const nameY = side === "bottom" ? 11 : h - 2;
+    return `
+      <rect x="0" y="0" width="${w}" height="${h}" fill="transparent" />
+      <line x1="${stick.x1}" y1="${stick.y1}" x2="${stick.x2}" y2="${stick.y2}" class="uml-shape-actor" />
+      ${symbol}
+      <text x="${cx}" y="${nameY}" text-anchor="middle" class="uml-text-title uml-text-small">${this.escapeXml(node.name)}</text>
+    `;
   }
 
   private renderNodeElement(node: UmlNode): SVGGElement {
@@ -1286,26 +1380,9 @@ export class UmlCanvasController {
         break;
       }
 
-      case "provided-interface": {
-        const cy = h / 2 - 4;
-        g.innerHTML = `
-          <rect x="0" y="0" width="${w}" height="${h}" fill="transparent" />
-          <line x1="12" y1="${cy}" x2="${w / 2 - 12}" y2="${cy}" class="uml-shape-actor" />
-          <circle cx="${w / 2}" cy="${cy}" r="11" class="uml-shape-box" />
-          <text x="${w / 2}" y="${h - 2}" text-anchor="middle" class="uml-text-title uml-text-small">${this.escapeXml(node.name)}</text>
-        `;
-        break;
-      }
-
+      case "provided-interface":
       case "required-interface": {
-        const cy = h / 2 - 4;
-        const cx = w / 2;
-        g.innerHTML = `
-          <rect x="0" y="0" width="${w}" height="${h}" fill="transparent" />
-          <line x1="12" y1="${cy}" x2="${cx - 14}" y2="${cy}" class="uml-shape-actor" />
-          <path d="M ${cx} ${cy - 13} A 13 13 0 0 0 ${cx} ${cy + 13}" fill="none" class="uml-shape-actor" />
-          <text x="${cx}" y="${h - 2}" text-anchor="middle" class="uml-text-title uml-text-small">${this.escapeXml(node.name)}</text>
-        `;
+        g.innerHTML = this.renderBallOrSocket(node);
         break;
       }
 
