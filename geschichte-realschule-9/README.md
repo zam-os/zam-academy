@@ -23,7 +23,7 @@ Die Übungen verwenden eigens verfasste Darstellungstexte, keine erfundenen Orig
 | 7 · Menschenrechte im Längsschnitt | 3 | Ungleichheit, 1776/1789 und Ausschlüsse, 1948, Grundgesetz und EMRK, begründetes Urteil an einem erfundenen Gegenwartsfall |
 | 8 · Bilingual, optional | 4 | British Empire, Britain in 1914, Britain/USA in World War II, Civil Rights in the USA; englische Aufgaben und deutsch-englisches Fachvokabular |
 
-Die Stundenansätze sind Orientierungswerte des Lehrplans, keine behauptete Bearbeitungsdauer der App. Die Quellenbasis in `src/curriculum/sources.ts` umfasst ISB, DHM, Gedenkstätten, USHMM, UN, Europarat/EGMR, amtliches Grundgesetz, IWM und National Park Service. Ein fachliches Review der neuen Inhalte und die Mapping-Freigabe stehen vor Veröffentlichung an.
+Die Stundenansätze sind Orientierungswerte des Lehrplans, keine behauptete Bearbeitungsdauer der App. Die Quellenbasis in `src/curriculum/sources.ts` umfasst ISB, DHM, Gedenkstätten, USHMM, UN, Europarat/EGMR, amtliches Grundgesetz, IWM und National Park Service. Das Mapping der Altkarten ist freigegeben (siehe unten).
 
 ## Zelle und bestehende Lernstände
 
@@ -35,7 +35,7 @@ Das explizite [Mapping](replaces-de-by.json) erfasst alle acht Items aus `de-by:
 - **0 B:** Keine unverändert übernommene mehrteilige Gesamtfrage.
 - **4 C:** Fachlich korrigierte oder unsichere Fragen erhalten keinen Lernstandsübertrag. Die historischen Karten und Reviewereignisse bleiben erhalten. `retired_items` nimmt die alten Texte aus aktiven Wiederholungen; die korrigierten neuen Fragen beginnen ohne übernommene Beherrschung.
 
-Die Einzelgründe stehen im Mapping. **Die Freigabe für dieses Mapping steht aus.** Die frühere Freigabe für Chemie wird nicht wiederverwendet. Academy wird zuerst geprüft und veröffentlicht; ZAM-Synchronisierung und Ablösung der alten Zelle folgen danach in einem eigenen ZAM-PR.
+Die Einzelgründe stehen im Mapping. Thomas hat das Mapping mit 4 A- und 4 C-Zuordnungen am 20.10.2026 in [zam-os/zam-academy#14](https://github.com/zam-os/zam-academy/pull/14) freigegeben; Datum und Freigabetext sind im Mapping dokumentiert. Die frühere Freigabe für Chemie wird nicht wiederverwendet. Academy wird zuerst geprüft und veröffentlicht; ZAM-Synchronisierung und Ablösung der alten Zelle folgen danach in einem eigenen ZAM-PR.
 
 ## Entwickeln und prüfen
 

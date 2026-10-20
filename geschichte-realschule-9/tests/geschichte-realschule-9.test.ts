@@ -379,10 +379,11 @@ describe("cell and conservative migration", () => {
     expect(cell.retired_items).toHaveLength(4);
   });
 
-  it("has a distinct owner approval field; never reuses the Chemie authorization", () => {
+  it("records its own owner approval; never reuses the Chemie authorization", () => {
     expect(mapping.authorization).not.toContain("als Admin mergen");
     expect(mapping.source_commit).toBe("5a334c0c9050cf3590a036e7b451481462966d0e");
-    expect(mapping.approved === null || /^\d{4}-\d{2}-\d{2}$/.test(mapping.approved)).toBe(true);
+    expect(mapping.approved).toBe("2026-10-20");
+    expect(mapping.authorization).toContain("zam-os/zam-academy#14");
   });
 
   it("uses only real lesson anchors and resolves level-specific deep links safely", () => {

@@ -1,10 +1,10 @@
 {
   "schema": 1,
-  "approved": null,
-  "source": "Fachlich ausgearbeiteter Mapping-Vorschlag zur Freigabe durch Thomas; die Chemie-Freigabe gilt nicht für dieses Paket.",
+  "approved": "2026-10-20",
+  "source": "Thomas im Claude-Code-Chat am 2026-10-20: „Korrigiere die vier A-Begründungen pro Zeile und trag meine Mapping-Freigabe (heute) in replaces-de-by.json ein, dann pushen.“ Die Chemie-Freigabe gilt nicht für dieses Paket.",
   "source_repository": "zam-os/zam",
   "source_commit": "5a334c0c9050cf3590a036e7b451481462966d0e",
-  "authorization": "Ausstehend: Freigabe dieses konkreten Mappings vor Veröffentlichung.",
+  "authorization": "Thomas hat dieses explizite Mapping (4 A, 0 B, 4 C) am 2026-10-20 freigegeben, zam-os/zam-academy#14.",
   "policy": "A: gleicher einzelner Abruf, genau ein expliziter Nachfolger mit replaces. B: unveränderte mehrteilige Gesamtfrage, hier keine. C: fachlich korrigierter oder unsicherer Umfang; kein replaces, keine Lernstandsübernahme. Altkarte und sämtliche Reviews bleiben erhalten, der Alttext wird durch retired_items aus aktiven Wiederholungen genommen.",
   "sources": [
     {
@@ -21,7 +21,7 @@
       "de_by_question": "Welcher weltwirtschaftliche Einschnitt im Oktober 1929 ('Schwarzer Freitag' an der Wall Street) leitete das Ende der Stabilitätsphase der Weimarer Republik und Massenarbeitslosigkeit ein?",
       "category": "A",
       "academy_slug": "g9-weltwirtschaftskrise-check",
-      "note": "Gleicher einzelner Abruf: Weltwirtschaftskrise ab 1929, Datum der Ernennung, Name der Gesetze beziehungsweise Kriegsbeginn in Europa. Der Krisenabruf behält die bisherige Antwort unverändert bei und entfernt lediglich die missverständliche Bezeichnung Schwarzer Freitag. Kein zusätzlicher Teilabruf und keine Verteilung auf neue Karten."
+      "note": "Gleicher einzelner Abruf: die Weltwirtschaftskrise ab 1929 als Ende der relativen Stabilisierung. Die Antwort „Die Weltwirtschaftskrise (Börsencrash 1929)“ bleibt unverändert; aus der Frage entfällt nur die missverständliche Bezeichnung „Schwarzer Freitag“. Die Karte zieht mit ihren Reviews vollständig auf diesen einen Nachfolger um."
     },
     {
       "de_by_cell": "de-by:realschule-9-geschichte-weimar-ns",
@@ -37,7 +37,7 @@
       "de_by_question": "An welchem historischen Datum ernannte Reichspräsident Paul von Hindenburg Adolf Hitler zum Reichskanzler?",
       "category": "A",
       "academy_slug": "g9-30-januar-check",
-      "note": "Gleicher einzelner Abruf: Weltwirtschaftskrise ab 1929, Datum der Ernennung, Name der Gesetze beziehungsweise Kriegsbeginn in Europa. Der Krisenabruf behält die bisherige Antwort unverändert bei und entfernt lediglich die missverständliche Bezeichnung Schwarzer Freitag. Kein zusätzlicher Teilabruf und keine Verteilung auf neue Karten."
+      "note": "Gleicher einzelner Abruf: das Datum von Hitlers Ernennung zum Reichskanzler durch Hindenburg. Antwort „30. Januar 1933“ und Ablenkoption bleiben unverändert; der Fragetext ist nur gekürzt. Die Karte zieht mit ihren Reviews vollständig auf diesen einen Nachfolger um."
     },
     {
       "de_by_cell": "de-by:realschule-9-geschichte-weimar-ns",
@@ -53,7 +53,7 @@
       "de_by_question": "Welche antijüdischen Gesetze von 1935 entzogen den deutschen Juden die staatsbürgerlichen Gleichheitsrechte und verboten Eheschließungen zwischen Juden und Nichtjuden?",
       "category": "A",
       "academy_slug": "g9-entrechtung-check",
-      "note": "Gleicher einzelner Abruf: Weltwirtschaftskrise ab 1929, Datum der Ernennung, Name der Gesetze beziehungsweise Kriegsbeginn in Europa. Der Krisenabruf behält die bisherige Antwort unverändert bei und entfernt lediglich die missverständliche Bezeichnung Schwarzer Freitag. Kein zusätzlicher Teilabruf und keine Verteilung auf neue Karten."
+      "note": "Gleicher einzelner Abruf: der Name der antijüdischen Gesetze von 1935. Die Antwort bleibt „Nürnberger Gesetze“; der Klammerzusatz mit den Einzelgesetzen entfällt, ohne den Abruf zu ändern. Die Karte zieht mit ihren Reviews vollständig auf diesen einen Nachfolger um."
     },
     {
       "de_by_cell": "de-by:realschule-9-geschichte-weimar-ns",
@@ -69,7 +69,7 @@
       "de_by_question": "Mit welchem kriegerischen Ereignis am 1. September 1939 begann der Zweite Weltkrieg in Europa?",
       "category": "A",
       "academy_slug": "g9-kriegsbeginn-1939-check",
-      "note": "Gleicher einzelner Abruf: Weltwirtschaftskrise ab 1929, Datum der Ernennung, Name der Gesetze beziehungsweise Kriegsbeginn in Europa. Der Krisenabruf behält die bisherige Antwort unverändert bei und entfernt lediglich die missverständliche Bezeichnung Schwarzer Freitag. Kein zusätzlicher Teilabruf und keine Verteilung auf neue Karten."
+      "note": "Gleicher einzelner Abruf: das Ereignis vom 1. September 1939, mit dem der Zweite Weltkrieg in Europa begann. Die Antwort „deutscher Überfall auf Polen“ bleibt unverändert; die Ablenkoption Pearl Harbor ist nur als japanischer Angriff präzisiert. Die Karte zieht mit ihren Reviews vollständig auf diesen einen Nachfolger um."
     },
     {
       "de_by_cell": "de-by:realschule-9-geschichte-weimar-ns",

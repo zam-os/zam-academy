@@ -12,7 +12,7 @@ Bestandsbasis: ZAM 0.56.0, Commit `5a334c0c9050cf3590a036e7b451481462966d0e`; Ac
 | Mathematik | Academy, 29 Lektionen / 108 Karten; in ZAM gebündelt | Bestehende Zweigabdeckung bei Erweiterungen erhalten |
 | Chemie | Academy, 35 Lektionen / 77 Karten; Zweig I und II/III, ZAM 0.56.0 | Vorhandenen veröffentlichten Stand erhalten |
 | Informationstechnologie / Informatik | Academy UML und SQL; zusätzlich alte Algorithmenzelle in ZAM | Bereits bearbeiteter Bestand; vollständigen jahrgangs- und modulabhängigen Umfang gegen das schulische IT-Angebot prüfen, nicht nur SQL/UML zählen |
-| **Geschichte** | Dieser Branch: 35 Kernlektionen + 4 englische Vertiefungen / 78 Karten; vorher nur 4 Atome / 8 Karten zu Weimar/NS | Fachreview und Mapping-Freigabe, Academy-PR/Veröffentlichung; danach ZAM-PR |
+| **Geschichte** | Dieser Branch: 35 Kernlektionen + 4 englische Vertiefungen / 78 Karten; vorher nur 4 Atome / 8 Karten zu Weimar/NS | Mapping am 20.10.2026 freigegeben; Academy-Veröffentlichung, danach ZAM-PR |
 | **Geographie** | Alte Teilzelle „Klima und Ressourcen“, 4 Atome / 8 Karten | **Als nächstes Paket** alle sieben Kernbereiche ausarbeiten; optionales Bilingualangebot gesondert behandeln |
 | **Biologie** | Alte Teilzellen Genetik und Nervensystem/Sinne, 9 Atome / 18 Karten | Tatsächliche Klasse-9-Bereiche und Zweigunterschiede prüfen; fehlende Bereiche ergänzen, Inhalte ggf. korrekt neu zuordnen |
 | **Deutsch** | Nur Teilzelle Argumentation/Erörterung, 4 Atome / 8 Karten | Lesen/Literatur, Schreiben, Sprechen/Zuhören, Sprache und Medien am Lehrplan abgleichen |
