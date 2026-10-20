@@ -22,8 +22,9 @@ export function mean(values: number[]): number {
 /**
  * Lower and upper quartile as the median of the lower and upper half of the
  * ordered list; with an odd count the median itself belongs to neither half.
- * For 4k + 3 and 4k values every common school convention gives the same
- * result, so labs and tasks only use those counts.
+ * This is the method the lesson teaches and its steps show. Other
+ * conventions differ for some counts (for 1…8 the position rule (n + 1)/4
+ * gives q₁ = 2.25 instead of 2.5), so tasks are checked against this one.
  */
 export function quartiles(values: number[]): { q1: number; q2: number; q3: number } {
   const s = sorted(values);

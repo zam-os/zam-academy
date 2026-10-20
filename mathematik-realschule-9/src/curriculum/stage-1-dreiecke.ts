@@ -156,8 +156,11 @@ const pythagoras: Lesson = {
         }
         const height = rng.int(205, 235);
         const depth = rng.int(55, 75);
-        const ceiling = rng.int(225, 245);
         const diagonal = Math.hypot(height, depth);
+        // A ceiling within 1 cm of the diagonal would let rounding decide the
+        // answer, so draw again until the gap is clear.
+        let ceiling = rng.int(225, 245);
+        while (Math.abs(diagonal - ceiling) < 1) ceiling = rng.int(225, 245);
         const fits = diagonal < ceiling;
         return {
           prompt: `Ein Schrank liegt auf dem Rücken und soll aufgerichtet werden. Er ist ${fmt(height)} cm hoch und ${fmt(depth)} cm tief. Beim Aufrichten dreht er sich um eine Kante; dabei ragt seine Diagonale am weitesten nach oben. Wie lang ist die Diagonale, und passt der Schrank unter eine Decke in ${fmt(ceiling)} cm Höhe?`,

@@ -124,14 +124,17 @@ const kreiszahl: Lesson = {
             steps: [`u = 2πr, also r = u : (2π)`, `r = ${fmt(u, 1)} cm : (2π) ≈ <strong>${fmtUnit(r, "cm")}</strong>`],
           };
         }
-        const u = rng.stepped(1.8, 3.2, 0.1);
         const gate = rng.pick([0.7, 0.8, 0.9, 1]);
+        // A diameter within 1 cm of the gate would let rounding to cm decide
+        // the answer, so draw again until the gap is clear.
+        let u = rng.stepped(1.8, 3.2, 0.1);
+        while (Math.abs(u / PI - gate) < 0.01) u = rng.stepped(1.8, 3.2, 0.1);
         const d = u / PI;
         return {
           prompt: `Ein Baumstamm hat einen Umfang von ${fmt(u, 1)} m. Er soll durch ein Tor, das ${fmt(gate * 100, 0)} cm breit ist. Wie dick ist der Stamm, und passt er hindurch?`,
           given: [`Umfang ${fmtUnit(u, "m", 1)}`, `Torbreite ${fmt(gate * 100, 0)} cm`],
           fields: [numberField("d =", d, "m", 2), yesNo("passt?", d < gate)],
-          steps: [`d = u : π = ${fmt(u, 1)} m : π ≈ ${fmtUnit(d, "m")}`, `<strong>${fmtUnit(d, "m")}</strong>: ${d < gate ? "kleiner als die Torbreite, er passt" : "breiter als das Tor, er passt nicht"}.`],
+          steps: [`d = u : π = ${fmt(u, 1)} m : π ≈ ${fmtUnit(d, "m")}`, `<strong>${fmtUnit(d, "m")}</strong>: ${d < gate ? `schmaler als das Tor (${fmt(gate, 2)} m), er passt` : `breiter als das Tor (${fmt(gate, 2)} m), er passt nicht`}.`],
         };
       },
     },

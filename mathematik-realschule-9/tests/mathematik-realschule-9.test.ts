@@ -293,6 +293,53 @@ describe("Aufgaben", () => {
   });
 });
 
+describe("Entscheidungen in Aufgaben", () => {
+  const generator = (lessonId: string, id: string) => {
+    const found = findLessonById(lessonId)?.lesson.exercises.find((exercise) => exercise.id === id);
+    if (!found) throw new Error(`${lessonId}/${id}`);
+    return found;
+  };
+  const number = (text: string) => Number(text.replace(",", "."));
+  const SEEDS = Array.from({ length: 400 }, (_, i) => seedFrom(`decision:${i}`));
+
+  it("say yes or no only where the rounded answer says the same: the wardrobe and the ceiling", () => {
+    let seen = 0;
+    for (const seed of SEEDS) {
+      const task = generator("rd-1-pythagoras", "hypotenuse").make(createRng(seed), 2);
+      const ceilingText = task.given.find((line) => line.startsWith("Raumhöhe"));
+      if (!ceilingText) continue;
+      seen += 1;
+      const ceiling = number(/([\d,]+) cm/.exec(ceilingText)![1]);
+      const [diagonal, fits] = task.fields;
+      if (diagonal.kind !== "number" || fits.kind !== "choice") throw new Error("fields");
+      expect(Math.abs(diagonal.answer - ceiling), `seed ${seed}`).toBeGreaterThanOrEqual(1);
+      expect(fits.correctIndex === 0, `seed ${seed}`).toBe(Number(diagonal.answer.toFixed(1)) < ceiling);
+    }
+    expect(seen).toBeGreaterThan(100);
+  });
+
+  it("say yes or no only where the rounded answer says the same: the log and the gate", () => {
+    for (const seed of SEEDS) {
+      const task = generator("kr-1-kreiszahl", "radius-aus-umfang").make(createRng(seed), 2);
+      const gate = number(/Torbreite (\d+) cm/.exec(task.given.join(" "))![1]) / 100;
+      const [diameter, fits] = task.fields;
+      if (diameter.kind !== "number" || fits.kind !== "choice") throw new Error("fields");
+      expect(Math.abs(diameter.answer - gate), `seed ${seed}`).toBeGreaterThanOrEqual(0.01);
+      expect(fits.correctIndex === 0, `seed ${seed}`).toBe(Number(diameter.answer.toFixed(2)) < gate);
+    }
+  });
+
+  it("show n − 1 tries visibly under the target probability", () => {
+    for (const seed of SEEDS) {
+      const task = generator("dz-2-gegenereignis", "mindestens").make(createRng(seed), 2);
+      const target = number(/mindestens (\d+) %/.exec(task.given.join(" "))![1]);
+      const [before, after] = [...task.steps[1].matchAll(/([\d,]+) %/g)].map((match) => number(match[1]));
+      expect(before, `seed ${seed}: ${task.steps[1]}`).toBeLessThan(target);
+      expect(after, `seed ${seed}: ${task.steps[1]}`).toBeGreaterThanOrEqual(target);
+    }
+  });
+});
+
 describe("Prüfen der Eingabe", () => {
   const field = (answer: number, digits = 2, unit = ""): NumberField => ({ kind: "number", label: "x =", answer, unit, digits });
   const task = (...fields: NumberField[]): ExerciseTask => ({ prompt: "", given: [], fields, steps: ["", "<strong></strong>"] });

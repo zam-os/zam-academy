@@ -1,4 +1,4 @@
-import { fmt, frac, fracText } from "../exercises/format";
+import { fmt, frac, fracText, round } from "../exercises/format";
 import type { Rng } from "../exercises/rng";
 import {
   AT_LEAST_ONCE,
@@ -303,11 +303,15 @@ const gegenereignis: Lesson = {
         }
         const target = rng.pick([0.8, 0.9, 0.95, 0.99]);
         const n = Math.ceil(Math.log(1 - target) / Math.log(1 - p) - 1e-12);
+        const before = (1 - (1 - p) ** (n - 1)) * 100;
+        const after = (1 - (1 - p) ** n) * 100;
+        // Enough decimals that n − 1 stays visibly under the target (89,99 %, not 90,0 %).
+        const digits = [1, 2, 3, 4].find((d) => round(before, d) < target * 100) ?? 4;
         return {
           prompt: `Wie oft muss man mindestens spielen, damit man mit einer Wahrscheinlichkeit von mindestens ${fmt(target * 100, 0)} % wenigstens ${label} hat?`,
           given: [`p = ${fmt(p, 4)}`, `Ziel: mindestens ${fmt(target * 100, 0)} %`],
-          fields: [numberField("n =", n, "", 0, { slips: [{ value: n - 1, hint: `Prüfe: Bei ${n - 1} Versuchen sind es erst ${fmt((1 - (1 - p) ** (n - 1)) * 100, 1)} %.` }] })],
-          steps: [`Gesucht: 1 − (1 − p)ⁿ ≥ ${fmt(target, 2)}, also (1 − p)ⁿ ≤ ${fmt(1 - target, 2)}`, `n = ${n - 1}: ${fmt((1 - (1 - p) ** (n - 1)) * 100, 1)} %; n = ${n}: ${fmt((1 - (1 - p) ** n) * 100, 1)} %`, `<strong>n = ${n}</strong>`],
+          fields: [numberField("n =", n, "", 0, { slips: [{ value: n - 1, hint: `Prüfe: Bei ${n - 1} Versuchen sind es erst ${fmt(before, digits)} %.` }] })],
+          steps: [`Gesucht: 1 − (1 − p)ⁿ ≥ ${fmt(target, 2)}, also (1 − p)ⁿ ≤ ${fmt(1 - target, 2)}`, `n = ${n - 1}: ${fmt(before, digits)} %; n = ${n}: ${fmt(after, digits)} %`, `<strong>n = ${n}</strong>`],
         };
       },
     },
