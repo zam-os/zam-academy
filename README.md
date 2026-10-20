@@ -10,6 +10,7 @@ Hands-on training apps that build understanding before [ZAM](https://github.com/
 | Mathematik 9 Realschule (LehrplanPLUS Bayern) | [`mathematik-realschule-9/`](mathematik-realschule-9/) | https://academy.zam-os.org/mathematik-realschule-9/ | `zam-academy:mathematik-realschule-9` |
 | Chemie 9 Realschule (LehrplanPLUS Bayern, Zweig I und II/III) | [`chemie-realschule-9/`](chemie-realschule-9/) | https://academy.zam-os.org/chemie-realschule-9/ | `zam-academy:chemie-realschule-9` |
 | Geschichte 9 Realschule (LehrplanPLUS Bayern, gemeinsamer Lernpfad) | [`geschichte-realschule-9/`](geschichte-realschule-9/) | https://academy.zam-os.org/geschichte-realschule-9/ | `zam-academy:geschichte-realschule-9` |
+| Geographie 9 Realschule (LehrplanPLUS Bayern, gemeinsamer Lernpfad) | [`geographie-realschule-9/`](geographie-realschule-9/) | https://academy.zam-os.org/geographie-realschule-9/ | `zam-academy:geographie-realschule-9` |
 
 ## How an app and its ZAM cell fit together
 
@@ -30,6 +31,7 @@ Each app is its own Vite package:
 cd uml                 # or: cd physik-realschule-9 (dev server on :5181), cd sql (:5182), cd mathematik-realschule-9 (:5183)
 # Chemie 9: cd chemie-realschule-9 (dev server on :5184)
 # Geschichte 9: cd geschichte-realschule-9 (dev server on :5185)
+# Geographie 9: cd geographie-realschule-9 (dev server on :5186)
 npm ci
 npm run dev      # http://localhost:5180/uml/
 npm test

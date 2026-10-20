@@ -1,0 +1,83 @@
+{
+  "schema": 1,
+  "approved": null,
+  "source": "Expliziter Vorschlag für Geographie 9. Die früheren Chemie- und Geschichte-Freigaben werden nicht übernommen.",
+  "source_repository": "zam-os/zam",
+  "source_commit": "5a334c0c9050cf3590a036e7b451481462966d0e",
+  "authorization": "Mapping-Freigabe für dieses Geographie-Paket steht aus; kein Merge durch den Agenten ohne Freigabe.",
+  "policy": "A: gleicher einzelner Abruf, ein expliziter Nachfolger mit replaces. B: mehrteilige Gesamtfrage unverändert auf einer eigenen Karte erhalten. C: fachlich korrigierter oder unsicherer Umfang; kein replaces. Alle Review-Ereignisse und FSRS-Felder bleiben erhalten. C-Alttexte werden mit retired_items aus aktiven Wiederholungen genommen.",
+  "sources": [
+    {
+      "file": "tests/fixtures/de-by-realschule-9-geographie-klima-ressourcen-kvt.json",
+      "tile_id": "de-by:realschule-9-geographie-klima-ressourcen",
+      "version": "2026.08.1",
+      "sha256": "50e0b97342103cb0c8995f88bf9459feca1fa322fd356a89c9264153cc13a4f2"
+    }
+  ],
+  "rows": [
+    {
+      "de_by_cell": "de-by:realschule-9-geographie-klima-ressourcen",
+      "de_by_id": "01K4G9R0000000000000000J01",
+      "de_by_question": "Welche Tiefdruckrinne bildet sich durch die maximale Sonneneinstrahlung und aufsteigende Warmluft im Bereich des Äquators?",
+      "category": "A",
+      "academy_slug": "geo9-grundlagen-itc-check",
+      "note": "Gleicher einzelner Abruf: Name der äquatornahen Konvergenzzone ITC/ITCZ. Die Antwort bleibt derselbe Fachbegriff; die Frage vermeidet die ortsfeste Gleichsetzung mit dem Äquator. Der neue Erklärungstext differenziert die Lage, ohne zusätzliche Mechanismen als schon beherrscht zu übertragen. Genau eine alte Karte samt Reviews zieht auf die Namensfrage um."
+    },
+    {
+      "de_by_cell": "de-by:realschule-9-geographie-klima-ressourcen",
+      "de_by_id": "01K4G9R0000000000000000J02",
+      "de_by_question": "Erkläre den Mechanismus der Passatzirkulation (Hadley-Zelle): Entstehung der äquatorialen Tiefdruckrinne (ITC), Konvektionsregen, Absinken im subtropischen Hochdruckgürtel und Rückströmung der Passatwinde mit Corioliskraft.",
+      "category": "C",
+      "academy_slug": null,
+      "note": "Die mehrteilige Hadley-Erklärung verengt die ITC auf einen festen Äquatorgürtel und verallgemeinert tägliche Zenitalregen. Die neue Erklärung unterscheidet saisonale und regionale Ausprägungen. Keine Beherrschung des korrigierten Gesamtmodells aus der alten Karte ableiten."
+    },
+    {
+      "de_by_cell": "de-by:realschule-9-geographie-klima-ressourcen",
+      "de_by_id": "01K4G9R0000000000000000J03",
+      "de_by_question": "Wo ist im Ökosystem des tropischen Regenwaldes der überwiegende Teil aller Nährstoffe gespeichert?",
+      "category": "C",
+      "academy_slug": null,
+      "note": "Die Frage behauptet den überwiegenden Speicher aller Nährstoffe einheitlich für das gesamte tropische Regenwaldökosystem. Boden, Nährstoffelement und Standort sind dafür nicht hinreichend eingegrenzt. Die neue Karte lehrt Bodenvielfalt; kein sicher gleicher Abruf und kein replaces."
+    },
+    {
+      "de_by_cell": "de-by:realschule-9-geographie-klima-ressourcen",
+      "de_by_id": "01K4G9R0000000000000000J04",
+      "de_by_question": "Erkläre den kurzgeschlossenen Nährstoffkreislauf des tropischen Regenwaldes, beschreibe den Stockwerkbau der Vegetation und begründe, warum Brandrodung für Rinderweiden oder Sojaanbau zu rascher Bodenunfruchtbarkeit führt.",
+      "category": "C",
+      "academy_slug": null,
+      "note": "Die alte Gesamtantwort verallgemeinert Ferralsole und eine zwangsläufige Verkrustung und Unfruchtbarkeit nach zwei bis drei Jahren. Die korrigierte Erklärung berücksichtigt Standort, Böden und Folgenutzung. Eine alte Gesamtbeherrschung darf nicht auf neue Teilfragen verteilt werden."
+    },
+    {
+      "de_by_cell": "de-by:realschule-9-geographie-klima-ressourcen",
+      "de_by_id": "01K4G9R0000000000000000J05",
+      "de_by_question": "Wie bezeichnet man die vom Menschen verursachte Ausbreitung wüstenartiger Bedingungen in Trockengebieten durch Überweidung, Abholzung und falsche Bewässerung?",
+      "category": "A",
+      "academy_slug": "geo9-grundlagen-desertifikation-check",
+      "note": "Gleicher einzelner Abruf: der Begriff Desertifikation für anthropogen mitverursachte Landdegradation in Trockengebieten. Der Fachbegriff einschließlich Wüstenbildung bleibt erhalten. Die Definition wird räumlich präzisiert und um Klimafaktoren ergänzt; diese zusätzlichen Zusammenhänge werden mit frischen Karten geübt. Nur die Begriffsfrage übernimmt genau eine Historie."
+    },
+    {
+      "de_by_cell": "de-by:realschule-9-geographie-klima-ressourcen",
+      "de_by_id": "01K4G9R0000000000000000J06",
+      "de_by_question": "Analysiere die Ursachen und den Prozess der anthropogenen Desertifikation in der Sahelzone und erkläre den Zusammenhang zwischen unsachgemäßer Oberflächenbewässerung, hoher Verdunstung und Bodenversalzung.",
+      "category": "C",
+      "academy_slug": null,
+      "note": "Die alte Sahel- und Bewässerungsantwort bezeichnet Degradation als Verkarstung und irreversibel und vereinfacht Versalzung sowie ihre Abhilfe. Die neue Erklärung trennt Landdegradation, Salzanreicherung und Gesteinslösung; kein gleicher korrigierter Gesamtumfang."
+    },
+    {
+      "de_by_cell": "de-by:realschule-9-geographie-klima-ressourcen",
+      "de_by_id": "01K4G9R0000000000000000J07",
+      "de_by_question": "Welches Maß beziffert die biologisch produktive Fläche der Erde, die notwendig ist, um die Ressourcen für den Lebensstil eines Menschen bereitzustellen und dessen Abfälle aufzunehmen?",
+      "category": "A",
+      "academy_slug": "geo9-fussabdruck-check",
+      "note": "Gleicher einzelner Abruf: Name des Flächenindikators ökologischer Fußabdruck. Der Nachfolger verlangt denselben Namen und überträgt keine zusätzliche Beherrschung seiner Methodengrenzen. Die Erläuterung grenzt bestimmte Abfälle, vor allem Kohlenstoff, gegen eine vollständige Umweltbilanz ab."
+    },
+    {
+      "de_by_cell": "de-by:realschule-9-geographie-klima-ressourcen",
+      "de_by_id": "01K4G9R0000000000000000J08",
+      "de_by_question": "Erkläre den anthropogenen Treibhauseffekt (Verbrennung fossiler Energieträger, Erhöhung von CO₂ und Methan, Absorption von langwelliger Wärmestrahlung) und formuliere das Prinzip der Nachhaltigkeit nach dem Drei-Säulen-Modell (Ökologie, Ökonomie, Soziales).",
+      "category": "B",
+      "academy_slug": "geo9-treibhauseffekt-nachhaltigkeit-gesamt",
+      "note": "Die vollständige mehrteilige Frage zu anthropogenem Treibhauseffekt und Drei-Säulen-Nachhaltigkeit bleibt mit question, concept und sample_solution wortgleich auf genau einer eigenen Synthesekarte erhalten. Keine Aufteilung ihrer Reviews auf die neuen Einzelfragen. Die Lernseite ergänzt die Grenzen des Strahlungsmodells und differenzierte Nachhaltigkeitsmaßstäbe."
+    }
+  ]
+}
