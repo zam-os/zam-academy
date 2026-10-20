@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
+    <script>
+      try {
+        const theme = localStorage.getItem("zam_academy_sql_theme");
+        if (theme === "light" || theme === "dark") {
+          document.documentElement.dataset.theme = theme;
+          document.querySelector('meta[name="color-scheme"]').content = theme;
+        }
+      } catch {}
+    </script>
+    <title>Relationale Datenbanken und SQL · ZAM Academy</title>
+    <meta
+      name="description"
+      content="Relationale Datenbanken und SQL: Tabellen und Schlüssel, Abfragen, mehrere Tabellen verknüpfen, Berichte und Datenpflege. 18 Lektionen mit SQL-Sandbox (SQLite im Browser) und Aufgaben, Deutsch und Englisch. Behalten mit ZAM."
+    />
+    <link rel="stylesheet" href="/src/styles.css" />
+  </head>
+  <body>
+    <div id="app" class="app-shell">
+      <header class="app-header">
+        <div class="brand">
+          <span class="brand-emblem" aria-hidden="true">🗄️</span>
+          <div>
+            <h1 class="brand-title" id="brand-title">Relationale Datenbanken und SQL</h1>
+            <p class="brand-subtitle" id="brand-subtitle">Tabellen verstehen, Abfragen schreiben, Daten verknüpfen. Behalten mit ZAM.</p>
+          </div>
+        </div>
+
+        <nav class="main-nav" aria-label="Navigation">
+          <button type="button" class="nav-tab is-active" data-view="path" id="nav-path">🗺️ Lernpfad</button>
+          <button type="button" class="nav-tab" data-view="lesson" id="nav-lesson">🎓 Lektion</button>
+          <button type="button" class="nav-tab" data-view="cheatsheet" id="nav-cheatsheet">📖 SQL-Spickzettel</button>
+        </nav>
+
+        <div class="header-controls">
+          <div class="segmented" role="group" aria-label="Level">
+            <button type="button" class="seg-btn is-active" data-level="1" id="level-btn-1">🌱 Level 1: geführt</button>
+            <button type="button" class="seg-btn" data-level="2" id="level-btn-2">🦅 Level 2: Transfer</button>
+          </div>
+          <div class="segmented" role="group" aria-label="Sprache / Language">
+            <button type="button" class="seg-btn is-active" data-locale="de" id="locale-btn-de" title="Deutsch" lang="de">DE</button>
+            <button type="button" class="seg-btn" data-locale="en" id="locale-btn-en" title="English" lang="en">EN</button>
+          </div>
+          <div class="progress-pill" id="header-progress">
+            <div class="progress-track"><div class="progress-fill" id="header-progress-bar"></div></div>
+            <span id="header-progress-text">0 / 18 Lektionen</span>
+          </div>
+          <button type="button" class="btn btn-zam" id="zam-btn" title="Wissen in ZAM festigen">🧠 In ZAM festigen</button>
+          <button type="button" class="icon-btn" id="theme-toggle-btn" title="Hell / Dunkel umschalten" aria-label="Farbschema umschalten">◐</button>
+        </div>
+      </header>
+
+      <main id="main-view-host" class="main-view-host"></main>
+
+      <footer class="app-footer">
+        <span><span id="footer-curriculum">ZAM Academy · Relationale Datenbanken und SQL folgt den Modulen 2.3.1 und 2.3.2 des</span> <a id="footer-curriculum-link" href="https://www.lehrplanplus.bayern.de/fachlehrplan/realschule/9/it" rel="noopener" target="_blank">LehrplanPLUS Bayern, Realschule, Informationstechnologie</a>.</span>
+        <span><span id="footer-privacy">Keine Konten, keine Cookies, kein Tracking. Die Datenbank läuft in diesem Browser, dein Fortschritt bleibt hier.</span> <span id="footer-source">Quelltext</span>: <a href="https://github.com/zam-os/zam-academy" rel="noopener" target="_blank">zam-os/zam-academy</a></span>
+      </footer>
+    </div>
+
+    <div id="toast-stack" class="toast-stack" aria-live="polite"></div>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
