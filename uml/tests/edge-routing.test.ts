@@ -274,6 +274,76 @@ describe("UML Edge Routing & Multi-Transition Separation", () => {
     expect(r3.midY).toBeGreaterThan(centerY);
   });
 
+  it("separates multiple self-loops with distinct anchors and non-overlapping label chips", () => {
+    const node = createMockState("node-self", "LoopingState", 200, 200, 140, 80);
+    const edge1 = createMockEdge("loop-1", "node-self", "node-self", "tick1");
+    const edge2 = createMockEdge("loop-2", "node-self", "node-self", "tick2");
+    const allEdges = [edge1, edge2];
+
+    const r1 = calculateEdgeRouting({
+      edge: edge1,
+      srcNode: node,
+      tgtNode: node,
+      allEdges,
+    });
+    const r2 = calculateEdgeRouting({
+      edge: edge2,
+      srcNode: node,
+      tgtNode: node,
+      allEdges,
+    });
+
+    expect(r1.isSelfLoop).toBe(true);
+    expect(r2.isSelfLoop).toBe(true);
+
+    // Anchors must be separated by more than marker extent (>14px)
+    expect(Math.abs(r1.p1.x - r2.p1.x)).toBeGreaterThanOrEqual(14);
+    expect(Math.abs(r1.p2.x - r2.p2.x)).toBeGreaterThanOrEqual(14);
+
+    // Label midpoints must have vertical separation greater than label chip height (22px)
+    expect(Math.abs(r1.midY - r2.midY)).toBeGreaterThan(22);
+  });
+
+  it("maintains anchor separation above marker extent (>14px) for far opposing states", () => {
+    for (const dist of [600, 900, 1400]) {
+      const nodeA = createMockState("a", "A", 100, 200, 140, 80);
+      const nodeB = createMockState("b", "B", 100 + dist, 200, 140, 80);
+
+      const fwd = createMockEdge("fwd", "a", "b");
+      const rev = createMockEdge("rev", "b", "a");
+      const allEdges = [fwd, rev];
+
+      const rFwd = calculateEdgeRouting({ edge: fwd, srcNode: nodeA, tgtNode: nodeB, allEdges });
+      const rRev = calculateEdgeRouting({ edge: rev, srcNode: nodeB, tgtNode: nodeA, allEdges });
+
+      // Anchor separation on node A and node B faces must stay >= 14px
+      const sepA = Math.abs(rFwd.p1.y - rRev.p2.y);
+      const sepB = Math.abs(rFwd.p2.y - rRev.p1.y);
+      expect(sepA).toBeGreaterThanOrEqual(14);
+      expect(sepB).toBeGreaterThanOrEqual(14);
+    }
+  });
+
+  it("separates anchors for same-direction edges that share a reverse edge", () => {
+    const nodeA = createMockState("a", "A", 100, 200, 120, 60);
+    const nodeB = createMockState("b", "B", 400, 200, 120, 60);
+
+    const e1 = createMockEdge("e1", "a", "b", "fwd1");
+    const e2 = createMockEdge("e2", "a", "b", "fwd2");
+    const e3 = createMockEdge("e3", "b", "a", "rev");
+    const allEdges = [e1, e2, e3];
+
+    const r1 = calculateEdgeRouting({ edge: e1, srcNode: nodeA, tgtNode: nodeB, allEdges });
+    const r2 = calculateEdgeRouting({ edge: e2, srcNode: nodeA, tgtNode: nodeB, allEdges });
+    const r3 = calculateEdgeRouting({ edge: e3, srcNode: nodeB, tgtNode: nodeA, allEdges });
+
+    // Distance between adjacent forward anchors on node A face
+    expect(Math.abs(r1.p1.y - r2.p1.y)).toBeGreaterThanOrEqual(14);
+    // Distance between forward and reverse anchors on node A face
+    expect(Math.abs(r1.p1.y - r3.p2.y)).toBeGreaterThanOrEqual(14);
+    expect(Math.abs(r2.p1.y - r3.p2.y)).toBeGreaterThanOrEqual(14);
+  });
+
   it("calculates incoming tangent angles and trims for target and source markers", () => {
     const nodeA = createMockState("a", "A", 100, 200, 120, 60);
     const nodeB = createMockState("b", "B", 400, 200, 120, 60);

@@ -74,10 +74,9 @@ export function getNodeBoundaryPoint(node: UmlNode, towards: Point): Point {
 }
 
 /**
- * Computes the optimal geometric path and marker/label coordinates for any UML edge,
- * gracefully separating multiple transitions between the same states/nodes (e.g.
- * back-and-forth transitions A -> B and B -> A or parallel transitions) with elegant
- * curved arcs so lines, markers, and labels never overlap.
+ * Calculates geometry (anchor points, path strings, marker rotations, and label position)
+ * for an edge. Bends parallel, opposing, or self-transitions onto Bézier curves so
+ * strokes, markers, and labels remain separated.
  */
 export function calculateEdgeRouting({
   edge,
@@ -88,7 +87,6 @@ export function calculateEdgeRouting({
   startTrim = 0,
   endTrim = 0,
 }: CalculateEdgeRoutingParams): EdgeRoutingResult {
-  // 1. Sequence Diagram Message Lifeline Pair
   const isLifelinePair =
     (srcNode.kind === "lifeline" || srcNode.kind === "actor-lifeline") &&
     (tgtNode.kind === "lifeline" || tgtNode.kind === "actor-lifeline");
@@ -135,18 +133,23 @@ export function calculateEdgeRouting({
     };
   }
 
-  // 2. Self-Loop (Transition from a state / node to itself)
   if (srcNode.id === tgtNode.id) {
     const selfLoops = allEdges.filter(
       (e) => e.sourceId === srcNode.id && e.targetId === srcNode.id,
     );
     const loopIdx = Math.max(0, selfLoops.indexOf(edge));
     const w = srcNode.width;
-    const p1: Point = { x: srcNode.x + w * 0.35, y: srcNode.y };
-    const p2: Point = { x: srcNode.x + w * 0.72, y: srcNode.y };
+    const p1: Point = {
+      x: srcNode.x + Math.max(8, w * 0.38 - loopIdx * 18),
+      y: srcNode.y,
+    };
+    const p2: Point = {
+      x: srcNode.x + Math.min(w - 8, w * 0.68 + loopIdx * 18),
+      y: srcNode.y,
+    };
 
-    const loopH = 42 + loopIdx * 26;
-    const spreadW = 14 + loopIdx * 8;
+    const loopH = 46 + loopIdx * 38;
+    const spreadW = 14 + loopIdx * 10;
     const c1: Point = { x: p1.x - spreadW, y: srcNode.y - loopH };
     const c2: Point = { x: p2.x + spreadW, y: srcNode.y - loopH };
 
@@ -164,7 +167,6 @@ export function calculateEdgeRouting({
       y: p2.y - Math.sin(angleEnd) * endTrim,
     };
 
-    // Midpoint at t = 0.5 of cubic Bézier
     const midX = 0.125 * p1.x + 0.375 * c1.x + 0.375 * c2.x + 0.125 * p2.x;
     const midY = 0.125 * p1.y + 0.375 * c1.y + 0.375 * c2.y + 0.125 * p2.y;
 
@@ -186,7 +188,6 @@ export function calculateEdgeRouting({
     };
   }
 
-  // 3. Edges Between Two Distinct Nodes
   const pairEdges = allEdges.filter(
     (e) =>
       (e.sourceId === srcNode.id && e.targetId === tgtNode.id) ||
@@ -202,7 +203,6 @@ export function calculateEdgeRouting({
     y: tgtNode.y + tgtNode.height / 2,
   };
 
-  // Case 3a: Exactly one edge exists between this pair of nodes -> clean straight line
   if (pairEdges.length <= 1) {
     const p1 = getNodeBoundaryPoint(srcNode, tgtCenter);
     const p2 = getNodeBoundaryPoint(tgtNode, srcCenter);
@@ -237,8 +237,6 @@ export function calculateEdgeRouting({
     };
   }
 
-  // Case 3b: Multiple edges exist between this pair of nodes
-  // Calculate curved paths to cleanly separate them without overlap.
   const forwardEdges = pairEdges.filter(
     (e) => e.sourceId === edge.sourceId && e.targetId === edge.targetId,
   );
@@ -255,34 +253,85 @@ export function calculateEdgeRouting({
   const n: Point = { x: u.y, y: -u.x };
 
   let curveOffset: number;
-  if (reverseEdges.length > 0) {
-    // Both directions exist ("hin und zurück", e.g. Frei <-> Belegt):
-    // Every direction curves towards its own left (creating a clockwise cycle),
-    // bowing in opposite directions away from the center chord.
+  const isOpposing = reverseEdges.length > 0;
+
+  if (isOpposing) {
     const baseCurve = Math.max(34, Math.min(50, centerDist * 0.22));
     curveOffset = baseCurve + forwardIdx * 30;
   } else {
-    // Multiple edges in the exact same direction:
-    // Symmetrically distribute curves around the center chord.
     const count = forwardEdges.length;
     const centeredIdx = forwardIdx - (count - 1) / 2;
     const step = Math.max(28, Math.min(42, centerDist * 0.18));
     curveOffset = centeredIdx * step * 1.6;
   }
 
-  // Shift anchor boundary targets slightly along the boundary so arrowheads and tails don't collide
-  const boundaryShift = Math.max(-24, Math.min(24, curveOffset * 0.45));
-  const targetForSrc: Point = {
-    x: tgtCenter.x + n.x * (boundaryShift * 2.5),
-    y: tgtCenter.y + n.y * (boundaryShift * 2.5),
-  };
-  const targetForTgt: Point = {
-    x: srcCenter.x + n.x * (boundaryShift * 2.5),
-    y: srcCenter.y + n.y * (boundaryShift * 2.5),
+  // Slide anchors directly along each exited face by a fixed pixel distance so marker
+  // separation does not shrink as nodes move further apart.
+  const computeFaceAnchor = (
+    node: UmlNode,
+    towards: Point,
+    normal: Point,
+    idxInDir: number,
+    countInDir: number,
+  ): Point => {
+    const baseP = getNodeBoundaryPoint(node, towards);
+    const hw = node.width / 2 + 2;
+    const hh = node.height / 2 + 2;
+    const dx = towards.x - (node.x + node.width / 2);
+    const dy = towards.y - (node.y + node.height / 2);
+    const scaleX = hw / Math.max(0.001, Math.abs(dx));
+    const scaleY = hh / Math.max(0.001, Math.abs(dy));
+    const isVerticalFace = scaleX <= scaleY;
+
+    const availableHalfExtent = isVerticalFace
+      ? Math.max(12, node.height / 2 - 4)
+      : Math.max(12, node.width / 2 - 4);
+
+    let offset: number;
+    if (isOpposing) {
+      if (countInDir <= 1) {
+        offset = Math.min(availableHalfExtent - 2, 14);
+      } else {
+        const step = Math.min(
+          16,
+          Math.max(14, (availableHalfExtent - 8) / (countInDir - 1)),
+        );
+        offset = 8 + idxInDir * step;
+      }
+    } else {
+      const maxStep = (2 * availableHalfExtent) / Math.max(1, countInDir);
+      const step = Math.min(16, maxStep);
+      const centeredIdx = idxInDir - (countInDir - 1) / 2;
+      offset = centeredIdx * step;
+    }
+
+    const clampedShift = Math.max(
+      -availableHalfExtent,
+      Math.min(availableHalfExtent, offset),
+    );
+
+    if (isVerticalFace) {
+      const dirY = normal.y < 0 ? -1 : 1;
+      return { x: baseP.x, y: baseP.y + dirY * clampedShift };
+    }
+    const dirX = normal.x < 0 ? -1 : 1;
+    return { x: baseP.x + dirX * clampedShift, y: baseP.y };
   };
 
-  const p1 = getNodeBoundaryPoint(srcNode, targetForSrc);
-  const p2 = getNodeBoundaryPoint(tgtNode, targetForTgt);
+  const p1 = computeFaceAnchor(
+    srcNode,
+    tgtCenter,
+    n,
+    forwardIdx,
+    forwardEdges.length,
+  );
+  const p2 = computeFaceAnchor(
+    tgtNode,
+    srcCenter,
+    n,
+    forwardIdx,
+    forwardEdges.length,
+  );
 
   const chordMid: Point = {
     x: (p1.x + p2.x) / 2,
@@ -316,7 +365,6 @@ export function calculateEdgeRouting({
     y: p2.y - Math.sin(angleEnd) * endTrim,
   };
 
-  // Apex / midpoint of quadratic Bézier curve at t = 0.5
   const midX = 0.25 * p1.x + 0.5 * C.x + 0.25 * p2.x;
   const midY = 0.25 * p1.y + 0.5 * C.y + 0.25 * p2.y;
 
