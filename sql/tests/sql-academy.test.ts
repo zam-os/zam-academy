@@ -155,7 +155,7 @@ describe("Aufgaben", () => {
       }
     }
     expect([...kinds].sort()).toEqual(["choice", "mutation", "query"]);
-  });
+  }, 60_000); // 8 seeds × 2 levels × 2 languages × 54 generators: ~3 s here, ~9 s on a CI runner
 
   it("judges a query by its result, not its wording", () => {
     const lesson = findLessonById("sql-1-where")!.lesson;
