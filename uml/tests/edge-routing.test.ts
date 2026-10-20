@@ -250,6 +250,79 @@ describe("UML Edge Routing & Multi-Transition Separation", () => {
     expect(rDown.midX - rUp.midX).toBeGreaterThan(60);
   });
 
+  // Mirrors the label chip geometry in UmlCanvasController.renderEdgeElement
+  const chipsOverlap = (
+    a: { midX: number; midY: number },
+    labelA: string,
+    b: { midX: number; midY: number },
+    labelB: string,
+  ): boolean => {
+    const widthA = Math.max(54, labelA.length * 7 + 16);
+    const widthB = Math.max(54, labelB.length * 7 + 16);
+    return (
+      Math.abs(a.midX - b.midX) < (widthA + widthB) / 2 &&
+      Math.abs(a.midY - b.midY) < 22
+    );
+  };
+
+  it("keeps wide label chips apart for vertically stacked opposing states", () => {
+    const topState = createMockState("top", "Frei", 300, 100);
+    const bottomState = createMockState("bottom", "Belegt", 300, 400);
+    const downLabel = "belegen [frei] / buchen()";
+    const upLabel = "freigeben / storno()";
+    const downEdge = createMockEdge("down", "top", "bottom", downLabel);
+    const upEdge = createMockEdge("up", "bottom", "top", upLabel);
+    const allEdges = [downEdge, upEdge];
+
+    const rDown = calculateEdgeRouting({
+      edge: downEdge,
+      srcNode: topState,
+      tgtNode: bottomState,
+      allEdges,
+    });
+    const rUp = calculateEdgeRouting({
+      edge: upEdge,
+      srcNode: bottomState,
+      tgtNode: topState,
+      allEdges,
+    });
+
+    expect(chipsOverlap(rDown, downLabel, rUp, upLabel)).toBe(false);
+    // Each label still sits on its own bow, between the two states
+    expect(rDown.midY).toBeGreaterThan(topState.y + topState.height);
+    expect(rUp.midY).toBeLessThan(bottomState.y);
+  });
+
+  it("keeps wide label chips apart for vertically stacked same-direction transitions", () => {
+    const topState = createMockState("top", "Frei", 300, 100);
+    const bottomState = createMockState("bottom", "Belegt", 300, 400);
+    const labels = [
+      "belegen [frei] / buchen()",
+      "reservieren / vormerken()",
+      "sperren [admin] / blocken()",
+    ];
+    const edges = labels.map((label, i) =>
+      createMockEdge(`e${i}`, "top", "bottom", label),
+    );
+
+    const routes = edges.map((edge) =>
+      calculateEdgeRouting({
+        edge,
+        srcNode: topState,
+        tgtNode: bottomState,
+        allEdges: edges,
+      }),
+    );
+
+    for (let i = 0; i < routes.length; i++) {
+      for (let j = i + 1; j < routes.length; j++) {
+        expect(chipsOverlap(routes[i], labels[i], routes[j], labels[j])).toBe(
+          false,
+        );
+      }
+    }
+  });
+
   it("handles 3 transitions between two nodes without any of them overlapping", () => {
     const nodeA = createMockState("a", "A", 100, 200, 120, 60);
     const nodeB = createMockState("b", "B", 500, 200, 120, 60);

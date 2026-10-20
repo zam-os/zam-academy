@@ -37,6 +37,9 @@ export interface EdgeRoutingResult {
   controlPoint?: Point;
 }
 
+/** Chord-axis distance between sibling label chips; exceeds the 22px chip height. */
+const LABEL_STAGGER = 34;
+
 export interface CalculateEdgeRoutingParams {
   edge: UmlEdge;
   srcNode: UmlNode;
@@ -365,8 +368,15 @@ export function calculateEdgeRouting({
     y: p2.y - Math.sin(angleEnd) * endTrim,
   };
 
-  const midX = 0.25 * p1.x + 0.5 * C.x + 0.25 * p2.x;
-  const midY = 0.25 * p1.y + 0.5 * C.y + 0.25 * p2.y;
+  // Stagger labels along the chord so sibling chips never share a row: when the nodes are
+  // stacked vertically the bows sit side by side and wide chips would collide. C projects
+  // onto the chord midpoint, so the curve's chord projection is linear in t.
+  const labelShift = isOpposing
+    ? (forwardIdx + 0.5) * LABEL_STAGGER
+    : (forwardIdx - (forwardEdges.length - 1) / 2) * LABEL_STAGGER;
+  const t = Math.max(0.2, Math.min(0.8, 0.5 + labelShift / chordLen));
+  const midX = (1 - t) ** 2 * p1.x + 2 * t * (1 - t) * C.x + t ** 2 * p2.x;
+  const midY = (1 - t) ** 2 * p1.y + 2 * t * (1 - t) * C.y + t ** 2 * p2.y;
 
   return {
     pathD: `M ${lineStart.x} ${lineStart.y} Q ${C.x} ${C.y} ${lineEnd.x} ${lineEnd.y}`,
