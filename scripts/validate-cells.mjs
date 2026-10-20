@@ -18,13 +18,6 @@ import { fileURLToPath } from "node:url";
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const zam = await import(process.env.ZAM_CORE ?? "zam-core");
 
-/**
- * Cells published before the distractor check existed. Their curated
- * distractors are reported but do not fail the run until a follow-up PR
- * rewrites them (ids stay, only wording changes, with `materiality`).
- */
-const DISTRACTOR_CHECK_ADVISORY = new Set(["zam-academy:uml"]);
-
 /** Every reason zam-core would refuse a card's curated distractors. */
 function distractorProblems(tile) {
   const problems = [];
@@ -79,13 +72,11 @@ try {
 
     const problems = distractorProblems(tile);
     if (problems.length > 0) {
-      const advisory = DISTRACTOR_CHECK_ADVISORY.has(tile.tile_id);
-      const label = advisory ? "note" : "FAIL";
-      console[advisory ? "log" : "error"](
-        `${label} ${app}/cell.json: ${problems.length} curated distractor(s) zam-core would drop${advisory ? " (advisory for this cell)" : ""}`,
+      console.error(
+        `FAIL ${app}/cell.json: ${problems.length} curated distractor(s) zam-core would drop`,
       );
-      for (const problem of problems) console[advisory ? "log" : "error"](`     ${problem}`);
-      if (!advisory) failures += 1;
+      for (const problem of problems) console.error(`     ${problem}`);
+      failures += 1;
     } else {
       console.log(`ok   ${app}/cell.json  curated distractors pass zam-core's choice checks`);
     }
