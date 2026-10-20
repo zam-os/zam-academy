@@ -1,4 +1,5 @@
 import type { UmlEdge, UmlNode } from "../model/uml-types";
+import { ballOrSocketBoundaryPoint, isBallOrSocket } from "./interface-docking";
 
 export interface Point {
   x: number;
@@ -127,6 +128,8 @@ function computePairCurve(
     normal: Point,
   ): Point => {
     const baseP = getNodeBoundaryPoint(node, towards);
+    // A lollipop or socket has no face to spread anchors along
+    if (isBallOrSocket(node)) return baseP;
     const hw = node.width / 2 + 2;
     const hh = node.height / 2 + 2;
     const cx = node.x + node.width / 2;
@@ -275,9 +278,12 @@ function placePairLabel(
 
 /**
  * Calculates the intersection point of a ray from a node's center towards a given point
- * with the node's rectangular bounding box.
+ * with the node's rectangular bounding box, or with the drawn ball or socket of a
+ * lollipop or socket.
  */
 export function getNodeBoundaryPoint(node: UmlNode, towards: Point): Point {
+  if (isBallOrSocket(node)) return ballOrSocketBoundaryPoint(node, towards);
+
   const cx = node.x + node.width / 2;
   const cy = node.y + node.height / 2;
   const dx = towards.x - cx;
