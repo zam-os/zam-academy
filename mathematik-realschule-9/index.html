@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
+    <script>
+      try {
+        const theme = localStorage.getItem("mathe_rs9_theme");
+        if (theme === "light" || theme === "dark") {
+          document.documentElement.dataset.theme = theme;
+          document.querySelector('meta[name="color-scheme"]').content = theme;
+        }
+      } catch {}
+    </script>
+    <title>Mathematik 9 Realschule · ZAM Academy</title>
+    <meta
+      name="description"
+      content="Mathematik für die 9. Klasse Realschule (LehrplanPLUS Bayern): rechtwinklige Dreiecke, Kreis und Körper, Gleichungssysteme, quadratische Funktionen, Daten und Zufall. 29 Lektionen mit ziehbaren Figuren, Simulationen und Aufgaben. Behalten mit ZAM."
+    />
+    <link rel="stylesheet" href="/src/styles.css" />
+  </head>
+  <body>
+    <div id="app" class="app-shell">
+      <header class="app-header">
+        <div class="brand">
+          <span class="brand-emblem" aria-hidden="true">📐</span>
+          <div>
+            <h1 class="brand-title">Mathematik 9 · Realschule</h1>
+            <p class="brand-subtitle">Lesen, Figuren ziehen, rechnen. Behalten mit ZAM.</p>
+          </div>
+        </div>
+
+        <nav class="main-nav" aria-label="Navigation">
+          <button type="button" class="nav-tab is-active" data-view="path">🗺️ Lernpfad</button>
+          <button type="button" class="nav-tab" data-view="lesson">🎓 Lektion</button>
+          <button type="button" class="nav-tab" data-view="formulas">📖 Formelsammlung</button>
+        </nav>
+
+        <div class="header-controls">
+          <div class="segmented" role="group" aria-label="Schwierigkeit">
+            <button type="button" class="seg-btn is-active" data-level="1" title="Formel und Werte werden angezeigt">🌱 Level 1: geführt</button>
+            <button type="button" class="seg-btn" data-level="2" title="Textaufgaben ohne Formelhilfe">🦅 Level 2: Transfer</button>
+          </div>
+          <div class="progress-pill" id="header-progress">
+            <div class="progress-track"><div class="progress-fill" id="header-progress-bar"></div></div>
+            <span id="header-progress-text">0 / 29 Lektionen</span>
+          </div>
+          <button type="button" class="btn btn-zam" id="zam-btn" title="Wissen in ZAM festigen">🧠 In ZAM festigen</button>
+          <button type="button" class="icon-btn" id="theme-toggle-btn" title="Hell / Dunkel umschalten" aria-label="Farbschema umschalten">◐</button>
+        </div>
+      </header>
+
+      <main id="main-view-host" class="main-view-host"></main>
+
+      <footer class="app-footer">
+        <span>ZAM Academy · Mathematik 9 Realschule folgt dem <a href="https://www.lehrplanplus.bayern.de/schulart/realschule/jgs/9/fach/mathematik" rel="noopener" target="_blank">LehrplanPLUS Bayern, Mathematik 9</a>.</span>
+        <span>Keine Konten, keine Cookies, kein Tracking. Dein Fortschritt bleibt in diesem Browser. Quelltext: <a href="https://github.com/zam-os/zam-academy" rel="noopener" target="_blank">zam-os/zam-academy</a></span>
+      </footer>
+    </div>
+
+    <div id="toast-stack" class="toast-stack" aria-live="polite"></div>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
