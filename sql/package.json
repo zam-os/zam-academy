@@ -1,0 +1,27 @@
+{
+  "name": "zam-academy-sql",
+  "version": "0.1.0",
+  "private": true,
+  "description": "ZAM Academy: relational databases and SQL in a browser sandbox with a learning path (DE/EN), served at https://academy.zam-os.org/sql/.",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit",
+    "package:zip": "npm run build && node scripts/build-release-zip.mjs"
+  },
+  "devDependencies": {
+    "@types/sql.js": "^1.4.11",
+    "typescript": "^6.0.3",
+    "vite": "^8.1.5",
+    "vite-plugin-singlefile": "^2.3.3",
+    "vitest": "^4.1.10"
+  },
+  "license": "Apache-2.0",
+  "dependencies": {
+    "sql.js": "^1.15.1"
+  }
+}

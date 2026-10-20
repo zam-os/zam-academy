@@ -15,7 +15,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        app: [uml, physik-realschule-9]
+        app: [uml, physik-realschule-9, sql]
     defaults:
       run:
         working-directory: ${{ matrix.app }}
