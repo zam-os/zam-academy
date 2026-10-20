@@ -654,7 +654,7 @@ describe("ZAM-Zelle (cell.json)", () => {
     }
   });
 
-  describe("proposes to replace the five de-by Realschule 9 mathematics cells", () => {
+  describe("replaces the five de-by Realschule 9 mathematics cells as approved", () => {
     interface MappingRow {
       de_by_cell: string;
       de_by_id: string;
@@ -663,9 +663,14 @@ describe("ZAM-Zelle (cell.json)", () => {
       academy_slug?: string;
       note?: string;
     }
-    const table = replacesJson as unknown as { rows: MappingRow[] };
+    const table = replacesJson as unknown as { approved: string | null; source?: string; rows: MappingRow[] };
     const bySlug = new Map(items.map((item) => [item.slug, item]));
     const DE_BY = /^01K4[TKSQ]9[MP]0000000000000000[0-9A-Z]{3}$/;
+
+    it("records who approved it and where", () => {
+      expect(table.approved).toBe("2026-10-20");
+      expect(table.source).toMatch(/^https:\/\/github\.com\/zam-os\/zam-academy\/pull\/9#issuecomment-\d+$/);
+    });
 
     it("lists every de-by item exactly once, 41 A, 4 B and 4 C", () => {
       expect(table.rows).toHaveLength(49);
@@ -697,7 +702,7 @@ describe("ZAM-Zelle (cell.json)", () => {
       }
     });
 
-    it("declares exactly the mapped replaces, one de-by item per card", () => {
+    it("declares exactly the approved replaces, one de-by item per card", () => {
       const declared = items.flatMap((item) => (item.replaces ?? []).map((id) => [item.slug, id] as const));
       expect(declared.map(([, id]) => id).sort()).toEqual(
         table.rows.filter((row) => row.category !== "C").map((row) => row.de_by_id).sort(),
