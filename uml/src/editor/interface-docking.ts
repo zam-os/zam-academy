@@ -122,8 +122,21 @@ function closestFacingOwner(
   return best;
 }
 
-const touchingOwner = (iface: UmlNode, index: DockIndex) =>
-  closestFacingOwner(iface, index, TOUCH_TOLERANCE, TOUCH_TOLERANCE);
+/** Whether the stick, which runs through the symbol's center, meets `side` of `owner`. */
+function stickMeetsSide(iface: UmlNode, owner: UmlNode, side: StickSide) {
+  if (side === "left" || side === "right") {
+    const cy = iface.y + iface.height / 2;
+    return cy >= owner.y && cy <= owner.y + owner.height;
+  }
+  const cx = iface.x + iface.width / 2;
+  return cx >= owner.x && cx <= owner.x + owner.width;
+}
+
+/** The component the symbol is docked to: flush against its side, stick on its border. */
+function touchingOwner(iface: UmlNode, index: DockIndex): FacingGap | null {
+  const g = closestFacingOwner(iface, index, TOUCH_TOLERANCE, TOUCH_TOLERANCE);
+  return g && stickMeetsSide(iface, g.owner, g.side) ? g : null;
+}
 
 function sideTowards(iface: UmlNode, owner: UmlNode): StickSide {
   const dx = owner.x + owner.width / 2 - (iface.x + iface.width / 2);
@@ -176,7 +189,13 @@ export function stickSides(diagram: UmlDiagram): Map<string, StickSide> {
   return sides;
 }
 
-/** Moves `iface` flush against the given side of `owner`. */
+/** How far the stick stays from a component's corner when docked near it. */
+const CORNER_MARGIN = 8;
+
+/**
+ * Moves `iface` flush against the given side of `owner` and slides it along that side
+ * until its stick meets the border, keeping clear of the corners.
+ */
 export function snapToSide(
   iface: UmlNode,
   owner: UmlNode,
@@ -186,6 +205,19 @@ export function snapToSide(
   else if (side === "right") iface.x = owner.x - iface.width;
   else if (side === "top") iface.y = owner.y + owner.height;
   else iface.y = owner.y - iface.height;
+
+  const clamp = (center: number, start: number, length: number) => {
+    const lo = start + Math.min(CORNER_MARGIN, length / 2);
+    const hi = start + length - Math.min(CORNER_MARGIN, length / 2);
+    return Math.max(lo, Math.min(hi, center));
+  };
+  if (side === "left" || side === "right") {
+    const cy = iface.y + iface.height / 2;
+    iface.y = clamp(cy, owner.y, owner.height) - iface.height / 2;
+  } else {
+    const cx = iface.x + iface.width / 2;
+    iface.x = clamp(cx, owner.x, owner.width) - iface.width / 2;
+  }
 }
 
 /**

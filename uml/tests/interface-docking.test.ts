@@ -149,6 +149,28 @@ describe("Docking lollipops and sockets onto components", () => {
     expect(stickSide(ifc, d)).toBe("left");
   });
 
+  it("slides a symbol docked near a corner until its stick meets the border", () => {
+    const owner = component("owner", 100, 100);
+    // Box overlaps the right side by 6px, but the stick (y = 217) passes below it (y = 196)
+    const ifc = lollipop("ifc", 315, 190);
+    const d = diagram([owner, ifc]);
+
+    expect(dockInterface(ifc, d)).toBe(true);
+    expect(ifc.x).toBe(owner.x + owner.width);
+    const stickY = ifc.y + ifc.height / 2;
+    expect(stickY).toBeGreaterThan(owner.y);
+    expect(stickY).toBeLessThan(owner.y + owner.height);
+    expect(dockedInterfaces(owner, d)).toEqual([{ node: ifc, side: "left" }]);
+  });
+
+  it("does not treat a flush symbol whose stick misses the component as docked", () => {
+    const owner = component("owner", 100, 100);
+    const ifc = lollipop("ifc", 295, 190);
+    const d = diagram([owner, ifc]);
+
+    expect(dockedInterfaces(owner, d)).toEqual([]);
+  });
+
   it("does not dock onto ports, which do not move with their component", () => {
     const port = node("port", "port", 100, 100, 44, 44);
     const ifc = lollipop("ifc", 100 + 44 + 10, 100);
