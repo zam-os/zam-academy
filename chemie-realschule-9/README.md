@@ -97,8 +97,8 @@ erhalten und erhalten keine künstlichen Antwortoptionen.
 
 Die Quellkopien in `tests/fixtures/` sind ausschließlich Testdaten mit
 aufgezeichnetem Quellcommit und SHA-256, keine zweite Kartenquelle der App.
-Das Mapping dokumentiert die im Auftrag implementierte Zuordnung; es
-behauptet keine zusätzliche Einzelabnahme durch den Eigentümer.
+Thomas hat das Mapping mit 6 A-, 5 B- und 5 C-Zuordnungen am 20.10.2026
+freigegeben. Datum und Freigabetext sind im Mapping dokumentiert.
 
 `scripts/validate-migration.mjs` prüft mit dem veröffentlichten `zam-core`
 0.54.0 die vollständigen Kartenzeilen und Review-Ereignisse vor/nach der
