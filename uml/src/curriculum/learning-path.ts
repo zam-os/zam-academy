@@ -672,7 +672,7 @@ export const LEARNING_STAGES: LearningStage[] = [
             "Exakt! «include» macht gemeinsame Pflicht-Bausteine explizit und wiederverwendbar.",
         },
         taskPrompt:
-          "Modelliere das Smart-Home-Türschloss mit allen 5 Kriterien der Checkliste.",
+          "Modelliere das Smart-Home-Türschloss mit allen 5 Anforderungen aus der Mission oben.",
         allowedNodes: ["system-boundary", "actor", "use-case", "note"],
         allowedEdges: ["association", "include", "extend", "note-link"],
         starterDiagram: {
@@ -3863,7 +3863,7 @@ export const LEARNING_STAGES: LearningStage[] = [
             "Richtig! Kombinierte Fragmente (`alt`, `opt`, `loop`) rahmen bedingte oder wiederholte Nachrichten direkt auf den Lebenslinien ein.",
         },
         taskPrompt:
-          "Modelliere die Sequenz zwischen „Besucher“, „:BuchungsService“ und „:SaalplanDB“ gemäß der Checkliste.",
+          "Modelliere die Sequenz zwischen „Besucher“, „:BuchungsService“ und „:SaalplanDB“ so, wie es die Mission oben beschreibt.",
         allowedNodes: [
           "actor-lifeline",
           "lifeline",

@@ -373,7 +373,7 @@ export const EN_LESSONS: Record<string, LessonLocalization> = {
       explanation:
         "Exactly! «include» makes shared mandatory sub-steps explicit and reusable.",
     },
-    taskPrompt: "Model the Smart Home Door Lock satisfying all 5 criteria.",
+    taskPrompt: "Model the Smart Home Door Lock with all 5 requirements from the mission above.",
     level2ScenarioPrompt:
       "Scenario: A 'SmartLock System' secures the front door. A 'Resident' wants to 'Unlock Door'. Every unlock mandatorily requires the system to 'Verify Access Code'. If wrong codes are entered repeatedly, unlocking may optionally 'Trigger Alarm'. Model the complete system from scratch.",
     celebrationMessage: "Congratulations on completing Stage 1!",
@@ -1226,7 +1226,7 @@ export const EN_LESSONS: Record<string, LessonLocalization> = {
         "Correct! Combined Fragments (`alt`, `opt`, `loop`) frame conditional or repeated messages directly across lifelines.",
     },
     taskPrompt:
-      "Model the sequence between 'Visitor', ':BookingService', and ':SeatMapDB'.",
+      "Model the sequence between 'Visitor', ':BookingService', and ':SeatMapDB' as the mission above describes.",
     level2ScenarioPrompt:
       "Scenario: A 'Visitor' sends a seat booking request to ':BookingService'. ':BookingService' makes a blocking synchronous call to ':SeatMapDB' to reserve the seat and receives a reply back from ':SeatMapDB'. Model the complete chronological interaction.",
     celebrationMessage:
