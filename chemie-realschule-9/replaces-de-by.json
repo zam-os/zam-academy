@@ -1,0 +1,163 @@
+{
+  "schema": 1,
+  "source_repository": "zam-os/zam",
+  "source_commit": "26d083eefe7fae5a128d2a04cc6897410b50079f",
+  "authorization": "Thomas requested implementation with explicit preservation of existing learning evidence on 2026-10-20. This file records the implemented content mapping; it does not claim a separate item-by-item owner approval.",
+  "policy": "A: same atomic retrieval. B: original whole multi-part prompt and answer retained in a dedicated successor; no history is spread across its component cards. C: corrected scope or misconception; no replaces and no mastery transfer. The old card and its review evidence remain on the old id.",
+  "sources": [
+    {
+      "file": "tests/fixtures/de-by-realschule-9-chemie-atombau-pse-kvt.json",
+      "tile_id": "de-by:realschule-9-chemie-atombau-pse",
+      "version": "2026.08.1",
+      "sha256": "b5d6a4b7c69c49cc9ac4aff68002f13df40797ae853ae92ece525803d79d7a80"
+    },
+    {
+      "file": "tests/fixtures/de-by-realschule-9-chemie-chemische-bindung-kvt.json",
+      "tile_id": "de-by:realschule-9-chemie-chemische-bindung",
+      "version": "2026.08.1",
+      "sha256": "865e52a8d7e3dd5ddbecf40c02252b4abd4fbcbf7bdd7699ac8afe3725e29102"
+    }
+  ],
+  "rows": [
+    {
+      "de_by_cell": "de-by:realschule-9-chemie-atombau-pse",
+      "de_by_id": "01K4C9A0000000000000000J01",
+      "de_by_question": "Wo befindet sich laut dem Kern-Hülle-Modell nach Rutherford nahezu die gesamte Masse eines Atoms?",
+      "category": "A",
+      "academy_slug": "c9-rutherford-check",
+      "note": "The same atomic question is preserved; no additional retrieval demand or changed scientific scope."
+    },
+    {
+      "de_by_cell": "de-by:realschule-9-chemie-atombau-pse",
+      "de_by_id": "01K4C9A0000000000000000J02",
+      "de_by_question": "Beschreibe den Rutherfordschen Streuversuch mit Alpha-Teilchen an einer Goldfolie und leite die zwei zentralen Schlussfolgerungen für den Atombau ab.",
+      "category": "B",
+      "academy_slug": "c9-legacy-j02-atombau",
+      "note": "The whole original question and answer are retained byte for byte. Its history moves only to this dedicated synthesis card; the atomic component cards start fresh."
+    },
+    {
+      "de_by_cell": "de-by:realschule-9-chemie-atombau-pse",
+      "de_by_id": "01K4C9A0000000000000000J03",
+      "de_by_question": "Welche Elementarteilchen bestimmen die Ordnungszahl (Kernladungszahl) und damit die chemische Identität eines Elements?",
+      "category": "A",
+      "academy_slug": "c9-atomteilchen-check",
+      "note": "The same atomic question is preserved; no additional retrieval demand or changed scientific scope."
+    },
+    {
+      "de_by_cell": "de-by:realschule-9-chemie-atombau-pse",
+      "de_by_id": "01K4C9A0000000000000000J04",
+      "de_by_question": "Charakterisiere Proton, Neutron und Elektron hinsichtlich Ladung, relativer Masse und Aufenthaltsort im Atom und definiere den Begriff Isotop.",
+      "category": "B",
+      "academy_slug": "c9-legacy-j04-atombau",
+      "note": "The whole original question and answer are retained byte for byte. Its history moves only to this dedicated synthesis card; the atomic component cards start fresh."
+    },
+    {
+      "de_by_cell": "de-by:realschule-9-chemie-atombau-pse",
+      "de_by_id": "01K4C9A0000000000000000J05",
+      "de_by_question": "Wie viele Elektronen kann die innerste Elektronenschale (K-Schale, n = 1) maximal aufnehmen?",
+      "category": "A",
+      "academy_slug": "c9-energiestufen-check",
+      "note": "The same atomic question is preserved; no additional retrieval demand or changed scientific scope."
+    },
+    {
+      "de_by_cell": "de-by:realschule-9-chemie-atombau-pse",
+      "de_by_id": "01K4C9A0000000000000000J06",
+      "de_by_question": "Erkläre das Schalenmodell nach Bohr, gib die Formel für die maximale Elektronenbesetzung einer Schale n an und definiere die Bedeutung der Valenzelektronen.",
+      "category": "B",
+      "academy_slug": "c9-legacy-j06-atombau",
+      "note": "The whole original question and answer are retained byte for byte. Its history moves only to this dedicated synthesis card; the atomic component cards start fresh."
+    },
+    {
+      "de_by_cell": "de-by:realschule-9-chemie-atombau-pse",
+      "de_by_id": "01K4C9A0000000000000000J07",
+      "de_by_question": "Was gibt die Hauptgruppennummer (I bis VIII) im Periodensystem der Elemente für Hauptgruppenelemente direkt an?",
+      "category": "C",
+      "note": "Die alte Aussage ordnet jeder Hauptgruppe ausnahmslos die Valenzelektronenzahl zu. Helium in Hauptgruppe VIII besitzt aber zwei Elektronen; die korrigierte Frage ist kein sicher gleicher Abruf.",
+      "related_new_slugs": [
+        "c9-periodensystem-check",
+        "c9-periodensystem-wissen"
+      ]
+    },
+    {
+      "de_by_cell": "de-by:realschule-9-chemie-atombau-pse",
+      "de_by_id": "01K4C9A0000000000000000J08",
+      "de_by_question": "Erkläre den Zusammenhang zwischen dem Aufbau des Periodensystems (Perioden und Hauptgruppen) und der Elektronenkonfiguration und formuliere die Oktettregel (Edelgaskonfiguration).",
+      "category": "C",
+      "note": "Die alte Sammelantwort enthält dieselbe nicht eingeschränkte Hauptgruppenregel. Für den korrigierten Umfang einschließlich der Helium-Ausnahme wird keine Beherrschung übertragen.",
+      "related_new_slugs": [
+        "c9-periodensystem-check",
+        "c9-periodensystem-wissen"
+      ]
+    },
+    {
+      "de_by_cell": "de-by:realschule-9-chemie-chemische-bindung",
+      "de_by_id": "01K4C9B0000000000000000J01",
+      "de_by_question": "Leitet ein fester Kochsalzkristall (Natriumchlorid) bei Raumtemperatur elektrischen Strom?",
+      "category": "A",
+      "academy_slug": "c9-metallbindung-check",
+      "note": "The same atomic question is preserved; no additional retrieval demand or changed scientific scope."
+    },
+    {
+      "de_by_cell": "de-by:realschule-9-chemie-chemische-bindung",
+      "de_by_id": "01K4C9B0000000000000000J02",
+      "de_by_question": "Erkläre die Entstehung einer Ionenbindung am Beispiel von Natriumchlorid (NaCl), beschreibe den Aufbau des Ionengitters und begründe die typischen Eigenschaften von Salzen (hohe Schmelztemperatur, Sprödigkeit).",
+      "category": "B",
+      "academy_slug": "c9-legacy-j02-bindung",
+      "note": "The whole original question and answer are retained byte for byte. Its history moves only to this dedicated synthesis card; the atomic component cards start fresh."
+    },
+    {
+      "de_by_cell": "de-by:realschule-9-chemie-chemische-bindung",
+      "de_by_id": "01K4C9B0000000000000000J03",
+      "de_by_question": "Wie viele gemeinsame bindende Elektronenpaare verbinden die beiden Stickstoffatome im Stickstoffmolekül (N₂)?",
+      "category": "A",
+      "academy_slug": "c9-elektronenpaare-check",
+      "note": "The same atomic question is preserved; no additional retrieval demand or changed scientific scope."
+    },
+    {
+      "de_by_cell": "de-by:realschule-9-chemie-chemische-bindung",
+      "de_by_id": "01K4C9B0000000000000000J04",
+      "de_by_question": "Erkläre das Prinzip der Elektronenpaarbindung (kovalente Bindung / Atombindung) zwischen Nichtmetallatomen und erstelle die Lewis-Schreibweise für Wasser (H₂O) und Methan (CH₄).",
+      "category": "B",
+      "academy_slug": "c9-legacy-j04-bindung",
+      "note": "The whole original question and answer are retained byte for byte. Its history moves only to this dedicated synthesis card; the atomic component cards start fresh."
+    },
+    {
+      "de_by_cell": "de-by:realschule-9-chemie-chemische-bindung",
+      "de_by_id": "01K4C9B0000000000000000J05",
+      "de_by_question": "Ist das Wassermolekül (H₂O) aufgrund seiner gewinkelten Geometrie und der hohen Elektronegativität des Sauerstoffs ein permanenter elektrischer Dipol?",
+      "category": "A",
+      "academy_slug": "c9-polaritaet-check",
+      "note": "The same atomic question is preserved; no additional retrieval demand or changed scientific scope."
+    },
+    {
+      "de_by_cell": "de-by:realschule-9-chemie-chemische-bindung",
+      "de_by_id": "01K4C9B0000000000000000J06",
+      "de_by_question": "Definiere den Begriff der Elektronegativität (EN), erkläre den Übergang von unpolarer zu polarer Atombindung und Ionenbindung anhand der Elektronegativitätsdifferenz ΔEN und begründe, warum Wasser ein Dipol ist.",
+      "category": "C",
+      "note": "Starre EN-Grenzen werden im alten Inhalt als universelle Klassifikation dargestellt. Die fachlich korrigierte neue Frage hat einen anderen Gültigkeitsbereich.",
+      "related_new_slugs": [
+        "c9-polaritaet-check",
+        "c9-polaritaet-wissen"
+      ]
+    },
+    {
+      "de_by_cell": "de-by:realschule-9-chemie-chemische-bindung",
+      "de_by_id": "01K4C9B0000000000000000J07",
+      "de_by_question": "Welche zwischenmolekulare Wechselwirkung ist die stärkste und erklärt den außergewöhnlich hohen Siedepunkt von flüssigem Wasser?",
+      "category": "A",
+      "academy_slug": "c9-zwischenmolekulare-kraefte-check",
+      "note": "The same atomic question is preserved; no additional retrieval demand or changed scientific scope."
+    },
+    {
+      "de_by_cell": "de-by:realschule-9-chemie-chemische-bindung",
+      "de_by_id": "01K4C9B0000000000000000J08",
+      "de_by_question": "Erkläre die Metallbindung anhand des Elektronengasmodells (Metallkationen und frei bewegliche Elektronen) und ordne die drei zwischenmolekularen Kräfte (Van-der-Waals, Dipol-Dipol, Wasserstoffbrücken) nach ihrer Stärke.",
+      "category": "C",
+      "note": "Eine universelle Stärkerangfolge der zwischenmolekularen Kräfte ist ohne Molekülgröße und Kontaktfläche nicht gültig. Die korrigierte Aussage erhält einen frischen Lernstand.",
+      "related_new_slugs": [
+        "c9-zwischenmolekulare-kraefte-wissen",
+        "c9-metallbindung-wissen"
+      ]
+    }
+  ]
+}
