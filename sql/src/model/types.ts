@@ -87,7 +87,12 @@ export interface ResultSet {
 
 export type SqlOutcome =
   | { ok: true; results: ResultSet[]; changes: number; statements: number }
-  | { ok: false; error: string };
+  | {
+      ok: false;
+      error: string;
+      /** The statement that failed, from its first character on. */
+      failedSql: string;
+    };
 
 /** What a lab goal of a SQL sandbox sees: the live database and the last run. */
 export interface SqlLabContext {

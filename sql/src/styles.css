@@ -1,4 +1,4 @@
-/* Physik 9 Realschule · ZAM Academy
+/* Relationale Datenbanken und SQL · ZAM Academy
    Tokens on :root, dark overrides by system preference or data-theme. */
 
 :root {
@@ -22,20 +22,6 @@
   --radius: 14px;
 
   /* lab drawing colours */
-  --lab-ground: #cbd5e1;
-  --lab-block: #475569;
-  --lab-fluid: #60a5fa;
-  --lab-gas: #fde68a;
-  --lab-wall: #334155;
-  --lab-force: #dc2626;
-  --lab-force-2: #16a34a;
-  --lab-axis: #64748b;
-  --lab-particle: #1d4ed8;
-  --lab-field: #7c3aed;
-  --lab-curve: #2563eb;
-  --lab-marker: #dc2626;
-  --lab-meter: #0f172a;
-  --lab-meter-text: #a7f3d0;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -55,16 +41,6 @@
     --danger: #f87171;
     --zam: #9b85ff;
     --shadow: 0 1px 2px rgb(0 0 0 / 0.4), 0 8px 24px rgb(0 0 0 / 0.35);
-    --lab-ground: #334155;
-    --lab-block: #94a3b8;
-    --lab-fluid: #3b82f6;
-    --lab-gas: #ca8a04;
-    --lab-wall: #cbd5e1;
-    --lab-axis: #94a3b8;
-    --lab-particle: #93c5fd;
-    --lab-field: #a78bfa;
-    --lab-curve: #60a5fa;
-    --lab-meter: #020617;
   }
 }
 
@@ -84,16 +60,6 @@
   --danger: #f87171;
   --zam: #9b85ff;
   --shadow: 0 1px 2px rgb(0 0 0 / 0.4), 0 8px 24px rgb(0 0 0 / 0.35);
-  --lab-ground: #334155;
-  --lab-block: #94a3b8;
-  --lab-fluid: #3b82f6;
-  --lab-gas: #ca8a04;
-  --lab-wall: #cbd5e1;
-  --lab-axis: #94a3b8;
-  --lab-particle: #93c5fd;
-  --lab-field: #a78bfa;
-  --lab-curve: #60a5fa;
-  --lab-meter: #020617;
 }
 
 * {
@@ -427,8 +393,7 @@ code {
 }
 
 .track-select select,
-.lesson-select,
-.lab-control select {
+.lesson-select {
   font: inherit;
   padding: 0.45rem 0.6rem;
   border-radius: 10px;
@@ -614,11 +579,6 @@ code {
   border-color: transparent;
 }
 
-.chip-track {
-  background: color-mix(in srgb, var(--accent) 12%, transparent);
-  color: var(--text);
-}
-
 .chip-optional {
   border-style: dashed;
 }
@@ -695,23 +655,6 @@ code {
 
 .explanation li {
   margin: 0.3rem 0;
-}
-
-.explanation .formula-line {
-  font-size: 1.15rem;
-  text-align: center;
-  padding: 0.5rem;
-  background: var(--elevated);
-  border-radius: 10px;
-}
-
-.merke {
-  margin-top: 0.6rem;
-  padding: 0.65rem 0.9rem;
-  border-left: 4px solid var(--accent);
-  background: var(--elevated);
-  border-radius: 0 10px 10px 0;
-  font-size: 0.92rem;
 }
 
 .formula-box {
@@ -820,13 +763,6 @@ code {
   font-size: 1rem;
 }
 
-.task-given {
-  margin: 0 0 0.5rem;
-  padding-left: 1.1rem;
-  color: var(--muted);
-  font-size: 0.9rem;
-}
-
 .task-hint {
   margin: 0 0 0.5rem;
   font-size: 0.92rem;
@@ -840,38 +776,6 @@ code {
   flex-wrap: wrap;
   gap: 0.5rem;
   align-items: center;
-}
-
-.task-input {
-  display: inline-flex;
-  align-items: center;
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  background: var(--surface);
-  overflow: hidden;
-}
-
-.task-input input {
-  border: 0;
-  font: inherit;
-  font-size: 1.05rem;
-  padding: 0.5rem 0.7rem;
-  width: 9rem;
-  background: transparent;
-  color: var(--text);
-}
-
-.task-input input:focus {
-  outline: 2px solid var(--brand);
-  outline-offset: -2px;
-}
-
-.task-unit {
-  padding: 0.5rem 0.7rem;
-  background: var(--elevated);
-  color: var(--muted);
-  font-size: 0.95rem;
-  border-left: 1px solid var(--line);
 }
 
 .task-feedback {
@@ -911,78 +815,6 @@ code {
   margin: 0 0 0.5rem;
   color: var(--muted);
   font-size: 0.9rem;
-}
-
-.lab-visual {
-  border-radius: 12px;
-  background: var(--elevated);
-  padding: 0.4rem;
-}
-
-.lab-svg {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-.lab-controls {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
-  gap: 0.6rem 1rem;
-  margin: 0.8rem 0 0.4rem;
-}
-
-.lab-control {
-  display: flex;
-  flex-direction: column;
-  gap: 0.2rem;
-  font-size: 0.88rem;
-}
-
-.lab-label {
-  display: flex;
-  justify-content: space-between;
-  gap: 0.5rem;
-  color: var(--muted);
-}
-
-.lab-label output {
-  font-weight: 600;
-  color: var(--text);
-  font-variant-numeric: tabular-nums;
-}
-
-.lab-control input[type="range"] {
-  width: 100%;
-  accent-color: var(--accent);
-}
-
-.readouts {
-  margin: 0.5rem 0 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 0.4rem;
-}
-
-.readouts > div {
-  background: var(--elevated);
-  border-radius: 10px;
-  padding: 0.45rem 0.7rem;
-}
-
-.readouts > div.is-emphasis {
-  outline: 2px solid color-mix(in srgb, var(--accent) 60%, transparent);
-}
-
-.readouts dt {
-  font-size: 0.78rem;
-  color: var(--muted);
-}
-
-.readouts dd {
-  margin: 0;
-  font-weight: 600;
-  font-variant-numeric: tabular-nums;
 }
 
 .goals ul {
@@ -1049,304 +881,6 @@ code {
   margin: 0 0 0.6rem;
   font-size: 0.88rem;
   color: var(--muted);
-}
-
-/* ─── SVG lab classes ───────────────────────────────────────────────────── */
-
-.lab-text {
-  fill: var(--text);
-  font-size: 13px;
-  font-family: system-ui, sans-serif;
-}
-
-.lab-text-big {
-  font-size: 15px;
-  font-weight: 600;
-}
-
-.lab-text-muted {
-  fill: var(--muted);
-  font-size: 12px;
-  font-family: system-ui, sans-serif;
-}
-
-.lab-text-small {
-  fill: var(--muted);
-  font-size: 10.5px;
-  font-family: system-ui, sans-serif;
-}
-
-.lab-text-force {
-  fill: var(--lab-force);
-}
-
-.lab-text-force-2 {
-  fill: var(--lab-force-2);
-}
-
-.lab-pole-text {
-  fill: var(--text);
-  font-size: 22px;
-  font-weight: 700;
-  font-family: system-ui, sans-serif;
-}
-
-.lab-emoji {
-  font-size: 40px;
-}
-
-.lab-ground {
-  fill: var(--lab-ground);
-}
-
-.lab-pressure {
-  fill: var(--lab-force);
-}
-
-.lab-block {
-  fill: var(--lab-block);
-}
-
-.lab-crate {
-  fill: #b45309;
-}
-
-.lab-force {
-  stroke: var(--lab-force);
-}
-
-.lab-force-2 {
-  stroke: var(--lab-force-2);
-}
-
-.lab-axis {
-  stroke: var(--lab-axis);
-  stroke-width: 1.5;
-}
-
-.lab-grid {
-  stroke: var(--lab-axis);
-  stroke-width: 1;
-  stroke-dasharray: 4 4;
-  opacity: 0.6;
-}
-
-.lab-velocity {
-  stroke: var(--lab-particle);
-}
-
-.lab-field-arrow {
-  stroke: var(--lab-field);
-}
-
-.lab-arrowhead {
-  stroke: none !important;
-}
-
-.lab-force.lab-arrowhead {
-  fill: var(--lab-force);
-}
-
-.lab-force-2.lab-arrowhead {
-  fill: var(--lab-force-2);
-}
-
-.lab-axis.lab-arrowhead {
-  fill: var(--lab-axis);
-}
-
-.lab-velocity.lab-arrowhead {
-  fill: var(--lab-particle);
-}
-
-.lab-field-arrow.lab-arrowhead {
-  fill: var(--lab-field);
-}
-
-.lab-fluid {
-  fill: var(--lab-fluid);
-  opacity: 0.55;
-}
-
-.lab-ice {
-  fill: #e0f2fe;
-}
-
-.lab-gas {
-  fill: var(--lab-gas);
-}
-
-.lab-wall {
-  fill: none;
-  stroke: var(--lab-wall);
-  stroke-width: 3;
-}
-
-.lab-particle {
-  fill: var(--lab-particle);
-}
-
-.lab-ramp {
-  fill: var(--lab-ground);
-  stroke: var(--lab-wall);
-  stroke-width: 2;
-}
-
-.lab-clock {
-  fill: var(--surface);
-  stroke: var(--lab-wall);
-  stroke-width: 2;
-}
-
-.lab-pie {
-  fill: var(--lab-force-2);
-  opacity: 0.6;
-}
-
-.lab-needle {
-  stroke: var(--lab-force);
-  stroke-width: 3;
-  stroke-linecap: round;
-}
-
-.lab-bar-pot {
-  fill: var(--lab-fluid);
-}
-
-.lab-bar-kin {
-  fill: var(--lab-force-2);
-}
-
-.lab-bar-in {
-  fill: var(--lab-axis);
-}
-
-.lab-bar-loss {
-  fill: var(--lab-force);
-  opacity: 0.7;
-}
-
-.lab-tube {
-  fill: var(--surface);
-  stroke: var(--lab-wall);
-  stroke-width: 2;
-}
-
-.lab-water-fill {
-  opacity: 0.75;
-}
-
-.lab-heater {
-  fill: var(--lab-force);
-}
-
-.lab-steam {
-  fill: none;
-  stroke: var(--muted);
-  stroke-width: 2;
-  stroke-linecap: round;
-}
-
-.lab-curve {
-  fill: none;
-  stroke: var(--lab-curve);
-  stroke-width: 3;
-  stroke-linejoin: round;
-}
-
-.lab-marker {
-  fill: var(--lab-marker);
-  stroke: var(--surface);
-  stroke-width: 2;
-}
-
-.lab-coil {
-  fill: none;
-  stroke: #b45309;
-  stroke-width: 3;
-}
-
-.lab-field {
-  fill: none;
-  stroke: var(--lab-field);
-  stroke-width: 1.5;
-  stroke-dasharray: 6 5;
-}
-
-.lab-core {
-  fill: var(--lab-block);
-}
-
-.lab-wire {
-  fill: none;
-  stroke: var(--lab-wall);
-  stroke-width: 3;
-  stroke-linecap: round;
-}
-
-.lab-wire-dot {
-  fill: var(--lab-wall);
-}
-
-.lab-clip {
-  fill: var(--lab-axis);
-}
-
-.lab-conductor {
-  fill: var(--surface);
-  stroke: var(--lab-wall);
-  stroke-width: 3;
-}
-
-.lab-pole-n {
-  fill: #ef4444;
-  opacity: 0.8;
-}
-
-.lab-pole-s {
-  fill: #22c55e;
-  opacity: 0.8;
-}
-
-.lab-socket {
-  fill: var(--elevated);
-  stroke: var(--lab-wall);
-  stroke-width: 2;
-}
-
-.lab-socket-hole {
-  fill: var(--lab-wall);
-}
-
-.lab-device {
-  fill: var(--lab-gas);
-  stroke: var(--lab-wall);
-  stroke-width: 2;
-}
-
-.lab-meter {
-  fill: var(--lab-meter);
-}
-
-.lab-meter + text,
-.lab-meter ~ .lab-text {
-  fill: var(--text);
-}
-
-.lab-wire-cu {
-  fill: #ea580c;
-}
-
-.lab-wire-al {
-  fill: #9ca3af;
-}
-
-.lab-wire-fe {
-  fill: #6b7280;
-}
-
-.lab-wire-konst {
-  fill: #475569;
 }
 
 /* ─── Formelsammlung ────────────────────────────────────────────────────── */

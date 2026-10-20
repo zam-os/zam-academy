@@ -8,7 +8,7 @@ import {
   STAGES,
 } from "./curriculum";
 import { describeTables, q, setupSql } from "./db/dataset";
-import { createDatabase, runSql } from "./db/engine";
+import { createDatabase, runSql, tableNames } from "./db/engine";
 import { loadSqlJs } from "./db/sqljs-loader";
 import { checkTask } from "./exercises/checker";
 import { esc } from "./exercises/format";
@@ -86,12 +86,12 @@ class SqlAcademyApp {
       this.progress.activeLessonId = DEFAULT_LESSON_ID;
     }
     this.applyTheme(readStoredTheme());
-    this.applyDeepLink();
+    this.applyDeepLink(true);
     this.setupHeader();
     this.syncHeader();
     this.render();
     window.addEventListener("hashchange", () => {
-      if (this.applyDeepLink()) {
+      if (this.applyDeepLink(false)) {
         this.syncHeader();
         this.render();
         window.scrollTo({ top: 0 });
@@ -122,13 +122,18 @@ class SqlAcademyApp {
 
   // ─── URL and header ─────────────────────────────────────────────────────
 
-  /** Opens the lesson a ZAM card cites (`#lesson=<id>`, optionally `&level=2&lang=en`). */
-  private applyDeepLink(): boolean {
-    const parsed = parseTrainingDeepLink(window.location.hash, window.location.search);
+  /**
+   * Opens the lesson a ZAM card cites (`#lesson=<id>`, optionally `&level=2&lang=en`).
+   * The query string (`?lang=en`) counts only when the page opens; it stays in
+   * the address bar, so reading it again on every hash change would undo the
+   * language or level the learner picked since.
+   */
+  private applyDeepLink(withQuery: boolean): boolean {
+    const parsed = parseTrainingDeepLink(window.location.hash, withQuery ? window.location.search : "");
     let changed = false;
     if (parsed.locale && parsed.locale !== this.progress.locale) {
       this.progress.locale = parsed.locale;
-      this.sandbox = null;
+      this.dropSandbox();
       this.resetTask();
       changed = true;
     }
@@ -187,7 +192,7 @@ class SqlAcademyApp {
   private setLocale(locale: AppLocale): void {
     this.progress.locale = locale;
     saveLearnerProgress(this.progress);
-    this.sandbox = null;
+    this.dropSandbox();
     this.resetTask();
     this.syncHeader();
     this.render();
@@ -350,7 +355,7 @@ class SqlAcademyApp {
     host.querySelector("#reset-progress-btn")?.addEventListener("click", () => {
       confirmReset(this.locale, () => {
         this.progress = resetLearnerProgress(this.progress);
-        this.sandbox = null;
+        this.dropSandbox();
         this.erChoices.clear();
         this.resetTask();
         this.syncHeader();
@@ -533,12 +538,18 @@ class SqlAcademyApp {
     else this.renderSqlLab(container, lesson, lesson.lab);
   }
 
+  /** sql.js memory is not garbage-collected: a dropped sandbox closes its database. */
+  private dropSandbox(): void {
+    this.sandbox?.db.close();
+    this.sandbox = null;
+  }
+
   private ensureSandbox(lesson: Lesson, lab: SqlLabDefinition): SandboxState | null {
     if (!this.SQL) return null;
     if (this.sandbox && this.sandbox.lessonId === lesson.id && this.sandbox.locale === this.locale) {
       return this.sandbox;
     }
-    this.sandbox?.db.close();
+    this.dropSandbox();
     this.sandbox = {
       lessonId: lesson.id,
       locale: this.locale,
@@ -553,7 +564,6 @@ class SqlAcademyApp {
     const t = this.t;
     const text = lesson.text[this.locale];
     const sandbox = this.ensureSandbox(lesson, lab);
-    const tables = describeTables(this.locale, lab.tables);
 
     container.innerHTML = `
       <h4>🧪 ${esc(text.lab.title)}</h4>
@@ -561,21 +571,7 @@ class SqlAcademyApp {
       <div class="sandbox">
         <aside class="schema-browser" aria-label="${esc(t.labTables)}">
           <h5>${esc(t.labTables)}</h5>
-          ${tables
-            .map(
-              (table) => `
-            <div class="schema-table">
-              <button type="button" class="table-name" data-table="${esc(table.name)}">${esc(table.name)} <small>${table.rowCount}</small></button>
-              <ul class="column-list">
-                ${table.columns
-                  .map(
-                    (column) => `<li><code>${esc(column.name)}</code> <span class="col-type">${esc(column.type)}</span>${column.pk ? ` <span class="col-key" title="${esc(t.labPk)}">🔑</span>` : ""}${column.fk ? ` <span class="col-fk" title="${esc(t.labFk)} ${esc(column.fk)}">↗ ${esc(column.fk)}</span>` : ""}</li>`,
-                  )
-                  .join("")}
-              </ul>
-            </div>`,
-            )
-            .join("")}
+          <div id="schema-tables"></div>
           <small class="muted">${esc(t.labTablesHint)}</small>
         </aside>
         <div class="sandbox-main">
@@ -614,18 +610,47 @@ class SqlAcademyApp {
       const output = container.querySelector<HTMLElement>("#sql-output");
       if (output) output.innerHTML = "";
       this.toast(t.labResetDone, "info", 2400);
+      this.renderSchemaBrowser(container, lab);
       this.refreshGoalMarks(container, lesson, []);
     });
-    container.querySelectorAll<HTMLButtonElement>("[data-table]").forEach((button) => {
+    this.renderSchemaBrowser(container, lab);
+    if (sandbox?.last) this.renderSqlOutput(container, sandbox.last.outcome);
+    this.refreshGoalMarks(container, lesson, sandbox ? this.reachedGoals(sandbox, lab) : []);
+  }
+
+  /**
+   * The tables as the sandbox holds them now: live row counts, and the tables
+   * the learner created or dropped. Before SQLite has loaded, the lesson's own.
+   */
+  private renderSchemaBrowser(container: HTMLElement, lab: SqlLabDefinition): void {
+    const t = this.t;
+    const host = container.querySelector<HTMLElement>("#schema-tables");
+    if (!host) return;
+    const tables = this.sandbox ? sandboxTables(this.sandbox, lab) : describeTables(this.locale, lab.tables);
+    host.innerHTML = tables
+      .map(
+        (table) => `
+            <div class="schema-table">
+              <button type="button" class="table-name" data-table="${esc(table.name)}">${esc(table.name)} <small>${table.rowCount}</small></button>
+              <ul class="column-list">
+                ${table.columns
+                  .map(
+                    (column) => `<li><code>${esc(column.name)}</code> <span class="col-type">${esc(column.type)}</span>${column.pk ? ` <span class="col-key" title="${esc(t.labPk)}">🔑</span>` : ""}${column.fk ? ` <span class="col-fk" title="${esc(t.labFk)} ${esc(column.fk)}">↗ ${esc(column.fk)}</span>` : ""}</li>`,
+                  )
+                  .join("")}
+              </ul>
+            </div>`,
+      )
+      .join("");
+    const editor = container.querySelector<HTMLTextAreaElement>("#sql-editor");
+    host.querySelectorAll<HTMLButtonElement>("[data-table]").forEach((button) => {
       button.addEventListener("click", () => {
         if (!editor || !this.sandbox) return;
-        editor.value = `SELECT * FROM ${button.dataset.table};`;
+        editor.value = `SELECT * FROM ${quoteIdent(button.dataset.table ?? "")};`;
         this.sandbox.editor = editor.value;
         editor.focus();
       });
     });
-    if (sandbox?.last) this.renderSqlOutput(container, sandbox.last.outcome);
-    this.refreshGoalMarks(container, lesson, sandbox ? this.reachedGoals(sandbox, lab) : []);
   }
 
   private labContext(sandbox: SandboxState): SqlLabContext {
@@ -658,6 +683,7 @@ class SqlAcademyApp {
     const outcome = runSql(sandbox.db, sql);
     sandbox.last = { sql, outcome };
     this.renderSqlOutput(container, outcome);
+    this.renderSchemaBrowser(container, lab);
     const reached = this.reachedGoals(sandbox, lab);
     this.recordGoals(lesson, reached, lab);
     this.refreshGoalMarks(container, lesson, reached);
@@ -819,7 +845,7 @@ class SqlAcademyApp {
       ${
         isSql
           ? `<form class="task-form" id="task-form">
-              <textarea id="task-answer" class="sql-editor task-sql" rows="4" spellcheck="false" placeholder="${esc(t.sqlPlaceholder)}" aria-label="SQL" ${locked ? "disabled" : ""}>${esc(this.taskDraft)}</textarea>
+              <textarea id="task-answer" class="sql-editor task-sql" rows="4" spellcheck="false" placeholder="${esc(task.kind === "query" ? t.sqlPlaceholder : t.sqlPlaceholderChange)}" aria-label="SQL" ${locked ? "disabled" : ""}>${esc(this.taskDraft)}</textarea>
               <div class="task-actions">
                 <button type="submit" class="btn btn-primary" id="task-check-btn" ${locked ? "disabled" : ""}>${esc(t.checkButton)}</button>
                 <button type="button" class="btn btn-secondary" id="task-new-btn">${esc(t.newTaskButton)}</button>
@@ -998,6 +1024,47 @@ class SqlAcademyApp {
       element.addEventListener("click", () => this.openLesson(element.dataset.openLesson ?? ""));
     });
   }
+}
+
+interface SchemaTableView {
+  name: string;
+  rowCount: number;
+  columns: Array<{ name: string; type: string; pk: boolean; fk?: string }>;
+}
+
+/** The lesson's tables that still exist, with their row counts now, then the tables the learner created. */
+function sandboxTables(sandbox: SandboxState, lab: SqlLabDefinition): SchemaTableView[] {
+  const query = (sql: string) => runSql(sandbox.db, sql);
+  const present = tableNames(query);
+  const isPresent = (name: string) => present.some((p) => p.toLowerCase() === name.toLowerCase());
+  const rowCount = (name: string) => {
+    const outcome = query(`SELECT COUNT(*) FROM ${quoteIdent(name)};`);
+    return outcome.ok ? Number(outcome.results[0]?.values[0]?.[0] ?? 0) : 0;
+  };
+  const known = describeTables(sandbox.locale, lab.tables).filter((table) => isPresent(table.name));
+  const created = present.filter((name) => !known.some((table) => table.name.toLowerCase() === name.toLowerCase()));
+  return [
+    ...known.map((table) => ({ ...table, rowCount: rowCount(table.name) })),
+    ...created.map((name) => {
+      const info = query(`PRAGMA table_info(${quoteIdent(name)});`);
+      const result = info.ok ? info.results[0] : undefined;
+      const at = (column: string) => result?.columns.indexOf(column) ?? -1;
+      return {
+        name,
+        rowCount: rowCount(name),
+        columns: (result?.values ?? []).map((row) => ({
+          name: String(row[at("name")]),
+          type: String(row[at("type")] ?? ""),
+          pk: Number(row[at("pk")]) > 0,
+        })),
+      };
+    }),
+  ];
+}
+
+/** A table name as an SQL identifier: plain when it is a plain word, else in double quotes. */
+function quoteIdent(name: string): string {
+  return /^[A-Za-z_][A-Za-z0-9_]*$/.test(name) ? name : `"${name.replace(/"/g, '""')}"`;
 }
 
 function formatCell(cell: SqlCell): string {

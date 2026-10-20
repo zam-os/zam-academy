@@ -17,8 +17,11 @@ import {
   compareResults,
   createDatabase,
   dumpTable,
+  firstKeyword,
+  normalizeCell,
   runSql,
   sameSchema,
+  tableNames,
   tableSchema,
 } from "../src/db/engine";
 import type { AppLocale, ResultSet } from "../src/model/types";
@@ -105,7 +108,47 @@ describe("runSql", () => {
 
     const partial = runSql(db, "DELETE FROM order_items WHERE item_id = 1; DELETE FROM customers WHERE customer_id = 1;");
     expect(partial.ok).toBe(false);
+    if (!partial.ok) expect(partial.failedSql).toBe("DELETE FROM customers WHERE customer_id = 1;");
     expect(count(db, "en", "positionen")).toBe(ORDER_ITEMS.length - 1);
+    db.close();
+  });
+
+  it("counts changes after a leading comment and in a WITH statement", () => {
+    const db = createDatabase(SQL, setupSql("de", SHOP_TABLES));
+    const commented = runSql(db, "-- Preis senken\nUPDATE produkte SET preis = 8.99 WHERE produkt_id = 5;");
+    expect(commented.ok && commented.changes).toBe(1);
+    const withCte = runSql(db, "WITH alt AS (SELECT 1) /* zwei */ DELETE FROM positionen WHERE bestell_id = 101;");
+    expect(withCte.ok && withCte.changes).toBe(3);
+    const ddl = runSql(db, "CREATE TABLE t (a INTEGER); DROP TABLE t;");
+    expect(ddl.ok && ddl.changes).toBe(0);
+    db.close();
+  });
+
+  it("names the statement that failed, also when it does not compile", () => {
+    const db = createDatabase(SQL, setupSql("de", SHOP_TABLES));
+    const broken = runSql(db, "SELECT 1;\n-- dann\nINSERT INTO kunden (vorname) VALUES ('X'); SELECT 2;");
+    expect(broken.ok).toBe(false);
+    if (!broken.ok) expect(firstKeyword(broken.failedSql)).toBe("INSERT");
+    const typo = runSql(db, "SELECT 1; SELEC 2;");
+    expect(typo.ok).toBe(false);
+    if (!typo.ok) expect(typo.failedSql).toBe("SELEC 2;");
+    expect(firstKeyword("/* a */ -- b\n  delete from x")).toBe("DELETE");
+    db.close();
+  });
+
+  it("stops a result that runs away instead of freezing the page", () => {
+    const db = createDatabase(SQL, setupSql("de", SHOP_TABLES));
+    const endless = runSql(db, "WITH RECURSIVE c(x) AS (SELECT 1 UNION ALL SELECT x + 1 FROM c) SELECT x FROM c;");
+    expect(endless.ok).toBe(false);
+    if (!endless.ok) expect(endless.error).toMatch(/more than 10000 rows/);
+    const cross = runSql(db, "SELECT * FROM positionen a, positionen b, positionen c;", 1000);
+    expect(cross.ok).toBe(false);
+    db.close();
+  });
+
+  it("lists the user tables", () => {
+    const db = createDatabase(SQL, setupSql("en", SHOP_TABLES));
+    expect(tableNames(db)).toEqual(["customers", "order_items", "orders", "products"]);
     db.close();
   });
 });
@@ -120,9 +163,19 @@ describe("compareResults", () => {
     expect(compareResults({ columns: ["a", "b"], values: [[1, "x"]] }, expected, false)).toBe("row-count");
     expect(compareResults({ columns: ["a", "b"], values: [[1, "x"], [3, "y"]] }, expected, false)).toBe("rows");
   });
-  it("treats 49.9 and 49.90 and '49.9' alike", () => {
+  it("treats 49.9 and 49.90 and '49.9' alike, but keeps a leading zero", () => {
     expect(compareResults({ columns: ["p"], values: [[49.9]] }, { columns: ["p"], values: [["49.90"]] }, false)).toBeNull();
     expect(compareResults({ columns: ["p"], values: [[60]] }, { columns: ["p"], values: [[60.0]] }, false)).toBeNull();
+    expect(normalizeCell("01069")).toBe("01069");
+    expect(normalizeCell("0.5")).toBe("0.50");
+    expect(compareResults({ columns: ["plz"], values: [[1069]] }, { columns: ["plz"], values: [["01069"]] }, false)).toBe("rows");
+  });
+  it("matches the named columns by name and the others by position", () => {
+    const grouped: ResultSet = { columns: ["kategorie", "AVG(preis)"], values: [["Sport", 17.425], ["Schule", 22.22]] };
+    expect(compareResults({ columns: ["n", "kategorie"], values: [[17.425, "Sport"], [22.22, "Schule"]] }, grouped, false)).toBeNull();
+    const twice: ResultSet = { columns: ["nachname", "nachname"], values: [["A", "B"]] };
+    expect(compareResults({ columns: ["nachname", "nachname"], values: [["A", "B"]] }, twice, false)).toBeNull();
+    expect(compareResults({ columns: ["nachname", "nachname"], values: [["B", "A"]] }, twice, false)).toBe("rows");
   });
 });
 

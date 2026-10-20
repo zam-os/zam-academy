@@ -1,5 +1,5 @@
-import { CUSTOMERS, CUSTOMERS_WITHOUT_ORDERS, ORDERS, PRODUCTS } from "../db/dataset";
-import { countNow, lastErrorIncludes, lastResultEquals, scalarNow } from "../lab/goals";
+import { CUSTOMERS, CUSTOMERS_WITHOUT_ORDERS, ORDERS, PRODUCTS, q } from "../db/dataset";
+import { countNow, lastErrorIncludes, lastFailedStatementIs, lastResultEquals } from "../lab/goals";
 import type { Lesson, Localized, Stage } from "../model/types";
 import { choiceTask, goal, L, mutationTask, queryTask, SHOP, sqlLab } from "./helpers";
 
@@ -169,7 +169,7 @@ ORDER BY orders DESC;</code></pre>
       celebrationMessage: "You build reports with one figure per group.",
     },
   ),
-  lab: sqlLab(SHOP, "SELECT {kategorie}, COUNT(*) AS {anzahl}\nFROM {produkte}\nGROUP BY {kategorie};", [
+  lab: sqlLab(SHOP, "SELECT {kategorie}, SUM({lagerbestand})\nFROM {produkte}\nGROUP BY {kategorie};", [
     goal("g1", (ctx) => lastResultEquals(ctx, "SELECT {kategorie}, COUNT(*) FROM {produkte} GROUP BY {kategorie};")),
     goal("g2", (ctx) => lastResultEquals(ctx, "SELECT {status}, COUNT(*) FROM {bestellungen} GROUP BY {status};")),
     goal("g3", (ctx) => lastResultEquals(ctx, "SELECT k.{nachname}, COUNT(*) FROM {bestellungen} b JOIN {kunden} k ON b.{kunden_id} = k.{kunden_id} GROUP BY k.{kunden_id} HAVING COUNT(*) >= 2;")),
@@ -317,7 +317,7 @@ GROUP BY c.customer_id;</code></pre>`,
       celebrationMessage: "You find what is missing: rows without a partner and counts with 0.",
     },
   ),
-  lab: sqlLab(SHOP, "SELECT k.{nachname}, b.{bestell_id}\nFROM {kunden} k\nLEFT JOIN {bestellungen} b ON b.{kunden_id} = k.{kunden_id};", [
+  lab: sqlLab(SHOP, "SELECT k.{nachname}, b.{bestell_id}\nFROM {kunden} k\nJOIN {bestellungen} b ON b.{kunden_id} = k.{kunden_id};", [
     goal("g1", (ctx) => lastResultEquals(ctx, "SELECT k.{nachname}, b.{bestell_id} FROM {kunden} k LEFT JOIN {bestellungen} b ON b.{kunden_id} = k.{kunden_id};")),
     goal("g2", (ctx) => lastResultEquals(ctx, "SELECT k.{vorname}, k.{nachname} FROM {kunden} k LEFT JOIN {bestellungen} b ON b.{kunden_id} = k.{kunden_id} WHERE b.{bestell_id} IS NULL;")),
     goal("g3", (ctx) => lastResultEquals(ctx, "SELECT k.{nachname}, COUNT(b.{bestell_id}) FROM {kunden} k LEFT JOIN {bestellungen} b ON b.{kunden_id} = k.{kunden_id} GROUP BY k.{kunden_id};")),
@@ -574,12 +574,25 @@ DELETE FROM order_items WHERE item_id = 22;</code></pre>
     },
   ),
   lab: sqlLab(SHOP, "SELECT * FROM {produkte} WHERE {produkt_id} = 5;", [
+    // Only product 5 changes: an UPDATE without WHERE sets every price and must not count.
     goal("g1", (ctx) => {
-      const price = scalarNow(ctx, "SELECT {preis} FROM {produkte} WHERE {produkt_id} = 5;");
-      return typeof price === "number" && Math.abs(price - 8.99) < 0.001;
+      const outcome = ctx.query(q(ctx.locale, "SELECT {produkt_id}, {preis} FROM {produkte};"));
+      if (!outcome.ok || outcome.results.length !== 1) return false;
+      const prices = new Map(outcome.results[0].values.map(([id, price]) => [Number(id), Number(price)]));
+      return PRODUCTS.every((p) => Math.abs((prices.get(p.id) ?? Number.NaN) - (p.id === 5 ? 8.99 : p.preis)) < 0.001);
     }),
-    goal("g2", (ctx) => lastErrorIncludes(ctx, "CHECK constraint failed")),
-    goal("g3", (ctx) => countNow(ctx, "SELECT COUNT(*) FROM {bestellungen} WHERE {bestell_id} = 105;") === 0),
+    // The CHECK on the price, hit by inserting (or setting) a negative price.
+    goal(
+      "g2",
+      (ctx) =>
+        lastErrorIncludes(ctx, `CHECK constraint failed: ${q(ctx.locale, "{preis}")} >= 0`) && lastFailedStatementIs(ctx, "INSERT", "UPDATE"),
+    ),
+    goal(
+      "g3",
+      (ctx) =>
+        countNow(ctx, "SELECT COUNT(*) FROM {bestellungen} WHERE {bestell_id} = 105;") === 0 &&
+        countNow(ctx, "SELECT COUNT(*) FROM {positionen} WHERE {bestell_id} = 105;") === 0,
+    ),
   ]),
   exercises: [
     {

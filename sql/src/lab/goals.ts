@@ -1,5 +1,5 @@
 import { q } from "../db/dataset";
-import { affinityGroup, compareResults, type AffinityGroup } from "../db/engine";
+import { compareResults, firstKeyword, tableSchema, type AffinityGroup } from "../db/engine";
 import type { SqlCell, SqlLabContext } from "../model/types";
 
 /**
@@ -23,10 +23,14 @@ export function lastErrorIncludes(ctx: SqlLabContext, text: string): boolean {
   return Boolean(last && !last.outcome.ok && last.outcome.error.toLowerCase().includes(text.toLowerCase()));
 }
 
-/** The learner's last run succeeded and changed at least `min` rows. */
-export function lastChangedRows(ctx: SqlLabContext, min = 1): boolean {
+/**
+ * The statement that made the learner's last run fail is one of these kinds
+ * ("INSERT", "DELETE" …). Only the failing statement counts, not other text
+ * left in the editor.
+ */
+export function lastFailedStatementIs(ctx: SqlLabContext, ...kinds: string[]): boolean {
   const last = ctx.last;
-  return Boolean(last && last.outcome.ok && last.outcome.changes >= min);
+  return Boolean(last && !last.outcome.ok && kinds.includes(firstKeyword(last.outcome.failedSql)));
 }
 
 /** The first cell the template returns against the current state. */
@@ -36,14 +40,15 @@ export function scalarNow(ctx: SqlLabContext, template: string): SqlCell | undef
   return outcome.results[0].values[0]?.[0];
 }
 
+/**
+ * The count the template returns against the current state. A lookup that
+ * fails (a dropped or renamed table) is NaN, which fails every comparison,
+ * so `DROP TABLE` never passes for "no row left".
+ */
 export function countNow(ctx: SqlLabContext, template: string): number {
   const value = scalarNow(ctx, template);
+  if (value === undefined) return Number.NaN;
   return typeof value === "number" ? value : Number(value ?? 0);
-}
-
-export function tableExistsNow(ctx: SqlLabContext, tableToken: string): boolean {
-  const name = q(ctx.locale, tableToken).toLowerCase().replace(/'/g, "''");
-  return countNow(ctx, `SELECT count(*) FROM sqlite_master WHERE type = 'table' AND lower(name) = '${name}'`) > 0;
 }
 
 export interface ExpectedColumn {
@@ -55,19 +60,8 @@ export interface ExpectedColumn {
 
 /** The table exists and has (at least) these columns with these affinities. */
 export function tableHasColumns(ctx: SqlLabContext, tableToken: string, expected: ExpectedColumn[]): boolean {
-  if (!tableExistsNow(ctx, tableToken)) return false;
-  const table = q(ctx.locale, tableToken).replace(/"/g, '""');
-  const outcome = ctx.query(`PRAGMA table_info("${table}");`);
-  if (!outcome.ok || outcome.results.length !== 1) return false;
-  const { columns, values } = outcome.results[0];
-  const nameIndex = columns.indexOf("name");
-  const typeIndex = columns.indexOf("type");
-  const pkIndex = columns.indexOf("pk");
-  const actual = values.map((row) => ({
-    name: String(row[nameIndex]).toLowerCase(),
-    group: affinityGroup(String(row[typeIndex] ?? "")),
-    pk: Number(row[pkIndex]) > 0,
-  }));
+  const actual = tableSchema(ctx.query, q(ctx.locale, tableToken));
+  if (!actual) return false;
   return expected.every((column) => {
     const name = q(ctx.locale, column.name).toLowerCase();
     const found = actual.find((a) => a.name === name);

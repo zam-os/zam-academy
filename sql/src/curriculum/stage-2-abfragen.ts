@@ -54,10 +54,10 @@ WHERE preis &gt; 20;</code></pre>
         { name: "Text und Zahl", sql: "WHERE ort = 'Ulm'   WHERE preis > 20", note: "Text in Hochkommas, Zahlen ohne, Kommazahlen mit Punkt." },
       ],
       quiz: {
-        question: "Welche Bedingung findet alle Produkte, die weniger als 10 Euro kosten?",
-        options: ["WHERE preis < 10", "WHERE preis < '10'", "WHERE preis = 10"],
+        question: "Welche Bedingung findet alle Produkte, die weniger als 9,50 Euro kosten?",
+        options: ["WHERE preis < 9.50", "WHERE preis < 9,50", "WHERE preis = 9.50"],
         correctIndex: 0,
-        explanation: "Zahlen stehen ohne Hochkommas; < bedeutet kleiner als.",
+        explanation: "Kommazahlen schreibt SQL mit Punkt; 9,50 ist ein Syntaxfehler. = findet nur genau 9.50, < alles darunter.",
       },
       lab: {
         title: "Sandbox: Zeilen auswählen",
@@ -88,10 +88,10 @@ WHERE price &gt; 20;</code></pre>
         { name: "Text and number", sql: "WHERE city = 'Ulm'   WHERE price > 20", note: "Text in quotes, numbers without, decimals with a point." },
       ],
       quiz: {
-        question: "Which condition finds all products that cost less than 10 euros?",
-        options: ["WHERE price < 10", "WHERE price < '10'", "WHERE price = 10"],
+        question: "Which condition finds all products that cost less than 9.50 euros?",
+        options: ["WHERE price < 9.50", "WHERE price < 9,50", "WHERE price = 9.50"],
         correctIndex: 0,
-        explanation: "Numbers go without quotes; < means less than.",
+        explanation: "SQL writes decimals with a point; 9,50 is a syntax error. = finds only exactly 9.50, < everything below.",
       },
       lab: {
         title: "Sandbox: choose rows",
@@ -299,7 +299,7 @@ WHERE city IN ('Ulm', 'Augsburg', 'München');</code></pre>`,
       celebrationMessage: "You combine conditions confidently with AND, OR, BETWEEN and IN.",
     },
   ),
-  lab: sqlLab(SHOP, "SELECT {bezeichnung}, {preis} FROM {produkte}\nWHERE {kategorie} = '{Schule}' AND {preis} < 20;", [
+  lab: sqlLab(SHOP, "SELECT {bezeichnung}, {preis} FROM {produkte}\nWHERE {kategorie} = '{Elektronik}' AND {preis} < 30;", [
     goal("g1", (ctx) => lastResultEquals(ctx, "SELECT {bezeichnung}, {preis} FROM {produkte} WHERE {kategorie} = '{Schule}' AND {preis} < 20;")),
     goal("g2", (ctx) => lastResultEquals(ctx, "SELECT * FROM {kunden} WHERE {ort} IN ('Ulm', 'Augsburg');")),
     goal("g3", (ctx) => lastResultEquals(ctx, "SELECT {bezeichnung}, {preis} FROM {produkte} WHERE {preis} BETWEEN 10 AND 30;")),
@@ -483,7 +483,7 @@ SELECT first_name FROM customers WHERE first_name LIKE '____'; -- exactly four c
       celebrationMessage: "You find text with patterns instead of exact values.",
     },
   ),
-  lab: sqlLab(SHOP, "SELECT {nachname} FROM {kunden}\nWHERE {nachname} LIKE 'B%';", [
+  lab: sqlLab(SHOP, "SELECT {vorname} FROM {kunden}\nWHERE {vorname} LIKE 'J%';", [
     goal("g1", (ctx) => lastResultEquals(ctx, "SELECT {nachname} FROM {kunden} WHERE {nachname} LIKE 'B%';")),
     goal("g2", (ctx) => lastResultEquals(ctx, "SELECT {vorname}, {nachname}, {ort} FROM {kunden} WHERE {ort} LIKE '%burg';")),
     goal("g3", (ctx) => lastResultEquals(ctx, "SELECT {vorname}, {nachname} FROM {kunden} WHERE {vorname} LIKE '____';")),
@@ -681,7 +681,7 @@ LIMIT 3;</code></pre>
       celebrationMessage: "You deliver results in exactly the order that is needed.",
     },
   ),
-  lab: sqlLab(SHOP, "SELECT {bezeichnung}, {preis} FROM {produkte}\nORDER BY {preis} DESC;", [
+  lab: sqlLab(SHOP, "SELECT {bezeichnung}, {preis} FROM {produkte}\nORDER BY {preis} ASC;", [
     goal("g1", (ctx) => lastResultEquals(ctx, "SELECT {bezeichnung}, {preis} FROM {produkte} ORDER BY {preis} DESC;", true)),
     goal("g2", (ctx) => lastResultEquals(ctx, "SELECT {nachname}, {ort} FROM {kunden} ORDER BY {ort}, {nachname};", true)),
     goal("g3", (ctx) => lastResultEquals(ctx, "SELECT {bezeichnung}, {preis} FROM {produkte} ORDER BY {preis} DESC LIMIT 3;", true)),
@@ -852,7 +852,7 @@ FROM customers;</code></pre>
       celebrationMessage: "You let the DBMS calculate and assemble text.",
     },
   ),
-  lab: sqlLab(SHOP, "SELECT {bezeichnung}, {preis} * {lagerbestand} AS {gesamt}\nFROM {produkte};", [
+  lab: sqlLab(SHOP, "SELECT {bezeichnung}, {preis} * 2 AS {gesamt}\nFROM {produkte};", [
     goal("g1", (ctx) => lastResultEquals(ctx, "SELECT {bezeichnung}, {preis} * {lagerbestand} FROM {produkte};")),
     goal("g2", (ctx) => lastResultEquals(ctx, "SELECT '{Hallo} ' || {vorname} || '!' FROM {kunden};")),
     goal("g3", (ctx) => lastResultEquals(ctx, "SELECT {bezeichnung}, ROUND({preis}) FROM {produkte};")),
@@ -1038,7 +1038,7 @@ SELECT SUM(price * stock) AS stock_value FROM products;</code></pre>
       celebrationMessage: "You compute figures from many rows with one query.",
     },
   ),
-  lab: sqlLab(SHOP, "SELECT COUNT(*) FROM {kunden};", [
+  lab: sqlLab(SHOP, "SELECT COUNT(*) FROM {produkte};", [
     goal("g1", (ctx) => lastResultEquals(ctx, "SELECT COUNT(*) FROM {kunden};")),
     goal("g2", (ctx) => lastResultEquals(ctx, "SELECT AVG({preis}) FROM {produkte};")),
     goal("g3", (ctx) => lastResultEquals(ctx, "SELECT SUM({preis} * {lagerbestand}) FROM {produkte};")),

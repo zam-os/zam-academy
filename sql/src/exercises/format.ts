@@ -17,13 +17,6 @@ export function money(locale: AppLocale, value: number): string {
   }).format(value);
 }
 
-/** A number with the locale's decimal separator and at most `digits` decimals. */
-export function num(locale: AppLocale, value: number, digits = 2): string {
-  return new Intl.NumberFormat(locale === "de" ? "de-DE" : "en-GB", {
-    maximumFractionDigits: digits,
-  }).format(value);
-}
-
 /** An SQL string literal: single quotes, inner quotes doubled. */
 export function lit(value: string | number | null): string {
   if (value === null) return "NULL";

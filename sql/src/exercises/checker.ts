@@ -1,6 +1,6 @@
 import type { SqlJsStatic } from "sql.js";
 import { setupSql } from "../db/dataset";
-import { compareResults, createDatabase, dumpTable, runSql, sameSchema, tableSchema } from "../db/engine";
+import { compareResults, createDatabase, dumpTable, runSql, sameSchema, tableNames, tableSchema } from "../db/engine";
 import { UI_STRINGS } from "../i18n/translations";
 import type { AppLocale, ExerciseTask, TableKey } from "../model/types";
 
@@ -75,14 +75,29 @@ export function checkTask(
     if (!outcome.ok) return { status: "error", message: t.sqlError(outcome.error) };
     const expected = runSql(referenceDb, task.referenceSql);
     if (!expected.ok) throw new Error(`reference statement failed: ${expected.error}`);
-    for (const table of task.verifySchemaOf ?? []) {
+    // Every table the reference leaves behind counts, not only the one the
+    // task is about: a dropped or emptied table elsewhere is wrong too.
+    const expectedTables = tableNames(referenceDb).map((name) => name.toLowerCase());
+    const actualTables = tableNames(learnerDb).map((name) => name.toLowerCase());
+    const missing = expectedTables.find((table) => !actualTables.includes(table));
+    if (missing) return { status: "wrong", message: t.tableMissing(missing) };
+    const extra = actualTables.find((table) => !expectedTables.includes(table));
+    if (extra) return { status: "wrong", message: t.tableExtra(extra) };
+    const schemaOnly = (task.verifySchemaOf ?? []).map((table) => table.toLowerCase());
+    for (const table of schemaOnly) {
       const actualSchema = tableSchema(learnerDb, table);
       const expectedSchema = tableSchema(referenceDb, table);
       if (!expectedSchema) throw new Error(`reference did not create ${table}`);
       if (!actualSchema) return { status: "wrong", message: t.tableMissing(table) };
       if (!sameSchema(actualSchema, expectedSchema)) return { status: "wrong", message: t.schemaDiffers(table) };
     }
-    for (const table of task.verifyTables) {
+    // The tables the task names first, so the message points at them; a new
+    // table's rows are not part of a CREATE TABLE task.
+    const named = task.verifyTables.map((table) => table.toLowerCase());
+    const contents = [...named, ...expectedTables.filter((table) => !named.includes(table))].filter(
+      (table) => !schemaOnly.includes(table),
+    );
+    for (const table of contents) {
       const actualRows = dumpTable(learnerDb, table);
       const expectedRows = dumpTable(referenceDb, table);
       if (!expectedRows) throw new Error(`reference left no table ${table}`);

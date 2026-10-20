@@ -11,9 +11,6 @@ export default defineConfig({
     port: 5182,
     open: false,
   },
-  optimizeDeps: {
-    exclude: ["sql.js"],
-  },
   build: {
     outDir: "dist",
     emptyOutDir: true,

@@ -596,7 +596,7 @@ VALUES (1, 'Mia', 'Roth', '2009-05-02', 24.00);</code></pre>`,
   ),
   lab: sqlLab(
     SHOP,
-    "CREATE TABLE {mitglieder} (\n  {mitglied_id} INTEGER PRIMARY KEY,\n  {vorname} TEXT NOT NULL,\n  {nachname} TEXT NOT NULL\n);",
+    "CREATE TABLE {kurse} (\n  {kurs_id} INTEGER PRIMARY KEY,\n  {titel} TEXT NOT NULL\n);",
     [
       goal("g1", (ctx) =>
         tableHasColumns(ctx, "{mitglieder}", [
@@ -822,7 +822,7 @@ VALUES ('Nora', 'Lang', 'Ulm');</code></pre>
       celebrationMessage: "You know what makes a primary key and how the DBMS protects it.",
     },
   ),
-  lab: sqlLab(SHOP, "INSERT INTO {kunden} ({kunden_id}, {vorname}, {nachname}, {ort})\nVALUES (3, 'Nora', 'Lang', 'Ulm');", [
+  lab: sqlLab(SHOP, "SELECT {kunden_id}, {vorname}, {nachname}, {ort}\nFROM {kunden};", [
     goal("g1", (ctx) => lastErrorIncludes(ctx, "UNIQUE constraint failed")),
     goal("g2", (ctx) => countNow(ctx, "SELECT count(*) FROM {kunden};") > CUSTOMERS.length),
     goal(

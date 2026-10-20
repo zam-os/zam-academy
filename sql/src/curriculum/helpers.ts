@@ -107,4 +107,4 @@ export function sqlLab(tables: TableKey[], starterSql: string, goals: SqlLabGoal
 }
 
 /** The shop tables every lesson works with. */
-export const SHOP: TableKey[] = ["kunden", "produkte", "bestellungen", "positionen"];
+export { SHOP_TABLES as SHOP } from "../db/dataset";

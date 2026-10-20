@@ -58,6 +58,8 @@ export interface UiStrings {
   exerciseCount: (solved: number, required: number, extra: number) => string;
   hintLabel: string;
   sqlPlaceholder: string;
+  /** For tasks that change the database or its tables. */
+  sqlPlaceholderChange: string;
   checkButton: string;
   newTaskButton: string;
   revealButton: string;
@@ -152,6 +154,7 @@ export interface UiStrings {
     sqlError: (message: string) => string;
     tableDiffers: (table: string, actual: number, expected: number) => string;
     tableMissing: (table: string) => string;
+    tableExtra: (table: string) => string;
     schemaDiffers: (table: string) => string;
     wrongChoice: string;
     correct: string;
@@ -218,6 +221,7 @@ export const UI_STRINGS: Record<AppLocale, UiStrings> = {
     exerciseCount: (solved, required, extra) => `${solved} / ${required} gelöst${extra > 0 ? ` (+${extra})` : ""}`,
     hintLabel: "Syntax",
     sqlPlaceholder: "SELECT … FROM … ;",
+    sqlPlaceholderChange: "INSERT …, UPDATE …, DELETE … oder CREATE TABLE … ;",
     checkButton: "Prüfen",
     newTaskButton: "Neue Aufgabe",
     revealButton: "Lösung zeigen",
@@ -310,6 +314,7 @@ export const UI_STRINGS: Record<AppLocale, UiStrings> = {
       sqlError: (message) => `SQL-Fehler: ${message}`,
       tableDiffers: (table, actual, expected) => `Die Tabelle ${table} hat danach nicht den erwarteten Inhalt (${actual} statt ${expected} Zeilen, oder andere Werte).`,
       tableMissing: (table) => `Die Tabelle ${table} gibt es danach nicht.`,
+      tableExtra: (table) => `Die Tabelle ${table} gibt es danach, verlangt ist sie nicht.`,
       schemaDiffers: (table) => `Die Tabelle ${table} hat nicht die erwarteten Spalten, Datentypen oder den Primärschlüssel.`,
       wrongChoice: "Das ist nicht die passende Antwort.",
       correct: "Richtig!",
@@ -374,6 +379,7 @@ export const UI_STRINGS: Record<AppLocale, UiStrings> = {
     exerciseCount: (solved, required, extra) => `${solved} / ${required} solved${extra > 0 ? ` (+${extra})` : ""}`,
     hintLabel: "Syntax",
     sqlPlaceholder: "SELECT … FROM … ;",
+    sqlPlaceholderChange: "INSERT …, UPDATE …, DELETE … or CREATE TABLE … ;",
     checkButton: "Check",
     newTaskButton: "New task",
     revealButton: "Show solution",
@@ -466,6 +472,7 @@ export const UI_STRINGS: Record<AppLocale, UiStrings> = {
       sqlError: (message) => `SQL error: ${message}`,
       tableDiffers: (table, actual, expected) => `Table ${table} does not have the expected contents afterwards (${actual} instead of ${expected} rows, or different values).`,
       tableMissing: (table) => `Table ${table} does not exist afterwards.`,
+      tableExtra: (table) => `Table ${table} exists afterwards, but the task does not ask for it.`,
       schemaDiffers: (table) => `Table ${table} does not have the expected columns, data types or primary key.`,
       wrongChoice: "That is not the fitting answer.",
       correct: "Correct!",

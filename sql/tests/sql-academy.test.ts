@@ -167,6 +167,23 @@ describe("Aufgaben", () => {
     expect(checkTask(SQL, lesson.tables, task, "SELECT * FROM kunden;", "de").message).toContain("Zeile");
   });
 
+  it("judges a change by every table it leaves behind", () => {
+    const lesson = findLessonById("dml-1-einfuegen-aendern")!.lesson;
+    const make = lesson.exercises.find((generator) => generator.id === "loeschen")!.make;
+    // A deletion that leaves kunden alone, so changing kunden is the learner's extra.
+    const task = Array.from({ length: 20 }, (_, seed) => make(createRng(seed + 1), 1, "de")).find(
+      (candidate) => candidate.kind === "mutation" && !candidate.referenceSql.includes("kunden"),
+    );
+    if (task?.kind !== "mutation") throw new Error("expected a change task");
+    expect(checkTask(SQL, lesson.tables, task, task.referenceSql, "de").status).toBe("correct");
+    const dropped = checkTask(SQL, lesson.tables, task, `${task.referenceSql}\nPRAGMA foreign_keys = OFF;\nDROP TABLE kunden;`, "de");
+    expect(dropped).toMatchObject({ status: "wrong", message: expect.stringContaining("kunden") });
+    const emptied = checkTask(SQL, lesson.tables, task, `${task.referenceSql}\nDELETE FROM kunden WHERE kunden_id = 13;`, "de");
+    expect(emptied).toMatchObject({ status: "wrong", message: expect.stringContaining("kunden") });
+    const extra = checkTask(SQL, lesson.tables, task, `${task.referenceSql}\nCREATE TABLE notizen (text TEXT);`, "de");
+    expect(extra).toMatchObject({ status: "wrong", message: expect.stringContaining("notizen") });
+  });
+
   it("accepts an equivalent schema and a different alias", () => {
     const create = findLessonById("db-3-datentypen")!.lesson;
     const task = create.exercises[1].make(createRng(3), 1, "en");
@@ -288,15 +305,20 @@ describe("Sandbox-Aufträge", () => {
   });
 
   for (const locale of LOCALES) {
-    it(`reaches no goal at the start and every goal after its witness (${locale})`, () => {
+    it(`reaches no goal at the start or by running the starter, and every goal after its witness (${locale})`, () => {
       for (const lesson of sqlLessons) {
         const db = createDatabase(SQL, setupSql(locale, lesson.lab.tables));
         const ctx: SqlLabContext = { locale, query: (sql) => runSql(db, sql), last: null };
         for (const goal of lesson.lab.goals) {
           expect(goal.check(ctx), `${lesson.id} ${goal.id} not reached at the start`).toBe(false);
         }
-        const starter = runSql(db, q(locale, lesson.lab.starterSql));
-        void starter; // the starter may fail on purpose (a duplicate key) or succeed
+        // The starter shows the shape on a neighbouring example; running it unchanged earns nothing.
+        const starter = q(locale, lesson.lab.starterSql);
+        ctx.last = { sql: starter, outcome: runSql(db, starter) };
+        expect(ctx.last.outcome.ok, `${lesson.id} starter runs`).toBe(true);
+        for (const goal of lesson.lab.goals) {
+          expect(goal.check(ctx), `${lesson.id} ${goal.id} not reached by the starter`).toBe(false);
+        }
         for (const witness of WITNESSES[lesson.id]) {
           for (const step of witness.steps) {
             const sql = q(locale, step);
@@ -309,6 +331,37 @@ describe("Sandbox-Aufträge", () => {
       }
     });
   }
+
+  it("does not count a run that only looks like the goal", () => {
+    for (const locale of LOCALES) {
+      const goalsAfter = (lessonId: string, steps: string[]) => {
+        const lesson = findLessonById(lessonId)!.lesson as Lesson & { lab: SqlLabDefinition };
+        const db = createDatabase(SQL, setupSql(locale, lesson.lab.tables));
+        const ctx: SqlLabContext = { locale, query: (sql) => runSql(db, sql), last: null };
+        for (const step of steps) {
+          const sql = q(locale, step);
+          ctx.last = { sql, outcome: runSql(db, sql) };
+        }
+        const reached = lesson.lab.goals.filter((goal) => goal.check(ctx)).map((goal) => goal.id);
+        db.close();
+        return reached;
+      };
+      // The failing INSERT stops the run; the DELETE after it never ran.
+      expect(goalsAfter("er-3-fremdschluessel", [
+        "INSERT INTO {bestellungen} ({bestell_id}, {kunden_id}, {bestelldatum}) VALUES (115, 99, '2026-10-20');\nDELETE FROM {kunden} WHERE {kunden_id} = 1;",
+      ])).toEqual(["g1"]);
+      expect(goalsAfter("er-3-fremdschluessel", [
+        "INSERT INTO {bestellungen} ({bestell_id}, {kunden_id}, {bestelldatum}) VALUES (115, 4, '2026-10-21');",
+      ])).toEqual([]);
+      // UPDATE without WHERE: every price is 8.99, which the lesson warns about.
+      expect(goalsAfter("dml-1-einfuegen-aendern", ["UPDATE {produkte} SET {preis} = 8.99;"])).toEqual([]);
+      // Another CHECK than the one on the price.
+      expect(goalsAfter("dml-1-einfuegen-aendern", ["UPDATE {produkte} SET {lagerbestand} = -1 WHERE {produkt_id} = 1;"])).toEqual([]);
+      expect(goalsAfter("dml-1-einfuegen-aendern", ["UPDATE {produkte} SET {preis} = -1 WHERE {produkt_id} = 1;"])).toEqual(["g2"]);
+      // A dropped table is no deleted order.
+      expect(goalsAfter("dml-1-einfuegen-aendern", ["PRAGMA foreign_keys = OFF;", "DROP TABLE {bestellungen};"])).toEqual([]);
+    }
+  });
 
   it("marks the ER workshop's goals only for the right cardinalities", () => {
     const lesson = findLessonById("er-2-kardinalitaet")!.lesson;
@@ -457,7 +510,7 @@ describe("ZAM-Zelle (cell.json)", () => {
       if (lesson.module === "extra") {
         expect(lehrplan, `${atom.slug} is beyond the curriculum`).toHaveLength(0);
       } else {
-        expect(lehrplan.map((binding) => binding.track).sort(), `${atom.slug} binds both Wahlpflichtfächergruppen`).toEqual(["I", "II"]);
+        expect(lehrplan.map((binding) => binding.track).sort(), `${atom.slug} binds both Wahlpflichtfächergruppen`).toEqual(["I", "II_III"]);
         for (const binding of lehrplan) {
           expect(binding.school_type).toBe("realschule");
           expect(binding.grade).toBe(9);

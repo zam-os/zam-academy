@@ -1,5 +1,5 @@
 import { CUSTOMERS, CUSTOMERS_WITH_ORDERS, ORDERS, PRODUCTS } from "../db/dataset";
-import { countNow, lastErrorIncludes, lastResultEquals } from "../lab/goals";
+import { countNow, lastErrorIncludes, lastFailedStatementIs, lastResultEquals } from "../lab/goals";
 import type { ErLabDefinition, Lesson, Localized, Stage } from "../model/types";
 import { choiceTask, goal, L, mutationTask, queryTask, SHOP, sqlLab } from "./helpers";
 
@@ -168,7 +168,7 @@ const LESSON_ER_1: Lesson = {
       celebrationMessage: "You recognise redundancy and know why data is spread over tables.",
     },
   ),
-  lab: sqlLab([...SHOP, "bestellungen_flach"], "SELECT * FROM {bestellungen_flach}\nWHERE {nachname} = 'Berg';", [
+  lab: sqlLab([...SHOP, "bestellungen_flach"], "SELECT * FROM {bestellungen_flach}\nWHERE {nachname} = 'Fischer';", [
     goal("g1", (ctx) => lastResultEquals(ctx, "SELECT * FROM {bestellungen_flach} WHERE {nachname} = 'Berg';")),
     goal("g2", (ctx) => countNow(ctx, "SELECT COUNT(DISTINCT {ort}) FROM {bestellungen_flach} WHERE {nachname} = 'Berg';") >= 2),
     goal(
@@ -638,10 +638,14 @@ const LESSON_ER_3: Lesson = {
       celebrationMessage: "You implement relationships with foreign keys and know what referential integrity protects.",
     },
   ),
-  lab: sqlLab(SHOP, "INSERT INTO {bestellungen} ({bestell_id}, {kunden_id}, {bestelldatum})\nVALUES (115, 99, '2026-10-20');", [
-    goal("g1", (ctx) => lastErrorIncludes(ctx, "FOREIGN KEY constraint failed") && /insert/i.test(ctx.last?.sql ?? "")),
-    goal("g2", (ctx) => countNow(ctx, "SELECT COUNT(*) FROM {bestellungen} WHERE {bestell_id} = 115 AND {kunden_id} = 4;") === 1),
-    goal("g3", (ctx) => lastErrorIncludes(ctx, "FOREIGN KEY constraint failed") && /delete/i.test(ctx.last?.sql ?? "")),
+  lab: sqlLab(SHOP, "SELECT * FROM {bestellungen}\nWHERE {kunden_id} = 1;", [
+    goal("g1", (ctx) => lastErrorIncludes(ctx, "FOREIGN KEY constraint failed") && lastFailedStatementIs(ctx, "INSERT")),
+    goal(
+      "g2",
+      (ctx) =>
+        countNow(ctx, "SELECT COUNT(*) FROM {bestellungen} WHERE {bestell_id} = 115 AND {kunden_id} = 4 AND {bestelldatum} = '2026-10-20';") === 1,
+    ),
+    goal("g3", (ctx) => lastErrorIncludes(ctx, "FOREIGN KEY constraint failed") && lastFailedStatementIs(ctx, "DELETE")),
   ]),
   exercises: [
     {
@@ -805,7 +809,7 @@ WHERE o.status = 'open';</code></pre>
       celebrationMessage: "You connect tables via keys and fetch related data in one query.",
     },
   ),
-  lab: sqlLab(SHOP, "SELECT b.{bestell_id}, b.{bestelldatum}, k.{nachname}\nFROM {bestellungen} b\nJOIN {kunden} k ON b.{kunden_id} = k.{kunden_id};", [
+  lab: sqlLab(SHOP, "SELECT b.{bestell_id}, k.{ort}\nFROM {bestellungen} b\nJOIN {kunden} k ON b.{kunden_id} = k.{kunden_id};", [
     goal("g1", (ctx) => lastResultEquals(ctx, "SELECT b.{bestell_id}, b.{bestelldatum}, k.{nachname} FROM {bestellungen} b JOIN {kunden} k ON b.{kunden_id} = k.{kunden_id};")),
     goal("g2", (ctx) => lastResultEquals(ctx, "SELECT k.{vorname}, k.{nachname}, b.{bestelldatum} FROM {bestellungen} b JOIN {kunden} k ON b.{kunden_id} = k.{kunden_id} WHERE b.{status} = '{offen}';")),
     goal("g3", (ctx) => lastResultEquals(ctx, "SELECT p.{bezeichnung}, pos.{menge} FROM {positionen} pos JOIN {produkte} p ON pos.{produkt_id} = p.{produkt_id};")),
@@ -979,7 +983,7 @@ WHERE c.last_name = 'Berg';</code></pre>
   ),
   lab: sqlLab(
     SHOP,
-    "SELECT b.{bestelldatum}, p.{bezeichnung}, pos.{menge}\nFROM {bestellungen} b\nJOIN {positionen} pos ON pos.{bestell_id} = b.{bestell_id}\nJOIN {produkte} p ON p.{produkt_id} = pos.{produkt_id};",
+    "SELECT b.{bestell_id}, p.{bezeichnung}\nFROM {bestellungen} b\nJOIN {positionen} pos ON pos.{bestell_id} = b.{bestell_id}\nJOIN {produkte} p ON p.{produkt_id} = pos.{produkt_id};",
     [
       goal("g1", (ctx) => lastResultEquals(ctx, "SELECT b.{bestelldatum}, p.{bezeichnung}, pos.{menge} FROM {bestellungen} b JOIN {positionen} pos ON pos.{bestell_id} = b.{bestell_id} JOIN {produkte} p ON p.{produkt_id} = pos.{produkt_id};")),
       goal("g2", (ctx) => lastResultEquals(ctx, "SELECT k.{nachname}, p.{bezeichnung} FROM {kunden} k JOIN {bestellungen} b ON b.{kunden_id} = k.{kunden_id} JOIN {positionen} pos ON pos.{bestell_id} = b.{bestell_id} JOIN {produkte} p ON p.{produkt_id} = pos.{produkt_id};")),
