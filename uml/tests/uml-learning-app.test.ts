@@ -125,6 +125,16 @@ describe("6-Stage, 24-Lesson Curriculum, Varied Quiz Answers & Bilingual Support
     }
   });
 
+  it("never points a task prompt at the checklist, which stays hidden until the first check", () => {
+    for (const locale of ["de", "en"] as const) {
+      for (const lesson of getAllLessons(locale)) {
+        expect(lesson.taskPrompt, lesson.id).not.toMatch(
+          /checkliste|kriterien|checklist|criteria/i,
+        );
+      }
+    }
+  });
+
   it("provides specific diagnostic hints in both DE and EN when edge direction is reversed or edge kind is wrong", () => {
     const classLessonDe = getAllLessons("de").find(
       (l) => l.id === "cls-2-connections",
