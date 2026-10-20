@@ -15,7 +15,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        app: [uml, physik-realschule-9, sql, mathematik-realschule-9, chemie-realschule-9]
+        app: [uml, physik-realschule-9, sql, mathematik-realschule-9, chemie-realschule-9, geschichte-realschule-9]
     defaults:
       run:
         working-directory: ${{ matrix.app }}
@@ -58,5 +58,7 @@ jobs:
         run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node scripts/validate-cells.mjs
       - name: Preserve Chemie histories and refuse automatic merges
         run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node chemie-realschule-9/scripts/validate-migration.mjs
+      - name: Preserve Geschichte histories and refuse automatic merges
+        run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node geschichte-realschule-9/scripts/validate-migration.mjs
       - name: Build the catalog
         run: node scripts/build-catalog.mjs "$RUNNER_TEMP/catalog.json"

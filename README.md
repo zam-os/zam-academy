@@ -9,6 +9,7 @@ Hands-on training apps that build understanding before [ZAM](https://github.com/
 | Relationale Datenbanken und SQL (DE/EN, LehrplanPLUS IT 2.3.1/2.3.2) | [`sql/`](sql/) | https://academy.zam-os.org/sql/ | `zam-academy:sql` |
 | Mathematik 9 Realschule (LehrplanPLUS Bayern) | [`mathematik-realschule-9/`](mathematik-realschule-9/) | https://academy.zam-os.org/mathematik-realschule-9/ | `zam-academy:mathematik-realschule-9` |
 | Chemie 9 Realschule (LehrplanPLUS Bayern, Zweig I und II/III) | [`chemie-realschule-9/`](chemie-realschule-9/) | https://academy.zam-os.org/chemie-realschule-9/ | `zam-academy:chemie-realschule-9` |
+| Geschichte 9 Realschule (LehrplanPLUS Bayern, gemeinsamer Lernpfad) | [`geschichte-realschule-9/`](geschichte-realschule-9/) | https://academy.zam-os.org/geschichte-realschule-9/ | `zam-academy:geschichte-realschule-9` |
 
 ## How an app and its ZAM cell fit together
 
@@ -28,6 +29,7 @@ Each app is its own Vite package:
 ```bash
 cd uml                 # or: cd physik-realschule-9 (dev server on :5181), cd sql (:5182), cd mathematik-realschule-9 (:5183)
 # Chemie 9: cd chemie-realschule-9 (dev server on :5184)
+# Geschichte 9: cd geschichte-realschule-9 (dev server on :5185)
 npm ci
 npm run dev      # http://localhost:5180/uml/
 npm test
@@ -36,6 +38,8 @@ npm run package:zip   # offline zip in release/
 ```
 
 CI (`.github/workflows/ci.yml`) tests and builds every app on each pull request and uploads the offline zip as an artifact. Pages (`.github/workflows/pages.yml`) publishes `index.html` plus every app's build on each push to `main`.
+
+The [grade-9 coverage inventory](docs/realschule-9-coverage.md) distinguishes migrated packages, partial legacy material and still-open curriculum work.
 
 ## Privacy
 

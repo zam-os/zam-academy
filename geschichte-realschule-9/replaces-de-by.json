@@ -1,0 +1,83 @@
+{
+  "schema": 1,
+  "approved": "2026-10-20",
+  "source": "Thomas im Claude-Code-Chat am 2026-10-20: „Korrigiere die vier A-Begründungen pro Zeile und trag meine Mapping-Freigabe (heute) in replaces-de-by.json ein, dann pushen.“ Die Chemie-Freigabe gilt nicht für dieses Paket.",
+  "source_repository": "zam-os/zam",
+  "source_commit": "5a334c0c9050cf3590a036e7b451481462966d0e",
+  "authorization": "Thomas hat dieses explizite Mapping (4 A, 0 B, 4 C) am 2026-10-20 freigegeben, zam-os/zam-academy#14.",
+  "policy": "A: gleicher einzelner Abruf, genau ein expliziter Nachfolger mit replaces. B: unveränderte mehrteilige Gesamtfrage, hier keine. C: fachlich korrigierter oder unsicherer Umfang; kein replaces, keine Lernstandsübernahme. Altkarte und sämtliche Reviews bleiben erhalten, der Alttext wird durch retired_items aus aktiven Wiederholungen genommen.",
+  "sources": [
+    {
+      "file": "tests/fixtures/de-by-realschule-9-geschichte-weimar-ns-kvt.json",
+      "tile_id": "de-by:realschule-9-geschichte-weimar-ns",
+      "version": "2026.08.1",
+      "sha256": "d82ef50476b94afcaa45d57a8f01246145eeccfb8fe571dafbef11949ba0bd31"
+    }
+  ],
+  "rows": [
+    {
+      "de_by_cell": "de-by:realschule-9-geschichte-weimar-ns",
+      "de_by_id": "01K4G9H0000000000000000J01",
+      "de_by_question": "Welcher weltwirtschaftliche Einschnitt im Oktober 1929 ('Schwarzer Freitag' an der Wall Street) leitete das Ende der Stabilitätsphase der Weimarer Republik und Massenarbeitslosigkeit ein?",
+      "category": "A",
+      "academy_slug": "g9-weltwirtschaftskrise-check",
+      "note": "Gleicher einzelner Abruf: die Weltwirtschaftskrise ab 1929 als Ende der relativen Stabilisierung. Die Antwort „Die Weltwirtschaftskrise (Börsencrash 1929)“ bleibt unverändert; aus der Frage entfällt nur die missverständliche Bezeichnung „Schwarzer Freitag“. Die Karte zieht mit ihren Reviews vollständig auf diesen einen Nachfolger um."
+    },
+    {
+      "de_by_cell": "de-by:realschule-9-geschichte-weimar-ns",
+      "de_by_id": "01K4G9H0000000000000000J02",
+      "de_by_question": "Analysiere die wesentlichen Belastungsfaktoren der Weimarer Republik: Versailler Vertrag und Dolchstoßlegende, Hyperinflation 1923, Verfassungsschwächen (Artikel 48 Notverordnungen, Präsidialkabinette) und die Weltwirtschaftskrise 1929.",
+      "category": "C",
+      "academy_slug": null,
+      "note": "Mehrteiliger Alttext mit sachlichen Verkürzungen: Alleinschuld als Vertragsinhalt, Artikel 48 als automatische Parlamentsschwächung und eine zwangsläufige Radikalisierung. Die neue Erklärung unterscheidet Haftung, politische Deutung, Kontrollen und Entscheidungen. Keine Teilbeherrschung auf neue Einzelfragen verteilen."
+    },
+    {
+      "de_by_cell": "de-by:realschule-9-geschichte-weimar-ns",
+      "de_by_id": "01K4G9H0000000000000000J03",
+      "de_by_question": "An welchem historischen Datum ernannte Reichspräsident Paul von Hindenburg Adolf Hitler zum Reichskanzler?",
+      "category": "A",
+      "academy_slug": "g9-30-januar-check",
+      "note": "Gleicher einzelner Abruf: das Datum von Hitlers Ernennung zum Reichskanzler durch Hindenburg. Antwort „30. Januar 1933“ und Ablenkoption bleiben unverändert; der Fragetext ist nur gekürzt. Die Karte zieht mit ihren Reviews vollständig auf diesen einen Nachfolger um."
+    },
+    {
+      "de_by_cell": "de-by:realschule-9-geschichte-weimar-ns",
+      "de_by_id": "01K4G9H0000000000000000J04",
+      "de_by_question": "Zeige auf, wie die Nationalsozialisten 1933 in wenigen Monaten den demokratischen Rechtsstaat zerschlugen: Reichstagsbrandverordnung (Februar 1933), Ermächtigungsgesetz (März 1933) und Gleichschaltung von Ländern, Parteien und Gewerkschaften.",
+      "category": "C",
+      "academy_slug": null,
+      "note": "Der Alttext verwechselt Beschluss am 23. März mit Veröffentlichung am 24. März 1933 und beschreibt vollständige Gesetzgebungsübertragung sowie Auflösung aller Landesparlamente zu pauschal. Der korrigierte Gesamtumfang ist kein sicher gleicher Abruf."
+    },
+    {
+      "de_by_cell": "de-by:realschule-9-geschichte-weimar-ns",
+      "de_by_id": "01K4G9H0000000000000000J05",
+      "de_by_question": "Welche antijüdischen Gesetze von 1935 entzogen den deutschen Juden die staatsbürgerlichen Gleichheitsrechte und verboten Eheschließungen zwischen Juden und Nichtjuden?",
+      "category": "A",
+      "academy_slug": "g9-entrechtung-check",
+      "note": "Gleicher einzelner Abruf: der Name der antijüdischen Gesetze von 1935. Die Antwort bleibt „Nürnberger Gesetze“; der Klammerzusatz mit den Einzelgesetzen entfällt, ohne den Abruf zu ändern. Die Karte zieht mit ihren Reviews vollständig auf diesen einen Nachfolger um."
+    },
+    {
+      "de_by_cell": "de-by:realschule-9-geschichte-weimar-ns",
+      "de_by_id": "01K4G9H0000000000000000J06",
+      "de_by_question": "Erläutere die Kernbausteine der nationalsozialistischen Weltanschauung: 1. Rassenlehre & Sozialdarwinismus, 2. Radikaler Antisemitismus, 3. 'Lebensraum'-Ideologie im Osten, 4. Führerprinzip und 'Volksgemeinschaft'.",
+      "category": "C",
+      "academy_slug": null,
+      "note": "Die mehrteilige Ideologiefrage und Kurzantwort decken sich nicht vollständig: Die Kurzantwort lässt die ausdrücklich gefragte Volksgemeinschaft aus. Die neue Bearbeitung verbindet deren Ausgrenzungsfunktion ausdrücklich mit Ideologie und Politik; keine sichere vollständige Gleichwertigkeit."
+    },
+    {
+      "de_by_cell": "de-by:realschule-9-geschichte-weimar-ns",
+      "de_by_id": "01K4G9H0000000000000000J07",
+      "de_by_question": "Mit welchem kriegerischen Ereignis am 1. September 1939 begann der Zweite Weltkrieg in Europa?",
+      "category": "A",
+      "academy_slug": "g9-kriegsbeginn-1939-check",
+      "note": "Gleicher einzelner Abruf: das Ereignis vom 1. September 1939, mit dem der Zweite Weltkrieg in Europa begann. Die Antwort „deutscher Überfall auf Polen“ bleibt unverändert; die Ablenkoption Pearl Harbor ist nur als japanischer Angriff präzisiert. Die Karte zieht mit ihren Reviews vollständig auf diesen einen Nachfolger um."
+    },
+    {
+      "de_by_cell": "de-by:realschule-9-geschichte-weimar-ns",
+      "de_by_id": "01K4G9H0000000000000000J08",
+      "de_by_question": "Beschreibe die Dimension des nationalsozialistischen Vernichtungskrieges im Osten und des Holocausts (Wannsee-Konferenz 1942, Vernichtungslager) und nenne Beispiele für den deutschen Widerstand (z. B. Weiße Rose, Stauffenberg 20. Juli 1944).",
+      "category": "C",
+      "academy_slug": null,
+      "note": "Der Alttext vermischt im Holocaust-Begriff jüdische Opfer mit weiteren Opfergruppen und bindet den Völkermord zu eng an industrielle Lagervernichtung und Wannsee. Die neue Erklärung unterscheidet Verbrechen und Opfergruppen, berücksichtigt Massenerschießungen und die Koordination des bereits begonnenen Völkermords. Keine Übernahme auf korrigierte Teilfragen."
+    }
+  ]
+}
