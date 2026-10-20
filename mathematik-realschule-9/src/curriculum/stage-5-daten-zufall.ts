@@ -39,6 +39,9 @@ function dataParams(prefix: string, values: number[], max: number): LabParam[] {
 }
 
 /** `count` random integers in [min, max]. */
+/** The quartile convention of lesson 5.4, named in every task that asks for quartiles. */
+const QUARTILE_RULE = "q₁ und q₃ sind die Mediane der unteren und der oberen Hälfte; bei ungerader Anzahl zählt der Median zu keiner Hälfte.";
+
 function sample(rng: Rng, count: number, min: number, max: number): number[] {
   return Array.from({ length: count }, () => rng.int(min, max));
 }
@@ -109,8 +112,8 @@ const baumdiagramm: Lesson = {
       },
       {
         id: "unterschied",
-        text: "Finde eine Urne, bei der sich P(zwei rote) mit und ohne Zurücklegen um mehr als 15 Prozentpunkte unterscheidet.",
-        check: (v) => urnPaths(v.rot, v.blau, false).RR - urnPaths(v.rot, v.blau, true).RR > 0.15,
+        text: "Finde eine Urne, bei der sich P(zwei rote) mit und ohne Zurücklegen um mehr als 10 Prozentpunkte unterscheidet. Tipp: Je weniger Kugeln in der Urne sind, desto mehr ändert das Zurücklegen.",
+        check: (v) => urnPaths(v.rot, v.blau, false).RR - urnPaths(v.rot, v.blau, true).RR > 0.1,
       },
       {
         id: "simulation",
@@ -554,13 +557,13 @@ const kenngroessen: Lesson = {
     {
       id: "quartile",
       make: (rng, level): ExerciseTask => {
-        // 4k + 3 or 4k values: every school convention for quartiles agrees.
+        // Conventions for quartiles differ, so every prompt names the lesson's.
         const count = level === 1 ? rng.pick([7, 11]) : rng.pick([8, 12]);
         const values = sample(rng, count, 1, 40);
         const { q1, q2, q3 } = quartiles(values);
         if (level === 1) {
           return {
-            prompt: `Bestimme unteres Quartil, Median und oberes Quartil der Urliste ${list(values)}.`,
+            prompt: `Bestimme unteres Quartil, Median und oberes Quartil der Urliste ${list(values)}. ${QUARTILE_RULE}`,
             given: [`${count} Werte`],
             formulaHint: "Sortieren; Median; q₁ und q₃ sind die Mediane der Hälften ohne den Median",
             fields: [numberField("q₁ =", q1, "", 1), numberField("Median =", q2, "", 1), numberField("q₃ =", q3, "", 1)],
@@ -568,7 +571,7 @@ const kenngroessen: Lesson = {
           };
         }
         return {
-          prompt: `Hier sind die Zeiten (in Minuten), die ${count} Jugendliche für ihren Schulweg brauchen: ${list(values)}. Bestimme die Quartile und den Abstand zwischen ihnen (Interquartilsabstand).`,
+          prompt: `Hier sind die Zeiten (in Minuten), die ${count} Jugendliche für ihren Schulweg brauchen: ${list(values)}. Bestimme die Quartile und den Abstand zwischen ihnen (Interquartilsabstand). ${QUARTILE_RULE}`,
           given: [`${count} Werte`],
           fields: [numberField("q₁ =", q1, "min", 1), numberField("q₃ =", q3, "min", 1), numberField("q₃ − q₁ =", q3 - q1, "min", 1)],
           steps: [`Rangliste ${list(sorted(values))}`, `untere Hälfte: ${list(sorted(values).slice(0, count / 2))} → q₁ = ${fmt(q1, 1)}; obere Hälfte → q₃ = ${fmt(q3, 1)}`, `<strong>q₁ = ${fmt(q1, 1)}, q₃ = ${fmt(q3, 1)}, Abstand ${fmt(q3 - q1, 1)} min</strong>`],
@@ -600,7 +603,7 @@ const boxplot: Lesson = {
       <li>Die <strong>Antennen</strong> (Whisker) reichen von der Box bis zum Minimum und Maximum.</li>
       <li>Jeder der vier Teile enthält etwa ein Viertel der Werte. Ein kurzer Teil heißt: Dort liegen die Werte dicht beieinander, nicht: dort liegen weniger Werte.</li>
     </ul>
-    <div class="example">Liegt der Median weit links in der Box und ist die rechte Antenne lang, sind die Werte nach rechts weit gestreut: Die Verteilung ist nicht symmetrisch.</div>
+    <div class="example">Liegt der Median weit links in der Box und ist die rechte Antenne lang, sind die Werte nach rechts weit gestreut: Die Verteilung ist nicht symmetrisch, sondern <strong>schief</strong>.</div>
     <div class="merke"><strong>Merke:</strong> Box = mittlere Hälfte, Breite der Box = Interquartilsabstand, Spannweite = Max − Min.</div>
   `,
   formulas: [
@@ -652,7 +655,7 @@ const boxplot: Lesson = {
           const values = sample(rng, rng.pick([8, 12]), 1, 50);
           const f = fiveNumbers(values);
           return {
-            prompt: `Bestimme die fünf Kennwerte für einen Boxplot der Werte ${list(values)}.`,
+            prompt: `Bestimme die fünf Kennwerte für einen Boxplot der Werte ${list(values)}. ${QUARTILE_RULE}`,
             given: [`${values.length} Werte`],
             formulaHint: "Sortieren; Min, q₁, Median, q₃, Max",
             fields: [numberField("Min =", f.min, "", 1), numberField("q₁ =", f.q1, "", 1), numberField("Median =", f.q2, "", 1), numberField("q₃ =", f.q3, "", 1), numberField("Max =", f.max, "", 1)],

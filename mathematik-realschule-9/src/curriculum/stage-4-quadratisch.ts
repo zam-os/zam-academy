@@ -179,7 +179,7 @@ const streckfaktor: Lesson = {
     ],
     readouts: [
       { key: "a", label: "Faktor a", digits: 3, emphasis: true, compute: (v) => throwFactor(v) },
-      { key: "atHoop", label: "Höhe über dem Korb", unit: "m", digits: 2, compute: (v) => throwFactor(v) * (HOOP.x - v.d) ** 2 + v.e },
+      { key: "atHoop", label: "Höhe am Korb", unit: "m", digits: 2, compute: (v) => throwFactor(v) * (HOOP.x - v.d) ** 2 + v.e },
       { key: "hit", label: "Ergebnis", compute: (v) => (isHit(v) ? "Treffer" : "daneben") },
     ],
     goals: [

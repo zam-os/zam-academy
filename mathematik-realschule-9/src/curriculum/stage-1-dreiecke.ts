@@ -136,8 +136,9 @@ const pythagoras: Lesson = {
           };
         }
         if (rng.next() < 0.5) {
-          const w = rng.int(80, 150);
-          const h = Math.round((w * 9) / 16);
+          const k = rng.int(5, 9);
+          const w = 16 * k;
+          const h = 9 * k;
           const d = Math.hypot(w, h);
           return {
             prompt: `Ein Fernseher im Format 16 : 9 hat ein Bild, das ${fmt(w)} cm breit und ${fmt(h)} cm hoch ist. Fernseher werden nach ihrer Bilddiagonale in Zoll verkauft (1 Zoll = 2,54 cm). Wie viel Zoll hat er?`,
@@ -380,7 +381,8 @@ const umkehrung: Lesson = {
       make: (rng, level): ExerciseTask => {
         const right = rng.next() < 0.5;
         const [p, q, hyp] = triple(rng);
-        const delta = rng.pick([0.5, 1]);
+        // r must stay below p + q, or the three sides form no triangle.
+        const delta = hyp + 1 < p + q ? rng.pick([0.5, 1]) : 0.5;
         // A wrong longest side stays the longest one.
         const r = right ? hyp : hyp - delta > Math.max(p, q) && rng.next() < 0.5 ? hyp - delta : hyp + delta;
         if (level === 1) {
@@ -419,7 +421,8 @@ const umkehrung: Lesson = {
         if (level === 1) {
           const p = rng.int(4, 12);
           const q = rng.int(4, 12);
-          const L = Math.max(p, q) + rng.int(1, 6);
+          // Longest side, but shorter than p + q, so the triangle exists.
+          const L = Math.max(p, q) + rng.int(1, Math.min(p, q) - 1);
           const diff = p * p + q * q - L * L;
           const kind = diff === 0 ? 1 : diff > 0 ? 0 : 2;
           return {
@@ -473,7 +476,7 @@ const hoehensatz: Lesson = {
       <li><strong>Höhensatz:</strong> h² = p · q. Das Quadrat über der Höhe ist so groß wie das Rechteck aus den beiden Abschnitten.</li>
       <li><strong>Kathetensatz:</strong> a² = c · p und b² = c · q. Das Quadrat über einer Kathete ist so groß wie das Rechteck aus der Hypotenuse und dem Abschnitt, der an dieser Kathete liegt.</li>
     </ul>
-    <p>Alle Ecken C mit rechtem Winkel über der Strecke AB liegen auf einem Halbkreis über AB, dem <strong>Thaleskreis</strong>. Im Labor wandert C auf ihm: Der rechte Winkel bleibt, Höhe und Abschnitte ändern sich.</p>
+    <p>Alle Punkte C, für die das Dreieck ABC bei C einen rechten Winkel hat, liegen auf dem Kreis mit dem Durchmesser AB (ohne A und B), dem <strong>Thaleskreis</strong>. Im Labor wandert C auf seiner oberen Hälfte: Der rechte Winkel bleibt, Höhe und Abschnitte ändern sich.</p>
     <div class="example">Zusammen ergeben die beiden Kathetensätze den Pythagoras: a² + b² = c · p + c · q = c · (p + q) = c².</div>
     <div class="merke"><strong>Merke:</strong> Höhensatz: h² = p · q. Kathetensatz: Kathete² = Hypotenuse · anliegender Abschnitt.</div>
   `,

@@ -632,7 +632,7 @@ const kegel: Lesson = {
       { key: "V", label: "Volumen Spitzkörper ⅓ · G · h", unit: "cm³", digits: 1, emphasis: true, compute: (v) => spitzVolume(v) },
       { key: "Vs", label: "Volumen Säule G · h", unit: "cm³", digits: 1, compute: (v) => 3 * spitzVolume(v) },
       { key: "s", label: "Mantellinie s bzw. Seitenhöhe", unit: "cm", digits: 2, compute: (v) => coneSlant(v) },
-      { key: "angle", label: "Winkel des Mantelsektors (Kegel)", unit: "°", digits: 1, compute: (v) => (360 * v.r) / Math.hypot(v.r, v.h) },
+      { key: "angle", label: "Winkel des Mantelsektors (Kegel)", unit: "°", digits: 1, compute: (v) => (v.body === 0 ? (360 * v.r) / Math.hypot(v.r, v.h) : "nur beim Kegel") },
     ],
     goals: [
       { id: "voll", text: "Fülle die Säule randvoll, ohne dass etwas überläuft.", check: (v) => v.view === 0 && v.pours === 3 },

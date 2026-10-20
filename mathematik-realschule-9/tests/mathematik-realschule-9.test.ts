@@ -329,6 +329,29 @@ describe("Entscheidungen in Aufgaben", () => {
     }
   });
 
+  it("state only triangles that exist", () => {
+    for (const seed of SEEDS) {
+      for (const id of ["pruefen", "winkelart"]) {
+        const task = generator("rd-2-umkehrung", id).make(createRng(seed), 1);
+        const sides = [...task.prompt.matchAll(/([\d,]+) cm/g)].map((match) => number(match[1])).sort((a, b) => a - b);
+        expect(sides, `${id} seed ${seed}: ${task.prompt}`).toHaveLength(3);
+        expect(sides[0] + sides[1], `${id} seed ${seed}: ${task.prompt}`).toBeGreaterThan(sides[2]);
+      }
+    }
+  });
+
+  it("let the candles meet while both still burn", () => {
+    for (const seed of SEEDS) {
+      const task = generator("lg-4-loesungsfaelle", "fall").make(createRng(seed), 2);
+      const [, a, rateA, b, rateB] = /A ist (\d+) cm lang und brennt in jeder Stunde ([\d,]+) cm ab\. Kerze B ist (\d+) cm lang und brennt ([\d,]+) cm/.exec(task.prompt)!.map(number);
+      const asked = task.fields[1];
+      if (asked.kind !== "number") throw new Error("fields");
+      // At the meeting time, or after the 3 h asked for, both candles are still at least 1 cm long.
+      const hours = asked.label.startsWith("gleich lang") ? asked.answer : 3;
+      expect(Math.min(a - rateA * hours, b - rateB * hours), `seed ${seed}: ${task.prompt}`).toBeGreaterThanOrEqual(1);
+    }
+  });
+
   it("show n − 1 tries visibly under the target probability", () => {
     for (const seed of SEEDS) {
       const task = generator("dz-2-gegenereignis", "mindestens").make(createRng(seed), 2);
@@ -557,12 +580,12 @@ describe("ZAM-Zelle (cell.json)", () => {
     }
   });
 
-  it("keeps fixed ids: atoms A01–A29 and cards K01–K97 in lesson order", () => {
+  it("keeps fixed ids: atoms A01–A29 and cards K001–K108 in lesson order", () => {
     expect(cell.atoms.map((atom) => atom.id)).toEqual(
       Array.from({ length: 29 }, (_, i) => `01K8MATH9RS000000000000A${String(i + 1).padStart(2, "0")}`),
     );
     expect(items.map((item) => item.id)).toEqual(
-      Array.from({ length: 97 }, (_, i) => `01K8MATH9RS000000000000K${String(i + 1).padStart(2, "0")}`),
+      Array.from({ length: 108 }, (_, i) => `01K8MATH9RS00000000000K${String(i + 1).padStart(3, "0")}`),
     );
   });
 
@@ -663,6 +686,14 @@ describe("ZAM-Zelle (cell.json)", () => {
       expect(counts).toEqual({ A: 41, B: 4, C: 4 });
       for (const row of table.rows) {
         if (row.category === "C") expect(row.note, `${row.de_by_id} needs a reason`).toBeTruthy();
+      }
+    });
+
+    it("names only cards of this cell in its notes", () => {
+      for (const row of table.rows) {
+        for (const slug of row.note?.match(/m9-[a-z0-9-]+[a-z0-9]/g) ?? []) {
+          expect(bySlug.has(slug), `${row.de_by_id} names ${slug}`).toBe(true);
+        }
       }
     });
 

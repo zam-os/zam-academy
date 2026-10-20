@@ -547,12 +547,20 @@ const loesungsfaelle: Lesson = {
             steps: [`(I): y = ${linear(m1, t1)}, (II): y = ${linear(m2, t2)}`, `<strong>${kind === 1 ? "m₁ ≠ m₂: genau eine Lösung" : t1 === t2 ? "m und t gleich: unendlich viele Lösungen" : "gleiche Steigung, verschiedene t: keine Lösung"}</strong>`],
           };
         }
-        const startA = rng.int(14, 24);
-        const startB = startA - rng.int(2, 6);
-        const rateA = rng.pick([1.5, 2, 2.5, 3]);
-        const rateB = kind === 1 ? rateA - rng.pick([0.5, 1]) : rateA;
         const same = kind === 2;
-        const lengthB = same ? startA : startB;
+        let startA: number, lengthB: number, rateA: number, rateB: number;
+        // Draw again until the answer falls while both candles still burn,
+        // with at least 1 cm left: at the meeting time, or after the 3 h asked.
+        do {
+          startA = rng.int(14, 24);
+          lengthB = same ? startA : startA - rng.int(2, 6);
+          rateA = rng.pick([1.5, 2, 2.5, 3]);
+          rateB = kind === 1 ? rateA - rng.pick([0.5, 1]) : rateA;
+        } while (
+          kind === 1
+            ? startA - rateA * ((startA - lengthB) / (rateA - rateB)) < 1
+            : lengthB - 3 * rateB < 1
+        );
         return {
           prompt: `Kerze A ist ${startA} cm lang und brennt in jeder Stunde ${fmt(rateA, 1)} cm ab. Kerze B ist ${lengthB} cm lang und brennt ${fmt(rateB, 1)} cm pro Stunde ab. Beide werden gleichzeitig angezündet. Gibt es einen Zeitpunkt, an dem beide gleich lang sind? Gib die Anzahl der Lösungen des Systems an.`,
           given: [`A: y = ${startA} − ${fmt(rateA, 1)}x`, `B: y = ${lengthB} − ${fmt(rateB, 1)}x`],
@@ -565,7 +573,7 @@ const loesungsfaelle: Lesson = {
           steps: [
             `Steigungen: −${fmt(rateA, 1)} und −${fmt(rateB, 1)}; Anfangslängen ${startA} cm und ${lengthB} cm.`,
             kind === 1
-              ? `${startA} − ${fmt(rateA, 1)}x = ${lengthB} − ${fmt(rateB, 1)}x, also ${fmt(rateA - rateB, 1)}x = ${startA - lengthB} und x = ${fmt((startA - lengthB) / (rateA - rateB), 2)}.`
+              ? `${startA} − ${fmt(rateA, 1)}x = ${lengthB} − ${fmt(rateB, 1)}x, also ${fmt(rateA - rateB, 1)}x = ${startA - lengthB} und x = ${fmt((startA - lengthB) / (rateA - rateB), 2)}. Dann sind beide noch ${fmt(startA - (rateA * (startA - lengthB)) / (rateA - rateB), 2)} cm lang, sie brennen also noch.`
               : `Beide werden gleich schnell kürzer: Der Unterschied bleibt immer ${startA - lengthB} cm.`,
             `<strong>${kind === 1 ? "Verschiedene Steigungen: genau eine Lösung" : same ? "Gleiche Gerade: unendlich viele Lösungen, sie sind immer gleich lang" : "Gleiche Steigung, verschiedener Start: keine Lösung, sie werden nie gleich lang"}</strong>.`,
           ],
