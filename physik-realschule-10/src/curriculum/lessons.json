@@ -1,0 +1,2664 @@
+[
+  {
+    "id": "me-bewegung",
+    "lb": 1,
+    "title": "Bewegung aus Diagrammen lesen",
+    "period": "Ph10 · Lernbereich 1 · beide Zweige",
+    "intro": "Die Steigung erzählt mehr als die Höhe einer Kurve.",
+    "paragraphs": [
+      "Ein Zeit-Ort-Diagramm trägt die Zeit waagerecht und den Ort senkrecht auf. Eine steigende Gerade zeigt eine konstante positive Geschwindigkeit; eine waagerechte Linie bedeutet Stillstand. Die mittlere Geschwindigkeit ist die Ortsänderung geteilt durch die Zeitspanne. Für die mittlere Schnelligkeit zählt dagegen die gesamte zurückgelegte Strecke, auch bei einer Umkehr.",
+      "Die Steigung einer Sekante liefert die mittlere Geschwindigkeit eines Zeitintervalls. Die Tangente beschreibt die Momentangeschwindigkeit an einem Zeitpunkt. Eine gekrümmte Ortskurve bedeutet veränderliche Geschwindigkeit. Achseneinheiten und die gewählte positive Richtung gehören zur Aussage. Für die Umrechnung von km/h in m/s teilst du durch 3,6."
+    ],
+    "takeaway": "Geschwindigkeit entspricht der Steigung im Zeit-Ort-Diagramm.",
+    "tracks": ["I", "II_III"],
+    "sourceIds": ["lp-i", "lp-ii", "mechanics"],
+    "quiz": {
+      "question": "Was bedeutet eine waagerechte Linie im Zeit-Ort-Diagramm?",
+      "answer": "Der Ort bleibt gleich; der Körper steht still.",
+      "wrong": [
+        "Der Körper bewegt sich mit gleichbleibender Schnelligkeit.",
+        "Der Körper beschleunigt mit konstanter Beschleunigung."
+      ],
+      "explanation": "Eine waagerechte Ortskurve hat die Steigung null."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Aussagen und Belege ordnen",
+      "instruction": "Ordne jede Aussage zu. Begründe danach, woran du sie erkennst.",
+      "categories": [
+        "Ortsänderung",
+        "Geschwindigkeit",
+        "Nicht daraus bestimmbar"
+      ],
+      "entries": [
+        {
+          "text": "Höhenunterschied zweier Punkte der Ortskurve",
+          "target": 0,
+          "feedback": "Der Unterschied der Ortskoordinaten ist die Ortsänderung."
+        },
+        {
+          "text": "Steigung einer Tangente an die Ortskurve",
+          "target": 1,
+          "feedback": "Die lokale Steigung ist die Momentangeschwindigkeit."
+        },
+        {
+          "text": "Masse des bewegten Körpers",
+          "target": 2,
+          "feedback": "Ein Zeit-Ort-Diagramm enthält keine Masse."
+        }
+      ],
+      "conclusion": "Unterscheide Achsenwert, Differenz und Steigung."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Ein Körper ist nach 4 s bei 12 m und nach 8 s bei 20 m. Bestimme die mittlere Geschwindigkeit und erkläre die Grenze der Aussage.",
+        "model": "Die Ortsänderung beträgt 8 m in 4 s, also 2 m/s. Das ist ein Mittelwert für dieses Intervall. Ohne den Kurvenverlauf kann ich nicht behaupten, dass die Geschwindigkeit zwischendurch immer 2 m/s war.",
+        "criteria": [
+          "Differenzen beider Koordinaten verwendet",
+          "Einheit m/s angegeben",
+          "Mittelwert von Momentanwert unterschieden"
+        ],
+        "hints": [
+          "Differenzen beider Koordinaten verwendet",
+          "Einheit m/s angegeben"
+        ]
+      },
+      "2": {
+        "prompt": "Ein Fahrrad fährt 100 m vor und 100 m zurück, insgesamt in 40 s. Vergleiche mittlere Schnelligkeit und mittlere Geschwindigkeit.",
+        "model": "Die Strecke beträgt 200 m, die Ortsänderung dagegen null. Die mittlere Schnelligkeit ist 5 m/s, die mittlere gerichtete Geschwindigkeit null. Für die tatsächlichen Momentangeschwindigkeiten fehlen Zwischenmessungen.",
+        "criteria": [
+          "Strecke und Ortsänderung getrennt",
+          "Beide Mittelwerte korrekt bestimmt",
+          "Grenze der Zeitauflösung genannt"
+        ],
+        "hints": [
+          "Strecke und Ortsänderung getrennt",
+          "Beide Mittelwerte korrekt bestimmt"
+        ]
+      }
+    },
+    "model": "motion",
+    "calculation": "speed"
+  },
+  {
+    "id": "me-beschleunigung",
+    "lb": 1,
+    "title": "Gleichmäßig beschleunigen",
+    "period": "Ph10 · Lernbereich 1 · beide Zweige",
+    "intro": "Geschwindigkeit kann sich in gleichen Zeiten gleich stark ändern.",
+    "paragraphs": [
+      "Beschleunigung ist die Geschwindigkeitsänderung pro Zeit: a = Δv / Δt. Ihre Einheit ist m/s². Bei konstanter Beschleunigung gilt v = v₀ + a · t und für den Ort x = x₀ + v₀ · t + ½ · a · t². Die Formeln beziehen sich auf eine feste positive Richtung.",
+      "Beim Start aus der Ruhe wächst die zurückgelegte Strecke quadratisch mit der Zeit. Doppelte Zeit liefert bei gleicher Beschleunigung die vierfache Strecke. Im Zeit-Geschwindigkeits-Diagramm ist die Steigung die Beschleunigung; die vorzeichenbehaftete Fläche beschreibt die Ortsänderung. Ein negatives a bedeutet nicht immer langsamer: Bei bereits negativer Geschwindigkeit kann der Betrag der Geschwindigkeit wachsen."
+    ],
+    "takeaway": "Konstante Beschleunigung bedeutet gleiche Geschwindigkeitsänderung in gleichen Zeiten.",
+    "tracks": ["I", "II_III"],
+    "sourceIds": ["lp-i", "lp-ii", "mechanics"],
+    "quiz": {
+      "question": "Was kennzeichnet eine gleichmäßig beschleunigte Bewegung?",
+      "answer": "Die Geschwindigkeit ändert sich in gleichen Zeiten um gleiche Beträge.",
+      "wrong": [
+        "Die Strecke nimmt in gleichen Zeiten immer um denselben Betrag zu.",
+        "Die Geschwindigkeit bleibt während der gesamten Bewegung unverändert."
+      ],
+      "explanation": "Konstant ist die Beschleunigung, nicht die Geschwindigkeit."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Aussagen und Belege ordnen",
+      "instruction": "Ordne jede Aussage zu. Begründe danach, woran du sie erkennst.",
+      "categories": ["Gleichförmig", "Gleichmäßig beschleunigt"],
+      "entries": [
+        {
+          "text": "Gerade im Zeit-Ort-Diagramm mit konstanter Steigung",
+          "target": 0,
+          "feedback": "Konstante Ortssteigung bedeutet konstante Geschwindigkeit."
+        },
+        {
+          "text": "Gerade mit steigender Geschwindigkeit im Zeit-Geschwindigkeits-Diagramm",
+          "target": 1,
+          "feedback": "Die Geschwindigkeitssteigung ist konstant."
+        },
+        {
+          "text": "Parabel im Zeit-Ort-Diagramm beim Start aus der Ruhe",
+          "target": 1,
+          "feedback": "Der Ort wächst mit dem Quadrat der Zeit."
+        }
+      ],
+      "conclusion": "Diagrammtyp und Achsen entscheiden über die Bedeutung einer Geraden."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Ein Wagen startet aus Ruhe mit 2 m/s². Bestimme Geschwindigkeit und Weg nach 3 s.",
+        "model": "Die Geschwindigkeit ist 2 · 3 = 6 m/s. Der Weg ist ½ · 2 · 3² = 9 m. Die Formel setzt konstante Beschleunigung voraus; die mittlere Geschwindigkeit in diesem Intervall ist 3 m/s.",
+        "criteria": [
+          "Geschwindigkeit 6 m/s",
+          "Weg 9 m",
+          "Konstante Beschleunigung als Voraussetzung"
+        ],
+        "hints": ["Geschwindigkeit 6 m/s", "Weg 9 m"]
+      },
+      "2": {
+        "prompt": "Kann ein Körper mit negativer Beschleunigung schneller werden? Gib einen eindimensionalen Fall an.",
+        "model": "Ja. Bewegt er sich bereits in negativer Richtung, etwa mit −2 m/s, und ist a = −1 m/s², hat er nach einer Sekunde −3 m/s. Der Geschwindigkeitsbetrag ist größer. Entscheidend ist die Richtung von Geschwindigkeit und Beschleunigung.",
+        "criteria": [
+          "Vorzeichenrichtung festgelegt",
+          "Passenden Zahlenfall genannt",
+          "Betrag und gerichtete Größe unterschieden"
+        ],
+        "hints": [
+          "Vorzeichenrichtung festgelegt",
+          "Passenden Zahlenfall genannt"
+        ]
+      }
+    },
+    "model": "motion",
+    "calculation": "acceleration"
+  },
+  {
+    "id": "me-freier-fall",
+    "lb": 1,
+    "title": "Freier Fall als Modell",
+    "period": "Ph10 · Lernbereich 1 · beide Zweige",
+    "intro": "Was ändert Luftwiderstand an einer idealisierten Vorhersage?",
+    "paragraphs": [
+      "Beim freien Fall wirkt im Modell nur die Gewichtskraft. In Erdnähe ist die Fallbeschleunigung ungefähr g = 9,81 m/s²; die Masse kürzt sich aus F = m · a und F_G = m · g heraus. Ohne Luftwiderstand fallen deshalb Körper vom selben Ort mit gleicher Anfangsgeschwindigkeit gleich schnell.",
+      "Für den Fall aus Ruhe und positive Richtung nach unten gilt h = ½ · g · t² und v = g · t. Ein Blatt Papier und eine Stahlkugel erfüllen das Modell in Luft unterschiedlich gut. Der Vergleich prüft vor allem die Modellannahmen, nicht eine veränderliche Fallbeschleunigung. Ein Zeitmessfehler wirkt wegen des Quadrats deutlich auf die berechnete Höhe."
+    ],
+    "takeaway": "Ohne Luftwiderstand ist die Fallbeschleunigung unabhängig von der Masse.",
+    "tracks": ["I", "II_III"],
+    "sourceIds": ["lp-i", "lp-ii", "mechanics"],
+    "quiz": {
+      "question": "Was gilt für zwei verschieden schwere Körper im Vakuum bei gleichem Start?",
+      "answer": "Sie haben dieselbe Fallbeschleunigung.",
+      "wrong": [
+        "Der schwerere hat grundsätzlich die größere Fallbeschleunigung.",
+        "Der leichtere erreicht den Boden grundsätzlich früher."
+      ],
+      "explanation": "Gewichtskraft und träge Masse wachsen im gleichen Verhältnis."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Aussagen und Belege ordnen",
+      "instruction": "Ordne jede Aussage zu. Begründe danach, woran du sie erkennst.",
+      "categories": ["Idealer freier Fall", "Modellabweichung"],
+      "entries": [
+        {
+          "text": "Einzige berücksichtigte Kraft ist die Gewichtskraft.",
+          "target": 0,
+          "feedback": "So ist das Fallmodell definiert."
+        },
+        {
+          "text": "Ein Fallschirm bremst stark durch Luftwiderstand.",
+          "target": 1,
+          "feedback": "Eine weitere Kraft verändert die Beschleunigung."
+        },
+        {
+          "text": "Aus Ruhe wächst die Fallstrecke quadratisch mit der Zeit.",
+          "target": 0,
+          "feedback": "Das folgt aus näherungsweise konstantem g."
+        }
+      ],
+      "conclusion": "Ein Modell ist nur mit seinen Annahmen übertragbar."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Warum widerlegt ein langsamer fallendes Papierblatt nicht die Massenunabhängigkeit des freien Falls?",
+        "model": "Die Aussage setzt vernachlässigbaren Luftwiderstand voraus. Beim ausgebreiteten Blatt wirkt im Verhältnis zur Gewichtskraft viel Luftwiderstand. Ich müsste Körperform und Luftbedingungen kontrollieren oder Daten aus einem Vakuumversuch vergleichen.",
+        "criteria": [
+          "Voraussetzung genannt",
+          "Luftwiderstand relativ zur Gewichtskraft erklärt",
+          "Geeigneten Vergleich vorgeschlagen"
+        ],
+        "hints": [
+          "Voraussetzung genannt",
+          "Luftwiderstand relativ zur Gewichtskraft erklärt"
+        ]
+      },
+      "2": {
+        "prompt": "Bei einer Fallzeitmessung wird statt 0,50 s der Wert 0,55 s eingesetzt. In welche Richtung geht der Höhenfehler?",
+        "model": "Die berechnete Höhe wird zu groß. Das Verhältnis ist 0,55² / 0,50² = 1,21, also 21 % mehr. Eine um 10 % längere gemessene Zeit erzeugt bei der quadratischen Formel keinen bloß 10 % größeren Höhenwert.",
+        "criteria": [
+          "Fehlerrichtung erkannt",
+          "Quadratische Abhängigkeit genutzt",
+          "21 % Höhenabweichung bestimmt"
+        ],
+        "hints": ["Fehlerrichtung erkannt", "Quadratische Abhängigkeit genutzt"]
+      }
+    },
+    "calculation": "fall"
+  },
+  {
+    "id": "me-kraft",
+    "lb": 1,
+    "title": "Kraft verändert Bewegung",
+    "period": "Ph10 · Lernbereich 1 · beide Zweige",
+    "intro": "Entscheidend ist die resultierende Kraft.",
+    "paragraphs": [
+      "Die Grundgleichung der Mechanik lautet F_res = m · a. Gemeint ist die Summe aller äußeren Kräfte auf das betrachtete System, einschließlich ihrer Richtungen. Die Einheit Newton entspricht kg · m/s². Bei gleicher Masse bedeutet doppelte resultierende Kraft doppelte Beschleunigung.",
+      "Bei gleichförmiger geradliniger Bewegung ist die resultierende Kraft null. Einzelne Kräfte können trotzdem wirken: Antrieb und Widerstände können einander ausgleichen. Kräfte von zwei wechselwirkenden Körpern sind gleich groß und entgegengesetzt, greifen aber an verschiedenen Körpern an. Sie heben sich daher in der Kräftebilanz eines einzelnen Körpers nicht gegenseitig auf."
+    ],
+    "takeaway": "Die resultierende äußere Kraft bestimmt die Beschleunigung des gewählten Systems.",
+    "tracks": ["I", "II_III"],
+    "sourceIds": ["lp-i", "lp-ii", "mechanics"],
+    "quiz": {
+      "question": "Welche Kraft setzt man in F = m · a ein?",
+      "answer": "Die resultierende äußere Kraft auf das gewählte System.",
+      "wrong": [
+        "Immer nur die Antriebskraft ohne weitere Gegenkräfte.",
+        "Die Summe der Beträge aller Kräfte unabhängig von ihrer Richtung."
+      ],
+      "explanation": "Die Kräfte müssen mit ihren Richtungen zusammengefasst werden."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Aussagen und Belege ordnen",
+      "instruction": "Ordne jede Aussage zu. Begründe danach, woran du sie erkennst.",
+      "categories": ["Resultierende null", "Resultierende ungleich null"],
+      "entries": [
+        {
+          "text": "Geradlinige Fahrt mit konstanter Geschwindigkeit",
+          "target": 0,
+          "feedback": "Dann ist die Beschleunigung null."
+        },
+        {
+          "text": "Geradliniges Bremsen",
+          "target": 1,
+          "feedback": "Der Geschwindigkeitsvektor ändert sich."
+        },
+        {
+          "text": "Antrieb und Reibung gleichen sich genau aus.",
+          "target": 0,
+          "feedback": "Gleich große entgegengesetzte Kräfte am selben Körper summieren sich zu null."
+        }
+      ],
+      "conclusion": "Wähle zuerst System und Richtung."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Ein 2-kg-Wagen wird mit 10 N gezogen; 2 N wirken entgegen. Bestimme die Beschleunigung.",
+        "model": "Die resultierende Kraft ist 10 N − 2 N = 8 N in Zugrichtung. Mit a = F_res / m ergibt sich 4 m/s². Ich bilanziere die Kräfte auf den Wagen und nicht die Gegenkraft auf die ziehende Person.",
+        "criteria": [
+          "Resultierende 8 N bestimmt",
+          "Beschleunigung 4 m/s²",
+          "Systemgrenze nachvollziehbar"
+        ],
+        "hints": ["Resultierende 8 N bestimmt", "Beschleunigung 4 m/s²"]
+      },
+      "2": {
+        "prompt": "Ein Auto fährt gleichförmig und der Motor arbeitet. Ist das ein Widerspruch zum Trägheitsprinzip?",
+        "model": "Nein. Der Antrieb kann Luft- und Rollwiderstand ausgleichen, sodass die resultierende Kraft null ist. Ohne Widerstände wäre für eine unveränderte geradlinige Geschwindigkeit kein dauerhafter Antrieb nötig.",
+        "criteria": [
+          "Resultierende von Einzelkraft unterschieden",
+          "Widerstände berücksichtigt",
+          "Idealisierten Grenzfall erklärt"
+        ],
+        "hints": [
+          "Resultierende von Einzelkraft unterschieden",
+          "Widerstände berücksichtigt"
+        ]
+      }
+    },
+    "calculation": "force"
+  },
+  {
+    "id": "me-energie",
+    "lb": 1,
+    "title": "Bewegungsenergie und Energieerhaltung",
+    "period": "Ph10 · Lernbereich 1 · beide Zweige",
+    "intro": "Doppelte Geschwindigkeit wirkt quadratisch.",
+    "paragraphs": [
+      "Die kinetische Energie eines Körpers ist E_kin = ½ · m · v². Doppelte Masse verdoppelt sie; doppelte Geschwindigkeit vervierfacht sie. Für einen Höhenunterschied in Erdnähe ist die Änderung der potenziellen Energie m · g · h. Beide Größen werden in Joule angegeben.",
+      "Ohne Reibung wird beim Herabrollen oder Fallen potenzielle in kinetische Energie umgewandelt. Bei Reibung wird ein Teil in innere Energie von Körper und Umgebung überführt. Gesamtenergie bleibt erhalten, aber mechanisch nutzbare Energie kann abnehmen. Aus m · g · h = ½ · m · v² folgt für den idealen Start aus Ruhe v = √(2 · g · h)."
+    ],
+    "takeaway": "Bewegungsenergie wächst mit dem Quadrat der Geschwindigkeit.",
+    "tracks": ["I", "II_III"],
+    "sourceIds": ["lp-i", "lp-ii", "mechanics"],
+    "quiz": {
+      "question": "Wie verändert doppelte Geschwindigkeit bei gleicher Masse die Bewegungsenergie?",
+      "answer": "Sie wird viermal so groß.",
+      "wrong": ["Sie wird zweimal so groß.", "Sie bleibt unverändert."],
+      "explanation": "Die Geschwindigkeit geht quadratisch in die kinetische Energie ein."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Aussagen und Belege ordnen",
+      "instruction": "Ordne jede Aussage zu. Begründe danach, woran du sie erkennst.",
+      "categories": [
+        "Mechanische Energieform",
+        "Energieumwandlung in innere Energie"
+      ],
+      "entries": [
+        {
+          "text": "Höhere Lage eines Körpers im Schwerefeld",
+          "target": 0,
+          "feedback": "Der Lageenergieunterschied ist m · g · h."
+        },
+        {
+          "text": "Bewegung eines fahrenden Wagens",
+          "target": 0,
+          "feedback": "Sie trägt kinetische Energie."
+        },
+        {
+          "text": "Erwärmung der Bremsen beim Anhalten",
+          "target": 1,
+          "feedback": "Mechanische Energie wird unter anderem in innere Energie umgewandelt."
+        }
+      ],
+      "conclusion": "Energie wird umgewandelt, nicht vernichtet."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Ein 2-kg-Körper fällt im Modell aus 5 m Höhe. Erläutere den Energieansatz bis kurz vor dem Boden.",
+        "model": "Die anfängliche Lageenergie beträgt etwa 98,1 J. Ohne Luftwiderstand ist sie kurz vor dem Boden kinetische Energie. Mit ½ · 2 · v² = 98,1 folgt v ≈ 9,9 m/s; die Masse kürzt sich beim allgemeinen Ansatz heraus.",
+        "criteria": [
+          "Energieerhaltung angesetzt",
+          "Bezugshöhe und Anfangsruhe benannt",
+          "Geschwindigkeit etwa 9,9 m/s"
+        ],
+        "hints": [
+          "Energieerhaltung angesetzt",
+          "Bezugshöhe und Anfangsruhe benannt"
+        ]
+      },
+      "2": {
+        "prompt": "Warum ist „Beim Bremsen verschwindet Energie“ fachlich ungenau?",
+        "model": "Die Bewegungsenergie nimmt ab, aber sie wird vor allem in innere Energie der Bremsen, Reifen und Umgebung umgewandelt. Die Gesamtbilanz muss das erweiterte System enthalten. Die Energie ist anschließend weniger leicht in gerichtete Bewegung zurückzuverwandeln.",
+        "criteria": [
+          "Umwandlung statt Vernichtung",
+          "Umgebung in System einbezogen",
+          "Energieentwertung erklärt"
+        ],
+        "hints": [
+          "Umwandlung statt Vernichtung",
+          "Umgebung in System einbezogen"
+        ]
+      }
+    },
+    "calculation": "energy"
+  },
+  {
+    "id": "me-anhalteweg",
+    "lb": 1,
+    "title": "Reaktionsweg und Bremsweg",
+    "period": "Ph10 · Lernbereich 1 · beide Zweige",
+    "intro": "Ein Verkehrsmodell trennt zwei unterschiedliche Phasen.",
+    "paragraphs": [
+      "Bis eine Bremsung einsetzt, wird während der Reaktionszeit näherungsweise der Weg s_R = v₀ · t_R zurückgelegt. Für anschließendes gleichmäßiges Bremsen bis zum Stillstand ist s_B = v₀² / (2 · a_B), wobei a_B der positive Betrag der Verzögerung ist. Der Anhalteweg ist die Summe beider Wege.",
+      "Bei gleicher Reaktionszeit und Verzögerung verdoppelt doppelte Anfangsgeschwindigkeit den Reaktionsweg und vervierfacht den Bremsweg. Nässe, Gefälle, Reifen und wechselnde Bremskraft verändern die reale Situation. Das Modell liefert eine nachvollziehbare Abschätzung und keine zugesicherte reale Anhaltestrecke."
+    ],
+    "takeaway": "Der Anhalteweg enthält Reaktionsweg plus Bremsweg.",
+    "tracks": ["I", "II_III"],
+    "sourceIds": ["lp-i", "lp-ii", "mechanics"],
+    "quiz": {
+      "question": "Wie wächst der ideale Bremsweg bei doppelter Geschwindigkeit und gleicher Verzögerung?",
+      "answer": "Er wird viermal so groß.",
+      "wrong": ["Er wird zweimal so groß.", "Er wird halb so groß."],
+      "explanation": "Aus der Bewegungsenergie oder der Bremsgleichung folgt die quadratische Abhängigkeit."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Aussagen und Belege ordnen",
+      "instruction": "Ordne jede Aussage zu. Begründe danach, woran du sie erkennst.",
+      "categories": ["Reaktionsphase", "Bremsphase", "Modellgrenze"],
+      "entries": [
+        {
+          "text": "Weg wächst proportional zur angenommenen Reaktionszeit.",
+          "target": 0,
+          "feedback": "Vor Bremsbeginn bleibt v im Modell konstant."
+        },
+        {
+          "text": "Bewegungsenergie wird durch Bremsarbeit abgebaut.",
+          "target": 1,
+          "feedback": "Beim Bremsen nimmt v bis null ab."
+        },
+        {
+          "text": "Die reale Reibung ändert sich auf nasser Fahrbahn.",
+          "target": 2,
+          "feedback": "Eine vorgegebene konstante Verzögerung ist nur eine Näherung."
+        }
+      ],
+      "conclusion": "Geschwindigkeit zuerst in m/s umrechnen."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Bestimme den Modell-Anhalteweg bei 20 m/s, 1 s Reaktionszeit und 5 m/s² Verzögerungsbetrag.",
+        "model": "Der Reaktionsweg ist 20 m. Der Bremsweg ist 20² / (2 · 5) = 40 m. Insgesamt sind es 60 m. Diese Rechnung setzt während der Bremsphase konstante Verzögerung voraus.",
+        "criteria": [
+          "Reaktionsweg 20 m",
+          "Bremsweg 40 m und Summe 60 m",
+          "Modellannahme genannt"
+        ],
+        "hints": ["Reaktionsweg 20 m", "Bremsweg 40 m und Summe 60 m"]
+      },
+      "2": {
+        "prompt": "Eine Werbung verspricht aus einem einzigen Bremsversuch eine allgemeine sichere Anhaltestrecke. Beurteile die Aussage.",
+        "model": "Ein einzelner Versuch gilt nur für seine dokumentierten Bedingungen. Anfangsgeschwindigkeit, Fahrbahn, Reifen, Beladung und Reaktionszeit können abweichen. Ich würde Bedingungen, Wiederholungen und Streuung verlangen und die Modellabschätzung als solche kennzeichnen.",
+        "criteria": [
+          "Bedingungen des Versuchs benannt",
+          "Streuung oder Wiederholungen berücksichtigt",
+          "Allgemeine Garantie begründet zurückgewiesen"
+        ],
+        "hints": [
+          "Bedingungen des Versuchs benannt",
+          "Streuung oder Wiederholungen berücksichtigt"
+        ]
+      }
+    },
+    "calculation": "stopping"
+  },
+  {
+    "id": "me-impuls",
+    "lb": 1,
+    "title": "Impuls als gerichtete Größe",
+    "period": "Ph10 · Lernbereich 1 · Zweig I",
+    "intro": "Für einen Stoß zählt die Bilanz des Systems.",
+    "paragraphs": [
+      "Der Impuls eines Körpers ist p = m · v. In einer eindimensionalen Rechnung trägt die Geschwindigkeit ein Vorzeichen. Die Einheit ist kg · m/s oder N · s. Eine Kraft über eine Zeitspanne verändert den Impuls; bei konstanter resultierender Kraft gilt Δp = F_res · Δt.",
+      "Wirken während eines Stoßes vernachlässigbare äußere Kräfte, bleibt der Gesamtimpuls der beteiligten Körper erhalten. Die inneren Stoßkräfte können sehr groß sein, verändern aber die Gesamtbilanz nicht. Ein Airbag verlängert bei vergleichbarer Impulsänderung die Abbremszeit und senkt dadurch die mittlere Kraft. Er beseitigt die Impulsänderung nicht."
+    ],
+    "takeaway": "Gesamtimpuls bleibt bei vernachlässigbarem äußerem Kraftstoß erhalten.",
+    "tracks": ["I"],
+    "sourceIds": ["lp-i", "mechanics", "momentum"],
+    "quiz": {
+      "question": "Unter welcher Bedingung bleibt der Gesamtimpuls bei einem Stoß erhalten?",
+      "answer": "Der äußere Kraftstoß auf das betrachtete System ist vernachlässigbar.",
+      "wrong": [
+        "Es wirken überhaupt keine Kräfte zwischen den stoßenden Körpern.",
+        "Bei jedem Stoß bleibt auch die kinetische Energie vollständig erhalten."
+      ],
+      "explanation": "Innere Wechselwirkungskräfte heben sich in der Gesamtbilanz auf."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Aussagen und Belege ordnen",
+      "instruction": "Ordne jede Aussage zu. Begründe danach, woran du sie erkennst.",
+      "categories": ["Gerichtete Größe", "Skalare Größe"],
+      "entries": [
+        {
+          "text": "Impuls",
+          "target": 0,
+          "feedback": "Die Bewegungsrichtung gehört zum Impuls."
+        },
+        {
+          "text": "Kinetische Energie",
+          "target": 1,
+          "feedback": "Sie hat keine Raumrichtung und ist nicht negativ."
+        },
+        {
+          "text": "Geschwindigkeit in einer Raumrichtung",
+          "target": 0,
+          "feedback": "Ihr Vorzeichen bezeichnet die Richtung."
+        }
+      ],
+      "conclusion": "Impulserhaltung und Energieerhaltung sind verschiedene Aussagen."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Zwei 1-kg-Wagen fahren mit +2 m/s und −2 m/s aufeinander zu. Bestimme den Gesamtimpuls.",
+        "model": "Die Einzelimpulse sind +2 und −2 kg · m/s. Sie addieren sich zu null. Die kinetischen Energien sind trotzdem jeweils 2 J; null Gesamtimpuls bedeutet nicht null Bewegungsenergie.",
+        "criteria": [
+          "Vorzeichen verwendet",
+          "Gesamtimpuls null",
+          "Energie nicht mit Impuls verwechselt"
+        ],
+        "hints": ["Vorzeichen verwendet", "Gesamtimpuls null"]
+      },
+      "2": {
+        "prompt": "Warum senkt eine längere Abbremszeit die mittlere Stoßkraft?",
+        "model": "Bei gleichem Anfangs- und Endimpuls bleibt Δp gleich. Die mittlere Kraft ist Δp / Δt. Wird die Zeit verdoppelt, halbiert sich der Betrag der mittleren Kraft. Der genaue zeitliche Spitzenwert ist damit noch nicht festgelegt.",
+        "criteria": [
+          "Gleiche Impulsänderung vorausgesetzt",
+          "Umgekehrte Zeitabhängigkeit erklärt",
+          "Mittelwert von Spitzenwert getrennt"
+        ],
+        "hints": [
+          "Gleiche Impulsänderung vorausgesetzt",
+          "Umgekehrte Zeitabhängigkeit erklärt"
+        ]
+      }
+    },
+    "model": "collision",
+    "calculation": "momentum"
+  },
+  {
+    "id": "me-stoesse",
+    "lb": 1,
+    "title": "Elastische und inelastische Stöße",
+    "period": "Ph10 · Lernbereich 1 · Zweig I",
+    "intro": "Impuls kann erhalten bleiben, obwohl Bewegungsenergie abnimmt.",
+    "paragraphs": [
+      "Bei einem elastischen Stoß bleiben Gesamtimpuls und gesamte kinetische Energie erhalten. Bei einem teilelastischen Stoß nimmt die kinetische Energie ab, die Körper trennen sich aber wieder. Beim vollständig inelastischen Stoß bewegen sie sich danach gemeinsam. Gesamtenergie bleibt in allen Fällen erhalten, wenn Verformung, innere Energie und Umgebung bilanziert werden.",
+      "Für das Zusammenhaften gilt in einer Dimension v_nach = (m₁ · v₁ + m₂ · v₂) / (m₁ + m₂). Der Rückprallparameter e im Modell vergleicht relative Trenn- und Annäherungsgeschwindigkeit: e = 1 ist elastisch, 0 < e < 1 teilelastisch, e = 0 vollständig inelastisch. Das Modell setzt vernachlässigbare äußere Impulsänderung voraus."
+    ],
+    "takeaway": "Nur beim elastischen Stoß bleibt zusätzlich die gesamte kinetische Energie erhalten.",
+    "tracks": ["I"],
+    "sourceIds": ["lp-i", "mechanics", "momentum"],
+    "quiz": {
+      "question": "Was kennzeichnet einen vollständig inelastischen Stoß?",
+      "answer": "Die Körper bewegen sich unmittelbar danach mit gemeinsamer Geschwindigkeit.",
+      "wrong": [
+        "Die gesamte kinetische Energie bleibt grundsätzlich erhalten.",
+        "Beide Körper müssen unabhängig vom Anfangsimpuls stillstehen."
+      ],
+      "explanation": "Gemeinsame Endgeschwindigkeit folgt zusammen mit der Impulsbilanz."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Aussagen und Belege ordnen",
+      "instruction": "Ordne jede Aussage zu. Begründe danach, woran du sie erkennst.",
+      "categories": ["Elastisch", "Teilelastisch", "Vollständig inelastisch"],
+      "entries": [
+        {
+          "text": "Die Körper trennen sich ohne Verlust kinetischer Gesamtenergie.",
+          "target": 0,
+          "feedback": "Im Idealmodell gilt e = 1."
+        },
+        {
+          "text": "Die Körper trennen sich mit weniger kinetischer Gesamtenergie.",
+          "target": 1,
+          "feedback": "Ein Teil wurde in innere Energie und Verformung umgewandelt."
+        },
+        {
+          "text": "Die Körper haften zusammen und bewegen sich gemeinsam.",
+          "target": 2,
+          "feedback": "Ihre Relativgeschwindigkeit ist danach null."
+        }
+      ],
+      "conclusion": "Der Gesamtimpuls wird in allen drei isolierten Modellfällen erhalten."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Ein 2-kg-Wagen mit 3 m/s trifft einen ruhenden 1-kg-Wagen und beide haften zusammen. Bestimme die Endgeschwindigkeit.",
+        "model": "Der Anfangsimpuls beträgt 6 kg · m/s. Auf die gemeinsame Masse 3 kg verteilt ergibt das 2 m/s. Die kinetische Energie sinkt von 9 J auf 6 J; 3 J wurden in andere Energieformen umgewandelt.",
+        "criteria": [
+          "Impuls 6 kg m/s bilanziert",
+          "Endgeschwindigkeit 2 m/s",
+          "Energiedifferenz eingeordnet"
+        ],
+        "hints": ["Impuls 6 kg m/s bilanziert", "Endgeschwindigkeit 2 m/s"]
+      },
+      "2": {
+        "prompt": "Zwei gleiche Wagen tauschen beim zentralen elastischen Stoß ihre Geschwindigkeiten. Warum darf man diese Regel nicht auf jeden Stoß übertragen?",
+        "model": "Die Regel setzt gleiche Massen, einen zentralen eindimensionalen und elastischen Stoß voraus. Bei unterschiedlichen Massen oder Energieumwandlung ändern sich die Endgeschwindigkeiten. Ich muss zuerst die Modellbedingungen prüfen und dann die passenden Bilanzen anwenden.",
+        "criteria": [
+          "Drei Modellbedingungen genannt",
+          "Abweichenden Fall erläutert",
+          "Bilanz statt Merksatz eingesetzt"
+        ],
+        "hints": [
+          "Drei Modellbedingungen genannt",
+          "Abweichenden Fall erläutert"
+        ]
+      }
+    },
+    "model": "collision",
+    "calculation": "collision"
+  },
+  {
+    "id": "el-reihe",
+    "lb": 2,
+    "title": "Reihenschaltung untersuchen",
+    "period": "Ph10 · Lernbereich 2 · beide Zweige",
+    "intro": "Ein unverzweigter Stromkreis verbindet Strom und Teilspannungen.",
+    "paragraphs": [
+      "In einem unverzweigten stationären Stromkreis ist die Stromstärke überall gleich. Ladung wird im Widerstand nicht verbraucht. Die Quellenspannung ist gleich der Summe der Teilspannungen. Für ohmsche Widerstände in Reihe gilt R_ges = R₁ + R₂ und I = U / R_ges.",
+      "Die Teilspannung U₁ = I · R₁ ist bei größerem Widerstand größer. Eine Unterbrechung stoppt den Strom in der gesamten Reihe. Die Modellwerte setzen ideale Leitungen und konstante ohmsche Widerstände voraus. Reale Lampen verändern ihren Widerstand beim Erwärmen; die einfache Widerstandsteilung ist dann nur mit passenden Betriebswerten anwendbar."
+    ],
+    "takeaway": "In Reihe ist die Stromstärke gleich; die Teilspannungen addieren sich.",
+    "tracks": ["I", "II_III"],
+    "sourceIds": ["lp-i", "lp-ii", "induction", "circuits"],
+    "quiz": {
+      "question": "Welche Größe ist in allen Bauteilen einer einfachen Reihenschaltung gleich?",
+      "answer": "Die Stromstärke.",
+      "wrong": [
+        "Die Spannung unabhängig vom jeweiligen Widerstand.",
+        "Die Leistung unabhängig vom jeweiligen Widerstand."
+      ],
+      "explanation": "An keinem unverzweigten Abschnitt sammelt sich dauerhaft Ladung an."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Aussagen und Belege ordnen",
+      "instruction": "Ordne jede Aussage zu. Begründe danach, woran du sie erkennst.",
+      "categories": ["Gilt in Reihe", "Gilt nicht allgemein in Reihe"],
+      "entries": [
+        {
+          "text": "Die Summe der Teilspannungen entspricht der Quellenspannung.",
+          "target": 0,
+          "feedback": "Die Spannungsbilanz schließt den Umlauf."
+        },
+        {
+          "text": "Alle Widerstände müssen die gleiche Teilspannung tragen.",
+          "target": 1,
+          "feedback": "Gleiche Spannung folgt nur bei passenden gleichen Widerständen."
+        },
+        {
+          "text": "Größerer Gesamtwiderstand senkt bei gleicher Quelle den Strom.",
+          "target": 0,
+          "feedback": "Das folgt aus I = U / R_ges."
+        }
+      ],
+      "conclusion": "Benutze Stromkontinuität und Spannungsbilanz getrennt."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Zwei Widerstände 100 Ω und 200 Ω liegen an 6 V in Reihe. Bestimme Strom und Teilspannungen.",
+        "model": "Der Gesamtwiderstand beträgt 300 Ω. Der Strom ist 0,02 A. Die Teilspannungen sind 2 V und 4 V; ihre Summe ergibt wieder 6 V.",
+        "criteria": [
+          "Gesamtwiderstand 300 Ω",
+          "Strom 0,02 A",
+          "Teilspannungen und Summe überprüft"
+        ],
+        "hints": ["Gesamtwiderstand 300 Ω", "Strom 0,02 A"]
+      },
+      "2": {
+        "prompt": "Warum darf die Stromstärke hinter dem ersten Widerstand nicht kleiner sein als davor?",
+        "model": "Im stationären unverzweigten Kreis gibt es keinen dauerhaften Ladungsspeicher am Widerstand. Würde mehr Ladung hinein- als herausfließen, würde sie sich ansammeln und die Felder verändern. Übertragen wird Energie, verbraucht wird keine elektrische Ladung.",
+        "criteria": [
+          "Stationären Zustand genannt",
+          "Ladungserhaltung verwendet",
+          "Energieübertragung von Ladungsverbrauch getrennt"
+        ],
+        "hints": ["Stationären Zustand genannt", "Ladungserhaltung verwendet"]
+      }
+    },
+    "model": "circuit",
+    "calculation": "series"
+  },
+  {
+    "id": "el-parallel",
+    "lb": 2,
+    "title": "Parallelschaltung untersuchen",
+    "period": "Ph10 · Lernbereich 2 · beide Zweige",
+    "intro": "Eine zusätzliche Leitung eröffnet einen weiteren Stromweg.",
+    "paragraphs": [
+      "An parallelen Zweigen liegt dieselbe Spannung. Am Knoten teilt sich der Gesamtstrom auf: I_ges = I₁ + I₂. Für zwei ohmsche Widerstände gilt 1 / R_ges = 1 / R₁ + 1 / R₂ oder R_ges = R₁ · R₂ / (R₁ + R₂). Der Gesamtwiderstand ist kleiner als jeder Einzelwiderstand.",
+      "Ein zusätzlicher paralleler Zweig erhöht bei gleicher idealer Quellenspannung den Gesamtstrom. Der Strom im unveränderten Zweig bleibt dabei gleich. Eine reale Quelle kann wegen ihres Innenwiderstands eine niedrigere Klemmenspannung liefern; dann muss die Quelle Teil des Modells werden. Die Kirchhoff-Bilanzen für Knoten und Maschen gelten weiterhin."
+    ],
+    "takeaway": "Parallel ist die Spannung gleich; die Zweigströme addieren sich.",
+    "tracks": ["I", "II_III"],
+    "sourceIds": ["lp-i", "lp-ii", "induction", "circuits"],
+    "quiz": {
+      "question": "Welche Größe ist an parallelen Widerstandszweigen gleich?",
+      "answer": "Die Spannung zwischen den gemeinsamen Knoten.",
+      "wrong": [
+        "Die Stromstärke unabhängig vom Widerstand des Zweigs.",
+        "Der Widerstand unabhängig von den eingesetzten Bauteilen."
+      ],
+      "explanation": "Beide Enden jedes Zweigs liegen jeweils an denselben Knoten."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Aussagen und Belege ordnen",
+      "instruction": "Ordne jede Aussage zu. Begründe danach, woran du sie erkennst.",
+      "categories": ["Gilt parallel", "Gilt nicht allgemein parallel"],
+      "entries": [
+        {
+          "text": "Zweigströme addieren sich zum Gesamtstrom.",
+          "target": 0,
+          "feedback": "Das folgt aus der Ladungsbilanz am Knoten."
+        },
+        {
+          "text": "Der Gesamtwiderstand ist größer als jeder Einzelwiderstand.",
+          "target": 1,
+          "feedback": "Ein weiterer Stromweg vergrößert den Leitwert."
+        },
+        {
+          "text": "Bei gleicher Spannung führt ein kleinerer Widerstand mehr Strom.",
+          "target": 0,
+          "feedback": "Es gilt I = U / R für jeden ohmschen Zweig."
+        }
+      ],
+      "conclusion": "Ein größerer Gesamtstrom bedeutet keine größere Spannung der idealen Quelle."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "100 Ω und 200 Ω liegen parallel an 6 V. Bestimme beide Zweigströme und den Gesamtstrom.",
+        "model": "Die Zweigströme sind 6/100 = 0,06 A und 6/200 = 0,03 A. Insgesamt fließen 0,09 A. Daraus folgt R_ges ≈ 66,7 Ω, kleiner als beide Einzelwiderstände.",
+        "criteria": [
+          "Gleiche Zweigspannung genutzt",
+          "Zweigströme 0,06 A und 0,03 A",
+          "Summe 0,09 A"
+        ],
+        "hints": [
+          "Gleiche Zweigspannung genutzt",
+          "Zweigströme 0,06 A und 0,03 A"
+        ]
+      },
+      "2": {
+        "prompt": "Warum kann eine zusätzliche Lampe parallel eine reale Batterie stärker belasten, obwohl die andere Lampe eingeschaltet bleibt?",
+        "model": "Der zusätzliche Zweig erhöht den Gesamtstrom. Am Innenwiderstand der Batterie steigt dann der Spannungsabfall; dadurch kann die Klemmenspannung sinken. Die Idealquelle mit unveränderlichen 6 V beschreibt diesen Effekt nicht.",
+        "criteria": [
+          "Zusätzlichen Stromweg erkannt",
+          "Innenwiderstand in Bilanz aufgenommen",
+          "Grenze der Idealquelle erläutert"
+        ],
+        "hints": [
+          "Zusätzlichen Stromweg erkannt",
+          "Innenwiderstand in Bilanz aufgenommen"
+        ]
+      }
+    },
+    "model": "circuit",
+    "calculation": "parallel"
+  },
+  {
+    "id": "el-messen",
+    "lb": 2,
+    "title": "Messgeräte und Innenwiderstand",
+    "period": "Ph10 · Lernbereich 2 · Zweig I",
+    "intro": "Eine Messung verändert den Stromkreis mit.",
+    "paragraphs": [
+      "Ein Strommessgerät wird in Reihe in den betreffenden Zweig eingefügt. Es soll einen möglichst kleinen Innenwiderstand besitzen. Ein Spannungsmessgerät wird parallel zum betrachteten Bauteil angeschlossen und soll einen möglichst großen Innenwiderstand besitzen. Der Messbereich wird passend gewählt; der höchste geeignete Bereich schützt zunächst vor Überlast.",
+      "Das reale Amperemeter erhöht den Reihenwiderstand und senkt den Strom etwas. Das reale Voltmeter eröffnet einen zusätzlichen parallelen Stromweg und kann die gemessene Spannung verändern. Messabweichungen müssen mit dem Schaltungsmodell beurteilt werden. Praktische Schülerversuche erfolgen mit geeigneter schulischer Kleinspannungsquelle nach Anleitung; die App führt nur Modellrechnungen durch."
+    ],
+    "takeaway": "Strom misst man in Reihe, Spannung parallel.",
+    "tracks": ["I"],
+    "sourceIds": ["lp-i", "induction", "circuits"],
+    "quiz": {
+      "question": "Wie wird ein Spannungsmessgerät an ein Bauteil angeschlossen?",
+      "answer": "Parallel zum Bauteil.",
+      "wrong": [
+        "Anstelle des Bauteils als nahezu widerstandsfreier Leiter.",
+        "Immer in Reihe hinter dem Strommessgerät."
+      ],
+      "explanation": "Es vergleicht die elektrischen Potenziale an den beiden Anschlüssen."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Aussagen und Belege ordnen",
+      "instruction": "Ordne jede Aussage zu. Begründe danach, woran du sie erkennst.",
+      "categories": ["Strommessgerät", "Spannungsmessgerät"],
+      "entries": [
+        {
+          "text": "In Reihe in den zu messenden Zweig einfügen.",
+          "target": 0,
+          "feedback": "Nur so durchfließt der Zweigstrom das Gerät."
+        },
+        {
+          "text": "Möglichst hoher Innenwiderstand.",
+          "target": 1,
+          "feedback": "So wird der zusätzliche Zweigstrom klein."
+        },
+        {
+          "text": "Möglichst kleiner Innenwiderstand.",
+          "target": 0,
+          "feedback": "So bleibt der zusätzliche Spannungsabfall klein."
+        }
+      ],
+      "conclusion": "Ein ideales Messgerät ist ein Grenzfall des realen Geräts."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Warum soll der Innenwiderstand eines Amperemeters klein sein?",
+        "model": "Es liegt in Reihe und erhöht sonst den Gesamtwiderstand stark. Dadurch würde der zu messende Strom sinken. Ein kleiner Innenwiderstand begrenzt diesen Eingriff; die Messung ist trotzdem nicht vollkommen rückwirkungsfrei.",
+        "criteria": [
+          "Reiheneinbau genannt",
+          "Einfluss auf den Strom erklärt",
+          "Idealisierung als Grenze erkannt"
+        ],
+        "hints": ["Reiheneinbau genannt", "Einfluss auf den Strom erklärt"]
+      },
+      "2": {
+        "prompt": "Plane eine Messreihe zur Reihenschaltung mit einer schulischen Kleinspannungsquelle.",
+        "model": "Ich messe denselben Zweigstrom an mehreren Stellen und die Spannungen parallel zu jedem Widerstand. Widerstände und Quelle bleiben vergleichbar; ich notiere Messbereich, Einheiten und Wiederholungen. Danach vergleiche ich die Teilspannungssumme mit der Quellenspannung und bespreche Abweichungen durch Innenwiderstände.",
+        "criteria": [
+          "Messgeräte fachgerecht angeordnet",
+          "Konstanten und Protokoll festgelegt",
+          "Spannungsbilanz mit Abweichungen geprüft"
+        ],
+        "hints": [
+          "Messgeräte fachgerecht angeordnet",
+          "Konstanten und Protokoll festgelegt"
+        ]
+      }
+    },
+    "calculation": "meter"
+  },
+  {
+    "id": "el-messbereich",
+    "lb": 2,
+    "title": "Messbereiche erweitern",
+    "period": "Ph10 · Lernbereich 2 · Zweig I",
+    "intro": "Vorwiderstand und Nebenwiderstand erfüllen verschiedene Aufgaben.",
+    "paragraphs": [
+      "Soll ein Spannungsmesswerk größere Spannungen erfassen, wird ein Vorwiderstand in Reihe geschaltet. Bei Endausschlagstrom I_M, Messwerkwiderstand R_M und gewünschter Gesamtspannung U gilt R_V = U / I_M − R_M. Die Teilspannungen addieren sich.",
+      "Für größere Stromstärken wird ein Nebenwiderstand, der Shunt, parallel zum Messwerk geschaltet. Bei Gesamtstrom I gilt R_S = I_M · R_M / (I − I_M). Beide Zweige haben dieselbe Spannung; nur ein Teil des Gesamtstroms fließt durch das Messwerk. Belastbarkeit und Erwärmung sind zusätzliche technische Grenzen, die diese Idealrechnung nicht bewertet."
+    ],
+    "takeaway": "Spannungsbereich: Vorwiderstand in Reihe; Strombereich: Shunt parallel.",
+    "tracks": ["I"],
+    "sourceIds": ["lp-i", "induction", "circuits"],
+    "quiz": {
+      "question": "Wie erweitert man den Strommessbereich eines Messwerks?",
+      "answer": "Mit einem passenden Nebenwiderstand parallel zum Messwerk.",
+      "wrong": [
+        "Mit einem beliebig großen Widerstand in Reihe zum Messwerk.",
+        "Durch Weglassen sämtlicher paralleler Strompfade."
+      ],
+      "explanation": "Ein Shunt übernimmt einen Teil des Gesamtstroms."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Aussagen und Belege ordnen",
+      "instruction": "Ordne jede Aussage zu. Begründe danach, woran du sie erkennst.",
+      "categories": ["Vorwiderstand in Reihe", "Shunt parallel"],
+      "entries": [
+        {
+          "text": "Größeren Spannungsbereich bei gleichem Messwerkstrom erhalten.",
+          "target": 0,
+          "feedback": "Ein Teil der Gesamtspannung fällt am Vorwiderstand ab."
+        },
+        {
+          "text": "Einen Teil des Gesamtstroms am Messwerk vorbeileiten.",
+          "target": 1,
+          "feedback": "Beide parallelen Zweige haben dieselbe Spannung."
+        },
+        {
+          "text": "Die Teilspannungen summieren sich zur Gesamtspannung.",
+          "target": 0,
+          "feedback": "Das ist die Reihenbilanz."
+        }
+      ],
+      "conclusion": "Die Schaltungsregeln liefern den erforderlichen Widerstand."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Ein Messwerk hat 100 Ω und 1 mA Endausschlagstrom. Welcher Vorwiderstand erweitert es auf 10 V?",
+        "model": "Der gesamte Reihenwiderstand muss 10 V / 0,001 A = 10.000 Ω betragen. Nach Abzug der 100 Ω des Messwerks bleiben 9.900 Ω. Die Belastbarkeit ist zusätzlich zu prüfen.",
+        "criteria": [
+          "mA in A umgerechnet",
+          "Gesamtwiderstand bestimmt",
+          "Messwerkwiderstand abgezogen"
+        ],
+        "hints": ["mA in A umgerechnet", "Gesamtwiderstand bestimmt"]
+      },
+      "2": {
+        "prompt": "Dasselbe Messwerk soll 0,1 A Gesamtstrom messen. Berechne den idealen Shunt.",
+        "model": "Am Messwerk liegen bei Endausschlag 0,001 · 100 = 0,1 V. Durch den Shunt sollen 0,099 A fließen. Sein Widerstand ist daher 0,1 / 0,099 ≈ 1,01 Ω. Er gehört parallel, nicht in Reihe.",
+        "criteria": [
+          "Gleiche Spannung genutzt",
+          "Shuntstrom als Differenz bestimmt",
+          "Etwa 1,01 Ω und Paralleleinbau"
+        ],
+        "hints": [
+          "Gleiche Spannung genutzt",
+          "Shuntstrom als Differenz bestimmt"
+        ]
+      }
+    },
+    "calculation": "range"
+  },
+  {
+    "id": "el-induktion",
+    "lb": 2,
+    "title": "Wann eine Spannung induziert wird",
+    "period": "Ph10 · Lernbereich 2 · beide Zweige",
+    "intro": "Bewegung allein genügt als Beschreibung noch nicht.",
+    "paragraphs": [
+      "Eine Induktionsspannung entsteht, wenn sich der magnetische Fluss durch eine Spule zeitlich ändert. Das kann durch Feldänderung, Bewegung, eine geänderte wirksame Fläche oder Drehung geschehen. Bleibt der Fluss konstant, gibt es keine dauerhafte Induktionsspannung. Ein bewegter Magnet ist ein möglicher Aufbau, keine notwendige Voraussetzung.",
+      "Bei sonst gleichen Bedingungen führt mehr Windungszahl oder eine schnellere Flussänderung zu einem größeren Spannungsbetrag. Ein offener Stromkreis kann Spannung zeigen, obwohl kein geschlossener Induktionsstrom fließt. Im Modell verändern wir das Feld durch eine fest ausgerichtete Fläche; eine zahlenmäßige Flussrechnung ist eine zusätzliche Modellhilfe, der Lehrplan verlangt hier die qualitative Beziehung."
+    ],
+    "takeaway": "Entscheidend ist die zeitliche Änderung des magnetischen Flusses.",
+    "tracks": ["I", "II_III"],
+    "sourceIds": ["lp-i", "lp-ii", "induction"],
+    "quiz": {
+      "question": "Unter welcher Bedingung entsteht eine Induktionsspannung an einer Spule?",
+      "answer": "Wenn sich der magnetische Fluss durch die Spule zeitlich ändert.",
+      "wrong": [
+        "Sobald ein starkes Magnetfeld zeitlich unverändert vorhanden ist.",
+        "Nur wenn gleichzeitig ein dauerhafter Gleichstrom durch die Spule fließt."
+      ],
+      "explanation": "Auch ein ruhender Aufbau kann durch Änderung des erregenden Stroms induzieren."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Aussagen und Belege ordnen",
+      "instruction": "Ordne jede Aussage zu. Begründe danach, woran du sie erkennst.",
+      "categories": [
+        "Induktionsspannung",
+        "Keine dauerhafte Induktionsspannung"
+      ],
+      "entries": [
+        {
+          "text": "Magnet nähert sich der ruhenden Spule.",
+          "target": 0,
+          "feedback": "Der Fluss durch die Spule ändert sich."
+        },
+        {
+          "text": "Magnet bleibt relativ zur Spule im unveränderten Feld stehen.",
+          "target": 1,
+          "feedback": "Ein konstanter Fluss induziert dauerhaft keine Spannung."
+        },
+        {
+          "text": "Strom in einer benachbarten Feldspule wird geändert.",
+          "target": 0,
+          "feedback": "Das veränderte Feld verändert den Fluss."
+        }
+      ],
+      "conclusion": "Strom und Spannung dürfen nicht gleichgesetzt werden."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Plane einen Vergleich, der den Einfluss der Bewegungsgeschwindigkeit auf Induktion prüft.",
+        "model": "Ich verwende dieselbe Spule, denselben Magneten und denselben Bewegungsweg mit gleicher Ausrichtung. Nur die Bewegungsgeschwindigkeit ändere ich. Ich wiederhole die Messung, protokolliere den Spannungsverlauf und prüfe, ob schnellere Flussänderung einen größeren Betrag liefert.",
+        "criteria": [
+          "Nur eine Einflussgröße verändert",
+          "Messgröße und Wiederholungen genannt",
+          "Erwartung mit Flussänderung erklärt"
+        ],
+        "hints": [
+          "Nur eine Einflussgröße verändert",
+          "Messgröße und Wiederholungen genannt"
+        ]
+      },
+      "2": {
+        "prompt": "Eine offene Spule zeigt Spannung, aber keinen dauerhaften Strom. Ist das widersprüchlich?",
+        "model": "Nein. Induktion erzeugt eine Spannung bei Flussänderung. Für einen dauerhaften Strom benötigt der Kreis einen geschlossenen leitenden Weg. Die offene Schaltung verhindert diesen Strom, nicht die messbare Potenzialdifferenz.",
+        "criteria": [
+          "Flussänderung als Ursache",
+          "Spannung von Strom getrennt",
+          "Offenen Kreis eingeordnet"
+        ],
+        "hints": ["Flussänderung als Ursache", "Spannung von Strom getrennt"]
+      }
+    },
+    "model": "induction"
+  },
+  {
+    "id": "el-uvw",
+    "lb": 2,
+    "title": "Elektronenbewegung und UVW-Regel",
+    "period": "Ph10 · Lernbereich 2 · Zweig I",
+    "intro": "Die Handregel braucht eine eindeutige Ladungskonvention.",
+    "paragraphs": [
+      "In einem quer zu einem Magnetfeld bewegten Leiter wirkt auf freie Elektronen eine magnetische Lorentzkraft. Dadurch trennen sich Ladungen; ein elektrisches Feld und eine Spannung entstehen. Für Elektronen verwenden wir die UVW-Regel der linken Hand: Daumen für ihre Bewegungsrichtung, Zeigefinger für das äußere Magnetfeld von Nord nach Süd, Mittelfinger für die Kraft auf die Elektronen.",
+      "Diese drei Richtungen stehen im einfachen Querfall senkrecht aufeinander. Bei Bewegung parallel zum Feld ist die magnetische Kraft null. Für positive Ladungen gilt bei derselben Bewegung die entgegengesetzte Kraftrichtung; die technische Stromrichtung ist ebenfalls der Elektronenbewegung entgegengesetzt. Die Handregel ersetzt daher weder die Ladungsangabe noch die räumliche Skizze."
+    ],
+    "takeaway": "Die linke UVW-Regel bezieht sich hier ausdrücklich auf negative Ladungen.",
+    "tracks": ["I"],
+    "sourceIds": ["lp-i", "induction"],
+    "quiz": {
+      "question": "Welche Richtung zeigt der Mittelfinger bei der linken UVW-Regel für Elektronen?",
+      "answer": "Die Richtung der magnetischen Kraft auf die Elektronen.",
+      "wrong": [
+        "Die Richtung des äußeren Magnetfelds.",
+        "Die technische Stromrichtung statt der Kraft."
+      ],
+      "explanation": "Daumen: Elektronenbewegung; Zeigefinger: Magnetfeld; Mittelfinger: Kraft."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Aussagen und Belege ordnen",
+      "instruction": "Ordne jede Aussage zu. Begründe danach, woran du sie erkennst.",
+      "categories": ["Kraft kann auftreten", "Magnetische Kraft null"],
+      "entries": [
+        {
+          "text": "Elektron bewegt sich quer zum Magnetfeld.",
+          "target": 0,
+          "feedback": "Die magnetische Lorentzkraft ist dann maximal für gegebenes v und B."
+        },
+        {
+          "text": "Elektron bewegt sich parallel zum Magnetfeld.",
+          "target": 1,
+          "feedback": "Der senkrechte Geschwindigkeitsanteil ist null."
+        },
+        {
+          "text": "Elektron ruht im rein magnetischen Feld.",
+          "target": 1,
+          "feedback": "Ohne Bewegung gibt es keinen magnetischen Kraftanteil."
+        }
+      ],
+      "conclusion": "Nenne Ladungsart und räumliche Richtungen vor der Handregel."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Begründe, warum ein quer bewegter Leiterstab im Magnetfeld eine Spannung aufbauen kann.",
+        "model": "Die freien Elektronen bewegen sich mit dem Leiter quer zum Feld. Die magnetische Kraft verschiebt sie zu einem Ende. Das entstehende elektrische Feld wirkt der weiteren Trennung entgegen; zwischen den Enden liegt eine Spannung.",
+        "criteria": [
+          "Mitbewegte Elektronen genannt",
+          "Kraft und Ladungstrennung verknüpft",
+          "Elektrisches Gegenfeld eingeordnet"
+        ],
+        "hints": [
+          "Mitbewegte Elektronen genannt",
+          "Kraft und Ladungstrennung verknüpft"
+        ]
+      },
+      "2": {
+        "prompt": "Eine Skizze benutzt Elektronenbewegung, die Lösung aber eine Handregel für positive Ladungen. Was ist zu korrigieren?",
+        "model": "Bei unveränderter Bewegungs- und Feldrichtung ist die magnetische Kraftrichtung für Elektronen umgekehrt. Ich lege die negative Ladung fest, zeichne alle Raumrichtungen und verwende konsistent die linke UVW-Regel oder die vektorielle Kraft mit negativem Ladungsvorzeichen.",
+        "criteria": [
+          "Konventionswechsel erkannt",
+          "Kraftrichtung umgekehrt",
+          "Konsistente Regel und Skizze genannt"
+        ],
+        "hints": ["Konventionswechsel erkannt", "Kraftrichtung umgekehrt"]
+      }
+    }
+  },
+  {
+    "id": "el-lenz",
+    "lb": 2,
+    "title": "Lenz und Wirbelstrombremse",
+    "period": "Ph10 · Lernbereich 2 · beide Zweige",
+    "intro": "Der Induktionsstrom wirkt der Änderung entgegen.",
+    "paragraphs": [
+      "Die Lenzsche Regel bestimmt die Richtung des Induktionsstroms: Seine Wirkung ist der Entstehungsursache entgegengerichtet. Nähert sich ein Magnet, wirkt die induzierte Wechselwirkung der Annäherung entgegen; entfernt er sich, wird die Entfernung gehemmt. Das induzierte Feld ist also nicht immer dem vorhandenen Feld entgegengesetzt, sondern wirkt dessen Änderung entgegen.",
+      "In einem bewegten Metallstück können geschlossene Wirbelströme entstehen. Ihre magnetische Wirkung bremst die Bewegung, während kinetische Energie in innere Energie übergeht. Schlitze unterbrechen große Stromschleifen und schwächen diesen Effekt. Eine ideale Wirbelstrombremse benötigt relative Bewegung und hält einen ruhenden Körper nicht allein fest. Ohne Gegenwirkung könnte Bewegung Energie ohne Zufuhr erzeugen; das widerspräche der Energieerhaltung."
+    ],
+    "takeaway": "Lenz beschreibt die Gegenwirkung zur Ursache der Induktion.",
+    "tracks": ["I", "II_III"],
+    "sourceIds": ["lp-i", "lp-ii", "induction"],
+    "quiz": {
+      "question": "Was besagt die Lenzsche Regel über einen induzierten Strom?",
+      "answer": "Seine Wirkung ist seiner Entstehungsursache entgegengerichtet.",
+      "wrong": [
+        "Er verstärkt seine Entstehungsursache ohne Energiezufuhr.",
+        "Sein Feld ist unabhängig vom Vorgang immer dem äußeren Feld entgegengesetzt."
+      ],
+      "explanation": "Bei zunehmendem und abnehmendem Fluss ergeben sich unterschiedliche Stromrichtungen."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Aussagen und Belege ordnen",
+      "instruction": "Ordne jede Aussage zu. Begründe danach, woran du sie erkennst.",
+      "categories": ["Mit Lenz vereinbar", "Nicht mit Lenz vereinbar"],
+      "entries": [
+        {
+          "text": "Das bewegte Metall erwärmt sich beim magnetischen Bremsen.",
+          "target": 0,
+          "feedback": "Bewegungsenergie geht in innere Energie über."
+        },
+        {
+          "text": "Die Gegenwirkung verstärkt die Bewegung ohne äußere Energiezufuhr.",
+          "target": 1,
+          "feedback": "Das würde die Energieerhaltung verletzen."
+        },
+        {
+          "text": "Schlitze schwächen große Wirbelstromschleifen.",
+          "target": 0,
+          "feedback": "Ein unterbrochener Stromweg verändert die Bremswirkung."
+        }
+      ],
+      "conclusion": "Eine Bremswirkung braucht eine Energieumwandlung."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Warum muss man beim Hineinschieben eines Magneten in eine geschlossene Spule Arbeit verrichten?",
+        "model": "Die Flussänderung induziert Strom, dessen magnetische Wirkung der Annäherung entgegenwirkt. Die äußere Arbeit liefert die anschließend beispielsweise als Wärme umgesetzte Energie. Bei offener Spule fehlt der starke geschlossene Induktionsstrom.",
+        "criteria": [
+          "Gegenwirkung beschrieben",
+          "Äußere Arbeit bilanziert",
+          "Offenen und geschlossenen Kreis unterschieden"
+        ],
+        "hints": ["Gegenwirkung beschrieben", "Äußere Arbeit bilanziert"]
+      },
+      "2": {
+        "prompt": "Warum ist „Das Gegenfeld zeigt immer entgegen dem Magnetfeld“ zu pauschal?",
+        "model": "Bei zunehmendem Fluss wirkt das induzierte Feld der Zunahme entgegen. Bei abnehmendem Fluss unterstützt es die bisherige Feldrichtung, um die Abnahme zu hemmen. Entscheidend ist die Änderung und nicht das Vorzeichen des vorhandenen Felds allein.",
+        "criteria": [
+          "Zunahme erklärt",
+          "Abnahme erklärt",
+          "Änderung als gemeinsame Regel"
+        ],
+        "hints": ["Zunahme erklärt", "Abnahme erklärt"]
+      }
+    },
+    "model": "induction"
+  },
+  {
+    "id": "el-generator",
+    "lb": 2,
+    "title": "Generatoren vergleichen",
+    "period": "Ph10 · Lernbereich 2 · beide Zweige",
+    "intro": "Mechanischer Antrieb liefert elektrische Energie.",
+    "paragraphs": [
+      "Eine gleichmäßig rotierende Leiterschleife im homogenen Magnetfeld umfasst einen periodisch wechselnden Fluss. Dadurch entsteht im Idealmodell eine sinusförmige Wechselspannung. Eine volle Wiederholung dauert T; die Frequenz f = 1 / T zählt Perioden pro Sekunde. Der Drehwinkel legt fest, wann die Spannung null oder betragsmäßig maximal ist.",
+      "Beim Außenpolgenerator dreht sich die Spule im Feld außen liegender Magnetpole. Beim Innenpolgenerator dreht sich das Feldsystem innerhalb feststehender Spulen; so muss die große entnommene Leistung nicht über rotierende Abgriffkontakte geführt werden. Unter elektrischer Last wirkt ein bremsendes Gegenmoment. Größere Abgabe verlangt entsprechende mechanische Energiezufuhr. Reale Generatoren haben Verluste und ihre Bauform muss zur Drehzahl und Leistung passen."
+    ],
+    "takeaway": "Ein Generator wandelt mechanische Energie in elektrische Energie um.",
+    "tracks": ["I", "II_III"],
+    "sourceIds": ["lp-i", "lp-ii", "induction"],
+    "quiz": {
+      "question": "Warum benötigt ein belasteter Generator mechanischen Antrieb?",
+      "answer": "Seine elektrische Energieabgabe muss durch zugeführte Energie gedeckt werden.",
+      "wrong": [
+        "Das Magnetfeld erzeugt fortlaufend elektrische Energie aus dem Nichts.",
+        "Nur ein unbelasteter Generator kann eine Spannung erzeugen."
+      ],
+      "explanation": "Lenz erklärt das bremsende Gegenmoment bei Stromabgabe."
+    },
+    "workshop": {
+      "kind": "timeline",
+      "title": "Zusammenhänge in Reihenfolge bringen",
+      "instruction": "Verschiebe die Schritte mit den Pfeilen in eine fachlich passende Reihenfolge.",
+      "categories": [],
+      "entries": [
+        {
+          "text": "Antrieb dreht Feldsystem oder Leiterschleife.",
+          "target": 0,
+          "feedback": "Die mechanische Bewegung wird von außen aufrechterhalten."
+        },
+        {
+          "text": "Der magnetische Fluss durch die Spulen ändert sich.",
+          "target": 1,
+          "feedback": "Die relative Ausrichtung ändert sich periodisch."
+        },
+        {
+          "text": "Wechselspannung treibt im geschlossenen Kreis einen Strom.",
+          "target": 2,
+          "feedback": "Eine Last ermöglicht elektrische Leistungsabgabe."
+        },
+        {
+          "text": "Gegenmoment verlangt zusätzliche Antriebsleistung.",
+          "target": 3,
+          "feedback": "Die Bilanz enthält elektrische Abgabe und Verluste."
+        }
+      ],
+      "conclusion": "Die gesamte Kette folgt der Energieerhaltung."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Vergleiche Innenpol- und Außenpolgenerator anhand der bewegten Bauteile und der Leistungsabnahme.",
+        "model": "Beim Außenpolaufbau rotiert die Spule; beim Innenpolaufbau rotiert das Feldsystem, die Abgabespulen stehen. Eine feststehende Abgabespule erleichtert die Entnahme großer elektrischer Leistung. In beiden Fällen ändert sich der Fluss relativ zur Spule.",
+        "criteria": [
+          "Bewegtes Bauteil je Bauform",
+          "Leistungsabnahme begründet",
+          "Gemeinsames Induktionsprinzip"
+        ],
+        "hints": ["Bewegtes Bauteil je Bauform", "Leistungsabnahme begründet"]
+      },
+      "2": {
+        "prompt": "Eine Anbieterzeichnung zeigt einen Generator ohne Antrieb, der dauerhaft eine Lampe versorgt. Beurteile das Modell.",
+        "model": "Die Zeichnung lässt die Energiequelle aus. Dauerhafte elektrische Abgabe und Verluste benötigen einen entsprechenden Antrieb oder eine andere Energiezufuhr. Ein Magnetfeld vermittelt die Umwandlung, ersetzt aber keine unbegrenzte Energiequelle. Ich verlange eine vollständige Systembilanz.",
+        "criteria": [
+          "Fehlende Energiezufuhr erkannt",
+          "Abgabe und Verluste bilanziert",
+          "Nachvollziehbare Quellenkritik"
+        ],
+        "hints": [
+          "Fehlende Energiezufuhr erkannt",
+          "Abgabe und Verluste bilanziert"
+        ]
+      }
+    },
+    "model": "generator",
+    "calculation": "frequency"
+  },
+  {
+    "id": "el-trafo",
+    "lb": 2,
+    "title": "Transformator mit und ohne Last",
+    "period": "Ph10 · Lernbereich 2 · beide Zweige",
+    "intro": "Gemeinsamer Wechselfluss verbindet zwei Spulen.",
+    "paragraphs": [
+      "Ein Transformator besitzt Primär- und Sekundärspule an einem gemeinsamen magnetischen Kern. Ein veränderlicher Primärstrom erzeugt Wechselfluss, der in der Sekundärspule Spannung induziert. Für den idealen oder näherungsweise unbelasteten Transformator gilt U₂ / U₁ = N₂ / N₁. Mit unverändertem Gleichstrom gibt es nach dem Einschaltvorgang keine dauerhafte Sekundärspannung.",
+      "Beim idealen belasteten Transformator bleibt die Leistung erhalten: U₁ · I₁ = U₂ · I₂. Die Stromübersetzung ist zur Spannungsübersetzung umgekehrt. Ein realer Transformator hat Wicklungsverluste, Wirbelstrom- und Ummagnetisierungsverluste; ein geblechter Kern mindert große Wirbelstromschleifen. Der Wirkungsgrad ist abgegebene durch zugeführte Leistung und liegt bei realem Betrieb unter eins."
+    ],
+    "takeaway": "Die Spannungen verhalten sich ideal wie die Windungszahlen.",
+    "tracks": ["I", "II_III"],
+    "sourceIds": ["lp-i", "lp-ii", "induction", "transformer"],
+    "quiz": {
+      "question": "Wie verhalten sich die Spannungen eines idealen Transformators zu den Windungszahlen?",
+      "answer": "U₂ / U₁ = N₂ / N₁.",
+      "wrong": [
+        "U₂ / U₁ = N₁ / N₂.",
+        "U₂ und U₁ sind unabhängig von den Windungszahlen immer gleich."
+      ],
+      "explanation": "Mehr Sekundärwindungen liefern bei gleichem Wechselfluss eine größere Sekundärspannung."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Aussagen und Belege ordnen",
+      "instruction": "Ordne jede Aussage zu. Begründe danach, woran du sie erkennst.",
+      "categories": [
+        "Ideales Verhältnis",
+        "Realer Verlust",
+        "Kein dauerhafter Transformatorbetrieb"
+      ],
+      "entries": [
+        {
+          "text": "Spannungsverdopplung halbiert bei gleicher Leistung den Strom.",
+          "target": 0,
+          "feedback": "Die ideale Leistungsbilanz bleibt erhalten."
+        },
+        {
+          "text": "Erwärmung der Wicklungen durch ihren Widerstand.",
+          "target": 1,
+          "feedback": "Elektrische Energie wird in innere Energie umgewandelt."
+        },
+        {
+          "text": "Zeitlich unveränderlicher Gleichstrom nach dem Einschaltvorgang.",
+          "target": 2,
+          "feedback": "Dann fehlt der dauerhafte Wechselfluss."
+        }
+      ],
+      "conclusion": "Unbelastete Spannung und belastete Leistungsbilanz sind zu unterscheiden."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Ein idealer Trafo hat N₁ = 500, N₂ = 100 und U₁ = 20 V. Bestimme U₂ und erkläre das Verhältnis.",
+        "model": "Die Sekundärspule hat ein Fünftel der Windungen. Daher ist U₂ = 20 · 100 / 500 = 4 V. Bei Belastung fließt ideal der fünffache Sekundärstrom; die Leistung wird nicht verfünffacht.",
+        "criteria": [
+          "Windungsverhältnis verwendet",
+          "Sekundärspannung 4 V",
+          "Leistungserhaltung eingeordnet"
+        ],
+        "hints": ["Windungsverhältnis verwendet", "Sekundärspannung 4 V"]
+      },
+      "2": {
+        "prompt": "Warum kann ein geblechter Kern den Wirkungsgrad verbessern?",
+        "model": "Die gegeneinander isolierten dünnen Bleche erschweren große Wirbelstromschleifen. Dadurch sinken entsprechende Erwärmungsverluste. Kupfer- und Ummagnetisierungsverluste verschwinden dadurch nicht; der gesamte Wirkungsgrad muss weiter bilanziert werden.",
+        "criteria": [
+          "Wirbelstrompfade erklärt",
+          "Verlustminderung begründet",
+          "Andere Verluste berücksichtigt"
+        ],
+        "hints": ["Wirbelstrompfade erklärt", "Verlustminderung begründet"]
+      }
+    },
+    "model": "transformer",
+    "calculation": "transformer"
+  },
+  {
+    "id": "el-fernleitung",
+    "lb": 2,
+    "title": "Energie mit kleinerem Verlust übertragen",
+    "period": "Ph10 · Lernbereich 2 · beide Zweige",
+    "intro": "Höhere Spannung senkt für gleiche Leistung den Strom.",
+    "paragraphs": [
+      "Für eine vorgegebene übertragene elektrische Leistung gilt im vereinfachten Modell I = P / U. Der gesamte ohmsche Leitungsverlust beträgt P_V = I² · R_L. Wird die Spannung bei gleicher Eingangsleistung verzehnfacht, sinkt der Strom auf ein Zehntel und der Verlust auf ein Hundertstel. Der Leitungswiderstand wird durch die Spannungserhöhung nicht kleiner.",
+      "Ein System aus Hochtransformieren, Leitung und Heruntertransformieren berücksichtigt mehrere Verluste. Bei bekannten Wirkungsgraden werden die Anteile multipliziert. Die Fernleitung muss zusätzlich hinsichtlich Isolation, Netzeinbindung und Umweltwirkung bewertet werden. Gleichstromübertragung kann für bestimmte lange Verbindungen sinnvoll sein, benötigt aber passende Stromrichter; ein gewöhnlicher Transformator genügt dafür allein nicht."
+    ],
+    "takeaway": "Ohmsche Leitungsverluste wachsen mit dem Quadrat des Stroms.",
+    "tracks": ["I", "II_III"],
+    "sourceIds": ["lp-i", "lp-ii", "induction", "transformer"],
+    "quiz": {
+      "question": "Wie ändern sich ohmsche Leitungsverluste bei halbem Strom und gleichem Leitungswiderstand?",
+      "answer": "Sie sinken auf ein Viertel.",
+      "wrong": ["Sie sinken auf die Hälfte.", "Sie bleiben unverändert."],
+      "explanation": "Die Verlustleistung ist I² mal Leitungswiderstand."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Aussagen und Belege ordnen",
+      "instruction": "Ordne jede Aussage zu. Begründe danach, woran du sie erkennst.",
+      "categories": [
+        "Verringert ohmschen Verlust",
+        "Verringert ihn nicht bei gleichem Strom"
+      ],
+      "entries": [
+        {
+          "text": "Leitungswiderstand verkleinern.",
+          "target": 0,
+          "feedback": "Der Verlust ist proportional zum Widerstand."
+        },
+        {
+          "text": "Gleiche Leistung mit höherer Spannung und kleinerem Strom übertragen.",
+          "target": 0,
+          "feedback": "Der Strom geht quadratisch ein."
+        },
+        {
+          "text": "Nur die Bezeichnung Wechselstrom durch Gleichstrom ersetzen.",
+          "target": 1,
+          "feedback": "Bei gleichem Strom und Widerstand bleibt der ohmsche Verlust gleich."
+        }
+      ],
+      "conclusion": "Eine Systementscheidung benötigt mehr als eine einzelne Formel."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Eine Leitung mit insgesamt 2 Ω führt 10 A. Berechne ihren Verlust; vergleiche mit 5 A.",
+        "model": "Bei 10 A beträgt der Verlust 10² · 2 = 200 W. Bei 5 A sind es 5² · 2 = 50 W. Die Halbierung des Stroms ergibt ein Viertel Verlustleistung; der Widerstand bleibt 2 Ω.",
+        "criteria": [
+          "200 W bestimmt",
+          "50 W bestimmt",
+          "Quadratische Stromabhängigkeit erklärt"
+        ],
+        "hints": ["200 W bestimmt", "50 W bestimmt"]
+      },
+      "2": {
+        "prompt": "Zwei Transformatoren haben je 95 % Wirkungsgrad, die Leitung 90 %. Bestimme den Gesamtwirkungsgrad.",
+        "model": "Der Gesamtanteil ist 0,95 · 0,90 · 0,95 = 0,81225, etwa 81,2 %. Prozentverluste dürfen nicht einfach addiert werden, weil jede Stufe nur die ankommende Leistung weiterverarbeitet.",
+        "criteria": [
+          "Wirkungsgrade multipliziert",
+          "Etwa 81,2 % bestimmt",
+          "Bezug jeder Stufe erläutert"
+        ],
+        "hints": ["Wirkungsgrade multipliziert", "Etwa 81,2 % bestimmt"]
+      }
+    },
+    "model": "transformer",
+    "calculation": "line"
+  },
+  {
+    "id": "ke-entdeckung",
+    "lb": 3,
+    "title": "Radioaktivität aus Belegen erschließen",
+    "period": "Ph10 · Lernbereich 3 · beide Zweige",
+    "intro": "Eine Entdeckung entsteht aus Messung, Gegenprüfung und Deutung.",
+    "paragraphs": [
+      "Henri Becquerel stellte 1896 fest, dass Uranverbindungen eine geschützte Fotoplatte beeinflussen konnten. Eine Erklärung durch zuvor aufgenommenes Sonnenlicht reichte nicht aus. Marie und Pierre Curie untersuchten die Strahlung systematisch und fanden weitere stark strahlende Stoffe. Die Erkenntnis entstand aus vielen aufeinander bezogenen Arbeiten, nicht aus einer einzelnen fertigen Theorie.",
+      "Eine geschwärzte Platte oder ein Zählimpuls ist zunächst ein Nachweis einer Wirkung, nicht schon die vollständige Erklärung von Teilchenart und Kernumwandlung. Vergleichsproben, Untergrundmessung und Dokumentation grenzen Alternativerklärungen ein. Für eine eigene Quellenrecherche unterscheidest du historische Darstellung, originale Beobachtung und heutiges Modell."
+    ],
+    "takeaway": "Beobachtung, Nachweis und Erklärung sind unterschiedliche Erkenntnisschritte.",
+    "tracks": ["I", "II_III"],
+    "sourceIds": ["lp-i", "lp-ii", "nuclear"],
+    "quiz": {
+      "question": "Welche Aussage beschreibt die entscheidende Überraschung beim frühen Uran-Nachweis?",
+      "answer": "Die Wirkung trat auch ohne vorherige Sonnenbestrahlung auf.",
+      "wrong": [
+        "Die Radioaktivität war nur eine gewöhnliche Spiegelung von Sonnenlicht.",
+        "Schon die Fotoplatte zeigte direkt alle Quarks im Atomkern."
+      ],
+      "explanation": "Die Beobachtung forderte eine Erklärung über gespeichertes Sonnenlicht hinaus."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Aussagen und Belege ordnen",
+      "instruction": "Ordne jede Aussage zu. Begründe danach, woran du sie erkennst.",
+      "categories": ["Beobachtung", "Deutung", "Zusätzliche Prüfung"],
+      "entries": [
+        {
+          "text": "Eine geschützte Fotoplatte wird geschwärzt.",
+          "target": 0,
+          "feedback": "Dies ist ein festgestellter Effekt."
+        },
+        {
+          "text": "Ein Stoff sendet selbst durchdringende Strahlung aus.",
+          "target": 1,
+          "feedback": "Das ist eine Erklärung des Effekts."
+        },
+        {
+          "text": "Eine Kontrollplatte ohne Probe wird gleichzeitig aufbewahrt.",
+          "target": 2,
+          "feedback": "Sie hilft, andere Ursachen einzugrenzen."
+        }
+      ],
+      "conclusion": "Eine fachliche Darstellung macht den Weg vom Beleg zur Deutung sichtbar."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Warum gehören Kontrollprobe und Untergrundmessung zum Strahlungsnachweis?",
+        "model": "Auch ohne die untersuchte Probe können Signale oder Fotoplatteneffekte auftreten. Eine Kontrollprobe beziehungsweise Untergrundmessung liefert die Vergleichsbasis. Erst eine ausreichend deutliche und wiederholbare Abweichung stützt die Zuordnung zur Probe.",
+        "criteria": [
+          "Alternative Signalursachen genannt",
+          "Vergleichsbasis erklärt",
+          "Wiederholbarkeit oder Streuung berücksichtigt"
+        ],
+        "hints": [
+          "Alternative Signalursachen genannt",
+          "Vergleichsbasis erklärt"
+        ]
+      },
+      "2": {
+        "prompt": "Entwirf eine kurze Quellenpräsentation zur Entdeckung der Radioaktivität.",
+        "model": "Ich trenne Becquerels Beobachtung, die Gegenprüfung der Sonnenlichterklärung und die systematischen Arbeiten der Curies. Ich nenne die Herkunft meiner historischen Darstellung und kennzeichne spätere Kernmodelle als heutige Erklärung. Eine Abbildung belegt jeweils nur, was sie tatsächlich zeigt.",
+        "criteria": [
+          "Historische Beiträge unterschieden",
+          "Quelle mit Herkunft verwendet",
+          "Zeitgenössische und heutige Deutung getrennt"
+        ],
+        "hints": [
+          "Historische Beiträge unterschieden",
+          "Quelle mit Herkunft verwendet"
+        ]
+      }
+    }
+  },
+  {
+    "id": "ke-kern",
+    "lb": 3,
+    "title": "Atomkern, Nuklide und Isotope",
+    "period": "Ph10 · Lernbereich 3 · beide Zweige",
+    "intro": "Eine Protonenzahl identifiziert das Element.",
+    "paragraphs": [
+      "Der Atomkern enthält Protonen und Neutronen, die Hülle Elektronen. Die Protonenzahl Z bestimmt das chemische Element. Die Massenzahl A zählt Protonen und Neutronen zusammen; die Neutronenzahl ist A − Z. Bei einem elektrisch neutralen Atom entspricht die Elektronenzahl der Protonenzahl.",
+      "Isotope eines Elements haben dieselbe Protonenzahl und unterschiedliche Neutronenzahlen. In der Nuklidschreibweise steht A links oben, Z links unten am Elementsymbol. Nicht jedes Isotop ist radioaktiv. Die anziehende Kernwechselwirkung wirkt auf sehr kurze Entfernung und kann dort die elektrische Abstoßung der Protonen überwiegen; das einfache Kugelmodell zeigt keine realen Größenverhältnisse."
+    ],
+    "takeaway": "Isotope unterscheiden sich in der Neutronenzahl desselben Elements.",
+    "tracks": ["I", "II_III"],
+    "sourceIds": ["lp-i", "lp-ii", "nuclear"],
+    "quiz": {
+      "question": "Was ist bei Isotopen desselben Elements gleich?",
+      "answer": "Die Protonenzahl.",
+      "wrong": [
+        "Die Neutronenzahl unabhängig vom Isotop.",
+        "Die Massenzahl unabhängig vom Isotop."
+      ],
+      "explanation": "Die Protonenzahl legt das Element fest."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Aussagen und Belege ordnen",
+      "instruction": "Ordne jede Aussage zu. Begründe danach, woran du sie erkennst.",
+      "categories": ["Protonenzahl Z", "Massenzahl A", "Neutronenzahl"],
+      "entries": [
+        {
+          "text": "Zahl aller Protonen im Kern",
+          "target": 0,
+          "feedback": "Sie bestimmt das chemische Element."
+        },
+        {
+          "text": "Summe aus Protonen und Neutronen",
+          "target": 1,
+          "feedback": "Die Massenzahl ist eine Teilchenanzahl, keine Masse in Kilogramm."
+        },
+        {
+          "text": "Differenz A minus Z",
+          "target": 2,
+          "feedback": "Nach Abzug der Protonen bleiben die Neutronen."
+        }
+      ],
+      "conclusion": "Nuklid, Ion und Isotop bezeichnen unterschiedliche Eigenschaften."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Bestimme für Kohlenstoff-14 mit Z = 6 die Protonen-, Neutronen- und Elektronenzahl eines neutralen Atoms.",
+        "model": "Der Kern enthält 6 Protonen und 14 − 6 = 8 Neutronen. Das neutrale Atom hat 6 Elektronen. Ein Ion desselben Nuklids hätte eine andere Elektronenzahl, aber unverändert denselben Kern.",
+        "criteria": [
+          "6 Protonen",
+          "8 Neutronen",
+          "6 Elektronen unter Neutralitätsannahme"
+        ],
+        "hints": ["6 Protonen", "8 Neutronen"]
+      },
+      "2": {
+        "prompt": "Warum ist „Isotope sind radioaktive Atome“ falsch?",
+        "model": "Isotope unterscheiden sich innerhalb eines Elements in ihrer Neutronenzahl. Diese Definition macht keine Aussage darüber, ob ein Kern stabil ist. Es gibt stabile und radioaktive Isotope; Radioaktivität muss separat geprüft werden.",
+        "criteria": [
+          "Isotop korrekt definiert",
+          "Stabilität getrennt",
+          "Pauschale zurückgewiesen"
+        ],
+        "hints": ["Isotop korrekt definiert", "Stabilität getrennt"]
+      }
+    },
+    "model": "nucleus"
+  },
+  {
+    "id": "ke-quarks",
+    "lb": 3,
+    "title": "Was im Kernbaustein steckt",
+    "period": "Ph10 · Lernbereich 3 · Zweig I",
+    "intro": "Protonen und Neutronen sind zusammengesetzt.",
+    "paragraphs": [
+      "Im einfachen Quarkmodell besteht ein Proton aus zwei Up- und einem Down-Valenzquark, ein Neutron aus einem Up- und zwei Down-Valenzquarks. Up trägt +⅔ der Elementarladung, Down −⅓. Die Summen ergeben +1 für das Proton und 0 für das Neutron.",
+      "Das Valenzquarkbild erklärt Ladung und Teilchenart, ist aber kein Bild dreier ruhender Kugeln. Gluonen, Bewegung und weitere Quark-Antiquark-Beiträge gehören zur vollständigen Beschreibung. Die starke Wechselwirkung bindet Quarks; die Bindung zwischen Protonen und Neutronen ist eine verbleibende Kernwechselwirkung. Elektronen gehören im Standardmodell zu den Leptonen und bestehen nach heutigem Kenntnisstand nicht aus Quarks."
+    ],
+    "takeaway": "Proton: uud; Neutron: udd im Valenzquarkmodell.",
+    "tracks": ["I"],
+    "sourceIds": ["lp-i", "nuclear", "quarks"],
+    "quiz": {
+      "question": "Welche Valenzquarkkombination besitzt ein Proton?",
+      "answer": "Zwei Up-Quarks und ein Down-Quark.",
+      "wrong": [
+        "Ein Up-Quark und zwei Down-Quarks.",
+        "Drei Elektronen ohne Quarks."
+      ],
+      "explanation": "Die Ladungen addieren sich zu +1 Elementarladung."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Aussagen und Belege ordnen",
+      "instruction": "Ordne jede Aussage zu. Begründe danach, woran du sie erkennst.",
+      "categories": ["Proton", "Neutron", "Elektron"],
+      "entries": [
+        {
+          "text": "Valenzkombination uud",
+          "target": 0,
+          "feedback": "Zwei mal +⅔ und einmal −⅓ ergeben +1."
+        },
+        {
+          "text": "Valenzkombination udd",
+          "target": 1,
+          "feedback": "Einmal +⅔ und zweimal −⅓ ergeben null."
+        },
+        {
+          "text": "Lepton ohne bekannte Quarkunterstruktur",
+          "target": 2,
+          "feedback": "Das Elektron gehört zu einer anderen Teilchenfamilie."
+        }
+      ],
+      "conclusion": "Ein Modell kann bestimmte Eigenschaften erklären, ohne ein vollständiges räumliches Abbild zu sein."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Zeige, wie die Quarkladungen die elektrische Neutralität des Neutrons ergeben.",
+        "model": "Ein Up-Quark trägt +⅔, zwei Down-Quarks jeweils −⅓ der Elementarladung. Die Summe +⅔ −⅓ −⅓ ist null. Elektrische Neutralität bedeutet also nicht, dass es keine geladenen Bestandteile gibt.",
+        "criteria": [
+          "Quarkkombination udd",
+          "Ladungssumme null",
+          "Neutralität richtig interpretiert"
+        ],
+        "hints": ["Quarkkombination udd", "Ladungssumme null"]
+      },
+      "2": {
+        "prompt": "Beurteile eine Zeichnung, die das Proton als drei starre farbige Kugeln darstellt.",
+        "model": "Die Zeichnung kann die Valenzquarkkombination markieren. Farben sind eine Darstellungshilfe und keine sichtbaren Oberflächenfarben. Gluonen, Dynamik und weitere Beiträge werden ausgelassen; daraus lassen sich keine maßstäblichen Abstände oder Bahnen ablesen.",
+        "criteria": [
+          "Nützliche Aussage des Modells",
+          "Ausgelassene Physik benannt",
+          "Keine maßstäbliche Deutung"
+        ],
+        "hints": [
+          "Nützliche Aussage des Modells",
+          "Ausgelassene Physik benannt"
+        ]
+      }
+    }
+  },
+  {
+    "id": "ke-strahlung",
+    "lb": 3,
+    "title": "Alpha, Beta und Gamma unterscheiden",
+    "period": "Ph10 · Lernbereich 3 · beide Zweige",
+    "intro": "Teilchenart, Ladung und Durchdringung sind getrennte Merkmale.",
+    "paragraphs": [
+      "Alphastrahlung besteht aus Helium-4-Kernen mit zwei Protonen und zwei Neutronen. Beta-Minus-Strahlung besteht aus Elektronen, die bei einer Kernumwandlung entstehen; sie stammen nicht aus der Atomhülle. Gammastrahlung ist elektromagnetische Strahlung aus einem angeregten Kernzustand. Alpha ist zweifach positiv geladen, Beta-Minus negativ, Gamma elektrisch neutral.",
+      "Ein Magnetfeld lenkt geladene Strahlung bei Bewegung quer zum Feld ab; Alpha und Beta-Minus in entgegengesetzte Richtungen. Stärke und Radius hängen unter anderem von Impuls und Ladung ab. Alpha hat typischerweise kurze Reichweite und wird leicht gestoppt; Beta benötigt passende Materialdicken. Gamma wird durch geeignete dicke Schichten abgeschwächt, nie durch eine pauschal endliche Dicke vollständig entfernt. Nach Aufnahme in den Körper kann gerade kurzreichweitige Strahlung viel Energie lokal abgeben."
+    ],
+    "takeaway": "Gamma ist ungeladen; Alpha und Beta-Minus sind geladene Teilchenstrahlung.",
+    "tracks": ["I", "II_III"],
+    "sourceIds": ["lp-i", "lp-ii", "nuclear", "bfs"],
+    "quiz": {
+      "question": "Aus welchen Teilchen besteht Alphastrahlung?",
+      "answer": "Helium-4-Atomkerne.",
+      "wrong": [
+        "Elektronen aus der Atomhülle.",
+        "Elektrisch neutrale elektromagnetische Wellen."
+      ],
+      "explanation": "Ein Alphateilchen enthält zwei Protonen und zwei Neutronen."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Aussagen und Belege ordnen",
+      "instruction": "Ordne jede Aussage zu. Begründe danach, woran du sie erkennst.",
+      "categories": ["Alpha", "Beta-Minus", "Gamma"],
+      "entries": [
+        {
+          "text": "Heliumkern mit Ladung +2e",
+          "target": 0,
+          "feedback": "Zwei Protonen liefern die positive Ladung."
+        },
+        {
+          "text": "Bei Kernumwandlung entstandenes Elektron",
+          "target": 1,
+          "feedback": "Die negative Ladung erklärt die andere Ablenkungsrichtung."
+        },
+        {
+          "text": "Elektromagnetische Strahlung ohne elektrische Ladung",
+          "target": 2,
+          "feedback": "Im Magnetfeld gibt es keine entsprechende Lorentzablenkung."
+        }
+      ],
+      "conclusion": "Reichweite und Abschirmung hängen von Energie und Material ab."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Warum ist die pauschale Aussage „Alpha ist harmlos, weil Papier genügt“ falsch?",
+        "model": "Leichte äußere Abschirmbarkeit beschreibt nur eine Expositionssituation. Gelangt ein Alphastrahler in den Körper, kann die Strahlung auf kurzer Strecke viel Energie im Gewebe abgeben. Art, Aktivität, Energie, Aufenthaltsort und Dauer müssen berücksichtigt werden.",
+        "criteria": [
+          "Außen- und Innenexposition getrennt",
+          "Lokale Energieabgabe erklärt",
+          "Weitere Einflussgrößen genannt"
+        ],
+        "hints": [
+          "Außen- und Innenexposition getrennt",
+          "Lokale Energieabgabe erklärt"
+        ]
+      },
+      "2": {
+        "prompt": "Ein Alttext nennt Alpha grundsätzlich stärker magnetisch abgelenkt als Beta. Beurteile das.",
+        "model": "Die Ablenkung hängt vom Verhältnis aus Impuls und Ladung sowie vom Feld ab. Wegen der unterschiedlichen Massen und Energien ist ein allgemeines stärker oder schwächer ohne Randbedingungen falsch. Sicher sind im Querfeld die entgegengesetzten Richtungen für positive Alpha- und negative Betateilchen; Gamma bleibt ungeladen.",
+        "criteria": [
+          "Impuls und Ladung berücksichtigt",
+          "Unzulässige Rangfolge erkannt",
+          "Sichere Richtungsunterscheidung"
+        ],
+        "hints": [
+          "Impuls und Ladung berücksichtigt",
+          "Unzulässige Rangfolge erkannt"
+        ]
+      }
+    }
+  },
+  {
+    "id": "ke-nachweis",
+    "lb": 3,
+    "title": "Nachweise und Zählraten auswerten",
+    "period": "Ph10 · Lernbereich 3 · beide Zweige",
+    "intro": "Ein Zählrohr zeigt nicht direkt eine biologische Dosis.",
+    "paragraphs": [
+      "Ionisierende Strahlung kann in Gas Ladungsträger erzeugen. Ein Geiger-Müller-Zählrohr nutzt daraus entstehende elektrische Impulse als Nachweis. Eine Nebelkammer macht Spuren geladener Teilchen durch Kondensation sichtbar; eine Fotoplatte dokumentiert eine weitere Strahlungswirkung. Ein einzelner Nachweis unterscheidet nicht automatisch alle Strahlungsarten.",
+      "Eine Messung benötigt Zählzeit, Untergrund und Unsicherheit. Bei gleicher Geometrie kann eine Absorberreihe Hinweise auf die Strahlungsart liefern. Zählrate, Aktivität der Quelle und Dosis sind verschiedene Größen: Nicht jeder Zerfall wird detektiert. Zufall führt auch bei unveränderten Bedingungen zu schwankenden Zählwerten. Die App beschreibt Auswertungen; sie fordert keinen Umgang mit eigenen radioaktiven Quellen."
+    ],
+    "takeaway": "Zählwerte benötigen Messzeit, Untergrund und Geometrie.",
+    "tracks": ["I", "II_III"],
+    "sourceIds": ["lp-i", "lp-ii", "nuclear", "bfs"],
+    "quiz": {
+      "question": "Was erfasst ein Geiger-Müller-Zählrohr unmittelbar?",
+      "answer": "Elektrische Impulse infolge nachgewiesener Ionisationsereignisse.",
+      "wrong": [
+        "Die persönliche effektive Dosis unabhängig von der Geometrie.",
+        "Die genaue Anzahl aller Zerfälle einer beliebig entfernten Quelle."
+      ],
+      "explanation": "Detektor, Abstand und Abschirmung beeinflussen die erfassten Impulse."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Aussagen und Belege ordnen",
+      "instruction": "Ordne jede Aussage zu. Begründe danach, woran du sie erkennst.",
+      "categories": [
+        "Nachweissignal",
+        "Quelleneigenschaft",
+        "Biologische Bewertung"
+      ],
+      "entries": [
+        {
+          "text": "Impulse pro Sekunde im Messgerät",
+          "target": 0,
+          "feedback": "Das ist eine Zählrate unter festgelegten Bedingungen."
+        },
+        {
+          "text": "Zerfälle pro Sekunde des Radionuklids",
+          "target": 1,
+          "feedback": "Das ist die Aktivität in Becquerel."
+        },
+        {
+          "text": "Gewichtete Dosis unter Berücksichtigung der Strahlung",
+          "target": 2,
+          "feedback": "Dosisgrößen sind nicht identisch mit der Zählrate."
+        }
+      ],
+      "conclusion": "Ein Messwert ist nur zusammen mit dem Messverfahren aussagekräftig."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Eine Messung liefert in 60 s 180 Impulse, der Untergrund in 60 s 60 Impulse. Bestimme die untergrundbereinigte Zählrate.",
+        "model": "Die Differenz beträgt 120 Impulse in 60 s, also 2 pro Sekunde. Die Rohzählrate war 3 pro Sekunde. Daraus folgt ohne Nachweiswahrscheinlichkeit und Geometrie noch keine Aktivität der Quelle.",
+        "criteria": [
+          "Gleiche Messzeiten berücksichtigt",
+          "Bereinigte Rate 2 pro Sekunde",
+          "Keine Gleichsetzung mit Aktivität"
+        ],
+        "hints": [
+          "Gleiche Messzeiten berücksichtigt",
+          "Bereinigte Rate 2 pro Sekunde"
+        ]
+      },
+      "2": {
+        "prompt": "Warum beweist eine einzige leicht höhere Zählrate noch keine zusätzliche Strahlungsquelle?",
+        "model": "Die Zählung schwankt zufällig. Ich vergleiche gleich lange Messungen bei gleicher Geometrie und wiederhole sie. Erst eine im Vergleich zur Streuung nachvollziehbare Abweichung stützt die Aussage; die Quelle selbst ist damit noch nicht identifiziert.",
+        "criteria": [
+          "Zufallsschwankung genannt",
+          "Kontrollierter Vergleich geplant",
+          "Beleggrenze erklärt"
+        ],
+        "hints": [
+          "Zufallsschwankung genannt",
+          "Kontrollierter Vergleich geplant"
+        ]
+      }
+    }
+  },
+  {
+    "id": "ke-zerfall",
+    "lb": 3,
+    "title": "Kernumwandlungen bilanzieren",
+    "period": "Ph10 · Lernbereich 3 · beide Zweige",
+    "intro": "Ladungs- und Nukleonenzahl helfen bei Zerfallsgleichungen.",
+    "paragraphs": [
+      "Beim Alphazerfall nimmt die Massenzahl des Tochterkerns um vier und seine Protonenzahl um zwei ab. Beim Beta-Minus-Zerfall wandelt sich ein Neutron in ein Proton um; ein Elektron und ein Elektron-Antineutrino werden emittiert. Die Massenzahl bleibt gleich, die Protonenzahl steigt um eins.",
+      "Bei Gammaemission geht ein angeregter Kern in einen energieärmeren Zustand über. Massenzahl und Protonenzahl ändern sich dabei nicht. Der Endzustand muss nicht grundsätzlich der Grundzustand sein; weitere Übergänge sind möglich. Im Zweig I werden vollständige Kernzerfallsgleichungen und ihre Bilanzen geübt; im Zweig II/III stehen Art und Bedeutung der Umwandlung im Vordergrund."
+    ],
+    "takeaway": "Beta-Minus erhöht bei gleicher Massenzahl die Protonenzahl um eins.",
+    "tracks": ["I", "II_III"],
+    "sourceIds": ["lp-i", "lp-ii", "nuclear"],
+    "quiz": {
+      "question": "Wie ändern sich Massenzahl und Protonenzahl bei Gammaemission?",
+      "answer": "Beide bleiben unverändert.",
+      "wrong": [
+        "Beide nehmen jeweils um eins ab.",
+        "Die Massenzahl sinkt um vier, die Protonenzahl um zwei."
+      ],
+      "explanation": "Der Kern gibt Anregungsenergie ab, ohne seine Nukleonenzusammensetzung zu ändern."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Aussagen und Belege ordnen",
+      "instruction": "Ordne jede Aussage zu. Begründe danach, woran du sie erkennst.",
+      "categories": ["Alpha", "Beta-Minus", "Gamma"],
+      "entries": [
+        {
+          "text": "A sinkt um 4, Z sinkt um 2.",
+          "target": 0,
+          "feedback": "Ein Helium-4-Kern verlässt den Mutterkern."
+        },
+        {
+          "text": "A bleibt gleich, Z steigt um 1.",
+          "target": 1,
+          "feedback": "Ein Neutron wird zum Proton."
+        },
+        {
+          "text": "A und Z bleiben gleich; die Anregungsenergie sinkt.",
+          "target": 2,
+          "feedback": "Ein Gammaquant trägt Energie fort."
+        }
+      ],
+      "conclusion": "Die Gleichung muss alle ausgesandten Teilchen passend berücksichtigen."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Ein Kern mit A = 238 und Z = 92 sendet ein Alphateilchen aus. Welche Zahlen hat der Tochterkern?",
+        "model": "Der Tochterkern hat A = 234 und Z = 90. Das Alphateilchen trägt vier Nukleonen und zwei positive Elementarladungen fort. Die Summen von Tochterkern und Alphateilchen ergeben wieder die Ausgangszahlen.",
+        "criteria": ["A = 234", "Z = 90", "Beide Bilanzen geprüft"],
+        "hints": ["A = 234", "Z = 90"]
+      },
+      "2": {
+        "prompt": "Kohlenstoff-14 mit Z = 6 zerfällt über Beta-Minus. Beschreibe den Tochterkern und die emittierten Teilchen.",
+        "model": "Die Massenzahl bleibt 14, Z steigt auf 7: Es entsteht Stickstoff-14. Ein Neutron wird zum Proton; Elektron und Elektron-Antineutrino werden ausgesandt. Das Elektron ist kein aus der Hülle herausgerissenes Hüllenelektron.",
+        "criteria": [
+          "Tochterkern Stickstoff-14",
+          "Elektron und Antineutrino genannt",
+          "Entstehung im Kern erklärt"
+        ],
+        "hints": [
+          "Tochterkern Stickstoff-14",
+          "Elektron und Antineutrino genannt"
+        ]
+      }
+    },
+    "model": "nucleus"
+  },
+  {
+    "id": "ke-halbwertszeit",
+    "lb": 3,
+    "title": "Halbwertszeit und Zufall",
+    "period": "Ph10 · Lernbereich 3 · beide Zweige",
+    "intro": "Die Hälfte ist eine statistische Aussage über viele Kerne.",
+    "paragraphs": [
+      "Die Halbwertszeit ist die Zeit, in der die Anzahl noch nicht zerfallener Kerne eines Radionuklids im statistischen Mittel auf die Hälfte sinkt. Nach zwei Halbwertszeiten bleibt ein Viertel, nach drei ein Achtel. Für einen einzelnen Kern kann kein genauer Zerfallszeitpunkt vorhergesagt werden.",
+      "Ein Würfel- oder Münzmodell veranschaulicht zufällige Einzelereignisse und einen regelmäßigen Verlauf vieler Versuche. Kleine Gruppen schwanken deutlich. Ein Modell mit diskreten Runden bildet reale kontinuierliche Zeit nur näherungsweise ab. Ein fester Bruchteil der noch vorhandenen Kerne verschwindet pro Halbwertszeit, nicht eine feste Kernanzahl pro gleich langer Zeit."
+    ],
+    "takeaway": "Nach jeder Halbwertszeit bleibt im Mittel die Hälfte des jeweiligen Restes.",
+    "tracks": ["I", "II_III"],
+    "sourceIds": ["lp-i", "lp-ii", "nuclear", "decay"],
+    "quiz": {
+      "question": "Welcher Restanteil bleibt im Mittel nach drei Halbwertszeiten?",
+      "answer": "Ein Achtel.",
+      "wrong": ["Ein Drittel.", "Kein Kern mehr."],
+      "explanation": "Dreimal Halbieren ergibt ½ · ½ · ½ = ⅛."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Aussagen und Belege ordnen",
+      "instruction": "Ordne jede Aussage zu. Begründe danach, woran du sie erkennst.",
+      "categories": [
+        "Statistische Vorhersage möglich",
+        "Kein genauer Zeitpunkt vorhersagbar"
+      ],
+      "entries": [
+        {
+          "text": "Mittlerer Restanteil einer sehr großen Kernanzahl",
+          "target": 0,
+          "feedback": "Viele unabhängige Ereignisse ergeben einen regelmäßigen Erwartungswert."
+        },
+        {
+          "text": "Zerfallszeitpunkt eines einzelnen bestimmten Kerns",
+          "target": 1,
+          "feedback": "Das einzelne Ereignis ist zufällig."
+        },
+        {
+          "text": "Mittlere Anzahl nach zwei Halbwertszeiten",
+          "target": 0,
+          "feedback": "Sie beträgt ein Viertel des Anfangswerts."
+        }
+      ],
+      "conclusion": "Ein glatter Erwartungswert ist keine Garantie für jede kleine Stichprobe."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Von anfangs 8000 Kernen bleiben im Mittel 1000. Wie viele Halbwertszeiten sind vergangen?",
+        "model": "Die Folge ist 8000, 4000, 2000, 1000. Es sind drei Halbwertszeiten. Bei kleinen realen Gruppen wäre die genaue Anzahl zufällig um den Erwartungswert verteilt.",
+        "criteria": [
+          "Dreimal halbiert",
+          "Drei Halbwertszeiten bestimmt",
+          "Zufallsgrenze erklärt"
+        ],
+        "hints": ["Dreimal halbiert", "Drei Halbwertszeiten bestimmt"]
+      },
+      "2": {
+        "prompt": "Warum ist die Aussage falsch, nach zwei Halbwertszeiten sei alles zerfallen?",
+        "model": "Beim zweiten Intervall halbiert sich der Rest und nicht erneut die gesamte Anfangsmenge als fester Abzug. Von der Hälfte bleibt eine weitere Hälfte, also ein Viertel. Der mathematische Erwartungswert nähert sich null an, erreicht sie aber in endlich vielen Halbierungen nicht.",
+        "criteria": [
+          "Restbezug erklärt",
+          "Viertel bestimmt",
+          "Keine lineare Abnahme angenommen"
+        ],
+        "hints": ["Restbezug erklärt", "Viertel bestimmt"]
+      }
+    },
+    "model": "decay",
+    "calculation": "halfLife"
+  },
+  {
+    "id": "ke-zerfallsgesetz",
+    "lb": 3,
+    "title": "Zerfallsgesetz und Aktivität",
+    "period": "Ph10 · Lernbereich 3 · Zweig I",
+    "intro": "Anzahl, Zeit und Zerfallsrate sind unterschiedliche Größen.",
+    "paragraphs": [
+      "Für ein einzelnes Radionuklid ohne Nachlieferung gilt N(t) = N₀ · (½)^(t/T½). Die Zerfallskonstante ist λ = ln(2) / T½. Die Aktivität ist A = λ · N und beschreibt die mittlere Zerfallszahl pro Zeit. Ein Becquerel bedeutet einen Zerfall pro Sekunde; die Zeiteinheit von λ muss dazu passen.",
+      "Im selben einfachen Modell sinkt auch die Aktivität nach jeder Halbwertszeit auf die Hälfte. Bei Gemischen, nachgebildeten Tochterkernen oder verändertem Material kann eine gemessene Gesamtaktivität komplizierter verlaufen. Eine Zählrate ist wegen der Nachweisgeometrie nicht automatisch die Aktivität. Zerfallsdiagramme werden stets mit Achsen, Einheiten und Modellbedingungen gelesen."
+    ],
+    "takeaway": "Aktivität ist die mittlere Anzahl von Kernzerfällen pro Zeit.",
+    "tracks": ["I"],
+    "sourceIds": ["lp-i", "nuclear", "decay"],
+    "quiz": {
+      "question": "Was bedeutet die Einheit Becquerel?",
+      "answer": "Ein Kernzerfall pro Sekunde.",
+      "wrong": [
+        "Ein Joule absorbierte Energie pro Kilogramm.",
+        "Eine biologische Dosis von einem Sievert."
+      ],
+      "explanation": "Aktivität beschreibt die Quelle, nicht unmittelbar die Wirkung im Körper."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Aussagen und Belege ordnen",
+      "instruction": "Ordne jede Aussage zu. Begründe danach, woran du sie erkennst.",
+      "categories": ["Kernanzahl", "Aktivität", "Halbwertszeit"],
+      "entries": [
+        {
+          "text": "N(t) als noch vorhandene Kernanzahl",
+          "target": 0,
+          "feedback": "Die Größe zählt noch nicht zerfallene Kerne."
+        },
+        {
+          "text": "A in Becquerel",
+          "target": 1,
+          "feedback": "Die Größe beschreibt die Zerfallsrate."
+        },
+        {
+          "text": "T½ als charakteristische Zeitspanne",
+          "target": 2,
+          "feedback": "Sie legt das exponentielle Abklingen fest."
+        }
+      ],
+      "conclusion": "Für Aktivität in Bq muss die Zeit in Sekunden eingesetzt werden."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Eine reine Quelle hat anfangs 800 Bq und 2 h Halbwertszeit. Bestimme die Aktivität nach 6 h.",
+        "model": "6 h entsprechen drei Halbwertszeiten. Die Aktivität ist 800 · (½)³ = 100 Bq. Die Annahme ist ein einzelnes Radionuklid ohne zusätzliche Aktivität relevanter Tochterkerne oder Nachlieferung.",
+        "criteria": [
+          "Drei Halbwertszeiten",
+          "100 Bq",
+          "Modellbedingungen genannt"
+        ],
+        "hints": ["Drei Halbwertszeiten", "100 Bq"]
+      },
+      "2": {
+        "prompt": "Warum kann eine andere Zählgeometrie eine scheinbar geänderte Halbwertszeit vortäuschen?",
+        "model": "Die gemessene Zählrate hängt auch davon ab, welcher Anteil der Strahlung den Detektor erreicht. Ändert sich dieser Anteil während der Messreihe, ist der Verlauf kein reines Abbild der Aktivität. Ich halte die Geometrie konstant, messe Untergrund und dokumentiere Veränderungen.",
+        "criteria": [
+          "Nachweisanteil berücksichtigt",
+          "Zählrate und Aktivität getrennt",
+          "Kontrolle der Messbedingungen"
+        ],
+        "hints": [
+          "Nachweisanteil berücksichtigt",
+          "Zählrate und Aktivität getrennt"
+        ]
+      }
+    },
+    "model": "decay",
+    "calculation": "decay"
+  },
+  {
+    "id": "ke-bindung",
+    "lb": 3,
+    "title": "Massendefekt und Bindungsenergie",
+    "period": "Ph10 · Lernbereich 3 · Zweig I",
+    "intro": "Die Masse des gebundenen Systems ist kleiner.",
+    "paragraphs": [
+      "Die Masse eines gebundenen Kerns ist kleiner als die Summe der Massen seiner freien Protonen und Neutronen. Die Differenz heißt Massendefekt. Die entsprechende Bindungsenergie ist E_B = Δm · c². Um den Kern vollständig in freie Nukleonen zu zerlegen, muss diese Energie zugeführt werden.",
+      "Bei einer Reaktion wird Energie frei, wenn die Gesamtmasse der Endprodukte kleiner als die Anfangsmasse ist. Eine höhere Bindungsenergie pro Nukleon bedeutet in diesem Vergleich ein stärker gebundenes System. Sowohl Spaltung schwerer als auch Fusion leichter Kerne können Energie freisetzen. Massen aus Tabellen müssen konsistent entweder Kernmassen oder korrekt bilanzierte Atommassen sein."
+    ],
+    "takeaway": "Ein Massendefekt entspricht der Bindungsenergie geteilt durch c².",
+    "tracks": ["I"],
+    "sourceIds": ["lp-i", "nuclear"],
+    "quiz": {
+      "question": "Wie vergleicht sich die Masse eines gebundenen Kerns mit der seiner freien Nukleonen?",
+      "answer": "Sie ist kleiner als deren Massensumme.",
+      "wrong": [
+        "Sie ist immer größer als deren Massensumme.",
+        "Sie ist unabhängig von der Bindung exakt gleich."
+      ],
+      "explanation": "Die kleinere Masse gehört zur niedrigeren Gesamtenergie des gebundenen Systems."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Aussagen und Belege ordnen",
+      "instruction": "Ordne jede Aussage zu. Begründe danach, woran du sie erkennst.",
+      "categories": ["Energie wird frei", "Energie muss zugeführt werden"],
+      "entries": [
+        {
+          "text": "Ein stärker gebundener Endzustand entsteht mit kleinerer Gesamtmasse.",
+          "target": 0,
+          "feedback": "Die Energiedifferenz kann abgegeben werden."
+        },
+        {
+          "text": "Ein Kern wird vollständig in freie Nukleonen zerlegt.",
+          "target": 1,
+          "feedback": "Die Bindungsenergie muss aufgebracht werden."
+        },
+        {
+          "text": "Freie passende Nukleonen bilden einen gebundenen Kern.",
+          "target": 0,
+          "feedback": "Die Bindungsenergie wird an die Umgebung abgegeben."
+        }
+      ],
+      "conclusion": "Masse und Energie werden in der vollständigen Bilanz gemeinsam erhalten."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Berechne die Energie zu einem Massendefekt von 1 · 10⁻²⁹ kg mit c ≈ 3 · 10⁸ m/s.",
+        "model": "c² ist 9 · 10¹⁶ m²/s². Die Energie beträgt 9 · 10⁻¹³ J. Das ist die Bindungsenergiedifferenz für den angegebenen Massendefekt, keine zusätzliche Energie aus dem Nichts.",
+        "criteria": [
+          "c quadriert",
+          "9 mal 10 hoch minus 13 J",
+          "Bilanz fachlich eingeordnet"
+        ],
+        "hints": ["c quadriert", "9 mal 10 hoch minus 13 J"]
+      },
+      "2": {
+        "prompt": "Warum ist „Masse geht bei der Spaltung einfach verloren“ unvollständig?",
+        "model": "Die Ruhemasse der Produkte ist kleiner, aber die Differenz erscheint als kinetische Energie und Strahlungsenergie. Für das abgeschlossene Gesamtsystem bleibt Energie erhalten. Man muss auch freie Neutronen und sämtliche Endprodukte in dieselbe Bilanz aufnehmen.",
+        "criteria": [
+          "Ruhemasse von Gesamtenergie unterschieden",
+          "Energieformen genannt",
+          "Vollständige Produktbilanz"
+        ],
+        "hints": [
+          "Ruhemasse von Gesamtenergie unterschieden",
+          "Energieformen genannt"
+        ]
+      }
+    },
+    "calculation": "binding"
+  },
+  {
+    "id": "ke-kettenreaktion",
+    "lb": 3,
+    "title": "Spaltung, Fusion und Kettenreaktion",
+    "period": "Ph10 · Lernbereich 3 · Zweig I",
+    "intro": "Neutronen verbinden einzelne Spaltereignisse.",
+    "paragraphs": [
+      "Ein geeigneter schwerer Kern kann nach Neutroneneinfang in leichtere Kerne zerfallen und weitere Neutronen freisetzen. Lösen genügend dieser Neutronen weitere Spaltungen aus, entsteht eine Kettenreaktion. Für einen stationären Ablauf löst im Mittel ein Spaltereignis wieder ein nachfolgendes aus.",
+      "In einem thermischen Reaktor bremst der Moderator schnelle Neutronen. Steuerstäbe absorbieren Neutronen und regulieren die Kettenreaktion. Sie erfüllen unterschiedliche Aufgaben. Auch nach dem Stoppen der Kettenreaktion entsteht Nachzerfallswärme aus radioaktiven Produkten. Fusion vereinigt leichte Kerne und benötigt andere Bedingungen; sie ist nicht einfach eine umgekehrt betriebene Spaltanlage."
+    ],
+    "takeaway": "Steuerstäbe absorbieren Neutronen; Moderatoren bremsen sie.",
+    "tracks": ["I"],
+    "sourceIds": ["lp-i", "nuclear"],
+    "quiz": {
+      "question": "Welche Aufgabe haben neutronenabsorbierende Steuerstäbe?",
+      "answer": "Sie regulieren oder stoppen die Kettenreaktion durch Neutroneneinfang.",
+      "wrong": [
+        "Sie erhöhen die Neutronengeschwindigkeit ohne Neutroneneinfang.",
+        "Sie wandeln den gesamten Reaktorkern unmittelbar in elektrische Energie um."
+      ],
+      "explanation": "Neutroneneinfang begrenzt die Anzahl weiterer Spaltungen."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Aussagen und Belege ordnen",
+      "instruction": "Ordne jede Aussage zu. Begründe danach, woran du sie erkennst.",
+      "categories": ["Moderator", "Steuerstäbe", "Kühlung"],
+      "entries": [
+        {
+          "text": "Schnelle Neutronen abbremsen.",
+          "target": 0,
+          "feedback": "Dies ist die Moderatorfunktion im thermischen Reaktor."
+        },
+        {
+          "text": "Neutronen absorbieren.",
+          "target": 1,
+          "feedback": "Damit wird die Kettenreaktion geregelt."
+        },
+        {
+          "text": "Wärme aus dem Reaktor abführen.",
+          "target": 2,
+          "feedback": "Das ist auch wegen der Nachzerfallswärme erforderlich."
+        }
+      ],
+      "conclusion": "Ein Stoff kann mehrere technische Rollen haben, die Funktionen bleiben begrifflich getrennt."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Warum bedeutet das Abschalten der Kettenreaktion nicht, dass ein Reaktor sofort keine Wärme mehr erzeugt?",
+        "model": "Die Spaltprodukte sind zum Teil radioaktiv und zerfallen weiter. Ihre Energieabgabe erzeugt Nachzerfallswärme. Die Steuerstäbe unterbinden weitere Spaltungen, beseitigen diese Produkte aber nicht; Wärme muss deshalb weiter abgeführt werden.",
+        "criteria": [
+          "Radioaktive Spaltprodukte genannt",
+          "Kettenreaktion und Zerfall getrennt",
+          "Weitere Wärmeabfuhr begründet"
+        ],
+        "hints": [
+          "Radioaktive Spaltprodukte genannt",
+          "Kettenreaktion und Zerfall getrennt"
+        ]
+      },
+      "2": {
+        "prompt": "Vergleiche die Energiequelle von Kernspaltung und Kernfusion auf der Ebene der Bindung.",
+        "model": "Beide können zu Endprodukten mit stärkerer Bindung pro Nukleon und kleinerer Gesamtmasse führen. Bei Spaltung werden schwere Kerne geteilt, bei Fusion leichte vereinigt. Technische Bedingungen, Reaktionspartner und Regelung unterscheiden sich trotz der gemeinsamen Energiebilanz.",
+        "criteria": [
+          "Spaltung und Fusion unterschieden",
+          "Bindungs- und Massenbilanz verbunden",
+          "Technische Übertragungsgrenze genannt"
+        ],
+        "hints": [
+          "Spaltung und Fusion unterschieden",
+          "Bindungs- und Massenbilanz verbunden"
+        ]
+      }
+    }
+  },
+  {
+    "id": "ke-dosis",
+    "lb": 3,
+    "title": "Aktivität, Energiedosis und Äquivalentdosis",
+    "period": "Ph10 · Lernbereich 3 · Zweig I",
+    "intro": "Die Einheit sagt, welche Größe gemeint ist.",
+    "paragraphs": [
+      "Die Aktivität in Becquerel zählt Zerfälle pro Sekunde. Die Energiedosis D ist absorbierte Strahlungsenergie pro Masse: D = E / m, gemessen in Gray mit 1 Gy = 1 J/kg. Dieselbe Aktivität kann je nach Strahlung, Abstand und Aufnahmeweg sehr unterschiedliche Dosen verursachen.",
+      "Für eine festgelegte Strahlungsart berücksichtigt die Äquivalentdosis einen Strahlungswichtungsfaktor: H = w_R · D. Ihre Einheit ist Sievert. Eine effektive Dosis verwendet zusätzlich Gewebewichtungen und ist eine andere Größe. Solche Schutzgrößen dienen der Bewertung; aus einer vereinfachten Unterrichtsrechnung folgt keine individuelle Diagnose oder exakt vorhergesagte Schädigung."
+    ],
+    "takeaway": "Gray bezeichnet absorbierte Energie pro Masse; Sievert eine gewichtete Dosis.",
+    "tracks": ["I"],
+    "sourceIds": ["lp-i", "nuclear", "bfs"],
+    "quiz": {
+      "question": "In welcher Einheit wird die Äquivalentdosis angegeben?",
+      "answer": "Sievert beziehungsweise Millisievert.",
+      "wrong": [
+        "Becquerel beziehungsweise Kilobecquerel.",
+        "Watt beziehungsweise Kilowatt."
+      ],
+      "explanation": "Die Gewichtung berücksichtigt die Strahlungsart."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Aussagen und Belege ordnen",
+      "instruction": "Ordne jede Aussage zu. Begründe danach, woran du sie erkennst.",
+      "categories": ["Becquerel", "Gray", "Sievert"],
+      "entries": [
+        {
+          "text": "Zerfälle pro Sekunde",
+          "target": 0,
+          "feedback": "Diese Einheit gehört zur Aktivität."
+        },
+        {
+          "text": "Absorbierte Energie pro Masse",
+          "target": 1,
+          "feedback": "Dies ist die Energiedosis."
+        },
+        {
+          "text": "Strahlungsgewichtete Dosis",
+          "target": 2,
+          "feedback": "Dies ist eine Dosisgröße mit Strahlungswichtungsfaktor."
+        }
+      ],
+      "conclusion": "Gleiche physikalische Dimension bedeutet nicht gleiche Bewertungsbedeutung."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "0,002 J werden in 2 kg Material absorbiert. Bestimme die Energiedosis.",
+        "model": "D = E / m = 0,002 / 2 = 0,001 Gy, also 1 mGy. Für eine Äquivalentdosis wäre zusätzlich eine passende Strahlungsgewichtung nötig. Die Aktivität der Quelle lässt sich daraus allein nicht bestimmen.",
+        "criteria": [
+          "Energie durch Masse gerechnet",
+          "0,001 Gy oder 1 mGy",
+          "Dosisgrößen und Aktivität getrennt"
+        ],
+        "hints": ["Energie durch Masse gerechnet", "0,001 Gy oder 1 mGy"]
+      },
+      "2": {
+        "prompt": "Warum darf aus einer hohen Aktivität allein kein individuelles Schadensmaß abgelesen werden?",
+        "model": "Aktivität beschreibt Zerfälle der Quelle. Für die Dosis sind Art und Energie der Strahlung, Geometrie, Dauer und Aufnahme in den Körper relevant. Für eine gesundheitliche Bewertung kommen weitere fachliche Größen hinzu; eine Aktivitätszahl ist dafür keine vollständige Expositionsbeschreibung.",
+        "criteria": [
+          "Quelleneigenschaft erläutert",
+          "Expositionsbedingungen genannt",
+          "Grenze der Schlussfolgerung"
+        ],
+        "hints": [
+          "Quelleneigenschaft erläutert",
+          "Expositionsbedingungen genannt"
+        ]
+      }
+    },
+    "calculation": "dose"
+  },
+  {
+    "id": "ke-schutz-nutzen",
+    "lb": 3,
+    "title": "Nutzen und Gefahren begründet abwägen",
+    "period": "Ph10 · Lernbereich 3 · beide Zweige",
+    "intro": "Eine Bewertung braucht eine konkrete Anwendung und ihre Grenzen.",
+    "paragraphs": [
+      "Ionisierende Strahlung kann Materie verändern und biologisches Gewebe schädigen. Dieselbe Wechselwirkung ermöglicht unter anderem gezielte Therapie, Diagnostik mit radioaktiven Markern, Materialprüfung und Sterilisation. Röntgenstrahlung ist ebenfalls ionisierend, wird aber typischerweise technisch erzeugt und ist keine Gammaemission eines Atomkerns.",
+      "Bei einer begründeten Bewertung vergleichst du Nutzen, Strahlenexposition, Alternativen und Unsicherheiten anhand geeigneter Quellen. Abstand, kurze Aufenthaltszeit, passende Abschirmung und Vermeidung der Aufnahme reduzieren Exposition je nach Situation. Das einfache Abstandsgesetz gilt nur näherungsweise für eine kleine Quelle ohne zusätzliche Absorption oder Streuung. Eine medizinische Anwendung wird fachlich gerechtfertigt und optimiert; allgemeine Unterrichtsbeispiele ersetzen keine persönliche Entscheidung mit Fachleuten."
+    ],
+    "takeaway": "Nutzen, Exposition und Alternativen gehören in dieselbe begründete Bewertung.",
+    "tracks": ["I", "II_III"],
+    "sourceIds": ["lp-i", "lp-ii", "nuclear", "bfs"],
+    "quiz": {
+      "question": "Warum kann aufgenommene Alphastrahlung trotz geringer äußerer Reichweite gefährlich sein?",
+      "answer": "Sie kann ihre Energie auf kurzer Strecke direkt im Gewebe abgeben.",
+      "wrong": [
+        "Sie hat nach der Aufnahme grundsätzlich keine Wechselwirkung mehr.",
+        "Papier außerhalb des Körpers verhindert jede innere Energieabgabe."
+      ],
+      "explanation": "Äußere Abschirmung und innere Exposition sind verschiedene Situationen."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Aussagen und Belege ordnen",
+      "instruction": "Ordne jede Aussage zu. Begründe danach, woran du sie erkennst.",
+      "categories": [
+        "Nutzenbeleg",
+        "Schutzmaßnahme",
+        "Unzulässige Verallgemeinerung"
+      ],
+      "entries": [
+        {
+          "text": "Gezielte Bestrahlung kann bestimmte Zellen behandeln.",
+          "target": 0,
+          "feedback": "Das nennt eine konkrete Anwendung, die fachlich bewertet werden muss."
+        },
+        {
+          "text": "Aufnahme radioaktiver Stoffe vermeiden.",
+          "target": 1,
+          "feedback": "Damit wird innere Exposition begrenzt."
+        },
+        {
+          "text": "Eine Strahlungsart ist in jeder Dosis und Situation harmlos.",
+          "target": 2,
+          "feedback": "Eine pauschale Aussage lässt Exposition und Wirkung aus."
+        }
+      ],
+      "conclusion": "Ein Urteil benennt Maßstab, Quelle und offene Fragen."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erstelle eine kurze Gegenüberstellung für eine Strahlungsanwendung, ohne persönliche Gesundheitsdaten zu verwenden.",
+        "model": "Ich wähle Materialprüfung als Beispiel, nenne den Nutzen zerstörungsfreier Prüfung und mögliche Exposition. Ich vergleiche eine passende Alternative und beschreibe Abschirmung, Abstand und organisatorische Begrenzung. Meine Quellen und offenen Daten kennzeichne ich.",
+        "criteria": [
+          "Konkrete Anwendung und Nutzen",
+          "Exposition und Alternative",
+          "Beleg mit Grenzen genannt"
+        ],
+        "hints": ["Konkrete Anwendung und Nutzen", "Exposition und Alternative"]
+      },
+      "2": {
+        "prompt": "Eine Broschüre behauptet, dickes Blei entferne Gammastrahlung vollständig. Wie formulierst du die Aussage präziser?",
+        "model": "Geeignete dicke Schichten können Gammaintensität stark abschwächen. Der verbleibende Anteil hängt von Energie, Material und Dicke sowie Streuung ab. Eine endliche Schicht garantiert keine vollständige Entfernung; die konkrete Schutzwirkung muss fachlich bestimmt werden.",
+        "criteria": [
+          "Abschwächung statt vollständiger Entfernung",
+          "Energie und Material berücksichtigt",
+          "Konkrete Belegprüfung verlangt"
+        ],
+        "hints": [
+          "Abschwächung statt vollständiger Entfernung",
+          "Energie und Material berücksichtigt"
+        ]
+      }
+    }
+  },
+  {
+    "id": "en-kraftwerke",
+    "lb": 4,
+    "title": "Kraftwerke als Energieumwandler",
+    "period": "Ph10 · Lernbereich 4 · beide Zweige",
+    "intro": "Vergleiche vollständige Umwandlungsketten.",
+    "paragraphs": [
+      "Ein Wärmekraftwerk wandelt thermische Energie über eine Turbine oder Maschine in mechanische und dann im Generator in elektrische Energie um. Die Wärmequelle kann fossiler Brennstoff, Biomasse, Kernspaltung, Geothermie oder konzentrierte Solarstrahlung sein. Bei Wind- und Wasserkraft treibt Bewegungsenergie den Generator; Photovoltaik wandelt Strahlungsenergie direkt elektrisch um.",
+      "Der elektrische Wirkungsgrad ist E_el / E_zu beziehungsweise P_el / P_zu. Nicht als Strom abgegebene Energie wird nicht vernichtet, sondern beispielsweise als Wärme an die Umgebung abgegeben. Ein Vergleich braucht gleiche Bilanzgrenzen: Brennstoffbedarf, Bau, Betrieb, Emissionen und Entsorgung. Wetterabhängigkeit, Regelbarkeit und Standortbedingungen beeinflussen das Gesamtsystem. Aktuelle Zahlen brauchen Datum und Quelle; die App verwendet ausdrücklich erfundene Bilanzwerte."
+    ],
+    "takeaway": "Eine Umwandlungskette zeigt Herkunft, Nutzenergie und nicht genutzte Abgabe.",
+    "tracks": ["I", "II_III"],
+    "sourceIds": ["lp-i", "lp-ii", "plants"],
+    "quiz": {
+      "question": "Welche Technik wandelt Sonnenstrahlung ohne Turbine direkt in elektrische Energie um?",
+      "answer": "Photovoltaik.",
+      "wrong": [
+        "Ein konventionelles Dampfkraftwerk.",
+        "Ein gasbefeuerter Turbinengenerator."
+      ],
+      "explanation": "Solarthermie und Photovoltaik nutzen unterschiedliche Umwandlungsketten."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Aussagen und Belege ordnen",
+      "instruction": "Ordne jede Aussage zu. Begründe danach, woran du sie erkennst.",
+      "categories": [
+        "Wärme als Zwischenstufe",
+        "Mechanischer Antrieb ohne thermische Zwischenstufe",
+        "Direkte elektrische Umwandlung"
+      ],
+      "entries": [
+        {
+          "text": "Dampfkraftwerk mit Generator",
+          "target": 0,
+          "feedback": "Wärme treibt zunächst einen mechanischen Prozess."
+        },
+        {
+          "text": "Windrotor mit Generator",
+          "target": 1,
+          "feedback": "Die Bewegung des Winds treibt den Rotor."
+        },
+        {
+          "text": "Photovoltaikmodul",
+          "target": 2,
+          "feedback": "Die Strahlung wird ohne Turbine elektrisch genutzt."
+        }
+      ],
+      "conclusion": "Gleiche Nutzgröße und Bilanzgrenze ermöglichen einen fairen Vergleich."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Ein Modellkraftwerk erhält 100 Energieeinheiten und gibt 40 elektrisch ab. Erläutere Wirkungsgrad und Restbilanz.",
+        "model": "Der elektrische Wirkungsgrad beträgt 40 %. Die übrigen 60 Einheiten gehen beispielsweise als nicht genutzte Wärme an die Umgebung; Energie verschwindet nicht. Ob ein Anteil als Nutzwärme verwendbar ist, hängt vom System und Bedarf ab.",
+        "criteria": [
+          "40 % bestimmt",
+          "Restenergie bilanziert",
+          "Nutzung von Bedarf und System abhängig"
+        ],
+        "hints": ["40 % bestimmt", "Restenergie bilanziert"]
+      },
+      "2": {
+        "prompt": "Warum ist „erneuerbar bedeutet ohne jede Umweltwirkung“ kein belastbarer Vergleich?",
+        "model": "Auch erneuerbare Anlagen brauchen Materialien, Flächen und Infrastruktur. Betriebsbedingte Emissionen, Lebenszyklus, Regelbarkeit und lokale Eingriffe sind verschiedene Kriterien. Ich wähle gleiche Systemgrenzen und datierte Quellen, bevor ich ein Urteil bilde.",
+        "criteria": [
+          "Mehrere Umweltkriterien",
+          "Gleiche Bilanzgrenze",
+          "Datierte Belege für das Urteil"
+        ],
+        "hints": ["Mehrere Umweltkriterien", "Gleiche Bilanzgrenze"]
+      }
+    },
+    "model": "plant",
+    "calculation": "efficiency"
+  },
+  {
+    "id": "en-waermekraftmaschine",
+    "lb": 4,
+    "title": "Wärmekraftmaschinen im Alltag",
+    "period": "Ph10 · Lernbereich 4 · Zweig II/III",
+    "intro": "Wärmequelle, Arbeitsprozess und Abgabe gehören zusammen.",
+    "paragraphs": [
+      "Eine Wärmekraftmaschine nutzt eine Temperaturdifferenz, um einen Teil thermisch zugeführter Energie als mechanische Arbeit abzugeben. Ein zyklischer Prozess benötigt neben der heißen Quelle auch eine Abgabe an eine kältere Umgebung. Nicht die gesamte Wärme kann in einem Kreisprozess allein in Arbeit übergehen.",
+      "Beim Ottomotor wird ein vorbereitetes Kraftstoff-Luft-Gemisch fremdgezündet, beim Dieselmotor entzündet sich eingespritzter Kraftstoff an stark verdichteter heißer Luft. Eine Dampfturbine nutzt strömenden Dampf, eine Gasturbine heißes Gas. Bauart, Abgaswirkung, Nutzungsprofil und Wirkungsgrad unterscheiden sich; eine Bewertung im Verkehr betrachtet zusätzlich Verbrauch, lokale Emissionen und Alternativen."
+    ],
+    "takeaway": "Wärmekraftmaschinen liefern mechanische Arbeit und geben zugleich Energie an die Umgebung ab.",
+    "tracks": ["II_III"],
+    "sourceIds": ["lp-ii", "plants"],
+    "quiz": {
+      "question": "Wodurch unterscheidet sich die Zündung im Dieselmodell von der im Ottomodell?",
+      "answer": "Der Dieselkraftstoff entzündet sich an heißer, stark verdichteter Luft.",
+      "wrong": [
+        "Im Dieselmotor muss immer eine Zündkerze das fertige Gemisch zünden.",
+        "Im Dieselmotor wird Wärme ohne Temperaturunterschied vollständig in Arbeit umgewandelt."
+      ],
+      "explanation": "Beim Ottoverfahren wird das vorbereitete Gemisch typischerweise fremdgezündet."
+    },
+    "workshop": {
+      "kind": "timeline",
+      "title": "Zusammenhänge in Reihenfolge bringen",
+      "instruction": "Verschiebe die Schritte mit den Pfeilen in eine fachlich passende Reihenfolge.",
+      "categories": [],
+      "entries": [
+        {
+          "text": "Thermische Energie bei hoher Temperatur zuführen.",
+          "target": 0,
+          "feedback": "Eine heiße Quelle versorgt den Prozess."
+        },
+        {
+          "text": "Einen Teil als mechanische Arbeit abgeben.",
+          "target": 1,
+          "feedback": "Der Arbeitsprozess treibt beispielsweise eine Welle."
+        },
+        {
+          "text": "Einen weiteren Anteil an die kältere Umgebung abgeben.",
+          "target": 2,
+          "feedback": "Die Abgabe gehört zur vollständigen Bilanz."
+        },
+        {
+          "text": "Den Arbeitszustand für den nächsten Zyklus wiederherstellen.",
+          "target": 3,
+          "feedback": "Ein Kreisprozess kehrt zum Ausgangszustand zurück."
+        }
+      ],
+      "conclusion": "Die Reihenfolge ist ein vereinfachtes Bilanzschema und keine Ventilsteuerung eines bestimmten Motors."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Warum reicht bei einer Wärmekraftmaschine die Nennung „Wärme wird Arbeit“ nicht aus?",
+        "model": "Die Maschine braucht eine heiße Quelle und eine kältere Abgabeseite. Nur ein Teil der Energie wird zu mechanischer Nutzarbeit; der Rest wird abgegeben. Ein vollständiger Kreisprozess muss den Arbeitszustand wiederherstellen.",
+        "criteria": [
+          "Quelle und Senke genannt",
+          "Nutzarbeit und Abgabe bilanziert",
+          "Kreisprozess erklärt"
+        ],
+        "hints": [
+          "Quelle und Senke genannt",
+          "Nutzarbeit und Abgabe bilanziert"
+        ]
+      },
+      "2": {
+        "prompt": "Vergleiche eine Gasturbine und einen Kolbenmotor anhand von Aufbau und geeigneter Verwendung.",
+        "model": "Die Gasturbine nutzt einen kontinuierlichen Gasstrom zur Rotation, der Kolbenmotor Druckänderungen in Arbeitsräumen. Beide benötigen Energiezufuhr und geben Wärme sowie je nach Brennstoff Abgase ab. Ein Urteil hängt von Leistungsbereich, Lastprofil, Wirkungsgrad und Emissionen ab.",
+        "criteria": [
+          "Aufbauunterschied",
+          "Gemeinsame Energie- und Abgasbilanz",
+          "Anwendungsabhängiges Urteil"
+        ],
+        "hints": ["Aufbauunterschied", "Gemeinsame Energie- und Abgasbilanz"]
+      }
+    }
+  },
+  {
+    "id": "en-kwk",
+    "lb": 4,
+    "title": "KWK und Gas-und-Dampf-System",
+    "period": "Ph10 · Lernbereich 4 · beide Zweige",
+    "intro": "Mehr genutzte Energie braucht einen passenden Bedarf.",
+    "paragraphs": [
+      "Kraft-Wärme-Kopplung stellt neben elektrischer Energie nutzbare Wärme bereit. Ein Blockheizkraftwerk kann beispielsweise einen Motor mit Generator und Wärmeauskopplung kombinieren. Der gesamte Nutzungsgrad ist (E_el + E_Wärme,nutz) / E_zu; er ist nicht mit dem elektrischen Wirkungsgrad gleichzusetzen.",
+      "Ein Gas-und-Dampf-Kraftwerk nutzt die heißen Abgase einer Gasturbine für einen zusätzlichen Dampfprozess. Die Kombination erhöht die elektrische Ausnutzung; sie ist nicht automatisch eine Wärmeversorgung externer Nutzer. KWK bringt ihren Vorteil nur, wenn die Wärme tatsächlich zur passenden Zeit und Temperatur gebraucht wird. Ein hoher Nutzungsgrad macht einen fossilen Brennstoff nicht treibhausgasneutral."
+    ],
+    "takeaway": "Nutzwärme zählt nur dann als Nutzen, wenn sie tatsächlich verwendet werden kann.",
+    "tracks": ["I", "II_III"],
+    "sourceIds": ["lp-i", "lp-ii", "plants", "kwk"],
+    "quiz": {
+      "question": "Wann verbessert Wärmeauskopplung die genutzte Gesamtenergie einer KWK-Anlage?",
+      "answer": "Wenn die ausgekoppelte Wärme einen tatsächlichen passenden Wärmebedarf deckt.",
+      "wrong": [
+        "Immer vollständig, auch wenn die gesamte Wärme ungenutzt abgeführt wird.",
+        "Nur wenn der elektrische Wirkungsgrad dadurch exakt 100 % erreicht."
+      ],
+      "explanation": "Der Bedarf und die erforderliche Temperatur gehören zur Bilanz."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Aussagen und Belege ordnen",
+      "instruction": "Ordne jede Aussage zu. Begründe danach, woran du sie erkennst.",
+      "categories": [
+        "Elektrische Nutzenergie",
+        "Genutzte Wärme",
+        "Ungenutzte Abgabe"
+      ],
+      "entries": [
+        {
+          "text": "Strom, der aus dem Generator geliefert wird.",
+          "target": 0,
+          "feedback": "Dies ist der elektrische Anteil der Bilanz."
+        },
+        {
+          "text": "Wärme, die ein angeschlossenes Gebäude tatsächlich nutzt.",
+          "target": 1,
+          "feedback": "Nur der tatsächlich verwendbare Anteil ist Nutzwärme."
+        },
+        {
+          "text": "Wärme, die ohne Bedarf an die Umgebung abgegeben wird.",
+          "target": 2,
+          "feedback": "Sie bleibt Energie, zählt aber nicht als genutzte Abgabe."
+        }
+      ],
+      "conclusion": "GuD und KWK benennen unterschiedliche Kopplungen."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Eine Anlage erhält 100 kWh und liefert 35 kWh Strom sowie 45 kWh genutzte Wärme. Bestimme beide Kennzahlen.",
+        "model": "Der elektrische Wirkungsgrad beträgt 35 %. Der Gesamtnutzungsgrad ist (35 + 45) / 100 = 80 %. Die übrigen 20 kWh sind nicht genutzt; bei fehlendem Wärmebedarf dürfte die Wärme nicht vollständig als Nutzen gezählt werden.",
+        "criteria": [
+          "35 % elektrisch",
+          "80 % Gesamtnutzung",
+          "Wärmebedarf als Bedingung"
+        ],
+        "hints": ["35 % elektrisch", "80 % Gesamtnutzung"]
+      },
+      "2": {
+        "prompt": "Warum beweist der Satz „GuD hat zwei Turbinen“ noch keine Kraft-Wärme-Kopplung für ein Wohngebiet?",
+        "model": "Der Dampfprozess kann allein zusätzliche elektrische Leistung liefern. Für KWK muss darüber hinaus Wärme nutzbar an einen Bedarf abgegeben werden. Ich prüfe Wärmeauskopplung, Netz, Temperaturniveau und tatsächliches Lastprofil des Wohngebiets.",
+        "criteria": [
+          "Elektrische Prozesskopplung erkannt",
+          "Nutzwärme als weiteres Merkmal",
+          "Technische Bedingungen benannt"
+        ],
+        "hints": [
+          "Elektrische Prozesskopplung erkannt",
+          "Nutzwärme als weiteres Merkmal"
+        ]
+      }
+    },
+    "model": "plant",
+    "calculation": "kwk"
+  },
+  {
+    "id": "en-speicher",
+    "lb": 4,
+    "title": "Speicher und Transport bewerten",
+    "period": "Ph10 · Lernbereich 4 · beide Zweige",
+    "intro": "Kapazität ist nicht dasselbe wie Leistung.",
+    "paragraphs": [
+      "Ein Speicher nimmt Energie auf und gibt später einen Teil wieder ab. Batterien speichern elektrochemisch, Pumpspeicher als Lageenergie, Wasserstoffketten als chemische Energie nach Elektrolyse. Ein Wärmespeicher liefert zunächst Wärme; für späteren Strom ist eine weitere Umwandlung nötig. Jeder Weg hat Verluste und technische Grenzen.",
+      "Die Kapazität in kWh beschreibt eine Energiemenge, die Leistung in kW die mögliche Abgaberate. Eine ideale 10-kWh-Kapazität könnte 2 kW fünf Stunden liefern, wenn keine weiteren Grenzen wirken. Für einen realen Vergleich prüfst du nutzbare Kapazität, Lade- und Entladeleistung, Gesamteffizienz, Dauer, Material, Standort und Transport. Beispielwerte der App sind frei gewählte Lernwerte und keine Produktdaten."
+    ],
+    "takeaway": "Kapazität beschreibt Energie; Leistung beschreibt Energie pro Zeit.",
+    "tracks": ["I", "II_III"],
+    "sourceIds": ["lp-i", "lp-ii", "plants"],
+    "quiz": {
+      "question": "Welche Einheit beschreibt die Energiespeicherkapazität?",
+      "answer": "Kilowattstunden.",
+      "wrong": ["Kilowatt unabhängig von der Zeit.", "Kilometer pro Stunde."],
+      "explanation": "Eine kWh ist eine Energiemenge, ein kW eine Leistung."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Aussagen und Belege ordnen",
+      "instruction": "Ordne jede Aussage zu. Begründe danach, woran du sie erkennst.",
+      "categories": ["Kapazität", "Leistung", "Wirkungsgrad"],
+      "entries": [
+        {
+          "text": "Wie viel nutzbare Energie der Speicher hält.",
+          "target": 0,
+          "feedback": "Die Angabe steht beispielsweise in kWh."
+        },
+        {
+          "text": "Wie schnell Energie abgegeben werden kann.",
+          "target": 1,
+          "feedback": "Die Angabe steht beispielsweise in kW."
+        },
+        {
+          "text": "Anteil der zurückgewonnenen Energie an der eingesetzten.",
+          "target": 2,
+          "feedback": "Diese Kennzahl gehört zur gesamten betrachteten Kette."
+        }
+      ],
+      "conclusion": "Gleiche Kapazität garantiert weder gleiche Leistung noch gleiche Umweltauswirkung."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Ein Lernmodell lädt 20 kWh und hat 80 % Gesamtwirkungsgrad. Welche Energie kann es zurückgeben?",
+        "model": "Es gibt 16 kWh zurück. 4 kWh werden in der betrachteten Kette nicht als gewünschte Nutzenergie wiedergewonnen. Über maximale Leistung und Laufzeit weiß ich erst mehr, wenn eine Leistungsgrenze und ein Lastprofil angegeben sind.",
+        "criteria": [
+          "16 kWh bestimmt",
+          "Rest bilanziert",
+          "Kapazität und Leistung getrennt"
+        ],
+        "hints": ["16 kWh bestimmt", "Rest bilanziert"]
+      },
+      "2": {
+        "prompt": "Vergleiche einen Batteriespeicher und einen Pumpspeicher für einen frei gewählten Bedarf.",
+        "model": "Ich lege zuerst Leistungsbedarf, Energiemenge und Speicherdauer fest. Danach vergleiche ich verfügbare Kapazität, Effizienz, Standort und Material. Pumpspeicher benötigen geeignete Höhen- und Wasserverhältnisse; Batterien andere Rohstoffe und technische Grenzen. Aktuelle Kosten und Produktwerte müsste ich datiert nachschlagen.",
+        "criteria": [
+          "Bedarf vor Auswahl",
+          "Mehrere technische Kriterien",
+          "Quellenbedarf bei aktuellen Werten"
+        ],
+        "hints": ["Bedarf vor Auswahl", "Mehrere technische Kriterien"]
+      }
+    },
+    "model": "storage",
+    "calculation": "storage"
+  },
+  {
+    "id": "en-urteil",
+    "lb": 4,
+    "title": "Eine Energieentscheidung begründen",
+    "period": "Ph10 · Lernbereich 4 · beide Zweige",
+    "intro": "Daten, Maßstab und Handlung werden nachvollziehbar.",
+    "paragraphs": [
+      "Eine gute Energieentscheidung trennt Daten, Annahmen und Wertmaßstäbe. Ein frei erfundenes Schulmodell: Variante A erhält 100 Einheiten Brennstoffenergie und liefert 35 Strom sowie 45 genutzte Wärme. Variante B erhält 100 Einheiten und liefert 50 Strom ohne nutzbare Wärme. A nutzt insgesamt mehr, B liefert mehr Strom; ohne Bedarf und Bilanzgrenze gibt es keinen eindeutigen Sieger.",
+      "Für ein eigenes Urteil wählst du eine aktuelle oder geplante Technik aus einer datierten amtlichen oder fachlichen Quelle und prüfst sie mit einer zweiten geeigneten Quelle. Nenne Erzeugung, Speicher, Transport, Umweltauswirkungen und offene Fragen. Unterscheide Modellzahlen und reale Messwerte. Eigene Handlungen wie geringerer Energiebedarf sind Teil der Optionen; die App bestätigt keine vollständige Quellenprüfung oder Präsentationsleistung."
+    ],
+    "takeaway": "Ein begründetes Urteil verbindet Beleg, Maßstab und abgewogene Schlussfolgerung.",
+    "tracks": ["I", "II_III"],
+    "sourceIds": ["lp-i", "lp-ii", "plants"],
+    "quiz": {
+      "question": "Was fehlt für ein belastbares Urteil aus zwei Wirkungsgradzahlen allein?",
+      "answer": "Bedarf, Bilanzgrenzen und weitere Entscheidungskriterien.",
+      "wrong": [
+        "Nur eine möglichst auffällige Farbe der höheren Zahl.",
+        "Die Annahme, dass jede höhere Zahl immer alle Umweltprobleme löst."
+      ],
+      "explanation": "Verschiedene Nutzenergiearten sind nicht ohne Weiteres austauschbar."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Aussagen und Belege ordnen",
+      "instruction": "Ordne jede Aussage zu. Begründe danach, woran du sie erkennst.",
+      "categories": ["Datenangabe", "Wertmaßstab", "Begründetes Urteil"],
+      "entries": [
+        {
+          "text": "Im Schulmodell liefert A 35 Einheiten Strom.",
+          "target": 0,
+          "feedback": "Das ist eine Angabe des ausdrücklich erfundenen Modells."
+        },
+        {
+          "text": "Eine geringe Klimawirkung wird besonders stark gewichtet.",
+          "target": 1,
+          "feedback": "Dies legt ein Entscheidungskriterium fest."
+        },
+        {
+          "text": "Bei passendem Wärmebedarf ist A unter diesem Kriterium günstiger; weitere Daten bleiben nötig.",
+          "target": 2,
+          "feedback": "Daten werden unter benannten Bedingungen bewertet."
+        }
+      ],
+      "conclusion": "Eine abweichende Gewichtung kann ein anderes begründetes Urteil ergeben."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Beurteile A und B aus dem Schulmodell für einen Ort ohne nutzbaren Wärmebedarf.",
+        "model": "A liefert dann 35 nutzbare Stromeinheiten, B 50. Die 45 Wärmeeinheiten von A dürfen ohne Bedarf nicht als Nutzen gezählt werden. Für eine reale Auswahl brauche ich trotzdem Angaben etwa zu Brennstoff, Emissionen, Kosten und zeitlicher Verfügbarkeit.",
+        "criteria": [
+          "Bedarf konsequent verwendet",
+          "35 und 50 Stromeinheiten verglichen",
+          "Weitere Kriterien und Quellen genannt"
+        ],
+        "hints": [
+          "Bedarf konsequent verwendet",
+          "35 und 50 Stromeinheiten verglichen"
+        ]
+      },
+      "2": {
+        "prompt": "Erarbeite eine kurze datierte Quellenpräsentation zu einer realen Speicher- oder Übertragungstechnik.",
+        "model": "Ich nenne Technik, Datum und zwei prüfbare Quellen. Ich dokumentiere Kapazität, Leistung, Systemgrenze, Verluste und Umweltkriterien. Daraus entwickle ich ein bedingtes Urteil für einen klaren Bedarf und kennzeichne fehlende Daten sowie eine mögliche eigene Handlung.",
+        "criteria": [
+          "Zwei datierte Quellen und Herkunft",
+          "Technische Systembilanz",
+          "Bedingtes Urteil mit Unsicherheit"
+        ],
+        "hints": [
+          "Zwei datierte Quellen und Herkunft",
+          "Technische Systembilanz"
+        ]
+      }
+    }
+  },
+  {
+    "id": "ex-effektivwert",
+    "lb": 2,
+    "title": "Zusatz: Effektivwert einer Sinusspannung",
+    "period": "Ph10 · Lernbereich 2 · beide Zweige",
+    "intro": "Diese Vertiefung gehört nicht zum ausgewiesenen Kernumfang.",
+    "paragraphs": [
+      "Der Effektivwert einer Wechselspannung ist die Gleichspannung, die an demselben ohmschen Widerstand dieselbe mittlere thermische Leistung erzeugt. Er ist kein einfacher vorzeichenbehafteter Mittelwert der Spannung. Für eine reine Sinusspannung gilt U_eff = U₀ / √2.",
+      "Für den rechnerischen Beispielwert 230 V effektiv ergibt sich ein Scheitelwert von ungefähr 325 V. Die √2-Beziehung gilt nicht für jede beliebige Wellenform. Diese Lektion ist eine optionale Vertiefung zur Einordnung alter Karten; alle Darstellungen sind Modelle, keine Anleitung für Versuche am Stromnetz."
+    ],
+    "takeaway": "Nur bei reiner Sinusform ist der Scheitelwert √2 mal so groß wie der Effektivwert.",
+    "tracks": ["I", "II_III"],
+    "sourceIds": ["lp-i", "lp-ii", "induction"],
+    "quiz": {
+      "question": "Welche Gleichspannung beschreibt den Effektivwert einer Wechselspannung am selben ohmschen Widerstand?",
+      "answer": "Die Gleichspannung mit derselben mittleren thermischen Leistung.",
+      "wrong": [
+        "Die Gleichspannung mit demselben vorzeichenbehafteten Spannungsmittelwert.",
+        "Die Gleichspannung mit zwingend derselben Spitzenspannung."
+      ],
+      "explanation": "Die Leistung hängt quadratisch von der Spannung ab."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Aussagen und Belege ordnen",
+      "instruction": "Ordne jede Aussage zu. Begründe danach, woran du sie erkennst.",
+      "categories": [
+        "Gilt für reine Sinusform",
+        "Gilt als allgemeine Effektivwertdefinition"
+      ],
+      "entries": [
+        {
+          "text": "U₀ = √2 · U_eff",
+          "target": 0,
+          "feedback": "Der Formfaktor hängt von der Wellenform ab."
+        },
+        {
+          "text": "Gleiche mittlere thermische Leistung am selben ohmschen Widerstand.",
+          "target": 1,
+          "feedback": "Dies ist die physikalische Vergleichsdefinition."
+        },
+        {
+          "text": "Sinusspannung mit 230 V effektiv hat etwa 325 V Scheitelwert.",
+          "target": 0,
+          "feedback": "Das Zahlenbeispiel verwendet den Sinusfaktor."
+        }
+      ],
+      "conclusion": "Diese Zusatzlektion wird getrennt vom Kernfortschritt gezählt."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Bestimme den Scheitelwert zu 230 V Effektivwert bei Sinusform.",
+        "model": "U₀ = 230 · √2 ≈ 325,3 V. Die Angabe setzt eine reine Sinusform voraus. Der Effektivwert entspricht der gleichen mittleren Heizleistung einer Gleichspannung am selben ohmschen Widerstand.",
+        "criteria": [
+          "√2 multipliziert",
+          "Etwa 325 V",
+          "Sinusform als Voraussetzung"
+        ],
+        "hints": ["√2 multipliziert", "Etwa 325 V"]
+      },
+      "2": {
+        "prompt": "Darf man eine beliebige gepulste Spannung aus ihrem Effektivwert mit √2 auf den Spitzenwert umrechnen?",
+        "model": "Nein. Der Zusammenhang hängt von der Wellenform ab. Die √2-Beziehung ist die Sinusbeziehung; für andere Verläufe ist die zeitliche Quadratsmittelbildung oder eine passende spezifische Beziehung erforderlich.",
+        "criteria": [
+          "Wellenformabhängigkeit",
+          "Sinus als Sonderfall",
+          "Passenden Auswertungsweg genannt"
+        ],
+        "hints": ["Wellenformabhängigkeit", "Sinus als Sonderfall"]
+      }
+    },
+    "model": "generator",
+    "calculation": "effective",
+    "optional": true
+  }
+]

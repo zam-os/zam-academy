@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
+    <script>
+      try {
+        const theme = localStorage.getItem("physik_rs10_theme");
+        if (theme === "light" || theme === "dark") document.documentElement.dataset.theme = theme;
+      } catch {}
+    </script>
+    <title>Physik 10 Realschule · ZAM Academy</title>
+    <meta name="description" content="Physik 10 Realschule Bayern: Beide Zweige mit Mechanik, Elektrizität, Kernphysik und Energieversorgung. Veränderbare Modelle, Rechenaufgaben und begründete Urteile." />
+    <link rel="stylesheet" href="/src/styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="header">
+        <a href="#view=path" id="home" class="brand"><span class="brand-mark" aria-hidden="true">Ph10</span><span>Physik <small>ZAM Academy · Realschule Bayern</small></span></a>
+        <nav aria-label="Hauptnavigation"><button type="button" data-view="path">Lernpfad</button><button type="button" data-view="lesson">Lektion</button><button type="button" data-view="experiments">Versuche</button><button type="button" data-view="reference">Nachschlagen</button></nav>
+        <div class="header-actions"><button type="button" id="zam" class="button accent">In ZAM festigen</button><button type="button" id="theme" class="icon-button" aria-label="Farbschema umschalten">◐</button></div>
+      </header>
+      <div class="progress-strip"><span id="progress-label"></span><progress id="progress" max="100" value="0" aria-label="Fortschritt der Kernlektionen"></progress></div>
+      <main id="main" tabindex="-1"></main>
+      <footer><span>Nach <a href="https://www.lehrplanplus.bayern.de/fachlehrplan/realschule/10/physik/wpfg1" target="_blank" rel="noopener">LehrplanPLUS Bayern</a> · mit Auswahl für Zweig I und II/III</span><span>Keine Konten und kein Tracking. Fortschritt und eigene Texte bleiben in diesem Browser. <a href="https://github.com/zam-os/zam-academy" target="_blank" rel="noopener">Quelltext</a></span><span id="storage-note" role="status"></span></footer>
+    </div>
+    <div id="toast-stack" aria-live="polite"></div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
