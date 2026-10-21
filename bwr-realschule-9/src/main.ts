@@ -1,11 +1,18 @@
 import "./styles.css";
-import { CORE_LESSONS, EDITORIAL_DATE, findLesson, LESSONS, SOURCES, STAGES } from "./curriculum";
 import {
+  CORE_LESSONS,
+  EDITORIAL_DATE,
+  findLesson,
+  LESSONS,
+  SOURCES,
+  STAGES,
+} from "./curriculum";
+import {
+  type Attempt,
   createAttempt,
   revealAttempt,
   skipAttempt,
   submitAttempt,
-  type Attempt,
 } from "./exercises/attempt";
 import { ACCOUNTS } from "./finance";
 import { bindLab, labHtml } from "./labs";
@@ -117,7 +124,12 @@ function updateEvidence() {
     ["Schnellcheck", p.quiz.includes(l.id)],
     ["Fallwerkstatt", p.workshop.includes(l.id)],
     ...(l.practice
-      ? [[`Selbst gelöst: ${p.solved[key] ?? 0}/3`, (p.solved[key] ?? 0) >= 3] as [string, boolean]]
+      ? [
+          [`Selbst gelöst · Niveau 1: ${p.solved[key] ?? 0}/3`, (p.solved[key] ?? 0) >= 3] as [
+            string,
+            boolean,
+          ],
+        ]
       : []),
     ["Eigene Begründung", p.assessed.includes(key)],
   ];
@@ -225,7 +237,7 @@ function practiceHtml(l: Lesson) {
           )
           .join("")}</div>`
       : ""
-  }<div class="actions"><button type="submit" ${a.finished ? "disabled" : ""}>Rechnung prüfen</button><button type="button" id="solution-button" class="quiet" ${a.finished ? "disabled" : ""}>Lösung ansehen</button><button type="button" id="new-exercise" class="quiet">Neue Aufgabe</button></div></form><details><summary>Rechenhilfe</summary><p>${esc(a.task.hint)}</p></details><p id="calculation-feedback" role="status">${a.finished ? (a.credited ? "Selbst gelöst und gezählt." : "Lösung angesehen; dieser Versuch zählt nicht als selbst gelöst.") : "Dezimalkomma und Dezimalpunkt sind möglich. Finanzbeträge werden auf Cent geprüft."}</p><p id="solution" class="solution" ${a.finished ? "" : "hidden"}>${esc(a.task.solution)}</p></section>`;
+  }<div class="actions"><button type="submit" ${a.finished ? "disabled" : ""}>Rechnung prüfen</button><button type="button" id="solution-button" class="quiet" ${a.finished ? "disabled" : ""}>Lösung ansehen</button><button type="button" id="new-exercise" class="quiet">Neue Aufgabe</button></div></form><details><summary>Rechenhilfe</summary><p>${esc(a.task.hint)}</p></details><p id="calculation-feedback" role="status">${a.finished ? (a.credited ? (p.level === 1 ? "Selbst gelöst und gezählt." : "Transferaufgabe selbst gelöst und gespeichert. Für den Abschluss zählen drei Aufgaben auf Niveau 1.") : "Lösung angesehen; dieser Versuch zählt nicht als selbst gelöst.") : "Dezimalkomma und Dezimalpunkt sind möglich. Finanzbeträge werden auf Cent geprüft."}</p><p id="solution" class="solution" ${a.finished ? "" : "hidden"}>${esc(a.task.solution)}</p></section>`;
 }
 function bindPractice(l: Lesson) {
   const a = attemptFor(l);

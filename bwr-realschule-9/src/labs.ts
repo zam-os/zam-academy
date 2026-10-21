@@ -2,12 +2,13 @@ import {
   claimAmounts,
   depreciation,
   fmt,
+  type LoanType,
   loanSchedule,
   supplierCredit,
-  type LoanType,
 } from "./finance";
 import type { Lesson } from "./model/types";
 import { esc } from "./workshop";
+
 const input = (id: string, title: string, value: number, min: number, max: number, step = 1) =>
   `<label>${title}<input id="lab-${id}" type="number" value="${value}" min="${min}" max="${max}" step="${step}"></label>`;
 const table = (titles: string[], rows: (number | string)[][]) =>
@@ -21,7 +22,7 @@ export function labHtml(kind: NonNullable<Lesson["lab"]>): string {
       input("years", "Nutzungsdauer (Jahre)", 4, 1, 30) +
       input("month", "Anschaffungsmonat (1–12)", 10, 1, 12);
     description =
-      "Bewegliche Anlage, lineare Abschreibung, kein Restwert. Anschaffungsmonat zählt. Ändere Monat und Nutzungsdauer: Wie verändern sich erster Betrag und Buchwert?";
+      "Bewegliche Anlage, lineare Abschreibung, kein Restwert. Anschaffungsmonat zählt. Der Jahresbetrag wird zuerst auf Cent gerundet; die letzte Abschreibung gleicht Rundungen aus. Ändere Monat und Nutzungsdauer: Wie verändern sich erster Betrag und Buchwert?";
   } else if (kind === "loans") {
     controls =
       input("principal", "Kreditsumme (Euro)", 20000, 100, 1000000, 100) +
@@ -66,7 +67,7 @@ export function bindLab(kind: NonNullable<Lesson["lab"]>) {
               `<div class="bar-row"><span>Jahr ${row.year}</span><div class="bar-track"><div class="bar" style="width:${Math.max(0, (row.book / num("cost")) * 100)}%"></div></div><strong>${fmt(row.book)} €</strong></div>`,
           )
           .join("");
-        out.innerHTML = `<p>Volles Jahr: <strong>${fmt(result.annual)} Euro</strong> · Satz: ${fmt(result.rate)} %</p><div class="bars" role="img" aria-label="Restbuchwerte nach Kalenderjahren">${bars}</div>${table(
+        out.innerHTML = `<p>Volles Jahr: <strong>${fmt(result.annual)} Euro</strong> · Abschreibungssatz: 100 % ÷ ${num("years")}</p><div class="bars" role="img" aria-label="Restbuchwerte nach Kalenderjahren">${bars}</div>${table(
           ["Kalenderjahr", "AfA (Euro)", "Buchwert (Euro)"],
           result.rows.map((r) => [String(r.year), r.depreciation, r.book]),
         )}`;

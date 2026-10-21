@@ -1,7 +1,31 @@
-/** All money is rounded to cents at the point where a payment or posting occurs. */
-export const money = (amount: number) => Math.round((amount + Number.EPSILON) * 100) / 100;
+/** Round decimal inputs with integer fractions; model balances stay in cents. */
+function decimalRatio(value: number): [bigint, bigint] {
+  if (!Number.isFinite(value)) throw new Error("Geldbeträge müssen endliche Zahlen sein.");
+  const [mantissa, exponent = "0"] = String(value).split("e");
+  const [integer, fraction = ""] = mantissa.split(".");
+  const units = BigInt(integer + fraction);
+  const places = fraction.length - Number(exponent);
+  return places >= 0 ? [units, 10n ** BigInt(places)] : [units * 10n ** BigInt(-places), 1n];
+}
+/** Commercial rounding: an exact half cent rounds away from zero. */
+function roundQuotient(numerator: bigint, denominator: bigint): number {
+  const sign = numerator < 0n ? -1n : 1n;
+  return Number(sign * ((sign * numerator * 2n + denominator) / (denominator * 2n)));
+}
+function toCents(amount: number): number {
+  const [units, scale] = decimalRatio(amount);
+  return roundQuotient(units * 100n, scale);
+}
+function portionCents(cents: number, multiplier: number, divisor: number): number {
+  const [units, scale] = decimalRatio(multiplier);
+  return roundQuotient(BigInt(cents) * units, BigInt(divisor) * scale);
+}
+export const money = (amount: number) => toCents(amount) / 100;
 export const fmt = (amount: number) =>
-  amount.toLocaleString("de-DE", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  amount.toLocaleString("de-DE", {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  });
 const positive = (n: number) => Number.isFinite(n) && n > 0 && n <= 10_000_000;
 export function depreciation(cost: number, years: number, month = 1, memory = false) {
   if (
@@ -15,17 +39,19 @@ export function depreciation(cost: number, years: number, month = 1, memory = fa
     (memory && cost < 1)
   )
     throw new Error("Kosten, volle Nutzungsjahre und Anschaffungsmonat prüfen.");
-  const annual = cost / years;
-  let remaining = Math.round(cost * 100);
+  const costCents = toCents(cost);
+  const annualCents = portionCents(costCents, 1, years);
+  let remaining = costCents;
   const floor = memory ? 100 : 0;
+  const lastYear = month === 1 ? years : years + 1;
   const rows: Array<{ year: number; depreciation: number; book: number }> = [];
-  for (let year = 1; remaining > floor && year <= years + 2; year++) {
-    const planned = Math.round(annual * 100 * (year === 1 ? (13 - month) / 12 : 1));
-    const amount = year === years + 1 ? remaining - floor : Math.min(planned, remaining - floor);
+  for (let year = 1; remaining > floor && year <= lastYear; year++) {
+    const planned = year === 1 ? portionCents(annualCents, 13 - month, 12) : annualCents;
+    const amount = year === lastYear ? remaining - floor : Math.min(planned, remaining - floor);
     remaining -= amount;
     rows.push({ year, depreciation: amount / 100, book: remaining / 100 });
   }
-  return { annual: money(annual), rate: 100 / years, rows };
+  return { annual: annualCents / 100, rate: 100 / years, rows };
 }
 export type LoanType = "fixed" | "instalment" | "annuity";
 export function loanSchedule(principal: number, rate: number, years: number, kind: LoanType) {
@@ -40,15 +66,16 @@ export function loanSchedule(principal: number, rate: number, years: number, kin
     !["fixed", "instalment", "annuity"].includes(kind)
   )
     throw new Error("Kreditsumme, Zinssatz und volle Laufzeitjahre prüfen.");
-  let balance = Math.round(principal * 100);
+  let balance = toCents(principal);
   const p = rate / 100;
-  const annuity = Math.round(
-    (p === 0 ? principal / years : (principal * p) / (1 - (1 + p) ** -years)) * 100,
-  );
+  const annuity =
+    p === 0
+      ? portionCents(balance, 1, years)
+      : toCents(((balance / 100) * p) / (1 - (1 + p) ** -years));
   const base = Math.floor(balance / years);
   const rows = [];
   for (let year = 1; year <= years; year++) {
-    const interest = Math.round(balance * p);
+    const interest = portionCents(balance, rate, 100);
     const redemption =
       year === years
         ? balance
@@ -89,14 +116,15 @@ export function supplierCredit(
     throw new Error(
       "Es braucht einen positiven Preisnachlass und zusätzliche Kredittage von 1 bis 360.",
     );
-  const saving = money((net * discount) / 100);
-  const financed = money(net - saving);
-  const interest = money((financed * annualRate * extraDays) / 36_000);
+  const netCents = toCents(net);
+  const savingCents = portionCents(netCents, discount, 100);
+  const financedCents = netCents - savingCents;
+  const interestCents = portionCents(financedCents * extraDays, annualRate, 36_000);
   return {
-    saving,
-    financed,
-    interest,
-    advantage: money(saving - interest),
+    saving: savingCents / 100,
+    financed: financedCents / 100,
+    interest: interestCents / 100,
+    advantage: (savingCents - interestCents) / 100,
     annualized: (((discount / (100 - discount)) * 360) / extraDays) * 100,
   };
 }
@@ -109,15 +137,16 @@ export function claimAmounts(gross: number, vatRate: number, lossPercent: number
     lossPercent > 100
   )
     throw new Error("Bruttoforderung, Steuersatz und Ausfallquote prüfen.");
-  const net = money(gross / (1 + vatRate / 100));
-  const grossLoss = money((gross * lossPercent) / 100);
-  const netLoss = money(grossLoss / (1 + vatRate / 100));
+  const grossCents = toCents(gross);
+  const netCents = portionCents(grossCents, 100, 100 + vatRate);
+  const grossLossCents = portionCents(grossCents, lossPercent, 100);
+  const netLossCents = portionCents(grossLossCents, 100, 100 + vatRate);
   return {
-    net,
-    expectedLoss: money((net * lossPercent) / 100),
-    netLoss,
-    taxCorrection: money(grossLoss - netLoss),
-    grossLoss,
+    net: netCents / 100,
+    expectedLoss: portionCents(netCents, lossPercent, 100) / 100,
+    netLoss: netLossCents / 100,
+    taxCorrection: (grossLossCents - netLossCents) / 100,
+    grossLoss: grossLossCents / 100,
   };
 }
 export const ACCOUNTS: Record<string, string> = {

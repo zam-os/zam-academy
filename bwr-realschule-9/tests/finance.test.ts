@@ -1,23 +1,85 @@
 import { describe, expect, it } from "vitest";
-import { claimAmounts, depreciation, loanSchedule, supplierCredit } from "../src/finance";
-import { checkBooking, checkExercise, numberMatches, parseNumbers } from "../src/exercises/checker";
+import { LESSONS } from "../src/curriculum";
+import {
+  createAttempt,
+  revealAttempt,
+  skipAttempt,
+  submitAttempt,
+} from "../src/exercises/attempt";
+import {
+  checkBooking,
+  checkExercise,
+  numberMatches,
+  parseNumbers,
+} from "../src/exercises/checker";
 import { makeExercise } from "../src/exercises/generators";
 import { createRng } from "../src/exercises/rng";
-import { LESSONS } from "../src/curriculum";
-import { createAttempt, revealAttempt, skipAttempt, submitAttempt } from "../src/exercises/attempt";
+import {
+  claimAmounts,
+  depreciation,
+  loanSchedule,
+  money,
+  supplierCredit,
+} from "../src/finance";
 import { freshProgress, parseProgress } from "../src/storage/progress";
 
 describe("financial consequences", () => {
+  it("rounds half cents commercially for both signs and decimal input sizes", () => {
+    for (const [amount, rounded] of [
+      [8.575, 8.58],
+      [1.005, 1.01],
+      [2.675, 2.68],
+      [-8.575, -8.58],
+      [-1.005, -1.01],
+      [0.001, 0],
+      [1e-7, 0],
+      [10000000, 10000000],
+    ])
+      expect(money(amount)).toBe(rounded);
+  });
+  it("ends January acquisitions in their economic year and uses the rounded annual amount for partial years", () => {
+    expect(depreciation(10000, 3, 1).rows).toEqual([
+      { year: 1, depreciation: 3333.33, book: 6666.67 },
+      { year: 2, depreciation: 3333.33, book: 3333.34 },
+      { year: 3, depreciation: 3333.34, book: 0 },
+    ]);
+    const partial = depreciation(100, 6, 7);
+    expect(partial.annual).toBe(16.67);
+    expect(partial.rows[0]).toEqual({
+      year: 1,
+      depreciation: 8.34,
+      book: 91.66,
+    });
+    expect(partial.rows.at(-1)).toEqual({
+      year: 7,
+      depreciation: 8.31,
+      book: 0,
+    });
+    expect(depreciation(10000, 3, 1, true).rows.at(-1)).toEqual({
+      year: 3,
+      depreciation: 3332.34,
+      book: 1,
+    });
+  });
   it("uses months including acquisition and conserves the asset's cents", () => {
     const result = depreciation(24000, 4, 10);
-    expect(result.rows[0]).toEqual({ year: 1, depreciation: 1500, book: 22500 });
-    expect(result.rows.at(-1)).toEqual({ year: 5, depreciation: 4500, book: 0 });
+    expect(result.rows[0]).toEqual({
+      year: 1,
+      depreciation: 1500,
+      book: 22500,
+    });
+    expect(result.rows.at(-1)).toEqual({
+      year: 5,
+      depreciation: 4500,
+      book: 0,
+    });
     const remembered = depreciation(24000, 4, 10, true);
     expect(remembered.rows.at(-1)?.book).toBe(1);
     for (const cost of [800.01, 1000, 12345.67, 60000])
       for (let years = 1; years <= 15; years++)
         for (let month = 1; month <= 12; month++) {
           const rows = depreciation(cost, years, month).rows;
+          expect(rows).toHaveLength(month === 1 ? years : years + 1);
           expect(Math.round(rows.reduce((s, r) => s + r.depreciation, 0) * 100)).toBe(
             Math.round(cost * 100),
           );
@@ -26,6 +88,11 @@ describe("financial consequences", () => {
         }
     expect(() => depreciation(100, 0, 1)).toThrow();
     expect(() => depreciation(100, 3, 13)).toThrow();
+  });
+  it("rounds the year-6 interest on 28.60 Euro at 17.5 percent to 5.01 Euro", () => {
+    const rows = loanSchedule(100, 17.5, 7, "instalment");
+    expect(rows[4].balance).toBe(28.6);
+    expect(rows[5].interest).toBe(5.01);
   });
   it("keeps loan balance and payment identities for all three forms, including zero interest", () => {
     const instalment = loanSchedule(20000, 6, 4, "instalment");
@@ -37,13 +104,15 @@ describe("financial consequences", () => {
       balance: 15000,
     });
     expect(instalment[1].interest).toBe(900);
-    expect(loanSchedule(20000, 6, 4, "fixed").map((r) => r.redemption)).toEqual([0, 0, 0, 20000]);
+    expect(loanSchedule(20000, 6, 4, "fixed").map((r) => r.redemption)).toEqual([
+      0, 0, 0, 20000,
+    ]);
     const annuity = loanSchedule(20000, 6, 4, "annuity");
     expect(annuity[1].interest).toBeLessThan(annuity[0].interest);
     expect(annuity[1].redemption).toBeGreaterThan(annuity[0].redemption);
     for (const type of ["fixed", "instalment", "annuity"] as const)
-      for (const rate of [0, 1.5, 6, 30])
-        for (const principal of [1000, 12345.67, 20000]) {
+      for (const rate of [0, 1.5, 6, 17.5, 30])
+        for (const principal of [100, 1000, 12345.67, 20000]) {
           const rows = loanSchedule(principal, rate, 7, type);
           expect(rows.at(-1)?.balance).toBe(0);
           expect(Math.round(rows.reduce((s, r) => s + r.redemption, 0) * 100)).toBe(
@@ -51,6 +120,10 @@ describe("financial consequences", () => {
           );
           let balance = principal;
           for (const row of rows) {
+            // Independent integer oracle for the listed rates (tenths of a percent).
+            expect(Math.round(row.interest * 100)).toBe(
+              Math.floor((Math.round(balance * 100) * Math.round(rate * 10) + 500) / 1000),
+            );
             expect(Math.round(row.payment * 100)).toBe(
               Math.round(row.interest * 100) + Math.round(row.redemption * 100),
             );
@@ -60,6 +133,23 @@ describe("financial consequences", () => {
             expect(row.balance).toBeGreaterThanOrEqual(0);
             balance = row.balance;
           }
+        }
+  });
+  it("rounds half-cent supplier interest before calculating the advantage", () => {
+    expect(supplierCredit(1500, 2, 7, 30)).toMatchObject({
+      saving: 30,
+      financed: 1470,
+      interest: 8.58,
+      advantage: 21.42,
+    });
+    for (let net = 1000; net <= 8000; net += 100)
+      for (let rate = 3; rate <= 9; rate++)
+        for (const days of [10, 20, 30, 40]) {
+          // Net euros × 98 gives the financed cents after 2% Skonto.
+          const interestCents = Math.floor((net * 98 * rate * days + 18000) / 36000);
+          const result = supplierCredit(net, 2, rate, days);
+          expect(result.interest, `${net}/${rate}/${days}`).toBe(interestCents / 100);
+          expect(result.advantage).toBe((net * 2 - interestCents) / 100);
         }
   });
   it("compares only the extra supplier days and exposes an unprofitable alternative", () => {
@@ -73,6 +163,13 @@ describe("financial consequences", () => {
     expect(() => supplierCredit(10000, 2, 9, 0)).toThrow();
   });
   it("separates net loss, gross removal and VAT instead of taxing a risk estimate", () => {
+    expect(claimAmounts(17.15, 0, 50)).toEqual({
+      net: 17.15,
+      expectedLoss: 8.58,
+      netLoss: 8.58,
+      grossLoss: 8.58,
+      taxCorrection: 0,
+    });
     expect(claimAmounts(11900, 19, 40)).toEqual({
       net: 10000,
       expectedLoss: 4000,
@@ -91,6 +188,23 @@ describe("financial consequences", () => {
   });
 });
 describe("strict but usable answer checking", () => {
+  it("accepts the correctly rounded supplier answer and rejects the one-cent error", () => {
+    const draws = [15, 7, 2, 10, 3];
+    const task = makeExercise(
+      "supplier",
+      {
+        int() {
+          const value = draws.shift();
+          if (value === undefined) throw new Error("Unerwarteter zusätzlicher Zufallswert");
+          return value;
+        },
+      },
+      1,
+    );
+    expect(task.fields.map((field) => field.answer)).toEqual([30, 8.58, 21.42]);
+    expect(checkExercise(task, ["30,00", "8,58", "21,42"], [])).toBe(true);
+    expect(checkExercise(task, ["30,00", "8,57", "21,43"], [])).toBe(false);
+  });
   it("accepts financial notation and rejects an error of one cent", () => {
     for (const value of ["1.234,50 €", "1,234.50", "1234.50", "1 234,50"])
       expect(numberMatches(value, 1234.5)).toBe(true);
@@ -120,7 +234,9 @@ describe("strict but usable answer checking", () => {
       { side: "debit", account: "3001", amount: "1.500,00" },
     ];
     expect(checkBooking(expected, actual)).toBe(true);
-    expect(checkBooking(expected, [{ ...actual[0], amount: "1500,01" }, actual[1]])).toBe(false);
+    expect(checkBooking(expected, [{ ...actual[0], amount: "1500,01" }, actual[1]])).toBe(
+      false,
+    );
     expect(
       checkBooking(
         expected,
@@ -160,7 +276,11 @@ describe("strict but usable answer checking", () => {
           expect(debit).toBe(credit);
           if (values.length)
             expect(
-              checkExercise(task, [String(task.fields[0].answer + 1), ...values.slice(1)], entries),
+              checkExercise(
+                task,
+                [String(task.fields[0].answer + 1), ...values.slice(1)],
+                entries,
+              ),
             ).toBe(false);
           if (entries.length)
             expect(
