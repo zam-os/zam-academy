@@ -1,0 +1,770 @@
+[
+	{
+		"id": "algo-eindeutigkeit",
+		"stage": 0,
+		"title": "Vom Auftrag zum Algorithmus",
+		"goal": "Beschreibe einen Ablauf so genau, dass ein Computer ihn ausführen kann.",
+		"paragraphs": [
+			"„Mach den Preis günstiger“ lässt offen, um wie viel. Ein Algorithmus beschreibt Schritte mit klaren Regeln. Beim Rabatt muss feststehen, welcher Ausgangspreis gilt und wie der neue Preis entsteht.",
+			"Eindeutigkeit betrifft die präzise Bedeutung jedes Schritts. Davon zu unterscheiden ist die Frage, ob ein Ablauf für jede zulässige Eingabe endet. Programme können absichtlich endlos laufen; eine falsche Abbruchbedingung kann dagegen ein Fehler sein. Hier prüfen wir endende Berechnungen."
+		],
+		"model": ["Preis einlesen", "Preis halbieren", "Neuen Preis ausgeben"],
+		"task": "Lies mit read() einen Preis ein. Gib genau die Hälfte mit print() aus. Die Werkstatt liefert die Testeingaben automatisch.",
+		"starter": "let preis = read();\nprint(preis);",
+		"solution": "let preis = read();\nprint(preis / 2);",
+		"hint": "Der Operator / teilt zwei Zahlen.",
+		"tests": [
+			{
+				"inputs": [12],
+				"expected": ["6"]
+			},
+			{
+				"inputs": [19],
+				"expected": ["9.5"]
+			},
+			{
+				"inputs": [0],
+				"expected": ["0"]
+			}
+		],
+		"question": "Welche Beschreibung ist eindeutig ausführbar?",
+		"options": [
+			"Mach den Preis schön.",
+			"Teile den eingelesenen Preis durch 2.",
+			"Wähle irgendeinen Rabatt."
+		],
+		"correct": 1,
+		"explanation": "Die zweite Beschreibung legt die Rechnung eindeutig fest."
+	},
+	{
+		"id": "algo-sequenz",
+		"stage": 0,
+		"title": "Die Reihenfolge zählt",
+		"goal": "Führe Anweisungen in ihrer Reihenfolge aus.",
+		"paragraphs": [
+			"Eine Sequenz ist eine Folge von Anweisungen. Eine spätere Anweisung sieht die Werte, die vorherige Anweisungen hinterlassen haben. Bei einer Bestellung werden erst Nettopreis und Versand addiert; danach wird der Gesamtbetrag ausgegeben.",
+			"Im Beispielprogramm kannst du zwei Rechenwege vergleichen. „Erst 3 addieren, dann verdoppeln“ ergibt bei 5 den Wert 16. „Erst verdoppeln, dann 3 addieren“ ergibt 13. Das Modell hilft dir, die Reihenfolge vor dem Programmieren zu planen."
+		],
+		"model": ["Wert einlesen", "3 addieren", "Ergebnis verdoppeln", "Ausgabe"],
+		"task": "Lies eine Zahl, addiere 3 und verdopple anschließend. Gib nur das Endergebnis aus.",
+		"starter": "let wert = read();\nwert = wert * 2;\nwert = wert + 3;\nprint(wert);",
+		"solution": "let wert = read();\nwert = wert + 3;\nwert = wert * 2;\nprint(wert);",
+		"hint": "Die Änderung + 3 muss vor der Änderung * 2 stehen.",
+		"tests": [
+			{
+				"inputs": [5],
+				"expected": ["16"]
+			},
+			{
+				"inputs": [0],
+				"expected": ["6"]
+			},
+			{
+				"inputs": [-2],
+				"expected": ["2"]
+			}
+		],
+		"question": "Was beschreibt eine Sequenz?",
+		"options": [
+			"Eine Wiederholung bis zum Abbruch.",
+			"Die Auswahl eines von zwei Wegen.",
+			"Eine Folge nacheinander ausgeführter Anweisungen."
+		],
+		"correct": 2,
+		"explanation": "Die Reihenfolge ist das Kennzeichen einer Sequenz."
+	},
+	{
+		"id": "algo-modelle",
+		"stage": 0,
+		"title": "Vom Modell zum Quellcode",
+		"goal": "Übersetze eine klar gegliederte Ablaufbeschreibung in Quellcode.",
+		"paragraphs": [
+			"Ein Programmablaufplan zeigt Schritte als Symbole und verbindet sie mit Pfeilen. In einem Struktogramm stehen Blöcke für Sequenzen, Auswahl und Wiederholung. Pseudocode beschreibt dieselbe Idee in knapper, sprachähnlicher Form.",
+			"Keine Darstellung ist schon automatisch ausführbarer Quellcode. Entscheidend sind dieselben Bedingungen und dieselbe Reihenfolge im Modell und im Programm. Unser Ablaufstreifen ist eine vereinfachte Lesedarstellung; vollständige Struktogramme oder genormte Ablaufplansymbole zeichnest du ergänzend im Unterricht."
+		],
+		"model": [
+			"Eingabe: Temperatur",
+			"Falls Temperatur < 0: „Frost“",
+			"Sonst: „frei“"
+		],
+		"task": "Übersetze den Ablaufstreifen. Gib bei einer Temperatur unter 0 den Text Frost aus, sonst frei.",
+		"starter": "let temperatur = read();\nif (temperatur < 0) {\n  print(\"frei\");\n} else {\n  print(\"Frost\");\n}",
+		"solution": "let temperatur = read();\nif (temperatur < 0) {\n  print(\"Frost\");\n} else {\n  print(\"frei\");\n}",
+		"hint": "Prüfe beide Zweige und besonders die Grenze bei 0.",
+		"tests": [
+			{
+				"inputs": [-1],
+				"expected": ["Frost"]
+			},
+			{
+				"inputs": [0],
+				"expected": ["frei"]
+			},
+			{
+				"inputs": [9],
+				"expected": ["frei"]
+			}
+		],
+		"question": "Was muss beim Übersetzen des Modells erhalten bleiben?",
+		"options": [
+			"Die Farbe der Kästen.",
+			"Bedingungen, Reihenfolge und beabsichtigtes Verhalten.",
+			"Die Anzahl der Buchstaben."
+		],
+		"correct": 1,
+		"explanation": "Ein Modell und sein Programm müssen für dieselben Eingaben dasselbe Verhalten beschreiben."
+	},
+	{
+		"id": "algo-variablen",
+		"stage": 0,
+		"title": "Werte unter einem Namen",
+		"goal": "Lege eine Variable an und ändere ihren Wert.",
+		"paragraphs": [
+			"Eine Variable verbindet in JavaScript einen Namen mit einem Wert. let punkte = 4 legt eine veränderbare Bindung an. Später ersetzt punkte = punkte + 1 den alten Wert durch den berechneten neuen Wert.",
+			"Das Gleichheitszeichen ist hier eine Zuweisung. Es behauptet keine mathematische Gleichheit zwischen alter und neuer Punktzahl. JavaScript bindet keinen unveränderlichen Datentyp an den Namen: Ein Name kann später auch einen anderen Werttyp erhalten. Für verständliche Programme verwenden wir passende Namen und bleiben bei einer klaren Bedeutung."
+		],
+		"model": ["Startpunkte einlesen", "Bonus 5 hinzufügen", "Punkte ausgeben"],
+		"task": "Addiere zu den eingelesenen Punkten genau 5 Bonuspunkte.",
+		"starter": "let punkte = read();\nprint(punkte);",
+		"solution": "let punkte = read();\npunkte = punkte + 5;\nprint(punkte);",
+		"hint": "Die neue Punktzahl wird in punkte gespeichert.",
+		"tests": [
+			{
+				"inputs": [7],
+				"expected": ["12"]
+			},
+			{
+				"inputs": [0],
+				"expected": ["5"]
+			},
+			{
+				"inputs": [20],
+				"expected": ["25"]
+			}
+		],
+		"question": "Was bedeutet x = x + 1 im Programm?",
+		"options": [
+			"Eine mathematisch unlösbare Gleichung.",
+			"x bleibt unverändert.",
+			"Der bisherige Wert wird um 1 erhöht und gespeichert."
+		],
+		"correct": 2,
+		"explanation": "Die rechte Seite wird zuerst berechnet, dann der Variablen zugewiesen."
+	},
+	{
+		"id": "algo-zahlen",
+		"stage": 0,
+		"title": "Zahlen und Texte unterscheiden",
+		"goal": "Wähle passende Werte und Rechenoperationen.",
+		"paragraphs": [
+			"JavaScript verwendet Number für Zahlen wie 3 und 3.5. Anders als manche andere Sprachen besitzt es für gewöhnliche Zahlen keine getrennten Variablentypen Integer und Float. String steht für Text in Anführungszeichen; Boolean für true oder false.",
+			"Ein Plus zwischen Zahlen addiert. Ein Plus mit Text verkettet: \"Preis: \" + 12 ergibt den Text Preis: 12. Unser Interpreter unterstützt Number, String, Boolean, null und eindimensionale Felder. Er verweigert Rechnen mit Text an Stellen, die Zahlen benötigen, statt automatische Typumwandlungen zu verstecken."
+		],
+		"model": [
+			"Anzahl einlesen",
+			"Mit Stückpreis 2.5 multiplizieren",
+			"Als Zahl ausgeben"
+		],
+		"task": "Berechne den Preis bei 2.5 Euro pro Stück. Gib eine Zahl aus, keinen erklärenden Text.",
+		"starter": "let anzahl = read();\nprint(anzahl + 2.5);",
+		"solution": "let anzahl = read();\nprint(anzahl * 2.5);",
+		"hint": "Für gleiche Stückpreise wird die Anzahl multipliziert.",
+		"tests": [
+			{
+				"inputs": [4],
+				"expected": ["10"]
+			},
+			{
+				"inputs": [3],
+				"expected": ["7.5"]
+			},
+			{
+				"inputs": [0],
+				"expected": ["0"]
+			}
+		],
+		"question": "Welchen Werttyp hat \"12\"?",
+		"options": ["Number", "String", "Boolean"],
+		"correct": 1,
+		"explanation": "Die Anführungszeichen machen aus 12 einen Text."
+	},
+	{
+		"id": "algo-boolean",
+		"stage": 0,
+		"title": "Wahr oder falsch",
+		"goal": "Verwende einen Vergleich als Wahrheitswert.",
+		"paragraphs": [
+			"Ein Boolean besitzt genau zwei Werte: true und false. Vergleiche wie alter >= 14 erzeugen einen solchen Wert. Dadurch kann ein Programm Regeln prüfen, ohne die Antwort als frei geschriebenen Text zu behandeln.",
+			"Vergleiche sind keine Zuweisungen. Für strikte Gleichheit schreiben wir ===, für Ungleichheit !==. Die Werkstatt unterstützt keine automatische Typumwandlung bei Vergleichen. Beim Vergleich mehrerer Zahlen helfen Grenzfälle, etwa die exakte Altersgrenze."
+		],
+		"model": [
+			"Alter einlesen",
+			"Alter mindestens 14?",
+			"Wahrheitswert ausgeben"
+		],
+		"task": "Gib true aus, wenn das eingelesene Alter mindestens 14 beträgt; sonst false.",
+		"starter": "let alter = read();\nprint(alter > 14);",
+		"solution": "let alter = read();\nprint(alter >= 14);",
+		"hint": "„Mindestens“ schließt die Grenze 14 ein.",
+		"tests": [
+			{
+				"inputs": [13],
+				"expected": ["false"]
+			},
+			{
+				"inputs": [14],
+				"expected": ["true"]
+			},
+			{
+				"inputs": [18],
+				"expected": ["true"]
+			}
+		],
+		"question": "Welcher Werttyp enthält nur true und false?",
+		"options": ["String", "Number", "Boolean"],
+		"correct": 2,
+		"explanation": "Boolean ist der Typ der Wahrheitswerte."
+	},
+	{
+		"id": "algo-bedingungen",
+		"stage": 1,
+		"title": "Zwei Wege mit if und else",
+		"goal": "Entscheide anhand einer Bedingung zwischen Alternativen.",
+		"paragraphs": [
+			"Eine bedingte Verzweigung führt abhängig von einer Bedingung einen Weg aus. Bei if wird der erste Block ausgeführt, wenn die Bedingung wahr ist. Ein angehängtes else beschreibt den anderen Fall.",
+			"Geschweifte Klammern markieren die zusammengehörigen Anweisungen. In einem if-else-Paar wird genau einer der beiden Blöcke ausgeführt. Plane Tests auf beiden Seiten der Bedingung und direkt an der Grenze."
+		],
+		"model": ["Punkte einlesen", "Ab 10: bestanden", "Sonst: üben"],
+		"task": "Gib bei mindestens 10 Punkten bestanden aus, sonst üben.",
+		"starter": "let punkte = read();\nif (punkte > 10) {\n  print(\"bestanden\");\n} else {\n  print(\"üben\");\n}",
+		"solution": "let punkte = read();\nif (punkte >= 10) {\n  print(\"bestanden\");\n} else {\n  print(\"üben\");\n}",
+		"hint": "Der Test mit genau 10 Punkten zeigt die wichtige Grenze.",
+		"tests": [
+			{
+				"inputs": [9],
+				"expected": ["üben"]
+			},
+			{
+				"inputs": [10],
+				"expected": ["bestanden"]
+			},
+			{
+				"inputs": [15],
+				"expected": ["bestanden"]
+			}
+		],
+		"question": "Wie viele Zweige eines if-else-Paars laufen pro Entscheidung?",
+		"options": ["Genau einer.", "Immer beide.", "Immer keiner."],
+		"correct": 0,
+		"explanation": "Die Bedingung entscheidet zwischen den beiden Wegen."
+	},
+	{
+		"id": "algo-logik",
+		"stage": 1,
+		"title": "Bedingungen verknüpfen",
+		"goal": "Prüfe zwei Bedingungen mit und oder oder.",
+		"paragraphs": [
+			"Der Operator && verknüpft Bedingungen mit „und“: Beide müssen wahr sein. Bei || genügt mindestens eine wahre Bedingung. ! kehrt einen Wahrheitswert um.",
+			"Eine Badekarte gilt beispielsweise nur, wenn genug Guthaben vorhanden ist und die Karte freigeschaltet ist. Die rechte Seite von && wird nicht mehr ausgewertet, wenn links bereits false steht. Bei || wird rechts ausgelassen, wenn links bereits true ist."
+		],
+		"model": [
+			"Alter einlesen",
+			"Alter zwischen 12 und 16 einschließlich?",
+			"Wahrheitswert ausgeben"
+		],
+		"task": "Gib true aus, wenn das Alter mindestens 12 und höchstens 16 beträgt.",
+		"starter": "let alter = read();\nprint(alter >= 12 || alter <= 16);",
+		"solution": "let alter = read();\nprint(alter >= 12 && alter <= 16);",
+		"hint": "Ein begrenztes Intervall braucht hier beide Bedingungen gleichzeitig.",
+		"tests": [
+			{
+				"inputs": [11],
+				"expected": ["false"]
+			},
+			{
+				"inputs": [12],
+				"expected": ["true"]
+			},
+			{
+				"inputs": [16],
+				"expected": ["true"]
+			},
+			{
+				"inputs": [17],
+				"expected": ["false"]
+			}
+		],
+		"question": "Wann ergibt a && b den Wert true, wenn beide Operanden Booleans sind?",
+		"options": [
+			"Wenn mindestens einer wahr ist.",
+			"Wenn beide wahr sind.",
+			"Wenn beide falsch sind."
+		],
+		"correct": 1,
+		"explanation": "Bei und müssen beide Bedingungen erfüllt sein."
+	},
+	{
+		"id": "algo-while",
+		"stage": 1,
+		"title": "Wiederholen mit while",
+		"goal": "Steuere eine Wiederholung durch ihre Bedingung.",
+		"paragraphs": [
+			"Eine while-Schleife prüft ihre Bedingung vor jedem Durchlauf. Ist die Bedingung bereits am Anfang false, wird der Körper überhaupt nicht ausgeführt. Das unterscheidet sie von einer fußgesteuerten do-while-Schleife.",
+			"Der Körper muss bei endenden Berechnungen dazu beitragen, dass die Bedingung irgendwann falsch wird. Beim Herunterzählen verringert er den Zähler. Bleibt der Zähler unverändert, meldet die Werkstatt nach einer festen Schrittgrenze einen möglichen Schleifenfehler."
+		],
+		"model": [
+			"Zähler einlesen",
+			"Solange Zähler > 0: ausgeben und 1 abziehen",
+			"Ende"
+		],
+		"task": "Zähle von der Eingabe bis 1 herunter. Bei 0 darf nichts ausgegeben werden.",
+		"starter": "let zaehler = read();\nwhile (zaehler > 0) {\n  print(zaehler);\n}",
+		"solution": "let zaehler = read();\nwhile (zaehler > 0) {\n  print(zaehler);\n  zaehler = zaehler - 1;\n}",
+		"hint": "Ändere den Zähler innerhalb der Schleife.",
+		"tests": [
+			{
+				"inputs": [3],
+				"expected": ["3", "2", "1"]
+			},
+			{
+				"inputs": [1],
+				"expected": ["1"]
+			},
+			{
+				"inputs": [0],
+				"expected": []
+			}
+		],
+		"question": "Wie oft läuft eine while-Schleife, wenn die Bedingung von Anfang an false ist?",
+		"options": ["Einmal.", "Unendlich oft.", "Keinmal."],
+		"correct": 2,
+		"explanation": "Die Prüfung findet vor dem ersten Durchlauf statt."
+	},
+	{
+		"id": "algo-for",
+		"stage": 1,
+		"title": "Zählwiederholungen mit for",
+		"goal": "Verbinde Start, Bedingung und Zählerschritt.",
+		"paragraphs": [
+			"Bei der hier verwendeten for-Zählschleife stehen Start, Bedingung und Veränderung im Schleifenkopf. for (let i = 0; i < 3; i = i + 1) durchläuft den Körper mit i = 0, 1 und 2.",
+			"Zuerst läuft der Start genau einmal. Vor jedem Durchlauf wird die Bedingung geprüft. Nach dem Körper folgt die Veränderung. Diese Form ist praktisch, wenn der Zählbereich bekannt ist; JavaScript kennt weitere for-Formen, die diese Werkstatt nicht behandelt."
+		],
+		"model": [
+			"Summe auf 0 setzen",
+			"Für i von 1 bis n: i zur Summe addieren",
+			"Summe ausgeben"
+		],
+		"task": "Berechne die Summe der Zahlen von 1 bis zur eingelesenen Grenze n. Für n = 0 ist sie 0.",
+		"starter": "let n = read();\nlet summe = 0;\nfor (let i = 1; i < n; i = i + 1) {\n  summe = summe + i;\n}\nprint(summe);",
+		"solution": "let n = read();\nlet summe = 0;\nfor (let i = 1; i <= n; i = i + 1) {\n  summe = summe + i;\n}\nprint(summe);",
+		"hint": "Die letzte Zahl n gehört noch zur Summe.",
+		"tests": [
+			{
+				"inputs": [4],
+				"expected": ["10"]
+			},
+			{
+				"inputs": [1],
+				"expected": ["1"]
+			},
+			{
+				"inputs": [0],
+				"expected": ["0"]
+			}
+		],
+		"question": "Wann läuft der Zählerschritt einer for-Zählschleife?",
+		"options": [
+			"Nach dem Schleifenkörper.",
+			"Nur einmal vor der ersten Bedingung.",
+			"Vor der Variablendeklaration."
+		],
+		"correct": 0,
+		"explanation": "Der Zählerschritt bereitet die nächste Bedingungsprüfung vor."
+	},
+	{
+		"id": "algo-do-while",
+		"stage": 1,
+		"title": "Erst handeln, dann prüfen",
+		"goal": "Unterscheide Kopf- und Fußsteuerung.",
+		"paragraphs": [
+			"Eine do-while-Schleife führt ihren Körper aus, bevor sie die Bedingung prüft. Darum findet mindestens ein Durchlauf statt. Das kann etwa passen, wenn erst eine Eingabe verarbeitet und danach über eine Wiederholung entschieden wird.",
+			"Die Bedingung in while (...) bedeutet auch hier „weiterlaufen, solange wahr“. Verwechsle sie nicht mit „abbrechen, sobald wahr“. In JavaScript gehört hinter das do-while-Konstrukt ein Semikolon."
+		],
+		"model": [
+			"Zähler einlesen",
+			"Ausgeben und um 1 verkleinern",
+			"Danach prüfen: Zähler > 0?"
+		],
+		"task": "Zähle mit do-while herunter. Bei Startwert 0 muss genau einmal 0 erscheinen.",
+		"starter": "let n = read();\nwhile (n > 0) {\n  print(n);\n  n = n - 1;\n}",
+		"solution": "let n = read();\ndo {\n  print(n);\n  n = n - 1;\n} while (n > 0);",
+		"hint": "Schreibe den Körper nach do und die Prüfung dahinter.",
+		"tests": [
+			{
+				"inputs": [3],
+				"expected": ["3", "2", "1"]
+			},
+			{
+				"inputs": [0],
+				"expected": ["0"]
+			},
+			{
+				"inputs": [1],
+				"expected": ["1"]
+			}
+		],
+		"question": "Was gilt für do-while unabhängig von der anfänglichen Bedingung?",
+		"options": [
+			"Der Körper läuft nie.",
+			"Der Körper läuft mindestens einmal.",
+			"Der Körper läuft genau zweimal."
+		],
+		"correct": 1,
+		"explanation": "Die erste Prüfung erfolgt erst nach dem Körper."
+	},
+	{
+		"id": "algo-kontrollstrukturen",
+		"stage": 1,
+		"title": "Die passende Ablaufstruktur wählen",
+		"goal": "Begründe die Wahl zwischen Sequenz, Auswahl und Wiederholung.",
+		"paragraphs": [
+			"Eine Sequenz arbeitet Schritte nacheinander ab. Eine Verzweigung wählt je nach Bedingung einen Weg. Wiederholungen führen einen Körper mehrfach aus. Die for-Zählschleife bündelt Start, Prüfung und Zählerschritt; while prüft vor dem Körper, do-while danach.",
+			"Eine passende Struktur macht die Absicht verständlich. Für alle Messwerte einer festen Liste eignet sich eine Zählschleife. Für eine unbekannte Anzahl von Wiederholungen kann eine while-Schleife passen. Ob der erste Durchlauf auch ohne erfüllte Bedingung nötig ist, entscheidet zwischen Kopf- und Fußsteuerung."
+		],
+		"model": [
+			"Anzahl n einlesen",
+			"Für jede Zahl 1 bis n: gerade?",
+			"Bei gerader Zahl: ausgeben"
+		],
+		"task": "Gib alle geraden Zahlen von 1 bis einschließlich n aus. Kombiniere Zählschleife und Verzweigung.",
+		"starter": "let n = read();\nfor (let i = 1; i <= n; i = i + 1) {\n  print(i);\n}",
+		"solution": "let n = read();\nfor (let i = 1; i <= n; i = i + 1) {\n  if (i % 2 === 0) {\n    print(i);\n  }\n}",
+		"hint": "Der Restoperator % zeigt, ob bei Teilung durch 2 ein Rest bleibt.",
+		"tests": [
+			{
+				"inputs": [6],
+				"expected": ["2", "4", "6"]
+			},
+			{
+				"inputs": [3],
+				"expected": ["2"]
+			},
+			{
+				"inputs": [0],
+				"expected": []
+			}
+		],
+		"question": "Welche Struktur passt zu „unter allen Zahlen die geraden auswählen“?",
+		"options": [
+			"Nur eine Kommentarzeile.",
+			"Nur eine Variablenbenennung.",
+			"Wiederholung mit Verzweigung."
+		],
+		"correct": 2,
+		"explanation": "Die Schleife besucht die Zahlen, die Verzweigung filtert sie."
+	},
+	{
+		"id": "algo-felder",
+		"stage": 2,
+		"title": "Mehrere Werte in einem Feld",
+		"goal": "Lies einzelne Elemente über ihren Index.",
+		"paragraphs": [
+			"Ein Feld speichert mehrere Werte in einer geordneten Folge. let werte = [4, 7, 2] erzeugt hier drei Einträge. Der Index beginnt bei 0: werte[0] ist 4, werte[2] ist 2. werte.length liefert die Anzahl 3.",
+			"Ein Zugriff auf Index 3 wäre bei drei Einträgen bereits außerhalb des Feldes. Die Werkstatt meldet solche Zugriffe ausdrücklich als Fehler. Die echten JavaScript-Regeln sind an dieser Stelle weiter gefasst; für die Übungen arbeiten wir bewusst nur mit vorhandenen Einträgen."
+		],
+		"model": [
+			"Feld einlesen",
+			"Ersten und letzten Eintrag bestimmen",
+			"Summe ausgeben"
+		],
+		"task": "Gib die Summe aus erstem und letztem Eintrag des eingelesenen Feldes aus. Das Feld ist nie leer.",
+		"starter": "let werte = read();\nprint(werte[0] + werte[1]);",
+		"solution": "let werte = read();\nprint(werte[0] + werte[werte.length - 1]);",
+		"hint": "Der letzte Index ist Länge minus 1.",
+		"tests": [
+			{
+				"inputs": [[4, 7, 2]],
+				"expected": ["6"]
+			},
+			{
+				"inputs": [[8]],
+				"expected": ["16"]
+			},
+			{
+				"inputs": [[1, 2, 3, 4]],
+				"expected": ["5"]
+			}
+		],
+		"question": "Welcher Index bezeichnet den ersten Feldeintrag?",
+		"options": ["0", "1", "Die Feldlänge"],
+		"correct": 0,
+		"explanation": "Ein JavaScript-Feld beginnt beim Index 0."
+	},
+	{
+		"id": "algo-felder-schleife",
+		"stage": 2,
+		"title": "Ein Feld durchlaufen",
+		"goal": "Verknüpfe Index, Feldlänge und Schleife.",
+		"paragraphs": [
+			"Eine Zählschleife kann jeden Eintrag eines Feldes besuchen. Sie beginnt beim Index 0 und läuft, solange i < werte.length gilt. So wird jeder gültige Index genau einmal verwendet.",
+			"Eine Sammelvariable bewahrt ein Zwischenergebnis auf. Bei einer Summe startet sie mit 0. Nach jedem Durchlauf enthält sie die Summe aller bisher besuchten Werte. Bei einem leeren Feld bleibt sie unverändert 0."
+		],
+		"model": [
+			"Summe = 0",
+			"Für jeden gültigen Index: Wert addieren",
+			"Summe ausgeben"
+		],
+		"task": "Berechne die Summe aller Zahlen im eingelesenen Feld. Das Feld darf auch leer sein.",
+		"starter": "let werte = read();\nlet summe = 0;\nfor (let i = 0; i <= werte.length; i = i + 1) {\n  summe = summe + werte[i];\n}\nprint(summe);",
+		"solution": "let werte = read();\nlet summe = 0;\nfor (let i = 0; i < werte.length; i = i + 1) {\n  summe = summe + werte[i];\n}\nprint(summe);",
+		"hint": "Der Index muss kleiner als die Feldlänge bleiben.",
+		"tests": [
+			{
+				"inputs": [[4, 7, 2]],
+				"expected": ["13"]
+			},
+			{
+				"inputs": [[]],
+				"expected": ["0"]
+			},
+			{
+				"inputs": [[-1, 3]],
+				"expected": ["2"]
+			}
+		],
+		"question": "Welche Schleifenbedingung passt bei Startindex 0?",
+		"options": ["i <= werte.length", "i < werte.length", "i === werte.length"],
+		"correct": 1,
+		"explanation": "Die Feldlänge selbst ist kein gültiger Index."
+	},
+	{
+		"id": "algo-funktionen",
+		"stage": 2,
+		"title": "Eine Aufgabe benennen",
+		"goal": "Definiere eine wiederverwendbare Funktion.",
+		"paragraphs": [
+			"Eine Funktion fasst eine zusammengehörige Aufgabe unter einem Namen zusammen. Ihre Definition beschreibt das Verhalten; der Aufruf führt es aus. Eine noch nicht aufgerufene Definition erzeugt keine Ausgabe.",
+			"Ein guter Name beschreibt die Aufgabe, beispielsweise gruss oder berechnePreis. Funktionen vermeiden kopierte Anweisungsfolgen. Unser Interpreter verlangt die Definition vor dem ersten Aufruf und unterstützt nur Funktionen auf der obersten Programmebene."
+		],
+		"model": ["Funktion gruss definieren", "Funktion zweimal aufrufen"],
+		"task": "Definiere gruss so, dass der Text Hallo erscheint. Rufe gruss genau zweimal auf.",
+		"starter": "function gruss() {\n  print(\"Hallo\");\n}\ngruss();",
+		"solution": "function gruss() {\n  print(\"Hallo\");\n}\ngruss();\ngruss();",
+		"hint": "Ein Funktionsaufruf enthält den Namen und runde Klammern.",
+		"tests": [
+			{
+				"inputs": [],
+				"expected": ["Hallo", "Hallo"]
+			}
+		],
+		"question": "Wann wird der Körper einer Funktion ausgeführt?",
+		"options": [
+			"Schon beim Lesen des Namens.",
+			"Nur beim Speichern der Datei.",
+			"Beim Aufruf der Funktion."
+		],
+		"correct": 2,
+		"explanation": "Eine Definition und ein Aufruf erfüllen verschiedene Aufgaben."
+	},
+	{
+		"id": "algo-parameter",
+		"stage": 2,
+		"title": "Werte an eine Funktion übergeben",
+		"goal": "Unterscheide Parameter und Argument.",
+		"paragraphs": [
+			"Parameter sind die Namen in einer Funktionsdefinition. Argumente sind die konkreten Werte beim Aufruf. function zeige(name) bekommt bei zeige(\"Mia\") den Argumentwert Mia unter dem Parameternamen name.",
+			"Jeder Aufruf besitzt eigene lokale Parameterbindungen. Ein anderer Aufruf kann andere Werte verwenden. Die Anzahl der übergebenen Werte muss in der Werkstatt zur Parameterliste passen; fehlende oder überzählige Argumente werden als Lernfehler angezeigt."
+		],
+		"model": [
+			"Funktion mit Parameter definieren",
+			"Zwei Namen einlesen",
+			"Für jeden Namen die Funktion aufrufen"
+		],
+		"task": "Die Funktion gruss soll Hallo und den jeweiligen Namen ausgeben. Lies zwei Namen ein und rufe sie für beide auf.",
+		"starter": "function gruss(name) {\n  print(\"Hallo Mia\");\n}\ngruss(read());\ngruss(read());",
+		"solution": "function gruss(name) {\n  print(\"Hallo \" + name);\n}\ngruss(read());\ngruss(read());",
+		"hint": "Verknüpfe den festen Text mit dem Parameternamen.",
+		"tests": [
+			{
+				"inputs": ["Mia", "Ben"],
+				"expected": ["Hallo Mia", "Hallo Ben"]
+			},
+			{
+				"inputs": ["Ava", "Noah"],
+				"expected": ["Hallo Ava", "Hallo Noah"]
+			}
+		],
+		"question": "Was ist bei gruss(\"Mia\") das Argument?",
+		"options": [
+			"Der konkrete Wert \"Mia\".",
+			"Das Wort function.",
+			"Die öffnende Klammer."
+		],
+		"correct": 0,
+		"explanation": "Das Argument liefert den Wert für den Parameter."
+	},
+	{
+		"id": "algo-rueckgabe",
+		"stage": 2,
+		"title": "Mit Ergebnissen weiterarbeiten",
+		"goal": "Liefere mit return einen Wert zurück.",
+		"paragraphs": [
+			"Eine Rückgabe liefert einen Wert an die Aufrufstelle. return preis * 2 beendet den aktuellen Funktionsaufruf und gibt das Ergebnis zurück. Die aufrufende Stelle kann es speichern, weiterberechnen oder ausgeben.",
+			"print ist eine sichtbare Ausgabe, return eine Rückgabe zur Weiterverarbeitung. Wenn eine Funktion nur druckt, erhält die aufrufende Stelle dadurch noch kein Rechenergebnis. In dieser Werkstatt liefern Funktionen ohne return den Ersatzwert null; echtes JavaScript liefert undefined."
+		],
+		"model": [
+			"Funktion verdoppeln definieren",
+			"Eingabewert übergeben",
+			"Rückgabe + 1 ausgeben"
+		],
+		"task": "Die Funktion verdoppeln soll das Doppelte zurückgeben. Gib anschließend dieses Ergebnis plus 1 aus.",
+		"starter": "function verdoppeln(zahl) {\n  print(zahl * 2);\n}\nprint(verdoppeln(read()) + 1);",
+		"solution": "function verdoppeln(zahl) {\n  return zahl * 2;\n}\nprint(verdoppeln(read()) + 1);",
+		"hint": "Ersetze die Ausgabe in der Funktion durch eine Rückgabe.",
+		"tests": [
+			{
+				"inputs": [3],
+				"expected": ["7"]
+			},
+			{
+				"inputs": [0],
+				"expected": ["1"]
+			},
+			{
+				"inputs": [-4],
+				"expected": ["-7"]
+			}
+		],
+		"question": "Wie unterscheidet sich return von print?",
+		"options": [
+			"Beide verändern automatisch alle globalen Variablen.",
+			"return liefert an den Aufrufer; print zeigt eine Ausgabe.",
+			"return speichert immer eine Datei."
+		],
+		"correct": 1,
+		"explanation": "Rückgaben lassen sich im aufrufenden Programm weiterverwenden."
+	},
+	{
+		"id": "algo-syntax-semantik",
+		"stage": 3,
+		"title": "Richtig geschrieben ist noch nicht richtig gelöst",
+		"goal": "Unterscheide Syntaxfehler von falschem Verhalten.",
+		"paragraphs": [
+			"Syntax sind die Regeln, nach denen Quellcode aufgebaut ist. Eine fehlende Klammer kann verhindern, dass ein Programm überhaupt gelesen wird. Semantik ist die Bedeutung des Programms: Was tut es für bestimmte Eingaben?",
+			"Ein Programm kann syntaktisch korrekt sein und dennoch das falsche Ergebnis berechnen. Entwicklungsumgebungen helfen mit Hervorhebung, Fehlermeldungen und Debuggern. Diese Werkstatt zeigt Zeilennummern, konkrete Fehlermeldungen und eine Ablaufspur; sie ersetzt keine vollständige Entwicklungsumgebung oder einen Compiler."
+		],
+		"model": ["Zahl einlesen", "Mit 3 multiplizieren", "Ergebnis ausgeben"],
+		"task": "Behebe zuerst die fehlende Klammer und dann den Rechenfehler. Gesucht ist das Dreifache der Eingabe.",
+		"starter": "let zahl = read();\nprint(zahl + 3;",
+		"solution": "let zahl = read();\nprint(zahl * 3);",
+		"hint": "Schließe den Funktionsaufruf mit ) und prüfe die Rechenart.",
+		"tests": [
+			{
+				"inputs": [4],
+				"expected": ["12"]
+			},
+			{
+				"inputs": [0],
+				"expected": ["0"]
+			},
+			{
+				"inputs": [-2],
+				"expected": ["-6"]
+			}
+		],
+		"question": "Was ist ein Syntaxfehler?",
+		"options": [
+			"Ein Verstoß gegen die Schreibregeln der Sprache.",
+			"Jedes unerwartete Rechenergebnis.",
+			"Ein besonders langer Variablenname."
+		],
+		"correct": 0,
+		"explanation": "Syntaxfehler betreffen den Aufbau; auch korrekt aufgebauter Code kann fachlich falsch sein."
+	},
+	{
+		"id": "algo-debuggen",
+		"stage": 3,
+		"title": "Fehler mit der Ablaufspur eingrenzen",
+		"goal": "Vergleiche erwartete und tatsächliche Variablenwerte.",
+		"paragraphs": [
+			"Beim Debuggen formulierst du zuerst eine Erwartung: Welchen Wert sollte die Summe nach dem ersten Durchlauf haben? Dann prüfst du die tatsächlichen Werte. Der erste abweichende Schritt ist häufig hilfreicher als nur die falsche Endausgabe.",
+			"Die Ablaufspur dieser Werkstatt zeichnet die ersten 250 Zustände einer begrenzten Ausführung auf. Du kannst sie Schritt für Schritt wiedergeben und Zeilen als Haltepunkte markieren. Ein Haltepunkt stoppt hier die Wiedergabe der aufgezeichneten Spur; er ist kein Eingriff in eine laufende JavaScript-Engine."
+		],
+		"model": [
+			"Summe = 0 erwartet",
+			"Zahlen addieren",
+			"Ersten unerwarteten Zustand suchen"
+		],
+		"task": "Die Summe von 1 bis n ist falsch. Verwende die Spur und korrigiere den Startwert.",
+		"starter": "let n = read();\nlet summe = 1;\nfor (let i = 1; i <= n; i = i + 1) {\n  summe = summe + i;\n}\nprint(summe);",
+		"solution": "let n = read();\nlet summe = 0;\nfor (let i = 1; i <= n; i = i + 1) {\n  summe = summe + i;\n}\nprint(summe);",
+		"hint": "Bei n = 0 darf noch nichts zur Summe beigetragen haben.",
+		"tests": [
+			{
+				"inputs": [3],
+				"expected": ["6"]
+			},
+			{
+				"inputs": [0],
+				"expected": ["0"]
+			},
+			{
+				"inputs": [5],
+				"expected": ["15"]
+			}
+		],
+		"question": "Welche Frage hilft bei der Fehlersuche?",
+		"options": [
+			"Wie kann ich alle Variablen kürzer benennen?",
+			"Welcher erste Zustand weicht von meiner Erwartung ab?",
+			"Wie kann ich jeden Test entfernen?"
+		],
+		"correct": 1,
+		"explanation": "Eine konkrete Abweichung grenzt die Ursache ein."
+	},
+	{
+		"id": "algo-testen",
+		"stage": 3,
+		"title": "Mit Testfällen absichern",
+		"goal": "Prüfe Normalfälle, Grenzen und Sonderfälle.",
+		"paragraphs": [
+			"Ein bestandener Test zeigt, dass ein Programm bei einer bestimmten Eingabe das erwartete Ergebnis liefert. Er beweist nicht die Richtigkeit für alle Eingaben. Wähle deshalb normale Fälle, Grenzwerte und besondere Fälle wie eine leere Liste.",
+			"Die Werkstatt führt dieselbe Lösung mit mehreren vorgegebenen Eingaben aus. Jeder Test zeigt Erwartung und tatsächliche Ausgabe. Zum Abschluss entwirfst du eine Preisregel mit einer Funktion und testest den Rabattbeginn ausdrücklich. Die Aufgaben bestätigen Übungserfolge, keine vollständige Programmierkompetenz."
+		],
+		"model": [
+			"Preis einlesen",
+			"Ab 100: 10 abziehen",
+			"Endpreis zurückgeben und ausgeben"
+		],
+		"task": "Schreibe endpreis(preis): Ab 100 Euro gibt es genau 10 Euro Rabatt, sonst keinen. Gib den Rückgabewert aus.",
+		"starter": "function endpreis(preis) {\n  if (preis > 100) {\n    return preis - 10;\n  }\n  return preis;\n}\nprint(endpreis(read()));",
+		"solution": "function endpreis(preis) {\n  if (preis >= 100) {\n    return preis - 10;\n  }\n  return preis;\n}\nprint(endpreis(read()));",
+		"hint": "Prüfe 99, 100 und 101. Nur die Grenze unterscheidet > und >=.",
+		"tests": [
+			{
+				"inputs": [99],
+				"expected": ["99"]
+			},
+			{
+				"inputs": [100],
+				"expected": ["90"]
+			},
+			{
+				"inputs": [101],
+				"expected": ["91"]
+			},
+			{
+				"inputs": [0],
+				"expected": ["0"]
+			}
+		],
+		"question": "Was kann ein bestandener Test belegen?",
+		"options": [
+			"Dass alle denkbaren Eingaben richtig verarbeitet werden.",
+			"Dass das Programm keine Schleife enthält.",
+			"Dass die getestete Eingabe die erwartete Ausgabe liefert."
+		],
+		"correct": 2,
+		"explanation": "Tests liefern konkrete Belege, aber keinen allgemeinen Korrektheitsbeweis."
+	}
+]

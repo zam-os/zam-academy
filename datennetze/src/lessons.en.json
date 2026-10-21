@@ -1,0 +1,603 @@
+[
+	{
+		"id": "net-netzwerk",
+		"stage": 1,
+		"title": "More useful together",
+		"intro": "A network connects independent devices so they can exchange data and use shared services.",
+		"paragraphs": [
+			"A school library stores its catalogue on a server. Several computers query it. The browser is the client because it requests a service; the server program answers the request. Client and server describe the roles of programs, not necessarily different types of computer.",
+			"One device can have several roles at the same time: a laptop can request a web page while sharing a folder with another computer. In a peer-to-peer network, participants can both offer services and request them as peers.",
+			"Before building the network, establish its purpose. Which devices need to communicate? Which services do they need? Who should have access? Choose components and connections after answering these questions. Having a network connection does not itself grant access permission."
+		],
+		"example": "Four library computers use a shared catalogue. The server processes search requests; the clients display the results.",
+		"takeaway": "A role describes a task: requesting a service or providing it.",
+		"quiz": {
+			"question": "Which participant is the client when a web page is requested?",
+			"options": [
+				"The browser program requesting the page.",
+				"Any computer with a large hard drive.",
+				"The service delivering the page."
+			],
+			"correct": 0,
+			"feedback": "The browser starts the request. The size or shape of the computer does not determine its role."
+		},
+		"activity": {
+			"kind": "choice",
+			"prompt": "A laptop serves a file to computer A while loading a web page from B. Which statement fits?",
+			"options": [
+				"It has server and client roles at the same time.",
+				"It must first switch between two fixed device modes.",
+				"It is only a server because it uses a web page."
+			],
+			"correct": 0,
+			"feedback": "The role depends on the particular exchange being considered."
+		},
+		"optional": false
+	},
+	{
+		"id": "net-komponenten",
+		"stage": 1,
+		"title": "Switch, router or access point?",
+		"intro": "Each component has a different job. A home Wi-Fi router combines several of them.",
+		"paragraphs": [
+			"A switch connects devices within a local network. It learns which MAC address is reachable through each port and forwards Ethernet frames accordingly. It does not normally decide where to send a frame by reading a web address.",
+			"A router connects different IP networks. Its interfaces have addresses in the respective networks. It uses the destination IP address and a routing table to decide which interface should carry a packet onward.",
+			"An access point connects wireless devices to a local network. Wi-Fi is a way of accessing a network; it is not the same thing as the Internet. A modem or media termination device may also be needed for the connection to an Internet provider."
+		],
+		"example": "In the lab, the left-hand switch connects the library client to the router’s LAN interface. The router connects that LAN to the server network.",
+		"takeaway": "A switch connects locally, a router connects networks, and an access point provides wireless access.",
+		"quiz": {
+			"question": "Which component connects two different IP networks?",
+			"options": [
+				"A router.",
+				"A passive patch cable with no other equipment.",
+				"DNS name resolution on its own."
+			],
+			"correct": 0,
+			"feedback": "A router forwards IP packets between its networks."
+		},
+		"activity": {
+			"kind": "choice",
+			"prompt": "Twelve computers in one room need wired connections to one another. Which additional component fits?",
+			"options": [
+				"A switch with enough ports.",
+				"A DNS name can replace all the ports.",
+				"A Wi-Fi network name without an access point."
+			],
+			"correct": 0,
+			"feedback": "A switch brings the local wired connections together. Further components depend on the intended use."
+		},
+		"optional": false
+	},
+	{
+		"id": "net-medien",
+		"stage": 1,
+		"title": "Choosing the transmission medium",
+		"intro": "Copper, optical fibre and radio carry information in different ways.",
+		"paragraphs": [
+			"Copper cables carry electrical signals. With common twisted-pair Ethernet links, the achievable data rate depends on factors including cable category, length and equipment. A cable may be inconvenient for a moving laptop but easy to plan for a stationary computer.",
+			"Optical fibre carries light signals. It is useful for high data rates and long distances; electromagnetic interference does not affect the light path in the same way as a copper conductor. Suitable transmitters, receivers and clean connections are still necessary.",
+			"Wi-Fi uses radio. Mobility is an advantage, but shared airtime, distance, walls and interference affect the achievable throughput. The advertised maximum rate is therefore not a promise of the file-transfer speed available to each individual device."
+		],
+		"example": "Wi-Fi suits a tablet used around a classroom. Optical fibre may suit a fixed link between buildings. The choice depends on distance, cost and requirements.",
+		"takeaway": "Choose the medium to suit distance, mobility, performance and interference.",
+		"quiz": {
+			"question": "Which statement about Wi-Fi is correct?",
+			"options": [
+				"Several devices share the available airtime.",
+				"Each additional device automatically doubles the data rate.",
+				"Walls can never affect wireless connections."
+			],
+			"correct": 0,
+			"feedback": "Radio is a shared medium; conditions and usage affect throughput."
+		},
+		"activity": {
+			"kind": "choice",
+			"prompt": "A group works on tablets while moving around a room. What should be checked first?",
+			"options": [
+				"Wi-Fi coverage and simultaneous use.",
+				"Only the largest advertised data rate.",
+				"An individual public IP address for every tablet."
+			],
+			"correct": 0,
+			"feedback": "The environment and number of simultaneously active devices matter."
+		},
+		"optional": false
+	},
+	{
+		"id": "net-topologien",
+		"stage": 1,
+		"title": "Arranging the connections",
+		"intro": "A topology describes which participants are connected by which paths.",
+		"paragraphs": [
+			"In a star topology, each end device has a connection to a central component, often a switch. If one device’s cable fails, that device is usually affected. If the central switch fails, many participants may be affected.",
+			"A mesh provides additional paths. This can improve resilience, but suitable rules and equipment are needed to manage loops and competing paths. Simply plugging in more cables does not create reliable redundancy.",
+			"Distinguish the physical arrangement of cables from the logical paths used for communication. A diagram should show components, connections and network boundaries. It can then reveal which participants share a path involved in a fault."
+		],
+		"example": "If clients A and B fail together while other connections work, inspect the components they share. If only A fails, start with A’s cable and port.",
+		"takeaway": "A diagram makes shared points of failure visible.",
+		"quiz": {
+			"question": "What is a shared point of failure in a simple star network?",
+			"options": [
+				"The central switch.",
+				"Any file stored on a client.",
+				"Only the name of one browser."
+			],
+			"correct": 0,
+			"feedback": "The local connections come together at the switch."
+		},
+		"activity": {
+			"kind": "lab",
+			"prompt": "Open the cable challenge. Use the diagram to find the broken connection, then test again.",
+			"challenge": "cable"
+		},
+		"optional": false
+	},
+	{
+		"id": "net-datenrate",
+		"stage": 1,
+		"title": "Bits, bytes and bottlenecks",
+		"intro": "File size, link rate and actual throughput measure different things.",
+		"paragraphs": [
+			"A byte contains eight bits. A rate in Mbit/s counts millions of bits per second; a file of 1 MiB contains 1,048,576 bytes. Convert the units before using them in the same calculation.",
+			"The ideal transfer time is the data size in bits divided by the rate in bits per second. Protocol overhead, waiting and shared usage make real transfers take longer. The calculator uses an explicitly simplified utilisation factor.",
+			"Across a chain of connections, the slowest required segment limits sustained throughput. A gigabit LAN cannot make a much slower Internet link deliver a download faster. Small messages are also affected by latency: the delay before a response arrives."
+		],
+		"example": "10 MiB equals 83,886,080 bits. At 100 Mbit/s the ideal transfer takes about 0.84 s; at 80% usable rate it takes about 1.05 s.",
+		"takeaway": "First align the units; then divide data size by data rate.",
+		"quiz": {
+			"question": "How many bits are in one byte?",
+			"options": ["8", "10", "1024"],
+			"correct": 0,
+			"feedback": "Eight bits make one byte. MiB and Mbit also use different scaling."
+		},
+		"activity": {
+			"kind": "number",
+			"prompt": "A file contains exactly 80 million bits. What is its ideal transfer time at 20 Mbit/s?",
+			"answer": 4,
+			"unit": "s",
+			"feedback": "80 million bits ÷ 20 million bits per second = 4 seconds."
+		},
+		"optional": false
+	},
+	{
+		"id": "net-mac-ip",
+		"stage": 2,
+		"title": "Two addresses, two jobs",
+		"intro": "MAC addresses serve the local network link; IP addresses support delivery across networks.",
+		"paragraphs": [
+			"A MAC address identifies a network interface in the local Ethernet or Wi-Fi context. It is shown here as six hexadecimal pairs. Devices can have several interfaces, and MAC addresses are not necessarily permanent or unchangeable.",
+			"An IP address identifies an attachment to an IP network. A prefix specifies its network portion. In the simple routed model, a packet keeps the destination IP of the remote server; its next local recipient is initially the router.",
+			"For IPv4, a device commonly uses ARP to discover which MAC address belongs to the next local IP address. ARP does not resolve domain names. A new local frame is used for each subsequent network segment."
+		],
+		"example": "Destination IP: 203.0.113.20. Next local IP: 192.168.10.1. The Ethernet frame is addressed to the router’s LAN interface MAC address.",
+		"takeaway": "The destination of the whole journey differs from the next local step.",
+		"quiz": {
+			"question": "Which destination address remains that of the server in this simplified routed packet?",
+			"options": [
+				"The destination IP address.",
+				"The destination MAC of the first Ethernet frame.",
+				"The name of the attached cable."
+			],
+			"correct": 0,
+			"feedback": "Local frames change at network boundaries. NAT is deliberately excluded from this model."
+		},
+		"activity": {
+			"kind": "choice",
+			"prompt": "A client sends to a remote server. Which MAC address does it need first?",
+			"options": [
+				"The reachable router interface in its own LAN.",
+				"Necessarily the MAC address of the remote server.",
+				"The domain name written as a MAC address."
+			],
+			"correct": 0,
+			"feedback": "MAC delivery takes place in the current local segment."
+		},
+		"optional": false
+	},
+	{
+		"id": "net-ipv4",
+		"stage": 2,
+		"title": "Reading and validating IPv4",
+		"intro": "An IPv4 address has 32 bits, usually written as four decimal numbers.",
+		"paragraphs": [
+			"Each of the four numbers represents eight bits and must be between 0 and 255. 192.168.10.10 is a valid IPv4 address; 192.168.10.300 is not. The dots separate the four octets.",
+			"Not every syntactically valid address is suitable for a host. Some ranges and addresses are reserved. The network and broadcast addresses also depend on the prefix. Two interfaces in the same reachable network must not use the same host address.",
+			"The lab uses 192.168.10.0/24 as a private LAN and 203.0.113.0/24 as a reserved documentation network. The latter is an invented server network here, not a reachable public service. IPv6 is a separate topic with longer addresses."
+		],
+		"example": "192.168.10.20/24 is a suitable free host address in the lab LAN. Here, 192.168.10.0/24 identifies the network and 192.168.10.255/24 is its broadcast address.",
+		"takeaway": "Valid syntax is the first check; usability in the intended network is the second.",
+		"quiz": {
+			"question": "Which address has valid IPv4 syntax?",
+			"options": ["192.168.10.20", "192.168.10.300", "192.168.10"],
+			"correct": 0,
+			"feedback": "An IPv4 address needs four numbers between 0 and 255."
+		},
+		"activity": {
+			"kind": "choice",
+			"prompt": "Two computers in the same LAN both use 192.168.10.10. What should change?",
+			"options": [
+				"Give one a different free host address in the correct network.",
+				"Give them different browser names only.",
+				"Give the second one the same MAC entry as well."
+			],
+			"correct": 0,
+			"feedback": "Resolve an address conflict by assigning unique host addresses."
+		},
+		"optional": false
+	},
+	{
+		"id": "net-subnetze",
+		"stage": 2,
+		"title": "The prefix sets the boundary",
+		"intro": "A prefix specifies how many leading bits belong to the network.",
+		"paragraphs": [
+			"With /24, the first 24 of the 32 bits identify the network. 192.168.10.10 and 192.168.10.200 are then in the same network; 192.168.11.10 is not. With other prefixes, follow the bit boundary rather than always comparing the first three numbers.",
+			"A /26 splits a /24 range into four blocks of 64 addresses each. The block starting at 192.168.10.64 ends at 192.168.10.127. In an ordinary broadcast subnet, the first and last addresses are reserved, leaving 62 host addresses.",
+			"A smaller prefix number means a larger address block. An overly broad prefix can make a client look for a remote destination locally instead of using its gateway. /31 point-to-point links and /32 host routes are special cases; the host lab is limited to /1 through /30."
+		],
+		"example": "192.168.10.70/26: network 192.168.10.64, broadcast 192.168.10.127, ordinary host addresses .65 through .126.",
+		"takeaway": "Matching network bits mean local delivery; different network bits require a route.",
+		"quiz": {
+			"question": "How many ordinary host addresses does a /26 broadcast subnet have?",
+			"options": ["62", "64", "256"],
+			"correct": 0,
+			"feedback": "2 to the power of 6 gives 64 addresses; subtract the network and broadcast addresses."
+		},
+		"activity": {
+			"kind": "number",
+			"prompt": "An ordinary /27 subnet contains 32 addresses. How many are host addresses?",
+			"answer": 30,
+			"unit": "hosts",
+			"feedback": "32 minus the network and broadcast addresses leaves 30."
+		},
+		"optional": false
+	},
+	{
+		"id": "net-gateway",
+		"stage": 2,
+		"title": "Leaving the local network",
+		"intro": "A default gateway is the next router address used when no more specific route matches.",
+		"paragraphs": [
+			"A host first checks its routing information. It can deliver directly to a locally attached destination. For a remote destination, it needs a suitable route, often the default route through a router.",
+			"The gateway must itself be reachable. In this lab it is 192.168.10.1 in the client LAN. An arbitrary free host address does not work as a gateway unless an appropriate router is actually available there.",
+			"Communication needs a return path too. The lab web server uses 203.0.113.1 as its default gateway. A working outward route alone does not produce a response. NAT and full Internet routing tables are deliberately not modelled here."
+		],
+		"example": "Client .10 → gateway 192.168.10.1 → server 203.0.113.20. Reply: server → gateway 203.0.113.1 → client.",
+		"takeaway": "A gateway must be reachable and able to route; replies need routes too.",
+		"quiz": {
+			"question": "Which gateway address fits the lab LAN?",
+			"options": ["192.168.10.1", "203.0.113.20", "Any domain name."],
+			"correct": 0,
+			"feedback": "192.168.10.1 is the router interface directly reachable in the client LAN."
+		},
+		"activity": {
+			"kind": "lab",
+			"prompt": "Repair “The missing gateway”. Watch how far the first test gets.",
+			"challenge": "gateway"
+		},
+		"optional": false
+	},
+	{
+		"id": "net-dhcp",
+		"stage": 2,
+		"title": "Obtaining settings with DHCP",
+		"intro": "DHCP can simplify the configuration of many devices.",
+		"paragraphs": [
+			"A DHCP service assigns time-limited configurations called leases. These typically include a host address, prefix or subnet mask, default gateway and DNS server. DHCP and DNS are different services.",
+			"In a simplified exchange, the client first seeks an offer, requests the offered configuration and receives an acknowledgement. The sequence Discover, Offer, Request, Acknowledge is a useful model; communication across network boundaries requires additional support.",
+			"In this lab, the router offers a fixed teaching configuration. “Obtain DHCP lease” gives the client .10/24, gateway .1 and the DNS server. This requires a working local path. Automatic configuration cannot repair a broken cable."
+		],
+		"example": "Twelve laptops join a study session. Instead of entering every field twelve times, they obtain valid configurations from an established DHCP service.",
+		"takeaway": "DHCP supplies configuration; DNS resolves names.",
+		"quiz": {
+			"question": "Which setting can DHCP provide in addition to the host address?",
+			"options": [
+				"The DNS server address.",
+				"The content of every requested web page.",
+				"Every user’s password."
+			],
+			"correct": 0,
+			"feedback": "DHCP can provide several network settings together."
+		},
+		"activity": {
+			"kind": "choice",
+			"prompt": "A web request still fails after obtaining an address. Which conclusion is valid?",
+			"options": [
+				"Also check DNS, routing and the service.",
+				"A lease proves that every web page is reachable.",
+				"DHCP must now deliver the web page content."
+			],
+			"correct": 0,
+			"feedback": "A configuration is a starting point, not a complete end-to-end test."
+		},
+		"optional": false
+	},
+	{
+		"id": "net-dns",
+		"stage": 2,
+		"title": "Resolving names with DNS",
+		"intro": "A readable name saves us from remembering numbers. Delivery then uses addresses.",
+		"paragraphs": [
+			"The Domain Name System is a distributed naming system. For a web request, a resolver queries suitable DNS records. An A record associates a name with an IPv4 address; an AAAA record concerns IPv6.",
+			"DNS does not carry the web page. After receiving the answer, the client must still reach the returned address and communicate with the appropriate service. An outdated or incorrect record can therefore send the client to the wrong destination.",
+			"DNS answers can be cached for a limited time. This helps repeat requests, but outdated information may remain visible for a while. Our lab has one name and one A record; the hierarchy and cache are explained but not simulated."
+		],
+		"example": "bibliothek.schule.test → 203.0.113.20. .test is reserved for testing. Even this name lookup remains entirely simulated in the app.",
+		"takeaway": "DNS supplies the address; connecting to the web service comes afterward.",
+		"quiz": {
+			"question": "Name resolution succeeds. What has this actually proved?",
+			"options": [
+				"The resolver returned an address for the name.",
+				"The web page is guaranteed to be honest and reachable.",
+				"The web server has already delivered all the content."
+			],
+			"correct": 0,
+			"feedback": "Address resolution, routing, the service and trust need separate checks."
+		},
+		"activity": {
+			"kind": "lab",
+			"prompt": "In “Numbers work, names do not”, DNS returns the wrong address. Correct the record and test using the name.",
+			"challenge": "dns"
+		},
+		"optional": false
+	},
+	{
+		"id": "net-schichten",
+		"stage": 3,
+		"title": "Sharing the work across layers",
+		"intro": "A simplified layered model separates tasks that cooperate during communication.",
+		"paragraphs": [
+			"The application defines the service being used, such as HTTP for web resources. The transport layer connects the appropriate programs through ports and provides different features depending on the protocol. The Internet layer addresses and routes IP packets.",
+			"The network-access layer carries data across the current local segment using a medium. On sending, lower layers wrap the upper-layer data with their own information. This is called encapsulation; the receiver processes the layers again.",
+			"The four-layer model used here is a teaching model for TCP/IP. Other descriptions, such as the OSI model, place boundaries differently. A layer diagram helps explain and troubleshoot communication; it is not a photograph of the physical cable."
+		],
+		"example": "HTTP request → TCP data → IP packet → Ethernet frame. The destination processes these structures in the reverse order.",
+		"takeaway": "Each layer has its own job and uses the layer below it.",
+		"quiz": {
+			"question": "Which job belongs to the Internet layer in this model?",
+			"options": [
+				"Addressing and forwarding with IP.",
+				"Interpreting the meaning of an HTTP status code.",
+				"Physically plugging in a LAN cable."
+			],
+			"correct": 0,
+			"feedback": "IP connects networks; HTTP and the physical medium have other jobs."
+		},
+		"activity": {
+			"kind": "choice",
+			"prompt": "Order the sending structures from inside to outside.",
+			"options": [
+				"HTTP → TCP → IP → Ethernet",
+				"Ethernet → HTTP → TCP → IP",
+				"DNS → monitor → IP → keyboard"
+			],
+			"correct": 0,
+			"feedback": "Application data becomes the payload of the layers underneath."
+		},
+		"optional": false
+	},
+	{
+		"id": "net-ethernet",
+		"stage": 3,
+		"title": "A frame for the next segment",
+		"intro": "Ethernet is a family of rules for wired local networks.",
+		"paragraphs": [
+			"An Ethernet frame contains source and destination MAC addresses as well as payload data. A switch learns from source addresses which port leads to each participant. Unknown destinations require particular forwarding behaviour.",
+			"A router receives a local frame, processes the enclosed IP packet and creates a new local transmission on its next interface. A MAC address is therefore not a worldwide set of directions.",
+			"The physical medium, local framing and IP forwarding are different layers. A link indicator shows a local connection; it does not prove that the IP settings are correct or that an application is reachable."
+		],
+		"example": "In the client LAN, the Ethernet destination address belongs to the router. After forwarding, the frame in the server network has the appropriate destination address for that segment.",
+		"takeaway": "A local link is a prerequisite, not a complete success test.",
+		"quiz": {
+			"question": "A network cable is connected. What does that alone not establish?",
+			"options": [
+				"That DNS and the web service work.",
+				"That the device may have a local physical link.",
+				"That a transmission medium is present."
+			],
+			"correct": 0,
+			"feedback": "The remaining layers must work as well."
+		},
+		"activity": {
+			"kind": "choice",
+			"prompt": "Only one client cannot send data; the others on the same switch work. Where should you start?",
+			"options": [
+				"With that client’s cable, port and local configuration.",
+				"By replacing every DNS server worldwide.",
+				"By assuming that all servers have failed."
+			],
+			"correct": 0,
+			"feedback": "A fault affecting one participant suggests starting with its local connection."
+		},
+		"optional": false
+	},
+	{
+		"id": "net-tcp-udp",
+		"stage": 3,
+		"title": "TCP and UDP: different transport choices",
+		"intro": "TCP and UDP offer different services to applications.",
+		"paragraphs": [
+			"TCP establishes a connection and provides applications with an ordered byte stream. Lost data can be retransmitted; acknowledgements, flow control and congestion control support transport. TCP does not automatically prevent eavesdropping.",
+			"UDP sends datagrams with little additional connection setup. It does not itself guarantee delivery, preserve order or automatically retransmit. An application can add the mechanisms it needs. Low overhead is not a universal promise of higher speed.",
+			"A broken or unreachable connection can also make TCP fail. It does not guarantee a completely error-free application. HTTP/1.1 and HTTP/2 typically use TCP; HTTP/3 uses QUIC over UDP. The lab deliberately shows the common TCP-based path."
+		],
+		"example": "A file transfer needs all bytes in the right order. In a live audio call, a syllable delivered too late may be useless; the application must decide how to handle loss.",
+		"takeaway": "TCP orders and retransmits; UDP leaves such requirements to the application.",
+		"quiz": {
+			"question": "Which statement about TCP is correct?",
+			"options": [
+				"It provides an ordered byte stream but can fail when the connection fails.",
+				"It always guarantees completely error-free web content.",
+				"It encrypts all data without any additional protocol."
+			],
+			"correct": 0,
+			"feedback": "TCP is neither a content guarantee nor encryption; connections can break."
+		},
+		"activity": {
+			"kind": "choice",
+			"prompt": "Old position updates arrive late in a live game. What is a sensible assessment?",
+			"options": [
+				"The application must weigh retransmission against using the latest state.",
+				"Every message must be retransmitted indefinitely, regardless of age.",
+				"UDP makes packet loss technically impossible."
+			],
+			"correct": 0,
+			"feedback": "The application’s requirements determine the appropriate transport safeguards."
+		},
+		"optional": false
+	},
+	{
+		"id": "net-http",
+		"stage": 3,
+		"title": "The browser requests a resource",
+		"intro": "HTTP defines requests and responses between a client and a web service.",
+		"paragraphs": [
+			"In a typical request, a method such as GET identifies the desired action and a path identifies a resource. The server responds with a status code and, where appropriate, content. 200 indicates success for that request; 404 means that the requested resource was not found.",
+			"A page can request additional resources such as images and scripts. One visible page therefore does not necessarily correspond to one network response. The lab is limited to GET / and a small response.",
+			"HTTP alone does not encrypt the data. HTTPS protects HTTP with TLS. A successful HTTP request does not establish that the information is true or that the user should execute every delivered resource."
+		],
+		"example": "GET /catalogue → 200 OK with a result list. GET /missing → 404 Not Found. Both responses first establish that an HTTP service has answered.",
+		"takeaway": "HTTP describes service communication; TLS adds transport protection.",
+		"quiz": {
+			"question": "What does HTTP status 404 mean?",
+			"options": [
+				"The requested resource was not found.",
+				"The computer has no IP address at all.",
+				"The domain name must always be wrong."
+			],
+			"correct": 0,
+			"feedback": "An HTTP status code comes from a responding HTTP service; the problem is not necessarily DNS."
+		},
+		"activity": {
+			"kind": "choice",
+			"prompt": "DNS works and Ping works, but the web request is blocked. What should be checked next?",
+			"options": [
+				"Whether the appropriate TCP port and web service are reachable.",
+				"Whether DNS has stored the HTML file.",
+				"Whether the file needs a more attractive name."
+			],
+			"correct": 0,
+			"feedback": "The application and service port are separate parts of end-to-end communication."
+		},
+		"optional": false
+	},
+	{
+		"id": "net-smtp",
+		"stage": 3,
+		"title": "Mail is a different service",
+		"intro": "Different services need suitable application protocols.",
+		"paragraphs": [
+			"SMTP supports submitting and forwarding email. It connects mail programs and mail servers for sending. Retrieving a mailbox later often uses IMAP or POP3, which serve a different purpose from SMTP.",
+			"HTTP and SMTP both use lower-layer transport and network functions, but they describe different exchanges. An IP address alone does not determine the service: the protocol, port and running service matter too.",
+			"A mail service can use TLS. Protection along individual transport segments is not the same as end-to-end encryption of a message’s content. The web lab explicitly sends no real email."
+		],
+		"example": "A school mail server accepts a message through SMTP and forwards it. The recipient later reads the mailbox through IMAP, or through a web interface using HTTPS.",
+		"takeaway": "SMTP submits and forwards email.",
+		"quiz": {
+			"question": "Which protocol is intended for submitting and forwarding email?",
+			"options": ["SMTP", "DHCP", "ARP"],
+			"correct": 0,
+			"feedback": "DHCP configures hosts; ARP maps local IPv4 neighbours to MAC addresses."
+		},
+		"activity": {
+			"kind": "choice",
+			"prompt": "A mail server answers, but the website on the same machine does not. What follows?",
+			"options": [
+				"One reachable service does not prove that all other services are running.",
+				"Every web page must now work automatically.",
+				"SMTP must deliver the missing web page."
+			],
+			"correct": 0,
+			"feedback": "Services and ports need to be considered separately."
+		},
+		"optional": false
+	},
+	{
+		"id": "net-webreise",
+		"stage": 3,
+		"title": "The journey of a web request",
+		"intro": "The separate tasks now form one cooperating sequence.",
+		"paragraphs": [
+			"For bibliothek.schule.test, the client first queries its configured DNS server. It compares the returned destination address with its routing information. For a remote destination it uses the default gateway if no more specific route matches.",
+			"The local transmission reaches the router and IP packets are forwarded into the destination network. For this modelled web request, a TCP connection is established. HTTPS then negotiates TLS; HTTP data is exchanged inside the protected channel.",
+			"This simplified path assumes no existing caches or reusable connections. Real networks may reuse existing connections and skip some repeated work. The response still needs a return route before it can reach the application."
+		],
+		"example": "DNS → route and local frame → IP forwarding → TCP → TLS for HTTPS → HTTP response. The lab’s trace shows where a fault stops the journey.",
+		"takeaway": "Name resolution, routing, transport and the application build on one another.",
+		"quiz": {
+			"question": "In our HTTPS model, what comes after TCP and before HTTP data?",
+			"options": [
+				"TLS negotiation with certificate checking.",
+				"Manually reconnecting the cable for every character.",
+				"DHCP translating the finished HTML page."
+			],
+			"correct": 0,
+			"feedback": "TLS protects the established transport channel in this model."
+		},
+		"activity": {
+			"kind": "lab",
+			"prompt": "Test a repaired library connection. Use the trace to explain why DNS comes before the web service.",
+			"challenge": "gateway"
+		},
+		"optional": false
+	},
+	{
+		"id": "net-fehlersuche",
+		"stage": 4,
+		"title": "Observe, narrow down, retest",
+		"intro": "A useful fault hypothesis explains observations and can be tested.",
+		"paragraphs": [
+			"Start with the symptom. Is only one client affected or the entire LAN? Does the server IP work while the name fails? Does Ping work while HTTPS fails? These comparisons narrow down the relevant layer.",
+			"Then check selectively: links and components, valid unique host addresses, prefix and gateway, DNS record, return route, service port and TLS where appropriate. Change a plausible cause and repeat the same test.",
+			"A successful Ping establishes IP reachability here. It does not automatically validate a service or its contents. Real systems may block ICMP even when a web service works; our teaching network does not model that case."
+		],
+		"example": "Ping to 203.0.113.20 works. bibliothek.schule.test resolves to .99. Hypothesis: incorrect A record. Repair: .20. Retest: HTTP using the name.",
+		"takeaway": "An observation proves only what that particular test checks.",
+		"quiz": {
+			"question": "Ping works, but HTTPS fails because of a certificate. What is the next useful check?",
+			"options": [
+				"The certificate name and trust.",
+				"Replacing the reachable server IP with a random number.",
+				"The size of the browser window."
+			],
+			"correct": 0,
+			"feedback": "The lower steps succeeded; the TLS check identifies the specific failure."
+		},
+		"activity": {
+			"kind": "lab",
+			"prompt": "Repair “The reply never arrives”. Follow the test to see where a missing return route becomes visible.",
+			"challenge": "return"
+		},
+		"optional": false
+	},
+	{
+		"id": "net-https",
+		"stage": 4,
+		"title": "HTTPS: protected does not mean truthful",
+		"intro": "An extension to Datennetze I: investigate connection protection without claiming to cover all of Datennetze II.",
+		"paragraphs": [
+			"HTTPS carries HTTP over a channel protected by TLS. TLS is designed to provide transport confidentiality and integrity and to authenticate the contacted endpoint. Certificates and the expected hostname are among the things that need checking.",
+			"A valid certificate must match the requested name and be verified through a trusted path. A certificate warning is a reason to investigate. This lab models only “trusted” and “name matches”; it does not implement certificate chains or cryptography.",
+			"HTTPS does not establish the operator’s honesty or the factual accuracy of a page. Transport protection must also be distinguished from end-to-end protection of a message. Privacy, network security and their social implications require additional study."
+		],
+		"example": "bibliothek.schule.test has a certificate for that exact name. A certificate for anderer.schule.test does not match, even if both names could point to the same IP address.",
+		"takeaway": "TLS protects transport; you still need to assess the site’s claims and intentions.",
+		"quiz": {
+			"question": "What does HTTPS not guarantee?",
+			"options": [
+				"That every part of a website is true and harmless.",
+				"That TLS aims to protect transport from eavesdropping and tampering.",
+				"That the requested name is checked in TLS."
+			],
+			"correct": 0,
+			"feedback": "A protected channel is not an automatic content-quality check."
+		},
+		"activity": {
+			"kind": "lab",
+			"prompt": "Repair “A secure route to the library” and explicitly test HTTPS. An HTTP success does not fulfil this challenge.",
+			"challenge": "https"
+		},
+		"optional": true
+	}
+]

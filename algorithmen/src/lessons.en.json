@@ -1,0 +1,791 @@
+[
+	{
+		"id": "algo-eindeutigkeit",
+		"stage": 0,
+		"title": "From a request to an algorithm",
+		"goal": "Describe a process precisely enough for a computer to follow it.",
+		"paragraphs": [
+			"“Make the price cheaper” leaves the amount open. An algorithm describes steps with clear rules. For a discount, both the starting price and the calculation of the new price must be specified.",
+			"Unambiguity concerns the precise meaning of each step. Whether a process terminates for every permitted input is a separate question. Programs may intentionally keep running; an incorrect stopping condition can instead be a bug. Here we practise terminating calculations."
+		],
+		"model": [
+			"Read the price",
+			"Divide the price by two",
+			"Output the new price"
+		],
+		"task": "Read a price with read(). Output exactly half of it using print(). The workshop supplies the test inputs automatically.",
+		"starter": "let price = read();\nprint(price);",
+		"solution": "let price = read();\nprint(price / 2);",
+		"hint": "The / operator divides two numbers.",
+		"tests": [
+			{
+				"inputs": [12],
+				"expected": ["6"]
+			},
+			{
+				"inputs": [19],
+				"expected": ["9.5"]
+			},
+			{
+				"inputs": [0],
+				"expected": ["0"]
+			}
+		],
+		"question": "Which instruction is unambiguous?",
+		"options": [
+			"Make the price attractive.",
+			"Divide the input price by 2.",
+			"Choose any discount."
+		],
+		"correct": 1,
+		"explanation": "The second instruction specifies the calculation precisely."
+	},
+	{
+		"id": "algo-sequenz",
+		"stage": 0,
+		"title": "Order matters",
+		"goal": "Execute statements in their specified order.",
+		"paragraphs": [
+			"A sequence is a series of statements. A later statement sees the values left by earlier statements. For an order, the net price and shipping charge are added before the total is displayed.",
+			"Compare two calculation paths: “add 3, then double” gives 16 when the starting value is 5. “Double, then add 3” gives 13. A model helps you plan the order before writing code."
+		],
+		"model": [
+			"Read a value",
+			"Add 3",
+			"Double the result",
+			"Output the result"
+		],
+		"task": "Read a number, add 3, and then double the result. Output only the final result.",
+		"starter": "let value = read();\nvalue = value * 2;\nvalue = value + 3;\nprint(value);",
+		"solution": "let value = read();\nvalue = value + 3;\nvalue = value * 2;\nprint(value);",
+		"hint": "The + 3 update must come before the * 2 update.",
+		"tests": [
+			{
+				"inputs": [5],
+				"expected": ["16"]
+			},
+			{
+				"inputs": [0],
+				"expected": ["6"]
+			},
+			{
+				"inputs": [-2],
+				"expected": ["2"]
+			}
+		],
+		"question": "What is a sequence?",
+		"options": [
+			"Repetition until a stopping condition.",
+			"Selecting one of two paths.",
+			"A series of statements executed one after another."
+		],
+		"correct": 2,
+		"explanation": "Execution order is the defining feature of a sequence."
+	},
+	{
+		"id": "algo-modelle",
+		"stage": 0,
+		"title": "From a model to source code",
+		"goal": "Translate a structured description of a process into source code.",
+		"paragraphs": [
+			"A flowchart shows steps as symbols joined by arrows. In a structured diagram, blocks represent sequence, selection and repetition. Pseudocode expresses the same idea in a concise, language-like form.",
+			"None of these representations is automatically executable source code. The conditions and their order must stay the same in the model and the program. Our process strip is a simplified reading aid; draw complete structured diagrams or standard flowchart symbols as a further classroom activity."
+		],
+		"model": [
+			"Input: temperature",
+			"If temperature < 0: “frost”",
+			"Otherwise: “clear”"
+		],
+		"task": "Translate the process strip. Output the exact text frost for a temperature below 0; otherwise output clear. Use these literal output values for the tests.",
+		"starter": "let temperature = read();\nif (temperature < 0) {\n  print(\"clear\");\n} else {\n  print(\"frost\");\n}",
+		"solution": "let temperature = read();\nif (temperature < 0) {\n  print(\"frost\");\n} else {\n  print(\"clear\");\n}",
+		"hint": "Check both branches, especially the boundary at 0.",
+		"tests": [
+			{
+				"inputs": [-1],
+				"expected": ["frost"]
+			},
+			{
+				"inputs": [0],
+				"expected": ["clear"]
+			},
+			{
+				"inputs": [9],
+				"expected": ["clear"]
+			}
+		],
+		"question": "What must be preserved when translating a model?",
+		"options": [
+			"The colours of its boxes.",
+			"Conditions, execution order and intended behaviour.",
+			"The number of letters."
+		],
+		"correct": 1,
+		"explanation": "The model and its program must describe the same behaviour for the same inputs."
+	},
+	{
+		"id": "algo-variablen",
+		"stage": 0,
+		"title": "Giving a value a name",
+		"goal": "Declare a variable and update its value.",
+		"paragraphs": [
+			"A JavaScript variable binds a name to a value. let score = 4 creates a mutable binding. Later, score = score + 1 replaces the old value with a newly calculated value.",
+			"The equals sign is assignment here. It does not assert mathematical equality between the old and new score. JavaScript does not attach one fixed type to the name: it can later refer to a different value type. For readable programs, choose meaningful names and keep each variable’s purpose clear."
+		],
+		"model": [
+			"Read the initial score",
+			"Add 5 bonus points",
+			"Output the score"
+		],
+		"task": "Add exactly 5 bonus points to the score supplied as input.",
+		"starter": "let score = read();\nprint(score);",
+		"solution": "let score = read();\nscore = score + 5;\nprint(score);",
+		"hint": "Store the updated score in score.",
+		"tests": [
+			{
+				"inputs": [7],
+				"expected": ["12"]
+			},
+			{
+				"inputs": [0],
+				"expected": ["5"]
+			},
+			{
+				"inputs": [20],
+				"expected": ["25"]
+			}
+		],
+		"question": "What does x = x + 1 mean in a program?",
+		"options": [
+			"A mathematical equation with no solution.",
+			"x stays unchanged.",
+			"Increase the previous value by 1 and store it."
+		],
+		"correct": 2,
+		"explanation": "First calculate the right-hand side, then assign it to the variable."
+	},
+	{
+		"id": "algo-zahlen",
+		"stage": 0,
+		"title": "Numbers and text",
+		"goal": "Choose suitable values and arithmetic operations.",
+		"paragraphs": [
+			"JavaScript uses Number for numbers such as 3 and 3.5. Unlike some other languages, it does not use separate Integer and Float variable types for ordinary numbers. String represents text in quotation marks; Boolean represents true or false.",
+			"Adding numbers performs arithmetic. Adding text concatenates: \"Price: \" + 12 produces the text Price: 12. Our interpreter supports Number, String, Boolean, null and arrays. It rejects arithmetic with text where numbers are required instead of hiding automatic conversions."
+		],
+		"model": [
+			"Read the quantity",
+			"Multiply by the unit price 2.5",
+			"Output a number"
+		],
+		"task": "Calculate the total at 2.5 euros per item. Output a number, without an explanatory label.",
+		"starter": "let quantity = read();\nprint(quantity + 2.5);",
+		"solution": "let quantity = read();\nprint(quantity * 2.5);",
+		"hint": "Multiply the quantity by the fixed unit price.",
+		"tests": [
+			{
+				"inputs": [4],
+				"expected": ["10"]
+			},
+			{
+				"inputs": [3],
+				"expected": ["7.5"]
+			},
+			{
+				"inputs": [0],
+				"expected": ["0"]
+			}
+		],
+		"question": "What is the value type of \"12\"?",
+		"options": ["Number", "String", "Boolean"],
+		"correct": 1,
+		"explanation": "Quotation marks make 12 a text value."
+	},
+	{
+		"id": "algo-boolean",
+		"stage": 0,
+		"title": "True or false",
+		"goal": "Use a comparison to produce a Boolean value.",
+		"paragraphs": [
+			"A Boolean has exactly two values: true and false. Comparisons such as age >= 14 produce such a value. Programs can use these values to check rules rather than treating answers as freely written text.",
+			"A comparison is not an assignment. Use === for strict equality and !== for inequality. The workshop does not perform automatic type conversion in comparisons. When comparing numbers, test boundary cases such as the exact minimum age."
+		],
+		"model": [
+			"Read the age",
+			"Is the age at least 14?",
+			"Output the Boolean value"
+		],
+		"task": "Output true if the age supplied as input is at least 14; otherwise output false.",
+		"starter": "let age = read();\nprint(age > 14);",
+		"solution": "let age = read();\nprint(age >= 14);",
+		"hint": "“At least” includes the boundary value 14.",
+		"tests": [
+			{
+				"inputs": [13],
+				"expected": ["false"]
+			},
+			{
+				"inputs": [14],
+				"expected": ["true"]
+			},
+			{
+				"inputs": [18],
+				"expected": ["true"]
+			}
+		],
+		"question": "Which value type contains only true and false?",
+		"options": ["String", "Number", "Boolean"],
+		"correct": 2,
+		"explanation": "Boolean is the type used for truth values."
+	},
+	{
+		"id": "algo-bedingungen",
+		"stage": 1,
+		"title": "Two paths with if and else",
+		"goal": "Choose between alternatives using a condition.",
+		"paragraphs": [
+			"A conditional branch executes a path depending on a condition. With if, the first block runs when the condition is true. An attached else describes the other case.",
+			"Curly brackets mark the statements belonging together. Exactly one of the two blocks in an if-else pair runs for each decision. Plan tests on both sides of the condition and exactly at the boundary."
+		],
+		"model": [
+			"Read the score",
+			"At least 10: “passed”",
+			"Otherwise: “practise”"
+		],
+		"task": "For a score of at least 10, output passed; otherwise output practise. Keep these exact text values in your code.",
+		"starter": "let score = read();\nif (score > 10) {\n  print(\"passed\");\n} else {\n  print(\"practise\");\n}",
+		"solution": "let score = read();\nif (score >= 10) {\n  print(\"passed\");\n} else {\n  print(\"practise\");\n}",
+		"hint": "The test with exactly 10 points checks the important boundary.",
+		"tests": [
+			{
+				"inputs": [9],
+				"expected": ["practise"]
+			},
+			{
+				"inputs": [10],
+				"expected": ["passed"]
+			},
+			{
+				"inputs": [15],
+				"expected": ["passed"]
+			}
+		],
+		"question": "How many branches of an if-else pair run for one decision?",
+		"options": ["Exactly one.", "Always both.", "Always neither."],
+		"correct": 0,
+		"explanation": "The condition selects between the two paths."
+	},
+	{
+		"id": "algo-logik",
+		"stage": 1,
+		"title": "Combining conditions",
+		"goal": "Combine two conditions using and or or.",
+		"paragraphs": [
+			"The && operator combines conditions with “and”: both must be true. With ||, at least one true condition is sufficient. ! reverses a Boolean value.",
+			"For example, an entry card may work only if it has sufficient credit and is activated. The right side of && is not evaluated if the left side is already false. With ||, the right side is skipped when the left side is already true."
+		],
+		"model": [
+			"Read the age",
+			"Is it between 12 and 16, inclusive?",
+			"Output the Boolean value"
+		],
+		"task": "Output true when the age is at least 12 and at most 16.",
+		"starter": "let age = read();\nprint(age >= 12 || age <= 16);",
+		"solution": "let age = read();\nprint(age >= 12 && age <= 16);",
+		"hint": "A bounded interval requires both conditions to hold together.",
+		"tests": [
+			{
+				"inputs": [11],
+				"expected": ["false"]
+			},
+			{
+				"inputs": [12],
+				"expected": ["true"]
+			},
+			{
+				"inputs": [16],
+				"expected": ["true"]
+			},
+			{
+				"inputs": [17],
+				"expected": ["false"]
+			}
+		],
+		"question": "When is a && b true if both operands are Boolean values?",
+		"options": [
+			"When at least one is true.",
+			"When both are true.",
+			"When both are false."
+		],
+		"correct": 1,
+		"explanation": "With and, both conditions must be satisfied."
+	},
+	{
+		"id": "algo-while",
+		"stage": 1,
+		"title": "Repeating with while",
+		"goal": "Control repetition using a condition.",
+		"paragraphs": [
+			"A while loop checks its condition before every iteration. If the condition is false at the start, the body does not run at all. This differs from a do-while loop, which tests at the end.",
+			"For a calculation intended to end, the body must help make the condition false eventually. A countdown decreases its counter. If the counter stays unchanged, the workshop reports a possible loop error after a fixed step limit."
+		],
+		"model": [
+			"Read the counter",
+			"While counter > 0: output it and subtract 1",
+			"Finish"
+		],
+		"task": "Count down from the input value to 1. For an input of 0, there must be no output.",
+		"starter": "let counter = read();\nwhile (counter > 0) {\n  print(counter);\n}",
+		"solution": "let counter = read();\nwhile (counter > 0) {\n  print(counter);\n  counter = counter - 1;\n}",
+		"hint": "Update the counter inside the loop.",
+		"tests": [
+			{
+				"inputs": [3],
+				"expected": ["3", "2", "1"]
+			},
+			{
+				"inputs": [1],
+				"expected": ["1"]
+			},
+			{
+				"inputs": [0],
+				"expected": []
+			}
+		],
+		"question": "How often does a while loop run if its condition is false from the start?",
+		"options": ["Once.", "Forever.", "Not at all."],
+		"correct": 2,
+		"explanation": "The condition is checked before the first iteration."
+	},
+	{
+		"id": "algo-for",
+		"stage": 1,
+		"title": "Counting with for",
+		"goal": "Combine an initial value, a condition and a counter update.",
+		"paragraphs": [
+			"The counting form of for used here places initialisation, a condition and an update in the loop header. for (let i = 0; i < 3; i = i + 1) executes the body with i = 0, 1 and 2.",
+			"Initialisation runs once. The condition is checked before each iteration. The update follows the body. This form is useful when a counting range is known; JavaScript also has other for forms that this workshop does not cover."
+		],
+		"model": [
+			"Set the total to 0",
+			"For each i from 1 to n: add i to the total",
+			"Output the total"
+		],
+		"task": "Calculate the sum of the numbers from 1 up to the input limit n, inclusive. For n = 0, the total is 0.",
+		"starter": "let n = read();\nlet total = 0;\nfor (let i = 1; i < n; i = i + 1) {\n  total = total + i;\n}\nprint(total);",
+		"solution": "let n = read();\nlet total = 0;\nfor (let i = 1; i <= n; i = i + 1) {\n  total = total + i;\n}\nprint(total);",
+		"hint": "The last number n must still be included.",
+		"tests": [
+			{
+				"inputs": [4],
+				"expected": ["10"]
+			},
+			{
+				"inputs": [1],
+				"expected": ["1"]
+			},
+			{
+				"inputs": [0],
+				"expected": ["0"]
+			}
+		],
+		"question": "When does the update in a counting for loop run?",
+		"options": [
+			"After the loop body.",
+			"Only once before the first condition check.",
+			"Before the variable declaration."
+		],
+		"correct": 0,
+		"explanation": "The update prepares the next condition check."
+	},
+	{
+		"id": "algo-do-while",
+		"stage": 1,
+		"title": "Act first, then check",
+		"goal": "Distinguish pre-test and post-test loops.",
+		"paragraphs": [
+			"A do-while loop executes its body before checking the condition. It therefore runs at least once. This can fit a task where an input must first be processed before deciding whether to repeat.",
+			"The while (...) condition still means “keep running while true”. Do not confuse it with “stop when true”. In JavaScript, a semicolon follows the do-while construct."
+		],
+		"model": [
+			"Read the counter",
+			"Output it and subtract 1",
+			"Then check: counter > 0?"
+		],
+		"task": "Count down using do-while. With a starting value of 0, output 0 exactly once.",
+		"starter": "let n = read();\nwhile (n > 0) {\n  print(n);\n  n = n - 1;\n}",
+		"solution": "let n = read();\ndo {\n  print(n);\n  n = n - 1;\n} while (n > 0);",
+		"hint": "Place the body after do and the condition after the body.",
+		"tests": [
+			{
+				"inputs": [3],
+				"expected": ["3", "2", "1"]
+			},
+			{
+				"inputs": [0],
+				"expected": ["0"]
+			},
+			{
+				"inputs": [1],
+				"expected": ["1"]
+			}
+		],
+		"question": "What is guaranteed about do-while, regardless of the initial condition?",
+		"options": [
+			"The body never runs.",
+			"The body runs at least once.",
+			"The body runs exactly twice."
+		],
+		"correct": 1,
+		"explanation": "The first condition check happens after the body."
+	},
+	{
+		"id": "algo-kontrollstrukturen",
+		"stage": 1,
+		"title": "Choosing a control structure",
+		"goal": "Explain when to choose sequence, selection or repetition.",
+		"paragraphs": [
+			"A sequence executes steps in order. A branch chooses a path using a condition. Loops repeat a body. The counting for form combines initialisation, checking and updating; while checks before the body, and do-while checks after it.",
+			"A suitable structure makes the intention clear. A counting loop fits visiting all readings in a fixed list. A while loop may suit a task with an unknown number of repetitions. Whether the first iteration is needed even before the condition holds helps you choose between pre-test and post-test loops."
+		],
+		"model": [
+			"Read the limit n",
+			"For each number from 1 to n: is it even?",
+			"If it is even, output it"
+		],
+		"task": "Output all even numbers from 1 up to n, inclusive. Combine a counting loop with a conditional branch.",
+		"starter": "let n = read();\nfor (let i = 1; i <= n; i = i + 1) {\n  print(i);\n}",
+		"solution": "let n = read();\nfor (let i = 1; i <= n; i = i + 1) {\n  if (i % 2 === 0) {\n    print(i);\n  }\n}",
+		"hint": "The remainder operator % tells you whether dividing by 2 leaves a remainder.",
+		"tests": [
+			{
+				"inputs": [6],
+				"expected": ["2", "4", "6"]
+			},
+			{
+				"inputs": [3],
+				"expected": ["2"]
+			},
+			{
+				"inputs": [0],
+				"expected": []
+			}
+		],
+		"question": "Which structure fits selecting the even numbers from a range?",
+		"options": [
+			"Only a comment.",
+			"Only a variable name.",
+			"Repetition containing a conditional branch."
+		],
+		"correct": 2,
+		"explanation": "The loop visits the numbers; the branch filters them."
+	},
+	{
+		"id": "algo-felder",
+		"stage": 2,
+		"title": "Several values in an array",
+		"goal": "Read individual elements using their indices.",
+		"paragraphs": [
+			"An array stores values in an ordered sequence. let values = [4, 7, 2] creates three elements. Indices start at 0: values[0] is 4 and values[2] is 2. values.length gives the count, 3.",
+			"Index 3 would already be out of bounds for three elements. The workshop explicitly reports such accesses as errors. Real JavaScript allows more possibilities here; in these exercises we deliberately use existing elements only."
+		],
+		"model": [
+			"Read an array",
+			"Find its first and last elements",
+			"Output their sum"
+		],
+		"task": "Output the sum of the first and last elements of the input array. The array is never empty.",
+		"starter": "let values = read();\nprint(values[0] + values[1]);",
+		"solution": "let values = read();\nprint(values[0] + values[values.length - 1]);",
+		"hint": "The last index is the length minus 1.",
+		"tests": [
+			{
+				"inputs": [[4, 7, 2]],
+				"expected": ["6"]
+			},
+			{
+				"inputs": [[8]],
+				"expected": ["16"]
+			},
+			{
+				"inputs": [[1, 2, 3, 4]],
+				"expected": ["5"]
+			}
+		],
+		"question": "Which index identifies the first array element?",
+		"options": ["0", "1", "The array length"],
+		"correct": 0,
+		"explanation": "A JavaScript array begins at index 0."
+	},
+	{
+		"id": "algo-felder-schleife",
+		"stage": 2,
+		"title": "Traversing an array",
+		"goal": "Connect an index, an array length and a loop.",
+		"paragraphs": [
+			"A counting loop can visit every element of an array. It starts at index 0 and continues while i < values.length is true. This visits each valid index exactly once.",
+			"An accumulator holds an intermediate result. For a sum, it starts at 0. After each iteration, it contains the sum of the values visited so far. For an empty array, it remains 0."
+		],
+		"model": [
+			"Set the total to 0",
+			"For each valid index: add the element",
+			"Output the total"
+		],
+		"task": "Calculate the sum of all numbers in the input array. The array may also be empty.",
+		"starter": "let values = read();\nlet total = 0;\nfor (let i = 0; i <= values.length; i = i + 1) {\n  total = total + values[i];\n}\nprint(total);",
+		"solution": "let values = read();\nlet total = 0;\nfor (let i = 0; i < values.length; i = i + 1) {\n  total = total + values[i];\n}\nprint(total);",
+		"hint": "The index must stay smaller than the array length.",
+		"tests": [
+			{
+				"inputs": [[4, 7, 2]],
+				"expected": ["13"]
+			},
+			{
+				"inputs": [[]],
+				"expected": ["0"]
+			},
+			{
+				"inputs": [[-1, 3]],
+				"expected": ["2"]
+			}
+		],
+		"question": "Which loop condition fits a starting index of 0?",
+		"options": [
+			"i <= values.length",
+			"i < values.length",
+			"i === values.length"
+		],
+		"correct": 1,
+		"explanation": "The array length itself is not a valid index."
+	},
+	{
+		"id": "algo-funktionen",
+		"stage": 2,
+		"title": "Giving a task a name",
+		"goal": "Define a reusable function.",
+		"paragraphs": [
+			"A function groups a coherent task under one name. Its definition describes the behaviour; calling it executes that behaviour. A definition that has not been called produces no output.",
+			"A useful name describes the task, such as greet or calculatePrice. Functions avoid copying the same series of statements. Our interpreter requires a definition before its first call and supports functions only at the top level of the program."
+		],
+		"model": ["Define the function greet", "Call the function twice"],
+		"task": "Define greet so that it outputs the exact text Hello. Call greet exactly twice.",
+		"starter": "function greet() {\n  print(\"Hello\");\n}\ngreet();",
+		"solution": "function greet() {\n  print(\"Hello\");\n}\ngreet();\ngreet();",
+		"hint": "A function call uses the function name followed by parentheses.",
+		"tests": [
+			{
+				"inputs": [],
+				"expected": ["Hello", "Hello"]
+			}
+		],
+		"question": "When does a function body run?",
+		"options": [
+			"Whenever its name is read.",
+			"Only when the file is saved.",
+			"When the function is called."
+		],
+		"correct": 2,
+		"explanation": "A definition and a call have different purposes."
+	},
+	{
+		"id": "algo-parameter",
+		"stage": 2,
+		"title": "Passing values to a function",
+		"goal": "Distinguish a parameter from an argument.",
+		"paragraphs": [
+			"Parameters are the names in a function definition. Arguments are the actual values in a call. With function show(name), the call show(\"Mia\") supplies the argument Mia through the parameter name.",
+			"Each call has its own local parameter bindings. Another call can use other values. In the workshop, the number of supplied values must match the parameter list; missing or extra arguments produce helpful errors."
+		],
+		"model": [
+			"Define a function with a parameter",
+			"Read two names",
+			"Call the function for each name"
+		],
+		"task": "The function greet should output Hello followed by a space and the supplied name. Read two names and call it for both. Keep the literal greeting Hello for the tests.",
+		"starter": "function greet(name) {\n  print(\"Hello Mia\");\n}\ngreet(read());\ngreet(read());",
+		"solution": "function greet(name) {\n  print(\"Hello \" + name);\n}\ngreet(read());\ngreet(read());",
+		"hint": "Concatenate the fixed greeting with the parameter name.",
+		"tests": [
+			{
+				"inputs": ["Mia", "Ben"],
+				"expected": ["Hello Mia", "Hello Ben"]
+			},
+			{
+				"inputs": ["Ava", "Noah"],
+				"expected": ["Hello Ava", "Hello Noah"]
+			}
+		],
+		"question": "What is the argument in greet(\"Mia\")?",
+		"options": [
+			"The actual value \"Mia\".",
+			"The word function.",
+			"The opening parenthesis."
+		],
+		"correct": 0,
+		"explanation": "The argument provides the value for the parameter."
+	},
+	{
+		"id": "algo-rueckgabe",
+		"stage": 2,
+		"title": "Working with returned values",
+		"goal": "Return a value using return.",
+		"paragraphs": [
+			"A return statement supplies a value to the call site. return price * 2 ends the current function call and returns the result. The calling code can store it, calculate with it or display it.",
+			"print creates visible output; return supplies a result for further use. A function that only prints does not thereby provide a numeric result to its caller. In this workshop a function without return supplies the placeholder null; real JavaScript supplies undefined."
+		],
+		"model": [
+			"Define the function doubleValue",
+			"Pass in the input value",
+			"Output the returned value plus 1"
+		],
+		"task": "The function doubleValue should return twice its argument. Then output this result plus 1.",
+		"starter": "function doubleValue(number) {\n  print(number * 2);\n}\nprint(doubleValue(read()) + 1);",
+		"solution": "function doubleValue(number) {\n  return number * 2;\n}\nprint(doubleValue(read()) + 1);",
+		"hint": "Replace the print statement inside the function with a return statement.",
+		"tests": [
+			{
+				"inputs": [3],
+				"expected": ["7"]
+			},
+			{
+				"inputs": [0],
+				"expected": ["1"]
+			},
+			{
+				"inputs": [-4],
+				"expected": ["-7"]
+			}
+		],
+		"question": "How does return differ from print?",
+		"options": [
+			"Both automatically change every global variable.",
+			"return supplies the caller with a value; print displays output.",
+			"return always saves a file."
+		],
+		"correct": 1,
+		"explanation": "Returned values can be used by the calling program."
+	},
+	{
+		"id": "algo-syntax-semantik",
+		"stage": 3,
+		"title": "Correct syntax is not enough",
+		"goal": "Distinguish syntax errors from incorrect behaviour.",
+		"paragraphs": [
+			"Syntax is the set of rules for writing source code. A missing parenthesis can stop a program from being read at all. Semantics is its meaning: what does it do for a given input?",
+			"A syntactically valid program can still calculate the wrong result. Development environments help with highlighting, error messages and debuggers. This workshop provides source line references, specific messages and a trace; it does not replace a full development environment or compiler."
+		],
+		"model": ["Read a number", "Multiply it by 3", "Output the result"],
+		"task": "First fix the missing parenthesis, then fix the calculation. The result should be three times the input.",
+		"starter": "let number = read();\nprint(number + 3;",
+		"solution": "let number = read();\nprint(number * 3);",
+		"hint": "Close the call with ) and check which arithmetic operator you need.",
+		"tests": [
+			{
+				"inputs": [4],
+				"expected": ["12"]
+			},
+			{
+				"inputs": [0],
+				"expected": ["0"]
+			},
+			{
+				"inputs": [-2],
+				"expected": ["-6"]
+			}
+		],
+		"question": "What is a syntax error?",
+		"options": [
+			"Breaking the language’s rules for writing code.",
+			"Every unexpected calculation result.",
+			"An unusually long variable name."
+		],
+		"correct": 0,
+		"explanation": "Syntax errors concern structure; correctly structured code can still solve the wrong problem."
+	},
+	{
+		"id": "algo-debuggen",
+		"stage": 3,
+		"title": "Finding bugs with a trace",
+		"goal": "Compare expected and actual variable values.",
+		"paragraphs": [
+			"Start debugging by stating an expectation: what should the total be after the first iteration? Then check the actual values. The first step that differs from your expectation is often more useful than the final incorrect output alone.",
+			"The workshop records the first 250 states of a bounded execution. Replay them one step at a time and mark lines as breakpoints. A breakpoint pauses playback of the recorded trace; it does not interrupt a live JavaScript engine."
+		],
+		"model": [
+			"Expect the total to start at 0",
+			"Add the numbers",
+			"Find the first unexpected state"
+		],
+		"task": "The sum from 1 to n is wrong. Use the trace to inspect it and correct the initial value.",
+		"starter": "let n = read();\nlet total = 1;\nfor (let i = 1; i <= n; i = i + 1) {\n  total = total + i;\n}\nprint(total);",
+		"solution": "let n = read();\nlet total = 0;\nfor (let i = 1; i <= n; i = i + 1) {\n  total = total + i;\n}\nprint(total);",
+		"hint": "With n = 0, no values should have contributed to the total yet.",
+		"tests": [
+			{
+				"inputs": [3],
+				"expected": ["6"]
+			},
+			{
+				"inputs": [0],
+				"expected": ["0"]
+			},
+			{
+				"inputs": [5],
+				"expected": ["15"]
+			}
+		],
+		"question": "Which question helps you locate a bug?",
+		"options": [
+			"How can I shorten every variable name?",
+			"Which is the first state that differs from my expectation?",
+			"How can I remove every test?"
+		],
+		"correct": 1,
+		"explanation": "A specific discrepancy helps narrow down the cause."
+	},
+	{
+		"id": "algo-testen",
+		"stage": 3,
+		"title": "Checking with test cases",
+		"goal": "Test normal cases, boundaries and special cases.",
+		"paragraphs": [
+			"A passing test shows that a particular input produced the expected output. It does not prove correctness for every input. Choose normal cases, boundary values and special cases such as an empty list.",
+			"The workshop runs the same solution with several specified inputs. Each test shows the expected and actual output. Finish by writing a pricing rule as a function and explicitly testing the start of a discount. These tasks demonstrate practice, not complete programming competence."
+		],
+		"model": [
+			"Read the price",
+			"From 100 upwards: subtract 10",
+			"Return and output the final price"
+		],
+		"task": "Write finalPrice(price): prices of 100 euros or more receive exactly 10 euros off; lower prices receive no discount. Output the return value.",
+		"starter": "function finalPrice(price) {\n  if (price > 100) {\n    return price - 10;\n  }\n  return price;\n}\nprint(finalPrice(read()));",
+		"solution": "function finalPrice(price) {\n  if (price >= 100) {\n    return price - 10;\n  }\n  return price;\n}\nprint(finalPrice(read()));",
+		"hint": "Test 99, 100 and 101. Only the boundary distinguishes > from >=.",
+		"tests": [
+			{
+				"inputs": [99],
+				"expected": ["99"]
+			},
+			{
+				"inputs": [100],
+				"expected": ["90"]
+			},
+			{
+				"inputs": [101],
+				"expected": ["91"]
+			},
+			{
+				"inputs": [0],
+				"expected": ["0"]
+			}
+		],
+		"question": "What can a passing test demonstrate?",
+		"options": [
+			"That every possible input is processed correctly.",
+			"That the program contains no loops.",
+			"That the tested input produces the expected output."
+		],
+		"correct": 2,
+		"explanation": "Tests provide specific evidence, not a general proof of correctness."
+	}
+]

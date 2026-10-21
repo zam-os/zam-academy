@@ -1,0 +1,104 @@
+{
+	"schema": 1,
+	"curriculum": "https://www.lehrplanplus.bayern.de/fachlehrplan/realschule/9/it",
+	"checked": "2026-10-21",
+	"school_type": "realschule",
+	"subject": "it",
+	"module": "2.6.1",
+	"hours": 14,
+	"grade_scope": "Modularer Aufbauunterricht, keine feste Jahrgangsstufe. Die Schule legt den Zeitpunkt fest. Die URL mit /9/ ist eine Ansicht des jahrgangsübergreifenden IT-Lehrplans.",
+	"competencies": [
+		{
+			"focus": "Algorithmische Grundbausteine und Notationsformen für beschreibbare Abläufe auswählen und modellhaft strukturieren",
+			"lessons": [
+				"algo-eindeutigkeit",
+				"algo-sequenz",
+				"algo-modelle",
+				"algo-bedingungen",
+				"algo-while",
+				"algo-for",
+				"algo-do-while",
+				"algo-kontrollstrukturen"
+			],
+			"evidence": "Ablaufstreifen lesen und in ausführbaren Code übertragen; verschiedene Kontrollstrukturen praktisch kombinieren. Vollständige genormte Diagramme ergänzend zeichnen."
+		},
+		{
+			"focus": "Auf Basis zuvor erstellter Modelle Quellcode in einer Entwicklungsumgebung schreiben",
+			"lessons": [
+				"algo-modelle",
+				"algo-sequenz",
+				"algo-kontrollstrukturen",
+				"algo-syntax-semantik"
+			],
+			"evidence": "Jede Lektion verbindet ein Ablaufmodell, einen bearbeitbaren Quelltext und ausführbare Ein-/Ausgabetests."
+		},
+		{
+			"focus": "Variablen, Datentypen, Funktionen und Kommentare für übersichtlichen, überprüfbaren Programmcode nutzen",
+			"lessons": [
+				"algo-variablen",
+				"algo-zahlen",
+				"algo-boolean",
+				"algo-logik",
+				"algo-felder",
+				"algo-felder-schleife",
+				"algo-funktionen",
+				"algo-parameter",
+				"algo-rueckgabe"
+			],
+			"evidence": "Textuelle Programme mit Number, String, Boolean, Feldern sowie Funktionen, Parametern und Rückgaben. Kommentarformen werden in der Syntaxhilfe gezeigt und vom Interpreter ausgeführt; aussagekräftige Namen werden erklärt."
+		},
+		{
+			"focus": "Programme überprüfen, Fehler finden und beheben",
+			"lessons": [
+				"algo-syntax-semantik",
+				"algo-debuggen",
+				"algo-testen",
+				"algo-while",
+				"algo-felder-schleife"
+			],
+			"evidence": "Gezielte Syntax-, Logik-, Abbruch- und Indexfehler korrigieren; mehrere Testfälle mit erwarteter und tatsächlicher Ausgabe; Variablenzustände und zeilenbezogene Haltepunkte in der Spurwiedergabe."
+		},
+		{
+			"focus": "Aufgaben und Funktionsweise einer Entwicklungsumgebung wie Syntaxprüfung, Ausführung und Debugging einordnen",
+			"lessons": ["algo-syntax-semantik", "algo-debuggen"],
+			"evidence": "Werkstatt ordnet Fehler Zeilen zu, führt Code aus und zeichnet Zustände auf. Compiler und Syntaxhervorhebung werden fachlich eingeordnet, hier jedoch nicht als vollständige IDE nachgebildet."
+		}
+	],
+	"language": {
+		"name": "Begrenzter JavaScript-Ausschnitt mit Werkstattfunktionen read() und print()",
+		"primary_source": "https://tc39.es/ecma262/",
+		"supported": [
+			"let",
+			"Number, String, Boolean, null",
+			"Felder und Indexzugriff, length",
+			"Arithmetik und strikte Vergleiche",
+			"if/else, while, do-while, for-Zählschleife",
+			"Funktionen auf Programmebene, Parameter, return",
+			"Kommentare // und /* */"
+		],
+		"intentional_differences": [
+			"read() und print() sind Hilfen der Werkstatt, kein JavaScript-Standard.",
+			"Pflicht-Semikolon statt automatischer Semikolonergänzung.",
+			"Nur explizite numerische Operationen, keine implizite Konvertierung von Text in Zahlen; == und != werden mit Hinweis auf === und !== abgelehnt.",
+			"Ungültige Feldindizes sind Fehler; Felder wachsen nicht durch Zuweisung außerhalb ihrer Länge.",
+			"Funktionen vor dem Aufruf definieren, nur auf oberster Programmebene, exakte Argumentzahl.",
+			"Funktionen ohne Rückgabe liefern hier null statt undefined; Lernaufgaben verwenden explizite Rückgaben."
+		]
+	},
+	"limits": [
+		"Das Paket ist keine vollständige IT-Fachabdeckung und keine vollständige JavaScript-Referenz.",
+		"Die Lernaufgaben nutzen vereinfachte Ablaufstreifen; das eigenständige Erstellen vollständiger Struktogramme und Programmablaufpläne bleibt eine ergänzende Unterrichtsleistung.",
+		"Syntaxhervorhebung und Kompilierung werden eingeordnet. Der eigene Parser interpretiert den Code; die Oberfläche ist keine vollständige Entwicklungsumgebung.",
+		"Ein Haltepunkt stoppt die Wiedergabe der aufgezeichneten Spur, keine laufende JavaScript-Engine.",
+		"20.000 Quelltextzeichen, 1.200 Rechenschritte, 20 verschachtelte Aufrufe, 100 Feldeinträge, Tiefe 10, höchstens 1.000 expandierte Wertknoten pro Zustand, maximal 100 Ausgaben, 250 Spurzustände und 30.000 Wertknoten in der Gesamtspur. Diese Grenzen schützen die lokale Übung, nicht reale Sprachregeln.",
+		"Erfolgreiche Ein-/Ausgabetests bestätigen nur die geprüften Fälle; sie beweisen keine allgemeine Korrektheit oder vollständige individuelle Programmierkompetenz.",
+		"Die Lernstandsmigration wird separat vorgeschlagen und getestet. Dieses Paket schreibt keine persönliche ZAM-Bibliothek selbst."
+	],
+	"languages": {
+		"available": ["de", "en"],
+		"scope": "Alle 20 Lektionen, Codebeispiele, Aufgaben, Testein-/ausgaben, Lösungen, Tipps, Kurzchecks, Bedienoberfläche, Syntaxhilfe, Fehlermeldungen und Ablaufspuren. Die englische Fassung eignet sich auch als Auffrischung.",
+		"progress": "Gemeinsamer Konzeptfortschritt, getrennte deutsche und englische Codeentwürfe. Sprachwechsel speichert den Entwurf und lädt den der anderen Sprache; die bisherige Ausgabe und Spur werden explizit geleert.",
+		"stable_links": "Gleiche lesson-IDs; optional &lang=en oder &lang=de. URL-Sprache vor gespeicherter Auswahl, unbekannte Auswahl Deutsch.",
+		"cards": "ZAM-Karten bleiben deutsch; IDs und Migrationsvorschlag unverändert."
+	}
+}
