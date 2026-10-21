@@ -24,6 +24,8 @@ jobs:
       - uses: actions/setup-node@v5
         with:
           node-version: lts/*
+      - name: Check mapping approvals before publishing
+        run: node scripts/build-catalog.mjs "$RUNNER_TEMP/catalog.json"
       - name: Build site
         run: |
           mkdir -p site

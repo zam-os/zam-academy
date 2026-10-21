@@ -43,7 +43,7 @@ Die App bietet digitale Erarbeitung und Übung in allen vier Lernbereichen. Sie 
 
 ## Lernstandsübernahme
 
-`physik-realschule-10/replaces-de-by.json` enthält den zeilenweisen Vorschlag mit eingefrorenen Quellprüfsummen. **Noch keine Freigabe.** Veröffentlichung/Synchronisierung erst nach ausdrücklicher Entscheidung von Thomas. Die zwei alten Zellen haben zusammen 16 Karten. Der Academy-PR allein verändert keine persönliche Bibliothek.
+`physik-realschule-10/replaces-de-by.json` enthält den zeilenweisen Vorschlag mit eingefrorenen Quellprüfsummen. **Noch keine Freigabe.** Veröffentlichung/Synchronisierung erst nach ausdrücklicher Entscheidung von Thomas. Katalogbau, CI und der Pages-Vorabcheck blockieren die Veröffentlichung bei fehlendem oder ungültigem Freigabedatum; das gilt sowohl für `replaces` als auch für `retired_items`. Das ungeprüfte Mapping bleibt bis zur ausdrücklichen Entscheidung gesperrt. Die zwei alten Zellen haben zusammen 16 Karten. Der Academy-PR allein verändert keine persönliche Bibliothek.
 
 Sieben **A**-Zeilen bewahren sicher gleiche Einzelabrufe über genau ein `replaces`. Neun **C**-Zeilen werden geteilt oder fachlich korrigiert: Die alten Karten und Review-Ereignisse bleiben erhalten, die Alttexte verlassen die aktive Wiederholung, neue Fragen beginnen ohne übertragene Beherrschung. Keine Ähnlichkeitssuche und kein Verteilen eines Gesamtlernstands auf mehrere Teilfragen.
 

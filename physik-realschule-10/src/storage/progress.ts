@@ -109,7 +109,12 @@ export function parseProgress(raw: string | null): Progress {
       );
       return {
         ...fallback,
-        lb: entry.lb === 2 ? (2 as const) : (1 as const),
+        lb:
+          entry.lb === 1
+            ? (1 as const)
+            : entry.lb === 2
+              ? (2 as const)
+              : fallback.lb,
         status:
           entry.status === "done" ? ("done" as const) : ("planned" as const),
         ...Object.fromEntries(

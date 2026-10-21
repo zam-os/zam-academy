@@ -1,6 +1,10 @@
-import type { Source, Stage } from "../model/types";
+import type { Source, Stage, Track } from "../model/types";
 export const CURRICULUM_URL =
   "https://www.lehrplanplus.bayern.de/fachlehrplan/realschule/10/physik/wpfg1";
+export const curriculumUrl = (track: Track): string =>
+  track === "I"
+    ? CURRICULUM_URL
+    : "https://www.lehrplanplus.bayern.de/fachlehrplan/realschule/10/physik/wpfg2-3";
 export const SOURCES: Source[] = [
   {
     id: "lp-i",

@@ -44,11 +44,6 @@ export function parseNumberCandidates(raw: string): number[] {
   return [...new Set(values)];
 }
 
-/** The most likely reading of a typed number, or null when there is none. */
-export function parseNumber(raw: string): number | null {
-  return parseNumberCandidates(raw)[0] ?? null;
-}
-
 export type CheckStatus = "correct" | "wrong" | "invalid";
 
 export interface CheckResult {

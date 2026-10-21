@@ -3,13 +3,8 @@
  * from its seed and tests can sweep many seeds.
  */
 export interface Rng {
-  /** Uniform in [0, 1). */
-  next(): number;
   /** Integer in [min, max], both inclusive. */
   int(min: number, max: number): number;
-  /** A value min, min + step, … ≤ max, rounded to the step's decimals. */
-  stepped(min: number, max: number, step: number): number;
-  pick<T>(items: readonly T[]): T;
 }
 
 export function createRng(seed: number): Rng {
@@ -22,18 +17,8 @@ export function createRng(seed: number): Rng {
     return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
   };
   return {
-    next,
     int(min, max) {
       return min + Math.floor(next() * (max - min + 1));
-    },
-    stepped(min, max, step) {
-      const steps = Math.floor((max - min) / step + 1e-9);
-      const value = min + step * Math.floor(next() * (steps + 1));
-      const decimals = Math.max(0, -Math.floor(Math.log10(step) + 1e-9));
-      return Number(value.toFixed(decimals));
-    },
-    pick(items) {
-      return items[Math.floor(next() * items.length)];
     },
   };
 }

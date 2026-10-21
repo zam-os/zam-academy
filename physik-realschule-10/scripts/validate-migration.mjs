@@ -204,16 +204,16 @@ try {
     await db.close();
   }
 
-  for (const category of ["A"]) {
+  {
     const collision = await zam.openDatabase({
-      dbPath: join(dir, `${category}-collision.db`),
+      dbPath: join(dir, "A-collision.db"),
       initialize: true,
       useConfiguredCloud: false,
     });
     try {
       await zam.installKvtTile(collision, cell);
       for (const tile of legacy) await zam.installKvtTile(collision, tile);
-      const row = mapping.rows.find((entry) => entry.category === category);
+      const row = mapping.rows.find((entry) => entry.category === "A");
       const userId = cell.atoms[1].id;
       await reviewedCard(collision, row.de_by_id, userId, 1);
       await reviewedCard(collision, bySlug.get(row.academy_slug).id, userId, 3);

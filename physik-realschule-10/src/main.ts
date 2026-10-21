@@ -1,20 +1,26 @@
 import {
-  CURRICULUM_URL,
+  curriculumUrl,
   findLesson,
   lessonsFor,
   SOURCES,
   STAGES,
 } from "./curriculum";
-import { checkAnswer, wrongAnswerHint } from "./exercises/checker";
-import { makeExercise } from "./exercises/generators";
-import { createRng, seedFrom } from "./exercises/rng";
-import type { ExerciseTask, Lesson, Level, Track } from "./model/types";
+import {
+  createAttempt,
+  type ExerciseAttempt,
+  revealSolution,
+  skipAttempt,
+  submitAnswer,
+} from "./exercises/attempt";
+import { wrongAnswerHint } from "./exercises/checker";
+import type { Lesson, Level, Track } from "./model/types";
 import {
   MODEL_SCENARIOS,
   modelReady,
   recordExploration,
   setModelValue,
 } from "./models";
+import { pathLesson, visitLesson } from "./navigation";
 import {
   completion,
   experimentSummary,
@@ -57,31 +63,12 @@ const comparisons = new Set<string>();
 const rubricChecks = new Map<string, boolean[]>();
 let storageWarningShown = false;
 const modelStates = new Map<string, ModelState>();
-interface ExerciseView {
-  task: ExerciseTask;
-  finished: boolean;
-  assisted: boolean;
-  solution: boolean;
-  advanced: boolean;
-  message: string;
-}
-const activeExercises = new Map<string, ExerciseView>();
-function exerciseFor(lesson: Lesson): ExerciseView {
+const activeExercises = new Map<string, ExerciseAttempt>();
+function exerciseFor(lesson: Lesson): ExerciseAttempt {
   const key = writingKey(lesson.id, progress.level);
   let entry = activeExercises.get(key);
   if (!entry) {
-    entry = {
-      task: makeExercise(
-        lesson.calculation!,
-        createRng(seedFrom(`${key}:${progress.exerciseSerial[key] ?? 0}`)),
-        progress.level,
-      ),
-      finished: false,
-      assisted: false,
-      solution: false,
-      advanced: false,
-      message: "",
-    };
+    entry = createAttempt(progress, lesson, progress.level);
     activeExercises.set(key, entry);
   }
   return entry;
@@ -105,18 +92,11 @@ function bindCalculation(lesson: Lesson): void {
       const input = main.querySelector<HTMLInputElement>(
           "#calculation-answer",
         )!,
-        result = checkAnswer(entry.task, input.value);
+        result = submitAnswer(progress, entry, input.value);
+      if (!result) return;
       if (result.status === "correct") {
-        entry.finished = true;
-        entry.solution = true;
         entry.message =
           "Richtig gerechnet. Diese Aufgabe zählt zu deinem Übungsfortschritt.";
-        progress.calculationDone[key] = Math.min(
-          3,
-          (progress.calculationDone[key] ?? 0) + 1,
-        );
-        progress.exerciseSerial[key] = (progress.exerciseSerial[key] ?? 0) + 1;
-        entry.advanced = true;
         persist();
         render();
       } else {
@@ -137,16 +117,14 @@ function bindCalculation(lesson: Lesson): void {
       }
     });
   main.querySelector("#show-calculation")?.addEventListener("click", () => {
-    entry.assisted = true;
-    entry.finished = true;
-    entry.solution = true;
+    revealSolution(progress, entry);
     entry.message =
       "Lösung geöffnet. Starte eine neue Aufgabe, um selbst weiterzuüben.";
+    persist();
     render();
   });
   main.querySelector("#next-calculation")?.addEventListener("click", () => {
-    if (!entry.advanced)
-      progress.exerciseSerial[key] = (progress.exerciseSerial[key] ?? 0) + 1;
+    skipAttempt(progress, entry);
     activeExercises.delete(key);
     persist();
     render();
@@ -211,11 +189,6 @@ function bindExperiments(): void {
 function visibleLessons(): Lesson[] {
   return lessonsFor(progress.track, progress.includeExtra);
 }
-function enableOptional(lesson: Lesson): void {
-  if (!lesson.tracks.includes(progress.track))
-    progress.track = lesson.tracks[0];
-  if (lesson.optional) progress.includeExtra = true;
-}
 function lessonModel(lesson: Lesson): string {
   if (!lesson.model) return "";
   if (!modelStates.has(lesson.id))
@@ -250,6 +223,7 @@ function pageUrl(fragment = ""): string {
 
 function switchView(next: typeof view): void {
   view = next;
+  if (next === "path") progress.activeLessonId = pathLesson(progress).id;
   const fragment =
     next === "lesson"
       ? `#lesson=${progress.activeLessonId}&level=${progress.level}`
@@ -259,6 +233,7 @@ function switchView(next: typeof view): void {
           ? "#view=experiments"
           : "";
   history.pushState(null, "", pageUrl(fragment));
+  persist();
   render();
   window.scrollTo({ top: 0, behavior: "instant" });
   main.focus({ preventScroll: true });
@@ -280,13 +255,16 @@ function persist(): void {
     `${stats.completed} / ${stats.total} Kernlektionen · Zweig ${progress.track === "I" ? "I" : "II/III"}`;
   (document.getElementById("progress") as HTMLProgressElement).value =
     stats.percent;
+  const curriculum = document.getElementById(
+    "curriculum-link",
+  ) as HTMLAnchorElement;
+  curriculum.href = curriculumUrl(progress.track);
+  curriculum.textContent = `LehrplanPLUS Bayern · Zweig ${progress.track === "I" ? "I" : "II/III"}`;
 }
 
 function openLesson(id: string): void {
-  const lesson = findLesson(id);
+  const lesson = visitLesson(progress, id);
   if (!lesson) return;
-  progress.activeLessonId = id;
-  enableOptional(lesson);
   view = "lesson";
   history.pushState(
     null,
@@ -312,7 +290,8 @@ function status(lesson: Lesson): string {
 
 function renderPath(): string {
   const stats = completion(progress);
-  return `<section class="hero"><div><span class="eyebrow">PHYSIK 10 · REALSCHULE BAYERN</span><h1>Bewegung erklären.<br> Energie verstehen.</h1><p>Entdecke, wie Kräfte Bewegung ändern, wie Induktion Stromversorgung ermöglicht und was Kernmodelle erklären. Vergleiche Modelle, rechne selbst und begründe deine Entscheidungen.</p><button type="button" class="button accent" data-open="${esc(progress.activeLessonId)}">${stats.completed ? "Weiterlernen" : "Loslegen"}</button></div><aside class="hero-note"><span class="eyebrow">DEIN WEG DURCH PHYSIK</span><strong>Vorhersagen → Prüfen → Begründen</strong><p>Vier Lernbereiche · zehn veränderbare Modelle<br>34 Kernlektionen in I · 25 in II/III<br>Zusatz: Effektivwert einer Sinusspannung</p><p class="small">Ein Abschluss verbindet Schnellcheck, Werkstatt und eine selbst eingeschätzte Begründung. Modelllektionen verlangen die Vergleiche, Rechenlektionen drei eigenständig gelöste Aufgaben in Level 1.</p></aside></section>
+  const resume = pathLesson(progress);
+  return `<section class="hero"><div><span class="eyebrow">PHYSIK 10 · REALSCHULE BAYERN</span><h1>Bewegung erklären.<br> Energie verstehen.</h1><p>Entdecke, wie Kräfte Bewegung ändern, wie Induktion Stromversorgung ermöglicht und was Kernmodelle erklären. Vergleiche Modelle, rechne selbst und begründe deine Entscheidungen.</p><button type="button" class="button accent" data-open="${esc(resume.id)}">${stats.completed ? "Weiterlernen" : "Loslegen"}</button></div><aside class="hero-note"><span class="eyebrow">DEIN WEG DURCH PHYSIK</span><strong>Vorhersagen → Prüfen → Begründen</strong><p>Vier Lernbereiche · zehn veränderbare Modelle<br>34 Kernlektionen in I · 25 in II/III<br>Zusatz: Effektivwert einer Sinusspannung</p><p class="small">Ein Abschluss verbindet Schnellcheck, Werkstatt und eine selbst eingeschätzte Begründung. Modelllektionen verlangen die Vergleiche, Rechenlektionen drei eigenständig gelöste Aufgaben in Level 1.</p></aside></section>
   <div class="path-heading"><div><h2>Dein Lernpfad</h2><p>Alle Lektionen sind frei zugänglich. Wähle deinen Zweig; dein Fortschritt bleibt beim Wechsel erhalten.</p></div><div class="path-filters"><label>Zweig <select id="track"><option value="II_III" ${progress.track === "II_III" ? "selected" : ""}>II/III</option><option value="I" ${progress.track === "I" ? "selected" : ""}>I · mathematisch-naturwissenschaftlich</option></select></label><label class="toggle"><input type="checkbox" id="include-extra" ${progress.includeExtra ? "checked" : ""}>Zusatz: Effektivwert</label></div></div>
   <div class="stages">${STAGES.map((stage) => {
     const lessons = visibleLessons().filter((l) => l.lb === stage.lb);
@@ -321,7 +300,7 @@ function renderPath(): string {
     ).length;
     return `<section class="stage"><div class="stage-header"><span class="stage-icon" aria-hidden="true">${stage.icon}</span><div><span class="eyebrow">LERNBEREICH ${stage.lb}</span><h3>${esc(stage.shortTitle)}</h3><p class="small">${esc(stage.title)}</p></div><span class="stage-count">${complete} / ${lessons.filter((l) => !l.optional).length}</span></div><ol>${lessons.map((lesson) => `<li><button type="button" class="lesson-link ${isComplete(progress, lesson.id) ? "complete" : ""}" data-open="${lesson.id}"><span class="lesson-dot" aria-hidden="true">${isComplete(progress, lesson.id) ? "✓" : "·"}</span><span><strong>${esc(lesson.title)}</strong><small>${lesson.optional ? "Zusatz · optional" : esc(lesson.period)}</small></span><span class="lesson-status">${status(lesson)}</span></button></li>`).join("")}</ol></section>`;
   }).join("")}</div>
-  <aside class="scope-note"><h2>Vom Modell zum echten Versuch</h2><p>Der Lehrplan fordert mindestens drei echte Schülerexperimente, mindestens eines in Mechanik und eines in Elektrizitätslehre. Die Modelle hier zählen dafür nicht. Im Versuchsnotizbuch kannst du Planung und eigene Messungen festhalten; besprich sie im Unterricht.</p><button type="button" class="button secondary" data-view="experiments">Versuchsnotizbuch öffnen</button><p>Mit schulischer Kleinspannungsquelle und nach Anleitung arbeiten. Keine Versuche am Stromnetz oder mit eigenen radioaktiven Quellen. Quellenrecherche und Präsentation gehören zusätzlich zum Unterricht.</p><a href="${progress.track === "I" ? CURRICULUM_URL : SOURCES.find((s) => s.id === "lp-ii")!.url}" target="_blank" rel="noopener">Zum offiziellen Lehrplan deines Zweigs</a></aside><button type="button" id="reset" class="text-button">Lokalen Fortschritt zurücksetzen</button>`;
+  <aside class="scope-note"><h2>Vom Modell zum echten Versuch</h2><p>Der Lehrplan fordert mindestens drei echte Schülerexperimente, mindestens eines in Mechanik und eines in Elektrizitätslehre. Die Modelle hier zählen dafür nicht. Im Versuchsnotizbuch kannst du Planung und eigene Messungen festhalten; besprich sie im Unterricht.</p><button type="button" class="button secondary" data-view="experiments">Versuchsnotizbuch öffnen</button><p>Mit schulischer Kleinspannungsquelle und nach Anleitung arbeiten. Keine Versuche am Stromnetz oder mit eigenen radioaktiven Quellen. Quellenrecherche und Präsentation gehören zusätzlich zum Unterricht.</p><a href="${curriculumUrl(progress.track)}" target="_blank" rel="noopener">Zum offiziellen Lehrplan deines Zweigs</a></aside><button type="button" id="reset" class="text-button">Lokalen Fortschritt zurücksetzen</button>`;
 }
 
 function renderWorkshop(lesson: Lesson): string {
@@ -364,8 +343,14 @@ function renderLesson(): string {
   const selected = quizSelections.get(lesson.id);
   const visible = visibleLessons();
   const index = visible.indexOf(lesson);
+  const scopeNotice =
+    index < 0
+      ? lesson.optional
+        ? "Du siehst eine Zusatzlektion. Deine Auswahl im Lernpfad bleibt unverändert."
+        : `Diese Lektion gehört zu Zweig ${lesson.tracks[0] === "I" ? "I" : "II/III"}. Dein Lernpfad bleibt bei Zweig ${progress.track === "I" ? "I" : "II/III"}; du kannst hier zusätzlich üben.`
+      : "";
   return `<article lang="de"><div class="lesson-top"><button type="button" class="text-button" data-view="path">← Zum Lernpfad</button><label class="level-select">Arbeitsweise <select id="level"><option value="1" ${progress.level === 1 ? "selected" : ""}>Level 1 · mit Leitfragen</option><option value="2" ${progress.level === 2 ? "selected" : ""}>Level 2 · Transfer</option></select></label></div>
-  <header class="lesson-heading"><span class="eyebrow">${esc(stage.shortTitle)}${lesson.optional ? " · ZUSATZ" : ""}</span><h1 lang="${"de"}">${esc(lesson.title)}</h1><p class="period">${esc(lesson.period)}</p><p class="intro">${esc(lesson.intro)}</p></header>
+  <header class="lesson-heading"><span class="eyebrow">${esc(stage.shortTitle)}${lesson.optional ? " · ZUSATZ" : ""}</span><h1 lang="${"de"}">${esc(lesson.title)}</h1><p class="period">${esc(lesson.period)}</p><p class="intro">${esc(lesson.intro)}</p>${scopeNotice ? `<p class="feedback hint">${esc(scopeNotice)}</p>` : ""}</header>
   <div class="lesson-columns"><div class="lesson-content"><section class="panel reading" lang="${"de"}"><span class="eyebrow">01 · VERSTEHEN</span>${lesson.paragraphs.map((paragraph) => `<p>${esc(paragraph)}</p>`).join("")}<p class="takeaway"><strong>Merke</strong>${esc(lesson.takeaway)}</p></section>
   <section class="panel quiz" lang="${"de"}"><div class="panel-heading"><h2>Schnellcheck</h2><span class="done-mark">${progress.quizDone.includes(lesson.id) ? "✓ Einmal richtig" : ""}</span></div><p>${esc(lesson.quiz.question)}</p><div class="quiz-options">${options.map((i) => `<button type="button" data-choice="${i}" class="quiz-choice ${selected === i ? "selected" : ""}" aria-pressed="${selected === i}">${esc(labels[i])}</button>`).join("")}</div>${selected !== undefined ? `<p class="feedback ${selected === 0 ? "success" : "hint"}" role="status"><strong>${selected === 0 ? "Richtig. " : "Prüfe noch einmal. "}</strong>${esc(lesson.quiz.explanation)}</p>` : ""}</section>
   ${lessonModel(lesson)}${renderWorkshop(lesson)}${renderCalculation(lesson)}${renderWriting(lesson)}</div><aside class="lesson-aside"><section class="aside-card"><h2>Dein Lernschritt</h2><ul class="checklist">${lesson.model ? `<li id="aside-model">${modelReady(lesson.model, progress.explored[lesson.id] ?? []) ? "✓" : "○"} Vergleichssituationen geöffnet</li>` : ""}${lesson.calculation ? `<li id="aside-calculation">${progress.calculationDone[writingKey(lesson.id, 1)] ?? 0} / 3 Rechenaufgaben in Level 1</li>` : ""}<li>${progress.quizDone.includes(lesson.id) ? "✓" : "○"} Schnellcheck</li><li>${progress.workshopDone.includes(lesson.id) ? "✓" : "○"} Werkstatt gelöst</li><li id="aside-writing">${progress.writingDone.includes(writingKey(lesson.id, 1)) ? "✓" : "○"} Level 1 selbst eingeschätzt</li></ul><p class="small" id="lesson-status">${isComplete(progress, lesson.id) ? "✓ Diese Lektion ist abgeschlossen." : "Bearbeite die offenen Lernschritte. Deine Texte schätzt du selbst ein."}</p><p class="small">Level 2 ist eine zusätzliche Vertiefung. Die Kernfortschritte zählen Level 1.</p></section><section class="aside-card"><h2>Belege & weiterlernen</h2><ul class="source-list">${lesson.sourceIds
@@ -519,7 +504,7 @@ function bindLesson(lesson: Lesson): void {
     );
     rubricChecks.delete(key);
     comparisons.delete(key);
-    main.querySelector(".model-answer")?.remove();
+    main.querySelector(".writing .model-answer")?.remove();
     (main.querySelector("#compare") as HTMLButtonElement).disabled =
       !canReviewDraft(text);
     main.querySelector("#draft-note")!.textContent = canReviewDraft(text)
@@ -536,7 +521,7 @@ function bindLesson(lesson: Lesson): void {
     if (!canReviewDraft(progress.drafts[key] ?? "")) return;
     comparisons.add(key);
     render();
-    main.querySelector(".model-answer")?.scrollIntoView({
+    main.querySelector(".writing .model-answer")?.scrollIntoView({
       block: "nearest",
       behavior: matchMedia("(prefers-reduced-motion: reduce)").matches
         ? "instant"
@@ -689,10 +674,8 @@ function applyDeepLink(): void {
   const link = parseTrainingDeepLink(location.hash, location.search);
   if (link.level) progress.level = link.level;
   if (link.lessonId) {
-    const lesson = findLesson(link.lessonId);
+    const lesson = visitLesson(progress, link.lessonId);
     if (lesson) {
-      progress.activeLessonId = lesson.id;
-      enableOptional(lesson);
       view = "lesson";
     } else {
       view = "path";

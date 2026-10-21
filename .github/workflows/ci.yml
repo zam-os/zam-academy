@@ -48,6 +48,8 @@ jobs:
       - uses: actions/setup-node@v5
         with:
           node-version: lts/*
+      - name: Test catalog publication safeguards
+        run: node --test scripts/build-catalog.test.mjs
       - name: Install zam-core
         run: |
           mkdir -p "$RUNNER_TEMP/zam-core"
@@ -66,5 +68,5 @@ jobs:
         run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node biologie-realschule-10/scripts/validate-migration.mjs
       - name: Preserve Physik 10 histories and refuse automatic merges
         run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node physik-realschule-10/scripts/validate-migration.mjs
-      - name: Build the catalog
+      - name: Build the catalog (requires explicit mapping approval)
         run: node scripts/build-catalog.mjs "$RUNNER_TEMP/catalog.json"

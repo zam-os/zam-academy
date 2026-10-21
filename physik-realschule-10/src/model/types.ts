@@ -88,7 +88,6 @@ export interface Stage {
 }
 export interface ExerciseTask {
   prompt: string;
-  given: string[];
   formulaHint?: string;
   answer: number;
   unit: string;
@@ -96,5 +95,4 @@ export interface ExerciseTask {
   tolerance?: number;
   absTolerance?: number;
   solutionHtml: string;
-  meta?: Record<string, number>;
 }

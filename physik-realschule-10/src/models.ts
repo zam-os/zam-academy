@@ -182,7 +182,6 @@ export const MODEL_SCENARIOS: Record<ModelKind, Scenario[]> = {
       electric: 35,
       recovery: 70,
     }),
-    s("unused", "Kein Wärmebedarf", { input: 100, electric: 35, recovery: 0 }),
   ],
   storage: [
     s("efficient", "80 % Gesamteffizienz", {

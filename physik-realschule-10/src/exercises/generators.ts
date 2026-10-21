@@ -16,18 +16,14 @@ export function makeExercise(
     unit: string,
     formula: string,
     solution: string,
-    given: string[] = [],
-    meta?: Record<string, number>,
   ): ExerciseTask => ({
     prompt,
-    given,
     answer,
     unit,
     digits: 3,
     tolerance: 0.01,
     formulaHint: formula,
     solutionHtml: solution,
-    meta,
   });
   switch (kind) {
     case "speed":
@@ -40,7 +36,7 @@ export function makeExercise(
             `${a * b} m / ${b} s = ${a} m/s.`,
           )
         : task(
-            `Ein Rad fährt ${a * 3.6} km/h. Welche Strecke legt es bei gleicher Geschwindigkeit in ${b} s zurück?`,
+            `Ein Rad fährt ${fmt(a * 3.6)} km/h. Welche Strecke legt es bei gleicher Geschwindigkeit in ${b} s zurück?`,
             a * b,
             "m",
             "s = v · t",
@@ -65,7 +61,7 @@ export function makeExercise(
     case "fall":
       return level === 1
         ? task(
-            `Ein Körper fällt aus Ruhe ${b / 10} s. Berechne den Fallweg mit g = 9,81 m/s² ohne Luftwiderstand.`,
+            `Ein Körper fällt aus Ruhe ${fmt(b / 10)} s. Berechne den Fallweg mit g = 9,81 m/s² ohne Luftwiderstand.`,
             0.5 * 9.81 * (b / 10) ** 2,
             "m",
             "h = ½ · g · t²",
@@ -104,7 +100,7 @@ export function makeExercise(
             `½ · ${a} · ${b}² = ${fmt(0.5 * a * b * b)} J.`,
           )
         : task(
-            `Ein ${a}-kg-Körper besitzt ${0.5 * a * b * b} J kinetische Energie. Wie schnell ist er?`,
+            `Ein ${a}-kg-Körper besitzt ${fmt(0.5 * a * b * b)} J kinetische Energie. Wie schnell ist er?`,
             b,
             "m/s",
             "v = √(2E_kin / m)",
