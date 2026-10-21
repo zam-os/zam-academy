@@ -157,6 +157,11 @@ const lineareGleichung: Lesson = {
   ],
   requiredCorrect: 3,
   celebrationMessage: "Du weißt, dass eine Gleichung mit zwei Variablen eine ganze Gerade von Lösungen hat, und machst die Punktprobe.",
+  teacherVideo: {
+    url: "https://www.youtube.com/watch?v=nWkuF4LH_6o",
+    title: "Lineare Gleichungssysteme Einführung",
+    author: "Daniel Jung",
+  },
 };
 
 // 3.2 Gleichsetzen und Einsetzen ──────────────────────────────────────────────
@@ -307,6 +312,11 @@ const gleichsetzen: Lesson = {
   ],
   requiredCorrect: 3,
   celebrationMessage: "Du löst Gleichungssysteme durch Gleichsetzen und Einsetzen und deutest die Lösung als Schnittpunkt.",
+  teacherVideo: {
+    url: "https://www.youtube.com/watch?v=6BuVmbuxZco",
+    title: "Gleichsetzungsverfahren Schritt für Schritt",
+    author: "Daniel Jung",
+  },
 };
 
 // 3.3 Additionsverfahren ─────────────────────────────────────────────────────
@@ -448,6 +458,11 @@ const additionsverfahren: Lesson = {
   ],
   requiredCorrect: 3,
   celebrationMessage: "Du wählst Faktoren, mit denen eine Variable herausfällt, und löst Systeme mit dem Additionsverfahren.",
+  teacherVideo: {
+    url: "https://www.youtube.com/watch?v=T08IjF7OPf4",
+    title: "Additionsverfahren Lineare Gleichungssysteme",
+    author: "Daniel Jung",
+  },
 };
 
 // 3.4 Lösungsfälle ───────────────────────────────────────────────────────────
@@ -612,6 +627,11 @@ const loesungsfaelle: Lesson = {
   ],
   requiredCorrect: 3,
   celebrationMessage: "Du erkennst an Steigung und Achsenabschnitt, ob ein System eine, keine oder unendlich viele Lösungen hat.",
+  teacherVideo: {
+    url: "https://www.youtube.com/watch?v=nWkuF4LH_6o",
+    title: "LGS Lösungsfälle (keine, unendlich viele Lösungen)",
+    author: "Daniel Jung",
+  },
 };
 
 // 3.5 Textaufgaben ───────────────────────────────────────────────────────────
@@ -731,6 +751,11 @@ const textaufgaben: Lesson = {
   ],
   requiredCorrect: 3,
   celebrationMessage: "Du übersetzt Texte in zwei Gleichungen, löst sie und prüfst die Lösung am Text.",
+  teacherVideo: {
+    url: "https://www.youtube.com/watch?v=qo8YmW2pc-E",
+    title: "Lineare Gleichungssysteme Textaufgaben aufstellen",
+    author: "Daniel Jung",
+  },
 };
 
 export const STAGE_GLEICHUNGSSYSTEME: Stage = {

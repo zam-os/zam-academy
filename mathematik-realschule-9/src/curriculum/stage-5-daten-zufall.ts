@@ -208,6 +208,11 @@ const baumdiagramm: Lesson = {
   ],
   requiredCorrect: 3,
   celebrationMessage: "Du zeichnest Baumdiagramme und rechnest mit Produkt- und Summenregel, mit und ohne Zurücklegen.",
+  teacherVideo: {
+    url: "https://www.youtube.com/watch?v=7B0rKLTUPZ0",
+    title: "Baumdiagramm und Pfadregeln Stochastik",
+    author: "Daniel Jung",
+  },
 };
 
 // 5.2 Gegenereignis ──────────────────────────────────────────────────────────
@@ -346,6 +351,11 @@ const gegenereignis: Lesson = {
   ],
   requiredCorrect: 3,
   celebrationMessage: "Du rechnest „mindestens einmal“ mit dem Gegenereignis und weißt, warum man nicht addieren darf.",
+  teacherVideo: {
+    url: "https://www.youtube.com/watch?v=nR7hFCRgp1g",
+    title: "Gegenwahrscheinlichkeit Gegenereignis berechnen",
+    author: "Daniel Jung",
+  },
 };
 
 // 5.3 Vierfeldertafel ────────────────────────────────────────────────────────
@@ -462,6 +472,11 @@ const vierfeldertafel: Lesson = {
   ],
   requiredCorrect: 3,
   celebrationMessage: "Du füllst Vierfeldertafeln und unterscheidest P(krank | positiv) von P(positiv | krank).",
+  teacherVideo: {
+    url: "https://www.youtube.com/watch?v=xslCG8xjGjI",
+    title: "Vierfeldertafel Wahrscheinlichkeitsrechnung",
+    author: "Daniel Jung",
+  },
 };
 
 // 5.4 Kenngrößen ─────────────────────────────────────────────────────────────
@@ -581,6 +596,11 @@ const kenngroessen: Lesson = {
   ],
   requiredCorrect: 3,
   celebrationMessage: "Du bestimmst Mittelwert, Median und Quartile und erkennst, wann ein Mittelwert täuscht.",
+  teacherVideo: {
+    url: "https://www.youtube.com/watch?v=OM90fGYTj_w",
+    title: "Mittelwert, Median und Quartile berechnen",
+    author: "Daniel Jung",
+  },
 };
 
 // 5.5 Boxplot ────────────────────────────────────────────────────────────────
@@ -704,6 +724,11 @@ const boxplot: Lesson = {
   ],
   requiredCorrect: 3,
   celebrationMessage: "Du liest und zeichnest Boxplots und vergleichst damit zwei Verteilungen.",
+  teacherVideo: {
+    url: "https://www.youtube.com/watch?v=HbHoRjIHOTE",
+    title: "Boxplot zeichnen und verstehen",
+    author: "Daniel Jung",
+  },
 };
 
 export const STAGE_DATEN_ZUFALL: Stage = {

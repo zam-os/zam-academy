@@ -274,6 +274,11 @@ const pythagoras: Lesson = {
   ],
   requiredCorrect: 3,
   celebrationMessage: "Du erkennst die Hypotenuse in jeder Lage und berechnest fehlende Seiten mit a² + b² = c².",
+  teacherVideo: {
+    url: "https://www.youtube.com/watch?v=cIzM2XBduuY",
+    title: "Satz des Pythagoras im rechtwinkligen Dreieck",
+    author: "Daniel Jung",
+  },
 };
 
 // 1.2 Umkehrung ──────────────────────────────────────────────────────────────
@@ -456,6 +461,11 @@ const umkehrung: Lesson = {
   ],
   requiredCorrect: 3,
   celebrationMessage: "Du prüfst mit drei Längen, ob ein Winkel ein rechter ist, und unterscheidest spitz, recht und stumpf.",
+  teacherVideo: {
+    url: "https://www.youtube.com/watch?v=XZr9f38NwDo",
+    title: "Kehrsatz des Satz des Pythagoras",
+    author: "Daniel Jung",
+  },
 };
 
 // 1.3 Höhensatz und Kathetensatz ─────────────────────────────────────────────
@@ -611,6 +621,11 @@ const hoehensatz: Lesson = {
   ],
   requiredCorrect: 3,
   celebrationMessage: "Du kennst Höhensatz und Kathetensatz und siehst, wie sie zusammen den Pythagoras ergeben.",
+  teacherVideo: {
+    url: "https://www.youtube.com/watch?v=ujUCsWMjH9Y",
+    title: "Höhensatz und Kathetensatz des Euklid",
+    author: "Daniel Jung",
+  },
 };
 
 // 1.4 Sinus und Kosinus ──────────────────────────────────────────────────────
@@ -803,6 +818,11 @@ const sinusKosinus: Lesson = {
   ],
   requiredCorrect: 3,
   celebrationMessage: "Du benennst Gegenkathete und Ankathete und berechnest mit sin und cos Seiten und Winkel.",
+  teacherVideo: {
+    url: "https://www.youtube.com/watch?v=TljGSjLKvqA",
+    title: "Sinus, Kosinus im rechtwinkligen Dreieck",
+    author: "Daniel Jung",
+  },
 };
 
 // 1.5 Tangens ────────────────────────────────────────────────────────────────
@@ -921,6 +941,11 @@ const tangens: Lesson = {
   ],
   requiredCorrect: 3,
   celebrationMessage: "Du rechnest Steigungen zwischen Prozent und Winkel um und nutzt tan α = GK : AK.",
+  teacherVideo: {
+    url: "https://www.youtube.com/watch?v=TljGSjLKvqA",
+    title: "Tangens im rechtwinkligen Dreieck berechnen",
+    author: "Daniel Jung",
+  },
 };
 
 // 1.6 Besondere Winkel ───────────────────────────────────────────────────────
@@ -1083,6 +1108,11 @@ const besondereWinkel: Lesson = {
   ],
   requiredCorrect: 3,
   celebrationMessage: "Du kennst sin² α + cos² α = 1 und die exakten Werte für 30°, 45° und 60°.",
+  teacherVideo: {
+    url: "https://www.youtube.com/watch?v=N4evtJU-h9w",
+    title: "Trigonometrie besondere Winkel ohne Taschenrechner",
+    author: "Daniel Jung",
+  },
 };
 
 export const STAGE_DREIECKE: Stage = {

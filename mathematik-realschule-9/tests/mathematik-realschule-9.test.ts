@@ -105,6 +105,15 @@ describe("Lernpfad", () => {
     }
     expect([...shownAt].sort()).toEqual([0, 1, 2]);
   });
+
+  it("provides a teacher explainer video for every lesson with a verified YouTube link", () => {
+    for (const lesson of ALL_LESSONS) {
+      expect(lesson.teacherVideo, `Missing teacherVideo in lesson ${lesson.id}`).toBeDefined();
+      expect(lesson.teacherVideo?.author).toBe("Daniel Jung");
+      expect(lesson.teacherVideo?.title.length).toBeGreaterThan(5);
+      expect(lesson.teacherVideo?.url).toMatch(/^https:\/\/www\.youtube\.com\/watch\?v=[A-Za-z0-9_-]{11}$/);
+    }
+  });
 });
 
 describe("Labore", () => {
