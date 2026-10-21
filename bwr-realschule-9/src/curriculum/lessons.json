@@ -1,0 +1,3068 @@
+[
+  {
+    "id": "uf-aufgaben",
+    "lb": 1,
+    "title": "Ziele setzen und Entscheidungen prüfen",
+    "intro": "Ein Betrieb braucht mehr als eine gute Produktidee.",
+    "paragraphs": [
+      "Unternehmensführung setzt Ziele, plant Wege dorthin, entscheidet, organisiert die Umsetzung und kontrolliert die Ergebnisse. Eine Unternehmensphilosophie beschreibt Werte und den Umgang mit Beschäftigten, Kunden und Umwelt. Sie braucht beobachtbare Entscheidungen statt bloßer Werbesätze.",
+      "Die fiktive Werkstatt Isarwerk möchte weniger Ausschuss erzeugen. Sie setzt ein messbares Ziel, verteilt Verantwortung, schult das Team und vergleicht später den Ausschussanteil. Bei Zielkonflikten zwischen Gewinn, Arbeitsbedingungen und Umwelt gibt es keine Kennzahl, die das Urteil ersetzt."
+    ],
+    "takeaway": "Konkrete Entscheidungen und beobachtbare Regeln, die den erklärten Werten entsprechen.",
+    "sourceIds": ["lp", "isb"],
+    "quiz": {
+      "question": "Was gehört zur Kontrolle einer Unternehmensentscheidung?",
+      "answer": "Ist-Ergebnisse mit dem gesetzten Ziel vergleichen.",
+      "wrong": [
+        "Nur das ursprüngliche Ziel erneut aufschreiben.",
+        "Jede Verantwortung an eine andere Person abgeben."
+      ],
+      "explanation": "Kontrolle vergleicht Soll und Ist und liefert Gründe für eine Anpassung."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Fälle untersuchen",
+      "instruction": "Ordne die drei Fälle zu. Prüfe anschließend deine Entscheidungen.",
+      "categories": ["Planung", "Organisation", "Kontrolle"],
+      "entries": [
+        {
+          "text": "Ausschuss bis Dezember von 5 auf 3 Prozent senken.",
+          "target": 0,
+          "feedback": "Das Ziel und der Zeitbezug werden festgelegt."
+        },
+        {
+          "text": "Eine Person erhält die Verantwortung für Messdaten.",
+          "target": 1,
+          "feedback": "Aufgaben und Verantwortung werden verteilt."
+        },
+        {
+          "text": "Im Dezember den tatsächlichen Ausschuss auswerten.",
+          "target": 2,
+          "feedback": "Das Ergebnis wird mit dem Ziel verglichen."
+        }
+      ],
+      "conclusion": "Kontrolle vergleicht Soll und Ist und liefert Gründe für eine Anpassung."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Isarwerk verspricht faire Arbeit und billige Produkte. Welche Entscheidung und welche Kontrolle machen das Versprechen überprüfbar?",
+        "hints": ["Eine konkrete Führungsaufgabe nennen", "Einen Zielkonflikt benennen"],
+        "model": "Die Leitung plant verlässliche Schichten und prüft Beschwerden sowie Überstunden. Ein niedriger Verkaufspreis allein beweist keine fairen Bedingungen. Kosten, Arbeitsqualität und Kundennutzen müssen gemeinsam beurteilt werden.",
+        "criteria": [
+          "Eine konkrete Führungsaufgabe nennen",
+          "Einen Zielkonflikt benennen",
+          "Eine überprüfbare Kontrolle vorschlagen"
+        ]
+      },
+      "2": {
+        "prompt": "Prüfe diese Behauptung und begründe an einem eigenen Gegenbeispiel: „Nur das ursprüngliche Ziel erneut aufschreiben.“",
+        "hints": ["Die Behauptung fachlich prüfen", "Einen Zielkonflikt benennen"],
+        "model": "Kontrolle vergleicht Soll und Ist und liefert Gründe für eine Anpassung. Die Leitung plant verlässliche Schichten und prüft Beschwerden sowie Überstunden. Ein niedriger Verkaufspreis allein beweist keine fairen Bedingungen. Kosten, Arbeitsqualität und Kundennutzen müssen gemeinsam beurteilt werden.",
+        "criteria": [
+          "Die Behauptung fachlich prüfen",
+          "Einen Zielkonflikt benennen",
+          "Ein passendes Gegenbeispiel erklären"
+        ]
+      }
+    }
+  },
+  {
+    "id": "uf-organigramm",
+    "lb": 1,
+    "title": "Weisungswege im Organigramm",
+    "intro": "Wer darf wem einen Auftrag erteilen?",
+    "paragraphs": [
+      "Ein Organigramm zeigt Stellen und ihre Einordnung. Im Einliniensystem hat jede untergeordnete Stelle genau eine unmittelbar vorgesetzte Stelle. Klare Zuständigkeit vereinfacht die Verantwortung; lange Wege können Entscheidungen verzögern.",
+      "Im Mehrliniensystem können mehrere fachlich zuständige Leitungen derselben Stelle Weisungen geben. Das verkürzt Fachwege, kann aber widersprüchliche Aufträge erzeugen. Eine Stabsstelle berät die Leitung; aus dieser Beratung folgt keine allgemeine Weisungsbefugnis gegenüber den Linien."
+    ],
+    "takeaway": "Widersprüchliche Weisungen mehrerer fachlicher Vorgesetzter.",
+    "sourceIds": ["lp", "isb"],
+    "quiz": {
+      "question": "Was kennzeichnet das Einliniensystem?",
+      "answer": "Jede Stelle hat genau eine unmittelbar vorgesetzte Stelle.",
+      "wrong": [
+        "Jede Stelle erhält Weisungen von beliebig vielen Leitungen.",
+        "Beratungsstellen ersetzen jede Leitungsentscheidung."
+      ],
+      "explanation": "Das Organigramm ordnet Stellen und Weisungswege, nicht die persönliche Bedeutung von Menschen."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Fälle untersuchen",
+      "instruction": "Ordne die drei Fälle zu. Prüfe anschließend deine Entscheidungen.",
+      "categories": ["Einliniensystem", "Mehrliniensystem", "Stab"],
+      "entries": [
+        {
+          "text": "Die Produktion erhält Aufträge nur von ihrer Betriebsleitung.",
+          "target": 0,
+          "feedback": "Ein unmittelbarer Weisungsweg."
+        },
+        {
+          "text": "Fachleitung Qualität und Fertigungsleitung erteilen beide Anweisungen.",
+          "target": 1,
+          "feedback": "Mehrere fachliche Weisungswege."
+        },
+        {
+          "text": "Eine Rechtsstelle berät die Geschäftsleitung ohne Linienbefugnis.",
+          "target": 2,
+          "feedback": "Beratung ist eine Stabsfunktion."
+        }
+      ],
+      "conclusion": "Das Organigramm ordnet Stellen und Weisungswege, nicht die persönliche Bedeutung von Menschen."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Zeichne Leitung, Einkauf und Produktion als Einliniensystem. Erkläre einen Vorteil und einen Nachteil.",
+        "hints": ["Hierarchie darstellen", "Eine klare Zuständigkeit erklären"],
+        "model": "Die Geschäftsleitung steht über Einkauf und Produktion, die jeweils eine eigene Leitung haben. Jeder Mitarbeitende hat einen unmittelbaren Vorgesetzten. Verantwortung ist klar; Abstimmung zwischen Bereichen kann lange dauern.",
+        "criteria": [
+          "Hierarchie darstellen",
+          "Eine klare Zuständigkeit erklären",
+          "Einen möglichen langen Weg nennen"
+        ]
+      },
+      "2": {
+        "prompt": "Prüfe diese Behauptung und begründe an einem eigenen Gegenbeispiel: „Jede Stelle erhält Weisungen von beliebig vielen Leitungen.“",
+        "hints": ["Die Behauptung fachlich prüfen", "Eine klare Zuständigkeit erklären"],
+        "model": "Das Organigramm ordnet Stellen und Weisungswege, nicht die persönliche Bedeutung von Menschen. Die Geschäftsleitung steht über Einkauf und Produktion, die jeweils eine eigene Leitung haben. Jeder Mitarbeitende hat einen unmittelbaren Vorgesetzten. Verantwortung ist klar; Abstimmung zwischen Bereichen kann lange dauern.",
+        "criteria": [
+          "Die Behauptung fachlich prüfen",
+          "Eine klare Zuständigkeit erklären",
+          "Ein passendes Gegenbeispiel erklären"
+        ]
+      }
+    }
+  },
+  {
+    "id": "uf-fuehrungsstile",
+    "lb": 1,
+    "title": "Führung und Zusammenarbeit",
+    "intro": "Mitsprache und Verantwortung müssen zusammenpassen.",
+    "paragraphs": [
+      "Bei autoritärer beziehungsweise autoritativer Führung entscheidet die Leitung weitgehend selbst und gibt die Umsetzung vor. Kooperative Führung beteiligt Beschäftigte an der Entscheidungsfindung und bezieht ihre Erfahrung ein. Die Leitung bleibt für Entscheidungen verantwortlich.",
+      "Ein Sicherheitsnotfall erfordert oft eine schnelle klare Anweisung. Bei der Entwicklung eines neuen Schichtplans kann Beteiligung bessere Informationen liefern und die Akzeptanz stärken. Ein Führungsstil ist deshalb anhand von Situation, Fachwissen und Folgen zu beurteilen."
+    ],
+    "takeaway": "Die Leitung organisiert Beteiligung, klärt Entscheidungsrechte und verantwortet die Umsetzung.",
+    "sourceIds": ["lp", "isb"],
+    "quiz": {
+      "question": "Was ist typisch für kooperative Führung?",
+      "answer": "Beschäftigte wirken an der Entscheidungsfindung mit.",
+      "wrong": [
+        "Jede Leitung verzichtet auf ihre Verantwortung.",
+        "Beschäftigte erfahren Entscheidungen erst nach ihrer Umsetzung."
+      ],
+      "explanation": "Beteiligung nutzt Wissen und fördert Akzeptanz; sie benötigt Zeit und klare Entscheidungsrechte."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Fälle untersuchen",
+      "instruction": "Ordne die drei Fälle zu. Prüfe anschließend deine Entscheidungen.",
+      "categories": ["Autoritär", "Kooperativ", "Keine tragfähige Führung"],
+      "entries": [
+        {
+          "text": "Bei Gefahr ordnet die Leitung sofort einen Maschinenstopp an.",
+          "target": 0,
+          "feedback": "Eine schnelle eindeutige Weisung."
+        },
+        {
+          "text": "Das Team erarbeitet Vorschläge, die Leitung entscheidet begründet.",
+          "target": 1,
+          "feedback": "Beteiligung bei erhaltener Verantwortung."
+        },
+        {
+          "text": "Niemand klärt widersprüchliche Schichtpläne.",
+          "target": 2,
+          "feedback": "Ungeklärte Verantwortung ist kein Führungsstil."
+        }
+      ],
+      "conclusion": "Beteiligung nutzt Wissen und fördert Akzeptanz; sie benötigt Zeit und klare Entscheidungsrechte."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Beurteile kooperative Führung beim Schichtplan und beim akuten Brandalarm.",
+        "hints": ["Beide Situationen unterscheiden", "Einen Vorteil der Beteiligung erklären"],
+        "model": "Beim Schichtplan können Beschäftigte Belastungen und Wünsche einbringen. Beim Brandalarm braucht es sofort verständliche Anweisungen. Auch nach Beteiligung muss feststehen, wer entscheidet und die Folgen verantwortet.",
+        "criteria": [
+          "Beide Situationen unterscheiden",
+          "Einen Vorteil der Beteiligung erklären",
+          "Verantwortung ausdrücklich zuordnen"
+        ]
+      },
+      "2": {
+        "prompt": "Prüfe diese Behauptung und begründe an einem eigenen Gegenbeispiel: „Jede Leitung verzichtet auf ihre Verantwortung.“",
+        "hints": ["Die Behauptung fachlich prüfen", "Einen Vorteil der Beteiligung erklären"],
+        "model": "Beteiligung nutzt Wissen und fördert Akzeptanz; sie benötigt Zeit und klare Entscheidungsrechte. Beim Schichtplan können Beschäftigte Belastungen und Wünsche einbringen. Beim Brandalarm braucht es sofort verständliche Anweisungen. Auch nach Beteiligung muss feststehen, wer entscheidet und die Folgen verantwortet.",
+        "criteria": [
+          "Die Behauptung fachlich prüfen",
+          "Einen Vorteil der Beteiligung erklären",
+          "Ein passendes Gegenbeispiel erklären"
+        ]
+      }
+    }
+  },
+  {
+    "id": "uf-management",
+    "lb": 1,
+    "title": "Führungstechniken unterscheiden",
+    "intro": "Ziele, Aufgaben und Ausnahmefälle sind verschiedene Ansatzpunkte.",
+    "paragraphs": [
+      "Management by Objectives vereinbart Ziele und prüft deren Erreichung. Management by Delegation überträgt Aufgaben mit passenden Befugnissen und Verantwortung für die Ausführung. Die Leitung behält Auswahl-, Informations- und Kontrollpflichten.",
+      "Bei Management by Exception bearbeitet das Team Routinefälle innerhalb vereinbarter Grenzen selbst; die Leitung greift bei Abweichungen ein. Für alle drei Techniken müssen Ziele, Grenzen und Rückmeldungen verständlich sein. Eine bloße Arbeitsanweisung ohne Befugnisse ist noch keine gelungene Delegation."
+    ],
+    "takeaway": "Aufgabe, Entscheidungsbefugnisse und Verantwortung für die Ausführung.",
+    "sourceIds": ["lp", "isb"],
+    "quiz": {
+      "question": "Welche Technik lässt die Leitung vor allem bei Grenzüberschreitungen eingreifen?",
+      "answer": "Management by Exception.",
+      "wrong": ["Management by Objectives.", "Management by Delegation."],
+      "explanation": "Exception bedeutet Ausnahme; die Grenzen müssen vorher bekannt sein."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Fälle untersuchen",
+      "instruction": "Ordne die drei Fälle zu. Prüfe anschließend deine Entscheidungen.",
+      "categories": ["Objectives", "Delegation", "Exception"],
+      "entries": [
+        {
+          "text": "Das Team vereinbart ein überprüfbares Lieferzeitziel.",
+          "target": 0,
+          "feedback": "Der Ausgangspunkt ist die Zielvereinbarung."
+        },
+        {
+          "text": "Eine Einkäuferin übernimmt Bestellungen samt Freigabe bis 500 Euro.",
+          "target": 1,
+          "feedback": "Aufgabe und Befugnis werden übertragen."
+        },
+        {
+          "text": "Nur Preisabweichungen über 5 Prozent gehen an die Leitung.",
+          "target": 2,
+          "feedback": "Die Leitung entscheidet im Ausnahmefall."
+        }
+      ],
+      "conclusion": "Exception bedeutet Ausnahme; die Grenzen müssen vorher bekannt sein."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Eine Leitung überträgt Einkaufsverantwortung, erlaubt aber keine einzige Entscheidung. Erkläre das Problem.",
+        "hints": ["Aufgabe und Befugnis verbinden", "Ein geeignetes Entscheidungsrecht nennen"],
+        "model": "Verantwortung ohne ausreichende Befugnisse verhindert eigenständiges Handeln. Delegation benötigt eine abgegrenzte Aufgabe, passende Entscheidungsrechte und Rückmeldungen. Die Leitung muss Auswahl und Kontrolle weiter wahrnehmen.",
+        "criteria": [
+          "Aufgabe und Befugnis verbinden",
+          "Ein geeignetes Entscheidungsrecht nennen",
+          "Die verbleibende Leitungspflicht erklären"
+        ]
+      },
+      "2": {
+        "prompt": "Prüfe diese Behauptung und begründe an einem eigenen Gegenbeispiel: „Management by Objectives.“",
+        "hints": ["Die Behauptung fachlich prüfen", "Ein geeignetes Entscheidungsrecht nennen"],
+        "model": "Exception bedeutet Ausnahme; die Grenzen müssen vorher bekannt sein. Verantwortung ohne ausreichende Befugnisse verhindert eigenständiges Handeln. Delegation benötigt eine abgegrenzte Aufgabe, passende Entscheidungsrechte und Rückmeldungen. Die Leitung muss Auswahl und Kontrolle weiter wahrnehmen.",
+        "criteria": [
+          "Die Behauptung fachlich prüfen",
+          "Ein geeignetes Entscheidungsrecht nennen",
+          "Ein passendes Gegenbeispiel erklären"
+        ]
+      }
+    }
+  },
+  {
+    "id": "uf-unternehmerlohn",
+    "lb": 1,
+    "title": "Unternehmerlohn und Gewinn",
+    "intro": "Die Arbeit der Inhaberin muss aus dem Ergebnis finanziert werden.",
+    "paragraphs": [
+      "Eine Inhaberin im Einzelunternehmen erhält für ihre eigene Arbeit keinen gebuchten Arbeitnehmerlohn. Ein angemessener kalkulatorischer Unternehmerlohn berücksichtigt die Arbeitsleistung und den Lebensunterhalt. Das Unternehmerrisiko ist bei der Beurteilung des erforderlichen Ergebnisses ebenfalls zu berücksichtigen.",
+      "Eine Privatentnahme ist eine Verwendung von Vermögen und kein betrieblicher Personalaufwand. Wer Preise so niedrig ansetzt, dass für die eigene Arbeit dauerhaft kein Betrag übrig bleibt, kann trotz ausgeglichener laufender Rechnungen wirtschaftlich scheitern."
+    ],
+    "takeaway": "Auch die Arbeit und Existenzsicherung der Inhaberin müssen durch das Ergebnis getragen werden.",
+    "sourceIds": ["lp", "isb"],
+    "quiz": {
+      "question": "Wie wirkt eine Geldentnahme der Einzelunternehmerin auf den buchhalterischen Gewinn?",
+      "answer": "Sie verändert den Gewinn nicht unmittelbar.",
+      "wrong": [
+        "Sie vermindert den Gewinn wie ein Arbeitnehmerlohn.",
+        "Sie erhöht den Gewinn wie ein Verkaufserlös."
+      ],
+      "explanation": "Privatentnahmen mindern Eigenkapital und Liquidität, sind aber kein Aufwand."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Fälle untersuchen",
+      "instruction": "Ordne die drei Fälle zu. Prüfe anschließend deine Entscheidungen.",
+      "categories": ["Betrieblicher Aufwand", "Privatentnahme", "Kalkulatorische Überlegung"],
+      "entries": [
+        {
+          "text": "Lohnzahlung an eine angestellte Fachkraft.",
+          "target": 0,
+          "feedback": "Leistung eines Arbeitnehmers ist Aufwand."
+        },
+        {
+          "text": "Überweisung an das private Haushaltskonto der Inhaberin.",
+          "target": 1,
+          "feedback": "Betriebsvermögen verlässt den Betrieb privat."
+        },
+        {
+          "text": "Eigene Arbeitsleistung in der Preisplanung berücksichtigen.",
+          "target": 2,
+          "feedback": "Kalkulatorischer Unternehmerlohn ist kein gebuchter Arbeitnehmerlohn."
+        }
+      ],
+      "conclusion": "Privatentnahmen mindern Eigenkapital und Liquidität, sind aber kein Aufwand."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Ein Unternehmen deckt Material und Angestelltenlöhne, für die Inhaberin bleibt nichts. Ist der Preis dauerhaft tragfähig?",
+        "hints": ["Eigene Arbeit berücksichtigen", "Tragfähigkeit beurteilen"],
+        "model": "Die eigene Arbeit muss bei der Preisplanung berücksichtigt werden. Private Lebenshaltung und Absicherung brauchen ein angemessenes Ergebnis. Eine Entnahme macht den fehlenden Gewinn nicht nachträglich zu betrieblichem Aufwand.",
+        "criteria": [
+          "Eigene Arbeit berücksichtigen",
+          "Tragfähigkeit beurteilen",
+          "Entnahme von Aufwand unterscheiden"
+        ]
+      },
+      "2": {
+        "prompt": "Prüfe diese Behauptung und begründe an einem eigenen Gegenbeispiel: „Sie vermindert den Gewinn wie ein Arbeitnehmerlohn.“",
+        "hints": ["Die Behauptung fachlich prüfen", "Tragfähigkeit beurteilen"],
+        "model": "Privatentnahmen mindern Eigenkapital und Liquidität, sind aber kein Aufwand. Die eigene Arbeit muss bei der Preisplanung berücksichtigt werden. Private Lebenshaltung und Absicherung brauchen ein angemessenes Ergebnis. Eine Entnahme macht den fehlenden Gewinn nicht nachträglich zu betrieblichem Aufwand.",
+        "criteria": [
+          "Die Behauptung fachlich prüfen",
+          "Tragfähigkeit beurteilen",
+          "Ein passendes Gegenbeispiel erklären"
+        ]
+      }
+    }
+  },
+  {
+    "id": "uf-privat",
+    "lb": 1,
+    "title": "Einlagen und Entnahmen buchen",
+    "intro": "Betrieb und Privathaushalt getrennt halten.",
+    "paragraphs": [
+      "Das Privatkonto 3001 P ist ein Unterkonto des Eigenkapitals. Eine Geldentnahme wird im Soll des Privatkontos und im Haben des Bankkontos erfasst: 3001 P an 2800 BK. Eine Geldeinlage lautet umgekehrt 2800 BK an 3001 P.",
+      "Private Einkommensteuer, Kirchensteuer und private Absicherung sind keine betrieblichen Aufwendungen des Einzelunternehmens. Werden sie vom Geschäftskonto bezahlt, werden sie als Privatentnahme erfasst. Sachentnahmen können Umsatzsteuer auslösen und gehören nicht zu den vereinfachten Geldfällen hier."
+    ],
+    "takeaway": "2800 BK an 3001 P.",
+    "sourceIds": ["lp", "isb"],
+    "quiz": {
+      "question": "Wie wird eine reine Geldentnahme vom Geschäftskonto gebucht?",
+      "answer": "3001 P an 2800 BK.",
+      "wrong": ["2800 BK an 3001 P.", "6200 LG an 2800 BK."],
+      "explanation": "Die Entnahme mindert Bankguthaben und erhöht die Entnahmen im Soll des Privatkontos."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Fälle untersuchen",
+      "instruction": "Ordne die drei Fälle zu. Prüfe anschließend deine Entscheidungen.",
+      "categories": ["Privateinlage", "Privatentnahme", "Betrieblicher Aufwand"],
+      "entries": [
+        {
+          "text": "Die Inhaberin überweist privates Geld auf das Geschäftskonto.",
+          "target": 0,
+          "feedback": "Eigenkapital wird privat zugeführt."
+        },
+        {
+          "text": "Das Geschäftskonto bezahlt ihre private Einkommensteuer.",
+          "target": 1,
+          "feedback": "Eine persönliche Steuer ist keine Betriebsausgabe."
+        },
+        {
+          "text": "Der Betrieb bezahlt einen angestellten Mitarbeiter.",
+          "target": 2,
+          "feedback": "Das ist Arbeitsentgelt für eine fremde Arbeitsleistung."
+        }
+      ],
+      "conclusion": "Die Entnahme mindert Bankguthaben und erhöht die Entnahmen im Soll des Privatkontos."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre den Unterschied zwischen einer Geldentnahme von 1.000 Euro und dem Lohn einer angestellten Person.",
+        "hints": ["Beide Kontenarten unterscheiden", "Gewinnwirkung erklären"],
+        "model": "Die Geldentnahme wird über 3001 P gebucht und verändert den Gewinn nicht. Ein Arbeitnehmerlohn ist betrieblicher Aufwand. Beide können Liquidität mindern, haben aber unterschiedliche Wirkungen auf den Erfolg.",
+        "criteria": [
+          "Beide Kontenarten unterscheiden",
+          "Gewinnwirkung erklären",
+          "Liquidität von Erfolg trennen"
+        ]
+      },
+      "2": {
+        "prompt": "Prüfe diese Behauptung und begründe an einem eigenen Gegenbeispiel: „2800 BK an 3001 P.“",
+        "hints": ["Die Behauptung fachlich prüfen", "Gewinnwirkung erklären"],
+        "model": "Die Entnahme mindert Bankguthaben und erhöht die Entnahmen im Soll des Privatkontos. Die Geldentnahme wird über 3001 P gebucht und verändert den Gewinn nicht. Ein Arbeitnehmerlohn ist betrieblicher Aufwand. Beide können Liquidität mindern, haben aber unterschiedliche Wirkungen auf den Erfolg.",
+        "criteria": [
+          "Die Behauptung fachlich prüfen",
+          "Gewinnwirkung erklären",
+          "Ein passendes Gegenbeispiel erklären"
+        ]
+      }
+    },
+    "practice": "private"
+  },
+  {
+    "id": "uf-eigenkapital",
+    "lb": 1,
+    "title": "Privatkonto abschließen und Eigenkapital erklären",
+    "intro": "Eine Kapitaländerung ist nicht automatisch Gewinn.",
+    "paragraphs": [
+      "Endkapital ergibt sich aus Anfangskapital zuzüglich Gewinn und Einlagen abzüglich Verlust und Entnahmen. Umgekehrt ist Gewinn gleich Endkapital minus Anfangskapital minus Einlagen plus Entnahmen. So werden private Vorgänge aus der Erfolgsrechnung herausgerechnet.",
+      "Überwiegen Entnahmen, hat das Privatkonto einen Sollsaldo. Sein Abschluss lautet 3000 EK an 3001 P. Bei einem Einlagenüberschuss ist die Richtung umgekehrt. Ein positiver Gewinn garantiert kein höheres Endkapital, wenn die Entnahmen größer sind."
+    ],
+    "takeaway": "Endkapital = Anfangskapital + Gewinn + Einlagen − Entnahmen.",
+    "sourceIds": ["lp", "isb"],
+    "quiz": {
+      "question": "Wie wirkt eine Privateinlage auf das Eigenkapital?",
+      "answer": "Sie erhöht das Eigenkapital ohne Gewinn zu erzeugen.",
+      "wrong": [
+        "Sie erhöht Gewinn und Eigenkapital im gleichen Umfang.",
+        "Sie mindert das Eigenkapital wie eine Privatentnahme."
+      ],
+      "explanation": "Eigenkapitaländerungen enthalten Erfolg und private Kapitalbewegungen."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Fälle untersuchen",
+      "instruction": "Ordne die drei Fälle zu. Prüfe anschließend deine Entscheidungen.",
+      "categories": [
+        "Erhöht Eigenkapital",
+        "Mindert Eigenkapital",
+        "Erfolgsneutraler Kontentausch"
+      ],
+      "entries": [
+        {
+          "text": "Ein Gewinn verbleibt im Betrieb.",
+          "target": 0,
+          "feedback": "Gewinn erhöht das Eigenkapital."
+        },
+        {
+          "text": "Die Inhaberin entnimmt Geld.",
+          "target": 1,
+          "feedback": "Entnahme mindert Eigenkapital."
+        },
+        {
+          "text": "Geld wird von der Geschäftskasse auf das Geschäftskonto eingezahlt.",
+          "target": 2,
+          "feedback": "Zwei betriebliche Aktivkonten ändern sich."
+        }
+      ],
+      "conclusion": "Eigenkapitaländerungen enthalten Erfolg und private Kapitalbewegungen."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Anfangskapital 40.000, Gewinn 9.000, Einlagen 2.000, Entnahmen 12.000 Euro: Erkläre das Endkapital.",
+        "hints": ["Vier Größen korrekt verknüpfen", "39.000 Euro ermitteln"],
+        "model": "40.000 + 9.000 + 2.000 − 12.000 = 39.000 Euro. Trotz Gewinn sinkt das Kapital, weil die Entnahmen den Gewinn und die Einlagen zusammen übersteigen. Der Entnahmenüberschuss wird über Eigenkapital abgeschlossen.",
+        "criteria": [
+          "Vier Größen korrekt verknüpfen",
+          "39.000 Euro ermitteln",
+          "Sinkendes Kapital trotz Gewinn erklären"
+        ]
+      },
+      "2": {
+        "prompt": "Prüfe diese Behauptung und begründe an einem eigenen Gegenbeispiel: „Sie erhöht Gewinn und Eigenkapital im gleichen Umfang.“",
+        "hints": ["Die Behauptung fachlich prüfen", "39.000 Euro ermitteln"],
+        "model": "Eigenkapitaländerungen enthalten Erfolg und private Kapitalbewegungen. 40.000 + 9.000 + 2.000 − 12.000 = 39.000 Euro. Trotz Gewinn sinkt das Kapital, weil die Entnahmen den Gewinn und die Einlagen zusammen übersteigen. Der Entnahmenüberschuss wird über Eigenkapital abgeschlossen.",
+        "criteria": [
+          "Die Behauptung fachlich prüfen",
+          "39.000 Euro ermitteln",
+          "Ein passendes Gegenbeispiel erklären"
+        ]
+      }
+    },
+    "practice": "equity"
+  },
+  {
+    "id": "an-anschaffung",
+    "lb": 2,
+    "title": "Anschaffungskosten ermitteln",
+    "intro": "Was kostet es, die Maschine betriebsbereit zu machen?",
+    "paragraphs": [
+      "Zu den Anschaffungskosten gehören der geminderte Anschaffungspreis und einzeln zurechenbare Nebenkosten bis zur Betriebsbereitschaft, etwa Transport und Montage. Rabatte und Skonti mindern die Anschaffungskosten. Abziehbare Vorsteuer wird getrennt erfasst und gehört nicht zum abschreibbaren Wert.",
+      "Eine Maschine kostet nach Rabatt 18.000 Euro netto. Transport und Montage kosten 1.000 Euro netto. Bei vollständigem Vorsteuerabzug betragen die Anschaffungskosten 19.000 Euro. Regelmäßige Wartung nach der Inbetriebnahme ist in diesem einfachen Fall laufender Aufwand."
+    ],
+    "takeaway": "Anschaffungspreis − Preisnachlässe + zurechenbare Anschaffungsnebenkosten.",
+    "sourceIds": ["lp", "hgb", "vorsteuer"],
+    "quiz": {
+      "question": "Welche Zahlung gehört im einfachen Maschinenkauf zu den Anschaffungskosten?",
+      "answer": "Die notwendige Montage vor der ersten Nutzung.",
+      "wrong": ["Die vollständig abziehbare Vorsteuer.", "Die spätere regelmäßige Wartung."],
+      "explanation": "Betriebsbereitschaft und Einzelzuordnung sind entscheidend."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Fälle untersuchen",
+      "instruction": "Ordne die drei Fälle zu. Prüfe anschließend deine Entscheidungen.",
+      "categories": ["Anschaffungskosten", "Getrennte Vorsteuer", "Laufender Aufwand"],
+      "entries": [
+        {
+          "text": "Transport zur ersten Inbetriebnahme.",
+          "target": 0,
+          "feedback": "Er bringt die Maschine an ihren Einsatzort."
+        },
+        {
+          "text": "Vollständig abziehbare Umsatzsteuer der Einkaufsrechnung.",
+          "target": 1,
+          "feedback": "Sie ist eine Forderung an das Finanzamt."
+        },
+        {
+          "text": "Wartung nach einem Jahr normaler Nutzung.",
+          "target": 2,
+          "feedback": "Sie erhält den betriebsbereiten Zustand."
+        }
+      ],
+      "conclusion": "Betriebsbereitschaft und Einzelzuordnung sind entscheidend."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre für 20.000 Euro Listenpreis, 10 Prozent Rabatt und 1.000 Euro Montage die Abschreibungsbasis bei Vorsteuerabzug.",
+        "hints": ["Rabatt vor Nebenkosten abziehen", "19.000 Euro begründen"],
+        "model": "Der Rabatt beträgt 2.000 Euro. Nach Rabatt bleiben 18.000 Euro, hinzu kommen 1.000 Euro Montage: Anschaffungskosten 19.000 Euro. Die abziehbare Vorsteuer gehört nicht in diese Bemessungsgrundlage.",
+        "criteria": [
+          "Rabatt vor Nebenkosten abziehen",
+          "19.000 Euro begründen",
+          "Vorsteuer getrennt behandeln"
+        ]
+      },
+      "2": {
+        "prompt": "Prüfe diese Behauptung und begründe an einem eigenen Gegenbeispiel: „Die vollständig abziehbare Vorsteuer.“",
+        "hints": ["Die Behauptung fachlich prüfen", "19.000 Euro begründen"],
+        "model": "Betriebsbereitschaft und Einzelzuordnung sind entscheidend. Der Rabatt beträgt 2.000 Euro. Nach Rabatt bleiben 18.000 Euro, hinzu kommen 1.000 Euro Montage: Anschaffungskosten 19.000 Euro. Die abziehbare Vorsteuer gehört nicht in diese Bemessungsgrundlage.",
+        "criteria": [
+          "Die Behauptung fachlich prüfen",
+          "19.000 Euro begründen",
+          "Ein passendes Gegenbeispiel erklären"
+        ]
+      }
+    }
+  },
+  {
+    "id": "an-kauf-buchen",
+    "lb": 2,
+    "title": "Den Anlagenkauf buchen",
+    "intro": "Eine Maschine wird aktiviert, nicht sofort vollständig als Aufwand gebucht.",
+    "paragraphs": [
+      "Beim Kauf einer Maschine auf Ziel steht der Nettowert auf 0700 MA im Soll, die abziehbare Vorsteuer auf 2600 VORST ebenfalls im Soll. Die volle Rechnung steht auf 4400 VE im Haben. Das Anlagegut wird über seine Nutzung als Aufwand verteilt.",
+      "Eine Anlagenkarte hält insbesondere Anschaffungsdatum, Anschaffungskosten, Nutzungsdauer, Abschreibungsverfahren und Buchwerte fest. Sie macht den Werteverzehr eines einzelnen Anlageguts nachvollziehbar. Eine Rechnung allein ersetzt die laufende Fortschreibung nicht."
+    ],
+    "takeaway": "Anschaffungsdatum und Kosten, Nutzungsdauer, Verfahren sowie fortgeschriebene Buchwerte.",
+    "sourceIds": ["lp", "isb"],
+    "quiz": {
+      "question": "Auf welchem Konto wird der Nettokauf einer Produktionsmaschine zunächst erfasst?",
+      "answer": "0700 MA im Soll.",
+      "wrong": ["6520 ABSA im Soll.", "5000 UEFE im Haben."],
+      "explanation": "Die Anschaffung schafft einen Vermögensgegenstand; planmäßige Abschreibung folgt später."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Fälle untersuchen",
+      "instruction": "Ordne die drei Fälle zu. Prüfe anschließend deine Entscheidungen.",
+      "categories": ["Soll", "Haben", "Kein Teil dieses Kaufbuchungssatzes"],
+      "entries": [
+        {
+          "text": "0700 MA: Nettowert der gekauften Maschine.",
+          "target": 0,
+          "feedback": "Das Aktivkonto nimmt zu."
+        },
+        {
+          "text": "4400 VE: Bruttoschuld beim Lieferanten.",
+          "target": 1,
+          "feedback": "Die Verbindlichkeit nimmt zu."
+        },
+        {
+          "text": "6520 ABSA: vollständiger Kaufpreis.",
+          "target": 2,
+          "feedback": "Der Kauf ist nicht die jährliche Abschreibungsbuchung."
+        }
+      ],
+      "conclusion": "Die Anschaffung schafft einen Vermögensgegenstand; planmäßige Abschreibung folgt später."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Buche einen Maschinenkauf auf Ziel: 10.000 Euro netto, 19 Prozent abziehbare Vorsteuer.",
+        "hints": ["Anlagekonto im Soll", "Vorsteuer getrennt im Soll"],
+        "model": "0700 MA 10.000 und 2600 VORST 1.900 an 4400 VE 11.900 Euro. Die Maschine wird aktiviert; die Vorsteuer ist ein eigener Anspruch. Auf der Anlagenkarte werden Kosten und spätere Abschreibungen dokumentiert.",
+        "criteria": ["Anlagekonto im Soll", "Vorsteuer getrennt im Soll", "Bruttoschuld im Haben"]
+      },
+      "2": {
+        "prompt": "Prüfe diese Behauptung und begründe an einem eigenen Gegenbeispiel: „6520 ABSA im Soll.“",
+        "hints": ["Die Behauptung fachlich prüfen", "Vorsteuer getrennt im Soll"],
+        "model": "Die Anschaffung schafft einen Vermögensgegenstand; planmäßige Abschreibung folgt später. 0700 MA 10.000 und 2600 VORST 1.900 an 4400 VE 11.900 Euro. Die Maschine wird aktiviert; die Vorsteuer ist ein eigener Anspruch. Auf der Anlagenkarte werden Kosten und spätere Abschreibungen dokumentiert.",
+        "criteria": [
+          "Die Behauptung fachlich prüfen",
+          "Vorsteuer getrennt im Soll",
+          "Ein passendes Gegenbeispiel erklären"
+        ]
+      }
+    },
+    "practice": "purchase"
+  },
+  {
+    "id": "an-grundstueck",
+    "lb": 2,
+    "title": "Grundstück und Gebäude trennen",
+    "intro": "Nur der abnutzbare Teil wird planmäßig abgeschrieben.",
+    "paragraphs": [
+      "Beim gemeinsamen Erwerb von Grundstück und Gebäude werden Kaufpreis und gemeinsame Nebenkosten nach dem vorgegebenen Wertverhältnis verteilt. Direkt zuordenbare Kosten gehen unmittelbar auf den betreffenden Bestandteil. Eine Aufteilung ausschließlich nach Fläche ist ohne entsprechende Wertangaben nicht begründet.",
+      "Im Schulfall entfallen 25 Prozent des Kaufpreises auf Grund und Boden und 75 Prozent auf das Gebäude. Gemeinsame Nebenkosten werden im selben Verhältnis zugeteilt. Grund und Boden unterliegt grundsätzlich keiner planmäßigen Abnutzung; das Gebäude wird planmäßig abgeschrieben. Steuer- und Sonderfälle sind hier nicht nachgebildet."
+    ],
+    "takeaway": "Nach dem vorgegebenen Wertverhältnis von Grundstück und Gebäude.",
+    "sourceIds": ["lp", "hgb"],
+    "quiz": {
+      "question": "Welcher Teil wird im einfachen gemeinsamen Immobilienkauf planmäßig abgeschrieben?",
+      "answer": "Der auf das abnutzbare Gebäude entfallende Wert.",
+      "wrong": [
+        "Der gesamte Wert einschließlich Grund und Boden.",
+        "Ausschließlich der Wert des Grund und Bodens."
+      ],
+      "explanation": "Boden und Gebäude werden als verschiedene Vermögensbestandteile behandelt."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Fälle untersuchen",
+      "instruction": "Ordne die drei Fälle zu. Prüfe anschließend deine Entscheidungen.",
+      "categories": ["Grund und Boden", "Gebäude", "Beiden anteilig zuordnen"],
+      "entries": [
+        {
+          "text": "Im Kaufvertrag ausgewiesener Bodenwert.",
+          "target": 0,
+          "feedback": "Unmittelbar dem Boden zugeordnet."
+        },
+        {
+          "text": "Im Kaufvertrag ausgewiesener Gebäudewert.",
+          "target": 1,
+          "feedback": "Unmittelbar dem Gebäude zugeordnet."
+        },
+        {
+          "text": "Gemeinsame Kaufnebenkosten ohne direkte Einzelzuordnung.",
+          "target": 2,
+          "feedback": "Sie werden im vorgegebenen Wertverhältnis aufgeteilt."
+        }
+      ],
+      "conclusion": "Boden und Gebäude werden als verschiedene Vermögensbestandteile behandelt."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Ein Gesamtpreis von 400.000 Euro plus 40.000 Euro gemeinsame Nebenkosten entfällt zu 25 Prozent auf Boden. Ermittle die Gebäude-Basis.",
+        "hints": ["Gemeinsame Nebenkosten einbeziehen", "330.000 Euro Gebäudeanteil berechnen"],
+        "model": "Auf das Gebäude entfallen 75 Prozent von 440.000 Euro, also 330.000 Euro. Der Bodenwert beträgt 110.000 Euro und wird nicht planmäßig abgeschrieben. Entscheidend ist das vorgegebene Wertverhältnis.",
+        "criteria": [
+          "Gemeinsame Nebenkosten einbeziehen",
+          "330.000 Euro Gebäudeanteil berechnen",
+          "Boden von planmäßiger AfA ausnehmen"
+        ]
+      },
+      "2": {
+        "prompt": "Prüfe diese Behauptung und begründe an einem eigenen Gegenbeispiel: „Der gesamte Wert einschließlich Grund und Boden.“",
+        "hints": ["Die Behauptung fachlich prüfen", "330.000 Euro Gebäudeanteil berechnen"],
+        "model": "Boden und Gebäude werden als verschiedene Vermögensbestandteile behandelt. Auf das Gebäude entfallen 75 Prozent von 440.000 Euro, also 330.000 Euro. Der Bodenwert beträgt 110.000 Euro und wird nicht planmäßig abgeschrieben. Entscheidend ist das vorgegebene Wertverhältnis.",
+        "criteria": [
+          "Die Behauptung fachlich prüfen",
+          "330.000 Euro Gebäudeanteil berechnen",
+          "Ein passendes Gegenbeispiel erklären"
+        ]
+      }
+    },
+    "practice": "land"
+  },
+  {
+    "id": "an-wertverlust",
+    "lb": 2,
+    "title": "Wertverlust und Abschreibungskreislauf",
+    "intro": "Abschreibung ist Aufwand ohne eine neue Auszahlung.",
+    "paragraphs": [
+      "Sachanlagen verlieren durch Nutzung, Alterung oder technischen Fortschritt an wirtschaftlichem Wert. Abschreibungen verteilen diesen Werteverzehr als Aufwand. Bei linearer Abschreibung sind die vollen Jahresbeträge gleich; degressive Verfahren beginnen mit höheren Beträgen, leistungsabhängige Verfahren richten sich nach Nutzungseinheiten.",
+      "Werden die Abschreibungen durch Verkaufserlöse verdient und fließen diese Erlöse tatsächlich zu, kann Kapital für Ersatzinvestitionen zurückfließen. Die Abschreibungsbuchung selbst erzeugt kein Geld. Geringerer steuerpflichtiger Gewinn kann die Steuerbelastung senken; daraus folgt keine vollständige Finanzierung einer neuen Maschine."
+    ],
+    "takeaway": "Sie vermindert Buchwert und Gewinn, ohne selbst eine Auszahlung oder Einzahlung auszulösen.",
+    "sourceIds": ["lp", "isb"],
+    "quiz": {
+      "question": "Welche Aussage zum Abschreibungskreislauf ist richtig?",
+      "answer": "Ein Mittelrückfluss setzt verdiente und zugeflossene Erlöse voraus.",
+      "wrong": [
+        "Die Abschreibungsbuchung überweist sofort Geld an den Betrieb.",
+        "Jede Abschreibung finanziert automatisch eine vollständige Ersatzmaschine."
+      ],
+      "explanation": "Abschreibung ist keine Einzahlung; Refinanzierung hängt vom Geschäft und den Zuflüssen ab."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Fälle untersuchen",
+      "instruction": "Ordne die drei Fälle zu. Prüfe anschließend deine Entscheidungen.",
+      "categories": ["Linear", "Degressiv", "Leistungsabhängig"],
+      "entries": [
+        {
+          "text": "In jedem vollen Jahr derselbe Abschreibungsbetrag.",
+          "target": 0,
+          "feedback": "Gleichmäßige Verteilung."
+        },
+        {
+          "text": "Hohe Beträge am Anfang, später niedrigere.",
+          "target": 1,
+          "feedback": "Fallende Jahresbeträge."
+        },
+        {
+          "text": "Betrag nach tatsächlich gefahrenen Kilometern.",
+          "target": 2,
+          "feedback": "Die Nutzung bestimmt den Werteverzehr."
+        }
+      ],
+      "conclusion": "Abschreibung ist keine Einzahlung; Refinanzierung hängt vom Geschäft und den Zuflüssen ab."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Eine Firma schreibt 8.000 Euro ab, verkauft aber nichts. Hat sie damit 8.000 Euro neues Geld für eine Ersatzmaschine?",
+        "hints": [
+          "Aufwand von Einzahlung trennen",
+          "Absatz und Zahlung als Voraussetzungen nennen"
+        ],
+        "model": "Nein. Die Buchung vermindert Gewinn und Buchwert, löst aber keine Einzahlung aus. Erst wenn Umsätze die Kosten decken und Kunden zahlen, können Abschreibungsgegenwerte zurückfließen. Selbst dann können Preisänderungen und andere Mittelverwendungen eine Ersatzinvestition erschweren.",
+        "criteria": [
+          "Aufwand von Einzahlung trennen",
+          "Absatz und Zahlung als Voraussetzungen nennen",
+          "Keine automatische Ersatzfinanzierung behaupten"
+        ]
+      },
+      "2": {
+        "prompt": "Prüfe diese Behauptung und begründe an einem eigenen Gegenbeispiel: „Die Abschreibungsbuchung überweist sofort Geld an den Betrieb.“",
+        "hints": [
+          "Die Behauptung fachlich prüfen",
+          "Absatz und Zahlung als Voraussetzungen nennen"
+        ],
+        "model": "Abschreibung ist keine Einzahlung; Refinanzierung hängt vom Geschäft und den Zuflüssen ab. Nein. Die Buchung vermindert Gewinn und Buchwert, löst aber keine Einzahlung aus. Erst wenn Umsätze die Kosten decken und Kunden zahlen, können Abschreibungsgegenwerte zurückfließen. Selbst dann können Preisänderungen und andere Mittelverwendungen eine Ersatzinvestition erschweren.",
+        "criteria": [
+          "Die Behauptung fachlich prüfen",
+          "Absatz und Zahlung als Voraussetzungen nennen",
+          "Ein passendes Gegenbeispiel erklären"
+        ]
+      }
+    }
+  },
+  {
+    "id": "an-linear",
+    "lb": 2,
+    "title": "Lineare Abschreibung berechnen",
+    "intro": "Den gleichen Werteverzehr auf volle Nutzungsjahre verteilen.",
+    "paragraphs": [
+      "Im linearen Schulmodell ohne gesonderten Restwert gilt: Jahresabschreibung gleich Anschaffungskosten geteilt durch Nutzungsdauer. Der jährliche Abschreibungssatz ist 100 Prozent geteilt durch Nutzungsjahre. Anschaffungskosten von 60.000 Euro und fünf Jahre ergeben 12.000 Euro beziehungsweise 20 Prozent pro vollem Jahr.",
+      "Der Restbuchwert ist der fortgeschriebene Buchwert nach Abzug der bisherigen Abschreibungen, kein zugesicherter Verkaufspreis. Eine AfA-Tabelle bietet eine Orientierung zur betriebsgewöhnlichen Nutzungsdauer. Gebäude und steuerliche Sonderverfahren folgen eigenen Regeln; hier werden bewegliche Anlagen linear geübt."
+    ],
+    "takeaway": "100 Prozent geteilt durch die Nutzungsdauer in Jahren.",
+    "sourceIds": ["lp", "isb"],
+    "quiz": {
+      "question": "Wie hoch ist der jährliche lineare Abschreibungsbetrag für eine Produktionsmaschine mit netto 60.000 Euro Anschaffungskosten und fünf Jahren Nutzungsdauer?",
+      "answer": "12.000 Euro pro Jahr.",
+      "wrong": ["10.000 Euro pro Jahr.", "15.000 Euro pro Jahr."],
+      "explanation": "60.000 geteilt durch 5 ergibt 12.000; der jährliche Satz ist 20 Prozent."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Fälle untersuchen",
+      "instruction": "Ordne die drei Fälle zu. Prüfe anschließend deine Entscheidungen.",
+      "categories": ["Abschreibungsbetrag", "Abschreibungssatz", "Restbuchwert nach einem Jahr"],
+      "entries": [
+        {
+          "text": "12.000 Euro bei 60.000 Euro und fünf Jahren.",
+          "target": 0,
+          "feedback": "Ein Geldbetrag je vollem Nutzungsjahr."
+        },
+        {
+          "text": "20 Prozent bei fünf Jahren Nutzungsdauer.",
+          "target": 1,
+          "feedback": "100 geteilt durch fünf."
+        },
+        {
+          "text": "48.000 Euro nach der ersten Jahresabschreibung.",
+          "target": 2,
+          "feedback": "Anschaffungskosten minus bisherige Abschreibung."
+        }
+      ],
+      "conclusion": "60.000 geteilt durch 5 ergibt 12.000; der jährliche Satz ist 20 Prozent."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Begründe für eine Maschine mit 60.000 Euro und fünf Jahren den Jahresbetrag und den Buchwert nach zwei vollen Jahren.",
+        "hints": ["12.000 Euro Jahresbetrag", "36.000 Euro Restbuchwert"],
+        "model": "Die Jahresabschreibung beträgt 60.000 / 5 = 12.000 Euro. Nach zwei vollen Jahren sind 24.000 Euro abgeschrieben; der Buchwert beträgt 36.000 Euro. Ein möglicher Marktpreis lässt sich daraus nicht sicher ableiten.",
+        "criteria": [
+          "12.000 Euro Jahresbetrag",
+          "36.000 Euro Restbuchwert",
+          "Buchwert und Marktwert unterscheiden"
+        ]
+      },
+      "2": {
+        "prompt": "Prüfe diese Behauptung und begründe an einem eigenen Gegenbeispiel: „10.000 Euro pro Jahr.“",
+        "hints": ["Die Behauptung fachlich prüfen", "36.000 Euro Restbuchwert"],
+        "model": "60.000 geteilt durch 5 ergibt 12.000; der jährliche Satz ist 20 Prozent. Die Jahresabschreibung beträgt 60.000 / 5 = 12.000 Euro. Nach zwei vollen Jahren sind 24.000 Euro abgeschrieben; der Buchwert beträgt 36.000 Euro. Ein möglicher Marktpreis lässt sich daraus nicht sicher ableiten.",
+        "criteria": [
+          "Die Behauptung fachlich prüfen",
+          "36.000 Euro Restbuchwert",
+          "Ein passendes Gegenbeispiel erklären"
+        ]
+      }
+    },
+    "practice": "depreciation",
+    "lab": "depreciation"
+  },
+  {
+    "id": "an-zeitanteilig",
+    "lb": 2,
+    "title": "Im Anschaffungsjahr zeitanteilig abschreiben",
+    "intro": "Ein Oktoberkauf wird nicht wie ein Januarfall behandelt.",
+    "paragraphs": [
+      "Im Schulmodell wird der Anschaffungsmonat mitgezählt. Eine im Oktober angeschaffte und sofort betriebsbereite bewegliche Anlage wird im ersten Kalenderjahr für Oktober, November und Dezember abgeschrieben: drei Zwölftel des vollen Jahresbetrags.",
+      "Bei Anschaffungskosten von 24.000 Euro und vier Jahren Nutzungsdauer beträgt die volle Jahres-AfA 6.000 Euro. Bei Betriebsbereitschaft im Oktober sind es im Anschaffungsjahr 1.500 Euro. Weitere volle Jahre folgen; im letzten Kalenderjahr wird nur der verbleibende Betrag abgeschrieben."
+    ],
+    "takeaway": "Volle Jahres-AfA × Nutzungsmonate einschließlich Anschaffungsmonat / 12.",
+    "sourceIds": ["lp", "isb"],
+    "quiz": {
+      "question": "Wie viele Monate zählen bei Anschaffung und Betriebsbereitschaft im Oktober im ersten Kalenderjahr?",
+      "answer": "Drei Monate.",
+      "wrong": ["Zwei Monate.", "Zwölf Monate."],
+      "explanation": "Der Anschaffungsmonat zählt im geübten Schulmodell mit."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Fälle untersuchen",
+      "instruction": "Ordne die drei Fälle zu. Prüfe anschließend deine Entscheidungen.",
+      "categories": ["Erstes Kalenderjahr", "Volles Folgejahr", "Letztes Kalenderjahr"],
+      "entries": [
+        {
+          "text": "Jahresbetrag mal die verbleibenden Monate durch zwölf.",
+          "target": 0,
+          "feedback": "Beginn der Nutzung begrenzt das erste Jahr."
+        },
+        {
+          "text": "Der unveränderte volle lineare Jahresbetrag.",
+          "target": 1,
+          "feedback": "Die Anlage wird das gesamte Jahr genutzt."
+        },
+        {
+          "text": "Nur noch der nach dem Plan verbleibende Abschreibungsbetrag.",
+          "target": 2,
+          "feedback": "Insgesamt darf nicht mehr als die Basis abgeschrieben werden."
+        }
+      ],
+      "conclusion": "Der Anschaffungsmonat zählt im geübten Schulmodell mit."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Eine Maschine wird im Oktober sofort betriebsbereit gekauft: 24.000 Euro, vier Jahre. Erkläre erste Jahres-AfA und Buchwert.",
+        "hints": ["Volle Jahres-AfA ermitteln", "Drei Monate verwenden"],
+        "model": "Die volle Jahres-AfA beträgt 6.000 Euro. Drei Zwölftel davon sind 1.500 Euro; der Buchwert zum 31. Dezember ist 22.500 Euro. Der Oktober wird als Anschaffungsmonat mitgezählt.",
+        "criteria": [
+          "Volle Jahres-AfA ermitteln",
+          "Drei Monate verwenden",
+          "22.500 Euro Buchwert erklären"
+        ]
+      },
+      "2": {
+        "prompt": "Prüfe diese Behauptung und begründe an einem eigenen Gegenbeispiel: „Zwei Monate.“",
+        "hints": ["Die Behauptung fachlich prüfen", "Drei Monate verwenden"],
+        "model": "Der Anschaffungsmonat zählt im geübten Schulmodell mit. Die volle Jahres-AfA beträgt 6.000 Euro. Drei Zwölftel davon sind 1.500 Euro; der Buchwert zum 31. Dezember ist 22.500 Euro. Der Oktober wird als Anschaffungsmonat mitgezählt.",
+        "criteria": [
+          "Die Behauptung fachlich prüfen",
+          "Drei Monate verwenden",
+          "Ein passendes Gegenbeispiel erklären"
+        ]
+      }
+    },
+    "practice": "partial",
+    "lab": "depreciation"
+  },
+  {
+    "id": "an-abschreibung-buchen",
+    "lb": 2,
+    "title": "Abschreibung buchen und Erinnerungswert verstehen",
+    "intro": "Buchwert und betriebliche Nutzung sind verschieden.",
+    "paragraphs": [
+      "Die direkte Abschreibung einer Maschine lautet 6520 ABSA an 0700 MA. Der Aufwand steht im Soll, das Anlagekonto wird im Haben vermindert. Vorsteuer wird bei der planmäßigen Abschreibung nicht erneut angesetzt.",
+      "Ist eine voll abgeschriebene Anlage noch in Betrieb, kann ein Erinnerungswert von einem Euro im Anlagenbestand stehen bleiben. Die letzte Abschreibung wird dafür um einen Euro gekürzt. Das ist ein Hinweis auf vorhandenes Vermögen, keine Behauptung über dessen Marktwert."
+    ],
+    "takeaway": "Die vollständig abgeschriebene Anlage ist noch im Bestand; der Betrag ist kein Marktwert.",
+    "sourceIds": ["lp", "isb"],
+    "quiz": {
+      "question": "Wie lautet die direkte Abschreibung einer Maschine?",
+      "answer": "6520 ABSA an 0700 MA.",
+      "wrong": ["0700 MA an 6520 ABSA.", "2600 VORST an 0700 MA."],
+      "explanation": "Aufwand nimmt im Soll zu, der Anlagenbuchwert nimmt im Haben ab."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Fälle untersuchen",
+      "instruction": "Ordne die drei Fälle zu. Prüfe anschließend deine Entscheidungen.",
+      "categories": ["Abschreibungsbuchung", "Kaufbuchung", "Keine erneute Buchung"],
+      "entries": [
+        {
+          "text": "6520 ABSA an 0700 MA.",
+          "target": 0,
+          "feedback": "Direkter Werteverzehr der Maschine."
+        },
+        {
+          "text": "0700 MA und 2600 VORST an 4400 VE.",
+          "target": 1,
+          "feedback": "Die Anlage wird erworben."
+        },
+        {
+          "text": "Vorsteuer nochmals auf die Jahresabschreibung berechnen.",
+          "target": 2,
+          "feedback": "Der Kauf enthielt bereits die Vorsteuer."
+        }
+      ],
+      "conclusion": "Aufwand nimmt im Soll zu, der Anlagenbuchwert nimmt im Haben ab."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Eine noch genutzte Maschine hat vor der letzten Abschreibung 5.000 Euro Buchwert. Erläutere den Abschluss bei einem Euro Erinnerungswert.",
+        "hints": ["4.999 Euro bestimmen", "Buchungsrichtung erklären"],
+        "model": "Es werden 4.999 Euro mit 6520 ABSA an 0700 MA abgeschrieben. Ein Euro bleibt als Erinnerungswert. Die weitere Nutzung ist möglich; der Erinnerungswert ist kein erzielbarer Verkaufspreis.",
+        "criteria": [
+          "4.999 Euro bestimmen",
+          "Buchungsrichtung erklären",
+          "Erinnerungswert richtig deuten"
+        ]
+      },
+      "2": {
+        "prompt": "Prüfe diese Behauptung und begründe an einem eigenen Gegenbeispiel: „0700 MA an 6520 ABSA.“",
+        "hints": ["Die Behauptung fachlich prüfen", "Buchungsrichtung erklären"],
+        "model": "Aufwand nimmt im Soll zu, der Anlagenbuchwert nimmt im Haben ab. Es werden 4.999 Euro mit 6520 ABSA an 0700 MA abgeschrieben. Ein Euro bleibt als Erinnerungswert. Die weitere Nutzung ist möglich; der Erinnerungswert ist kein erzielbarer Verkaufspreis.",
+        "criteria": [
+          "Die Behauptung fachlich prüfen",
+          "Buchungsrichtung erklären",
+          "Ein passendes Gegenbeispiel erklären"
+        ]
+      }
+    },
+    "practice": "depreciationBooking"
+  },
+  {
+    "id": "an-gwg",
+    "lb": 2,
+    "title": "Kleingüter und GWG einordnen",
+    "intro": "Voraussetzungen und Wertgrenzen gemeinsam prüfen.",
+    "paragraphs": [
+      "Für selbständig nutzbare, bewegliche und abnutzbare Güter gilt hier die ISB-Schuleinteilung: bis einschließlich 250 Euro netto 6800 BMK; von 250,01 bis 800 Euro 0890 GWG mit voller Abschreibung am Jahresende über 6540 ABGWG; über 800 Euro reguläres Anlagekonto mit planmäßiger Abschreibung.",
+      "Die Werte setzen im geübten Fall vollständigen Vorsteuerabzug voraus. Ein nicht selbständig nutzbares Teil wird nicht allein wegen seines niedrigen Preises zum GWG. Das Steuerrecht kennt Wahlrechte und weitere Verfahren; die Schulvereinfachung ist keine vollständige Nachbildung aller steuerlichen Möglichkeiten."
+    ],
+    "takeaway": "Es muss selbständig nutzbar, beweglich und abnutzbar sein.",
+    "sourceIds": ["lp", "gwg", "estg"],
+    "quiz": {
+      "question": "Wie wird ein selbständig nutzbarer Bürostuhl für netto 600 Euro im geübten Schulmodell beim Kauf eingeordnet?",
+      "answer": "0890 GWG, volle Abschreibung am Jahresende.",
+      "wrong": [
+        "6800 BMK, weil alle Büromöbel sofort Aufwand sind.",
+        "0700 MA mit zwingend zehn Jahren Nutzungsdauer."
+      ],
+      "explanation": "600 Euro liegen über 250 und nicht über 800 Euro; die sachlichen Voraussetzungen sind erfüllt."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Fälle untersuchen",
+      "instruction": "Ordne die drei Fälle zu. Prüfe anschließend deine Entscheidungen.",
+      "categories": ["6800 BMK", "0890 GWG", "Reguläres Anlagekonto"],
+      "entries": [
+        {
+          "text": "Selbständig nutzbares Kleingerät für 250 Euro netto.",
+          "target": 0,
+          "feedback": "Die Grenze von 250 Euro ist eingeschlossen."
+        },
+        {
+          "text": "Selbständig nutzbarer Stuhl für 800 Euro netto.",
+          "target": 1,
+          "feedback": "800 Euro sind noch in der GWG-Spanne."
+        },
+        {
+          "text": "Selbständig nutzbare Büromaschine für 800,01 Euro netto.",
+          "target": 2,
+          "feedback": "Über 800 Euro im geübten Modell regulär aktivieren."
+        }
+      ],
+      "conclusion": "600 Euro liegen über 250 und nicht über 800 Euro; die sachlichen Voraussetzungen sind erfüllt."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Vergleiche einen Stuhl für 600 Euro und ein nicht selbständig nutzbares Maschinenteil für 600 Euro.",
+        "hints": ["Drei sachliche Voraussetzungen prüfen", "Preisgrenze korrekt anwenden"],
+        "model": "Der bewegliche abnutzbare Stuhl ist selbständig nutzbar und fällt im Schulmodell unter GWG. Beim Maschinenteil reicht der Preis allein nicht; die fehlende selbständige Nutzbarkeit verhindert diese Einordnung. Die jeweilige Funktion muss vor der Wertgrenze geprüft werden.",
+        "criteria": [
+          "Drei sachliche Voraussetzungen prüfen",
+          "Preisgrenze korrekt anwenden",
+          "Maschinenteil nicht pauschal als GWG behandeln"
+        ]
+      },
+      "2": {
+        "prompt": "Prüfe diese Behauptung und begründe an einem eigenen Gegenbeispiel: „6800 BMK, weil alle Büromöbel sofort Aufwand sind.“",
+        "hints": ["Die Behauptung fachlich prüfen", "Preisgrenze korrekt anwenden"],
+        "model": "600 Euro liegen über 250 und nicht über 800 Euro; die sachlichen Voraussetzungen sind erfüllt. Der bewegliche abnutzbare Stuhl ist selbständig nutzbar und fällt im Schulmodell unter GWG. Beim Maschinenteil reicht der Preis allein nicht; die fehlende selbständige Nutzbarkeit verhindert diese Einordnung. Die jeweilige Funktion muss vor der Wertgrenze geprüft werden.",
+        "criteria": [
+          "Die Behauptung fachlich prüfen",
+          "Preisgrenze korrekt anwenden",
+          "Ein passendes Gegenbeispiel erklären"
+        ]
+      }
+    },
+    "practice": "gwg"
+  },
+  {
+    "id": "an-laufend",
+    "lb": 2,
+    "title": "Reparatur, Miete und Versicherung buchen",
+    "intro": "Nicht jede Zahlung rund um eine Anlage erhöht ihren Wert.",
+    "paragraphs": [
+      "Eine Reparatur, die nur den bisherigen betriebsbereiten Zustand erhält, ist im einfachen Fall laufender Aufwand auf 6160 FRI. Mieten und Pachten stehen auf 6700 AWMP, Versicherungsbeiträge auf 6900 VBEI. Eine wesentliche Erweiterung müsste gesondert auf Aktivierung geprüft werden.",
+      "Bei einer steuerpflichtigen Reparatur mit berechtigtem Vorsteuerabzug wird 2600 VORST getrennt gebucht. Auf eine Versicherungsrechnung wird nicht einfach 19 Prozent Vorsteuer gerechnet; Versicherungssteuer ist keine abziehbare Umsatzsteuer. Auch bei Miete bestimmt die konkrete Rechnung die Umsatzsteuerbehandlung."
+    ],
+    "takeaway": "Erhaltung ist im einfachen Fall Aufwand; eine wesentliche Erweiterung muss auf Aktivierung geprüft werden.",
+    "sourceIds": ["lp", "isb"],
+    "quiz": {
+      "question": "Wie wird eine normale Wartungsreparatur ohne Erweiterung behandelt?",
+      "answer": "Als laufender Aufwand auf 6160 FRI.",
+      "wrong": ["Immer als neue Maschine auf 0700 MA.", "Als private Entnahme der Inhaberin."],
+      "explanation": "Die Reparatur erhält die Nutzungsmöglichkeit; sie schafft im geübten Fall keinen neuen Anlagenwert."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Fälle untersuchen",
+      "instruction": "Ordne die drei Fälle zu. Prüfe anschließend deine Entscheidungen.",
+      "categories": ["6160 FRI", "6700 AWMP", "6900 VBEI"],
+      "entries": [
+        {
+          "text": "Wartungsreparatur an einer vorhandenen Maschine.",
+          "target": 0,
+          "feedback": "Fremdinstandhaltung."
+        },
+        {
+          "text": "Miete für eine Produktionshalle.",
+          "target": 1,
+          "feedback": "Mietaufwand."
+        },
+        {
+          "text": "Betriebliche Haftpflichtversicherung.",
+          "target": 2,
+          "feedback": "Versicherungsbeitrag."
+        }
+      ],
+      "conclusion": "Die Reparatur erhält die Nutzungsmöglichkeit; sie schafft im geübten Fall keinen neuen Anlagenwert."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Warum darf bei einer Versicherungszahlung nicht automatisch ein Vorsteuerbetrag abgezogen werden?",
+        "hints": ["Steuerarten unterscheiden", "Beleg als Grundlage nennen"],
+        "model": "Eine Versicherungszahlung enthält nicht automatisch Umsatzsteuer. Eine enthaltene Versicherungssteuer ist keine Vorsteuer nach dem UStG. Die Buchung richtet sich nach dem Beleg; der Beitrag wird im einfachen Fall auf 6900 VBEI erfasst.",
+        "criteria": [
+          "Steuerarten unterscheiden",
+          "Beleg als Grundlage nennen",
+          "Versicherungsaufwand richtig zuordnen"
+        ]
+      },
+      "2": {
+        "prompt": "Prüfe diese Behauptung und begründe an einem eigenen Gegenbeispiel: „Immer als neue Maschine auf 0700 MA.“",
+        "hints": ["Die Behauptung fachlich prüfen", "Beleg als Grundlage nennen"],
+        "model": "Die Reparatur erhält die Nutzungsmöglichkeit; sie schafft im geübten Fall keinen neuen Anlagenwert. Eine Versicherungszahlung enthält nicht automatisch Umsatzsteuer. Eine enthaltene Versicherungssteuer ist keine Vorsteuer nach dem UStG. Die Buchung richtet sich nach dem Beleg; der Beitrag wird im einfachen Fall auf 6900 VBEI erfasst.",
+        "criteria": [
+          "Die Behauptung fachlich prüfen",
+          "Beleg als Grundlage nennen",
+          "Ein passendes Gegenbeispiel erklären"
+        ]
+      }
+    },
+    "practice": "running"
+  },
+  {
+    "id": "an-kostenvergleich",
+    "lb": 2,
+    "title": "Investitionen mit Kosten vergleichen",
+    "intro": "Die billigere Maschine kann im Betrieb teurer werden.",
+    "paragraphs": [
+      "Ein vereinfachter Kostenvergleich addiert für dieselbe betrachtete Leistung die jährliche lineare Abschreibung, gegebenenfalls vorgegebene kalkulatorische Zinsen und die laufenden Fix- und variablen Kosten. Nur Angebote mit vergleichbarer Leistung und identischen Annahmen sind sinnvoll vergleichbar.",
+      "Maschine A kostet 40.000 Euro, hält fünf Jahre und verursacht jährlich 6.000 Euro laufende Kosten: ohne Zinsen zusammen 14.000 Euro jährlich. Maschine B kostet 50.000 Euro, hält fünf Jahre und verursacht 3.000 Euro: zusammen 13.000 Euro. Qualität, Sicherheit und Umweltfolgen bleiben zusätzlich zu beurteilen."
+    ],
+    "takeaway": "Nutzungsdauer und laufende Jahreskosten können den Preisvorteil überwiegen.",
+    "sourceIds": ["lp", "isb"],
+    "quiz": {
+      "question": "Welche Grundlage braucht ein sinnvoller Kostenvergleich zweier Maschinen?",
+      "answer": "Vergleichbare Leistung und gleiche Rechenannahmen.",
+      "wrong": [
+        "Nur den niedrigsten Anschaffungspreis.",
+        "Nur die höchste technische Nennleistung."
+      ],
+      "explanation": "Unterschiedliche Mengen und Kostenbestandteile würden den Vergleich verzerren."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Fälle untersuchen",
+      "instruction": "Ordne die drei Fälle zu. Prüfe anschließend deine Entscheidungen.",
+      "categories": [
+        "Jährliche Kosten",
+        "Einmalige Anschaffung",
+        "Zusätzliches Entscheidungskriterium"
+      ],
+      "entries": [
+        {
+          "text": "Lineare Abschreibung und Strom pro Jahr.",
+          "target": 0,
+          "feedback": "Beide gehören in den jährlichen Vergleich."
+        },
+        {
+          "text": "Der Kaufpreis am Anschaffungstag.",
+          "target": 1,
+          "feedback": "Er wird für den Jahresvergleich verteilt."
+        },
+        {
+          "text": "Arbeitssicherheit bei gleicher Leistung.",
+          "target": 2,
+          "feedback": "Nicht jedes wichtige Ziel ist im Kostenwert enthalten."
+        }
+      ],
+      "conclusion": "Unterschiedliche Mengen und Kostenbestandteile würden den Vergleich verzerren."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Vergleiche A: 40.000 Euro, fünf Jahre, 6.000 Euro Betriebskosten und B: 50.000 Euro, fünf Jahre, 3.000 Euro Betriebskosten. Ohne Zinsen, gleiche Leistung.",
+        "hints": ["Jahreskosten beider Angebote", "1.000 Euro Unterschied"],
+        "model": "A verursacht 8.000 + 6.000 = 14.000 Euro jährlich; B 10.000 + 3.000 = 13.000 Euro. B ist in diesem Modell jährlich 1.000 Euro günstiger. Die Entscheidung braucht zusätzlich Angaben zu Qualität, Umwelt und Sicherheit.",
+        "criteria": [
+          "Jahreskosten beider Angebote",
+          "1.000 Euro Unterschied",
+          "Grenze des Kostenmodells nennen"
+        ]
+      },
+      "2": {
+        "prompt": "Prüfe diese Behauptung und begründe an einem eigenen Gegenbeispiel: „Nur den niedrigsten Anschaffungspreis.“",
+        "hints": ["Die Behauptung fachlich prüfen", "1.000 Euro Unterschied"],
+        "model": "Unterschiedliche Mengen und Kostenbestandteile würden den Vergleich verzerren. A verursacht 8.000 + 6.000 = 14.000 Euro jährlich; B 10.000 + 3.000 = 13.000 Euro. B ist in diesem Modell jährlich 1.000 Euro günstiger. Die Entscheidung braucht zusätzlich Angaben zu Qualität, Umwelt und Sicherheit.",
+        "criteria": [
+          "Die Behauptung fachlich prüfen",
+          "1.000 Euro Unterschied",
+          "Ein passendes Gegenbeispiel erklären"
+        ]
+      }
+    },
+    "practice": "costs"
+  },
+  {
+    "id": "an-amortisation",
+    "lb": 2,
+    "title": "Amortisation und Investitionsziele",
+    "intro": "Rückflussdauer ist ein Kriterium unter mehreren.",
+    "paragraphs": [
+      "Die vereinfachte Amortisationsdauer teilt die Investitionsauszahlung durch den konstanten jährlichen Rückfluss. Wird der Rückfluss aus einem Gewinn nach Abschreibung abgeleitet, wird die nicht zahlungswirksame Abschreibung wieder hinzugerechnet. Gewinn und Rückfluss sind deshalb nicht austauschbar.",
+      "30.000 Euro Investition und 10.000 Euro jährlicher Rückfluss ergeben drei Jahre. Das Modell berücksichtigt weder den Zeitwert des Geldes noch wechselnde Rückflüsse oder Erträge nach der Amortisation. Ökonomische Ziele müssen mit sozialen und ökologischen Zielen abgewogen werden."
+    ],
+    "takeaway": "Gewinn nach Abschreibung plus nicht zahlungswirksame Abschreibung.",
+    "sourceIds": ["lp", "isb"],
+    "quiz": {
+      "question": "Was ist im einfachen Amortisationsmodell der Nenner?",
+      "answer": "Der jährliche Rückfluss.",
+      "wrong": [
+        "Nur der bilanzielle Gewinn nach Abschreibung.",
+        "Der jährliche Abschreibungssatz in Prozent."
+      ],
+      "explanation": "Die Auszahlung soll durch tatsächlich verfügbare Rückflüsse wiedergewonnen werden."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Fälle untersuchen",
+      "instruction": "Ordne die drei Fälle zu. Prüfe anschließend deine Entscheidungen.",
+      "categories": ["Ökonomisches Ziel", "Ökologisches Ziel", "Soziales Ziel"],
+      "entries": [
+        {
+          "text": "Die laufenden Kosten senken.",
+          "target": 0,
+          "feedback": "Wirtschaftlichkeit."
+        },
+        {
+          "text": "Energie und Rohstoffe einsparen.",
+          "target": 1,
+          "feedback": "Umweltwirkung."
+        },
+        {
+          "text": "Körperliche Belastungen am Arbeitsplatz vermindern.",
+          "target": 2,
+          "feedback": "Arbeitsbedingungen."
+        }
+      ],
+      "conclusion": "Die Auszahlung soll durch tatsächlich verfügbare Rückflüsse wiedergewonnen werden."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "30.000 Euro Anschaffung, jährlich 4.000 Euro Gewinn nach 6.000 Euro Abschreibung: Erkläre die vereinfachte Amortisation.",
+        "hints": ["Gewinn und Abschreibung addieren", "Drei Jahre bestimmen"],
+        "model": "Der vereinfachte Rückfluss beträgt 4.000 + 6.000 = 10.000 Euro pro Jahr. 30.000 / 10.000 ergibt drei Jahre. Die Rechnung setzt konstante Rückflüsse voraus und ersetzt keine Prüfung von Risiko, Nutzungsdauer und Umweltfolgen.",
+        "criteria": [
+          "Gewinn und Abschreibung addieren",
+          "Drei Jahre bestimmen",
+          "Eine Modellgrenze erklären"
+        ]
+      },
+      "2": {
+        "prompt": "Prüfe diese Behauptung und begründe an einem eigenen Gegenbeispiel: „Nur der bilanzielle Gewinn nach Abschreibung.“",
+        "hints": ["Die Behauptung fachlich prüfen", "Drei Jahre bestimmen"],
+        "model": "Die Auszahlung soll durch tatsächlich verfügbare Rückflüsse wiedergewonnen werden. Der vereinfachte Rückfluss beträgt 4.000 + 6.000 = 10.000 Euro pro Jahr. 30.000 / 10.000 ergibt drei Jahre. Die Rechnung setzt konstante Rückflüsse voraus und ersetzt keine Prüfung von Risiko, Nutzungsdauer und Umweltfolgen.",
+        "criteria": [
+          "Die Behauptung fachlich prüfen",
+          "Drei Jahre bestimmen",
+          "Ein passendes Gegenbeispiel erklären"
+        ]
+      }
+    },
+    "practice": "payback"
+  },
+  {
+    "id": "fi-grundlagen",
+    "lb": 3,
+    "title": "Eigenkapitalquote und Fristen prüfen",
+    "intro": "Die Herkunft des Kapitals muss zum Vorhaben passen.",
+    "paragraphs": [
+      "Eigenfinanzierung stellt Eigenkapital bereit, Fremdfinanzierung begründet Rückzahlungsansprüche von Gläubigern. Die Eigenkapitalquote ist Eigenkapital geteilt durch Gesamtkapital mal 100. Eine höhere Quote kann die Unabhängigkeit stärken, garantiert aber weder Liquidität noch Gewinn.",
+      "Die Goldene Finanzierungsregel fordert Fristenkongruenz: Langfristig gebundenes Vermögen soll langfristig finanziert werden. Eine über fünf Jahre genutzte Maschine allein mit einem täglich kündbaren Kontokorrentkredit zu finanzieren erzeugt ein Anschlussfinanzierungsrisiko."
+    ],
+    "takeaway": "Eigenkapital / Gesamtkapital × 100 Prozent.",
+    "sourceIds": ["lp", "isb"],
+    "quiz": {
+      "question": "Was fordert die Goldene Finanzierungsregel?",
+      "answer": "Die Kapitalüberlassung soll zur Dauer der Kapitalbindung passen.",
+      "wrong": [
+        "Jede Investition muss ausschließlich aus Bargeld bezahlt werden.",
+        "Eigenkapital muss immer exakt die Hälfte des Kapitals betragen."
+      ],
+      "explanation": "Kurzfristig fällige Finanzierung für langfristige Bindung erhöht das Liquiditätsrisiko."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Fälle untersuchen",
+      "instruction": "Ordne die drei Fälle zu. Prüfe anschließend deine Entscheidungen.",
+      "categories": ["Eigenfinanzierung", "Fremdfinanzierung", "Fristenrisiko"],
+      "entries": [
+        {
+          "text": "Die Inhaberin führt eigenes Geld zu.",
+          "target": 0,
+          "feedback": "Eigenkapital wächst."
+        },
+        {
+          "text": "Eine Bank gewährt ein fünfjähriges Darlehen.",
+          "target": 1,
+          "feedback": "Es entsteht eine Rückzahlungsverpflichtung."
+        },
+        {
+          "text": "Eine Zehnjahresanlage wird nur über jederzeit kündbaren Kredit bezahlt.",
+          "target": 2,
+          "feedback": "Finanzierungsdauer und Bindung passen nicht zusammen."
+        }
+      ],
+      "conclusion": "Kurzfristig fällige Finanzierung für langfristige Bindung erhöht das Liquiditätsrisiko."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Ein Betrieb hat 60.000 Euro Eigenkapital und 200.000 Euro Gesamtkapital. Beurteile Quote und Finanzierung einer langfristigen Anlage.",
+        "hints": ["30 Prozent ermitteln", "Quote von Liquidität unterscheiden"],
+        "model": "Die Quote beträgt 60.000 / 200.000 × 100 = 30 Prozent. Diese Quote allein sagt nichts über den Zeitpunkt der Zahlungen. Für eine langfristige Anlage braucht der Betrieb passend langfristig verfügbares Kapital.",
+        "criteria": [
+          "30 Prozent ermitteln",
+          "Quote von Liquidität unterscheiden",
+          "Fristenkongruenz anwenden"
+        ]
+      },
+      "2": {
+        "prompt": "Prüfe diese Behauptung und begründe an einem eigenen Gegenbeispiel: „Jede Investition muss ausschließlich aus Bargeld bezahlt werden.“",
+        "hints": ["Die Behauptung fachlich prüfen", "Quote von Liquidität unterscheiden"],
+        "model": "Kurzfristig fällige Finanzierung für langfristige Bindung erhöht das Liquiditätsrisiko. Die Quote beträgt 60.000 / 200.000 × 100 = 30 Prozent. Diese Quote allein sagt nichts über den Zeitpunkt der Zahlungen. Für eine langfristige Anlage braucht der Betrieb passend langfristig verfügbares Kapital.",
+        "criteria": [
+          "Die Behauptung fachlich prüfen",
+          "Quote von Liquidität unterscheiden",
+          "Ein passendes Gegenbeispiel erklären"
+        ]
+      }
+    },
+    "practice": "ratio"
+  },
+  {
+    "id": "fi-eigenfinanzierung",
+    "lb": 3,
+    "title": "Eigenfinanzierung vergleichen",
+    "intro": "Eigentümerkapital ist kein kostenloser Bankkredit.",
+    "paragraphs": [
+      "Ein Einzelunternehmen kann Eigenkapital etwa durch eine Einlage oder einbehaltene Gewinne stärken. Die Aufnahme eines stillen Gesellschafters kann Kapital zuführen; Vertragsgestaltung, Ergebnisbeteiligung und rechtliche Einordnung sind zu prüfen. Einbehaltener Gewinn steht nicht mehr für denselben privaten Verbrauch bereit.",
+      "Eine Aktiengesellschaft kann durch die Ausgabe neuer Aktien Eigenkapital beschaffen. Der Kauf bereits umlaufender Aktien an der Börse finanziert dagegen zunächst den Verkäufer und führt der Gesellschaft normalerweise kein neues Geld zu. Neue Beteiligungen können Einfluss- und Gewinnanteile verändern."
+    ],
+    "takeaway": "Eine Beteiligung am Ergebnis und je nach Beteiligungsform Einflussrechte.",
+    "sourceIds": ["lp", "isb"],
+    "quiz": {
+      "question": "Wann fließt einer Aktiengesellschaft neues Eigenkapital zu?",
+      "answer": "Bei der Ausgabe neuer Aktien gegen Einlagen.",
+      "wrong": [
+        "Bei jedem Börsenverkauf einer bereits vorhandenen Aktie.",
+        "Bei jeder Rückzahlung eines Bankdarlehens."
+      ],
+      "explanation": "Primäre Ausgabe neuer Aktien und Handel vorhandener Aktien sind zu unterscheiden."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Fälle untersuchen",
+      "instruction": "Ordne die drei Fälle zu. Prüfe anschließend deine Entscheidungen.",
+      "categories": ["Zuführung von Eigenkapital", "Handel zwischen Anlegern", "Fremdfinanzierung"],
+      "entries": [
+        {
+          "text": "Ausgabe junger Aktien gegen Einzahlung.",
+          "target": 0,
+          "feedback": "Die Gesellschaft erhält neues Kapital."
+        },
+        {
+          "text": "Eine Anlegerin verkauft ihre vorhandene Aktie an einen anderen Anleger.",
+          "target": 1,
+          "feedback": "Das Geld fließt dem Verkäufer zu."
+        },
+        {
+          "text": "Die Bank zahlt ein rückzahlbares Darlehen aus.",
+          "target": 2,
+          "feedback": "Die Gesellschaft hat eine Schuld."
+        }
+      ],
+      "conclusion": "Primäre Ausgabe neuer Aktien und Handel vorhandener Aktien sind zu unterscheiden."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre, warum ein hoher Börsenumsatz nicht bedeutet, dass das Unternehmen im selben Umfang neues Geld erhält.",
+        "hints": ["Empfänger des Kaufpreises nennen", "Sekundärhandel erklären"],
+        "model": "Beim normalen Handel wechseln vorhandene Aktien zwischen Anlegern. Der Kaufpreis geht an den verkaufenden Anleger. Neues Eigenkapital erhält das Unternehmen etwa bei einer Kapitalerhöhung durch Ausgabe neuer Aktien.",
+        "criteria": [
+          "Empfänger des Kaufpreises nennen",
+          "Sekundärhandel erklären",
+          "Kapitalerhöhung abgrenzen"
+        ]
+      },
+      "2": {
+        "prompt": "Prüfe diese Behauptung und begründe an einem eigenen Gegenbeispiel: „Bei jedem Börsenverkauf einer bereits vorhandenen Aktie.“",
+        "hints": ["Die Behauptung fachlich prüfen", "Sekundärhandel erklären"],
+        "model": "Primäre Ausgabe neuer Aktien und Handel vorhandener Aktien sind zu unterscheiden. Beim normalen Handel wechseln vorhandene Aktien zwischen Anlegern. Der Kaufpreis geht an den verkaufenden Anleger. Neues Eigenkapital erhält das Unternehmen etwa bei einer Kapitalerhöhung durch Ausgabe neuer Aktien.",
+        "criteria": [
+          "Die Behauptung fachlich prüfen",
+          "Sekundärhandel erklären",
+          "Ein passendes Gegenbeispiel erklären"
+        ]
+      }
+    }
+  },
+  {
+    "id": "fi-auszahlung",
+    "lb": 3,
+    "title": "Kredit mit Disagio aufnehmen",
+    "intro": "Nominalschuld und verfügbarer Betrag unterscheiden.",
+    "paragraphs": [
+      "Der Nominalbetrag ist der vereinbarte Rückzahlungsbetrag. Ein Disagio wird bei Auszahlung vorab einbehalten: Bei 20.000 Euro nominal und 2 Prozent Disagio stehen nur 19.600 Euro zur Verfügung, obwohl zunächst 20.000 Euro geschuldet werden.",
+      "Im ausdrücklich vereinfachten Schulfall wird das Disagio sofort als Zinsaufwand behandelt: 2800 BK 19.600 und 7510 ZAW 400 an 4250 LBKV 20.000. Eine Verteilung über Rechnungsabgrenzung ist nicht Teil dieser Übung. Gebühren, Laufzeit und spätere Zinsen sind für den Vergleich zusätzlich nötig."
+    ],
+    "takeaway": "Nominalbetrag minus Disagio.",
+    "sourceIds": ["lp", "isb"],
+    "quiz": {
+      "question": "Wie viel wird bei 20.000 Euro Nominalkredit und 2 Prozent Disagio ohne weitere Abzüge ausgezahlt?",
+      "answer": "19.600 Euro.",
+      "wrong": ["20.000 Euro.", "20.400 Euro."],
+      "explanation": "400 Euro werden einbehalten, die Nominalschuld bleibt 20.000 Euro."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Fälle untersuchen",
+      "instruction": "Ordne die drei Fälle zu. Prüfe anschließend deine Entscheidungen.",
+      "categories": ["Nominalbetrag", "Disagio", "Auszahlungsbetrag"],
+      "entries": [
+        {
+          "text": "Vertraglich geschuldete 20.000 Euro.",
+          "target": 0,
+          "feedback": "Die Verbindlichkeit wird in dieser Höhe erfasst."
+        },
+        {
+          "text": "Vorab einbehaltene 400 Euro.",
+          "target": 1,
+          "feedback": "Der Abschlag ist ein Finanzierungskostenbestandteil."
+        },
+        {
+          "text": "Tatsächlicher Zugang von 19.600 Euro.",
+          "target": 2,
+          "feedback": "Dieser Betrag ist verfügbar."
+        }
+      ],
+      "conclusion": "400 Euro werden einbehalten, die Nominalschuld bleibt 20.000 Euro."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erläutere den Buchungssatz bei 20.000 Euro langfristigem Nominalkredit und 400 Euro sofort als Aufwand behandeltem Disagio.",
+        "hints": ["Auszahlung und Schuld trennen", "Disagio im Soll erfassen"],
+        "model": "2800 BK 19.600 und 7510 ZAW 400 an 4250 LBKV 20.000 Euro. Der Bankzugang ist kleiner als die neue Schuld. Das Disagio ist hier ausdrücklich sofort Aufwand; daraus folgt keine Aussage über sämtliche bilanziellen Wahlrechte.",
+        "criteria": [
+          "Auszahlung und Schuld trennen",
+          "Disagio im Soll erfassen",
+          "Vereinfachung benennen"
+        ]
+      },
+      "2": {
+        "prompt": "Prüfe diese Behauptung und begründe an einem eigenen Gegenbeispiel: „20.000 Euro.“",
+        "hints": ["Die Behauptung fachlich prüfen", "Disagio im Soll erfassen"],
+        "model": "400 Euro werden einbehalten, die Nominalschuld bleibt 20.000 Euro. 2800 BK 19.600 und 7510 ZAW 400 an 4250 LBKV 20.000 Euro. Der Bankzugang ist kleiner als die neue Schuld. Das Disagio ist hier ausdrücklich sofort Aufwand; daraus folgt keine Aussage über sämtliche bilanziellen Wahlrechte.",
+        "criteria": [
+          "Die Behauptung fachlich prüfen",
+          "Disagio im Soll erfassen",
+          "Ein passendes Gegenbeispiel erklären"
+        ]
+      }
+    },
+    "practice": "payout"
+  },
+  {
+    "id": "fi-zinsrechnung",
+    "lb": 3,
+    "title": "Kreditzinsen berechnen",
+    "intro": "Zinssatz, Kapital und Zeit gehören zusammen.",
+    "paragraphs": [
+      "Bei einfacher kaufmännischer Zinsrechnung mit vorgegebenen 360 Tagen gilt: Zinsen gleich Kapital mal Jahreszinssatz mal Tage geteilt durch 100 und 360. Bei 12.000 Euro, 6 Prozent und 90 Tagen ergeben sich 180 Euro. Die Zeitbasis muss im Angebot stehen.",
+      "Zinsen werden auf die jeweils ausstehende Schuld berechnet. Tilgungen senken diese Basis für folgende Zeiträume. Die hier verwendete 30/360-Schulkonvention ist nicht automatisch die vertragliche Methode eines echten Angebots. Gebühren und Disagio sind im Nominalzinssatz nicht vollständig enthalten."
+    ],
+    "takeaway": "Zinsen = Kapital × Jahreszinssatz in Prozent × Tage / 36.000.",
+    "sourceIds": ["lp", "isb"],
+    "quiz": {
+      "question": "Worauf werden Zinsen nach einer bereits erfolgten Tilgung für die nächste Periode berechnet?",
+      "answer": "Auf die verbleibende Restschuld.",
+      "wrong": [
+        "Immer unverändert auf die ursprüngliche Schuld.",
+        "Nur auf die bereits zurückgezahlte Tilgung."
+      ],
+      "explanation": "Tilgung mindert die künftige verzinsliche Schuld."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Fälle untersuchen",
+      "instruction": "Ordne die drei Fälle zu. Prüfe anschließend deine Entscheidungen.",
+      "categories": ["Kapital", "Jahreszinssatz", "Zeitanteil"],
+      "entries": [
+        {
+          "text": "12.000 Euro ausstehende Schuld.",
+          "target": 0,
+          "feedback": "Die verzinsliche Basis."
+        },
+        {
+          "text": "6 Prozent pro Jahr.",
+          "target": 1,
+          "feedback": "Der Preis je vollem Jahr und Kapitalanteil."
+        },
+        {
+          "text": "90 von 360 Tagen.",
+          "target": 2,
+          "feedback": "Nur ein Viertel des Jahres."
+        }
+      ],
+      "conclusion": "Tilgung mindert die künftige verzinsliche Schuld."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Berechne bei der vorgegebenen 360-Tage-Methode Zinsen für 12.000 Euro zu 6 Prozent und 90 Tagen und erkläre die Zeitannahme.",
+        "hints": ["180 Euro ermitteln", "Jahreszins von Zeitraum trennen"],
+        "model": "12.000 × 6 × 90 / 36.000 = 180 Euro. Die 90 Tage entsprechen einem Viertel des angenommenen Jahres mit 360 Tagen. Eine andere vertragliche Tagesmethode kann ein anderes Ergebnis liefern.",
+        "criteria": [
+          "180 Euro ermitteln",
+          "Jahreszins von Zeitraum trennen",
+          "Vorgegebene Tagesbasis nennen"
+        ]
+      },
+      "2": {
+        "prompt": "Prüfe diese Behauptung und begründe an einem eigenen Gegenbeispiel: „Immer unverändert auf die ursprüngliche Schuld.“",
+        "hints": ["Die Behauptung fachlich prüfen", "Jahreszins von Zeitraum trennen"],
+        "model": "Tilgung mindert die künftige verzinsliche Schuld. 12.000 × 6 × 90 / 36.000 = 180 Euro. Die 90 Tage entsprechen einem Viertel des angenommenen Jahres mit 360 Tagen. Eine andere vertragliche Tagesmethode kann ein anderes Ergebnis liefern.",
+        "criteria": [
+          "Die Behauptung fachlich prüfen",
+          "Jahreszins von Zeitraum trennen",
+          "Ein passendes Gegenbeispiel erklären"
+        ]
+      }
+    },
+    "practice": "interest"
+  },
+  {
+    "id": "fi-darlehensarten",
+    "lb": 3,
+    "title": "Drei Darlehensarten im Verlauf",
+    "intro": "Gleiche Kreditsumme bedeutet nicht gleiche Belastung.",
+    "paragraphs": [
+      "Beim Festdarlehen bleibt die Schuld bis zum Ende bestehen; laufend werden Zinsen bezahlt, die Tilgung folgt am Schluss. Beim Abzahlungsdarlehen bleibt der Tilgungsbetrag je Periode gleich. Weil die Restschuld sinkt, fallen Zinsen und Gesamtzahlung.",
+      "Beim Annuitätendarlehen bleibt die regelmäßige Gesamtzahlung bei unveränderten Konditionen annähernd gleich. Der Zinsanteil sinkt und der Tilgungsanteil steigt. Cent-Rundung kann eine angepasste letzte Zahlung erfordern. Das Modell nimmt jährliche nachschüssige Zahlungen und unveränderten Zinssatz an."
+    ],
+    "takeaway": "Der Zinsanteil sinkt und der Tilgungsanteil steigt mit abnehmender Restschuld.",
+    "sourceIds": ["lp", "isb"],
+    "quiz": {
+      "question": "Was bleibt beim Abzahlungsdarlehen pro Periode gleich?",
+      "answer": "Der Tilgungsbetrag.",
+      "wrong": ["Der Zinsbetrag.", "Die Summe aus Zins und Tilgung."],
+      "explanation": "Gleiche Tilgung bei sinkender Restschuld bedeutet sinkende Zinsen und Zahlungen."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Fälle untersuchen",
+      "instruction": "Ordne die drei Fälle zu. Prüfe anschließend deine Entscheidungen.",
+      "categories": ["Festdarlehen", "Abzahlungsdarlehen", "Annuitätendarlehen"],
+      "entries": [
+        {
+          "text": "Tilgung der gesamten Schuld am Ende.",
+          "target": 0,
+          "feedback": "Vorher bleibt die Zinsbasis unverändert."
+        },
+        {
+          "text": "Jährlich gleiche Tilgung und fallende Gesamtzahlung.",
+          "target": 1,
+          "feedback": "Die Zinsbelastung sinkt."
+        },
+        {
+          "text": "Annähernd gleiche Gesamtzahlung, Tilgungsanteil steigt.",
+          "target": 2,
+          "feedback": "Zins und Tilgung verschieben sich innerhalb der Rate."
+        }
+      ],
+      "conclusion": "Gleiche Tilgung bei sinkender Restschuld bedeutet sinkende Zinsen und Zahlungen."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Vergleiche die Liquiditätsbelastung eines Festdarlehens mit der eines Abzahlungsdarlehens.",
+        "hints": ["Schlusszahlung erkennen", "Laufende Tilgung erläutern"],
+        "model": "Das Festdarlehen hat zunächst nur Zinszahlungen, benötigt am Schluss aber die gesamte Tilgung. Beim Abzahlungsdarlehen wird laufend gleich viel getilgt; anfangs sind die Gesamtzahlungen höher, später sinken sie. Die Schlussfälligkeit braucht einen eigenen Liquiditätsplan.",
+        "criteria": [
+          "Schlusszahlung erkennen",
+          "Laufende Tilgung erläutern",
+          "Liquiditätsrisiko abwägen"
+        ]
+      },
+      "2": {
+        "prompt": "Prüfe diese Behauptung und begründe an einem eigenen Gegenbeispiel: „Der Zinsbetrag.“",
+        "hints": ["Die Behauptung fachlich prüfen", "Laufende Tilgung erläutern"],
+        "model": "Gleiche Tilgung bei sinkender Restschuld bedeutet sinkende Zinsen und Zahlungen. Das Festdarlehen hat zunächst nur Zinszahlungen, benötigt am Schluss aber die gesamte Tilgung. Beim Abzahlungsdarlehen wird laufend gleich viel getilgt; anfangs sind die Gesamtzahlungen höher, später sinken sie. Die Schlussfälligkeit braucht einen eigenen Liquiditätsplan.",
+        "criteria": [
+          "Die Behauptung fachlich prüfen",
+          "Laufende Tilgung erläutern",
+          "Ein passendes Gegenbeispiel erklären"
+        ]
+      }
+    },
+    "practice": "loan",
+    "lab": "loans"
+  },
+  {
+    "id": "fi-effektivzins",
+    "lb": 3,
+    "title": "Kreditangebote begründet vergleichen",
+    "intro": "Ein niedriger Nominalzins kann zusätzliche Kosten verdecken.",
+    "paragraphs": [
+      "Für den vereinfachten Vergleich eines endfälligen Schulmodells werden sämtliche vorgegebenen Kreditkosten auf den tatsächlich ausgezahlten Betrag und ein Jahr bezogen. Näherung: Gesamtkosten / Auszahlung × 100 / Laufzeit in Jahren. Zinsen und Disagio werden dabei nicht doppelt gezählt.",
+      "Diese Näherung ist nicht der gesetzliche Effektivzins nach Preisangabenrecht und ist für Tilgungsdarlehen mit veränderlicher Restschuld nicht zuverlässig. Ein Angebotsvergleich braucht außerdem Zahlungszeitpunkte, Sondertilgung, Zinsbindung, Sicherheiten und die tatsächliche Leistbarkeit der Raten."
+    ],
+    "takeaway": "Gesamtkreditkosten, tatsächliche Auszahlung und Laufzeit.",
+    "sourceIds": ["lp", "isb"],
+    "quiz": {
+      "question": "Welche Aussage zur hier verwendeten Effektivzins-Näherung ist richtig?",
+      "answer": "Sie gilt nur für das erklärte einfache Vergleichsmodell.",
+      "wrong": [
+        "Sie berechnet für jeden beliebigen Kredit exakt den gesetzlichen Effektivzins.",
+        "Sie macht Laufzeit und Zahlungszeitpunkte grundsätzlich bedeutungslos."
+      ],
+      "explanation": "Die Bezugsbasis und die Modellannahmen müssen sichtbar bleiben."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Fälle untersuchen",
+      "instruction": "Ordne die drei Fälle zu. Prüfe anschließend deine Entscheidungen.",
+      "categories": ["Kreditkosten", "Verfügbare Finanzierung", "Weiteres Vergleichskriterium"],
+      "entries": [
+        {
+          "text": "Vorgegebene Zinsen und Disagio.",
+          "target": 0,
+          "feedback": "Beide verteuern den Kredit."
+        },
+        {
+          "text": "Nominalbetrag abzüglich einbehaltener Beträge.",
+          "target": 1,
+          "feedback": "Die Auszahlung ist kleiner als die Schuld."
+        },
+        {
+          "text": "Recht auf kostenfreie Sondertilgung.",
+          "target": 2,
+          "feedback": "Das steht nicht vollständig im Nominalzinssatz."
+        }
+      ],
+      "conclusion": "Die Bezugsbasis und die Modellannahmen müssen sichtbar bleiben."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "20.000 Euro endfällige Schuld, 19.600 Euro Auszahlung, zwei Jahre, insgesamt 2.400 Euro Kreditkosten: Erkläre die Näherung und ihre Grenze.",
+        "hints": ["6,12 Prozent bestimmen", "Auszahlung als Basis nutzen"],
+        "model": "2.400 / 19.600 × 100 / 2 ergibt rund 6,12 Prozent jährlich. Die Rechnung bezieht Kosten auf verfügbares Kapital und Zeit. Sie ist eine Schulnäherung für den beschriebenen endfälligen Fall und kein exakter gesetzlicher Effektivzins für beliebige Zahlungspläne.",
+        "criteria": [
+          "6,12 Prozent bestimmen",
+          "Auszahlung als Basis nutzen",
+          "Schulnäherung ausdrücklich begrenzen"
+        ]
+      },
+      "2": {
+        "prompt": "Prüfe diese Behauptung und begründe an einem eigenen Gegenbeispiel: „Sie berechnet für jeden beliebigen Kredit exakt den gesetzlichen Effektivzins.“",
+        "hints": ["Die Behauptung fachlich prüfen", "Auszahlung als Basis nutzen"],
+        "model": "Die Bezugsbasis und die Modellannahmen müssen sichtbar bleiben. 2.400 / 19.600 × 100 / 2 ergibt rund 6,12 Prozent jährlich. Die Rechnung bezieht Kosten auf verfügbares Kapital und Zeit. Sie ist eine Schulnäherung für den beschriebenen endfälligen Fall und kein exakter gesetzlicher Effektivzins für beliebige Zahlungspläne.",
+        "criteria": [
+          "Die Behauptung fachlich prüfen",
+          "Auszahlung als Basis nutzen",
+          "Ein passendes Gegenbeispiel erklären"
+        ]
+      }
+    },
+    "practice": "effective"
+  },
+  {
+    "id": "fi-schuldendienst",
+    "lb": 3,
+    "title": "Zinsen und Tilgung getrennt buchen",
+    "intro": "Nur ein Teil der Rate ist Aufwand.",
+    "paragraphs": [
+      "Schuldendienst umfasst Zinsen und Tilgung. Zinsaufwand wird auf 7510 ZAW gebucht, die Tilgung mindert die Bankverbindlichkeit. Der gesamte Geldabgang steht auf 2800 BK im Haben. Vorgegebene zusätzliche Bankgebühren wären auf 6750 KGV zu prüfen.",
+      "Bei 1.000 Euro Tilgung und 200 Euro Zinsen lautet der vereinfachte Buchungssatz 4250 LBKV 1.000 und 7510 ZAW 200 an 2800 BK 1.200. Der Gewinn wird nur durch die Zinsen vermindert; die Liquidität durch die gesamte Zahlung."
+    ],
+    "takeaway": "Tilgung plus Zinsen, gegebenenfalls zuzüglich gesonderter Gebühren.",
+    "sourceIds": ["lp", "isb"],
+    "quiz": {
+      "question": "Welcher Teil einer normalen Darlehensrate mindert unmittelbar den Gewinn?",
+      "answer": "Der Zinsaufwand.",
+      "wrong": ["Die reine Tilgung.", "Immer die gesamte Rate als Aufwand."],
+      "explanation": "Tilgung ist eine Verringerung der Schuld, kein Aufwand."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Fälle untersuchen",
+      "instruction": "Ordne die drei Fälle zu. Prüfe anschließend deine Entscheidungen.",
+      "categories": ["Mindert Schuld", "Mindert Gewinn", "Mindert Bankguthaben"],
+      "entries": [
+        {
+          "text": "1.000 Euro Tilgung.",
+          "target": 0,
+          "feedback": "Die Verbindlichkeit sinkt."
+        },
+        {
+          "text": "200 Euro Zinsaufwand.",
+          "target": 1,
+          "feedback": "Finanzierungsaufwand."
+        },
+        {
+          "text": "1.200 Euro Gesamtüberweisung.",
+          "target": 2,
+          "feedback": "Der volle Betrag verlässt die Bank."
+        }
+      ],
+      "conclusion": "Tilgung ist eine Verringerung der Schuld, kein Aufwand."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre, warum eine Rate von 1.200 Euro aus 1.000 Euro Tilgung und 200 Euro Zins die Liquidität und den Gewinn unterschiedlich verändert.",
+        "hints": ["Gesamten Bankabgang nennen", "Tilgung erfolgsneutral behandeln"],
+        "model": "Die Bank nimmt um 1.200 Euro ab. Davon vermindern 1.000 Euro die Schuld, ohne den Gewinn zu verändern. Nur 200 Euro sind Zinsaufwand und mindern den Gewinn. Die Rate darf nicht vollständig als Zinsaufwand gebucht werden.",
+        "criteria": [
+          "Gesamten Bankabgang nennen",
+          "Tilgung erfolgsneutral behandeln",
+          "200 Euro Gewinnminderung nennen"
+        ]
+      },
+      "2": {
+        "prompt": "Prüfe diese Behauptung und begründe an einem eigenen Gegenbeispiel: „Die reine Tilgung.“",
+        "hints": ["Die Behauptung fachlich prüfen", "Tilgung erfolgsneutral behandeln"],
+        "model": "Tilgung ist eine Verringerung der Schuld, kein Aufwand. Die Bank nimmt um 1.200 Euro ab. Davon vermindern 1.000 Euro die Schuld, ohne den Gewinn zu verändern. Nur 200 Euro sind Zinsaufwand und mindern den Gewinn. Die Rate darf nicht vollständig als Zinsaufwand gebucht werden.",
+        "criteria": [
+          "Die Behauptung fachlich prüfen",
+          "Tilgung erfolgsneutral behandeln",
+          "Ein passendes Gegenbeispiel erklären"
+        ]
+      }
+    },
+    "practice": "repayment"
+  },
+  {
+    "id": "fi-lieferantenkredit",
+    "lb": 3,
+    "title": "Skonto gegen Kontokorrentzinsen abwägen",
+    "intro": "Der Verzicht auf Skonto hat einen Preis.",
+    "paragraphs": [
+      "Beim Lieferantenkredit wird der Zahlungsaufschub genutzt. Wer bei zehn Tagen Skontofrist erst nach 30 Tagen zahlt, erhält 20 zusätzliche Kredittage und verzichtet auf das Skonto. Ein Kontokorrentkredit kann die frühere Zahlung finanzieren; ein Dispositionskredit ist ein verwandter kurzfristiger Überziehungsrahmen im privaten Bereich.",
+      "Im Nettovergleich mit vollständigem Vorsteuerabzug sind Nettoskonto und die vorgegebenen Zinsen auf den Nettofinanzierungsbetrag zu vergleichen. Der tatsächliche zwischenzeitliche Liquiditätsbedarf kann wegen Umsatzsteuer höher liegen. Das Labor benennt diese Vereinfachung; ein Kontokorrentrahmen ist weder unbegrenzt noch dauerhaft garantiert."
+    ],
+    "takeaway": "Weil der Verzicht auf Skonto die Kosten des zusätzlichen Zahlungsaufschubs darstellt.",
+    "sourceIds": ["lp", "isb"],
+    "quiz": {
+      "question": "Welche Zeitspanne ist beim Vergleich von Skontoverzicht mit einem Kredit entscheidend?",
+      "answer": "Zahlungsziel minus Skontofrist.",
+      "wrong": [
+        "Immer das gesamte Zahlungsziel ohne Abzug.",
+        "Immer genau ein volles Kalenderjahr."
+      ],
+      "explanation": "Der zusätzliche Zahlungsaufschub beginnt nach Ende der Skontofrist."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Fälle untersuchen",
+      "instruction": "Ordne die drei Fälle zu. Prüfe anschließend deine Entscheidungen.",
+      "categories": ["Skontoverzicht", "Kontokorrentkosten", "Weitere Bedingung"],
+      "entries": [
+        {
+          "text": "Verlorener Nettopreisnachlass bei später Zahlung.",
+          "target": 0,
+          "feedback": "Die Opportunitätskosten des Lieferantenkredits."
+        },
+        {
+          "text": "Zinsen für den früher finanzierten Nettobetrag und die zusätzlichen Tage.",
+          "target": 1,
+          "feedback": "Die Alternative verursacht eigene Kosten."
+        },
+        {
+          "text": "Der eingeräumte Kreditrahmen reicht aus.",
+          "target": 2,
+          "feedback": "Ohne Rahmen ist die günstige Rechenalternative nicht verfügbar."
+        }
+      ],
+      "conclusion": "Der zusätzliche Zahlungsaufschub beginnt nach Ende der Skontofrist."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Netto 10.000 Euro, 2 Prozent Skonto, 20 zusätzliche Tage, Kontokorrent 9 Prozent auf 9.800 Euro bei 360 Tagen: Begründe eine Wahl.",
+        "hints": ["200 Euro Skonto", "49 Euro Zinsen und 151 Euro Vorteil"],
+        "model": "Nettoskonto 200 Euro; Kontokorrentzinsen 9.800 × 9 × 20 / 36.000 = 49 Euro. Im erklärten Nettovergleich spart frühe Zahlung 151 Euro. Der Rahmen muss ausreichen, und der echte Bruttoliquiditätsbedarf ist zusätzlich zu beachten.",
+        "criteria": [
+          "200 Euro Skonto",
+          "49 Euro Zinsen und 151 Euro Vorteil",
+          "Nettoannahme und Kreditrahmen berücksichtigen"
+        ]
+      },
+      "2": {
+        "prompt": "Prüfe diese Behauptung und begründe an einem eigenen Gegenbeispiel: „Immer das gesamte Zahlungsziel ohne Abzug.“",
+        "hints": ["Die Behauptung fachlich prüfen", "49 Euro Zinsen und 151 Euro Vorteil"],
+        "model": "Der zusätzliche Zahlungsaufschub beginnt nach Ende der Skontofrist. Nettoskonto 200 Euro; Kontokorrentzinsen 9.800 × 9 × 20 / 36.000 = 49 Euro. Im erklärten Nettovergleich spart frühe Zahlung 151 Euro. Der Rahmen muss ausreichen, und der echte Bruttoliquiditätsbedarf ist zusätzlich zu beachten.",
+        "criteria": [
+          "Die Behauptung fachlich prüfen",
+          "49 Euro Zinsen und 151 Euro Vorteil",
+          "Ein passendes Gegenbeispiel erklären"
+        ]
+      }
+    },
+    "practice": "supplier",
+    "lab": "supplier"
+  },
+  {
+    "id": "fi-alternativen",
+    "lb": 3,
+    "title": "Leasing, Factoring und Förderung",
+    "intro": "Vertragsbedingungen entscheiden über Nutzen und Kosten.",
+    "paragraphs": [
+      "Leasing ermöglicht die Nutzung eines Wirtschaftsguts gegen regelmäßige Raten. Vertragslaufzeit, Wartung, Restwert und Rückgabe bestimmen die Belastung. Leasing ist kein kostenloser Kauf und führt nicht automatisch zu Eigentum. Öffentliche Förderprogramme haben Voraussetzungen und können Zuschüsse oder Darlehen enthalten.",
+      "Factoring verkauft Forderungen an einen Factor und beschleunigt den Mittelzufluss. Beim echten Factoring kann das vereinbarte Ausfallrisiko übergehen; beim unechten bleibt es im Wesentlichen beim Unternehmen. Gebühren, vertragliche Grenzen und mögliche Auswirkungen auf Kundenbeziehungen müssen berücksichtigt werden."
+    ],
+    "takeaway": "Gesamtlaufzeit, zusätzliche Pflichten, Restwert und Rückgabe- oder Kaufbedingungen.",
+    "sourceIds": ["lp", "isb"],
+    "quiz": {
+      "question": "Welche Aussage zu Factoring ist korrekt?",
+      "answer": "Ob Ausfallrisiko übergeht, hängt unter anderem von der vereinbarten Factoringform ab.",
+      "wrong": [
+        "Jeder Forderungsverkauf beseitigt automatisch jedes Risiko.",
+        "Factoring ist ohne Gebühren immer günstiger als jeder Bankkredit."
+      ],
+      "explanation": "Echtes und unechtes Factoring sowie Vertragsumfang müssen unterschieden werden."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Fälle untersuchen",
+      "instruction": "Ordne die drei Fälle zu. Prüfe anschließend deine Entscheidungen.",
+      "categories": ["Leasing", "Factoring", "Förderprogramm"],
+      "entries": [
+        {
+          "text": "Eine Maschine gegen vereinbarte Nutzungsraten einsetzen.",
+          "target": 0,
+          "feedback": "Nutzungsüberlassung."
+        },
+        {
+          "text": "Offene Kundenrechnungen gegen frühen Mittelzufluss verkaufen.",
+          "target": 1,
+          "feedback": "Forderungsverkauf."
+        },
+        {
+          "text": "Ein an Förderbedingungen gebundener Investitionszuschuss.",
+          "target": 2,
+          "feedback": "Kein voraussetzungsloses Geschenk."
+        }
+      ],
+      "conclusion": "Echtes und unechtes Factoring sowie Vertragsumfang müssen unterschieden werden."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Ein Betrieb braucht schnell Geld, will aber Kundenbeziehungen erhalten. Beurteile Factoring und nenne zwei zu prüfende Vertragsmerkmale.",
+        "hints": ["Liquiditätsnutzen erklären", "Kosten und Risikoübernahme prüfen"],
+        "model": "Factoring kann Liquidität vorziehen und beim echten Factoring vereinbartes Ausfallrisiko übertragen. Zu prüfen sind Gebühren, Rückgriff und Kommunikation gegenüber Kunden. Ein frühzeitiger Zufluss allein belegt nicht, dass diese Variante insgesamt günstiger ist.",
+        "criteria": [
+          "Liquiditätsnutzen erklären",
+          "Kosten und Risikoübernahme prüfen",
+          "Kundenbeziehungen berücksichtigen"
+        ]
+      },
+      "2": {
+        "prompt": "Prüfe diese Behauptung und begründe an einem eigenen Gegenbeispiel: „Jeder Forderungsverkauf beseitigt automatisch jedes Risiko.“",
+        "hints": ["Die Behauptung fachlich prüfen", "Kosten und Risikoübernahme prüfen"],
+        "model": "Echtes und unechtes Factoring sowie Vertragsumfang müssen unterschieden werden. Factoring kann Liquidität vorziehen und beim echten Factoring vereinbartes Ausfallrisiko übertragen. Zu prüfen sind Gebühren, Rückgriff und Kommunikation gegenüber Kunden. Ein frühzeitiger Zufluss allein belegt nicht, dass diese Variante insgesamt günstiger ist.",
+        "criteria": [
+          "Die Behauptung fachlich prüfen",
+          "Kosten und Risikoübernahme prüfen",
+          "Ein passendes Gegenbeispiel erklären"
+        ]
+      }
+    }
+  },
+  {
+    "id": "ka-anlageformen",
+    "lb": 4,
+    "title": "Anlageformen am Bedarf messen",
+    "intro": "Verfügbarkeit, Sicherheit und Ertrag stehen in Beziehung.",
+    "paragraphs": [
+      "Sichteinlagen sind grundsätzlich kurzfristig verfügbar, Termineinlagen binden Geld für eine vereinbarte Zeit. Wertpapiere, Edelmetalle und Immobilien unterscheiden sich hinsichtlich Erträgen, Preisschwankungen, Kosten und Veräußerbarkeit. Eine Immobilie ist nicht so schnell teilbar wie ein Kontoguthaben.",
+      "Das magische Dreieck der Geldanlage verbindet Sicherheit, Rentabilität und Liquidität. Ein höherer versprochener Ertrag muss auf Risiken und Bedingungen geprüft werden. Geld für in Kürze fällige Löhne sollte nicht auf einen schwankenden Verkaufskurs angewiesen sein."
+    ],
+    "takeaway": "Sicherheit, Rentabilität und Liquidität.",
+    "sourceIds": ["lp", "isb"],
+    "quiz": {
+      "question": "Welches Kriterium meint die kurzfristige Verfügbarkeit einer Anlage?",
+      "answer": "Liquidität.",
+      "wrong": ["Rentabilität.", "Unternehmenshierarchie."],
+      "explanation": "Verfügbarkeit ist vom erwarteten Ertrag und vom Risiko zu unterscheiden."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Fälle untersuchen",
+      "instruction": "Ordne die drei Fälle zu. Prüfe anschließend deine Entscheidungen.",
+      "categories": ["Sichteinlage", "Termineinlage", "Sachwert"],
+      "entries": [
+        {
+          "text": "Kurzfristig verfügbares Bankguthaben.",
+          "target": 0,
+          "feedback": "Keine vertragliche feste Laufzeit im einfachen Modell."
+        },
+        {
+          "text": "Für zwölf Monate fest angelegtes Geld.",
+          "target": 1,
+          "feedback": "Verfügbarkeit ist vertraglich eingeschränkt."
+        },
+        {
+          "text": "Ein vermietetes Grundstück mit Gebäude.",
+          "target": 2,
+          "feedback": "Eine Immobilie hat eigene Bewirtschaftungs- und Verkaufsrisiken."
+        }
+      ],
+      "conclusion": "Verfügbarkeit ist vom erwarteten Ertrag und vom Risiko zu unterscheiden."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Der Betrieb braucht das Geld in vier Wochen für Löhne. Begründe, warum eine schwankende Aktie trotz erwarteter Rendite problematisch sein kann.",
+        "hints": ["Zahlungszweck nennen", "Kursrisiko auf den Zeitraum beziehen"],
+        "model": "Die fälligen Löhne erfordern einen sicheren verfügbaren Betrag. Ein Aktienkurs kann bis dahin sinken; ein Verkauf kann einen Verlust erzwingen. Für diesen Zweck ist die zeitgerechte Verfügbarkeit wichtiger als eine unsichere höhere Rendite.",
+        "criteria": [
+          "Zahlungszweck nennen",
+          "Kursrisiko auf den Zeitraum beziehen",
+          "Liquidität begründet gewichten"
+        ]
+      },
+      "2": {
+        "prompt": "Prüfe diese Behauptung und begründe an einem eigenen Gegenbeispiel: „Rentabilität.“",
+        "hints": ["Die Behauptung fachlich prüfen", "Kursrisiko auf den Zeitraum beziehen"],
+        "model": "Verfügbarkeit ist vom erwarteten Ertrag und vom Risiko zu unterscheiden. Die fälligen Löhne erfordern einen sicheren verfügbaren Betrag. Ein Aktienkurs kann bis dahin sinken; ein Verkauf kann einen Verlust erzwingen. Für diesen Zweck ist die zeitgerechte Verfügbarkeit wichtiger als eine unsichere höhere Rendite.",
+        "criteria": [
+          "Die Behauptung fachlich prüfen",
+          "Kursrisiko auf den Zeitraum beziehen",
+          "Ein passendes Gegenbeispiel erklären"
+        ]
+      }
+    }
+  },
+  {
+    "id": "ka-nachhaltigkeit",
+    "lb": 4,
+    "title": "Streuung und Nachhaltigkeit prüfen",
+    "intro": "Mehrere Namen bedeuten nicht automatisch verschiedene Risiken.",
+    "paragraphs": [
+      "Diversifikation verteilt Geld auf Anlagen mit unterschiedlichen Risikotreibern. Viele Aktien derselben Branche sind nur begrenzt gestreut. Allgemeine Marktrisiken bleiben auch bei breiter Streuung bestehen. Ein Risiko kann vermindert werden, ohne dass eine sichere Rendite entsteht.",
+      "Nachhaltige Geldanlage ergänzt finanzielle Kriterien um ökologische, soziale und ethische Gesichtspunkte. Ein grünes Werbewort beweist keine Wirkung. Prüffähige Kriterien, Ausschlüsse, Daten, Gebühren und der Umgang mit Zielkonflikten müssen untersucht werden."
+    ],
+    "takeaway": "Mehrere Anlagen können denselben Branchen-, Länder- oder Marktrisiken unterliegen.",
+    "sourceIds": ["lp", "isb"],
+    "quiz": {
+      "question": "Was kann Diversifikation leisten?",
+      "answer": "Einzelrisiken streuen, ohne jedes Marktrisiko zu beseitigen.",
+      "wrong": [
+        "Jeden Verlust sicher ausschließen.",
+        "Jede Anlage unabhängig vom Preis gewinnbringend machen."
+      ],
+      "explanation": "Streuung mindert Konzentration, ist aber keine Garantie."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Fälle untersuchen",
+      "instruction": "Ordne die drei Fälle zu. Prüfe anschließend deine Entscheidungen.",
+      "categories": ["Konzentrationsrisiko", "Breitere Streuung", "Noch zu prüfende Werbeaussage"],
+      "entries": [
+        {
+          "text": "Das ganze Geld in drei eng verwandte Automobilunternehmen stecken.",
+          "target": 0,
+          "feedback": "Die Unternehmen teilen Branchenrisiken."
+        },
+        {
+          "text": "Verschiedene Anlagearten und unterschiedliche Branchen berücksichtigen.",
+          "target": 1,
+          "feedback": "Risikotreiber werden verteilt."
+        },
+        {
+          "text": "Das Produkt nennt sich grün, nennt aber keine Kriterien.",
+          "target": 2,
+          "feedback": "Der Name ersetzt keine Nachweise."
+        }
+      ],
+      "conclusion": "Streuung mindert Konzentration, ist aber keine Garantie."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Beurteile die Werbung „Zwölf Aktien sind automatisch sicher und nachhaltig“.",
+        "hints": ["Gemeinsame Risiken erkennen", "Keine Sicherheitsgarantie behaupten"],
+        "model": "Zwölf Unternehmen können denselben Branchen- oder Länderrisiken unterliegen. Auch breite Streuung verhindert nicht jedes Marktrisiko. Nachhaltigkeit braucht überprüfbare Kriterien und Informationen über die tatsächlichen Anlagen.",
+        "criteria": [
+          "Gemeinsame Risiken erkennen",
+          "Keine Sicherheitsgarantie behaupten",
+          "Nachhaltigkeitsnachweis verlangen"
+        ]
+      },
+      "2": {
+        "prompt": "Prüfe diese Behauptung und begründe an einem eigenen Gegenbeispiel: „Jeden Verlust sicher ausschließen.“",
+        "hints": ["Die Behauptung fachlich prüfen", "Keine Sicherheitsgarantie behaupten"],
+        "model": "Streuung mindert Konzentration, ist aber keine Garantie. Zwölf Unternehmen können denselben Branchen- oder Länderrisiken unterliegen. Auch breite Streuung verhindert nicht jedes Marktrisiko. Nachhaltigkeit braucht überprüfbare Kriterien und Informationen über die tatsächlichen Anlagen.",
+        "criteria": [
+          "Die Behauptung fachlich prüfen",
+          "Keine Sicherheitsgarantie behaupten",
+          "Ein passendes Gegenbeispiel erklären"
+        ]
+      }
+    }
+  },
+  {
+    "id": "ka-zinsen-miete",
+    "lb": 4,
+    "title": "Zins- und Mieterträge buchen",
+    "intro": "Nicht jede Einzahlung ist derselbe Ertrag.",
+    "paragraphs": [
+      "Zinsen auf eine Geldanlage werden im einfachen Fall als 2800 BK an 5710 ZE gebucht. Erträge aus Mieten und Pachten gehören auf 5400 EMP. Die Aufgaben geben an, ob Umsatzsteuer, Abzüge oder andere Besonderheiten vorliegen; aus dem Wort Miete folgt kein pauschaler Umsatzsteuersatz.",
+      "Für einfache zeitanteilige Zinsen gelten dieselben Zeit- und Prozentzusammenhänge wie bei Krediten. Zinseszinsen entstehen erst, wenn gutgeschriebene Zinsen in späteren Perioden mitverzinst werden. Im Übungsfall sind diese ausdrücklich ausgeschlossen."
+    ],
+    "takeaway": "5400 EMP.",
+    "sourceIds": ["lp", "isb"],
+    "quiz": {
+      "question": "Wie wird eine einfache Zinsgutschrift ohne Abzüge gebucht?",
+      "answer": "2800 BK an 5710 ZE.",
+      "wrong": ["5710 ZE an 2800 BK.", "2800 BK an 4250 LBKV."],
+      "explanation": "Bankguthaben und Zinsertrag nehmen zu."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Fälle untersuchen",
+      "instruction": "Ordne die drei Fälle zu. Prüfe anschließend deine Entscheidungen.",
+      "categories": ["5710 ZE", "5400 EMP", "Kein Ertrag"],
+      "entries": [
+        {
+          "text": "Zinsgutschrift für eine Termineinlage.",
+          "target": 0,
+          "feedback": "Zinsertrag."
+        },
+        {
+          "text": "Vorgegebene umsatzsteuerfreie Mieteinnahme.",
+          "target": 1,
+          "feedback": "Ertrag aus Miete."
+        },
+        {
+          "text": "Rücküberweisung des eigenen ursprünglich angelegten Kapitals.",
+          "target": 2,
+          "feedback": "Rückfluss des Kapitals ist kein neuer Ertrag."
+        }
+      ],
+      "conclusion": "Bankguthaben und Zinsertrag nehmen zu."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Unterscheide die Rückzahlung einer Anlage von 5.000 Euro und zusätzlich 100 Euro Zinsen.",
+        "hints": ["Kapitalrückfluss abgrenzen", "100 Euro Ertrag nennen"],
+        "model": "Die Rückzahlung von 5.000 Euro ist eine Vermögensumschichtung. Nur die 100 Euro sind neuer Zinsertrag auf 5710 ZE. Die Bank nimmt insgesamt um 5.100 Euro zu, der Gewinn im einfachen Fall nur um 100 Euro.",
+        "criteria": [
+          "Kapitalrückfluss abgrenzen",
+          "100 Euro Ertrag nennen",
+          "Einzahlung von Gewinn unterscheiden"
+        ]
+      },
+      "2": {
+        "prompt": "Prüfe diese Behauptung und begründe an einem eigenen Gegenbeispiel: „5710 ZE an 2800 BK.“",
+        "hints": ["Die Behauptung fachlich prüfen", "100 Euro Ertrag nennen"],
+        "model": "Bankguthaben und Zinsertrag nehmen zu. Die Rückzahlung von 5.000 Euro ist eine Vermögensumschichtung. Nur die 100 Euro sind neuer Zinsertrag auf 5710 ZE. Die Bank nimmt insgesamt um 5.100 Euro zu, der Gewinn im einfachen Fall nur um 100 Euro.",
+        "criteria": [
+          "Die Behauptung fachlich prüfen",
+          "100 Euro Ertrag nennen",
+          "Ein passendes Gegenbeispiel erklären"
+        ]
+      }
+    },
+    "practice": "deposit"
+  },
+  {
+    "id": "ka-boerse",
+    "lb": 4,
+    "title": "Börse und Indizes lesen",
+    "intro": "Ein Index ist weder ein ganzes Land noch eine Renditezusage.",
+    "paragraphs": [
+      "An einer Börse treffen Kauf- und Verkaufsaufträge für handelbare Wertpapiere zusammen. Preise entstehen aus Angebot und Nachfrage unter den jeweiligen Handelsregeln. Erwartungen über künftige Ergebnisse und Risiken können Kurse verändern, bevor sich das laufende Ergebnis ändert.",
+      "Ein Aktienindex fasst eine definierte Auswahl von Aktien nach festen Regeln zusammen. DAX und Dow Jones unterscheiden sich unter anderem in Auswahl und Berechnung. Ein Indexstand ist kein Europreis einer einzelnen Aktie; die Wertentwicklung eines Index gilt nicht automatisch für jede enthaltene Aktie."
+    ],
+    "takeaway": "Ein Index aggregiert verschiedene Titel; einzelne Aktien können sich entgegengesetzt entwickeln.",
+    "sourceIds": ["lp", "isb"],
+    "quiz": {
+      "question": "Was zeigt ein Aktienindex grundsätzlich?",
+      "answer": "Die regelgebundene Entwicklung einer ausgewählten Aktiengruppe.",
+      "wrong": [
+        "Den garantierten Gewinn jeder einzelnen enthaltenen Aktie.",
+        "Den Kontostand aller Unternehmen eines Landes."
+      ],
+      "explanation": "Zusammensetzung und Berechnung bestimmen, was ein Index aussagt."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Fälle untersuchen",
+      "instruction": "Ordne die drei Fälle zu. Prüfe anschließend deine Entscheidungen.",
+      "categories": ["Einzelkurs", "Index", "Keine zulässige Folgerung"],
+      "entries": [
+        {
+          "text": "Preis einer bestimmten Aktie pro Stück.",
+          "target": 0,
+          "feedback": "Ein konkretes Wertpapier."
+        },
+        {
+          "text": "Regelgebundener Wert für eine Aktienauswahl.",
+          "target": 1,
+          "feedback": "Zusammenfassung mehrerer Titel."
+        },
+        {
+          "text": "Steigender Index bedeutet, dass jede enthaltene Aktie steigt.",
+          "target": 2,
+          "feedback": "Einzelwerte können sich unterschiedlich entwickeln."
+        }
+      ],
+      "conclusion": "Zusammensetzung und Berechnung bestimmen, was ein Index aussagt."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Ein Index steigt, eine enthaltene Aktie fällt. Erkläre, warum das kein Widerspruch ist.",
+        "hints": ["Zusammenfassung erklären", "Gewichtung und Gegenbewegung nennen"],
+        "model": "Ein Index fasst mehrere Aktien nach einer Gewichtungsregel zusammen. Andere Werte können stärker steigen und den Rückgang ausgleichen. Die zusammengefasste Entwicklung sagt deshalb nicht die Entwicklung jeder einzelnen Aktie voraus.",
+        "criteria": [
+          "Zusammenfassung erklären",
+          "Gewichtung und Gegenbewegung nennen",
+          "Einzelprognose vermeiden"
+        ]
+      },
+      "2": {
+        "prompt": "Prüfe diese Behauptung und begründe an einem eigenen Gegenbeispiel: „Den garantierten Gewinn jeder einzelnen enthaltenen Aktie.“",
+        "hints": ["Die Behauptung fachlich prüfen", "Gewichtung und Gegenbewegung nennen"],
+        "model": "Zusammensetzung und Berechnung bestimmen, was ein Index aussagt. Ein Index fasst mehrere Aktien nach einer Gewichtungsregel zusammen. Andere Werte können stärker steigen und den Rückgang ausgleichen. Die zusammengefasste Entwicklung sagt deshalb nicht die Entwicklung jeder einzelnen Aktie voraus.",
+        "criteria": [
+          "Die Behauptung fachlich prüfen",
+          "Gewichtung und Gegenbewegung nennen",
+          "Ein passendes Gegenbeispiel erklären"
+        ]
+      }
+    }
+  },
+  {
+    "id": "ka-aktienkauf",
+    "lb": 4,
+    "title": "Aktienabrechnungen auswerten",
+    "intro": "Kurswert und Anschaffungskosten auseinanderhalten.",
+    "paragraphs": [
+      "Der Kurswert ist Stückzahl mal Kurs pro Aktie. Anschaffungsnebenkosten wie eine ausdrücklich vorgegebene Kaufprovision erhöhen im Schulfall den Wert der Finanzanlage. Beispiel: 50 Aktien zu 40 Euro plus 20 Euro Kaufkosten ergeben 2.020 Euro Anschaffungskosten.",
+      "Für langfristig gehaltene Aktien im Anlagevermögen lautet die einfache Buchung 1500 WP an 2800 BK in Höhe der Anschaffungskosten. Die Aufgaben stellen Nebenkosten als Endbeträge ohne gesondert auszuweisende Vorsteuer bereit. Es werden keine echten aktuellen Börsenkurse verwendet."
+    ],
+    "takeaway": "Stückzahl × Stückkurs plus unmittelbare Kaufnebenkosten.",
+    "sourceIds": ["lp", "isb"],
+    "quiz": {
+      "question": "Wie werden vorgegebene unmittelbare Kaufnebenkosten einer Finanzanlage behandelt?",
+      "answer": "Sie erhöhen deren Anschaffungskosten.",
+      "wrong": ["Sie mindern stets den Anschaffungswert.", "Sie sind eine Privatentnahme."],
+      "explanation": "Kaufkosten gehören im geübten Fall zur erworbenen Finanzanlage."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Fälle untersuchen",
+      "instruction": "Ordne die drei Fälle zu. Prüfe anschließend deine Entscheidungen.",
+      "categories": ["Kurswert", "Anschaffungskosten", "Kein Kaufnebenkostenbestandteil"],
+      "entries": [
+        {
+          "text": "50 Aktien mal 40 Euro.",
+          "target": 0,
+          "feedback": "Reiner Preis der Stücke."
+        },
+        {
+          "text": "2.000 Euro Kurswert plus 20 Euro unmittelbare Kaufkosten.",
+          "target": 1,
+          "feedback": "Die gesamten Anschaffungskosten."
+        },
+        {
+          "text": "Spätere jährliche Depotverwaltung.",
+          "target": 2,
+          "feedback": "Laufende Verwaltung ist keine ursprüngliche Anschaffung."
+        }
+      ],
+      "conclusion": "Kaufkosten gehören im geübten Fall zur erworbenen Finanzanlage."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre die Buchung beim Kauf von 50 langfristig gehaltenen Aktien zu 40 Euro mit 20 Euro endgültigen Kaufkosten ohne gesonderte Vorsteuer.",
+        "hints": ["2.000 Euro Kurswert", "2.020 Euro aktivieren"],
+        "model": "Der Kurswert beträgt 2.000 Euro, die Anschaffungskosten betragen 2.020 Euro. Gebucht wird 1500 WP an 2800 BK mit 2.020 Euro. Die Kaufkosten erhöhen hier die Finanzanlage und sind keine zusätzliche Stückzahl.",
+        "criteria": ["2.000 Euro Kurswert", "2.020 Euro aktivieren", "1500 WP an 2800 BK"]
+      },
+      "2": {
+        "prompt": "Prüfe diese Behauptung und begründe an einem eigenen Gegenbeispiel: „Sie mindern stets den Anschaffungswert.“",
+        "hints": ["Die Behauptung fachlich prüfen", "2.020 Euro aktivieren"],
+        "model": "Kaufkosten gehören im geübten Fall zur erworbenen Finanzanlage. Der Kurswert beträgt 2.000 Euro, die Anschaffungskosten betragen 2.020 Euro. Gebucht wird 1500 WP an 2800 BK mit 2.020 Euro. Die Kaufkosten erhöhen hier die Finanzanlage und sind keine zusätzliche Stückzahl.",
+        "criteria": [
+          "Die Behauptung fachlich prüfen",
+          "2.020 Euro aktivieren",
+          "Ein passendes Gegenbeispiel erklären"
+        ]
+      }
+    },
+    "practice": "stockbuy"
+  },
+  {
+    "id": "ka-dividende",
+    "lb": 4,
+    "title": "Dividende und Depotgebühren",
+    "intro": "Ertrag und laufende Kosten getrennt erkennen.",
+    "paragraphs": [
+      "Eine Dividende ist eine beschlossene Ausschüttung pro Aktie und kein garantierter Zins. Der einfache Bruttoertrag ist Stückzahl mal Dividende je Aktie. Die Aufgabe kann ausdrücklich von Steuerabzügen absehen; echte Abrechnungen können weitere Abzüge enthalten.",
+      "Eine Dividende ohne Abzüge wird als 2800 BK an 5780 DDE gebucht. Vorgegebene laufende Depotgebühren werden als 6750 KGV an 2800 BK erfasst. Sie erhöhen nicht nachträglich den Anschaffungswert der vorhandenen Aktien."
+    ],
+    "takeaway": "Sie hängt von der Ausschüttungsentscheidung und den wirtschaftlichen Voraussetzungen ab.",
+    "sourceIds": ["lp", "isb"],
+    "quiz": {
+      "question": "Wie wird eine Dividende ohne Steuerabzüge im einfachen Fall gebucht?",
+      "answer": "2800 BK an 5780 DDE.",
+      "wrong": ["1500 WP an 5780 DDE.", "5780 DDE an 2800 BK."],
+      "explanation": "Eine Ausschüttung ist Ertrag und Geldzufluss, kein zusätzlicher Aktienkauf."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Fälle untersuchen",
+      "instruction": "Ordne die drei Fälle zu. Prüfe anschließend deine Entscheidungen.",
+      "categories": ["Dividendenertrag", "Laufender Depotaufwand", "Keine Garantie"],
+      "entries": [
+        {
+          "text": "100 Aktien mal 2 Euro beschlossene Ausschüttung.",
+          "target": 0,
+          "feedback": "200 Euro Dividende vor eventuellen Abzügen."
+        },
+        {
+          "text": "Jährliche Gebühr für die Depotverwaltung.",
+          "target": 1,
+          "feedback": "Kosten des Geldverkehrs im geübten Fall."
+        },
+        {
+          "text": "Die Dividende werde jedes Jahr unverändert gezahlt.",
+          "target": 2,
+          "feedback": "Eine künftige Ausschüttung ist nicht zugesichert."
+        }
+      ],
+      "conclusion": "Eine Ausschüttung ist Ertrag und Geldzufluss, kein zusätzlicher Aktienkauf."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "100 Aktien bringen je 2 Euro Dividende, die Depotgebühr beträgt 30 Euro. Ohne Steuerabzüge: Erkläre Ertrag und Nettozufluss.",
+        "hints": ["200 Euro Ertrag", "30 Euro Aufwand getrennt"],
+        "model": "Die Dividende beträgt 200 Euro und wird auf 5780 DDE erfasst. Die Depotgebühr von 30 Euro ist Aufwand auf 6750 KGV. Bei sonst unveränderten Größen beträgt der Nettozufluss 170 Euro; die Buchungen bleiben getrennt.",
+        "criteria": ["200 Euro Ertrag", "30 Euro Aufwand getrennt", "170 Euro Nettozufluss"]
+      },
+      "2": {
+        "prompt": "Prüfe diese Behauptung und begründe an einem eigenen Gegenbeispiel: „1500 WP an 5780 DDE.“",
+        "hints": ["Die Behauptung fachlich prüfen", "30 Euro Aufwand getrennt"],
+        "model": "Eine Ausschüttung ist Ertrag und Geldzufluss, kein zusätzlicher Aktienkauf. Die Dividende beträgt 200 Euro und wird auf 5780 DDE erfasst. Die Depotgebühr von 30 Euro ist Aufwand auf 6750 KGV. Bei sonst unveränderten Größen beträgt der Nettozufluss 170 Euro; die Buchungen bleiben getrennt.",
+        "criteria": [
+          "Die Behauptung fachlich prüfen",
+          "30 Euro Aufwand getrennt",
+          "Ein passendes Gegenbeispiel erklären"
+        ]
+      }
+    },
+    "practice": "dividend"
+  },
+  {
+    "id": "ka-aktienverkauf",
+    "lb": 4,
+    "title": "Aktienverkauf mit Gewinn oder Verlust",
+    "intro": "Der Bankzugang ist nicht vollständig neuer Gewinn.",
+    "paragraphs": [
+      "Nettoverkaufserlös ist Kurswert minus unmittelbare Verkaufskosten. Zum Erfolgsvergleich wird davon der Buchwert der verkauften Finanzanlage abgezogen. Ein positiver Unterschied ist Ertrag auf 5650 EAWP, ein negativer Verlust auf 7460 VAWP.",
+      "Bei 2.020 Euro Buchwert und 2.180 Euro Nettoerlös lautet die Schulbuchung 2800 BK 2.180 an 1500 WP 2.020 und 5650 EAWP 160. Bei 1.900 Euro Nettoerlös stehen 2800 BK 1.900 und 7460 VAWP 120 an 1500 WP 2.020. Der Erlös und der Erfolg sind verschieden."
+    ],
+    "takeaway": "7460 VAWP.",
+    "sourceIds": ["lp", "isb"],
+    "quiz": {
+      "question": "Wie wird der Erfolg eines einfachen Aktienverkaufs ermittelt?",
+      "answer": "Nettoverkaufserlös minus Buchwert der verkauften Aktien.",
+      "wrong": [
+        "Bruttoverkaufserlös plus Buchwert.",
+        "Gesamter Bankzugang ohne Vergleich mit dem Buchwert."
+      ],
+      "explanation": "Der bereits vorhandene Vermögenswert muss ausgebucht werden."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Fälle untersuchen",
+      "instruction": "Ordne die drei Fälle zu. Prüfe anschließend deine Entscheidungen.",
+      "categories": ["Verkaufsgewinn", "Verkaufsverlust", "Erfolgsneutral"],
+      "entries": [
+        {
+          "text": "Nettoerlös 2.180 Euro bei 2.020 Euro Buchwert.",
+          "target": 0,
+          "feedback": "160 Euro Gewinn."
+        },
+        {
+          "text": "Nettoerlös 1.900 Euro bei 2.020 Euro Buchwert.",
+          "target": 1,
+          "feedback": "120 Euro Verlust."
+        },
+        {
+          "text": "Nettoerlös und Buchwert sind gleich hoch.",
+          "target": 2,
+          "feedback": "Es gibt keinen Unterschiedsbetrag."
+        }
+      ],
+      "conclusion": "Der bereits vorhandene Vermögenswert muss ausgebucht werden."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre bei 2.020 Euro Buchwert und 2.180 Euro Nettoerlös, warum nicht 2.180 Euro Gewinn entstanden sind.",
+        "hints": ["Buchwert ausbuchen", "160 Euro Gewinn ermitteln"],
+        "model": "2.020 Euro ersetzen nur den bisherigen Buchwert der verkauften Anlage. Der darüber liegende Betrag von 160 Euro ist Gewinn. Die Bank erhält den Nettoerlös, das Wertpapierkonto wird um den Buchwert vermindert.",
+        "criteria": [
+          "Buchwert ausbuchen",
+          "160 Euro Gewinn ermitteln",
+          "Bankzugang und Erfolg unterscheiden"
+        ]
+      },
+      "2": {
+        "prompt": "Prüfe diese Behauptung und begründe an einem eigenen Gegenbeispiel: „Bruttoverkaufserlös plus Buchwert.“",
+        "hints": ["Die Behauptung fachlich prüfen", "160 Euro Gewinn ermitteln"],
+        "model": "Der bereits vorhandene Vermögenswert muss ausgebucht werden. 2.020 Euro ersetzen nur den bisherigen Buchwert der verkauften Anlage. Der darüber liegende Betrag von 160 Euro ist Gewinn. Die Bank erhält den Nettoerlös, das Wertpapierkonto wird um den Buchwert vermindert.",
+        "criteria": [
+          "Die Behauptung fachlich prüfen",
+          "160 Euro Gewinn ermitteln",
+          "Ein passendes Gegenbeispiel erklären"
+        ]
+      }
+    },
+    "practice": "stocksell"
+  },
+  {
+    "id": "ka-entscheidung",
+    "lb": 4,
+    "title": "Eine Anlageentscheidung begründen",
+    "intro": "Ein Angebot muss zu Zweck, Zeitraum und Risiko passen.",
+    "paragraphs": [
+      "Eine begründete Anlageentscheidung beginnt mit Betrag, Verwendungszeitpunkt, Risikotragfähigkeit und nachvollziehbaren Informationen. Dann werden Ertrag, Kosten, Verfügbarkeit, Risiken und Nachhaltigkeitskriterien vergleichbar gemacht. Ein einzelner hoher Prozentwert reicht nicht.",
+      "Die fiktiven Fälle hier sind eigens verfasste Lernmodelle. Ein aktueller Angebotsvergleich braucht datierte Originalinformationen und eine Prüfung ihrer Interessen und Grenzen. Die App trifft keine persönliche Anlageentscheidung und ersetzt keine eigenständige Recherche oder Präsentation."
+    ],
+    "takeaway": "Bedingungen und Risiken können sich ändern; Werbeaussagen allein sind keine belastbare Grundlage.",
+    "sourceIds": ["lp", "isb"],
+    "quiz": {
+      "question": "Was steht am Anfang einer begründeten Anlageentscheidung?",
+      "answer": "Anlagezweck, Zeitraum und tragbares Risiko klären.",
+      "wrong": [
+        "Das Produkt mit dem höchsten Werbezins sofort wählen.",
+        "Nur den Erfolg des vergangenen Jahres vergleichen."
+      ],
+      "explanation": "Ein Angebot kann nur am tatsächlichen Bedarf gemessen werden."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Fälle untersuchen",
+      "instruction": "Ordne die drei Fälle zu. Prüfe anschließend deine Entscheidungen.",
+      "categories": ["Bedarf", "Angebotsinformation", "Unbelegte Schlussfolgerung"],
+      "entries": [
+        {
+          "text": "In sechs Monaten werden 8.000 Euro für Material gebraucht.",
+          "target": 0,
+          "feedback": "Zweck und Zeitraum."
+        },
+        {
+          "text": "Eine datierte Unterlage nennt Kosten und Verfügbarkeit.",
+          "target": 1,
+          "feedback": "Prüfbare Bedingungen."
+        },
+        {
+          "text": "Vergangene Wertsteigerung garantiert künftige Gewinne.",
+          "target": 2,
+          "feedback": "Vergangenheit ist keine Zusage."
+        }
+      ],
+      "conclusion": "Ein Angebot kann nur am tatsächlichen Bedarf gemessen werden."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Plane einen Vergleich zweier aktueller Angebote, ohne bereits eine Anlage zu kaufen. Nenne benötigte Angaben und deine Entscheidungsregel.",
+        "hints": ["Bedarf konkretisieren", "Datierte Quellen und Kosten nennen"],
+        "model": "Ich kläre zuerst Zweck und Termin. Dann erfasse ich aus datierten Originalquellen Kosten, Risiken, Verfügbarkeit und Nachhaltigkeitskriterien. Ich wähle nur ein Angebot, das den Liquiditätsbedarf und das tragbare Risiko erfüllt; vergangene Rendite allein reicht nicht.",
+        "criteria": [
+          "Bedarf konkretisieren",
+          "Datierte Quellen und Kosten nennen",
+          "Eine begründete Auswahlregel festlegen"
+        ]
+      },
+      "2": {
+        "prompt": "Prüfe diese Behauptung und begründe an einem eigenen Gegenbeispiel: „Das Produkt mit dem höchsten Werbezins sofort wählen.“",
+        "hints": ["Die Behauptung fachlich prüfen", "Datierte Quellen und Kosten nennen"],
+        "model": "Ein Angebot kann nur am tatsächlichen Bedarf gemessen werden. Ich kläre zuerst Zweck und Termin. Dann erfasse ich aus datierten Originalquellen Kosten, Risiken, Verfügbarkeit und Nachhaltigkeitskriterien. Ich wähle nur ein Angebot, das den Liquiditätsbedarf und das tragbare Risiko erfüllt; vergangene Rendite allein reicht nicht.",
+        "criteria": [
+          "Die Behauptung fachlich prüfen",
+          "Datierte Quellen und Kosten nennen",
+          "Ein passendes Gegenbeispiel erklären"
+        ]
+      }
+    }
+  },
+  {
+    "id": "fo-insolvenz",
+    "lb": 5,
+    "title": "Insolvenz und ihre Folgen verstehen",
+    "intro": "Eine wirtschaftliche Krise betrifft mehrere Gruppen.",
+    "paragraphs": [
+      "Ein Insolvenzverfahren dient der gemeinschaftlichen Befriedigung der Gläubiger durch Verwertung und Verteilung oder durch eine Regelung in einem Insolvenzplan. Es ist nicht gleichbedeutend mit einer sofortigen vollständigen Schließung jedes Unternehmens.",
+      "Zahlungsprobleme können Lieferanten, Beschäftigte und Eigentümer treffen. Anmeldung, Prüfung und Verteilung von Ansprüchen folgen rechtlichen Regeln. Eine verspätete Rechnung allein beweist keine eröffnete Insolvenz und noch keinen endgültigen vollständigen Forderungsausfall."
+    ],
+    "takeaway": "Ein geordnetes Verfahren kann neben Verwertung auch einen Insolvenzplan und Fortführung ermöglichen.",
+    "sourceIds": ["lp", "insolvenz"],
+    "quiz": {
+      "question": "Welches Ziel hat das Insolvenzverfahren grundsätzlich?",
+      "answer": "Die gemeinschaftliche Befriedigung der Gläubiger nach rechtlichen Regeln.",
+      "wrong": [
+        "Die garantierte vollständige Zahlung jeder Forderung.",
+        "Das automatische Erlöschen sämtlicher Forderungen ohne Verfahren."
+      ],
+      "explanation": "Verwertung und Verteilung oder ein Insolvenzplan sollen die Ansprüche geordnet behandeln."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Fälle untersuchen",
+      "instruction": "Ordne die drei Fälle zu. Prüfe anschließend deine Entscheidungen.",
+      "categories": ["Gläubiger", "Beschäftigte", "Unternehmensführung"],
+      "entries": [
+        {
+          "text": "Ein Lieferant wartet auf die Bezahlung einer Rechnung.",
+          "target": 0,
+          "feedback": "Er hat einen Anspruch gegen das Unternehmen."
+        },
+        {
+          "text": "Eine Mitarbeiterin sorgt sich um Lohn und Arbeitsplatz.",
+          "target": 1,
+          "feedback": "Einkommen und Beschäftigung sind betroffen."
+        },
+        {
+          "text": "Die Leitung muss die Krise und rechtliche Pflichten prüfen.",
+          "target": 2,
+          "feedback": "Für Handlungen und Verfahren gelten rechtliche Vorgaben."
+        }
+      ],
+      "conclusion": "Verwertung und Verteilung oder ein Insolvenzplan sollen die Ansprüche geordnet behandeln."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Warum darf eine ausbleibende Zahlung nicht sofort als vollständige uneinbringliche Forderung behandelt werden?",
+        "hints": ["Hinweis von Nachweis unterscheiden", "Bonität und Verfahren berücksichtigen"],
+        "model": "Eine verspätete Zahlung ist zunächst ein Hinweis, aber noch kein sicherer Beleg des vollständigen Ausfalls. Gründe, Bonität und Verfahrensstand müssen geprüft werden. Auch in einer Insolvenz kann eine Quote gezahlt oder eine Fortführung vereinbart werden.",
+        "criteria": [
+          "Hinweis von Nachweis unterscheiden",
+          "Bonität und Verfahren berücksichtigen",
+          "Mögliche Quote nennen"
+        ]
+      },
+      "2": {
+        "prompt": "Prüfe diese Behauptung und begründe an einem eigenen Gegenbeispiel: „Die garantierte vollständige Zahlung jeder Forderung.“",
+        "hints": ["Die Behauptung fachlich prüfen", "Bonität und Verfahren berücksichtigen"],
+        "model": "Verwertung und Verteilung oder ein Insolvenzplan sollen die Ansprüche geordnet behandeln. Eine verspätete Zahlung ist zunächst ein Hinweis, aber noch kein sicherer Beleg des vollständigen Ausfalls. Gründe, Bonität und Verfahrensstand müssen geprüft werden. Auch in einer Insolvenz kann eine Quote gezahlt oder eine Fortführung vereinbart werden.",
+        "criteria": [
+          "Die Behauptung fachlich prüfen",
+          "Bonität und Verfahren berücksichtigen",
+          "Ein passendes Gegenbeispiel erklären"
+        ]
+      }
+    }
+  },
+  {
+    "id": "fo-verzug",
+    "lb": 5,
+    "title": "Verzug, Mahngebühren und Zinsen",
+    "intro": "Fälligkeit und Verzug nicht verwechseln.",
+    "paragraphs": [
+      "Verzug setzt rechtliche Voraussetzungen voraus. Nach Fälligkeit kann eine Mahnung nötig sein; bei vereinbartem kalendermäßigem Zahlungstermin kann sie entbehrlich sein. Die 30-Tage-Regel gilt gegenüber Verbrauchern nur mit dem erforderlichen Hinweis. Nicht jede Fälligkeit löst automatisch jede Verzugsfolge aus.",
+      "Verzugszinsen und ersatzfähige Mahnkosten werden in den Übungsfällen ausdrücklich vorgegeben; Basiszinssatz und Einzelfall werden nicht live ermittelt. Die Schulrechnung verwendet die genannte 360-Tage-Basis. Vorgegebene Zinsen stehen auf 5710 ZE, Mahnkostenersatz auf 5430 ASBE; echter Schadensersatz wird hier ohne Umsatzsteuer behandelt."
+    ],
+    "takeaway": "Der maßgebliche Satz und die rechtlichen Voraussetzungen hängen vom Zeitpunkt und Fall ab.",
+    "sourceIds": ["lp", "verzug", "zinsen"],
+    "quiz": {
+      "question": "Welche Aussage zur 30-Tage-Regel bei Verbrauchern ist richtig?",
+      "answer": "Die besonderen gesetzlichen Hinweisanforderungen müssen erfüllt sein.",
+      "wrong": [
+        "Verbraucher geraten immer schon am Rechnungsdatum in Verzug.",
+        "Eine noch nicht fällige Forderung verzinst sich automatisch als Verzug."
+      ],
+      "explanation": "Fälligkeit, Zugang und gesetzliche Voraussetzungen sind zu prüfen."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Fälle untersuchen",
+      "instruction": "Ordne die drei Fälle zu. Prüfe anschließend deine Entscheidungen.",
+      "categories": ["Voraussetzung prüfen", "Zinsrechnung", "Mahnkostenersatz"],
+      "entries": [
+        {
+          "text": "Ist die Rechnung fällig und eine Mahnung nötig?",
+          "target": 0,
+          "feedback": "Zuerst den Eintritt des Verzugs klären."
+        },
+        {
+          "text": "Vorgegebenen Zinssatz und Verzugstage verwenden.",
+          "target": 1,
+          "feedback": "Keine aktuellen Sätze erfinden."
+        },
+        {
+          "text": "Nur vorgegebene ersatzfähige Kosten ansetzen.",
+          "target": 2,
+          "feedback": "Beliebige Pauschalen sind nicht automatisch begründet."
+        }
+      ],
+      "conclusion": "Fälligkeit, Zugang und gesetzliche Voraussetzungen sind zu prüfen."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Ein Geschäftsfall gibt Verzug, 10.000 Euro Forderung, 8 Prozent, 45 Tage auf 360-Tage-Basis und 5 Euro ersatzfähige Mahnkosten vor. Erkläre die Zusatzforderung.",
+        "hints": ["100 Euro Zinsen", "5 Euro getrennte Mahnkosten"],
+        "model": "Zinsen: 10.000 × 8 × 45 / 36.000 = 100 Euro. Hinzu kommen 5 Euro vorgegebener Mahnkostenersatz. Die Zusatzforderung von 105 Euro enthält in diesem Schadensersatzfall keine Umsatzsteuer. Der Verzug wird ausdrücklich als gegeben vorausgesetzt.",
+        "criteria": [
+          "100 Euro Zinsen",
+          "5 Euro getrennte Mahnkosten",
+          "Vorgegebenen Verzug und Steuerannahme beachten"
+        ]
+      },
+      "2": {
+        "prompt": "Prüfe diese Behauptung und begründe an einem eigenen Gegenbeispiel: „Verbraucher geraten immer schon am Rechnungsdatum in Verzug.“",
+        "hints": ["Die Behauptung fachlich prüfen", "5 Euro getrennte Mahnkosten"],
+        "model": "Fälligkeit, Zugang und gesetzliche Voraussetzungen sind zu prüfen. Zinsen: 10.000 × 8 × 45 / 36.000 = 100 Euro. Hinzu kommen 5 Euro vorgegebener Mahnkostenersatz. Die Zusatzforderung von 105 Euro enthält in diesem Schadensersatzfall keine Umsatzsteuer. Der Verzug wird ausdrücklich als gegeben vorausgesetzt.",
+        "criteria": [
+          "Die Behauptung fachlich prüfen",
+          "5 Euro getrennte Mahnkosten",
+          "Ein passendes Gegenbeispiel erklären"
+        ]
+      }
+    },
+    "practice": "overdue"
+  },
+  {
+    "id": "fo-klassifizieren",
+    "lb": 5,
+    "title": "Forderungen nach Bonität einordnen",
+    "intro": "Risiken erkennen, ohne voreilig endgültigen Ausfall zu behaupten.",
+    "paragraphs": [
+      "Einwandfreie Forderungen zeigen kein konkret erkennbares Einzelrisiko. Bei zweifelhaften Forderungen liegen Hinweise auf ein erhöhtes Ausfallrisiko vor, etwa ernsthafte Zahlungsschwierigkeiten. Uneinbringlich ist eine Forderung, soweit ihr Ausfall hinreichend feststeht.",
+      "Die Einordnung stützt sich auf Belege und Informationen zur Bonität. Sie bestimmt Umbuchung, Wertberichtigung oder direkte Abschreibung. Eine Risikoschätzung zum Bilanzstichtag berichtigt noch nicht die Umsatzsteuer; die Uneinbringlichkeit ist gesondert zu beurteilen."
+    ],
+    "takeaway": "Einwandfreie, zweifelhafte und uneinbringliche Forderungen.",
+    "sourceIds": ["lp", "ust"],
+    "quiz": {
+      "question": "Was kennzeichnet eine zweifelhafte Forderung?",
+      "answer": "Ein konkret erkennbares, noch nicht endgültig feststehendes Ausfallrisiko.",
+      "wrong": [
+        "Jede Rechnung unmittelbar nach ihrer Ausstellung.",
+        "Ein sicherer vollständiger Zahlungseingang ohne Risiko."
+      ],
+      "explanation": "Einzelfallrisiko und endgültiger Ausfall sind unterschiedliche Zustände."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Fälle untersuchen",
+      "instruction": "Ordne die drei Fälle zu. Prüfe anschließend deine Entscheidungen.",
+      "categories": ["Einwandfrei", "Zweifelhaft", "Uneinbringlich"],
+      "entries": [
+        {
+          "text": "Keine konkreten Hinweise auf Zahlungsschwierigkeiten.",
+          "target": 0,
+          "feedback": "Nur allgemeines Kreditrisiko."
+        },
+        {
+          "text": "Ernsthafte belegte Zahlungsschwierigkeiten, Ausgang noch offen.",
+          "target": 1,
+          "feedback": "Konkretes Einzelrisiko."
+        },
+        {
+          "text": "Ein belegter endgültiger vollständiger Ausfall.",
+          "target": 2,
+          "feedback": "Direkte Abschreibung ist zu prüfen."
+        }
+      ],
+      "conclusion": "Einzelfallrisiko und endgültiger Ausfall sind unterschiedliche Zustände."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Eine Kundin ist seit Monaten in Schwierigkeiten, eine Quote ist noch unklar. Begründe die Einordnung und die Umsatzsteuerfolge.",
+        "hints": ["Konkretes Risiko nennen", "Zweifelhaft von uneinbringlich trennen"],
+        "model": "Die Forderung ist bei belegtem Einzelrisiko zweifelhaft. Der Ausgang ist noch offen, deshalb ist vollständiger Ausfall nicht automatisch belegt. Eine reine Wertberichtigung wegen des Risikos löst noch keine Umsatzsteuerkorrektur aus.",
+        "criteria": [
+          "Konkretes Risiko nennen",
+          "Zweifelhaft von uneinbringlich trennen",
+          "Keine USt-Korrektur allein wegen Risikos"
+        ]
+      },
+      "2": {
+        "prompt": "Prüfe diese Behauptung und begründe an einem eigenen Gegenbeispiel: „Jede Rechnung unmittelbar nach ihrer Ausstellung.“",
+        "hints": ["Die Behauptung fachlich prüfen", "Zweifelhaft von uneinbringlich trennen"],
+        "model": "Einzelfallrisiko und endgültiger Ausfall sind unterschiedliche Zustände. Die Forderung ist bei belegtem Einzelrisiko zweifelhaft. Der Ausgang ist noch offen, deshalb ist vollständiger Ausfall nicht automatisch belegt. Eine reine Wertberichtigung wegen des Risikos löst noch keine Umsatzsteuerkorrektur aus.",
+        "criteria": [
+          "Die Behauptung fachlich prüfen",
+          "Zweifelhaft von uneinbringlich trennen",
+          "Ein passendes Gegenbeispiel erklären"
+        ]
+      }
+    },
+    "lab": "claims"
+  },
+  {
+    "id": "fo-umbuchen",
+    "lb": 5,
+    "title": "Zweifelhafte Forderungen umbuchen",
+    "intro": "Das Risiko sichtbar machen, ohne den Bruttobetrag zu verändern.",
+    "paragraphs": [
+      "Bei bekanntem Einzelrisiko wird die Forderung in voller Bruttohöhe von 2400 FO auf 2470 ZWFO umgebucht: 2470 ZWFO an 2400 FO. Das ist zunächst ein Aktivtausch, kein Abschreibungsaufwand.",
+      "Die Umsatzsteuer bleibt bei dieser bloßen Risikoumbuchung unverändert. Eine Wertminderung zum Stichtag oder ein später feststehender Ausfall braucht einen weiteren eigenen Buchungsschritt. Durch Umbuchung wird weder ein Verlust automatisch endgültig noch eine Zahlung erzeugt."
+    ],
+    "takeaway": "2470 ZWFO an 2400 FO in voller Bruttohöhe.",
+    "sourceIds": ["lp", "isb"],
+    "quiz": {
+      "question": "In welcher Höhe wird eine zweifelhafte Rechnung von 2400 FO auf 2470 ZWFO umgebucht?",
+      "answer": "In voller Bruttohöhe.",
+      "wrong": ["Nur in Höhe der Umsatzsteuer.", "Nur in Höhe des geschätzten Nettoausfalls."],
+      "explanation": "Die Umbuchung macht die Risikoklasse sichtbar und lässt den Forderungsbetrag unverändert."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Fälle untersuchen",
+      "instruction": "Ordne die drei Fälle zu. Prüfe anschließend deine Entscheidungen.",
+      "categories": ["Umbuchung", "Wertberichtigung", "Keine unmittelbare Folge"],
+      "entries": [
+        {
+          "text": "2470 ZWFO an 2400 FO in Bruttohöhe.",
+          "target": 0,
+          "feedback": "Die Forderung wechselt das Aktivkonto."
+        },
+        {
+          "text": "Erwarteten Nettoausfall am Stichtag berücksichtigen.",
+          "target": 1,
+          "feedback": "Das ist ein zusätzlicher Bewertungsschritt."
+        },
+        {
+          "text": "Allein wegen des Risikos Umsatzsteuer korrigieren.",
+          "target": 2,
+          "feedback": "Risiko allein ist noch keine Uneinbringlichkeit."
+        }
+      ],
+      "conclusion": "Die Umbuchung macht die Risikoklasse sichtbar und lässt den Forderungsbetrag unverändert."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Eine Rechnung über 5.950 Euro brutto wird zweifelhaft. Erkläre Umbuchung und unmittelbare Erfolgswirkung.",
+        "hints": ["Bruttobetrag umbuchen", "Aktivtausch und Erfolg erklären"],
+        "model": "2470 ZWFO an 2400 FO mit 5.950 Euro. Es handelt sich um einen Aktivtausch ohne unmittelbaren Aufwand. Die Umsatzsteuer wird dadurch nicht korrigiert; Bewertung oder endgültiger Ausfall werden gesondert behandelt.",
+        "criteria": [
+          "Bruttobetrag umbuchen",
+          "Aktivtausch und Erfolg erklären",
+          "Umsatzsteuer unverändert lassen"
+        ]
+      },
+      "2": {
+        "prompt": "Prüfe diese Behauptung und begründe an einem eigenen Gegenbeispiel: „Nur in Höhe der Umsatzsteuer.“",
+        "hints": ["Die Behauptung fachlich prüfen", "Aktivtausch und Erfolg erklären"],
+        "model": "Die Umbuchung macht die Risikoklasse sichtbar und lässt den Forderungsbetrag unverändert. 2470 ZWFO an 2400 FO mit 5.950 Euro. Es handelt sich um einen Aktivtausch ohne unmittelbaren Aufwand. Die Umsatzsteuer wird dadurch nicht korrigiert; Bewertung oder endgültiger Ausfall werden gesondert behandelt.",
+        "criteria": [
+          "Die Behauptung fachlich prüfen",
+          "Aktivtausch und Erfolg erklären",
+          "Ein passendes Gegenbeispiel erklären"
+        ]
+      }
+    },
+    "practice": "doubtful"
+  },
+  {
+    "id": "fo-ausfall",
+    "lb": 5,
+    "title": "Endgültigen Forderungsausfall buchen",
+    "intro": "Nettoverlust und Umsatzsteuerkorrektur trennen.",
+    "paragraphs": [
+      "Steht die Uneinbringlichkeit fest, wird der ausgefallene Bruttobetrag in Nettoverlust und Umsatzsteueranteil zerlegt. Der Nettoverlust wird auf 6950 ABFO im Soll gebucht; die Umsatzsteuerschuld auf 4800 UST wird ebenfalls im Soll vermindert. Im Haben wird die entsprechende Forderung ausgebucht.",
+      "Bei endgültig ausgefallenen 1.190 Euro aus einer mit 19 Prozent versteuerten Forderung entfallen 1.000 Euro auf Verlust und 190 Euro auf Umsatzsteuerkorrektur. Lautet das Konto zuvor 2470 ZWFO, wird dort ausgebucht; ohne vorherige Umbuchung wäre 2400 FO betroffen."
+    ],
+    "takeaway": "Der Umsatzsteueranteil wird berichtigt; Aufwand ist im einfachen Fall nur der Nettoausfall.",
+    "sourceIds": ["lp", "ust"],
+    "quiz": {
+      "question": "Wann wird im geübten Forderungsfall Umsatzsteuer berichtigt?",
+      "answer": "Bei feststehender Uneinbringlichkeit im entsprechenden Umfang.",
+      "wrong": [
+        "Schon bei jeder bloßen Risikoschätzung.",
+        "Erst wenn die Rechnung vollständig pünktlich bezahlt wird."
+      ],
+      "explanation": "Umsatzsteuerkorrektur und erwartete Wertminderung folgen verschiedenen Voraussetzungen."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Fälle untersuchen",
+      "instruction": "Ordne die drei Fälle zu. Prüfe anschließend deine Entscheidungen.",
+      "categories": ["Nettoverlust", "Umsatzsteuerkorrektur", "Bruttoausbuchung"],
+      "entries": [
+        {
+          "text": "1.000 Euro bei endgültigem Ausfall von 1.190 Euro brutto zu 19 Prozent.",
+          "target": 0,
+          "feedback": "Aufwand auf 6950 ABFO."
+        },
+        {
+          "text": "190 Euro derselben ausgefallenen Forderung.",
+          "target": 1,
+          "feedback": "4800 UST wird im Soll vermindert."
+        },
+        {
+          "text": "1.190 Euro im Haben von 2470 ZWFO.",
+          "target": 2,
+          "feedback": "Die Forderung wird im ausgefallenen Umfang entfernt."
+        }
+      ],
+      "conclusion": "Umsatzsteuerkorrektur und erwartete Wertminderung folgen verschiedenen Voraussetzungen."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Buche den endgültigen vollständigen Ausfall einer auf 2470 ZWFO stehenden Forderung über 1.190 Euro zu 19 Prozent ohne bestehende Wertberichtigung.",
+        "hints": ["Nettoverlust 1.000 Euro", "USt-Korrektur 190 Euro"],
+        "model": "6950 ABFO 1.000 und 4800 UST 190 an 2470 ZWFO 1.190 Euro. Nur der Nettobetrag ist Verlust. Der Steueranteil vermindert die Umsatzsteuerschuld; die volle Bruttoforderung wird ausgebucht.",
+        "criteria": [
+          "Nettoverlust 1.000 Euro",
+          "USt-Korrektur 190 Euro",
+          "Bruttoforderung 1.190 Euro ausbuchen"
+        ]
+      },
+      "2": {
+        "prompt": "Prüfe diese Behauptung und begründe an einem eigenen Gegenbeispiel: „Schon bei jeder bloßen Risikoschätzung.“",
+        "hints": ["Die Behauptung fachlich prüfen", "USt-Korrektur 190 Euro"],
+        "model": "Umsatzsteuerkorrektur und erwartete Wertminderung folgen verschiedenen Voraussetzungen. 6950 ABFO 1.000 und 4800 UST 190 an 2470 ZWFO 1.190 Euro. Nur der Nettobetrag ist Verlust. Der Steueranteil vermindert die Umsatzsteuerschuld; die volle Bruttoforderung wird ausgebucht.",
+        "criteria": [
+          "Die Behauptung fachlich prüfen",
+          "USt-Korrektur 190 Euro",
+          "Ein passendes Gegenbeispiel erklären"
+        ]
+      }
+    },
+    "practice": "writeoff",
+    "lab": "claims"
+  },
+  {
+    "id": "fo-spaetzahlung",
+    "lb": 5,
+    "title": "Zahlung nach Abschreibung erfassen",
+    "intro": "Ein später Eingang macht eine neue Steuerkorrektur nötig.",
+    "paragraphs": [
+      "Geht Geld auf eine bereits vollständig abgeschriebene Forderung ein, wird der Eingang in Nettoertrag und Umsatzsteuer zerlegt. Im geübten Fall lautet die Buchung 2800 BK an 5495 EFO und 4800 UST. Die frühere Forderung wird nicht einfach erneut als offene Rechnung stehen gelassen.",
+      "Bei 595 Euro nachträglicher Zahlung auf einen mit 19 Prozent versteuerten und vollständig abgeschriebenen Anspruch ergeben sich 500 Euro Ertrag und 95 Euro Umsatzsteuer. Die vorangegangene Steuerkorrektur wird im Umfang der Zahlung wieder berichtigt."
+    ],
+    "takeaway": "2800 BK an 5495 EFO und 4800 UST.",
+    "sourceIds": ["lp", "ust"],
+    "quiz": {
+      "question": "Wie wird ein später Zahlungseingang von 595 Euro zu 19 Prozent auf eine vollständig abgeschriebene Forderung zerlegt?",
+      "answer": "500 Euro Ertrag und 95 Euro Umsatzsteuer.",
+      "wrong": ["595 Euro steuerfreier Ertrag.", "595 Euro neue Privatentnahme."],
+      "explanation": "Die spätere Vereinnahmung führt zur erneuten Umsatzsteuerberichtigung."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Fälle untersuchen",
+      "instruction": "Ordne die drei Fälle zu. Prüfe anschließend deine Entscheidungen.",
+      "categories": ["Bankzugang", "Ertrag", "Umsatzsteuer"],
+      "entries": [
+        {
+          "text": "595 Euro nachträglich erhalten.",
+          "target": 0,
+          "feedback": "Voller Bruttoeingang."
+        },
+        {
+          "text": "500 Euro auf 5495 EFO.",
+          "target": 1,
+          "feedback": "Nettoanteil."
+        },
+        {
+          "text": "95 Euro auf 4800 UST.",
+          "target": 2,
+          "feedback": "Erneute Berichtigung der Umsatzsteuer."
+        }
+      ],
+      "conclusion": "Die spätere Vereinnahmung führt zur erneuten Umsatzsteuerberichtigung."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Begründe die Buchung bei 595 Euro Eingang auf eine vollständig abgeschriebene 19-Prozent-Forderung.",
+        "hints": ["595 Euro Bank im Soll", "500 Euro Ertrag im Haben"],
+        "model": "2800 BK 595 an 5495 EFO 500 und 4800 UST 95 Euro. Die Bank erhält den Bruttobetrag, aber nur 500 Euro sind Ertrag. Die frühere Umsatzsteuerkorrektur wird im Umfang des Eingangs rückgängig gemacht.",
+        "criteria": ["595 Euro Bank im Soll", "500 Euro Ertrag im Haben", "95 Euro USt im Haben"]
+      },
+      "2": {
+        "prompt": "Prüfe diese Behauptung und begründe an einem eigenen Gegenbeispiel: „595 Euro steuerfreier Ertrag.“",
+        "hints": ["Die Behauptung fachlich prüfen", "500 Euro Ertrag im Haben"],
+        "model": "Die spätere Vereinnahmung führt zur erneuten Umsatzsteuerberichtigung. 2800 BK 595 an 5495 EFO 500 und 4800 UST 95 Euro. Die Bank erhält den Bruttobetrag, aber nur 500 Euro sind Ertrag. Die frühere Umsatzsteuerkorrektur wird im Umfang des Eingangs rückgängig gemacht.",
+        "criteria": [
+          "Die Behauptung fachlich prüfen",
+          "500 Euro Ertrag im Haben",
+          "Ein passendes Gegenbeispiel erklären"
+        ]
+      }
+    },
+    "practice": "recovery"
+  },
+  {
+    "id": "fo-ewb",
+    "lb": 5,
+    "title": "Einzelwertberichtigung am Stichtag",
+    "intro": "Erwartete Einzelverluste auf Nettobasis berücksichtigen.",
+    "paragraphs": [
+      "Die Einzelwertberichtigung berücksichtigt den erwarteten Nettoausfall einer konkret zweifelhaften Forderung zum Bilanzstichtag. 11.900 Euro brutto zu 19 Prozent entsprechen 10.000 Euro netto. Bei erwartetem Ausfall von 40 Prozent beträgt die neu zu bildende EWB 4.000 Euro.",
+      "Ohne vorhandenen EWB-Bestand wird 6950 ABFO an 3670 EWB gebucht. Die Bruttoforderung bleibt auf 2470 ZWFO; die indirekte Wertberichtigung vermindert ihren bilanziellen Wert. Die bloße Erwartung löst keine Umsatzsteuerkorrektur aus. Spätere Anpassungen und Auflösungen sind zusätzliche Vorgänge."
+    ],
+    "takeaway": "6950 ABFO an 3670 EWB in Höhe des erwarteten Nettoausfalls.",
+    "sourceIds": ["lp", "ust"],
+    "quiz": {
+      "question": "Welche Basis hat die EWB im geübten Fall einer versteuerten zweifelhaften Forderung?",
+      "answer": "Der erwartete Ausfall des Nettobetrags.",
+      "wrong": [
+        "Der gesamte Bruttobetrag unabhängig von der Quote.",
+        "Nur der Umsatzsteuerbetrag."
+      ],
+      "explanation": "Die Umsatzsteuer wird erst bei entsprechender Uneinbringlichkeit berichtigt."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Fälle untersuchen",
+      "instruction": "Ordne die drei Fälle zu. Prüfe anschließend deine Entscheidungen.",
+      "categories": ["Bruttoforderung", "Nettobasis", "Neu zu bildende EWB"],
+      "entries": [
+        {
+          "text": "11.900 Euro Rechnung zu 19 Prozent.",
+          "target": 0,
+          "feedback": "Bleibt zunächst auf ZWFO."
+        },
+        {
+          "text": "10.000 Euro nach Herausrechnen der Steuer.",
+          "target": 1,
+          "feedback": "Basis der Risikoschätzung."
+        },
+        {
+          "text": "4.000 Euro bei 40 Prozent erwartetem Nettoausfall.",
+          "target": 2,
+          "feedback": "6950 ABFO an 3670 EWB ohne Altbestand."
+        }
+      ],
+      "conclusion": "Die Umsatzsteuer wird erst bei entsprechender Uneinbringlichkeit berichtigt."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Ermittle und buche die neu zu bildende EWB für 11.900 Euro brutto, 19 Prozent Steuer und 40 Prozent erwarteten Ausfall. Kein Altbestand.",
+        "hints": ["Nettobasis 10.000 Euro", "EWB 4.000 Euro buchen"],
+        "model": "Die Nettobasis beträgt 10.000 Euro. Davon 40 Prozent sind 4.000 Euro. Neubildung: 6950 ABFO an 3670 EWB 4.000 Euro. Die Bruttoforderung bleibt bestehen, die Umsatzsteuer wird wegen der bloßen Erwartung nicht berichtigt.",
+        "criteria": [
+          "Nettobasis 10.000 Euro",
+          "EWB 4.000 Euro buchen",
+          "Keine USt-Korrektur behaupten"
+        ]
+      },
+      "2": {
+        "prompt": "Prüfe diese Behauptung und begründe an einem eigenen Gegenbeispiel: „Der gesamte Bruttobetrag unabhängig von der Quote.“",
+        "hints": ["Die Behauptung fachlich prüfen", "EWB 4.000 Euro buchen"],
+        "model": "Die Umsatzsteuer wird erst bei entsprechender Uneinbringlichkeit berichtigt. Die Nettobasis beträgt 10.000 Euro. Davon 40 Prozent sind 4.000 Euro. Neubildung: 6950 ABFO an 3670 EWB 4.000 Euro. Die Bruttoforderung bleibt bestehen, die Umsatzsteuer wird wegen der bloßen Erwartung nicht berichtigt.",
+        "criteria": [
+          "Die Behauptung fachlich prüfen",
+          "EWB 4.000 Euro buchen",
+          "Ein passendes Gegenbeispiel erklären"
+        ]
+      }
+    },
+    "practice": "ewb",
+    "lab": "claims"
+  },
+  {
+    "id": "fo-pwb",
+    "lb": 5,
+    "title": "Pauschalwertberichtigung bilden",
+    "intro": "Einwandfrei bedeutet nicht völlig risikofrei.",
+    "paragraphs": [
+      "Die PWB berücksichtigt das allgemeine Ausfallrisiko der einwandfreien Forderungen. Konkret zweifelhafte und bereits uneinbringliche Forderungen werden aus dieser Basis herausgenommen, damit derselbe Risikobereich nicht doppelt erfasst wird. Anschließend wird die Umsatzsteuer aus dem verbleibenden Bruttobestand herausgerechnet.",
+      "Bei einwandfreien Forderungen von 119.000 Euro brutto zu 19 Prozent beträgt die Nettobasis 100.000 Euro. Ein vorgegebener PWB-Satz von 1 Prozent ergibt 1.000 Euro. Ohne Altbestand lautet die Neubildung 6950 ABFO an 3680 PWB. Ein bereits vorhandener Bestand müsste zusätzlich berücksichtigt werden."
+    ],
+    "takeaway": "Ihr konkretes Einzelrisiko wird gesondert beurteilt und soll nicht doppelt berücksichtigt werden.",
+    "sourceIds": ["lp", "isb"],
+    "quiz": {
+      "question": "Welche Forderungen bilden hier die PWB-Basis?",
+      "answer": "Die einwandfreien Forderungen auf Nettobasis.",
+      "wrong": [
+        "Zusätzlich nochmals alle bereits einzeln berichtigten zweifelhaften Forderungen.",
+        "Nur bereits vollständig abgeschriebene Forderungen."
+      ],
+      "explanation": "Einzelrisiko und allgemeines Risiko werden ohne Doppelzählung berücksichtigt."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Fälle untersuchen",
+      "instruction": "Ordne die drei Fälle zu. Prüfe anschließend deine Entscheidungen.",
+      "categories": ["PWB-Basis", "Einzeln beurteilen", "Bereits ausbuchen"],
+      "entries": [
+        {
+          "text": "Einwandfreie Forderungen ohne erkennbares Einzelrisiko.",
+          "target": 0,
+          "feedback": "Allgemeines Kreditrisiko bleibt."
+        },
+        {
+          "text": "Forderung mit konkretem erheblichem Ausfallrisiko.",
+          "target": 1,
+          "feedback": "EWB prüfen, nicht doppelt in PWB zählen."
+        },
+        {
+          "text": "Belegter endgültiger Ausfall.",
+          "target": 2,
+          "feedback": "Direkte Abschreibung statt pauschaler Schätzung."
+        }
+      ],
+      "conclusion": "Einzelrisiko und allgemeines Risiko werden ohne Doppelzählung berücksichtigt."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "119.000 Euro einwandfreie Bruttoforderungen zu 19 Prozent, PWB-Satz 1 Prozent, kein Altbestand: Rechne und buche.",
+        "hints": ["Nettobasis 100.000 Euro", "1.000 Euro Neubildung buchen"],
+        "model": "119.000 / 1,19 = 100.000 Euro netto. Ein Prozent davon sind 1.000 Euro. Neubildung: 6950 ABFO an 3680 PWB 1.000 Euro. Zweifelhafte Forderungen sind in der vorgegebenen Basis bereits nicht enthalten.",
+        "criteria": [
+          "Nettobasis 100.000 Euro",
+          "1.000 Euro Neubildung buchen",
+          "Keine Doppelberichtigung"
+        ]
+      },
+      "2": {
+        "prompt": "Prüfe diese Behauptung und begründe an einem eigenen Gegenbeispiel: „Zusätzlich nochmals alle bereits einzeln berichtigten zweifelhaften Forderungen.“",
+        "hints": ["Die Behauptung fachlich prüfen", "1.000 Euro Neubildung buchen"],
+        "model": "Einzelrisiko und allgemeines Risiko werden ohne Doppelzählung berücksichtigt. 119.000 / 1,19 = 100.000 Euro netto. Ein Prozent davon sind 1.000 Euro. Neubildung: 6950 ABFO an 3680 PWB 1.000 Euro. Zweifelhafte Forderungen sind in der vorgegebenen Basis bereits nicht enthalten.",
+        "criteria": [
+          "Die Behauptung fachlich prüfen",
+          "1.000 Euro Neubildung buchen",
+          "Ein passendes Gegenbeispiel erklären"
+        ]
+      }
+    },
+    "practice": "pwb",
+    "lab": "claims"
+  },
+  {
+    "id": "fo-factoring",
+    "lb": 5,
+    "title": "Factoring als Risikosteuerung beurteilen",
+    "intro": "Liquidität und Ausfallrisiko sind zwei verschiedene Vorteile.",
+    "paragraphs": [
+      "Beim Factoring werden Forderungen an einen Factor verkauft. Der Betrieb erhält Mittel früher, zahlt dafür aber Gebühren und gegebenenfalls Finanzierungsentgelte. Eine sofortige Auszahlung kann einen Abschlag oder einen Sicherheitseinbehalt enthalten.",
+      "Beim echten Factoring übernimmt der Factor das vertraglich vereinbarte Delkredererisiko; beim unechten Factoring besteht Rückgriff bei Ausfall. Streit über die zugrunde liegende Lieferung und sonstige Risiken sind nicht automatisch abgedeckt. Die Entscheidung verbindet Liquidität, Kosten, Risiko und Kundenbeziehung."
+    ],
+    "takeaway": "Beim echten übernimmt der Factor vereinbartes Ausfallrisiko; beim unechten bleibt ein Rückgriff möglich.",
+    "sourceIds": ["lp", "isb"],
+    "quiz": {
+      "question": "Welche Aussage beschreibt echtes Factoring im Rahmen des Vertrags?",
+      "answer": "Das vereinbarte Forderungsausfallrisiko kann auf den Factor übergehen.",
+      "wrong": [
+        "Alle denkbaren Lieferstreitigkeiten verschwinden automatisch.",
+        "Der Betrieb erhält immer den vollen Nennbetrag ohne Kosten."
+      ],
+      "explanation": "Der genaue Vertrag bestimmt Risikoübernahme und mögliche Rückgriffe."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Fälle untersuchen",
+      "instruction": "Ordne die drei Fälle zu. Prüfe anschließend deine Entscheidungen.",
+      "categories": ["Liquiditätswirkung", "Kosten", "Vertraglich zu prüfen"],
+      "entries": [
+        {
+          "text": "Geld fließt vor dem ursprünglichen Zahlungsziel zu.",
+          "target": 0,
+          "feedback": "Liquidität wird vorgezogen."
+        },
+        {
+          "text": "Der Factor verlangt eine Gebühr.",
+          "target": 1,
+          "feedback": "Nutzen hat einen Preis."
+        },
+        {
+          "text": "Welche Ausfälle und Einwendungen tatsächlich übernommen werden.",
+          "target": 2,
+          "feedback": "Echtes Factoring deckt nicht automatisch jedes Risiko."
+        }
+      ],
+      "conclusion": "Der genaue Vertrag bestimmt Risikoübernahme und mögliche Rückgriffe."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Ein Betrieb verwechselt früheren Zahlungseingang mit garantiertem vollständigem Risikowegfall. Berichtige die Aussage.",
+        "hints": ["Liquidität erklären", "Vertragliche Risikoübernahme unterscheiden"],
+        "model": "Der frühere Zufluss verbessert zunächst die Liquidität. Ob Ausfallrisiko übergeht, hängt von echtem oder unechtem Factoring und dem Vertrag ab. Gebühren, Einbehalte und Streit über die Lieferung müssen gesondert beurteilt werden.",
+        "criteria": [
+          "Liquidität erklären",
+          "Vertragliche Risikoübernahme unterscheiden",
+          "Kosten oder verbleibende Risiken nennen"
+        ]
+      },
+      "2": {
+        "prompt": "Prüfe diese Behauptung und begründe an einem eigenen Gegenbeispiel: „Alle denkbaren Lieferstreitigkeiten verschwinden automatisch.“",
+        "hints": ["Die Behauptung fachlich prüfen", "Vertragliche Risikoübernahme unterscheiden"],
+        "model": "Der genaue Vertrag bestimmt Risikoübernahme und mögliche Rückgriffe. Der frühere Zufluss verbessert zunächst die Liquidität. Ob Ausfallrisiko übergeht, hängt von echtem oder unechtem Factoring und dem Vertrag ab. Gebühren, Einbehalte und Streit über die Lieferung müssen gesondert beurteilt werden.",
+        "criteria": [
+          "Die Behauptung fachlich prüfen",
+          "Vertragliche Risikoübernahme unterscheiden",
+          "Ein passendes Gegenbeispiel erklären"
+        ]
+      }
+    }
+  },
+  {
+    "id": "gr-vorsteuer",
+    "lb": 0,
+    "title": "Vorsteuer und Umsatzsteuer auffrischen",
+    "intro": "Einkaufssteuer und Verkaufssteuer erfüllen verschiedene Rollen.",
+    "paragraphs": [
+      "Bei einem zum Vorsteuerabzug berechtigten Unternehmen wird berechtigt abziehbare Einkaufsumsatzsteuer auf 2600 VORST erfasst. Das ist ein aktives Bestandskonto und eine Forderung gegenüber dem Finanzamt. Auf Verkäufe entfallende Umsatzsteuer ist dagegen eine Verbindlichkeit auf 4800 UST.",
+      "Die Aufgaben setzen ordnungsgemäße Rechnungen, betriebliche Verwendung und vollständigen Vorsteuerabzug voraus. Das gilt nicht für jede Person und jeden Umsatz. Die Auffrischung ist eine Grundlage aus früheren Jahrgängen und kein zusätzlicher Lernbereich des Klasse-9-Lehrplans."
+    ],
+    "takeaway": "Ein passives Bestandskonto und eine Verbindlichkeit gegenüber dem Finanzamt.",
+    "sourceIds": ["vorsteuer", "isb"],
+    "quiz": {
+      "question": "Welche steuerrechtliche Natur hat das Konto '2600 Vorsteuer' (VORST), auf dem die beim Einkauf bezahlte Umsatzsteuer erfasst wird?",
+      "answer": "Ein aktives Bestandskonto und eine Forderung gegenüber dem Finanzamt.",
+      "wrong": [
+        "Ein passives Bestandskonto und eine Schuld gegenüber dem Finanzamt.",
+        "Ein betriebliches Aufwandskonto für jeden Warenverbrauch."
+      ],
+      "explanation": "Berechtigt abziehbare Vorsteuer ist ein Anspruch, keine endgültige Belastung des Unternehmens."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Fälle untersuchen",
+      "instruction": "Ordne die drei Fälle zu. Prüfe anschließend deine Entscheidungen.",
+      "categories": ["2600 VORST", "4800 UST", "Voraussetzung prüfen"],
+      "entries": [
+        {
+          "text": "Berechtigt abziehbare Steuer aus einer betrieblichen Einkaufsrechnung.",
+          "target": 0,
+          "feedback": "Forderung gegenüber dem Finanzamt."
+        },
+        {
+          "text": "Steuer aus einem steuerpflichtigen Verkauf.",
+          "target": 1,
+          "feedback": "Verbindlichkeit gegenüber dem Finanzamt."
+        },
+        {
+          "text": "Eine private Rechnung ohne betriebliche Verwendung.",
+          "target": 2,
+          "feedback": "Kein pauschaler betrieblicher Vorsteuerabzug."
+        }
+      ],
+      "conclusion": "Berechtigt abziehbare Vorsteuer ist ein Anspruch, keine endgültige Belastung des Unternehmens."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre, warum im vorsteuerabzugsberechtigten Betrieb netto 1.000 Euro plus 190 Euro Steuer beim Maschinenkauf nicht 1.190 Euro Abschreibungsbasis sind.",
+        "hints": ["Vorsteuer als Anspruch", "1.000 Euro Anlagewert"],
+        "model": "1.000 Euro werden als Anlagewert aktiviert, 190 Euro sind berechtigt abziehbare Vorsteuer auf 2600 VORST. Die Rechnung setzt die Voraussetzungen des Vorsteuerabzugs voraus. Die Forderung an das Finanzamt wird getrennt vom Anlagenwert erfasst.",
+        "criteria": [
+          "Vorsteuer als Anspruch",
+          "1.000 Euro Anlagewert",
+          "Voraussetzungen des Abzugs benennen"
+        ]
+      },
+      "2": {
+        "prompt": "Prüfe diese Behauptung und begründe an einem eigenen Gegenbeispiel: „Ein passives Bestandskonto und eine Schuld gegenüber dem Finanzamt.“",
+        "hints": ["Die Behauptung fachlich prüfen", "1.000 Euro Anlagewert"],
+        "model": "Berechtigt abziehbare Vorsteuer ist ein Anspruch, keine endgültige Belastung des Unternehmens. 1.000 Euro werden als Anlagewert aktiviert, 190 Euro sind berechtigt abziehbare Vorsteuer auf 2600 VORST. Die Rechnung setzt die Voraussetzungen des Vorsteuerabzugs voraus. Die Forderung an das Finanzamt wird getrennt vom Anlagenwert erfasst.",
+        "criteria": [
+          "Die Behauptung fachlich prüfen",
+          "1.000 Euro Anlagewert",
+          "Ein passendes Gegenbeispiel erklären"
+        ]
+      }
+    },
+    "practice": "vat",
+    "optional": true
+  },
+  {
+    "id": "gr-zahllast",
+    "lb": 0,
+    "title": "Zahllast und Buchungen auffrischen",
+    "intro": "Netto, Steuer und Brutto zuverlässig verbinden.",
+    "paragraphs": [
+      "Bei 19 Prozent auf den Nettobetrag ist Brutto gleich Netto mal 1,19. Aus einem Bruttobetrag wird Netto durch Division durch 1,19 bestimmt; 19 Prozent des Bruttobetrags wären falsch. Einkaufs- und Verkaufsbuchungen trennen Nettowert und Steuer.",
+      "Die einfache Zahllast ist Umsatzsteuer minus abziehbare Vorsteuer. Bei Vorsteuerüberhang besteht ein Erstattungsanspruch. Für die Übung werden 4800 UST und 2600 VORST verrechnet; eine verbleibende Zahllast wird durch 4800 UST an 2800 BK bezahlt. Weitere steuerliche Sonderfälle sind ausgeschlossen."
+    ],
+    "takeaway": "Umsatzsteuer minus berechtigt abziehbare Vorsteuer.",
+    "sourceIds": ["vorsteuer", "isb"],
+    "quiz": {
+      "question": "Wie wird aus 1.190 Euro brutto bei 19 Prozent Umsatzsteuer der Nettobetrag bestimmt?",
+      "answer": "1.190 Euro durch 1,19 teilen.",
+      "wrong": ["19 Prozent des Bruttobetrags abziehen.", "1.190 Euro mit 1,19 multiplizieren."],
+      "explanation": "Der Steuersatz bezieht sich auf Netto, nicht auf Brutto."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Fälle untersuchen",
+      "instruction": "Ordne die drei Fälle zu. Prüfe anschließend deine Entscheidungen.",
+      "categories": ["Netto", "Umsatzsteueranteil", "Zahllast"],
+      "entries": [
+        {
+          "text": "1.000 Euro aus 1.190 Euro brutto zu 19 Prozent.",
+          "target": 0,
+          "feedback": "Brutto geteilt durch 1,19."
+        },
+        {
+          "text": "190 Euro aus derselben Rechnung.",
+          "target": 1,
+          "feedback": "Brutto minus Netto."
+        },
+        {
+          "text": "4.750 Euro USt minus 1.900 Euro Vorsteuer.",
+          "target": 2,
+          "feedback": "2.850 Euro verbleibende Schuld."
+        }
+      ],
+      "conclusion": "Der Steuersatz bezieht sich auf Netto, nicht auf Brutto."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Bilde Kauf von Rohstoffen netto 10.000 Euro und Verkauf eigener Erzeugnisse netto 25.000 Euro jeweils auf Ziel zu 19 Prozent ab. Erkläre die Zahllast.",
+        "hints": ["Beide Bruttobeträge richtig", "Vorsteuer und USt getrennt"],
+        "model": "Kauf: 6000 AWR 10.000 und 2600 VORST 1.900 an 4400 VE 11.900. Verkauf: 2400 FO 29.750 an 5000 UEFE 25.000 und 4800 UST 4.750. Zahllast 4.750 − 1.900 = 2.850 Euro. Die Übung setzt vollständigen Vorsteuerabzug voraus.",
+        "criteria": [
+          "Beide Bruttobeträge richtig",
+          "Vorsteuer und USt getrennt",
+          "2.850 Euro Zahllast erklären"
+        ]
+      },
+      "2": {
+        "prompt": "Prüfe diese Behauptung und begründe an einem eigenen Gegenbeispiel: „19 Prozent des Bruttobetrags abziehen.“",
+        "hints": ["Die Behauptung fachlich prüfen", "Vorsteuer und USt getrennt"],
+        "model": "Der Steuersatz bezieht sich auf Netto, nicht auf Brutto. Kauf: 6000 AWR 10.000 und 2600 VORST 1.900 an 4400 VE 11.900. Verkauf: 2400 FO 29.750 an 5000 UEFE 25.000 und 4800 UST 4.750. Zahllast 4.750 − 1.900 = 2.850 Euro. Die Übung setzt vollständigen Vorsteuerabzug voraus.",
+        "criteria": [
+          "Die Behauptung fachlich prüfen",
+          "Vorsteuer und USt getrennt",
+          "Ein passendes Gegenbeispiel erklären"
+        ]
+      }
+    },
+    "practice": "vatbalance",
+    "optional": true
+  }
+]
