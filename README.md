@@ -13,8 +13,8 @@ Hands-on training apps that build understanding before [ZAM](https://github.com/
 | Geographie 9 Realschule (LehrplanPLUS Bayern, gemeinsamer Lernpfad) | [`geographie-realschule-9/`](geographie-realschule-9/) | https://academy.zam-os.org/geographie-realschule-9/ | `zam-academy:geographie-realschule-9` |
 | Biologie 10 Realschule (LehrplanPLUS Bayern, gemeinsamer Lernpfad) | [`biologie-realschule-10/`](biologie-realschule-10/) | https://academy.zam-os.org/biologie-realschule-10/ | `zam-academy:biologie-realschule-10` |
 | Physik 10 Realschule (LehrplanPLUS Bayern, Zweig I und II/III) | [`physik-realschule-10/`](physik-realschule-10/) | https://academy.zam-os.org/physik-realschule-10/ | `zam-academy:physik-realschule-10` |
-| Algorithmen und Programmieren (DE/EN, LehrplanPLUS IT 2.6.1, jahrgangsübergreifend) | [`algorithmen/`](algorithmen/) | Veröffentlichung vorbereitet; Mapping noch nicht freigegeben | `zam-academy:algorithmen` |
-| Datennetze und Internet (DE/EN, LehrplanPLUS IT 2.5.1, HTTPS als Ergänzung) | [`datennetze/`](datennetze/) | Veröffentlichung vorbereitet; Mapping noch nicht freigegeben | `zam-academy:datennetze` |
+| Algorithmen und Programmieren (DE/EN, LehrplanPLUS IT 2.6.1, jahrgangsübergreifend) | [`algorithmen/`](algorithmen/) | https://academy.zam-os.org/algorithmen/ | `zam-academy:algorithmen` |
+| Datennetze und Internet (DE/EN, LehrplanPLUS IT 2.5.1, HTTPS als Ergänzung) | [`datennetze/`](datennetze/) | https://academy.zam-os.org/datennetze/ | `zam-academy:datennetze` |
 
 ## How an app and its ZAM cell fit together
 
@@ -52,7 +52,7 @@ CI (`.github/workflows/ci.yml`) tests and builds every app on each pull request 
 
 The [grade-9 coverage inventory](docs/realschule-9-coverage.md) distinguishes migrated packages, partial legacy material and still-open curriculum work.
 
-The [IT migration inventory](docs/it-bestandsabgleich.md) documents the proposed split of the old algorithms/network cell. Both apps are prepared together; publication and synchronization remain gated by approval of the eight explicit card mappings. Validate the split in disposable libraries with `ZAM_CORE=<file URL of zam-core's dist/index.js> node scripts/validate-it-migration.mjs`.
+The [IT migration inventory](docs/it-bestandsabgleich.md) documents the split of the old algorithms/network cell. The eight explicit card mappings were approved on 2026-10-21; both apps are published and synchronized into ZAM together. Validate the split in disposable libraries with `ZAM_CORE=<file URL of zam-core's dist/index.js> node scripts/validate-it-migration.mjs`.
 
 ## Privacy
 

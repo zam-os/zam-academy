@@ -1,8 +1,9 @@
 # Algorithmen und Datennetze: Lehrplanabgleich und Lernstandsübernahme
 
-Stand: 21. Oktober 2026. Beide Academy-Pakete werden gemeinsam vorbereitet. Die
-Umsetzung ist beauftragt; eine Freigabe der konkreten acht Zuordnungen liegt noch
-nicht vor. `approved` bleibt deshalb in beiden Mappingdateien `null`.
+Stand: 21. Oktober 2026. Beide Academy-Pakete werden gemeinsam veröffentlicht.
+Thomas hat die konkreten acht Zuordnungen am 21.10.2026 nach dem Review von
+zam-os/zam-academy#18 freigegeben, einschließlich J04 als B und J07 als A.
+Beide Mappingdateien tragen dieses Freigabedatum.
 
 ## Fachlicher Umfang
 
@@ -51,7 +52,7 @@ Die vollständigen Originalfragen und Begründungen stehen in
 [`algorithmen/replaces-de-by.json`](../algorithmen/replaces-de-by.json) und
 [`datennetze/replaces-de-by.json`](../datennetze/replaces-de-by.json).
 
-| Alte ID (Endung) | Bisheriger Abruf | Vorschlag | Behandlung |
+| Alte ID (Endung) | Bisheriger Abruf | Zuordnung | Behandlung |
 | --- | --- | --- | --- |
 | J01 | Eindeutigkeit | A → Algorithmen | Sicher gleicher Einzelabruf |
 | J02 | Algorithmus, vier Eigenschaften, Struktogramm | C | Endliche Beschreibung und Terminierung fachlich trennen; neue Fragen beginnen ohne übernommenen Lernstand |
@@ -62,7 +63,7 @@ Die vollständigen Originalfragen und Begründungen stehen in
 | J07 | DNS-Namensauflösung | A → Datennetze | Sicher gleicher Einzelabruf |
 | J08 | Client/Server, IP, DNS, TCP/IP und HTTPS | C | TCP verspricht keine absolut fehlerfreie Übertragung; Gesamtabruf wird korrigiert und aufgeteilt |
 
-**Vorschlag: 4 A, 1 B, 3 C.** Eine A- oder B-Zuordnung hat genau einen
+**Freigegeben: 4 A, 1 B, 3 C.** Eine A- oder B-Zuordnung hat genau einen
 Nachfolger, dessen `replaces` die alte Karten-ID nennt. Kategorie C verwendet
 `retired_items`: Die alte Karte und ihre Reviews bleiben auf der bisherigen ID
 erhalten und verlassen die aktive Wiederholung. Neue Teilfragen erhalten keine
@@ -88,8 +89,8 @@ Es prüft insbesondere die Aufteilung in zwei Zellen statt nur einen Nachfolger:
 Aufruf: `ZAM_CORE=<Datei-URL des veröffentlichten dist/index.js> node
 scripts/validate-it-migration.mjs`. Die Prüfung benötigt keine Freigabe und
 öffnet keine persönliche Bibliothek. Katalogbau und Pages-Prüfung verweigern
-die Veröffentlichung der vorgeschlagenen Lernstandsänderungen, solange eine
-der beiden Freigaben fehlt.
+die Veröffentlichung von Lernstandsänderungen, solange eine der beiden
+Freigaben fehlt.
 
 Am 21.10.2026 mit den tatsächlichen beiden Zellen und `zam-core@0.54.0`
 bestanden: acht Varianten (zwei Reihenfolgen, jeweils vier Bestandsumfänge)
@@ -98,7 +99,7 @@ acht Karten und 16 Review-Ereignisse erhalten. Zusätzlich lassen sich alle elf
 Academy-Zellen einschließlich der 78 neuen IT-Karten mit diesem veröffentlichten
 Kern installieren.
 
-Die App-Prüfungen bestehen mit 86 Tests für Algorithmen und 115 für Datennetze.
+Die App-Prüfungen bestehen mit 90 Tests für Algorithmen und 128 für Datennetze.
 Beide Produktionsbuilds einschließlich Typprüfung und beide Offline-Zips sind
 erfolgreich; die HTML-Datei im jeweiligen Zip stimmt bytegenau mit dem Build
 überein und benötigt keine externen Skripte oder Stylesheets. Im Browser geprüft
@@ -109,14 +110,13 @@ Datenratenwerkzeuge. Zusätzlich sind alle 39 Lektionen in beiden Sprachen,
 lokalisierte Laufzeitfehler und Protokollspuren, englische Direktlinks sowie
 Sprachwechsel mit erhaltenem Fortschritt, getrennten Codeentwürfen und noch
 nicht abgesendeten Laboreingaben geprüft. Die zwölf bestehenden
-Katalog-Schutztests bestehen; der reale Katalogbau verweigert den aktuellen,
-nicht freigegebenen Mappingstand
-erwartungsgemäß.
+Katalog-Schutztests bestehen; mit beiden Freigaben baut der reale Katalog alle
+elf Zellen.
 
 ## Anschließende ZAM-Integration
 
-1. Die acht konkreten Zuordnungen gemeinsam prüfen und freigeben. Erst dann
-   in beiden Mappingdateien Freigabedatum und Quelle dokumentieren.
+1. Erledigt: Die acht konkreten Zuordnungen sind am 21.10.2026 freigegeben;
+   beide Mappingdateien dokumentieren Freigabedatum und Quelle.
 2. Beide Pakete gemeinsam in Academy veröffentlichen. Beide Zellen müssen im
    gleichen Katalogstand verfügbar sein, bevor die alte Zelle abgelöst wird.
 3. In ZAM beide Zellen gezielt mit `npm run academy:sync` übernehmen. Die
@@ -133,5 +133,5 @@ erwartungsgemäß.
    wiederholte Aufnahme, gefüllte Wiederholungswarteschlange und Kollisionsfälle
    prüfen; erst danach mit den vorgeschriebenen Gesamtprüfungen ausliefern.
 
-Dieser Academy-Änderungsstand verändert noch keine persönliche Bibliothek und
-entfernt die alte aktive Zelle in ZAM noch nicht.
+Dieser Academy-Änderungsstand verändert keine persönliche Bibliothek; die alte
+aktive Zelle wird erst in ZAM mit beiden Nachfolgern entfernt.
