@@ -141,6 +141,11 @@ const kreiszahl: Lesson = {
   ],
   requiredCorrect: 3,
   celebrationMessage: "Du weißt, warum u : d immer π ist, und rechnest Umfang, Radius und Durchmesser ineinander um.",
+  teacherVideo: {
+    url: "https://www.youtube.com/watch?v=eASZX0ocAc8",
+    title: "Kreis - Umfang und Flächeninhalt berechnen",
+    author: "Lehrerschmidt",
+  },
 };
 
 // 2.2 Kreisfläche ────────────────────────────────────────────────────────────
@@ -295,6 +300,11 @@ const kreisflaeche: Lesson = {
   ],
   requiredCorrect: 3,
   celebrationMessage: "Du siehst, warum A = πr² ist, und rechnest mit Kreisen, Kreisringen und Durchmessern.",
+  teacherVideo: {
+    url: "https://www.youtube.com/watch?v=LyZaNUNkNQI",
+    title: "Flächeninhalt Kreis berechnen",
+    author: "Daniel Jung",
+  },
 };
 
 // 2.3 Kreissektor ────────────────────────────────────────────────────────────
@@ -436,6 +446,11 @@ const sektor: Lesson = {
   ],
   requiredCorrect: 3,
   celebrationMessage: "Du rechnest mit dem Anteil α : 360° Bogenlänge und Sektorfläche aus, und du kennst den Radiant.",
+  teacherVideo: {
+    url: "https://www.youtube.com/watch?v=lxD29WFIxlM",
+    title: "Kreissektor und Bogenlänge berechnen",
+    author: "Daniel Jung",
+  },
 };
 
 // 2.4 Zylinder ───────────────────────────────────────────────────────────────
@@ -581,6 +596,11 @@ const zylinder: Lesson = {
   ],
   requiredCorrect: 3,
   celebrationMessage: "Du wickelst Zylinder ab und berechnest Mantel, Oberfläche und Volumen, auch in Litern.",
+  teacherVideo: {
+    url: "https://www.youtube.com/watch?v=ZcHfje2Ojo8",
+    title: "Zylinder, Kegel, Kugel Körperberechnungen",
+    author: "Daniel Jung",
+  },
 };
 
 // 2.5 Kegel und Pyramide ─────────────────────────────────────────────────────
@@ -731,6 +751,11 @@ const kegel: Lesson = {
   ],
   requiredCorrect: 3,
   celebrationMessage: "Du weißt, warum ein Spitzkörper ein Drittel der Säule hat, und berechnest Mantellinie und Mantel.",
+  teacherVideo: {
+    url: "https://www.youtube.com/watch?v=7KDWxSPxeJ8",
+    title: "Kegel - Oberfläche und Mantellinie berechnen",
+    author: "Lehrerschmidt",
+  },
 };
 
 // 2.6 Kugel ──────────────────────────────────────────────────────────────────
@@ -845,6 +870,11 @@ const kugel: Lesson = {
   ],
   requiredCorrect: 3,
   celebrationMessage: "Du rechnest Volumen und Oberfläche der Kugel und kennst den Zusammenhang mit dem Zylinder.",
+  teacherVideo: {
+    url: "https://www.youtube.com/watch?v=ZcHfje2Ojo8",
+    title: "Kugel Volumen und Oberflächeninhalt",
+    author: "Daniel Jung",
+  },
 };
 
 export const STAGE_KREIS_RAUM: Stage = {

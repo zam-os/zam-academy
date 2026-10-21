@@ -183,6 +183,12 @@ export interface ExerciseGenerator {
   make: (rng: Rng, level: DifficultyLevel) => ExerciseTask;
 }
 
+export interface TeacherVideo {
+  url: string;
+  title: string;
+  author?: string;
+}
+
 export interface Lesson {
   /** Public contract: ZAM cards cite it as #lesson=<id>. */
   id: string;
@@ -202,6 +208,8 @@ export interface Lesson {
   /** Correct exercises per level that complete the lesson. */
   requiredCorrect: number;
   celebrationMessage: string;
+  /** Teacher explainer video, e.g. by Daniel Jung. */
+  teacherVideo?: TeacherVideo;
 }
 
 export interface Stage {

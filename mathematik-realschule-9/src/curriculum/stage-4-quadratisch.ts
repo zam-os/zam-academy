@@ -127,6 +127,11 @@ const scheitelform: Lesson = {
   ],
   requiredCorrect: 3,
   celebrationMessage: "Du liest den Scheitel aus der Scheitelform ab und verschiebst Normalparabeln im Kopf.",
+  teacherVideo: {
+    url: "https://www.youtube.com/watch?v=i2WDgLldlJc",
+    title: "Scheitelpunktform quadratischer Funktionen erkennen",
+    author: "Daniel Jung",
+  },
 };
 
 // 4.2 Streckfaktor ───────────────────────────────────────────────────────────
@@ -250,6 +255,11 @@ const streckfaktor: Lesson = {
   ],
   requiredCorrect: 3,
   celebrationMessage: "Du erkennst am Faktor a Öffnung und Form der Parabel und berechnest a aus Scheitel und Punkt.",
+  teacherVideo: {
+    url: "https://www.youtube.com/watch?v=KEuNUgIiIyI",
+    title: "Parabel strecken, stauchen, spiegeln",
+    author: "Daniel Jung",
+  },
 };
 
 // 4.3 Quadratische Ergänzung ─────────────────────────────────────────────────
@@ -366,6 +376,11 @@ const ergaenzung: Lesson = {
   ],
   requiredCorrect: 3,
   celebrationMessage: "Du ergänzt x² + bx zum Quadrat und bringst jede Parabel in die Scheitelform.",
+  teacherVideo: {
+    url: "https://www.youtube.com/watch?v=JLADCKXbeNE",
+    title: "Quadratische Ergänzung Schritt für Schritt",
+    author: "Daniel Jung",
+  },
 };
 
 // 4.4 Lösungsformel ──────────────────────────────────────────────────────────
@@ -525,6 +540,11 @@ const loesungsformel: Lesson = {
   ],
   requiredCorrect: 3,
   celebrationMessage: "Du löst quadratische Gleichungen mit der Lösungsformel und weißt vorher, wie viele Lösungen es gibt.",
+  teacherVideo: {
+    url: "https://www.youtube.com/watch?v=ukEXR0DKMQg",
+    title: "Mitternachtsformel (abc-Formel) lösen",
+    author: "Daniel Jung",
+  },
 };
 
 // 4.5 Linearfaktoren ─────────────────────────────────────────────────────────
@@ -658,6 +678,11 @@ const linearfaktoren: Lesson = {
   ],
   requiredCorrect: 3,
   celebrationMessage: "Du liest Nullstellen aus der Linearfaktorform ab und baust aus zwei Nullstellen eine Parabel.",
+  teacherVideo: {
+    url: "https://www.youtube.com/watch?v=wRc6AtV7HmY",
+    title: "Linearfaktorzerlegung Parabel Nullstellen",
+    author: "Daniel Jung",
+  },
 };
 
 // 4.6 Parabel und Gerade ─────────────────────────────────────────────────────
@@ -776,6 +801,11 @@ const parabelGerade: Lesson = {
   ],
   requiredCorrect: 3,
   celebrationMessage: "Du berechnest gemeinsame Punkte von Parabel und Gerade und unterscheidest Sekante, Tangente und Passante.",
+  teacherVideo: {
+    url: "https://www.youtube.com/watch?v=T7wnzYyfc1o",
+    title: "Schnittpunkt Parabel und Gerade berechnen",
+    author: "Lehrerschmidt",
+  },
 };
 
 // 4.7 Extremwerte ────────────────────────────────────────────────────────────
@@ -883,6 +913,11 @@ const extremwerte: Lesson = {
   ],
   requiredCorrect: 3,
   celebrationMessage: "Du findest Höchst- und Tiefstwerte im Scheitel und löst damit Optimierungsaufgaben.",
+  teacherVideo: {
+    url: "https://www.youtube.com/watch?v=G-Y_z65qvnM",
+    title: "Extremwertproblem ohne Ableitung lösen",
+    author: "Daniel Jung",
+  },
 };
 
 export const STAGE_QUADRATISCH: Stage = {

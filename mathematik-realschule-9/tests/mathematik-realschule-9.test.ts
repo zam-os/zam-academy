@@ -105,6 +105,50 @@ describe("Lernpfad", () => {
     }
     expect([...shownAt].sort()).toEqual([0, 1, 2]);
   });
+
+  it("provides a pinned teacher explainer video for every lesson matching author and watch-URL format", () => {
+    const EXPECTED_VIDEOS: Record<string, { author: string; id: string }> = {
+      "rd-1-pythagoras": { author: "Daniel Jung", id: "cIzM2XBduuY" },
+      "rd-2-umkehrung": { author: "Cornelsen Verlag", id: "AoV_uEr3ldU" },
+      "rd-3-hoehe-kathetensatz": { author: "Daniel Jung", id: "ujUCsWMjH9Y" },
+      "rd-4-sinus-kosinus": { author: "Daniel Jung", id: "TljGSjLKvqA" },
+      "rd-5-tangens": { author: "Daniel Jung", id: "TljGSjLKvqA" },
+      "rd-6-besondere-winkel": { author: "Daniel Jung", id: "U0fRSsrWRII" },
+      "kr-1-kreiszahl": { author: "Lehrerschmidt", id: "eASZX0ocAc8" },
+      "kr-2-kreisflaeche": { author: "Daniel Jung", id: "LyZaNUNkNQI" },
+      "kr-3-sektor": { author: "Daniel Jung", id: "lxD29WFIxlM" },
+      "rg-1-zylinder": { author: "Daniel Jung", id: "ZcHfje2Ojo8" },
+      "rg-2-kegel-pyramide": { author: "Lehrerschmidt", id: "7KDWxSPxeJ8" },
+      "rg-3-kugel": { author: "Daniel Jung", id: "ZcHfje2Ojo8" },
+      "lg-1-lineare-gleichung": { author: "Daniel Jung", id: "NtbtAwGJpvs" },
+      "lg-2-gleichsetzen": { author: "Daniel Jung", id: "6BuVmbuxZco" },
+      "lg-3-additionsverfahren": { author: "Daniel Jung", id: "T08IjF7OPf4" },
+      "lg-4-loesungsfaelle": { author: "Merksatz", id: "PAQLNReiI1w" },
+      "lg-5-textaufgaben": { author: "Daniel Jung", id: "qo8YmW2pc-E" },
+      "qf-1-scheitelform": { author: "Daniel Jung", id: "i2WDgLldlJc" },
+      "qf-2-streckfaktor": { author: "Daniel Jung", id: "KEuNUgIiIyI" },
+      "qf-3-quadratische-ergaenzung": { author: "Daniel Jung", id: "JLADCKXbeNE" },
+      "qf-4-loesungsformel": { author: "Daniel Jung", id: "ukEXR0DKMQg" },
+      "qf-5-linearfaktoren": { author: "Daniel Jung", id: "wRc6AtV7HmY" },
+      "qf-6-parabel-gerade": { author: "Lehrerschmidt", id: "T7wnzYyfc1o" },
+      "qf-7-extremwerte": { author: "Daniel Jung", id: "G-Y_z65qvnM" },
+      "dz-1-baumdiagramm": { author: "Daniel Jung", id: "7B0rKLTUPZ0" },
+      "dz-2-gegenereignis": { author: "Daniel Jung", id: "nR7hFCRgp1g" },
+      "dz-3-vierfeldertafel": { author: "Daniel Jung", id: "xslCG8xjGjI" },
+      "dz-4-kenngroessen": { author: "Daniel Jung", id: "OM90fGYTj_w" },
+      "dz-5-boxplot": { author: "Daniel Jung", id: "HbHoRjIHOTE" },
+    };
+
+    expect(ALL_LESSONS.length).toBe(Object.keys(EXPECTED_VIDEOS).length);
+    for (const lesson of ALL_LESSONS) {
+      const expected = EXPECTED_VIDEOS[lesson.id];
+      expect(expected, `Unexpected lesson ${lesson.id}`).toBeDefined();
+      expect(lesson.teacherVideo, `Missing teacherVideo in lesson ${lesson.id}`).toBeDefined();
+      expect(lesson.teacherVideo?.author).toBe(expected.author);
+      expect(lesson.teacherVideo?.title.length).toBeGreaterThan(5);
+      expect(lesson.teacherVideo?.url).toBe(`https://www.youtube.com/watch?v=${expected.id}`);
+    }
+  });
 });
 
 describe("Labore", () => {

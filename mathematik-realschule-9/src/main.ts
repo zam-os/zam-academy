@@ -366,6 +366,20 @@ class MatheApp {
           <p class="lehrplan-tag">${lesson.tracks.map((track) => `<span class="chip chip-track">${TRACK_LABELS[track]}</span>`).join("")} <span class="muted">${esc(lesson.lehrplan)}</span></p>
 
           <div class="why-box"><strong>Warum das wichtig ist:</strong> ${esc(lesson.whyItMatters)}</div>
+          ${
+            lesson.teacherVideo
+              ? `
+          <div class="video-box card">
+            <div class="video-box-header">
+              <span class="video-box-title">🎬 Erklärvideo von ${esc(lesson.teacherVideo.author || "Daniel Jung")}</span>
+            </div>
+            <p class="video-box-desc">Zur Vorbereitung oder wenn du bei einer Aufgabe feststeckst:</p>
+            <a href="${esc(lesson.teacherVideo.url)}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm video-link">
+              ▶ ${esc(lesson.teacherVideo.title)} ansehen ↗
+            </a>
+          </div>`
+              : ""
+          }
           <div class="explanation">${lesson.explanationHtml}</div>
 
           <div class="formula-box">
