@@ -1,4 +1,5 @@
 import "./styles.css";
+import { escapeHtml } from "./html";
 import {
 	LANGUAGE_KEY,
 	type Language,
@@ -74,14 +75,7 @@ let subnetResult = subnetInfo(subnetAddress, 26),
 	rateResult = transferSeconds(10, 100, 0.8);
 let calculatedEfficiency = "80";
 const activityDrafts: Record<string, string> = {};
-const e = (value: unknown): string =>
-	String(value).replace(
-		/[&<>"']/g,
-		(char) =>
-			({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[
-				char
-			]!,
-	);
+const e = escapeHtml;
 function save() {
 	progress.lastLesson = selected;
 	storageAvailable = saveProgress(storage, progress);

@@ -141,4 +141,41 @@ describe("bounded programming sandbox", () => {
 		]);
 		expect(runProgram("/* open").ok).toBe(false);
 	});
+	it("lets ordinary loops over the full array limit finish", () => {
+		expect(
+			output(
+				"let t = 0;\nfor (let i = 0; i < 100; i++) {\n  t = t + i;\n}\nprint(t);",
+			),
+		).toEqual(["4950"]);
+		expect(
+			output(
+				"let a = [];\nlet b = [" +
+					Array.from({ length: 100 }, (_, i) => i).join(",") +
+					"];\nlet s = 0;\nfor (let i = 0; i < b.length; i++) { s = s + b[i]; }\nprint(s);",
+			),
+		).toEqual(["4950"]);
+		expect(
+			output(
+				"function fib(n) { if (n < 2) { return n; } return fib(n - 1) + fib(n - 2); }\nprint(fib(10));",
+			),
+		).toEqual(["55"]);
+	});
+	it("stops recording a large trace instead of failing a correct program", () => {
+		const values = Array.from({ length: 100 }, (_, i) => i).join(",");
+		const result = runProgram(
+			`let a = [${values}];\nlet b = [${values}];\nlet c = [${values}];\nlet s = 0;\nfor (let i = 0; i < 100; i++) { s = s + a[i] + b[i] + c[i]; }\nprint(s);`,
+		);
+		expect(result.ok, result.error?.message).toBe(true);
+		expect(result.output).toEqual(["14850"]);
+		expect(result.trace.length).toBeGreaterThan(0);
+		expect(result.trace.length).toBeLessThan(250);
+	});
+	it("names the end of the program in the learner's language", () => {
+		const en = runProgram("let x = 1", [], undefined, "en");
+		expect(en.error?.message).toBe("“;” is missing here (found: end of program).");
+		expect(en.error?.messages.de).toBe("Hier fehlt „;“ (gefunden: Programmende).");
+		expect(runProgram("let x =", [], undefined, "en").error?.message).toContain(
+			"end of program",
+		);
+	});
 });

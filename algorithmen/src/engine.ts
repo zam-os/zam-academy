@@ -13,6 +13,8 @@ export const TRACE_ACTIONS = {
 	statement: { de: "Anweisung beendet", en: "Statement completed" },
 };
 export type TraceAction = keyof typeof TRACE_ACTIONS;
+/** Every evaluated node costs a step; this lets a loop over a full 100-element array finish. */
+export const STEP_LIMIT = 10000;
 
 /** Small, deliberately bounded JavaScript subset. No dynamic JavaScript execution. */
 export type Value = number | string | boolean | null | Value[];
@@ -203,9 +205,14 @@ function lex(source: string): Token[] {
 			line,
 		);
 	}
-	tokens.push({ text: "<Ende>", line, kind: "eof" });
+	tokens.push({ text: "", line, kind: "eof" });
 	return tokens;
 }
+/** How a token is named in a diagnostic; the end of input is localized. */
+const shown = (token: Token): LocalizedText =>
+	token.kind === "eof"
+		? { de: "Programmende", en: "end of program" }
+		: { de: token.text, en: token.text };
 const precedence: Record<string, number> = {
 	"||": 1,
 	"&&": 2,
@@ -238,14 +245,16 @@ class Parser {
 		return false;
 	}
 	private need(text: string) {
-		if (!this.match(text))
+		if (!this.match(text)) {
+			const found = shown(this.current());
 			throw new ProgramError(
 				{
-					de: `Hier fehlt „${text}“ (gefunden: ${this.current().text}).`,
-					en: `“${text}” is missing here (found: ${this.current().text}).`,
+					de: `Hier fehlt „${text}“ (gefunden: ${found.de}).`,
+					en: `“${text}” is missing here (found: ${found.en}).`,
 				},
 				this.current().line,
 			);
+		}
 	}
 	private name() {
 		const t = this.current();
@@ -501,14 +510,16 @@ class Parser {
 			result = { kind: "array", values, line: token.line };
 		} else if (token.kind === "id")
 			result = { kind: "name", name: token.text, line: token.line };
-		else
+		else {
+			const found = shown(token);
 			throw new ProgramError(
 				{
-					de: `Hier fehlt ein Wert oder Ausdruck (gefunden: ${token.text}).`,
-					en: `A value or expression is missing here (found: ${token.text}).`,
+					de: `Hier fehlt ein Wert oder Ausdruck (gefunden: ${found.de}).`,
+					en: `A value or expression is missing here (found: ${found.en}).`,
 				},
 				token.line,
 			);
+		}
 		for (;;) {
 			if (this.match("(")) {
 				if (result.kind !== "name")
@@ -633,7 +644,7 @@ export function formatValue(value: Value, line = 1): string {
 export function runProgram(
 	source: string,
 	inputs: Value[] = [],
-	limit = 1200,
+	limit = STEP_LIMIT,
 	locale: Locale = "de",
 ): RunResult {
 	const trace: Frame[] = [],
@@ -645,7 +656,7 @@ export function runProgram(
 	const functions = new Map<string, Fn>();
 	const global: Scope = { values: new Map() };
 	const tick = (line: number) => {
-		if (++steps > Math.min(3000, Math.max(10, limit)))
+		if (++steps > Math.min(STEP_LIMIT, Math.max(10, limit)))
 			throw new ProgramError(
 				{
 					de: "Schrittgrenze erreicht. Prüfe besonders die Schleifenbedingung und den Zähler.",
@@ -666,7 +677,7 @@ export function runProgram(
 		);
 	};
 	const frame = (scope: Scope, line: number, actionKey: TraceAction) => {
-		if (trace.length >= 250) return;
+		if (trace.length >= 250 || tracedNodes === Number.POSITIVE_INFINITY) return;
 		const budget = { nodes: 0 };
 		const variables: Record<string, Value> = Object.create(null);
 		const capture = (s: Scope) => {
@@ -675,15 +686,12 @@ export function runProgram(
 				variables[k] = clone(v, budget, undefined, 0, line);
 		};
 		capture(scope);
+		// Like the 250-state cap, a full trace stops recording; the program still runs.
+		if (tracedNodes + budget.nodes > 30000) {
+			tracedNodes = Number.POSITIVE_INFINITY;
+			return;
+		}
 		tracedNodes += budget.nodes;
-		if (tracedNodes > 30000)
-			throw new ProgramError(
-				{
-					de: "Die Ablaufspur wird zu groß. Verwende kleinere Felder oder weniger Zwischenschritte.",
-					en: "The trace is too large. Use smaller arrays or fewer intermediate steps.",
-				},
-				line,
-			);
 		trace.push({
 			line,
 			action: TRACE_ACTIONS[actionKey][locale],

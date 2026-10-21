@@ -21,9 +21,12 @@ const cell = cellData as Cell;
 import coverage from "../coverage.json";
 import {
 	checkCode,
+	EN_LESSONS,
 	LESSONS,
 	lessonFromHash,
+	lessonInLocale,
 	lessonLink,
+	lessonsForLocale,
 	STAGES,
 } from "../src/curriculum";
 import { freshProgress, isComplete, parseProgress } from "../src/progress";
@@ -118,6 +121,21 @@ describe("curriculum and public lesson contract", () => {
 		expect(lessonFromHash("#lesson=algo-while")?.id).toBe("algo-while");
 		expect(lessonFromHash("#lesson=%3Cscript%3E")).toBeUndefined();
 		expect(lessonFromHash("#lesson=missing")).toBeUndefined();
+	});
+	it("moves the current lesson into the new locale, even when a link names no lesson", () => {
+		for (const [lesson, locale] of [
+			[LESSONS[3], "en"],
+			[EN_LESSONS[3], "de"],
+			[LESSONS[3], "de"],
+		] as const) {
+			const moved = lessonInLocale(lesson, locale);
+			expect(moved.id).toBe(lesson.id);
+			expect(lessonsForLocale(locale).indexOf(moved)).toBe(3);
+		}
+		// A hash such as #lesson=missing&lang=en keeps the view renderable.
+		expect(lessonFromHash("#lesson=missing&lang=en")).toBeUndefined();
+		const unknown = { ...LESSONS[0], id: "missing" };
+		expect(lessonInLocale(unknown, "en")).toBe(EN_LESSONS[0]);
 	});
 	it("recovers usable progress from malformed and untrusted saves", () => {
 		expect(parseProgress("broken")).toEqual(freshProgress());

@@ -1,4 +1,4 @@
-import { type RunResult, runProgram, type Value } from "./engine";
+import { type RunResult, runProgram, STEP_LIMIT, type Value } from "./engine";
 import { type Locale, localeFromHash } from "./i18n";
 import englishLessons from "./lessons.en.json";
 import lessons from "./lessons.json";
@@ -45,6 +45,9 @@ export const SOURCES = [
 ];
 export const findLesson = (id: string, locale: Locale = "de") =>
 	lessonsForLocale(locale).find((lesson) => lesson.id === id);
+/** The same lesson in another language; falls back to the first lesson so the view never holds a foreign object. */
+export const lessonInLocale = (lesson: Lesson, locale: Locale): Lesson =>
+	findLesson(lesson.id, locale) ?? lessonsForLocale(locale)[0];
 export const lessonLink = (id: string) =>
 	`https://academy.zam-os.org/algorithmen/#lesson=${encodeURIComponent(id)}`;
 export function lessonFromHash(
@@ -60,7 +63,7 @@ export function checkCode(
 	locale: Locale = "de",
 ): { passed: boolean; results: RunResult[] } {
 	const results = lesson.tests.map((test) =>
-		runProgram(code, test.inputs, 1200, locale),
+		runProgram(code, test.inputs, STEP_LIMIT, locale),
 	);
 	return {
 		passed: results.every(

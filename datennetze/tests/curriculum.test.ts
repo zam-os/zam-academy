@@ -126,6 +126,9 @@ describe("curriculum and card contract", () => {
 		);
 		expect(escapeHtml("Tom & Lea's <3")).toBe("Tom &amp; Lea&#39;s &lt;3");
 		expect(escapeHtml("&lt;script&gt;")).toBe("&amp;lt;script&amp;gt;");
+		// The app must render through this tested helper, not a private copy.
+		expect(mainSource).toMatch(/import \{ escapeHtml \} from "\.\/html";/);
+		expect(mainSource).not.toMatch(/"&": "&amp;"/);
 	});
 });
 describe("progress storage", () => {

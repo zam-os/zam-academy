@@ -3,6 +3,7 @@ import {
 	findLesson,
 	LESSONS,
 	lessonFromHash,
+	lessonInLocale,
 	lessonsForLocale,
 	SOURCES,
 } from "./curriculum";
@@ -11,6 +12,7 @@ import {
 	formatValue,
 	type RunResult,
 	runProgram,
+	STEP_LIMIT,
 	TRACE_ACTIONS,
 } from "./engine";
 import {
@@ -114,7 +116,7 @@ function changeLanguage(target: Locale) {
 		editor?.value,
 	);
 	locale = target;
-	current = findLesson(current.id, locale)!;
+	current = lessonInLocale(current, locale);
 	history.replaceState(
 		null,
 		"",
@@ -271,7 +273,7 @@ function bindLesson() {
 		const result = runProgram(
 			editor.value,
 			current.tests[0].inputs,
-			1200,
+			STEP_LIMIT,
 			locale,
 		);
 		frames = result.trace;
@@ -379,6 +381,8 @@ window.addEventListener("hashchange", () => {
 	captureDraft();
 	locale = localeFromHash(location.hash, locale);
 	progress.locale = locale;
+	// An unknown lesson keeps the current one, but it must belong to the new locale.
+	current = lessonInLocale(current, locale);
 	const lesson = lessonFromHash(location.hash, locale);
 	if (lesson) {
 		current = lesson;

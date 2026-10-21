@@ -240,7 +240,7 @@ export function simulate(
 	);
 	const route = (
 		destination: string,
-		endpoint: "dns" | "server",
+		endpoint: "dns" | "server" | "any",
 	): Simulation | null => {
 		if (!isHost(destination, 24))
 			return fail(
@@ -251,7 +251,11 @@ export function simulate(
 					"The resolved destination is not a reachable host address in this teaching network.",
 				),
 			);
-		if (sameSubnet(config.clientIp, destination, config.clientPrefix))
+		if (sameSubnet(config.clientIp, destination, config.clientPrefix)) {
+			// A destination in the real client LAN is local; only one outside it
+			// reveals a prefix that is too broad.
+			if (sameSubnet(destination, ROUTER_LAN, 24))
+				return deliverLocally(destination, endpoint);
 			return fail(
 				"prefix",
 				tr("Ziel irrtümlich lokal", "Destination incorrectly treated as local"),
@@ -260,6 +264,7 @@ export function simulate(
 					"With this prefix, the client treats the remote destination as local. It looks in its LAN instead of sending the packet to the gateway. Use /24 for this LAN.",
 				),
 			);
+		}
 		if (
 			!isHost(config.gateway, config.clientPrefix) ||
 			!sameSubnet(config.clientIp, config.gateway, config.clientPrefix) ||
@@ -316,13 +321,78 @@ export function simulate(
 			"Internet",
 			endpoint === "dns"
 				? tr("IP-Paket zum DNS-Server", "IP packet to the DNS server")
-				: tr("IP-Paket zum Webserver", "IP packet to the web server"),
+				: endpoint === "server"
+					? tr("IP-Paket zum Webserver", "IP packet to the web server")
+					: tr("IP-Paket ins Zielnetz", "IP packet to the destination network"),
 			tr(
 				`${destination} liegt außerhalb des Clientnetzes. Der nächste lokale Empfänger ist ${ROUTER_LAN}; der Router leitet ins Zielnetz weiter.`,
 				`${destination} is outside the client network. The next local recipient is ${ROUTER_LAN}; the router forwards the packet into the destination network.`,
 			),
 		);
 		return null;
+	};
+	// In the client LAN only the client itself and the router's LAN interface answer.
+	const deliverLocally = (
+		destination: string,
+		endpoint: "dns" | "server" | "any",
+	): Simulation | null => {
+		if (endpoint === "any" && destination === config.clientIp.trim()) {
+			ok(
+				tr("Netzzugang", "Network access"),
+				tr("Eigene Adresse", "Own address"),
+				tr(
+					`${destination} ist die Adresse des Clients selbst. Die Antwort verlässt das Gerät nicht.`,
+					`${destination} is the client’s own address. The reply never leaves the device.`,
+				),
+			);
+			return null;
+		}
+		if (endpoint === "any" && destination === ROUTER_LAN) {
+			if (!config.uplink || !config.routerOn)
+				return fail(
+					"router",
+					tr("Router nicht erreichbar", "Router unreachable"),
+					tr(
+						`Verbinde den Switch mit dem eingeschalteten Router; erst dann antwortet die LAN-Schnittstelle ${ROUTER_LAN}.`,
+						`Connect the switch to the powered-on router; only then does the LAN interface ${ROUTER_LAN} reply.`,
+					),
+				);
+			ok(
+				tr("Netzzugang", "Network access"),
+				tr("Lokal zugestellt", "Delivered locally"),
+				tr(
+					`${destination} liegt im eigenen Netz. Der Client stellt das Paket direkt über den Switch zu und braucht dafür kein Gateway.`,
+					`${destination} is in the client’s own network. The client delivers the packet directly through the switch and needs no gateway for it.`,
+				),
+			);
+			return null;
+		}
+		if (endpoint === "dns")
+			return fail(
+				"dns-route",
+				tr("DNS-Server nicht erreichbar", "DNS server unreachable"),
+				tr(
+					`Unter ${destination} im eigenen LAN läuft im Labor kein Namensdienst. Der Labor-DNS hat die Adresse ${DNS_IP}.`,
+					`No name service runs at ${destination} in the client LAN. The lab DNS server is ${DNS_IP}.`,
+				),
+			);
+		if (endpoint === "server")
+			return fail(
+				"wrong-host",
+				tr("Falscher Empfänger", "Wrong recipient"),
+				tr(
+					`An ${destination} im eigenen LAN betreibt das Modell keinen Webserver. Der Webserver steht im Servernetz 203.0.113.0/24.`,
+					`The model has no web server at ${destination} in the client LAN. The web server is in the server network 203.0.113.0/24.`,
+				),
+			);
+		return fail(
+			"no-host",
+			tr("Kein Gerät unter dieser Adresse", "No device at this address"),
+			tr(
+				`Unter ${destination} antwortet im Client-LAN kein Gerät. Dort gibt es im Labor nur den Client und den Router ${ROUTER_LAN}.`,
+				`No device answers at ${destination} in the client LAN. The lab LAN contains only the client and the router ${ROUTER_LAN}.`,
+			),
+		);
 	};
 	const numeric = ipv4ToNumber(name);
 	if (numeric === null && /^\d+(\.\d+){3}$/.test(name))
@@ -401,6 +471,45 @@ export function simulate(
 				),
 				trace,
 			};
+	}
+	// A connection test may target any device, not only the web server.
+	if (kind === "ping" && destination !== config.serverIp.trim()) {
+		const device =
+			destination === ROUTER_LAN || destination === ROUTER_WAN
+				? tr("Router", "router")
+				: destination === DNS_IP
+					? tr("DNS-Server", "DNS server")
+					: destination === config.clientIp.trim()
+						? tr("eigene Clientadresse", "the client’s own address")
+						: null;
+		const error = route(destination, destination === DNS_IP ? "dns" : "any");
+		if (error) return error;
+		if (!device)
+			return fail(
+				"no-host",
+				tr("Kein Gerät unter dieser Adresse", "No device at this address"),
+				tr(
+					`Unter ${destination} antwortet im Lehrnetz kein Gerät.${numeric === null ? " Vergleiche DNS-Eintrag und tatsächliche Serveradresse." : ""}`,
+					`No device answers at ${destination} in this teaching network.${numeric === null ? " Compare the DNS record with the actual server address." : ""}`,
+				),
+			);
+		ok(
+			"Internet",
+			tr("Verbindungstest erfolgreich", "IP connection test successful"),
+			tr(
+				`ICMP-Echo und Antwort von ${destination} funktionieren im Modell. Das prüft keinen HTTP-Dienst.`,
+				`ICMP echo and reply from ${destination} work in the model. This does not test an HTTP service.`,
+			),
+		);
+		return {
+			success: true,
+			code: "ping-ok",
+			summary: tr(
+				`${destination} antwortet (${device}). Der Verbindungstest prüft nur die IP-Erreichbarkeit.`,
+				`${destination} replies (${device}). The connection test checks IP reachability only.`,
+			),
+			trace,
+		};
 	}
 	if (!isHost(config.serverIp, config.serverPrefix))
 		return fail(

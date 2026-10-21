@@ -272,6 +272,71 @@ describe("the network's end-to-end behavior", () => {
 			).toBe(false);
 		}
 	});
+	it.each([
+		["192.168.10.1", "Router"],
+		["192.168.10.10", "eigene Clientadresse"],
+		["203.0.113.1", "Router"],
+		[DNS_IP, "DNS-Server"],
+	])("a connection test to %s reaches the %s", (target, device) => {
+		const result = simulate(defaultNetwork(), target, "ping");
+		expect(result.success, result.summary).toBe(true);
+		expect(result.code).toBe("ping-ok");
+		expect(result.summary).toContain(device);
+	});
+	it("delivers to the gateway locally, without consulting the gateway setting", () => {
+		const result = simulate(
+			{ ...defaultNetwork(), gateway: "bad" },
+			"192.168.10.1",
+			"ping",
+		);
+		expect(result.success).toBe(true);
+		expect(result.trace.at(-2)?.title).toBe("Lokal zugestellt");
+	});
+	it.each([
+		["192.168.10.1", { uplink: false }, "router"],
+		["192.168.10.20", {}, "no-host"],
+		["203.0.113.77", {}, "no-host"],
+		[DNS_IP, { dnsCable: false }, "dns-route"],
+		["198.51.100.1", {}, "no-route"],
+	] as const)("a connection test to %s with %o stops at %s", (target, change, code) =>
+		expect(simulate({ ...defaultNetwork(), ...change }, target, "ping").code).toBe(
+			code,
+		),
+	);
+	it("never blames a correct /24 prefix for a local destination", () => {
+		const viaRouter = simulate(
+			{ ...defaultNetwork(), dns: "192.168.10.1" },
+			HOSTNAME,
+			"http",
+		);
+		expect(viaRouter.code).toBe("dns-route");
+		expect(viaRouter.summary).toContain(DNS_IP);
+		expect(simulate(defaultNetwork(), "192.168.10.1", "http").code).toBe(
+			"wrong-host",
+		);
+		// The broad-prefix fault is still recognised for remote destinations.
+		expect(
+			simulate({ ...defaultNetwork(), clientPrefix: 1 }, "203.0.113.1", "ping")
+				.code,
+		).toBe("prefix");
+	});
+	it("points a ping by name to a wrong DNS record back at the record", () => {
+		const result = simulate(
+			{ ...defaultNetwork(), dnsRecord: "203.0.113.99" },
+			HOSTNAME,
+			"ping",
+		);
+		expect(result.code).toBe("no-host");
+		expect(result.summary).toContain("DNS-Eintrag");
+	});
+	it("answers in English for the new local and device cases", () => {
+		expect(simulate(defaultNetwork(), DNS_IP, "ping", "en").summary).toContain(
+			"DNS server",
+		);
+		expect(
+			simulate(defaultNetwork(), "192.168.10.20", "ping", "en").summary,
+		).toContain("No device answers");
+	});
 });
 
 describe("rate calculations", () => {

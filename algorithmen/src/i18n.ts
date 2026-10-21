@@ -137,7 +137,7 @@ const de = {
 	syntaxLimits:
 		"Kein DOM, Netz, Dateizugriff, eval, Objekte, Klassen, Methoden oder vollständiges JavaScript. Keine automatische Typumwandlung bei Zahlenoperationen; == und != werden mit einem Hinweis abgelehnt. Ein ungültiger Feldindex ist hier ein Fehler. Funktionen ohne return liefern hier null statt JavaScripts undefined.",
 	syntaxResources:
-		"Grenzen: 20.000 Zeichen, 1.200 Rechenschritte, 20 verschachtelte Aufrufe, 100 Feldeinträge, Tiefe 10 und 1.000 Wertknoten pro Zustand, 100 Ausgaben, 250 Spurzustände und eine begrenzte Gesamtgröße der Spur. Sehr große oder zyklische Felder werden verweigert.",
+		"Grenzen: 20.000 Zeichen, 10.000 Rechenschritte, 20 verschachtelte Aufrufe, 100 Feldeinträge, Tiefe 10 und 1.000 Wertknoten pro Zustand, 100 Ausgaben, 250 Spurzustände und eine begrenzte Gesamtgröße der Spur. Sehr große oder zyklische Felder werden verweigert.",
 	syntaxTests:
 		"Die Tests prüfen Ausgaben für vorgegebene Eingaben, nicht jeden denkbaren Programmweg.",
 };
@@ -267,7 +267,7 @@ const en: typeof de = {
 	syntaxLimits:
 		"No DOM, network, file access, eval, objects, classes, methods or complete JavaScript. Numeric operations do not automatically convert text; == and != are rejected with a helpful message. Invalid array indices are errors here. Functions without return produce null instead of JavaScript’s undefined.",
 	syntaxResources:
-		"Limits: 20,000 source characters, 1,200 execution steps, 20 nested calls, 100 array elements, depth 10 and 1,000 expanded value nodes per state, 100 outputs, 250 trace states and a bounded total trace size. Very large or cyclic arrays are rejected.",
+		"Limits: 20,000 source characters, 10,000 execution steps, 20 nested calls, 100 array elements, depth 10 and 1,000 expanded value nodes per state, 100 outputs, 250 trace states and a bounded total trace size. Very large or cyclic arrays are rejected.",
 	syntaxTests:
 		"Tests check output for specified inputs, not every possible program path.",
 };
