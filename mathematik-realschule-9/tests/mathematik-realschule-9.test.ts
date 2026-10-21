@@ -123,7 +123,7 @@ describe("Lernpfad", () => {
       "lg-1-lineare-gleichung": { author: "Daniel Jung", id: "NtbtAwGJpvs" },
       "lg-2-gleichsetzen": { author: "Daniel Jung", id: "6BuVmbuxZco" },
       "lg-3-additionsverfahren": { author: "Daniel Jung", id: "T08IjF7OPf4" },
-      "lg-4-loesungsfaelle": { author: "Daniel Jung", id: "SO0VTahpRnk" },
+      "lg-4-loesungsfaelle": { author: "Merksatz", id: "PAQLNReiI1w" },
       "lg-5-textaufgaben": { author: "Daniel Jung", id: "qo8YmW2pc-E" },
       "qf-1-scheitelform": { author: "Daniel Jung", id: "i2WDgLldlJc" },
       "qf-2-streckfaktor": { author: "Daniel Jung", id: "KEuNUgIiIyI" },

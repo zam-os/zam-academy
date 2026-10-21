@@ -628,9 +628,9 @@ const loesungsfaelle: Lesson = {
   requiredCorrect: 3,
   celebrationMessage: "Du erkennst an Steigung und Achsenabschnitt, ob ein System eine, keine oder unendlich viele Lösungen hat.",
   teacherVideo: {
-    url: "https://www.youtube.com/watch?v=SO0VTahpRnk",
-    title: "LGS zeichnerisch lösen (Schnittpunkt, parallel, identisch)",
-    author: "Daniel Jung",
+    url: "https://www.youtube.com/watch?v=PAQLNReiI1w",
+    title: "LGS: eine, keine und unendlich viele Lösungen",
+    author: "Merksatz",
   },
 };
 
