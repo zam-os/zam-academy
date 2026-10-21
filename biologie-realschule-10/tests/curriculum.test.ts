@@ -140,10 +140,11 @@ describe("official scope and permanent identities", () => {
     );
   });
 });
-describe("explicit proposed learning-state mapping", () => {
-  it("classifies all 26 snapshot items once and awaits this package's own approval", async () => {
-    expect(mapping.approved).toBeNull();
-    expect(mapping.authorization).toContain("Freigabe");
+describe("explicit approved learning-state mapping", () => {
+  it("classifies all 26 snapshot items once under this package's own approval", async () => {
+    expect(mapping.approved).toBe("2026-10-21");
+    expect(mapping.authorization).toContain("zam-os/zam-academy#16");
+    expect(mapping.source).toContain("Freigabe erteilt");
     expect(mapping.rows).toHaveLength(26);
     expect(new Set(mapping.rows.map((r) => r.de_by_id))).toEqual(new Set(legacy.map((i) => i.id)));
     expect(mapping.rows.filter((r) => r.category === "A")).toHaveLength(10);

@@ -20,11 +20,11 @@ Die bisherigen Namen sind zur Auditierbarkeit in den bytegleichen Fixtures erhal
 
 Zu den nötigen inhaltlichen Korrekturen gehören insbesondere die Verwechslung von Eigen- und Fremdreflex, zu allgemeine Aussagen über Mitose/Meiose und Synapsen, kategorische Stammbaumregeln sowie lineare Evolutionsdarstellungen. Es wird keine neue Teilfrage durch den Lernstand einer unsicheren Gesamtfrage als beherrscht markiert.
 
-Die [Mappingdatei](../biologie-realschule-10/replaces-de-by.json) dokumentiert alle 26 Zeilen mit Originalfrage, Kategorie und Begründung. Die beantragte Freigabe ist paketbezogen. Persönliche Karten und Reviewdaten bleiben auch bei Kategorie C erhalten.
+Die [Mappingdatei](../biologie-realschule-10/replaces-de-by.json) dokumentiert alle 26 Zeilen mit Originalfrage, Kategorie und Begründung. Thomas hat dieses Mapping (10 A / 1 B / 15 C) am 21. Oktober 2026 freigegeben; die Freigabe ist paketbezogen. Persönliche Karten und Reviewdaten bleiben auch bei Kategorie C erhalten.
 
 ## Reihenfolge bis zur nächsten ZAM-Veröffentlichung
 
-1. Academy-App, Zelle, Abdeckungsmatrix und Migrationstests gemeinsam reviewen; ausdrückliche Mapping-Freigabe einholen.
+1. Academy-App, Zelle, Abdeckungsmatrix und Migrationstests gemeinsam reviewen; ausdrückliche Mapping-Freigabe einholen (am 21.10.2026 erteilt).
 2. Academy mergen und die Veröffentlichung der exakten Zelle im Katalog prüfen.
 3. In einem eigenen ZAM-PR gezielt `biologie-realschule-10` synchronisieren, die drei oben genannten alten aktiven Zellen durch Legacy-Fixtures ersetzen und die Lehrplanzuordnung samt Reviewhistorien testen. Andere Biologie-Jahrgänge sind damit nicht als vollständig migriert ausgewiesen.
 4. ZAM erst nach diesem Integrationsschritt veröffentlichen. Die Academy-App überträgt keine lokalen Browserfortschritte auf ZAM-Karten.

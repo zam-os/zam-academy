@@ -39,7 +39,7 @@ Die drei alten Zellen liegen bytegleich mit SHA-256-Prüfsummen unter `tests/fix
 | B | 1 | Vollständiger DNA-Gesamtabruf; Frage, Kurzantwort und Musterlösung bleiben wortgleich auf einer eigenen Karte |
 | C | 15 | Fachlich korrigierter oder unsicherer Umfang ohne Beherrschungsübertrag; alte Karten und sämtliche Reviews bleiben erhalten, `retired_items` nimmt die alten Texte aus aktiven Wiederholungen |
 
-**Dieses Mapping ist ein Vorschlag, keine bereits erteilte Freigabe.** Der Auftrag zur Umsetzung ist dokumentiert, `approved` bleibt `null`. Vor Merge/Veröffentlichung und ZAM-Übernahme muss Thomas dieses konkrete Mapping freigeben. Freigaben anderer Fächer gelten nicht für Biologie. Zeilenweise Begründungen und genaue Vorgänger stehen in der Mappingdatei.
+**Thomas hat dieses konkrete Mapping am 21. Oktober 2026 freigegeben** (`approved` in der Mappingdatei). Freigaben anderer Fächer gelten nicht für Biologie. Zeilenweise Begründungen und genaue Vorgänger stehen in der Mappingdatei.
 
 Der Migrationstest erzeugt in ausschließlich temporären Bibliotheken für alle 26 Altfragen echte Karten mit je zwei Ratings. Er vergleicht sämtliche Kartenfelder und alle **52 Review-Ereignisse**, prüft die elf vollständigen Umzüge und 15 unveränderten stillgelegten Historien, wiederholte Installation sowie die Ablehnung einer automatischen Zusammenführung zweier vorhandener Karten. Installieren allein erzeugt keine neuen Karten. Die anschließende ausdrückliche Aufnahme ergänzt 82 frische Karten ohne gelernte Stabilität und lässt die elf übernommenen sowie 15 stillgelegten Historien unverändert; erneute Aufnahme erzeugt keine Duplikate.
 
