@@ -1,0 +1,115 @@
+import { execFileSync } from "node:child_process";
+import {
+	chmodSync,
+	copyFileSync,
+	existsSync,
+	mkdirSync,
+	rmSync,
+	writeFileSync,
+} from "node:fs";
+import { dirname, join, resolve } from "node:path";
+import { fileURLToPath } from "node:url";
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const rootDir = resolve(__dirname, "..");
+const distHtml = join(rootDir, "dist", "index.html");
+const releaseRoot = join(rootDir, "release");
+const bundleDirName = "ZAM-Academy-Algorithmen";
+const bundleDir = join(releaseRoot, bundleDirName);
+const zipFilePath = join(releaseRoot, "ZAM-Academy-Algorithmen-offline.zip");
+const appFile = "ZAM-Academy-Algorithmen.html";
+
+if (!existsSync(distHtml)) {
+	throw new Error(
+		`Missing built file at ${distHtml}. Please run "npm run build" first.`,
+	);
+}
+
+rmSync(releaseRoot, { recursive: true, force: true });
+mkdirSync(bundleDir, { recursive: true });
+
+copyFileSync(distHtml, join(bundleDir, appFile));
+
+const winBat = [
+	"@echo off",
+	"title Algorithmen und Programmieren · ZAM Academy",
+	`start "" "%~dp0${appFile}"`,
+	"",
+].join("\r\n");
+writeFileSync(join(bundleDir, "Start-Windows.bat"), winBat, "utf8");
+
+const macCommand = [
+	"#!/bin/sh",
+	'DIR="$(cd "$(dirname "$0")" && pwd)"',
+	`open "$DIR/${appFile}"`,
+	"",
+].join("\n");
+const macCommandPath = join(bundleDir, "Start-Mac.command");
+writeFileSync(macCommandPath, macCommand, "utf8");
+chmodSync(macCommandPath, 0o755);
+
+const linuxSh = [
+	"#!/bin/sh",
+	'DIR="$(cd "$(dirname "$0")" && pwd)"',
+	"if command -v xdg-open >/dev/null 2>&1; then",
+	`  xdg-open "$DIR/${appFile}"`,
+	"elif command -v gio >/dev/null 2>&1; then",
+	`  gio open "$DIR/${appFile}"`,
+	"else",
+	`  echo "Open $DIR/${appFile} in your web browser."`,
+	"fi",
+	"",
+].join("\n");
+const linuxShPath = join(bundleDir, "start-linux.sh");
+writeFileSync(linuxShPath, linuxSh, "utf8");
+chmodSync(linuxShPath, 0o755);
+
+const readmeTxt = `========================================================================
+ZAM ACADEMY · ALGORITHMEN UND PROGRAMMIEREN (LehrplanPLUS Bayern)
+========================================================================
+
+DEUTSCH / ENGLISH · No installation required
+
+ENGLISH QUICK START
+1. Extract the ZIP into any folder.
+2. Open "${appFile}" in your web browser.
+   Windows: Start-Windows.bat also opens it.
+   macOS: open the HTML file or use Start-Mac.command.
+   Linux: open the HTML file or run start-linux.sh.
+3. Choose English in the language selector at the top.
+
+All 20 lessons, exercises, code examples, feedback and syntax help are
+available in English. The app runs offline without a server or account.
+Code drafts are saved separately for English and German; completed concepts
+count in both languages. Browser storage must be allowed to keep progress.
+External source links require an internet connection when you open them.
+The accompanying ZAM cards are currently in German.
+
+SOFORT-START OHNE INSTALLATION
+1. Entpacke dieses ZIP-Archiv in einen beliebigen Ordner.
+2. Starte die App per Doppelklick:
+   - Windows: "Start-Windows.bat" oder "${appFile}"
+   - macOS:   "${appFile}" oder "Start-Mac.command"
+   - Linux:   "${appFile}" oder "./start-linux.sh"
+
+Die App benötigt keine Installation, keinen Server und keine externe Verbindung.
+Wähle oben Deutsch oder English. Alle 20 Lektionen und die Bedienoberfläche
+sind zweisprachig; Codeentwürfe werden pro Sprache getrennt gespeichert.
+Für die eigene Quellenrecherche und das Öffnen externer Quellen brauchst du
+geeignete Materialien beziehungsweise eine Internetverbindung.
+Fortschritt und Versuchsnotizen bleiben in diesem Browser, sofern er lokales
+Speichern erlaubt. Bei gesperrtem Speicher zeigt die App einen Hinweis.
+
+Bearbeite die Lektionen im Lernpfad. Die Code-Werkstatt läuft vollständig lokal.
+
+Behalten mit ZAM: Die Zelle "Algorithmen und Programmieren (ZAM Academy)" hält, was du
+hier geübt hast. Jede Karte verlinkt die Lektion, in der du geübt hast.
+========================================================================
+`;
+writeFileSync(join(bundleDir, "README-START.txt"), readmeTxt, "utf8");
+
+execFileSync("zip", ["-r", "-q", zipFilePath, bundleDirName], {
+	cwd: releaseRoot,
+});
+
+console.log(`Created release package: ${zipFilePath}`);

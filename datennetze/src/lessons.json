@@ -1,0 +1,603 @@
+[
+	{
+		"id": "net-netzwerk",
+		"stage": 1,
+		"title": "Gemeinsam mehr erreichen",
+		"intro": "Ein Netzwerk verbindet selbständige Geräte, damit sie Daten und Dienste austauschen können.",
+		"paragraphs": [
+			"In einer Schulbibliothek speichert ein Server den Katalog. Mehrere Rechner fragen ihn ab. Der Browser ist dabei Client, weil er einen Dienst anfordert; das Serverprogramm beantwortet die Anfrage. Client und Server bezeichnen Rollen von Programmen, nicht zwingend verschiedene Bauarten von Computern.",
+			"Ein Gerät kann gleichzeitig verschiedene Rollen übernehmen: Ein Laptop fragt einen Webserver ab und stellt anderen Geräten einen Ordner bereit. In einem Peer-to-Peer-Netz können gleichberechtigte Teilnehmer Dienste anbieten und anfordern.",
+			"Vor dem Aufbau klärst du den Zweck: Welche Geräte müssen miteinander kommunizieren? Welche Dienste werden benötigt? Wer darf zugreifen? Erst danach wählst du Komponenten und Verbindungen. Ein Netzwerk ersetzt keine Zugriffsberechtigung."
+		],
+		"example": "Vier Bibliotheksrechner nutzen einen gemeinsamen Katalog. Der Server verarbeitet Suchanfragen; die Clients zeigen die Ergebnisse an.",
+		"takeaway": "Eine Rolle beschreibt eine Aufgabe: anfordern oder bereitstellen.",
+		"quiz": {
+			"question": "Welcher Teilnehmer ist beim Abruf einer Webseite der Client?",
+			"options": [
+				"Das Browserprogramm, das die Seite anfordert.",
+				"Jeder Computer mit einer großen Festplatte.",
+				"Der Dienst, der die Seite ausliefert."
+			],
+			"correct": 0,
+			"feedback": "Der Browser startet die Anfrage. Größe und Bauform des Rechners entscheiden die Rolle nicht."
+		},
+		"activity": {
+			"kind": "choice",
+			"prompt": "Ein Laptop liefert eine Datei an Rechner A und lädt gleichzeitig eine Webseite von B. Welche Aussage passt?",
+			"options": [
+				"Er übernimmt gleichzeitig Server- und Clientrollen.",
+				"Er muss erst zwischen zwei festen Gerätemodi wechseln.",
+				"Er ist wegen der Webseite ausschließlich Server."
+			],
+			"correct": 0,
+			"feedback": "Die Rolle hängt vom betrachteten Austausch ab."
+		},
+		"optional": false
+	},
+	{
+		"id": "net-komponenten",
+		"stage": 1,
+		"title": "Switch, Router oder Access Point?",
+		"intro": "Jedes Bauteil erfüllt eine andere Aufgabe. Ein WLAN-Router im Wohnzimmer bündelt mehrere davon.",
+		"paragraphs": [
+			"Ein Switch verbindet Geräte innerhalb eines lokalen Netzes. Er lernt, hinter welchem Anschluss eine MAC-Adresse erreichbar ist, und leitet passende Ethernet-Rahmen weiter. Er entscheidet gewöhnlich nicht anhand einer Webadresse.",
+			"Ein Router verbindet unterschiedliche IP-Netze. Seine Schnittstellen haben Adressen in den jeweiligen Netzen. Er entscheidet anhand der Ziel-IP-Adresse und seiner Routingtabelle, über welche Schnittstelle ein Paket weitergeht.",
+			"Ein Access Point verbindet drahtlose Geräte mit einem lokalen Netz. Das WLAN ist ein Zugangsweg; es ist nicht gleichbedeutend mit dem Internet. Ein Modem oder ein Medienabschluss kann zusätzlich die Verbindung zum Anbieter herstellen."
+		],
+		"example": "Im Labor verbindet der linke Switch den Bibliotheksclient mit der LAN-Schnittstelle des Routers. Der Router verbindet dieses LAN mit dem Servernetz.",
+		"takeaway": "Switch verbindet lokal, Router verbindet Netze, Access Point verbindet per Funk.",
+		"quiz": {
+			"question": "Was verbindet zwei unterschiedliche IP-Netze?",
+			"options": [
+				"Ein Router.",
+				"Ein passives Patchkabel ohne weitere Geräte.",
+				"Die Namensauflösung DNS allein."
+			],
+			"correct": 0,
+			"feedback": "Der Router leitet IP-Pakete zwischen seinen Netzen weiter."
+		},
+		"activity": {
+			"kind": "choice",
+			"prompt": "Zwölf Rechner sollen in einem Raum per Kabel miteinander verbunden werden. Welches zusätzliche Bauteil passt?",
+			"options": [
+				"Ein Switch mit genügend Anschlüssen.",
+				"Ein DNS-Name ersetzt alle Anschlüsse.",
+				"Ein einzelner WLAN-Name ohne Access Point."
+			],
+			"correct": 0,
+			"feedback": "Ein Switch bündelt die lokalen Kabelverbindungen. Der Zweck entscheidet über weitere Komponenten."
+		},
+		"optional": false
+	},
+	{
+		"id": "net-medien",
+		"stage": 1,
+		"title": "Der Weg für die Signale",
+		"intro": "Kupfer, Glasfaser und Funk übertragen Informationen auf unterschiedliche Weise.",
+		"paragraphs": [
+			"Kupferkabel übertragen elektrische Signale. Bei üblichen Twisted-Pair-Ethernet-Verbindungen hängt die mögliche Datenrate unter anderem von Kabelkategorie, Länge und Geräten ab. Für einen beweglichen Laptop kann ein Kabel unpraktisch sein, für einen stationären Rechner ist es oft gut planbar.",
+			"Glasfaser überträgt Lichtsignale. Sie eignet sich für hohe Datenraten und große Entfernungen; elektromagnetische Störungen wirken nicht wie bei Kupfer auf den Lichtweg. Passende Sender, Empfänger und saubere Verbindungen bleiben erforderlich.",
+			"WLAN nutzt Funk. Beweglichkeit ist sein Vorteil, gemeinsam genutzte Sendezeit, Entfernung, Wände und Störungen beeinflussen die erreichbare Leistung. Die aufgedruckte Höchstrate ist deshalb keine Zusage für die Dateigeschwindigkeit eines einzelnen Geräts."
+		],
+		"example": "Für ein Tablet im Klassenraum passt WLAN. Für die feste Verbindung zwischen zwei Gebäuden kann Glasfaser sinnvoll sein. Die konkrete Wahl hängt von Strecke, Kosten und Anforderungen ab.",
+		"takeaway": "Wähle ein Medium nach Strecke, Beweglichkeit, Leistung und Störumgebung.",
+		"quiz": {
+			"question": "Welche Aussage zu WLAN ist richtig?",
+			"options": [
+				"Mehrere Geräte teilen sich die verfügbare Funkzeit.",
+				"Jedes zusätzliche Gerät verdoppelt automatisch die Datenrate.",
+				"Wände können Funkverbindungen grundsätzlich nicht beeinflussen."
+			],
+			"correct": 0,
+			"feedback": "Funk ist ein geteiltes Medium; Bedingungen und Nutzung wirken auf den Durchsatz."
+		},
+		"activity": {
+			"kind": "choice",
+			"prompt": "Eine bewegliche Lerngruppe arbeitet an Tablets. Was ist die sinnvollste erste Planung?",
+			"options": [
+				"WLAN-Abdeckung und gleichzeitige Nutzung prüfen.",
+				"Nur die größtmögliche Werberate auswählen.",
+				"Für jedes Tablet eine eigene öffentliche IP bestellen."
+			],
+			"correct": 0,
+			"feedback": "Die tatsächliche Umgebung und Anzahl gleichzeitig aktiver Geräte sind wichtig."
+		},
+		"optional": false
+	},
+	{
+		"id": "net-topologien",
+		"stage": 1,
+		"title": "Wie die Verbindungen angeordnet sind",
+		"intro": "Die Topologie beschreibt, welche Teilnehmer über welche Wege verbunden sind.",
+		"paragraphs": [
+			"Bei einer Sternstruktur führt von jedem Endgerät eine Verbindung zu einer zentralen Komponente, häufig einem Switch. Fällt ein einzelnes Endgerätekabel aus, betrifft das gewöhnlich diesen Teilnehmer. Fällt der zentrale Switch aus, sind viele Teilnehmer betroffen.",
+			"Eine vermaschte Struktur bietet zusätzliche Wege. Sie kann Ausfälle besser abfangen, braucht aber geeignete Regeln und Geräte, um Schleifen und konkurrierende Wege zu beherrschen. Einfach mehr Kabel einzustecken ist keine verlässliche Ausfallsicherung.",
+			"Unterscheide die sichtbare Verkabelung von logischen Kommunikationswegen. Ein Plan sollte Komponenten, Verbindungen und Netzgrenzen zeigen. So erkennst du bei einer Störung, welche Teilnehmer denselben betroffenen Weg nutzen."
+		],
+		"example": "Im Stern fallen Client A und B gleichzeitig aus, während andere Verbindungen weitergehen: Prüfe gemeinsame Komponenten. Fällt nur A aus, beginne bei As Kabel und Anschluss.",
+		"takeaway": "Eine Skizze macht gemeinsame Fehlerstellen sichtbar.",
+		"quiz": {
+			"question": "Was ist ein gemeinsamer Ausfallpunkt eines einfachen Sternnetzes?",
+			"options": [
+				"Der zentrale Switch.",
+				"Jede beliebige Datei auf einem Client.",
+				"Nur der Name eines einzelnen Browsers."
+			],
+			"correct": 0,
+			"feedback": "Die lokalen Verbindungen laufen am Switch zusammen."
+		},
+		"activity": {
+			"kind": "lab",
+			"prompt": "Öffne den Kabelauftrag. Finde anhand des Netzplans die unterbrochene Verbindung und prüfe danach erneut.",
+			"challenge": "cable"
+		},
+		"optional": false
+	},
+	{
+		"id": "net-datenrate",
+		"stage": 1,
+		"title": "Bit, Byte und der Flaschenhals",
+		"intro": "Dateigröße, Leitungsrate und tatsächlicher Durchsatz sind verschiedene Größen.",
+		"paragraphs": [
+			"Ein Byte enthält acht Bit. Eine Übertragungsrate in Mbit/s zählt Millionen Bit pro Sekunde; eine Datei mit 1 MiB enthält 1.048.576 Byte. Für eine passende Rechnung müssen die Einheiten zuerst zusammenpassen.",
+			"Als ideale Übertragungszeit gilt Datenmenge in Bit geteilt durch Datenrate in Bit pro Sekunde. Protokollaufwand, Wartezeiten und geteilte Nutzung verlängern die tatsächliche Zeit. Der Rechner hier nutzt einen ausdrücklich vereinfachten Nutzanteil.",
+			"Bei mehreren aufeinanderfolgenden Verbindungen begrenzt der langsamste erforderliche Abschnitt den langfristigen Durchsatz. Ein Gigabit-LAN kann einen deutlich langsameren Internetanschluss beim Dateidownload nicht beschleunigen. Kleine Nachrichten reagieren außerdem auf Latenz, die Wartezeit bis zur Antwort."
+		],
+		"example": "10 MiB entsprechen 83.886.080 Bit. Bei 100 Mbit/s dauert die ideale Übertragung etwa 0,84 s; bei 80 % nutzbarer Rate etwa 1,05 s.",
+		"takeaway": "Erst die Einheiten angleichen; dann Datenmenge durch Datenrate teilen.",
+		"quiz": {
+			"question": "Wie viele Bit enthält ein Byte?",
+			"options": ["8", "10", "1024"],
+			"correct": 0,
+			"feedback": "Acht Bit bilden ein Byte. MiB und Mbit sind zusätzlich unterschiedlich skaliert."
+		},
+		"activity": {
+			"kind": "number",
+			"prompt": "Eine Datei enthält genau 80 Millionen Bit. Wie lange braucht sie ideal bei 20 Mbit/s?",
+			"answer": 4,
+			"unit": "s",
+			"feedback": "80 Millionen Bit ÷ 20 Millionen Bit pro Sekunde = 4 Sekunden."
+		},
+		"optional": false
+	},
+	{
+		"id": "net-mac-ip",
+		"stage": 2,
+		"title": "Zwei Adressen für zwei Aufgaben",
+		"intro": "MAC-Adressen gehören zum lokalen Netzzugang, IP-Adressen zur netzübergreifenden Zustellung.",
+		"paragraphs": [
+			"Eine MAC-Adresse kennzeichnet eine Netzwerkschnittstelle im lokalen Ethernet- oder WLAN-Kontext. Sie wird hier als sechs Hexadezimalpaare dargestellt. Geräte können mehrere Schnittstellen haben; MAC-Adressen sind nicht in jeder Situation dauerhaft oder unveränderbar.",
+			"Eine IP-Adresse bezeichnet einen Anschluss im IP-Netz. Ein Präfix beschreibt den Netzanteil. Bei einem Weg über einen Router bleibt die Ziel-IP im einfachen Modell die des entfernten Servers; der nächste lokale Empfänger ist zunächst der Router.",
+			"Für IPv4 ermittelt ein Gerät im lokalen Netz häufig mit ARP, welche MAC-Adresse zur nächsten lokalen IP-Adresse gehört. ARP löst keine Domainnamen auf. Beim nächsten Netzabschnitt werden neue lokale Rahmen verwendet."
+		],
+		"example": "Ziel-IP: 203.0.113.20. Nächste lokale IP: 192.168.10.1. Der Ethernet-Rahmen geht an die MAC-Adresse der LAN-Schnittstelle des Routers.",
+		"takeaway": "Ziel der gesamten Reise und nächster lokaler Schritt sind verschieden.",
+		"quiz": {
+			"question": "Welche Adresse bleibt im vereinfachten gerouteten Paket die des Zielservers?",
+			"options": [
+				"Die Ziel-IP-Adresse.",
+				"Die Ziel-MAC des ersten Ethernet-Rahmens.",
+				"Der Name des angeschlossenen Kabels."
+			],
+			"correct": 0,
+			"feedback": "Die lokalen Rahmen ändern sich an Netzgrenzen. NAT ist in diesem Modell bewusst ausgeblendet."
+		},
+		"activity": {
+			"kind": "choice",
+			"prompt": "Ein Client sendet zu einem entfernten Server. Welche MAC-Adresse braucht er zunächst?",
+			"options": [
+				"Die der erreichbaren Router-Schnittstelle im eigenen LAN.",
+				"Zwingend die MAC-Adresse des fernen Servers.",
+				"Die Zeichenfolge der Domain als MAC-Adresse."
+			],
+			"correct": 0,
+			"feedback": "MAC-Zustellung findet im jeweiligen lokalen Segment statt."
+		},
+		"optional": false
+	},
+	{
+		"id": "net-ipv4",
+		"stage": 2,
+		"title": "IPv4 lesen und prüfen",
+		"intro": "Eine IPv4-Adresse umfasst 32 Bit, meist geschrieben als vier Dezimalzahlen.",
+		"paragraphs": [
+			"Jede der vier Zahlen beschreibt acht Bit und liegt deshalb zwischen 0 und 255. 192.168.10.10 ist formal eine IPv4-Adresse; 192.168.10.300 ist keine. Die Punkte trennen die vier Oktette.",
+			"Nicht jede formal gültige Adresse ist eine geeignete Hostadresse. Es gibt reservierte Bereiche und besondere Adressen. Die konkrete Netz- und Broadcastadresse hängt außerdem vom Präfix ab. Zwei Schnittstellen im selben erreichbaren Netz dürfen nicht dieselbe Hostadresse nutzen.",
+			"Das Labor nutzt 192.168.10.0/24 als privates LAN und 203.0.113.0/24 als reserviertes Dokumentationsnetz. Letzteres ist hier ein erfundenes Servernetz, kein erreichbarer öffentlicher Dienst. IPv6 ist ein eigenes Thema mit längeren Adressen."
+		],
+		"example": "192.168.10.20/24 passt als freie Hostadresse in das Labor-LAN. 192.168.10.0/24 bezeichnet hier das Netz; 192.168.10.255/24 ist seine Broadcastadresse.",
+		"takeaway": "Formal gültig ist der erste Test; im passenden Netz nutzbar ist der zweite.",
+		"quiz": {
+			"question": "Welche Schreibweise ist formal gültig?",
+			"options": ["192.168.10.20", "192.168.10.300", "192.168.10"],
+			"correct": 0,
+			"feedback": "Eine IPv4-Adresse braucht vier Zahlen von 0 bis 255."
+		},
+		"activity": {
+			"kind": "choice",
+			"prompt": "Zwei Rechner im selben LAN haben beide 192.168.10.10. Was ist zu tun?",
+			"options": [
+				"Einer erhält eine andere freie Hostadresse im passenden Netz.",
+				"Beide bekommen nur unterschiedliche Browsernamen.",
+				"Der zweite Rechner erhält ebenfalls denselben MAC-Eintrag."
+			],
+			"correct": 0,
+			"feedback": "Ein Adresskonflikt wird durch eine eindeutige Hostadressierung behoben."
+		},
+		"optional": false
+	},
+	{
+		"id": "net-subnetze",
+		"stage": 2,
+		"title": "Das Präfix zieht die Grenze",
+		"intro": "Das Präfix legt fest, welche Anfangsbits zum Netz gehören.",
+		"paragraphs": [
+			"Bei /24 sind die ersten 24 der 32 Bits der Netzanteil. 192.168.10.10 und 192.168.10.200 liegen damit im selben Netz; 192.168.11.10 liegt in einem anderen. Bei anderen Präfixen musst du die Bitgrenze beachten, statt nur die ersten drei Zahlen zu vergleichen.",
+			"Ein /26 teilt einen /24-Bereich in vier Blöcke von je 64 Adressen. Der Block ab 192.168.10.64 reicht bis 192.168.10.127. In einem üblichen Broadcast-Subnetz sind erste und letzte Adresse reserviert; dazwischen liegen 62 Hostadressen.",
+			"Kleinere Präfixzahlen bedeuten größere Adressblöcke. Ein zu breites Präfix kann dazu führen, dass ein Client ein fernes Ziel lokal sucht, statt sein Gateway zu benutzen. /31-Punkt-zu-Punkt-Netze und /32-Einzelrouten sind Sonderfälle; das Hostlabor beschränkt sich auf /1 bis /30."
+		],
+		"example": "192.168.10.70/26: Netz 192.168.10.64, Broadcast 192.168.10.127, übliche Hostadressen .65 bis .126.",
+		"takeaway": "Gleiche Netzbits bedeuten lokal; andere Netzbits erfordern eine Route.",
+		"quiz": {
+			"question": "Wie viele übliche Hostadressen hat ein /26-Broadcast-Subnetz?",
+			"options": ["62", "64", "256"],
+			"correct": 0,
+			"feedback": "2 hoch 6 = 64 Adressen; davon werden Netz- und Broadcastadresse abgezogen."
+		},
+		"activity": {
+			"kind": "number",
+			"prompt": "Ein übliches /27-Subnetz hat 32 Adressen. Wie viele davon sind Hostadressen?",
+			"answer": 30,
+			"unit": "Hosts",
+			"feedback": "32 minus Netz- und Broadcastadresse ergibt 30."
+		},
+		"optional": false
+	},
+	{
+		"id": "net-gateway",
+		"stage": 2,
+		"title": "Der Ausgang aus dem eigenen Netz",
+		"intro": "Ein Standardgateway ist die nächste Routeradresse für Ziele ohne speziellere passende Route.",
+		"paragraphs": [
+			"Zuerst prüft ein Host seine Routinginformationen. Für ein direkt angeschlossenes Ziel kann er lokal zustellen. Für ein entferntes Ziel nutzt er eine passende Route, häufig die Standardroute zum Router.",
+			"Die Gatewayadresse muss selbst erreichbar sein. Im Labor ist das 192.168.10.1 im Client-LAN. Eine zufällige freie Hostadresse funktioniert nicht als Gateway, solange dahinter kein passender Routerdienst liegt.",
+			"Kommunikation braucht einen Rückweg. Der Webserver verwendet im Labor 203.0.113.1 als Standardgateway. Eine erfolgreiche Hinroute allein liefert noch keine Antwort. NAT und echte Internet-Routingtabellen werden hier bewusst nicht modelliert."
+		],
+		"example": "Client .10 → Gateway 192.168.10.1 → Server 203.0.113.20. Antwort: Server → Gateway 203.0.113.1 → Client.",
+		"takeaway": "Das Gateway ist erreichbar und routet; eine Antwort braucht ebenfalls eine Route.",
+		"quiz": {
+			"question": "Welche Gatewayadresse passt im Labor-LAN?",
+			"options": ["192.168.10.1", "203.0.113.20", "Ein beliebiger Domainname."],
+			"correct": 0,
+			"feedback": "192.168.10.1 ist die direkt erreichbare LAN-Schnittstelle des Routers."
+		},
+		"activity": {
+			"kind": "lab",
+			"prompt": "Repariere den Auftrag „Das verschwundene Gateway“. Beobachte, bis zu welchem Schritt der erste Test kommt.",
+			"challenge": "gateway"
+		},
+		"optional": false
+	},
+	{
+		"id": "net-dhcp",
+		"stage": 2,
+		"title": "Adressen automatisch beziehen",
+		"intro": "DHCP kann die manuelle Einrichtung vieler Geräte vereinfachen.",
+		"paragraphs": [
+			"Ein DHCP-Dienst vergibt zeitlich befristete Konfigurationen, sogenannte Leases. Dazu gehören typischerweise Hostadresse, Präfix beziehungsweise Subnetzmaske, Standardgateway und DNS-Server. DHCP und DNS sind unterschiedliche Dienste.",
+			"Vereinfacht fragt ein Client zunächst nach einem Angebot, fordert eine angebotene Konfiguration an und erhält eine Bestätigung. Die bekannte Folge Discover, Offer, Request, Acknowledge hilft beim Verständnis; Vermittlung über mehrere Netze braucht zusätzliche Unterstützung.",
+			"Im Labor bietet der Router eine feste Lehrkonfiguration an. Mit „DHCP beziehen“ erhält der Client .10/24, Gateway .1 und den DNS-Server. Das klappt nur bei einer durchgehenden lokalen Verbindung. Ein kaputtes Kabel wird durch Automatik nicht repariert."
+		],
+		"example": "Eine neue Lerngruppe startet zwölf Laptops. Statt zwölfmal alle Felder einzutragen, beziehen die Geräte gültige Konfigurationen vom eingerichteten DHCP-Dienst.",
+		"takeaway": "DHCP liefert Konfiguration, DNS löst Namen auf.",
+		"quiz": {
+			"question": "Welche Angabe kann DHCP zusätzlich zur Hostadresse liefern?",
+			"options": [
+				"Die Adresse des DNS-Servers.",
+				"Den Inhalt jeder aufgerufenen Webseite.",
+				"Das Passwort jedes Nutzers."
+			],
+			"correct": 0,
+			"feedback": "DHCP kann mehrere Netzwerkeinstellungen zusammen liefern."
+		},
+		"activity": {
+			"kind": "choice",
+			"prompt": "Nach dem Beziehen einer Adresse klappt der Webaufruf noch nicht. Welche Schlussfolgerung ist korrekt?",
+			"options": [
+				"Zusätzlich DNS, Route und Dienst prüfen.",
+				"Eine Lease beweist die Erreichbarkeit jeder Webseite.",
+				"DHCP muss nun den Webseiteninhalt liefern."
+			],
+			"correct": 0,
+			"feedback": "Die Netzwerkkonfiguration ist ein Anfang, keine vollständige Ende-zu-Ende-Prüfung."
+		},
+		"optional": false
+	},
+	{
+		"id": "net-dns",
+		"stage": 2,
+		"title": "Namen in Adressen auflösen",
+		"intro": "Ein verständlicher Name spart das Merken von Zahlen. Die Zustellung nutzt anschließend Adressen.",
+		"paragraphs": [
+			"Das Domain Name System ist ein verteiltes Namenssystem. Für einen Webaufruf fragt ein Resolver passende DNS-Einträge ab. Ein A-Eintrag ordnet einem Namen eine IPv4-Adresse zu; ein AAAA-Eintrag betrifft IPv6.",
+			"DNS überträgt nicht die Webseite. Nach der Antwort muss der Client die ermittelte Adresse tatsächlich erreichen und mit dem passenden Dienst kommunizieren. Ein veralteter oder falscher Eintrag kann deshalb zu einem falschen Ziel führen.",
+			"DNS-Antworten können zeitlich begrenzt zwischengespeichert werden. Das vereinfacht Wiederholungen, kann aber veraltete Informationen eine Weile sichtbar halten. Unser Labor hat nur einen Namen und einen A-Eintrag; Hierarchie und Cache werden erklärt, aber nicht simuliert."
+		],
+		"example": "bibliothek.schule.test → 203.0.113.20. .test ist für Tests reserviert. In der App bleibt selbst diese Namensauflösung vollständig simuliert.",
+		"takeaway": "DNS liefert die Adresse; danach beginnt erst die Verbindung zum Webdienst.",
+		"quiz": {
+			"question": "Die Namensauflösung klappt. Was ist damit bereits bewiesen?",
+			"options": [
+				"Der Resolver hat eine Adresse zum Namen geliefert.",
+				"Die Webseite ist garantiert ehrlich und erreichbar.",
+				"Der Webserver hat bereits den gesamten Inhalt gesendet."
+			],
+			"correct": 0,
+			"feedback": "Adresse, Route, Dienst und Vertrauen müssen getrennt geprüft werden."
+		},
+		"activity": {
+			"kind": "lab",
+			"prompt": "Im Auftrag „Zahlen gehen, Namen nicht“ liefert DNS eine falsche Adresse. Korrigiere den Eintrag und teste über den Namen.",
+			"challenge": "dns"
+		},
+		"optional": false
+	},
+	{
+		"id": "net-schichten",
+		"stage": 3,
+		"title": "Arbeit aufteilen mit Schichten",
+		"intro": "Ein vereinfachtes Schichtenmodell trennt Aufgaben, die beim Austausch zusammenwirken.",
+		"paragraphs": [
+			"Die Anwendung beschreibt den gewünschten Dienst, etwa HTTP für Webseiten. Die Transportschicht verbindet passende Programme über Ports und bietet je nach Protokoll unterschiedliche Eigenschaften. Die Internetschicht adressiert und routet IP-Pakete.",
+			"Der Netzzugang überträgt Daten im lokalen Abschnitt über ein Medium. Beim Senden werden Informationen der unteren Ebenen um die oberen Daten gelegt. Dieser Vorgang heißt Kapselung; beim Empfangen werden die Ebenen wieder ausgewertet.",
+			"Das hier verwendete Vier-Schichten-Modell ist ein didaktisches TCP/IP-Modell. Andere Darstellungen, etwa das OSI-Modell, ziehen Grenzen anders. Eine Schichtzeichnung ist ein Werkzeug zum Erklären und Fehlersuchen, kein Foto des tatsächlichen Kabels."
+		],
+		"example": "HTTP-Anfrage → TCP-Daten → IP-Paket → Ethernet-Rahmen. Am Ziel werden diese Informationen in umgekehrter Reihenfolge ausgewertet.",
+		"takeaway": "Jede Ebene erfüllt eine Aufgabe und nutzt die darunterliegende.",
+		"quiz": {
+			"question": "Welche Aufgabe gehört in diesem Modell zur Internetschicht?",
+			"options": [
+				"Adressieren und Weiterleiten mit IP.",
+				"Die Bedeutung eines HTTP-Statuscodes bewerten.",
+				"Ein LAN-Kabel physisch feststecken."
+			],
+			"correct": 0,
+			"feedback": "IP verbindet Netze; HTTP und Medium erfüllen andere Aufgaben."
+		},
+		"activity": {
+			"kind": "choice",
+			"prompt": "Ordne beim Senden die Reihenfolge von innen nach außen.",
+			"options": [
+				"HTTP → TCP → IP → Ethernet",
+				"Ethernet → HTTP → TCP → IP",
+				"DNS → Bildschirm → IP → Tastatur"
+			],
+			"correct": 0,
+			"feedback": "Die Anwendung ist die Nutzlast der darunterliegenden Ebenen."
+		},
+		"optional": false
+	},
+	{
+		"id": "net-ethernet",
+		"stage": 3,
+		"title": "Ein Rahmen für den nächsten Abschnitt",
+		"intro": "Ethernet ist eine Familie von Regeln für kabelgebundene lokale Netze.",
+		"paragraphs": [
+			"Ein Ethernet-Rahmen enthält unter anderem Quell- und Ziel-MAC-Adressen sowie Nutzdaten. Der Switch lernt aus empfangenen Quelladressen, über welchen Anschluss ein Teilnehmer erreichbar ist. Für unbekannte Ziele gelten besondere Weiterleitungsregeln.",
+			"Ein Router empfängt einen lokalen Rahmen, verarbeitet das enthaltene IP-Paket und bildet für die nächste Schnittstelle eine neue lokale Übertragung. Deshalb reicht eine MAC-Adresse nicht als weltweite Wegbeschreibung.",
+			"Das physische Medium, die lokale Rahmung und die IP-Weiterleitung sind verschiedene Ebenen. Ein leuchtender Link zeigt eine lokale Verbindung an; er beweist weder korrekte IP-Einstellungen noch eine erreichbare Anwendung."
+		],
+		"example": "Die Ethernet-Zieladresse im Client-LAN gehört dem Router. Nach der Weiterleitung trägt der Rahmen im Servernetz eine passende Zieladresse für diesen Abschnitt.",
+		"takeaway": "Ein lokaler Link ist Voraussetzung, kein vollständiger Erfolgstest.",
+		"quiz": {
+			"question": "Ein Netzwerkkabel ist verbunden. Was folgt daraus noch nicht?",
+			"options": [
+				"Dass DNS und der Webdienst funktionieren.",
+				"Dass das Gerät einen lokalen physikalischen Link haben kann.",
+				"Dass ein Medium vorhanden ist."
+			],
+			"correct": 0,
+			"feedback": "Die weiteren Ebenen müssen zusätzlich funktionieren."
+		},
+		"activity": {
+			"kind": "choice",
+			"prompt": "Nur ein Client kann keine Daten senden; alle anderen am selben Switch funktionieren. Wo beginnst du?",
+			"options": [
+				"Bei seinem Kabel, Anschluss und seiner lokalen Konfiguration.",
+				"Mit dem Austausch aller weltweiten DNS-Server.",
+				"Mit der Annahme, jeder Server sei ausgefallen."
+			],
+			"correct": 0,
+			"feedback": "Die Eingrenzung auf einen Teilnehmer macht die lokale Prüfung sinnvoll."
+		},
+		"optional": false
+	},
+	{
+		"id": "net-tcp-udp",
+		"stage": 3,
+		"title": "Transport: zuverlässig oder knapp?",
+		"intro": "TCP und UDP bieten unterschiedliche Dienste für Anwendungen.",
+		"paragraphs": [
+			"TCP richtet eine Verbindung ein und stellt Anwendungen einen geordneten Bytestrom bereit. Verloren gegangene Daten können erneut angefordert werden; Empfangsbestätigungen, Flusskontrolle und Überlastkontrolle helfen beim Transport. TCP schützt nicht automatisch gegen Mitlesen.",
+			"UDP verschickt Datagramme mit wenig zusätzlichem Verbindungsaufwand. Es stellt selbst weder Zustellgarantie noch Reihenfolge oder automatische Wiederholung bereit. Eine Anwendung kann benötigte Sicherungen darauf aufbauen; wenig Aufwand bedeutet keine allgemeine Zusage einer höheren Geschwindigkeit.",
+			"Eine beendete oder unerreichbare Verbindung kann auch TCP scheitern lassen. Es garantiert keine vollständig fehlerfreie Anwendung. HTTP/1.1 und HTTP/2 nutzen typischerweise TCP; HTTP/3 nutzt QUIC über UDP. Das Labor zeigt bewusst den verbreiteten TCP-Ablauf."
+		],
+		"example": "Ein Dateitransfer braucht alle Daten in der richtigen Reihenfolge. Bei einem Live-Audiogespräch kann eine zu spät nachgelieferte Silbe dagegen nutzlos sein; die Anwendung entscheidet über den Umgang mit Verlusten.",
+		"takeaway": "TCP ordnet und wiederholt; UDP überlässt solche Anforderungen der Anwendung.",
+		"quiz": {
+			"question": "Welche Aussage zu TCP ist richtig?",
+			"options": [
+				"Es liefert einen geordneten Bytestrom, kann aber bei Verbindungsfehlern scheitern.",
+				"Es garantiert immer völlig fehlerfreie Webseiteninhalte.",
+				"Es verschlüsselt grundsätzlich alle Daten ohne Zusatzprotokoll."
+			],
+			"correct": 0,
+			"feedback": "TCP ist weder Inhaltsgarantie noch Verschlüsselung; Verbindungen können abbrechen."
+		},
+		"activity": {
+			"kind": "choice",
+			"prompt": "Für ein Live-Spiel treffen alte Positionsmeldungen verspätet ein. Welche Bewertung passt?",
+			"options": [
+				"Die Anwendung muss abwägen, ob erneutes Senden oder der neueste Stand wichtiger ist.",
+				"Jede Meldung muss unabhängig vom Alter unbegrenzt wiederholt werden.",
+				"UDP macht Paketverluste technisch unmöglich."
+			],
+			"correct": 0,
+			"feedback": "Die Anforderungen der Anwendung bestimmen die geeignete Transportsicherung."
+		},
+		"optional": false
+	},
+	{
+		"id": "net-http",
+		"stage": 3,
+		"title": "Der Browser bittet um eine Seite",
+		"intro": "HTTP regelt Anfragen und Antworten zwischen Client und Webdienst.",
+		"paragraphs": [
+			"Bei einer typischen Anfrage benennt eine Methode wie GET die gewünschte Handlung, und ein Pfad bezeichnet die Ressource. Der Server antwortet mit einem Statuscode und gegebenenfalls einem Inhalt. 200 bedeutet Erfolg dieser Anfrage; 404 bedeutet, dass die angefragte Ressource nicht gefunden wurde.",
+			"Eine Seite kann weitere Ressourcen wie Bilder und Skripte anfordern. Eine einzige sichtbare Seite ist daher nicht zwangsläufig eine einzige Netzwerkantwort. Das Labor beschränkt sich auf GET / und eine kleine Antwort.",
+			"HTTP allein verschlüsselt die Daten nicht. HTTPS schützt HTTP durch TLS. Der Erfolg eines HTTP-Abrufs sagt weder aus, dass die Information wahr ist, noch dass der Nutzer alle Inhalte ausführen sollte."
+		],
+		"example": "GET /katalog → 200 OK mit einer Ergebnisliste. GET /nicht-vorhanden → 404 Not Found. Beide Antworten zeigen zunächst, dass ein HTTP-Dienst geantwortet hat.",
+		"takeaway": "HTTP beschreibt Dienstkommunikation; TLS ergänzt ihren Transportschutz.",
+		"quiz": {
+			"question": "Was bedeutet der HTTP-Statuscode 404?",
+			"options": [
+				"Die angefragte Ressource wurde nicht gefunden.",
+				"Der Rechner hat grundsätzlich keine IP-Adresse.",
+				"Der Domainname muss immer falsch sein."
+			],
+			"correct": 0,
+			"feedback": "Ein HTTP-Statuscode stammt von einem antwortenden HTTP-Dienst; das Problem liegt nicht zwingend bei DNS."
+		},
+		"activity": {
+			"kind": "choice",
+			"prompt": "DNS klappt, Ping klappt, der Webaufruf wird blockiert. Was prüfst du als Nächstes?",
+			"options": [
+				"Ob der passende TCP-Port und Webdienst erreichbar sind.",
+				"Ob DNS die HTML-Datei gespeichert hat.",
+				"Ob die Datei einen schöneren Namen braucht."
+			],
+			"correct": 0,
+			"feedback": "Anwendung und Dienstport sind ein eigener Teil der Ende-zu-Ende-Verbindung."
+		},
+		"optional": false
+	},
+	{
+		"id": "net-smtp",
+		"stage": 3,
+		"title": "Eine Nachricht ist keine Webseite",
+		"intro": "Verschiedene Dienste brauchen passende Anwendungsprotokolle.",
+		"paragraphs": [
+			"SMTP dient dem Weiterleiten und Einliefern von E-Mail. Es verbindet Mailprogramme beziehungsweise Mailserver für den Versand. Der spätere Abruf eines Postfachs nutzt häufig IMAP oder POP3, nicht denselben Aufgabenbereich wie SMTP.",
+			"HTTP und SMTP nutzen beide darunterliegende Transport- und Netzfunktionen, beschreiben aber unterschiedliche Abläufe. Eine IP-Adresse allein entscheidet nicht, welcher Dienst genutzt wird; Protokoll, Port und laufender Dienst gehören zusammen.",
+			"Ein Maildienst kann TLS verwenden. Ob eine Nachricht während einzelner Transportabschnitte geschützt ist, sagt noch nichts über Ende-zu-Ende-Verschlüsselung ihres Inhalts aus. Das Weblabor sendet ausdrücklich keine echten E-Mails."
+		],
+		"example": "Ein Schulmailserver nimmt eine Nachricht per SMTP an und leitet sie weiter. Die Schülerin liest ihr Postfach später per IMAP oder in einer Weboberfläche per HTTPS.",
+		"takeaway": "SMTP ist für den Versand und die Weiterleitung von E-Mail zuständig.",
+		"quiz": {
+			"question": "Welches Protokoll ist für den Versand und die Weiterleitung von E-Mail gedacht?",
+			"options": ["SMTP", "DHCP", "ARP"],
+			"correct": 0,
+			"feedback": "DHCP konfiguriert Netze; ARP löst lokale IPv4-Nachbarn in MAC-Adressen auf."
+		},
+		"activity": {
+			"kind": "choice",
+			"prompt": "Ein Mailserver antwortet, aber die Webseite auf demselben Gerät nicht. Was folgt daraus?",
+			"options": [
+				"Ein erreichbarer Dienst beweist nicht, dass jeder andere Dienst läuft.",
+				"Alle Webseiten müssen jetzt automatisch funktionieren.",
+				"SMTP muss die fehlende Webseite ausliefern."
+			],
+			"correct": 0,
+			"feedback": "Dienste und Ports müssen einzeln betrachtet werden."
+		},
+		"optional": false
+	},
+	{
+		"id": "net-webreise",
+		"stage": 3,
+		"title": "Die Reise einer Webanfrage",
+		"intro": "Jetzt greifen die einzelnen Aufgaben zu einem Ablauf ineinander.",
+		"paragraphs": [
+			"Für bibliothek.schule.test fragt der Client zuerst den eingestellten DNS-Server. Die erhaltene Zieladresse vergleicht er mit seinen Routinginformationen. Für ein entferntes Ziel verwendet er das Standardgateway, sofern keine speziellere Route passt.",
+			"Die lokale Übertragung erreicht den Router. IP-Pakete gelangen ins Zielnetz. Für den hier gezeigten Webabruf folgt der Aufbau einer TCP-Verbindung. Bei HTTPS wird anschließend TLS ausgehandelt; erst im geschützten Kanal werden HTTP-Daten ausgetauscht.",
+			"Dies ist ein vereinfachter Ablauf ohne vorhandene Caches oder wiederverwendete Verbindungen. In echten Netzen können bereits bestehende Verbindungen Schritte verkürzen. Die Antwort braucht weiterhin einen Rückweg und erreicht schließlich die Anwendung."
+		],
+		"example": "DNS → Route und lokaler Rahmen → IP-Weiterleitung → TCP → bei HTTPS TLS → HTTP-Antwort. Das Protokollband im Labor zeigt, wo ein Fehler die Reise stoppt.",
+		"takeaway": "Name, Weg, Transport und Anwendung bauen aufeinander auf.",
+		"quiz": {
+			"question": "Was folgt in unserem HTTPS-Modell nach TCP und vor den HTTP-Daten?",
+			"options": [
+				"Die TLS-Aushandlung mit Zertifikatsprüfung.",
+				"Die erneute manuelle Kabelherstellung für jedes Zeichen.",
+				"Das Übersetzen der fertigen HTML-Seite durch DHCP."
+			],
+			"correct": 0,
+			"feedback": "TLS sichert hier den aufgebauten Transportkanal."
+		},
+		"activity": {
+			"kind": "lab",
+			"prompt": "Teste eine reparierte Bibliotheksverbindung und erkläre am Protokollband, warum DNS vor dem Webdienst steht.",
+			"challenge": "gateway"
+		},
+		"optional": false
+	},
+	{
+		"id": "net-fehlersuche",
+		"stage": 4,
+		"title": "Beobachten, eingrenzen, erneut testen",
+		"intro": "Eine gute Fehlerhypothese erklärt Beobachtungen und lässt sich prüfen.",
+		"paragraphs": [
+			"Beginne mit dem Symptom. Ist nur ein Client betroffen oder das ganze LAN? Klappt die Server-IP, aber nicht der Name? Funktioniert Ping, aber nicht HTTPS? Solche Vergleiche grenzen die beteiligte Ebene ein.",
+			"Prüfe dann gezielt: Link und Komponenten, gültige eindeutige Hostadressen, Präfix und Gateway, DNS-Eintrag, Rückroute, Dienstport und gegebenenfalls TLS. Ändere möglichst eine begründete Ursache und teste denselben Auftrag erneut.",
+			"Ein erfolgreicher Ping zeigt hier IP-Erreichbarkeit. Er bestätigt nicht automatisch den Dienst oder dessen Inhalte. Echte Systeme können ICMP blockieren, obwohl ein Webdienst funktioniert. Unser Lehrnetz modelliert diesen Sonderfall nicht."
+		],
+		"example": "Ping auf 203.0.113.20 klappt. bibliothek.schule.test liefert .99. Hypothese: falscher A-Eintrag. Korrektur: .20. Wiederholung: HTTP über den Namen testen.",
+		"takeaway": "Eine Beobachtung trägt genau so weit, wie der Test reicht.",
+		"quiz": {
+			"question": "Ping klappt, HTTPS scheitert am Zertifikat. Wo liegt die nächste sinnvolle Prüfung?",
+			"options": [
+				"Bei Zertifikatsname und Vertrauen.",
+				"Beim Ersetzen der bereits erreichbaren Server-IP durch eine Zufallszahl.",
+				"Bei der Größe des Bildschirmfensters."
+			],
+			"correct": 0,
+			"feedback": "Die unteren Schritte sind gelungen; die TLS-Prüfung liefert den konkreten Fehler."
+		},
+		"activity": {
+			"kind": "lab",
+			"prompt": "Repariere den Auftrag „Die Antwort bleibt aus“. Verfolge im Test, an welcher Stelle eine fehlende Rückroute auffällt.",
+			"challenge": "return"
+		},
+		"optional": false
+	},
+	{
+		"id": "net-https",
+		"stage": 4,
+		"title": "HTTPS: geschützt heißt nicht automatisch wahr",
+		"intro": "Ergänzung zu Datennetze I: Wir untersuchen den Schutz der Verbindung, ohne den vollständigen Bereich Datennetze II zu beanspruchen.",
+		"paragraphs": [
+			"HTTPS überträgt HTTP über einen mit TLS geschützten Kanal. TLS soll Vertraulichkeit und Integrität des Transports sichern und die angesprochene Gegenstelle authentisieren. Dafür werden unter anderem Zertifikate und der erwartete Hostname geprüft.",
+			"Ein gültiges Zertifikat muss zum angesprochenen Namen passen und über einen vertrauten Weg geprüft werden. Eine Zertifikatswarnung ist ein Anlass zur Prüfung. Im Labor gibt es nur die Schalter „vertrauenswürdig“ und „Name passt“; echte Zertifikatsketten und Kryptografie werden nicht ausgeführt.",
+			"HTTPS bestätigt nicht die Ehrlichkeit der Betreiber oder die fachliche Richtigkeit einer Seite. Außerdem bleibt Schutz auf dem Transportweg von Ende-zu-Ende-Schutz einer Nachricht zu unterscheiden. Datenschutz, Netzabsicherung und gesellschaftliche Folgen gehören zu weiterem Unterricht."
+		],
+		"example": "bibliothek.schule.test hat ein Zertifikat für genau diesen Namen. Ein Zertifikat für anderer.schule.test passt nicht, auch wenn beide Namen auf dieselbe IP zeigen könnten.",
+		"takeaway": "TLS schützt den Transport; Aussagen und Absichten der Seite prüfst du weiterhin.",
+		"quiz": {
+			"question": "Was garantiert HTTPS nicht?",
+			"options": [
+				"Dass alle Inhalte einer Webseite wahr und harmlos sind.",
+				"Dass TLS den Transport gegen Mitlesen und Veränderung schützen soll.",
+				"Dass der angesprochene Name bei TLS geprüft wird."
+			],
+			"correct": 0,
+			"feedback": "Ein geschützter Kanal ist keine automatische Qualitätskontrolle der Inhalte."
+		},
+		"activity": {
+			"kind": "lab",
+			"prompt": "Repariere „Sicher zur Bibliothek“ und prüfe ausdrücklich HTTPS. Ein HTTP-Erfolg erfüllt diesen Auftrag nicht.",
+			"challenge": "https"
+		},
+		"optional": true
+	}
+]

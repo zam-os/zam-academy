@@ -1,0 +1,137 @@
+{
+	"schema": 1,
+	"checked": "2026-10-21",
+	"curriculum": "https://www.lehrplanplus.bayern.de/fachlehrplan/realschule/9/it",
+	"school_type": "realschule",
+	"subject": "it",
+	"module": "2.5.1",
+	"title": "Datennetze I",
+	"hours": 14,
+	"grades": [5, 6, 7, 8, 9, 10],
+	"grade_assignment": "Der offizielle IT-Lehrplan ist jahrgangsübergreifend modular. Die URL mit /9/ ist kein Beleg einer festen Zuordnung zu Klasse 9. Das schulische Modulangebot bestimmt die Verwendung.",
+	"track": null,
+	"competencies": [
+		{
+			"focus": "Netzwerkkomponenten entsprechend ihrer Merkmale und Aufgaben auswählen und verbinden",
+			"lessons": [
+				"net-netzwerk",
+				"net-komponenten",
+				"net-medien",
+				"net-topologien",
+				"net-datenrate",
+				"net-ethernet"
+			],
+			"practice": "Komponenten- und Medienentscheidungen in Fallaufgaben; physische Verbindungen und Komponenten im festen Zweinetzmodell gezielt ein- und ausschalten; Kabelauftrag mit End-to-End-Test."
+		},
+		{
+			"focus": "Netzwerkkomponenten Adressen und Adressräume zuweisen, Kommunikation ermöglichen und Fehler beheben",
+			"lessons": [
+				"net-mac-ip",
+				"net-ipv4",
+				"net-subnetze",
+				"net-gateway",
+				"net-dhcp",
+				"net-dns",
+				"net-fehlersuche"
+			],
+			"practice": "Client- und Serveradressen, Präfixe, Gateways, Resolver und DNS-Eintrag konfigurieren; DHCP-Lease beziehen; Subnetzwerkzeug; sieben gezielt fehlerhafte Laboraufträge."
+		},
+		{
+			"focus": "Kommunikationsablauf und Zusammenspiel der Kommunikationsregeln mit vereinfachtem Schichtenmodell veranschaulichen",
+			"lessons": [
+				"net-schichten",
+				"net-ethernet",
+				"net-tcp-udp",
+				"net-http",
+				"net-smtp",
+				"net-webreise",
+				"net-fehlersuche"
+			],
+			"practice": "DNS-, Ping- und HTTP-Tests vergleichen; geordnetes Protokollband vom Netzzugang bis zur Antwort; Fehlerstelle und Testreichweite begründen."
+		}
+	],
+	"content_map": [
+		{
+			"focus": "Komponenten, leitungsgebundene und drahtlose Medien, Anordnung und Datendurchsatz",
+			"lessons": [
+				"net-komponenten",
+				"net-medien",
+				"net-topologien",
+				"net-datenrate"
+			]
+		},
+		{
+			"focus": "IP- und MAC-Adressen, Subnetze, DHCP und DNS",
+			"lessons": [
+				"net-mac-ip",
+				"net-ipv4",
+				"net-subnetze",
+				"net-gateway",
+				"net-dhcp",
+				"net-dns"
+			]
+		},
+		{
+			"focus": "Ethernet, IP, TCP/UDP, HTTP/SMTP und Wege der Datenübertragung",
+			"lessons": [
+				"net-schichten",
+				"net-ethernet",
+				"net-tcp-udp",
+				"net-http",
+				"net-smtp",
+				"net-webreise"
+			]
+		}
+	],
+	"extension": {
+		"lessons": ["net-https"],
+		"scope": "TLS-Schutzziele, Hostnamenprüfung und vereinfachtes Zertifikatsvertrauen sowie eine Modell-Portregel als bewusste Ergänzung. Keine vollständige Abdeckung von Datennetze II (2.5.2), dessen gesellschaftliche, rechtliche und kryptografische Inhalte weitere Arbeit erfordern.",
+		"required_for_core_progress": false
+	},
+	"technical_sources": [
+		{
+			"label": "DNS-Grundkonzepte · RFC 1034",
+			"url": "https://www.rfc-editor.org/rfc/rfc1034.html"
+		},
+		{
+			"label": "DHCP · RFC 2131",
+			"url": "https://www.rfc-editor.org/rfc/rfc2131.html"
+		},
+		{
+			"label": "TCP · RFC 9293",
+			"url": "https://www.rfc-editor.org/rfc/rfc9293.html"
+		},
+		{
+			"label": "HTTP-Semantik · RFC 9110",
+			"url": "https://www.rfc-editor.org/rfc/rfc9110.html"
+		},
+		{
+			"label": "TLS 1.3 · RFC 8446",
+			"url": "https://www.rfc-editor.org/rfc/rfc8446.html"
+		},
+		{
+			"label": "SMTP · RFC 5321",
+			"url": "https://www.rfc-editor.org/rfc/rfc5321.html"
+		},
+		{
+			"label": "Testdomains · RFC 2606",
+			"url": "https://www.rfc-editor.org/rfc/rfc2606.html"
+		},
+		{
+			"label": "Dokumentationsadressen · RFC 5737",
+			"url": "https://www.rfc-editor.org/rfc/rfc5737"
+		}
+	],
+	"limits": [
+		"Eine bearbeitete Lektion bestätigt erfolgreiche Aufgaben in diesem Lehrangebot, keine vollständige individuelle Kompetenz oder praktische Lehrkraftprüfung.",
+		"Das Labor simuliert zwei feste IPv4-Netze: 192.168.10.0/24 und das Dokumentationsnetz 203.0.113.0/24. Es sendet keine echten Pakete. Die Namen unter .test sind reservierte Übungsnamen.",
+		"Die Anschlüsse der beiden Routerseiten sind fest. MAC-Adressen und die Grundkonfiguration des DNS-Servers bleiben fest. Weitere freie Topologien, NAT, dynamisches Routing, ARP-Caches, DNS-Hierarchie, Laufzeiten und IPv6 sind nicht implementiert.",
+		"IP-Adressen, Präfixe, Gateways und der tatsächliche Hin- und Rückweg werden geprüft. DNS kann erfolgreich sein, obwohl der Webserver falsch konfiguriert oder getrennt ist. Ping kann erfolgreich sein, obwohl der Webdienst oder TLS fehlschlägt.",
+		"Der Subnetzrechner unterstützt /0 bis /32. /31 wird als Punkt-zu-Punkt-Sonderfall und /32 als Einzeladresse angezeigt. Das Hostlabor verwendet bewusst gewöhnliche Hostnetze mit Präfix /1 bis /30.",
+		"SMTP, verschiedene Medien und Schichten werden durch Erklärungen und Fallaufgaben erschlossen; die Anwendung betreibt keinen Mailserver und ersetzt keine Arbeit mit realer Hardware.",
+		"Die Datenratenrechnung ist ein vereinfachtes Modell mit frei gewähltem Nutzanteil, keine Messung eines echten Netzes.",
+		"TLS im Labor ist eine didaktische Vertrauens- und Hostnamenprüfung. Es werden keine Schlüssel, Zertifikatsketten oder echten Verschlüsselungsverfahren ausgeführt. TCP bietet keine Garantie ehrlicher Inhalte oder unfehlbarer Verbindungen."
+	],
+	"languages": ["de", "en"],
+	"english_scope": "Alle 19 Lektionen, Aufgaben und Rückmeldungen, sieben Laboraufträge, Simulatorfehler und Protokollspuren, Werkzeuge, Dialoge und Offline-Starthinweise vollständig auf Englisch. Stabile IDs und gemeinsamer Fortschritt. Die 38 ZAM-Karten bleiben deutsch."
+}

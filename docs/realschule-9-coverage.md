@@ -2,7 +2,7 @@
 
 Arbeitsstand: 21. Oktober 2026. Ziel: bis Ende dieser Woche die Inhalte der **9. Klasse** möglichst breit und fachlich belastbar am Lehrplan ausrichten. Diese Liste trennt vorhandene Pakete von tatsächlichem Lehrplanabgleich. Ein vorhandenes Teilpaket ist kein Beleg, dass alle Kompetenzen eines Fachs erfasst sind.
 
-Bestandsbasis: ZAM-Hauptstand `6c18573d` einschließlich Geschichte und Geographie; Academy-Hauptstand `59a8411`. Biologie 10 wird in diesem Branch ergänzt. Der [Jahrgangsstufenüberblick des ISB](https://www.lehrplanplus.bayern.de/jahrgangsstufenprofil/realschule/9) ist der fachliche Einstieg. Einträge des ZAM-Lehrplanangebots allein belegen noch keine fertigen Lerninhalte.
+Bestandsbasis: ZAM-Hauptstand `7c83cf0` einschließlich Geschichte, Geographie und Biologie-Abgleich; Academy-Hauptstand `eaf7b3c` einschließlich Physik 10. Die beiden IT-Pakete Algorithmen und Datennetze werden gemeinsam veröffentlicht (Academy-PR #18). Der [Jahrgangsstufenüberblick des ISB](https://www.lehrplanplus.bayern.de/jahrgangsstufenprofil/realschule/9) ist der fachliche Einstieg. Einträge des ZAM-Lehrplanangebots allein belegen noch keine fertigen Lerninhalte.
 
 ## Stand und Prioritäten
 
@@ -11,10 +11,10 @@ Bestandsbasis: ZAM-Hauptstand `6c18573d` einschließlich Geschichte und Geograph
 | Physik | Academy, 21 Lektionen / 70 Karten; in ZAM gebündelt | Bestehende Zweigabdeckung bei Erweiterungen erhalten |
 | Mathematik | Academy, 29 Lektionen / 108 Karten; in ZAM gebündelt | Bestehende Zweigabdeckung bei Erweiterungen erhalten |
 | Chemie | Academy, 35 Lektionen / 77 Karten; Zweig I und II/III, ZAM 0.56.0 | Vorhandenen veröffentlichten Stand erhalten |
-| Informationstechnologie / Informatik | Academy UML und SQL; zusätzlich alte Algorithmenzelle in ZAM | Bereits bearbeiteter Bestand; vollständigen jahrgangs- und modulabhängigen Umfang gegen das schulische IT-Angebot prüfen, nicht nur SQL/UML zählen |
+| Informationstechnologie / Informatik | Academy UML und SQL; Algorithmen (IT 2.6.1) und Datennetze (IT 2.5.1 plus HTTPS) mit vollständigen deutschen und englischen Lernpfaden; alte gemeinsame IT-Zelle in ZAM bis zur gemeinsamen Übernahme beider Nachfolger aktiv | [Bestandsabgleich und acht Zuordnungen](it-bestandsabgleich.md): Mapping (4 A / 1 B / 3 C) am 21.10.2026 freigegeben; Ablösung in ZAM erst mit beiden Nachfolgern. Die Module sind jahrgangsübergreifend; damit ist nicht das gesamte schulische IT-Angebot abgedeckt. |
 | **Geschichte** | Academy gemergt: 35 Kernlektionen + 4 englische Vertiefungen / 78 Karten; vorher nur 4 Atome / 8 Karten zu Weimar/NS | Mapping am 20.10.2026 freigegeben; Academy-PR #14 und ZAM-PR #430 gemergt |
 | **Geographie** | Academy und ZAM gemergt: 35 Kernlektionen, 7 englische Vertiefungen, 3 ergänzende Grundlagen / 91 Karten; vorher nur 4 Atome / 8 Karten | Alle sieben Pflichtbereiche mit [Abdeckungsmatrix](../geographie-realschule-9/coverage.json); Mapping (3 A / 1 B / 4 C) am 20.10.2026 freigegeben; Academy-PR #15 und ZAM-PR #429 gemergt |
-| **Biologie** | Regulär kein Fach der Klasse 9; alte Genetik- und Nervensystemzellen sind falsch eingeordnet | Siehe [Bestandsabgleich](biologie-bestandsabgleich.md): Genetik gehört zu Klasse 10, Nervensystem zu 7, die alte Evolution-10-Zelle zu 8. Dieser Branch ergänzt [Biologie 10](../biologie-realschule-10/) mit 37 Kernlektionen / 93 Karten insgesamt; Mapping 10 A / 1 B / 15 C am 21.10.2026 freigegeben. |
+| **Biologie** | Regulär kein Fach der Klasse 9; Academy Biologie 10 und ZAM-Abgleich gemergt | Siehe [Bestandsabgleich](biologie-bestandsabgleich.md): Genetik gehört zu Klasse 10, Nervensystem zu 7, die alte Evolution-10-Zelle zu 8. [Biologie 10](../biologie-realschule-10/) hat 37 Kernlektionen / 93 Karten insgesamt; Mapping 10 A / 1 B / 15 C am 21.10.2026 freigegeben. |
 | **Deutsch** | Nur Teilzelle Argumentation/Erörterung, 4 Atome / 8 Karten | Lesen/Literatur, Schreiben, Sprechen/Zuhören, Sprache und Medien am Lehrplan abgleichen |
 | **Englisch** | Nur Teilzelle Grammatik/Syntax, 4 Atome / 8 Karten | Sprachliche Mittel mit Lesen, Hören, Schreiben, Sprechen, Mediation und Themen verbinden; nicht Grammatik mit Fachabdeckung gleichsetzen |
 | Französisch | Teilzelle Imparfait/Futur/Objektpronomen, 2 Atome / 4 Karten | Gewählten sprachlichen Zweig und kommunikative Kompetenzen ergänzen |
@@ -24,7 +24,7 @@ Bestandsbasis: ZAM-Hauptstand `6c18573d` einschließlich Geschichte und Geograph
 | Kunst, Musik, Sport, Werken, Textiles Gestalten, Ernährung und Gesundheit | Kein eigenes Academy-Paket im geprüften Bestand | Wissensanteile und fachpraktische Leistungen unterscheiden; praktische Kompetenzen nicht als durch Karten erledigt ausweisen |
 | Sozialwesen/Soziallehre und weitere Wahlangebote wie Spanisch | Kein eigenes Academy-Paket im geprüften Bestand | Relevanz für Jahrgang und Schulangebot zuerst anhand des offiziellen Lehrplans prüfen |
 
-Biologie 10 wird auf ausdrücklichen Wunsch vorgezogen; es ist keine Lücke des regulären Klasse-9-Lehrplans. Die weiteren Klasse-9-Prioritäten sind Deutsch/Englisch → Zweigfächer → weitere Pflicht- und Wahlangebote. Diese Reihenfolge bündelt zusammenhängende Lücken; sie ist kein Versprechen bereits abgeschlossener Fachreviews oder zukünftiger automatischer Veröffentlichungen.
+Die Ablösung des IT-Altbestands durch zwei überschaubare Pakete wurde am 21.10.2026 ausdrücklich beauftragt. Aktuell bestehen sechs alte Klasse-9-Zellen. Nach der gemeinsamen IT-Ablösung verbleiben fünf: BwR, Wirtschaft und Recht, Deutsch, Englisch und Französisch. Biologie 10 wurde gesondert vorgezogen; es ist keine Lücke des regulären Klasse-9-Lehrplans. Die weitere Reihenfolge bleibt eine Arbeitspriorität, kein Versprechen bereits abgeschlossener Fachreviews oder zukünftiger automatischer Veröffentlichungen.
 
 ## Geographie: integriert
 
