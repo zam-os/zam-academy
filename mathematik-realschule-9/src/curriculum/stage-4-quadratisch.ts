@@ -128,8 +128,8 @@ const scheitelform: Lesson = {
   requiredCorrect: 3,
   celebrationMessage: "Du liest den Scheitel aus der Scheitelform ab und verschiebst Normalparabeln im Kopf.",
   teacherVideo: {
-    url: "https://www.youtube.com/watch?v=JLADCKXbeNE",
-    title: "Scheitelpunktform quadratische Funktionen",
+    url: "https://www.youtube.com/watch?v=i2WDgLldlJc",
+    title: "Scheitelpunktform quadratischer Funktionen erkennen",
     author: "Daniel Jung",
   },
 };
@@ -802,9 +802,9 @@ const parabelGerade: Lesson = {
   requiredCorrect: 3,
   celebrationMessage: "Du berechnest gemeinsame Punkte von Parabel und Gerade und unterscheidest Sekante, Tangente und Passante.",
   teacherVideo: {
-    url: "https://www.youtube.com/watch?v=o0-FLLT0Heo",
+    url: "https://www.youtube.com/watch?v=T7wnzYyfc1o",
     title: "Schnittpunkt Parabel und Gerade berechnen",
-    author: "Daniel Jung",
+    author: "Lehrerschmidt",
   },
 };
 
@@ -914,8 +914,8 @@ const extremwerte: Lesson = {
   requiredCorrect: 3,
   celebrationMessage: "Du findest Höchst- und Tiefstwerte im Scheitel und löst damit Optimierungsaufgaben.",
   teacherVideo: {
-    url: "https://www.youtube.com/watch?v=JQPJK2Bvz60",
-    title: "Extremwertaufgaben quadratische Funktionen",
+    url: "https://www.youtube.com/watch?v=G-Y_z65qvnM",
+    title: "Extremwertproblem ohne Ableitung lösen",
     author: "Daniel Jung",
   },
 };

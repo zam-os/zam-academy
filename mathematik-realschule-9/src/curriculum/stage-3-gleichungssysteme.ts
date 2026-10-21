@@ -158,8 +158,8 @@ const lineareGleichung: Lesson = {
   requiredCorrect: 3,
   celebrationMessage: "Du weißt, dass eine Gleichung mit zwei Variablen eine ganze Gerade von Lösungen hat, und machst die Punktprobe.",
   teacherVideo: {
-    url: "https://www.youtube.com/watch?v=nWkuF4LH_6o",
-    title: "Lineare Gleichungssysteme Einführung",
+    url: "https://www.youtube.com/watch?v=NtbtAwGJpvs",
+    title: "Punktprobe bei linearer Funktion",
     author: "Daniel Jung",
   },
 };
@@ -628,8 +628,8 @@ const loesungsfaelle: Lesson = {
   requiredCorrect: 3,
   celebrationMessage: "Du erkennst an Steigung und Achsenabschnitt, ob ein System eine, keine oder unendlich viele Lösungen hat.",
   teacherVideo: {
-    url: "https://www.youtube.com/watch?v=nWkuF4LH_6o",
-    title: "LGS Lösungsfälle (keine, unendlich viele Lösungen)",
+    url: "https://www.youtube.com/watch?v=SO0VTahpRnk",
+    title: "LGS zeichnerisch lösen (Schnittpunkt, parallel, identisch)",
     author: "Daniel Jung",
   },
 };

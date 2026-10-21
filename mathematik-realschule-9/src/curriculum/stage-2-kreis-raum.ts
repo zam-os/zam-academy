@@ -143,8 +143,8 @@ const kreiszahl: Lesson = {
   celebrationMessage: "Du weißt, warum u : d immer π ist, und rechnest Umfang, Radius und Durchmesser ineinander um.",
   teacherVideo: {
     url: "https://www.youtube.com/watch?v=eASZX0ocAc8",
-    title: "Kreisumfang berechnen, Kreiszahl Pi",
-    author: "Daniel Jung",
+    title: "Kreis - Umfang und Flächeninhalt berechnen",
+    author: "Lehrerschmidt",
   },
 };
 
@@ -752,9 +752,9 @@ const kegel: Lesson = {
   requiredCorrect: 3,
   celebrationMessage: "Du weißt, warum ein Spitzkörper ein Drittel der Säule hat, und berechnest Mantellinie und Mantel.",
   teacherVideo: {
-    url: "https://www.youtube.com/watch?v=0U6DsUbkNqE",
-    title: "Pyramide Volumen, Oberfläche, Höhe",
-    author: "Daniel Jung",
+    url: "https://www.youtube.com/watch?v=7KDWxSPxeJ8",
+    title: "Kegel - Oberfläche und Mantellinie berechnen",
+    author: "Lehrerschmidt",
   },
 };
 

@@ -462,9 +462,9 @@ const umkehrung: Lesson = {
   requiredCorrect: 3,
   celebrationMessage: "Du prüfst mit drei Längen, ob ein Winkel ein rechter ist, und unterscheidest spitz, recht und stumpf.",
   teacherVideo: {
-    url: "https://www.youtube.com/watch?v=XZr9f38NwDo",
-    title: "Kehrsatz des Satz des Pythagoras",
-    author: "Daniel Jung",
+    url: "https://www.youtube.com/watch?v=AoV_uEr3ldU",
+    title: "Umkehrung des Satzes des Pythagoras",
+    author: "Cornelsen Verlag",
   },
 };
 
@@ -1109,8 +1109,8 @@ const besondereWinkel: Lesson = {
   requiredCorrect: 3,
   celebrationMessage: "Du kennst sin² α + cos² α = 1 und die exakten Werte für 30°, 45° und 60°.",
   teacherVideo: {
-    url: "https://www.youtube.com/watch?v=N4evtJU-h9w",
-    title: "Trigonometrie besondere Winkel ohne Taschenrechner",
+    url: "https://www.youtube.com/watch?v=U0fRSsrWRII",
+    title: "sin² α + cos² α = 1 am Einheitskreis mit Pythagoras",
     author: "Daniel Jung",
   },
 };

@@ -598,7 +598,7 @@ const kenngroessen: Lesson = {
   celebrationMessage: "Du bestimmst Mittelwert, Median und Quartile und erkennst, wann ein Mittelwert täuscht.",
   teacherVideo: {
     url: "https://www.youtube.com/watch?v=OM90fGYTj_w",
-    title: "Mittelwert, Median und Quartile berechnen",
+    title: "Mittelwert und Median berechnen",
     author: "Daniel Jung",
   },
 };
