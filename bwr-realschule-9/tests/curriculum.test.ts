@@ -16,6 +16,8 @@ import {
 import { canAcceptSelfAssessment, checkWorkshop } from "../src/workshop";
 import { lessonLink, parseTrainingDeepLink } from "../src/zam/zam-link";
 
+const CARD_CONCEPTS = cell.atoms.flatMap((a) => a.practice_items.map((i) => i.concept));
+
 describe("public learning contract", () => {
   it("accounts for every curriculum competence and every core lesson", () => {
     expect(coverage.rows).toHaveLength(28);
@@ -76,6 +78,10 @@ describe("public learning contract", () => {
     it(`${lesson.id}: sourced explanations and an unambiguous case workshop`, () => {
       expect(lesson.paragraphs).toHaveLength(2);
       expect(new Set([lesson.quiz.answer, ...lesson.quiz.wrong]).size).toBe(3);
+      // A takeaway stands alone: never a distractor, never a card answer without its question.
+      expect(lesson.takeaway.length).toBeGreaterThan(50);
+      expect(lesson.quiz.wrong).not.toContain(lesson.takeaway);
+      expect(CARD_CONCEPTS).not.toContain(lesson.takeaway);
       for (const id of lesson.sourceIds) expect(SOURCES.some((s) => s.id === id)).toBe(true);
       const solution = lesson.workshop.entries.map((e) => e.target);
       expect(checkWorkshop(lesson.workshop, solution).every(Boolean)).toBe(true);

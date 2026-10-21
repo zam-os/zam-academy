@@ -17,7 +17,7 @@ Die [Abdeckungsmatrix](coverage.json) ordnet alle 28 Kompetenzerwartungen den Le
 
 Eine Lektion zählt erst nach richtigem Schnellcheck, Fallwerkstatt und eigener an drei Kriterien eingeschätzter Begründung auf Niveau 1. In Lektionen mit Rechen- oder Buchungsaufgaben sind zusätzlich drei selbst gelöste Varianten erforderlich. Niveau 2 bietet freiwillige Übertragung. Die eigene Begründung wird **nicht automatisch fachlich bewertet**. Eine vorher geöffnete Rechenlösung zählt nicht als eigene Lösung; ihr Versuch wird vor der Anzeige verbraucht und gespeichert. Mehrfaches Absenden zählt nicht mehrfach. Eine Lektionsbearbeitung ist kein Nachweis der Beherrschung jeder möglichen Buchungsvariante.
 
-Der Prüfer akzeptiert Dezimalkomma, Dezimalpunkt und übliche Tausendertrennungen, verlangt aber die korrekt auf Cent beziehungsweise zwei Dezimalstellen gerundeten Ergebnisse. Buchungen müssen vollständig sein: richtige Konten, Soll/Haben und Centbeträge. Zeilen dürfen umgeordnet und ein Kontenbetrag darf auf mehrere gleichgerichtete Zeilen aufgeteilt werden. Zusätzliche Konten oder eine Differenz von einem Cent werden abgelehnt.
+Der Prüfer akzeptiert Dezimalkomma, Dezimalpunkt und übliche Tausendertrennungen, verlangt aber die korrekt auf Cent beziehungsweise zwei Dezimalstellen gerundeten Ergebnisse. Buchungen müssen vollständig sein: richtige Konten, Soll/Haben und Centbeträge. Die Eingabemaske hat genau so viele Zeilen wie der Buchungssatz; ihre Reihenfolge ist frei. Zusätzliche Konten oder eine Differenz von einem Cent werden abgelehnt.
 
 ## Schulmodelle und Praxis
 
