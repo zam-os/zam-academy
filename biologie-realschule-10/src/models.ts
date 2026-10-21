@@ -52,7 +52,7 @@ export const MODEL_SCENARIOS: Record<ModelKind, Scenario[]> = {
   ecosystem: [
     { id: "balanced", label: "Kleiner Eintrag", settings: { load: 2, retention: 70 } },
     { id: "loaded", label: "Größerer Eintrag", settings: { load: 8, retention: 70 } },
-    { id: "buffer", label: "Stärkerer Rückhalt", settings: { load: 8, retention: 30 } },
+    { id: "buffer", label: "Stärkerer Abbau oder Abfluss", settings: { load: 8, retention: 30 } },
   ],
   screening: [
     { id: "rare", label: "Ausgangshäufigkeit 1 %", settings: { prevalence: 1 } },

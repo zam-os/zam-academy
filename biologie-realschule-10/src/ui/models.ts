@@ -22,7 +22,9 @@ const table = (head: string[], rows: string[][], caption: string) =>
 
 function dna(state: ModelState): string {
   const opposite = dnaComplement(state.sequence);
-  const shown = state.sequence.toUpperCase().slice(0, 16);
+  // dnaComplement trims, so the drawn strand must too or the pairs shift.
+  const sequence = state.sequence.trim().toUpperCase();
+  const shown = sequence.slice(0, 16);
   return `<label class="model-field">DNA-Folge, angezeigt in 5′–3′-Richtung<input data-model-text="sequence" value="${esc(state.sequence)}" maxlength="60" spellcheck="false" autocapitalize="characters"></label><button type="button" class="button secondary" data-model-update>Basen zuordnen</button>${
     opposite === null
       ? '<p class="feedback hint" role="status">Bitte 1 bis 60 Basen eingeben: nur A, T, G und C.</p>'
@@ -35,7 +37,7 @@ function dna(state: ModelState): string {
           })
           .join(
             "",
-          )}<text x="635" y="55">3′</text><text x="635" y="133">5′</text><text x="30" y="169">Schema ohne Maßstab${state.sequence.length > 16 ? " · erster Ausschnitt mit 16 Basen" : ""}</text></svg><p class="sequence">5′–${esc(state.sequence.toUpperCase())}–3′<br>3′–${esc(opposite)}–5′</p><p>Bei semikonservativer Replikation bekommt jeder alte Strang einen neuen komplementären Partner. Beide neuen Doppelstränge enthalten je einen alten und einen neuen Strang.</p>`
+          )}<text x="635" y="55">3′</text><text x="635" y="133">5′</text><text x="30" y="169">Schema ohne Maßstab${sequence.length > 16 ? " · erster Ausschnitt mit 16 Basen" : ""}</text></svg><p class="sequence">5′–${esc(sequence)}–3′<br>3′–${esc(opposite)}–5′</p><p>Bei semikonservativer Replikation bekommt jeder alte Strang einen neuen komplementären Partner. Beide neuen Doppelstränge enthalten je einen alten und einen neuen Strang.</p>`
   }`;
 }
 function division(state: ModelState): string {

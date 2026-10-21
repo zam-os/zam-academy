@@ -443,7 +443,7 @@ function bindModel(lesson: Lesson): void {
     const input = main.querySelector<HTMLInputElement>('[data-model-text="sequence"]');
     if (input)
       update(
-        { ...modelStates.get(lesson.id)!, selected: "", sequence: input.value.slice(0, 60) },
+        { ...modelStates.get(lesson.id)!, selected: "", sequence: input.value.trim().slice(0, 60) },
         '[data-model-text="sequence"]',
       );
   });

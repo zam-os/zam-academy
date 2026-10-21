@@ -150,6 +150,9 @@ describe("screening and deliberately fictional ecosystem model", () => {
     expect(renderModel(lesson, [], { ...initialModelState(), sequence: "<script>" })).not.toContain(
       'value="<script>',
     );
+    const padded = renderModel(lesson, [], { ...initialModelState(), sequence: " atgc " });
+    expect(padded).not.toContain("undefined");
+    expect(padded).toContain("5′–ATGC–3′<br>3′–TACG–5′");
   });
 });
 describe("own ecosystem research worksheet", () => {
