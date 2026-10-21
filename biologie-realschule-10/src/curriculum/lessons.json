@@ -1,0 +1,3729 @@
+[
+  {
+    "id": "bio-fragen",
+    "lb": 1,
+    "title": "Von einer Beobachtung zur prüfbaren Frage",
+    "period": "Untersuchen · Kommunizieren · Bewerten",
+    "intro": "Was lässt sich beobachten, und was behauptet eine Erklärung?",
+    "paragraphs": [
+      "Ein Teich ist nach einem warmen Wochenende grün geworden. Das ist zunächst eine Beobachtung. Die Aussage „Dünger aus einem nahen Garten hat Algenwachstum gefördert“ ist eine mögliche Erklärung. Sie braucht überprüfbare Belege; gleichzeitig könnten sich Licht, Temperatur oder Wasserstand verändert haben.",
+      "Eine biologische Untersuchungsfrage benennt die beobachtete Größe, mögliche Einflussgrößen und den Vergleich. Eine Hypothese sagt einen begründeten Zusammenhang voraus. Eine Übereinstimmung mit Daten stützt sie, beweist aber nicht, dass keine andere Ursache beteiligt ist. Wiederholungen und alternative Erklärungen gehören zur Auswertung."
+    ],
+    "takeaway": "Beobachtung, Hypothese und Schlussfolgerung sind unterschiedliche Schritte.",
+    "sourceIds": [
+      "lp",
+      "dna"
+    ],
+    "quiz": {
+      "question": "Was ist eine prüfbare biologische Hypothese?",
+      "answer": "Mehr Licht kann unter gleichen Bedingungen das Algenwachstum erhöhen.",
+      "wrong": [
+        "Ein grüner Teich ist grundsätzlich immer ein ökologisch schlechter Teich.",
+        "Ein einzelnes Foto beweist bereits, wodurch das Algenwachstum entstand."
+      ],
+      "explanation": "Die Hypothese verknüpft veränderbare Bedingungen mit einer beobachtbaren Wirkung."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Welche Art von Aussage ist das?",
+      "instruction": "Ordne jede Aussage zu. Prüfe dabei den Zusammenhang und nicht nur einzelne Schlüsselwörter.",
+      "categories": [
+        "Beobachtung",
+        "Hypothese",
+        "Wertung"
+      ],
+      "entries": [
+        {
+          "text": "Die Wasserprobe erscheint grün.",
+          "target": 0,
+          "feedback": "Eine wahrnehmbare Eigenschaft wird beschrieben."
+        },
+        {
+          "text": "Ein höheres Nährstoffangebot könnte das Wachstum fördern.",
+          "target": 1,
+          "feedback": "Hier wird ein möglicher Zusammenhang vorgeschlagen."
+        },
+        {
+          "text": "Der Teich sollte klarer sein.",
+          "target": 2,
+          "feedback": "Das ist ein Ziel oder ein Werturteil, noch keine Messung."
+        }
+      ],
+      "conclusion": "Eine Untersuchung trennt Daten von Erklärungen und Zielen."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Formuliere für den grünen Teich eine Frage, eine Hypothese und eine mögliche Gegenprüfung.",
+        "model": "Die Frage lautet, ob mehr Nährstoffe bei gleicher Beleuchtung das Wachstum erhöhen. Meine Hypothese erwartet dann mehr Algen. Ich vergleiche mehrere gleich große, gleich beleuchtete Modellansätze mit unterschiedlichem Nährstoffangebot und prüfe zusätzlich Temperatur und Ausgangsmenge. Eine einzelne grüne Probe entscheidet die Frage nicht.",
+        "criteria": [
+          "Eine veränderbare Einflussgröße genannt",
+          "Eine beobachtbare Wirkung erwartet",
+          "Alternative Erklärung oder Vergleich beschrieben"
+        ],
+        "hints": [
+          "Eine veränderbare Einflussgröße genannt",
+          "Eine beobachtbare Wirkung erwartet"
+        ]
+      },
+      "2": {
+        "prompt": "Ein Foto wird mit „Das ist sicher der Garten-Dünger“ kommentiert. Beurteile die Belegstärke.",
+        "model": "Das Foto dokumentiert möglicherweise eine Färbung zu einem bestimmten Zeitpunkt. Es misst weder die Nährstoffkonzentration noch den Eintragspfad. Ohne Vergleichsdaten und Informationen zu weiteren Einflussgrößen ist die konkrete Ursache offen; die Aussage ist eine zu prüfende Hypothese und keine gesicherte Diagnose.",
+        "criteria": [
+          "Beobachtung vom Schluss getrennt",
+          "Fehlende Daten benannt",
+          "Ein prüfbarer nächster Schritt vorgeschlagen"
+        ],
+        "hints": [
+          "Beobachtung vom Schluss getrennt",
+          "Fehlende Daten benannt"
+        ]
+      }
+    }
+  },
+  {
+    "id": "bio-untersuchung",
+    "lb": 1,
+    "title": "Variablen, Kontrolle und Wiederholung",
+    "period": "Untersuchen · Kommunizieren · Bewerten",
+    "intro": "Ein guter Vergleich verändert gezielt etwas und dokumentiert den Rest.",
+    "paragraphs": [
+      "In einem Gedankenexperiment wachsen Pflanzen in gleichen Gefäßen bei gleicher Wassermenge. Nur das Lichtangebot wird variiert. Licht ist die unabhängige Variable; beispielsweise die Längenzunahme ist die abhängige Größe. Gefäß, Substrat, Art und Beobachtungszeit werden vergleichbar gehalten.",
+      "Mehrere Pflanzen pro Bedingung machen die natürliche Streuung sichtbar. Ein Kontrollansatz zeigt, was ohne die gezielte Veränderung geschieht. Messwerte brauchen Einheiten und einen Zeitpunkt. Wenn zugleich Licht und Dünger verändert werden, lässt sich ein Unterschied nicht eindeutig einem Faktor zuordnen. Das digitale Beispiel ersetzt keinen eigenen praktischen Versuch."
+    ],
+    "takeaway": "Ein kontrollierter Vergleich variiert einen Faktor und erfasst Streuung.",
+    "sourceIds": [
+      "lp",
+      "dna"
+    ],
+    "quiz": {
+      "question": "Welche Planung isoliert die Wirkung von Licht am besten?",
+      "answer": "Gleiche Pflanzen und Bedingungen; nur das Licht wird verändert.",
+      "wrong": [
+        "Andere Pflanzen, andere Erde und anderes Licht werden kombiniert.",
+        "Nur eine Pflanze wird ohne Vergleich ein einziges Mal betrachtet."
+      ],
+      "explanation": "Je weniger andere Größen sich unterscheiden, desto besser ist die Lichtwirkung prüfbar."
+    },
+    "workshop": {
+      "kind": "timeline",
+      "title": "Einen Ablauf rekonstruieren",
+      "instruction": "Bringe die Schritte mit den Pfeilen in eine fachlich sinnvolle Reihenfolge. Begründe die Übergänge, bevor du prüfst.",
+      "categories": [],
+      "entries": [
+        {
+          "text": "Frage und erwartete Wirkung festhalten.",
+          "target": 0,
+          "feedback": "Lege fest, was verglichen werden soll."
+        },
+        {
+          "text": "Vergleichbare Ansätze und Kontrollbedingung planen.",
+          "target": 1,
+          "feedback": "Prüfe Faktoren und Wiederholungen vor Beginn."
+        },
+        {
+          "text": "Messwerte mit Einheit und Zeitpunkt protokollieren.",
+          "target": 2,
+          "feedback": "Auch unerwartete Werte bleiben im Protokoll."
+        },
+        {
+          "text": "Unterschiede, Streuung und Fehlerquellen auswerten.",
+          "target": 3,
+          "feedback": "Ein Ergebnis hat Grenzen."
+        }
+      ],
+      "conclusion": "Eine nachträglich passende Erklärung ersetzt keine saubere Planung."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Plane ein Gedankenexperiment zur Lichtwirkung auf Pflanzenwachstum.",
+        "model": "Ich verwende gleichartige Pflanzen mit vergleichbarer Ausgangsgröße und variiere nur die Lichtdauer. Erde, Wasser und Temperatur bleiben möglichst gleich. Mehrere Pflanzen pro Gruppe werden über dieselbe Zeit gemessen; die Ergebnisse erhalten Einheit, Streuung und dokumentierte Abweichungen.",
+        "criteria": [
+          "Licht als Einflussgröße festgelegt",
+          "Konstanten und Vergleich benannt",
+          "Wiederholungen und Messgröße genannt"
+        ],
+        "hints": [
+          "Licht als Einflussgröße festgelegt",
+          "Konstanten und Vergleich benannt"
+        ]
+      },
+      "2": {
+        "prompt": "In einer Gruppe wird täglich gegossen und beleuchtet, in der anderen selten gegossen und abgedunkelt. Was folgt aus besserem Wachstum?",
+        "model": "Der Unterschied kann durch Licht, Wasser oder ihr Zusammenwirken entstehen. Der Versuch trennt diese Einflüsse nicht. Für die Lichtfrage müssten die Wassermengen gleich sein; alternativ wäre ein geplanter Vergleich aller Kombinationen nötig. Mehr Pflanzen allein beseitigen diesen systematischen Fehler nicht.",
+        "criteria": [
+          "Verwechslung zweier Einflüsse erkannt",
+          "Schlussfolgerung eingeschränkt",
+          "Verbesserte Planung erläutert"
+        ],
+        "hints": [
+          "Verwechslung zweier Einflüsse erkannt",
+          "Schlussfolgerung eingeschränkt"
+        ]
+      }
+    }
+  },
+  {
+    "id": "bio-modelle",
+    "lb": 1,
+    "title": "Modelle und der Weg zur DNA-Struktur",
+    "period": "Untersuchen · Kommunizieren · Bewerten",
+    "intro": "Ein Modell macht Zusammenhänge prüfbar, lässt aber Details weg.",
+    "paragraphs": [
+      "Eine Leiter aus farbigen Bausteinen kann die Basenpaarung der DNA zeigen. Sie bildet weder die räumlichen Abstände maßstabsgerecht ab noch die chemischen Bindungen vollständig. Ein Modell hilft dann, wenn klar ist, welche Frage es beantwortet und welche Merkmale es bewusst auslässt.",
+      "Die Entschlüsselung der DNA-Struktur entstand aus vielen Arbeiten. Röntgenbeugungsdaten, darunter Rosalind Franklins Untersuchungen, und chemische Befunde begrenzten mögliche Strukturmodelle. Watson und Crick verbanden Befunde zu einem Modell. Wissenschaftliches Wissen entwickelt sich durch Daten, Zusammenarbeit, Kritik und neue Methoden; historische Rahmenbedingungen beeinflussen auch die Anerkennung von Beiträgen."
+    ],
+    "takeaway": "Nenne bei jedem Modell Aussage, Datengrundlage und Grenze.",
+    "sourceIds": [
+      "lp",
+      "dna"
+    ],
+    "quiz": {
+      "question": "Was kann ein einfaches DNA-Leitermodell zuverlässig veranschaulichen?",
+      "answer": "Die Zuordnung komplementärer Basen als vereinfachte Beziehung.",
+      "wrong": [
+        "Die exakten Abstände sämtlicher Atome im lebenden Zellkern.",
+        "Die vollständige Geschichte aller beteiligten Forschungsarbeiten."
+      ],
+      "explanation": "Ein Modell zeigt ausgewählte Beziehungen und ist kein vollständiges Abbild."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Modellaussage oder Modellgrenze?",
+      "instruction": "Ordne jede Aussage zu. Prüfe dabei den Zusammenhang und nicht nur einzelne Schlüsselwörter.",
+      "categories": [
+        "Nützliche Darstellung",
+        "Grenze des Modells"
+      ],
+      "entries": [
+        {
+          "text": "Gegenüber einer G-Base liegt eine C-Base.",
+          "target": 0,
+          "feedback": "Die Paarungsregel wird dargestellt."
+        },
+        {
+          "text": "Alle Bausteine sind handgroß und gleich gefärbt.",
+          "target": 1,
+          "feedback": "Größe und Farbe sind Darstellungsentscheidungen."
+        },
+        {
+          "text": "Die echte DNA bewegt sich in drei Dimensionen.",
+          "target": 1,
+          "feedback": "Eine flache Leiter lässt diese Dynamik weg."
+        }
+      ],
+      "conclusion": "Modellkritik macht eine Darstellung erst fachlich nutzbar."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre zwei Leistungen und zwei Grenzen eines DNA-Modells aus Bausteinen.",
+        "model": "Das Modell ordnet Basen zu und zeigt zwei zusammengehörende Stränge. Es kann damit eine Kopieridee verständlich machen. Seine Größe und Farben sind künstlich; chemische Einzelheiten und die Bewegung im Zellraum fehlen. Welche Grenze wichtig ist, hängt von der zu beantwortenden Frage ab.",
+        "criteria": [
+          "Beziehungen im Modell beschrieben",
+          "Mindestens zwei Grenzen genannt",
+          "Grenzen auf eine Fragestellung bezogen"
+        ],
+        "hints": [
+          "Beziehungen im Modell beschrieben",
+          "Mindestens zwei Grenzen genannt"
+        ]
+      },
+      "2": {
+        "prompt": "Warum ist „Zwei Forscher haben die DNA erfunden“ eine schlechte historische Erklärung?",
+        "model": "DNA existierte bereits in Lebewesen. Erarbeitet wurde ein Strukturmodell auf der Grundlage vieler chemischer und physikalischer Befunde. Beiträge etwa von Franklin werden durch die Erzählung unsichtbar. Eine sachliche Darstellung unterscheidet Naturgegenstand, Messdaten, Modell und historische Zusammenarbeit.",
+        "criteria": [
+          "Entdeckung von Erfindung unterschieden",
+          "Daten und mehrere Beiträge berücksichtigt",
+          "Die historische Verkürzung erklärt"
+        ],
+        "hints": [
+          "Entdeckung von Erfindung unterschieden",
+          "Daten und mehrere Beiträge berücksichtigt"
+        ]
+      }
+    },
+    "model": "dna"
+  },
+  {
+    "id": "bio-quellen",
+    "lb": 1,
+    "title": "Quellen, Diagramme und verständliche Fachsprache",
+    "period": "Untersuchen · Kommunizieren · Bewerten",
+    "intro": "Daten werden verständlicher, wenn du Herkunft und Darstellung prüfst.",
+    "paragraphs": [
+      "Eine Genetikmeldung kann Forschungsergebnisse, eine Pressemitteilung und eine Werbeaussage vermischen. Prüfe Urheber, Datum, Belege, Zweck und erkennbare Unsicherheiten. Eine genannte Studie ist hilfreich, wenn ihre Fragestellung und untersuchte Gruppe zur behaupteten Aussage passen.",
+      "Beim Lesen einer Grafik helfen Achsen, Einheiten, Grundgesamtheit und Zeitabstände. Absolute Zahlen und Prozentwerte beantworten unterschiedliche Fragen. Ein ausgewählter Ausschnitt kann einen kleinen Unterschied groß aussehen lassen. Für eine Präsentation übersetzt du den Zusammenhang in eigene verständliche Sätze und nennst Quelle sowie Grenze der Aussage."
+    ],
+    "takeaway": "Eine belastbare Darstellung nennt Herkunft, Bezugsgröße und Unsicherheit.",
+    "sourceIds": [
+      "lp",
+      "dna"
+    ],
+    "quiz": {
+      "question": "Welche Angabe braucht die Aussage „20 Prozent mehr“ unbedingt?",
+      "answer": "Den Ausgangswert, die Bezugsgruppe und den betrachteten Zeitraum.",
+      "wrong": [
+        "Nur eine auffällige Farbe und eine möglichst große Überschrift.",
+        "Die Zustimmung möglichst vieler Leser ohne weitere Datengrundlage."
+      ],
+      "explanation": "Ohne Bezug ist die Größenordnung nicht nachvollziehbar."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Was fehlt in der Meldung?",
+      "instruction": "Ordne jede Aussage zu. Prüfe dabei den Zusammenhang und nicht nur einzelne Schlüsselwörter.",
+      "categories": [
+        "Bezugsgröße",
+        "Quellenbeleg",
+        "Modellgrenze"
+      ],
+      "entries": [
+        {
+          "text": "„Doppelt so häufig“, ohne Ausgangshäufigkeit.",
+          "target": 0,
+          "feedback": "Eine Verdopplung kann sehr verschiedene absolute Größen bedeuten."
+        },
+        {
+          "text": "„Eine Studie beweist es“, ohne auffindbare Studie.",
+          "target": 1,
+          "feedback": "Die Belegkette lässt sich nicht prüfen."
+        },
+        {
+          "text": "Ein künstlicher Laboransatz wird direkt mit allen Ökosystemen gleichgesetzt.",
+          "target": 2,
+          "feedback": "Ein begrenztes Modell wird unzulässig verallgemeinert."
+        }
+      ],
+      "conclusion": "Gute Kommunikation macht die Belegkette nachvollziehbar."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Überarbeite die erfundene Meldung „Unser Test erkennt alles zu 99 Prozent“.",
+        "model": "Die Meldung muss zunächst sagen, welche Eigenschaft getestet wurde und worauf sich die 99 Prozent beziehen. Dazu gehören untersuchte Gruppe, Vergleichsmaßstab, Stichprobengröße und Quelle. Ohne diese Angaben bleiben Fehlerquote und Übertragbarkeit offen; das Wort „alles“ ist nicht belegt.",
+        "criteria": [
+          "Bezugsgröße hinterfragt",
+          "Quelle und untersuchte Gruppe verlangt",
+          "Grenzen verständlich formuliert"
+        ],
+        "hints": [
+          "Bezugsgröße hinterfragt",
+          "Quelle und untersuchte Gruppe verlangt"
+        ]
+      },
+      "2": {
+        "prompt": "Ein Diagramm zeigt 2 und 4 Fälle bei 10.000 Beobachtungen. Formuliere zwei korrekte Beschreibungen.",
+        "model": "Die absolute Differenz beträgt zwei Fälle pro 10.000 Beobachtungen. Die beobachtete Häufigkeit hat sich von 0,02 auf 0,04 Prozent verdoppelt. Beide Beschreibungen sind mathematisch vereinbar, sagen aber allein nichts darüber, ob Zufall, Erfassungsunterschiede oder ein ursächlicher Einfluss den Unterschied erklären.",
+        "criteria": [
+          "Absolute Differenz korrekt",
+          "Relative Änderung korrekt",
+          "Keine unbelegte Ursache behauptet"
+        ],
+        "hints": [
+          "Absolute Differenz korrekt",
+          "Relative Änderung korrekt"
+        ]
+      }
+    }
+  },
+  {
+    "id": "bio-argumentieren",
+    "lb": 1,
+    "title": "Fakten, Werte und begründete Entscheidungen",
+    "period": "Untersuchen · Kommunizieren · Bewerten",
+    "intro": "Eine biologische Tatsache allein entscheidet keine moralische Frage.",
+    "paragraphs": [
+      "Ob ein gentechnisches Verfahren eingesetzt werden soll, hängt nicht nur davon ab, ob es funktioniert. Zu berücksichtigen sind beispielsweise Nutzen, mögliche Schäden, Selbstbestimmung, Gerechtigkeit und Schutz von Lebewesen. Biologische Befunde und normative Maßstäbe müssen in einer Begründung erkennbar getrennt werden.",
+      "Eine Argumentationskette enthält eine Position, einen belegten Zusammenhang und die Bedeutung eines Kriteriums. Gegenargumente können die eigene Sicht verändern. Bei Fragen wie Reproduktionsmedizin oder Schwangerschaftsabbruch gelten unterschiedliche persönliche und gesellschaftliche Wertvorstellungen; ein fachlich begründetes Urteil setzt Perspektivwechsel und respektvollen Umgang voraus."
+    ],
+    "takeaway": "Begründe Urteile mit überprüfbaren Fakten und offen genannten Werten.",
+    "sourceIds": [
+      "lp",
+      "dna"
+    ],
+    "quiz": {
+      "question": "Welche Aussage nennt ausdrücklich einen Wertmaßstab?",
+      "answer": "Bei dieser Entscheidung gewichte ich Selbstbestimmung besonders stark.",
+      "wrong": [
+        "Die Messreihe enthält je Gruppe zwanzig dokumentierte Einzelwerte.",
+        "Die untersuchte DNA-Sequenz hat im Modell neun aufeinanderfolgende Basen."
+      ],
+      "explanation": "Selbstbestimmung ist ein normatives Kriterium, keine Messgröße."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Die Bausteine eines Urteils",
+      "instruction": "Ordne jede Aussage zu. Prüfe dabei den Zusammenhang und nicht nur einzelne Schlüsselwörter.",
+      "categories": [
+        "Biologischer Befund",
+        "Wert / Kriterium",
+        "Handlungsoption"
+      ],
+      "entries": [
+        {
+          "text": "Ein Verfahren kann bestimmte genetische Varianten erkennen.",
+          "target": 0,
+          "feedback": "Das ist eine fachlich zu prüfende Aussage."
+        },
+        {
+          "text": "Persönliche Gesundheitsdaten verdienen besonderen Schutz.",
+          "target": 1,
+          "feedback": "Hier wird ein Wert für Entscheidungen formuliert."
+        },
+        {
+          "text": "Ein Test wird nur nach informierter freiwilliger Entscheidung genutzt.",
+          "target": 2,
+          "feedback": "Das beschreibt eine mögliche Handlungsregel."
+        }
+      ],
+      "conclusion": "Andere Gewichtungen können zu anderen, ebenfalls begründeten Urteilen führen."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Formuliere ein Argument und ein Gegenargument zu freiwilligen Gentests.",
+        "model": "Ein Gentest kann Informationen für eine persönliche Entscheidung liefern; das stützt den Wert der Selbstbestimmung. Ein Gegenargument sind unklare Befunde oder ein möglicher Druck durch Dritte. Mein Urteil berücksichtigt deshalb freiwillige Einwilligung, verständliche Aufklärung und den Schutz der Daten, statt Information automatisch mit Nutzen gleichzusetzen.",
+        "criteria": [
+          "Fakt und Wert unterschieden",
+          "Gegenargument ernst genommen",
+          "Bedingtes Urteil begründet"
+        ],
+        "hints": [
+          "Fakt und Wert unterschieden",
+          "Gegenargument ernst genommen"
+        ]
+      },
+      "2": {
+        "prompt": "Eine Gruppe verlangt „Nur wer für das Verfahren ist, argumentiert wissenschaftlich“. Beurteile das.",
+        "model": "Wissenschaft kann Wirkungen, Risiken und Unsicherheiten untersuchen. Sie legt dadurch nicht allein fest, wie Werte zu gewichten sind. Sowohl Zustimmung als auch Ablehnung können fachlich begründet sein. Zu kritisieren wären falsche Tatsachenbehauptungen oder fehlende Begründungen, nicht eine bestimmte persönliche Position.",
+        "criteria": [
+          "Aufgabe der Wissenschaft abgegrenzt",
+          "Wertgewichtung erklärt",
+          "Respektvolle Diskussionsregel formuliert"
+        ],
+        "hints": [
+          "Aufgabe der Wissenschaft abgegrenzt",
+          "Wertgewichtung erklärt"
+        ]
+      }
+    }
+  },
+  {
+    "id": "bio-chromosomen",
+    "lb": 2,
+    "title": "Chromosomen lesen: Arbeitsform, Transportform und Karyogramm",
+    "period": "Genetik · Lernbereich 2",
+    "intro": "Ein X ist eine mögliche Verpackung von DNA, nicht ihre Dauerform.",
+    "paragraphs": [
+      "DNA ist mit Proteinen organisiert. In der Arbeitsform sind Bereiche zugänglich, damit Information genutzt werden kann. Vor einer Zellteilung wird das Material stark verdichtet. Ein verdoppeltes Chromosom besteht aus zwei Schwesterchromatiden, die am Centromer zusammenhängen; nicht jedes Chromosom hat jederzeit diese X-Form.",
+      "Der übliche diploide menschliche Chromosomensatz enthält 46 Chromosomen in 23 Paaren. Ein Karyogramm ordnet sichtbare Chromosomen nach vereinbarten Merkmalen und kann Zahl sowie grobe Struktur zeigen. XX und XY sind häufige Kombinationen der Geschlechtschromosomen, erfassen aber nicht alle Varianten menschlicher Entwicklung. Ein Karyogramm bestimmt weder Persönlichkeit noch den Wert eines Menschen."
+    ],
+    "takeaway": "Chromosomenzahl, Chromatidenzahl und Merkmalsausprägung sind zu unterscheiden.",
+    "sourceIds": [
+      "lp",
+      "chromosomes"
+    ],
+    "quiz": {
+      "question": "Wie viele Chromosomen umfasst der übliche diploide menschliche Chromosomensatz?",
+      "answer": "46 Chromosomen (23 Paare: 44 Autosomen + 2 Gonosomen)",
+      "wrong": [
+        "23 Chromosomen (insgesamt nur ein einfacher Chromosomensatz)",
+        "92 Chromosomen (nach jeder Verdopplung dauerhaft doppelt so viele)"
+      ],
+      "explanation": "Die DNA-Verdopplung verändert vor der Trennung die Chromatidenzahl, nicht die Zahl der Chromosomen."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Was beschreibt die Aussage?",
+      "instruction": "Ordne jede Aussage zu. Prüfe dabei den Zusammenhang und nicht nur einzelne Schlüsselwörter.",
+      "categories": [
+        "Arbeitsform",
+        "Transportform",
+        "Karyogramm"
+      ],
+      "entries": [
+        {
+          "text": "DNA-Abschnitte sind für das Ablesen zugänglich.",
+          "target": 0,
+          "feedback": "Die Arbeitsform erleichtert den Zugriff."
+        },
+        {
+          "text": "Starke Verdichtung erleichtert die geordnete Verteilung.",
+          "target": 1,
+          "feedback": "Verdichtete Chromosomen werden verteilt."
+        },
+        {
+          "text": "Eine geordnete Abbildung zeigt Chromosomenpaare.",
+          "target": 2,
+          "feedback": "Das Karyogramm ist eine Darstellung, kein eigener Zellzustand."
+        }
+      ],
+      "conclusion": "Eine Darstellung darf nicht mit dem Gegenstand verwechselt werden."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre, warum ein verdoppeltes menschliches Körperzell-Chromosom nicht zwei verschiedene Chromosomenpaare darstellt.",
+        "model": "Nach der Replikation hängen zwei Schwesterchromatiden als ein Chromosom zusammen. Das homologe Partnerchromosom ist ein anderer, von der anderen elterlichen Seite stammender Vertreter. In der üblichen diploiden Zelle bleiben es vor der Trennung 46 Chromosomen; die DNA-Menge ist jedoch verdoppelt.",
+        "criteria": [
+          "Schwesterchromatiden erklärt",
+          "Homologen Partner unterschieden",
+          "Zahl und DNA-Menge getrennt"
+        ],
+        "hints": [
+          "Schwesterchromatiden erklärt",
+          "Homologen Partner unterschieden"
+        ]
+      },
+      "2": {
+        "prompt": "Eine Abbildung zeigt XX. Jemand behauptet, daraus alle körperlichen und persönlichen Eigenschaften abzulesen. Antworte fachlich.",
+        "model": "Die Abbildung zeigt zunächst eine Chromosomenkombination. Häufige Zusammenhänge mit Geschlechtsentwicklung sind bekannt, aber Entwicklung hängt von weiteren Genen, biologischen Prozessen und Varianten ab. Persönliche Eigenschaften und Identität sind daraus nicht vollständig abzulesen; ein Karyogramm ist keine umfassende Beschreibung eines Menschen.",
+        "criteria": [
+          "Befund eng beschrieben",
+          "Grenze der Deutung erläutert",
+          "Keine pauschale Zuordnung vorgenommen"
+        ],
+        "hints": [
+          "Befund eng beschrieben",
+          "Grenze der Deutung erläutert"
+        ]
+      }
+    },
+    "model": "division"
+  },
+  {
+    "id": "bio-dna-bau",
+    "lb": 2,
+    "title": "DNA: Bausteine und komplementäre Paarung",
+    "period": "Genetik · Lernbereich 2",
+    "intro": "Die Reihenfolge von Basen trägt Information.",
+    "paragraphs": [
+      "Ein DNA-Nukleotid enthält einen Zucker, einen Phosphatrest und eine der Basen A, T, G oder C. Zucker und Phosphat bilden das Gerüst. Zwei gegenläufige Stränge sind über komplementäre Basen verbunden: A mit T, G mit C. In der üblichen Modellbeschreibung besitzt das A-T-Paar zwei und das G-C-Paar drei Wasserstoffbrücken.",
+      "Die Reihenfolge der Basen unterscheidet verschiedene DNA-Abschnitte. Aus der Folge eines Strangs lässt sich die komplementäre Folge des Gegenstrangs ableiten. Dabei müssen die gegenläufigen Richtungen berücksichtigt werden. Das Basenmodell zeigt eine ausgewählte Kopierbeziehung und nicht alle räumlichen, chemischen oder regulatorischen Eigenschaften der DNA."
+    ],
+    "takeaway": "Die komplementäre Paarung ist A–T und G–C.",
+    "sourceIds": [
+      "lp",
+      "dna"
+    ],
+    "quiz": {
+      "question": "Welche Base paart in der DNA komplementär mit Guanin?",
+      "answer": "Cytosin (C) über 3 Wasserstoffbrücken",
+      "wrong": [
+        "Adenin (A) über 2 Wasserstoffbrücken",
+        "Thymin (T) über 3 Wasserstoffbrücken"
+      ],
+      "explanation": "Im DNA-Doppelstrang gehört zu G ein C."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Bausteine eines DNA-Nukleotids",
+      "instruction": "Ordne jede Aussage zu. Prüfe dabei den Zusammenhang und nicht nur einzelne Schlüsselwörter.",
+      "categories": [
+        "Teil des Nukleotids",
+        "Kein DNA-Nukleotidbaustein"
+      ],
+      "entries": [
+        {
+          "text": "Phosphatrest",
+          "target": 0,
+          "feedback": "Er gehört zum Gerüst."
+        },
+        {
+          "text": "Desoxyribose",
+          "target": 0,
+          "feedback": "Der Zucker verbindet Gerüst und Base."
+        },
+        {
+          "text": "Eine fertige Aminosäurekette",
+          "target": 1,
+          "feedback": "Sie gehört zu einem Protein, nicht zum Nukleotid."
+        }
+      ],
+      "conclusion": "Ein Protein und eine DNA haben unterschiedliche Bausteine."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Beschreibe die DNA-Grundstruktur und leite zum Strang 5′–ATGC–3′ den Gegenstrang ab.",
+        "model": "DNA besteht aus zwei gegenläufigen Nukleotidsträngen mit Zucker-Phosphat-Gerüst. A paart mit T und G mit C. Gegenüber 5′–ATGC–3′ liegt 3′–TACG–5′; bei Angabe beider Stränge in 5′-zu-3′-Richtung muss die Reihenfolge des Gegenstrangs umgekehrt werden.",
+        "criteria": [
+          "Nukleotid und Gerüst genannt",
+          "Basenpaarung korrekt",
+          "Gegenläufigkeit berücksichtigt"
+        ],
+        "hints": [
+          "Nukleotid und Gerüst genannt",
+          "Basenpaarung korrekt"
+        ]
+      },
+      "2": {
+        "prompt": "Warum wären gleichgerichtete Leiterschienen ein missverständliches DNA-Modell?",
+        "model": "Die Paarungen könnten zwar passend gefärbt sein, aber die chemische Richtung der Stränge wäre falsch dargestellt. Bei DNA verlaufen die Stränge antiparallel. Das ist unter anderem für die Kopierprozesse wichtig. Eine gute Zeichnung kennzeichnet deshalb beide Enden und nennt die räumlichen Grenzen des flachen Leitermodells.",
+        "criteria": [
+          "Richtungsfehler erkannt",
+          "Fachliche Bedeutung erläutert",
+          "Verbesserung am Modell vorgeschlagen"
+        ],
+        "hints": [
+          "Richtungsfehler erkannt",
+          "Fachliche Bedeutung erläutert"
+        ]
+      }
+    },
+    "model": "dna"
+  },
+  {
+    "id": "bio-replikation",
+    "lb": 2,
+    "title": "DNA verdoppeln: semikonservative Replikation",
+    "period": "Genetik · Lernbereich 2",
+    "intro": "Aus einem Doppelstrang entstehen zwei Kopien mit je einem alten Strang.",
+    "paragraphs": [
+      "Vor einer Teilung wird die DNA kopiert. Die Stränge werden getrennt und dienen als Vorlagen. Passende neue Nukleotide werden nach der Basenpaarungsregel eingebaut. Jeder neue Doppelstrang enthält damit einen alten und einen neu gebildeten Strang: Das heißt semikonservativ.",
+      "Die Verdopplung findet im Zellzyklus vor der Kernteilung statt. Ein Chromosom kann danach zwei Schwesterchromatiden besitzen. Verdoppelte DNA bedeutet nicht automatisch eine Verdopplung des Chromosomensatzes. Das vereinfachte Modell lässt viele Enzyme, die unterschiedlichen Kopierrichtungen und mögliche Reparaturvorgänge aus; Kopierfehler können trotz Kontrollen vorkommen."
+    ],
+    "takeaway": "Semikonservativ heißt: ein alter plus ein neuer Strang je Kopie.",
+    "sourceIds": [
+      "lp",
+      "dna"
+    ],
+    "quiz": {
+      "question": "Was kennzeichnet semikonservative Replikation?",
+      "answer": "Jede neue DNA-Doppelhelix besitzt einen alten und einen neuen Strang.",
+      "wrong": [
+        "Eine neue DNA-Doppelhelix besteht ausschließlich aus zwei alten Strängen.",
+        "Jede neue DNA-Doppelhelix besitzt nach dem Kopieren nur noch einen Strang."
+      ],
+      "explanation": "Die beiden ursprünglichen Stränge dienen getrennt als Vorlage."
+    },
+    "workshop": {
+      "kind": "timeline",
+      "title": "Einen Ablauf rekonstruieren",
+      "instruction": "Bringe die Schritte mit den Pfeilen in eine fachlich sinnvolle Reihenfolge. Begründe die Übergänge, bevor du prüfst.",
+      "categories": [],
+      "entries": [
+        {
+          "text": "Den ursprünglichen DNA-Doppelstrang öffnen.",
+          "target": 0,
+          "feedback": "Die Vorlagen werden zugänglich."
+        },
+        {
+          "text": "Komplementäre Nukleotide an jeder Vorlage ergänzen.",
+          "target": 1,
+          "feedback": "Die Basenpaarung lenkt den Einbau."
+        },
+        {
+          "text": "Zwei Doppelstränge mit je einer alten Vorlage erhalten.",
+          "target": 2,
+          "feedback": "Das beschreibt den semikonservativen Charakter."
+        }
+      ],
+      "conclusion": "Die Kopie wird vor der Verteilung auf Tochterkerne hergestellt."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre semikonservativ an einem alten Strang mit der Folge ATGC.",
+        "model": "Der vorhandene Strang dient als Vorlage für TACG in Gegenrichtung. Auch zum zweiten ursprünglichen Strang wird ein neuer Partner ergänzt. Es entstehen zwei Doppelstränge, die jeweils einen alten und einen neuen Strang tragen. Die DNA-Menge nimmt zu; die Zahl der Chromosomensätze ändert sich dadurch allein nicht.",
+        "criteria": [
+          "Paarung korrekt",
+          "Alten und neuen Anteil beschrieben",
+          "DNA-Menge von Ploidie getrennt"
+        ],
+        "hints": [
+          "Paarung korrekt",
+          "Alten und neuen Anteil beschrieben"
+        ]
+      },
+      "2": {
+        "prompt": "Nach DNA-Verdopplung schreibt jemand „Aus 2n wird 4n“. Korrigiere die Aussage.",
+        "model": "Die DNA-Menge wird verdoppelt, doch die homologen Chromosomensätze bleiben zunächst gleich. Bei einem üblichen diploiden Ausgangskern liegen weiter zwei Sätze vor, nun mit Zwei-Chromatid-Chromosomen. Erst die geordnete Trennung verteilt die Kopien; die Begriffe n und DNA-Menge sind nicht austauschbar.",
+        "criteria": [
+          "Begriff n erklärt",
+          "Zustand nach Replikation beschrieben",
+          "Falschen Schluss begründet korrigiert"
+        ],
+        "hints": [
+          "Begriff n erklärt",
+          "Zustand nach Replikation beschrieben"
+        ]
+      }
+    },
+    "model": "dna"
+  },
+  {
+    "id": "bio-gene-proteine",
+    "lb": 2,
+    "title": "Gene, intergenische Bereiche und Proteine",
+    "period": "Genetik · Lernbereich 2",
+    "intro": "Nicht jeder DNA-Abschnitt codiert ein Protein.",
+    "paragraphs": [
+      "Ein Gen ist ein DNA-Abschnitt, aus dessen Information ein funktionelles Produkt entstehen kann, etwa eine RNA. Viele Gene liefern über RNA die Information für Proteine. Zwischen Genen liegen intergenische Bereiche. Nicht protein-codierend bedeutet nicht automatisch nutzlos; dort können beispielsweise wichtige regulatorische Abschnitte liegen.",
+      "Proteine sind aus Aminosäuren aufgebaut und entfalten ihre Funktionen durch ihre räumliche Form. Sie dienen etwa als Enzyme, Transportmoleküle oder Baustoffe. Ein Merkmal entsteht häufig aus dem Zusammenwirken mehrerer Gene, der Regulation und der Umwelt. Die einfache Kette Gen–Protein–Merkmal ist deshalb ein hilfreicher Einstieg, aber keine vollständige Erklärung jedes Merkmals."
+    ],
+    "takeaway": "Gene wirken über Produkte und Regulation; Merkmale haben oft mehrere Ursachen.",
+    "sourceIds": [
+      "lp",
+      "genetics"
+    ],
+    "quiz": {
+      "question": "Welche Aussage über nicht protein-codierende DNA ist angemessen?",
+      "answer": "Einige Abschnitte können zum Beispiel an der Regulation beteiligt sein.",
+      "wrong": [
+        "Jeder dieser Abschnitte ist sicher funktionslos und bedeutungslos.",
+        "Alle diese Abschnitte bestehen statt aus DNA aus fertigen Proteinen."
+      ],
+      "explanation": "Die Abwesenheit eines Proteinbauplans ist kein Beleg für Funktionslosigkeit."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Begriffe unterscheiden",
+      "instruction": "Ordne jede Aussage zu. Prüfe dabei den Zusammenhang und nicht nur einzelne Schlüsselwörter.",
+      "categories": [
+        "DNA-Bereich",
+        "Protein / Proteinaufgabe",
+        "Merkmalsausprägung"
+      ],
+      "entries": [
+        {
+          "text": "Ein regulatorischer Abschnitt zwischen zwei Genen.",
+          "target": 0,
+          "feedback": "Auch zwischen Genen liegt DNA."
+        },
+        {
+          "text": "Ein Enzym beschleunigt eine Reaktion.",
+          "target": 1,
+          "feedback": "Enzyme sind funktionelle Produkte; viele sind Proteine."
+        },
+        {
+          "text": "Die beobachtete Blütenfarbe einer Pflanze.",
+          "target": 2,
+          "feedback": "Die Ausprägung entsteht aus biologischen Zusammenhängen."
+        }
+      ],
+      "conclusion": "Bauplan, ausführendes Molekül und beobachtetes Merkmal sind verschiedene Ebenen."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre, wie ein Gen über ein Protein an einem Merkmal beteiligt sein kann.",
+        "model": "Die Information eines Gens kann über RNA in eine Aminosäurefolge übersetzt werden. Ein entstehendes Enzym beeinflusst beispielsweise die Bildung eines Farbstoffs. Ob und wie stark die Farbe auftritt, hängt auch von der Genaktivität, weiteren Genen und Umweltbedingungen ab; ein Gen ist nicht einfach das Merkmal selbst.",
+        "criteria": [
+          "Information und Produkt unterschieden",
+          "Proteinaufgabe mit Beispiel erläutert",
+          "Weitere Einflüsse berücksichtigt"
+        ],
+        "hints": [
+          "Information und Produkt unterschieden",
+          "Proteinaufgabe mit Beispiel erläutert"
+        ]
+      },
+      "2": {
+        "prompt": "Beurteile die Werbeaussage „Ein einziges Gen legt deine ganze Persönlichkeit fest“.",
+        "model": "Eine so umfassende Aussage reduziert komplexe Eigenschaften ohne ausreichenden Beleg auf eine einzelne Ursache. Viele biologische und psychologische Merkmale werden von mehreren genetischen und nicht genetischen Faktoren beeinflusst. Ein seriöser Testbericht müsste die konkret untersuchte Eigenschaft, Belegstärke und Grenzen nennen.",
+        "criteria": [
+          "Komplexität benannt",
+          "Unbelegte Ein-Ursachen-Aussage erkannt",
+          "Anforderungen an einen Beleg formuliert"
+        ],
+        "hints": [
+          "Komplexität benannt",
+          "Unbelegte Ein-Ursachen-Aussage erkannt"
+        ]
+      }
+    }
+  },
+  {
+    "id": "bio-proteinbiosynthese",
+    "lb": 2,
+    "title": "Proteinbiosynthese: Information übertragen und übersetzen",
+    "period": "Genetik · Lernbereich 2",
+    "intro": "RNA vermittelt zwischen DNA und Aminosäurefolge.",
+    "paragraphs": [
+      "Bei der Transkription wird zu einem DNA-Vorlagenabschnitt eine RNA gebildet. RNA verwendet Uracil statt Thymin. Die mRNA wird an Ribosomen abgelesen. Je drei aufeinanderfolgende Basen bilden ein Codon, das im Standardcode eine Aminosäure oder ein Stoppsignal bezeichnet.",
+      "tRNA-Moleküle vermitteln die Zuordnung von Codons zu Aminosäuren. Die entstehende Kette kann sich zu einem wirksamen Protein falten. Die vereinfachte Darstellung zeigt keine vollständige Genregulation oder RNA-Verarbeitung. Im digitalen Modell wird ein ausdrücklich als codierend gekennzeichneter DNA-Strang in mRNA-Schreibweise überführt; er darf nicht mit dem komplementär gelesenen Vorlagenstrang verwechselt werden."
+    ],
+    "takeaway": "Transkription bildet RNA; Translation übersetzt Codons in Aminosäuren.",
+    "sourceIds": [
+      "lp",
+      "genetics",
+      "dna"
+    ],
+    "quiz": {
+      "question": "Was ist ein Codon im Standardmodell der Translation?",
+      "answer": "Eine Folge aus drei mRNA-Basen mit einer Zuordnungsfunktion.",
+      "wrong": [
+        "Eine Folge aus drei fertigen Proteinen im Chromosomengerüst.",
+        "Eine Folge aus drei vollständigen Zellkernen einer Keimzelle."
+      ],
+      "explanation": "Ein Codon wird als Dreiergruppe in der mRNA gelesen."
+    },
+    "workshop": {
+      "kind": "timeline",
+      "title": "Einen Ablauf rekonstruieren",
+      "instruction": "Bringe die Schritte mit den Pfeilen in eine fachlich sinnvolle Reihenfolge. Begründe die Übergänge, bevor du prüfst.",
+      "categories": [],
+      "entries": [
+        {
+          "text": "Einen Genabschnitt in RNA umschreiben.",
+          "target": 0,
+          "feedback": "Das ist Transkription."
+        },
+        {
+          "text": "mRNA am Ribosom in Codons ablesen.",
+          "target": 1,
+          "feedback": "Die RNA-Folge wird gruppenweise ausgewertet."
+        },
+        {
+          "text": "Passende Aminosäuren zu einer Kette verknüpfen.",
+          "target": 2,
+          "feedback": "Die Translation erzeugt eine Aminosäurefolge."
+        },
+        {
+          "text": "Die Kette falten und gegebenenfalls weiterverarbeiten.",
+          "target": 3,
+          "feedback": "Die Form trägt zur Funktion bei."
+        }
+      ],
+      "conclusion": "DNA wird nicht selbst in Protein verwandelt; ihre Information wird genutzt."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre den Zusammenhang Gen–mRNA–Protein und das Stoppsignal.",
+        "model": "Die Transkription liefert zu einem Genabschnitt eine RNA. Das Ribosom liest die mRNA in Codons und verknüpft die zugeordneten Aminosäuren. Ein Stoppcodon beendet die Translation und liefert keine zusätzliche Aminosäure. Das Protein muss anschließend eine passende räumliche Struktur erreichen.",
+        "criteria": [
+          "Transkription beschrieben",
+          "Translation mit Dreiercode erklärt",
+          "Stopp von Aminosäure unterschieden"
+        ],
+        "hints": [
+          "Transkription beschrieben",
+          "Translation mit Dreiercode erklärt"
+        ]
+      },
+      "2": {
+        "prompt": "Im Modell wird das dritte Codon in ein Stoppcodon geändert. Welche begrenzte Vorhersage ist möglich?",
+        "model": "In dem betrachteten Leserahmen endet die dargestellte Aminosäurekette früher. Daraus kann eine veränderte Funktion entstehen, sie lässt sich aber nicht allein aus der Kettenlänge sicher vorhersagen. Das Modell zeigt nur einen Sequenzausschnitt und nicht alle Vorgänge einer lebenden Zelle.",
+        "criteria": [
+          "Frühes Ende korrekt beschrieben",
+          "Funktionsfolge vorsichtig eingeordnet",
+          "Modellgrenze genannt"
+        ],
+        "hints": [
+          "Frühes Ende korrekt beschrieben",
+          "Funktionsfolge vorsichtig eingeordnet"
+        ]
+      }
+    },
+    "model": "code"
+  },
+  {
+    "id": "bio-mitose",
+    "lb": 2,
+    "title": "Mitose und Zellzyklus",
+    "period": "Genetik · Lernbereich 2",
+    "intro": "Kopieren und Verteilen sind verschiedene Vorgänge.",
+    "paragraphs": [
+      "Zwischen Teilungen wächst eine Zelle und verdoppelt ihre DNA. Während der Mitose werden die kopierten Chromatiden geordnet auf zwei Tochterkerne verteilt. Die Chromosomen verdichten sich, ordnen sich in der Zellmitte an und die Schwesterchromatiden werden getrennt. Danach können zwei Zellen entstehen.",
+      "Mitose ermöglicht Wachstum, Ersatz und Reparatur. Sie erhält im vereinfachten Modell den Chromosomensatz des Ausgangskerns: Aus einem diploiden Kern entstehen diploide Tochterkerne, aus einem haploiden entsprechend haploide. Ohne neu auftretende Veränderungen tragen die Tochterkerne dieselbe Erbinformation. „Mitose macht immer diploid“ wäre deshalb falsch."
+    ],
+    "takeaway": "Mitose erhält den Ausgangssatz; die Replikation findet vorher statt.",
+    "sourceIds": [
+      "lp",
+      "genetics"
+    ],
+    "quiz": {
+      "question": "Was trennt sich bei der Mitose eines verdoppelten Chromosoms?",
+      "answer": "Die beiden Schwesterchromatiden werden auf Tochterkerne verteilt.",
+      "wrong": [
+        "Die beiden homologen Partner werden als ganze Paare gemeinsam entfernt.",
+        "Die Basen A und T werden dauerhaft auf verschiedene Arten verteilt."
+      ],
+      "explanation": "Vorher wurden die DNA-Kopien hergestellt; jetzt werden sie verteilt."
+    },
+    "workshop": {
+      "kind": "timeline",
+      "title": "Einen Ablauf rekonstruieren",
+      "instruction": "Bringe die Schritte mit den Pfeilen in eine fachlich sinnvolle Reihenfolge. Begründe die Übergänge, bevor du prüfst.",
+      "categories": [],
+      "entries": [
+        {
+          "text": "DNA im Zellzyklus verdoppeln.",
+          "target": 0,
+          "feedback": "Die Replikation geht der Mitose voraus."
+        },
+        {
+          "text": "Verdichtete Chromosomen in der Zellmitte ordnen.",
+          "target": 1,
+          "feedback": "Die geordnete Anordnung ermöglicht Verteilung."
+        },
+        {
+          "text": "Schwesterchromatiden zu entgegengesetzten Polen trennen.",
+          "target": 2,
+          "feedback": "Jeder Tochterkern erhält eine Kopie."
+        },
+        {
+          "text": "Tochterkerne ausbilden; gegebenenfalls Zellkörper teilen.",
+          "target": 3,
+          "feedback": "Kernteilung und Zellteilung sind unterscheidbare Vorgänge."
+        }
+      ],
+      "conclusion": "Die Chromosomenzahl wird am Centromer und bezogen auf einen Kern gezählt."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erläutere die Bedeutung der Mitose bei der Wundheilung und ihre Voraussetzung.",
+        "model": "Vor der Mitose wird die DNA kopiert. Die Schwesterchromatiden werden so verteilt, dass die Tochterkerne den Ausgangssatz erhalten. Zusätzliche Zellen können zum Ersatz beschädigten Gewebes beitragen. Das Modell beschreibt die geordnete Verteilung, nicht den gesamten Ablauf der Wundheilung.",
+        "criteria": [
+          "Replikation vor Mitose eingeordnet",
+          "Verteilung und Satz beschrieben",
+          "Anwendung und Modellgrenze genannt"
+        ],
+        "hints": [
+          "Replikation vor Mitose eingeordnet",
+          "Verteilung und Satz beschrieben"
+        ]
+      },
+      "2": {
+        "prompt": "Ein haploider Modellorganismus hat vier Chromosomen. Was erwartest du nach Mitose?",
+        "model": "Jeder Tochterkern erhält wieder vier Chromosomen und bleibt haploid. Vorher verdoppelte DNA und Zwei-Chromatid-Chromosomen machen ihn nicht diploid. Die Mitose erhält den vorhandenen Chromosomensatz; ihre Aufgabe ist keine Reduktion oder Erzeugung eines zweiten homologen Satzes.",
+        "criteria": [
+          "Vier Chromosomen pro Tochterkern",
+          "Haploid bleibt haploid",
+          "DNA-Menge von Satz getrennt"
+        ],
+        "hints": [
+          "Vier Chromosomen pro Tochterkern",
+          "Haploid bleibt haploid"
+        ]
+      }
+    },
+    "model": "division"
+  },
+  {
+    "id": "bio-meiose",
+    "lb": 2,
+    "title": "Meiose und genetische Vielfalt",
+    "period": "Genetik · Lernbereich 2",
+    "intro": "Eine Reduktion des Chromosomensatzes ermöglicht den Wechsel mit Befruchtung.",
+    "paragraphs": [
+      "Bei der Meiose folgt auf eine DNA-Verdopplung eine Folge von zwei Kernteilungen. Zuerst werden homologe Chromosomen getrennt, danach die Schwesterchromatiden. Aus einem diploiden Ausgangskern entstehen haploide Kernprodukte. Durch Befruchtung können zwei einfache Sätze wieder einen diploiden Satz bilden.",
+      "Die zufällige Verteilung der homologen Partner und ein Austausch von Abschnitten zwischen ihnen schaffen neue Kombinationen. Die Kernprodukte sind daher genetisch unterschiedlich. Bei der menschlichen Eizellbildung sind die Zellteilungen ungleich: Es entsteht gewöhnlich eine große Eizelle neben kleinen Polkörperchen. Vier Kernprodukte sind nicht gleichbedeutend mit vier funktionsfähigen Eizellen."
+    ],
+    "takeaway": "Meiose halbiert den Satz und kombiniert Erbinformation neu.",
+    "sourceIds": [
+      "lp",
+      "genetics"
+    ],
+    "quiz": {
+      "question": "Welchen Chromosomensatz besitzen die Kernprodukte nach vollständiger menschlicher Meiose?",
+      "answer": "Haploid (1n = 23 Chromosomen beim Menschen)",
+      "wrong": [
+        "Diploid (2n = 46 Chromosomen beim Menschen)",
+        "Tetraploid (4n = 92 Chromosomen beim Menschen)"
+      ],
+      "explanation": "Die homologen Sätze wurden in der ersten Teilung getrennt."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Was wird getrennt?",
+      "instruction": "Ordne jede Aussage zu. Prüfe dabei den Zusammenhang und nicht nur einzelne Schlüsselwörter.",
+      "categories": [
+        "Meiose I",
+        "Meiose II",
+        "Vor beiden Teilungen"
+      ],
+      "entries": [
+        {
+          "text": "Homologe Partnerchromosomen werden verteilt.",
+          "target": 0,
+          "feedback": "Die erste Teilung reduziert den Satz."
+        },
+        {
+          "text": "Schwesterchromatiden werden getrennt.",
+          "target": 1,
+          "feedback": "Die zweite Teilung verteilt die Chromatiden."
+        },
+        {
+          "text": "Die DNA wird genau einmal verdoppelt.",
+          "target": 2,
+          "feedback": "Zwischen den beiden Teilungen gibt es keine erneute vollständige Replikation."
+        }
+      ],
+      "conclusion": "Die Reihenfolge erklärt den Unterschied zur Mitose."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Vergleiche Mitose und Meiose bei diploidem Ausgangsmaterial.",
+        "model": "Mitose erhält den Satz und liefert im Modell zwei Tochterkerne mit derselben Information. Meiose umfasst nach einer Replikation zwei Kernteilungen und liefert haploide, neu kombinierte Kernprodukte. Sie dient der Fortpflanzung; bei menschlicher Eizellbildung entstehen dabei keine vier gleichwertigen Eizellen.",
+        "criteria": [
+          "Erhalt gegenüber Reduktion erklärt",
+          "Teilungen und Kombination unterschieden",
+          "Eizellbildung korrekt eingeordnet"
+        ],
+        "hints": [
+          "Erhalt gegenüber Reduktion erklärt",
+          "Teilungen und Kombination unterschieden"
+        ]
+      },
+      "2": {
+        "prompt": "Warum wird die Chromosomenzahl bei sexueller Fortpflanzung nicht jede Generation verdoppelt?",
+        "model": "Die Meiose reduziert in der Keimzelllinie den diploiden Satz zu einem haploiden. Bei der Befruchtung vereinigen sich zwei einfache Sätze wieder zum diploiden Satz. Neue Kombinationen verändern dabei nicht zwangsläufig die Chromosomenzahl; Zahl und Informationskombination sind unterschiedliche Aspekte.",
+        "criteria": [
+          "Meiose mit Halbierung",
+          "Befruchtung mit Vereinigung",
+          "Zahl von Kombination getrennt"
+        ],
+        "hints": [
+          "Meiose mit Halbierung",
+          "Befruchtung mit Vereinigung"
+        ]
+      }
+    },
+    "model": "division"
+  },
+  {
+    "id": "bio-allele",
+    "lb": 2,
+    "title": "Genotyp, Phänotyp und Allele",
+    "period": "Genetik · Lernbereich 2",
+    "intro": "Beobachtbare Eigenschaften sind nicht die Erbinformation selbst.",
+    "paragraphs": [
+      "Allele sind Varianten eines Gens. Im einfachen diploiden Modell besitzt ein Individuum am betrachteten Genort zwei Allele. AA und aa heißen homozygot, Aa heterozygot. Groß- und Kleinbuchstaben sind vereinbarte Symbole; sie bedeuten nicht gut und schlecht, stark und schwach oder häufig und selten.",
+      "Der Genotyp beschreibt die betrachtete Allelkombination. Der Phänotyp umfasst beobachtbare oder messbare Eigenschaften, auch innere Funktionen. Bei vollständiger Dominanz reicht im Modell ein A-Allel für die dominante Ausprägung. Das ist eine Beziehung in einem bestimmten Merkmalsmodell; Umwelt, weitere Gene und unvollständige Dominanz können andere Zusammenhänge ergeben."
+    ],
+    "takeaway": "Dominant ist keine Wertung und bedeutet nicht automatisch häufig.",
+    "sourceIds": [
+      "lp",
+      "genetics"
+    ],
+    "quiz": {
+      "question": "Welche Allelkombination ist heterozygot?",
+      "answer": "Aa: zwei unterschiedliche Allele am betrachteten Genort.",
+      "wrong": [
+        "AA: zwei gleiche dominante Allele am betrachteten Genort.",
+        "aa: zwei gleiche rezessive Allele am betrachteten Genort."
+      ],
+      "explanation": "Heterozygot bedeutet, dass sich die beiden Allele unterscheiden."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Ein kleines Begriffsnetz",
+      "instruction": "Ordne jede Aussage zu. Prüfe dabei den Zusammenhang und nicht nur einzelne Schlüsselwörter.",
+      "categories": [
+        "Genotyp",
+        "Phänotyp",
+        "Beziehung zweier Allele"
+      ],
+      "entries": [
+        {
+          "text": "Die Pflanze trägt Aa.",
+          "target": 0,
+          "feedback": "Die Allelkombination wird genannt."
+        },
+        {
+          "text": "Die Pflanze bildet violette Blüten.",
+          "target": 1,
+          "feedback": "Eine beobachtbare Ausprägung wird beschrieben."
+        },
+        {
+          "text": "Im Beispiel überdeckt A die Wirkung von a vollständig.",
+          "target": 2,
+          "feedback": "Dominanz beschreibt eine Beziehung im gewählten Modell."
+        }
+      ],
+      "conclusion": "Ein sichtbares Merkmal verrät nicht immer den Genotyp."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Warum können AA und Aa bei vollständiger Dominanz gleich aussehen?",
+        "model": "Im gewählten Modell genügt das A-Allel, damit die dominante Ausprägung entsteht. AA und Aa besitzen damit denselben betrachteten Phänotyp, aber unterschiedliche Genotypen. Die heterozygote Pflanze kann zusätzlich a weitergeben. Die Aussage gilt für dieses Dominanzmodell, nicht für jedes denkbare Merkmal.",
+        "criteria": [
+          "Dominanzmodell genannt",
+          "Genotypen unterschieden",
+          "Geltungsbereich eingeschränkt"
+        ],
+        "hints": [
+          "Dominanzmodell genannt",
+          "Genotypen unterschieden"
+        ]
+      },
+      "2": {
+        "prompt": "Ein seltenes Allel ist dominant. Ist das ein Widerspruch?",
+        "model": "Nein. Dominanz beschreibt, wie sich zwei Allele bei einem Heterozygoten auf den betrachteten Phänotyp auswirken. Häufigkeit beschreibt ihre Verteilung in einer Population. Ein dominantes Allel kann selten sein; weder die Häufigkeit noch eine Wertung lässt sich aus dem Großbuchstaben ableiten.",
+        "criteria": [
+          "Dominanz erklärt",
+          "Häufigkeit getrennt",
+          "Kein Werturteil aus Symbolen"
+        ],
+        "hints": [
+          "Dominanz erklärt",
+          "Häufigkeit getrennt"
+        ]
+      }
+    },
+    "model": "inheritance"
+  },
+  {
+    "id": "bio-mendel-uniform",
+    "lb": 2,
+    "title": "Mendel I: Uniformität der ersten Generation",
+    "period": "Genetik · Lernbereich 2",
+    "intro": "Welche Allele treffen bei einer Kreuzung aufeinander?",
+    "paragraphs": [
+      "Im vereinfachten monohybriden Modell werden AA und aa gekreuzt. Der erste Elternteil bildet Keimzellen mit A, der zweite mit a. Alle Kombinationen ergeben Aa. Die F1 ist für den betrachteten Genotyp einheitlich; bei vollständiger Dominanz ist auch die sichtbare Ausprägung einheitlich dominant.",
+      "Die erste Mendelsche Regel bezieht sich auf passend ausgewählte reinerbige Ausgangsformen. Sie sagt nicht, dass beliebige Eltern nur gleich aussehende Nachkommen haben. Ein Kreuzungsschema zeigt erwartbare Kombinationen unter seinen Annahmen, keine vollständige Vorhersage aller Eigenschaften eines Lebewesens."
+    ],
+    "takeaway": "AA × aa ergibt im Ein-Gen-Modell ausschließlich Aa.",
+    "sourceIds": [
+      "lp",
+      "genetics"
+    ],
+    "quiz": {
+      "question": "Welche Genotypen entstehen im Modell aus AA × aa?",
+      "answer": "Alle Nachkommen sind heterozygot: Aa.",
+      "wrong": [
+        "Alle Nachkommen sind homozygot dominant: AA.",
+        "Alle Nachkommen sind homozygot rezessiv: aa."
+      ],
+      "explanation": "Jede Keimzelle der einen Seite bringt A und jede der anderen a mit."
+    },
+    "workshop": {
+      "kind": "timeline",
+      "title": "Einen Ablauf rekonstruieren",
+      "instruction": "Bringe die Schritte mit den Pfeilen in eine fachlich sinnvolle Reihenfolge. Begründe die Übergänge, bevor du prüfst.",
+      "categories": [],
+      "entries": [
+        {
+          "text": "Die reinerbigen Genotypen AA und aa festlegen.",
+          "target": 0,
+          "feedback": "Die Ausgangsbedingungen sind wesentlich."
+        },
+        {
+          "text": "Mögliche Keimzellallele A beziehungsweise a notieren.",
+          "target": 1,
+          "feedback": "Jede Keimzelle trägt eines der Allele."
+        },
+        {
+          "text": "Je ein Allel beider Seiten zu Aa kombinieren.",
+          "target": 2,
+          "feedback": "Die F1 ist an diesem Genort einheitlich."
+        }
+      ],
+      "conclusion": "Die Merkmalsausprägung hängt zusätzlich vom Dominanzverhältnis ab."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Leite die F1 aus AA × aa ab und nenne eine Modellannahme.",
+        "model": "AA liefert in diesem Modell nur A-Keimzellen und aa nur a-Keimzellen. Jede Kombination ergibt Aa. Bei vollständiger Dominanz erscheint derselbe dominante Phänotyp. Betrachtet wird ein einzelner Genort ohne abweichende Überlebenswahrscheinlichkeiten; die Aussage umfasst nicht alle Eigenschaften der Nachkommen.",
+        "criteria": [
+          "Keimzellen abgeleitet",
+          "Aa begründet",
+          "Eine Annahme oder Grenze benannt"
+        ],
+        "hints": [
+          "Keimzellen abgeleitet",
+          "Aa begründet"
+        ]
+      },
+      "2": {
+        "prompt": "Gilt die Gleichheit des F1-Genotyps auch ohne vollständige Dominanz?",
+        "model": "Am betrachteten Genort bleibt aus AA × aa der Genotyp Aa einheitlich. Welche Ausprägung dieser Genotyp zeigt, hängt vom Allelverhältnis ab, etwa intermediär oder kodominant. Genotypische Uniformität und die Gleichsetzung mit einer elterlichen Ausprägung sind deshalb getrennt zu begründen.",
+        "criteria": [
+          "Genotypische Uniformität erhalten",
+          "Phänotyp vom Allelverhältnis abhängig",
+          "Genotyp und Ausprägung getrennt"
+        ],
+        "hints": [
+          "Genotypische Uniformität erhalten",
+          "Phänotyp vom Allelverhältnis abhängig"
+        ]
+      }
+    },
+    "model": "inheritance"
+  },
+  {
+    "id": "bio-mendel-spaltung",
+    "lb": 2,
+    "title": "Mendel II: Spaltung ist eine Wahrscheinlichkeit",
+    "period": "Genetik · Lernbereich 2",
+    "intro": "Vier Felder im Schema sind keine garantierte Vier-Kinder-Familie.",
+    "paragraphs": [
+      "Bei Aa × Aa kann jede Seite A oder a beitragen. Das Schema enthält AA, Aa, Aa und aa. Erwartet wird damit 1:2:1 für die Genotypen. Bei vollständiger Dominanz entsprechen drei Felder der dominanten und eines der rezessiven Ausprägung: phänotypisch 3:1.",
+      "Das Verhältnis beschreibt Wahrscheinlichkeiten und nähert sich bei vielen unabhängigen Ereignissen als Häufigkeit an. Es sagt nicht, dass bei vier Nachkommen genau einer aa sein muss. Jeder neue Fall besitzt unter unveränderten Annahmen wieder dieselbe Wahrscheinlichkeit. Intermediäre oder kodominante Merkmale zeigen ein anderes phänotypisches Verhältnis."
+    ],
+    "takeaway": "Bei Aa × Aa gilt 1:2:1 genotypisch; 3:1 nur bei vollständiger Dominanz.",
+    "sourceIds": [
+      "lp",
+      "genetics"
+    ],
+    "quiz": {
+      "question": "Welches phänotypische Verhältnis wird bei Aa × Aa mit vollständiger Dominanz erwartet?",
+      "answer": "3 : 1 (3 dominant : 1 rezessiv)",
+      "wrong": [
+        "1 : 1 (1 dominant : 1 rezessiv)",
+        "1 : 3 (1 dominant : 3 rezessiv)"
+      ],
+      "explanation": "Drei der vier gleich wahrscheinlichen Kombinationen besitzen mindestens ein A."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Wahrscheinlichkeit oder falsche Garantie?",
+      "instruction": "Ordne jede Aussage zu. Prüfe dabei den Zusammenhang und nicht nur einzelne Schlüsselwörter.",
+      "categories": [
+        "Korrekte Modellfolge",
+        "Nicht aus dem Modell ableitbar"
+      ],
+      "entries": [
+        {
+          "text": "aa hat pro Nachkomme Wahrscheinlichkeit 25 Prozent.",
+          "target": 0,
+          "feedback": "Ein Viertel der Kombinationen ist aa."
+        },
+        {
+          "text": "Vier Nachkommen enthalten sicher genau einen aa-Nachkommen.",
+          "target": 1,
+          "feedback": "Zufällige Stichproben können anders ausfallen."
+        },
+        {
+          "text": "Nach drei AA-Nachkommen muss als Nächstes aa entstehen.",
+          "target": 1,
+          "feedback": "Unabhängige neue Kombinationen gleichen frühere Fälle nicht gezielt aus."
+        }
+      ],
+      "conclusion": "Ein Kreuzungsschema ist ein Wahrscheinlichkeitsmodell."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre den Unterschied zwischen 1:2:1 und 3:1 beim selben Kreuzungsschema.",
+        "model": "AA, Aa, Aa und aa ergeben genotypisch ein Verhältnis von eins zu zwei zu eins. Wenn A vollständig dominant wirkt, werden AA und Aa demselben Phänotyp zugeordnet. Dann ergibt sich phänotypisch drei zu eins. Ohne diese Dominanzannahme ist das zweite Verhältnis nicht begründet.",
+        "criteria": [
+          "Genotypische Felder genannt",
+          "Phänotypen zusammengefasst",
+          "Dominanz als Bedingung genannt"
+        ],
+        "hints": [
+          "Genotypische Felder genannt",
+          "Phänotypen zusammengefasst"
+        ]
+      },
+      "2": {
+        "prompt": "Bei zehn Nachkommen sind fünf rezessiv. Ist Mendels Modell dadurch widerlegt?",
+        "model": "Ein so kleiner Datensatz kann zufällig von der erwarteten Häufigkeit abweichen. Zusätzlich müssen Ausgangsgenotypen, Merkmalszuordnung und mögliche Auswahlprozesse geprüft werden. Die Beobachtung ist Anlass für weitere Vergleiche, kein alleiniger Beweis für oder gegen das Modell.",
+        "criteria": [
+          "Zufallsstreuung berücksichtigt",
+          "Annahmen geprüft",
+          "Angemessene Belegstärke formuliert"
+        ],
+        "hints": [
+          "Zufallsstreuung berücksichtigt",
+          "Annahmen geprüft"
+        ]
+      }
+    },
+    "model": "inheritance"
+  },
+  {
+    "id": "bio-mendel-unabhaengigkeit",
+    "lb": 2,
+    "title": "Mendel III: freie Kombination hat Bedingungen",
+    "period": "Genetik · Lernbereich 2",
+    "intro": "Zwei Genorte können gemeinsam oder weitgehend unabhängig vererbt werden.",
+    "paragraphs": [
+      "Für AaBb × AaBb können bei unabhängiger Verteilung die Keimzellen AB, Ab, aB und ab gleich häufig entstehen. Werden an beiden Genorten vollständige Dominanz und gleiche Überlebenschancen angenommen, ergeben sechzehn Kombinationen das phänotypische Verhältnis 9:3:3:1.",
+      "Diese dritte Mendelsche Regel gilt nicht uneingeschränkt. Nahe beieinanderliegende Gene auf demselben Chromosom können gekoppelt sein. Dann sind die Keimzellkombinationen nicht unbedingt gleich häufig. Das Schema beschreibt zwei ausgewählte Genorte und keine allgemeine Formel für alle menschlichen Eigenschaften."
+    ],
+    "takeaway": "9:3:3:1 setzt unabhängige Verteilung und passende Dominanzverhältnisse voraus.",
+    "sourceIds": [
+      "lp",
+      "genetics"
+    ],
+    "quiz": {
+      "question": "Welche Bedingung ist für das einfache Verhältnis 9:3:3:1 wesentlich?",
+      "answer": "Die betrachteten Genorte werden unabhängig voneinander verteilt.",
+      "wrong": [
+        "Die betrachteten Genorte werden stets eng miteinander gekoppelt vererbt.",
+        "Die betrachteten Genorte sind beliebig austauschbare Umweltbedingungen."
+      ],
+      "explanation": "Gekoppelte Gene können andere Kombinationshäufigkeiten erzeugen."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Was gehört zur Ableitung?",
+      "instruction": "Ordne jede Aussage zu. Prüfe dabei den Zusammenhang und nicht nur einzelne Schlüsselwörter.",
+      "categories": [
+        "Modellannahme",
+        "Erwartete Kombination",
+        "Mögliche Modellgrenze"
+      ],
+      "entries": [
+        {
+          "text": "AB, Ab, aB und ab sind gleich wahrscheinlich.",
+          "target": 0,
+          "feedback": "Das ist die Annahme unabhängiger Verteilung."
+        },
+        {
+          "text": "A_B_ tritt in neun von sechzehn Schemafeldern auf.",
+          "target": 1,
+          "feedback": "Hier wird die erwartete Häufigkeit abgeleitet."
+        },
+        {
+          "text": "Beide Genorte liegen eng auf demselben Chromosom.",
+          "target": 2,
+          "feedback": "Eine Kopplung kann die angenommene Verteilung verändern."
+        }
+      ],
+      "conclusion": "Eine Regel ohne ihre Voraussetzungen ist leicht irreführend."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Leite die vier Phänotypgruppen bei AaBb × AaBb im unabhängigen Modell ab.",
+        "model": "Mit gleich häufigen Keimzellen AB, Ab, aB und ab gibt es sechzehn gleich wahrscheinliche Kombinationen. Neun haben mindestens ein A und ein B, je drei nur eines der beiden dominanten Merkmale und eine ist aabb. Das setzt Unabhängigkeit und vollständige Dominanz an beiden Genorten voraus.",
+        "criteria": [
+          "Vier Gruppen genannt",
+          "9:3:3:1 erklärt",
+          "Bedingungen ausdrücklich genannt"
+        ],
+        "hints": [
+          "Vier Gruppen genannt",
+          "9:3:3:1 erklärt"
+        ]
+      },
+      "2": {
+        "prompt": "Warum darf ein Stammbaum mit zwei Merkmalen nicht automatisch nach 9:3:3:1 bewertet werden?",
+        "model": "Zuerst müssen Genotypen, Dominanz, mögliche Kopplung und die Art der Merkmalsentstehung geklärt werden. Viele menschliche Merkmale sind zudem nicht monogen. Eine kleine Familie ist keine große Zufallsstichprobe. Das Verhältnis passt nur zu einem genau benannten idealisierten Kreuzungsmodell.",
+        "criteria": [
+          "Kopplung oder Dominanz geprüft",
+          "Komplexität und Stichprobe berücksichtigt",
+          "Gültigkeitsbereich eingeschränkt"
+        ],
+        "hints": [
+          "Kopplung oder Dominanz geprüft",
+          "Komplexität und Stichprobe berücksichtigt"
+        ]
+      }
+    },
+    "model": "inheritance"
+  },
+  {
+    "id": "bio-stammbaum",
+    "lb": 2,
+    "title": "Erbgänge und Stammbaumanalyse",
+    "period": "Genetik · Lernbereich 2",
+    "intro": "Ein Stammbaum prüft Möglichkeiten; er liefert nicht immer eine eindeutige Diagnose.",
+    "paragraphs": [
+      "Bei einem autosomal-rezessiven Ein-Gen-Modell können zwei nicht erkrankte heterozygote Eltern Aa ein betroffenes Kind aa haben. Für Aa × Aa beträgt dessen Wahrscheinlichkeit pro Kind 25 Prozent. Das ist eine theoretische Aussage unter festgelegten Annahmen und keine individuelle medizinische Einschätzung.",
+      "Autosomal-dominante Merkmale können sich über mehrere Generationen zeigen; neue Varianten und unvollständige Penetranz können das Muster verändern. Bei X-chromosomaler Vererbung unterscheiden sich mögliche Übertragungswege; im üblichen XX/XY-Schema wird ein väterliches X nicht an einen Sohn weitergegeben. Kleine Familien und fehlende Angaben lassen oft mehrere Erklärungen zu. In den Aufgaben werden ausschließlich erfundene Familien betrachtet."
+    ],
+    "takeaway": "Prüfe einen Erbgang an allen Angaben und kennzeichne offene Möglichkeiten.",
+    "sourceIds": [
+      "lp",
+      "inheritance"
+    ],
+    "quiz": {
+      "question": "Können zwei nicht erkrankte Aa-Eltern im autosomal-rezessiven Modell ein betroffenes aa-Kind haben?",
+      "answer": "Ja, mit einer Wahrscheinlichkeit von 25% (Genotyp aa)",
+      "wrong": [
+        "Nein, denn nicht erkrankte Eltern geben kein a-Allel weiter",
+        "Ja, aber zwingend bei genau jedem zweiten Kind (50 Prozent)"
+      ],
+      "explanation": "Ein Viertel der gleich wahrscheinlichen Kombinationen ist aa."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Ist die Folgerung zulässig?",
+      "instruction": "Ordne jede Aussage zu. Prüfe dabei den Zusammenhang und nicht nur einzelne Schlüsselwörter.",
+      "categories": [
+        "Im genannten Modell möglich",
+        "Nicht sicher ableitbar"
+      ],
+      "entries": [
+        {
+          "text": "Aa und Aa können ein aa-Kind haben.",
+          "target": 0,
+          "feedback": "Beide können a beitragen."
+        },
+        {
+          "text": "Ein Merkmal fehlt in einer Generation, also ist sein Erbgang sicher rezessiv.",
+          "target": 1,
+          "feedback": "Andere Erklärungen oder fehlende Informationen sind möglich."
+        },
+        {
+          "text": "Ein einzelner Stammbaum erklärt jede spätere Schwangerschaft zuverlässig.",
+          "target": 1,
+          "feedback": "Ein Modell ist keine individuelle Beratung."
+        }
+      ],
+      "conclusion": "Unterschiedliche Erbgänge können in einem kleinen Stammbaum ähnlich aussehen."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre an Aa × Aa die 25-Prozent-Aussage und ihre Grenze.",
+        "model": "Jede Seite gibt mit gleicher Wahrscheinlichkeit A oder a weiter. Von AA, Aa, Aa und aa ist eine Kombination betroffen, also 25 Prozent pro unabhängigem Fall im Modell. Das garantiert keine feste Verteilung in einer kleinen Familie und berücksichtigt keine weiteren biologischen Besonderheiten.",
+        "criteria": [
+          "Vier Kombinationen verwendet",
+          "Wahrscheinlichkeit pro Fall erklärt",
+          "Modellgrenze benannt"
+        ],
+        "hints": [
+          "Vier Kombinationen verwendet",
+          "Wahrscheinlichkeit pro Fall erklärt"
+        ]
+      },
+      "2": {
+        "prompt": "Ein Stammbaum wird als „sicher dominant, weil in jeder Generation sichtbar“ bezeichnet. Bewerte das.",
+        "model": "Das Auftreten in mehreren Generationen kann zu einem dominanten Modell passen, beweist es aber nicht allein. Andere Genotypen, kleine Familien, unvollständige Angaben oder weitere Einflüsse müssen geprüft werden. Ein nachvollziehbarer Schluss nennt passende und ausschließende Beobachtungen sowie verbleibende Alternativen.",
+        "criteria": [
+          "Hinweis von Beweis unterschieden",
+          "Alternativen benannt",
+          "Prüfweg an Daten beschrieben"
+        ],
+        "hints": [
+          "Hinweis von Beweis unterschieden",
+          "Alternativen benannt"
+        ]
+      }
+    },
+    "model": "inheritance"
+  },
+  {
+    "id": "bio-mutation",
+    "lb": 2,
+    "title": "Mutation, Modifikation und Umwelt",
+    "period": "Genetik · Lernbereich 2",
+    "intro": "Nicht jede Veränderung ist vererbbar, nicht jede Variante schädlich.",
+    "paragraphs": [
+      "Eine Mutation verändert die DNA-Sequenz oder Chromosomenstruktur beziehungsweise Chromosomenzahl. Ihre Wirkung kann neutral, nachteilig oder unter bestimmten Bedingungen vorteilhaft sein. Mutagene Einflüsse können die Häufigkeit von Veränderungen erhöhen. Aus einer einzelnen Belastung lässt sich jedoch keine bestimmte Mutation vorhersagen.",
+      "Somatische Mutationen entstehen in Körperzelllinien und werden bei deren Teilungen weitergegeben. Keimbahnveränderungen können über Keimzellen an Nachkommen gelangen. Eine Modifikation ist eine durch Umweltbedingungen beeinflusste Ausprägung ohne entsprechende Änderung der DNA-Sequenz. Viele Merkmale entstehen aus genetischen und erworbenen Anteilen; eine einfache Entweder-oder-Zuordnung wäre unzureichend."
+    ],
+    "takeaway": "Ort, Art und Folge einer Veränderung müssen getrennt betrachtet werden.",
+    "sourceIds": [
+      "lp",
+      "genetics"
+    ],
+    "quiz": {
+      "question": "Was unterscheidet eine Modifikation von einer Mutation im Schulmodell?",
+      "answer": "Bei der Modifikation ändert sich die Ausprägung ohne Änderung der DNA-Sequenz.",
+      "wrong": [
+        "Bei der Modifikation wird stets die Basenfolge aller Keimzellen neu angeordnet.",
+        "Bei der Modifikation verschwindet dauerhaft jeder Einfluss der Umweltbedingungen."
+      ],
+      "explanation": "Eine phänotypische Änderung allein belegt noch keine DNA-Veränderung."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Welche Beschreibung passt?",
+      "instruction": "Ordne jede Aussage zu. Prüfe dabei den Zusammenhang und nicht nur einzelne Schlüsselwörter.",
+      "categories": [
+        "Somatische Mutation",
+        "Keimbahnveränderung",
+        "Modifikation"
+      ],
+      "entries": [
+        {
+          "text": "Eine DNA-Veränderung entsteht in einer Hautzelllinie.",
+          "target": 0,
+          "feedback": "Die betroffene Zelllinie gehört zum Körpergewebe."
+        },
+        {
+          "text": "Eine genetische Variante gelangt über eine Keimzelle an Nachkommen.",
+          "target": 1,
+          "feedback": "Dieser Übertragungsweg betrifft die Keimbahn."
+        },
+        {
+          "text": "Ein genetisch gleicher Pflanzenklon wächst bei wenig Licht anders.",
+          "target": 2,
+          "feedback": "Eine Umweltwirkung auf den Phänotyp ist möglich, ohne dass neue DNA angenommen werden muss."
+        }
+      ],
+      "conclusion": "Ein sichtbarer Unterschied reicht zur Ursachenbestimmung nicht aus."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Vergleiche Mutation und Modifikation an zwei geeigneten Beispielen.",
+        "model": "Eine veränderte Basenfolge in einer Zelllinie ist eine Mutation. Unterschiedliche Wuchshöhe genetisch gleicher Pflanzen unter verschiedenen Lichtbedingungen kann eine Modifikation sein. Ob etwas an Nachkommen gelangt, hängt insbesondere von einer Beteiligung der Keimbahn ab; nicht jede Körperzellveränderung wird vererbt.",
+        "criteria": [
+          "DNA-Änderung klar benannt",
+          "Umweltbedingte Ausprägung erläutert",
+          "Vererbbarkeit differenziert"
+        ],
+        "hints": [
+          "DNA-Änderung klar benannt",
+          "Umweltbedingte Ausprägung erläutert"
+        ]
+      },
+      "2": {
+        "prompt": "Warum ist „Mutationen sind immer Krankheiten“ fachlich falsch?",
+        "model": "Eine genetische Veränderung kann keine erkennbare Wirkung haben oder ihre Bedeutung hängt vom Umfeld ab. Außerdem entsteht eine Erkrankung häufig durch mehrere Einflüsse. Entscheidend sind der konkrete veränderte Bereich und seine Funktion; eine Bewertung nur aufgrund des Wortes Mutation ist nicht gerechtfertigt.",
+        "criteria": [
+          "Neutrale oder kontextabhängige Wirkungen",
+          "Konkrete Funktion berücksichtigt",
+          "Pauschalisierung zurückgewiesen"
+        ],
+        "hints": [
+          "Neutrale oder kontextabhängige Wirkungen",
+          "Konkrete Funktion berücksichtigt"
+        ]
+      }
+    }
+  },
+  {
+    "id": "bio-erbkrankheiten",
+    "lb": 2,
+    "title": "Erbliche Krankheiten verstehen und respektvoll besprechen",
+    "period": "Genetik · Lernbereich 2",
+    "intro": "Eine genetische Ursache erklärt einen Teil der Biologie, nicht den ganzen Menschen.",
+    "paragraphs": [
+      "Bei Mukoviszidose können bestimmte Varianten im CFTR-Gen den Salz- und Wassertransport an Zellmembranen verändern. Zäher Schleim kann unter anderem Atemwege und Verdauung beeinträchtigen. Der Erbgang wird häufig als autosomal-rezessiv beschrieben. Welche Beschwerden auftreten, hängt auch von der konkreten Variante und weiteren Faktoren ab.",
+      "Behandlungen können Symptome lindern und bei geeigneten Varianten auch gezielt an der veränderten Proteinfunktion ansetzen. Eine genetische Ursache bedeutet daher weder, dass jede Person gleich betroffen ist, noch dass Unterstützung bedeutungslos wäre. Fachliche Gespräche unterscheiden Ursache, mögliche Symptome und Behandlungsmöglichkeiten und vermeiden die Gleichsetzung von Krankheit mit persönlichem Wert oder Leistungsfähigkeit."
+    ],
+    "takeaway": "Genetische Ursache, Ausprägung und Behandlung sind verschiedene Ebenen.",
+    "sourceIds": [
+      "lp",
+      "inheritance",
+      "genetics",
+      "cf"
+    ],
+    "quiz": {
+      "question": "Welche Aussage zu einer genetisch bedingten Erkrankung ist angemessen?",
+      "answer": "Ursache, Ausprägung und geeignete Unterstützung müssen unterschieden werden.",
+      "wrong": [
+        "Eine genetische Ursache erklärt zwangsläufig alle Eigenschaften einer Person.",
+        "Eine genetische Ursache macht grundsätzlich jede Form von Hilfe wirkungslos."
+      ],
+      "explanation": "Eine Variante kann biologisch erklärt werden, ohne einen Menschen darauf zu reduzieren."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Ebenen einer Krankheitsbeschreibung",
+      "instruction": "Ordne jede Aussage zu. Prüfe dabei den Zusammenhang und nicht nur einzelne Schlüsselwörter.",
+      "categories": [
+        "Ursache / Mechanismus",
+        "Mögliche Ausprägung",
+        "Unterstützung / Behandlung"
+      ],
+      "entries": [
+        {
+          "text": "Eine Variante beeinflusst die Funktion eines Transportproteins.",
+          "target": 0,
+          "feedback": "Das beschreibt einen möglichen Mechanismus."
+        },
+        {
+          "text": "Bestimmte Atemwegsprobleme können auftreten.",
+          "target": 1,
+          "feedback": "Die konkrete Ausprägung ist von der Ursache zu unterscheiden."
+        },
+        {
+          "text": "Eine spezialisierte Behandlung kann Beschwerden lindern.",
+          "target": 2,
+          "feedback": "Die Wahl richtet sich nach dem individuellen Befund."
+        }
+      ],
+      "conclusion": "Der Unterricht erklärt Zusammenhänge und ersetzt keine Einzelfallentscheidung."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Verknüpfe bei Mukoviszidose Gen, Protein, mögliche Folge und Behandlungsebene.",
+        "model": "Bestimmte CFTR-Varianten können die Funktion eines Transportproteins verändern. Veränderte Salz- und Wasserbewegungen begünstigen zähen Schleim und mögliche Atemwegs- oder Verdauungsprobleme. Unterstützung und Behandlung richten sich nach dem konkreten Befund; eine genetische Ursache schließt wirksame Hilfe nicht aus.",
+        "criteria": [
+          "Gen–Protein-Zusammenhang",
+          "Mögliche statt zwingende Ausprägung",
+          "Behandlung und Person differenziert"
+        ],
+        "hints": [
+          "Gen–Protein-Zusammenhang",
+          "Mögliche statt zwingende Ausprägung"
+        ]
+      },
+      "2": {
+        "prompt": "Eine Klasse soll ein Plakat zu einer erblichen Krankheit gestalten. Welche Darstellungsregeln sind wichtig?",
+        "model": "Das Plakat erklärt einen überprüfbaren biologischen Zusammenhang und trennt typische Beschwerden von individuellen Unterschieden. Es nennt belastbare Quellen und beschreibt Hilfen, ohne Heilung zu versprechen. Personenbezogene Geschichten oder Gesundheitsdaten werden nicht verlangt; Menschen werden nicht auf einen Genotyp reduziert.",
+        "criteria": [
+          "Fachlich überprüfbare Inhalte",
+          "Individuelle Unterschiede respektiert",
+          "Quellen und Persönlichkeitsrechte beachtet"
+        ],
+        "hints": [
+          "Fachlich überprüfbare Inhalte",
+          "Individuelle Unterschiede respektiert"
+        ]
+      }
+    }
+  },
+  {
+    "id": "bio-pcr",
+    "lb": 2,
+    "title": "PCR und Gentests: Nachweisen ist nicht Diagnostizieren",
+    "period": "Genetik · Lernbereich 2",
+    "intro": "Eine Kopiermethode beantwortet eine begrenzte Frage.",
+    "paragraphs": [
+      "Die Polymerase-Kettenreaktion vervielfältigt einen ausgewählten DNA-Abschnitt. Die Stränge werden getrennt, kurze passende Primer begrenzen den Zielbereich und eine Polymerase ergänzt neue DNA. Durch Wiederholung wächst die Menge des Zielabschnitts. Die Methode erzeugt keinen ganzen Organismus und verändert nicht automatisch dessen Eigenschaften.",
+      "Ein Nachweis hängt von Probe, Zielwahl, Kontrollen und Auswertung ab. Eine Negativkontrolle kann unerwünschte Verunreinigungen anzeigen, eine geeignete Positivkontrolle die prinzipielle Funktion. Ein genetischer Befund kann Fragen beantworten, aber auch Unsicherheit erzeugen. Informierte Entscheidung und Schutz der Daten gehören zur Bewertung eines Gentests."
+    ],
+    "takeaway": "PCR vervielfältigt einen Zielabschnitt; die Bedeutung eines Befunds braucht Kontext.",
+    "sourceIds": [
+      "lp",
+      "genetics"
+    ],
+    "quiz": {
+      "question": "Was wird durch PCR unmittelbar vermehrt?",
+      "answer": "Ein durch passende Primer begrenzter Abschnitt von DNA.",
+      "wrong": [
+        "Ein vollständiger Mensch mit allen persönlichen Eigenschaften.",
+        "Eine beliebige fertige Eiweißkette ohne genetische Vorlage."
+      ],
+      "explanation": "Die Methode kopiert einen ausgewählten DNA-Bereich."
+    },
+    "workshop": {
+      "kind": "timeline",
+      "title": "Einen Ablauf rekonstruieren",
+      "instruction": "Bringe die Schritte mit den Pfeilen in eine fachlich sinnvolle Reihenfolge. Begründe die Übergänge, bevor du prüfst.",
+      "categories": [],
+      "entries": [
+        {
+          "text": "DNA-Stränge des Zielmaterials trennen.",
+          "target": 0,
+          "feedback": "Die Vorlagen werden zugänglich."
+        },
+        {
+          "text": "Passende Primer anlagern lassen.",
+          "target": 1,
+          "feedback": "Die Zielbereiche werden festgelegt."
+        },
+        {
+          "text": "Neue Stränge mit Polymerase ergänzen.",
+          "target": 2,
+          "feedback": "Der ausgewählte Bereich wird kopiert."
+        },
+        {
+          "text": "Den Zyklus wiederholen und Kontrollen auswerten.",
+          "target": 3,
+          "feedback": "Menge und Aussagekraft sind unterschiedliche Fragen."
+        }
+      ],
+      "conclusion": "Mehr DNA bedeutet nicht automatisch eine sichere Interpretation."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre Zielabschnitt, Primer und eine Kontrolle bei PCR.",
+        "model": "Primer sind kurze DNA-Stücke, die passende Startbereiche begrenzen. Eine Polymerase ergänzt daran neue Stränge; wiederholte Zyklen vervielfältigen den ausgewählten Abschnitt. Eine Negativkontrolle ohne Zielmaterial kann Hinweise auf Verunreinigung geben. Was das Ergebnis biologisch bedeutet, muss zur Fragestellung passen.",
+        "criteria": [
+          "Zielauswahl und Primer",
+          "Kopierprinzip",
+          "Eine Kontrolle mit Zweck"
+        ],
+        "hints": [
+          "Zielauswahl und Primer",
+          "Kopierprinzip"
+        ]
+      },
+      "2": {
+        "prompt": "Jemand behauptet, ein positives genetisches Signal sage alle späteren Symptome voraus. Beurteile das.",
+        "model": "Ein Signal kann unter geeigneten Bedingungen das Vorliegen eines Zielabschnitts stützen. Daraus folgen nicht automatisch Zeitpunkt, Schwere oder sämtliche Folgen eines Merkmals. Aussagegrenzen, Kontrollen und der Zusammenhang mit weiteren Faktoren müssen geprüft werden; ein Befund ist nicht die gesamte Lebensgeschichte einer Person.",
+        "criteria": [
+          "Nachweis eng beschrieben",
+          "Unsicherheit und weitere Faktoren",
+          "Pauschale Zukunftsprognose zurückgewiesen"
+        ],
+        "hints": [
+          "Nachweis eng beschrieben",
+          "Unsicherheit und weitere Faktoren"
+        ]
+      }
+    }
+  },
+  {
+    "id": "bio-gentechnik",
+    "lb": 2,
+    "title": "Gentechnik nach Zweck und Folgen bewerten",
+    "period": "Genetik · Lernbereich 2",
+    "intro": "Die Methode allein entscheidet noch nicht über Nutzen und Risiken.",
+    "paragraphs": [
+      "Bei gentechnischen Verfahren wird Erbinformation gezielt untersucht oder verändert. Ein Beispiel ist die Herstellung eines menschlichen Proteins durch geeignete Mikroorganismen. Andere Anwendungen verändern Pflanzenmerkmale. Die beabsichtigte Eigenschaft, unbeabsichtigte Folgen und die Bedingungen des Einsatzes müssen getrennt betrachtet werden.",
+      "Für eine Bewertung sind konkrete Vergleichsmöglichkeiten wichtig: Welcher Nutzen wird für wen erwartet, welche Risiken sind belegt oder offen, welche Alternativen gibt es und wer trägt die Folgen? Ein Laborergebnis lässt sich nicht ohne Weiteres auf jedes Ökosystem übertragen. Sachargumente ergänzen, ersetzen aber nicht die Diskussion über Gerechtigkeit, Selbstbestimmung und ökologische Verantwortung."
+    ],
+    "takeaway": "Bewerte konkrete Anwendungen mit Belegen, Alternativen und offen genannten Kriterien.",
+    "sourceIds": [
+      "lp",
+      "genetics"
+    ],
+    "quiz": {
+      "question": "Welche Frage hilft bei der Bewertung einer gentechnischen Anwendung am meisten?",
+      "answer": "Welchen konkreten Nutzen, welche Folgen und welche Alternativen gibt es?",
+      "wrong": [
+        "Welche pauschale Zustimmung lässt sich aus dem Wort gentechnisch ableiten?",
+        "Welche pauschale Ablehnung lässt sich ohne Prüfung aller Daten festlegen?"
+      ],
+      "explanation": "Für eine begründete Bewertung müssen Anwendung und Vergleich benannt werden."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Eine Anwendung prüfen",
+      "instruction": "Ordne jede Aussage zu. Prüfe dabei den Zusammenhang und nicht nur einzelne Schlüsselwörter.",
+      "categories": [
+        "Möglicher Nutzen",
+        "Zu prüfendes Risiko",
+        "Normatives Kriterium"
+      ],
+      "entries": [
+        {
+          "text": "Ein benötigtes Protein kann verfügbar gemacht werden.",
+          "target": 0,
+          "feedback": "Das ist ein möglicher Zweck der Anwendung."
+        },
+        {
+          "text": "Eine veränderte Pflanze könnte sich mit Verwandten kreuzen.",
+          "target": 1,
+          "feedback": "Die konkrete Wahrscheinlichkeit und Folgen brauchen Daten."
+        },
+        {
+          "text": "Zugang zu einer Behandlung soll fair sein.",
+          "target": 2,
+          "feedback": "Gerechtigkeit ist ein offen zu benennender Wert."
+        }
+      ],
+      "conclusion": "Eine faire Abwägung verknüpft Folgen mit Kriterien."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Bewerte eine erfundene Nutzpflanze mit verbessertem Schutz vor einem Schädling.",
+        "model": "Ein möglicher Nutzen ist geringerer Schaden am Ertrag. Zu prüfen sind unter anderem Folgen für andere Arten, Resistenzentwicklung und die jeweilige Bewirtschaftung. Ein Urteil vergleicht alternative Schutzmaßnahmen und nennt die Gewichtung von Ertrag, Umweltschutz und Zugänglichkeit. Ohne Daten bleibt es ein begründeter Prüfplan.",
+        "criteria": [
+          "Konkreter Nutzen",
+          "Risiko und Alternative",
+          "Kriterium und Unsicherheit"
+        ],
+        "hints": [
+          "Konkreter Nutzen",
+          "Risiko und Alternative"
+        ]
+      },
+      "2": {
+        "prompt": "Eine gentechnisch erzeugte Substanz ist im Labor nützlich. Warum reicht das nicht für jede Freisetzungsentscheidung?",
+        "model": "Das Labor untersucht einen begrenzten Zusammenhang unter kontrollierten Bedingungen. In einem Ökosystem können Wechselwirkungen, Ausbreitung und zeitverzögerte Folgen hinzukommen. Die Entscheidung braucht zusätzliche Daten, einen geeigneten Vergleich und eine transparente Gewichtung von Nutzen, möglichen Schäden und Verantwortung.",
+        "criteria": [
+          "Laborgrenze erklärt",
+          "Ökologische Wechselwirkungen",
+          "Weiteren Prüfbedarf begründet"
+        ],
+        "hints": [
+          "Laborgrenze erklärt",
+          "Ökologische Wechselwirkungen"
+        ]
+      }
+    }
+  },
+  {
+    "id": "bio-stammzellen",
+    "lb": 2,
+    "title": "Stammzellen und Klonen unterscheiden",
+    "period": "Genetik · Lernbereich 2",
+    "intro": "Vermehrung und Entwicklungspotenzial sind nicht dieselbe Eigenschaft.",
+    "paragraphs": [
+      "Stammzellen können sich selbst erneuern und Tochterzellen mit unterschiedlichen Entwicklungsmöglichkeiten bilden. Embryonale pluripotente Stammzellen können sehr viele Zelltypen hervorbringen; viele adulte Stammzellen haben ein begrenzteres Spektrum. Ein großes Potenzial ist nicht gleichbedeutend mit einer bereits sicheren Behandlung.",
+      "Klonen bezeichnet die Erzeugung genetisch sehr ähnlicher Kopien, etwa von DNA-Abschnitten oder Zelllinien. Ein geklonter Organismus wäre deshalb kein vollständiges Abbild von Persönlichkeit und Lebensgeschichte: Umwelt, Entwicklung, Genregulation und weitere biologische Unterschiede wirken mit. Bei Forschung und Anwendung sind Nutzen, Risiken, Herkunft des Materials und ethische sowie rechtliche Grenzen zu unterscheiden."
+    ],
+    "takeaway": "Stammzelle beschreibt Potenzial; Klon beschreibt genetische Ähnlichkeit.",
+    "sourceIds": [
+      "lp",
+      "genetics"
+    ],
+    "quiz": {
+      "question": "Was kennzeichnet Stammzellen grundsätzlich?",
+      "answer": "Selbsterneuerung und ein je nach Typ unterschiedliches Entwicklungspotenzial.",
+      "wrong": [
+        "Vollständiger Verlust jedes genetischen Materials bei jeder neuen Teilung.",
+        "Eine garantierte Heilwirkung bei sämtlichen denkbaren Erkrankungen."
+      ],
+      "explanation": "Das Entwicklungspotenzial unterscheidet verschiedene Stammzelltypen."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Begriffe auseinanderhalten",
+      "instruction": "Ordne jede Aussage zu. Prüfe dabei den Zusammenhang und nicht nur einzelne Schlüsselwörter.",
+      "categories": [
+        "Stammzelleigenschaft",
+        "Klonbeziehung",
+        "Unbelegte Übertreibung"
+      ],
+      "entries": [
+        {
+          "text": "Eine Zelle kann weitere Zellen ihres Typs bilden.",
+          "target": 0,
+          "feedback": "Das betrifft Selbsterneuerung."
+        },
+        {
+          "text": "Zwei Zelllinien haben einen gemeinsamen kopierten Ausgangspunkt.",
+          "target": 1,
+          "feedback": "Hier wird genetische Verwandtschaft beschrieben."
+        },
+        {
+          "text": "Ein geklonter Organismus erlebt automatisch dasselbe Leben.",
+          "target": 2,
+          "feedback": "Umwelt und Entwicklung sind keine vollständige Genkopie."
+        }
+      ],
+      "conclusion": "Ein biologischer Begriff ist kein Heilsversprechen."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Vergleiche eine Stammzelle mit einem Klon, ohne die Begriffe gleichzusetzen.",
+        "model": "Eine Stammzelle wird über Selbsterneuerung und Entwicklungsmöglichkeiten beschrieben. Ein Klon wird über die genetische Beziehung zu einer Ausgangseinheit beschrieben. Eine Stammzelllinie kann klonal sein, doch daraus folgt weder unbegrenzte Entwicklungsfähigkeit noch eine sichere Therapie oder eine identische Lebensgeschichte.",
+        "criteria": [
+          "Stammzellmerkmal",
+          "Klonbeziehung",
+          "Grenzen der Schlussfolgerung"
+        ],
+        "hints": [
+          "Stammzellmerkmal",
+          "Klonbeziehung"
+        ]
+      },
+      "2": {
+        "prompt": "Ein Angebot verspricht „universelle Stammzellen ohne Risiken“. Welche Prüfung ist nötig?",
+        "model": "Zu klären sind Herkunft und Typ der Zellen, die konkret untersuchte Anwendung, kontrollierte Belege und bekannte unerwünschte Wirkungen. Entwicklungspotenzial allein belegt keine Wirksamkeit oder Sicherheit. Eine Bewertung braucht zudem freiwillige informierte Entscheidung und die Klärung der einschlägigen ethischen und rechtlichen Bedingungen.",
+        "criteria": [
+          "Konkrete Belege verlangt",
+          "Potenzial von Behandlung getrennt",
+          "Risiken und Entscheidungsbedingungen"
+        ],
+        "hints": [
+          "Konkrete Belege verlangt",
+          "Potenzial von Behandlung getrennt"
+        ]
+      }
+    }
+  },
+  {
+    "id": "bio-zuechtung",
+    "lb": 2,
+    "title": "Züchtung: Variation, Auswahl und Grenzen",
+    "period": "Genetik · Lernbereich 2",
+    "intro": "Auswahl nutzt vorhandene oder neu entstandene vererbbare Unterschiede.",
+    "paragraphs": [
+      "Bei Züchtung werden geeignete Ausgangsformen ausgewählt und Nachkommen verglichen. Vererbbare Variation ist eine Voraussetzung dafür, dass Auswahl über Generationen wirken kann. Kreuzung schafft neue Kombinationen. Ein sichtbarer Unterschied durch eine einmalige Umweltwirkung ist dagegen nicht automatisch vererbbar.",
+      "Zuchtziele können miteinander in Konflikt geraten. Ein hoher Ertrag unter bestimmten Bedingungen kann mit Anfälligkeit oder einem Verlust genetischer Vielfalt verbunden sein. Viele Merkmale werden von mehreren Genen und der Umwelt beeinflusst. Die Bewertung verbindet deshalb genetische Möglichkeiten mit Artenvielfalt, Tierwohl, Ressourcenbedarf und langfristiger Anpassungsfähigkeit."
+    ],
+    "takeaway": "Erfolgreiche Auswahl braucht vererbbare Variation und überprüfte Ziele.",
+    "sourceIds": [
+      "lp",
+      "genetics"
+    ],
+    "quiz": {
+      "question": "Welche Voraussetzung benötigt Züchtung durch Auswahl über Generationen?",
+      "answer": "Vererbbare Unterschiede, die für das betrachtete Ziel relevant sind.",
+      "wrong": [
+        "Nur gleichartige Umweltwirkungen ohne jeden vererbbaren Unterschied.",
+        "Eine vollständige Abschaffung aller genetischen Unterschiede der Population."
+      ],
+      "explanation": "Ohne vererbbare Variation kann Auswahl keine entsprechende Veränderung festigen."
+    },
+    "workshop": {
+      "kind": "timeline",
+      "title": "Einen Ablauf rekonstruieren",
+      "instruction": "Bringe die Schritte mit den Pfeilen in eine fachlich sinnvolle Reihenfolge. Begründe die Übergänge, bevor du prüfst.",
+      "categories": [],
+      "entries": [
+        {
+          "text": "Ein begründetes Ziel und Vergleichskriterien festlegen.",
+          "target": 0,
+          "feedback": "Ein Ziel allein ist noch kein Ergebnis."
+        },
+        {
+          "text": "Ausgangsformen mit vererbbaren Unterschieden auswählen und kreuzen.",
+          "target": 1,
+          "feedback": "Variation und Kombination bilden die Grundlage."
+        },
+        {
+          "text": "Nachkommen unter passenden Bedingungen vergleichen.",
+          "target": 2,
+          "feedback": "Die Ausprägung hängt auch von der Umwelt ab."
+        },
+        {
+          "text": "Zielkonflikte und langfristige Vielfalt prüfen.",
+          "target": 3,
+          "feedback": "Ein kurzfristiger Vorteil kann Nachteile haben."
+        }
+      ],
+      "conclusion": "Züchtung ist keine beliebige Herstellung jeder gewünschten Eigenschaft."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre, warum die größte Pflanze eines Bestands nicht immer die beste Zuchtauswahl ist.",
+        "model": "Ihre Größe kann durch genetische Faktoren, günstige Umweltbedingungen oder deren Zusammenwirken entstanden sein. Züchtung braucht einen vererbbaren Anteil und vergleichbare Prüfbedingungen. Zusätzlich können Ertrag, Widerstandsfähigkeit und Vielfalt gegeneinander abgewogen werden; eine einzelne auffällige Pflanze reicht als Beleg nicht aus.",
+        "criteria": [
+          "Genetik und Umwelt getrennt",
+          "Vererbbarkeit geprüft",
+          "Mehrere Kriterien berücksichtigt"
+        ],
+        "hints": [
+          "Genetik und Umwelt getrennt",
+          "Vererbbarkeit geprüft"
+        ]
+      },
+      "2": {
+        "prompt": "Eine Sorte liefert hohen Ertrag, benötigt aber überall dieselben Bedingungen. Bewerte die alleinige Nutzung.",
+        "model": "Der hohe Ertrag ist ein möglicher Nutzen, aber eine sehr einheitliche genetische Grundlage kann die Anfälligkeit gegenüber neuen Bedingungen erhöhen. Zu prüfen sind Standort, Vielfalt, Alternativen und Ressourcenbedarf. Ein Urteil braucht langfristige Folgen statt nur den kurzfristigen Höchstertrag.",
+        "criteria": [
+          "Nutzen benannt",
+          "Vielfalt und Risiko",
+          "Langfristige Alternative abgewogen"
+        ],
+        "hints": [
+          "Nutzen benannt",
+          "Vielfalt und Risiko"
+        ]
+      }
+    }
+  },
+  {
+    "id": "bio-oeko-system",
+    "lb": 3,
+    "title": "Ökosystem, Biosphäre und Systemgrenzen",
+    "period": "Ökosysteme · Lernbereich 3",
+    "intro": "Ein Teich hat Grenzen auf der Karte, bleibt aber mit seiner Umgebung verbunden.",
+    "paragraphs": [
+      "Ein Ökosystem umfasst Organismen, unbelebte Bedingungen und ihre Wechselwirkungen. Stoffe und Energie können seine gedachte Grenze überschreiten: Wasser fließt hinein und hinaus, Organismen wandern und Licht liefert Energie. Welche Grenze sinnvoll ist, hängt von der Untersuchungsfrage ab.",
+      "Für die Biosphäre als Ganzes wird der Stoffhaushalt im Schulmodell näherungsweise als geschlossen betrachtet, während Energie mit der Umgebung ausgetauscht wird. Das ist eine vereinfachte Systembeschreibung: Einzelne Ökosysteme sind für Stoffe offen. Ein Modell, das alle Pfeile gleich behandelt, würde Stoffkreislauf und Energiefluss verwechseln."
+    ],
+    "takeaway": "Stoffe können kreisen; nutzbare Energie durchfließt ökologische Systeme.",
+    "sourceIds": [
+      "lp",
+      "bfn"
+    ],
+    "quiz": {
+      "question": "Welche Beschreibung passt zu einem lokalen Ökosystem?",
+      "answer": "Es tauscht mit seiner Umgebung sowohl Stoffe als auch Energie aus.",
+      "wrong": [
+        "Es tauscht mit seiner Umgebung grundsätzlich weder Stoffe noch Energie aus.",
+        "Es erzeugt bei Bedarf neue Materie aus dem Nichts und verliert nichts."
+      ],
+      "explanation": "Systemgrenzen sind gedankliche Hilfen, keine vollständigen Abschottungen."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Pfeile im Systembild",
+      "instruction": "Ordne jede Aussage zu. Prüfe dabei den Zusammenhang und nicht nur einzelne Schlüsselwörter.",
+      "categories": [
+        "Stofftransport",
+        "Energiezufuhr / -abgabe",
+        "Wechselwirkung"
+      ],
+      "entries": [
+        {
+          "text": "Wasser und gelöste Stoffe fließen aus dem Einzugsgebiet ein.",
+          "target": 0,
+          "feedback": "Hier überschreiten Stoffe die Grenze."
+        },
+        {
+          "text": "Sonnenlicht erreicht Pflanzen; Wärme wird abgegeben.",
+          "target": 1,
+          "feedback": "Das beschreibt Energieflüsse."
+        },
+        {
+          "text": "Fraß verändert Pflanzenbestände und Nahrung für andere Arten.",
+          "target": 2,
+          "feedback": "Organismen beeinflussen einander."
+        }
+      ],
+      "conclusion": "Eine Systemskizze zeigt Beziehungen und ihre Grenzen."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Vergleiche einen Teich und die Biosphäre hinsichtlich Stoffen und Energie.",
+        "model": "Der Teich ist lokal für Stoffe und Energie offen. Für die Biosphäre wird der Stoffhaushalt im Schulmodell näherungsweise geschlossen betrachtet; viele Stoffe durchlaufen Kreisläufe. Energie wird aufgenommen, umgewandelt und als Wärme abgegeben. Die jeweiligen Grenzen und Vereinfachungen müssen in der Zeichnung stehen.",
+        "criteria": [
+          "Lokales System offen",
+          "Biosphäre als Näherung",
+          "Stoff und Energie unterschieden"
+        ],
+        "hints": [
+          "Lokales System offen",
+          "Biosphäre als Näherung"
+        ]
+      },
+      "2": {
+        "prompt": "Eine Zeichnung zeigt einen vollständig isolierten Teich. Welche wichtigen Pfeile fehlen?",
+        "model": "Es fehlen unter anderem Sonneneinstrahlung, Wärmeabgabe, Zu- und Abfluss sowie mögliche Stoffeinträge aus der Umgebung. Auch Wanderung von Organismen kann relevant sein. Die Auswahl der Pfeile muss sich nach der Frage richten, etwa Nährstoffeintrag oder Artenvielfalt; kein einzelnes Bild stellt alle Prozesse vollständig dar.",
+        "criteria": [
+          "Mehrere Austauschpfeile",
+          "Bezug zur Frage",
+          "Modellgrenze erläutert"
+        ],
+        "hints": [
+          "Mehrere Austauschpfeile",
+          "Bezug zur Frage"
+        ]
+      }
+    },
+    "model": "ecosystem"
+  },
+  {
+    "id": "bio-stoffkreislauf",
+    "lb": 3,
+    "title": "Kohlenstoff und Energie auf unterschiedlichen Wegen",
+    "period": "Ökosysteme · Lernbereich 3",
+    "intro": "Fotosynthese und Zellatmung verbinden Organismen mit ihrer Umwelt.",
+    "paragraphs": [
+      "Pflanzen binden bei der Fotosynthese Kohlenstoff aus Kohlenstoffdioxid in organischen Stoffen. Über Nahrung und abgestorbenes Material gelangt er zu anderen Organismen. Zellatmung und Zersetzung setzen Kohlenstoff wieder als Kohlenstoffdioxid frei. Regionale Stoffflüsse sind mit dem globalen Kreislauf verbunden.",
+      "Energie wird dabei nicht in derselben Weise im Kreis geführt. Lichtenergie wird chemisch gebunden und bei Umwandlungen teilweise als Wärme abgegeben. Die Entwässerung eines Moors kann zuvor gespeicherten Kohlenstoff leichter abbaubar machen. Für ein begründetes Urteil braucht man Speicher, Flüsse, Zeiträume und die Bedingungen des konkreten Standorts."
+    ],
+    "takeaway": "Ein Speicher ist eine Menge; ein Fluss beschreibt Änderung pro Zeit.",
+    "sourceIds": [
+      "lp",
+      "moor"
+    ],
+    "quiz": {
+      "question": "Was unterscheidet einen Kohlenstoffspeicher von einem Kohlenstofffluss?",
+      "answer": "Ein Speicher ist eine Menge; ein Fluss ist eine Menge pro Zeit.",
+      "wrong": [
+        "Ein Speicher ist ein Temperaturwert; ein Fluss ist ein bloßer Farbton.",
+        "Ein Speicher enthält nur Energie; ein Fluss enthält grundsätzlich keine Stoffe."
+      ],
+      "explanation": "Die Einheit muss erkennen lassen, ob Bestand oder Veränderung beschrieben wird."
+    },
+    "workshop": {
+      "kind": "timeline",
+      "title": "Einen Ablauf rekonstruieren",
+      "instruction": "Bringe die Schritte mit den Pfeilen in eine fachlich sinnvolle Reihenfolge. Begründe die Übergänge, bevor du prüfst.",
+      "categories": [],
+      "entries": [
+        {
+          "text": "Pflanzen nehmen Kohlenstoffdioxid auf und bilden organische Stoffe.",
+          "target": 0,
+          "feedback": "Fotosynthese bindet Kohlenstoff."
+        },
+        {
+          "text": "Kohlenstoff gelangt über Nahrung oder abgestorbenes Material weiter.",
+          "target": 1,
+          "feedback": "Nahrungsbeziehungen und Detritus übertragen Stoffe."
+        },
+        {
+          "text": "Atmung und Zersetzung geben Kohlenstoffdioxid zurück.",
+          "target": 2,
+          "feedback": "Der Rückweg gehört zum Kreislauf."
+        }
+      ],
+      "conclusion": "Die Reihenfolge ist eine mögliche Stoffbahn, nicht ein vollständiges Nahrungsnetz."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre am Moor den Unterschied zwischen Kohlenstoffspeicherung und Energiefluss.",
+        "model": "Im Moor kann Kohlenstoff unter geeigneten Bedingungen lange im Torf gespeichert bleiben. Energie gelangt etwa als Licht in das System und wird bei Stoffwechselprozessen umgewandelt und als Wärme abgegeben. Eine Entwässerung verändert Abbaubedingungen und damit Kohlenstoffflüsse; Menge und Zeitraum müssen getrennt angegeben werden.",
+        "criteria": [
+          "Speicher und Bedingung",
+          "Energiefluss getrennt",
+          "Änderung durch Eingriff erklärt"
+        ],
+        "hints": [
+          "Speicher und Bedingung",
+          "Energiefluss getrennt"
+        ]
+      },
+      "2": {
+        "prompt": "Warum belegt eine große gespeicherte Kohlenstoffmenge nicht automatisch eine gleich große jährliche Bindung?",
+        "model": "Die gespeicherte Menge kann sich über lange Zeit aufgebaut haben. Jährliche Zu- und Abflüsse beschreiben dagegen aktuelle Änderungen und können sich sogar umkehren. Ein Vergleich braucht dieselben Einheiten, einen Zeitraum und Informationen über Standortbedingungen; Bestand und Rate dürfen nicht gleichgesetzt werden.",
+        "criteria": [
+          "Bestand von Rate getrennt",
+          "Zeitraum verlangt",
+          "Vergleichsbedingungen erläutert"
+        ],
+        "hints": [
+          "Bestand von Rate getrennt",
+          "Zeitraum verlangt"
+        ]
+      }
+    }
+  },
+  {
+    "id": "bio-kunststoffe",
+    "lb": 3,
+    "title": "Stoffströme und zeitverzögerte Folgen",
+    "period": "Ökosysteme · Lernbereich 3",
+    "intro": "Ein lokaler Eintrag kann sich weit außerhalb seines Ursprungs auswirken.",
+    "paragraphs": [
+      "Kunststoffe oder andere Stoffe können durch Produktion, Nutzung, Abrieb und Abfälle in die Umwelt gelangen. Wasser und Organismen können sie über lokale Grenzen hinaus verteilen. Zerkleinerung verändert die Größe von Teilchen, bedeutet aber nicht automatisch einen vollständigen Abbau zu unproblematischen Stoffen.",
+      "Wirkungen hängen von Stoffart, Menge, Aufnahmeweg, Organismen und Zeit ab. In einem Gewässer können Einträge gespeichert und später erneut freigesetzt werden. Verzögerung und Rückkopplung machen einfache lineare Erwartungen unzuverlässig: Ein sofortiger Stopp des Eintrags führt nicht zwingend sofort zum Ausgangszustand. Das digitale Modell verwendet frei gewählte Einheiten und ist keine Prognose für ein reales Gewässer."
+    ],
+    "takeaway": "Verteilung, Speicherung und Wirkung eines Stoffes müssen gemeinsam betrachtet werden.",
+    "sourceIds": [
+      "lp",
+      "bfn"
+    ],
+    "quiz": {
+      "question": "Warum folgt auf einen gestoppten Eintrag nicht immer sofort eine vollständige Erholung?",
+      "answer": "Gespeicherte Stoffe und Rückkopplungen können zeitverzögert weiterwirken.",
+      "wrong": [
+        "Gestoppte Einträge müssen grundsätzlich sofort jede frühere Wirkung löschen.",
+        "Reale Ökosysteme besitzen niemals Speicher oder voneinander abhängige Prozesse."
+      ],
+      "explanation": "Vergangene Einträge können nachwirken und der Rückweg kann Zeit brauchen."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Ursache, Transport oder Folge?",
+      "instruction": "Ordne jede Aussage zu. Prüfe dabei den Zusammenhang und nicht nur einzelne Schlüsselwörter.",
+      "categories": [
+        "Eintrag",
+        "Verteilung / Speicherung",
+        "Mögliche Wirkung"
+      ],
+      "entries": [
+        {
+          "text": "Abrieb gelangt mit Wasser in einen Bach.",
+          "target": 0,
+          "feedback": "Hier beginnt eine betrachtete Stoffbahn."
+        },
+        {
+          "text": "Teilchen lagern sich im Sediment ab.",
+          "target": 1,
+          "feedback": "Ein Speicher kann spätere Freisetzung beeinflussen."
+        },
+        {
+          "text": "Eine Art reagiert unter bestimmten Bedingungen empfindlich.",
+          "target": 2,
+          "feedback": "Eine Wirkung braucht Bezug zu Stoff, Dosis und Organismus."
+        }
+      ],
+      "conclusion": "Eine Stoffbahn erklärt mehr als die Betrachtung nur einer Probe."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Skizziere einen möglichen Weg von Kunststoffteilchen von einer Straße zu einem Gewässer.",
+        "model": "Abrieb kann durch Niederschlag fortgetragen werden und über Abflüsse in ein Gewässer gelangen. Ein Teil wird zurückgehalten oder sedimentiert, ein anderer weitertransportiert. Auswirkungen hängen unter anderem von Stoffeigenschaften, Menge und Organismen ab. Ohne Messungen bleibt das eine mögliche Stoffbahn, kein Nachweis eines konkreten Schadens.",
+        "criteria": [
+          "Eintrags- und Transportweg",
+          "Speicher oder Rückhalt",
+          "Möglichkeit von Nachweis unterschieden"
+        ],
+        "hints": [
+          "Eintrags- und Transportweg",
+          "Speicher oder Rückhalt"
+        ]
+      },
+      "2": {
+        "prompt": "Ein Modell reagiert erst nach mehreren Zeitschritten. Was lässt sich daraus über einen realen See ableiten?",
+        "model": "Das Modell veranschaulicht, wie Speicher und Verzögerungen grundsätzlich wirken können. Seine frei gewählten Parameter liefern aber weder reale Konzentrationen noch eine konkrete Erholungszeit. Für eine Übertragung wären passende Messdaten und geprüfte Annahmen zu Transport, Abbau und Wechselwirkungen nötig.",
+        "criteria": [
+          "Verzögerung erklärt",
+          "Keine reale Prognose behauptet",
+          "Notwendige Daten benannt"
+        ],
+        "hints": [
+          "Verzögerung erklärt",
+          "Keine reale Prognose behauptet"
+        ]
+      }
+    },
+    "model": "ecosystem"
+  },
+  {
+    "id": "bio-oeko-wandel",
+    "lb": 3,
+    "title": "Ein lokales Ökosystem im Wandel untersuchen",
+    "period": "Ökosysteme · Lernbereich 3",
+    "intro": "Ein öffentlich zugänglicher Ort verbindet biologische Fragen mit Geschichte.",
+    "paragraphs": [
+      "Wähle beispielsweise einen Bach, eine Wiese oder einen Stadtpark. Beschreibe den heutigen Zustand und prüfe anhand zugänglicher Quellen, wie Nutzung oder Gestaltung früher aussahen. Ein historisches Bild und eine heutige Beobachtung sind nur vergleichbar, wenn Standort, Jahreszeit und Blickrichtung ausreichend geklärt sind.",
+      "Ökosystemleistungen sind Beiträge der Natur zum menschlichen Leben, etwa Wasserrückhalt, Bestäubung, Erholung und Kohlenstoffspeicherung. Durch einen Eingriff können einige Leistungen zunehmen und andere abnehmen. Der eigene Untersuchungsbogen sammelt Frage, öffentliche Quellen, Vergleich und Urteil; seine formale Vollständigkeit ist noch kein Beleg für die fachliche Richtigkeit."
+    ],
+    "takeaway": "Ein Wandel wird mit konkreten Belegen und vergleichbaren Zeitpunkten beschrieben.",
+    "sourceIds": [
+      "lp",
+      "bfn"
+    ],
+    "quiz": {
+      "question": "Welcher Vergleich untersucht einen historischen Ökosystemwandel am besten?",
+      "answer": "Quellen zum selben Gebiet, deren Zeit und Darstellungsgrenzen bekannt sind.",
+      "wrong": [
+        "Zwei unbeschriftete Bilder beliebiger Orte ohne bekannte Aufnahmedaten.",
+        "Eine allgemeine Meinung ohne Angaben zum Gebiet und ohne überprüfbare Belege."
+      ],
+      "explanation": "Ort, Zeitpunkt und Darstellung müssen für einen Vergleich passen."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Leistungen des Ökosystems",
+      "instruction": "Ordne jede Aussage zu. Prüfe dabei den Zusammenhang und nicht nur einzelne Schlüsselwörter.",
+      "categories": [
+        "Regulierende Leistung",
+        "Bereitstellende Leistung",
+        "Kulturelle Leistung"
+      ],
+      "entries": [
+        {
+          "text": "Eine Aue kann Wasser zeitweise zurückhalten.",
+          "target": 0,
+          "feedback": "Das beeinflusst den Wasserhaushalt."
+        },
+        {
+          "text": "Ein geeigneter Lebensraum unterstützt die Bereitstellung von Nahrungsmitteln.",
+          "target": 1,
+          "feedback": "Hier wird eine nutzbare Grundlage beschrieben."
+        },
+        {
+          "text": "Ein naturnaher Park dient Erholung und Naturerleben.",
+          "target": 2,
+          "feedback": "Das betrifft die kulturelle Nutzung."
+        }
+      ],
+      "conclusion": "Die Kategorien helfen, unterschiedliche Interessen sichtbar zu machen."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Formuliere für einen selbst gewählten öffentlichen Ort eine biologische Veränderungsfrage.",
+        "model": "Eine mögliche Frage lautet: Wie hat die Umgestaltung des Bachufers seit der älteren dokumentierten Nutzung die Vegetation und den Zugang zur Erholung verändert? Ich benenne den Abschnitt, zwei Vergleichszeitpunkte und überprüfbare Belege. Beobachtungen und mögliche Ursachen werden getrennt festgehalten.",
+        "criteria": [
+          "Konkreter Ort und Zeitraum",
+          "Biologische Veränderungsfrage",
+          "Mögliche Belege genannt"
+        ],
+        "hints": [
+          "Konkreter Ort und Zeitraum",
+          "Biologische Veränderungsfrage"
+        ]
+      },
+      "2": {
+        "prompt": "Ein altes Sommerfoto wird mit einem heutigen Winterfoto verglichen. Welche Grenze hat der Vergleich?",
+        "model": "Sichtbare Vegetationsunterschiede können durch Jahreszeit und Aufnahmebedingungen statt durch dauerhafte Veränderungen entstehen. Der Ort und die Bildrichtung müssen ebenfalls geprüft werden. Für einen belastbareren Vergleich wären zusätzliche saisonal vergleichbare Aufnahmen oder andere Dokumente hilfreich.",
+        "criteria": [
+          "Saisoneffekt erkannt",
+          "Weitere Vergleichsbedingungen",
+          "Verbesserter Beleg vorgeschlagen"
+        ],
+        "hints": [
+          "Saisoneffekt erkannt",
+          "Weitere Vergleichsbedingungen"
+        ]
+      }
+    },
+    "projectStep": "question"
+  },
+  {
+    "id": "bio-vielfalt",
+    "lb": 3,
+    "title": "Artenvielfalt und vernetzte Lebensgemeinschaften",
+    "period": "Ökosysteme · Lernbereich 3",
+    "intro": "Arten übernehmen unterschiedliche und teilweise überlappende Funktionen.",
+    "paragraphs": [
+      "In einem Ökosystem stehen Produzenten, Konsumenten und Zersetzer in vielen Beziehungen. Arten unterscheiden sich etwa darin, welche Nahrung sie nutzen, wann sie aktiv sind oder welche Bedingungen sie tolerieren. Vielfalt kann Funktionen unter wechselnden Bedingungen unterstützen; die Bedeutung einer Art lässt sich nicht allein durch ihre Häufigkeit beschreiben.",
+      "Ein Eingriff kann Lebensräume verkleinern, Verbindungen unterbrechen oder Bedingungen verändern. Folgen betreffen oft mehrere Beziehungen und können erst später sichtbar werden. Im eigenen Ortsvergleich werden deshalb konkrete Belege für Veränderungen und ihre möglichen Folgen gesammelt. Eine vermutete Art oder ein einzelnes Foto genügt nicht für eine vollständige Bestandsaufnahme."
+    ],
+    "takeaway": "Untersuche Beziehungen und Lebensbedingungen statt nur Arten zu zählen.",
+    "sourceIds": [
+      "lp",
+      "bfn"
+    ],
+    "quiz": {
+      "question": "Warum kann ein Artenverlust weitere Arten beeinflussen?",
+      "answer": "Nahrungsbeziehungen und andere Wechselwirkungen verbinden die Arten.",
+      "wrong": [
+        "Jede Art lebt grundsätzlich vollständig unabhängig von allen anderen Arten.",
+        "Eine sinkende Artenzahl verbessert automatisch jede Leistung des Ökosystems."
+      ],
+      "explanation": "Veränderungen können sich durch ein Netzwerk von Beziehungen fortsetzen."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Mögliche Folgen eines Eingriffs",
+      "instruction": "Ordne jede Aussage zu. Prüfe dabei den Zusammenhang und nicht nur einzelne Schlüsselwörter.",
+      "categories": [
+        "Lebensraumveränderung",
+        "Unterbrochene Beziehung",
+        "Noch zu prüfende Behauptung"
+      ],
+      "entries": [
+        {
+          "text": "Eine zuvor feuchte Fläche wird entwässert.",
+          "target": 0,
+          "feedback": "Eine abiotische Bedingung ändert sich."
+        },
+        {
+          "text": "Ein Blühangebot entfällt als Nahrungsquelle.",
+          "target": 1,
+          "feedback": "Bestimmte Organismen verlieren eine Ressource."
+        },
+        {
+          "text": "Ein einziges Foto beweise das Verschwinden aller Insekten.",
+          "target": 2,
+          "feedback": "Das Material reicht für diese umfassende Aussage nicht aus."
+        }
+      ],
+      "conclusion": "Für unterschiedliche Aussagen sind unterschiedliche Belege nötig."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Verknüpfe einen Eingriff an deinem Untersuchungsort mit zwei möglichen biologischen Folgen.",
+        "model": "Wenn eine blütenreiche Fläche versiegelt wird, gehen Lebensraum und Nahrungsangebote verloren. Das kann bestäubende Insekten und von ihnen abhängige Pflanzen beeinflussen. Ich brauche konkrete Angaben zur früheren und heutigen Fläche und unterscheide belegte Änderungen von noch nicht untersuchten Artenfolgen.",
+        "criteria": [
+          "Eingriff konkretisiert",
+          "Zwei Beziehungen oder Folgen",
+          "Belege und Vermutung getrennt"
+        ],
+        "hints": [
+          "Eingriff konkretisiert",
+          "Zwei Beziehungen oder Folgen"
+        ]
+      },
+      "2": {
+        "prompt": "Ist eine höhere Artenzahl immer der einzige sinnvolle Maßstab für Naturschutz?",
+        "model": "Die Zahl kann einen Teil der Vielfalt beschreiben. Zusätzlich zählen Zusammensetzung, heimische Lebensgemeinschaften, besondere Funktionen, Zustand der Lebensräume und Schutzbedürftigkeit. Ein artenarmer, standorttypischer Lebensraum kann schutzwürdig sein; das Ziel muss für den konkreten Standort begründet werden.",
+        "criteria": [
+          "Mehr als bloße Anzahl berücksichtigt",
+          "Standort und Funktionen",
+          "Begründeten Maßstab benannt"
+        ],
+        "hints": [
+          "Mehr als bloße Anzahl berücksichtigt",
+          "Standort und Funktionen"
+        ]
+      }
+    },
+    "projectStep": "evidence"
+  },
+  {
+    "id": "bio-schutz",
+    "lb": 3,
+    "title": "Schutzmaßnahmen und Zielkonflikte abwägen",
+    "period": "Ökosysteme · Lernbereich 3",
+    "intro": "Ein gutes Urteil vergleicht Handlungsoptionen statt nur Wünsche zu nennen.",
+    "paragraphs": [
+      "Ein Bach kann Erholungsraum, Lebensraum und Teil der Entwässerung einer Siedlung sein. Maßnahmen wie Uferbegrünung, Durchgängigkeit oder Rückhalt betreffen verschiedene Interessen. Technische Verfahren wie Abwasserbehandlung können Belastungen verringern, ersetzen aber nicht jede Vermeidung an der Quelle.",
+      "Für den Vergleich werden Kriterien festgelegt: biologische Wirkung, Aufwand, Dauerhaftigkeit, mögliche Nebenfolgen und Verteilung von Nutzen und Lasten. Unsichere Folgen bleiben ausdrücklich offen. Im Untersuchungsbogen führst du Belege, Maßstäbe und ein abgewogenes Urteil zusammen und planst eine adressatengerechte Präsentation im Unterricht."
+    ],
+    "takeaway": "Eine nachhaltige Maßnahme braucht Wirksamkeit, Dauerhaftigkeit und transparente Abwägung.",
+    "sourceIds": [
+      "lp",
+      "bfn"
+    ],
+    "quiz": {
+      "question": "Welche Begründung prüft eine Schutzmaßnahme angemessen?",
+      "answer": "Sie vergleicht Wirkungen, Nebenfolgen, Aufwand und die Dauer der Wirkung.",
+      "wrong": [
+        "Sie bewertet nur den ersten sichtbaren Effekt ohne weitere Vergleichskriterien.",
+        "Sie erklärt jede technische Maßnahme grundsätzlich für vollständig wirkungslos."
+      ],
+      "explanation": "Nachhaltigkeit verlangt einen Blick über den unmittelbaren Einzeleffekt hinaus."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Ein Entscheidungsvergleich",
+      "instruction": "Ordne jede Aussage zu. Prüfe dabei den Zusammenhang und nicht nur einzelne Schlüsselwörter.",
+      "categories": [
+        "Beleg",
+        "Kriterium",
+        "Handlungsoption"
+      ],
+      "entries": [
+        {
+          "text": "Eine Quelle dokumentiert frühere Überschwemmungsflächen.",
+          "target": 0,
+          "feedback": "Das ist eine prüfbare Information."
+        },
+        {
+          "text": "Wasserrückhalt soll langfristig erhalten bleiben.",
+          "target": 1,
+          "feedback": "Hier wird ein Zielmaßstab genannt."
+        },
+        {
+          "text": "Ein Abschnitt erhält wieder mehr Raum für Ufervegetation.",
+          "target": 2,
+          "feedback": "Das ist eine mögliche Maßnahme."
+        }
+      ],
+      "conclusion": "Die Entscheidung muss zu Ort und Befunden passen."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Formuliere ein begründetes Urteil zu einer Maßnahme an deinem Untersuchungsort.",
+        "model": "Ich vergleiche eine Uferbegrünung mit dem unveränderten Zustand anhand von Lebensraum, Zugänglichkeit und Aufwand. Quellen stützen, welche Flächen betroffen sind; andere Folgen bleiben noch offen. Mein Urteil empfiehlt eine überprüfbare Maßnahme unter klar benannten Bedingungen und berücksichtigt Einwände anderer Nutzergruppen.",
+        "criteria": [
+          "Beleg und Kriterium verknüpft",
+          "Alternative und Gegeninteresse",
+          "Bedingtes Urteil und Grenze"
+        ],
+        "hints": [
+          "Beleg und Kriterium verknüpft",
+          "Alternative und Gegeninteresse"
+        ]
+      },
+      "2": {
+        "prompt": "Nach einer kurzfristigen Verbesserung wird ein Projekt als dauerhaft erfolgreich erklärt. Was fehlt?",
+        "model": "Es fehlen längere Beobachtung, Vergleichsmaßstäbe und die Prüfung möglicher Nebenfolgen. Veränderungen können saisonal sein oder später zurückkehren. Eine belastbare Bewertung legt vorher Kriterien fest und erfasst auch unerwartete Entwicklungen; eine einzelne gute Beobachtung begründet keine unbegrenzte Dauerwirkung.",
+        "criteria": [
+          "Zeitbezug hinterfragt",
+          "Vergleich und Nebenfolgen",
+          "Nachprüfbaren Maßstab vorgeschlagen"
+        ],
+        "hints": [
+          "Zeitbezug hinterfragt",
+          "Vergleich und Nebenfolgen"
+        ]
+      }
+    },
+    "projectStep": "judgment"
+  },
+  {
+    "id": "bio-oekobilanz",
+    "lb": 3,
+    "title": "Konsum, Ökobilanz und eigene Handlungsmöglichkeiten",
+    "period": "Ökosysteme · Lernbereich 3",
+    "intro": "Ein Vergleich braucht dieselbe Leistung und einen erkennbaren Rahmen.",
+    "paragraphs": [
+      "Eine Ökobilanz betrachtet Umweltwirkungen entlang eines festgelegten Lebenswegs: Gewinnung, Herstellung, Transport, Nutzung und Entsorgung können einbezogen werden. Ergebnisse hängen von Systemgrenzen, Daten und Vergleichseinheit ab. Der bloße Transportweg allein beschreibt nicht jede Umweltwirkung eines Lebensmittels.",
+      "Für einen fairen Vergleich muss dieselbe Funktion betrachtet werden, etwa eine bestimmte Menge verzehrfähiges Lebensmittel. Saison, Anbauweise, Energiebedarf, Verluste und Verpackung können relevant sein. Individuelles Verhalten wirkt zusammen mit technischen und gesellschaftlichen Bedingungen. Die begründete Wahl benennt Daten, Zielkonflikte und realistische Möglichkeiten statt pauschaler Schuldzuweisungen."
+    ],
+    "takeaway": "Vergleiche dieselbe Funktion über klar benannte Systemgrenzen.",
+    "sourceIds": [
+      "lp",
+      "bfn"
+    ],
+    "quiz": {
+      "question": "Was braucht ein fairer Ökobilanzvergleich zweier Lebensmittel mindestens?",
+      "answer": "Eine gemeinsame Vergleichseinheit und benannte Systemgrenzen.",
+      "wrong": [
+        "Nur die Farbe der Verpackung ohne Angaben zu weiteren Lebenswegschritten.",
+        "Ausschließlich eine beliebig ausgewählte Transportstrecke ohne Mengenbezug."
+      ],
+      "explanation": "Unterschiedliche Leistungen und Grenzen sind nicht direkt vergleichbar."
+    },
+    "workshop": {
+      "kind": "timeline",
+      "title": "Einen Ablauf rekonstruieren",
+      "instruction": "Bringe die Schritte mit den Pfeilen in eine fachlich sinnvolle Reihenfolge. Begründe die Übergänge, bevor du prüfst.",
+      "categories": [],
+      "entries": [
+        {
+          "text": "Die zu vergleichende Funktion und Menge festlegen.",
+          "target": 0,
+          "feedback": "Die Vergleichseinheit schafft einen gemeinsamen Bezug."
+        },
+        {
+          "text": "Lebensweg und Systemgrenzen offenlegen.",
+          "target": 1,
+          "feedback": "Nicht betrachtete Schritte bleiben sichtbar."
+        },
+        {
+          "text": "Daten zu mehreren Umweltwirkungen prüfen.",
+          "target": 2,
+          "feedback": "Eine einzige Kennzahl erfasst nicht alles."
+        },
+        {
+          "text": "Optionen und Unsicherheiten begründet abwägen.",
+          "target": 3,
+          "feedback": "Eine Handlung folgt aus Kriterien und Grenzen."
+        }
+      ],
+      "conclusion": "Eine Ökobilanz ist eine strukturierte Untersuchung, kein bloßes Etikett."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Vergleiche zwei Lebensmittelangebote, ohne allein aus „regional“ auf das Ergebnis zu schließen.",
+        "model": "Ich lege dieselbe verzehrfähige Menge fest und prüfe Anbau, mögliche Lagerung, Transport, Verluste und Entsorgung. Regionalität kann einen Unterschied machen, entscheidet aber nicht allein über Energiebedarf oder andere Wirkungen. Mein Urteil nennt die verwendeten Daten und verbleibende Unsicherheiten.",
+        "criteria": [
+          "Gleiche Funktion / Menge",
+          "Mehrere Lebenswegschritte",
+          "Abgewogen statt Etiketturteil"
+        ],
+        "hints": [
+          "Gleiche Funktion / Menge",
+          "Mehrere Lebenswegschritte"
+        ]
+      },
+      "2": {
+        "prompt": "Eine Mehrwegverpackung ist schwerer als eine Einwegverpackung. Reicht das für ein Urteil?",
+        "model": "Nein. Herstellung, Zahl der Wiederverwendungen, Rücktransport, Reinigung und Entsorgung gehören zum Vergleich. Entscheidend ist eine gemeinsame Funktion über eine nachvollziehbare Nutzungszahl. Das höhere Gewicht eines einzelnen Exemplars ist nur ein Teil der Umweltwirkungen und begründet allein weder Zustimmung noch Ablehnung.",
+        "criteria": [
+          "Weitere Lebenswegschritte",
+          "Nutzungszahl und Einheit",
+          "Gewicht nicht allein bewertet"
+        ],
+        "hints": [
+          "Weitere Lebenswegschritte",
+          "Nutzungszahl und Einheit"
+        ]
+      }
+    }
+  },
+  {
+    "id": "bio-vorsorge",
+    "lb": 4,
+    "title": "Entwicklung und Schwangerschaftsvorsorge",
+    "period": "Elternschaft · Lernbereich 4",
+    "intro": "Begleitung verbindet die Gesundheit der Schwangeren mit der Entwicklung des Kindes.",
+    "paragraphs": [
+      "Nach Befruchtung und frühen Zellteilungen entwickelt sich ein Embryo; später wird vom Fetus gesprochen. Zellen vermehren und differenzieren sich, Gewebe und Organe entstehen. Die Plazenta ermöglicht Austausch zwischen mütterlichem und kindlichem Organismus, ohne dass beide Blutkreisläufe einfach zu einem einzigen werden.",
+      "Schwangerschaftsvorsorge beobachtet Entwicklung und Gesundheit und kann Unterstützung oder weitere Abklärung ermöglichen. Eine unauffällige Untersuchung garantiert nicht, dass jedes denkbare Problem ausgeschlossen ist. Fachliche Information, Freiwilligkeit und verständliche Beratung helfen, Möglichkeiten und Grenzen von Untersuchungen zu unterscheiden."
+    ],
+    "takeaway": "Vorsorge begleitet Entwicklung und Gesundheit, ohne alles sicher vorhersagen zu können.",
+    "sourceIds": [
+      "lp",
+      "vorsorge"
+    ],
+    "quiz": {
+      "question": "Welche Beschreibung der Plazenta ist sachgerecht?",
+      "answer": "Sie ermöglicht Stoffaustausch zwischen getrennten mütterlichen und kindlichen Kreisläufen.",
+      "wrong": [
+        "Sie vereinigt grundsätzlich das gesamte Blut beider Organismen zu einem einzigen Kreislauf.",
+        "Sie verhindert grundsätzlich jede Wirkung äußerer Einflüsse während der Schwangerschaft."
+      ],
+      "explanation": "Austausch findet statt, obwohl die Kreisläufe getrennt bleiben."
+    },
+    "workshop": {
+      "kind": "timeline",
+      "title": "Einen Ablauf rekonstruieren",
+      "instruction": "Bringe die Schritte mit den Pfeilen in eine fachlich sinnvolle Reihenfolge. Begründe die Übergänge, bevor du prüfst.",
+      "categories": [],
+      "entries": [
+        {
+          "text": "Befruchtung und frühe Teilungen.",
+          "target": 0,
+          "feedback": "Es beginnt eine Folge von Entwicklungsprozessen."
+        },
+        {
+          "text": "Differenzierung und Anlage verschiedener Gewebe und Organe.",
+          "target": 1,
+          "feedback": "Nicht alle Zellen behalten dieselbe Aufgabe."
+        },
+        {
+          "text": "Weiteres Wachstum und Reifung im Verlauf der Schwangerschaft.",
+          "target": 2,
+          "feedback": "Entwicklung ist ein fortlaufender Prozess."
+        }
+      ],
+      "conclusion": "Die vereinfachte Reihenfolge ersetzt keine vollständige Entwicklungsbeschreibung."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre den Zusammenhang von Entwicklung, Plazenta und Vorsorge.",
+        "model": "Wachstum und Differenzierung führen zur Ausbildung von Geweben und Organen. Über die Plazenta werden unter anderem Stoffe ausgetauscht, während die Blutkreisläufe getrennt bleiben. Vorsorge verfolgt Entwicklung und Gesundheit, kann aber keine lückenlose Garantie für jede spätere Eigenschaft geben.",
+        "criteria": [
+          "Entwicklung differenziert beschrieben",
+          "Austausch bei getrennten Kreisläufen",
+          "Zweck und Grenze der Vorsorge"
+        ],
+        "hints": [
+          "Entwicklung differenziert beschrieben",
+          "Austausch bei getrennten Kreisläufen"
+        ]
+      },
+      "2": {
+        "prompt": "Warum ist die Behauptung „Die Plazenta hält alle schädlichen Einflüsse sicher ab“ problematisch?",
+        "model": "Die Plazenta ist ein reguliertes Austauschorgan und keine undurchlässige Schutzwand. Bestimmte Stoffe können den sich entwickelnden Organismus beeinflussen. Welche Folgen auftreten, hängt von vielen Bedingungen ab. Vorsorge und fachliche Beratung sollen angemessene Entscheidungen unterstützen, nicht eine vollständige Abschirmung versprechen.",
+        "criteria": [
+          "Schutzwand-Vorstellung korrigiert",
+          "Bedingungsabhängigkeit genannt",
+          "Zweck fachlicher Begleitung erläutert"
+        ],
+        "hints": [
+          "Schutzwand-Vorstellung korrigiert",
+          "Bedingungsabhängigkeit genannt"
+        ]
+      }
+    }
+  },
+  {
+    "id": "bio-praenatal",
+    "lb": 4,
+    "title": "Pränataldiagnostik: Screening und Abklärung",
+    "period": "Elternschaft · Lernbereich 4",
+    "intro": "Ein auffälliger Suchtest ist noch kein sicherer Befund.",
+    "paragraphs": [
+      "Untersuchungen vor der Geburt beantworten unterschiedliche Fragen. Ein Screening schätzt eine Wahrscheinlichkeit oder sucht nach Hinweisen. Eine gezielte diagnostische Abklärung kann andere Aussagen ermöglichen und eigene Grenzen oder Risiken haben. Ob eine Untersuchung gewünscht wird, setzt verständliche Information und eine freiwillige Entscheidung voraus.",
+      "Selbst ein Test mit hoher Trefferquote kann falsch positive und falsch negative Ergebnisse liefern. Entscheidend ist auch, wie häufig die gesuchte Eigenschaft in der untersuchten Gruppe vorkommt. Im Modell werden ausschließlich erfundene Zahlen genutzt. Es zeigt Häufigkeiten und bedingte Wahrscheinlichkeiten, bewertet aber weder reale Untersuchungen noch eine persönliche Schwangerschaft."
+    ],
+    "takeaway": "Die Aussage eines positiven Tests hängt auch von der Ausgangshäufigkeit ab.",
+    "sourceIds": [
+      "lp",
+      "praenatal"
+    ],
+    "quiz": {
+      "question": "Was bedeutet ein auffälliges Screening zunächst?",
+      "answer": "Ein Hinweis oder eine erhöhte Wahrscheinlichkeit, die eingeordnet werden muss.",
+      "wrong": [
+        "Eine sichere vollständige Diagnose ohne jeden weiteren Informationsbedarf.",
+        "Eine garantierte Vorhersage aller späteren Eigenschaften des Kindes."
+      ],
+      "explanation": "Suchtest, Diagnose und persönliche Entscheidung sind verschiedene Schritte."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Welche Aussage ist gemeint?",
+      "instruction": "Ordne jede Aussage zu. Prüfe dabei den Zusammenhang und nicht nur einzelne Schlüsselwörter.",
+      "categories": [
+        "Richtig positiv",
+        "Falsch positiv",
+        "Falsch negativ"
+      ],
+      "entries": [
+        {
+          "text": "Die gesuchte Eigenschaft liegt vor und der Test fällt positiv aus.",
+          "target": 0,
+          "feedback": "Hier treffen Ergebnis und Zustand zusammen."
+        },
+        {
+          "text": "Die Eigenschaft liegt nicht vor, aber der Test fällt positiv aus.",
+          "target": 1,
+          "feedback": "Das ist ein falsch positiver Befund."
+        },
+        {
+          "text": "Die Eigenschaft liegt vor, aber der Test fällt negativ aus.",
+          "target": 2,
+          "feedback": "Ein negatives Ergebnis kann die Eigenschaft übersehen."
+        }
+      ],
+      "conclusion": "Die Bezugsgruppe einer Prozentangabe muss klar bleiben."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre, warum die Trefferquote allein den Anteil tatsächlicher Fälle unter positiven Tests nicht festlegt.",
+        "model": "Die Trefferquote bezieht sich auf Personen mit der gesuchten Eigenschaft. Unter positiven Ergebnissen können aber auch Personen ohne diese Eigenschaft sein. Wenn die Ausgangshäufigkeit klein ist, können solche falsch positiven Fälle zahlreich sein. Man benötigt deshalb Ausgangshäufigkeit und Fehlerquoten gemeinsam.",
+        "criteria": [
+          "Bezugsgruppen unterschieden",
+          "Falsch positive Fälle berücksichtigt",
+          "Ausgangshäufigkeit erklärt"
+        ],
+        "hints": [
+          "Bezugsgruppen unterschieden",
+          "Falsch positive Fälle berücksichtigt"
+        ]
+      },
+      "2": {
+        "prompt": "Was sollte vor einer pränatalen Untersuchung besprochen werden?",
+        "model": "Besprochen werden sollten Fragestellung, mögliche Ergebnisse, Aussagegrenzen und mögliche nächste Schritte sowie die eigenen Wünsche im Umgang mit Information. Ein Suchtestergebnis legt keine persönliche Entscheidung automatisch fest. Unterschiedliche Entscheidungen können bei verständlicher Aufklärung und Freiwilligkeit begründet sein.",
+        "criteria": [
+          "Zweck und Aussagegrenzen",
+          "Mögliche Folgen der Information",
+          "Freiwillige informierte Entscheidung"
+        ],
+        "hints": [
+          "Zweck und Aussagegrenzen",
+          "Mögliche Folgen der Information"
+        ]
+      }
+    },
+    "model": "screening"
+  },
+  {
+    "id": "bio-einfluesse",
+    "lb": 4,
+    "title": "Äußere Einflüsse und unterstützende Bedingungen",
+    "period": "Elternschaft · Lernbereich 4",
+    "intro": "Gesundheit ist eine gemeinsame Aufgabe, keine Suche nach persönlicher Schuld.",
+    "paragraphs": [
+      "Die Entwicklung während einer Schwangerschaft kann durch Ernährung, bestimmte Medikamente, Alkohol, andere Drogen und Lebensbedingungen beeinflusst werden. Die Wirkung hängt unter anderem von Stoff, Menge, Zeitpunkt und individuellen Bedingungen ab. Eine bloße Liste von Einflüssen erlaubt keine sichere Vorhersage für einen Einzelfall.",
+      "Verantwortung bedeutet auch, geeignete Unterstützung und fachliche Information zugänglich zu machen. Medizinische Entscheidungen zu Medikamenten gehören in die fachliche Begleitung und werden nicht aus einem Schulmodell abgeleitet. Verlässliche Quellen unterscheiden allgemeine Vorsorgehinweise von individuellen Entscheidungen und vermeiden Schuldzuweisungen aus unvollständigen Informationen."
+    ],
+    "takeaway": "Einfluss, Wahrscheinlichkeit und individuelle Folge sind nicht gleichzusetzen.",
+    "sourceIds": [
+      "lp",
+      "vorsorge",
+      "familie"
+    ],
+    "quiz": {
+      "question": "Welche Schlussfolgerung ist bei äußeren Einflüssen angemessen?",
+      "answer": "Mögliche Wirkungen hängen von mehreren Bedingungen ab und brauchen fachliche Einordnung.",
+      "wrong": [
+        "Eine einzelne allgemeine Liste sagt jede individuelle Entwicklungsfolge sicher voraus.",
+        "Jede Belastung erlaubt ohne weitere Informationen eine persönliche Schuldzuweisung."
+      ],
+      "explanation": "Allgemeine Zusammenhänge sind keine vollständige Einzelfallvorhersage."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Information verantwortungsvoll nutzen",
+      "instruction": "Ordne jede Aussage zu. Prüfe dabei den Zusammenhang und nicht nur einzelne Schlüsselwörter.",
+      "categories": [
+        "Allgemeiner Zusammenhang",
+        "Individuelle Entscheidung",
+        "Unzulässige Schuldzuweisung"
+      ],
+      "entries": [
+        {
+          "text": "Bestimmte Stoffe können Entwicklung beeinflussen.",
+          "target": 0,
+          "feedback": "Das ist ein allgemeiner fachlicher Zusammenhang."
+        },
+        {
+          "text": "Eine konkrete Medikamentenfrage wird fachlich besprochen.",
+          "target": 1,
+          "feedback": "Nutzen und Risiken müssen zum Befund passen."
+        },
+        {
+          "text": "Ein Problem beweise automatisch persönliches Fehlverhalten.",
+          "target": 2,
+          "feedback": "Aus einer Folge lässt sich die individuelle Ursache nicht so ableiten."
+        }
+      ],
+      "conclusion": "Unterstützung und verlässliche Information sind Teil von Verantwortung."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre, warum das gleiche äußere Signal nicht immer dieselbe Entwicklungsfolge vorhersagt.",
+        "model": "Wirkungen hängen unter anderem vom konkreten Stoff, der Menge, dem Entwicklungszeitpunkt und weiteren Bedingungen ab. Zudem können mehrere Einflüsse zusammenwirken. Aus einer allgemeinen Risikoaussage folgt deshalb keine sichere individuelle Vorhersage; geeignete fachliche Begleitung hilft bei konkreten Entscheidungen.",
+        "criteria": [
+          "Mehrere Bedingungen genannt",
+          "Risiko von Gewissheit getrennt",
+          "Rolle fachlicher Begleitung"
+        ],
+        "hints": [
+          "Mehrere Bedingungen genannt",
+          "Risiko von Gewissheit getrennt"
+        ]
+      },
+      "2": {
+        "prompt": "Eine Internetseite rät ohne Untersuchung zum Absetzen aller Medikamente. Wie prüfst du die Aussage?",
+        "model": "Ich prüfe Urheber, fachliche Belege und den fehlenden Bezug zur konkreten Situation. Auch eine notwendige Behandlung hat Nutzen, der gegen mögliche Risiken abgewogen werden muss. Eine pauschale Fernanweisung ersetzt diese Prüfung nicht; konkrete Entscheidungen brauchen geeignete medizinische Begleitung.",
+        "criteria": [
+          "Quelle hinterfragt",
+          "Nutzen und Risiko berücksichtigt",
+          "Pauschale Anweisung nicht übernommen"
+        ],
+        "hints": [
+          "Quelle hinterfragt",
+          "Nutzen und Risiko berücksichtigt"
+        ]
+      }
+    }
+  },
+  {
+    "id": "bio-elternschaft",
+    "lb": 4,
+    "title": "Elternschaft: Veränderungen und geteilte Verantwortung",
+    "period": "Elternschaft · Lernbereich 4",
+    "intro": "Ein Kind verändert Zeit, Beziehungen und Unterstützungsbedarf.",
+    "paragraphs": [
+      "Schwangerschaft und Elternschaft können Alltag, Ausbildung oder Beruf, Finanzen und Beziehungen verändern. Verantwortung umfasst Versorgung, Schutz, verlässliche Zuwendung und die Wahrnehmung der Bedürfnisse des Kindes. Diese Aufgaben lassen sich nicht allein aus biologischer Verwandtschaft oder einer bestimmten Rollenverteilung ableiten.",
+      "Partnerinnen oder Partner, weitere Bezugspersonen und gesellschaftliche Angebote können Verantwortung teilen. Eine realistische Planung berücksichtigt Zeit, Betreuung und Entlastung ebenso wie materielle Fragen. In den Aufgaben werden erfundene Situationen betrachtet; Lernende müssen keine privaten Familienverhältnisse offenlegen."
+    ],
+    "takeaway": "Verantwortung zeigt sich in verlässlicher Versorgung, Beziehung und Unterstützung.",
+    "sourceIds": [
+      "lp",
+      "familie"
+    ],
+    "quiz": {
+      "question": "Was gehört zu einer realistischen Vorbereitung auf Elternschaft?",
+      "answer": "Betreuung, Zeit, Ressourcen und verfügbare Unterstützung gemeinsam bedenken.",
+      "wrong": [
+        "Nur biologische Verwandtschaft betrachten und alle Alltagsaufgaben ausblenden.",
+        "Alle Aufgaben ohne Rücksicht auf Bedürfnisse nach festen Klischees verteilen."
+      ],
+      "explanation": "Biologische und soziale Verantwortung müssen im Alltag konkret werden."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Was wird geplant?",
+      "instruction": "Ordne jede Aussage zu. Prüfe dabei den Zusammenhang und nicht nur einzelne Schlüsselwörter.",
+      "categories": [
+        "Versorgung",
+        "Beziehung und Zuwendung",
+        "Entlastung und Unterstützung"
+      ],
+      "entries": [
+        {
+          "text": "Regelmäßige Betreuung und notwendige Alltagsmittel.",
+          "target": 0,
+          "feedback": "Das betrifft konkrete Versorgung."
+        },
+        {
+          "text": "Auf Signale des Kindes verlässlich reagieren.",
+          "target": 1,
+          "feedback": "Hier steht die Beziehung im Mittelpunkt."
+        },
+        {
+          "text": "Verlässliche Hilfe durch geeignete Bezugspersonen organisieren.",
+          "target": 2,
+          "feedback": "Unterstützung kann Überlastung mindern."
+        }
+      ],
+      "conclusion": "Die Bereiche wirken im Alltag zusammen."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Ein erfundenes Elternpaar plant beide Vollzeit zu arbeiten. Welche Fragen sind zu klären?",
+        "model": "Zu klären sind verlässliche Betreuung, verfügbare Zeit, finanzielle Möglichkeiten und faire Aufgabenverteilung. Auch Krankheit, Erholung und Unterstützung durch geeignete Bezugspersonen gehören zur Planung. Maßstab sind die Bedürfnisse des Kindes und ein tragfähiger Alltag, nicht starre Vorstellungen darüber, wer welche Rolle übernehmen muss.",
+        "criteria": [
+          "Konkrete Alltagsfragen",
+          "Aufgaben und Entlastung",
+          "Kindesbedürfnisse statt Klischees"
+        ],
+        "hints": [
+          "Konkrete Alltagsfragen",
+          "Aufgaben und Entlastung"
+        ]
+      },
+      "2": {
+        "prompt": "Warum genügt „Eltern sein ist allein Privatsache“ nicht als vollständige Beschreibung?",
+        "model": "Elternschaft umfasst persönliche Entscheidungen, aber auch die Rechte und Bedürfnisse des Kindes sowie gesellschaftliche Rahmenbedingungen wie Betreuung und Ausbildung. Unterstützung und Verantwortung werden deshalb auf mehreren Ebenen wirksam. Eine differenzierte Beschreibung schützt persönliche Entscheidungen und berücksichtigt zugleich Abhängigkeit und Fürsorge.",
+        "criteria": [
+          "Persönliche Ebene",
+          "Kindesbedürfnisse",
+          "Gesellschaftliche Bedingungen"
+        ],
+        "hints": [
+          "Persönliche Ebene",
+          "Kindesbedürfnisse"
+        ]
+      }
+    }
+  },
+  {
+    "id": "bio-leben-ethik",
+    "lb": 4,
+    "title": "Beginn menschlichen Lebens: Biologie, Ethik und Recht",
+    "period": "Elternschaft · Lernbereich 4",
+    "intro": "Unterschiedliche Fragen brauchen unterschiedliche Arten von Begründungen.",
+    "paragraphs": [
+      "Biologie beschreibt Entwicklungsprozesse von Befruchtung über Zellteilungen und Differenzierung bis zur weiteren Entwicklung. Ethische Fragen betreffen unter anderem Schutz, Selbstbestimmung, Verantwortung und den Umgang mit Konflikten. Rechtliche Regelungen bestimmen gesellschaftlich verbindliche Bedingungen; sie sind weder eine reine Messung noch identisch mit jeder persönlichen Moralvorstellung.",
+      "§ 218a StGB unterscheidet in Deutschland verschiedene Voraussetzungen. Zur Beratungsregelung gehören eine anerkannte Konfliktberatung, mindestens drei Tage Abstand zum Eingriff, ärztliche Vornahme und höchstens zwölf Wochen seit der Empfängnis. Medizinische und kriminologische Indikationen sind andere gesetzliche Fallkonstellationen; ihre Voraussetzungen dürfen nicht mit der Beratungsregelung gleichgesetzt werden. Straffreiheit und fehlende Rechtswidrigkeit sind nicht in jedem Fall dasselbe. Die verlinkte aktuelle amtliche Fassung und qualifizierte Beratung sind für Einzelfragen maßgeblich. Persönliche moralische Positionen werden in der App nicht als richtig oder falsch bewertet."
+    ],
+    "takeaway": "Eine Entwicklungsbeschreibung entscheidet eine ethische oder rechtliche Frage nicht allein.",
+    "sourceIds": [
+      "lp",
+      "recht",
+      "familie"
+    ],
+    "quiz": {
+      "question": "Welche Aussage ist eine ethische Abwägung und keine reine Entwicklungsbeschreibung?",
+      "answer": "Selbstbestimmung und Schutz werden in einem Konflikt unterschiedlich gewichtet.",
+      "wrong": [
+        "Nach der Befruchtung folgen im betrachteten Entwicklungsprozess Zellteilungen.",
+        "Ein Modell beschreibt die zeitliche Abfolge von Differenzierungsvorgängen."
+      ],
+      "explanation": "Wertgewichtungen sind offenzulegen und mit respektvollen Argumenten zu diskutieren."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Drei Perspektiven",
+      "instruction": "Ordne jede Aussage zu. Prüfe dabei den Zusammenhang und nicht nur einzelne Schlüsselwörter.",
+      "categories": [
+        "Biologische Beschreibung",
+        "Ethisches Kriterium",
+        "Rechtliche Regelung"
+      ],
+      "entries": [
+        {
+          "text": "Zellen teilen und differenzieren sich.",
+          "target": 0,
+          "feedback": "Das beschreibt einen biologischen Vorgang."
+        },
+        {
+          "text": "Selbstbestimmung soll in der Entscheidung berücksichtigt werden.",
+          "target": 1,
+          "feedback": "Das benennt einen Wert."
+        },
+        {
+          "text": "Ein Gesetz nennt Voraussetzungen für eine bestimmte Fallkonstellation.",
+          "target": 2,
+          "feedback": "Das betrifft verbindliche gesellschaftliche Bedingungen."
+        }
+      ],
+      "conclusion": "Die Perspektiven hängen zusammen, dürfen aber nicht gleichgesetzt werden."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre an der Debatte zum Schwangerschaftsabbruch die drei Perspektiven.",
+        "model": "Biologisch lassen sich Entwicklungsprozesse und medizinische Zusammenhänge beschreiben. Ethisch werden etwa Selbstbestimmung, Schutz und Verantwortung abgewogen. Rechtlich gelten konkrete Voraussetzungen für unterschiedliche Fälle. Ein begründeter Beitrag nennt seine Quellen und Kriterien und respektiert, dass eine persönliche Wertgewichtung nicht als Messwert bewiesen wird.",
+        "criteria": [
+          "Drei Perspektiven getrennt",
+          "Quellen und Kriterien",
+          "Respektvoller Umgang mit Positionen"
+        ],
+        "hints": [
+          "Drei Perspektiven getrennt",
+          "Quellen und Kriterien"
+        ]
+      },
+      "2": {
+        "prompt": "Kann eine einzelne biologische Zeitmarke allein jede moralische und rechtliche Streitfrage entscheiden?",
+        "model": "Eine Zeitmarke kann eine Entwicklungsphase beschreiben und für Argumente relevant sein. Welche Schutzrechte, Verantwortungen oder Entscheidungsräume daraus folgen sollen, enthält aber zusätzliche normative Annahmen. Rechtliche Bedingungen sind gesondert zu prüfen. Ein tragfähiges Argument macht diese Schritte sichtbar, statt sie unbemerkt gleichzusetzen.",
+        "criteria": [
+          "Biologischen Befund eingeordnet",
+          "Normative Annahmen offengelegt",
+          "Rechtsfrage gesondert betrachtet"
+        ],
+        "hints": [
+          "Biologischen Befund eingeordnet",
+          "Normative Annahmen offengelegt"
+        ]
+      }
+    }
+  },
+  {
+    "id": "bio-reproduktionsmedizin",
+    "lb": 4,
+    "title": "Reproduktionsmedizin und Präimplantationsdiagnostik",
+    "period": "Elternschaft · Lernbereich 4",
+    "intro": "Ein Verfahren kann unterstützen, ohne Erfolg oder vollständige Sicherheit zu garantieren.",
+    "paragraphs": [
+      "Bei In-vitro-Fertilisation werden Eizellen und Spermien zur Befruchtung außerhalb des Körpers zusammengebracht. Ein entstandener Embryo kann anschließend in die Gebärmutter übertragen werden. Eine Behandlung ist ein möglicher Weg bei bestimmten Fruchtbarkeitsproblemen, garantiert aber keine Schwangerschaft oder Geburt.",
+      "Präimplantationsdiagnostik bezeichnet die genetische Untersuchung von Zellen eines Embryos vor dem Transfer. Sie ist von Untersuchungen während einer bestehenden Schwangerschaft zu unterscheiden. In Deutschland ist sie nur unter gesetzlich geregelten engen Voraussetzungen zulässig. Bewertung und Entscheidung berücksichtigen medizinische Möglichkeiten, Belastungen, Aufklärung, Freiwilligkeit und ethische Kriterien."
+    ],
+    "takeaway": "IVF, PID und Pränataldiagnostik sind unterschiedliche Verfahren und Zeitpunkte.",
+    "sourceIds": [
+      "lp",
+      "ivf",
+      "pid"
+    ],
+    "quiz": {
+      "question": "Wann findet Präimplantationsdiagnostik statt?",
+      "answer": "Vor dem Transfer eines außerhalb des Körpers entstandenen Embryos.",
+      "wrong": [
+        "Ausschließlich nach der Geburt als allgemeine Untersuchung des Neugeborenen.",
+        "Grundsätzlich erst nach dem Ende jeder Schwangerschaft ohne Bezug zur Befruchtung."
+      ],
+      "explanation": "Der Zeitpunkt vor dem Transfer unterscheidet PID von Pränataldiagnostik."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Verfahren unterscheiden",
+      "instruction": "Ordne jede Aussage zu. Prüfe dabei den Zusammenhang und nicht nur einzelne Schlüsselwörter.",
+      "categories": [
+        "IVF",
+        "PID",
+        "Pränataldiagnostik"
+      ],
+      "entries": [
+        {
+          "text": "Befruchtung wird außerhalb des Körpers ermöglicht.",
+          "target": 0,
+          "feedback": "IVF beschreibt einen Befruchtungsweg."
+        },
+        {
+          "text": "Embryonale Zellen werden vor dem Transfer genetisch untersucht.",
+          "target": 1,
+          "feedback": "Das ist der Gegenstand von PID."
+        },
+        {
+          "text": "Eine Untersuchung findet während einer bestehenden Schwangerschaft statt.",
+          "target": 2,
+          "feedback": "Sie gehört zur Pränataldiagnostik."
+        }
+      ],
+      "conclusion": "Ein gemeinsamer Bezug zur Fortpflanzung macht Verfahren nicht austauschbar."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre die Begriffe IVF und PID und nenne zwei Bewertungskriterien.",
+        "model": "IVF ermöglicht Befruchtung außerhalb des Körpers. PID untersucht unter engen rechtlichen Bedingungen embryonale Zellen vor dem Transfer und ist kein notwendiger Bestandteil jeder IVF. Bei einer Bewertung zählen beispielsweise mögliche medizinische Vorteile, Belastungen, Selbstbestimmung und die rechtlichen Voraussetzungen; ein Erfolg ist nicht garantiert.",
+        "criteria": [
+          "Verfahren unterschieden",
+          "Keine Erfolgsgarantie",
+          "Mindestens zwei Kriterien"
+        ],
+        "hints": [
+          "Verfahren unterschieden",
+          "Keine Erfolgsgarantie"
+        ]
+      },
+      "2": {
+        "prompt": "Eine Meldung behauptet „Technisch möglich bedeutet rechtlich erlaubt und ethisch eindeutig“. Beurteile das.",
+        "model": "Technische Machbarkeit beschreibt eine Möglichkeit. Rechtliche Zulässigkeit hängt von aktuellen gesetzlichen Voraussetzungen ab; ethische Bewertung enthält zusätzlich offen genannte Werte und Folgen. Eine begründete Prüfung unterscheidet diese Ebenen und berücksichtigt auch Belastungen sowie freiwillige informierte Entscheidungen.",
+        "criteria": [
+          "Technik, Recht und Ethik getrennt",
+          "Bedingungen statt Automatismus",
+          "Betroffenenperspektive berücksichtigt"
+        ],
+        "hints": [
+          "Technik, Recht und Ethik getrennt",
+          "Bedingungen statt Automatismus"
+        ]
+      }
+    }
+  },
+  {
+    "id": "bio-beziehung",
+    "lb": 4,
+    "title": "Beziehung, Erziehung und vielfältige Familienformen",
+    "period": "Elternschaft · Lernbereich 4",
+    "intro": "Verlässliche Fürsorge hat mehr als eine mögliche Familienform.",
+    "paragraphs": [
+      "Kinder brauchen Schutz, Versorgung, verlässliche Beziehungen und angemessene Entwicklungsanregungen. Unterschiedliche Familien- und Lebensformen können diese Aufgaben übernehmen. Eine biologische Abstammungsbeschreibung sagt allein noch nicht, wie gut Beziehung, Betreuung oder Erziehung im Alltag gelingen.",
+      "Erziehungspartnerschaft bedeutet, dass Bezugspersonen und geeignete Einrichtungen zusammenarbeiten und die Bedürfnisse des Kindes beachten. Respekt, verlässliche Grenzen, Zuwendung und die Möglichkeit, bei Belastungen Unterstützung zu erhalten, sind konkrete Aspekte. Die Auseinandersetzung prüft Bedingungen und Handlungen, nicht den persönlichen Wert einer bestimmten Familienform."
+    ],
+    "takeaway": "Beurteile Bedingungen und Fürsorge statt Familienformen pauschal zu bewerten.",
+    "sourceIds": [
+      "lp",
+      "familie"
+    ],
+    "quiz": {
+      "question": "Welcher Maßstab eignet sich für die Bewertung einer Betreuungssituation?",
+      "answer": "Ob Schutz, verlässliche Beziehung und Bedürfnisse des Kindes berücksichtigt werden.",
+      "wrong": [
+        "Ob jede Familie unabhängig von ihrem Alltag genau demselben äußeren Muster folgt.",
+        "Ob biologische Abstammung ohne weitere Prüfung automatisch gute Fürsorge beweist."
+      ],
+      "explanation": "Konkrete Bedingungen und Handlungen sind entscheidender als ein pauschales Etikett."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Aspekte einer unterstützenden Umgebung",
+      "instruction": "Ordne jede Aussage zu. Prüfe dabei den Zusammenhang und nicht nur einzelne Schlüsselwörter.",
+      "categories": [
+        "Verlässliche Beziehung",
+        "Entwicklungsanregung",
+        "Kooperation und Entlastung"
+      ],
+      "entries": [
+        {
+          "text": "Bezugspersonen reagieren angemessen auf wiederkehrende Bedürfnisse.",
+          "target": 0,
+          "feedback": "Vorhersagbare Zuwendung fördert Verlässlichkeit."
+        },
+        {
+          "text": "Geeignete Spiele und Gespräche eröffnen Lernmöglichkeiten.",
+          "target": 1,
+          "feedback": "Anregung wird an Entwicklung und Situation angepasst."
+        },
+        {
+          "text": "Betreuungspersonen sprechen sich ab und organisieren Hilfe.",
+          "target": 2,
+          "feedback": "Zusammenarbeit kann Belastungen auffangen."
+        }
+      ],
+      "conclusion": "Die Aspekte beschreiben Aufgaben, keine exklusive Familienform."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Beschreibe eine gelingende Erziehungspartnerschaft in einem erfundenen Fall.",
+        "model": "Bezugspersonen und Betreuungseinrichtung verständigen sich über Bedürfnisse, Abläufe und mögliche Belastungen. Sie teilen relevante Informationen respektvoll und planen verlässliche Zuständigkeiten. Maßstab ist das Wohl des Kindes; bei Schwierigkeiten wird passende Hilfe gesucht, statt einer Person oder Familienform pauschal Schuld zuzuweisen.",
+        "criteria": [
+          "Zusammenarbeit konkretisiert",
+          "Kindesbedürfnisse als Maßstab",
+          "Unterstützung und Respekt"
+        ],
+        "hints": [
+          "Zusammenarbeit konkretisiert",
+          "Kindesbedürfnisse als Maßstab"
+        ]
+      },
+      "2": {
+        "prompt": "Warum folgt aus gleicher biologischer Abstammung nicht automatisch eine gute Beziehung?",
+        "model": "Abstammung beschreibt genetische Verwandtschaft. Eine Beziehung entsteht durch Interaktion, Verlässlichkeit, Schutz und Fürsorge im Alltag. Diese Bedingungen müssen gesondert betrachtet werden. Umgekehrt kann verantwortliche soziale Elternschaft auch ohne vollständige biologische Verwandtschaft gelingen.",
+        "criteria": [
+          "Biologische und soziale Ebene",
+          "Konkrete Beziehungsbedingungen",
+          "Keine pauschale Abwertung"
+        ],
+        "hints": [
+          "Biologische und soziale Ebene",
+          "Konkrete Beziehungsbedingungen"
+        ]
+      }
+    }
+  },
+  {
+    "id": "bio-vorwissen-neuron",
+    "lb": 5,
+    "title": "Nervenzellen und gerichtete Signalwege",
+    "period": "Vorwissen aus Klasse 7 · ergänzend",
+    "intro": "Ergänzendes Vorwissen aus Biologie 7, kein zusätzlicher Pflichtbereich von Biologie 10.",
+    "paragraphs": [
+      "Im vereinfachten Neuronenmodell nehmen Dendriten Signale auf. Zellkörper und weitere Membranbereiche verarbeiten Einflüsse; ein Axon leitet Erregung weiter. An Kontaktstellen können Signale an andere Zellen übertragen werden. Form und Verschaltung unterscheiden sich zwischen Nervenzelltypen.",
+      "Myelin kann die Leitung entlang eines Axons beschleunigen. Dabei wird Erregung an nicht myelinisierten Zwischenstellen erneut aufgebaut; das Bild vom „Springen“ ist eine Metapher, kein räumlicher Sprung eines ganzen Teilchens. Im peripheren Nervensystem bilden Schwann-Zellen Myelin, im zentralen andere Gliazellen. Nicht alle Nervenzellen oder Axone sind gleich aufgebaut."
+    ],
+    "takeaway": "Bauteile, Signalrichtung und Grenzen des vereinfachten Modells zusammen betrachten.",
+    "sourceIds": [
+      "lp7"
+    ],
+    "quiz": {
+      "question": "Welche Zellfortsätze nehmen im vereinfachten Neuronenmodell vor allem Signale zum Zellkörper hin auf?",
+      "answer": "Dendriten",
+      "wrong": [
+        "Endknöpfchen",
+        "Myelinscheiden"
+      ],
+      "explanation": "Dendriten vergrößern die mögliche Kontaktfläche der Signalaufnahme."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Welche Funktion steht im Modell im Vordergrund?",
+      "instruction": "Ordne jede Aussage zu. Prüfe dabei den Zusammenhang und nicht nur einzelne Schlüsselwörter.",
+      "categories": [
+        "Aufnahme",
+        "Weiterleitung",
+        "Kontakt zur Folgezelle"
+      ],
+      "entries": [
+        {
+          "text": "Dendriten",
+          "target": 0,
+          "feedback": "Sie nehmen vielfach Signale auf."
+        },
+        {
+          "text": "Axon",
+          "target": 1,
+          "feedback": "Es leitet Erregung über eine Strecke."
+        },
+        {
+          "text": "Synaptische Endigung",
+          "target": 2,
+          "feedback": "Hier kann ein Signal weitergegeben werden."
+        }
+      ],
+      "conclusion": "Die Zuordnung ist ein vereinfachtes Modell vielfältiger Zelltypen."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre eine typische Signalrichtung durch ein vereinfachtes Neuron und eine Modellgrenze.",
+        "model": "Viele Eingänge treffen an Dendriten und Zellkörper ein. Unter geeigneten Bedingungen wird Erregung am Axon weitergeleitet und an einer synaptischen Endigung übertragen. Die Darstellung ist vereinfacht: Zelltypen, Kontakte und Myelinisierung sind unterschiedlich, und eine Nervenzelle ist kein passiver Draht.",
+        "criteria": [
+          "Bauteile sinnvoll verbunden",
+          "Richtung beschrieben",
+          "Modellgrenze genannt"
+        ],
+        "hints": [
+          "Bauteile sinnvoll verbunden",
+          "Richtung beschrieben"
+        ]
+      },
+      "2": {
+        "prompt": "Warum reicht „Alle Myelinscheiden bestehen aus Schwann-Zellen“ nicht aus?",
+        "model": "Schwann-Zellen bilden Myelin im peripheren Nervensystem. Im zentralen Nervensystem übernehmen andere Gliazellen diese Funktion. Zudem sind nicht alle Axone myelinisiert. Ein brauchbares Modell nennt deshalb den betrachteten Ort und vermeidet eine Aussage, die für jede Nervenzelle gleichermaßen gelten soll.",
+        "criteria": [
+          "PNS eingegrenzt",
+          "ZNS unterschieden",
+          "Nicht alle Axone gleich"
+        ],
+        "hints": [
+          "PNS eingegrenzt",
+          "ZNS unterschieden"
+        ]
+      }
+    },
+    "optional": true
+  },
+  {
+    "id": "bio-vorwissen-reflex",
+    "lb": 5,
+    "title": "Reiz–Reaktion und unterschiedliche Reflexe",
+    "period": "Vorwissen aus Klasse 7 · ergänzend",
+    "intro": "Ein Rückziehreflex ist kein Eigenreflex.",
+    "paragraphs": [
+      "Ein Reiz kann über Rezeptoren aufgenommen und in elektrische Signale umgesetzt werden. Sensorische Bahnen leiten Information zum zentralen Nervensystem, motorische Bahnen zu einem Erfolgsorgan. Die Reaktion entsteht aus dieser Verschaltung; die Begriffe Reiz und Erregung sind nicht austauschbar.",
+      "Beim Kniesehnenreflex liegen aufnehmende und reagierende Struktur im selben Muskel: Es handelt sich um einen Eigenreflex. Das Zurückziehen einer Hand auf einen schmerzhaften Hautreiz ist dagegen ein Fremdreflex. Viele entsprechende Verschaltungen beziehen das Rückenmark ein, aber nicht jeder Reflex wird dort verschaltet. Eine tatsächliche schmerzhafte Reizung ist für die digitale Aufgabe nicht nötig."
+    ],
+    "takeaway": "Eigenreflex und Fremdreflex werden nach dem beteiligten Aufbau unterschieden.",
+    "sourceIds": [
+      "lp7"
+    ],
+    "quiz": {
+      "question": "Wie ist das Zurückziehen der Hand nach einem schmerzhaften Hautreiz einzuordnen?",
+      "answer": "Als Fremdreflex, weil Aufnahme und Antwort verschiedene Strukturen betreffen.",
+      "wrong": [
+        "Als Eigenreflex, weil Haut und reagierender Muskel immer dasselbe Organ sind.",
+        "Als Beweis, dass grundsätzlich jeder Reflex ausschließlich im Rückenmark entsteht."
+      ],
+      "explanation": "Die alte Gleichsetzung mit einem Eigenreflex wäre fachlich falsch."
+    },
+    "workshop": {
+      "kind": "timeline",
+      "title": "Einen Ablauf rekonstruieren",
+      "instruction": "Bringe die Schritte mit den Pfeilen in eine fachlich sinnvolle Reihenfolge. Begründe die Übergänge, bevor du prüfst.",
+      "categories": [],
+      "entries": [
+        {
+          "text": "Ein Rezeptor nimmt einen Reiz auf und wandelt ihn um.",
+          "target": 0,
+          "feedback": "Reizaufnahme ist von Erregungsleitung zu unterscheiden."
+        },
+        {
+          "text": "Eine sensorische Bahn übermittelt Information an das ZNS.",
+          "target": 1,
+          "feedback": "Die Verarbeitung hängt von der Verschaltung ab."
+        },
+        {
+          "text": "Eine motorische Bahn aktiviert ein Erfolgsorgan.",
+          "target": 2,
+          "feedback": "Ein Muskel kann eine Reaktion ausführen."
+        }
+      ],
+      "conclusion": "Die Kette ist ein Überblick und erklärt nicht jede einzelne Reflexschaltung vollständig."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Vergleiche Kniesehnenreflex und Rückziehen der Hand im Hinblick auf Eigen- und Fremdreflex.",
+        "model": "Beim Kniesehnenreflex gehören aufnehmende und reagierende Struktur zum selben Muskel. Beim schmerzbedingten Rückziehen nimmt Haut einen Reiz auf, während Muskeln reagieren. Das ist ein Fremdreflex. Der Verschaltungsort muss gesondert betrachtet werden; nicht jeder Reflex liegt ausschließlich im Rückenmark.",
+        "criteria": [
+          "Eigenreflex am Muskel",
+          "Fremdreflex mit verschiedenen Strukturen",
+          "Verschaltungsort nicht verallgemeinert"
+        ],
+        "hints": [
+          "Eigenreflex am Muskel",
+          "Fremdreflex mit verschiedenen Strukturen"
+        ]
+      },
+      "2": {
+        "prompt": "Warum ist „Reflexe sind immer unbewusste Schutzreaktionen im Rückenmark“ zu pauschal?",
+        "model": "Reflexe beruhen auf charakteristischen Verschaltungen, können unterschiedliche Funktionen besitzen und je nach Reflex verschiedene Teile des Nervensystems einbeziehen. Ein bestimmtes Beispiel darf nicht als Beschreibung aller Reflexe gelten. Für eine genaue Erklärung müssen Aufnahme, Verarbeitung und Antwort des konkreten Falls benannt werden.",
+        "criteria": [
+          "Pauschalisierung erkannt",
+          "Unterschiedliche Funktionen / Orte",
+          "Konkrete Analyse verlangt"
+        ],
+        "hints": [
+          "Pauschalisierung erkannt",
+          "Unterschiedliche Funktionen / Orte"
+        ]
+      }
+    },
+    "optional": true
+  },
+  {
+    "id": "bio-vorwissen-synapse",
+    "lb": 5,
+    "title": "Chemische Synapsen differenziert verstehen",
+    "period": "Vorwissen aus Klasse 7 · ergänzend",
+    "intro": "Botenstoffe können Zellen erregen oder hemmen.",
+    "paragraphs": [
+      "An einer chemischen Synapse kann ein ankommendes Aktionspotenzial die Freisetzung von Botenstoffen auslösen. Sie gelangen durch den synaptischen Spalt und binden an passende Rezeptoren einer Folgezelle. Die Signalwirkung hängt von Rezeptor und beteiligten Ionenkanälen ab; nicht jede Übertragung führt automatisch zu einem neuen Aktionspotenzial.",
+      "Chemische Signale können erregend oder hemmend wirken. Die Wirkung endet je nach Botenstoff und Synapse etwa durch Wiederaufnahme, Abbau oder Entfernung aus dem Spalt. Acetylcholin ist ein Beispiel, kein universeller Botenstoff jeder Synapse. Daneben gibt es elektrische Synapsen; die chemische Abfolge darf nicht auf alle Zellkontakte übertragen werden."
+    ],
+    "takeaway": "Botenstoff, Rezeptor und Synapsentyp bestimmen die Wirkung.",
+    "sourceIds": [
+      "lp7"
+    ],
+    "quiz": {
+      "question": "Wovon hängt die Wirkung eines chemischen Botenstoffs an einer Synapse wesentlich ab?",
+      "answer": "Vom beteiligten Rezeptor und den dadurch beeinflussten Zellvorgängen.",
+      "wrong": [
+        "Nur davon, dass jeder Botenstoff grundsätzlich immer ein neues Signal erzwingt.",
+        "Davon, dass jede Synapse ausschließlich denselben Botenstoff benutzen muss."
+      ],
+      "explanation": "Die Wirkung ist nicht unabhängig von Rezeptoren und Verschaltung."
+    },
+    "workshop": {
+      "kind": "timeline",
+      "title": "Einen Ablauf rekonstruieren",
+      "instruction": "Bringe die Schritte mit den Pfeilen in eine fachlich sinnvolle Reihenfolge. Begründe die Übergänge, bevor du prüfst.",
+      "categories": [],
+      "entries": [
+        {
+          "text": "Ein Signal erreicht die präsynaptische Endigung.",
+          "target": 0,
+          "feedback": "Dies kann eine Freisetzung vorbereiten."
+        },
+        {
+          "text": "Botenstoffe werden freigesetzt und erreichen die Folgezelle.",
+          "target": 1,
+          "feedback": "Sie überbrücken den chemischen Kontakt."
+        },
+        {
+          "text": "Passende Rezeptoren beeinflussen Vorgänge an der Folgezelle.",
+          "target": 2,
+          "feedback": "Die Wirkung kann erregend oder hemmend sein."
+        },
+        {
+          "text": "Botenstoffwirkung endet durch passende Entfernung oder Inaktivierung.",
+          "target": 3,
+          "feedback": "Die konkrete Beendigung hängt von der Synapse ab."
+        }
+      ],
+      "conclusion": "Das Modell stellt einen chemischen Kontakt vereinfacht dar."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Beschreibe eine chemische Synapse und erkläre, warum nicht immer ein Aktionspotenzial folgt.",
+        "model": "Freigesetzte Botenstoffe binden an Rezeptoren und verändern Vorgänge in der Folgezelle. Je nach Rezeptor kann die Wirkung erregend oder hemmend sein; mehrere Eingänge wirken zusammen. Erst geeignete Bedingungen führen zu einem neuen Aktionspotenzial. Ein einzelner Kontakt ist kein automatischer Ein-Aus-Schalter.",
+        "criteria": [
+          "Chemische Übertragung",
+          "Erregung und Hemmung",
+          "Keine automatische Folge"
+        ],
+        "hints": [
+          "Chemische Übertragung",
+          "Erregung und Hemmung"
+        ]
+      },
+      "2": {
+        "prompt": "Eine Zeichnung zeigt bei jeder Synapse Na-Einstrom und enzymatischen Abbau. Welche Grenzen fehlen?",
+        "model": "Das kann ein ausgewähltes erregendes Beispiel zeigen. Andere Rezeptoren beeinflussen andere Ionen und können hemmen; Botenstoffe werden nicht überall auf dieselbe Art entfernt. Eine korrekte Beschriftung nennt den gewählten Synapsentyp und stellt das Beispiel nicht als vollständige allgemeine Regel dar.",
+        "criteria": [
+          "Erregendes Beispiel eingegrenzt",
+          "Andere Wirkungen und Entfernung",
+          "Darstellung verbessert"
+        ],
+        "hints": [
+          "Erregendes Beispiel eingegrenzt",
+          "Andere Wirkungen und Entfernung"
+        ]
+      }
+    },
+    "optional": true
+  },
+  {
+    "id": "bio-vorwissen-nervensystem",
+    "lb": 5,
+    "title": "ZNS, PNS und vegetative Steuerung",
+    "period": "Vorwissen aus Klasse 7 · ergänzend",
+    "intro": "Anatomische Gliederung und funktionelle Gliederung beantworten verschiedene Fragen.",
+    "paragraphs": [
+      "Zum Zentralnervensystem zählen Gehirn und Rückenmark, zum peripheren Nervensystem die Nervenstrukturen außerhalb davon. Eine andere Gliederung betrifft Aufgaben: Das somatische System verbindet unter anderem Skelettmuskulatur und Wahrnehmung, das vegetative System steuert viele innere Funktionen. Somatische Reflexe zeigen, dass somatisch nicht einfach immer willkürlich bedeutet.",
+      "Sympathische Aktivität unterstützt in vielen Situationen Leistungsbereitschaft, etwa durch beschleunigte Herzaktivität. Parasympathische Aktivität unterstützt unter anderem Ruhe- und Verdauungsvorgänge. Die Systeme wirken je nach Organ und Situation zusammen; das Gegensatzpaar „An/Aus“ ist nur ein sehr grobes Bild."
+    ],
+    "takeaway": "ZNS/PNS bezeichnet vor allem den Ort; somatisch/vegetativ die funktionelle Zuordnung.",
+    "sourceIds": [
+      "lp7"
+    ],
+    "quiz": {
+      "question": "Welcher Teil des vegetativen Nervensystems unterstützt typischerweise Flucht- oder Leistungsbereitschaft?",
+      "answer": "Der Sympathikus (erhöht Herzfrequenz, Blutdruck, erweitert Bronchien)",
+      "wrong": [
+        "Der Parasympathikus (senkt typische Leistungsbereitschaft und fördert Verdauung)",
+        "Die Darmverdauung allein (ersetzt dabei jede Form nervöser Steuerung)"
+      ],
+      "explanation": "Die typische Zuordnung beschreibt eine Tendenz, nicht alle Einzelreaktionen jedes Organs."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Gliederungen nicht vermischen",
+      "instruction": "Ordne jede Aussage zu. Prüfe dabei den Zusammenhang und nicht nur einzelne Schlüsselwörter.",
+      "categories": [
+        "Anatomische Gliederung",
+        "Funktionelle Gliederung"
+      ],
+      "entries": [
+        {
+          "text": "Gehirn und Rückenmark gehören zum ZNS.",
+          "target": 0,
+          "feedback": "Hier wird ein Ort beschrieben."
+        },
+        {
+          "text": "Nerven außerhalb des ZNS gehören zum PNS.",
+          "target": 0,
+          "feedback": "Auch das ist eine räumliche Einordnung."
+        },
+        {
+          "text": "Viele innere Funktionen werden vegetativ gesteuert.",
+          "target": 1,
+          "feedback": "Hier geht es um die Aufgabe."
+        }
+      ],
+      "conclusion": "Eine Nervenschaltung kann auf mehreren Gliederungsebenen beschrieben werden."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Unterscheide ZNS/PNS und somatisch/vegetativ an einem Beispiel.",
+        "model": "Gehirn und Rückenmark bilden das ZNS; außerhalb liegende Nerven gehören zum PNS. Das ist eine anatomische Einteilung. Die Steuerung der Skelettmuskulatur gehört zur somatischen, viele innere Vorgänge zur vegetativen Funktion. Ein Reflex kann somatisch und dennoch nicht bewusst ausgelöst sein.",
+        "criteria": [
+          "Anatomie korrekt",
+          "Funktion getrennt",
+          "Reflex als Grenze der Vereinfachung"
+        ],
+        "hints": [
+          "Anatomie korrekt",
+          "Funktion getrennt"
+        ]
+      },
+      "2": {
+        "prompt": "Warum ist das Bild „Sympathikus und Parasympathikus sind zwei gegensätzliche Schalter“ begrenzt?",
+        "model": "Es kann typische Aktivitätslagen veranschaulichen, erklärt aber weder alle Organwirkungen noch das Zusammenspiel im gesamten Körper. Die tatsächliche Reaktion hängt von Organ, Verschaltung und Situation ab. Das Bild sollte deshalb als vereinfachter Einstieg gekennzeichnet werden und konkrete Beispiele nicht ersetzen.",
+        "criteria": [
+          "Nutzen der Vereinfachung",
+          "Grenze für Organe / Situationen",
+          "Keine universelle An-Aus-Regel"
+        ],
+        "hints": [
+          "Nutzen der Vereinfachung",
+          "Grenze für Organe / Situationen"
+        ]
+      }
+    },
+    "optional": true
+  },
+  {
+    "id": "bio-vorwissen-selektion",
+    "lb": 6,
+    "title": "Variation und natürliche Selektion",
+    "period": "Vorwissen aus Klasse 8 · ergänzend",
+    "intro": "Evolution verändert Populationen über Generationen, nicht zielgerichtet ein einzelnes Tier.",
+    "paragraphs": [
+      "In einer Population können vererbbare Unterschiede bestehen. Unter bestimmten Umweltbedingungen tragen manche Varianten zu höherem Fortpflanzungserfolg bei. Dadurch kann sich die Zusammensetzung der Population über Generationen verändern. Natürliche Selektion ist kein planender Vorgang und bedeutet nicht einfach Stärke oder persönliches Bemühen.",
+      "Darwins historische Erklärung verband Variation, Überproduktion und unterschiedliche Fortpflanzungschancen. Die heutigen Begriffe Mutation, Rekombination und Genhäufigkeit ergänzen diese Erklärung; Darwin kannte ihre molekularen Grundlagen nicht. Am Giraffenbeispiel wird ein Unterschied zwischen Auswahl vorhandener Variation und einer zielgerichteten Vererbung bloß erworbener Eigenschaften sichtbar."
+    ],
+    "takeaway": "Selektion wirkt auf Unterschiede im Fortpflanzungserfolg unter konkreten Bedingungen.",
+    "sourceIds": [
+      "lp8"
+    ],
+    "quiz": {
+      "question": "Welcher Mechanismus erklärt die Ausbreitung vorteilhafter vererbbarer Varianten über unterschiedlichen Fortpflanzungserfolg?",
+      "answer": "Natürliche Selektion: unterschiedlicher Fortpflanzungserfolg",
+      "wrong": [
+        "Gezielte Veränderung durch den Wunsch einzelner Lebewesen",
+        "Automatische Vererbung jeder im Leben erworbenen Eigenschaft"
+      ],
+      "explanation": "Welche Variante vorteilhaft ist, hängt von den jeweiligen Bedingungen ab."
+    },
+    "workshop": {
+      "kind": "timeline",
+      "title": "Einen Ablauf rekonstruieren",
+      "instruction": "Bringe die Schritte mit den Pfeilen in eine fachlich sinnvolle Reihenfolge. Begründe die Übergänge, bevor du prüfst.",
+      "categories": [],
+      "entries": [
+        {
+          "text": "Vererbbare Variation ist in einer Population vorhanden.",
+          "target": 0,
+          "feedback": "Die Unterschiede werden nicht durch einen Wunsch erzeugt."
+        },
+        {
+          "text": "Unter bestimmten Bedingungen unterscheiden sich Fortpflanzungschancen.",
+          "target": 1,
+          "feedback": "Hier wirkt Selektion."
+        },
+        {
+          "text": "Variantenhäufigkeiten können sich über Generationen verschieben.",
+          "target": 2,
+          "feedback": "Evolution betrifft die Population über Zeit."
+        }
+      ],
+      "conclusion": "Die Abfolge ist ein vereinfachtes Selektionsmodell, keine Erklärung jedes Evolutionsprozesses."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre natürliche Selektion an einem erfundenen Populationsexempel.",
+        "model": "In einer Population unterscheiden sich Individuen in einem vererbbaren Merkmal. Bei bestimmten Bedingungen haben manche Varianten höheren Fortpflanzungserfolg. Dann können ihre Anteile in späteren Generationen zunehmen. Das passiert ohne Zielplanung; ein während des Lebens erworbener Vorteil ist nicht automatisch genetisch vererbbar.",
+        "criteria": [
+          "Vererbbare Variation",
+          "Unterschiedlicher Fortpflanzungserfolg",
+          "Veränderung über Generationen"
+        ],
+        "hints": [
+          "Vererbbare Variation",
+          "Unterschiedlicher Fortpflanzungserfolg"
+        ]
+      },
+      "2": {
+        "prompt": "Was wäre an „Darwin beschrieb DNA-Mutationen als Ursache der Variation“ historisch falsch?",
+        "model": "Die heutige Genetik erklärt wichtige Quellen vererbbarer Variation, doch Darwin kannte die molekulare DNA-Grundlage nicht. Sein historischer Beitrag und die spätere Erweiterung müssen unterschieden werden. Eine zeitgemäße Erklärung darf modernes Wissen nutzen, es aber nicht rückwirkend als damalige Kenntnis ausgeben.",
+        "criteria": [
+          "Historische Kenntnis getrennt",
+          "Moderne Ergänzung erklärt",
+          "Keine anachronistische Zuschreibung"
+        ],
+        "hints": [
+          "Historische Kenntnis getrennt",
+          "Moderne Ergänzung erklärt"
+        ]
+      }
+    },
+    "optional": true
+  },
+  {
+    "id": "bio-vorwissen-homologie",
+    "lb": 6,
+    "title": "Homologie und Analogie",
+    "period": "Vorwissen aus Klasse 8 · ergänzend",
+    "intro": "Ähnliche Funktion ist nicht dasselbe wie gemeinsamer Ursprung eines Merkmals.",
+    "paragraphs": [
+      "Vorderextremitäten von Mensch, Vogel und Wal können auf einen gemeinsamen Grundbauplan zurückgeführt werden, obwohl sie unterschiedliche Aufgaben erfüllen. Die gemeinsame Herkunft bezeichnet man als Homologie. Unterschiede zwischen homologen Merkmalen können durch unterschiedliche Entwicklungslinien entstehen.",
+      "Analogie bezeichnet dagegen eine ähnliche Funktion oder Gestalt, die unabhängig entstanden ist. Für Abstammungsfragen werden Bau, Entwicklung und weitere Belege kombiniert. Eine einzelne Homologie begründet gemeinsame Herkunft des betrachteten Merkmals, aber nicht automatisch eine besonders nahe Verwandtschaft oder ein vollständiges Bild des Stammbaums."
+    ],
+    "takeaway": "Homologie bezieht sich auf gemeinsame Herkunft; Analogie auf unabhängig entstandene Ähnlichkeit.",
+    "sourceIds": [
+      "lp8"
+    ],
+    "quiz": {
+      "question": "Wie heißt die Beziehung zwischen Merkmalen mit gemeinsamem evolutionärem Ursprung trotz unterschiedlicher Funktionen?",
+      "answer": "Homologie (divergente Entwicklung)",
+      "wrong": [
+        "Analogie (konvergente Entwicklung)",
+        "Zufall ohne jede Abstammungsbeziehung"
+      ],
+      "explanation": "Der Ursprung des Merkmals ist für diese Unterscheidung entscheidend."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Ursprung oder Funktion?",
+      "instruction": "Ordne jede Aussage zu. Prüfe dabei den Zusammenhang und nicht nur einzelne Schlüsselwörter.",
+      "categories": [
+        "Hinweis auf gemeinsamen Grundbauplan",
+        "Funktionsähnlichkeit allein"
+      ],
+      "entries": [
+        {
+          "text": "Die entsprechenden Knochen liegen in vergleichbarer Anordnung.",
+          "target": 0,
+          "feedback": "Die Anordnung kann eine Homologiehypothese stützen."
+        },
+        {
+          "text": "Zwei ganz unterschiedlich gebaute Körperteile dienen dem Graben.",
+          "target": 1,
+          "feedback": "Gleiche Aufgabe allein beweist keinen gemeinsamen Merkmalsursprung."
+        },
+        {
+          "text": "Mehrere unabhängige Struktur- und Entwicklungsbelege passen zusammen.",
+          "target": 0,
+          "feedback": "Übereinstimmende Belege erhöhen die Nachvollziehbarkeit."
+        }
+      ],
+      "conclusion": "Eine Verwandtschaftshypothese braucht mehr als ein oberflächliches Ähnlichkeitsurteil."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Unterscheide Homologie und Analogie an Aufbau und Aufgabe.",
+        "model": "Homologe Merkmale gehen auf einen gemeinsamen Ursprung zurück und können unterschiedliche Aufgaben erhalten. Analoge Ähnlichkeiten entstehen unabhängig, etwa als ähnliche Lösung vergleichbarer Anforderungen. Für eine Zuordnung genügt die Funktion nicht; Struktur, Entwicklung und weitere Abstammungsbelege werden geprüft.",
+        "criteria": [
+          "Ursprung als Kriterium",
+          "Funktion nicht allein ausschlaggebend",
+          "Weitere Belege genannt"
+        ],
+        "hints": [
+          "Ursprung als Kriterium",
+          "Funktion nicht allein ausschlaggebend"
+        ]
+      },
+      "2": {
+        "prompt": "Warum beweist eine gemeinsame Vorderextremität nicht automatisch besonders nahe Verwandtschaft?",
+        "model": "Der Grundbauplan kann von einem weit zurückliegenden gemeinsamen Vorfahren stammen und in vielen Linien erhalten sein. Nähe im Stammbaum benötigt eine vergleichende Betrachtung weiterer Merkmale und ihrer Verteilung. Gemeinsamer Ursprung eines Merkmals und besonders nahe Verwandtschaft sind verschiedene Aussagen.",
+        "criteria": [
+          "Tiefe gemeinsame Herkunft",
+          "Weitere Merkmalsverteilung",
+          "Zwei Aussagen getrennt"
+        ],
+        "hints": [
+          "Tiefe gemeinsame Herkunft",
+          "Weitere Merkmalsverteilung"
+        ]
+      }
+    },
+    "optional": true
+  },
+  {
+    "id": "bio-vorwissen-fossilien",
+    "lb": 6,
+    "title": "Fossilien und Mosaikmerkmale",
+    "period": "Vorwissen aus Klasse 8 · ergänzend",
+    "intro": "Ein Fossil ist ein Beleg mit Erhaltungsgrenzen, kein lückenloser Film.",
+    "paragraphs": [
+      "Fossilien dokumentieren erhaltene Spuren und Reste früherer Lebewesen. Ihre Aussage hängt von Erhaltung, Fundzusammenhang, Datierung und Vergleich ab. Die Überlieferung ist unvollständig; fehlende Funde sind nicht automatisch ein Beleg dafür, dass eine Form nie existiert hat.",
+      "Archaeopteryx besitzt eine Kombination von Merkmalen, darunter Federn und lange knöcherne Schwanzabschnitte. Solche Mosaikmerkmale helfen, die Entwicklung von Vögeln im Zusammenhang mit theropoden Dinosauriern zu untersuchen. Eine Einteilung in zwei völlig getrennte Gruppen „Reptilien gegen Vögel“ vereinfacht die Abstammungsbeziehungen zu stark. Einzelne Funktionsdeutungen brauchen zusätzliche Belege."
+    ],
+    "takeaway": "Mosaikmerkmale werden im verzweigten Abstammungszusammenhang interpretiert.",
+    "sourceIds": [
+      "lp8",
+      "fossilien"
+    ],
+    "quiz": {
+      "question": "Was macht Mosaikmerkmale eines Fossils für Abstammungsfragen nützlich?",
+      "answer": "Sie verbinden mehrere Merkmalszustände in einem zeitlich einzuordnenden Fund.",
+      "wrong": [
+        "Sie beweisen unabhängig von jedem Vergleich automatisch jede Einzelhypothese.",
+        "Sie ersetzen grundsätzlich jede weitere Datierung und jede Prüfung der Erhaltung."
+      ],
+      "explanation": "Fund, Zeit und Vergleich müssen gemeinsam interpretiert werden."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Beleg oder Überdehnung?",
+      "instruction": "Ordne jede Aussage zu. Prüfe dabei den Zusammenhang und nicht nur einzelne Schlüsselwörter.",
+      "categories": [
+        "Nachvollziehbare Belegnutzung",
+        "Zu weitgehende Behauptung"
+      ],
+      "entries": [
+        {
+          "text": "Erhaltene Federn werden mit weiteren Skelettmerkmalen verglichen.",
+          "target": 0,
+          "feedback": "Mehrere Merkmale werden zusammen ausgewertet."
+        },
+        {
+          "text": "Ein einzelner Knochen beweise jede Fähigkeit des Tiers zweifelsfrei.",
+          "target": 1,
+          "feedback": "Die Aussage überschreitet die Belegstärke."
+        },
+        {
+          "text": "Eine unvollständige Überlieferung wird als Grenze benannt.",
+          "target": 0,
+          "feedback": "Unsicherheit gehört zur Interpretation."
+        }
+      ],
+      "conclusion": "Wissenschaftliche Belege sind stark, wenn ihre Aussagegrenzen mitgenannt werden."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erläutere den Wert eines Fossils mit Mosaikmerkmalen und eine Grenze.",
+        "model": "Die Kombination von Merkmalen kann unterschiedliche Entwicklungszustände verbinden und Abstammungshypothesen stützen. Fundzusammenhang und Zeit geben zusätzlichen Kontext. Erhaltung und Vergleich begrenzen aber, was etwa über Bewegung oder Verhalten gesagt werden kann; ein Fossil ist kein vollständiger Film seines Lebens.",
+        "criteria": [
+          "Merkmalskombination",
+          "Zeit / Vergleich",
+          "Eine Erhaltungs- oder Deutungsgrenze"
+        ],
+        "hints": [
+          "Merkmalskombination",
+          "Zeit / Vergleich"
+        ]
+      },
+      "2": {
+        "prompt": "Warum ist „Vögel haben mit Dinosauriern nichts zu tun, denn Archaeopteryx steht dazwischen“ missverständlich?",
+        "model": "Abstammung bildet ein verzweigtes System. Vögel stehen in einer Entwicklungslinie innerhalb der theropoden Dinosaurier; Mosaikmerkmale passen in diesen Zusammenhang. Das Bild eines isolierten Zwischenschritts zwischen zwei völlig getrennten Gruppen verschleiert Verwandtschaft und gemeinsame Herkunft.",
+        "criteria": [
+          "Verzweigung statt Leiter",
+          "Einordnung der Vögel",
+          "Missverständliche Trennung erklärt"
+        ],
+        "hints": [
+          "Verzweigung statt Leiter",
+          "Einordnung der Vögel"
+        ]
+      }
+    },
+    "optional": true
+  },
+  {
+    "id": "bio-vorwissen-bipedie",
+    "lb": 6,
+    "title": "Aufrechter Gang und menschliche Evolution",
+    "period": "Vorwissen aus Klasse 8 · ergänzend",
+    "intro": "Verschiedene Merkmale entwickelten sich zu unterschiedlichen Zeiten.",
+    "paragraphs": [
+      "Fossile Becken, Oberschenkelknochen, Füße und andere Befunde stützen die Rekonstruktion zweibeiniger Fortbewegung früher Homininen. Ein regelmäßiger aufrechter Gang entwickelte sich deutlich vor der starken Gehirnvergrößerung in späteren Homo-Linien. Die Geschichte besteht aus Kombinationen von Merkmalen, nicht aus einem einzigen plötzlichen Wechsel.",
+      "Wirbelsäule, Becken und untere Gliedmaßen tragen zur Stabilität und Fortbewegung bei. Einige frühe Formen verbanden häufigen zweibeinigen Gang mit Fähigkeiten zum Klettern. Funktionsrekonstruktionen bleiben an konkrete Funde gebunden; heutige Eigenschaften dürfen nicht pauschal auf jeden frühen Vorfahren übertragen werden."
+    ],
+    "takeaway": "Bipedie und starke Gehirnvergrößerung sind zeitlich nicht derselbe Entwicklungsschritt.",
+    "sourceIds": [
+      "lp8",
+      "bipedie"
+    ],
+    "quiz": {
+      "question": "Welche Fortbewegungsweise ist bei frühen Homininen vor starker Gehirnvergrößerung belegt?",
+      "answer": "Aufrechter zweibeiniger Gang: Bipedie",
+      "wrong": [
+        "Der ausschließliche dauerhafte Flug mit Flügeln",
+        "Der vollständige dauerhafte Verzicht auf Bodenbewegung"
+      ],
+      "explanation": "Mehrere Fossilmerkmale stützen die Rekonstruktion zweibeiniger Fortbewegung."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Welche Belege oder Grenzen sind relevant?",
+      "instruction": "Ordne jede Aussage zu. Prüfe dabei den Zusammenhang und nicht nur einzelne Schlüsselwörter.",
+      "categories": [
+        "Funktioneller Beleg",
+        "Grenze der Übertragung"
+      ],
+      "entries": [
+        {
+          "text": "Form von Becken und Oberschenkel wird gemeinsam betrachtet.",
+          "target": 0,
+          "feedback": "Mehrere Bauteile tragen zur Fortbewegung bei."
+        },
+        {
+          "text": "Jede frühe Form wird ohne Fundvergleich wie ein heutiger Mensch gezeichnet.",
+          "target": 1,
+          "feedback": "Unterschiedliche Merkmalskombinationen werden so verdeckt."
+        },
+        {
+          "text": "Spuren und Skelettmerkmale werden miteinander verglichen.",
+          "target": 0,
+          "feedback": "Unabhängige Belegtypen können zusammenpassen."
+        }
+      ],
+      "conclusion": "Funktionsdeutung verbindet mehrere Hinweise und benennt Unsicherheiten."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre, warum der aufrechte Gang nicht erst mit einem sehr großen Gehirn begann.",
+        "model": "Fossile Merkmale belegen zweibeinige Fortbewegung bereits bei frühen Homininen mit vergleichsweise kleinem Gehirn. Körpermerkmale und Gehirnvolumen entwickelten sich zeitlich unterschiedlich. Für eine Rekonstruktion werden konkrete Skelett- und gegebenenfalls Spurenbefunde kombiniert, statt eine einheitliche Fortschrittsleiter anzunehmen.",
+        "criteria": [
+          "Zeitliche Trennung",
+          "Fossile Belege",
+          "Keine Fortschrittsleiter"
+        ],
+        "hints": [
+          "Zeitliche Trennung",
+          "Fossile Belege"
+        ]
+      },
+      "2": {
+        "prompt": "Eine Darstellung zeichnet alle frühen Homininen mit heutigem Körper und Verhalten. Was fehlt?",
+        "model": "Sie lässt die Vielfalt der Formen und die unterschiedlichen Merkmalskombinationen aus. Ein Körpermerkmal allein beweist kein vollständig heutiges Verhalten. Eine bessere Darstellung unterscheidet belegte Anatomie, vorsichtige Funktionsdeutung und offene Fragen anhand konkreter Funde.",
+        "criteria": [
+          "Vielfalt der Formen",
+          "Anatomie und Verhalten getrennt",
+          "Beleg und Unsicherheit sichtbar"
+        ],
+        "hints": [
+          "Vielfalt der Formen",
+          "Anatomie und Verhalten getrennt"
+        ]
+      }
+    },
+    "optional": true
+  },
+  {
+    "id": "bio-vorwissen-stammgeschichte",
+    "lb": 6,
+    "title": "Stammgeschichte als verzweigter Baum",
+    "period": "Vorwissen aus Klasse 8 · ergänzend",
+    "intro": "Heutige Menschen sind nicht das vorgegebene Ziel einer geraden Leiter.",
+    "paragraphs": [
+      "Abstammungsdarstellungen zeigen Verwandtschaftshypothesen. Ein Knoten steht für gemeinsame Vorfahren, eine Verzweigung für unterschiedliche Linien. Zeitliche Reihenfolge allein beweist keine direkte Vorfahr-Nachfahr-Beziehung. Mehrere Homininenformen lebten teilweise gleichzeitig, und die Einordnung kann sich durch neue Funde verändern.",
+      "Die vereinfachte Kette „Australopithecus, habilis, erectus, Neandertaler, sapiens“ erweckt eine unberechtigte Eindeutigkeit. Neandertaler und Homo sapiens werden als verwandte Linien mit komplexen Beziehungen und genetischem Austausch untersucht. Eine gute Darstellung benennt Unsicherheit und verknüpft Anatomie, Fundalter und weitere Daten, ohne heutige Menschen nach einem angeblichen Evolutionsrang zu ordnen."
+    ],
+    "takeaway": "Ein Stammbaum zeigt Verzweigungen und prüfbare Verwandtschaftshypothesen.",
+    "sourceIds": [
+      "lp8",
+      "bipedie"
+    ],
+    "quiz": {
+      "question": "Welche Aussage über einen Abstammungsbaum ist korrekt?",
+      "answer": "Ein Verzweigungspunkt steht im Modell für gemeinsame Vorfahren.",
+      "wrong": [
+        "Ein Verzweigungspunkt beweist automatisch eine Rangordnung heutiger Menschen.",
+        "Ein Verzweigungspunkt macht zeitgleiche verwandte Linien grundsätzlich unmöglich."
+      ],
+      "explanation": "Verzweigungen beschreiben Verwandtschaft und keine Wertordnung."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Stammbaum lesen",
+      "instruction": "Ordne jede Aussage zu. Prüfe dabei den Zusammenhang und nicht nur einzelne Schlüsselwörter.",
+      "categories": [
+        "Passende Interpretation",
+        "Nicht allein ableitbar"
+      ],
+      "entries": [
+        {
+          "text": "Zwei Linien können gemeinsame Vorfahren haben.",
+          "target": 0,
+          "feedback": "Das ist die Bedeutung eines gemeinsamen Knotens."
+        },
+        {
+          "text": "Die ältere gefundene Form muss direkt die jüngere hervorgebracht haben.",
+          "target": 1,
+          "feedback": "Fundalter allein beweist keine direkte Abstammung."
+        },
+        {
+          "text": "Alle Formen müssen zu unterschiedlichen Zeiten gelebt haben.",
+          "target": 1,
+          "feedback": "Verwandte Linien können zeitweise gleichzeitig vorkommen."
+        }
+      ],
+      "conclusion": "Die Form des Baums ist eine begründete Hypothese, keine Wertleiter."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Korrigiere eine lineare Darstellung der menschlichen Evolution.",
+        "model": "Ich ersetze die starre Folge durch eine verzweigte Darstellung mit zeitlichen Überschneidungen und benannten Unsicherheiten. Ein älterer Fund ist nicht automatisch der direkte Vorfahr eines jüngeren. Die Verwandtschaft wird durch mehrere Belegarten gestützt; die Darstellung beschreibt keine Rangordnung heutiger Menschen.",
+        "criteria": [
+          "Verzweigung statt Kette",
+          "Zeit und Abstammung getrennt",
+          "Belege und keine Wertordnung"
+        ],
+        "hints": [
+          "Verzweigung statt Kette",
+          "Zeit und Abstammung getrennt"
+        ]
+      },
+      "2": {
+        "prompt": "Warum dürfen Unterschiede heutiger Menschen nicht als verschiedene Evolutionsstufen bewertet werden?",
+        "model": "Alle heute lebenden Menschen gehören zu derselben Art mit gemeinsamer Entwicklungsgeschichte und vielfältiger Variation. Evolution ist keine Leiter mit einem vorgeschriebenen Höchstziel. Eine Rangordnung aus ausgewählten Merkmalen verwechselt Verwandtschaft und Variation mit einem unbegründeten Werturteil.",
+        "criteria": [
+          "Gemeinsame Art",
+          "Keine vorgegebene Leiter",
+          "Variation von Werturteil getrennt"
+        ],
+        "hints": [
+          "Gemeinsame Art",
+          "Keine vorgegebene Leiter"
+        ]
+      }
+    },
+    "optional": true
+  }
+]

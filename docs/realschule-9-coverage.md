@@ -1,8 +1,8 @@
 # Realschule Bayern · Abdeckung Klasse 9
 
-Arbeitsstand: 20. Oktober 2026. Ziel: bis Ende dieser Woche die Inhalte der **9. Klasse** möglichst breit und fachlich belastbar am Lehrplan ausrichten. Diese Liste trennt vorhandene Pakete von tatsächlichem Lehrplanabgleich. Ein vorhandenes Teilpaket ist kein Beleg, dass alle Kompetenzen eines Fachs erfasst sind.
+Arbeitsstand: 21. Oktober 2026. Ziel: bis Ende dieser Woche die Inhalte der **9. Klasse** möglichst breit und fachlich belastbar am Lehrplan ausrichten. Diese Liste trennt vorhandene Pakete von tatsächlichem Lehrplanabgleich. Ein vorhandenes Teilpaket ist kein Beleg, dass alle Kompetenzen eines Fachs erfasst sind.
 
-Bestandsbasis: ZAM 0.56.0, Commit `5a334c0c9050cf3590a036e7b451481462966d0e`; Academy-Hauptstand `8a7be89` einschließlich Geschichte; Geographie in diesem Branch. Der [Jahrgangsstufenüberblick des ISB](https://www.lehrplanplus.bayern.de/jahrgangsstufenprofil/realschule/9) ist der fachliche Einstieg. Einträge des ZAM-Lehrplanangebots allein belegen noch keine fertigen Lerninhalte.
+Bestandsbasis: ZAM-Hauptstand `6c18573d` einschließlich Geschichte und Geographie; Academy-Hauptstand `59a8411`. Biologie 10 wird in diesem Branch ergänzt. Der [Jahrgangsstufenüberblick des ISB](https://www.lehrplanplus.bayern.de/jahrgangsstufenprofil/realschule/9) ist der fachliche Einstieg. Einträge des ZAM-Lehrplanangebots allein belegen noch keine fertigen Lerninhalte.
 
 ## Stand und Prioritäten
 
@@ -12,9 +12,9 @@ Bestandsbasis: ZAM 0.56.0, Commit `5a334c0c9050cf3590a036e7b451481462966d0e`; Ac
 | Mathematik | Academy, 29 Lektionen / 108 Karten; in ZAM gebündelt | Bestehende Zweigabdeckung bei Erweiterungen erhalten |
 | Chemie | Academy, 35 Lektionen / 77 Karten; Zweig I und II/III, ZAM 0.56.0 | Vorhandenen veröffentlichten Stand erhalten |
 | Informationstechnologie / Informatik | Academy UML und SQL; zusätzlich alte Algorithmenzelle in ZAM | Bereits bearbeiteter Bestand; vollständigen jahrgangs- und modulabhängigen Umfang gegen das schulische IT-Angebot prüfen, nicht nur SQL/UML zählen |
-| **Geschichte** | Academy gemergt: 35 Kernlektionen + 4 englische Vertiefungen / 78 Karten; vorher nur 4 Atome / 8 Karten zu Weimar/NS | Mapping am 20.10.2026 freigegeben; eigener ZAM-Folgeschritt noch offen |
-| **Geographie** | Dieser Branch: 35 Kernlektionen, 7 englische Vertiefungen, 3 ergänzende Grundlagen / 91 Karten; vorher nur 4 Atome / 8 Karten | Alle sieben Pflichtbereiche mit [Abdeckungsmatrix](../geographie-realschule-9/coverage.json); Mapping (3 A / 1 B / 4 C) am 20.10.2026 freigegeben; Academy-PR #15 zuerst, ZAM nach Merge |
-| **Biologie** | Alte Teilzellen Genetik und Nervensystem/Sinne, 9 Atome / 18 Karten | Tatsächliche Klasse-9-Bereiche und Zweigunterschiede prüfen; fehlende Bereiche ergänzen, Inhalte ggf. korrekt neu zuordnen |
+| **Geschichte** | Academy gemergt: 35 Kernlektionen + 4 englische Vertiefungen / 78 Karten; vorher nur 4 Atome / 8 Karten zu Weimar/NS | Mapping am 20.10.2026 freigegeben; Academy-PR #14 und ZAM-PR #430 gemergt |
+| **Geographie** | Academy und ZAM gemergt: 35 Kernlektionen, 7 englische Vertiefungen, 3 ergänzende Grundlagen / 91 Karten; vorher nur 4 Atome / 8 Karten | Alle sieben Pflichtbereiche mit [Abdeckungsmatrix](../geographie-realschule-9/coverage.json); Mapping (3 A / 1 B / 4 C) am 20.10.2026 freigegeben; Academy-PR #15 und ZAM-PR #429 gemergt |
+| **Biologie** | Regulär kein Fach der Klasse 9; alte Genetik- und Nervensystemzellen sind falsch eingeordnet | Siehe [Bestandsabgleich](biologie-bestandsabgleich.md): Genetik gehört zu Klasse 10, Nervensystem zu 7, die alte Evolution-10-Zelle zu 8. Dieser Branch ergänzt [Biologie 10](../biologie-realschule-10/) mit 37 Kernlektionen / 93 Karten insgesamt; Mapping 10 A / 1 B / 15 C am 21.10.2026 freigegeben. |
 | **Deutsch** | Nur Teilzelle Argumentation/Erörterung, 4 Atome / 8 Karten | Lesen/Literatur, Schreiben, Sprechen/Zuhören, Sprache und Medien am Lehrplan abgleichen |
 | **Englisch** | Nur Teilzelle Grammatik/Syntax, 4 Atome / 8 Karten | Sprachliche Mittel mit Lesen, Hören, Schreiben, Sprechen, Mediation und Themen verbinden; nicht Grammatik mit Fachabdeckung gleichsetzen |
 | Französisch | Teilzelle Imparfait/Futur/Objektpronomen, 2 Atome / 4 Karten | Gewählten sprachlichen Zweig und kommunikative Kompetenzen ergänzen |
@@ -24,9 +24,9 @@ Bestandsbasis: ZAM 0.56.0, Commit `5a334c0c9050cf3590a036e7b451481462966d0e`; Ac
 | Kunst, Musik, Sport, Werken, Textiles Gestalten, Ernährung und Gesundheit | Kein eigenes Academy-Paket im geprüften Bestand | Wissensanteile und fachpraktische Leistungen unterscheiden; praktische Kompetenzen nicht als durch Karten erledigt ausweisen |
 | Sozialwesen/Soziallehre und weitere Wahlangebote wie Spanisch | Kein eigenes Academy-Paket im geprüften Bestand | Relevanz für Jahrgang und Schulangebot zuerst anhand des offiziellen Lehrplans prüfen |
 
-Priorität nach dem aktuellen Geographie-Paket: Biologie → Deutsch/Englisch → Zweigfächer → weitere Pflicht- und Wahlangebote. Diese Reihenfolge bündelt zusammenhängende Lücken; sie ist kein Versprechen bereits abgeschlossener Fachreviews oder zukünftiger automatischer Veröffentlichungen.
+Biologie 10 wird auf ausdrücklichen Wunsch vorgezogen; es ist keine Lücke des regulären Klasse-9-Lehrplans. Die weiteren Klasse-9-Prioritäten sind Deutsch/Englisch → Zweigfächer → weitere Pflicht- und Wahlangebote. Diese Reihenfolge bündelt zusammenhängende Lücken; sie ist kein Versprechen bereits abgeschlossener Fachreviews oder zukünftiger automatischer Veröffentlichungen.
 
-## Geographie in diesem Branch
+## Geographie: integriert
 
 Der [aktuelle Geo9-Lehrplan](https://www.lehrplanplus.bayern.de/fachlehrplan/realschule/9/geographie) umfasst Landschaft/Naturrisiken, Klima/Klimawandel, Landwirtschaft/Ernährung/Boden, städtische Räume, Bevölkerung, Grenzen/Globalisierung sowie eine aktuelle Frage im Nahraum. Eine Unterrichts- oder Rechercheaufgabe zum eigenen Nahraum muss als solche erhalten bleiben; ein statischer Beispielsfall ersetzt kein aktuelles lokales Ereignis. Das optionale Bilingualangebot ergänzt diese Bereiche.
 
