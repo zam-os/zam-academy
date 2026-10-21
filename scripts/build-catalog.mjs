@@ -6,9 +6,16 @@
 //   node scripts/build-catalog.mjs [outFile]   (default: site/catalog.json)
 
 import { createHash } from "node:crypto";
-import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
+import {
+  existsSync,
+  mkdirSync,
+  readdirSync,
+  readFileSync,
+  writeFileSync,
+} from "node:fs";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
+import { assertMappingApproved } from "./mapping-approval.mjs";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const outFile = resolve(root, process.argv[2] ?? "site/catalog.json");
@@ -29,6 +36,7 @@ export function buildCatalog(dir = root) {
     if (!VERSION.test(String(tile.version))) {
       throw new Error(`${app}/cell.json: version must be a dotted number`);
     }
+    assertMappingApproved(join(dir, app), tile, app);
     const items = tile.atoms.flatMap((atom) => atom.practice_items ?? []);
     cells.push({
       id: tile.tile_id,
@@ -47,7 +55,10 @@ export function buildCatalog(dir = root) {
   return { schema: 1, cells: cells.sort((a, b) => a.id.localeCompare(b.id)) };
 }
 
-if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
+if (
+  process.argv[1] &&
+  resolve(process.argv[1]) === fileURLToPath(import.meta.url)
+) {
   const catalog = buildCatalog();
   mkdirSync(dirname(outFile), { recursive: true });
   writeFileSync(outFile, `${JSON.stringify(catalog, null, 2)}\n`);

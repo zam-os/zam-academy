@@ -12,6 +12,7 @@ Hands-on training apps that build understanding before [ZAM](https://github.com/
 | Geschichte 9 Realschule (LehrplanPLUS Bayern, gemeinsamer Lernpfad) | [`geschichte-realschule-9/`](geschichte-realschule-9/) | https://academy.zam-os.org/geschichte-realschule-9/ | `zam-academy:geschichte-realschule-9` |
 | Geographie 9 Realschule (LehrplanPLUS Bayern, gemeinsamer Lernpfad) | [`geographie-realschule-9/`](geographie-realschule-9/) | https://academy.zam-os.org/geographie-realschule-9/ | `zam-academy:geographie-realschule-9` |
 | Biologie 10 Realschule (LehrplanPLUS Bayern, gemeinsamer Lernpfad) | [`biologie-realschule-10/`](biologie-realschule-10/) | https://academy.zam-os.org/biologie-realschule-10/ | `zam-academy:biologie-realschule-10` |
+| Physik 10 Realschule (LehrplanPLUS Bayern, Zweig I und II/III) | [`physik-realschule-10/`](physik-realschule-10/) | https://academy.zam-os.org/physik-realschule-10/ | `zam-academy:physik-realschule-10` |
 
 ## How an app and its ZAM cell fit together
 
@@ -21,6 +22,7 @@ The rules come from [ADR 2026-10-19](https://github.com/zam-os/zam/blob/main/doc
 - **Cards cite lessons** as `https://academy.zam-os.org/<app>/#lesson=<lesson id>`. The fragment keeps one app = one library topic in ZAM.
 - **Lesson ids are a public contract.** Each app's test pins its lesson ids and checks that every card cites an existing lesson.
 - **CI installs every cell** into a throw-away library with the published `zam-core` (`scripts/validate-cells.mjs`).
+- **History changes require approval.** The catalog builder refuses cells with `replaces` or `retired_items` unless their `replaces-de-by.json` records a valid approval date. CI tests this safeguard; Pages checks it before building or uploading the site. An unapproved proposal therefore blocks publication.
 - **Pages publishes** each app, its `cell.json`, and `/catalog.json` (`scripts/build-catalog.mjs`), with the SHA-256 of every cell. ZAM reads the catalog only on a learner's action. ZAM releases bundle a copy of each cell.
 - **A cell is released at its first publication,** in the catalog or in a ZAM release. From then on, its item ids, slugs and cited lessons stay stable; changes use `replaces` and raise the version.
 
@@ -34,6 +36,7 @@ cd uml                 # or: cd physik-realschule-9 (dev server on :5181), cd sq
 # Geschichte 9: cd geschichte-realschule-9 (dev server on :5185)
 # Geographie 9: cd geographie-realschule-9 (dev server on :5186)
 # Biologie 10: cd biologie-realschule-10 (dev server on :5187)
+# Physik 10: cd physik-realschule-10 (dev server on :5188)
 npm ci
 npm run dev      # http://localhost:5180/uml/
 npm test
