@@ -15,6 +15,7 @@ Hands-on training apps that build understanding before [ZAM](https://github.com/
 | Physik 10 Realschule (LehrplanPLUS Bayern, Zweig I und II/III) | [`physik-realschule-10/`](physik-realschule-10/) | https://academy.zam-os.org/physik-realschule-10/ | `zam-academy:physik-realschule-10` |
 | Algorithmen und Programmieren (DE/EN, LehrplanPLUS IT 2.6.1, jahrgangsübergreifend) | [`algorithmen/`](algorithmen/) | https://academy.zam-os.org/algorithmen/ | `zam-academy:algorithmen` |
 | Datennetze und Internet (DE/EN, LehrplanPLUS IT 2.5.1, HTTPS als Ergänzung) | [`datennetze/`](datennetze/) | https://academy.zam-os.org/datennetze/ | `zam-academy:datennetze` |
+| BwR 9 Realschule (LehrplanPLUS Bayern, Zweig II) | [`bwr-realschule-9/`](bwr-realschule-9/) | https://academy.zam-os.org/bwr-realschule-9/ | `zam-academy:bwr-realschule-9` |
 
 ## How an app and its ZAM cell fit together
 
@@ -41,6 +42,7 @@ cd uml                 # or: cd physik-realschule-9 (dev server on :5181), cd sq
 # Physik 10: cd physik-realschule-10 (dev server on :5188)
 # Algorithmen: cd algorithmen (dev server on :5189)
 # Datennetze: cd datennetze (dev server on :5190)
+# BwR 9: cd bwr-realschule-9 (dev server on :5191)
 npm ci
 npm run dev      # http://localhost:5180/uml/
 npm test
