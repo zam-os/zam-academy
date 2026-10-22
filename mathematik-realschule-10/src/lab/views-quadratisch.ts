@@ -144,9 +144,9 @@ function parabolaParams(v: LabValues): string {
 
 const TILE = { x0: 46, y0: 78, X: 112, u: 14 };
 
-/** The corner square q completes x² + px to a square exactly when q = (p/2)². */
+/** The corner square with side s completes x² + px to a square exactly when s = |p| : 2. */
 export function completionFits(v: LabValues): boolean {
-  return Math.abs(v.q - (v.p / 2) ** 2) < 1e-9;
+  return Math.abs(v.s - Math.abs(v.p) / 2) < 1e-9;
 }
 
 /** The vertex of y = a(x² + px) + c, read off after completing the square. */
@@ -163,7 +163,8 @@ function completingSquare(v: LabValues): string {
   const { x0, y0, X, u } = TILE;
   const h = Math.abs(v.p) / 2;
   const H = h * u;
-  const s = Math.sqrt(Math.max(0, v.q)) * u;
+  const s = Math.max(0, v.s) * u;
+  const q = v.s * v.s;
   const fits = completionFits(v);
   const inner = quadratic(1, v.p, 0);
   let out = open("Algebra-Kacheln zur quadratischen Ergänzung und der Weg zur Scheitelpunktsform");
@@ -180,7 +181,7 @@ function completingSquare(v: LabValues): string {
       out += text(x0 + X + H / 2, y0 - 8, fmt(h), "lab-text-axis", "middle");
       out += text(x0 - 8, y0 + X + H / 2 + 4, fmt(h), "lab-text-axis", "end");
     }
-    if (v.q > 0) out += rect(x0 + X, y0 + X, s, s, fits ? "lab-fill-ok" : "lab-fill-c");
+    if (v.s > 0) out += rect(x0 + X, y0 + X, s, s, fits ? "lab-fill-ok" : "lab-fill-c");
     out += text(x0 + X / 2, y0 - 8, "x", "lab-text-axis", "middle");
     out += text(x0 - 8, y0 + X / 2 + 4, "x", "lab-text-axis", "end");
     if (fits && h > 0) out += rect(x0, y0, X + H, X + H, "lab-side-ok");
@@ -189,7 +190,7 @@ function completingSquare(v: LabValues): string {
     // cut twice, so the corner square comes back once.
     out += rect(x0 + X - H, y0, H, X, "lab-fill-b") + rect(x0, y0 + X - H, X, H, "lab-fill-b");
     out += rect(x0 + X - H, y0 + X - H, H, H, "lab-target");
-    if (v.q > 0) out += rect(x0 + X - s, y0 + X - s, s, s, fits ? "lab-fill-ok" : "lab-fill-c");
+    if (v.s > 0) out += rect(x0 + X - s, y0 + X - s, s, s, fits ? "lab-fill-ok" : "lab-fill-c");
     const rest = (X - H) / 2;
     out += text(x0 + rest, y0 + rest + 6, fits ? `(x − ${fmt(h)})²` : "x²", fits ? "lab-text lab-text-ok" : "lab-text lab-text-a lab-text-big", "middle");
     out += text(x0 + X + 6, y0 + X / 2 + 4, `−${fmt(h)}x`, "lab-text lab-text-b");
@@ -203,7 +204,7 @@ function completingSquare(v: LabValues): string {
   out += text(
     x0 - 26,
     306,
-    v.p === 0 ? "Ohne x-Glied ist x² schon ein Quadrat." : fits ? `${quadratic(1, v.p, v.q)} = ${shifted(-v.p / 2)}²` : "Ziehe die Ecke, bis das Quadrat passt.",
+    v.p === 0 ? "Ohne x-Glied ist x² schon ein Quadrat." : fits ? `${quadratic(1, v.p, q)} = ${shifted(-v.p / 2)}²` : "Ziehe die Ecke, bis das Quadrat passt.",
     fits ? "lab-text lab-text-ok" : "lab-text-muted",
   );
 
@@ -221,19 +222,19 @@ function completingSquare(v: LabValues): string {
     );
   } else {
     if (v.a !== 1) lines.push([`= ${factor}[${inner}]${constant}`, "lab-text"]);
-    if (v.q === 0) {
+    if (v.s === 0) {
       lines.push(["Ergänze: Ziehe das Eckquadrat auf.", "lab-text-muted"]);
     } else {
-      const q = fmt(v.q);
-      lines.push([`= ${bracket(`${inner} + ${q} − ${q}`)}${constant}`, "lab-text"]);
+      const added = fmt(q);
+      lines.push([`= ${bracket(`${inner} + ${added} − ${added}`)}${constant}`, "lab-text"]);
       if (fits) {
-        lines.push([`= ${bracket(`${shifted(xs)}² − ${q}`)}${constant}`, "lab-text"]);
+        lines.push([`= ${bracket(`${shifted(xs)}² − ${added}`)}${constant}`, "lab-text"]);
         lines.push([`= ${vertexForm(v.a, xs, ys)}`, "lab-text lab-text-ok lab-text-big"]);
         lines.push([`S(${fmt(xs)} | ${fmt(ys)}), 𝕎 = {y | y ${v.a > 0 ? "≥" : "≤"} ${fmt(ys)}}`, "lab-text lab-text-c"]);
         lines.push(["Rückweg: ausmultiplizieren", "lab-text-small"]);
-        lines.push([`${factor}(${quadratic(1, v.p, v.q)})${term(ys, "", false)} = ${quadratic(v.a, v.a * v.p, v.c)}`, "lab-text-small"]);
+        lines.push([`${factor}(${quadratic(1, v.p, q)})${term(ys, "", false)} = ${quadratic(v.a, v.a * v.p, v.c)}`, "lab-text-small"]);
       } else {
-        lines.push([v.q < (v.p / 2) ** 2 ? "Das Eckquadrat ist zu klein." : "Das Eckquadrat ist zu groß.", "lab-text lab-text-bad"]);
+        lines.push([v.s < Math.abs(v.p) / 2 ? "Das Eckquadrat ist zu klein." : "Das Eckquadrat ist zu groß.", "lab-text lab-text-bad"]);
         lines.push(["Ein Binom entsteht nur mit (p : 2)².", "lab-text-small"]);
       }
     }
@@ -608,14 +609,14 @@ export const QUADRATISCH_VIEWS: Record<"parabola-params" | "completing-square" |
     render: completingSquare,
     handles: {
       corner: {
-        x: "q",
+        x: "s",
         drag: (p, v) => {
           const { x0, y0, X, u } = TILE;
           const side =
             v.p >= 0
               ? Math.max(0, p.x - (x0 + X), p.y - (y0 + X)) / u
               : Math.max(0, x0 + X - p.x, y0 + X - p.y) / u;
-          return { q: side * side };
+          return { s: side };
         },
       },
     },
