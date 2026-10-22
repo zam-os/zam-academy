@@ -2,24 +2,8 @@ import { describe, expect, it } from "vitest";
 import { STAGES } from "../src/curriculum";
 import { createRng, seedFrom } from "../src/exercises/rng";
 import type { Lesson, Track } from "../src/model/types";
+import { LERNBEREICH } from "./curriculum-map";
 
-/**
- * LehrplanPLUS Mathematik 8 (Realschule): the Lernbereich of each lesson
- * family per Zweig. Zweig I: LB 1 Vierecke, LB 2 Drehung, LB 3 Raumgeometrie,
- * LB 4 Terme, Gleichungen und Ungleichungen, LB 5 Bruchterme, LB 6
- * Funktionen, LB 7 Daten und Zufall. Zweig II/III: LB 1 Dreiecke und
- * Vierecke, LB 2 Raumgeometrie, LB 3 Terme und Gleichungen, LB 4 Bruchterme,
- * LB 5 Funktionen, LB 6 Daten und Zufall.
- */
-export const LERNBEREICH: Record<string, Partial<Record<Track, number>>> = {
-  dv: { I: 1, II_III: 1 },
-  dr: { I: 2 },
-  rg: { I: 3, II_III: 2 },
-  tg: { I: 4, II_III: 3 },
-  br: { I: 5, II_III: 4 },
-  fu: { I: 6, II_III: 5 },
-  dz: { I: 7, II_III: 6 },
-};
 const TRACK_TEXT: Record<Track, string> = { I: "(I)", II_III: "(II/III)" };
 
 /** Every text of a lesson a learner reads, without tags. */
