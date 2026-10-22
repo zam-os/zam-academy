@@ -31,6 +31,3 @@ export const GOAL_WITNESSES_STAGE_8: Record<string, Record<string, LabValues>> =
     "p-finden": { p: 37, n: 5, ziel: 90 },
   },
 };
-
-/** Stage 8: the teacher videos are chosen centrally later, so none is pinned here yet. */
-export const VIDEOS_STAGE_8: Record<string, { author: string; id: string }> = {};

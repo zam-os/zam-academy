@@ -37,6 +37,3 @@ export const GOAL_WITNESSES_STAGE_1: Record<string, Record<string, LabValues>> =
     differenz: { fn: 1, alpha: 45, beta: -30 },
   },
 };
-
-/** Stage 1: the teacher video of each lesson. Videos are chosen and verified centrally later. */
-export const VIDEOS_STAGE_1: Record<string, { author: string; id: string }> = {};

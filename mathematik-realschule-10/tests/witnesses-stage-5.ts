@@ -42,6 +42,3 @@ export const GOAL_WITNESSES_STAGE_5: Record<string, Record<string, LabValues>> =
     streckung: { f: 2, map: 4, vx: 2, vy: 1, k: 4 },
   },
 };
-
-/** Stage 5: the teacher video of each lesson; verified videos are added centrally later. */
-export const VIDEOS_STAGE_5: Record<string, { author: string; id: string }> = {};

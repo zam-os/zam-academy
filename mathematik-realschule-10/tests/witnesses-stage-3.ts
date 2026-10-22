@@ -47,6 +47,3 @@ export const GOAL_WITNESSES_STAGE_3: Record<string, Record<string, LabValues>> =
     parallel: { graph: 0, map: 2, x: 2, trace: 1 },
   },
 };
-
-/** Stage 3: the teacher video of each lesson; verified videos are added centrally. */
-export const VIDEOS_STAGE_3: Record<string, { author: string; id: string }> = {};

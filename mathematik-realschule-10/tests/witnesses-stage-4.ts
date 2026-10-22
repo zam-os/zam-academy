@@ -40,6 +40,3 @@ export const GOAL_WITNESSES_STAGE_4: Record<string, Record<string, LabValues>> =
     gleichung: { c: 2, b: -2, d: 1, r: 1, x: 3 },
   },
 };
-
-/** Stage 4: the teacher videos are pinned centrally later; none here yet. */
-export const VIDEOS_STAGE_4: Record<string, { author: string; id: string }> = {};

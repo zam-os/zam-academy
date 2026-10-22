@@ -1,87 +1,56 @@
 # Realschule Bayern · Abdeckung Mathematik Klasse 10
 
-Arbeitsstand: 22. Oktober 2026. Ziel: Fachlich belastbare und vollständige Ausrichtung am [LehrplanPLUS Bayern für Mathematik 10 Realschule](https://www.lehrplanplus.bayern.de/schulart/realschule/jgs/10/fach/mathematik/inhalt/fachlehrplaene) für die Wahlpflichtfächergruppe I (mathematisch-naturwissenschaftlich-technisch) und die Gruppen II/III (kaufmännisch, sprachlich, gestalterisch).
+Arbeitsstand: 22. Oktober 2026. Paket [`mathematik-realschule-10/`](../mathematik-realschule-10/), Zelle `zam-academy:mathematik-realschule-10`. Grundlage sind die Fachlehrpläne Mathematik 10 der Realschule für [Zweig I](https://www.lehrplanplus.bayern.de/fachlehrplan/realschule/10/mathematik/wpfg1) und [Zweig II/III](https://www.lehrplanplus.bayern.de/fachlehrplan/realschule/10/mathematik/wpfg2-3). lehrplanplus.bayern.de blockt einige Netze mit 403; geprüft wurde deshalb an den Webarchiv-Schnappschüssen vom [2. Dezember 2024 (I)](https://web.archive.org/web/20241202133144/https://www.lehrplanplus.bayern.de/fachlehrplan/realschule/10/mathematik/wpfg1) und vom [8. August 2025 (II/III)](https://web.archive.org/web/20250808165154/https://www.lehrplanplus.bayern.de/fachlehrplan/realschule/10/mathematik/wpfg2-3).
 
-## Lehrplanbereiche und Zweige
+## Lernbereiche, Zweige und Etappen
 
-| Etappe / Lernbereich | Realschule 10 (I) | Realschule 10 (II/III) | Lektionen |
-| --- | --- | --- | ---: |
-| **Etappe 1: Trigonometrie** | LB 1 (42 Std.): Erweiterung am Einheitskreis ($0^\circ$–$360^\circ$), Sinussatz, Kosinussatz, Dreiecksfläche, Bogenmaß | LB 1 (21 Std.): Vertiefung rechtwinklige Dreiecke, Berechnungen an Raumkörpern, Sinussatz | 5 Lektionen (`tr-1` bis `tr-5`) |
-| **Etappe 2: Ebene Vektorgeometrie & Abbildungen** | LB 2 (30 Std.): Vektorbegriff, Gegenvektor, Betrag, Vektoraddition, Skalarprodukt & Orthogonalität, 2×2-Determinante & Flächen, Drehung um Ursprung | *Im Lehrplan Zweig I verankert* | 7 Lektionen (`vg-1` bis `vg-7`) |
-| **Etappe 3: Potenzen & Potenzfunktionen** | LB 3 (16 Std.): Rationale/negative Exponenten, Potenzgesetze, Potenzfunktionen & Wurzelfunktionen | *Grundlagen der Potenzen* | 3 Lektionen (`pt-1` bis `pt-3`) |
-| **Etappe 4: Exponentialfunktionen & Logarithmen** | LB 4 (22 Std.): $f(x) = b \cdot a^x$, Asymptote, reale Wachstumsmodelle (Halbwertszeit, Verdopplungszeit), Logarithmusgesetze, Exponentialgleichungen | LB 3 (10 Std.): Reales Wachstum/Zerfall, Zinseszins, Logarithmus als Umkehrung, Exponentialgleichungen | 5 Lektionen (`el-1` bis `el-5`) |
-| **Etappe 5: Raumgeometrie & Quadratische Vertiefung** | *Prüfungsvorbereitung & zusammengesetzte Körper* | LB 2 & LB 4 (55 Std.): Raumgeometrie (Kegel, Pyramide, Kugel) & Parabeln/quadratische Gleichungen (ausführlicher Abschlussprüfungs-Schwerpunkt für II/III) | 3 Lektionen (`ap-1` bis `ap-3`) |
-| **Etappe 6: Daten und Zufall (Stochastik)** | LB 5 (10 Std.): Mehrstufige Zufallsexperimente, bedingte Wahrscheinlichkeit, stochastische Unabhängigkeit, Vierfeldertafel & inverses Baumdiagramm | LB 5 (10 Std.): Statistische Erhebungen, Kenngrößen, Boxplots, Zufallsversuche | 3 Lektionen (`dz-1` bis `dz-3`) |
+| Lernbereich | Zweig I | Zweig II/III | Etappe und Lektionen |
+| --- | --- | --- | --- |
+| Trigonometrie | LB 1, ca. 42 Std. (mit Skalarprodukt) | LB 1, ca. 21 Std. | 1 Einheitskreis: `tr-1` bis `tr-6` (II/III: `tr-1` bis `tr-4`) · 2 Dreieck und Raum: `dr-1` bis `dr-5` (II/III: `dr-1` bis `dr-4`) · Skalarprodukt in Etappe 3: `vk-1` bis `vk-3` (nur I) |
+| Abbildungen | LB 2, ca. 30 Std. | – | 3 Vektoren und Abbildungen: `ab-1` bis `ab-5`; Funktionsgraphen abbilden als `ab-6` in Etappe 5 |
+| Potenzen und Potenzfunktionen | LB 3, ca. 16 Std. | – | 4: `pt-1` bis `pt-5` |
+| Exponentialfunktionen, Logarithmen (I: und Logarithmusfunktionen) | LB 4, ca. 22 Std. | LB 3, ca. 10 Std. | 5: `el-1` bis `el-6` (II/III: `el-1` bis `el-3`) |
+| Raumgeometrie | – (M9 LB 5) | LB 2, ca. 20 Std. | 6: `rg-1` bis `rg-5` |
+| Quadratische Funktionen und Gleichungen | – (M9 LB 7) | LB 4, ca. 35 Std. | 7: `qf-1` bis `qf-6` |
+| Daten und Zufall | LB 5, ca. 10 Std. | LB 5, ca. 10 Std. | 8: `dz-1` bis `dz-3` |
 
-**Gesamtumfang:** 26 Lektionen mit 100 % Abdeckung der lehrplanmäßigen Abschlussprüfungskompetenzen.
+Zweig I sieht 34 Lektionen, Zweig II/III 25, „alle Lektionen“ 45. Alle 46 Kompetenzerwartungen beider Zweige stehen wörtlich mit ihren Lektionen und Belegen in [`coverage.json`](../mathematik-realschule-10/coverage.json); der App-Test prüft die Zuordnung in beide Richtungen und dass jede Lektion ihren Lernbereich im `lehrplan`-Text nennt.
 
----
+## Abgrenzung
 
-## Lehrer-Erklärvideos (Daniel Jung & Fachkollegen)
+- **Nicht enthalten, weil nicht im Realschul-Lehrplan:** Bogenmaß, bedingte Wahrscheinlichkeit, Vierfeldertafel, stochastische Unabhängigkeit, Erwartungswert, Sinusfunktionen mit Parametern a, b, c, d. Der erste Entwurf dieses PRs enthielt einige davon.
+- **Wiederholung früherer Jahrgänge, ausdrücklich markiert:** `vk-1` (Verbindungsvektor, Betrag aus M8/M9 I) als Grundlage des Skalarprodukts, `ab-4` (Determinante aus M8 I) als Werkzeug für Flächen bei Abbildungen und in der Abschlussprüfung.
+- **Zweig II/III:** Raumgeometrie und quadratische Funktionen kommen dort erst in Klasse 10 und bekommen eigene Lektionen; Zweig I lernt sie in Mathe 9 (`rg-*`, `qf-*` nur Zweig I). Drei-Punkte-Parabeln (Gleichungssysteme mit drei Unbekannten) entfallen, weil II/III nur Systeme mit zwei Unbekannten kennt. Extremwerte bei Körpern laufen über Wertetabelle und Graph, ohne Ableitung.
+- **Daten und Zufall:** Mathe 9 behandelt Baumdiagramm und Pfadregeln bereits (unter „M9 LB 8“, siehe [#28](https://github.com/zam-os/zam-academy/issues/28)). Mathe 10 vertieft auf Klasse-10-Niveau: drei und mehr Stufen, ohne Zurücklegen, Ereignisse aus mehreren Pfaden, „Wie oft mindestens“ mit dem Logarithmus aus `el-3`.
+- **Notation** nach der ISB-Merkhilfe: ⊙ für das Skalarprodukt, ⊕ für die Verschiebung, die Spiegelmatrix mit 2α.
 
-Jede Lektion besitzt ein direktes, verifiziertes Erklärvideo zur Vorbereitung und punktgenauen Unterstützung (*Advance Organizer* & *Remediation*):
+## Lehrervideos
 
-### Etappe 1: Trigonometrie
-1. `tr-1-einheitskreis`: *Sinus-/Kosinusfunktion verdeutlicht mit Einheitskreis* (Daniel Jung) – `https://www.youtube.com/watch?v=T8kNcfv8LvY`
-2. `tr-2-sinussatz`: *Sinussatz, Dreieck berechnen* (Daniel Jung) – `https://www.youtube.com/watch?v=jl3w0wGoWlY`
-3. `tr-3-kosinussatz`: *Kosinussatz erkennen, aufstellen* (Daniel Jung) – `https://www.youtube.com/watch?v=PaF_ClPIc_A`
-4. `tr-4-dreiecksflaeche`: *Dreiecksfläche mit Sinus berechnen* (Daniel Jung) – `https://www.youtube.com/watch?v=uGcc2Ij57R8`
-5. `tr-5-bogenmass`: *Bogenmaß und Gradmaß umrechnen* (Daniel Jung) – `https://www.youtube.com/watch?v=XTgsWytG7cI`
+42 der 45 Lektionen verlinken ein deutsches Erklärvideo (Daniel Jung, Lehrerschmidt, MathemaTrick, „Lernen - Leicht gemacht“ mit Realschul-Bayern-Bezug u. a.). Für jedes wurden Titel und Kanal am 22.10.2026 per YouTube-oEmbed abgefragt und mit dem Thema abgeglichen; die Liste steht zentral in `src/curriculum/teacher-videos.ts`, die Tests pinnen sie. Ohne Video sind noch `tr-6-additionstheoreme` (die gefundenen Erklärungen rechnen im Bogenmaß), `pt-4-parameter` und `rg-5-extremwerte` (die gefundenen Videos nutzen Ableitungen). Sie bleiben für einen späteren Erweiterungslauf offen.
 
-### Etappe 2: Ebene Vektorgeometrie & Abbildungen
-6. `vg-1-vektorbegriff`: *Vektoren Definition & ihre Repräsentanten* (Daniel Jung) – `https://www.youtube.com/watch?v=9C1OOlLng2Q`
-7. `vg-2-vektorbetrag`: *Länge (Betrag) eines Vektors berechnen* (Daniel Jung) – `https://www.youtube.com/watch?v=yJLviEtfbFI`
-8. `vg-3-vektorrechnung`: *Rechnen mit Vektoren, Grundlagen, Basics* (Daniel Jung) – `https://www.youtube.com/watch?v=XKr6Qe9_trY`
-9. `vg-4-skalarprodukt`: *Skalarprodukt von zwei Vektoren* (Daniel Jung) – `https://www.youtube.com/watch?v=gzwfDNF26eA`
-10. `vg-5-orthogonalitaet`: *Orthogonaler Vektor, Normalenvektor bestimmen* (Daniel Jung) – `https://www.youtube.com/watch?v=CxkJN7ez56E`
-11. `vg-6-determinante`: *Was gibt die Determinante einer Matrix an* (Daniel Jung) – `https://www.youtube.com/watch?v=N6vEOowa7Uk`
-12. `vg-7-drehung`: *Drehmatrix, Drehung um den Ursprung* (Daniel Jung) – `https://www.youtube.com/watch?v=X8QDtWIWu6Q`
+## Bestandsabgleich der ZAM-Zellen
 
-### Etappe 3: Potenzen & Potenzfunktionen
-13. `pt-1-potenzgesetze`: *Wurzel und Potenzen, Grundlagen, Zusammenhänge* (Daniel Jung) – `https://www.youtube.com/watch?v=NucUdbvOKIM`
-14. `pt-2-potenzfunktionen`: *Potenzfunktionen Übersicht, Basis, Exponent* (Daniel Jung) – `https://www.youtube.com/watch?v=OVWF5UATHVc`
-15. `pt-3-wurzelfunktionen`: *Umkehrfunktion bestimmen, Vorgehensweise, Rezept* (Daniel Jung) – `https://www.youtube.com/watch?v=X8QDtWIWu6Q`
+zam-os/zam bündelt zwei Zellen mit zusammen 16 Karten: `de-by:realschule-10-mathematik-ebene-vektorgeometrie` (8) und `de-by:realschule-10-mathematik-exponential-logarithmus` (8). Die alte Vektorgeometrie-Zelle mischt Stoff aus M8/M9 (Betrag, Determinante, 90°-Drehung) mit M10 (Skalarprodukt, Drehmatrix); alle 16 Fragen werden in der neuen App gelehrt.
 
-### Etappe 4: Exponentialfunktionen & Logarithmen
-16. `el-1-exponentialfunktionen`: *Exponentialfunktionen Grundlagen, Graph und Asymptote* (Daniel Jung) – `https://www.youtube.com/watch?v=juzL4f0Af4k`
-17. `el-2-wachstumsmodelle`: *Exponentielles Wachstum und Zerfall, Halbwertszeit* (Daniel Jung) – `https://www.youtube.com/watch?v=juzL4f0Af4k`
-18. `el-3-logarithmus`: *Logarithmus, Grundlagen, Rechengesetze* (Daniel Jung) – `https://www.youtube.com/watch?v=3h00zAFRLPY`
-19. `el-4-logarithmengesetze`: *Logarithmusgesetze, Logarithmieren* (Daniel Jung) – `https://www.youtube.com/watch?v=3h00zAFRLPY`
-20. `el-5-exponentialgleichungen`: *Logarithmus, Exponentialgleichungen lösen Teil 1* (Daniel Jung) – `https://www.youtube.com/watch?v=n2P2VkA5v4M`
+| Altkarte | Thema | Kategorie | Nachfolger |
+| --- | --- | --- | --- |
+| Vektor J01 | Betrag von (3 \| 4) | A | `m10-betrag-vektor` (`vk-1`) |
+| Vektor J02 | Verbindungsvektor, Gegenvektor, Länge | B | `m10-verbindungsvektor-beispiel` (`vk-1`) |
+| Vektor J03 | Orthogonalitätsbedingung | A | `m10-orthogonal-bedingung` (`vk-2`) |
+| Vektor J04 | Skalarprodukt, Lage und Winkel | B | `m10-skalarprodukt-beispiel` (`vk-2`) |
+| Vektor J05 | Formel der zweireihigen Determinante | A | `m10-determinante-formel` (`ab-4`) |
+| Vektor J06 | Dreiecksfläche mit der Determinante | B | `m10-dreiecksflaeche-beispiel` (`ab-4`) |
+| Vektor J07 | Drehung um 90° | A | `m10-drehung-90` (`ab-3`) |
+| Vektor J08 | Drehmatrix und Drehung um 60° | B | `m10-drehmatrix-beispiel` (`ab-3`) |
+| Exp./Log. J01 | Asymptote von 2 · 3ˣ − 4 | A | `m10-asymptote-exponentialfunktion` (`el-5`) |
+| Exp./Log. J02 | Parameter von a · bˣ + c | B | `m10-exponentialfunktion-parameter` (`el-5`) |
+| Exp./Log. J03 | lg 1000 und log₂ 32 | A | `m10-log-exakte-werte` (`el-3`) |
+| Exp./Log. J04 | Logarithmensätze und Basiswechsel | B | `m10-logarithmensaetze-basiswechsel` (`el-4`) |
+| Exp./Log. J05 | 5ˣ = 125 und 3ˣ = 20 | A | `m10-exponentialgleichung-exakt` (`el-3`) |
+| Exp./Log. J06 | 4 · 2^(3x − 1) − 12 = 20 | A | `m10-exponentialgleichung-schrittweise` (`el-4`) |
+| Exp./Log. J07 | Halbwertszeit 8 Tage, nach 24 Tagen | A | `m10-halbwertszeit-achtel` (`el-2`) |
+| Exp./Log. J08 | Bakterienkultur, Bestand und Verdopplungszeit | B | `m10-bakterien-verdopplungszeit` (`el-2`) |
 
-### Etappe 5: Raumgeometrie & Quadratische Vertiefung (Abschlussprüfung)
-21. `ap-1-rotationskoerper`: *Zylinder, Kegel, Kugel Körperberechnungen* (Daniel Jung) – `https://www.youtube.com/watch?v=ZcHfje2Ojo8`
-22. `ap-2-parabeln-abschluss`: *Schnittpunkt Parabel und Gerade berechnen* (Lehrerschmidt) – `https://www.youtube.com/watch?v=T7wnzYyfc1o`
-23. `ap-3-extremwerte`: *Extremwertproblem ohne Ableitung lösen* (Daniel Jung) – `https://www.youtube.com/watch?v=G-Y_z65qvnM`
+**A** heißt gleicher Einzelabruf mit genau einem Nachfolger. **B** heißt: Die alte mehrteilige Frage bleibt mit ihrer ganzen Antwort und Musterlösung auf genau einer eigenen Karte; die neuen Einzelkarten der Lektion beginnen ohne Beherrschung. C-Zeilen gibt es nicht. Die Begründung jeder Zeile steht in [`replaces-de-by.json`](../mathematik-realschule-10/replaces-de-by.json), die alten Zellen liegen als Byte-Schnappschüsse in `tests/fixtures/` (zam-os/zam `370d622`).
 
-### Etappe 6: Daten und Zufall (Stochastik)
-24. `dz-1-bedingte-wahrscheinlichkeit`: *Bedingte Wahrscheinlichkeit, Einführung, Übersicht* (Daniel Jung) – `https://www.youtube.com/watch?v=Lh9PSxafG40`
-25. `dz-2-unabhaengigkeit`: *Stochastische Unabhängigkeit, Einführung und Formel* (Daniel Jung) – `https://www.youtube.com/watch?v=vfBMGefSNvA`
-26. `dz-3-vierfeldertafel-vertieft`: *Vierfeldertafel Wahrscheinlichkeitsrechnung* (Daniel Jung) – `https://www.youtube.com/watch?v=xslCG8xjGjI`
-
----
-
-## Bestandsabgleich der bestehenden ZAM-Zellen
-
-Aus der bisherigen ZAM-Curriculum-Sammlung existieren zwei alte Teilzellen mit insgesamt 16 Karten:
-1. `de-by:realschule-10-mathematik-ebene-vektorgeometrie` (8 Karten):
-   - `01K4V0M0000000000000000J01` (Vektorbetrag) $\to$ Kategorie A $\to$ `m10-vg-vektorbetrag`
-   - `01K4V0M0000000000000000J02` (Verbindungsvektor) $\to$ Kategorie A $\to$ `m10-vg-vektorbegriff`
-   - `01K4V0M0000000000000000J03` (Orthogonalitätskriterium) $\to$ Kategorie A $\to$ `m10-vg-orthogonalitaet`
-   - `01K4V0M0000000000000000J04` (Skalarprodukt & Schnittwinkel) $\to$ Kategorie A $\to$ `m10-vg-skalarprodukt`
-   - `01K4V0M0000000000000000J05` (Determinante Formel) $\to$ Kategorie A $\to$ `m10-vg-determinante-formel`
-   - `01K4V0M0000000000000000J06` (Dreiecksfläche mit Determinante) $\to$ Kategorie A $\to$ `m10-vg-determinante-dreieck`
-   - `01K4V0M0000000000000000J07` (Orthogonalvektor 90°-Drehung) $\to$ Kategorie A $\to$ `m10-vg-drehung-90`
-   - `01K4V0M0000000000000000J08` (Drehmatrix) $\to$ Kategorie A $\to$ `m10-vg-drehmatrix`
-
-2. `de-by:realschule-10-mathematik-exponential-logarithmus` (8 Karten):
-   - `01K4X0M0000000000000000J01` (Asymptote der Exponentialfunktion) $\to$ Kategorie A $\to$ `m10-el-asymptote`
-   - `01K4X0M0000000000000000J02` (Parameter $a, b, c$ und Graph) $\to$ Kategorie A $\to$ `m10-el-parameter`
-   - `01K4X0M0000000000000000J03` (Dekadischer und 2er-Logarithmus) $\to$ Kategorie A $\to$ `m10-el-logarithmus-basis`
-   - `01K4X0M0000000000000000J04` (Drei Logarithmengesetze & Basiswechsel) $\to$ Kategorie A $\to$ `m10-el-logarithmengesetze`
-   - `01K4X0M0000000000000000J05` (Exponentialgleichung $5^x = 125$) $\to$ Kategorie A $\to$ `m10-el-gleichung-einfach`
-   - `01K4X0M0000000000000000J06` (Exponentialgleichung schrittweise) $\to$ Kategorie A $\to$ `m10-el-gleichung-schritte`
-   - `01K4X0M0000000000000000J07` (Halbwertszeit) $\to$ Kategorie A $\to$ `m10-el-halbwertszeit`
-   - `01K4X0M0000000000000000J08` (Bakterienwachstum & Verdopplung) $\to$ Kategorie A $\to$ `m10-el-verdopplungszeit`
-
-Alle 16 Altkarten werden 1:1 fachlich präzise als Kategorie A übernommen.
+**Status: Vorschlag, wartet auf Thomas' Freigabe** (`approved: null`). Bis dahin ist der Katalogschritt der CI bewusst rot. Eine frühere Angabe `approved: 2026-10-22` ohne Beleg wurde entfernt. `scripts/validate-migration.mjs` prüft mit zam-core 0.54.0: 16 Historien und 32 Review-Ereignisse wandern unverändert, die alten Karten verlassen die aktiven Wiederholungen, wiederholte Installationen ändern nichts, und wer schon Karten auf beiden IDs hält, bekommt kein automatisches Zusammenlegen. Bei Atomen mit zwei übernommenen Historien legt ZAM die übrigen neuen Karten nacheinander an, je eine pro Einschreibung.

@@ -46,6 +46,3 @@ export const GOAL_WITNESSES_STAGE_6: Record<string, Record<string, LabValues>> =
     schachtel: { task: 1, qty: 0, R: 6, hk: 9, x: 1, L: 24, c: 4 },
   },
 };
-
-/** Stage 6: the teacher video of each lesson, checked against YouTube when it was chosen. */
-export const VIDEOS_STAGE_6: Record<string, { author: string; id: string }> = {};

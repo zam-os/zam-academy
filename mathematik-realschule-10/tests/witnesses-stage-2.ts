@@ -36,6 +36,3 @@ export const GOAL_WITNESSES_STAGE_2: Record<string, Record<string, LabValues>> =
     traeger: { view: 1, eq: 0, interval: 0, k: 0.6, phi: 60 },
   },
 };
-
-/** Stage 2: the teacher video of each lesson; verified videos are added centrally later. */
-export const VIDEOS_STAGE_2: Record<string, { author: string; id: string }> = {};

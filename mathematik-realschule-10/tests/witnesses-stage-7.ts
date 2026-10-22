@@ -55,6 +55,3 @@ export const GOAL_WITNESSES_STAGE_7: Record<string, Record<string, LabValues>> =
     "gleiches-a": { mode: 1, m: 1, t: 1, a2: 0.5, d: 2, e: 0 },
   },
 };
-
-/** Stage 7: the teacher videos are added centrally later. */
-export const VIDEOS_STAGE_7: Record<string, { author: string; id: string }> = {};

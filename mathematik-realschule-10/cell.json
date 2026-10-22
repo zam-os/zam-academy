@@ -5427,6 +5427,811 @@
       ]
     },
     {
+      "id": "01M5JHYTWHE9H32NMKA2XGG1XX",
+      "atom_uri": "urn:zam:atom:01M5JHYTWHE9H32NMKA2XGG1XX",
+      "namespace": "zam-academy-mathematik-realschule-10",
+      "slug": "m10-axialschnitt",
+      "title": "Rotationskörper und Axialschnitte",
+      "domain": "mathematik/geometrie",
+      "reduction": "axiomatic",
+      "typical_age_min": 15,
+      "source_link": "https://academy.zam-os.org/mathematik-realschule-10/#lesson=rg-1-axialschnitt",
+      "prerequisites": [],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "mathematik-realschule-10",
+          "topic_code": "stage-6-raumgeometrie",
+          "topic_title": "Etappe 6: Raumgeometrie"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "realschule",
+          "grade": 10,
+          "subject": "mathematik",
+          "exam_relevant": true,
+          "track": "II_III",
+          "topic_code": "lb2",
+          "topic_title": "Raumgeometrie"
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M5JHYTWP1CY3MWJCFC0H2RST",
+          "slug": "m10-axialschnitt-begriff",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-10/#lesson=rg-1-axialschnitt",
+          "question": "Was ist der Axialschnitt eines Rotationskörpers?",
+          "concept": "die Schnittfläche längs der Drehachse",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "die Schnittfläche längs der Drehachse",
+              "die Schnittfläche quer zur Drehachse"
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "die Schnittfläche senkrecht zur Drehachse",
+              "reason": "Quer zur Achse geschnitten entsteht ein Kreis, der Querschnitt, nicht der Axialschnitt."
+            },
+            {
+              "text": "die Grundfläche des Körpers",
+              "reason": "Die Grundfläche begrenzt den Körper nur unten; der Axialschnitt geht mitten durch die Achse."
+            }
+          ]
+        },
+        {
+          "id": "01M5JHYTWQ501KGSH48K5XAXH6",
+          "slug": "m10-halbkreis-kugel",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 2,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-10/#lesson=rg-1-axialschnitt",
+          "question": "Welcher Körper entsteht, wenn sich ein Halbkreis einmal um seinen Durchmesser dreht?",
+          "concept": "eine Kugel",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "eine Kugel",
+              "eine Halbkugel"
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "eine Halbkugel",
+              "reason": "Eine Halbkugel entsteht aus einem Viertelkreis; der Halbkreis überstreicht bei einer ganzen Drehung die ganze Kugel."
+            },
+            {
+              "text": "ein Kegel",
+              "reason": "Ein Kegel entsteht aus einem rechtwinkligen Dreieck, das sich um eine Kathete dreht."
+            }
+          ]
+        },
+        {
+          "id": "01M5JHYTWRCN7HB3C6HFM53VZX",
+          "slug": "m10-axialschnitt-kegelhoehe",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 3,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-10/#lesson=rg-1-axialschnitt",
+          "question": "Der Axialschnitt eines Kegels ist ein gleichschenkliges Dreieck mit der Grundseite 10 cm und den Schenkeln 13 cm. Wie hoch ist der Kegel?",
+          "concept": "h = 12 cm",
+          "materiality": "material",
+          "sample_solution": "Der Radius ist die halbe Grundseite, r = 5 cm; die Schenkel sind die Mantellinie s = 13 cm. Im halben Axialschnitt gilt Pythagoras: h = √(13² − 5²) cm = √144 cm = 12 cm.",
+          "choice_distractors": [
+            {
+              "text": "h ≈ 13,93 cm",
+              "reason": "Pythagoras falsch herum: Die Mantellinie s ist die Hypotenuse, also h² = s² − r²."
+            },
+            {
+              "text": "h ≈ 8,31 cm",
+              "reason": "Mit der ganzen Grundseite 10 cm statt mit dem Radius 5 cm gerechnet."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "01M5JHYTWJTBMS9RS7606P1QH7",
+      "atom_uri": "urn:zam:atom:01M5JHYTWJTBMS9RS7606P1QH7",
+      "namespace": "zam-academy-mathematik-realschule-10",
+      "slug": "m10-netze-oberflaechen",
+      "title": "Netze und Oberflächen von Prisma, Pyramide, Zylinder und Kegel",
+      "domain": "mathematik/geometrie",
+      "reduction": "axiomatic",
+      "typical_age_min": 15,
+      "source_link": "https://academy.zam-os.org/mathematik-realschule-10/#lesson=rg-2-oberflaeche",
+      "prerequisites": [
+        {
+          "atom_id": "01M5JHYTWHE9H32NMKA2XGG1XX",
+          "type": "soft",
+          "rationale": "Radius r und Mantellinie s des Kegels liest man am Axialschnitt ab."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "mathematik-realschule-10",
+          "topic_code": "stage-6-raumgeometrie",
+          "topic_title": "Etappe 6: Raumgeometrie"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "realschule",
+          "grade": 10,
+          "subject": "mathematik",
+          "exam_relevant": true,
+          "track": "II_III",
+          "topic_code": "lb2",
+          "topic_title": "Raumgeometrie"
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M5JHYTWSNZAG0NE4214TF2TQ",
+          "slug": "m10-kegelmantel-sektor",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-10/#lesson=rg-2-oberflaeche",
+          "question": "Welche Figur entsteht, wenn man den Mantel eines geraden Kreiskegels abwickelt?",
+          "concept": "ein Kreissektor mit dem Radius s",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "ein Kreissektor mit dem Radius s",
+              "ein Kreissektor mit dem Radius r"
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "ein Rechteck mit den Seiten 2πr und s",
+              "reason": "Ein Rechteck entsteht beim Abrollen eines Zylindermantels."
+            },
+            {
+              "text": "ein Dreieck mit der Höhe h",
+              "reason": "Dreiecke bilden den Mantel einer Pyramide; der Kegelmantel ist gekrümmt."
+            }
+          ]
+        },
+        {
+          "id": "01M5JHYTWT1WVFDS8EZK896YWX",
+          "slug": "m10-kegelmantel-formel",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-10/#lesson=rg-2-oberflaeche",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Wie berechnet man die Mantelfläche "
+            },
+            {
+              "type": "math",
+              "tex": "M",
+              "speech": "M"
+            },
+            {
+              "type": "text",
+              "text": " eines Kegels mit dem Radius "
+            },
+            {
+              "type": "math",
+              "tex": "r",
+              "speech": "r"
+            },
+            {
+              "type": "text",
+              "text": " und der Mantellinie "
+            },
+            {
+              "type": "math",
+              "tex": "s",
+              "speech": "s"
+            },
+            {
+              "type": "text",
+              "text": "?"
+            }
+          ],
+          "concept_segments": [
+            {
+              "type": "math",
+              "tex": "M = \\pi r s",
+              "speech": "M gleich pi mal r mal s"
+            }
+          ],
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "M = πrs",
+              "M = 2πrs"
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "M = πrh",
+              "reason": "In der Formel steht die schräge Mantellinie s, nicht die Höhe h."
+            },
+            {
+              "text": "M = 2πrh",
+              "reason": "2πrh ist der Mantel eines Zylinders, abgerollt ein Rechteck."
+            }
+          ]
+        },
+        {
+          "id": "01M5JHYTWV92S1PM8R7VYR17XX",
+          "slug": "m10-pyramide-seitenhoehe",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-10/#lesson=rg-2-oberflaeche",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Wie berechnet man die Seitenhöhe "
+            },
+            {
+              "type": "math",
+              "tex": "h_s",
+              "speech": "h s"
+            },
+            {
+              "type": "text",
+              "text": " einer quadratischen Pyramide aus der Grundkante "
+            },
+            {
+              "type": "math",
+              "tex": "a",
+              "speech": "a"
+            },
+            {
+              "type": "text",
+              "text": " und der Höhe "
+            },
+            {
+              "type": "math",
+              "tex": "h",
+              "speech": "h"
+            },
+            {
+              "type": "text",
+              "text": "?"
+            }
+          ],
+          "concept_segments": [
+            {
+              "type": "math",
+              "tex": "h_s = \\sqrt{h^2 + \\left(\\frac{a}{2}\\right)^2}",
+              "speech": "h s gleich Wurzel aus h Quadrat plus a halbe zum Quadrat"
+            }
+          ],
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "√(h² + (a/2)²)",
+              "√(h² + a²)"
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "h_s = √(h² + a²)",
+              "reason": "Vom Fußpunkt der Höhe bis zur Mitte der Grundkante ist es nur a/2, nicht a."
+            },
+            {
+              "text": "h_s = h + a/2",
+              "reason": "Im rechtwinkligen Dreieck addiert man die Quadrate der Katheten, nicht die Strecken."
+            }
+          ]
+        },
+        {
+          "id": "01M5JHYTWWGC6P441859C9PEPX",
+          "slug": "m10-kegel-abwicklung-rechnen",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 3,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-10/#lesson=rg-2-oberflaeche",
+          "question": "Ein Kegel hat den Radius 3 cm und die Höhe 4 cm. Wie groß sind der Mittelpunktswinkel seines abgewickelten Mantels und seine Oberfläche?",
+          "concept": "α = 216°, O = 24π cm² ≈ 75,40 cm²",
+          "materiality": "material",
+          "sample_solution": "Mantellinie s = √(3² + 4²) cm = 5 cm. Der Mantel ist ein Kreissektor mit dem Radius 5 cm und α = 360° · 3 : 5 = 216°. O = G + M = π · 3² cm² + π · 3 · 5 cm² = 9π cm² + 15π cm² = 24π cm² ≈ 75,40 cm².",
+          "choice_distractors": [
+            {
+              "text": "α = 216°, O = 15π cm² ≈ 47,12 cm²",
+              "reason": "Das ist nur der Mantel; die Grundfläche 9π cm² gehört auch zur Oberfläche."
+            },
+            {
+              "text": "α = 270°, O = 21π cm² ≈ 65,97 cm²",
+              "reason": "Mit der Höhe 4 cm statt der Mantellinie 5 cm gerechnet: 360° · 3 : 4 und M = π · 3 · 4."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "01M5JHYTWK7T1FKW9M9S9SMQ41",
+      "atom_uri": "urn:zam:atom:01M5JHYTWK7T1FKW9M9S9SMQ41",
+      "namespace": "zam-academy-mathematik-realschule-10",
+      "slug": "m10-cavalieri-volumen",
+      "title": "Volumen und das Prinzip von Cavalieri",
+      "domain": "mathematik/geometrie",
+      "reduction": "axiomatic",
+      "typical_age_min": 15,
+      "source_link": "https://academy.zam-os.org/mathematik-realschule-10/#lesson=rg-3-volumen",
+      "prerequisites": [
+        {
+          "atom_id": "01M5JHYTWJTBMS9RS7606P1QH7",
+          "type": "soft",
+          "rationale": "Die Grundflächen G von Prisma, Pyramide, Zylinder und Kegel kennst du aus ihren Netzen."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "mathematik-realschule-10",
+          "topic_code": "stage-6-raumgeometrie",
+          "topic_title": "Etappe 6: Raumgeometrie"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "realschule",
+          "grade": 10,
+          "subject": "mathematik",
+          "exam_relevant": true,
+          "track": "II_III",
+          "topic_code": "lb2",
+          "topic_title": "Raumgeometrie"
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M5JHYTWXN1KVFP68FS5CHSB0",
+          "slug": "m10-cavalieri-prinzip",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-10/#lesson=rg-3-volumen",
+          "question": "Was besagt das Prinzip von Cavalieri?",
+          "concept": "Körper mit gleicher Höhe und in jeder Höhe gleich großen Querschnitten haben das gleiche Volumen.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Gleiche Höhe und in jeder Höhe gleich große Querschnitte bedeuten gleiches Volumen.",
+              "Gleiche Höhe und gleich große Oberflächen bedeuten gleiches Volumen."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Körper mit gleicher Höhe und gleich großer Oberfläche haben das gleiche Volumen.",
+              "reason": "Gleiche Oberflächen reichen nicht: Es kommt auf die Querschnitte in jeder Höhe an."
+            },
+            {
+              "text": "Ein schiefer Körper hat mehr Volumen als ein gerader mit gleichen Querschnitten.",
+              "reason": "Schiefstellen verschiebt die Scheiben nur; die Querschnitte und damit das Volumen bleiben gleich."
+            }
+          ]
+        },
+        {
+          "id": "01M5JHYTWY155N5TXBF0B60D70",
+          "slug": "m10-spitzkoerper-volumen",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-10/#lesson=rg-3-volumen",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Wie berechnet man das Volumen eines Spitzkörpers, also einer Pyramide oder eines Kegels, mit der Grundfläche "
+            },
+            {
+              "type": "math",
+              "tex": "G",
+              "speech": "G"
+            },
+            {
+              "type": "text",
+              "text": " und der Höhe "
+            },
+            {
+              "type": "math",
+              "tex": "h",
+              "speech": "h"
+            },
+            {
+              "type": "text",
+              "text": "?"
+            }
+          ],
+          "concept_segments": [
+            {
+              "type": "math",
+              "tex": "V = \\frac{1}{3} \\cdot G \\cdot h",
+              "speech": "V gleich ein Drittel mal G mal h"
+            }
+          ],
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "V = ⅓ · G · h",
+              "V = G · h"
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "V = ½·G·h",
+              "reason": "Der Faktor ½ gehört zur Dreiecksfläche, nicht zum Volumen eines Spitzkörpers."
+            },
+            {
+              "text": "V = 3·G·h",
+              "reason": "Drei Spitzkörper füllen die Säule: Ein Spitzkörper ist ein Drittel davon, nicht das Dreifache."
+            }
+          ]
+        },
+        {
+          "id": "01M5JHYTWZQ8PPXNHBTDNSYKK5",
+          "slug": "m10-kugel-formeln",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-10/#lesson=rg-3-volumen",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Wie berechnet man Volumen und Oberfläche einer Kugel mit dem Radius "
+            },
+            {
+              "type": "math",
+              "tex": "r",
+              "speech": "r"
+            },
+            {
+              "type": "text",
+              "text": "?"
+            }
+          ],
+          "concept_segments": [
+            {
+              "type": "math",
+              "tex": "V = \\frac{4}{3}\\pi r^3, \\quad O = 4\\pi r^2",
+              "speech": "V gleich vier Drittel pi r hoch drei, O gleich vier pi r Quadrat"
+            }
+          ],
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "V = 4/3 · πr³, O = 4πr²",
+              "V = 4/3 · πr², O = 4πr³"
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "V = 4/3 · πr², O = 4πr³",
+              "reason": "Exponenten vertauscht: Ein Volumen wächst mit r³, eine Fläche mit r²."
+            },
+            {
+              "text": "V = 2/3 · πr³, O = 2πr²",
+              "reason": "Das sind das Volumen und die gewölbte Fläche einer Halbkugel."
+            }
+          ]
+        },
+        {
+          "id": "01M5JHYTX0F8EYEVFYH3DP3WV6",
+          "slug": "m10-halbkugel-cavalieri",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-10/#lesson=rg-3-volumen",
+          "question": "Begründe mit dem Prinzip von Cavalieri, warum eine Halbkugel mit dem Radius r das Volumen ⅔ · π · r³ hat.",
+          "concept": "In jeder Höhe z ist ihr Querschnitt π(r² − z²) so groß wie der eines Zylinders (r, h = r) ohne Kegel: πr³ − ⅓πr³ = ⅔πr³.",
+          "materiality": "material",
+          "sample_solution": "Die Halbkugel liegt auf ihrer Schnittfläche. In der Höhe z ist ihr Querschnitt ein Kreis mit der Fläche π(r² − z²). Aus einem Zylinder mit dem Radius r und der Höhe r wird ein Kegel mit der Spitze in der Mitte des Bodens herausgebohrt; in der Höhe z bleibt ein Kreisring mit πr² − πz². Gleiche Höhe und in jeder Höhe gleich große Querschnitte ergeben gleiche Volumen: V = πr² · r − ⅓ · πr² · r = ⅔πr³.",
+          "choice_distractors": [
+            {
+              "text": "In jeder Höhe z ist ihr Querschnitt so groß wie der eines Kegels (r, h = 2r): ⅓ · πr² · 2r = ⅔πr³.",
+              "reason": "Dieser Kegel ist doppelt so hoch und hat andere Querschnitte; Cavalieri lässt sich so nicht anwenden."
+            },
+            {
+              "text": "In jeder Höhe z ist ihr Querschnitt so groß wie der eines Zylinders (r, h = r): Also ist V = πr³.",
+              "reason": "Die Kreise des Zylinders sind größer; erst ohne den herausgebohrten Kegel stimmen die Querschnitte überein."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "01M5JHYTWMRWN7YC5T307DSH3P",
+      "atom_uri": "urn:zam:atom:01M5JHYTWMRWN7YC5T307DSH3P",
+      "namespace": "zam-academy-mathematik-realschule-10",
+      "slug": "m10-zusammengesetzte-koerper",
+      "title": "Volumen und Oberfläche zusammengesetzter Körper",
+      "domain": "mathematik/geometrie",
+      "reduction": "axiomatic",
+      "typical_age_min": 15,
+      "source_link": "https://academy.zam-os.org/mathematik-realschule-10/#lesson=rg-4-zusammengesetzt",
+      "prerequisites": [
+        {
+          "atom_id": "01M5JHYTWK7T1FKW9M9S9SMQ41",
+          "type": "soft",
+          "rationale": "Die Teilvolumen von Zylinder, Kegel und Halbkugel werden addiert oder abgezogen."
+        },
+        {
+          "atom_id": "01M5JHYTWJTBMS9RS7606P1QH7",
+          "type": "soft",
+          "rationale": "Die Oberfläche setzt sich aus den Mantel- und Grundflächen der Teilkörper zusammen."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "mathematik-realschule-10",
+          "topic_code": "stage-6-raumgeometrie",
+          "topic_title": "Etappe 6: Raumgeometrie"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "realschule",
+          "grade": 10,
+          "subject": "mathematik",
+          "exam_relevant": true,
+          "track": "II_III",
+          "topic_code": "lb2",
+          "topic_title": "Raumgeometrie"
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M5JHYTX1NGVY37ERFYH1X00J",
+          "slug": "m10-zusammengesetzt-aussenflaechen",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 2,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-10/#lesson=rg-4-zusammengesetzt",
+          "question": "Auf einen Zylinder wird ein Kegel mit gleichem Radius gesetzt. Welche Flächen bilden die Oberfläche des neuen Körpers?",
+          "concept": "Grundkreis, Zylindermantel und Kegelmantel",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Grundkreis, Zylindermantel und Kegelmantel",
+              "zwei Kreise, Zylindermantel und Kegelmantel"
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "zwei Kreise, Zylindermantel und Kegelmantel",
+              "reason": "Der Kreis zwischen Zylinder und Kegel liegt innen und zählt nicht zur Oberfläche."
+            },
+            {
+              "text": "nur Zylindermantel und Kegelmantel",
+              "reason": "Der Boden des Zylinders liegt außen und gehört zur Oberfläche."
+            }
+          ]
+        },
+        {
+          "id": "01M5JHYTX2DT9G9ZSCG2T80E0W",
+          "slug": "m10-bohrung-oberflaeche",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 2,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-10/#lesson=rg-4-zusammengesetzt",
+          "question": "Wie ändert sich die Oberfläche eines Zylinders, wenn man von oben eine kegelförmige Vertiefung mit gleichem Radius hineinfräst?",
+          "concept": "Sie wird größer: Der Deckkreis fällt weg, dafür kommt der größere Kegelmantel innen dazu.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Sie wird größer.",
+              "Sie wird kleiner."
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "Sie wird kleiner: Mit dem Material fällt auch ein Teil der Oberfläche weg.",
+              "reason": "Volumen und Oberfläche verhalten sich hier verschieden: Die Innenwand ist größer als der fehlende Deckkreis."
+            },
+            {
+              "text": "Sie bleibt gleich: Der Kegelmantel innen ersetzt genau den fehlenden Deckkreis.",
+              "reason": "Der Kegelmantel πrs ist größer als der Kreis πr², denn die Mantellinie s ist länger als r."
+            }
+          ]
+        },
+        {
+          "id": "01M5JHYTX3KH562XJ53YH4K1SR",
+          "slug": "m10-silo-volumen",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 3,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-10/#lesson=rg-4-zusammengesetzt",
+          "question": "Ein Silo besteht aus einem Zylinder (r = 3 m, h = 10 m) mit kegelförmigem Dach (Dachhöhe 4 m). Berechne sein Volumen einschließlich Dachraum.",
+          "concept": "V = 102π m³ ≈ 320,44 m³",
+          "materiality": "material",
+          "sample_solution": "Zylinder: π · 3² · 10 m³ = 90π m³. Kegeldach: ⅓ · π · 3² · 4 m³ = 12π m³. Zusammen V = 102π m³ ≈ 320,44 m³.",
+          "choice_distractors": [
+            {
+              "text": "V = 126π m³ ≈ 395,84 m³",
+              "reason": "Das Dach ist ein Kegel: ⅓ · π · r² · h, nicht π · r² · h."
+            },
+            {
+              "text": "V = 90π m³ ≈ 282,74 m³",
+              "reason": "Das ist nur der Zylinder; der Dachraum gehört zum Volumen dazu."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "01M5JHYTWNPNNFHCHHXS0ZAWJV",
+      "atom_uri": "urn:zam:atom:01M5JHYTWNPNNFHCHHXS0ZAWJV",
+      "namespace": "zam-academy-mathematik-realschule-10",
+      "slug": "m10-extremwerte-koerper",
+      "title": "Funktionale Abhängigkeiten und Extremwerte bei Körpern",
+      "domain": "mathematik/geometrie",
+      "reduction": "axiomatic",
+      "typical_age_min": 15,
+      "source_link": "https://academy.zam-os.org/mathematik-realschule-10/#lesson=rg-5-extremwerte",
+      "prerequisites": [
+        {
+          "atom_id": "01M5JHYTWK7T1FKW9M9S9SMQ41",
+          "type": "soft",
+          "rationale": "Volumen- und Mantelformeln werden zu Termen in x."
+        },
+        {
+          "atom_id": "01M5JHYTWHE9H32NMKA2XGG1XX",
+          "type": "soft",
+          "rationale": "Die Maße in Abhängigkeit von x liest man am Axialschnitt mit dem Strahlensatz ab."
+        },
+        {
+          "atom_id": "01M5J4K4PQVBGK3EWE3CA086F5",
+          "type": "soft",
+          "rationale": "Den größten Wert eines quadratischen Terms liefert der Scheitel aus der quadratischen Ergänzung."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "mathematik-realschule-10",
+          "topic_code": "stage-6-raumgeometrie",
+          "topic_title": "Etappe 6: Raumgeometrie"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "realschule",
+          "grade": 10,
+          "subject": "mathematik",
+          "exam_relevant": true,
+          "track": "II_III",
+          "topic_code": "lb2",
+          "topic_title": "Raumgeometrie"
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M5JHYTX4GY1HHXDF70WD31B3",
+          "slug": "m10-definitionsmenge-zylinder-im-kegel",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 2,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-10/#lesson=rg-5-extremwerte",
+          "question": "Einem Kegel mit dem Radius 6 cm werden Zylinder mit dem Radius x cm einbeschrieben. Welche Werte kann x annehmen?",
+          "concept": "0 < x < 6",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "0 < x < 6",
+              "0 ≤ x ≤ 6"
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "0 < x < 12",
+              "reason": "Der Zylinderradius muss kleiner als der Kegelradius sein, nicht kleiner als der Durchmesser."
+            },
+            {
+              "text": "x > 0",
+              "reason": "Nach oben ist x auch begrenzt: Der Zylinder muss in den Kegel passen."
+            }
+          ]
+        },
+        {
+          "id": "01M5JHYTX5SYBQXWDTFZGM3MMG",
+          "slug": "m10-extremwert-scheitelform",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 2,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-10/#lesson=rg-5-extremwerte",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Bei welchem "
+            },
+            {
+              "type": "math",
+              "tex": "x",
+              "speech": "x"
+            },
+            {
+              "type": "text",
+              "text": " hat "
+            },
+            {
+              "type": "math",
+              "tex": "M(x) = -3\\pi (x - 3)^2 + 27\\pi",
+              "speech": "M von x gleich minus drei pi mal x minus drei in Klammern zum Quadrat plus siebenundzwanzig pi"
+            },
+            {
+              "type": "text",
+              "text": " seinen größten Wert, und wie groß ist er?"
+            }
+          ],
+          "concept": "bei x = 3, M = 27π",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "bei x = 3, M = 27π",
+              "bei x = −3, M = 27π"
+            ],
+            "correct_index": 0
+          },
+          "choice_distractors": [
+            {
+              "text": "bei x = 0, M = 27π",
+              "reason": "Am größten ist M dort, wo die Klammer null wird: bei x = 3."
+            },
+            {
+              "text": "bei x = 3, M = −3π",
+              "reason": "Der Faktor −3π sagt nur, dass es ein Maximum gibt; der größte Wert ist 27π."
+            }
+          ]
+        },
+        {
+          "id": "01M5JHYTX63M3MWMYBXM1EYFA0",
+          "slug": "m10-zylinder-im-kegel-maximum",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 3,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-10/#lesson=rg-5-extremwerte",
+          "question": "Einem Kegel mit r = 6 cm und h = 9 cm werden Zylinder mit dem Radius x cm einbeschrieben. Welcher Zylinder hat die größte Mantelfläche?",
+          "concept": "x = 3 cm, h = 4,5 cm, M = 27π cm² ≈ 84,82 cm²",
+          "materiality": "material",
+          "sample_solution": "Strahlensatz im Axialschnitt: h(x) : 9 = (6 − x) : 6, also h(x) = 9 − 1,5x mit 0 < x < 6. M(x) = 2πx · (9 − 1,5x) = −3πx² + 18πx = −3π(x − 3)² + 27π. Der größte Mantel gehört zu x = 3 cm und h = 4,5 cm: M = 27π cm² ≈ 84,82 cm².",
+          "choice_distractors": [
+            {
+              "text": "x = 4 cm, h = 3 cm, M = 24π cm² ≈ 75,40 cm²",
+              "reason": "Bei x = 4 cm ist das Volumen am größten, nicht die Mantelfläche."
+            },
+            {
+              "text": "x = 3 cm, h = 9 cm, M = 54π cm² ≈ 169,65 cm²",
+              "reason": "Die Zylinderhöhe ist h(3) = 4,5 cm, nicht die Kegelhöhe 9 cm."
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "01M5J4K4PMN772J1GPBA4M26V6",
       "atom_uri": "urn:zam:atom:01M5J4K4PMN772J1GPBA4M26V6",
       "namespace": "zam-academy-mathematik-realschule-10",
