@@ -518,7 +518,7 @@ describe("Labore der Etappe 6", () => {
       const v = values as LabValues;
       if (v.m === 0) continue;
       const shown = String(computeReadouts(lab, v).null);
-      const x0 = Number(shown.replace(/^x₀ = (≈ )?/, "").replace("−", "-").replace(",", "."));
+      const x0 = Number(shown.replace(/^x₀ [=≈] /, "").replace("−", "-").replace(",", "."));
       expect(Math.abs(v.m * x0 + v.t), shown).toBeLessThanOrEqual(0.006 * Math.abs(v.m));
     }
   });

@@ -732,7 +732,7 @@ export const LINE_TARGETS = [
 export function zeroOfLine(m: number, t: number): string {
   if (m === 0) return t === 0 ? "jede Stelle (die x-Achse)" : "keine (parallel zur x-Achse)";
   const x0 = -t / m;
-  return `x₀ = ${Math.abs(x0 - Number(x0.toFixed(2))) < 1e-9 ? "" : "≈ "}${fmt(x0, 2)}`;
+  return `x₀ ${Math.abs(x0 - Number(x0.toFixed(2))) < 1e-9 ? "=" : "≈"} ${fmt(x0, 2)}`;
 }
 
 function lineMxT(v: LabValues): string {
