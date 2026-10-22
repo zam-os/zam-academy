@@ -58,6 +58,12 @@ The [grade-9 coverage inventory](docs/realschule-9-coverage.md) distinguishes mi
 
 The [IT migration inventory](docs/it-bestandsabgleich.md) documents the split of the old algorithms/network cell. The eight explicit card mappings were approved on 2026-10-21; both apps are published and synchronized into ZAM together. Validate the split in disposable libraries with `ZAM_CORE=<file URL of zam-core's dist/index.js> node scripts/validate-it-migration.mjs`.
 
+## The atlas landing page
+
+`index.html` renders a zoomable knowledge atlas (Schulsicht and Weltwissen) from `academy.json`. Fields without a package are shown grey and unselectable. Search and coverage navigation also expand and focus the destination in the list view. App links return to `https://academy.zam-os.org/`, including when an app is opened from an offline zip.
+
+To register a new package, add an entry to `pakete` in `academy.json` (app folder, Fach, grade, school, lesson and card counts); `node --test scripts/academy-registry.test.mjs` keeps it in sync with the app cells. UML groups several lessons per atom, so its curriculum test checks the registry's lesson count against the app's actual lessons. School types and subject start grades in the registry are a planning scaffold and can be edited freely.
+
 ## Privacy
 
 No accounts, cookies, trackers or third-party requests. Learner progress stays in the browser's `localStorage`.

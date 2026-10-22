@@ -48,8 +48,8 @@ jobs:
       - uses: actions/setup-node@v5
         with:
           node-version: lts/*
-      - name: Test catalog publication safeguards
-        run: node --test scripts/build-catalog.test.mjs
+      - name: Test catalog publication safeguards and the atlas registry
+        run: node --test scripts/build-catalog.test.mjs scripts/academy-registry.test.mjs
       - name: Install zam-core
         run: |
           mkdir -p "$RUNNER_TEMP/zam-core"
