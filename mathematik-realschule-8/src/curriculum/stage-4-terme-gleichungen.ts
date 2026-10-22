@@ -1,11 +1,15 @@
-import { fmt, MINUS, paren, quadratic } from "../exercises/format";
+import { fmt, frac, MINUS, paren, quadratic, shifted, vertexForm } from "../exercises/format";
 import type { Rng } from "../exercises/rng";
 import {
   BINOMIAL_FORMULAS,
   binomialLeft,
   bracket,
   coefOf,
+  completedSquare,
+  EXTREMUM_MODELS,
+  extremumSides,
   factorHtml,
+  inDomain,
   type Mono,
   monoHtml,
   type Poly,
@@ -17,6 +21,9 @@ import {
   polyText,
   probeCounts,
   productValue,
+  termValue,
+  tileFactor,
+  tileFit,
   type Var,
   varsHtml,
   varsText,
@@ -1052,6 +1059,756 @@ const binomischeFormeln: Lesson = {
   celebrationMessage: "Plus, Minus, Plus-Minus: Die drei binomischen Formeln sitzen, auch mit Koeffizienten und zwei Variablen.",
 };
 
+// 4.4 Faktorisieren ───────────────────────────────────────────────────────────
+
+/** The divisors d of n with 1 < d < n: common factors that are not the greatest. */
+const properDivisors = (n: number) => Array.from({ length: Math.max(0, n - 2) }, (_, i) => i + 2).filter((d) => d < n && n % d === 0);
+
+/** Exponent pairs for the bracket after ausklammern: [exponent of u, exponent of w]. */
+const BRACKET_EXPS: Array<[number, number]> = [
+  [1, 0],
+  [0, 1],
+  [2, 0],
+  [0, 2],
+  [1, 1],
+  [2, 1],
+  [1, 2],
+];
+
+const FORMULAS = ["1. binomische Formel", "2. binomische Formel", "3. binomische Formel"];
+
+const faktorisieren: Lesson = {
+  id: "tg-4-faktorisieren",
+  stageId: STAGE_ID,
+  stepNumber: 4,
+  title: "4.4 Faktorisieren",
+  subtitle: "Ausklammern und binomische Formeln rückwärts",
+  tracks: ["I", "II_III"],
+  lehrplan: `${LP}: Faktorisieren`,
+  whyItMatters:
+    "Ein Produkt verrät mehr als eine Summe: An 2(x + 3)(x − 3) siehst du sofort, wann der Term null wird, und Bruchterme in Lernbereich 5 kürzt du nur in faktorisierter Form. Die quadratische Ergänzung der nächsten Lektion beruht darauf, ein vollständiges Quadrat zu erkennen.",
+  explanationHtml: `
+    <p><strong>Faktorisieren</strong> heißt, eine Summe als Produkt zu schreiben. Es ist die Umkehrung des Ausmultiplizierens. Zwei Werkzeuge kennst du schon: das Distributivgesetz und die binomischen Formeln, beide rückwärts gelesen.</p>
+    <p><strong>1. Ausklammern:</strong> Suche den größten gemeinsamen Faktor aller Glieder: den ggT der Zahlen und jede Variable, die in allen Gliedern vorkommt, mit ihrem kleinsten Exponenten. Teile dann jedes Glied durch diesen Faktor.</p>
+    <div class="example"><strong>Beispiel 1:</strong> 12x<sup>3</sup>y − 18x<sup>2</sup>y<sup>2</sup><br>
+      ggT(12; 18) = 6; x steckt in jedem Glied mindestens als x<sup>2</sup>, y mindestens als y.<br>
+      Gemeinsamer Faktor: 6x<sup>2</sup>y. Geteilt: 12x<sup>3</sup>y : (6x<sup>2</sup>y) = 2x und 18x<sup>2</sup>y<sup>2</sup> : (6x<sup>2</sup>y) = 3y.<br>
+      12x<sup>3</sup>y − 18x<sup>2</sup>y<sup>2</sup> = 6x<sup>2</sup>y(2x − 3y)<br>
+      Probe: 6x<sup>2</sup>y · 2x − 6x<sup>2</sup>y · 3y = 12x<sup>3</sup>y − 18x<sup>2</sup>y<sup>2</sup></div>
+    <p><strong>2. Binomische Formeln rückwärts:</strong> Ein Dreiglied ist ein <strong>vollständiges Quadrat</strong>, wenn zwei Glieder Quadrate a<sup>2</sup> und b<sup>2</sup> sind und das dritte genau das Mischglied ±2ab ist: 9x<sup>2</sup> − 30x + 25 = (3x)<sup>2</sup> − 2 · 3x · 5 + 5<sup>2</sup> = (3x − 5)<sup>2</sup>. Eine Differenz zweier Quadrate zerlegst du mit der 3. Formel: 25a<sup>2</sup> − 49b<sup>2</sup> = (5a)<sup>2</sup> − (7b)<sup>2</sup> = (5a + 7b)(5a − 7b).</p>
+    <p><strong>Erkennen, was fehlt:</strong> x<sup>2</sup> + 8x + □ wird ein Quadrat, wenn □ = 4<sup>2</sup> = 16 ist, denn 8x = 2 · x · 4. x<sup>2</sup> + 6x + 4 ist kein vollständiges Quadrat, denn zu 6x gehört 3<sup>2</sup> = 9. Eine Summe zweier Quadrate wie x<sup>2</sup> + 16 lässt sich mit keiner binomischen Formel zerlegen.</p>
+    <div class="example"><strong>Beispiel 2:</strong> Erst ausklammern, dann die Klammer prüfen:<br>
+      2x<sup>2</sup> − 18 = 2(x<sup>2</sup> − 9) = 2(x + 3)(x − 3)<br>
+      3x<sup>3</sup> − 12x<sup>2</sup> + 12x = 3x(x<sup>2</sup> − 4x + 4) = 3x(x − 2)<sup>2</sup></div>
+    <p><strong>Probe:</strong> Multipliziere dein Ergebnis wieder aus; es muss der Ausgangsterm herauskommen.</p>
+    <p><strong>Typische Fehler:</strong> nicht den größten Faktor ausklammern (2x(6x<sup>2</sup>y − 9xy<sup>2</sup>) ist richtig, aber nicht fertig); beim Ausklammern die 1 vergessen: 4x<sup>2</sup> + 2x = 2x(2x + 1); ein Dreiglied für ein Quadrat halten, dessen Mischglied nicht 2ab ist; nach dem Ausklammern aufhören, obwohl in der Klammer noch eine binomische Formel steckt.</p>
+    <div class="merke"><strong>Merke:</strong> Erst ausklammern (ggT und kleinste Potenzen), dann in der Klammer nach a<sup>2</sup> ± 2ab + b<sup>2</sup> oder a<sup>2</sup> − b<sup>2</sup> suchen. Jede Faktorisierung prüfst du durch Ausmultiplizieren.</div>
+  `,
+  formulas: [
+    { name: "Ausklammern", html: "ab + ac = a(b + c)", quantities: "a: ggT der Zahlen und gemeinsame Variablen mit dem kleinsten Exponenten" },
+    { name: "Vollständiges Quadrat", html: "a<sup>2</sup> + 2ab + b<sup>2</sup> = (a + b)<sup>2</sup>; a<sup>2</sup> − 2ab + b<sup>2</sup> = (a − b)<sup>2</sup>", quantities: "das Mischglied muss genau 2ab sein" },
+    { name: "Differenz zweier Quadrate", html: "a<sup>2</sup> − b<sup>2</sup> = (a + b)(a − b)", quantities: "eine Summe a² + b² lässt sich so nicht zerlegen" },
+  ],
+  quiz: {
+    question: "Welche Zerlegung von 2x² − 18 ist richtig und vollständig?",
+    options: ["2(x² − 9)", "2(x − 3)²", "2(x + 3)(x − 3)", "2(x + 9)(x − 9)"],
+    correctIndex: 2,
+    explanation: "Erst 2 ausklammern: 2(x² − 9). x² − 9 = x² − 3² ist eine Differenz zweier Quadrate, also 2(x + 3)(x − 3). 2(x² − 9) ist richtig, aber nicht fertig; 2(x − 3)² ergäbe 2x² − 12x + 18.",
+  },
+  lab: {
+    kind: "factorise",
+    title: "Labor: Quadrate legen",
+    intro:
+      "Wähle, wie viele x²-Kacheln, x-Streifen und Einerquadrate du hast. Die Zeichnung legt sie zum Quadrat (sx + k)² und zeigt gestrichelt, welche Einerquadrate fehlen. Sind die x²-Kacheln selbst kein Quadrat, entstehen gleiche Gruppen: Das ist Ausklammern.",
+    params: [
+      { type: "choice", key: "A", label: "x²-Kacheln", options: [1, 2, 3, 4, 9].map((n) => ({ value: n, label: String(n) })), value: 1 },
+      { type: "range", key: "B", label: "x-Streifen", unit: "", min: 0, max: 24, step: 1, value: 6 },
+      { type: "range", key: "C", label: "Einerquadrate", unit: "", min: 0, max: 36, step: 1, value: 4 },
+    ],
+    readouts: [
+      { key: "term", label: "Term", compute: (v) => quadratic(v.A, v.B, v.C) },
+      { key: "factor", label: "als Produkt", emphasis: true, compute: (v) => (tileFit(v.A, v.B, v.C).ok ? tileFactor(tileFit(v.A, v.B, v.C)) : "kein vollständiges Quadrat") },
+      {
+        key: "need",
+        label: "nötige Einerquadrate",
+        compute: (v) => {
+          const fit = tileFit(v.A, v.B, v.C);
+          return fit.k === null ? "kein Quadrat möglich" : String(fit.need);
+        },
+      },
+    ],
+    goals: [
+      {
+        id: "ergaenzen",
+        text: "Ergänze x² + 10x mit Einerquadraten zu einem vollständigen Quadrat. Wie viele brauchst du, und warum gerade so viele?",
+        check: (v) => v.A === 1 && v.B === 10 && tileFit(v.A, v.B, v.C).ok,
+      },
+      {
+        id: "zwei",
+        text: "Zwei x²-Kacheln ergeben kein Quadrat. Finde Streifen und Einerquadrate, sodass zwei gleiche Quadrate entstehen.",
+        check: (v) => {
+          const fit = tileFit(v.A, v.B, v.C);
+          return v.A === 2 && fit.ok && (fit.k ?? 0) >= 1;
+        },
+      },
+      {
+        id: "doppelt",
+        text: "Lege ein vollständiges Quadrat, das sich auch als Vielfaches eines Quadrats schreiben lässt, wie (2x + 2)² = 4(x + 1)².",
+        check: (v) => {
+          const fit = tileFit(v.A, v.B, v.C);
+          const k = fit.k ?? 0;
+          return fit.ok && fit.groups === 1 && fit.s > 1 && k > 0 && k % fit.s === 0;
+        },
+      },
+    ],
+  },
+  exercises: [
+    {
+      id: "ausklammern",
+      make: (rng, level): ExerciseTask => {
+        if (level === 1) {
+          const [u, w] = rng.pick(VAR_PAIRS);
+          const g = rng.pick([2, 3, 4, 5, 6, 8, 9, 12]);
+          let [p, q] = [1, 1];
+          let bracketTerms: Poly = [];
+          for (let tries = 0; tries < 100; tries++) {
+            [p, q] = [rng.int(0, 3), rng.int(0, 2)];
+            if (p + q === 0) continue;
+            const n = rng.next() < 0.35 ? 3 : 2;
+            const exps = rng.shuffle(BRACKET_EXPS).slice(0, n);
+            const coefs = exps.map((_, i) => (i === 0 ? rng.int(1, 6) : nonZero(rng, 6)));
+            const common = coefs.reduce((x, y) => {
+              let [m, k] = [Math.abs(x), Math.abs(y)];
+              while (k) [m, k] = [k, m % k];
+              return m;
+            });
+            if (common !== 1) continue;
+            if (Math.min(...exps.map((e) => e[0])) !== 0 || Math.min(...exps.map((e) => e[1])) !== 0) continue;
+            bracketTerms = exps.map(([i, j], k) => ({ c: coefs[k], m: mono2(u, w, i, j) }));
+            break;
+          }
+          const G = mono2(u, w, p, q);
+          const T = polyMul([{ c: g, m: G }], bracketTerms);
+          const shown = polyHtml(T);
+          const maxU = Math.max(...T.map((t) => t.m[u] ?? 0));
+          const maxW = Math.max(...T.map((t) => t.m[w] ?? 0));
+          const smaller = { hint: "Das ist ein gemeinsamer Faktor, aber nicht der größte: In der Klammer ließe sich noch etwas ausklammern." };
+          const minHint = (v: string) => `Ausklammern kannst du nur die kleinste Potenz von ${v}, die in jedem Glied steckt.`;
+          return {
+            prompt: `Klammere den größten gemeinsamen Faktor aus: ${shown} = □ · ${u}<sup>□</sup>${w}<sup>□</sup> · (…). Gib die Zahl und die Exponenten des Faktors an.`,
+            given: [`T = ${shown}`],
+            formulaHint: "ggT der Zahlen; jede Variable mit dem kleinsten Exponenten, der in allen Gliedern vorkommt (Exponent 0: die Variable fehlt in einem Glied)",
+            fields: [
+              intField("Zahl:", g, properDivisors(g).map((d) => ({ value: d, ...smaller }))),
+              intField(`Exponent von ${u}:`, p, [{ value: maxU, hint: minHint(u) }]),
+              intField(`Exponent von ${w}:`, q, [{ value: maxW, hint: minHint(w) }]),
+            ],
+            steps: [
+              `ggT der Zahlen: ${g}. ${p === 0 ? `${u} fehlt in einem Glied.` : `${u} steckt in jedem Glied mindestens als ${varsHtml({ [u]: p })}.`} ${q === 0 ? `${w} fehlt in einem Glied.` : `${w} steckt in jedem Glied mindestens als ${varsHtml({ [w]: q })}.`}`,
+              `Jedes Glied durch ${monoHtml(g, G)} teilen: ${T.map((t) => `${monoHtml(t.c, t.m)} : ${factorHtml(g, G)} = ${monoHtml(t.c / g, mono2(u, w, (t.m[u] ?? 0) - p, (t.m[w] ?? 0) - q))}`).join("; ")}`,
+              `<strong>${shown} = ${monoHtml(g, G)}(${polyHtml(bracketTerms)})</strong>`,
+            ],
+            meta: { g, p, q, terms: T.length, ...Object.fromEntries(T.flatMap((t, i) => [[`c${i}`, t.c], [`u${i}`, t.m[u] ?? 0], [`w${i}`, t.m[w] ?? 0]])) },
+          };
+        }
+        // Level 2: ausklammern, then a binomial formula in the bracket.
+        const kind = rng.int(0, 2);
+        const g = rng.pick([2, 3, 5, 6]);
+        const k = rng.int(1, 6);
+        const withX = rng.next() < 0.4 ? 1 : 0;
+        const inner: Poly = kind === 2 ? [{ c: 1, m: X2 }, { c: -k * k, m: X0 }] : [{ c: 1, m: X2 }, { c: kind === 0 ? 2 * k : -2 * k, m: X1 }, { c: k * k, m: X0 }];
+        const front: Poly = [{ c: g, m: withX ? X1 : X0 }];
+        const T = polyMul(front, inner);
+        const shown = polyHtml(T);
+        const product = kind === 0 ? `(x + ${k})<sup>2</sup>` : kind === 1 ? `(x − ${k})<sup>2</sup>` : `(x + ${k})(x − ${k})`;
+        const frontHtml = monoHtml(g, withX ? X1 : X0);
+        return {
+          prompt: `Faktorisiere T = ${shown} so weit wie möglich: Klammere zuerst den größten gemeinsamen Faktor aus und wende dann in der Klammer eine binomische Formel an. Gib den ausgeklammerten Faktor, die Formel und die Zahl k in (x ± k) an.`,
+          given: [`T = ${shown}`],
+          fields: [
+            intField("ausgeklammerte Zahl:", g, [{ value: 1, hint: `Alle Zahlen sind durch ${g} teilbar: Klammere ${g} aus.` }, ...properDivisors(g).map((d) => ({ value: d, hint: "Das ist nicht der größte gemeinsame Faktor: Prüfe den ggT aller Zahlen." }))]),
+            intField("Exponent von x im ausgeklammerten Faktor:", withX, withX ? [{ value: 0, hint: "Jedes Glied enthält x: Auch x wird ausgeklammert." }] : [{ value: 1, hint: "Das letzte Glied enthält kein x: x lässt sich nicht ausklammern." }]),
+            choiceField("Formel in der Klammer:", FORMULAS, kind),
+            intField("k =", k, [{ value: k * k, hint: `k ist die Zahl, deren Quadrat ${k * k} am Ende der Klammer steht.` }, ...(kind < 2 ? [{ value: 2 * k, hint: "Das Mischglied ist 2 · x · k: Halbiere die Zahl vor x." }] : [])]),
+          ],
+          steps: [
+            `Ausklammern: ggT ${g}${withX ? ", und x steckt in jedem Glied" : ""}: T = ${frontHtml}(${polyHtml(inner)})`,
+            kind === 2 ? `In der Klammer: x<sup>2</sup> − ${k * k} = x<sup>2</sup> − ${k}<sup>2</sup>, eine Differenz zweier Quadrate (3. Formel).` : `In der Klammer: ${polyHtml(inner)} = x<sup>2</sup> ${kind === 0 ? "+" : "−"} 2 · x · ${k} + ${k}<sup>2</sup>, ein vollständiges Quadrat (${kind + 1}. Formel).`,
+            `<strong>T = ${frontHtml}${product}</strong>`,
+          ],
+          meta: { kind, g, k, withX, t3: coefOf(T, { x: 3 }), t2: coefOf(T, X2), t1: coefOf(T, X1), t0: coefOf(T, X0) },
+        };
+      },
+    },
+    {
+      id: "rueckwaerts",
+      make: (rng, level): ExerciseTask => {
+        const coprime = (a: number, b: number) => {
+          let [m, n] = [a, b];
+          while (n) [m, n] = [n, m % n];
+          return m === 1;
+        };
+        let [p, q] = [2, 1];
+        do {
+          [p, q] = [rng.int(2, 7), rng.int(1, 9)];
+        } while (!coprime(p, q));
+        if (level === 1) {
+          const kind = rng.int(0, 3);
+          const [v1, v2] = kind === 3 ? ["a", "b"] : ["x", ""];
+          const sq = (n: number, v: string) => (v ? `${n * n === 1 ? "" : n * n}${v}<sup>2</sup>` : `${n * n}`);
+          const pv = (n: number, v: string) => (v ? px(n, v) : `${n}`);
+          const root = (n: number, v: string) => (v ? `(${px(n, v)})<sup>2</sup>` : `${n}<sup>2</sup>`);
+          const shown =
+            kind === 0 ? `${p * p}x<sup>2</sup> + ${2 * p * q}x + ${q * q}` : kind === 1 ? `${p * p}x<sup>2</sup> − ${2 * p * q}x + ${q * q}` : `${sq(p, v1)} − ${sq(q, v2)}`;
+          const template = kind === 0 ? `(□x + □)<sup>2</sup>` : kind === 1 ? `(□x − □)<sup>2</sup>` : `(□${v1} + □${v2})(□${v1} − □${v2})`;
+          const factored = kind === 0 ? `(${p}x + ${q})<sup>2</sup>` : kind === 1 ? `(${p}x − ${q})<sup>2</sup>` : `(${pv(p, v1)} + ${pv(q, v2)})(${pv(p, v1)} − ${pv(q, v2)})`;
+          return {
+            prompt: `Faktorisiere mit einer binomischen Formel: ${shown} = ${template}`,
+            given: [`${shown} = ${template}`],
+            formulaHint: "a<sup>2</sup> + 2ab + b<sup>2</sup> = (a + b)<sup>2</sup>; a<sup>2</sup> − 2ab + b<sup>2</sup> = (a − b)<sup>2</sup>; a<sup>2</sup> − b<sup>2</sup> = (a + b)(a − b)",
+            fields: [
+              intField("erste Zahl:", p, [{ value: p * p, hint: `Gesucht ist die Zahl, deren Quadrat ${p * p} ist.` }]),
+              intField("zweite Zahl:", q, [{ value: q * q, hint: `Gesucht ist die Zahl, deren Quadrat ${q * q} ist.` }, ...(kind < 2 ? [{ value: p * q, hint: "Das Mischglied ist 2ab, nicht ab." }, { value: 2 * p * q, hint: "Das ist das Mischglied 2ab, gesucht ist b." }] : [])]),
+            ],
+            steps: [
+              kind < 2
+                ? `${p * p}x<sup>2</sup> = (${p}x)<sup>2</sup>, ${q * q} = ${q}<sup>2</sup> und das Mischglied passt: 2 · ${p}x · ${q} = ${2 * p * q}x.`
+                : `${sq(p, v1)} = ${root(p, v1)} und ${sq(q, v2)} = ${root(q, v2)}: eine Differenz zweier Quadrate.`,
+              `<strong>${shown} = ${factored}</strong>`,
+            ],
+            meta: { kind, p, q },
+          };
+        }
+        // Level 2: check a claimed square and name the summand that must be there.
+        const variant = rng.int(0, 2);
+        const minus = rng.next() < 0.4;
+        let mid = 2 * p * q;
+        let last = q * q;
+        const right = variant === 0;
+        if (variant === 1) last = rng.pick([q * q + rng.int(1, 6), Math.max(1, q * q - rng.int(1, 5)), 2 * q, q].filter((n) => n !== q * q && n > 0));
+        if (variant === 2) mid = rng.pick([p * q, 2 * p * q + p, 2 * p * q - p, p * p * q].filter((n) => n !== 2 * p * q && n > 0));
+        const op = minus ? "−" : "+";
+        const shown = `${p * p}x<sup>2</sup> ${op} ${mid}x + ${last}`;
+        const askLast = variant === 1 || (variant === 0 && rng.next() < 0.5);
+        const name = ["Tim", "Mia", "Can", "Lena", "Jonas", "Elif"][rng.int(0, 5)];
+        return {
+          prompt: `${name} behauptet: T = ${shown} ist ein vollständiges Quadrat. Prüfe die Behauptung. Welche Zahl muss ${askLast ? "am Ende" : "vor x"} stehen, damit T ein vollständiges Quadrat ist? (Steht dort schon die richtige Zahl, gib sie an.)`,
+          given: [`T = ${shown}`],
+          fields: [
+            choiceField("Ist T ein vollständiges Quadrat?", ["ja", "nein"], right ? 0 : 1),
+            askLast
+              ? intField("Zahl am Ende:", q * q, [{ value: q, hint: `Am Ende steht b², also ${q} · ${q}.` }, { value: 2 * q, hint: `b² heißt ${q} · ${q}, nicht 2 · ${q}.` }, ...(right ? [] : [{ value: last, hint: "Prüfe mit dem Mischglied: 2 · a · b muss die Zahl vor x ergeben." }])])
+              : intField("Zahl vor x:", 2 * p * q, [{ value: p * q, hint: "Das Mischglied ist 2ab, nicht ab." }, ...(right ? [] : [{ value: mid, hint: "Prüfe: Die Zahl vor x muss 2 · a · b sein." }])]),
+          ],
+          steps: [
+            `${p * p}x<sup>2</sup> = (${p}x)<sup>2</sup>, also a = ${p}x. ${askLast ? `Das Mischglied ${mid}x = 2 · ${p}x · b ergibt b = ${q}.` : `${last} = ${q}<sup>2</sup>, also b = ${q}.`}`,
+            askLast ? `Dann muss am Ende b<sup>2</sup> = ${q * q} stehen${right ? ", und das steht dort." : `, nicht ${last}.`}` : `Dann muss das Mischglied 2 · ${p}x · ${q} = ${2 * p * q}x sein${right ? ", und das ist es." : `, nicht ${mid}x.`}`,
+            `<strong>${right ? "ja" : "nein"}: ${p * p}x<sup>2</sup> ${op} ${2 * p * q}x + ${q * q} = (${p}x ${op} ${q})<sup>2</sup></strong>`,
+          ],
+          meta: { variant, p, q, mid, last, minus: minus ? 1 : 0, askLast: askLast ? 1 : 0 },
+        };
+      },
+    },
+  ],
+  requiredCorrect: 3,
+  celebrationMessage: "Ausklammern und binomische Formeln rückwärts: Du zerlegst Summen in Produkte und prüfst sie.",
+};
+
+// 4.5 Extremwerte quadratischer Terme ─────────────────────────────────────────
+
+/** The factor in front of a bracket in HTML: "", "−", "2", "−0,5". */
+const lead = (a: number) => (a === 1 ? "" : a === -1 ? MINUS : fmt(a));
+
+/** The steps of the quadratische Ergänzung of ax² + bx + c in HTML, ending with a(x − d)² + e. */
+function completionSteps(a: number, b: number, c: number): string[] {
+  const d = -b / (2 * a);
+  const e = c - (b * b) / (4 * a);
+  const h = Math.abs(b / (2 * a));
+  const cText = c === 0 ? "" : signed(c);
+  const form = vertexForm(a, d, e, 4).replace("²", "<sup>2</sup>");
+  const sqBracket = `${shifted(d, 4)}<sup>2</sup>`;
+  const inner = quadratic(1, b / a, 0, 4).replace("x²", "x<sup>2</sup>");
+  if (a === 1) {
+    return [
+      `T(x) = ${inner} + ${fmt(h, 4)}<sup>2</sup> − ${fmt(h, 4)}<sup>2</sup>${cText}`,
+      `T(x) = ${sqBracket} − ${fmt(h * h, 4)}${cText} = ${form}`,
+    ];
+  }
+  return [
+    `a = ${fmt(a)} aus den x-Gliedern ausklammern: T(x) = ${lead(a)}[${inner}]${cText}`,
+    `In der Klammer ergänzen: T(x) = ${lead(a)}[${inner} + ${fmt(h, 4)}<sup>2</sup> − ${fmt(h, 4)}<sup>2</sup>]${cText} = ${lead(a)}[${sqBracket} − ${fmt(h * h, 4)}]${cText}`,
+    `Ausmultiplizieren: T(x) = ${lead(a)}${sqBracket}${signed(-a * h * h)}${cText} = ${form}`,
+  ];
+}
+
+/** The conclusion: "T(x) hat für x = 3 den kleinsten Wert T_min = 5." */
+function extremeSentence(a: number, d: number, e: number, name = "T"): string {
+  return a > 0 ? `${name}(x) hat für x = ${fmt(d, 4)} den kleinsten Wert ${name}<sub>min</sub> = ${fmt(e, 4)}.` : `${name}(x) hat für x = ${fmt(d, 4)} den größten Wert ${name}<sub>max</sub> = ${fmt(e, 4)}.`;
+}
+
+const KIND = ["kleinster Wert (Minimum)", "größter Wert (Maximum)"];
+
+const extremwerte: Lesson = {
+  id: "tg-5-extremwerte",
+  stageId: STAGE_ID,
+  stepNumber: 5,
+  title: "4.5 Extremwerte quadratischer Terme",
+  subtitle: "Quadratische Ergänzung: Ein Quadrat ist nie negativ",
+  tracks: ["I", "II_III"],
+  lehrplan: `${LP}: Extremwerte quadratischer Terme`,
+  whyItMatters:
+    "Wie groß kann eine Fläche höchstens werden, wie klein ein Materialverbrauch? Solche Fragen führen auf quadratische Terme, und deren kleinsten oder größten Wert findest du mit der quadratischen Ergänzung ganz ohne Ausprobieren.",
+  explanationHtml: `
+    <p>Ein Term T(x) = ax<sup>2</sup> + bx + c mit a ≠ 0 heißt <strong>quadratischer Term</strong>. Welchen Wert er annimmt, hängt von x ab. Oft willst du wissen, wie klein oder wie groß er werden kann. Das zeigt die <strong>quadratische Ergänzung</strong>: Sie schreibt T(x) in der Form a(x − d)<sup>2</sup> + e.</p>
+    <p><strong>Warum das hilft:</strong> Ein Quadrat ist nie negativ: (x − d)<sup>2</sup> ≥ 0, und es ist genau dann 0, wenn x = d ist. Für a &gt; 0 ist a(x − d)<sup>2</sup> ≥ 0, also T(x) ≥ e: T(x) hat für x = d den <strong>kleinsten Wert</strong> T<sub>min</sub> = e. Für a &lt; 0 ist a(x − d)<sup>2</sup> ≤ 0, also T(x) ≤ e: T(x) hat für x = d den <strong>größten Wert</strong> T<sub>max</sub> = e.</p>
+    <div class="example"><strong>Beispiel 1</strong> (a = 1): T(x) = x<sup>2</sup> − 6x + 14<br>
+      Halbiere die Zahl vor x: 6 : 2 = 3. Ergänze 3<sup>2</sup> und ziehe es gleich wieder ab:<br>
+      T(x) = x<sup>2</sup> − 6x + 3<sup>2</sup> − 3<sup>2</sup> + 14 = (x − 3)<sup>2</sup> − 9 + 14 = (x − 3)<sup>2</sup> + 5<br>
+      T(x) hat für x = 3 den kleinsten Wert T<sub>min</sub> = 5.<br>
+      Kontrolle mit der Wertetabelle: T(2) = 6, T(3) = 5, T(4) = 6.</div>
+    <p><strong>Mit a ≠ 1</strong> klammerst du a zuerst aus den beiden x-Gliedern aus, ergänzt in der Klammer und multiplizierst dann wieder aus:</p>
+    <div class="example"><strong>Beispiel 2:</strong> T(x) = 2x<sup>2</sup> + 8x + 3 = 2[x<sup>2</sup> + 4x] + 3 = 2[x<sup>2</sup> + 4x + 2<sup>2</sup> − 2<sup>2</sup>] + 3 = 2[(x + 2)<sup>2</sup> − 4] + 3 = 2(x + 2)<sup>2</sup> − 8 + 3 = 2(x + 2)<sup>2</sup> − 5<br>
+      a = 2 &gt; 0: T(x) hat für x = −2 den kleinsten Wert T<sub>min</sub> = −5.<br>
+      <strong>Beispiel 3:</strong> T(x) = −x<sup>2</sup> + 4x + 1 = −[x<sup>2</sup> − 4x] + 1 = −[(x − 2)<sup>2</sup> − 4] + 1 = −(x − 2)<sup>2</sup> + 5<br>
+      a = −1 &lt; 0: T(x) hat für x = 2 den größten Wert T<sub>max</sub> = 5.</div>
+    <p>Die Werte liegen symmetrisch zu x = d: T(d − 1) = T(d + 1), T(d − 2) = T(d + 2) und so weiter. Das ist eine gute Kontrolle in der Wertetabelle.</p>
+    <p><strong>Typische Fehler:</strong> das Quadrat der halben Zahl nur addieren und nicht wieder abziehen; den Faktor a vergessen (bei 2x<sup>2</sup> + 8x + 3 ist d = −2, nicht −4); das Vorzeichen von d: (x + 2)<sup>2</sup> ist für x = −2 null, nicht für x = 2; die Ergänzung in der eckigen Klammer beim Ausmultiplizieren nicht mit a malnehmen.</p>
+    <div class="merke"><strong>Merke:</strong> T(x) = a(x − d)<sup>2</sup> + e. Für a &gt; 0 hat T(x) für x = d den kleinsten Wert T<sub>min</sub> = e, für a &lt; 0 den größten Wert T<sub>max</sub> = e.</div>
+  `,
+  formulas: [
+    { name: "Quadratische Ergänzung", html: `x<sup>2</sup> + bx + c = (x + ${frac("b", "2")})<sup>2</sup> − (${frac("b", "2")})<sup>2</sup> + c`, quantities: "die halbe Zahl vor x quadrieren, addieren und gleich wieder abziehen" },
+    { name: "Extremwert", html: "T(x) = a(x − d)<sup>2</sup> + e", quantities: "a > 0: kleinster Wert e für x = d; a < 0: größter Wert e für x = d" },
+    { name: "Ein Quadrat ist nie negativ", html: "(x − d)<sup>2</sup> ≥ 0", quantities: "null genau für x = d" },
+  ],
+  quiz: {
+    question: "Welchen Extremwert hat T(x) = x² + 4x + 7?",
+    options: ["kleinster Wert 7 für x = 0", "kleinster Wert 3 für x = 2", "größter Wert 3 für x = −2", "kleinster Wert 3 für x = −2"],
+    correctIndex: 3,
+    explanation: "x² + 4x + 7 = x² + 4x + 2² − 2² + 7 = (x + 2)² + 3. Das Quadrat ist für x = −2 null und sonst positiv, also ist 3 der kleinste Wert, angenommen bei x = −2, nicht bei 2.",
+  },
+  lab: {
+    kind: "completing-square",
+    title: "Labor: Das Quadrat entscheidet",
+    intro:
+      "Wähle a, b und c für T(x) = ax² + bx + c und schiebe x. Links steht die quadratische Ergänzung, darunter das Quadrat (x − d)² als Fläche: Es schrumpft bei x = d auf null. Rechts siehst du die Werte der Wertetabelle als Punkte.",
+    params: [
+      { type: "choice", key: "a", label: "a", options: [-2, -1, -0.5, 0.5, 1, 2].map((n) => ({ value: n, label: fmt(n) })), value: 1 },
+      { type: "range", key: "b", label: "b", unit: "", min: -6, max: 6, step: 1, value: -6 },
+      { type: "range", key: "c", label: "c", unit: "", min: -10, max: 15, step: 1, value: 14 },
+      { type: "range", key: "x", label: "x", unit: "", min: -6, max: 6, step: 0.5, value: 0, digits: 1 },
+    ],
+    readouts: [
+      { key: "value", label: "T(x) beim eingestellten x", digits: 3, emphasis: true, compute: (v) => termValue(v, v.x) },
+      { key: "square", label: "Quadrat (x − d)²", digits: 4, compute: (v) => (v.x - completedSquare(v).d) ** 2 },
+      { key: "form", label: "nach der quadratischen Ergänzung", compute: (v) => `T(x) = ${vertexForm(v.a, completedSquare(v).d, completedSquare(v).e, 4)}` },
+    ],
+    goals: [
+      {
+        id: "kleinster",
+        text: "T(x) = x² − 6x + 14: Finde das x, für das T(x) am kleinsten ist. Was ist dann mit dem Quadrat?",
+        check: (v) => v.a === 1 && v.b === -6 && v.c === 14 && v.x === 3,
+      },
+      {
+        id: "max4",
+        text: "Stelle einen Term mit x-Glied ein, dessen größter Wert genau 4 ist.",
+        check: (v) => v.a < 0 && v.b !== 0 && Math.abs(completedSquare(v).e - 4) < 1e-9,
+      },
+      {
+        id: "spiegel",
+        text: "Finde ein x ≠ 0, bei dem T(x) denselben Wert hat wie bei x = 0. Wie hängt es mit d zusammen?",
+        check: (v) => v.x !== 0 && Math.abs(termValue(v, v.x) - v.c) < 1e-9,
+      },
+    ],
+  },
+  exercises: [
+    {
+      id: "extremwert",
+      make: guarded((rng, level): ExerciseTask => {
+        const dSlips = (d: number, b: number) => [
+          { value: -d, hint: `Achte auf das Vorzeichen: ${d > 0 ? `(x − ${fmt(d)})²` : `(x + ${fmt(-d)})²`} ist für x = ${fmt(d)} null.` },
+          { value: -b, hint: "Halbiere die Zahl vor x (und teile vorher durch a)." },
+        ];
+        if (level === 1) {
+          const a = rng.next() < 0.3 ? -1 : 1;
+          const d = nonZero(rng, 6);
+          const e = rng.int(-9, 12);
+          const b = -2 * a * d;
+          const c = e + a * d * d;
+          return {
+            prompt: `Bestimme mit quadratischer Ergänzung den Extremwert von T(x) = ${polyHtml([{ c: a, m: X2 }, { c: b, m: X1 }, { c, m: X0 }])}. Ist es der kleinste oder der größte Wert, und für welches x wird er angenommen?`,
+            given: [`T(x) = ${polyHtml([{ c: a, m: X2 }, { c: b, m: X1 }, { c, m: X0 }])}`],
+            formulaHint: `x<sup>2</sup> + bx + c = x<sup>2</sup> + bx + (${frac("b", "2")})<sup>2</sup> − (${frac("b", "2")})<sup>2</sup> + c${a < 0 ? "; bei −x<sup>2</sup> zuerst −1 ausklammern" : ""}`,
+            fields: [
+              choiceField("Art des Extremwerts:", KIND, a > 0 ? 0 : 1),
+              numberField("x =", d, "", 2, { slips: dSlips(d, b) }),
+              numberField("Extremwert:", e, "", 2, {
+                slips: [
+                  { value: c + a * d * d, hint: "Die ergänzte Zahl muss gleich wieder abgezogen werden." },
+                  { value: c, hint: "c ist nicht der Extremwert: Die Ergänzung verändert die Zahl am Ende." },
+                  { value: c - a * b * b, hint: "Quadriere die Hälfte der Zahl vor x, nicht die ganze Zahl." },
+                ],
+              }),
+            ],
+            steps: [...completionSteps(a, b, c), `Ein Quadrat ist nie negativ und nur für x = ${fmt(d)} null.`, `<strong>${extremeSentence(a, d, e)}</strong>`],
+            meta: { a, b, c, d, e },
+          };
+        }
+        const context = rng.next() < 0.3;
+        if (context) {
+          // A profit G(x) = a(x − d)² + e with its greatest value at d hundred pieces.
+          const a = rng.pick([-0.5, -1, -2]);
+          const d = rng.int(2, 9);
+          const e = rng.int(4, 40) * (a === -0.5 ? 1 : 2);
+          const b = -2 * a * d;
+          const c = e + a * d * d;
+          const G = polyHtml([{ c: a, m: X2 }, { c: b, m: X1 }, { c, m: X0 }]);
+          return {
+            prompt: `Eine Schülerfirma verkauft Kalender. Ihr Gewinn ist G(x) = ${G} (x: verkaufte Kalender in Hundert, G in Hundert Euro; ein negativer Wert ist ein Verlust). Bei welcher Verkaufszahl ist der Gewinn am größten, und wie groß ist er dann?`,
+            given: [`G(x) = ${G}`],
+            fields: [
+              numberField("x =", d, "Hundert", 2, { slips: dSlips(d, b) }),
+              numberField("größter Gewinn:", e, "Hundert €", 2, { slips: [{ value: c, hint: "c ist der Wert für x = 0, nicht der größte Gewinn." }, { value: c - d * d, hint: "Klammere a zuerst aus: Die Ergänzung wird mit a multipliziert." }] }),
+            ],
+            steps: [...completionSteps(a, b, c).map((s) => s.replaceAll("T(x)", "G(x)")), `<strong>${extremeSentence(a, d, e, "G")} Bei ${fmt(100 * d)} Kalendern ist der Gewinn mit ${fmt(100 * e)} € am größten.</strong>`],
+            meta: { a, b, c, d, e, context: 1 },
+          };
+        }
+        const a = rng.pick([2, 3, -2, -3, 0.5, -0.5, -1]);
+        const d = nonZero(rng, 5);
+        const e = rng.int(-9, 12);
+        const b = -2 * a * d;
+        const c = e + a * d * d;
+        const T = polyHtml([{ c: a, m: X2 }, { c: b, m: X1 }, { c, m: X0 }]);
+        return {
+          prompt: `Gegeben ist der Term T(x) = ${T}. Bestimme mit quadratischer Ergänzung, ob T(x) einen kleinsten oder einen größten Wert hat, wie groß er ist und für welches x er angenommen wird.`,
+          given: [`T(x) = ${T}`],
+          fields: [
+            choiceField("Art des Extremwerts:", KIND, a > 0 ? 0 : 1),
+            numberField("x =", d, "", 2, { slips: [...dSlips(d, b), { value: -b / 2, hint: `Klammere zuerst ${fmt(a)} aus: Halbiert wird die Zahl vor x in der Klammer.` }] }),
+            numberField("Extremwert:", e, "", 2, {
+              slips: [
+                { value: c - d * d, hint: "Die Ergänzung steht in der Klammer: Beim Ausmultiplizieren wird sie mit a multipliziert." },
+                { value: c + a * d * d, hint: "Die ergänzte Zahl muss gleich wieder abgezogen werden." },
+                { value: c, hint: "c ist nicht der Extremwert: Die Ergänzung verändert die Zahl am Ende." },
+              ],
+            }),
+          ],
+          steps: [...completionSteps(a, b, c), `a = ${fmt(a)} ${a > 0 ? "&gt; 0: Das Quadrat wird mit einer positiven Zahl multipliziert" : "&lt; 0: Das Quadrat wird mit einer negativen Zahl multipliziert"}.`, `<strong>${extremeSentence(a, d, e)}</strong>`],
+          meta: { a, b, c, d, e, context: 0 },
+        };
+      }),
+    },
+    {
+      id: "parameter",
+      make: guarded((rng, level): ExerciseTask => {
+        if (level === 1) {
+          const d = nonZero(rng, 8);
+          const m = rng.int(-8, 10);
+          const b = -2 * d;
+          const c = m + d * d;
+          const shown = `x<sup>2</sup>${signed(b)}x + c`;
+          return {
+            prompt: `Bestimme c so, dass der kleinste Wert von T(x) = ${shown} genau ${fmt(m)} ist. Für welches x wird er angenommen?`,
+            given: [`T(x) = ${shown}`, `T<sub>min</sub> = ${fmt(m)}`],
+            formulaHint: `x<sup>2</sup> + bx + c = (x + ${frac("b", "2")})<sup>2</sup> + c − (${frac("b", "2")})<sup>2</sup>, also T<sub>min</sub> = c − (${frac("b", "2")})<sup>2</sup>`,
+            fields: [
+              numberField("c =", c, "", 2, { slips: [{ value: m - d * d, hint: "Die Ergänzung wird abgezogen; c muss sie ausgleichen: c = T_min + (b : 2)²." }, { value: m, hint: "c ist nicht der kleinste Wert: Die Ergänzung zieht noch etwas ab." }] }),
+              numberField("x =", d, "", 2, { slips: [{ value: -d, hint: `Achte auf das Vorzeichen: ${d > 0 ? `(x − ${d})²` : `(x + ${-d})²`} ist für x = ${fmt(d)} null.` }] }),
+            ],
+            steps: [
+              `T(x) = x<sup>2</sup>${signed(b)}x + ${Math.abs(d)}<sup>2</sup> − ${Math.abs(d)}<sup>2</sup> + c = ${shifted(d)}<sup>2</sup> + c − ${d * d}`,
+              `Der kleinste Wert ist c − ${d * d}. Er soll ${fmt(m)} sein: c − ${d * d} = ${fmt(m)}, also c = ${fmt(c)}.`,
+              `<strong>c = ${fmt(c)}; der kleinste Wert ${fmt(m)} wird für x = ${fmt(d)} angenommen.</strong>`,
+            ],
+            meta: { a: 1, b, d, m, c },
+          };
+        }
+        const a = rng.pick([-2, -1, -0.5, 2, 3, 0.5, -3]);
+        const d = nonZero(rng, 5);
+        const m = rng.int(-6, 12);
+        const b = -2 * a * d;
+        const c = m + a * d * d;
+        const shown = `${polyHtml([{ c: a, m: X2 }, { c: b, m: X1 }])} + c`;
+        const word = a > 0 ? "kleinsten" : "größten";
+        return {
+          prompt: `Gegeben ist T(x) = ${shown}. Bestimme c so, dass T(x) den ${word} Wert ${fmt(m)} hat, und gib an, für welches x dieser Wert angenommen wird.`,
+          given: [`T(x) = ${shown}`],
+          fields: [
+            numberField("c =", c, "", 2, { slips: [{ value: m - a * d * d, hint: "Die Ergänzung wird abgezogen; c muss sie ausgleichen." }, { value: m + d * d, hint: "Klammere a zuerst aus: Die Ergänzung wird beim Ausmultiplizieren mit a multipliziert." }, { value: m, hint: "c ist nicht der Extremwert: Die Ergänzung verändert die Zahl am Ende." }] }),
+            numberField("x =", d, "", 2, { slips: [{ value: -d, hint: "Achte auf das Vorzeichen von d." }, { value: -b / 2, hint: `Klammere zuerst ${fmt(a)} aus: Halbiert wird die Zahl vor x in der Klammer.` }] }),
+          ],
+          steps: [
+            `T(x) = ${lead(a)}[${quadratic(1, b / a, 0).replace("x²", "x<sup>2</sup>")}] + c = ${lead(a)}[${shifted(d)}<sup>2</sup> − ${d * d}] + c = ${lead(a)}${shifted(d)}<sup>2</sup>${signed(-a * d * d)} + c`,
+            `Der ${a > 0 ? "kleinste" : "größte"} Wert ist ${fmt(-a * d * d)} + c. Er soll ${fmt(m)} sein, also c = ${fmt(m)}${signed(a * d * d)} = ${fmt(c)}.`,
+            `<strong>c = ${fmt(c)}; T(x) = ${vertexForm(a, d, m).replace("²", "<sup>2</sup>")} hat für x = ${fmt(d)} den ${word} Wert ${fmt(m)}.</strong>`,
+          ],
+          meta: { a, b, d, m, c },
+        };
+      }),
+    },
+  ],
+  requiredCorrect: 3,
+  celebrationMessage: "Du findest mit der quadratischen Ergänzung den kleinsten oder größten Wert eines quadratischen Terms.",
+};
+
+// 4.6 Extremwertprobleme ──────────────────────────────────────────────────────
+
+const WALL = [16, 20, 24, 28, 32, 36, 40, 44, 48];
+const PERIMETER = [12, 16, 20, 24, 28, 32, 36, 40];
+const DIVIDER = [18, 24, 30, 36, 42, 48, 60];
+
+const extremwertprobleme: Lesson = {
+  id: "tg-6-extremwertprobleme",
+  stageId: STAGE_ID,
+  stepNumber: 6,
+  title: "4.6 Extremwertprobleme",
+  subtitle: "Größte Fläche, kleinste Fläche",
+  tracks: ["I", "II_III"],
+  lehrplan: `${LP}: Extremwertprobleme`,
+  whyItMatters:
+    "Mit einer festen Zaunlänge die größte Weide einzäunen oder aus einem Brett möglichst wenig Abfall schneiden: Solche Aufgaben stehen in jeder Abschlussprüfung, und die quadratische Ergänzung löst sie genau.",
+  explanationHtml: `
+    <p>Bei einem <strong>Extremwertproblem</strong> soll eine Größe möglichst groß oder möglichst klein werden, etwa der Flächeninhalt eines Rechtecks. Ist diese Größe ein quadratischer Term, findest du den Extremwert mit der quadratischen Ergänzung aus Lektion 4.5.</p>
+    <ol>
+      <li><strong>Variable festlegen:</strong> Was ist x, in welcher Einheit?</li>
+      <li><strong>Term aufstellen:</strong> die Zielgröße in Abhängigkeit von x, zum Beispiel A(x) = Länge · Breite, wobei die Seiten selbst Terme in x sind.</li>
+      <li><strong>Sinnvolle Werte für x:</strong> Alle Längen müssen positiv sein. Daraus folgt ein Bereich wie 0 &lt; x &lt; 8, geschrieben x ∈ ]0; 8[.</li>
+      <li><strong>Extremwert bestimmen:</strong> quadratisch ergänzen, den Extremwert ablesen und prüfen, ob x im Bereich liegt.</li>
+      <li><strong>Antwort</strong> im Sachzusammenhang, mit Einheiten.</li>
+    </ol>
+    <div class="example"><strong>Beispiel:</strong> Ein Rechteck ist 8 cm lang und 5 cm breit. Die Länge wird um x cm verkürzt, die Breite um 2x cm verlängert. Für welches x wird der Flächeninhalt am größten?<br>
+      Seiten: (8 − x) cm und (5 + 2x) cm, beide positiv für 0 &lt; x &lt; 8, also x ∈ ]0; 8[.<br>
+      A(x) = (8 − x)(5 + 2x) = 40 + 16x − 5x − 2x<sup>2</sup> = −2x<sup>2</sup> + 11x + 40<br>
+      A(x) = −2[x<sup>2</sup> − 5,5x] + 40 = −2[(x − 2,75)<sup>2</sup> − 7,5625] + 40 = −2(x − 2,75)<sup>2</sup> + 55,125<br>
+      a = −2 &lt; 0: größter Wert für x = 2,75, und 2,75 liegt in ]0; 8[.<br>
+      Antwort: Für x = 2,75 ist das Rechteck 5,25 cm lang und 10,5 cm breit; sein Flächeninhalt ist mit 55,125 cm² am größten.</div>
+    <p><strong>Zaun an einer Mauer:</strong> Mit 40 m Zaun wird an einer Mauer ein Rechteck eingezäunt; an der Mauer braucht es keinen Zaun. Ist x die Seite senkrecht zur Mauer, bleiben für die Seite an der Mauer (40 − 2x) m. A(x) = x(40 − 2x) = −2(x − 10)<sup>2</sup> + 200 mit x ∈ ]0; 20[: Das größte Gehege ist 10 m tief, 20 m lang und 200 m² groß.</p>
+    <p><strong>Gleicher Umfang:</strong> Ein Rechteck mit dem Umfang 20 cm hat die Seiten x cm und (10 − x) cm. A(x) = x(10 − x) = −(x − 5)<sup>2</sup> + 25: Am größten ist das Quadrat mit 5 cm Seitenlänge. Unter allen Rechtecken mit gleichem Umfang hat das Quadrat den größten Flächeninhalt.</p>
+    <p><strong>Ein kleinster Wert:</strong> Auf jeder Seite eines Quadrats mit 8 cm Seitenlänge liegt ein Punkt, x cm von der Ecke entfernt (immer im gleichen Umlaufsinn). Die vier Punkte bilden ein inneres Quadrat; abgeschnitten werden vier rechtwinklige Dreiecke mit den Katheten x und 8 − x. A(x) = 64 − 4 · ½ · x · (8 − x) = 2x<sup>2</sup> − 16x + 64 = 2(x − 4)<sup>2</sup> + 32: Für x = 4 ist das innere Quadrat mit 32 cm² am kleinsten.</p>
+    <p><strong>Typische Fehler:</strong> x nicht festlegen; den Bereich der sinnvollen x vergessen; x und den Extremwert verwechseln; ein Ergebnis angeben, das nicht im Bereich liegt; in der Antwort die Einheit vergessen.</p>
+    <div class="merke"><strong>Merke:</strong> Variable festlegen, Term aufstellen, Bereich der sinnvollen x angeben, quadratisch ergänzen und im Sachzusammenhang antworten.</div>
+  `,
+  formulas: [
+    { name: "Rechteck verändern", html: "A(x) = (l − x) · (b + kx)", quantities: "l, b alte Seiten; alle Seiten müssen positiv bleiben" },
+    { name: "Zaun an einer Mauer", html: "A(x) = x · (L − 2x), am größten für x = L : 4", quantities: "L Zaunlänge, x Seite senkrecht zur Mauer" },
+    { name: "Gleicher Umfang", html: "A(x) = x · (u : 2 − x), am größten für x = u : 4", quantities: "u Umfang; das beste Rechteck ist ein Quadrat" },
+  ],
+  quiz: {
+    question: "Ein Gehege hat den Flächeninhalt A(x) = −2(x − 10)² + 200 (x in m, A in m²) mit x ∈ ]0; 20[. Was gilt?",
+    options: ["Für x = 200 m ist A mit 10 m² am größten.", "Für x = 10 m ist A mit 200 m² am kleinsten.", "Für x = 10 m ist A mit 200 m² am größten.", "Für x = −10 m ist A mit 200 m² am größten."],
+    correctIndex: 2,
+    explanation: "a = −2 < 0: Das Quadrat (x − 10)² wird mit −2 multipliziert, A ist also höchstens 200. Das wird für x = 10 erreicht, weil das Quadrat dort null ist; 10 liegt in ]0; 20[.",
+  },
+  lab: {
+    kind: "extremum-problem",
+    title: "Labor: Das beste Rechteck",
+    intro:
+      "Wähle eine Situation und schiebe x oder ziehe einen der Punkte. Rechts siehst du den Flächeninhalt für viele x als Punkte. Erst selbst suchen, dann mit „Rechnung: zeigen“ die quadratische Ergänzung ansehen.",
+    params: [
+      {
+        type: "choice",
+        key: "mode",
+        label: "Situation",
+        options: [
+          { value: 0, label: "Rechteck 8 cm × 5 cm verändern" },
+          { value: 1, label: "40 m Zaun an einer Mauer" },
+          { value: 2, label: "Inneres Quadrat im Quadrat" },
+          { value: 3, label: "Rechtecke mit 20 cm Umfang" },
+        ],
+        value: 0,
+      },
+      { type: "range", key: "x", label: "x", unit: "", min: 0, max: 20, step: 0.25, value: 1, digits: 2 },
+      {
+        type: "choice",
+        key: "show",
+        label: "Rechnung",
+        options: [
+          { value: 0, label: "verdeckt" },
+          { value: 1, label: "zeigen" },
+        ],
+        value: 0,
+      },
+    ],
+    readouts: [
+      { key: "sides", label: "Seiten", compute: (v) => extremumSides(v) },
+      { key: "area", label: "Flächeninhalt", emphasis: true, compute: (v) => (inDomain(v) ? `${fmt(EXTREMUM_MODELS[v.mode].area(v.x), 4)} ${EXTREMUM_MODELS[v.mode].unit}²` : "keine Figur") },
+      { key: "domain", label: "sinnvolle x", compute: (v) => `x ∈ ]0; ${EXTREMUM_MODELS[v.mode].upper}[` },
+    ],
+    goals: [
+      {
+        id: "maximum",
+        text: "Rechteck 8 cm × 5 cm: Finde das x, für das das neue Rechteck den größten Flächeninhalt hat.",
+        check: (v) => v.mode === 0 && v.x === EXTREMUM_MODELS[0].xBest,
+      },
+      {
+        id: "gleich",
+        text: "Für x = 1 hat das neue Rechteck 49 cm². Finde das zweite x mit genau 49 cm². Wo liegt es im Vergleich zum besten x?",
+        check: (v) => v.mode === 0 && v.x !== 1 && inDomain(v) && Math.abs(EXTREMUM_MODELS[0].area(v.x) - 49) < 1e-9,
+      },
+      {
+        id: "minimum",
+        text: "Inneres Quadrat: Für welches x wird das innere Quadrat am kleinsten?",
+        check: (v) => v.mode === 2 && v.x === EXTREMUM_MODELS[2].xBest,
+      },
+    ],
+  },
+  exercises: [
+    {
+      id: "rechteck",
+      make: guarded((rng, level): ExerciseTask => {
+        const inner = level === 2 && rng.next() < 0.35;
+        if (inner) {
+          const s = rng.pick([6, 8, 10, 12, 14, 16]);
+          const xBest = s / 2;
+          const best = (s * s) / 2;
+          return {
+            prompt: `Das Quadrat ABCD hat die Seitenlänge ${s} cm. Auf jeder Seite liegt ein Punkt, jeweils x cm von der vorhergehenden Ecke entfernt (A → B → C → D). Die vier Punkte bilden ein inneres Quadrat. Für welche x gibt es solche inneren Quadrate? Für welches x ist das innere Quadrat am kleinsten, und wie groß ist es dann?`,
+            given: [`Seitenlänge ${s} cm`],
+            fields: [
+              numberField("obere Grenze der sinnvollen x:", s, "cm", 2, { slips: [{ value: s / 2, hint: "x darf so groß werden wie die Seite: Erst bei x = s fällt der Punkt in die nächste Ecke." }] }),
+              numberField("x =", xBest, "cm", 2, { slips: [{ value: s, hint: "Bei der quadratischen Ergänzung wird die Zahl vor x halbiert." }] }),
+              numberField("kleinster Flächeninhalt:", best, "cm²", 2, { slips: [{ value: s * s, hint: "Das ist das große Quadrat. Ziehe die vier Dreiecke ab." }, { value: (s * s) / 4, hint: "Jedes abgeschnittene Dreieck hat den Inhalt ½ · x · (s − x)." }] }),
+            ],
+            steps: [
+              `Abgeschnitten werden vier rechtwinklige Dreiecke mit den Katheten x und ${s} − x; sinnvoll ist x ∈ ]0; ${s}[.`,
+              `A(x) = ${s * s} − 4 · ½ · x · (${s} − x) = ${polyHtml([{ c: 2, m: X2 }, { c: -2 * s, m: X1 }, { c: s * s, m: X0 }])}`,
+              `A(x) = 2[x<sup>2</sup> − ${s}x] + ${s * s} = 2[(x − ${fmt(xBest)})<sup>2</sup> − ${fmt(xBest * xBest)}] + ${s * s} = 2(x − ${fmt(xBest)})<sup>2</sup> + ${fmt(best)}`,
+              `<strong>Für x = ${fmt(xBest)} cm ist das innere Quadrat am kleinsten: ${fmt(best)} cm², halb so groß wie das große Quadrat.</strong>`,
+            ],
+            meta: { inner: 1, s },
+          };
+        }
+        let [L, B, k] = [8, 5, 2];
+        do {
+          [L, B, k] = [rng.int(6, 14), rng.int(2, 10), rng.pick([1, 2])];
+        } while (k * L - B < 2 || B >= L);
+        const xBest = (k * L - B) / (2 * k);
+        const best = (k * L + B) ** 2 / (4 * k);
+        const grow = k === 1 ? "x" : `${k}x`;
+        const area = polyHtml([{ c: -k, m: X2 }, { c: k * L - B, m: X1 }, { c: L * B, m: X0 }]);
+        const steps = [
+          `A(x) = (${L} − x)(${B} + ${grow}) = ${L * B} + ${fmt(k * L)}x − ${B}x − ${k === 1 ? "" : k}x<sup>2</sup> = ${area}`,
+          `A(x) = ${lead(-k)}[x<sup>2</sup> − ${fmt((k * L - B) / k)}x] + ${L * B} = ${lead(-k)}[(x − ${fmt(xBest)})<sup>2</sup> − ${fmt(xBest * xBest, 4)}] + ${L * B} = ${vertexForm(-k, xBest, best, 4).replace("²", "<sup>2</sup>")}`,
+          `a = ${fmt(-k)} &lt; 0: größter Wert für x = ${fmt(xBest)}, und ${fmt(xBest)} liegt in ]0; ${L}[.`,
+          `<strong>Für x = ${fmt(xBest)} cm ist der Flächeninhalt mit ${fmt(best, 4)} cm² am größten; das Rechteck ist dann ${fmt(L - xBest)} cm lang und ${fmt(B + k * xBest)} cm breit.</strong>`,
+        ];
+        const xField = numberField("x =", xBest, "cm", 2, {
+          slips: [
+            { value: k * L - B, hint: "Bei der quadratischen Ergänzung wird die Zahl vor x halbiert." },
+            ...(k > 1 ? [{ value: (k * L - B) / 2, hint: `Klammere zuerst −${k} aus: Halbiert wird die Zahl vor x in der Klammer.` }] : []),
+          ],
+        });
+        const bestField = numberField("größter Flächeninhalt:", best, "cm²", 3, { slips: [{ value: L * B, hint: "Das ist der alte Flächeninhalt (x = 0). Gesucht ist der Extremwert nach der quadratischen Ergänzung." }] });
+        if (level === 1) {
+          return {
+            prompt: `Ein Rechteck ist ${L} cm lang und ${B} cm breit. Verkürzt man die Länge um x cm und verlängert die Breite um ${grow} cm, entstehen neue Rechtecke mit dem Flächeninhalt A(x) = (${L} − x)(${B} + ${grow}) cm². Für welches x ist der Flächeninhalt am größten, und wie groß ist er dann?`,
+            given: [`A(x) = (${L} − x)(${B} + ${grow})`],
+            formulaHint: "A(x) ausmultiplizieren, dann quadratisch ergänzen: A(x) = a(x − d)<sup>2</sup> + e",
+            fields: [xField, bestField],
+            steps,
+            meta: { inner: 0, L, B, k },
+          };
+        }
+        return {
+          prompt: `Ein Rechteck ist ${L} cm lang und ${B} cm breit. Seine Länge wird um x cm verkürzt und seine Breite gleichzeitig um ${grow} cm verlängert. Stelle einen Term für den Flächeninhalt A(x) der neuen Rechtecke auf und gib an, für welche x es sie gibt. Für welches x ist der Flächeninhalt am größten, und wie groß ist er dann?`,
+          given: [`Länge ${L} cm, Breite ${B} cm`],
+          fields: [numberField("obere Grenze der sinnvollen x:", L, "cm", 2, { slips: [{ value: B, hint: `Die Breite wird länger und bleibt positiv; die Länge ${L} − x muss positiv bleiben.` }] }), xField, bestField],
+          steps: [`Neue Seiten: (${L} − x) cm und (${B} + ${grow}) cm; positiv für 0 &lt; x &lt; ${L}, also x ∈ ]0; ${L}[.`, ...steps],
+          meta: { inner: 0, L, B, k },
+        };
+      }),
+    },
+    {
+      id: "zaun",
+      make: guarded((rng, level): ExerciseTask => {
+        const kind = level === 1 ? rng.int(0, 1) : rng.int(0, 2);
+        if (kind === 0) {
+          const L = rng.pick(WALL);
+          const [xBest, y, best] = [L / 4, L / 2, (L * L) / 8];
+          const what = rng.pick(["ein rechteckiges Beet an einer Hauswand", "ein rechteckiger Auslauf an einer Stallwand", "ein rechteckiger Spielbereich an einer Mauer"]);
+          const steps = [
+            `A(x) = x · (${L} − 2x) = ${polyHtml([{ c: -2, m: X2 }, { c: L, m: X1 }])}; sinnvoll ist x ∈ ]0; ${fmt(L / 2)}[`,
+            `A(x) = −2[x<sup>2</sup> − ${fmt(L / 2)}x] = −2[(x − ${fmt(xBest)})<sup>2</sup> − ${fmt(xBest * xBest)}] = −2(x − ${fmt(xBest)})<sup>2</sup> + ${fmt(best)}`,
+            `<strong>Für x = ${fmt(xBest)} m ist die Fläche am größten: Die Seite an der Wand ist ${fmt(y)} m lang, der Flächeninhalt ${fmt(best)} m².</strong>`,
+          ];
+          const fields = [
+            numberField("x =", xBest, "m", 2, { slips: [{ value: L / 3, hint: "Gleich lange Zaunstücke sind hier nicht das Beste: Rechne mit der quadratischen Ergänzung." }, { value: L / 2, hint: "Bei der quadratischen Ergänzung wird die Zahl vor x halbiert, nachdem −2 ausgeklammert ist." }] }),
+            numberField("größter Flächeninhalt:", best, "m²", 2, { slips: [{ value: (L * L) / 16, hint: "Das wäre ein Quadrat aus allen vier Seiten. An der Wand braucht es aber keinen Zaun." }] }),
+          ];
+          if (level === 1) {
+            return {
+              prompt: `Mit ${L} m Zaun wird ${what} eingefasst; an der Wand braucht es keinen Zaun. x ist die Länge der beiden Seiten senkrecht zur Wand, dann bleiben für die Seite an der Wand (${L} − 2x) m und A(x) = x · (${L} − 2x) m². Für welches x wird die Fläche am größten, und wie groß ist sie dann?`,
+              given: [`A(x) = x · (${L} − 2x)`],
+              formulaHint: "A(x) ausmultiplizieren, −2 ausklammern und quadratisch ergänzen",
+              fields,
+              steps,
+              meta: { kind, L },
+            };
+          }
+          return {
+            prompt: `Mit ${L} m Zaun soll ${what} eingefasst werden; an der Wand braucht es keinen Zaun. Gib an, für welche Längen x der beiden Seiten senkrecht zur Wand das möglich ist. Für welches x wird die Fläche am größten, und wie groß ist sie dann?`,
+            given: [`Zaunlänge ${L} m`],
+            fields: [numberField("obere Grenze der sinnvollen x:", L / 2, "m", 2, { slips: [{ value: L, hint: "Zwei Seiten sind x lang: 2x muss kleiner als die Zaunlänge sein." }] }), ...fields],
+            steps: [`Seite an der Wand: (${L} − 2x) m; sie ist positiv für x &lt; ${fmt(L / 2)}.`, ...steps],
+            meta: { kind, L },
+          };
+        }
+        if (kind === 1) {
+          const U = rng.pick(PERIMETER);
+          const [xBest, best] = [U / 4, (U * U) / 16];
+          const what = rng.pick(["ein rechteckiges Gehege", "ein rechteckiges Gemüsebeet", "eine rechteckige Weide"]);
+          const steps = [
+            `Zwei Seiten zusammen sind ${fmt(U / 2)} m lang: A(x) = x · (${fmt(U / 2)} − x) = ${polyHtml([{ c: -1, m: X2 }, { c: U / 2, m: X1 }])}; sinnvoll ist x ∈ ]0; ${fmt(U / 2)}[`,
+            `A(x) = −[x<sup>2</sup> − ${fmt(U / 2)}x] = −[(x − ${fmt(xBest)})<sup>2</sup> − ${fmt(xBest * xBest)}] = −(x − ${fmt(xBest)})<sup>2</sup> + ${fmt(best)}`,
+            `<strong>Für x = ${fmt(xBest)} m ist die Fläche mit ${fmt(best)} m² am größten; dann sind beide Seiten ${fmt(xBest)} m lang: ein Quadrat.</strong>`,
+          ];
+          const fields = [
+            numberField("x =", xBest, "m", 2, { slips: [{ value: U / 2, hint: "Halbiere bei der quadratischen Ergänzung die Zahl vor x." }] }),
+            numberField("größter Flächeninhalt:", best, "m²", 2, { slips: [{ value: (U * U) / 4, hint: "Die beiden Seiten zusammen sind nur der halbe Umfang lang." }] }),
+          ];
+          if (level === 1) {
+            return {
+              prompt: `Mit ${U} m Zaun wird ${what} ringsum eingezäunt. Ist eine Seite x m lang, so ist die andere (${fmt(U / 2)} − x) m lang und A(x) = x · (${fmt(U / 2)} − x) m². Für welches x wird die Fläche am größten, und wie groß ist sie dann?`,
+              given: [`A(x) = x · (${fmt(U / 2)} − x)`],
+              formulaHint: "A(x) ausmultiplizieren, −1 ausklammern und quadratisch ergänzen",
+              fields,
+              steps,
+              meta: { kind, U },
+            };
+          }
+          return {
+            prompt: `Mit ${U} m Zaun soll ${what} ringsum eingezäunt werden. x ist die Länge einer Seite. Gib an, für welche x das möglich ist. Für welches x wird die Fläche am größten, und wie groß ist sie dann? Welche Form hat das beste Rechteck?`,
+            given: [`Zaunlänge ${U} m`],
+            fields: [numberField("obere Grenze der sinnvollen x:", U / 2, "m", 2, { slips: [{ value: U, hint: "Zwei Seiten zusammen sind der halbe Umfang: x muss kleiner als die Hälfte sein." }] }), ...fields],
+            steps: [`Der halbe Umfang ist ${fmt(U / 2)} m, die andere Seite also (${fmt(U / 2)} − x) m.`, ...steps],
+            meta: { kind, U },
+          };
+        }
+        // a wall and a divider: 3x + y = L
+        const L = rng.pick(DIVIDER);
+        const [xBest, y, best] = [L / 6, L / 2, (L * L) / 12];
+        return {
+          prompt: `Ein rechteckiger Auslauf an einer Stallwand wird mit ${L} m Zaun eingefasst und durch ein Zaunstück senkrecht zur Wand in zwei Teile geteilt; an der Wand braucht es keinen Zaun. x ist die Länge der drei Zaunstücke senkrecht zur Wand. Für welche x ist das möglich? Für welches x ist der Auslauf am größten, und wie groß ist er dann?`,
+          given: [`Zaunlänge ${L} m`, "drei Stücke senkrecht zur Wand"],
+          fields: [
+            numberField("obere Grenze der sinnvollen x:", L / 3, "m", 2, { slips: [{ value: L / 2, hint: "Es gibt drei Zaunstücke der Länge x: 3x muss kleiner als die Zaunlänge sein." }] }),
+            numberField("x =", xBest, "m", 2, { slips: [{ value: L / 4, hint: "Drei Stücke senkrecht zur Wand, nicht zwei: A(x) = x · (L − 3x)." }] }),
+            numberField("größter Flächeninhalt:", best, "m²", 2, { slips: [{ value: (L * L) / 8, hint: "Das gilt ohne Trennzaun. Hier sind es drei Stücke der Länge x." }] }),
+          ],
+          steps: [
+            `Seite an der Wand: (${L} − 3x) m, positiv für x &lt; ${fmt(L / 3)}; also x ∈ ]0; ${fmt(L / 3)}[.`,
+            `A(x) = x · (${L} − 3x) = ${polyHtml([{ c: -3, m: X2 }, { c: L, m: X1 }])} = −3[x<sup>2</sup> − ${fmt(L / 3)}x] = −3[(x − ${fmt(xBest)})<sup>2</sup> − ${fmt(xBest * xBest)}] = −3(x − ${fmt(xBest)})<sup>2</sup> + ${fmt(best)}`,
+            `<strong>Für x = ${fmt(xBest)} m ist der Auslauf mit ${fmt(best)} m² am größten; die Seite an der Wand ist dann ${fmt(y)} m lang.</strong>`,
+          ],
+          meta: { kind, L },
+        };
+      }),
+    },
+  ],
+  requiredCorrect: 3,
+  celebrationMessage: "Term aufstellen, sinnvolle x angeben, ergänzen, antworten: Du löst Extremwertprobleme vollständig.",
+};
+
 export const STAGE_TERME_GLEICHUNGEN: Stage = {
   id: STAGE_ID,
   stageNumber: 4,
@@ -1061,6 +1818,6 @@ export const STAGE_TERME_GLEICHUNGEN: Stage = {
   accent: "#d97706",
   badgeTitle: "Termtüftler",
   lehrplanLabel: "LB 4 (I) · LB 3 (II/III)",
-  lessons: [terme, ausmultiplizieren, binomischeFormeln],
+  lessons: [terme, ausmultiplizieren, binomischeFormeln, faktorisieren, extremwerte, extremwertprobleme],
 };
 

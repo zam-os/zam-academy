@@ -30,4 +30,28 @@ export const GOAL_WITNESSES_STAGE_4: Record<string, Record<string, LabValues>> =
     // (5 + 1)(5 − 1) = 24
     dritte: { mode: 2, a: 5, b: 1 },
   },
+  "tg-4-faktorisieren": {
+    // x² + 10x + 25 = (x + 5)²
+    ergaenzen: { A: 1, B: 10, C: 25 },
+    // 2x² + 12x + 18 = 2(x + 3)²
+    zwei: { A: 2, B: 12, C: 18 },
+    // 4x² + 8x + 4 = (2x + 2)² = 4(x + 1)²
+    doppelt: { A: 4, B: 8, C: 4 },
+  },
+  "tg-5-extremwerte": {
+    // x² − 6x + 14 = (x − 3)² + 5
+    kleinster: { a: 1, b: -6, c: 14, x: 3 },
+    // −x² + 2x + 3 = −(x − 1)² + 4
+    max4: { a: -1, b: 2, c: 3, x: 0 },
+    // T(6) = 36 − 36 + 14 = T(0): mirror image of 0 at d = 3
+    spiegel: { a: 1, b: -6, c: 14, x: 6 },
+  },
+  "tg-6-extremwertprobleme": {
+    // A(x) = −2(x − 2,75)² + 55,125
+    maximum: { mode: 0, x: 2.75, show: 0 },
+    // A(4,5) = 3,5 · 14 = 49 = A(1); 4,5 and 1 lie symmetric to 2,75
+    gleich: { mode: 0, x: 4.5, show: 0 },
+    // A(x) = 2(x − 4)² + 32
+    minimum: { mode: 2, x: 4, show: 1 },
+  },
 };

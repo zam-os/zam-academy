@@ -1,6 +1,6 @@
-import { fmt, MINUS, paren, quadratic, round, sum } from "../exercises/format";
+import { fmt, MINUS, paren, quadratic, round, shifted, sum, vertexForm } from "../exercises/format";
 import type { LabValues } from "../model/types";
-import { circle, handle, type LabView, line, open, rect, text } from "./svg";
+import { circle, handle, type LabView, line, open, Plot, rect, text } from "./svg";
 
 // ─── Shared algebra of this stage ──────────────────────────────────────────
 //
@@ -471,6 +471,418 @@ function cornerUnits(p: { x: number; y: number }, u: number): number {
   return ((p.x - SQ.x0) / u + (p.y - SQ.y0) / u) / 2;
 }
 
+// ─── 4.4 Quadrate legen ─────────────────────────────────────────────────────
+
+export interface TileFit {
+  /** Equal groups the tiles fall into: A x²-tiles are `groups` squares of s² tiles each. */
+  groups: number;
+  s: number;
+  /** The k of (sx + k)², or null when the strips cannot be split evenly. */
+  k: number | null;
+  /** Unit squares the target square(s) need, −1 when there is no target. */
+  need: number;
+  ok: boolean;
+}
+
+/**
+ * Can A x²-tiles, B x-strips and C unit squares be laid as a square
+ * (sx + k)², or, after ausklammern, as `groups` equal squares (x + k)²?
+ */
+export function tileFit(A: number, B: number, C: number): TileFit {
+  const root = Math.round(Math.sqrt(A));
+  const s = root * root === A ? root : 1;
+  const groups = A / (s * s);
+  const per = 2 * s * groups;
+  const k = B % per === 0 ? B / per : null;
+  const need = k === null ? -1 : groups * k * k;
+  return { groups, s, k, need, ok: k !== null && C === need };
+}
+
+/** The product form of a fitting tile set: "(2x + 3)²", "2(x + 3)²", "x²". */
+export function tileFactor(fit: TileFit): string {
+  const sx = fit.s === 1 ? "x" : `${fit.s}x`;
+  const k = fit.k ?? 0;
+  if (fit.groups === 1) return k === 0 ? (fit.s === 1 ? "x²" : `(${sx})²`) : `(${sx} + ${k})²`;
+  return k === 0 ? `${fit.groups}x²` : `${fit.groups}(x + ${k})²`;
+}
+
+const TILE = { X: 62, U: 15 };
+
+function factorise(v: LabValues): string {
+  const { A, B, C } = v;
+  const fit = tileFit(A, B, C);
+  const { X, U } = TILE;
+  let out = open("Algebra-Kacheln: x²-Quadrate, x-Streifen und Einerquadrate werden zu einem Quadrat gelegt");
+  out += text(16, 27, `${quadratic(A, B, C)} als Kacheln`, "lab-text lab-text-big");
+  const lines: Array<[string, string]> = [];
+  if (fit.k !== null) {
+    const { s, k, groups } = fit;
+    const side = s * X + k * U;
+    const extra = Math.max(0, C - fit.need);
+    const extraRows = Math.ceil(extra / 18);
+    const width = Math.max(groups * side + (groups - 1) * 14, extra > 0 ? Math.min(extra, 18) * (U + 3) : 0);
+    const height = side + (extraRows ? 26 + extraRows * (U + 3) : 0);
+    const f = Math.min(1, 284 / width, 262 / height);
+    const y0 = 50;
+    let placed = 0;
+    for (let g = 0; g < groups; g++) {
+      const ox = 18 + g * (side + 14) * f;
+      for (let i = 0; i < s; i++) {
+        for (let j = 0; j < s; j++) {
+          out += rect(ox + i * X * f, y0 + j * X * f, X * f, X * f, "lab-fill-a");
+          if (X * f > 26) out += text(ox + (i + 0.5) * X * f, y0 + (j + 0.5) * X * f + 5, "x²", "lab-text lab-text-a", "middle");
+        }
+        for (let c = 0; c < k; c++) out += rect(ox + (s * X + c * U) * f, y0 + i * X * f, U * f, X * f, "lab-fill-b");
+        for (let r = 0; r < k; r++) out += rect(ox + i * X * f, y0 + (s * X + r * U) * f, X * f, U * f, "lab-fill-b");
+      }
+      for (let r = 0; r < k; r++) {
+        for (let c = 0; c < k; c++) {
+          const filled = placed < C;
+          if (filled) placed++;
+          out += rect(ox + (s * X + c * U) * f, y0 + (s * X + r * U) * f, U * f, U * f, filled ? "lab-fill-c" : "lab-target");
+        }
+      }
+      out += rect(ox, y0, side * f, side * f, fit.ok ? "lab-side-ok" : "lab-ink");
+    }
+    if (extra > 0) {
+      const ey = y0 + side * f + 22;
+      out += text(18, ey - 6, `${extra} Einerquadrat${extra === 1 ? "" : "e"} zu viel:`, "lab-text-small lab-text-bad");
+      for (let n = 0; n < extra; n++) out += rect(18 + (n % 18) * (U + 3) * f, ey + Math.floor(n / 18) * (U + 3) * f, U * f, U * f, "lab-fill-c");
+    }
+    const target = tileFactor({ ...fit, ok: true });
+    lines.push([`Ziel: ${target}`, "lab-text"], [`= ${quadratic(A, B, fit.need)}`, "lab-text"], ["", ""], [`Einerquadrate: ${C} von ${fit.need}`, "lab-text"]);
+    if (fit.ok) {
+      lines.push(["Vollständiges Quadrat!", "lab-text lab-text-ok"], ["", ""]);
+      if (groups > 1) lines.push([`Ausklammern: ${groups}(${quadratic(1, B / groups, C / groups)})`, "lab-text-small"]);
+      lines.push([`= ${target}`, "lab-text lab-text-ok lab-text-big"]);
+      if (groups === 1 && s > 1 && k > 0 && k % s === 0) lines.push([`= ${s * s}(x + ${k / s})²`, "lab-text lab-text-ok lab-text-big"]);
+    } else {
+      lines.push([C < fit.need ? `Es fehlen ${fit.need - C}.` : `${C - fit.need} zu viel.`, "lab-text lab-text-bad"]);
+      lines.push(["", ""], [`Zu ${B} Streifen gehören`, "lab-text-small"], [`genau ${fit.need} Einerquadrate.`, "lab-text-small"]);
+    }
+  } else {
+    // No square fits: the tiles lie loose, sorted by kind.
+    const { s, groups } = fit;
+    const per = 2 * s * groups;
+    const rowsA = Math.ceil(A / 5);
+    const rowsB = Math.ceil(B / 12);
+    const rowsC = Math.ceil(C / 12);
+    const width = Math.max(Math.min(A, 5) * (X + 6), Math.min(B, 12) * (U + 6), Math.min(C, 12) * (U + 6));
+    const height = rowsA * (X + 6) + 10 + rowsB * (X + 6) + 10 + rowsC * (U + 6);
+    const f = Math.min(1, 284 / width, 268 / height);
+    let y = 52;
+    for (let n = 0; n < A; n++) {
+      const [tx, ty] = [18 + (n % 5) * (X + 6) * f, y + Math.floor(n / 5) * (X + 6) * f];
+      out += rect(tx, ty, X * f, X * f, "lab-fill-a");
+      if (X * f > 26) out += text(tx + (X * f) / 2, ty + (X * f) / 2 + 5, "x²", "lab-text lab-text-a", "middle");
+    }
+    y += (rowsA * (X + 6) + 10) * f;
+    for (let n = 0; n < B; n++) out += rect(18 + (n % 12) * (U + 6) * f, y + Math.floor(n / 12) * (X + 6) * f, U * f, X * f, "lab-fill-b");
+    y += (rowsB * (X + 6) + 10) * f;
+    for (let n = 0; n < C; n++) out += rect(18 + (n % 12) * (U + 6) * f, y + Math.floor(n / 12) * (U + 6) * f, U * f, U * f, "lab-fill-c");
+    const form = groups === 1 ? `(${s === 1 ? "x" : `${s}x`} + k)²` : `${groups}(x + k)²`;
+    lines.push(["Kein Quadrat möglich:", "lab-text lab-text-bad"], ["", ""], [`${form} hat ${per}k x-Streifen.`, "lab-text-small"], [`${B} ist kein Vielfaches von ${per}.`, "lab-text-small"]);
+  }
+  let ly = 56;
+  for (const [content, cls] of lines) {
+    if (content) out += text(318, ly, content, cls);
+    ly += content ? 23 : 9;
+  }
+  out += "</svg>";
+  return out;
+}
+
+// ─── 4.5 Das Quadrat entscheidet ────────────────────────────────────────────
+
+/** T(x) = ax² + bx + c = a(x − d)² + e. */
+export function completedSquare(v: LabValues): { d: number; e: number } {
+  return { d: -v.b / (2 * v.a), e: v.c - (v.b * v.b) / (4 * v.a) };
+}
+
+export const termValue = (v: LabValues, x: number) => v.a * x * x + v.b * x + v.c;
+
+/** The factor in front of a bracket: "", "−", "2", "−0,5". */
+function factorText(a: number): string {
+  return a === 1 ? "" : a === -1 ? MINUS : fmt(a);
+}
+
+/** The lines of the quadratische Ergänzung of ax² + bx + c, plain text. */
+export function completionLines(a: number, b: number, c: number): string[] {
+  const d = -b / (2 * a);
+  const e = c - (b * b) / (4 * a);
+  const h = Math.abs(b / (2 * a));
+  const cText = c === 0 ? "" : c > 0 ? ` + ${fmt(c, 3)}` : ` ${MINUS} ${fmt(-c, 3)}`;
+  const finalForm = vertexForm(a, d, e, 4);
+  if (b === 0) return [`= ${finalForm}`, "kein x-Glied: nichts zu ergänzen"];
+  const inner = quadratic(1, b / a, 0, 4);
+  const lines: string[] = [];
+  if (a === 1) {
+    lines.push(`= ${inner} + ${fmt(h, 3)}² ${MINUS} ${fmt(h, 3)}²${cText}`);
+  } else {
+    lines.push(`= ${factorText(a)}[${inner}]${cText}`);
+    lines.push(`= ${factorText(a)}[${shifted(d, 4)}² ${MINUS} ${fmt(h * h, 4)}]${cText}`);
+  }
+  lines.push(`= ${finalForm}`);
+  return lines;
+}
+
+const CS_PLOT = { x: 278, y: 18, w: 230, h: 196 };
+
+/** The plot of the value table: x from −6,5 to 6,5, y over the values shown. */
+function csPlot(v: LabValues): Plot {
+  const xs = [-6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, v.x];
+  const ys = [...xs.map((x) => termValue(v, x)), completedSquare(v).e];
+  const lo = Math.min(...ys);
+  const hi = Math.max(...ys);
+  const pad = Math.max(1, (hi - lo) * 0.08);
+  return new Plot(-6.6, 6.6, lo - pad, hi + pad, CS_PLOT);
+}
+
+function completingSquareView(v: LabValues): string {
+  const { a, b, c, x } = v;
+  const { d, e } = completedSquare(v);
+  const T = termValue(v, x);
+  const sq = (x - d) ** 2;
+  let out = open("Quadratische Ergänzung: das Quadrat (x − d)² als Fläche, dazu die Werte des Terms als Punkte");
+  out += text(14, 27, `T(x) = ${quadratic(a, b, c, 3)}`, "lab-text lab-text-big");
+  completionLines(a, b, c).forEach((content, i) => {
+    out += text(30, 52 + i * 21, content, "lab-text");
+  });
+  const top = 52 + completionLines(a, b, c).length * 21;
+  out += text(14, top + 4, a > 0 ? `Kleinster Wert ${fmt(e, 3)} für x = ${fmt(d, 3)}` : `Größter Wert ${fmt(e, 3)} für x = ${fmt(d, 3)}`, "lab-text lab-text-ok");
+  // The square (x − d)², drawn with its side |x − d|.
+  const u = 12;
+  const S = Math.abs(x - d) * u;
+  const sx = 24;
+  const sy = top + 30;
+  const label = `${shifted(d, 3)}²`;
+  if (S > 0) {
+    out += rect(sx, sy, S, S, "lab-fill-a");
+    if (S >= 64) out += text(sx + S / 2, sy + S / 2 + 5, label, "lab-text lab-text-a", "middle");
+    out += text(sx + S + 8, sy + 14, `${S >= 64 ? "" : `${label} `}= ${fmt(sq, 3)}`, "lab-text lab-text-a");
+    out += text(sx + S / 2, sy - 5, `|x ${MINUS} d| = ${fmt(Math.abs(x - d), 3)}`, "lab-text-small", "middle");
+  } else {
+    out += circle(sx + 3, sy + 4, 4, "lab-point-ok");
+    out += text(sx + 14, sy + 9, `${label} = 0: Das Quadrat ist weg.`, "lab-text lab-text-ok");
+  }
+  out += text(14, 330, `T(${fmt(x)}) = ${factorText(a) === "" ? "" : `${paren(a)} · `}${fmt(sq, 3)}${e < 0 ? ` ${MINUS} ${fmt(-e, 3)}` : ` + ${fmt(e, 3)}`} = ${fmt(T, 3)}`, "lab-text");
+
+  // The value table as points, the current x highlighted.
+  const plot = csPlot(v);
+  const { box } = plot;
+  out += rect(box.x, box.y, box.w, box.h, "lab-plot-bg");
+  if (plot.ymin < 0 && plot.ymax > 0) out += line(box.x, plot.Y(0), box.x + box.w, plot.Y(0), "lab-axis");
+  out += line(plot.X(0), box.y, plot.X(0), box.y + box.h, "lab-axis");
+  out += line(plot.X(d), box.y, plot.X(d), box.y + box.h, "lab-dashed");
+  // the label of x = d where the points are not: at the top for a smallest value, at the bottom for a greatest
+  out += text(plot.X(d) + (d > 3 ? -4 : 4), a > 0 ? box.y + 12 : box.y + box.h - 6, `x = ${fmt(d, 3)}`, "lab-text-small", d > 3 ? "end" : "start");
+  for (let k = -6; k <= 6; k++) {
+    out += circle(plot.X(k), plot.Y(termValue(v, k)), 3.2, "lab-point-a");
+    if (k % 2 === 0 && k !== 0) out += text(plot.X(k), box.y + box.h + 12, fmt(k), "lab-text-tick", "middle");
+  }
+  out += text(box.x - 4, box.y + 10, fmt(plot.ymax, 0), "lab-text-tick", "end");
+  out += text(box.x - 4, box.y + box.h, fmt(plot.ymin, 0), "lab-text-tick", "end");
+  const P = plot.P(x, T);
+  out += line(P.x, P.y, P.x, plot.Y(e), "lab-thin");
+  out += circle(plot.X(d), plot.Y(e), 4.5, "lab-point-ok");
+  // A small value table around d.
+  const ty = 240;
+  const cw = 29;
+  out += rect(box.x, ty, cw, 22, "lab-cell-sum") + rect(box.x, ty + 22, cw, 22, "lab-cell-sum");
+  out += text(box.x + cw / 2, ty + 15, "x", "lab-text-tick", "middle") + text(box.x + cw / 2, ty + 37, "T(x)", "lab-text-tick", "middle");
+  for (let k = -3; k <= 3; k++) {
+    const cx = box.x + (k + 4) * cw;
+    const hit = k === 0;
+    out += rect(cx, ty, cw, 22, hit ? "lab-fill-ok" : "lab-cell") + rect(cx, ty + 22, cw, 22, hit ? "lab-fill-ok" : "lab-cell");
+    out += text(cx + cw / 2, ty + 15, fmt(d + k, 2), "lab-text-tick", "middle");
+    out += text(cx + cw / 2, ty + 37, fmt(termValue(v, d + k), 2), "lab-text-tick", "middle");
+  }
+  out += text(box.x, ty + 62, "Gleiche Werte liegen symmetrisch zu x = d.", "lab-text-small");
+  out += handle("x", P.x, P.y, "Punkt beim eingestellten x: x ändern");
+  out += "</svg>";
+  return out;
+}
+
+// ─── 4.6 Das beste Rechteck ─────────────────────────────────────────────────
+
+export interface ExtremumModel {
+  title: string;
+  unit: string;
+  /** x must lie in ]0; upper[. */
+  upper: number;
+  area: (x: number) => number;
+  xBest: number;
+  best: number;
+  max: boolean;
+  steps: string[];
+}
+
+export const EXTREMUM_MODELS: ExtremumModel[] = [
+  {
+    title: "Rechteck 8 cm × 5 cm: Länge − x, Breite + 2x",
+    unit: "cm",
+    upper: 8,
+    area: (x) => (8 - x) * (5 + 2 * x),
+    xBest: 2.75,
+    best: 55.125,
+    max: true,
+    steps: ["A(x) = (8 − x)(5 + 2x)", "= −2x² + 11x + 40", "= −2[x² − 5,5x] + 40", "= −2[(x − 2,75)² − 7,5625] + 40", "= −2(x − 2,75)² + 55,125", "größter Wert 55,125 cm² für x = 2,75"],
+  },
+  {
+    title: "40 m Zaun an einer Mauer",
+    unit: "m",
+    upper: 20,
+    area: (x) => x * (40 - 2 * x),
+    xBest: 10,
+    best: 200,
+    max: true,
+    steps: ["A(x) = x · (40 − 2x)", "= −2x² + 40x", "= −2[x² − 20x]", "= −2[(x − 10)² − 100]", "= −2(x − 10)² + 200", "größter Wert 200 m² für x = 10"],
+  },
+  {
+    title: "Quadrat 8 cm: inneres Quadrat",
+    unit: "cm",
+    upper: 8,
+    area: (x) => 64 - 2 * x * (8 - x),
+    xBest: 4,
+    best: 32,
+    max: false,
+    steps: ["A(x) = 64 − 4 · ½ · x · (8 − x)", "= 2x² − 16x + 64", "= 2[x² − 8x] + 64", "= 2[(x − 4)² − 16] + 64", "= 2(x − 4)² + 32", "kleinster Wert 32 cm² für x = 4"],
+  },
+  {
+    title: "Rechtecke mit 20 cm Umfang",
+    unit: "cm",
+    upper: 10,
+    area: (x) => x * (10 - x),
+    xBest: 5,
+    best: 25,
+    max: true,
+    steps: ["A(x) = x · (10 − x)", "= −x² + 10x", "= −[x² − 10x]", "= −[(x − 5)² − 25]", "= −(x − 5)² + 25", "größter Wert 25 cm² für x = 5"],
+  },
+];
+
+export const inDomain = (v: LabValues) => v.x > 0 && v.x < EXTREMUM_MODELS[v.mode].upper;
+
+/** The side lengths of the figure, as the readout and the drawing name them. */
+export function extremumSides(v: LabValues): string {
+  const { x, mode } = v;
+  if (!inDomain(v)) return `x = ${fmt(x)} liegt nicht in ]0; ${EXTREMUM_MODELS[mode].upper}[`;
+  if (mode === 0) return `${fmt(8 - x)} cm × ${fmt(5 + 2 * x)} cm`;
+  if (mode === 1) return `x = ${fmt(x)} m, Länge ${fmt(40 - 2 * x)} m`;
+  if (mode === 2) return `Katheten ${fmt(x)} cm und ${fmt(8 - x)} cm`;
+  return `${fmt(x)} cm × ${fmt(10 - x)} cm`;
+}
+
+const EX = { x0: 44, y0: 60 };
+const EX_SCALE = [11.5, 6.2, 29, 22];
+const EX_PLOT = { x: 318, y: 46, w: 188, h: 150 };
+
+function extremumPlot(mode: number): Plot {
+  const model = EXTREMUM_MODELS[mode];
+  const top = model.max ? model.best : model.area(0);
+  return new Plot(0, model.upper, 0, top * 1.15, EX_PLOT);
+}
+
+/** Where the handle of the figure sits, and the x a drag to a point gives. */
+function figureHandle(v: LabValues): { x: number; y: number } {
+  const { x0, y0 } = EX;
+  const s = EX_SCALE[v.mode];
+  const x = v.x;
+  if (v.mode === 0) return { x: x0 + (8 - x) * s, y: y0 + ((5 + 2 * x) * s) / 2 };
+  if (v.mode === 1) return { x: x0 + (40 - 2 * x) * s, y: y0 + x * s };
+  if (v.mode === 2) return { x: x0 + x * s, y: y0 };
+  return { x: x0 + x * s, y: y0 + ((10 - x) * s) / 2 };
+}
+
+function figureDrag(p: { x: number; y: number }, v: LabValues): number {
+  const { x0, y0 } = EX;
+  const s = EX_SCALE[v.mode];
+  if (v.mode === 0) return 8 - (p.x - x0) / s;
+  if (v.mode === 1) return (p.y - y0) / s;
+  return (p.x - x0) / s;
+}
+
+function extremumProblem(v: LabValues): string {
+  const { mode, x } = v;
+  const model = EXTREMUM_MODELS[mode];
+  const s = EX_SCALE[mode];
+  const { x0, y0 } = EX;
+  const inside = inDomain(v);
+  const A = model.area(x);
+  const u = model.unit;
+  let out = open("Ein Extremwertproblem: Die Figur ändert sich mit x, rechts der Flächeninhalt für viele x");
+  out += text(16, 27, model.title, "lab-text lab-text-big");
+  if (!inside) {
+    out += text(x0, y0 + 40, `x = ${fmt(x)} liegt nicht in ]0; ${model.upper}[:`, "lab-text lab-text-bad");
+    out += text(x0, y0 + 62, x <= 0 ? "Für x = 0 ändert sich nichts." : "Eine Seite wäre nicht mehr positiv.", "lab-text lab-text-bad");
+  } else if (mode === 0) {
+    const w = (8 - x) * s;
+    const h = (5 + 2 * x) * s;
+    out += rect(x0, y0, w, h, "lab-fill-ok");
+    out += rect(x0, y0, 8 * s, 5 * s, "lab-dashed");
+    out += text(x0, y0 - 6, "gestrichelt: das alte Rechteck 8 cm × 5 cm", "lab-text-small");
+    out += text(x0 + w / 2, y0 + h + 16, `${fmt(8 - x)} cm`, "lab-text", "middle");
+    out += text(x0 + Math.max(w, 8 * s) + 14, y0 + Math.max(h / 2, 5 * s + 16), `${fmt(5 + 2 * x)} cm`, "lab-text");
+  } else if (mode === 1) {
+    out += rect(x0 - 6, y0 - 10, 40 * s + 12, 10, "lab-shape-2");
+    out += text(x0 + 20 * s, y0 - 14, "Mauer", "lab-text-small", "middle");
+    const w = (40 - 2 * x) * s;
+    const h = x * s;
+    out += rect(x0, y0, w, h, "lab-fill-ok");
+    out += `<path d="M${x0} ${y0} V${(y0 + h).toFixed(1)} H${(x0 + w).toFixed(1)} V${y0}" class="lab-fence" />`;
+    out += text(x0 + w / 2, y0 + h + 18, `${fmt(40 - 2 * x)} m`, "lab-text", "middle");
+    out += text(x0, y0 + h + 38, `Seiten senkrecht zur Mauer: x = ${fmt(x)} m`, "lab-text-small");
+  } else if (mode === 2) {
+    const P = (px: number, py: number) => ({ x: x0 + px * s, y: y0 + py * s });
+    const [Aa, Bb, Cc, Dd] = [P(0, 0), P(8, 0), P(8, 8), P(0, 8)];
+    const [P1, P2, P3, P4] = [P(x, 0), P(8, x), P(8 - x, 8), P(0, 8 - x)];
+    const poly = (pts: Array<{ x: number; y: number }>, cls: string) => `<polygon points="${pts.map((p) => `${p.x.toFixed(1)},${p.y.toFixed(1)}`).join(" ")}" class="${cls}" />`;
+    out += poly([Aa, P1, P4], "lab-fill-b") + poly([Bb, P2, P1], "lab-fill-b") + poly([Cc, P3, P2], "lab-fill-b") + poly([Dd, P4, P3], "lab-fill-b");
+    out += poly([P1, P2, P3, P4], "lab-fill-ok");
+    out += rect(x0, y0, 8 * s, 8 * s, "lab-ink");
+    out += text((Aa.x + P1.x) / 2, y0 - 6, "x", "lab-text-axis", "middle");
+    out += text(x0 - 6, (Aa.y + P4.y) / 2 + 4, "8 − x", "lab-text-axis", "end");
+  } else {
+    const w = x * s;
+    const h = (10 - x) * s;
+    out += rect(x0, y0, w, h, "lab-fill-ok");
+    out += text(x0 + w / 2, y0 + h + 16, `${fmt(x)} cm`, "lab-text", "middle");
+    // the height label right of the rectangle, or under it when the rectangle is too wide
+    if (x0 + w + 16 + 56 < 306) out += text(x0 + w + 16, y0 + h / 2 + 4, `${fmt(10 - x)} cm`, "lab-text");
+    else out += text(x0 + w / 2, y0 + h + 34, `Höhe ${fmt(10 - x)} cm`, "lab-text", "middle");
+  }
+  if (inside) out += text(16, 332, `A = ${fmt(A, 4)} ${u}²`, "lab-text lab-text-ok lab-text-big");
+  // A(x) for many x as points.
+  const plot = extremumPlot(mode);
+  const { box } = plot;
+  out += rect(box.x, box.y, box.w, box.h, "lab-plot-bg");
+  out += line(box.x, box.y + box.h, box.x + box.w, box.y + box.h, "lab-axis") + line(box.x, box.y, box.x, box.y + box.h, "lab-axis");
+  out += text(box.x, box.y - 8, `A in ${u}²`, "lab-text-axis");
+  out += text(box.x + box.w, box.y + box.h + 26, `x in ${u}`, "lab-text-axis", "end");
+  for (const t of [0, model.upper / 2, model.upper]) out += text(plot.X(t), box.y + box.h + 12, fmt(t), "lab-text-tick", "middle");
+  out += text(box.x - 4, plot.Y(plot.ymax / 1.15) + 4, fmt(plot.ymax / 1.15), "lab-text-tick", "end");
+  const stepX = model.upper / 32;
+  for (let i = 1; i < 32; i++) out += circle(plot.X(i * stepX), plot.Y(model.area(i * stepX)), 1.8, "lab-dot-small");
+  if (inside) {
+    const P = plot.P(x, A);
+    out += line(P.x, P.y, P.x, box.y + box.h, "lab-dashed");
+    out += handle("plot", P.x, P.y, "Punkt auf A(x): x ändern", "lab-handle lab-handle-b");
+    const H = figureHandle(v);
+    out += handle("figure", H.x, H.y, "Figur verändern: x ändern");
+  }
+  // the calculation, when asked for
+  const ly = 238;
+  if (v.show === 1) {
+    model.steps.forEach((content, i) => {
+      out += text(box.x - 12, ly + i * 17, content, i === model.steps.length - 1 ? "lab-text-small lab-text-ok" : "lab-text-small");
+    });
+  } else {
+    out += text(box.x - 12, ly, "Die Rechnung ist verdeckt.", "lab-text-small");
+    out += text(box.x - 12, ly + 17, "Finde das beste x erst selbst.", "lab-text-small");
+  }
+  out += "</svg>";
+  return out;
+}
+
 // Placeholder drawings until the later labs of the stage are written.
 const placeholder: LabView = { render: () => '<svg viewBox="0 0 520 340" xmlns="http://www.w3.org/2000/svg"></svg>' };
 
@@ -497,9 +909,20 @@ export const TERME_GLEICHUNGEN_VIEWS: Record<"like-terms" | "expand-products" | 
       },
     },
   },
-  "factorise": placeholder,
-  "completing-square": placeholder,
-  "extremum-problem": placeholder,
+  "factorise": { render: factorise },
+  "completing-square": {
+    render: completingSquareView,
+    handles: {
+      x: { x: "x", drag: (p, v) => ({ x: csPlot(v).invX(p.x) }) },
+    },
+  },
+  "extremum-problem": {
+    render: extremumProblem,
+    handles: {
+      plot: { x: "x", drag: (p, v) => ({ x: extremumPlot(v.mode).invX(p.x) }) },
+      figure: { x: "x", drag: (p, v) => ({ x: figureDrag(p, v) }) },
+    },
+  },
   "linear-equation": placeholder,
   "word-problem": placeholder,
   "inequality": placeholder,
