@@ -88,6 +88,9 @@ const lessD = (v: string, d: number) => (d === 0 ? v : `(${sumText(v, -d)})`);
 /** The factor in front of a term: "", "−", "2", "−0,5". */
 const factor = (a: number) => (a === 1 ? "" : a === -1 ? "−" : fmt(a));
 
+/** The factor written as a product in front of a root: "", "−", "2 · ". */
+const rootFactor = (a: number) => (a === 1 ? "" : a === -1 ? "−" : `${fmt(a)} · `);
+
 /** y = a(x + b)^c + d in HTML, with the exponent written as given. */
 function powerTermHtml(a: number, b: number, c: string, d: number): string {
   return `y = ${factor(a)}${shifted(-b)}<sup>${c}</sup>${term(d, "", false)}`;
@@ -248,7 +251,7 @@ const potenzgesetze: Lesson = {
               `Nenner ${n}: ${rootHtml(n, a)} = ${r}, denn ${r}<sup>${n}</sup> = ${a}.`,
               m > 0
                 ? `Zähler ${m}: ${a}<sup>${e}</sup> =${m === 1 ? "" : ` ${r}<sup>${m}</sup> =`} <strong>${fmt(value)}</strong>`
-                : `Das Minus heißt Kehrwert: ${a}<sup>${e}</sup> = 1 : ${r}<sup>${-m}</sup> = <strong>${fracHtml(1, r ** -m)} ${eq(value, 4)} ${fmt(value, 4)}</strong>`,
+                : `Das Minus heißt Kehrwert: ${a}<sup>${e}</sup> = 1 : ${-m === 1 ? r : `${r}<sup>${-m}</sup>`} = <strong>${fracHtml(1, r ** -m)} ${eq(value, 4)} ${fmt(value, 4)}</strong>`,
             ],
             meta: { a, r, n, m, value },
           };
@@ -564,7 +567,7 @@ const wurzeln: Lesson = {
             }),
           ],
           steps: [
-            `Innen: ${xPow(m)} · ${rootHtml(p, "x")} = x<sup>${m}</sup> · x<sup>1/${p}</sup> = x<sup>${rt(inner)}</sup>`,
+            `Innen: ${xPow(m)} · ${rootHtml(p, "x")} = ${xPow(m)} · x<sup>1/${p}</sup> = x<sup>${rt(inner)}</sup>`,
             `Außen ${n === 2 ? "die Quadratwurzel" : `die ${n}. Wurzel`}, also hoch 1/${n}: ${rt(inner)} · 1/${n} = ${rt(k)}`,
             `<strong>${shown} = x<sup>${rt(k)}</sup></strong>, also k = ${rt(k)}${decimal(k)}`,
           ],
@@ -971,7 +974,7 @@ const parameter: Lesson = {
             steps: [
               `Die Klammer ${shifted(-b)} wird für x = ${fmt(-b)} null: Diese Stelle gehört nicht zu D, die Gerade x = ${fmt(-b)} ist senkrechte Asymptote.`,
               `Für große |x| wird ${factor(a)}${shifted(-b)}<sup>${fmt(c)}</sup> beliebig klein: y nähert sich ${fmt(d)}, die waagrechte Asymptote ist y = ${fmt(d)}.`,
-              `<strong>W = ${options[index]}</strong>, denn ${odd ? `bei ungeradem Exponenten nimmt ${shifted(-b)}<sup>${fmt(c)}</sup> jeden Wert außer 0 an` : `${shifted(-b)}<sup>${fmt(c)}</sup> ist immer positiv${a > 0 ? "" : ", mal a < 0 also negativ"}`}.`,
+              `<strong>W = ${options[index].replace("<", "&lt;").replace(">", "&gt;")}</strong>, denn ${odd ? `bei ungeradem Exponenten nimmt ${shifted(-b)}<sup>${fmt(c)}</sup> jeden Wert außer 0 an` : `${shifted(-b)}<sup>${fmt(c)}</sup> ist immer positiv${a > 0 ? "" : ", mal a &lt; 0 also negativ"}`}.`,
             ],
             meta: { a, b, c, d },
           };
@@ -999,7 +1002,7 @@ const parameter: Lesson = {
           ],
           steps: [
             c < 0 ? `Aus x = −b folgt b = ${fmt(b)}, aus der waagrechten Asymptote d = ${fmt(d)}.` : `Der Graph beginnt in R(−b | d): b = ${fmt(b)} und d = ${fmt(d)}.`,
-            `P einsetzen: ${fmt(yP)} = a · (${sumText(fmt(xP), b)})<sup>${cText}</sup>${term(d, "", false)} ⇒ ${fmt(yP - d)} = a · ${fmt(tc, 4)}`,
+            `P einsetzen: ${fmt(yP)} = a · (${sumText(fmt(xP), b)})<sup>${cText}</sup>${term(d, "", false)} ⇒ ${fmt(yP - d)} = a · ${paren(tc, 4)}`,
             `a = ${fmt(yP - d)} : ${paren(tc, 4)} = <strong>${fmt(a)}</strong>, also ${powerTermHtml(a, b, cText, d)}`,
           ],
           meta: { a, b, c, d, xP, yP },
@@ -1053,8 +1056,8 @@ const parameter: Lesson = {
               numberField("Schnittpunkt mit der y-Achse: y =", y0, "", 2),
             ],
             steps: [
-              `x-Achse (y = 0): ${fmt(a)} · ${sqrtHtml(sumText("x", b))} = ${fmt(-d)} ⇒ ${sqrtHtml(sumText("x", b))} = ${u} ⇒ ${sumText("x", b)} = ${u * u} ⇒ x = ${fmt(xN)}`,
-              `y-Achse (x = 0): y = ${fmt(a)} · ${sqrtHtml(b)}${term(d, "", false)} ${eq(y0)} ${fmt(y0, 2)}`,
+              `x-Achse (y = 0): ${rootFactor(a)}${sqrtHtml(sumText("x", b))} = ${fmt(-d)} ⇒ ${sqrtHtml(sumText("x", b))} = ${u} ⇒ ${sumText("x", b)} = ${u * u}${b === 0 ? "" : ` ⇒ x = ${fmt(xN)}`}`,
+              `y-Achse (x = 0): y = ${rootFactor(a)}${sqrtHtml(b)}${term(d, "", false)} ${eq(y0)} ${fmt(y0, 2)}`,
               `<strong>N(${fmt(xN)} | 0) und S(0 | ${fmt(y0, 2)})</strong>`,
             ],
             meta: { kind: 0, a, b, d, xN, y0 },
