@@ -1,4 +1,4 @@
-import { describe, expect, it, vi } from "vitest";
+import { describe, expect, it } from "vitest";
 import { ALL_LESSONS } from "../src/curriculum";
 import { checkTask, toleranceOf, wrongAnswerHint } from "../src/exercises/checker";
 import { fmt } from "../src/exercises/format";
@@ -15,8 +15,6 @@ import { labView } from "../src/lab/visuals";
 import type { ExerciseTask, LabDefinition, LabValues } from "../src/model/types";
 import { GOAL_WITNESSES } from "./witnesses";
 
-// Every lab on its grid and 80 tasks per level and lesson: slower than the 5 s default.
-vi.setConfig({ testTimeout: 120_000 });
 
 /**
  * The settings a lab test walks: the full grid for few sliders, a coarser

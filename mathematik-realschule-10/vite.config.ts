@@ -1,3 +1,4 @@
+/// <reference types="vitest/config" />
 import { defineConfig } from "vite";
 import { viteSingleFile } from "vite-plugin-singlefile";
 
@@ -14,5 +15,10 @@ export default defineConfig({
     outDir: "dist",
     emptyOutDir: true,
     target: "es2022",
+  },
+  // 45 labs walked on their grids and thousands of generated tasks: far
+  // beyond vitest's 5 s default when the test files run side by side.
+  test: {
+    testTimeout: 120_000,
   },
 });
