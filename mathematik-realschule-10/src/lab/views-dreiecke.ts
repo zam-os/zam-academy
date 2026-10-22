@@ -31,12 +31,23 @@ function unitOf(from: Pt, to: Pt): Pt {
   return { x: (to.x - from.x) / len, y: (to.y - from.y) / len };
 }
 
-/** The letter of the angle at `vertex`: on the bisector, `dist` px inside the angle. */
+/**
+ * The letter of the angle at `vertex`: on the bisector, `dist` px inside the
+ * angle; nudged sideways when the bisector points straight down onto a height.
+ */
 function angleLabel(vertex: Pt, p1: Pt, p2: Pt, dist: number, content: string, cls = "lab-text"): string {
   const u = unitOf(vertex, p1);
   const w = unitOf(vertex, p2);
   const bis = unitOf({ x: 0, y: 0 }, { x: u.x + w.x, y: u.y + w.y });
-  return text(vertex.x + bis.x * dist, vertex.y + bis.y * dist + 4, content, cls, "middle");
+  const nudge = bis.y > 0.9 ? 9 : 0;
+  return text(vertex.x + bis.x * dist + nudge, vertex.y + bis.y * dist + 4, content, cls, "middle");
+}
+
+/** A side label pushed far enough off a slanted side that its text does not cross the line. */
+function edgeLabel(p: Pt, q: Pt, content: string, cls: string): string {
+  const u = unitOf(p, q);
+  const width = content.length * 7;
+  return sideLabel(p, q, content, 9 + (width / 2) * Math.abs(u.y) + 7 * Math.abs(u.x), cls);
 }
 
 /**
@@ -139,9 +150,9 @@ function sineQuotients(v: LabValues): string {
   out += line(A.x, A.y, B.x, B.y, "lab-side-c") + line(B.x, B.y, C.x, C.y, "lab-side-a") + line(C.x, C.y, A.x, A.y, "lab-side-b");
   out += angleMark(A, B, C, 24) + angleMark(B, C, A, 24) + angleMark(C, A, B, 20);
   out += angleLabel(A, B, C, 38, "α") + angleLabel(B, C, A, 38, "β") + angleLabel(C, A, B, 32, "γ");
-  out += sideLabel(A, B, `c = ${fmt(t.c, 1)}`, 16, "lab-text lab-text-c");
-  out += sideLabel(B, C, `a = ${fmt(t.a, 2)}`, 16, "lab-text lab-text-a");
-  out += sideLabel(C, A, `b = ${fmt(t.b, 1)}`, 16, "lab-text lab-text-b");
+  out += edgeLabel(A, B, `c = ${fmt(t.c, 1)}`, "lab-text lab-text-c");
+  out += edgeLabel(B, C, `a = ${fmt(t.a, 2)}`, "lab-text lab-text-a");
+  out += edgeLabel(C, A, `b = ${fmt(t.b, 1)}`, "lab-text lab-text-b");
   out += text(A.x - 8, A.y + 16, "A", "lab-text", "end") + text(B.x + 8, B.y + 16, "B", "lab-text");
   out += text(C.x, C.y - 12, "C", "lab-text", "middle");
   out += text(16, 26, "a : sin α = b : sin β = c : sin γ", "lab-text lab-text-big");
@@ -177,14 +188,14 @@ function sineAmbiguous(v: LabValues): string {
   out += line(A.x, A.y, C.x, C.y, "lab-side-b");
   const ray: Pt = { x: A.x + 40, y: A.y };
   out += angleMark(A, ray, C, 26) + angleLabel(A, ray, C, 40, "α");
-  out += sideLabel(C, A, `b = ${fmt(v.b, 1)}`, 16, "lab-text lab-text-b");
+  out += edgeLabel(C, A, `b = ${fmt(v.b, 1)}`, "lab-text lab-text-b");
   solutions.forEach((s, i) => {
     const B: Pt = { x: A.x + s.c * k, y: A.y };
     out += line(B.x, B.y, C.x, C.y, "lab-side-a");
     out += angleMark(B, C, A, 18);
     out += circle(B.x, B.y, 5, "lab-point");
     out += text(B.x, B.y + 18, two ? `B${i === 0 ? "₁" : "₂"}` : "B", "lab-text", "middle");
-    out += angleLabel(B, C, A, 32, two ? `β${i === 0 ? "₁" : "₂"}` : "β", "lab-text-small");
+    out += angleLabel(B, C, A, 24, two ? `β${i === 0 ? "₁" : "₂"}` : "β", "lab-text-small");
   });
   out += text(A.x - 8, A.y + 16, "A", "lab-text", "end") + text(C.x, C.y - 12, "C", "lab-text", "middle");
   out += text(C.x + 8, (C.y + F.y) / 2, `h = ${fmt(h, 2)}`, "lab-text-small");
@@ -236,7 +247,7 @@ export function cosineLabTriangle(v: LabValues): { c: number; gamma: number } | 
   return { c: Math.sqrt(Math.max(a * a + b * b - 2 * a * b * cosD(v.gamma), 0)), gamma: v.gamma };
 }
 
-const COS = { cx: 165, base: 292, k: 14 };
+const COS = { cx: 172, base: 292, k: 16 };
 
 function cosineLaw(v: LabValues, r: ReadoutValues): string {
   const k = COS.k;
@@ -259,14 +270,14 @@ function cosineLaw(v: LabValues, r: ReadoutValues): string {
     out += line(B.x, B.y, C.x, C.y, "lab-side-a") + line(C.x, C.y, A.x, A.y, "lab-side-b") + line(A.x, A.y, B.x, B.y, "lab-side-c");
     out += angleMark(C, B, A, 22, right ? "lab-angle-ok" : "lab-angle", right);
     out += angleLabel(C, B, A, 36, "γ");
-    out += sideLabel(C, B, `a = ${fmt(v.a, 1)}`, 16, "lab-text lab-text-a");
-    out += sideLabel(A, C, `b = ${fmt(v.b, 1)}`, 16, "lab-text lab-text-b");
-    out += sideLabel(B, A, `c = ${fmt(tri.c, 2)}`, 16, "lab-text lab-text-c");
+    out += edgeLabel(C, B, `a = ${fmt(v.a, 1)}`, "lab-text lab-text-a");
+    out += edgeLabel(A, C, `b = ${fmt(v.b, 1)}`, "lab-text lab-text-b");
+    out += edgeLabel(B, A, `c = ${fmt(tri.c, 2)}`, "lab-text lab-text-c");
     out += text(A.x, A.y - 12, "A", "lab-text", "middle");
     if (!sss) out += handle("A", A.x, A.y, "Ecke A: Winkel γ und Seite b");
   } else {
     out += line(B.x, B.y, C.x, C.y, "lab-side-a");
-    out += sideLabel(C, B, `a = ${fmt(v.a, 1)}`, 16, "lab-text lab-text-a");
+    out += edgeLabel(C, B, `a = ${fmt(v.a, 1)}`, "lab-text lab-text-a");
   }
   out += text(C.x - 8, C.y + 16, "C", "lab-text", "end") + text(B.x + 8, B.y + 16, "B", "lab-text");
   if (!sss) out += handle("B", B.x, B.y, "Ecke B: Seite a");
@@ -341,8 +352,8 @@ function triangleArea(v: LabValues): string {
   out += line(B.x, B.y, C.x, C.y, "lab-side-a") + line(C.x, C.y, A.x, A.y, "lab-side-b");
   out += angleMark(C, B, A, 22, right ? "lab-angle-ok" : "lab-angle", right);
   out += angleLabel(C, B, A, 36, "γ");
-  out += sideLabel(C, B, `a = ${fmt(v.a, 1)}`, 16, "lab-text lab-text-a");
-  out += sideLabel(A, C, `b = ${fmt(v.b, 1)}`, 16, "lab-text lab-text-b");
+  out += edgeLabel(C, B, `a = ${fmt(v.a, 1)}`, "lab-text lab-text-a");
+  out += edgeLabel(A, C, `b = ${fmt(v.b, 1)}`, "lab-text lab-text-b");
   out += text(A.x + (A.x >= C.x ? 8 : -8), (A.y + F.y) / 2 + 4, `h = ${fmt(h, 2)}`, "lab-text-small", A.x >= C.x ? "start" : "end");
   out += text(A.x, A.y - 12, "A", "lab-text", "middle");
   out += text(C.x - 6, C.y + 16, "C", "lab-text", "end") + text(B.x + 6, B.y + 16, "B", "lab-text");
@@ -380,7 +391,7 @@ export function familyAt(x: number): { ab: number; ac: number; area: number; bc:
   return { ab, ac, area, bc };
 }
 
-const FAM = { ax: 26, base: 312, k: 12.5 };
+const FAM = { ax: 26, base: 300, k: 12.5 };
 const FAMILY_PLOT = new Plot(0, 9.4, 0, 26, { x: 236, y: 70, w: 268, h: 236 });
 
 function familyPoints(x: number): { A: Pt; B: Pt; C: Pt; Bn: Pt; Cn: Pt } {
@@ -420,10 +431,10 @@ function triangleFamily(v: LabValues): string {
   out += angleMark(A, B, Cn, 22);
   out += text(A.x + 30, A.y - 8, "60°", "lab-text-small");
   out += text(A.x - 4, A.y + 16, "A", "lab-text", "middle");
-  out += text(B.x + 4, B.y + 16, "B", "lab-text-small", "middle");
+  out += text(B.x + 7, B.y + 4, "B", "lab-text-small");
   out += text(C.x - 8, C.y, "C", "lab-text-small", "end");
   out += circle(B.x, B.y, 3, "lab-dot-small") + circle(C.x, C.y, 3, "lab-dot-small");
-  out += text(Bn.x - 2, Bn.y + 30, "Bₙ", "lab-text", "middle");
+  out += text(Bn.x, Bn.y + 22, "Bₙ", "lab-text", "middle");
   out += text(Cn.x - 10, Cn.y - 2, "Cₙ", "lab-text", "end");
   if (v.x > 0) {
     out += text((Bn.x + B.x) / 2, B.y - 8, "x", "lab-text-small lab-text-a", "middle");
