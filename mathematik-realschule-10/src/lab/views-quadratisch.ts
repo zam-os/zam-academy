@@ -60,12 +60,21 @@ function placeInfo(plot: Plot, lines: Line[], avoid: Pt[], curves: Array<(x: num
     { x: bx + 14, y: by + bh - h + 11, anchor: "start" as const },
     { x: bx + bw - 14, y: by + bh - h + 11, anchor: "end" as const },
   ];
-  const samples: Pt[] = [];
+  // Curve samples weighted by the length of drawn curve they stand for, so a
+  // steep branch through a corner counts as much as it covers.
+  const samples: Array<{ p: Pt; length: number }> = [];
   for (const f of curves) {
-    for (let i = 0; i <= 160; i++) {
-      const x = plot.xmin + ((plot.xmax - plot.xmin) * i) / 160;
+    let previous: Pt | null = null;
+    for (let i = 0; i <= 240; i++) {
+      const x = plot.xmin + ((plot.xmax - plot.xmin) * i) / 240;
       const y = f(x);
-      if (Number.isFinite(y) && y >= plot.ymin && y <= plot.ymax) samples.push(plot.P(x, y));
+      if (!Number.isFinite(y) || y < plot.ymin || y > plot.ymax) {
+        previous = null;
+        continue;
+      }
+      const p = plot.P(x, y);
+      samples.push({ p, length: previous ? Math.hypot(p.x - previous.x, p.y - previous.y) : 1 });
+      previous = p;
     }
   }
   let best = candidates[0];
@@ -74,7 +83,8 @@ function placeInfo(plot: Plot, lines: Line[], avoid: Pt[], curves: Array<(x: num
     const left = candidate.anchor === "start" ? candidate.x - 8 : candidate.x - w + 8;
     const top = candidate.y - 17;
     const inside = (p: Pt, pad: number) => p.x >= left - pad && p.x <= left + w + pad && p.y >= top - pad && p.y <= top + h + pad;
-    const score = samples.filter((p) => inside(p, 2)).length + 60 * avoid.filter((p) => inside(p, 14)).length;
+    const covered = samples.filter((sample) => inside(sample.p, 2)).reduce((total, sample) => total + sample.length, 0);
+    const score = covered + 400 * avoid.filter((p) => inside(p, 14)).length;
     if (score < bestScore) {
       bestScore = score;
       best = candidate;
@@ -130,8 +140,6 @@ function parabolaParams(v: LabValues): string {
       : [
           [`y = ${vertexForm(v.a, v.xs, v.ys)}`, "lab-text lab-text-big"],
           [`= ${quadratic(v.a, -2 * v.a * v.xs, c)}`, "lab-text-muted"],
-          [shapeOf(v.a), "lab-text-small"],
-          ["gestrichelt: Normalparabel y = x²", "lab-text-small"],
         ];
   out += placeInfo(plot, lines, [S, A], [f, (x) => x * x]);
   out += handle("S", S.x, S.y, "Scheitelpunkt S");
@@ -377,10 +385,10 @@ export function fenceArea(v: LabValues): number {
 
 const FENCE = { x0: 34, y0: 104 };
 
-/** Pixels per metre: the longest possible sides still fit the left half. */
+/** Pixels per metre: the longest possible sides and their labels still fit left of the A(x) plot. */
 function fenceScale(v: LabValues): number {
   const { j, xmax } = fenceModel(v.mode, v.L);
-  return Math.min(16, 232 / (v.L / j), 196 / xmax);
+  return Math.min(16, 176 / (v.L / j), 196 / xmax);
 }
 
 function fencePlot(v: LabValues): Plot {
@@ -401,8 +409,8 @@ function fence(v: LabValues): string {
   out += text(20, 48, `A(x) = x · (${sideTerm}) = ${vertexForm(-k / j, xBest, areaBest)}`, "lab-text");
   out += text(20, 68, `𝔻 = {x | 0 < x < ${fmt(xmax)}}`, "lab-text-muted");
   if (v.mode !== 2) {
-    out += rect(x0 - 8, y0 - 10, 248, 10, "lab-shape-2");
-    out += text(x0 + 116, y0 - 14, "Mauer", "lab-text-small", "middle");
+    out += rect(x0 - 8, y0 - 10, 192, 10, "lab-shape-2");
+    out += text(x0 + 88, y0 - 14, "Mauer", "lab-text-small", "middle");
   }
   if (y > 0) {
     // x runs at right angles to the wall, y along it.
@@ -413,8 +421,9 @@ function fence(v: LabValues): string {
     out += `<path d="${d}" class="lab-fence" />`;
     if (v.mode === 1) out += line(x0 + w / 2, y0, x0 + w / 2, y0 + h, "lab-fence");
     out += text(x0 + w / 2, y0 + h + 17, `y = ${fmt(y, 2)} m`, "lab-text", "middle");
-    out += text(x0 + w + 8, y0 + h / 2 + 4, `x = ${fmt(v.x, 2)} m`, "lab-text");
-    if (h > 26 && w > 70) out += text(x0 + (v.mode === 1 ? w / 4 : w / 2), y0 + h / 2 + 6, `${fmt(area, 2)} m²`, "lab-text lab-text-big", "middle");
+    out += text(x0 + w + 16, y0 + h / 2 + 4, `x = ${fmt(v.x, 2)} m`, "lab-text");
+    if (v.mode !== 1 && h > 26 && w > 70) out += text(x0 + w / 2, y0 + h / 2 + 6, `${fmt(area, 2)} m²`, "lab-text lab-text-big", "middle");
+    else out += text(x0 + w + 16, y0 + h / 2 + 22, `A = ${fmt(area, 2)} m²`, "lab-text lab-text-ok");
   } else {
     out += text(x0, y0 + 34, `Für x ≥ ${fmt(xmax)} reicht der Zaun nicht:`, "lab-text lab-text-bad");
     out += text(x0, y0 + 54, "x liegt nicht in der Definitionsmenge.", "lab-text lab-text-bad");
@@ -493,7 +502,7 @@ function discriminant(v: LabValues): string {
   out += line(gx - 14, g0, gx + 14, g0, "lab-ink");
   out += rect(gx - 8, D >= 0 ? g0 - bar : g0, 16, Math.abs(bar), D > 0 ? "lab-bar-ok" : "lab-bar-bad");
   out += circle(gx, g0, D === 0 ? 7 : 3, D === 0 ? "lab-point-a" : "lab-dot-small");
-  out += text(gx, g0 - 118, "D", "lab-text-axis", "middle");
+  out += text(gx, D >= 0 ? g0 - bar - 8 : g0 - bar + 16, "D", "lab-text-axis", "middle");
   const C = plot.P(0, v.c);
   out += handle("c", C.x, C.y, "Schnittpunkt mit der y-Achse: c ändern");
   out += "</svg>";
@@ -569,10 +578,13 @@ function intersections(v: LabValues): string {
   const second = v.mode === 0 ? `g: y = ${linear(v.m, v.t)}` : `p₂: y = ${vertexForm(v.a2, v.d, v.e)}`;
   const D = info.D;
   const lines: Line[] = [
-    [`p: y = ${quadratic(p.a, p.b, p.c)}, ${second}`, "lab-text"],
+    [`p: y = ${quadratic(p.a, p.b, p.c)}`, "lab-text"],
+    [second, "lab-text"],
     [`Gleichsetzen: ${quadratic(info.A, info.B, info.C)} = 0`, "lab-text-muted"],
-    [D === null ? "kein x² mehr: lineare Gleichung" : `D = ${fmt(D, 3)}`, "lab-text-muted"],
-    [intersectionKind(v), D !== null && D > 0 ? "lab-text lab-text-ok" : D === 0 || info.xs.length === 1 ? "lab-text lab-text-c" : "lab-text lab-text-bad"],
+    [
+      D === null ? intersectionKind(v) : `D = ${fmt(D, 3)} ⇒ ${intersectionKind(v)}`,
+      D !== null && D > 0 ? "lab-text lab-text-ok" : D === 0 || info.xs.length === 1 ? "lab-text lab-text-c" : "lab-text lab-text-bad",
+    ],
   ];
   if (v.mode === 0) {
     const T = plot.P(0, v.t);
