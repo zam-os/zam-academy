@@ -175,8 +175,15 @@ const sinussatz: Lesson = {
       make: (rng, level): ExerciseTask => {
         if (level === 1) {
           const c = rng.stepped(4, 12, 0.5);
-          const alpha = rng.int(25, 80);
-          const beta = rng.int(25, Math.min(80, 150 - alpha));
+          // No angle equal to γ: then the asked side would just be c again.
+          const { alpha, beta } = draw(
+            () => {
+              const alpha = rng.int(25, 80);
+              return { alpha, beta: rng.int(25, Math.min(80, 150 - alpha)) };
+            },
+            (t) => t.alpha !== 180 - t.alpha - t.beta && t.beta !== 180 - t.alpha - t.beta,
+            { alpha: 50, beta: 60 },
+          );
           const gamma = 180 - alpha - beta;
           const askA = rng.next() < 0.5;
           const angle = askA ? alpha : beta;
@@ -1669,7 +1676,7 @@ const gleichungen: Lesson = {
             anyOrder: [0, 1],
             steps: [
               `sin² φ = 1 − cos² φ einsetzen: ${times(p)}cos² φ + ${q} · (1 − cos² φ) = ${fmt(r, 2)}`,
-              `${fmt(p - q, 0)} · cos² φ = ${fmt(r - q, 2)} ⇒ cos² φ = ${fmt(s, 4)}`,
+              `${p - q === 1 ? "" : p - q === -1 ? "−" : `${fmt(p - q, 0)} · `}cos² φ = ${fmt(r - q, 2)} ⇒ cos² φ = ${fmt(s, 4)}`,
               `cos φ = ${sqrtHtml(fmt(s, 4))} ≈ ${fmt(Math.sqrt(s), 4)} oder cos φ = −${sqrtHtml(fmt(s, 4))}: φ₁ ≈ ${deg(phi1)}, φ₂ = 180° − φ₁ ≈ ${deg(phi2)}`,
               `<strong>φ₁ ≈ ${deg(phi1)}, φ₂ ≈ ${deg(phi2)}</strong>`,
             ],
