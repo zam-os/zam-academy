@@ -66,6 +66,8 @@ const acosDeg = (c: number): number => (Math.acos(Math.max(-1, Math.min(1, c))) 
 const eqSign = (value: number, digits = 2): string => (Math.abs(value - Number(value.toFixed(digits))) < 1e-9 ? "=" : "≈");
 /** A vector with whole coordinates inside [−max, max]. */
 const fits = (p: Vec, max: number): boolean => Math.abs(p.x) <= max && Math.abs(p.y) <= max;
+/** √n, or the number itself when the root is whole: √4 is 2. */
+const root = (n: number): string => (Number.isInteger(Math.sqrt(n)) ? fmt(Math.sqrt(n)) : sqrtHtml(fmt(n)));
 /** A linear term in another variable: "−2x' − 2". */
 const linearIn = (m: number, t: number, variable: string): string => linear(m, t).replace(/x/g, variable);
 
@@ -498,8 +500,8 @@ const skalarprodukt: Lesson = {
             ],
             steps: [
               `${vn("a")} ⊙ ${vn("b")} = ${times(a.x, b.x)} + ${times(a.y, b.y)} = ${fmt(s)}`,
-              `|${vn("a")}| = ${sqrtHtml(fmt(dot(a, a)))}, |${vn("b")}| = ${sqrtHtml(fmt(dot(b, b)))}`,
-              `cos φ = ${fmt(s)} : (${sqrtHtml(fmt(dot(a, a)))} · ${sqrtHtml(fmt(dot(b, b)))}) ≈ ${fmt(s / n, 4)}`,
+              `|${vn("a")}| = ${root(dot(a, a))}, |${vn("b")}| = ${root(dot(b, b))}`,
+              `cos φ = ${fmt(s)} : (${root(dot(a, a))} · ${root(dot(b, b))}) ≈ ${fmt(s / n, 4)}`,
               `<strong>${vn("a")} ⊙ ${vn("b")} = ${fmt(s)}, φ ≈ ${fmt(phi)}°</strong>`,
             ],
             meta: { ax: a.x, ay: a.y, bx: b.x, by: b.y },
@@ -525,7 +527,7 @@ const skalarprodukt: Lesson = {
           steps: [
             `${vn("PH")} = ${colHtml(u, 0)}, ${vn("PA")} = ${colHtml(w, 0)}`,
             `${vn("PH")} ⊙ ${vn("PA")} = ${times(u.x, w.x)} + ${times(u.y, w.y)} = ${fmt(s)}`,
-            `cos φ = ${fmt(s)} : (${sqrtHtml(fmt(dot(u, u)))} · ${sqrtHtml(fmt(dot(w, w)))}) ≈ ${fmt(s / (norm(u) * norm(w)), 4)}`,
+            `cos φ = ${fmt(s)} : (${root(dot(u, u))} · ${root(dot(w, w))}) ≈ ${fmt(s / (norm(u) * norm(w)), 4)}`,
             `<strong>∢HPA ≈ ${fmt(phi)}°</strong>`,
           ],
           meta: { px: p.x, py: p.y, hx: h.x, hy: h.y, qx: q.x, qy: q.y },
@@ -751,7 +753,7 @@ const abstand: Lesson = {
             fields: [numberField("α =", alpha, "°", 2, { slips: [{ value: 180 - alpha, hint: "Beide Vektoren müssen in A beginnen: AB→ und AC→, nicht CA→." }, { value: (alpha * Math.PI) / 180, hint: RAD_HINT }] })],
             steps: [
               `${vn("AB")} = ${colHtml(u, 0)}, ${vn("AC")} = ${colHtml(w, 0)}, ${vn("AB")} ⊙ ${vn("AC")} = ${fmt(dot(u, w))}`,
-              `cos α = ${fmt(dot(u, w))} : (${sqrtHtml(fmt(dot(u, u)))} · ${sqrtHtml(fmt(dot(w, w)))}) ≈ ${fmt(Math.cos((alpha * Math.PI) / 180), 4)}`,
+              `cos α = ${fmt(dot(u, w))} : (${root(dot(u, u))} · ${root(dot(w, w))}) ≈ ${fmt(Math.cos((alpha * Math.PI) / 180), 4)}`,
               `<strong>α ≈ ${fmt(alpha)}°</strong>`,
             ],
             meta: { ax: a.x, ay: a.y, bx: b.x, by: b.y, cx: c.x, cy: c.y },
@@ -777,7 +779,7 @@ const abstand: Lesson = {
           ],
           steps: [
             `${vn("AB")} = ${colHtml(u, 0)}, ${vn("AD")} = ${colHtml(w, 0)}, ${vn("AB")} ⊙ ${vn("AD")} = ${fmt(dot(u, w))}`,
-            `cos α = ${fmt(dot(u, w))} : (${sqrtHtml(fmt(dot(u, u)))} · ${sqrtHtml(fmt(dot(w, w)))}), also α ≈ ${fmt(alpha)}°`,
+            `cos α = ${fmt(dot(u, w))} : (${root(dot(u, u))} · ${root(dot(w, w))}), also α ≈ ${fmt(alpha)}°`,
             `Benachbarte Winkel im Parallelogramm ergeben zusammen 180°: β = 180° − α.`,
             `<strong>α ≈ ${fmt(alpha)}°, β ≈ ${fmt(180 - alpha)}°</strong>`,
           ],
@@ -1017,7 +1019,7 @@ const verschiebungStreckung: Lesson = {
           a = vec(rng.int(-5, 5), rng.int(-5, 5));
         } while (same(a, z));
         const a1 = add(z, mul(k, sub(a, z)));
-        const area = rng.pick([4, 4.5, 5, 6, 7.5, 8, 9, 12]);
+        const area = rng.pick([4, 5, 6, 8, 9, 10, 12]);
         const wrong = add(z, mul(k, sub(a1, z)));
         return {
           prompt: `Das Dreieck A'B'C' ist das Bild des Dreiecks ABC bei der zentrischen Streckung mit dem Zentrum ${named("Z", z)} und k = ${fmt(k)}. Es ist ${named("A'", a1)}. Berechne die Koordinaten des Urpunkts A. Das Dreieck ABC hat den Flächeninhalt ${fmt(area)} FE; wie groß ist der Flächeninhalt des Bilddreiecks?`,
@@ -1264,7 +1266,7 @@ const achsenspiegelung: Lesson = {
         return {
           prompt: `Der Punkt ${named("P'", shown)} ist der Bildpunkt eines Punktes P bei der Achsenspiegelung an der Ursprungsgeraden mit α = ${fmt(alpha)}°. Berechne die Koordinaten des Urpunkts P.`,
           given: [named("P'", shown), `α = ${fmt(alpha)}°`],
-          fields: [numberField("P: x =", back.x, "", 2), numberField("y =", back.y, "", 2)],
+          fields: [numberField("P: x =", back.x, "", 2, { absTolerance: 0.01 }), numberField("y =", back.y, "", 2, { absTolerance: 0.01 })],
           steps: [
             "Spiegelt man den Bildpunkt noch einmal an derselben Achse, erhält man den Urpunkt zurück: Es ist dieselbe Matrix.",
             `x = ${fmt(shown.x)} · cos ${fmt(2 * alpha)}° + ${paren(shown.y)} · sin ${fmt(2 * alpha)}° ≈ ${fmt(back.x)}`,
@@ -1492,8 +1494,8 @@ const drehung: Lesson = {
           prompt: `Bei der Drehung um das Zentrum ${named("Z", z)} mit φ = ${fmt(phi)}° entsteht der Bildpunkt ${named("P'", shown)}. Berechne die Koordinaten des Urpunkts P.`,
           given: [named("Z", z), `φ = ${fmt(phi)}°`, named("P'", shown)],
           fields: [
-            numberField("P: x =", back.x, "", 2, { slips: [{ value: again.x, hint: "Für den Urpunkt drehst du zurück, also um −φ." }] }),
-            numberField("y =", back.y, "", 2, { slips: [{ value: again.y, hint: "Für den Urpunkt drehst du zurück, also um −φ." }] }),
+            numberField("P: x =", back.x, "", 2, { absTolerance: 0.01, slips: [{ value: again.x, hint: "Für den Urpunkt drehst du zurück, also um −φ." }] }),
+            numberField("y =", back.y, "", 2, { absTolerance: 0.01, slips: [{ value: again.y, hint: "Für den Urpunkt drehst du zurück, also um −φ." }] }),
           ],
           steps: [
             `Zurückdrehen um −φ = ${fmt(-phi)}°: ${vn("ZP")} = D<sub>${fmt(-phi)}°</sub> ⊙ ${vn("ZP'")} mit ${vn("ZP'")} = ${colHtml(sub(shown, z))}`,
@@ -1878,7 +1880,7 @@ function carrierSteps(m: number, t: number, g: { a: number; b: number; c: number
   return [
     `${name}: x' = ${linear(kx, cx)} und y' = ${linear(ky, cy)}`,
     `Aus x' = ${linear(kx, cx)} folgt x = ${linearIn(1 / kx, -cx / kx, "x'")}.`,
-    `Eingesetzt: y' = ${fmt(ky)} · (${linearIn(1 / kx, -cx / kx, "x'")})${cy === 0 ? "" : ` ${cy < 0 ? "−" : "+"} ${fmt(Math.abs(cy))}`} = ${linearIn(slope, intercept, "x'")}`,
+    `Eingesetzt: y' = ${ky === 1 ? "" : `${fmt(ky)} · `}(${linearIn(1 / kx, -cx / kx, "x'")})${cy === 0 ? "" : ` ${cy < 0 ? "−" : "+"} ${fmt(Math.abs(cy))}`} = ${linearIn(slope, intercept, "x'")}`,
   ];
 }
 
