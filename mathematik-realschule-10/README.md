@@ -29,7 +29,7 @@ The cell is meant to replace the two cells `de-by:realschule-10-mathematik-ebene
 
 ```bash
 npm ci
-npm run dev          # http://localhost:5192/mathematik-realschule-10/
+npm run dev          # http://localhost:5194/mathematik-realschule-10/
 npm test
 npm run build        # single-file build in dist/index.html
 npm run package:zip  # offline zip in release/ (needs the zip command)
