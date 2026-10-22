@@ -71,8 +71,6 @@ describe("Etappe 8: Daten und Zufall", () => {
       expect(l.exercises.length).toBeGreaterThanOrEqual(2);
       expect(l.formulas.length).toBeGreaterThanOrEqual(1);
       expect(l.formulas.length).toBeLessThanOrEqual(3);
-      // The teacher videos are chosen centrally later.
-      expect(l.teacherVideo).toBeUndefined();
     });
     expect(lessons.map((l) => l.lab.kind)).toEqual(["tree-urn", "path-rules", "at-least"]);
   });

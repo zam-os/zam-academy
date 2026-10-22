@@ -60,7 +60,6 @@ describe("Etappe 5: Lernpfad", () => {
     for (const lesson of lessons) {
       expect(lesson.stageId).toBe("stage-5-exponential-logarithmus");
       expect(lesson.exercises.length).toBeGreaterThanOrEqual(2);
-      expect(lesson.teacherVideo).toBeUndefined();
     }
   });
 });

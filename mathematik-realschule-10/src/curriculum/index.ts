@@ -7,6 +7,7 @@ import { STAGE_EXPONENTIAL_LOGARITHMUS } from "./stage-5-exponential-logarithmus
 import { STAGE_RAUMGEOMETRIE } from "./stage-6-raumgeometrie";
 import { STAGE_QUADRATISCH } from "./stage-7-quadratisch";
 import { STAGE_DATEN_ZUFALL } from "./stage-8-daten-zufall";
+import { TEACHER_VIDEOS } from "./teacher-videos";
 
 /**
  * The stages follow the Lernbereiche of LehrplanPLUS Mathematik 10
@@ -25,6 +26,10 @@ export const STAGES: Stage[] = [
 ];
 
 export const ALL_LESSONS: Lesson[] = STAGES.flatMap((stage) => stage.lessons);
+
+// Teacher videos are kept apart from the lessons: each one was checked after
+// the lesson was written, and lessons without a verified video have none.
+for (const lesson of ALL_LESSONS) lesson.teacherVideo ??= TEACHER_VIDEOS[lesson.id];
 
 export function findLessonById(
   id: string,

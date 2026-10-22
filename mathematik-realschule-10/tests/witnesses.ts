@@ -1,12 +1,12 @@
 import type { LabValues } from "../src/model/types";
-import { GOAL_WITNESSES_STAGE_1, VIDEOS_STAGE_1 } from "./witnesses-stage-1";
-import { GOAL_WITNESSES_STAGE_2, VIDEOS_STAGE_2 } from "./witnesses-stage-2";
-import { GOAL_WITNESSES_STAGE_3, VIDEOS_STAGE_3 } from "./witnesses-stage-3";
-import { GOAL_WITNESSES_STAGE_4, VIDEOS_STAGE_4 } from "./witnesses-stage-4";
-import { GOAL_WITNESSES_STAGE_5, VIDEOS_STAGE_5 } from "./witnesses-stage-5";
-import { GOAL_WITNESSES_STAGE_6, VIDEOS_STAGE_6 } from "./witnesses-stage-6";
-import { GOAL_WITNESSES_STAGE_7, VIDEOS_STAGE_7 } from "./witnesses-stage-7";
-import { GOAL_WITNESSES_STAGE_8, VIDEOS_STAGE_8 } from "./witnesses-stage-8";
+import { GOAL_WITNESSES_STAGE_1 } from "./witnesses-stage-1";
+import { GOAL_WITNESSES_STAGE_2 } from "./witnesses-stage-2";
+import { GOAL_WITNESSES_STAGE_3 } from "./witnesses-stage-3";
+import { GOAL_WITNESSES_STAGE_4 } from "./witnesses-stage-4";
+import { GOAL_WITNESSES_STAGE_5 } from "./witnesses-stage-5";
+import { GOAL_WITNESSES_STAGE_6 } from "./witnesses-stage-6";
+import { GOAL_WITNESSES_STAGE_7 } from "./witnesses-stage-7";
+import { GOAL_WITNESSES_STAGE_8 } from "./witnesses-stage-8";
 
 /**
  * ZAM cards (zam-academy:mathematik-realschule-10) cite these ids. Renaming a
@@ -72,14 +72,44 @@ export const GOAL_WITNESSES: Record<string, Record<string, LabValues>> = {
   ...GOAL_WITNESSES_STAGE_8,
 };
 
-/** Per lesson, the pinned teacher video: author and YouTube id. */
+/**
+ * Per lesson, the pinned teacher video: author and YouTube id, each checked
+ * with YouTube oEmbed when chosen (src/curriculum/teacher-videos.ts). Lessons
+ * without an entry have no video yet.
+ */
 export const EXPECTED_VIDEOS: Record<string, { author: string; id: string }> = {
-  ...VIDEOS_STAGE_1,
-  ...VIDEOS_STAGE_2,
-  ...VIDEOS_STAGE_3,
-  ...VIDEOS_STAGE_4,
-  ...VIDEOS_STAGE_5,
-  ...VIDEOS_STAGE_6,
-  ...VIDEOS_STAGE_7,
-  ...VIDEOS_STAGE_8,
+  "tr-1-einheitskreis": { author: "MathemaTrick", id: "82WucXmm770" },
+  "tr-2-winkel-bis-360": { author: "Realschulmathe", id: "6atwwOBZriw" },
+  "tr-3-steigungswinkel": { author: "Koonys Schule", id: "7WY1NZfLZWo" },
+  "tr-4-sinusfunktion": { author: "Daniel Jung", id: "T8kNcfv8LvY" },
+  "tr-5-kosinus-tangens": { author: "Daniel Jung", id: "fF84HizLVrI" },
+  "dr-1-sinussatz": { author: "Daniel Jung", id: "jl3w0wGoWlY" },
+  "dr-2-kosinussatz": { author: "Daniel Jung", id: "PaF_ClPIc_A" },
+  "dr-3-flaecheninhalt": { author: "Lernen - Leicht gemacht", id: "ecyr76wmaLw" },
+  "dr-4-ebene-raum": { author: "YOUR MODERN SCHOOL", id: "F0xOygTxp7M" },
+  "dr-5-gleichungen": { author: "Lernen - Leicht gemacht", id: "Ytb0q7BrMCk" },
+  "vk-1-vektoren": { author: "MathemaTrick", id: "R4nJTT60zU8" },
+  "vk-2-skalarprodukt": { author: "Lernen - Leicht gemacht", id: "heHSqU2kXMY" },
+  "vk-3-abstand": { author: "Lernen - Leicht gemacht", id: "08E5-R6qbDg" },
+  "ab-1-verschiebung-streckung": { author: "Lernen - Leicht gemacht", id: "3ep4k3D0Dbs" },
+  "ab-2-achsenspiegelung": { author: "Lernen - Leicht gemacht", id: "kjV4_GLnDQw" },
+  "ab-3-drehung": { author: "Lernen - Leicht gemacht", id: "95N5jDrv6Tk" },
+  "ab-4-determinante": { author: "BLACK-SHEEP-TEACHING", id: "8EdjSmWZMNI" },
+  "ab-5-traegergraph": { author: "Lernen - Leicht gemacht", id: "mGZBMra2gDM" },
+  "el-1-exponentialfunktion": { author: "Daniel Jung", id: "mf4QfGCBHQQ" },
+  "el-2-wachstum": { author: "Lehrerschmidt", id: "affn4KyXXFk" },
+  "el-3-logarithmus": { author: "Lehrerschmidt", id: "f1tFVT0_Iz8" },
+  "el-4-logarithmensaetze": { author: "MathemaTrick", id: "XyeZjk7fh-c" },
+  "el-5-exponentialfunktion-allgemein": { author: "Daniel Jung", id: "kPgI2H0_N-U" },
+  "el-6-logarithmusfunktion": { author: "MathePur", id: "2FH8DXiWMxs" },
+  "ab-6-funktionsgraphen": { author: "Daniel Jung", id: "ZiR8V75xBlU" },
+  "qf-1-parabeln": { author: "Lehrerschmidt", id: "sYfZbyrGXMY" },
+  "qf-2-scheitelpunkt": { author: "Lehrerschmidt", id: "0DXjdwpJ3S0" },
+  "qf-3-bestimmungsstuecke": { author: "MathemaTrick", id: "0PtVRTIo-vc" },
+  "qf-4-extremwerte": { author: "Daniel Jung", id: "G-Y_z65qvnM" },
+  "qf-5-loesungsformel": { author: "Daniel Jung", id: "PD-wQ3nTh1E" },
+  "qf-6-schnittpunkte": { author: "Lehrerschmidt", id: "rzm0jBm0cM4" },
+  "dz-1-mehrstufig": { author: "Daniel Jung", id: "ZjEjYIqd8bo" },
+  "dz-2-pfadregeln": { author: "Daniel Jung", id: "gw0AaVLkRE0" },
+  "dz-3-anwendungen": { author: "Daniel Jung", id: "NryS4fyJ4sA" },
 };
