@@ -15,13 +15,16 @@ builds and the tests pass" is not the bar.
 
 ## Hard rules
 
-1. **Never set `approved` in `replaces-de-by.json` yourself.** Only Thomas
-   approves a mapping, explicitly. Record his words, the date and where he
-   gave the approval in `source`, as the existing packages do. Until then
-   `"approved": null` and `"source": null`; while the cell declares
-   `replaces` or `retired_items`, the catalog step of CI stays red on
-   purpose. A request such as "build the package" or "publish it" is no
-   approval of a history transfer.
+1. **Never approve a mapping yourself.** Only Thomas approves the card
+   mapping in `replaces-de-by.json`, explicitly. The catalog gate
+   (`scripts/mapping-approval.mjs`) reads only `approved`: an ISO date
+   `YYYY-MM-DD` publishes, `null` blocks. After his approval set `approved`
+   to its date and put his words and where he gave them into `source` (the
+   gate does not read `source`; it is the record for people). Until then
+   `"approved": null`, and while the cell declares `replaces` or
+   `retired_items` the catalog step of CI stays red on purpose. A request such
+   as "build the package" or "publish it" is no approval of a history
+   transfer.
 2. **Claim only what you checked, and show how.** Every claim in a PR
    description (test counts, "videos verified", "covers LB 1–5") names the
    command or check behind it. Never write "100 %".
@@ -46,88 +49,106 @@ builds and the tests pass" is not the bar.
 ## 1. Start from the curriculum
 
 - Source: `https://www.lehrplanplus.bayern.de/fachlehrplan/<schulart>/<jgs>/<fach>[/<wpfg>]`,
-  for the Realschule usually `wpfg1` (Zweig I) and `wpfg2-3` (Zweig II/III).
-  The site answers 403 to some networks and fetch tools; then use the Wayback
-  Machine: `https://archive.org/wayback/available?url=lehrplanplus.bayern.de/fachlehrplan/…`
+  for the Realschule usually `wpfg1` (Zweig I) and `wpfg2-3` (Zweig II/III);
+  some subjects have one Fachlehrplan for all Zweige. The site answers 403 to
+  some networks and fetch tools; then use the Wayback Machine:
+  `https://archive.org/wayback/available?url=lehrplanplus.bayern.de/fachlehrplan/…`
   names a snapshot, `curl -sL --compressed "https://web.archive.org/web/<timestamp>id_/<url>"`
   fetches it. Note the snapshot date.
 - Write down every Lernbereich with its hours and every Kompetenzerwartung
-  verbatim, per Zweig. Zweige differ in content, not only in depth: in
+  verbatim, per Zweig. Zweige can differ in content, not only in depth: in
   Mathematik 10, Zweig I has Abbildungen and Logarithmusfunktionen, Zweig
   II/III has Raumgeometrie and quadratische Funktionen.
 - Check the neighbouring grades: build on what was taught before (and say so,
   e.g. "Wiederholung aus M8"), leave out what comes later or belongs to other
   school types, and look at what existing packages already teach.
-- Map the competences to lessons in `<app>/coverage.json` (format of
-  `bwr-realschule-9/coverage.json`: `curriculum`, `checked`, and per row `lb`,
-  `competence`, `lessons`, `evidence`) and test that every competence has a
-  lesson and every lesson a competence or an entry in `optional_lessons`.
-  Content beyond the curriculum is marked as such and stays small.
-- Every lesson names its `tracks` and a `lehrplan` label such as
-  `M10 LB 1 (I) · M10 LB 1 (II/III): Trigonometrie`.
+- Map the competences to lessons in `<app>/coverage.json` and test the
+  mapping: every competence has a lesson, every lesson a competence or an
+  entry in `optional_lessons`. A new file uses the form of
+  `bwr-realschule-9/coverage.json` (`curriculum`, `checked`, and per row `lb`,
+  `competence`, `lessons`, `evidence`); a package with several Zweige adds
+  `track` to every row, because LB numbers differ between the Zweige. Existing
+  matrices keep their own schema and tests (Geographie `areas`, Biologie,
+  Algorithmen and Datennetze `competencies`). Content beyond the curriculum
+  is marked as such and stays small.
+- Where a package has Zweige, every lesson names its `tracks` and a
+  `lehrplan` label such as `M10 LB 1 (I) · M10 LB 1 (II/III): Trigonometrie`.
 
 ## 2. Build on the strongest existing package
 
-Take the app shell (index.html, main.ts, styles, storage, checker, lab
-engine) from the closest existing package and keep its documented model:
-don't strip comments, don't rename DOM ids the code looks up, replace every
-text that names the old grade or subject. Match the reference's depth, not
-only its file list; a lesson with one exercise and one trivial goal is a
-scaffold, not a lesson.
+Take the app shell (index.html, main.ts, styles, storage, checker, engine)
+from the closest existing package and keep its documented model: don't strip
+comments, don't rename DOM ids the code looks up, replace every text that
+names the old grade or subject. Match the reference's depth, not only its
+file list; a lesson with one exercise and one trivial goal is a scaffold, not
+a lesson.
 
 | Subject | Reference | Take from it |
 | --- | --- | --- |
-| Mathematik | `mathematik-realschule-9` | labs with draggable handles, exercise generators on two levels, the full test suite |
-| Physik, Chemie, Biologie | `physik-realschule-10`, `chemie-realschule-9`, `biologie-realschule-10` | models, both Zweige, migration validation |
-| Geschichte, Geographie | `geschichte-realschule-9`, `geographie-realschule-9` | source and map workshops, coverage matrix |
+| Mathematik | `mathematik-realschule-9` | HTML lesson shell, labs with draggable handles, exercise generators on two levels, the full test suite |
+| Physik, Chemie | `physik-realschule-10`, `chemie-realschule-9` | models, lessons per Zweig, migration validation |
+| Biologie | `biologie-realschule-10` | one shared learning path (no Zweige), migration validation |
+| Geschichte | `geschichte-realschule-9` | source workshop, migration validation |
+| Geographie | `geographie-realschule-9` | map workshop, coverage matrix (own schema) |
 | Wirtschaft | `bwr-realschule-9` | coverage.json, case workshops, migration validation |
-| Informatik | `sql`, `algorithmen`, `datennetze` | bilingual apps, local workshops |
+| Informatik | `sql`, `algorithmen`, `datennetze` | bilingual apps (DE/EN), local workshops |
+
+There are two lesson shells. The **HTML shell** (`mathematik-realschule-9`,
+`physik-realschule-9`) renders `explanationHtml`, a quiz with `options` and
+labs. The **JSON shell** (`physik-realschule-10`, `bwr-realschule-9`,
+`biologie-realschule-10`) escapes its `paragraphs`, so they hold plain text,
+never HTML, and shows the key rule as `takeaway`; its quiz is an `answer`
+with exactly two `wrong` answers. `chemie-realschule-9` keeps the rule in
+`rule` and asks its quick check with two options. Write lessons in the form of
+the shell you copied.
 
 Port the reference's test suite with the package: lesson metadata and pinned
 ids, the tests of the interactive parts and the exercise generators, the cell
-tests and the mapping tests. For Mathematik that means the suite of
-`mathematik-realschule-9`: finite readouts on the whole slider grid, a
-witness per lab goal, no goal reached at the start, handles that follow the
-pointer, and 80 generated tasks per level and lesson that accept the rounded
-answer typed with decimal comma or point.
+tests and the mapping tests. For Mathematik that is the suite of
+`mathematik-realschule-9`: finite readouts on a sampled slider grid (9, 6, 4
+or 3 points per slider, 400 seeded settings from seven sliders on), a witness
+per lab goal, no goal reached at the start, handles that follow the pointer,
+and 80 generated tasks per level and lesson that accept the rounded answer
+typed with decimal comma or point.
 
 ## 3. Lesson standard
 
 Every lesson has
 
 - an explanation that is correct and complete for its competence, in school
-  language, with a worked example (`<div class="example">`) and the key rule
-  (`<div class="merke">`);
+  language, with a worked example and the key rule (HTML shell:
+  `<div class="example">` and `<div class="merke">`; JSON shell: plain
+  `paragraphs` and the `takeaway`);
 - the formulas or key terms for the Formelsammlung, where the subject has
   them;
-- a quick check with three or four plausible options and an explanation of
-  the right one;
+- a quick check with plausible wrong answers and an explanation of the right
+  one, in the form of the shell (Mathematik: at least three `options`);
 - an interactive part (lab, model, workshop) that shows what the lesson is
-  about and gives learners goals they can reach, none of them reached at the
-  start, each proven reachable by a test (Mathematik: **exactly three goals**
-  per lab, `requiredCorrect: 3`);
+  about and gives learners goals they can reach, none reached at the start,
+  each proven reachable by a test (Mathematik: exactly three goals per lab);
 - tasks that make learners use the knowledge. Where tasks are generated, a
   lesson has at least two generators: **Level 1** is guided (values and a
   hint), **Level 2** is a transfer task in the style of the Abschlussprüfung,
-  and the level must change the task. Values are plausible (triangles exist,
-  probabilities lie in [0; 1]), rounding never flips a yes/no answer, and
-  typical mistakes get a targeted hint;
-- teacher videos only once they are verified (section 4).
+  and the level must change the task. A lesson is complete after
+  `requiredCorrect` right tasks per level (Mathematik: 3), separately from its
+  lab goals. Values are plausible (triangles exist, probabilities lie in
+  [0; 1]), rounding never flips a yes/no answer, and typical mistakes get a
+  targeted hint.
 
-Each stage, one per Lernbereich, gets its own accent colour instead of one
-palette for the whole package.
-
-Learner text is German: "du", the terms of the LehrplanPLUS, the decimal
-comma (`fmt()`), the real minus sign "−" (U+2212), "·" for multiplication,
-a space before units. No hype, no filler.
+German learner text uses "du", the terms of the LehrplanPLUS, the decimal
+comma (`fmt()`), the real minus sign "−" (U+2212), "·" for multiplication and
+a space before units. Bilingual apps keep their other language versions; each
+follows the conventions of its language, and their tests
+(`algorithmen/tests/i18n.test.ts`, `datennetze/tests/i18n.test.ts`) stay
+green. No hype, no filler.
 
 ## 4. Teacher videos
 
-Authors of a new package add no teacher videos. A separate agent adds and
-checks them afterwards, as plain links (the `teacherVideo` of
-`mathematik-realschule-9` is the pattern). Whoever adds a video makes sure it
-really teaches the lesson's topic at the learners' level (Mathe by Daniel
-Jung, Lehrerschmidt, MathemaTrick, simpleclub, …) and checks each candidate:
+Videos are plain links to German explainers (`teacherVideo` in
+`mathematik-realschule-9`). Whether the author adds them or a separate step
+does is Thomas's call per package. Whoever adds a video makes sure it really
+teaches the lesson's topic at the learners' level (Mathe by Daniel Jung,
+Lehrerschmidt, MathemaTrick, simpleclub, …) and checks each candidate:
 
 ```bash
 curl -s "https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=<id>&format=json"
@@ -142,17 +163,22 @@ worth something only after this check. To find candidates:
 ## 5. The ZAM cell
 
 - One atom per lesson (the registry test compares `lessons` in
-  `academy.json` with the atoms), two to four cards per atom.
-- Atom and item ids are real ULIDs, generated once and then kept; never
-  hand-made patterns or renumbering (zam-core: the id "is the one string
-  that must not be improvised"). Older cells such as
+  `academy.json` with the atoms, UML excepted), usually two to four cards per
+  atom; more where the lesson's competences or a B row need them
+  (`mathematik-realschule-9` has atoms with up to seven).
+- Atom and item ids of a new cell are real ULIDs, generated once and then
+  kept; no hand-made patterns, no renumbering (zam-core: the id "is the one
+  string that must not be improvised"). Published cells such as
   `mathematik-realschule-9` keep the ids they were published with.
 - Cards ask lasting knowledge: a short question and a short, exact answer.
-  Tier 1 has a binary `fast_check` with `correct_index: 0` and exactly two
-  curated `choice_distractors`, each with a `reason` that names the
-  misconception. Tier 2 has a `sample_solution`. Formulas as
-  `question_segments` / `concept_segments` with TeX and German `speech`. "−"
-  in every text.
+  Tier 1 has a binary `fast_check` (`options` of length 2, `correct_index: 0`),
+  tier 2 a `sample_solution`. Curated `choice_distractors` are optional; if a
+  card has them, it has exactly two, each with a `reason` that names the
+  misconception, and neither may differ from the answer only by a sign or an
+  operator: zam-core's `checkCandidate` drops those as `equals_answer`, so
+  such variants belong in `fast_check` only. The Mathematik 9 suite expects
+  distractors on every card, tier 2 included. Formulas as
+  `question_segments` / `concept_segments` with TeX and German `speech`.
 - `prerequisites` link the atoms a card builds on; `curricula` bind each atom
   to its stage and to the Lernbereich of every Zweig it serves.
 - Every card cites its lesson: `https://academy.zam-os.org/<app>/#lesson=<id>`.
@@ -173,24 +199,25 @@ Learners have review histories on them.
   **C** split, corrected or uncertain: no `replaces`; retire it with
   `retired_items` if it should leave active reviews.
   Never spread one history over several cards.
-- Keep byte-exact snapshots of the old cells in `<app>/tests/fixtures/`, list
-  them with their SHA-256 in `sources` together with `source_repository` and
-  `source_commit`, and add `<app>/scripts/validate-migration.mjs` with its CI
-  step (as in `bwr-realschule-9`): histories move unchanged, old ids leave
-  active reviews, repeated installs change nothing, and a learner holding
-  cards on both ids makes the install refuse an automatic merge.
-- Until Thomas approves, `approved` stays `null` (hard rule 1). A new cell
-  without `replaces` and `retired_items` needs no approval and may ship
-  first; the mapping then stays a proposal (`"status": "proposal-only"`).
-  Ship the approved version that adds the `replaces` before ZAM bundles the
-  cell, and keep that gap short: a learner who meanwhile holds cards on both
-  an old id and its successor makes zam-core refuse the whole install. When
-  the approval comes before the first publication, ship the `replaces` right
-  away.
-- The ZAM pull request that bundles the cell follows the Academy PR as a
-  draft, because `academy:sync` reads the published bytes. ZAM's Realschule
+- Keep byte-exact snapshots of the old cells in `<app>/tests/fixtures/` (the
+  repo stores LF; hash the LF bytes), list them with their SHA-256 in
+  `sources` together with `source_repository` and `source_commit`, and add
+  `<app>/scripts/validate-migration.mjs` with its CI step (as in
+  `bwr-realschule-9`): histories move unchanged, old ids leave active
+  reviews, repeated installs change nothing, and a learner holding cards on
+  both ids makes the install refuse an automatic merge.
+- When the `replaces` ship is Thomas's call per package. Either the approved
+  mapping ships with the cell's first publication, or the cell ships first
+  without `replaces` and `retired_items` (then it needs no approval, and the
+  mapping stays a proposal) and the approved version follows. In the second
+  case keep the gap short and close it before ZAM bundles the cell: a learner
+  who meanwhile holds cards on both an old id and its successor makes zam-core
+  refuse the whole install of the later version.
+- ZAM bundles a cell with `npm run academy:sync` in zam-os/zam, which reads
+  the published `https://academy.zam-os.org/catalog.json`; the ZAM pull
+  request therefore follows the published Academy cell. ZAM's Realschule
   groups are I, II, IIIa and IIIb; a cell track `II_III` reaches II, IIIa and
-  IIIb, a track `I` only Zweig I.
+  IIIb.
 
 ## 7. Integration
 
@@ -210,6 +237,9 @@ In the package:
 ```bash
 npm ci && npx tsc --noEmit && npm test && npm run build && npm run package:zip
 ```
+
+`npm run build` runs `tsc` over the tests too, so tests must not import
+`node:*` modules unless the package has `@types/node`.
 
 At the repo root, with zam-core installed at the version CI pins
 (`ZAM_CORE_VERSION` in `.github/workflows/ci.yml`) into a scratch folder
@@ -236,5 +266,5 @@ such as the Formelsammlung, in light and dark theme.
 The PR description states what the package covers per Zweig, the evidence
 above (commands with their results; for added videos the table lesson → id →
 real title), open gaps, and, when cards are replaced, the A/B/C summary
-Thomas is asked to approve. Before the
-merge, a second agent reviews the PR against this file.
+Thomas is asked to approve. Before the merge, a second agent reviews the PR
+against this file.
