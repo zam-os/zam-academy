@@ -1,4 +1,5 @@
 import { describe, expect, it } from "vitest";
+import academy from "../../academy.json";
 import cellJson from "../cell.json";
 import { evaluateDiagramAgainstCriteria } from "../src/checker/graph-evaluator";
 import {
@@ -50,6 +51,9 @@ describe("6-Stage, 24-Lesson Curriculum, Varied Quiz Answers & Bilingual Support
     const enLessons = getAllLessons("en");
     expect(deLessons).toHaveLength(24);
     expect(enLessons).toHaveLength(24);
+    expect(academy.pakete.find((p) => p.app === "uml")?.lessons).toBe(
+      deLessons.length,
+    );
 
     const deIndices = new Set<number>();
     const enIndices = new Set<number>();

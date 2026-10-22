@@ -31,20 +31,37 @@ test("registry references known subjects and schools and unique ids", () => {
   }
 });
 
-test("lesson and card counts match the cell", () => {
+test("card counts match the cell", () => {
   for (const p of pakete) {
     const tile = JSON.parse(
       readFileSync(join(root, p.app, "cell.json"), "utf8"),
     );
     const cards = tile.atoms.flatMap((a) => a.practice_items ?? []).length;
-    assert.equal(p.lessons, tile.atoms.length, `${p.id}: lessons`);
     assert.equal(p.cards, cards, `${p.id}: cards`);
   }
 });
 
-test("every app links back to the main page", () => {
+test("lesson counts match lesson-level atoms", () => {
+  // UML groups several lessons per atom; its curriculum test checks this count.
+  for (const p of pakete.filter((p) => p.app !== "uml")) {
+    const tile = JSON.parse(
+      readFileSync(join(root, p.app, "cell.json"), "utf8"),
+    );
+    assert.equal(p.lessons, tile.atoms.length, `${p.id}: lessons`);
+  }
+});
+
+test("every app links back to the academy online and in an offline file", () => {
   for (const p of pakete) {
     const html = readFileSync(join(root, p.app, "index.html"), "utf8");
-    assert.match(html, /href="\/"[^>]*zam-home-link/, p.app);
+    const link = html.match(/<a\b[^>]*\bclass="zam-home-link"[^>]*>/)?.[0];
+    const href = link?.match(/\bhref="([^"]+)"/)?.[1];
+    assert.ok(href, `${p.app}: missing academy link`);
+    for (const base of [
+      `https://academy.zam-os.org/${p.app}/`,
+      `file:///offline/${p.app}.html`,
+    ]) {
+      assert.equal(new URL(href, base).href, "https://academy.zam-os.org/", p.app);
+    }
   }
 });

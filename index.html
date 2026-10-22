@@ -775,6 +775,11 @@
       .outline a {
         color: var(--violet-bright);
       }
+      .outline [aria-current="location"] {
+        outline: 2px solid var(--cyan);
+        outline-offset: 3px;
+        border-radius: 6px;
+      }
       .outline .planned {
         color: var(--off);
       }
@@ -1411,7 +1416,9 @@
 
       /* ---------- navigation ---------- */
       const go = (path, lens = state.lens) => {
-        location.hash = "#/" + [lens, ...path].join("/");
+        const hash = "#/" + [lens, ...path].join("/");
+        if (location.hash === hash) applyHash(true);
+        else location.hash = hash;
       };
       function activate(n, ev, kb) {
         if (!enabled(n)) return;
@@ -1429,7 +1436,7 @@
         }
         go(n.path);
       }
-      function applyHash() {
+      function applyHash(reveal = false) {
         const parts = location.hash.replace(/^#\/?/, "").split("/").filter(Boolean);
         const known = !!state.trees[parts[0]];
         const lens = known ? parts[0] : state.lens;
@@ -1447,6 +1454,7 @@
         state.focus = n;
         render(prev && prevLens === lens ? Math.sign(n.path.length - prev.path.length) : 0);
         renderList();
+        if (reveal && state.mode === "list") revealListTarget();
       }
       function up() {
         if (state.sel) return go(state.focus.path);
@@ -1576,7 +1584,7 @@
                 state.klasse = g;
                 store.set("klasse", g);
                 go([`k${g}`], "schule");
-                $("atlas").scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth" });
+                if (state.mode === "map") $("atlas").scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth" });
               },
             }, `Klasse ${g}`),
           );
@@ -1591,18 +1599,25 @@
       function renderList() {
         const o = $("outline");
         o.replaceChildren();
+        const current = state.sel ?? state.focus;
+        const currentAttrs = (n) => n === current ? { "aria-current": "location", ...(n.kind === "fach" ? { tabindex: -1 } : {}) } : {};
         for (const isl of visible(state.trees[state.lens])) {
-          const d = h("details", { class: enabled(isl) ? "" : "off", open: isl.grade === state.klasse || null });
-          d.append(h("summary", {}, isl.label, h("small", {}, enabled(isl) ? `${isl.live}/${isl.total}` : "noch nicht verfügbar")));
+          const d = h("details", { class: enabled(isl) ? "" : "off", open: isl.id === current.path[0] || isl.grade === state.klasse || null });
+          d.append(h("summary", currentAttrs(isl), isl.label, h("small", {}, enabled(isl) ? `${isl.live}/${isl.total}` : "noch nicht verfügbar")));
           const ul = h("ul");
           for (const f of visible(isl)) {
-            ul.append(h("li", { class: `fach${enabled(f) ? "" : " off"}`, style: `--h:${f.hue}` }, f.label, h("small", { style: "font-weight:400" }, `${f.live}/${f.total}`)));
+            ul.append(h("li", { class: `fach${enabled(f) ? "" : " off"}`, style: `--h:${f.hue}`, ...currentAttrs(f) }, f.label, h("small", { style: "font-weight:400" }, `${f.live}/${f.total}`)));
             for (const k of visible(f))
-              ul.append(h("li", { class: k.planned ? "planned" : "" }, k.planned ? `${k.label} (noch nicht verfügbar)` : h("a", { href: `${k.pkg.app}/` }, k.label)));
+              ul.append(h("li", { class: k.planned ? "planned" : "" }, k.planned ? `${k.label} (noch nicht verfügbar)` : h("a", { href: `${k.pkg.app}/`, ...currentAttrs(k) }, k.label)));
           }
           d.append(ul);
           o.append(d);
         }
+      }
+      function revealListTarget() {
+        const target = $("outline").querySelector('[aria-current="location"]');
+        target?.focus({ preventScroll: true });
+        target?.scrollIntoView({ block: "nearest", behavior: reduceMotion ? "auto" : "smooth" });
       }
       function setMode(m) {
         state.mode = m;
@@ -1665,7 +1680,7 @@
             const label = `${f.name} Klasse ${g}, ${sch.name}: ${p ? "verfügbar" : "noch nicht verfügbar"}`;
             tr.append(
               h("td", {}, p
-                ? h("button", { class: "cell", type: "button", style: `--h:${f.hue}`, title: label, "aria-label": label, onclick: () => { go([`k${g}`, f.id, p.id], "schule"); $("atlas").scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth" }); } }, "●")
+                ? h("button", { class: "cell", type: "button", style: `--h:${f.hue}`, title: label, "aria-label": label, onclick: () => { go([`k${g}`, f.id, p.id], "schule"); if (state.mode === "map") $("atlas").scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth" }); } }, "●")
                 : h("span", { class: "cell", role: "img", "aria-label": label, title: "noch nicht verfügbar" }, "")),
             );
           }
@@ -1702,7 +1717,7 @@
           if (!$("results").hidden) return ($("results").hidden = true);
           up();
         });
-        addEventListener("hashchange", applyHash);
+        addEventListener("hashchange", () => applyHash(true));
         applyHash();
       }
       boot();

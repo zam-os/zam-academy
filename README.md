@@ -58,7 +58,9 @@ The [IT migration inventory](docs/it-bestandsabgleich.md) documents the split of
 
 ## The atlas landing page
 
-`index.html` renders a zoomable knowledge atlas (Schulsicht and Weltwissen) from `academy.json`. Fields without a package are shown grey and unselectable. To register a new package, add an entry to `pakete` in `academy.json` (app folder, Fach, grade, school, lesson and card counts); `node --test scripts/academy-registry.test.mjs` keeps it in sync with the app cells. School types and subject start grades in the registry are a planning scaffold and can be edited freely.
+`index.html` renders a zoomable knowledge atlas (Schulsicht and Weltwissen) from `academy.json`. Fields without a package are shown grey and unselectable. Search and coverage navigation also expand and focus the destination in the list view. App links return to `https://academy.zam-os.org/`, including when an app is opened from an offline zip.
+
+To register a new package, add an entry to `pakete` in `academy.json` (app folder, Fach, grade, school, lesson and card counts); `node --test scripts/academy-registry.test.mjs` keeps it in sync with the app cells. UML groups several lessons per atom, so its curriculum test checks the registry's lesson count against the app's actual lessons. School types and subject start grades in the registry are a planning scaffold and can be edited freely.
 
 ## Privacy
 
