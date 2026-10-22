@@ -174,13 +174,20 @@ describe("takeover of the old partial cell", () => {
     }
     expect(mapping.rows.filter((r) => r.category === "A")).toHaveLength(3);
   });
-  it("changes no history until the mapping is approved", () => {
-    if (mapping.approved === null) {
-      expect(cell).not.toHaveProperty("retired_items");
-      for (const item of ITEMS) expect(item).not.toHaveProperty("replaces");
-      return;
-    }
+  it("declares exactly the documented replacements and retirements", () => {
     for (const row of mapping.rows)
       expect(successors(row.de_by_id).map((i) => i.slug)).toEqual(row.category === "A" ? [row.academy_slug] : []);
+    const retired = cell.retired_items ?? [];
+    expect(retired.map((r) => r.id)).toEqual(mapping.rows.filter((r) => r.category === "C").map((r) => r.de_by_id));
+    for (const r of retired) expect(r.reason.length).toBeGreaterThan(40);
+    expect(cell.version).toBe("2026.10.2");
+  });
+  it("is published only on Thomas's approval: a date with his words, never a flag", () => {
+    const approved = mapping.approved as string | null;
+    expect(approved === null || /^\d{4}-\d{2}-\d{2}$/.test(approved)).toBe(true);
+    if (approved !== null) {
+      expect(String(mapping.source)).toContain("Thomas");
+      expect(mapping.authorization).toBeTruthy();
+    }
   });
 });

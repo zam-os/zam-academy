@@ -1,12 +1,11 @@
 {
   "schema": 1,
-  "approved": null,
-  "status": "proposal-only",
-  "note": "Vorschlag, nicht freigegeben. Solange \"approved\" null ist, deklariert die Zelle weder replaces noch retired_items, und die alte Zelle bleibt in ZAM unverändert aktiv.",
-  "source": null,
+  "approved": "2026-10-22",
+  "note": "Freigegeben. Die Zelle (Version 2026.10.2) deklariert genau die drei replaces der A-Zeilen und die fünf retired_items der C-Zeilen. Die Zuordnung steht unverändert zur Freigabe vom 22. Oktober 2026.",
+  "source": "Ausdrückliche Freigabe von Thomas im Claude-Code-Chat am 22. Oktober 2026: „Zuordnung freigegeben. Retirement passt. Kann gemergt werden, danach ZAM PR publishen.“",
   "source_repository": "zam-os/zam",
   "source_commit": "bbdcc7695b288391362abcae95070f0fa6a9f61c",
-  "authorization": null,
+  "authorization": "Thomas hat am 22. Oktober 2026 alle acht Zuordnungen (3 A / 5 C) mit den fünf retired_items J02, J04, J06, J07 und J08, den Merge dieses PR und die anschließende Veröffentlichung des ZAM-PR ausdrücklich freigegeben. Die genau benannten replaces und retired_items dürfen veröffentlicht und synchronisiert werden; persönliche Karten und Reviewhistorien bleiben erhalten.",
   "policy": "A: sicher gleicher Einzelabruf, genau ein Nachfolger. C: geteilter, korrigierter oder nicht lehrplankonformer Gesamtabruf; kein Lernstandsübertrag. Karten und Reviewhistorien bleiben erhalten. Nur temporäre Bibliotheken für die Prüfung verwenden.",
   "sources": [
     {
