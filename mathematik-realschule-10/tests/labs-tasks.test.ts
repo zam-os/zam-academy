@@ -197,9 +197,13 @@ describe("Aufgaben", () => {
             expect(checkTask(task, reversed).status, `${where} reversed`).toBe("correct");
             for (const index of swappable) expect(task.fields[index].kind, where).toBe("number");
           }
-          // A value far off is wrong, and the hint says something. (3a + 7 equals a
-          // itself at a = −3,5, so that one answer gets another far value.)
-          const farOff = (answer: number) => (Math.abs(answer * 2 + 7) < 1 ? answer + 50 : answer * 3 + 7);
+          // A value far off is wrong, and the hint says something. 3a + 7 is
+          // rounded (at a = −7/3 it would print as 8.9e−16) and replaced where
+          // it lands next to a (a = −3,5).
+          const farOff = (answer: number) => {
+            const far = Math.round((answer * 3 + 7) * 1e6) / 1e6;
+            return Math.abs(far - answer) < 1 ? answer + 50 : far;
+          };
           const wrong = task.fields.map((field) =>
             field.kind === "choice" ? String((field.correctIndex + 1) % field.options.length) : String(farOff(field.answer)),
           );

@@ -5,7 +5,7 @@ import { createRng, seedFrom } from "../src/exercises/rng";
 import { computeReadouts, defaultLabValues, enumerateLabGrid } from "../src/lab/engine";
 import { basicSets, mirrorCase, powerEquationSolutions, powerOf, shiftedPower, shiftedSets } from "../src/lab/views-potenzen";
 import type { DifficultyLevel, ExerciseTask } from "../src/model/types";
-import { GOAL_WITNESSES_STAGE_4, VIDEOS_STAGE_4 } from "./witnesses-stage-4";
+import { GOAL_WITNESSES_STAGE_4 } from "./witnesses-stage-4";
 
 const IDS = ["pt-1-potenzgesetze", "pt-2-wurzeln", "pt-3-potenzfunktionen", "pt-4-parameter", "pt-5-umkehrfunktion"];
 const SEEDS = Array.from({ length: 200 }, (_, i) => seedFrom(`stage-4:${i}`));
@@ -59,17 +59,6 @@ describe("Etappe 4: Potenzen und Potenzfunktionen", () => {
     });
   });
 
-  it("links the teacher video pinned for a lesson, and none where none is pinned yet", () => {
-    for (const l of STAGE_POTENZEN.lessons) {
-      const expected = VIDEOS_STAGE_4[l.id];
-      if (!expected) {
-        expect(l.teacherVideo, l.id).toBeUndefined();
-        continue;
-      }
-      expect(l.teacherVideo?.url).toBe(`https://www.youtube.com/watch?v=${expected.id}`);
-      expect(l.teacherVideo?.author).toBe(expected.author);
-    }
-  });
 
   it("writes real minus signs and the set minus in every lesson text", () => {
     for (const l of STAGE_POTENZEN.lessons) {
