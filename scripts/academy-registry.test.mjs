@@ -41,3 +41,10 @@ test("lesson and card counts match the cell", () => {
     assert.equal(p.cards, cards, `${p.id}: cards`);
   }
 });
+
+test("every app links back to the main page", () => {
+  for (const p of pakete) {
+    const html = readFileSync(join(root, p.app, "index.html"), "utf8");
+    assert.match(html, /href="\/"[^>]*zam-home-link/, p.app);
+  }
+});
