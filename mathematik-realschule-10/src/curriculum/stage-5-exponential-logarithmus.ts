@@ -1695,9 +1695,11 @@ const eigenschaftenLog: ExerciseGenerator = {
       const k = rng.pick([1, 2, -1, -2, 0.5, 3]);
       const b = -rng.int(1, 4);
       const c = rng.int(-4, 4);
-      const zero = b + a ** (-c / k);
+      // the zero keeps a visible distance from the asymptote and stays in a sensible range
+      const gap = a ** (-c / k);
+      const zero = b + gap;
       const yInt = k * logBase(a, -b) + c;
-      if (zero > 1000 || nearTrap(zero, yInt)) continue;
+      if (gap < 0.05 || gap > 1000 || nearTrap(zero, yInt)) continue;
       return {
         prompt: `Gegeben ist die Funktion f mit y = ${logHtml(k, a, b, c)} (G = ℝ × ℝ). Berechne die Koordinaten der Schnittpunkte ihres Graphen mit den beiden Koordinatenachsen. Runde auf zwei Nachkommastellen.`,
         given: [`f: y = ${logHtml(k, a, b, c)}`],
