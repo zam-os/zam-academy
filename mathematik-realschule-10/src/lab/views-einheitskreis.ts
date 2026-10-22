@@ -165,9 +165,6 @@ function unitCircle(v: LabValues): string {
   out += line(tx, 16, tx, H - 12, "lab-dashed");
   out += text(tx + 5, H - 16, "x = 1", "lab-text-small");
   out += circleFrame(cx, cy, r);
-  for (const [label, qx, qy] of [["I", 1, 1], ["II", -1, 1], ["III", -1, -1], ["IV", 1, -1]] as const) {
-    out += text(cx + qx * 0.86 * r, cy - qy * 0.86 * r + 4, label, "lab-text-small", "middle");
-  }
   const leaning = Math.abs(s) > TINY && Math.abs(c) > TINY;
   if (leaning) out += polygon([O, F, P], "lab-fill-c");
   if (Math.abs(c) > TINY) out += line(O.x, O.y, F.x, F.y, "lab-side-b");
@@ -180,7 +177,10 @@ function unitCircle(v: LabValues): string {
     out += text(L.x, L.y + 4, "α", "lab-text", "middle");
   }
   if (Math.abs(c) > TINY) out += text((O.x + F.x) / 2, cy + (s >= 0 ? 15 : -7), "cos α", "lab-text-small lab-text-b", "middle");
-  if (Math.abs(s) > TINY) out += text(F.x + (c >= 0 ? 6 : -6), (F.y + P.y) / 2 + 4, "sin α", "lab-text-small lab-text-a", c >= 0 ? "start" : "end");
+  // Outside the triangle, unless the label would run into the tangent x = 1.
+  const outside = c >= 0 ? F.x + 40 < tx : true;
+  const toRight = (c >= 0) === outside;
+  if (Math.abs(s) > TINY) out += text(F.x + (toRight ? 6 : -6), (F.y + P.y) / 2 + 4, "sin α", "lab-text-small lab-text-a", toRight ? "start" : "end");
   const PL = polar(cx, cy, r + 15, a);
   out += text(PL.x, PL.y + 4, "P", "lab-text", "middle");
 
@@ -204,8 +204,8 @@ function unitCircle(v: LabValues): string {
       out += text(tx + 9, t > 0 ? top + 10 : bottom, "T außerhalb", "lab-text-small");
     }
   } else {
-    out += text(tx + 8, cy - 22, "OP ∥ Tangente:", "lab-text-small");
-    out += text(tx + 8, cy - 8, "kein Punkt T", "lab-text-small");
+    out += text(tx + 8, cy + 30, "OP ∥ Tangente:", "lab-text-small");
+    out += text(tx + 8, cy + 44, "kein Punkt T", "lab-text-small");
   }
   const s2 = Number((s * s).toFixed(3));
   out += infoBox(336, 32, [
@@ -255,7 +255,7 @@ function supplement(v: LabValues): string {
     const qx = q === 0 || q === 3 ? 1 : -1;
     const qy = q < 2 ? 1 : -1;
     const positive = signs[fn] > 0;
-    out += text(cx + qx * 0.9 * r, cy - qy * 0.92 * r + 4, `${name} ${positive ? ">" : "<"} 0`, `lab-text-small ${positive ? "lab-text-ok" : "lab-text-bad"}`, "middle");
+    out += text(cx + qx * 0.72 * r, cy - qy * 1.1 * r + (qy > 0 ? 0 : 8), `${name} ${positive ? ">" : "<"} 0`, `lab-text-small ${positive ? "lab-text-ok" : "lab-text-bad"}`, "middle");
   });
 
   const value = trig(fn, a);
@@ -291,7 +291,7 @@ function supplement(v: LabValues): string {
   }
   if (calc !== null) {
     const T = polar(cx, cy, r, calc);
-    const L = polar(cx, cy, r - 24, calc);
+    const L = polar(cx, cy, r - 22, calc - 12);
     out += circle(T.x, T.y, 12, "lab-target");
     out += text(L.x, L.y + 4, "TR", "lab-text-small lab-text-ok", "middle");
   }
@@ -347,8 +347,10 @@ function inclination(plot: Plot, sx: number, sy: number, a: number, radius: numb
 /** A handle on the line, `dist` units from S, on the side that stays in the plot. */
 function rotationPoint(plot: Plot, sx: number, sy: number, a: number, dist: number): Pt {
   const fwd = { x: sx + dist * cosD(a), y: sy + dist * sinD(a) };
-  const inside = fwd.x > plot.xmin + 0.3 && fwd.x < plot.xmax - 0.3 && fwd.y > plot.ymin + 0.3 && fwd.y < plot.ymax - 0.3;
-  const p = inside ? fwd : { x: sx - dist * cosD(a), y: sy - dist * sinD(a) };
+  const back = { x: sx - dist * cosD(a), y: sy - dist * sinD(a) };
+  const inside = (q: { x: number; y: number }) => q.x > plot.xmin + 0.3 && q.x < plot.xmax - 0.3 && q.y > plot.ymin + 0.3 && q.y < plot.ymax - 0.3;
+  const underInfo = (q: { x: number; y: number }) => q.x < 3.2 && q.y > 2.2;
+  const p = inside(fwd) && (!underInfo(fwd) || !inside(back)) ? fwd : back;
   return plot.P(p.x, p.y);
 }
 
@@ -587,7 +589,7 @@ function cosTan(v: LabValues): string {
   }
   const PL = polar(cx, cy, r + 14, a);
   out += text(PL.x, PL.y + 4, "P", "lab-text", "middle");
-  out += infoBox(24, 30, info);
+  out += infoBox(24, view === 1 ? 252 : 30, info);
   out += handle("P", P.x, P.y, "Punkt P auf dem Einheitskreis");
   if (Q) out += handle("Q", Q.x, Q.y, "Punkt auf der Kurve", "lab-handle lab-handle-a");
   out += `</svg>`;
@@ -635,9 +637,10 @@ function addition(v: LabValues): string {
     const L = polar(cx, cy, 50, a + b / 2);
     out += text(L.x, L.y + 4, "β", "lab-text-small", "middle");
   }
-  if (Math.abs(cb) > 0.3) {
+  if (Math.abs(cb) > 0.3 && Math.abs(b) >= 25) {
     const M = polar(cx, cy, (r * cb) / 2, a);
-    out += text(M.x - 8 * sa, M.y - 8 * ca + 4, "cos β", "lab-text-small", "middle");
+    const side = b >= 0 ? 1 : -1;
+    out += text(M.x + side * 14 * sa, M.y + side * 14 * ca + 4, "cos β", "lab-text-small", "middle");
   }
 
   // The bars: blue + orange is the theorem, purple the tempting sum of single values.
@@ -656,9 +659,8 @@ function addition(v: LabValues): string {
   out += line(x1 - 18, Yb(0), x2 + w + 12, Yb(0), "lab-axis");
   out += line(x1 - 5, Yb(total), x1 + w + 5, Yb(total), "lab-ink");
   out += line(x2 - 5, Yb(wrong), x2 + w + 5, Yb(wrong), "lab-ink lab-bad-stroke");
-  const labelY = (top: number, bottom: number, value: number) => (value >= 0 ? Yb(top) - 6 : Yb(bottom) + 14);
-  out += text(x1 + w / 2, labelY(Math.max(0, p1, total), Math.min(0, p1, total), total), fmt(total, 3), "lab-text", "middle");
-  out += text(x2 + w / 2, labelY(Math.max(0, w1, wrong), Math.min(0, w1, wrong), wrong), fmt(wrong, 3), "lab-text lab-text-bad", "middle");
+  out += text(x1 + w + 8, Yb(total) + 4, fmt(total, 3), "lab-text");
+  out += text(x2 + w + 8, Yb(wrong) + 4, fmt(wrong, 3), "lab-text lab-text-bad");
   if (wrong > 1 + 1e-9) out += text(x2 + w / 2, Yb(wrong) - 22, "> 1: unmöglich!", "lab-text-small lab-text-bad", "middle");
   out += text(x1 + w / 2, 328, cosMode ? "cos(α + β)" : "sin(α + β)", "lab-text-small", "middle");
   out += text(x2 + w / 2, 328, cosMode ? "cos α + cos β" : "sin α + sin β", "lab-text-small lab-text-bad", "middle");
