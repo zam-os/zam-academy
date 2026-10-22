@@ -1,0 +1,3968 @@
+{
+  "$schema": "https://zam.app/schemas/v1/kvt-tile.json",
+  "tile_id": "zam-academy:mathematik-realschule-8",
+  "version": "2026.10.1",
+  "title": "Mathematik 8 Realschule (ZAM Academy)",
+  "description": "Dreiecke und Vierecke, Drehung, Raumgeometrie, Terme und Gleichungen, Bruchgleichungen, Funktionen sowie Daten und Zufall. Getrennte Bindungen für Zweig I und II/III nach LehrplanPLUS Bayern. Jede Karte führt zu ihrer Lektion mit Labor und Aufgaben.",
+  "publisher": "ZAM Academy",
+  "sources": [
+    {
+      "uri": "https://www.lehrplanplus.bayern.de/fachlehrplan/realschule/8/mathematik/wpfg1",
+      "checked": "2026-10-22",
+      "label": "LehrplanPLUS Mathematik 8 Realschule · I"
+    },
+    {
+      "uri": "https://www.lehrplanplus.bayern.de/fachlehrplan/realschule/8/mathematik/wpfg2-3",
+      "checked": "2026-10-22",
+      "label": "LehrplanPLUS Mathematik 8 Realschule · II/III"
+    }
+  ],
+  "atoms": [
+    {
+      "id": "01M5HEGB5TYWR5RGQHRT99TQEH",
+      "atom_uri": "urn:zam:atom:01M5HEGB5TYWR5RGQHRT99TQEH",
+      "namespace": "zam-academy-mathematik-realschule-8",
+      "slug": "m8-dv-1-dreiecksungleichung",
+      "title": "Wann entsteht ein Dreieck?",
+      "domain": "mathematik/geometrie",
+      "reduction": "axiomatic",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=dv-1-dreiecksungleichung",
+      "prerequisites": [],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "mathematik-realschule-8",
+          "topic_code": "dreiecke-vierecke",
+          "topic_title": "Dreiecke und Vierecke"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "realschule",
+          "grade": 8,
+          "subject": "mathematik",
+          "track": "II_III",
+          "topic_code": "lb1",
+          "topic_title": "Dreiecke und Vierecke"
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M5HEGB5V7ARS4EADCB0YAYPY",
+          "slug": "m8-dreieck-existenz",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=dv-1-dreiecksungleichung",
+          "question": "Welche Bedingung genügt bei drei positiven Seitenlängen nach dem Sortieren für die Existenz eines echten Dreiecks?",
+          "concept": "Die längste Seite ist kürzer als die Summe der beiden anderen.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Die längste Seite ist kürzer als die Summe der beiden anderen.",
+              "Die längste Seite ist gleich der Summe der beiden anderen."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M5HEGB5VPVRNN9JDMGS89R1H",
+          "slug": "m8-dreieck-grenzfall",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=dv-1-dreiecksungleichung",
+          "question": "Welche Figur entsteht, wenn die längste Seite genau die Summe der beiden anderen ist?",
+          "concept": "Eine gerade Strecke, kein echtes Dreieck.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Ein rechtwinkliges Dreieck.",
+              "Eine gerade Strecke, kein echtes Dreieck."
+            ],
+            "correct_index": 1
+          }
+        },
+        {
+          "id": "01M5HEGB5VAB6BKWHBMXTR38PQ",
+          "slug": "m8-dreieck-gegenwinkel",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=dv-1-dreiecksungleichung",
+          "question": "Welcher Seite eines Dreiecks liegt der größte Winkel gegenüber?",
+          "concept": "Der längsten Seite.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Der längsten Seite.",
+              "Der kürzesten Seite."
+            ],
+            "correct_index": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": "01M5HEGB5T305SNMWHJ64PC310",
+      "atom_uri": "urn:zam:atom:01M5HEGB5T305SNMWHJ64PC310",
+      "namespace": "zam-academy-mathematik-realschule-8",
+      "slug": "m8-dv-2-dreieckskonstruktion",
+      "title": "Dreiecke konstruieren",
+      "domain": "mathematik/geometrie",
+      "reduction": "axiomatic",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=dv-2-dreieckskonstruktion",
+      "prerequisites": [
+        {
+          "atom_id": "01M5HEGB5TYWR5RGQHRT99TQEH",
+          "type": "soft",
+          "rationale": "Die vorherige Lektion erklärt eine verwendete Grundlage; Wiederholung bleibt freiwillig."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "mathematik-realschule-8",
+          "topic_code": "dreiecke-vierecke",
+          "topic_title": "Dreiecke und Vierecke"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "realschule",
+          "grade": 8,
+          "subject": "mathematik",
+          "track": "II_III",
+          "topic_code": "lb1",
+          "topic_title": "Dreiecke und Vierecke"
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M5HEGB5VEW1B05SSGGXHFB2X",
+          "slug": "m8-sss-radius-a",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=dv-2-dreieckskonstruktion",
+          "question": "Mit welcher Seitenlänge als Radius zeichnest du bei der SSS-Konstruktion von ABC den Kreis um A?",
+          "concept": "Mit b, der Länge von AC.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Mit b, der Länge von AC.",
+              "Mit a, der Länge von BC."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M5HEGB5VE7C5Y914SVB3G160",
+          "slug": "m8-sws-winkellage",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=dv-2-dreieckskonstruktion",
+          "question": "Wo liegt der gegebene Winkel beim Kongruenzsatz SWS?",
+          "concept": "Zwischen den beiden gegebenen Seiten.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Gegenüber der kürzeren gegebenen Seite.",
+              "Zwischen den beiden gegebenen Seiten."
+            ],
+            "correct_index": 1
+          }
+        },
+        {
+          "id": "01M5HEGB5VWENBAZQ7JW71Y93Z",
+          "slug": "m8-wsw-plan",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=dv-2-dreieckskonstruktion",
+          "question": "Wie konstruierst du ein Dreieck aus einer Seite und den beiden anliegenden Winkeln?",
+          "concept": "Die Seite zeichnen, an ihren Enden die Winkel abtragen und die Schenkel schneiden.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Die Seite zeichnen, an ihren Enden die Winkel abtragen und die Schenkel schneiden.",
+              "Zwei Kreise mit beliebigen Radien zeichnen und ihre Schnittpunkte verbinden."
+            ],
+            "correct_index": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": "01M5HEGB5TZE3AWXR603632440",
+      "atom_uri": "urn:zam:atom:01M5HEGB5TZE3AWXR603632440",
+      "namespace": "zam-academy-mathematik-realschule-8",
+      "slug": "m8-dv-3-kongruenz",
+      "title": "Kongruenz sicher begründen",
+      "domain": "mathematik/geometrie",
+      "reduction": "axiomatic",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=dv-3-kongruenz",
+      "prerequisites": [
+        {
+          "atom_id": "01M5HEGB5T305SNMWHJ64PC310",
+          "type": "soft",
+          "rationale": "Die vorherige Lektion erklärt eine verwendete Grundlage; Wiederholung bleibt freiwillig."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "mathematik-realschule-8",
+          "topic_code": "dreiecke-vierecke",
+          "topic_title": "Dreiecke und Vierecke"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "realschule",
+          "grade": 8,
+          "subject": "mathematik",
+          "track": "II_III",
+          "topic_code": "lb1",
+          "topic_title": "Dreiecke und Vierecke"
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M5HEGB5VQW39Y37J0BZ8RTQY",
+          "slug": "m8-kongruent",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=dv-3-kongruenz",
+          "question": "Was bedeutet es, dass zwei Dreiecke kongruent sind?",
+          "concept": "Sie lassen sich durch Verschieben, Drehen oder Spiegeln zur Deckung bringen.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Sie lassen sich durch Verschieben, Drehen oder Spiegeln zur Deckung bringen.",
+              "Sie haben nur gleiche Winkel, dürfen aber verschieden groß sein."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M5HEGB5VKDACJZR27FWQ62HG",
+          "slug": "m8-ssw-bedingung",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=dv-3-kongruenz",
+          "question": "Welche Lagebedingung gilt für den gegebenen Winkel beim sicheren Kongruenzsatz SsW?",
+          "concept": "Er liegt der längeren der beiden gegebenen Seiten gegenüber.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Er liegt immer der kürzeren der beiden gegebenen Seiten gegenüber.",
+              "Er liegt der längeren der beiden gegebenen Seiten gegenüber."
+            ],
+            "correct_index": 1
+          }
+        },
+        {
+          "id": "01M5HEGB5VWNBH87QNBDYEHYX9",
+          "slug": "m8-www",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=dv-3-kongruenz",
+          "question": "Warum legen drei Winkel allein kein Dreieck bis auf Kongruenz fest?",
+          "concept": "Die Größe bleibt frei.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Die Größe bleibt frei.",
+              "Die Form bleibt trotz dreier Winkel völlig frei."
+            ],
+            "correct_index": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": "01M5HEGB5TGXC66RSY8BS7H9PJ",
+      "atom_uri": "urn:zam:atom:01M5HEGB5TGXC66RSY8BS7H9PJ",
+      "namespace": "zam-academy-mathematik-realschule-8",
+      "slug": "m8-dv-4-vierecke",
+      "title": "Das Haus der Vierecke",
+      "domain": "mathematik/geometrie",
+      "reduction": "axiomatic",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=dv-4-vierecke",
+      "prerequisites": [],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "mathematik-realschule-8",
+          "topic_code": "dreiecke-vierecke",
+          "topic_title": "Dreiecke und Vierecke"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "realschule",
+          "grade": 8,
+          "subject": "mathematik",
+          "track": "I",
+          "topic_code": "lb1",
+          "topic_title": "Vierecke"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "realschule",
+          "grade": 8,
+          "subject": "mathematik",
+          "track": "II_III",
+          "topic_code": "lb1",
+          "topic_title": "Dreiecke und Vierecke"
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M5HEGB5V6A8DQNYRXTCNNXNW",
+          "slug": "m8-raute-erkennen",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=dv-4-vierecke",
+          "question": "Welches Viereck besitzt vier gleich lange Seiten und Diagonalen, die sich senkrecht halbieren?",
+          "concept": "Die Raute, auch Rhombus genannt.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Die Raute, auch Rhombus genannt.",
+              "Jedes Rechteck."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M5HEGB5V8VCHB8PDTDBGMBKY",
+          "slug": "m8-quadrat-hierarchie",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=dv-4-vierecke",
+          "question": "Zu welchen beiden speziellen Parallelogrammfamilien gehört jedes Quadrat zugleich?",
+          "concept": "Zu den Rechtecken und den Rauten.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Nur zu den Rechtecken, niemals zu den Rauten.",
+              "Zu den Rechtecken und den Rauten."
+            ],
+            "correct_index": 1
+          }
+        },
+        {
+          "id": "01M5HEGB5VHD85DV3ZQE0BGDTG",
+          "slug": "m8-rechteck-diagonalen",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=dv-4-vierecke",
+          "question": "Welche Längen- und Teilungseigenschaft haben die Diagonalen jedes Rechtecks?",
+          "concept": "Sie sind gleich lang und halbieren sich.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Sie sind gleich lang und halbieren sich.",
+              "Sie stehen immer senkrecht aufeinander."
+            ],
+            "correct_index": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": "01M5HEGB5T3CD1BHVXQCYCXWGT",
+      "atom_uri": "urn:zam:atom:01M5HEGB5T3CD1BHVXQCYCXWGT",
+      "namespace": "zam-academy-mathematik-realschule-8",
+      "slug": "m8-dv-5-viereckskonstruktion",
+      "title": "Vierecke konstruieren und zerlegen",
+      "domain": "mathematik/geometrie",
+      "reduction": "axiomatic",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=dv-5-viereckskonstruktion",
+      "prerequisites": [
+        {
+          "atom_id": "01M5HEGB5TGXC66RSY8BS7H9PJ",
+          "type": "soft",
+          "rationale": "Die vorherige Lektion erklärt eine verwendete Grundlage; Wiederholung bleibt freiwillig."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "mathematik-realschule-8",
+          "topic_code": "dreiecke-vierecke",
+          "topic_title": "Dreiecke und Vierecke"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "realschule",
+          "grade": 8,
+          "subject": "mathematik",
+          "track": "I",
+          "topic_code": "lb1",
+          "topic_title": "Vierecke"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "realschule",
+          "grade": 8,
+          "subject": "mathematik",
+          "track": "II_III",
+          "topic_code": "lb1",
+          "topic_title": "Dreiecke und Vierecke"
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M5HEGB5V0SBYY1DVFFM64A22",
+          "slug": "m8-trapez-flaeche",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=dv-5-viereckskonstruktion",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Wie lautet die Flächenformel des Trapezes mit parallelen Seiten "
+            },
+            {
+              "type": "math",
+              "tex": "a",
+              "speech": "a"
+            },
+            {
+              "type": "text",
+              "text": " und "
+            },
+            {
+              "type": "math",
+              "tex": "c",
+              "speech": "c"
+            },
+            {
+              "type": "text",
+              "text": " sowie Höhe "
+            },
+            {
+              "type": "math",
+              "tex": "h",
+              "speech": "h"
+            },
+            {
+              "type": "text",
+              "text": "?"
+            }
+          ],
+          "concept_segments": [
+            {
+              "type": "math",
+              "tex": "A=\\frac{a+c}{2}\\cdot h",
+              "speech": "A gleich a plus c, geteilt durch zwei, mal h"
+            }
+          ],
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              [
+                {
+                  "type": "math",
+                  "tex": "A=\\frac{a+c}{2}\\cdot h",
+                  "speech": "A gleich a plus c, geteilt durch zwei, mal h"
+                }
+              ],
+              [
+                {
+                  "type": "math",
+                  "tex": "A=(a+c)\\cdot h",
+                  "speech": "A gleich a plus c mal h"
+                }
+              ]
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M5HEGB5VGAD81EF6X5EB7688",
+          "slug": "m8-drache-flaeche",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=dv-5-viereckskonstruktion",
+          "question": "Wie berechnest du die Fläche eines Drachenvierecks aus den senkrechten Diagonalen e und f?",
+          "concept_segments": [
+            {
+              "type": "math",
+              "tex": "A=\\frac{ef}{2}",
+              "speech": "A gleich e mal f geteilt durch zwei"
+            }
+          ],
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              [
+                {
+                  "type": "math",
+                  "tex": "A=ef",
+                  "speech": "A gleich e mal f"
+                }
+              ],
+              [
+                {
+                  "type": "math",
+                  "tex": "A=\\frac{ef}{2}",
+                  "speech": "A gleich e mal f geteilt durch zwei"
+                }
+              ]
+            ],
+            "correct_index": 1
+          }
+        },
+        {
+          "id": "01M5HEGB5V6DDHZCH1CYF3KJT5",
+          "slug": "m8-hoehe",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=dv-5-viereckskonstruktion",
+          "question": "Was ist die Höhe eines Parallelogramms zu einer gewählten Grundseite?",
+          "concept": "Der senkrechte Abstand der beiden zugehörigen parallelen Seiten.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Der senkrechte Abstand der beiden zugehörigen parallelen Seiten.",
+              "Immer die Länge einer schrägen Seitenkante."
+            ],
+            "correct_index": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": "01M5HEGB5VVRTP6NXZK2V6CD5T",
+      "atom_uri": "urn:zam:atom:01M5HEGB5VVRTP6NXZK2V6CD5T",
+      "namespace": "zam-academy-mathematik-realschule-8",
+      "slug": "m8-dr-1-drehung",
+      "title": "Punkte und Figuren drehen",
+      "domain": "mathematik/geometrie",
+      "reduction": "axiomatic",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=dr-1-drehung",
+      "prerequisites": [],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "mathematik-realschule-8",
+          "topic_code": "drehung",
+          "topic_title": "Drehung"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "realschule",
+          "grade": 8,
+          "subject": "mathematik",
+          "track": "I",
+          "topic_code": "lb2",
+          "topic_title": "Drehung"
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M5HEGB5VMSC8NE7READGF726",
+          "slug": "m8-drehung-vorschrift",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=dr-1-drehung",
+          "question": "Welche zwei Angaben bestimmen eine Drehung in der Ebene?",
+          "concept": "Drehzentrum und gerichteter Drehwinkel.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Drehzentrum und gerichteter Drehwinkel.",
+              "Nur Anfangs- und Endfarbe der Figur."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M5HEGB5V14KS5HZ106G34H2C",
+          "slug": "m8-drehung-drehsinn",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=dr-1-drehung",
+          "question": "In welchem Drehsinn wird ein positiver Drehwinkel abgetragen?",
+          "concept": "Gegen den Uhrzeigersinn.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Im Uhrzeigersinn.",
+              "Gegen den Uhrzeigersinn."
+            ],
+            "correct_index": 1
+          }
+        },
+        {
+          "id": "01M5HEGB5V01Q81AKV41SNK632",
+          "slug": "m8-drehung-kongruenz",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=dr-1-drehung",
+          "question": "Warum ist die Drehung eine Kongruenzabbildung?",
+          "concept": "Sie erhält Streckenlängen und Winkelmaße.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Sie erhält Streckenlängen und Winkelmaße.",
+              "Sie erhält nur Winkel und verändert alle Längen."
+            ],
+            "correct_index": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": "01M5HEGB5VPXGSTPYWCG3QG19F",
+      "atom_uri": "urn:zam:atom:01M5HEGB5VPXGSTPYWCG3QG19F",
+      "namespace": "zam-academy-mathematik-realschule-8",
+      "slug": "m8-dr-2-drehsymmetrie",
+      "title": "Drehsymmetrie und Punktspiegelung",
+      "domain": "mathematik/geometrie",
+      "reduction": "axiomatic",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=dr-2-drehsymmetrie",
+      "prerequisites": [
+        {
+          "atom_id": "01M5HEGB5VVRTP6NXZK2V6CD5T",
+          "type": "soft",
+          "rationale": "Die vorherige Lektion erklärt eine verwendete Grundlage; Wiederholung bleibt freiwillig."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "mathematik-realschule-8",
+          "topic_code": "drehung",
+          "topic_title": "Drehung"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "realschule",
+          "grade": 8,
+          "subject": "mathematik",
+          "track": "I",
+          "topic_code": "lb2",
+          "topic_title": "Drehung"
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M5HEGB5WDMHNQBHWX8GNGN56",
+          "slug": "m8-punktspiegelung",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=dr-2-drehsymmetrie",
+          "question": "Welcher Drehwinkel beschreibt eine Punktspiegelung?",
+          "concept_segments": [
+            {
+              "type": "math",
+              "tex": "180^\\circ",
+              "speech": "hundertachtzig Grad"
+            }
+          ],
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              [
+                {
+                  "type": "math",
+                  "tex": "180^\\circ",
+                  "speech": "hundertachtzig Grad"
+                }
+              ],
+              [
+                {
+                  "type": "math",
+                  "tex": "90^\\circ",
+                  "speech": "neunzig Grad"
+                }
+              ]
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M5HEGB5W9JJVY2KRKJAAR7AC",
+          "slug": "m8-regelmaessiges-vieleck",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=dr-2-drehsymmetrie",
+          "question": "Wie berechnest du den kleinsten positiven Symmetriewinkel eines regelmäßigen n-Ecks?",
+          "concept_segments": [
+            {
+              "type": "math",
+              "tex": "\\varphi=\\frac{360^\\circ}{n}",
+              "speech": "Phi gleich dreihundertsechzig Grad geteilt durch n"
+            }
+          ],
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              [
+                {
+                  "type": "math",
+                  "tex": "\\varphi=\\frac{180^\\circ}{n}",
+                  "speech": "Phi gleich hundertachtzig Grad geteilt durch n"
+                }
+              ],
+              [
+                {
+                  "type": "math",
+                  "tex": "\\varphi=\\frac{360^\\circ}{n}",
+                  "speech": "Phi gleich dreihundertsechzig Grad geteilt durch n"
+                }
+              ]
+            ],
+            "correct_index": 1
+          }
+        },
+        {
+          "id": "01M5HEGB5W4GWFWT0KPPTXMGWZ",
+          "slug": "m8-fuenfeck-punktsymmetrie",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=dr-2-drehsymmetrie",
+          "question": "Ist ein regelmäßiges Fünfeck punktsymmetrisch?",
+          "concept": "Nein, eine halbe Drehung bringt es nicht auf sich selbst.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Nein, eine halbe Drehung bringt es nicht auf sich selbst.",
+              "Ja, jedes regelmäßige Vieleck ist punktsymmetrisch."
+            ],
+            "correct_index": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": "01M5HEGB5VT6T9WT32XHFHW2GB",
+      "atom_uri": "urn:zam:atom:01M5HEGB5VT6T9WT32XHFHW2GB",
+      "namespace": "zam-academy-mathematik-realschule-8",
+      "slug": "m8-dr-3-vektoren",
+      "title": "Vektoren um 90° und 180° drehen",
+      "domain": "mathematik/geometrie",
+      "reduction": "axiomatic",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=dr-3-vektoren",
+      "prerequisites": [
+        {
+          "atom_id": "01M5HEGB5VVRTP6NXZK2V6CD5T",
+          "type": "soft",
+          "rationale": "Die vorherige Lektion erklärt eine verwendete Grundlage; Wiederholung bleibt freiwillig."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "mathematik-realschule-8",
+          "topic_code": "drehung",
+          "topic_title": "Drehung"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "realschule",
+          "grade": 8,
+          "subject": "mathematik",
+          "track": "I",
+          "topic_code": "lb2",
+          "topic_title": "Drehung"
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M5HEGB5WAS9KWT584HDPRM9P",
+          "slug": "m8-vektor-links",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=dr-3-vektoren",
+          "question": "Wie ändern sich die Koordinaten eines Vektors bei einer Drehung um plus neunzig Grad?",
+          "concept_segments": [
+            {
+              "type": "math",
+              "tex": "(x,y)\\mapsto(-y,x)",
+              "speech": "x, y wird zu minus y, x"
+            }
+          ],
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              [
+                {
+                  "type": "math",
+                  "tex": "(x,y)\\mapsto(-y,x)",
+                  "speech": "x, y wird zu minus y, x"
+                }
+              ],
+              [
+                {
+                  "type": "math",
+                  "tex": "(x,y)\\mapsto(y,-x)",
+                  "speech": "x, y wird zu y, minus x"
+                }
+              ]
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M5HEGB5WXPSP46RG56D9VMW4",
+          "slug": "m8-vektor-rechts",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=dr-3-vektoren",
+          "question": "Wie ändern sich die Koordinaten eines Vektors bei einer Drehung um minus neunzig Grad?",
+          "concept_segments": [
+            {
+              "type": "math",
+              "tex": "(x,y)\\mapsto(y,-x)",
+              "speech": "x, y wird zu y, minus x"
+            }
+          ],
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              [
+                {
+                  "type": "math",
+                  "tex": "(x,y)\\mapsto(-y,x)",
+                  "speech": "x, y wird zu minus y, x"
+                }
+              ],
+              [
+                {
+                  "type": "math",
+                  "tex": "(x,y)\\mapsto(y,-x)",
+                  "speech": "x, y wird zu y, minus x"
+                }
+              ]
+            ],
+            "correct_index": 1
+          }
+        },
+        {
+          "id": "01M5HEGB5WAXAVKYY6P00B4J1J",
+          "slug": "m8-vektor-halb",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=dr-3-vektoren",
+          "question": "Wie ändern sich die Koordinaten eines Vektors bei einer Drehung um hundertachtzig Grad?",
+          "concept_segments": [
+            {
+              "type": "math",
+              "tex": "(x,y)\\mapsto(-x,-y)",
+              "speech": "x, y wird zu minus x, minus y"
+            }
+          ],
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              [
+                {
+                  "type": "math",
+                  "tex": "(x,y)\\mapsto(-x,-y)",
+                  "speech": "x, y wird zu minus x, minus y"
+                }
+              ],
+              [
+                {
+                  "type": "math",
+                  "tex": "(x,y)\\mapsto(y,x)",
+                  "speech": "x, y wird zu y, x"
+                }
+              ]
+            ],
+            "correct_index": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": "01M5HEGB5V4JB44D91ZX00GFGE",
+      "atom_uri": "urn:zam:atom:01M5HEGB5V4JB44D91ZX00GFGE",
+      "namespace": "zam-academy-mathematik-realschule-8",
+      "slug": "m8-rg-1-koerpersymmetrie",
+      "title": "Symmetrie von Körpern",
+      "domain": "mathematik/geometrie",
+      "reduction": "axiomatic",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=rg-1-koerpersymmetrie",
+      "prerequisites": [],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "mathematik-realschule-8",
+          "topic_code": "raumgeometrie",
+          "topic_title": "Raumgeometrie"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "realschule",
+          "grade": 8,
+          "subject": "mathematik",
+          "track": "I",
+          "topic_code": "lb3",
+          "topic_title": "Raumgeometrie"
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M5HEGB5WZH7432YTEWREA4DF",
+          "slug": "m8-quader-ebenen",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=rg-1-koerpersymmetrie",
+          "question": "Wie viele Symmetrieebenen besitzt ein Quader mit drei verschiedenen Kantenlängen?",
+          "concept": "Drei mittige Ebenen parallel zu den Flächenpaaren.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Drei mittige Ebenen parallel zu den Flächenpaaren.",
+              "Neun Ebenen wie jeder Würfel."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M5HEGB5WMGTKK4HMEV7QG6YF",
+          "slug": "m8-wuerfel-ebenen",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=rg-1-koerpersymmetrie",
+          "question": "Wie viele Symmetrieebenen besitzt ein Würfel?",
+          "concept": "Neun: drei mittige und sechs diagonale Ebenen.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Nur drei mittige Ebenen.",
+              "Neun: drei mittige und sechs diagonale Ebenen."
+            ],
+            "correct_index": 1
+          }
+        },
+        {
+          "id": "01M5HEGB5WXWE0SN82Z11NR2B0",
+          "slug": "m8-kegel-zentrum",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=rg-1-koerpersymmetrie",
+          "question": "Besitzt ein gerader Kreiskegel ein Symmetriezentrum?",
+          "concept": "Nein, die Punktspiegelung bildet ihn nicht auf sich selbst ab.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Nein, die Punktspiegelung bildet ihn nicht auf sich selbst ab.",
+              "Ja, jede Rotationsachse liefert auch ein Symmetriezentrum."
+            ],
+            "correct_index": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": "01M5HEGB5VBVWTW7MBBACQ1BHN",
+      "atom_uri": "urn:zam:atom:01M5HEGB5VBVWTW7MBBACQ1BHN",
+      "namespace": "zam-academy-mathematik-realschule-8",
+      "slug": "m8-rg-2-axialschnitte",
+      "title": "Rotationskörper und Axialschnitte",
+      "domain": "mathematik/geometrie",
+      "reduction": "axiomatic",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=rg-2-axialschnitte",
+      "prerequisites": [],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "mathematik-realschule-8",
+          "topic_code": "raumgeometrie",
+          "topic_title": "Raumgeometrie"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "realschule",
+          "grade": 8,
+          "subject": "mathematik",
+          "track": "I",
+          "topic_code": "lb3",
+          "topic_title": "Raumgeometrie"
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M5HEGB5WGS415H8CNFV68HB4",
+          "slug": "m8-axialschnitt-definition",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=rg-2-axialschnitte",
+          "question": "Welche Lage hat die Schnittebene bei einem Axialschnitt eines Rotationskörpers?",
+          "concept": "Sie enthält die Rotationsachse.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Sie enthält die Rotationsachse.",
+              "Sie ist stets senkrecht zur Rotationsachse."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M5HEGB5WQ9BZR23K1HES3M76",
+          "slug": "m8-kegel-schnitt",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=rg-2-axialschnitte",
+          "question": "Welche ebene Figur ist der vollständige Axialschnitt eines geraden Kreiskegels?",
+          "concept": "Ein gleichschenkliges Dreieck.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Ein Rechteck.",
+              "Ein gleichschenkliges Dreieck."
+            ],
+            "correct_index": 1
+          }
+        },
+        {
+          "id": "01M5HEGB5WSP9FRMEKWY1KAWVN",
+          "slug": "m8-zylinder-schnitt",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=rg-2-axialschnitte",
+          "question": "Welche Maße hat der rechteckige Axialschnitt eines Kreiszylinders mit Radius r und Höhe h?",
+          "concept_segments": [
+            {
+              "type": "text",
+              "text": "Breite "
+            },
+            {
+              "type": "math",
+              "tex": "2r",
+              "speech": "zwei r"
+            },
+            {
+              "type": "text",
+              "text": " und Höhe "
+            },
+            {
+              "type": "math",
+              "tex": "h",
+              "speech": "h"
+            },
+            {
+              "type": "text",
+              "text": "."
+            }
+          ],
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              [
+                {
+                  "type": "text",
+                  "text": "Breite "
+                },
+                {
+                  "type": "math",
+                  "tex": "2r",
+                  "speech": "zwei r"
+                },
+                {
+                  "type": "text",
+                  "text": " und Höhe "
+                },
+                {
+                  "type": "math",
+                  "tex": "h",
+                  "speech": "h"
+                },
+                {
+                  "type": "text",
+                  "text": "."
+                }
+              ],
+              [
+                {
+                  "type": "text",
+                  "text": "Breite "
+                },
+                {
+                  "type": "math",
+                  "tex": "r",
+                  "speech": "r"
+                },
+                {
+                  "type": "text",
+                  "text": " und Höhe "
+                },
+                {
+                  "type": "math",
+                  "tex": "2h",
+                  "speech": "zwei h"
+                },
+                {
+                  "type": "text",
+                  "text": "."
+                }
+              ]
+            ],
+            "correct_index": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": "01M5HEGB5VKCW3RV3BDK8Q5EK5",
+      "atom_uri": "urn:zam:atom:01M5HEGB5VKCW3RV3BDK8Q5EK5",
+      "namespace": "zam-academy-mathematik-realschule-8",
+      "slug": "m8-rg-3-raumkoordinaten",
+      "title": "Punkte im Raum beschreiben",
+      "domain": "mathematik/geometrie",
+      "reduction": "axiomatic",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=rg-3-raumkoordinaten",
+      "prerequisites": [],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "mathematik-realschule-8",
+          "topic_code": "raumgeometrie",
+          "topic_title": "Raumgeometrie"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "realschule",
+          "grade": 8,
+          "subject": "mathematik",
+          "track": "I",
+          "topic_code": "lb3",
+          "topic_title": "Raumgeometrie"
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M5HEGB5WWTJER6VE1NQG7NY8",
+          "slug": "m8-xy-ebene",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=rg-3-raumkoordinaten",
+          "question": "Welche Koordinate ist bei jedem Punkt der xy-Ebene null?",
+          "concept": "Die z-Koordinate.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Die z-Koordinate.",
+              "Die x-Koordinate."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M5HEGB5WRKP7X0FM4SCFMBV1",
+          "slug": "m8-yz-ebene",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=rg-3-raumkoordinaten",
+          "question": "Welche Koordinate ist bei jedem Punkt der yz-Ebene null?",
+          "concept": "Die x-Koordinate.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Die y-Koordinate.",
+              "Die x-Koordinate."
+            ],
+            "correct_index": 1
+          }
+        },
+        {
+          "id": "01M5HEGB5WFJDPC5Q5A1NYDV9Q",
+          "slug": "m8-quader-oberer-punkt",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=rg-3-raumkoordinaten",
+          "question": "Welche Koordinate ändert sich beim senkrechten Weg von einer waagerechten Quadergrundfläche zu der darüberliegenden Ecke?",
+          "concept": "Nur die z-Koordinate, also die Höhe.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Nur die z-Koordinate, also die Höhe.",
+              "Immer alle drei Koordinaten."
+            ],
+            "correct_index": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": "01M5HEGB5V23A7NCWXD6P3VG0N",
+      "atom_uri": "urn:zam:atom:01M5HEGB5V23A7NCWXD6P3VG0N",
+      "namespace": "zam-academy-mathematik-realschule-8",
+      "slug": "m8-rg-4-schraegbilder",
+      "title": "Prismen und Pyramiden im Schrägbild",
+      "domain": "mathematik/geometrie",
+      "reduction": "axiomatic",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=rg-4-schraegbilder",
+      "prerequisites": [],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "mathematik-realschule-8",
+          "topic_code": "raumgeometrie",
+          "topic_title": "Raumgeometrie"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "realschule",
+          "grade": 8,
+          "subject": "mathematik",
+          "track": "II_III",
+          "topic_code": "lb2",
+          "topic_title": "Raumgeometrie"
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M5HEGB5WZJG7Y3VG3334J03B",
+          "slug": "m8-schraegbild-tiefe",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=rg-4-schraegbilder",
+          "question": "Wie berechnest du die gezeichnete Tiefenlänge aus wahrer Tiefe d und Verzerrungsmaßstab q?",
+          "concept_segments": [
+            {
+              "type": "math",
+              "tex": "d_{Bild}=qd",
+              "speech": "d Bild gleich q mal d"
+            }
+          ],
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              [
+                {
+                  "type": "math",
+                  "tex": "d_{Bild}=qd",
+                  "speech": "d Bild gleich q mal d"
+                }
+              ],
+              [
+                {
+                  "type": "math",
+                  "tex": "d_{Bild}=d/q",
+                  "speech": "d Bild gleich d geteilt durch q"
+                }
+              ]
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M5HEGB5WASQC1ESY30D74T1R",
+          "slug": "m8-schraegbild-vorderflaeche",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=rg-4-schraegbilder",
+          "question": "Welche Fläche wird beim hier verwendeten Schrägbild eines Prismas unverzerrt gezeichnet?",
+          "concept": "Die Vorderfläche.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Jede räumliche Fläche zugleich.",
+              "Die Vorderfläche."
+            ],
+            "correct_index": 1
+          }
+        },
+        {
+          "id": "01M5HEGB5WQSF7RKMJXB3DSH58",
+          "slug": "m8-pyramide-spitze",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=rg-4-schraegbilder",
+          "question": "Über welchem Punkt der quadratischen Grundfläche liegt die Spitze einer geraden quadratischen Pyramide?",
+          "concept": "Über dem Diagonalenschnittpunkt.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Über dem Diagonalenschnittpunkt.",
+              "Über einem beliebigen Eckpunkt."
+            ],
+            "correct_index": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": "01M5HEGB5VS55G9MZQBRR9C419",
+      "atom_uri": "urn:zam:atom:01M5HEGB5VS55G9MZQBRR9C419",
+      "namespace": "zam-academy-mathematik-realschule-8",
+      "slug": "m8-rg-5-wahre-groesse",
+      "title": "Vom Schrägbild zur wahren Größe",
+      "domain": "mathematik/geometrie",
+      "reduction": "axiomatic",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=rg-5-wahre-groesse",
+      "prerequisites": [
+        {
+          "atom_id": "01M5HEGB5V23A7NCWXD6P3VG0N",
+          "type": "soft",
+          "rationale": "Die vorherige Lektion erklärt eine verwendete Grundlage; Wiederholung bleibt freiwillig."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "mathematik-realschule-8",
+          "topic_code": "raumgeometrie",
+          "topic_title": "Raumgeometrie"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "realschule",
+          "grade": 8,
+          "subject": "mathematik",
+          "track": "II_III",
+          "topic_code": "lb2",
+          "topic_title": "Raumgeometrie"
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M5HEGB5W18ND7QXGKWY8BGH8",
+          "slug": "m8-wahre-tiefe",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=rg-5-wahre-groesse",
+          "question": "Wie erhältst du die wahre Tiefe aus Bildtiefe und Verzerrungsmaßstab q?",
+          "concept_segments": [
+            {
+              "type": "math",
+              "tex": "d=d_{Bild}/q",
+              "speech": "d gleich d Bild geteilt durch q"
+            }
+          ],
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              [
+                {
+                  "type": "math",
+                  "tex": "d=d_{Bild}/q",
+                  "speech": "d gleich d Bild geteilt durch q"
+                }
+              ],
+              [
+                {
+                  "type": "math",
+                  "tex": "d=qd_{Bild}",
+                  "speech": "d gleich q mal d Bild"
+                }
+              ]
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M5HEGB5W7H4S3BGKZFJWCQRS",
+          "slug": "m8-schraegbild-winkel",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=rg-5-wahre-groesse",
+          "question": "Darfst du einen gemessenen Winkel einer verzerrten Grundfläche unmittelbar als wahren Körperwinkel übernehmen?",
+          "concept": "Nein, die Schrägprojektion kann Winkel verändern.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Ja, alle Bildwinkel sind wahre Körperwinkel.",
+              "Nein, die Schrägprojektion kann Winkel verändern."
+            ],
+            "correct_index": 1
+          }
+        },
+        {
+          "id": "01M5HEGB5WGJ6FX381W07HPP0H",
+          "slug": "m8-wahre-rechteckflaeche",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=rg-5-wahre-groesse",
+          "question": "Welchen Innenwinkel zeichnest du beim Rekonstruieren einer im Körper rechteckigen Grundfläche in wahrer Größe?",
+          "concept_segments": [
+            {
+              "type": "math",
+              "tex": "90^\\circ",
+              "speech": "neunzig Grad"
+            }
+          ],
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              [
+                {
+                  "type": "math",
+                  "tex": "90^\\circ",
+                  "speech": "neunzig Grad"
+                }
+              ],
+              [
+                {
+                  "type": "math",
+                  "tex": "45^\\circ",
+                  "speech": "fünfundvierzig Grad"
+                }
+              ]
+            ],
+            "correct_index": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": "01M5HEGB5VK7FVEFEEMJJM1DJ1",
+      "atom_uri": "urn:zam:atom:01M5HEGB5VK7FVEFEEMJJM1DJ1",
+      "namespace": "zam-academy-mathematik-realschule-8",
+      "slug": "m8-tg-1-termoperationen",
+      "title": "Summenterme und Potenzen",
+      "domain": "mathematik/algebra",
+      "reduction": "axiomatic",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=tg-1-termoperationen",
+      "prerequisites": [],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "mathematik-realschule-8",
+          "topic_code": "terme-gleichungen",
+          "topic_title": "Terme und Gleichungen"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "realschule",
+          "grade": 8,
+          "subject": "mathematik",
+          "track": "I",
+          "topic_code": "lb4",
+          "topic_title": "Terme, Gleichungen und Ungleichungen"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "realschule",
+          "grade": 8,
+          "subject": "mathematik",
+          "track": "II_III",
+          "topic_code": "lb3",
+          "topic_title": "Terme und Gleichungen"
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M5HEGB5WSJJ4ASJ0X660FA7S",
+          "slug": "m8-gleichartige-glieder",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=tg-1-termoperationen",
+          "question": "Welche Termglieder darfst du durch Addition ihrer Koeffizienten zusammenfassen?",
+          "concept": "Glieder mit genau demselben Variablenteil und denselben Exponenten.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Glieder mit genau demselben Variablenteil und denselben Exponenten.",
+              "Alle Glieder, in denen irgendwo dieselbe Variable vorkommt."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M5HEGB5W006B8253JRNBZQ50",
+          "slug": "m8-summenterme-produkt",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=tg-1-termoperationen",
+          "question": "Wie multiplizierst du zwei Summenterme aus?",
+          "concept": "Jedes Glied der ersten Klammer mit jedem Glied der zweiten multiplizieren und sammeln.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Nur die jeweils ersten und die jeweils letzten Glieder multiplizieren.",
+              "Jedes Glied der ersten Klammer mit jedem Glied der zweiten multiplizieren und sammeln."
+            ],
+            "correct_index": 1
+          }
+        },
+        {
+          "id": "01M5HEGB5WCAQM83J6Y3W3X2HA",
+          "slug": "m8-potenzen-produkt",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=tg-1-termoperationen",
+          "question": "Was geschieht mit den Exponenten beim Multiplizieren von Potenzen derselben Basis?",
+          "concept": "Die Exponenten werden addiert.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Die Exponenten werden addiert.",
+              "Die Exponenten werden miteinander multipliziert."
+            ],
+            "correct_index": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": "01M5HEGB5VWMKEEPZ03Y101MXC",
+      "atom_uri": "urn:zam:atom:01M5HEGB5VWMKEEPZ03Y101MXC",
+      "namespace": "zam-academy-mathematik-realschule-8",
+      "slug": "m8-tg-2-binomische-formeln",
+      "title": "Die drei binomischen Formeln",
+      "domain": "mathematik/algebra",
+      "reduction": "axiomatic",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=tg-2-binomische-formeln",
+      "prerequisites": [
+        {
+          "atom_id": "01M5HEGB5VK7FVEFEEMJJM1DJ1",
+          "type": "soft",
+          "rationale": "Die vorherige Lektion erklärt eine verwendete Grundlage; Wiederholung bleibt freiwillig."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "mathematik-realschule-8",
+          "topic_code": "terme-gleichungen",
+          "topic_title": "Terme und Gleichungen"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "realschule",
+          "grade": 8,
+          "subject": "mathematik",
+          "track": "I",
+          "topic_code": "lb4",
+          "topic_title": "Terme, Gleichungen und Ungleichungen"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "realschule",
+          "grade": 8,
+          "subject": "mathematik",
+          "track": "II_III",
+          "topic_code": "lb3",
+          "topic_title": "Terme und Gleichungen"
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M5HEGB5WPW0ECM9EGWJH8GGB",
+          "slug": "m8-binom-plus",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=tg-2-binomische-formeln",
+          "question": "Wie lautet die erste binomische Formel?",
+          "concept_segments": [
+            {
+              "type": "math",
+              "tex": "(a+b)^2=a^2+2ab+b^2",
+              "speech": "a plus b in Klammern zum Quadrat gleich a Quadrat plus zwei a b plus b Quadrat"
+            }
+          ],
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              [
+                {
+                  "type": "math",
+                  "tex": "(a+b)^2=a^2+2ab+b^2",
+                  "speech": "a plus b in Klammern zum Quadrat gleich a Quadrat plus zwei a b plus b Quadrat"
+                }
+              ],
+              [
+                {
+                  "type": "math",
+                  "tex": "(a+b)^2=a^2+b^2",
+                  "speech": "a plus b in Klammern zum Quadrat gleich a Quadrat plus b Quadrat"
+                }
+              ]
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M5HEGB5WQPAKVCP8TCQ8Q4QF",
+          "slug": "m8-binom-minus",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=tg-2-binomische-formeln",
+          "question": "Wie lautet die zweite binomische Formel?",
+          "concept_segments": [
+            {
+              "type": "math",
+              "tex": "(a-b)^2=a^2-2ab+b^2",
+              "speech": "a minus b in Klammern zum Quadrat gleich a Quadrat minus zwei a b plus b Quadrat"
+            }
+          ],
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              [
+                {
+                  "type": "math",
+                  "tex": "(a-b)^2=a^2-b^2",
+                  "speech": "a minus b in Klammern zum Quadrat gleich a Quadrat minus b Quadrat"
+                }
+              ],
+              [
+                {
+                  "type": "math",
+                  "tex": "(a-b)^2=a^2-2ab+b^2",
+                  "speech": "a minus b in Klammern zum Quadrat gleich a Quadrat minus zwei a b plus b Quadrat"
+                }
+              ]
+            ],
+            "correct_index": 1
+          }
+        },
+        {
+          "id": "01M5HEGB5WNTBASAHJYAENDJWV",
+          "slug": "m8-binom-differenz",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=tg-2-binomische-formeln",
+          "question": "Wie lautet die dritte binomische Formel?",
+          "concept_segments": [
+            {
+              "type": "math",
+              "tex": "(a+b)(a-b)=a^2-b^2",
+              "speech": "a plus b mal a minus b gleich a Quadrat minus b Quadrat"
+            }
+          ],
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              [
+                {
+                  "type": "math",
+                  "tex": "(a+b)(a-b)=a^2-b^2",
+                  "speech": "a plus b mal a minus b gleich a Quadrat minus b Quadrat"
+                }
+              ],
+              [
+                {
+                  "type": "math",
+                  "tex": "(a+b)(a-b)=a^2-2ab+b^2",
+                  "speech": "a plus b mal a minus b gleich a Quadrat minus zwei a b plus b Quadrat"
+                }
+              ]
+            ],
+            "correct_index": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": "01M5HEGB5VMFB4CHR7PDCCSSZG",
+      "atom_uri": "urn:zam:atom:01M5HEGB5VMFB4CHR7PDCCSSZG",
+      "namespace": "zam-academy-mathematik-realschule-8",
+      "slug": "m8-tg-3-faktorisieren",
+      "title": "Aus Summen werden Produkte",
+      "domain": "mathematik/algebra",
+      "reduction": "axiomatic",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=tg-3-faktorisieren",
+      "prerequisites": [
+        {
+          "atom_id": "01M5HEGB5VWMKEEPZ03Y101MXC",
+          "type": "soft",
+          "rationale": "Die vorherige Lektion erklärt eine verwendete Grundlage; Wiederholung bleibt freiwillig."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "mathematik-realschule-8",
+          "topic_code": "terme-gleichungen",
+          "topic_title": "Terme und Gleichungen"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "realschule",
+          "grade": 8,
+          "subject": "mathematik",
+          "track": "I",
+          "topic_code": "lb4",
+          "topic_title": "Terme, Gleichungen und Ungleichungen"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "realschule",
+          "grade": 8,
+          "subject": "mathematik",
+          "track": "II_III",
+          "topic_code": "lb3",
+          "topic_title": "Terme und Gleichungen"
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M5HEGB5WFKZMFGA1RCHR11RY",
+          "slug": "m8-ausklammern",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=tg-3-faktorisieren",
+          "question": "Was bedeutet Ausklammern eines gemeinsamen Faktors?",
+          "concept": "Jeden Summanden durch diesen Faktor teilen und den Faktor vor die Klammer schreiben.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Jeden Summanden durch diesen Faktor teilen und den Faktor vor die Klammer schreiben.",
+              "Nur den ersten Summanden durch den Faktor teilen."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M5HEGB5W9P45ZKX96GT5XYA2",
+          "slug": "m8-quadratdifferenz",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=tg-3-faktorisieren",
+          "question": "Welche Produktform entspricht einer Differenz zweier Quadrate?",
+          "concept_segments": [
+            {
+              "type": "math",
+              "tex": "a^2-b^2=(a-b)(a+b)",
+              "speech": "a Quadrat minus b Quadrat gleich a minus b mal a plus b"
+            }
+          ],
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              [
+                {
+                  "type": "math",
+                  "tex": "a^2-b^2=(a-b)^2",
+                  "speech": "a Quadrat minus b Quadrat gleich a minus b in Klammern zum Quadrat"
+                }
+              ],
+              [
+                {
+                  "type": "math",
+                  "tex": "a^2-b^2=(a-b)(a+b)",
+                  "speech": "a Quadrat minus b Quadrat gleich a minus b mal a plus b"
+                }
+              ]
+            ],
+            "correct_index": 1
+          }
+        },
+        {
+          "id": "01M5HEGB5WGF0MZ98SNNMQ4DJC",
+          "slug": "m8-vollstaendiges-quadrat",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=tg-3-faktorisieren",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Wie faktorisiert man "
+            },
+            {
+              "type": "math",
+              "tex": "x^2+8x+16",
+              "speech": "x Quadrat plus acht x plus sechzehn"
+            },
+            {
+              "type": "text",
+              "text": "?"
+            }
+          ],
+          "concept_segments": [
+            {
+              "type": "math",
+              "tex": "(x+4)^2",
+              "speech": "x plus vier in Klammern zum Quadrat"
+            }
+          ],
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              [
+                {
+                  "type": "math",
+                  "tex": "(x+4)^2",
+                  "speech": "x plus vier in Klammern zum Quadrat"
+                }
+              ],
+              [
+                {
+                  "type": "math",
+                  "tex": "(x+8)^2",
+                  "speech": "x plus acht in Klammern zum Quadrat"
+                }
+              ]
+            ],
+            "correct_index": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": "01M5HEGB5VGP8WES635GNRFTK2",
+      "atom_uri": "urn:zam:atom:01M5HEGB5VGP8WES635GNRFTK2",
+      "namespace": "zam-academy-mathematik-realschule-8",
+      "slug": "m8-tg-4-extremwerte",
+      "title": "Extremwerte quadratischer Terme",
+      "domain": "mathematik/algebra",
+      "reduction": "axiomatic",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=tg-4-extremwerte",
+      "prerequisites": [
+        {
+          "atom_id": "01M5HEGB5VWMKEEPZ03Y101MXC",
+          "type": "soft",
+          "rationale": "Die vorherige Lektion erklärt eine verwendete Grundlage; Wiederholung bleibt freiwillig."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "mathematik-realschule-8",
+          "topic_code": "terme-gleichungen",
+          "topic_title": "Terme und Gleichungen"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "realschule",
+          "grade": 8,
+          "subject": "mathematik",
+          "track": "I",
+          "topic_code": "lb4",
+          "topic_title": "Terme, Gleichungen und Ungleichungen"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "realschule",
+          "grade": 8,
+          "subject": "mathematik",
+          "track": "II_III",
+          "topic_code": "lb3",
+          "topic_title": "Terme und Gleichungen"
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M5HEGB5WT1H1BYHN8NHPS5GP",
+          "slug": "m8-quadrat-minimum",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=tg-4-extremwerte",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Welchen kleinsten Wert hat "
+            },
+            {
+              "type": "math",
+              "tex": "(x-h)^2",
+              "speech": "x minus h in Klammern zum Quadrat"
+            },
+            {
+              "type": "text",
+              "text": " für reelle x?"
+            }
+          ],
+          "concept": "Null, erreicht bei x gleich h.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Null, erreicht bei x gleich h.",
+              "Eins, erreicht bei x gleich null."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M5HEGB5WR2AFY7WJ2V0TTP80",
+          "slug": "m8-term-minimum",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=tg-4-extremwerte",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Welches Minimum hat "
+            },
+            {
+              "type": "math",
+              "tex": "a(x-h)^2+k",
+              "speech": "a mal x minus h in Klammern zum Quadrat plus k"
+            },
+            {
+              "type": "text",
+              "text": " für positives a?"
+            }
+          ],
+          "concept": "Den Wert k bei x gleich h.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Den Wert h bei x gleich k.",
+              "Den Wert k bei x gleich h."
+            ],
+            "correct_index": 1
+          }
+        },
+        {
+          "id": "01M5HEGB5WTKXYMDJ8TED03KPN",
+          "slug": "m8-term-maximum",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=tg-4-extremwerte",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Welche Art Extremwert hat "
+            },
+            {
+              "type": "math",
+              "tex": "a(x-h)^2+k",
+              "speech": "a mal x minus h in Klammern zum Quadrat plus k"
+            },
+            {
+              "type": "text",
+              "text": " für negatives a?"
+            }
+          ],
+          "concept": "Ein Maximum mit Wert k bei x gleich h.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Ein Maximum mit Wert k bei x gleich h.",
+              "Ein Minimum mit Wert k bei x gleich h."
+            ],
+            "correct_index": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": "01M5HEGB5V1WY9G5BKB0BWSQ83",
+      "atom_uri": "urn:zam:atom:01M5HEGB5V1WY9G5BKB0BWSQ83",
+      "namespace": "zam-academy-mathematik-realschule-8",
+      "slug": "m8-tg-5-gleichungen",
+      "title": "Lineare Gleichungen und Lösungsfälle",
+      "domain": "mathematik/algebra",
+      "reduction": "axiomatic",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=tg-5-gleichungen",
+      "prerequisites": [
+        {
+          "atom_id": "01M5HEGB5VK7FVEFEEMJJM1DJ1",
+          "type": "soft",
+          "rationale": "Die vorherige Lektion erklärt eine verwendete Grundlage; Wiederholung bleibt freiwillig."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "mathematik-realschule-8",
+          "topic_code": "terme-gleichungen",
+          "topic_title": "Terme und Gleichungen"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "realschule",
+          "grade": 8,
+          "subject": "mathematik",
+          "track": "I",
+          "topic_code": "lb4",
+          "topic_title": "Terme, Gleichungen und Ungleichungen"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "realschule",
+          "grade": 8,
+          "subject": "mathematik",
+          "track": "II_III",
+          "topic_code": "lb3",
+          "topic_title": "Terme und Gleichungen"
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M5HEGB5WNZZP6E6N53FC5A42",
+          "slug": "m8-aequivalenz-null",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=tg-5-gleichungen",
+          "question": "Welche Rechenoperation ist keine zulässige allgemeine Äquivalenzumformung einer Gleichung, weil sie Information verlieren kann oder undefiniert ist?",
+          "concept": "Mit null multiplizieren oder durch null dividieren.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Mit null multiplizieren oder durch null dividieren.",
+              "Auf beiden Seiten dieselbe Zahl addieren."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M5HEGB5W7WEJTGRXQW88RTRP",
+          "slug": "m8-gleichung-alle",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=tg-5-gleichungen",
+          "question": "Welche Lösungsmenge folgt über der Grundmenge der rationalen Zahlen aus der Endzeile null gleich null?",
+          "concept": "Alle rationalen Zahlen.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Nur die Zahl null.",
+              "Alle rationalen Zahlen."
+            ],
+            "correct_index": 1
+          }
+        },
+        {
+          "id": "01M5HEGB5W7VSVYSR71XS7CTFP",
+          "slug": "m8-gleichung-keine",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=tg-5-gleichungen",
+          "question": "Welche Lösungsmenge folgt aus einer falschen Endaussage wie null gleich fünf?",
+          "concept": "Die leere Menge.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Die leere Menge.",
+              "Alle Zahlen der Grundmenge."
+            ],
+            "correct_index": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": "01M5HEGB5VA33DPG4SVAW61T9C",
+      "atom_uri": "urn:zam:atom:01M5HEGB5VA33DPG4SVAW61T9C",
+      "namespace": "zam-academy-mathematik-realschule-8",
+      "slug": "m8-tg-6-sachaufgaben",
+      "title": "Eine Gleichung aus einem Text",
+      "domain": "mathematik/algebra",
+      "reduction": "axiomatic",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=tg-6-sachaufgaben",
+      "prerequisites": [
+        {
+          "atom_id": "01M5HEGB5V1WY9G5BKB0BWSQ83",
+          "type": "soft",
+          "rationale": "Die vorherige Lektion erklärt eine verwendete Grundlage; Wiederholung bleibt freiwillig."
+        },
+        {
+          "atom_id": "01M5HEGB5VGP8WES635GNRFTK2",
+          "type": "soft",
+          "rationale": "Die vorherige Lektion erklärt eine verwendete Grundlage; Wiederholung bleibt freiwillig."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "mathematik-realschule-8",
+          "topic_code": "terme-gleichungen",
+          "topic_title": "Terme und Gleichungen"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "realschule",
+          "grade": 8,
+          "subject": "mathematik",
+          "track": "I",
+          "topic_code": "lb4",
+          "topic_title": "Terme, Gleichungen und Ungleichungen"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "realschule",
+          "grade": 8,
+          "subject": "mathematik",
+          "track": "II_III",
+          "topic_code": "lb3",
+          "topic_title": "Terme und Gleichungen"
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M5HEGB5WA0JCTR79DZNYZEG3",
+          "slug": "m8-kostenmodell",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=tg-6-sachaufgaben",
+          "question": "Wie setzt sich ein Preis mit Grundbetrag und konstantem Stückpreis zusammen?",
+          "concept": "Grundbetrag plus Stückpreis mal Anzahl.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Grundbetrag plus Stückpreis mal Anzahl.",
+              "Grundbetrag mal Anzahl plus Stückpreis."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M5HEGB5WJGECVN3KV6VGT595",
+          "slug": "m8-modell-probe",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=tg-6-sachaufgaben",
+          "question": "Wo prüfst du die gefundene Lösung einer Sachaufgabe abschließend?",
+          "concept": "Im ursprünglichen Text und im dort erlaubten Zahlenbereich.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Nur in einer beliebigen späteren Rechenzeile.",
+              "Im ursprünglichen Text und im dort erlaubten Zahlenbereich."
+            ],
+            "correct_index": 1
+          }
+        },
+        {
+          "id": "01M5HEGB5WCZ04VZKDQ3K97HQ9",
+          "slug": "m8-seitenlaenge-modell",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=tg-6-sachaufgaben",
+          "question": "Ist eine negative berechnete Seitenlänge eine zulässige Lösung einer geometrischen Sachaufgabe?",
+          "concept": "Nein, die Lösung muss zum Größenmodell passen.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Nein, die Lösung muss zum Größenmodell passen.",
+              "Ja, jede algebraisch berechnete Zahl passt automatisch."
+            ],
+            "correct_index": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": "01M5HEGB5VSBAQHNWE835GVN96",
+      "atom_uri": "urn:zam:atom:01M5HEGB5VSBAQHNWE835GVN96",
+      "namespace": "zam-academy-mathematik-realschule-8",
+      "slug": "m8-tg-7-ungleichungen",
+      "title": "Ungleichungen und Vorzeichenwechsel",
+      "domain": "mathematik/algebra",
+      "reduction": "axiomatic",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=tg-7-ungleichungen",
+      "prerequisites": [
+        {
+          "atom_id": "01M5HEGB5V1WY9G5BKB0BWSQ83",
+          "type": "soft",
+          "rationale": "Die vorherige Lektion erklärt eine verwendete Grundlage; Wiederholung bleibt freiwillig."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "mathematik-realschule-8",
+          "topic_code": "terme-gleichungen",
+          "topic_title": "Terme und Gleichungen"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "realschule",
+          "grade": 8,
+          "subject": "mathematik",
+          "track": "I",
+          "topic_code": "lb4",
+          "topic_title": "Terme, Gleichungen und Ungleichungen"
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M5HEGB5W5DYJRVRBMGEVVVWY",
+          "slug": "m8-ungleichung-negativ",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=tg-7-ungleichungen",
+          "question": "Was geschieht mit dem Relationszeichen, wenn beide Seiten einer Ungleichung mit einer negativen Zahl multipliziert oder durch sie dividiert werden?",
+          "concept": "Die Richtung des Relationszeichens kehrt sich um.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Die Richtung des Relationszeichens kehrt sich um.",
+              "Die Richtung des Relationszeichens bleibt immer gleich."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M5HEGB5WK9XVD1PQS7H75VV5",
+          "slug": "m8-ungleichung-rand",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=tg-7-ungleichungen",
+          "question": "Gehört der Randwert bei einer nicht strengen Ungleichung mit kleiner gleich zur Lösungsmenge?",
+          "concept": "Ja, Gleichheit ist eingeschlossen.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Nein, ein Randwert ist immer ausgeschlossen.",
+              "Ja, Gleichheit ist eingeschlossen."
+            ],
+            "correct_index": 1
+          }
+        },
+        {
+          "id": "01M5HEGB5WD82Z7EQ6FFGWQ3W7",
+          "slug": "m8-ungleichung-beispiel",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=tg-7-ungleichungen",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Was folgt aus "
+            },
+            {
+              "type": "math",
+              "tex": "-3x\\geq12",
+              "speech": "minus drei x größer oder gleich zwölf"
+            },
+            {
+              "type": "text",
+              "text": "?"
+            }
+          ],
+          "concept_segments": [
+            {
+              "type": "math",
+              "tex": "x\\leq-4",
+              "speech": "x kleiner oder gleich minus vier"
+            }
+          ],
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              [
+                {
+                  "type": "math",
+                  "tex": "x\\leq-4",
+                  "speech": "x kleiner oder gleich minus vier"
+                }
+              ],
+              [
+                {
+                  "type": "math",
+                  "tex": "x\\geq-4",
+                  "speech": "x größer oder gleich minus vier"
+                }
+              ]
+            ],
+            "correct_index": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": "01M5HEGB5V7YA4MVV92SFW19BP",
+      "atom_uri": "urn:zam:atom:01M5HEGB5V7YA4MVV92SFW19BP",
+      "namespace": "zam-academy-mathematik-realschule-8",
+      "slug": "m8-br-1-definitionsmenge",
+      "title": "Welche Zahlen sind erlaubt?",
+      "domain": "mathematik/algebra",
+      "reduction": "axiomatic",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=br-1-definitionsmenge",
+      "prerequisites": [
+        {
+          "atom_id": "01M5HEGB5VMFB4CHR7PDCCSSZG",
+          "type": "soft",
+          "rationale": "Die vorherige Lektion erklärt eine verwendete Grundlage; Wiederholung bleibt freiwillig."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "mathematik-realschule-8",
+          "topic_code": "bruchgleichungen",
+          "topic_title": "Bruchterme und Bruchgleichungen"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "realschule",
+          "grade": 8,
+          "subject": "mathematik",
+          "track": "I",
+          "topic_code": "lb5",
+          "topic_title": "Bruchterme und Bruchgleichungen"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "realschule",
+          "grade": 8,
+          "subject": "mathematik",
+          "track": "II_III",
+          "topic_code": "lb4",
+          "topic_title": "Bruchterme und Bruchgleichungen"
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M5HEGB5WZ1EE45W4R9HXNYET",
+          "slug": "m8-bruchterm-nenner",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=br-1-definitionsmenge",
+          "question": "Welche Bedingung muss der Nenner eines Bruchterms bei einer erlaubten Eingabe erfüllen?",
+          "concept": "Er darf nicht null werden.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Er darf nicht null werden.",
+              "Er muss immer positiv sein."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M5HEGB5W4T75TPBJF8DXPEHK",
+          "slug": "m8-definition-vier",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=br-1-definitionsmenge",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Welche Zahl ist bei "
+            },
+            {
+              "type": "math",
+              "tex": "T(x)=\\frac{x+3}{2x-8}",
+              "speech": "T von x gleich x plus drei geteilt durch zwei x minus acht"
+            },
+            {
+              "type": "text",
+              "text": " über den rationalen Zahlen ausgeschlossen?"
+            }
+          ],
+          "concept": "Die Zahl vier, weil dort der Nenner null wird.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Die Zahl minus drei, weil dort der Zähler null wird.",
+              "Die Zahl vier, weil dort der Nenner null wird."
+            ],
+            "correct_index": 1
+          }
+        },
+        {
+          "id": "01M5HEGB5WEYRDXEKMEKG3DGRV",
+          "slug": "m8-kuerzen-ausschluss",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=br-1-definitionsmenge",
+          "question": "Was geschieht beim Kürzen eines gemeinsamen Faktors mit den Ausschlüssen des ursprünglichen Bruchterms?",
+          "concept": "Sie bleiben bestehen.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Sie bleiben bestehen.",
+              "Alle Ausschlüsse verschwinden."
+            ],
+            "correct_index": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": "01M5HEGB5VDKQ6BVGKZHT9Z4QB",
+      "atom_uri": "urn:zam:atom:01M5HEGB5VDKQ6BVGKZHT9Z4QB",
+      "namespace": "zam-academy-mathematik-realschule-8",
+      "slug": "m8-br-2-verhaeltnisgleichungen",
+      "title": "Verhältnisgleichungen lösen",
+      "domain": "mathematik/algebra",
+      "reduction": "axiomatic",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=br-2-verhaeltnisgleichungen",
+      "prerequisites": [
+        {
+          "atom_id": "01M5HEGB5V7YA4MVV92SFW19BP",
+          "type": "soft",
+          "rationale": "Die vorherige Lektion erklärt eine verwendete Grundlage; Wiederholung bleibt freiwillig."
+        },
+        {
+          "atom_id": "01M5HEGB5V1WY9G5BKB0BWSQ83",
+          "type": "soft",
+          "rationale": "Die vorherige Lektion erklärt eine verwendete Grundlage; Wiederholung bleibt freiwillig."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "mathematik-realschule-8",
+          "topic_code": "bruchgleichungen",
+          "topic_title": "Bruchterme und Bruchgleichungen"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "realschule",
+          "grade": 8,
+          "subject": "mathematik",
+          "track": "I",
+          "topic_code": "lb5",
+          "topic_title": "Bruchterme und Bruchgleichungen"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "realschule",
+          "grade": 8,
+          "subject": "mathematik",
+          "track": "II_III",
+          "topic_code": "lb4",
+          "topic_title": "Bruchterme und Bruchgleichungen"
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M5HEGB5WKNHG7BWKK112380H",
+          "slug": "m8-bruchgleichung-erster-schritt",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=br-2-verhaeltnisgleichungen",
+          "question": "Was bestimmst du vor dem Beseitigen der Nenner einer Bruchgleichung?",
+          "concept": "Die Definitionsmenge aus allen ursprünglichen Nennern.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Die Definitionsmenge aus allen ursprünglichen Nennern.",
+              "Nur die Nullstellen der Zähler."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M5HEGB5WCQBRR3H6AC9Q9MBJ",
+          "slug": "m8-bruchgleichung-hauptnenner",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=br-2-verhaeltnisgleichungen",
+          "question": "Warum darfst du innerhalb der Definitionsmenge mit dem Hauptnenner multiplizieren?",
+          "concept": "Weil er dort nicht null ist.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Weil Multiplikation mit null immer äquivalent ist.",
+              "Weil er dort nicht null ist."
+            ],
+            "correct_index": 1
+          }
+        },
+        {
+          "id": "01M5HEGB5W30WQQ22TF6VPRJ2H",
+          "slug": "m8-bruchgleichung-kandidat",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=br-2-verhaeltnisgleichungen",
+          "question": "Wie behandelst du einen rechnerischen Lösungskandidaten außerhalb der Definitionsmenge?",
+          "concept": "Verwerfen; er ist keine Lösung der ursprünglichen Gleichung.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Verwerfen; er ist keine Lösung der ursprünglichen Gleichung.",
+              "Übernehmen und nachträglich die Definitionsmenge erweitern."
+            ],
+            "correct_index": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": "01M5HEGB5VRFCJT212HK7305P4",
+      "atom_uri": "urn:zam:atom:01M5HEGB5VRFCJT212HK7305P4",
+      "namespace": "zam-academy-mathematik-realschule-8",
+      "slug": "m8-br-3-formeln",
+      "title": "Formeln mit Brüchen umstellen",
+      "domain": "mathematik/algebra",
+      "reduction": "axiomatic",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=br-3-formeln",
+      "prerequisites": [
+        {
+          "atom_id": "01M5HEGB5VDKQ6BVGKZHT9Z4QB",
+          "type": "soft",
+          "rationale": "Die vorherige Lektion erklärt eine verwendete Grundlage; Wiederholung bleibt freiwillig."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "mathematik-realschule-8",
+          "topic_code": "bruchgleichungen",
+          "topic_title": "Bruchterme und Bruchgleichungen"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "realschule",
+          "grade": 8,
+          "subject": "mathematik",
+          "track": "I",
+          "topic_code": "lb5",
+          "topic_title": "Bruchterme und Bruchgleichungen"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "realschule",
+          "grade": 8,
+          "subject": "mathematik",
+          "track": "II_III",
+          "topic_code": "lb4",
+          "topic_title": "Bruchterme und Bruchgleichungen"
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M5HEGB5WJVKKTXF705XCBTP4",
+          "slug": "m8-zeitformel",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=br-3-formeln",
+          "question": "Wie berechnest du die Zeit aus Weg und konstanter, von null verschiedener Geschwindigkeit?",
+          "concept_segments": [
+            {
+              "type": "math",
+              "tex": "t=\\frac{s}{v}",
+              "speech": "t gleich s geteilt durch v"
+            }
+          ],
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              [
+                {
+                  "type": "math",
+                  "tex": "t=\\frac{s}{v}",
+                  "speech": "t gleich s geteilt durch v"
+                }
+              ],
+              [
+                {
+                  "type": "math",
+                  "tex": "t=sv",
+                  "speech": "t gleich s mal v"
+                }
+              ]
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M5HEGB5WW0YMZR63FNMXAD64",
+          "slug": "m8-formel-divisor",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=br-3-formeln",
+          "question": "Welche Bedingung ist vor dem Dividieren einer Formel durch eine Variable zu prüfen?",
+          "concept": "Die Variable muss von null verschieden sein.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Die Variable muss genau null sein.",
+              "Die Variable muss von null verschieden sein."
+            ],
+            "correct_index": 1
+          }
+        },
+        {
+          "id": "01M5HEGB5WFAKWSQS0GS7YJ0XF",
+          "slug": "m8-gleicher-weg",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=br-3-formeln",
+          "question": "Wie ändert sich bei gleichem Weg die Fahrzeit, wenn die konstante Geschwindigkeit verdoppelt wird?",
+          "concept": "Die Fahrzeit halbiert sich.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Die Fahrzeit halbiert sich.",
+              "Die Fahrzeit verdoppelt sich."
+            ],
+            "correct_index": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": "01M5HEGB5VWW4H9XHSK3B8FY14",
+      "atom_uri": "urn:zam:atom:01M5HEGB5VWW4H9XHSK3B8FY14",
+      "namespace": "zam-academy-mathematik-realschule-8",
+      "slug": "m8-fu-1-zuordnungen",
+      "title": "Was macht eine Zuordnung zur Funktion?",
+      "domain": "mathematik/algebra",
+      "reduction": "axiomatic",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=fu-1-zuordnungen",
+      "prerequisites": [],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "mathematik-realschule-8",
+          "topic_code": "funktionen",
+          "topic_title": "Funktionen"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "realschule",
+          "grade": 8,
+          "subject": "mathematik",
+          "track": "I",
+          "topic_code": "lb6",
+          "topic_title": "Funktionen"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "realschule",
+          "grade": 8,
+          "subject": "mathematik",
+          "track": "II_III",
+          "topic_code": "lb5",
+          "topic_title": "Funktionen"
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M5HEGB5WXYZQ1BV61H42FD96",
+          "slug": "m8-funktion-eindeutig",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=fu-1-zuordnungen",
+          "question": "Wie viele Funktionswerte muss eine Funktion jedem x ihrer Definitionsmenge zuordnen?",
+          "concept": "Genau einen.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Genau einen.",
+              "Mindestens zwei verschiedene."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M5HEGB5XRNQYVBDXYW1G1QH1",
+          "slug": "m8-funktion-gleicher-wert",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=fu-1-zuordnungen",
+          "question": "Dürfen verschiedene Eingaben einer Funktion denselben Ausgabewert liefern?",
+          "concept": "Ja, das ist erlaubt.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Nein, jeder Ausgabewert darf nur einmal vorkommen.",
+              "Ja, das ist erlaubt."
+            ],
+            "correct_index": 1
+          }
+        },
+        {
+          "id": "01M5HEGB5XY76SAWRDSPEAYPB9",
+          "slug": "m8-wertemenge",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=fu-1-zuordnungen",
+          "question": "Welche Werte stehen in der Wertemenge einer Funktion?",
+          "concept": "Alle tatsächlich angenommenen Funktionswerte, jeweils nur einmal.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Alle tatsächlich angenommenen Funktionswerte, jeweils nur einmal.",
+              "Immer alle denkbaren Zahlen, auch nie angenommene."
+            ],
+            "correct_index": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": "01M5HEGB5VWTHH8SQ1E5A10PJZ",
+      "atom_uri": "urn:zam:atom:01M5HEGB5VWTHH8SQ1E5A10PJZ",
+      "namespace": "zam-academy-mathematik-realschule-8",
+      "slug": "m8-fu-2-darstellungen",
+      "title": "Tabelle, Term, Graph und Nullstelle",
+      "domain": "mathematik/algebra",
+      "reduction": "axiomatic",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=fu-2-darstellungen",
+      "prerequisites": [
+        {
+          "atom_id": "01M5HEGB5VWW4H9XHSK3B8FY14",
+          "type": "soft",
+          "rationale": "Die vorherige Lektion erklärt eine verwendete Grundlage; Wiederholung bleibt freiwillig."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "mathematik-realschule-8",
+          "topic_code": "funktionen",
+          "topic_title": "Funktionen"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "realschule",
+          "grade": 8,
+          "subject": "mathematik",
+          "track": "I",
+          "topic_code": "lb6",
+          "topic_title": "Funktionen"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "realschule",
+          "grade": 8,
+          "subject": "mathematik",
+          "track": "II_III",
+          "topic_code": "lb5",
+          "topic_title": "Funktionen"
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M5HEGB5XKYDEFRCHE9HC7K3T",
+          "slug": "m8-graphenpunkt",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=fu-2-darstellungen",
+          "question": "Welche Koordinaten hat der Graphenpunkt zur erlaubten Eingabe x?",
+          "concept_segments": [
+            {
+              "type": "math",
+              "tex": "(x,f(x))",
+              "speech": "x, f von x"
+            }
+          ],
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              [
+                {
+                  "type": "math",
+                  "tex": "(x,f(x))",
+                  "speech": "x, f von x"
+                }
+              ],
+              [
+                {
+                  "type": "math",
+                  "tex": "(f(x),x)",
+                  "speech": "f von x, x"
+                }
+              ]
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M5HEGB5XYWZC10T4BC6EYDAX",
+          "slug": "m8-nullstelle",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=fu-2-darstellungen",
+          "question": "Was ist eine Nullstelle einer Funktion?",
+          "concept": "Eine erlaubte Eingabe, deren Funktionswert null ist.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Jeder Funktionswert, der positiv ist.",
+              "Eine erlaubte Eingabe, deren Funktionswert null ist."
+            ],
+            "correct_index": 1
+          }
+        },
+        {
+          "id": "01M5HEGB5XZ7W0V82S9MVK413E",
+          "slug": "m8-endliche-definitionsmenge",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=fu-2-darstellungen",
+          "question": "Was zeichnet man als Graphen, wenn die Definitionsmenge ausdrücklich nur fünf einzelne Zahlen enthält?",
+          "concept": "Nur die fünf zugehörigen Punkte.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Nur die fünf zugehörigen Punkte.",
+              "Immer zusätzlich eine durchgehende Kurve zwischen allen Punkten."
+            ],
+            "correct_index": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": "01M5HEGB5V0EDQF1A73S9KYN12",
+      "atom_uri": "urn:zam:atom:01M5HEGB5V0EDQF1A73S9KYN12",
+      "namespace": "zam-academy-mathematik-realschule-8",
+      "slug": "m8-fu-3-ursprungsgeraden",
+      "title": "Steigung an Ursprungsgeraden",
+      "domain": "mathematik/algebra",
+      "reduction": "axiomatic",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=fu-3-ursprungsgeraden",
+      "prerequisites": [
+        {
+          "atom_id": "01M5HEGB5VWTHH8SQ1E5A10PJZ",
+          "type": "soft",
+          "rationale": "Die vorherige Lektion erklärt eine verwendete Grundlage; Wiederholung bleibt freiwillig."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "mathematik-realschule-8",
+          "topic_code": "funktionen",
+          "topic_title": "Funktionen"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "realschule",
+          "grade": 8,
+          "subject": "mathematik",
+          "track": "I",
+          "topic_code": "lb6",
+          "topic_title": "Funktionen"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "realschule",
+          "grade": 8,
+          "subject": "mathematik",
+          "track": "II_III",
+          "topic_code": "lb5",
+          "topic_title": "Funktionen"
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M5HEGB5XND5DG6MG1Q5ZCA0Q",
+          "slug": "m8-ursprungsgerade",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=fu-3-ursprungsgeraden",
+          "question": "Welche Gleichungsform beschreibt eine Ursprungsgerade?",
+          "concept_segments": [
+            {
+              "type": "math",
+              "tex": "y=mx",
+              "speech": "y gleich m mal x"
+            }
+          ],
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              [
+                {
+                  "type": "math",
+                  "tex": "y=mx",
+                  "speech": "y gleich m mal x"
+                }
+              ],
+              [
+                {
+                  "type": "math",
+                  "tex": "y=m+x^2",
+                  "speech": "y gleich m plus x Quadrat"
+                }
+              ]
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M5HEGB5X1PMDSFM2E9X3BTCD",
+          "slug": "m8-steigungsdreieck",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=fu-3-ursprungsgeraden",
+          "question": "Wie berechnest du die Steigung aus einem Steigungsdreieck mit von null verschiedener Änderung in x-Richtung?",
+          "concept_segments": [
+            {
+              "type": "math",
+              "tex": "m=\\frac{\\Delta y}{\\Delta x}",
+              "speech": "m gleich Delta y geteilt durch Delta x"
+            }
+          ],
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              [
+                {
+                  "type": "math",
+                  "tex": "m=\\frac{\\Delta x}{\\Delta y}",
+                  "speech": "m gleich Delta x geteilt durch Delta y"
+                }
+              ],
+              [
+                {
+                  "type": "math",
+                  "tex": "m=\\frac{\\Delta y}{\\Delta x}",
+                  "speech": "m gleich Delta y geteilt durch Delta x"
+                }
+              ]
+            ],
+            "correct_index": 1
+          }
+        },
+        {
+          "id": "01M5HEGB5X0K6HH66JP246BAR5",
+          "slug": "m8-steigung-vorzeichen",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=fu-3-ursprungsgeraden",
+          "question": "Was bedeutet eine negative Steigung im üblichen Koordinatensystem?",
+          "concept": "Der Graph fällt beim Gehen nach rechts.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Der Graph fällt beim Gehen nach rechts.",
+              "Der Graph steigt beim Gehen nach rechts."
+            ],
+            "correct_index": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": "01M5HEGB5VJX32FQ80JD77PHTF",
+      "atom_uri": "urn:zam:atom:01M5HEGB5VJX32FQ80JD77PHTF",
+      "namespace": "zam-academy-mathematik-realschule-8",
+      "slug": "m8-fu-4-geradenlagen",
+      "title": "Geraden senkrecht zueinander",
+      "domain": "mathematik/algebra",
+      "reduction": "axiomatic",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=fu-4-geradenlagen",
+      "prerequisites": [
+        {
+          "atom_id": "01M5HEGB5V0EDQF1A73S9KYN12",
+          "type": "soft",
+          "rationale": "Die vorherige Lektion erklärt eine verwendete Grundlage; Wiederholung bleibt freiwillig."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "mathematik-realschule-8",
+          "topic_code": "funktionen",
+          "topic_title": "Funktionen"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "realschule",
+          "grade": 8,
+          "subject": "mathematik",
+          "track": "I",
+          "topic_code": "lb6",
+          "topic_title": "Funktionen"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "realschule",
+          "grade": 8,
+          "subject": "mathematik",
+          "track": "II_III",
+          "topic_code": "lb5",
+          "topic_title": "Funktionen"
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M5HEGB5XETBR5171RA26G4Q6",
+          "slug": "m8-orthogonal-steigungen",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=fu-4-geradenlagen",
+          "question": "Welche Beziehung gilt für die endlichen Steigungen zweier nicht achsenparalleler, senkrechter Geraden?",
+          "concept_segments": [
+            {
+              "type": "math",
+              "tex": "m_1m_2=-1",
+              "speech": "m eins mal m zwei gleich minus eins"
+            }
+          ],
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              [
+                {
+                  "type": "math",
+                  "tex": "m_1m_2=-1",
+                  "speech": "m eins mal m zwei gleich minus eins"
+                }
+              ],
+              [
+                {
+                  "type": "math",
+                  "tex": "m_1m_2=1",
+                  "speech": "m eins mal m zwei gleich eins"
+                }
+              ]
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M5HEGB5XXD12VDSXPF5AQD81",
+          "slug": "m8-orthogonal-kehrwert",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=fu-4-geradenlagen",
+          "question": "Wie erhältst du aus einer von null verschiedenen Steigung die Steigung einer senkrechten Geraden?",
+          "concept": "Den negativen Kehrwert bilden.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Nur das Vorzeichen ändern, ohne den Kehrwert zu bilden.",
+              "Den negativen Kehrwert bilden."
+            ],
+            "correct_index": 1
+          }
+        },
+        {
+          "id": "01M5HEGB5XYTE6JJA8PVAQZ1PB",
+          "slug": "m8-senkrechte-achse",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=fu-4-geradenlagen",
+          "question": "Warum lässt sich die Produktregel für endliche Steigungen nicht auf das Paar x-Achse und y-Achse anwenden?",
+          "concept": "Die y-Achse hat keine endliche Steigung.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Die y-Achse hat keine endliche Steigung.",
+              "Die beiden Achsen stehen nicht senkrecht aufeinander."
+            ],
+            "correct_index": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": "01M5HEGB5V32MVBKX0E5ZPADMK",
+      "atom_uri": "urn:zam:atom:01M5HEGB5V32MVBKX0E5ZPADMK",
+      "namespace": "zam-academy-mathematik-realschule-8",
+      "slug": "m8-fu-5-achsenabschnitt",
+      "title": "Die Gerade mit Achsenabschnitt",
+      "domain": "mathematik/algebra",
+      "reduction": "axiomatic",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=fu-5-achsenabschnitt",
+      "prerequisites": [
+        {
+          "atom_id": "01M5HEGB5V0EDQF1A73S9KYN12",
+          "type": "soft",
+          "rationale": "Die vorherige Lektion erklärt eine verwendete Grundlage; Wiederholung bleibt freiwillig."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "mathematik-realschule-8",
+          "topic_code": "funktionen",
+          "topic_title": "Funktionen"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "realschule",
+          "grade": 8,
+          "subject": "mathematik",
+          "track": "I",
+          "topic_code": "lb6",
+          "topic_title": "Funktionen"
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M5HEGB5XNGSZRX24K9WG4SY5",
+          "slug": "m8-gerade-steigung",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=fu-5-achsenabschnitt",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Was gibt "
+            },
+            {
+              "type": "math",
+              "tex": "m",
+              "speech": "m"
+            },
+            {
+              "type": "text",
+              "text": " in der Geradengleichung "
+            },
+            {
+              "type": "math",
+              "tex": "y=mx+t",
+              "speech": "y gleich m x plus t"
+            },
+            {
+              "type": "text",
+              "text": " an?"
+            }
+          ],
+          "concept_segments": [
+            {
+              "type": "text",
+              "text": "Die Steigung "
+            },
+            {
+              "type": "math",
+              "tex": "m=\\frac{\\Delta y}{\\Delta x}",
+              "speech": "m gleich Delta y geteilt durch Delta x"
+            },
+            {
+              "type": "text",
+              "text": "."
+            }
+          ],
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              [
+                {
+                  "type": "text",
+                  "text": "Die Steigung "
+                },
+                {
+                  "type": "math",
+                  "tex": "m=\\frac{\\Delta y}{\\Delta x}",
+                  "speech": "m gleich Delta y geteilt durch Delta x"
+                },
+                {
+                  "type": "text",
+                  "text": "."
+                }
+              ],
+              "Den y-Achsenabschnitt."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M5HEGB5XM486G36QFXA1ZMCB",
+          "slug": "m8-gerade-startwert",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=fu-5-achsenabschnitt",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Was gibt "
+            },
+            {
+              "type": "math",
+              "tex": "t",
+              "speech": "t"
+            },
+            {
+              "type": "text",
+              "text": " in "
+            },
+            {
+              "type": "math",
+              "tex": "y=mx+t",
+              "speech": "y gleich m x plus t"
+            },
+            {
+              "type": "text",
+              "text": " an?"
+            }
+          ],
+          "concept": "Den y-Achsenabschnitt, also den Wert bei x gleich null.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Die Steigung der Geraden.",
+              "Den y-Achsenabschnitt, also den Wert bei x gleich null."
+            ],
+            "correct_index": 1
+          }
+        },
+        {
+          "id": "01M5HEGB5XQ0FFX10P404S9KJR",
+          "slug": "m8-vertikale-keine-funktion",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=fu-5-achsenabschnitt",
+          "question": "Warum ist eine senkrechte Gerade keine Funktion y von x auf der reellen x-Achse?",
+          "concept": "Zu einem x gehören mehrere y-Werte; zu den übrigen x keine.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Zu einem x gehören mehrere y-Werte; zu den übrigen x keine.",
+              "Weil ihre Steigung genau null ist."
+            ],
+            "correct_index": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": "01M5HEGB5V91V479WP2DEJBTB0",
+      "atom_uri": "urn:zam:atom:01M5HEGB5V91V479WP2DEJBTB0",
+      "namespace": "zam-academy-mathematik-realschule-8",
+      "slug": "m8-fu-6-geraden-bestimmen",
+      "title": "Eine Gerade aus zwei Angaben",
+      "domain": "mathematik/algebra",
+      "reduction": "axiomatic",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=fu-6-geraden-bestimmen",
+      "prerequisites": [
+        {
+          "atom_id": "01M5HEGB5V32MVBKX0E5ZPADMK",
+          "type": "soft",
+          "rationale": "Die vorherige Lektion erklärt eine verwendete Grundlage; Wiederholung bleibt freiwillig."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "mathematik-realschule-8",
+          "topic_code": "funktionen",
+          "topic_title": "Funktionen"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "realschule",
+          "grade": 8,
+          "subject": "mathematik",
+          "track": "I",
+          "topic_code": "lb6",
+          "topic_title": "Funktionen"
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M5HEGB5XM6C545RHSE91CYX2",
+          "slug": "m8-zwei-punkte-steigung",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=fu-6-geraden-bestimmen",
+          "question": "Wie berechnest du die Steigung einer Geraden durch zwei Punkte mit verschiedenen x-Koordinaten?",
+          "concept_segments": [
+            {
+              "type": "math",
+              "tex": "m=\\frac{y_2-y_1}{x_2-x_1}",
+              "speech": "m gleich y zwei minus y eins geteilt durch x zwei minus x eins"
+            }
+          ],
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              [
+                {
+                  "type": "math",
+                  "tex": "m=\\frac{y_2-y_1}{x_2-x_1}",
+                  "speech": "m gleich y zwei minus y eins geteilt durch x zwei minus x eins"
+                }
+              ],
+              [
+                {
+                  "type": "math",
+                  "tex": "m=\\frac{x_2-x_1}{y_2-y_1}",
+                  "speech": "m gleich x zwei minus x eins geteilt durch y zwei minus y eins"
+                }
+              ]
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M5HEGB5X81K4Z7940T2Y928A",
+          "slug": "m8-achsenabschnitt-punkt",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=fu-6-geraden-bestimmen",
+          "question": "Wie berechnest du den Achsenabschnitt aus bekannter Steigung m und einem Punkt P?",
+          "concept_segments": [
+            {
+              "type": "math",
+              "tex": "t=y_P-mx_P",
+              "speech": "t gleich y P minus m mal x P"
+            }
+          ],
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              [
+                {
+                  "type": "math",
+                  "tex": "t=mx_P-y_P",
+                  "speech": "t gleich m mal x P minus y P"
+                }
+              ],
+              [
+                {
+                  "type": "math",
+                  "tex": "t=y_P-mx_P",
+                  "speech": "t gleich y P minus m mal x P"
+                }
+              ]
+            ],
+            "correct_index": 1
+          }
+        },
+        {
+          "id": "01M5HEGB5XS67VGTEXVX7XVBF5",
+          "slug": "m8-echt-parallel",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=fu-6-geraden-bestimmen",
+          "question": "Welche Parameterbeziehung haben zwei echt parallele Funktionsgeraden?",
+          "concept": "Gleiche Steigung und verschiedene y-Achsenabschnitte.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Gleiche Steigung und verschiedene y-Achsenabschnitte.",
+              "Gleiche Steigung und gleicher y-Achsenabschnitt."
+            ],
+            "correct_index": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": "01M5HEGB5VF9XCHJ1J3DSBQX21",
+      "atom_uri": "urn:zam:atom:01M5HEGB5VF9XCHJ1J3DSBQX21",
+      "namespace": "zam-academy-mathematik-realschule-8",
+      "slug": "m8-fu-7-flaechenmodelle",
+      "title": "Lineare Modelle und Flächen",
+      "domain": "mathematik/algebra",
+      "reduction": "axiomatic",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=fu-7-flaechenmodelle",
+      "prerequisites": [
+        {
+          "atom_id": "01M5HEGB5V91V479WP2DEJBTB0",
+          "type": "soft",
+          "rationale": "Die vorherige Lektion erklärt eine verwendete Grundlage; Wiederholung bleibt freiwillig."
+        },
+        {
+          "atom_id": "01M5HEGB5VGP8WES635GNRFTK2",
+          "type": "soft",
+          "rationale": "Die vorherige Lektion erklärt eine verwendete Grundlage; Wiederholung bleibt freiwillig."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "mathematik-realschule-8",
+          "topic_code": "funktionen",
+          "topic_title": "Funktionen"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "realschule",
+          "grade": 8,
+          "subject": "mathematik",
+          "track": "I",
+          "topic_code": "lb6",
+          "topic_title": "Funktionen"
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M5HEGB5XH152X6N35NSPTBEY",
+          "slug": "m8-determinante",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=fu-7-flaechenmodelle",
+          "question": "Wie lautet die zweireihige Determinante der Vektoren u und v in der Ebene?",
+          "concept_segments": [
+            {
+              "type": "math",
+              "tex": "\\det(u,v)=u_1v_2-u_2v_1",
+              "speech": "Determinante von u und v gleich u eins mal v zwei minus u zwei mal v eins"
+            }
+          ],
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              [
+                {
+                  "type": "math",
+                  "tex": "\\det(u,v)=u_1v_2-u_2v_1",
+                  "speech": "Determinante von u und v gleich u eins mal v zwei minus u zwei mal v eins"
+                }
+              ],
+              [
+                {
+                  "type": "math",
+                  "tex": "\\det(u,v)=u_1v_2+u_2v_1",
+                  "speech": "Determinante von u und v gleich u eins mal v zwei plus u zwei mal v eins"
+                }
+              ]
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M5HEGB5XF4Z6D6AVD29GMJPK",
+          "slug": "m8-determinante-dreieck",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=fu-7-flaechenmodelle",
+          "question": "Wie erhältst du aus zwei Verbindungsvektoren vom selben Eckpunkt den Dreiecksinhalt?",
+          "concept_segments": [
+            {
+              "type": "math",
+              "tex": "A=\\frac{|\\det(u,v)|}{2}",
+              "speech": "A gleich Betrag der Determinante von u und v geteilt durch zwei"
+            }
+          ],
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              [
+                {
+                  "type": "math",
+                  "tex": "A=|\\det(u,v)|",
+                  "speech": "A gleich Betrag der Determinante von u und v"
+                }
+              ],
+              [
+                {
+                  "type": "math",
+                  "tex": "A=\\frac{|\\det(u,v)|}{2}",
+                  "speech": "A gleich Betrag der Determinante von u und v geteilt durch zwei"
+                }
+              ]
+            ],
+            "correct_index": 1
+          }
+        },
+        {
+          "id": "01M5HEGB5XYFNZA5QA1XADW7AE",
+          "slug": "m8-modellbereich",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=fu-7-flaechenmodelle",
+          "question": "Warum muss bei einem linearen Kostenmodell der erlaubte Eingabebereich gesondert festgelegt werden?",
+          "concept": "Weil der Sachzusammenhang etwa negative Stückzahlen ausschließt.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Weil der Sachzusammenhang etwa negative Stückzahlen ausschließt.",
+              "Weil jede Formel automatisch nur sinnvolle Stückzahlen annimmt."
+            ],
+            "correct_index": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": "01M5HEGB5VRKQGEXSDEBFSCG7F",
+      "atom_uri": "urn:zam:atom:01M5HEGB5VRKQGEXSDEBFSCG7F",
+      "namespace": "zam-academy-mathematik-realschule-8",
+      "slug": "m8-dz-1-ergebnis-ereignis",
+      "title": "Ergebnis, Ereignis und Ergebnismenge",
+      "domain": "mathematik/stochastik",
+      "reduction": "axiomatic",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=dz-1-ergebnis-ereignis",
+      "prerequisites": [],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "mathematik-realschule-8",
+          "topic_code": "daten-zufall",
+          "topic_title": "Daten und Zufall"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "realschule",
+          "grade": 8,
+          "subject": "mathematik",
+          "track": "I",
+          "topic_code": "lb7",
+          "topic_title": "Daten und Zufall"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "realschule",
+          "grade": 8,
+          "subject": "mathematik",
+          "track": "II_III",
+          "topic_code": "lb6",
+          "topic_title": "Daten und Zufall"
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M5HEGB5XBASNDFA4BPF54M48",
+          "slug": "m8-ergebnis",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=dz-1-ergebnis-ereignis",
+          "question": "Was bezeichnet ein Ergebnis eines Zufallsexperiments?",
+          "concept": "Einen einzelnen möglichen Ausgang.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Einen einzelnen möglichen Ausgang.",
+              "Immer die Menge aller möglichen Ausgänge."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M5HEGB5X3HVT15CTY6Q1CKDP",
+          "slug": "m8-ereignis",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=dz-1-ergebnis-ereignis",
+          "question": "Was bezeichnet ein Ereignis eines Zufallsexperiments?",
+          "concept": "Eine Teilmenge der Ergebnismenge.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Die Anzahl der bereits ausgeführten Versuche.",
+              "Eine Teilmenge der Ergebnismenge."
+            ],
+            "correct_index": 1
+          }
+        },
+        {
+          "id": "01M5HEGB5XBYG498F2432KQC2Z",
+          "slug": "m8-muenzen-reihenfolge",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=dz-1-ergebnis-ereignis",
+          "question": "Sind Kopf–Zahl und Zahl–Kopf beim zweimaligen geordneten Münzwurf dasselbe Ergebnis?",
+          "concept": "Nein, die Reihenfolge unterscheidet die Ergebnisse.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Nein, die Reihenfolge unterscheidet die Ergebnisse.",
+              "Ja, die Reihenfolge spielt bei einem geordneten Versuch keine Rolle."
+            ],
+            "correct_index": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": "01M5HEGB5VQX5EYEGYW57YS5MA",
+      "atom_uri": "urn:zam:atom:01M5HEGB5VQX5EYEGYW57YS5MA",
+      "namespace": "zam-academy-mathematik-realschule-8",
+      "slug": "m8-dz-2-baum-tafel",
+      "title": "Baumdiagramm und Vierfeldertafel",
+      "domain": "mathematik/stochastik",
+      "reduction": "axiomatic",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=dz-2-baum-tafel",
+      "prerequisites": [
+        {
+          "atom_id": "01M5HEGB5VRKQGEXSDEBFSCG7F",
+          "type": "soft",
+          "rationale": "Die vorherige Lektion erklärt eine verwendete Grundlage; Wiederholung bleibt freiwillig."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "mathematik-realschule-8",
+          "topic_code": "daten-zufall",
+          "topic_title": "Daten und Zufall"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "realschule",
+          "grade": 8,
+          "subject": "mathematik",
+          "track": "I",
+          "topic_code": "lb7",
+          "topic_title": "Daten und Zufall"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "realschule",
+          "grade": 8,
+          "subject": "mathematik",
+          "track": "II_III",
+          "topic_code": "lb6",
+          "topic_title": "Daten und Zufall"
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M5HEGB5XPQX9N8YWYD21SEHE",
+          "slug": "m8-baum-pfad",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=dz-2-baum-tafel",
+          "question": "Was entspricht beim geordneten zweistufigen Münzexperiment einem vollständigen Pfad im Baumdiagramm?",
+          "concept": "Genau einem Ergebnis des gesamten Experiments.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Genau einem Ergebnis des gesamten Experiments.",
+              "Nur dem Ergebnis des ersten Wurfs."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M5HEGB5X662D55WC5VCEWSJ8",
+          "slug": "m8-tafel-zeile",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=dz-2-baum-tafel",
+          "question": "Welche Ergebnisse zählt die Randzahl erster Wurf Kopf beim zweimaligen Münzwurf?",
+          "concept": "Kopf–Kopf und Kopf–Zahl.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Kopf–Kopf und Zahl–Kopf.",
+              "Kopf–Kopf und Kopf–Zahl."
+            ],
+            "correct_index": 1
+          }
+        },
+        {
+          "id": "01M5HEGB5XDP26VR1QJGYAC1P6",
+          "slug": "m8-tafel-spalte",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=dz-2-baum-tafel",
+          "question": "Welche Ergebnisse zählt die Randzahl zweiter Wurf Kopf beim zweimaligen Münzwurf?",
+          "concept": "Kopf–Kopf und Zahl–Kopf.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Kopf–Kopf und Zahl–Kopf.",
+              "Kopf–Kopf und Kopf–Zahl."
+            ],
+            "correct_index": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": "01M5HEGB5VXJHWPJ0X0P2TW6QK",
+      "atom_uri": "urn:zam:atom:01M5HEGB5VXJHWPJ0X0P2TW6QK",
+      "namespace": "zam-academy-mathematik-realschule-8",
+      "slug": "m8-dz-3-haeufigkeiten",
+      "title": "Absolute und relative Häufigkeit",
+      "domain": "mathematik/stochastik",
+      "reduction": "axiomatic",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=dz-3-haeufigkeiten",
+      "prerequisites": [
+        {
+          "atom_id": "01M5HEGB5VQX5EYEGYW57YS5MA",
+          "type": "soft",
+          "rationale": "Die vorherige Lektion erklärt eine verwendete Grundlage; Wiederholung bleibt freiwillig."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "mathematik-realschule-8",
+          "topic_code": "daten-zufall",
+          "topic_title": "Daten und Zufall"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "realschule",
+          "grade": 8,
+          "subject": "mathematik",
+          "track": "I",
+          "topic_code": "lb7",
+          "topic_title": "Daten und Zufall"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "realschule",
+          "grade": 8,
+          "subject": "mathematik",
+          "track": "II_III",
+          "topic_code": "lb6",
+          "topic_title": "Daten und Zufall"
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M5HEGB5X72GMNY4DHMPQAYKR",
+          "slug": "m8-absolute-haeufigkeit",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=dz-3-haeufigkeiten",
+          "question": "Was ist die absolute Häufigkeit eines Ereignisses?",
+          "concept": "Die Anzahl seiner beobachteten Treffer.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Die Anzahl seiner beobachteten Treffer.",
+              "Sein Trefferanteil in Prozent."
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M5HEGB5XNV75CH2QM9X8BGHK",
+          "slug": "m8-relative-haeufigkeit",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=dz-3-haeufigkeiten",
+          "question": "Wie berechnest du die relative Häufigkeit aus Trefferzahl H und positiver Versuchszahl n?",
+          "concept_segments": [
+            {
+              "type": "math",
+              "tex": "h=\\frac{H}{n}",
+              "speech": "h gleich H geteilt durch n"
+            }
+          ],
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              [
+                {
+                  "type": "math",
+                  "tex": "h=\\frac{n}{H}",
+                  "speech": "h gleich n geteilt durch H"
+                }
+              ],
+              [
+                {
+                  "type": "math",
+                  "tex": "h=\\frac{H}{n}",
+                  "speech": "h gleich H geteilt durch n"
+                }
+              ]
+            ],
+            "correct_index": 1
+          }
+        },
+        {
+          "id": "01M5HEGB5XF49Z6ZR2YWH6XYFH",
+          "slug": "m8-haeufigkeit-schwankung",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=dz-3-haeufigkeiten",
+          "question": "Garantiert ein beobachteter Trefferanteil, welcher Ausgang im nächsten Versuch eintritt?",
+          "concept": "Nein, der Anteil ist keine Garantie für einen einzelnen nächsten Ausgang.",
+          "materiality": "material",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Nein, der Anteil ist keine Garantie für einen einzelnen nächsten Ausgang.",
+              "Ja, nach einer längeren Serie ist der nächste Ausgang sicher festgelegt."
+            ],
+            "correct_index": 0
+          }
+        }
+      ]
+    }
+  ]
+}

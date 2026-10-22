@@ -1,0 +1,312 @@
+{
+  "checked": "2026-10-22",
+  "sources": {
+    "I": "https://www.lehrplanplus.bayern.de/fachlehrplan/realschule/8/mathematik/wpfg1",
+    "II_III": "https://www.lehrplanplus.bayern.de/fachlehrplan/realschule/8/mathematik/wpfg2-3"
+  },
+  "stages": [
+    {
+      "id": "dreiecke-vierecke",
+      "stageNumber": 1,
+      "title": "Dreiecke und Vierecke",
+      "subtitle": "Eigenschaften erkennen, Figuren konstruieren und begründen",
+      "icon": "📐",
+      "accent": "#2563eb",
+      "badgeTitle": "Figurenkenner",
+      "lehrplanLabel": "LB 1 · Dreiecke nur II/III"
+    },
+    {
+      "id": "drehung",
+      "stageNumber": 2,
+      "title": "Drehung",
+      "subtitle": "Zentrum, Drehsinn, Symmetrie und Vektoren",
+      "icon": "🔄",
+      "accent": "#7c3aed",
+      "badgeTitle": "Drehprofi",
+      "lehrplanLabel": "LB 2 · Zweig I"
+    },
+    {
+      "id": "raumgeometrie",
+      "stageNumber": 3,
+      "title": "Raumgeometrie",
+      "subtitle": "Körper, Schnitte und räumliche Darstellungen",
+      "icon": "🧊",
+      "accent": "#0891b2",
+      "badgeTitle": "Raumforscher",
+      "lehrplanLabel": "LB 3 (I) · LB 2 (II/III)"
+    },
+    {
+      "id": "terme-gleichungen",
+      "stageNumber": 4,
+      "title": "Terme und Gleichungen",
+      "subtitle": "Umformen, faktorisieren, optimieren und Probleme lösen",
+      "icon": "🧩",
+      "accent": "#d97706",
+      "badgeTitle": "Termtüftler",
+      "lehrplanLabel": "LB 4 (I) · LB 3 (II/III)"
+    },
+    {
+      "id": "bruchgleichungen",
+      "stageNumber": 5,
+      "title": "Bruchterme und Bruchgleichungen",
+      "subtitle": "Zuerst die Definitionsmenge, dann die Rechnung",
+      "icon": "➗",
+      "accent": "#db2777",
+      "badgeTitle": "Bruchdetektiv",
+      "lehrplanLabel": "LB 5 (I) · LB 4 (II/III)"
+    },
+    {
+      "id": "funktionen",
+      "stageNumber": 6,
+      "title": "Funktionen",
+      "subtitle": "Zwischen Beschreibung, Tabelle, Term und Graph wechseln",
+      "icon": "📈",
+      "accent": "#059669",
+      "badgeTitle": "Graphenleser",
+      "lehrplanLabel": "LB 6 (I) · LB 5 (II/III)"
+    },
+    {
+      "id": "daten-zufall",
+      "stageNumber": 7,
+      "title": "Daten und Zufall",
+      "subtitle": "Ergebnisse ordnen und Häufigkeiten untersuchen",
+      "icon": "🎲",
+      "accent": "#4f46e5",
+      "badgeTitle": "Zufallsforscher",
+      "lehrplanLabel": "LB 7 (I) · LB 6 (II/III)"
+    }
+  ],
+  "lessons": [
+    {
+      "id": "dv-1-dreiecksungleichung",
+      "stageId": "dreiecke-vierecke",
+      "title": "Wann entsteht ein Dreieck?",
+      "bindings": { "II_III": 1 },
+      "prerequisites": []
+    },
+    {
+      "id": "dv-2-dreieckskonstruktion",
+      "stageId": "dreiecke-vierecke",
+      "title": "Dreiecke konstruieren",
+      "bindings": { "II_III": 1 },
+      "prerequisites": ["dv-1-dreiecksungleichung"]
+    },
+    {
+      "id": "dv-3-kongruenz",
+      "stageId": "dreiecke-vierecke",
+      "title": "Kongruenz sicher begründen",
+      "bindings": { "II_III": 1 },
+      "prerequisites": ["dv-2-dreieckskonstruktion"]
+    },
+    {
+      "id": "dv-4-vierecke",
+      "stageId": "dreiecke-vierecke",
+      "title": "Das Haus der Vierecke",
+      "bindings": { "I": 1, "II_III": 1 },
+      "prerequisites": []
+    },
+    {
+      "id": "dv-5-viereckskonstruktion",
+      "stageId": "dreiecke-vierecke",
+      "title": "Vierecke konstruieren und zerlegen",
+      "bindings": { "I": 1, "II_III": 1 },
+      "prerequisites": ["dv-4-vierecke"]
+    },
+    {
+      "id": "dr-1-drehung",
+      "stageId": "drehung",
+      "title": "Punkte und Figuren drehen",
+      "bindings": { "I": 2 },
+      "prerequisites": []
+    },
+    {
+      "id": "dr-2-drehsymmetrie",
+      "stageId": "drehung",
+      "title": "Drehsymmetrie und Punktspiegelung",
+      "bindings": { "I": 2 },
+      "prerequisites": ["dr-1-drehung"]
+    },
+    {
+      "id": "dr-3-vektoren",
+      "stageId": "drehung",
+      "title": "Vektoren um 90° und 180° drehen",
+      "bindings": { "I": 2 },
+      "prerequisites": ["dr-1-drehung"]
+    },
+    {
+      "id": "rg-1-koerpersymmetrie",
+      "stageId": "raumgeometrie",
+      "title": "Symmetrie von Körpern",
+      "bindings": { "I": 3 },
+      "prerequisites": []
+    },
+    {
+      "id": "rg-2-axialschnitte",
+      "stageId": "raumgeometrie",
+      "title": "Rotationskörper und Axialschnitte",
+      "bindings": { "I": 3 },
+      "prerequisites": []
+    },
+    {
+      "id": "rg-3-raumkoordinaten",
+      "stageId": "raumgeometrie",
+      "title": "Punkte im Raum beschreiben",
+      "bindings": { "I": 3 },
+      "prerequisites": []
+    },
+    {
+      "id": "rg-4-schraegbilder",
+      "stageId": "raumgeometrie",
+      "title": "Prismen und Pyramiden im Schrägbild",
+      "bindings": { "II_III": 2 },
+      "prerequisites": []
+    },
+    {
+      "id": "rg-5-wahre-groesse",
+      "stageId": "raumgeometrie",
+      "title": "Vom Schrägbild zur wahren Größe",
+      "bindings": { "II_III": 2 },
+      "prerequisites": ["rg-4-schraegbilder"]
+    },
+    {
+      "id": "tg-1-termoperationen",
+      "stageId": "terme-gleichungen",
+      "title": "Summenterme und Potenzen",
+      "bindings": { "I": 4, "II_III": 3 },
+      "prerequisites": []
+    },
+    {
+      "id": "tg-2-binomische-formeln",
+      "stageId": "terme-gleichungen",
+      "title": "Die drei binomischen Formeln",
+      "bindings": { "I": 4, "II_III": 3 },
+      "prerequisites": ["tg-1-termoperationen"]
+    },
+    {
+      "id": "tg-3-faktorisieren",
+      "stageId": "terme-gleichungen",
+      "title": "Aus Summen werden Produkte",
+      "bindings": { "I": 4, "II_III": 3 },
+      "prerequisites": ["tg-2-binomische-formeln"]
+    },
+    {
+      "id": "tg-4-extremwerte",
+      "stageId": "terme-gleichungen",
+      "title": "Extremwerte quadratischer Terme",
+      "bindings": { "I": 4, "II_III": 3 },
+      "prerequisites": ["tg-2-binomische-formeln"]
+    },
+    {
+      "id": "tg-5-gleichungen",
+      "stageId": "terme-gleichungen",
+      "title": "Lineare Gleichungen und Lösungsfälle",
+      "bindings": { "I": 4, "II_III": 3 },
+      "prerequisites": ["tg-1-termoperationen"]
+    },
+    {
+      "id": "tg-6-sachaufgaben",
+      "stageId": "terme-gleichungen",
+      "title": "Eine Gleichung aus einem Text",
+      "bindings": { "I": 4, "II_III": 3 },
+      "prerequisites": ["tg-5-gleichungen", "tg-4-extremwerte"]
+    },
+    {
+      "id": "tg-7-ungleichungen",
+      "stageId": "terme-gleichungen",
+      "title": "Ungleichungen und Vorzeichenwechsel",
+      "bindings": { "I": 4 },
+      "prerequisites": ["tg-5-gleichungen"]
+    },
+    {
+      "id": "br-1-definitionsmenge",
+      "stageId": "bruchgleichungen",
+      "title": "Welche Zahlen sind erlaubt?",
+      "bindings": { "I": 5, "II_III": 4 },
+      "prerequisites": ["tg-3-faktorisieren"]
+    },
+    {
+      "id": "br-2-verhaeltnisgleichungen",
+      "stageId": "bruchgleichungen",
+      "title": "Verhältnisgleichungen lösen",
+      "bindings": { "I": 5, "II_III": 4 },
+      "prerequisites": ["br-1-definitionsmenge", "tg-5-gleichungen"]
+    },
+    {
+      "id": "br-3-formeln",
+      "stageId": "bruchgleichungen",
+      "title": "Formeln mit Brüchen umstellen",
+      "bindings": { "I": 5, "II_III": 4 },
+      "prerequisites": ["br-2-verhaeltnisgleichungen"]
+    },
+    {
+      "id": "fu-1-zuordnungen",
+      "stageId": "funktionen",
+      "title": "Was macht eine Zuordnung zur Funktion?",
+      "bindings": { "I": 6, "II_III": 5 },
+      "prerequisites": []
+    },
+    {
+      "id": "fu-2-darstellungen",
+      "stageId": "funktionen",
+      "title": "Tabelle, Term, Graph und Nullstelle",
+      "bindings": { "I": 6, "II_III": 5 },
+      "prerequisites": ["fu-1-zuordnungen"]
+    },
+    {
+      "id": "fu-3-ursprungsgeraden",
+      "stageId": "funktionen",
+      "title": "Steigung an Ursprungsgeraden",
+      "bindings": { "I": 6, "II_III": 5 },
+      "prerequisites": ["fu-2-darstellungen"]
+    },
+    {
+      "id": "fu-4-geradenlagen",
+      "stageId": "funktionen",
+      "title": "Geraden senkrecht zueinander",
+      "bindings": { "I": 6, "II_III": 5 },
+      "prerequisites": ["fu-3-ursprungsgeraden"]
+    },
+    {
+      "id": "fu-5-achsenabschnitt",
+      "stageId": "funktionen",
+      "title": "Die Gerade mit Achsenabschnitt",
+      "bindings": { "I": 6 },
+      "prerequisites": ["fu-3-ursprungsgeraden"]
+    },
+    {
+      "id": "fu-6-geraden-bestimmen",
+      "stageId": "funktionen",
+      "title": "Eine Gerade aus zwei Angaben",
+      "bindings": { "I": 6 },
+      "prerequisites": ["fu-5-achsenabschnitt"]
+    },
+    {
+      "id": "fu-7-flaechenmodelle",
+      "stageId": "funktionen",
+      "title": "Lineare Modelle und Flächen",
+      "bindings": { "I": 6 },
+      "prerequisites": ["fu-6-geraden-bestimmen", "tg-4-extremwerte"]
+    },
+    {
+      "id": "dz-1-ergebnis-ereignis",
+      "stageId": "daten-zufall",
+      "title": "Ergebnis, Ereignis und Ergebnismenge",
+      "bindings": { "I": 7, "II_III": 6 },
+      "prerequisites": []
+    },
+    {
+      "id": "dz-2-baum-tafel",
+      "stageId": "daten-zufall",
+      "title": "Baumdiagramm und Vierfeldertafel",
+      "bindings": { "I": 7, "II_III": 6 },
+      "prerequisites": ["dz-1-ergebnis-ereignis"]
+    },
+    {
+      "id": "dz-3-haeufigkeiten",
+      "stageId": "daten-zufall",
+      "title": "Absolute und relative Häufigkeit",
+      "bindings": { "I": 7, "II_III": 6 },
+      "prerequisites": ["dz-2-baum-tafel"]
+    }
+  ]
+}
