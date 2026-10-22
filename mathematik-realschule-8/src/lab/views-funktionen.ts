@@ -786,9 +786,374 @@ function lineMxT(v: LabValues): string {
   return out;
 }
 
-// ─── Placeholders until the remaining labs are written ─────────────────────
+// ─── 6.7 Geradengleichungen aus zwei Punkten ───────────────────────────────
 
-const placeholder: LabView = { render: () => '<svg viewBox="0 0 520 340" xmlns="http://www.w3.org/2000/svg"></svg>' };
+export type TwoPointLine = { kind: "none" } | { kind: "vertical"; c: number } | { kind: "line"; m: Ratio; t: Ratio };
+
+/** The line through P and Q: none for P = Q, x = c for equal x, else m and t as fractions. */
+export function lineThroughPoints(px: number, py: number, qx: number, qy: number): TwoPointLine {
+  if (px === qx && py === qy) return { kind: "none" };
+  if (px === qx) return { kind: "vertical", c: px };
+  const dx = qx - px;
+  return { kind: "line", m: ratio(qy - py, dx), t: ratio(py * dx - (qy - py) * px, dx) };
+}
+
+/** y = m x + t with both parameters as fractions: "y = 2/3 x + 1/3". */
+export function lineTextR(m: Ratio, t: Ratio): string {
+  const base = lineText(m);
+  if (t[0] === 0) return base;
+  const shown = ratioText([Math.abs(t[0]), t[1]]);
+  if (m[0] === 0) return `y = ${ratioText(t)}`;
+  return `${base} ${t[0] > 0 ? "+" : "−"} ${shown}`;
+}
+
+export const POINT_TARGET = { x: 2, y: 3 };
+
+function lineFromPoints(v: LabValues): string {
+  const plot = squarePlot();
+  const L = lineThroughPoints(v.px, v.py, v.qx, v.qy);
+  const P = plot.P(v.px, v.py);
+  const Q = plot.P(v.qx, v.qy);
+  let out = open("Die Gerade durch zwei ziehbare Punkte P und Q mit Steigungsdreieck und Gleichung");
+  out += plot.clip("clip-lp") + plot.grid(1, 2);
+  let drawing = "";
+  if (L.kind === "vertical") drawing += line(plot.X(L.c), plot.Y(-6), plot.X(L.c), plot.Y(6), "lab-curve-c");
+  if (L.kind === "line") {
+    drawing += plot.lineThrough(L.m[0] / L.m[1], L.t[0] / L.t[1], "lab-curve");
+    const C = plot.P(v.qx, v.py);
+    drawing += polygon([P, C, Q], "lab-fill-only");
+    drawing += line(P.x, P.y, C.x, C.y, "lab-side-a");
+    if (v.qy !== v.py) drawing += line(C.x, C.y, Q.x, Q.y, "lab-side-b");
+  }
+  out += clipped("clip-lp", drawing);
+  if (L.kind === "line") {
+    const C = plot.P(v.qx, v.py);
+    const below = v.qy >= v.py;
+    out += boxedText(plot, (P.x + C.x) / 2, below ? C.y + 16 : C.y - 7, `Δx = ${fmt(v.qx - v.px)}`, "lab-text-small lab-text-a");
+    if (v.qy !== v.py) out += boxedText(plot, C.x + (v.qx > v.px ? 6 : -6), (C.y + Q.y) / 2 + 4, `Δy = ${fmt(v.qy - v.py)}`, "lab-text-small lab-text-b", v.qx > v.px ? "start" : "end");
+    const t = L.t[0] / L.t[1];
+    if (plot.contains(0, t)) {
+      const T = plot.P(0, t);
+      out += circle(T.x, T.y, 5, "lab-point-ok");
+    }
+  }
+  const hit = L.kind === "line" && Math.abs((L.m[0] / L.m[1]) * POINT_TARGET.x + L.t[0] / L.t[1] - POINT_TARGET.y) < 1e-9;
+  out += targetPoint(plot, POINT_TARGET.x, POINT_TARGET.y, "R", hit);
+  const dx = v.qx - v.px;
+  const dy = v.qy - v.py;
+  const lines: PanelLine[] = [];
+  if (L.kind === "none") lines.push(["P = Q: Durch einen", "lab-text lab-text-bad"], ["Punkt gehen viele Geraden.", "lab-text-small"]);
+  else if (L.kind === "vertical") {
+    lines.push([`x = ${fmt(L.c)}`, "lab-text lab-text-big lab-text-c"], ["", ""], ["x₁ = x₂: Δx = 0, man", "lab-text-small"], ["kann nicht durch 0 teilen.", "lab-text-small"], ["Parallele zur y-Achse,", "lab-text-small"], ["keine Steigung, keine", "lab-text-small"], ["Funktion.", "lab-text-small"]);
+  } else {
+    lines.push(
+      [lineTextR(L.m, L.t), "lab-text lab-text-big lab-text-a"],
+      ["", ""],
+      ["m = (y₂ − y₁) : (x₂ − x₁)", "lab-text-small"],
+      [`= ${fmt(dy)} : ${dx < 0 ? `(${fmt(dx)})` : fmt(dx)}`, "lab-text-small"],
+      [`m = ${ratioApprox(L.m)}`, "lab-text lab-text-b"],
+      ["", ""],
+      ["t = y₁ − m · x₁", "lab-text-small"],
+      [`= ${fmt(v.py)} − ${L.m[0] < 0 ? `(${ratioText(L.m)})` : ratioText(L.m)} · ${v.px < 0 ? `(${fmt(v.px)})` : fmt(v.px)}`, "lab-text-small"],
+      [`t = ${ratioApprox(L.t)}`, "lab-text lab-text-ok"],
+    );
+  }
+  out += sidePanel(lines, SQUARE_PANEL);
+  out += handle("P", P.x, P.y, "Punkt P", "lab-handle lab-handle-a");
+  out += handle("Q", Q.x, Q.y, "Punkt Q", "lab-handle lab-handle-b");
+  out += pointLabel(plot, P, "P", "lab-text lab-text-a", 11, -11);
+  out += pointLabel(plot, Q, "Q", "lab-text lab-text-b", 11, -11);
+  out += `</svg>`;
+  return out;
+}
+
+// ─── 6.8 Parallelenscharen ─────────────────────────────────────────────────
+
+export const FAMILY_TARGET = { x: -2, y: 1 };
+
+/** The perpendicular h to g_t through P: slope −1 : m, and its y-intercept. */
+export function familyNormal(v: LabValues): { m: number; t: number } {
+  return { m: -1 / v.m, t: v.py + v.px / v.m };
+}
+
+/** The intersection S of g_t and the perpendicular h through P. */
+export function familyIntersection(v: LabValues): { x: number; y: number } {
+  const h = familyNormal(v);
+  const x = (h.t - v.t) / (v.m - h.m);
+  return { x, y: v.m * x + v.t };
+}
+
+function parallelFamily(v: LabValues): string {
+  const plot = squarePlot();
+  const h = familyNormal(v);
+  const S = familyIntersection(v);
+  let out = open("Eine Parallelenschar y = mx + t, ein gewähltes Element, ein Punkt P und die Senkrechte durch P");
+  out += plot.clip("clip-pf") + plot.grid(1, 2);
+  let drawing = "";
+  for (let k = -12; k <= 12; k++) {
+    if (k === v.t) continue;
+    drawing += `<line x1="${r1(plot.X(-6))}" y1="${r1(plot.Y(v.m * -6 + k))}" x2="${r1(plot.X(6))}" y2="${r1(plot.Y(v.m * 6 + k))}" class="lab-ghost" style="stroke-width:1.1;opacity:0.55" />`;
+  }
+  drawing += plot.lineThrough(h.m, h.t, "lab-curve-2");
+  drawing += plot.lineThrough(v.m, v.t, "lab-curve");
+  out += clipped("clip-pf", drawing);
+  const hitR = Math.abs(v.m * FAMILY_TARGET.x + v.t - FAMILY_TARGET.y) < 1e-9;
+  out += targetPoint(plot, FAMILY_TARGET.x, FAMILY_TARGET.y, "R", hitR);
+  const x0 = -v.t / v.m;
+  if (plot.contains(x0, 0)) {
+    const N = plot.P(x0, 0);
+    out += circle(N.x, N.y, 5, "lab-point-ok");
+    out += boxedText(plot, N.x + (v.m > 0 ? 8 : -8), N.y + 17, `N(${fmt(x0, 2)} | 0)`, "lab-text-small lab-text-ok", v.m > 0 ? "start" : "end");
+  }
+  if (plot.contains(S.x, S.y)) {
+    const Sp = plot.P(S.x, S.y);
+    const onAxis = Math.abs(S.x) < 1e-9;
+    out += circle(Sp.x, Sp.y, onAxis ? 6 : 4.5, onAxis ? "lab-point-ok" : "lab-point");
+    out += pointLabel(plot, Sp, "S", onAxis ? "lab-text lab-text-ok" : "lab-text", -16, -8);
+  }
+  const lines: PanelLine[] = [
+    [`Schar: y = ${fmt(v.m)}x + t`, "lab-text-muted"],
+    [`g: y = ${linear(v.m, v.t)}`, "lab-text lab-text-big lab-text-a"],
+    [`t = ${fmt(v.t)}, N: x₀ = ${fmt(x0, 2)}`, "lab-text-small"],
+    ["", ""],
+    [`Element durch P: t = ${fmt(v.py - v.m * v.px, 2)}`, "lab-text-small"],
+    ["", ""],
+    ["h ⊥ g durch P:", "lab-text-muted"],
+    [`h: y = ${linear(h.m, h.t)}`, "lab-text lab-text-b"],
+    [`${fmt(v.m)} · (${fmt(h.m)}) = −1`, "lab-text-small"],
+    ["", ""],
+    ["Schnittpunkt von g und h:", "lab-text-muted"],
+    [`S(${fmt(S.x, 2)} | ${fmt(S.y, 2)})`, Math.abs(S.x) < 1e-9 ? "lab-text lab-text-ok" : "lab-text"],
+  ];
+  out += sidePanel(lines, SQUARE_PANEL);
+  if (plot.contains(0, v.t)) out += handle("T", plot.X(0), plot.Y(v.t), "Element der Schar wählen: t", "lab-handle lab-handle-a");
+  const Pp = plot.P(v.px, v.py);
+  out += handle("P", Pp.x, Pp.y, "Punkt P", "lab-handle lab-handle-b");
+  out += pointLabel(plot, Pp, "P", "lab-text lab-text-b", 11, -11);
+  out += `</svg>`;
+  return out;
+}
+
+// ─── 6.9 Tarifvergleich ────────────────────────────────────────────────────
+
+/** The longest distance of the tariff lab in km. */
+export const TARIFF_MAX = 400;
+const tariffPlot = () => new Plot(-24, 424, -16, 268, GRAPH_BOX);
+
+/** An amount of money as on a bill: 52,50, or 52 when it is whole. */
+export function euro(value: number): string {
+  const rounded = Math.round(value * 100) / 100;
+  return Number.isInteger(rounded) ? fmt(rounded) : fmt(rounded, 2).replace(/,(\d)$/, ",$10");
+}
+
+/** Where both tariffs cost the same: x and the cost, or why there is no such x. */
+export function breakEven(v: LabValues): { x: number; cost: number } | "keiner" | "immer" {
+  if (Math.abs(v.m1 - v.m2) < 1e-12) return Math.abs(v.t1 - v.t2) < 1e-12 ? "immer" : "keiner";
+  const x = (v.t1 - v.t2) / (v.m2 - v.m1);
+  return { x, cost: v.t1 + v.m1 * x };
+}
+
+function linearModel(v: LabValues): string {
+  const plot = tariffPlot();
+  const A = (x: number) => v.t1 + v.m1 * x;
+  const B = (x: number) => v.t2 + v.m2 * x;
+  let out = open("Zwei Tarife als Geraden: Kosten in Euro über der Strecke in Kilometern, mit Schnittpunkt");
+  out += plot.clip("clip-lm") + axesXY(plot, 50, 25, 100, 50, "km", "€");
+  let drawing = line(plot.X(0), plot.Y(A(0)), plot.X(TARIFF_MAX), plot.Y(A(TARIFF_MAX)), "lab-curve");
+  drawing += line(plot.X(0), plot.Y(B(0)), plot.X(TARIFF_MAX), plot.Y(B(TARIFF_MAX)), "lab-curve-2");
+  drawing += line(plot.X(v.x), plot.Y(0), plot.X(v.x), plot.Y(Math.max(A(v.x), B(v.x))), "lab-dashed");
+  out += clipped("clip-lm", drawing);
+  const be = breakEven(v);
+  if (typeof be === "object" && be.x >= 0 && be.x <= TARIFF_MAX && plot.contains(be.x, be.cost)) {
+    const S = plot.P(be.x, be.cost);
+    out += line(S.x, S.y, S.x, plot.Y(0), "lab-dashed");
+    out += circle(S.x, S.y, 6, "lab-point-ok");
+    out += boxedText(plot, S.x, S.y - 12, `${fmt(be.x, 1)} km`, "lab-text-small lab-text-ok");
+  }
+  for (const [value, cls] of [
+    [A(v.x), "lab-point-a"],
+    [B(v.x), "lab-point-b"],
+  ] as const) {
+    if (plot.contains(v.x, value)) out += circle(plot.X(v.x), plot.Y(value), 5, cls);
+  }
+  const cheaper = Math.abs(A(v.x) - B(v.x)) < 1e-9 ? "beide gleich teuer" : A(v.x) < B(v.x) ? `A ist ${euro(B(v.x) - A(v.x))} € billiger` : `B ist ${euro(A(v.x) - B(v.x))} € billiger`;
+  const lines: PanelLine[] = [
+    ["Tarif A", "lab-text lab-text-a"],
+    [`${euro(v.t1)} € + ${euro(v.m1)} € je km`, "lab-text-small"],
+    ["Tarif B", "lab-text lab-text-b"],
+    [`${euro(v.t2)} € + ${euro(v.m2)} € je km`, "lab-text-small"],
+    ["", ""],
+    [`Strecke x = ${fmt(v.x)} km:`, "lab-text-muted"],
+    [`A: ${euro(A(v.x))} €`, "lab-text lab-text-a"],
+    [`B: ${euro(B(v.x))} €`, "lab-text lab-text-b"],
+    [cheaper, "lab-text-small"],
+    ["", ""],
+    ["Gleich teuer:", "lab-text-muted"],
+  ];
+  if (be === "immer") lines.push(["bei jeder Strecke", "lab-text lab-text-ok"]);
+  else if (be === "keiner") lines.push(["nie (parallele Geraden)", "lab-text"]);
+  else if (be.x < 0) lines.push([`erst bei x = ${fmt(be.x, 1)} km,`, "lab-text-small"], ["also nie", "lab-text"]);
+  else lines.push([`bei ${fmt(be.x, 1)} km: ${euro(be.cost)} €`, "lab-text lab-text-ok"]);
+  out += sidePanel(lines);
+  const handleAt = (id: string, x: number, y: number, label: string, cls: string) => (plot.contains(x, y) ? handle(id, plot.X(x), plot.Y(y), label, cls) : "");
+  out += handleAt("A0", 0, v.t1, "Grundgebühr von Tarif A", "lab-handle lab-handle-a");
+  out += handleAt("B0", 0, v.t2, "Grundgebühr von Tarif B", "lab-handle lab-handle-b");
+  out += handleAt("A1", TARIFF_MAX, A(TARIFF_MAX), "Preis je km von Tarif A", "lab-handle lab-handle-a");
+  out += handleAt("B1", TARIFF_MAX, B(TARIFF_MAX), "Preis je km von Tarif B", "lab-handle lab-handle-b");
+  out += handle("X", plot.X(v.x), plot.Y(0), "Strecke x");
+  out += `</svg>`;
+  return out;
+}
+
+// ─── 6.10 Flächen mit Determinanten ────────────────────────────────────────
+
+export interface Vec {
+  x: number;
+  y: number;
+}
+
+/** The two-row determinant det(a, b) = a_x · b_y − a_y · b_x. */
+export const det = (a: Vec, b: Vec): number => a.x * b.y - a.y * b.x;
+
+/** The triangle of the area lab for the slider x: A, B (or Bₙ) and Cₙ. */
+export function areaTriangle(v: LabValues): { A: Vec; B: Vec; C: Vec } {
+  if (v.fig === 1) return { A: { x: -2, y: -1 }, B: { x: v.x, y: 0 }, C: { x: v.x, y: -0.5 * v.x + 4 } };
+  return { A: { x: -6, y: 2 }, B: { x: 2, y: 0 }, C: { x: v.x, y: 0.5 * v.x + 2 } };
+}
+
+/** det(AB→, ACₙ→) of the area lab. */
+export function areaDet(v: LabValues): number {
+  const { A, B, C } = areaTriangle(v);
+  return det({ x: B.x - A.x, y: B.y - A.y }, { x: C.x - A.x, y: C.y - A.y });
+}
+
+const areaPlot = () => new Plot(-7, 9, -4, 12, SQUARE_BOX);
+
+const n1 = (value: number): string => value.toFixed(1);
+
+/** A thin line with its own stroke width, for brackets and small arrows. */
+function thin(x1: number, y1: number, x2: number, y2: number, cls: string, width = 1.2): string {
+  return `<line x1="${n1(x1)}" y1="${n1(y1)}" x2="${n1(x2)}" y2="${n1(y2)}" class="${cls}" style="stroke-width:${width}" />`;
+}
+
+/** A vector name with a small arrow above it; returns the drawing and its width. */
+function svgName(x: number, baseline: number, name: string, cls: string): { svg: string; w: number } {
+  const w = name.length * (cls.includes("small") ? 7 : 8.4);
+  const y = baseline - (cls.includes("small") ? 11 : 13);
+  const stroke = cls.includes("lab-text-a") ? "lab-side-a" : cls.includes("lab-text-b") ? "lab-side-b" : "lab-ink";
+  const svg = text(x, baseline, name, cls) + thin(x + 0.5, y, x + w, y, stroke) + thin(x + w - 3.5, y - 2.5, x + w, y, stroke) + thin(x + w - 3.5, y + 2.5, x + w, y, stroke);
+  return { svg, w: w + 2 };
+}
+
+/** Round brackets, or the straight bars of a determinant, around a block from y0 to y1. */
+function brackets(x0: number, x1: number, y0: number, y1: number, straight = false): string {
+  if (straight) return thin(x0 + 2, y0, x0 + 2, y1, "lab-ink") + thin(x1 - 2, y0, x1 - 2, y1, "lab-ink");
+  const mid = (y0 + y1) / 2;
+  const curve = (x: number, bulge: number) => `<path d="M${n1(x + bulge)} ${n1(y0)} Q${n1(x - bulge)} ${n1(mid)} ${n1(x + bulge)} ${n1(y1)}" class="lab-ink" style="stroke-width:1.2;fill:none" />`;
+  return curve(x0 + 2, 2.5) + curve(x1 - 2, -2.5);
+}
+
+/** One piece of an equation in the side panel: text, a vector name, a column or a 2×2 determinant. */
+type Piece = { t: string; cls?: string } | { n: string; cls?: string } | { v: [string, string]; cls?: string } | { m: [string, string, string, string]; cls?: string };
+
+/** An equation laid out from left to right around the middle line y. */
+function equation(x: number, y: number, pieces: Piece[], base = "lab-text"): string {
+  let out = "";
+  let cx = x;
+  for (const piece of pieces) {
+    const cls = piece.cls ?? base;
+    const cw = charWidth(cls);
+    if ("t" in piece) {
+      out += text(cx, y + 4, piece.t, cls);
+      cx += piece.t.length * cw;
+    } else if ("n" in piece) {
+      const name = svgName(cx, y + 4, piece.n, cls);
+      out += name.svg;
+      cx += name.w;
+    } else if ("v" in piece) {
+      const w = Math.max(piece.v[0].length, piece.v[1].length) * cw + 14;
+      out += text(cx + w / 2, y - 2, piece.v[0], cls, "middle");
+      out += text(cx + w / 2, y + 13, piece.v[1], cls, "middle");
+      out += brackets(cx, cx + w, y - 14, y + 17);
+      cx += w + 3;
+    } else {
+      const [a, b, c, d] = piece.m;
+      const left = Math.max(a.length, c.length) * cw;
+      const right = Math.max(b.length, d.length) * cw;
+      const w = left + right + 24;
+      out += text(cx + 7 + left / 2, y - 2, a, cls, "middle");
+      out += text(cx + 7 + left / 2, y + 13, c, cls, "middle");
+      out += text(cx + w - 7 - right / 2, y - 2, b, cls, "middle");
+      out += text(cx + w - 7 - right / 2, y + 13, d, cls, "middle");
+      out += brackets(cx, cx + w, y - 14, y + 17, true);
+      cx += w + 3;
+    }
+  }
+  return out;
+}
+
+/** A vector arrow in SVG units with a filled head. */
+function vArrow(from: Pt, to: Pt, tone: "a" | "b"): string {
+  return toneArrow(from.x, from.y, to.x, to.y, tone, 2.6);
+}
+
+/** The area term A(x) of the figure, valid where the vertices run against the clock. */
+export const AREA_TERMS = ["A(x) = (3x + 6) FE", "A(x) = (−0,25x² + 1,5x + 4) FE"];
+
+function determinantArea(v: LabValues): string {
+  const plot = areaPlot();
+  const { A, B, C } = areaTriangle(v);
+  const u = { x: B.x - A.x, y: B.y - A.y };
+  const w = { x: C.x - A.x, y: C.y - A.y };
+  const D = det(u, w);
+  const area = Math.abs(D) / 2;
+  const [Ap, Bp, Cp] = [A, B, C].map((p) => plot.P(p.x, p.y));
+  let out = open("Dreiecke mit einem Eckpunkt auf einer Geraden und ihr Flächeninhalt mit der Determinante");
+  out += plot.clip("clip-da") + plot.grid(1, 2);
+  let drawing = "";
+  if (v.fig === 0) drawing += plot.lineThrough(0.5, 2, "lab-ghost") + plot.lineThrough(-0.25, 0.5, "lab-thin");
+  else drawing += plot.lineThrough(-0.5, 4, "lab-ghost");
+  drawing += polygon([Ap, Bp, Cp], D === 0 ? "lab-ghost" : "lab-fill-a");
+  out += clipped("clip-da", drawing);
+  out += vArrow(Ap, Bp, "a") + vArrow(Ap, Cp, "b");
+  if (v.fig === 0) out += text(plot.X(7.2), plot.Y(0.5 * 7.2 + 2) - 8, "g", "lab-text lab-text-muted", "end");
+  else out += text(plot.X(-5.5), plot.Y(-0.5 * -5.5 + 4) - 8, "h", "lab-text lab-text-muted", "start");
+  const names = v.fig === 0 ? ["A", "B", "Cₙ"] : ["A", "Bₙ", "Cₙ"];
+  for (const P of [Ap, Bp, Cp]) out += circle(P.x, P.y, 4.5, "lab-point");
+  out += pointLabel(plot, Ap, names[0], "lab-text", -18, 5);
+  out += pointLabel(plot, Bp, names[1], "lab-text", 9, v.fig === 1 ? 16 : 16);
+  out += pointLabel(plot, Cp, names[2], "lab-text lab-text-b", 10, -10);
+  // the calculation in the panel
+  const PX = SQUARE_PANEL.x + 8;
+  let panel = rect(SQUARE_PANEL.x, SQUARE_PANEL.y, SQUARE_PANEL.w, SQUARE_PANEL.h, "lab-panel", 'rx="10"');
+  panel += text(PX, 32, v.fig === 0 ? "Dreiecke ABCₙ" : "Dreiecke ABₙCₙ", "lab-text-muted");
+  panel += equation(PX, 64, [{ n: v.fig === 0 ? "AB" : "ABₙ", cls: "lab-text-small lab-text-a" }, { t: "=", cls: "lab-text-small" }, { v: [fmt(u.x), fmt(u.y)], cls: "lab-text-small lab-text-a" }]);
+  panel += equation(PX + 88, 64, [{ n: "ACₙ", cls: "lab-text-small lab-text-b" }, { t: "=", cls: "lab-text-small" }, { v: [fmt(w.x), fmt(w.y)], cls: "lab-text-small lab-text-b" }]);
+  panel += equation(PX, 112, [{ t: "det = ", cls: "lab-text-small" }, { m: [fmt(u.x), fmt(w.x), fmt(u.y), fmt(w.y)], cls: "lab-text-small" }]);
+  const par = (z: number) => (z < 0 ? `(${fmt(z)})` : fmt(z));
+  panel += text(PX, 148, `= ${par(u.x)} · ${par(w.y)} − ${par(u.y)} · ${par(w.x)}`, "lab-text-small");
+  panel += text(PX, 166, `= ${fmt(D)}`, "lab-text-small");
+  panel += text(PX, 190, `A = ½ · ${fmt(Math.abs(D))} = ${fmt(area)} FE`, D === 0 ? "lab-text lab-text-bad" : "lab-text lab-text-ok");
+  panel += text(PX, 210, D > 0 ? "det > 0: gegen den Uhrzeiger" : D < 0 ? "det < 0: im Uhrzeigersinn" : "det = 0: alle auf einer Geraden", "lab-text-small");
+  panel += text(PX, 230, AREA_TERMS[v.fig].replace(" FE", ""), "lab-text-small lab-text-a");
+  // a small graph of A(x) over the slider range
+  const mini = new Plot(-6, 8, 0, v.fig === 0 ? 30 : 15, { x: PX + 4, y: 242, w: SQUARE_PANEL.w - 26, h: 74 });
+  panel += rect(mini.box.x, mini.box.y, mini.box.w, mini.box.h, "lab-plot-bg");
+  panel += line(mini.X(0), mini.box.y, mini.X(0), mini.box.y + mini.box.h, "lab-grid");
+  panel += branch(mini, (x) => areaOf({ ...v, x }), -6, 8, "lab-curve", 112);
+  panel += circle(mini.X(v.x), mini.Y(area), 3.5, "lab-point-ok");
+  panel += text(mini.box.x + 4, mini.box.y + 11, "A(x)", "lab-text-small");
+  panel += text(mini.box.x + mini.box.w - 4, mini.box.y + mini.box.h - 4, "x", "lab-text-small", "end");
+  out += panel;
+  out += handle("C", Cp.x, Cp.y, v.fig === 0 ? "Punkt Cₙ auf g: x" : "Punkt Cₙ auf h: x", "lab-handle lab-handle-b");
+  out += `</svg>`;
+  return out;
+}
+
+/** The area of the lab's triangle in FE. */
+export function areaOf(v: LabValues): number {
+  return Math.abs(areaDet(v)) / 2;
+}
 
 export const FUNKTIONEN_VIEWS: Record<"relation-check" | "representations" | "zeros-domain" | "origin-line" | "perpendicular" | "line-mx-t" | "line-from-points" | "parallel-family" | "linear-model" | "determinant-area", LabView> = {
   "relation-check": {
@@ -837,8 +1202,34 @@ export const FUNKTIONEN_VIEWS: Record<"relation-check" | "representations" | "ze
       S: { y: "m", drag: (p, v) => ({ m: squarePlot().invY(p.y) - v.t }) },
     },
   },
-  "line-from-points": placeholder,
-  "parallel-family": placeholder,
-  "linear-model": placeholder,
-  "determinant-area": placeholder,
+  "line-from-points": {
+    render: lineFromPoints,
+    handles: {
+      P: { x: "px", y: "py", drag: (p) => ({ px: squarePlot().invX(p.x), py: squarePlot().invY(p.y) }) },
+      Q: { x: "qx", y: "qy", drag: (p) => ({ qx: squarePlot().invX(p.x), qy: squarePlot().invY(p.y) }) },
+    },
+  },
+  "parallel-family": {
+    render: parallelFamily,
+    handles: {
+      T: { y: "t", drag: (p) => ({ t: squarePlot().invY(p.y) }) },
+      P: { x: "px", y: "py", drag: (p) => ({ px: squarePlot().invX(p.x), py: squarePlot().invY(p.y) }) },
+    },
+  },
+  "linear-model": {
+    render: linearModel,
+    handles: {
+      A0: { y: "t1", drag: (p) => ({ t1: tariffPlot().invY(p.y) }) },
+      B0: { y: "t2", drag: (p) => ({ t2: tariffPlot().invY(p.y) }) },
+      A1: { y: "m1", drag: (p, v) => ({ m1: (tariffPlot().invY(p.y) - v.t1) / TARIFF_MAX }) },
+      B1: { y: "m2", drag: (p, v) => ({ m2: (tariffPlot().invY(p.y) - v.t2) / TARIFF_MAX }) },
+      X: { x: "x", drag: (p) => ({ x: tariffPlot().invX(p.x) }) },
+    },
+  },
+  "determinant-area": {
+    render: determinantArea,
+    handles: {
+      C: { x: "x", drag: (p) => ({ x: areaPlot().invX(p.x) }) },
+    },
+  },
 };

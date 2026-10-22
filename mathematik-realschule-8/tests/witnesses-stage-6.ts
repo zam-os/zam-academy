@@ -54,4 +54,36 @@ export const GOAL_WITNESSES_STAGE_6: Record<string, Record<string, LabValues>> =
     // y = −0,5x + 2 has the Nullstelle 4
     "nullstelle-vier": { m: -0.5, t: 2 },
   },
+  "fu-7-geraden-bestimmen": {
+    // P(0 | 4), Q(4 | 2): m = −2 : 4 = −1/2, t = 4, and −0,5 · 2 + 4 = 3
+    "steigung-r": { px: 0, py: 4, qx: 4, qy: 2 },
+    // P(−2 | −1), Q(4 | 2): m = 1/2, t = −1 − 0,5 · (−2) = 0
+    ursprung: { px: -2, py: -1, qx: 4, qy: 2 },
+    // x = 2
+    "senkrecht-x": { px: 2, py: -3, qx: 2, qy: 4 },
+  },
+  "fu-8-parallelenscharen": {
+    // 2 · (−2) + 5 = 1
+    "durch-r": { m: 2, t: 5, px: 2, py: 3 },
+    // y = 2x − 6 has the Nullstelle 3
+    "nullstelle-drei": { m: 2, t: -6, px: 2, py: 3 },
+    // h through P(2 | −1) with slope −1/2 meets y = 2x on the y-axis: −1 + 2 : 2 = 0
+    "schnitt-y": { m: 2, t: 0, px: 2, py: -1 },
+  },
+  "fu-9-anwendungen": {
+    // 30 + 0,2 · 150 = 60 = 15 + 0,3 · 150
+    "break-150": { t1: 30, m1: 0.2, t2: 15, m2: 0.3, x: 100 },
+    // B: 10 € and 0,15 € per km, both below A
+    "immer-b": { t1: 30, m1: 0.2, t2: 10, m2: 0.15, x: 100 },
+    // 30 + 0,2 · 100 = 50 = 20 + 0,3 · 100
+    "beide-50": { t1: 30, m1: 0.2, t2: 20, m2: 0.3, x: 100 },
+  },
+  "fu-10-flaechen": {
+    // A(x) = 3 · 0 + 6 = 6
+    sechs: { fig: 0, x: 0 },
+    // C(−2 | 1) on AB: det = 6 · (−2) + 12 = 0
+    "auf-ab": { fig: 0, x: -2 },
+    // A(x) = −0,25(x − 3)² + 6,25
+    maximum: { fig: 1, x: 3 },
+  },
 };

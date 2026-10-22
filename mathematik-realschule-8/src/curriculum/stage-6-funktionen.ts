@@ -4,12 +4,25 @@ import {
   allDifferentX,
   analyseRelation,
   angleBetweenLines,
+  AREA_TERMS,
+  areaDet,
+  areaOf,
+  areaTriangle,
+  breakEven,
   domainFunctionOf,
   domainOf,
+  euro,
+  FAMILY_TARGET,
+  familyIntersection,
+  familyNormal,
   intervalText,
   LINE_TARGETS,
   lineText,
+  lineTextR,
+  lineThroughPoints,
   ORIGIN_TARGET,
+  POINT_TARGET,
+  TARIFF_MAX,
   originSlope,
   perpendicularPair,
   type Ratio,
@@ -1853,6 +1866,1002 @@ const geraden: Lesson = {
   celebrationMessage: "Du liest m und t an jeder Geraden ab und kennst die Sonderfälle y = t und x = c.",
 };
 
+// 6.7 Geradengleichungen bestimmen ───────────────────────────────────────────
+
+const SLOPES_67: Ratio[] = [[1, 1], [2, 1], [3, 1], [-1, 1], [-2, 1], [-3, 1], [1, 2], [-1, 2], [3, 2], [-3, 2], [1, 3], [2, 3], [-2, 3], [3, 4], [-1, 4]];
+
+/** Two measurements of a linear process; m and t carry units, plus one more question. */
+function twoMeasurements(rng: Rng) {
+  const kind = rng.int(0, 3);
+  if (kind === 0) {
+    for (;;) {
+      const h0 = rng.pick([20, 22, 24, 25, 30]);
+      const r = rng.pick([1, 1.5, 2, 2.5, 3]);
+      const T = h0 / r;
+      if (!Number.isInteger(T) || T < 6) continue;
+      const t1 = rng.int(1, 3);
+      const t2 = rng.int(t1 + 2, Math.min(T - 1, t1 + 6));
+      return { kind, m: -r, t: h0, x1: t1, x2: t2, xAsk: T, yAsk: 0, text: `Eine Kerze brennt gleichmäßig ab. ${t1} ${t1 === 1 ? "Stunde" : "Stunden"} nach dem Anzünden ist sie noch ${fmt(h0 - r * t1)} cm hoch, ${t2} Stunden nach dem Anzünden noch ${fmt(h0 - r * t2)} cm.`, xName: "t in h", yName: "h in cm", mUnit: "cm pro h", tUnit: "cm", ask: "Nach wie vielen Stunden ist sie abgebrannt?", askLabel: "abgebrannt nach", answer: T, answerUnit: "h", tName: "Anfangslänge" };
+    }
+  }
+  if (kind === 1) {
+    const T0 = rng.pick([8, 10, 12]);
+    const k = rng.pick([0.02, 0.03, 0.04]);
+    const [d1, d2] = rng.shuffle([200, 300, 400, 500, 800]).slice(0, 2).sort((a, b) => a - b);
+    const D = rng.pick([1000, 1500, 2000]);
+    return { kind, m: k, t: T0, x1: d1, x2: d2, xAsk: D, yAsk: T0 + k * D, text: `Bei einer Erdwärmebohrung misst man in ${d1} m Tiefe ${fmt(T0 + k * d1)} °C und in ${d2} m Tiefe ${fmt(T0 + k * d2)} °C. Die Temperatur steigt gleichmäßig mit der Tiefe.`, xName: "x in m", yName: "T in °C", mUnit: "°C pro m", tUnit: "°C", ask: `Welche Temperatur ist in ${fmt(D)} m Tiefe zu erwarten?`, askLabel: `Temperatur in ${fmt(D)} m:`, answer: T0 + k * D, answerUnit: "°C", tName: "Temperatur an der Oberfläche" };
+  }
+  if (kind === 2) {
+    for (;;) {
+      const V0 = rng.pick([400, 500, 600, 800]);
+      const r = rng.pick([20, 25, 40, 50]);
+      const T = V0 / r;
+      if (!Number.isInteger(T) || T < 8) continue;
+      const t1 = rng.int(1, 4);
+      const t2 = rng.int(t1 + 2, Math.min(T - 1, t1 + 8));
+      return { kind, m: -r, t: V0, x1: t1, x2: t2, xAsk: T, yAsk: 0, text: `Ein Wassertank wird gleichmäßig geleert. ${t1} ${t1 === 1 ? "Minute" : "Minuten"} nach dem Öffnen des Ventils sind noch ${fmt(V0 - r * t1)} l im Tank, nach ${t2} Minuten noch ${fmt(V0 - r * t2)} l.`, xName: "t in min", yName: "V in l", mUnit: "l pro min", tUnit: "l", ask: "Nach wie vielen Minuten ist der Tank leer?", askLabel: "leer nach", answer: T, answerUnit: "min", tName: "Füllmenge zu Beginn" };
+    }
+  }
+  const p = rng.pick([1.8, 2, 2.2, 2.5]);
+  const g = rng.pick([3, 3.5, 4, 4.5]);
+  const [x1, x2] = rng.shuffle([4, 6, 8, 10, 12]).slice(0, 2).sort((a, b) => a - b);
+  const D = rng.pick([15, 20, 25]);
+  return { kind, m: p, t: g, x1, x2, xAsk: D, yAsk: g + p * D, text: `Eine Taxifahrt über ${x1} km kostet ${euro(g + p * x1)} €, eine Fahrt über ${x2} km kostet ${euro(g + p * x2)} € (gleicher Tarif).`, xName: "x in km", yName: "y in €", mUnit: "€ pro km", tUnit: "€", ask: `Was kostet eine Fahrt über ${D} km?`, askLabel: `Preis für ${D} km:`, answer: g + p * D, answerUnit: "€", tName: "Grundgebühr" };
+}
+
+/** A linear process known by its rate and one measurement, with two times to find. */
+function rateAndPoint(rng: Rng) {
+  const kind = rng.int(0, 2);
+  if (kind === 0) {
+    const r = rng.pick([300, 400, 500]);
+    const T = rng.int(7, 12);
+    const t1 = rng.int(2, T - 3);
+    const t2 = rng.pick(Array.from({ length: T - 1 }, (_, i) => i + 1).filter((s) => s !== t1));
+    return { kind, m: -r, t: r * T, x1: t1, y1: r * (T - t1), target: r * (T - t2), x2: t2, y3: 0, x3: T, text: `Ein Flugzeug sinkt beim Landeanflug gleichmäßig um ${r} m pro Minute. ${t1} Minuten nach Beginn des Sinkflugs ist es noch in ${fmt(r * (T - t1))} m Höhe.`, tLabel: "Höhe zu Beginn:", tUnit: "m", ask: `Wann ist es in ${fmt(r * (T - t2))} m Höhe, und wann setzt es auf (Höhe 0 m)?`, x2Label: `Zeit bis ${fmt(r * (T - t2))} m:`, x3Label: "Aufsetzen nach", xUnit: "min" };
+  }
+  if (kind === 1) {
+    const s = rng.pick([5, 8, 10, 12]);
+    const start = rng.pick([10, 15, 20, 25, 30]);
+    const w1 = rng.int(3, 8);
+    const w2 = rng.int(w1 + 2, w1 + 12);
+    const goals = [150, 200, 250].filter((z) => z > start + s * w2 && Number.isInteger((z - start) / s));
+    const y3 = goals.length > 0 ? rng.pick(goals) : start + s * (w2 + 6);
+    return { kind, m: s, t: start, x1: w1, y1: start + s * w1, target: start + s * w2, x2: w2, y3, x3: (y3 - start) / s, text: `Mia legt jede Woche ${s} € in ihre Spardose. Nach ${w1} Wochen sind ${fmtUnit(start + s * w1, "€")} darin; am Anfang lag schon ein Betrag darin.`, tLabel: "Betrag am Anfang:", tUnit: "€", ask: `Nach wie vielen Wochen sind ${fmtUnit(start + s * w2, "€")} darin, nach wie vielen ${fmtUnit(y3, "€")}?`, x2Label: `Wochen bis ${fmtUnit(start + s * w2, "€")}:`, x3Label: `Wochen bis ${fmtUnit(y3, "€")}:`, xUnit: "Wochen" };
+  }
+  const r = rng.pick([15, 20, 25, 30]);
+  const V0 = rng.pick([40, 60, 100, 150]);
+  const T = rng.pick([20, 24, 30, 40]);
+  const t1 = rng.int(3, 8);
+  const t2 = rng.int(t1 + 2, T - 2);
+  return { kind, m: r, t: V0, x1: t1, y1: V0 + r * t1, target: V0 + r * t2, x2: t2, y3: V0 + r * T, x3: T, text: `Ein Planschbecken wird mit ${r} l pro Minute gefüllt. ${t1} Minuten nach dem Aufdrehen sind ${fmt(V0 + r * t1)} l darin; ganz voll fasst es ${fmt(V0 + r * T)} l.`, tLabel: "Wasser zu Beginn:", tUnit: "l", ask: `Wann sind ${fmt(V0 + r * t2)} l darin, und wann ist es voll?`, x2Label: `Zeit bis ${fmt(V0 + r * t2)} l:`, x3Label: "voll nach", xUnit: "min" };
+}
+
+const geradenBestimmen: Lesson = {
+  id: "fu-7-geraden-bestimmen",
+  stageId: STAGE_ID,
+  stepNumber: 7,
+  title: "6.7 Geradengleichungen bestimmen",
+  subtitle: "Aus Punkt und Steigung oder aus zwei Punkten",
+  tracks: ["I"],
+  lehrplan: "M8 LB 6 (I): Geraden aus zwei Bestimmungsstücken",
+  whyItMatters:
+    "Messwerte liefern meist zwei Punkte, nicht die Gleichung. Aus zwei Punkten oder aus Punkt und Steigung stellst du die Geradengleichung auf und kannst dann jeden weiteren Wert vorhersagen, eine Standardaufgabe jeder Prüfung.",
+  explanationHtml: `
+    <p>Eine Gerade ist durch zwei <strong>Bestimmungsstücke</strong> festgelegt, zum Beispiel durch einen Punkt und die Steigung oder durch zwei Punkte. So bestimmst du ihre Gleichung y = mx + t:</p>
+    <p><strong>1. Punkt P(x<sub>P</sub> | y<sub>P</sub>) und Steigung m:</strong> P liegt auf der Geraden, also gilt y<sub>P</sub> = m · x<sub>P</sub> + t. Nach t aufgelöst: <strong>t = y<sub>P</sub> − m · x<sub>P</sub></strong>.</p>
+    <p><strong>2. Zwei Punkte P₁(x₁ | y₁) und P₂(x₂ | y₂) mit x₁ ≠ x₂:</strong> Das Steigungsdreieck zwischen den Punkten hat Δx = x₂ − x₁ und Δy = y₂ − y₁, also</p>
+    <p class="formula-line">m = (y₂ − y₁) : (x₂ − x₁)</p>
+    <p>Danach berechnest du t wie im Fall 1 mit einem der beiden Punkte und machst mit dem anderen die Probe. Welchen Punkt du P₁ nennst, ist egal, solange er oben und unten zuerst steht: (y₁ − y₂) : (x₁ − x₂) ergibt dasselbe m.</p>
+    <p><strong>Punktprobe:</strong> Ob ein weiterer Punkt auf der Geraden liegt, prüfst du durch Einsetzen. Ergibt sich eine wahre Aussage, liegt er auf der Geraden.</p>
+    <div class="example"><strong>Beispiel:</strong> Die Gerade g geht durch A(2 | −1) und B(6 | 7). Liegt P(10 | 15) auf g?
+      <ul class="steps">
+        <li>m = (7 − (−1)) : (6 − 2) = 8 : 4 = 2</li>
+        <li>A einsetzen: −1 = 2 · 2 + t ⇒ t = −1 − 4 = −5, also g: y = 2x − 5.</li>
+        <li>Probe mit B: 2 · 6 − 5 = 7.</li>
+        <li>Punktprobe: 2 · 10 − 5 = 15, eine wahre Aussage. P liegt auf g.</li>
+      </ul></div>
+    <p><strong>Sonderfall x₁ = x₂:</strong> Dann wäre Δx = 0, und durch 0 kann man nicht teilen. Die Gerade durch die beiden Punkte ist die Parallele zur y-Achse x = x₁; sie hat keine Steigung und ist kein Graph einer Funktion.</p>
+    <p>Typische Fehler: Δx und Δy vertauschen, oben und unten die Punkte in verschiedener Reihenfolge einsetzen (dann stimmt das Vorzeichen nicht) und bei t = y<sub>P</sub> − m · x<sub>P</sub> mit negativem x<sub>P</sub> die Klammer vergessen.</p>
+    <div class="merke"><strong>Merke:</strong> Aus zwei Punkten: m = (y₂ − y₁) : (x₂ − x₁), dann t = y₁ − m · x₁. Aus Punkt und Steigung: t = y<sub>P</sub> − m · x<sub>P</sub>. Haben beide Punkte dieselbe x-Koordinate, ist die Gerade x = x₁.</div>
+  `,
+  formulas: [
+    { name: "Steigung aus zwei Punkten", html: "m = (y₂ − y₁) : (x₂ − x₁)", quantities: "P₁(x₁ | y₁), P₂(x₂ | y₂) mit x₁ ≠ x₂" },
+    { name: "y-Achsenabschnitt", html: "t = y<sub>P</sub> − m · x<sub>P</sub>", quantities: "P ein Punkt der Geraden, m ihre Steigung" },
+    { name: "Sonderfall", html: "x₁ = x₂ ⇒ g: x = x₁", quantities: "Parallele zur y-Achse, keine Funktion" },
+  ],
+  quiz: {
+    question: "Welche Steigung hat die Gerade durch P(1 | 4) und Q(3 | 0)?",
+    options: ["m = −2", "m = 2", "m = −0,5", "m = 4"],
+    correctIndex: 0,
+    explanation: "m = (0 − 4) : (3 − 1) = −4 : 2 = −2. −0,5 entsteht, wenn man Δx durch Δy teilt, und +2, wenn man oben Q − P, unten aber P − Q rechnet.",
+  },
+  lab: {
+    kind: "line-from-points",
+    title: "Labor: Gerade durch zwei Punkte",
+    intro:
+      "Ziehe P und Q. Rechts wird die Steigung aus dem Steigungsdreieck zwischen P und Q berechnet und dann t mit dem Punkt P. Der grüne Punkt zeigt, wo die Gerade die y-Achse schneidet.",
+    params: [
+      { type: "range", key: "px", label: "x-Koordinate von P", unit: "", min: -6, max: 6, step: 1, value: -3 },
+      { type: "range", key: "py", label: "y-Koordinate von P", unit: "", min: -6, max: 6, step: 1, value: -1 },
+      { type: "range", key: "qx", label: "x-Koordinate von Q", unit: "", min: -6, max: 6, step: 1, value: 3 },
+      { type: "range", key: "qy", label: "y-Koordinate von Q", unit: "", min: -6, max: 6, step: 1, value: 3 },
+    ],
+    readouts: [
+      {
+        key: "gl",
+        label: "Gleichung",
+        emphasis: true,
+        compute: (v) => {
+          const L = lineThroughPoints(v.px, v.py, v.qx, v.qy);
+          return L.kind === "none" ? "P = Q: keine Gerade festgelegt" : L.kind === "vertical" ? `x = ${fmt(L.c)} (keine Funktion)` : lineTextR(L.m, L.t);
+        },
+      },
+      {
+        key: "m",
+        label: "Steigung m",
+        compute: (v) => {
+          const L = lineThroughPoints(v.px, v.py, v.qx, v.qy);
+          return L.kind === "line" ? ratioApprox(L.m) : "keine";
+        },
+      },
+      {
+        key: "t",
+        label: "y-Achsenabschnitt t",
+        compute: (v) => {
+          const L = lineThroughPoints(v.px, v.py, v.qx, v.qy);
+          return L.kind === "line" ? ratioApprox(L.t) : "keiner";
+        },
+      },
+    ],
+    goals: [
+      {
+        id: "steigung-r",
+        text: `Lege P und Q so, dass die Gerade die Steigung m = −1/2 hat und durch R(${fmt(POINT_TARGET.x)} | ${fmt(POINT_TARGET.y)}) geht.`,
+        check: (v) => {
+          const L = lineThroughPoints(v.px, v.py, v.qx, v.qy);
+          return L.kind === "line" && L.m[0] === -1 && L.m[1] === 2 && Math.abs(value(L.m) * POINT_TARGET.x + value(L.t) - POINT_TARGET.y) < 1e-9;
+        },
+      },
+      {
+        id: "ursprung",
+        text: "Lege P und Q so, dass keiner der beiden im Ursprung liegt, die Gerade aber trotzdem eine Ursprungsgerade ist.",
+        check: (v) => {
+          const L = lineThroughPoints(v.px, v.py, v.qx, v.qy);
+          return L.kind === "line" && L.t[0] === 0 && (v.px !== 0 || v.py !== 0) && (v.qx !== 0 || v.qy !== 0);
+        },
+      },
+      {
+        id: "senkrecht-x",
+        text: "Lege P und Q genau übereinander (gleiche x-Koordinate). Welche Gleichung hat die Gerade, und warum hat sie keine Steigung?",
+        check: (v) => v.px === v.qx && v.py !== v.qy,
+      },
+    ],
+  },
+  exercises: [
+    {
+      id: "zwei-punkte",
+      make: (rng, level): ExerciseTask => {
+        if (level === 1) {
+          let r: Ratio = [1, 1];
+          let t = 0;
+          let x1 = 0;
+          let x2 = 0;
+          let y1 = 0;
+          let y2 = 0;
+          do {
+            r = rng.pick(SLOPES_67);
+            t = rng.int(-5, 5);
+            x1 = r[1] * rng.int(-3, 1);
+            x2 = x1 + r[1] * rng.pick([1, 2, 3]);
+            if (rng.next() < 0.3) [x1, x2] = [x2, x1];
+            y1 = value(r) * x1 + t;
+            y2 = value(r) * x2 + t;
+          } while (Math.abs(y1) > 12 || Math.abs(y2) > 12 || Math.abs(x1) > 9 || Math.abs(x2) > 9);
+          const dx = x2 - x1;
+          const dy = y2 - y1;
+          return {
+            prompt: `Die Gerade g geht durch die Punkte P₁(${fmt(x1)} | ${fmt(y1)}) und P₂(${fmt(x2)} | ${fmt(y2)}). Bestimme ihre Steigung m und ihren y-Achsenabschnitt t.`,
+            given: [`P₁(${fmt(x1)} | ${fmt(y1)})`, `P₂(${fmt(x2)} | ${fmt(y2)})`],
+            formulaHint: "m = (y₂ − y₁) : (x₂ − x₁); t = y₁ − m · x₁",
+            fields: [
+              numberField("m =", value(r), "", 2, {
+                slips: [
+                  { value: dx / dy, hint: "m = Δy : Δx: Die y-Differenz steht vorne, die x-Differenz hinten." },
+                  { value: -value(r), hint: "Setze oben und unten die Punkte in derselben Reihenfolge ein: erst P₂, dann P₁." },
+                ],
+              }),
+              numberField("t =", t, "", 2, { slips: [{ value: y1 + value(r) * x1, hint: "t = y₁ − m · x₁: Das Produkt m · x₁ wird abgezogen." }] }),
+            ],
+            steps: [
+              `m = (${fmt(y2)} − ${paren(y1)}) : (${fmt(x2)} − ${paren(x1)}) = ${fmt(dy)} : ${paren(dx)} = ${ratioHtml(r)}${approxTail(r)}`,
+              `t = y₁ − m · x₁ = ${fmt(y1)} − ${ratioFactor(r)} · ${paren(x1)} = ${fmt(t)}`,
+              `Probe mit P₂: ${ratioFactor(r)} · ${paren(x2)}${term(t, "", false)} = ${fmt(y2)}`,
+              `<strong>m = ${ratioHtml(r)}, t = ${fmt(t)}: g: ${lineHtml(r, t)}</strong>`,
+            ],
+            meta: { x1, y1, x2, y2 },
+          };
+        }
+        const c = twoMeasurements(rng);
+        const y1 = c.m * c.x1 + c.t;
+        const y2 = c.m * c.x2 + c.t;
+        return {
+          prompt: `${c.text} Stelle eine Funktionsgleichung y = mx + t auf (${c.xName}, ${c.yName}) und gib an, was t hier bedeutet. ${c.ask}`,
+          given: [`(${fmt(c.x1)} | ${fmt(y1)})`, `(${fmt(c.x2)} | ${fmt(y2)})`],
+          fields: [
+            numberField("m =", c.m, c.mUnit, 2, { slips: [{ value: (c.x2 - c.x1) / (y2 - y1), hint: "m = Δy : Δx, nicht Δx : Δy." }, { value: -c.m, hint: "Prüfe das Vorzeichen: Nimmt die Größe ab, ist m negativ." }] }),
+            numberField(`t (${c.tName}) =`, c.t, c.tUnit, 2, { slips: [{ value: y1 + c.m * c.x1, hint: "t = y₁ − m · x₁." }] }),
+            numberField(c.askLabel, c.answer, c.answerUnit, 2),
+          ],
+          steps: [
+            `m = (${fmt(y2)} − ${fmt(y1)}) : (${fmt(c.x2)} − ${fmt(c.x1)}) = ${fmt(y2 - y1)} : ${fmt(c.x2 - c.x1)} = ${fmt(c.m)} (${c.mUnit})`,
+            `t = ${fmt(y1)} − ${paren(c.m)} · ${fmt(c.x1)} = ${fmt(c.t)}: ${c.tName} ${fmtUnit(c.t, c.tUnit)}. Also y = ${linear(c.m, c.t)}.`,
+            c.yAsk === 0 ? `${linear(c.m, c.t)} = 0 ⇔ x = ${fmt(c.t)} : ${fmt(-c.m)} = ${fmt(c.answer)}` : `y = ${fmt(c.m)} · ${fmt(c.xAsk)} + ${fmt(c.t)} = ${fmt(c.answer)}`,
+            `<strong>y = ${linear(c.m, c.t)}; ${c.askLabel.replace(/:$/, "")} ${fmtUnit(c.answer, c.answerUnit)}</strong>`,
+          ],
+          meta: { kind: c.kind, m: c.m, t: c.t, x1: c.x1, x2: c.x2, xAsk: c.xAsk, yAsk: c.yAsk },
+        };
+      },
+    },
+    {
+      id: "punkt-steigung",
+      make: (rng, level): ExerciseTask => {
+        if (level === 1) {
+          const r = rng.pick(SLOPES_67);
+          const xp = r[1] * rng.pick([-3, -2, -1, 1, 2, 3]);
+          const yp = rng.int(-6, 6);
+          const t = yp - value(r) * xp;
+          const xr = r[1] * rng.pick([-2, -1, 1, 2, 4].filter((k) => r[1] * k !== xp));
+          const onLine = rng.next() < 0.5;
+          const exact = value(r) * xr + t;
+          const yr = onLine ? exact : exact + rng.pick([-2, -1, 1, 2]);
+          return {
+            prompt: `Die Gerade g hat die Steigung m = ${ratioHtml(r)} und geht durch P(${fmt(xp)} | ${fmt(yp)}). Bestimme ihren y-Achsenabschnitt t und prüfe, ob R(${fmt(xr)} | ${fmt(yr)}) auf g liegt.`,
+            given: [`m = ${ratioHtml(r)}`, `P(${fmt(xp)} | ${fmt(yp)})`],
+            formulaHint: "t = y<sub>P</sub> − m · x<sub>P</sub>; Punktprobe: x<sub>R</sub> einsetzen und mit y<sub>R</sub> vergleichen.",
+            fields: [
+              numberField("t =", t, "", 2, { slips: [{ value: yp + value(r) * xp, hint: "t = y_P − m · x_P: Das Produkt wird abgezogen. Achte auf die Klammer bei negativem x_P." }] }),
+              choiceField("Liegt R auf g?", ["ja", "nein"], onLine ? 0 : 1),
+            ],
+            steps: [
+              `${fmt(yp)} = ${ratioFactor(r)} · ${paren(xp)} + t ⇒ t = ${fmt(yp)} − ${paren(value(r) * xp)} = ${fmt(t)}`,
+              `g: ${lineHtml(r, t)}`,
+              `Punktprobe: ${ratioFactor(r)} · ${paren(xr)}${term(t, "", false)} = ${fmt(exact)}${onLine ? " = y<sub>R</sub>" : ` ≠ ${fmt(yr)}`}`,
+              `<strong>t = ${fmt(t)}; R liegt ${onLine ? "auf" : "nicht auf"} g</strong>`,
+            ],
+            meta: { p: r[0], q: r[1], xp, yp, xr, yr },
+          };
+        }
+        const c = rateAndPoint(rng);
+        return {
+          prompt: `${c.text} Beschreibe den Vorgang mit einer Funktionsgleichung y = mx + t. ${c.ask}`,
+          given: [`m = ${fmt(c.m)}`, `(${fmt(c.x1)} | ${fmt(c.y1)})`],
+          fields: [
+            numberField(c.tLabel, c.t, c.tUnit, 2, { slips: [{ value: c.y1 + c.m * c.x1, hint: "t = y₁ − m · x₁: Das Produkt m · x₁ wird abgezogen." }] }),
+            numberField(c.x2Label, c.x2, c.xUnit, 2),
+            numberField(c.x3Label, c.x3, c.xUnit, 2),
+          ],
+          steps: [
+            `m = ${fmt(c.m)}, Punkt (${fmt(c.x1)} | ${fmt(c.y1)}): t = ${fmt(c.y1)} − ${paren(c.m)} · ${fmt(c.x1)} = ${fmt(c.t)}, also y = ${linear(c.m, c.t)}.`,
+            `${linear(c.m, c.t)} = ${fmt(c.target)} ⇔ ${sum([[c.m, "x"]])} = ${fmt(c.target - c.t)} ⇔ x = ${fmt(c.x2)}`,
+            `${linear(c.m, c.t)} = ${fmt(c.y3)} ⇔ ${sum([[c.m, "x"]])} = ${fmt(c.y3 - c.t)} ⇔ x = ${fmt(c.x3)}`,
+            `<strong>y = ${linear(c.m, c.t)}; ${fmtUnit(c.x2, c.xUnit)} und ${fmtUnit(c.x3, c.xUnit)}</strong>`,
+          ],
+          meta: { kind: c.kind, m: c.m, t: c.t, x1: c.x1, y1: c.y1, target: c.target, x2: c.x2, y3: c.y3, x3: c.x3 },
+        };
+      },
+    },
+  ],
+  requiredCorrect: 3,
+  celebrationMessage: "Du stellst Geradengleichungen aus zwei Punkten oder aus Punkt und Steigung auf und prüfst weitere Punkte.",
+};
+
+// 6.8 Parallele Geraden und Parallelenscharen ────────────────────────────────
+
+const SLOPES_68: Ratio[] = [[2, 1], [-2, 1], [1, 2], [-1, 2], [3, 1], [-3, 1], [1, 3], [-1, 3], [2, 3], [-3, 2], [3, 2], [-2, 3], [1, 1], [-1, 1], [3, 4], [-4, 3]];
+
+const lcm = (a: number, b: number) => Math.abs(a * b) / gcdInt(a, b);
+
+const parallelenscharen: Lesson = {
+  id: "fu-8-parallelenscharen",
+  stageId: STAGE_ID,
+  stepNumber: 8,
+  title: "6.8 Parallele Geraden und Parallelenscharen",
+  subtitle: "Gleiche Steigung, verschiedenes t",
+  tracks: ["I"],
+  lehrplan: "M8 LB 6 (I): Parallele und orthogonale Geraden, Parallelenscharen",
+  whyItMatters:
+    "Prüfungsaufgaben fragen oft nach der Parallelen oder der Senkrechten durch einen Punkt und nach dem Schnittpunkt zweier Geraden. Parallelenscharen zeigen dir, wie ein einziger Parameter eine ganze Familie von Geraden beschreibt.",
+  explanationHtml: `
+    <p><strong>Parallele Geraden</strong> haben dieselbe Steigung: g ∥ h ⇔ m₁ = m₂. <strong>Senkrechte Geraden</strong> erkennst du wie bei den Ursprungsgeraden (Lektion 6.5) an m₁ · m₂ = −1. Der y-Achsenabschnitt spielt dabei keine Rolle, denn Verschieben ändert die Richtung einer Geraden nicht.</p>
+    <p><strong>Gerade durch P parallel oder senkrecht zu g:</strong> Bestimme zuerst die Steigung (dieselbe wie bei g bzw. ihren negativen Kehrwert) und dann t = y<sub>P</sub> − m · x<sub>P</sub>.</p>
+    <p><strong>Parallelenschar:</strong> Alle Geraden g<sub>t</sub>: y = 2x + t mit t ∈ ℚ haben die Steigung 2 und sind zueinander parallel. Man nennt sie eine <strong>Parallelenschar</strong>, t heißt <strong>Scharparameter</strong>. Jeder Wert von t liefert ein Element der Schar. Ein bestimmtes Element findest du, indem du die Bedingung einsetzt und nach t auflöst:</p>
+    <ul>
+      <li>durch P(1 | 5): 5 = 2 · 1 + t ⇒ t = 3, also y = 2x + 3;</li>
+      <li>mit der Nullstelle 3: 0 = 2 · 3 + t ⇒ t = −6, also y = 2x − 6;</li>
+      <li>Schnitt mit der y-Achse bei −4: Dort ist x = 0, also t = −4 und y = 2x − 4.</li>
+    </ul>
+    <p><strong>Schnittpunkt zweier Geraden:</strong> Im Schnittpunkt haben beide Geraden denselben y-Wert. Setze die beiden Terme gleich, löse die lineare Gleichung nach x und berechne y mit einer der beiden Gleichungen. Parallele Geraden mit verschiedenem t haben keinen Schnittpunkt.</p>
+    <div class="example"><strong>Beispiel:</strong> Gegeben ist g₁: y = 3x − 4.
+      <ul class="steps">
+        <li>Parallele g₂ durch P(1 | 5): m = 3 und 5 = 3 · 1 + t ⇒ t = 2, also g₂: y = 3x + 2.</li>
+        <li>Senkrechte h durch O(0 | 0): m = −${frac(1, 3)}, t = 0, also h: y = −${frac(1, 3)}x.</li>
+        <li>Schnittpunkt von g₁ mit g₃: y = −x + 8: 3x − 4 = −x + 8 ⇔ 4x = 12 ⇔ x = 3, und y = 3 · 3 − 4 = 5. Also S(3 | 5).</li>
+      </ul></div>
+    <p>Typische Fehler: für die Parallele auch t übernehmen (dann ist es dieselbe Gerade), für die Senkrechte nur das Vorzeichen ändern und beim Gleichsetzen nur x angeben statt den ganzen Punkt S(x | y).</p>
+    <div class="merke"><strong>Merke:</strong> Parallel: m₁ = m₂. Senkrecht: m₁ · m₂ = −1. In der Parallelenschar y = mx + t ist m fest; ein Element bestimmst du, indem du eine Bedingung einsetzt und nach t auflöst. Schnittpunkt: Terme gleichsetzen.</div>
+  `,
+  formulas: [
+    { name: "Parallel", html: "g ∥ h ⇔ m₁ = m₂", quantities: "gleiche Steigung; bei gleichem t ist es dieselbe Gerade" },
+    { name: "Senkrecht", html: "g ⊥ h ⇔ m₁ · m₂ = −1", quantities: "m₂ = −1 : m₁, auch mit y-Achsenabschnitt" },
+    { name: "Parallelenschar", html: "g<sub>t</sub>: y = mx + t, t ∈ ℚ", quantities: "m fest, t Scharparameter" },
+    { name: "Schnittpunkt", html: "m₁x + t₁ = m₂x + t₂", quantities: "nach x lösen, y mit einer der Gleichungen" },
+  ],
+  quiz: {
+    question: "Welche Gerade ist parallel zu g: y = −2x + 1 und geht durch P(0 | 3)?",
+    options: ["y = −2x + 3", "y = 0,5x + 3", "y = 3x + 1", "y = −2x + 1"],
+    correctIndex: 0,
+    explanation: "Parallel heißt gleiche Steigung −2; P liegt auf der y-Achse, also ist t = 3. y = 0,5x + 3 steht senkrecht auf g, und y = −2x + 1 ist g selbst.",
+  },
+  lab: {
+    kind: "parallel-family",
+    title: "Labor: Eine Parallelenschar",
+    intro:
+      "Die grauen Geraden gehören zur Schar y = mx + t. Ziehe den blauen Punkt auf der y-Achse, um ein Element g zu wählen, und den orangen Punkt P: Die orange Gerade h geht durch P und steht senkrecht auf g.",
+    params: [
+      {
+        type: "choice",
+        key: "m",
+        label: "Schar",
+        options: [
+          { value: 2, label: "y = 2x + t" },
+          { value: -0.5, label: "y = −0,5x + t" },
+        ],
+        value: 2,
+      },
+      { type: "range", key: "t", label: "Scharparameter t", unit: "", min: -6, max: 6, step: 0.5, value: 0, digits: 1 },
+      { type: "range", key: "px", label: "x-Koordinate von P", unit: "", min: -5, max: 5, step: 1, value: 2 },
+      { type: "range", key: "py", label: "y-Koordinate von P", unit: "", min: -5, max: 5, step: 1, value: 3 },
+    ],
+    readouts: [
+      { key: "g", label: "gewähltes Element g", emphasis: true, compute: (v) => `y = ${linear(v.m, v.t)}` },
+      { key: "durchP", label: "Element durch P", compute: (v) => `y = ${linear(v.m, v.py - v.m * v.px)}` },
+      { key: "null", label: "Nullstelle von g", compute: (v) => zeroOfLine(v.m, v.t) },
+      { key: "h", label: "Senkrechte h durch P", compute: (v) => `y = ${linear(familyNormal(v).m, familyNormal(v).t)}` },
+      { key: "S", label: "Schnittpunkt S von g und h", compute: (v) => point(familyIntersection(v).x, familyIntersection(v).y) },
+    ],
+    goals: [
+      {
+        id: "durch-r",
+        text: `Wähle die Schar y = 2x + t und finde ihr Element, das durch R(${fmt(FAMILY_TARGET.x)} | ${fmt(FAMILY_TARGET.y)}) geht.`,
+        check: (v) => v.m === 2 && Math.abs(2 * FAMILY_TARGET.x + v.t - FAMILY_TARGET.y) < 1e-9,
+      },
+      {
+        id: "nullstelle-drei",
+        text: "Finde ein Element der Schar mit der Nullstelle x₀ = 3. Welchen Wert hat t?",
+        check: (v) => Math.abs(3 * v.m + v.t) < 1e-9,
+      },
+      {
+        id: "schnitt-y",
+        text: "Ziehe P so, dass die Senkrechte h durch P das Element g genau auf der y-Achse schneidet.",
+        check: (v) => Math.abs(familyIntersection(v).x) < 1e-9,
+      },
+    ],
+  },
+  exercises: [
+    {
+      id: "parallel-senkrecht",
+      make: (rng, level): ExerciseTask => {
+        if (level === 1) {
+          const r = rng.pick(SLOPES_68);
+          const rs = negativeReciprocal(r);
+          const t = rng.int(-5, 5);
+          const base = lcm(r[1], Math.abs(r[0]));
+          const a = base * rng.pick([-1, 1]) * (base <= 4 ? rng.pick([1, 2]) : 1);
+          // P must not lie on g, or the parallel through P would be g itself
+          const b = rng.pick([-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5].filter((y) => y !== value(r) * a + t));
+          const tp = b - value(r) * a;
+          const ts = b - value(rs) * a;
+          const g = `g: ${lineHtml(r, t)}`;
+          return {
+            prompt: `Gegeben sind die Gerade ${g} und der Punkt P(${fmt(a)} | ${fmt(b)}). Bestimme die Gleichung der Parallelen p zu g durch P und der Senkrechten s zu g durch P.`,
+            given: [g, `P(${fmt(a)} | ${fmt(b)})`],
+            formulaHint: "parallel: gleiches m; senkrecht: m = −1 : m<sub>g</sub>; dann t = y<sub>P</sub> − m · x<sub>P</sub>",
+            fields: [
+              numberField("t<sub>p</sub> =", tp, "", 2, { slips: [{ value: t, hint: "Mit dem t von g wäre p dieselbe Gerade wie g. Berechne t neu mit dem Punkt P." }] }),
+              numberField("m<sub>s</sub> =", value(rs), "", 2, { slips: [{ value: -value(r), hint: "Nur das Vorzeichen geändert: Bilde auch den Kehrwert." }, { value: r[1] / r[0], hint: "Kehrwert ja, aber das Vorzeichen muss sich umdrehen." }] }),
+              numberField("t<sub>s</sub> =", ts, "", 2),
+            ],
+            steps: [
+              `p ∥ g: m<sub>p</sub> = ${ratioHtml(r)}; t<sub>p</sub> = ${fmt(b)} − ${ratioFactor(r)} · ${paren(a)} = ${fmt(tp)}, also p: ${lineHtml(r, tp)}`,
+              `s ⊥ g: m<sub>s</sub> = −1 : ${ratioFactor(r)} = ${ratioHtml(rs)}`,
+              `t<sub>s</sub> = ${fmt(b)} − ${ratioFactor(rs)} · ${paren(a)} = ${fmt(ts)}, also s: ${lineHtml(rs, ts)}`,
+              `<strong>p: ${lineHtml(r, tp)}; s: ${lineHtml(rs, ts)}</strong>`,
+            ],
+            meta: { p: r[0], q: r[1], t, a, b },
+          };
+        }
+        const m = rng.pick([2, 3, -2, -3, 0.5, -0.5]);
+        const r = ratio(m * 2, 2);
+        const rh = negativeReciprocal(r);
+        const t1 = rng.int(-5, 5);
+        const a = r[1] * rng.pick([-2, -1, 1, 2]);
+        const b = rng.pick([-4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6].filter((y) => y !== m * a + t1));
+        const t2 = b - m * a;
+        const xS = rng.int(-3, 5);
+        const yS = m * xS + t1;
+        const c = rng.pick([-1, -2, 1, 2, 3, -3].filter((k) => k !== m && k * m !== -1));
+        const d = yS - c * xS;
+        return {
+          prompt: `Gegeben ist die Gerade g₁: ${lineHtml(r, t1)}. Bestimme die Gleichung der zu g₁ parallelen Geraden g₂ durch P(${fmt(a)} | ${fmt(b)}), die Gleichung der zu g₁ senkrechten Geraden h durch den Ursprung O(0 | 0) und berechne den Schnittpunkt S von g₁ mit der Geraden g₃: y = ${linear(c, d)}.`,
+          given: [`g₁: ${lineHtml(r, t1)}`, `P(${fmt(a)} | ${fmt(b)})`, `g₃: y = ${linear(c, d)}`],
+          fields: [
+            numberField("t von g₂:", t2, "", 2, { slips: [{ value: t1, hint: "g₂ geht durch P: Berechne t neu, mit dem t von g₁ wäre g₂ dieselbe Gerade." }] }),
+            numberField("Steigung von h:", value(rh), "", 2, { slips: [{ value: -m, hint: "Nur das Vorzeichen geändert: Bilde auch den Kehrwert." }, { value: 1 / m, hint: "Kehrwert ja, aber das Vorzeichen muss sich umdrehen." }] }),
+            numberField("x<sub>S</sub> =", xS, "", 2),
+            numberField("y<sub>S</sub> =", yS, "", 2),
+          ],
+          steps: [
+            `g₂: m = ${fmt(m)}, ${fmt(b)} = ${fmt(m)} · ${paren(a)} + t ⇒ t = ${fmt(t2)}, also g₂: y = ${linear(m, t2)}`,
+            `h: m = −1 : ${paren(m)} = ${ratioHtml(rh)}, t = 0, also h: ${lineHtml(rh)}`,
+            `S: ${linear(m, t1)} = ${linear(c, d)} ⇔ ${sum([[m - c, "x"]])} = ${fmt(d - t1)} ⇔ x = ${fmt(xS)}; y = ${fmt(m)} · ${paren(xS)}${term(t1, "", false)} = ${fmt(yS)}`,
+            `<strong>g₂: y = ${linear(m, t2)}; h: ${lineHtml(rh)}; S${point(xS, yS)}</strong>`,
+          ],
+          meta: { m, t1, a, b, c, d },
+        };
+      },
+    },
+    {
+      id: "schar",
+      make: (rng, level): ExerciseTask => {
+        if (level === 1) {
+          const r = rng.pick(SLOPES_68);
+          const a = r[1] * rng.pick([-3, -2, -1, 1, 2, 3]);
+          const b = rng.int(-6, 6);
+          const x0 = r[1] * rng.pick([-3, -2, -1, 1, 2, 3]);
+          const tP = b - value(r) * a;
+          const tN = -value(r) * x0 + 0;
+          const schar = `g<sub>t</sub>: ${lineHtml(r, 0)} + t`;
+          return {
+            prompt: `Gegeben ist die Parallelenschar ${schar} (t ∈ ℚ). Bestimme das Element der Schar, das durch P(${fmt(a)} | ${fmt(b)}) geht, und das Element mit der Nullstelle x₀ = ${fmt(x0)}.`,
+            given: [schar, `P(${fmt(a)} | ${fmt(b)})`, `x₀ = ${fmt(x0)}`],
+            formulaHint: "Bedingung in y = mx + t einsetzen und nach t auflösen; Nullstelle heißt y = 0.",
+            fields: [
+              numberField("t (durch P) =", tP, "", 2, { slips: [{ value: b + value(r) * a, hint: "t = y_P − m · x_P: Das Produkt wird abgezogen." }] }),
+              numberField("t (Nullstelle) =", tN, "", 2, { slips: [{ value: x0, hint: "Die Nullstelle ist nicht t: Setze den Punkt (x₀ | 0) ein." }] }),
+            ],
+            steps: [
+              `P einsetzen: ${fmt(b)} = ${ratioFactor(r)} · ${paren(a)} + t ⇒ t = ${fmt(tP)}, also ${lineHtml(r, tP)}`,
+              `(${fmt(x0)} | 0) einsetzen: 0 = ${ratioFactor(r)} · ${paren(x0)} + t ⇒ t = ${fmt(tN)}, also ${lineHtml(r, tN)}`,
+              `<strong>t = ${fmt(tP)} (durch P) und t = ${fmt(tN)} (Nullstelle ${fmt(x0)})</strong>`,
+            ],
+            meta: { p: r[0], q: r[1], a, b, x0 },
+          };
+        }
+        const m = rng.pick([2, -2, 3, -3, 0.5, -0.5, 1, -1]);
+        const c = rng.pick([-2, -1, 1, 2, 3, -3, 0.5].filter((k) => k !== m));
+        const xk = rng.pick([-4, -3, -2, -1, 1, 2, 3, 4]);
+        const d = -c * xk + 0;
+        const tY = d;
+        const tX = -m * xk + 0;
+        const xS = rng.pick([-3, -2, -1, 1, 2, 3, 4, 5].filter((x) => x !== xk));
+        const tStar = c * xS + d - m * xS + 0;
+        return {
+          prompt: `Die Geraden g<sub>t</sub>: y = ${linear(m, 0)} + t (t ∈ ℚ) bilden eine Parallelenschar. Gegeben ist außerdem die Gerade k: y = ${linear(c, d)}. Für welchen Wert von t schneidet g<sub>t</sub> die Gerade k auf der y-Achse, für welchen auf der x-Achse? Berechne die x-Koordinate des Schnittpunkts von k mit dem Element für t = ${fmt(tStar)}.`,
+          given: [`g<sub>t</sub>: y = ${linear(m, 0)} + t`, `k: y = ${linear(c, d)}`],
+          fields: [
+            numberField("t (y-Achse) =", tY, "", 2),
+            numberField("t (x-Achse) =", tX, "", 2, { slips: [{ value: xk, hint: "Das ist die Nullstelle von k. Gesucht ist das t, für das auch g_t dort die Nullstelle hat." }] }),
+            numberField("x<sub>S</sub> =", xS, "", 2),
+          ],
+          steps: [
+            `Auf der y-Achse ist x = 0: g<sub>t</sub> hat dort den Wert t, k den Wert ${fmt(d)}. Also t = ${fmt(tY)}.`,
+            `Nullstelle von k: ${linear(c, d)} = 0 ⇔ x = ${fmt(xk)}. g<sub>t</sub> soll dort auch den Wert 0 haben: 0 = ${fmt(m)} · ${paren(xk)} + t ⇒ t = ${fmt(tX)}`,
+            `${linear(m, tStar)} = ${linear(c, d)} ⇔ ${sum([[m - c, "x"]])} = ${fmt(d - tStar)} ⇔ x = ${fmt(xS)}`,
+            `<strong>t = ${fmt(tY)}; t = ${fmt(tX)}; x<sub>S</sub> = ${fmt(xS)}</strong>`,
+          ],
+          meta: { m, c, d, tStar, xk },
+        };
+      },
+    },
+  ],
+  requiredCorrect: 3,
+  celebrationMessage: "Du bestimmst Parallele und Senkrechte durch einen Punkt, Elemente einer Parallelenschar und Schnittpunkte.",
+};
+
+// 6.9 Lineare Funktionen im Alltag ───────────────────────────────────────────
+
+function tariffText(rng: Rng) {
+  const kind = rng.int(0, 3);
+  if (kind === 0) {
+    const g = rng.pick([8, 10, 12, 15]);
+    const p = rng.pick([0.28, 0.3, 0.32, 0.35]);
+    return { kind, t: g, m: p, x1: rng.pick([150, 200, 250, 300]), text: `Ein Stromanbieter verlangt einen Grundpreis von ${fmtUnit(g, "€")} im Monat und ${euro(p)} € je kWh. x ist der Verbrauch in kWh, y der Monatsbetrag in €.`, mUnit: "€ pro kWh", ask: (x: number) => `Kosten bei ${x} kWh:` };
+  }
+  if (kind === 1) {
+    const a = rng.pick([30, 35, 40, 45]);
+    const s = rng.pick([45, 48, 52, 55]);
+    return { kind, t: a, m: s, x1: rng.pick([1.5, 2, 2.5, 3, 4]), text: `Ein Handwerker berechnet eine Anfahrtspauschale von ${fmtUnit(a, "€")} und ${fmtUnit(s, "€")} je Arbeitsstunde. x ist die Arbeitszeit in h, y der Rechnungsbetrag in €.`, mUnit: "€ pro h", ask: (x: number) => `Rechnung für ${fmt(x)} h:` };
+  }
+  if (kind === 2) {
+    const j = rng.pick([40, 50, 60]);
+    const b = rng.pick([6.5, 7, 8]);
+    return { kind, t: j, m: b, x1: rng.pick([10, 12, 15, 20]), text: `Eine Kletterhalle verlangt ${fmtUnit(j, "€")} Jahresbeitrag und ${euro(b)} € je Besuch. x ist die Zahl der Besuche im Jahr, y der Gesamtbetrag in €.`, mUnit: "€ pro Besuch", ask: (x: number) => `Kosten bei ${x} Besuchen:` };
+  }
+  const g = rng.pick([6, 8, 9]);
+  const p = rng.pick([1.9, 2.1, 2.4]);
+  return { kind, t: g, m: p, x1: rng.pick([5, 8, 10, 12]), text: `Ein Wasserversorger verlangt eine Grundgebühr von ${fmtUnit(g, "€")} im Monat und ${euro(p)} € je m³ Wasser. x ist der Verbrauch in m³, y der Monatsbetrag in €.`, mUnit: "€ pro m³", ask: (x: number) => `Kosten bei ${x} m³:` };
+}
+
+/** Filling or charging up to a limit: D and W come from the situation. */
+function limitedProcess(rng: Rng) {
+  const kind = rng.int(0, 2);
+  if (kind === 0) {
+    const v0 = rng.pick([15, 20, 30, 40]);
+    const r = rng.pick([12, 15, 20, 25]);
+    const T = rng.pick([8, 10, 12, 16, 20]);
+    return { kind, t: v0, m: r, T, top: v0 + r * T, text: `Ein Wassertank enthält zu Beginn ${v0} l und wird mit ${r} l pro Minute befüllt. Er fasst ${fmt(v0 + r * T)} l.`, xUnit: "min", yUnit: "l", fullLabel: "voll nach", valueLabel: (x: number) => `Wasser nach ${fmt(x)} min:` };
+  }
+  if (kind === 1) {
+    for (;;) {
+      const l0 = rng.pick([10, 20, 25, 40]);
+      const r = rng.pick([1.5, 2, 2.5, 3, 4, 5]);
+      const T = (100 - l0) / r;
+      if (!Number.isInteger(T)) continue;
+      return { kind, t: l0, m: r, T, top: 100, text: `Ein Handy hat noch ${l0} % Akku und lädt gleichmäßig mit ${fmt(r)} Prozentpunkten pro Minute bis 100 %.`, xUnit: "min", yUnit: "%", fullLabel: "voll nach", valueLabel: (x: number) => `Ladestand nach ${fmt(x)} min:` };
+    }
+  }
+  const h0 = rng.pick([600, 800, 1000, 1200]);
+  const r = rng.pick([4, 5, 6, 8]);
+  const T = rng.pick([60, 75, 90, 100, 120]);
+  return { kind, t: h0, m: r, T, top: h0 + r * T, text: `Eine Seilbahn startet in ${fmt(h0)} m Höhe und gewinnt gleichmäßig ${r} m Höhe pro Sekunde bis zur Bergstation in ${fmt(h0 + r * T)} m Höhe.`, xUnit: "s", yUnit: "m", fullLabel: "oben nach", valueLabel: (x: number) => `Höhe nach ${fmt(x)} s:` };
+}
+
+const round2 = (x: number) => Math.round(x * 100) / 100;
+
+const anwendungen: Lesson = {
+  id: "fu-9-anwendungen",
+  stageId: STAGE_ID,
+  stepNumber: 9,
+  title: "6.9 Lineare Funktionen im Alltag",
+  subtitle: "Anfangswert, Rate und Tarifvergleich",
+  tracks: ["I"],
+  lehrplan: "M8 LB 6 (I): Lineare Funktionen in Sachaufgaben",
+  whyItMatters:
+    "Handytarif, Strompreis, Mietwagen: Wer die Grundgebühr als t und den Preis je Einheit als m erkennt, kann Angebote vergleichen und ausrechnen, ab wann sich ein Tarif lohnt.",
+  explanationHtml: `
+    <p>Viele Vorgänge im Alltag ändern sich gleichmäßig: ein Tarif mit Grundgebühr, ein Tank, der gleichmäßig gefüllt wird, eine Kerze, die gleichmäßig abbrennt. Du beschreibst sie mit einer linearen Funktion y = mx + t:</p>
+    <ul>
+      <li><strong>t ist der Anfangswert</strong> bei x = 0: die Grundgebühr, die Füllmenge zu Beginn, die Anfangshöhe.</li>
+      <li><strong>m ist die Änderungsrate mit Einheit:</strong> Euro pro Kilometer, Liter pro Minute, Zentimeter pro Stunde. Nimmt die Größe ab, ist m negativ.</li>
+    </ul>
+    <p><strong>Definitions- und Wertemenge im Sachzusammenhang:</strong> x ist meist eine Zeit oder eine Menge, also x ≥ 0, und oft gibt es eine obere Grenze: Der Tank ist voll, die Kerze abgebrannt. Die Wertemenge W ergibt sich dann aus den Werten an den Grenzen von D.</p>
+    <p><strong>Tarifvergleich:</strong> Zwei Tarife sind zwei Geraden. Wo sich die Geraden schneiden, kosten beide gleich viel; diese Stelle findest du durch Gleichsetzen der Terme. Vor dem Schnittpunkt ist der Tarif mit der kleineren Grundgebühr günstiger, danach der mit dem kleineren Preis je Einheit.</p>
+    <div class="example"><strong>Beispiel:</strong> Mietwagen A kostet 30 € Grundgebühr und 0,20 € je km, Mietwagen B 10 € Grundgebühr und 0,30 € je km.
+      <ul class="steps">
+        <li>A: y = 0,2x + 30 und B: y = 0,3x + 10 (x in km, y in €).</li>
+        <li>Gleichsetzen: 0,2x + 30 = 0,3x + 10 ⇔ 20 = 0,1x ⇔ x = 200.</li>
+        <li>Bei 200 km kosten beide 0,2 · 200 + 30 = 70 €.</li>
+        <li>Für 150 km kostet A 60 €, B nur 55 €: Unter 200 km ist B günstiger, über 200 km A, weil A je Kilometer billiger ist.</li>
+      </ul></div>
+    <p>Typische Fehler: Grundgebühr und Preis je Einheit vertauschen, die Einheit von m weglassen und beim Tarifvergleich nur die Stelle x angeben, ohne zu sagen, welcher Tarif davor und danach günstiger ist.</p>
+    <div class="merke"><strong>Merke:</strong> Im Modell y = mx + t ist t der Anfangswert und m die Änderung pro Einheit von x. Zwei Tarife kosten gleich viel, wo ihre Terme gleich sind: Gleichsetzen und nach x auflösen.</div>
+  `,
+  formulas: [
+    { name: "Lineares Modell", html: "y = m · x + t", quantities: "t Anfangswert (z. B. Grundgebühr), m Änderung pro Einheit von x (z. B. € pro km)" },
+    { name: "Tarifvergleich", html: "m₁x + t₁ = m₂x + t₂", quantities: "die Stelle, an der beide Tarife gleich viel kosten" },
+  ],
+  quiz: {
+    question: "Ein Tarif kostet 12 € Grundgebühr im Monat und 0,30 € je kWh. Welche Gleichung beschreibt die Monatskosten y (in €) bei x kWh?",
+    options: ["y = 0,3x + 12", "y = 12x + 0,3", "y = 12,3x", "y = 0,3x − 12"],
+    correctIndex: 0,
+    explanation: "Die Grundgebühr fällt einmal an, das ist t = 12. Der Preis je kWh wird mit x malgenommen: m = 0,3. Bei y = 12x + 0,3 sind die beiden vertauscht.",
+  },
+  lab: {
+    kind: "linear-model",
+    title: "Labor: Zwei Tarife im Vergleich",
+    intro:
+      "Zwei Mietwagen-Tarife: Grundgebühr plus Preis je Kilometer. Ziehe die Punkte auf der y-Achse (Grundgebühr), am rechten Rand (Preis je km) und die Strecke x. Wo sich die Geraden schneiden, kosten beide gleich viel.",
+    params: [
+      { type: "range", key: "t1", label: "Grundgebühr Tarif A", unit: "€", min: 0, max: 60, step: 5, value: 30 },
+      { type: "range", key: "m1", label: "Preis je km Tarif A", unit: "€", min: 0.05, max: 0.6, step: 0.05, value: 0.2, digits: 2 },
+      { type: "range", key: "t2", label: "Grundgebühr Tarif B", unit: "€", min: 0, max: 60, step: 5, value: 10 },
+      { type: "range", key: "m2", label: "Preis je km Tarif B", unit: "€", min: 0.05, max: 0.6, step: 0.05, value: 0.3, digits: 2 },
+      { type: "range", key: "x", label: "Strecke x", unit: "km", min: 0, max: TARIFF_MAX, step: 10, value: 100 },
+    ],
+    readouts: [
+      { key: "A", label: "Kosten Tarif A", compute: (v) => `${euro(v.t1 + v.m1 * v.x)} €` },
+      { key: "B", label: "Kosten Tarif B", compute: (v) => `${euro(v.t2 + v.m2 * v.x)} €` },
+      {
+        key: "gleich",
+        label: "Gleich teuer",
+        emphasis: true,
+        compute: (v) => {
+          const be = breakEven(v);
+          if (be === "immer") return "bei jeder Strecke";
+          if (be === "keiner") return "nie (gleicher Preis je km)";
+          return be.x < 0 ? "nie (für x ≥ 0)" : `bei ${fmt(be.x, 1)} km: ${euro(be.cost)} €`;
+        },
+      },
+    ],
+    goals: [
+      {
+        id: "break-150",
+        text: "Stelle die Tarife so ein, dass beide bei genau 150 km gleich viel kosten.",
+        check: (v) => Math.abs(v.m1 - v.m2) > 1e-9 && Math.abs(v.t1 + 150 * v.m1 - (v.t2 + 150 * v.m2)) < 1e-9,
+      },
+      {
+        id: "immer-b",
+        text: "Stelle Tarif B so ein, dass er für jede Strecke günstiger ist als Tarif A. Was muss für Grundgebühr und Preis je km gelten?",
+        check: (v) => v.t2 < v.t1 && v.m2 <= v.m1 + 1e-12,
+      },
+      {
+        id: "beide-50",
+        text: "Stelle die Tarife und die Strecke so ein, dass beide Tarife bei dieser Strecke genau 50 € kosten.",
+        check: (v) => Math.abs(v.t1 + v.m1 * v.x - 50) < 1e-9 && Math.abs(v.t2 + v.m2 * v.x - 50) < 1e-9,
+      },
+    ],
+  },
+  exercises: [
+    {
+      id: "modell",
+      make: (rng, level): ExerciseTask => {
+        if (level === 1) {
+          const c = tariffText(rng);
+          const y1 = c.m * c.x1 + c.t;
+          return {
+            prompt: `${c.text} Stelle die Funktionsgleichung y = mx + t auf und berechne den Betrag für x = ${fmt(c.x1)}.`,
+            given: [`x = ${fmt(c.x1)}`],
+            formulaHint: "t: der Betrag, der einmal anfällt; m: der Betrag je Einheit von x; y = m · x + t",
+            fields: [
+              numberField("m =", c.m, c.mUnit, 2, { slips: [{ value: c.t, hint: "Grundbetrag und Preis je Einheit vertauscht? Der Preis je Einheit wird mit x malgenommen." }] }),
+              numberField("t =", c.t, "€", 2, { slips: [{ value: c.m, hint: "t ist der Betrag, der auch bei x = 0 anfällt." }] }),
+              numberField(c.ask(c.x1), y1, "€", 2, { slips: [{ value: c.t * c.x1 + c.m, hint: "Grundbetrag und Preis je Einheit vertauscht? Der Preis je Einheit wird mit x malgenommen." }] }),
+            ],
+            steps: [`Einmalig: t = ${fmtUnit(c.t, "€")}; je Einheit: m = ${fmt(c.m)} ${c.mUnit}.`, `y = ${linear(c.m, c.t)}`, `<strong>y = ${linear(c.m, c.t)}; y(${fmt(c.x1)}) = ${fmt(c.m)} · ${fmt(c.x1)} + ${fmt(c.t)} = ${euro(y1)} €</strong>`],
+            meta: { kind: c.kind, m: c.m, t: c.t, x1: c.x1 },
+          };
+        }
+        const c = limitedProcess(rng);
+        const x1 = rng.pick([0.25, 0.4, 0.5, 0.75].map((f) => Math.round(f * c.T)));
+        const y1 = c.m * x1 + c.t;
+        const options = [`D = [0; ${fmt(c.T)}], W = [${fmt(c.t)}; ${fmt(c.top)}]`, `D = [${fmt(c.t)}; ${fmt(c.top)}], W = [0; ${fmt(c.T)}]`, `D = [0; ${fmt(c.T)}], W = [0; ${fmt(c.top)}]`, "D = ℚ₀⁺, W = ℚ₀⁺"];
+        return {
+          prompt: `${c.text} Beschreibe den Vorgang mit einer linearen Funktion (x in ${c.xUnit}, y in ${c.yUnit}). Wann ist das Ende erreicht, welchen Wert gibt es nach ${fmt(x1)} ${c.xUnit}, und welche Definitions- und Wertemenge passen?`,
+          given: [`Anfangswert und Rate aus dem Text`],
+          fields: [
+            numberField(c.fullLabel, c.T, c.xUnit, 2, { slips: [{ value: c.top / c.m, hint: "Was zu Beginn schon da ist, muss nicht mehr dazukommen: (Endwert − Anfangswert) : Rate." }] }),
+            numberField(c.valueLabel(x1), y1, c.yUnit, 2),
+            shuffledChoice(rng, "Definitions- und Wertemenge", options[0], options.slice(1)),
+          ],
+          steps: [
+            `y = ${linear(c.m, c.t)}; das Ende ist bei y = ${fmt(c.top)}.`,
+            `${linear(c.m, c.t)} = ${fmt(c.top)} ⇔ ${sum([[c.m, "x"]])} = ${fmt(c.top - c.t)} ⇔ x = ${fmt(c.T)}`,
+            `y(${fmt(x1)}) = ${fmt(c.m)} · ${fmt(x1)} + ${fmt(c.t)} = ${fmt(y1)}`,
+            `<strong>${fmtUnit(c.T, c.xUnit)}; ${fmtUnit(y1, c.yUnit)}; ${options[0]}</strong>`,
+          ],
+          meta: { kind: c.kind, m: c.m, t: c.t, T: c.T, top: c.top, x1 },
+        };
+      },
+    },
+    {
+      id: "tarifvergleich",
+      make: (rng, level): ExerciseTask => {
+        const km = rng.next() < 0.5;
+        const rates = km ? [0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4] : [2, 2.5, 3, 3.5, 4, 5];
+        const [low, high] = rng.shuffle(rates).slice(0, 2).sort((a, b) => a - b);
+        const xS = km ? rng.pick([60, 80, 100, 120, 150, 200]) : rng.pick([2, 3, 4, 5, 6]);
+        const baseHigh = km ? rng.pick([0, 5, 10, 15, 20]) : rng.pick([0, 2, 3, 5]);
+        const baseLow = round2(baseHigh + round2(high - low) * xS);
+        const aIsLowRate = rng.next() < 0.5;
+        const A = aIsLowRate ? { m: low, t: baseLow } : { m: high, t: baseHigh };
+        const B = aIsLowRate ? { m: high, t: baseHigh } : { m: low, t: baseLow };
+        const cost = round2(A.m * xS + A.t);
+        const x0 = km ? rng.pick([xS - 40, xS + 50, xS + 100].filter((x) => x > 0)) : rng.pick([xS - 1, xS + 2, xS + 3].filter((x) => x > 0));
+        const costA = round2(A.m * x0 + A.t);
+        const costB = round2(B.m * x0 + B.t);
+        const cheaperA = costA < costB;
+        const unit = km ? "km" : "h";
+        const per = km ? "je km" : "je Stunde";
+        if (level === 1) {
+          return {
+            prompt: `Zwei ${km ? "Carsharing-Anbieter" : "Fahrradverleihe"} im Vergleich: A verlangt ${euro(A.t)} € Grundgebühr und ${euro(A.m)} € ${per}, B ${euro(B.t)} € Grundgebühr und ${euro(B.m)} € ${per}. Bei welcher ${km ? "Strecke" : "Leihdauer"} kosten beide gleich viel, und wie viel? Welcher ist bei ${fmt(x0)} ${unit} günstiger?`,
+            given: [`A: y = ${linear(A.m, A.t)}`, `B: y = ${linear(B.m, B.t)}`],
+            formulaHint: "Gleichsetzen: m<sub>A</sub> · x + t<sub>A</sub> = m<sub>B</sub> · x + t<sub>B</sub>, dann nach x lösen.",
+            fields: [
+              numberField("gleich teuer bei x =", xS, unit, 2, { slips: [{ value: (A.t + B.t) / (A.m + B.m), hint: "Beim Gleichsetzen kommen die x-Terme auf eine Seite und die Grundgebühren auf die andere: Bilde Differenzen, keine Summen." }] }),
+              numberField("Kosten dort:", cost, "€", 2),
+              choiceField(`günstiger bei ${fmt(x0)} ${unit}:`, ["Anbieter A", "Anbieter B"], cheaperA ? 0 : 1),
+            ],
+            steps: [
+              `${linear(A.m, A.t)} = ${linear(B.m, B.t)} ⇔ ${fmt(Math.abs(A.t - B.t))} = ${fmt(round2(Math.abs(B.m - A.m)))}x ⇔ x = ${fmt(xS)}`,
+              `Kosten: ${fmt(A.m)} · ${fmt(xS)} + ${fmt(A.t)} = ${euro(cost)} €`,
+              `Bei ${fmt(x0)} ${unit}: A ${euro(costA)} €, B ${euro(costB)} €.`,
+              `<strong>gleich teuer bei ${fmtUnit(xS, unit)} (${euro(cost)} €); bei ${fmtUnit(x0, unit)} ist ${cheaperA ? "A" : "B"} günstiger</strong>`,
+            ],
+            meta: { mA: A.m, tA: A.t, mB: B.m, tB: B.t, x0 },
+          };
+        }
+        const h1 = km ? rng.pick([20, 30, 40]) : 1;
+        const h2 = km ? h1 + rng.pick([50, 100]) : rng.pick([3, 4]);
+        const savings = round2(Math.abs(costA - costB));
+        const b1 = round2(B.m * h1 + B.t);
+        const b2 = round2(B.m * h2 + B.t);
+        return {
+          prompt: `${km ? "Carsharing-Anbieter" : "Fahrradverleih"} A verlangt ${euro(A.t)} € Grundgebühr und ${euro(A.m)} € ${per}. Von Anbieter B kennt Jonas nur zwei Rechnungen: Für ${fmt(h1)} ${unit} zahlte er ${euro(b1)} €, für ${fmt(h2)} ${unit} ${euro(b2)} €. Bei welcher ${km ? "Strecke" : "Leihdauer"} kosten beide gleich viel? Welcher Anbieter ist bei ${fmt(x0)} ${unit} günstiger, und wie viel spart man dort?`,
+          given: [`A: ${euro(A.t)} € + ${euro(A.m)} € ${per}`, `B: ${fmt(h1)} ${unit} → ${euro(b1)} €, ${fmt(h2)} ${unit} → ${euro(b2)} €`],
+          fields: [
+            numberField("gleich teuer bei x =", xS, unit, 2),
+            choiceField(`günstiger bei ${fmt(x0)} ${unit}:`, ["Anbieter A", "Anbieter B"], cheaperA ? 0 : 1),
+            numberField("Ersparnis:", savings, "€", 2),
+          ],
+          steps: [
+            `B: m = (${euro(b2)} − ${euro(b1)}) : (${fmt(h2)} − ${fmt(h1)}) = ${fmt(B.m)}; t = ${euro(b1)} − ${fmt(B.m)} · ${fmt(h1)} = ${fmt(B.t)}, also y = ${linear(B.m, B.t)}.`,
+            `Gleichsetzen: ${linear(A.m, A.t)} = ${linear(B.m, B.t)} ⇔ x = ${fmt(xS)}`,
+            `Bei ${fmt(x0)} ${unit}: A ${euro(costA)} €, B ${euro(costB)} €.`,
+            `<strong>gleich teuer bei ${fmtUnit(xS, unit)}; bei ${fmtUnit(x0, unit)} ist ${cheaperA ? "A" : "B"} um ${euro(savings)} € günstiger</strong>`,
+          ],
+          meta: { mA: A.m, tA: A.t, mB: B.m, tB: B.t, x0, h1, h2 },
+        };
+      },
+    },
+  ],
+  requiredCorrect: 3,
+  celebrationMessage: "Du stellst lineare Modelle aus Texten auf und vergleichst Tarife mit dem Schnittpunkt ihrer Geraden.",
+};
+
+// 6.10 Flächen im Koordinatensystem ──────────────────────────────────────────
+
+// No CSS class of the app draws a column vector, so these carry inline
+// styles (as in Mathematik 10, views-vektoren-abbildungen.ts).
+const BRACKETS = "border-left:1.5px solid currentColor;border-right:1.5px solid currentColor";
+const COLUMN_STYLE = `display:inline-flex;flex-direction:column;align-items:center;vertical-align:middle;line-height:1.15;padding:0.05em 0.38em;margin:0 0.12em;${BRACKETS};border-radius:0.65em / 50%`;
+const GRID_STYLE = `display:inline-grid;grid-template-columns:auto auto;column-gap:0.7em;justify-items:center;align-items:center;vertical-align:middle;line-height:1.15;padding:0.05em 0.38em;margin:0 0.12em;${BRACKETS}`;
+
+const cellText = (value: number | string): string => (typeof value === "number" ? fmt(value) : value);
+
+/** A column vector (x over y) in round brackets. */
+function vecHtml(x: number | string, y: number | string): string {
+  return `<span class="vec" style="${COLUMN_STYLE}"><span>${cellText(x)}</span><span>${cellText(y)}</span></span>`;
+}
+
+/** A two-row determinant between straight bars, given row by row. */
+function detHtml(a: number | string, b: number | string, c: number | string, d: number | string): string {
+  return `<span class="det" style="${GRID_STYLE}"><span>${cellText(a)}</span><span>${cellText(b)}</span><span>${cellText(c)}</span><span>${cellText(d)}</span></span>`;
+}
+
+/** A vector name with the arrow above it: vn("AB") is AB→. */
+function vn(name: string): string {
+  const visible = name.replace(/<[^>]+>/g, "");
+  const arrow = visible.length > 1 ? "⟶" : "→";
+  return `<span class="vname" style="display:inline-block;position:relative;line-height:1;padding-top:0.42em"><span aria-hidden="true" style="position:absolute;left:0;right:0;top:0;text-align:center;font-size:0.7em;line-height:0.8">${arrow}</span>${name}</span>`;
+}
+
+const pt = (x: number, y: number) => `(${fmt(x)} | ${fmt(y)})`;
+
+/** x − a as a term: "x + 3", "x". */
+const xMinus = (a: number) => sum([[1, "x"], [-a, ""]]);
+
+/** Fixed A and B, Cₙ on y = a x + b; det(AB, ACₙ) = k x + c with k ≠ 0, and a value x₀ inside the domain. */
+function movingPoint(rng: Rng) {
+  for (;;) {
+    const A = { x: rng.int(-6, -1), y: rng.int(-3, 3) };
+    const B = { x: rng.int(1, 6), y: rng.int(-3, 3) };
+    const a = rng.pick([0.5, -0.5, 1, -1, 2]);
+    const b = rng.int(-2, 4);
+    const ux = B.x - A.x;
+    const uy = B.y - A.y;
+    const k = ux * a - uy;
+    const c = ux * (b - A.y) + uy * A.x;
+    if (k === 0 || !Number.isInteger(k) || !Number.isInteger(c)) continue;
+    const xStar = -c / k + 0;
+    if (Math.abs(xStar) > 8 || Math.abs(xStar * 2 - Math.round(xStar * 2)) > 1e-9) continue;
+    const x0 = Math.round(xStar) + (k > 0 ? rng.int(1, 5) : -rng.int(1, 5));
+    if (k * x0 + c <= 0) continue;
+    return { A, B, a, b, k, c, x0, xStar };
+  }
+}
+
+const flaechen: Lesson = {
+  id: "fu-10-flaechen",
+  stageId: STAGE_ID,
+  stepNumber: 10,
+  title: "6.10 Flächen im Koordinatensystem",
+  subtitle: "Determinanten mit Punkten auf Geraden",
+  tracks: ["I"],
+  lehrplan: "M8 LB 6 (I): Flächeninhalte mit Determinanten",
+  whyItMatters:
+    "In fast jeder Abschlussprüfung wandert ein Eckpunkt einer Figur auf einer Geraden. Mit der Determinante wird ihr Flächeninhalt zu einem Term in x, mit dem du Flächen berechnest, Grenzfälle findest und den größten Flächeninhalt bestimmst.",
+  explanationHtml: `
+    <p><strong>Wiederholung aus M7:</strong> Für zwei Vektoren ${vn("a")} = ${vecHtml("a<sub>x</sub>", "a<sub>y</sub>")} und ${vn("b")} = ${vecHtml("b<sub>x</sub>", "b<sub>y</sub>")} ist die Determinante</p>
+    <p class="formula-line">det(${vn("a")}, ${vn("b")}) = ${detHtml("a<sub>x</sub>", "b<sub>x</sub>", "a<sub>y</sub>", "b<sub>y</sub>")} = a<sub>x</sub> · b<sub>y</sub> − a<sub>y</sub> · b<sub>x</sub></p>
+    <p>Spannen ${vn("AB")} und ${vn("AC")} ein Dreieck ABC auf, ist sein Flächeninhalt <strong>A<sub>Δ</sub> = ½ · det(${vn("AB")}, ${vn("AC")}) FE</strong>; ein Parallelogramm ABCD hat <strong>A = det(${vn("AB")}, ${vn("AD")}) FE</strong>. Laufen die Ecken gegen den Uhrzeigersinn, ist die Determinante positiv; im Uhrzeigersinn ist sie negativ, dann nimmst du ihren Betrag.</p>
+    <p><strong>Funktionale Abhängigkeit:</strong> Wandert ein Eckpunkt auf einer Geraden, etwa C<sub>n</sub>(x | 0,5x + 2) auf g: y = 0,5x + 2, dann hängen seine Koordinaten von x ab, und der Flächeninhalt wird zu einem Term A(x).</p>
+    <div class="example"><strong>Beispiel:</strong> A(−6 | 2), B(2 | 0) und C<sub>n</sub>(x | 0,5x + 2) bilden Dreiecke ABC<sub>n</sub>.
+      <ul class="steps">
+        <li>${vn("AB")} = ${vecHtml(8, -2)}, ${vn("AC<sub>n</sub>")} = ${vecHtml("x + 6", "0,5x + 2 − 2")} = ${vecHtml("x + 6", "0,5x")}</li>
+        <li>A(x) = ½ · ${detHtml(8, "x + 6", -2, "0,5x")} FE = ½ · [8 · 0,5x − (−2) · (x + 6)] FE = ½ · (6x + 12) FE = (3x + 6) FE für x &gt; −2.</li>
+        <li>Für x = 2 ist A = 3 · 2 + 6 = 12 FE.</li>
+        <li>Flächeninhalt 15 FE: 3x + 6 = 15 ⇔ x = 3.</li>
+        <li>Für x = −2 ist A = 0: C(−2 | 1) liegt auf der Geraden AB, es gibt kein Dreieck.</li>
+      </ul></div>
+    <p><strong>Quadratische Terme:</strong> Hängen zwei Eckpunkte von x ab, entsteht oft ein quadratischer Term. Mit der quadratischen Ergänzung (Lektion 4.5) bestimmst du dann, für welches x der Flächeninhalt am größten oder am kleinsten ist. Für A(−2 | −1), B<sub>n</sub>(x | 0) und C<sub>n</sub>(x | −0,5x + 4) mit −2 &lt; x &lt; 8 ist A(x) = ½ · ${detHtml("x + 2", "x + 2", 1, "−0,5x + 5")} FE = ½ · (x + 2)(−0,5x + 4) FE = (−0,25x² + 1,5x + 4) FE = [−0,25(x − 3)² + 6,25] FE. Der größte Flächeninhalt ist 6,25 FE für x = 3.</p>
+    <p>Typische Fehler: den Faktor ½ beim Dreieck vergessen, über Kreuz falsch rechnen (a<sub>x</sub> · b<sub>y</sub> + a<sub>y</sub> · b<sub>x</sub>), Klammern um negative Koordinaten weglassen und vergessen, für welche x die Figuren existieren.</p>
+    <div class="merke"><strong>Merke:</strong> A<sub>Δ</sub> = ½ · det(${vn("AB")}, ${vn("AC")}) FE und A<sub>Parallelogramm</sub> = det(${vn("AB")}, ${vn("AD")}) FE, die Vektoren gegen den Uhrzeigersinn. Hängt ein Eckpunkt von x ab, ist A(x) ein Term: A(x) = Wert lösen; A(x) = 0 heißt, die Punkte liegen auf einer Geraden; Extremwerte mit quadratischer Ergänzung.</div>
+  `,
+  formulas: [
+    { name: "Determinante", html: `${detHtml("a<sub>x</sub>", "b<sub>x</sub>", "a<sub>y</sub>", "b<sub>y</sub>")} = a<sub>x</sub> · b<sub>y</sub> − a<sub>y</sub> · b<sub>x</sub>`, quantities: "die beiden Vektoren als Spalten" },
+    { name: "Dreieck", html: `A<sub>Δ</sub> = ½ · det(${vn("AB")}, ${vn("AC")}) FE`, quantities: "Ecken A, B, C gegen den Uhrzeigersinn" },
+    { name: "Parallelogramm", html: `A = det(${vn("AB")}, ${vn("AD")}) FE`, quantities: "Ecken A, B, C, D gegen den Uhrzeigersinn" },
+  ],
+  quiz: {
+    question: "A(0 | 0), B(4 | 0) und C(1 | 3) bilden ein Dreieck. Wie groß ist sein Flächeninhalt?",
+    options: ["6 FE", "12 FE", "−6 FE", "3 FE"],
+    correctIndex: 0,
+    explanation: "det(AB, AC) = 4 · 3 − 0 · 1 = 12, das Dreieck ist halb so groß: 6 FE. 12 FE wäre das Parallelogramm aus beiden Vektoren, und ein Flächeninhalt ist nie negativ.",
+  },
+  lab: {
+    kind: "determinant-area",
+    title: "Labor: Flächeninhalt mit der Determinante",
+    intro:
+      "Ziehe den Punkt Cₙ auf seiner Geraden. Die Pfeile von A aus spannen das Dreieck auf, rechts stehen die Determinante, der Flächeninhalt und der Graph von A(x).",
+    params: [
+      {
+        type: "choice",
+        key: "fig",
+        label: "Figur",
+        options: [
+          { value: 0, label: "Dreiecke ABCₙ, Cₙ auf g: y = 0,5x + 2" },
+          { value: 1, label: "Dreiecke ABₙCₙ, Bₙ(x | 0), Cₙ auf h: y = −0,5x + 4" },
+        ],
+        value: 0,
+      },
+      { type: "range", key: "x", label: "x (Lage von Cₙ)", unit: "", min: -6, max: 8, step: 0.5, value: 2, digits: 1 },
+    ],
+    readouts: [
+      {
+        key: "punkte",
+        label: "Punkte",
+        compute: (v) => {
+          const { B, C } = areaTriangle(v);
+          return v.fig === 0 ? `Cₙ${pt(C.x, C.y)}` : `Bₙ${pt(B.x, B.y)}, Cₙ${pt(C.x, C.y)}`;
+        },
+      },
+      { key: "det", label: "det(AB, ACₙ)", digits: 2, compute: (v) => areaDet(v) },
+      { key: "A", label: "Flächeninhalt", unit: "FE", digits: 2, emphasis: true, compute: (v) => areaOf(v) },
+      { key: "term", label: "Term", compute: (v) => AREA_TERMS[v.fig] },
+    ],
+    goals: [
+      { id: "sechs", text: "Stelle ein Dreieck mit dem Flächeninhalt 6 FE ein. Findest du in jeder Figur zwei passende Werte von x?", check: (v) => Math.abs(areaOf(v) - 6) < 1e-9 },
+      { id: "auf-ab", text: "Bewege Cₙ in der ersten Figur auf die Gerade AB. Welchen Wert hat die Determinante dann?", check: (v) => v.fig === 0 && Math.abs(areaDet(v)) < 1e-9 },
+      { id: "maximum", text: "Finde bei den Dreiecken ABₙCₙ das x mit dem größten Flächeninhalt. Wie groß ist er?", check: (v) => v.fig === 1 && v.x === 3 },
+    ],
+  },
+  exercises: [
+    {
+      id: "flaeche-det",
+      make: (rng, level): ExerciseTask => {
+        if (level === 1) {
+          const parallelogram = rng.next() < 0.3;
+          let A = { x: 0, y: 0 };
+          let u = { x: 0, y: 0 };
+          let w = { x: 0, y: 0 };
+          let D = 0;
+          do {
+            A = { x: rng.int(-4, 2), y: rng.int(-4, 2) };
+            u = { x: rng.int(-2, 6), y: rng.int(-3, 4) };
+            w = { x: rng.int(-3, 5), y: rng.int(-2, 6) };
+            D = u.x * w.y - u.y * w.x;
+          } while (D === 0 || Math.abs(D) > 40);
+          if (D < 0 && rng.next() < 0.7) {
+            [u, w] = [w, u];
+            D = -D;
+          }
+          const B = { x: A.x + u.x, y: A.y + u.y };
+          const C = { x: A.x + w.x, y: A.y + w.y };
+          const area = parallelogram ? Math.abs(D) : Math.abs(D) / 2;
+          const second = parallelogram ? "D" : "C";
+          return {
+            prompt: parallelogram
+              ? `Das Parallelogramm ABCD hat die Eckpunkte A${pt(A.x, A.y)}, B${pt(B.x, B.y)} und D${pt(C.x, C.y)}. Berechne die Determinante det(${vn("AB")}, ${vn("AD")}) und den Flächeninhalt des Parallelogramms.`
+              : `Berechne den Flächeninhalt des Dreiecks ABC mit A${pt(A.x, A.y)}, B${pt(B.x, B.y)} und C${pt(C.x, C.y)} mithilfe der Determinante det(${vn("AB")}, ${vn("AC")}).`,
+            given: [`A${pt(A.x, A.y)}`, `B${pt(B.x, B.y)}`, `${second}${pt(C.x, C.y)}`],
+            formulaHint: `${detHtml("a<sub>x</sub>", "b<sub>x</sub>", "a<sub>y</sub>", "b<sub>y</sub>")} = a<sub>x</sub> · b<sub>y</sub> − a<sub>y</sub> · b<sub>x</sub>; ${parallelogram ? "A = det FE" : "A<sub>Δ</sub> = ½ · det FE"} (bei negativer Determinante ihr Betrag)`,
+            fields: [
+              numberField("det =", D, "", 2, { slips: [{ value: u.x * w.y + u.y * w.x, hint: "Über Kreuz wird subtrahiert: a_x · b_y − a_y · b_x." }, { value: u.x * w.x - u.y * w.y, hint: "Multipliziere über Kreuz: x des ersten mal y des zweiten Vektors." }] }),
+              numberField("A =", area, "FE", 2, {
+                slips: parallelogram
+                  ? [{ value: Math.abs(D) / 2, hint: "Das Parallelogramm ist doppelt so groß wie das Dreieck: kein Faktor ½." }]
+                  : [{ value: Math.abs(D), hint: "Das ist das Parallelogramm. Das Dreieck ist halb so groß: A = ½ · det." }],
+              }),
+            ],
+            steps: [
+              `${vn("AB")} = ${vecHtml(u.x, u.y)}, ${vn(`A${second}`)} = ${vecHtml(w.x, w.y)}`,
+              `det = ${detHtml(u.x, w.x, u.y, w.y)} = ${paren(u.x)} · ${paren(w.y)} − ${paren(u.y)} · ${paren(w.x)} = ${fmt(D)}${D < 0 ? " (negativ: die Ecken laufen im Uhrzeigersinn, also den Betrag nehmen)" : ""}`,
+              `<strong>A = ${parallelogram ? "" : "½ · "}${fmt(Math.abs(D))} FE = ${fmt(area)} FE</strong>`,
+            ],
+            meta: { ax: A.x, ay: A.y, bx: B.x, by: B.y, cx: C.x, cy: C.y, parallelogram: parallelogram ? 1 : 0 },
+          };
+        }
+        const { A, B, a, b, k, c, x0, xStar } = movingPoint(rng);
+        return {
+          prompt: `Die Punkte C<sub>n</sub>(x | ${linear(a, b)}) liegen auf der Geraden g: y = ${linear(a, b)}. Zusammen mit A${pt(A.x, A.y)} und B${pt(B.x, B.y)} bilden sie Dreiecke ABC<sub>n</sub> für x ${k > 0 ? "&gt;" : "&lt;"} ${fmt(xStar)}. Zeige, dass für ihren Flächeninhalt A(x) = (p · x + q) FE gilt, gib p und q an und berechne den Flächeninhalt für x = ${fmt(x0)}.`,
+          given: [`A${pt(A.x, A.y)}`, `B${pt(B.x, B.y)}`, `C<sub>n</sub>(x | ${linear(a, b)})`],
+          fields: [
+            numberField("p =", k / 2, "", 2, { slips: [{ value: k, hint: "Vergiss den Faktor ½ nicht: A(x) = ½ · det." }] }),
+            numberField("q =", c / 2, "", 2, { slips: [{ value: c, hint: "Vergiss den Faktor ½ nicht: A(x) = ½ · det." }] }),
+            numberField(`A(${fmt(x0)}) =`, (k * x0 + c) / 2, "FE", 2, { slips: [{ value: k * x0 + c, hint: "Das ist die Determinante. Das Dreieck ist halb so groß: A = ½ · det." }] }),
+          ],
+          steps: [
+            `${vn("AB")} = ${vecHtml(B.x - A.x, B.y - A.y)}, ${vn("AC<sub>n</sub>")} = ${vecHtml(xMinus(A.x), linear(a, b - A.y))}`,
+            `det = ${fmt(B.x - A.x)} · (${linear(a, b - A.y)}) − ${paren(B.y - A.y)} · (${xMinus(A.x)}) = ${linear(k, c)}`,
+            `A(x) = ½ · (${linear(k, c)}) FE = (${linear(k / 2, c / 2)}) FE, also p = ${fmt(k / 2)} und q = ${fmt(c / 2)}`,
+            `<strong>A(x) = (${linear(k / 2, c / 2)}) FE; A(${fmt(x0)}) = ${fmt((k * x0 + c) / 2)} FE</strong>`,
+          ],
+          meta: { ax: A.x, ay: A.y, bx: B.x, by: B.y, a, b, x0 },
+        };
+      },
+    },
+    {
+      id: "flaeche-x",
+      make: (rng, level): ExerciseTask => {
+        if (level === 1) {
+          const { A, B, a, b, k, c, xStar } = movingPoint(rng);
+          const dir = k > 0 ? 1 : -1;
+          const xA = xStar + dir * rng.int(1, 6);
+          const target = (k * xA + c) / 2;
+          const termText = `A(x) = (${linear(k / 2, c / 2)}) FE`;
+          return {
+            prompt: `A${pt(A.x, A.y)}, B${pt(B.x, B.y)} und C<sub>n</sub>(x | ${linear(a, b)}) bilden Dreiecke ABC<sub>n</sub> mit dem Flächeninhalt ${termText} (für x ${k > 0 ? "&gt;" : "&lt;"} ${fmt(xStar)}). Für welches x hat das Dreieck den Flächeninhalt ${fmt(target)} FE? Für welches x liegt C<sub>n</sub> auf der Geraden AB?`,
+            given: [termText],
+            formulaHint: "A(x) = Wert setzen und die lineare Gleichung lösen; C<sub>n</sub> auf AB heißt A(x) = 0.",
+            fields: [
+              numberField("x (Flächeninhalt) =", xA, "", 2, { slips: [{ value: (target - c) / k, hint: "Setze A(x) gleich dem Flächeninhalt; A(x) enthält schon den Faktor ½." }] }),
+              numberField("x (auf AB) =", xStar, "", 2),
+            ],
+            steps: [
+              `${linear(k / 2, c / 2)} = ${fmt(target)} ⇔ ${sum([[k / 2, "x"]])} = ${fmt(target - c / 2)} ⇔ x = ${fmt(xA)}`,
+              `${linear(k / 2, c / 2)} = 0 ⇔ x = ${fmt(xStar)}: Dann liegen A, B und C<sub>n</sub> auf einer Geraden.`,
+              `<strong>x = ${fmt(xA)} für ${fmt(target)} FE; x = ${fmt(xStar)} für C<sub>n</sub> auf AB</strong>`,
+            ],
+            meta: { k, c, target, xStar },
+          };
+        }
+        const xa = rng.int(-3, 0);
+        const span = 2 * rng.int(3, 5);
+        const z2 = xa + span;
+        const m = rng.pick([-0.5, -1]);
+        const yB = rng.pick([-1, 0, 1]);
+        const ya = rng.pick([yB - 2, yB - 1, yB + 1, yB + 2]);
+        const t = yB - m * z2;
+        const v = (xa + z2) / 2;
+        const max = 0.5 * -m * (span / 2) ** 2;
+        const qa = m / 2;
+        const qb = (-m / 2) * (xa + z2) + 0;
+        const qc = (m / 2) * xa * z2 + 0;
+        const square = v === 0 ? "x²" : `(${xMinus(v)})²`;
+        return {
+          prompt: `Die Punkte B<sub>n</sub>(x | ${fmt(yB)}) und C<sub>n</sub>(x | ${linear(m, t)}) bilden mit A${pt(xa, ya)} Dreiecke AB<sub>n</sub>C<sub>n</sub> für ${fmt(xa)} &lt; x &lt; ${fmt(z2)}. Berechne ihren Flächeninhalt A(x) in Abhängigkeit von x. Für welchen Wert von x ist der Flächeninhalt am größten, und wie groß ist er?`,
+          given: [`A${pt(xa, ya)}`, `B<sub>n</sub>(x | ${fmt(yB)})`, `C<sub>n</sub>(x | ${linear(m, t)})`],
+          fields: [
+            numberField("x =", v, "", 2, { slips: [{ value: -v, hint: "Prüfe das Vorzeichen in der Klammer: (x − v)² ist am kleinsten für x = v." }] }),
+            numberField("A<sub>max</sub> =", max, "FE", 2, { slips: [{ value: 2 * max, hint: "Das ist die Determinante; das Dreieck ist halb so groß." }] }),
+          ],
+          steps: [
+            `${vn("AB<sub>n</sub>")} = ${vecHtml(xMinus(xa), fmt(yB - ya))}, ${vn("AC<sub>n</sub>")} = ${vecHtml(xMinus(xa), linear(m, t - ya))}`,
+            `det = (${xMinus(xa)})(${linear(m, t - ya)}) − ${paren(yB - ya)} · (${xMinus(xa)}) = (${xMinus(xa)})(${linear(m, t - yB)})`,
+            `A(x) = ½ · det FE = (${sum([[qa, "x²"], [qb, "x"], [qc, ""]], 4)}) FE`,
+            `Quadratische Ergänzung: A(x) = [${fmt(qa)}${square} + ${fmt(max)}] FE`,
+            `<strong>Der Flächeninhalt ist für x = ${fmt(v)} am größten: A<sub>max</sub> = ${fmt(max)} FE</strong>`,
+          ],
+          meta: { xa, ya, yB, m, t, z2 },
+        };
+      },
+    },
+  ],
+  requiredCorrect: 3,
+  celebrationMessage: "Du berechnest Flächeninhalte mit Determinanten, auch wenn ein Eckpunkt auf einer Geraden wandert.",
+};
+
 export const STAGE_FUNKTIONEN: Stage = {
   id: "stage-6-funktionen",
   stageNumber: 6,
@@ -1862,5 +2871,5 @@ export const STAGE_FUNKTIONEN: Stage = {
   accent: "#059669",
   badgeTitle: "Graphenleser",
   lehrplanLabel: "LB 6 (I) · LB 5 (II/III)",
-  lessons: [funktionOderNicht, darstellungen, werteNullstellen, ursprungsgeraden, senkrecht, geraden],
+  lessons: [funktionOderNicht, darstellungen, werteNullstellen, ursprungsgeraden, senkrecht, geraden, geradenBestimmen, parallelenscharen, anwendungen, flaechen],
 };

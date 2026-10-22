@@ -3,7 +3,7 @@ import { DESCRIPTIONS, RELATION_OPTIONS, SITUATIONS, STAGE_FUNKTIONEN } from "..
 import { checkTask } from "../src/exercises/checker";
 import { createRng, seedFrom } from "../src/exercises/rng";
 import { computeReadouts, defaultLabValues, enumerateLabGrid } from "../src/lab/engine";
-import { analyseRelation, domainOf, relationPoints, valueSet, zerosInDomain } from "../src/lab/views-funktionen";
+import { analyseRelation, areaDet, breakEven, domainOf, familyIntersection, familyNormal, lineThroughPoints, relationPoints, valueSet, zerosInDomain } from "../src/lab/views-funktionen";
 import type { ChoiceField, DifficultyLevel, ExerciseTask, LabDefinition, LabValues } from "../src/model/types";
 import { GOAL_WITNESSES_STAGE_6 } from "./witnesses-stage-6";
 
@@ -14,7 +14,19 @@ const IDS = [
   "fu-4-ursprungsgeraden",
   "fu-5-senkrecht",
   "fu-6-geraden",
+  "fu-7-geraden-bestimmen",
+  "fu-8-parallelenscharen",
+  "fu-9-anwendungen",
+  "fu-10-flaechen",
 ];
+
+/** The numbers of a point written as "(2 | −1,5)". */
+function parsePoint(text: string): [number, number] {
+  const m = /\(([−\d.,]+) \| ([−\d.,]+)\)/.exec(text.replace(/<[^>]+>/g, ""));
+  if (!m) throw new Error(`no point in ${text}`);
+  const n = (s: string) => Number(s.replace("−", "-").replace(/\./g, "").replace(",", "."));
+  return [n(m[1]), n(m[2])];
+}
 const SEEDS = Array.from({ length: 200 }, (_, i) => seedFrom(`stage-6:${i}`));
 
 const lesson = (id: string) => {
@@ -393,6 +405,185 @@ describe("Aufgaben der Etappe 6 rechnen richtig", () => {
     }
   });
 
+  it("6.7 lines through two points: m and t from the points themselves", () => {
+    for (const task of tasks("fu-7-geraden-bestimmen", "zwei-punkte", 1)) {
+      const [x1, y1] = parsePoint(task.given[0]);
+      const [x2, y2] = parsePoint(task.given[1]);
+      expect(x1).not.toBe(x2);
+      const m = (y2 - y1) / (x2 - x1);
+      close(num(task, 0), m);
+      close(num(task, 1), y1 - m * x1);
+      close(num(task, 1), y2 - m * x2);
+    }
+    for (const task of tasks("fu-7-geraden-bestimmen", "zwei-punkte", 2)) {
+      const { kind, xAsk, yAsk } = meta(task);
+      const [x1, y1] = parsePoint(task.given[0]);
+      const [x2, y2] = parsePoint(task.given[1]);
+      const m = (y2 - y1) / (x2 - x1);
+      const t = y1 - m * x1;
+      close(num(task, 0), m);
+      close(num(task, 1), t);
+      if (kind === 0 || kind === 2) {
+        // burnt down or empty: the Nullstelle, after the second measurement
+        close(m * num(task, 2) + t, 0);
+        expect(num(task, 2)).toBeGreaterThan(x2);
+        expect(y2).toBeGreaterThan(0);
+        expect(yAsk).toBe(0);
+      } else close(num(task, 2), m * xAsk + t);
+    }
+  });
+
+  it("6.7 point and slope: t, the Punktprobe and times from a rate and one measurement", () => {
+    const verdicts = [0, 0];
+    for (const task of tasks("fu-7-geraden-bestimmen", "punkt-steigung", 1)) {
+      const { p, q, xp, yp, xr, yr } = meta(task);
+      const m = p / q;
+      const t = yp - m * xp;
+      close(num(task, 0), t);
+      const on = Math.abs(m * xr + t - yr) < 1e-9;
+      expect(choice(task, 1).correctIndex).toBe(on ? 0 : 1);
+      verdicts[on ? 0 : 1] += 1;
+    }
+    expect(verdicts.every((n) => n > 60), `${verdicts}`).toBe(true);
+    for (const task of tasks("fu-7-geraden-bestimmen", "punkt-steigung", 2)) {
+      const { m, x1, y1, target, y3 } = meta(task);
+      const t = y1 - m * x1;
+      close(num(task, 0), t);
+      close(m * num(task, 1) + t, target);
+      close(m * num(task, 2) + t, y3);
+      expect(num(task, 1)).toBeGreaterThan(0);
+      expect(num(task, 1)).not.toBe(x1);
+      expect(num(task, 2)).toBeGreaterThan(0);
+      expect(t).toBeGreaterThan(0);
+    }
+  });
+
+  it("6.8 parallel and perpendicular lines through P, and the intersection S", () => {
+    for (const task of tasks("fu-8-parallelenscharen", "parallel-senkrecht", 1)) {
+      const { p, q, t, a, b } = meta(task);
+      const m = p / q;
+      expect(Math.abs(m * a + t - b), "P is not on g").toBeGreaterThan(1e-9);
+      close(num(task, 0), b - m * a);
+      close(num(task, 1) * m, -1);
+      close(num(task, 2), b - num(task, 1) * a);
+    }
+    for (const task of tasks("fu-8-parallelenscharen", "parallel-senkrecht", 2)) {
+      const { m, t1, a, b, c, d } = meta(task);
+      expect(Math.abs(m * a + t1 - b)).toBeGreaterThan(1e-9);
+      close(num(task, 0), b - m * a);
+      close(num(task, 1) * m, -1);
+      const xS = (d - t1) / (m - c);
+      close(num(task, 2), xS);
+      close(num(task, 3), m * xS + t1);
+      close(num(task, 3), c * xS + d);
+    }
+  });
+
+  it("6.8 members of a Parallelenschar by a point, a Nullstelle or another line", () => {
+    for (const task of tasks("fu-8-parallelenscharen", "schar", 1)) {
+      const { p, q, a, b, x0 } = meta(task);
+      const m = p / q;
+      close(m * a + num(task, 0), b);
+      close(m * x0 + num(task, 1), 0);
+    }
+    for (const task of tasks("fu-8-parallelenscharen", "schar", 2)) {
+      const { m, c, d, tStar } = meta(task);
+      // meeting on the y-axis: equal values at x = 0
+      close(num(task, 0), d);
+      // meeting on the x-axis: both have the same Nullstelle
+      close(-num(task, 1) / m, -d / c);
+      const xS = num(task, 2);
+      close(m * xS + tStar, c * xS + d);
+    }
+  });
+
+  it("6.9 linear models from a text, with D and W from the situation", () => {
+    for (const task of tasks("fu-9-anwendungen", "modell", 1)) {
+      const { m, t, x1 } = meta(task);
+      close(num(task, 0), m);
+      close(num(task, 1), t);
+      close(num(task, 2), m * x1 + t);
+      expect(m).toBeGreaterThan(0);
+      expect(t).toBeGreaterThan(0);
+    }
+    for (const task of tasks("fu-9-anwendungen", "modell", 2)) {
+      const { m, t, top, x1 } = meta(task);
+      const T = (top - t) / m;
+      close(num(task, 0), T);
+      expect(Number.isInteger(T)).toBe(true);
+      expect(x1).toBeGreaterThan(0);
+      expect(x1).toBeLessThan(T);
+      close(num(task, 1), m * x1 + t);
+      expect(picked(task, 2)).toBe(`D = [0; ${de(T)}], W = [${de(t)}; ${de(top)}]`);
+    }
+  });
+
+  it("6.9 tariff comparisons: break-even, cost there and the cheaper offer", () => {
+    for (const level of [1, 2] as const) {
+      const cheaper = [0, 0];
+      for (const task of tasks("fu-9-anwendungen", "tarifvergleich", level)) {
+        const { mA, tA, mB, tB, x0, h1, h2 } = meta(task);
+        expect(mA).not.toBe(mB);
+        const xS = (tA - tB) / (mB - mA);
+        close(num(task, 0), xS, 1e-6);
+        expect(xS).toBeGreaterThan(0);
+        const A0 = mA * x0 + tA;
+        const B0 = mB * x0 + tB;
+        expect(Math.abs(A0 - B0)).toBeGreaterThanOrEqual(0.5);
+        const index = level === 1 ? 2 : 1;
+        expect(choice(task, index).correctIndex).toBe(A0 < B0 ? 0 : 1);
+        cheaper[A0 < B0 ? 0 : 1] += 1;
+        if (level === 1) close(num(task, 1), mA * xS + tA, 1e-6);
+        else {
+          close(num(task, 2), Math.abs(A0 - B0), 1e-6);
+          // B is given by two bills: they lie on B's line
+          expect(h2).toBeGreaterThan(h1);
+        }
+        for (const base of [tA, tB]) expect(base).toBeGreaterThanOrEqual(0);
+      }
+      expect(cheaper.every((n) => n > 50), `${cheaper}`).toBe(true);
+    }
+  });
+
+  it("6.10 areas with determinants: triangles, parallelograms and a moving vertex", () => {
+    for (const task of tasks("fu-10-flaechen", "flaeche-det", 1)) {
+      const { ax, ay, bx, by, cx, cy, parallelogram } = meta(task);
+      const D = (bx - ax) * (cy - ay) - (by - ay) * (cx - ax);
+      expect(num(task, 0)).toBe(D);
+      close(num(task, 1), parallelogram ? Math.abs(D) : Math.abs(D) / 2);
+      expect(D).not.toBe(0);
+    }
+    for (const task of tasks("fu-10-flaechen", "flaeche-det", 2)) {
+      const { ax, ay, bx, by, a, b, x0 } = meta(task);
+      const det = (x: number) => (bx - ax) * (a * x + b - ay) - (by - ay) * (x - ax);
+      close(num(task, 0), (det(1) - det(0)) / 2);
+      close(num(task, 1), det(0) / 2);
+      close(num(task, 2), det(x0) / 2);
+      expect(det(x0)).toBeGreaterThan(0);
+    }
+  });
+
+  it("6.10 the x for an area, the collinear case and the greatest area", () => {
+    for (const task of tasks("fu-10-flaechen", "flaeche-x", 1)) {
+      const { k, c, target } = meta(task);
+      close((k * num(task, 0) + c) / 2, target);
+      expect(target).toBeGreaterThan(0);
+      close(k * num(task, 1) + c, 0);
+    }
+    for (const task of tasks("fu-10-flaechen", "flaeche-x", 2)) {
+      const { xa, ya, yB, m, t, z2 } = meta(task);
+      const area = (x: number) => ((x - xa) * (m * x + t - ya) - (yB - ya) * (x - xa)) / 2;
+      const xMax = num(task, 0);
+      close(area(xMax), num(task, 1));
+      expect(xMax).toBeGreaterThan(xa);
+      expect(xMax).toBeLessThan(z2);
+      // nothing in the domain is larger, and the ends give 0
+      for (let x = xa; x <= z2; x += 0.25) expect(area(x)).toBeLessThanOrEqual(num(task, 1) + 1e-9);
+      close(area(xa), 0);
+      close(area(z2), 0);
+    }
+  });
+
   it("accepts slopes typed as fractions", () => {
     for (const task of tasks("fu-4-ursprungsgeraden", "steigung", 1).slice(0, 60)) {
       const { xp, yp } = meta(task);
@@ -521,5 +712,80 @@ describe("Labore der Etappe 6", () => {
       const x0 = Number(shown.replace(/^x₀ [=≈] /, "").replace("−", "-").replace(",", "."));
       expect(Math.abs(v.m * x0 + v.t), shown).toBeLessThanOrEqual(0.006 * Math.abs(v.m));
     }
+  });
+
+  it("6.7 the line through P and Q passes through both points", () => {
+    const lab = lesson("fu-7-geraden-bestimmen").lab;
+    const start = at(lab, {});
+    expect(start.r.gl).toBe("y = 2/3 x + 1");
+    expect(start.r.m).toBe("2/3 ≈ 0,67");
+    expect(start.r.t).toBe("1");
+    expect(at(lab, GOAL_WITNESSES_STAGE_6["fu-7-geraden-bestimmen"].ursprung).r.gl).toBe("y = 0,5x");
+    expect(at(lab, GOAL_WITNESSES_STAGE_6["fu-7-geraden-bestimmen"]["senkrecht-x"]).r.gl).toBe("x = 2 (keine Funktion)");
+    expect(at(lab, { px: 1, py: 2, qx: 4, qy: 3 }).r.gl).toBe("y = 1/3 x + 5/3");
+    for (const values of enumerateLabGrid(lab, 7)) {
+      const v = values as LabValues;
+      const L = lineThroughPoints(v.px, v.py, v.qx, v.qy);
+      if (L.kind !== "line") continue;
+      const f = (x: number) => (L.m[0] / L.m[1]) * x + L.t[0] / L.t[1];
+      close(f(v.px), v.py);
+      close(f(v.qx), v.qy);
+    }
+  });
+
+  it("6.8 S lies on g and on h, and h is perpendicular to g", () => {
+    const lab = lesson("fu-8-parallelenscharen").lab;
+    const start = at(lab, {});
+    expect(start.r.g).toBe("y = 2x");
+    expect(start.r.durchP).toBe("y = 2x − 1");
+    expect(start.r.h).toBe("y = −0,5x + 4");
+    expect(start.r.S).toBe("(1,6 | 3,2)");
+    for (const values of enumerateLabGrid(lab, 6)) {
+      const v = values as LabValues;
+      const h = familyNormal(v);
+      const S = familyIntersection(v);
+      close(h.m * v.m, -1);
+      close(v.m * S.x + v.t, S.y);
+      close(h.m * S.x + h.t, S.y);
+      close(h.m * v.px + h.t, v.py);
+    }
+  });
+
+  it("6.9 the break-even point really costs the same in both tariffs", () => {
+    const lab = lesson("fu-9-anwendungen").lab;
+    const start = at(lab, {});
+    expect(start.r.A).toBe("50 €");
+    expect(start.r.B).toBe("40 €");
+    expect(start.r.gleich).toBe("bei 200 km: 70 €");
+    expect(at(lab, { m1: 0.25, t1: 30, m2: 0.25, t2: 10 }).r.gleich).toBe("nie (gleicher Preis je km)");
+    expect(at(lab, { m1: 0.15, x: 90 }).r.A).toBe("43,50 €");
+    const immer = lab.goals.find((g) => g.id === "immer-b")!;
+    for (const values of enumerateLabGrid(lab, 3)) {
+      const v = values as LabValues;
+      const be = breakEven(v);
+      if (typeof be === "object") close(v.t1 + v.m1 * be.x, v.t2 + v.m2 * be.x, 1e-9);
+      if (immer.check(v, computeReadouts(lab, v))) {
+        for (const x of [0, 100, 250, 400]) expect(v.t2 + v.m2 * x).toBeLessThan(v.t1 + v.m1 * x);
+      }
+    }
+  });
+
+  it("6.10 the determinant gives the area terms of both figures", () => {
+    const lab = lesson("fu-10-flaechen").lab;
+    const start = at(lab, {});
+    expect(start.r.det).toBe(24);
+    expect(start.r.A).toBe(12);
+    for (const values of enumerateLabGrid(lab, 29)) {
+      const v = values as LabValues;
+      const D = areaDet(v);
+      if (v.fig === 0) close(D, 6 * v.x + 12);
+      else close(D, (v.x + 2) * (-0.5 * v.x + 4));
+      close(Number(computeReadouts(lab, v).A), Math.abs(D) / 2);
+    }
+    // in the second figure the largest area inside −2 < x < 8 is at x = 3
+    const inside = enumerateLabGrid(lab, 29).filter((v) => v.fig === 1 && v.x > -2 && v.x < 8);
+    const best = inside.reduce((a, b) => (areaDet(b as LabValues) > areaDet(a as LabValues) ? b : a));
+    expect(best.x).toBe(3);
+    close(areaDet(best as LabValues) / 2, 6.25);
   });
 });
