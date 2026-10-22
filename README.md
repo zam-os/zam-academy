@@ -32,6 +32,8 @@ The rules come from [ADR 2026-10-19](https://github.com/zam-os/zam/blob/main/doc
 
 ## Develop
 
+New and changed packages follow the package standard in [AGENTS.md](AGENTS.md): curriculum check, lesson and card quality, verified videos, mapping approval and the definition of done.
+
 Each app is its own Vite package:
 
 ```bash
