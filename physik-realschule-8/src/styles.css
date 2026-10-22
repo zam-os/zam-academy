@@ -1,0 +1,1903 @@
+/* Physik 8 Realschule · ZAM Academy
+   Tokens on :root, dark overrides by system preference or data-theme. */
+
+:root {
+  color-scheme: light dark;
+  --bg: #f6f8fb;
+  --surface: #ffffff;
+  --elevated: #eef2f7;
+  --text: #0f172a;
+  --muted: #526071;
+  --line: #d9e0ea;
+  --brand: #2563eb;
+  --brand-text: #ffffff;
+  --success: #15803d;
+  --success-bg: #dcfce7;
+  --warning: #b45309;
+  --warning-bg: #fef3c7;
+  --danger: #b91c1c;
+  --zam: #6d4aff;
+  --accent: #2563eb;
+  --shadow: 0 1px 2px rgb(15 23 42 / 0.06), 0 8px 24px rgb(15 23 42 / 0.06);
+  --radius: 14px;
+
+  /* lab drawing colours */
+  --lab-ground: #cbd5e1;
+  --lab-block: #475569;
+  --lab-fluid: #60a5fa;
+  --lab-gas: #fde68a;
+  --lab-wall: #334155;
+  --lab-force: #dc2626;
+  --lab-force-2: #16a34a;
+  --lab-axis: #64748b;
+  --lab-particle: #1d4ed8;
+  --lab-field: #7c3aed;
+  --lab-curve: #2563eb;
+  --lab-marker: #dc2626;
+  --lab-meter: #0f172a;
+  --lab-meter-text: #a7f3d0;
+  --lab-ray: #d97706;
+  --lab-light-bg: #fef3c7;
+  --lab-glass: #93c5fd;
+  --lab-mirror: #64748b;
+  --lab-pos: #dc2626;
+  --lab-neg: #2563eb;
+  --lab-neutral: #94a3b8;
+  --lab-sun: #f59e0b;
+  --lab-shadow: #1e293b;
+  --lab-penumbra: #64748b;
+  --lab-metal: #94a3b8;
+  --lab-hot: #ef4444;
+  --lab-cold: #3b82f6;
+  --lab-on-block: #ffffff;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0b1120;
+    --surface: #111a2e;
+    --elevated: #182238;
+    --text: #e6edf7;
+    --muted: #9fb0c6;
+    --line: #27354d;
+    --brand: #60a5fa;
+    --brand-text: #0b1120;
+    --success: #4ade80;
+    --success-bg: #14321f;
+    --warning: #fbbf24;
+    --warning-bg: #3a2a08;
+    --danger: #f87171;
+    --zam: #9b85ff;
+    --shadow: 0 1px 2px rgb(0 0 0 / 0.4), 0 8px 24px rgb(0 0 0 / 0.35);
+    --lab-ground: #334155;
+    --lab-block: #94a3b8;
+    --lab-fluid: #3b82f6;
+    --lab-gas: #ca8a04;
+    --lab-wall: #cbd5e1;
+    --lab-axis: #94a3b8;
+    --lab-particle: #93c5fd;
+    --lab-field: #a78bfa;
+    --lab-curve: #60a5fa;
+    --lab-meter: #020617;
+    --lab-ray: #fbbf24;
+    --lab-light-bg: #3a2a08;
+    --lab-glass: #3b82f6;
+    --lab-mirror: #cbd5e1;
+    --lab-pos: #f87171;
+    --lab-neg: #60a5fa;
+    --lab-neutral: #64748b;
+    --lab-sun: #fbbf24;
+    --lab-shadow: #020617;
+    --lab-penumbra: #475569;
+    --lab-metal: #cbd5e1;
+    --lab-hot: #f87171;
+    --lab-cold: #60a5fa;
+    --lab-on-block: #0b1120;
+  }
+}
+
+:root[data-theme="dark"] {
+  --bg: #0b1120;
+  --surface: #111a2e;
+  --elevated: #182238;
+  --text: #e6edf7;
+  --muted: #9fb0c6;
+  --line: #27354d;
+  --brand: #60a5fa;
+  --brand-text: #0b1120;
+  --success: #4ade80;
+  --success-bg: #14321f;
+  --warning: #fbbf24;
+  --warning-bg: #3a2a08;
+  --danger: #f87171;
+  --zam: #9b85ff;
+  --shadow: 0 1px 2px rgb(0 0 0 / 0.4), 0 8px 24px rgb(0 0 0 / 0.35);
+  --lab-ground: #334155;
+  --lab-block: #94a3b8;
+  --lab-fluid: #3b82f6;
+  --lab-gas: #ca8a04;
+  --lab-wall: #cbd5e1;
+  --lab-axis: #94a3b8;
+  --lab-particle: #93c5fd;
+  --lab-field: #a78bfa;
+  --lab-curve: #60a5fa;
+  --lab-meter: #020617;
+  --lab-ray: #fbbf24;
+  --lab-light-bg: #3a2a08;
+  --lab-glass: #3b82f6;
+  --lab-mirror: #cbd5e1;
+  --lab-pos: #f87171;
+  --lab-neg: #60a5fa;
+  --lab-neutral: #64748b;
+  --lab-sun: #fbbf24;
+  --lab-shadow: #020617;
+  --lab-penumbra: #475569;
+  --lab-metal: #cbd5e1;
+  --lab-hot: #f87171;
+  --lab-cold: #60a5fa;
+  --lab-on-block: #0b1120;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--brand);
+}
+
+code {
+  font-family: ui-monospace, "Cascadia Code", Consolas, monospace;
+  font-size: 0.9em;
+  background: var(--elevated);
+  padding: 0.1em 0.35em;
+  border-radius: 6px;
+  word-break: break-all;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+.muted {
+  color: var(--muted);
+}
+
+/* ─── Shell ─────────────────────────────────────────────────────────────── */
+
+.app-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1.25rem;
+  padding: 0.85rem 1.25rem;
+  background: var(--surface);
+  border-bottom: 1px solid var(--line);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-right: auto;
+}
+
+.brand-emblem {
+  font-size: 1.9rem;
+}
+
+.brand-title {
+  margin: 0;
+  font-size: 1.15rem;
+  line-height: 1.2;
+}
+
+.brand-subtitle {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.main-nav {
+  display: flex;
+  gap: 0.25rem;
+  flex-wrap: wrap;
+}
+
+.nav-tab {
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--muted);
+  padding: 0.45rem 0.8rem;
+  border-radius: 999px;
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.92rem;
+}
+
+.nav-tab:hover {
+  background: var(--elevated);
+  color: var(--text);
+}
+
+.nav-tab.is-active {
+  background: var(--brand);
+  color: var(--brand-text);
+}
+
+.header-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.segmented {
+  display: inline-flex;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  overflow: hidden;
+  background: var(--elevated);
+}
+
+.seg-btn {
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  padding: 0.4rem 0.75rem;
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.85rem;
+}
+
+.seg-btn.is-active {
+  background: var(--surface);
+  color: var(--text);
+  box-shadow: inset 0 0 0 1px var(--line);
+}
+
+.progress-pill {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.progress-track {
+  width: 110px;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--elevated);
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0;
+  background: var(--success);
+  transition: width 0.4s ease;
+}
+
+.btn {
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--text);
+  padding: 0.5rem 0.95rem;
+  border-radius: 10px;
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.92rem;
+  transition:
+    background 0.15s,
+    transform 0.05s;
+}
+
+.btn:hover:not(:disabled) {
+  background: var(--elevated);
+}
+
+.btn:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+.btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background: var(--brand);
+  border-color: var(--brand);
+  color: var(--brand-text);
+}
+
+.btn-primary:hover:not(:disabled) {
+  filter: brightness(1.08);
+  background: var(--brand);
+}
+
+.btn-secondary {
+  background: var(--elevated);
+}
+
+.btn-ghost {
+  background: transparent;
+  border-color: transparent;
+  color: var(--muted);
+}
+
+.btn-ghost:hover:not(:disabled) {
+  color: var(--text);
+}
+
+.btn-danger {
+  background: var(--danger);
+  border-color: var(--danger);
+  color: #fff;
+}
+
+.btn-zam {
+  background: var(--zam);
+  border-color: var(--zam);
+  color: #fff;
+}
+
+.btn-sm {
+  padding: 0.35rem 0.7rem;
+  font-size: 0.85rem;
+}
+
+.icon-btn {
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--text);
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.1rem;
+}
+
+.main-view-host {
+  flex: 1;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1.25rem 1rem 3rem;
+}
+
+.app-footer {
+  border-top: 1px solid var(--line);
+  padding: 1rem 1.25rem;
+  font-size: 0.8rem;
+  color: var(--muted);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 2rem;
+}
+
+/* ─── Cards ─────────────────────────────────────────────────────────────── */
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1rem 1.1rem;
+  box-shadow: var(--shadow);
+}
+
+.card h4 {
+  margin: 0 0 0.6rem;
+  font-size: 1rem;
+}
+
+.card h5 {
+  margin: 0.8rem 0 0.4rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* ─── Lernpfad ──────────────────────────────────────────────────────────── */
+
+.hero {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1.5rem;
+  align-items: center;
+  background: linear-gradient(135deg, var(--surface), var(--elevated));
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  margin-bottom: 1.25rem;
+  box-shadow: var(--shadow);
+}
+
+.hero-compact {
+  grid-template-columns: 1fr;
+}
+
+.hero h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1.6rem;
+}
+
+.hero p {
+  margin: 0 0 0.75rem;
+  color: var(--muted);
+  max-width: 62ch;
+}
+
+.hero-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: end;
+}
+
+.track-select {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.track-select select,
+.lesson-select,
+.lab-control select {
+  font: inherit;
+  padding: 0.45rem 0.6rem;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--text);
+  max-width: 100%;
+}
+
+.hero-stats {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.hero-stats p {
+  margin: 0;
+}
+
+.ring {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: conic-gradient(var(--success) calc(var(--percent) * 1%), var(--elevated) 0);
+  font-weight: 700;
+  color: var(--text);
+}
+
+.ring span {
+  background: var(--surface);
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+}
+
+.badge-rack {
+  display: flex;
+  gap: 0.35rem;
+}
+
+.badge {
+  font-size: 1.3rem;
+  filter: grayscale(1);
+  opacity: 0.4;
+}
+
+.badge.is-earned {
+  filter: none;
+  opacity: 1;
+}
+
+.badge.is-off {
+  opacity: 0.15;
+}
+
+.stage-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-left: 5px solid var(--accent);
+  border-radius: var(--radius);
+  margin-bottom: 1rem;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.stage-head {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.9rem 1.1rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.stage-head h3 {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.stage-head p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.stage-icon {
+  font-size: 1.6rem;
+}
+
+.stage-progress {
+  margin-left: auto;
+  text-align: right;
+  font-size: 0.85rem;
+  min-width: 90px;
+}
+
+.bar {
+  height: 6px;
+  background: var(--elevated);
+  border-radius: 999px;
+  overflow: hidden;
+  margin-top: 0.25rem;
+}
+
+.bar > div {
+  height: 100%;
+  background: var(--accent);
+}
+
+.lesson-list {
+  list-style: none;
+  margin: 0;
+  padding: 0.3rem 0;
+}
+
+.lesson-row + .lesson-row {
+  border-top: 1px solid var(--line);
+}
+
+.lesson-link {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1.6rem 1fr auto;
+  gap: 0.7rem;
+  align-items: center;
+  text-align: left;
+  background: transparent;
+  border: 0;
+  color: inherit;
+  font: inherit;
+  padding: 0.65rem 1.1rem;
+  cursor: pointer;
+}
+
+.lesson-link:hover {
+  background: var(--elevated);
+}
+
+.lesson-row.is-active .lesson-link {
+  background: color-mix(in srgb, var(--accent) 10%, transparent);
+}
+
+.lesson-row.is-optional .lesson-text {
+  opacity: 0.65;
+}
+
+.lesson-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.lesson-text small {
+  color: var(--muted);
+}
+
+.lesson-meta {
+  display: flex;
+  gap: 0.3rem;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.chip {
+  font-size: 0.72rem;
+  padding: 0.12rem 0.45rem;
+  border-radius: 999px;
+  background: var(--elevated);
+  color: var(--muted);
+  border: 1px solid var(--line);
+  white-space: nowrap;
+}
+
+.chip.is-done {
+  background: var(--success-bg);
+  color: var(--success);
+  border-color: transparent;
+}
+
+.chip-track {
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+  color: var(--text);
+}
+
+.chip-optional {
+  border-style: dashed;
+}
+
+/* ─── Lektion ───────────────────────────────────────────────────────────── */
+
+.lesson-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+  gap: 1.25rem;
+  align-items: start;
+}
+
+.guide {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.lab-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  position: sticky;
+  top: 5.2rem;
+}
+
+.stage-pill {
+  display: inline-block;
+  font-size: 0.78rem;
+  padding: 0.2rem 0.7rem;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--accent) 14%, transparent);
+  color: var(--text);
+  width: fit-content;
+}
+
+.lesson-title {
+  margin: 0;
+  font-size: 1.5rem;
+  line-height: 1.25;
+}
+
+.lesson-subtitle {
+  margin: -0.4rem 0 0;
+  color: var(--muted);
+}
+
+.lehrplan-tag {
+  margin: 0;
+  font-size: 0.82rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  align-items: center;
+}
+
+.why-box {
+  background: var(--warning-bg);
+  color: var(--text);
+  border-radius: 10px;
+  padding: 0.7rem 0.9rem;
+  font-size: 0.92rem;
+}
+
+.explanation p {
+  margin: 0.4rem 0;
+}
+
+.explanation ul {
+  margin: 0.4rem 0;
+  padding-left: 1.2rem;
+}
+
+.explanation li {
+  margin: 0.3rem 0;
+}
+
+.explanation .formula-line {
+  font-size: 1.15rem;
+  text-align: center;
+  padding: 0.5rem;
+  background: var(--elevated);
+  border-radius: 10px;
+}
+
+.merke {
+  margin-top: 0.6rem;
+  padding: 0.65rem 0.9rem;
+  border-left: 4px solid var(--accent);
+  background: var(--elevated);
+  border-radius: 0 10px 10px 0;
+  font-size: 0.92rem;
+}
+
+.formula-box {
+  background: var(--surface);
+  border: 1px dashed var(--line);
+  border-radius: var(--radius);
+  padding: 0.8rem 1rem;
+}
+
+.formula-box h4 {
+  margin: 0 0 0.4rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.formula-box dl {
+  margin: 0;
+  display: grid;
+  gap: 0.4rem;
+}
+
+.formula-box dl > div {
+  display: grid;
+  grid-template-columns: minmax(120px, 0.6fr) 1.4fr;
+  gap: 0.6rem;
+  align-items: baseline;
+}
+
+.formula-box dt {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.formula-box dd {
+  margin: 0;
+}
+
+.formula-box dd small {
+  display: block;
+  color: var(--muted);
+}
+
+.formula {
+  font-family: "Cambria Math", "STIX Two Math", "Times New Roman", serif;
+  font-size: 1.08em;
+  white-space: normal;
+}
+
+.quiz-card .quiz-question {
+  margin: 0 0 0.6rem;
+  font-weight: 600;
+}
+
+.quiz-options {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.quiz-option {
+  text-align: left;
+  border: 1px solid var(--line);
+  background: var(--elevated);
+  color: var(--text);
+  padding: 0.55rem 0.8rem;
+  border-radius: 10px;
+  cursor: pointer;
+  font: inherit;
+}
+
+.quiz-option:hover:not(:disabled) {
+  border-color: var(--brand);
+}
+
+.quiz-option.is-correct {
+  background: var(--success-bg);
+  border-color: var(--success);
+  color: var(--text);
+}
+
+.quiz-option.is-wrong {
+  border-color: var(--danger);
+  opacity: 0.7;
+}
+
+.quiz-feedback {
+  margin: 0.6rem 0 0;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.exercise-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.exercise-count {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.task-prompt {
+  margin: 0.3rem 0 0.5rem;
+  font-size: 1rem;
+}
+
+.task-given {
+  margin: 0 0 0.5rem;
+  padding-left: 1.1rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.task-hint {
+  margin: 0 0 0.5rem;
+  font-size: 0.92rem;
+  background: var(--elevated);
+  padding: 0.4rem 0.7rem;
+  border-radius: 8px;
+}
+
+.task-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.task-input {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--surface);
+  overflow: hidden;
+}
+
+.task-input input {
+  border: 0;
+  font: inherit;
+  font-size: 1.05rem;
+  padding: 0.5rem 0.7rem;
+  width: 9rem;
+  background: transparent;
+  color: var(--text);
+}
+
+.task-input input:focus {
+  outline: 2px solid var(--brand);
+  outline-offset: -2px;
+}
+
+.task-unit {
+  padding: 0.5rem 0.7rem;
+  background: var(--elevated);
+  color: var(--muted);
+  font-size: 0.95rem;
+  border-left: 1px solid var(--line);
+}
+
+.task-feedback {
+  margin: 0.6rem 0 0;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.task-feedback.is-warning {
+  color: var(--warning);
+}
+
+.task-solution {
+  margin-top: 0.7rem;
+  padding: 0.7rem 0.9rem;
+  border-radius: 10px;
+  background: var(--success-bg);
+  font-size: 0.92rem;
+}
+
+.task-solution div {
+  margin-top: 0.3rem;
+}
+
+.lesson-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--line);
+}
+
+/* ─── Labor ─────────────────────────────────────────────────────────────── */
+
+.lab-intro {
+  margin: 0 0 0.5rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.lab-visual {
+  border-radius: 12px;
+  background: var(--elevated);
+  padding: 0.4rem;
+}
+
+.lab-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.lab-controls {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 0.6rem 1rem;
+  margin: 0.8rem 0 0.4rem;
+}
+
+.lab-control {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  font-size: 0.88rem;
+}
+
+.lab-label {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  color: var(--muted);
+}
+
+.lab-label output {
+  font-weight: 600;
+  color: var(--text);
+  font-variant-numeric: tabular-nums;
+}
+
+.lab-control input[type="range"] {
+  width: 100%;
+  accent-color: var(--accent);
+}
+
+.readouts {
+  margin: 0.5rem 0 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.4rem;
+}
+
+.readouts > div {
+  background: var(--elevated);
+  border-radius: 10px;
+  padding: 0.45rem 0.7rem;
+}
+
+.readouts > div.is-emphasis {
+  outline: 2px solid color-mix(in srgb, var(--accent) 60%, transparent);
+}
+
+.readouts dt {
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+.readouts dd {
+  margin: 0;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.goals ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.3rem;
+}
+
+.goals li {
+  display: flex;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  padding: 0.4rem 0.6rem;
+  border-radius: 8px;
+  background: var(--elevated);
+}
+
+.goals li.is-now {
+  outline: 1px solid var(--success);
+}
+
+.goals li.is-done {
+  background: var(--success-bg);
+}
+
+.goal-state {
+  flex: 0 0 1.2rem;
+}
+
+.status-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.3rem;
+  font-size: 0.9rem;
+}
+
+.status-list li {
+  display: flex;
+  gap: 0.5rem;
+  color: var(--muted);
+}
+
+.status-list li.is-done {
+  color: var(--text);
+}
+
+.status-done {
+  margin: 0.7rem 0 0;
+  padding: 0.6rem 0.8rem;
+  border-radius: 10px;
+  background: var(--success-bg);
+  font-size: 0.92rem;
+}
+
+.zam-card {
+  border-color: color-mix(in srgb, var(--zam) 50%, var(--line));
+}
+
+.zam-card p {
+  margin: 0 0 0.6rem;
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+
+/* ─── SVG lab classes ───────────────────────────────────────────────────── */
+
+.lab-text {
+  fill: var(--text);
+  font-size: 13px;
+  font-family: system-ui, sans-serif;
+}
+
+.lab-text-big {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.lab-text-muted {
+  fill: var(--muted);
+  font-size: 12px;
+  font-family: system-ui, sans-serif;
+}
+
+.lab-text-small {
+  fill: var(--muted);
+  font-size: 10.5px;
+  font-family: system-ui, sans-serif;
+}
+
+.lab-text-force {
+  fill: var(--lab-force);
+}
+
+.lab-text-force-2 {
+  fill: var(--lab-force-2);
+}
+
+.lab-pole-text {
+  fill: var(--text);
+  font-size: 22px;
+  font-weight: 700;
+  font-family: system-ui, sans-serif;
+}
+
+.lab-emoji {
+  font-size: 40px;
+}
+
+.lab-ground {
+  fill: var(--lab-ground);
+}
+
+.lab-pressure {
+  fill: var(--lab-force);
+}
+
+.lab-block {
+  fill: var(--lab-block);
+}
+
+.lab-crate {
+  fill: #b45309;
+}
+
+.lab-force {
+  stroke: var(--lab-force);
+}
+
+.lab-force-2 {
+  stroke: var(--lab-force-2);
+}
+
+.lab-axis {
+  stroke: var(--lab-axis);
+  stroke-width: 1.5;
+}
+
+.lab-grid {
+  stroke: var(--lab-axis);
+  stroke-width: 1;
+  stroke-dasharray: 4 4;
+  opacity: 0.6;
+}
+
+.lab-velocity {
+  stroke: var(--lab-particle);
+}
+
+.lab-field-arrow {
+  stroke: var(--lab-field);
+}
+
+.lab-arrowhead {
+  stroke: none !important;
+}
+
+.lab-force.lab-arrowhead {
+  fill: var(--lab-force);
+}
+
+.lab-force-2.lab-arrowhead {
+  fill: var(--lab-force-2);
+}
+
+.lab-axis.lab-arrowhead {
+  fill: var(--lab-axis);
+}
+
+.lab-velocity.lab-arrowhead {
+  fill: var(--lab-particle);
+}
+
+.lab-field-arrow.lab-arrowhead {
+  fill: var(--lab-field);
+}
+
+.lab-fluid {
+  fill: var(--lab-fluid);
+  opacity: 0.55;
+}
+
+.lab-ice {
+  fill: #e0f2fe;
+}
+
+.lab-gas {
+  fill: var(--lab-gas);
+}
+
+.lab-wall {
+  fill: none;
+  stroke: var(--lab-wall);
+  stroke-width: 3;
+}
+
+.lab-particle {
+  fill: var(--lab-particle);
+}
+
+.lab-ramp {
+  fill: var(--lab-ground);
+  stroke: var(--lab-wall);
+  stroke-width: 2;
+}
+
+.lab-clock {
+  fill: var(--surface);
+  stroke: var(--lab-wall);
+  stroke-width: 2;
+}
+
+.lab-pie {
+  fill: var(--lab-force-2);
+  opacity: 0.6;
+}
+
+.lab-needle {
+  stroke: var(--lab-force);
+  stroke-width: 3;
+  stroke-linecap: round;
+}
+
+.lab-bar-pot {
+  fill: var(--lab-fluid);
+}
+
+.lab-bar-kin {
+  fill: var(--lab-force-2);
+}
+
+.lab-bar-in {
+  fill: var(--lab-axis);
+}
+
+.lab-bar-loss {
+  fill: var(--lab-force);
+  opacity: 0.7;
+}
+
+.lab-tube {
+  fill: var(--surface);
+  stroke: var(--lab-wall);
+  stroke-width: 2;
+}
+
+.lab-water-fill {
+  opacity: 0.75;
+}
+
+.lab-heater {
+  fill: var(--lab-force);
+}
+
+.lab-steam {
+  fill: none;
+  stroke: var(--muted);
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+.lab-curve {
+  fill: none;
+  stroke: var(--lab-curve);
+  stroke-width: 3;
+  stroke-linejoin: round;
+}
+
+.lab-marker {
+  fill: var(--lab-marker);
+  stroke: var(--surface);
+  stroke-width: 2;
+}
+
+.lab-coil {
+  fill: none;
+  stroke: #b45309;
+  stroke-width: 3;
+}
+
+.lab-field {
+  fill: none;
+  stroke: var(--lab-field);
+  stroke-width: 1.5;
+  stroke-dasharray: 6 5;
+}
+
+.lab-core {
+  fill: var(--lab-block);
+}
+
+.lab-wire {
+  fill: none;
+  stroke: var(--lab-wall);
+  stroke-width: 3;
+  stroke-linecap: round;
+}
+
+.lab-wire-dot {
+  fill: var(--lab-wall);
+}
+
+.lab-clip {
+  fill: var(--lab-axis);
+}
+
+.lab-conductor {
+  fill: var(--surface);
+  stroke: var(--lab-wall);
+  stroke-width: 3;
+}
+
+.lab-pole-n {
+  fill: #ef4444;
+  opacity: 0.8;
+}
+
+.lab-pole-s {
+  fill: #22c55e;
+  opacity: 0.8;
+}
+
+.lab-socket {
+  fill: var(--elevated);
+  stroke: var(--lab-wall);
+  stroke-width: 2;
+}
+
+.lab-socket-hole {
+  fill: var(--lab-wall);
+}
+
+.lab-device {
+  fill: var(--lab-gas);
+  stroke: var(--lab-wall);
+  stroke-width: 2;
+}
+
+.lab-meter {
+  fill: var(--lab-meter);
+}
+
+.lab-meter + text,
+.lab-meter ~ .lab-text {
+  fill: var(--text);
+}
+
+.lab-wire-cu {
+  fill: #ea580c;
+}
+
+.lab-wire-al {
+  fill: #9ca3af;
+}
+
+.lab-wire-fe {
+  fill: #6b7280;
+}
+
+.lab-wire-konst {
+  fill: #475569;
+}
+
+/* ─── Formelsammlung ────────────────────────────────────────────────────── */
+
+.formula-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.formula-table th,
+.formula-table td {
+  text-align: left;
+  padding: 0.55rem 1rem;
+  border-top: 1px solid var(--line);
+  vertical-align: top;
+}
+
+.formula-table thead th {
+  border-top: 0;
+  color: var(--muted);
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* ─── Dialogs and toasts ────────────────────────────────────────────────── */
+
+.app-dialog {
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--surface);
+  color: var(--text);
+  padding: 0;
+  max-width: min(640px, 92vw);
+  box-shadow: var(--shadow);
+}
+
+.app-dialog::backdrop {
+  background: rgb(2 6 23 / 0.55);
+}
+
+.dialog-inner {
+  padding: 1.4rem 1.5rem;
+}
+
+.dialog-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 1rem;
+}
+
+.dialog-kicker {
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  color: var(--zam);
+  font-weight: 700;
+}
+
+.dialog-title {
+  margin: 0.2rem 0 0.8rem;
+  font-size: 1.35rem;
+}
+
+.phase-row {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 0.6rem;
+  align-items: center;
+  margin: 0.5rem 0 1rem;
+}
+
+.phase-box {
+  background: var(--elevated);
+  border-radius: 12px;
+  padding: 0.7rem 0.9rem;
+  font-size: 0.9rem;
+}
+
+.phase-box p {
+  margin: 0.3rem 0 0;
+  color: var(--muted);
+}
+
+.phase-box.is-zam {
+  outline: 2px solid color-mix(in srgb, var(--zam) 60%, transparent);
+}
+
+.phase-arrow {
+  font-size: 1.5rem;
+  color: var(--muted);
+}
+
+.action-card {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 0.9rem 1rem;
+}
+
+.action-card h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+}
+
+.dialog-steps {
+  margin: 0 0 0.6rem;
+  padding-left: 1.2rem;
+  font-size: 0.92rem;
+}
+
+.dialog-alt {
+  margin: 0.5rem 0 0.4rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.code-row {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.dialog-note {
+  display: block;
+  margin-top: 0.6rem;
+  color: var(--muted);
+}
+
+.dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  margin-top: 1.1rem;
+}
+
+.celebration {
+  text-align: center;
+}
+
+.celebration-icon {
+  font-size: 3rem;
+}
+
+.celebration .dialog-actions {
+  justify-content: center;
+}
+
+.toast-stack {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  z-index: 50;
+  max-width: min(380px, 90vw);
+}
+
+.toast {
+  display: flex;
+  align-items: start;
+  gap: 0.5rem;
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--line);
+  border-left-width: 5px;
+  border-radius: 12px;
+  padding: 0.6rem 0.8rem;
+  box-shadow: var(--shadow);
+  font-size: 0.9rem;
+  animation: toast-in 0.25s ease;
+}
+
+.toast-success {
+  border-left-color: var(--success);
+}
+
+.toast-info {
+  border-left-color: var(--brand);
+}
+
+.toast-warning {
+  border-left-color: var(--warning);
+}
+
+.toast-close {
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 1.1rem;
+  line-height: 1;
+  margin-left: auto;
+}
+
+@keyframes toast-in {
+  from {
+    transform: translateY(8px);
+    opacity: 0;
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+/* ─── Responsive ────────────────────────────────────────────────────────── */
+
+@media (max-width: 1000px) {
+  .lesson-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .lab-column {
+    position: static;
+  }
+
+  .hero {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .brand {
+    margin-right: 0;
+    width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .app-header {
+    padding: 0.7rem 0.8rem;
+  }
+
+  .main-view-host {
+    padding: 0.9rem 0.6rem 2.5rem;
+  }
+
+  .lesson-link {
+    grid-template-columns: 1.4rem 1fr;
+  }
+
+  .lesson-meta {
+    grid-column: 2;
+    justify-content: flex-start;
+  }
+
+  .formula-box dl > div {
+    grid-template-columns: 1fr;
+  }
+
+  .phase-row {
+    grid-template-columns: 1fr;
+  }
+
+  .phase-arrow {
+    transform: rotate(90deg);
+    text-align: center;
+  }
+
+  .formula-table thead {
+    display: none;
+  }
+
+  .formula-table td {
+    display: block;
+    padding: 0.35rem 1rem;
+    border-top: 0;
+  }
+
+  .formula-table tr {
+    display: block;
+    border-top: 1px solid var(--line);
+    padding: 0.4rem 0;
+  }
+}
+
+/* ─── Physik 8: Erklärvideo, Wahl und neue Laborbausteine ───────────────── */
+
+.stage-note {
+  margin: 0.2rem 0 0;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.video-box {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-left: 4px solid #ef4444;
+  border-radius: 10px;
+  padding: 0.75rem 0.95rem;
+  margin: 0.7rem 0;
+}
+
+.video-box-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.3rem;
+}
+
+.video-box-title {
+  font-weight: 700;
+  font-size: 0.93rem;
+  color: var(--text);
+}
+
+.video-box-desc {
+  font-size: 0.86rem;
+  color: var(--muted);
+  margin: 0 0 0.55rem 0;
+}
+
+.video-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.video-link:hover {
+  border-color: #ef4444;
+}
+
+.lab-ray {
+  stroke: var(--lab-ray);
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  fill: none;
+}
+
+.lab-ray-thin {
+  stroke: var(--lab-ray);
+  stroke-width: 1.5;
+  fill: none;
+}
+
+.lab-ray-virtual {
+  stroke: var(--lab-ray);
+  stroke-width: 1.5;
+  stroke-dasharray: 5 4;
+  fill: none;
+}
+
+.lab-ray.lab-arrowhead,
+.lab-ray-thin.lab-arrowhead {
+  fill: var(--lab-ray);
+}
+
+.lab-normal {
+  stroke: var(--lab-axis);
+  stroke-width: 1.2;
+  stroke-dasharray: 4 4;
+}
+
+.lab-sun {
+  fill: var(--lab-sun);
+}
+
+.lab-light-bg {
+  fill: var(--lab-light-bg);
+}
+
+.lab-glass {
+  fill: var(--lab-glass);
+  opacity: 0.45;
+  stroke: var(--lab-wall);
+  stroke-width: 1.5;
+}
+
+.lab-lens {
+  fill: var(--lab-glass);
+  opacity: 0.6;
+  stroke: var(--lab-wall);
+  stroke-width: 2;
+}
+
+.lab-mirror {
+  stroke: var(--lab-mirror);
+  stroke-width: 5;
+  stroke-linecap: round;
+}
+
+.lab-rough {
+  fill: none;
+  stroke: var(--lab-mirror);
+  stroke-width: 3;
+  stroke-linejoin: round;
+}
+
+.lab-shadow {
+  fill: var(--lab-shadow);
+  opacity: 0.85;
+}
+
+.lab-penumbra {
+  fill: var(--lab-penumbra);
+  opacity: 0.55;
+}
+
+.lab-object {
+  fill: var(--lab-force-2);
+  stroke: var(--lab-force-2);
+}
+
+.lab-image {
+  fill: var(--lab-force);
+  stroke: var(--lab-force);
+}
+
+.lab-image-virtual {
+  fill: none;
+  stroke: var(--lab-force);
+  stroke-dasharray: 4 3;
+  stroke-width: 2;
+}
+
+.lab-pos {
+  fill: var(--lab-pos);
+}
+
+.lab-neg {
+  fill: var(--lab-neg);
+}
+
+.lab-neutral {
+  fill: var(--lab-neutral);
+}
+
+.lab-charge-text {
+  fill: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  font-family: system-ui, sans-serif;
+}
+
+.lab-metal {
+  fill: var(--lab-metal);
+  stroke: var(--lab-wall);
+  stroke-width: 2;
+}
+
+.lab-hot {
+  fill: var(--lab-hot);
+}
+
+.lab-cold {
+  fill: var(--lab-cold);
+}
+
+.lab-bulb-on {
+  fill: var(--lab-sun);
+  stroke: var(--lab-wall);
+  stroke-width: 2;
+}
+
+.lab-bulb-off {
+  fill: var(--surface);
+  stroke: var(--lab-wall);
+  stroke-width: 2;
+}
+
+.lab-ok {
+  fill: var(--success);
+}
+
+.lab-bad {
+  fill: var(--danger);
+}
+
+.lab-sound-wave {
+  fill: none;
+  stroke: var(--lab-curve);
+  stroke-width: 2.5;
+}
+
+.lab-orbit {
+  fill: none;
+  stroke: var(--lab-axis);
+  stroke-width: 1;
+  stroke-dasharray: 3 4;
+}
+
+.lab-planet {
+  fill: var(--lab-particle);
+}
+
+.lab-star {
+  fill: var(--lab-axis);
+}
+
+.lab-on-block {
+  fill: var(--lab-on-block);
+  font-size: 12px;
+  font-weight: 700;
+  font-family: system-ui, sans-serif;
+}
+
+.lab-fixed-dark {
+  fill: #0f172a;
+  font-size: 11px;
+  font-weight: 600;
+  font-family: system-ui, sans-serif;
+}
+
+.lab-ray-head {
+  fill: var(--lab-ray);
+  stroke: none;
+}
