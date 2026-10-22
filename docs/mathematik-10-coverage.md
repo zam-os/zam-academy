@@ -22,11 +22,16 @@ Zweig I sieht 34 Lektionen, Zweig II/III 25, „alle Lektionen“ 45. Alle 46 Ko
 - **Wiederholung früherer Jahrgänge, ausdrücklich markiert:** `vk-1` (Verbindungsvektor, Betrag aus M8/M9 I) als Grundlage des Skalarprodukts, `ab-4` (Determinante aus M8 I) als Werkzeug für Flächen bei Abbildungen und in der Abschlussprüfung.
 - **Zweig II/III:** Raumgeometrie und quadratische Funktionen kommen dort erst in Klasse 10 und bekommen eigene Lektionen; Zweig I lernt sie in Mathe 9 (`rg-*`, `qf-*` nur Zweig I). Drei-Punkte-Parabeln (Gleichungssysteme mit drei Unbekannten) entfallen, weil II/III nur Systeme mit zwei Unbekannten kennt. Extremwerte bei Körpern laufen über Wertetabelle und Graph, ohne Ableitung.
 - **Daten und Zufall:** Mathe 9 behandelt Baumdiagramm und Pfadregeln bereits (unter „M9 LB 8“, siehe [#28](https://github.com/zam-os/zam-academy/issues/28)). Mathe 10 vertieft auf Klasse-10-Niveau: drei und mehr Stufen, ohne Zurücklegen, Ereignisse aus mehreren Pfaden, „Wie oft mindestens“ mit dem Logarithmus aus `el-3`.
-- **Notation** nach der ISB-Merkhilfe: ⊙ für das Skalarprodukt, ⊕ für die Verschiebung, die Spiegelmatrix mit 2α.
+- **Zweig I, variable Winkelmaße:** Extremwertprobleme mit einem variablen Winkelmaß φ gehören nur zu Zweig I; Zweig II/III untersucht funktionale Abhängigkeiten ausdrücklich ohne variable Winkel. `dr-4` übt sie daher mit festen Winkeln für beide Zweige, `dr-5` (nur I) mit A(φ) = k · sin φ (größter Wert bei φ = 90°) und A(φ) = k · sin(2φ) (bei φ = 45°, über das Additionstheorem aus `tr-6`).
+- **Notation** nach der ISB-Merkhilfe: ⊙ für das Skalarprodukt, ⊕ für die Verschiebung, die Spiegelmatrix mit 2α. Definitions- und Wertemenge heißen in allen Etappen 𝔻 und 𝕎, damit D in Etappe 7 die Diskriminante bleiben kann.
 
 ## Lehrervideos
 
-42 der 45 Lektionen verlinken ein deutsches Erklärvideo (Daniel Jung, Lehrerschmidt, MathemaTrick, „Lernen - Leicht gemacht“ mit Realschul-Bayern-Bezug u. a.). Für jedes wurden Titel und Kanal am 22.10.2026 per YouTube-oEmbed abgefragt und mit dem Thema abgeglichen; die Liste steht zentral in `src/curriculum/teacher-videos.ts`, die Tests pinnen sie. Ohne Video sind noch `tr-6-additionstheoreme` (die gefundenen Erklärungen rechnen im Bogenmaß), `pt-4-parameter` und `rg-5-extremwerte` (die gefundenen Videos nutzen Ableitungen). Sie bleiben für einen späteren Erweiterungslauf offen.
+Alle 45 Lektionen verlinken ein deutsches Erklärvideo (Daniel Jung, Lehrerschmidt, MathemaTrick, „Lernen - Leicht gemacht“ mit Realschul-Bayern-Bezug u. a.). Für jedes wurden Titel und Kanal am 22.10.2026 per YouTube-oEmbed abgefragt und mit dem Thema abgeglichen; die Liste steht zentral in `src/curriculum/teacher-videos.ts`, die Tests pinnen sie. Die vier zuletzt gewählten Videos wurden zusätzlich an YouTubes Vorschaubildern über die ganze Laufzeit geprüft:
+- `tr-5`: Komplementbeziehungen und goniometrische Grundformeln, nur im Gradmaß. Es ersetzt ein Tangensvideo, das neben 90° auch ½π zeigte.
+- `tr-6`: Additionstheoreme mit sin(30° + 60°) und Gleichungen in [0°; 360°].
+- `pt-4`: y = k · (x − c)ⁿ + d mit Scheitel, 𝔻 und 𝕎.
+- `rg-5`: Zylinder im Kegel mit größter Mantelfläche, nach dem Aufgabenblatt „Ma 10 II III Raumgeometrie“ von physikspicker, ohne Ableitung.
 
 ## Bestandsabgleich der ZAM-Zellen
 

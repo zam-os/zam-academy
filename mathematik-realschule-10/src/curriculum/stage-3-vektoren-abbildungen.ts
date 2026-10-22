@@ -1153,7 +1153,7 @@ const achsenspiegelung: Lesson = {
     intro: "Ziehe P und den Punkt auf der Spiegelachse (er ändert den Winkel α). Rechts siehst du die Spiegelmatrix mit 2α, die Rechnung und die Probe mit dem Mittelpunkt M.",
     params: [
       { type: "range", key: "alpha", label: "Winkel α der Achse", unit: "°", min: 0, max: 175, step: 5, value: 30 },
-      { type: "range", key: "px", label: "x von P", unit: "", min: -5, max: 5, step: 0.5, value: 4, digits: 1 },
+      { type: "range", key: "px", label: "x von P", unit: "", min: -5, max: 5, step: 0.5, value: -3, digits: 1 },
       { type: "range", key: "py", label: "y von P", unit: "", min: -5, max: 5, step: 0.5, value: 2, digits: 1 },
     ],
     readouts: [

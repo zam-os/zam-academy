@@ -227,6 +227,12 @@ function samplePixels(plot: Plot, point: (u: number) => [number, number] | null,
 
 /** A panel of lines in the plot corner that covers the fewest of the given points; top corners first. */
 function cornerBox(plot: Plot, lines: Array<[string, string]>, avoid: Pt[]): string {
+  const box = cornerRect(plot, lines, avoid);
+  return mathBox(box.left + 8, box.top + 17, lines);
+}
+
+/** The corner of the plot where the panel covers the fewest of the points to avoid. */
+function cornerRect(plot: Plot, lines: Array<[string, string]>, avoid: Pt[]): { left: number; top: number; w: number; h: number } {
   const { w, h } = panelSize(lines);
   const { x, y, w: bw, h: bh } = plot.box;
   const corners = [
@@ -244,7 +250,7 @@ function cornerBox(plot: Plot, lines: Array<[string, string]>, avoid: Pt[]): str
       bestHits = hits;
     }
   }
-  return mathBox(best.left + 8, best.top + 17, lines);
+  return { ...best, w, h };
 }
 
 /** A curve given by a parameter, cut where it leaves a generous margin around the plot. */
@@ -672,12 +678,12 @@ function expShift(v: LabValues): string {
   const f = (x: number) => v.k * v.a ** (x - v.b) + v.c;
   let out = open("Verschobene und gestreckte Exponentialfunktion mit Asymptote, Wertemenge und Umkehrfunktion");
   out += plot.clip("clip-shift") + plot.grid(1, 2);
-  // W along the y-axis: everything above (k > 0) or below (k < 0) the asymptote
+  // W along the y-axis: everything above (k > 0) or below (k < 0) the asymptote.
+  // The bar sits just right of the axis so the tick numbers on its left stay readable.
   if (v.k !== 0) {
     const top = v.k > 0 ? plot.ymax : v.c;
     const bottom = v.k > 0 ? v.c : plot.ymin;
-    if (top > bottom) out += rect(plot.X(0) - 5, plot.Y(top), 10, plot.Y(bottom) - plot.Y(top), "lab-fill-b");
-    out += text(plot.X(0) - 9, plot.Y(v.k > 0 ? Math.min(v.c + 0.8, 4.6) : Math.max(v.c - 0.6, -4.6)), "W", "lab-text-small lab-text-b", "end");
+    if (top > bottom) out += rect(plot.X(0) + 2, plot.Y(top), 8, plot.Y(bottom) - plot.Y(top), "lab-fill-b");
   }
   // The asymptote's label sits where the curve comes close, on the far side of the line.
   out += hline(plot, v.c, "lab-curve-c");
@@ -705,16 +711,44 @@ function expShift(v: LabValues): string {
   const P = plot.P(v.b, v.k + v.c);
   const pVisible = plot.contains(v.b, v.k + v.c);
   const rising = v.k * (v.a - 1) > 0;
-  if (pVisible) out += text(P.x + (rising ? -11 : 11), P.y - 10, `(${fmt(v.b)} | ${fmt(v.k + v.c)})`, "lab-text-small", rising ? "end" : "start");
+  // Just below the x-axis it would sit on the tick numbers, so there it moves above the axis.
+  const pLabelY = P.y - 10 > plot.Y(0) + 4 && P.y - 10 < plot.Y(0) + 24 ? plot.Y(0) - 6 : P.y - 10;
+  if (pVisible) out += text(P.x + (rising ? -11 : 11), pLabelY, `(${fmt(v.b)} | ${fmt(v.k + v.c)})`, "lab-text-small", rising ? "end" : "start");
   const C = plot.P(cHandleX(v), v.c);
   const lines: Array<[string, string]> = [
     [v.k === 0 ? `y = ${fmt(v.c)} (k = 0)` : `y = ${expSvg(v.k, v.a, v.b, v.c)}`, "lab-text lab-text-big"],
     [`Asymptote y = ${fmt(v.c)}`, "lab-text lab-text-c"],
-    [v.k === 0 ? "keine Exponentialfunktion" : `D = ℝ, W = {y | y ${v.k > 0 ? ">" : "<"} ${fmt(v.c)}}`, "lab-text-muted"],
+    [v.k === 0 ? "keine Exponentialfunktion" : `𝔻 = ℝ, 𝕎 = {y | y ${v.k > 0 ? ">" : "<"} ${fmt(v.c)}}`, "lab-text-muted"],
   ];
   if (v.inv === 1 && v.k !== 0) lines.push([`Umkehrfunktion: y = ${logNameSvg(v.a)}(${inverseArg(v.k, v.c)})${plusConst(v.b)}`, "lab-text-small lab-text-b"]);
   avoid.push(P, C);
-  out += cornerBox(plot, lines, avoid);
+  const box = cornerRect(plot, lines, avoid);
+  out += mathBox(box.left + 8, box.top + 17, lines);
+  // "W" beside the bar, near the asymptote or at its open end: wherever the panel
+  // leaves room and neither a curve, a tick number, the y-axis name nor the label
+  // of (b | k + c) is close.
+  if (v.k !== 0) {
+    const busy: Pt[] = [
+      ...avoid,
+      ...[-4, -2, 2, 4].map((n) => ({ x: plot.X(0) - 10, y: plot.Y(n) })),
+      { x: plot.X(0) + 10, y: plot.Y(plot.ymax) + 6 },
+      { x: P.x + (rising ? -40 : 40), y: pLabelY - 4 },
+    ];
+    const clearance = (p: Pt) => Math.min(...busy.map((b) => Math.hypot(b.x - p.x, b.y - p.y)));
+    const inBox = (p: Pt) => p.x > box.left - 12 && p.x < box.left + box.w + 12 && p.y > box.top - 10 && p.y < box.top + box.h + 10;
+    const near = v.k > 0 ? Math.min(v.c + 0.8, plot.ymax - 0.4) : Math.max(v.c - 0.8, plot.ymin + 0.4);
+    const far = v.k > 0 ? plot.ymax - 0.4 : plot.ymin + 0.4;
+    const candidates = [near, far]
+      .flatMap((y) => [
+        { x: plot.X(0) + 18, y: plot.Y(y), right: true },
+        { x: plot.X(0) - 10, y: plot.Y(y), right: false },
+      ])
+      .filter((p) => !inBox(p));
+    if (candidates.length) {
+      const best = candidates.reduce((a, b) => (clearance(b) > clearance(a) ? b : a));
+      out += text(best.x + (best.right ? -4 : 4), best.y + 4, "W", "lab-text-small lab-text-b", best.right ? "start" : "end");
+    }
+  }
   // handles last, above the panel
   if (pVisible) out += handle("P", P.x, P.y, "Punkt (b | k + c): verschiebt waagrecht und streckt", "lab-handle lab-handle-a");
   out += handle("c", C.x, C.y, "Asymptote y = c: verschiebt senkrecht", "lab-handle lab-handle-b");
@@ -778,7 +812,7 @@ function logGraph(v: LabValues): string {
   const lines: Array<[string, string]> = [
     [v.k === 0 ? `y = ${fmt(v.c)} (k = 0)` : `y = ${logSvg(v.k, v.a, v.b, v.c)}`, "lab-text lab-text-big"],
     [`Asymptote x = ${fmt(v.b)}`, "lab-text lab-text-c"],
-    [`D = {x | x > ${fmt(v.b)}}, W = ℝ`, "lab-text-muted"],
+    [`𝔻 = {x | x > ${fmt(v.b)}}, 𝕎 = ℝ`, "lab-text-muted"],
   ];
   if (v.mirror === 1 && v.k !== 0) lines.push([`Spiegelbild: y = ${fmt(v.a)}^{${inverseArg(v.k, v.c)}}${plusConst(v.b)}`, "lab-text-small lab-text-b"]);
   avoid.push(A, B);

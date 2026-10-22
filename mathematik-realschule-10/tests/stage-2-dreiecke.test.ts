@@ -579,4 +579,44 @@ describe("Etappe 2: Gleichungen und Trägergraphen", () => {
       expect(task.anyOrder).toEqual([2, 3]);
     }
   });
+
+  it("find the largest angle-dependent area, checked on figures built from coordinates", () => {
+    // The largest value on a 0,01° grid of φ, not the rule sin φ ≤ 1 the lesson teaches.
+    const largest = (area: (phi: number) => number, hi: number) => {
+      let best = { phi: 0, value: Number.NEGATIVE_INFINITY };
+      for (let i = 1; i < hi * 100; i++) {
+        const value = area(i / 100);
+        if (value > best.value) best = { phi: i / 100, value };
+      }
+      return best;
+    };
+    const O = { x: 0, y: 0 };
+    for (const task of tasks("dr-5-gleichungen", "extremwert", 1)) {
+      const { variant, c, b } = meta(task);
+      // A in the origin, B on the x-axis, the moving corner on the ray under φ.
+      const area = (phi: number) => {
+        const D = { x: b * cos(phi), y: b * sin(phi) };
+        return shoelace(variant === 1 ? [O, { x: c, y: 0 }, { x: c + D.x, y: D.y }, D] : [O, { x: c, y: 0 }, D]);
+      };
+      const best = largest(area, 180);
+      near(num(task, 0), best.phi, `${task.prompt} φ`, 0.011);
+      near(num(task, 1), best.value, `${task.prompt} A`, 1e-6);
+    }
+    for (const task of tasks("dr-5-gleichungen", "extremwert", 2)) {
+      const { variant, s } = meta(task);
+      // Base or diameter on the x-axis, symmetric to the y-axis: the rectangle's corner
+      // (s · cos φ | s · sin φ) lies on the semicircle, the triangle's legs are s long
+      // and meet the base under φ.
+      const area = (phi: number) => {
+        const x = s * cos(phi);
+        const y = s * sin(phi);
+        return shoelace(variant === 1 ? [{ x: -x, y: 0 }, { x, y: 0 }, { x, y }, { x: -x, y }] : [{ x: -x, y: 0 }, { x, y: 0 }, { x: 0, y }]);
+      };
+      const best = largest(area, 90);
+      near(num(task, 0), best.phi, `${task.prompt} φ`, 0.011);
+      near(num(task, 1), best.value, `${task.prompt} A`, 1e-6);
+      const factor = Number(task.prompt.match(/A\(φ\) = ([\d,]+) · sin\(2φ\)/)?.[1].replace(",", "."));
+      for (const phi of [10, 30, 60, 80]) near(factor * sin(2 * phi), area(phi), `${task.prompt} A(${phi}°)`, 1e-9);
+    }
+  });
 });

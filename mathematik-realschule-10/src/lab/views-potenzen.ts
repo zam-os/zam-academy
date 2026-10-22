@@ -420,8 +420,8 @@ function powerGraph(v: LabValues): string {
   const alias = c === 0.5 ? " = √x" : c === 1 / 3 ? " = ∛x" : c === -0.5 ? " = 1 : √x" : c === -1 ? " = 1 : x" : c < 0 ? ` = 1 : x${supInt(-c)}` : "";
   const lines: PanelLine[] = [
     [[T("y = x"), S(exponentText(c)), T(alias)], "lab-text lab-text-big"],
-    [`D = ${sets.D}`, "lab-text"],
-    [`W = ${sets.W}`, "lab-text"],
+    [`𝔻 = ${sets.D}`, "lab-text"],
+    [`𝕎 = ${sets.W}`, "lab-text"],
     ["", ""],
     ["Symmetrie:", "lab-text-muted"],
   ];
@@ -516,7 +516,7 @@ function powerShift(v: LabValues): string {
   const sets = shiftedSets(a, b, c, d);
   const lines: PanelLine[] = [[shiftedPowerSegs(a, b, c, d), "lab-text lab-text-a"]];
   if (c === 0.5 && a !== 0) lines.push([`= ${shiftedPowerText(a, b, c, d).slice(4)}`, "lab-text-muted"]);
-  lines.push(["", ""], [`M(${fmt(-b)} | ${fmt(d)})`, "lab-text lab-text-c"], [`D = ${sets.D}`, "lab-text"], [`W = ${sets.W}`, "lab-text"], ["", ""], ["Asymptoten:", "lab-text-muted"]);
+  lines.push(["", ""], [`M(${fmt(-b)} | ${fmt(d)})`, "lab-text lab-text-c"], [`𝔻 = ${sets.D}`, "lab-text"], [`𝕎 = ${sets.W}`, "lab-text"], ["", ""], ["Asymptoten:", "lab-text-muted"]);
   if (sets.asymptotes === "keine") lines.push(["keine", "lab-text"]);
   else lines.push([`x = ${fmt(-b)}`, "lab-text"], [`y = ${fmt(d)}`, "lab-text"]);
   lines.push(["", ""]);
@@ -648,12 +648,12 @@ function inverseMirror(v: LabValues): string {
   out += text(plot.X(4.6), plot.Y(4.2), "y = x", "lab-text-small", "end");
   const lines: PanelLine[] = [
     [`f: ${mc.fText}`, "lab-text-muted lab-text-a"],
-    [`D = ${mc.D}`, "lab-text-small"],
-    [`W = ${mc.W}`, "lab-text-small"],
+    [`𝔻 = ${mc.D}`, "lab-text-small"],
+    [`𝕎 = ${mc.W}`, "lab-text-small"],
     ["", ""],
   ];
   if (mc.invertible) {
-    lines.push(["Umkehrfunktion f⁻¹:", "lab-text-muted"], [mc.invText, "lab-text-muted lab-text-b"], [`D = ${mc.Dinv}`, "lab-text-small"], [`W = ${mc.Winv}`, "lab-text-small"]);
+    lines.push(["Umkehrfunktion f⁻¹:", "lab-text-muted"], [mc.invText, "lab-text-muted lab-text-b"], [`𝔻 = ${mc.Dinv}`, "lab-text-small"], [`𝕎 = ${mc.Winv}`, "lab-text-small"]);
   } else {
     // a vertical line meets the mirror image twice: it is no graph of a function
     const xt = d + 1.5;
@@ -683,7 +683,7 @@ function inverseMirror(v: LabValues): string {
     out += handle("Q", Q.x, Q.y, "Spiegelpunkt P′", "lab-handle lab-handle-b");
   } else {
     const inside = mc.inD(v.x);
-    lines.push([inside ? "P liegt außerhalb der" : `P: x = ${fmt(v.x, 2)} liegt nicht`, "lab-text-small"], [inside ? "Zeichnung." : "in D.", "lab-text-small"]);
+    lines.push([inside ? "P liegt außerhalb der" : `P: x = ${fmt(v.x, 2)} liegt nicht`, "lab-text-small"], [inside ? "Zeichnung." : "in 𝔻.", "lab-text-small"]);
     out += sidePanel(lines, MIRROR_PANEL);
   }
   out += `</svg>`;

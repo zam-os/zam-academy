@@ -1414,9 +1414,9 @@ const gleichungen: Lesson = {
   title: "2.5 Trigonometrische Gleichungen und Trägergraphen",
   subtitle: "Alle Lösungen im Intervall finden und den Winkel eliminieren",
   tracks: ["I"],
-  lehrplan: `${LEHRPLAN_I}, Gleichungen und Trägergraphen`,
+  lehrplan: `${LEHRPLAN_I}, Gleichungen, Trägergraphen und Extremwerte`,
   whyItMatters:
-    "In Prüfungsaufgaben hängen Figuren oft von einem Winkel φ ab. Gefragt ist dann, für welche φ eine Strecke oder Fläche einen bestimmten Wert hat und auf welcher Linie die Punkte der Schar liegen.",
+    "In Prüfungsaufgaben hängen Figuren oft von einem Winkel φ ab. Gefragt ist dann, für welche φ eine Strecke oder Fläche einen bestimmten Wert hat oder am größten ist und auf welcher Linie die Punkte der Schar liegen.",
   explanationHtml: `
     <p>Hängt eine Figur von einem <strong>Winkel φ</strong> ab, werden Seitenlängen und Flächeninhalte zu Termen in φ. Beispiel: Im Dreieck ABC sind AB = 8 cm und AC = 5 cm. Dreht man [AC] um A, entstehen Dreiecke ABCₙ mit ∢BACₙ = φ und φ ∈ ]0°; 180°[. Für sie gilt A(φ) = ½ · 8 · 5 · sin φ cm² = 20 · sin φ cm².</p>
     <p><strong>Gleichungen lösen:</strong> Für welche φ ist A(φ) = 12 cm²? Aus 20 · sin φ = 12 folgt sin φ = 0,6. Der Taschenrechner liefert φ₁ ≈ ${deg(asinD(0.6))}; wegen sin(180° − φ) = sin φ ist auch φ₂ ≈ ${deg(180 - asinD(0.6))} eine Lösung. Beide liegen im Intervall.</p>
@@ -1428,10 +1428,12 @@ const gleichungen: Lesson = {
     </ul>
     <div class="example">Beispiel: 2 · sin φ · cos φ = 0,5 mit φ ∈ ]0°; 180°[. Mit dem Additionstheorem wird daraus sin(2φ) = 0,5 mit 2φ ∈ ]0°; 360°[, also 2φ = 30° oder 2φ = 150°. Die Lösungen sind φ = 15° und φ = 75°.</div>
     <p><strong>Trägergraph:</strong> Hängen die Koordinaten von Punkten Pₙ von φ ab, liegen die Punkte oft auf einem bekannten Graphen. Um seine Gleichung zu finden, eliminiert man φ. Für Pₙ(2 · cos φ | 4 · sin² φ) gilt cos φ = x : 2 und sin² φ = 1 − cos² φ, also y = 4 · (1 − x²/4) = −x² + 4. Alle Pₙ liegen auf dieser Parabel, und zwar für −2 ≤ x ≤ 2.</p>
-    <div class="merke"><strong>Merke:</strong> Erst auf die Form sin φ = k, cos φ = k oder tan φ = k bringen, dann <strong>alle</strong> Lösungen im Intervall suchen: Supplement 180° − φ, Periode 360°, beim Tangens 180°. Für den Trägergraphen φ mit sin² φ + cos² φ = 1 eliminieren.</div>
+    <p><strong>Extremwerte:</strong> Der Sinus ist höchstens 1. Darum ist A(φ) = 20 · sin φ cm² für φ = 90° am größten: A<sub>max</sub> = 20 cm², dann steht [ACₙ] senkrecht auf [AB]. Steht sin(2φ) im Term, liegt das Maximum bei 2φ = 90°, also bei φ = 45°.</p>
+    <div class="merke"><strong>Merke:</strong> Erst auf die Form sin φ = k, cos φ = k oder tan φ = k bringen, dann <strong>alle</strong> Lösungen im Intervall suchen: Supplement 180° − φ, Periode 360°, beim Tangens 180°. Für den Trägergraphen φ mit sin² φ + cos² φ = 1 eliminieren. Den größten Wert von a · sin φ (a &gt; 0) liefert sin φ = 1.</div>
   `,
   formulas: [
     { name: "Supplementbeziehung", html: "sin(180° − φ) = sin φ", quantities: "die zweite Lösung von sin φ = k" },
+    { name: "Größter Wert", html: "sin φ ≤ 1; a · sin φ (a &gt; 0) ist für φ = 90° am größten", quantities: "Extremwerte winkelabhängiger Flächeninhalte" },
     { name: "Doppelter Winkel", html: "2 · sin φ · cos φ = sin(2φ)", quantities: "aus sin(α + β) mit α = β = φ" },
     { name: "Trigonometrischer Pythagoras", html: "sin² φ = 1 − cos² φ", quantities: "φ eliminieren und den Trägergraphen bestimmen" },
   ],
@@ -1798,9 +1800,92 @@ const gleichungen: Lesson = {
         };
       },
     },
+    {
+      id: "extremwert",
+      make: (rng, level): ExerciseTask => {
+        if (level === 1) {
+          // a whole b keeps ½ · b · c at two decimals, as in exam figures
+          const c = rng.stepped(5, 12, 0.5);
+          const b = rng.int(3, 9);
+          const parallelogram = rng.next() < 0.4;
+          const side = parallelogram ? "ADₙ" : "ACₙ";
+          const max = (parallelogram ? 1 : 0.5) * b * c;
+          const figure = parallelogram
+            ? `Die Parallelogramme ABCₙDₙ haben die Seitenlängen AB = ${cm(c, 1)} und ADₙ = ${cm(b, 1)} und den Innenwinkel ∢BADₙ = φ mit φ ∈ ]0°; 180°[.`
+            : `Im Dreieck ABC sind AB = ${cm(c, 1)} und AC = ${cm(b, 1)}. Dreht man [AC] um A, entstehen Dreiecke ABCₙ mit ACₙ = ${cm(b, 1)} und ∢BACₙ = φ, wobei φ ∈ ]0°; 180°[.`;
+          return {
+            prompt: `${figure} Stelle den Flächeninhalt A(φ) auf. Für welches φ ist der Flächeninhalt am größten, und wie groß ist er dann?`,
+            given: [`AB = ${cm(c, 1)}`, `${side} = ${cm(b, 1)}`, "φ ∈ ]0°; 180°["],
+            formulaHint: `${parallelogram ? "A(φ) = AB · ADₙ · sin φ" : "A(φ) = ½ · AB · ACₙ · sin φ"}; sin φ ist höchstens 1`,
+            fields: [
+              numberField("φ =", 90, "°", 2, {
+                slips: [
+                  { value: 180, hint: "Bei φ = 180° ist sin φ = 0, die Figur ist zur Strecke zusammengeklappt. Den größten Wert 1 hat sin φ bei 90°." },
+                  { value: 45, hint: "sin 45° ≈ 0,71 ist nicht der größte Sinuswert: sin φ = 1 gilt für φ = 90°." },
+                ],
+              }),
+              numberField("A<sub>max</sub> =", max, "cm²", 2, {
+                slips: [
+                  parallelogram
+                    ? { value: max / 2, hint: "Das Parallelogramm besteht aus zwei Dreiecken ABDₙ: A(φ) = AB · ADₙ · sin φ ohne den Faktor ½." }
+                    : { value: 2 * max, hint: "Den Faktor ½ beachten: A(φ) = ½ · AB · ACₙ · sin φ." },
+                ],
+              }),
+            ],
+            steps: [
+              `A(φ) = ${parallelogram ? "AB · ADₙ" : "½ · AB · ACₙ"} · sin φ = ${parallelogram ? "" : "½ · "}${fmt(c, 1)} · ${fmt(b, 1)} · sin φ cm² = ${fmt(max, 3)} · sin φ cm²`,
+              "Für φ ∈ ]0°; 180°[ ist 0 &lt; sin φ ≤ 1, und den größten Wert sin φ = 1 nimmt der Sinus nur bei φ = 90° an.",
+              `A<sub>max</sub> = ${fmt(max, 3)} · sin 90° cm² = ${fmtUnit(max, "cm²", 3)}; dann steht [${side}] senkrecht auf [AB].`,
+              `<strong>φ = 90°, A<sub>max</sub> = ${fmtUnit(max, "cm²", 3)}</strong>`,
+            ],
+            meta: { variant: parallelogram ? 1 : 0, c, b },
+          };
+        }
+        const semicircle = rng.next() < 0.5;
+        // a whole leg keeps s² : 2 at one decimal
+        const s = semicircle ? rng.stepped(4, 9, 0.5) : rng.int(4, 10);
+        const square = s * s;
+        const factor = semicircle ? square : square / 2;
+        const figure = semicircle
+          ? `Einem Halbkreis mit dem Mittelpunkt M und dem Radius r = ${cm(s, 1)} sind Rechtecke AₙBₙCₙDₙ einbeschrieben: [AₙBₙ] liegt auf dem Durchmesser, Cₙ und Dₙ liegen auf dem Halbkreisbogen, und es ist ∢BₙMCₙ = φ mit φ ∈ ]0°; 90°[.`
+          : `Gleichschenklige Dreiecke AₙBₙC haben die Spitze C und Schenkel [CAₙ] und [CBₙ] der Länge ${cm(s, 1)}. Ihre Basiswinkel ∢BₙAₙC und ∢CBₙAₙ haben das Maß φ mit φ ∈ ]0°; 90°[.`;
+        return {
+          prompt: `${figure} Zeige, dass für den Flächeninhalt A(φ) = ${fmt(factor, 3)} · sin(2φ) cm² gilt. Für welches φ ist der Flächeninhalt am größten, und wie groß ist er dann?`,
+          given: [semicircle ? `r = ${cm(s, 1)}` : `Schenkel ${cm(s, 1)}`, "φ ∈ ]0°; 90°["],
+          fields: [
+            numberField("φ =", 45, "°", 2, {
+              slips: [
+                { value: 90, hint: "Bei φ = 90° wäre 2φ = 180° und sin(2φ) = 0. Den größten Wert 1 hat sin(2φ) bei 2φ = 90°." },
+                { value: 22.5, hint: "Aus 2φ = 90° folgt φ = 45°; nur einmal halbieren." },
+              ],
+            }),
+            numberField("A<sub>max</sub> =", factor, "cm²", 2, {
+              slips: semicircle
+                ? [
+                    { value: square / 2, hint: "Das Rechteck ist doppelt so breit wie MBₙ: A(φ) = 2 · r · cos φ · r · sin φ." },
+                    { value: 2 * square, hint: "2 · sin φ · cos φ ist schon sin(2φ); den Faktor 2 nicht doppelt zählen." },
+                  ]
+                : [{ value: square, hint: "Mit sin φ · cos φ = ½ · sin(2φ) wird A(φ) = ½ · s² · sin(2φ): Den Faktor ½ beachten." }],
+            }),
+          ],
+          steps: [
+            semicircle
+              ? `Im rechtwinkligen Dreieck MBₙCₙ ist MBₙ = ${fmt(s, 1)} · cos φ cm und BₙCₙ = ${fmt(s, 1)} · sin φ cm. Das Rechteck ist doppelt so breit wie MBₙ: A(φ) = 2 · ${fmt(s, 1)} · cos φ · ${fmt(s, 1)} · sin φ cm² = ${fmt(square, 2)} · 2 · sin φ · cos φ cm².`
+              : `Die Höhe auf die Basis ist h = ${fmt(s, 1)} · sin φ cm, die halbe Basis ${fmt(s, 1)} · cos φ cm. Also A(φ) = ½ · 2 · ${fmt(s, 1)} · cos φ · ${fmt(s, 1)} · sin φ cm² = ${fmt(square, 2)} · sin φ · cos φ cm².`,
+            `Mit dem Additionstheorem 2 · sin φ · cos φ = sin(2φ) wird A(φ) = ${fmt(factor, 3)} · sin(2φ) cm².`,
+            "Für φ ∈ ]0°; 90°[ ist 0° &lt; 2φ &lt; 180°, und sin(2φ) = 1 gilt nur für 2φ = 90°, also φ = 45°.",
+            semicircle
+              ? `A<sub>max</sub> = ${fmt(factor, 3)} · sin 90° cm² = ${fmtUnit(factor, "cm²", 3)}; das größte Rechteck ist doppelt so breit wie hoch.`
+              : `A<sub>max</sub> = ${fmt(factor, 3)} · sin 90° cm² = ${fmtUnit(factor, "cm²", 3)}; der Winkel an der Spitze ist dann 180° − 2 · 45° = 90°.`,
+            `<strong>φ = 45°, A<sub>max</sub> = ${fmtUnit(factor, "cm²", 3)}</strong>`,
+          ],
+          meta: { variant: semicircle ? 1 : 0, s },
+        };
+      },
+    },
   ],
   requiredCorrect: 3,
-  celebrationMessage: "Du löst trigonometrische Gleichungen mit allen Lösungen im Intervall und bestimmst Trägergraphen.",
+  celebrationMessage: "Du löst trigonometrische Gleichungen mit allen Lösungen im Intervall, bestimmst Trägergraphen und den größten Wert winkelabhängiger Flächeninhalte.",
 };
 
 export const STAGE_DREIECKE: Stage = {

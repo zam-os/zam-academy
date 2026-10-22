@@ -432,13 +432,15 @@ function triangleFamily(v: LabValues): string {
   out += text(A.x + 30, A.y - 8, "60°", "lab-text-small");
   out += text(A.x - 4, A.y + 16, "A", "lab-text", "middle");
   out += text(B.x + 7, B.y + 4, "B", "lab-text-small");
-  out += text(C.x - 8, C.y, "C", "lab-text-small", "end");
+  // Left of [ACₙ] "C" moves down and "2x" up so they stay apart for small x;
+  // "Cₙ" goes to the free space above and right of its point.
+  out += text(C.x - 8, C.y + 7, "C", "lab-text-small", "end");
   out += circle(B.x, B.y, 3, "lab-dot-small") + circle(C.x, C.y, 3, "lab-dot-small");
   out += text(Bn.x, Bn.y + 22, "Bₙ", "lab-text", "middle");
-  out += text(Cn.x - 10, Cn.y - 2, "Cₙ", "lab-text", "end");
+  out += text(Cn.x + 12, Cn.y - 8, "Cₙ", "lab-text", "start");
   if (v.x > 0) {
     out += text((Bn.x + B.x) / 2, B.y - 8, "x", "lab-text-small lab-text-a", "middle");
-    out += text((C.x + Cn.x) / 2 - 10, (C.y + Cn.y) / 2, "2x", "lab-text-small lab-text-b", "end");
+    out += text((C.x + Cn.x) / 2 - 10, (C.y + Cn.y) / 2 - 3, "2x", "lab-text-small lab-text-b", "end");
   }
   out += text(16, 24, "ABₙ = (9 − x) cm, ACₙ = (3 + 2x) cm, ∢BₙACₙ = 60°, 0 ≤ x < 9", "lab-text-muted");
   out += text(

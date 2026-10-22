@@ -652,7 +652,8 @@ function addition(v: LabValues): string {
   const w1 = cosMode ? ca : sa;
   const w2 = cosMode ? cb : sb;
   const wrong = w1 + w2;
-  out += line(x1 - 18, Yb(1), x2 + w + 12, Yb(1), "lab-dashed") + line(x1 - 18, Yb(-1), x2 + w + 12, Yb(-1), "lab-dashed");
+  // The reference lines ±1 stop beside each bar, so the value labels there stay clear of them.
+  for (const level of [1, -1]) out += line(x1 - 18, Yb(level), x1 + w + 5, Yb(level), "lab-dashed") + line(x2 - 2, Yb(level), x2 + w + 5, Yb(level), "lab-dashed");
   out += text(x1 - 22, Yb(1) + 4, "1", "lab-text-tick", "end") + text(x1 - 22, Yb(-1) + 4, "−1", "lab-text-tick", "end");
   out += rect(x1, Yb(0), w, Yb(p1) - Yb(0), "lab-fill-a") + rect(x1, Yb(p1), w, Yb(total) - Yb(p1), "lab-fill-b");
   out += rect(x2, Yb(0), w, Yb(w1) - Yb(0), "lab-fill-c") + rect(x2, Yb(w1), w, Yb(wrong) - Yb(w1), "lab-fill-c");

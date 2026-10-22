@@ -74,15 +74,16 @@ export const GOAL_WITNESSES: Record<string, Record<string, LabValues>> = {
 
 /**
  * Per lesson, the pinned teacher video: author and YouTube id, each checked
- * with YouTube oEmbed when chosen (src/curriculum/teacher-videos.ts). Lessons
- * without an entry have no video yet.
+ * with YouTube oEmbed when chosen (src/curriculum/teacher-videos.ts). Every
+ * lesson has one.
  */
 export const EXPECTED_VIDEOS: Record<string, { author: string; id: string }> = {
   "tr-1-einheitskreis": { author: "MathemaTrick", id: "82WucXmm770" },
   "tr-2-winkel-bis-360": { author: "Realschulmathe", id: "6atwwOBZriw" },
   "tr-3-steigungswinkel": { author: "Koonys Schule", id: "7WY1NZfLZWo" },
   "tr-4-sinusfunktion": { author: "Daniel Jung", id: "T8kNcfv8LvY" },
-  "tr-5-kosinus-tangens": { author: "Daniel Jung", id: "fF84HizLVrI" },
+  "tr-5-kosinus-tangens": { author: "Lernen - Leicht gemacht", id: "vypt8MMHmHU" },
+  "tr-6-additionstheoreme": { author: "Lernen - Leicht gemacht", id: "zAQdXMdNOw8" },
   "dr-1-sinussatz": { author: "Daniel Jung", id: "jl3w0wGoWlY" },
   "dr-2-kosinussatz": { author: "Daniel Jung", id: "PaF_ClPIc_A" },
   "dr-3-flaecheninhalt": { author: "Lernen - Leicht gemacht", id: "ecyr76wmaLw" },
@@ -99,6 +100,7 @@ export const EXPECTED_VIDEOS: Record<string, { author: string; id: string }> = {
   "pt-1-potenzgesetze": { author: "MathemaTrick", id: "r73k0gX5vBI" },
   "pt-2-wurzeln": { author: "Daniel Jung", id: "NucUdbvOKIM" },
   "pt-3-potenzfunktionen": { author: "Daniel Jung", id: "OVWF5UATHVc" },
+  "pt-4-parameter": { author: "Lernen - Leicht gemacht", id: "tXakBAAwzL4" },
   "pt-5-umkehrfunktion": { author: "Daniel Jung", id: "X8QDtWIWu6Q" },
   "el-1-exponentialfunktion": { author: "Daniel Jung", id: "mf4QfGCBHQQ" },
   "el-2-wachstum": { author: "Lehrerschmidt", id: "affn4KyXXFk" },
@@ -111,6 +113,7 @@ export const EXPECTED_VIDEOS: Record<string, { author: string; id: string }> = {
   "rg-2-oberflaeche": { author: "Lehrerschmidt", id: "2bTUdVtbsd8" },
   "rg-3-volumen": { author: "Mathe erklärt", id: "SYtVzZzbYuM" },
   "rg-4-zusammengesetzt": { author: "Daniel Jung", id: "dStxah0ZBcw" },
+  "rg-5-extremwerte": { author: "Florian Daniek (physikspicker)", id: "XE5UkMQF4nU" },
   "qf-1-parabeln": { author: "Lehrerschmidt", id: "sYfZbyrGXMY" },
   "qf-2-scheitelpunkt": { author: "Lehrerschmidt", id: "0DXjdwpJ3S0" },
   "qf-3-bestimmungsstuecke": { author: "MathemaTrick", id: "0PtVRTIo-vc" },

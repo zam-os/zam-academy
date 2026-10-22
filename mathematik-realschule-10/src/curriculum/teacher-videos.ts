@@ -6,15 +6,17 @@ const watch = (id: string) => `https://www.youtube.com/watch?v=${id}`;
  * Teacher explainer videos, chosen after the lessons were written. For each
  * one YouTube's oEmbed returned the title and channel below (checked
  * 2026-10-22), and the title matches the lesson's topic at Realschule level
- * (degrees, no radians). A lesson missing here has no verified video yet and
- * waits for a later pass.
+ * (degrees, no radians). The four added last (tr-5, tr-6, pt-4, rg-5) were
+ * also checked frame by frame in YouTube's storyboard; the rg-5 video works
+ * the physikspicker task sheet "Ma 10 II III Raumgeometrie", page 6, task 3.
  */
 export const TEACHER_VIDEOS: Record<string, TeacherVideo> = {
   "tr-1-einheitskreis": { url: watch("82WucXmm770"), title: "Sinus und Kosinus am Einheitskreis – einfach erklärt", author: "MathemaTrick" },
   "tr-2-winkel-bis-360": { url: watch("6atwwOBZriw"), title: "Einheitskreis - negativer Winkel und Supplementbeziehung", author: "Realschulmathe" },
   "tr-3-steigungswinkel": { url: watch("7WY1NZfLZWo"), title: "Schnittwinkel zwischen 2 Geraden - 3 Fälle eine Formel | Tangens, Mathe, Klasse 8", author: "Koonys Schule" },
   "tr-4-sinusfunktion": { url: watch("T8kNcfv8LvY"), title: "Sinus-/Kosinusfunktion verdeutlicht mit Einheitskreis, Kreisfunktionen | Mathe by Daniel Jung", author: "Daniel Jung" },
-  "tr-5-kosinus-tangens": { url: watch("fF84HizLVrI"), title: "Tangens Funktion mit ner Leuchte basteln, Trigonometrie | Mathe by Daniel Jung", author: "Daniel Jung" },
+  "tr-5-kosinus-tangens": { url: watch("vypt8MMHmHU"), title: "Zusammenhänge Trigonometrie - Goniometrische Grundformeln / Komplementbeziehungen", author: "Lernen - Leicht gemacht" },
+  "tr-6-additionstheoreme": { url: watch("zAQdXMdNOw8"), title: "Additionstheoreme", author: "Lernen - Leicht gemacht" },
   "dr-1-sinussatz": { url: watch("jl3w0wGoWlY"), title: "Sinussatz, erkennen, aufstellen, anwenden, Trigonometrie | Mathe by Daniel Jung", author: "Daniel Jung" },
   "dr-2-kosinussatz": { url: watch("PaF_ClPIc_A"), title: "Kosinussatz erkennen, aufstellen, Trigonometrie | Mathe by Daniel Jung", author: "Daniel Jung" },
   "dr-3-flaecheninhalt": { url: watch("ecyr76wmaLw"), title: "Flächeninhalt im Dreieck (Sinusformel)", author: "Lernen - Leicht gemacht" },
@@ -31,6 +33,7 @@ export const TEACHER_VIDEOS: Record<string, TeacherVideo> = {
   "pt-1-potenzgesetze": { url: watch("r73k0gX5vBI"), title: "Potenzen mit RATIONALEN EXPONENTEN – Wurzelschreibweise, Potenzschreibweise, Wurzeln", author: "MathemaTrick" },
   "pt-2-wurzeln": { url: watch("NucUdbvOKIM"), title: "Wurzel und Potenzen, Beispiele, umschreiben, Zusammenfassen | Mathe by Daniel Jung", author: "Daniel Jung" },
   "pt-3-potenzfunktionen": { url: watch("OVWF5UATHVc"), title: "Potenzfunktionen Übersicht, Basis, Exponent, Verlauf | Mathe by Daniel Jung", author: "Daniel Jung" },
+  "pt-4-parameter": { url: watch("tXakBAAwzL4"), title: "Graphen von Potenzfunktionen", author: "Lernen - Leicht gemacht" },
   "pt-5-umkehrfunktion": { url: watch("X8QDtWIWu6Q"), title: "Ablauf Umkehrfunktion bestimmen | Mathe by Daniel Jung", author: "Daniel Jung" },
   "el-1-exponentialfunktion": { url: watch("mf4QfGCBHQQ"), title: "Lineares und Exponentielles Wachstum, Übersicht, Unterschiede, Exponentialfunktionen", author: "Daniel Jung" },
   "el-2-wachstum": { url: watch("affn4KyXXFk"), title: "Wachstum und Zerfall - Mathematik - einfach erklärt | Lehrerschmidt", author: "Lehrerschmidt" },
@@ -43,6 +46,7 @@ export const TEACHER_VIDEOS: Record<string, TeacherVideo> = {
   "rg-2-oberflaeche": { url: watch("2bTUdVtbsd8"), title: "Kegel - Oberfläche berechnen | Geometrische Körper | Mathematik - einfach erklärt | Lehrerschmidt", author: "Lehrerschmidt" },
   "rg-3-volumen": { url: watch("SYtVzZzbYuM"), title: "Das Prinzip des Cavalieri: Mathe erklärt von Lars Jung", author: "Mathe erklärt" },
   "rg-4-zusammengesetzt": { url: watch("dStxah0ZBcw"), title: "Körper, mehrere zusammengebastelt, Volumen, Oberfläche bestimmen | Mathe by Daniel Jung", author: "Daniel Jung" },
+  "rg-5-extremwerte": { url: watch("XE5UkMQF4nU"), title: "Ma 10 II Raumgeometrie - Kreiskegel mit einbeschriebenem Zylinder | Aufgabe 3", author: "Florian Daniek (physikspicker)" },
   "qf-1-parabeln": { url: watch("sYfZbyrGXMY"), title: "Parabeln - quadratische Funktionen - Verschiebungen - einfach erklärt | Lehrerschmidt", author: "Lehrerschmidt" },
   "qf-2-scheitelpunkt": { url: watch("0DXjdwpJ3S0"), title: "quadratische Ergänzung - von der Normalform zur Scheitelpunktform | Lehrerschmidt", author: "Lehrerschmidt" },
   "qf-3-bestimmungsstuecke": { url: watch("0PtVRTIo-vc"), title: "PARABEL aufstellen mit Scheitelpunkt – Funktionsgleichung", author: "MathemaTrick" },

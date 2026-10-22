@@ -720,9 +720,9 @@ const potenzfunktionen: Lesson = {
   explanationHtml: `
     <p>Funktionen mit einer Gleichung der Form <strong>y = x<sup>n</sup></strong> heißen <strong>Potenzfunktionen</strong>. Wie ihr Graph aussieht, verrät der Exponent:</p>
     <ul>
-      <li><strong>Parabeln n-ter Ordnung</strong> (n = 2, 3, 4, …): D = ℝ. Bei geradem n ist der Graph achsensymmetrisch zur y-Achse, W = ℝ<sub>0</sub><sup>+</sup>, er geht durch (−1 | 1), (0 | 0) und (1 | 1). Bei ungeradem n ist er punktsymmetrisch zum Ursprung, W = ℝ, er geht durch (−1 | −1), (0 | 0) und (1 | 1).</li>
-      <li><strong>Hyperbeln n-ter Ordnung</strong> (y = x<sup>−n</sup> = 1 : x<sup>n</sup>): D = ℝ ∖ {0}. Die Koordinatenachsen sind <strong>Asymptoten</strong>: Der Graph kommt den Geraden x = 0 und y = 0 beliebig nahe, ohne sie zu erreichen. Bei geradem n ist W = ℝ<sup>+</sup> und der Graph achsensymmetrisch, bei ungeradem n ist W = ℝ ∖ {0} und der Graph punktsymmetrisch.</li>
-      <li><strong>Wurzelfunktionen</strong> (y = x<sup>1/n</sup> = ${rootHtml("n", "x")}): D = W = ℝ<sub>0</sub><sup>+</sup>, der Graph geht durch (0 | 0) und (1 | 1). Allgemein ist bei einem Bruch im Exponenten D = ℝ<sub>0</sub><sup>+</sup>, bei einem negativen Bruch D = ℝ<sup>+</sup>.</li>
+      <li><strong>Parabeln n-ter Ordnung</strong> (n = 2, 3, 4, …): 𝔻 = ℝ. Bei geradem n ist der Graph achsensymmetrisch zur y-Achse, 𝕎 = ℝ<sub>0</sub><sup>+</sup>, er geht durch (−1 | 1), (0 | 0) und (1 | 1). Bei ungeradem n ist er punktsymmetrisch zum Ursprung, 𝕎 = ℝ, er geht durch (−1 | −1), (0 | 0) und (1 | 1).</li>
+      <li><strong>Hyperbeln n-ter Ordnung</strong> (y = x<sup>−n</sup> = 1 : x<sup>n</sup>): 𝔻 = ℝ ∖ {0}. Die Koordinatenachsen sind <strong>Asymptoten</strong>: Der Graph kommt den Geraden x = 0 und y = 0 beliebig nahe, ohne sie zu erreichen. Bei geradem n ist 𝕎 = ℝ<sup>+</sup> und der Graph achsensymmetrisch, bei ungeradem n ist 𝕎 = ℝ ∖ {0} und der Graph punktsymmetrisch.</li>
+      <li><strong>Wurzelfunktionen</strong> (y = x<sup>1/n</sup> = ${rootHtml("n", "x")}): 𝔻 = 𝕎 = ℝ<sub>0</sub><sup>+</sup>, der Graph geht durch (0 | 0) und (1 | 1). Allgemein ist bei einem Bruch im Exponenten 𝔻 = ℝ<sub>0</sub><sup>+</sup>, bei einem negativen Bruch 𝔻 = ℝ<sup>+</sup>.</li>
     </ul>
     <p>Alle diese Graphen gehen durch (1 | 1). Zwischen 0 und 1 liegt y = x³ unter y = x², rechts von 1 darüber: Je größer der Exponent, desto flacher verläuft der Graph bei 0 und desto steiler rechts von 1.</p>
     <div class="example">y = x<sup>−2</sup>: f(2) = 1 : 2² = 0,25 und f(−2) = 1 : (−2)² = 0,25, der Graph ist symmetrisch zur y-Achse. y = x<sup>−3</sup>: f(−2) = 1 : (−2)³ = −0,125, der Graph ist punktsymmetrisch zum Ursprung.</div>
@@ -730,8 +730,8 @@ const potenzfunktionen: Lesson = {
   `,
   formulas: [
     { name: "Potenzfunktion", html: "y = x<sup>n</sup>", quantities: "n gerade: symmetrisch zur y-Achse; n ungerade: symmetrisch zum Ursprung" },
-    { name: "Hyperbel", html: "y = x<sup>−n</sup> = 1 : x<sup>n</sup>", quantities: "D = ℝ ∖ {0}, Asymptoten x = 0 und y = 0" },
-    { name: "Wurzelfunktion", html: `y = x<sup>1/n</sup> = ${rootHtml("n", "x")}`, quantities: "D = W = ℝ₀⁺" },
+    { name: "Hyperbel", html: "y = x<sup>−n</sup> = 1 : x<sup>n</sup>", quantities: "𝔻 = ℝ ∖ {0}, Asymptoten x = 0 und y = 0" },
+    { name: "Wurzelfunktion", html: `y = x<sup>1/n</sup> = ${rootHtml("n", "x")}`, quantities: "𝔻 = 𝕎 = ℝ₀⁺" },
   ],
   quiz: {
     question: "Welcher Graph ist achsensymmetrisch zur y-Achse und hat die Koordinatenachsen als Asymptoten?",
@@ -748,8 +748,8 @@ const potenzfunktionen: Lesson = {
       { type: "range", key: "x", label: "Stelle x von P", unit: "", min: -3, max: 3, step: 0.05, value: 1.5, digits: 2 },
     ],
     readouts: [
-      { key: "D", label: "Definitionsmenge D", compute: (v) => basicSets(v.c).D },
-      { key: "W", label: "Wertemenge W", compute: (v) => basicSets(v.c).W },
+      { key: "D", label: "Definitionsmenge 𝔻", compute: (v) => basicSets(v.c).D },
+      { key: "W", label: "Wertemenge 𝕎", compute: (v) => basicSets(v.c).W },
       { key: "sym", label: "Symmetrie", compute: (v) => basicSets(v.c).symmetry },
       { key: "asym", label: "Asymptoten", compute: (v) => basicSets(v.c).asymptotes },
       {
@@ -787,12 +787,12 @@ const potenzfunktionen: Lesson = {
             formulaHint: "Gerader Exponent: achsensymmetrisch zur y-Achse; ungerader: punktsymmetrisch zum Ursprung; negativer Exponent: y = 1 : x<sup>n</sup>",
             fields: [
               choiceField("Symmetrie", SYMMETRIES, even ? 0 : 1),
-              choiceField("Wertemenge W", SETS, SETS.indexOf(sets.W)),
+              choiceField("Wertemenge 𝕎", SETS, SETS.indexOf(sets.W)),
               numberField(`f(${fmt(x0)}) =`, value, "", 4, { slips }),
             ],
             steps: [
               `Der Exponent ${fmt(c)} ist ${even ? "gerade" : "ungerade"}: Der Graph ist ${sets.symmetry}.`,
-              c > 0 ? `Positiver Exponent: Parabel ${c}. Ordnung mit D = ℝ und W = ${sets.W}.` : `Negativer Exponent: Hyperbel y = 1 : ${xPow(-c)} mit D = ℝ ∖ {0} und W = ${sets.W}.`,
+              c > 0 ? `Positiver Exponent: Parabel ${c}. Ordnung mit 𝔻 = ℝ und 𝕎 = ${sets.W}.` : `Negativer Exponent: Hyperbel y = 1 : ${xPow(-c)} mit 𝔻 = ℝ ∖ {0} und 𝕎 = ${sets.W}.`,
               `<strong>f(${fmt(x0)}) = ${paren(x0)}<sup>${fmt(c)}</sup> = ${c < 0 ? `1 : ${paren(x0 ** -c, 4)} = ` : ""}${coord(value)}</strong>${coord(value).includes("/") ? ` ≈ ${fmt(value, 4)}` : ""}`,
             ],
             meta: { c, x0, value },
@@ -830,14 +830,14 @@ const potenzfunktionen: Lesson = {
           const slips = [{ value: x0 * ce, hint: "Der Exponent ist kein Faktor: Potenziere die Basis." }];
           if (ce < 0) slips.push({ value: powerOf(x0, -ce), hint: "Minus im Exponenten: Bilde den Kehrwert." });
           return {
-            prompt: `Gib für die Funktion y = x<sup>${rt(c)}</sup> die Definitionsmenge D und die Wertemenge W an, und berechne den y-Wert an der Stelle x = ${fmt(x0)}.`,
+            prompt: `Gib für die Funktion y = x<sup>${rt(c)}</sup> die Definitionsmenge 𝔻 und die Wertemenge 𝕎 an, und berechne den y-Wert an der Stelle x = ${fmt(x0)}.`,
             given: [`y = x<sup>${rt(c)}</sup>`, `x = ${fmt(x0)}`],
-            formulaHint: "Bruch im Exponenten: D = ℝ<sub>0</sub><sup>+</sup> (bei negativem Bruch ℝ<sup>+</sup>); negativer ganzer Exponent: D = ℝ ∖ {0}",
-            fields: [choiceField("Definitionsmenge D", SETS, SETS.indexOf(sets.D)), choiceField("Wertemenge W", SETS, SETS.indexOf(sets.W)), numberField(`f(${fmt(x0)}) =`, y, "", 2, { slips })],
+            formulaHint: "Bruch im Exponenten: 𝔻 = ℝ<sub>0</sub><sup>+</sup> (bei negativem Bruch ℝ<sup>+</sup>); negativer ganzer Exponent: 𝔻 = ℝ ∖ {0}",
+            fields: [choiceField("Definitionsmenge 𝔻", SETS, SETS.indexOf(sets.D)), choiceField("Wertemenge 𝕎", SETS, SETS.indexOf(sets.W)), numberField(`f(${fmt(x0)}) =`, y, "", 2, { slips })],
             steps: [
               fraction
-                ? `Bruch im Exponenten: Nur x ≥ 0 ist erlaubt${ce < 0 ? ", wegen des Minus sogar nur x > 0" : ""}, also D = ${sets.D}. Die Werte sind ${ce < 0 ? "positiv" : "nicht negativ"}: W = ${sets.W}.`
-                : `Ganzer Exponent ${rt(c)}: D = ${sets.D}, W = ${sets.W} (${sets.symmetry}).`,
+                ? `Bruch im Exponenten: Nur x ≥ 0 ist erlaubt${ce < 0 ? ", wegen des Minus sogar nur x > 0" : ""}, also 𝔻 = ${sets.D}. Die Werte sind ${ce < 0 ? "positiv" : "nicht negativ"}: 𝕎 = ${sets.W}.`
+                : `Ganzer Exponent ${rt(c)}: 𝔻 = ${sets.D}, 𝕎 = ${sets.W} (${sets.symmetry}).`,
               `<strong>f(${fmt(x0)}) = ${paren(x0)}<sup>${rt(c)}</sup> = ${coord(y)}</strong>${coord(y).includes("/") ? ` ≈ ${fmt(y, 2)}` : ""}`,
             ],
             meta: { cp: c[0], cq: c[1], x0, y },
@@ -868,7 +868,7 @@ const potenzfunktionen: Lesson = {
               ? [`x<sup>${rt(c)}</sup> = ${coord(y0)} ⇒ |x| = ${coord(y0)}<sup>${rt(inverse)}</sup> = ${fmt(xStar, 4)}`, `Gerader Exponent: Auch die Gegenzahl passt, denn (−${fmt(xStar, 4)})<sup>${rt(c)}</sup> = ${coord(y0)}.`, `<strong>zwei Punkte: x₁ = −${fmt(xStar, 4)}, x₂ = ${fmt(xStar, 4)}</strong>`]
               : integer
                 ? [`x<sup>${rt(c)}</sup> = ${coord(y0)}: Ungerader Exponent, also genau eine Lösung mit dem Vorzeichen von y.`, `|x| = ${coord(Math.abs(y0))}<sup>${rt(inverse)}</sup> = ${fmt(xStar, 4)}`, `<strong>ein Punkt: x = ${fmt(sign * xStar, 4)}</strong>`]
-                : [`x<sup>${rt(c)}</sup> = ${coord(y0)} ⇒ x = ${coord(y0)}<sup>${rt(inverse)}</sup> = ${fmt(xStar, 4)}`, `Nur x ≥ 0 gehört zu D = ${sets.D}.`, `<strong>ein Punkt: x = ${fmt(xStar, 4)}</strong>`];
+                : [`x<sup>${rt(c)}</sup> = ${coord(y0)} ⇒ x = ${coord(y0)}<sup>${rt(inverse)}</sup> = ${fmt(xStar, 4)}`, `Nur x ≥ 0 gehört zu 𝔻 = ${sets.D}.`, `<strong>ein Punkt: x = ${fmt(xStar, 4)}</strong>`];
         return {
           prompt: `Ein Punkt P(x | ${coord(y0)}) soll auf dem Graphen von y = x<sup>${rt(c)}</sup> liegen. Wie viele solche Punkte gibt es, und welche x-Koordinaten haben sie?`,
           given: [`y = x<sup>${rt(c)}</sup>`, `y = ${coord(y0)}`],
@@ -904,21 +904,21 @@ const parameter: Lesson = {
     </ol>
     <p>Der Ursprung wandert dabei nach <strong>M(−b | d)</strong>, der Punkt (1 | 1) nach (−b + 1 | d + a). Bei negativem c schneiden sich in M die <strong>Asymptoten x = −b und y = d</strong>.</p>
     <table class="mini">
-      <tr><th>c</th><th>D</th><th>W (für a &gt; 0)</th><th>Asymptoten</th></tr>
+      <tr><th>c</th><th>𝔻</th><th>𝕎 (für a &gt; 0)</th><th>Asymptoten</th></tr>
       <tr><td>−1, −3, …</td><td>ℝ ∖ {−b}</td><td>ℝ ∖ {d}</td><td>x = −b, y = d</td></tr>
       <tr><td>−2, −4, …</td><td>ℝ ∖ {−b}</td><td>{y | y &gt; d}</td><td>x = −b, y = d</td></tr>
       <tr><td>1/2, 1/3, …</td><td>{x | x ≥ −b}</td><td>{y | y ≥ d}</td><td>keine</td></tr>
       <tr><td>2, 4, …</td><td>ℝ</td><td>{y | y ≥ d}</td><td>keine</td></tr>
       <tr><td>3, 5, …</td><td>ℝ</td><td>ℝ</td><td>keine</td></tr>
     </table>
-    <p>Bei a &lt; 0 kehrt sich in W das Zeichen um: y &lt; d bzw. y ≤ d.</p>
-    <div class="example">y = 2 · (x − 1)<sup>−2</sup> + 3: M(1 | 3), D = ℝ ∖ {1}, W = {y | y &gt; 3}, Asymptoten x = 1 und y = 3. Der Punkt P(2 | 5) liegt auf dem Graphen, denn 2 · 1<sup>−2</sup> + 3 = 5.</div>
+    <p>Bei a &lt; 0 kehrt sich in 𝕎 das Zeichen um: y &lt; d bzw. y ≤ d.</p>
+    <div class="example">y = 2 · (x − 1)<sup>−2</sup> + 3: M(1 | 3), 𝔻 = ℝ ∖ {1}, 𝕎 = {y | y &gt; 3}, Asymptoten x = 1 und y = 3. Der Punkt P(2 | 5) liegt auf dem Graphen, denn 2 · 1<sup>−2</sup> + 3 = 5.</div>
     <div class="merke"><strong>Merke:</strong> Die Klammer (x + b) wird bei x = −b null. Dort liegt bei negativem c die senkrechte Asymptote und bei einem Bruch im Exponenten der Anfangspunkt des Graphen.</div>
   `,
   formulas: [
     { name: "Verschobene Potenzfunktion", html: "y = a · (x + b)<sup>c</sup> + d", quantities: "Ursprung → M(−b | d); a streckt in y-Richtung" },
-    { name: "Asymptoten (c < 0)", html: "x = −b und y = d", quantities: "D = ℝ ∖ {−b}" },
-    { name: "Bruch im Exponenten", html: "D = {x | x ≥ −b}", quantities: "W = {y | y ≥ d} für a > 0" },
+    { name: "Asymptoten (c < 0)", html: "x = −b und y = d", quantities: "𝔻 = ℝ ∖ {−b}" },
+    { name: "Bruch im Exponenten", html: "𝔻 = {x | x ≥ −b}", quantities: "𝕎 = {y | y ≥ d} für a > 0" },
   ],
   quiz: {
     question: "Welche Asymptoten hat der Graph von y = 2(x − 3)⁻¹ + 1?",
@@ -939,13 +939,13 @@ const parameter: Lesson = {
     readouts: [
       { key: "eq", label: "Gleichung", emphasis: true, compute: (v) => shiftedPowerText(v.a, v.b, v.c, v.d) },
       { key: "M", label: "Punkt M(−b | d)", compute: (v) => `M(${fmt(-v.b)} | ${fmt(v.d)})` },
-      { key: "D", label: "Definitionsmenge D", compute: (v) => shiftedSets(v.a, v.b, v.c, v.d).D },
-      { key: "W", label: "Wertemenge W", compute: (v) => shiftedSets(v.a, v.b, v.c, v.d).W },
+      { key: "D", label: "Definitionsmenge 𝔻", compute: (v) => shiftedSets(v.a, v.b, v.c, v.d).D },
+      { key: "W", label: "Wertemenge 𝕎", compute: (v) => shiftedSets(v.a, v.b, v.c, v.d).W },
       { key: "asym", label: "Asymptoten", compute: (v) => shiftedSets(v.a, v.b, v.c, v.d).asymptotes },
     ],
     goals: [
       { id: "asymptoten", text: "Erzeuge eine Hyperbel mit den Asymptoten x = 2 und y = −1.", check: (v) => v.c < 0 && v.a !== 0 && v.b === -2 && v.d === -1 },
-      { id: "wertemenge", text: "Stelle einen Graphen mit D = ℝ ∖ {−3} und W = {y | y < 2} ein.", check: (v) => v.c === -2 && v.b === 3 && v.d === 2 && v.a < 0 },
+      { id: "wertemenge", text: "Stelle einen Graphen mit 𝔻 = ℝ ∖ {−3} und 𝕎 = {y | y < 2} ein.", check: (v) => v.c === -2 && v.b === 3 && v.d === 2 && v.a < 0 },
       { id: "wurzel", text: "Die Wurzelfunktion (c = 1/2) soll im Punkt (−2 | 1) beginnen und durch T(2 | 5) gehen.", check: (v) => v.c === 0.5 && v.b === 2 && v.d === 1 && v.a === 2 },
     ],
   },
@@ -969,12 +969,12 @@ const parameter: Lesson = {
             fields: [
               numberField("senkrechte Asymptote: x =", -b, "", 2, { slips: [{ value: b, hint: "Die senkrechte Asymptote liegt dort, wo die Klammer null wird: x + b = 0, also x = −b." }] }),
               numberField("waagrechte Asymptote: y =", d, "", 2, { slips: [{ value: a, hint: "a streckt nur in y-Richtung. Die waagrechte Asymptote ist y = d." }] }),
-              choiceField("Wertemenge W", options, index),
+              choiceField("Wertemenge 𝕎", options, index),
             ],
             steps: [
-              `Die Klammer ${shifted(-b)} wird für x = ${fmt(-b)} null: Diese Stelle gehört nicht zu D, die Gerade x = ${fmt(-b)} ist senkrechte Asymptote.`,
+              `Die Klammer ${shifted(-b)} wird für x = ${fmt(-b)} null: Diese Stelle gehört nicht zu 𝔻, die Gerade x = ${fmt(-b)} ist senkrechte Asymptote.`,
               `Für große |x| wird ${factor(a)}${shifted(-b)}<sup>${fmt(c)}</sup> beliebig klein: y nähert sich ${fmt(d)}, die waagrechte Asymptote ist y = ${fmt(d)}.`,
-              `<strong>W = ${options[index].replace("<", "&lt;").replace(">", "&gt;")}</strong>, denn ${odd ? `bei ungeradem Exponenten nimmt ${shifted(-b)}<sup>${fmt(c)}</sup> jeden Wert außer 0 an` : `${shifted(-b)}<sup>${fmt(c)}</sup> ist immer positiv${a > 0 ? "" : ", mal a &lt; 0 also negativ"}`}.`,
+              `<strong>𝕎 = ${options[index].replace("<", "&lt;").replace(">", "&gt;")}</strong>, denn ${odd ? `bei ungeradem Exponenten nimmt ${shifted(-b)}<sup>${fmt(c)}</sup> jeden Wert außer 0 an` : `${shifted(-b)}<sup>${fmt(c)}</sup> ist immer positiv${a > 0 ? "" : ", mal a &lt; 0 also negativ"}`}.`,
             ],
             meta: { a, b, c, d },
           };
@@ -1050,7 +1050,7 @@ const parameter: Lesson = {
           const eqHtml = powerTermHtml(a, b, "1/2", d);
           return {
             prompt: `Berechne die Koordinaten der Schnittpunkte des Graphen von ${eqHtml} mit den Koordinatenachsen.`,
-            given: [eqHtml, `D = {x | x ≥ ${fmt(-b)}}`],
+            given: [eqHtml, `𝔻 = {x | x ≥ ${fmt(-b)}}`],
             fields: [
               numberField("Schnittpunkt mit der x-Achse: x =", xN, "", 2, { slips: [{ value: u - b, hint: "Nach dem Isolieren der Wurzel wird quadriert: √(x + b) = u ⇒ x + b = u²." }] }),
               numberField("Schnittpunkt mit der y-Achse: y =", y0, "", 2),
@@ -1071,7 +1071,7 @@ const parameter: Lesson = {
         const eqHtml = powerTermHtml(a, b, "−1", d);
         return {
           prompt: `Berechne die Koordinaten der Schnittpunkte des Graphen von ${eqHtml} mit den Koordinatenachsen.`,
-          given: [eqHtml, `D = ℝ ∖ {${fmt(-b)}}`],
+          given: [eqHtml, `𝔻 = ℝ ∖ {${fmt(-b)}}`],
           fields: [
             numberField("Schnittpunkt mit der x-Achse: x =", xN, "", 2, { slips: [{ value: -d / a - b, hint: "(x + b) hoch −1 = −d : a heißt x + b = −a : d, der Kehrwert." }] }),
             numberField("Schnittpunkt mit der y-Achse: y =", y0, "", 2),
@@ -1120,17 +1120,17 @@ const umkehrfunktion: Lesson = {
     <p>Eine Funktion f ordnet jedem x genau ein y zu. Lässt sich umgekehrt aus jedem y-Wert eindeutig das x zurückgewinnen, heißt f <strong>umkehrbar</strong>; die Zuordnung y ↦ x ist die <strong>Umkehrfunktion f<sup>−1</sup></strong>.</p>
     <ul>
       <li><strong>Umkehrbar</strong> ist f, wenn jeder y-Wert nur einmal vorkommt, also wenn der Graph nur steigt oder nur fällt. y = x² ist auf ℝ nicht umkehrbar, denn 2² = (−2)² = 4. Schränkt man die Definitionsmenge auf ℝ<sub>0</sub><sup>+</sup> ein, ist sie umkehrbar.</li>
-      <li><strong>So bestimmst du f<sup>−1</sup>:</strong> die Gleichung nach x auflösen, dann x und y vertauschen. Definitions- und Wertemenge tauschen dabei die Rollen: D(f<sup>−1</sup>) = W(f) und W(f<sup>−1</sup>) = D(f).</li>
+      <li><strong>So bestimmst du f<sup>−1</sup>:</strong> die Gleichung nach x auflösen, dann x und y vertauschen. Definitions- und Wertemenge tauschen dabei die Rollen: 𝔻(f<sup>−1</sup>) = 𝕎(f) und 𝕎(f<sup>−1</sup>) = 𝔻(f).</li>
       <li>Der Graph von f<sup>−1</sup> ist das <strong>Spiegelbild</strong> des Graphen von f an der Geraden y = x: Aus P(u | v) wird P′(v | u).</li>
     </ul>
-    <div class="example">f: y = (x − 2)² + 1 mit D = {x | x ≥ 2}, W = {y | y ≥ 1}. Auflösen: y − 1 = (x − 2)², x − 2 = ${sqrtHtml("y − 1")} (denn x − 2 ≥ 0), x = ${sqrtHtml("y − 1")} + 2. Tauschen: f<sup>−1</sup>: y = ${sqrtHtml("x − 1")} + 2 mit D = {x | x ≥ 1} und W = {y | y ≥ 2}.</div>
-    <p>Allgemein hat y = a · (x + b)<sup>n</sup> + d mit a &gt; 0 und D = {x | x ≥ −b} die Umkehrfunktion y = ((x − d) : a)<sup>1/n</sup> − b mit D = {x | x ≥ d}. Hyperbeln y = a · (x + b)<sup>−1</sup> + d sind ohne Einschränkung umkehrbar: f<sup>−1</sup>: y = a · (x − d)<sup>−1</sup> − b.</p>
+    <div class="example">f: y = (x − 2)² + 1 mit 𝔻 = {x | x ≥ 2}, 𝕎 = {y | y ≥ 1}. Auflösen: y − 1 = (x − 2)², x − 2 = ${sqrtHtml("y − 1")} (denn x − 2 ≥ 0), x = ${sqrtHtml("y − 1")} + 2. Tauschen: f<sup>−1</sup>: y = ${sqrtHtml("x − 1")} + 2 mit 𝔻 = {x | x ≥ 1} und 𝕎 = {y | y ≥ 2}.</div>
+    <p>Allgemein hat y = a · (x + b)<sup>n</sup> + d mit a &gt; 0 und 𝔻 = {x | x ≥ −b} die Umkehrfunktion y = ((x − d) : a)<sup>1/n</sup> − b mit 𝔻 = {x | x ≥ d}. Hyperbeln y = a · (x + b)<sup>−1</sup> + d sind ohne Einschränkung umkehrbar: f<sup>−1</sup>: y = a · (x − d)<sup>−1</sup> − b.</p>
     <p><strong>Anwendungen:</strong> Die Umkehrfunktion beantwortet die umgekehrte Frage einer Formel. Das Kugelvolumen V = 4/3 · π · r³ hängt vom Radius ab; umgekehrt ist r = ${rootHtml(3, "3V : (4π)")}. Nach dem dritten keplerschen Gesetz gilt für die Planeten T² = a³ (T in Jahren, a in AE): Also ist T = a<sup>3/2</sup> und umgekehrt a = T<sup>2/3</sup>.</p>
-    <div class="merke"><strong>Merke:</strong> Auflösen, x und y tauschen, D und W tauschen. Bei geraden Exponenten zuerst die Definitionsmenge einschränken.</div>
+    <div class="merke"><strong>Merke:</strong> Auflösen, x und y tauschen, 𝔻 und 𝕎 tauschen. Bei geraden Exponenten zuerst die Definitionsmenge einschränken.</div>
   `,
   formulas: [
-    { name: "Umkehrfunktion", html: "nach x auflösen, x und y tauschen; D(f<sup>−1</sup>) = W(f)", quantities: "Der Graph von f⁻¹ ist das Spiegelbild an y = x" },
-    { name: "Umkehrung einer Potenzfunktion", html: "y = a(x + b)<sup>n</sup> + d ⇒ f<sup>−1</sup>: y = ((x − d) : a)<sup>1/n</sup> − b", quantities: "für a > 0 und D = {x | x ≥ −b}" },
+    { name: "Umkehrfunktion", html: "nach x auflösen, x und y tauschen; 𝔻(f<sup>−1</sup>) = 𝕎(f)", quantities: "Der Graph von f⁻¹ ist das Spiegelbild an y = x" },
+    { name: "Umkehrung einer Potenzfunktion", html: "y = a(x + b)<sup>n</sup> + d ⇒ f<sup>−1</sup>: y = ((x − d) : a)<sup>1/n</sup> − b", quantities: "für a > 0 und 𝔻 = {x | x ≥ −b}" },
     { name: "Kugelradius aus dem Volumen", html: `r = ${rootHtml(3, "3V : (4π)")}`, quantities: "Umkehrung von V = 4/3 · π · r³" },
   ],
   quiz: {
@@ -1168,9 +1168,9 @@ const umkehrfunktion: Lesson = {
     ],
     readouts: [
       { key: "f", label: "Funktion f", compute: (v) => mirrorCase(v).fText },
-      { key: "DWf", label: "D und W von f", compute: (v) => `D = ${mirrorCase(v).D}; W = ${mirrorCase(v).W}` },
+      { key: "DWf", label: "𝔻 und 𝕎 von f", compute: (v) => `𝔻 = ${mirrorCase(v).D}; 𝕎 = ${mirrorCase(v).W}` },
       { key: "inv", label: "Umkehrfunktion f⁻¹", emphasis: true, compute: (v) => mirrorCase(v).invText },
-      { key: "DWinv", label: "D und W von f⁻¹", compute: (v) => (mirrorCase(v).invertible ? `D = ${mirrorCase(v).Dinv}; W = ${mirrorCase(v).Winv}` : "–") },
+      { key: "DWinv", label: "𝔻 und 𝕎 von f⁻¹", compute: (v) => (mirrorCase(v).invertible ? `𝔻 = ${mirrorCase(v).Dinv}; 𝕎 = ${mirrorCase(v).Winv}` : "–") },
       {
         key: "P",
         label: "P und sein Spiegelpunkt P′",
@@ -1200,7 +1200,7 @@ const umkehrfunktion: Lesson = {
           const a = kind === 3 ? rng.pick([-3, -2, -1, 1, 2, 3, 4]) : 1;
           const fHtml =
             kind === 0 ? `y = ${shifted(-b)}²${term(d, "", false)}` : kind === 1 ? `y = ${shifted(-b)}³${term(d, "", false)}` : kind === 2 ? `y = ${sqrtHtml(bracket)}${term(d, "", false)}` : powerTermHtml(a, b, "−1", d);
-          const domain = kind === 3 ? `D = ℝ ∖ {${fmt(-b)}}` : `D = {x | x ≥ ${fmt(-b)}}`;
+          const domain = kind === 3 ? `𝔻 = ℝ ∖ {${fmt(-b)}}` : `𝔻 = {x | x ≥ ${fmt(-b)}}`;
           const template = [`y = ${sqrtHtml("x − u")} + v`, `y = ${rootHtml(3, "x − u")} + v`, "y = (x − u)² + v", "y = k · (x − u)<sup>−1</sup> + v"][kind];
           const inverseHtml = [
             `y = ${sqrtHtml(sumText("x", -d))}${term(-b, "", false)}`,
@@ -1225,12 +1225,12 @@ const umkehrfunktion: Lesson = {
           return {
             prompt: `Die Funktion f mit ${fHtml} und ${domain} ist umkehrbar. Bestimme die Gleichung der Umkehrfunktion f<sup>−1</sup> in der Form ${template}.`,
             given: [fHtml, domain],
-            formulaHint: "Nach x auflösen, dann x und y vertauschen; D(f<sup>−1</sup>) = W(f)",
+            formulaHint: "Nach x auflösen, dann x und y vertauschen; 𝔻(f<sup>−1</sup>) = 𝕎(f)",
             fields,
             steps: [
               solve,
               `${kind === 3 ? `x = ${fmt(a)} : ${yd}${term(-b, "", false)}` : kind === 2 ? `x = ${d === 0 ? "y²" : `${yd}²`}${term(-b, "", false)}` : `x = ${(kind === 0 ? sqrtHtml : (r: string) => rootHtml(3, r))(sumText("y", -d))}${term(-b, "", false)}`}; jetzt x und y vertauschen.`,
-              `<strong>f<sup>−1</sup>: ${inverseHtml}</strong> mit D = ${kind === 3 ? `ℝ ∖ {${fmt(d)}}` : `{x | x ≥ ${fmt(d)}}`}${kind === 3 ? `, also k = ${fmt(a)},` : ", also"} u = ${fmt(d)} und v = ${fmt(-b)}`,
+              `<strong>f<sup>−1</sup>: ${inverseHtml}</strong> mit 𝔻 = ${kind === 3 ? `ℝ ∖ {${fmt(d)}}` : `{x | x ≥ ${fmt(d)}}`}${kind === 3 ? `, also k = ${fmt(a)},` : ", also"} u = ${fmt(d)} und v = ${fmt(-b)}`,
             ],
             meta: { kind, a, b, d },
           };
@@ -1240,8 +1240,8 @@ const umkehrfunktion: Lesson = {
           const k = 1 / a;
           const fHtml = `y = ${fmt(a)}${shifted(-b)}²${term(d, "", false)}`;
           return {
-            prompt: `Gegeben ist die Funktion f mit ${fHtml} und D = {x | x ≥ ${fmt(-b)}}. Bestimme die Gleichung der Umkehrfunktion f<sup>−1</sup> in der Form y = ${sqrtHtml("k · (x − u)")} + v.`,
-            given: [fHtml, `D = {x | x ≥ ${fmt(-b)}}`],
+            prompt: `Gegeben ist die Funktion f mit ${fHtml} und 𝔻 = {x | x ≥ ${fmt(-b)}}. Bestimme die Gleichung der Umkehrfunktion f<sup>−1</sup> in der Form y = ${sqrtHtml("k · (x − u)")} + v.`,
+            given: [fHtml, `𝔻 = {x | x ≥ ${fmt(-b)}}`],
             fields: [
               numberField("k =", k, "", 2, { slips: [{ value: a, hint: "Beim Auflösen wird durch a geteilt: k = 1 : a." }] }),
               numberField("u =", d, "", 2),
@@ -1250,7 +1250,7 @@ const umkehrfunktion: Lesson = {
             steps: [
               `${sumText("y", -d)} = ${fmt(a)} · (${bracket})² ⇒ (${bracket})² = ${yd} : ${fmt(a)} = ${fmt(k)} · ${yd}`,
               `${bracket} = ${sqrtHtml(`${fmt(k)} · ${yd}`)}, denn ${bracket} ≥ 0. Also x = ${sqrtHtml(`${fmt(k)} · ${yd}`)}${term(-b, "", false)}; jetzt x und y vertauschen.`,
-              `<strong>f<sup>−1</sup>: y = ${sqrtHtml(`${fmt(k)} · ${xd}`)}${term(-b, "", false)}</strong> mit D = {x | x ≥ ${fmt(d)}}: k = ${fmt(k)}, u = ${fmt(d)}, v = ${fmt(-b)}`,
+              `<strong>f<sup>−1</sup>: y = ${sqrtHtml(`${fmt(k)} · ${xd}`)}${term(-b, "", false)}</strong> mit 𝔻 = {x | x ≥ ${fmt(d)}}: k = ${fmt(k)}, u = ${fmt(d)}, v = ${fmt(-b)}`,
             ],
             meta: { kind: 4, a, b, d },
           };
@@ -1259,8 +1259,8 @@ const umkehrfunktion: Lesson = {
         const k = Math.sqrt(a);
         const fHtml = `y = ${factor(a)}${shifted(-b)}<sup>−2</sup>${term(d, "", false)}`;
         return {
-          prompt: `Gegeben ist die Funktion f mit ${fHtml} und D = {x | x > ${fmt(-b)}}. Bestimme die Gleichung der Umkehrfunktion f<sup>−1</sup> in der Form y = k · (x − u)<sup>−1/2</sup> + v.`,
-          given: [fHtml, `D = {x | x > ${fmt(-b)}}`],
+          prompt: `Gegeben ist die Funktion f mit ${fHtml} und 𝔻 = {x | x > ${fmt(-b)}}. Bestimme die Gleichung der Umkehrfunktion f<sup>−1</sup> in der Form y = k · (x − u)<sup>−1/2</sup> + v.`,
+          given: [fHtml, `𝔻 = {x | x > ${fmt(-b)}}`],
           fields: [
             numberField("k =", k, "", 2, { slips: [{ value: a, hint: "Beim Wurzelziehen wird aus a die Zahl √a." }, { value: 1 / k, hint: "a steht im Zähler: x + b = √(a : (y − d)) = √a · (y − d) hoch −1/2." }] }),
             numberField("u =", d, "", 2),
@@ -1269,7 +1269,7 @@ const umkehrfunktion: Lesson = {
           steps: [
             `${sumText("y", -d)} = ${fmt(a)} · (${bracket})<sup>−2</sup> ⇒ (${bracket})² = ${fmt(a)} : ${yd}`,
             `${bracket} = ${sqrtHtml(`${fmt(a)} : ${yd}`)} = ${fmt(k)} · ${yd}<sup>−1/2</sup>, denn ${bracket} > 0; jetzt x und y vertauschen.`,
-            `<strong>f<sup>−1</sup>: y = ${fmt(k)} · ${xd}<sup>−1/2</sup>${term(-b, "", false)}</strong> mit D = {x | x > ${fmt(d)}}: k = ${fmt(k)}, u = ${fmt(d)}, v = ${fmt(-b)}`,
+            `<strong>f<sup>−1</sup>: y = ${fmt(k)} · ${xd}<sup>−1/2</sup>${term(-b, "", false)}</strong> mit 𝔻 = {x | x > ${fmt(d)}}: k = ${fmt(k)}, u = ${fmt(d)}, v = ${fmt(-b)}`,
           ],
           meta: { kind: 5, a, b, d },
         };

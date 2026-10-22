@@ -3540,16 +3540,16 @@
               "text": " an und begründe."
             }
           ],
-          "concept": "D = ℝ₀⁺ und W = ℝ₀⁺, denn ein Bruch im Exponenten ist nur für x ≥ 0 erlaubt.",
+          "concept": "𝔻 = ℝ₀⁺ und 𝕎 = ℝ₀⁺, denn ein Bruch im Exponenten ist nur für x ≥ 0 erlaubt.",
           "materiality": "material",
-          "sample_solution": "x hoch 2/3 = ∛(x²) ist in der Realschule nur für x ≥ 0 definiert, weil Wurzeln nur aus nichtnegativen Zahlen gezogen werden. Die Werte sind dann nicht negativ: D = W = ℝ₀⁺.",
+          "sample_solution": "x hoch 2/3 = ∛(x²) ist in der Realschule nur für x ≥ 0 definiert, weil Wurzeln nur aus nichtnegativen Zahlen gezogen werden. Die Werte sind dann nicht negativ: 𝔻 = 𝕎 = ℝ₀⁺.",
           "choice_distractors": [
             {
-              "text": "D = ℝ und W = ℝ₀⁺, denn wegen des Zählers 2 darf x auch negativ sein.",
+              "text": "𝔻 = ℝ und 𝕎 = ℝ₀⁺, denn wegen des Zählers 2 darf x auch negativ sein.",
               "reason": "Ein Bruch im Exponenten ist nur für x ≥ 0 definiert, auch bei geradem Zähler."
             },
             {
-              "text": "D = ℝ₀⁺ und W = ℝ, denn der Graph steigt ohne Ende nach oben.",
+              "text": "𝔻 = ℝ₀⁺ und 𝕎 = ℝ, denn der Graph steigt ohne Ende nach oben.",
               "reason": "Steigen ohne Ende heißt nicht, dass auch negative Werte vorkommen: y ≥ 0."
             }
           ]
@@ -3658,24 +3658,24 @@
               "text": "?"
             }
           ],
-          "concept": "W = {y | y > 3}",
+          "concept": "𝕎 = {y | y > 3}",
           "materiality": "material",
           "sample_solution": "(x − 1)⁻² ist immer positiv, mal 2 auch; dazu kommt 3. Also liegen alle Werte über der Asymptote y = 3.",
           "fast_check": {
             "type": "binary_choice",
             "options": [
-              "W = {y | y > 3}",
-              "W = {y | y < 3}"
+              "𝕎 = {y | y > 3}",
+              "𝕎 = {y | y < 3}"
             ],
             "correct_index": 0
           },
           "choice_distractors": [
             {
-              "text": "W = ℝ ∖ {3}",
+              "text": "𝕎 = ℝ ∖ {3}",
               "reason": "Das gilt bei ungeradem Exponenten. Bei geradem ist (x − 1)⁻² immer positiv."
             },
             {
-              "text": "W = {y | y > 1}",
+              "text": "𝕎 = {y | y > 1}",
               "reason": "1 gehört zur senkrechten Asymptote x = 1; die Wertemenge hängt von d = 3 ab."
             }
           ]
@@ -3789,9 +3789,9 @@
           "bloom_level": 2,
           "source_link": "https://academy.zam-os.org/mathematik-realschule-10/#lesson=pt-5-umkehrfunktion",
           "question": "Wie bestimmt man die Gleichung der Umkehrfunktion f⁻¹ einer umkehrbaren Funktion f?",
-          "concept": "Nach x auflösen, dann x und y vertauschen; D und W tauschen die Rollen.",
+          "concept": "Nach x auflösen, dann x und y vertauschen; 𝔻 und 𝕎 tauschen die Rollen.",
           "materiality": "material",
-          "sample_solution": "y = √(x + 2) mit D = {x | x ≥ −2}: x = y² − 2, getauscht y = x² − 2 mit D = {x | x ≥ 0}.",
+          "sample_solution": "y = √(x + 2) mit 𝔻 = {x | x ≥ −2}: x = y² − 2, getauscht y = x² − 2 mit 𝔻 = {x | x ≥ 0}.",
           "fast_check": {
             "type": "binary_choice",
             "options": [
@@ -3830,7 +3830,7 @@
             },
             {
               "type": "text",
-              "text": " mit D = {x | x ≥ 2}."
+              "text": " mit 𝔻 = {x | x ≥ 2}."
             }
           ],
           "concept_segments": [
@@ -3841,18 +3841,18 @@
             },
             {
               "type": "text",
-              "text": " mit D = {x | x ≥ 1}"
+              "text": " mit 𝔻 = {x | x ≥ 1}"
             }
           ],
           "materiality": "material",
-          "sample_solution": "y − 1 = (x − 2)², also x − 2 = √(y − 1), weil x ≥ 2 ist. x = √(y − 1) + 2; tauschen: f⁻¹: y = √(x − 1) + 2 mit D = W(f) = {x | x ≥ 1}.",
+          "sample_solution": "y − 1 = (x − 2)², also x − 2 = √(y − 1), weil x ≥ 2 ist. x = √(y − 1) + 2; tauschen: f⁻¹: y = √(x − 1) + 2 mit 𝔻 = 𝕎(f) = {x | x ≥ 1}.",
           "choice_distractors": [
             {
-              "text": "y = √(x − 2) + 1 mit D = {x | x ≥ 2}",
+              "text": "y = √(x − 2) + 1 mit 𝔻 = {x | x ≥ 2}",
               "reason": "Nach dem Auflösen werden x und y getauscht: Die Verschiebung um 2 in x-Richtung wird eine in y-Richtung."
             },
             {
-              "text": "y = (x − 1)² + 2 mit D = ℝ",
+              "text": "y = (x − 1)² + 2 mit 𝔻 = ℝ",
               "reason": "Die Umkehrfunktion eines Parabelasts ist eine Wurzelfunktion, keine Parabel."
             }
           ]
@@ -5021,27 +5021,27 @@
           "concept_segments": [
             {
               "type": "math",
-              "tex": "W = \\{y \\mid y < c\\}",
+              "tex": "\\mathbb{W} = \\{y \\mid y < c\\}",
               "speech": "W gleich die Menge aller y mit y kleiner c"
             }
           ],
           "materiality": "material",
-          "sample_solution": "Für k < 0 liegt der Graph unterhalb der Asymptote y = c: y = −2 · 3ˣ + 4 hat W = {y | y < 4}.",
+          "sample_solution": "Für k < 0 liegt der Graph unterhalb der Asymptote y = c: y = −2 · 3ˣ + 4 hat 𝕎 = {y | y < 4}.",
           "fast_check": {
             "type": "binary_choice",
             "options": [
-              "W = {y | y < c}",
-              "W = {y | y > c}"
+              "𝕎 = {y | y < c}",
+              "𝕎 = {y | y > c}"
             ],
             "correct_index": 0
           },
           "choice_distractors": [
             {
-              "text": "W = {y | y < 0}",
+              "text": "𝕎 = {y | y < 0}",
               "reason": "Die Grenze ist die Asymptote y = c; nur für c = 0 ist das die x-Achse."
             },
             {
-              "text": "W = {y | y < k}",
+              "text": "𝕎 = {y | y < k}",
               "reason": "Die Grenze ist die Asymptote y = c, nicht der Streckfaktor k."
             }
           ]
@@ -5156,7 +5156,7 @@
           "concept_segments": [
             {
               "type": "math",
-              "tex": "D = \\{x \\mid x > b\\}",
+              "tex": "\\mathbb{D} = \\{x \\mid x > b\\}",
               "speech": "D gleich die Menge aller x mit x größer b"
             }
           ],
@@ -5165,18 +5165,18 @@
           "fast_check": {
             "type": "binary_choice",
             "options": [
-              "D = {x | x > b}",
-              "D = {x | x > c}"
+              "𝔻 = {x | x > b}",
+              "𝔻 = {x | x > c}"
             ],
             "correct_index": 0
           },
           "choice_distractors": [
             {
-              "text": "D = {x | x < c}",
+              "text": "𝔻 = {x | x < c}",
               "reason": "Die Definitionsmenge hängt am Argument x − b; c verschiebt den Graphen nur nach oben oder unten."
             },
             {
-              "text": "D = {x | x > 0}",
+              "text": "𝔻 = {x | x > 0}",
               "reason": "Das gilt nur für b = 0; die Verschiebung b verschiebt auch die Definitionsmenge."
             }
           ]

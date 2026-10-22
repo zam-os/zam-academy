@@ -281,7 +281,7 @@ const exponentialfunktion: Lesson = {
     <ul>
       <li><strong>Anfangswert k:</strong> Wegen a<sup>0</sup> = 1 geht der Graph durch <strong>(0 | k)</strong>.</li>
       <li><strong>Basis a:</strong> Geht man um 1 nach rechts, wird der y-Wert mit a multipliziert. Bei a &gt; 1 steigt der Graph (<strong>exponentielles Wachstum</strong>), bei 0 &lt; a &lt; 1 fällt er (<strong>exponentielle Abnahme</strong>), jeweils für k &gt; 0. Für k &lt; 0 ist der Graph an der x-Achse gespiegelt.</li>
-      <li><strong>Asymptote:</strong> Der Graph nähert sich der x-Achse (y = 0) beliebig nah, erreicht sie aber nie. Für k &gt; 0 sind alle y-Werte positiv: W = ℝ<sup>+</sup>. Einsetzen darf man jedes x: D = ℝ.</li>
+      <li><strong>Asymptote:</strong> Der Graph nähert sich der x-Achse (y = 0) beliebig nah, erreicht sie aber nie. Für k &gt; 0 sind alle y-Werte positiv: 𝕎 = ℝ<sup>+</sup>. Einsetzen darf man jedes x: 𝔻 = ℝ.</li>
       <li>Die Graphen von y = a<sup>x</sup> und y = (${frac(1, "a")})<sup>x</sup> liegen spiegelbildlich zur y-Achse, zum Beispiel y = 2<sup>x</sup> und y = 0,5<sup>x</sup>.</li>
       <li>Vorsicht: 2 · 3<sup>x</sup> ist nicht 6<sup>x</sup>. Erst potenzieren, dann mit k multiplizieren.</li>
     </ul>
@@ -338,7 +338,7 @@ const exponentialfunktion: Lesson = {
       {
         key: "w",
         label: "Wertemenge",
-        compute: (v) => (v.k === 0 ? "W = {0}" : v.a === 1 ? `W = {${fmt(v.k)}}` : v.k > 0 ? "W = ℝ⁺: alle y > 0" : "W = ℝ⁻: alle y < 0"),
+        compute: (v) => (v.k === 0 ? "𝕎 = {0}" : v.a === 1 ? `𝕎 = {${fmt(v.k)}}` : v.k > 0 ? "𝕎 = ℝ⁺: alle y > 0" : "𝕎 = ℝ⁻: alle y < 0"),
       },
     ],
     goals: [
@@ -1375,7 +1375,7 @@ function expZero(v: LabValues): string {
   return `x ≈ ${fmt(v.b + logBase(v.a, -v.c / v.k), 2)}`;
 }
 
-const W_OPTIONS = (c: number) => [`W = {y | y > ${fmt(c)}}`, `W = {y | y < ${fmt(c)}}`, "W = ℝ"];
+const W_OPTIONS = (c: number) => [`𝕎 = {y | y > ${fmt(c)}}`, `𝕎 = {y | y < ${fmt(c)}}`, "𝕎 = ℝ"];
 
 const eigenschaftenExp: ExerciseGenerator = {
   id: "eigenschaften",
@@ -1391,7 +1391,7 @@ const eigenschaftenExp: ExerciseGenerator = {
         return {
           prompt: `Gegeben ist die Funktion f mit y = ${expHtml(k, a, b, c)}. Gib die Gleichung der Asymptote und die Wertemenge an, und berechne, wo der Graph die y-Achse schneidet.`,
           given: [`f: y = ${expHtml(k, a, b, c)}`],
-          formulaHint: "y = k · a<sup>x − b</sup> + c: Asymptote y = c; W = {y | y &gt; c} für k &gt; 0, W = {y | y &lt; c} für k &lt; 0; y-Achse: x = 0 einsetzen",
+          formulaHint: "y = k · a<sup>x − b</sup> + c: Asymptote y = c; 𝕎 = {y | y &gt; c} für k &gt; 0, 𝕎 = {y | y &lt; c} für k &lt; 0; y-Achse: x = 0 einsetzen",
           fields: [
             numberField("Asymptote: y =", c, "", 2, {
               slips: [
@@ -1408,7 +1408,7 @@ const eigenschaftenExp: ExerciseGenerator = {
             }),
           ],
           steps: [
-            `Asymptote y = ${fmt(c)}; k = ${fmt(k)} ${k > 0 ? "&gt;" : "&lt;"} 0, also W = {y | y ${k > 0 ? "&gt;" : "&lt;"} ${fmt(c)}}`,
+            `Asymptote y = ${fmt(c)}; k = ${fmt(k)} ${k > 0 ? "&gt;" : "&lt;"} 0, also 𝕎 = {y | y ${k > 0 ? "&gt;" : "&lt;"} ${fmt(c)}}`,
             `f(0) = ${fmt(k)} · ${pow(a, -b)} ${signed(c, 0)} = ${fmt(k * a ** -b, 4)} ${signed(c, 0)}`,
             `<strong>S<sub>y</sub>(0 | ${fmt(f0, 2)})</strong>`,
           ],
@@ -1437,7 +1437,7 @@ const eigenschaftenExp: ExerciseGenerator = {
           }),
         ],
         steps: [
-          `k ${k > 0 ? "&gt;" : "&lt;"} 0: W = {y | y ${k > 0 ? "&gt;" : "&lt;"} ${fmt(c)}}, Asymptote y = ${fmt(c)}`,
+          `k ${k > 0 ? "&gt;" : "&lt;"} 0: 𝕎 = {y | y ${k > 0 ? "&gt;" : "&lt;"} ${fmt(c)}}, Asymptote y = ${fmt(c)}`,
           `0 = ${expHtml(k, a, b, c)} ⇒ ${pow(a, shiftedArg(b))} = ${f4(-c / k)}`,
           `${shiftedArg(b)} = lg ${f4(-c / k)} : lg ${fmt(a)} ≈ ${f4(logBase(a, -c / k))}`,
           `<strong>x ≈ ${fmt(zero, 2)}</strong>`,
@@ -1544,13 +1544,13 @@ const umkehrExp: ExerciseGenerator = {
       fields: [
         numberField("p =", c, "", 0),
         numberField("q =", q, "", 0, { slips: [{ value: b, hint: `Der Faktor ${fmt(k)} vor der Potenz steckt noch im Logarithmus: ${logName(a)} ${fmt(k)} = ${m} wird abgezogen.` }] }),
-        choiceField("Definitionsmenge von f⁻¹", [`D = {x | x > ${fmt(c)}}`, `D = {x | x < ${fmt(c)}}`, "D = ℝ"], 0),
+        choiceField("Definitionsmenge von f⁻¹", [`𝔻 = {x | x > ${fmt(c)}}`, `𝔻 = {x | x < ${fmt(c)}}`, "𝔻 = ℝ"], 0),
       ],
       steps: [
         `x und y tauschen: x = ${expHtml(k, a, b, c, "y")}`,
         `${pow(a, shiftedArg(b, "y"))} = ${inner.trim()} : ${fmt(k)}`,
         `${shiftedArg(b, "y")} = ${logNameHtml(a)}${inner} − ${logNameHtml(a)} ${fmt(k)} = ${logNameHtml(a)}${inner} ${signed(-m, 0)}`,
-        `<strong>f<sup>−1</sup>: y = ${logHtml(1, a, c, q)}, D = {x | x &gt; ${fmt(c)}}</strong>`,
+        `<strong>f<sup>−1</sup>: y = ${logHtml(1, a, c, q)}, 𝔻 = {x | x &gt; ${fmt(c)}}</strong>`,
       ],
       meta: { a, m, b, c },
     };
@@ -1576,19 +1576,19 @@ const exponentialAllgemein: Lesson = {
       <li><strong>c</strong> verschiebt um c nach oben. Die <strong>Asymptote</strong> ist die waagrechte Gerade <strong>y = c</strong>.</li>
       <li>Der Punkt (0 | 1) von y = a<sup>x</sup> wandert nach <strong>(b | k + c)</strong>.</li>
     </ul>
-    <p><strong>Definitions- und Wertemenge:</strong> D = ℝ. Für k &gt; 0 liegt der Graph oberhalb der Asymptote: W = {y | y &gt; c}; für k &lt; 0 liegt er unterhalb: W = {y | y &lt; c}.</p>
+    <p><strong>Definitions- und Wertemenge:</strong> 𝔻 = ℝ. Für k &gt; 0 liegt der Graph oberhalb der Asymptote: 𝕎 = {y | y &gt; c}; für k &lt; 0 liegt er unterhalb: 𝕎 = {y | y &lt; c}.</p>
     <p><strong>Umkehrfunktion:</strong> x und y vertauschen und nach y auflösen. Aus y = 2<sup>x + 1</sup> − 3 wird x = 2<sup>y + 1</sup> − 3 ⇒ 2<sup>y + 1</sup> = x + 3 ⇒ y + 1 = log<sub>2</sub>(x + 3) ⇒ <strong>y = log<sub>2</sub>(x + 3) − 1</strong>. Ihr Graph ist das Spiegelbild an der Geraden y = x; Definitions- und Wertemenge tauschen die Rollen.</p>
-    <div class="example">f: y = 2 · 3<sup>x − 1</sup> − 4 hat die Asymptote y = −4 und W = {y | y &gt; −4}. Schnitt mit der y-Achse: f(0) = 2 · 3<sup>−1</sup> − 4 = ${fracHtml(2, 3)} − 4 ≈ −3,33. Nullstelle: 2 · 3<sup>x − 1</sup> = 4 ⇒ 3<sup>x − 1</sup> = 2 ⇒ x = 1 + log<sub>3</sub> 2 ≈ 1,63.</div>
-    <div class="merke"><strong>Merke:</strong> y = k · a<sup>x − b</sup> + c: Asymptote y = c, D = ℝ, der Graph liegt für k &gt; 0 über und für k &lt; 0 unter der Asymptote.</div>
+    <div class="example">f: y = 2 · 3<sup>x − 1</sup> − 4 hat die Asymptote y = −4 und 𝕎 = {y | y &gt; −4}. Schnitt mit der y-Achse: f(0) = 2 · 3<sup>−1</sup> − 4 = ${fracHtml(2, 3)} − 4 ≈ −3,33. Nullstelle: 2 · 3<sup>x − 1</sup> = 4 ⇒ 3<sup>x − 1</sup> = 2 ⇒ x = 1 + log<sub>3</sub> 2 ≈ 1,63.</div>
+    <div class="merke"><strong>Merke:</strong> y = k · a<sup>x − b</sup> + c: Asymptote y = c, 𝔻 = ℝ, der Graph liegt für k &gt; 0 über und für k &lt; 0 unter der Asymptote.</div>
   `,
   formulas: [
-    { name: "Allgemeine Exponentialfunktion", html: "y = k · a<sup>x − b</sup> + c", quantities: "Asymptote y = c; Punkt (b | k + c); D = ℝ" },
-    { name: "Wertemenge", html: "k &gt; 0: W = {y | y &gt; c}; k &lt; 0: W = {y | y &lt; c}", quantities: "der Graph liegt über oder unter der Asymptote" },
+    { name: "Allgemeine Exponentialfunktion", html: "y = k · a<sup>x − b</sup> + c", quantities: "Asymptote y = c; Punkt (b | k + c); 𝔻 = ℝ" },
+    { name: "Wertemenge", html: "k &gt; 0: 𝕎 = {y | y &gt; c}; k &lt; 0: 𝕎 = {y | y &lt; c}", quantities: "der Graph liegt über oder unter der Asymptote" },
     { name: "Umkehrfunktion", html: "y = log<sub>a</sub>((x − c) : k) + b", quantities: "x und y tauschen, nach y auflösen" },
   ],
   quiz: {
     question: "Welche Wertemenge hat die Funktion y = −2 · 3ˣ + 4?",
-    options: ["W = {y | y > 4}", "W = {y | y > −2}", "W = {y | y < 4}", "W = ℝ"],
+    options: ["𝕎 = {y | y > 4}", "𝕎 = {y | y > −2}", "𝕎 = {y | y < 4}", "𝕎 = ℝ"],
     correctIndex: 2,
     explanation: "Die Asymptote ist y = 4. Wegen k = −2 < 0 liegt der Graph unterhalb der Asymptote, also sind alle y-Werte kleiner als 4.",
   },
@@ -1623,7 +1623,7 @@ const exponentialAllgemein: Lesson = {
       {
         key: "dw",
         label: "Definitions- und Wertemenge",
-        compute: (v) => (v.k === 0 ? `D = ℝ, W = {${fmt(v.c)}}` : `D = ℝ, W = {y | y ${v.k > 0 ? ">" : "<"} ${fmt(v.c)}}`),
+        compute: (v) => (v.k === 0 ? `𝔻 = ℝ, 𝕎 = {${fmt(v.c)}}` : `𝔻 = ℝ, 𝕎 = {y | y ${v.k > 0 ? ">" : "<"} ${fmt(v.c)}}`),
       },
       { key: "sy", label: "Schnittpunkt mit der y-Achse", compute: (v) => `(0 | ${fmt(v.k * v.a ** -v.b + v.c, 2)})` },
       { key: "zero", label: "Nullstelle", compute: expZero },
@@ -1637,7 +1637,7 @@ const exponentialAllgemein: Lesson = {
       },
       {
         id: "wertemenge",
-        text: "Stelle eine steigende Funktion mit der Wertemenge W = {y | y < 2} ein.",
+        text: "Stelle eine steigende Funktion mit der Wertemenge 𝕎 = {y | y < 2} ein.",
         check: (v) => v.c === 2 && v.k < 0 && v.a < 1,
       },
       {
@@ -1669,10 +1669,10 @@ const eigenschaftenLog: ExerciseGenerator = {
         return {
           prompt: `Gegeben ist die Funktion f mit y = ${logHtml(k, a, b, c)}. Gib die Gleichung der Asymptote und die Definitionsmenge an, und berechne die Nullstelle.`,
           given: [`f: y = ${logHtml(k, a, b, c)}`],
-          formulaHint: "Asymptote x = b, D = {x | x &gt; b}; Nullstelle: log<sub>a</sub>(x − b) = −c : k ⇒ x = b + a<sup>−c : k</sup>",
+          formulaHint: "Asymptote x = b, 𝔻 = {x | x &gt; b}; Nullstelle: log<sub>a</sub>(x − b) = −c : k ⇒ x = b + a<sup>−c : k</sup>",
           fields: [
             numberField("Asymptote: x =", b, "", 2, { slips: [{ value: -b, hint: "Vorzeichen: Bei log(x − 3) ist die Asymptote x = 3, bei log(x + 3) ist sie x = −3." }] }),
-            choiceField("Definitionsmenge", [`D = {x | x > ${fmt(b)}}`, `D = {x | x < ${fmt(b)}}`, "D = ℝ"], 0),
+            choiceField("Definitionsmenge", [`𝔻 = {x | x > ${fmt(b)}}`, `𝔻 = {x | x < ${fmt(b)}}`, "𝔻 = ℝ"], 0),
             numberField("Nullstelle: x =", zero, "", 3, {
               slips: [
                 { value: b - a ** e, hint: "Aus x − b = … folgt x = b + …, nicht b − …." },
@@ -1681,7 +1681,7 @@ const eigenschaftenLog: ExerciseGenerator = {
             }),
           ],
           steps: [
-            `Das Argument muss positiv sein: ${shiftedArg(b)} &gt; 0 ⇒ D = {x | x &gt; ${fmt(b)}}, Asymptote x = ${fmt(b)}`,
+            `Das Argument muss positiv sein: ${shiftedArg(b)} &gt; 0 ⇒ 𝔻 = {x | x &gt; ${fmt(b)}}, Asymptote x = ${fmt(b)}`,
             `${logHtml(k, a, b, c)} = 0 ⇒ ${logNameHtml(a)}(${shiftedArg(b)}) = ${fmt(e)}`,
             `${shiftedArg(b)} = ${pow(a, e)} = ${fmt(a ** e, 3)}`,
             `<strong>x = ${fmt(zero, 3)}</strong>`,
@@ -1806,28 +1806,28 @@ const logarithmusfunktion: Lesson = {
   explanationHtml: `
     <p>Die <strong>Logarithmusfunktion</strong> y = log<sub>a</sub> x ist die Umkehrfunktion von y = a<sup>x</sup>: Ihr Graph ist das Spiegelbild an der Geraden y = x.</p>
     <ul>
-      <li>D = ℝ<sup>+</sup> = {x | x &gt; 0}: Nur positive Zahlen haben einen Logarithmus. W = ℝ.</li>
+      <li>𝔻 = ℝ<sup>+</sup> = {x | x &gt; 0}: Nur positive Zahlen haben einen Logarithmus. 𝕎 = ℝ.</li>
       <li>Die y-Achse (x = 0) ist <strong>senkrechte Asymptote</strong>. Der Graph geht durch (1 | 0) und (a | 1).</li>
       <li>Für a &gt; 1 steigt der Graph, für 0 &lt; a &lt; 1 fällt er.</li>
     </ul>
     <p>Allgemein: <strong>y = k · log<sub>a</sub>(x − b) + c</strong> mit k ≠ 0.</p>
     <ul>
       <li>b verschiebt nach rechts, c nach oben, k streckt in y-Richtung.</li>
-      <li>Asymptote <strong>x = b</strong>, D = {x | x &gt; b}, W = ℝ. Der Punkt (1 | 0) wandert nach (b + 1 | c).</li>
+      <li>Asymptote <strong>x = b</strong>, 𝔻 = {x | x &gt; b}, 𝕎 = ℝ. Der Punkt (1 | 0) wandert nach (b + 1 | c).</li>
       <li>Nullstelle: k · log<sub>a</sub>(x − b) + c = 0 ⇒ log<sub>a</sub>(x − b) = −c : k ⇒ x = b + a<sup>−c : k</sup>.</li>
       <li>Umkehrfunktion (für k = 1): Aus y = log<sub>a</sub>(x − b) + c wird y = a<sup>x − c</sup> + b.</li>
     </ul>
-    <div class="example">f: y = log<sub>3</sub>(x − 1) − 2 hat die Asymptote x = 1, D = {x | x &gt; 1} und W = ℝ. Nullstelle: log<sub>3</sub>(x − 1) = 2 ⇒ x − 1 = 9 ⇒ x = 10. Umkehrfunktion: x = log<sub>3</sub>(y − 1) − 2 ⇒ y − 1 = 3<sup>x + 2</sup> ⇒ y = 3<sup>x + 2</sup> + 1.</div>
+    <div class="example">f: y = log<sub>3</sub>(x − 1) − 2 hat die Asymptote x = 1, 𝔻 = {x | x &gt; 1} und 𝕎 = ℝ. Nullstelle: log<sub>3</sub>(x − 1) = 2 ⇒ x − 1 = 9 ⇒ x = 10. Umkehrfunktion: x = log<sub>3</sub>(y − 1) − 2 ⇒ y − 1 = 3<sup>x + 2</sup> ⇒ y = 3<sup>x + 2</sup> + 1.</div>
     <div class="merke"><strong>Merke:</strong> Das Argument des Logarithmus muss positiv sein: x − b &gt; 0. Daraus folgen die Definitionsmenge und die senkrechte Asymptote x = b.</div>
   `,
   formulas: [
-    { name: "Logarithmusfunktion", html: "y = log<sub>a</sub> x: D = ℝ<sup>+</sup>, W = ℝ", quantities: "Umkehrfunktion von y = aˣ; Graph durch (1 | 0) und (a | 1); Asymptote x = 0" },
-    { name: "Allgemeine Logarithmusfunktion", html: "y = k · log<sub>a</sub>(x − b) + c", quantities: "Asymptote x = b; D = {x | x > b}; W = ℝ; Punkt (b + 1 | c)" },
+    { name: "Logarithmusfunktion", html: "y = log<sub>a</sub> x: 𝔻 = ℝ<sup>+</sup>, 𝕎 = ℝ", quantities: "Umkehrfunktion von y = aˣ; Graph durch (1 | 0) und (a | 1); Asymptote x = 0" },
+    { name: "Allgemeine Logarithmusfunktion", html: "y = k · log<sub>a</sub>(x − b) + c", quantities: "Asymptote x = b; 𝔻 = {x | x > b}; 𝕎 = ℝ; Punkt (b + 1 | c)" },
     { name: "Umkehrfunktion", html: "y = log<sub>a</sub>(x − b) + c ⇔ y = a<sup>x − c</sup> + b", quantities: "Spiegelung an der Geraden y = x" },
   ],
   quiz: {
     question: "Welche Definitionsmenge hat die Funktion y = log₂(x − 3) + 1?",
-    options: ["D = {x | x > 3}", "D = {x | x > −3}", "D = {x | x > 1}", "D = ℝ"],
+    options: ["𝔻 = {x | x > 3}", "𝔻 = {x | x > −3}", "𝔻 = {x | x > 1}", "𝔻 = ℝ"],
     correctIndex: 0,
     explanation: "Logarithmieren kann man nur positive Zahlen: x − 3 > 0, also x > 3. Die Gerade x = 3 ist die senkrechte Asymptote; die + 1 verschiebt den Graphen nur nach oben.",
   },
@@ -1859,7 +1859,7 @@ const logarithmusfunktion: Lesson = {
         compute: (v) => (v.k === 0 ? `y = ${fmt(v.c)} (k = 0: keine Logarithmusfunktion)` : `y = ${logText(v.k, v.a, v.b, v.c)}`),
       },
       { key: "asymptote", label: "Asymptote", compute: (v) => `x = ${fmt(v.b)}` },
-      { key: "dw", label: "Definitions- und Wertemenge", compute: (v) => `D = {x | x > ${fmt(v.b)}}, W = ${v.k === 0 ? `{${fmt(v.c)}}` : "ℝ"}` },
+      { key: "dw", label: "Definitions- und Wertemenge", compute: (v) => `𝔻 = {x | x > ${fmt(v.b)}}, 𝕎 = ${v.k === 0 ? `{${fmt(v.c)}}` : "ℝ"}` },
       {
         key: "zero",
         label: "Nullstelle",
@@ -1881,7 +1881,7 @@ const logarithmusfunktion: Lesson = {
       },
       {
         id: "fallend",
-        text: "Stelle eine fallende Logarithmusfunktion mit der Definitionsmenge D = {x | x > 3} ein.",
+        text: "Stelle eine fallende Logarithmusfunktion mit der Definitionsmenge 𝔻 = {x | x > 3} ein.",
         check: (v) => v.b === 3 && v.k !== 0 && (v.k > 0) !== (v.a > 1),
       },
     ],
