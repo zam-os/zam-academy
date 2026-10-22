@@ -315,8 +315,8 @@ function tree(style: TreeStyle): string {
     const y = leafY(index, draws);
     const [num, den] = pathFraction(red, blue, without, p);
     const tone = cls === "lab-side-b" ? "lab-text lab-text-b" : cls ? "lab-text lab-text-c" : "lab-text-small";
-    labels += text(TREE_X[draws] + 13, y + 4, `${pathKey(p)}  ${num === 0 ? "0" : `${num}/${den}`}`, tone);
-    if (style.ring === index) nodes += circle(TREE_X[draws], y, 11.5, "lab-target");
+    labels += text(TREE_X[draws] + 16, y + 4, `${pathKey(p)}  ${num === 0 ? "0" : `${num}/${den}`}`, tone);
+    if (style.ring === index) nodes += circle(TREE_X[draws], y, 10.5, "lab-target");
   });
   return lines + nodes + labels;
 }

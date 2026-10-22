@@ -569,7 +569,7 @@ const pfadregeln: Lesson = {
         return {
           prompt: lottery
             ? `Bei einer Tombola liegen ${red + blue} Lose in der Trommel, darunter ${red} Gewinne. Du ziehst nacheinander drei Lose. Wie groß ist die Wahrscheinlichkeit für genau ${what}? Gib das Ergebnis in Prozent an.`
-            : `In der 10b sind ${red} Mädchen und ${blue} Jungen. Für den Aufbau des Schulfests werden drei Kinder ausgelost. Wie wahrscheinlich sind genau ${what} dabei? Gib das Ergebnis in Prozent an.`,
+            : `In der 10b sind ${red} Mädchen und ${blue} Jungen. Für den Aufbau des Schulfests werden drei Kinder ausgelost. Wie wahrscheinlich ${k === 2 ? "sind" : "ist"} genau ${what} dabei? Gib das Ergebnis in Prozent an.`,
           given: lottery ? [`${red + blue} Lose, ${red} Gewinne`, "drei Lose, ohne Zurücklegen"] : [`${red} Mädchen, ${blue} Jungen`, "drei verschiedene Kinder"],
           fields: [numberField("P =", P * 100, "%", 2, { slips: [{ value: (one / den) * 100, hint: `Das ist nur ein Pfad. Genau ${what}: drei Pfade.` }] })],
           steps: [
@@ -675,8 +675,10 @@ const pfadregeln: Lesson = {
             formulaHint: "P(E) = 1 − P(Ē); Ē tritt genau dann ein, wenn E nicht eintritt",
             fields: [choiceField("Gegenereignis Ē:", options, options.indexOf(item.complement)), numberField("P(E) =", P, "", 4, { slips: [{ value: rest / den, hint: "Das ist P(Ē). Gesucht ist 1 − P(Ē)." }] })],
             steps: [
-              `Ē: „${item.complement}“, das sind ${item.paths.length === 1 ? "der Pfad" : "die Pfade"} ${item.paths.map(pathKey).join(", ")}`,
-              `P(Ē) = ${item.paths.map((p) => `${pathFraction(r, b, without, p)[0]}/${den}`).join(" + ")} = ${reduced(rest, den)}`,
+              `Ē: „${item.complement}“, ${item.paths.length === 1 ? "das ist der Pfad" : "das sind die Pfade"} ${item.paths.map(pathKey).join(", ")}`,
+              item.paths.length === 1
+                ? `P(Ē) = ${factorTexts(r, b, without, item.paths[0]).join(" · ")} = ${reduced(rest, den)}`
+                : `P(Ē) = ${item.paths.map((p) => `${pathFraction(r, b, without, p)[0]}/${den}`).join(" + ")} = ${reduced(rest, den)}`,
               `<strong>P(E) = 1 − ${fracText(rest, den)} = ${fracText(den - rest, den)} ${approx(P, 4)} ${dec(P)}</strong>`,
             ],
             meta: { r, b, without: without ? 1 : 0, kind },
@@ -717,14 +719,15 @@ const pfadregeln: Lesson = {
         }
         const claim = meta.claim;
         const yes = P * 100 > claim;
+        const word = ["Vermutung", "Behauptung", "Aussage"][context];
         return {
           prompt,
           given,
-          fields: [numberField("P =", P * 100, "%", 2), yesNo("Stimmt die Vermutung?", yes)],
+          fields: [numberField("P =", P * 100, "%", 2), yesNo(`Stimmt die ${word}?`, yes)],
           steps: [
             first,
             context === 2 ? `P ${approx(P * 100, 2)} ${pct(P)} %` : `P = 1 − ${context === 0 ? fracText(falling(meta.total - meta.mustard, meta.taken), falling(meta.total, meta.taken)) : fmt((1 - meta.red / 100) ** 3, 6)} ${approx(P * 100, 2)} ${pct(P)} %`,
-            `<strong>${pct(P)} % ist ${yes ? "mehr" : "weniger"} als ${claim} %: Die Vermutung ${yes ? "stimmt" : "stimmt nicht"}.</strong>`,
+            `<strong>${pct(P)} % ist ${yes ? "mehr" : "weniger"} als ${claim} %: Die ${word} ${yes ? "stimmt" : "stimmt nicht"}.</strong>`,
           ],
           meta: { ...meta, P: P * 100 },
         };
@@ -799,6 +802,9 @@ function howOftenPrompt(item: HowOften): string {
   }
 }
 
+/** The base of a power as written: a fraction in brackets, a decimal without: (5/6)ⁿ, 0,8ⁿ. */
+const powerBase = (chance: Chance) => (chance.q.includes("/") ? `(${chance.q})` : chance.q);
+
 /** The worked steps of 1 − qⁿ ≥ P: inequality, logarithm, probe with n − 1 and n. */
 function howOftenSteps(chance: Chance, target: number, n: number): string[] {
   const p = chance.value;
@@ -806,9 +812,10 @@ function howOftenSteps(chance: Chance, target: number, n: number): string[] {
   const before = atLeastOnce(p, n - 1) * 100;
   const after = atLeastOnce(p, n) * 100;
   const digits = probeDigits(before, target * 100);
+  const power = `${powerBase(chance)}<sup>n</sup>`;
   return [
-    `1 − (${chance.q})<sup>n</sup> ≥ ${fmt(target, 2)}  ⇔  (${chance.q})<sup>n</sup> ≤ ${fmt(1 - target, 2)}`,
-    `Gleichung (${chance.q})<sup>n</sup> = ${fmt(1 - target, 2)}: n = log<sub>${chance.q}</sub>(${fmt(1 - target, 2)}) ≈ ${fmt(bound, 2)}. Weil ${chance.q} kleiner als 1 ist, wird (${chance.q})<sup>n</sup> mit jedem Versuch kleiner: n ≥ ${fmt(bound, 2)}, also aufrunden.`,
+    `1 − ${power} ≥ ${fmt(target, 2)}  ⇔  ${power} ≤ ${fmt(1 - target, 2)}`,
+    `Gleichung ${power} = ${fmt(1 - target, 2)}: n = log<sub>${chance.q}</sub>(${fmt(1 - target, 2)}) ≈ ${fmt(bound, 2)}. Weil ${chance.q} kleiner als 1 ist, wird ${power} mit jedem Versuch kleiner: n ≥ ${fmt(bound, 2)}, also aufrunden.`,
     `Probe: n = ${n - 1}: ${fmt(before, digits)} %; n = ${n}: ${fmt(after, digits)} %`,
     `<strong>n = ${n}</strong>`,
   ];
@@ -946,7 +953,7 @@ const anwendungen: Lesson = {
             numberField("n =", n, "", 0, { slips: howOftenSlips(item.chance, item.target, n) }),
             numberField(`P(mindestens einmal) bei n =`, after * 100, "%", 2),
           ],
-          steps: [...howOftenSteps(item.chance, item.target, n).slice(0, 3), `<strong>n = ${n}; P = 1 − (${item.chance.q})<sup>${n}</sup> ${approx(after * 100, 2)} ${pct(after)} %</strong>`],
+          steps: [...howOftenSteps(item.chance, item.target, n).slice(0, 3), `<strong>n = ${n}; P = 1 − ${powerBase(item.chance)}<sup>${n}</sup> ${approx(after * 100, 2)} ${pct(after)} %</strong>`],
           meta: { context: item.context, value: item.value, p: item.chance.value, target: item.target * 100, n },
         };
       },
