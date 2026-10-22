@@ -1,225 +1,1726 @@
 <!doctype html>
-<html lang="en">
+<html lang="de">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>ZAM Academy</title>
+    <title>ZAM Academy – Wissensatlas</title>
     <meta
       name="description"
-      content="ZAM Academy: practise hands-on, then keep it with ZAM."
+      content="ZAM Academy: Der Wissensatlas für Schulwissen und Weltwissen. Hineinzoomen, Lernpaket wählen, hands-on üben und mit ZAM behalten."
     />
+    <meta name="theme-color" content="#090a12" />
     <style>
       :root {
-        --bg: #f7f7fb;
-        --fg: #1d1d2b;
-        --muted: #5b5b72;
-        --card: #ffffff;
-        --line: #e2e2ee;
-        --accent: #6d4aff;
-      }
-      @media (prefers-color-scheme: dark) {
-        :root {
-          --bg: #0f0f1a;
-          --fg: #ececf6;
-          --muted: #a3a3bd;
-          --card: #18182a;
-          --line: #2a2a42;
-          --accent: #9b85ff;
-        }
+        color-scheme: dark;
+        --ink: #090a12;
+        --panel: rgba(22, 25, 44, 0.62);
+        --line: rgba(150, 160, 210, 0.16);
+        --line-strong: rgba(150, 160, 210, 0.32);
+        --violet: #8a7bf3;
+        --violet-bright: #a99bff;
+        --cyan: #45dfd0;
+        --amber: #f2c879;
+        --text: #edeef7;
+        --muted: #a2a9c8;
+        --dim: #7b83a4;
+        --off: #596080;
+        --font: "Outfit", "SF Pro Display", "Segoe UI", system-ui, -apple-system,
+          "Helvetica Neue", sans-serif;
+        --mono: "JetBrains Mono", "SF Mono", ui-monospace, Menlo, monospace;
+        --wrap: 1240px;
       }
       * {
         box-sizing: border-box;
       }
+      html {
+        scroll-behavior: smooth;
+      }
       body {
         margin: 0;
-        background: var(--bg);
-        color: var(--fg);
-        font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-        line-height: 1.5;
+        background: var(--ink);
+        color: var(--text);
+        font-family: var(--font);
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+        overflow-x: hidden;
       }
-      main {
-        max-width: 44rem;
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        z-index: -1;
+        background:
+          radial-gradient(60rem 36rem at 12% -8%, rgba(138, 123, 243, 0.28), transparent 60%),
+          radial-gradient(48rem 30rem at 92% 6%, rgba(69, 223, 208, 0.16), transparent 60%),
+          radial-gradient(40rem 30rem at 50% 105%, rgba(242, 200, 121, 0.08), transparent 60%);
+      }
+      .wrap {
+        max-width: var(--wrap);
         margin: 0 auto;
-        padding: 3rem 1rem 4rem;
+        padding: 0 clamp(16px, 4vw, 40px);
       }
-      h1 {
-        font-size: 2rem;
-        margin: 0 0 0.5rem;
+      a {
+        color: inherit;
+      }
+      h1,
+      h2,
+      h3 {
+        font-weight: 600;
+        letter-spacing: -0.02em;
+        margin: 0;
+        text-wrap: balance;
       }
       p {
-        color: var(--muted);
-        margin: 0 0 1rem;
+        margin: 0;
       }
-      .apps {
-        list-style: none;
-        padding: 0;
-        margin: 2rem 0;
-        display: grid;
-        gap: 1rem;
-      }
-      .apps a {
-        display: block;
-        padding: 1.25rem;
-        border: 1px solid var(--line);
-        border-radius: 12px;
-        background: var(--card);
+      button {
+        font: inherit;
         color: inherit;
+      }
+      :focus-visible {
+        outline: 2px solid var(--cyan);
+        outline-offset: 3px;
+        border-radius: 6px;
+      }
+      .eyebrow {
+        font-size: 0.76rem;
+        font-weight: 600;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+      .eyebrow b {
+        color: var(--amber);
+      }
+
+      .nav {
+        position: sticky;
+        top: 0;
+        z-index: 30;
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+        background: rgba(9, 10, 18, 0.72);
+        border-bottom: 1px solid var(--line);
+      }
+      .nav .wrap {
+        display: flex;
+        align-items: center;
+        gap: 1.2rem;
+        height: 3.6rem;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        font-weight: 600;
+        letter-spacing: -0.01em;
         text-decoration: none;
       }
-      .apps a:hover,
-      .apps a:focus-visible {
-        border-color: var(--accent);
+      .brand svg {
+        width: 1.7rem;
+        height: 1.7rem;
       }
-      .apps strong {
+      .nav .spacer {
+        flex: 1;
+      }
+      .nav a.link {
+        color: var(--muted);
+        text-decoration: none;
+        font-size: 0.92rem;
+      }
+      .nav a.link:hover {
+        color: var(--text);
+      }
+
+      .hero {
+        padding: clamp(2.4rem, 6vw, 4.6rem) 0 1.4rem;
+        display: grid;
+        grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+        gap: clamp(1.5rem, 4vw, 3.5rem);
+        align-items: end;
+      }
+      .hero h1 {
+        font-size: clamp(2.3rem, 6vw, 4.2rem);
+        line-height: 1.04;
+        margin: 0.7rem 0 1rem;
+      }
+      .hero h1 em {
+        font-style: normal;
+        background: linear-gradient(100deg, var(--violet-bright), var(--cyan) 60%, var(--amber));
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+      .hero .lead {
+        font-size: clamp(1.02rem, 1.6vw, 1.2rem);
+        color: var(--muted);
+        max-width: 38rem;
+      }
+      .goal {
+        margin-top: 1.3rem;
+        display: inline-flex;
+        gap: 0.6rem;
+        align-items: center;
+        padding: 0.45rem 0.9rem;
+        border: 1px solid var(--line-strong);
+        border-radius: 999px;
+        background: rgba(242, 200, 121, 0.07);
+        font-size: 0.9rem;
+        color: #f6dca9;
+      }
+      .stats {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.8rem;
+      }
+      .stat {
+        padding: 1rem 1.1rem;
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        background: var(--panel);
+      }
+      .stat b {
         display: block;
-        font-size: 1.15rem;
-        margin-bottom: 0.25rem;
+        font-size: clamp(1.7rem, 3.4vw, 2.5rem);
+        line-height: 1.1;
+        font-variant-numeric: tabular-nums;
+        background: linear-gradient(120deg, #fff, var(--violet-bright));
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
       }
-      .apps span {
+      .stat span {
+        font-size: 0.85rem;
         color: var(--muted);
       }
-      footer {
+
+      .start {
+        margin: 1.6rem 0 0;
+        padding: 1rem 1.2rem;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        background: var(--panel);
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.8rem 1.4rem;
+        align-items: center;
+      }
+      .chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.4rem;
+      }
+      .chip {
+        border: 1px solid var(--line-strong);
+        background: rgba(255, 255, 255, 0.03);
+        border-radius: 999px;
+        padding: 0.28rem 0.85rem;
+        cursor: pointer;
+        font-size: 0.92rem;
+        transition: 0.15s;
+      }
+      .chip:hover:not(:disabled) {
+        border-color: var(--violet-bright);
+        background: rgba(138, 123, 243, 0.18);
+      }
+      .chip[aria-pressed="true"] {
+        background: linear-gradient(120deg, var(--violet), #5a8cf0);
+        border-color: transparent;
+        color: #fff;
+      }
+      .chip:disabled {
+        cursor: not-allowed;
+        color: var(--off);
+        border-color: rgba(150, 160, 210, 0.1);
+        background: transparent;
+      }
+
+      .atlas {
+        margin: 2rem 0 0;
+      }
+      .toolbar {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.7rem 1rem;
+        align-items: center;
+        margin-bottom: 0.8rem;
+      }
+      .seg {
+        display: inline-flex;
+        padding: 3px;
+        border: 1px solid var(--line-strong);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.03);
+      }
+      .seg button {
+        border: 0;
+        background: transparent;
+        padding: 0.4rem 1.1rem;
+        border-radius: 999px;
+        cursor: pointer;
+        color: var(--muted);
+        font-weight: 500;
+      }
+      .seg button[aria-pressed="true"] {
+        background: linear-gradient(120deg, var(--violet), #5a8cf0);
+        color: #fff;
+      }
+      .seg.small button {
+        padding: 0.3rem 0.8rem;
+        font-size: 0.88rem;
+      }
+      .toolbar .grow {
+        flex: 1;
+      }
+      .search {
+        position: relative;
+        min-width: min(100%, 17rem);
+      }
+      .search input {
+        width: 100%;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid var(--line-strong);
+        border-radius: 999px;
+        padding: 0.5rem 1rem;
+        color: var(--text);
+        font: inherit;
+        font-size: 0.93rem;
+      }
+      .search input::placeholder {
+        color: var(--dim);
+      }
+      .results {
+        position: absolute;
+        z-index: 15;
+        top: calc(100% + 6px);
+        left: 0;
+        right: 0;
+        background: #12142a;
+        border: 1px solid var(--line-strong);
+        border-radius: 14px;
+        padding: 0.3rem;
+        list-style: none;
+        margin: 0;
+        box-shadow: 0 18px 50px rgba(0, 0, 0, 0.5);
+      }
+      .results button {
+        display: block;
+        width: 100%;
+        text-align: left;
+        background: transparent;
+        border: 0;
+        padding: 0.45rem 0.7rem;
+        border-radius: 9px;
+        cursor: pointer;
+      }
+      .results button:hover,
+      .results button:focus-visible {
+        background: rgba(138, 123, 243, 0.2);
+      }
+      .results small {
+        color: var(--muted);
+      }
+      .toggle {
+        display: inline-flex;
+        gap: 0.45rem;
+        align-items: center;
         font-size: 0.9rem;
+        color: var(--muted);
+        cursor: pointer;
+      }
+      .toggle input {
+        accent-color: var(--violet);
+      }
+      .crumbs {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.2rem;
+        margin: 0 0 0.7rem;
+        font-size: 0.95rem;
+      }
+      .crumbs button {
+        background: transparent;
+        border: 0;
+        padding: 0.15rem 0.45rem;
+        border-radius: 8px;
+        cursor: pointer;
+        color: var(--muted);
+      }
+      .crumbs button:hover {
+        color: var(--text);
+        background: rgba(255, 255, 255, 0.06);
+      }
+      .crumbs button[aria-current="location"] {
+        color: var(--text);
+        font-weight: 600;
+        cursor: default;
+      }
+      .crumbs i {
+        color: var(--dim);
+        font-style: normal;
+      }
+
+      .board {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 21rem;
+        gap: 1rem;
+        align-items: stretch;
+      }
+      .board[hidden],
+      .crumbs[hidden],
+      .outline[hidden] {
+        display: none;
+      }
+      .stage {
+        position: relative;
+        min-height: 30rem;
+        height: clamp(30rem, 68vh, 46rem);
+        border: 1px solid var(--line);
+        border-radius: 24px;
+        overflow: hidden;
+        background:
+          radial-gradient(70% 60% at 50% 40%, rgba(40, 44, 90, 0.55), transparent 75%),
+          linear-gradient(180deg, #0c0e1d, #090a14);
+      }
+      .stage::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        opacity: 0.5;
+        background-image: radial-gradient(circle at 1px 1px, rgba(150, 160, 230, 0.22) 1px, transparent 1.5px);
+        background-size: 26px 26px;
+        mask-image: radial-gradient(ellipse at center, #000 30%, transparent 78%);
+        -webkit-mask-image: radial-gradient(ellipse at center, #000 30%, transparent 78%);
+        pointer-events: none;
+      }
+      .stage svg.map {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        display: block;
+      }
+      .hint {
+        position: absolute;
+        left: 1rem;
+        bottom: 0.8rem;
+        font-size: 0.8rem;
+        color: var(--dim);
+        pointer-events: none;
+      }
+      .up {
+        position: absolute;
+        top: 0.8rem;
+        left: 0.8rem;
+        z-index: 5;
+        border: 1px solid var(--line-strong);
+        background: rgba(9, 10, 18, 0.7);
+        backdrop-filter: blur(8px);
+        border-radius: 999px;
+        padding: 0.35rem 0.9rem;
+        cursor: pointer;
+        font-size: 0.9rem;
+      }
+      .up:hover {
+        border-color: var(--violet-bright);
+      }
+
+      /* map nodes */
+      .node {
+        outline: none;
+      }
+      .node:not(.disabled) {
+        cursor: pointer;
+      }
+      .node .shape {
+        transition: transform 0.18s ease;
+        transform-box: fill-box;
+        transform-origin: center;
+      }
+      .node:not(.disabled):hover .shape,
+      .node:not(.disabled):focus-visible .shape {
+        transform: scale(1.06);
+      }
+      .hexfill {
+        fill: hsl(var(--h) 62% 36% / var(--a, 1));
+        stroke: hsl(var(--h) 85% 74% / 0.9);
+        stroke-width: 1.6;
+      }
+      .live .hexfill {
+        filter: none;
+      }
+      /* Not implemented: grey, flat, quiet, not selectable */
+      .disabled .hexfill {
+        fill: #14172a;
+        stroke: #2c3150;
+        stroke-width: 1.2;
+        stroke-dasharray: none;
+        filter: none;
+      }
+      .sheen {
+        fill: url(#sheen);
+        pointer-events: none;
+      }
+      .disabled .sheen {
+        display: none;
+      }
+      .node:focus-visible .hexfill,
+      .node.sel .hexfill {
+        stroke: #fff;
+        stroke-width: 3;
+      }
+      .t {
+        fill: #fff;
+        text-anchor: middle;
+        pointer-events: none;
+        font-family: var(--font);
+      }
+      .disabled .t {
+        fill: var(--off);
+      }
+      .t.glyph {
+        font-weight: 600;
+        font-family: var(--mono);
+        letter-spacing: -0.04em;
+      }
+      .t.sub {
+        opacity: 0.85;
+      }
+      .pip {
+        fill: none;
+        stroke: #fff;
+        stroke-width: 1.4;
+        opacity: 0.8;
+      }
+      .pip.on {
+        fill: #fff;
+        opacity: 1;
+      }
+      .disabled .pip {
+        stroke: #3a4062;
+      }
+      .islandlabel {
+        fill: var(--text);
+        text-anchor: middle;
+        font-family: var(--font);
+        font-weight: 600;
+        pointer-events: none;
+      }
+      .islandsub {
+        fill: var(--muted);
+        text-anchor: middle;
+        font-family: var(--font);
+        pointer-events: none;
+      }
+      .island.disabled .islandlabel,
+      .island.disabled .islandsub {
+        fill: var(--off);
+      }
+      .island .halo {
+        fill: rgba(138, 123, 243, 0.06);
+        stroke: rgba(150, 160, 230, 0.2);
+        stroke-dasharray: 3 7;
+      }
+      .island.disabled .halo {
+        fill: transparent;
+        stroke: rgba(120, 128, 170, 0.1);
+      }
+      .island:not(.disabled):hover .halo,
+      .island:not(.disabled):focus-visible .halo {
+        fill: rgba(138, 123, 243, 0.16);
+        stroke: var(--violet-bright);
+      }
+      .island.mine .halo {
+        stroke: var(--amber);
+        stroke-dasharray: none;
+        stroke-width: 2;
+      }
+      .badge {
+        fill: var(--amber);
+        font-family: var(--font);
+        font-weight: 700;
+        text-anchor: middle;
+        pointer-events: none;
+      }
+
+      .panel {
+        border: 1px solid var(--line);
+        border-radius: 24px;
+        background: var(--panel);
+        backdrop-filter: blur(10px);
+        padding: 1.3rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.9rem;
+        max-height: clamp(30rem, 68vh, 46rem);
+        overflow: auto;
+      }
+      .panel h2 {
+        font-size: 1.5rem;
+        line-height: 1.15;
+      }
+      .panel .kicker {
+        font-size: 0.78rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+      .panel p {
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+      .emblem {
+        flex: none;
+        width: 4.2rem;
+        height: 4.2rem;
+        display: grid;
+        place-items: center;
+        font-family: var(--mono);
+        font-weight: 600;
+        font-size: 0.95rem;
+        letter-spacing: -0.04em;
+        color: #fff;
+        background: hsl(var(--h, 250) 60% 36%);
+        clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+        box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.25);
+      }
+      .meter {
+        height: 8px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.08);
+        overflow: hidden;
+      }
+      .meter i {
+        display: block;
+        height: 100%;
+        background: linear-gradient(90deg, var(--violet), var(--cyan));
+        border-radius: 999px;
+      }
+      .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.35rem;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+      .tags li {
+        font-size: 0.8rem;
+        padding: 0.15rem 0.6rem;
+        border-radius: 999px;
+        border: 1px solid var(--line-strong);
+        color: var(--text);
+        background: rgba(255, 255, 255, 0.04);
+      }
+      .tags li.off {
+        color: var(--off);
+        border-color: rgba(150, 160, 210, 0.1);
+        background: transparent;
+      }
+      .tags button {
+        all: unset;
+        cursor: pointer;
+      }
+      .facts {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 0.2rem 0.9rem;
+        margin: 0;
+        font-size: 0.9rem;
+      }
+      .facts dt {
+        color: var(--dim);
+      }
+      .facts dd {
+        margin: 0;
+      }
+      .cta {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.8rem 1.2rem;
+        border-radius: 14px;
+        text-decoration: none;
+        font-weight: 600;
+        border: 0;
+        cursor: pointer;
+        background: linear-gradient(120deg, var(--violet), #4f8df0);
+        color: #fff;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+        transition: transform 0.15s;
+      }
+      .cta:hover {
+        transform: translateY(-1px);
+      }
+      .cta.alt {
+        background: rgba(255, 255, 255, 0.06);
+        box-shadow: none;
+        border: 1px solid var(--line-strong);
+      }
+      .steps {
+        counter-reset: s;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: grid;
+        gap: 0.7rem;
+      }
+      .steps li {
+        counter-increment: s;
+        display: grid;
+        grid-template-columns: 1.8rem 1fr;
+        gap: 0.7rem;
+        font-size: 0.93rem;
+        color: var(--muted);
+      }
+      .steps li::before {
+        content: counter(s);
+        width: 1.8rem;
+        height: 1.8rem;
+        display: grid;
+        place-items: center;
+        border-radius: 50%;
+        background: rgba(138, 123, 243, 0.25);
+        color: #fff;
+        font-weight: 600;
+        font-size: 0.85rem;
+      }
+      .steps b {
+        color: var(--text);
+        font-weight: 600;
+      }
+      .legend {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.4rem 1.2rem;
+        margin: 0.8rem 0 0;
+        font-size: 0.85rem;
+        color: var(--muted);
+      }
+      .legend span {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.45rem;
+      }
+      .legend i {
+        width: 1rem;
+        height: 1.1rem;
+        display: inline-block;
+        clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+        background: hsl(250 60% 46%);
+      }
+      .legend i.g {
+        background: #2c3150;
+      }
+
+      .outline {
+        border: 1px solid var(--line);
+        border-radius: 24px;
+        background: var(--panel);
+        padding: 1.2rem 1.4rem;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(19rem, 1fr));
+        gap: 0.8rem 1.4rem;
+      }
+      .outline details {
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 0.3rem 0.9rem;
+        background: rgba(255, 255, 255, 0.02);
+      }
+      .outline details.off {
+        opacity: 0.55;
+      }
+      .outline summary {
+        cursor: pointer;
+        padding: 0.45rem 0;
+        font-weight: 600;
+      }
+      .outline summary small {
+        color: var(--muted);
+        font-weight: 400;
+        margin-left: 0.4rem;
+      }
+      .outline ul {
+        list-style: none;
+        padding: 0 0 0.6rem 0.8rem;
+        margin: 0;
+      }
+      .outline li {
+        padding: 0.15rem 0;
+        font-size: 0.93rem;
+      }
+      .outline .fach {
+        font-weight: 600;
+        margin-top: 0.4rem;
+        display: flex;
+        gap: 0.4rem;
+        align-items: center;
+      }
+      .outline .fach::before {
+        content: "";
+        width: 0.7rem;
+        height: 0.8rem;
+        background: hsl(var(--h) 65% 50%);
+        clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+      }
+      .outline .fach.off {
+        color: var(--off);
+      }
+      .outline .fach.off::before {
+        background: #2c3150;
+      }
+      .outline a {
+        color: var(--violet-bright);
+      }
+      .outline [aria-current="location"] {
+        outline: 2px solid var(--cyan);
+        outline-offset: 3px;
+        border-radius: 6px;
+      }
+      .outline .planned {
+        color: var(--off);
+      }
+
+      .coverage {
+        margin: 3.4rem 0 0;
+      }
+      .coverage h2,
+      .how h2 {
+        font-size: clamp(1.6rem, 3vw, 2.2rem);
+        margin: 0.4rem 0 0.6rem;
+      }
+      .coverage > p {
+        color: var(--muted);
+        max-width: 44rem;
+        margin-bottom: 1rem;
+      }
+      .matrixwrap {
+        overflow-x: auto;
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        background: var(--panel);
+        padding: 0.8rem 1rem 1rem;
+      }
+      table.matrix {
+        border-collapse: separate;
+        border-spacing: 5px;
+        width: 100%;
+        min-width: 38rem;
+      }
+      .matrix th {
+        font-weight: 500;
+        color: var(--muted);
+        font-size: 0.85rem;
+        padding: 0.2rem 0.4rem;
+      }
+      .matrix th[scope="row"] {
+        text-align: left;
+        color: var(--text);
+        white-space: nowrap;
+      }
+      .matrix td {
+        text-align: center;
+        padding: 0;
+      }
+      .cell {
+        display: block;
+        width: 100%;
+        height: 2.1rem;
+        line-height: 2.1rem;
+        border-radius: 9px;
+        border: 1px solid #262b47;
+        background: #11142450;
+        color: var(--off);
+        font-size: 0.75rem;
+      }
+      button.cell {
+        cursor: pointer;
+        border-color: hsl(var(--h) 85% 72% / 0.9);
+        background: hsl(var(--h) 62% 38%);
+        color: #fff;
+      }
+      button.cell:hover {
+        filter: brightness(1.25);
+      }
+      .na {
+        display: block;
+        height: 2.1rem;
+        line-height: 2.1rem;
+        color: var(--off);
+        opacity: 0.4;
+      }
+
+      .how {
+        margin: 3.4rem 0 0;
+      }
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+        gap: 0.9rem;
+        margin-top: 1rem;
+      }
+      .card {
+        padding: 1.2rem;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        background: var(--panel);
+      }
+      .card h3 {
+        font-size: 1.1rem;
+        margin-bottom: 0.4rem;
+      }
+      .card p {
+        color: var(--muted);
+        font-size: 0.93rem;
+      }
+      footer {
+        margin: 4rem 0 0;
+        padding: 1.6rem 0 3rem;
+        border-top: 1px solid var(--line);
+        font-size: 0.88rem;
         color: var(--muted);
       }
       footer a {
-        color: var(--accent);
+        color: var(--violet-bright);
+      }
+      .sr {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        white-space: nowrap;
+      }
+
+      @media (max-width: 980px) {
+        .hero,
+        .board {
+          grid-template-columns: 1fr;
+        }
+        .panel {
+          max-height: none;
+        }
+        .stage {
+          height: 62vh;
+          min-height: 24rem;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        * {
+          transition: none !important;
+          animation: none !important;
+        }
+        html {
+          scroll-behavior: auto;
+        }
       }
     </style>
   </head>
   <body>
-    <main>
-      <h1>ZAM Academy</h1>
-      <p>
-        Practise hands-on until you understand it, then keep it with
-        <a href="https://zam-os.org/">ZAM</a>: every ZAM card links back to
-        the lesson where you practised.
-      </p>
-      <p lang="de">
-        Hier üben, bis du es verstanden hast, und es dann mit ZAM behalten:
-        Jede ZAM-Karte verlinkt die Lektion, in der du geübt hast.
-      </p>
+    <header class="nav">
+      <div class="wrap">
+        <a class="brand" href="./" aria-label="ZAM Academy">
+          <svg viewBox="0 0 32 32" aria-hidden="true">
+            <defs>
+              <linearGradient id="lg" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#a99bff" />
+                <stop offset="1" stop-color="#45dfd0" />
+              </linearGradient>
+            </defs>
+            <path d="M16 2l12 7v14l-12 7L4 23V9z" fill="url(#lg)" />
+            <path d="M10 11h12l-9 10h9" fill="none" stroke="#0b0c18" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round" />
+          </svg>
+          ZAM Academy
+        </a>
+        <span class="spacer"></span>
+        <a class="link" href="#atlas">Atlas</a>
+        <a class="link" href="#abdeckung">Abdeckung</a>
+        <a class="link" href="https://zam-os.org/">ZAM</a>
+        <a class="link" href="https://github.com/zam-os/zam-academy">GitHub</a>
+      </div>
+    </header>
 
-      <ul class="apps">
-        <li>
-          <a href="uml/">
-            <strong>UML 2.5.1</strong>
-            <span
-              >From use cases to component diagrams: 6 stages, 24 lessons,
-              German and English.</span
-            >
-          </a>
-        </li>
-        <li>
-          <a href="physik-realschule-9/" lang="de">
-            <strong>Physik 9 Realschule</strong>
-            <span
-              >Druck, Mechanik und Energie, Wärmelehre, Elektrizitätslehre nach
-              dem LehrplanPLUS Bayern: 4 Etappen, 21 Lektionen mit Labor und
-              Aufgaben. Deutsch.</span
-            >
-          </a>
-        </li>
-        <li>
-          <a href="sql/">
-            <strong>Relational Databases and SQL</strong>
-            <span
-              >Tables and keys, queries, joins, reports: 4 stages, 18 lessons
-              with a SQLite sandbox in the browser. Follows LehrplanPLUS IT
-              2.3.1/2.3.2 (Realschule Bayern). German and English.</span
-            >
-          </a>
-        </li>
-        <li>
-          <a href="mathematik-realschule-9/" lang="de">
-            <strong>Mathematik 9 Realschule</strong>
-            <span
-              >Rechtwinklige Dreiecke, Kreis und Körper, lineare
-              Gleichungssysteme, quadratische Funktionen, Daten und Zufall nach
-              dem LehrplanPLUS Bayern: 5 Etappen, 29 Lektionen mit Labor zum
-              Ziehen und Aufgaben. Deutsch.</span
-            >
-          </a>
-        </li>
-        <li>
-          <a href="chemie-realschule-9/" lang="de">
-            <strong>Chemie 9 Realschule</strong>
-            <span>Stoffe, Atombau, Bindungen, Redoxchemie und Protonenübergänge:
-              7 Etappen, 35 Lektionen mit digitalen Modellen und Aufgaben.
-              Getrennte Lernpfade mit je 22 Lektionen für Zweig I und II/III
-              nach LehrplanPLUS Bayern. Deutsch.</span>
-          </a>
-        </li>
-        <li>
-          <a href="geschichte-realschule-9/" lang="de">
-            <strong>Geschichte 9 Realschule</strong>
-            <span>Imperialismus, Weltkriege, Weimar, Nationalsozialismus,
-              Jugendkultur und Menschenrechte: 35 Kernlektionen mit
-              Quellenwerkstatt, Zeitleisten und begründeten Urteilen.
-              Vier optionale englische Vertiefungen. LehrplanPLUS Bayern.</span>
-          </a>
-        </li>
-        <li>
-          <a href="geographie-realschule-9/" lang="de">
-            <strong>Geographie 9 Realschule</strong>
-            <span>Landschaft, Klima, Landwirtschaft, Städte, Bevölkerung und
-              Grenzen: 35 Kernlektionen mit Karten, Modellen und einem eigenen
-              Nahraumprojekt. Sieben englische Vertiefungen und drei ergänzende
-              Grundlagen. LehrplanPLUS Bayern.</span>
-          </a>
-        </li>
-        <li>
-          <a href="biologie-realschule-10/" lang="de">
-            <strong>Biologie 10 Realschule</strong>
-            <span>Genetik, Ökosysteme und verantwortungsvolle Elternschaft:
-              37 Kernlektionen mit interaktiven Modellen, Ökosystembogen und
-              begründeten Urteilen. Neun getrennte Auffrischungen zu Nervensystem
-              und Evolution. LehrplanPLUS Bayern.</span>
-          </a>
-        </li>
-        <li>
-          <a href="physik-realschule-10/" lang="de">
-            <strong>Physik 10 Realschule</strong>
-            <span>Mechanik, Elektrizität, Atom- und Kernphysik, Energieversorgung:
-              34 Kernlektionen in Zweig I und 25 in II/III. Zehn veränderbare
-              Modelle, Rechenaufgaben, eigene Begründungen und ein
-              Versuchsnotizbuch. LehrplanPLUS Bayern.</span>
-          </a>
-        </li>
-        <li>
-          <a href="algorithmen/" lang="de">
-            <strong>Algorithmen und Programmieren</strong>
-            <span lang="en">Algorithms and programming: plan, code and debug
-              in a local workshop. 20 lessons following LehrplanPLUS IT 2.6.1.
-              German and English.</span>
-          </a>
-        </li>
-        <li>
-          <a href="datennetze/" lang="de">
-            <strong>Datennetze und Internet</strong>
-            <span lang="en">Data networks and the internet: configure a
-              network and trace a web request. 18 core lessons following
-              LehrplanPLUS IT 2.5.1, plus an HTTPS extension.
-              German and English.</span>
-          </a>
-        </li>
-        <li>
-          <a href="bwr-realschule-9/" lang="de">
-            <strong>BwR 9 Realschule</strong>
-            <span>Unternehmensführung, Anlagen, Finanzierung, Kapitalanlage und
-              Forderungsbewertung: 44 Kernlektionen, zwei optionale
-              Umsatzsteuerauffrischungen und 92 Karten. Rechen- und
-              Buchungswerkstatt, vier interaktive Modelle und Praxisnotizen.
-              LehrplanPLUS Bayern, Zweig II.</span>
-          </a>
-        </li>
-      </ul>
+    <main class="wrap">
+      <section class="hero">
+        <div>
+          <p class="eyebrow"><b>✦</b> Üben, bis du es verstehst. Behalten mit ZAM.</p>
+          <h1>Der <em>Wissensatlas</em> für Schule und Welt.</h1>
+          <p class="lead">
+            Jedes Thema ist ein Feld auf der Karte. Zoome von der Klassenstufe
+            über das Fach bis zum Lernpaket, übe hands-on im Labor und lass
+            ZAM das Gelernte mit Wiederholungen festhalten.
+          </p>
+          <p class="goal">🎯 <span id="goal"></span></p>
+        </div>
+        <div class="stats" id="stats" aria-label="Stand der Academy"></div>
+      </section>
+
+      <section class="start" aria-label="Einstieg">
+        <strong>Wo stehst du?</strong>
+        <div class="chips" id="klassenchips" role="group" aria-label="Klassenstufe wählen"></div>
+        <span id="startnote" style="color: var(--muted); font-size: 0.9rem"></span>
+      </section>
+
+      <section class="atlas" id="atlas" aria-labelledby="atlas-h">
+        <h2 class="sr" id="atlas-h">Wissensatlas</h2>
+        <div class="toolbar">
+          <div class="seg" role="group" aria-label="Sicht">
+            <button type="button" data-lens="schule" aria-pressed="true">🏫 Schulsicht</button>
+            <button type="button" data-lens="welt" aria-pressed="false">🌍 Weltwissen</button>
+          </div>
+          <div class="seg small" role="group" aria-label="Darstellung">
+            <button type="button" data-mode="map" aria-pressed="true">Karte</button>
+            <button type="button" data-mode="list" aria-pressed="false">Liste</button>
+          </div>
+          <label class="toggle"><input type="checkbox" id="showplanned" checked /> Noch fehlendes zeigen</label>
+          <span class="grow"></span>
+          <div class="search">
+            <input id="q" type="search" placeholder="Thema, Fach oder Paket suchen …" autocomplete="off" aria-label="Suchen" />
+            <ul class="results" id="results" hidden></ul>
+          </div>
+        </div>
+        <nav class="crumbs" id="crumbs" aria-label="Ebene"></nav>
+
+        <div class="board" id="board">
+          <div class="stage" id="stage">
+            <button class="up" id="up" type="button" hidden>↑ Zurück</button>
+            <svg class="map" id="map" role="group" aria-label="Wissensatlas-Karte">
+              <defs>
+                <radialGradient id="sheen" cx="30%" cy="20%" r="85%">
+                  <stop offset="0" stop-color="#fff" stop-opacity="0.38" />
+                  <stop offset="0.55" stop-color="#fff" stop-opacity="0" />
+                </radialGradient>
+              </defs>
+              <g id="layer"></g>
+            </svg>
+            <p class="hint" id="hint"></p>
+          </div>
+          <aside class="panel" id="panel" aria-live="polite"></aside>
+        </div>
+        <div class="outline" id="outline" hidden></div>
+
+        <p class="legend" aria-label="Legende">
+          <span><i></i> farbig: Lernpaket verfügbar, anklickbar</span>
+          <span><i class="g"></i> grau: noch nicht umgesetzt, nicht wählbar (Ziel: Ende 2026)</span>
+          <span>Farbe = Fach · Punkte = Pakete je Schulart</span>
+        </p>
+      </section>
+
+      <section class="coverage" id="abdeckung">
+        <p class="eyebrow"><b>✦</b> Führung</p>
+        <h2>Abdeckung nach Klasse und Fach</h2>
+        <p>
+          So füllt sich die Karte bis Ende des Jahres. Wähle die Schulart und
+          springe direkt zu einem verfügbaren Feld.
+        </p>
+        <div class="seg small" id="schulart" role="group" aria-label="Schulart" style="margin-bottom: 0.8rem"></div>
+        <div class="matrixwrap"><table class="matrix" id="matrix"></table></div>
+      </section>
+
+      <section class="how">
+        <p class="eyebrow"><b>✦</b> So funktioniert es</p>
+        <h2>Verstehen, dann behalten</h2>
+        <div class="cards">
+          <div class="card">
+            <h3>1 · Hands-on üben</h3>
+            <p>Jedes Lernpaket ist eine eigene App mit Labor, Modellen und Aufgaben. Ohne Konto, im Browser.</p>
+          </div>
+          <div class="card">
+            <h3>2 · Mit ZAM behalten</h3>
+            <p>Zu jedem Paket gibt es Karten für aktives Erinnern mit Spaced Repetition. Jede Karte führt zur Lektion zurück.</p>
+          </div>
+          <div class="card">
+            <h3>3 · Wissen verorten</h3>
+            <p>Der Atlas zeigt, wo ein Thema hingehört: nach Klasse und Fach in der Schulsicht, nach Wissensgebiet im Weltwissen.</p>
+          </div>
+        </div>
+      </section>
 
       <footer>
-        No accounts, no cookies, no tracking. Your progress stays in your
-        browser. Source:
-        <a href="https://github.com/zam-os/zam-academy">zam-os/zam-academy</a>
+        <p>
+          Keine Konten, keine Cookies, kein Tracking. Dein Lernstand bleibt in deinem Browser.
+          <span lang="en">No accounts, no cookies, no tracking.</span>
+          Quelle: <a href="https://github.com/zam-os/zam-academy">zam-os/zam-academy</a> ·
+          Lehrplan: LehrplanPLUS Bayern
+        </p>
       </footer>
     </main>
+
+    <noscript>
+      <p class="wrap">Der Atlas braucht JavaScript. Die Lernpakete findest du unter
+        <a href="https://github.com/zam-os/zam-academy">github.com/zam-os/zam-academy</a>.</p>
+    </noscript>
+
+    <script>
+      "use strict";
+      const SVGNS = "http://www.w3.org/2000/svg";
+      const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
+      const el = (svg, tag, attrs = {}, ...kids) => {
+        const e = svg ? document.createElementNS(SVGNS, tag) : document.createElement(tag);
+        for (const [k, v] of Object.entries(attrs)) {
+          if (v == null || v === false) continue;
+          if (k.startsWith("on")) e.addEventListener(k.slice(2), v);
+          else e.setAttribute(k, v === true ? "" : v);
+        }
+        for (const kid of kids.flat()) {
+          if (kid == null || kid === false) continue;
+          e.append(kid.nodeType ? kid : document.createTextNode(kid));
+        }
+        return e;
+      };
+      const h = (tag, attrs, ...kids) => el(false, tag, attrs, ...kids);
+      const s = (tag, attrs, ...kids) => el(true, tag, attrs, ...kids);
+      const $ = (id) => document.getElementById(id);
+      const store = {
+        get(k) {
+          try {
+            return localStorage.getItem("zam-academy:" + k);
+          } catch {
+            return null;
+          }
+        },
+        set(k, v) {
+          try {
+            localStorage.setItem("zam-academy:" + k, v);
+          } catch {}
+        },
+      };
+
+      let D;
+      const state = {
+        lens: "schule",
+        mode: "map",
+        planned: true,
+        trees: {},
+        focus: null,
+        sel: null,
+        klasse: Number(store.get("klasse")) || null,
+        schulart: store.get("schulart") || "realschule",
+      };
+
+      /* ---------- data -> trees ---------- */
+      function buildTrees() {
+        const fachBy = Object.fromEntries(D.faecher.map((f) => [f.id, f]));
+        const pkgNode = (p) => ({
+          kind: "pkg",
+          id: p.id,
+          label: p.title,
+          glyph: fachBy[p.fach].glyph,
+          hue: fachBy[p.fach].hue,
+          pkg: p,
+          planned: false,
+        });
+        const ghost = (id, label, f, extra = {}) => ({
+          kind: "pkg",
+          id,
+          label,
+          glyph: f.glyph,
+          hue: f.hue,
+          planned: true,
+          fachName: f.name,
+          ...extra,
+        });
+        const fachNode = (f, children) => ({
+          kind: "fach",
+          id: f.id,
+          label: f.name,
+          glyph: f.glyph,
+          hue: f.hue,
+          fach: f,
+          children,
+        });
+
+        const schule = [];
+        for (let g = 5; g <= 13; g++) {
+          const faecher = [];
+          for (const f of D.faecher) {
+            if (f.from > g) continue;
+            const kids = [];
+            const used = new Set();
+            for (const sch of D.schulen) {
+              if (g < sch.from || g > sch.to) continue;
+              const ps = D.pakete.filter((p) => p.fach === f.id && p.grade === g && p.school === sch.id);
+              ps.forEach((p) => used.add(p.id));
+              if (ps.length) kids.push(...ps.map(pkgNode));
+              else kids.push(ghost(`plan-${sch.id}`, sch.name, f, { school: sch, grade: g, sub: `${f.name} ${g}` }));
+            }
+            D.pakete
+              .filter((p) => p.fach === f.id && p.grade === g && !used.has(p.id))
+              .forEach((p) => kids.push(pkgNode(p)));
+            if (kids.length) faecher.push(fachNode(f, kids));
+          }
+          schule.push({
+            kind: "island",
+            id: `k${g}`,
+            grade: g,
+            label: `Klasse ${g}`,
+            glyph: String(g),
+            hue: 235 + (g - 5) * 9,
+            children: faecher,
+          });
+        }
+        const over = D.faecher
+          .map((f) => [f, D.pakete.filter((p) => p.fach === f.id && p.grade == null)])
+          .filter(([, ps]) => ps.length)
+          .map(([f, ps]) => fachNode(f, ps.map(pkgNode)));
+        schule.push({ kind: "island", id: "uebergreifend", label: "Übergreifend", glyph: "∞", hue: 190, children: over });
+
+        const welt = D.bereiche.map((b) => {
+          const faecher = D.faecher
+            .filter((f) => f.bereich === b.id)
+            .map((f) => {
+              const kids = D.pakete.filter((p) => p.fach === f.id && p.grade == null).map(pkgNode);
+              for (let g = f.from; g <= 13; g++) {
+                const ps = D.pakete.filter((p) => p.fach === f.id && p.grade === g);
+                if (ps.length) kids.push(...ps.map(pkgNode));
+                else {
+                  const wo = D.schulen.filter((x) => g >= x.from && g <= x.to).map((x) => x.short);
+                  kids.push(ghost(`plan-k${g}`, `Klasse ${g}`, f, { grade: g, sub: wo.join(" · ") }));
+                }
+              }
+              return fachNode(f, kids);
+            });
+          return { kind: "island", id: b.id, label: b.name, glyph: b.glyph, hue: faecher[0]?.hue ?? 250, children: faecher };
+        });
+
+        const finish = (node, parent, path) => {
+          node.parent = parent;
+          node.path = parent ? [...path, node.id] : [];
+          if (node.children) {
+            node.children.forEach((c) => finish(c, node, node.path));
+            node.live = node.children.reduce((a, c) => a + c.live, 0);
+            node.total = node.children.reduce((a, c) => a + c.total, 0);
+          } else {
+            node.live = node.planned ? 0 : 1;
+            node.total = 1;
+          }
+        };
+        for (const [lens, name, children] of [
+          ["schule", "Schulsicht", schule],
+          ["welt", "Weltwissen", welt],
+        ]) {
+          const root = { kind: "root", id: lens, label: name, children };
+          finish(root, null, []);
+          state.trees[lens] = root;
+        }
+      }
+
+      const nodeAt = (root, path) => {
+        let n = root;
+        for (const id of path) {
+          n = n.children?.find((k) => k.id === id);
+          if (!n) return null;
+        }
+        return n;
+      };
+      const visible = (n) => (state.planned ? n.children : n.children.filter((c) => c.live > 0));
+      const schulName = (id) => D.schulen.find((x) => x.id === id)?.name ?? "";
+      const noun = (n) => (n === 1 ? "Paket" : "Pakete");
+      const enabled = (n) => n.live > 0;
+
+      /* ---------- hex geometry ---------- */
+      const SQ3 = Math.sqrt(3);
+      const spiral = (n) => {
+        const out = [[0, 0]];
+        const dirs = [[1, 0], [1, -1], [0, -1], [-1, 0], [-1, 1], [0, 1]];
+        for (let k = 1; out.length < n; k++) {
+          let q = -k, r = k;
+          for (const [dq, dr] of dirs)
+            for (let i = 0; i < k && out.length < n; i++) {
+              out.push([q, r]);
+              q += dq;
+              r += dr;
+            }
+        }
+        return out.slice(0, n);
+      };
+      const toXY = ([q, r], R) => [R * SQ3 * (q + r / 2), R * 1.5 * r];
+      const hexPath = (cx, cy, R) =>
+        "M" +
+        [0, 1, 2, 3, 4, 5]
+          .map((i) => {
+            const a = Math.PI / 6 + (Math.PI / 3) * i;
+            return `${(cx + R * Math.cos(a)).toFixed(1)},${(cy + R * Math.sin(a)).toFixed(1)}`;
+          })
+          .join("L") +
+        "Z";
+      const wrap = (text, max) => {
+        const lines = [];
+        let cur = "";
+        for (const w of String(text).split(/\s+/)) {
+          if ((cur + " " + w).trim().length > max && cur) {
+            lines.push(cur);
+            cur = w;
+          } else cur = (cur + " " + w).trim();
+        }
+        if (cur) lines.push(cur);
+        return lines.slice(0, 3);
+      };
+      const alpha = (n) => (n.live > 0 ? 0.55 + 0.45 * (n.live / n.total) : 1);
+      const ariaFor = (n) => {
+        if (!enabled(n)) return `${n.fachName ? n.fachName + " " : ""}${n.label}, noch nicht verfügbar`;
+        if (n.kind === "pkg") return `${n.label}, Lernpaket, ${n.pkg.lessons} Lektionen`;
+        return `${n.label}, ${n.live} von ${n.total} ${noun(n.total)} verfügbar`;
+      };
+      const interactive = (n, extra) =>
+        enabled(n)
+          ? {
+              tabindex: 0,
+              role: "button",
+              onclick: (e) => activate(n, e),
+              onkeydown: (e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  e.preventDefault();
+                  activate(n, e, true);
+                }
+              },
+              ...extra,
+            }
+          : { role: "img", "aria-disabled": "true", ...extra };
+
+      /* ---------- drawing ---------- */
+      let animFrom = null;
+      function nodeGroup(n, cx, cy, R) {
+        const on = enabled(n);
+        const g = s("g", {
+          class: `node ${on ? "live" : "disabled"}${state.sel === n ? " sel" : ""}`,
+          style: `--h:${n.hue};--a:${alpha(n)}`,
+          "aria-label": ariaFor(n),
+          ...interactive(n),
+        });
+        const shape = s("g", { class: "shape" });
+        shape.append(s("path", { class: "hexfill", d: hexPath(cx, cy, R) }), s("path", { class: "sheen", d: hexPath(cx, cy, R) }));
+        g.append(shape);
+        const fs = R * 0.19;
+        if (n.kind === "pkg") {
+          const lines = wrap(n.label, Math.max(9, Math.round(R / 5.4)));
+          const gl = n.glyph.length > 6 ? 0.2 : 0.3;
+          const y0 = cy - R * 0.28 - (lines.length - 1) * fs * 0.55;
+          shape.append(s("text", { class: "t glyph", x: cx, y: y0 - fs * 0.2, "font-size": R * gl }, n.glyph));
+          lines.forEach((ln, i) =>
+            shape.append(s("text", { class: "t", x: cx, y: y0 + fs * 1.5 + i * fs * 1.15, "font-size": fs, "font-weight": 600 }, ln)),
+          );
+          const sub = n.planned ? "noch nicht verfügbar" : n.pkg.grade == null ? "übergreifend" : `${n.pkg.lessons} Lektionen`;
+          shape.append(s("text", { class: "t sub", x: cx, y: cy + R * 0.62, "font-size": fs * 0.74 }, sub));
+        } else {
+          const lines = wrap(n.label, Math.max(8, Math.round(R / 5.2)));
+          shape.append(s("text", { class: "t glyph", x: cx, y: cy - R * 0.12, "font-size": R * (n.glyph.length > 6 ? 0.2 : 0.3) }, n.glyph));
+          lines.forEach((ln, i) =>
+            shape.append(s("text", { class: "t", x: cx, y: cy + R * 0.2 + i * fs * 1.15, "font-size": fs, "font-weight": 600 }, ln)),
+          );
+          const pr = R * 0.065;
+          const kids = n.children.slice(0, 8);
+          const w = kids.length * pr * 3;
+          kids.forEach((k, i) =>
+            shape.append(s("circle", { class: `pip${k.live > 0 ? " on" : ""}`, cx: cx - w / 2 + pr * 1.5 + i * pr * 3, cy: cy + R * 0.66, r: pr })),
+          );
+        }
+        return g;
+      }
+
+      function drawRoot(layer, node) {
+        const mini = 15;
+        const clusters = visible(node).map((isl) => {
+          const kids = visible(isl);
+          const pts = spiral(Math.max(kids.length, 1)).map((p) => toXY(p, mini));
+          const rad = Math.max(...pts.map((p) => Math.hypot(p[0], p[1]))) + mini * 1.4;
+          return { isl, kids, pts, rad };
+        });
+        const maxR = Math.max(...clusters.map((c) => c.rad), 40);
+        const cols = Math.min(clusters.length, clusters.length > 7 ? 5 : 4);
+        const longest = Math.max(...clusters.map((c) => c.isl.label.length));
+        const cw = Math.max(maxR * 2 + 34, longest * 11 + 24);
+        const ch = maxR * 2 + 66;
+        clusters.forEach((c, i) => {
+          const rowLen = Math.min(cols, clusters.length - Math.floor(i / cols) * cols);
+          const cx = (i % cols) * cw + cw / 2 - (rowLen * cw) / 2 + (cols * cw) / 2;
+          const cy = Math.floor(i / cols) * ch + maxR + 10;
+          const n = c.isl;
+          const on = enabled(n);
+          const mine = state.lens === "schule" && n.grade === state.klasse && on;
+          const g = s("g", {
+            class: `node island${on ? "" : " disabled"}${mine ? " mine" : ""}`,
+            "aria-label": on ? `${n.label}, ${n.live} von ${n.total} ${noun(n.total)} verfügbar` : `${n.label}, noch nicht verfügbar`,
+            ...interactive(n),
+          });
+          g.append(s("circle", { class: "halo", cx, cy, r: maxR + 8 }));
+          const shape = s("g", { class: "shape" });
+          c.kids.forEach((k, j) => {
+            const [x, y] = c.pts[j];
+            shape.append(
+              s("g", { class: k.live > 0 ? "live" : "disabled", style: `--h:${k.hue};--a:${alpha(k)}` }, [
+                s("path", { class: "hexfill", d: hexPath(cx + x, cy + y, mini - 1.5) }),
+                s("path", { class: "sheen", d: hexPath(cx + x, cy + y, mini - 1.5) }),
+              ]),
+            );
+          });
+          g.append(shape);
+          g.append(s("text", { class: "islandlabel", x: cx, y: cy + maxR + 30, "font-size": 21 }, n.label));
+          g.append(
+            s("text", { class: "islandsub", x: cx, y: cy + maxR + 50, "font-size": 14 }, on ? `${n.live} von ${n.total} ${noun(n.total)}` : "noch nicht verfügbar"),
+          );
+          if (mine) g.append(s("text", { class: "badge", x: cx, y: cy - maxR - 8, "font-size": 14 }, "★ Dein Jahrgang"));
+          layer.append(g);
+        });
+      }
+
+      function drawKids(layer, node) {
+        const items = visible(node);
+        const R = node.kind === "island" ? 62 : 74;
+        const pts = spiral(items.length).map((p) => toXY(p, R * 1.06));
+        items.forEach((k, i) => layer.append(nodeGroup(k, pts[i][0], pts[i][1], R)));
+      }
+
+      function fit(svg, layer) {
+        const b = layer.getBBox();
+        const w = Math.max(b.width + 120, 560);
+        const hh = Math.max(b.height + 120, 380);
+        svg.setAttribute("viewBox", `${b.x + b.width / 2 - w / 2} ${b.y + b.height / 2 - hh / 2} ${w} ${hh}`);
+      }
+
+      function render(dir = 0) {
+        const node = state.focus;
+        const layer = $("layer");
+        layer.replaceChildren();
+        if (node.kind === "root") drawRoot(layer, node);
+        else drawKids(layer, node);
+        fit($("map"), layer);
+        $("up").hidden = node.kind === "root";
+        $("hint").textContent =
+          node.kind === "root"
+            ? "Farbige Inseln zoomen hinein · graue sind noch nicht verfügbar"
+            : node.kind === "island"
+              ? "Wähle ein farbiges Fach · Esc geht zurück"
+              : "Wähle ein farbiges Lernpaket · Esc geht zurück";
+        if (dir && !reduceMotion) {
+          const o = animFrom || [50, 50];
+          const m = $("map");
+          m.style.transformOrigin = `${o[0]}% ${o[1]}%`;
+          m.animate(
+            [
+              { transform: `scale(${dir > 0 ? 0.45 : 1.8})`, opacity: 0 },
+              { transform: "scale(1)", opacity: 1 },
+            ],
+            { duration: 460, easing: "cubic-bezier(.2,.8,.2,1)" },
+          );
+        }
+        animFrom = null;
+        renderCrumbs();
+        renderPanel();
+        renderStart();
+        document.querySelectorAll("[data-lens]").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.lens === state.lens)));
+      }
+
+      /* ---------- navigation ---------- */
+      const go = (path, lens = state.lens) => {
+        const hash = "#/" + [lens, ...path].join("/");
+        if (location.hash === hash) applyHash(true);
+        else location.hash = hash;
+      };
+      function activate(n, ev, kb) {
+        if (!enabled(n)) return;
+        if (ev && !kb && ev.currentTarget) {
+          const st = $("stage").getBoundingClientRect();
+          const r = ev.currentTarget.getBoundingClientRect();
+          animFrom = [((r.left + r.width / 2 - st.left) / st.width) * 100, ((r.top + r.height / 2 - st.top) / st.height) * 100];
+        }
+        if (n.kind === "pkg") {
+          const target = state.sel === n ? n.path.slice(0, -1) : n.path;
+          const hash = "#/" + [state.lens, ...target].join("/");
+          if (location.hash === hash) applyHash();
+          else location.hash = hash;
+          return;
+        }
+        go(n.path);
+      }
+      function applyHash(reveal = false) {
+        const parts = location.hash.replace(/^#\/?/, "").split("/").filter(Boolean);
+        const known = !!state.trees[parts[0]];
+        const lens = known ? parts[0] : state.lens;
+        const root = state.trees[lens];
+        let n = (known && nodeAt(root, parts.slice(1))) || root;
+        while (n.kind !== "root" && !enabled(n)) n = n.parent;
+        const prev = state.focus;
+        const prevLens = state.lens;
+        state.lens = lens;
+        state.sel = null;
+        if (n.kind === "pkg") {
+          state.sel = n;
+          n = n.parent;
+        }
+        state.focus = n;
+        render(prev && prevLens === lens ? Math.sign(n.path.length - prev.path.length) : 0);
+        renderList();
+        if (reveal && state.mode === "list") revealListTarget();
+      }
+      function up() {
+        if (state.sel) return go(state.focus.path);
+        if (state.focus.parent) go(state.focus.parent.path);
+      }
+
+      function renderCrumbs() {
+        const nav = $("crumbs");
+        nav.replaceChildren();
+        const chain = [];
+        for (let n = state.focus; n; n = n.parent) chain.unshift(n);
+        chain.forEach((n, i) => {
+          const last = i === chain.length - 1 && !state.sel;
+          nav.append(h("button", { type: "button", "aria-current": last ? "location" : null, onclick: () => !last && go(n.path) }, n.kind === "root" ? `Atlas · ${n.label}` : n.label));
+          if (i < chain.length - 1 || state.sel) nav.append(h("i", { "aria-hidden": "true" }, "›"));
+        });
+        if (state.sel) nav.append(h("button", { type: "button", "aria-current": "location" }, state.sel.label));
+      }
+
+      /* ---------- panel ---------- */
+      function progressBlock(n) {
+        const pct = n.total ? Math.round((n.live / n.total) * 100) : 0;
+        return h(
+          "div",
+          {},
+          h("p", { style: "margin-bottom:.4rem" }, `${n.live} von ${n.total} ${noun(n.total)} verfügbar · ${pct} %`),
+          h("div", { class: "meter", role: "img", "aria-label": `${pct} Prozent` }, h("i", { style: `width:${pct}%` })),
+        );
+      }
+      function renderPanel() {
+        const p = $("panel");
+        p.replaceChildren();
+        const n = state.sel ?? state.focus;
+        if (n.kind === "root") {
+          const schule = n.id === "schule";
+          p.append(
+            h("p", { class: "kicker" }, schule ? "Schulsicht" : "Weltwissen"),
+            h("h2", {}, schule ? "Nach Klasse und Fach" : "Nach Wissensgebiet"),
+            h("p", {}, schule
+              ? "Jede Insel ist eine Klassenstufe des bayerischen LehrplanPLUS. Darin liegen die Fächer, darin die Lernpakete je Schulart."
+              : "Jede Insel ist ein Wissensbereich. Hier siehst du ein Fach über alle Klassenstufen hinweg."),
+            h("ol", { class: "steps" },
+              h("li", {}, h("span", {}, h("b", {}, "Insel wählen. "), schule ? "Deine Klassenstufe." : "Deinen Wissensbereich.")),
+              h("li", {}, h("span", {}, h("b", {}, "Fach wählen. "), "Die Farbe zeigt das Fach.")),
+              h("li", {}, h("span", {}, h("b", {}, "Paket wählen. "), "Farbige Felder sind live, graue folgen bis Ende 2026.")),
+            ),
+            progressBlock(n),
+          );
+          return;
+        }
+        const kicker = { island: n.parent.id === "schule" ? "Klassenstufe" : "Wissensbereich", fach: "Fach", pkg: "Lernpaket" }[n.kind];
+        const crumbs = [];
+        for (let a = n.parent; a && a.kind !== "root"; a = a.parent) crumbs.unshift(a.label);
+        p.append(
+          h("div", { style: "display:flex;gap:1rem;align-items:center" },
+            h("div", { class: "emblem", style: `--h:${n.hue}`, "aria-hidden": "true" }, n.glyph),
+            h("div", {}, h("p", { class: "kicker" }, kicker), crumbs.length ? h("p", { style: "font-size:.85rem" }, crumbs.join(" › ")) : null),
+          ),
+        );
+        if (n.kind === "pkg") {
+          const k = n.pkg;
+          p.append(
+            h("h2", {}, k.title),
+            h("p", {}, k.desc),
+            h("dl", { class: "facts" },
+              h("dt", {}, "Lektionen"), h("dd", {}, String(k.lessons)),
+              h("dt", {}, "Karten"), h("dd", {}, `${k.cards} in ZAM`),
+              k.school ? [h("dt", {}, "Schulart"), h("dd", {}, schulName(k.school))] : null,
+              h("dt", {}, "Klasse"), h("dd", {}, k.grade ? String(k.grade) : "jahrgangsübergreifend"),
+              k.zweige ? [h("dt", {}, "Zweige"), h("dd", {}, k.zweige)] : null,
+              h("dt", {}, "Sprache"), h("dd", {}, k.lang.map((l) => l.toUpperCase()).join(" · ")),
+            ),
+            h("p", { class: "kicker" }, "Themen"),
+            h("ul", { class: "tags" }, k.gebiete.map((t) => h("li", {}, t))),
+            h("a", { class: "cta", href: `${k.app}/` }, "Paket öffnen →"),
+          );
+          return;
+        }
+        p.append(h("h2", {}, n.label), progressBlock(n));
+        p.append(
+          h("ul", { class: "tags", "aria-label": "Inhalt" },
+            visible(n).map((c) => {
+              const txt = `${c.label}${c.kind === "pkg" ? "" : ` · ${c.live}/${c.total}`}`;
+              return enabled(c)
+                ? h("li", {}, h("button", { type: "button", onclick: () => go(c.path) }, txt))
+                : h("li", { class: "off", title: "noch nicht verfügbar" }, txt);
+            }),
+          ),
+        );
+        if (n.kind === "island" && state.lens === "schule" && n.grade)
+          p.append(
+            h("button", { class: "cta alt", type: "button", onclick: () => setKlasse(state.klasse === n.grade ? null : n.grade) },
+              state.klasse === n.grade ? "★ Das ist mein Jahrgang" : "Als meinen Jahrgang merken"),
+          );
+      }
+
+      /* ---------- hero / start ---------- */
+      function renderStats() {
+        const lessons = D.pakete.reduce((a, p) => a + p.lessons, 0);
+        const cards = D.pakete.reduce((a, p) => a + p.cards, 0);
+        $("stats").replaceChildren(
+          ...[[D.pakete.length, "Lernpakete live"], [lessons, "Lektionen"], [cards, "ZAM-Karten"]].map(([v, l]) =>
+            h("div", { class: "stat" }, h("b", {}, String(v)), h("span", {}, l)),
+          ),
+        );
+        $("goal").textContent = D.goal;
+      }
+      function setKlasse(g) {
+        state.klasse = g;
+        store.set("klasse", g ?? "");
+        render();
+      }
+      function renderStart() {
+        const c = $("klassenchips");
+        c.replaceChildren();
+        for (let g = 5; g <= 13; g++) {
+          const isl = state.trees.schule.children.find((i) => i.grade === g);
+          const on = enabled(isl);
+          c.append(
+            h("button", {
+              class: "chip",
+              type: "button",
+              disabled: !on,
+              title: on ? null : "noch nicht verfügbar",
+              "aria-pressed": String(state.klasse === g),
+              onclick: () => {
+                state.klasse = g;
+                store.set("klasse", g);
+                go([`k${g}`], "schule");
+                if (state.mode === "map") $("atlas").scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth" });
+              },
+            }, `Klasse ${g}`),
+          );
+        }
+        const isl = state.trees.schule.children.find((i) => i.grade === state.klasse);
+        $("startnote").textContent = isl
+          ? `Klasse ${isl.grade}: ${isl.live} von ${isl.total} ${noun(isl.total)} verfügbar.`
+          : "Wähle deinen Jahrgang. Graue Klassen folgen bis Ende 2026.";
+      }
+
+      /* ---------- list ---------- */
+      function renderList() {
+        const o = $("outline");
+        o.replaceChildren();
+        const current = state.sel ?? state.focus;
+        const currentAttrs = (n) => n === current ? { "aria-current": "location", ...(n.kind === "fach" ? { tabindex: -1 } : {}) } : {};
+        for (const isl of visible(state.trees[state.lens])) {
+          const d = h("details", { class: enabled(isl) ? "" : "off", open: isl.id === current.path[0] || isl.grade === state.klasse || null });
+          d.append(h("summary", currentAttrs(isl), isl.label, h("small", {}, enabled(isl) ? `${isl.live}/${isl.total}` : "noch nicht verfügbar")));
+          const ul = h("ul");
+          for (const f of visible(isl)) {
+            ul.append(h("li", { class: `fach${enabled(f) ? "" : " off"}`, style: `--h:${f.hue}`, ...currentAttrs(f) }, f.label, h("small", { style: "font-weight:400" }, `${f.live}/${f.total}`)));
+            for (const k of visible(f))
+              ul.append(h("li", { class: k.planned ? "planned" : "" }, k.planned ? `${k.label} (noch nicht verfügbar)` : h("a", { href: `${k.pkg.app}/`, ...currentAttrs(k) }, k.label)));
+          }
+          d.append(ul);
+          o.append(d);
+        }
+      }
+      function revealListTarget() {
+        const target = $("outline").querySelector('[aria-current="location"]');
+        target?.focus({ preventScroll: true });
+        target?.scrollIntoView({ block: "nearest", behavior: reduceMotion ? "auto" : "smooth" });
+      }
+      function setMode(m) {
+        state.mode = m;
+        $("board").hidden = m !== "map";
+        $("crumbs").hidden = m !== "map";
+        $("outline").hidden = m !== "list";
+        document.querySelectorAll("[data-mode]").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.mode === m)));
+      }
+
+      /* ---------- search (only available content) ---------- */
+      function search(q) {
+        const res = $("results");
+        res.replaceChildren();
+        q = q.trim().toLowerCase();
+        if (!q) return (res.hidden = true);
+        const hits = [];
+        const walk = (n) => {
+          if (n.kind !== "root" && enabled(n)) {
+            const hay = [n.label, n.pkg?.desc, ...(n.pkg?.gebiete ?? [])].filter(Boolean).join(" ").toLowerCase();
+            if (hay.includes(q)) hits.push(n);
+          }
+          n.children?.forEach(walk);
+        };
+        walk(state.trees[state.lens]);
+        hits.slice(0, 8).forEach((n) => {
+          const where = [];
+          for (let a = n.parent; a && a.kind !== "root"; a = a.parent) where.unshift(a.label);
+          res.append(
+            h("li", {}, h("button", { type: "button", onclick: () => { go(n.path); res.hidden = true; $("q").value = ""; } }, n.label, " ", h("small", {}, where.join(" › ")))),
+          );
+        });
+        if (!res.children.length) res.append(h("li", {}, h("small", { style: "padding:.5rem .7rem;display:block" }, "Keine Treffer in verfügbaren Paketen")));
+        res.hidden = false;
+      }
+
+      /* ---------- coverage matrix ---------- */
+      function renderMatrix() {
+        $("schulart").replaceChildren(
+          ...D.schulen.map((x) =>
+            h("button", { type: "button", "aria-pressed": String(state.schulart === x.id), onclick: () => { state.schulart = x.id; store.set("schulart", x.id); renderMatrix(); } }, x.name),
+          ),
+        );
+        const sch = D.schulen.find((x) => x.id === state.schulart);
+        const tbl = $("matrix");
+        tbl.replaceChildren();
+        const grades = [5, 6, 7, 8, 9, 10, 11, 12, 13];
+        tbl.append(h("thead", {}, h("tr", {}, h("th", {}, h("span", { class: "sr" }, "Fach")), grades.map((g) => h("th", { scope: "col" }, `Kl. ${g}`)))));
+        const body = h("tbody");
+        let live = 0, total = 0;
+        for (const f of D.faecher) {
+          const tr = h("tr", {}, h("th", { scope: "row" }, f.name));
+          for (const g of grades) {
+            if (!(g >= sch.from && g <= sch.to && g >= f.from)) {
+              tr.append(h("td", {}, h("span", { class: "na", "aria-label": "nicht vorgesehen" }, "·")));
+              continue;
+            }
+            const p = D.pakete.find((x) => x.fach === f.id && x.grade === g && x.school === sch.id);
+            total++;
+            if (p) live++;
+            const label = `${f.name} Klasse ${g}, ${sch.name}: ${p ? "verfügbar" : "noch nicht verfügbar"}`;
+            tr.append(
+              h("td", {}, p
+                ? h("button", { class: "cell", type: "button", style: `--h:${f.hue}`, title: label, "aria-label": label, onclick: () => { go([`k${g}`, f.id, p.id], "schule"); if (state.mode === "map") $("atlas").scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth" }); } }, "●")
+                : h("span", { class: "cell", role: "img", "aria-label": label, title: "noch nicht verfügbar" }, "")),
+            );
+          }
+          body.append(tr);
+        }
+        tbl.append(h("caption", { class: "sr" }, `Abdeckung ${sch.name}: ${live} von ${total} Feldern verfügbar`), body);
+      }
+
+      /* ---------- boot ---------- */
+      async function boot() {
+        try {
+          D = await (await fetch("academy.json")).json();
+        } catch {
+          $("panel").textContent = "Die Paketliste konnte nicht geladen werden.";
+          return;
+        }
+        buildTrees();
+        renderStats();
+        renderMatrix();
+        state.focus = state.trees.schule;
+        document.querySelectorAll("[data-lens]").forEach((b) => b.addEventListener("click", () => go([], b.dataset.lens)));
+        document.querySelectorAll("[data-mode]").forEach((b) => b.addEventListener("click", () => setMode(b.dataset.mode)));
+        $("showplanned").addEventListener("change", (e) => {
+          state.planned = e.target.checked;
+          applyHash();
+        });
+        $("up").addEventListener("click", up);
+        $("q").addEventListener("input", (e) => search(e.target.value));
+        document.addEventListener("click", (e) => {
+          if (!e.target.closest(".search")) $("results").hidden = true;
+        });
+        document.addEventListener("keydown", (e) => {
+          if (e.key !== "Escape") return;
+          if (!$("results").hidden) return ($("results").hidden = true);
+          up();
+        });
+        addEventListener("hashchange", () => applyHash(true));
+        applyHash();
+      }
+      boot();
+    </script>
   </body>
 </html>
