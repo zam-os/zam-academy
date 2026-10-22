@@ -54,8 +54,8 @@ describe("labs", () => {
         expect(view.note.length).toBeGreaterThan(20);
       }
     });
-    it(`${def.kind}: not every assignment is reached at the start`, () => {
-      expect(goalsReached(def, initialState(def)).length).toBeLessThan(def.goals.length);
+    it(`${def.kind}: no assignment is reached before the learner moves a control`, () => {
+      expect(goalsReached(def, initialState(def))).toEqual([]);
     });
   }
   it("clamps to range and grid", () => {

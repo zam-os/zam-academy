@@ -98,6 +98,10 @@ export interface Lesson {
   labGoals?: string[];
   practice?: PracticeKind;
   optional?: boolean;
+  /** Set by the curriculum index: both Wahlpflichtfächergruppen share one Fachlehrplan. */
+  tracks?: Array<"I" | "III">;
+  /** Set by the curriculum index, for example "WR9 LB 4.3 (I/III): Strafrecht". */
+  lehrplan?: string;
 }
 
 export interface NumericField {

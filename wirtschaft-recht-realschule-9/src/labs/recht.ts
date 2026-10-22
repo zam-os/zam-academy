@@ -88,7 +88,7 @@ export const GESCHAEFTSFAEHIGKEIT: LabDef = {
     {
       id: "schwebend",
       text: "Lass eine Zwölfjährige einen Raten- oder Handyvertrag ohne Zustimmung der Eltern schließen: Er ist schwebend unwirksam.",
-      test: (s) => isMinor(s) && needsConsent(s) && s.consent === 0,
+      test: (s) => s.age === 12 && needsConsent(s) && s.consent === 0,
     },
     {
       id: "genehmigung",
@@ -276,6 +276,7 @@ const OUTCOME = {
   tatbestand: [
     "Ein Fundstück wird gemeldet. Keine strafbare Handlung beschrieben.",
     "Eine Person wird absichtlich verletzt (Körperverletzung, § 223 StGB).",
+    "Noch nicht gewählt: Was ist geschehen?",
   ],
   rechtfertigung: [
     "Kein Rechtfertigungsgrund",
@@ -305,7 +306,7 @@ export const STRAFBARKEIT: LabDef = {
       key: "t",
       label: "Tatbestand",
       options: OUTCOME.tatbestand.map((label, value) => ({ value, label })),
-      value: 1,
+      value: 2,
     },
     {
       key: "r",
@@ -352,20 +353,32 @@ export const STRAFBARKEIT: LabDef = {
     const c = chain(s);
     return {
       figure: flow(
-        step(c.tatbestand ? "ok" : "no", "1 · Tatbestand erfüllt?", OUTCOME.tatbestand[s.t]),
+        step(c.tatbestand ? "ok" : s.t === 2 ? "skip" : "no", "1 · Tatbestand erfüllt?", OUTCOME.tatbestand[s.t]),
         step(
           !c.tatbestand ? "skip" : c.rechtswidrig ? "ok" : "no",
           "2 · Rechtswidrig?",
-          !c.tatbestand ? "Entfällt: Ohne Tatbestand wird nicht weiter geprüft." : OUTCOME.rechtfertigung[s.r],
+          !c.tatbestand
+            ? s.t === 2
+              ? "Folgt, sobald du gewählt hast, was geschehen ist."
+              : "Entfällt: Ohne Tatbestand wird nicht weiter geprüft."
+            : OUTCOME.rechtfertigung[s.r],
         ),
         step(
           !c.rechtswidrig ? "skip" : c.schuldhaft ? "ok" : "no",
           "3 · Schuldhaft?",
-          !c.rechtswidrig ? "Entfällt: Eine gerechtfertigte Tat ist nicht rechtswidrig." : OUTCOME.schuld[s.s],
+          !c.rechtswidrig
+            ? s.t === 2
+              ? "Folgt, sobald du gewählt hast, was geschehen ist."
+              : s.t === 0
+                ? "Entfällt: Ohne Tatbestand wird nicht weiter geprüft."
+                : "Entfällt: Eine gerechtfertigte Tat ist nicht rechtswidrig."
+            : OUTCOME.schuld[s.s],
         ),
-        step(c.schuldhaft ? "no" : "ok", c.schuldhaft ? "Ergebnis: strafbar" : "Ergebnis: nicht strafbar", c.schuldhaft ? "Alle drei Voraussetzungen liegen vor. Das Gericht bestimmt die Rechtsfolge." : "Mindestens eine Voraussetzung fehlt, deshalb gibt es keine Strafe."),
+        s.t === 2
+          ? step("skip", "Ergebnis: noch offen", "Wähle zuerst, was geschehen ist. Dann prüfst du die drei Stufen der Reihe nach.")
+          : step(c.schuldhaft ? "no" : "ok", c.schuldhaft ? "Ergebnis: strafbar" : "Ergebnis: nicht strafbar", c.schuldhaft ? "Alle drei Voraussetzungen liegen vor. Das Gericht bestimmt die Rechtsfolge." : "Mindestens eine Voraussetzung fehlt, deshalb gibt es keine Strafe."),
       ),
-      readouts: [["Strafbar?", c.schuldhaft ? "ja" : "nein"]],
+      readouts: [["Strafbar?", s.t === 2 ? "noch offen" : c.schuldhaft ? "ja" : "nein"]],
       note: "Die Prüfung läuft immer in dieser Reihenfolge. Fehlt eine Stufe, endet sie dort.",
     };
   },
@@ -436,27 +449,27 @@ export const JUGENDSTRAFRECHT: LabDef = {
     {
       id: "kind",
       text: "Zeige, dass ein 13-Jähriger nicht bestraft werden kann.",
-      test: (s) => s.age < 14,
+      test: (s) => s.age === 13,
     },
     {
       id: "jugendlicher",
       text: "Zeige einen 15-Jährigen, der nach Jugendstrafrecht beurteilt wird.",
-      test: (s) => s.age >= 14 && s.age < 18 && jugend(s).jgg,
+      test: (s) => s.age === 15 && s.dev === 0,
     },
     {
       id: "nicht-reif",
       text: "Zeige einen 17-Jährigen, der nicht verantwortlich ist, weil er nicht reif genug ist.",
-      test: (s) => s.age >= 14 && s.age < 18 && s.dev === 1,
+      test: (s) => s.age === 17 && s.dev === 1,
     },
     {
       id: "heranwachsend-jgg",
       text: "Zeige einen 19-Jährigen, auf den wegen Reifeverzögerung Jugendstrafrecht angewendet wird.",
-      test: (s) => s.age >= 18 && s.age < 21 && jugend(s).jgg,
+      test: (s) => s.age === 19 && s.dev === 1,
     },
     {
       id: "heranwachsend-stgb",
       text: "Zeige einen 19-Jährigen, für den das Erwachsenenstrafrecht gilt.",
-      test: (s) => s.age >= 18 && s.age < 21 && !jugend(s).jgg,
+      test: (s) => s.age === 19 && s.dev === 0,
     },
   ],
   witness: {

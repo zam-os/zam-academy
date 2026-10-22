@@ -5,51 +5,427 @@
   "curriculum_text": "Internet Archive, Schnappschuss vom 9. Juni 2026 (die Originalseite war beim Abgleich von der Arbeitsumgebung aus nicht erreichbar)",
   "school_type": "realschule",
   "grade": 9,
-  "tracks": ["I", "III"],
+  "tracks": [
+    "I",
+    "III"
+  ],
   "subject": "wirtschaft-und-recht",
+  "core_lessons": 46,
+  "optional_lessons": [
+    "en-work-unemployment",
+    "en-job-application",
+    "en-supply-demand",
+    "en-social-systems"
+  ],
   "scope_note": "Wirtschaft und Recht 9 gilt für die Wahlpflichtfächergruppen I und III. Gruppe II lernt in Klasse 9 BwR. Die praxisorientierte Maßnahme (Experteninterview, Gerichtsbesuch) bleibt eine eigene Leistung außerhalb der App.",
   "rows": [
-    { "unit": "1.1", "competence": "Einflussgrößen auf Arbeit und Berufsleben analysieren und strukturiert darstellen", "lessons": ["ab-arbeit"] },
-    { "unit": "1.1", "competence": "Den Arbeitsmarkt über Angebot und Nachfrage charakterisieren, Besonderheiten und Entwicklungstendenzen beurteilen", "lessons": ["ab-arbeitsmarkt"] },
-    { "unit": "1.1", "competence": "Formen der Arbeitslosigkeit nach Ursachen unterscheiden, Gegenmaßnahmen bewerten, Auswirkungen für Betroffene diskutieren", "lessons": ["ab-arbeitslosigkeit"] },
-    { "unit": "1.1", "competence": "Schwerpunktaktivitäten der Bundesagentur für Arbeit darstellen und das regionale Angebot für die Berufsentscheidung nutzen", "lessons": ["ab-ba"] },
-    { "unit": "1.2", "competence": "Aus- und Weiterbildungsmöglichkeiten nach Kriterien bewerten", "lessons": ["bw-wege"] },
-    { "unit": "1.2", "competence": "Eine kriterienorientierte Berufsentscheidung vorbereiten, eigene Interessen und Kompetenzen reflektieren, Entwicklungsziele formulieren", "lessons": ["bw-entscheidung"] },
-    { "unit": "1.2", "competence": "Bedeutung von Praktikum und Bewerbung herausstellen und Bewerbungsbestandteile verfassen", "lessons": ["bw-bewerbung"] },
-    { "unit": "1.2", "competence": "Stärken und Schwächen anhand von Auswahltests, Vorstellungsgespräch und Assessment-Center realistisch einschätzen, Schlüsselqualifikationen und Werthaltungen reflektieren", "lessons": ["bw-auswahl"] },
-    { "unit": "1.2", "competence": "Rechte und Pflichten beim Berufsausbildungsvertrag charakterisieren und Lösungsstrategien für Probleme in der Ausbildung bewerten", "lessons": ["bw-ausbildungsvertrag"] },
-    { "unit": "1.2", "competence": "Praxisbezogene Fälle zum Jugendarbeitsschutzgesetz lösen und die Schutzbedürftigkeit berufstätiger Jugendlicher begründen", "lessons": ["bw-jarbschg"] },
-    { "unit": "2.1", "competence": "Das ökonomische Prinzip charakterisieren und auf das eigene Konsumverhalten übertragen", "lessons": ["wh-prinzip"] },
-    { "unit": "2.1", "competence": "Einflussfaktoren auf Angebot und Nachfrage erläutern und auf Kauf- und Verkaufssituationen des Alltags übertragen", "lessons": ["wh-angebot-nachfrage"] },
-    { "unit": "2.1", "competence": "Angebot und Nachfrage grafisch darstellen, Gleichgewichtspreis und -menge ableiten und ihre volkswirtschaftliche Bedeutung beurteilen", "lessons": ["wh-gleichgewicht", "wh-verschiebung"] },
-    { "unit": "2.1", "competence": "Wechselbeziehungen im einfachen Wirtschaftskreislauf darstellen, Rückschlüsse ziehen und Modelle kritisch beurteilen", "lessons": ["wh-kreislauf"] },
-    { "unit": "2.2", "competence": "Soziale und Freie Marktwirtschaft abgrenzen, Voraussetzungen und Ziele der Sozialen Marktwirtschaft formulieren", "lessons": ["sm-ordnungen", "sm-ziele"] },
-    { "unit": "2.2", "competence": "Freiheitliche Bausteine beurteilen, Chancen und Risiken analysieren und die Notwendigkeit nachhaltigen Wirtschaftens begründen", "lessons": ["sm-freiheit"] },
-    { "unit": "2.2", "competence": "Bedeutung der sozialen Sicherung und die Funktion der einzelnen Sozialversicherungen herausstellen", "lessons": ["sm-sozial"] },
-    { "unit": "2.2", "competence": "Am Beispiel der Sozialversicherungen das Solidarprinzip, Grenzen der Belastbarkeit und die Notwendigkeit privater Altersvorsorge erläutern", "lessons": ["sm-solidar"] },
-    { "unit": "3", "competence": "Quellen für Verbraucherinformationen kritisch bewerten und das Konsumverhalten an Nachhaltigkeit ausrichten", "lessons": ["vs-information", "vs-nachhaltig"] },
-    { "unit": "3", "competence": "Angebote unabhängiger Verbraucherberatung und Bestimmungen zum Verbraucherschutz als Informationsquellen nutzen", "lessons": ["vs-schutz"] },
-    { "unit": "3", "competence": "Möglichkeiten der Kapitalanlage und Kapitalbeschaffung analysieren, Gefahren der Überschuldung darstellen und Maßnahmen nennen", "lessons": ["vs-geldanlage", "vs-kredit", "vs-ueberschuldung"] },
-    { "unit": "3", "competence": "Geeignete Zahlungsmöglichkeiten begründet auswählen und Chancen und Risiken moderner Medien berücksichtigen", "lessons": ["vs-zahlung"] },
-    { "unit": "3", "competence": "Möglichkeiten und Gefahren des E-Commerce beurteilen", "lessons": ["vs-ecommerce"] },
-    { "unit": "3", "competence": "Social-Media-Angebote rechtlich und ökonomisch bewerten und sensibel mit persönlichen Daten umgehen", "lessons": ["vs-socialmedia"] },
-    { "unit": "4.1", "competence": "Ordnungs- und Schutzfunktion des Rechts begründen und Verhaltensregeln auf das Zusammenleben übertragen", "lessons": ["re-ordnung"] },
-    { "unit": "4.1", "competence": "Gesetzliche Regelungen für Lebensaltersstufen begründen und einfache Rechtsfälle mithilfe von Gesetzestexten lösen", "lessons": ["re-lebensalter", "re-gesetz"] },
-    { "unit": "4.1", "competence": "Die besondere Schutzbedürftigkeit von Kindern und Jugendlichen am Jugendschutzgesetz konkretisieren", "lessons": ["re-jugendschutz"] },
-    { "unit": "4.2", "competence": "Eigentum und Besitz anhand des BGB abgrenzen", "lessons": ["ve-eigentum"] },
-    { "unit": "4.2", "competence": "Das Zustandekommen eines Kaufvertrags charakterisieren und Verpflichtungs- von Erfüllungsgeschäft unterscheiden", "lessons": ["ve-kaufvertrag", "ve-erfuellung"] },
-    { "unit": "4.2", "competence": "Den Leistungsort bestimmen und den Eigentumsvorbehalt zum Schutz des Verkäufers ableiten", "lessons": ["ve-leistungsort"] },
-    { "unit": "4.2", "competence": "Pflichtverletzungen bei Kaufverträgen darstellen und Konsequenzen für die Vertragspartner und das eigene Handeln ableiten", "lessons": ["ve-verzug", "ve-sachmangel"] },
-    { "unit": "4.3", "competence": "Das Strafmonopol des Staates begründen und den Zweck staatlichen Strafens beurteilen", "lessons": ["st-strafmonopol"] },
-    { "unit": "4.3", "competence": "Tatbestandsmäßigkeit, Rechtswidrigkeit und Schuld als Voraussetzungen der Strafbarkeit prüfen", "lessons": ["st-tatbestand"] },
-    { "unit": "4.3", "competence": "Strafbaren Handlungen Rechtsfolgen zuordnen, Wirkung und Verhältnismäßigkeit diskutieren, zivilrechtliche Folgen kennen", "lessons": ["st-folgen", "st-zivilfolgen"] },
-    { "unit": "4.3", "competence": "Phasen eines Strafverfahrens und die Aufgaben der Beteiligten beschreiben und Grundsätze der Rechtsstaatlichkeit belegen", "lessons": ["st-verfahren"] },
-    { "unit": "4.3", "competence": "Straftaten und Ordnungswidrigkeiten anhand einfacher Fälle abgrenzen", "lessons": ["st-ordnungswidrigkeit"] },
-    { "unit": "4.3", "competence": "Besonderheiten des Jugendstrafrechts bewerten und begründen", "lessons": ["st-jugend"] }
+    {
+      "lb": 1,
+      "unit": "1.1",
+      "track": "I, III",
+      "competence": "Einflussgrößen auf Arbeit und Berufsleben analysieren und strukturiert darstellen",
+      "lessons": [
+        "ab-arbeit"
+      ],
+      "evidence": "Erklärung, Schnellcheck, Sortieren oder Ordnen, Fall in Schritten, eigene Begründung"
+    },
+    {
+      "lb": 1,
+      "unit": "1.1",
+      "track": "I, III",
+      "competence": "Den Arbeitsmarkt über Angebot und Nachfrage charakterisieren, Besonderheiten und Entwicklungstendenzen beurteilen",
+      "lessons": [
+        "ab-arbeitsmarkt"
+      ],
+      "evidence": "Erklärung, Schnellcheck, Labor mit Aufträgen, Sortieren oder Ordnen, Fall in Schritten, eigene Begründung"
+    },
+    {
+      "lb": 1,
+      "unit": "1.1",
+      "track": "I, III",
+      "competence": "Formen der Arbeitslosigkeit nach Ursachen unterscheiden, Gegenmaßnahmen bewerten, Auswirkungen für Betroffene diskutieren",
+      "lessons": [
+        "ab-arbeitslosigkeit"
+      ],
+      "evidence": "Erklärung, Schnellcheck, Sortieren oder Ordnen, Fall in Schritten, eigene Begründung"
+    },
+    {
+      "lb": 1,
+      "unit": "1.1",
+      "track": "I, III",
+      "competence": "Schwerpunktaktivitäten der Bundesagentur für Arbeit darstellen und das regionale Angebot für die Berufsentscheidung nutzen",
+      "lessons": [
+        "ab-ba"
+      ],
+      "evidence": "Erklärung, Schnellcheck, Sortieren oder Ordnen, Fall in Schritten, eigene Begründung"
+    },
+    {
+      "lb": 1,
+      "unit": "1.2",
+      "track": "I, III",
+      "competence": "Aus- und Weiterbildungsmöglichkeiten nach Kriterien bewerten",
+      "lessons": [
+        "bw-wege"
+      ],
+      "evidence": "Erklärung, Schnellcheck, Sortieren oder Ordnen, Fall in Schritten, eigene Begründung"
+    },
+    {
+      "lb": 1,
+      "unit": "1.2",
+      "track": "I, III",
+      "competence": "Eine kriterienorientierte Berufsentscheidung vorbereiten, eigene Interessen und Kompetenzen reflektieren, Entwicklungsziele formulieren",
+      "lessons": [
+        "bw-entscheidung"
+      ],
+      "evidence": "Erklärung, Schnellcheck, Labor mit Aufträgen, Sortieren oder Ordnen, Fall in Schritten, eigene Begründung"
+    },
+    {
+      "lb": 1,
+      "unit": "1.2",
+      "track": "I, III",
+      "competence": "Bedeutung von Praktikum und Bewerbung herausstellen und Bewerbungsbestandteile verfassen",
+      "lessons": [
+        "bw-bewerbung"
+      ],
+      "evidence": "Erklärung, Schnellcheck, Sortieren oder Ordnen, Fall in Schritten, eigene Begründung"
+    },
+    {
+      "lb": 1,
+      "unit": "1.2",
+      "track": "I, III",
+      "competence": "Stärken und Schwächen anhand von Auswahltests, Vorstellungsgespräch und Assessment-Center realistisch einschätzen, Schlüsselqualifikationen und Werthaltungen reflektieren",
+      "lessons": [
+        "bw-auswahl"
+      ],
+      "evidence": "Erklärung, Schnellcheck, Sortieren oder Ordnen, Fall in Schritten, eigene Begründung"
+    },
+    {
+      "lb": 1,
+      "unit": "1.2",
+      "track": "I, III",
+      "competence": "Rechte und Pflichten beim Berufsausbildungsvertrag charakterisieren und Lösungsstrategien für Probleme in der Ausbildung bewerten",
+      "lessons": [
+        "bw-ausbildungsvertrag"
+      ],
+      "evidence": "Erklärung, Schnellcheck, Sortieren oder Ordnen, Fall in Schritten, eigene Begründung"
+    },
+    {
+      "lb": 1,
+      "unit": "1.2",
+      "track": "I, III",
+      "competence": "Praxisbezogene Fälle zum Jugendarbeitsschutzgesetz lösen und die Schutzbedürftigkeit berufstätiger Jugendlicher begründen",
+      "lessons": [
+        "bw-jarbschg"
+      ],
+      "evidence": "Erklärung, Schnellcheck, Sortieren oder Ordnen, Fall in Schritten, eigene Begründung"
+    },
+    {
+      "lb": 2,
+      "unit": "2.1",
+      "track": "I, III",
+      "competence": "Das ökonomische Prinzip charakterisieren und auf das eigene Konsumverhalten übertragen",
+      "lessons": [
+        "wh-prinzip"
+      ],
+      "evidence": "Erklärung, Schnellcheck, Sortieren oder Ordnen, Fall in Schritten, eigene Begründung"
+    },
+    {
+      "lb": 2,
+      "unit": "2.1",
+      "track": "I, III",
+      "competence": "Einflussfaktoren auf Angebot und Nachfrage erläutern und auf Kauf- und Verkaufssituationen des Alltags übertragen",
+      "lessons": [
+        "wh-angebot-nachfrage"
+      ],
+      "evidence": "Erklärung, Schnellcheck, Sortieren oder Ordnen, Fall in Schritten, eigene Begründung"
+    },
+    {
+      "lb": 2,
+      "unit": "2.1",
+      "track": "I, III",
+      "competence": "Angebot und Nachfrage grafisch darstellen, Gleichgewichtspreis und -menge ableiten und ihre volkswirtschaftliche Bedeutung beurteilen",
+      "lessons": [
+        "wh-gleichgewicht",
+        "wh-verschiebung"
+      ],
+      "evidence": "Erklärung, Schnellcheck, Labor mit Aufträgen, Sortieren oder Ordnen, Fall in Schritten, Rechenaufgaben, eigene Begründung"
+    },
+    {
+      "lb": 2,
+      "unit": "2.1",
+      "track": "I, III",
+      "competence": "Wechselbeziehungen im einfachen Wirtschaftskreislauf darstellen, Rückschlüsse ziehen und Modelle kritisch beurteilen",
+      "lessons": [
+        "wh-kreislauf"
+      ],
+      "evidence": "Erklärung, Schnellcheck, Labor mit Aufträgen, Sortieren oder Ordnen, Fall in Schritten, eigene Begründung"
+    },
+    {
+      "lb": 2,
+      "unit": "2.2",
+      "track": "I, III",
+      "competence": "Soziale und Freie Marktwirtschaft abgrenzen, Voraussetzungen und Ziele der Sozialen Marktwirtschaft formulieren",
+      "lessons": [
+        "sm-ordnungen",
+        "sm-ziele"
+      ],
+      "evidence": "Erklärung, Schnellcheck, Sortieren oder Ordnen, Fall in Schritten, eigene Begründung"
+    },
+    {
+      "lb": 2,
+      "unit": "2.2",
+      "track": "I, III",
+      "competence": "Freiheitliche Bausteine beurteilen, Chancen und Risiken analysieren und die Notwendigkeit nachhaltigen Wirtschaftens begründen",
+      "lessons": [
+        "sm-freiheit"
+      ],
+      "evidence": "Erklärung, Schnellcheck, Sortieren oder Ordnen, Fall in Schritten, eigene Begründung"
+    },
+    {
+      "lb": 2,
+      "unit": "2.2",
+      "track": "I, III",
+      "competence": "Bedeutung der sozialen Sicherung und die Funktion der einzelnen Sozialversicherungen herausstellen",
+      "lessons": [
+        "sm-sozial"
+      ],
+      "evidence": "Erklärung, Schnellcheck, Sortieren oder Ordnen, Fall in Schritten, Rechenaufgaben, eigene Begründung"
+    },
+    {
+      "lb": 2,
+      "unit": "2.2",
+      "track": "I, III",
+      "competence": "Am Beispiel der Sozialversicherungen das Solidarprinzip, Grenzen der Belastbarkeit und die Notwendigkeit privater Altersvorsorge erläutern",
+      "lessons": [
+        "sm-solidar"
+      ],
+      "evidence": "Erklärung, Schnellcheck, Labor mit Aufträgen, Sortieren oder Ordnen, Fall in Schritten, eigene Begründung"
+    },
+    {
+      "lb": 3,
+      "unit": "3",
+      "track": "I, III",
+      "competence": "Quellen für Verbraucherinformationen kritisch bewerten und das Konsumverhalten an Nachhaltigkeit ausrichten",
+      "lessons": [
+        "vs-information",
+        "vs-nachhaltig"
+      ],
+      "evidence": "Erklärung, Schnellcheck, Sortieren oder Ordnen, Fall in Schritten, eigene Begründung"
+    },
+    {
+      "lb": 3,
+      "unit": "3",
+      "track": "I, III",
+      "competence": "Angebote unabhängiger Verbraucherberatung und Bestimmungen zum Verbraucherschutz als Informationsquellen nutzen",
+      "lessons": [
+        "vs-schutz"
+      ],
+      "evidence": "Erklärung, Schnellcheck, Sortieren oder Ordnen, Fall in Schritten, eigene Begründung"
+    },
+    {
+      "lb": 3,
+      "unit": "3",
+      "track": "I, III",
+      "competence": "Möglichkeiten der Kapitalanlage und Kapitalbeschaffung analysieren, Gefahren der Überschuldung darstellen und Maßnahmen nennen",
+      "lessons": [
+        "vs-geldanlage",
+        "vs-kredit",
+        "vs-ueberschuldung"
+      ],
+      "evidence": "Erklärung, Schnellcheck, Labor mit Aufträgen, Sortieren oder Ordnen, Fall in Schritten, Rechenaufgaben, eigene Begründung"
+    },
+    {
+      "lb": 3,
+      "unit": "3",
+      "track": "I, III",
+      "competence": "Geeignete Zahlungsmöglichkeiten begründet auswählen und Chancen und Risiken moderner Medien berücksichtigen",
+      "lessons": [
+        "vs-zahlung"
+      ],
+      "evidence": "Erklärung, Schnellcheck, Sortieren oder Ordnen, Fall in Schritten, eigene Begründung"
+    },
+    {
+      "lb": 3,
+      "unit": "3",
+      "track": "I, III",
+      "competence": "Möglichkeiten und Gefahren des E-Commerce beurteilen",
+      "lessons": [
+        "vs-ecommerce"
+      ],
+      "evidence": "Erklärung, Schnellcheck, Sortieren oder Ordnen, Fall in Schritten, eigene Begründung"
+    },
+    {
+      "lb": 3,
+      "unit": "3",
+      "track": "I, III",
+      "competence": "Social-Media-Angebote rechtlich und ökonomisch bewerten und sensibel mit persönlichen Daten umgehen",
+      "lessons": [
+        "vs-socialmedia"
+      ],
+      "evidence": "Erklärung, Schnellcheck, Sortieren oder Ordnen, Fall in Schritten, eigene Begründung"
+    },
+    {
+      "lb": 4,
+      "unit": "4.1",
+      "track": "I, III",
+      "competence": "Ordnungs- und Schutzfunktion des Rechts begründen und Verhaltensregeln auf das Zusammenleben übertragen",
+      "lessons": [
+        "re-ordnung"
+      ],
+      "evidence": "Erklärung, Schnellcheck, Sortieren oder Ordnen, Fall in Schritten, eigene Begründung"
+    },
+    {
+      "lb": 4,
+      "unit": "4.1",
+      "track": "I, III",
+      "competence": "Gesetzliche Regelungen für Lebensaltersstufen begründen und einfache Rechtsfälle mithilfe von Gesetzestexten lösen",
+      "lessons": [
+        "re-lebensalter",
+        "re-gesetz"
+      ],
+      "evidence": "Erklärung, Schnellcheck, Labor mit Aufträgen, Sortieren oder Ordnen, Fall in Schritten, eigene Begründung"
+    },
+    {
+      "lb": 4,
+      "unit": "4.1",
+      "track": "I, III",
+      "competence": "Die besondere Schutzbedürftigkeit von Kindern und Jugendlichen am Jugendschutzgesetz konkretisieren",
+      "lessons": [
+        "re-jugendschutz"
+      ],
+      "evidence": "Erklärung, Schnellcheck, Sortieren oder Ordnen, Fall in Schritten, eigene Begründung"
+    },
+    {
+      "lb": 4,
+      "unit": "4.2",
+      "track": "I, III",
+      "competence": "Eigentum und Besitz anhand des BGB abgrenzen",
+      "lessons": [
+        "ve-eigentum"
+      ],
+      "evidence": "Erklärung, Schnellcheck, Sortieren oder Ordnen, Fall in Schritten, eigene Begründung"
+    },
+    {
+      "lb": 4,
+      "unit": "4.2",
+      "track": "I, III",
+      "competence": "Das Zustandekommen eines Kaufvertrags charakterisieren und Verpflichtungs- von Erfüllungsgeschäft unterscheiden",
+      "lessons": [
+        "ve-kaufvertrag",
+        "ve-erfuellung"
+      ],
+      "evidence": "Erklärung, Schnellcheck, Labor mit Aufträgen, Sortieren oder Ordnen, Fall in Schritten, eigene Begründung"
+    },
+    {
+      "lb": 4,
+      "unit": "4.2",
+      "track": "I, III",
+      "competence": "Den Leistungsort bestimmen und den Eigentumsvorbehalt zum Schutz des Verkäufers ableiten",
+      "lessons": [
+        "ve-leistungsort"
+      ],
+      "evidence": "Erklärung, Schnellcheck, Labor mit Aufträgen, Sortieren oder Ordnen, Fall in Schritten, eigene Begründung"
+    },
+    {
+      "lb": 4,
+      "unit": "4.2",
+      "track": "I, III",
+      "competence": "Pflichtverletzungen bei Kaufverträgen darstellen und Konsequenzen für die Vertragspartner und das eigene Handeln ableiten",
+      "lessons": [
+        "ve-verzug",
+        "ve-sachmangel"
+      ],
+      "evidence": "Erklärung, Schnellcheck, Sortieren oder Ordnen, Fall in Schritten, Rechenaufgaben, eigene Begründung"
+    },
+    {
+      "lb": 4,
+      "unit": "4.3",
+      "track": "I, III",
+      "competence": "Das Strafmonopol des Staates begründen und den Zweck staatlichen Strafens beurteilen",
+      "lessons": [
+        "st-strafmonopol"
+      ],
+      "evidence": "Erklärung, Schnellcheck, Sortieren oder Ordnen, Fall in Schritten, eigene Begründung"
+    },
+    {
+      "lb": 4,
+      "unit": "4.3",
+      "track": "I, III",
+      "competence": "Tatbestandsmäßigkeit, Rechtswidrigkeit und Schuld als Voraussetzungen der Strafbarkeit prüfen",
+      "lessons": [
+        "st-tatbestand"
+      ],
+      "evidence": "Erklärung, Schnellcheck, Labor mit Aufträgen, Sortieren oder Ordnen, Fall in Schritten, eigene Begründung"
+    },
+    {
+      "lb": 4,
+      "unit": "4.3",
+      "track": "I, III",
+      "competence": "Strafbaren Handlungen Rechtsfolgen zuordnen, Wirkung und Verhältnismäßigkeit diskutieren, zivilrechtliche Folgen kennen",
+      "lessons": [
+        "st-folgen",
+        "st-zivilfolgen"
+      ],
+      "evidence": "Erklärung, Schnellcheck, Sortieren oder Ordnen, Fall in Schritten, eigene Begründung"
+    },
+    {
+      "lb": 4,
+      "unit": "4.3",
+      "track": "I, III",
+      "competence": "Phasen eines Strafverfahrens und die Aufgaben der Beteiligten beschreiben und Grundsätze der Rechtsstaatlichkeit belegen",
+      "lessons": [
+        "st-verfahren"
+      ],
+      "evidence": "Erklärung, Schnellcheck, Sortieren oder Ordnen, Fall in Schritten, eigene Begründung"
+    },
+    {
+      "lb": 4,
+      "unit": "4.3",
+      "track": "I, III",
+      "competence": "Straftaten und Ordnungswidrigkeiten anhand einfacher Fälle abgrenzen",
+      "lessons": [
+        "st-ordnungswidrigkeit"
+      ],
+      "evidence": "Erklärung, Schnellcheck, Sortieren oder Ordnen, Fall in Schritten, eigene Begründung"
+    },
+    {
+      "lb": 4,
+      "unit": "4.3",
+      "track": "I, III",
+      "competence": "Besonderheiten des Jugendstrafrechts bewerten und begründen",
+      "lessons": [
+        "st-jugend"
+      ],
+      "evidence": "Erklärung, Schnellcheck, Labor mit Aufträgen, Sortieren oder Ordnen, Fall in Schritten, eigene Begründung"
+    }
   ],
   "optional_rows": [
-    { "unit": "5", "competence": "Die englische Sprache zur authentischen Kommunikation über Arbeit, Beruf, Markt und soziale Sicherung einsetzen und die Fremdsprache als verbindendes Mittel in einer globalisierten Wirtschaft nutzen", "lessons": ["en-work-unemployment", "en-job-application", "en-supply-demand", "en-social-systems"] },
-    { "unit": "5", "competence": "Fachspezifisches Vokabular gezielt und reflektiert einsetzen und sprachliche Phänomene kritisch hinterfragen", "lessons": ["en-work-unemployment", "en-job-application", "en-supply-demand", "en-social-systems"] }
+    {
+      "lb": 5,
+      "unit": "5",
+      "track": "I, III",
+      "competence": "Die englische Sprache zur authentischen Kommunikation über Arbeit, Beruf, Markt und soziale Sicherung einsetzen und die Fremdsprache als verbindendes Mittel in einer globalisierten Wirtschaft nutzen",
+      "lessons": [
+        "en-work-unemployment",
+        "en-job-application",
+        "en-supply-demand",
+        "en-social-systems"
+      ],
+      "evidence": "Englische Erklärung mit Vokabelhilfe, Schnellcheck, Sortieren oder Ordnen, Fall in Schritten, eigene Begründung"
+    },
+    {
+      "lb": 5,
+      "unit": "5",
+      "track": "I, III",
+      "competence": "Fachspezifisches Vokabular gezielt und reflektiert einsetzen und sprachliche Phänomene kritisch hinterfragen",
+      "lessons": [
+        "en-work-unemployment",
+        "en-job-application",
+        "en-supply-demand",
+        "en-social-systems"
+      ],
+      "evidence": "Englische Erklärung mit Vokabelhilfe, Schnellcheck, Sortieren oder Ordnen, Fall in Schritten, eigene Begründung"
+    }
   ],
   "outside_app": [
     "Praxisorientierte Maßnahme (Experteninterview oder Gerichtsbesuch): eigene Leistung, in der App nur als Notiz dokumentierbar",

@@ -51,6 +51,14 @@ describe("lesson contract", () => {
       expect(!!l.optional).toBe(l.lb === 5);
     }
   });
+  it("names its Zweige and its place in the Fachlehrplan on every lesson", () => {
+    for (const l of LESSONS) {
+      expect(l.tracks, l.id).toEqual(["I", "III"]);
+      expect(l.lehrplan, l.id).toMatch(/^WR9 LB \d(\.\d)? \(I\/III\): .{8,}/);
+      if (l.lb !== 5) expect(l.lehrplan, l.id).toContain(`LB ${l.unit} `);
+      else expect(l.lehrplan, l.id).toContain("Bilingualer Sachfachunterricht");
+    }
+  });
   it("lists the lessons in Lernbereich order", () => {
     const order = LESSONS.map((l) => l.lb);
     expect(order).toEqual([...order].sort((a, b) => a - b));

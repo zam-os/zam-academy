@@ -15,7 +15,7 @@ export const GELDANLAGE: LabDef = {
     { key: "K", label: "Anlagebetrag", min: 500, max: 10000, step: 500, unit: "Euro", value: 2000 },
     { key: "p", label: "Zinssatz pro Jahr", min: 0, max: 6, step: 0.5, unit: "%", value: 2 },
     { key: "n", label: "Laufzeit", min: 1, max: 30, step: 1, unit: "Jahre", value: 10 },
-    { key: "i", label: "Inflation pro Jahr", min: 0, max: 4, step: 0.5, unit: "%", value: 2 },
+    { key: "i", label: "Inflation pro Jahr", min: 0, max: 4, step: 0.5, unit: "%", value: 0 },
   ],
   selects: [
     {
@@ -59,7 +59,7 @@ export const GELDANLAGE: LabDef = {
     const nominal = points(years.map((y) => [px(y), py(growth(s, y))] as [number, number]));
     const purchasing = points(years.map((y) => [px(y), py(real(s, y))] as [number, number]));
     const body = `<line class="lab-axis" x1="58" y1="262" x2="458" y2="262"/><line class="lab-axis" x1="58" y1="262" x2="58" y2="14"/>
-      <line class="lab-guide" x1="58" y1="${py(s.K)}" x2="458" y2="${py(s.K)}"/><text class="lab-text lab-text-muted" x="62" y="${py(s.K) - 5}">eingezahlt: ${fmt(s.K)} Euro</text>
+      <line class="lab-guide" x1="58" y1="${py(s.K)}" x2="458" y2="${py(s.K)}"/><text class="lab-text lab-text-muted" x="62" y="${py(s.K) + 15}">eingezahlt: ${fmt(s.K)} Euro</text>
       <polyline class="lab-line lab-line-supply" points="${nominal}"/><polyline class="lab-line lab-line-demand lab-dashed" points="${purchasing}"/>
       <text class="lab-text lab-text-supply" x="${px(s.n) - 4}" y="${py(end) - 8}" text-anchor="end">Kontostand</text>
       <text class="lab-text lab-text-demand" x="${px(s.n) - 4}" y="${py(real(s, s.n)) + 18}" text-anchor="end">Kaufkraft von heute</text>
@@ -132,8 +132,8 @@ export const KREDIT: LabDef = {
     const effective = ((1 + s.p / 1200) ** 12 - 1) * 100;
     const scale = Math.max(s.K + Math.max(cost, dispoCost), 1);
     const row = (y: number, label: string, extra: number, tone: string) => {
-      const base = (s.K / scale) * 380;
-      const more = (extra / scale) * 380;
+      const base = (s.K / scale) * 290;
+      const more = (extra / scale) * 290;
       return `<text class="lab-text" x="10" y="${y - 8}">${label}</text><rect class="lab-bar lab-bar-0" x="10" y="${y}" width="${base}" height="30" rx="5"/><rect class="lab-bar ${tone}" x="${10 + base}" y="${y}" width="${Math.max(more, 0)}" height="30" rx="5"/><text class="lab-text lab-text-strong" x="${14 + base + more}" y="${y + 20}">+ ${fmt(money(extra))} Euro Kosten</text>`;
     };
     const body = `${row(60, "Ratenkredit", cost, "lab-bar-1")}${row(140, "Gleiche Summe über den Dispo", dispoCost, "lab-bar-2")}<text class="lab-text lab-text-muted" x="10" y="220">Blau: geliehenes Geld · Farbig: Kosten des Kredits</text>`;

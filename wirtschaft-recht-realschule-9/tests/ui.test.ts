@@ -99,6 +99,12 @@ beforeAll(async () => {
   document.body.innerHTML = '<div id="app"></div>';
   window.location.hash = "#lesson=" + LESSONS[0].id;
   window.scrollTo = () => {};
+  // Newer Node versions define their own, unusable localStorage on globalThis, which jsdom then leaves alone.
+  Object.defineProperty(globalThis, "localStorage", {
+    value: window.localStorage,
+    configurable: true,
+    writable: true,
+  });
   await import("../src/main");
 });
 

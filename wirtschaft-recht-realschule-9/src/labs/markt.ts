@@ -55,7 +55,7 @@ function marketLab(kind: "markt" | "arbeitsmarkt", words: Words): LabDef {
         max: 13,
         step: 0.5,
         unit: words.priceUnit,
-        value: 9,
+        value: 7,
         show: (v) => words.show(v),
       },
     ],
@@ -216,7 +216,7 @@ export const KREISLAUF: LabDef = {
       .map((income, i) => {
         const h = (income / INCOME) * 70;
         const x = 150 + i * (barWidth + 4);
-        return `<rect class="lab-bar" x="${x}" y="${290 - h}" width="${barWidth}" height="${h}" rx="3"/><text class="lab-text" x="${x + barWidth / 2}" y="${284 - h}" text-anchor="middle">${fmt(Math.round(income))}</text>`;
+        return `<rect class="lab-bar" x="${x}" y="${330 - h}" width="${barWidth}" height="${h}" rx="3"/><text class="lab-text" x="${x + barWidth / 2}" y="${324 - h}" text-anchor="middle">${fmt(Math.round(income))}</text>`;
       })
       .join("");
     const body = `<defs><marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" class="lab-arrow-head"/></marker></defs>
@@ -225,11 +225,11 @@ export const KREISLAUF: LabDef = {
       <path class="lab-flow lab-flow-money" d="M180 100 L300 100" marker-end="url(#arr)"/><text class="lab-text" x="240" y="92" text-anchor="middle">Ausgaben (Geld)</text>
       <path class="lab-flow lab-flow-goods" d="M300 134 L180 134" marker-end="url(#arr)"/><text class="lab-text" x="240" y="152" text-anchor="middle">Güter und Dienste</text>
       <path class="lab-flow lab-flow-money" d="M375 86 C375 20 105 20 105 82" marker-end="url(#arr)"/><text class="lab-text" x="240" y="34" text-anchor="middle">Löhne und Gehälter (Einkommen)</text>
-      <path class="lab-flow lab-flow-goods" d="M105 148 C105 210 375 210 375 152" marker-end="url(#arr)"/><text class="lab-text" x="240" y="204" text-anchor="middle">Arbeitsleistung</text>
+      <path class="lab-flow lab-flow-goods" d="M105 148 C105 210 375 210 375 152" marker-end="url(#arr)"/><text class="lab-text" x="240" y="226" text-anchor="middle">Arbeitsleistung</text>
       ${leak > 1 ? `<path class="lab-flow lab-flow-leak" stroke-width="${3 + leak / 6}" d="M60 148 L60 186"/><text class="lab-text lab-text-leak" x="6" y="204">Gespart</text>` : ""}
-      <text class="lab-text" x="20" y="262">Einkommen je Runde</text><line class="lab-axis" x1="140" y1="290" x2="460" y2="290"/>${bars}`;
+      <text class="lab-text" x="20" y="302">Einkommen je Runde</text><line class="lab-axis" x1="140" y1="330" x2="460" y2="330"/>${bars}`;
     return {
-      figure: svg("Wirtschaftskreislauf mit Haushalten und Unternehmen", body),
+      figure: svg("Wirtschaftskreislauf mit Haushalten und Unternehmen", body, 480, 340),
       readouts: [
         ["Einkommen in der letzten Runde", `${fmt(Math.round(incomeIn(s, s.r)))}`],
         ["Umsatz der Unternehmen in der letzten Runde", `${fmt(Math.round(incomeIn(s, s.r) * (s.c / 100)))}`],

@@ -7,7 +7,7 @@ const KEYS = ["wS", "wE", "wZ", "wI"] as const;
 /** Learner-made ratings of three invented job profiles on a scale from 1 to 5, not statistics. */
 const JOBS = [
   { name: "Büro und Verwaltung", ratings: [4, 5, 2, 3] },
-  { name: "Technik und Handwerk", ratings: [3, 4, 5, 4] },
+  { name: "Technik und Handwerk", ratings: [3, 4, 5, 3] },
   { name: "Soziales und Gesundheit", ratings: [5, 2, 4, 4] },
 ] as const;
 
@@ -58,13 +58,13 @@ export const NUTZWERT: LabDef = {
     },
     {
       id: "ein-gewicht",
-      text: "Starte bei lauter Fünfen und ändere nur ein einziges Gewicht so, dass sich der Sieger ändert.",
-      test: (s) => KEYS.filter((key) => s[key] === 5).length === 3 && winner(s) !== 1,
+      text: "Alle Gewichte stehen auf 5, und zwei Berufsfelder liegen gleichauf vorn. Ändere nur ein einziges Gewicht so, dass ein eindeutiger Sieger entsteht.",
+      test: (s) => KEYS.filter((key) => s[key] === 5).length === 3 && winner(s) !== -1,
     },
   ],
   witness: {
     buero: { wS: 0, wE: 10, wZ: 0, wI: 0 },
-    technik: { wS: 5, wE: 5, wZ: 5, wI: 5 },
+    technik: { wS: 0, wE: 0, wZ: 10, wI: 0 },
     soziales: { wS: 10, wE: 0, wZ: 0, wI: 0 },
     "ein-gewicht": { wS: 10, wE: 5, wZ: 5, wI: 5 },
   },

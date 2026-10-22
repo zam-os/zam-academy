@@ -1,4 +1,4 @@
-import { defineConfig } from "vite";
+import { defineConfig } from "vitest/config";
 import { viteSingleFile } from "vite-plugin-singlefile";
 
 // Served at https://academy.zam-os.org/wirtschaft-recht-realschule-9/; the
@@ -10,6 +10,8 @@ export default defineConfig({
     port: 5192,
     open: false,
   },
+  // The jsdom file starts slowly; with five workers at once it can miss the start timeout.
+  test: { fileParallelism: false },
   build: {
     outDir: "dist",
     emptyOutDir: true,

@@ -208,6 +208,7 @@ function lessonHtml(lesson: Lesson): string {
   let n = 0;
   const number = () => String(++n).padStart(2, "0");
   return `<div class="lesson-band"><span class="band-glyph" aria-hidden="true">${stage.glyph}</span><div><span class="eyebrow">${lesson.optional ? "Optional" : `Lernbereich ${lesson.lb}`} · ${esc(stage.title)}${lesson.unit ? ` · ${esc(lesson.unit)}` : ""}</span><h2 class="lesson-title">${esc(lesson.title)}</h2></div><label class="level-switch">Übungsniveau <select id="level"><option value="1" ${p.level === 1 ? "selected" : ""}>1 · Mit Leitfragen</option><option value="2" ${p.level === 2 ? "selected" : ""}>2 · Übertragen</option></select></label></div>
+    <p class="lehrplan-tag">${(lesson.tracks ?? []).map((t) => `<span class="chip">Zweig ${t}</span>`).join("")}<span>${esc(lesson.lehrplan ?? "")}</span></p>
     <p class="intro">${esc(lesson.intro)}</p>${lesson.optional ? '<p class="notice">Diese optionale Lektion zählt nicht zu den Kernlektionen. Ein ZAM-Kartenlink öffnet sie auch bei ausgeblendetem Bereich.</p>' : ""}
     <div class="reading">${lesson.paragraphs.map((x) => `<p>${rich(x)}</p>`).join("")}</div>
     ${lesson.terms.length ? `<dl class="terms">${lesson.terms.map((t) => `<div><dt>${esc(t.term)}</dt><dd>${rich(t.text)}</dd></div>`).join("")}</dl>` : ""}

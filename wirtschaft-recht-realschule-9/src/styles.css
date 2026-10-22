@@ -389,8 +389,24 @@ main:focus {
   background: #fff;
   color: #1f1b3a;
 }
+.lehrplan-tag {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  align-items: center;
+  margin: 0.7rem 0 0;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+.chip {
+  padding: 0.05rem 0.6rem;
+  border-radius: 999px;
+  background: var(--c-soft);
+  color: var(--c-ink);
+  font-weight: 700;
+}
 .intro {
-  margin: 1rem 0 0.25rem;
+  margin: 0.6rem 0 0.25rem;
   font-size: 1.1rem;
   color: var(--muted);
 }

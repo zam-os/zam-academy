@@ -79,6 +79,31 @@ describe("public learning contract", () => {
     }
     expect(new Set([...cell.atoms.map((a) => a.id), ...ids]).size).toBe(cell.atoms.length + ITEMS.length);
   });
+  it("uses real ULIDs, generated once: a date of this year and random tails", () => {
+    const alphabet = "0123456789ABCDEFGHJKMNPQRSTVWXYZ";
+    const time = (id: string) => [...id.slice(0, 10)].reduce((n, ch) => n * 32 + alphabet.indexOf(ch), 0);
+    const ids = [...cell.atoms.map((a) => a.id), ...ITEMS.map((i) => i.id)];
+    for (const id of ids) {
+      expect(time(id)).toBeGreaterThan(Date.UTC(2026, 9, 1));
+      expect(time(id)).toBeLessThan(Date.UTC(2026, 11, 31));
+    }
+    // Sixteen random characters: no id repeats its tail, and none is a pattern.
+    expect(new Set(ids.map((id) => id.slice(10))).size).toBe(ids.length);
+    for (const id of ids) expect(new Set(id.slice(10)).size).toBeGreaterThan(5);
+  });
+  it("links each lesson to the earlier lessons it builds on", () => {
+    const index = new Map(cell.atoms.map((atom, i) => [atom.id, i]));
+    let edges = 0;
+    cell.atoms.forEach((atom, i) => {
+      for (const pre of atom.prerequisites) {
+        edges += 1;
+        expect(["hard", "soft"]).toContain(pre.type);
+        expect(pre.rationale.length).toBeGreaterThan(20);
+        expect(index.get(pre.atom_id), atom.slug).toBeLessThan(i);
+      }
+    });
+    expect(edges).toBeGreaterThan(30);
+  });
   it("describes itself with the real counts", () => {
     expect(cell.description).toContain(`${CORE_LESSONS.length} Kernlektionen`);
     expect(cell.description).toContain(`${LESSONS.length - CORE_LESSONS.length} optionale`);
@@ -91,6 +116,16 @@ describe("curriculum coverage", () => {
     const perUnit: Record<string, number> = {};
     for (const row of coverage.rows) perUnit[row.unit] = (perUnit[row.unit] ?? 0) + 1;
     expect(perUnit).toEqual({ "1.1": 4, "1.2": 6, "2.1": 4, "2.2": 4, "3": 6, "4.1": 3, "4.2": 4, "4.3": 6 });
+  });
+  it("uses the row form of the package standard: Lernbereich, Zweige, competence, lessons, evidence", () => {
+    for (const row of [...coverage.rows, ...coverage.optional_rows]) {
+      expect(row.track).toBe("I, III");
+      expect(row.evidence.length).toBeGreaterThan(30);
+      expect(row.lb).toBe(Number(row.unit[0]) === 5 ? 5 : Number(row.unit[0]));
+      for (const id of row.lessons) expect(findLesson(id)?.lb, id).toBe(row.lb);
+    }
+    expect(coverage.core_lessons).toBe(CORE_LESSONS.length);
+    expect(coverage.optional_lessons).toEqual(LESSONS.filter((l) => l.optional).map((l) => l.id));
   });
   it("covers every core lesson and only uses lessons of the same unit", () => {
     const covered = new Set(coverage.rows.flatMap((row) => row.lessons));
