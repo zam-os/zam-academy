@@ -105,8 +105,7 @@ export function parseNumber(raw: string, unit = ""): number | null {
 export function toleranceOf(field: NumberField): number {
   const scale = Math.abs(field.answer);
   const exact = Math.abs(field.answer - round(field.answer, field.digits)) < 1e-9;
-  const relative =
-    field.tolerance !== undefined ? field.tolerance * scale : exact ? 0 : 0.01 * scale;
+  const relative = field.tolerance !== undefined ? field.tolerance * scale : exact ? 0 : 0.01 * scale;
   const rounding = exact ? 1e-9 * Math.max(1, scale) : 0.51 * 10 ** -field.digits;
   return Math.max(relative, rounding, field.absTolerance ?? 0);
 }
@@ -139,10 +138,7 @@ function checkNumber(field: NumberField, answer: number, raw: string): FieldResu
 function permutations(items: number[]): number[][] {
   if (items.length <= 1) return [items];
   return items.flatMap((item, index) =>
-    permutations([...items.slice(0, index), ...items.slice(index + 1)]).map((rest) => [
-      item,
-      ...rest,
-    ]),
+    permutations([...items.slice(0, index), ...items.slice(index + 1)]).map((rest) => [item, ...rest]),
   );
 }
 
@@ -183,11 +179,7 @@ export function checkTask(task: ExerciseTask, inputs: string[]): TaskResult {
   return { status, fields };
 }
 
-const plain = (html: string) =>
-  html
-    .replace(/<[^>]+>/g, "")
-    .replace(/\s*=\s*$/, "")
-    .trim();
+const plain = (html: string) => html.replace(/<[^>]+>/g, "").replace(/\s*=\s*$/, "").trim();
 
 function near(value: number, target: number, field: NumberField): boolean {
   if (!Number.isFinite(target)) return false;
@@ -207,9 +199,7 @@ export function wrongAnswerHint(task: ExerciseTask, result: TaskResult): string 
   if (result.status !== "wrong") return "";
   const numbers = task.fields
     .map((field, index) => ({ field, index }))
-    .filter(
-      (entry): entry is { field: NumberField; index: number } => entry.field.kind === "number",
-    );
+    .filter((entry): entry is { field: NumberField; index: number } => entry.field.kind === "number");
   const wrongNumbers = numbers.filter(({ index }) => result.fields[index].status === "wrong");
 
   for (const { field, index } of wrongNumbers) {
@@ -241,10 +231,7 @@ export function wrongAnswerHint(task: ExerciseTask, result: TaskResult): string 
     const name = plain(field.label) || "Der Wert";
     const where = numbers.length > 1 ? ` bei ${name}` : "";
     if (answer !== 0 && near(parsed, -answer, field)) return `Prüfe das Vorzeichen${where}.`;
-    if (
-      answer !== 0 &&
-      (near(parsed, answer * Math.PI, field) || near(parsed, answer / Math.PI, field))
-    ) {
+    if (answer !== 0 && (near(parsed, answer * Math.PI, field) || near(parsed, answer / Math.PI, field))) {
       return `Um den Faktor π daneben${where}: π vergessen oder doppelt genommen?`;
     }
     if (answer !== 0 && (near(parsed, answer * 100, field) || near(parsed, answer / 100, field))) {
@@ -253,19 +240,13 @@ export function wrongAnswerHint(task: ExerciseTask, result: TaskResult): string 
     if (answer !== 0 && (near(parsed, answer * 2, field) || near(parsed, answer / 2, field))) {
       return `Genau doppelt oder halb so groß wie gesucht${where}: Radius oder Durchmesser? Die Hälfte vergessen?`;
     }
-    if (
-      Math.abs(answer) > 1.5 &&
-      (near(parsed, answer * answer, field) ||
-        (answer > 0 && near(parsed, Math.sqrt(answer), field)))
-    ) {
+    if (Math.abs(answer) > 1.5 && (near(parsed, answer * answer, field) || (answer > 0 && near(parsed, Math.sqrt(answer), field)))) {
       return `Quadrat statt Wurzel, oder umgekehrt${where}?`;
     }
   }
 
   const correct = task.fields.filter((_, index) => result.fields[index].status === "correct");
-  const wrongChoice = task.fields.find(
-    (field, index) => field.kind === "choice" && result.fields[index].status === "wrong",
-  );
+  const wrongChoice = task.fields.find((field, index) => field.kind === "choice" && result.fields[index].status === "wrong");
   if (correct.length > 0) {
     const names = correct.map((field) => plain(field.label)).filter(Boolean);
     const missing = task.fields

@@ -1,9 +1,12 @@
+let toastSeq = 0;
+
 export type ToastTone = "success" | "info" | "warning";
 
 /** A short notice in the corner that closes itself. */
 export function showToast(message: string, tone: ToastTone = "info", durationMs = 3600): void {
   const stack = document.getElementById("toast-stack");
   if (!stack) return;
+  toastSeq += 1;
   const toast = document.createElement("div");
   toast.className = `toast toast-${tone}`;
   toast.setAttribute("role", "status");

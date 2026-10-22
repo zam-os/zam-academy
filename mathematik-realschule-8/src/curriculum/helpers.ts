@@ -1,102 +1,51 @@
-import type {
-  ChoiceField,
-  ExerciseTask,
-  LabParam,
-  Lesson,
-  NumberField,
-  Stage,
-  Track,
-} from "../model/types";
-import outline from "./outline.json";
+import type { NumberField, ChoiceField } from "../model/types";
 
-export const BOTH: Track[] = ["I", "II_III"];
-export const near = (a: number, b: number, delta = 1e-8): boolean =>
-  Number.isFinite(a) && Math.abs(a - b) <= delta;
-export const numberField = (
+/** True when `value` is within `tolerance` (relative) of `target`. */
+export function near(value: number, target: number, tolerance = 0.02): boolean {
+  if (!Number.isFinite(value) || !Number.isFinite(target)) return false;
+  if (target === 0) return Math.abs(value) <= tolerance;
+  return Math.abs(value - target) <= Math.abs(target) * tolerance;
+}
+
+/** True when `value` is within `delta` (absolute) of `target`. */
+export function within(value: number, target: number, delta: number): boolean {
+  return Number.isFinite(value) && Math.abs(value - target) <= delta;
+}
+
+export const DEG = Math.PI / 180;
+
+export const sinD = (deg: number): number => Math.sin(deg * DEG);
+export const cosD = (deg: number): number => Math.cos(deg * DEG);
+export const tanD = (deg: number): number => Math.tan(deg * DEG);
+export const asinD = (ratio: number): number => Math.asin(ratio) / DEG;
+export const acosD = (ratio: number): number => Math.acos(ratio) / DEG;
+export const atanD = (ratio: number): number => Math.atan(ratio) / DEG;
+
+/** A number field; `digits` decimals in the solution. */
+export function numberField(
   label: string,
   answer: number,
   unit = "",
   digits = 2,
   extra: Partial<NumberField> = {},
-): NumberField => ({ kind: "number", label, answer, unit, digits, tolerance: 0, ...extra });
-export const choiceField = (
-  label: string,
-  options: string[],
-  correctIndex: number,
-): ChoiceField => ({ kind: "choice", label, options, correctIndex });
-export const yesNo = (label: string, yes: boolean): ChoiceField =>
-  choiceField(label, ["ja", "nein"], yes ? 0 : 1);
-export const range = (
-  key: string,
-  label: string,
-  min: number,
-  max: number,
-  value: number,
-  step = 1,
-  unit = "",
-): LabParam => ({
-  type: "range",
-  key,
-  label,
-  min,
-  max,
-  value,
-  step,
-  unit,
-  digits: step < 1 ? 2 : 0,
-});
-export const choice = (key: string, label: string, labels: string[], value = 0): LabParam => ({
-  type: "choice",
-  key,
-  label,
-  options: labels.map((label, value) => ({ label, value })),
-  value,
-});
-
-type Content = Omit<
-  Lesson,
-  | "id"
-  | "stageId"
-  | "stepNumber"
-  | "title"
-  | "tracks"
-  | "lehrplan"
-  | "requiredCorrect"
-  | "celebrationMessage"
->;
-
-export function defineLesson(id: string, content: Content): Lesson {
-  const entry = outline.lessons.find((l) => l.id === id);
-  if (!entry) throw new Error(`Unknown lesson ${id}`);
-  return {
-    ...content,
-    id,
-    stageId: entry.stageId,
-    stepNumber:
-      outline.lessons.filter((l) => l.stageId === entry.stageId).findIndex((l) => l.id === id) + 1,
-    title: entry.title,
-    tracks: Object.keys(entry.bindings) as Track[],
-    lehrplan: Object.entries(entry.bindings)
-      .map(([t, lb]) => `M8 LB ${lb} (${t === "I" ? "I" : "II/III"})`)
-      .join(" · "),
-    requiredCorrect: 3,
-    celebrationMessage: `Geschafft: ${entry.title}. Erkläre den Zusammenhang jetzt mit eigenen Worten.`,
-  };
+): NumberField {
+  // A slip that happens to equal the answer (sin 45° = cos 45°) is no slip.
+  const slips = extra.slips?.filter(
+    (slip) => Number.isFinite(slip.value) && Math.abs(slip.value - answer) > Math.max(1e-9, 0.02 * Math.abs(answer), 0.51 * 10 ** -digits),
+  );
+  return { kind: "number", label, answer, unit, digits, ...extra, ...(slips ? { slips } : {}) };
 }
 
-export function stage(id: string, lessons: Lesson[]): Stage {
-  const meta = outline.stages.find((s) => s.id === id);
-  if (!meta) throw new Error(`Unknown stage ${id}`);
-  return { ...meta, lessons };
+/** A choice field among a few options. */
+export function choiceField(label: string, options: string[], correctIndex: number): ChoiceField {
+  return { kind: "choice", label, options, correctIndex };
 }
 
-/** Guided tasks include a method; transfer tasks describe a fresh situation. */
-export function task(
-  prompt: string,
-  fields: ExerciseTask["fields"],
-  steps: string[],
-  formulaHint?: string,
-  meta?: Record<string, number>,
-): ExerciseTask {
-  return { prompt, given: [], fields, steps, formulaHint, meta };
+/** "ja"/"nein" as a choice field. */
+export function yesNo(label: string, yes: boolean): ChoiceField {
+  return choiceField(label, ["ja", "nein"], yes ? 0 : 1);
 }
+
+/** The slip a calculator set to RAD gives for c · sin(α°), so the hint can name it. */
+export const RAD_HINT =
+  "Steht dein Taschenrechner auf RAD? Für Winkel in Grad muss er auf DEG (D) stehen.";

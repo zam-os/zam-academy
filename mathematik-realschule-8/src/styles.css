@@ -1,4 +1,4 @@
-/* Mathematik 8 Realschule · ZAM Academy
+/* Mathematik 10 Realschule · ZAM Academy
    Tokens on :root, dark overrides by system preference or data-theme. */
 
 :root {
@@ -127,7 +127,6 @@
 }
 
 [hidden] {
-  /* biome-ignore lint/complexity/noImportantStyles: hidden must override component display rules. */
   display: none !important;
 }
 
@@ -607,6 +606,10 @@ code {
 
 .lesson-row.is-active .lesson-link {
   background: color-mix(in srgb, var(--accent) 10%, transparent);
+}
+
+.lesson-row.is-optional .lesson-text {
+  opacity: 0.65;
 }
 
 .lesson-text {
@@ -1583,16 +1586,17 @@ code {
   font-size: 0.92rem;
 }
 
-:where(.explanation table.mini) th,
-:where(.explanation table.mini) td {
+.explanation table.mini th,
+.explanation table.mini td {
   border: 1px solid var(--line);
   padding: 0.25rem 0.55rem;
   text-align: center;
 }
 
-:where(.explanation table.mini) th {
+.explanation table.mini th {
   background: var(--elevated);
 }
+
 
 /* ─── Formelsammlung ────────────────────────────────────────────────────── */
 
@@ -1996,26 +2000,4 @@ code {
   fill: var(--lab-plot-bg);
   fill-opacity: 0.9;
   stroke: var(--line);
-}
-
-/* Extra markings used by the grade-8 construction and domain labs. */
-.lab-negative {
-  fill: color-mix(in srgb, #ef4444 25%, transparent);
-  stroke: #dc2626;
-  stroke-width: 1.5;
-}
-.lab-hole {
-  fill: var(--lab-plot-bg);
-  stroke: #dc2626;
-  stroke-width: 3;
-}
-.lab-selected {
-  fill: none;
-  stroke: var(--accent, #2563eb);
-  stroke-width: 3;
-  stroke-dasharray: 7 4;
-}
-.path-note {
-  font-size: 0.9rem;
-  opacity: 0.85;
 }

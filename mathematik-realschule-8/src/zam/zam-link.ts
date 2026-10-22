@@ -1,7 +1,8 @@
 import type { DifficultyLevel } from "../model/types";
 
 /** Where this app is served; every ZAM card about it cites a lesson here. */
-export const ZAM_ACADEMY_APP_URL = "https://academy.zam-os.org/mathematik-realschule-8/";
+export const ZAM_ACADEMY_APP_URL =
+  "https://academy.zam-os.org/mathematik-realschule-8/";
 
 /** The ZAM cell that keeps what this app teaches (cell.json in this folder). */
 export const ZAM_CELL_ID = "zam-academy:mathematik-realschule-8";
@@ -30,7 +31,10 @@ export interface ParsedTrainingDeepLink {
  * `level=1|2`, from the URL hash or query. The caller checks that the
  * lesson exists.
  */
-export function parseTrainingDeepLink(hash: string, search = ""): ParsedTrainingDeepLink {
+export function parseTrainingDeepLink(
+  hash: string,
+  search = "",
+): ParsedTrainingDeepLink {
   const result: ParsedTrainingDeepLink = {};
   const cleanHash = hash.startsWith("#") ? hash.slice(1) : hash;
   const cleanSearch = search.startsWith("?") ? search.slice(1) : search;

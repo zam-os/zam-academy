@@ -1,4 +1,11 @@
-import type { LabDefinition, LabGoal, LabParam, LabValues, ReadoutValues } from "../model/types";
+import type {
+  LabDefinition,
+  LabGoal,
+  LabParam,
+  LabValues,
+  ReadoutValues,
+} from "../model/types";
+import { stepDecimals } from "../exercises/rng";
 
 /** The values a lab starts with. */
 export function defaultLabValues(lab: LabDefinition): LabValues {
@@ -16,11 +23,7 @@ export function clampParam(param: LabParam, raw: number): number {
   if (param.type === "state") return raw;
   const clamped = Math.min(param.max, Math.max(param.min, raw));
   const steps = Math.round((clamped - param.min) / param.step);
-  // A quarter step needs two decimal places; its order of magnitude alone
-  // would round 0.25 to 0.3 and make valid construction goals unreachable.
-  const [coefficient, exponent] = String(param.step).toLowerCase().split("e");
-  const decimals = Math.max(0, (coefficient.split(".")[1]?.length ?? 0) - Number(exponent ?? 0));
-  return Number((param.min + steps * param.step).toFixed(decimals));
+  return Number((param.min + steps * param.step).toFixed(stepDecimals(param.step)));
 }
 
 /**
@@ -64,7 +67,10 @@ export function applyAction(lab: LabDefinition, values: LabValues, actionId: str
   return next;
 }
 
-export function computeReadouts(lab: LabDefinition, values: LabValues): ReadoutValues {
+export function computeReadouts(
+  lab: LabDefinition,
+  values: LabValues,
+): ReadoutValues {
   const readouts: ReadoutValues = {};
   for (const readout of lab.readouts) {
     readouts[readout.key] = readout.compute(values);
@@ -86,7 +92,10 @@ export function reachedGoals(
  * `samples` points including both ends; choices take every option; state
  * keeps its start value.
  */
-export function enumerateLabGrid(lab: LabDefinition, samples = 9): LabValues[] {
+export function enumerateLabGrid(
+  lab: LabDefinition,
+  samples = 9,
+): LabValues[] {
   const axes = lab.params.map((param) => {
     if (param.type === "choice") return param.options.map((o) => o.value);
     if (param.type === "state") return [param.value];

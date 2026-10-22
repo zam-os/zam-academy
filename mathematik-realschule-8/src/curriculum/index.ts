@@ -1,43 +1,55 @@
 import type { Lesson, Stage, Track } from "../model/types";
-import { STAGE_FIGUREN } from "./stage-1-figuren";
+import { STAGE_DREIECKE_VIERECKE } from "./stage-1-dreiecke-vierecke";
 import { STAGE_DREHUNG } from "./stage-2-drehung";
-import { STAGE_RAUM } from "./stage-3-raum";
-import { STAGE_TERME } from "./stage-4-terme";
-import { STAGE_BRUECHE } from "./stage-5-brueche";
+import { STAGE_RAUMGEOMETRIE } from "./stage-3-raumgeometrie";
+import { STAGE_TERME_GLEICHUNGEN } from "./stage-4-terme-gleichungen";
+import { STAGE_BRUCHTERME } from "./stage-5-bruchterme";
 import { STAGE_FUNKTIONEN } from "./stage-6-funktionen";
-import { STAGE_ZUFALL } from "./stage-7-zufall";
+import { STAGE_DATEN_ZUFALL } from "./stage-7-daten-zufall";
 
+/**
+ * The stages follow the Lernbereiche of LehrplanPLUS Mathematik 8
+ * (Realschule): Zweig I LB 1 to LB 7 (stages 1 to 7), Zweig II/III LB 1 to
+ * LB 6 (stages 1 and 3 to 7). Lessons name their Zweige.
+ */
 export const STAGES: Stage[] = [
-  STAGE_FIGUREN,
+  STAGE_DREIECKE_VIERECKE,
   STAGE_DREHUNG,
-  STAGE_RAUM,
-  STAGE_TERME,
-  STAGE_BRUECHE,
+  STAGE_RAUMGEOMETRIE,
+  STAGE_TERME_GLEICHUNGEN,
+  STAGE_BRUCHTERME,
   STAGE_FUNKTIONEN,
-  STAGE_ZUFALL,
+  STAGE_DATEN_ZUFALL,
 ];
-export const ALL_LESSONS: Lesson[] = STAGES.flatMap((s) => s.lessons);
-export function findLessonById(id: string): { stage: Stage; lesson: Lesson } | undefined {
+
+export const ALL_LESSONS: Lesson[] = STAGES.flatMap((stage) => stage.lessons);
+
+export function findLessonById(
+  id: string,
+): { stage: Stage; lesson: Lesson } | undefined {
   for (const stage of STAGES) {
     const lesson = stage.lessons.find((l) => l.id === id);
     if (lesson) return { stage, lesson };
   }
   return undefined;
 }
-export const findStageById = (id: string): Stage | undefined => STAGES.find((s) => s.id === id);
-export const lessonsForTrack = (track: Track | "alle"): Lesson[] =>
-  ALL_LESSONS.filter((l) => track === "alle" || l.tracks.includes(track));
-export function nextLesson(id: string, track: Track | "alle" = "alle"): Lesson | undefined {
-  const at = ALL_LESSONS.findIndex((l) => l.id === id);
-  return at < 0
-    ? undefined
-    : ALL_LESSONS.slice(at + 1).find((l) => track === "alle" || l.tracks.includes(track));
+
+export function findStageById(id: string): Stage | undefined {
+  return STAGES.find((stage) => stage.id === id);
 }
-export function previousLesson(id: string, track: Track | "alle" = "alle"): Lesson | undefined {
-  const at = ALL_LESSONS.findIndex((l) => l.id === id);
-  return at < 0
-    ? undefined
-    : ALL_LESSONS.slice(0, at)
-        .reverse()
-        .find((l) => track === "alle" || l.tracks.includes(track));
+
+/** Lessons a learner of the given track needs; "alle" keeps every lesson. */
+export function lessonsForTrack(track: Track | "alle"): Lesson[] {
+  if (track === "alle") return ALL_LESSONS;
+  return ALL_LESSONS.filter((lesson) => lesson.tracks.includes(track));
+}
+
+export function nextLesson(id: string): Lesson | undefined {
+  const index = ALL_LESSONS.findIndex((lesson) => lesson.id === id);
+  return index >= 0 ? ALL_LESSONS[index + 1] : undefined;
+}
+
+export function previousLesson(id: string): Lesson | undefined {
+  const index = ALL_LESSONS.findIndex((lesson) => lesson.id === id);
+  return index > 0 ? ALL_LESSONS[index - 1] : undefined;
 }

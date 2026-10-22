@@ -1,20 +1,27 @@
 import type { LabKind } from "../model/types";
 import type { LabView } from "./svg";
-import { ALGEBRA_VIEWS } from "./views-algebra";
-import { FIGUREN_VIEWS } from "./views-figuren";
+import { DREIECKE_VIERECKE_VIEWS } from "./views-dreiecke-vierecke";
+import { DREHUNG_VIEWS } from "./views-drehung";
+import { RAUMGEOMETRIE_VIEWS } from "./views-raumgeometrie";
+import { TERME_GLEICHUNGEN_VIEWS } from "./views-terme-gleichungen";
+import { BRUCHTERME_VIEWS } from "./views-bruchterme";
 import { FUNKTIONEN_VIEWS } from "./views-funktionen";
-import { RAUM_VIEWS } from "./views-raum";
-import { ZUFALL_VIEWS } from "./views-zufall";
+import { DATEN_ZUFALL_VIEWS } from "./views-daten-zufall";
 
-const VIEWS = {
-  ...FIGUREN_VIEWS,
-  ...RAUM_VIEWS,
-  ...ALGEBRA_VIEWS,
+/**
+ * Every lab draws itself as inline SVG from its values and readouts, and
+ * names the points the learner can drag. One file per stage.
+ */
+const VIEWS: Record<LabKind, LabView> = {
+  ...DREIECKE_VIERECKE_VIEWS,
+  ...DREHUNG_VIEWS,
+  ...RAUMGEOMETRIE_VIEWS,
+  ...TERME_GLEICHUNGEN_VIEWS,
+  ...BRUCHTERME_VIEWS,
   ...FUNKTIONEN_VIEWS,
-  ...ZUFALL_VIEWS,
+  ...DATEN_ZUFALL_VIEWS,
 };
+
 export function labView(kind: LabKind): LabView {
-  const view = VIEWS[kind];
-  if (!view) throw new Error(`Missing lab drawing: ${kind}`);
-  return view;
+  return VIEWS[kind];
 }

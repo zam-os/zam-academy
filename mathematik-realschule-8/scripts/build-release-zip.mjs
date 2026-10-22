@@ -1,5 +1,12 @@
 import { execFileSync } from "node:child_process";
-import { chmodSync, copyFileSync, existsSync, mkdirSync, rmSync, writeFileSync } from "node:fs";
+import {
+  chmodSync,
+  copyFileSync,
+  existsSync,
+  mkdirSync,
+  rmSync,
+  writeFileSync,
+} from "node:fs";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -55,30 +62,24 @@ const linuxShPath = join(bundleDir, "start-linux.sh");
 writeFileSync(linuxShPath, linuxSh, "utf8");
 chmodSync(linuxShPath, 0o755);
 
-const readmeTxt = `========================================================================
-ZAM ACADEMY · MATHEMATIK 8 REALSCHULE (LehrplanPLUS Bayern)
-========================================================================
+const readme = [
+  "ZAM Academy · Mathematik 8 Realschule (Offline)",
+  "===============================================",
+  "",
+  "Dieses Paket enthält die vollständige interaktive Lern-App für Mathematik 8 Realschule",
+  "(LehrplanPLUS Bayern, Zweig I und II/III: Dreiecke und Vierecke, Drehung, Raumgeometrie,",
+  "Terme und Gleichungen, Bruchterme, Funktionen, Daten und Zufall).",
+  "",
+  "Starten:",
+  "- Windows: Doppelklick auf Start-Windows.bat",
+  "- macOS:   Doppelklick auf Start-Mac.command (beim ersten Mal eventuell via Rechtsklick > Öffnen)",
+  "- Linux:   start-linux.sh ausführen oder ZAM-Academy-Mathematik-8.html im Browser öffnen",
+  "",
+  "Kein Internet erforderlich. Fortschritt wird lokal im Browser gespeichert.",
+].join("\n");
+writeFileSync(join(bundleDir, "README-START.txt"), readme, "utf8");
 
-SOFORT-START OHNE INSTALLATION
-1. Entpacke dieses ZIP-Archiv in einen beliebigen Ordner.
-2. Starte die App per Doppelklick:
-   - Windows: "Start-Windows.bat" oder "${appFile}"
-   - macOS:   "${appFile}" oder "Start-Mac.command"
-   - Linux:   "${appFile}" oder "./start-linux.sh"
-
-Keine Installation, kein Server und kein Internet erforderlich.
-Dein Fortschritt bleibt im Browser gespeichert.
-
-Oben in der App wechselst du zwischen
-- 🌱 Level 1 (geführt: Formel und Werte werden angezeigt) und
-- 🦅 Level 2 (Transfer: Textaufgaben ohne Formelhilfe).
-
-Behalten mit ZAM: Die Zelle "Mathematik 8 Realschule (ZAM Academy)" hält, was du
-hier geübt hast. Jede Karte verlinkt die Lektion, in der du geübt hast.
-========================================================================
-`;
-writeFileSync(join(bundleDir, "README-START.txt"), readmeTxt, "utf8");
-
-execFileSync("zip", ["-r", "-q", zipFilePath, bundleDirName], { cwd: releaseRoot });
-
-console.log(`Created release package: ${zipFilePath}`);
+execFileSync("zip", ["-r", "-q", zipFilePath, bundleDirName], {
+  cwd: releaseRoot,
+});
+console.log(`Created release bundle at ${zipFilePath}`);

@@ -24,9 +24,7 @@ export function fmt(value: number, digits = 2): string {
   if (!Number.isFinite(value)) return "–";
   const rounded = Number(value.toFixed(digits));
   // Avoid "-0".
-  return formatter(digits)
-    .format(rounded === 0 ? 0 : rounded)
-    .replace("-", MINUS);
+  return formatter(digits).format(rounded === 0 ? 0 : rounded).replace("-", MINUS);
 }
 
 /** `fmtUnit(2.5, "cm")` → "2,5 cm". */
@@ -114,25 +112,12 @@ export function sum(parts: Array<[number, string]>, digits = 2): string {
 
 /** `linear(0.5, -2)` → "0,5x − 2". */
 export function linear(m: number, t: number, digits = 2): string {
-  return sum(
-    [
-      [m, "x"],
-      [t, ""],
-    ],
-    digits,
-  );
+  return sum([[m, "x"], [t, ""]], digits);
 }
 
 /** `quadratic(2, -4, -6)` → "2x² − 4x − 6". */
 export function quadratic(a: number, b: number, c: number, digits = 2): string {
-  return sum(
-    [
-      [a, "x²"],
-      [b, "x"],
-      [c, ""],
-    ],
-    digits,
-  );
+  return sum([[a, "x²"], [b, "x"], [c, ""]], digits);
 }
 
 /** `shifted(3)` → "(x − 3)", `shifted(-2)` → "(x + 2)", `shifted(0)` → "x". */

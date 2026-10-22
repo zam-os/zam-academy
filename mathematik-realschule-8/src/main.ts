@@ -1,4 +1,3 @@
-import { required } from "./model/required";
 import {
   findLessonById,
   findStageById,
@@ -169,8 +168,7 @@ class MatheApp {
     if (text) text.textContent = `${stats.completed} / ${stats.total} Lektionen`;
     if (bar) bar.style.width = `${stats.percent}%`;
     const pill = document.getElementById("header-progress");
-    if (pill)
-      pill.title = `${stats.percent} % des Lernpfads, ${stats.completedStages} von ${stats.totalStages} Etappen abgeschlossen`;
+    if (pill) pill.title = `${stats.percent} % des Lernpfads, ${stats.completedStages} von ${stats.totalStages} Etappen abgeschlossen`;
   }
 
   private switchView(view: ActiveView): void {
@@ -227,17 +225,14 @@ class MatheApp {
     const filter = this.progress.trackFilter;
     const stats = overallStats(this.progress, STAGES, filter);
     const relevant = new Set(lessonsForTrack(filter).map((lesson) => lesson.id));
-    const relevantPath = lessonsForTrack(filter);
-    const continueLesson =
-      relevantPath.find((l) => !isLessonComplete(this.progress, l)) ?? relevantPath[0];
-    const active = required(findLessonById(continueLesson.id));
+    const active = findLessonById(this.progress.activeLessonId) ?? findLessonById(DEFAULT_LESSON_ID)!;
 
     host.innerHTML = `
       <div class="path">
         <section class="hero">
           <div class="hero-copy">
             <h2>Mathematik 8 für die Realschule</h2>
-            <p>${stats.totalStages} Etappen nach den Lernbereichen des bayerischen LehrplanPLUS. In jeder Lektion: kurz lesen, im Labor Punkte ziehen und Figuren verändern, dann rechnen. Was du hier verstehst, hält ZAM mit Karten fest, die auf die Lektion zurückverlinken.</p><p class="path-note">Wähle deinen Zweig. Konstruktionen auf Papier, eigene Begründungen und das Messen mit Zirkel und Geodreieck gehören zusätzlich dazu. Die Aufgaben hier prüfen Rechenschritte und Entscheidungen.</p>
+            <p>Sieben Etappen nach den Lernbereichen des bayerischen LehrplanPLUS, für Zweig I und Zweig II/III. In jeder Lektion: kurz lesen, im Labor Punkte ziehen und Figuren verändern, dann rechnen. Was du hier verstehst, hält ZAM mit Karten fest, die auf die Lektion zurückverlinken.</p>
             <div class="hero-row">
               <label class="track-select">
                 <span>Mein Zweig</span>
@@ -256,24 +251,18 @@ class MatheApp {
             </div>
             <p>${stats.completed} von ${stats.total} Lektionen<br>${stats.completedStages} von ${stats.totalStages} Etappen</p>
             <div class="badge-rack" aria-label="Abzeichen">
-              ${STAGES.filter((stage) => relevantLessons(stage, filter).length > 0)
-                .map((stage) => {
-                  const stageDone = isStageComplete(this.progress, stage, filter);
-                  const off = relevantLessons(stage, filter).length === 0;
-                  const title = off
-                    ? `${stage.badgeTitle}: keine Lektion in deinem Zweig`
-                    : stage.badgeTitle;
-                  return `<span class="badge ${stageDone ? "is-earned" : ""} ${off ? "is-off" : ""}" title="${esc(title)}">${stage.icon}</span>`;
-                })
-                .join("")}
+              ${STAGES.map((stage) => {
+                const stageDone = isStageComplete(this.progress, stage, filter);
+                const off = relevantLessons(stage, filter).length === 0;
+                const title = off ? `${stage.badgeTitle}: keine Lektion in deinem Zweig` : stage.badgeTitle;
+                return `<span class="badge ${stageDone ? "is-earned" : ""} ${off ? "is-off" : ""}" title="${esc(title)}">${stage.icon}</span>`;
+              }).join("")}
             </div>
             <button type="button" class="btn btn-ghost btn-sm" id="reset-progress-btn">Fortschritt zurücksetzen</button>
           </div>
         </section>
 
-        ${STAGES.filter((stage) => relevantLessons(stage, filter).length > 0)
-          .map((stage) => this.renderStageCard(stage, relevant, filter))
-          .join("")}
+        ${STAGES.map((stage) => this.renderStageCard(stage, relevant, filter)).join("")}
       </div>
     `;
 
@@ -284,9 +273,7 @@ class MatheApp {
       this.syncHeader();
       this.render();
     });
-    host
-      .querySelector("#continue-btn")
-      ?.addEventListener("click", () => this.openLesson(active.lesson.id));
+    host.querySelector("#continue-btn")?.addEventListener("click", () => this.openLesson(active.lesson.id));
     host.querySelector("#reset-progress-btn")?.addEventListener("click", () => {
       confirmReset(() => {
         this.progress = resetLearnerProgress();
@@ -302,12 +289,6 @@ class MatheApp {
     });
   }
 
-  private visibleStageNumber(stage: Stage): number {
-    const visible = STAGES.filter((s) => relevantLessons(s, this.progress.trackFilter).length > 0);
-    const at = visible.indexOf(stage);
-    return at >= 0 ? at + 1 : stage.stageNumber;
-  }
-
   private renderStageCard(stage: Stage, relevant: Set<string>, filter: TrackFilter): string {
     const stats = stageStats(this.progress, stage, filter);
     const progressLabel =
@@ -317,7 +298,7 @@ class MatheApp {
         <header class="stage-head">
           <span class="stage-icon" aria-hidden="true">${stage.icon}</span>
           <div>
-            <h3>Etappe ${this.visibleStageNumber(stage)}: ${esc(stage.title)}</h3>
+            <h3>Etappe ${stage.stageNumber}: ${esc(stage.title)}</h3>
             <p>${esc(stage.subtitle)} · <span class="muted">${esc(stage.lehrplanLabel)}</span></p>
           </div>
           <div class="stage-progress">
@@ -326,7 +307,7 @@ class MatheApp {
           </div>
         </header>
         <ol class="lesson-list">
-          ${relevantLessons(stage, filter)
+          ${stage.lessons
             .map((lesson) => {
               const complete = isLessonComplete(this.progress, lesson);
               const transfer = isTransferDone(this.progress, lesson);
@@ -362,43 +343,25 @@ class MatheApp {
   // ─── View 2: Lektion ────────────────────────────────────────────────────
 
   private renderLesson(host: HTMLElement): void {
-    const found =
-      findLessonById(this.progress.activeLessonId) ?? required(findLessonById(DEFAULT_LESSON_ID));
+    const found = findLessonById(this.progress.activeLessonId) ?? findLessonById(DEFAULT_LESSON_ID)!;
     const { stage, lesson } = found;
     const level = this.progress.difficultyLevel;
-    const prev = previousLesson(lesson.id, this.progress.trackFilter);
-    const next = nextLesson(lesson.id, this.progress.trackFilter);
+    const prev = previousLesson(lesson.id);
+    const next = nextLesson(lesson.id);
     const quizDone = isQuizDone(this.progress, lesson.id);
-    const pathLessons = relevantLessons(stage, this.progress.trackFilter);
-    const lessonPosition = pathLessons.findIndex((l) => l.id === lesson.id);
 
     host.innerHTML = `
       <div class="lesson-grid" style="--accent:${stage.accent}">
         <section class="guide">
-          <div class="stage-pill">${stage.icon} Etappe ${this.visibleStageNumber(stage)} · Lektion ${lessonPosition >= 0 ? lessonPosition + 1 : lesson.stepNumber} von ${lessonPosition >= 0 ? pathLessons.length : stage.lessons.length}</div>
+          <div class="stage-pill">${stage.icon} Etappe ${stage.stageNumber} · Lektion ${lesson.stepNumber} von ${stage.lessons.length}</div>
           <h2 class="lesson-title">${esc(lesson.title)}</h2>
           <p class="lesson-subtitle">${esc(lesson.subtitle)}</p>
           <select id="lesson-select" class="lesson-select" aria-label="Lektion wählen">
-            ${STAGES.filter(
-              (st) =>
-                relevantLessons(st, this.progress.trackFilter).length > 0 || st.id === stage.id,
-            )
-              .map(
-                (st) =>
-                  `<optgroup label="Etappe ${this.visibleStageNumber(st)}: ${esc(st.title)}">${st.lessons
-                    .filter(
-                      (l) =>
-                        this.progress.trackFilter === "alle" ||
-                        l.tracks.includes(this.progress.trackFilter) ||
-                        l.id === lesson.id,
-                    )
-                    .map(
-                      (l) =>
-                        `<option value="${l.id}" ${l.id === lesson.id ? "selected" : ""}>${isLessonComplete(this.progress, l) ? "✓ " : ""}${esc(l.title)}</option>`,
-                    )
-                    .join("")}</optgroup>`,
-              )
-              .join("")}
+            ${STAGES.map(
+              (st) => `<optgroup label="Etappe ${st.stageNumber}: ${esc(st.title)}">${st.lessons
+                .map((l) => `<option value="${l.id}" ${l.id === lesson.id ? "selected" : ""}>${isLessonComplete(this.progress, l) ? "✓ " : ""}${esc(l.title)}</option>`)
+                .join("")}</optgroup>`,
+            ).join("")}
           </select>
           <p class="lehrplan-tag">${lesson.tracks.map((track) => `<span class="chip chip-track">${TRACK_LABELS[track]}</span>`).join("")} <span class="muted">${esc(lesson.lehrplan)}</span></p>
 
@@ -431,10 +394,7 @@ class MatheApp {
             <p class="quiz-question">${esc(lesson.quiz.question)}</p>
             <div class="quiz-options" id="quiz-options">
               ${quizOrder(lesson)
-                .map(
-                  (optionIndex, shown) =>
-                    `<button type="button" class="quiz-option ${quizDone && optionIndex === lesson.quiz.correctIndex ? "is-correct" : ""}" data-quiz="${shown}" ${quizDone ? "disabled" : ""}>${esc(lesson.quiz.options[optionIndex])}</button>`,
-                )
+                .map((optionIndex, shown) => `<button type="button" class="quiz-option ${quizDone && optionIndex === lesson.quiz.correctIndex ? "is-correct" : ""}" data-quiz="${shown}" ${quizDone ? "disabled" : ""}>${esc(lesson.quiz.options[optionIndex])}</button>`)
                 .join("")}
             </div>
             <p class="quiz-feedback" id="quiz-feedback">${quizDone ? `✅ ${esc(lesson.quiz.explanation)}` : "Wähle eine Antwort. Erst denken, dann klicken."}</p>
@@ -463,23 +423,19 @@ class MatheApp {
     host.querySelector<HTMLSelectElement>("#lesson-select")?.addEventListener("change", (event) => {
       this.openLesson((event.target as HTMLSelectElement).value);
     });
-    host
-      .querySelector("#prev-lesson-btn")
-      ?.addEventListener("click", () => prev && this.openLesson(prev.id));
-    host
-      .querySelector("#next-lesson-btn")
-      ?.addEventListener("click", () => next && this.openLesson(next.id));
+    host.querySelector("#prev-lesson-btn")?.addEventListener("click", () => prev && this.openLesson(prev.id));
+    host.querySelector("#next-lesson-btn")?.addEventListener("click", () => next && this.openLesson(next.id));
     host.querySelector("#lesson-zam-btn")?.addEventListener("click", () => showZamDialog());
     host.querySelectorAll<HTMLButtonElement>("[data-quiz]").forEach((button) => {
       button.addEventListener("click", () => this.answerQuiz(lesson, Number(button.dataset.quiz)));
     });
 
-    this.renderLab(required(host.querySelector<HTMLElement>("#lab-card")), lesson);
-    this.renderStatus(required(host.querySelector<HTMLElement>("#status-card")), lesson);
+    this.renderLab(host.querySelector<HTMLElement>("#lab-card")!, lesson);
+    this.renderStatus(host.querySelector<HTMLElement>("#status-card")!, lesson);
     if (this.taskLessonId !== lesson.id || this.taskLevel !== level || !this.task) {
       this.startTask(lesson, level);
     }
-    this.renderExercise(required(host.querySelector<HTMLElement>("#exercise-card")), lesson);
+    this.renderExercise(host.querySelector<HTMLElement>("#exercise-card")!, lesson);
   }
 
   private answerQuiz(lesson: Lesson, shown: number): void {
@@ -498,9 +454,7 @@ class MatheApp {
       showToast("Schnellcheck richtig!", "success", 2200);
     } else {
       buttons[shown]?.classList.add("is-wrong");
-      if (feedback)
-        feedback.textContent =
-          "Noch nicht. Lies die Erklärung oben noch einmal und versuche es erneut.";
+      if (feedback) feedback.textContent = "Noch nicht. Lies die Erklärung oben noch einmal und versuche es erneut.";
     }
     this.refreshStatus(lesson);
   }
@@ -541,13 +495,11 @@ class MatheApp {
       this.updateLab(container, lesson);
     };
 
-    container
-      .querySelectorAll<HTMLInputElement | HTMLSelectElement>("[data-param]")
-      .forEach((input) => {
-        const key = input.dataset.param ?? "";
-        input.addEventListener("input", () => set({ [key]: Number(input.value) }));
-        input.addEventListener("change", () => set({ [key]: Number(input.value) }));
-      });
+    container.querySelectorAll<HTMLInputElement | HTMLSelectElement>("[data-param]").forEach((input) => {
+      const key = input.dataset.param ?? "";
+      input.addEventListener("input", () => set({ [key]: Number(input.value) }));
+      input.addEventListener("change", () => set({ [key]: Number(input.value) }));
+    });
     container.querySelectorAll<HTMLButtonElement>("[data-action]").forEach((button) => {
       button.addEventListener("click", () => {
         const current = this.labValues.get(lesson.id) ?? defaultLabValues(lab);
@@ -589,8 +541,7 @@ class MatheApp {
         if (this.dragging?.pointer !== event.pointerId) return;
         this.dragging = null;
         visual.classList.remove("is-dragging");
-        if (visual.hasPointerCapture(event.pointerId))
-          visual.releasePointerCapture(event.pointerId);
+        if (visual.hasPointerCapture(event.pointerId)) visual.releasePointerCapture(event.pointerId);
       };
       visual.addEventListener("pointerup", stop);
       visual.addEventListener("pointercancel", stop);
@@ -599,11 +550,7 @@ class MatheApp {
         const spec = target ? handles[target.dataset.handle ?? ""] : undefined;
         if (!target || !spec) return;
         const axis =
-          event.key === "ArrowLeft" || event.key === "ArrowRight"
-            ? spec.x
-            : event.key === "ArrowUp" || event.key === "ArrowDown"
-              ? spec.y
-              : undefined;
+          event.key === "ArrowLeft" || event.key === "ArrowRight" ? spec.x : event.key === "ArrowUp" || event.key === "ArrowDown" ? spec.y : undefined;
         if (!axis) return;
         const param = lab.params.find((p) => p.key === axis);
         if (!param || param.type === "state") return;
@@ -626,20 +573,15 @@ class MatheApp {
       if (param.type === "state") continue;
       const wrap = container.querySelector<HTMLElement>(`[data-wrap="${param.key}"]`);
       if (wrap) wrap.hidden = param.showIf ? !param.showIf(values) : false;
-      const input = container.querySelector<HTMLInputElement | HTMLSelectElement>(
-        `[data-param="${param.key}"]`,
-      );
-      if (input && input.value !== String(values[param.key]))
-        input.value = String(values[param.key]);
+      const input = container.querySelector<HTMLInputElement | HTMLSelectElement>(`[data-param="${param.key}"]`);
+      if (input && input.value !== String(values[param.key])) input.value = String(values[param.key]);
       if (param.type !== "range") continue;
       const output = container.querySelector<HTMLOutputElement>(`[data-output="${param.key}"]`);
       if (output) output.textContent = fmtUnit(values[param.key], param.unit, param.digits ?? 0);
     }
     const visual = container.querySelector<HTMLElement>("#lab-visual");
     if (visual) {
-      const focused = (document.activeElement as Element | null)
-        ?.closest?.("[data-handle]")
-        ?.getAttribute("data-handle");
+      const focused = (document.activeElement as Element | null)?.closest?.("[data-handle]")?.getAttribute("data-handle");
       visual.innerHTML = labView(lab.kind).render(values, readouts);
       if (focused) visual.querySelector<SVGGElement>(`[data-handle="${focused}"]`)?.focus();
     }
@@ -648,10 +590,7 @@ class MatheApp {
       list.innerHTML = lab.readouts
         .map((readout) => {
           const value = readouts[readout.key];
-          const text =
-            typeof value === "number"
-              ? fmtUnit(value, readout.unit ?? "", readout.digits ?? 2)
-              : String(value);
+          const text = typeof value === "number" ? fmtUnit(value, readout.unit ?? "", readout.digits ?? 2) : String(value);
           return `<div class="${readout.emphasis ? "is-emphasis" : ""}"><dt>${esc(readout.label)}</dt><dd>${esc(text)}</dd></div>`;
         })
         .join("");
@@ -742,10 +681,7 @@ class MatheApp {
       <p class="task-feedback" id="task-feedback">${this.taskSolved ? "✅ Richtig!" : this.taskRevealed ? "Lösungsweg angezeigt. Diese Aufgabe zählt nicht, die nächste schon." : "Dezimalzahlen mit Komma, Brüche wie 3/5, Vielfache von π wie 4π."}</p>
       <div class="task-solution" id="task-solution" ${locked || this.taskTips > 0 ? "" : "hidden"}>
         <strong>${locked ? "Lösungsweg" : "Tipp"}</strong>
-        <ol>${task.steps
-          .slice(0, locked ? task.steps.length : this.taskTips)
-          .map((step) => `<li>${step}</li>`)
-          .join("")}</ol>
+        <ol>${task.steps.slice(0, locked ? task.steps.length : this.taskTips).map((step) => `<li>${step}</li>`).join("")}</ol>
       </div>
     `;
 
@@ -761,9 +697,7 @@ class MatheApp {
       set.querySelectorAll<HTMLButtonElement>("[data-option]").forEach((button) => {
         button.addEventListener("click", () => {
           this.taskInputs[index] = button.dataset.option ?? "";
-          set.querySelectorAll("[data-option]").forEach((other) => {
-            other.classList.toggle("is-selected", other === button);
-          });
+          set.querySelectorAll("[data-option]").forEach((other) => other.classList.toggle("is-selected", other === button));
           set.classList.remove("is-wrong", "is-correct");
         });
       });
@@ -854,19 +788,12 @@ class MatheApp {
     const total = lesson.lab.goals.length;
     const solved1 = solvedCount(this.progress, lesson.id, 1);
     const solved2 = solvedCount(this.progress, lesson.id, 2);
-    const item = (ok: boolean, text: string) =>
-      `<li class="${ok ? "is-done" : ""}"><span>${ok ? "✅" : "○"}</span> ${text}</li>`;
+    const item = (ok: boolean, text: string) => `<li class="${ok ? "is-done" : ""}"><span>${ok ? "✅" : "○"}</span> ${text}</li>`;
     list.innerHTML =
       item(quiz, "Schnellcheck richtig beantwortet") +
       item(goals === total, `Laboraufträge erfüllt (${goals} von ${total})`) +
-      item(
-        solved1 >= lesson.requiredCorrect,
-        `${lesson.requiredCorrect} Aufgaben auf Level 1 gelöst (${Math.min(solved1, lesson.requiredCorrect)} von ${lesson.requiredCorrect})`,
-      ) +
-      item(
-        solved2 >= lesson.requiredCorrect,
-        `Bonus 🦅: ${lesson.requiredCorrect} Transferaufgaben auf Level 2 (${Math.min(solved2, lesson.requiredCorrect)} von ${lesson.requiredCorrect})`,
-      );
+      item(solved1 >= lesson.requiredCorrect, `${lesson.requiredCorrect} Aufgaben auf Level 1 gelöst (${Math.min(solved1, lesson.requiredCorrect)} von ${lesson.requiredCorrect})`) +
+      item(solved2 >= lesson.requiredCorrect, `Bonus 🦅: ${lesson.requiredCorrect} Transferaufgaben auf Level 2 (${Math.min(solved2, lesson.requiredCorrect)} von ${lesson.requiredCorrect})`);
     done.hidden = !isLessonComplete(this.progress, lesson);
   }
 
@@ -905,24 +832,23 @@ class MatheApp {
         <section class="hero hero-compact">
           <div class="hero-copy">
             <h2>Formelsammlung Mathematik 8</h2>
-            <p>Formeln der ${lessonsForTrack(this.progress.trackFilter).length} Lektionen deines gewählten Lernpfads mit der Bedeutung ihrer Buchstaben. Jede Zeile führt zur Lektion mit Labor und Aufgaben.</p>
+            <p>Alle Formeln der ${STAGES.reduce((n, stage) => n + stage.lessons.length, 0)} Lektionen mit der Bedeutung ihrer Buchstaben. Jede Zeile führt zur Lektion mit Labor und Aufgaben.</p>
           </div>
         </section>
-        ${STAGES.filter((stage) => relevantLessons(stage, this.progress.trackFilter).length > 0)
-          .map(
-            (stage) => `
+        ${STAGES.map(
+          (stage) => `
           <section class="stage-card" style="--accent:${stage.accent}">
-            <header class="stage-head"><span class="stage-icon" aria-hidden="true">${stage.icon}</span><div><h3>Etappe ${this.visibleStageNumber(stage)}: ${esc(stage.title)}</h3><p class="muted">${esc(stage.lehrplanLabel)}</p></div></header>
+            <header class="stage-head"><span class="stage-icon" aria-hidden="true">${stage.icon}</span><div><h3>Etappe ${stage.stageNumber}: ${esc(stage.title)}</h3><p class="muted">${esc(stage.lehrplanLabel)}</p></div></header>
             <table class="formula-table">
               <thead><tr><th>Formel</th><th>Bedeutung</th><th>Lektion</th></tr></thead>
               <tbody>
-                ${relevantLessons(stage, this.progress.trackFilter)
+                ${stage.lessons
                   .flatMap((lesson) =>
                     lesson.formulas.map(
                       (formula) => `<tr>
                         <td><strong>${esc(formula.name)}</strong><br><span class="formula">${formula.html}</span></td>
                         <td>${esc(formula.quantities)}</td>
-                        <td><button type="button" class="btn btn-ghost btn-sm" data-open-lesson="${lesson.id}">${esc(lesson.title)}</button></td>
+                        <td><button type="button" class="btn btn-ghost btn-sm" data-open-lesson="${lesson.id}">${esc(lesson.title)}</button>${lesson.tracks.length === 1 ? ` <span class="chip chip-track">nur ${TRACK_LABELS[lesson.tracks[0]]}</span>` : ""}</td>
                       </tr>`,
                     ),
                   )
@@ -930,8 +856,7 @@ class MatheApp {
               </tbody>
             </table>
           </section>`,
-          )
-          .join("")}
+        ).join("")}
       </div>
     `;
     host.querySelectorAll<HTMLElement>("[data-open-lesson]").forEach((element) => {
@@ -958,11 +883,7 @@ function controlHtml(param: LabParam, values: LabValues): string {
 }
 
 /** One arrow-key step: the next slider position, or the next option of a choice. */
-function stepParam(
-  param: Exclude<LabParam, { type: "state" }>,
-  value: number,
-  direction: number,
-): number {
+function stepParam(param: Exclude<LabParam, { type: "state" }>, value: number, direction: number): number {
   if (param.type === "range") return value + direction * param.step;
   const index = param.options.findIndex((option) => option.value === value);
   const next = Math.min(param.options.length - 1, Math.max(0, index + direction));

@@ -87,40 +87,56 @@ export interface LabAction {
   apply: (values: LabValues) => LabValues;
 }
 
+/** One lab per lesson, grouped by stage as in src/lab/views-*.ts. */
 export type LabKind =
+  // Etappe 1: Dreiecke und Vierecke
   | "triangle-existence"
   | "triangle-construction"
   | "congruence"
-  | "quadrilaterals"
-  | "quad-construction"
+  | "quadrilateral-family"
+  | "quadrilateral-construction"
+  | "quadrilateral-problems"
+  // Etappe 2: Drehung
   | "rotation"
-  | "rotational-symmetry"
+  | "point-symmetry"
   | "vector-rotation"
+  // Etappe 3: Raumgeometrie
   | "solid-symmetry"
   | "axial-section"
   | "space-coordinates"
-  | "oblique"
+  | "solid-coordinates"
+  | "oblique-drawing"
   | "true-size"
-  | "term-operations"
-  | "binomial"
-  | "factoring"
-  | "term-extremum"
-  | "equation"
-  | "word-equation"
+  // Etappe 4: Terme und Gleichungen
+  | "like-terms"
+  | "expand-products"
+  | "binomial-squares"
+  | "factorise"
+  | "completing-square"
+  | "extremum-problem"
+  | "linear-equation"
+  | "word-problem"
   | "inequality"
+  // Etappe 5: Bruchterme und Bruchgleichungen
+  | "fraction-term"
   | "domain"
-  | "rational-equation"
-  | "rearrange"
-  | "mapping"
+  | "proportion-equation"
+  // Etappe 6: Funktionen
+  | "relation-check"
   | "representations"
+  | "zeros-domain"
   | "origin-line"
-  | "line-relations"
-  | "intercept"
+  | "perpendicular"
+  | "line-mx-t"
   | "line-from-points"
-  | "functional-area"
-  | "outcomes"
-  | "tree-table"
-  | "frequencies";
+  | "parallel-family"
+  | "linear-model"
+  | "determinant-area"
+  // Etappe 7: Daten und Zufall
+  | "outcome-event"
+  | "tree-diagram"
+  | "two-way-table"
+  | "frequency-simulation";
 
 export interface LabDefinition {
   kind: LabKind;
@@ -201,7 +217,7 @@ export interface Lesson {
   title: string;
   subtitle: string;
   tracks: Track[];
-  /** Where LehrplanPLUS places it, e.g. "M9 LB 3 (I) · M9 LB 3 (II/III)". */
+  /** Where LehrplanPLUS places it, e.g. "M8 LB 4 (I) · M8 LB 3 (II/III)". */
   lehrplan: string;
   whyItMatters: string;
   explanationHtml: string;

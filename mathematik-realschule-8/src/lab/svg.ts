@@ -34,6 +34,18 @@ export function open(label: string): string {
   return `<svg class="lab-svg" viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(label)}" preserveAspectRatio="xMidYMid meet">`;
 }
 
+export function close(): string {
+  return "</svg>";
+}
+
+export function arc(cx: number, cy: number, r: number, a0: number, a1: number, cls = "lab-arc"): string {
+  return `<path d="${arcPath(cx, cy, r, a0, a1)}" class="${cls}" />`;
+}
+
+export function angleArc(cx: number, cy: number, r: number, a0: number, a1: number, cls = "lab-angle-fill"): string {
+  return `<path d="${sectorPath(cx, cy, r, a0, a1)}" class="${cls}" />`;
+}
+
 export function text(
   x: number,
   y: number,
@@ -70,14 +82,7 @@ export function path(d: string, cls: string, extra = ""): string {
   return `<path d="${d}" class="${cls}" ${extra}/>`;
 }
 
-export function arrow(
-  x1: number,
-  y1: number,
-  x2: number,
-  y2: number,
-  cls: string,
-  width = 2.5,
-): string {
+export function arrow(x1: number, y1: number, x2: number, y2: number, cls: string, width = 2.5): string {
   const dx = x2 - x1;
   const dy = y2 - y1;
   const len = Math.hypot(dx, dy);
@@ -120,14 +125,7 @@ export function polar(cx: number, cy: number, r: number, angle: number): Pt {
 }
 
 /** A small arc that marks an angle at a vertex, with an optional square for 90°. */
-export function angleMark(
-  vertex: Pt,
-  from: Pt,
-  to: Pt,
-  r: number,
-  cls = "lab-angle",
-  rightAngle = false,
-): string {
+export function angleMark(vertex: Pt, from: Pt, to: Pt, r: number, cls = "lab-angle", rightAngle = false): string {
   const a0 = (Math.atan2(vertex.y - from.y, from.x - vertex.x) * 180) / Math.PI;
   let a1 = (Math.atan2(vertex.y - to.y, to.x - vertex.x) * 180) / Math.PI;
   let sweep = a1 - a0;
@@ -141,15 +139,8 @@ export function angleMark(
     const p1 = { x: vertex.x + u.x * s, y: vertex.y + u.y * s };
     const p2 = { x: vertex.x + (u.x + v.x) * s, y: vertex.y + (u.y + v.y) * s };
     const p3 = { x: vertex.x + v.x * s, y: vertex.y + v.y * s };
-    return (
-      `<path d="M${r1(p1.x)} ${r1(p1.y)} L${r1(p2.x)} ${r1(p2.y)} L${r1(p3.x)} ${r1(p3.y)}" class="${cls}" />` +
-      circle(
-        vertex.x + (u.x + v.x) * s * 0.5,
-        vertex.y + (u.y + v.y) * s * 0.5,
-        1.6,
-        "lab-dot-small",
-      )
-    );
+    return `<path d="M${r1(p1.x)} ${r1(p1.y)} L${r1(p2.x)} ${r1(p2.y)} L${r1(p3.x)} ${r1(p3.y)}" class="${cls}" />` +
+      circle(vertex.x + (u.x + v.x) * s * 0.5, vertex.y + (u.y + v.y) * s * 0.5, 1.6, "lab-dot-small");
   }
   return `<path d="${arcPath(vertex.x, vertex.y, r, a0, a1)}" class="${cls}" />`;
 }
@@ -171,19 +162,11 @@ export function sideLabel(a: Pt, b: Pt, content: string, offset = 14, cls = "lab
  * A point the learner drags. `id` names the handle in the lab view's handle
  * table; the element is focusable, so arrow keys move it too.
  */
-export function handle(
-  id: string,
-  x: number,
-  y: number,
-  label: string,
-  cls = "lab-handle",
-): string {
-  return (
-    `<g class="${cls}" data-handle="${id}" tabindex="0" role="button" aria-label="${esc(label)} (ziehen oder Pfeiltasten)">` +
+export function handle(id: string, x: number, y: number, label: string, cls = "lab-handle"): string {
+  return `<g class="${cls}" data-handle="${id}" tabindex="0" role="button" aria-label="${esc(label)} (ziehen oder Pfeiltasten)">` +
     `<circle cx="${r1(x)}" cy="${r1(y)}" r="16" class="lab-handle-hit" />` +
     `<circle cx="${r1(x)}" cy="${r1(y)}" r="7.5" class="lab-handle-dot" />` +
-    `</g>`
-  );
+    `</g>`;
 }
 
 export function num(r: ReadoutValues, key: string): number {
@@ -265,19 +248,11 @@ export class Plot {
     out += arrow(x0, this.box.y + this.box.h, x0, this.box.y - 4, "lab-axis", 1.4);
     out += text(this.box.x + this.box.w - 4, y0 - 6, xLabel, "lab-text-axis", "end");
     out += text(x0 + 6, this.box.y + 10, yLabel, "lab-text-axis");
-    for (
-      let x = Math.ceil(this.xmin / labelEvery) * labelEvery;
-      x <= this.xmax - 0.5 * labelEvery + 1e-9;
-      x += labelEvery
-    ) {
+    for (let x = Math.ceil(this.xmin / labelEvery) * labelEvery; x <= this.xmax - 0.5 * labelEvery + 1e-9; x += labelEvery) {
       if (Math.abs(x) < 1e-9) continue;
       out += text(this.X(x), y0 + 13, fmtTick(x), "lab-text-tick", "middle");
     }
-    for (
-      let y = Math.ceil(this.ymin / labelEvery) * labelEvery;
-      y <= this.ymax - 0.5 * labelEvery + 1e-9;
-      y += labelEvery
-    ) {
+    for (let y = Math.ceil(this.ymin / labelEvery) * labelEvery; y <= this.ymax - 0.5 * labelEvery + 1e-9; y += labelEvery) {
       if (Math.abs(y) < 1e-9) continue;
       out += text(x0 - 5, this.Y(y) + 4, fmtTick(y), "lab-text-tick", "end");
     }
@@ -305,13 +280,7 @@ export class Plot {
 
   /** A line through the box: y = m x + t, or x = c when vertical. */
   lineThrough(m: number, t: number, cls: string): string {
-    return line(
-      this.X(this.xmin),
-      this.Y(m * this.xmin + t),
-      this.X(this.xmax),
-      this.Y(m * this.xmax + t),
-      cls,
-    );
+    return line(this.X(this.xmin), this.Y(m * this.xmin + t), this.X(this.xmax), this.Y(m * this.xmax + t), cls);
   }
 
   /** A clip path id for this box; draw curves inside `<g clip-path>`. */
@@ -338,16 +307,10 @@ export function clipped(id: string, content: string): string {
  * Lines of text on a soft panel, so they stay readable over grids and
  * graphs. Each line is [content, class]; the panel is sized to the longest.
  */
-export function infoBox(
-  x: number,
-  y: number,
-  lines: Array<[string, string]>,
-  anchor: "start" | "end" = "start",
-): string {
+export function infoBox(x: number, y: number, lines: Array<[string, string]>, anchor: "start" | "end" = "start"): string {
   const shown = lines.filter(([content]) => content);
   if (shown.length === 0) return "";
-  const widthOf = ([content, cls]: [string, string]) =>
-    content.length * (cls.includes("big") ? 9.2 : cls.includes("small") ? 6.2 : 7.3);
+  const widthOf = ([content, cls]: [string, string]) => content.length * (cls.includes("big") ? 9.2 : cls.includes("small") ? 6.2 : 7.3);
   const width = Math.max(...shown.map(widthOf)) + 16;
   const height = shown.length * 20 + 8;
   const left = anchor === "start" ? x - 8 : x - width + 8;

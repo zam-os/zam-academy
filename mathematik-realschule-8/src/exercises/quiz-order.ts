@@ -7,7 +7,5 @@ import { createRng, seedFrom } from "./rng";
  */
 export function quizOrder(lesson: Lesson): number[] {
   const count = lesson.quiz.options.length;
-  return createRng(seedFrom(`${lesson.id}:quiz`)).shuffle(
-    Array.from({ length: count }, (_, i) => i),
-  );
+  return createRng(seedFrom(`${lesson.id}:quiz`)).shuffle(Array.from({ length: count }, (_, i) => i));
 }

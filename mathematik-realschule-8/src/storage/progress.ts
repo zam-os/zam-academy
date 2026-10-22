@@ -21,7 +21,7 @@ export interface LearnerProgress {
   celebratedLessonIds: string[];
 }
 
-export const DEFAULT_LESSON_ID = "dv-4-vierecke";
+export const DEFAULT_LESSON_ID = "dv-1-dreiecksexistenz";
 
 function defaults(): LearnerProgress {
   return {
@@ -70,15 +70,21 @@ export function loadLearnerProgress(): LearnerProgress {
     }
     return {
       activeLessonId:
-        typeof parsed.activeLessonId === "string" ? parsed.activeLessonId : base.activeLessonId,
+        typeof parsed.activeLessonId === "string"
+          ? parsed.activeLessonId
+          : base.activeLessonId,
       difficultyLevel: parsed.difficultyLevel === 2 ? 2 : 1,
       trackFilter:
-        parsed.trackFilter === "I" || parsed.trackFilter === "II_III" ? parsed.trackFilter : "alle",
+        parsed.trackFilter === "I" || parsed.trackFilter === "II_III"
+          ? parsed.trackFilter
+          : "alle",
       quizDone: isStringArray(parsed.quizDone) ? parsed.quizDone : [],
       labGoals,
       solved,
       attempts,
-      celebratedStageIds: isStringArray(parsed.celebratedStageIds) ? parsed.celebratedStageIds : [],
+      celebratedStageIds: isStringArray(parsed.celebratedStageIds)
+        ? parsed.celebratedStageIds
+        : [],
       celebratedLessonIds: isStringArray(parsed.celebratedLessonIds)
         ? parsed.celebratedLessonIds
         : [],
