@@ -112,7 +112,10 @@ Every lesson has
   and the level must change the task. Values are plausible (triangles exist,
   probabilities lie in [0; 1]), rounding never flips a yes/no answer, and
   typical mistakes get a targeted hint;
-- where the subject uses them, a verified teacher video (section 4).
+- teacher videos only once they are verified (section 4).
+
+Each stage, one per Lernbereich, gets its own accent colour instead of one
+palette for the whole package.
 
 Learner text is German: "du", the terms of the LehrplanPLUS, the decimal
 comma (`fmt()`), the real minus sign "−" (U+2212), "·" for multiplication,
@@ -120,10 +123,11 @@ a space before units. No hype, no filler.
 
 ## 4. Teacher videos
 
-Mathematik links one German explainer video per lesson; other subjects may
-link videos where they help. Each video must really teach the lesson's topic
-at the learners' level (Mathe by Daniel Jung, Lehrerschmidt, MathemaTrick,
-simpleclub, …). Check each candidate:
+Authors of a new package add no teacher videos. A separate agent adds and
+checks them afterwards, as plain links (the `teacherVideo` of
+`mathematik-realschule-9` is the pattern). Whoever adds a video makes sure it
+really teaches the lesson's topic at the learners' level (Mathe by Daniel
+Jung, Lehrerschmidt, MathemaTrick, simpleclub, …) and checks each candidate:
 
 ```bash
 curl -s "https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=<id>&format=json"
@@ -175,10 +179,18 @@ Learners have review histories on them.
   step (as in `bwr-realschule-9`): histories move unchanged, old ids leave
   active reviews, repeated installs change nothing, and a learner holding
   cards on both ids makes the install refuse an automatic merge.
-- Ship the approved `replaces` with the cell's first publication. Adding them
-  in a later version is risky: by then learners may hold cards on both ids,
-  and zam-core refuses the whole install.
-- Until Thomas approves, `approved` stays `null` (hard rule 1).
+- Until Thomas approves, `approved` stays `null` (hard rule 1). A new cell
+  without `replaces` and `retired_items` needs no approval and may ship
+  first; the mapping then stays a proposal (`"status": "proposal-only"`).
+  Ship the approved version that adds the `replaces` before ZAM bundles the
+  cell, and keep that gap short: a learner who meanwhile holds cards on both
+  an old id and its successor makes zam-core refuse the whole install. When
+  the approval comes before the first publication, ship the `replaces` right
+  away.
+- The ZAM pull request that bundles the cell follows the Academy PR as a
+  draft, because `academy:sync` reads the published bytes. ZAM's Realschule
+  groups are I, II, IIIa and IIIb; a cell track `II_III` reaches II, IIIa and
+  IIIb, a track `I` only Zweig I.
 
 ## 7. Integration
 
@@ -222,6 +234,7 @@ interactive part at the start, an exercise on both levels, reference views
 such as the Formelsammlung, in light and dark theme.
 
 The PR description states what the package covers per Zweig, the evidence
-above (commands with their results, the video table), open gaps, and, when
-cards are replaced, the A/B/C summary Thomas is asked to approve. Before the
+above (commands with their results; for added videos the table lesson → id →
+real title), open gaps, and, when cards are replaced, the A/B/C summary
+Thomas is asked to approve. Before the
 merge, a second agent reviews the PR against this file.
