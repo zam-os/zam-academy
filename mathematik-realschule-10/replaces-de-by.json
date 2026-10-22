@@ -1,11 +1,11 @@
 {
   "schema": 1,
   "approved": "2026-10-22",
-  "source": "Thomas in diesem Claude-Code-Chat am 2026-10-22 nach der Überarbeitung von zam-os/zam-academy#23: „Freigabe erteilt“. Die Freigabe gilt der Zuordnung der 16 de-by-Karten in dieser Datei (9 A / 7 B, kein C).",
+  "source": "Thomas in diesem Claude-Code-Chat am 2026-10-22: zuerst „Freigabe erteilt“ für die Zuordnung nach der Überarbeitung von zam-os/zam-academy#23, dann nach dem zweiten Review die Änderungen „Als B führen, so freigegeben“ (J03 und J05 der Exponential-Zelle als B) und „Korrigieren, B bleibt, so freigegeben“ (fachliche Korrekturen der Nachfolger von J02 und J04). Die Freigabe gilt der Zuordnung der 16 de-by-Karten in dieser Datei (7 A / 9 B, kein C).",
   "status": "approved",
   "source_repository": "zam-os/zam",
   "source_commit": "370d62282d0b7ae16522da3490c92e05957f20b4",
-  "authorization": "Thomas hat am 22. Oktober 2026 die hier dokumentierten 16 Zuordnungen ausdrücklich freigegeben. Die genau benannten replaces dürfen mit der ersten Veröffentlichung der Zelle erscheinen; persönliche Karten und Reviewhistorien bleiben erhalten. Ein früherer Eintrag „approved: 2026-10-22“ ohne Beleg (aus dem ersten Entwurf dieses PRs) war keine Freigabe und wurde vorher entfernt.",
+  "authorization": "Thomas hat am 22. Oktober 2026 die hier dokumentierten 16 Zuordnungen ausdrücklich freigegeben, einschließlich der Umstufung von J03 und J05 zu B und der fachlichen Korrekturen in den Nachfolgern von J02 und J04. Die genau benannten replaces dürfen mit der ersten Veröffentlichung der Zelle erscheinen; persönliche Karten und Reviewhistorien bleiben erhalten. Ein früherer Eintrag „approved: 2026-10-22“ ohne Beleg (aus dem ersten Entwurf dieses PRs) war keine Freigabe und wurde vorher entfernt.",
   "policy": "A: sicher gleicher Einzelabruf, genau ein Nachfolger. B: vollständiger alter Gesamtabruf (Frage, Antwort und Musterlösung) auf genau einem eigenen Nachfolger; keine Verteilung einer Historie auf Teilkarten. C: keine. Alle persönlichen Karten und Reviewhistorien bleiben erhalten; die neuen Karten der Lektionen beginnen ohne Beherrschung. Nur temporäre Bibliotheken für die Prüfung verwenden.",
   "sources": [
     {
@@ -100,15 +100,15 @@
       "de_by_question": "Analysiere die allgemeine Exponentialfunktion f(x) = a · b^x + c (mit b > 0, b != 1): Erkläre die Bedeutung der Parameter a (Streckfaktor/Anfangswert), b (Wachstumsfaktor: b > 1 Wachstum, 0 < b < 1 Zerfall) und c (vertikale Verschiebung/waagrechte Asymptote y = c) und bestimme den Schnittpunkt des Graphen mit der y-Achse.",
       "category": "B",
       "academy_slug": "m10-exponentialfunktion-parameter",
-      "reason": "Mehrteiliger Gesamtabruf (Bedeutung von a, b und c in a · bˣ + c, Wachstum und Abnahme, Asymptote y = c, Schnittpunkt S_y(0 | a + c)) bleibt vollständig auf genau einem Nachfolger."
+      "reason": "Mehrteiliger Gesamtabruf (Bedeutung von a, b und c in a · bˣ + c, Wachstum und Abnahme, Asymptote y = c, Schnittpunkt S_y(0 | a + c)) bleibt auf genau einem Nachfolger. Fachlich korrigiert, von Thomas am 22.10.2026 freigegeben: a ist der Streckfaktor und nur für c = 0 der Anfangswert, Steigen und Fallen gelten für a > 0, und statt „streng monoton“ und x → ±∞ steht die Sprache der Realschule."
     },
     {
       "de_by_cell": "de-by:realschule-10-mathematik-exponential-logarithmus",
       "de_by_id": "01K4X0M0000000000000000J03",
       "de_by_question": "Welchen exakten Wert hat der dekadische Logarithmus log_10(1000) bzw. log_2(32)?",
-      "category": "A",
+      "category": "B",
       "academy_slug": "m10-log-exakte-werte",
-      "reason": "Gleicher Einzelabruf: lg 1000 = 3 und log₂ 32 = 5 aus der Definition des Logarithmus."
+      "reason": "Zweiteiliger Gesamtabruf (lg 1000 = 3 und log₂ 32 = 5 aus der Definition des Logarithmus) bleibt vollständig auf genau einem Nachfolger."
     },
     {
       "de_by_cell": "de-by:realschule-10-mathematik-exponential-logarithmus",
@@ -116,15 +116,15 @@
       "de_by_question": "Formuliere die drei fundamentalen Logarithmengesetze für Produkte, Quotienten und Potenzen (log(u · v), log(u / v), log(u^r)) und gib die Formel für den Basiswechsel log_b(a) = log_10(a) / log_10(b) an.",
       "category": "B",
       "academy_slug": "m10-logarithmensaetze-basiswechsel",
-      "reason": "Mehrteiliger Gesamtabruf (die drei Logarithmensätze für Produkt, Quotient und Potenz sowie der Basiswechsel) bleibt vollständig auf genau einem Nachfolger. Die alte Antwort nennt den Basiswechsel auch mit ln; das bleibt als Teil des Gesamtabrufs stehen, obwohl ln über den Realschul-Lehrplan hinausgeht."
+      "reason": "Mehrteiliger Gesamtabruf (die drei Logarithmensätze für Produkt, Quotient und Potenz sowie der Basiswechsel) bleibt vollständig auf genau einem Nachfolger. Fachlich angepasst, von Thomas am 22.10.2026 freigegeben: Der Basiswechsel steht nur mit lg; die alte Fassung mit ln geht über den Realschul-Lehrplan hinaus."
     },
     {
       "de_by_cell": "de-by:realschule-10-mathematik-exponential-logarithmus",
       "de_by_id": "01K4X0M0000000000000000J05",
       "de_by_question": "Wie lautet die exakte Lösung der Exponentialgleichung 5^x = 125 bzw. 3^x = 20?",
-      "category": "A",
+      "category": "B",
       "academy_slug": "m10-exponentialgleichung-exakt",
-      "reason": "Gleicher Einzelabruf: 5ˣ = 125 ergibt x = 3, 3ˣ = 20 ergibt x = lg 20 : lg 3 ≈ 2,73; dieselbe Frage mit derselben Antwort."
+      "reason": "Zweiteiliger Gesamtabruf (5ˣ = 125 ergibt x = 3, 3ˣ = 20 ergibt x = lg 20 : lg 3 ≈ 2,73) bleibt vollständig auf genau einem Nachfolger."
     },
     {
       "de_by_cell": "de-by:realschule-10-mathematik-exponential-logarithmus",

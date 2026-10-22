@@ -440,7 +440,7 @@ const winkelBis360: Lesson = {
       <tr><td>tan α</td><td>+</td><td>−</td><td>+</td><td>−</td></tr>
     </table>
     <p><strong>Supplementbeziehungen:</strong> Spiegelt man P an der y-Achse, gehört der Bildpunkt zum Winkel 180° − α. Die y-Koordinate bleibt gleich, die x-Koordinate wechselt das Vorzeichen:</p>
-    <p class="formula-line">sin(180° − α) = sin α · cos(180° − α) = −cos α · tan(180° − α) = −tan α</p>
+    <p class="formula-line">sin(180° − α) = sin α; cos(180° − α) = −cos α; tan(180° − α) = −tan α</p>
     <p><strong>Negative Winkel</strong> trägt man im Uhrzeigersinn ab. −α gehört zum selben Punkt wie 360° − α, zum an der x-Achse gespiegelten Punkt: sin(−α) = −sin α, cos(−α) = cos α, tan(−α) = −tan α. Der Gegenpunkt zu α + 180° liegt auf derselben Geraden durch O, deshalb ist tan(α + 180°) = tan α. Der Taschenrechner (Modus DEG) rechnet mit allen Winkeln, auch mit negativen.</p>
     <p><strong>Umgekehrt</strong> gibt es zu einem Wert in [0°; 360°[ meist <strong>zwei Winkel</strong>, der Taschenrechner zeigt aber nur einen: sin⁻¹ liefert Winkel von −90° bis 90°, cos⁻¹ von 0° bis 180°, tan⁻¹ von −90° bis 90°.</p>
     <ul>
@@ -455,7 +455,7 @@ const winkelBis360: Lesson = {
   formulas: [
     { name: "Supplementbeziehungen", html: "sin(180° − α) = sin α; cos(180° − α) = −cos α; tan(180° − α) = −tan α", quantities: "P an der y-Achse gespiegelt" },
     { name: "Negative Winkel", html: "sin(−α) = −sin α; cos(−α) = cos α; tan(−α) = −tan α", quantities: "−α im Uhrzeigersinn, derselbe Punkt wie 360° − α" },
-    { name: "Zweiter Winkel zum selben Wert", html: "sin: 180° − α₁ · cos: 360° − α₁ · tan: α₁ + 180°", quantities: "α₁ vom Taschenrechner; negative Winkel + 360°" },
+    { name: "Zweiter Winkel zum selben Wert", html: "sin: 180° − α₁; cos: 360° − α₁; tan: α₁ + 180°", quantities: "α₁ vom Taschenrechner; negative Winkel + 360°" },
   ],
   quiz: {
     question: "Der Taschenrechner liefert zu sin α = 0,4 den Winkel 23,58°. Welcher Winkel zwischen 0° und 360° hat ebenfalls den Sinuswert 0,4?",
@@ -712,7 +712,12 @@ const steigungswinkel: Lesson = {
     ],
     goals: [
       { id: "gerade", text: "Stelle g so ein, dass sie die Gleichung y = −x + 3 hat.", check: (v) => v.a1 === 135 && within(v.sy, 3 - v.sx, 1e-9) },
-      { id: "senkrecht", text: "Mache h senkrecht zu g. Was ergibt dann m₁ · m₂?", check: (v) => Math.abs(v.a2 - v.a1) === 90 },
+      {
+        id: "senkrecht",
+        text: "Mache h senkrecht zu g, ohne dass eine der Geraden waagrecht liegt. Was ergibt dann m₁ · m₂?",
+        // A horizontal line has no perpendicular with a slope, so m₁ · m₂ = −1 needs neither 0° nor 90°.
+        check: (v) => Math.abs(v.a2 - v.a1) === 90 && v.a1 % 90 !== 0 && v.a2 % 90 !== 0,
+      },
       {
         id: "stumpf",
         text: "Stelle α₁ und α₂ so ein, dass sie sich um mehr als 90° unterscheiden und sich die Geraden unter φ = 50° schneiden.",
@@ -1148,7 +1153,7 @@ const kosinusTangens: Lesson = {
       <li><strong>Tangensfunktion y = tan α:</strong> Sie ist für α = 90° + k · 180° nicht definiert. Dort hat der Graph <strong>senkrechte Asymptoten</strong>: Kurz vor 90° wird tan α beliebig groß, kurz danach beliebig klein. Zwischen zwei Asymptoten steigt die Kurve immer. Die Nullstellen liegen bei k · 180°, die Wertemenge sind alle reellen Zahlen. Weil P und der Gegenpunkt zu α + 180° auf derselben Geraden durch O liegen, hat der Tangens die <strong>Periode 180°</strong>.</li>
     </ul>
     <p><strong>Komplementbeziehungen:</strong> Im rechtwinkligen Dreieck ist der zweite spitze Winkel 90° − α; die Gegenkathete von α ist die Ankathete von 90° − α und umgekehrt. Am Einheitskreis vertauscht die Spiegelung an der Geraden y = x die beiden Koordinaten. Deshalb gilt für jeden Winkel:</p>
-    <p class="formula-line">sin(90° − α) = cos α  ·  cos(90° − α) = sin α</p>
+    <p class="formula-line">sin(90° − α) = cos α; cos(90° − α) = sin α</p>
     <div class="example">Beispiel: sin 70° = sin(90° − 20°) = cos 20°. Und ein Term wird kürzer: sin(90° − α) · tan α = cos α · (sin α : cos α) = sin α.</div>
     <div class="merke"><strong>Merke:</strong> Sinus und Kosinus haben die Periode 360°, der Tangens 180°. Beim Komplementwinkel 90° − α wird aus sin ein cos und aus cos ein sin.</div>
   `,

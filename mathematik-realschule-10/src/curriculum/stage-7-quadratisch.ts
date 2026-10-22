@@ -583,7 +583,7 @@ const scheitelpunkt: Lesson = {
           steps: [
             `Nullstellen mit der Scheitelpunktsform: ${equation} = 0 ⇒ ${vertexForm(a, xs, 0)} = ${fmt(-ys)} ⇒ ${square(xs)} = ${k * k}`,
             `${inside(xs)} = −${k} oder ${inside(xs)} = ${k}, also x₁ = ${fmt(xs - k)} und x₂ = ${fmt(xs + k)}`,
-            `Schnittpunkt mit der y-Achse aus der allgemeinen Form: y =${quadratic(a, b, c)}, also (0 | ${fmt(c)})`,
+            `Schnittpunkt mit der y-Achse aus der allgemeinen Form: y = ${quadratic(a, b, c)}, also (0 | ${fmt(c)})`,
             `<strong>x₁ = ${fmt(xs - k)}, x₂ = ${fmt(xs + k)}; Schnittpunkt mit der y-Achse (0 | ${fmt(c)})</strong>`,
           ],
           meta: { a, xs, ys, k },

@@ -1078,7 +1078,7 @@
           "tier": "tier1_fast",
           "bloom_level": 2,
           "source_link": "https://academy.zam-os.org/mathematik-realschule-10/#lesson=dr-1-sinussatz",
-          "question": "Zwei Seiten und ein Gegenwinkel sind gegeben. Wann gibt es genau ein Dreieck?",
+          "question": "Zwei Seiten und ein Gegenwinkel sind gegeben. Wann gibt es sicher genau ein Dreieck?",
           "concept": "Wenn der gegebene Winkel der längeren der beiden Seiten gegenüberliegt.",
           "materiality": "material",
           "fast_check": {
@@ -1521,7 +1521,7 @@
           "question": "Für die Dreiecke ABₙCₙ gilt A(x) = ½ · (9 − x) · (3 + 2x) · sin 60° cm² mit 0 < x < 9. Für welches x ist der Flächeninhalt am größten, und warum?",
           "concept": "für x = 3,75: mitten zwischen den Nullstellen x = 9 und x = −1,5 des Terms",
           "materiality": "material",
-          "sample_solution": "Die Klammern werden null für x = 9 und x = −1,5. Der Graph von A ist eine nach unten geöffnete Parabel, ihr Scheitel liegt in der Mitte der Nullstellen: x = (9 − 1,5) : 2 = 3,75. Dort ist A ≈ 23,87 cm².",
+          "sample_solution": "Die Klammern werden null für x = 9 und x = −1,5. Die Werte von A liegen symmetrisch zur Mitte der Nullstellen (dritte binomische Formel), der größte also bei x = (9 − 1,5) : 2 = 3,75. Dort ist A ≈ 23,87 cm².",
           "choice_distractors": [
             {
               "text": "für x = 4,5: mitten zwischen den Grenzen x = 0 und x = 9 des Bereichs",
@@ -4760,12 +4760,12 @@
             },
             {
               "type": "math",
-              "tex": "\\log_b(a) = \\frac{\\ln(a)}{\\ln(b)} = \\frac{\\lg(a)}{\\lg(b)}",
-              "speech": "Logarithmus zur Basis b von a gleich l n von a durch l n von b gleich l g von a durch l g von b"
+              "tex": "\\log_b(a) = \\frac{\\lg(a)}{\\lg(b)}",
+              "speech": "Logarithmus zur Basis b von a gleich l g von a durch l g von b"
             }
           ],
           "materiality": "material",
-          "sample_solution": "1. Definition: Der Logarithmus x = log_b(y) ist derjenige Exponent, mit dem man die Basis b potenzieren muss, um den Numerus y zu erhalten: bˣ = y. 2. Die drei Logarithmengesetze: – Produktregel: log_b(u · v) = log_b(u) + log_b(v) – Quotientenregel: log_b(u / v) = log_b(u) − log_b(v) – Potenzregel: log_b(uʳ) = r · log_b(u) 3. Basiswechselsatz (Umrechnung für den Taschenrechner): log_b(a) = lg(a) / lg(b) = ln(a) / ln(b).",
+          "sample_solution": "1. Definition: Der Logarithmus x = log_b(y) ist derjenige Exponent, mit dem man die Basis b potenzieren muss, um den Numerus y zu erhalten: bˣ = y. 2. Die drei Logarithmengesetze: – Produktregel: log_b(u · v) = log_b(u) + log_b(v) – Quotientenregel: log_b(u / v) = log_b(u) − log_b(v) – Potenzregel: log_b(uʳ) = r · log_b(u) 3. Basiswechselsatz (Umrechnung für den Taschenrechner): log_b(a) = lg(a) / lg(b).",
           "choice_distractors": [
             {
               "text": "1. log(u · v) = log u · log v; 2. log(u : v) = log u : log v; 3. log(uʳ) = (log u)ʳ; Basiswechsel: log_b(a) = lg(a : b)",
@@ -4936,7 +4936,7 @@
           "tier": "tier2_synthesis",
           "bloom_level": 2,
           "source_link": "https://academy.zam-os.org/mathematik-realschule-10/#lesson=el-5-exponentialfunktion-allgemein",
-          "question": "Analysiere die allgemeine Exponentialfunktion f(x) = a · bˣ + c (mit b > 0, b ≠ 1): Erkläre die Bedeutung der Parameter a (Streckfaktor/Anfangswert), b (Wachstumsfaktor: b > 1 Wachstum, 0 < b < 1 Zerfall) und c (vertikale Verschiebung/waagrechte Asymptote y = c) und bestimme den Schnittpunkt des Graphen mit der y-Achse.",
+          "question": "Analysiere die allgemeine Exponentialfunktion f(x) = a · bˣ + c (mit b > 0, b ≠ 1): Erkläre die Bedeutung der Parameter a (Streckfaktor; für c = 0 auch der Anfangswert), b (Wachstumsfaktor: b > 1 Wachstum, 0 < b < 1 Zerfall) und c (vertikale Verschiebung/waagrechte Asymptote y = c) und bestimme den Schnittpunkt des Graphen mit der y-Achse.",
           "concept_segments": [
             {
               "type": "math",
@@ -4981,7 +4981,7 @@
             }
           ],
           "materiality": "material",
-          "sample_solution": "1. Parameteranalyse von f(x) = a · bˣ + c: – b (Basis / Wachstumsfaktor): Für b > 1 steigt der Graph streng monoton (exponentielles Wachstum). Für 0 < b < 1 fällt der Graph streng monoton (exponentieller Zerfall). – a (Streck-/Stauchfaktor): Streckt den Graphen vertikal bei |a| > 1 und spiegelt ihn an der Asymptote für a < 0. – c (Verschiebung in y-Richtung): Verschiebt den Graphen parallel zur y-Achse; die Gerade y = c bildet die waagrechte Asymptote, der sich die Funktion für x → −∞ (bei b > 1) bzw. x → +∞ (bei 0 < b < 1) unbegrenzt annähert. 2. Schnittpunkt mit der y-Achse: Durch Einsetzen von x = 0 erhält man f(0) = a · b⁰ + c = a · 1 + c = a + c. Der y-Achsenschnittpunkt lautet somit exakt S_y(0 | a + c).",
+          "sample_solution": "1. Parameteranalyse von f(x) = a · bˣ + c: – b (Basis / Wachstumsfaktor): Für b > 1 steigt der Graph immer weiter (exponentielles Wachstum), für 0 < b < 1 fällt er immer weiter (exponentieller Zerfall); das gilt für a > 0, bei a < 0 kehrt es sich um. – a (Streck-/Stauchfaktor): Streckt den Graphen vertikal bei |a| > 1 und spiegelt ihn an der Asymptote für a < 0. – c (Verschiebung in y-Richtung): Verschiebt den Graphen parallel zur y-Achse; die Gerade y = c bildet die waagrechte Asymptote, der sich die Funktion für immer kleinere x (bei b > 1) bzw. für immer größere x (bei 0 < b < 1) beliebig nahe annähert. 2. Schnittpunkt mit der y-Achse: Durch Einsetzen von x = 0 erhält man f(0) = a · b⁰ + c = a · 1 + c = a + c. Der y-Achsenschnittpunkt lautet somit exakt S_y(0 | a + c).",
           "choice_distractors": [
             {
               "text": "f(0) = a · b + c, also S_y(0 | a · b + c); a > 1 exponentielles Wachstum, 0 < a < 1 Zerfall; Asymptote x = c",

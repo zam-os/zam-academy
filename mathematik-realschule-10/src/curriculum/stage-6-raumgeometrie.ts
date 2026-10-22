@@ -57,9 +57,9 @@ const axialschnitt: Lesson = {
     <div class="merke"><strong>Merke:</strong> Axialschnitt = Figur + Spiegelbild an der Achse. Er ist 2r breit und h hoch; beim Kegel gilt s = ${sqrtHtml("r² + h²")}.</div>
   `,
   formulas: [
-    { name: "Axialschnitt", html: "Zylinder: Rechteck 2r × h · Kegel: Dreieck mit Grundseite 2r und Höhe h · Kugel: Kreis mit Radius r", quantities: "Figur und ihr Spiegelbild an der Achse" },
+    { name: "Axialschnitt", html: "Zylinder: Rechteck 2r × h; Kegel: Dreieck mit Grundseite 2r und Höhe h; Kugel: Kreis mit Radius r", quantities: "Figur und ihr Spiegelbild an der Achse" },
     { name: "Mantellinie des Kegels", html: `s = ${sqrtHtml("r² + h²")}`, quantities: "r Radius, h Höhe, s schräger Rand des Axialschnitts" },
-    { name: "Flächeninhalt des Axialschnitts", html: "Zylinder: A = 2r · h · Kegel: A = r · h", quantities: "doppelt so groß wie die erzeugende Figur" },
+    { name: "Flächeninhalt des Axialschnitts", html: "Zylinder: A = 2r · h; Kegel: A = r · h", quantities: "doppelt so groß wie die erzeugende Figur" },
   ],
   quiz: {
     question: "Ein Halbkreis dreht sich einmal um seinen Durchmesser. Welcher Körper entsteht, und wie sieht sein Axialschnitt aus?",
@@ -325,8 +325,8 @@ const oberflaeche: Lesson = {
     <div class="merke"><strong>Merke:</strong> Säulen O = 2G + M, Spitzkörper O = G + M. Zylinder M = 2πrh, Kegel M = πrs. Schräge Längen wie s und h<sub>s</sub> berechnest du mit Pythagoras.</div>
   `,
   formulas: [
-    { name: "Oberfläche", html: "Prisma, Zylinder: O = 2G + M · Pyramide, Kegel: O = G + M", quantities: "G Grundfläche, M Mantel" },
-    { name: "Mantel von Zylinder und Kegel", html: `Zylinder: M = 2πr · h · Kegel: M = π · r · s mit s = ${sqrtHtml("r² + h²")}`, quantities: "r Radius, h Höhe, s Mantellinie" },
+    { name: "Oberfläche", html: "Prisma, Zylinder: O = 2G + M; Pyramide, Kegel: O = G + M", quantities: "G Grundfläche, M Mantel" },
+    { name: "Mantel von Zylinder und Kegel", html: `Zylinder: M = 2πr · h; Kegel: M = π · r · s mit s = ${sqrtHtml("r² + h²")}`, quantities: "r Radius, h Höhe, s Mantellinie" },
     { name: "Abwicklung des Kegelmantels", html: "Kreissektor mit dem Radius s und α = 360° · r : s", quantities: "der Bogen ist der Umfang 2πr" },
   ],
   quiz: {
@@ -602,8 +602,8 @@ const volumen: Lesson = {
   `,
   formulas: [
     { name: "Prinzip von Cavalieri", html: "gleiche Höhe und in jeder Höhe gleich große Querschnitte ⇒ gleiches Volumen", quantities: "gilt auch für schiefe Körper" },
-    { name: "Säule und Spitzkörper", html: "Prisma, Zylinder: V = G · h · Pyramide, Kegel: V = ⅓ · G · h", quantities: "G Grundfläche, h senkrechte Höhe" },
-    { name: "Kugel", html: `V = ${frac(4, 3)} · π · r³ · O = 4 · π · r²`, quantities: "r Radius" },
+    { name: "Säule und Spitzkörper", html: "Prisma, Zylinder: V = G · h; Pyramide, Kegel: V = ⅓ · G · h", quantities: "G Grundfläche, h senkrechte Höhe" },
+    { name: "Kugel", html: `V = ${frac(4, 3)} · π · r³; O = 4 · π · r²`, quantities: "r Radius" },
   ],
   quiz: {
     question: "Ein gerader und ein schiefer Zylinder haben denselben Radius und dieselbe (senkrechte) Höhe. Was gilt für ihre Volumen?",
@@ -930,9 +930,9 @@ const zusammengesetzt: Lesson = {
     <div class="merke"><strong>Merke:</strong> Volumen: Teile addieren, Hohlräume abziehen. Oberfläche: nur die Außenflächen; Berührflächen fallen weg, Innenwände von Bohrungen kommen dazu.</div>
   `,
   formulas: [
-    { name: "Volumen zusammengesetzt", html: "aufgesetzt: V = V₁ + V₂ · ausgebohrt: V = V₁ − V₂", quantities: "Teilkörper einzeln berechnen" },
+    { name: "Volumen zusammengesetzt", html: "aufgesetzt: V = V₁ + V₂; ausgebohrt: V = V₁ − V₂", quantities: "Teilkörper einzeln berechnen" },
     { name: "Oberfläche zusammengesetzt", html: "O = Summe der Außenflächen", quantities: "ohne Berührflächen, mit den Innenwänden von Bohrungen" },
-    { name: "Halbkugel", html: "V = ⅔ · π · r³ · gewölbte Fläche 2 · π · r²", quantities: "die Hälfte der Kugel" },
+    { name: "Halbkugel", html: "V = ⅔ · π · r³; gewölbte Fläche 2 · π · r²", quantities: "die Hälfte der Kugel" },
   ],
   quiz: {
     question: "Auf einen Zylinder wird ein Kegel mit gleichem Radius gesetzt. Aus welchen Flächen besteht die Oberfläche des neuen Körpers?",

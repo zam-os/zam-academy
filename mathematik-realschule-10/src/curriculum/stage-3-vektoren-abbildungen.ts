@@ -549,7 +549,7 @@ const skalarprodukt: Lesson = {
           return {
             prompt: `Berechne das Skalarprodukt von ${vn("a")} = ${colHtml(a, 0)} und ${vn("b")} = ${colHtml(b, 0)} und entscheide, welche Art von Winkel die Vektoren einschließen.`,
             given: [`${vn("a")} = ${colHtml(a, 0)}`, `${vn("b")} = ${colHtml(b, 0)}`],
-            formulaHint: "positiv: spitz · 0: rechtwinklig · negativ: stumpf",
+            formulaHint: "positiv: spitz; 0: rechtwinklig; negativ: stumpf",
             fields: [numberField(`${vn("a")} ⊙ ${vn("b")} =`, s, "", 0), choiceField("Winkel", KINDS, wanted)],
             steps: [`${vn("a")} ⊙ ${vn("b")} = ${times(a.x, b.x)} + ${times(a.y, b.y)} = ${fmt(s)}`, `<strong>${fmt(s)} ${s > 0 ? "> 0: spitzer Winkel" : s === 0 ? "= 0: rechter Winkel" : "< 0: stumpfer Winkel"}</strong>`],
             meta: { ax: a.x, ay: a.y, bx: b.x, by: b.y },
@@ -1893,7 +1893,7 @@ const traegergraph: Lesson = {
   tracks: ["I"],
   lehrplan: `${LB2}: Abbildungen, Hintereinanderausführung und Trägergraphen`,
   whyItMatters:
-    "In der Abschlussprüfung wandern Punkte auf einer Geraden oder Parabel, und ihre Bildpunkte bilden eine neue Kurve. Wer die Bildpunkte in Abhängigkeit von x berechnen kann, löst die typische Aufgabe „Die Punkte C_n liegen auf …“ in wenigen Zeilen.",
+    "In der Abschlussprüfung wandern Punkte auf einer Geraden oder Parabel, und ihre Bildpunkte bilden eine neue Kurve. Wer die Bildpunkte in Abhängigkeit von x berechnen kann, löst die typische Aufgabe „Die Punkte Cₙ liegen auf …“ in wenigen Zeilen.",
   explanationHtml: `
     <p><strong>Hintereinanderausführung:</strong> Man bildet zuerst mit der ersten Abbildung ab und den Bildpunkt dann mit der zweiten: P ↦ P' ↦ P''. Die Reihenfolge ist wichtig. Spiegelung an der x-Achse und dann Verschiebung um ${vn("v")} = ${vecHtml(2, 1)} liefert ${vecHtml("x", "y")} ↦ ${vecHtml("x", "−y")} ↦ ${vecHtml("x + 2", "−y + 1")}; erst verschieben, dann spiegeln liefert ${vecHtml("x + 2", "−y − 1")}.</p>
     <p><strong>Punktscharen:</strong> Liegen die Punkte P<sub>n</sub>(x | f(x)) auf einem Graphen, hängen auch ihre Bildpunkte P<sub>n</sub>'(x' | y') von x ab. Den <strong>Trägergraphen</strong>, auf dem alle Bildpunkte liegen, findest du so:</p>

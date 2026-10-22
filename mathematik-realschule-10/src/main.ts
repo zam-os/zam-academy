@@ -848,7 +848,7 @@ class MatheApp {
                       (formula) => `<tr>
                         <td><strong>${esc(formula.name)}</strong><br><span class="formula">${formula.html}</span></td>
                         <td>${esc(formula.quantities)}</td>
-                        <td><button type="button" class="btn btn-ghost btn-sm" data-open-lesson="${lesson.id}">${esc(lesson.title)}</button></td>
+                        <td><button type="button" class="btn btn-ghost btn-sm" data-open-lesson="${lesson.id}">${esc(lesson.title)}</button>${lesson.tracks.length === 1 ? ` <span class="chip chip-track">nur ${TRACK_LABELS[lesson.tracks[0]]}</span>` : ""}</td>
                       </tr>`,
                     ),
                   )

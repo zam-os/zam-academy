@@ -1040,7 +1040,7 @@ const ebeneRaum: Lesson = {
       <tr><th>x</th>${FAMILY_TABLE.map((x) => `<th>${x}</th>`).join("")}</tr>
       <tr><td>A(x) in cm²</td>${FAMILY_TABLE.map((x) => `<td>${fmt(familyAt(x).area, 2)}</td>`).join("")}</tr>
     </table>
-    <p>A(x) wird null für x = 9 und für x = −1,5. Der Graph ist eine nach unten geöffnete Parabel, und ihr Scheitel liegt in der Mitte zwischen diesen Nullstellen: x = (9 − 1,5) : 2 = 3,75. Dort ist der Flächeninhalt am größten, A<sub>max</sub> = A(3,75) ≈ ${fmtUnit(familyAt(3.75).area, "cm²")}. Auch Längen hängen von x ab; [BₙCₙ] berechnest du mit dem Kosinussatz.</p>
+    <p>A(x) wird null für x = 9 und für x = −1,5. Die Werte liegen symmetrisch zur Mitte x = (9 − 1,5) : 2 = 3,75 zwischen diesen Nullstellen: Mit x = 3,75 + t wird (9 − x) · (3 + 2x) = (5,25 − t) · 2 · (5,25 + t) = 2 · (5,25² − t²), und das ist für t = 0 am größten (dritte binomische Formel). Bei x = 3,75 ist der Flächeninhalt also am größten, A<sub>max</sub> = A(3,75) ≈ ${fmtUnit(familyAt(3.75).area, "cm²")}. Auch Längen hängen von x ab; [BₙCₙ] berechnest du mit dem Kosinussatz.</p>
     <div class="merke"><strong>Merke:</strong> Skizze zeichnen, ein Dreieck mit genug bekannten Stücken suchen, dann Pythagoras, Sinussatz, Kosinussatz oder A = ½ · a · b · sin γ anwenden. Bei einer Abhängigkeit von x: Längen als Terme in x schreiben, den Bereich für x angeben, den Extremwert am Scheitel ablesen.</div>
   `,
   formulas: [
@@ -1270,7 +1270,7 @@ const ebeneRaum: Lesson = {
         const f = familyTerms(t);
         const words = familyWords(t);
         const xs = f.xmax;
-        const vertex = `A(x) = 0 für x = ${fmt(f.zeros[0], 2)} und für x = ${fmt(f.zeros[1], 2)}. Der Graph ist eine nach unten geöffnete Parabel, ihr Scheitel liegt in der Mitte: x = (${fmt(f.zeros[0], 2)} − ${fmt(-f.zeros[1], 2)}) : 2 = ${fmt(xs, 2)}`;
+        const vertex = `A(x) = 0 für x = ${fmt(f.zeros[0], 2)} und für x = ${fmt(f.zeros[1], 2)}. Die Werte liegen symmetrisch zur Mitte zwischen den Nullstellen, der größte also bei x = (${fmt(f.zeros[0], 2)} − ${fmt(-f.zeros[1], 2)}) : 2 = ${fmt(xs, 2)}`;
         const xSlips: Slip[] = [{ value: f.upper / 2, hint: "Der Scheitel liegt in der Mitte zwischen beiden Nullstellen des Terms, auch der negativen." }];
         if (level === 1) {
           const x0 = rng.int(1, 3);

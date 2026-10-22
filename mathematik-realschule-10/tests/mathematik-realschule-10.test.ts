@@ -8,6 +8,7 @@ import { ALL_LESSONS, findLessonById, lessonsForTrack, STAGES } from "../src/cur
 import { checkTask, parseNumber, parseNumberCandidates, wrongAnswerHint } from "../src/exercises/checker";
 import { factorForm, linear, quadratic, vertexForm } from "../src/exercises/format";
 import { quizOrder } from "../src/exercises/quiz-order";
+import { createRng, seedFrom } from "../src/exercises/rng";
 import type { ExerciseTask, NumberField, Track } from "../src/model/types";
 import {
   isLessonComplete,
@@ -103,6 +104,24 @@ describe("Lernpfad", () => {
     for (const lesson of ALL_LESSONS) {
       for (const track of lesson.tracks) {
         expect(rows.some((row) => row.track === track && row.lessons.includes(lesson.id)), `${lesson.id} covers a competence of Zweig ${track}`).toBe(true);
+      }
+    }
+  });
+
+  it("never uses the multiplication dot to separate formulas, so no list reads as a product", () => {
+    // A label ("Kegel:") ends in a letter; a division (r : s) has a space before the colon.
+    const separator = /· [A-Za-zÄÖÜäöüß][A-Za-zÄÖÜäöüß, ]*[A-Za-zÄÖÜäöüß]:/;
+    for (const lesson of ALL_LESSONS) {
+      const lines = [
+        ...lesson.formulas.map((formula) => formula.html),
+        ...[...lesson.explanationHtml.matchAll(/<p class="formula-line">([\s\S]*?)<\/p>/g)].map((match) => match[1]),
+      ];
+      for (const line of lines) expect(line, `${lesson.id}: ${line}`).not.toMatch(separator);
+      for (const exercise of lesson.exercises) {
+        for (const level of [1, 2] as const) {
+          const hint = exercise.make(createRng(seedFrom(`${lesson.id}:${exercise.id}:dot`)), level).formulaHint ?? "";
+          expect(hint, `${lesson.id}/${exercise.id}: ${hint}`).not.toMatch(separator);
+        }
       }
     }
   });
@@ -462,7 +481,7 @@ describe("ZAM-Zelle (cell.json)", () => {
       }
     });
 
-    it("lists every de-by item exactly once with its old question, 9 A and 7 B", () => {
+    it("lists every de-by item exactly once with its old question, 7 A and 9 B", () => {
       const oldItems = new Map(legacy.flatMap(({ tile }) => tile.atoms.flatMap((atom) => atom.practice_items.map((item) => [item.id, { tile: tile.tile_id, item }] as const))));
       expect(table.rows.map((row) => row.de_by_id).sort()).toEqual([...oldItems.keys()].sort());
       for (const row of table.rows) {
@@ -473,7 +492,7 @@ describe("ZAM-Zelle (cell.json)", () => {
       }
       const counts = { A: 0, B: 0, C: 0 };
       for (const row of table.rows) counts[row.category] += 1;
-      expect(counts).toEqual({ A: 9, B: 7, C: 0 });
+      expect(counts).toEqual({ A: 7, B: 9, C: 0 });
     });
 
     it("declares exactly the listed replaces, one de-by item per card", () => {
@@ -487,15 +506,60 @@ describe("ZAM-Zelle (cell.json)", () => {
       }
     });
 
-    it("keeps a B row's whole old prompt on its successor", () => {
-      const oldQuestion = new Map(legacy.flatMap(({ tile }) => tile.atoms.flatMap((atom) => atom.practice_items.map((item) => [item.id, item.question ?? ""] as const))));
-      const plain = (item: CellItem) => item.question ?? (item.question_segments ?? []).map((segment) => segment.text ?? segment.tex ?? "").join("");
-      const normalise = (text: string) => text.replace(/−/g, "-").replace(/\s+/g, " ").trim();
+    it("keeps a B row's whole old question, answer and sample solution on its successor", () => {
+      // The successor may only change typography (−, ᵀ, φ, √, ∞, decimal comma, TeX
+      // for plain formulas): every word and number of the old text must still be there.
+      const oldItems = new Map(legacy.flatMap(({ tile }) => tile.atoms.flatMap((atom) => (atom.practice_items as unknown as CellItem[]).map((item) => [item.id, item] as const))));
+      const text = (plain: string | undefined, segments: CellSegment[] | undefined) => plain ?? (segments ?? []).map((segment) => segment.text ?? segment.tex ?? "").join(" ");
+      const normalise = (value: string) =>
+        value
+          .toLowerCase()
+          .replace(/\\cdot/g, "*")
+          .replace(/\\log/g, "log")
+          .replace(/\\left|\\right|\\text|\\frac|\\sqrt/g, " ")
+          .replace(/[{}]/g, " ")
+          .replace(/−|–/g, "-")
+          .replace(/ᵀ/g, "^t")
+          .replace(/φ/g, "phi")
+          .replace(/α/g, "alpha")
+          .replace(/≠/g, "!=")
+          .replace(/ˣ/g, "^x")
+          .replace(/⇒/g, "->")
+          .replace(/·/g, "*")
+          .replace(/(\d),(\d)/g, "$1.$2")
+          .replace(/√/g, " sqrt ")
+          .replace(/∞/g, " unendlich ")
+          .replace(/→/g, "->")
+          .replace(/(cos|sin|tan)⁻¹/g, "arc$1");
+      const words = (value: string) => new Set(normalise(value).split(/[^a-z0-9äöüß.]+/).map((word) => word.replace(/^\.+|\.+$/g, "")).filter((word) => word.length >= 2));
+      // Corrections Thomas approved on 2026-10-22, each named in its row's reason:
+      // J02 drops "streng monoton" and x → ±∞, J04 drops the change of base with ln.
+      const CORRECTED: Record<string, { words: string[]; tex?: (tex: string) => string }> = {
+        "01K4X0M0000000000000000J02": { words: ["streng", "monoton", "unendlich", "unbegrenzt"] },
+        "01K4X0M0000000000000000J04": { words: ["ln"], tex: (tex) => tex.replace(String.raw`\frac{\ln(a)}{\ln(b)} = `, "") },
+      };
       for (const row of table.rows.filter((entry) => entry.category === "B")) {
         const item = bySlug.get(row.academy_slug ?? "")!;
-        expect(item.tier, row.de_by_id).toBe("tier2_synthesis");
-        expect(item.sample_solution, row.de_by_id).toBeTruthy();
-        expect(normalise(plain(item)).length, row.de_by_id).toBeGreaterThan(0.8 * normalise(oldQuestion.get(row.de_by_id)!).length);
+        const old = oldItems.get(row.de_by_id)!;
+        expect(item.tier, row.de_by_id).toBe(old.tier);
+        expect(item.bloom_level, row.de_by_id).toBe(old.bloom_level);
+        const parts: Array<[string, string, string]> = [
+          ["question", text(old.question, old.question_segments), text(item.question, item.question_segments)],
+          ["answer", text(old.concept, old.concept_segments), text(item.concept, item.concept_segments)],
+          ["sample solution", old.sample_solution ?? "", item.sample_solution ?? ""],
+        ];
+        const corrected = CORRECTED[row.de_by_id];
+        if (corrected) expect(row.reason, `${row.de_by_id} names its correction`).toMatch(/am 22\.10\.2026 freigegeben/);
+        for (const [part, before, after] of parts) {
+          const kept = words(after);
+          const lost = [...words(before)].filter((word) => !kept.has(word) && !(corrected?.words ?? []).includes(word));
+          expect(lost, `${row.de_by_id} → ${row.academy_slug}: ${part} lost words`).toEqual([]);
+        }
+        const tex = (item.concept_segments ?? []).map((segment) => segment.tex);
+        for (const segment of (old.concept_segments ?? []).filter((entry) => entry.type === "math")) {
+          const expected = corrected?.tex ? corrected.tex(segment.tex ?? "") : segment.tex;
+          expect(tex, `${row.de_by_id}: formula ${expected} is kept`).toContain(expected);
+        }
       }
     });
   });

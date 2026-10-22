@@ -298,8 +298,8 @@ const exponentialfunktion: Lesson = {
   `,
   formulas: [
     { name: "Exponentialfunktion", html: "y = k · a<sup>x</sup>", quantities: "a > 0, a ≠ 1 Basis (Faktor pro Schritt), k ≠ 0 Anfangswert: Graph durch (0 | k)" },
-    { name: "Wachstum und Abnahme", html: "a &gt; 1: Wachstum · 0 &lt; a &lt; 1: Abnahme", quantities: "für k > 0; die x-Achse ist Asymptote" },
-    { name: "Abgrenzung", html: "linear: + d pro Schritt · exponentiell: · a pro Schritt", quantities: "konstante Differenzen oder konstante Quotienten" },
+    { name: "Wachstum und Abnahme", html: "a &gt; 1: Wachstum; 0 &lt; a &lt; 1: Abnahme", quantities: "für k > 0; die x-Achse ist Asymptote" },
+    { name: "Abgrenzung", html: "linear: + d pro Schritt; exponentiell: · a pro Schritt", quantities: "konstante Differenzen oder konstante Quotienten" },
   ],
   quiz: {
     question: "Bei welcher Funktion wird der y-Wert bei jedem Schritt um 1 nach rechts mit demselben Faktor multipliziert?",
@@ -1583,7 +1583,7 @@ const exponentialAllgemein: Lesson = {
   `,
   formulas: [
     { name: "Allgemeine Exponentialfunktion", html: "y = k · a<sup>x − b</sup> + c", quantities: "Asymptote y = c; Punkt (b | k + c); D = ℝ" },
-    { name: "Wertemenge", html: "k &gt; 0: W = {y | y &gt; c} · k &lt; 0: W = {y | y &lt; c}", quantities: "der Graph liegt über oder unter der Asymptote" },
+    { name: "Wertemenge", html: "k &gt; 0: W = {y | y &gt; c}; k &lt; 0: W = {y | y &lt; c}", quantities: "der Graph liegt über oder unter der Asymptote" },
     { name: "Umkehrfunktion", html: "y = log<sub>a</sub>((x − c) : k) + b", quantities: "x und y tauschen, nach y auflösen" },
   ],
   quiz: {
@@ -2122,7 +2122,7 @@ const funktionsgraphen: Lesson = {
       <li><strong>Parallelverschiebung um v→ = (v<sub>x</sub> | v<sub>y</sub>):</strong> P(x − v<sub>x</sub> | y − v<sub>y</sub>) liegt auf y = f(x), also <strong>y = f(x − v<sub>x</sub>) + v<sub>y</sub></strong>. Aus y = 2<sup>x</sup> wird mit v→ = (3 | −1) der Graph y = 2<sup>x − 3</sup> − 1.</li>
       <li><strong>Spiegelung an der x-Achse:</strong> (x | y) → (x | −y), also <strong>y = −f(x)</strong>. Aus y = log<sub>2</sub> x wird y = −log<sub>2</sub> x = log<sub>0,5</sub> x.</li>
       <li><strong>Spiegelung an der y-Achse:</strong> (x | y) → (−x | y), also <strong>y = f(−x)</strong>. Aus y = 2<sup>x</sup> wird y = 2<sup>−x</sup> = 0,5<sup>x</sup>.</li>
-      <li><strong>Spiegelung an der Winkelhalbierenden y = x:</strong> (x | y) → (y | x): x und y tauschen, das ergibt die <strong>Umkehrfunktion</strong>. Aus y = 2<sup>x</sup> wird y = log<sub>2</sub> x. Bei y = x² entsteht x = y²; das ist kein Funktionsgraph, nur der Ast y = ${sqrtHtml("x")} (x ≥ 0) ist einer.</li>
+      <li><strong>Spiegelung an der Winkelhalbierenden y = x:</strong> (x | y) → (y | x): x und y tauschen, das ergibt die <strong>Umkehrfunktion</strong>. Aus y = 2<sup>x</sup> wird y = log<sub>2</sub> x. Bei y = x² entsteht x = y²; das ist kein Funktionsgraph, denn er besteht aus den beiden Ästen y = ${sqrtHtml("x")} und y = −${sqrtHtml("x")}. Schränkt man y = x² auf x ≥ 0 ein, ist die Umkehrfunktion y = ${sqrtHtml("x")}.</li>
       <li><strong>Zentrische Streckung an O mit dem Faktor k:</strong> (x | y) → (k · x | k · y), also <strong>y = k · f(x : k)</strong>. Aus y = x² wird y = k · (x : k)² = x² : k.</li>
     </ul>
     <div class="example">Der Graph von f: y = log<sub>2</sub>(x + 1) wird durch Parallelverschiebung mit v→ = (−2 | 3) auf f' abgebildet: y = log<sub>2</sub>((x + 2) + 1) + 3 = log<sub>2</sub>(x + 3) + 3. Die Asymptote x = −1 wandert nach x = −3.</div>
@@ -2130,7 +2130,7 @@ const funktionsgraphen: Lesson = {
   `,
   formulas: [
     { name: "Parallelverschiebung um v→", html: "y = f(x − v<sub>x</sub>) + v<sub>y</sub>", quantities: "vₓ nach rechts, v_y nach oben" },
-    { name: "Achsenspiegelungen", html: "x-Achse: y = −f(x) · y-Achse: y = f(−x) · y = x: Umkehrfunktion", quantities: "Spiegelachse x-Achse, y-Achse oder Winkelhalbierende y = x" },
+    { name: "Achsenspiegelungen", html: "x-Achse: y = −f(x); y-Achse: y = f(−x); y = x: Umkehrfunktion", quantities: "Spiegelachse x-Achse, y-Achse oder Winkelhalbierende y = x" },
     { name: "Zentrische Streckung an O", html: "y = k · f(x : k)", quantities: "Streckfaktor k ≠ 0, Zentrum O(0 | 0)" },
   ],
   quiz: {
