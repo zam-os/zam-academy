@@ -44,6 +44,20 @@ function circlePath(cx: number, cy: number, radius: number): string {
   return `M${r1(cx - r)} ${r1(cy)} a${r1(r)} ${r1(r)} 0 1 0 ${r1(2 * r)} 0 a${r1(r)} ${r1(r)} 0 1 0 ${r1(-2 * r)} 0 Z`;
 }
 
+/** A label beside the middle of a slanted edge, on its outer (right) side, clear of the line. */
+function edgeLabel(a: Pt, b: Pt, content: string, cls: string): string {
+  const len = Math.hypot(b.x - a.x, b.y - a.y) || 1;
+  let nx = (b.y - a.y) / len;
+  let ny = -(b.x - a.x) / len;
+  if (nx < 0) {
+    nx = -nx;
+    ny = -ny;
+  }
+  const x = (a.x + b.x) / 2 + nx * 12;
+  const y = (a.y + b.y) / 2 + ny * 12 + 4;
+  return text(x, y, content, cls, "start");
+}
+
 function seg(a: Pt, b: Pt, cls: string): string {
   return line(a.x, a.y, b.x, b.y, cls);
 }
@@ -199,8 +213,6 @@ function axialSection(v: LabValues): string {
       ...[...sil].reverse().map(([rho, y]) => P(rho, y, 180)),
     ];
     out += path(pathOf(outline, true), "lab-fill-a");
-    // The Axialschnitt inside the body: the figure at 0° and at 180°.
-    out += polygon([...prof.map(([rho, y]) => P(rho, y, 0)), ...[...prof].reverse().map(([rho, y]) => P(rho, y, 180))], "lab-fill-c");
     out += path(pathOf(outline, true), "lab-ink");
     if (rb > 0) out += path(pathOf(ellipsePts(cx, yb, rb * k, rb * k * FLAT, 180, 360)), "lab-dashed");
     if (rt > 0) out += path(pathOf(ellipsePts(cx, yt, rt * k, rt * k * FLAT, 0, 180)), "lab-ink");
@@ -222,7 +234,7 @@ function axialSection(v: LabValues): string {
   }
   out += text(cx, base + 28, "Drehachse", "lab-text-small", "middle");
   out += text(16, 24, v.phi >= 360 ? axialBody(v) : `Drehung: ${v.phi}°`, "lab-text lab-text-big");
-  out += text(16, 44, v.phi >= 360 ? "lila: der Axialschnitt im Körper" : "Drehe bis 360°: Welcher Körper entsteht?", "lab-text-muted");
+  out += text(16, 44, v.phi >= 360 ? "rechts: sein Axialschnitt in wahrer Größe" : "Drehe bis 360°: Welcher Körper entsteht?", "lab-text-muted");
 
   // Right: the Axialschnitt in true size, the figure and its mirror image.
   out += text(286, 24, "Axialschnitt", "lab-text lab-text-big");
@@ -232,13 +244,13 @@ function axialSection(v: LabValues): string {
   const left = prof.map(([rho, y]) => ({ x: sx - rho * k, y: base - y * k }));
   out += polygon(left, v.phi >= 180 ? "lab-fill-b" : "lab-ghost");
   out += polygon(right, "lab-fill-b");
-  out += text(sx + 50, base + 32, "Figur", "lab-text-small", "middle");
-  out += text(sx - 50, base + 32, v.phi >= 180 ? "Spiegelbild" : "Spiegelbild (ab 180°)", "lab-text-small", "middle");
+  out += text(sx + 50, base + 36, "Figur", "lab-text-small", "middle");
+  out += text(sx - 50, base + 36, v.phi >= 180 ? "Spiegelbild" : "Spiegelbild (ab 180°)", "lab-text-small", "middle");
   if (v.shape === 2) {
     out += line(sx, base - v.r * k, sx + v.r * k, base - v.r * k, "lab-side-a");
     out += text(sx + (v.r * k) / 2, base - v.r * k - 6, `r = ${fmt(v.r, 1)}`, "lab-text lab-text-a", "middle");
   } else {
-    out += text(sx + (v.r * k) / 2, base + 16, `r = ${fmt(v.r, 1)}`, "lab-text lab-text-a", "middle");
+    out += text(sx + (v.r * k) / 2, base + 21, `r = ${fmt(v.r, 1)}`, "lab-text lab-text-a", "middle");
     out += text(sx + 6, base - (v.h * k) / 2 + 4, `h = ${fmt(v.h, 1)}`, "lab-text");
   }
   const s = axialSlant(v);
@@ -250,10 +262,10 @@ function axialSection(v: LabValues): string {
           ? [{ x: sx + v.r * k, y: base }, { x: sx + v.r2 * k, y: base - v.h * k }]
           : [{ x: sx + v.r * k, y: base - v.h * k }, { x: sx, y: base - (v.h + v.k) * k }];
     out += seg(a, b, "lab-side-c");
-    out += sideLabel(a, b, `s = ${fmt(s, 2)}`, 16, "lab-text lab-text-c");
+    out += edgeLabel(a, b, `s = ${fmt(s, 2)}`, "lab-text lab-text-c");
   }
   if (v.shape === 3) out += text(sx + (v.r2 * k) / 2, base - v.h * k - 6, `r₂ = ${fmt(v.r2, 1)}`, "lab-text lab-text-a", "middle");
-  if (v.shape === 4) out += text(sx + 6, base - (v.h + v.k / 2) * k + 4, `k = ${fmt(v.k, 1)}`, "lab-text");
+  if (v.shape === 4) out += text(sx - v.r * k - 8, base - (v.h + v.k / 2) * k + 4, `k = ${fmt(v.k, 1)}`, "lab-text", "end");
   out += handle("rim", sx + v.r * k, v.shape === 2 ? base - v.r * k : base, "Rand: Radius r ändern");
   if (v.shape === 0 || v.shape === 1 || v.shape === 4) out += handle("top", sx, base - v.h * k, "Höhe h ändern");
   if (v.shape === 3) out += handle("corner", sx + v.r2 * k, base - v.h * k, "Ecke oben: r₂ und h ändern");
@@ -313,7 +325,7 @@ function prismSketch(v: LabValues): string {
   out += seg(A, C, "lab-dashed") + seg(B, C, "lab-dashed") + seg(C, C2, "lab-dashed");
   out += polygon([A, B, B2, C2, A2], "lab-ink") + seg(A2, B2, "lab-ink");
   out += text((A.x + B.x) / 2, A.y + 18, `a = ${fmt(v.a, 1)}`, "lab-text lab-text-a", "middle");
-  out += text(A.x + 6, (A.y + A2.y) / 2 + 4, `h = ${fmt(v.h, 1)}`, "lab-text");
+  out += text(B.x + 8, (B.y + B2.y) / 2 + 4, `h = ${fmt(v.h, 1)}`, "lab-text");
   return out;
 }
 
@@ -337,7 +349,7 @@ function pyramidSketch(v: LabValues): string {
   out += edge(A, B, true) + edge(B, C, true) + edge(C, D, backSeen) + edge(D, A, leftSeen);
   out += edge(S, A, true) + edge(S, B, true) + edge(S, C, true) + edge(S, D, leftSeen || backSeen);
   out += seg(foot, S, "lab-dashed") + seg(mid, S, "lab-side-b");
-  out += text(S.x + 10, S.y - 6, `h_s = ${fmt(Math.hypot(v.h, a / 2), 2)}`, "lab-text lab-text-b");
+  out += text(S.x + 14, S.y - 6, `h_s = ${fmt(Math.hypot(v.h, a / 2), 2)}`, "lab-text lab-text-b");
   out += text((A.x + B.x) / 2, A.y + 18, `a = ${fmt(a, 1)}`, "lab-text lab-text-a", "middle");
   return out;
 }
@@ -361,7 +373,7 @@ function roundSketch(v: LabValues): string {
     out += text(cx + R + 6, (top + base) / 2 + 4, `h = ${fmt(v.h, 1)}`, "lab-text");
   }
   out += line(cx, base, cx + R, base, "lab-side-a");
-  out += text(cx + R / 2, base + 20, `r = ${fmt(v.r, 1)}`, "lab-text lab-text-a", "middle");
+  out += text(cx + R / 2, base + R * FLAT + 15, `r = ${fmt(v.r, 1)}`, "lab-text lab-text-a", "middle");
   return out;
 }
 
@@ -474,6 +486,7 @@ function solidNetView(v: LabValues): string {
           : `Mantel: ${fmt(2 * PI * v.r, 2)} cm × ${fmt(v.h, 1)} cm (2πr × h)`;
   out += text(NET_BOX.x, 44, info, "lab-text-muted");
   out += v.solid === 0 ? prismNet(v, t) : v.solid === 1 ? pyramidNet(v, t) : v.solid === 3 ? coneNet(v, t) : cylinderNet(v, t);
+  if (t <= 0) out += text(NET_BOX.x + NET_BOX.w / 2, NET_BOX.y + NET_BOX.h / 2, "Schiebe „Abwickeln“ nach rechts.", "lab-text-muted", "middle");
   if (t >= 100) out += text(W - 12, NET_BOX.y + NET_BOX.h + 14, `O = ${fmt(values.O, 2)} cm²`, "lab-text lab-text-c", "end");
   if (v.solid === 0) {
     out += handle("a", obl(v.a, 0, 0).x, NET.base, "Grundkante a ändern");
@@ -592,8 +605,8 @@ function cavalieriView(v: LabValues): string {
   out += line(14, cutY, W - 14, cutY, "lab-dashed");
   out += line(10, base, W - 10, base, "lab-thin");
   const [nameL, nameR] = CAV_NAMES[v.mode] ?? CAV_NAMES[0];
-  out += text(lx, base + 15, nameL, "lab-text-small", "middle");
-  out += text(rx + (v.mode === 2 ? 0 : (v.shift * k) / 2), base + 15, nameR, "lab-text-small", "middle");
+  out += text(lx, base + 22, nameL, "lab-text-small", "middle");
+  out += text(rx + (v.mode === 2 ? 0 : (v.shift * k) / 2), base + 22, nameR, "lab-text-small", "middle");
   const dev = (c.Vs / c.Vf - 1) * 100;
   const title =
     v.mode === 0
@@ -767,9 +780,9 @@ function compositeView(v: LabValues): string {
   // Handles: the radius at the side, the heights on the axis.
   const rimY = v.model === 2 ? k : v.model === 3 ? r + h / 2 : h / 2;
   out += handle("rim", cx + R, Y(rimY), "Rand: Radius r ändern");
-  if (v.model !== 2) out += handle("height", cx, Y(v.model === 3 ? r + h : h), "Zylinderhöhe h ändern");
+  if (v.model !== 2) out += handle("height", cx - R, Y(v.model === 3 ? r + h : h), "Zylinderhöhe h ändern");
   if (v.model === 0) out += handle("tip", cx, Y(h + k), "Spitze: Kegelhöhe k ändern");
-  if (v.model === 2) out += handle("tip", cx, Y(k), "Rand der Tüte: Kegelhöhe k ändern");
+  if (v.model === 2) out += handle("tip", cx - R, Y(k), "Rand der Tüte: Kegelhöhe k ändern");
   if (v.model === 4) out += handle("depth", cx, Y(h - (v.t / 100) * h), "Spitze der Bohrung: Tiefe ändern");
   out += `</svg>`;
   return out;
@@ -854,9 +867,8 @@ function extremumView(v: LabValues): string {
     const hx = v.hk * (1 - x / v.R);
     if (inside) {
       out += rect(cx - x * ke, base - hx * ke, 2 * x * ke, hx * ke, "lab-fill-a");
-      out += text(cx + x * ke + 6, base - (hx * ke) / 2 + 4, `h(x) = ${fmt(hx, 2)}`, "lab-text lab-text-a");
       out += line(cx, base + 1, cx + x * ke, base + 1, "lab-side-b");
-      out += text(cx + (x * ke) / 2, base + 16, `x = ${fmt(x, 1)}`, "lab-text lab-text-b", "middle");
+      out += text(cx, base + 20, `x = ${fmt(x, 1)} cm, h(x) = ${fmt(hx, 2)} cm`, "lab-text lab-text-b", "middle");
     } else {
       out += text(cx, base + 30, "x liegt nicht in D: kein Zylinder", "lab-text lab-text-bad", "middle");
     }
@@ -874,7 +886,7 @@ function extremumView(v: LabValues): string {
     out += line(toX(t), box.y, toX(t), box.y + box.h, "lab-grid");
     out += text(toX(t), box.y + box.h + 13, fmt(t, 0), "lab-text-tick", "middle");
   }
-  const ys = niceStep(ymax);
+  const ys = niceStep(ymax, 5);
   for (let f = ys; f < ymax - 1e-9; f += ys) {
     out += line(box.x, toY(f), box.x + box.w, toY(f), "lab-grid");
     out += text(box.x - 4, toY(f) + 4, fmt(f, 0), "lab-text-tick", "end");

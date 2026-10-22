@@ -1312,11 +1312,11 @@ const extremwerte: Lesson = {
             numberField("M<sub>max</sub> =", best, "cm²", 2, { slips: maxSlips }),
           ],
           steps: [
-            `a) Der Zylinder muss in den Kegel passen: 0 < x < ${fmt(R, 1)}.`,
+            `a) Der Zylinder muss in den Kegel passen: 0 &lt; x &lt; ${fmt(R, 1)}.`,
             `b) Im Axialschnitt: h(x) : ${fmt(H, 1)} = (${fmt(R, 1)} − x) : ${fmt(R, 1)}, also h(x) = (${fmt(H, 1)} − ${fmt(m, 2)}x) cm und h(${x0}) = ${fmtUnit(H - m * x0, "cm")}.`,
             `c) ${square[0]}`,
             square[1],
-            `<strong>x < ${fmt(R, 1)}; h(${x0}) = ${fmtUnit(H - m * x0, "cm")}; M<sub>max</sub> ≈ ${fmtUnit(best, "cm²")} für x = ${fmt(R / 2, 2)} cm</strong>`,
+            `<strong>x &lt; ${fmt(R, 1)}; h(${x0}) = ${fmtUnit(H - m * x0, "cm")}; M<sub>max</sub> ≈ ${fmtUnit(best, "cm²")} für x = ${fmt(R / 2, 2)} cm</strong>`,
           ],
           meta: { R, H, x0 },
         };
@@ -1332,7 +1332,7 @@ const extremwerte: Lesson = {
           return {
             prompt: `Aus einem quadratischen Karton mit der Seitenlänge a = ${a} cm werden an den vier Ecken Quadrate mit der Seitenlänge x cm ausgeschnitten, dann werden die Ränder zu einer offenen Schachtel hochgeklappt. Gib die obere Grenze der Definitionsmenge an und berechne das Volumen der Schachtel für x = ${fmt(x0, 1)}.`,
             given: [`a = ${a} cm`, `V(x) = x · (${a} − 2x)² cm³`],
-            formulaHint: "V(x) = x · (a − 2x)² mit 0 < x < a : 2",
+            formulaHint: "V(x) = x · (a − 2x)² mit 0 &lt; x &lt; a : 2",
             fields: [
               numberField("x <", a / 2, "cm", 1),
               numberField(`V(${fmt(x0, 1)}) =`, V, "cm³", 2, {
@@ -1343,9 +1343,9 @@ const extremwerte: Lesson = {
               }),
             ],
             steps: [
-              `Die Grundfläche ist ein Quadrat mit der Kante ${a} − 2x, die Höhe ist x. Eine Schachtel entsteht nur für 0 < x < ${fmt(a / 2, 1)}.`,
+              `Die Grundfläche ist ein Quadrat mit der Kante ${a} − 2x, die Höhe ist x. Eine Schachtel entsteht nur für 0 &lt; x &lt; ${fmt(a / 2, 1)}.`,
               `V(${fmt(x0, 1)}) = ${fmt(x0, 1)} · (${a} − ${fmt(2 * x0, 1)})² = ${fmt(x0, 1)} · ${fmt(a - 2 * x0, 1)}²`,
-              `<strong>x < ${fmt(a / 2, 1)}; V = ${fmtUnit(V, "cm³")}</strong>`,
+              `<strong>x &lt; ${fmt(a / 2, 1)}; V = ${fmtUnit(V, "cm³")}</strong>`,
             ],
             meta: { a, x0 },
           };
@@ -1359,7 +1359,7 @@ const extremwerte: Lesson = {
             numberField("V =", values[best - 1], "cm³", 0, { slips: [{ value: (a - 2 * best) ** 2, hint: "Das ist nur die Grundfläche. Die Höhe der Schachtel ist x." }] }),
           ],
           steps: [
-            `V(x) = x · (${a} − 2x)² mit 0 < x < ${fmt(a / 2, 1)}`,
+            `V(x) = x · (${a} − 2x)² mit 0 &lt; x &lt; ${fmt(a / 2, 1)}`,
             `Wertetabelle: ${values.map((value, i) => `V(${i + 1}) = ${fmt(value, 0)}`).join("; ")}`,
             `<strong>x = ${best} cm: V = ${fmt(values[best - 1], 0)} cm³</strong> (eine feinere Tabelle zeigt das genaue Maximum bei x ≈ ${fmt(a / 6, 2)} cm)`,
           ],
@@ -1375,6 +1375,7 @@ const extremwerte: Lesson = {
           const k = rng.int(1, 2);
           const h = rng.int(1, k * r - 1);
           const xs = (k * r - h) / (2 * k);
+          const b = (k * r - h) / k;
           const best = (PI * (k * r + h) ** 2) / (2 * k);
           const kx = k === 1 ? "x" : `${k}x`;
           return {
@@ -1386,7 +1387,7 @@ const extremwerte: Lesson = {
               numberField("M<sub>max</sub> =", best, "cm²", 2, { slips: [{ value: 2 * PI * r * h, hint: "Das ist der Mantel des ursprünglichen Zylinders (x = 0)." }] }),
             ],
             steps: [
-              `M(x) = 2π · (${quadratic(-k, k * r - h, r * h)}) = −${2 * k}π · (x² − ${fmt((k * r - h) / k, 2)}x) + ${2 * r * h}π`,
+              `M(x) = 2π · (${quadratic(-k, k * r - h, r * h)}) = −${2 * k}π · (x² − ${b === 1 ? "" : fmt(b, 2)}x) + ${2 * r * h}π`,
               `= −${2 * k}π · (x − ${fmt(xs, 2)})² + ${fmt(best / PI, 2)}π`,
               `<strong>x = ${fmt(xs, 2)} cm: M<sub>max</sub> = ${fmt(best / PI, 2)}π cm² ≈ ${fmtUnit(best, "cm²")}</strong>`,
             ],
