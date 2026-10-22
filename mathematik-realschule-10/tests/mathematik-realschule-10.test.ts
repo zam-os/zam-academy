@@ -117,7 +117,8 @@ describe("Lernpfad", () => {
       expect([...order].sort()).toEqual(lesson.quiz.options.map((_, i) => i));
       shownAt.add(order.indexOf(lesson.quiz.correctIndex));
     }
-    expect([...shownAt].sort()).toEqual([0, 1, 2]);
+    // Quizzes have three or four options; the right one must not sit in a fixed place.
+    for (const position of [0, 1, 2]) expect(shownAt.has(position), `right answer shown at position ${position}`).toBe(true);
   });
 
   it("links only verified teacher videos, each pinned with its author and watch URL", () => {

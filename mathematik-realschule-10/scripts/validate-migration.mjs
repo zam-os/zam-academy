@@ -126,11 +126,20 @@ try {
       "a repeated install must preserve every schedule and review",
     );
     const atomIds = cell.atoms.map((atom) => atom.id);
-    const enrolled = await zam.materialiseKvtCards(db, userId, atomIds);
-    assert.deepEqual(enrolled, {
-      cardsCreated: items.length - moved.length,
-      cardsReused: moved.length,
-    });
+    // zam-core enrols an atom the learner already holds cards on one new card
+    // at a time; atoms with a moved history fill up over several enrolments.
+    const movedSlugs = new Set(moved.map((row) => row.academy_slug));
+    const heldAtoms = cell.atoms.filter((atom) => atom.practice_items.some((item) => movedSlugs.has(item.slug)));
+    const trickle = heldAtoms.map((atom) => atom.practice_items.length - atom.practice_items.filter((item) => movedSlugs.has(item.slug)).length);
+    const firstNew = items.length - moved.length - trickle.reduce((sum, n) => sum + n, 0) + trickle.filter((n) => n > 0).length;
+    let enrolled = await zam.materialiseKvtCards(db, userId, atomIds);
+    assert.deepEqual(enrolled, { cardsCreated: firstNew, cardsReused: moved.length });
+    let rounds = 1;
+    while (enrolled.cardsCreated > 0) {
+      enrolled = await zam.materialiseKvtCards(db, userId, atomIds);
+      rounds += 1;
+    }
+    assert.equal(rounds, Math.max(...trickle) + 1, "held atoms fill up one card per enrolment");
     const complete = await snapshot(db);
     assert.equal(complete.cards.length, items.length, "every card once, the moved histories included");
     assert.deepEqual(complete.reviews, after.reviews, "enrolment invents no review evidence");
@@ -157,7 +166,7 @@ try {
       "repeat enrolment must not duplicate or reschedule",
     );
     console.log(
-      `ok   Mathematik 10: ${moved.length} histories moved (${mapping.rows.filter((r) => r.category === "A").length} A, ${mapping.rows.filter((r) => r.category === "B").length} B), ${before.reviews.length} review events preserved; ${items.length - moved.length} fresh cards start unlearned; repeated install/enrolment is idempotent`,
+      `ok   Mathematik 10: ${moved.length} histories moved (${mapping.rows.filter((r) => r.category === "A").length} A, ${mapping.rows.filter((r) => r.category === "B").length} B), ${before.reviews.length} review events preserved; ${items.length - moved.length} fresh cards start unlearned (${firstNew} at once, the rest of ${heldAtoms.length} held atoms one per enrolment); repeated install/enrolment is idempotent`,
     );
   } finally {
     await db.close();
