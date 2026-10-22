@@ -1,6 +1,6 @@
-import { fmt } from "../exercises/format";
+import { fmt, fracText, gcd, linear } from "../exercises/format";
 import type { LabValues } from "../model/types";
-import { arrow, circle, clamp, clipped, handle, type LabView, line, open, path, Plot, polygon, type Pt, r1, rect, text } from "./svg";
+import { angleMark, arrow, circle, clamp, clipped, handle, type LabView, line, open, path, Plot, polygon, type Pt, r1, rect, text } from "./svg";
 
 // ─── Shared helpers of this stage ──────────────────────────────────────────
 
@@ -526,6 +526,266 @@ function zerosDomain(v: LabValues): string {
   return out;
 }
 
+// ─── Rational slopes ───────────────────────────────────────────────────────
+
+/** A fraction p/q in lowest terms with q > 0. */
+export type Ratio = [number, number];
+
+export function ratio(p: number, q: number): Ratio {
+  const g = gcd(p, q);
+  const sign = q < 0 ? -1 : 1;
+  return [(sign * p) / g + 0, (sign * q) / g];
+}
+
+/** Whether p/q has a finite decimal: q has no prime factors but 2 and 5. */
+export function terminating(q: number): boolean {
+  let n = Math.abs(q);
+  while (n % 2 === 0) n /= 2;
+  while (n % 5 === 0) n /= 5;
+  return n === 1;
+}
+
+/** "1,5", "−3", "2/3": a decimal where it ends, a fraction otherwise. */
+export function ratioText(r: Ratio): string {
+  if (r[1] === 1) return fmt(r[0]);
+  return terminating(r[1]) ? fmt(r[0] / r[1], 4) : fracText(r[0], r[1]);
+}
+
+/** A fraction with its rounded decimal: "2/3 ≈ 0,67"; "1,5" when it ends. */
+export function ratioApprox(r: Ratio): string {
+  const shown = ratioText(r);
+  return shown.includes("/") ? `${shown} ≈ ${fmt(r[0] / r[1], 2)}` : shown;
+}
+
+/** The equation y = m x (+ t) with m as a ratio: "y = 2/3 x + 1", "y = −x", "y = 3". */
+export function lineText(r: Ratio, t = 0): string {
+  if (r[0] === 0) return `y = ${fmt(t)}`;
+  const shown = ratioText(r);
+  const coef = shown === "1" ? "" : shown === "−1" ? "−" : shown.includes("/") ? `${shown} ` : shown;
+  return `y = ${coef}x${t === 0 ? "" : t > 0 ? ` + ${fmt(t)}` : ` − ${fmt(-t)}`}`;
+}
+
+/** The slope of the line through O and (x | y); null for the y-axis (x = 0). */
+export function originSlope(x: number, y: number): Ratio | null {
+  return x === 0 ? null : ratio(y, x);
+}
+
+/** The square coordinate system of the line labs, left of the side panel. */
+const SQUARE_BOX = { x: 14, y: 14, w: 312, h: 312 };
+const SQUARE_PANEL = { x: 334, y: 14, w: 178, h: 312 };
+const squarePlot = () => new Plot(-6, 6, -6, 6, SQUARE_BOX);
+
+/** A target point: a dashed ring, green and filled once the line passes through it. */
+function targetPoint(plot: Plot, x: number, y: number, name: string, hit: boolean): string {
+  const P = plot.P(x, y);
+  return circle(P.x, P.y, hit ? 6 : 8, hit ? "lab-point-ok" : "lab-target") + pointLabel(plot, P, `${name}(${fmt(x)} | ${fmt(y)})`, hit ? "lab-text-small lab-text-ok" : "lab-text-small", 10, 16);
+}
+
+/** A label kept inside a plot box, centred or anchored at one side. */
+function boxedText(plot: Plot, x: number, y: number, content: string, cls: string, anchor: "start" | "middle" | "end" = "middle"): string {
+  const width = content.length * charWidth(cls);
+  const left = anchor === "start" ? x : anchor === "end" ? x - width : x - width / 2;
+  const shift = clamp(left, plot.box.x + 3, plot.box.x + plot.box.w - width - 3) - left;
+  return text(x + shift, clamp(y, plot.box.y + 12, plot.box.y + plot.box.h - 4), content, cls, anchor);
+}
+
+// ─── 6.4 Ursprungsgeraden ──────────────────────────────────────────────────
+
+export const ORIGIN_TARGET = { x: -4, y: 3 };
+
+function originLine(v: LabValues): string {
+  const plot = squarePlot();
+  const r = originSlope(v.px, v.py);
+  let out = open("Eine Ursprungsgerade durch einen ziehbaren Punkt P mit einem Steigungsdreieck");
+  out += plot.clip("clip-ol") + plot.grid(1, 2);
+  let drawing = "";
+  let handles = "";
+  const lines: PanelLine[] = [];
+  if (r === null) {
+    if (v.py !== 0) drawing += line(plot.X(0), plot.Y(-6), plot.X(0), plot.Y(6), "lab-curve-c");
+    lines.push([v.py === 0 ? "P liegt auf O:" : "x = 0: die y-Achse,", "lab-text lab-text-bad"], [v.py === 0 ? "keine Gerade festgelegt" : "keine Funktion y = mx", "lab-text-small"]);
+  } else {
+    const m = r[0] / r[1];
+    drawing += plot.lineThrough(m, 0, "lab-curve");
+    const A = plot.P(v.a, m * v.a);
+    const C = plot.P(v.a + v.d, m * v.a);
+    const B = plot.P(v.a + v.d, m * (v.a + v.d));
+    drawing += polygon([A, C, B], "lab-fill-only");
+    drawing += line(A.x, A.y, C.x, C.y, "lab-side-a") + line(C.x, C.y, B.x, B.y, "lab-side-b");
+    const dy = ratio(r[0] * v.d, r[1]);
+    // labels: Δx on the side of the leg away from the triangle, Δy beside the vertical leg
+    drawing += boxedText(plot, (A.x + C.x) / 2, m >= 0 ? A.y + 16 : A.y - 7, `Δx = ${v.d}`, "lab-text-small lab-text-a");
+    if (m !== 0) drawing += boxedText(plot, C.x + 6, (C.y + B.y) / 2 + 4, `Δy = ${ratioText(dy)}`, "lab-text-small lab-text-b", "start");
+    if (plot.contains(v.a, m * v.a)) handles += handle("A", A.x, A.y, "Anfang des Steigungsdreiecks", "lab-handle");
+    if (plot.contains(v.a + v.d, m * (v.a + v.d))) handles += handle("B", B.x, B.y, "Breite des Steigungsdreiecks", "lab-handle lab-handle-b");
+    lines.push(
+      [`g: ${lineText(r)}`, "lab-text lab-text-big lab-text-a"],
+      [`P(${fmt(v.px)} | ${fmt(v.py)})`, "lab-text"],
+      [`m = y : x = ${fmt(v.py)} : ${fmt(v.px).startsWith("−") ? `(${fmt(v.px)})` : fmt(v.px)}`, "lab-text-small"],
+      [`m = ${ratioApprox(r)}`, "lab-text lab-text-ok"],
+      ["", ""],
+      ["Steigungsdreieck:", "lab-text-muted"],
+      [`Δx = ${v.d} nach rechts`, "lab-text lab-text-a"],
+      [m === 0 ? "Δy = 0" : `Δy = ${ratioText(dy).replace("−", "")} nach ${m > 0 ? "oben" : "unten"}`, "lab-text lab-text-b"],
+      [`Δy : Δx = ${ratioText(dy)} : ${v.d} = ${ratioText(r)}`, "lab-text-small"],
+      ["", ""],
+      [m > 0 ? "m > 0: g steigt." : m < 0 ? "m < 0: g fällt." : "m = 0: g ist die x-Achse.", "lab-text-small"],
+    );
+  }
+  out += clipped("clip-ol", drawing);
+  const hit = v.px !== 0 && ORIGIN_TARGET.y * v.px === ORIGIN_TARGET.x * v.py;
+  out += targetPoint(plot, ORIGIN_TARGET.x, ORIGIN_TARGET.y, "Q", hit);
+  out += circle(plot.X(0), plot.Y(0), 3.5, "lab-point");
+  out += sidePanel(lines, SQUARE_PANEL);
+  out += handles;
+  out += handle("P", plot.X(v.px), plot.Y(v.py), "Punkt P der Geraden", "lab-handle lab-handle-a");
+  out += text(plot.X(v.px) + (v.px > 4 ? -12 : 12), plot.Y(v.py) + (v.py > 4 ? 18 : -10), "P", "lab-text lab-text-a", v.px > 4 ? "end" : "start");
+  out += `</svg>`;
+  return out;
+}
+
+// ─── 6.5 Senkrechte Geraden ────────────────────────────────────────────────
+
+/** The two lines of the lab are perpendicular and both have a slope (no axis). */
+export function perpendicularPair(v: LabValues): boolean {
+  return v.x1 !== 0 && v.y1 !== 0 && v.x2 !== 0 && v.y2 !== 0 && v.x1 * v.x2 + v.y1 * v.y2 === 0;
+}
+
+/** The acute angle between the lines through O and the two points, in degrees; null when a point is O. */
+export function angleBetweenLines(x1: number, y1: number, x2: number, y2: number): number | null {
+  const n = Math.hypot(x1, y1) * Math.hypot(x2, y2);
+  if (n === 0) return null;
+  const dot = x1 * x2 + y1 * y2;
+  if (dot === 0) return 90;
+  return (Math.acos(clamp(Math.abs(dot) / n, -1, 1)) * 180) / Math.PI;
+}
+
+function perpendicular(v: LabValues): string {
+  const plot = squarePlot();
+  const r1s = originSlope(v.x1, v.y1);
+  const r2s = originSlope(v.x2, v.y2);
+  const O = plot.P(0, 0);
+  const P1 = plot.P(v.x1, v.y1);
+  const P2 = plot.P(v.x2, v.y2);
+  let out = open("Zwei Ursprungsgeraden mit ziehbaren Punkten, ihren Steigungen und dem Winkel zwischen ihnen");
+  out += plot.clip("clip-pp") + plot.grid(1, 2);
+  const drawLine = (x: number, y: number, cls: string) => {
+    if (x === 0 && y === 0) return "";
+    if (x === 0) return line(plot.X(0), plot.Y(-6), plot.X(0), plot.Y(6), cls);
+    return plot.lineThrough(y / x, 0, cls);
+  };
+  let drawing = "";
+  // the slope triangle of g₁ and the same triangle turned by 90° about O
+  const turned = { x: -v.y1, y: v.x1 };
+  if (v.x1 !== 0 && v.y1 !== 0) {
+    drawing += polygon([O, plot.P(v.x1, 0), P1], "lab-fill-a");
+    drawing += polygon([O, plot.P(0, v.x1), plot.P(turned.x, turned.y)], "lab-ghost", 'style="fill:none"');
+  }
+  drawing += drawLine(v.x1, v.y1, "lab-curve") + drawLine(v.x2, v.y2, "lab-curve-2");
+  out += clipped("clip-pp", drawing);
+  const ortho = perpendicularPair(v);
+  if (v.x1 !== 0 && v.y1 !== 0) {
+    const T = plot.P(turned.x, turned.y);
+    out += circle(T.x, T.y, ortho ? 6 : 4, ortho ? "lab-point-ok" : "lab-dot-small");
+    out += pointLabel(plot, T, "P₁′", ortho ? "lab-text-small lab-text-ok" : "lab-text-small", 9, -9);
+  }
+  const angle = angleBetweenLines(v.x1, v.y1, v.x2, v.y2);
+  if (angle !== null) {
+    const dot = v.x1 * v.x2 + v.y1 * v.y2;
+    const Q = dot >= 0 ? P2 : plot.P(-v.x2, -v.y2);
+    out += angleMark(O, P1, Q, 22, angle === 90 ? "lab-angle-ok" : "lab-angle", angle === 90);
+  }
+  out += circle(O.x, O.y, 3.5, "lab-point");
+  const slopeLine = (r: Ratio | null, x: number, y: number, k: string) =>
+    x === 0 && y === 0 ? `P${k} = O: keine Gerade` : r === null ? `m${k}: keine (y-Achse)` : `m${k} = ${ratioText(r)}`;
+  const lines: PanelLine[] = [
+    [`g₁: ${r1s ? lineText(r1s) : v.y1 === 0 ? "–" : "x = 0"}`, "lab-text lab-text-a"],
+    [slopeLine(r1s, v.x1, v.y1, "₁"), "lab-text-small"],
+    [`g₂: ${r2s ? lineText(r2s) : v.y2 === 0 ? "–" : "x = 0"}`, "lab-text lab-text-b"],
+    [slopeLine(r2s, v.x2, v.y2, "₂"), "lab-text-small"],
+    ["", ""],
+  ];
+  if (r1s && r2s) {
+    const product = ratio(r1s[0] * r2s[0], r1s[1] * r2s[1]);
+    lines.push(["m₁ · m₂ =", "lab-text-muted"], [ratioApprox(product), product[0] === -product[1] ? "lab-text lab-text-big lab-text-ok" : "lab-text lab-text-big"]);
+  } else lines.push(["m₁ · m₂ nicht", "lab-text-muted"], ["berechenbar", "lab-text-muted"]);
+  lines.push(["", ""], [angle === null ? "kein Winkel" : `Winkel: ${fmt(angle, 1)}°`, angle === 90 ? "lab-text lab-text-ok" : "lab-text"]);
+  lines.push(["", ""], ["Blau: Steigungsdreieck von g₁", "lab-text-small"], ["gestrichelt: um 90° gedreht", "lab-text-small"]);
+  out += sidePanel(lines, SQUARE_PANEL);
+  out += handle("P1", P1.x, P1.y, "Punkt P₁ der Geraden g₁", "lab-handle lab-handle-a");
+  out += handle("P2", P2.x, P2.y, "Punkt P₂ der Geraden g₂", "lab-handle lab-handle-b");
+  out += pointLabel(plot, P1, "P₁", "lab-text lab-text-a", 11, -11);
+  out += pointLabel(plot, P2, "P₂", "lab-text lab-text-b", 11, -11);
+  out += `</svg>`;
+  return out;
+}
+
+// ─── 6.6 Geraden y = mx + t ────────────────────────────────────────────────
+
+export const LINE_TARGETS = [
+  { name: "A", x: -2, y: 1 },
+  { name: "B", x: 2, y: 3 },
+  { name: "C", x: 3, y: -2 },
+];
+
+/** "x₀ = 1,5", "≈ 1,33" when rounded, or the special cases of m = 0. */
+export function zeroOfLine(m: number, t: number): string {
+  if (m === 0) return t === 0 ? "jede Stelle (die x-Achse)" : "keine (parallel zur x-Achse)";
+  const x0 = -t / m;
+  return `x₀ = ${Math.abs(x0 - Number(x0.toFixed(2))) < 1e-9 ? "" : "≈ "}${fmt(x0, 2)}`;
+}
+
+function lineMxT(v: LabValues): string {
+  const plot = squarePlot();
+  const { m, t } = v;
+  let out = open("Die Gerade y = mx + t, die um t verschobene Ursprungsgerade y = mx und das Steigungsdreieck");
+  out += plot.clip("clip-mt") + plot.grid(1, 2);
+  let drawing = plot.lineThrough(m, 0, "lab-ghost");
+  // the shift by t: arrows from y = mx to y = mx + t
+  for (const x of [-4, 4]) {
+    if (t !== 0 && plot.contains(x, m * x) && plot.contains(x, m * x + t)) drawing += toneArrow(plot.X(x), plot.Y(m * x), plot.X(x), plot.Y(m * x + t), "c", 2);
+  }
+  drawing += plot.lineThrough(m, t, "lab-curve");
+  // the slope triangle from (0 | t): 1 to the right, m up
+  const T = plot.P(0, t);
+  const R = plot.P(1, t);
+  const S = plot.P(1, t + m);
+  drawing += polygon([T, R, S], "lab-fill-only");
+  drawing += line(T.x, T.y, R.x, R.y, "lab-side-a") + line(R.x, R.y, S.x, S.y, "lab-side-b");
+  out += clipped("clip-mt", drawing);
+  out += boxedText(plot, (T.x + R.x) / 2, m >= 0 ? T.y + 15 : T.y - 6, "1", "lab-text-small lab-text-a");
+  if (m !== 0) out += boxedText(plot, R.x + 6, (R.y + S.y) / 2 + 4, `m = ${fmt(m)}`, "lab-text-small lab-text-b", "start");
+  if (m !== 0) {
+    const x0 = -t / m;
+    if (plot.contains(x0, 0)) {
+      const N = plot.P(x0, 0);
+      out += circle(N.x, N.y, 5, "lab-point-ok");
+      // in the quadrant beside N that the line leaves free: lower right when it rises, lower left when it falls
+      out += boxedText(plot, N.x + (m > 0 ? 8 : -8), N.y + 17, `N(${fmt(x0, 2)} | 0)`, "lab-text-small lab-text-ok", m > 0 ? "start" : "end");
+    }
+  }
+  for (const target of LINE_TARGETS) out += targetPoint(plot, target.x, target.y, target.name, Math.abs(m * target.x + t - target.y) < 1e-9);
+  const lines: PanelLine[] = [
+    [`g: y = ${linear(m, t)}`, "lab-text lab-text-big lab-text-a"],
+    ["", ""],
+    [`m = ${fmt(m)} (Steigung)`, "lab-text lab-text-b"],
+    [`t = ${fmt(t)}`, "lab-text"],
+    ["Schnitt mit der y-Achse:", "lab-text-small"],
+    [`(0 | ${fmt(t)})`, "lab-text"],
+    ["", ""],
+    ["Nullstelle:", "lab-text-muted"],
+    [zeroOfLine(m, t), m === 0 ? "lab-text-small" : "lab-text lab-text-ok"],
+    ["", ""],
+  ];
+  if (m === 0) lines.push(["m = 0: Parallele zur", "lab-text-small"], ["x-Achse, konstante Funktion", "lab-text-small"]);
+  else lines.push(["grau: y = mx, um t", "lab-text-small"], [t >= 0 ? "nach oben verschoben" : "nach unten verschoben", "lab-text-small"]);
+  out += sidePanel(lines, SQUARE_PANEL);
+  if (plot.contains(1, t + m)) out += handle("S", S.x, S.y, "Spitze des Steigungsdreiecks: Steigung m", "lab-handle lab-handle-b");
+  out += handle("T", T.x, T.y, "Schnittpunkt mit der y-Achse: t", "lab-handle lab-handle-a");
+  out += `</svg>`;
+  return out;
+}
+
 // ─── Placeholders until the remaining labs are written ─────────────────────
 
 const placeholder: LabView = { render: () => '<svg viewBox="0 0 520 340" xmlns="http://www.w3.org/2000/svg"></svg>' };
@@ -555,9 +815,28 @@ export const FUNKTIONEN_VIEWS: Record<"relation-check" | "representations" | "ze
       b: { x: "b", drag: (p, v) => ({ b: domainPlot(v).invX(p.x) }) },
     },
   },
-  "origin-line": placeholder,
-  perpendicular: placeholder,
-  "line-mx-t": placeholder,
+  "origin-line": {
+    render: originLine,
+    handles: {
+      P: { x: "px", y: "py", drag: (p) => ({ px: squarePlot().invX(p.x), py: squarePlot().invY(p.y) }) },
+      A: { x: "a", drag: (p) => ({ a: squarePlot().invX(p.x) }) },
+      B: { x: "d", drag: (p, v) => ({ d: squarePlot().invX(p.x) - v.a }) },
+    },
+  },
+  perpendicular: {
+    render: perpendicular,
+    handles: {
+      P1: { x: "x1", y: "y1", drag: (p) => ({ x1: squarePlot().invX(p.x), y1: squarePlot().invY(p.y) }) },
+      P2: { x: "x2", y: "y2", drag: (p) => ({ x2: squarePlot().invX(p.x), y2: squarePlot().invY(p.y) }) },
+    },
+  },
+  "line-mx-t": {
+    render: lineMxT,
+    handles: {
+      T: { y: "t", drag: (p) => ({ t: squarePlot().invY(p.y) }) },
+      S: { y: "m", drag: (p, v) => ({ m: squarePlot().invY(p.y) - v.t }) },
+    },
+  },
   "line-from-points": placeholder,
   "parallel-family": placeholder,
   "linear-model": placeholder,

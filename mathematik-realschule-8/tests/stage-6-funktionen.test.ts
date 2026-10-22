@@ -11,6 +11,9 @@ const IDS = [
   "fu-1-funktionen",
   "fu-2-darstellungen",
   "fu-3-werte-nullstellen",
+  "fu-4-ursprungsgeraden",
+  "fu-5-senkrecht",
+  "fu-6-geraden",
 ];
 const SEEDS = Array.from({ length: 200 }, (_, i) => seedFrom(`stage-6:${i}`));
 
@@ -255,11 +258,147 @@ describe("Aufgaben der Etappe 6 rechnen richtig", () => {
     }
   });
 
-  it("accepts a slope typed as a fraction where the task asks for one", () => {
-    // spot check of the checker on a Nullstelle that is a whole number
-    const task = tasks("fu-3-werte-nullstellen", "werte-nullstelle", 1)[0];
-    const inputs = task.fields.map((f) => (f.kind === "number" ? String(f.answer) : "0"));
-    expect(checkTask(task, inputs).status).toBe("correct");
+  it("6.4 slopes of Ursprungsgeraden from a point, a situation or a read slope triangle", () => {
+    for (const task of tasks("fu-4-ursprungsgeraden", "steigung", 1)) {
+      const { xp, yp, k } = meta(task);
+      expect(xp).not.toBe(0);
+      close(num(task, 0), yp / xp);
+      close(num(task, 1), (yp / xp) * k);
+      expect(Number.isInteger(Math.round(num(task, 1) * 1e9) / 1e9)).toBe(true);
+    }
+    const variants = [0, 0];
+    for (const task of tasks("fu-4-ursprungsgeraden", "steigung", 2)) {
+      const m = meta(task);
+      variants[m.variant] += 1;
+      if (m.variant === 0) {
+        close(num(task, 0), m.m);
+        close(num(task, 1), m.m * m.x2);
+        close(m.m * num(task, 2), m.m * m.x3);
+        expect(m.m).toBeGreaterThan(0);
+        expect(m.x1).not.toBe(m.x2);
+      } else {
+        const dx = m.left ? -m.q : m.q;
+        const dy = m.up ? Math.abs(m.p) : -Math.abs(m.p);
+        close(num(task, 0), dy / dx);
+        close(num(task, 0), m.p / m.q);
+        close(num(task, 1), (m.p / m.q) * m.k);
+      }
+    }
+    expect(variants.every((n) => n > 40), `${variants}`).toBe(true);
+  });
+
+  it("6.4 Punktprobe, missing coordinates and claims about proportional situations", () => {
+    const verdicts = [0, 0];
+    for (const task of tasks("fu-4-ursprungsgeraden", "punktprobe", 1)) {
+      const { p, q, a, b, askY, c } = meta(task);
+      const m = p / q;
+      const on = Math.abs(m * a - b) < 1e-9;
+      expect(choice(task, 0).correctIndex).toBe(on ? 0 : 1);
+      verdicts[on ? 0 : 1] += 1;
+      if (askY) close(num(task, 1), m * c);
+      else close(m * num(task, 1), c);
+    }
+    expect(verdicts.every((n) => n > 60), `${verdicts}`).toBe(true);
+    for (const task of tasks("fu-4-ursprungsgeraden", "punktprobe", 2)) {
+      const { m, x2, x3, claimed } = meta(task);
+      expect(choice(task, 0).correctIndex).toBe(Math.abs(claimed - m * x2) < 1e-9 ? 0 : 1);
+      close(num(task, 1), m * x2);
+      close(num(task, 2), x3);
+      expect(claimed).toBeGreaterThan(0);
+    }
+  });
+
+  it("6.5 the slope of the perpendicular and the check with a point", () => {
+    for (const task of tasks("fu-5-senkrecht", "senkrecht-m", 1)) {
+      const { p1, q1, k } = meta(task);
+      close(num(task, 0) * (p1 / q1), -1);
+      close(num(task, 1), num(task, 0) * k);
+    }
+    const onH = [0, 0];
+    for (const task of tasks("fu-5-senkrecht", "senkrecht-m", 2)) {
+      const { a, b, qx, qy, xR } = meta(task);
+      const mh = num(task, 0);
+      close(mh * (b / a), -1);
+      // Q on h: the vector OQ is perpendicular to OP
+      const on = a * qx + b * qy === 0;
+      expect(choice(task, 1).correctIndex).toBe(on ? 0 : 1);
+      onH[on ? 0 : 1] += 1;
+      close(num(task, 2), mh * xR);
+    }
+    expect(onH.every((n) => n > 40), `${onH}`).toBe(true);
+  });
+
+  it("6.5 deciding perpendicularity: the product and the dot product agree", () => {
+    const verdicts = [0, 0];
+    for (const task of tasks("fu-5-senkrecht", "pruefen", 1)) {
+      const { p1, q1, p2, q2 } = meta(task);
+      close(num(task, 0), (p1 / q1) * (p2 / q2));
+      const perp = q1 * q2 + p1 * p2 === 0;
+      expect(choice(task, 1).correctIndex).toBe(perp ? 0 : 1);
+      verdicts[perp ? 0 : 1] += 1;
+    }
+    expect(verdicts.every((n) => n > 60), `${verdicts}`).toBe(true);
+    for (const task of tasks("fu-5-senkrecht", "pruefen", 2)) {
+      const { ax, ay, bx, by } = meta(task);
+      close(num(task, 0), ay / ax);
+      close(num(task, 1), by / bx);
+      expect(choice(task, 2).correctIndex).toBe(ax * bx + ay * by === 0 ? 0 : 1);
+      for (const c of [ax, ay, bx, by]) expect(Math.abs(c)).toBeLessThanOrEqual(10);
+    }
+  });
+
+  it("6.6 drawing y = mx + t: the slope triangle, values and the Nullstelle", () => {
+    for (const task of tasks("fu-6-geraden", "zeichnen", 1)) {
+      const { p, q, t, a, x0 } = meta(task);
+      const m = p / q;
+      expect(picked(task, 0)).toBe(`${q} nach rechts, ${Math.abs(p)} nach ${p > 0 ? "oben" : "unten"}`);
+      expect(new Set(choice(task, 0).options).size).toBe(3);
+      close(num(task, 1), m * a + t);
+      close(m * num(task, 2) + t, 0);
+      close(num(task, 2), x0);
+      expect(Number.isInteger(t)).toBe(true);
+    }
+    for (const task of tasks("fu-6-geraden", "zeichnen", 2)) {
+      const { p, q, t } = meta(task);
+      close(num(task, 0), p / q);
+      expect(num(task, 1)).toBe(t);
+      close(num(task, 0) * num(task, 2) + num(task, 1), 0);
+    }
+  });
+
+  it("6.6 reading lines: intercepts, axis-parallel lines and the shifted Ursprungsgerade", () => {
+    const variants = [0, 0, 0];
+    for (const task of tasks("fu-6-geraden", "ablesen", 1)) {
+      const m = meta(task);
+      variants[m.variant] += 1;
+      if (m.variant === 0) {
+        // the line through (0 | t) and (x₀ | 0)
+        close(num(task, 0), (0 - m.t) / (m.x0 - 0));
+        expect(num(task, 1)).toBe(m.t);
+      } else if (m.variant === 1) {
+        expect(num(task, 0)).toBe(0);
+        expect(num(task, 1)).toBe(m.b);
+      } else {
+        expect(num(task, 0)).toBe(m.a);
+        expect(choice(task, 1).correctIndex).toBe(1);
+      }
+    }
+    expect(variants.every((n) => n > 25), `${variants}`).toBe(true);
+    for (const task of tasks("fu-6-geraden", "ablesen", 2)) {
+      const { p, q, t, a, b } = meta(task);
+      const m = p / q;
+      expect(num(task, 0)).toBe(t);
+      close(m * num(task, 1) + t, 0);
+      expect(choice(task, 2).correctIndex).toBe(Math.abs(m * a + t - b) < 1e-9 ? 0 : 1);
+    }
+  });
+
+  it("accepts slopes typed as fractions", () => {
+    for (const task of tasks("fu-4-ursprungsgeraden", "steigung", 1).slice(0, 60)) {
+      const { xp, yp } = meta(task);
+      const inputs = task.fields.map((f, i) => (i === 0 ? `${yp}/${xp}` : f.kind === "number" ? String(f.answer) : "0"));
+      expect(checkTask(task, inputs).status, task.prompt).toBe("correct");
+    }
   });
 });
 
@@ -324,6 +463,63 @@ describe("Labore der Etappe 6", () => {
       close(Math.min(...samples), W.lo, 1e-9);
       close(Math.max(...samples), W.hi, 1e-9);
       for (const z of zerosInDomain(v)) close(f(z), 0);
+    }
+  });
+
+  it("6.4 the readouts of the Ursprungsgerade and the target Q", () => {
+    const lab = lesson("fu-4-ursprungsgeraden").lab;
+    const start = at(lab, {});
+    expect(start.r.gl).toBe("y = 1,5x");
+    expect(start.r.m).toBe("1,5");
+    expect(start.r.dy).toBe("Δx = 1, Δy = 1,5");
+    expect(at(lab, GOAL_WITNESSES_STAGE_6["fu-4-ursprungsgeraden"]["durch-q"]).r.gl).toBe("y = −0,75x");
+    expect(at(lab, GOAL_WITNESSES_STAGE_6["fu-4-ursprungsgeraden"]["dreieck-ganz"]).r.gl).toBe("y = 2/3 x");
+    expect(at(lab, { px: 3, py: 2, d: 2 }).r.dy).toBe("Δx = 2, Δy = 4/3");
+    expect(at(lab, { px: 0, py: 4 }).r.gl).toBe("x = 0 (y-Achse), keine Funktion");
+    expect(at(lab, { px: -3, py: 0 }).r.gl).toBe("y = 0");
+    const goal = lab.goals.find((g) => g.id === "durch-q")!;
+    for (const values of enumerateLabGrid(lab, 13)) {
+      const v = values as LabValues;
+      const r = computeReadouts(lab, v);
+      const onLine = v.px !== 0 && Math.abs((v.py / v.px) * -4 - 3) < 1e-9;
+      expect(goal.check(v, r)).toBe(onLine);
+    }
+  });
+
+  it("6.5 the product is −1 exactly where the angle is 90°", () => {
+    const lab = lesson("fu-5-senkrecht").lab;
+    const start = at(lab, {});
+    expect(start.r.m1).toBe("1/3 ≈ 0,33");
+    expect(start.r.m2).toBe("−2");
+    expect(start.r.produkt).toBe("−2/3 ≈ −0,67");
+    expect(at(lab, GOAL_WITNESSES_STAGE_6["fu-5-senkrecht"].bruch).r.produkt).toBe("−1");
+    expect(at(lab, GOAL_WITNESSES_STAGE_6["fu-5-senkrecht"].achse).r.produkt).toBe("nicht berechenbar");
+    for (const values of enumerateLabGrid(lab, 7)) {
+      const v = values as LabValues;
+      const r = computeReadouts(lab, v);
+      if (v.x1 === 0 || v.x2 === 0 || v.y1 === 0 || v.y2 === 0) continue;
+      const productIsMinusOne = Math.abs((v.y1 / v.x1) * (v.y2 / v.x2) + 1) < 1e-9;
+      expect(r.produkt === "−1", JSON.stringify(v)).toBe(productIsMinusOne);
+      expect(Math.abs(Number(r.winkel) - 90) < 1e-9, JSON.stringify(v)).toBe(productIsMinusOne);
+    }
+  });
+
+  it("6.6 the readouts of y = mx + t and the Nullstelle on the grid", () => {
+    const lab = lesson("fu-6-geraden").lab;
+    const start = at(lab, {});
+    expect(start.r.gl).toBe("y = 1,5x − 3");
+    expect(start.r.achse).toBe("(0 | −3)");
+    expect(start.r.null).toBe("x₀ = 2");
+    expect(at(lab, { m: 0.75, t: 1 }).r.null).toBe("x₀ ≈ −1,33");
+    expect(at(lab, GOAL_WITNESSES_STAGE_6["fu-6-geraden"]["zwei-punkte"]).r.gl).toBe("y = 0,5x + 2");
+    expect(at(lab, GOAL_WITNESSES_STAGE_6["fu-6-geraden"]["parallele-x"]).r.null).toBe("keine (parallel zur x-Achse)");
+    expect(at(lab, { m: 0, t: 0 }).r.null).toBe("jede Stelle (die x-Achse)");
+    for (const values of enumerateLabGrid(lab, 25)) {
+      const v = values as LabValues;
+      if (v.m === 0) continue;
+      const shown = String(computeReadouts(lab, v).null);
+      const x0 = Number(shown.replace(/^x₀ = (≈ )?/, "").replace("−", "-").replace(",", "."));
+      expect(Math.abs(v.m * x0 + v.t), shown).toBeLessThanOrEqual(0.006 * Math.abs(v.m));
     }
   });
 });

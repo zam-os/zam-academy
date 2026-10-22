@@ -1,11 +1,21 @@
-import { fmt, fmtUnit, linear, paren, point, sum, term } from "../exercises/format";
+import { fmt, fmtUnit, frac, fracHtml, linear, paren, point, sum, term } from "../exercises/format";
 import type { Rng } from "../exercises/rng";
 import {
   allDifferentX,
   analyseRelation,
+  angleBetweenLines,
   domainFunctionOf,
   domainOf,
   intervalText,
+  LINE_TARGETS,
+  lineText,
+  ORIGIN_TARGET,
+  originSlope,
+  perpendicularPair,
+  type Ratio,
+  ratio,
+  ratioApprox,
+  ratioText,
   REPRESENTATIONS,
   relationPoints,
   representationOf,
@@ -13,6 +23,7 @@ import {
   sharedValueCount,
   testLineHits,
   valueSet,
+  zeroOfLine,
   zerosInDomain,
   zerosText,
 } from "../lab/views-funktionen";
@@ -49,6 +60,37 @@ function times(m: number): string {
 /** The value of m · x + t written out with x substituted: "0,5 · (−2) + 1". */
 function linearAt(m: number, t: number, x: number): string {
   return `${times(m)}${paren(x)}${term(t, "", false)}`;
+}
+
+/** A ratio in HTML: a decimal where it ends, a stacked fraction otherwise. */
+function ratioHtml(r: Ratio): string {
+  const shown = ratioText(r);
+  return shown.includes("/") ? fracHtml(r[0], r[1]) : shown;
+}
+
+/** " ≈ 0,67" behind a ratio whose decimal does not end. */
+function approxTail(r: Ratio): string {
+  return ratioText(r).includes("/") ? ` ≈ ${fmt(r[0] / r[1], 2)}` : "";
+}
+
+/** A ratio as a factor of a product, in brackets when negative: "(−3/4)". */
+function ratioFactor(r: Ratio): string {
+  return r[0] < 0 ? `(${ratioHtml(r)})` : ratioHtml(r);
+}
+
+/** y = m x + t in HTML with m as a ratio: "y = ⅔x + 1", "y = −x", "y = 3". */
+function lineHtml(r: Ratio, t = 0): string {
+  if (r[0] === 0) return `y = ${fmt(t)}`;
+  const shown = ratioText(r);
+  const coef = shown === "1" ? "" : shown === "−1" ? "−" : ratioHtml(r);
+  return `y = ${coef}x${term(t, "", false)}`;
+}
+
+const value = (r: Ratio) => r[0] / r[1];
+
+/** A nonzero whole number between −n and n. */
+function nonzero(rng: Rng, n: number): number {
+  return rng.pick([...Array.from({ length: n }, (_, i) => -(i + 1)), ...Array.from({ length: n }, (_, i) => i + 1)]);
 }
 
 // 6.1 Funktion oder nicht? ──────────────────────────────────────────────────
@@ -1068,6 +1110,749 @@ const werteNullstellen: Lesson = {
   celebrationMessage: "Du berechnest Funktionswerte und Nullstellen und setzt Definitions- und Wertemenge passend zur Situation.",
 };
 
+// 6.4 Ursprungsgeraden y = mx ───────────────────────────────────────────────
+
+/** Proportional situations: y = m · x with a rate m and its unit. */
+function proportionalContext(rng: Rng) {
+  const kind = rng.int(0, 3);
+  const pickPair = (xs1: number[], xs2: number[], xs3: number[]) => [rng.pick(xs1), rng.pick(xs2), rng.pick(xs3)];
+  if (kind === 0) {
+    const m = rng.pick([8, 10, 12, 15]);
+    const [x1, x2, x3] = pickPair([2, 3, 4, 5], [6, 7, 9], [10, 12, 15, 20]);
+    return { kind, m, x1, x2, x3, text: `Ein Wasserhahn füllt eine Wanne gleichmäßig: In ${x1} Minuten fließen ${fmt(m * x1)} l Wasser hinein.`, mUnit: "l pro min", xUnit: "min", yUnit: "l", ask2: `Wasser nach ${x2} min:`, ask3: `Zeit für ${fmt(m * x3)} l:` };
+  }
+  if (kind === 1) {
+    const m = rng.pick([1.8, 2.4, 2.5, 3.2]);
+    const [x1, x2, x3] = pickPair([1.5, 2, 2.5, 3], [4, 5, 6], [7.5, 10, 12]);
+    return { kind, m, x1, x2, x3, text: `Auf dem Markt kosten ${fmt(x1)} kg Äpfel ${fmtUnit(m * x1, "€")}. Der Preis ist proportional zur Masse.`, mUnit: "€ pro kg", xUnit: "kg", yUnit: "€", ask2: `Preis für ${fmt(x2)} kg:`, ask3: `Äpfel für ${fmtUnit(m * x3, "€")}:` };
+  }
+  if (kind === 2) {
+    const m = rng.pick([12, 15, 18, 20]);
+    const [x1, x2, x3] = pickPair([2, 3, 4], [5, 7, 9], [10, 15, 20]);
+    return { kind, m, x1, x2, x3, text: `Ein Drucker druckt gleichmäßig: In ${x1} Minuten schafft er ${fmt(m * x1)} Seiten.`, mUnit: "Seiten pro min", xUnit: "min", yUnit: "Seiten", ask2: `Seiten nach ${x2} min:`, ask3: `Zeit für ${fmt(m * x3)} Seiten:` };
+  }
+  const m = rng.pick([12, 15, 18, 20]);
+  const [x1, x2, x3] = pickPair([0.5, 1.5], [2, 2.5, 3], [4, 5, 6]);
+  return { kind, m, x1, x2, x3, text: `Eine Radfahrerin fährt mit gleichbleibendem Tempo. In ${fmt(x1)} Stunden legt sie ${fmt(m * x1)} km zurück.`, mUnit: "km pro h", xUnit: "h", yUnit: "km", ask2: `Strecke nach ${fmt(x2)} h:`, ask3: `Zeit für ${fmt(m * x3)} km:` };
+}
+
+/** Claims about a proportional situation, true or with a typical error. */
+function claimContext(rng: Rng) {
+  const kind = rng.int(0, 3);
+  const base = [
+    { m: rng.pick([1.5, 2, 2.5]), xs: [2, 3, 4], x2s: [5, 6, 7], x3s: [8, 10, 12], text: (x: number, y: number) => `Ein Heizlüfter verbraucht in ${x} Stunden ${fmt(y)} kWh Strom; der Verbrauch ist proportional zur Zeit.`, claim: (x: number, y: number) => `Tim behauptet: „In ${x} Stunden sind es ${fmt(y)} kWh.“`, xUnit: "h", yUnit: "kWh", ask3: (y: number) => `Zeit für ${fmt(y)} kWh:` },
+    { m: rng.pick([80, 90, 120]), xs: [1.5, 2, 2.5], x2s: [3, 4, 5], x3s: [6, 7], text: (x: number, y: number) => `Ein Zug fährt mit gleichbleibendem Tempo und legt in ${fmt(x)} Stunden ${fmt(y)} km zurück.`, claim: (x: number, y: number) => `Lea behauptet: „In ${x} Stunden schafft er ${fmt(y)} km.“`, xUnit: "h", yUnit: "km", ask3: (y: number) => `Zeit für ${fmt(y)} km:` },
+    { m: rng.pick([6, 7.5, 12]), xs: [2, 3, 4], x2s: [5, 6, 8], x3s: [10, 12], text: (x: number, y: number) => `Im Stoffladen kosten ${x} m eines Stoffes ${fmtUnit(y, "€")}.`, claim: (x: number, y: number) => `Mia behauptet: „${x} m kosten ${fmtUnit(y, "€")}.“`, xUnit: "m", yUnit: "€", ask3: (y: number) => `Stoff für ${fmtUnit(y, "€")}:` },
+    { m: rng.pick([8, 9, 12]), xs: [3, 4, 5], x2s: [6, 7, 10], x3s: [12, 15], text: (x: number, y: number) => `Eine Dusche verbraucht in ${x} Minuten ${fmt(y)} l Wasser, gleichmäßig.`, claim: (x: number, y: number) => `Ben behauptet: „In ${x} Minuten sind es ${fmt(y)} l.“`, xUnit: "min", yUnit: "l", ask3: (y: number) => `Zeit für ${fmt(y)} l:` },
+  ][kind];
+  const x1 = rng.pick(base.xs);
+  const x2 = rng.pick(base.x2s);
+  const x3 = rng.pick(base.x3s);
+  const truth = base.m * x2;
+  const mode = rng.int(0, 2);
+  // mode 0: true; 1: additive thinking (one unit more, one unit of y more); 2: a rounding error
+  let claimed = mode === 0 ? truth : mode === 1 ? base.m * x1 + (x2 - x1) : truth - rng.pick([1, 2, 5]);
+  if (Math.abs(claimed - truth) < 1e-9 && mode !== 0) claimed = truth + 1;
+  return { kind, mode, x1, x2, x3, m: base.m, truth, claimed, text: base.text(x1, base.m * x1), claim: base.claim(x2, claimed), xUnit: base.xUnit, yUnit: base.yUnit, ask3: base.ask3(base.m * x3) };
+}
+
+const PROBE_SLOPES: Ratio[] = [[1, 2], [3, 4], [2, 3], [-1, 2], [-3, 2], [2, 1], [-3, 1], [5, 2], [-2, 5], [4, 3], [-4, 3], [3, 5]];
+
+const ursprungsgeraden: Lesson = {
+  id: "fu-4-ursprungsgeraden",
+  stageId: STAGE_ID,
+  stepNumber: 4,
+  title: "6.4 Ursprungsgeraden y = mx",
+  subtitle: "Steigung m und Steigungsdreieck",
+  tracks: ["I", "II_III"],
+  lehrplan: `${BOTH}: Ursprungsgeraden und Steigungsdreieck`,
+  whyItMatters:
+    "Preis pro Kilogramm, Liter pro Minute, Kilometer pro Stunde: Jede direkte Proportionalität ist eine Ursprungsgerade, und ihre Steigung m ist genau diese Rate. Mit dem Steigungsdreieck zeichnest du sie und liest m aus jedem Graphen ab.",
+  explanationHtml: `
+    <p><strong>Wiederholung aus M6:</strong> Bei einer direkt proportionalen Zuordnung ist der Quotient y : x immer gleich, das ist der Proportionalitätsfaktor; ihr Graph liegt auf einer Geraden durch den Ursprung. Als Funktion schreibst du das <strong>y = mx</strong> mit D = ℚ. Ihr Graph ist eine <strong>Ursprungsgerade</strong>, eine Gerade durch O(0 | 0).</p>
+    <p>Der Faktor <strong>m</strong> heißt <strong>Steigung</strong>. Für jeden Punkt P(x | y) der Geraden außer O gilt m = y : x. Damit prüfst du auch, ob ein Punkt auf der Geraden liegt (<strong>Punktprobe</strong>): Q(4 | 3) liegt auf y = 0,75x, weil 0,75 · 4 = 3 ist.</p>
+    <p><strong>Steigungsdreieck:</strong> Gehst du von einem Punkt der Geraden 1 nach rechts, musst du m nach oben gehen, um wieder auf die Gerade zu kommen; bei negativem m geht es nach unten. Allgemein gehst du Δx nach rechts und Δy = m · Δx nach oben, also ist m = Δy : Δx. Bei m = ${frac(2, 3)} rechnest du bequemer mit ganzen Zahlen: 3 nach rechts, 2 nach oben. Das Steigungsdreieck darf an jeder Stelle der Geraden liegen und beliebig groß sein, es liefert immer dasselbe m.</p>
+    <ul>
+      <li>m &gt; 0: Die Gerade steigt (von links nach rechts gelesen).</li>
+      <li>m &lt; 0: Die Gerade fällt.</li>
+      <li>m = 0: Die Gerade ist die x-Achse, y = 0.</li>
+      <li>Je größer |m| ist, desto steiler ist die Gerade: y = 3x ist steiler als y = 0,5x, und y = −3x ist steiler als y = −0,5x.</li>
+    </ul>
+    <p><strong>Zeichnen:</strong> Von O aus das Steigungsdreieck abtragen, den Endpunkt markieren und die Gerade durch O und diesen Punkt ziehen. <strong>Ablesen:</strong> Suche einen Gitterpunkt auf der Geraden, etwa (3 | −2); dann ist m = −2 : 3 = −${frac(2, 3)}.</p>
+    <div class="example"><strong>Beispiel:</strong> Die Ursprungsgerade g geht durch P(−4 | 6).
+      <ul class="steps">
+        <li>m = y<sub>P</sub> : x<sub>P</sub> = 6 : (−4) = −1,5, also g: y = −1,5x. Die Gerade fällt.</li>
+        <li>Steigungsdreieck: −1,5 = −${frac(3, 2)}, also 2 nach rechts und 3 nach unten.</li>
+        <li>Punktprobe für Q(2 | −3): −1,5 · 2 = −3 = y<sub>Q</sub>, Q liegt auf g. Für R(3 | 4,5): −1,5 · 3 = −4,5 ≠ 4,5, R liegt nicht auf g.</li>
+        <li>Fehlende Koordinate: S(x | 9) liegt auf g, also 9 = −1,5x und x = 9 : (−1,5) = −6.</li>
+      </ul></div>
+    <p>Typische Fehler: m = x : y statt y : x rechnen, das Steigungsdreieck nach links abtragen und trotzdem „nach oben“ zählen (nach links kehrt sich die Richtung um) und das Minus bei fallenden Geraden vergessen.</p>
+    <div class="merke"><strong>Merke:</strong> Die Ursprungsgerade y = mx hat die Steigung m = y : x = Δy : Δx. Steigungsdreieck: 1 nach rechts, m nach oben. Für m &gt; 0 steigt sie, für m &lt; 0 fällt sie; je größer |m|, desto steiler.</div>
+  `,
+  formulas: [
+    { name: "Ursprungsgerade", html: "y = m · x", quantities: "m Steigung; der Graph geht durch O(0 | 0)" },
+    { name: "Steigung aus einem Punkt", html: "m = y<sub>P</sub> : x<sub>P</sub>", quantities: "P(x_P | y_P) ein Punkt der Geraden außer O" },
+    { name: "Steigungsdreieck", html: "m = Δy : Δx", quantities: "Δx nach rechts, Δy nach oben (negativ: nach unten)" },
+  ],
+  quiz: {
+    question: "Die Ursprungsgerade g geht durch P(4 | −3). Welche Steigung hat sie?",
+    options: ["m = −0,75", "m = −4/3", "m = 0,75", "m = −1"],
+    correctIndex: 0,
+    explanation: "m = y : x = (−3) : 4 = −0,75. −4/3 wäre x : y, also der Kehrwert; ohne Minus würde die Gerade steigen, sie fällt aber, denn zu x = 4 gehört ein negativer y-Wert.",
+  },
+  lab: {
+    kind: "origin-line",
+    title: "Labor: Steigung einer Ursprungsgeraden",
+    intro:
+      "Ziehe den blauen Punkt P: Die Gerade durch O und P hat die Steigung m = y : x. Das Steigungsdreieck verschiebst du an seinem Anfang und machst es an seiner orangen Ecke breiter.",
+    params: [
+      { type: "range", key: "px", label: "x-Koordinate von P", unit: "", min: -6, max: 6, step: 1, value: 2 },
+      { type: "range", key: "py", label: "y-Koordinate von P", unit: "", min: -6, max: 6, step: 1, value: 3 },
+      { type: "range", key: "a", label: "Anfang des Steigungsdreiecks bei x =", unit: "", min: -5, max: 5, step: 1, value: 0 },
+      { type: "range", key: "d", label: "Breite Δx des Steigungsdreiecks", unit: "", min: 1, max: 5, step: 1, value: 1 },
+    ],
+    readouts: [
+      {
+        key: "gl",
+        label: "Gleichung",
+        emphasis: true,
+        compute: (v) => {
+          const r = originSlope(v.px, v.py);
+          return r ? lineText(r) : v.py === 0 ? "P = O: keine Gerade" : "x = 0 (y-Achse), keine Funktion";
+        },
+      },
+      {
+        key: "m",
+        label: "Steigung m = y : x",
+        compute: (v) => {
+          const r = originSlope(v.px, v.py);
+          return r ? ratioApprox(r) : "keine";
+        },
+      },
+      {
+        key: "dy",
+        label: "Steigungsdreieck",
+        compute: (v) => {
+          const r = originSlope(v.px, v.py);
+          return r ? `Δx = ${v.d}, Δy = ${ratioText(ratio(r[0] * v.d, r[1]))}` : "keins";
+        },
+      },
+    ],
+    goals: [
+      {
+        id: "durch-q",
+        text: `Lege die Ursprungsgerade durch den Punkt Q(${fmt(ORIGIN_TARGET.x)} | ${fmt(ORIGIN_TARGET.y)}). Welche Steigung hat sie?`,
+        check: (v) => v.px !== 0 && ORIGIN_TARGET.y * v.px === ORIGIN_TARGET.x * v.py,
+      },
+      {
+        id: "dreieck-ganz",
+        text: "Stelle die Steigung m = 2/3 ein und lege das Steigungsdreieck so, dass alle drei Ecken auf Gitterpunkten liegen.",
+        check: (v) => v.px !== 0 && 3 * v.py === 2 * v.px && (2 * v.a) % 3 === 0 && (2 * v.d) % 3 === 0,
+      },
+      {
+        id: "fallend",
+        text: "Stelle eine fallende Ursprungsgerade ein, die halb so steil ist wie y = −x, und zeichne ein Steigungsdreieck mit Δx = 4. Wie groß ist Δy?",
+        check: (v) => v.px !== 0 && 2 * v.py === -v.px && v.d === 4,
+      },
+    ],
+  },
+  exercises: [
+    {
+      id: "steigung",
+      make: (rng, level): ExerciseTask => {
+        if (level === 1) {
+          let xp = 0;
+          let yp = 0;
+          do {
+            xp = nonzero(rng, 6);
+            yp = nonzero(rng, 6);
+          } while (Math.abs(xp) === Math.abs(yp) && rng.next() < 0.8);
+          const r = ratio(yp, xp);
+          const ks = [-8, -7, -6, -5, -4, -3, -2, -1, 1, 2, 3, 4, 5, 6, 7, 8].filter((k) => k !== xp && k % r[1] === 0);
+          const k = rng.pick(ks);
+          const yk = (r[0] * k) / r[1];
+          return {
+            prompt: `Die Ursprungsgerade g geht durch den Punkt P(${fmt(xp)} | ${fmt(yp)}). Bestimme ihre Steigung m, gib ihre Gleichung an und berechne den y-Wert an der Stelle x = ${fmt(k)}.`,
+            given: [`P(${fmt(xp)} | ${fmt(yp)})`],
+            formulaHint: "m = y<sub>P</sub> : x<sub>P</sub>; g: y = m · x",
+            fields: [
+              numberField("m =", value(r), "", 2, {
+                slips: [
+                  { value: xp / yp, hint: "Die Steigung ist y : x, nicht x : y." },
+                  { value: -value(r), hint: "Prüfe das Vorzeichen: Liegen x und y auf verschiedenen Seiten der Null, fällt die Gerade." },
+                ],
+              }),
+              numberField(`y(${fmt(k)}) =`, yk, "", 2, { slips: [{ value: k / value(r), hint: "y = m · x: Multipliziere die Stelle mit m, teile nicht durch m." }] }),
+            ],
+            steps: [
+              `m = y<sub>P</sub> : x<sub>P</sub> = ${fmt(yp)} : ${paren(xp)} = ${ratioHtml(r)}${approxTail(r)}`,
+              `g: ${lineHtml(r)}; ${value(r) > 0 ? "die Gerade steigt" : "die Gerade fällt"}.`,
+              `y(${fmt(k)}) = ${ratioFactor(r)} · ${paren(k)} = ${fmt(yk)}`,
+              `<strong>m = ${ratioHtml(r)}, g: ${lineHtml(r)}, y(${fmt(k)}) = ${fmt(yk)}</strong>`,
+            ],
+            meta: { xp, yp, k },
+          };
+        }
+        if (rng.next() < 0.55) {
+          const c = proportionalContext(rng);
+          const y2 = c.m * c.x2;
+          const y3 = c.m * c.x3;
+          return {
+            prompt: `${c.text} Bestimme die Steigung m der Ursprungsgeraden y = m · x mit ihrer Einheit und berechne damit die beiden gesuchten Werte.`,
+            given: [`x₁ = ${fmtUnit(c.x1, c.xUnit)}, y₁ = ${fmtUnit(c.m * c.x1, c.yUnit)}`],
+            fields: [
+              numberField("m =", c.m, c.mUnit, 2, { slips: [{ value: c.x1 / (c.m * c.x1), hint: "m ist y : x, also die Menge pro Einheit von x, nicht umgekehrt." }] }),
+              numberField(c.ask2, y2, c.yUnit, 2),
+              numberField(c.ask3, c.x3, c.xUnit, 2, { slips: [{ value: y3 * c.m, hint: "Gesucht ist x: Aus y = m · x folgt x = y : m." }] }),
+            ],
+            steps: [
+              `m = y : x = ${fmt(c.m * c.x1)} : ${fmt(c.x1)} = ${fmt(c.m)} (${c.mUnit}), also y = ${fmt(c.m)} · x.`,
+              `y = ${fmt(c.m)} · ${fmt(c.x2)} = ${fmtUnit(y2, c.yUnit)}`,
+              `${fmt(y3)} = ${fmt(c.m)} · x ⇔ x = ${fmt(y3)} : ${fmt(c.m)} = ${fmtUnit(c.x3, c.xUnit)}`,
+              `<strong>m = ${fmt(c.m)} ${c.mUnit}; ${fmtUnit(y2, c.yUnit)}; ${fmtUnit(c.x3, c.xUnit)}</strong>`,
+            ],
+            meta: { variant: 0, kind: c.kind, m: c.m, x1: c.x1, x2: c.x2, x3: c.x3 },
+          };
+        }
+        const r = rng.pick(PROBE_SLOPES);
+        const left = rng.next() < 0.35;
+        const q = r[1];
+        const p = Math.abs(r[0]);
+        const goesUp = left ? r[0] < 0 : r[0] > 0;
+        const k = q * rng.pick([2, 3, 4].filter((n) => q * n <= 12));
+        const yk = value(r) * k;
+        return {
+          prompt: `Am Graphen einer Ursprungsgeraden liest du ab: Gehst du von einem Punkt der Geraden ${q} Kästchen nach ${left ? "links" : "rechts"}, musst du ${p} Kästchen nach ${goesUp ? "oben" : "unten"} gehen, um wieder auf der Geraden zu sein (1 Kästchen = 1 Einheit). Bestimme die Steigung m und den y-Wert an der Stelle x = ${fmt(k)}.`,
+          given: [`${q} nach ${left ? "links" : "rechts"}, ${p} nach ${goesUp ? "oben" : "unten"}`],
+          fields: [
+            numberField("m =", value(r), "", 2, {
+              slips: [
+                { value: -value(r), hint: left ? "Nach links ist Δx negativ: Wer nach links geht und nach oben muss, hat eine fallende Gerade." : "Prüfe das Vorzeichen: nach unten heißt Δy negativ." },
+                { value: q / r[0], hint: "m = Δy : Δx, nicht Δx : Δy." },
+              ],
+            }),
+            numberField(`y(${fmt(k)}) =`, yk, "", 2),
+          ],
+          steps: [
+            `Δx = ${left ? `−${q}` : q}, Δy = ${goesUp ? p : `−${p}`}${left ? " (nach links ist Δx negativ)" : ""}.`,
+            `m = Δy : Δx = ${goesUp ? p : `(−${p})`} : ${left ? `(−${q})` : q} = ${ratioHtml(r)}${approxTail(r)}`,
+            `y(${fmt(k)}) = ${ratioFactor(r)} · ${fmt(k)} = ${fmt(yk)}`,
+            `<strong>m = ${ratioHtml(r)}; y(${fmt(k)}) = ${fmt(yk)}</strong>`,
+          ],
+          meta: { variant: 1, p: r[0], q: r[1], left: left ? 1 : 0, up: goesUp ? 1 : 0, k },
+        };
+      },
+    },
+    {
+      id: "punktprobe",
+      make: (rng, level): ExerciseTask => {
+        if (level === 1) {
+          const r = rng.pick(PROBE_SLOPES);
+          const m = value(r);
+          const a = r[1] * nonzero(rng, 3);
+          const onLine = rng.next() < 0.5;
+          const exact = m * a;
+          const b = onLine ? exact : rng.next() < 0.5 ? exact + rng.pick([-1, 1]) : -exact;
+          const askY = rng.next() < 0.5;
+          const c = askY ? r[1] * nonzero(rng, 3) : Math.abs(r[0]) * nonzero(rng, 3);
+          const answer = askY ? m * c : c / m;
+          const g = `g: ${lineHtml(r)}`;
+          return {
+            prompt: `Gegeben ist die Ursprungsgerade ${g}. Prüfe rechnerisch, ob der Punkt P(${fmt(a)} | ${fmt(b)}) auf g liegt, und bestimme die fehlende Koordinate von ${askY ? `Q(${fmt(c)} | y)` : `Q(x | ${fmt(c)})`} auf g.`,
+            given: [g, `P(${fmt(a)} | ${fmt(b)})`],
+            formulaHint: "Punktprobe: m · x<sub>P</sub> ausrechnen und mit y<sub>P</sub> vergleichen. Fehlende x-Koordinate: y = m · x nach x lösen.",
+            fields: [
+              choiceField("Liegt P auf g?", ["ja", "nein"], onLine ? 0 : 1),
+              numberField(askY ? "y =" : "x =", answer, "", 2, { slips: [{ value: askY ? c / m : m * c, hint: askY ? "Gesucht ist y = m · x: malnehmen, nicht teilen." : "Gesucht ist x: Aus y = m · x folgt x = y : m." }] }),
+            ],
+            steps: [
+              `Punktprobe: ${ratioFactor(r)} · ${paren(a)} = ${fmt(exact)}${onLine ? ` = y<sub>P</sub>` : ` ≠ ${fmt(b)}`}, also liegt P ${onLine ? "" : "nicht "}auf g.`,
+              askY ? `y = ${ratioFactor(r)} · ${paren(c)} = ${fmt(answer)}` : `${fmt(c)} = ${ratioFactor(r)} · x ⇔ x = ${fmt(c)} : ${ratioFactor(r)} = ${fmt(answer)}`,
+              `<strong>P liegt ${onLine ? "auf" : "nicht auf"} g; ${askY ? `Q(${fmt(c)} | ${fmt(answer)})` : `Q(${fmt(answer)} | ${fmt(c)})`}</strong>`,
+            ],
+            meta: { p: r[0], q: r[1], a, b, askY: askY ? 1 : 0, c },
+          };
+        }
+        const c = claimContext(rng);
+        const right = Math.abs(c.claimed - c.truth) < 1e-9;
+        const y3 = c.m * c.x3;
+        return {
+          prompt: `${c.text} ${c.claim} Prüfe die Behauptung mit der Gleichung y = m · x. Wie viel ist es wirklich, und wann wird der Wert ${fmtUnit(y3, c.yUnit)} erreicht?`,
+          given: [`${fmtUnit(c.x1, c.xUnit)} ↦ ${fmtUnit(c.m * c.x1, c.yUnit)}`],
+          fields: [
+            choiceField("Stimmt die Behauptung?", ["ja", "nein"], right ? 0 : 1),
+            numberField(`Wert bei ${fmtUnit(c.x2, c.xUnit)}:`, c.truth, c.yUnit, 2, { slips: [{ value: c.m * c.x1 + (c.x2 - c.x1), hint: "Proportional heißt: doppelte Zeit, doppelter Wert. Rechne mit m = y : x, nicht mit dem Unterschied." }] }),
+            numberField(c.ask3, c.x3, c.xUnit, 2, { slips: [{ value: y3 * c.m, hint: "Gesucht ist x: Aus y = m · x folgt x = y : m." }] }),
+          ],
+          steps: [
+            `m = ${fmt(c.m * c.x1)} : ${fmt(c.x1)} = ${fmt(c.m)}, also y = ${fmt(c.m)} · x.`,
+            `${fmt(c.m)} · ${fmt(c.x2)} = ${fmtUnit(c.truth, c.yUnit)}${right ? ": Die Behauptung stimmt." : ` ≠ ${fmtUnit(c.claimed, c.yUnit)}: Die Behauptung stimmt nicht.`}`,
+            `${fmt(y3)} = ${fmt(c.m)} · x ⇔ x = ${fmt(y3)} : ${fmt(c.m)} = ${fmtUnit(c.x3, c.xUnit)}`,
+            `<strong>${right ? "ja" : "nein"}; richtig sind ${fmtUnit(c.truth, c.yUnit)}; ${fmtUnit(y3, c.yUnit)} nach ${fmtUnit(c.x3, c.xUnit)}</strong>`,
+          ],
+          meta: { kind: c.kind, mode: c.mode, m: c.m, x1: c.x1, x2: c.x2, x3: c.x3, claimed: c.claimed },
+        };
+      },
+    },
+  ],
+  requiredCorrect: 3,
+  celebrationMessage: "Du liest die Steigung einer Ursprungsgeraden ab, zeichnest sie mit dem Steigungsdreieck und prüfst Punkte.",
+};
+
+// 6.5 Senkrechte Geraden ─────────────────────────────────────────────────────
+
+const PERP_SLOPES: Ratio[] = [[2, 1], [3, 1], [4, 1], [-2, 1], [-3, 1], [1, 2], [1, 3], [-1, 4], [2, 3], [-3, 4], [3, 2], [-5, 2], [1, 5], [5, 4], [-4, 3], [-1, 1]];
+
+const negativeReciprocal = (r: Ratio): Ratio => ratio(-r[1], r[0]);
+const product = (a: Ratio, b: Ratio): Ratio => ratio(a[0] * b[0], a[1] * b[1]);
+
+const senkrecht: Lesson = {
+  id: "fu-5-senkrecht",
+  stageId: STAGE_ID,
+  stepNumber: 5,
+  title: "6.5 Senkrechte Geraden",
+  subtitle: "m₁ · m₂ = −1",
+  tracks: ["I", "II_III"],
+  lehrplan: `${BOTH}: Orthogonale Geraden`,
+  whyItMatters:
+    "Rechte Winkel stecken in Grundrissen, Rampen und Wegen. Mit m₁ · m₂ = −1 prüfst du, ob zwei Geraden senkrecht aufeinander stehen, ohne zu messen, und berechnest die Steigung einer Senkrechten.",
+  explanationHtml: `
+    <p>Zwei Geraden, die sich unter einem rechten Winkel schneiden, heißen <strong>senkrecht</strong> oder <strong>orthogonal</strong> zueinander, kurz g ⊥ h. Für zwei Ursprungsgeraden g: y = m₁x und h: y = m₂x, die nicht auf einer Koordinatenachse liegen, gilt:</p>
+    <p class="formula-line"><strong>g ⊥ h ⇔ m₁ · m₂ = −1</strong>, also m₂ = −1 : m₁</p>
+    <p>m₂ ist der <strong>negative Kehrwert</strong> von m₁: Kehrwert bilden und das Vorzeichen umdrehen. Zu m₁ = 2 gehört m₂ = −${frac(1, 2)}, zu m₁ = −${frac(3, 4)} gehört m₂ = ${frac(4, 3)}, zu m₁ = 0,2 = ${frac(1, 5)} gehört m₂ = −5.</p>
+    <p><strong>Warum?</strong> Das Steigungsdreieck von g geht 1 nach rechts und m₁ nach oben. Drehst du es um 90° gegen den Uhrzeigersinn um O, geht das gedrehte Dreieck m₁ nach links und 1 nach oben, und es liegt an der gedrehten Geraden h. Deren Steigung ist also 1 : (−m₁) = −1 : m₁. Mit einem Gitterpunkt siehst du es ohne Brüche: P(3 | 2) liegt auf g mit m₁ = ${frac(2, 3)}. Nach der Drehung um 90° um O liegt P′(−2 | 3) auf h, also ist m₂ = 3 : (−2) = −${frac(3, 2)}, und ${frac(2, 3)} · (−${frac(3, 2)}) = −1.</p>
+    <p><strong>Sonderfall:</strong> Die x-Achse (m = 0) und die y-Achse stehen auch senkrecht aufeinander, aber die y-Achse hat keine Steigung. Für Geraden parallel zu den Achsen gilt die Regel deshalb nicht.</p>
+    <div class="example"><strong>Beispiel:</strong> g: y = 1,5x. Gesucht ist die Ursprungsgerade h mit h ⊥ g.
+      <ul class="steps">
+        <li>1,5 = ${frac(3, 2)}; der negative Kehrwert ist −${frac(2, 3)}. Also h: y = −${frac(2, 3)}x.</li>
+        <li>Probe: 1,5 · (−${frac(2, 3)}) = −1.</li>
+        <li>Liegt Q(−6 | 4) auf h? −${frac(2, 3)} · (−6) = 4, ja.</li>
+        <li>Ist k: y = 0,6x senkrecht zu h? −${frac(2, 3)} · 0,6 = −0,4 ≠ −1, also nicht.</li>
+      </ul></div>
+    <p>Typische Fehler: nur den Kehrwert bilden (aus 2 wird ${frac(1, 2)}, die Geraden sind dann nicht senkrecht), nur das Vorzeichen ändern (aus 2 wird −2) oder m₁ + m₂ = 0 statt m₁ · m₂ = −1 prüfen.</p>
+    <div class="merke"><strong>Merke:</strong> Zwei Geraden mit den Steigungen m₁ und m₂ stehen genau dann senkrecht aufeinander, wenn m₁ · m₂ = −1 ist. Die Steigung der Senkrechten ist der negative Kehrwert: m₂ = −1 : m₁.</div>
+  `,
+  formulas: [
+    { name: "Senkrechte Geraden", html: "g ⊥ h ⇔ m₁ · m₂ = −1", quantities: "m₁, m₂ Steigungen; keine der Geraden parallel zu einer Achse" },
+    { name: "Negativer Kehrwert", html: "m₂ = −1 : m₁", quantities: "z. B. m₁ = 2/3 ⇒ m₂ = −3/2" },
+  ],
+  quiz: {
+    question: "Die Gerade g hat die Steigung m₁ = 2/3. Welche Steigung hat eine zu g senkrechte Gerade?",
+    options: ["3/2", "−2/3", "−3/2", "−1"],
+    correctIndex: 2,
+    explanation: "Der negative Kehrwert von 2/3 ist −3/2, denn 2/3 · (−3/2) = −1. 3/2 ist nur der Kehrwert (Produkt +1), −2/3 nur die Gegenzahl (Produkt −4/9).",
+  },
+  lab: {
+    kind: "perpendicular",
+    title: "Labor: Senkrecht oder nicht?",
+    intro:
+      "Ziehe P₁ und P₂. Blau ist das Steigungsdreieck von g₁, gestrichelt dasselbe Dreieck um 90° um O gedreht: Geht g₂ durch seine Spitze P₁′, stehen die Geraden senkrecht aufeinander.",
+    params: [
+      { type: "range", key: "x1", label: "x-Koordinate von P₁", unit: "", min: -6, max: 6, step: 1, value: 3 },
+      { type: "range", key: "y1", label: "y-Koordinate von P₁", unit: "", min: -6, max: 6, step: 1, value: 1 },
+      { type: "range", key: "x2", label: "x-Koordinate von P₂", unit: "", min: -6, max: 6, step: 1, value: -1 },
+      { type: "range", key: "y2", label: "y-Koordinate von P₂", unit: "", min: -6, max: 6, step: 1, value: 2 },
+    ],
+    readouts: [
+      { key: "m1", label: "Steigung m₁", compute: (v) => (v.x1 === 0 ? (v.y1 === 0 ? "P₁ = O" : "keine (y-Achse)") : ratioApprox(ratio(v.y1, v.x1))) },
+      { key: "m2", label: "Steigung m₂", compute: (v) => (v.x2 === 0 ? (v.y2 === 0 ? "P₂ = O" : "keine (y-Achse)") : ratioApprox(ratio(v.y2, v.x2))) },
+      {
+        key: "produkt",
+        label: "m₁ · m₂",
+        emphasis: true,
+        compute: (v) => (v.x1 === 0 || v.x2 === 0 ? "nicht berechenbar" : ratioApprox(product(ratio(v.y1, v.x1), ratio(v.y2, v.x2)))),
+      },
+      {
+        key: "winkel",
+        label: "Winkel zwischen g₁ und g₂",
+        unit: "°",
+        digits: 1,
+        compute: (v) => angleBetweenLines(v.x1, v.y1, v.x2, v.y2) ?? "keiner",
+      },
+    ],
+    goals: [
+      {
+        id: "m-zwei",
+        text: "Stelle g₁ mit der Steigung m₁ = 2 ein und g₂ senkrecht dazu. Welche Steigung hat g₂?",
+        check: (v) => v.x1 !== 0 && v.y1 === 2 * v.x1 && perpendicularPair(v),
+      },
+      {
+        id: "bruch",
+        text: "Finde zwei zueinander senkrechte Geraden, deren Steigungen beide keine ganzen Zahlen sind. Was ergibt m₁ · m₂?",
+        check: (v) => perpendicularPair(v) && v.y1 % v.x1 !== 0 && v.y2 % v.x2 !== 0,
+      },
+      {
+        id: "achse",
+        text: "Lege g₁ auf die x-Achse und g₂ senkrecht dazu. Warum lässt sich m₁ · m₂ jetzt nicht berechnen?",
+        check: (v) => v.y1 === 0 && v.x1 !== 0 && v.x2 === 0 && v.y2 !== 0,
+      },
+    ],
+  },
+  exercises: [
+    {
+      id: "senkrecht-m",
+      make: (rng, level): ExerciseTask => {
+        if (level === 1) {
+          const r1 = rng.pick(PERP_SLOPES);
+          const r2 = negativeReciprocal(r1);
+          const k = r2[1] * rng.pick([1, 2, 3].filter((n) => r2[1] * n <= 8)) * rng.pick([-1, 1]);
+          const yk = value(r2) * k;
+          return {
+            prompt: `Die Ursprungsgerade g hat die Steigung m₁ = ${ratioHtml(r1)}. Bestimme die Steigung m₂ der zu g senkrechten Ursprungsgeraden h und den y-Wert von h an der Stelle x = ${fmt(k)}.`,
+            given: [`g: ${lineHtml(r1)}`],
+            formulaHint: "m₁ · m₂ = −1, also m₂ = −1 : m₁ (negativer Kehrwert)",
+            fields: [
+              numberField("m₂ =", value(r2), "", 2, {
+                slips: [
+                  { value: r1[1] / r1[0], hint: "Das ist nur der Kehrwert. Senkrecht heißt negativer Kehrwert: Auch das Vorzeichen dreht sich um." },
+                  { value: -value(r1), hint: "Nur das Vorzeichen geändert: Bilde auch den Kehrwert." },
+                ],
+              }),
+              numberField(`y(${fmt(k)}) =`, yk, "", 2),
+            ],
+            steps: [
+              `m₂ = −1 : m₁ = −1 : ${ratioFactor(r1)} = ${ratioHtml(r2)}${approxTail(r2)}`,
+              `Probe: ${ratioFactor(r1)} · ${ratioFactor(r2)} = −1. h: ${lineHtml(r2)}`,
+              `y(${fmt(k)}) = ${ratioFactor(r2)} · ${paren(k)} = ${fmt(yk)}`,
+              `<strong>m₂ = ${ratioHtml(r2)}; y(${fmt(k)}) = ${fmt(yk)}</strong>`,
+            ],
+            meta: { p1: r1[0], q1: r1[1], k },
+          };
+        }
+        let a = 0;
+        let b = 0;
+        do {
+          a = nonzero(rng, 6);
+          b = nonzero(rng, 6);
+        } while (Math.abs(a) === Math.abs(b) && rng.next() < 0.7);
+        const g = Math.abs(gcdInt(a, b));
+        const rg = ratio(b, a);
+        const rh = negativeReciprocal(rg);
+        const s = nonzero(rng, 2);
+        const mode = rng.int(0, 2);
+        // mode 0: Q on h; 1: Q on g instead; 2: Q one step beside h
+        const Q = mode === 0 ? { x: (-b / g) * s, y: (a / g) * s } : mode === 1 ? { x: (a / g) * s, y: (b / g) * s } : { x: (-b / g) * s, y: (a / g) * s + 1 };
+        const onH = Math.abs(value(rh) * Q.x - Q.y) < 1e-9;
+        const xR = rh[1] * rng.pick([1, 2]) * rng.pick([-1, 1]);
+        const yR = value(rh) * xR;
+        return {
+          prompt: `Die Ursprungsgerade g verläuft durch den Punkt P(${fmt(a)} | ${fmt(b)}). Die Ursprungsgerade h steht senkrecht auf g. Bestimme die Gleichung von h, prüfe, ob Q(${fmt(Q.x)} | ${fmt(Q.y)}) auf h liegt, und berechne die y-Koordinate des Punktes R(${fmt(xR)} | y) auf h.`,
+          given: [`P(${fmt(a)} | ${fmt(b)}) auf g`, `Q(${fmt(Q.x)} | ${fmt(Q.y)})`],
+          fields: [
+            numberField("m<sub>h</sub> =", value(rh), "", 2, {
+              slips: [
+                { value: value(rg), hint: "Das ist die Steigung von g. Für h brauchst du den negativen Kehrwert." },
+                { value: -value(rg), hint: "Nur das Vorzeichen geändert: Bilde auch den Kehrwert." },
+                { value: a / b, hint: "Kehrwert ja, aber das Vorzeichen muss sich umdrehen." },
+              ],
+            }),
+            choiceField("Liegt Q auf h?", ["ja", "nein"], onH ? 0 : 1),
+            numberField("y<sub>R</sub> =", yR, "", 2),
+          ],
+          steps: [
+            `m<sub>g</sub> = ${fmt(b)} : ${paren(a)} = ${ratioHtml(rg)}${approxTail(rg)}`,
+            `m<sub>h</sub> = −1 : m<sub>g</sub> = ${ratioHtml(rh)}${approxTail(rh)}, also h: ${lineHtml(rh)}`,
+            `Punktprobe: ${ratioFactor(rh)} · ${paren(Q.x)} = ${fmt(value(rh) * Q.x)}${onH ? " = y<sub>Q</sub>" : ` ≠ ${fmt(Q.y)}`}${mode === 1 ? " (Q liegt auf g, nicht auf h)" : ""}`,
+            `y<sub>R</sub> = ${ratioFactor(rh)} · ${paren(xR)} = ${fmt(yR)}`,
+            `<strong>h: ${lineHtml(rh)}; Q liegt ${onH ? "auf" : "nicht auf"} h; R(${fmt(xR)} | ${fmt(yR)})</strong>`,
+          ],
+          meta: { a, b, qx: Q.x, qy: Q.y, xR },
+        };
+      },
+    },
+    {
+      id: "pruefen",
+      make: (rng, level): ExerciseTask => {
+        if (level === 1) {
+          const r1 = rng.pick(PERP_SLOPES);
+          const perp = rng.next() < 0.5;
+          const lures = [ratio(r1[1], r1[0]), ratio(-r1[0], r1[1]), ratio(-2 * r1[1], r1[0]), ratio(-r1[1], 2 * r1[0])].filter((r) => {
+            const pr = product(r1, r);
+            return !(pr[0] === -1 && pr[1] === 1) && !(r[0] === r1[0] && r[1] === r1[1]);
+          });
+          const r2 = perp ? negativeReciprocal(r1) : rng.pick(lures);
+          const pr = product(r1, r2);
+          const ortho = pr[0] === -1 && pr[1] === 1;
+          return {
+            prompt: `Stehen die Geraden g: ${lineHtml(r1)} und h: ${lineHtml(r2)} senkrecht aufeinander? Berechne das Produkt der Steigungen.`,
+            given: [`m₁ = ${ratioHtml(r1)}`, `m₂ = ${ratioHtml(r2)}`],
+            formulaHint: "g ⊥ h ⇔ m₁ · m₂ = −1",
+            fields: [numberField("m₁ · m₂ =", value(pr), "", 2), choiceField("senkrecht?", ["ja", "nein"], ortho ? 0 : 1)],
+            steps: [`m₁ · m₂ = ${ratioFactor(r1)} · ${ratioFactor(r2)} = ${ratioHtml(pr)}${approxTail(pr)}`, ortho ? "Das Produkt ist −1." : "Das Produkt ist nicht −1.", `<strong>m₁ · m₂ = ${ratioHtml(pr)}: ${ortho ? "senkrecht" : "nicht senkrecht"}</strong>`],
+            meta: { p1: r1[0], q1: r1[1], p2: r2[0], q2: r2[1] },
+          };
+        }
+        let A = { x: 0, y: 0 };
+        let B = { x: 0, y: 0 };
+        let perp = false;
+        do {
+          A = { x: nonzero(rng, 8), y: nonzero(rng, 8) };
+          const g = Math.abs(gcdInt(A.x, A.y));
+          const s = nonzero(rng, 2) * rng.pick([1, 2]);
+          perp = rng.next() < 0.5;
+          B = perp ? { x: (-A.y / g) * s, y: (A.x / g) * s } : rng.next() < 0.5 ? { x: (A.y / g) * s, y: (A.x / g) * s } : { x: (-A.y / g) * s + rng.pick([-1, 1]), y: (A.x / g) * s };
+        } while (B.x === 0 || B.y === 0 || Math.abs(B.x) > 10 || Math.abs(B.y) > 10 || (A.x * B.x + A.y * B.y === 0) !== perp);
+        const rg = ratio(A.y, A.x);
+        const rh = ratio(B.y, B.x);
+        const pr = product(rg, rh);
+        return {
+          prompt: `Zwei gerade Wege in einem Park beginnen am Brunnen O(0 | 0). Der eine führt zum Kiosk K(${fmt(A.x)} | ${fmt(A.y)}), der andere zur Bank B(${fmt(B.x)} | ${fmt(B.y)}) (Koordinaten in m). Stehen die Wege senkrecht aufeinander? Bestimme dazu die Steigungen der beiden Ursprungsgeraden.`,
+          given: [`K(${fmt(A.x)} | ${fmt(A.y)})`, `B(${fmt(B.x)} | ${fmt(B.y)})`],
+          fields: [numberField("m<sub>OK</sub> =", value(rg), "", 2), numberField("m<sub>OB</sub> =", value(rh), "", 2), choiceField("senkrecht?", ["ja", "nein"], perp ? 0 : 1)],
+          steps: [
+            `m<sub>OK</sub> = ${fmt(A.y)} : ${paren(A.x)} = ${ratioHtml(rg)}${approxTail(rg)}; m<sub>OB</sub> = ${fmt(B.y)} : ${paren(B.x)} = ${ratioHtml(rh)}${approxTail(rh)}`,
+            `m<sub>OK</sub> · m<sub>OB</sub> = ${ratioFactor(rg)} · ${ratioFactor(rh)} = ${ratioHtml(pr)}${approxTail(pr)}`,
+            `<strong>${perp ? "Das Produkt ist −1: Die Wege stehen senkrecht aufeinander." : "Das Produkt ist nicht −1: Die Wege stehen nicht senkrecht aufeinander."}</strong>`,
+          ],
+          meta: { ax: A.x, ay: A.y, bx: B.x, by: B.y },
+        };
+      },
+    },
+  ],
+  requiredCorrect: 3,
+  celebrationMessage: "Du erkennst senkrechte Geraden an m₁ · m₂ = −1 und bildest den negativen Kehrwert.",
+};
+
+/** The gcd of two whole numbers with its sign dropped. */
+function gcdInt(a: number, b: number): number {
+  let x = Math.abs(a);
+  let y = Math.abs(b);
+  while (y) [x, y] = [y, x % y];
+  return x || 1;
+}
+
+// 6.6 Geraden y = mx + t ─────────────────────────────────────────────────────
+
+const SLOPES_66: Ratio[] = [[1, 2], [-1, 2], [1, 3], [-1, 3], [2, 3], [-2, 3], [3, 4], [-3, 4], [1, 1], [-1, 1], [2, 1], [-2, 1], [3, 1], [-3, 1], [3, 2], [-3, 2], [1, 4], [-1, 4]];
+
+/** A line y = m x + t with a whole t (1 ≤ |t| ≤ 6) and a Nullstelle that is a multiple of 0,5. */
+function lineWithZero(rng: Rng): { r: Ratio; t: number; x0: number } {
+  for (;;) {
+    const r = rng.pick(SLOPES_66);
+    const x0 = rng.int(-12, 12) / 2;
+    const t = -value(r) * x0 + 0;
+    if (x0 !== 0 && Number.isInteger(Math.round(t * 1e9) / 1e9) && Math.abs(t) >= 1 && Math.abs(t) <= 6) return { r, t: Math.round(t), x0 };
+  }
+}
+
+/** "3 nach rechts, 2 nach oben" and the two tempting wrong readings. */
+function triangleWords(r: Ratio): { right: string; wrong: string[] } {
+  const q = r[1];
+  const p = Math.abs(r[0]);
+  const dir = r[0] > 0 ? "oben" : "unten";
+  const other = r[0] > 0 ? "unten" : "oben";
+  return {
+    right: `${q} nach rechts, ${p} nach ${dir}`,
+    wrong: [`${q} nach rechts, ${p} nach ${other}`, p !== q ? `${p} nach rechts, ${q} nach ${dir}` : `${q} nach rechts, ${2 * p} nach ${dir}`],
+  };
+}
+
+const geraden: Lesson = {
+  id: "fu-6-geraden",
+  stageId: STAGE_ID,
+  stepNumber: 6,
+  title: "6.6 Geraden y = mx + t",
+  subtitle: "Steigung m und y-Achsenabschnitt t",
+  tracks: ["I"],
+  lehrplan: "M8 LB 6 (I): Geraden y = mx + t",
+  whyItMatters:
+    "Fast jede lineare Sachaufgabe führt auf eine Gerade y = mx + t: ein Anfangswert t und eine gleichmäßige Änderung m. Wer m und t im Graphen sieht, zeichnet die Gerade in Sekunden und liest ihre Gleichung ab.",
+  explanationHtml: `
+    <p>Bisher gingen alle Geraden durch den Ursprung. Verschiebst du die Ursprungsgerade y = mx um t Einheiten längs der y-Achse (für t &gt; 0 nach oben, für t &lt; 0 nach unten), entsteht die Gerade</p>
+    <p class="formula-line"><strong>g: y = mx + t</strong> &nbsp;bzw.&nbsp; f(x) = mx + t, D = ℚ</p>
+    <p>Eine Funktion mit einer solchen Gleichung heißt <strong>lineare Funktion</strong>, ihr Graph ist eine Gerade. Die beiden Parameter haben eine feste Bedeutung:</p>
+    <ul>
+      <li><strong>m ist die Steigung:</strong> m = Δy : Δx. Gehst du 1 nach rechts, ändert sich y um m. Das Verschieben ändert die Steigung nicht, alle Geraden y = 2x + t verlaufen parallel.</li>
+      <li><strong>t ist der y-Achsenabschnitt:</strong> Für x = 0 ist y = m · 0 + t = t. Die Gerade schneidet die y-Achse im Punkt (0 | t).</li>
+    </ul>
+    <p><strong>Zeichnen:</strong> Markiere (0 | t) auf der y-Achse und trage von dort aus das Steigungsdreieck ab. <strong>Ablesen:</strong> t liest du am Schnittpunkt mit der y-Achse ab, m an einem Steigungsdreieck zwischen zwei Gitterpunkten der Geraden. <strong>Nullstelle:</strong> mx + t = 0 ⇔ x₀ = −t : m (für m ≠ 0).</p>
+    <div class="example"><strong>Beispiel:</strong> g: y = −0,5x + 3.
+      <ul class="steps">
+        <li>t = 3: g schneidet die y-Achse in (0 | 3).</li>
+        <li>m = −0,5 = −${frac(1, 2)}: Von (0 | 3) aus 2 nach rechts und 1 nach unten, so erreichst du (2 | 2). Die Gerade durch beide Punkte ist g; sie fällt.</li>
+        <li>Nullstelle: −0,5x + 3 = 0 ⇔ 0,5x = 3 ⇔ x₀ = 6, also N(6 | 0).</li>
+      </ul></div>
+    <p><strong>Sonderfälle achsenparalleler Geraden:</strong></p>
+    <ul>
+      <li>m = 0: y = t ist eine Parallele zur x-Achse und eine <strong>konstante Funktion</strong>. Für t ≠ 0 hat sie keine Nullstelle.</li>
+      <li>x = c ist eine Parallele zur y-Achse durch (c | 0). Sie hat keine Steigung und ist <strong>kein Graph einer Funktion</strong>, denn zur Stelle c gehören unendlich viele y-Werte (Graphen-Test aus Lektion 6.1).</li>
+    </ul>
+    <p>Typische Fehler: t mit der Nullstelle verwechseln, beim Zeichnen im Ursprung statt bei (0 | t) beginnen und die Gerade x = 3 mit y = 3 verwechseln.</p>
+    <div class="merke"><strong>Merke:</strong> y = mx + t ist eine Gerade mit der Steigung m und dem y-Achsenabschnitt t; sie schneidet die y-Achse in (0 | t). y = t ist parallel zur x-Achse, x = c ist parallel zur y-Achse und keine Funktion.</div>
+  `,
+  formulas: [
+    { name: "Gerade", html: "y = mx + t", quantities: "m Steigung (m = Δy : Δx), t y-Achsenabschnitt; Schnitt mit der y-Achse in (0 | t)" },
+    { name: "Nullstelle", html: "x₀ = −t : m", quantities: "aus mx + t = 0, für m ≠ 0" },
+    { name: "Achsenparallele Geraden", html: "y = t (parallel zur x-Achse); x = c (parallel zur y-Achse)", quantities: "x = c ist kein Graph einer Funktion" },
+  ],
+  quiz: {
+    question: "Welche Gerade schneidet die y-Achse in (0 | −2) und fällt?",
+    options: ["y = −2x + 3", "y = 3x − 2", "y = −3x − 2", "y = −2"],
+    correctIndex: 2,
+    explanation: "t = −2 ist der y-Achsenabschnitt, also kommen nur y = 3x − 2 und y = −3x − 2 in Frage; fallen tut nur die mit m = −3 < 0. y = −2x + 3 schneidet die y-Achse bei 3, und y = −2 ist waagrecht.",
+  },
+  lab: {
+    kind: "line-mx-t",
+    title: "Labor: Steigung und y-Achsenabschnitt",
+    intro:
+      "Stelle m und t ein oder ziehe die Punkte: Der blaue sitzt auf der y-Achse bei (0 | t), der orange ist die Spitze des Steigungsdreiecks (1 nach rechts, m nach oben). Grau gestrichelt ist die Ursprungsgerade y = mx.",
+    params: [
+      { type: "range", key: "m", label: "Steigung m", unit: "", min: -3, max: 3, step: 0.25, value: 1.5, digits: 2 },
+      { type: "range", key: "t", label: "y-Achsenabschnitt t", unit: "", min: -5, max: 5, step: 0.5, value: -3, digits: 1 },
+    ],
+    readouts: [
+      { key: "gl", label: "Gleichung", emphasis: true, compute: (v) => `y = ${linear(v.m, v.t)}` },
+      { key: "achse", label: "Schnittpunkt mit der y-Achse", compute: (v) => point(0, v.t) },
+      { key: "null", label: "Nullstelle", compute: (v) => zeroOfLine(v.m, v.t) },
+    ],
+    goals: [
+      {
+        id: "zwei-punkte",
+        text: `Lege die Gerade durch die Punkte A(${fmt(LINE_TARGETS[0].x)} | ${fmt(LINE_TARGETS[0].y)}) und B(${fmt(LINE_TARGETS[1].x)} | ${fmt(LINE_TARGETS[1].y)}). Lies ihre Steigung und ihren y-Achsenabschnitt ab.`,
+        check: (v) => LINE_TARGETS.slice(0, 2).every((p) => Math.abs(v.m * p.x + v.t - p.y) < 1e-9),
+      },
+      {
+        id: "parallele-x",
+        text: `Stelle die Parallele zur x-Achse durch C(${fmt(LINE_TARGETS[2].x)} | ${fmt(LINE_TARGETS[2].y)}) ein. Welche Steigung hat sie, und hat sie eine Nullstelle?`,
+        check: (v) => v.m === 0 && v.t === LINE_TARGETS[2].y,
+      },
+      {
+        id: "nullstelle-vier",
+        text: "Finde eine fallende Gerade mit der Nullstelle x₀ = 4, deren y-Achsenabschnitt eine ganze Zahl ist. Wie hängen m und t dann zusammen?",
+        check: (v) => v.m < 0 && Math.abs(4 * v.m + v.t) < 1e-9 && Number.isInteger(v.t),
+      },
+    ],
+  },
+  exercises: [
+    {
+      id: "zeichnen",
+      make: (rng, level): ExerciseTask => {
+        const { r, t, x0 } = lineWithZero(rng);
+        const m = value(r);
+        if (level === 1) {
+          const a = rng.pick([-4, -3, -2, -1, 1, 2, 3, 4].filter((x) => x !== x0));
+          const words = triangleWords(r);
+          const g = `g: ${lineHtml(r, t)}`;
+          return {
+            prompt: `Gegeben ist die Gerade ${g}. Wie zeichnest du das Steigungsdreieck vom Punkt (0 | ${fmt(t)}) aus? Berechne außerdem den Funktionswert an der Stelle x = ${fmt(a)} und die Nullstelle.`,
+            given: [g],
+            formulaHint: "Start bei (0 | t), dann das Steigungsdreieck: m = Δy : Δx. Nullstelle: x₀ = −t : m.",
+            fields: [
+              shuffledChoice(rng, "Steigungsdreieck ab (0 | t)", words.right, words.wrong),
+              numberField(`f(${fmt(a)}) =`, m * a + t, "", 2),
+              numberField("x₀ =", x0, "", 2, {
+                slips: [
+                  { value: t / m, hint: "Vorzeichen: Aus mx + t = 0 folgt mx = −t, also x₀ = −t : m." },
+                  { value: t, hint: "t ist der Schnittpunkt mit der y-Achse, nicht die Nullstelle. Setze y = 0." },
+                ],
+              }),
+            ],
+            steps: [
+              `t = ${fmt(t)}: Start im Punkt (0 | ${fmt(t)}). m = ${ratioHtml(r)}: ${words.right}.`,
+              `f(${fmt(a)}) = ${ratioFactor(r)} · ${paren(a)}${term(t, "", false)} = ${fmt(m * a + t)}`,
+              `${lineHtml(r, t).slice(4)} = 0 ⇔ ${ratioHtml(r) === "1" ? "" : ratioFactor(r) + " · "}x = ${fmt(-t)} ⇔ x₀ = ${fmt(-t)} : ${ratioFactor(r)} = ${fmt(x0)}`,
+              `<strong>${words.right}; f(${fmt(a)}) = ${fmt(m * a + t)}; x₀ = ${fmt(x0)}</strong>`,
+            ],
+            meta: { p: r[0], q: r[1], t, a, x0 },
+          };
+        }
+        const decimalWords = [1, 2, 4].includes(r[1]) && rng.next() < 0.4;
+        const rises = m > 0;
+        const description = decimalWords
+          ? `Eine Gerade g schneidet die y-Achse bei ${fmt(t)}. Pro Einheit nach rechts ${rises ? "steigt" : "fällt"} sie um ${fmt(Math.abs(m))}.`
+          : `Eine Gerade g schneidet die y-Achse im Punkt (0 | ${fmt(t)}). Geht man auf g ${r[1]} ${r[1] === 1 ? "Einheit" : "Einheiten"} nach rechts, ${rises ? "steigt" : "fällt"} sie um ${Math.abs(r[0])} ${Math.abs(r[0]) === 1 ? "Einheit" : "Einheiten"}.`;
+        return {
+          prompt: `${description} Bestimme die Gleichung von g und die Nullstelle von g.`,
+          given: [decimalWords ? `Δx = 1, Δy = ${fmt(m)}` : `Δx = ${r[1]}, Δy = ${rises ? "" : "−"}${Math.abs(r[0])}`],
+          fields: [
+            numberField("m =", m, "", 2, { slips: [{ value: -m, hint: rises ? "Steigt die Gerade, ist m positiv." : "Fällt die Gerade, ist m negativ." }, { value: r[1] / r[0], hint: "m = Δy : Δx, nicht Δx : Δy." }] }),
+            numberField("t =", t, "", 2),
+            numberField("x₀ =", x0, "", 2, { slips: [{ value: t / m, hint: "Vorzeichen: x₀ = −t : m." }] }),
+          ],
+          steps: [
+            `m = Δy : Δx = ${ratioHtml(r)}${approxTail(r)}; der Schnittpunkt mit der y-Achse liefert t = ${fmt(t)}.`,
+            `g: ${lineHtml(r, t)}`,
+            `${lineHtml(r, t).slice(4)} = 0 ⇔ x₀ = −${paren(t)} : ${ratioFactor(r)} = ${fmt(x0)}`,
+            `<strong>g: ${lineHtml(r, t)}; x₀ = ${fmt(x0)}</strong>`,
+          ],
+          meta: { p: r[0], q: r[1], t, x0, decimal: decimalWords ? 1 : 0 },
+        };
+      },
+    },
+    {
+      id: "ablesen",
+      make: (rng, level): ExerciseTask => {
+        if (level === 1) {
+          if (rng.next() < 0.6) {
+            const t = nonzero(rng, 6);
+            const x0 = nonzero(rng, 6);
+            const r = ratio(-t, x0);
+            return {
+              prompt: `Der Graph einer linearen Funktion schneidet die y-Achse im Punkt (0 | ${fmt(t)}) und die x-Achse im Punkt (${fmt(x0)} | 0). Bestimme m und t und gib die Funktionsgleichung an.`,
+              given: [`(0 | ${fmt(t)})`, `(${fmt(x0)} | 0)`],
+              formulaHint: "t ist der y-Wert bei x = 0; m = Δy : Δx zwischen den beiden Punkten.",
+              fields: [
+                numberField("m =", value(r), "", 2, { slips: [{ value: x0 / -t, hint: "m = Δy : Δx, nicht Δx : Δy." }, { value: -value(r), hint: "Prüfe das Vorzeichen: Von (0 | t) zur Nullstelle geht es nach rechts oder links und nach oben oder unten." }] }),
+                numberField("t =", t, "", 2, { slips: [{ value: x0, hint: "Die Nullstelle ist nicht t: t ist der Schnittpunkt mit der y-Achse." }] }),
+              ],
+              steps: [
+                `t = ${fmt(t)}, denn die Gerade geht durch (0 | ${fmt(t)}).`,
+                `Von (0 | ${fmt(t)}) nach (${fmt(x0)} | 0): Δx = ${fmt(x0)}, Δy = ${fmt(-t)}, also m = ${fmt(-t)} : ${paren(x0)} = ${ratioHtml(r)}${approxTail(r)}.`,
+                `<strong>m = ${ratioHtml(r)}, t = ${fmt(t)}: ${lineHtml(r, t)}</strong>`,
+              ],
+              meta: { variant: 0, t, x0 },
+            };
+          }
+          const a = nonzero(rng, 5);
+          const b = nonzero(rng, 5);
+          if (rng.next() < 0.5) {
+            return {
+              prompt: `Gib die Gleichung der Parallelen zur x-Achse durch den Punkt P(${fmt(a)} | ${fmt(b)}) in der Form y = mx + t an.`,
+              given: [`P(${fmt(a)} | ${fmt(b)})`],
+              formulaHint: "Eine Parallele zur x-Achse hat die Steigung 0: y = t.",
+              fields: [numberField("m =", 0, "", 2), numberField("t =", b, "", 2, { slips: [{ value: a, hint: "Parallel zur x-Achse heißt: y ist überall gleich, nämlich die y-Koordinate von P." }] })],
+              steps: ["Parallel zur x-Achse: Die Gerade steigt nicht, m = 0.", `Alle Punkte haben dieselbe y-Koordinate wie P, also t = ${fmt(b)}.`, `<strong>y = ${fmt(b)} (m = 0, t = ${fmt(b)})</strong>`],
+              meta: { variant: 1, a, b },
+            };
+          }
+          return {
+            prompt: `Gib die Gleichung der Parallelen zur y-Achse durch den Punkt P(${fmt(a)} | ${fmt(b)}) an. Ist diese Gerade der Graph einer Funktion?`,
+            given: [`P(${fmt(a)} | ${fmt(b)})`],
+            formulaHint: "Eine Parallele zur y-Achse hat die Gleichung x = c; sie hat keine Steigung.",
+            fields: [numberField("x =", a, "", 2, { slips: [{ value: b, hint: "Parallel zur y-Achse heißt: x ist überall gleich, nämlich die x-Koordinate von P." }] }), choiceField("Graph einer Funktion?", ["ja", "nein"], 1)],
+            steps: [`Alle Punkte der Geraden haben die x-Koordinate ${fmt(a)}: x = ${fmt(a)}.`, `Zur Stelle ${fmt(a)} gehören unendlich viele y-Werte, der Graphen-Test schlägt fehl.`, `<strong>x = ${fmt(a)}; keine Funktion</strong>`],
+            meta: { variant: 2, a, b },
+          };
+        }
+        const { r, t, x0 } = lineWithZero(rng);
+        const m = value(r);
+        const a = r[1] * nonzero(rng, 2);
+        const onLine = rng.next() < 0.5;
+        const exact = m * a + t;
+        const b = onLine ? exact : exact + rng.pick([-1, 1]);
+        return {
+          prompt: `Die Ursprungsgerade h: ${lineHtml(r)} wird um ${Math.abs(t)} ${Math.abs(t) === 1 ? "Einheit" : "Einheiten"} nach ${t > 0 ? "oben" : "unten"} verschoben; so entsteht die Gerade g. Gib den y-Achsenabschnitt von g an, berechne die Nullstelle von g und prüfe, ob P(${fmt(a)} | ${fmt(b)}) auf g liegt.`,
+          given: [`h: ${lineHtml(r)}`, `${Math.abs(t)} nach ${t > 0 ? "oben" : "unten"}`],
+          fields: [
+            numberField("t =", t, "", 2, { slips: [{ value: -t, hint: t > 0 ? "Nach oben verschieben heißt: t ist positiv." : "Nach unten verschieben heißt: t ist negativ." }] }),
+            numberField("x₀ =", x0, "", 2, { slips: [{ value: t / m, hint: "Vorzeichen: x₀ = −t : m." }, { value: 0, hint: "Die Ursprungsgerade hat die Nullstelle 0, die verschobene Gerade nicht mehr." }] }),
+            choiceField("Liegt P auf g?", ["ja", "nein"], onLine ? 0 : 1),
+          ],
+          steps: [
+            `Verschieben längs der y-Achse ändert nur t: g: ${lineHtml(r, t)}, also t = ${fmt(t)}.`,
+            `${lineHtml(r, t).slice(4)} = 0 ⇔ x₀ = −${paren(t)} : ${ratioFactor(r)} = ${fmt(x0)}`,
+            `Punktprobe: ${ratioFactor(r)} · ${paren(a)}${term(t, "", false)} = ${fmt(exact)}${onLine ? " = y<sub>P</sub>" : ` ≠ ${fmt(b)}`}`,
+            `<strong>t = ${fmt(t)}; x₀ = ${fmt(x0)}; P liegt ${onLine ? "auf" : "nicht auf"} g</strong>`,
+          ],
+          meta: { p: r[0], q: r[1], t, x0, a, b },
+        };
+      },
+    },
+  ],
+  requiredCorrect: 3,
+  celebrationMessage: "Du liest m und t an jeder Geraden ab und kennst die Sonderfälle y = t und x = c.",
+};
+
 export const STAGE_FUNKTIONEN: Stage = {
   id: "stage-6-funktionen",
   stageNumber: 6,
@@ -1077,5 +1862,5 @@ export const STAGE_FUNKTIONEN: Stage = {
   accent: "#059669",
   badgeTitle: "Graphenleser",
   lehrplanLabel: "LB 6 (I) · LB 5 (II/III)",
-  lessons: [funktionOderNicht, darstellungen, werteNullstellen],
+  lessons: [funktionOderNicht, darstellungen, werteNullstellen, ursprungsgeraden, senkrecht, geraden],
 };

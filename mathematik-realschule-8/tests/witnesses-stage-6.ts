@@ -30,4 +30,28 @@ export const GOAL_WITNESSES_STAGE_6: Record<string, Record<string, LabValues>> =
     // f₃ on [−1; 4]: only the Nullstelle 2, W = [f(0); f(4)] = [−2; 6]
     "eine-nullstelle": { f: 2, a: -1, b: 4 },
   },
+  "fu-4-ursprungsgeraden": {
+    // m = 3 : (−4) = −3/4, and −3/4 · (−4) = 3
+    "durch-q": { px: -4, py: 3, a: 0, d: 1 },
+    // m = 2/3, triangle from O: 3 to the right, 2 up
+    "dreieck-ganz": { px: 3, py: 2, a: 0, d: 3 },
+    // m = −1/2, Δx = 4 gives Δy = −2
+    fallend: { px: 2, py: -1, a: -2, d: 4 },
+  },
+  "fu-5-senkrecht": {
+    // m₁ = 2, m₂ = −1/2
+    "m-zwei": { x1: 1, y1: 2, x2: 2, y2: -1 },
+    // m₁ = 2/3, m₂ = −3/2
+    bruch: { x1: 3, y1: 2, x2: -2, y2: 3 },
+    // the x-axis and the y-axis
+    achse: { x1: 4, y1: 0, x2: 0, y2: 3 },
+  },
+  "fu-6-geraden": {
+    // y = 0,5x + 2 through (−2 | 1) and (2 | 3)
+    "zwei-punkte": { m: 0.5, t: 2 },
+    // y = −2
+    "parallele-x": { m: 0, t: -2 },
+    // y = −0,5x + 2 has the Nullstelle 4
+    "nullstelle-vier": { m: -0.5, t: 2 },
+  },
 };
