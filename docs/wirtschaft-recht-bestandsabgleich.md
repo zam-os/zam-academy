@@ -1,6 +1,6 @@
 # Wirtschaft und Recht 9 · Bestandsabgleich und Vorschlag zur Lernstandsübernahme
 
-Stand: 22. Oktober 2026. **Die acht Zuordnungen unten sind ein Vorschlag und nicht freigegeben.** Das neue [Academy-Paket](../wirtschaft-recht-realschule-9/) ist eine neue Zelle: Sie deklariert weder `replaces` noch `retired_items`, daher ändert ihre Veröffentlichung keine Lernhistorie. Die alte Zelle `de-by:realschule-9-wirtschaft-recht-markt-vertraege` bleibt in ZAM unverändert aktiv, bis die Zuordnung ausdrücklich freigegeben ist. Erst dann kommen `replaces` und `retired_items` in die Zelle, die Version steigt, und die vorhandene Katalogsperre (`scripts/mapping-approval.mjs`) lässt die Veröffentlichung zu.
+Stand: 22. Oktober 2026. Die Zelle in Version `2026.10.2` deklariert die drei `replaces` der A-Zeilen und die fünf `retired_items` der C-Zeilen, genau wie unten dokumentiert. **Die Zuordnung ist noch nicht freigegeben:** `approved` in `replaces-de-by.json` ist `null`, und nur Thomas gibt sie frei. Bis dahin lehnt die Katalogsperre (`scripts/mapping-approval.mjs`) die Veröffentlichung ab, die erste Fassung `2026.10.1` bleibt unverändert veröffentlicht, und die alte Zelle `de-by:realschule-9-wirtschaft-recht-markt-vertraege` bleibt in ZAM aktiv.
 
 ## Fachliche Zuordnung
 
@@ -10,7 +10,7 @@ Die vorhandene Teilzelle (Version `2026.08.1`) hat vier Atome und acht Karten. S
 
 Das neue Paket hat 46 Kernlektionen und 4 optionale englische Lektionen mit 150 Karten. Die [Matrix](../wirtschaft-recht-realschule-9/coverage.json) ordnet alle 37 Kompetenzerwartungen der vier Lernbereiche den Lektionen zu. Die praxisorientierte Maßnahme (Experteninterview, Gerichtsbesuch) bleibt eine eigenständige Leistung.
 
-## Die acht vorgeschlagenen Zuordnungen
+## Die acht Zuordnungen
 
 Die vollständigen unveränderten Alttexte stehen im SHA-256-geprüften [Snapshot](../wirtschaft-recht-realschule-9/tests/fixtures/de-by-realschule-9-wirtschaft-recht-markt-vertraege-kvt.json). `replaces-de-by.json` nennt ID, vollständige Altfrage, Kategorie, Zielslug und Begründung je Karte. Ähnlichkeit allein entscheidet keine Zuordnung.
 
@@ -25,13 +25,13 @@ Die vollständigen unveränderten Alttexte stehen im SHA-256-geprüften [Snapsho
 | `…J07` | Sektor zwischen Sparern und Investoren (Banken) | **C** | Erweiterter Kreislauf: nicht Stoff von WR 9 (dort einfacher Kreislauf) |
 | `…J08` | Erweiterter Wirtschaftskreislauf mit fünf Sektoren | **C** | wie J07 |
 
-Bei **A** würde der Nachfolger genau ein `replaces` erhalten: Karte und Reviewereignisse würden mit derselben Identität und unveränderten FSRS-Feldern auf den benannten Nachfolger umgebunden. Bei **C** blieben Karte und Reviews beim alten Token, und die ID käme in `retired_items`, damit der alte Token aus der aktiven Wiederholung genommen wird. Neue Karten erhalten keine behauptete Beherrschung. Wer eine C-Karte hielt, wiederholt ihre Fakten auf den neuen Einzelkarten.
+Bei **A** erhält der Nachfolger genau ein `replaces`: Karte und Reviewereignisse werden mit derselben Identität und unveränderten FSRS-Feldern auf den benannten Nachfolger umgebunden. Bei **C** bleiben Karte und Reviews beim alten Token, und die ID steht in `retired_items`, damit der alte Token aus der aktiven Wiederholung genommen wird. Neue Karten erhalten keine behauptete Beherrschung. Wer eine C-Karte hielt, wiederholt ihre Fakten auf den neuen Einzelkarten.
 
 Bei **J07** und **J08** ist die Entscheidung keine reine Lernstandsfrage: Der erweiterte Kreislauf gehört vermutlich in ein späteres Schuljahr. Wer die Karten behalten möchte, kann sie als C unangetastet lassen, ohne sie zu stilllegen; die Katalogsperre erlaubt C-Zeilen ohne `retired_items` ausdrücklich.
 
-## Was bei Freigabe geschieht
+## Was geprüft ist und was noch fehlt
 
-1. `approved` erhält das Freigabedatum, `source` den Wortlaut und `authorization` die erlaubten `replaces` und `retired_items`.
-2. Die Zelle erhält die drei `replaces` der A-Zeilen (und `retired_items` für die gewünschten C-Zeilen), die Version steigt auf `2026.10.2`, und `tests/contract.test.ts` prüft die Zuordnung wie bei BwR 9.
-3. Ein Skript `scripts/validate-migration.mjs` wie bei den anderen Paketen prüft mit dem veröffentlichten zam-core in Wegwerf-Bibliotheken, dass Karten- und Review-IDs und FSRS-Felder erhalten bleiben und zwei bereits bewertete Historien auf Alt- und Nachfolgerkarte einen Merge zurückweisen. Der CI-Job wird ergänzt.
-4. ZAM übernimmt die veröffentlichten Bytes über `academy:sync`, ergänzt das Lehrplanangebot für Klasse 9 und löst die alte Teilzelle ab.
+1. `tests/contract.test.ts` prüft, dass die Zelle genau die dokumentierten `replaces` und `retired_items` deklariert und `approved` ein Datum mit Thomas' Wortlaut oder `null` ist, nie ein Flag.
+2. `scripts/validate-migration.mjs` läuft mit dem in der CI festgelegten zam-core in Wegwerf-Bibliotheken: Karten- und Review-IDs und FSRS-Felder der drei A-Karten bleiben unverändert und hängen am Nachfolger, die fünf C-Karten verlassen die aktive Wiederholung und behalten ihre Historie, ein wiederholter Install ändert nichts, und wer auf Alt- und Nachfolgerkarte schon Reviews hat, bekommt den Merge zurückgewiesen. Der Upgrade von `2026.10.1` ohne alte Zelle ändert keine Karte. Die CI führt das Skript aus.
+3. **Offen:** Thomas gibt die Zuordnung frei. Danach erhält `approved` das Datum, `source` seinen Wortlaut und `authorization` die erlaubten `replaces` und `retired_items`; erst dann besteht der Katalogschritt der CI und der PR lässt sich mergen.
+4. Danach übernimmt ZAM die veröffentlichten Bytes über `academy:sync`, ergänzt das Lehrplanangebot für Klasse 9 und löst die alte Teilzelle ab. Bis dahin steht der ZAM-Entwurf auf Draft, denn ein Lernender mit Karten auf alter und neuer ID würde den späteren Install ablehnen lassen.

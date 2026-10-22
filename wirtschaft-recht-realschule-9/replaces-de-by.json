@@ -1,8 +1,7 @@
 {
   "schema": 1,
   "approved": null,
-  "status": "proposal-only",
-  "note": "Vorschlag, nicht freigegeben. Solange \"approved\" null ist, deklariert die Zelle weder replaces noch retired_items, und die alte Zelle bleibt in ZAM unverändert aktiv.",
+  "note": "Zur Freigabe vorgelegt. Die Zelle (Version 2026.10.2) deklariert genau die drei replaces der A-Zeilen und die fünf retired_items der C-Zeilen. Solange \"approved\" null ist, bleibt die Katalogveröffentlichung gesperrt (scripts/mapping-approval.mjs); nur Thomas gibt frei, mit Datum in \"approved\" und seinem Wortlaut in \"source\" und \"authorization\".",
   "source": null,
   "source_repository": "zam-os/zam",
   "source_commit": "bbdcc7695b288391362abcae95070f0fa6a9f61c",
