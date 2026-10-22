@@ -583,7 +583,7 @@ const scheitelpunkt: Lesson = {
           steps: [
             `Nullstellen mit der Scheitelpunktsform: ${equation} = 0 ⇒ ${vertexForm(a, xs, 0)} = ${fmt(-ys)} ⇒ ${square(xs)} = ${k * k}`,
             `${inside(xs)} = −${k} oder ${inside(xs)} = ${k}, also x₁ = ${fmt(xs - k)} und x₂ = ${fmt(xs + k)}`,
-            `Schnittpunkt mit der y-Achse mit der allgemeinen Form: y = ${quadratic(a, b, c)}, also (0 | ${fmt(c)})`,
+            `Schnittpunkt mit der y-Achse aus der allgemeinen Form: y =${quadratic(a, b, c)}, also (0 | ${fmt(c)})`,
             `<strong>x₁ = ${fmt(xs - k)}, x₂ = ${fmt(xs + k)}; Schnittpunkt mit der y-Achse (0 | ${fmt(c)})</strong>`,
           ],
           meta: { a, xs, ys, k },
@@ -1537,7 +1537,7 @@ function crossingTask(a: number, r1: number, r2: number, m: number, t: number, l
     steps: [
       `Gleichsetzen: ${p} = ${g}`,
       `Auf null bringen: ${quadratic(a, B, C)} = 0`,
-      `D = ${paren(B)}² − 4 · ${paren(a)} · ${paren(C)} = ${fmt(D)}; x<sub>1,2</sub> = (${fmt(-B)} ± ${fmt(Math.abs(a) * (r2 - r1))}) : ${paren(2 * a)}, also x₁ = ${fmt(r1)} und x₂ = ${fmt(r2)}`,
+      `D = ${paren(B)}² − 4 · ${paren(a)} · ${paren(C)} = ${fmt(D, 4)}; x<sub>1,2</sub> = (${fmt(-B)} ± ${fmt(Math.abs(a) * (r2 - r1))}) : ${paren(2 * a)}, also x₁ = ${fmt(r1)} und x₂ = ${fmt(r2)}`,
       `In g einsetzen: y₁ = ${fmt(m)} · ${paren(r1)}${plus(t)} = ${fmt(y1)}, y₂ = ${fmt(m)} · ${paren(r2)}${plus(t)} = ${fmt(y2)}`,
       `<strong>${first}${point(r1, y1)}, ${second}${point(r2, y2)}</strong>`,
     ],
