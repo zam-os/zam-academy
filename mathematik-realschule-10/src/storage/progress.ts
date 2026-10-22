@@ -8,11 +8,16 @@ export interface LearnerProgress {
   activeLessonId: string;
   difficultyLevel: DifficultyLevel;
   trackFilter: TrackFilter;
+  /** Lessons whose quick check was answered correctly. */
   quizDone: string[];
+  /** Lab goal ids reached, per lesson. */
   labGoals: Record<string, string[]>;
+  /** Correctly solved exercises per lesson and level. */
   solved: Record<string, { 1: number; 2: number }>;
+  /** Attempt counters that seed the next generated task, per lesson. */
   attempts: Record<string, number>;
   celebratedStageIds: string[];
+  /** Lessons whose completion was already announced. */
   celebratedLessonIds: string[];
 }
 
@@ -92,7 +97,9 @@ export function loadLearnerProgress(): LearnerProgress {
 export function saveLearnerProgress(progress: LearnerProgress): void {
   try {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(progress));
-  } catch {}
+  } catch {
+    // Storage may be full or blocked; the app keeps working in memory.
+  }
 }
 
 export function resetLearnerProgress(): LearnerProgress {
@@ -122,6 +129,7 @@ export function allGoalsReached(progress: LearnerProgress, lesson: Lesson): bool
   return lesson.lab.goals.every((goal) => reached.includes(goal.id));
 }
 
+/** Quick check right, every lab goal reached and enough Level-1 tasks solved. */
 export function isLessonComplete(progress: LearnerProgress, lesson: Lesson): boolean {
   return (
     isQuizDone(progress, lesson.id) &&
@@ -130,6 +138,7 @@ export function isLessonComplete(progress: LearnerProgress, lesson: Lesson): boo
   );
 }
 
+/** Enough Level-2 transfer tasks solved on top of a complete lesson. */
 export function isTransferDone(progress: LearnerProgress, lesson: Lesson): boolean {
   return (
     isLessonComplete(progress, lesson) &&
@@ -143,11 +152,13 @@ export interface CompletionStats {
   percent: number;
 }
 
+/** The lessons of a stage a learner of the given Zweig needs; "alle" keeps all. */
 export function relevantLessons(stage: Stage, filter: TrackFilter = "alle"): Lesson[] {
   if (filter === "alle") return stage.lessons;
   return stage.lessons.filter((lesson) => lesson.tracks.includes(filter));
 }
 
+/** Progress in a stage, counting only the lessons of the chosen Zweig. */
 export function stageStats(
   progress: LearnerProgress,
   stage: Stage,
@@ -159,6 +170,7 @@ export function stageStats(
   return { completed, total, percent: total ? Math.round((completed / total) * 100) : 0 };
 }
 
+/** A stage is done when every lesson of the chosen Zweig in it is complete, and there is at least one. */
 export function isStageComplete(
   progress: LearnerProgress,
   stage: Stage,

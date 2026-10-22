@@ -16,7 +16,7 @@
     <title>Mathematik 10 Realschule · ZAM Academy</title>
     <meta
       name="description"
-      content="Mathematik für die 10. Klasse Realschule (LehrplanPLUS Bayern): Trigonometrie am Einheitskreis, Ebene Vektorgeometrie, Potenzen, Exponentialfunktionen & Logarithmen, Raumgeometrie und Stochastik. 26 Lektionen mit interaktiven Figuren, Lehrervideos und Aufgaben. Behalten mit ZAM."
+      content="Mathematik für die 10. Klasse Realschule (LehrplanPLUS Bayern, Zweig I und II/III): Trigonometrie, Vektoren und Abbildungen, Potenzfunktionen, Exponential- und Logarithmusfunktionen, Raumgeometrie, quadratische Funktionen, Daten und Zufall. 45 Lektionen mit ziehbaren Figuren, Simulationen und Aufgaben. Behalten mit ZAM."
     />
     <link rel="stylesheet" href="/src/styles.css" />
   </head>
@@ -44,28 +44,23 @@
           </div>
           <div class="progress-pill" id="header-progress">
             <div class="progress-track"><div class="progress-fill" id="header-progress-bar"></div></div>
-            <span id="header-progress-text">0 / 26 Lektionen</span>
+            <span id="header-progress-text">0 / 45 Lektionen</span>
           </div>
           <button type="button" class="btn btn-zam" id="zam-btn" title="Wissen in ZAM festigen">🧠 In ZAM festigen</button>
           <button type="button" class="icon-btn" id="theme-toggle-btn" title="Hell / Dunkel umschalten" aria-label="Farbschema umschalten">◐</button>
         </div>
       </header>
 
-      <main id="view-root" class="view-root" tabindex="-1"></main>
+      <main id="main-view-host" class="main-view-host"></main>
 
       <footer class="app-footer">
-        <p>ZAM Academy · Mathematik 10 Realschule Bayern (LehrplanPLUS)</p>
-        <div class="footer-links">
-          <a href="https://academy.zam-os.org/" class="footer-link">Alle Academy-Fächer</a>
-          <a href="https://github.com/zam-os/zam" target="_blank" rel="noopener noreferrer" class="footer-link">ZAM Spaced Repetition</a>
-          <button type="button" class="btn-link text-danger" id="reset-btn">Lernstand zurücksetzen</button>
-        </div>
+        <span>ZAM Academy · Mathematik 10 Realschule folgt dem <a href="https://www.lehrplanplus.bayern.de/schulart/realschule/jgs/10/fach/mathematik" rel="noopener" target="_blank">LehrplanPLUS Bayern, Mathematik 10</a>.</span>
+        <span>Keine Konten, keine Cookies, kein Tracking. Dein Fortschritt bleibt in diesem Browser. Quelltext: <a href="https://github.com/zam-os/zam-academy" rel="noopener" target="_blank">zam-os/zam-academy</a></span>
       </footer>
     </div>
 
-    <div id="toast" class="toast" role="status" aria-live="polite"></div>
-    <div id="dialog-root"></div>
+    <div id="toast-stack" class="toast-stack" aria-live="polite"></div>
 
     <script type="module" src="/src/main.ts"></script>
-  </body>
+  <a href="https://academy.zam-os.org/" class="zam-home-link" style="position:fixed;left:12px;bottom:12px;z-index:2147483000;padding:6px 12px;border-radius:999px;background:#12131f;color:#e8e9f5;border:1px solid #3a3d5c;font:500 13px system-ui,sans-serif;text-decoration:none">← ZAM Academy</a></body>
 </html>

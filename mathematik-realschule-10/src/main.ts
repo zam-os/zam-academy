@@ -231,8 +231,8 @@ class MatheApp {
       <div class="path">
         <section class="hero">
           <div class="hero-copy">
-            <h2>Mathematik 9 für die Realschule</h2>
-            <p>Fünf Etappen nach den Lernbereichen des bayerischen LehrplanPLUS. In jeder Lektion: kurz lesen, im Labor Punkte ziehen und Figuren verändern, dann rechnen. Was du hier verstehst, hält ZAM mit Karten fest, die auf die Lektion zurückverlinken.</p>
+            <h2>Mathematik 10 für die Realschule</h2>
+            <p>Acht Etappen nach den Lernbereichen des bayerischen LehrplanPLUS, für Zweig I und Zweig II/III. In jeder Lektion: kurz lesen, im Labor Punkte ziehen und Figuren verändern, dann rechnen. Was du hier verstehst, hält ZAM mit Karten fest, die auf die Lektion zurückverlinken.</p>
             <div class="hero-row">
               <label class="track-select">
                 <span>Mein Zweig</span>
@@ -831,7 +831,7 @@ class MatheApp {
       <div class="formulas">
         <section class="hero hero-compact">
           <div class="hero-copy">
-            <h2>Formelsammlung Mathematik 9</h2>
+            <h2>Formelsammlung Mathematik 10</h2>
             <p>Alle Formeln der ${STAGES.reduce((n, stage) => n + stage.lessons.length, 0)} Lektionen mit der Bedeutung ihrer Buchstaben. Jede Zeile führt zur Lektion mit Labor und Aufgaben.</p>
           </div>
         </section>
