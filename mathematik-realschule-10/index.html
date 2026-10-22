@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
+    <script>
+      try {
+        const theme = localStorage.getItem("mathe_rs10_theme");
+        if (theme === "light" || theme === "dark") {
+          document.documentElement.dataset.theme = theme;
+          document.querySelector('meta[name="color-scheme"]').content = theme;
+        }
+      } catch {}
+    </script>
+    <title>Mathematik 10 Realschule · ZAM Academy</title>
+    <meta
+      name="description"
+      content="Mathematik für die 10. Klasse Realschule (LehrplanPLUS Bayern): Trigonometrie am Einheitskreis, Ebene Vektorgeometrie, Potenzen, Exponentialfunktionen & Logarithmen, Raumgeometrie und Stochastik. 26 Lektionen mit interaktiven Figuren, Lehrervideos und Aufgaben. Behalten mit ZAM."
+    />
+    <link rel="stylesheet" href="/src/styles.css" />
+  </head>
+  <body>
+    <div id="app" class="app-shell">
+      <header class="app-header">
+        <div class="brand">
+          <span class="brand-emblem" aria-hidden="true">📐</span>
+          <div>
+            <h1 class="brand-title">Mathematik 10 · Realschule</h1>
+            <p class="brand-subtitle">Lesen, Figuren ziehen, rechnen. Behalten mit ZAM.</p>
+          </div>
+        </div>
+
+        <nav class="main-nav" aria-label="Navigation">
+          <button type="button" class="nav-tab is-active" data-view="path">🗺️ Lernpfad</button>
+          <button type="button" class="nav-tab" data-view="lesson">🎓 Lektion</button>
+          <button type="button" class="nav-tab" data-view="formulas">📖 Formelsammlung</button>
+        </nav>
+
+        <div class="header-controls">
+          <div class="segmented" role="group" aria-label="Schwierigkeit">
+            <button type="button" class="seg-btn is-active" data-level="1" title="Formel und Werte werden angezeigt">🌱 Level 1: geführt</button>
+            <button type="button" class="seg-btn" data-level="2" title="Textaufgaben ohne Formelhilfe">🦅 Level 2: Transfer</button>
+          </div>
+          <div class="progress-pill" id="header-progress">
+            <div class="progress-track"><div class="progress-fill" id="header-progress-bar"></div></div>
+            <span id="header-progress-text">0 / 26 Lektionen</span>
+          </div>
+          <button type="button" class="btn btn-zam" id="zam-btn" title="Wissen in ZAM festigen">🧠 In ZAM festigen</button>
+          <button type="button" class="icon-btn" id="theme-toggle-btn" title="Hell / Dunkel umschalten" aria-label="Farbschema umschalten">◐</button>
+        </div>
+      </header>
+
+      <main id="view-root" class="view-root" tabindex="-1"></main>
+
+      <footer class="app-footer">
+        <p>ZAM Academy · Mathematik 10 Realschule Bayern (LehrplanPLUS)</p>
+        <div class="footer-links">
+          <a href="https://academy.zam-os.org/" class="footer-link">Alle Academy-Fächer</a>
+          <a href="https://github.com/zam-os/zam" target="_blank" rel="noopener noreferrer" class="footer-link">ZAM Spaced Repetition</a>
+          <button type="button" class="btn-link text-danger" id="reset-btn">Lernstand zurücksetzen</button>
+        </div>
+      </footer>
+    </div>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <div id="dialog-root"></div>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
