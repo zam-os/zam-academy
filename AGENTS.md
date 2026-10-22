@@ -135,6 +135,9 @@ Every lesson has
   [0; 1]), rounding never flips a yes/no answer, and typical mistakes get a
   targeted hint.
 
+Each stage (one per Lernbereich) gets its own accent colour instead of one
+palette for the whole package.
+
 German learner text uses "du", the terms of the LehrplanPLUS, the decimal
 comma (`fmt()`), the real minus sign "−" (U+2212), "·" for multiplication and
 a space before units. Bilingual apps keep their other language versions; each
@@ -145,10 +148,11 @@ green. No hype, no filler.
 ## 4. Teacher videos
 
 Videos are plain links to German explainers (`teacherVideo` in
-`mathematik-realschule-9`). Whether the author adds them or a separate step
-does is Thomas's call per package. Whoever adds a video makes sure it really
-teaches the lesson's topic at the learners' level (Mathe by Daniel Jung,
-Lehrerschmidt, MathemaTrick, simpleclub, …) and checks each candidate:
+`mathematik-realschule-9`). Authors of a new package add none: a separate
+step adds and checks them afterwards (Thomas's decision of 2026-10-22).
+Whoever adds a video makes sure it really teaches the lesson's topic at the
+learners' level (Mathe by Daniel Jung, Lehrerschmidt, MathemaTrick,
+simpleclub, …) and checks each candidate:
 
 ```bash
 curl -s "https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=<id>&format=json"
@@ -206,13 +210,14 @@ Learners have review histories on them.
   `bwr-realschule-9`): histories move unchanged, old ids leave active
   reviews, repeated installs change nothing, and a learner holding cards on
   both ids makes the install refuse an automatic merge.
-- When the `replaces` ship is Thomas's call per package. Either the approved
-  mapping ships with the cell's first publication, or the cell ships first
-  without `replaces` and `retired_items` (then it needs no approval, and the
-  mapping stays a proposal) and the approved version follows. In the second
-  case keep the gap short and close it before ZAM bundles the cell: a learner
-  who meanwhile holds cards on both an old id and its successor makes zam-core
-  refuse the whole install of the later version.
+- By default (Thomas's decision of 2026-10-22) a new cell ships first
+  without `replaces` and `retired_items`; it then needs no approval, and the
+  mapping stays a proposal (`"status": "proposal-only"`) until the approved
+  version follows. Keep that gap short and close it before ZAM bundles the
+  cell: a learner who meanwhile holds cards on both an old id and its
+  successor makes zam-core refuse the whole install of the later version.
+  For a package where Thomas approves the mapping before the merge (as for
+  Mathematik 10), the `replaces` ship with the first publication.
 - ZAM bundles a cell with `npm run academy:sync` in zam-os/zam, which reads
   the published `https://academy.zam-os.org/catalog.json`; the ZAM pull
   request therefore follows the published Academy cell. ZAM's Realschule
