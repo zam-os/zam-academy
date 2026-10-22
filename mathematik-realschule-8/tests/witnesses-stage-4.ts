@@ -54,4 +54,28 @@ export const GOAL_WITNESSES_STAGE_4: Record<string, Record<string, LabValues>> =
     // A(x) = 2(x − 4)² + 32
     minimum: { mode: 2, x: 4, show: 1 },
   },
+  "tg-7-gleichungen": {
+    // (x + 3)² − (x + 1)(x + 5) = 0 ⇔ 0 · x = −4
+    keine: { p: 3, q: 1, r: 5, k: 0, G: 0 },
+    // (x + 3)² − (x + 1)(x + 5) = 4 ⇔ 0 · x = 0
+    alle: { p: 3, q: 1, r: 5, k: 4, G: 0 },
+    // (x + 3)² − (x + 1)(x + 2) = 0 ⇔ 3x = −7: x = −7/3 is no natural number
+    grundmenge: { p: 3, q: 1, r: 2, k: 0, G: 2 },
+  },
+  "tg-8-sachaufgaben": {
+    // x(x + 8) = (x + 2)(x + 5) ⇔ x = 10
+    gleich: { d: 8, m: 2, n: 3, x: 10 },
+    // 4 × 9 becomes 6 × 6
+    quadrat: { d: 5, m: 2, n: 3, x: 4 },
+    // x × (x + 3) becomes (x + 3) × x: the same rectangle, turned
+    jedes: { d: 3, m: 3, n: 3, x: 4 },
+  },
+  "tg-9-ungleichungen": {
+    // −3x + 5 ≥ 17 ⇔ x ≤ −4; −6 solves it, but −6 ≥ −4 is false
+    umkehr: { a: -3, b: 5, rel: 3, c: 17, t: -6 },
+    // x < 2
+    offen: { a: 1, b: 0, rel: 0, c: 2, t: 0 },
+    // −2x < 7 ⇔ x > −3,5: the smallest whole solution is −3
+    ganzzahl: { a: -2, b: 0, rel: 0, c: 7, t: -3 },
+  },
 };

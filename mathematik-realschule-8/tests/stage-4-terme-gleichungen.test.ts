@@ -2,11 +2,23 @@ import { describe, expect, it } from "vitest";
 import { STAGE_TERME_GLEICHUNGEN } from "../src/curriculum/stage-4-terme-gleichungen";
 import { createRng, seedFrom } from "../src/exercises/rng";
 import { computeReadouts, defaultLabValues, enumerateLabGrid } from "../src/lab/engine";
-import { CLAIMS, completedSquare, EXTREMUM_MODELS, probeCounts, termValue, tileFit } from "../src/lab/views-terme-gleichungen";
+import {
+  CLAIMS,
+  completedSquare,
+  equationCase,
+  equationSolutionSet,
+  EXTREMUM_MODELS,
+  inequalitySolution,
+  probeCounts,
+  rectChange,
+  satisfies,
+  termValue,
+  tileFit,
+} from "../src/lab/views-terme-gleichungen";
 import type { DifficultyLevel, ExerciseTask } from "../src/model/types";
 import { GOAL_WITNESSES_STAGE_4 } from "./witnesses-stage-4";
 
-const IDS = ["tg-1-terme", "tg-2-ausmultiplizieren", "tg-3-binomische-formeln", "tg-4-faktorisieren", "tg-5-extremwerte", "tg-6-extremwertprobleme"];
+const IDS = ["tg-1-terme", "tg-2-ausmultiplizieren", "tg-3-binomische-formeln", "tg-4-faktorisieren", "tg-5-extremwerte", "tg-6-extremwertprobleme", "tg-7-gleichungen", "tg-8-sachaufgaben", "tg-9-ungleichungen"];
 const SEEDS = Array.from({ length: 200 }, (_, i) => seedFrom(`stage-4:${i}`));
 /** Points at which two polynomials of degree ≤ 3 that agree are equal. */
 const XS = [-2, -1, 0.5, 2, 3];
@@ -449,6 +461,218 @@ describe("Aufgaben der Etappe 4 rechnen richtig", () => {
       } else {
         expect(choice(task, 0)).toBe(m.m === m.n ? (m.m > 100 && m.m % 100 < 50 ? 0 : 1) : 2);
         expect(num(task, 1)).toBe(m.m * m.n);
+      }
+    }
+  });
+});
+
+const holdsRel = (left: number, rel: number, right: number) =>
+  rel === 0 ? left < right - 1e-9 : rel === 1 ? left <= right + 1e-9 : rel === 2 ? left > right + 1e-9 : left >= right - 1e-9;
+const isWhole = (x: number) => Math.abs(x - Math.round(x)) < 1e-9;
+const endsAfterTwoDecimals = (x: number) => Math.abs(x * 100 - Math.round(x * 100)) < 1e-7;
+
+describe("Labore der Etappe 4 (4.7 bis 4.9)", () => {
+  it("Gleichungsbaukasten: the reduced form A · x = B is the equation, and L follows G", () => {
+    const lab = lesson("tg-7-gleichungen").lab;
+    for (const values of enumerateLabGrid(lab, 4)) {
+      const { p, q, r, k, G } = values;
+      const c = equationCase(values);
+      for (const x of [0, 1, 2.5]) close((x + p) ** 2 - (x + q) * (x + r) - k, c.A * x - c.B);
+      const set = equationSolutionSet(values);
+      if (c.kind === 1) expect(set).toBe("L = { }");
+      if (c.kind === 2) expect(set).toBe(`L = ${["ℚ", "ℤ", "ℕ"][G]}`);
+      if (c.kind === 0) {
+        const allowed = G === 0 || (isWhole(c.x0) && (G === 1 || c.x0 >= 1));
+        expect(set === "L = { }").toBe(!allowed);
+      }
+    }
+    const r = computeReadouts(lab, defaultLabValues(lab));
+    expect(r.reduced).toBe("3x = −7");
+    expect(r.set).toBe("L = {−7/3}");
+  });
+
+  it("Gleicher Flächeninhalt: the change of area is (m − n)x + m(d − n)", () => {
+    const lab = lesson("tg-8-sachaufgaben").lab;
+    for (const values of enumerateLabGrid(lab, 4)) {
+      const { x, d, m, n } = values;
+      const rc = rectChange(values);
+      close(rc.diff, (m - n) * x + m * (d - n));
+      close(rc.diff, rc.added - rc.removed);
+    }
+    expect(computeReadouts(lab, defaultLabValues(lab)).diff).toBe("+4 cm²");
+  });
+
+  it("Ungleichungen am Zahlenstrahl: the solution set holds exactly the test values that satisfy the inequality", () => {
+    const lab = lesson("tg-9-ungleichungen").lab;
+    for (const values of enumerateLabGrid(lab, 3)) {
+      const sol = inequalitySolution(values);
+      for (let t = -8; t <= 8; t += 0.5) {
+        const inSet = sol.kind === "all" ? true : sol.kind === "none" ? false : holdsRel(t, sol.rel, sol.g);
+        expect(satisfies(values, t), JSON.stringify({ ...values, t })).toBe(inSet);
+      }
+      if (values.a < 0 && sol.kind === "bound") expect(sol.rel).not.toBe(values.rel);
+    }
+    const witness = { ...defaultLabValues(lab), ...GOAL_WITNESSES_STAGE_4["tg-9-ungleichungen"].umkehr };
+    expect(computeReadouts(lab, witness).set).toBe("L = ]−∞; −4]");
+  });
+});
+
+describe("Aufgaben der Etappe 4 rechnen richtig (4.7 bis 4.9)", () => {
+  it("4.7 equations: the solution solves the equation as printed, and the Grundmenge is honoured", () => {
+    for (const task of tasks("tg-7-gleichungen", "gleichung", 1)) {
+      const { s, p, q, r, k, x0 } = meta(task);
+      const left = (x: number) => s * ((x + p) ** 2 - (x + q) * (x + r));
+      close(left(x0), k);
+      for (const x of XS) close(left(x), num(task, 0) * x + num(task, 1));
+      expect(num(task, 0)).not.toBe(0);
+      close(num(task, 2), x0);
+      expect(endsAfterTwoDecimals(x0)).toBe(true);
+    }
+    const variants = new Set<number>();
+    for (const task of tasks("tg-7-gleichungen", "gleichung", 2)) {
+      const m = meta(task);
+      variants.add(m.variant);
+      if (m.variant === 1) close((m.a * m.x0 + m.p) ** 2, (m.a * m.x0 - m.q) ** 2 + m.k);
+      if (m.variant === 2) close((m.a * m.x0 + m.p) ** 2 - (m.a * m.x0 + m.q) * (m.a * m.x0 - m.q), m.k);
+      if (m.variant === 3) {
+        close((m.x0 + m.p) ** 2 - (m.x0 + m.q) * (m.x0 + m.r), m.k);
+        const allowed = isWhole(m.x0) && (m.G === 1 || m.x0 >= 1);
+        expect(choice(task, 1)).toBe(allowed ? 0 : 1);
+      }
+      close(num(task, 0), m.x0);
+      expect(endsAfterTwoDecimals(m.x0)).toBe(true);
+    }
+    expect([...variants].sort()).toEqual([1, 2, 3]);
+  });
+
+  it("4.7 solution cases: a and b are the reduced form, and the case follows from them", () => {
+    const seen = [0, 0, 0];
+    for (const task of tasks("tg-7-gleichungen", "loesungsfall", 1)) {
+      const m = meta(task);
+      const reduced = (x: number) => (m.tpl === 0 ? (x + m.p) ** 2 - (x + m.q) * (x + m.r) - m.k : m.m * (m.a * x + m.b) - m.n * (m.c * x + m.d) - (m.e * x + m.f));
+      for (const x of XS) close(reduced(x), num(task, 0) * x - num(task, 1));
+      const [A, B] = [num(task, 0), num(task, 1)];
+      const kind = A !== 0 ? 0 : B !== 0 ? 1 : 2;
+      expect(choice(task, 2)).toBe(kind);
+      seen[kind] += 1;
+    }
+    expect(seen.every((n) => n > 30), `${seen}`).toBe(true);
+    for (const task of tasks("tg-7-gleichungen", "loesungsfall", 2)) {
+      const m = meta(task);
+      const k = num(task, 0);
+      const left = (x: number) => (x + m.p) ** 2 - (x + m.q) * (x + k);
+      if (m.variant === 0) {
+        close(left(0), left(3));
+        expect(Math.abs(left(0) - m.c)).toBeGreaterThan(1e-9);
+      } else if (m.variant === 1) {
+        for (const x of XS) close(left(x), num(task, 1));
+      } else {
+        close(left(m.x1), m.c);
+        expect(Math.abs(left(m.x1 + 1) - left(m.x1))).toBeGreaterThan(1e-9);
+      }
+    }
+  });
+
+  it("4.8 geometry: the rectangle and the square fit the text", () => {
+    for (const level of [1, 2] as const) {
+      for (const task of tasks("tg-8-sachaufgaben", "geometrie", level)) {
+        const m = meta(task);
+        if (m.kind === 0) {
+          close(m.x * (m.x + m.d), (m.x + m.m) * (m.x + m.d - m.n));
+          expect(m.x + m.d - m.n).toBeGreaterThan(0);
+          expect([num(task, 0), num(task, 1)]).toEqual([m.x, m.x + m.d]);
+          if (level === 2) expect(num(task, 2)).toBe(m.x * (m.x + m.d));
+        } else {
+          close((m.x + m.a) * (m.x - m.b), m.x * m.x - m.c);
+          expect(m.x).toBeGreaterThan(m.b);
+          expect(m.c).not.toBe(0);
+          expect([num(task, 0), num(task, 1)]).toEqual([m.x, m.x * m.x]);
+        }
+      }
+    }
+  });
+
+  it("4.8 numbers, ages, motion, mixtures and prices: the answers solve the text", () => {
+    const contexts = new Set<number>();
+    for (const level of [1, 2] as const) {
+      for (const task of tasks("tg-8-sachaufgaben", "zahlen", level)) {
+        const m = meta(task);
+        contexts.add(m.context);
+        if (m.context === 0) {
+          close(m.x * (m.x + m.d), m.x * m.x + m.c);
+          expect([num(task, 0), num(task, 1)]).toEqual([m.x, m.x + m.d]);
+        } else if (m.context === 5) {
+          close(m.x * (m.x + m.d), (m.x - m.e) ** 2 + m.c);
+          expect(m.x).toBeGreaterThan(m.e);
+          expect(num(task, 0)).toBe(m.x);
+        } else if (m.context === 1) {
+          close((m.x + m.t) * (m.x + m.d + m.t) - m.x * (m.x + m.d), m.P);
+          expect([num(task, 0), num(task, 1)]).toEqual([m.x, m.x + m.d]);
+        } else if (m.context === 2) {
+          close(m.v1 * m.t, m.v2 * (m.t - m.delta));
+          expect(m.t).toBeGreaterThan(m.delta);
+          close(num(task, 0), m.t);
+          close(num(task, 1), m.v1 * m.t);
+        } else if (m.context === 3) {
+          close(m.p1 * m.m1 + m.p2 * m.x, m.p * (m.m1 + m.x));
+          expect(m.p1).toBeLessThan(m.p);
+          expect(m.p).toBeLessThan(m.p2);
+          close(num(task, 0), m.x);
+          close(num(task, 1), m.m1 + m.x);
+        } else {
+          expect(m.PA * (m.N - m.kids) + m.PK * m.kids).toBe(m.T);
+          expect(m.kids).toBeGreaterThanOrEqual(1);
+          expect(m.kids).toBeLessThan(m.N);
+          expect([num(task, 0), num(task, 1)]).toEqual([m.kids, m.N - m.kids]);
+        }
+        for (const field of task.fields) if (field.kind === "number") expect(field.answer).toBeGreaterThan(0);
+      }
+    }
+    expect([...contexts].sort()).toEqual([0, 1, 2, 3, 4, 5]);
+  });
+
+  it("4.9 inequalities: the stated solution set is exactly where the inequality holds", () => {
+    for (const task of tasks("tg-9-ungleichungen", "ungleichung", 1)) {
+      const { m, n, e, p, q, f, rel, g } = meta(task);
+      const solved = choice(task, 1);
+      close(num(task, 0), g);
+      const ok = (x: number) => holdsRel(m * (x + p) - n * (x + q), rel, e * x + f);
+      for (const x of [g - 2, g - 0.5, g, g + 0.5, g + 2]) expect(ok(x), `${task.prompt} at ${x}`).toBe(holdsRel(x, solved, g));
+    }
+    for (const task of tasks("tg-9-ungleichungen", "ungleichung", 2)) {
+      const { p, q, r, k, rel, g, edge } = meta(task);
+      const solved = choice(task, 0);
+      close(num(task, 1), g);
+      const ok = (x: number) => holdsRel((x - p) ** 2, rel, (x + q) * (x - r) + k);
+      for (const x of [g - 2, g - 0.5, g, g + 0.5, g + 2]) expect(ok(x), `${task.prompt} at ${x}`).toBe(holdsRel(x, solved, g));
+      expect(num(task, 2)).toBe(edge);
+      expect(ok(edge)).toBe(true);
+      expect(ok(edge + (solved >= 2 ? -1 : 1)), "the next whole number outward is outside L").toBe(false);
+    }
+  });
+
+  it("4.9 word problems: the whole-number answer is the last (first) one that satisfies the condition", () => {
+    for (const level of [1, 2] as const) {
+      for (const task of tasks("tg-9-ungleichungen", "sachaufgabe", level)) {
+        const m = meta(task);
+        if (m.kind === 0) {
+          expect(m.base + m.perMin * m.minutes).toBeLessThanOrEqual(m.budget);
+          expect(m.base + m.perMin * (m.minutes + 1)).toBeGreaterThan(m.budget);
+          expect(num(task, 0)).toBe(m.minutes);
+        } else if (m.kind === 1) {
+          expect(m.bonus + m.wage * m.hours).toBeGreaterThanOrEqual(m.target);
+          expect(m.bonus + m.wage * (m.hours - 1)).toBeLessThan(m.target);
+          expect(num(task, 0)).toBe(m.hours);
+        } else if (m.kind === 2) {
+          expect(m.baseB + m.perB * m.from).toBeLessThan(m.baseA + m.perA * m.from);
+          expect(m.baseB + m.perB * (m.from - 1)).toBeGreaterThanOrEqual(m.baseA + m.perA * (m.from - 1));
+          expect(choice(task, 0)).toBe(m.baseA < m.baseB ? 0 : 1);
+          expect(num(task, 1)).toBe(m.from);
+        } else {
+          expect(m.season + m.perVisit * m.from).toBeLessThan(m.single * m.from);
+          expect(m.season + m.perVisit * (m.from - 1)).toBeGreaterThanOrEqual(m.single * (m.from - 1));
+          expect(num(task, 0)).toBe(m.from);
+        }
       }
     }
   });

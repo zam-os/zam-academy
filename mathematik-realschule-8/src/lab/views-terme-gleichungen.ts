@@ -1,4 +1,4 @@
-import { fmt, MINUS, paren, quadratic, round, shifted, sum, vertexForm } from "../exercises/format";
+import { fmt, fracText, MINUS, paren, quadratic, round, shifted, sum, vertexForm } from "../exercises/format";
 import type { LabValues } from "../model/types";
 import { circle, handle, type LabView, line, open, Plot, rect, text } from "./svg";
 
@@ -883,8 +883,311 @@ function extremumProblem(v: LabValues): string {
   return out;
 }
 
-// Placeholder drawings until the later labs of the stage are written.
-const placeholder: LabView = { render: () => '<svg viewBox="0 0 520 340" xmlns="http://www.w3.org/2000/svg"></svg>' };
+// ─── 4.7 Der Gleichungsbaukasten ────────────────────────────────────────────
+
+export const GRUNDMENGEN = ["ℚ", "ℤ", "ℕ"];
+
+/** A number as the board writes a solution: −1,2 or, when the decimal does not end, −7/3. */
+export function solutionText(numerator: number, denominator: number): string {
+  const value = numerator / denominator;
+  return Math.abs(value * 100 - Math.round(value * 100)) < 1e-9 ? fmt(value, 2) : fracText(numerator, denominator);
+}
+
+/** Is x an element of the Grundmenge G (0: ℚ, 1: ℤ, 2: ℕ = {1; 2; 3; …})? */
+export function inGrundmenge(x: number, G: number): boolean {
+  if (G === 0) return true;
+  if (Math.abs(x - Math.round(x)) > 1e-9) return false;
+  return G === 1 || x >= 1 - 1e-9;
+}
+
+export interface EquationCase {
+  /** The reduced form A · x = B. */
+  A: number;
+  B: number;
+  /** 0 one solution, 1 none, 2 allgemeingültig. */
+  kind: number;
+  x0: number;
+}
+
+/** (x + p)² − (x + q)(x + r) = k reduces to (2p − q − r) · x = k − p² + qr. */
+export function equationCase(v: LabValues): EquationCase {
+  const A = 2 * v.p - v.q - v.r;
+  const B = v.k - v.p * v.p + v.q * v.r;
+  return { A, B, kind: A !== 0 ? 0 : B !== 0 ? 1 : 2, x0: A !== 0 ? B / A : 0 };
+}
+
+export function equationSolutionSet(v: LabValues): string {
+  const c = equationCase(v);
+  if (c.kind === 1) return "L = { }";
+  if (c.kind === 2) return `L = ${GRUNDMENGEN[v.G]}`;
+  return inGrundmenge(c.x0, v.G) ? `L = {${solutionText(c.B, c.A)}}` : "L = { }";
+}
+
+/** "(x + 3)²" or "x²". */
+const squareText = (p: number) => (p === 0 ? "x²" : `(${plusText("x", p)})²`);
+
+/** "(x + 1)(x + 2)", "x(x + 2)", "x · x". */
+function productText(q: number, r: number): string {
+  if (q === 0 && r === 0) return "x · x";
+  if (r === 0) return `x(${plusText("x", q)})`;
+  if (q === 0) return `x(${plusText("x", r)})`;
+  return `(${plusText("x", q)})(${plusText("x", r)})`;
+}
+
+/** "| − 7" or "| + 7": the number moved to the other side. */
+const moveText = (k: number) => (k > 0 ? `| ${MINUS} ${fmt(k)}` : `| + ${fmt(-k)}`);
+
+function linearEquation(v: LabValues): string {
+  const { p, q, r, k, G } = v;
+  const c = equationCase(v);
+  const rest = p * p - q * r;
+  let out = open("Eine Gleichung mit binomischer Formel und Produkt wird Schritt für Schritt vereinfacht");
+  const restText = rest === 0 ? "" : rest > 0 ? ` + ${fmt(rest)}` : ` ${MINUS} ${fmt(-rest)}`;
+  const lines: Array<[string, string, string]> = [
+    [`${squareText(p)} ${MINUS} ${productText(q, r)} = ${fmt(k)}`, "lab-text lab-text-big", ""],
+    [`${quadratic(1, 2 * p, p * p)} ${MINUS} (${quadratic(1, q + r, q * r)}) = ${fmt(k)}`, "lab-text", "ausmultiplizieren"],
+    [`${sum([[1, "x²"], [2 * p, "x"], [p * p, ""], [-1, "x²"], [-(q + r), "x"], [-q * r, ""]])} = ${fmt(k)}`, "lab-text", "Minusklammer auflösen"],
+    [`${c.A === 0 ? `0 · x${restText}` : sum([[c.A, "x"], [rest, ""]])} = ${fmt(k)}`, "lab-text", rest === 0 ? "x² − x² = 0" : `x² − x² = 0   ${moveText(rest)}`],
+  ];
+  // the reduced form A · x = B, unless the line above already is it
+  if (rest !== 0) lines.push([`${c.A === 0 ? "0 · x" : sum([[c.A, "x"]])} = ${fmt(c.B)}`, "lab-text", c.A === 0 || c.A === 1 ? "" : `| : ${paren(c.A)}`]);
+  else if (c.A !== 0 && c.A !== 1) lines[lines.length - 1][2] = `x² − x² = 0   | : ${paren(c.A)}`;
+  if (c.kind === 0) lines.push([`x = ${solutionText(c.B, c.A)}`, "lab-text lab-text-ok", ""]);
+  else lines.push([c.kind === 1 ? `0 = ${fmt(c.B)} ist falsch für jedes x` : "0 = 0 ist wahr für jedes x", c.kind === 1 ? "lab-text lab-text-bad" : "lab-text lab-text-ok", ""]);
+  lines.forEach(([content, cls, note], i) => {
+    const y = 30 + i * 28;
+    out += text(16, y, content, cls);
+    if (note) out += text(276, y, note, "lab-text-small");
+  });
+  // the case and the solution set
+  const box = { x: 344, y: 176, w: 166, h: 80 };
+  out += rect(box.x, box.y, box.w, box.h, "lab-panel", 'rx="8"');
+  const caseText = ["genau eine Lösung", "keine Lösung", "allgemeingültig"][c.kind];
+  out += text(box.x + 10, box.y + 22, caseText, c.kind === 1 ? "lab-text lab-text-bad" : "lab-text lab-text-ok");
+  out += text(box.x + 10, box.y + 46, `G = ${GRUNDMENGEN[G]}`, "lab-text-muted");
+  out += text(box.x + 10, box.y + 70, equationSolutionSet(v), "lab-text lab-text-big");
+  // the number line with the Grundmenge
+  const NL = { x0: 30, x1: 490, y: 292, lo: -6, hi: 6 };
+  const X = (t: number) => NL.x0 + ((t - NL.lo) / (NL.hi - NL.lo)) * (NL.x1 - NL.x0);
+  out += line(NL.x0 - 8, NL.y, NL.x1 + 8, NL.y, "lab-axis");
+  if (G === 0) out += line(NL.x0, NL.y, NL.x1, NL.y, c.kind === 2 ? "lab-side-ok" : "lab-thin");
+  for (let t = NL.lo; t <= NL.hi; t++) {
+    out += line(X(t), NL.y - 5, X(t), NL.y + 5, "lab-thin");
+    out += text(X(t), NL.y + 20, fmt(t), "lab-text-tick", "middle");
+    if (G !== 0 && (G === 1 || t >= 1)) out += circle(X(t), NL.y, 4, c.kind === 2 ? "lab-point-ok" : "lab-dot-small");
+  }
+  out += text(NL.x0 - 8, NL.y + 38, `Grundmenge G = ${GRUNDMENGEN[G]}${G === 2 ? " = {1; 2; 3; …}" : ""}${G === 0 ? ": alle rationalen Zahlen" : ": nur die Punkte"}`, "lab-text-small");
+  if (c.kind === 0) {
+    const inside = c.x0 >= NL.lo && c.x0 <= NL.hi;
+    const px = X(Math.min(NL.hi, Math.max(NL.lo, c.x0)));
+    const ok = inGrundmenge(c.x0, G);
+    out += circle(px, NL.y, inside ? 7 : 5, ok ? "lab-point-ok" : "lab-point-bad");
+    const label = `x = ${solutionText(c.B, c.A)}${inside ? "" : " (außerhalb)"}${ok ? "" : `, nicht in ${GRUNDMENGEN[G]}`}`;
+    out += text(Math.min(440, Math.max(90, px)), NL.y - 14, label, ok ? "lab-text-small lab-text-ok" : "lab-text-small lab-text-bad", "middle");
+  }
+  out += "</svg>";
+  return out;
+}
+
+// ─── 4.8 Gleicher Flächeninhalt ─────────────────────────────────────────────
+
+export interface RectChange {
+  oldArea: number;
+  newArea: number;
+  /** The new length x + d − n and width x + m. */
+  length: number;
+  width: number;
+  exists: boolean;
+  removed: number;
+  added: number;
+  diff: number;
+}
+
+/** Breite x, Länge x + d; the width grows by m, the length shrinks by n. */
+export function rectChange(v: LabValues): RectChange {
+  const { x, d, m, n } = v;
+  const length = x + d - n;
+  const width = x + m;
+  const oldArea = x * (x + d);
+  const newArea = width * length;
+  return { oldArea, newArea, length, width, exists: length > 0, removed: n * x, added: m * length, diff: newArea - oldArea };
+}
+
+const WP = { x0: 46, y0: 58, s: 10.5 };
+
+function wordProblem(v: LabValues): string {
+  const { x, d, m, n } = v;
+  const { x0, y0, s } = WP;
+  const rc = rectChange(v);
+  let out = open("Ein Rechteck wird verändert: der Streifen, der wegfällt, und der Streifen, der dazukommt");
+  out += text(16, 27, `Breite x, Länge x + ${fmt(d)}: Breite + ${fmt(m)}, Länge − ${fmt(n)}`, "lab-text lab-text-big");
+  const W = (x + d) * s;
+  const H = x * s;
+  if (rc.exists) {
+    const L = rc.length * s;
+    out += rect(x0, y0, L, H, "lab-fill-a");
+    out += rect(x0 + L, y0, W - L, H, "lab-fill-only") + rect(x0 + L, y0, W - L, H, "lab-dashed lab-bad-stroke");
+    out += rect(x0, y0 + H, L, m * s, "lab-fill-ok");
+    out += rect(x0, y0, L, H + m * s, "lab-side-ok");
+    if (W - L >= 30 && H >= 20) out += text(x0 + L + (W - L) / 2, y0 + H / 2 + 4, `− ${fmt(rc.removed)}`, "lab-text-small lab-text-bad", "middle");
+    if (m * s >= 16 && L >= 40) out += text(x0 + L / 2, y0 + H + (m * s) / 2 + 4, `+ ${fmt(rc.added)}`, "lab-text-small lab-text-ok", "middle");
+    out += text(x0 + L / 2, y0 + H + m * s + 16, `neue Länge ${fmt(rc.length)}`, "lab-text-small", "middle");
+    out += text(x0 - 6, y0 + H + (m * s) / 2 + 4, `+${fmt(m)}`, "lab-text-small lab-text-ok", "end");
+  } else {
+    out += rect(x0, y0, W, H, "lab-fill-only") + rect(x0, y0, W, H, "lab-dashed lab-bad-stroke");
+    out += text(x0, y0 + H + 22, `Die neue Länge x + ${fmt(d)} − ${fmt(n)} wäre nicht positiv.`, "lab-text lab-text-bad");
+  }
+  out += rect(x0, y0, W, H, "lab-dashed");
+  out += text(x0 + W / 2, y0 - 6, `x + ${fmt(d)} = ${fmt(x + d)}`, "lab-text-small", "middle");
+  out += text(x0 - 6, y0 + H / 2 + 4, `x = ${fmt(x)}`, "lab-text-small", "end");
+  // the areas and the equation
+  const lines: Array<[string, string]> = [
+    [`alt: ${fmt(x)} · ${fmt(x + d)} = ${fmt(rc.oldArea)} cm²`, "lab-text"],
+    rc.exists ? [`neu: ${fmt(rc.width)} · ${fmt(rc.length)} = ${fmt(rc.newArea)} cm²`, "lab-text"] : ["neu: kein Rechteck", "lab-text lab-text-bad"],
+    ["", ""],
+    [`weg: ${fmt(n)} · ${fmt(x)} = ${fmt(rc.removed)} cm²`, "lab-text lab-text-bad"],
+    rc.exists ? [`dazu: ${fmt(m)} · ${fmt(rc.length)} = ${fmt(rc.added)} cm²`, "lab-text lab-text-ok"] : ["", ""],
+    ["", ""],
+    rc.exists ? [rc.diff === 0 ? "gleich groß!" : `Unterschied: ${rc.diff > 0 ? "+" : MINUS} ${fmt(Math.abs(rc.diff))} cm²`, rc.diff === 0 ? "lab-text lab-text-ok lab-text-big" : "lab-text lab-text-big"] : ["", ""],
+    ["", ""],
+    ["Gleichung für gleiche Flächen:", "lab-text-small"],
+    [`x(x + ${fmt(d)}) = ${d === n ? `(x + ${fmt(m)}) · x` : `(x + ${fmt(m)})(${plusText("x", d - n)})`}`, "lab-text-small"],
+  ];
+  let ly = 62;
+  for (const [content, cls] of lines) {
+    if (content) out += text(338, ly, content, cls);
+    ly += content ? 22 : 8;
+  }
+  out += handle("x", x0 + W, y0 + H, "Ecke des alten Rechtecks: Breite x ändern");
+  out += "</svg>";
+  return out;
+}
+
+// ─── 4.9 Ungleichungen am Zahlenstrahl ──────────────────────────────────────
+
+export const RELATIONS = ["<", "≤", ">", "≥"];
+/** The relation after multiplying or dividing by a negative number. */
+export const FLIPPED = [2, 3, 0, 1];
+
+export function holds(left: number, rel: number, right: number): boolean {
+  const eps = 1e-9;
+  return rel === 0 ? left < right - eps : rel === 1 ? left <= right + eps : rel === 2 ? left > right + eps : left >= right - eps;
+}
+
+export interface InequalitySolution {
+  /** "bound": x rel g; "all": every number; "none": no number. */
+  kind: "bound" | "all" | "none";
+  rel: number;
+  g: number;
+  gText: string;
+}
+
+/** a · x + b (rel) c, solved for x. */
+export function inequalitySolution(v: LabValues): InequalitySolution {
+  const rhs = v.c - v.b;
+  if (v.a === 0) return { kind: holds(0, v.rel, rhs) ? "all" : "none", rel: v.rel, g: 0, gText: "" };
+  return { kind: "bound", rel: v.a > 0 ? v.rel : FLIPPED[v.rel], g: rhs / v.a, gText: solutionText(rhs, v.a) };
+}
+
+/** "]−∞; −4]" for x ≤ −4. */
+export function intervalText(rel: number, gText: string): string {
+  return [`]${MINUS}∞; ${gText}[`, `]${MINUS}∞; ${gText}]`, `]${gText}; ∞[`, `[${gText}; ∞[`][rel];
+}
+
+export function inequalitySet(v: LabValues): string {
+  const sol = inequalitySolution(v);
+  if (sol.kind === "all") return "L = ℚ";
+  if (sol.kind === "none") return "L = { }";
+  return `L = ${intervalText(sol.rel, sol.gText)}`;
+}
+
+export const satisfies = (v: LabValues, t: number) => holds(v.a * t + v.b, v.rel, v.c);
+
+/** The smallest (rel > or ≥) or greatest (rel < or ≤) whole number in x rel g. */
+export function integerEdge(rel: number, g: number): number {
+  const r = Math.round(g);
+  const whole = Math.abs(g - r) < 1e-9;
+  if (rel === 0) return whole ? r - 1 : Math.floor(g);
+  if (rel === 1) return whole ? r : Math.floor(g);
+  if (rel === 2) return whole ? r + 1 : Math.ceil(g);
+  return whole ? r : Math.ceil(g);
+}
+
+const IQ = { x0: 30, x1: 490, y: 262, lo: -8, hi: 8 };
+const iqX = (t: number) => IQ.x0 + ((t - IQ.lo) / (IQ.hi - IQ.lo)) * (IQ.x1 - IQ.x0);
+
+/** The ray x rel g on the number line, clipped to the drawing. */
+function ray(rel: number, g: number, y: number, cls: string, withDot: boolean): string {
+  const right = rel >= 2;
+  const from = Math.min(IQ.hi, Math.max(IQ.lo, g));
+  const to = right ? IQ.hi : IQ.lo;
+  let out = "";
+  if ((right && g < IQ.hi) || (!right && g > IQ.lo)) {
+    const tip = iqX(to) + (right ? 14 : -14);
+    const base = iqX(to) + (right ? 4 : -4);
+    out += line(iqX(from), y, base, y, cls);
+    out += `<polygon points="${tip},${y} ${base},${y - 6} ${base},${y + 6}" class="${cls.includes("bad") ? "lab-bar-bad" : "lab-bar-ok"}" />`;
+  }
+  if (withDot && g >= IQ.lo && g <= IQ.hi) {
+    const filled = rel === 1 || rel === 3;
+    out += filled ? circle(iqX(g), y, 6.5, "lab-point-ok") : circle(iqX(g), y, 6, "lab-plot-bg") + circle(iqX(g), y, 5, "lab-side-ok");
+  }
+  return out;
+}
+
+/** "−3 · (−6) + 5": the left side a · t + b with the test value put in. */
+function inserted(a: number, b: number, t: number): string {
+  const product = a === 0 ? "0" : `${a === 1 ? "" : a === -1 ? MINUS : `${fmt(a)} · `}${paren(t)}`;
+  return `${product}${b === 0 ? "" : b > 0 ? ` + ${fmt(b)}` : ` ${MINUS} ${fmt(-b)}`}`;
+}
+
+function inequality(v: LabValues): string {
+  const { a, b, c, rel, t } = v;
+  const sol = inequalitySolution(v);
+  const R = RELATIONS[rel];
+  const lhs = a === 0 ? `0 · x${b === 0 ? "" : b > 0 ? ` + ${fmt(b)}` : ` ${MINUS} ${fmt(-b)}`}` : sum([[a, "x"], [b, ""]]);
+  const divide = a === 1 ? "" : a > 0 ? `| : ${fmt(a)}` : `| : (${fmt(a)}), Zeichen umdrehen!`;
+  let out = open("Eine Ungleichung wird umgeformt, ihre Lösungsmenge erscheint auf dem Zahlenstrahl, dazu ein Testwert");
+  const lines: Array<[string, string, string]> = [[`${lhs} ${R} ${fmt(c)}`, "lab-text lab-text-big", b !== 0 ? moveText(b) : a !== 0 ? divide : ""]];
+  if (a === 0) {
+    lines.push([`0 ${R} ${fmt(c - b)}`, "lab-text", ""]);
+    lines.push([sol.kind === "all" ? "wahr für jedes x: L = ℚ" : "falsch für jedes x: L = { }", sol.kind === "all" ? "lab-text lab-text-ok" : "lab-text lab-text-bad", ""]);
+  } else {
+    if (b !== 0) lines.push([`${sum([[a, "x"]])} ${R} ${fmt(c - b)}`, "lab-text", divide]);
+    if (a !== 1) lines.push([`x ${RELATIONS[sol.rel]} ${sol.gText}`, "lab-text lab-text-ok", ""]);
+    else lines[lines.length - 1][1] = `${lines[lines.length - 1][1]} lab-text-ok`;
+    lines.push([`L = {x | x ${RELATIONS[sol.rel]} ${sol.gText}} = ${intervalText(sol.rel, sol.gText)}`, "lab-text", ""]);
+  }
+  lines.forEach(([content, cls, note], i) => {
+    const y = 30 + i * 28;
+    out += text(16, y, content, cls);
+    if (note) out += text(250, y, note, note.includes("umdrehen") ? "lab-text-small lab-text-bad" : "lab-text-small");
+  });
+  // the test value
+  const ok = satisfies(v, t);
+  out += text(16, 160, `Testwert x = ${fmt(t)}: ${inserted(a, b, t)} = ${fmt(a * t + b)} ${R} ${fmt(c)}?`, "lab-text");
+  out += text(16, 182, ok ? "wahr: Der Testwert gehört zur Lösungsmenge." : "falsch: Der Testwert gehört nicht dazu.", ok ? "lab-text lab-text-ok" : "lab-text lab-text-bad");
+  // the number line
+  out += line(IQ.x0 - 12, IQ.y, IQ.x1 + 12, IQ.y, "lab-axis");
+  for (let k = IQ.lo; k <= IQ.hi; k++) {
+    out += line(iqX(k), IQ.y - 5, iqX(k), IQ.y + 5, "lab-thin");
+    if (k % 2 === 0) out += text(iqX(k), IQ.y + 20, fmt(k), "lab-text-tick", "middle");
+  }
+  if (sol.kind === "all") out += line(IQ.x0 - 12, IQ.y, IQ.x1 + 12, IQ.y, "lab-side-ok");
+  if (sol.kind === "bound") {
+    out += ray(sol.rel, sol.g, IQ.y, "lab-side-ok", true);
+    if (sol.g < IQ.lo || sol.g > IQ.hi) out += text(sol.g < IQ.lo ? IQ.x0 : IQ.x1, IQ.y + 58, `Randzahl ${sol.gText} liegt außerhalb der Zeichnung`, "lab-text-small", sol.g < IQ.lo ? "start" : "end");
+    if (a < 0) {
+      // what the wrong rule (no flip) would give
+      out += ray(rel, sol.g, IQ.y - 34, "lab-dashed lab-bad-stroke", false);
+      out += text(16, IQ.y - 48, `ohne Umdrehen: x ${R} ${sol.gText} (falsch)`, "lab-text-small lab-text-bad");
+    }
+  }
+  out += handle("t", iqX(t), IQ.y, `Testwert x = ${fmt(t)}`, ok ? "lab-handle" : "lab-handle lab-handle-b");
+  out += text(iqX(t), IQ.y + 36, `Testwert ${fmt(t)}`, ok ? "lab-text-small lab-text-ok" : "lab-text-small lab-text-bad", "middle");
+  out += "</svg>";
+  return out;
+}
 
 export const TERME_GLEICHUNGEN_VIEWS: Record<"like-terms" | "expand-products" | "binomial-squares" | "factorise" | "completing-square" | "extremum-problem" | "linear-equation" | "word-problem" | "inequality", LabView> = {
   "like-terms": { render: likeTerms },
@@ -923,7 +1226,17 @@ export const TERME_GLEICHUNGEN_VIEWS: Record<"like-terms" | "expand-products" | 
       figure: { x: "x", drag: (p, v) => ({ x: figureDrag(p, v) }) },
     },
   },
-  "linear-equation": placeholder,
-  "word-problem": placeholder,
-  "inequality": placeholder,
+  "linear-equation": { render: linearEquation },
+  "word-problem": {
+    render: wordProblem,
+    handles: {
+      x: { y: "x", drag: (p) => ({ x: (p.y - WP.y0) / WP.s }) },
+    },
+  },
+  "inequality": {
+    render: inequality,
+    handles: {
+      t: { x: "t", drag: (p) => ({ t: IQ.lo + ((p.x - IQ.x0) / (IQ.x1 - IQ.x0)) * (IQ.hi - IQ.lo) }) },
+    },
+  },
 };
