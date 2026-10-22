@@ -552,17 +552,18 @@ function translateScale(v: LabValues): string {
     out += text(PX, 206, `B'${point(images[1].x, images[1].y)}, C'${point(images[2].x, images[2].y)}`, "lab-text-muted");
     out += text(PX, 240, `Flächeninhalt: ${fmt(area)} FE`, "lab-text-muted");
     out += text(PX, 258, "Er bleibt gleich.", "lab-text-muted");
-    out += text(PX, 296, "Ziehe A' – das ganze Dreieck", "lab-text-small");
-    out += text(PX, 310, "wird um denselben Pfeil verschoben.", "lab-text-small");
+    out += text(PX, 296, "Ziehe A': Das ganze Dreieck", "lab-text-small");
+    out += text(PX, 310, "folgt mit demselben Pfeil.", "lab-text-small");
     out += handle("imgV", I[0].x, I[0].y, "Bildpunkt A'", "lab-handle lab-handle-b");
   } else {
-    out += text(PX, 28, `Zentrische Streckung, k = ${fmt(v.k)}`, "lab-text lab-text-big");
-    out += equation(PX, 62, [{ n: "ZA'" }, { t: " = k · " }, { n: "ZA" }]);
+    out += text(PX, 24, "Zentrische Streckung", "lab-text lab-text-big");
+    out += text(PX, 44, `Z${point(z.x, z.y)}, k = ${fmt(v.k)}`, "lab-text-muted");
+    out += equation(PX, 74, [{ n: "ZA'" }, { t: " = k · " }, { n: "ZA" }]);
     if (v.k === 0) {
       out += text(PX, 104, "k = 0 ist nicht erlaubt:", "lab-text lab-text-bad");
       out += text(PX, 122, "Alle Punkte fielen auf Z.", "lab-text-muted");
     } else {
-      out += equation(PX, 104, [{ t: `= ${fmt(v.k)} · ` }, col(sub(A, z), 2), { t: " = " }, col(sub(Ai, z), 2)]);
+      out += equation(PX, 112, [{ t: `= ${fmt(v.k)} · ` }, col(sub(A, z), 2), { t: " = " }, col(sub(Ai, z), 2)]);
       out += text(PX, 150, `A'${point(Ai.x, Ai.y)}`, "lab-text lab-text-b");
       out += text(PX, 170, `B'${point(images[1].x, images[1].y)}, C'${point(images[2].x, images[2].y)}`, "lab-text-muted");
       out += text(PX, 204, `Fläche: k² · ${fmt(area)} FE`, "lab-text-muted");
@@ -618,10 +619,11 @@ function reflection(v: LabValues): string {
     out += pointLabel(plot, M, "M", "lab-text-small", 8, 14);
   }
   out += circle(P.x, P.y, 5, "lab-point-a");
-  out += pointLabel(plot, P, `P${point(p.x, p.y)}`, "lab-text-small lab-text-a", 10, -10);
+  const above = q.y > p.y;
+  out += pointLabel(plot, P, `P${point(p.x, p.y)}`, "lab-text-small lab-text-a", 12, above ? 20 : -12);
   if (plot.contains(q.x, q.y)) {
     out += circle(Q.x, Q.y, 5, fixed ? "lab-point-ok" : "lab-point-b");
-    out += pointLabel(plot, Q, `P'${point(q.x, q.y)}`, "lab-text-small lab-text-b", 10, 18);
+    out += pointLabel(plot, Q, `P'${point(q.x, q.y)}`, "lab-text-small lab-text-b", 12, above ? -12 : 20);
   }
   // the calculation
   const c = cosDeg(2 * v.alpha);
@@ -770,7 +772,7 @@ function determinantArea(v: LabValues): string {
   }
   ["A", "B", "C"].forEach((name, i) => {
     out += circle(S[i].x, S[i].y, 4.5, "lab-point");
-    out += pointLabel(plot, S[i], name, "lab-text", -15, 5);
+    out += pointLabel(plot, S[i], name, "lab-text", -22, 5);
   });
   if (v.map !== 0) {
     ["A'", "B'", "C'"].forEach((name, i) => {
@@ -781,7 +783,7 @@ function determinantArea(v: LabValues): string {
   out += equation(PX, 30, [{ n: "AB", cls: "lab-text lab-text-a" }, { t: " = " }, col(u, 0, "lab-text lab-text-a"), { t: "  " }, { n: "AC", cls: "lab-text lab-text-b" }, { t: " = " }, col(w, 0, "lab-text lab-text-b")]);
   out += equation(PX, 82, [{ t: "det = " }, { m: [fmt(u.x), fmt(w.x), fmt(u.y), fmt(w.y)], bars: true }]);
   out += text(PX, 126, `= ${paren(u.x)} · ${paren(w.y)} − ${paren(u.y)} · ${paren(w.x)} = ${fmt(D)}`, "lab-text-muted");
-  out += text(PX, 152, `Dreieck: ½ · ${fmt(Math.abs(D))} = ${fmt(Math.abs(D) / 2)} FE`, "lab-text lab-text-big");
+  out += text(PX, 152, `Dreieck: ½ · ${fmt(Math.abs(D))} = ${fmt(Math.abs(D) / 2)} FE`, "lab-text");
   out += text(PX, 172, `Parallelogramm: ${fmt(Math.abs(D))} FE`, "lab-text-muted");
   const sense = D > 0 ? ["det > 0: A, B, C gegen", "den Uhrzeigersinn"] : D < 0 ? ["det < 0: A, B, C im Uhr-", "zeigersinn (Betrag nehmen)"] : ["det = 0: A, B und C liegen", "auf einer Geraden."];
   out += text(PX, 200, sense[0], D > 0 ? "lab-text lab-text-ok" : D < 0 ? "lab-text lab-text-bad" : "lab-text-muted");
