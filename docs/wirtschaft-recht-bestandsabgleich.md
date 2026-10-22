@@ -1,6 +1,6 @@
 # Wirtschaft und Recht 9 · Bestandsabgleich und Vorschlag zur Lernstandsübernahme
 
-Stand: 22. Oktober 2026. Die Zelle in Version `2026.10.2` deklariert die drei `replaces` der A-Zeilen und die fünf `retired_items` der C-Zeilen, genau wie unten dokumentiert. **Die Zuordnung ist noch nicht freigegeben:** `approved` in `replaces-de-by.json` ist `null`, und nur Thomas gibt sie frei. Bis dahin lehnt die Katalogsperre (`scripts/mapping-approval.mjs`) die Veröffentlichung ab, die erste Fassung `2026.10.1` bleibt unverändert veröffentlicht, und die alte Zelle `de-by:realschule-9-wirtschaft-recht-markt-vertraege` bleibt in ZAM aktiv.
+Stand: 22. Oktober 2026. Die Zelle in Version `2026.10.2` deklariert die drei `replaces` der A-Zeilen und die fünf `retired_items` der C-Zeilen, genau wie unten dokumentiert. **Thomas hat die Zuordnung am 22. Oktober 2026 freigegeben** (`approved` in `replaces-de-by.json`, sein Wortlaut in `source`). Die erste Fassung `2026.10.1` war eine neue Zelle ohne `replaces`; mit `2026.10.2` ziehen die Lernstände der drei A-Karten um, und die fünf C-Karten verlassen die aktive Wiederholung.
 
 ## Fachliche Zuordnung
 
@@ -29,9 +29,9 @@ Bei **A** erhält der Nachfolger genau ein `replaces`: Karte und Reviewereigniss
 
 Bei **J07** und **J08** ist die Entscheidung keine reine Lernstandsfrage: Der erweiterte Kreislauf gehört vermutlich in ein späteres Schuljahr. Wer die Karten behalten möchte, kann sie als C unangetastet lassen, ohne sie zu stilllegen; die Katalogsperre erlaubt C-Zeilen ohne `retired_items` ausdrücklich.
 
-## Was geprüft ist und was noch fehlt
+## Was geprüft ist
 
 1. `tests/contract.test.ts` prüft, dass die Zelle genau die dokumentierten `replaces` und `retired_items` deklariert und `approved` ein Datum mit Thomas' Wortlaut oder `null` ist, nie ein Flag.
 2. `scripts/validate-migration.mjs` läuft mit dem in der CI festgelegten zam-core in Wegwerf-Bibliotheken: Karten- und Review-IDs und FSRS-Felder der drei A-Karten bleiben unverändert und hängen am Nachfolger, die fünf C-Karten verlassen die aktive Wiederholung und behalten ihre Historie, ein wiederholter Install ändert nichts, und wer auf Alt- und Nachfolgerkarte schon Reviews hat, bekommt den Merge zurückgewiesen. Der Upgrade von `2026.10.1` ohne alte Zelle ändert keine Karte. Die CI führt das Skript aus.
-3. **Offen:** Thomas gibt die Zuordnung frei. Danach erhält `approved` das Datum, `source` seinen Wortlaut und `authorization` die erlaubten `replaces` und `retired_items`; erst dann besteht der Katalogschritt der CI und der PR lässt sich mergen.
-4. Danach übernimmt ZAM die veröffentlichten Bytes über `academy:sync`, ergänzt das Lehrplanangebot für Klasse 9 und löst die alte Teilzelle ab. Bis dahin steht der ZAM-Entwurf auf Draft, denn ein Lernender mit Karten auf alter und neuer ID würde den späteren Install ablehnen lassen.
+3. Freigabe: `approved` trägt das Datum, `source` den Wortlaut und `authorization` die erlaubten `replaces` und `retired_items`. Damit besteht der Katalogschritt der CI (`scripts/mapping-approval.mjs` prüft zusätzlich, dass die Zelle genau die dokumentierten Zeilen deklariert).
+4. ZAM übernimmt die veröffentlichten Bytes über `academy:sync`, ergänzt das Lehrplanangebot für Klasse 9 und löst die alte Teilzelle ab. Der ZAM-Entwurf bleibt bis zur Veröffentlichung von `2026.10.2` Draft, denn ein Lernender mit Karten auf alter und neuer ID würde den späteren Install ablehnen lassen.

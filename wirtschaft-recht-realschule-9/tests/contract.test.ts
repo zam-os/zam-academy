@@ -184,7 +184,7 @@ describe("takeover of the old partial cell", () => {
   });
   it("is published only on Thomas's approval: a date with his words, never a flag", () => {
     const approved = mapping.approved as string | null;
-    expect(approved === null || /^d{4}-d{2}-d{2}$/.test(approved)).toBe(true);
+    expect(approved === null || /^\d{4}-\d{2}-\d{2}$/.test(approved)).toBe(true);
     if (approved !== null) {
       expect(String(mapping.source)).toContain("Thomas");
       expect(mapping.authorization).toBeTruthy();
