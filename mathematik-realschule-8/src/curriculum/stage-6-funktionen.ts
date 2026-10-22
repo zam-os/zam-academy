@@ -1,4 +1,4 @@
-import { fmt, fmtUnit, frac, fracHtml, linear, paren, point, sum, term } from "../exercises/format";
+import { fmt, fmtUnit as fmtUnitPlain, frac, fracHtml, linear, paren, point, sum, term } from "../exercises/format";
 import type { Rng } from "../exercises/rng";
 import {
   allDifferentX,
@@ -48,6 +48,11 @@ const STAGE_ID = "stage-6-funktionen";
 const BOTH = "M8 LB 6 (I) · M8 LB 5 (II/III)";
 
 // ─── Helpers of this stage ─────────────────────────────────────────────────
+
+/** A value with its unit; amounts of money with two decimals, as on a bill (52,50 €). */
+function fmtUnit(value: number, unit: string, digits = 2): string {
+  return unit === "€" ? `${euro(value)} €` : fmtUnitPlain(value, unit, digits);
+}
 
 const CELL = "border:1px solid var(--line);padding:0.2rem 0.55rem;text-align:center";
 
@@ -917,20 +922,20 @@ function domainContext(rng: Rng) {
     const a = rng.pick([1, 2, 3]);
     const b = rng.pick([20, 25, 30]);
     const y = g + p * rng.int(a + 2, b - 2);
-    return { kind, m: p, t: g, a, b, y, text: `Ein Taxi kostet ${fmtUnit(g, "€")} Grundgebühr und ${fmtUnit(p, "€")} je Kilometer. Es fährt Strecken zwischen ${a} km und ${b} km.`, fx: `f(x) = ${linear(p, g)} (x in km, y in €)`, ask: (c: number) => `Strecke für ${fmtUnit(c, "€")}:`, unit: "€", xUnit: "km" };
+    return { kind, v: "x", m: p, t: g, a, b, y, text: `Ein Taxi kostet ${fmtUnit(g, "€")} Grundgebühr und ${fmtUnit(p, "€")} je Kilometer. Es fährt Strecken zwischen ${a} km und ${b} km.`, fx: `f(x) = ${linear(p, g)} (x in km, y in €)`, ask: (c: number) => `Strecke für ${fmtUnit(c, "€")}:`, unit: "€", xUnit: "km" };
   }
   if (kind === 1) {
     const h0 = rng.pick([45, 60, 80]);
     const r = rng.pick([1.5, 2, 2.5]);
     const b = rng.pick([10, 12, 16].filter((s) => s * r < h0));
     const y = rng.pick([h0 - r * 4, h0 - r * 6, h0 - r * 8]);
-    return { kind, m: -r, t: h0, a: 0, b, y, text: `Eine Gondel einer Seilbahn fährt aus ${h0} m Höhe mit ${fmt(r)} m pro Sekunde abwärts. Betrachtet werden die ersten ${b} Sekunden der Fahrt.`, fx: `h(t) = ${linear(-r, h0)} (t in s, h in m)`, ask: (c: number) => `Zeit bis zur Höhe ${fmtUnit(c, "m")}:`, unit: "m", xUnit: "s" };
+    return { kind, v: "t", m: -r, t: h0, a: 0, b, y, text: `Eine Gondel einer Seilbahn fährt aus ${h0} m Höhe mit ${fmt(r)} m pro Sekunde abwärts. Betrachtet werden die ersten ${b} Sekunden der Fahrt.`, fx: `h(t) = ${linear(-r, h0).replace("x", "t")} (t in s, h in m)`, ask: (c: number) => `Zeit bis zur Höhe ${fmtUnit(c, "m")}:`, unit: "m", xUnit: "s" };
   }
   const v0 = rng.pick([20, 40, 60]);
   const r = rng.pick([12, 15, 25]);
   const b = rng.pick([10, 12, 20]);
   const y = v0 + r * rng.pick([3, 4, 6]);
-  return { kind, m: r, t: v0, a: 0, b, y, text: `In einem Aquarium sind ${v0} l Wasser. Ein Schlauch füllt pro Minute ${r} l nach, ${b} Minuten lang.`, fx: `V(t) = ${linear(r, v0)} (t in min, V in l)`, ask: (c: number) => `Zeit bis ${fmtUnit(c, "l")}:`, unit: "l", xUnit: "min" };
+  return { kind, v: "t", m: r, t: v0, a: 0, b, y, text: `In einem Aquarium sind ${v0} l Wasser. Ein Schlauch füllt pro Minute ${r} l nach, ${b} Minuten lang.`, fx: `V(t) = ${linear(r, v0).replace("x", "t")} (t in min, V in l)`, ask: (c: number) => `Zeit bis ${fmtUnit(c, "l")}:`, unit: "l", xUnit: "min" };
 }
 
 const werteNullstellen: Lesson = {
@@ -1038,8 +1043,8 @@ const werteNullstellen: Lesson = {
             ],
             steps: [
               `f(${fmt(a)}) = ${linearAt(m, t, a)} = ${fmt(m * a + t)}`,
-              `${linear(m, t)} = ${fmt(b)} ⇔ ${sum([[m, "x"]])} = ${fmt(b - t)} ⇔ x = ${fmt(b - t)} : ${paren(m)} = ${fmt(xb)}`,
-              `${linear(m, t)} = 0 ⇔ ${sum([[m, "x"]])} = ${fmt(-t)} ⇔ x₀ = ${fmt(-t)} : ${paren(m)} = ${fmt(x0)}`,
+              m === 1 ? `${linear(m, t)} = ${fmt(b)} ⇔ x = ${fmt(xb)}` : `${linear(m, t)} = ${fmt(b)} ⇔ ${sum([[m, "x"]])} = ${fmt(b - t)} ⇔ x = ${fmt(b - t)} : ${paren(m)} = ${fmt(xb)}`,
+              m === 1 ? `${linear(m, t)} = 0 ⇔ x₀ = ${fmt(x0)}` : `${linear(m, t)} = 0 ⇔ ${sum([[m, "x"]])} = ${fmt(-t)} ⇔ x₀ = ${fmt(-t)} : ${paren(m)} = ${fmt(x0)}`,
               `<strong>f(${fmt(a)}) = ${fmt(m * a + t)}; x = ${fmt(xb)}; x₀ = ${fmt(x0)}, also N(${fmt(x0)} | 0)</strong>`,
             ],
             meta: { m, t, a, b, xb, x0 },
@@ -1111,7 +1116,7 @@ const werteNullstellen: Lesson = {
           steps: [
             `${ctx.fx}, D = [${fmt(ctx.a)}; ${fmt(ctx.b)}]`,
             `Werte an den Enden: ${fmt(fa)} und ${fmt(fb)}, also W = [${fmt(lo)}; ${fmt(hi)}] (in ${ctx.unit}).`,
-            `${linear(ctx.m, ctx.t)} = ${fmt(ctx.y)} ⇔ ${sum([[ctx.m, "x"]])} = ${fmt(ctx.y - ctx.t)} ⇔ x = ${fmt(ctx.y - ctx.t)} : ${paren(ctx.m)} = ${fmt(x)}`,
+            `${linear(ctx.m, ctx.t).replace("x", ctx.v)} = ${fmt(ctx.y)} ⇔ ${sum([[ctx.m, ctx.v]])} = ${fmt(ctx.y - ctx.t)} ⇔ ${ctx.v} = ${fmt(ctx.y - ctx.t)} : ${paren(ctx.m)} = ${fmt(x)}`,
             `<strong>W = [${fmt(lo)}; ${fmt(hi)}]; ${fmtUnit(ctx.y, ctx.unit)} nach ${fmtUnit(x, ctx.xUnit)}</strong>`,
           ],
           meta: { kind: ctx.kind, m: ctx.m, t: ctx.t, a: ctx.a, b: ctx.b, y: ctx.y, x },
@@ -1541,8 +1546,9 @@ const senkrecht: Lesson = {
         const g = Math.abs(gcdInt(a, b));
         const rg = ratio(b, a);
         const rh = negativeReciprocal(rg);
-        const s = nonzero(rng, 2);
         const mode = rng.int(0, 2);
+        let s = nonzero(rng, 2);
+        if (mode === 1 && (a / g) * s === a && (b / g) * s === b) s = -s;
         // mode 0: Q on h; 1: Q on g instead; 2: Q one step beside h
         const Q = mode === 0 ? { x: (-b / g) * s, y: (a / g) * s } : mode === 1 ? { x: (a / g) * s, y: (b / g) * s } : { x: (-b / g) * s, y: (a / g) * s + 1 };
         const onH = Math.abs(value(rh) * Q.x - Q.y) < 1e-9;
@@ -1743,7 +1749,7 @@ const geraden: Lesson = {
         const { r, t, x0 } = lineWithZero(rng);
         const m = value(r);
         if (level === 1) {
-          const a = rng.pick([-4, -3, -2, -1, 1, 2, 3, 4].filter((x) => x !== x0));
+          const a = rng.pick([-8, -6, -4, -3, -2, -1, 1, 2, 3, 4, 6, 8].filter((x) => x !== x0 && x % r[1] === 0 && Math.abs(x) <= 2 * r[1] + 2));
           const words = triangleWords(r);
           const g = `g: ${lineHtml(r, t)}`;
           return {
@@ -1763,7 +1769,7 @@ const geraden: Lesson = {
             steps: [
               `t = ${fmt(t)}: Start im Punkt (0 | ${fmt(t)}). m = ${ratioHtml(r)}: ${words.right}.`,
               `f(${fmt(a)}) = ${ratioFactor(r)} · ${paren(a)}${term(t, "", false)} = ${fmt(m * a + t)}`,
-              `${lineHtml(r, t).slice(4)} = 0 ⇔ ${ratioHtml(r) === "1" ? "" : ratioFactor(r) + " · "}x = ${fmt(-t)} ⇔ x₀ = ${fmt(-t)} : ${ratioFactor(r)} = ${fmt(x0)}`,
+              r[0] === 1 && r[1] === 1 ? `${lineHtml(r, t).slice(4)} = 0 ⇔ x₀ = ${fmt(x0)}` : `${lineHtml(r, t).slice(4)} = 0 ⇔ ${lineHtml(r, 0).slice(4)} = ${fmt(-t)} ⇔ x₀ = ${fmt(-t)} : ${ratioFactor(r)} = ${fmt(x0)}`,
               `<strong>${words.right}; f(${fmt(a)}) = ${fmt(m * a + t)}; x₀ = ${fmt(x0)}</strong>`,
             ],
             meta: { p: r[0], q: r[1], t, a, x0 },
@@ -1881,7 +1887,7 @@ function twoMeasurements(rng: Rng) {
       if (!Number.isInteger(T) || T < 6) continue;
       const t1 = rng.int(1, 3);
       const t2 = rng.int(t1 + 2, Math.min(T - 1, t1 + 6));
-      return { kind, m: -r, t: h0, x1: t1, x2: t2, xAsk: T, yAsk: 0, text: `Eine Kerze brennt gleichmäßig ab. ${t1} ${t1 === 1 ? "Stunde" : "Stunden"} nach dem Anzünden ist sie noch ${fmt(h0 - r * t1)} cm hoch, ${t2} Stunden nach dem Anzünden noch ${fmt(h0 - r * t2)} cm.`, xName: "t in h", yName: "h in cm", mUnit: "cm pro h", tUnit: "cm", ask: "Nach wie vielen Stunden ist sie abgebrannt?", askLabel: "abgebrannt nach", answer: T, answerUnit: "h", tName: "Anfangslänge" };
+      return { kind, m: -r, t: h0, x1: t1, x2: t2, xAsk: T, yAsk: 0, text: `Eine Kerze brennt gleichmäßig ab. ${t1} ${t1 === 1 ? "Stunde" : "Stunden"} nach dem Anzünden ist sie noch ${fmt(h0 - r * t1)} cm hoch, ${t2} Stunden nach dem Anzünden noch ${fmt(h0 - r * t2)} cm.`, xName: "x: Zeit in h", yName: "y: Höhe in cm", mUnit: "cm pro h", tUnit: "cm", ask: "Nach wie vielen Stunden ist sie abgebrannt?", askLabel: "abgebrannt nach", answer: T, answerUnit: "h", tName: "Anfangslänge" };
     }
   }
   if (kind === 1) {
@@ -1889,7 +1895,7 @@ function twoMeasurements(rng: Rng) {
     const k = rng.pick([0.02, 0.03, 0.04]);
     const [d1, d2] = rng.shuffle([200, 300, 400, 500, 800]).slice(0, 2).sort((a, b) => a - b);
     const D = rng.pick([1000, 1500, 2000]);
-    return { kind, m: k, t: T0, x1: d1, x2: d2, xAsk: D, yAsk: T0 + k * D, text: `Bei einer Erdwärmebohrung misst man in ${d1} m Tiefe ${fmt(T0 + k * d1)} °C und in ${d2} m Tiefe ${fmt(T0 + k * d2)} °C. Die Temperatur steigt gleichmäßig mit der Tiefe.`, xName: "x in m", yName: "T in °C", mUnit: "°C pro m", tUnit: "°C", ask: `Welche Temperatur ist in ${fmt(D)} m Tiefe zu erwarten?`, askLabel: `Temperatur in ${fmt(D)} m:`, answer: T0 + k * D, answerUnit: "°C", tName: "Temperatur an der Oberfläche" };
+    return { kind, m: k, t: T0, x1: d1, x2: d2, xAsk: D, yAsk: T0 + k * D, text: `Bei einer Erdwärmebohrung misst man in ${d1} m Tiefe ${fmt(T0 + k * d1)} °C und in ${d2} m Tiefe ${fmt(T0 + k * d2)} °C. Die Temperatur steigt gleichmäßig mit der Tiefe.`, xName: "x: Tiefe in m", yName: "y: Temperatur in °C", mUnit: "°C pro m", tUnit: "°C", ask: `Welche Temperatur ist in ${fmt(D)} m Tiefe zu erwarten?`, askLabel: `Temperatur in ${fmt(D)} m:`, answer: T0 + k * D, answerUnit: "°C", tName: "Temperatur an der Oberfläche" };
   }
   if (kind === 2) {
     for (;;) {
@@ -1899,14 +1905,14 @@ function twoMeasurements(rng: Rng) {
       if (!Number.isInteger(T) || T < 8) continue;
       const t1 = rng.int(1, 4);
       const t2 = rng.int(t1 + 2, Math.min(T - 1, t1 + 8));
-      return { kind, m: -r, t: V0, x1: t1, x2: t2, xAsk: T, yAsk: 0, text: `Ein Wassertank wird gleichmäßig geleert. ${t1} ${t1 === 1 ? "Minute" : "Minuten"} nach dem Öffnen des Ventils sind noch ${fmt(V0 - r * t1)} l im Tank, nach ${t2} Minuten noch ${fmt(V0 - r * t2)} l.`, xName: "t in min", yName: "V in l", mUnit: "l pro min", tUnit: "l", ask: "Nach wie vielen Minuten ist der Tank leer?", askLabel: "leer nach", answer: T, answerUnit: "min", tName: "Füllmenge zu Beginn" };
+      return { kind, m: -r, t: V0, x1: t1, x2: t2, xAsk: T, yAsk: 0, text: `Ein Wassertank wird gleichmäßig geleert. ${t1} ${t1 === 1 ? "Minute" : "Minuten"} nach dem Öffnen des Ventils sind noch ${fmt(V0 - r * t1)} l im Tank, nach ${t2} Minuten noch ${fmt(V0 - r * t2)} l.`, xName: "x: Zeit in min", yName: "y: Wassermenge in l", mUnit: "l pro min", tUnit: "l", ask: "Nach wie vielen Minuten ist der Tank leer?", askLabel: "leer nach", answer: T, answerUnit: "min", tName: "Füllmenge zu Beginn" };
     }
   }
   const p = rng.pick([1.8, 2, 2.2, 2.5]);
   const g = rng.pick([3, 3.5, 4, 4.5]);
   const [x1, x2] = rng.shuffle([4, 6, 8, 10, 12]).slice(0, 2).sort((a, b) => a - b);
   const D = rng.pick([15, 20, 25]);
-  return { kind, m: p, t: g, x1, x2, xAsk: D, yAsk: g + p * D, text: `Eine Taxifahrt über ${x1} km kostet ${euro(g + p * x1)} €, eine Fahrt über ${x2} km kostet ${euro(g + p * x2)} € (gleicher Tarif).`, xName: "x in km", yName: "y in €", mUnit: "€ pro km", tUnit: "€", ask: `Was kostet eine Fahrt über ${D} km?`, askLabel: `Preis für ${D} km:`, answer: g + p * D, answerUnit: "€", tName: "Grundgebühr" };
+  return { kind, m: p, t: g, x1, x2, xAsk: D, yAsk: g + p * D, text: `Eine Taxifahrt über ${x1} km kostet ${euro(g + p * x1)} €, eine Fahrt über ${x2} km kostet ${euro(g + p * x2)} € (gleicher Tarif).`, xName: "x: Strecke in km", yName: "y: Preis in €", mUnit: "€ pro km", tUnit: "€", ask: `Was kostet eine Fahrt über ${D} km?`, askLabel: `Preis für ${D} km:`, answer: g + p * D, answerUnit: "€", tName: "Grundgebühr" };
 }
 
 /** A linear process known by its rate and one measurement, with two times to find. */
@@ -2157,7 +2163,7 @@ const geradenBestimmen: Lesson = {
 
 // 6.8 Parallele Geraden und Parallelenscharen ────────────────────────────────
 
-const SLOPES_68: Ratio[] = [[2, 1], [-2, 1], [1, 2], [-1, 2], [3, 1], [-3, 1], [1, 3], [-1, 3], [2, 3], [-3, 2], [3, 2], [-2, 3], [1, 1], [-1, 1], [3, 4], [-4, 3]];
+const SLOPES_68: Ratio[] = [[2, 1], [-2, 1], [1, 2], [-1, 2], [3, 1], [-3, 1], [1, 3], [-1, 3], [2, 3], [-3, 2], [3, 2], [-2, 3], [1, 1], [-1, 1], [1, 4], [-4, 1]];
 
 const lcm = (a: number, b: number) => Math.abs(a * b) / gcdInt(a, b);
 
@@ -2641,6 +2647,9 @@ const pt = (x: number, y: number) => `(${fmt(x)} | ${fmt(y)})`;
 /** x − a as a term: "x + 3", "x". */
 const xMinus = (a: number) => sum([[1, "x"], [-a, ""]]);
 
+/** A term as a factor: in brackets when it is a sum, "x" alone stays bare. */
+const br = (term: string) => (term.includes(" ") ? `(${term})` : term);
+
 /** Fixed A and B, Cₙ on y = a x + b; det(AB, ACₙ) = k x + c with k ≠ 0, and a value x₀ inside the domain. */
 function movingPoint(rng: Rng) {
   for (;;) {
@@ -2777,7 +2786,7 @@ const flaechen: Lesson = {
             steps: [
               `${vn("AB")} = ${vecHtml(u.x, u.y)}, ${vn(`A${second}`)} = ${vecHtml(w.x, w.y)}`,
               `det = ${detHtml(u.x, w.x, u.y, w.y)} = ${paren(u.x)} · ${paren(w.y)} − ${paren(u.y)} · ${paren(w.x)} = ${fmt(D)}${D < 0 ? " (negativ: die Ecken laufen im Uhrzeigersinn, also den Betrag nehmen)" : ""}`,
-              `<strong>A = ${parallelogram ? "" : "½ · "}${fmt(Math.abs(D))} FE = ${fmt(area)} FE</strong>`,
+              parallelogram ? `<strong>A = ${fmt(area)} FE</strong>` : `<strong>A = ½ · ${fmt(Math.abs(D))} FE = ${fmt(area)} FE</strong>`,
             ],
             meta: { ax: A.x, ay: A.y, bx: B.x, by: B.y, cx: C.x, cy: C.y, parallelogram: parallelogram ? 1 : 0 },
           };
@@ -2793,7 +2802,7 @@ const flaechen: Lesson = {
           ],
           steps: [
             `${vn("AB")} = ${vecHtml(B.x - A.x, B.y - A.y)}, ${vn("AC<sub>n</sub>")} = ${vecHtml(xMinus(A.x), linear(a, b - A.y))}`,
-            `det = ${fmt(B.x - A.x)} · (${linear(a, b - A.y)}) − ${paren(B.y - A.y)} · (${xMinus(A.x)}) = ${linear(k, c)}`,
+            `det = ${fmt(B.x - A.x)} · ${br(linear(a, b - A.y))} − ${paren(B.y - A.y)} · ${br(xMinus(A.x))} = ${linear(k, c)}`,
             `A(x) = ½ · (${linear(k, c)}) FE = (${linear(k / 2, c / 2)}) FE, also p = ${fmt(k / 2)} und q = ${fmt(c / 2)}`,
             `<strong>A(x) = (${linear(k / 2, c / 2)}) FE; A(${fmt(x0)}) = ${fmt((k * x0 + c) / 2)} FE</strong>`,
           ],
@@ -2848,9 +2857,11 @@ const flaechen: Lesson = {
           ],
           steps: [
             `${vn("AB<sub>n</sub>")} = ${vecHtml(xMinus(xa), fmt(yB - ya))}, ${vn("AC<sub>n</sub>")} = ${vecHtml(xMinus(xa), linear(m, t - ya))}`,
-            `det = (${xMinus(xa)})(${linear(m, t - ya)}) − ${paren(yB - ya)} · (${xMinus(xa)}) = (${xMinus(xa)})(${linear(m, t - yB)})`,
+            `det = ${br(xMinus(xa))}(${linear(m, t - ya)}) − ${paren(yB - ya)} · ${br(xMinus(xa))} = ${br(xMinus(xa))}(${linear(m, t - yB)})`,
             `A(x) = ½ · det FE = (${sum([[qa, "x²"], [qb, "x"], [qc, ""]], 4)}) FE`,
-            `Quadratische Ergänzung: A(x) = [${fmt(qa)}${square} + ${fmt(max)}] FE`,
+            v === 0
+              ? `A(x) = [${fmt(qa)}x² + ${fmt(max)}] FE. Weil x² ≥ 0 und der Faktor ${fmt(qa)} negativ ist, ist A(x) für x = 0 am größten.`
+              : `Quadratische Ergänzung: A(x) = [${fmt(qa)}(${sum([[1, "x²"], [-2 * v, "x"]])})${term(qc, "", false)}] FE = [${fmt(qa)}(${square} − ${fmt(v * v)})${term(qc, "", false)}] FE = [${fmt(qa)}${square} + ${fmt(max)}] FE. Der Faktor ${fmt(qa)} ist negativ, also ist A(x) für x = ${fmt(v)} am größten.`,
             `<strong>Der Flächeninhalt ist für x = ${fmt(v)} am größten: A<sub>max</sub> = ${fmt(max)} FE</strong>`,
           ],
           meta: { xa, ya, yB, m, t, z2 },
