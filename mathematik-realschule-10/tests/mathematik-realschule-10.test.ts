@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import cellJson from "../cell.json";
+import coverage from "../coverage.json";
 import replacesJson from "../replaces-de-by.json";
 import legacyVektorgeometrie from "./fixtures/de-by-realschule-10-mathematik-ebene-vektorgeometrie-kvt.json";
 import legacyExponential from "./fixtures/de-by-realschule-10-mathematik-exponential-logarithmus-kvt.json";
@@ -84,6 +85,26 @@ describe("Lernpfad", () => {
       expect(trackI, id).toContain(id);
     }
     for (const stage of STAGES) expect(relevantLessons(stage, "I").length + relevantLessons(stage, "II_III").length, stage.id).toBeGreaterThan(0);
+  });
+
+  it("maps every Kompetenzerwartung of both Zweige to lessons, and every lesson to a competence of each of its Zweige", () => {
+    const rows = coverage.rows as Array<{ track: Track; lb: number; competence: string; lessons: string[] }>;
+    expect(rows.filter((row) => row.track === "I")).toHaveLength(24);
+    expect(rows.filter((row) => row.track === "II_III")).toHaveLength(22);
+    for (const row of rows) {
+      expect(row.lessons.length, row.competence).toBeGreaterThan(0);
+      for (const id of row.lessons) {
+        const lesson = findLessonById(id)?.lesson;
+        expect(lesson, `${id} in coverage.json`).toBeDefined();
+        expect(lesson!.tracks, `${id} serves Zweig ${row.track}`).toContain(row.track);
+        expect(LERNBEREICH[id.slice(0, 2)][row.track], `${id} in LB ${row.lb} (${row.track})`).toBe(`lb${row.lb}`);
+      }
+    }
+    for (const lesson of ALL_LESSONS) {
+      for (const track of lesson.tracks) {
+        expect(rows.some((row) => row.track === track && row.lessons.includes(lesson.id)), `${lesson.id} covers a competence of Zweig ${track}`).toBe(true);
+      }
+    }
   });
 
   it("shows the right quick-check answer at different positions across lessons", () => {
