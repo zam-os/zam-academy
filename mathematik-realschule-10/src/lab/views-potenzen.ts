@@ -223,7 +223,7 @@ function point(x: number, y: number): string {
 export const LADDER_BASES = [2, 4, 8, 9, 16, 27];
 
 /** Sub-step k of the ladder (the numerator of the exponent k/q) in SVG x. */
-const LADDER = { cx: 268, y: 214, unit: 26, row1: 134, row2: 174 };
+const LADDER = { cx: 276, y: 214, unit: 25, row1: 134, row2: 174 };
 const ladderX = (k: number) => LADDER.cx + k * LADDER.unit;
 
 /** The value a^(k/q) of ladder step k. */
@@ -250,11 +250,15 @@ function powerRules(v: LabValues): string {
   const result = approxText(ladderValue(a, sum, q));
   const resultWidth = result.length * 7.8;
   const resultX = clamp(ladderX(sum), resultWidth / 2 + 6, 514 - resultWidth / 2);
-  for (const j of [-2, -1, 0, 1, 2]) {
+  const taken: Array<[number, number]> = [[resultX - resultWidth / 2, resultX + resultWidth / 2]];
+  for (const j of [0, 1, -1, 2, -2]) {
     const k = j * q;
     if (Math.abs(k) > 8 || k === sum) continue;
     const label = valueText(ladderValue(a, k, q)).text;
-    if (Math.abs(ladderX(k) - resultX) < (label.length * 5.6 + resultWidth) / 2 + 4) continue;
+    const half = (label.length * 5.6) / 2;
+    const [left, right] = [ladderX(k) - half, ladderX(k) + half];
+    if (taken.some(([l, r]) => left < r + 5 && right > l - 5)) continue;
+    taken.push([left, right]);
     out += text(ladderX(k), LADDER.y + 43, label, "lab-text-tick", "middle");
   }
   // the two factors as arrows, the second one hung onto the first
@@ -496,13 +500,14 @@ function powerShift(v: LabValues): string {
   curves += powerBranches(plot, f, -b, c, "lab-curve");
   out += clipped("clip-shift", curves);
   if (c < 0 && a !== 0) {
-    out += text(plot.X(-b) + 5, box.y + 13, `x = ${fmt(-b)}`, "lab-text-small lab-text-c");
-    out += text(box.x + box.w - 5, plot.Y(d) - 6, `y = ${fmt(d)}`, "lab-text-small lab-text-c", "end");
+    // at the ends the axis names leave free: bottom for x = −b, left for y = d
+    out += text(plot.X(-b) + 5, box.y + box.h - 8, `x = ${fmt(-b)}`, "lab-text-small lab-text-c");
+    out += text(box.x + 5, plot.Y(d) - 6, `y = ${fmt(d)}`, "lab-text-small lab-text-c");
   }
   const hit = Math.abs(f(SHIFT_TARGET.x) - SHIFT_TARGET.y) < 1e-9;
   const target = plot.P(SHIFT_TARGET.x, SHIFT_TARGET.y);
   out += circle(target.x, target.y, 7, hit ? "lab-point-ok" : "lab-target");
-  out += text(target.x + 10, target.y - 6, "T(2 | 5)", "lab-text-small");
+  out += text(target.x + 10, target.y + 16, "T(2 | 5)", "lab-text-small");
   const M = plot.P(-b, d);
   const A = plot.P(-b + 1, d + a);
   out += polyline([M, plot.P(-b + 1, d), A], "lab-dashed");
