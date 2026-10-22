@@ -6,6 +6,7 @@ import {
   clipped,
   esc,
   handle,
+  infoBox,
   type LabView,
   line,
   open,
@@ -313,7 +314,7 @@ function expGraph(v: LabValues): string {
     // The curve approaches the x-axis where aˣ shrinks; the label goes to the other side.
     const right = v.a > 1;
     out += line(plot.X(plot.xmin), plot.Y(0), plot.X(plot.xmax), plot.Y(0), "lab-curve-c");
-    out += text(right ? plot.X(4.9) : plot.X(-3.9), plot.Y(0) - 6, "Asymptote y = 0", "lab-text-small lab-text-c", right ? "end" : "start");
+    out += text(right ? plot.X(4.2) : plot.X(-3.9), plot.Y(0) - 6, "Asymptote y = 0", "lab-text-small lab-text-c", right ? "end" : "start");
   }
   if (g) out += clipped("clip-exp", plot.graph(g, "lab-curve-2"));
   out += clipped("clip-exp", plot.graph(f, "lab-curve"));
@@ -321,14 +322,14 @@ function expGraph(v: LabValues): string {
     if (plot.contains(x, f(x))) out += circle(plot.X(x), plot.Y(f(x)), 3.5, "lab-point-a");
     if (g && plot.contains(x, g(x))) out += circle(plot.X(x), plot.Y(g(x)), 3.5, "lab-point-b");
   }
+  // Labels below the points, on the side where the curve rises away from them.
   const K = plot.P(0, v.k);
-  out += text(K.x + 10, K.y - 10, "(0 | k)", "lab-text-small");
-  out += handle("k", K.x, K.y, "Anfangswert k: Punkt (0 | k)", "lab-handle lab-handle-a");
+  const leftLabel = v.a < 1;
+  out += text(K.x + (leftLabel ? -9 : 9), K.y + 18, "(0 | k)", "lab-text-small", leftLabel ? "end" : "start");
   const F = factorHandle(v, plot);
-  if (F) {
-    out += text(F.x + 10, F.y + 16, F.x > K.x ? "(1 | k · a)" : "(−1 | k : a)", "lab-text-small");
-    out += handle("a", F.x, F.y, "Basis a: Punkt eine Einheit neben der y-Achse");
-  }
+  if (F) out += text(F.x + (F.x > K.x ? 12 : -12), F.y + 4, F.x > K.x ? "(1 | k · a)" : "(−1 | k : a)", "lab-text-small", F.x > K.x ? "start" : "end");
+  out += handle("k", K.x, K.y, "Anfangswert k: Punkt (0 | k)", "lab-handle lab-handle-a");
+  if (F) out += handle("a", F.x, F.y, "Basis a: Punkt eine Einheit neben der y-Achse");
 
   // The table of values: constant factor beside constant difference.
   const left = 360;
@@ -366,7 +367,7 @@ export const GROWTH_DATA: Array<[number, number]> = [
 ];
 
 /** The plot of N(t) : N₀ over 30 time steps; the axis shows the absolute values. */
-export const growthPlot = () => new Plot(0, 30, 0, 4.4, { x: 62, y: 20, w: 300, h: 290 });
+export const growthPlot = () => new Plot(0, 30, 0, 4.4, { x: 54, y: 20, w: 294, h: 290 });
 
 /** Time after which the stock has doubled (p > 0) or halved (p < 0); null for p = 0. */
 export function characteristicTime(p: number): number | null {
@@ -390,10 +391,9 @@ function growth(v: LabValues): string {
     [2, "2 N₀"],
     [4, "4 N₀"],
   ];
-  for (const [level, name] of levels) {
+  for (const [level] of levels) {
     out += line(plot.X(0), plot.Y(level), plot.X(30), plot.Y(level), "lab-grid");
     out += text(plot.box.x - 5, plot.Y(level) + 4, fmt(v.N0 * level, 0), "lab-text-tick", "end");
-    out += text(plot.X(30) - 3, plot.Y(level) - 3, name, "lab-text-small", "end");
   }
   out += line(plot.X(0), plot.Y(0), plot.X(30) + 6, plot.Y(0), "lab-ink");
   for (let t = 0; t <= 30; t += 5) out += text(plot.X(t), plot.Y(0) + 14, String(t), "lab-text-tick", "middle");
@@ -401,11 +401,12 @@ function growth(v: LabValues): string {
   // one bar per time step: each one is a times the one before
   let bars = "";
   for (let t = 0; t <= 30; t++) {
-    const h = Math.min(rel(t), 4.6);
-    bars += rect(plot.X(t) - 3, plot.Y(h), 6, plot.Y(0) - plot.Y(h), t === v.t ? "lab-fill-ok" : "lab-fill-a");
+    if (rel(t) > 4.4) break;
+    bars += rect(plot.X(t) - 3, plot.Y(rel(t)), 6, plot.Y(0) - plot.Y(rel(t)), t === v.t ? "lab-bar-ok" : "lab-bar-ghost");
   }
   out += clipped("clip-growth", bars + plot.graph(rel, "lab-curve"));
   // doubling or halving times: the same span between every two levels
+  let timeLabel = "";
   if (T !== null) {
     const steps = v.p > 0 ? [2, 4] : [0.5, 0.25, 0.125];
     steps.forEach((level, i) => {
@@ -415,11 +416,14 @@ function growth(v: LabValues): string {
       out += circle(plot.X(t), plot.Y(level), 4, "lab-point-b");
       if (i === 0) {
         const name = v.p > 0 ? `Verdopplung nach ${fmt(T, 2)}` : `Halbierung nach ${fmt(T, 2)}`;
-        const leftSide = t > 20;
-        out += text(plot.X(t) + (leftSide ? -8 : 8), plot.Y(level) - 8, name, "lab-text-small lab-text-b", leftSide ? "end" : "start");
+        const leftSide = t > 15;
+        timeLabel = infoBox(plot.X(t) + (leftSide ? -12 : 12), plot.Y(level) - 10, [[name, "lab-text-small lab-text-b"]], leftSide ? "end" : "start");
       }
     });
   }
+  // the levels N₀, 2 N₀, … on small panels over bars and curve
+  for (const [level, name] of levels.slice(1)) out += infoBox(plot.X(30) - 4, plot.Y(level) + 4, [[name, "lab-text-small"]], "end");
+  out += timeLabel;
   // the measured values of the third Laborauftrag
   const fits = v.N0 === GROWTH_DATA[0][1] && v.p === 20;
   for (const [t, N] of GROWTH_DATA) {
@@ -431,16 +435,17 @@ function growth(v: LabValues): string {
     out += line(plot.X(v.t), plot.Y(0), plot.X(v.t), plot.Y(rel(v.t)), "lab-dashed");
     out += circle(plot.X(v.t), plot.Y(rel(v.t)), 5.5, "lab-point-ok");
   }
-  out += handle("t", plot.X(v.t), plot.Y(0), "Zeitpunkt t");
-  out += mathBox(378, 40, [
+  out += mathBox(367, 40, [
     ["N(t) = N_{0} · a^{t}", "lab-text"],
     [`a = 1 ${v.p < 0 ? "−" : "+"} ${fmt(Math.abs(v.p))} % = ${fmt(a, 2)}`, "lab-text-muted"],
     [`N(t) = ${fmt(v.N0)} · ${fmt(a, 2)}^{t}`, "lab-text lab-text-a"],
     [`N(${v.t}) ≈ ${fmt(Nt, 2)}`, "lab-text lab-text-ok"],
     [T === null ? "p = 0: N bleibt gleich" : v.p > 0 ? `Verdopplungszeit ≈ ${fmt(T, 2)}` : `Halbwertszeit ≈ ${fmt(T, 2)}`, "lab-text-small"],
-    ["Kreise: Messwerte (0 | 300),", "lab-text-small"],
-    ["(1 | 360) und (2 | 432)", "lab-text-small"],
+    ["Kreise: die Messwerte", "lab-text-small"],
+    ["(0 | 300), (1 | 360),", "lab-text-small"],
+    ["(2 | 432)", "lab-text-small"],
   ]);
+  out += handle("t", plot.X(v.t), plot.Y(0), "Zeitpunkt t");
   return out + "</svg>";
 }
 
@@ -467,25 +472,32 @@ function logSolve(v: LabValues): string {
     const S = plot.P(x, v.b);
     out += line(S.x, S.y, S.x, plot.Y(0), "lab-dashed");
     out += circle(S.x, plot.Y(0), 4, "lab-point-ok");
-    out += mtext(S.x, plot.Y(0) + 30, `x = ${logNameSvg(v.a)} ${fmt(v.b)} ≈ ${fmt(x, 2)}`, "lab-text-small lab-text-ok", "middle");
-    out += handle("S", S.x, S.y, "Schnittpunkt S entlang der Kurve", "lab-handle lab-handle-a");
+    const label = `x = ${logNameSvg(v.a)} ${fmt(v.b)} ≈ ${fmt(x, 2)}`;
+    const half = (visibleWidth(label) * charWidth("small")) / 2;
+    const labelX = Math.min(Math.max(S.x, plot.box.x + half + 2), plot.box.x + plot.box.w - half - 2);
+    out += mtext(labelX, plot.Y(0) + 30, label, "lab-text-small lab-text-ok", "middle");
     lines.push([`x = ${logNameSvg(v.a)} ${fmt(v.b)} ≈ ${fmt(x, 3)}`, "lab-text lab-text-ok"]);
     lines.push([v.a === 10 ? "Taschenrechner: Taste log" : `Taschenrechner: lg ${fmt(v.b)} : lg ${fmt(v.a)}`, "lab-text-muted"]);
   } else {
     lines.push(["keine Lösung:", "lab-text lab-text-bad"]);
     lines.push([`${fmt(v.a)}^{x} ist immer positiv`, "lab-text-muted"]);
   }
-  out += handle("b", plot.X(B_HANDLE_X), plot.Y(v.b), "Gerade y = b", "lab-handle lab-handle-b");
-  out += text(plot.X(B_HANDLE_X) - 12, plot.Y(v.b) - 10, "y = b", "lab-text-small lab-text-b", "end");
-  // The panel goes where the curve is not: left for a > 1, right for a < 1.
+  out += text(plot.X(B_HANDLE_X) - 12, plot.Y(v.b) + 18, "y = b", "lab-text-small lab-text-b", "end");
+  // The panel goes where the curve is not: left for a > 1, right for a < 1. Handles come last, above it.
   const { w } = panelSize(lines);
   out += mathBox(v.a > 1 ? plot.box.x + 14 : plot.box.x + plot.box.w - w + 2, plot.box.y + 24, lines);
+  if (v.b > 0) {
+    const S = plot.P(logBase(v.a, v.b), v.b);
+    out += handle("S", S.x, S.y, "Schnittpunkt S entlang der Kurve", "lab-handle lab-handle-a");
+  }
+  out += handle("b", plot.X(B_HANDLE_X), plot.Y(v.b), "Gerade y = b", "lab-handle lab-handle-b");
   return out + "</svg>";
 }
 
 // ─── 5.4 Logarithmensätze ──────────────────────────────────────────────────
 
-const RULE = { x0: 34, x1: 496, L0: -3.5, L1: 5.2 };
+/** The number line of logarithms: lg values from L0 to L1 between the SVG x0 and x1. */
+const RULE = { x0: 34, x1: 496, L0: -1.2, L1: 3.2 };
 const ROWS = { a: 70, b: 110, result: 150, wrong: 190, axis: 232, numbers: 282 };
 
 /** The SVG x of a logarithm value on the number line. */
@@ -496,6 +508,11 @@ export function ruleX(L: number): number {
 /** The logarithm value at an SVG x. */
 export function ruleL(px: number): number {
   return RULE.L0 + ((px - RULE.x0) / (RULE.x1 - RULE.x0)) * (RULE.L1 - RULE.L0);
+}
+
+/** True when a logarithm value is on the visible part of the number line. */
+export function onRule(L: number): boolean {
+  return Number.isFinite(L) && L >= RULE.L0 && L <= RULE.L1;
 }
 
 const lg = Math.log10;
@@ -510,13 +527,15 @@ export function ruleGeometry(v: LabValues): { u: number; v: number | null; r: nu
   return { u: lu, v: lv, r: null };
 }
 
-function numberLabel(n: number): string {
-  if (n >= 4) return `10^{${n}}`;
-  return fmt(10 ** n, 3);
-}
-
 function bar(L0: number, L1: number, y: number, cls: string): string {
   return rect(Math.min(ruleX(L0), ruleX(L1)), y - 7, Math.abs(ruleX(L1) - ruleX(L0)), 14, cls, 'rx="3"');
+}
+
+/** A small label that starts at the logarithm value L but stays inside the drawing. */
+function ruleLabel(L: number, y: number, content: string, cls: string): string {
+  const width = visibleWidth(content) * charWidth("small");
+  const x = Math.max(RULE.x0, Math.min(ruleX(Math.max(RULE.L0, Math.min(L, RULE.L1))), RULE.x1 + 18 - width));
+  return mtext(x, y, content, cls);
 }
 
 function logRules(v: LabValues): string {
@@ -524,16 +543,23 @@ function logRules(v: LabValues): string {
   const lv = lg(v.v);
   const geo = ruleGeometry(v);
   let out = open("Logarithmensätze am Zahlenstrahl der Logarithmen");
+  out += `<clipPath id="clip-rules"><rect x="${RULE.x0 - 6}" y="40" width="${RULE.x1 - RULE.x0 + 12}" height="260" /></clipPath>`;
   // the two scales: logarithms above, the numbers themselves below
   out += line(RULE.x0, ROWS.axis, RULE.x1 + 6, ROWS.axis, "lab-ink");
   out += line(RULE.x0, ROWS.numbers, RULE.x1 + 6, ROWS.numbers, "lab-ink");
-  for (let n = -3; n <= 5; n++) {
-    out += line(ruleX(n), ROWS.axis - 5, ruleX(n), ROWS.axis + 5, "lab-ink");
-    out += text(ruleX(n), ROWS.axis + 18, fmt(n), "lab-text-tick", "middle");
-    out += line(ruleX(n), ROWS.numbers - 6, ruleX(n), ROWS.numbers + 6, "lab-ink");
-    out += mtext(ruleX(n), ROWS.numbers + 20, numberLabel(n), "lab-text-tick", "middle");
-    if (n < 5) for (let m = 2; m <= 9; m++) out += line(ruleX(n + lg(m)), ROWS.numbers - 3, ruleX(n + lg(m)), ROWS.numbers + 3, "lab-thin");
+  for (let n = -2; n <= 3; n++) {
+    if (onRule(n)) {
+      out += line(ruleX(n), ROWS.axis - 5, ruleX(n), ROWS.axis + 5, "lab-ink");
+      out += text(ruleX(n), ROWS.axis + 18, fmt(n), "lab-text-tick", "middle");
+      out += line(ruleX(n), ROWS.numbers - 6, ruleX(n), ROWS.numbers + 6, "lab-ink");
+      out += text(ruleX(n), ROWS.numbers + 20, fmt(10 ** n, 3), "lab-text-tick", "middle");
+    }
+    for (let m = 2; m <= 9; m++) {
+      const L = n + lg(m);
+      if (onRule(L)) out += line(ruleX(L), ROWS.numbers - 3, ruleX(L), ROWS.numbers + 3, "lab-thin");
+    }
   }
+  for (const half of [-0.5, 0.5, 1.5, 2.5]) out += line(ruleX(half), ROWS.axis - 3, ruleX(half), ROWS.axis + 3, "lab-thin");
   out += line(ruleX(0), ROWS.a - 16, ruleX(0), ROWS.axis, "lab-dashed");
   out += text(RULE.x0 - 4, ROWS.axis + 4, "lg", "lab-text-axis", "end");
   out += text(RULE.x0 - 4, ROWS.numbers + 4, "Zahl", "lab-text-axis", "end");
@@ -548,72 +574,76 @@ function logRules(v: LabValues): string {
   out += mtext(RULE.x0, 28, titles[v.rule] ?? titles[0], "lab-text lab-text-big");
   const U = fmt(v.u);
   const V = fmt(v.v);
+  let drawing = "";
+  let labels = "";
+  let result: number | null = null;
   if (v.rule === 0 || v.rule === 1) {
     const sign = v.rule === 0 ? 1 : -1;
-    const result = lu + sign * lv;
-    out += arrow(ruleX(0), ROWS.a, ruleX(lu), ROWS.a, "lab-side-a", 3);
-    out += text(ruleX(lu / 2), ROWS.a - 12, `lg ${U} ≈ ${fmt(lu, 3)}`, "lab-text-small lab-text-a", "middle");
-    out += line(ruleX(lu), ROWS.a, ruleX(lu), ROWS.b, "lab-dashed");
-    out += arrow(ruleX(lu), ROWS.b, ruleX(result), ROWS.b, "lab-side-b", 3);
-    out += text(ruleX(lu + (sign * lv) / 2), ROWS.b - 12, `${sign > 0 ? "+" : "−"} lg ${V} ≈ ${fmt(lv, 3)}`, "lab-text-small lab-text-b", "middle");
+    result = lu + sign * lv;
+    drawing += arrow(ruleX(0), ROWS.a, ruleX(lu), ROWS.a, "lab-side-a", 3);
+    labels += ruleLabel(Math.min(0, lu), ROWS.a - 13, `lg ${U} ≈ ${fmt(lu, 3)}`, "lab-text-small lab-text-a");
+    drawing += line(ruleX(lu), ROWS.a, ruleX(lu), ROWS.b, "lab-dashed");
+    drawing += arrow(ruleX(lu), ROWS.b, ruleX(result), ROWS.b, "lab-side-b", 3);
+    labels += ruleLabel(Math.min(lu, result), ROWS.b - 13, `${sign > 0 ? "+" : "−"} lg ${V} ≈ ${fmt(lv, 3)}`, "lab-text-small lab-text-b");
     const number = v.rule === 0 ? v.u * v.v : v.u / v.v;
-    out += bar(0, result, ROWS.result, "lab-fill-ok");
-    out += text(ruleX(Math.max(0, result)) + 8, ROWS.result + 4, `lg(${U} ${v.rule === 0 ? "·" : ":"} ${V}) = lg ${fmt(number, 3)} ≈ ${fmt(result, 3)} ✓`, "lab-text-small lab-text-ok");
+    drawing += bar(0, result, ROWS.result, "lab-fill-ok");
+    labels += ruleLabel(Math.max(0, result) + 0.08, ROWS.result + 4, `lg(${U} ${v.rule === 0 ? "·" : ":"} ${V}) = lg ${fmt(number, 3)} ≈ ${fmt(result, 3)} ✓`, "lab-text-small lab-text-ok");
     // the classic slip: the logarithm of the sum, or the quotient of the logarithms
     const wrong = v.rule === 0 ? lg(v.u + v.v) : lv === 0 ? null : lu / lv;
     if (wrong !== null) {
       const hit = Math.abs(wrong - result) < 1e-9;
-      out += circle(ruleX(wrong), ROWS.wrong, 5, hit ? "lab-point-ok" : "lab-point-bad");
+      if (onRule(wrong)) drawing += circle(ruleX(wrong), ROWS.wrong, 5, hit ? "lab-point-ok" : "lab-point-bad");
       const label = v.rule === 0 ? `lg(${U} + ${V}) ≈ ${fmt(wrong, 3)}` : `lg ${U} : lg ${V} ≈ ${fmt(wrong, 3)}`;
-      out += text(ruleX(wrong) + 9, ROWS.wrong + 4, `${hit ? "zufällig gleich: " : "falsch: "}${label}`, hit ? "lab-text-small lab-text-ok" : "lab-text-small lab-text-bad");
+      labels += ruleLabel(wrong + 0.09, ROWS.wrong + 4, `${hit ? "zufällig gleich: " : "falsch: "}${label}`, hit ? "lab-text-small lab-text-ok" : "lab-text-small lab-text-bad");
     } else {
-      out += text(ruleX(0) + 9, ROWS.wrong + 4, "falsch: lg u : lg v (hier Division durch 0)", "lab-text-small lab-text-bad");
+      labels += ruleLabel(0.09, ROWS.wrong + 4, "falsch: lg u : lg v (hier Division durch 0)", "lab-text-small lab-text-bad");
     }
-    out += line(ruleX(result), ROWS.result + 8, ruleX(result), ROWS.numbers, "lab-dashed");
-    out += circle(ruleX(result), ROWS.numbers, 4.5, "lab-point-ok");
   } else if (v.rule === 2) {
-    const result = v.r * lu;
-    out += arrow(ruleX(0), ROWS.a, ruleX(lu), ROWS.a, "lab-side-a", 3);
-    out += text(ruleX(lu / 2), ROWS.a - 12, `lg ${U} ≈ ${fmt(lu, 3)}`, "lab-text-small lab-text-a", "middle");
-    out += arrow(ruleX(0), ROWS.b, ruleX(result), ROWS.b, "lab-side-b", 3);
+    result = v.r * lu;
+    drawing += arrow(ruleX(0), ROWS.a, ruleX(lu), ROWS.a, "lab-side-a", 3);
+    labels += ruleLabel(Math.min(0, lu), ROWS.a - 13, `lg ${U} ≈ ${fmt(lu, 3)}`, "lab-text-small lab-text-a");
+    drawing += arrow(ruleX(0), ROWS.b, ruleX(result), ROWS.b, "lab-side-b", 3);
     // marks every whole multiple of lg u along the r-fold arrow
-    for (let j = 1; j < Math.abs(v.r); j++) out += line(ruleX(Math.sign(v.r) * j * lu), ROWS.b - 6, ruleX(Math.sign(v.r) * j * lu), ROWS.b + 6, "lab-ink");
-    out += text(ruleX(result / 2), ROWS.b - 12, `${fmt(v.r)} · lg ${U} ≈ ${fmt(result, 3)}`, "lab-text-small lab-text-b", "middle");
-    out += bar(0, result, ROWS.result, "lab-fill-ok");
-    out += mtext(ruleX(Math.max(0, result)) + 8, ROWS.result + 4, `lg(${U}^{${fmt(v.r)}}) = lg ${fmt(v.u ** v.r, 3)} ≈ ${fmt(result, 3)} ✓`, "lab-text-small lab-text-ok");
+    for (let j = 1; j < Math.abs(v.r); j++) drawing += line(ruleX(Math.sign(v.r) * j * lu), ROWS.b - 6, ruleX(Math.sign(v.r) * j * lu), ROWS.b + 6, "lab-ink");
+    labels += ruleLabel(Math.min(0, result), ROWS.b - 13, `${fmt(v.r)} · lg ${U} ≈ ${fmt(result, 3)}`, "lab-text-small lab-text-b");
+    drawing += bar(0, result, ROWS.result, "lab-fill-ok");
+    labels += ruleLabel(Math.max(0, result) + 0.08, ROWS.result + 4, `lg(${U}^{${fmt(v.r)}}) = lg ${fmt(v.u ** v.r, 3)} ≈ ${fmt(result, 3)} ✓`, "lab-text-small lab-text-ok");
     const wrong = lu ** v.r;
-    if (Number.isFinite(wrong) && Math.abs(wrong) < 20) {
-      out += circle(ruleX(wrong), ROWS.wrong, 5, "lab-point-bad");
-      out += mtext(ruleX(wrong) + 9, ROWS.wrong + 4, `falsch: (lg ${U})^{${fmt(v.r)}} ≈ ${fmt(wrong, 3)}`, "lab-text-small lab-text-bad");
+    if (Number.isFinite(wrong)) {
+      if (onRule(wrong)) drawing += circle(ruleX(wrong), ROWS.wrong, 5, "lab-point-bad");
+      labels += ruleLabel(wrong + 0.09, ROWS.wrong + 4, `falsch: (lg ${U})^{${fmt(v.r)}} ≈ ${fmt(wrong, 3)}`, "lab-text-small lab-text-bad");
     } else {
-      out += mtext(ruleX(0) + 9, ROWS.wrong + 4, `falsch: (lg ${U})^{${fmt(v.r)}} ist hier nicht definiert`, "lab-text-small lab-text-bad");
+      labels += ruleLabel(0.09, ROWS.wrong + 4, `falsch: (lg ${U})^{${fmt(v.r)}} ist hier nicht definiert`, "lab-text-small lab-text-bad");
     }
-    out += line(ruleX(result), ROWS.result + 8, ruleX(result), ROWS.numbers, "lab-dashed");
-    out += circle(ruleX(result), ROWS.numbers, 4.5, "lab-point-ok");
   } else {
     // log_u v: how many copies of lg u fill lg v
-    out += arrow(ruleX(0), ROWS.a, ruleX(lv), ROWS.a, "lab-side-b", 3);
-    out += text(ruleX(lv / 2), ROWS.a - 12, `lg ${V} ≈ ${fmt(lv, 3)}`, "lab-text-small lab-text-b", "middle");
+    drawing += arrow(ruleX(0), ROWS.a, ruleX(lv), ROWS.a, "lab-side-b", 3);
+    labels += ruleLabel(Math.min(0, lv), ROWS.a - 13, `lg ${V} ≈ ${fmt(lv, 3)}`, "lab-text-small lab-text-b");
     if (lu === 0) {
-      out += text(ruleX(0) + 8, ROWS.b + 4, "Basis u = 1 ist nicht erlaubt: lg 1 = 0.", "lab-text-small lab-text-bad");
+      labels += ruleLabel(0.09, ROWS.b + 4, "Basis u = 1 ist nicht erlaubt: lg 1 = 0.", "lab-text-small lab-text-bad");
     } else {
-      const result = lv / lu;
-      const copies = Math.min(Math.floor(Math.abs(result) + 1e-9), 40);
-      const dir = Math.sign(result) || 1;
-      for (let j = 0; j < copies; j++) out += bar(dir * j * lu, dir * (j + 1) * lu, ROWS.b, j % 2 === 0 ? "lab-fill-a" : "lab-fill-c");
-      if (Math.abs(result) - copies > 1e-9) out += bar(dir * copies * lu, lv, ROWS.b, "lab-target");
-      out += text(ruleX(Math.max(0, lv, dir * copies * lu)) + 8, ROWS.b + 4, `${fmt(Math.abs(result), 3)}-mal lg ${U}`, "lab-text-small lab-text-a");
-      out += mtext(RULE.x0, ROWS.result + 4, `log_{${U}} ${V} = lg ${V} : lg ${U} ≈ ${fmt(result, 3)}`, "lab-text lab-text-ok");
+      const copies = lv / lu;
+      const whole = Math.min(Math.floor(Math.abs(copies) + 1e-9), 40);
+      const dir = Math.sign(copies) || 1;
+      for (let j = 0; j < whole; j++) drawing += bar(dir * j * lu, dir * (j + 1) * lu, ROWS.b, j % 2 === 0 ? "lab-fill-a" : "lab-fill-c");
+      if (Math.abs(copies) - whole > 1e-9) drawing += bar(dir * whole * lu, lv, ROWS.b, "lab-target");
+      labels += ruleLabel(Math.max(0, lv, dir * whole * lu) + 0.08, ROWS.b + 4, `${fmt(Math.abs(copies), 3)}-mal lg ${U}`, "lab-text-small lab-text-a");
+      labels += mtext(RULE.x0, ROWS.result + 4, `log_{${U}} ${V} = lg ${V} : lg ${U} ≈ ${fmt(copies, 3)}`, "lab-text lab-text-ok");
       const wrong = lg(v.v / v.u);
-      out += circle(ruleX(wrong), ROWS.wrong, 5, Math.abs(wrong - result) < 1e-9 ? "lab-point-ok" : "lab-point-bad");
-      out += text(ruleX(wrong) + 9, ROWS.wrong + 4, `falsch: lg(${V} : ${U}) ≈ ${fmt(wrong, 3)}`, "lab-text-small lab-text-bad");
+      if (onRule(wrong)) drawing += circle(ruleX(wrong), ROWS.wrong, 5, Math.abs(wrong - copies) < 1e-9 ? "lab-point-ok" : "lab-point-bad");
+      labels += ruleLabel(wrong + 0.09, ROWS.wrong + 4, `falsch: lg(${V} : ${U}) ≈ ${fmt(wrong, 3)}`, "lab-text-small lab-text-bad");
     }
   }
-  // handles at the arrow tips
+  if (result !== null) {
+    drawing += line(ruleX(result), ROWS.result + 8, ruleX(result), ROWS.numbers, "lab-dashed");
+    if (onRule(result)) drawing += circle(ruleX(result), ROWS.numbers, 4.5, "lab-point-ok");
+  }
+  out += clipped("clip-rules", drawing) + labels;
+  // handles at the arrow tips, where they are on the number line
   const uRow = v.rule === 3 ? ROWS.b : ROWS.a;
-  if (!(v.rule === 3 && lu === 0)) out += handle("u", ruleX(geo.u), uRow, "Zahl u", "lab-handle lab-handle-a");
-  if (geo.v !== null) out += handle("v", ruleX(geo.v), v.rule === 3 ? ROWS.a : ROWS.b, "Zahl v", "lab-handle lab-handle-b");
-  if (geo.r !== null && Math.abs(lu) > 0.02) out += handle("r", ruleX(geo.r), ROWS.b, "Hochzahl r", "lab-handle lab-handle-b");
+  if (!(v.rule === 3 && lu === 0) && onRule(geo.u)) out += handle("u", ruleX(geo.u), uRow, "Zahl u", "lab-handle lab-handle-a");
+  if (geo.v !== null && onRule(geo.v)) out += handle("v", ruleX(geo.v), v.rule === 3 ? ROWS.a : ROWS.b, "Zahl v", "lab-handle lab-handle-b");
+  if (geo.r !== null && Math.abs(lu) > 0.02 && onRule(geo.r)) out += handle("r", ruleX(geo.r), ROWS.b, "Hochzahl r", "lab-handle lab-handle-b");
   return out + "</svg>";
 }
 
@@ -652,7 +682,9 @@ function expShift(v: LabValues): string {
   // The asymptote's label sits where the curve comes close, on the far side of the line.
   out += hline(plot, v.c, "lab-curve-c");
   const approachRight = v.a < 1;
-  const label: Pt = { x: approachRight ? plot.X(7.3) : plot.X(-7.3), y: plot.Y(v.c) + (v.k >= 0 ? 15 : -6) };
+  // below the line it would sit on the x-axis numbers when c = 0
+  const below = v.k >= 0 ? (v.c === 0 ? 27 : 15) : -6;
+  const label: Pt = { x: approachRight ? plot.X(7.3) : plot.X(-7.3), y: plot.Y(v.c) + below };
   out += text(label.x, label.y, `Asymptote y = ${fmt(v.c)}`, "lab-text-small lab-text-c", approachRight ? "end" : "start");
   const avoid: Pt[] = samplePixels(plot, (x) => [x, f(x)], plot.xmin, plot.xmax);
   for (let i = 0; i <= 10; i++) avoid.push({ x: label.x + (approachRight ? -i * 10 : i * 10), y: label.y - 4 });
@@ -669,13 +701,12 @@ function expShift(v: LabValues): string {
     const zero = v.b + logBase(v.a, -v.c / v.k);
     if (plot.contains(zero, 0)) out += circle(plot.X(zero), plot.Y(0), 4.5, "lab-point-ok");
   }
+  // The point's label goes above it, on the side where the curve is lower.
   const P = plot.P(v.b, v.k + v.c);
-  if (plot.contains(v.b, v.k + v.c)) {
-    out += text(P.x + 11, P.y - 9, `(${fmt(v.b)} | ${fmt(v.k + v.c)})`, "lab-text-small");
-    out += handle("P", P.x, P.y, "Punkt (b | k + c): verschiebt waagrecht und streckt", "lab-handle lab-handle-a");
-  }
+  const pVisible = plot.contains(v.b, v.k + v.c);
+  const rising = v.k * (v.a - 1) > 0;
+  if (pVisible) out += text(P.x + (rising ? -11 : 11), P.y - 10, `(${fmt(v.b)} | ${fmt(v.k + v.c)})`, "lab-text-small", rising ? "end" : "start");
   const C = plot.P(cHandleX(v), v.c);
-  out += handle("c", C.x, C.y, "Asymptote y = c: verschiebt senkrecht", "lab-handle lab-handle-b");
   const lines: Array<[string, string]> = [
     [v.k === 0 ? `y = ${fmt(v.c)} (k = 0)` : `y = ${expSvg(v.k, v.a, v.b, v.c)}`, "lab-text lab-text-big"],
     [`Asymptote y = ${fmt(v.c)}`, "lab-text lab-text-c"],
@@ -684,6 +715,9 @@ function expShift(v: LabValues): string {
   if (v.inv === 1 && v.k !== 0) lines.push([`Umkehrfunktion: y = ${logNameSvg(v.a)}(${inverseArg(v.k, v.c)})${plusConst(v.b)}`, "lab-text-small lab-text-b"]);
   avoid.push(P, C);
   out += cornerBox(plot, lines, avoid);
+  // handles last, above the panel
+  if (pVisible) out += handle("P", P.x, P.y, "Punkt (b | k + c): verschiebt waagrecht und streckt", "lab-handle lab-handle-a");
+  out += handle("c", C.x, C.y, "Asymptote y = c: verschiebt senkrecht", "lab-handle lab-handle-b");
   return out + "</svg>";
 }
 
@@ -737,14 +771,10 @@ function logGraph(v: LabValues): string {
     if (plot.contains(zero, 0)) out += circle(plot.X(zero), plot.Y(0), 4.5, "lab-point-ok");
   }
   const A = plot.P(v.b + 1, v.c);
-  if (plot.contains(v.b + 1, v.c)) {
-    out += text(A.x + 11, A.y + 16, `(${fmt(v.b + 1)} | ${fmt(v.c)})`, "lab-text-small");
-    out += handle("A", A.x, A.y, "Punkt (b + 1 | c): verschiebt den Graphen", "lab-handle lab-handle-a");
-  }
+  const aVisible = plot.contains(v.b + 1, v.c);
+  if (aVisible) out += text(A.x + 11, A.y + 16, `(${fmt(v.b + 1)} | ${fmt(v.c)})`, "lab-text-small");
   const K = stretchPoint(v, plot);
-  if (K) out += handle("k", plot.X(K.x), plot.Y(K.y), "Streckfaktor k", "lab-handle lab-handle-b");
   const B = plot.P(v.b, B_HANDLE_Y);
-  out += handle("b", B.x, B.y, "Asymptote x = b", "lab-handle");
   const lines: Array<[string, string]> = [
     [v.k === 0 ? `y = ${fmt(v.c)} (k = 0)` : `y = ${logSvg(v.k, v.a, v.b, v.c)}`, "lab-text lab-text-big"],
     [`Asymptote x = ${fmt(v.b)}`, "lab-text lab-text-c"],
@@ -754,6 +784,10 @@ function logGraph(v: LabValues): string {
   avoid.push(A, B);
   if (K) avoid.push(plot.P(K.x, K.y));
   out += cornerBox(plot, lines, avoid);
+  // handles last, above the panel
+  if (aVisible) out += handle("A", A.x, A.y, "Punkt (b + 1 | c): verschiebt den Graphen", "lab-handle lab-handle-a");
+  if (K) out += handle("k", plot.X(K.x), plot.Y(K.y), "Streckfaktor k", "lab-handle lab-handle-b");
+  out += handle("b", B.x, B.y, "Asymptote x = b", "lab-handle");
   return out + "</svg>";
 }
 
