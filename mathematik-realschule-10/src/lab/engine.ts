@@ -5,6 +5,7 @@ import type {
   LabValues,
   ReadoutValues,
 } from "../model/types";
+import { stepDecimals } from "../exercises/rng";
 
 /** The values a lab starts with. */
 export function defaultLabValues(lab: LabDefinition): LabValues {
@@ -22,8 +23,7 @@ export function clampParam(param: LabParam, raw: number): number {
   if (param.type === "state") return raw;
   const clamped = Math.min(param.max, Math.max(param.min, raw));
   const steps = Math.round((clamped - param.min) / param.step);
-  const decimals = Math.max(0, -Math.floor(Math.log10(param.step) + 1e-9));
-  return Number((param.min + steps * param.step).toFixed(decimals));
+  return Number((param.min + steps * param.step).toFixed(stepDecimals(param.step)));
 }
 
 /**

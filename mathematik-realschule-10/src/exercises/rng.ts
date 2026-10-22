@@ -36,8 +36,7 @@ export function createRng(seed: number): Rng {
     stepped(min, max, step) {
       const steps = Math.floor((max - min) / step + 1e-9);
       const value = min + step * Math.floor(next() * (steps + 1));
-      const decimals = Math.max(0, -Math.floor(Math.log10(step) + 1e-9));
-      return Number(value.toFixed(decimals));
+      return Number(value.toFixed(stepDecimals(step)));
     },
     pick(items) {
       return items[Math.floor(next() * items.length)];
@@ -67,4 +66,10 @@ export function seedFrom(text: string): number {
     hash = Math.imul(hash, 16777619);
   }
   return hash >>> 0;
+}
+
+/** Decimals of a slider or task step as written: 0.25 → 2, 0.5 → 1, 5 → 0. */
+export function stepDecimals(step: number): number {
+  const [, fraction = ""] = String(step).split(".");
+  return fraction.length;
 }
