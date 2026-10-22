@@ -638,17 +638,17 @@ export const inclinationOf = (m: number): number => (m >= 0 ? atanD(m) : atanD(m
 
 const NEGATIVE_TR = "Der Taschenrechner liefert einen negativen Winkel. Steigungswinkel liegen zwischen 0° und 180°: Addiere 180°.";
 
-/** The steps of the intersection angle, from the inclination angles rounded to two decimals. */
+/** The steps of the intersection angle; it is computed from the unrounded inclination angles. */
 function angleSteps(m1: number, m2: number): { lines: string[]; phi: number } {
-  const a1 = round(inclinationOf(m1), 2);
-  const a2 = round(inclinationOf(m2), 2);
-  const d = round(Math.abs(a2 - a1), 2);
+  const a1 = inclinationOf(m1);
+  const a2 = inclinationOf(m2);
+  const d = Math.abs(a2 - a1);
   const say = (m: number, a: number, i: string) => `α${i} = tan⁻¹(${fmt(m)})${m < 0 ? " + 180°" : ""} ≈ ${fmt(a)}°`;
-  const phi = d <= 90 ? d : round(180 - d, 2);
+  const phi = intersectionAngle(a1, a2);
   return {
     lines: [
       `${say(m1, a1, "₁")}; ${say(m2, a2, "₂")}`,
-      `|α₂ − α₁| ≈ ${fmt(d)}°${d > 90 ? ` &gt; 90°, also φ = 180° − ${fmt(d)}° = ${fmt(phi)}°` : `, also φ ≈ ${fmt(phi)}°`}`,
+      `|α₂ − α₁| ≈ ${fmt(d)}°${d > 90 ? ` &gt; 90°, also φ ≈ 180° − ${fmt(d)}° = ${fmt(phi)}°` : `, also φ ≈ ${fmt(phi)}°`}`,
     ],
     phi,
   };
