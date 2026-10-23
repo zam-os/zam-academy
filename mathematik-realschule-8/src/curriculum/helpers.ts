@@ -1,3 +1,4 @@
+import { toleranceOf } from "../exercises/checker";
 import type { NumberField, ChoiceField } from "../model/types";
 
 /** True when `value` is within `tolerance` (relative) of `target`. */
@@ -29,11 +30,11 @@ export function numberField(
   digits = 2,
   extra: Partial<NumberField> = {},
 ): NumberField {
-  // A slip that happens to equal the answer (sin 45° = cos 45°) is no slip.
-  const slips = extra.slips?.filter(
-    (slip) => Number.isFinite(slip.value) && Math.abs(slip.value - answer) > Math.max(1e-9, 0.02 * Math.abs(answer), 0.51 * 10 ** -digits),
-  );
-  return { kind: "number", label, answer, unit, digits, ...extra, ...(slips ? { slips } : {}) };
+  const field: NumberField = { kind: "number", label, answer, unit, digits, ...extra };
+  // A slip the checker would accept as right is no slip; every value it
+  // rejects keeps its targeted hint.
+  const slips = extra.slips?.filter((slip) => Number.isFinite(slip.value) && Math.abs(slip.value - answer) > toleranceOf(field));
+  return slips ? { ...field, slips } : field;
 }
 
 /** A choice field among a few options. */
