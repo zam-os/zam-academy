@@ -680,9 +680,9 @@ describe("Labore der Etappe 6", () => {
   it("6.5 the product is −1 exactly where the angle is 90°", () => {
     const lab = lesson("fu-5-senkrecht").lab;
     const start = at(lab, {});
-    expect(start.r.m1).toBe("1/3 ≈ 0,33");
-    expect(start.r.m2).toBe("−2");
-    expect(start.r.produkt).toBe("−2/3 ≈ −0,67");
+    expect(start.r.m1).toBe("0,5");
+    expect(start.r.m2).toBe("−2/3 ≈ −0,67");
+    expect(start.r.produkt).toBe("−1/3 ≈ −0,33");
     expect(at(lab, GOAL_WITNESSES_STAGE_6["fu-5-senkrecht"].bruch).r.produkt).toBe("−1");
     expect(at(lab, GOAL_WITNESSES_STAGE_6["fu-5-senkrecht"].achse).r.produkt).toBe("nicht berechenbar");
     for (const values of enumerateLabGrid(lab, 7)) {
@@ -736,10 +736,10 @@ describe("Labore der Etappe 6", () => {
   it("6.8 S lies on g and on h, and h is perpendicular to g", () => {
     const lab = lesson("fu-8-parallelenscharen").lab;
     const start = at(lab, {});
-    expect(start.r.g).toBe("y = 2x");
+    expect(start.r.g).toBe("y = 2x + 1");
     expect(start.r.durchP).toBe("y = 2x − 1");
     expect(start.r.h).toBe("y = −0,5x + 4");
-    expect(start.r.S).toBe("(1,6 | 3,2)");
+    expect(start.r.S).toBe("(1,2 | 3,4)");
     for (const values of enumerateLabGrid(lab, 6)) {
       const v = values as LabValues;
       const h = familyNormal(v);
@@ -757,15 +757,15 @@ describe("Labore der Etappe 6", () => {
     expect(start.r.A).toBe("50 €");
     expect(start.r.B).toBe("40 €");
     expect(start.r.gleich).toBe("bei 200 km: 70 €");
-    expect(at(lab, { m1: 0.25, t1: 30, m2: 0.25, t2: 10 }).r.gleich).toBe("nie (gleicher Preis je km)");
-    expect(at(lab, { m1: 0.15, x: 90 }).r.A).toBe("43,50 €");
+    expect(at(lab, { m1: 25, t1: 30, m2: 25, t2: 10 }).r.gleich).toBe("nie (gleicher Preis je km)");
+    expect(at(lab, { m1: 15, x: 90 }).r.A).toBe("43,50 €");
     const immer = lab.goals.find((g) => g.id === "immer-b")!;
     for (const values of enumerateLabGrid(lab, 3)) {
       const v = values as LabValues;
       const be = breakEven(v);
-      if (typeof be === "object") close(v.t1 + v.m1 * be.x, v.t2 + v.m2 * be.x, 1e-9);
+      if (typeof be === "object") close(v.t1 + (v.m1 / 100) * be.x, v.t2 + (v.m2 / 100) * be.x, 1e-9);
       if (immer.check(v, computeReadouts(lab, v))) {
-        for (const x of [0, 100, 250, 400]) expect(v.t2 + v.m2 * x).toBeLessThan(v.t1 + v.m1 * x);
+        for (const x of [0, 100, 250, 400]) expect(v.t2 + (v.m2 / 100) * x).toBeLessThan(v.t1 + (v.m1 / 100) * x);
       }
     }
   });

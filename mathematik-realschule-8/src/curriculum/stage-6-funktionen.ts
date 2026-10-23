@@ -23,6 +23,7 @@ import {
   ORIGIN_TARGET,
   POINT_TARGET,
   TARIFF_MAX,
+  tariffCost,
   originSlope,
   perpendicularPair,
   type Ratio,
@@ -1209,7 +1210,7 @@ const ursprungsgeraden: Lesson = {
   `,
   formulas: [
     { name: "Ursprungsgerade", html: "y = m · x", quantities: "m Steigung; der Graph geht durch O(0 | 0)" },
-    { name: "Steigung aus einem Punkt", html: "m = y<sub>P</sub> : x<sub>P</sub>", quantities: "P(x_P | y_P) ein Punkt der Geraden außer O" },
+    { name: "Steigung aus einem Punkt", html: "m = y<sub>P</sub> : x<sub>P</sub>", quantities: "P(xₚ | yₚ) ein Punkt der Geraden außer O" },
     { name: "Steigungsdreieck", html: "m = Δy : Δx", quantities: "Δx nach rechts, Δy nach oben (negativ: nach unten)" },
   ],
   quiz: {
@@ -1464,11 +1465,11 @@ const senkrecht: Lesson = {
     kind: "perpendicular",
     title: "Labor: Senkrecht oder nicht?",
     intro:
-      "Ziehe P₁ und P₂. Blau ist das Steigungsdreieck von g₁, gestrichelt dasselbe Dreieck um 90° um O gedreht: Geht g₂ durch seine Spitze P₁′, stehen die Geraden senkrecht aufeinander.",
+      "Ziehe P₁ und P₂. Blau ist das Steigungsdreieck von g₁, lila dasselbe Dreieck um 90° um O gedreht: Geht g₂ durch seine Spitze P₁′, stehen die Geraden senkrecht aufeinander.",
     params: [
-      { type: "range", key: "x1", label: "x-Koordinate von P₁", unit: "", min: -6, max: 6, step: 1, value: 3 },
-      { type: "range", key: "y1", label: "y-Koordinate von P₁", unit: "", min: -6, max: 6, step: 1, value: 1 },
-      { type: "range", key: "x2", label: "x-Koordinate von P₂", unit: "", min: -6, max: 6, step: 1, value: -1 },
+      { type: "range", key: "x1", label: "x-Koordinate von P₁", unit: "", min: -6, max: 6, step: 1, value: 4 },
+      { type: "range", key: "y1", label: "y-Koordinate von P₁", unit: "", min: -6, max: 6, step: 1, value: 2 },
+      { type: "range", key: "x2", label: "x-Koordinate von P₂", unit: "", min: -6, max: 6, step: 1, value: -3 },
       { type: "range", key: "y2", label: "y-Koordinate von P₂", unit: "", min: -6, max: 6, step: 1, value: 2 },
     ],
     readouts: [
@@ -2224,7 +2225,7 @@ const parallelenscharen: Lesson = {
         ],
         value: 2,
       },
-      { type: "range", key: "t", label: "Scharparameter t", unit: "", min: -6, max: 6, step: 0.5, value: 0, digits: 1 },
+      { type: "range", key: "t", label: "Scharparameter t", unit: "", min: -6, max: 6, step: 0.5, value: 1, digits: 1 },
       { type: "range", key: "px", label: "x-Koordinate von P", unit: "", min: -5, max: 5, step: 1, value: 2 },
       { type: "range", key: "py", label: "y-Koordinate von P", unit: "", min: -5, max: 5, step: 1, value: 3 },
     ],
@@ -2469,14 +2470,14 @@ const anwendungen: Lesson = {
       "Zwei Mietwagen-Tarife: Grundgebühr plus Preis je Kilometer. Ziehe die Punkte auf der y-Achse (Grundgebühr), am rechten Rand (Preis je km) und die Strecke x. Wo sich die Geraden schneiden, kosten beide gleich viel.",
     params: [
       { type: "range", key: "t1", label: "Grundgebühr Tarif A", unit: "€", min: 0, max: 60, step: 5, value: 30 },
-      { type: "range", key: "m1", label: "Preis je km Tarif A", unit: "€", min: 0.05, max: 0.6, step: 0.05, value: 0.2, digits: 2 },
+      { type: "range", key: "m1", label: "Preis je km Tarif A", unit: "ct", min: 5, max: 60, step: 5, value: 20 },
       { type: "range", key: "t2", label: "Grundgebühr Tarif B", unit: "€", min: 0, max: 60, step: 5, value: 10 },
-      { type: "range", key: "m2", label: "Preis je km Tarif B", unit: "€", min: 0.05, max: 0.6, step: 0.05, value: 0.3, digits: 2 },
+      { type: "range", key: "m2", label: "Preis je km Tarif B", unit: "ct", min: 5, max: 60, step: 5, value: 30 },
       { type: "range", key: "x", label: "Strecke x", unit: "km", min: 0, max: TARIFF_MAX, step: 10, value: 100 },
     ],
     readouts: [
-      { key: "A", label: "Kosten Tarif A", compute: (v) => `${euro(v.t1 + v.m1 * v.x)} €` },
-      { key: "B", label: "Kosten Tarif B", compute: (v) => `${euro(v.t2 + v.m2 * v.x)} €` },
+      { key: "A", label: "Kosten Tarif A", compute: (v) => `${euro(tariffCost(v.t1, v.m1, v.x))} €` },
+      { key: "B", label: "Kosten Tarif B", compute: (v) => `${euro(tariffCost(v.t2, v.m2, v.x))} €` },
       {
         key: "gleich",
         label: "Gleich teuer",
@@ -2493,17 +2494,17 @@ const anwendungen: Lesson = {
       {
         id: "break-150",
         text: "Stelle die Tarife so ein, dass beide bei genau 150 km gleich viel kosten.",
-        check: (v) => Math.abs(v.m1 - v.m2) > 1e-9 && Math.abs(v.t1 + 150 * v.m1 - (v.t2 + 150 * v.m2)) < 1e-9,
+        check: (v) => v.m1 !== v.m2 && Math.abs(tariffCost(v.t1, v.m1, 150) - tariffCost(v.t2, v.m2, 150)) < 1e-9,
       },
       {
         id: "immer-b",
         text: "Stelle Tarif B so ein, dass er für jede Strecke günstiger ist als Tarif A. Was muss für Grundgebühr und Preis je km gelten?",
-        check: (v) => v.t2 < v.t1 && v.m2 <= v.m1 + 1e-12,
+        check: (v) => v.t2 < v.t1 && v.m2 <= v.m1,
       },
       {
         id: "beide-50",
         text: "Stelle die Tarife und die Strecke so ein, dass beide Tarife bei dieser Strecke genau 50 € kosten.",
-        check: (v) => Math.abs(v.t1 + v.m1 * v.x - 50) < 1e-9 && Math.abs(v.t2 + v.m2 * v.x - 50) < 1e-9,
+        check: (v) => Math.abs(tariffCost(v.t1, v.m1, v.x) - 50) < 1e-9 && Math.abs(tariffCost(v.t2, v.m2, v.x) - 50) < 1e-9,
       },
     ],
   },

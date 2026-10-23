@@ -55,8 +55,8 @@ export const GOAL_WITNESSES_STAGE_6: Record<string, Record<string, LabValues>> =
     "nullstelle-vier": { m: -0.5, t: 2 },
   },
   "fu-7-geraden-bestimmen": {
-    // P(0 | 4), Q(4 | 2): m = −2 : 4 = −1/2, t = 4, and −0,5 · 2 + 4 = 3
-    "steigung-r": { px: 0, py: 4, qx: 4, qy: 2 },
+    // P(0 | 3), Q(4 | 1): m = −2 : 4 = −1/2, t = 3, and −0,5 · (−2) + 3 = 4
+    "steigung-r": { px: 0, py: 3, qx: 4, qy: 1 },
     // P(−2 | −1), Q(4 | 2): m = 1/2, t = −1 − 0,5 · (−2) = 0
     ursprung: { px: -2, py: -1, qx: 4, qy: 2 },
     // x = 2
@@ -71,12 +71,12 @@ export const GOAL_WITNESSES_STAGE_6: Record<string, Record<string, LabValues>> =
     "schnitt-y": { m: 2, t: 0, px: 2, py: -1 },
   },
   "fu-9-anwendungen": {
-    // 30 + 0,2 · 150 = 60 = 15 + 0,3 · 150
-    "break-150": { t1: 30, m1: 0.2, t2: 15, m2: 0.3, x: 100 },
-    // B: 10 € and 0,15 € per km, both below A
-    "immer-b": { t1: 30, m1: 0.2, t2: 10, m2: 0.15, x: 100 },
-    // 30 + 0,2 · 100 = 50 = 20 + 0,3 · 100
-    "beide-50": { t1: 30, m1: 0.2, t2: 20, m2: 0.3, x: 100 },
+    // 30 € + 20 ct · 150 = 60 € = 15 € + 30 ct · 150
+    "break-150": { t1: 30, m1: 20, t2: 15, m2: 30, x: 100 },
+    // B: 10 € and 15 ct per km, both below A
+    "immer-b": { t1: 30, m1: 20, t2: 10, m2: 15, x: 100 },
+    // 30 € + 20 ct · 100 = 50 € = 20 € + 30 ct · 100
+    "beide-50": { t1: 30, m1: 20, t2: 20, m2: 30, x: 100 },
   },
   "fu-10-flaechen": {
     // A(x) = 3 · 0 + 6 = 6
