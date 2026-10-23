@@ -395,7 +395,7 @@ const symmetrischeKoerper: Lesson = {
         const index = rng.int(0, SYM_OBJECTS.length - 1);
         const o = SYM_OBJECTS[index];
         return {
-          prompt: `${o.text} Welcher Körper ist das? Wie viele Symmetrieebenen und Symmetrieachsen hat er, und hat er ein Symmetriezentrum?`,
+          prompt: `${o.text} Wie viele Symmetrieebenen und Symmetrieachsen hat der Körper, und hat er ein Symmetriezentrum?`,
           given: [],
           fields: [
             shuffledChoice(rng, "Symmetrieebenen", o.planes, o.planesWrong),
@@ -771,7 +771,7 @@ const axialschnitte: Lesson = {
           return {
             prompt: `Der Axialschnitt eines Rohrs besteht aus zwei Rechtecken, jedes ${fmt(w)} cm breit und ${L} cm hoch. Von der Außenkante des einen bis zur Außenkante des anderen sind es ${B} cm. Wie groß sind Außenradius und Innenradius des Rohrs?`,
             given: [],
-            fields: [numberField("Außenradius:", B / 2, "cm", 2, { slips: [{ value: B, hint: "Das ist der Außendurchmesser; der Radius ist die Hälfte." }] }), numberField("Innenradius:", B / 2 - w, "cm", 2, { slips: [{ value: B - 2 * w, hint: "Das ist der Innendurchmesser, die Breite der Lücke. Der Radius ist die Hälfte." }, { value: B / 2 - 2 * w, hint: "Vom Außenradius ziehst du die Wanddicke nur einmal ab." }] })],
+            fields: [numberField("Außenradius:", B / 2, "cm", 2, { slips: [{ value: B, hint: "Das ist der Außendurchmesser; der Radius ist die Hälfte." }] }), numberField("Innenradius:", B / 2 - w, "cm", 2, { slips: [{ value: B - 2 * w, hint: "Das ist der Innendurchmesser, die Breite der Lücke. Der Radius ist die Hälfte." }, ...(B / 2 - 2 * w > 0 ? [{ value: B / 2 - 2 * w, hint: "Vom Außenradius ziehst du die Wanddicke nur einmal ab." }] : [])] })],
             steps: [`Die Gesamtbreite ist der Außendurchmesser: Außenradius = ${B} cm : 2 = ${fmtUnit(B / 2, "cm")}.`, `Jedes Rechteck ist ein Stück Wand: Innenradius = ${fmt(B / 2)} cm − ${fmt(w)} cm = ${fmtUnit(B / 2 - w, "cm")}`, `<strong>Außenradius ${fmtUnit(B / 2, "cm")}, Innenradius ${fmtUnit(B / 2 - w, "cm")}</strong>`],
             meta: { ctx, a: B / 2, b: B / 2 - w, B, w },
           };
@@ -936,7 +936,7 @@ const raumkoordinaten: Lesson = {
           }
           const label = mid ? "M" : name.slice(-1);
           return {
-            prompt: `Ein Quader ABCDEFGH liegt so im Koordinatensystem, dass A im Ursprung liegt, [AB] auf der x-Achse, [AD] auf der y-Achse und [AE] auf der z-Achse. Gib die Koordinaten von ${name} an.`,
+            prompt: `Ein Quader ABCDEFGH liegt so im Koordinatensystem, dass A im Ursprung liegt, [AB] auf der x-Achse, [AD] auf der y-Achse und [AE] auf der z-Achse. Gib die Koordinaten ${name} an.`,
             given: [`[AB] = ${a}, [AD] = ${b}, [AE] = ${c} (in Einheiten)`, CUBOID_GIVEN],
             formulaHint: "Weg vom Ursprung: x nach vorne, y nach rechts, z nach oben; Mittelpunkt: von jeder Koordinate den Mittelwert",
             fields: [numberField("x =", target[0], "", 1), numberField("y =", target[1], "", 1), numberField("z =", target[2], "", 1)],
@@ -1064,7 +1064,7 @@ const raumkoordinaten: Lesson = {
             numberField("x =", spot[0], "", 1),
             numberField("y =", spot[1], "", 1),
             numberField("z =", spot[2], "", 1),
-            numberField("Abstand:", distance, "m", 1, { slips: [px, py, pz].filter((value) => value !== distance).map((value) => ({ value, hint: `Der Abstand von dieser Wand oder vom Boden ist die ${letter}-Koordinate von P.` })) }),
+            numberField("Abstand:", distance, "m", 1, { slips: [px, py, pz].filter((value) => value !== distance).map((value) => ({ value, hint: ["Der Abstand vom Boden ist die Höhe, also die z-Koordinate von P.", "Der Abstand von der linken Wand ist die y-Koordinate von P.", "Der Abstand von der Rückwand ist die x-Koordinate von P."][target] })) }),
           ],
           steps: [
             `${plane}. Senkrecht dorthin ändert sich nur die ${letter}-Koordinate: Sie wird 0, die beiden anderen bleiben.`,
@@ -1321,7 +1321,7 @@ const koerperKoordinaten: Lesson = {
         const dz = rng.pick([1, 2, 3]);
         const S: [number, number, number] = [(x1 + x2) / 2, (y1 + y2) / 2 + dy, h + dz];
         return {
-          prompt: `Eine gerade Pyramide hat das Rechteck ABCD mit A${point3(x1, y1, 0)} und C${point3(x2, y2, 0)} als Grundfläche und ist ${h} hoch. Sie wird um ${dy} Einheiten in y-Richtung verschoben und auf einen ${dz} hohen Sockel gestellt. Gib die Koordinaten der verschobenen Spitze an.`,
+          prompt: `Eine gerade Pyramide hat das Rechteck ABCD mit A${point3(x1, y1, 0)} und C${point3(x2, y2, 0)} als Grundfläche und ist ${h} hoch. Sie wird um ${dy} Einheiten in y-Richtung verschoben und auf einen Sockel der Höhe ${dz} gestellt. Gib die Koordinaten der verschobenen Spitze an.`,
           given: ["Die Kanten der Grundfläche sind parallel zur x- und zur y-Achse"],
           fields: [
             numberField("x =", S[0], "", 1),
@@ -1348,6 +1348,10 @@ const Q_CHOICES: Array<{ q: number; text: string; lengths: number[] }> = [
   { q: 0.25, text: "¼", lengths: [4, 8, 10, 12] },
   { q: 0.75, text: "¾", lengths: [4, 8, 12] },
 ];
+
+/** Pairs of segments of a pyramid ABCDS with [AB] on s: both undistorted, or at least one distorted. */
+export const PYRAMID_TRUE_PAIRS = ["[AB] und [MS]", "[CD] und [MS]", "[AB] und [CD]"];
+export const PYRAMID_DISTORTED_PAIRS = ["[BC] und [MS]", "[AB] und [BS]", "[AC] und [MS]", "[AD] und [CD]", "[BC] und [AD]"];
 
 const OBLIQUE_HINT = "Tiefenkante: gezeichnete Länge = q · wahre Länge; Kanten auf s und Höhen in wahrer Größe";
 
@@ -1482,19 +1486,21 @@ const schraegbilder: Lesson = {
           const b = rng.pick(qc.lengths);
           const a = rng.pick([5, 6, 7, 8, 9].filter((x) => x !== b));
           const h = rng.pick([6, 7, 8, 9]);
+          const pair = rng.pick(PYRAMID_TRUE_PAIRS);
           return {
-            prompt: `Die Grundfläche der geraden Pyramide ABCDS ist das Rechteck ABCD mit [AB] = ${a} cm und [BC] = ${b} cm. Die Spitze S liegt ${h} cm senkrecht über dem Diagonalenschnittpunkt M. Im Schrägbild liegt [AB] auf der Schrägbildachse; ω = ${omega}°, q = ${qc.text}. Wie lang werden [BC] und [MS] gezeichnet? Wie groß erscheint der Winkel ∢ABC? Welche Strecken erscheinen in wahrer Größe?`,
+            prompt: `Die Grundfläche der geraden Pyramide ABCDS ist das Rechteck ABCD mit [AB] = ${a} cm und [BC] = ${b} cm. Die Spitze S liegt ${h} cm senkrecht über dem Diagonalenschnittpunkt M. Im Schrägbild liegt [AB] auf der Schrägbildachse; ω = ${omega}°, q = ${qc.text}. Wie lang werden [BC] und [MS] gezeichnet? Wie groß erscheint der Winkel ∢ABC? Welches Streckenpaar erscheint in wahrer Größe?`,
             given: [],
             fields: [
               numberField("[BC] im Bild:", qc.q * b, "cm", 2, { slips: [{ value: b, hint: "[BC] ist eine Tiefenkante und wird mit q verkürzt." }, { value: b / qc.q, hint: "Mit q multiplizieren, nicht durch q teilen." }] }),
               numberField("[MS] im Bild:", h, "cm", 2, { slips: [{ value: qc.q * h, hint: "Die Höhe [MS] steht senkrecht und wird nicht verkürzt." }] }),
               numberField("∢ABC im Bild:", 180 - omega, "°", 0, { slips: [{ value: omega, hint: "ω liegt vorne links bei A. Bei B liegt der Nebenwinkel: 180° − ω." }, { value: 90, hint: "In Wirklichkeit ist ∢ABC ein rechter Winkel, im Schrägbild nicht: Die Tiefenkante läuft unter ω." }] }),
-              shuffledChoice(rng, "In wahrer Größe:", "[AB] und [MS]", ["[BC] und [MS]", "[AB] und [BS]", "[AC] und [MS]"]),
+              shuffledChoice(rng, "In wahrer Größe:", pair, rng.shuffle(PYRAMID_DISTORTED_PAIRS).slice(0, 3)),
             ],
             steps: [
               `[BC] läuft in die Tiefe: ${qc.text} · ${b} cm = ${fmtUnit(qc.q * b, "cm")}. [MS] steht senkrecht: ${h} cm.`,
               `Bei B liegen die Kante [BA] (nach links) und die Tiefenkante [BC] (unter ${omega}° nach rechts oben): ∢ABC = 180° − ${omega}° = ${180 - omega}°.`,
-              `<strong>[BC]: ${fmtUnit(qc.q * b, "cm")}; [MS]: ${h} cm; ∢ABC = ${180 - omega}°; wahre Größe: [AB] und [MS]</strong>`,
+              `In wahrer Größe erscheinen die Kanten parallel zu s, [AB] und [CD], und die senkrechte Höhe [MS]; Tiefenkanten, Diagonalen und Seitenkanten sind verzerrt.`,
+              `<strong>[BC]: ${fmtUnit(qc.q * b, "cm")}; [MS]: ${h} cm; ∢ABC = ${180 - omega}°; wahre Größe: ${pair}</strong>`,
             ],
             meta: { kind, q: qc.q, omega, a, b, h },
           };
@@ -1580,6 +1586,12 @@ export const ANGLE_CASES: Array<{ body: string; name: string; where: string; val
   { body: "einem Quader ABCDEFGH (6 cm × 4 cm × 3 cm)", name: "∢AEH", where: "zwischen der senkrechten Kante [EA] und der Tiefenkante [EH]", value: 90, picture: "größer", why: "Die linke Seitenfläche ist ein Rechteck: rechter Winkel. Im Bild ist er 90° + 45° = 135° groß." },
 ];
 export const COMPARE = ["kleiner als in Wirklichkeit", "genauso groß", "größer als in Wirklichkeit"];
+
+/** Segments and angles of a cuboid ABCDEFGH with [AB] on s: in the front face ABFE undistorted, elsewhere distorted. */
+export const TRUE_SEGMENTS = ["die Kante [BF]", "die Kante [AE]", "die Kante [EF]"];
+export const DISTORTED_SEGMENTS = ["die Tiefenkante [BC]", "die Tiefenkante [AD]", "die Tiefenkante [FG]", "die Diagonale [AC]", "die Diagonale [BG]"];
+export const TRUE_ANGLES = ["∢ABF", "∢BAE", "∢AEF", "∢EFB"];
+export const DISTORTED_ANGLES = ["∢ABC", "∢BAD", "∢FBC", "∢EAD", "∢BCG"];
 
 /** A face diagonal as a pupil measures it in a true-size drawing: to a tenth of a centimetre. */
 export function measured(a: number, b: number): number {
@@ -1683,16 +1695,18 @@ const wahreGroesse: Lesson = {
           const front = rng.pick([4, 5, 6, 7]);
           const h = rng.pick([3, 4, 5, 6]);
           const drawn = qc.q * depth;
+          const seg = rng.pick(TRUE_SEGMENTS);
+          const ang = rng.pick(TRUE_ANGLES);
           return {
             prompt: `Im Schrägbild eines Quaders ABCDEFGH (ω = 45°, q = ${qc.text}) liegt [AB] auf der Schrägbildachse. Du misst [AB] = ${front} cm, die Tiefenkante [BC] = ${fmtUnit(drawn, "cm")} und [BF] = ${h} cm. Wie lang ist [BC] in Wirklichkeit? Welche Strecke darfst du im Schrägbild in wahrer Größe abmessen, und welcher Winkel erscheint dort unverzerrt?`,
             given: [],
             formulaHint: "wahre Länge einer Tiefenkante = gezeichnete Länge : q; unverzerrt sind nur Strecken und Winkel parallel zur Zeichenebene",
             fields: [
               numberField("[BC] =", depth, "cm", 2, { slips: [{ value: drawn, hint: "Das ist die Bildlänge. Tiefenkanten sind verkürzt: wahre Länge = Bildlänge : q." }, { value: drawn * qc.q, hint: "Zurück rechnest du mit : q, nicht mit · q." }] }),
-              shuffledChoice(rng, "Strecke in wahrer Größe:", "die Kante [BF]", ["die Tiefenkante [BC]", "die Diagonale [AC]", "die Diagonale [BG]"]),
-              shuffledChoice(rng, "Winkel unverzerrt:", "∢ABF", ["∢ABC", "∢BAD", "∢FBC"]),
+              shuffledChoice(rng, "Strecke in wahrer Größe:", seg, rng.shuffle(DISTORTED_SEGMENTS).slice(0, 3)),
+              shuffledChoice(rng, "Winkel unverzerrt:", ang, rng.shuffle(DISTORTED_ANGLES).slice(0, 3)),
             ],
-            steps: [`[BC] ist eine Tiefenkante: ${fmt(drawn)} cm : ${qc.text} = ${depth} cm.`, "[BF] steht senkrecht und liegt wie [AB] in der Vorderfläche, also parallel zur Zeichenebene. ∢ABF liegt in der Vorderfläche und ist auch im Bild ein rechter Winkel; ∢ABC, ∢BAD und ∢FBC enthalten eine Tiefenkante und sind verzerrt.", `<strong>[BC] = ${depth} cm; [BF]; ∢ABF</strong>`],
+            steps: [`[BC] ist eine Tiefenkante: ${fmt(drawn)} cm : ${qc.text} = ${depth} cm.`, `Unverzerrt ist alles in der Vorderfläche ABFE, denn sie liegt parallel zur Zeichenebene: ${seg.replace("die ", "")} und der rechte Winkel ${ang}. Tiefenkanten, Diagonalen und Winkel an einer Tiefenkante sind verzerrt.`, `<strong>[BC] = ${depth} cm; ${seg}; ${ang}</strong>`],
             meta: { q: qc.q, depth, front, h, drawn },
           };
         }
@@ -1733,7 +1747,7 @@ const wahreGroesse: Lesson = {
             given: [],
             formulaHint: "rechte Winkel bleiben in wahrer Größe 90°; Quadratdiagonale: 45°; gleichseitiges Dreieck: 60°",
             fields: [
-              numberField(`${c.name} =`, c.value, "°", 0, { slips: c.value === 90 ? [{ value: 45, hint: "45° wäre der Winkel im Schrägbild. In Wirklichkeit ist der Winkel ein rechter." }, { value: 135, hint: "135° wäre der Winkel im Schrägbild. In Wirklichkeit ist der Winkel ein rechter." }] : [{ value: 90, hint: "Die Diagonale oder Seite teilt den rechten Winkel: Es sind nicht 90°." }] }),
+              numberField(`${c.name} =`, c.value, "°", 0, { slips: c.value === 90 ? [45, 135].map((value) => ({ value, hint: "So groß kann der Winkel im Schrägbild aussehen. In Wirklichkeit ist er ein rechter Winkel." })) : [{ value: 90, hint: "Die Diagonale oder Seite teilt den rechten Winkel: Es sind nicht 90°." }] }),
               choiceField("im Schrägbild:", COMPARE, answer),
             ],
             steps: [c.why, `Im Schrägbild: ${c.picture === "gleich" ? "Der Winkel liegt parallel zur Zeichenebene und erscheint genauso groß." : `Eine Tiefenkante läuft schräg nach hinten, der Winkel erscheint ${c.picture} als in Wirklichkeit.`}`, `<strong>${c.name} = ${c.value}°; im Schrägbild ${COMPARE[answer]}</strong>`],

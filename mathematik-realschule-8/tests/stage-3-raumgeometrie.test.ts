@@ -1,6 +1,12 @@
 import { describe, expect, it } from "vitest";
 import {
   ANGLE_CASES,
+  DISTORTED_ANGLES,
+  DISTORTED_SEGMENTS,
+  PYRAMID_DISTORTED_PAIRS,
+  PYRAMID_TRUE_PAIRS,
+  TRUE_ANGLES,
+  TRUE_SEGMENTS,
   BODIES,
   COMPARE,
   COMPOSITE_SECTIONS,
@@ -473,7 +479,8 @@ describe("Aufgaben der Etappe 3 rechnen richtig", () => {
         const B = pic(m.q, m.omega, m.a, 0, 0);
         const C = pic(m.q, m.omega, m.a, m.b, 0);
         close(num(task, 2), angleAt(B, A, C), 1e-9);
-        expect(picked(task, 3)).toBe("[AB] und [MS]");
+        expect(PYRAMID_TRUE_PAIRS).toContain(picked(task, 3));
+        for (const option of choice(task, 3).options) if (option !== picked(task, 3)) expect(PYRAMID_DISTORTED_PAIRS).toContain(option);
       } else {
         expect(m.onS + m.depth).toBe(m.onS === m.B ? m.B + m.L : m.L + m.B);
         expect(picked(task, 0)).toBe(`die Fläche ${m.onS} cm × ${m.H} cm`);
@@ -506,8 +513,10 @@ describe("Aufgaben der Etappe 3 rechnen richtig", () => {
     for (const task of tasks("rg-6-wahre-groesse", "tiefenkanten", 1)) {
       const m = meta(task);
       close(num(task, 0), m.drawn / m.q);
-      expect(picked(task, 1)).toBe("die Kante [BF]");
-      expect(picked(task, 2)).toBe("∢ABF");
+      expect(TRUE_SEGMENTS).toContain(picked(task, 1));
+      expect(TRUE_ANGLES).toContain(picked(task, 2));
+      for (const option of choice(task, 1).options) if (option !== picked(task, 1)) expect(DISTORTED_SEGMENTS).toContain(option);
+      for (const option of choice(task, 2).options) if (option !== picked(task, 2)) expect(DISTORTED_ANGLES).toContain(option);
     }
     for (const task of tasks("rg-6-wahre-groesse", "tiefenkanten", 2)) {
       const m = meta(task);
@@ -549,6 +558,29 @@ describe("Aufgaben der Etappe 3 rechnen richtig", () => {
       expect(num(task, 0)).toBe(c.value);
       expect(picked(task, 1)).toBe(COMPARE[["kleiner", "gleich", "größer"].indexOf(c.picture)]);
     }
+  });
+
+  it("3.5 and 3.6 the offered undistorted segments and angles really keep their size in the Schrägbild", () => {
+    const pic = (p: P3): [number, number] => [p[0] + 0.5 * p[1] * Math.SQRT1_2, p[2] + 0.5 * p[1] * Math.SQRT1_2];
+    const cub: Record<string, P3> = { A: [0, 0, 0], B: [6, 0, 0], C: [6, 4, 0], D: [0, 4, 0], E: [0, 0, 3], F: [6, 0, 3], G: [6, 4, 3], H: [0, 4, 3], M: [3, 2, 0], S: [3, 2, 5] };
+    const names = (text: string) => text.match(/\[([A-Z])([A-Z])\]/g)!.map((m) => [m[1], m[2]]);
+    const kept = ([p, q]: string[]) => Math.abs(Math.hypot(pic(cub[p])[0] - pic(cub[q])[0], pic(cub[p])[1] - pic(cub[q])[1]) - norm3(sub3(cub[p], cub[q]))) < 1e-9;
+    for (const s of TRUE_SEGMENTS) expect(kept(names(s)[0]), s).toBe(true);
+    for (const s of DISTORTED_SEGMENTS) expect(kept(names(s)[0]), s).toBe(false);
+    const angleKept = (name: string) => {
+      const [p, v, r] = name.slice(1).split("").map((n) => cub[n]);
+      const t = (Math.acos(dot3(sub3(p, v), sub3(r, v)) / (norm3(sub3(p, v)) * norm3(sub3(r, v)))) * 180) / Math.PI;
+      const [P, V, R] = [pic(p), pic(v), pic(r)];
+      const u = [P[0] - V[0], P[1] - V[1]];
+      const w = [R[0] - V[0], R[1] - V[1]];
+      const d = (Math.acos((u[0] * w[0] + u[1] * w[1]) / (Math.hypot(u[0], u[1]) * Math.hypot(w[0], w[1]))) * 180) / Math.PI;
+      return Math.abs(t - d) < 1e-9;
+    };
+    for (const a of TRUE_ANGLES) expect(angleKept(a), a).toBe(true);
+    for (const a of DISTORTED_ANGLES) expect(angleKept(a), a).toBe(false);
+    // the pyramid over ABCD (6 × 4) with apex S above M, height 5
+    for (const pair of PYRAMID_TRUE_PAIRS) expect(names(pair).every(kept), pair).toBe(true);
+    for (const pair of PYRAMID_DISTORTED_PAIRS) expect(names(pair).every(kept), pair).toBe(false);
   });
 
   it("3.6 diagonal sections in true size: a rectangle or an isosceles triangle, never borderline", () => {
