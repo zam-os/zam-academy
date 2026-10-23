@@ -33,7 +33,7 @@ export const GOAL_WITNESSES_STAGE_7: Record<string, Record<string, LabValues>> =
   "dz-4-haeufigkeiten": {
     // with the start seed: 44 sixes in 300 throws, h(6) ≈ 0,147
     sechs: { spiel: 0, tipp: 0, n0: 300 },
-    // h(6) ≈ 0,147 against ≈ 0,247 after 300 throws each
+    // h(6) ≈ 0,15 against ≈ 0,28 after 300 throws each
     fundbuero: { spiel: 1, tipp: 0, n0: 300, n1: 300 },
     // after 200 spins: A ≈ 0,225, B ≈ 0,365
     raeder: { spiel: 3, tipp: 2, n3: 200 },

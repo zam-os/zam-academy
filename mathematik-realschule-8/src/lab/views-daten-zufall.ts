@@ -34,6 +34,22 @@ export function isPrime(n: number): boolean {
 /** 1, 2, …, n */
 export const upTo = (n: number): number[] => Array.from({ length: n }, (_, i) => i + 1);
 
+/**
+ * count : n rounded to `digits` decimals as the school rounds (a 5 rounds
+ * up), computed from the integers: 7 : 40 = 0,175 gives 0,18, where
+ * (7 / 40).toFixed(2) would give "0.17" from the binary 0,17499….
+ */
+export function roundedRatio(count: number, n: number, digits: number): number {
+  const scale = 10 ** digits;
+  return Math.round((count * scale) / n) / scale;
+}
+
+/** Whether count : n ends after at most `digits` decimals, so that "=" and not "≈" belongs before it. */
+export const ratioEnds = (count: number, n: number, digits: number): boolean => (count * 10 ** digits) % n === 0;
+
+/** "= 0,25" or "≈ 0,17": a relative frequency with two decimals and the right sign before it. */
+export const hText = (count: number, n: number): string => `${ratioEnds(count, n, 2) ? "=" : "≈"} ${fmt(roundedRatio(count, n, 2), 2)}`;
+
 /** The seed after "neu beginnen": a new sequence of results, still reproducible. */
 export const nextSeed = (seed: number): number => seedFrom(`neu:${seed}`);
 
@@ -89,14 +105,16 @@ export interface OutcomeExperiment {
   size: number;
   trial: string;
   trials: string;
+  /** The plural after "bei": "bei 10 Würfen". */
+  trialsDative: string;
   /** "Letzter Wurf" or "Letzte Drehung", and the sentence before the first trial. */
   last: string;
   none: string;
 }
 
 export const OUTCOME_EXPERIMENTS: OutcomeExperiment[] = [
-  { name: "Würfel", noun: "Augenzahl", size: 6, trial: "Wurf", trials: "Würfe", last: "Letzter Wurf", none: "Noch kein Wurf" },
-  { name: "Glücksrad mit 8 gleich großen Feldern", noun: "Zahl", size: 8, trial: "Drehung", trials: "Drehungen", last: "Letzte Drehung", none: "Noch keine Drehung" },
+  { name: "Würfel", noun: "Augenzahl", size: 6, trial: "Wurf", trials: "Würfe", trialsDative: "Würfen", last: "Letzter Wurf", none: "Noch kein Wurf" },
+  { name: "Glücksrad mit 8 gleich großen Feldern", noun: "Zahl", size: 8, trial: "Drehung", trials: "Drehungen", trialsDative: "Drehungen", last: "Letzte Drehung", none: "Noch keine Drehung" },
 ];
 
 export interface EventKind {
@@ -212,8 +230,10 @@ function outcomeEventView(v: LabValues): string {
   const below = OE.top + ex.size * rowH;
   const parts = results.map((e) => record.tally[e]);
   const sum = results.length >= 2 && results.length <= 4 && record.n > 0 ? `${parts.join(" + ")} = ` : "";
+  // the sum of the tally rows only while the line fits beside the wheel (four rows of two-digit counts and more do not)
+  const occurred = sum && `E ist ${sum}${record.hits}-mal eingetreten.`.length <= 42 ? `E ist ${sum}${record.hits}-mal eingetreten.` : `E ist ${record.hits}-mal eingetreten.`;
   out += text(OE.tableX, below + 22, countWord(record.n, ex.trial, ex.trials), "lab-text-small");
-  out += text(OE.tableX, below + 42, record.n === 0 ? "Die Strichliste ist noch leer." : `E ist ${sum}${record.hits}-mal eingetreten.`, "lab-text lab-text-c");
+  out += text(OE.tableX, below + 42, record.n === 0 ? "Die Strichliste ist noch leer." : occurred, "lab-text lab-text-c");
   out += close();
   return out;
 }
@@ -432,7 +452,7 @@ function treeDiagramView(v: LabValues): string {
   else if (depth < s.stages) note = `Nur ${s.red + s.blue + s.green} Kugeln: Nach ${depth} Zügen ist die Urne leer.`;
   else {
     const full = pathsWithReplacement(s);
-    note = L < full ? `Mit Zurücklegen wären es ${full} Pfade; ohne Zurücklegen fehlen ${full - L}.` : `Keine Farbe geht aus: so viele Pfade wie mit Zurücklegen (${full}).`;
+    note = L < full ? `Mit Zurücklegen wären es ${full} Pfade; ohne Zurücklegen ${full - L === 1 ? "fehlt einer" : `fehlen ${full - L}`}.` : `Keine Farbe geht aus: so viele Pfade wie mit Zurücklegen (${full}).`;
   }
   out += text(14, 330, note, "lab-text-small");
   out += close();
@@ -585,7 +605,8 @@ export interface Game {
 
 export const GAMES: Game[] = [
   { name: "normaler Spielwürfel", outcomes: ["1", "2", "3", "4", "5", "6"], weights: [1, 1, 1, 1, 1, 1].map((w) => w / 6), focus: 5, trial: "Wurf", trials: "Würfe" },
-  { name: "Würfel aus dem Fundbüro", outcomes: ["1", "2", "3", "4", "5", "6"], weights: [0.1, 0.16, 0.16, 0.16, 0.16, 0.26], focus: 5, trial: "Wurf", trials: "Würfe" },
+  // loaded towards the 6 and away from the 1 opposite it, clearly enough that 300 throws each show it in nearly every series
+  { name: "Würfel aus dem Fundbüro", outcomes: ["1", "2", "3", "4", "5", "6"], weights: [0.1, 0.15, 0.15, 0.15, 0.15, 0.3], focus: 5, trial: "Wurf", trials: "Würfe" },
   { name: "Reißnagel", outcomes: ["Spitze oben", "Seitenlage"], weights: [0.38, 0.62], focus: 0, trial: "Wurf", trials: "Würfe" },
   { name: "Glücksräder A und B", outcomes: ["Gewinn A", "Gewinn B"], weights: [], focus: 0, trial: "Drehung", trials: "Drehungen" },
 ];
@@ -657,9 +678,7 @@ export function relFreq(record: GameRecord, index = 0): number {
 
 /** "52 : 300 ≈ 0,17"; "=" when the decimal ends after two places. */
 export function relText(count: number, n: number): string {
-  const h = count / n;
-  const exact = Math.abs(h * 100 - Math.round(h * 100)) < 1e-9;
-  return `${count} : ${n} ${exact ? "=" : "≈"} ${fmt(h, 2)}`;
+  return `${count} : ${n} ${hText(count, n)}`;
 }
 
 /** The wheel whose wins are more frequent so far: 1 = A, 2 = B, 0 = level or no data. */
@@ -717,7 +736,7 @@ function frequencySimulationView(v: LabValues): string {
   // the result so far, in one line
   let head: string;
   if (record.n === 0) head = "Noch kein Versuch: Starte mit den Knöpfen.";
-  else if (wheels) head = `n = ${record.n};  h(Gewinn A) ≈ ${fmt(relFreq(record, 0), 2)};  h(Gewinn B) ≈ ${fmt(relFreq(record, 1), 2)}`;
+  else if (wheels) head = `n = ${record.n};  h(Gewinn A) ${hText(record.counts[0], record.n)};  h(Gewinn B) ${hText(record.counts[1], record.n)}`;
   else head = `n = ${record.n};  H(${focusLabel}) = ${record.counts[game.focus]};  h(${focusLabel}) ${relText(record.counts[game.focus], record.n).replace(/^\d+ : \d+ /, "")}`;
   out += text(14, 24, head, "lab-text lab-text-big");
 
@@ -760,7 +779,7 @@ function frequencySimulationView(v: LabValues): string {
     if (record.n > 0) out += rect(cx - barW / 2, top, barW, BARS.bottom - top, cls);
     out += text(cx, top - 4, record.n > 0 ? String(record.counts[i]) : "", "lab-text-small", "middle");
     out += text(cx, BARS.bottom + 15, name, i === game.focus && !wheels ? "lab-text-small lab-text-c" : "lab-text-small", "middle");
-    if (record.n > 0) out += text(cx, BARS.bottom + 29, fmt(h, 2), "lab-text-small", "middle");
+    if (record.n > 0) out += text(cx, BARS.bottom + 29, fmt(roundedRatio(record.counts[i], record.n, 2), 2), "lab-text-small", "middle");
   });
   if (record.n > 0 && !wheels) out += text(BARS.x1, 40, `Summe aller h: ${fmt(shares.reduce((a, b) => a + b, 0), 2)}`, "lab-text-small", "end");
 
@@ -780,11 +799,12 @@ function frequencySimulationView(v: LabValues): string {
   for (const t of [0, Math.round(N / 2), N]) out += text(xC(t), COURSE.bottom + 14, String(t), "lab-text-tick", "middle");
   out += text((COURSE.x0 + COURSE.x1) / 2, COURSE.bottom + 30, `Anzahl n der ${game.trials}`, "lab-text-axis", "middle");
   if (v.spiel === 1 && v.n0 > 0) {
-    const h0 = relFreq(gameOf(v, 0), 5);
+    const normal = gameOf(v, 0);
+    const h0 = relFreq(normal, 5);
     // the label on the side of the dashed line away from the end of the curve
     const above = record.n === 0 || relFreq(record, 5) < h0;
     out += line(COURSE.x0, yC(h0), COURSE.x1, yC(h0), "lab-dashed");
-    out += text(COURSE.x1 - 4, yC(h0) + (above ? -5 : 13), `normaler Würfel: ${fmt(h0, 2)}`, "lab-text-small", "end");
+    out += text(COURSE.x1 - 4, yC(h0) + (above ? -5 : 13), `normaler Würfel: ${fmt(roundedRatio(normal.counts[5], normal.n, 2), 2)}`, "lab-text-small", "end");
   }
   const clipId = "dz-course-clip";
   out += `<clipPath id="${clipId}"><rect x="${COURSE.x0}" y="${COURSE.top - 2}" width="${COURSE.x1 - COURSE.x0}" height="${COURSE.bottom - COURSE.top + 4}" /></clipPath>`;

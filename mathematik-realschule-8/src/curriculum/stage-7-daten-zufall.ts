@@ -11,6 +11,7 @@ import {
   gameRestart,
   GAMES,
   gameTrials,
+  hText,
   isPrime,
   labEvent,
   OUTCOME_EXPERIMENTS,
@@ -20,8 +21,9 @@ import {
   outcomeRestart,
   outcomeTrials,
   pathsWithReplacement,
-  relFreq,
+  ratioEnds,
   relText,
+  roundedRatio,
   sameShare,
   setText,
   shareText,
@@ -39,7 +41,8 @@ import {
   upTo,
   wheelLeader,
 } from "../lab/views-daten-zufall";
-import type { ChoiceField, ExerciseTask, Lesson, Stage } from "../model/types";
+import { toleranceOf } from "../exercises/checker";
+import type { ChoiceField, ExerciseTask, Lesson, NumberField, Stage } from "../model/types";
 import { choiceField, numberField, yesNo } from "./helpers";
 
 const STAGE_ID = "stage-7-daten-zufall";
@@ -371,7 +374,7 @@ function eintretenTask(rng: Rng, level: 1 | 2): ExerciseTask {
         ],
         steps: [
           `E = ${setText(E)}. ${st.note}`,
-          `E ist ${ex.at(joinAnd(hitAt.map(nth)))} eingetreten, mit den Ergebnissen ${joinAnd(hitAt.map((i) => results[i - 1]))}.`,
+          `E ist ${ex.at(joinAnd(hitAt.map(nth)))} eingetreten, mit ${hitAt.length === 1 ? "dem Ergebnis" : "den Ergebnissen"} ${joinAnd(hitAt.map((i) => results[i - 1]))}.`,
           `<strong>E ist ${hitAt.length}-mal eingetreten; ${ex.at(nth(j))} (Ergebnis ${r}) ist E ${st.test(r) ? "eingetreten" : "nicht eingetreten"}.</strong>`,
         ],
         meta: { level: 1, ex: exIndex, kind: st.kind, k: st.k, j, hits: hitAt.length, ...Object.fromEntries(results.map((x, i) => [`r${i}`, x])) },
@@ -591,7 +594,7 @@ function begriffTask(rng: Rng, level: 1 | 2): ExerciseTask {
       numberField(`Ergebnisse bei ${b}:`, o.fineCount, "", 0, { slips: o.fineSlip ? [o.fineSlip] : [] }),
       numberField(`${genitive(b)} Ergebnisse zu „${o.part}“:`, o.partCount, "", 0),
     ],
-    steps: [`${a}: ${o.coarseList}, das sind ${o.coarseCount} Ergebnisse.`, `${b}: ${o.fineList}, das sind ${o.fineCount} Ergebnisse.`, `„${o.part}“ besteht bei ${b} aus ${o.partList}.`, `<strong>${a} hat ${o.coarseCount}, ${b} ${o.fineCount} mögliche Ergebnisse; zu „${o.part}“ gehören ${o.partCount} von ${genitive(b)} Ergebnissen.</strong>`],
+    steps: [`${a}: ${o.coarseList}, das sind ${o.coarseCount} Ergebnisse.`, `${b}: ${o.fineList}, das sind ${o.fineCount} Ergebnisse.`, `Was für ${a} ein Ergebnis ist, ist für ${b} ein Ereignis: „${o.part}“ = ${o.partList}.`, `<strong>${a} hat ${o.coarseCount}, ${b} ${o.fineCount} mögliche Ergebnisse; zu „${o.part}“ gehören ${o.partCount} von ${genitive(b)} Ergebnissen.</strong>`],
     meta: { level: 2, kind, coarse: o.coarseCount, fine: o.fineCount, part: o.partCount },
   };
 }
@@ -679,7 +682,7 @@ const ergebnisEreignis: Lesson = {
         compute: (v) => {
           const record = outcomeRecord(v);
           const ex = OUTCOME_EXPERIMENTS[v.exp] ?? OUTCOME_EXPERIMENTS[0];
-          return record.n === 0 ? "noch kein Versuch" : `${record.hits}-mal bei ${record.n} ${record.n === 1 ? ex.trial : ex.trials}`;
+          return record.n === 0 ? "noch kein Versuch" : `${record.hits}-mal bei ${record.n} ${record.n === 1 ? ex.trial : ex.trialsDative}`;
         },
       },
     ],
@@ -736,7 +739,7 @@ const stageWord = (k: number) => `${k}. Stufe`;
 function anzahlTask(rng: Rng, level: 1 | 2): ExerciseTask {
   if (level === 1) {
     const context = rng.int(0, 4);
-    const formulaHint = "Zählprinzip: Anzahl der Ergebnisse = (Äste der 1. Stufe) · (Äste der 2. Stufe) · …";
+    const formulaHint = "Zählprinzip: Anzahl der Ergebnisse = (Äste je Punkt in der 1. Stufe) · (Äste je Punkt in der 2. Stufe) · …";
     if (context <= 1) {
       // the same branches at every stage: a coin or a wheel
       const m = context === 0 ? 2 : rng.int(3, 5);
@@ -780,12 +783,12 @@ function anzahlTask(rng: Rng, level: 1 | 2): ExerciseTask {
     const total = branches.reduce((a, b) => a * b, 1);
     const m0 = branches[0];
     return {
-      prompt: `${intro} Wie viele Äste hat jede Stufe des Baumdiagramms, und wie viele Ergebnisse hat das Zufallsexperiment?`,
+      prompt: `${intro} Wie viele Äste gehen im Baumdiagramm in jeder Stufe von jedem Punkt aus, und wie viele Ergebnisse hat das Zufallsexperiment?`,
       given: [`${branches.length} Stufen`],
       formulaHint,
       fields: [
         ...branches.map((b, k) =>
-          numberField(`Äste in der ${stageWord(k + 1)}:`, b, "", 0, slipHint && k > 0 ? { slips: [{ value: context === 2 ? m0 : m0 - k, hint: slipHint }] } : {}),
+          numberField(`Äste je Punkt in der ${stageWord(k + 1)}:`, b, "", 0, slipHint && k > 0 ? { slips: [{ value: context === 2 ? m0 : m0 - k, hint: slipHint }] } : {}),
         ),
         numberField("Anzahl der Ergebnisse:", total, "", 0, {
           slips: [
@@ -794,7 +797,7 @@ function anzahlTask(rng: Rng, level: 1 | 2): ExerciseTask {
           ],
         }),
       ],
-      steps: [note, `Äste je Stufe: ${branches.join(", ")}`, `<strong>Zählprinzip: ${branches.join(" · ")} = ${total} Ergebnisse.</strong>`],
+      steps: [note, `Äste je Punkt in den ${branches.length} Stufen: ${joinAnd(branches)}`, `<strong>Zählprinzip: ${branches.join(" · ")} = ${total} Ergebnisse.</strong>`],
       meta: { level: 1, context, total, s: branches.length, ...Object.fromEntries(branches.map((b, k) => [`b${k}`, b])) },
     };
   }
@@ -865,19 +868,44 @@ function anzahlTask(rng: Rng, level: 1 | 2): ExerciseTask {
       meta: { level: 2, context, n, total, second: first },
     };
   }
+  // two dice as a pair: all pairs, and those of a condition counted by the Zählprinzip
+  const variant = rng.int(0, 2);
+  const k = rng.int(2, 5);
+  const dice = [
+    {
+      question: "Bei wie vielen zeigen die beiden Würfel verschiedene Augenzahlen?",
+      label: "verschiedene Augenzahlen:",
+      second: 30,
+      slips: [{ value: 15, hint: "(2 | 5) und (5 | 2) sind verschiedene Augenpaare." }, { value: 6, hint: "Das sind die Paschs; gesucht sind die anderen Augenpaare." }],
+      step: "Verschiedene Augenzahlen: Zu jeder Zahl des roten Würfels passen nur noch 5 Zahlen des blauen, also 6 · 5 = 30. Probe: 36 Augenpaare minus 6 Paschs.",
+      result: "30 mit verschiedenen Augenzahlen",
+    },
+    {
+      question: "Bei wie vielen zeigen beide Würfel eine ungerade Augenzahl?",
+      label: "beide ungerade:",
+      second: 9,
+      slips: [{ value: 6, hint: "Die Astzahlen werden multipliziert, nicht addiert: 3 ungerade Augenzahlen beim roten, zu jeder 3 beim blauen." }, { value: 18, hint: "Beide Würfel müssen ungerade zeigen, nicht nur einer." }],
+      step: "Beide ungerade: 3 Äste (1, 3, 5) beim roten Würfel, an jedem 3 beim blauen, also 3 · 3 = 9.",
+      result: "9 mit zwei ungeraden Augenzahlen",
+    },
+    {
+      question: `Bei wie vielen zeigt der rote Würfel höchstens ${k} und der blaue eine gerade Augenzahl?`,
+      label: `rot höchstens ${k}, blau gerade:`,
+      second: 3 * k,
+      slips: [{ value: k + 3, hint: "Die Astzahlen werden multipliziert, nicht addiert." }, { value: 3 * (k - 1), hint: `„Höchstens ${k}“ schließt die ${k} selbst ein.` }],
+      step: `Der rote Würfel hat ${k} passende Äste (1 bis ${k}), an jedem hat der blaue 3 (2, 4, 6), also ${k} · 3 = ${3 * k}.`,
+      result: `${3 * k} mit rot höchstens ${k} und blau gerade`,
+    },
+  ][variant];
   return {
-    prompt: "Ein roter und ein blauer Würfel werden geworfen; ein Ergebnis ist das Augenpaar (rot | blau). Wie viele Ergebnisse gibt es? Bei wie vielen zeigen die beiden Würfel verschiedene Augenzahlen?",
+    prompt: `Ein roter und ein blauer Würfel werden geworfen; ein Ergebnis ist das Augenpaar (rot | blau). Wie viele Ergebnisse gibt es? ${dice.question}`,
     given: ["zwei Würfel, das Augenpaar wird notiert"],
     fields: [
       numberField("Ergebnisse:", 36, "", 0, { slips: [{ value: 12, hint: "Jede Augenzahl des roten Würfels passt zu jeder des blauen: 6 · 6." }] }),
-      numberField("verschiedene Augenzahlen:", 30, "", 0, { slips: [{ value: 15, hint: "(2 | 5) und (5 | 2) sind verschiedene Augenpaare." }, { value: 6, hint: "Das sind die Paschs; gesucht sind die anderen Augenpaare." }] }),
+      numberField(dice.label, dice.second, "", 0, { slips: dice.slips.filter((s, i, all) => all.findIndex((t) => t.value === s.value) === i) }),
     ],
-    steps: [
-      "Zählprinzip: 6 · 6 = 36 Augenpaare.",
-      "Verschiedene Augenzahlen: Zu jeder Zahl des roten Würfels passen nur noch 5 Zahlen des blauen, also 6 · 5 = 30. Probe: 36 Augenpaare minus 6 Paschs.",
-      "<strong>36 Ergebnisse, davon 30 mit verschiedenen Augenzahlen.</strong>",
-    ],
-    meta: { level: 2, context, total: 36, second: 30 },
+    steps: ["Zählprinzip: 6 · 6 = 36 Augenpaare.", dice.step, `<strong>36 Ergebnisse, davon ${dice.result}.</strong>`],
+    meta: { level: 2, context, variant, k, total: 36, second: dice.second },
   };
 }
 
@@ -940,7 +968,11 @@ function pfadeTask(rng: Rng, level: 1 | 2): ExerciseTask {
         given: [`alle Pfade: ${setText(paths)}`],
         formulaHint: `Prüfe jeden Pfad einzeln. Die Reihenfolge zählt: ${useUrn ? "rb und br" : "KZ und ZK"} sind zwei verschiedene Pfade.`,
         fields: [shuffledChoice(rng, "E =", texts[0], texts.slice(1)), numberField("Anzahl der Pfade von E:", E.length, "", 0, { slips: lureA.length !== E.length ? [{ value: lureA.length, hint: `Lies E genau: „${event.words}“.` }] : [] })],
-        steps: [`Zählprinzip: ${Array(s).fill(2).join(" · ")} = ${paths.length} Pfade: ${setText(paths)}`, `Zu „${event.words}“ passen ${joinAnd(E)}.`, `<strong>E = ${setText(E)}, das sind ${E.length} Pfade.</strong>`],
+        steps: [
+          `Zählprinzip: ${Array(s).fill(2).join(" · ")} = ${paths.length} Pfade: ${setText(paths)}`,
+          `Zu „${event.words}“ ${E.length === 1 ? "passt nur" : "passen"} ${joinAnd(E)}.`,
+          `<strong>E = ${setText(E)}, das ${E.length === 1 ? "ist 1 Pfad" : `sind ${E.length} Pfade`}.</strong>`,
+        ],
         meta: { level: 1, urn: useUrn ? 1 : 0, s, id, count: E.length },
       };
     }
@@ -972,7 +1004,7 @@ function pfadeTask(rng: Rng, level: 1 | 2): ExerciseTask {
     const possible = [twin, rng.pick(paths.filter((p) => p !== twin))];
     const Ewith = drawSequences(symbols, null, s).map((p) => p.join("")).filter(URN_EVENTS[id].test).length;
     return {
-      prompt: `In einer Urne liegen ${content}. Es wird ${s === 2 ? "zweimal" : "dreimal"} nacheinander ohne Zurücklegen gezogen und jedes Mal die Farbe notiert (r, b${green ? ", g" : ""}). Wie viele Ergebnisse hat das Zufallsexperiment? Wie viele Pfade gehören zum Ereignis „${URN_EVENTS[id].words}“? Welches dieser Ergebnisse ist unmöglich?`,
+      prompt: `In einer Urne liegen ${content}. Es wird ${s === 2 ? "zweimal" : "dreimal"} nacheinander ohne Zurücklegen gezogen und jedes Mal die Farbe notiert (r, b${green ? ", g" : ""}). Wie viele Ergebnisse hat das Zufallsexperiment? Wie viele Pfade gehören zum Ereignis „${URN_EVENTS[id].words}“? Welche der drei Farbfolgen unten kann gar nicht vorkommen?`,
       given: [capital(content), `${s === 2 ? "zwei" : "drei"} Züge ohne Zurücklegen`],
       fields: [
         numberField("Anzahl der Ergebnisse:", paths.length, "", 0, { slips: [{ value: full, hint: "Ohne Zurücklegen: Ist eine Farbe aufgebraucht, hat sie im Baum keinen Ast mehr." }] }),
@@ -982,8 +1014,8 @@ function pfadeTask(rng: Rng, level: 1 | 2): ExerciseTask {
       steps: [
         `Mit Zurücklegen wären es ${Array(s).fill(symbols.length).join(" · ")} = ${full} Pfade. Ohne Zurücklegen fehlen die Pfade, für die die Kugeln nicht reichen: ${joinAnd(impossible)}.`,
         `Es bleiben ${paths.length} Pfade: ${setText(paths)}`,
-        `Zu „${URN_EVENTS[id].words}“ gehören ${joinAnd(E)}.`,
-        `<strong>${paths.length} Ergebnisse; ${E.length} Pfade gehören zum Ereignis; unmöglich ist ${nope}.</strong>`,
+        `Zu „${URN_EVENTS[id].words}“ ${E.length === 1 ? "gehört nur" : "gehören"} ${joinAnd(E)}.`,
+        `<strong>${paths.length} Ergebnisse; ${E.length === 1 ? "1 Pfad gehört" : `${E.length} Pfade gehören`} zum Ereignis; unmöglich ist ${nope}.</strong>`,
       ],
       meta: { level: 2, red, blue, green, s, id, total: paths.length, count: E.length },
     };
@@ -1011,7 +1043,7 @@ const baumdiagramm: Lesson = {
       Pfade: rr, rb, br. Das sind 3 Ergebnisse; mit Zurücklegen wären es 2 · 2 = 4, denn dann gäbe es auch bb.<br>
       Ereignis „genau eine rote Kugel“: die Pfade rb und br, also E = {rb; br}.</div>
     <p>Ein <strong>Ereignis</strong> ist im Baumdiagramm eine Menge von Pfaden. Du findest sie, indem du jeden Pfad prüfst. Beim dreimaligen Münzwurf gehören zu „genau einmal Kopf“ die Pfade KZZ, ZKZ und ZZK, zu „mindestens einmal Kopf“ alle Pfade außer ZZZ, also 7.</p>
-    <p><strong>Vorsicht:</strong> Die Pfade kommen nicht unbedingt gleich oft vor. Liegen 3 rote und 1 blaue Kugel in der Urne, wird rr viel öfter gezogen als bb, obwohl beides ein Pfad ist. Wie oft etwas eintritt, untersuchst du in Lektion 7.4 mit Häufigkeiten.</p>
+    <p><strong>Vorsicht:</strong> Die Pfade kommen nicht unbedingt gleich oft vor. Liegen 3 rote und 1 blaue Kugel in der Urne und ziehst du zweimal mit Zurücklegen, kommt rr viel öfter vor als bb, obwohl beides ein Pfad ist. Wie oft etwas eintritt, untersuchst du in Lektion 7.4 mit Häufigkeiten.</p>
     <p><strong>Typische Fehler:</strong> die Reihenfolge vergessen und KZ und ZK nur einmal zählen; ohne Zurücklegen trotzdem überall alle Äste zeichnen; die Astzahlen addieren statt multiplizieren.</p>
     <div class="merke"><strong>Merke:</strong> Jeder Pfad im Baumdiagramm ist ein Ergebnis. Zählprinzip: Anzahl der Ergebnisse = Produkt der Astzahlen der Stufen. Ohne Zurücklegen fällt der Ast einer Farbe weg, sobald sie aufgebraucht ist.</div>
   `,
@@ -1291,7 +1323,7 @@ function ergaenzenTask(rng: Rng, level: 1 | 2): ExerciseTask {
   const N = r1 + r2;
   const setting = [
     `Es sind ${N} Jugendliche, ${r1} davon Mädchen. ${capital(s1[2])} der Mädchen und ${s2[2]} der Jungen tragen eine Brille.`,
-    `In der 8a sind ${r1}, in der 8b ${r2} Schülerinnen und Schüler. Ein Haustier haben in der 8a ${s1[2]} der Klasse, in der 8b ${s2[2]}.`,
+    `In der 8a sind ${r1}, in der 8b ${r2} Schülerinnen und Schüler. In der 8a hat ${s1[2]} der Klasse ein Haustier, in der 8b sind es ${s2[2]}.`,
     `Es wurden ${N} Personen getestet, ${r1} davon sind krank. Bei ${s1[2]} der Kranken und bei ${s2[2]} der Gesunden ist der Test positiv.`,
     `Es sind ${N} Jugendliche, ${r1} davon im Sportverein. ${capital(s1[2])} der Vereinsmitglieder und ${s2[2]} der übrigen spielen ein Instrument.`,
   ][ctxIndex];
@@ -1396,7 +1428,7 @@ function baumTask(rng: Rng, level: 1 | 2): ExerciseTask {
         numberField(`unter „${ctx.cols[j]}“, Ast „${ctx.rows[r]}“:`, leaf, "", 0),
       ],
       steps: [
-        `In der Tafel: ${ctx.cols[0]} = ${a} + ${c} = ${a + c}, ${ctx.cols[1]} = ${b} + ${d} = ${b + d}. Probe: ${a + c} + ${b + d} = ${N}.`,
+        `Die Endzahlen nach dem Merkmal ${ctx.colFeature} zusammengefasst: ${ctx.cols[0]} ${a} + ${c} = ${a + c}, ${ctx.cols[1]} ${b} + ${d} = ${b + d}. Probe: ${a + c} + ${b + d} = ${N}.`,
         `Die Endzahlen bleiben dieselben, nur anders sortiert: unter „${ctx.cols[j]}“ stehen ${ctx.rows[0]} ${[a, b][j]} und ${ctx.rows[1]} ${[c, d][j]}.`,
         `<strong>1. Stufe: ${ctx.cols[0]} ${a + c}, ${ctx.cols[1]} ${b + d}; unter „${ctx.cols[j]}“ beim Ast „${ctx.rows[r]}“: ${leaf}.</strong>`,
       ],
@@ -1530,23 +1562,32 @@ const vierfeldertafel: Lesson = {
 
 // ─── 7.4 Absolute und relative Häufigkeiten ────────────────────────────────
 
-/** "0,38" or "≈ 0,31": a relative frequency with two decimals and the right sign before it. */
-function hDecimal(count: number, n: number): string {
-  const h = count / n;
-  return `${Math.abs(h * 100 - Math.round(h * 100)) < 1e-9 ? "=" : "≈"} ${fmt(h, 2)}`;
-}
+/** "= 0,38" or "≈ 0,31": a relative frequency with two decimals and the right sign before it, rounded from the integers (7 : 40 ≈ 0,18). */
+const hDecimal = hText;
 
-/** "= 38 %" or "≈ 30,8 %" */
+/** "= 38 %" or "≈ 30,8 %", rounded from the integers (23 : 80 = 28,75 % ≈ 28,8 %). */
 function hPercent(count: number, n: number): string {
-  const p = (100 * count) / n;
-  return `${Math.abs(p * 10 - Math.round(p * 10)) < 1e-9 ? "=" : "≈"} ${fmt(p, 1)} %`;
+  return `${ratioEnds(count, n, 3) ? "=" : "≈"} ${fmt(roundedRatio(count, n, 3) * 100, 1)} %`;
 }
 
-/** "= 0,375 = 37,5 %" or "≈ 0,158 ≈ 15,8 %": three decimals and the matching percentage. */
+/** "= 0,375 = 37,5 %" or "≈ 0,158 ≈ 15,8 %": three decimals and the percentage that belongs to them. */
 function hBoth(count: number, n: number): string {
-  const h = count / n;
-  const exact = Math.abs(h * 1000 - Math.round(h * 1000)) < 1e-9;
-  return `${exact ? "=" : "≈"} ${fmt(h, 3)} ${exact ? "=" : "≈"} ${fmt(100 * h, 1)} %`;
+  const exact = ratioEnds(count, n, 3);
+  const h = roundedRatio(count, n, 3);
+  return `${exact ? "=" : "≈"} ${fmt(h, 3)} ${exact ? "=" : "≈"} ${fmt(h * 100, 1)} %`;
+}
+
+/**
+ * A percentage field that names the early rounding: who rounds h to two
+ * decimals first types 12 % for 7 : 60 ≈ 11,7 %. The slip is added after
+ * numberField(), which drops slips within 2 % of the answer, because the
+ * field itself only accepts 1 %; it is added only when the field rejects it.
+ */
+function withEarlyRounding(field: NumberField, count: number, n: number): NumberField {
+  const early = roundedRatio(count, n, 2) * 100;
+  if (Math.abs(early - field.answer) <= toleranceOf(field)) return field;
+  const hint = `Zu früh gerundet: Rechne ${count} : ${n} ungerundet in Prozent um und runde erst dann auf eine Nachkommastelle.`;
+  return { ...field, slips: [...(field.slips ?? []), { value: early, hint }] };
 }
 
 /** One random experiment repeated n times with H hits, as the tasks tell it. */
@@ -1621,7 +1662,7 @@ function relativTask(rng: Rng, level: 1 | 2): ExerciseTask {
             { value: H / (n - H), hint: "Teile durch die Anzahl aller Versuche n, nicht durch die der übrigen Ergebnisse." },
           ],
         }),
-        numberField(`${s.label} in Prozent:`, 100 * h, "%", 1),
+        withEarlyRounding(numberField(`${s.label} in Prozent:`, (100 * H) / n, "%", 1), H, n),
       ],
       steps: [`${s.label} = H : n = ${H} : ${n} = ${fracHtml(H, n)} ${hBoth(H, n)}`, `<strong>${s.label} ${hDecimal(H, n)}; in Prozent: ${s.label} ${hPercent(H, n)}</strong>`],
       meta: { level: 1, ctx, n, H },
@@ -1648,8 +1689,8 @@ function relativTask(rng: Rng, level: 1 | 2): ExerciseTask {
       prompt: `${cmp.text(n1, H1, n2, H2, who)} Berechne für beide die relative Häufigkeit in Prozent und vergleiche.`,
       given: [`${labels[0]}: ${H1} von ${n1}`, `${labels[1]}: ${H2} von ${n2}`],
       fields: [
-        numberField(`${labels[0]}: h(${cmp.event}) in Prozent:`, p1, "%", 1, { slips: [{ value: H1, hint: "Das ist die absolute Häufigkeit. Teile noch durch die Anzahl der Versuche." }] }),
-        numberField(`${labels[1]}: h(${cmp.event}) in Prozent:`, p2, "%", 1, { slips: [{ value: H2, hint: "Das ist die absolute Häufigkeit. Teile noch durch die Anzahl der Versuche." }] }),
+        withEarlyRounding(numberField(`${labels[0]}: h(${cmp.event}) in Prozent:`, p1, "%", 1, { slips: [{ value: H1, hint: "Das ist die absolute Häufigkeit. Teile noch durch die Anzahl der Versuche." }] }), H1, n1),
+        withEarlyRounding(numberField(`${labels[1]}: h(${cmp.event}) in Prozent:`, p2, "%", 1, { slips: [{ value: H2, hint: "Das ist die absolute Häufigkeit. Teile noch durch die Anzahl der Versuche." }] }), H2, n2),
         choiceField(cmp.question, options, better),
       ],
       steps: [
@@ -1705,11 +1746,15 @@ function absolutTask(rng: Rng, level: 1 | 2): ExerciseTask {
         fields: [
           numberField(`Spitze oben bei den ersten ${n1} Würfen:`, H1, "", 0),
           numberField(`Spitze oben insgesamt:`, H, "", 0, { slips: [{ value: p1 + k2, hint: `${p1} % ist ein Anteil, keine Anzahl: Rechne zuerst ${p1} % von ${n1}.` }] }),
-          numberField("h(Spitze oben) in Prozent:", (100 * H) / N, "%", 1, {
-            slips: [{ value: (p1 + (100 * k2) / n2) / 2, hint: "Die beiden Prozentsätze darf man nicht einfach mitteln: Die Versuchsreihen sind verschieden lang. Teile alle Treffer durch alle Würfe." }],
-          }),
+          withEarlyRounding(
+            numberField("h(Spitze oben) in Prozent:", (100 * H) / N, "%", 1, {
+              slips: [{ value: (p1 + (100 * k2) / n2) / 2, hint: "Die beiden Prozentsätze darf man nicht einfach mitteln: Die Versuchsreihen sind verschieden lang. Teile alle Treffer durch alle Würfe." }],
+            }),
+            H,
+            N,
+          ),
         ],
-        steps: [`Erste Reihe: H = ${p1} % von ${n1} = ${fmt(p1 / 100, 2)} · ${n1} = ${H1}`, `Insgesamt: ${H1} + ${k2} = ${H} Treffer bei ${n1} + ${n2} = ${N} Würfen`, `h = ${H} : ${N} ${hDecimal(H, N)} ${hPercent(H, N)}`, `<strong>${H}-mal Spitze oben; h(Spitze oben) ${hPercent(H, N)}</strong>`],
+        steps: [`Erste Reihe: H = ${p1} % von ${n1} = ${fmt(p1 / 100, 2)} · ${n1} = ${H1}`, `Insgesamt: ${H1} + ${k2} = ${H} Treffer bei ${n1} + ${n2} = ${N} Würfen`, `h = ${H} : ${N} ${hBoth(H, N)}`, `<strong>${H}-mal Spitze oben; h(Spitze oben) ${hPercent(H, N)}</strong>`],
         meta: { level: 2, kind: 0, n1, p1, n2, k2 },
       };
     }
@@ -1784,7 +1829,7 @@ function summeTask(rng: Rng, level: 1 | 2): ExerciseTask {
         steps: [
           `Alle relativen Häufigkeiten ergeben zusammen 1: h(6) = 1 − ${hs.map((x) => fmt(x / 100, 2)).join(" − ")} = ${fmt(h6 / 100, 2)}.`,
           `H(6) = ${fmt(h6 / 100, 2)} · ${n} = ${(h6 * n) / 100}; H(${k}) = ${fmt(hs[k - 1] / 100, 2)} · ${n} = ${(hs[k - 1] * n) / 100}.`,
-          `<strong>h(6) = ${fmt(h6 / 100, 2)}; die Sechs fiel ${(h6 * n) / 100}-mal, die ${k} ${(hs[k - 1] * n) / 100}-mal.</strong>`,
+          `<strong>h(6) = ${fmt(h6 / 100, 2)}; die Sechs fiel ${(h6 * n) / 100}-mal, die Augenzahl ${k} fiel ${(hs[k - 1] * n) / 100}-mal.</strong>`,
         ],
         meta: { level: 2, kind: 1, n, k, ...Object.fromEntries(hs.map((x, i) => [`h${i + 1}`, x])) },
       };
@@ -1842,7 +1887,7 @@ const haeufigkeiten: Lesson = {
       H(Seitenlage) = 31, h(Seitenlage) = 31 : 50 = 0,62 = 62 %.<br>
       Probe: 0,38 + 0,62 = 1.</div>
     <p><strong>Vergleichen:</strong> Versuchsreihen verschiedener Länge vergleichst du nicht mit den absoluten Häufigkeiten. Glücksrad A brachte in 80 Drehungen 22 Gewinne, Glücksrad B in 150 Drehungen 36. B hat mehr Gewinne, aber die relative Häufigkeit ist bei A 22 : 80 = 0,275 = 27,5 %, bei B nur 36 : 150 = 0,24 = 24 %. Nach diesen Daten scheint A die besseren Gewinnchancen zu haben.</p>
-    <p><strong>Viele Versuche:</strong> Bei wenigen Versuchen schwankt die relative Häufigkeit stark; nach 10 Würfen kann h(6) leicht 0 oder 0,4 sein. Je mehr Versuche du machst, desto weniger schwankt sie. Deshalb schätzt man Gewinnchancen nur aus langen Versuchsreihen ein. Im Labor kannst du das beobachten; in Klasse 9 lernst du, was das mit der Wahrscheinlichkeit zu tun hat.</p>
+    <p><strong>Viele Versuche:</strong> Bei wenigen Versuchen schwankt die relative Häufigkeit stark; nach 10 Würfen kann h(6) leicht 0 oder 0,4 sein. Im Labor siehst du: Bei langen Versuchsreihen schwankt sie meist viel weniger. Deshalb schätzt man Gewinnchancen aus langen Versuchsreihen ein. In Klasse 9 lernst du, was das mit der Wahrscheinlichkeit zu tun hat.</p>
     <p><strong>Typische Fehler:</strong> durch die falsche Zahl teilen (n : H statt H : n, oder durch die Zahl der übrigen Ergebnisse statt durch alle Versuche); verschieden lange Versuchsreihen an den absoluten Häufigkeiten vergleichen; Dezimalzahl und Prozent verwechseln: 0,38 sind 38 %, nicht 0,38 %.</p>
     <div class="merke"><strong>Merke:</strong> Die absolute Häufigkeit H(E) zählt, wie oft E eingetreten ist. Die relative Häufigkeit h(E) = H(E) : n liegt zwischen 0 und 1; die relativen Häufigkeiten aller Ergebnisse ergeben 1. Verschieden lange Versuchsreihen vergleichst du mit relativen Häufigkeiten.</div>
   `,
@@ -1928,7 +1973,7 @@ const haeufigkeiten: Lesson = {
           }
           const part = (g: number) => {
             const r = gameOf(v, g);
-            return r.n === 0 ? "noch nicht gewürfelt" : `h(6) ≈ ${fmt(relFreq(r, 5), 2)} (${r.n} Würfe)`;
+            return r.n === 0 ? "noch nicht gewürfelt" : `h(6) ${hText(r.counts[5], r.n)} (${r.n} Würfe)`;
           };
           return `normal: ${part(0)}; Fundbüro: ${part(1)}`;
         },
@@ -1944,10 +1989,11 @@ const haeufigkeiten: Lesson = {
       {
         id: "sechs",
         text: "Würfle mit dem normalen Spielwürfel mindestens 300-mal und beobachte im Verlauf, wie h(6) immer weniger schwankt. Am Ende liegt h(6) zwischen 0,12 und 0,22.",
+        // on the rounded value the readouts show, so that "h(6) ≈ 0,22" never leaves the goal open
         check: (v) => {
           const r = gameOf(v, 0);
-          const h = relFreq(r, 5);
-          return r.n >= 300 && h >= 0.12 && h <= 0.22;
+          const h = r.n > 0 ? roundedRatio(r.counts[5], r.n, 2) : 0;
+          return r.n >= 300 && h >= 0.12 - 1e-9 && h <= 0.22 + 1e-9;
         },
       },
       {
@@ -1956,7 +2002,9 @@ const haeufigkeiten: Lesson = {
         check: (v) => {
           const normal = gameOf(v, 0);
           const found = gameOf(v, 1);
-          return normal.n >= 300 && found.n >= 300 && relFreq(found, 5) - relFreq(normal, 5) >= 0.05;
+          if (normal.n < 300 || found.n < 300) return false;
+          // the difference of the two values the readout shows
+          return roundedRatio(found.counts[5], found.n, 2) - roundedRatio(normal.counts[5], normal.n, 2) >= 0.05 - 1e-9;
         },
       },
       {

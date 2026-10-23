@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest";
 import { CATEGORY_OPTIONS, STAGE_DATEN_ZUFALL } from "../src/curriculum/stage-7-daten-zufall";
 import { createRng, seedFrom } from "../src/exercises/rng";
 import { applyAction, computeReadouts, defaultLabValues, withChanges } from "../src/lab/engine";
-import { gameOf, gameRecord, outcomeRecord, outcomeSeries, relFreq, stageBranches, treePaths, wheelLeader } from "../src/lab/views-daten-zufall";
+import { GAME_SEEDS, gameOf, gameRecord, nextSeed, outcomeRecord, outcomeSeries, relText, stageBranches, treePaths } from "../src/lab/views-daten-zufall";
 import type { ChoiceField, DifficultyLevel, ExerciseTask, LabDefinition, LabValues, Lesson } from "../src/model/types";
 
 const IDS = ["dz-1-ergebnis-ereignis", "dz-2-baumdiagramm", "dz-3-vierfeldertafel", "dz-4-haeufigkeiten"];
@@ -204,7 +204,9 @@ describe("Etappe 7: Daten und Zufall", () => {
             expect(text, `${l.id}/${g.id}: y_P or a backslash`).not.toMatch(/[a-z]_[A-Za-z]|\\/);
             expect(text, `${l.id}/${g.id}: hyphen as minus`).not.toMatch(/(^|[\s(=:|,{±;[\]])-\d/);
             expect(text, `${l.id}/${g.id}: decimal point`).not.toMatch(/\d\.(\d{1,2}|\d{4,})(?!\d)/);
-            expect(text, `${l.id}/${g.id}: "1 Punkte", "1 Ergebnissen"`).not.toMatch(/(^|[^\d,])1 (Punkte|Ergebnissen|Pfaden)\b/);
+            expect(text, `${l.id}/${g.id}: "1 Punkte", "1 Pfade"`).not.toMatch(/(^|[^\d,])1 (Punkte|Ergebnisse|Ergebnissen|Pfade|Pfaden)\b/);
+            expect(text, `${l.id}/${g.id}: "mit den Ergebnissen 7."`).not.toMatch(/den Ergebnissen \d+\./);
+            expect(text, `${l.id}/${g.id}: a rounded value that the school rounds otherwise`).not.toMatch(/0,355 ≈ 0,35|0,175 ≈ 0,17/);
           }
         }
       }
@@ -459,7 +461,9 @@ describe("7.2 Baumdiagramme: the tasks compute right", () => {
         expect(second).toBe(fact(m.n - 1));
       } else {
         expect(first).toBe(36);
-        expect(second).toBe(PAIRS.filter(([a, b]) => a !== b).length);
+        const rule = [(a: number, b: number) => a !== b, (a: number, b: number) => a % 2 === 1 && b % 2 === 1, (a: number, b: number) => a <= m.k && b % 2 === 0][m.variant];
+        expect(second, task.prompt).toBe(PAIRS.filter(([a, b]) => rule(a, b)).length);
+        if (m.variant === 2) expect(task.prompt).toContain(`höchstens ${m.k}`);
       }
     }
   });
@@ -683,7 +687,8 @@ describe("7.4 Absolute und relative Häufigkeiten: the lab", () => {
     const normal = gameRecord(0, 1234, 12000);
     for (const c of normal.counts) expect(Math.abs(c / 12000 - 1 / 6)).toBeLessThan(0.015);
     const found = gameRecord(1, 1234, 12000);
-    expect(Math.abs(found.counts[5] / 12000 - 0.26)).toBeLessThan(0.015);
+    expect(Math.abs(found.counts[5] / 12000 - 0.3)).toBeLessThan(0.015);
+    for (const i of [1, 2, 3, 4]) expect(Math.abs(found.counts[i] / 12000 - 0.15)).toBeLessThan(0.015);
     expect(Math.abs(found.counts[0] / 12000 - 0.1)).toBeLessThan(0.015);
     const tack = gameRecord(2, 1234, 12000);
     expect(Math.abs(tack.counts[0] / 12000 - 0.38)).toBeLessThan(0.015);
@@ -692,21 +697,46 @@ describe("7.4 Absolute und relative Häufigkeiten: the lab", () => {
     expect(Math.abs(wheels.counts[1] / 12000 - 0.375)).toBeLessThan(0.015);
   });
 
-  it("reaches its goals in most fresh series, so no learner is stuck on an unlucky seed", () => {
+  it("reaches its goals in nearly every series a learner can get, so no learner is stuck on an unlucky seed", () => {
+    // the series of "Reihe neu beginnen", device by device, from the start seeds on
+    const chain = (start: number) => {
+      const seeds = [start];
+      for (let i = 1; i < 300; i++) seeds.push(nextSeed(seeds[i - 1]));
+      return seeds;
+    };
+    const [normals, founds, wheelSeeds] = [chain(GAME_SEEDS[0]), chain(GAME_SEEDS[1]), chain(GAME_SEEDS[3])];
+    const goal = (id: string) => lab.goals.find((g) => g.id === id)!;
     let six = 0;
     let found = 0;
+    let foundLater = 0;
+    let sixLater = 0;
     let wheels = 0;
     for (let i = 0; i < 300; i++) {
-      const seed = seedFrom(`series:${i}`);
-      const h0 = relFreq(gameRecord(0, seed, 300), 5);
-      const h1 = relFreq(gameRecord(1, seed + 1, 300), 5);
-      if (h0 >= 0.12 && h0 <= 0.22) six += 1;
-      if (h1 - h0 >= 0.05) found += 1;
-      if (wheelLeader(gameRecord(3, seed, 200)) === 2) wheels += 1;
+      const v = (n: number) => ({ ...defaultLabValues(lab), s0: normals[i], s1: founds[i], s3: wheelSeeds[i], n0: n, n1: n, n3: 200, tipp: 2 });
+      if (goal("sechs").check(v(300), {})) six += 1;
+      if (goal("fundbuero").check(v(300), {})) found += 1;
+      // a learner who throws on reaches it after all
+      if ([300, 400, 500, 600, 800, 1000].some((n) => goal("fundbuero").check(v(n), {}))) foundLater += 1;
+      if ([300, 400, 500, 600, 800, 1000].some((n) => goal("sechs").check(v(n), {}))) sixLater += 1;
+      if (goal("raeder").check(v(300), {})) wheels += 1;
     }
     expect(six / 300).toBeGreaterThan(0.95);
-    expect(found / 300).toBeGreaterThan(0.8);
+    expect(found / 300).toBeGreaterThan(0.97);
+    expect(foundLater).toBe(300);
+    expect(sixLater).toBe(300);
     expect(wheels / 300).toBeGreaterThan(0.98);
+  });
+
+  it("checks its goals on the rounded values the readouts show", () => {
+    const sechs = lab.goals.find((g) => g.id === "sechs")!;
+    // at every series length: reached exactly when the shown h(6) lies in [0,12; 0,22]
+    for (let n = 300; n <= 3000; n++) {
+      const r = gameRecord(0, GAME_SEEDS[0], n);
+      const h = r.counts[5] / n;
+      const v = { ...defaultLabValues(lab), n0: n };
+      const shown = Math.round((r.counts[5] * 100) / n) / 100;
+      expect(sechs.check(v, {}), `n = ${n}, h = ${h}`).toBe(shown >= 0.12 && shown <= 0.22);
+    }
   });
 
   it("reads the frequencies at a known series", () => {
@@ -714,11 +744,69 @@ describe("7.4 Absolute und relative Häufigkeiten: the lab", () => {
     const rec = gameRecord(0, 74001, 300);
     expect(r.n).toBe("300 Würfe");
     expect(r.H).toBe(`H(6) = ${rec.counts[5]}`);
-    expect(r.h).toBe(`h(6) = ${rec.counts[5]} : 300 ≈ ${de(rec.counts[5] / 300, 2)} ≈ ${de((100 * rec.counts[5]) / 300, 1)} %`);
+    expect(r.h).toBe(`h(6) = ${rec.counts[5]} : 300 ≈ ${de(Math.round((rec.counts[5] * 100) / 300) / 100, 2)} ≈ ${de(Math.round((rec.counts[5] * 1000) / 300) / 10, 1)} %`);
+    // rounded as the school rounds, from the integers: 7 : 40 = 0,175 ≈ 0,18 and 23 : 80 = 0,2875 ≈ 28,8 %
+    expect(relText(7, 40)).toBe("7 : 40 ≈ 0,18");
+    expect(relText(29, 200)).toBe("29 : 200 ≈ 0,15");
+    expect(relText(9, 36)).toBe("9 : 36 = 0,25");
+    expect(at(lab, { n0: 40, s0: GAME_SEEDS[0] }).r.vergleich).toMatch(/^normal: h\(6\) [=≈] 0,\d\d? \(40 Würfe\); Fundbüro: noch nicht gewürfelt$/);
     expect(r.schwankung).toMatch(/^h lag zwischen 0,\d\d? und 0,\d\d?$/);
     expect(at(lab, {}).r.h).toBe("noch kein Versuch");
     expect(at(lab, { spiel: 3, n3: 200 }).r.vergleich).toBe("bisher gewinnt Rad B öfter");
     expect(at(lab, { spiel: 2 }).r.vergleich).toBe("h(Spitze oben) + h(Seitenlage) = 1");
+  });
+});
+
+describe("7.4 Absolute und relative Häufigkeiten: every quotient is shown rounded right", () => {
+  /** "x,yz" back to a number and its number of decimals. */
+  const read = (s: string) => ({ value: Number(s.replace(",", ".")), digits: (s.split(",")[1] ?? "").length });
+  /** count : n rounded to `digits` decimals from the integers, a 5 rounding up. */
+  const rounded = (count: number, n: number, digits: number) => Math.round((count * 10 ** digits) / n) / 10 ** digits;
+
+  it("writes c : n = x only when exact and c : n ≈ x rounded as the school rounds, also in percent", () => {
+    let checked = 0;
+    for (const l of lessons.filter((x) => x.id === "dz-4-haeufigkeiten")) {
+      for (const g of l.exercises) {
+        for (const level of [1, 2] as const) {
+          for (const task of tasks(l.id, g.id, level)) {
+            const text = [task.prompt, ...task.given, ...task.steps]
+              .join(" \n ")
+              .replace(/<span class="frac">[\s\S]*?<\/span><\/span>/g, "FRAC")
+              .replace(/<[^>]+>/g, " ");
+            for (const m of text.matchAll(/(\d+) : (\d+) (?:= FRAC )?([=≈]) (\d+(?:,\d+)?)(?: ([=≈]) (\d+(?:,\d+)?) %)?/g)) {
+              const [count, n] = [Number(m[1]), Number(m[2])];
+              const dec = read(m[4]);
+              expect(dec.value, m[0]).toBeCloseTo(rounded(count, n, dec.digits), 12);
+              expect(m[3] === "=", m[0]).toBe((count * 10 ** dec.digits) % n === 0);
+              if (m[6]) {
+                const pct = read(m[6]);
+                expect(pct.value, m[0]).toBeCloseTo(rounded(100 * count, n, pct.digits), 10);
+                expect(m[5] === "=", m[0]).toBe((100 * count * 10 ** pct.digits) % n === 0);
+              }
+              checked += 1;
+            }
+          }
+        }
+      }
+    }
+    expect(checked).toBeGreaterThan(800);
+  });
+
+  it("names the early rounding to two decimals when a percentage is typed from it", () => {
+    let named = 0;
+    for (const t of tasks("dz-4-haeufigkeiten", "relativ", 1)) {
+      const m = meta(t);
+      const early = (Math.round((m.H * 100) / m.n) / 100) * 100;
+      const exact = (100 * m.H) / m.n;
+      const field = t.fields[1];
+      if (field.kind !== "number") throw new Error("percent field");
+      // either the early value is accepted anyway, or a slip names it
+      if (Math.abs(early - exact) > Math.max(0.01 * exact, 0.051) + 1e-9) {
+        expect((field.slips ?? []).some((s) => Math.abs(s.value - early) < 1e-9), t.prompt).toBe(true);
+        named += 1;
+      }
+    }
+    expect(named).toBeGreaterThan(5);
   });
 });
 
