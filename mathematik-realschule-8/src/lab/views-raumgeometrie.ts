@@ -1029,7 +1029,7 @@ function solidCoordinatesView(v: LabValues): string {
     const dx = p.x - cx;
     const dy = p.y - cy;
     const l = Math.hypot(dx, dy) || 1;
-    out += text(p.x + (dx / l) * 14, p.y + (dy / l) * 14 + 4, n.name, "lab-text lab-text-a", "middle");
+    out += text(p.x + (dx / l) * 19, p.y + (dy / l) * 19 + 4, n.name, "lab-text lab-text-a", "middle");
   });
   const A = screen[0];
   const C = screen[2];
@@ -1126,13 +1126,13 @@ function obliqueView(v: LabValues): string {
   const P = solid.verts.map(cam.project);
   let out = open("Schrägbild eines Prismas oder einer Pyramide mit Schrägbildachse, Verzerrungswinkel und Verzerrungsmaßstab");
   out += line(14, y0, Math.min(318, x0 + front * k + 60), y0, "lab-axis");
-  out += text(Math.min(318, x0 + front * k + 60) - 2, y0 - 6, "s", "lab-text-axis", "end");
+  out += text(Math.min(318, x0 + front * k + 60) - 2, y0 + 15, "s", "lab-text-axis", "end");
   if (v.body === 2) {
     const M = cam.project(vec(front / 2, depth / 2, 0));
     out += seg(P[0], P[2], "lab-dashed", 'style="stroke-width:1"') + seg(P[1], P[3], "lab-dashed", 'style="stroke-width:1"');
     out += seg(M, P[4], "lab-side-c", 'style="stroke-width:2;stroke-dasharray:5 4"');
     out += circle(M.x, M.y, 3.5, "lab-dot-small") + text(M.x - 4, M.y + 14, "M", "lab-text-small", "end");
-    out += text(M.x + 8, (M.y + P[4].y) / 2 + 4, `h = ${fmt(v.h)} cm`, "lab-text lab-text-c");
+    out += text(x0 - 8, (M.y + P[4].y) / 2 + 4, `h = ${fmt(v.h)} cm`, "lab-text lab-text-c", "end");
   }
   out += drawSolid(solid, cam, {
     fill: "lab-fill-a",
@@ -1142,16 +1142,20 @@ function obliqueView(v: LabValues): string {
   // ω at A, between s and the Tiefenkante that starts there
   const A = P[0];
   out += path(`M${r1(A.x + 26)} ${r1(A.y)} A26 26 0 0 0 ${r1(A.x + 26 * Math.cos(v.omega * DEG))} ${r1(A.y - 26 * Math.sin(v.omega * DEG))}`, "lab-angle");
-  const lab = polar(A.x, A.y, 38, v.omega / 2);
+  // ω inside the angle, away from the foot M of a pyramid
+  const M0 = cam.project(vec(front / 2, depth / 2, 0));
+  const spots = [polar(A.x, A.y, 38, v.omega / 2), polar(A.x, A.y, 36, v.omega * 0.25), polar(A.x, A.y, 38, v.omega * 0.75)];
+  const lab = v.body === 2 ? spots.reduce((best, p) => (Math.hypot(p.x - M0.x, p.y - M0.y) > Math.hypot(best.x - M0.x, best.y - M0.y) ? p : best)) : spots[0];
   out += text(lab.x, lab.y + 4, "ω", "lab-text", "middle");
   out += text(x0 + (front * k) / 2, y0 + 20, `${frontName} = ${fmt(front)} cm`, "lab-text", "middle");
-  const depthLabel = `${qText(v.q)} · ${fmt(depth)} cm = ${fmt(v.q * depth)} cm`;
-  if (v.body === 1) {
-    const mid = { x: (P[3].x + P[5].x) / 2, y: (P[3].y + P[5].y) / 2 };
-    out += text(mid.x - 8, mid.y - 6, depthLabel, "lab-text lab-text-b", "end");
+  // the drawn length beside a Tiefenkante: on the upper left outline (EH, DF), for the pyramid right of C
+  const depthLabel = `${fmt(v.q * depth)} cm`;
+  if (v.body === 2) {
+    const roomRight = P[2].x + 14 + depthLabel.length * 8 <= 330;
+    out += text(roomRight ? P[2].x + 14 : P[2].x - 12, roomRight ? P[2].y - 8 : P[2].y - 16, depthLabel, "lab-text lab-text-b", roomRight ? "start" : "end");
   } else {
-    const mid = { x: (P[1].x + P[2].x) / 2, y: (P[1].y + P[2].y) / 2 };
-    out += text(mid.x + 10, mid.y + 12, depthLabel, "lab-text lab-text-b");
+    const [d0, d1] = v.body === 0 ? [P[4], P[7]] : [P[3], P[5]];
+    out += text((d0.x + d1.x) / 2 - 10, (d0.y + d1.y) / 2 - 4, depthLabel, "lab-text lab-text-b", "end");
   }
   if (v.body !== 2) out += text(x0 - 8, y0 - (v.h * k) / 2 + 4, `h = ${fmt(v.h)} cm`, "lab-text", "end");
   const top = v.body === 2 ? P[4] : cam.project(vec(front, 0, v.h));
