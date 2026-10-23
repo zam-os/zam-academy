@@ -516,13 +516,18 @@ describe("Aufgaben der Etappe 3 rechnen richtig", () => {
     let squares = 0;
     for (const task of tasks("rg-5-schraegbilder", "zurueck", 2)) {
       const m = meta(task);
-      close(num(task, 0), m.drawn / m.q);
-      close(num(task, 1), m.a * (m.drawn / m.q));
-      expect(choice(task, 2).correctIndex === 0).toBe(m.a === m.b);
+      // the first picture read back, then drawn again with [BC] on s and [AB] in the depth
+      const bc = m.drawn / m.q;
+      close(num(task, 0), bc);
+      close(num(task, 1), m.q * m.a);
+      close(num(task, 2), m.a * bc);
+      expect(choice(task, 3).correctIndex === 0).toBe(m.a === bc);
+      // both drawn lengths are exact at two decimals: no 1,33 shown as exact
+      for (const value of [m.drawn, m.q * m.a]) expect(Math.abs(value * 100 - Math.round(value * 100))).toBeLessThan(1e-9);
       squares += m.square;
     }
-    expect(squares).toBeGreaterThan(60);
-    expect(squares).toBeLessThan(140);
+    expect(squares).toBeGreaterThan(30);
+    expect(squares).toBeLessThan(95);
   });
 
   it("3.6 Tiefenkanten, the right figure for a lateral edge and the half diagonal", () => {
@@ -576,6 +581,50 @@ describe("Aufgaben der Etappe 3 rechnen richtig", () => {
       expect(num(task, 0)).toBe(c.value);
       expect(picked(task, 1)).toBe(COMPARE[["kleiner", "gleich", "größer"].indexOf(c.picture)]);
     }
+  });
+
+  it("3.6 winkel-figur L1: kleiner or größer can be decided, from ω or from the angle measured in the picture", () => {
+    const q = 0.5;
+    const c45 = Math.SQRT1_2;
+    const pic = (p: P3): [number, number] => [p[0] + q * p[1] * c45, p[2] + q * p[1] * c45];
+    const cube: Record<string, P3> = { A: [0, 0, 0], B: [4, 0, 0], C: [4, 4, 0], F: [4, 0, 4] };
+    const cuboid: Record<string, P3> = { A: [0, 0, 0], B: [6, 0, 0], C: [6, 4, 0], D: [0, 4, 0], E: [0, 0, 3], F: [6, 0, 3], H: [0, 4, 3] };
+    const pyr: Record<string, P3> = { A: [0, 0, 0], B: [4, 0, 0], S: [2, 2, 4 * Math.SQRT1_2] };
+    const bodies = [cube, cube, cuboid, cuboid, cuboid, pyr, cube, cuboid];
+    // the angles between a Tiefenkante and an edge parallel to the Zeichenebene: ω, 180° − ω, 90° − ω, 90° + ω
+    const fromOmega = new Set(["∢FBA", "∢BAD", "∢CBA", "∢CBF", "∢AEH"]);
+    ANGLE_CASES.forEach((c, i) => {
+      const [p, v, r] = c.name.slice(1).split("").map((n) => bodies[i][n]);
+      const drawn = ccwAngle(pic(p), pic(v), pic(r));
+      if (fromOmega.has(c.name)) {
+        // ω alone gives the drawn angle: the task names no measurement, the step names the angle
+        expect(c.measured, c.name).toBeUndefined();
+        expect([45, 90, 135]).toContain(Math.round(drawn * 1e6) / 1e6);
+        expect(c.seen, c.name).toContain(`${Math.round(drawn)}°`);
+      } else {
+        // a diagonal or a tilted face: the task states the angle measured in the picture, in whole degrees
+        expect(c.measured, c.name).toBe(Math.round(drawn));
+        expect(c.seen, c.name).toContain(`etwa ${c.measured}°`);
+      }
+      // the step compares the two angles in the right direction
+      expect(c.seen, c.name).toMatch(c.picture === "gleich" ? /unverzerrt/ : c.picture === "kleiner" ? /(kleiner|weniger) als/ : /größer als/);
+      expect(c.seen, c.name).not.toContain("nicht parallel zur Zeichenebene");
+    });
+    let measuredTasks = 0;
+    for (const task of tasks("rg-6-wahre-groesse", "winkel-figur", 1)) {
+      const c = ANGLE_CASES[meta(task).index];
+      expect(task.steps[1]).toBe(c.seen);
+      if (c.measured === undefined) {
+        expect(task.prompt).not.toContain("misst du");
+      } else {
+        measuredTasks++;
+        expect(task.prompt).toContain(`dort misst du ${c.name} ≈ ${c.measured}°`);
+        // typing the measured angle as the true one gets its own hint
+        const field = task.fields[0];
+        expect(field.kind === "number" && field.slips?.some((s) => s.value === c.measured)).toBe(true);
+      }
+    }
+    expect(measuredTasks).toBeGreaterThan(40);
   });
 
   it("3.5 and 3.6 the offered undistorted segments and angles really keep their size in the Schrägbild", () => {
@@ -700,6 +749,20 @@ describe("Labore der Etappe 3", () => {
     expect(pictureDistance(vec(0, 2, 2), vec(3, 3, 3))).toBeLessThan(0.1);
     const witness = GOAL_WITNESSES_STAGE_3["rg-3-raumkoordinaten"]["gleiches-bild"];
     expect(at(lab, witness).r.bild).toBeLessThan(0.1);
+    // the goal asks for Q's helper lines too: without them the same Q does not count
+    const goal = lab.goals.find((g) => g.id === "gleiches-bild")!;
+    const withLines = { ...defaultLabValues(lab), ...witness, qpath: 1 };
+    expect(goal.check(withLines, computeReadouts(lab, withLines))).toBe(true);
+    const withoutLines = { ...withLines, qpath: 0 };
+    expect(goal.check(withoutLines, computeReadouts(lab, withoutLines))).toBe(false);
+  });
+
+  it("3.3 lage L1: the formula hint names the distance from every coordinate plane, not only from the xy-plane", () => {
+    const generator = lesson("rg-3-raumkoordinaten").exercises.find((e) => e.id === "lage")!;
+    for (const seed of SEEDS) {
+      const task = generator.make(createRng(seed), 1);
+      for (const [plane, letter] of [["xy", "z"], ["xz", "y"], ["yz", "x"]]) expect(task.formulaHint).toContain(`von der ${plane}-Ebene = |${letter}|`);
+    }
   });
 
   it("3.4 the corners of the three bodies, and the apex goal exactly where S = (2 | 3 | 5)", () => {
