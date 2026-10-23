@@ -485,6 +485,7 @@ describe("ZAM-Zelle (cell.json)", () => {
     question_segments?: CellSegment[];
     concept_segments?: CellSegment[];
     fast_check?: { options: string[]; correct_index: number };
+    materiality?: string;
     choice_distractors?: Array<{ text: string; reason?: string }>;
     replaces?: string[];
   }
@@ -505,6 +506,18 @@ describe("ZAM-Zelle (cell.json)", () => {
     expect(cell.tile_id).toBe("zam-academy:physik-realschule-8");
     expect(/^\d+(\.\d+)*$/.test(cell.version)).toBe(true);
     expect(cell.atoms.map((atom) => lessonOf(atom.source_link))).toEqual(ALL_LESSONS.map((lesson) => lesson.id));
+  });
+
+  it("declares the materiality of every card, as zam's bundled-tile check requires for cards with formula segments", () => {
+    // zam (tests/kernel/bundled-tiles-card-text.test.ts) refuses a cell whose segment cards leave it open.
+    // A new cell's cards are new content, so they are "material", like in the other Academy cells.
+    for (const atom of cell.atoms) {
+      for (const item of atom.practice_items) {
+        const segments = item.question_segments !== undefined || item.concept_segments !== undefined;
+        expect(item.materiality, `${item.slug}${segments ? " (formula segments)" : ""}`).toBe("material");
+      }
+    }
+    expect(cell.atoms.flatMap((atom) => atom.practice_items).filter((item) => item.question_segments !== undefined || item.concept_segments !== undefined).length).toBe(12);
   });
 
   it("cites for every card the lesson of its atom, and binds the atom to its stage, Zweige and Lernbereich", () => {
