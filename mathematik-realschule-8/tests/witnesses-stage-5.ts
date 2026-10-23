@@ -17,8 +17,8 @@ export const GOAL_WITNESSES_STAGE_5: Record<string, Record<string, LabValues>> =
   "br-2-definitionsmenge": {
     // (x + 1)(x − 3)
     zwei: { k: 1, f1: 1, a1: -1, f2: 1, a2: 3 },
-    // x² + 1
-    keine: { k: 1, f1: 3, a1: 2, f2: 0, a2: -1 },
+    // (x − 2)(x² + 1) = x³ − 2x² + x − 2: x² + 1 is never 0, so only 2 is excluded
+    "gleiche-d": { k: 1, f1: 1, a1: 2, f2: 3, a2: -1 },
     // 2x² − 8x = 2 · x(x − 4)
     faktor: { k: 2, f1: 1, a1: 0, f2: 1, a2: 4 },
   },

@@ -138,6 +138,27 @@ describe("Labore der Etappe 5", () => {
     expect(computeReadouts(lab, witness)).toMatchObject({ aus: "N(x) = 2x² − 8x", d: "D = ℚ ∖ {0; 4}" });
   });
 
+  it("5.2: a Nenner with an x³ that excludes only 2 is (x − 2) times the factor x² + 1, which is never 0", () => {
+    const lab = lesson("br-2-definitionsmenge").lab;
+    const goal = lab.goals.find((g) => g.id === "gleiche-d")!;
+    let reached = 0;
+    for (const v of enumerateLabGrid(lab, 21)) {
+      const p = builderPoly(v);
+      const degree = p.reduce((d, c, i) => (Math.abs(c) > 1e-9 ? i : d), 0);
+      // excluded on a fine grid: exactly the 2
+      const excluded = Array.from({ length: 121 }, (_, i) => -6 + i * 0.1).filter((x) => Math.abs(polyEval(p, x)) < 1e-9).map((x) => Math.round(x * 10) / 10);
+      const expected = v.f1 !== 0 && v.f2 !== 0 && degree === 3 && excluded.length === 1 && excluded[0] === 2;
+      expect(goal.check(v, computeReadouts(lab, v)), JSON.stringify(v)).toBe(expected);
+      if (expected) {
+        reached++;
+        // one factor x − 2, the other x² + 1
+        expect([v.f1, v.f2].sort()).toEqual([1, 3]);
+        expect(v.f1 === 1 ? v.a1 : v.a2).toBe(2);
+      }
+    }
+    expect(reached).toBeGreaterThan(0);
+  });
+
   it("5.3: the cross product gives the solution, or an excluded number, for every equation on the slider grid", () => {
     let excludedCases = 0;
     for (let a = -6; a <= 6; a++) {

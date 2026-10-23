@@ -2,7 +2,6 @@ import { fmt, frac, fracHtml, gcd, paren } from "../exercises/format";
 import type { Rng } from "../exercises/rng";
 import {
   balanceText,
-  builderHasX,
   builderPoly,
   builderText,
   builderZeros,
@@ -30,6 +29,9 @@ import type { ChoiceField, ExerciseTask, Lesson, NumberField, Stage } from "../m
 import { choiceField } from "./helpers";
 
 const STAGE_ID = "stage-5-bruchterme";
+
+/** The highest power with a coefficient other than 0. */
+const polyDegree = (p: number[]): number => p.reduce((degree, c, i) => (Math.abs(c) > 1e-9 ? i : degree), 0);
 const LP = "M8 LB 5 (I) · M8 LB 4 (II/III)";
 
 // ─── Helpers of this stage ─────────────────────────────────────────────────
@@ -620,9 +622,10 @@ const definitionsmenge: Lesson = {
         check: (v) => setText(builderZeros(v)) === setText([-1, 3]),
       },
       {
-        id: "keine",
-        text: "Baue einen Nenner mit der Variablen x, der keine einzige Zahl ausschließt.",
-        check: (v) => builderHasX(v) && builderZeros(v).length === 0,
+        id: "gleiche-d",
+        text: "Baue einen Nenner aus zwei Faktoren, der ausmultipliziert ein x³-Glied hat und trotzdem wie x − 2 nur die Zahl 2 ausschließt. Warum schließt der zweite Faktor keine Zahl aus?",
+        // only (x − 2)(x² + 1) does it: x² + 1 is at least 1 for every x, so the product is 0 only where x − 2 is
+        check: (v) => v.f1 !== 0 && v.f2 !== 0 && setText(builderZeros(v)) === setText([2]) && polyDegree(builderPoly(v)) === 3,
       },
       {
         id: "faktor",
