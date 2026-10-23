@@ -678,7 +678,7 @@ class MatheApp {
           <button type="button" class="btn btn-ghost btn-sm" id="task-reveal-btn" ${locked ? "hidden" : ""}>Lösungsweg zeigen</button>
         </div>
       </form>
-      <p class="task-feedback" id="task-feedback">${this.taskSolved ? "✅ Richtig!" : this.taskRevealed ? "Lösungsweg angezeigt. Diese Aufgabe zählt nicht, die nächste schon." : "Dezimalzahlen mit Komma, Brüche wie 3/5, Vielfache von π wie 4π."}</p>
+      <p class="task-feedback" id="task-feedback">${this.taskSolved ? "✅ Richtig!" : this.taskRevealed ? "Lösungsweg angezeigt. Diese Aufgabe zählt nicht, die nächste schon." : "Dezimalzahlen mit Komma, Brüche wie 3/5."}</p>
       <div class="task-solution" id="task-solution" ${locked || this.taskTips > 0 ? "" : "hidden"}>
         <strong>${locked ? "Lösungsweg" : "Tipp"}</strong>
         <ol>${task.steps.slice(0, locked ? task.steps.length : this.taskTips).map((step) => `<li>${step}</li>`).join("")}</ol>
