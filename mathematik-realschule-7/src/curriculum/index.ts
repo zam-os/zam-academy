@@ -9,7 +9,10 @@ import { STAGE_ALGEBRA } from "./stage-6-algebra";
 import { STAGE_PROPORTIONEN } from "./stage-7-proportionen";
 import { STAGE_DATEN } from "./stage-8-daten";
 
-const teacherVideos: Record<string, TeacherVideo> = teacherVideoData;
+const teacherVideos: Record<
+  string,
+  TeacherVideo & { additional?: TeacherVideo[] }
+> = teacherVideoData;
 
 /** One stage per Lernbereich in Zweig I; track labels preserve the II/III numbering. */
 export const STAGES: Stage[] = [
@@ -23,10 +26,10 @@ export const STAGES: Stage[] = [
   STAGE_DATEN,
 ].map((stage) => ({
   ...stage,
-  lessons: stage.lessons.map((lesson) => ({
-    ...lesson,
-    teacherVideo: teacherVideos[lesson.id],
-  })),
+  lessons: stage.lessons.map((lesson) => {
+    const { additional = [], ...teacherVideo } = teacherVideos[lesson.id];
+    return { ...lesson, teacherVideo, additionalTeacherVideos: additional };
+  }),
 }));
 export const ALL_LESSONS: Lesson[] = STAGES.flatMap((stage) => stage.lessons);
 

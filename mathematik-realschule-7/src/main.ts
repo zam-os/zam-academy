@@ -32,6 +32,7 @@ import type {
   LabValues,
   Lesson,
   Stage,
+  TeacherVideo,
 } from "./model/types";
 import { TRACK_LABELS, TRACK_LONG_LABELS } from "./model/types";
 import {
@@ -464,20 +465,21 @@ class MatheApp {
           <p class="lehrplan-tag">${lesson.tracks.map((track) => `<span class="chip chip-track">${TRACK_LABELS[track]}</span>`).join("")} <span class="muted">${esc(lesson.lehrplan)}</span></p>
 
           <div class="why-box"><strong>Warum das wichtig ist:</strong> ${esc(lesson.whyItMatters)}</div>
-          ${
-            lesson.teacherVideo
-              ? `
+          ${[lesson.teacherVideo, ...(lesson.additionalTeacherVideos ?? [])]
+            .filter((video): video is TeacherVideo => !!video)
+            .map(
+              (video) => `
           <div class="video-box card">
             <div class="video-box-header">
-              <span class="video-box-title">🎬 Erklärvideo von ${esc(lesson.teacherVideo.author || "Daniel Jung")}</span>
+              <span class="video-box-title">🎬 Erklärvideo${video.author ? ` von ${esc(video.author)}` : ""}</span>
             </div>
-            <p class="video-box-desc">Zur Vorbereitung oder wenn du bei einer Aufgabe feststeckst:</p>
-            <a href="${esc(lesson.teacherVideo.url)}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm video-link">
-              ▶ ${esc(lesson.teacherVideo.title)} ansehen ↗
+            <p class="video-box-desc">${esc(video.scope)}</p>
+            <a href="${esc(video.url)}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm video-link">
+              ▶ ${esc(video.title)} ansehen ↗
             </a>
-          </div>`
-              : ""
-          }
+          </div>`,
+            )
+            .join("")}
           <div class="explanation">${lesson.explanationHtml}</div>
 
           <div class="formula-box">

@@ -175,22 +175,51 @@ describe("Lehrplan und Umfang", () => {
   });
 });
 describe("Lehrervideos", () => {
-  it("keeps the manually verified video ids on exactly the intended lessons", () => {
+  it("pins the verified video ids, original titles and channels on exactly the intended lessons", () => {
     expect(Object.keys(teacherVideos)).toEqual(IDS);
     expect(Object.keys(teacherVideoIds)).toEqual(IDS);
-    const pinned: Record<string, string> = teacherVideoIds;
+    interface PinnedVideo {
+      id: string;
+      title: string;
+      author: string;
+      scope: string;
+      additional?: PinnedVideo[];
+    }
+    const pinned: Record<string, PinnedVideo> = teacherVideoIds;
+    const expectedVideo = ({ id, title, author, scope }: PinnedVideo) => ({
+      url: `https://www.youtube.com/watch?v=${id}`,
+      title,
+      author,
+      scope,
+    });
     for (const lesson of ALL_LESSONS) {
-      expect(lesson.teacherVideo, lesson.id).toEqual({
-        ...teacherVideos[lesson.id as keyof typeof teacherVideos],
-        url: `https://www.youtube.com/watch?v=${pinned[lesson.id]}`,
-      });
-      expect(lesson.teacherVideo?.title.trim().length).toBeGreaterThan(8);
-      expect(lesson.teacherVideo?.author?.trim().length).toBeGreaterThan(3);
+      expect(lesson.teacherVideo, lesson.id).toEqual(
+        expectedVideo(pinned[lesson.id]),
+      );
+      expect(lesson.additionalTeacherVideos, lesson.id).toEqual(
+        (pinned[lesson.id].additional ?? []).map(expectedVideo),
+      );
+      const videos = [
+        lesson.teacherVideo!,
+        ...(lesson.additionalTeacherVideos ?? []),
+      ];
+      expect(new Set(videos.map((video) => video.url)).size, lesson.id).toBe(
+        videos.length,
+      );
+      for (const video of videos) {
+        expect(video.title.trim().length).toBeGreaterThan(8);
+        expect(video.author?.trim().length).toBeGreaterThan(3);
+        expect(video.scope.trim().length).toBeGreaterThan(30);
+      }
     }
   });
   it("uses direct HTTPS watch links without embeds or tracking parameters", () => {
-    for (const lesson of ALL_LESSONS) {
-      const url = new URL(lesson.teacherVideo!.url);
+    const videos = ALL_LESSONS.flatMap((lesson) => [
+      lesson.teacherVideo!,
+      ...(lesson.additionalTeacherVideos ?? []),
+    ]);
+    for (const video of videos) {
+      const url = new URL(video.url);
       expect(url.origin).toBe("https://www.youtube.com");
       expect(url.pathname).toBe("/watch");
       expect([...url.searchParams.keys()]).toEqual(["v"]);
