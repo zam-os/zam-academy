@@ -62,7 +62,7 @@ export const LB1: Lesson[] = [
       kind: "classify",
       title: "Welche Reaktion ist das?",
       instruction:
-        "In der Klasse sagt jemand: „Wir sollten den Ausflug in den Wald machen, weil das billiger ist.“ Ordne jede Antwort der Reaktion zu, die sie darstellt. Eine Rückmeldung bewertet den Beitrag selbst und gibt einen Tipp, ein Gegenargument widerspricht dem Vorschlag.",
+        "In der Klasse sagt jemand: „Wir sollten den Ausflug in den Wald statt ins Museum machen, weil das billiger ist.“ Ordne jede Antwort der Reaktion zu, die sie darstellt. Eine Rückmeldung bewertet den Beitrag selbst und gibt einen Tipp, ein Gegenargument widerspricht dem Vorschlag.",
       categories: ["Nachfrage", "Paraphrase", "Gegenargument", "Konstruktive Rückmeldung"],
       entries: [
         {
@@ -302,7 +302,7 @@ export const LB1: Lesson[] = [
         {
           question: "Du schreibst ein Verlaufsprotokoll der Runde. Welcher Satz gehört hinein?",
           options: [
-            "Frau Roth erklärt, der Standort liege nah an Wohnhäusern und müsse geprüft werden.",
+            "Frau Roth erklärt, der Standort liege nah an Wohnhäusern; der Lärm müsse zuerst geprüft werden.",
             "Frau Roth war ziemlich genervt von Tims Idee und hat sie eigentlich nicht ernst genommen.",
             "Skatepark – Sportplatz – Lärm – prüfen – Ende März – Schülervertretung – Roth – Sander",
           ],
@@ -879,7 +879,7 @@ export const LB1: Lesson[] = [
         {
           question: "Wozu dient das große Hundefoto auf Folie 1?",
           options: [
-            "Es erlangt Aufmerksamkeit und führt anschaulich zum Thema.",
+            "Es erregt Aufmerksamkeit und führt anschaulich zum Thema.",
             "Es ersetzt die Einleitung, sodass Lara nichts sagen muss.",
             "Es hebt eine wichtige Zahl aus der Auswertung des Praktikums hervor.",
           ],
@@ -1575,7 +1575,7 @@ export const LB1: Lesson[] = [
           feedback: "Vor Eltern und in einer öffentlichen Situation passt die Standardsprache mit höflicher Anrede.",
         },
         {
-          before: "Lena hat gesagt, dass sie Gruppenarbeit anstrengend findet. Du antwortest: „",
+          before: "Lena hat gerade gesagt, dass sie Gruppenarbeit anstrengend findet. Du antwortest: „",
           options: [
             "Du hast gerade gesagt, dass dich Gruppenarbeit anstrengt. Was genau fällt dir schwer?",
             "Ich mag Einzelarbeit sowieso lieber, egal was ihr sagt.",

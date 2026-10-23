@@ -107,7 +107,7 @@ export const LB2A: Lesson[] = [
     casework: {
       title: "Ein Zeitungsartikel über ein Reparatur-Café",
       story:
-        "Jonas soll im Deutschunterricht in zwanzig Minuten einen Zeitungsartikel über ein **Reparatur-Café** lesen und der Klasse danach erklären, was dort passiert. Der Artikel hat **vier Spalten und drei Zwischenüberschriften**. Im Text steht der Satz: **„Ehrenamtliche helfen beim Reparieren und verlangen kein Geld.“** Das Wort „Ehrenamtliche“ kennt Jonas nicht genau.",
+        "Jonas soll im Deutschunterricht in zwanzig Minuten einen Zeitungsartikel über ein **Reparatur-Café** lesen und der Klasse danach erklären, was dort passiert. Der Artikel hat **vier Spalten, drei Zwischenüberschriften und ein Bild**. Im Text steht der Satz: **„Ehrenamtliche helfen beim Reparieren und verlangen kein Geld.“** Das Wort „Ehrenamtliche“ kennt Jonas nicht genau.",
       steps: [
         {
           question: "Was tut Jonas als Erstes?",
@@ -290,7 +290,7 @@ export const LB2A: Lesson[] = [
     casework: {
       title: "Ein Blogbeitrag und eine Behauptung",
       story:
-        "Im Schulblog steht: **„Die Stadtbibliothek soll sonntags öffnen. Bisher kam sonntags niemand, weil die Bibliothek geschlossen war. Eine Umfrage unter 200 Jugendlichen zeigt aber: 140 würden sonntags zum Lernen kommen. Deshalb sollte die Stadt den Versuch wagen.“** Jonas sagt: „Der Text beweist, dass sonntags 140 Jugendliche in die Bibliothek gehen.“",
+        "Im Schulblog steht ein Kommentar: **„Die Stadtbibliothek soll sonntags öffnen. Bisher kam sonntags niemand, weil die Bibliothek geschlossen war. Eine Umfrage unter 200 Jugendlichen zeigt aber: 140 würden sonntags zum Lernen kommen. Deshalb sollte die Stadt den Versuch wagen.“** Jonas sagt: „Der Text beweist, dass sonntags 140 Jugendliche in die Bibliothek gehen.“",
       steps: [
         {
           question: "Stimmt Jonas’ Behauptung, wenn du sie am Text prüfst?",
@@ -1245,7 +1245,7 @@ export const LB2A: Lesson[] = [
             "Eine ganze Stadt hält den Schneider wegen Mantel und Kutsche für einen Grafen. Von Webern und Kaiser ist in der Zusammenfassung keine Rede.",
         },
         {
-          question: "Wie kritisiert die Novelle?",
+          question: "Wie kritisiert die Novelle am ehesten?",
           options: [
             "Sie zeigt am Schicksal des Schneiders, wie leicht sich eine Stadt täuschen lässt.",
             "Sie klagt offen die Schuldigen an, nennt sie beim Namen und fordert eine Änderung.",
@@ -1253,7 +1253,7 @@ export const LB2A: Lesson[] = [
           ],
           answer: 0,
           explanation:
-            "Die Kritik steckt im Geschehen um den Schneider und den Maskenzug. Eine offene Anklage oder eine Schilderung von Elend gibt es in der Zusammenfassung nicht.",
+            "Die Kritik steckt im Geschehen um den Schneider und den Maskenzug; der Erzähler blickt dabei mit ironischem Lächeln auf die Leichtgläubigkeit der Stadt. Eine offene Anklage oder eine Schilderung von Elend gibt es in der Zusammenfassung nicht.",
         },
         {
           question: "Welche Stellungnahme ist am besten begründet?",

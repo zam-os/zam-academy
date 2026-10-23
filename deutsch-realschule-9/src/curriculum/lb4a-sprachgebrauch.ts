@@ -1217,7 +1217,7 @@ export const LB4A: Lesson[] = [
         {
           question: "Welche Auflösung ist am besten gelungen?",
           options: [
-            "Die Rektorin begrüßte die Gäste. In ihrer Rede sagte sie, die Schule wachse noch immer. Sie wurde vor zehn Jahren gegründet. Zuletzt dankte sie allen Mitwirkenden.",
+            "Die Rektorin begrüßte die Gäste. In ihrer Rede sagte sie, die Schule wachse noch immer. Gegründet wurde die Schule vor zehn Jahren. Zuletzt dankte sie allen Mitwirkenden.",
             "Die Rektorin, die in ihrer Rede, nachdem sie die Gäste begrüßt hatte, sagte, dass die Schule wächst, bedankte sich bei allen Mitwirkenden und Gästen.",
             "Die Rektorin begrüßte die Gäste, in ihrer Rede wächst die Schule, vor zehn Jahren gegründet, bedankte sich bei allen Mitwirkenden.",
           ],
