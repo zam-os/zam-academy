@@ -497,7 +497,7 @@ describe("ZAM-Zelle (cell.json)", () => {
     curricula?: CellBinding[];
     practice_items: CellItem[];
   }
-  const cell = cellJson as unknown as { tile_id: string; version: string; atoms: CellAtom[] };
+  const cell = cellJson as unknown as { tile_id: string; version: string; atoms: CellAtom[]; retired_items: Array<{ id: string; reason: string }> };
   const prefix = `${ZAM_ACADEMY_APP_URL}#lesson=`;
   const ULID = /^[0-9A-HJKMNP-TV-Z]{26}$/;
   const lessonOf = (link: string | undefined) => (link?.startsWith(prefix) ? link.slice(prefix.length) : "");
@@ -605,7 +605,7 @@ describe("ZAM-Zelle (cell.json)", () => {
     expect(ids.size).toBe(cell.atoms.length + cell.atoms.reduce((n, atom) => n + atom.practice_items.length, 0));
   });
 
-  describe("proposes the takeover from the two de-by Realschule 8 physics cells without applying it", () => {
+  describe("takes over from the two de-by Realschule 8 physics cells as approved", () => {
     interface MappingRow {
       de_by_cell: string;
       de_by_id: string;
@@ -614,9 +614,8 @@ describe("ZAM-Zelle (cell.json)", () => {
       academy_slug: string | null;
       action: "replace" | "retire" | "keep";
       note: string;
-      retire_reason?: string;
     }
-    const table = replacesJson as unknown as { approved: string | null; status: string; rows: MappingRow[] };
+    const table = replacesJson as unknown as { approved: string | null; status: string; source: string; rows: MappingRow[] };
     const items = cell.atoms.flatMap((atom) => atom.practice_items);
     const bySlug = new Map(items.map((item) => [item.slug, item]));
     const DE_BY = /^01K4P8[EM]0000000000000000J\d{2}$/;
@@ -634,25 +633,27 @@ describe("ZAM-Zelle (cell.json)", () => {
       }
     });
 
-    it("names an existing successor for every replaced row and a reason for every retired row", () => {
+    it("declares exactly the approved replaces and retirements", () => {
+      const declared = items.flatMap((item) => (item.replaces ?? []).map((id) => [item.slug, id] as const));
+      expect(declared.map(([, id]) => id).sort()).toEqual(table.rows.filter((row) => row.action === "replace").map((row) => row.de_by_id).sort());
+      for (const item of items) expect((item.replaces ?? []).length, `${item.slug} replaces at most one item`).toBeLessThanOrEqual(1);
       for (const row of table.rows.filter((r) => r.action === "replace")) {
-        expect(bySlug.get(row.academy_slug ?? ""), `${row.de_by_id} → ${row.academy_slug}`).toBeDefined();
+        const item = bySlug.get(row.academy_slug ?? "");
+        expect(item, `${row.de_by_id} → ${row.academy_slug}`).toBeDefined();
+        expect(item?.replaces).toEqual([row.de_by_id]);
       }
-      const successors = table.rows.filter((r) => r.action === "replace").map((r) => r.academy_slug);
-      expect(new Set(successors).size, "one history per successor").toBe(4);
-      for (const row of table.rows.filter((r) => r.action === "retire")) {
-        expect(row.academy_slug, `${row.de_by_id} has no successor`).toBeNull();
-        expect(row.retire_reason?.length, row.de_by_id).toBeGreaterThan(30);
+      for (const row of table.rows.filter((r) => r.action !== "replace")) {
+        expect(declared.some(([, id]) => id === row.de_by_id), `${row.de_by_id} has no successor`).toBe(false);
       }
+      expect(cell.retired_items.map((entry) => entry.id).sort()).toEqual(table.rows.filter((row) => row.action === "retire").map((row) => row.de_by_id).sort());
+      for (const entry of cell.retired_items) expect(entry.reason.length, entry.id).toBeGreaterThan(30);
     });
 
-    it("ships the cell without replaces and retired_items while the mapping is only a proposal", () => {
-      // Package standard: a new cell ships first without declarations, so it needs no approval.
-      // scripts/build-catalog.mjs blocks any cell with replaces or retired_items until `approved` is a valid date.
-      expect(table.approved).toBeNull();
-      expect(table.status).toBe("proposal-only");
-      expect("retired_items" in cell).toBe(false);
-      for (const item of items) expect("replaces" in item, `${item.slug} replaces nothing`).toBe(false);
+    it("records Thomas's approval as a real date with his words", () => {
+      // scripts/build-catalog.mjs publishes a cell with replaces or retired_items only for a valid date.
+      expect(table.approved).toMatch(/^\d{4}-\d{2}-\d{2}$/);
+      expect(table.status).toBe("approved");
+      expect(table.source).toContain("Thomas");
     });
   });
 });
