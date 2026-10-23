@@ -7,7 +7,7 @@ export default defineConfig({
   base: "/physik-realschule-8/",
   plugins: [viteSingleFile()],
   server: {
-    port: 5192,
+    port: 5196,
     open: false,
   },
   build: {
