@@ -1,6 +1,6 @@
 import { fmt } from "../exercises/format";
 import type { LabValues } from "../model/types";
-import { arcPath, clipped, H, handle, type LabView, line, open, polar, polygon, type Pt, r1, sectorPath, sideLabel, text, W } from "./svg";
+import { angleMark, arcPath, clipped, H, handle, type LabView, line, open, polar, polygon, type Pt, r1, sectorPath, sideLabel, text, W } from "./svg";
 
 // ─── Shared helpers of this stage ──────────────────────────────────────────
 // Lengths in the labs are in cm, points in cm have y upwards; a Frame maps
@@ -34,20 +34,33 @@ function unitOf(from: Pt, to: Pt): Pt {
 
 const dist = (p: Pt, q: Pt): number => Math.hypot(p.x - q.x, p.y - q.y);
 
+/** A label with a halo in the colour of the lab background, readable over dashed circles and lines. */
+function halo(svg: string): string {
+  return svg.replace("<text ", '<text style="paint-order:stroke;stroke:var(--elevated);stroke-width:4px;stroke-linejoin:round" ');
+}
+
 /** The letter (or value) of the angle at `vertex`: on the bisector, `d` px inside the angle. */
 function angleLabel(vertex: Pt, p1: Pt, p2: Pt, d: number, content: string, cls = "lab-text"): string {
   const u = unitOf(vertex, p1);
   const w = unitOf(vertex, p2);
   const bis = unitOf({ x: 0, y: 0 }, { x: u.x + w.x, y: u.y + w.y });
-  return text(vertex.x + bis.x * d, vertex.y + bis.y * d + 4, content, cls, "middle");
+  return halo(text(vertex.x + bis.x * d, vertex.y + bis.y * d + 4, content, cls, "middle"));
 }
 
 /** A side label pushed far enough off a slanted side that its text does not cross the line. */
 function edgeLabel(p: Pt, q: Pt, content: string, cls: string): string {
   const u = unitOf(p, q);
   const width = content.length * 7;
-  return sideLabel(p, q, content, 9 + (width / 2) * Math.abs(u.y) + 7 * Math.abs(u.x), cls);
+  return halo(sideLabel(p, q, content, 9 + (width / 2) * Math.abs(u.y) + 7 * Math.abs(u.x), cls));
 }
+
+/** The name of a vertex, pushed away from the centre of its figure. */
+function vertexLabel(P: Pt, center: Pt, name: string, cls = "lab-text", d = 15): string {
+  const u = unitOf(center, P);
+  return halo(text(P.x + u.x * d, P.y + u.y * d + 4, name, cls, "middle"));
+}
+
+const centroid = (...pts: Pt[]): Pt => ({ x: pts.reduce((s, p) => s + p.x, 0) / pts.length, y: pts.reduce((s, p) => s + p.y, 0) / pts.length });
 
 /** Start and end direction (degrees, counterclockwise on screen) of the angle at `vertex` from `from` to `to`. */
 function angleSpan(vertex: Pt, from: Pt, to: Pt): [number, number] {
@@ -95,6 +108,30 @@ function dot(p: Pt, cls = "lab-point", r = 4.5): string {
 
 function clipRect(id: string, top: number): string {
   return `<defs><clipPath id="${id}"><rect x="0" y="${top}" width="${W}" height="${H - top}" /></clipPath></defs>`;
+}
+
+const inView = (p: Pt, top: number): boolean => p.x >= 16 && p.x <= W - 16 && p.y >= top + 10 && p.y <= H - 10;
+
+/** Where the handle of a compass circle sits: the first of the directions that is inside the drawing. */
+function ringHandlePos(center: Pt, r: number, angles: number[], top: number): Pt {
+  for (const angle of angles) {
+    const p = polar(center.x, center.y, r, angle);
+    if (inView(p, top)) return p;
+  }
+  return polar(center.x, center.y, r, angles[0]);
+}
+
+/** Left and below A first, right and below B first: never on [AB] or near C. */
+const RING_A = [200, 215, 230, 245, 160, 145, 130, 115];
+const RING_B = [-20, -35, -50, -65, 20, 35, 50, 65];
+
+/** Where the handle on a free leg sits: in the drawing and away from the points to avoid (C). */
+function rayHandlePos(vertex: Pt, angle: number, avoid: Pt[], top: number): Pt {
+  for (const d of [64, 100, 140, 44, 180]) {
+    const p = polar(vertex.x, vertex.y, d, angle);
+    if (inView(p, top) && avoid.every((q) => dist(p, q) >= 30)) return p;
+  }
+  return polar(vertex.x, vertex.y, 64, angle);
 }
 
 /** The degrees of the direction from `center` to `p`, counterclockwise on screen, in ]−180; 180]. */
@@ -163,6 +200,9 @@ export function ssaLengths(c: number, a: number, alpha: number): number[] {
 /** The point at distance t on the free leg of α at A. */
 const onLeg = (t: number, alpha: number): Pt => ({ x: t * cosD(alpha), y: t * sinD(alpha) });
 
+/** The distance of B from the line of the free leg of α at A, as with the Geodreieck (Lot). */
+export const legDistance = (c: number, alpha: number): number => Math.abs(c * sinD(alpha));
+
 export interface Measured {
   a: number;
   b: number;
@@ -186,7 +226,7 @@ export function measure(A: Pt, B: Pt, C: Pt): Measured {
 const ORIGIN: Pt = { x: 0, y: 0 };
 const GREEK: Record<Tone, string> = { a: "α", b: "β", c: "γ" };
 
-/** "größter Winkel γ gegenüber der längsten Seite c", or the equal pairs of an isosceles triangle. */
+/** "Größter Winkel γ gegenüber der längsten Seite c", and the equal pairs of an isosceles triangle. */
 export function oppositeText(m: Measured): string {
   const len: Record<Tone, number> = { a: m.a, b: m.b, c: m.c };
   const near = (x: number, y: number) => Math.abs(x - y) < 1e-6;
@@ -195,15 +235,35 @@ export function oppositeText(m: Measured): string {
   const order = (["a", "b", "c"] as Tone[]).sort((p, q) => len[q] - len[p]);
   const largest = near(len[order[0]], len[order[1]]) ? null : order[0];
   const parts: string[] = [];
-  if (pair) parts.push(`${pair[0]} = ${pair[1]}, also ${GREEK[pair[0]]} = ${GREEK[pair[1]]}`);
+  if (pair) parts.push(`gleich lang: ${pair[0]} = ${pair[1]}, also ${GREEK[pair[0]]} = ${GREEK[pair[1]]}`);
   parts.push(largest ? `größter Winkel ${GREEK[largest]} gegenüber der längsten Seite ${largest}` : `${GREEK[order[0]]} und ${GREEK[order[1]]} sind die größten Winkel`);
   const sentence = parts.join("; ");
   return `${sentence.charAt(0).toUpperCase()}${sentence.slice(1)}.`;
 }
 
+/** The side c under [AB]: one row lower when [AB] is short, so that it stays clear of A and B. */
+function baseLabel(A: Pt, B: Pt, c: number, low = false): string {
+  const y = A.y + (low || B.x - A.x < 90 ? 36 : 19);
+  return halo(text((A.x + B.x) / 2, y, `c = ${cmText(c)}`, "lab-text lab-text-c", "middle"));
+}
+
+/** The dashed Lot from B onto the line of the free leg of α, with its length. */
+function legLot(f: Frame, c: number, alpha: number): string {
+  const B = scr(f, { x: c, y: 0 });
+  const tF = c * cosD(alpha);
+  const F = scr(f, onLeg(tF, alpha));
+  let out = "";
+  if (tF < 0) out += line(scr(f, ORIGIN).x, scr(f, ORIGIN).y, F.x, F.y, "lab-dashed");
+  out += line(B.x, B.y, F.x, F.y, "lab-dashed");
+  out += angleMark(F, B, scr(f, onLeg(tF + 1, alpha)), 10, "lab-angle", true);
+  const mid = { x: (B.x + F.x) / 2, y: (B.y + F.y) / 2 };
+  out += halo(text(mid.x + 8, mid.y - 4, `Abstand ≈ ${cmText(legDistance(c, alpha))}`, "lab-text-small", "start"));
+  return out;
+}
+
 // ─── 1.1 Wann es ein Dreieck gibt ──────────────────────────────────────────
 
-export const EXIST: Frame = { ax: 190, base: 262, k: 18 };
+export const EXIST: Frame = { ax: 170, base: 262, k: 20 };
 const EXIST_TOP = 74;
 const OTHERS: Record<Tone, string> = { a: "b + c", b: "a + c", c: "a + b" };
 
@@ -232,6 +292,7 @@ function compassTest(v: LabValues): string {
   if (check.meet === "two") {
     const apex = sssApex(v.a, v.b, v.c)!;
     const C = scr(f, apex);
+    const S = centroid(A, B, C);
     out += text(16, 48, "Die Kreise schneiden sich: Es gibt ein Dreieck ABC.", "lab-text-muted");
     out += text(16, 66, oppositeText(measure(ORIGIN, { x: v.c, y: 0 }, apex)), "lab-text-muted");
     out += polygon([A, B, C], "lab-shape");
@@ -239,8 +300,8 @@ function compassTest(v: LabValues): string {
     out += line(B.x, B.y, C.x, C.y, "lab-side-a") + line(C.x, C.y, A.x, A.y, "lab-side-b") + line(A.x, A.y, B.x, B.y, "lab-side-c");
     out += angleLabel(A, B, C, 36, "α", "lab-text lab-text-a") + angleLabel(B, C, A, 36, "β", "lab-text lab-text-b") + angleLabel(C, A, B, 32, "γ", "lab-text lab-text-c");
     out += edgeLabel(B, C, `a = ${cmText(v.a)}`, "lab-text lab-text-a") + edgeLabel(C, A, `b = ${cmText(v.b)}`, "lab-text lab-text-b");
-    out += text(C.x, C.y - 12, "C", "lab-text", "middle");
-    out += edgeLabel(A, B, `c = ${cmText(v.c)}`, "lab-text lab-text-c");
+    out += baseLabel(A, B, v.c);
+    out += vertexLabel(A, S, "A") + vertexLabel(B, S, "B") + vertexLabel(C, S, "C");
     out += handle("C", C.x, C.y, "Ecke C: Seiten a und b zugleich");
   } else if (check.meet === "touch") {
     const C = scr(f, sssApex(v.a, v.b, v.c)!);
@@ -252,11 +313,12 @@ function compassTest(v: LabValues): string {
     const yb = A.y - 8;
     const ya = between ? yb : A.y - 16;
     out += line(A.x, yb, C.x, yb, "lab-side-b") + line(C.x, ya, B.x, ya, "lab-side-a");
-    out += text((A.x + C.x) / 2, yb - 8, `b = ${cmText(v.b)}`, "lab-text-small lab-text-b", "middle");
-    out += text((C.x + B.x) / 2, ya - 8 - (between ? 0 : 6), `a = ${cmText(v.a)}`, "lab-text-small lab-text-a", "middle");
+    out += halo(text((A.x + C.x) / 2, yb - 8, `b = ${cmText(v.b)}`, "lab-text-small lab-text-b", "middle"));
+    out += halo(text((C.x + B.x) / 2, ya - 8 - (between ? 0 : 6), `a = ${cmText(v.a)}`, "lab-text-small lab-text-a", "middle"));
     out += dot(C, "lab-point-bad", 5);
-    out += text(C.x, A.y + 34, "C", "lab-text lab-text-bad", "middle");
-    out += text((A.x + B.x) / 2, A.y + 18, `c = ${cmText(v.c)}`, "lab-text lab-text-c", "middle");
+    out += halo(text(C.x, A.y + 19, "C", "lab-text lab-text-bad", "middle"));
+    out += baseLabel(A, B, v.c, true);
+    out += text(A.x - 8, A.y + 19, "A", "lab-text", "end") + text(B.x + 8, B.y + 19, "B", "lab-text");
     out += handle("C", C.x, C.y, "Ecke C: Seiten a und b zugleich");
   } else {
     // where the circles cross the line AB: circle A at ±b, circle B at c ± a; the gap lies between
@@ -268,21 +330,19 @@ function compassTest(v: LabValues): string {
     out += line(Math.min(A.x, P.x, Q.x) - 10, A.y, Math.max(B.x, P.x, Q.x) + 10, A.y, "lab-thin");
     out += line(A.x, A.y, B.x, B.y, "lab-side-c");
     out += `<line x1="${r1(P.x)}" y1="${r1(P.y)}" x2="${r1(Q.x)}" y2="${r1(Q.y)}" class="lab-bad-stroke" style="stroke-width:6;stroke-linecap:round" />`;
-    out += text((P.x + Q.x) / 2, P.y - 12, `Lücke ${cmText(Math.abs(g1 - g0))}`, "lab-text lab-text-bad", "middle");
-    out += text((A.x + B.x) / 2, A.y + 18, `c = ${cmText(v.c)}`, "lab-text lab-text-c", "middle");
+    out += halo(text((P.x + Q.x) / 2, P.y - 12, `Lücke ${cmText(Math.abs(g1 - g0))}`, "lab-text lab-text-bad", "middle"));
+    out += baseLabel(A, B, v.c);
+    out += text(A.x - 8, A.y + 19, "A", "lab-text", "end") + text(B.x + 8, B.y + 19, "B", "lab-text");
   }
-  out += dot(A) + text(A.x - 8, A.y + 18, "A", "lab-text", "end");
-  out += text(B.x + 8, B.y + 18, "B", "lab-text");
-  const rb = polar(A.x, A.y, v.b * f.k, 200);
-  const ra = polar(B.x, B.y, v.a * f.k, -20);
+  out += dot(A);
+  const rb = ringHandlePos(A, v.b * f.k, RING_A, EXIST_TOP);
+  const ra = ringHandlePos(B, v.a * f.k, RING_B, EXIST_TOP);
   out += handle("Rb", rb.x, rb.y, "Zirkel um A: Radius b");
   out += handle("Ra", ra.x, ra.y, "Zirkel um B: Radius a");
   out += handle("B", B.x, B.y, "Ecke B: Seite c");
   out += `</svg>`;
   return out;
 }
-
-const RAY_HANDLE = 64;
 
 function twoAngles(v: LabValues): string {
   const f = EXIST;
@@ -295,18 +355,21 @@ function twoAngles(v: LabValues): string {
   out += clipped("ex-clip-2", ray(A, v.alpha) + ray(B, 180 - v.beta));
   const rel = sum < 180 ? "<" : sum === 180 ? "=" : ">";
   out += text(16, 26, `α + β = ${deg(sum)} ${rel} 180°`, sum < 180 ? "lab-text lab-text-big lab-text-ok" : "lab-text lab-text-big lab-text-bad");
-  const HA = polar(A.x, A.y, RAY_HANDLE, v.alpha);
-  const HB = polar(B.x, B.y, RAY_HANDLE, 180 - v.beta);
+  const DA = polar(A.x, A.y, 60, v.alpha);
+  const DB = polar(B.x, B.y, 60, 180 - v.beta);
+  const avoid: Pt[] = [];
   if (apex) {
     const C = scr(f, apex);
+    avoid.push(C);
     out += text(16, 48, `Die freien Schenkel treffen sich in C: γ = 180° − α − β = ${deg(180 - sum)}.`, "lab-text-muted");
     if (C.y >= EXIST_TOP + 12 && C.x > 8 && C.x < W - 8) {
+      const S = centroid(A, B, C);
       out += text(16, 66, oppositeText(measure(ORIGIN, { x: v.c, y: 0 }, apex)), "lab-text-muted");
       out += polygon([A, B, C], "lab-shape");
       out += angleFill(C, A, B, 20, "lab-fill-c");
       out += line(B.x, B.y, C.x, C.y, "lab-side-a") + line(C.x, C.y, A.x, A.y, "lab-side-b");
       out += angleLabel(C, A, B, 34, "γ", "lab-text lab-text-c");
-      out += text(C.x, C.y - 12, "C", "lab-text", "middle");
+      out += vertexLabel(C, S, "C");
     } else {
       out += text(16, 66, "C liegt so weit oben, dass es nicht mehr ins Bild passt.", "lab-text-muted");
     }
@@ -314,13 +377,15 @@ function twoAngles(v: LabValues): string {
     out += text(16, 48, sum === 180 ? "Die freien Schenkel sind parallel (Ergänzungswinkel aus M7)." : "Die freien Schenkel laufen nach oben auseinander.", "lab-text-muted");
     out += text(16, 66, "Sie treffen sich oberhalb von [AB] nie: kein Dreieck.", "lab-text-muted");
   }
-  out += angleFill(A, B, HA, 26, "lab-fill-a") + angleFill(B, HB, A, 26, "lab-fill-b");
+  out += angleFill(A, B, DA, 26, "lab-fill-a") + angleFill(B, DB, A, 26, "lab-fill-b");
   out += line(A.x, A.y, B.x, B.y, "lab-side-c");
-  out += angleLabel(A, B, HA, 46, `α = ${deg(v.alpha)}`, "lab-text-small lab-text-a");
-  out += angleLabel(B, HB, A, 46, `β = ${deg(v.beta)}`, "lab-text-small lab-text-b");
-  out += text((A.x + B.x) / 2, A.y + 18, `c = ${cmText(v.c)}`, "lab-text lab-text-c", "middle");
-  out += dot(A) + text(A.x - 8, A.y + 18, "A", "lab-text", "end");
-  out += text(B.x + 8, B.y + 18, "B", "lab-text");
+  out += angleLabel(A, B, DA, 48, `α = ${deg(v.alpha)}`, "lab-text-small lab-text-a");
+  out += angleLabel(B, DB, A, 48, `β = ${deg(v.beta)}`, "lab-text-small lab-text-b");
+  out += baseLabel(A, B, v.c);
+  out += dot(A) + text(A.x - 8, A.y + 19, "A", "lab-text", "end");
+  out += text(B.x + 8, B.y + 19, "B", "lab-text");
+  const HA = rayHandlePos(A, v.alpha, avoid, EXIST_TOP);
+  const HB = rayHandlePos(B, 180 - v.beta, [...avoid, HA], EXIST_TOP);
   out += handle("HA", HA.x, HA.y, "freier Schenkel in A: Winkel α");
   out += handle("HB", HB.x, HB.y, "freier Schenkel in B: Winkel β");
   out += handle("B", B.x, B.y, "Ecke B: Seite c");
@@ -330,8 +395,8 @@ function twoAngles(v: LabValues): string {
 
 // ─── 1.2 Dreiecke konstruieren ─────────────────────────────────────────────
 
-export const CON: Frame = { ax: 96, base: 262, k: 20 };
-const CON_TOP = 68;
+export const CON: Frame = { ax: 110, base: 276, k: 24 };
+const CON_TOP = 70;
 
 /** The four cases of the construction lab. */
 export const CASES = ["SSS", "SWS", "WSW", "SsW"] as const;
@@ -441,62 +506,68 @@ function triangleConstruction(v: LabValues): string {
   // the result: C is found in step 3 (SWS) or in step 4
   const showApex = step === 4 || (v.fall === 1 && step === 3);
   const visible = (C: Pt) => C.y >= CON_TOP + 6 && C.x > 6 && C.x < W - 6;
+  const shown: Pt[] = [];
   let note = "";
   if (showApex) {
     const fills = ["lab-fill-a", "lab-fill-b"];
+    const two = apexes.length === 2;
     apexes.forEach((apex, i) => {
       const C = scr(f, apex);
       if (!visible(C)) return;
+      shown.push(C);
       if (step === 4) {
-        out += polygon([A, B, C], apexes.length === 2 ? fills[i] : "lab-shape");
+        out += polygon([A, B, C], two ? fills[i] : "lab-shape");
         out += thinSide(B, C, "a") + thinSide(C, A, "b");
       }
       out += dot(C);
-      const two = apexes.length === 2;
-      out += text(C.x + (two && i === 0 ? -10 : 0), C.y - 12, two ? `C${i === 0 ? "₁" : "₂"}` : "C", "lab-text", two && i === 0 ? "end" : "middle");
+      out += vertexLabel(C, two ? (i === 0 ? { x: C.x + 30, y: C.y + 20 } : { x: C.x - 10, y: C.y + 30 }) : centroid(A, B, C), two ? `C${i === 0 ? "₁" : "₂"}` : "C");
     });
     if (step === 4 && v.fall === 0 && apexes.length === 1) {
       const mirror = scr(f, { x: apexes[0].x, y: -apexes[0].y });
-      if (mirror.y < H - 8) out += dot(mirror, "lab-dot-small", 3.5) + text(mirror.x + 8, mirror.y + 4, "C'", "lab-text-small");
+      if (mirror.y < H - 8) out += dot(mirror, "lab-dot-small", 3.5) + halo(text(mirror.x + 8, mirror.y + 4, "C'", "lab-text-small"));
       note = "C' unter AB gäbe nur das Spiegelbild: dasselbe Dreieck.";
     }
     if (step === 4 && v.fall === 0 && sideCheck(v.a, v.b, v.c).meet === "touch") out += dot(scr(f, sssApex(v.a, v.b, v.c)!), "lab-point-bad", 5);
-    if (step === 4 && apexes.length === 0) note = v.fall === 3 ? "Der Kreis um B ist zu klein, er erreicht den Schenkel nicht." : "Mit diesen Stücken gibt es kein Dreieck.";
+    if (step === 4 && apexes.length === 0) {
+      note = v.fall === 3 ? "Der Kreis um B ist kleiner als der Abstand von B zum Schenkel." : "Mit diesen Stücken gibt es kein Dreieck.";
+      if (v.fall === 3) out += legLot(f, v.c, v.alpha);
+    }
     if (step === 4 && apexes.length === 2) note = "α liegt der kürzeren Seite a gegenüber: zwei Lösungen.";
     if (apexes.some((apex) => !visible(scr(f, apex)))) note = "C liegt weit oben, außerhalb der Zeichnung.";
   }
   if (note) out += text(16, 62, note, apexes.length === 0 && step === 4 ? "lab-text-muted lab-text-bad" : "lab-text-muted");
   if (v.fall !== 0 && step >= 2) {
-    const HA = polar(A.x, A.y, 60, v.alpha);
-    out += angleFill(A, B, HA, 26, "lab-fill-a") + angleLabel(A, B, HA, 46, `α = ${deg(v.alpha)}`, "lab-text-small lab-text-a");
+    const DA = polar(A.x, A.y, 60, v.alpha);
+    out += angleFill(A, B, DA, 26, "lab-fill-a") + angleLabel(A, B, DA, 48, `α = ${deg(v.alpha)}`, "lab-text-small lab-text-a");
   }
   if (v.fall === 2 && step >= 3) {
-    const HB = polar(B.x, B.y, 60, 180 - v.beta);
-    out += angleFill(B, HB, A, 26, "lab-fill-b") + angleLabel(B, HB, A, 46, `β = ${deg(v.beta)}`, "lab-text-small lab-text-b");
+    const DB = polar(B.x, B.y, 60, 180 - v.beta);
+    out += angleFill(B, DB, A, 26, "lab-fill-b") + angleLabel(B, DB, A, 48, `β = ${deg(v.beta)}`, "lab-text-small lab-text-b");
   }
   out += line(A.x, A.y, B.x, B.y, "lab-side-c");
-  out += text((A.x + B.x) / 2, A.y + 18, `c = ${cmText(v.c)}`, "lab-text lab-text-c", "middle");
-  out += dot(A) + text(A.x - 8, A.y + 18, "A", "lab-text", "end");
-  out += text(B.x + 8, B.y + 18, "B", "lab-text");
+  out += baseLabel(A, B, v.c);
+  out += dot(A) + text(A.x - 8, A.y + 19, "A", "lab-text", "end");
+  out += text(B.x + 8, B.y + 19, "B", "lab-text");
   // the Planfigur, small, top right
-  out += `<rect x="384" y="${CON_TOP + 6}" width="128" height="96" rx="8" class="lab-panel" />`;
-  out += text(392, CON_TOP + 20, "Planfigur", "lab-text-small");
-  out += planfigur(v.fall, { x: 384, y: CON_TOP + 14, w: 128, h: 88 }, null);
+  out += `<rect x="384" y="${CON_TOP + 4}" width="128" height="100" rx="8" class="lab-panel" />`;
+  out += text(392, CON_TOP + 18, "Planfigur", "lab-text-small");
+  out += planfigur(v.fall, { x: 384, y: CON_TOP + 22, w: 128, h: 82 }, null);
   // handles for the pieces drawn so far
+  let HA: Pt | null = null;
   if (v.fall !== 0 && step >= 2) {
-    const HA = polar(A.x, A.y, 60, v.alpha);
+    HA = rayHandlePos(A, v.alpha, shown, CON_TOP);
     out += handle("HA", HA.x, HA.y, "freier Schenkel in A: Winkel α");
   }
   if (v.fall === 2 && step >= 3) {
-    const HB = polar(B.x, B.y, 60, 180 - v.beta);
+    const HB = rayHandlePos(B, 180 - v.beta, HA ? [...shown, HA] : shown, CON_TOP);
     out += handle("HB", HB.x, HB.y, "freier Schenkel in B: Winkel β");
   }
   if ((v.fall === 0 && step >= 2) || (v.fall === 1 && step >= 3)) {
-    const rb = polar(A.x, A.y, v.b * f.k, -10);
+    const rb = ringHandlePos(A, v.b * f.k, RING_A, CON_TOP);
     out += handle("Rb", rb.x, rb.y, "Zirkel um A: Radius b");
   }
   if ((v.fall === 0 || v.fall === 3) && step >= 3) {
-    const ra = polar(B.x, B.y, v.a * f.k, -22);
+    const ra = ringHandlePos(B, v.a * f.k, RING_B, CON_TOP);
     out += handle("Ra", ra.x, ra.y, "Zirkel um B: Radius a");
   }
   out += handle("B", B.x, B.y, "Ecke B: Seite c");
@@ -506,8 +577,8 @@ function triangleConstruction(v: LabValues): string {
 
 // ─── 1.3 Die Kongruenzsätze ────────────────────────────────────────────────
 
-export const KON: Frame = { ax: 110, base: 228, k: 17 };
-const KON_TOP = 70;
+export const KON: Frame = { ax: 100, base: 256, k: 22 };
+const KON_TOP = 72;
 
 /** What the chosen pieces of the congruence lab determine. */
 export interface CongruenceResult {
@@ -554,19 +625,28 @@ function wwwFamily(v: LabValues): string {
     const C = scr(f, { x: apex1.x * size, y: apex1.y * size });
     out += polygon([A, B, C], fills[i]);
     out += angleArc(B, C, A, 16);
-    out += text(B.x + 4, B.y + 16, `B${sub[i]}`, "lab-text-small");
-    out += text(C.x + 7, C.y - 3, `C${sub[i]}`, "lab-text-small");
+    out += halo(text(B.x + 4, B.y + 16, `B${sub[i]}`, "lab-text-small"));
+    out += halo(text(C.x + 7, C.y - 3, `C${sub[i]}`, "lab-text-small"));
   });
   const B3 = scr(f, { x: 1, y: 0 });
   const C3 = scr(f, apex1);
   out += angleFill(A, B3, C3, 26, "lab-fill-a");
-  out += angleLabel(A, B3, C3, 46, `α = ${deg(v.alpha)}`, "lab-text-small lab-text-a");
-  out += angleLabel(B3, C3, A, 36, `β = ${deg(v.beta)}`, "lab-text-small lab-text-b");
-  out += angleLabel(C3, A, B3, 32, `γ = ${deg(180 - v.alpha - v.beta)}`, "lab-text-small lab-text-c");
+  out += angleLabel(A, B3, C3, 48, `α = ${deg(v.alpha)}`, "lab-text-small lab-text-a");
+  out += angleLabel(B3, C3, A, 38, `β = ${deg(v.beta)}`, "lab-text-small lab-text-b");
+  out += angleLabel(C3, A, B3, 34, `γ = ${deg(180 - v.alpha - v.beta)}`, "lab-text-small lab-text-c");
   out += dot(A) + text(A.x - 8, A.y + 16, "A", "lab-text", "end");
   out += text(16, 48, "Gleiche Winkel legen nur die Form fest, nicht die Größe.", "lab-text-muted");
   out += text(16, 66, "Drei von unendlich vielen; die Gegenseiten von A sind parallel.", "lab-text-muted");
   return out;
+}
+
+/** The second line of the congruence lab for two sides and an opposite angle. */
+function ssaNote(v: LabValues, res: CongruenceResult): string {
+  const d = legDistance(v.c, v.alpha);
+  if (res.count === "zwei") return `Abstand ≈ ${cmText(d)} < a < c: Der Kreis schneidet den Schenkel zweimal.`;
+  if (res.count === "keins") return v.alpha >= 90 && v.a <= v.c ? "α ist nicht spitz: a müsste die längste Seite sein." : `a ist kürzer als der Abstand ≈ ${cmText(d)}: kein Schnittpunkt.`;
+  if (v.a < v.c - EPS) return "a ist genau der Abstand: Der Kreis berührt den Schenkel.";
+  return v.a > v.c + EPS ? "a > c: Der zweite Schnittpunkt liegt auf der Verlängerung über A hinaus." : "Der Kreis geht durch A; nur der zweite Schnittpunkt ergibt C.";
 }
 
 function congruence(v: LabValues): string {
@@ -610,19 +690,24 @@ function congruence(v: LabValues): string {
   if (v.art !== 0) loci += ray(A, v.alpha);
   if (v.art === 2) loci += ray(B, 180 - v.beta);
   out += clipped("kon-clip", loci);
+  if (v.art === 3) out += clipped("kon-clip", legLot(f, v.c, v.alpha));
   const visible = (C: Pt) => C.y >= KON_TOP + 6 && C.x > 6 && C.x < W - 6;
+  const shown: Pt[] = [];
+  let note = v.art === 3 ? ssaNote(v, res) : "";
   if (res.apexes.length === 1) {
     const apex = res.apexes[0];
     const C = scr(f, apex);
     const mirror = scr(f, { x: apex.x, y: -apex.y });
     out += clipped("kon-clip", polygon([A, B, mirror], "lab-ghost"));
-    if (mirror.y < H - 8) out += text(mirror.x + 8, mirror.y + 4, "C'", "lab-text-small");
-    out += text(16, 66, visible(C) ? "Gestrichelt: das Spiegelbild an AB, deckungsgleich." : "C liegt weit oben, außerhalb der Zeichnung.", "lab-text-muted");
+    if (mirror.y < H - 8) out += halo(text(mirror.x + 8, mirror.y + 4, "C'", "lab-text-small"));
+    if (!note) note = visible(C) ? "Gestrichelt: das Spiegelbild an AB, deckungsgleich." : "C liegt weit oben, außerhalb der Zeichnung.";
     if (visible(C)) {
+      shown.push(C);
+      const S = centroid(A, B, C);
       out += polygon([A, B, C], "lab-shape");
       out += sides.includes("a") ? line(B.x, B.y, C.x, C.y, "lab-side-a") : thinSide(B, C, "a");
       out += sides.includes("b") ? line(C.x, C.y, A.x, A.y, "lab-side-b") : thinSide(C, A, "b");
-      out += text(C.x, C.y - 12, "C", "lab-text", "middle");
+      out += vertexLabel(C, S, "C");
       if (sides.includes("a")) out += edgeLabel(B, C, `a = ${cmText(v.a)}`, "lab-text-small lab-text-a");
       if (sides.includes("b")) out += edgeLabel(C, A, `b = ${cmText(v.b)}`, "lab-text-small lab-text-b");
     }
@@ -630,39 +715,41 @@ function congruence(v: LabValues): string {
     const fills = ["lab-fill-a", "lab-fill-b"];
     res.apexes.forEach((apex, i) => {
       const C = scr(f, apex);
+      shown.push(C);
       out += polygon([A, B, C], fills[i]);
       out += line(B.x, B.y, C.x, C.y, "lab-side-a");
       out += dot(C);
-      out += text(C.x + (i === 0 ? -10 : 8), C.y - 10, `C${i === 0 ? "₁" : "₂"}`, "lab-text", i === 0 ? "end" : "start");
+      out += vertexLabel(C, i === 0 ? { x: C.x + 30, y: C.y + 20 } : { x: C.x - 10, y: C.y + 30 }, `C${i === 0 ? "₁" : "₂"}`);
     });
-    out += text(16, 66, `[BC₁] = [BC₂] = ${cmText(v.a)}, aber [AC₁] ≈ ${cmText(dist(ORIGIN, res.apexes[0]))} und [AC₂] ≈ ${cmText(dist(ORIGIN, res.apexes[1]))}`, "lab-text-muted");
   }
+  if (note) out += text(16, 66, note, "lab-text-muted");
   if (angles.includes("a")) {
-    const HA = polar(A.x, A.y, 60, v.alpha);
-    out += angleFill(A, B, HA, 24, "lab-fill-a") + angleLabel(A, B, HA, 44, `α = ${deg(v.alpha)}`, "lab-text-small lab-text-a");
+    const DA = polar(A.x, A.y, 60, v.alpha);
+    out += angleFill(A, B, DA, 24, "lab-fill-a") + angleLabel(A, B, DA, 46, `α = ${deg(v.alpha)}`, "lab-text-small lab-text-a");
   }
   if (angles.includes("b")) {
-    const HB = polar(B.x, B.y, 60, 180 - v.beta);
-    out += angleFill(B, HB, A, 24, "lab-fill-b") + angleLabel(B, HB, A, 44, `β = ${deg(v.beta)}`, "lab-text-small lab-text-b");
+    const DB = polar(B.x, B.y, 60, 180 - v.beta);
+    out += angleFill(B, DB, A, 24, "lab-fill-b") + angleLabel(B, DB, A, 46, `β = ${deg(v.beta)}`, "lab-text-small lab-text-b");
   }
   out += line(A.x, A.y, B.x, B.y, "lab-side-c");
-  out += text((A.x + B.x) / 2, A.y + 18, `c = ${cmText(v.c)}`, "lab-text lab-text-c", "middle");
-  out += dot(A) + text(A.x - 8, A.y + 18, "A", "lab-text", "end");
-  out += text(B.x + 8, B.y + 18, "B", "lab-text");
+  out += baseLabel(A, B, v.c);
+  out += dot(A) + text(A.x - 8, A.y + 19, "A", "lab-text", "end");
+  out += text(B.x + 8, B.y + 19, "B", "lab-text");
+  let HA: Pt | null = null;
   if (v.art !== 0) {
-    const HA = polar(A.x, A.y, 60, v.alpha);
+    HA = rayHandlePos(A, v.alpha, shown, KON_TOP);
     out += handle("HA", HA.x, HA.y, "freier Schenkel in A: Winkel α");
   }
   if (v.art === 2) {
-    const HB = polar(B.x, B.y, 60, 180 - v.beta);
+    const HB = rayHandlePos(B, 180 - v.beta, HA ? [...shown, HA] : shown, KON_TOP);
     out += handle("HB", HB.x, HB.y, "freier Schenkel in B: Winkel β");
   }
   if (v.art === 0 || v.art === 1) {
-    const rb = polar(A.x, A.y, v.b * f.k, -10);
+    const rb = ringHandlePos(A, v.b * f.k, RING_A, KON_TOP);
     out += handle("Rb", rb.x, rb.y, "Zirkel um A: Radius b");
   }
   if (v.art === 0 || v.art === 3) {
-    const ra = polar(B.x, B.y, v.a * f.k, -22);
+    const ra = ringHandlePos(B, v.a * f.k, RING_B, KON_TOP);
     out += handle("Ra", ra.x, ra.y, "Zirkel um B: Radius a");
   }
   out += handle("B", B.x, B.y, "Ecke B: Seite c");

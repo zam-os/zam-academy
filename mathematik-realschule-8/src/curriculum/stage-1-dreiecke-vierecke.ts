@@ -9,6 +9,7 @@ import {
   constructionSteps,
   deg,
   existenceTriangle,
+  legDistance,
   measure,
   oppositeText,
   sideCheck,
@@ -603,9 +604,9 @@ const dreieckskonstruktion: Lesson = {
         ],
         value: 0,
       },
-      { type: "range", key: "c", label: "Seite c = [AB]", unit: "cm", min: 3, max: 9, step: 0.5, value: 6, digits: 1 },
-      { type: "range", key: "a", label: "Seite a = [BC]", unit: "cm", min: 1, max: 9, step: 0.5, value: 5, digits: 1, showIf: (v) => v.fall === 0 || v.fall === 3 },
-      { type: "range", key: "b", label: "Seite b = [CA]", unit: "cm", min: 1, max: 9, step: 0.5, value: 4, digits: 1, showIf: (v) => v.fall === 0 || v.fall === 1 },
+      { type: "range", key: "c", label: "Seite c = [AB]", unit: "cm", min: 3, max: 8, step: 0.5, value: 6, digits: 1 },
+      { type: "range", key: "a", label: "Seite a = [BC]", unit: "cm", min: 1, max: 8, step: 0.5, value: 5, digits: 1, showIf: (v) => v.fall === 0 || v.fall === 3 },
+      { type: "range", key: "b", label: "Seite b = [CA]", unit: "cm", min: 1, max: 8, step: 0.5, value: 4, digits: 1, showIf: (v) => v.fall === 0 || v.fall === 1 },
       { type: "range", key: "alpha", label: "Winkel α bei A", unit: "°", min: 10, max: 170, step: 5, value: 50, showIf: (v) => v.fall !== 0 },
       { type: "range", key: "beta", label: "Winkel β bei B", unit: "°", min: 10, max: 170, step: 5, value: 60, showIf: (v) => v.fall === 2 },
       { type: "state", key: "step", value: 0 },
@@ -860,7 +861,10 @@ function theoremReadout(v: LabValues): string {
 function piecesReadout(v: LabValues): string {
   const res = congruenceResult(v);
   if (v.art === 4) return res.count === "keins" ? "kein Dreieck" : `γ = 180° − α − β = ${deg(180 - v.alpha - v.beta)}`;
-  if (res.apexes.length === 0) return "kein Dreieck";
+  if (res.apexes.length === 0) {
+    if (v.art !== 3) return "kein Dreieck";
+    return v.alpha >= 90 && v.a <= v.c ? "kein Dreieck: α ist nicht spitz, a müsste länger als c sein" : `kein Dreieck: a ist kürzer als der Abstand ≈ ${cmText(legDistance(v.c, v.alpha))}`;
+  }
   const B = { x: v.c, y: 0 };
   const O = { x: 0, y: 0 };
   if (res.apexes.length === 2) {
