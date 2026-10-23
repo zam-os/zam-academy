@@ -1423,11 +1423,12 @@ const schraegbilder: Lesson = {
     ],
     goals: [
       {
-        id: "quadrat-bild",
-        text: "Stelle eine Pyramide mit rechteckiger, nicht quadratischer Grundfläche so ein, dass ihre Grundfläche im Schrägbild genau wie ein Quadrat aussieht. Welche Werte brauchen ω und q?",
+        id: "raute-bild",
+        text: "Stelle einen Quader oder eine Pyramide mit rechteckiger, nicht quadratischer Grundfläche so ein, dass die Grundfläche im Schrägbild (ω unter 90°) wie eine Raute aussieht: alle vier Seiten im Bild gleich lang. Wie hängen q, die Tiefenkante und die Kante auf s dann zusammen, und warum ist diese Raute kein Quadrat?",
         check: (v) => {
           const { front, depth } = obliqueDims(v);
-          return v.body === 2 && v.omega === 90 && v.q * depth === front && front !== depth;
+          // the drawn depth edge q · depth as long as the edge on s; at ω < 90° the right angle is drawn as ω: a rhombus, no square
+          return (v.body === 0 || v.body === 2) && v.omega < 90 && front !== depth && Math.abs(v.q * depth - front) < 1e-9;
         },
       },
       {

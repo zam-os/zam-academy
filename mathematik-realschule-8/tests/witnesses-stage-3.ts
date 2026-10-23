@@ -39,8 +39,8 @@ export const GOAL_WITNESSES_STAGE_3: Record<string, Record<string, LabValues>> =
     first: { body: 2, a: 4, b: 4, c: 3, ax: 1, ay: 0, az: 0 },
   },
   "rg-5-schraegbilder": {
-    // base 3 cm × 6 cm, ω = 90°, q = ½: the depth 6 cm is drawn 3 cm long, straight up
-    "quadrat-bild": { body: 2, pos: 0, a: 3, b: 6, h: 4, omega: 90, q: 0.5 },
+    // base 3 cm × 6 cm, q = ½: the 6 cm depth edge is drawn 3 cm long, as long as the edge on s; at ω = 45° a rhombus
+    "raute-bild": { body: 2, pos: 0, a: 3, b: 6, h: 4, omega: 45, q: 0.5 },
     // legs 3 cm (on s) and 4 cm (into the depth): ½ · 4 cm = 2 cm
     "tiefe-zwei": { body: 1, pos: 0, a: 3, b: 4, h: 4, omega: 45, q: 0.5 },
     // the 4 cm edge on s, the 6 cm edge into the depth
