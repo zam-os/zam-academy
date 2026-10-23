@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { STAGE_TERME_GLEICHUNGEN } from "../src/curriculum/stage-4-terme-gleichungen";
+import { checkTask, wrongAnswerHint } from "../src/exercises/checker";
 import { createRng, seedFrom } from "../src/exercises/rng";
 import { computeReadouts, defaultLabValues, enumerateLabGrid } from "../src/lab/engine";
 import { labView } from "../src/lab/visuals";
@@ -260,12 +261,20 @@ describe("Aufgaben der Etappe 4 rechnen richtig (4.4 bis 4.6)", () => {
     }
     const seen = [0, 0, 0];
     for (const task of tasks("tg-4-faktorisieren", "rueckwaerts", 2)) {
-      const { variant, p, q, mid, last, askLast } = meta(task);
+      const { variant, p, q, mid, last, askLast, minus } = meta(task);
       seen[variant] += 1;
       const isSquare = mid === 2 * p * q && last === q * q;
       expect(choice(task, 0)).toBe(isSquare ? 0 : 1);
       expect(isSquare).toBe(variant === 0);
-      expect(num(task, 1)).toBe(askLast ? q * q : 2 * p * q);
+      // the number in front of x carries the sign of the term: 49x² − 112x + 64 needs −112
+      expect(task.given[0].includes(" − "), task.prompt).toBe(minus === 1);
+      expect(num(task, 1)).toBe(askLast ? q * q : minus ? -2 * p * q : 2 * p * q);
+      if (!askLast && minus) {
+        const field = task.fields[1];
+        if (field.kind !== "number") throw new Error("number field");
+        expect(field.slips?.find((s) => s.value === 2 * p * q)?.hint, task.prompt).toMatch(/Minus/);
+        expect(task.steps[1]).toContain(`= −${2 * p * q}x`);
+      }
       // only the asked summand is wrong
       if (!isSquare) expect(askLast ? mid === 2 * p * q : last === q * q).toBe(true);
     }
@@ -286,11 +295,16 @@ describe("Aufgaben der Etappe 4 rechnen richtig (4.4 bis 4.6)", () => {
           else expect(T(d - h)).toBeLessThan(e);
         }
         if (level === 1) expect(Math.abs(a)).toBe(1);
-        else if (!context) expect(a).not.toBe(1);
+        // a = ±1 is Level 1: Level 2 always has a factor to take out first
+        else if (!context) expect(Math.abs(a)).not.toBe(1);
         if (context) {
           expect(d).toBeGreaterThan(0);
           expect(e).toBeGreaterThan(0);
           expect(a).toBeLessThan(0);
+          // a school company: without sales a loss of 100 € to 2.000 €, at best a profit below 4.000 €
+          expect(c, task.prompt).toBeLessThanOrEqual(-1);
+          expect(c, task.prompt).toBeGreaterThanOrEqual(-20);
+          expect(e, task.prompt).toBeLessThan(40);
         }
       }
     }
@@ -610,6 +624,51 @@ describe("Aufgaben der Etappe 4 rechnen richtig (4.7 bis 4.9)", () => {
     }
   });
 
+  it("4.7 solution cases: only adding and subtracting, so exactly one pair (a, b) is right, and 6x = 22 → 3x = 11 or −8x = 24 → 8x = −24 get a hint", () => {
+    let flipped = 0;
+    let divided = 0;
+    for (const task of tasks("tg-7-gleichungen", "loesungsfall", 1)) {
+      // the instruction rules out the equivalent forms the fields cannot accept
+      expect(task.prompt).toContain("nur durch Ausmultiplizieren, Zusammenfassen, Addieren und Subtrahieren");
+      expect(task.prompt).toContain("ohne zu multiplizieren oder zu teilen");
+      const [A, B] = [num(task, 0), num(task, 1)];
+      // the pair of adding and subtracting, recomputed: x-terms of the right side subtracted, numbers of the left side subtracted
+      const m = meta(task);
+      if (m.tpl === 0) expect([A, B]).toEqual([2 * m.p - m.q - m.r, m.k - (m.p * m.p - m.q * m.r)]);
+      else expect([A, B]).toEqual([m.m * m.a - m.n * m.c - m.e, m.f - (m.m * m.b - m.n * m.d)]);
+      const typed = (a: number, b: number) => [String(a).replace("-", "−"), String(b).replace("-", "−"), String(choice(task, 2))];
+      expect(checkTask(task, typed(A, B)).status).toBe("correct");
+      if (A !== 0) {
+        const result = checkTask(task, typed(-A, -B));
+        expect(result.status).toBe("wrong");
+        expect(wrongAnswerHint(task, result), task.prompt).toMatch(/mit −1 multiplizieren|Minus|Vorzeichen/);
+        flipped += 1;
+      }
+      let [g, h] = [Math.abs(A), Math.abs(B)];
+      while (h) [g, h] = [h, g % h];
+      if (A !== 0 && g > 1) {
+        const result = checkTask(task, typed(A / g, B / g));
+        expect(result.status).toBe("wrong");
+        expect(wrongAnswerHint(task, result), task.prompt).toMatch(/Nicht teilen|Minus|Vorzeichen/);
+        divided += 1;
+      }
+      // a · x = b and its solution once, never the same line twice
+      for (let i = 1; i < task.steps.length; i++) expect(task.steps[i], task.prompt).not.toBe(task.steps[i - 1]);
+    }
+    expect(flipped).toBeGreaterThan(40);
+    expect(divided).toBeGreaterThan(10);
+  });
+
+  it("4.7 equations: no step repeats the line before it (x = 4 twice, or 12x = 6 before 12x = 6 | : 12)", () => {
+    for (const generator of ["gleichung", "loesungsfall"])
+      for (const level of [1, 2] as const)
+        for (const task of tasks("tg-7-gleichungen", generator, level)) {
+          const lines = task.steps.map((s) => s.replace(/<[^>]+>/g, "").replace(/\s+\|.*$/, "").replace(/^.*: /, ""));
+          // equations only: the result line may name the case again („…: keine Lösung“)
+          for (let i = 1; i < lines.length; i++) if (lines[i].includes("=")) expect(lines[i], `${task.prompt}\n${task.steps.join("\n")}`).not.toBe(lines[i - 1]);
+        }
+  });
+
   it("4.7 equations: the minus-bracket slip is the value that slip really gives", () => {
     for (const task of tasks("tg-7-gleichungen", "gleichung", 1)) {
       const { s, p, q, r } = meta(task);
@@ -668,6 +727,16 @@ describe("Aufgaben der Etappe 4 rechnen richtig (4.7 bis 4.9)", () => {
           expect(m.p).toBeLessThan(m.p2);
           close(num(task, 0), m.x);
           close(num(task, 1), m.m1 + m.x);
+          // the Probe with the exact amounts: 0,25 l + 0,875 l = 1,125 l, and 1,125 : 2,25 really is 50 %
+          const probe = task.steps.find((s) => s.startsWith("Probe am Text"))!;
+          const read = (t: string) => Number(t.replace(/\./g, "").replace(",", "."));
+          const [, f1, f2, sum, mix, share, pct] = /Frucht ([\d,]+) l \+ ([\d,]+) l = ([\d,]+) l in ([\d,]+) l Getränk; [\d,]+ : [\d,]+ = ([\d,]+) = (\d+) %/.exec(probe)!;
+          close(read(f1), (m.p1 * m.m1) / 100);
+          close(read(f2), (m.p2 * m.x) / 100);
+          close(read(sum), read(f1) + read(f2));
+          close(read(mix), m.m1 + m.x);
+          close(read(sum) / read(mix), read(share));
+          expect(Number(pct)).toBe(m.p);
         } else {
           expect(m.PA * (m.N - m.kids) + m.PK * m.kids).toBe(m.T);
           expect(m.kids).toBeGreaterThanOrEqual(1);
@@ -678,6 +747,24 @@ describe("Aufgaben der Etappe 4 rechnen richtig (4.7 bis 4.9)", () => {
       }
     }
     expect([...contexts].sort()).toEqual([0, 1, 2, 3, 4, 5]);
+  });
+
+  it("4.8 writes its steps once and without „1x“: no line repeats the one before, no „x = 16, also x = 16“", () => {
+    for (const generator of ["geometrie", "zahlen"])
+      for (const level of [1, 2] as const)
+        for (const task of tasks("tg-8-sachaufgaben", generator, level)) {
+          const text = task.steps.map((s) => s.replace(/<[^>]+>/g, ""));
+          for (const line of text) {
+            expect(line, task.prompt).not.toMatch(/(^|[^\d,])1x/);
+            const twice = /(x = [−\d,]+), also \1(?![\d,])/.exec(line);
+            expect(twice, line).toBeNull();
+          }
+          // the solution is not written again at the start of the next line
+          for (let i = 1; i < text.length; i++) {
+            const solved = /(?:^|: )(x = [−\d,]+)$/.exec(text[i - 1]);
+            if (solved) expect(text[i].startsWith(solved[1]), `${text[i - 1]} / ${text[i]}`).toBe(false);
+          }
+        }
   });
 
   it("4.9 inequalities: the stated solution set is exactly where the inequality holds", () => {
@@ -749,5 +836,22 @@ describe("Aufgaben der Etappe 4 rechnen richtig (4.7 bis 4.9)", () => {
         }
       }
     }
+  });
+});
+
+describe("Etappe 4: predicted slips", () => {
+  it("name each wrong value once: two slips of a field never share a value", () => {
+    let fields = 0;
+    for (const id of IDS)
+      for (const generator of lesson(id).exercises)
+        for (const level of [1, 2] as const)
+          for (const task of tasks(id, generator.id, level))
+            for (const field of task.fields) {
+              if (field.kind !== "number" || !field.slips?.length) continue;
+              const values = field.slips.map((s) => s.value.toFixed(9));
+              expect(new Set(values).size, `${id}/${generator.id} L${level}: ${field.label} in ${task.prompt}`).toBe(values.length);
+              fields += 1;
+            }
+    expect(fields).toBeGreaterThan(3000);
   });
 });

@@ -45,12 +45,22 @@ import {
   WRONG_CLAIMS,
 } from "../lab/views-terme-gleichungen";
 import type { DifficultyLevel, ExerciseTask, Lesson, NumberField, Stage } from "../model/types";
-import { choiceField, numberField } from "./helpers";
+import { choiceField, numberField as plainNumberField } from "./helpers";
 
 const STAGE_ID = "stage-4-terme-gleichungen";
 const LP = "M8 LB 4 (I) · M8 LB 3 (II/III)";
 
 // ─── Helpers of this stage ─────────────────────────────────────────────────
+
+/**
+ * numberField() with every slip value once: when two predicted mistakes give
+ * the same number (b = 1 makes b and b² equal), the first, more specific hint
+ * is kept and the other dropped.
+ */
+function numberField(label: string, answer: number, unit = "", digits = 2, extra: Partial<NumberField> = {}): NumberField {
+  const slips = extra.slips?.filter((slip, i, all) => all.findIndex((other) => Math.abs(other.value - slip.value) < 1e-9) === i);
+  return plainNumberField(label, answer, unit, digits, slips ? { ...extra, slips } : extra);
+}
 
 /**
  * The shared task test types 3x + 7 as its "far off" answer: at x = −3,5 that
@@ -1313,6 +1323,9 @@ const faktorisieren: Lesson = {
         if (variant === 1) last = rng.pick([q * q + rng.int(1, 6), Math.max(1, q * q - rng.int(1, 5)), 2 * q, q].filter((n) => n !== q * q && n > 0));
         if (variant === 2) mid = rng.pick([p * q, 2 * p * q + p, 2 * p * q - p, p * p * q].filter((n) => n !== 2 * p * q && n > 0));
         const op = minus ? "−" : "+";
+        // with a minus the number in front of x is negative: T = 49x² − 112x + 64 needs −112
+        const sign = minus ? -1 : 1;
+        const neg = minus ? "−" : "";
         const shown = `${p * p}x<sup>2</sup> ${op} ${mid}x + ${last}`;
         const askLast = variant === 1 || (variant === 0 && rng.next() < 0.5);
         const name = ["Tim", "Mia", "Can", "Lena", "Jonas", "Elif"][rng.int(0, 5)];
@@ -1323,11 +1336,15 @@ const faktorisieren: Lesson = {
             choiceField("Ist T ein vollständiges Quadrat?", ["ja", "nein"], right ? 0 : 1),
             askLast
               ? intField("Zahl am Ende:", q * q, [{ value: q, hint: `Am Ende steht b², also ${q} · ${q}.` }, { value: 2 * q, hint: `b² heißt ${q} · ${q}, nicht 2 · ${q}.` }, ...(right ? [] : [{ value: last, hint: "Prüfe mit dem Mischglied: 2 · a · b muss die Zahl vor x ergeben." }])])
-              : intField("Zahl vor x:", 2 * p * q, [{ value: p * q, hint: "Das Mischglied ist 2ab, nicht ab." }, ...(right ? [] : [{ value: mid, hint: "Prüfe: Die Zahl vor x muss 2 · a · b sein." }])]),
+              : intField("Zahl vor x:", sign * 2 * p * q, [
+                  ...(minus ? [{ value: 2 * p * q, hint: "Vor dem Mischglied steht ein Minus: Die Zahl vor x ist negativ, wie bei (a − b)² = a² − 2ab + b²." }] : []),
+                  { value: sign * p * q, hint: "Das Mischglied ist 2ab, nicht ab." },
+                  ...(right ? [] : [{ value: sign * mid, hint: "Prüfe: Die Zahl vor x muss 2 · a · b sein." }]),
+                ]),
           ],
           steps: [
-            `${p * p}x<sup>2</sup> = (${p}x)<sup>2</sup>, also a = ${p}x. ${askLast ? `Das Mischglied ${mid}x = 2 · ${p}x · b ergibt b = ${q}.` : `${last} = ${q}<sup>2</sup>, also b = ${q}.`}`,
-            askLast ? `Dann muss am Ende b<sup>2</sup> = ${q * q} stehen${right ? ", und das steht dort." : `, nicht ${last}.`}` : `Dann muss das Mischglied 2 · ${p}x · ${q} = ${2 * p * q}x sein${right ? ", und das ist es." : `, nicht ${mid}x.`}`,
+            `${p * p}x<sup>2</sup> = (${p}x)<sup>2</sup>, also a = ${p}x. ${askLast ? `Das Mischglied ${neg}${mid}x = ${neg}2 · ${p}x · b ergibt b = ${q}.` : `${last} = ${q}<sup>2</sup>, also b = ${q}.`}`,
+            askLast ? `Dann muss am Ende b<sup>2</sup> = ${q * q} stehen${right ? ", und das steht dort." : `, nicht ${last}.`}` : `Dann muss das Mischglied ${neg}2 · ${p}x · ${q} = ${neg}${2 * p * q}x sein${right ? ", und das ist es." : `, nicht ${neg}${mid}x.`}`,
             `<strong>${right ? "ja" : "nein"}: ${p * p}x<sup>2</sup> ${op} ${2 * p * q}x + ${q * q} = (${p}x ${op} ${q})<sup>2</sup></strong>`,
           ],
           meta: { variant, p, q, mid, last, minus: minus ? 1 : 0, askLast: askLast ? 1 : 0 },
@@ -1372,6 +1389,9 @@ function extremeSentence(a: number, d: number, e: number, name = "T"): string {
 }
 
 const KIND = ["kleinster Wert (Minimum)", "größter Wert (Maximum)"];
+
+/** a and d of a calendar profit G(x) = a(x − d)² + e whose rise −a · d² from G(0) to the top lies between 6 and 40 (hundred euros). */
+const PROFIT_SHAPES: Array<[number, number]> = [-0.5, -1, -2].flatMap((a) => [2, 3, 4, 5, 6, 7, 8, 9].filter((d) => -a * d * d >= 6 && -a * d * d <= 40).map((d): [number, number] => [a, d]));
 
 const extremwerte: Lesson = {
   id: "tg-5-extremwerte",
@@ -1480,12 +1500,13 @@ const extremwerte: Lesson = {
         }
         const context = rng.next() < 0.3;
         if (context) {
-          // A profit G(x) = a(x − d)² + e with its greatest value at d hundred pieces.
-          const a = rng.pick([-0.5, -1, -2]);
-          const d = rng.int(2, 9);
-          const e = rng.int(4, 40) * (a === -0.5 ? 1 : 2);
+          // A profit G(x) = a(x − d)² + e with its greatest value at d hundred pieces. Without sales the
+          // company loses its fixed costs, 100 € to 2.000 € (G(0) = c from −1 to −20), and the greatest
+          // profit e = c − a · d² stays below 4.000 €.
+          const [a, d] = rng.pick(PROFIT_SHAPES);
+          const c = -rng.int(1, Math.min(20, Math.floor(-a * d * d) - 2));
+          const e = c - a * d * d;
           const b = -2 * a * d;
-          const c = e + a * d * d;
           const G = polyHtml([{ c: a, m: X2 }, { c: b, m: X1 }, { c, m: X0 }]);
           return {
             prompt: `Eine Schülerfirma verkauft Kalender. Ihr Gewinn ist G(x) = ${G} (x: verkaufte Kalender in Hundert, G in Hundert Euro; ein negativer Wert ist ein Verlust). Bei welcher Verkaufszahl ist der Gewinn am größten, und wie groß ist er dann?`,
@@ -1498,7 +1519,8 @@ const extremwerte: Lesson = {
             meta: { a, b, c, d, e, context: 1 },
           };
         }
-        const a = rng.pick([2, 3, -2, -3, 0.5, -0.5, -1]);
+        // never ±1: those are the Level 1 terms
+        const a = rng.pick([2, 3, -2, -3, 0.5, -0.5]);
         const d = nonZero(rng, 5);
         const e = rng.int(-9, 12);
         const b = -2 * a * d;
@@ -1858,10 +1880,33 @@ function niceSolution(rng: Rng, A: number, range = 12): number {
 /** "| − 7" or "| + 7" for moving the number k to the other side; empty for 0. */
 const moveHtml = (k: number) => (k === 0 ? "" : k > 0 ? `   | − ${fmt(k)}` : `   | + ${fmt(-k)}`);
 
-/** The steps from A · x = B to the solution, or to the true or false statement. */
+/** The steps from A · x = B to the solution, or to the true or false statement; for A = 1 the one line x = B. */
 function reducedSteps(A: number, B: number): string[] {
   if (A === 0) return [`0 · x = ${fmt(B)}`, B === 0 ? "0 = 0 ist für jedes x wahr: allgemeingültig" : `0 = ${fmt(B)} ist falsch: keine Lösung`];
-  return [`${monoHtml(A, X1)} = ${fmt(B)}${A === 1 ? "" : `   | : ${paren(A)}`}`, `x = ${solutionText(B, A)}`];
+  if (A === 1) return [`x = ${fmt(B)}`];
+  return [`${monoHtml(A, X1)} = ${fmt(B)}   | : ${paren(A)}`, `x = ${solutionText(B, A)}`];
+}
+
+/** "   | − 3x + 13": the x-term e · x and the number c moved off their sides by subtracting; empty when both are 0. */
+function moveBothHtml(e: number, c: number): string {
+  const parts = [e === 0 ? "" : `${e > 0 ? "−" : "+"} ${monoHtml(Math.abs(e), X1)}`, c === 0 ? "" : `${c > 0 ? "−" : "+"} ${fmt(Math.abs(c))}`].filter(Boolean);
+  return parts.length ? `   | ${parts.join(" ")}` : "";
+}
+
+/**
+ * The slips of a · x = b reached by more than adding and subtracting: both
+ * sides times −1 (−a, −b) or divided by a common factor (a : g, b : g).
+ */
+function reducedFormSlips(A: number, B: number, which: "a" | "b"): Array<{ value: number; hint: string }> {
+  const own = which === "a" ? A : B;
+  const slips: Array<{ value: number; hint: string }> = [];
+  // 0 · x = b has no other form worth naming: there a wrong b is a sign slip of moving the number
+  if (A === 0) return slips;
+  if (own !== 0) slips.push({ value: -own, hint: "Nicht mit −1 multiplizieren: Bring die x-Glieder nur durch Addieren und Subtrahieren nach links und die Zahlen nach rechts." });
+  let [g, h] = [Math.abs(A), Math.abs(B)];
+  while (h) [g, h] = [h, g % h];
+  if (g > 1 && own !== 0) slips.push({ value: own / g, hint: `Nicht teilen: Gesucht ist a · x = b gleich nach dem Addieren und Subtrahieren, ohne durch ${g} zu kürzen.` });
+  return slips;
 }
 
 /** " + 3k", " − k": q · k after another term. */
@@ -1980,8 +2025,9 @@ const gleichungen: Lesson = {
             steps: [
               `Ausmultiplizieren: ${expanded} = ${fmt(k)}`,
               `Minusklammer auflösen: ${opened} = ${fmt(k)}`,
-              `x<sup>2</sup> − x<sup>2</sup> = 0: ${polyHtml(lin(A, rest))} = ${fmt(k)}${moveHtml(rest)}`,
-              ...reducedSteps(A, k - rest).slice(0, 1),
+              ...(rest === 0
+                ? [`x<sup>2</sup> − x<sup>2</sup> = 0: ${reducedSteps(A, k)[0]}`]
+                : [`x<sup>2</sup> − x<sup>2</sup> = 0: ${polyHtml(lin(A, rest))} = ${fmt(k)}${moveHtml(rest)}`, ...reducedSteps(A, k - rest).slice(0, 1)]),
               `Probe: linke Seite für x = ${fmt(x0)} ergibt ${fmt(leftAt(x0), 4)} = ${fmt(k)}`,
               `<strong>x = ${fmt(x0)}, also L = {${fmt(x0)}}</strong>`,
             ],
@@ -2006,10 +2052,10 @@ const gleichungen: Lesson = {
             k = A * x0 + p * p - q * q;
             const left = polyMul(lin(a, p), lin(a, p));
             const right = polyMul(lin(a, -q), lin(a, -q));
-            shown = `${ax(p)}<sup>2</sup> = ${ax(-q)}<sup>2</sup>${signed(k)}`;
+            shown = `${ax(p)}<sup>2</sup> = ${ax(-q)}<sup>2</sup>${k === 0 ? "" : signed(k)}`;
             steps = [
-              `Binomische Formeln auf beiden Seiten: ${polyHtml(left)} = ${polyHtml(right)}${signed(k)}`,
-              `${a * a === 1 ? "" : a * a}x<sup>2</sup> auf beiden Seiten abziehen und die x-Glieder nach links: ${monoHtml(A, X1)} = ${fmt(q * q + k - p * p)}`,
+              `Binomische Formeln auf beiden Seiten: ${polyHtml(left)} = ${polyHtml(right)}${k === 0 ? "" : signed(k)}`,
+              `${a * a === 1 ? "" : a * a}x<sup>2</sup> auf beiden Seiten abziehen, die x-Glieder nach links und die Zahlen nach rechts: ${reducedSteps(A, q * q + k - p * p)[0]}`,
             ];
           } else {
             // (ax + p)² − (ax + q)(ax − q) = k
@@ -2032,7 +2078,7 @@ const gleichungen: Lesson = {
                 ],
               }),
             ],
-            steps: [...steps, ...reducedSteps(A, B).slice(0, 1), `<strong>x = ${fmt(x0)}, also L = {${fmt(x0)}}</strong>`],
+            steps: [...steps, ...(variant === 0 ? [] : reducedSteps(A, B).slice(0, 1)), `<strong>x = ${fmt(x0)}, also L = {${fmt(x0)}}</strong>`],
             meta: { variant: variant + 1, a, p, q, k, x0 },
           };
         }
@@ -2060,7 +2106,7 @@ const gleichungen: Lesson = {
           ],
           steps: [
             `${polyHtml(polyMul(lin(1, p), lin(1, p)))} − (${polyHtml(polyMul(lin(1, q), lin(1, r)))}) = ${fmt(k)}`,
-            `${polyHtml(lin(A, rest))} = ${fmt(k)}${moveHtml(rest)}`,
+            ...(rest === 0 ? [] : [`${polyHtml(lin(A, rest))} = ${fmt(k)}${moveHtml(rest)}`]),
             ...reducedSteps(A, k - rest),
             `<strong>x = ${fmt(x0)} ${isIn ? "∈" : "∉"} ${Gname}, also L = ${isIn ? `{${fmt(x0)}}` : "{ }"}</strong>`,
           ],
@@ -2085,13 +2131,17 @@ const gleichungen: Lesson = {
             const [A, B] = [2 * p - q - r, k - rest];
             const shown = `${sqHtml(p)} − ${prodHtml(q, r)} = ${fmt(k)}`;
             return {
-              prompt: `Vereinfache die Gleichung ${shown} zur Form a · x = b (x-Glieder links, Zahlen rechts) und entscheide, wie viele Lösungen sie über G = ℚ hat.`,
+              prompt: `Bringe die Gleichung ${shown} nur durch Ausmultiplizieren, Zusammenfassen, Addieren und Subtrahieren auf die Form a · x = b, ohne zu multiplizieren oder zu teilen (x-Glieder links, Zahlen rechts). Entscheide dann, wie viele Lösungen sie über G = ℚ hat.`,
               given: [shown],
               formulaHint: "a ≠ 0: genau eine Lösung; a = 0 und b ≠ 0: keine Lösung; a = 0 und b = 0: allgemeingültig",
-              fields: [intField("a =", A, [{ value: 2 * p + q + r, hint: "Minus vor dem Produkt: Auch das x-Glied des Produkts ändert sein Vorzeichen." }]), intField("b =", B, [{ value: k + rest, hint: "Die Zahl ohne x wird auf die rechte Seite gebracht: Ihr Vorzeichen ändert sich." }]), choiceField("Lösungsfall:", CASES, kind)],
+              fields: [
+                intField("a =", A, [{ value: 2 * p + q + r, hint: "Minus vor dem Produkt: Auch das x-Glied des Produkts ändert sein Vorzeichen." }, ...reducedFormSlips(A, B, "a")]),
+                intField("b =", B, [{ value: k + rest, hint: "Die Zahl ohne x wird auf die rechte Seite gebracht: Ihr Vorzeichen ändert sich." }, ...reducedFormSlips(A, B, "b")]),
+                choiceField("Lösungsfall:", CASES, kind),
+              ],
               steps: [
                 `${polyHtml(polyMul(lin(1, p), lin(1, p)))} − (${polyHtml(polyMul(lin(1, q), lin(1, r)))}) = ${fmt(k)}`,
-                `${A === 0 ? `0 · x${signed(rest)}` : polyHtml(lin(A, rest))} = ${fmt(k)}${moveHtml(rest)}`,
+                ...(rest === 0 ? [] : [`${A === 0 ? `0 · x${signed(rest)}` : polyHtml(lin(A, rest))} = ${fmt(k)}${moveHtml(rest)}`]),
                 ...reducedSteps(A, B),
                 `<strong>a = ${fmt(A)}, b = ${fmt(B)}: ${CASES[kind]}</strong>`,
               ],
@@ -2111,14 +2161,19 @@ const gleichungen: Lesson = {
           const right = e === 0 ? fmt(f) : polyHtml(lin(e, f));
           const shown = `${m}${linHtml(a, b)} − ${n}${linHtml(c, d)} = ${right}`;
           return {
-            prompt: `Vereinfache die Gleichung ${shown} zur Form a · x = b (x-Glieder links, Zahlen rechts) und entscheide, wie viele Lösungen sie über G = ℚ hat.`,
+            prompt: `Bringe die Gleichung ${shown} nur durch Ausmultiplizieren, Zusammenfassen, Addieren und Subtrahieren auf die Form a · x = b, ohne zu multiplizieren oder zu teilen (x-Glieder links, Zahlen rechts). Entscheide dann, wie viele Lösungen sie über G = ℚ hat.`,
             given: [shown],
             formulaHint: "a ≠ 0: genau eine Lösung; a = 0 und b ≠ 0: keine Lösung; a = 0 und b = 0: allgemeingültig",
-            fields: [intField("a =", A, [{ value: m * a + n * c - e, hint: "Minus vor der zweiten Klammer: Auch ihr x-Glied ändert sein Vorzeichen." }]), intField("b =", B, [{ value: f - m * b - n * d, hint: "Minus vor der zweiten Klammer: Auch die Zahl darin ändert ihr Vorzeichen." }]), choiceField("Lösungsfall:", CASES, kind)],
+            fields: [
+              intField("a =", A, [{ value: m * a + n * c - e, hint: "Minus vor der zweiten Klammer: Auch ihr x-Glied ändert sein Vorzeichen." }, ...reducedFormSlips(A, B, "a")]),
+              intField("b =", B, [{ value: f - m * b - n * d, hint: "Minus vor der zweiten Klammer: Auch die Zahl darin ändert ihr Vorzeichen." }, ...reducedFormSlips(A, B, "b")]),
+              choiceField("Lösungsfall:", CASES, kind),
+            ],
             steps: [
               `Klammern auflösen: ${polyHtml([{ c: m * a, m: X1 }, { c: m * b, m: X0 }, { c: -n * c, m: X1 }, { c: -n * d, m: X0 }], false)} = ${right}`,
-              `Zusammenfassen: ${slope === 0 ? `0 · x${constant === 0 ? "" : signed(constant)}` : polyHtml(lin(slope, constant))} = ${right}`,
-              ...reducedSteps(A, B),
+              ...(e === 0 && constant === 0
+                ? [`Zusammenfassen: ${reducedSteps(A, B)[0]}`, ...reducedSteps(A, B).slice(1)]
+                : [`Zusammenfassen: ${slope === 0 ? `0 · x${constant === 0 ? "" : signed(constant)}` : polyHtml(lin(slope, constant))} = ${right}${moveBothHtml(e, constant)}`, ...reducedSteps(A, B)]),
               `<strong>a = ${fmt(A)}, b = ${fmt(B)}: ${CASES[kind]}</strong>`,
             ],
             meta: { tpl: 1, kind, m, a, b, n, c, d, e, f, A, B },
@@ -2347,7 +2402,7 @@ const sachaufgaben: Lesson = {
             steps: [
               `x sei die Seitenlänge des Quadrats in cm. Rechteck: (x + ${a}) cm und (x − ${b}) cm.`,
               `Gleichung: ${shown}`,
-              `x<sup>2</sup> + ${a - b}x − ${a * b} = x<sup>2</sup> ${smaller ? "−" : "+"} ${Math.abs(c)}   | − x<sup>2</sup> + ${a * b}: ${monoHtml(a - b, X1)} = ${fmt(a * b - c)}, also x = ${fmt(x)}`,
+              `x<sup>2</sup> + ${cx(a - b)} − ${a * b} = x<sup>2</sup> ${smaller ? "−" : "+"} ${Math.abs(c)}   | − x<sup>2</sup> + ${a * b}: ${a - b === 1 ? `x = ${fmt(x)}` : `${monoHtml(a - b, X1)} = ${fmt(a * b - c)}, also x = ${fmt(x)}`}`,
               `Probe am Text: Quadrat ${fmt(x * x)} cm², Rechteck ${fmt(x + a)} cm · ${fmt(x - b)} cm = ${fmt((x + a) * (x - b))} cm², ${Math.abs(c)} cm² ${smaller ? "weniger" : "mehr"}.`,
               `<strong>Das Quadrat hat die Seitenlänge ${fmt(x)} cm und den Flächeninhalt ${fmt(x * x)} cm².</strong>`,
             ],
@@ -2360,7 +2415,7 @@ const sachaufgaben: Lesson = {
           `x sei die Breite in cm; Länge (x + ${d}) cm, neue Seiten (x + ${m}) cm und (x + ${d} − ${n}) cm = (${plusText("x", d - n)}) cm.`,
           `Gleichung: ${eq}`,
           `x<sup>2</sup> + ${d}x = ${polyHtml(polyMul(lin(1, m), lin(1, d - n)))}   | − x<sup>2</sup> − ${d - n + m === 1 ? "" : d - n + m}x: ${n - m === 1 ? "" : n - m}x = ${m * (d - n)}`,
-          `x = ${fmt(x)}. Probe am Text: alt ${fmt(x)} cm · ${fmt(x + d)} cm = ${fmt(x * (x + d))} cm², neu ${fmt(x + m)} cm · ${fmt(x + d - n)} cm = ${fmt((x + m) * (x + d - n))} cm².`,
+          `${n - m === 1 ? "" : `x = ${fmt(x)}. `}Probe am Text: alt ${fmt(x)} cm · ${fmt(x + d)} cm = ${fmt(x * (x + d))} cm², neu ${fmt(x + m)} cm · ${fmt(x + d - n)} cm = ${fmt((x + m) * (x + d - n))} cm².`,
           `<strong>Das Rechteck ist ${fmt(x)} cm breit und ${fmt(x + d)} cm lang.</strong>`,
         ];
         const fields = [
@@ -2403,7 +2458,7 @@ const sachaufgaben: Lesson = {
               given: [eq],
               formulaHint: "Links ausmultiplizieren, x<sup>2</sup> fällt weg",
               fields: [numberField("kleinere Zahl:", x, "", 0), numberField("größere Zahl:", x + d, "", 0)],
-              steps: [`x<sup>2</sup> + ${d}x = x<sup>2</sup> + ${c}   | − x<sup>2</sup>`, `${d === 1 ? "" : d}x = ${c}, also x = ${x}`, `Probe am Text: ${x} · ${x + d} = ${x * (x + d)} und ${x}<sup>2</sup> + ${c} = ${x * x + c}.`, `<strong>Die Zahlen heißen ${x} und ${x + d}.</strong>`],
+              steps: [`x<sup>2</sup> + ${cx(d)} = x<sup>2</sup> + ${c}   | − x<sup>2</sup>`, d === 1 ? `x = ${c}` : `${d}x = ${c}, also x = ${x}`, `Probe am Text: ${x} · ${x + d} = ${x * (x + d)} und ${x}<sup>2</sup> + ${c} = ${x * x + c}.`, `<strong>Die Zahlen heißen ${x} und ${x + d}.</strong>`],
               meta: { context, d, x, c },
             };
           }
@@ -2483,9 +2538,9 @@ const sachaufgaben: Lesson = {
             fields: [numberField("x =", x, "l", 2), numberField("Mischung:", m1 + x, "l", 2, { slips: [{ value: x, hint: "Das ist nur der zugegebene Saft. Gefragt ist die ganze Mischung." }] })],
             steps: [
               `x sei die Menge des ${p2}-%-Safts in l. Die Fruchtmenge bleibt erhalten: ${eq}`,
-              `${fmt((p1 * m1) / 100)} + ${fmt(p2 / 100)}x = ${fmt((p * m1) / 100)} + ${fmt(p / 100)}x   | − ${fmt(p / 100)}x − ${fmt((p1 * m1) / 100)}`,
+              `${fmt((p1 * m1) / 100)} + ${cx(p2 / 100)} = ${fmt((p * m1) / 100)} + ${fmt(p / 100)}x   | − ${fmt(p / 100)}x − ${fmt((p1 * m1) / 100)}`,
               `${fmt((p2 - p) / 100)}x = ${fmt(((p - p1) * m1) / 100)}, also x = ${fmt(x)}`,
-              `Probe am Text: Frucht ${fmt((p1 * m1) / 100)} l + ${fmt((p2 * x) / 100)} l = ${fmt((p1 * m1 + p2 * x) / 100)} l in ${fmt(m1 + x)} l Getränk, das sind ${p} %.`,
+              `Probe am Text: Frucht ${fmt((p1 * m1) / 100, 3)} l + ${fmt((p2 * x) / 100, 3)} l = ${fmt((p1 * m1 + p2 * x) / 100, 3)} l in ${fmt(m1 + x)} l Getränk; ${fmt((p1 * m1 + p2 * x) / 100, 3)} : ${fmt(m1 + x)} = ${fmt(p / 100)} = ${p} %.`,
               `<strong>Man braucht ${fmt(x)} l ${p2}-%-Saft und erhält ${fmt(m1 + x)} l Getränk.</strong>`,
             ],
             meta: { context, p1, p2, p, m1, x },
