@@ -445,7 +445,9 @@ export function symVerdict(v: LabValues): string {
   if (v.elem === 2) return s.symmetric ? "Symmetriezentrum" : "kein Symmetriezentrum";
   if (v.elem === 0) return s.symmetric ? "Symmetrieebene" : "keine Symmetrieebene";
   if (!s.symmetric) return "keine Symmetrieachse";
-  return s.order === Infinity ? "Symmetrieachse für jeden Winkel" : `Symmetrieachse, kleinster Winkel ${fmt(360 / s.order)}°`;
+  if (s.order === Infinity) return "Symmetrieachse für jeden Winkel";
+  // the smallest angle is what the learner finds by turning: named only once a turn has matched
+  return v.alpha > 0 && s.turnMatches ? `Symmetrieachse, kleinster Winkel ${fmt(360 / s.order)}°` : "Symmetrieachse: Drehe, bis sich das Bild deckt.";
 }
 
 /** What happens to the image: mirror image, turned body or point image. */
@@ -798,7 +800,8 @@ function axialSectionView(v: LabValues): string {
     out += text(sx + (v.r * k) / 2, base - v.r * k - 6, `r = ${fmt(v.r)}`, "lab-text lab-text-a", "middle");
   } else {
     out += line(sx, base, sx + outer * k, base, "lab-side-a");
-    out += text(sx + (outer * k) / 2, base + 25, `r = ${fmt(outer)}`, "lab-text lab-text-a", "middle");
+    // beside the hole the outer radius is d + r, not the width r of the figure
+    out += text(sx + (outer * k) / 2, base + 25, v.shape === 0 && v.d > 0 ? `d + r = ${fmt(outer)}` : `r = ${fmt(outer)}`, "lab-text lab-text-a", "middle");
     // h beside the figure, or beside the mirror image where the right edge is near
     const hLabel = `h = ${fmt(v.h)}`;
     const atRight = sx + outer * k + 8 + hLabel.length * 7.3 < 516;

@@ -68,6 +68,18 @@ const at = (lab: LabDefinition, values: Partial<LabValues>) => {
   return { v, r: computeReadouts(lab, v) };
 };
 
+/**
+ * The angle ∢XYZ as Bavarian books measure it: counterclockwise from ray YX
+ * to ray YZ, in degrees in [0; 360[. A name is right when this is the angle
+ * the drawing shows, below 180°.
+ */
+function ccwAngle(x: [number, number], y: [number, number], z: [number, number]): number {
+  const u = [x[0] - y[0], x[1] - y[1]];
+  const w = [z[0] - y[0], z[1] - y[1]];
+  const deg = (Math.atan2(u[0] * w[1] - u[1] * w[0], u[0] * w[0] + u[1] * w[1]) * 180) / Math.PI;
+  return (deg + 360) % 360;
+}
+
 // ─── Independent symmetry counting for polyhedra ───────────────────────────
 //
 // Every symmetry plane of a polyhedron maps some vertex onto another one, so
@@ -479,6 +491,9 @@ describe("Aufgaben der Etappe 3 rechnen richtig", () => {
         const B = pic(m.q, m.omega, m.a, 0, 0);
         const C = pic(m.q, m.omega, m.a, m.b, 0);
         close(num(task, 2), angleAt(B, A, C), 1e-9);
+        // the asked angle is named counterclockwise in the picture: ∢CBA, from ray BC to ray BA
+        expect(task.fields[2].label).toBe("∢CBA im Bild:");
+        close(ccwAngle(C, B, A), num(task, 2), 1e-9);
         expect(PYRAMID_TRUE_PAIRS).toContain(picked(task, 3));
         for (const option of choice(task, 3).options) if (option !== picked(task, 3)) expect(PYRAMID_DISTORTED_PAIRS).toContain(option);
       } else {
@@ -552,6 +567,8 @@ describe("Aufgaben der Etappe 3 rechnen richtig", () => {
       const drawn = angle2(pic(v), pic(p), pic(r));
       const expected = Math.abs(drawn - c.value) < 1e-6 ? "gleich" : drawn < c.value ? "kleiner" : "größer";
       expect(c.picture, `${c.name}: ${drawn.toFixed(1)}° im Bild`).toBe(expected);
+      // named counterclockwise in the picture
+      close(ccwAngle(pic(p), pic(v), pic(r)), drawn, 1e-9);
     });
     for (const task of tasks("rg-6-wahre-groesse", "winkel-figur", 1)) {
       const c = ANGLE_CASES[meta(task).index];
@@ -574,6 +591,8 @@ describe("Aufgaben der Etappe 3 rechnen richtig", () => {
       const u = [P[0] - V[0], P[1] - V[1]];
       const w = [R[0] - V[0], R[1] - V[1]];
       const d = (Math.acos((u[0] * w[0] + u[1] * w[1]) / (Math.hypot(u[0], u[1]) * Math.hypot(w[0], w[1]))) * 180) / Math.PI;
+      // the name is counterclockwise in the picture
+      expect(Math.abs(ccwAngle(P, V, R) - d), `${name} is named counterclockwise`).toBeLessThan(1e-9);
       return Math.abs(t - d) < 1e-9;
     };
     for (const a of TRUE_ANGLES) expect(angleKept(a), a).toBe(true);
@@ -598,6 +617,9 @@ describe("Aufgaben der Etappe 3 rechnen richtig", () => {
         close(num(task, 2), (m.d * m.h) / 2);
         // far from equilateral: the legs differ clearly from the base
         expect(Math.abs(Math.hypot(m.h, m.d / 2) - m.d)).toBeGreaterThan(0.3);
+        // far from right-angled at S, which the distractor "ein rechtwinkliges Dreieck" would make true: apex angle off 90° by more than 5°
+        const apex = (2 * Math.atan(m.d / 2 / m.h) * 180) / Math.PI;
+        expect(Math.abs(apex - 90), `apex ${apex.toFixed(1)}°`).toBeGreaterThan(5);
       }
     }
   });
@@ -627,7 +649,10 @@ describe("Labore der Etappe 3", () => {
     const c = symmetryCounts(box(2 * q.hx, 2 * q.hy, 2 * q.hz));
     expect([c.planes, c.axes, c.centre]).toEqual([3, 3, true]);
     expect(at(lab, {}).r.urteil).toBe("Symmetrieebene");
-    expect(at(lab, { body: 2, elem: 1, k: 10 }).r.urteil).toBe("Symmetrieachse, kleinster Winkel 120°");
+    // the smallest angle is the answer of a goal: named only after a matching turn
+    expect(at(lab, { body: 2, elem: 1, k: 10 }).r.urteil).toBe("Symmetrieachse: Drehe, bis sich das Bild deckt.");
+    expect(at(lab, { body: 2, elem: 1, k: 10, alpha: 90 }).r.urteil).toBe("Symmetrieachse: Drehe, bis sich das Bild deckt.");
+    expect(at(lab, { body: 2, elem: 1, k: 10, alpha: 240 }).r.urteil).toBe("Symmetrieachse, kleinster Winkel 120°");
     expect(at(lab, { body: 5, elem: 1, k: 3 }).r.urteil).toBe("Symmetrieachse für jeden Winkel");
     expect(at(lab, { body: 3, elem: 2 }).r.urteil).toBe("kein Symmetriezentrum");
     expect(at(lab, { body: 0, elem: 0, k: 4 }).r.urteil).toBe("keine Symmetrieebene");
@@ -729,6 +754,19 @@ describe("Labore der Etappe 3", () => {
     close(trueFigure(pyr).length, Math.sqrt(25 + 25));
     expect(trueFigure({ ...pyr, figP: 2 }).wantedName).toBe("[NS]");
     close(trueFigure({ ...pyr, figP: 2 }).length, Math.sqrt(25 + 16));
+    // every angle the lab names is counterclockwise, in the true-size figure and in the Schrägbild (ω below 90°)
+    for (const omega of [30, 45, 60, 75]) {
+      for (const [body, fig] of [[0, 0], [0, 1], [0, 2], [1, 0], [1, 1], [1, 2]]) {
+        const t = trueFigure({ ...start.v, body, figQ: fig, figP: fig, omega, a: 5, b: 4, h: 3 });
+        const flat = (i: number) => t.flat[i];
+        const drawnCcw = ccwAngle(flat(t.angle.from), flat(t.angle.at), flat(t.angle.to));
+        expect(drawnCcw, `${t.angle.name} in true size`).toBeGreaterThan(0);
+        expect(drawnCcw, `${t.angle.name} in true size`).toBeLessThan(180);
+        const pic = (p: { x: number; y: number; z: number }): [number, number] => [p.x + 0.5 * p.y * Math.cos((omega * Math.PI) / 180), p.z + 0.5 * p.y * Math.sin((omega * Math.PI) / 180)];
+        const inPicture = ccwAngle(pic(t.corners[t.angle.from]), pic(t.corners[t.angle.at]), pic(t.corners[t.angle.to]));
+        expect(inPicture, `${t.angle.name} at ω = ${omega}°`).toBeLessThan(180);
+      }
+    }
     const goal = lab.goals.find((g) => g.id === "gleichseitig")!;
     let reached = 0;
     for (const values of enumerateLabGrid(lab, 11)) {

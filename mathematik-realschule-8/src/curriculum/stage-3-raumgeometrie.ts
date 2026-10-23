@@ -151,7 +151,7 @@ function countCase(rng: Rng, kind: number): CountCase {
         centre: false,
         planeWhy: "Symmetrieebenen: alle gehen durch die Spitze, zwei durch die Mitten gegenüberliegender Grundkanten und zwei durch gegenüberliegende Ecken der Grundfläche, zusammen 4.",
         axisWhy: "Symmetrieachse: nur die Höhe durch die Spitze und den Mittelpunkt der Grundfläche, mit 90°.",
-        centreWhy: "Kein Symmetriezentrum: Bei einer Punktspiegelung käme die Spitze nach unten, unter die Grundfläche.",
+        centreWhy: "Kein Symmetriezentrum: Der Spitze liegt keine Ecke gegenüber. Die Punktspiegelung stellt die Pyramide auf den Kopf, ihr Bild hat die Spitze unten.",
         planeSlips: [
           { value: 2, hint: "Auch die beiden Ebenen durch die Spitze und zwei gegenüberliegende Ecken der Grundfläche sind Symmetrieebenen." },
           { value: 5, hint: "Die Pyramide hat 5 Flächen, aber nicht 5 Symmetrieebenen: Eine waagrechte Symmetrieebene gibt es nicht, die Spitze liegt nur oben." },
@@ -193,7 +193,7 @@ function countCase(rng: Rng, kind: number): CountCase {
         centre: false,
         planeWhy: `Symmetrieebenen: ${n} senkrechte Ebenen durch die Spitze und die Körperachse; eine waagrechte gibt es nicht.`,
         axisWhy: `Symmetrieachse: nur die Höhe, mit 360° : ${n} = ${fmt(360 / n)}°.`,
-        centreWhy: "Kein Symmetriezentrum: Die Spitze hätte kein Gegenüber.",
+        centreWhy: "Kein Symmetriezentrum: Der Spitze liegt keine Ecke gegenüber, die Punktspiegelung stellt die Pyramide auf den Kopf.",
         planeSlips: [{ value: n + 1, hint: "Eine Pyramide hat keine waagrechte Symmetrieebene: Oben ist die Spitze, unten die Grundfläche." }],
         axisSlips: [{ value: n + 1, hint: "Waagrechte Achsen mit 180° gibt es bei der Pyramide nicht: Die Spitze käme nach unten." }],
         meta: { n, a, h },
@@ -234,7 +234,7 @@ export const SYM_OBJECTS: Array<{
   { text: "Ein Schuhkarton mit Deckel ist ein Quader, 32 cm lang, 20 cm breit und 12 cm hoch.", body: "Quader", planes: "3", planesWrong: ["6", "9", "2"], axes: "3", axesWrong: ["1", "6", "13"], centre: true, why: "Quader mit drei verschiedenen Kanten: die 3 Mittelebenen, die 3 Achsen durch Flächenmittelpunkte (180°) und der Mittelpunkt als Zentrum; Diagonalebenen passen nicht, die Flächen sind keine Quadrate." },
   { text: "Eine Schraubenmutter ist ein regelmäßiges sechsseitiges Prisma mit einer runden Bohrung entlang der Körperachse.", body: "regelmäßiges sechsseitiges Prisma", planes: "7", planesWrong: ["6", "3", "unendlich viele"], axes: "7", axesWrong: ["1", "6", "3"], centre: true, why: "Die Bohrung liegt auf der Achse und ändert nichts: 6 senkrechte Ebenen und die Mittelebene; die Körperachse (60°) und 6 waagrechte Achsen (180°); bei 6 Ecken liegt jeder Ecke eine gegenüber, also gibt es ein Zentrum." },
   { text: "Ein Bergkristall ist ein regelmäßiges sechsseitiges Prisma, auf dem oben und unten je eine gleich hohe sechsseitige Pyramide sitzt.", body: "sechsseitiges Prisma mit zwei gleichen Pyramiden", planes: "7", planesWrong: ["6", "1", "13"], axes: "7", axesWrong: ["1", "6", "2"], centre: true, why: "Oben und unten sind gleich: 6 senkrechte Ebenen und die waagrechte Mittelebene; die Längsachse (60°) und 6 waagrechte Achsen (180°); der Mittelpunkt ist Zentrum." },
-  { text: "Ein Zelt ist ein liegendes dreiseitiges Prisma; sein Grunddreieck ist gleichschenklig, aber nicht gleichseitig.", body: "dreiseitiges Prisma mit gleichschenkligem Grunddreieck", planes: "2", planesWrong: ["4", "1", "3"], axes: "1", axesWrong: ["4", "3", "keine"], centre: false, why: "Nur die senkrechte Ebene durch den First und die Mittelebene parallel zu den Dreiecken; ihre Schnittgerade ist die einzige Achse (180°); kein Zentrum, der First hat kein Gegenüber am Boden." },
+  { text: "Ein Zelt ist ein liegendes dreiseitiges Prisma; sein Grunddreieck ist gleichschenklig, aber nicht gleichseitig.", body: "dreiseitiges Prisma mit gleichschenkligem Grunddreieck", planes: "2", planesWrong: ["4", "1", "3"], axes: "1", axesWrong: ["4", "3", "keine"], centre: false, why: "Nur die senkrechte Ebene durch den First und die Mittelebene parallel zu den Dreiecken; ihre Schnittgerade ist die einzige Achse (180°); kein Zentrum, denn die Punktspiegelung stellt das Zelt auf den Kopf: Der First käme nach unten, der Boden nach oben." },
   { text: "Eine Schokoladenpackung ist ein regelmäßiges dreiseitiges Prisma: Alle Dreieckseiten sind gleich lang.", body: "regelmäßiges dreiseitiges Prisma", planes: "4", planesWrong: ["3", "2", "6"], axes: "4", axesWrong: ["1", "3", "2"], centre: false, why: "3 Ebenen durch die Längsachse und die Mittelebene; die Längsachse (120°) und 3 Achsen mit 180°; bei 3 Ecken liegt einer Ecke eine Fläche gegenüber, also kein Zentrum." },
   { text: "Die Glaspyramide vor dem Louvre in Paris ist eine gerade quadratische Pyramide.", body: "gerade quadratische Pyramide", planes: "4", planesWrong: ["2", "5", "8"], axes: "1", axesWrong: ["4", "5", "keine"], centre: false, why: "4 Ebenen durch die Spitze (zwei durch Kantenmitten, zwei durch Ecken), die Höhe als Achse (90°), kein Zentrum." },
   { text: "Eine Konservendose hat die Form eines Zylinders.", body: "Zylinder", planes: "unendlich viele", planesWrong: ["1", "2", "3"], axes: "unendlich viele", axesWrong: ["1", "2", "keine"], centre: true, why: "Jede Ebene durch die Achse und die Mittelebene; die Körperachse (jeder Winkel) und jede waagrechte Gerade durch den Mittelpunkt (180°); der Mittelpunkt ist Zentrum." },
@@ -303,7 +303,7 @@ const symmetrischeKoerper: Lesson = {
       <tr><td>Kegel</td><td>unendlich viele (durch die Achse)</td><td>1 (jeder Winkel)</td><td>nein</td></tr>
       <tr><td>Kugel</td><td>unendlich viele</td><td>unendlich viele</td><td>ja</td></tr>
     </table>
-    <p>Ein <strong>regelmäßiges n-seitiges Prisma</strong> (Grundfläche ein regelmäßiges n-Eck) hat n senkrechte Symmetrieebenen und die waagrechte Mittelebene, also n + 1, dazu die Körperachse mit dem Winkel 360° : n und n waagrechte Achsen mit 180°. Ein Symmetriezentrum hat es nur bei geradem n. Eine regelmäßige n-seitige Pyramide hat n Symmetrieebenen, eine Achse mit 360° : n und kein Zentrum.</p>
+    <p>Ein <strong>regelmäßiges n-seitiges Prisma</strong> (Grundfläche ein regelmäßiges n-Eck) hat n senkrechte Symmetrieebenen und die waagrechte Mittelebene, also n + 1, dazu die Körperachse mit dem Winkel 360° : n und n waagrechte Achsen mit 180°. Ein Symmetriezentrum hat es nur bei geradem n. Eine regelmäßige n-seitige Pyramide hat n Symmetrieebenen, eine Achse mit 360° : n und kein Zentrum. Ausnahmen sind Körper mit lauter gleich langen Kanten: Der Würfel ist ein besonderes vierseitiges Prisma mit mehr Symmetrien, ebenso die dreiseitige Pyramide aus vier gleichseitigen Dreiecken.</p>
     <div class="example"><strong>Beispiel:</strong> Eine Schachtel ist eine quadratische Säule, 4 cm × 4 cm groß und 10 cm hoch.<br>
       1. Symmetrieebenen: zwei senkrechte Mittelebenen parallel zu den Seitenflächen, zwei senkrechte Diagonalebenen durch gegenüberliegende lange Kanten und die waagrechte Mittelebene, zusammen 5. Die schrägen Ebenen durch zwei gegenüberliegende kurze Kanten sind keine Symmetrieebenen, denn die Seitenflächen sind 4 cm × 10 cm groß und keine Quadrate.<br>
       2. Symmetrieachsen: die lange Achse durch die Mittelpunkte der Quadrate mit 90°, dazu vier waagrechte Achsen durch den Mittelpunkt (zwei durch die Mittelpunkte gegenüberliegender Seitenflächen, zwei durch die Mitten gegenüberliegender langer Kanten) mit je 180°, zusammen 5.<br>
@@ -317,7 +317,7 @@ const symmetrischeKoerper: Lesson = {
     { name: "Symmetrieebene", html: "Spiegelung an der Ebene bildet den Körper auf sich ab", quantities: "die Ebene zerlegt ihn in zwei spiegelgleiche Hälften" },
     { name: "Symmetrieachse", html: "Drehung um die Achse um α = 360° : n bildet den Körper auf sich ab", quantities: "α kleinster Drehwinkel (unter 360°); n Anzahl der Lagen bei einer Umdrehung, n ≥ 2" },
     { name: "Symmetriezentrum", html: "Punktspiegelung an Z bildet den Körper auf sich ab", quantities: "Z ist Mittelpunkt jeder Strecke von einem Punkt zu seinem Bildpunkt" },
-    { name: "Regelmäßiges n-seitiges Prisma", html: "n + 1 Symmetrieebenen, n + 1 Symmetrieachsen, Zentrum nur bei geradem n", quantities: "Körperachse mit 360° : n, n waagrechte Achsen mit 180°" },
+    { name: "Regelmäßiges n-seitiges Prisma", html: "n + 1 Symmetrieebenen, n + 1 Symmetrieachsen, Zentrum nur bei geradem n", quantities: "Körperachse mit 360° : n, n waagrechte Achsen mit 180°; der Würfel hat als besonderes Prisma mehr" },
   ],
   quiz: {
     question: "Welche Symmetrien hat eine gerade quadratische Pyramide?",
@@ -329,7 +329,7 @@ const symmetrischeKoerper: Lesson = {
     ],
     correctIndex: 2,
     explanation:
-      "Durch die Spitze gehen 4 Symmetrieebenen: zwei durch die Mitten gegenüberliegender Grundkanten und zwei durch gegenüberliegende Ecken. Die Höhe ist die einzige Drehachse (90°). Ein Zentrum fehlt, weil die Punktspiegelung die Spitze unter die Grundfläche schicken würde. Wer nur 2 Ebenen zählt, übersieht die beiden Diagonalebenen.",
+      "Durch die Spitze gehen 4 Symmetrieebenen: zwei durch die Mitten gegenüberliegender Grundkanten und zwei durch gegenüberliegende Ecken. Die Höhe ist die einzige Drehachse (90°). Ein Zentrum fehlt: Der Spitze liegt keine Ecke gegenüber, und die Punktspiegelung stellt die Pyramide auf den Kopf. Wer nur 2 Ebenen zählt, übersieht die beiden Diagonalebenen.",
   },
   lab: {
     kind: "solid-symmetry",
@@ -575,7 +575,10 @@ const axialschnitte: Lesson = {
             h = rng.pick([3, 4, 5, 6]);
             figure = `Ein rechtwinkliges Trapez mit den parallelen Seiten ${a} cm (unten) und ${c} cm (oben) und dem Schenkel ${h} cm, der auf beiden senkrecht steht,`;
             axis = "diesen Schenkel";
-            slips = [{ value: a, ...half }, { value: 2 * c, hint: "Das ist die Breite oben. Gefragt ist die Breite unten: 2 · untere Seite." }];
+            slips =
+              a === 2 * c
+                ? [{ value: a, hint: "Das ist die halbe Breite unten (und zufällig die Breite oben). Zum Axialschnitt gehört das Spiegelbild: Breite unten = 2 · untere Seite." }]
+                : [{ value: a, ...half }, { value: 2 * c, hint: "Das ist die Breite oben. Gefragt ist die Breite unten: 2 · untere Seite." }];
             return {
               prompt: `${figure} dreht sich einmal um ${axis}. Welcher Körper entsteht? Wie sieht sein Axialschnitt aus, und wie breit ist er unten?`,
               given: [],
@@ -844,7 +847,7 @@ const raumkoordinaten: Lesson = {
     </ul>
     <p>Ein Punkt hat drei Koordinaten, <strong>P(x | y | z)</strong>. So erreichst du ihn vom Ursprung aus: x Einheiten in x-Richtung nach vorne, dann y Einheiten parallel zur y-Achse nach rechts, dann z Einheiten parallel zur z-Achse nach oben. Diese drei Strecken zeichnest du als <strong>Hilfslinien</strong> ein. Die Achsen gehen über den Ursprung hinaus weiter: Negative Koordinaten bedeuten nach hinten, nach links oder nach unten.</p>
     <p><strong>So wird gezeichnet:</strong> Die y- und die z-Achse zeichnest du in wahrer Größe, eine Einheit ist 1 cm. Die x-Achse zeigt auf dich zu und wird wie eine Tiefenkante im Schrägbild gezeichnet: unter 45° nach links unten und auf die Hälfte verkürzt (q = ½). Eine Einheit auf der x-Achse ist im Bild also nur 0,5 cm lang. Deshalb kannst du in x-Richtung keine Längen im Bild abmessen, und ein einzelner Bildpunkt verrät die Koordinaten nicht: Die Punkte (0 | 2 | 2) und (3 | 3 | 3) liegen im Bild fast an derselben Stelle. Erst die Hilfslinien zeigen, welcher Punkt gemeint ist.</p>
-    <p><strong>Besondere Lagen:</strong> Ist eine Koordinate 0, liegt der Punkt in einer <strong>Koordinatenebene</strong>. Die Ebene heißt nach den beiden Achsen, die in ihr liegen: z = 0 in der xy-Ebene (dem „Boden“), y = 0 in der xz-Ebene, x = 0 in der yz-Ebene. Sind zwei Koordinaten 0, liegt der Punkt auf einer Achse: (0 | 0 | 3) liegt auf der z-Achse in der Höhe 3. Der Abstand eines Punktes von einer Koordinatenebene ist der Betrag der dritten Koordinate: P(2 | 5 | 3) liegt 3 Einheiten über der xy-Ebene und 2 Einheiten vor der yz-Ebene.</p>
+    <p><strong>Besondere Lagen:</strong> Ist eine Koordinate 0, liegt der Punkt in einer <strong>Koordinatenebene</strong>. Die Ebene heißt nach den beiden Achsen, die in ihr liegen: z = 0 in der xy-Ebene (dem „Boden“), y = 0 in der xz-Ebene, x = 0 in der yz-Ebene. Sind zwei Koordinaten 0, liegt der Punkt auf einer Achse: (0 | 0 | 3) liegt auf der z-Achse in der Höhe 3. Der Abstand eines Punktes von einer Koordinatenebene ist der Betrag der Koordinate, die in dieser Ebene 0 ist: P(2 | 5 | 3) liegt 3 Einheiten über der xy-Ebene (z = 3) und 2 Einheiten vor der yz-Ebene (x = 2).</p>
     <div class="example"><strong>Beispiel (Koordinatisierung):</strong> Ein Zimmer ist 5 m lang, 4 m breit und 2,5 m hoch. Der Ursprung liegt in der hinteren linken Ecke am Boden, die x-Achse läuft an der linken Wand nach vorne, die y-Achse an der Rückwand nach rechts, die z-Achse in der Ecke nach oben; 1 Einheit = 1 m.<br>
       1. Die Lampe hängt an der Decke über der Mitte des Bodens: 5 : 2 = 2,5 nach vorne, 4 : 2 = 2 nach rechts, 2,5 nach oben, also L(2,5 | 2 | 2,5).<br>
       2. Die vordere rechte Ecke am Boden ist E(5 | 4 | 0); sie liegt in der xy-Ebene.<br>
@@ -856,7 +859,7 @@ const raumkoordinaten: Lesson = {
     { name: "Punkt im Raum", html: "P(x | y | z)", quantities: "x nach vorne, y nach rechts, z nach oben; O(0 | 0 | 0) Ursprung" },
     { name: "Koordinatenebenen", html: "xy-Ebene: z = 0; xz-Ebene: y = 0; yz-Ebene: x = 0", quantities: "auf einer Achse sind zwei Koordinaten 0, auf der z-Achse x = 0 und y = 0" },
     { name: "Zeichnen", html: "x-Achse unter 45° nach links unten, Verkürzung q = ½", quantities: "y- und z-Achse in wahrer Größe; in x-Richtung nicht abmessen" },
-    { name: "Abstand von einer Koordinatenebene", html: "von der xy-Ebene: |z|; von der xz-Ebene: |y|; von der yz-Ebene: |x|", quantities: "der Betrag der Koordinate, die nicht in der Ebene liegt" },
+    { name: "Abstand von einer Koordinatenebene", html: "von der xy-Ebene: |z|; von der xz-Ebene: |y|; von der yz-Ebene: |x|", quantities: "der Betrag der Koordinate, die in dieser Ebene 0 ist" },
   ],
   quiz: {
     question: "Wo liegt der Punkt P(4 | 0 | 2)?",
@@ -1097,7 +1100,7 @@ const koerperKoordinaten: Lesson = {
     <p><strong>Quader:</strong> Liegt A im Ursprung und laufen die Kanten [AB], [AD] und [AE] entlang der x-, y- und z-Achse, dann folgen alle acht Ecken aus der Länge a (x-Richtung), der Breite b (y-Richtung) und der Höhe c: A(0 | 0 | 0), B(a | 0 | 0), C(a | b | 0), D(0 | b | 0), E(0 | 0 | c), F(a | 0 | c), G(a | b | c), H(0 | b | c). Die Ecken der Deckfläche haben dieselben x- und y-Koordinaten wie die Ecken darunter, nur z = c. Liegt A nicht im Ursprung, addierst du a, b und c zu den Koordinaten von A.</p>
     <p><strong>Kantenlängen:</strong> Eine Kante parallel zu einer Achse ist so lang wie der Unterschied der einen Koordinate, die sich ändert: Von B(4 | 0 | 0) nach C(4 | 3 | 0) ändert sich nur y, also ist [BC] = 3 − 0 = 3. Die Länge einer schrägen Strecke wie einer Flächendiagonale kannst du so nicht ablesen; wie man sie berechnet, lernst du in Klasse 9.</p>
     <p><strong>Pyramide:</strong> Bei einer geraden Pyramide über einem Rechteck liegt die Spitze S senkrecht über dem Mittelpunkt M der Grundfläche. M ist der Mittelpunkt der Diagonale [AC]: Von den x-Koordinaten und von den y-Koordinaten bildest du jeweils den Mittelwert, M((x₁ + x₂) : 2 | (y₁ + y₂) : 2 | z). Die Spitze hat dieselben x- und y-Koordinaten wie M, ihre z-Koordinate ist die Höhe der Grundfläche plus die Höhe h der Pyramide.</p>
-    <p><strong>Prisma:</strong> Ein dreiseitiges Prisma, etwa ein Zelt mit dem First [EF], hat zwei gleiche Dreiecke als Grund- und Deckfläche. Steht das Zelt auf dem Rechteck ABCD und ist der First parallel zu [AB], liegt er genau über der Mittellinie des Bodens: E und F haben die y-Koordinate (y₁ + y₂) : 2 und als z-Koordinate die Firsthöhe.</p>
+    <p><strong>Prisma:</strong> Ein dreiseitiges Prisma, etwa ein Zelt mit dem First [EF], hat zwei gleiche Dreiecke als Grund- und Deckfläche. Steht das Zelt auf dem Rechteck ABCD, sind seine Dreiecke gleichschenklig und ist der First parallel zu [AB], liegt er genau über der Mittellinie des Bodens: E und F haben die y-Koordinate (y₁ + y₂) : 2 und als z-Koordinate die Firsthöhe.</p>
     <p><strong>Verschieben:</strong> Wird ein Körper um 2 Einheiten in y-Richtung verschoben, wächst bei jeder Ecke die y-Koordinate um 2, x und z bleiben. Die Kantenlängen ändern sich dabei nicht.</p>
     <div class="example"><strong>Beispiel:</strong> Die Grundfläche einer geraden Pyramide ist das Rechteck ABCD mit A(1 | 2 | 0), B(5 | 2 | 0), C(5 | 8 | 0) und D(1 | 8 | 0); die Pyramide ist 6 hoch.<br>
       1. Kantenlängen: [AB] = 5 − 1 = 4 (nur x ändert sich), [BC] = 8 − 2 = 6 (nur y ändert sich).<br>
@@ -1488,19 +1491,19 @@ const schraegbilder: Lesson = {
           const h = rng.pick([6, 7, 8, 9]);
           const pair = rng.pick(PYRAMID_TRUE_PAIRS);
           return {
-            prompt: `Die Grundfläche der geraden Pyramide ABCDS ist das Rechteck ABCD mit [AB] = ${a} cm und [BC] = ${b} cm. Die Spitze S liegt ${h} cm senkrecht über dem Diagonalenschnittpunkt M. Im Schrägbild liegt [AB] auf der Schrägbildachse; ω = ${omega}°, q = ${qc.text}. Wie lang werden [BC] und [MS] gezeichnet? Wie groß erscheint der Winkel ∢ABC? Welches Streckenpaar erscheint in wahrer Größe?`,
+            prompt: `Die Grundfläche der geraden Pyramide ABCDS ist das Rechteck ABCD mit [AB] = ${a} cm und [BC] = ${b} cm. Die Spitze S liegt ${h} cm senkrecht über dem Diagonalenschnittpunkt M. Im Schrägbild liegt [AB] auf der Schrägbildachse; ω = ${omega}°, q = ${qc.text}. Wie lang werden [BC] und [MS] gezeichnet? Wie groß erscheint der Winkel ∢CBA? Welches Streckenpaar erscheint in wahrer Größe?`,
             given: [],
             fields: [
               numberField("[BC] im Bild:", qc.q * b, "cm", 2, { slips: [{ value: b, hint: "[BC] ist eine Tiefenkante und wird mit q verkürzt." }, { value: b / qc.q, hint: "Mit q multiplizieren, nicht durch q teilen." }] }),
               numberField("[MS] im Bild:", h, "cm", 2, { slips: [{ value: qc.q * h, hint: "Die Höhe [MS] steht senkrecht und wird nicht verkürzt." }] }),
-              numberField("∢ABC im Bild:", 180 - omega, "°", 0, { slips: [{ value: omega, hint: "ω liegt vorne links bei A. Bei B liegt der Nebenwinkel: 180° − ω." }, { value: 90, hint: "In Wirklichkeit ist ∢ABC ein rechter Winkel, im Schrägbild nicht: Die Tiefenkante läuft unter ω." }] }),
+              numberField("∢CBA im Bild:", 180 - omega, "°", 0, { slips: [{ value: omega, hint: "ω liegt vorne links bei A. Bei B liegt der Nebenwinkel: 180° − ω." }, { value: 90, hint: "In Wirklichkeit ist ∢CBA ein rechter Winkel, im Schrägbild nicht: Die Tiefenkante läuft unter ω." }] }),
               shuffledChoice(rng, "In wahrer Größe:", pair, rng.shuffle(PYRAMID_DISTORTED_PAIRS).slice(0, 3)),
             ],
             steps: [
               `[BC] läuft in die Tiefe: ${qc.text} · ${b} cm = ${fmtUnit(qc.q * b, "cm")}. [MS] steht senkrecht: ${h} cm.`,
-              `Bei B liegen die Kante [BA] (nach links) und die Tiefenkante [BC] (unter ${omega}° nach rechts oben): ∢ABC = 180° − ${omega}° = ${180 - omega}°.`,
+              `Bei B liegen die Tiefenkante [BC] (unter ${omega}° nach rechts oben) und die Kante [BA] (nach links): ∢CBA = 180° − ${omega}° = ${180 - omega}°.`,
               `In wahrer Größe erscheinen die Kanten parallel zu s, [AB] und [CD], und die senkrechte Höhe [MS]; Tiefenkanten, Diagonalen und Seitenkanten sind verzerrt.`,
-              `<strong>[BC]: ${fmtUnit(qc.q * b, "cm")}; [MS]: ${h} cm; ∢ABC = ${180 - omega}°; wahre Größe: ${pair}</strong>`,
+              `<strong>[BC]: ${fmtUnit(qc.q * b, "cm")}; [MS]: ${h} cm; ∢CBA = ${180 - omega}°; wahre Größe: ${pair}</strong>`,
             ],
             meta: { kind, q: qc.q, omega, a, b, h },
           };
@@ -1513,7 +1516,12 @@ const schraegbilder: Lesson = {
           given: [],
           fields: [
             shuffledChoice(rng, "vorne in wahrer Größe:", `die Fläche ${onS} cm × ${H} cm`, [`die Fläche ${depth} cm × ${H} cm`, `die Fläche ${L} cm × ${B} cm`, "keine Fläche"]),
-            numberField("Tiefenkanten im Bild:", depth / 2, "cm", 2, { slips: [{ value: onS / 2, hint: "Die Kante auf s wird nicht verkürzt. In die Tiefe läuft die andere Kante der Grundfläche." }, { value: depth, hint: "Tiefenkanten werden mit q = ½ verkürzt." }] }),
+            numberField("Tiefenkanten im Bild:", depth / 2, "cm", 2, {
+              slips:
+                onS / 2 === depth
+                  ? [{ value: depth, hint: "Die Kante auf s wird nicht verkürzt, und die Tiefenkante wird mit q = ½ verkürzt: ½ · wahre Länge der Tiefenkante." }]
+                  : [{ value: onS / 2, hint: "Die Kante auf s wird nicht verkürzt. In die Tiefe läuft die andere Kante der Grundfläche." }, { value: depth, hint: "Tiefenkanten werden mit q = ½ verkürzt." }],
+            }),
             numberField("Winkel vorne rechts:", 180 - omega, "°", 0, { slips: [{ value: omega, hint: "ω liegt vorne links. Vorne rechts liegt der Nebenwinkel 180° − ω." }] }),
           ],
           steps: [
@@ -1574,13 +1582,18 @@ const schraegbilder: Lesson = {
 
 // 3.6 Strecken und Winkel in wahrer Größe ───────────────────────────────────
 
-/** Angles a Level-1 task asks for in true size; the stage test checks how they look in the Schrägbild (ω = 45°, q = ½). */
+/**
+ * Angles a Level-1 task asks for in true size; the stage test checks how they
+ * look in the Schrägbild (ω = 45°, q = ½). Each name ∢XYZ is measured
+ * counterclockwise from ray YX to ray YZ in the Schrägbild ([AB] on s, the
+ * Tiefenkanten to the right and up), as Bavarian books name angles.
+ */
 export const ANGLE_CASES: Array<{ body: string; name: string; where: string; value: number; picture: "kleiner" | "gleich" | "größer"; why: string }> = [
   { body: "einem Würfel ABCDEFGH mit der Kantenlänge 4 cm", name: "∢BAC", where: "zwischen der Kante [AB] und der Flächendiagonale [AC] der Grundfläche", value: 45, picture: "kleiner", why: "Die Grundfläche ist ein Quadrat: Die Diagonale halbiert den rechten Winkel, 90° : 2 = 45°." },
-  { body: "einem Würfel ABCDEFGH mit der Kantenlänge 4 cm", name: "∢ABF", where: "zwischen den Kanten [AB] und [BF] der Vorderfläche", value: 90, picture: "gleich", why: "Die Vorderfläche ist ein Quadrat: rechter Winkel. Sie liegt parallel zur Zeichenebene und erscheint unverzerrt." },
+  { body: "einem Würfel ABCDEFGH mit der Kantenlänge 4 cm", name: "∢FBA", where: "zwischen den Kanten [BF] und [BA] der Vorderfläche", value: 90, picture: "gleich", why: "Die Vorderfläche ist ein Quadrat: rechter Winkel. Sie liegt parallel zur Zeichenebene und erscheint unverzerrt." },
   { body: "einem Quader ABCDEFGH (6 cm × 4 cm × 3 cm)", name: "∢BAD", where: "zwischen der Kante [AB] auf s und der Tiefenkante [AD]", value: 90, picture: "kleiner", why: "Die Grundfläche ist ein Rechteck: rechter Winkel. Im Bild läuft [AD] unter ω = 45° zu s." },
-  { body: "einem Quader ABCDEFGH (6 cm × 4 cm × 3 cm)", name: "∢ABC", where: "zwischen der Kante [BA] und der Tiefenkante [BC]", value: 90, picture: "größer", why: "Die Grundfläche ist ein Rechteck: rechter Winkel. Im Bild ist er 180° − 45° = 135° groß." },
-  { body: "einem Quader ABCDEFGH (6 cm × 4 cm × 3 cm)", name: "∢FBC", where: "zwischen der senkrechten Kante [BF] und der Tiefenkante [BC]", value: 90, picture: "kleiner", why: "Die rechte Seitenfläche ist ein Rechteck: rechter Winkel. Im Bild steht [BF] senkrecht und [BC] läuft unter 45°: 90° − 45° = 45°." },
+  { body: "einem Quader ABCDEFGH (6 cm × 4 cm × 3 cm)", name: "∢CBA", where: "zwischen der Tiefenkante [BC] und der Kante [BA]", value: 90, picture: "größer", why: "Die Grundfläche ist ein Rechteck: rechter Winkel. Im Bild ist er 180° − 45° = 135° groß." },
+  { body: "einem Quader ABCDEFGH (6 cm × 4 cm × 3 cm)", name: "∢CBF", where: "zwischen der Tiefenkante [BC] und der senkrechten Kante [BF]", value: 90, picture: "kleiner", why: "Die rechte Seitenfläche ist ein Rechteck: rechter Winkel. Im Bild steht [BF] senkrecht und [BC] läuft unter 45°: 90° − 45° = 45°." },
   { body: "einer quadratischen Pyramide ABCDS, deren acht Kanten alle 4 cm lang sind", name: "∢BAS", where: "in der Seitenfläche ABS bei der Ecke A", value: 60, picture: "kleiner", why: "Die Seitenfläche hat drei gleich lange Seiten: ein gleichseitiges Dreieck mit lauter 60°-Winkeln." },
   { body: "einem Würfel ABCDEFGH mit der Kantenlänge 4 cm", name: "∢ACB", where: "zwischen der Flächendiagonale [CA] und der Tiefenkante [CB]", value: 45, picture: "kleiner", why: "Im Quadrat ABCD halbiert die Diagonale den rechten Winkel bei C: 45°." },
   { body: "einem Quader ABCDEFGH (6 cm × 4 cm × 3 cm)", name: "∢AEH", where: "zwischen der senkrechten Kante [EA] und der Tiefenkante [EH]", value: 90, picture: "größer", why: "Die linke Seitenfläche ist ein Rechteck: rechter Winkel. Im Bild ist er 90° + 45° = 135° groß." },
@@ -1590,8 +1603,9 @@ export const COMPARE = ["kleiner als in Wirklichkeit", "genauso groß", "größe
 /** Segments and angles of a cuboid ABCDEFGH with [AB] on s: in the front face ABFE undistorted, elsewhere distorted. */
 export const TRUE_SEGMENTS = ["die Kante [BF]", "die Kante [AE]", "die Kante [EF]"];
 export const DISTORTED_SEGMENTS = ["die Tiefenkante [BC]", "die Tiefenkante [AD]", "die Tiefenkante [FG]", "die Diagonale [AC]", "die Diagonale [BG]"];
-export const TRUE_ANGLES = ["∢ABF", "∢BAE", "∢AEF", "∢EFB"];
-export const DISTORTED_ANGLES = ["∢ABC", "∢BAD", "∢FBC", "∢EAD", "∢BCG"];
+/** Named counterclockwise in the Schrägbild, like ANGLE_CASES. */
+export const TRUE_ANGLES = ["∢FBA", "∢BAE", "∢AEF", "∢EFB"];
+export const DISTORTED_ANGLES = ["∢CBA", "∢BAD", "∢CBF", "∢DAE", "∢GCB"];
 
 /** A face diagonal as a pupil measures it in a true-size drawing: to a tenth of a centimetre. */
 export function measured(a: number, b: number): number {
@@ -1609,7 +1623,7 @@ const wahreGroesse: Lesson = {
   whyItMatters:
     "Im Schrägbild sind Diagonalen, Seitenkanten und viele Winkel verzerrt; wer sie dort abmisst, misst falsch. Mit einer Figur in wahrer Größe bestimmst du sie richtig, etwa die Länge eines Dachsparrens oder die Neigung einer Pyramidenseite.",
   explanationHtml: `
-    <p>Im Schrägbild sind nur Strecken parallel zur Zeichenebene unverzerrt. Tiefenkanten sind verkürzt, und schräge Strecken wie Diagonalen oder die Seitenkanten einer Pyramide erscheinen verzerrt, ebenso die Winkel zwischen ihnen: Ein rechter Winkel der Grundfläche sieht im Bild aus wie 45°, und eine Raumdiagonale ist im Bild nicht so lang wie in Wirklichkeit. Messen darfst du im Schrägbild deshalb nur unverzerrte Strecken.</p>
+    <p>Im Schrägbild sind nur Strecken parallel zur Zeichenebene unverzerrt. Tiefenkanten sind verkürzt, und schräge Strecken wie Diagonalen oder die Seitenkanten einer Pyramide erscheinen verzerrt, ebenso die Winkel zwischen ihnen: Ein rechter Winkel der Grundfläche sieht bei ω = 45° im Bild aus wie 45° oder 135°, und eine Raumdiagonale ist im Bild nicht so lang wie in Wirklichkeit. Messen darfst du im Schrägbild deshalb nur unverzerrte Strecken.</p>
     <p><strong>So ermittelst du eine Strecke oder einen Winkel:</strong></p>
     <ol class="steps">
       <li>Suche eine ebene Figur im Körper, in der die gesuchte Strecke oder der gesuchte Winkel liegt und von der du genug wahre Längen kennst.</li>
@@ -1728,7 +1742,7 @@ const wahreGroesse: Lesson = {
           steps: [
             `[BC] ist eine Tiefenkante: ${fmt(qc.q * b)} cm : ${qc.text} = ${b} cm.`,
             `[${corner}S] liegt im Dreieck ${corner}MS: [MS] = ${h} cm ist die Höhe, [${corner}M] die halbe Diagonale, und bei M ist ein rechter Winkel. Die Seitenfläche ist im Bild verzerrt, und ihre Seitenkante ist ja gerade gesucht.`,
-            `[${corner}M] = ${fmt(d)} cm : 2 = ${fmtUnit(d / 2, "cm")}`,
+            `${corner === "A" || corner === "C" ? `M halbiert die Diagonale [AC]` : `[${corner}M] ist die halbe Diagonale [BD]; im Rechteck sind beide Diagonalen gleich lang und halbieren sich`}: [${corner}M] = ${fmt(d)} cm : 2 = ${fmtUnit(d / 2, "cm")}`,
             `<strong>[BC] = ${b} cm; Dreieck ${corner}MS; [${corner}M] = ${fmtUnit(d / 2, "cm")}</strong>`,
           ],
           meta: { q: qc.q, a, b, h, d },
@@ -1747,10 +1761,17 @@ const wahreGroesse: Lesson = {
             given: [],
             formulaHint: "rechte Winkel bleiben in wahrer Größe 90°; Quadratdiagonale: 45°; gleichseitiges Dreieck: 60°",
             fields: [
-              numberField(`${c.name} =`, c.value, "°", 0, { slips: c.value === 90 ? [45, 135].map((value) => ({ value, hint: "So groß kann der Winkel im Schrägbild aussehen. In Wirklichkeit ist er ein rechter Winkel." })) : [{ value: 90, hint: "Die Diagonale oder Seite teilt den rechten Winkel: Es sind nicht 90°." }] }),
+              numberField(`${c.name} =`, c.value, "°", 0, {
+                slips:
+                  c.value === 90
+                    ? [45, 135].map((value) => ({ value, hint: "So groß kann der Winkel im Schrägbild aussehen. In Wirklichkeit ist er ein rechter Winkel." }))
+                    : c.value === 60
+                      ? [{ value: 90, hint: "Die Seitenfläche hat drei gleich lange Seiten: ein gleichseitiges Dreieck, jeder Winkel misst 60°." }]
+                      : [{ value: 90, hint: "Die Diagonale halbiert den rechten Winkel des Quadrats: Es sind nicht 90°." }],
+              }),
               choiceField("im Schrägbild:", COMPARE, answer),
             ],
-            steps: [c.why, `Im Schrägbild: ${c.picture === "gleich" ? "Der Winkel liegt parallel zur Zeichenebene und erscheint genauso groß." : `Eine Tiefenkante läuft schräg nach hinten, der Winkel erscheint ${c.picture} als in Wirklichkeit.`}`, `<strong>${c.name} = ${c.value}°; im Schrägbild ${COMPARE[answer]}</strong>`],
+            steps: [c.why, c.picture === "gleich" ? "Im Schrägbild: Der Winkel liegt parallel zur Zeichenebene und erscheint genauso groß." : `Im Schrägbild erscheint der Winkel ${c.picture} als in Wirklichkeit, denn die Fläche, in der er liegt, ist nicht parallel zur Zeichenebene.`, `<strong>${c.name} = ${c.value}°; im Schrägbild ${COMPARE[answer]}</strong>`],
             meta: { index, value: c.value, answer },
           };
         }
@@ -1786,14 +1807,15 @@ const wahreGroesse: Lesson = {
         let b = 0;
         let h = 0;
         let d = 0;
+        // far from equilateral (h near d · √3 : 2) and from right-angled at S (h near d : 2), so only one option fits
         do {
           a = rng.int(4, 8);
           b = rng.int(3, 8);
           h = rng.int(4, 9);
           d = measured(a, b);
-        } while (Math.abs(h - (d * Math.sqrt(3)) / 2) < 0.5);
+        } while (Math.abs(h - (d * Math.sqrt(3)) / 2) < 0.5 || Math.abs(h - d / 2) < 0.5);
         return {
-          prompt: `Eine gerade Pyramide ABCDS hat das Rechteck ABCD mit [AB] = ${a} cm und [BC] = ${b} cm als Grundfläche und die Höhe [MS] = ${h} cm. Die Diagonale [AC] hast du in wahrer Größe zu ${fmt(d)} cm gemessen. Welche Form hat der Diagonalschnitt ACS in wahrer Größe? Wie lang ist [AM], und wie groß ist der Flächeninhalt des Dreiecks ACS?`,
+          prompt: `Eine gerade Pyramide ABCDS hat ${a === b ? `das Quadrat ABCD mit der Seitenlänge ${a} cm` : `das Rechteck ABCD mit [AB] = ${a} cm und [BC] = ${b} cm`} als Grundfläche und die Höhe [MS] = ${h} cm. Die Diagonale [AC] hast du in wahrer Größe zu ${fmt(d)} cm gemessen. Welche Form hat der Diagonalschnitt ACS in wahrer Größe? Wie lang ist [AM], und wie groß ist der Flächeninhalt des Dreiecks ACS?`,
           given: [],
           fields: [
             shuffledChoice(rng, "ACS in wahrer Größe:", "ein gleichschenkliges Dreieck", ["ein rechtwinkliges Dreieck", "ein gleichseitiges Dreieck", "ein Parallelogramm"]),
