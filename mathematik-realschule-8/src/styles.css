@@ -1566,6 +1566,15 @@ code {
   padding: 0 0.1em;
 }
 
+/* The length of a segment: the overlined endpoint names (format.ts, len()).
+   currentColor keeps the bar readable in light and dark; in SVG it sits on a
+   <tspan> (lenSvg()). */
+.len {
+  text-decoration: overline;
+  text-decoration-thickness: 0.07em;
+  text-decoration-skip-ink: none;
+}
+
 .explanation .example {
   margin: 0.6rem 0;
   padding: 0.55rem 0.8rem;

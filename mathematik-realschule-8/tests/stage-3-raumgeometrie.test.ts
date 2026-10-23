@@ -18,6 +18,7 @@ import {
   TURN_CASES,
   TURN_OBJECTS,
 } from "../src/curriculum/stage-3-raumgeometrie";
+import { lenText } from "../src/exercises/format";
 import { createRng, seedFrom } from "../src/exercises/rng";
 import { computeReadouts, defaultLabValues, enumerateLabGrid } from "../src/lab/engine";
 import { axialSlant, axialWidth, drawnAngle, locationOf, obliqueDims, obliqueSolid, pictureDistance, solidTop, solidVertices, SYM_BODIES, symmetryOf, trueFigure, vec } from "../src/lab/views-raumgeometrie";
@@ -719,32 +720,43 @@ describe("Labore der Etappe 3", () => {
     }
   });
 
-  it("3.5 the picture of the base is a square exactly in the goal's settings", () => {
+  it("3.5 the picture of a rectangular base is a rhombus (ω under 90°) exactly in the goal's settings", () => {
     const lab = lesson("rg-5-schraegbilder").lab;
     const start = at(lab, {});
     expect(start.r.tiefe).toBe("½ · 4 cm = 2 cm");
     expect(start.r.vorne).toBe("a = 5 cm, unverkürzt");
     expect(at(lab, { pos: 1 }).r.tiefe).toBe("½ · 5 cm = 2,5 cm");
     expect(at(lab, { q: 0.25, b: 6 }).r.tiefe).toBe("¼ · 6 cm = 1,5 cm");
-    const goal = lab.goals.find((g) => g.id === "quadrat-bild")!;
+    const goal = lab.goals.find((g) => g.id === "raute-bild")!;
     const pic = (v: LabValues, p: { x: number; y: number; z: number }): [number, number] => [p.x + v.q * p.y * Math.cos((v.omega * Math.PI) / 180), p.z + v.q * p.y * Math.sin((v.omega * Math.PI) / 180)];
+    let rhombi = 0;
     for (const values of enumerateLabGrid(lab, 4)) {
       const v = values as LabValues;
-      if (v.body !== 2) continue;
+      if (v.body === 1) {
+        expect(goal.check(v, computeReadouts(lab, v)), "the prism has a triangular base").toBe(false);
+        continue;
+      }
+      // the drawn base: A and B on s, D at the end of the depth edge from A
       const [A, B, , D] = obliqueSolid(v).verts.map((p) => pic(v, p));
       const ab = [B[0] - A[0], B[1] - A[1]];
       const ad = [D[0] - A[0], D[1] - A[1]];
-      const square = Math.abs(Math.hypot(ab[0], ab[1]) - Math.hypot(ad[0], ad[1])) < 1e-9 && Math.abs(ab[0] * ad[0] + ab[1] * ad[1]) < 1e-9;
+      const equal = Math.abs(Math.hypot(ab[0], ab[1]) - Math.hypot(ad[0], ad[1])) < 1e-9;
+      const right = Math.abs(ab[0] * ad[0] + ab[1] * ad[1]) < 1e-9;
       const { front, depth } = obliqueDims(v);
-      expect(goal.check(v, computeReadouts(lab, v)), JSON.stringify(v)).toBe(square && front !== depth);
+      const rhombus = equal && !right && front !== depth;
+      if (rhombus) rhombi += 1;
+      expect(goal.check(v, computeReadouts(lab, v)), JSON.stringify(v)).toBe(rhombus);
+      // equal drawn sides at a right angle happen only at ω = 90°, outside the conventions
+      if (equal && right) expect(v.omega).toBe(90);
     }
+    expect(rhombi).toBeGreaterThan(0);
   });
 
   it("3.6 the measured lengths and angles of the true-size figures, and the numbers of the example", () => {
     const lab = lesson("rg-6-wahre-groesse").lab;
     const start = at(lab, {});
     // the example of the lesson: 6 × 4 × 3, [AC] ≈ 7,2 cm, [AG] ≈ 7,8 cm, in the picture about 8,6 cm
-    expect(start.r.strecke).toBe("[AG] ≈ 7,8 cm");
+    expect(start.r.strecke).toBe(`${lenText("AG")} ≈ 7,8 cm`);
     close(Math.hypot(6, 4), 7.211, 1e-3);
     const G = [6 + 0.5 * 4 * Math.SQRT1_2, 3 + 0.5 * 4 * Math.SQRT1_2];
     close(Math.hypot(G[0], G[1]), 8.63, 1e-3);

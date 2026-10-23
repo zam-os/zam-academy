@@ -1,5 +1,5 @@
 import type { ExerciseTask, NumberField } from "../model/types";
-import { round } from "./format";
+import { lenText, round } from "./format";
 
 /**
  * Every reading of a plain number the way a learner types it: "2,5", "2.5",
@@ -182,11 +182,13 @@ export function checkTask(task: ExerciseTask, inputs: string[]): TaskResult {
 /**
  * A field label as plain text for a hint. A vector name drawn with its arrow
  * above (the stages' `vn()`: an aria-hidden arrow span before the name) reads
- * "BC→", not "⟶BC".
+ * "BC→", not "⟶BC". A length drawn with its bar (`len()`) keeps the bar as
+ * the combining overline: "A̅B̅".
  */
 const plain = (html: string) =>
   html
     .replace(/<span aria-hidden="true"[^>]*>[⟶→]<\/span>((?:[^<]|<su[bp]>[^<]*<\/su[bp]>)*)/g, "$1→")
+    .replace(/<span class="len">([^<]*)<\/span>/g, (_, name: string) => lenText(name))
     .replace(/<[^>]+>/g, "")
     .replace(/\s*=\s*$/, "")
     .trim();

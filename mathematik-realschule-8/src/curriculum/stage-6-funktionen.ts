@@ -65,6 +65,10 @@ function valueTable(rows: Array<[string, string[]]>): string {
   return `<table style="border-collapse:collapse;margin:0.3rem 0">${body}</table>`;
 }
 
+/** Is the parallel to the y-axis the graph of a function? The answer with its reason, and two tempting ones (6.6, Level 1). */
+export const VERTICAL_LINE_ANSWER = "nein, zur Stelle x = c gehören unendlich viele y-Werte";
+export const VERTICAL_LINE_WRONG = ["ja, jedem x wird genau ein y zugeordnet", "nein, weil die Gerade die x-Achse nicht schneidet"];
+
 /** A choice whose options are shuffled; the right one is found again by its text. */
 function shuffledChoice(rng: Rng, label: string, correct: string, wrong: string[]): ChoiceField {
   const options = rng.shuffle([correct, ...wrong.filter((w, i, all) => w !== correct && all.indexOf(w) === i)]);
@@ -1852,7 +1856,7 @@ const geraden: Lesson = {
             prompt: `Gib die Gleichung der Parallelen zur y-Achse durch den Punkt P(${fmt(a)} | ${fmt(b)}) an. Ist diese Gerade der Graph einer Funktion?`,
             given: [`P(${fmt(a)} | ${fmt(b)})`],
             formulaHint: "Eine Parallele zur y-Achse hat die Gleichung x = c; sie hat keine Steigung.",
-            fields: [numberField("x =", a, "", 2, { slips: [{ value: b, hint: "Parallel zur y-Achse heißt: x ist überall gleich, nämlich die x-Koordinate von P." }] }), choiceField("Graph einer Funktion?", ["ja", "nein"], 1)],
+            fields: [numberField("x =", a, "", 2, { slips: [{ value: b, hint: "Parallel zur y-Achse heißt: x ist überall gleich, nämlich die x-Koordinate von P." }] }), shuffledChoice(rng, "Graph einer Funktion?", VERTICAL_LINE_ANSWER, VERTICAL_LINE_WRONG)],
             steps: [`Alle Punkte der Geraden haben die x-Koordinate ${fmt(a)}: x = ${fmt(a)}.`, `Zur Stelle ${fmt(a)} gehören unendlich viele y-Werte, der Graphen-Test schlägt fehl.`, `<strong>x = ${fmt(a)}; keine Funktion</strong>`],
             meta: { variant: 2, a, b },
           };

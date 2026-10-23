@@ -1,4 +1,4 @@
-import { fmt } from "../exercises/format";
+import { fmt, lenSvg, lenText } from "../exercises/format";
 import type { LabValues } from "../model/types";
 import { circle, clamp, handle, type LabView, line, open, path, polar, polygon, type Pt, r1, rect, text } from "./svg";
 
@@ -1049,8 +1049,9 @@ function solidCoordinatesView(v: LabValues): string {
     const M = baseCentre(v);
     panel += text(px, (y += 18), `M${point3(M.x, M.y, M.z)}`, "lab-text-small");
   }
-  panel += text(px, (y += 24), `[AB] = ${fmt(v.a)}`, "lab-text-small");
-  panel += text(px, (y += 17), `[BC] = ${fmt(v.b)}`, "lab-text-small");
+  // lengths as overlined names: the bar is a <tspan class="len">, so these lines are built here, not with text()
+  panel += `<text x="${r1(px)}" y="${r1((y += 24))}" class="lab-text-small" text-anchor="start">${lenSvg("AB")} = ${fmt(v.a)}</text>`;
+  panel += `<text x="${r1(px)}" y="${r1((y += 17))}" class="lab-text-small" text-anchor="start">${lenSvg("BC")} = ${fmt(v.b)}</text>`;
   panel += text(px, (y += 17), `Höhe ${fmt(v.c)}`, "lab-text-small");
   out += rect(px - 8, 12, 126, y - 2, "lab-panel", 'rx="10"') + panel;
   out += `</svg>`;
@@ -1257,22 +1258,22 @@ export function trueFigure(v: LabValues): TrueFigure {
     const M = vec(a / 2, b / 2, 0);
     const N = vec(a / 2, 0, 0);
     if (fig === 0) {
-      return { name: TRUE_FIGURES[1][0], shape: "ein gleichschenkliges Dreieck", names: ["A", "B", "S"], corners: [A, B, S], flat: [[0, 0], [a, 0], [a / 2, ha]], right: [], known: `[AB] = ${fmt(a)} cm, [AS] = [BS]`, wanted: [0, 2], wantedName: "[AS]", length: s, angle: { at: 0, from: 1, to: 2, name: "∢BAS", value: atan(ha, a / 2) } };
+      return { name: TRUE_FIGURES[1][0], shape: "ein gleichschenkliges Dreieck", names: ["A", "B", "S"], corners: [A, B, S], flat: [[0, 0], [a, 0], [a / 2, ha]], right: [], known: `${lenText("AB")} = ${fmt(a)} cm, ${lenText("AS")} = ${lenText("BS")}`, wanted: [0, 2], wantedName: "[AS]", length: s, angle: { at: 0, from: 1, to: 2, name: "∢BAS", value: atan(ha, a / 2) } };
     }
     if (fig === 1) {
-      return { name: TRUE_FIGURES[1][1], shape: "ein rechtwinkliges Dreieck", names: ["A", "M", "S"], corners: [A, M, S], flat: [[0, 0], [m, 0], [m, h]], right: [1], known: `[AM] ≈ ${fmt(m, 1)} cm (halbe Diagonale), [MS] = ${fmt(h)} cm`, wanted: [0, 2], wantedName: "[AS]", length: s, angle: { at: 0, from: 1, to: 2, name: "∢MAS", value: atan(h, m) } };
+      return { name: TRUE_FIGURES[1][1], shape: "ein rechtwinkliges Dreieck", names: ["A", "M", "S"], corners: [A, M, S], flat: [[0, 0], [m, 0], [m, h]], right: [1], known: `${lenText("AM")} ≈ ${fmt(m, 1)} cm (halbe Diagonale), ${lenText("MS")} = ${fmt(h)} cm`, wanted: [0, 2], wantedName: "[AS]", length: s, angle: { at: 0, from: 1, to: 2, name: "∢MAS", value: atan(h, m) } };
     }
-    return { name: TRUE_FIGURES[1][2], shape: "ein rechtwinkliges Dreieck", names: ["N", "M", "S"], corners: [N, M, S], flat: [[0, 0], [b / 2, 0], [b / 2, h]], right: [1], known: `[NM] = ${fmt(b / 2)} cm, [MS] = ${fmt(h)} cm`, wanted: [0, 2], wantedName: "[NS]", length: ha, angle: { at: 0, from: 1, to: 2, name: "∢MNS", value: atan(h, b / 2) } };
+    return { name: TRUE_FIGURES[1][2], shape: "ein rechtwinkliges Dreieck", names: ["N", "M", "S"], corners: [N, M, S], flat: [[0, 0], [b / 2, 0], [b / 2, h]], right: [1], known: `${lenText("NM")} = ${fmt(b / 2)} cm, ${lenText("MS")} = ${fmt(h)} cm`, wanted: [0, 2], wantedName: "[NS]", length: ha, angle: { at: 0, from: 1, to: 2, name: "∢MNS", value: atan(h, b / 2) } };
   }
   const d = Math.hypot(a, b);
   const P = (x: number, y: number, z: number) => vec(x, y, z);
   if (fig === 0) {
-    return { name: TRUE_FIGURES[0][0], shape: "ein Rechteck", names: ["A", "B", "C", "D"], corners: [P(0, 0, 0), P(a, 0, 0), P(a, b, 0), P(0, b, 0)], flat: [[0, 0], [a, 0], [a, b], [0, b]], right: [0, 1, 2, 3], known: `[AB] = ${fmt(a)} cm, [BC] = ${fmt(b)} cm`, wanted: [0, 2], wantedName: "[AC]", length: d, angle: { at: 0, from: 1, to: 2, name: "∢BAC", value: atan(b, a) } };
+    return { name: TRUE_FIGURES[0][0], shape: "ein Rechteck", names: ["A", "B", "C", "D"], corners: [P(0, 0, 0), P(a, 0, 0), P(a, b, 0), P(0, b, 0)], flat: [[0, 0], [a, 0], [a, b], [0, b]], right: [0, 1, 2, 3], known: `${lenText("AB")} = ${fmt(a)} cm, ${lenText("BC")} = ${fmt(b)} cm`, wanted: [0, 2], wantedName: "[AC]", length: d, angle: { at: 0, from: 1, to: 2, name: "∢BAC", value: atan(b, a) } };
   }
   if (fig === 1) {
-    return { name: TRUE_FIGURES[0][1], shape: "ein Rechteck", names: ["A", "C", "G", "E"], corners: [P(0, 0, 0), P(a, b, 0), P(a, b, h), P(0, 0, h)], flat: [[0, 0], [d, 0], [d, h], [0, h]], right: [0, 1, 2, 3], known: `[AC] ≈ ${fmt(d, 1)} cm (aus ABCD), [CG] = ${fmt(h)} cm`, wanted: [0, 2], wantedName: "[AG]", length: Math.hypot(d, h), angle: { at: 0, from: 1, to: 2, name: "∢CAG", value: atan(h, d) } };
+    return { name: TRUE_FIGURES[0][1], shape: "ein Rechteck", names: ["A", "C", "G", "E"], corners: [P(0, 0, 0), P(a, b, 0), P(a, b, h), P(0, 0, h)], flat: [[0, 0], [d, 0], [d, h], [0, h]], right: [0, 1, 2, 3], known: `${lenText("AC")} ≈ ${fmt(d, 1)} cm (aus ABCD), ${lenText("CG")} = ${fmt(h)} cm`, wanted: [0, 2], wantedName: "[AG]", length: Math.hypot(d, h), angle: { at: 0, from: 1, to: 2, name: "∢CAG", value: atan(h, d) } };
   }
-  return { name: TRUE_FIGURES[0][2], shape: "ein Rechteck", names: ["B", "C", "G", "F"], corners: [P(a, 0, 0), P(a, b, 0), P(a, b, h), P(a, 0, h)], flat: [[0, 0], [b, 0], [b, h], [0, h]], right: [0, 1, 2, 3], known: `[BC] = ${fmt(b)} cm, [CG] = ${fmt(h)} cm`, wanted: [0, 2], wantedName: "[BG]", length: Math.hypot(b, h), angle: { at: 0, from: 1, to: 2, name: "∢CBG", value: atan(h, b) } };
+  return { name: TRUE_FIGURES[0][2], shape: "ein Rechteck", names: ["B", "C", "G", "F"], corners: [P(a, 0, 0), P(a, b, 0), P(a, b, h), P(a, 0, h)], flat: [[0, 0], [b, 0], [b, h], [0, h]], right: [0, 1, 2, 3], known: `${lenText("BC")} = ${fmt(b)} cm, ${lenText("CG")} = ${fmt(h)} cm`, wanted: [0, 2], wantedName: "[BG]", length: Math.hypot(b, h), angle: { at: 0, from: 1, to: 2, name: "∢CBG", value: atan(h, b) } };
 }
 
 function trueCamera(v: LabValues): Camera {
@@ -1375,7 +1376,7 @@ function trueSizeView(v: LabValues): string {
   });
   const wm = { x: (F[t.wanted[0]].x + F[t.wanted[1]].x) / 2, y: (F[t.wanted[0]].y + F[t.wanted[1]].y) / 2 };
   out += accentText(wm.x - 6, wm.y - 8, `≈ ${fmt(t.length, 1)} cm`, "end");
-  out += text(258, 318, `gemessen: ${t.wantedName} ≈ ${fmt(t.length, 1)} cm`, "lab-text-small");
+  out += `<text x="258" y="318" class="lab-text-small" text-anchor="start">gemessen: ${lenSvg(t.wantedName.slice(1, -1))} ≈ ${fmt(t.length, 1)} cm</text>`;
   out += text(258, 333, `im Schrägbild: ${t.angle.name} ≈ ${fmt(drawnAngle(v), 1)}°`, "lab-text-small");
   out += `</svg>`;
   return out;

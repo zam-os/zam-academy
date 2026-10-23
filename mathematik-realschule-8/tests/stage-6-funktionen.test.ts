@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { DESCRIPTIONS, RELATION_OPTIONS, SITUATIONS, STAGE_FUNKTIONEN } from "../src/curriculum/stage-6-funktionen";
+import { DESCRIPTIONS, RELATION_OPTIONS, SITUATIONS, STAGE_FUNKTIONEN, VERTICAL_LINE_ANSWER } from "../src/curriculum/stage-6-funktionen";
 import { checkTask } from "../src/exercises/checker";
 import { createRng, seedFrom } from "../src/exercises/rng";
 import { computeReadouts, defaultLabValues, enumerateLabGrid } from "../src/lab/engine";
@@ -414,6 +414,7 @@ describe("Aufgaben der Etappe 6 rechnen richtig", () => {
 
   it("6.6 reading lines: intercepts, axis-parallel lines and the shifted Ursprungsgerade", () => {
     const variants = [0, 0, 0];
+    const positions = new Set<number>();
     for (const task of tasks("fu-6-geraden", "ablesen", 1)) {
       const m = meta(task);
       variants[m.variant] += 1;
@@ -426,10 +427,13 @@ describe("Aufgaben der Etappe 6 rechnen richtig", () => {
         expect(num(task, 1)).toBe(m.b);
       } else {
         expect(num(task, 0)).toBe(m.a);
-        expect(choice(task, 1).correctIndex).toBe(1);
+        // never a function: the right option names why, wherever it sits
+        expect(choice(task, 1).options[choice(task, 1).correctIndex]).toBe(VERTICAL_LINE_ANSWER);
+        positions.add(choice(task, 1).correctIndex);
       }
     }
     expect(variants.every((n) => n > 25), `${variants}`).toBe(true);
+    expect(positions.size).toBe(3);
     for (const task of tasks("fu-6-geraden", "ablesen", 2)) {
       const { p, q, t, a, b } = meta(task);
       const m = p / q;

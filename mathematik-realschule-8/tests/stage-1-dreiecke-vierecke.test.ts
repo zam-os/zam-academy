@@ -6,7 +6,7 @@ import {
   EXIST_OPTIONS,
   FALL_OPTIONS,
   PIECE_CASES,
-  PLAN_CASES,
+  PLAN_TASKS,
   QUAD_AXES,
   QUAD_NEIGHBOURS,
   RANGE_CONTEXTS,
@@ -345,7 +345,9 @@ describe("Aufgaben der Etappe 1 rechnen richtig", () => {
     for (const task of tasks("dv-3-kongruenz", "satz", 1)) {
       const sides: Record<string, number> = {};
       const angles: string[] = [];
-      for (const line of task.given) {
+      for (const given of task.given) {
+        // lengths are overlined names: <span class="len">AB</span>
+        const line = given.replace(/<span class="len">([^<]*)<\/span>/g, "$1");
         const s = /^([A-C]{2}) = ([D-F]{2}) = ([\d,]+) cm$/.exec(line);
         const w = /^∢([A-C])([A-C])([A-C]) = ∢([D-F])([D-F])([D-F]) = (\d+)°$/.exec(line);
         if (s) {
@@ -507,6 +509,13 @@ function angleAt(p: P2, q: P2, r: P2): number {
   const u = minus(p, q);
   const w = minus(r, q);
   return Math.acos((u.x * w.x + u.y * w.y) / Math.hypot(u.x, u.y) / Math.hypot(w.x, w.y)) / RADIANS;
+}
+
+/** The angle ∢XYZ as Bavarian schools measure it: counterclockwise from the ray YX to the ray YZ, in degrees. */
+function ccwAngle(x: P2, y: P2, z: P2): number {
+  const from = Math.atan2(x.y - y.y, x.x - y.x) / RADIANS;
+  const to = Math.atan2(z.y - y.y, z.x - y.x) / RADIANS;
+  return (((to - from) % 360) + 360) % 360;
 }
 
 /** The names of the Haus der Vierecke as predicates on the lab's classification. */
@@ -683,13 +692,55 @@ describe("Aufgaben zu den Vierecken rechnen richtig", () => {
       expect(matching.some((q) => q.name === answer), `${text} is sometimes no more than ${answer}`).toBe(true);
       expect(Math.min(...matching.map((q) => q.axes.length)), text).toBe(QUAD_AXES[answer]);
     }
+  });
+
+  it("1.4 Level 2: the name of a combination, then a value its properties give, measured on a figure of that name", () => {
+    const seen = new Set<string>();
     for (const task of tasks("dv-4-vierecke", "aussagen", 2)) {
-      const { k, axes } = meta(task);
-      expect(picked(task, 0)).toBe(COMBOS[k][1]);
-      expect(axes).toBe(QUAD_AXES[COMBOS[k][1]]);
-      expect(num(task, 1)).toBe(axes);
-      expect(choice(task, 0).options.sort()).toEqual([COMBOS[k][1], ...QUAD_NEIGHBOURS[COMBOS[k][1]]].sort());
+      const { k, axes, variant, value, answer } = meta(task);
+      const name = COMBOS[k][1];
+      seen.add(`${name}/${variant}`);
+      expect(task.prompt).toContain(COMBOS[k][0]);
+      expect(picked(task, 0)).toBe(name);
+      expect(choice(task, 0).options.sort()).toEqual([name, ...QUAD_NEIGHBOURS[name]].sort());
+      expect(axes).toBe(QUAD_AXES[name]);
+      expect(num(task, 2)).toBe(axes);
+      expect(num(task, 1)).toBe(answer);
+      // a figure of that name with the given value, built here and measured
+      const A = { x: 0, y: 0 };
+      let figure: P2[];
+      let measured: number;
+      if (name === "Raute") {
+        const alpha = variant === 0 ? value : 180 - value;
+        const B = { x: 1, y: 0 };
+        const D = dir(1, alpha);
+        const C = plus(B, D);
+        figure = [A, B, C, D];
+        close(variant === 0 ? ccwAngle(B, A, D) : ccwAngle(C, B, A), value);
+        measured = ccwAngle(B, A, C);
+      } else if (name === "Rechteck") {
+        const h = Math.tan(value * RADIANS);
+        figure = [A, { x: 1, y: 0 }, { x: 1, y: h }, { x: 0, y: h }];
+        close(ccwAngle(figure[1], A, figure[2]), value);
+        measured = ccwAngle(A, { x: 0.5, y: h / 2 }, figure[1]);
+      } else if (name === "Quadrat") {
+        const s = value / Math.SQRT2;
+        figure = [A, { x: s, y: 0 }, { x: s, y: s }, { x: 0, y: s }];
+        measured = s * s;
+      } else if (name === "gleichschenkliges Trapez") {
+        const D = dir(2, value);
+        figure = [A, { x: 6, y: 0 }, { x: 6 - D.x, y: D.y }, D];
+        measured = ccwAngle(figure[3], figure[2], figure[1]);
+      } else {
+        const B = { x: 5, y: 0 };
+        const D = dir(3, value);
+        figure = [A, B, plus(B, D), D];
+        measured = ccwAngle(A, D, figure[2]);
+      }
+      close(measured, answer, 1e-9);
+      expect(is[name](quadInfo(figure, 1e-6)), `${name}: ${task.prompt}`).toBe(true);
     }
+    expect([...seen].sort()).toEqual(["Parallelogramm/0", "Quadrat/0", "Raute/0", "Raute/1", "Rechteck/0", "gleichschenkliges Trapez/0"]);
   });
 
   it("1.4 a description by sides and angles, rebuilt and classified, has the name and the axes of the answer", () => {
@@ -738,27 +789,75 @@ describe("Aufgaben zu den Vierecken rechnen richtig", () => {
     expect(need).toEqual({ Parallelogramm: 3, Raute: 2, Rechteck: 2, Quadrat: 1, Drachenviereck: 3, Trapez: 4, "gleichschenkliges Trapez": 3, "allgemeines Viereck": 5 });
   });
 
-  it("1.5 construction plans: the first triangle holds every given piece, the theorem matches, the figure exists", () => {
-    // the vertices each piece involves
-    const involves: Record<string, string> = { a: "AB", b: "BC", c: "CD", d: "AD", e: "AC", f: "BD", α: "ABD", "∢BAC": "ABC" };
+  it("1.5 Level 2: the partial triangle holds every given piece, the theorem fits, and the asked values hold on the rebuilt figure", () => {
+    const seen = new Set<number>();
+    const dist = (p: P2, q: P2) => Math.hypot(p.x - q.x, p.y - q.y);
     for (const task of tasks("dv-5-viereckskonstruktion", "stuecke", 2)) {
-      const c = PLAN_CASES[meta(task).k];
+      const m = meta(task);
+      const c = PLAN_TASKS[m.k];
+      seen.add(m.k);
       expect(picked(task, 0)).toBe(c.triangle);
+      expect(choice(task, 0).options.sort()).toEqual([c.triangle, ...c.others].sort());
       expect(choice(task, 1).correctIndex).toBe(c.theorem);
-      const v = quadPieces(task.given);
-      // the pieces named in the plan lie in the first triangle, or follow from the figure's equal sides
-      const own = c.pieces.filter((p) => [...involves[p]].every((vertex) => c.triangle.includes(vertex)));
-      expect(own.length + (c.type === "Raute" || c.type === "Drachenviereck" ? 1 : 0), c.why).toBeGreaterThanOrEqual(2);
-      for (const other of c.others) expect(c.pieces.every((p) => [...involves[p]].every((vertex) => other.includes(vertex))), `${other} would also work`).toBe(false);
-      // three sides: a theorem SSS; two sides and the angle between: SWS
-      const angles = c.pieces.filter((p) => p === "α" || p === "∢BAC").length;
-      expect(c.theorem).toBe(angles === 0 ? 0 : 1);
-      if (c.type === "Parallelogramm" && "b" in v) expect(sideCheck(v.a, v.b, v.e).meet).toBe("two");
-      if (c.type === "Raute" && "e" in v) expect(v.e).toBeLessThan(2 * v.a);
-      if (c.type === "Raute" && "f" in v) expect(v.f).toBeLessThan(2 * v.a);
-      if (c.type === "Drachenviereck" && "b" in v) expect(sideCheck(v.e, v.a, v.b).meet).toBe("two");
-      if (c.type === "gleichschenkliges Trapez") expect(v.a - 2 * v.d * Math.cos(v.α * RADIANS)).toBeGreaterThan(0.9);
+      // the given pieces as the given lines name them: lengths by their endpoints, angles by three points
+      const pieces = task.given
+        .filter((line) => !line.startsWith("Maßstab"))
+        .map((line) => {
+          const found = /^<span class="len">([A-D]{2})<\/span> = /.exec(line) ?? /^∢([A-D]{3}) = /.exec(line);
+          if (!found) throw new Error(`unknown piece ${line}`);
+          return found[1];
+        });
+      const holds = (triangle: string) => pieces.every((piece) => [...piece].every((vertex) => triangle.includes(vertex)));
+      expect(holds(c.triangle), `${c.triangle}: ${pieces.join(", ")}`).toBe(true);
+      for (const other of c.others) expect(holds(other), `${other} holds them too`).toBe(false);
+      expect(c.theorem, "three lengths: SSS, two lengths and the angle between them: SWS").toBe(pieces.some((p) => p.length === 3) ? 1 : 0);
+      // the figure, rebuilt from the drawn values (A at the origin, counterclockwise)
+      const A = { x: 0, y: 0 };
+      let figure: P2[];
+      let asked: number;
+      if (m.k === 0 || m.k === 1) {
+        const C = { x: m.e, y: 0 };
+        const x = m.k === 0 ? m.a * Math.cos(m.w * RADIANS) : (m.a * m.a - m.b * m.b + m.e * m.e) / (2 * m.e);
+        const y = Math.sqrt(m.a * m.a - x * x);
+        figure = [A, { x, y: -y }, C, { x, y }];
+        if (m.k === 0) close(ccwAngle(figure[1], A, C), m.w, 1e-9);
+        else close(dist(figure[1], C), m.b, 1e-9);
+        asked = m.k === 0 ? ccwAngle(figure[1], A, figure[3]) : figure.reduce((s, p, i) => s + dist(p, figure[(i + 1) % 4]), 0);
+      } else if (m.k === 2 || m.k === 3) {
+        const B = { x: m.a, y: 0 };
+        const x = m.k === 2 ? m.e * Math.cos(m.w * RADIANS) : (m.e * m.e - m.b * m.b + m.a * m.a) / (2 * m.a);
+        const C = { x, y: Math.sqrt(m.e * m.e - x * x) };
+        figure = [A, B, C, minus(C, B)];
+        if (m.k === 3) close(dist(B, C), m.b, 1e-9);
+        asked = m.k === 2 ? ccwAngle(figure[3], C, A) : figure.reduce((s, p, i) => s + dist(p, figure[(i + 1) % 4]), 0);
+      } else if (m.k === 4 || m.k === 6) {
+        const B = { x: m.a, y: 0 };
+        const D = m.k === 4 ? dir(m.a, m.alpha) : (() => {
+          const x = (2 * m.a * m.a - m.f * m.f) / (2 * m.a);
+          return { x, y: Math.sqrt(m.a * m.a - x * x) };
+        })();
+        figure = [A, B, plus(B, D), D];
+        if (m.k === 6) close(dist(B, D), m.f, 1e-9);
+        asked = m.k === 4 ? ccwAngle(D, B, A) : figure.reduce((s, p, i) => s + dist(p, figure[(i + 1) % 4]), 0);
+      } else {
+        const D = dir(m.d, m.alpha);
+        figure = [A, { x: m.a, y: 0 }, { x: m.a - D.x, y: D.y }, D];
+        asked = ccwAngle(D, figure[2], figure[1]);
+      }
+      const info = quadInfo(figure, 1e-6);
+      expect(info.convex, task.prompt).toBe(true);
+      expect(is[c.type](info), `${c.type}: ${task.prompt}`).toBe(true);
+      close(num(task, 2), asked, 1e-9);
+      // the plan: the real length of the named side, in cm, through the scale
+      const index = (letter: string) => "ABCD".indexOf(letter);
+      const real = dist(figure[index(c.plan[0])], figure[index(c.plan[1])]);
+      const inCm = c.type === "Drachenviereck" || c.type === "Raute" ? real : real * 100;
+      close(num(task, 3), inCm / m.scale, 1e-9);
+      expect(num(task, 3)).toBeGreaterThanOrEqual(2);
+      expect(num(task, 3)).toBeLessThanOrEqual(15);
+      expect(task.prompt).toContain(`1 : ${m.scale === 1000 ? "1000" : m.scale}`);
     }
+    expect(seen.size).toBe(PLAN_TASKS.length);
   });
 
   it("1.5 the fourth vertex of a parallelogram in coordinates, and the figure really is one", () => {

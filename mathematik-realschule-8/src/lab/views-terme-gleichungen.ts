@@ -1,6 +1,6 @@
 import { fmt, fracText, MINUS, paren, quadratic, round, shifted, sum, vertexForm } from "../exercises/format";
 import type { LabValues } from "../model/types";
-import { circle, handle, type LabView, line, open, Plot, rect, text } from "./svg";
+import { circle, handle, type LabView, line, open, Plot, type Pt, rect, text } from "./svg";
 
 // ─── Shared algebra of this stage ──────────────────────────────────────────
 //
@@ -243,6 +243,37 @@ export function productValue(v: LabValues): number {
   return (v.x + v.p) * (v.x + v.q);
 }
 
+/** Where the three handles of the rectangle model sit: x at the square's corner, p on the right side, q on the bottom. */
+export function rectangleHandles(v: LabValues): { x: Pt; p: Pt; q: Pt | null } {
+  const { x0, y0, u } = RECT;
+  const X = v.x * u;
+  const P = v.p * u;
+  const Q = v.q * u;
+  const exists = v.x + v.q > 0;
+  const H = exists ? X + Math.min(0, Q) : 0;
+  return {
+    x: { x: x0 + X, y: y0 + X },
+    p: { x: x0 + X + P, y: y0 + (v.q < 0 && exists ? H : X) / 2 },
+    q: exists ? { x: x0 + X / 2, y: y0 + X + Q } : null,
+  };
+}
+
+/**
+ * True when a centred label (13 px type, baseline y) keeps clear of every
+ * handle dot (radius 7.5 with its ring): the label box and the dot do not touch.
+ */
+export function labelClear(x: number, baseline: number, content: string, spots: Pt[]): boolean {
+  const half = 3.7 * [...content].length + 2;
+  const centre = baseline - 4.5;
+  return spots.every((s) => Math.abs(s.x - x) > half + 10 || Math.abs(s.y - centre) > 6.5 + 10);
+}
+
+/** The first of the places that keeps clear of the handles; none when all of them are in the way. */
+function placeLabel(places: Array<[number, number]>, content: string, cls: string, spots: Pt[]): string {
+  const at = places.find(([px, py]) => labelClear(px, py, content, spots));
+  return at ? text(at[0], at[1], content, cls, "middle") : "";
+}
+
 function expandProducts(v: LabValues): string {
   const { x, p, q } = v;
   const { x0, y0, u } = RECT;
@@ -260,24 +291,33 @@ function expandProducts(v: LabValues): string {
     out += rect(x0, y0 + X, X, Q, "lab-fill-b");
     out += rect(x0 + X, y0 + X, P, Q, "lab-fill-c");
   }
+  // Labels keep clear of the handles: inside their part where there is room, else below the rectangle, else none
+  // (the table on the right names every part).
+  const grips = rectangleHandles(v);
+  const spots = [grips.x, grips.p, ...(grips.q ? [grips.q] : [])];
+  const below = y0 + X + Math.max(0, Q) + 24;
   if (q < 0) {
     // The strip of height |q| at the bottom is cut away: −|q| · x under the square, −p|q| under the strip.
     const top = y0 + Math.max(0, X + Q);
     const height = Math.min(-Q, X);
     out += rect(x0, top, X + P, height, "lab-fill-only");
     out += rect(x0, top, X, height, "lab-dashed lab-bad-stroke") + rect(x0 + X, top, P, height, "lab-dashed lab-bad-stroke");
-    if (height >= 15 && exists) {
-      out += text(x0 + X / 2, top + height / 2 + 4, timesX(q), "lab-text-small lab-text-bad", "middle");
-      if (P >= 28) out += text(x0 + X + P / 2, top + height / 2 + 4, fmt(p * q), "lab-text-small lab-text-bad", "middle");
+    if (exists) {
+      const inside = top + height / 2 + 4;
+      const room = (w: number, content: string) => height >= 15 && w >= 7.4 * [...content].length + 8;
+      out += placeLabel([...(room(X, timesX(q)) ? [[x0 + X / 2, inside] as [number, number]] : []), [x0 + X / 2, below]], timesX(q), "lab-text-small lab-text-bad", spots);
+      out += placeLabel([...(room(P, fmt(p * q)) ? [[x0 + X + P / 2, inside] as [number, number]] : []), [x0 + X + P / 2, below]], fmt(p * q), "lab-text-small lab-text-bad", spots);
     }
   }
   // labels of the parts that are left
   const labelY = y0 + (q < 0 ? H : X) / 2 + 5;
-  if (X > 34 && (q >= 0 || H > 22)) out += text(x0 + X / 2, labelY, "x²", "lab-text lab-text-a", "middle");
-  if (q >= 0 || H > 22) out += text(x0 + X + P / 2, labelY, timesX(p), P >= 26 ? "lab-text lab-text-b" : "lab-text-small lab-text-b", "middle");
-  if (q > 0 && Q >= 15) {
-    out += text(x0 + X / 2, y0 + X + Q / 2 + 5, timesX(q), "lab-text lab-text-b", "middle");
-    out += text(x0 + X + P / 2, y0 + X + Q / 2 + 5, fmt(p * q), P >= 26 ? "lab-text lab-text-c" : "lab-text-small lab-text-c", "middle");
+  if (X > 34 && (q >= 0 || H > 22)) out += placeLabel([[x0 + X / 2, labelY]], "x²", "lab-text lab-text-a", spots);
+  if (q >= 0 || H > 22) out += placeLabel([[x0 + X + P / 2, labelY]], timesX(p), P >= 26 ? "lab-text lab-text-b" : "lab-text-small lab-text-b", spots);
+  if (q > 0) {
+    const inside = y0 + X + Q / 2 + 5;
+    const tall = Q >= 15;
+    out += placeLabel([...(tall ? [[x0 + X / 2, inside] as [number, number]] : []), [x0 + X / 2, below]], timesX(q), "lab-text lab-text-b", spots);
+    out += placeLabel([...(tall ? [[x0 + X + P / 2, inside] as [number, number]] : []), [x0 + X + P / 2, below]], fmt(p * q), P >= 26 ? "lab-text lab-text-c" : "lab-text-small lab-text-c", spots);
   }
   if (exists) out += rect(x0, y0, X + P, X + Q, "lab-side-ok");
   // side lengths
@@ -326,9 +366,9 @@ function expandProducts(v: LabValues): string {
     exists ? `A = ${fmt(x + p)} · ${fmt(x + q)} = ${fmt(area)} FE` : `${plusText("x", q)} ≤ 0: kein Rechteck`,
     exists ? "lab-text" : "lab-text lab-text-bad",
   );
-  out += handle("x", x0 + X, y0 + X, "Ecke des Quadrats x²: x ändern");
-  out += handle("p", x0 + X + P, y0 + (q < 0 && exists ? H : X) / 2, "rechte Seite: p ändern", "lab-handle lab-handle-b");
-  if (exists) out += handle("q", x0 + X / 2, y0 + X + Q, "untere Seite: q ändern", "lab-handle lab-handle-b");
+  out += handle("x", grips.x.x, grips.x.y, "Ecke des Quadrats x²: x ändern");
+  out += handle("p", grips.p.x, grips.p.y, "rechte Seite: p ändern", "lab-handle lab-handle-b");
+  if (grips.q) out += handle("q", grips.q.x, grips.q.y, "untere Seite: q ändern", "lab-handle lab-handle-b");
   out += "</svg>";
   return out;
 }
