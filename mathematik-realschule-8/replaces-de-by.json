@@ -1,0 +1,224 @@
+{
+  "schema": 1,
+  "approved": "2026-10-23",
+  "status": "approved",
+  "source": "Thomas in diesem Claude-Code-Chat am 2026-10-23: „Ja, Freigabe erteilt“ als Antwort auf die Frage „Gibst du die Zuordnung 9 A / 8 B / 7 C so frei?“ zur Überarbeitung von zam-os/zam-academy#25, zusammen mit den dort vorgeschlagenen Antworten auf die Folgefragen: Vierecke J02 bleibt C, die sieben Nachfolger in Lektionen nur für Zweig I sind in Ordnung, die C-Karten bleiben aktiv. Die Freigabe gilt den 24 Zeilen dieser Datei.",
+  "source_repository": "zam-os/zam",
+  "source_commit": "3ff6ee18389b6b2ac602a7265a2ecd695f395107",
+  "authorization": "Thomas hat am 23. Oktober 2026 die hier dokumentierten 24 Zeilen freigegeben (9 A, 8 B, 7 C). Wie bei Mathematik 10 erscheinen die genau benannten replaces der 17 A- und B-Nachfolger mit der ersten Veröffentlichung der Zelle; die 7 C-Karten bleiben aktiv, es gibt keine retired_items. Persönliche Karten und Reviewhistorien bleiben erhalten.",
+  "policy": "A: sicher gleicher Einzelabruf, genau ein Nachfolger. B: vollständiger alter Gesamtabruf (Frage und Antwort, dazu eine Musterlösung) auf genau einem eigenen Nachfolger; keine Verteilung einer Historie auf Teilkarten. C: kein Nachfolger in diesem Paket (anderer Jahrgang oder unvollständige alte Antwort); die alte Karte bleibt aktiv. Alle persönlichen Karten und Reviewhistorien bleiben erhalten. Nur temporäre Bibliotheken für die Prüfung verwenden.",
+  "sources": [
+    {
+      "file": "tests/fixtures/de-by-realschule-8-mathematik-ebene-geometrie-vierecke-kvt.json",
+      "tile_id": "de-by:realschule-8-mathematik-ebene-geometrie-vierecke",
+      "version": "2026.08.1",
+      "sha256": "28dd69b782446846c94daf3d103680aee8b6fb716bc265a5910c866183c7637a"
+    },
+    {
+      "file": "tests/fixtures/de-by-realschule-8-mathematik-lineare-funktionen-kvt.json",
+      "tile_id": "de-by:realschule-8-mathematik-lineare-funktionen",
+      "version": "2026.08.1",
+      "sha256": "053e2457bb38d7b97be056c58050b50646596b6300a73d7d893be788e3809c0d"
+    },
+    {
+      "file": "tests/fixtures/de-by-realschule-8-mathematik-terme-gleichungen-kvt.json",
+      "tile_id": "de-by:realschule-8-mathematik-terme-gleichungen",
+      "version": "2026.08.1",
+      "sha256": "fdf15202b635961677bc66a6ec53c1c6e7ec955199034da09e564fd247238546"
+    }
+  ],
+  "rows": [
+    {
+      "de_by_cell": "de-by:realschule-8-mathematik-ebene-geometrie-vierecke",
+      "de_by_id": "01K4M8G0000000000000000J01",
+      "de_by_question": "Welches Viereck besitzt vier gleich lange Seiten und punktsymmetrische Diagonalen, die sich senkrecht halbieren?",
+      "category": "A",
+      "academy_slug": "m8-raute-erkennen",
+      "reason": "Gleicher Einzelabruf: die Raute an vier gleich langen Seiten und sich senkrecht halbierenden Diagonalen erkennen. Der Nachfolger in dv-4-vierecke fragt ohne die missverständliche Wendung „punktsymmetrische Diagonalen“ und nennt das Quadrat als besondere Raute."
+    },
+    {
+      "de_by_cell": "de-by:realschule-8-mathematik-ebene-geometrie-vierecke",
+      "de_by_id": "01K4M8G0000000000000000J02",
+      "de_by_question": "Ordne die besonderen Vierecke (Quadrat, Rechteck, Raute, Parallelogramm, gleichschenkliges Trapez, Drachenviereck) in eine hierarchische 'Haus der Vierecke'-Systematik ein und beschreibe die Symmetrie- und Diagonaleigenschaften von Raute und Rechteck im Vergleich.",
+      "category": "C",
+      "academy_slug": null,
+      "reason": "Die alte Antwort ist unvollständig: Drachenviereck und gleichschenkliges Trapez fehlen in der Hierarchie, obwohl die Frage sie nennt, und das Rechteck wird nur als punktsymmetrisch beschrieben (seine zwei Symmetrieachsen fehlen). Eine korrigierte Antwort wäre ein anderer Abruf; deshalb keine Übertragung, die alte Karte bleibt aktiv. Die Lektion dv-4-vierecke hat mit m8-haus-der-vierecke eine eigene Karte mit derselben Frage und vollständiger Antwort, die ohne Historie beginnt."
+    },
+    {
+      "de_by_cell": "de-by:realschule-8-mathematik-ebene-geometrie-vierecke",
+      "de_by_id": "01K4M8G0000000000000000J03",
+      "de_by_question": "Wie lautet die Flächeninhaltsformel für ein Trapez mit den parallelen Grundseiten a und c sowie der Höhe h?",
+      "category": "A",
+      "academy_slug": "m8-trapez-flaeche",
+      "reason": "Gleicher Einzelabruf der Trapezformel A = ½ · (a + c) · h (Mittellinie mal Höhe). Die Formel ist Wiederholung aus M6 und wird in dv-6-vierecke-anwenden zum Lösen von Viereckaufgaben genutzt."
+    },
+    {
+      "de_by_cell": "de-by:realschule-8-mathematik-ebene-geometrie-vierecke",
+      "de_by_id": "01K4M8G0000000000000000J04",
+      "de_by_question": "Berechne den Flächeninhalt eines Trapezes mit a = 9 cm, c = 5 cm und h = 6 cm, leite die Flächenformel des Trapezes durch Zerlegung oder Verdopplung zu einem Parallelogramm her und berechne die Fläche eines Drachenvierecks mit den Diagonalen e = 8 cm und f = 5 cm.",
+      "category": "B",
+      "academy_slug": "m8-trapez-drachen-flaeche",
+      "reason": "Trapezfläche 42 cm², Herleitung durch Verdopplung zum Parallelogramm und Drachenfläche 20 cm². Mehrteiliger Gesamtabruf mit korrekter alter Antwort; er bleibt mit Frage, Antwort und Musterlösung vollständig auf genau einem eigenen Nachfolger. Die Einzelkarten der Lektion beginnen ohne Beherrschung."
+    },
+    {
+      "de_by_cell": "de-by:realschule-8-mathematik-ebene-geometrie-vierecke",
+      "de_by_id": "01K4M8G0000000000000000J05",
+      "de_by_question": "Welche Strecken werden beim 1. Strahlensatz ins Verhältnis gesetzt?",
+      "category": "C",
+      "academy_slug": null,
+      "reason": "Strahlensätze gehören zur zentrischen Streckung in M9 (LB 2 beider Zweige), nicht zum Fachlehrplan M8. Kein Nachfolger in diesem Paket; die Karte bleibt aktiv, bis eine Zelle für M9 sie übernimmt."
+    },
+    {
+      "de_by_cell": "de-by:realschule-8-mathematik-ebene-geometrie-vierecke",
+      "de_by_id": "01K4M8G0000000000000000J06",
+      "de_by_question": "Formuliere den 1. und 2. Strahlensatz für zwei von Parallelen geschnittene Geraden mit Scheitelpunkt S und berechne die unzugängliche Breite eines Flusses (Parallelenabschnitt a), wenn |SA| = 12 m, |SA'| = 30 m und die Hilfsstrecke a' = 20 m beträgt.",
+      "category": "C",
+      "academy_slug": null,
+      "reason": "Strahlensätze und eine Anwendung gehören zu M9 (LB 2 beider Zweige). Kein Nachfolger in diesem Paket; die Karte bleibt aktiv."
+    },
+    {
+      "de_by_cell": "de-by:realschule-8-mathematik-ebene-geometrie-vierecke",
+      "de_by_id": "01K4M8G0000000000000000J07",
+      "de_by_question": "Um welchen Faktor ändert sich der Flächeninhalt einer geometrischen Figur, wenn alle ihre Seitenlängen durch eine zentrische Streckung mit dem Streckungsfaktor k = 3 verdreifacht werden?",
+      "category": "C",
+      "academy_slug": null,
+      "reason": "Der Flächenfaktor k² der zentrischen Streckung gehört zu M9 (LB 2 Zweig I). Kein Nachfolger in diesem Paket; die Karte bleibt aktiv."
+    },
+    {
+      "de_by_cell": "de-by:realschule-8-mathematik-ebene-geometrie-vierecke",
+      "de_by_id": "01K4M8G0000000000000000J08",
+      "de_by_question": "Definiere die Eigenschaften einer zentrischen Streckung mit Streckzentrum Z und Streckfaktor k (Streckentreue, Winkeltreue, Parallelentreue, Orientierungssinn), unterscheide die Fälle k > 1, 0 < k < 1 und k < 0 (Punktspiegelung) und berechne den Flächeninhalt eines Bilddreiecks A'B'C' mit k = -2,5, wenn das Ausgangsdreieck ABC einen Flächeninhalt von 16 cm² besitzt.",
+      "category": "C",
+      "academy_slug": null,
+      "reason": "Eigenschaften der zentrischen Streckung gehören zu M9 (LB 2). Kein Nachfolger in diesem Paket; die Karte bleibt aktiv."
+    },
+    {
+      "de_by_cell": "de-by:realschule-8-mathematik-lineare-funktionen",
+      "de_by_id": "01K4M8F0000000000000000J01",
+      "de_by_question": "Was gibt der Parameter m in der allgemeinen Geradengleichung y = m · x + t an?",
+      "category": "A",
+      "academy_slug": "m8-gerade-steigung-m",
+      "reason": "Gleicher Einzelabruf: m ist die Steigung, m = Δy : Δx. Der Nachfolger liegt in fu-6-geraden, das y = mx + t behandelt; diese Lektion gehört nur zu Zweig I (Zweig II/III lernt y = mx + t erst in M9), die alte Zelle war beiden Zweigen zugeordnet."
+    },
+    {
+      "de_by_cell": "de-by:realschule-8-mathematik-lineare-funktionen",
+      "de_by_id": "01K4M8F0000000000000000J02",
+      "de_by_question": "Erkläre die geometrische Bedeutung der Parameter m (Steigung) und t (y-Achsenabschnitt) in f(x) = mx + t, zeichne die Gerade g mit y = -0,5x + 3 mithilfe eines Steigungsdreiecks und bestimme ihre Nullstelle x_0.",
+      "category": "B",
+      "academy_slug": "m8-gerade-m-t-zeichnen",
+      "reason": "Bedeutung von m und t, Zeichnen von y = −0,5x + 3 mit Steigungsdreieck und Nullstelle x₀ = 6. Nachfolger in fu-6-geraden (nur Zweig I). Mehrteiliger Gesamtabruf mit korrekter alter Antwort; er bleibt mit Frage, Antwort und Musterlösung vollständig auf genau einem eigenen Nachfolger. Die Einzelkarten der Lektion beginnen ohne Beherrschung."
+    },
+    {
+      "de_by_cell": "de-by:realschule-8-mathematik-lineare-funktionen",
+      "de_by_id": "01K4M8F0000000000000000J03",
+      "de_by_question": "Wie berechnet man die Steigung m einer Geraden durch die Punkte P(x_1 | y_1) und Q(x_2 | y_2)?",
+      "category": "A",
+      "academy_slug": "m8-steigung-zwei-punkte",
+      "reason": "Gleicher Einzelabruf des Differenzenquotienten m = (y₂ − y₁) : (x₂ − x₁); der Nachfolger in fu-7-geraden-bestimmen nennt die Bedingung x₁ ≠ x₂ ausdrücklich (nur Zweig I)."
+    },
+    {
+      "de_by_cell": "de-by:realschule-8-mathematik-lineare-funktionen",
+      "de_by_id": "01K4M8F0000000000000000J04",
+      "de_by_question": "Ermittle die Funktionsgleichung der Geraden g, die durch die beiden Punkte A(2 | -1) und B(6 | 7) verläuft, und überprüfe rechnerisch durch eine Punktprobe, ob der Punkt P(10 | 15) auf der Geraden g liegt.",
+      "category": "B",
+      "academy_slug": "m8-gerade-zwei-punkte-probe",
+      "reason": "Gerade durch A(2 | −1) und B(6 | 7), g: y = 2x − 5, Punktprobe für P(10 | 15). Nachfolger in fu-7-geraden-bestimmen (nur Zweig I). Mehrteiliger Gesamtabruf mit korrekter alter Antwort; er bleibt mit Frage, Antwort und Musterlösung vollständig auf genau einem eigenen Nachfolger. Die Einzelkarten der Lektion beginnen ohne Beherrschung."
+    },
+    {
+      "de_by_cell": "de-by:realschule-8-mathematik-lineare-funktionen",
+      "de_by_id": "01K4M8F0000000000000000J05",
+      "de_by_question": "Welche mathematische Beziehung muss für die Steigungen m_1 und m_2 zweier zueinander orthogonaler (senkrechter) Geraden gelten?",
+      "category": "A",
+      "academy_slug": "m8-senkrecht-steigungen",
+      "reason": "Gleicher Einzelabruf: m₁ · m₂ = −1 für senkrechte Geraden (negativer Kehrwert). Der Nachfolger liegt in fu-5-senkrecht, das beide Zweige lernen."
+    },
+    {
+      "de_by_cell": "de-by:realschule-8-mathematik-lineare-funktionen",
+      "de_by_id": "01K4M8F0000000000000000J06",
+      "de_by_question": "Gegeben ist die Gerade g_1: y = 3x - 4. Bestimme die Gleichung der dazu parallelen Geraden g_2 durch P(1 | 5), die Gleichung der dazu senkrechten Geraden h durch den Ursprung O(0 | 0) und berechne den Schnittpunkt S von g_1 mit der Geraden g_3: y = -x + 8.",
+      "category": "B",
+      "academy_slug": "m8-parallel-senkrecht-schnitt",
+      "reason": "Parallele g₂: y = 3x + 2, Senkrechte h: y = −1/3 x durch den Ursprung und Schnittpunkt S(3 | 5) durch Gleichsetzen. Nachfolger in fu-8-parallelenscharen (nur Zweig I). Mehrteiliger Gesamtabruf mit korrekter alter Antwort; er bleibt mit Frage, Antwort und Musterlösung vollständig auf genau einem eigenen Nachfolger. Die Einzelkarten der Lektion beginnen ohne Beherrschung."
+    },
+    {
+      "de_by_cell": "de-by:realschule-8-mathematik-lineare-funktionen",
+      "de_by_id": "01K4M8F0000000000000000J07",
+      "de_by_question": "Welche geometrische Form besitzt der Graph einer antiproportionalen (indirekt proportionalen) Zuordnung y = k / x im 1. Quadranten?",
+      "category": "C",
+      "academy_slug": null,
+      "reason": "Indirekte Proportionalität und Hyperbelast sind Stoff von M7 (LB Proportionalitäten beider Zweige), nicht von M8. Kein Nachfolger; die Karte bleibt aktiv."
+    },
+    {
+      "de_by_cell": "de-by:realschule-8-mathematik-lineare-funktionen",
+      "de_by_id": "01K4M8F0000000000000000J08",
+      "de_by_question": "Vergleiche direkte Proportionalität (y = k · x, quotientengleich: y/x = k, Ursprungsgerade) und indirekte Proportionalität (y = k / x, produktgleich: x · y = k, Hyperbel) anhand ihrer mathematischen Gesetzmäßigkeiten und gib je ein reales Anwendungsbeispiel aus dem Alltag an.",
+      "category": "C",
+      "academy_slug": null,
+      "reason": "Der Vergleich direkter und indirekter Proportionalität ist Stoff von M6 und M7. Kein Nachfolger; die Karte bleibt aktiv."
+    },
+    {
+      "de_by_cell": "de-by:realschule-8-mathematik-terme-gleichungen",
+      "de_by_id": "01K4M8T0000000000000000J01",
+      "de_by_question": "Wie lautet die 2. Binomische Formel für den Term (a - b)²?",
+      "category": "A",
+      "academy_slug": "m8-binom-zweite",
+      "reason": "Gleicher Einzelabruf der zweiten binomischen Formel (a − b)² = a² − 2ab + b² in tg-3-binomische-formeln."
+    },
+    {
+      "de_by_cell": "de-by:realschule-8-mathematik-terme-gleichungen",
+      "de_by_id": "01K4M8T0000000000000000J02",
+      "de_by_question": "Formuliere alle drei Binomischen Formeln (1. Plus-Formel, 2. Minus-Formel, 3. Plus-Minus-Formel), berechne durch Ausmultiplizieren den Term (3x - 4y)² und faktorisiere den Term 25a² - 49b².",
+      "category": "B",
+      "academy_slug": "m8-binom-alle-drei",
+      "reason": "Alle drei binomischen Formeln, (3x − 4y)² = 9x² − 24xy + 16y² und 25a² − 49b² = (5a + 7b)(5a − 7b). Nachfolger in tg-3-binomische-formeln. Mehrteiliger Gesamtabruf mit korrekter alter Antwort; er bleibt mit Frage, Antwort und Musterlösung vollständig auf genau einem eigenen Nachfolger. Die Einzelkarten der Lektion beginnen ohne Beherrschung."
+    },
+    {
+      "de_by_cell": "de-by:realschule-8-mathematik-terme-gleichungen",
+      "de_by_id": "01K4M8T0000000000000000J03",
+      "de_by_question": "Welche Rechenoperation stellt KEINE Äquivalenzumformung dar, weil sie die Lösungsmenge einer Gleichung verändern kann?",
+      "category": "A",
+      "academy_slug": "m8-aequivalenz-null",
+      "reason": "Gleicher Einzelabruf: Multiplizieren mit 0 ist keine Äquivalenzumformung. Der Nachfolger in tg-7-gleichungen ergänzt nur, dass durch 0 dividieren gar nicht erlaubt ist."
+    },
+    {
+      "de_by_cell": "de-by:realschule-8-mathematik-terme-gleichungen",
+      "de_by_id": "01K4M8T0000000000000000J04",
+      "de_by_question": "Löse die lineare Gleichung 3(2x - 5) - 4(x + 2) = 2x - 23 schrittweise über der Grundmenge G = Q, gib die Lösungsmenge an und führe die Probe durch.",
+      "category": "B",
+      "academy_slug": "m8-gleichung-allgemeingueltig",
+      "reason": "3(2x − 5) − 4(x + 2) = 2x − 23 ist allgemeingültig, L = ℚ. Nachfolger in tg-7-gleichungen; die Musterlösung ergänzt eine Probe mit x = 0. Mehrteiliger Gesamtabruf mit korrekter alter Antwort; er bleibt mit Frage, Antwort und Musterlösung vollständig auf genau einem eigenen Nachfolger. Die Einzelkarten der Lektion beginnen ohne Beherrschung."
+    },
+    {
+      "de_by_cell": "de-by:realschule-8-mathematik-terme-gleichungen",
+      "de_by_id": "01K4M8T0000000000000000J05",
+      "de_by_question": "Welche Zahlen müssen aus der Definitionsmenge des Bruchterms T(x) = (x + 3) / (2x - 8) über der Grundmenge Q ausgeschlossen werden?",
+      "category": "A",
+      "academy_slug": "m8-definitionsmenge-vier",
+      "reason": "Gleicher Einzelabruf: derselbe Bruchterm (x + 3)/(2x − 8), dieselbe Grundmenge ℚ und derselbe Ausschluss x = 4, D = ℚ \\ {4}, in br-2-definitionsmenge."
+    },
+    {
+      "de_by_cell": "de-by:realschule-8-mathematik-terme-gleichungen",
+      "de_by_id": "01K4M8T0000000000000000J06",
+      "de_by_question": "Bestimme für die Bruchgleichung 6 / (x - 2) = 4 / (x + 1) die Definitionsmenge D, löse die Gleichung durch Multiplikation mit dem Hauptnenner HN = (x - 2)(x + 1) und gib die Lösungsmenge an.",
+      "category": "B",
+      "academy_slug": "m8-bruchgleichung-hauptnenner",
+      "reason": "Definitionsmenge ℚ \\ {−1; 2}, Lösung über den Hauptnenner, L = {−7}. Nachfolger in br-3-verhaeltnisgleichungen. Mehrteiliger Gesamtabruf mit korrekter alter Antwort; er bleibt mit Frage, Antwort und Musterlösung vollständig auf genau einem eigenen Nachfolger. Die Einzelkarten der Lektion beginnen ohne Beherrschung."
+    },
+    {
+      "de_by_cell": "de-by:realschule-8-mathematik-terme-gleichungen",
+      "de_by_id": "01K4M8T0000000000000000J07",
+      "de_by_question": "Was geschieht mit dem Ungleichheitszeichen (<, >, <=, >=), wenn man beide Seiten einer Ungleichung mit einer negativen Zahl multipliziert oder dividiert?",
+      "category": "A",
+      "academy_slug": "m8-ungleichung-umkehren",
+      "reason": "Gleicher Einzelabruf: Multiplizieren oder Dividieren mit einer negativen Zahl kehrt das Ungleichheitszeichen um. Der Nachfolger liegt in tg-9-ungleichungen, das nur Zweig I in M8 hat (Zweig II/III lernte Ungleichungen in M7); die alte Zelle war beiden Zweigen zugeordnet."
+    },
+    {
+      "de_by_cell": "de-by:realschule-8-mathematik-terme-gleichungen",
+      "de_by_id": "01K4M8T0000000000000000J08",
+      "de_by_question": "Löse die lineare Ungleichung 5 - 3x >= 17 über G = Q, begründe den Vorzeichenwechsel des Ungleichheitszeichens und notiere die Lösungsmenge in Intervall- und Mengenschreibweise.",
+      "category": "B",
+      "academy_slug": "m8-ungleichung-intervall",
+      "reason": "5 − 3x ≥ 17 ergibt x ≤ −4, L = ]−∞; −4], mit Begründung der Umkehrung. Nachfolger in tg-9-ungleichungen (nur Zweig I). Mehrteiliger Gesamtabruf mit korrekter alter Antwort; er bleibt mit Frage, Antwort und Musterlösung vollständig auf genau einem eigenen Nachfolger. Die Einzelkarten der Lektion beginnen ohne Beherrschung."
+    }
+  ]
+}
