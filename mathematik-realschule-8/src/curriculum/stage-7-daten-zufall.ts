@@ -1,19 +1,34 @@
+import { fmt, frac, fracHtml } from "../exercises/format";
 import type { Rng } from "../exercises/rng";
 import {
   countingText,
   drawSequences,
   EVENT_KINDS,
   eventKindText,
+  fluctuation,
+  GAME_SEEDS,
+  gameOf,
+  gameRestart,
+  GAMES,
+  gameTrials,
   isPrime,
   labEvent,
   OUTCOME_EXPERIMENTS,
+  moreButSmallerShare,
   OUTCOME_SEEDS,
   outcomeRecord,
   outcomeRestart,
   outcomeTrials,
   pathsWithReplacement,
+  relFreq,
+  relText,
+  sameShare,
   setText,
+  shareText,
   shortSetText,
+  TABLE_EVENTS,
+  tableEventCount,
+  tableOf,
   TREE_EVENTS,
   TREE_EXPERIMENTS,
   treeDepth,
@@ -22,6 +37,7 @@ import {
   treePaths,
   treeSetup,
   upTo,
+  wheelLeader,
 } from "../lab/views-daten-zufall";
 import type { ChoiceField, ExerciseTask, Lesson, Stage } from "../model/types";
 import { choiceField, numberField, yesNo } from "./helpers";
@@ -1072,6 +1088,891 @@ const baumdiagramm: Lesson = {
   celebrationMessage: "Du zeichnest Baumdiagramme, zählst Ergebnisse mit dem Zählprinzip und liest Ereignisse als Pfade ab.",
 };
 
+// ─── 7.3 Vierfeldertafeln ──────────────────────────────────────────────────
+
+const CELL = "border:1px solid var(--line);padding:0.2rem 0.55rem;text-align:center";
+const HEAD = `${CELL};background:var(--elevated)`;
+
+/** Two features with two values each, as the tasks count them. Cells: a = (row 1, col 1), b = (row 1, col 2), c = (row 2, col 1), d = (row 2, col 2). */
+export interface TwoWayContext {
+  intro: string;
+  noun: string;
+  rowFeature: string;
+  colFeature: string;
+  rows: [string, string];
+  cols: [string, string];
+  /** The group of each cell as a noun phrase: [[a, b], [c, d]]. */
+  cell: [[string, string], [string, string]];
+  row: [string, string];
+  col: [string, string];
+  /** Relative clauses after "die": row 1 or column 1, exactly one of them, neither. */
+  or: string;
+  one: string;
+  neither: string;
+  ranges: Array<[number, number]>;
+}
+
+export const TWO_WAY: TwoWayContext[] = [
+  {
+    intro: "In der Jahrgangsstufe 8 einer Realschule wurde gezählt, wer eine Brille trägt.",
+    noun: "Jugendliche",
+    rowFeature: "Geschlecht",
+    colFeature: "Brille",
+    rows: ["Mädchen", "Jungen"],
+    cols: ["mit Brille", "ohne Brille"],
+    cell: [["Mädchen mit Brille", "Mädchen ohne Brille"], ["Jungen mit Brille", "Jungen ohne Brille"]],
+    row: ["Mädchen", "Jungen"],
+    col: ["Jugendliche mit Brille", "Jugendliche ohne Brille"],
+    or: "ein Mädchen sind oder eine Brille tragen",
+    one: "ein Mädchen sind oder eine Brille tragen, aber nicht beides",
+    neither: "weder ein Mädchen sind noch eine Brille tragen",
+    ranges: [[3, 12], [12, 26], [2, 12], [12, 26]],
+  },
+  {
+    intro: "In den Klassen 8a und 8b wurde gefragt, wer ein Haustier hat.",
+    noun: "Schülerinnen und Schüler",
+    rowFeature: "Klasse",
+    colFeature: "Haustier",
+    rows: ["8a", "8b"],
+    cols: ["mit Haustier", "ohne Haustier"],
+    cell: [["Schülerinnen und Schüler der 8a mit Haustier", "Schülerinnen und Schüler der 8a ohne Haustier"], ["Schülerinnen und Schüler der 8b mit Haustier", "Schülerinnen und Schüler der 8b ohne Haustier"]],
+    row: ["Schülerinnen und Schüler der 8a", "Schülerinnen und Schüler der 8b"],
+    col: ["Schülerinnen und Schüler mit Haustier", "Schülerinnen und Schüler ohne Haustier"],
+    or: "in die 8a gehen oder ein Haustier haben",
+    one: "in die 8a gehen oder ein Haustier haben, aber nicht beides",
+    neither: "weder in die 8a gehen noch ein Haustier haben",
+    ranges: [[6, 16], [6, 16], [6, 16], [6, 16]],
+  },
+  {
+    intro: "Bei einer Reihenuntersuchung wurden Erwachsene mit einem Schnelltest auf eine Krankheit getestet.",
+    noun: "Personen",
+    rowFeature: "Gesundheit (krank oder gesund)",
+    colFeature: "Testergebnis",
+    rows: ["krank", "gesund"],
+    cols: ["Test positiv", "Test negativ"],
+    cell: [["kranke Personen mit positivem Test", "kranke Personen mit negativem Test"], ["gesunde Personen mit positivem Test", "gesunde Personen mit negativem Test"]],
+    row: ["kranke Personen", "gesunde Personen"],
+    col: ["Personen mit positivem Test", "Personen mit negativem Test"],
+    or: "krank sind oder einen positiven Test haben",
+    one: "krank sind oder einen positiven Test haben, aber nicht beides",
+    neither: "weder krank sind noch einen positiven Test haben",
+    ranges: [[18, 45], [1, 6], [8, 30], [150, 400]],
+  },
+  {
+    intro: "In einer Jahrgangsstufe wurde gefragt, wer in einem Sportverein ist und wer ein Instrument spielt.",
+    noun: "Jugendliche",
+    rowFeature: "Sportverein",
+    colFeature: "Instrument",
+    rows: ["im Sportverein", "kein Sportverein"],
+    cols: ["mit Instrument", "ohne Instrument"],
+    cell: [["Jugendliche im Sportverein mit Instrument", "Jugendliche im Sportverein ohne Instrument"], ["Jugendliche ohne Sportverein mit Instrument", "Jugendliche ohne Sportverein und ohne Instrument"]],
+    row: ["Jugendliche im Sportverein", "Jugendliche ohne Sportverein"],
+    col: ["Jugendliche mit Instrument", "Jugendliche ohne Instrument"],
+    or: "in einem Sportverein sind oder ein Instrument spielen",
+    one: "in einem Sportverein sind oder ein Instrument spielen, aber nicht beides",
+    neither: "weder in einem Sportverein sind noch ein Instrument spielen",
+    ranges: [[4, 15], [10, 30], [3, 12], [8, 25]],
+  },
+];
+
+/** The cells of a context, drawn from its plausible ranges; in the 8a/8b context each class has 18 to 32 pupils. */
+function drawCells(rng: Rng, ctx: number): [number, number, number, number] {
+  for (;;) {
+    const cells = TWO_WAY[ctx].ranges.map(([lo, hi]) => rng.int(lo, hi)) as [number, number, number, number];
+    if (ctx !== 1) return cells;
+    const [a, b, c, d] = cells;
+    if (a + b >= 18 && a + b <= 32 && c + d >= 18 && c + d <= 32) return cells;
+  }
+}
+
+/**
+ * A Vierfeldertafel as HTML. `values` are a, b, a + b, c, d, c + d, a + c,
+ * b + d, N; null leaves a cell empty, a string (such as "?") is shown as it is.
+ */
+function fourFieldTable(ctx: TwoWayContext, values: Array<number | string | null>): string {
+  const show = (x: number | string | null) => (x === null ? "" : String(x));
+  const td = (x: number | string | null) => `<td style="${CELL}">${show(x)}</td>`;
+  const th = (x: string) => `<th style="${HEAD}">${x}</th>`;
+  return (
+    `<table style="border-collapse:collapse;margin:0.3rem 0">` +
+    `<tr>${th("")}${th(ctx.cols[0])}${th(ctx.cols[1])}${th("Summe")}</tr>` +
+    `<tr>${th(ctx.rows[0])}${td(values[0])}${td(values[1])}${td(values[2])}</tr>` +
+    `<tr>${th(ctx.rows[1])}${td(values[3])}${td(values[4])}${td(values[5])}</tr>` +
+    `<tr>${th("Summe")}${td(values[6])}${td(values[7])}${td(values[8])}</tr>` +
+    `</table>`
+  );
+}
+
+/** A group after an article: "die Jugendlichen", "der gesunden Personen"; nouns such as "Mädchen" stay as they are. */
+const weak = (phrase: string) => phrase.replace(/^Jugendliche/, "Jugendlichen").replace(/^gesunde /, "gesunden ").replace(/^kranke /, "kranken ");
+
+const allValues = (a: number, b: number, c: number, d: number) => [a, b, a + b, c, d, c + d, a + c, b + d, a + b + c + d];
+
+function ergaenzenTask(rng: Rng, level: 1 | 2): ExerciseTask {
+  if (level === 1) {
+    const ctxIndex = rng.int(0, TWO_WAY.length - 1);
+    const ctx = TWO_WAY[ctxIndex];
+    const cells = drawCells(rng, ctxIndex);
+    const [a, b, c, d] = cells;
+    const N = a + b + c + d;
+    const missing = rng.int(0, 3);
+    const row = missing < 2 ? 0 : 1;
+    const col = missing % 2;
+    const rowMate = cells[row * 2 + (1 - col)];
+    const colMate = cells[(1 - row) * 2 + col];
+    const diagonal = cells[(1 - row) * 2 + (1 - col)];
+    const shown: Array<number | string | null> = [a, b, null, c, d, null, null, null, N];
+    shown[[0, 1, 3, 4][missing]] = "?";
+    shown[row === 0 ? 2 : 5] = "?";
+    shown[col === 0 ? 6 : 7] = "?";
+    const rowSum = cells[row * 2] + cells[row * 2 + 1];
+    const colSum = cells[col] + cells[2 + col];
+    const value = cells[missing];
+    return {
+      prompt: `${ctx.intro} Die Vierfeldertafel ist nur teilweise ausgefüllt. Berechne die Felder mit „?“: Wie viele ${ctx.cell[row][col]} gibt es? Wie viele ${ctx.row[row]} und wie viele ${ctx.col[col]} sind es insgesamt?`,
+      given: [fourFieldTable(ctx, shown)],
+      formulaHint: "Alle vier inneren Felder ergeben zusammen die Gesamtzahl; jede Zeile und jede Spalte ergibt ihre Summe.",
+      fields: [
+        numberField(`${capital(ctx.cell[row][col])}:`, value, "", 0, { slips: [{ value: N - rowMate - colMate, hint: "Ziehe alle drei bekannten Felder von der Gesamtzahl ab, auch das diagonal gegenüber." }] }),
+        numberField(`${capital(ctx.row[row])} insgesamt:`, rowSum, "", 0),
+        numberField(`${capital(ctx.col[col])} insgesamt:`, colSum, "", 0, { slips: [{ value: rowSum, hint: "Das ist die Zeilensumme. Gesucht ist die Summe der Spalte." }] }),
+      ],
+      steps: [
+        `Fehlendes Feld: ${N} − ${rowMate} − ${colMate} − ${diagonal} = ${value}`,
+        `Zeile „${ctx.rows[row]}“: ${cells[row * 2]} + ${cells[row * 2 + 1]} = ${rowSum}; Spalte „${ctx.cols[col]}“: ${cells[col]} + ${cells[2 + col]} = ${colSum}`,
+        `Probe: Die Summen der Zeilen und die der Spalten ergeben beide ${N}.`,
+        `<strong>${capital(ctx.cell[row][col])}: ${value}; ${ctx.row[row]} insgesamt: ${rowSum}; ${ctx.col[col]} insgesamt: ${colSum}.</strong>`,
+      ],
+      meta: { level: 1, ctx: ctxIndex, a, b, c, d, missing },
+    };
+  }
+  // sums and shares: which part of each row has the first column
+  const ctxIndex = rng.int(0, TWO_WAY.length - 1);
+  const ctx = TWO_WAY[ctxIndex];
+  const SHARES: Array<[number, number, string]> =
+    ctxIndex === 2
+      ? [
+          [9, 10, "90 %"],
+          [19, 20, "95 %"],
+          [4, 5, "80 %"],
+          [3, 4, "drei Viertel"],
+        ]
+      : [
+          [1, 2, "die Hälfte"],
+          [1, 3, "ein Drittel"],
+          [1, 4, "ein Viertel"],
+          [3, 4, "drei Viertel"],
+          [2, 5, "zwei Fünftel"],
+          [1, 5, "ein Fünftel"],
+          [3, 10, "30 %"],
+          [1, 10, "10 %"],
+          [3, 5, "60 %"],
+        ];
+  const SMALL: Array<[number, number, string]> = [
+    [1, 20, "5 %"],
+    [1, 10, "10 %"],
+    [3, 50, "6 %"],
+  ];
+  const s1 = rng.pick(SHARES);
+  let s2 = ctxIndex === 2 ? rng.pick(SMALL) : rng.pick(SHARES);
+  while (s2[2] === s1[2]) s2 = rng.pick(SHARES);
+  const sizeRange: Array<[number, number]> = ctxIndex === 0 ? [[24, 60], [24, 60]] : ctxIndex === 1 ? [[20, 32], [20, 32]] : ctxIndex === 2 ? [[20, 80], [180, 480]] : [[20, 50], [20, 50]];
+  const multiple = (lo: number, hi: number, k: number) => k * rng.int(Math.ceil(lo / k), Math.floor(hi / k));
+  const r1 = multiple(sizeRange[0][0], sizeRange[0][1], s1[1]);
+  const r2 = multiple(sizeRange[1][0], sizeRange[1][1], s2[1]);
+  const a = (r1 * s1[0]) / s1[1];
+  const c = (r2 * s2[0]) / s2[1];
+  const b = r1 - a;
+  const d = r2 - c;
+  const N = r1 + r2;
+  const setting = [
+    `Es sind ${N} Jugendliche, ${r1} davon Mädchen. ${capital(s1[2])} der Mädchen und ${s2[2]} der Jungen tragen eine Brille.`,
+    `In der 8a sind ${r1}, in der 8b ${r2} Schülerinnen und Schüler. Ein Haustier haben in der 8a ${s1[2]} der Klasse, in der 8b ${s2[2]}.`,
+    `Es wurden ${N} Personen getestet, ${r1} davon sind krank. Bei ${s1[2]} der Kranken und bei ${s2[2]} der Gesunden ist der Test positiv.`,
+    `Es sind ${N} Jugendliche, ${r1} davon im Sportverein. ${capital(s1[2])} der Vereinsmitglieder und ${s2[2]} der übrigen spielen ein Instrument.`,
+  ][ctxIndex];
+  const wrongBase = (N * s2[0]) / s2[1];
+  return {
+    prompt: `${ctx.intro} ${setting} Lege eine Vierfeldertafel an. Wie viele ${ctx.cell[1][0]} gibt es? Wie viele ${ctx.col[0]} sind es insgesamt, und wie viele ${ctx.cell[1][1]}?`,
+    given: [ctxIndex === 1 ? `8a: ${r1}, 8b: ${r2}` : `insgesamt ${N}, ${ctx.row[0]}: ${r1}`, `${ctx.cols[0]}: ${s1[2]} der ${weak(ctx.row[0])}, ${s2[2]} der ${weak(ctx.row[1])}`],
+    fields: [
+      numberField(`${capital(ctx.cell[1][0])}:`, c, "", 0, { slips: Number.isInteger(wrongBase) && wrongBase !== c ? [{ value: wrongBase, hint: `Der Anteil ${s2[2]} bezieht sich nur auf die ${weak(ctx.row[1])}, nicht auf alle.` }] : [] }),
+      numberField(`${capital(ctx.col[0])}:`, a + c, "", 0),
+      numberField(`${capital(ctx.cell[1][1])}:`, d, "", 0, { slips: [{ value: N - (a + c), hint: `Das sind alle ${weak(ctx.col[1])}. Gesucht sind nur die ${weak(ctx.cell[1][1])}.` }] }),
+    ],
+    steps: [
+      `${capital(ctx.cell[0][0])}: ${s1[2]} von ${r1} = ${a}; also ${ctx.cell[0][1]}: ${r1} − ${a} = ${b}.`,
+      `${capital(ctx.row[1])}: ${r2}; davon ${s2[2]}: ${c} ${ctx.cell[1][0]}, also ${r2} − ${c} = ${d} ${ctx.cell[1][1]}.`,
+      fourFieldTable(ctx, allValues(a, b, c, d)),
+      `<strong>${capital(ctx.cell[1][0])}: ${c}; ${ctx.col[0]}: ${a} + ${c} = ${a + c}; ${ctx.cell[1][1]}: ${d}.</strong>`,
+    ],
+    meta: { level: 2, ctx: ctxIndex, a, b, c, d, r1, r2, n1: s1[0], d1: s1[1], n2: s2[0], d2: s2[1] },
+  };
+}
+
+function lesenTask(rng: Rng, level: 1 | 2): ExerciseTask {
+  const ctxIndex = rng.int(0, TWO_WAY.length - 1);
+  const ctx = TWO_WAY[ctxIndex];
+  const [a, b, c, d] = drawCells(rng, ctxIndex);
+  const cells = [a, b, c, d];
+  if (level === 1) {
+    const i = rng.int(0, 1);
+    const j = rng.int(0, 1);
+    const byRow = rng.next() < 0.5;
+    const k = rng.int(0, 1);
+    const groupWords = byRow ? ctx.row[k] : ctx.col[k];
+    const group = byRow ? cells[k * 2] + cells[k * 2 + 1] : cells[k] + cells[2 + k];
+    const value = cells[i * 2 + j];
+    return {
+      prompt: `${ctx.intro} Lies aus der Vierfeldertafel ab: Wie viele ${ctx.cell[i][j]} gibt es? Wie viele ${groupWords} gibt es insgesamt?`,
+      given: [fourFieldTable(ctx, allValues(a, b, c, d))],
+      formulaHint: "„und“: genau ein inneres Feld. Ein Merkmal allein: die Summe seiner Zeile oder Spalte.",
+      fields: [
+        numberField(`${capital(ctx.cell[i][j])}:`, value, "", 0),
+        numberField(`${capital(groupWords)}:`, group, "", 0, { slips: [{ value: byRow ? cells[k] + cells[2 + k] : cells[k * 2] + cells[k * 2 + 1], hint: "Zeile und Spalte verwechselt? Prüfe, wo das Merkmal in der Tafel steht." }] }),
+      ],
+      steps: [
+        `${capital(ctx.cell[i][j])}: Zeile „${ctx.rows[i]}“, Spalte „${ctx.cols[j]}“, also ${value}.`,
+        `${capital(groupWords)}: ${byRow ? `Summe der Zeile „${ctx.rows[k]}“` : `Summe der Spalte „${ctx.cols[k]}“`}, also ${group}.`,
+        `<strong>${capital(ctx.cell[i][j])}: ${value}; ${groupWords} insgesamt: ${group}.</strong>`,
+      ],
+      meta: { level: 1, ctx: ctxIndex, a, b, c, d, i, j, byRow: byRow ? 1 : 0, k },
+    };
+  }
+  const or = a + b + c;
+  return {
+    prompt: `${ctx.intro} Die Tafel zeigt nur die vier inneren Felder. Wie viele ${ctx.noun} gibt es, die ${ctx.or} (auch beides)? Wie viele, die ${ctx.one}? Wie viele, die ${ctx.neither}?`,
+    given: [fourFieldTable(ctx, [a, b, null, c, d, null, null, null, null])],
+    fields: [
+      numberField("oder (auch beides):", or, "", 0, {
+        slips: [
+          { value: 2 * a + b + c, hint: `Das Feld „${ctx.cell[0][0]}“ hast du doppelt gezählt: Es gehört zur Zeile und zur Spalte.` },
+          { value: a, hint: "Das ist „und“: beide Merkmale zugleich. „Oder“ heißt mindestens eines." },
+        ],
+      }),
+      numberField("genau eines von beiden:", b + c, "", 0, { slips: [{ value: or, hint: `Ohne die ${weak(ctx.cell[0][0])}: Sie haben beides.` }] }),
+      numberField("keines von beiden:", d, "", 0),
+    ],
+    steps: [
+      `Zu „oder“ gehören drei Felder: ${a} + ${b} + ${c} = ${or}. Ebenso: Zeile ${a + b} plus Spalte ${a + c} minus das gemeinsame Feld ${a} = ${or}.`,
+      `Genau eines: ohne das gemeinsame Feld, also ${b} + ${c} = ${b + c}.`,
+      `Keines von beiden: das vierte Feld, ${d}. Probe: ${or} + ${d} = ${a + b + c + d}.`,
+      `<strong>„oder“: ${or}; genau eines: ${b + c}; keines: ${d}.</strong>`,
+    ],
+    meta: { level: 2, ctx: ctxIndex, a, b, c, d },
+  };
+}
+
+/** A frequency tree as lines: the total, then each value of the first feature with its two branches. */
+function treeLines(ctx: TwoWayContext, values: { N: number | string; r: Array<number | string>; leaves: Array<number | string> }): string[] {
+  return [
+    `Gesamtzahl: ${values.N}`,
+    `→ ${ctx.rows[0]}: ${values.r[0]} → ${ctx.cols[0]}: ${values.leaves[0]}, ${ctx.cols[1]}: ${values.leaves[1]}`,
+    `→ ${ctx.rows[1]}: ${values.r[1]} → ${ctx.cols[0]}: ${values.leaves[2]}, ${ctx.cols[1]}: ${values.leaves[3]}`,
+  ];
+}
+
+function baumTask(rng: Rng, level: 1 | 2): ExerciseTask {
+  const ctxIndex = rng.int(0, TWO_WAY.length - 1);
+  const ctx = TWO_WAY[ctxIndex];
+  const [a, b, c, d] = drawCells(rng, ctxIndex);
+  const N = a + b + c + d;
+  const formulaHint = "Die vier Zahlen am Ende des Baums sind die vier inneren Felder der Vierfeldertafel. Der andere Baum fasst sie nach dem anderen Merkmal zusammen.";
+  if (level === 1) {
+    const r = rng.int(0, 1);
+    const j = rng.int(0, 1);
+    const leaf = [a, b, c, d][r * 2 + j];
+    return {
+      prompt: `${ctx.intro} Der Häufigkeitsbaum unten ist zuerst nach dem Merkmal ${ctx.rowFeature} geordnet. Zeichne ihn andersherum, zuerst nach dem Merkmal ${ctx.colFeature}. Welche Zahlen stehen dann auf der ersten Stufe? Welche Zahl steht unter „${ctx.cols[j]}“ beim Ast „${ctx.rows[r]}“?`,
+      given: treeLines(ctx, { N, r: [a + b, c + d], leaves: [a, b, c, d] }),
+      formulaHint,
+      fields: [
+        numberField(`1. Stufe „${ctx.cols[0]}“:`, a + c, "", 0, { slips: [{ value: a + b, hint: "Auf der ersten Stufe des neuen Baums steht das andere Merkmal: Zähle die passenden Endzahlen beider Äste zusammen." }] }),
+        numberField(`1. Stufe „${ctx.cols[1]}“:`, b + d, "", 0, { slips: [{ value: c + d, hint: "Auf der ersten Stufe des neuen Baums steht das andere Merkmal: Zähle die passenden Endzahlen beider Äste zusammen." }] }),
+        numberField(`unter „${ctx.cols[j]}“, Ast „${ctx.rows[r]}“:`, leaf, "", 0),
+      ],
+      steps: [
+        `In der Tafel: ${ctx.cols[0]} = ${a} + ${c} = ${a + c}, ${ctx.cols[1]} = ${b} + ${d} = ${b + d}. Probe: ${a + c} + ${b + d} = ${N}.`,
+        `Die Endzahlen bleiben dieselben, nur anders sortiert: unter „${ctx.cols[j]}“ stehen ${ctx.rows[0]} ${[a, b][j]} und ${ctx.rows[1]} ${[c, d][j]}.`,
+        `<strong>1. Stufe: ${ctx.cols[0]} ${a + c}, ${ctx.cols[1]} ${b + d}; unter „${ctx.cols[j]}“ beim Ast „${ctx.rows[r]}“: ${leaf}.</strong>`,
+      ],
+      meta: { level: 1, ctx: ctxIndex, a, b, c, d, r, j },
+    };
+  }
+  return {
+    prompt: `${ctx.intro} Vom Häufigkeitsbaum unten, zuerst nach dem Merkmal ${ctx.rowFeature} geordnet, sind nur einige Zahlen bekannt. Berechne die Zahl der ${weak(ctx.cell[1][0])}. Zeichne den Baum dann andersherum, zuerst nach dem Merkmal ${ctx.colFeature}: Welche Zahlen stehen auf seiner ersten Stufe?`,
+    given: treeLines(ctx, { N, r: [a + b, "?"], leaves: [a, "?", "?", d] }),
+    fields: [
+      numberField(`${capital(ctx.cell[1][0])}:`, c, "", 0, { slips: [{ value: c + d, hint: `Das sind alle ${weak(ctx.row[1])}; ziehe noch die ${weak(ctx.cell[1][1])} ab.` }] }),
+      numberField(`1. Stufe „${ctx.cols[0]}“:`, a + c, "", 0),
+      numberField(`1. Stufe „${ctx.cols[1]}“:`, b + d, "", 0),
+    ],
+    steps: [
+      `${capital(ctx.row[1])}: ${N} − ${a + b} = ${c + d}; davon ${ctx.cols[0]}: ${c + d} − ${d} = ${c}.`,
+      `${capital(ctx.cell[0][1])}: ${a + b} − ${a} = ${b}.`,
+      `Neuer Baum, 1. Stufe: ${ctx.cols[0]} ${a} + ${c} = ${a + c}, ${ctx.cols[1]} ${b} + ${d} = ${b + d}. Probe: ${a + c} + ${b + d} = ${N}.`,
+      `<strong>${capital(ctx.cell[1][0])}: ${c}; 1. Stufe: ${ctx.cols[0]} ${a + c}, ${ctx.cols[1]} ${b + d}.</strong>`,
+    ],
+    meta: { level: 2, ctx: ctxIndex, a, b, c, d },
+  };
+}
+
+const vierfeldertafel: Lesson = {
+  id: "dz-3-vierfeldertafel",
+  stageId: STAGE_ID,
+  stepNumber: 3,
+  title: "7.3 Vierfeldertafeln",
+  subtitle: "Zwei Merkmale, vier Felder, alle Summen",
+  tracks: ["I", "II_III"],
+  lehrplan: `${LP}: Vierfeldertafeln`,
+  whyItMatters:
+    "Umfragen, Klassenstatistiken und medizinische Tests halten oft zwei Merkmale zugleich fest. In der Vierfeldertafel siehst du alle vier Kombinationen auf einen Blick und kannst fehlende Zahlen aus den Summen berechnen.",
+  explanationHtml: `
+    <p><strong>Wiederholung aus M5:</strong> Vierfeldertafeln hast du schon gelesen. Jetzt stellst du damit Daten selbst dar und berechnest fehlende Einträge.</p>
+    <p>Werden bei jeder Person zwei <strong>Merkmale</strong> mit je zwei Ausprägungen festgehalten, etwa das Geschlecht (Mädchen oder Junge) und ob sie eine Brille trägt, gibt es vier Kombinationen. Die <strong>Vierfeldertafel</strong> zeigt in ihren vier inneren Feldern, wie oft jede Kombination vorkommt. Rechts stehen die Zeilensummen, unten die Spaltensummen und rechts unten die Gesamtzahl.</p>
+    <table class="mini">
+      <tr><th></th><th>mit Brille</th><th>ohne Brille</th><th>Summe</th></tr>
+      <tr><th>Mädchen</th><td>8</td><td>20</td><td>28</td></tr>
+      <tr><th>Jungen</th><td>6</td><td>22</td><td>28</td></tr>
+      <tr><th>Summe</th><td>14</td><td>42</td><td>56</td></tr>
+    </table>
+    <p>Jede Zeile und jede Spalte geht auf: 8 + 20 = 28 und 8 + 6 = 14. Die Zeilensummen und die Spaltensummen ergeben beide die Gesamtzahl: 28 + 28 = 14 + 42 = 56. Deshalb kannst du fehlende Felder aus den übrigen berechnen.</p>
+    <div class="example"><strong>Beispiel:</strong> In einer Jahrgangsstufe sind 60 Jugendliche, 32 davon Mädchen. 21 Jugendliche haben ein Haustier, darunter 12 Mädchen. Wie viele Jungen haben kein Haustier?<br>
+      Jungen insgesamt: 60 − 32 = 28.<br>
+      Jungen mit Haustier: 21 − 12 = 9.<br>
+      Jungen ohne Haustier: 28 − 9 = 19.<br>
+      Probe über die Spalte „ohne Haustier“: 60 − 21 = 39, und Mädchen ohne Haustier 32 − 12 = 20; 20 + 19 = 39.</div>
+    <p><strong>Ereignisse aus der Tafel lesen:</strong> „Mädchen und Brille“ ist ein einziges Feld, hier 8. „Mädchen oder Brille“ heißt: ein Mädchen, eine Brille oder beides. Dazu gehören drei Felder: 8 + 20 + 6 = 34. Wer die Mädchen (28) und die Brillenträger (14) einfach addiert, zählt die 8 Mädchen mit Brille doppelt; richtig ist 28 + 14 − 8 = 34.</p>
+    <p><strong>Häufigkeitsbaum:</strong> Dieselben Daten kannst du als Baum zeichnen. Oben steht die Gesamtzahl 56, auf der ersten Stufe das erste Merkmal (Mädchen 28, Jungen 28), auf der zweiten das zweite (mit Brille 8, ohne 20; mit Brille 6, ohne 22). Die vier Endzahlen sind genau die vier inneren Felder. Beginnst du mit dem anderen Merkmal, steht auf der ersten Stufe mit Brille 14 und ohne Brille 42; die Endzahlen bleiben dieselben, nur anders sortiert.</p>
+    <p>Auch bei medizinischen Tests zählt man so: wie viele Personen krank oder gesund sind und bei wem der Test positiv oder negativ ausfällt.</p>
+    <p><strong>Typische Fehler:</strong> bei „oder“ das gemeinsame Feld doppelt zählen; Zeilen- und Spaltensummen verwechseln; die Probe vergessen, dass beide Summen die Gesamtzahl ergeben.</p>
+    <div class="merke"><strong>Merke:</strong> Die Vierfeldertafel zeigt die vier Kombinationen zweier Merkmale. Jede Zeile und jede Spalte ergibt ihre Summe, alle vier Felder zusammen die Gesamtzahl. Bei „A oder B“ zählst du die drei passenden Felder, jedes nur einmal: Anzahl von A plus Anzahl von B minus Anzahl von „A und B“.</div>
+  `,
+  formulas: [
+    { name: "Vierfeldertafel", html: "zwei Felder einer Zeile = Zeilensumme · zwei Felder einer Spalte = Spaltensumme · alle vier Felder = Gesamtzahl", quantities: "in den vier Feldern stehen die absoluten Häufigkeiten der vier Kombinationen" },
+    { name: "„A oder B“", html: "Anzahl(A oder B) = Anzahl(A) + Anzahl(B) − Anzahl(A und B)", quantities: "das gemeinsame Feld „A und B“ nur einmal zählen" },
+    { name: "Häufigkeitsbaum", html: "Gesamtzahl → 1. Merkmal → 2. Merkmal", quantities: "die vier Endzahlen sind die vier inneren Felder der Tafel" },
+  ],
+  quiz: {
+    question: "In einer Klasse sind 14 Mädchen. 9 Kinder tragen eine Brille, darunter 4 Mädchen. Wie viele sind ein Mädchen oder tragen eine Brille?",
+    options: ["19", "23", "4", "5"],
+    correctIndex: 0,
+    explanation:
+      "Mädchen plus Brillenträger minus das gemeinsame Feld: 14 + 9 − 4 = 19. Mit 23 sind die 4 Mädchen mit Brille doppelt gezählt; 4 ist „Mädchen und Brille“, 5 sind die Jungen mit Brille.",
+  },
+  lab: {
+    kind: "two-way-table",
+    title: "Labor: Vierfeldertafel und Häufigkeitsbaum",
+    intro:
+      "Die vier Schieberegler stellen die inneren Felder ein: Mädchen und Jungen einer Jahrgangsstufe, mit oder ohne Brille. Summen, Anteile und der Häufigkeitsbaum rechnen mit. Wähle ein Ereignis: Seine Felder werden lila.",
+    params: [
+      { type: "range", key: "a", label: "Mädchen mit Brille", unit: "", min: 0, max: 30, step: 1, value: 8 },
+      { type: "range", key: "b", label: "Mädchen ohne Brille", unit: "", min: 0, max: 30, step: 1, value: 20 },
+      { type: "range", key: "c", label: "Jungen mit Brille", unit: "", min: 0, max: 30, step: 1, value: 6 },
+      { type: "range", key: "d", label: "Jungen ohne Brille", unit: "", min: 0, max: 30, step: 1, value: 22 },
+      { type: "choice", key: "ereignis", label: "Ereignis", options: TABLE_EVENTS.map((e, value) => ({ value, label: e.label })), value: 1 },
+      {
+        type: "choice",
+        key: "baum",
+        label: "Häufigkeitsbaum",
+        options: [
+          { value: 0, label: "zuerst Mädchen/Jungen" },
+          { value: 1, label: "zuerst Brille" },
+        ],
+        value: 0,
+      },
+    ],
+    readouts: [
+      {
+        key: "summen",
+        label: "Zeilen- und Spaltensummen",
+        compute: (v) => `${v.a + v.b} Mädchen, ${v.c + v.d} Jungen; ${v.a + v.c} mit, ${v.b + v.d} ohne Brille`,
+      },
+      { key: "gesamt", label: "Gesamtzahl", compute: (v) => `${v.a + v.b + v.c + v.d} Jugendliche` },
+      {
+        key: "ereignis",
+        label: "Ereignis",
+        emphasis: true,
+        compute: (v) => `${TABLE_EVENTS[v.ereignis].label}: ${tableEventCount(tableOf(v), v.ereignis)}`,
+      },
+      { key: "anteile", label: "Anteil mit Brille", compute: (v) => `Mädchen ${shareText(v.a, v.a + v.b)}; Jungen ${shareText(v.c, v.c + v.d)}` },
+    ],
+    goals: [
+      {
+        id: "oder",
+        text: "In einer Jahrgangsstufe sind 36 Mädchen, 24 Jugendliche tragen eine Brille, und 46 sind ein Mädchen oder tragen eine Brille. Stelle die Tafel passend ein: Wie viele Mädchen tragen eine Brille?",
+        check: (v) => v.a + v.b === 36 && v.a + v.c === 24 && v.a + v.b + v.c === 46,
+      },
+      {
+        id: "gleich",
+        text: "Stelle die Tafel so ein, dass bei den Mädchen und bei den Jungen genau derselbe Anteil eine Brille trägt, obwohl es verschieden viele Mädchen und Jungen sind.",
+        check: (v) => sameShare(tableOf(v)),
+      },
+      {
+        id: "mehr",
+        text: "Stelle die Tafel so ein, dass mehr Jungen als Mädchen eine Brille tragen, der Anteil der Brillenträger bei den Mädchen aber größer ist. Wie passt das zusammen?",
+        check: (v) => moreButSmallerShare(tableOf(v)),
+      },
+    ],
+  },
+  exercises: [
+    { id: "ergaenzen", make: (rng, level) => ergaenzenTask(rng, level) },
+    { id: "lesen", make: (rng, level) => lesenTask(rng, level) },
+    { id: "baum", make: (rng, level) => baumTask(rng, level) },
+  ],
+  requiredCorrect: 3,
+  celebrationMessage: "Du füllst Vierfeldertafeln aus, zählst bei „oder“ nichts doppelt und wechselst zwischen Tafel und Baum.",
+};
+
+// ─── 7.4 Absolute und relative Häufigkeiten ────────────────────────────────
+
+/** "0,38" or "≈ 0,31": a relative frequency with two decimals and the right sign before it. */
+function hDecimal(count: number, n: number): string {
+  const h = count / n;
+  return `${Math.abs(h * 100 - Math.round(h * 100)) < 1e-9 ? "=" : "≈"} ${fmt(h, 2)}`;
+}
+
+/** "= 38 %" or "≈ 30,8 %" */
+function hPercent(count: number, n: number): string {
+  const p = (100 * count) / n;
+  return `${Math.abs(p * 10 - Math.round(p * 10)) < 1e-9 ? "=" : "≈"} ${fmt(p, 1)} %`;
+}
+
+/** "= 0,375 = 37,5 %" or "≈ 0,158 ≈ 15,8 %": three decimals and the matching percentage. */
+function hBoth(count: number, n: number): string {
+  const h = count / n;
+  const exact = Math.abs(h * 1000 - Math.round(h * 1000)) < 1e-9;
+  return `${exact ? "=" : "≈"} ${fmt(h, 3)} ${exact ? "=" : "≈"} ${fmt(100 * h, 1)} %`;
+}
+
+/** One random experiment repeated n times with H hits, as the tasks tell it. */
+const SERIES: Array<{ text: (n: number, H: number) => string; label: string; range: [number, number] }> = [
+  { text: (n, H) => `Lea würfelt ${n}-mal und notiert ${H}-mal eine Sechs.`, label: "h(6)", range: [0.1, 0.25] },
+  { text: (n, H) => `Ein Reißnagel wird ${n}-mal geworfen; ${H}-mal landet er mit der Spitze nach oben.`, label: "h(Spitze oben)", range: [0.25, 0.5] },
+  { text: (n, H) => `Ein Glücksrad wird ${n}-mal gedreht; ${H}-mal bleibt es auf Rot stehen.`, label: "h(Rot)", range: [0.15, 0.6] },
+  { text: (n, H) => `Eine Münze wird ${n}-mal geworfen; ${H}-mal zeigt sie Kopf.`, label: "h(Kopf)", range: [0.42, 0.58] },
+  { text: (n, H) => `Bei einer Tombola zieht die Klasse 8c ${n} Lose; ${H} davon sind Gewinne.`, label: "h(Gewinn)", range: [0.1, 0.4] },
+];
+
+const RUNS = [20, 25, 40, 50, 60, 75, 80, 100, 120, 150, 200, 250, 300, 400, 500];
+
+/** Two series to compare: who did what, and the question with its two answers. */
+const COMPARISONS: Array<{ event: string; text: (n1: number, H1: number, n2: number, H2: number, who: [string, string]) => string; labels: [string, string]; question: string; options: (who: [string, string]) => [string, string]; answer: (better: string) => string; range: [number, number] }> = [
+  {
+    event: "Gewinn",
+    text: (n1, H1, n2, H2) => `Auf dem Schulfest gibt es zwei Glücksräder. Rad A brachte bei ${n1} Drehungen ${H1} Gewinne, Rad B bei ${n2} Drehungen ${H2} Gewinne.`,
+    labels: ["Rad A", "Rad B"],
+    question: "Nach diesen Daten scheint die bessere Gewinnchance zu haben:",
+    options: () => ["Rad A", "Rad B"],
+    answer: (better) => `Nach diesen Daten scheint ${better} die besseren Gewinnchancen zu haben.`,
+    range: [0.15, 0.45],
+  },
+  {
+    event: "Gewinn",
+    text: (n1, H1, n2, H2) => `An der Losbude der 8a waren unter ${n1} verkauften Losen ${H1} Gewinne, an der Losbude der 8b unter ${n2} Losen ${H2} Gewinne.`,
+    labels: ["8a", "8b"],
+    question: "Der Anteil der Gewinne war größer bei der Losbude der",
+    options: () => ["8a", "8b"],
+    answer: (better) => `Bei der Losbude der ${better} war der Anteil der Gewinne größer.`,
+    range: [0.15, 0.4],
+  },
+  {
+    event: "Spitze oben",
+    text: (n1, H1, n2, H2) => `Zwei Sorten Reißnägel werden getestet: Sorte A landete bei ${n1} Würfen ${H1}-mal mit der Spitze nach oben, Sorte B bei ${n2} Würfen ${H2}-mal.`,
+    labels: ["Sorte A", "Sorte B"],
+    question: "Mit der Spitze nach oben landet nach diesen Daten eher:",
+    options: () => ["Sorte A", "Sorte B"],
+    answer: (better) => `Nach diesen Daten landet ${better} eher mit der Spitze nach oben.`,
+    range: [0.25, 0.55],
+  },
+  {
+    event: "6",
+    text: (n1, H1, n2, H2, who) => `${who[0]} glaubt, dass ihr Würfel öfter eine Sechs zeigt als der von ${who[1]}. ${who[0]} würfelt ${n1}-mal und hat ${H1} Sechsen, ${who[1]} würfelt ${n2}-mal und hat ${H2} Sechsen.`,
+    labels: ["1. Würfel", "2. Würfel"],
+    question: "Die relative Häufigkeit der Sechs war größer beim Würfel von",
+    options: (who) => [who[0], who[1]],
+    answer: (better) => `Beim Würfel von ${better} war die relative Häufigkeit der Sechs größer.`,
+    range: [0.1, 0.3],
+  },
+];
+
+const GIRLS = ["Lena", "Mia", "Emma", "Hannah", "Sophie", "Lea", "Marie"];
+
+function relativTask(rng: Rng, level: 1 | 2): ExerciseTask {
+  if (level === 1) {
+    const ctx = rng.int(0, SERIES.length - 1);
+    const s = SERIES[ctx];
+    const n = rng.pick(RUNS);
+    let H = Math.round(n * (s.range[0] + rng.next() * (s.range[1] - s.range[0])));
+    H = Math.min(n - 1, Math.max(1, H));
+    const h = H / n;
+    return {
+      prompt: `${s.text(n, H)} Berechne die relative Häufigkeit ${s.label} als Dezimalzahl und in Prozent.`,
+      given: [`n = ${n}`, `H = ${H}`],
+      formulaHint: "h(E) = H(E) : n; in Prozent: mal 100 %",
+      fields: [
+        numberField(`${s.label} =`, h, "", 2, {
+          slips: [
+            { value: n / H, hint: "Umgekehrt geteilt: h(E) = H(E) : n, also Treffer durch alle Versuche." },
+            { value: H / (n - H), hint: "Teile durch die Anzahl aller Versuche n, nicht durch die der übrigen Ergebnisse." },
+          ],
+        }),
+        numberField(`${s.label} in Prozent:`, 100 * h, "%", 1),
+      ],
+      steps: [`${s.label} = H : n = ${H} : ${n} = ${fracHtml(H, n)} ${hBoth(H, n)}`, `<strong>${s.label} ${hDecimal(H, n)} · ${s.label} ${hPercent(H, n)}</strong>`],
+      meta: { level: 1, ctx, n, H },
+    };
+  }
+  const wantTrap = rng.next() < 0.5;
+  for (let attempt = 0; ; attempt++) {
+    const ctx = rng.int(0, COMPARISONS.length - 1);
+    const cmp = COMPARISONS[ctx];
+    const [n1, n2] = rng.shuffle(RUNS.filter((x) => x >= 50)).slice(0, 2);
+    const draw = (n: number) => Math.round(n * (cmp.range[0] + rng.next() * (cmp.range[1] - cmp.range[0])));
+    const H1 = draw(n1);
+    const H2 = draw(n2);
+    const p1 = (100 * H1) / n1;
+    const p2 = (100 * H2) / n2;
+    // a clear difference, and half of the tasks with the trap: more hits, but the smaller share
+    const trap = (H1 > H2 && p1 < p2) || (H2 > H1 && p2 < p1);
+    if ((Math.abs(p1 - p2) < 3 || H1 === H2 || trap !== wantTrap) && attempt < 200) continue;
+    const who = ctx === 3 ? (rng.shuffle(GIRLS).slice(0, 2) as [string, string]) : (["", ""] as [string, string]);
+    const options = cmp.options(who);
+    const better = p1 > p2 ? 0 : 1;
+    const labels = ctx === 3 ? [`Würfel von ${who[0]}`, `Würfel von ${who[1]}`] : cmp.labels;
+    return {
+      prompt: `${cmp.text(n1, H1, n2, H2, who)} Berechne für beide die relative Häufigkeit in Prozent und vergleiche.`,
+      given: [`${labels[0]}: ${H1} von ${n1}`, `${labels[1]}: ${H2} von ${n2}`],
+      fields: [
+        numberField(`${labels[0]}: h(${cmp.event}) in Prozent:`, p1, "%", 1, { slips: [{ value: H1, hint: "Das ist die absolute Häufigkeit. Teile noch durch die Anzahl der Versuche." }] }),
+        numberField(`${labels[1]}: h(${cmp.event}) in Prozent:`, p2, "%", 1, { slips: [{ value: H2, hint: "Das ist die absolute Häufigkeit. Teile noch durch die Anzahl der Versuche." }] }),
+        choiceField(cmp.question, options, better),
+      ],
+      steps: [
+        `${labels[0]}: h = ${H1} : ${n1} ${hBoth(H1, n1)}`,
+        `${labels[1]}: h = ${H2} : ${n2} ${hBoth(H2, n2)}`,
+        trap ? `Achtung: ${H1 > H2 ? labels[0] : labels[1]} hat mehr Treffer, aber auch mehr Versuche. Entscheidend ist der Anteil.` : "Die Versuchsreihen sind verschieden lang; deshalb werden die Anteile verglichen.",
+        `<strong>${cmp.answer(options[better])}</strong>`,
+      ],
+      meta: { level: 2, ctx, n1, H1, n2, H2, better, trap: trap ? 1 : 0 },
+    };
+  }
+}
+
+function absolutTask(rng: Rng, level: 1 | 2): ExerciseTask {
+  if (level === 1) {
+    const ctx = rng.int(0, SERIES.length - 1);
+    const s = SERIES[ctx];
+    for (;;) {
+      const n = rng.pick([20, 25, 40, 50, 80, 100, 120, 150, 200, 250, 300, 400, 500]);
+      const p = rng.int(Math.ceil(s.range[0] * 100), Math.floor(s.range[1] * 100));
+      if ((p * n) % 100 !== 0) continue;
+      const H = (p * n) / 100;
+      const asPercent = rng.next() < 0.5;
+      const shown = asPercent ? `${p} %` : fmt(p / 100, 2);
+      const what = ["Sechsen", "Würfe mit der Spitze nach oben", "Drehungen auf Rot", "Würfe mit Kopf", "Gewinne"][ctx];
+      const rest = ["Würfe ohne Sechs", "Würfe in Seitenlage", "Drehungen auf einer anderen Farbe", "Würfe mit Zahl", "Nieten"][ctx];
+      const experiment = [`Ein Würfel wird ${n}-mal geworfen.`, `Ein Reißnagel wird ${n}-mal geworfen.`, `Ein Glücksrad wird ${n}-mal gedreht.`, `Eine Münze wird ${n}-mal geworfen.`, `Bei einer Tombola werden ${n} Lose gezogen.`][ctx];
+      return {
+        prompt: `${experiment} Die relative Häufigkeit ${s.label} beträgt ${shown}. Wie viele ${what} waren es, und wie viele ${rest}?`,
+        given: [`n = ${n}`, `${s.label} = ${shown}`],
+        formulaHint: "H(E) = h(E) · n",
+        fields: [numberField(`${capital(what)}:`, H, "", 0), numberField(`${capital(rest)}:`, n - H, "", 0)],
+        steps: [`H = h · n = ${asPercent ? `${p} % von ${n} = ${fmt(p / 100, 2)}` : shown} · ${n} = ${H}`, `${capital(rest)}: ${n} − ${H} = ${n - H}`, `<strong>${H} ${what}, ${n - H} ${rest}.</strong>`],
+        meta: { level: 1, ctx, n, p, H },
+      };
+    }
+  }
+  if (rng.next() < 0.5) {
+    // a thumbtack: an old series given by its percentage, then more throws
+    for (;;) {
+      const n1 = rng.pick([100, 150, 200, 250, 300, 400]);
+      const p1 = rng.int(32, 44);
+      if ((p1 * n1) % 100 !== 0) continue;
+      const H1 = (p1 * n1) / 100;
+      const n2 = rng.pick([50, 100, 150, 200]);
+      const k2 = Math.round(n2 * (0.3 + rng.next() * 0.16));
+      const [name] = rng.shuffle(GIRLS);
+      const H = H1 + k2;
+      const N = n1 + n2;
+      return {
+        prompt: `Bei ${n1} Würfen eines Reißnagels lag er in ${p1} % der Fälle mit der Spitze nach oben. ${name} wirft denselben Reißnagel noch ${n2}-mal, davon landet er ${k2}-mal mit der Spitze nach oben. Wie oft lag er bei allen ${N} Würfen mit der Spitze nach oben? Wie groß ist die relative Häufigkeit nun?`,
+        given: [`${n1} Würfe: ${p1} % Spitze oben`, `${n2} weitere Würfe: ${k2}-mal Spitze oben`],
+        fields: [
+          numberField(`Spitze oben bei den ersten ${n1} Würfen:`, H1, "", 0),
+          numberField(`Spitze oben insgesamt:`, H, "", 0, { slips: [{ value: p1 + k2, hint: `${p1} % ist ein Anteil, keine Anzahl: Rechne zuerst ${p1} % von ${n1}.` }] }),
+          numberField("h(Spitze oben) in Prozent:", (100 * H) / N, "%", 1, {
+            slips: [{ value: (p1 + (100 * k2) / n2) / 2, hint: "Die beiden Prozentsätze darf man nicht einfach mitteln: Die Versuchsreihen sind verschieden lang. Teile alle Treffer durch alle Würfe." }],
+          }),
+        ],
+        steps: [`Erste Reihe: H = ${p1} % von ${n1} = ${fmt(p1 / 100, 2)} · ${n1} = ${H1}`, `Insgesamt: ${H1} + ${k2} = ${H} Treffer bei ${n1} + ${n2} = ${N} Würfen`, `h = ${H} : ${N} ${hDecimal(H, N)} ${hPercent(H, N)}`, `<strong>${H}-mal Spitze oben; h(Spitze oben) ${hPercent(H, N)}</strong>`],
+        meta: { level: 2, kind: 0, n1, p1, n2, k2 },
+      };
+    }
+  }
+  // a die: the relative frequency of the Sechs before and after more throws
+  for (;;) {
+    const n1 = rng.pick([100, 200, 300]);
+    const n2 = rng.pick([100, 200]);
+    const h1 = rng.int(13, 20);
+    const h2 = rng.int(13, 20);
+    const H1 = (h1 * n1) / 100;
+    const H2 = (h2 * (n1 + n2)) / 100;
+    const last = H2 - H1;
+    if (h1 === h2 || last < 0.08 * n2 || last > 0.3 * n2) continue;
+    const [name] = rng.shuffle(["Tim", "Jonas", "Paul", "Ben", "Luca"]);
+    return {
+      prompt: `${name} hat ${n1}-mal gewürfelt; die relative Häufigkeit der Sechs betrug ${fmt(h1 / 100, 2)}. Nach ${n2} weiteren Würfen beträgt sie ${fmt(h2 / 100, 2)}. Wie viele Sechsen hatte er nach ${n1} Würfen, wie viele nach allen ${n1 + n2}? Wie viele Sechsen fielen bei den letzten ${n2} Würfen?`,
+      given: [`nach ${n1} Würfen: h(6) = ${fmt(h1 / 100, 2)}`, `nach ${n1 + n2} Würfen: h(6) = ${fmt(h2 / 100, 2)}`],
+      fields: [
+        numberField(`Sechsen nach ${n1} Würfen:`, H1, "", 0),
+        numberField(`Sechsen nach ${n1 + n2} Würfen:`, H2, "", 0, { slips: [{ value: (h2 * n2) / 100, hint: `Die neue relative Häufigkeit gilt für alle ${n1 + n2} Würfe, nicht nur für die letzten ${n2}.` }] }),
+        numberField(`Sechsen bei den letzten ${n2} Würfen:`, last, "", 0),
+      ],
+      steps: [`Nach ${n1} Würfen: H = ${fmt(h1 / 100, 2)} · ${n1} = ${H1}`, `Nach ${n1 + n2} Würfen: H = ${fmt(h2 / 100, 2)} · ${n1 + n2} = ${H2}`, `Bei den letzten ${n2} Würfen: ${H2} − ${H1} = ${last}`, `<strong>${H1} Sechsen, dann ${H2}; bei den letzten ${n2} Würfen fielen ${last} Sechsen.</strong>`],
+      meta: { level: 2, kind: 1, n1, n2, h1, h2 },
+    };
+  }
+}
+
+function summeTask(rng: Rng, level: 1 | 2): ExerciseTask {
+  if (level === 1) {
+    for (;;) {
+      const n = rng.pick([50, 60, 100, 120, 150, 200]);
+      const counts = Array.from({ length: 5 }, () => Math.round((n / 6) * (0.7 + rng.next() * 0.6)));
+      const six = n - counts.reduce((a, b) => a + b, 0);
+      if (six < Math.round(n / 12) || six > Math.round(n / 3)) continue;
+      const rest = n - six;
+      return {
+        prompt: `Ein Würfel wurde ${n}-mal geworfen. Die Strichliste ergab für die Augenzahlen 1 bis 5 die Anzahlen in der Tabelle; die Zahl der Sechsen ist verwischt. Wie oft fiel die Sechs, und wie groß ist ihre relative Häufigkeit?`,
+        given: [
+          `<table style="border-collapse:collapse;margin:0.3rem 0"><tr><th style="${HEAD}">Augenzahl</th>${[1, 2, 3, 4, 5, 6].map((e) => `<th style="${HEAD}">${e}</th>`).join("")}</tr><tr><th style="${HEAD}">Anzahl</th>${counts.map((x) => `<td style="${CELL}">${x}</td>`).join("")}<td style="${CELL}">?</td></tr></table>`,
+        ],
+        formulaHint: "Alle absoluten Häufigkeiten zusammen ergeben n. Dann h(6) = H(6) : n.",
+        fields: [
+          numberField("H(6) =", six, "", 0, { slips: [{ value: rest, hint: `Das ist die Summe der Augenzahlen 1 bis 5. Ziehe sie von ${n} ab.` }] }),
+          numberField("h(6) =", six / n, "", 2, { slips: [{ value: six / rest, hint: `Teile durch alle ${n} Würfe, nicht nur durch die übrigen.` }] }),
+        ],
+        steps: [`Augenzahlen 1 bis 5: ${counts.join(" + ")} = ${rest}`, `H(6) = ${n} − ${rest} = ${six}`, `<strong>H(6) = ${six}; h(6) = ${six} : ${n} ${hDecimal(six, n)}</strong>`],
+        meta: { level: 1, n, six, ...Object.fromEntries(counts.map((x, i) => [`c${i + 1}`, x])) },
+      };
+    }
+  }
+  if (rng.next() < 0.5) {
+    // a die: the relative frequencies of 1 to 5 in a table, the Sechs missing
+    for (;;) {
+      const n = rng.pick([200, 300, 400, 500]);
+      const hs = Array.from({ length: 5 }, () => rng.int(12, 21));
+      const h6 = 100 - hs.reduce((a, b) => a + b, 0);
+      if (h6 < 10 || h6 > 26) continue;
+      const k = rng.int(1, 5);
+      return {
+        prompt: `Ein Würfel wurde ${n}-mal geworfen. Die Tabelle zeigt die relativen Häufigkeiten der Augenzahlen 1 bis 5; bei der Sechs fehlt der Eintrag. Wie groß ist h(6)? Wie oft fiel die Sechs, und wie oft die ${k}?`,
+        given: [
+          `<table style="border-collapse:collapse;margin:0.3rem 0"><tr><th style="${HEAD}">Augenzahl</th>${[1, 2, 3, 4, 5, 6].map((e) => `<th style="${HEAD}">${e}</th>`).join("")}</tr><tr><th style="${HEAD}">h</th>${hs.map((x) => `<td style="${CELL}">${fmt(x / 100, 2)}</td>`).join("")}<td style="${CELL}">?</td></tr></table>`,
+          `n = ${n}`,
+        ],
+        fields: [
+          numberField("h(6) =", h6 / 100, "", 2, { slips: [{ value: 1 / 6, hint: "Rechne mit der Tabelle: Alle relativen Häufigkeiten zusammen ergeben 1, also h(6) = 1 minus die übrigen." }] }),
+          numberField("H(6) =", (h6 * n) / 100, "", 0, { slips: [{ value: h6, hint: `${fmt(h6 / 100, 2)} ist ein Anteil: H(6) = h(6) · ${n}.` }] }),
+          numberField(`H(${k}) =`, (hs[k - 1] * n) / 100, "", 0),
+        ],
+        steps: [
+          `Alle relativen Häufigkeiten ergeben zusammen 1: h(6) = 1 − ${hs.map((x) => fmt(x / 100, 2)).join(" − ")} = ${fmt(h6 / 100, 2)}.`,
+          `H(6) = ${fmt(h6 / 100, 2)} · ${n} = ${(h6 * n) / 100}; H(${k}) = ${fmt(hs[k - 1] / 100, 2)} · ${n} = ${(hs[k - 1] * n) / 100}.`,
+          `<strong>h(6) = ${fmt(h6 / 100, 2)}; die Sechs fiel ${(h6 * n) / 100}-mal, die ${k} ${(hs[k - 1] * n) / 100}-mal.</strong>`,
+        ],
+        meta: { level: 2, kind: 1, n, k, ...Object.fromEntries(hs.map((x, i) => [`h${i + 1}`, x])) },
+      };
+    }
+  }
+  // a wheel with four colours: the relative frequencies in mixed forms, one colour missing
+  for (;;) {
+    const n = rng.pick([80, 120, 160, 200, 240]);
+    const pRed = 5 * rng.int(4, 9);
+    const hBlue = 5 * rng.int(3, 7);
+    const yellow = rng.int(1, 4);
+    const pGreen = 100 - pRed - hBlue - 5 * yellow;
+    if (pGreen < 5 || pGreen > 40) continue;
+    const green = (pGreen * n) / 100;
+    const red = (pRed * n) / 100;
+    return {
+      prompt: `Ein Glücksrad mit den Farben Rot, Blau, Gelb und Grün wurde ${n}-mal gedreht. Rot kam in ${pRed} % der Drehungen, die relative Häufigkeit von Blau betrug ${fmt(hBlue / 100, 2)}, die von Gelb ${fracHtml(yellow, 20)}. Wie groß ist die relative Häufigkeit von Grün? Wie oft kamen Grün und Rot?`,
+      given: [`n = ${n}`, `Rot ${pRed} %, Blau ${fmt(hBlue / 100, 2)}, Gelb ${fracHtml(yellow, 20)}`],
+      fields: [
+        numberField("h(Grün) in Prozent:", pGreen, "%", 1, { slips: [{ value: 100 - pRed - hBlue, hint: "Gelb fehlt noch: Schreibe auch seinen Anteil in Prozent und ziehe ihn ab." }] }),
+        numberField("H(Grün) =", green, "", 0),
+        numberField("H(Rot) =", red, "", 0),
+      ],
+      steps: [
+        `Alles in Prozent: Blau ${fmt(hBlue / 100, 2)} = ${hBlue} %, Gelb ${fracHtml(yellow, 20)} = ${5 * yellow} %.`,
+        `Alle relativen Häufigkeiten ergeben zusammen 100 %: h(Grün) = 100 % − ${pRed} % − ${hBlue} % − ${5 * yellow} % = ${pGreen} %.`,
+        `H(Grün) = ${pGreen} % von ${n} = ${green}; H(Rot) = ${pRed} % von ${n} = ${red}.`,
+        `<strong>h(Grün) = ${pGreen} %; Grün kam ${green}-mal, Rot ${red}-mal.</strong>`,
+      ],
+      meta: { level: 2, kind: 0, n, pRed, hBlue, yellow, pGreen },
+    };
+  }
+}
+
+const haeufigkeiten: Lesson = {
+  id: "dz-4-haeufigkeiten",
+  stageId: STAGE_ID,
+  stepNumber: 4,
+  title: "7.4 Absolute und relative Häufigkeiten",
+  subtitle: "Zählen, Anteile bilden, Gewinnchancen einschätzen",
+  tracks: ["I", "II_III"],
+  lehrplan: `${LP}: Absolute und relative Häufigkeiten`,
+  whyItMatters:
+    "Ob ein Würfel gezinkt ist, an welcher Losbude man öfter gewinnt oder wie ein Reißnagel meistens landet, findest du nur durch Versuche heraus. Relative Häufigkeiten machen Versuchsreihen verschiedener Länge vergleichbar.",
+  explanationHtml: `
+    <p><strong>Wiederholung aus M6:</strong> Einen Anteil schreibst du als Bruch, als Dezimalzahl oder in Prozent: ${frac(13, 50)} = 0,26 = 26 %.</p>
+    <p>Ein Zufallsexperiment wird n-mal durchgeführt. Die <strong>absolute Häufigkeit</strong> H(E) eines Ereignisses E gibt an, wie oft E eingetreten ist. Die <strong>relative Häufigkeit</strong> h(E) gibt den Anteil an allen Versuchen an: h(E) = H(E) : n.</p>
+    <ul>
+      <li>Die relative Häufigkeit liegt immer zwischen 0 und 1, also zwischen 0 % und 100 %: 0, wenn E nie eingetreten ist, 1, wenn E bei jedem Versuch eingetreten ist.</li>
+      <li>Die relativen Häufigkeiten aller Ergebnisse ergeben zusammen 1, denn ihre absoluten Häufigkeiten ergeben zusammen n.</li>
+      <li>Umgekehrt erhältst du die absolute Häufigkeit aus der relativen: H(E) = h(E) · n.</li>
+    </ul>
+    <div class="example"><strong>Beispiel:</strong> Ein Reißnagel wurde 50-mal geworfen: 19-mal landete er mit der Spitze nach oben, 31-mal auf der Seite.<br>
+      H(Spitze oben) = 19, h(Spitze oben) = 19 : 50 = ${frac(19, 50)} = 0,38 = 38 %.<br>
+      H(Seitenlage) = 31, h(Seitenlage) = 31 : 50 = 0,62 = 62 %.<br>
+      Probe: 0,38 + 0,62 = 1.</div>
+    <p><strong>Vergleichen:</strong> Versuchsreihen verschiedener Länge vergleichst du nicht mit den absoluten Häufigkeiten. Glücksrad A brachte in 80 Drehungen 22 Gewinne, Glücksrad B in 150 Drehungen 36. B hat mehr Gewinne, aber die relative Häufigkeit ist bei A 22 : 80 = 0,275 = 27,5 %, bei B nur 36 : 150 = 0,24 = 24 %. Nach diesen Daten scheint A die besseren Gewinnchancen zu haben.</p>
+    <p><strong>Viele Versuche:</strong> Bei wenigen Versuchen schwankt die relative Häufigkeit stark; nach 10 Würfen kann h(6) leicht 0 oder 0,4 sein. Je mehr Versuche du machst, desto weniger schwankt sie. Deshalb schätzt man Gewinnchancen nur aus langen Versuchsreihen ein. Im Labor kannst du das beobachten; in Klasse 9 lernst du, was das mit der Wahrscheinlichkeit zu tun hat.</p>
+    <p><strong>Typische Fehler:</strong> durch die falsche Zahl teilen (n : H statt H : n, oder durch die Zahl der übrigen Ergebnisse statt durch alle Versuche); verschieden lange Versuchsreihen an den absoluten Häufigkeiten vergleichen; Dezimalzahl und Prozent verwechseln: 0,38 sind 38 %, nicht 0,38 %.</p>
+    <div class="merke"><strong>Merke:</strong> Die absolute Häufigkeit H(E) zählt, wie oft E eingetreten ist. Die relative Häufigkeit h(E) = H(E) : n liegt zwischen 0 und 1; die relativen Häufigkeiten aller Ergebnisse ergeben 1. Verschieden lange Versuchsreihen vergleichst du mit relativen Häufigkeiten.</div>
+  `,
+  formulas: [
+    { name: "Absolute Häufigkeit", html: "H(E) = Anzahl der Versuche, bei denen E eintritt", quantities: "eine ganze Zahl von 0 bis n" },
+    { name: "Relative Häufigkeit", html: `h(E) = H(E) : n = ${frac("H(E)", "n")}`, quantities: "n Anzahl aller Versuche; 0 ≤ h(E) ≤ 1, auch in Prozent" },
+    { name: "Summe und Umkehrung", html: "h(1) + h(2) + … + h(6) = 1 · H(E) = h(E) · n", quantities: "die relativen Häufigkeiten aller Ergebnisse ergeben 1; H aus h und n zurückrechnen" },
+  ],
+  quiz: {
+    question: "In 40 Würfen fiel 8-mal eine Sechs. Wie groß ist die relative Häufigkeit der Sechs?",
+    options: ["8", "5", "0,08", "0,2"],
+    correctIndex: 3,
+    explanation:
+      "h(6) = H(6) : n = 8 : 40 = 0,2 = 20 %. Die 8 ist die absolute Häufigkeit, 5 entsteht aus 40 : 8 (umgekehrt geteilt), und 0,08 wären nur 8 %.",
+  },
+  lab: {
+    kind: "frequency-simulation",
+    title: "Labor: Versuchsreihen mit Würfel, Reißnagel und Glücksrad",
+    intro:
+      "Wähle ein Zufallsgerät und führe Versuche durch. Die Säulen zeigen die relativen Häufigkeiten, die Zahl darüber die absolute. Unten siehst du, wie sich die relative Häufigkeit mit jedem Versuch entwickelt. Jedes Gerät behält seine eigene Versuchsreihe, so kannst du zwei Geräte vergleichen.",
+    params: [
+      { type: "choice", key: "spiel", label: "Zufallsgerät", options: GAMES.map((g, value) => ({ value, label: g.name })), value: 0 },
+      {
+        type: "choice",
+        key: "tipp",
+        label: "Deine Entscheidung",
+        options: [
+          { value: 0, label: "noch offen" },
+          { value: 1, label: "Rad A gewinnt öfter" },
+          { value: 2, label: "Rad B gewinnt öfter" },
+        ],
+        value: 0,
+        showIf: (v) => v.spiel === 3,
+      },
+      ...GAMES.flatMap((_, g) => [
+        { type: "state" as const, key: `n${g}`, value: 0 },
+        { type: "state" as const, key: `s${g}`, value: GAME_SEEDS[g] },
+      ]),
+    ],
+    readouts: [
+      { key: "n", label: "Versuche", compute: (v) => `${gameOf(v).n} ${(GAMES[v.spiel] ?? GAMES[0]).trials}` },
+      {
+        key: "H",
+        label: "absolute Häufigkeit",
+        compute: (v) => {
+          const g = GAMES[v.spiel] ?? GAMES[0];
+          const r = gameOf(v);
+          return v.spiel === 3 ? `Gewinn A: ${r.counts[0]}, Gewinn B: ${r.counts[1]}` : `H(${g.outcomes[g.focus]}) = ${r.counts[g.focus]}`;
+        },
+      },
+      {
+        key: "h",
+        label: "relative Häufigkeit",
+        emphasis: true,
+        compute: (v) => {
+          const g = GAMES[v.spiel] ?? GAMES[0];
+          const r = gameOf(v);
+          if (r.n === 0) return "noch kein Versuch";
+          if (v.spiel === 3) return `A: ${relText(r.counts[0], r.n)} · B: ${relText(r.counts[1], r.n)}`;
+          return `h(${g.outcomes[g.focus]}) = ${relText(r.counts[g.focus], r.n)} ${hPercent(r.counts[g.focus], r.n)}`;
+        },
+      },
+      {
+        key: "schwankung",
+        label: "in der zweiten Hälfte der Versuche",
+        compute: (v) => {
+          const r = gameOf(v);
+          const ranges = r.history.map(fluctuation);
+          if (ranges.some((x) => x === null)) return "erst ab 20 Versuchen";
+          const span = (x: [number, number] | null) => (x ? `zwischen ${fmt(x[0], 2)} und ${fmt(x[1], 2)}` : "");
+          return v.spiel === 3 ? `h(Gewinn A) ${span(ranges[0])}, h(Gewinn B) ${span(ranges[1])}` : `h lag ${span(ranges[0])}`;
+        },
+      },
+      {
+        key: "vergleich",
+        label: "Vergleich",
+        compute: (v) => {
+          if (v.spiel === 2) return "h(Spitze oben) + h(Seitenlage) = 1";
+          if (v.spiel === 3) {
+            const leader = wheelLeader(gameOf(v));
+            return gameOf(v).n === 0 ? "noch keine Daten" : leader === 0 ? "beide Räder gleich oft" : `bisher gewinnt Rad ${leader === 1 ? "A" : "B"} öfter`;
+          }
+          const part = (g: number) => {
+            const r = gameOf(v, g);
+            return r.n === 0 ? "noch nicht gewürfelt" : `h(6) ≈ ${fmt(relFreq(r, 5), 2)} (${r.n} Würfe)`;
+          };
+          return `normal: ${part(0)} · Fundbüro: ${part(1)}`;
+        },
+      },
+    ],
+    actions: [
+      { id: "eins", label: "1 Versuch", apply: (v) => gameTrials(v, 1) },
+      { id: "zehn", label: "10 Versuche", apply: (v) => gameTrials(v, 10) },
+      { id: "hundert", label: "100 Versuche", apply: (v) => gameTrials(v, 100) },
+      { id: "neu", label: "Reihe neu beginnen", apply: (v) => gameRestart(v) },
+    ],
+    goals: [
+      {
+        id: "sechs",
+        text: "Würfle mit dem normalen Spielwürfel mindestens 300-mal und beobachte im Verlauf, wie h(6) immer weniger schwankt. Am Ende liegt h(6) zwischen 0,12 und 0,22.",
+        check: (v) => {
+          const r = gameOf(v, 0);
+          const h = relFreq(r, 5);
+          return r.n >= 300 && h >= 0.12 && h <= 0.22;
+        },
+      },
+      {
+        id: "fundbuero",
+        text: "Ist der Würfel aus dem Fundbüro gezinkt? Würfle mit beiden Würfeln je mindestens 300-mal: Fällt beim Fundbüro-Würfel die Sechs deutlich öfter, mit einer um mindestens 0,05 größeren relativen Häufigkeit?",
+        check: (v) => {
+          const normal = gameOf(v, 0);
+          const found = gameOf(v, 1);
+          return normal.n >= 300 && found.n >= 300 && relFreq(found, 5) - relFreq(normal, 5) >= 0.05;
+        },
+      },
+      {
+        id: "raeder",
+        text: "Mit welchem Glücksrad gewinnst du öfter? Drehe beide mindestens 200-mal und stelle deine Entscheidung passend zu den relativen Häufigkeiten ein.",
+        check: (v) => {
+          const r = gameOf(v, 3);
+          return r.n >= 200 && v.tipp !== 0 && v.tipp === wheelLeader(r);
+        },
+      },
+    ],
+  },
+  exercises: [
+    { id: "relativ", make: (rng, level) => relativTask(rng, level) },
+    { id: "absolut", make: (rng, level) => absolutTask(rng, level) },
+    { id: "summe", make: (rng, level) => summeTask(rng, level) },
+  ],
+  requiredCorrect: 3,
+  celebrationMessage: "Du berechnest absolute und relative Häufigkeiten und schätzt damit Gewinnchancen aus Daten ein.",
+};
+
 export const STAGE_DATEN_ZUFALL: Stage = {
   id: STAGE_ID,
   stageNumber: 7,
@@ -1081,5 +1982,5 @@ export const STAGE_DATEN_ZUFALL: Stage = {
   accent: "#dc2626",
   badgeTitle: "Zufallsforscher",
   lehrplanLabel: "LB 7 (I) · LB 6 (II/III)",
-  lessons: [ergebnisEreignis, baumdiagramm],
+  lessons: [ergebnisEreignis, baumdiagramm, vierfeldertafel, haeufigkeiten],
 };

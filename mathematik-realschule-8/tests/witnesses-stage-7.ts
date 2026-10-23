@@ -22,4 +22,20 @@ export const GOAL_WITNESSES_STAGE_7: Record<string, Record<string, LabValues>> =
     // two red, one blue, two draws without replacement: rr, rb, br (bb is missing)
     weniger: { exp: 2, stufen: 2, rot: 2, blau: 1, gruen: 0, ereignis: 0 },
   },
+  "dz-3-vierfeldertafel": {
+    // 36 + 24 − 46 = 14 girls with glasses, so 22 without and 10 boys with glasses
+    oder: { a: 14, b: 22, c: 10, d: 20, ereignis: 1, baum: 0 },
+    // 6 of 24 girls and 8 of 32 boys: a quarter each
+    gleich: { a: 6, b: 18, c: 8, d: 24, ereignis: 0, baum: 0 },
+    // 10 boys but only a third, 8 girls and half of them
+    mehr: { a: 8, b: 8, c: 10, d: 20, ereignis: 0, baum: 1 },
+  },
+  "dz-4-haeufigkeiten": {
+    // with the start seed: 44 sixes in 300 throws, h(6) ≈ 0,147
+    sechs: { spiel: 0, tipp: 0, n0: 300 },
+    // h(6) ≈ 0,147 against ≈ 0,247 after 300 throws each
+    fundbuero: { spiel: 1, tipp: 0, n0: 300, n1: 300 },
+    // after 200 spins: A ≈ 0,225, B ≈ 0,365
+    raeder: { spiel: 3, tipp: 2, n3: 200 },
+  },
 };

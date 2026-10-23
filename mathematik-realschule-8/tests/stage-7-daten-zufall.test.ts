@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest";
 import { CATEGORY_OPTIONS, STAGE_DATEN_ZUFALL } from "../src/curriculum/stage-7-daten-zufall";
 import { createRng, seedFrom } from "../src/exercises/rng";
 import { applyAction, computeReadouts, defaultLabValues, withChanges } from "../src/lab/engine";
-import { outcomeRecord, outcomeSeries, stageBranches, treePaths } from "../src/lab/views-daten-zufall";
+import { gameOf, gameRecord, outcomeRecord, outcomeSeries, relFreq, stageBranches, treePaths, wheelLeader } from "../src/lab/views-daten-zufall";
 import type { ChoiceField, DifficultyLevel, ExerciseTask, LabDefinition, LabValues, Lesson } from "../src/model/types";
 
 const IDS = ["dz-1-ergebnis-ereignis", "dz-2-baumdiagramm", "dz-3-vierfeldertafel", "dz-4-haeufigkeiten"];
@@ -169,8 +169,8 @@ describe("Etappe 7: Daten und Zufall", () => {
     expect(STAGE_DATEN_ZUFALL.id).toBe("stage-7-daten-zufall");
     expect(STAGE_DATEN_ZUFALL.stageNumber).toBe(7);
     expect(STAGE_DATEN_ZUFALL.accent).toBe("#dc2626");
-    expect(lessons.map((l) => l.id)).toEqual(IDS.slice(0, lessons.length));
-    expect(lessons.map((l) => l.lab.kind)).toEqual(["outcome-event", "tree-diagram", "two-way-table", "frequency-simulation"].slice(0, lessons.length));
+    expect(lessons.map((l) => l.id)).toEqual(IDS);
+    expect(lessons.map((l) => l.lab.kind)).toEqual(["outcome-event", "tree-diagram", "two-way-table", "frequency-simulation"]);
     lessons.forEach((l, index) => {
       expect(l.stageId).toBe("stage-7-daten-zufall");
       expect(l.stepNumber).toBe(index + 1);
@@ -499,5 +499,306 @@ describe("7.2 Baumdiagramme: the tasks compute right", () => {
       options.forEach((o, i) => expect(paths.includes(o), `${o} in ${task.prompt}`).toBe(i !== choice(task, 2).correctIndex));
       expect(full).toContain(picked(task, 2));
     }
+  });
+});
+
+// ─── 7.3 Vierfeldertafeln ──────────────────────────────────────────────────
+
+/** The contents of the data cells of an HTML table, row by row ("" for an empty cell). */
+function tableCells(html: string): string[] {
+  return [...html.matchAll(/<td[^>]*>([^<]*)<\/td>/g)].map((m) => m[1]);
+}
+
+describe("7.3 Vierfeldertafeln: the lab", () => {
+  const lab = lesson("dz-3-vierfeldertafel").lab;
+
+  it("adds up rows, columns and the Ereignisse at known settings", () => {
+    const { r } = at(lab, {});
+    expect(r.summen).toBe("28 Mädchen, 28 Jungen; 14 mit, 42 ohne Brille");
+    expect(r.gesamt).toBe("56 Jugendliche");
+    expect(r.ereignis).toBe("Mädchen oder Brille: 34");
+    expect(at(lab, { ereignis: 0 }).r.ereignis).toBe("Mädchen und Brille: 8");
+    expect(at(lab, { ereignis: 2 }).r.ereignis).toBe("Junge und keine Brille: 22");
+    expect(at(lab, { ereignis: 3 }).r.ereignis).toBe("Junge oder keine Brille: 48");
+    expect(r.anteile).toBe("Mädchen 8 von 28 ≈ 28,6 %; Jungen 6 von 28 ≈ 21,4 %");
+    expect(at(lab, { a: 5, b: 5 }).r.anteile).toContain("5 von 10 = 50 %");
+    expect(at(lab, { a: 0, b: 0 }).r.anteile).toContain("niemand in der Gruppe");
+  });
+
+  it("has the „oder“ goal at exactly one setting of the three cells, and the share goals where the arithmetic says", () => {
+    const goal = lab.goals.find((g) => g.id === "oder")!;
+    let solutions = 0;
+    for (let a = 0; a <= 30; a++)
+      for (let b = 0; b <= 30; b++)
+        for (let c = 0; c <= 30; c++) {
+          const v = { ...defaultLabValues(lab), a, b, c, d: 10 };
+          if (goal.check(v, computeReadouts(lab, v))) {
+            solutions += 1;
+            expect([a, b, c]).toEqual([14, 22, 10]);
+          }
+        }
+    expect(solutions).toBe(1);
+    const same = lab.goals.find((g) => g.id === "gleich")!;
+    const with4 = (a: number, b: number, c: number, d: number) => ({ ...defaultLabValues(lab), a, b, c, d });
+    expect(same.check(with4(5, 15, 5, 15), {})).toBe(false); // groups of the same size
+    expect(same.check(with4(0, 15, 0, 20), {})).toBe(false); // nobody with glasses
+    expect(same.check(with4(3, 9, 6, 18), {})).toBe(true);
+    const more = lab.goals.find((g) => g.id === "mehr")!;
+    expect(more.check(with4(8, 8, 10, 20), {})).toBe(true);
+    expect(more.check(with4(8, 8, 10, 2), {})).toBe(false);
+  });
+});
+
+describe("7.3 Vierfeldertafeln: the tasks compute right", () => {
+  it("Level 1: three cells and the total give the fourth cell and two sums", () => {
+    const missing = [0, 0, 0, 0];
+    for (const task of tasks("dz-3-vierfeldertafel", "ergaenzen", 1)) {
+      const m = meta(task);
+      const cells = [m.a, m.b, m.c, m.d];
+      const shown = tableCells(task.given[0]);
+      const N = cells.reduce((x, y) => x + y, 0);
+      expect(shown[8]).toBe(String(N));
+      [0, 1, 3, 4].forEach((pos, i) => expect(shown[pos]).toBe(i === m.missing ? "?" : String(cells[i])));
+      const row = m.missing < 2 ? 0 : 1;
+      const col = m.missing % 2;
+      expect(num(task, 0)).toBe(N - cells.filter((_, i) => i !== m.missing).reduce((x, y) => x + y, 0));
+      expect(num(task, 1)).toBe(cells[row * 2] + cells[row * 2 + 1]);
+      expect(num(task, 2)).toBe(cells[col] + cells[2 + col]);
+      for (const x of cells) expect(x).toBeGreaterThan(0);
+      missing[m.missing] += 1;
+    }
+    for (const x of missing) expect(x).toBeGreaterThan(30);
+  });
+
+  it("Level 2: sums and shares give whole numbers of people", () => {
+    for (const task of tasks("dz-3-vierfeldertafel", "ergaenzen", 2)) {
+      const m = meta(task);
+      const a = (m.r1 * m.n1) / m.d1;
+      const c = (m.r2 * m.n2) / m.d2;
+      for (const x of [a, c]) expect(Number.isInteger(x), task.prompt).toBe(true);
+      expect([m.a, m.c]).toEqual([a, c]);
+      expect(num(task, 0)).toBe(c);
+      expect(num(task, 1)).toBe(a + c);
+      expect(num(task, 2)).toBe(m.r2 - c);
+      expect(c).toBeGreaterThan(0);
+      expect(m.r2 - c).toBeGreaterThan(0);
+      if (m.ctx === 1) for (const size of [m.r1, m.r2]) expect(size >= 20 && size <= 32).toBe(true);
+      if (m.ctx === 2) expect(m.n1 / m.d1).toBeGreaterThan(m.n2 / m.d2);
+    }
+  });
+
+  it("reads Ereignisse: one cell, a sum, and „oder“ without counting twice", () => {
+    for (const task of tasks("dz-3-vierfeldertafel", "lesen", 1)) {
+      const m = meta(task);
+      const cells = [m.a, m.b, m.c, m.d];
+      const shown = tableCells(task.given[0]).map(Number);
+      expect(shown).toEqual([m.a, m.b, m.a + m.b, m.c, m.d, m.c + m.d, m.a + m.c, m.b + m.d, m.a + m.b + m.c + m.d]);
+      expect(num(task, 0)).toBe(cells[m.i * 2 + m.j]);
+      expect(num(task, 1)).toBe(m.byRow ? cells[m.k * 2] + cells[m.k * 2 + 1] : cells[m.k] + cells[2 + m.k]);
+    }
+    for (const task of tasks("dz-3-vierfeldertafel", "lesen", 2)) {
+      const m = meta(task);
+      const shown = tableCells(task.given[0]);
+      expect(shown.filter((x) => x !== "").map(Number)).toEqual([m.a, m.b, m.c, m.d]);
+      expect(num(task, 0)).toBe(m.a + m.b + (m.a + m.c) - m.a);
+      expect(num(task, 1)).toBe(m.b + m.c);
+      expect(num(task, 2)).toBe(m.d);
+      expect(num(task, 0) + num(task, 2)).toBe(m.a + m.b + m.c + m.d);
+    }
+  });
+
+  it("turns a frequency tree around: the same four end numbers, regrouped", () => {
+    for (const level of [1, 2] as const) {
+      for (const task of tasks("dz-3-vierfeldertafel", "baum", level)) {
+        const m = meta(task);
+        const N = m.a + m.b + m.c + m.d;
+        expect(task.given[0]).toBe(`Gesamtzahl: ${N}`);
+        const numbers = task.given.slice(1).map((line) => [...line.matchAll(/: (\d+|\?)/g)].map((x) => x[1]));
+        if (level === 1) {
+          expect(numbers).toEqual([[`${m.a + m.b}`, `${m.a}`, `${m.b}`], [`${m.c + m.d}`, `${m.c}`, `${m.d}`]]);
+          expect(num(task, 2)).toBe([m.a, m.b, m.c, m.d][m.r * 2 + m.j]);
+        } else {
+          expect(numbers).toEqual([[`${m.a + m.b}`, `${m.a}`, "?"], ["?", "?", `${m.d}`]]);
+          expect(num(task, 0)).toBe(N - (m.a + m.b) - m.d);
+        }
+        expect(num(task, level === 1 ? 0 : 1)).toBe(m.a + m.c);
+        expect(num(task, level === 1 ? 1 : 2)).toBe(m.b + m.d);
+      }
+    }
+  });
+
+  it("writes the groups in the right case after an article", () => {
+    for (const g of ["ergaenzen", "lesen", "baum"])
+      for (const level of [1, 2] as const)
+        for (const task of tasks("dz-3-vierfeldertafel", g, level)) {
+          expect(allTexts(task), task.prompt).not.toMatch(/(der|die|alle|den) (Jugendliche|gesunde|kranke) /);
+        }
+  });
+});
+
+// ─── 7.4 Absolute und relative Häufigkeiten ────────────────────────────────
+
+/** A German number with up to `digits` decimals, as fmt() writes it. */
+const de = (x: number, digits: number) => new Intl.NumberFormat("de-DE", { maximumFractionDigits: digits }).format(x);
+
+describe("7.4 Absolute und relative Häufigkeiten: the lab", () => {
+  const lab = lesson("dz-4-haeufigkeiten").lab;
+
+  it("keeps one series per device and replays it from its seed", () => {
+    let v = defaultLabValues(lab);
+    for (let i = 0; i < 3; i++) v = applyAction(lab, v, "hundert");
+    v = applyAction(lab, v, "zehn");
+    v = applyAction(lab, v, "eins");
+    const normal = gameRecord(0, v.s0, v.n0);
+    expect(normal.n).toBe(311);
+    expect(normal.counts.reduce((a, b) => a + b, 0)).toBe(311);
+    expect(normal.history[0]).toHaveLength(311);
+    expect(normal.history[0][310]).toBeCloseTo(normal.counts[5] / 311, 12);
+    // another device: its own series, the first one is kept
+    const found = withChanges(lab, v, { spiel: 1 });
+    expect(gameOf(found).n).toBe(0);
+    expect(found.n0).toBe(311);
+    const back = withChanges(lab, applyAction(lab, found, "hundert"), { spiel: 0 });
+    expect(gameOf(back).n).toBe(311);
+    expect(back.n1).toBe(100);
+    // a new series: no trials, another seed
+    const fresh = applyAction(lab, v, "neu");
+    expect(fresh.n0).toBe(0);
+    expect(fresh.s0).not.toBe(v.s0);
+  });
+
+  it("draws with the hidden weights: over many trials the shares settle near them", () => {
+    const normal = gameRecord(0, 1234, 12000);
+    for (const c of normal.counts) expect(Math.abs(c / 12000 - 1 / 6)).toBeLessThan(0.015);
+    const found = gameRecord(1, 1234, 12000);
+    expect(Math.abs(found.counts[5] / 12000 - 0.26)).toBeLessThan(0.015);
+    expect(Math.abs(found.counts[0] / 12000 - 0.1)).toBeLessThan(0.015);
+    const tack = gameRecord(2, 1234, 12000);
+    expect(Math.abs(tack.counts[0] / 12000 - 0.38)).toBeLessThan(0.015);
+    const wheels = gameRecord(3, 1234, 12000);
+    expect(Math.abs(wheels.counts[0] / 12000 - 0.25)).toBeLessThan(0.015);
+    expect(Math.abs(wheels.counts[1] / 12000 - 0.375)).toBeLessThan(0.015);
+  });
+
+  it("reaches its goals in most fresh series, so no learner is stuck on an unlucky seed", () => {
+    let six = 0;
+    let found = 0;
+    let wheels = 0;
+    for (let i = 0; i < 300; i++) {
+      const seed = seedFrom(`series:${i}`);
+      const h0 = relFreq(gameRecord(0, seed, 300), 5);
+      const h1 = relFreq(gameRecord(1, seed + 1, 300), 5);
+      if (h0 >= 0.12 && h0 <= 0.22) six += 1;
+      if (h1 - h0 >= 0.05) found += 1;
+      if (wheelLeader(gameRecord(3, seed, 200)) === 2) wheels += 1;
+    }
+    expect(six / 300).toBeGreaterThan(0.95);
+    expect(found / 300).toBeGreaterThan(0.8);
+    expect(wheels / 300).toBeGreaterThan(0.98);
+  });
+
+  it("reads the frequencies at a known series", () => {
+    const { r } = at(lab, { n0: 300 });
+    const rec = gameRecord(0, 74001, 300);
+    expect(r.n).toBe("300 Würfe");
+    expect(r.H).toBe(`H(6) = ${rec.counts[5]}`);
+    expect(r.h).toBe(`h(6) = ${rec.counts[5]} : 300 ≈ ${de(rec.counts[5] / 300, 2)} ≈ ${de((100 * rec.counts[5]) / 300, 1)} %`);
+    expect(r.schwankung).toMatch(/^h lag zwischen 0,\d\d? und 0,\d\d?$/);
+    expect(at(lab, {}).r.h).toBe("noch kein Versuch");
+    expect(at(lab, { spiel: 3, n3: 200 }).r.vergleich).toBe("bisher gewinnt Rad B öfter");
+    expect(at(lab, { spiel: 2 }).r.vergleich).toBe("h(Spitze oben) + h(Seitenlage) = 1");
+  });
+});
+
+describe("7.4 Absolute und relative Häufigkeiten: the tasks compute right", () => {
+  it("Level 1: h = H : n as a decimal and in percent", () => {
+    for (const task of tasks("dz-4-haeufigkeiten", "relativ", 1)) {
+      const m = meta(task);
+      expect(task.given).toEqual([`n = ${m.n}`, `H = ${m.H}`]);
+      expect(task.prompt).toContain(`${m.n}`);
+      expect(num(task, 0)).toBeCloseTo(m.H / m.n, 12);
+      expect(num(task, 1)).toBeCloseTo((100 * m.H) / m.n, 10);
+      expect(m.H).toBeGreaterThan(0);
+      expect(m.H).toBeLessThan(m.n);
+    }
+  });
+
+  it("Level 2: compares two series of different length by their shares, half of them with the trap", () => {
+    let traps = 0;
+    for (const task of tasks("dz-4-haeufigkeiten", "relativ", 2)) {
+      const m = meta(task);
+      const p1 = (100 * m.H1) / m.n1;
+      const p2 = (100 * m.H2) / m.n2;
+      expect(m.n1).not.toBe(m.n2);
+      expect(num(task, 0)).toBeCloseTo(p1, 10);
+      expect(num(task, 1)).toBeCloseTo(p2, 10);
+      // rounding to one decimal never decides
+      expect(Math.abs(p1 - p2)).toBeGreaterThanOrEqual(3);
+      expect(choice(task, 2).correctIndex).toBe(p1 > p2 ? 0 : 1);
+      const trap = (m.H1 > m.H2 && p1 < p2) || (m.H2 > m.H1 && p2 < p1);
+      expect(m.trap).toBe(trap ? 1 : 0);
+      if (trap) traps += 1;
+    }
+    expect(traps).toBeGreaterThan(70);
+    expect(traps).toBeLessThan(130);
+  });
+
+  it("H = h · n, and a series continued", () => {
+    for (const task of tasks("dz-4-haeufigkeiten", "absolut", 1)) {
+      const m = meta(task);
+      expect(num(task, 0)).toBe((m.p * m.n) / 100);
+      expect(Number.isInteger(num(task, 0))).toBe(true);
+      expect(num(task, 1)).toBe(m.n - num(task, 0));
+      expect(task.prompt.includes(`${m.p} %`) || task.prompt.includes(de(m.p / 100, 2)), task.prompt).toBe(true);
+    }
+    for (const task of tasks("dz-4-haeufigkeiten", "absolut", 2)) {
+      const m = meta(task);
+      if (m.kind === 0) {
+        const H1 = (m.p1 * m.n1) / 100;
+        expect(num(task, 0)).toBe(H1);
+        expect(num(task, 1)).toBe(H1 + m.k2);
+        expect(num(task, 2)).toBeCloseTo((100 * (H1 + m.k2)) / (m.n1 + m.n2), 10);
+      } else {
+        const H1 = (m.h1 * m.n1) / 100;
+        const H2 = (m.h2 * (m.n1 + m.n2)) / 100;
+        expect([num(task, 0), num(task, 1), num(task, 2)]).toEqual([H1, H2, H2 - H1]);
+        expect(H2 - H1).toBeGreaterThanOrEqual(0.08 * m.n2);
+        expect(H2 - H1).toBeLessThanOrEqual(0.3 * m.n2);
+      }
+      for (const f of task.fields) if (f.kind === "number" && f.unit === "") expect(Number.isInteger(f.answer), task.prompt).toBe(true);
+    }
+  });
+
+  it("all relative frequencies add up to 1", () => {
+    for (const task of tasks("dz-4-haeufigkeiten", "summe", 1)) {
+      const m = meta(task);
+      const counts = [1, 2, 3, 4, 5].map((i) => m[`c${i}`]);
+      expect(tableCells(task.given[0])).toEqual([...counts.map(String), "?"]);
+      const six = m.n - counts.reduce((a, b) => a + b, 0);
+      expect(num(task, 0)).toBe(six);
+      expect(num(task, 1)).toBeCloseTo(six / m.n, 12);
+      expect(six).toBeGreaterThan(0);
+    }
+    const kinds = [0, 0];
+    for (const task of tasks("dz-4-haeufigkeiten", "summe", 2)) {
+      const m = meta(task);
+      kinds[m.kind] += 1;
+      if (m.kind === 0) {
+        const green = 100 - m.pRed - m.hBlue - 5 * m.yellow;
+        expect(num(task, 0)).toBe(green);
+        expect(num(task, 1)).toBe((green * m.n) / 100);
+        expect(num(task, 2)).toBe((m.pRed * m.n) / 100);
+        expect(green).toBeGreaterThan(0);
+      } else {
+        const hs = [1, 2, 3, 4, 5].map((i) => m[`h${i}`]);
+        const h6 = 100 - hs.reduce((a, b) => a + b, 0);
+        expect(tableCells(task.given[0])).toEqual([...hs.map((x) => de(x / 100, 2)), "?"]);
+        expect(num(task, 0)).toBeCloseTo(h6 / 100, 12);
+        expect(num(task, 1)).toBe((h6 * m.n) / 100);
+        expect(num(task, 2)).toBe((hs[m.k - 1] * m.n) / 100);
+      }
+      for (const f of task.fields) if (f.kind === "number" && f.label.startsWith("H")) expect(Number.isInteger(f.answer), task.prompt).toBe(true);
+    }
+    for (const k of kinds) expect(k).toBeGreaterThan(60);
   });
 });

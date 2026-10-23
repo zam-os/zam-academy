@@ -1,3 +1,4 @@
+import { fmt } from "../exercises/format";
 import { createRng, seedFrom } from "../exercises/rng";
 import type { LabValues } from "../model/types";
 import { circle, close, type LabView, line, open, polygon, polar, r1, rect, sectorPath, text } from "./svg";
@@ -434,14 +435,369 @@ function treeDiagramView(v: LabValues): string {
   return out;
 }
 
-// ─── The views of the stage ────────────────────────────────────────────────
+// ─── 7.3 Vierfeldertafeln ──────────────────────────────────────────────────
 
-// Placeholder drawings until the stage's labs are written.
-const placeholder: LabView = { render: () => '<svg viewBox="0 0 520 340" xmlns="http://www.w3.org/2000/svg"></svg>' };
+/** The four cells: a Mädchen mit Brille, b Mädchen ohne Brille, c Jungen mit Brille, d Jungen ohne Brille. */
+export interface Table4 {
+  a: number;
+  b: number;
+  c: number;
+  d: number;
+}
+
+export const tableOf = (v: LabValues): Table4 => ({ a: v.a, b: v.b, c: v.c, d: v.d });
+
+/** The Ereignisse the lab marks: the cells a, b, c, d that belong to each. */
+export const TABLE_EVENTS: Array<{ label: string; cells: [boolean, boolean, boolean, boolean] }> = [
+  { label: "Mädchen und Brille", cells: [true, false, false, false] },
+  { label: "Mädchen oder Brille", cells: [true, true, true, false] },
+  { label: "Junge und keine Brille", cells: [false, false, false, true] },
+  { label: "Junge oder keine Brille", cells: [false, true, true, true] },
+];
+
+export function tableEventCount(t: Table4, event: number): number {
+  const cells = [t.a, t.b, t.c, t.d];
+  return (TABLE_EVENTS[event] ?? TABLE_EVENTS[0]).cells.reduce((sum, on, i) => sum + (on ? cells[i] : 0), 0);
+}
+
+/** How the count of an Ereignis comes about: one cell, or three cells and the sums with the shared cell taken off once. */
+export function tableEventSum(t: Table4, event: number): string {
+  const n = tableEventCount(t, event);
+  if (event === 0) return `${t.a}`;
+  if (event === 2) return `${t.d}`;
+  if (event === 1) return `${t.a} + ${t.b} + ${t.c} = ${n} oder ${t.a + t.b} + ${t.a + t.c} − ${t.a} = ${n}`;
+  return `${t.b} + ${t.c} + ${t.d} = ${n} oder ${t.c + t.d} + ${t.b + t.d} − ${t.d} = ${n}`;
+}
+
+/** "8 von 28 ≈ 28,6 %"; "=" when the percentage ends after one decimal. */
+export function shareText(part: number, whole: number): string {
+  if (whole === 0) return "niemand in der Gruppe";
+  const percent = (100 * part) / whole;
+  const exact = Math.abs(percent * 10 - Math.round(percent * 10)) < 1e-9;
+  return `${part} von ${whole} ${exact ? "=" : "≈"} ${fmt(percent, 1)} %`;
+}
+
+/** Same share with glasses among girls and boys, but groups of different size and a share strictly between 0 and 1. */
+export const sameShare = (t: Table4): boolean => t.a > 0 && t.b > 0 && t.a + t.b !== t.c + t.d && t.a * (t.c + t.d) === t.c * (t.a + t.b);
+
+/** More boys than girls with glasses, but a larger share among the girls. */
+export const moreButSmallerShare = (t: Table4): boolean => t.c > t.a && t.a + t.b > 0 && t.a * (t.c + t.d) > t.c * (t.a + t.b);
+
+const TT = { x: 14, y: 64, cols: [86, 64, 64, 56], rows: [26, 34, 34, 34] };
+
+function twoWayTableView(v: LabValues): string {
+  const t = tableOf(v);
+  const event = v.ereignis;
+  const marks = (TABLE_EVENTS[event] ?? TABLE_EVENTS[0]).cells;
+  const girls = t.a + t.b;
+  const boys = t.c + t.d;
+  const glasses = t.a + t.c;
+  const none = t.b + t.d;
+  const total = girls + boys;
+  let out = open("Vierfeldertafel zu Geschlecht und Brille, Anteile als Balken und der passende Häufigkeitsbaum");
+  out += text(14, 24, `${TABLE_EVENTS[event].label}: ${tableEventCount(t, event)} Jugendliche`, "lab-text lab-text-big");
+  out += text(14, 44, event === 1 || event === 3 ? tableEventSum(t, event) : `ein einziges Feld der Tafel: ${tableEventSum(t, event)}`, "lab-text-small lab-text-c");
+
+  // the table: four cells, their row and column sums and the total
+  const xs = [TT.x];
+  for (const w of TT.cols) xs.push(xs[xs.length - 1] + w);
+  const ys = [TT.y];
+  for (const h of TT.rows) ys.push(ys[ys.length - 1] + h);
+  const cell = (col: number, row: number, content: string, box: string, cls = "lab-text") =>
+    rect(xs[col], ys[row], TT.cols[col], TT.rows[row], box) + text(xs[col] + TT.cols[col] / 2, ys[row] + TT.rows[row] / 2 + 5, content, cls, "middle");
+  out += cell(0, 0, "", "lab-cell-sum") + cell(1, 0, "mit Brille", "lab-cell-sum", "lab-text-small") + cell(2, 0, "ohne Brille", "lab-cell-sum", "lab-text-small") + cell(3, 0, "Summe", "lab-cell-sum", "lab-text-small");
+  out += cell(0, 1, "Mädchen", "lab-cell-sum") + cell(0, 2, "Jungen", "lab-cell-sum") + cell(0, 3, "Summe", "lab-cell-sum", "lab-text-small");
+  const inner: Array<[number, number, number]> = [
+    [1, 1, t.a],
+    [2, 1, t.b],
+    [1, 2, t.c],
+    [2, 2, t.d],
+  ];
+  inner.forEach(([col, row, n], i) => (out += cell(col, row, String(n), marks[i] ? "lab-fill-c" : "lab-cell", marks[i] ? "lab-text lab-text-c" : "lab-text")));
+  out += cell(3, 1, String(girls), "lab-cell-sum") + cell(3, 2, String(boys), "lab-cell-sum");
+  out += cell(1, 3, String(glasses), "lab-cell-sum") + cell(2, 3, String(none), "lab-cell-sum") + cell(3, 3, String(total), "lab-cell-sum", "lab-text lab-text-big");
+
+  // the shares with glasses in both groups
+  const barX = 14;
+  const barW = 190;
+  out += text(barX, 216, "Anteil mit Brille", "lab-text");
+  const rows: Array<[string, number, number, string]> = [
+    ["Mädchen", t.a, girls, "lab-bar-a"],
+    ["Jungen", t.c, boys, "lab-bar-b"],
+  ];
+  rows.forEach(([name, part, whole, cls], i) => {
+    const y = 236 + i * 40;
+    out += text(barX, y, `${name}: ${shareText(part, whole)}`, "lab-text-small");
+    out += rect(barX, y + 6, barW, 12, "lab-bar-ghost");
+    if (whole > 0) out += rect(barX, y + 6, (barW * part) / whole, 12, cls);
+  });
+  if (girls > 0 && boys > 0) {
+    const absolute = t.a === t.c ? "gleich viele mit Brille" : `mehr mit Brille: ${t.a > t.c ? "Mädchen" : "Jungen"}`;
+    const cross = t.a * boys - t.c * girls;
+    const relative = cross === 0 ? "gleicher Anteil" : `größerer Anteil: ${cross > 0 ? "Mädchen" : "Jungen"}`;
+    out += text(barX, 326, `${absolute} · ${relative}`, "lab-text-small");
+  }
+
+  // the frequency tree: first by Geschlecht or first by Brille
+  const byGlasses = v.baum === 1;
+  const first: Array<[string, number]> = byGlasses ? [["mit Brille", glasses], ["ohne Brille", none]] : [["Mädchen", girls], ["Jungen", boys]];
+  const leaves: Array<[string, number, boolean]> = byGlasses
+    ? [["Mädchen", t.a, marks[0]], ["Jungen", t.c, marks[2]], ["Mädchen", t.b, marks[1]], ["Jungen", t.d, marks[3]]]
+    : [["mit Brille", t.a, marks[0]], ["ohne Brille", t.b, marks[1]], ["mit Brille", t.c, marks[2]], ["ohne Brille", t.d, marks[3]]];
+  const rootP = { x: 404, y: 96 };
+  const firstP = [{ x: 350, y: 168 }, { x: 458, y: 168 }];
+  const leafP = [322, 378, 430, 486].map((x) => ({ x, y: 244 }));
+  out += text(rootP.x, 66, "Häufigkeitsbaum", "lab-text-muted", "middle");
+  const box = (p: { x: number; y: number }, n: number, cls = "lab-cell", tcls = "lab-text") => rect(p.x - 21, p.y - 12, 42, 24, cls, 'rx="6"') + text(p.x, p.y + 5, String(n), tcls, "middle");
+  firstP.forEach((p) => (out += line(rootP.x, rootP.y + 12, p.x, p.y - 12, "lab-thin")));
+  leafP.forEach((p, i) => (out += line(firstP[Math.floor(i / 2)].x, firstP[Math.floor(i / 2)].y + 12, p.x, p.y - 12, "lab-thin")));
+  out += text((rootP.x + firstP[0].x) / 2 - 8, (rootP.y + firstP[0].y) / 2 + 2, first[0][0], "lab-text-small", "end");
+  out += text((rootP.x + firstP[1].x) / 2 + 8, (rootP.y + firstP[1].y) / 2 + 2, first[1][0], "lab-text-small", "start");
+  out += box(rootP, total, "lab-cell-sum", "lab-text lab-text-big");
+  firstP.forEach((p, i) => (out += box(p, first[i][1], "lab-cell-sum")));
+  leafP.forEach((p, i) => {
+    const [name, n, on] = leaves[i];
+    out += box(p, n, on ? "lab-fill-c" : "lab-cell", on ? "lab-text lab-text-c" : "lab-text");
+    const words = name.split(" ");
+    words.forEach((w, j) => (out += text(p.x, p.y + 28 + j * 12, w, "lab-text-small", "middle")));
+  });
+  out += text(rootP.x, 316, `Probe: ${t.a} + ${t.b} + ${t.c} + ${t.d} = ${total}`, "lab-text-small", "middle");
+  out += close();
+  return out;
+}
+
+// ─── 7.4 Absolute und relative Häufigkeiten ────────────────────────────────
+
+export interface Game {
+  name: string;
+  outcomes: string[];
+  /** Hidden from the learner: how the replay draws. Empty for the two wheels. */
+  weights: number[];
+  /** The outcome whose relative frequency the lab follows. */
+  focus: number;
+  trial: string;
+  trials: string;
+}
+
+export const GAMES: Game[] = [
+  { name: "normaler Spielwürfel", outcomes: ["1", "2", "3", "4", "5", "6"], weights: [1, 1, 1, 1, 1, 1].map((w) => w / 6), focus: 5, trial: "Wurf", trials: "Würfe" },
+  { name: "Würfel aus dem Fundbüro", outcomes: ["1", "2", "3", "4", "5", "6"], weights: [0.1, 0.16, 0.16, 0.16, 0.16, 0.26], focus: 5, trial: "Wurf", trials: "Würfe" },
+  { name: "Reißnagel", outcomes: ["Spitze oben", "Seitenlage"], weights: [0.38, 0.62], focus: 0, trial: "Wurf", trials: "Würfe" },
+  { name: "Glücksräder A und B", outcomes: ["Gewinn A", "Gewinn B"], weights: [], focus: 0, trial: "Drehung", trials: "Drehungen" },
+];
+
+export const GAME_SEEDS = [74001, 74002, 74003, 74004];
+
+/** The winning fields of the wheels, in degrees clockwise from the top: A one quarter, B three eighths in three pieces. */
+export const WHEEL_A: Array<[number, number]> = [[0, 90]];
+export const WHEEL_B: Array<[number, number]> = [[0, 45], [120, 165], [240, 285]];
+const inFields = (angle: number, fields: Array<[number, number]>) => fields.some(([a, b]) => angle >= a && angle < b);
+
+export interface GameRecord {
+  n: number;
+  /** Per outcome; for the wheels the wins of A and of B. */
+  counts: number[];
+  /** The relative frequency of the followed outcome after each trial; for the wheels one row per wheel. */
+  history: number[][];
+  /** The last outcome, or for the wheels the last two angles; empty before the first trial. */
+  last: number[];
+}
+
+/** Replays `n` trials of a game from its seed. */
+export function gameRecord(game: number, seed: number, n: number): GameRecord {
+  const g = GAMES[game] ?? GAMES[0];
+  const rng = createRng(seed);
+  const trials = Math.max(0, Math.floor(n));
+  if (game === 3) {
+    const counts = [0, 0];
+    const history: number[][] = [[], []];
+    let last: number[] = [];
+    for (let t = 0; t < trials; t++) {
+      const a = rng.next() * 360;
+      const b = rng.next() * 360;
+      if (inFields(a, WHEEL_A)) counts[0] += 1;
+      if (inFields(b, WHEEL_B)) counts[1] += 1;
+      history[0].push(counts[0] / (t + 1));
+      history[1].push(counts[1] / (t + 1));
+      last = [a, b];
+    }
+    return { n: trials, counts, history, last };
+  }
+  const counts = g.outcomes.map(() => 0);
+  const history: number[][] = [[]];
+  let last: number[] = [];
+  for (let t = 0; t < trials; t++) {
+    const u = rng.next();
+    let acc = 0;
+    let outcome = g.weights.length - 1;
+    for (let i = 0; i < g.weights.length; i++) {
+      acc += g.weights[i];
+      if (u < acc) {
+        outcome = i;
+        break;
+      }
+    }
+    counts[outcome] += 1;
+    history[0].push(counts[g.focus] / (t + 1));
+    last = [outcome];
+  }
+  return { n: trials, counts, history, last };
+}
+
+export const gameOf = (v: LabValues, game: number = v.spiel): GameRecord => gameRecord(game, v[`s${game}`], v[`n${game}`]);
+
+/** The relative frequency of the followed outcome (game 0 to 2) or of a wheel's win (wheel 0 = A, 1 = B); 0 before any trial. */
+export function relFreq(record: GameRecord, index = 0): number {
+  return record.n > 0 ? record.counts[index] / record.n : 0;
+}
+
+/** "52 : 300 ≈ 0,17"; "=" when the decimal ends after two places. */
+export function relText(count: number, n: number): string {
+  const h = count / n;
+  const exact = Math.abs(h * 100 - Math.round(h * 100)) < 1e-9;
+  return `${count} : ${n} ${exact ? "=" : "≈"} ${fmt(h, 2)}`;
+}
+
+/** The wheel whose wins are more frequent so far: 1 = A, 2 = B, 0 = level or no data. */
+export function wheelLeader(record: GameRecord): number {
+  if (record.n === 0 || record.counts[0] === record.counts[1]) return 0;
+  return record.counts[0] > record.counts[1] ? 1 : 2;
+}
+
+/** The smallest and largest relative frequency in the second half of the trials, from the 10th trial on. */
+export function fluctuation(history: readonly number[]): [number, number] | null {
+  if (history.length < 20) return null;
+  const tail = history.slice(Math.floor(history.length / 2));
+  return [Math.min(...tail), Math.max(...tail)];
+}
+
+export const gameTrials = (v: LabValues, count: number): LabValues => ({ ...v, [`n${v.spiel}`]: v[`n${v.spiel}`] + count });
+export const gameRestart = (v: LabValues): LabValues => ({ ...v, [`n${v.spiel}`]: 0, [`s${v.spiel}`]: nextSeed(v[`s${v.spiel}`]) });
+
+/** A thumbtack on the table: point up, or on its side resting on the rim of its head and its point. */
+function thumbtack(cx: number, base: number, side: boolean, cls: string): string {
+  let out = line(cx - 30, base + 1, cx + 30, base + 1, "lab-thin");
+  if (!side) {
+    out += line(cx - 15, base - 2, cx + 15, base - 2, cls);
+    out += line(cx, base - 4, cx, base - 40, "lab-ink");
+    return out;
+  }
+  // tan θ = pin length : half the head, so that rim and point both touch the table
+  const theta = Math.atan(40 / 16);
+  const p = { x: cx - 22, y: base - 2 };
+  const q = { x: p.x + 32 * Math.cos(theta), y: p.y - 32 * Math.sin(theta) };
+  const m = { x: (p.x + q.x) / 2, y: (p.y + q.y) / 2 };
+  out += line(p.x, p.y, q.x, q.y, cls);
+  out += line(m.x, m.y, m.x + 40 * Math.sin(theta), m.y + 40 * Math.cos(theta), "lab-ink");
+  return out;
+}
+
+/** A wheel with its winning fields in green and the needle at the last angle (degrees clockwise from the top). */
+function luckyWheel(cx: number, cy: number, r: number, fields: Array<[number, number]>, angle: number | null): string {
+  let out = circle(cx, cy, r, "lab-shape");
+  for (const [a, b] of fields) out += `<path d="${sectorPath(cx, cy, r, 90 - b, 90 - a)}" class="lab-fill-ok" />`;
+  out += angle === null ? circle(cx, cy, 3.5, "lab-dot-small") : needle(cx, cy, r * 0.86, 90 - angle);
+  return out;
+}
+
+const BARS = { x0: 192, x1: 506, top: 46, bottom: 146 };
+const COURSE = { x0: 46, x1: 506, top: 214, bottom: 314 };
+
+function frequencySimulationView(v: LabValues): string {
+  const game = GAMES[v.spiel] ?? GAMES[0];
+  const record = gameOf(v);
+  const wheels = v.spiel === 3;
+  const focusLabel = game.outcomes[game.focus];
+  let out = open(`${game.name}: absolute und relative Häufigkeiten als Säulen und der Verlauf der relativen Häufigkeit`);
+
+  // the result so far, in one line
+  let head: string;
+  if (record.n === 0) head = "Noch kein Versuch: Starte mit den Knöpfen.";
+  else if (wheels) head = `n = ${record.n} · h(Gewinn A) ≈ ${fmt(relFreq(record, 0), 2)} · h(Gewinn B) ≈ ${fmt(relFreq(record, 1), 2)}`;
+  else head = `n = ${record.n} · H(${focusLabel}) = ${record.counts[game.focus]} · h ${relText(record.counts[game.focus], record.n).replace(/^\d+ : \d+ /, "")}`;
+  out += text(14, 24, head, "lab-text lab-text-big");
+
+  // the object: die, thumbtack or the two wheels, with the last result
+  if (v.spiel <= 1) {
+    out += dieFace(80, 92, 62, record.n > 0 ? record.last[0] + 1 : 6, record.n > 0 ? "lab-shape" : "lab-shape-2");
+    out += text(80, 146, record.n > 0 ? `letzter Wurf: ${record.last[0] + 1}` : "noch nicht geworfen", "lab-text-small", "middle");
+    out += text(80, 164, v.spiel === 0 ? "normaler Würfel" : "aus dem Fundbüro", "lab-text-muted", "middle");
+  } else if (v.spiel === 2) {
+    const last = record.n > 0 ? record.last[0] : -1;
+    out += thumbtack(46, 110, false, last === 0 ? "lab-side-c" : "lab-side-b");
+    out += thumbtack(116, 110, true, last === 1 ? "lab-side-c" : "lab-side-b");
+    out += text(46, 132, "Spitze oben", last === 0 ? "lab-text-small lab-text-c" : "lab-text-small", "middle");
+    out += text(116, 132, "Seitenlage", last === 1 ? "lab-text-small lab-text-c" : "lab-text-small", "middle");
+    out += text(80, 160, record.n > 0 ? `letzter Wurf: ${game.outcomes[last]}` : "noch nicht geworfen", "lab-text-small", "middle");
+  } else {
+    out += luckyWheel(46, 92, 31, WHEEL_A, record.n > 0 ? record.last[0] : null);
+    out += luckyWheel(116, 92, 31, WHEEL_B, record.n > 0 ? record.last[1] : null);
+    out += text(46, 140, "Rad A", "lab-text lab-text-a", "middle");
+    out += text(116, 140, "Rad B", "lab-text lab-text-b", "middle");
+    out += text(80, 160, "grün: Gewinn", "lab-text-small", "middle");
+  }
+
+  // the bars: relative frequency on the axis, absolute frequency on top
+  const yBar = (h: number) => BARS.bottom - (BARS.bottom - BARS.top) * Math.min(h, 1) * 2;
+  for (const h of [0, 0.25, 0.5]) {
+    out += line(BARS.x0, yBar(h), BARS.x1, yBar(h), h === 0 ? "lab-ink" : "lab-grid");
+    out += text(BARS.x0 - 5, yBar(h) + 4, fmt(h, 2), "lab-text-tick", "end");
+  }
+  const k = game.outcomes.length;
+  const slot = (BARS.x1 - BARS.x0) / k;
+  const barW = Math.min(46, slot * 0.6);
+  game.outcomes.forEach((name, i) => {
+    const count = record.counts[i];
+    const h = record.n > 0 ? count / record.n : 0;
+    const cx = BARS.x0 + slot * (i + 0.5);
+    const cls = wheels ? (i === 0 ? "lab-bar-a" : "lab-bar-b") : i === game.focus ? "lab-bar-c" : "lab-bar-a";
+    const top = Math.max(BARS.top - 6, yBar(h));
+    if (record.n > 0) out += rect(cx - barW / 2, top, barW, BARS.bottom - top, cls);
+    out += text(cx, top - 4, record.n > 0 ? String(count) : "", "lab-text-small", "middle");
+    out += text(cx, BARS.bottom + 15, name, i === game.focus && !wheels ? "lab-text-small lab-text-c" : "lab-text-small", "middle");
+    if (record.n > 0) out += text(cx, BARS.bottom + 29, fmt(h, 2), "lab-text-small", "middle");
+  });
+  if (record.n > 0 && !wheels) out += text(BARS.x1, BARS.top - 6, `Summe aller h: ${fmt(record.counts.reduce((a, b) => a + b, 0) / record.n, 2)}`, "lab-text-small", "end");
+
+  // the course of the relative frequency over the trials
+  const N = Math.max(10, record.n);
+  const xC = (t: number) => COURSE.x0 + ((COURSE.x1 - COURSE.x0) * t) / N;
+  const yC = (h: number) => COURSE.bottom - (COURSE.bottom - COURSE.top) * h * 2;
+  out += text(COURSE.x0, COURSE.top - 10, wheels ? "Verlauf von h(Gewinn A) und h(Gewinn B)" : `Verlauf von h(${focusLabel})`, "lab-text-muted");
+  if (v.spiel === 0) {
+    out += rect(COURSE.x0, yC(0.22), COURSE.x1 - COURSE.x0, yC(0.12) - yC(0.22), "lab-fill-ok");
+    out += text(COURSE.x1 - 4, yC(0.22) - 4, "0,12 bis 0,22", "lab-text-small lab-text-ok", "end");
+  }
+  for (const h of [0, 0.25, 0.5]) {
+    out += line(COURSE.x0, yC(h), COURSE.x1, yC(h), h === 0 ? "lab-ink" : "lab-grid");
+    out += text(COURSE.x0 - 5, yC(h) + 4, fmt(h, 2), "lab-text-tick", "end");
+  }
+  for (const t of [0, Math.round(N / 2), N]) out += text(xC(t), COURSE.bottom + 14, String(t), "lab-text-tick", "middle");
+  out += text((COURSE.x0 + COURSE.x1) / 2, COURSE.bottom + 26, `Anzahl n der ${game.trials}`, "lab-text-axis", "middle");
+  if (v.spiel === 1 && v.n0 > 0) {
+    const h0 = relFreq(gameOf(v, 0), 5);
+    out += line(COURSE.x0, yC(h0), COURSE.x1, yC(h0), "lab-dashed");
+    out += text(COURSE.x0 + 6, yC(h0) - 4, `normaler Würfel: ${fmt(h0, 2)}`, "lab-text-small");
+  }
+  const clipId = "dz-course-clip";
+  out += `<clipPath id="${clipId}"><rect x="${COURSE.x0}" y="${COURSE.top - 2}" width="${COURSE.x1 - COURSE.x0}" height="${COURSE.bottom - COURSE.top + 4}" /></clipPath>`;
+  const step = Math.max(1, Math.floor(record.n / 300));
+  record.history.forEach((row, r) => {
+    if (row.length === 0) return;
+    let d = "";
+    for (let t = 0; t < row.length; t += step) d += `${d ? "L" : "M"}${r1(xC(t + 1))} ${r1(yC(row[t]))} `;
+    d += `L${r1(xC(row.length))} ${r1(yC(row[row.length - 1]))}`;
+    out += `<g clip-path="url(#${clipId})"><path d="${d}" class="${r === 0 && !wheels ? "lab-curve-c" : r === 0 ? "lab-curve" : "lab-curve-2"}" style="stroke-dasharray:none;stroke-width:2" /></g>`;
+  });
+  out += close();
+  return out;
+}
+
+// ─── The views of the stage ────────────────────────────────────────────────
 
 export const DATEN_ZUFALL_VIEWS: Record<"outcome-event" | "tree-diagram" | "two-way-table" | "frequency-simulation", LabView> = {
   "outcome-event": { render: outcomeEventView },
   "tree-diagram": { render: treeDiagramView },
-  "two-way-table": placeholder,
-  "frequency-simulation": placeholder,
+  "two-way-table": { render: twoWayTableView },
+  "frequency-simulation": { render: frequencySimulationView },
 };
