@@ -5,7 +5,6 @@ import {
   drawSequences,
   EVENT_KINDS,
   eventKindText,
-  fluctuation,
   GAME_SEEDS,
   gameOf,
   gameRestart,
@@ -42,8 +41,14 @@ import {
   wheelLeader,
 } from "../lab/views-daten-zufall";
 import { toleranceOf } from "../exercises/checker";
-import type { ChoiceField, ExerciseTask, Lesson, NumberField, Stage } from "../model/types";
-import { choiceField, numberField, yesNo } from "./helpers";
+import type { ChoiceField, ExerciseTask, LabValues, Lesson, NumberField, Stage } from "../model/types";
+import { choiceField, numberField as plainNumberField, yesNo } from "./helpers";
+
+/** numberField() with every slip value once: when two predicted mistakes give the same number, the first hint is kept. */
+function numberField(label: string, answer: number, unit = "", digits = 2, extra: Partial<NumberField> = {}): NumberField {
+  const slips = extra.slips?.filter((slip, i, all) => all.findIndex((other) => Math.abs(other.value - slip.value) < 1e-9) === i);
+  return plainNumberField(label, answer, unit, digits, slips ? { ...extra, slips } : extra);
+}
 
 const STAGE_ID = "stage-7-daten-zufall";
 /** Both Zweige learn this stage: Zweig I in LB 7, Zweig II/III in LB 6. */
@@ -819,7 +824,7 @@ function anzahlTask(rng: Rng, level: 1 | 2): ExerciseTask {
         }),
         numberField("mit lauter verschiedenen Ziffern:", distinct, "", 0, { slips: [{ value: total, hint: "Jede Ziffer darf nur einmal vorkommen: Wie beim Ziehen ohne Zurücklegen hat jede Stufe einen Ast weniger." }] }),
       ],
-      steps: [`Jeder Ring ist eine Stufe mit 10 Ästen: ${Array(k).fill(10).join(" · ")} = ${total}.`, `Lauter verschiedene Ziffern: Für den 2. Ring bleiben 9 Ziffern, für den 3. noch 8 …: ${factors} = ${distinct}.`, `<strong>${total} Codes, davon ${distinct} mit lauter verschiedenen Ziffern.</strong>`],
+      steps: [`Jeder Ring ist eine Stufe mit 10 Ästen: ${Array(k).fill(10).join(" · ")} = ${fmt(total, 0)}.`, `Lauter verschiedene Ziffern: Für den 2. Ring bleiben 9 Ziffern, für den 3. noch 8 …: ${factors} = ${fmt(distinct, 0)}.`, `<strong>${fmt(total, 0)} Codes, davon ${fmt(distinct, 0)} mit lauter verschiedenen Ziffern.</strong>`],
       meta: { level: 2, context, k, total, second: distinct },
     };
   }
@@ -1057,7 +1062,7 @@ const baumdiagramm: Lesson = {
     options: ["6 Pfade, davon 3", "8 Pfade, davon 3", "8 Pfade, davon 1", "9 Pfade, davon 3"],
     correctIndex: 1,
     explanation:
-      "Jeder Wurf hat 2 Äste: 2 · 2 · 2 = 8 Pfade. Genau zweimal Kopf sind KKZ, KZK und ZKK, also 3. Mit 6 hat jemand 2 + 2 + 2 gerechnet; nur 1 Pfad käme heraus, wenn die Reihenfolge egal wäre.",
+      "Jeder Wurf hat 2 Äste: 2 · 2 · 2 = 8 Pfade. Genau zweimal Kopf sind KKZ, KZK und ZKK, also 3. Mit 6 hat jemand 2 + 2 + 2 gerechnet, mit 9 hat jemand 3 · 3 gerechnet und die Zahl der Würfe mit der Zahl der Äste verwechselt; nur 1 Pfad käme heraus, wenn die Reihenfolge egal wäre.",
   },
   lab: {
     kind: "tree-diagram",
@@ -1579,13 +1584,16 @@ function hBoth(count: number, n: number): string {
 
 /**
  * A percentage field that names the early rounding: who rounds h to two
- * decimals first types 12 % for 7 : 60 ≈ 11,7 %. The slip is added after
- * numberField(), which drops slips within 2 % of the answer, because the
- * field itself only accepts 1 %; it is added only when the field rejects it.
+ * decimals first types 12 % for 7 : 60 ≈ 11,7 %. The percentage fields of
+ * this lesson accept only the rounding to one decimal ({ tolerance: 0 }), so
+ * 48,5 or 49 for 48,67 % is wrong; the slip is added only when the field
+ * rejects the early value.
  */
 function withEarlyRounding(field: NumberField, count: number, n: number): NumberField {
   const early = roundedRatio(count, n, 2) * 100;
   if (Math.abs(early - field.answer) <= toleranceOf(field)) return field;
+  // a value the field already names keeps its first hint
+  if ((field.slips ?? []).some((slip) => Math.abs(slip.value - early) < 1e-9)) return field;
   const hint = `Zu früh gerundet: Rechne ${count} : ${n} ungerundet in Prozent um und runde erst dann auf eine Nachkommastelle.`;
   return { ...field, slips: [...(field.slips ?? []), { value: early, hint }] };
 }
@@ -1602,7 +1610,7 @@ const SERIES: Array<{ text: (n: number, H: number) => string; label: string; ran
 const RUNS = [20, 25, 40, 50, 60, 75, 80, 100, 120, 150, 200, 250, 300, 400, 500];
 
 /** Two series to compare: who did what, and the question with its two answers. */
-const COMPARISONS: Array<{ event: string; text: (n1: number, H1: number, n2: number, H2: number, who: [string, string]) => string; labels: [string, string]; question: string; options: (who: [string, string]) => [string, string]; answer: (better: string) => string; range: [number, number] }> = [
+const COMPARISONS: Array<{ event: string; text: (n1: number, H1: number, n2: number, H2: number, who: [string, string]) => string; labels: [string, string]; question: string; options: (who: [string, string]) => [string, string]; answer: (better: string) => string; trap: (more: number, who: [string, string]) => string; range: [number, number] }> = [
   {
     event: "Gewinn",
     text: (n1, H1, n2, H2) => `Auf dem Schulfest gibt es zwei Glücksräder. Rad A brachte bei ${n1} Drehungen ${H1} Gewinne, Rad B bei ${n2} Drehungen ${H2} Gewinne.`,
@@ -1610,6 +1618,7 @@ const COMPARISONS: Array<{ event: string; text: (n1: number, H1: number, n2: num
     question: "Nach diesen Daten scheint die bessere Gewinnchance zu haben:",
     options: () => ["Rad A", "Rad B"],
     answer: (better) => `Nach diesen Daten scheint ${better} die besseren Gewinnchancen zu haben.`,
+    trap: (more) => `Achtung: Rad ${more === 0 ? "A" : "B"} brachte mehr Gewinne, wurde aber auch öfter gedreht. Entscheidend ist der Anteil.`,
     range: [0.15, 0.45],
   },
   {
@@ -1619,6 +1628,7 @@ const COMPARISONS: Array<{ event: string; text: (n1: number, H1: number, n2: num
     question: "Der Anteil der Gewinne war größer bei der Losbude der",
     options: () => ["8a", "8b"],
     answer: (better) => `Bei der Losbude der ${better} war der Anteil der Gewinne größer.`,
+    trap: (more) => `Achtung: Die Losbude der ${more === 0 ? "8a" : "8b"} hatte mehr Gewinne, aber auch mehr verkaufte Lose. Entscheidend ist der Anteil.`,
     range: [0.15, 0.4],
   },
   {
@@ -1628,6 +1638,7 @@ const COMPARISONS: Array<{ event: string; text: (n1: number, H1: number, n2: num
     question: "Mit der Spitze nach oben landet nach diesen Daten eher:",
     options: () => ["Sorte A", "Sorte B"],
     answer: (better) => `Nach diesen Daten landet ${better} eher mit der Spitze nach oben.`,
+    trap: (more) => `Achtung: Sorte ${more === 0 ? "A" : "B"} landete öfter mit der Spitze nach oben, wurde aber auch öfter geworfen. Entscheidend ist der Anteil.`,
     range: [0.25, 0.55],
   },
   {
@@ -1637,6 +1648,7 @@ const COMPARISONS: Array<{ event: string; text: (n1: number, H1: number, n2: num
     question: "Die relative Häufigkeit der Sechs war größer beim Würfel von",
     options: (who) => [who[0], who[1]],
     answer: (better) => `Beim Würfel von ${better} war die relative Häufigkeit der Sechs größer.`,
+    trap: (more, who) => `Achtung: ${genitive(who[more])} Würfel zeigte mehr Sechsen, wurde aber auch öfter geworfen. Entscheidend ist der Anteil.`,
     range: [0.1, 0.3],
   },
 ];
@@ -1662,7 +1674,7 @@ function relativTask(rng: Rng, level: 1 | 2): ExerciseTask {
             { value: H / (n - H), hint: "Teile durch die Anzahl aller Versuche n, nicht durch die der übrigen Ergebnisse." },
           ],
         }),
-        withEarlyRounding(numberField(`${s.label} in Prozent:`, (100 * H) / n, "%", 1), H, n),
+        withEarlyRounding(numberField(`${s.label} in Prozent:`, (100 * H) / n, "%", 1, { tolerance: 0 }), H, n),
       ],
       steps: [`${s.label} = H : n = ${H} : ${n} = ${fracHtml(H, n)} ${hBoth(H, n)}`, `<strong>${s.label} ${hDecimal(H, n)}; in Prozent: ${s.label} ${hPercent(H, n)}</strong>`],
       meta: { level: 1, ctx, n, H },
@@ -1684,19 +1696,19 @@ function relativTask(rng: Rng, level: 1 | 2): ExerciseTask {
     const who = ctx === 3 ? (rng.shuffle(GIRLS).slice(0, 2) as [string, string]) : (["", ""] as [string, string]);
     const options = cmp.options(who);
     const better = p1 > p2 ? 0 : 1;
-    const labels = ctx === 3 ? [`Würfel von ${who[0]}`, `Würfel von ${who[1]}`] : cmp.labels;
+    const labels = ctx === 3 ? [`${genitive(who[0])} Würfel`, `${genitive(who[1])} Würfel`] : cmp.labels;
     return {
       prompt: `${cmp.text(n1, H1, n2, H2, who)} Berechne für beide die relative Häufigkeit in Prozent und vergleiche.`,
       given: [`${labels[0]}: ${H1} von ${n1}`, `${labels[1]}: ${H2} von ${n2}`],
       fields: [
-        withEarlyRounding(numberField(`${labels[0]}: h(${cmp.event}) in Prozent:`, p1, "%", 1, { slips: [{ value: H1, hint: "Das ist die absolute Häufigkeit. Teile noch durch die Anzahl der Versuche." }] }), H1, n1),
-        withEarlyRounding(numberField(`${labels[1]}: h(${cmp.event}) in Prozent:`, p2, "%", 1, { slips: [{ value: H2, hint: "Das ist die absolute Häufigkeit. Teile noch durch die Anzahl der Versuche." }] }), H2, n2),
+        withEarlyRounding(numberField(`${labels[0]}: h(${cmp.event}) in Prozent:`, p1, "%", 1, { tolerance: 0, slips: [{ value: H1, hint: "Das ist die absolute Häufigkeit. Teile noch durch die Anzahl der Versuche." }] }), H1, n1),
+        withEarlyRounding(numberField(`${labels[1]}: h(${cmp.event}) in Prozent:`, p2, "%", 1, { tolerance: 0, slips: [{ value: H2, hint: "Das ist die absolute Häufigkeit. Teile noch durch die Anzahl der Versuche." }] }), H2, n2),
         choiceField(cmp.question, options, better),
       ],
       steps: [
         `${labels[0]}: h = ${H1} : ${n1} ${hBoth(H1, n1)}`,
         `${labels[1]}: h = ${H2} : ${n2} ${hBoth(H2, n2)}`,
-        trap ? `Achtung: ${H1 > H2 ? labels[0] : labels[1]} hat mehr Treffer, aber auch mehr Versuche. Entscheidend ist der Anteil.` : "Die Versuchsreihen sind verschieden lang; deshalb werden die Anteile verglichen.",
+        trap ? cmp.trap(H1 > H2 ? 0 : 1, who) : "Die Versuchsreihen sind verschieden lang; deshalb werden die Anteile verglichen.",
         `<strong>${cmp.answer(options[better])}</strong>`,
       ],
       meta: { level: 2, ctx, n1, H1, n2, H2, better, trap: trap ? 1 : 0 },
@@ -1748,6 +1760,7 @@ function absolutTask(rng: Rng, level: 1 | 2): ExerciseTask {
           numberField(`Spitze oben insgesamt:`, H, "", 0, { slips: [{ value: p1 + k2, hint: `${p1} % ist ein Anteil, keine Anzahl: Rechne zuerst ${p1} % von ${n1}.` }] }),
           withEarlyRounding(
             numberField("h(Spitze oben) in Prozent:", (100 * H) / N, "%", 1, {
+              tolerance: 0,
               slips: [{ value: (p1 + (100 * k2) / n2) / 2, hint: "Die beiden Prozentsätze darf man nicht einfach mitteln: Die Versuchsreihen sind verschieden lang. Teile alle Treffer durch alle Würfe." }],
             }),
             H,
@@ -1864,6 +1877,20 @@ function summeTask(rng: Rng, level: 1 | 2): ExerciseTask {
   }
 }
 
+/**
+ * Lab goal „gerade Augenzahl“: after at least 300 throws of the normal die the
+ * learner has set h(2) + h(4) + h(6) in whole percent, computed either from
+ * the counts, (H(2) + H(4) + H(6)) : n, or as the sum of the three rounded
+ * shares under the bars (both ways are right and may differ by one percent).
+ */
+function evenShareTyped(v: LabValues): boolean {
+  const r = gameOf(v, 0);
+  if (r.n < 300) return false;
+  const fromCounts = Math.round((100 * (r.counts[1] + r.counts[3] + r.counts[5])) / r.n + 1e-9);
+  const fromBars = Math.round(100 * [1, 3, 5].reduce((s, i) => s + roundedRatio(r.counts[i], r.n, 2), 0));
+  return v.gerade === fromCounts || v.gerade === fromBars;
+}
+
 const haeufigkeiten: Lesson = {
   id: "dz-4-haeufigkeiten",
   stageId: STAGE_ID,
@@ -1881,13 +1908,14 @@ const haeufigkeiten: Lesson = {
       <li>Die relative Häufigkeit liegt immer zwischen 0 und 1, also zwischen 0 % und 100 %: 0, wenn E nie eingetreten ist, 1, wenn E bei jedem Versuch eingetreten ist.</li>
       <li>Die relativen Häufigkeiten aller Ergebnisse ergeben zusammen 1, denn ihre absoluten Häufigkeiten ergeben zusammen n.</li>
       <li>Umgekehrt erhältst du die absolute Häufigkeit aus der relativen: H(E) = h(E) · n.</li>
+      <li>Gehören zu einem Ereignis mehrere Ergebnisse, addierst du ihre absoluten Häufigkeiten: H(gerade Augenzahl) = H(2) + H(4) + H(6). Ebenso ist h(gerade Augenzahl) = h(2) + h(4) + h(6).</li>
     </ul>
     <div class="example"><strong>Beispiel:</strong> Ein Reißnagel wurde 50-mal geworfen: 19-mal landete er mit der Spitze nach oben, 31-mal auf der Seite.<br>
       H(Spitze oben) = 19, h(Spitze oben) = 19 : 50 = ${frac(19, 50)} = 0,38 = 38 %.<br>
       H(Seitenlage) = 31, h(Seitenlage) = 31 : 50 = 0,62 = 62 %.<br>
       Probe: 0,38 + 0,62 = 1.</div>
     <p><strong>Vergleichen:</strong> Versuchsreihen verschiedener Länge vergleichst du nicht mit den absoluten Häufigkeiten. Glücksrad A brachte in 80 Drehungen 22 Gewinne, Glücksrad B in 150 Drehungen 36. B hat mehr Gewinne, aber die relative Häufigkeit ist bei A 22 : 80 = 0,275 = 27,5 %, bei B nur 36 : 150 = 0,24 = 24 %. Nach diesen Daten scheint A die besseren Gewinnchancen zu haben.</p>
-    <p><strong>Viele Versuche:</strong> Bei wenigen Versuchen schwankt die relative Häufigkeit stark; nach 10 Würfen kann h(6) leicht 0 oder 0,4 sein. Im Labor siehst du: Bei langen Versuchsreihen schwankt sie meist viel weniger. Deshalb schätzt man Gewinnchancen aus langen Versuchsreihen ein. In Klasse 9 lernst du, was das mit der Wahrscheinlichkeit zu tun hat.</p>
+    <p><strong>Ausblick auf Klasse 9:</strong> Was die relativen Häufigkeiten sehr langer Versuchsreihen mit der Wahrscheinlichkeit zu tun haben, lernst du in Klasse 9.</p>
     <p><strong>Typische Fehler:</strong> durch die falsche Zahl teilen (n : H statt H : n, oder durch die Zahl der übrigen Ergebnisse statt durch alle Versuche); verschieden lange Versuchsreihen an den absoluten Häufigkeiten vergleichen; Dezimalzahl und Prozent verwechseln: 0,38 sind 38 %, nicht 0,38 %.</p>
     <div class="merke"><strong>Merke:</strong> Die absolute Häufigkeit H(E) zählt, wie oft E eingetreten ist. Die relative Häufigkeit h(E) = H(E) : n liegt zwischen 0 und 1; die relativen Häufigkeiten aller Ergebnisse ergeben 1. Verschieden lange Versuchsreihen vergleichst du mit relativen Häufigkeiten.</div>
   `,
@@ -1908,9 +1936,11 @@ const haeufigkeiten: Lesson = {
     kind: "frequency-simulation",
     title: "Labor: Versuchsreihen mit Würfel, Reißnagel und Glücksrad",
     intro:
-      "Wähle ein Zufallsgerät und führe Versuche durch. Die Säulen zeigen die relativen Häufigkeiten, die Zahl darüber die absolute. Unten siehst du, wie sich die relative Häufigkeit mit jedem Versuch entwickelt. Jedes Gerät behält seine eigene Versuchsreihe, so kannst du zwei Geräte vergleichen.",
+      "Wähle ein Zufallsgerät und führe Versuche durch. Die Säulen zeigen die relativen Häufigkeiten, die Zahl darüber die absolute. Jedes Gerät behält seine eigene Versuchsreihe, so kannst du zwei Geräte vergleichen. Unten siehst du als Ausblick auf Klasse 9, wie sich die relative Häufigkeit von Versuch zu Versuch verändert.",
     params: [
       { type: "choice", key: "spiel", label: "Zufallsgerät", options: GAMES.map((g, value) => ({ value, label: g.name })), value: 0 },
+      // the learner's own result for an Ereignis without a bar of its own
+      { type: "range", key: "gerade", label: "Deine Rechnung: h(gerade Augenzahl)", unit: "%", min: 0, max: 100, step: 1, value: 0, digits: 0, showIf: (v) => v.spiel === 0 },
       {
         type: "choice",
         key: "tipp",
@@ -1952,24 +1982,14 @@ const haeufigkeiten: Lesson = {
         },
       },
       {
-        key: "schwankung",
-        label: "in der zweiten Hälfte der Versuche",
-        compute: (v) => {
-          const r = gameOf(v);
-          const ranges = r.history.map(fluctuation);
-          if (ranges.some((x) => x === null)) return "erst ab 20 Versuchen";
-          const span = (x: [number, number] | null) => (x ? `zwischen ${fmt(x[0], 2)} und ${fmt(x[1], 2)}` : "");
-          return v.spiel === 3 ? `h(Gewinn A) ${span(ranges[0])}, h(Gewinn B) ${span(ranges[1])}` : `h lag ${span(ranges[0])}`;
-        },
-      },
-      {
         key: "vergleich",
         label: "Vergleich",
         compute: (v) => {
           if (v.spiel === 2) return "h(Spitze oben) + h(Seitenlage) = 1";
+          // names no winner: deciding from the two relative frequencies is the learner's part
           if (v.spiel === 3) {
-            const leader = wheelLeader(gameOf(v));
-            return gameOf(v).n === 0 ? "noch keine Daten" : leader === 0 ? "beide Räder gleich oft" : `bisher gewinnt Rad ${leader === 1 ? "A" : "B"} öfter`;
+            const n = gameOf(v).n;
+            return n === 0 ? "noch keine Daten" : `beide Räder je ${n === 1 ? "einmal" : `${n}-mal`} gedreht: Vergleiche h(Gewinn A) mit h(Gewinn B).`;
           }
           const part = (g: number) => {
             const r = gameOf(v, g);
@@ -1987,14 +2007,9 @@ const haeufigkeiten: Lesson = {
     ],
     goals: [
       {
-        id: "sechs",
-        text: "Würfle mit dem normalen Spielwürfel mindestens 300-mal und beobachte im Verlauf, wie h(6) immer weniger schwankt. Am Ende liegt h(6) zwischen 0,12 und 0,22.",
-        // on the rounded value the readouts show, so that "h(6) ≈ 0,22" never leaves the goal open
-        check: (v) => {
-          const r = gameOf(v, 0);
-          const h = r.n > 0 ? roundedRatio(r.counts[5], r.n, 2) : 0;
-          return r.n >= 300 && h >= 0.12 - 1e-9 && h <= 0.22 + 1e-9;
-        },
+        id: "gerade",
+        text: "Das Ereignis „gerade Augenzahl“ hat keine eigene Säule. Würfle mit dem normalen Spielwürfel mindestens 300-mal, bestimme aus den Säulen H(gerade Augenzahl) und h(gerade Augenzahl) und stelle h in Prozent ein, auf ganze Prozent gerundet.",
+        check: (v) => evenShareTyped(v),
       },
       {
         id: "fundbuero",

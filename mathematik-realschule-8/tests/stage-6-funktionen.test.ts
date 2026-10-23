@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import { DESCRIPTIONS, RELATION_OPTIONS, SITUATIONS, STAGE_FUNKTIONEN, VERTICAL_LINE_ANSWER } from "../src/curriculum/stage-6-funktionen";
 import { checkTask } from "../src/exercises/checker";
 import { createRng, seedFrom } from "../src/exercises/rng";
+import { labView } from "../src/lab/visuals";
 import { computeReadouts, defaultLabValues, enumerateLabGrid } from "../src/lab/engine";
 import { analyseRelation, areaDet, breakEven, domainOf, familyIntersection, familyNormal, lineThroughPoints, relationPoints, valueSet, zerosInDomain } from "../src/lab/views-funktionen";
 import type { ChoiceField, DifficultyLevel, ExerciseTask, LabDefinition, LabValues } from "../src/model/types";
@@ -829,5 +830,156 @@ describe("Labore der Etappe 6", () => {
     const best = inside.reduce((a, b) => (areaDet(b as LabValues) > areaDet(a as LabValues) ? b : a));
     expect(best.x).toBe(3);
     close(areaDet(best as LabValues) / 2, 6.25);
+  });
+});
+
+describe("Etappe 6 nach dem Abschlussreview", () => {
+  const texts = (task: ExerciseTask) =>
+    [task.prompt, ...task.given, task.formulaHint ?? "", ...task.steps, ...task.fields.flatMap((f) => (f.kind === "number" ? [f.label, ...(f.slips ?? []).map((s) => s.hint)] : [f.label, ...f.options]))]
+      .map(plain)
+      .join(" \n ");
+  const allTasks = () => STAGE_FUNKTIONEN.lessons.flatMap((l) => l.exercises.flatMap((g) => ([1, 2] as const).flatMap((level) => tasks(l.id, g.id, level).map((task) => ({ where: `${l.id}/${g.id} L${level}`, task })))));
+
+  it("writes numbers and signs as the package does: no „y =−2“, „6 · −0,5x“, „f(0) = −0 − 1“ or „km pro h“", () => {
+    for (const { where, task } of allTasks()) {
+      const text = texts(task);
+      expect(text, where).not.toMatch(/=−|· −|(^|[^\d,])−0(?![,\d])|km pro h/);
+    }
+  });
+
+  it("names each predicted wrong value once per field", () => {
+    for (const { where, task } of allTasks())
+      for (const field of task.fields) {
+        if (field.kind !== "number" || !field.slips) continue;
+        const values = field.slips.map((s) => s.value.toFixed(9));
+        expect(new Set(values).size, `${where}: ${field.label}`).toBe(values.length);
+      }
+  });
+
+  it("6.1 relates only Quadratzahlen to their roots: no square root of a non-square (M9)", () => {
+    const roots = SITUATIONS.filter((s) => /Quadrat sie ist/.test(s.text));
+    expect(roots.length).toBeGreaterThan(0);
+    for (const s of roots) expect(s.text).toMatch(/Quadratzahl/);
+  });
+
+  it("6.2 and 6.3, shared with Zweig II/III, call the graph of a linear function no „Gerade“", () => {
+    for (const id of ["fu-2-darstellungen", "fu-3-werte-nullstellen"]) {
+      const l = lesson(id);
+      const own = plain([l.explanationHtml, l.quiz.question, ...l.quiz.options, l.quiz.explanation, l.lab.intro, ...l.lab.goals.map((g) => g.text), ...l.formulas.map((f) => `${f.name} ${f.html} ${f.quantities}`)].join(" "));
+      expect(own, id).not.toMatch(/Gerade/);
+      for (const g of l.exercises) for (const level of [1, 2] as const) for (const task of tasks(id, g.id, level)) expect(texts(task), `${id}/${g.id}`).not.toMatch(/Gerade/);
+    }
+  });
+
+  it("6.3 does not solve a Laborauftrag in its explanation: no interval there reaches „eine-nullstelle“", () => {
+    const l = lesson("fu-3-werte-nullstellen");
+    const goal = l.lab.goals.find((g) => g.id === "eine-nullstelle")!;
+    const intervals = [...plain(l.explanationHtml).matchAll(/\[(−?[\d,]+); (−?[\d,]+)\]/g)].map((m) => m.slice(1, 3).map((s) => Number(s.replace("−", "-").replace(",", "."))));
+    expect(intervals.length).toBeGreaterThan(2);
+    for (const [a, b] of intervals) {
+      const v = { ...defaultLabValues(l.lab), f: 2, a, b };
+      expect(goal.check(v, computeReadouts(l.lab, v)), `[${a}; ${b}]`).toBe(false);
+    }
+  });
+
+  it("6.3 Level 2 gives the data of the text, not a sentence about them", () => {
+    for (const task of tasks("fu-3-werte-nullstellen", "wertemenge", 2)) {
+      expect(task.given.length, task.prompt).toBe(3);
+      for (const line of task.given) expect(line, task.prompt).toMatch(/\d/);
+      expect(task.given.join(" ")).not.toMatch(/aus dem Text/);
+    }
+  });
+
+  it("6.4 Punktprobe Level 1: the hint names the coordinate that is missing", () => {
+    const both = [0, 0];
+    for (const task of tasks("fu-4-ursprungsgeraden", "punktprobe", 1)) {
+      const { askY } = meta(task);
+      expect(task.formulaHint, task.prompt).toContain(askY ? "Fehlende y-Koordinate: x in y = m · x einsetzen" : "Fehlende x-Koordinate: y = m · x nach x lösen");
+      expect(task.formulaHint).not.toContain(askY ? "x-Koordinate" : "y-Koordinate");
+      both[askY ? 1 : 0] += 1;
+    }
+    expect(both.every((n) => n > 60), `${both}`).toBe(true);
+  });
+
+  it("6.5 explains m₁ · m₂ = −1 without a Drehung (Zweig II/III never had it), with the tipped slope triangle", () => {
+    const l = lesson("fu-5-senkrecht");
+    const outsideNote = plain(l.explanationHtml).replace(/\(Zweig I [^)]*\)/g, "");
+    expect(outsideNote).not.toMatch(/Drehung|Drehst|\bgedreht\b/);
+    expect(outsideNote).toMatch(/Katheten/);
+    expect(outsideNote).toMatch(/gekippt|Kippe/);
+    expect(plain(l.lab.intro)).not.toMatch(/Drehung|\bgedreht\b|90°/);
+    const { v, r } = at(l.lab, {});
+    expect(labView(l.lab.kind).render(v, r)).not.toMatch(/gedreht/);
+  });
+
+  it("6.5 Level 2: a garden plan, the fence met at another x than the bench", () => {
+    let same = 0;
+    for (let i = 0; i < 1000; i++) {
+      const task = lesson("fu-5-senkrecht").exercises.find((e) => e.id === "senkrecht-m")!.make(createRng(seedFrom(`fence:${i}`)), 2);
+      const { a, b, qx, qy, xR } = meta(task);
+      if (xR === qx) same += 1;
+      // R lies on h and on the fence x = xR
+      const mh = num(task, 0);
+      close(mh * (b / a), -1);
+      close(num(task, 2), mh * xR);
+      expect(task.prompt).toContain("Schulgarten");
+      expect(qx === 0 && qy === 0).toBe(false);
+    }
+    expect(same).toBe(0);
+  });
+
+  it("6.6 Level 2: g through a point on the y-axis and another lattice point, its Nullstelle and the meeting point with y = c", () => {
+    const first = [0, 0];
+    for (const task of tasks("fu-6-geraden", "zeichnen", 2)) {
+      const { p, q, t, x0, px, py, c, xS, axisFirst } = meta(task);
+      const m = p / q;
+      first[axisFirst] += 1;
+      // both points lie on g, the one on the y-axis gives t
+      close(m * px + t, py);
+      expect(px).not.toBe(0);
+      expect(py, "P is not the Nullstelle").not.toBe(0);
+      expect(task.given).toContain(`Q(0 | ${de(t)})`);
+      close(num(task, 0), (py - t) / px);
+      expect(num(task, 1)).toBe(t);
+      close(m * num(task, 2) + t, 0);
+      close(num(task, 2), x0);
+      // S on g and on y = c, a new point
+      close(m * num(task, 3) + t, c);
+      close(num(task, 3), xS);
+      expect(c).not.toBe(0);
+      expect(c).not.toBe(t);
+      expect(xS).not.toBe(px);
+      expect(task.given).toContain(`y = ${de(c)}`);
+    }
+    expect(first.every((n) => n > 60), `${first}`).toBe(true);
+  });
+
+  it("6.10 Level 1: A, B, C(D) always counterclockwise; a clockwise order only with P, Q, R (S), and real figures", () => {
+    let clockwise = 0;
+    for (let i = 0; i < 1000; i++) {
+      const task = lesson("fu-10-flaechen").exercises.find((e) => e.id === "flaeche-det")!.make(createRng(seedFrom(`orient:${i}`)), 1);
+      const { ax, ay, bx, by, cx, cy } = meta(task);
+      const [ux, uy, wx, wy] = [bx - ax, by - ay, cx - ax, cy - ay];
+      const D = ux * wy - uy * wx;
+      expect(num(task, 0)).toBe(D);
+      const names = task.given.map((g) => g.charAt(0)).join("");
+      if (D < 0) {
+        expect(names, task.prompt).toMatch(/^PQ[RS]$/);
+        expect(plain(task.prompt)).not.toMatch(/\b[ABCD]\(/);
+        clockwise += 1;
+      } else expect(names, task.prompt).toMatch(/^AB[CD]$/);
+      expect(Math.abs(D), task.prompt).toBeGreaterThanOrEqual(4);
+      expect(Math.abs(D) / (Math.hypot(ux, uy) * Math.hypot(wx, wy)), task.prompt).toBeGreaterThanOrEqual(0.25);
+    }
+    // the sign effect is still practised
+    expect(clockwise).toBeGreaterThan(50);
+  });
+
+  it("6.10 Level 1: the prompt gives no domain bound, because that bound is what the second question asks", () => {
+    for (const task of tasks("fu-10-flaechen", "flaeche-x", 1)) {
+      expect(task.prompt).not.toMatch(/für x|&gt;|&lt;/);
+      const { xStar } = meta(task);
+      expect(num(task, 1)).toBe(xStar);
+    }
   });
 });

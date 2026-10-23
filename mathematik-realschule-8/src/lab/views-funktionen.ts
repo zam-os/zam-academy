@@ -719,7 +719,7 @@ function perpendicular(v: LabValues): string {
     lines.push(["m₁ · m₂ =", "lab-text-muted"], [ratioApprox(product), product[0] === -product[1] ? "lab-text lab-text-big lab-text-ok" : "lab-text lab-text-big"]);
   } else lines.push(["m₁ · m₂ nicht", "lab-text-muted"], ["berechenbar", "lab-text-muted"]);
   lines.push(["", ""], [angle === null ? "kein Winkel" : `Winkel: ${fmt(angle, 1)}°`, angle === 90 ? "lab-text lab-text-ok" : "lab-text"]);
-  lines.push(["", ""], ["Blau: Steigungsdreieck von g₁", "lab-text-small"], ["lila: um 90° um O gedreht", "lab-text-small"]);
+  lines.push(["", ""], ["Blau: Steigungsdreieck von g₁", "lab-text-small"], ["lila: um O gekippt,", "lab-text-small"], ["Katheten vertauscht", "lab-text-small"]);
   out += sidePanel(lines, SQUARE_PANEL);
   out += handle("P1", P1.x, P1.y, "Punkt P₁ der Geraden g₁", "lab-handle lab-handle-a");
   out += handle("P2", P2.x, P2.y, "Punkt P₂ der Geraden g₂", "lab-handle lab-handle-b");
