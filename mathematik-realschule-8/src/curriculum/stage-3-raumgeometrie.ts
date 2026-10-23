@@ -287,7 +287,7 @@ const symmetrischeKoerper: Lesson = {
   whyItMatters:
     "Verpackungen, Kristalle, Vasen und Schraubenmuttern sind symmetrisch gebaut. Wer ihre Symmetrieebenen und Drehachsen erkennt, beschreibt einen Körper mit wenigen Worten und sieht zum Beispiel, warum ein Schraubenschlüssel in sechs Lagen auf die Mutter passt.",
   explanationHtml: `
-    <p><strong>Wiederholung aus M6 und Etappe 2:</strong> Eine ebene Figur ist achsensymmetrisch, wenn die Spiegelung an einer Geraden sie auf sich selbst abbildet, drehsymmetrisch, wenn das eine Drehung um einen Winkel unter 360° tut, und punktsymmetrisch, wenn das die Punktspiegelung an einem Zentrum Z tut. Bei Körpern gibt es dieselben drei Symmetrien, nur im Raum:</p>
+    <p><strong>Wiederholung aus M6 und Lektion 2.2:</strong> Eine ebene Figur ist achsensymmetrisch, wenn die Spiegelung an einer Geraden sie auf sich selbst abbildet, drehsymmetrisch, wenn das eine Drehung um einen Winkel unter 360° tut, und punktsymmetrisch, wenn das die Punktspiegelung an einem Zentrum Z tut. Bei Körpern gibt es dieselben drei Symmetrien, nur im Raum:</p>
     <ul>
       <li><strong>Symmetrieebene:</strong> Spiegelst du den Körper an einer Ebene und er fällt genau auf sich selbst, ist die Ebene eine Symmetrieebene. Sie zerlegt ihn in zwei spiegelgleiche Hälften: Hältst du eine Hälfte an einen Spiegel, siehst du wieder den ganzen Körper.</li>
       <li><strong>Symmetrieachse:</strong> Drehst du den Körper um eine Gerade um einen Winkel zwischen 0° und 360° und er fällt auf sich selbst, ist die Gerade eine Symmetrieachse (Drehachse). Fällt er bei einer ganzen Umdrehung n-mal auf sich, ist der kleinste Drehwinkel α = 360° : n, etwa 180° (zweimal), 120° (dreimal) oder 90° (viermal).</li>
@@ -1025,6 +1025,7 @@ const raumkoordinaten: Lesson = {
           const distance = Math.abs(coord[plane]);
           const otherSlips = [0, 1, 2]
             .filter((i) => i !== plane && Math.abs(coord[i]) !== distance)
+            .filter((i, k, all) => all.findIndex((j) => Math.abs(coord[j]) === Math.abs(coord[i])) === k)
             .map((i) => ({ value: Math.abs(coord[i]), hint: `Der Abstand von der ${planeName}-Ebene hängt nur von der Koordinate ab, die nicht in dieser Ebene liegt: hier ${letters[plane]}.` }));
           return {
             prompt: `Gegeben ist der Punkt P${point3(x, y, z)}. Wo liegt P? Wie weit ist P von der ${planeName}-Ebene entfernt?`,
@@ -1595,7 +1596,7 @@ export const ANGLE_CASES: Array<{ body: string; name: string; where: string; val
   { body: "einem Quader ABCDEFGH (6 cm × 4 cm × 3 cm)", name: "∢BAD", where: "zwischen der Kante [AB] auf s und der Tiefenkante [AD]", value: 90, picture: "kleiner", why: "Die Grundfläche ist ein Rechteck: rechter Winkel. Im Bild läuft [AD] unter ω = 45° zu s." },
   { body: "einem Quader ABCDEFGH (6 cm × 4 cm × 3 cm)", name: "∢CBA", where: "zwischen der Tiefenkante [BC] und der Kante [BA]", value: 90, picture: "größer", why: "Die Grundfläche ist ein Rechteck: rechter Winkel. Im Bild ist er 180° − 45° = 135° groß." },
   { body: "einem Quader ABCDEFGH (6 cm × 4 cm × 3 cm)", name: "∢CBF", where: "zwischen der Tiefenkante [BC] und der senkrechten Kante [BF]", value: 90, picture: "kleiner", why: "Die rechte Seitenfläche ist ein Rechteck: rechter Winkel. Im Bild steht [BF] senkrecht und [BC] läuft unter 45°: 90° − 45° = 45°." },
-  { body: "einer quadratischen Pyramide ABCDS, deren acht Kanten alle 4 cm lang sind", name: "∢BAS", where: "in der Seitenfläche ABS bei der Ecke A", value: 60, picture: "kleiner", why: "Die Seitenfläche hat drei gleich lange Seiten: ein gleichseitiges Dreieck mit lauter 60°-Winkeln." },
+  { body: "einer quadratischen Pyramide ABCDS mit acht gleich langen Kanten von je 4 cm", name: "∢BAS", where: "in der Seitenfläche ABS bei der Ecke A", value: 60, picture: "kleiner", why: "Die Seitenfläche hat drei gleich lange Seiten: ein gleichseitiges Dreieck mit lauter 60°-Winkeln." },
   { body: "einem Würfel ABCDEFGH mit der Kantenlänge 4 cm", name: "∢ACB", where: "zwischen der Flächendiagonale [CA] und der Tiefenkante [CB]", value: 45, picture: "kleiner", why: "Im Quadrat ABCD halbiert die Diagonale den rechten Winkel bei C: 45°." },
   { body: "einem Quader ABCDEFGH (6 cm × 4 cm × 3 cm)", name: "∢AEH", where: "zwischen der senkrechten Kante [EA] und der Tiefenkante [EH]", value: 90, picture: "größer", why: "Die linke Seitenfläche ist ein Rechteck: rechter Winkel. Im Bild ist er 90° + 45° = 135° groß." },
 ];

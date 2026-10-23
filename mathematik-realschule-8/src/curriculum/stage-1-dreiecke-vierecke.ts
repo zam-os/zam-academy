@@ -2050,7 +2050,7 @@ const viereckskonstruktion: Lesson = {
   whyItMatters:
     "Ob Beet, Drachen oder Werkstück: Erst wenn du weißt, welche Stücke ein Viereck festlegen, kannst du es maßstäblich zeichnen oder in einer Geometriesoftware so konstruieren, dass es beim Ziehen nicht auseinanderfällt.",
   explanationHtml: `
-    <p><strong>Wiederholung:</strong> Dreiecke konstruierst du aus drei passenden Stücken (SSS, SWS, WSW, SsW). Ein Viereck zerlegst du meist mit einer Diagonale in zwei Dreiecke und konstruierst eines nach dem anderen. Die Parallelverschiebung kennst du aus M7: P' = P ⊕ ${vn("v")}.</p>
+    <p><strong>Wiederholung aus M7 (Zweig I) und den Lektionen 1.2 und 1.3 (Zweig II/III):</strong> Dreiecke konstruierst du aus drei passenden Stücken (SSS, SWS, WSW, SsW). Ein Viereck zerlegst du meist mit einer Diagonale in zwei Dreiecke und konstruierst eines nach dem anderen. Die Parallelverschiebung kennst du aus M7: P' = P ⊕ ${vn("v")}.</p>
     <p><strong>Wie viele Stücke braucht man?</strong> Ein allgemeines Viereck ist erst durch fünf Stücke festgelegt, zum Beispiel durch die Diagonale [AC] und je zwei weitere Seiten für die Dreiecke ABC und ACD. Besondere Vierecke brauchen weniger, weil ihre Eigenschaften Stücke liefern: das Quadrat eines, Rechteck und Raute zwei, Parallelogramm, Drachenviereck und gleichschenkliges Trapez drei, ein Trapez vier.</p>
     <ul>
       <li><strong>Parallelogramm aus a, b und α:</strong> Dreieck ABD nach SWS (${len("AB")} = a, ${len("AD")} = b, α dazwischen). C ist der Schnittpunkt der Parallelen zu AB durch D und der Parallelen zu AD durch B, oder C = B ⊕ ${vn("AD")}.</li>

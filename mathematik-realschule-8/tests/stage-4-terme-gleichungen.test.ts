@@ -732,7 +732,11 @@ describe("Aufgaben der Etappe 4 rechnen richtig (4.7 bis 4.9)", () => {
         } else if (m.kind === 2) {
           expect(m.baseB + m.perB * m.from).toBeLessThan(m.baseA + m.perA * m.from);
           expect(m.baseB + m.perB * (m.from - 1)).toBeGreaterThanOrEqual(m.baseA + m.perA * (m.from - 1));
-          expect(choice(task, 0)).toBe(m.baseA < m.baseB ? 0 : 1);
+          // the tariff with the smaller Grundgebühr (baseA, perA) is called A or B; the right option names it
+          expect(m.baseA).toBeLessThan(m.baseB);
+          expect(choice(task, 0)).toBe(m.lowIsA ? 0 : 1);
+          expect(task.given[m.lowIsA ? 0 : 1]).toContain(`${m.perA} ct/min`);
+          expect(task.fields[1].label).toBe(`Tarif ${m.lowIsA ? "B" : "A"} ist günstiger ab`);
           expect(num(task, 1)).toBe(m.from);
         } else if (m.kind === 4) {
           expect(m.joinB + m.perB * m.from).toBeLessThan(m.joinA + m.perA * m.from);

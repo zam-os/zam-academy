@@ -426,8 +426,8 @@ const terme: Lesson = {
                 { value: (c1 * k * c2) / c3, hint: `Die Klammer hoch ${k}: Die Zahl in der Klammer wird mit ${k} potenziert, nicht mit ${k} multipliziert.` },
                 { value: (c1 * c2) / c3, hint: `Auch die Zahl in der Klammer wird potenziert: (${fmt(c1)})${k === 2 ? "²" : "³"} = ${fmt(c1 ** k)}.` },
               ],
-              u: [{ value: m1 + k + m2 - m3, hint: `Potenz einer Potenz: (${u}^m)^${k} = ${u}^(m · ${k}). Die Exponenten werden multipliziert.` }],
-              w: [{ value: n1 + k + n2 - n3, hint: `Potenz einer Potenz: (${w}^n)^${k} = ${w}^(n · ${k}). Die Exponenten werden multipliziert.` }],
+              u: [{ value: m1 + k + m2 - m3, hint: `Potenz einer Potenz: Die Exponenten werden multipliziert, nicht addiert, zum Beispiel (${u}²)³ = ${u}⁶.` }],
+              w: [{ value: n1 + k + n2 - n3, hint: `Potenz einer Potenz: Die Exponenten werden multipliziert, nicht addiert, zum Beispiel (${w}²)³ = ${w}⁶.` }],
             }),
             steps: [
               `Klammer hoch ${k}: Jeder Faktor wird potenziert: (${monoHtml(c1, mono2(u, w, m1, n1))})<sup>${k}</sup> = ${c1 < 0 ? `(${fmt(c1)})` : fmt(c1)}<sup>${k}</sup> · ${u}<sup>${m1} · ${k}</sup> · ${w}<sup>${n1} · ${k}</sup> = ${powered}`,
@@ -1111,7 +1111,7 @@ const faktorisieren: Lesson = {
   tracks: ["I", "II_III"],
   lehrplan: `${LP}: Faktorisieren`,
   whyItMatters:
-    "Ein Produkt verrät mehr als eine Summe: An 2(x + 3)(x − 3) siehst du sofort, wann der Term null wird, und Bruchterme in Etappe 5 kürzt du nur in faktorisierter Form. Die quadratische Ergänzung der nächsten Lektion beruht darauf, ein vollständiges Quadrat zu erkennen.",
+    "Ein Produkt verrät mehr als eine Summe: An 2(x + 3)(x − 3) siehst du sofort, wann der Term null wird, und in Lektion 5.2 bestimmst du die Definitionsmenge eines Bruchterms, indem du seinen Nenner in Faktoren zerlegst. Die quadratische Ergänzung der nächsten Lektion beruht darauf, ein vollständiges Quadrat zu erkennen.",
   explanationHtml: `
     <p><strong>Faktorisieren</strong> heißt, eine Summe als Produkt zu schreiben. Es ist die Umkehrung des Ausmultiplizierens. Zwei Werkzeuge kennst du schon: das Distributivgesetz und die binomischen Formeln, beide rückwärts gelesen.</p>
     <p><strong>1. Ausklammern:</strong> Suche den größten gemeinsamen Faktor aller Glieder: den ggT der Zahlen und jede Variable, die in allen Gliedern vorkommt, mit ihrem kleinsten Exponenten. Teile dann jedes Glied durch diesen Faktor.</p>
@@ -1537,7 +1537,7 @@ const extremwerte: Lesson = {
             given: [`T(x) = ${shown}`, `T<sub>min</sub> = ${fmt(m)}`],
             formulaHint: `x<sup>2</sup> + bx + c = (x + ${frac("b", "2")})<sup>2</sup> + c − (${frac("b", "2")})<sup>2</sup>, also T<sub>min</sub> = c − (${frac("b", "2")})<sup>2</sup>`,
             fields: [
-              numberField("c =", c, "", 2, { slips: [{ value: m - d * d, hint: "Die Ergänzung wird abgezogen; c muss sie ausgleichen: c = T_min + (b : 2)²." }, { value: m, hint: "c ist nicht der kleinste Wert: Die Ergänzung zieht noch etwas ab." }] }),
+              numberField("c =", c, "", 2, { slips: [{ value: m - d * d, hint: "Die Ergänzung wird abgezogen; c muss sie ausgleichen: c = Tₘᵢₙ + (b : 2)²." }, { value: m, hint: "c ist nicht der kleinste Wert: Die Ergänzung zieht noch etwas ab." }] }),
               numberField("x =", d, "", 2, { slips: [{ value: -d, hint: `Achte auf das Vorzeichen: ${d > 0 ? `(x − ${d})²` : `(x + ${-d})²`} ist für x = ${fmt(d)} null.` }] }),
             ],
             steps: [
@@ -2769,21 +2769,30 @@ const ungleichungen: Lesson = {
           const perB = perA - rng.pick([3, 4, 5, 6, 7]);
           const g = (baseB - baseA) / (perA - perB);
           const from = integerEdge(2, g);
-          const tariffA = baseA === 0 ? `Tarif A hat keine Grundgebühr und kostet ${perA} ct pro Minute` : `Tarif A kostet ${euro(baseA)} € Grundgebühr im Monat und ${perA} ct pro Minute`;
+          // the tariff with the smaller Grundgebühr is A or B, so that the right option does not always sit first
+          const lowIsA = rng.next() < 0.5;
+          const low = lowIsA ? "A" : "B";
+          const high = lowIsA ? "B" : "A";
+          const say = (name: string, base: number, per: number) =>
+            base === 0 ? `Tarif ${name} hat keine Grundgebühr und kostet ${per} ct pro Minute` : `Tarif ${name} kostet ${euro(base)} € Grundgebühr im Monat und ${per} ct pro Minute`;
+          const line = (name: string, base: number, per: number) => `${name}: ${base === 0 ? "" : `${euro(base)} € + `}${per} ct/min`;
+          const [first, second] = lowIsA
+            ? [say("A", baseA, perA), say("B", baseB, perB)]
+            : [say("A", baseB, perB), say("B", baseA, perA)];
           return {
-            prompt: `${tariffA}, Tarif B ${euro(baseB)} € Grundgebühr und ${perB} ct pro Minute. Welcher Tarif ist für wenige Minuten günstiger? Ab wie vielen Minuten im Monat ist Tarif B günstiger als Tarif A?`,
-            given: [`A: ${baseA === 0 ? "" : `${euro(baseA)} € + `}${perA} ct/min`, `B: ${euro(baseB)} € + ${perB} ct/min`],
+            prompt: `${first}, ${second.replace(/^Tarif B kostet /, "Tarif B ")}. Welcher Tarif ist für wenige Minuten günstiger? Ab wie vielen Minuten im Monat ist Tarif ${high} günstiger als Tarif ${low}?`,
+            given: lowIsA ? [line("A", baseA, perA), line("B", baseB, perB)] : [line("A", baseB, perB), line("B", baseA, perA)],
             fields: [
-              choiceField("Für wenige Minuten günstiger:", ["Tarif A", "Tarif B"], 0),
-              exactField("Tarif B ist günstiger ab", from, Number.isInteger(g) ? [{ value: g, hint: `Bei genau ${g} Minuten kosten beide gleich viel. „Günstiger“ heißt echt kleiner.` }] : [{ value: Math.floor(g), hint: "Bei dieser Minutenzahl ist Tarif B noch nicht günstiger: aufrunden." }], "Minuten"),
+              choiceField("Für wenige Minuten günstiger:", ["Tarif A", "Tarif B"], lowIsA ? 0 : 1),
+              exactField(`Tarif ${high} ist günstiger ab`, from, Number.isInteger(g) ? [{ value: g, hint: `Bei genau ${g} Minuten kosten beide gleich viel. „Günstiger“ heißt echt kleiner.` }] : [{ value: Math.floor(g), hint: `Bei dieser Minutenzahl ist Tarif ${high} noch nicht günstiger: aufrunden.` }], "Minuten"),
             ],
             steps: [
-              `x sei die Zahl der Minuten. Tarif B günstiger: ${fmt(baseB / 100)} + ${fmt(perB / 100)}x &lt; ${baseA === 0 ? "" : `${fmt(baseA / 100)} + `}${fmt(perA / 100)}x   | − ${fmt(perA / 100)}x − ${fmt(baseB / 100)}`,
+              `x sei die Zahl der Minuten. Tarif ${high} günstiger: ${fmt(baseB / 100)} + ${fmt(perB / 100)}x &lt; ${baseA === 0 ? "" : `${fmt(baseA / 100)} + `}${fmt(perA / 100)}x   | − ${fmt(perA / 100)}x − ${fmt(baseB / 100)}`,
               `${fmt((perB - perA) / 100)}x &lt; ${fmt((baseA - baseB) / 100)}   | : (${fmt((perB - perA) / 100)}), Zeichen umdrehen: x &gt; ${boundText(g)}`,
-              `Für wenige Minuten ist A günstiger, weil ${baseA === 0 ? "es dort keine Grundgebühr gibt" : "seine Grundgebühr kleiner ist"}.`,
-              `<strong>Ab ${from} Minuten im Monat ist Tarif B günstiger.</strong>`,
+              `Für wenige Minuten ist ${low} günstiger, weil ${baseA === 0 ? "es dort keine Grundgebühr gibt" : "seine Grundgebühr kleiner ist"}.`,
+              `<strong>Ab ${from} Minuten im Monat ist Tarif ${high} günstiger.</strong>`,
             ],
-            meta: { kind: 2, baseA, baseB, perA, perB, from },
+            meta: { kind: 2, baseA, baseB, perA, perB, from, lowIsA: lowIsA ? 1 : 0 },
           };
         }
         // a season ticket for the pool
