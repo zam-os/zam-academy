@@ -1,0 +1,493 @@
+{
+  "schema": 1,
+  "checked": "2026-10-23",
+  "curriculum": {
+    "I": "https://www.lehrplanplus.bayern.de/fachlehrplan/realschule/8/physik/wpfg1",
+    "II_III": "https://www.lehrplanplus.bayern.de/fachlehrplan/realschule/8/physik/wpfg2-3"
+  },
+  "curriculum_text": "Live-Fassung von lehrplanplus.bayern.de, abgerufen am 23. Oktober 2026; die Kompetenzerwartungen stehen wörtlich in den Zeilen (weiche Trennstriche entfernt).",
+  "school_type": "realschule",
+  "grade": 8,
+  "subject": "physik",
+  "scope": "all-official-learning-areas",
+  "learning_areas": [
+    {
+      "track": "II_III",
+      "lb": 1,
+      "title": "Mechanik",
+      "hours": 22
+    },
+    {
+      "track": "II_III",
+      "lb": 2,
+      "title": "Optik",
+      "hours": 14
+    },
+    {
+      "track": "II_III",
+      "lb": 3,
+      "title": "Magnetismus und Elektrizitätslehre",
+      "hours": 20
+    },
+    {
+      "track": "I",
+      "lb": 1,
+      "title": "Mechanik und Energie",
+      "hours": 20
+    },
+    {
+      "track": "I",
+      "lb": 2,
+      "title": "Wärmelehre",
+      "hours": 15
+    },
+    {
+      "track": "I",
+      "lb": 3,
+      "title": "Elektrizitätslehre",
+      "hours": 15
+    },
+    {
+      "track": "I",
+      "lb": 4,
+      "title": "Wahlbereich: Astronomie oder Akustik",
+      "hours": 6
+    }
+  ],
+  "optional_lessons": [],
+  "elective_lessons": [
+    "en-3-flaschenzug",
+    "ak-1-schall",
+    "ak-2-ausbreitung",
+    "as-1-weltbilder",
+    "as-2-sonnensystem"
+  ],
+  "scope_note": "Zweig II/III hat drei Lernbereiche (Mechanik, Optik, Magnetismus und Elektrizitätslehre), Zweig I vier (Mechanik und Energie, Wärmelehre, Elektrizitätslehre, Wahlbereich). Im Wahlbereich ist einer der Teilbereiche 4.1 Astronomie und 4.2 Akustik für den Unterricht auszuwählen; die App bietet beide an. Der Lehrplan verlangt „entweder Flaschenzug oder Hebel“; die App bietet beide an, der Flaschenzug zählt nicht in den Nenner. Wahllektionen zählen nicht in den Fortschrittsnenner.",
+  "rows": [
+    {
+      "track": "II_III",
+      "lb": 1,
+      "competence": "verwenden geeignete Messgeräte zur Messung der Grundgrößen Länge und Zeit. Dabei reflektieren sie die Angabe ihrer Messergebnisse hinsichtlich physikalischer Sinnhaftigkeit.",
+      "lessons": [
+        "kr-1-messen"
+      ],
+      "status": "implemented",
+      "evidence": "Lineal-Labor mit Ablesefehler und relativem Fehler; Aufgaben zu Mittelwert, Umrechnen und Schichtdicke einzelner Blätter; Plausibilitätsfrage in der Einleitung."
+    },
+    {
+      "track": "II_III",
+      "lb": 1,
+      "competence": "formulieren Vermutungen zum Zusammenhang von zurückgelegtem Weg in Abhängigkeit von der benötigten Zeit bei (geradlinig) gleichförmigen Bewegungen, führen angeleitet und begleitet Experimente durch und werten diese aus. Sie modellieren den physikalischen Zusammenhang als direkte Proportionalität und präsentieren ihr Ergebnis.",
+      "lessons": [
+        "kr-2-geschwindigkeit"
+      ],
+      "status": "implemented",
+      "evidence": "Labor mit Weg-Zeit-Gerade und Zielwerten; Aufgaben zu v = s / t, s = v · t und Einheiten m/s und km/h; Quiz zur direkten Proportionalität."
+    },
+    {
+      "track": "II_III",
+      "lb": 1,
+      "competence": "führen Änderungen des Bewegungszustands oder Verformungen von Körpern auf das Wirken von Kräften zurück und unterscheiden das physikalische Verständnis von Kräften und deren Bestimmungsstücken von der umgangssprachlichen Verwendung des Kraftbegriffs.",
+      "lessons": [
+        "kr-3-kraft"
+      ],
+      "status": "implemented",
+      "evidence": "Labor Kraftpfeil im Maßstab; Aufgaben zu Pfeillänge und Kraftmesser; Quiz zu statischer und dynamischer Wirkung."
+    },
+    {
+      "track": "II_III",
+      "lb": 1,
+      "competence": "führen in alltagsrelevanten Kontexten auftretende Kräfte gemäß dem Wechselwirkungsprinzip auf Wechselwirkungskräfte zurück und grenzen diese von Kräften im Gleichgewicht ab.",
+      "lessons": [
+        "kr-4-wechselwirkung"
+      ],
+      "status": "implemented",
+      "evidence": "Labor mit den Kräften an beiden Körpern gegenüber dem Gleichgewicht an einem Körper; Aufgaben zu Wechselwirkung und Kräftegleichgewicht."
+    },
+    {
+      "track": "II_III",
+      "lb": 1,
+      "competence": "stellen den Zusammenhang zwischen der Dehnungslänge und der wirkenden Kraft bei einer Spiralfeder grafisch dar, erkennen den Gültigkeitsbereich des Gesetzes von Hooke und grenzen den elastischen vom plastischen Verformungszustand ab.",
+      "lessons": [
+        "kr-5-hooke"
+      ],
+      "status": "implemented",
+      "evidence": "Labor Feder mit F-s-Diagramm und Elastizitätsgrenze; Aufgaben zu Dehnung und Federkonstante; Quiz zum plastischen Bereich."
+    },
+    {
+      "track": "II_III",
+      "lb": 1,
+      "competence": "verwenden die Masse als gemeinsames Maß für Schwere und Trägheit, grenzen Masse und Gewichtskraft voneinander ab und nutzen den Zusammenhang zwischen Masse und Gewichtskraft (Ortsfaktor) in einfachen Berechnungen unter Beachtung der Einheiten.",
+      "lessons": [
+        "kr-6-masse-gewicht"
+      ],
+      "status": "implemented",
+      "evidence": "Labor Wiegen auf Erde, Mond, Mars und Jupiter mit Balkenwaage und Kraftmesser; Aufgaben zu F_G = m · g in beide Richtungen."
+    },
+    {
+      "track": "II_III",
+      "lb": 1,
+      "competence": "verbalisieren in angemessener Fachsprache die grundlegenden Eigenschaften von Materie bei den verschiedenen Aggregatzuständen, erklären diese mithilfe des Teilchenmodells und veranschaulichen sie anhand selbst angefertigter Skizzen.",
+      "lessons": [
+        "kr-7-teilchenmodell"
+      ],
+      "status": "implemented",
+      "evidence": "Labor Teilchen im Behälter für fest, flüssig und gasförmig; Ölfleck- und Dampfvolumen-Aufgaben; Quiz zum Gas."
+    },
+    {
+      "track": "II_III",
+      "lb": 1,
+      "competence": "nutzen ihre Kenntnisse über Reibung, um deren Bedeutung für Alltag und Technik in angemessener Fachsprache zu begründen und insbesondere im Straßenverkehr verantwortungsbewusst zu handeln. Mithilfe der Modellvorstellung für die Reibung veranschaulichen sie die verschiedenen Arten der Reibung und vergleichen ihre Größen qualitativ.",
+      "lessons": [
+        "kr-9-reibung"
+      ],
+      "status": "implemented",
+      "evidence": "Labor Kiste ziehen mit Haft-, Gleit- und Rollreibung; Aufgaben zu F_R ~ F_N und zum Gleichgewicht bei gleichförmiger Bewegung; Modell der verhakenden Flächen im Text."
+    },
+    {
+      "track": "II_III",
+      "lb": 1,
+      "competence": "verwenden den Zusammenhang zwischen Masse und Volumen verschiedener homogener Körper, um damit Materialien zu bestimmen. Bei vorgegebener Dichte berechnen sie Massen oder Volumina und gehen dabei mit den auftretenden Einheiten sicher um.",
+      "lessons": [
+        "kr-8-dichte"
+      ],
+      "status": "implemented",
+      "evidence": "Labor Masse aus Volumen und Stoff mit acht Stoffen; Aufgaben zu ρ = m / V, m = ρ · V und Wasserverdrängung."
+    },
+    {
+      "track": "II_III",
+      "lb": 2,
+      "competence": "nutzen ihre Kenntnisse über das Modell der Lichtausbreitung und das Sender-Empfänger-Modell als zentrale Elemente der Optik, um z. B. den Sehprozess zu beschreiben und Schatten und Finsternisse zu modellieren. Dabei reflektieren sie ihre bisherigen Vorstellungen kritisch und verbessern sie gegebenenfalls.",
+      "lessons": [
+        "op-1-lichtausbreitung",
+        "op-2-schatten",
+        "op-3-finsternisse"
+      ],
+      "status": "implemented",
+      "evidence": "op-1: Labor Wann siehst du etwas (Sender, Empfänger); op-2: Schattenlabor mit Kern- und Halbschatten und Lochkamera; op-3: Labor Mondbahn mit Sonnen- und Mondfinsternis."
+    },
+    {
+      "track": "II_III",
+      "lb": 2,
+      "competence": "skizzieren und begründen optische Phänomene zur Reflexion unter Zuhilfenahme des Lichtstrahlmodells und unter Verwendung von altersgemäßer Fachsprache. Dabei erkennen sie die Bedeutung der Reflexion im Alltag bei nicht selbstleuchtenden Körpern, z. B. bei Spiegeln, Straßenschildern, Reflektoren.",
+      "lessons": [
+        "op-4-reflexion"
+      ],
+      "status": "implemented",
+      "evidence": "Labor Spiegel und raue Fläche (gerichtet und diffus, Spiegeldrehung); Aufgaben zu Reflexionswinkel und Spiegelbild."
+    },
+    {
+      "track": "II_III",
+      "lb": 2,
+      "competence": "führen die Brechung des Lichts an Grenzflächen optisch verschieden dichter Medien auf die unterschiedliche Lichtgeschwindigkeit in diesen zurück und beschreiben damit auch unter Verwendung von Zeichnungen Alltagsphänomene, z. B. optische Hebung und Totalreflexion.",
+      "lessons": [
+        "op-5-brechung",
+        "op-6-totalreflexion"
+      ],
+      "status": "implemented",
+      "evidence": "op-5: Labor Luft in Wasser, Glas und Diamant, Lichtgeschwindigkeit im Stoff, optische Hebung; op-6: Labor mit Grenzwinkel und Totalreflexion, Glasfaser und Prisma."
+    },
+    {
+      "track": "II_III",
+      "lb": 2,
+      "competence": "verwenden das Lichtstrahlmodell zur Konstruktion von Strahlengängen bei der Abbildung durch Sammellinsen und nutzen ihre Kenntnisse für die Begründung der Entstehung und der Eigenschaften reeller und virtueller Bilder. Sie erschließen sich Anwendungen im Alltag und beschreiben mithilfe von Strahlengängen Bau und Funktionsweise eines optischen Geräts.",
+      "lessons": [
+        "op-7-sammellinse",
+        "op-8-abbildung"
+      ],
+      "status": "implemented",
+      "evidence": "op-7: Labor paralleler Strahlen durch Linsen und Brechkraft; op-8: Labor Gegenstand vor der Sammellinse mit drei Strahlen, reellem und virtuellem Bild."
+    },
+    {
+      "track": "II_III",
+      "lb": 2,
+      "competence": "recherchieren problembezogen in unterschiedlichen Quellen über optische Geräte, deren geschichtliche Einordnung und aktuelle Bedeutung für den Alltag und geben diese unter Verwendung fachsprachlich korrekter Formulierungen wieder.",
+      "lessons": [
+        "op-9-geraete"
+      ],
+      "status": "implemented",
+      "evidence": "Labor Auge mit Brille, Fotoapparat und Fernrohr in Aufgaben; Recherche-Auftrag im Text. Die eigentliche Recherche leistet das Unterrichtsgespräch, nicht die App."
+    },
+    {
+      "track": "II_III",
+      "lb": 3,
+      "competence": "visualisieren und erklären Alltagsphänomene zum Magnetismus unter Verwendung einer altersgemäßen Fachsprache mithilfe geeigneter Modellvorstellungen. Dabei reflektieren sie ihre bisherigen Vorstellungen und übertragen ihr Wissen auf das Magnetfeld der Erde.",
+      "lessons": [
+        "el-1-magnete",
+        "el-2-magnetfeld"
+      ],
+      "status": "implemented",
+      "evidence": "el-1: Labor Elementarmagnete in Eisen und Stahl, Influenz, temporär und permanent; el-2: Labor Feldlinien und Kompassnadel einschließlich Erdfeld."
+    },
+    {
+      "track": "II_III",
+      "lb": 3,
+      "competence": "nutzen ihre Kenntnisse über Ladungseigenschaften und Ladungstrennung, über das Kern-Hülle-Modell sowie ihr Wissen über das elektrische Feld, um elektrostatische Phänomene und Anwendungen unter Verwendung fachspezifischer Formulierungen zu beschreiben.",
+      "lessons": [
+        "el-3-ladung",
+        "el-4-elektrisches-feld",
+        "el-5-elektrostatik-anwendung"
+      ],
+      "status": "implemented",
+      "evidence": "el-3: Labor Reibungselektrizität mit Elektronenübergang und Elementarladung; el-4: Influenz an zwei Kugeln; el-5: Labor Elektrofilter und Fotokopierer in Aufgaben."
+    },
+    {
+      "track": "II_III",
+      "lb": 3,
+      "competence": "veranschaulichen den elektrischen Stromfluss in Metallen als gerichtete Bewegung geladener Teilchen im elektrischen Feld, indem sie ihre Kenntnisse über elektrische Felder und das Kern-Hülle-Modell verwenden.",
+      "lessons": [
+        "el-6-strom"
+      ],
+      "status": "implemented",
+      "evidence": "Labor Ladung im Draht mit Elektronenzahl und gerichteter Bewegung im Feld; Aufgaben zu Q = I · t und N = Q / e."
+    },
+    {
+      "track": "II_III",
+      "lb": 3,
+      "competence": "gehen sicher mit dem Modell der Elementarladung um und benutzen die Stromstärke mit ihrer Einheit bei Berechnungen.",
+      "lessons": [
+        "el-6-strom"
+      ],
+      "status": "implemented",
+      "evidence": "Aufgaben zu I = Q / t, Ladung in Coulomb und Elektronenzahl; Labor Ladung im Draht; Quiz zu Q = I · t."
+    },
+    {
+      "track": "II_III",
+      "lb": 3,
+      "competence": "bauen zu einfachen technischen Problemstellungen nach einem vorgegebenen Schaltbild und unter Anleitung geeignete elektrische Schaltungen auf.",
+      "lessons": [
+        "el-7-stromkreis"
+      ],
+      "status": "implemented",
+      "evidence": "Labor Prüfstrecke (Schalter, Leiter, Isolatoren) und Aufgaben zu Reihen- und Parallelschaltung; das Aufbauen echter Schaltungen übernimmt der Unterricht."
+    },
+    {
+      "track": "II_III",
+      "lb": 3,
+      "competence": "nutzen ihre Kenntnisse über die Leitfähigkeit verschiedener Materialien sowie über die Wirkungen des elektrischen Stroms, um Grundregeln für den Umgang mit diesem abzuleiten und sich vor Gefahrensituationen im Alltag zu schützen.",
+      "lessons": [
+        "el-7-stromkreis",
+        "el-10-gefahren-schutz"
+      ],
+      "status": "implemented",
+      "evidence": "el-7: Leiter und Isolatoren im Labor Prüfstrecke; el-10: Labor Strom durch den Körper mit Sicherung, Schutzleiter und FI-Schalter, Verhaltensregeln im Text."
+    },
+    {
+      "track": "I",
+      "lb": 1,
+      "competence": "beschreiben Vorgänge in Natur und Technik, die die Art, Funktionsweise und Verwendung von Kraftwandlern beinhalten, begründen diese unter Verwendung der Fachsprache physikalisch und treffen mithilfe einfacher Berechnungen bzw. Konstruktionen quantitative Aussagen.",
+      "lessons": [
+        "en-1-schiefe-ebene",
+        "en-2-hebel",
+        "en-3-flaschenzug"
+      ],
+      "status": "implemented",
+      "evidence": "en-1: Labor Kiste auf der Rampe; en-2: Labor Wippe mit Hebelgesetz; en-3 (Wahl): Labor Flaschenzug. Aufgaben mit einfachen Berechnungen; Hebel und Flaschenzug wählbar, wie der Lehrplan es verlangt."
+    },
+    {
+      "track": "I",
+      "lb": 1,
+      "competence": "grenzen die abgeleiteten Größen Arbeit, Leistung und Energie voneinander und von deren Verwendung in der Alltagssprache ab, beschreiben damit mechanische Vorgänge und modellieren diese mathematisch. Aufgaben aus ihrem Erlebnisbereich (Natur und Technik) lösen sie mithilfe einfacher Berechnungen unter Berücksichtigung von Einheiten und sinnvoller Genauigkeitsangaben.",
+      "lessons": [
+        "en-4-arbeit",
+        "en-5-leistung",
+        "en-6-energieformen"
+      ],
+      "status": "implemented",
+      "evidence": "en-4: Labor Kraft, Weg und Arbeit; en-5: Labor Treppenlauf mit Leistung; en-6: Labor Lage- und Bewegungsenergie. Aufgaben in Einheiten mit sinnvoller Genauigkeit."
+    },
+    {
+      "track": "I",
+      "lb": 1,
+      "competence": "planen unter Anleitung ein Experiment zur Leistungsbestimmung, führen dieses durch und werten es anschließend aus. In einer Fehlerbetrachtung bewerten sie angeleitet die Qualität ihres Versuchsergebnisses und formulieren Vorschläge zur Verbesserung der Versuchsdurchführung.",
+      "lessons": [
+        "en-5-leistung"
+      ],
+      "status": "implemented",
+      "evidence": "Treppenlauf-Aufgaben und Fehlerbetrachtung im Text (Stoppfehler, mehrere Läufe); das eigentliche Experiment führt der Unterricht durch."
+    },
+    {
+      "track": "I",
+      "lb": 1,
+      "competence": "unterscheiden die Übertragungsgröße Arbeit von der Speichergröße Energie, wenden ihre Kenntnisse über Energieerhaltung bei Energieumwandlungen an und bewerten die Qualität von Energieumwandlungen mithilfe des Wirkungsgrads.",
+      "lessons": [
+        "en-6-energieformen",
+        "en-7-energieerhaltung",
+        "en-8-wirkungsgrad"
+      ],
+      "status": "implemented",
+      "evidence": "en-6: Arbeit als Übertragungs-, Energie als Speichergröße; en-7: Labor Wagen im Tal mit Energiebalken; en-8: Labor Wirkungsgrad und Energieentwertung."
+    },
+    {
+      "track": "I",
+      "lb": 2,
+      "competence": "erklären unter Verwendung des erweiterten Teilchenmodells die durch Zufuhr/Abgabe von Wärme oder Verrichtung von Reibungs- und Kompressionsarbeit an Körpern erfolgten Veränderungen. Den Wärmebegriff verwenden sie dabei in fachsprachlich korrekten Formulierungen, die sie von alltagssprachlichen bewusst trennen.",
+      "lessons": [
+        "wl-1-innere-energie"
+      ],
+      "status": "implemented",
+      "evidence": "Labor Energie in einen Körper mit ΔU = W + Q, Reibungs- und Kompressionsarbeit in Aufgaben; Quiz zur Reibungsarbeit."
+    },
+    {
+      "track": "I",
+      "lb": 2,
+      "competence": "grenzen die Temperatur als Maß für die mittlere kinetische Energie aller Teilchen eines Körpers von dem makroskopischen Prozess der Temperaturmessung ab. Dem Anlass entsprechend wählen sie geeignete Temperaturmessgeräte aus.",
+      "lessons": [
+        "wl-2-temperatur"
+      ],
+      "status": "implemented",
+      "evidence": "Labor Temperaturskalen mit Teilchenbewegung; Aufgaben zu Kelvin und Fahrenheit; Auswahl des Thermometers im Text."
+    },
+    {
+      "track": "I",
+      "lb": 2,
+      "competence": "verwenden das Teilchenmodell und den Begriff der mittleren potenziellen Energie der Teilchen, um im Alltag vorkommende Aggregatzustandsänderungen qualitativ zu beschreiben.",
+      "lessons": [
+        "wl-3-aggregatzustaende"
+      ],
+      "status": "implemented",
+      "evidence": "Labor Erwärmungskurve von Wasser mit Plateau und potenzieller Energie; Aufgaben zur Energie auf dem Plateau."
+    },
+    {
+      "track": "I",
+      "lb": 2,
+      "competence": "beschreiben und vergleichen die Längen- und Volumenänderungen von Körpern bei Änderung der inneren Energie halbquantitativ. Mithilfe der Anomalien von Wasser begründen sie die jahreszeitlich unterschiedlichen Temperaturschichtungen von Gewässern und Phänomene wie Frostaufbrüche.",
+      "lessons": [
+        "wl-4-ausdehnung",
+        "wl-5-wasseranomalie"
+      ],
+      "status": "implemented",
+      "evidence": "wl-4: Labor Stab erwärmen mit stoffabhängiger Dehnung (halbquantitativ); wl-5: Labor Dichte von Wasser, Temperaturschichtung von Seen und Frostaufbrüche."
+    },
+    {
+      "track": "I",
+      "lb": 2,
+      "competence": "erklären mithilfe des Teilchenmodells Phänomene der Wärmeleitung, beschreiben Eigenschaften der Wärmestrahlung und begründen die Konvektion in Flüssigkeiten und Gasen mit den entstehenden Dichteunterschieden infolge von Temperaturänderungen.",
+      "lessons": [
+        "wl-6-waermeleitung",
+        "wl-7-konvektion-strahlung"
+      ],
+      "status": "implemented",
+      "evidence": "wl-6: Labor Stäbe aus verschiedenen Stoffen mit Teilchenmodell; wl-7: Labor Thermoskanne mit Leitung, Konvektion und Strahlung."
+    },
+    {
+      "track": "I",
+      "lb": 2,
+      "competence": "recherchieren auf der Grundlage vorbereiteter Quellen Beispiele aus Alltag, Natur und Technik zu Wärmeleitung, Wärmestrahlung und Konvektion und zeigen Möglichkeiten auf, den Energietransport zu beeinflussen. Diese Informationen bereiten sie adressatengerecht auf und präsentieren sie unter Verwendung der Fachsprache.",
+      "lessons": [
+        "wl-6-waermeleitung",
+        "wl-7-konvektion-strahlung"
+      ],
+      "status": "implemented",
+      "evidence": "Recherche-Aufträge in beiden Lektionen und Aufgaben zu Dämmung, Kollektor und Thermoskanne; die Recherche selbst leistet der Unterricht."
+    },
+    {
+      "track": "I",
+      "lb": 3,
+      "competence": "nutzen ihre Kenntnisse über Ladungseigenschaften und Ladungstrennung, über das Kern-Hülle-Modell sowie ihr Wissen über den Aufbau einer Elektrizitätsquelle und das elektrische Feld, um elektrostatische Phänomene und Anwendungen unter Verwendung fachspezifischer Formulierungen zu erklären.",
+      "lessons": [
+        "el-3-ladung",
+        "el-4-elektrisches-feld",
+        "el-5-elektrostatik-anwendung"
+      ],
+      "status": "implemented",
+      "evidence": "el-3: Reibungselektrizität und Elektronenübergang; el-4: Influenz im Labor; el-5: Elektrofilter mit Abscheidegrad."
+    },
+    {
+      "track": "I",
+      "lb": 3,
+      "competence": "veranschaulichen den elektrischen Stromfluss in Metallen, Flüssigkeiten und Gasen als gerichtete Bewegung geladener Teilchen im elektrischen Feld, indem sie ihre Kenntnisse über elektrische Felder und das Kern-Hülle-Modell verwenden.",
+      "lessons": [
+        "el-6-strom",
+        "el-9-stromfluss-fluessigkeit-gas"
+      ],
+      "status": "implemented",
+      "evidence": "el-6: Labor Ladung im Draht; el-9: Labor Wer trägt den Strom? mit Elektronen, Ionen und Gasentladung."
+    },
+    {
+      "track": "I",
+      "lb": 3,
+      "competence": "gehen sicher mit dem Modell der Elementarladung um und benutzen die Stromstärke mit ihrer Einheit bei Berechnungen. Sie erkennen und bewerten Gefahrenpotenziale für den Umgang mit elektrischem Strom und beschreiben entsprechende Schutzvorrichtungen im Alltag.",
+      "lessons": [
+        "el-6-strom",
+        "el-10-gefahren-schutz"
+      ],
+      "status": "implemented",
+      "evidence": "el-6: Aufgaben zu Q = I · t und Elektronenzahl; el-10: Labor Strom durch den Körper mit Schutzvorrichtungen."
+    },
+    {
+      "track": "I",
+      "lb": 3,
+      "competence": "führen unter Anleitung Experimente mit Stromstärkemessgeräten in einfachen Stromkreisen durch und protokollieren diese unter Verwendung fachspezifischer Schreibweisen und der exakten Fachsprache.",
+      "lessons": [
+        "el-7-stromkreis",
+        "el-8-stromstaerke-messen"
+      ],
+      "status": "implemented",
+      "evidence": "el-8: Labor Amperemeter anschließen mit Messbereich und Kurzschluss, Ablesen mit Einheit; das Protokollieren eigener Messungen bleibt Aufgabe des Unterrichts."
+    },
+    {
+      "track": "I",
+      "lb": 4,
+      "unit": "4.1",
+      "competence": "unterscheiden in angeleiteter Quellenarbeit die grundsätzlichen Weltbilder des Altertums, der beginnenden Neuzeit und der Gegenwart und bewerten die Einflüsse von empirischen Entdeckungen (auch der Raumfahrt) auf historische Entwicklungen.",
+      "lessons": [
+        "as-1-weltbilder"
+      ],
+      "status": "implemented",
+      "evidence": "Labor Mars am Himmel mit Planetenschleife; Eratosthenes-Aufgaben; Weltbilder von Aristoteles bis Galilei im Text."
+    },
+    {
+      "track": "I",
+      "lb": 4,
+      "unit": "4.1",
+      "competence": "wenden Modelle der Optik und Mechanik sowie elektronische Hilfen an, um Himmelsphänomene, grundlegende Zusammenhänge des Sonnen- und Planetenaufbaus (auch von Monden) und deren Bahnen unter Verwendung von fachsprachlichen Formulierungen zu beschreiben und sich am Himmel zu orientieren.",
+      "lessons": [
+        "as-1-weltbilder",
+        "as-2-sonnensystem"
+      ],
+      "status": "implemented",
+      "evidence": "as-1: scheinbare Himmelsdrehung und Orientierung; as-2: Labor Planetenweg mit Lichtlaufzeit und Maßstab."
+    },
+    {
+      "track": "I",
+      "lb": 4,
+      "unit": "4.1",
+      "competence": "unterscheiden verschiedene Sterntypen an beispielhaften benachbarten Himmelskörpern der Milchstraße und beschreiben damit Aufbau, Geschichte und Zukunft der Milchstraße sowie des Weltalls.",
+      "lessons": [
+        "as-2-sonnensystem"
+      ],
+      "status": "implemented",
+      "evidence": "Text zu Sterntypen, Milchstraße und Weltall; Quizfrage zur Milchstraße; Lichtlaufzeiten und Modellabstände in Aufgaben. Aufbau, Geschichte und Zukunft bleiben knapp."
+    },
+    {
+      "track": "I",
+      "lb": 4,
+      "unit": "4.2",
+      "competence": "nutzen ihre Kenntnisse über das Modell der Schallausbreitung und das Sender-Empfänger-Modell sowie den Zusammenhang zwischen Frequenz und Tonhöhe bzw. Amplitude und Lautstärke, um Alltagserfahrungen aus dem Bereich Akustik zu beschreiben.",
+      "lessons": [
+        "ak-1-schall",
+        "ak-2-ausbreitung"
+      ],
+      "status": "implemented",
+      "evidence": "ak-1: Schwingungsbild mit Frequenz und Amplitude, Hörbereich; ak-2: Labor Schall unterwegs mit Sender-Empfänger-Modell und Schallgeschwindigkeiten."
+    },
+    {
+      "track": "I",
+      "lb": 4,
+      "unit": "4.2",
+      "competence": "schätzen die Belastung gemessener akustischer Größen für das menschliche Gehör ein und reflektieren dabei ihr eigenes Verhalten in Schule, Familie und Freizeit. Sie beziehen dies auf die Notwendigkeit von Ruhe als Erholungswert und nehmen auch zu ihrem Beitrag an Lärmverschmutzung kritisch Stellung.",
+      "lessons": [
+        "ak-2-ausbreitung"
+      ],
+      "status": "implemented",
+      "evidence": "Lärm in Dezibel, Hörschaden und eigener Beitrag im Text; die Aufgabe zur kritischen Stellungnahme bleibt im Unterricht."
+    }
+  ],
+  "outside_app": [
+    "Schülerexperimente: Zweig II/III mindestens eines je Lernbereich, Zweig I mindestens vier, jeweils mindestens eines zu den Lernbereichen 1 bis 3. Die Labore der App ersetzen sie nicht und bescheinigen keine Durchführung.",
+    "Aufbau echter Schaltungen nach Schaltbild und Messungen mit Stromstärkemessgeräten bleiben Aufgabe des Unterrichts.",
+    "Recherchen zu optischen Geräten, zu Wärmetransport und zur Lärmbelastung führt der Unterricht durch; die App gibt Aufträge und Fachbegriffe vor.",
+    "Lehrervideos: Diese Fassung enthält keine Lehrervideos; sie folgen als eigener Schritt."
+  ]
+}

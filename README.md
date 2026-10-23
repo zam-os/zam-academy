@@ -5,6 +5,7 @@ Hands-on training apps that build understanding before [ZAM](https://github.com/
 | App | Folder | Live | ZAM cell |
 | --- | --- | --- | --- |
 | UML 2.5.1 | [`uml/`](uml/) | https://academy.zam-os.org/uml/ | `zam-academy:uml` |
+| Physik 8 Realschule (LehrplanPLUS Bayern, Zweig I und II/III) | [`physik-realschule-8/`](physik-realschule-8/) | https://academy.zam-os.org/physik-realschule-8/ | `zam-academy:physik-realschule-8` |
 | Physik 9 Realschule (LehrplanPLUS Bayern) | [`physik-realschule-9/`](physik-realschule-9/) | https://academy.zam-os.org/physik-realschule-9/ | `zam-academy:physik-realschule-9` |
 | Relationale Datenbanken und SQL (DE/EN, LehrplanPLUS IT 2.3.1/2.3.2) | [`sql/`](sql/) | https://academy.zam-os.org/sql/ | `zam-academy:sql` |
 | Mathematik 7 Realschule (LehrplanPLUS Bayern, Zweig I und II/III) | [`mathematik-realschule-7/`](mathematik-realschule-7/) | https://academy.zam-os.org/mathematik-realschule-7/ | `zam-academy:mathematik-realschule-7` |
@@ -53,6 +54,7 @@ cd uml                 # or: cd physik-realschule-9 (dev server on :5181), cd sq
 # Deutsch 9: cd deutsch-realschule-9 (dev server on :5193)
 # Mathematik 10: cd mathematik-realschule-10 (dev server on :5194)
 # Mathematik 7: cd mathematik-realschule-7 (dev server on :5195)
+# Physik 8: cd physik-realschule-8 (dev server on :5196)
 npm ci
 npm run dev      # http://localhost:5180/uml/
 npm test
