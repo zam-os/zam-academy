@@ -370,7 +370,9 @@ function rotationView(v: LabValues): string {
     const c = centroid(T);
     out += polygon(T, reached[k] ? "lab-fill-ok" : "lab-ghost", reached[k] ? 'style="stroke-dasharray:6 4"' : 'style="fill:none"');
     out += turnArrow(c, 8, orientation(target) > 0, reached[k] ? "ok" : "ghost");
-    if (!reached[k]) T.forEach((p, i) => (out += vertexLabel(plot, p, c, `${VERTEX[i]}${SUBSCRIPT[k]}`, "lab-text-small")));
+    // a corner the image already covers shows the image's label only
+    const hits = cornerHits(image, target);
+    if (!reached[k]) T.forEach((p, i) => (out += hits[i] ? "" : vertexLabel(plot, p, c, `${VERTEX[i]}${SUBSCRIPT[k]}`, "lab-text-small")));
   });
 
   // the triangle ABC
@@ -413,7 +415,8 @@ function rotationView(v: LabValues): string {
   image.forEach((p, i) => {
     if (!plot.contains(p.x, p.y)) return;
     out += circle(I[i].x, I[i].y, 4, "lab-point-b");
-    if (moving) out += vertexLabel(plot, I[i], cI, `${VERTEX[i]}'`, "lab-text lab-text-b");
+    // a corner that stays (Z on it) keeps its own label
+    if (moving && !same(p, TRIANGLE[i])) out += vertexLabel(plot, I[i], cI, `${VERTEX[i]}'`, "lab-text lab-text-b", i === 0 ? 17 : 14);
   });
 
   // the centre
@@ -633,13 +636,15 @@ function legs(plot: Plot, from: Vec, d: Vec, cls: string): string {
   const K = plot.P(from.x + d.x, from.y);
   const B = plot.P(from.x + d.x, from.y + d.y);
   let out = "";
+  // numbers only on legs of at least one unit, and below the tick labels when the leg lies on the x-axis
   if (d.x !== 0) {
     out += thin(A.x, A.y, K.x, K.y, "lab-ink", 1.2, "4 3");
-    out += text((A.x + K.x) / 2, clamp(K.y + (d.y > 0 ? 15 : -7), 26, 322), fmt(d.x, 1), cls, "middle");
+    const gap = from.y === 0 && d.y > 0 ? 26 : 15;
+    if (Math.abs(d.x) >= 1) out += text((A.x + K.x) / 2, clamp(K.y + (d.y > 0 ? gap : -7), 26, 322), fmt(d.x, 1), cls, "middle");
   }
   if (d.y !== 0) {
     out += thin(K.x, K.y, B.x, B.y, "lab-ink", 1.2, "4 3");
-    out += text(clamp(K.x + (d.x >= 0 ? 6 : -6), 22, 320), (K.y + B.y) / 2 + 4, fmt(d.y, 1), cls, d.x >= 0 ? "start" : "end");
+    if (Math.abs(d.y) >= 1) out += text(clamp(K.x + (d.x >= 0 ? 6 : -6), 22, 320), (K.y + B.y) / 2 + 4, fmt(d.y, 1), cls, d.x >= 0 ? "start" : "end");
   }
   return out;
 }
