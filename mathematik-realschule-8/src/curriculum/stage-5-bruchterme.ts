@@ -96,7 +96,7 @@ interface Quotient {
 const qValue = (t: Quotient, x: number): number => (t.p1 * x + t.p0) / (t.q1 * x + t.q0);
 const qZero = (t: Quotient): number => -t.q0 / t.q1 + 0;
 const qHtml = (t: Quotient): string => frac(t.p1 === 0 ? fmt(t.p0) : lin(t.p1, t.p0), lin(t.q1, t.q0));
-const qText = (t: Quotient): string => `${t.p1 === 0 ? fmt(t.p0) : t.p0 === 0 ? lin(t.p1, 0) : `(${lin(t.p1, t.p0)})`} :${t.q1 === 1 && t.q0 === 0 ? "x" : `(${lin(t.q1, t.q0)})`}`;
+const qText = (t: Quotient): string => `${t.p1 === 0 ? fmt(t.p0) : t.p0 === 0 ? lin(t.p1, 0) : `(${lin(t.p1, t.p0)})`} : ${t.q1 === 1 && t.q0 === 0 ? "x" : `(${lin(t.q1, t.q0)})`}`;
 
 /** A Bruchterm for substituting: k : (x − e), (x + p) : (x − e) or k : (2x − m). */
 function randomQuotient(rng: Rng): Quotient {
@@ -390,12 +390,19 @@ const bruchterme: Lesson = {
           const zero = rng.pick([-4, -3, -2, -1, 1, 2, 3, 4, 1.5, -0.5, 2.5]);
           const s = -r * zero;
           if (!Number.isInteger(s) || -p === zero || p === 0) continue;
+          // a third number to put in: neither the excluded one nor the zero of the Zähler (and not 0 in −x + s, which would print "−0"), with a value of at most two decimals
+          const T = (x: number) => (x + p) / (r * x + s);
+          const candidates: number[] = [];
+          for (let x = -5; x <= 6; x++) if (x !== zero && x !== -p && !(x === 0 && r === -1) && exact2(T(x)) && Math.abs(T(x)) <= 20) candidates.push(x);
+          if (candidates.length === 0) continue;
+          const k = rng.pick(candidates);
+          const value = T(k) + 0;
           const right = rng.next() < 0.5;
           const claim = right ? zero : -p;
           const name = rng.pick(["Mia", "Jonas", "Lea", "Emre"]);
           const term = frac(xPlus(p), lin(r, s));
           return {
-            prompt: `${name} untersucht den Bruchterm T(x) = ${term} und sagt: „Für x = ${numText(claim)} hat der Term keinen Wert, weil dann der ${right ? "Nenner" : "Zähler"} 0 ist.“ Hat ${name} recht? Welche Zahl muss man ausschließen, und welchen Wert hat T für x = ${fmt(-p)}?`,
+            prompt: `${name} untersucht den Bruchterm T(x) = ${term} und sagt: „Für x = ${numText(claim)} hat der Term keinen Wert, weil dann der ${right ? "Nenner" : "Zähler"} 0 ist.“ Hat ${name} recht? Welche Zahl muss man ausschließen, und welchen Wert hat T für x = ${fmt(k)}?`,
             given: [`T(x) = ${term}`],
             fields: [
               choiceField(`Hat ${name} recht?`, ["ja", "nein"], right ? 0 : 1),
@@ -403,17 +410,17 @@ const bruchterme: Lesson = {
                 { value: -p, hint: "Für diese Zahl ist der Zähler 0, und 0 geteilt durch eine Zahl ≠ 0 ist 0. Ausgeschlossen wird die Zahl, für die der Nenner 0 ist." },
                 { value: -zero, hint: "Prüfe das Vorzeichen: Setze deine Zahl in den Nenner ein." },
               ]),
-              exactField(`T(${fmt(-p)}) =`, 0, 2, "", []),
+              exactField(`T(${fmt(k)}) =`, value, 2, "", [{ value: 1 / value, hint: "Zähler durch Nenner, nicht Nenner durch Zähler: Der Zähler steht oben." }]),
             ],
             steps: [
               `Keinen Wert hat T dort, wo der Nenner 0 ist: ${zeroSteps(r, s)}.`,
               right
                 ? `${name} hat recht: Für x = ${numText(zero)} ist der Nenner 0, durch 0 kann man nicht teilen.`
                 : `${name} hat nicht recht: Für x = ${fmt(-p)} ist der Zähler 0, der Nenner aber ${substituted(r, s, -p)} = ${fmt(r * -p + s)}. Dann ist T(${fmt(-p)}) = ${frac(0, fmt(r * -p + s))} = 0, ein ganz normaler Wert.`,
-              `T(${fmt(-p)}) = ${frac(substituted(1, p, -p), substituted(r, s, -p))} = ${frac(0, fmt(r * -p + s))} = 0`,
-              `<strong>${right ? "ja" : "nein"}; ausgeschlossen wird x = ${numText(zero)}; T(${fmt(-p)}) = 0</strong>`,
+              `T(${fmt(k)}) = ${frac(substituted(1, p, k), substituted(r, s, k))} = ${frac(fmt(k + p), fmt(r * k + s))} = ${numText(value)}`,
+              `<strong>${right ? "ja" : "nein"}; ausgeschlossen wird x = ${numText(zero)}; T(${fmt(k)}) = ${numText(value)}</strong>`,
             ],
-            meta: { p, r, s, right: right ? 1 : 0 },
+            meta: { p, r, s, k, right: right ? 1 : 0 },
           };
         }
       },
@@ -425,6 +432,17 @@ const bruchterme: Lesson = {
 
 // 5.2 Die Definitionsmenge bestimmen ─────────────────────────────────────────
 
+/** The typical mistakes when a Nenner is set to 0, as a classmate's error is named in Level 2. */
+const NENNER_ERRORS = {
+  sign: "Vorzeichenfehler: Aus x + a = 0 folgt x = −a, nicht x = a.",
+  coefficient: "Am Ende nicht durch die Zahl vor x geteilt.",
+  root: "Bei x² = … nur die positive Lösung genommen; die negative fehlt.",
+  divide: "Durch x geteilt; dabei geht die Lösung x = 0 verloren.",
+  second: "Nur einen der beiden Nenner gleich 0 gesetzt.",
+  numerator: "Den Zähler statt des Nenners gleich 0 gesetzt.",
+};
+type NennerError = keyof typeof NENNER_ERRORS;
+
 /** A Nenner for Level 2: a product, a sum to factorise, or two Bruchterme. */
 interface DomainCase {
   /** The term as HTML. */
@@ -434,6 +452,8 @@ interface DomainCase {
   zeros: number[];
   /** Typical wrong zeros, per field. */
   slips: Array<Array<{ value: number; hint: string }>>;
+  /** A classmate's solution with one typical mistake: the work, the numbers it excludes, the mistake and what corrects it. */
+  wrong: { work: string; set: number[]; error: NennerError; fix: string };
   kind: number;
   meta: Record<string, number>;
 }
@@ -450,6 +470,9 @@ function domainCase(rng: Rng): DomainCase {
       const z1 = u;
       const z2 = -w / m;
       if (Math.abs(z1 - z2) < 1e-9 || !exact2(z2)) continue;
+      // the classmate forgets to divide by m, or (m = 1) gets the sign wrong; his two numbers differ
+      const wrongZ2 = m !== 1 ? -w : w;
+      if (wrongZ2 === u) continue;
       const f1 = `(${xPlus(-u)})`;
       const f2 = `(${lin(m, w)})`;
       const zeros = sortedUnique([z1, z2]);
@@ -458,6 +481,12 @@ function domainCase(rng: Rng): DomainCase {
         steps: [`${f1}${f2} = 0: Ein Produkt ist 0, wenn ein Faktor 0 ist.`, `${zeroSteps(1, -u)} oder ${zeroSteps(m, w)}`],
         zeros,
         slips: zeros.map((z) => [{ value: -z, hint: signHint }]),
+        wrong: {
+          work: `${f1}${f2} = 0  ⇔  ${xPlus(-u)} = 0 oder ${lin(m, w)} = 0  ⇔  x = ${fmt(u)} oder x = ${fmt(wrongZ2)}`,
+          set: sortedUnique([u, wrongZ2]),
+          error: m !== 1 ? "coefficient" : "sign",
+          fix: m !== 1 ? `Aus ${lin(m, w)} = 0 folgt ${lin(m, 0)} = ${fmt(-w)}; dann noch durch ${m} teilen: x = ${numText(z2)}.` : `Aus ${xPlus(w)} = 0 folgt x = ${fmt(-w)}, nicht x = ${fmt(w)}.`,
+        },
         kind,
         meta: { kind, u, m, w },
       };
@@ -474,6 +503,12 @@ function domainCase(rng: Rng): DomainCase {
       steps: [`${n} = 0`, `Faktorisieren${k === 1 ? " mit der dritten binomischen Formel" : ": erst " + k + " ausklammern, dann dritte binomische Formel"}: ${n} = ${factored}`, `Ein Produkt ist 0, wenn ein Faktor 0 ist: x + ${c} = 0 ⇔ x = −${c} oder x − ${c} = 0 ⇔ x = ${c}`],
       zeros: [-c, c],
       slips: [[{ value: -(c * c), hint: `Nicht ${c * c} ausschließen: ${n} ist 0, wenn x² = ${c * c} ist, also für x = ${c} und für x = −${c}.` }], [{ value: c * c, hint: `Nicht ${c * c} ausschließen: x² = ${c * c} gilt für x = ${c} und für x = −${c}.` }]],
+      wrong: {
+        work: k === 1 ? `${n} = 0  ⇔  x² = ${c * c}  ⇔  x = ${c}` : `${n} = 0  ⇔  ${k}x² = ${k * c * c}  ⇔  x² = ${c * c}  ⇔  x = ${c}`,
+        set: [c],
+        error: "root",
+        fix: `x² = ${c * c} gilt für x = ${c} und für x = −${c}; beide Zahlen machen den Nenner zu 0.`,
+      },
       kind,
       meta: { kind, c, k },
     };
@@ -492,6 +527,12 @@ function domainCase(rng: Rng): DomainCase {
         steps: [`${n} = 0`, `Ausklammern: ${out}(${xPlus(-z)}) = 0`, `${a === 1 ? "x = 0" : `${out} = 0 ⇔ x = 0`} oder ${xPlus(-z)} = 0 ⇔ x = ${fmt(z)}`],
         zeros,
         slips: zeros.map((v) => (v === 0 ? [{ value: z, hint: "Vergiss den ausgeklammerten Faktor nicht: Auch x = 0 macht den Nenner zu 0." }] : [{ value: -v, hint: signHint }])),
+        wrong: {
+          work: a === 1 ? `${n} = 0  ⇔  x² = ${lin(-b, 0)}  | : x  ⇔  x = ${fmt(z)}` : `${n} = 0  ⇔  ${a}x² = ${lin(-b, 0)}  | : x  ⇔  ${a}x = ${fmt(-b)}  ⇔  x = ${fmt(z)}`,
+          set: [z],
+          error: "divide",
+          fix: `Durch x darf man nicht teilen, x könnte 0 sein. Klammere aus: ${out}(${xPlus(-z)}) = 0, also auch x = 0.`,
+        },
         kind,
         meta: { kind, a, z },
       };
@@ -511,6 +552,12 @@ function domainCase(rng: Rng): DomainCase {
         steps: [`Erster Nenner mit der ${c > 0 ? "ersten" : "zweiten"} binomischen Formel: ${square} = (${xPlus(c)})² = 0 ⇔ ${xPlus(c)} = 0 ⇔ x = ${fmt(-c)}`, `Zweiter Nenner: ${zeroSteps(1, e)}`, "Beide Zahlen werden ausgeschlossen."],
         zeros,
         slips: zeros.map((v) => [{ value: -v, hint: signHint }]),
+        wrong: {
+          work: `${square} = (${xPlus(c)})² = 0  ⇔  x = ${fmt(-c)}`,
+          set: [-c],
+          error: "second",
+          fix: `Auch der zweite Nenner ${xPlus(e)} wird 0, für x = ${fmt(-e)}: Ausgeschlossen werden die Nullstellen aller Nenner.`,
+        },
         kind,
         meta: { kind, c, e },
       };
@@ -523,12 +570,20 @@ function domainCase(rng: Rng): DomainCase {
     const e = nonZero(rng, 6);
     const z1 = -n / m;
     if (!exact2(z1) || Math.abs(z1 + e) < 1e-9) continue;
+    // the classmate gets the sign of the second zero wrong; his two numbers differ
+    if (Math.abs(z1 - e) < 1e-9) continue;
     const zeros = sortedUnique([z1, -e]);
     return {
       html: `${frac(3, lin(m, n))} − ${frac("x", xPlus(e))}`,
       steps: [`Erster Nenner: ${zeroSteps(m, n)}`, `Zweiter Nenner: ${zeroSteps(1, e)}`, "Beide Zahlen werden ausgeschlossen."],
       zeros,
       slips: zeros.map((v) => [{ value: -v, hint: signHint }]),
+      wrong: {
+        work: `erster Nenner: ${zeroSteps(m, n)}; zweiter Nenner: ${xPlus(e)} = 0  ⇔  x = ${fmt(e)}`,
+        set: sortedUnique([z1, e]),
+        error: "sign",
+        fix: `Aus ${xPlus(e)} = 0 folgt x = ${fmt(-e)}, nicht x = ${fmt(e)}.`,
+      },
       kind,
       meta: { kind, m, n, e },
     };
@@ -671,13 +726,24 @@ const definitionsmenge: Lesson = {
             };
           }
         }
+        // a classmate's solution with one typical mistake: find it, then determine D yourself
         const c = domainCase(rng);
+        const [name, him] = rng.pick([
+          ["Tom", "ihm"],
+          ["Lena", "ihr"],
+          ["Can", "ihm"],
+          ["Sophie", "ihr"],
+        ]);
+        const others = (Object.keys(NENNER_ERRORS) as NennerError[]).filter((e) => e !== c.wrong.error);
+        const errorField = shuffledChoice(rng, `${name}s Fehler:`, [c.wrong.error, ...rng.shuffle(others).slice(0, 2)].map((e) => NENNER_ERRORS[e]), 0);
+        // typing the classmate's wrong number gets what corrects it
+        const fromWrong = c.wrong.set.filter((v) => !c.zeros.some((z) => Math.abs(z - v) < 1e-9)).map((value) => ({ value, hint: c.wrong.fix }));
         return {
-          prompt: `Bestimme die Definitionsmenge des Terms T(x) = ${c.html} über der Grundmenge ℚ. Gib die ausgeschlossenen Zahlen der Größe nach an.`,
+          prompt: `${name} bestimmt die Definitionsmenge von T(x) = ${c.html} über der Grundmenge ℚ und schreibt: ${c.wrong.work}, also D = ℚ ∖ ${setText(c.wrong.set)}. Welcher Fehler ist ${him} passiert? Bestimme die richtige Definitionsmenge und gib die ausgeschlossenen Zahlen der Größe nach an.`,
           given: [`T(x) = ${c.html}`, "G = ℚ"],
-          fields: excludedFields(c.zeros, c.slips),
-          steps: [...c.steps, `<strong>D = ℚ ∖ ${setText(c.zeros)}</strong>`],
-          meta: c.meta,
+          fields: [...excludedFields(c.zeros, c.slips.map((s) => [...s, ...fromWrong])), errorField],
+          steps: [`${name}s Fehler: ${c.wrong.fix}`, ...c.steps, `<strong>D = ℚ ∖ ${setText(c.zeros)}; ${name}s Fehler: ${NENNER_ERRORS[c.wrong.error]}</strong>`],
+          meta: { ...c.meta, error: Object.keys(NENNER_ERRORS).indexOf(c.wrong.error) },
         };
       },
     },
@@ -770,7 +836,10 @@ const definitionsmenge: Lesson = {
             meta: { form, G: ["ℚ", "ℤ", "ℕ"].indexOf(G), k1, k2 },
           };
         }
-        // two Bruchterme, one Nenner to factorise first, over the Grundmenge
+        // two Bruchterme, one Nenner to factorise first: Sophie works over ℚ, Paul over ℤ or ℕ
+        const PG = G === "ℚ" ? rng.pick(["ℤ", "ℕ"]) : G;
+        const inPG = GRUNDMENGEN[PG];
+        const paulSet = PG === "ℕ" ? "nur mit natürlichen Zahlen, G = ℕ = {1; 2; 3; …}" : "nur mit ganzen Zahlen, G = ℤ";
         for (;;) {
           const c = rng.int(2, 6);
           const shape = rng.int(0, 1);
@@ -778,33 +847,39 @@ const definitionsmenge: Lesson = {
           const first = shape === 0 ? `${a === 1 ? "" : a}x² − ${a * c * c}` : `${a === 1 ? "" : a}x² − ${a * c}x`;
           const firstZeros = shape === 0 ? [-c, c] : [0, c];
           const m = rng.pick([1, 2]);
-          const n = nonZero(rng, 9);
+          // now and then both Nenner are 0 for the same number c, which is excluded only once
+          const shared = rng.next() < 0.25;
+          const n = shared ? -m * c : nonZero(rng, 9);
           const z2 = -n / m;
           const zeros = sortedUnique([...firstZeros, z2]);
-          if (zeros.length < 3 || !exact2(z2)) continue;
+          if (zeros.length !== (shared ? 2 : 3) || !exact2(z2)) continue;
+          const once = shared ? [{ value: zeros.length + 1, hint: `Die Zahl ${c} macht beide Nenner zu 0; sie wird nur einmal ausgeschlossen.` }] : [];
           const html = `${frac(2, first)} + ${frac("x", lin(m, n))}`;
-          const inside = zeros.filter(inG);
-          const correct = domainText(inside, G);
-          const forgot = domainText(sortedUnique([firstZeros[1], z2]).filter(inG), G);
-          // no "G ∖ {all zeros}" here: with zeros outside G it names the right set (ℕ ∖ {−9; 4} is ℕ ∖ {4}); the right numbers over ℚ are wrong instead
-          const allOptions = [correct, forgot, domainText(sortedUnique([...firstZeros.map((z) => -z + 0), -z2 + 0]).filter(inG), G), G === "ℚ" ? correct : domainText(inside, "ℚ")];
+          const inside = zeros.filter(inPG);
+          const correct = domainText(inside, PG);
+          const forgot = domainText(sortedUnique([firstZeros[1], z2]).filter(inPG), PG);
+          // no "G ∖ {all zeros}" here: with zeros outside G it names the right set (ℕ ∖ {−9; 4} is ℕ ∖ {4}); Sophie's set over ℚ is wrong for Paul instead
+          const allOptions = [correct, forgot, domainText(sortedUnique([...firstZeros.map((z) => -z + 0), -z2 + 0]).filter(inPG), PG), domainText(zeros, "ℚ")];
           const unique = [...new Set(allOptions)];
           if (unique.length < 3) continue;
           const factored = shape === 0 ? `${a === 1 ? "" : `${a}(x² − ${c * c}) = ${a}`}(x + ${c})(x − ${c})` : `${a === 1 ? "x" : `${a}x`}(x − ${c})`;
+          const sameCount = inside.length === zeros.length;
           return {
-            prompt: `Bestimme die Definitionsmenge von T(x) = ${html} über der Grundmenge G = ${Gtext}. Wie viele Zahlen aus G werden ausgeschlossen?`,
-            given: [`T(x) = ${html}`, `G = ${Gtext}`],
+            prompt: `Sophie und Paul bestimmen die Definitionsmenge von T(x) = ${html}. Sophie rechnet mit allen rationalen Zahlen, G = ℚ, Paul ${paulSet}. Wie viele Zahlen muss Sophie ausschließen, wie viele Paul? Welche Definitionsmenge erhält Paul?`,
+            given: [`T(x) = ${html}`, "Sophie: G = ℚ", `Paul: G = ${PG}`],
             fields: [
-              exactField("Anzahl der ausgeschlossenen Zahlen:", inside.length, 0, "", inside.length !== zeros.length ? [{ value: zeros.length, hint: `Nicht jede Nullstelle liegt in ${G}; ausgeschlossen wird nur, was in der Grundmenge liegt.` }] : [{ value: zeros.length - 1, hint: "Prüfe beide Nenner; der erste hat zwei Nullstellen." }]),
-              shuffledChoice(rng, "Definitionsmenge:", unique.slice(0, 3).map((o) => `D = ${o}`), 0),
+              exactField("Sophie: Anzahl der ausgeschlossenen Zahlen", zeros.length, 0, "", [...once, { value: zeros.length - 1, hint: "Prüfe beide Nenner; der erste hat zwei Nullstellen." }]),
+              exactField("Paul: Anzahl der ausgeschlossenen Zahlen", inside.length, 0, "", [...once, ...(sameCount ? [{ value: zeros.length - 1, hint: "Prüfe beide Nenner; der erste hat zwei Nullstellen." }] : [{ value: zeros.length, hint: `Nicht jede Nullstelle liegt in ${PG}; Paul schließt nur aus, was in seiner Grundmenge liegt.` }])]),
+              shuffledChoice(rng, "Pauls Definitionsmenge:", unique.slice(0, 3).map((o) => `D = ${o}`), 0),
             ],
             steps: [
               `Erster Nenner: ${first} = ${factored} = 0 ⇔ x = ${numText(firstZeros[0])} oder x = ${numText(firstZeros[1])}`,
               `Zweiter Nenner: ${zeroSteps(m, n)}`,
-              `Nullstellen der Nenner: ${zeros.map((z) => numText(z)).join("; ")}. ${inside.length === zeros.length ? `Alle liegen in ${G}.` : inside.length === 0 ? `Keine davon liegt in ${G}.` : `Davon ${inside.length === 1 ? "liegt" : "liegen"} nur ${inside.map((z) => numText(z)).join(" und ")} in ${G}.`}`,
-              `<strong>D = ${correct}</strong>`,
+              `Sophie schließt die ${zeros.length} Nullstellen der Nenner aus${shared ? ` (${c} macht beide Nenner zu 0 und zählt nur einmal)` : ""}: D = ${domainText(zeros, "ℚ")}.`,
+              `Paul: ${sameCount ? `${zeros.length === 2 ? "Beide Zahlen liegen" : `Alle ${zeros.length} Zahlen liegen`} in ${PG}, er schließt dieselben aus.` : inside.length === 0 ? `Keine der Zahlen liegt in ${PG}, er schließt keine aus.` : `Nur ${inside.map((z) => numText(z)).join(" und ")} ${inside.length === 1 ? "liegt" : "liegen"} in ${PG}.`}`,
+              `<strong>Sophie: ${zeros.length} Zahlen, Paul: ${inside.length === 0 ? "keine" : inside.length === 1 ? "eine Zahl" : `${inside.length} Zahlen`}; Pauls D = ${correct}</strong>`,
             ],
-            meta: { shape, a, c, m, n, G: ["ℚ", "ℤ", "ℕ"].indexOf(G) },
+            meta: { shape, a, c, m, n, shared: shared ? 1 : 0, G: ["ℚ", "ℤ", "ℕ"].indexOf(PG) },
           };
         }
       },
@@ -1201,19 +1276,20 @@ const verhaeltnis: Lesson = {
           const x = more / per;
           const ask = rng.pick([3, 5, 7, 9, 15]);
           if (!Number.isInteger(x) || x === people || ask === people || ask === x) continue;
-          const equation = `${frac(base, people)} = ${frac(fmt(more), "x")}`;
+          // every amount through fmt(): 1.250 g and 1.125 g alike, never 1125 g next to 1.250 g
+          const equation = `${frac(fmt(base), people)} = ${frac(fmt(more), "x")}`;
           return {
-            prompt: `Für einen Kuchen für ${people} Personen braucht man ${base} g Mehl. Lisa hat ${fmt(more)} g Mehl. Für wie viele Personen reicht es, wenn sie das Rezept im gleichen Verhältnis ${more > base ? "vergrößert" : "verkleinert"}? Stelle dazu eine Verhältnisgleichung mit x Personen auf. Wie viel Mehl braucht man für ${ask} Personen?`,
-            given: [`${people} Personen: ${base} g Mehl`, `${fmt(more)} g Mehl vorhanden`],
+            prompt: `Für einen Kuchen für ${people} Personen braucht man ${fmt(base)} g Mehl. Lisa hat ${fmt(more)} g Mehl. Für wie viele Personen reicht es, wenn sie das Rezept im gleichen Verhältnis ${more > base ? "vergrößert" : "verkleinert"}? Stelle dazu eine Verhältnisgleichung mit x Personen auf. Wie viel Mehl braucht man für ${ask} Personen?`,
+            given: [`${people} Personen: ${fmt(base)} g Mehl`, `${fmt(more)} g Mehl vorhanden`],
             fields: [
               exactField("x =", x, 0, "Personen", [{ value: (base * people) / more, hint: `${more > base ? "Mehr" : "Weniger"} Mehl reicht für ${more > base ? "mehr" : "weniger"} Personen: Mehl und Personen sind proportional, Mehl : Personen bleibt gleich.` }]),
               exactField(`Mehl für ${ask} Personen:`, ask * per, 2, "g", [{ value: (base / ask) * people, hint: "Mehr Personen brauchen mehr Mehl: Rechne mit dem Mehl für eine Person." }]),
             ],
             steps: [
               `Gleiches Verhältnis Mehl : Personen: ${equation}, D = ℚ ∖ {0}`,
-              `Über Kreuz: ${base}x = ${fmt(more)} · ${people}  ⇔  x = ${fmt((more * people) / base)}; ${fmt(x)} ∈ D`,
-              `Für eine Person ${base} g : ${people} = ${per} g, für ${ask} Personen ${ask} · ${per} g = ${ask * per} g`,
-              `<strong>Das Mehl reicht für ${fmt(x)} Personen; für ${ask} Personen braucht man ${ask * per} g Mehl.</strong>`,
+              `Über Kreuz: ${fmt(base)}x = ${fmt(more)} · ${people}  ⇔  x = ${fmt((more * people) / base)}; ${fmt(x)} ∈ D`,
+              `Für eine Person ${fmt(base)} g : ${people} = ${fmt(per)} g, für ${ask} Personen ${ask} · ${fmt(per)} g = ${fmt(ask * per)} g`,
+              `<strong>Das Mehl reicht für ${fmt(x)} Personen; für ${ask} Personen braucht man ${fmt(ask * per)} g Mehl.</strong>`,
             ],
             meta: { kind: 3, people, per, more, ask },
           };
