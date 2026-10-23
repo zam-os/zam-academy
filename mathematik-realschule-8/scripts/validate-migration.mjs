@@ -133,7 +133,9 @@ try {
         enrolled = await zam.materialiseKvtCards(db, userId, atomIds);
         rounds += 1;
       }
-      assert.equal(rounds, Math.max(0, ...trickle) + 1, "held atoms fill up one card per enrolment");
+      // One call creates the first cards, each held atom then gains one per
+      // call, and the last call creates nothing.
+      assert.equal(rounds, Math.max(1, ...trickle) + 1, "held atoms fill up one card per enrolment");
       const complete = await snapshot(db);
       assert.equal(complete.cards.length, mapping.rows.length - movedIds.size + items.length, "every new card once, the old cards kept");
       assert.deepEqual(complete.reviews, after.reviews, "enrolment invents no review evidence");
