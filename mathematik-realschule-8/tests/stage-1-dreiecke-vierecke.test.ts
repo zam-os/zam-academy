@@ -286,6 +286,10 @@ describe("Aufgaben der Etappe 1 rechnen richtig", () => {
       expect(drawn).toBeGreaterThanOrEqual(3);
       expect(drawn).toBeLessThanOrEqual(10);
       expect(Math.abs(drawn * 10 - Math.round(drawn * 10))).toBeLessThan(1e-9);
+      // Maßstäbe as in textbooks: "1 : 1000", "1 : 25 000" (narrow space), never "1 : 1.000"
+      const scale = c.scale < 10000 ? String(c.scale) : String(c.scale).replace(/(\d)(?=(\d{3})+$)/g, "$1" + String.fromCharCode(0x202f));
+      expect(task.prompt).toContain(`Maßstab 1 : ${scale}`);
+      expect(allTexts(task)).not.toMatch(/\d\.\d{3}/);
     }
     // every context with both cases, so that the context does not give the case away
     expect(seen.size).toBe(6);
@@ -354,6 +358,7 @@ describe("Aufgaben der Etappe 1 rechnen richtig", () => {
         } else throw new Error(line);
       }
       const names = Object.keys(sides);
+      const angleValues = task.given.map((line) => /= (\d+)°$/.exec(line)).filter((m) => m !== null).map((m) => Number(m![1]));
       // the case: 0 SSS, 1 SWS, 2 WSW, 3 SWW, 4 SsW, 5 SSW (angle opposite the shorter side), 6 WWW
       let kind: number;
       if (names.length === 3) kind = 0;
@@ -366,6 +371,8 @@ describe("Aufgaben der Etappe 1 rechnen richtig", () => {
           const opposite = names.find((n) => !n.includes(vertex))!;
           const other = names.find((n) => n !== opposite)!;
           kind = sides[opposite] > sides[other] ? 4 : 5;
+          // the counterexample is real: two different triangles fit the data, not none
+          if (kind === 5) expect(ssaLengths(sides[other], sides[opposite], angleValues[0]), task.given.join("; ")).toHaveLength(2);
         }
       }
       const expected = [0, 1, 2, 2, 3, 4, 4][kind];
@@ -719,6 +726,12 @@ describe("Aufgaben zu den Vierecken rechnen richtig", () => {
       if ("c" in v) expect(v.c).toBeLessThan(v.a);
       if ("α" in v) expect(v.α).not.toBe(90);
       if ("β" in v) expect(v.α + v.β).toBe(180);
+      if (c.type === "allgemeines Viereck") {
+        // four sides that close up, all different
+        const s = [v.a, v.b, v.c, v.d];
+        expect(2 * Math.max(...s), task.given.join("; ")).toBeLessThan(s[0] + s[1] + s[2] + s[3]);
+        expect(new Set(s).size).toBe(4);
+      }
     }
     // the table itself: the numbers of pieces of the curriculum's quadrilaterals
     const need = Object.fromEntries(PIECE_CASES.map((c) => [c.type, c.need]));
@@ -757,6 +770,8 @@ describe("Aufgaben zu den Vierecken rechnen richtig", () => {
       const D = plus(A, minus(C, B));
       expect([num(task, 0), num(task, 1), num(task, 2), num(task, 3)]).toEqual([C.x - B.x, C.y - B.y, D.x, D.y]);
       expect(is.Parallelogramm(quadInfo([A, B, C, D]))).toBe(true);
+      // ABCD is labelled counterclockwise
+      expect((B.x - A.x) * (C.y - A.y) - (B.y - A.y) * (C.x - A.x)).toBeGreaterThan(0);
       expect(C.x - B.x).not.toBe(0);
       expect(C.y - B.y).not.toBe(0);
       expect(task.prompt).toContain(`A(${de(A.x)} | ${de(A.y)})`);
@@ -785,6 +800,7 @@ describe("Aufgaben zu den Vierecken rechnen richtig", () => {
         const C = { x: num(task, 0), y: num(task, 1) };
         const D = { x: num(task, 2), y: num(task, 3) };
         expect(is.Parallelogramm(quadInfo([A, B, C, D]))).toBe(true);
+        expect((B.x - A.x) * (C.y - A.y) - (B.y - A.y) * (C.x - A.x)).toBeGreaterThan(0);
         expect((A.x + C.x) / 2).toBe(M.x);
         expect((B.y + D.y) / 2).toBe(M.y);
       } else {
@@ -898,7 +914,9 @@ describe("Aufgaben zu den Vierecken rechnen richtig", () => {
       const m = meta(task);
       if (m.ctx === 0) {
         expect(num(task, 0)).toBe(m.h);
-        expect(task.given.join(" ")).toContain(`A = ${de(((m.a + m.c) / 2) * m.h)} m²`);
+        // four-digit numbers without a thousands point, as in "1110 m²"
+        expect(task.given.join(" ")).toContain(`A = ${de(((m.a + m.c) / 2) * m.h).replace(/\./g, "")} m²`);
+        expect(allTexts(task)).not.toMatch(/\d\.\d{3}/);
       } else if (m.ctx === 1) {
         expect(((m.e * num(task, 0)) / 2) % 1).toBe(0);
         expect(num(task, 0)).toBeLessThan(m.e);

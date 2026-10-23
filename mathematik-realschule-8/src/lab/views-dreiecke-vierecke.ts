@@ -1273,16 +1273,22 @@ const zugDrag = (i: number) => ({
   drag: (p: Pt) => ({ [`x${QV[i]}`]: ZUG_PLOT.invX(p.x), [`y${QV[i]}`]: ZUG_PLOT.invY(p.y), sel: i }),
 });
 
-/** "D = (3 | 4)" style coordinates of the Zugmodus readout. */
+/** A vector in words for the plain-text readout, where no column vector fits: "2 nach rechts, 3 nach oben". */
+function arrowWords(x: number, y: number): string {
+  const parts: string[] = [];
+  if (x !== 0) parts.push(`${fmt(Math.abs(x))} nach ${x > 0 ? "rechts" : "links"}`);
+  if (y !== 0) parts.push(`${fmt(Math.abs(y))} nach ${y > 0 ? "oben" : "unten"}`);
+  return parts.length ? parts.join(", ") : "kein Pfeil";
+}
+
+/** "D(3 | 4)" style coordinates of the Zugmodus readout, points written as in Bavaria. */
 export function zugConstructionText(v: LabValues): string {
   const { P } = zugPoints(v);
-  if (v.modus === 1) return v.fig === 1 ? `B = ${pointText(P[1])} und D = ${pointText(P[3])} liegen fest` : `D = ${pointText(P[3])} liegt fest`;
-  if (v.fig === 0) {
-    const bc = { x: v.xC - v.xB, y: v.yC - v.yB };
-    return `BC→ = (${fmt(bc.x)} | ${fmt(bc.y)}), D = A ⊕ BC→ = ${pointText(P[3])}`;
-  }
-  if (v.fig === 1) return `M = ${pointText({ x: (v.xA + v.xC) / 2, y: (v.yA + v.yC) / 2 })}, f = ${fmt(v.f)}: B und D je ${fmt(v.f / 2)} von M`;
-  return `D = Spiegelbild von B an AC ≈ ${pointText(P[3])}`;
+  if (v.modus === 1) return v.fig === 1 ? `B${pointText(P[1])} und D${pointText(P[3])} liegen fest` : `D${pointText(P[3])} liegt fest`;
+  if (v.fig === 0) return `BC→: ${arrowWords(v.xC - v.xB, v.yC - v.yB)}; D = A ⊕ BC→, also D${pointText(P[3])}`;
+  if (v.fig === 1) return `M${pointText({ x: (v.xA + v.xC) / 2, y: (v.yA + v.yC) / 2 })}, f = ${fmt(v.f)}: B und D je ${fmt(v.f / 2)} von M`;
+  const exact = [P[3].x, P[3].y].every((c) => Math.abs(c * 100 - Math.round(c * 100)) < 1e-6);
+  return `D ist das Spiegelbild von B an AC: D${pointText(P[3])}${exact ? "" : ", gerundet"}`;
 }
 
 // ─── 1.6 Mit Viereckseigenschaften rechnen ─────────────────────────────────
