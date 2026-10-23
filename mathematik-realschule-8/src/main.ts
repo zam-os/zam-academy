@@ -7,7 +7,7 @@ import {
   STAGES,
 } from "./curriculum";
 import { checkTask, type TaskResult, wrongAnswerHint } from "./exercises/checker";
-import { esc, fmt, fmtUnit } from "./exercises/format";
+import { esc, fmtUnit } from "./exercises/format";
 import { quizOrder } from "./exercises/quiz-order";
 import { createRng, seedFrom } from "./exercises/rng";
 import {
@@ -746,7 +746,7 @@ class MatheApp {
         count === lesson.requiredCorrect
           ? `Richtig! ${lesson.requiredCorrect} Aufgaben auf Level ${this.taskLevel} gelöst.`
           : firstNumber && firstNumber.kind === "number" && task.fields.length === 1
-            ? `Richtig! ${fmt(firstNumber.answer, firstNumber.digits)}${firstNumber.unit ? ` ${firstNumber.unit}` : ""}`
+            ? `Richtig! ${fmtUnit(firstNumber.answer, firstNumber.unit, firstNumber.digits)}`
             : "Richtig!",
         "success",
         2600,

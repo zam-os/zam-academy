@@ -27,10 +27,11 @@ export function fmt(value: number, digits = 2): string {
   return formatter(digits).format(rounded === 0 ? 0 : rounded).replace("-", MINUS);
 }
 
-/** `fmtUnit(2.5, "cm")` → "2,5 cm". */
+/** `fmtUnit(2.5, "cm")` → "2,5 cm"; degrees sit on the number: "60°". */
 export function fmtUnit(value: number, unit: string, digits = 2): string {
   const text = fmt(value, digits);
-  return unit ? `${text} ${unit}` : text;
+  if (!unit) return text;
+  return unit === "°" ? `${text}°` : `${text} ${unit}`;
 }
 
 /** A number in brackets when negative, for products: "3 · (−2)". */
