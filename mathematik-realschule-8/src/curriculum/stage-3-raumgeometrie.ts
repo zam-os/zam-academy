@@ -839,7 +839,7 @@ const raumkoordinaten: Lesson = {
   whyItMatters:
     "Mit drei Zahlen beschreibst du jeden Ort in einem Zimmer, auf einer Baustelle oder in einem 3D-Drucker genau. Wer Koordinaten im Raum lesen und einzeichnen kann, zeichnet in der nächsten Lektion ganze Körper hinein.",
   explanationHtml: `
-    <p>Einen Punkt in der Ebene beschreibst du mit zwei Zahlen, P(x | y). Für einen Punkt im Raum brauchst du drei: Im <strong>dreidimensionalen Koordinatensystem</strong> stehen drei Achsen paarweise senkrecht aufeinander und schneiden sich im <strong>Ursprung O(0 | 0 | 0)</strong>.</p>
+    <p><strong>Wiederholung aus M5:</strong> Einen Punkt in der Ebene beschreibst du im Koordinatensystem mit zwei Zahlen, P(x | y). Für einen Punkt im Raum brauchst du drei: Im <strong>dreidimensionalen Koordinatensystem</strong> stehen drei Achsen paarweise senkrecht aufeinander und schneiden sich im <strong>Ursprung O(0 | 0 | 0)</strong>.</p>
     <ul>
       <li>Die <strong>x-Achse</strong> zeigt nach vorne, auf dich zu.</li>
       <li>Die <strong>y-Achse</strong> zeigt nach rechts.</li>
