@@ -52,7 +52,8 @@ for (const row of mapping.rows) {
 }
 // The proposal: the published cell plus exactly the declarations of the mapping.
 const cell = structuredClone(published);
-cell.version = "2026.10.2";
+// The next version after the published one, e.g. 2026.10.2 -> 2026.10.3.
+cell.version = published.version.replace(/\d+$/, (last) => String(Number(last) + 1));
 cell.retired_items = mapping.rows
   .filter((row) => row.action === "retire")
   .map((row) => ({ id: row.de_by_id, reason: row.retire_reason }));
