@@ -8,7 +8,7 @@ export default defineConfig({
   base: "/mathematik-realschule-8/",
   plugins: [viteSingleFile()],
   server: {
-    port: 5193,
+    port: 5195,
     open: false,
   },
   build: {

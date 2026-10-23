@@ -15,7 +15,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        app: [uml, physik-realschule-9, sql, mathematik-realschule-8, mathematik-realschule-9, chemie-realschule-9, geschichte-realschule-9, geographie-realschule-9, biologie-realschule-10, physik-realschule-10, algorithmen, datennetze, bwr-realschule-9, wirtschaft-recht-realschule-9]
+        app: [uml, physik-realschule-9, sql, mathematik-realschule-8, mathematik-realschule-9, chemie-realschule-9, geschichte-realschule-9, geographie-realschule-9, biologie-realschule-10, physik-realschule-10, algorithmen, datennetze, bwr-realschule-9, wirtschaft-recht-realschule-9, mathematik-realschule-10, deutsch-realschule-9]
     defaults:
       run:
         working-directory: ${{ matrix.app }}
@@ -74,6 +74,10 @@ jobs:
         run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node bwr-realschule-9/scripts/validate-migration.mjs
       - name: Preserve Wirtschaft und Recht 9 histories and refuse automatic merges
         run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node wirtschaft-recht-realschule-9/scripts/validate-migration.mjs
+      - name: Preserve Mathematik 10 histories and refuse automatic merges
+        run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node mathematik-realschule-10/scripts/validate-migration.mjs
+      - name: Preserve Deutsch 9 histories of the retired cards
+        run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node deutsch-realschule-9/scripts/validate-migration.mjs
       - name: Preserve Mathematik 8 histories and rehearse the unapproved mapping in temporary libraries
         run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node mathematik-realschule-8/scripts/validate-migration.mjs
       - name: Build the catalog (requires explicit mapping approval)

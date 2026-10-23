@@ -28,7 +28,7 @@ zam-os/zam bundles three older cells for grade 8 (`de-by:realschule-8-mathematik
 
 ```bash
 npm ci
-npm run dev          # http://localhost:5193/mathematik-realschule-8/
+npm run dev          # http://localhost:5195/mathematik-realschule-8/
 npm test
 npm run build        # single-file build in dist/index.html
 npm run package:zip  # offline zip in release/ (needs the zip command)
