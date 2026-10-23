@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import { STAGE_TERME_GLEICHUNGEN } from "../src/curriculum/stage-4-terme-gleichungen";
 import { createRng, seedFrom } from "../src/exercises/rng";
 import { computeReadouts, defaultLabValues, enumerateLabGrid } from "../src/lab/engine";
+import { labView } from "../src/lab/visuals";
 import {
   CLAIMS,
   completedSquare,
@@ -107,6 +108,37 @@ describe("Labore der Etappe 4", () => {
       close(Number(readouts.value) - (x * x + p * q), Number(readouts.missing));
     }
     expect(computeReadouts(lab, { x: 5, p: 3, q: -3 }).expanded).toBe("x² − 9");
+  });
+
+  it("Rechteckmodell: no label of the rectangle touches a handle dot, also at small x", () => {
+    const lab = lesson("tg-2-ausmultiplizieren").lab;
+    const view = labView("expand-products");
+    let checked = 0;
+    for (const x of [1, 1.5, 2, 2.5, 3, 4, 5, 7]) {
+      for (const p of [1, 2, 3, 5]) {
+        for (const q of [-4, -3, -2, -1, 0, 1, 2, 5]) {
+          const values = { ...defaultLabValues(lab), x, p, q };
+          const svg = view.render(values, computeReadouts(lab, values));
+          // the dots: radius 7.5 and a ring of 2.5
+          const dots = [...svg.matchAll(/data-handle="[^"]+"[^>]*>\s*<circle cx="([-\d.]+)" cy="([-\d.]+)"/g)].map((m) => ({ x: Number(m[1]), y: Number(m[2]) }));
+          expect(dots.length).toBeGreaterThanOrEqual(2);
+          // the labels left of the table (13 px type: about 7 px a character, 9 px high above the baseline)
+          for (const m of svg.matchAll(/<text x="([-\d.]+)" y="([-\d.]+)" class="[^"]*" text-anchor="(start|middle|end)">([^<]*)<\/text>/g)) {
+            const tx = Number(m[1]);
+            const ty = Number(m[2]);
+            if (tx > 312 || ty < 40) continue;
+            const width = 6.6 * [...m[4]].length;
+            const left = m[3] === "start" ? tx : m[3] === "end" ? tx - width : tx - width / 2;
+            for (const d of dots) {
+              const apart = d.x < left - 10 || d.x > left + width + 10 || d.y < ty - 9 - 10 || d.y > ty + 10;
+              expect(apart, `"${m[4]}" at (${tx} | ${ty}) under the handle at (${d.x} | ${d.y}) for x = ${x}, p = ${p}, q = ${q}`).toBe(true);
+              checked++;
+            }
+          }
+        }
+      }
+    }
+    expect(checked).toBeGreaterThan(1000);
   });
 
   it("Formeln am Quadrat: the left side equals the sum of the pieces in every picture", () => {
