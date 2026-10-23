@@ -30,7 +30,32 @@ Zweig I sieht 36 Lektionen, Zweig II/III 28, „alle Lektionen“ 41. Alle 42 Ko
 
 zam-os/zam bündelt drei Zellen mit zusammen 24 Karten: `de-by:realschule-8-mathematik-ebene-geometrie-vierecke` (8), `de-by:realschule-8-mathematik-lineare-funktionen` (8) und `de-by:realschule-8-mathematik-terme-gleichungen` (8). Die Byte-Schnappschüsse liegen in `tests/fixtures/` (zam-os/zam `3ff6ee1`, SHA-256 in [`replaces-de-by.json`](../mathematik-realschule-8/replaces-de-by.json)).
 
-MAPPING_TABLE
+| Altkarte | Thema | Kategorie | Nachfolger |
+| --- | --- | --- | --- |
+| Vierecke J01 | Raute erkennen | A | `m8-raute-erkennen` (`dv-4-vierecke`) |
+| Vierecke J02 | Haus der Vierecke, Symmetrie von Raute und Rechteck | C | – |
+| Vierecke J03 | Flächenformel des Trapezes | A | `m8-trapez-flaeche` (`dv-6-vierecke-anwenden`) |
+| Vierecke J04 | Trapez- und Drachenfläche, Herleitung | B | `m8-trapez-drachen-flaeche` (`dv-6-vierecke-anwenden`) |
+| Vierecke J05 | 1. Strahlensatz | C | – |
+| Vierecke J06 | Strahlensätze, Flussbreite | C | – |
+| Vierecke J07 | Flächenfaktor k² der zentrischen Streckung | C | – |
+| Vierecke J08 | Eigenschaften der zentrischen Streckung | C | – |
+| Funktionen J01 | Bedeutung von m | A | `m8-gerade-steigung-m` (`fu-6-geraden`) |
+| Funktionen J02 | m und t, y = −0,5x + 3 zeichnen, Nullstelle | B | `m8-gerade-m-t-zeichnen` (`fu-6-geraden`) |
+| Funktionen J03 | Steigung aus zwei Punkten | A | `m8-steigung-zwei-punkte` (`fu-7-geraden-bestimmen`) |
+| Funktionen J04 | Gerade durch A(2 \| −1) und B(6 \| 7), Punktprobe | B | `m8-gerade-zwei-punkte-probe` (`fu-7-geraden-bestimmen`) |
+| Funktionen J05 | m₁ · m₂ = −1 | A | `m8-senkrecht-steigungen` (`fu-5-senkrecht`) |
+| Funktionen J06 | Parallele, Senkrechte, Schnittpunkt | B | `m8-parallel-senkrecht-schnitt` (`fu-8-parallelenscharen`) |
+| Funktionen J07 | Hyperbelast | C | – |
+| Funktionen J08 | direkte und indirekte Proportionalität | C | – |
+| Terme J01 | 2. binomische Formel | A | `m8-binom-zweite` (`tg-3-binomische-formeln`) |
+| Terme J02 | alle drei binomischen Formeln, Beispiele | B | `m8-binom-alle-drei` (`tg-3-binomische-formeln`) |
+| Terme J03 | keine Äquivalenzumformung: mal 0 | A | `m8-aequivalenz-null` (`tg-7-gleichungen`) |
+| Terme J04 | 3(2x − 5) − 4(x + 2) = 2x − 23 | B | `m8-gleichung-allgemeingueltig` (`tg-7-gleichungen`) |
+| Terme J05 | Definitionsmenge von (x + 3)/(2x − 8) | A | `m8-definitionsmenge-vier` (`br-2-definitionsmenge`) |
+| Terme J06 | 6/(x − 2) = 4/(x + 1) | B | `m8-bruchgleichung-hauptnenner` (`br-3-verhaeltnisgleichungen`) |
+| Terme J07 | Ungleichheitszeichen umkehren | A | `m8-ungleichung-umkehren` (`tg-9-ungleichungen`) |
+| Terme J08 | 5 − 3x ≥ 17, Intervall | B | `m8-ungleichung-intervall` (`tg-9-ungleichungen`) |
 
 **A** heißt gleicher Einzelabruf mit genau einem Nachfolger. **B** heißt: Die alte mehrteilige Frage bleibt mit ihrer ganzen Antwort und einer Musterlösung auf genau einer eigenen Karte; die neuen Einzelkarten der Lektion beginnen ohne Beherrschung. **C** heißt: kein Nachfolger in diesem Paket, die alte Karte bleibt aktiv. Vier C-Karten fragen Strahlensätze und zentrische Streckung (M9), zwei die direkte und indirekte Proportionalität (M6/M7). Die alte Karte zum Haus der Vierecke (Vierecke J02) hat eine unvollständige Antwort (Drachenviereck und gleichschenkliges Trapez fehlen in der Hierarchie, die Symmetrieachsen des Rechtecks fehlen); sie ist als C vorgeschlagen. Die Lektion `dv-4` hat mit `m8-haus-der-vierecke` trotzdem eine eigene Karte mit derselben Frage und vollständiger Antwort, sodass Thomas sie auch als B mit korrigierter Antwort freigeben kann, wie bei Mathematik 10 geschehen. Sieben Nachfolger (Funktionen J01/J02 in `fu-6`, J03/J04 in `fu-7`, J06 in `fu-8`, Terme J07/J08 in `tg-9`) liegen in Lektionen nur für Zweig I, obwohl die alten Zellen beiden Zweigen zugeordnet waren; das steht in der Begründung der Zeilen.
 
