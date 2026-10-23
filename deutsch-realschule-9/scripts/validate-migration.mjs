@@ -24,8 +24,9 @@ const legacy = mapping.sources.map((source) => {
   return JSON.parse(text);
 });
 
-// The cell as first published (2026.10.1): the same bytes without the
-// retirements and the version bump that this change adds.
+// The cell as first published (2026.10.1): the same cards without the
+// retirements and the version bump (its atoms carry the later domains, which
+// change nothing about cards and reviews).
 const published = structuredClone(cell);
 published.version = "2026.10.1";
 delete published.retired_items;

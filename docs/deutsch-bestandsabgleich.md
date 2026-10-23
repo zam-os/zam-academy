@@ -1,6 +1,6 @@
 # Deutsch 9 · Lehrplanabgleich und Zuordnung der Alt-Zelle
 
-Stand: 23. Oktober 2026. Das [Academy-Paket](../deutsch-realschule-9/) wurde als Zelle `2026.10.1` ohne `replaces` und `retired_items` veröffentlicht. Die Zelle in Version `2026.10.2` deklariert die acht `retired_items` der C-Zeilen und kein `replaces`, genau wie unten dokumentiert. **Thomas hat die Zuordnung am 23. Oktober 2026 freigegeben und alle acht Karten zur Stilllegung bestätigt** (`approved` in `replaces-de-by.json`, sein Wortlaut in `source`). Die alte Zelle `de-by:realschule-9-deutsch-argumentation-eroerterung` wird danach in ZAM nicht mehr gebündelt; Karten und Reviewhistorien bleiben erhalten.
+Stand: 23. Oktober 2026. Das [Academy-Paket](../deutsch-realschule-9/) wurde als Zelle `2026.10.1` ohne `replaces` und `retired_items` veröffentlicht. Seit Version `2026.10.2` deklariert die Zelle die acht `retired_items` der C-Zeilen und kein `replaces`, genau wie unten dokumentiert. **Thomas hat die Zuordnung am 23. Oktober 2026 freigegeben und alle acht Karten zur Stilllegung bestätigt** (`approved` in `replaces-de-by.json`, sein Wortlaut in `source`). Die alte Zelle `de-by:realschule-9-deutsch-argumentation-eroerterung` wird danach in ZAM nicht mehr gebündelt; Karten und Reviewhistorien bleiben erhalten.
 
 ## Lehrplan
 
