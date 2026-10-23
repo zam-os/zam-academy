@@ -1430,8 +1430,8 @@ const extremwerte: Lesson = {
     goals: [
       {
         id: "kleinster",
-        text: "T(x) = x² − 6x + 14: Finde das x, für das T(x) am kleinsten ist. Was ist dann mit dem Quadrat?",
-        check: (v) => v.a === 1 && v.b === -6 && v.c === 14 && v.x === 3,
+        text: "Stelle mit a = 1 einen Term ein, der seinen kleinsten Wert 1 für x = −2 annimmt. Welche Zahl b brauchst du, welche Zahl c?",
+        check: (v) => v.a === 1 && Math.abs(completedSquare(v).d + 2) < 1e-9 && Math.abs(completedSquare(v).e - 1) < 1e-9,
       },
       {
         id: "max4",
@@ -2702,7 +2702,32 @@ const ungleichungen: Lesson = {
       id: "sachaufgabe",
       make: guarded((rng, level): ExerciseTask => {
         if (level === 1) {
-          if (rng.next() < 0.5) {
+          const variant = rng.int(0, 2);
+          if (variant === 2) {
+            // x on both sides: two gym offers, with the Ansatz given
+            const joinA = rng.pick([0, 20, 30, 40]);
+            const joinB = joinA + rng.pick([40, 50, 60, 75, 90]);
+            const perA = rng.pick([25, 29, 30, 35]);
+            const perB = perA - rng.pick([3, 4, 5, 6]);
+            const g = (joinB - joinA) / (perA - perB);
+            const from = integerEdge(2, g);
+            const left = `${joinB} + ${perB}x`;
+            const right = joinA === 0 ? `${perA}x` : `${joinA} + ${perA}x`;
+            return {
+              prompt: `Fitnessstudio A verlangt ${joinA === 0 ? "keine Aufnahmegebühr" : `${joinA} € Aufnahmegebühr`} und ${perA} € im Monat, Fitnessstudio B ${joinB} € Aufnahmegebühr und ${perB} € im Monat. Ab wie vielen Monaten ist B insgesamt günstiger als A?`,
+              given: [`Ansatz: ${left} &lt; ${right} (x: Monate)`],
+              formulaHint: "x-Glieder auf eine Seite, Zahlen auf die andere; beim Teilen durch eine negative Zahl das Zeichen umdrehen; „günstiger“ heißt echt kleiner",
+              fields: [exactField("B ist günstiger ab", from, Number.isInteger(g) ? [{ value: g, hint: `Nach genau ${g} Monaten kosten beide gleich viel. „Günstiger“ heißt echt kleiner.` }] : [{ value: Math.floor(g), hint: "Nach dieser Zahl von Monaten ist B noch nicht günstiger: aufrunden." }], "Monaten")],
+              steps: [
+                `${left} &lt; ${right}   | − ${perA}x − ${joinB}`,
+                `${fmt(perB - perA)}x &lt; ${fmt(joinA - joinB)}   | : (${fmt(perB - perA)}), Zeichen umdrehen`,
+                `x &gt; ${boundText(g)}`,
+                `<strong>Ab ${from} Monaten ist Fitnessstudio B günstiger.</strong>`,
+              ],
+              meta: { kind: 4, joinA, joinB, perA, perB, from },
+            };
+          }
+          if (variant === 0) {
             // at most: a phone tariff and a budget
             const base = rng.pick([500, 750, 800, 950, 1000, 1200]);
             const perMin = rng.pick([5, 6, 8, 9, 12, 15]);
@@ -2712,7 +2737,7 @@ const ungleichungen: Lesson = {
             const exact = extra % perMin === 0;
             const ansatz = `${fmt(base / 100)} + ${fmt(perMin / 100)} · x ≤ ${fmt(budget / 100)}`;
             return {
-              prompt: `Ein Handytarif kostet im Monat ${euro(base)} € Grundgebühr und ${perMin} ct pro Minute. Lena will höchstens ${euro(budget)} € im Monat ausgeben. Wie viele ganze Minuten darf sie höchstens telefonieren?`,
+              prompt: `Wiederholung aus M7: Ein Handytarif kostet im Monat ${euro(base)} € Grundgebühr und ${perMin} ct pro Minute. Lena will höchstens ${euro(budget)} € im Monat ausgeben. Wie viele ganze Minuten darf sie höchstens telefonieren?`,
               given: [`Ansatz: ${ansatz} (x: Minuten)`],
               formulaHint: "höchstens heißt ≤; x ist eine Anzahl von Minuten, also eine natürliche Zahl",
               fields: [exactField("höchstens", minutes, exact ? [] : [{ value: minutes + 1, hint: "Aufgerundet wäre das Budget überschritten: Bei „höchstens“ wird abgerundet." }], "Minuten")],
@@ -2728,7 +2753,7 @@ const ungleichungen: Lesson = {
           const exact = (target - bonus) % wage === 0;
           const ansatz = `${bonus ? `${fmt(bonus / 100)} + ` : ""}${fmt(wage / 100)} · x ≥ ${fmt(target / 100)}`;
           return {
-            prompt: `Tim jobbt in den Ferien für ${euro(wage)} € pro Stunde${bonus ? ` und bekommt einmalig ${euro(bonus)} € Fahrgeld` : ""}. Er will mindestens ${euro(target)} € verdienen. Wie viele ganze Stunden muss er mindestens arbeiten?`,
+            prompt: `Wiederholung aus M7: Tim jobbt in den Ferien für ${euro(wage)} € pro Stunde${bonus ? ` und bekommt einmalig ${euro(bonus)} € Fahrgeld` : ""}. Er will mindestens ${euro(target)} € verdienen. Wie viele ganze Stunden muss er mindestens arbeiten?`,
             given: [`Ansatz: ${ansatz} (x: Stunden)`],
             formulaHint: "mindestens heißt ≥; x ist eine Anzahl ganzer Stunden",
             fields: [exactField("mindestens", hours, exact ? [] : [{ value: hours - 1, hint: "Abgerundet reicht das Geld nicht: Bei „mindestens“ wird aufgerundet." }], "Stunden")],

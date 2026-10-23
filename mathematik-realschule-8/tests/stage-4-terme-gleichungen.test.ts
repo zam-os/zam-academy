@@ -676,7 +676,14 @@ describe("Aufgaben der Etappe 4 rechnen richtig (4.7 bis 4.9)", () => {
         const bound = task.steps.map((step) => step.match(/x (?:≤|≥|&gt;) ([\d.,]+)(…?)$/)).find(Boolean);
         expect(bound, task.steps.join(" ")).not.toBeNull();
         const shown = Number((bound?.[1] ?? "").replace(/\./g, "").replace(",", "."));
-        const exactBound = m.kind === 0 ? (m.budget - m.base) / m.perMin : m.kind === 1 ? (m.target - m.bonus) / m.wage : m.kind === 2 ? (m.baseB - m.baseA) / (m.perA - m.perB) : m.season / (m.single - m.perVisit);
+        const exactBound =
+          m.kind === 0 ? (m.budget - m.base) / m.perMin
+          : m.kind === 1 ? (m.target - m.bonus) / m.wage
+          : m.kind === 2 ? (m.baseB - m.baseA) / (m.perA - m.perB)
+          : m.kind === 4 ? (m.joinB - m.joinA) / (m.perA - m.perB)
+          : m.season / (m.single - m.perVisit);
+        // Level 1 has one grade-8 variant with x on both sides; the two others are marked as M7 Wiederholung.
+        if (level === 1) expect(m.kind === 4 || task.prompt.startsWith("Wiederholung aus M7: "), task.prompt).toBe(true);
         const ends = endsAfterTwoDecimals(exactBound);
         expect(bound?.[2] === "…", task.steps.join(" ")).toBe(!ends);
         if (ends) close(shown, exactBound);
@@ -695,6 +702,10 @@ describe("Aufgaben der Etappe 4 rechnen richtig (4.7 bis 4.9)", () => {
           expect(m.baseB + m.perB * (m.from - 1)).toBeGreaterThanOrEqual(m.baseA + m.perA * (m.from - 1));
           expect(choice(task, 0)).toBe(m.baseA < m.baseB ? 0 : 1);
           expect(num(task, 1)).toBe(m.from);
+        } else if (m.kind === 4) {
+          expect(m.joinB + m.perB * m.from).toBeLessThan(m.joinA + m.perA * m.from);
+          expect(m.joinB + m.perB * (m.from - 1)).toBeGreaterThanOrEqual(m.joinA + m.perA * (m.from - 1));
+          expect(num(task, 0)).toBe(m.from);
         } else {
           expect(m.season + m.perVisit * m.from).toBeLessThan(m.single * m.from);
           expect(m.season + m.perVisit * (m.from - 1)).toBeGreaterThanOrEqual(m.single * (m.from - 1));

@@ -39,8 +39,8 @@ export const GOAL_WITNESSES_STAGE_4: Record<string, Record<string, LabValues>> =
     doppelt: { A: 4, B: 8, C: 4 },
   },
   "tg-5-extremwerte": {
-    // x² − 6x + 14 = (x − 3)² + 5
-    kleinster: { a: 1, b: -6, c: 14, x: 3 },
+    // x² + 4x + 5 = (x + 2)² + 1
+    kleinster: { a: 1, b: 4, c: 5, x: 0 },
     // −x² + 2x + 3 = −(x − 1)² + 4
     max4: { a: -1, b: 2, c: 3, x: 0 },
     // T(6) = 36 − 36 + 14 = T(0): mirror image of 0 at d = 3
