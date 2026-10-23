@@ -149,6 +149,32 @@ export function factorForm(a: number, x1: number, x2: number, digits = 2): strin
   return `${factor}${f1}${f2}`;
 }
 
+/**
+ * The length of a segment named by its endpoints, written as in Bavarian
+ * schools and in the Abschlussprüfung: [AB] is the Strecke, the overlined AB
+ * its length, AB without brackets the Gerade. `len("AB")` →
+ * `<span class="len">AB</span>` for HTML; the class draws the bar
+ * (styles.css), over a prime too: `len("ZP'")`.
+ */
+export function len(name: string): string {
+  return `<span class="len">${name}</span>`;
+}
+
+/** The same overlined name inside an SVG `<text>`: `<tspan class="len">AB</tspan>`. */
+export function lenSvg(name: string): string {
+  return `<tspan class="len">${name}</tspan>`;
+}
+
+/**
+ * The overlined name as plain text, for strings the app shows escaped or
+ * with textContent (slip hints, quiz, readouts, goals): every letter gets
+ * the combining overline U+0305, as zam-core writes \overline{AB} in plain
+ * text. `lenText("ZA'")` → "Z̅A̅'"; the prime keeps no bar, which reads better.
+ */
+export function lenText(name: string): string {
+  return name.replace(/[A-Za-z0-9]/g, (ch) => `${ch}̅`);
+}
+
 /** A point as the German school writes it: "(3 | −2)". */
 export function point(x: number, y: number, digits = 2): string {
   return `(${fmt(x, digits)} | ${fmt(y, digits)})`;
