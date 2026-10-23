@@ -1,4 +1,4 @@
-import { fmt, fracText, paren, point } from "../exercises/format";
+import { fmt, fracText, lenSvg, paren, point } from "../exercises/format";
 import type { LabValues } from "../model/types";
 import { arcPath, circle, clamp, clipped, handle, type LabView, line, open, Plot, polar, polygon, type Pt, text } from "./svg";
 
@@ -430,7 +430,8 @@ function rotationView(v: LabValues): string {
   out += text(PX, 76, !moving ? (v.phi === 0 ? "keine Drehung" : "volle Umdrehung") : v.phi > 0 ? "gegen den Uhrzeigersinn" : "im Uhrzeigersinn", "lab-text-small");
   if (moving) out += text(PX, 94, `dieselbe Drehung wie ${fmt(v.phi > 0 ? v.phi - 360 : v.phi + 360)}°`, "lab-text-small");
   out += text(PX, 124, "Abbildungsvorschrift:", "lab-text-muted");
-  out += text(PX, 144, `|ZA'| = |ZA| ${whole ? "=" : "≈"} ${fmt(rA, 2)} LE`, "lab-text-small");
+  // the distances as overlined names: the bar is a <tspan class="len">, so the text is built here, not with text()
+  out += `<text x="${PX}" y="144" class="lab-text-small" text-anchor="start">${lenSvg("ZA'")} = ${lenSvg("ZA")} ${whole ? "=" : "≈"} ${fmt(rA, 2)} LE</text>`;
   if (moving) out += text(PX, 162, angleAtZ(v.phi), "lab-text-small");
   out += text(PX, 192, "Zieldreiecke:", "lab-text-muted");
   [0, 1].forEach((k) => {

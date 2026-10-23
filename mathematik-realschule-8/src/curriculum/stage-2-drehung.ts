@@ -1,4 +1,4 @@
-import { fmt, paren, point } from "../exercises/format";
+import { fmt, len, lenText, paren, point } from "../exercises/format";
 import type { Rng } from "../exercises/rng";
 import {
   add,
@@ -165,18 +165,18 @@ const drehung: Lesson = {
     "Uhrzeiger, Riesenräder, Drehtüren und Windräder bewegen sich durch Drehungen. Mit der Abbildungsvorschrift konstruierst du gedrehte Figuren und findest Drehzentrum und Drehwinkel; in Lektion 2.3 berechnest du gedrehte Punkte mit Vektoren.",
   explanationHtml: `
     <p><strong>Wiederholung aus M6 und M7:</strong> Achsenspiegelung und Parallelverschiebung sind Kongruenzabbildungen: Sie ändern die Lage einer Figur, aber nicht ihre Form und Größe. Die Drehung ist die dritte Kongruenzabbildung.</p>
-    <p>Eine <strong>Drehung</strong> ist durch ihr <strong>Drehzentrum Z</strong> und ihren <strong>Drehwinkel φ</strong> festgelegt. Ein positiver Drehwinkel dreht gegen den Uhrzeigersinn, ein negativer im Uhrzeigersinn. Die <strong>Abbildungsvorschrift</strong> der Drehung um Z mit φ: Der Bildpunkt P' eines Punktes P liegt auf dem Kreis um Z durch P, also |ZP'| = |ZP|, und die Halbgerade [ZP' entsteht aus [ZP durch eine Drehung um |φ| in Drehrichtung. Weil ein Winkel ∢PZP' immer gegen den Uhrzeigersinn von [ZP nach [ZP' gemessen wird, gilt für positives φ ∢PZP' = φ; für negatives φ, etwa φ = −50°, ist ∢P'ZP = 50°. Das Drehzentrum selbst bleibt liegen.</p>
+    <p>Eine <strong>Drehung</strong> ist durch ihr <strong>Drehzentrum Z</strong> und ihren <strong>Drehwinkel φ</strong> festgelegt. Ein positiver Drehwinkel dreht gegen den Uhrzeigersinn, ein negativer im Uhrzeigersinn. Die <strong>Abbildungsvorschrift</strong> der Drehung um Z mit φ: Der Bildpunkt P' eines Punktes P liegt auf dem Kreis um Z durch P, also ${len("ZP'")} = ${len("ZP")}, und die Halbgerade [ZP' entsteht aus [ZP durch eine Drehung um |φ| in Drehrichtung. Weil ein Winkel ∢PZP' immer gegen den Uhrzeigersinn von [ZP nach [ZP' gemessen wird, gilt für positives φ ∢PZP' = φ; für negatives φ, etwa φ = −50°, ist ∢P'ZP = 50°. Das Drehzentrum selbst bleibt liegen.</p>
     <p><strong>Konstruktion mit Zirkel und Geodreieck</strong> (Drehung um Z mit φ = 70°):</p>
     <ol class="steps">
       <li>Zeichne die Halbgerade [ZP.</li>
       <li>Trage in Z an [ZP den Winkel 70° gegen den Uhrzeigersinn an.</li>
-      <li>Der Kreis um Z mit dem Radius |ZP| schneidet den freien Schenkel in P'.</li>
+      <li>Der Kreis um Z mit dem Radius ${len("ZP")} schneidet den freien Schenkel in P'.</li>
     </ol>
     <p>Eine Strecke oder ein Vieleck drehst du, indem du die Eckpunkte drehst und die Bildpunkte verbindest; bei einem Kreis drehst du den Mittelpunkt, der Radius bleibt.</p>
     <p><strong>Eigenschaften:</strong> Die Drehung ist eine Kongruenzabbildung.</p>
     <table class="mini">
       <tr><th>Eigenschaft</th><th>bedeutet</th></tr>
-      <tr><td>längentreu</td><td>|A'B'| = |AB|</td></tr>
+      <tr><td>längentreu</td><td>${len("A'B'")} = ${len("AB")}</td></tr>
       <tr><td>winkeltreu</td><td>Bildwinkel und Urwinkel sind gleich groß</td></tr>
       <tr><td>geradentreu, parallelentreu</td><td>Bild einer Geraden ist eine Gerade; parallele Geraden haben parallele Bildgeraden</td></tr>
       <tr><td>kreistreu</td><td>Bild eines Kreises ist ein Kreis mit gleichem Radius</td></tr>
@@ -188,17 +188,17 @@ const drehung: Lesson = {
       <li>Die <strong>Umkehrabbildung</strong> der Drehung um Z mit φ ist die Drehung um Z mit −φ: Sie bringt P' zurück nach P.</li>
       <li>Zwei Drehungen um <strong>dasselbe</strong> Zentrum nacheinander ergeben die Drehung um Z mit φ<sub>1</sub> + φ<sub>2</sub>.</li>
     </ul>
-    <p><strong>Drehzentrum und Drehwinkel finden:</strong> Wegen |ZP| = |ZP'| ist Z von P und P' gleich weit entfernt und liegt deshalb auf der Mittelsenkrechten von [PP'] (Wiederholung aus M6). Kennst du zwei Punkte P und Q mit ihren Bildpunkten, ist Z der Schnittpunkt der Mittelsenkrechten von [PP'] und [QQ']. Den Drehwinkel misst du danach zwischen [ZP und [ZP' und achtest auf die Richtung. Mit einer Geometriesoftware geht beides mit den Werkzeugen „Mittelsenkrechte“ und „Drehung um einen Punkt“.</p>
+    <p><strong>Drehzentrum und Drehwinkel finden:</strong> Wegen ${len("ZP")} = ${len("ZP'")} ist Z von P und P' gleich weit entfernt und liegt deshalb auf der Mittelsenkrechten von [PP'] (Wiederholung aus M6). Kennst du zwei Punkte P und Q mit ihren Bildpunkten, ist Z der Schnittpunkt der Mittelsenkrechten von [PP'] und [QQ']. Den Drehwinkel misst du danach zwischen [ZP und [ZP' und achtest auf die Richtung. Mit einer Geometriesoftware geht beides mit den Werkzeugen „Mittelsenkrechte“ und „Drehung um einen Punkt“.</p>
     <div class="example"><strong>Beispiel:</strong> Eine Drehung bildet P(4 | 3) auf P'(4 | −1) und Q(5 | 2) auf Q'(3 | −2) ab. Gesucht sind Z und φ.<br>
       1. P und P' liegen übereinander, der Mittelpunkt von [PP'] ist (4 | 1). Die Mittelsenkrechte von [PP'] ist die Waagrechte y = 1.<br>
       2. Die Mittelsenkrechte von [QQ'] geht durch den Mittelpunkt (4 | 0) von [QQ'] und steht senkrecht auf [QQ']. Eingezeichnet schneidet sie die Waagrechte y = 1 im Punkt Z(2 | 1).<br>
       3. Probe mit Kästchen: Von Z nach Q geht es 3 nach rechts und 1 nach oben, von Z nach Q' 1 nach rechts und 3 nach unten. Die Wege sind gleich lang und um einen rechten Winkel gegeneinander gedreht.<br>
       4. Von [ZP nach [ZP' dreht man um 90° im Uhrzeigersinn: φ = −90°, gleichwertig φ = 270°.</div>
-    <p><strong>Typische Fehler:</strong> den Winkel in die falsche Richtung antragen (auf das Vorzeichen achten), den Winkel an P statt an Z antragen, den Kreis mit dem falschen Radius zeichnen (der Radius ist |ZP|) und beim Drehzentrum die Mittelsenkrechte von [PQ] statt von [PP'] nehmen.</p>
+    <p><strong>Typische Fehler:</strong> den Winkel in die falsche Richtung antragen (auf das Vorzeichen achten), den Winkel an P statt an Z antragen, den Kreis mit dem falschen Radius zeichnen (der Radius ist ${len("ZP")}) und beim Drehzentrum die Mittelsenkrechte von [PQ] statt von [PP'] nehmen.</p>
     <div class="merke"><strong>Merke:</strong> Bei der Drehung um Z mit φ liegt P' auf dem Kreis um Z durch P, und [ZP' entsteht aus [ZP durch eine Drehung um |φ|, für positives φ gegen den Uhrzeigersinn, für negatives im Uhrzeigersinn. Die Drehung ist eine Kongruenzabbildung, die den Umlaufsinn erhält; Z ist ihr einziger Fixpunkt. Das Drehzentrum liegt auf der Mittelsenkrechten jeder Strecke [PP'].</div>
   `,
   formulas: [
-    { name: "Abbildungsvorschrift", html: "|ZP'| = |ZP|; für φ &gt; 0 ist ∢PZP' = φ, für φ &lt; 0 ist ∢P'ZP = |φ|", quantities: "Z Drehzentrum, φ Drehwinkel (positiv: gegen den Uhrzeigersinn, negativ: im Uhrzeigersinn), P' Bildpunkt von P" },
+    { name: "Abbildungsvorschrift", html: `${len("ZP'")} = ${len("ZP")}; für φ &gt; 0 ist ∢PZP' = φ, für φ &lt; 0 ist ∢P'ZP = |φ|`, quantities: "Z Drehzentrum, φ Drehwinkel (positiv: gegen den Uhrzeigersinn, negativ: im Uhrzeigersinn), P' Bildpunkt von P" },
     { name: "Dieselbe Drehung", html: "φ und φ − 360°, zum Beispiel −90° und 270°", quantities: "beide Winkel führen zu denselben Bildpunkten" },
     { name: "Umkehren und nacheinander drehen", html: "Umkehrabbildung: Drehung um Z mit −φ; erst φ<sub>1</sub>, dann φ<sub>2</sub> um dasselbe Z: φ<sub>1</sub> + φ<sub>2</sub>", quantities: "φ₁, φ₂ Drehwinkel um dasselbe Zentrum" },
     { name: "Drehzentrum", html: "Z = Schnittpunkt der Mittelsenkrechten von [PP'] und [QQ']", quantities: "P, Q zwei Punkte, P', Q' ihre Bildpunkte" },
@@ -209,7 +209,7 @@ const drehung: Lesson = {
       "Kreis um P durch Z zeichnen und in P an [PZ den Winkel 60° antragen.",
       "Kreis um Z durch P zeichnen und in Z an [ZP den Winkel 60° gegen den Uhrzeigersinn antragen.",
       "Kreis um Z durch P zeichnen und in Z an [ZP den Winkel 60° im Uhrzeigersinn antragen.",
-      "Durch P die Senkrechte zu ZP zeichnen und P' im Abstand |ZP| von P markieren.",
+      `Durch P die Senkrechte zu ZP zeichnen und P' im Abstand ${lenText("ZP")} von P markieren.`,
     ],
     correctIndex: 2,
     explanation:
@@ -246,7 +246,7 @@ const drehung: Lesson = {
           return exact ? named("A'", a) : `A' ≈ ${point(a.x, a.y)}`;
         },
       },
-      { key: "radius", label: "|ZA| = |ZA'|", unit: "LE", digits: 2, compute: (v) => Math.hypot(TRIANGLE[0].x - v.zx, TRIANGLE[0].y - v.zy) },
+      { key: "radius", label: `${lenText("ZA")} = ${lenText("ZA'")}`, unit: "LE", digits: 2, compute: (v) => Math.hypot(TRIANGLE[0].x - v.zx, TRIANGLE[0].y - v.zy) },
       { key: "winkel", label: "Drehwinkel", compute: (v) => angleText(v.phi) },
       { key: "ziel", label: "Zieldreiecke", emphasis: true, compute: (v) => targetText(v) },
     ],
@@ -474,20 +474,20 @@ const drehung: Lesson = {
           const ccw = rng.next() < 0.5;
           const sense = ccw ? "gegen den Uhrzeigersinn" : "im Uhrzeigersinn";
           return {
-            prompt: `Das Dreieck ABC wird um einen Punkt Z mit φ = ${deg(phi)} auf A'B'C' gedreht. Von ABC kennt man |AB| = ${fmt(ab)} cm und den Innenwinkel α = ${alpha}° bei A; außerdem ist |ZA| = ${fmt(za)} cm, und die Ecken A, B, C folgen ${sense} aufeinander. Gib |A'B'|, den Innenwinkel α' bei A', |ZA'| und den Umlaufsinn von A'B'C' an.`,
-            given: [`|AB| = ${fmt(ab)} cm, α = ${alpha}°`, `|ZA| = ${fmt(za)} cm`, `φ = ${deg(phi)}`],
-            formulaHint: "Die Drehung ist längentreu und winkeltreu, |ZP'| = |ZP|, und der Umlaufsinn bleibt erhalten.",
+            prompt: `Das Dreieck ABC wird um einen Punkt Z mit φ = ${deg(phi)} auf A'B'C' gedreht. Von ABC kennt man ${len("AB")} = ${fmt(ab)} cm und den Innenwinkel α = ${alpha}° bei A; außerdem ist ${len("ZA")} = ${fmt(za)} cm, und die Ecken A, B, C folgen ${sense} aufeinander. Gib ${len("A'B'")}, den Innenwinkel α' bei A', ${len("ZA'")} und den Umlaufsinn von A'B'C' an.`,
+            given: [`${len("AB")} = ${fmt(ab)} cm, α = ${alpha}°`, `${len("ZA")} = ${fmt(za)} cm`, `φ = ${deg(phi)}`],
+            formulaHint: `Die Drehung ist längentreu und winkeltreu, ${len("ZP'")} = ${len("ZP")}, und der Umlaufsinn bleibt erhalten.`,
             fields: [
-              numberField("|A'B'| =", ab, "cm", 1, { slips: [{ value: za, hint: "|ZA| ist der Abstand von A zum Drehzentrum. Die Seite [A'B'] ist so lang wie die Seite [AB]." }] }),
+              numberField(`${len("A'B'")} =`, ab, "cm", 1, { slips: [{ value: za, hint: `${lenText("ZA")} ist der Abstand von A zum Drehzentrum. Die Seite [A'B'] ist so lang wie die Seite [AB].` }] }),
               numberField("α' =", alpha, "°", 0, { slips: [{ value: Math.abs(phi), hint: "φ ist der Drehwinkel um Z. Die Winkel im Dreieck ändern sich beim Drehen nicht." }] }),
-              numberField("|ZA'| =", za, "cm", 1, { slips: [{ value: ab, hint: "A' liegt auf dem Kreis um Z durch A: |ZA'| = |ZA|." }] }),
+              numberField(`${len("ZA'")} =`, za, "cm", 1, { slips: [{ value: ab, hint: `A' liegt auf dem Kreis um Z durch A: ${lenText("ZA'")} = ${lenText("ZA")}.` }] }),
               choiceField("Umlaufsinn von A'B'C':", ["gegen den Uhrzeigersinn", "im Uhrzeigersinn"], ccw ? 0 : 1),
             ],
             steps: [
-              `Die Drehung ist längentreu: |A'B'| = |AB| = ${fmt(ab)} cm. A' liegt auf dem Kreis um Z durch A, also |ZA'| = |ZA| = ${fmt(za)} cm.`,
+              `Die Drehung ist längentreu: ${len("A'B'")} = ${len("AB")} = ${fmt(ab)} cm. A' liegt auf dem Kreis um Z durch A, also ${len("ZA'")} = ${len("ZA")} = ${fmt(za)} cm.`,
               `Sie ist winkeltreu: α' = α = ${alpha}°. Der Drehwinkel ${deg(phi)} spielt für die Größen im Dreieck keine Rolle.`,
               `Eine Drehung erhält den Umlaufsinn (nur eine Achsenspiegelung kehrt ihn um): A', B', C' folgen ebenfalls ${sense} aufeinander.`,
-              `<strong>|A'B'| = ${fmt(ab)} cm, α' = ${alpha}°, |ZA'| = ${fmt(za)} cm, ${sense}</strong>`,
+              `<strong>${len("A'B'")} = ${fmt(ab)} cm, α' = ${alpha}°, ${len("ZA'")} = ${fmt(za)} cm, ${sense}</strong>`,
             ],
             meta: { ab, alpha, za, phi, ccw: ccw ? 1 : 0 },
           };
@@ -509,17 +509,17 @@ const drehung: Lesson = {
               ],
             }),
           ];
-          if (type === 1) fields.push(numberField("|PP'| =", zp, "cm", 1, { slips: [{ value: 2 * zp, hint: "Im gleichseitigen Dreieck sind alle drei Seiten gleich lang." }] }));
+          if (type === 1) fields.push(numberField(`${len("PP'")} =`, zp, "cm", 1, { slips: [{ value: 2 * zp, hint: "Im gleichseitigen Dreieck sind alle drei Seiten gleich lang." }] }));
           const name = types[type];
           return {
-            prompt: `Bei einer Drehung um Z mit φ = ${deg(phi)} wird der Punkt P auf P' abgebildet; dabei ist |ZP| = ${fmt(zp)} cm. Welche besondere Form hat das Dreieck ZPP'? Berechne die Innenwinkel des Dreiecks bei Z und bei P${type === 1 ? " sowie die Länge |PP'|" : ""}.`,
-            given: [`φ = ${deg(phi)}`, `|ZP| = ${fmt(zp)} cm`],
+            prompt: `Bei einer Drehung um Z mit φ = ${deg(phi)} wird der Punkt P auf P' abgebildet; dabei ist ${len("ZP")} = ${fmt(zp)} cm. Welche besondere Form hat das Dreieck ZPP'? Berechne die Innenwinkel des Dreiecks bei Z und bei P${type === 1 ? " sowie die Länge der Strecke [PP']" : ""}.`,
+            given: [`φ = ${deg(phi)}`, `${len("ZP")} = ${fmt(zp)} cm`],
             fields,
             steps: [
-              `|ZP'| = |ZP| = ${fmt(zp)} cm: Das Dreieck ZPP' ist gleichschenklig mit der Spitze Z${type === 1 ? ", und weil der Winkel an der Spitze 60° beträgt, sogar gleichseitig" : type === 2 ? " und hat bei Z einen rechten Winkel" : ""}.`,
+              `${len("ZP'")} = ${len("ZP")} = ${fmt(zp)} cm: Das Dreieck ZPP' ist gleichschenklig mit der Spitze Z${type === 1 ? ", und weil der Winkel an der Spitze 60° beträgt, sogar gleichseitig" : type === 2 ? " und hat bei Z einen rechten Winkel" : ""}.`,
               `Der Winkel an der Spitze Z ist so groß wie der Betrag des Drehwinkels: ${size}°${phi < 0 ? " (das Minus von φ gibt nur die Richtung an)" : ""}.`,
-              `Die Basiswinkel bei P und P' sind gleich groß: (180° − ${size}°) : 2 = ${deg(base)}.${type === 1 ? ` Im gleichseitigen Dreieck ist |PP'| = |ZP| = ${fmt(zp)} cm.` : ""}`,
-              `<strong>${name[0].toUpperCase()}${name.slice(1)}; Winkel bei Z: ${size}°, bei P: ${deg(base)}${type === 1 ? `, |PP'| = ${fmt(zp)} cm` : ""}</strong>`,
+              `Die Basiswinkel bei P und P' sind gleich groß: (180° − ${size}°) : 2 = ${deg(base)}.${type === 1 ? ` Im gleichseitigen Dreieck ist ${len("PP'")} = ${len("ZP")} = ${fmt(zp)} cm.` : ""}`,
+              `<strong>${name[0].toUpperCase()}${name.slice(1)}; Winkel bei Z: ${size}°, bei P: ${deg(base)}${type === 1 ? `, ${len("PP'")} = ${fmt(zp)} cm` : ""}</strong>`,
             ],
             meta: { kind: 0, phi, zp },
           };
@@ -541,7 +541,7 @@ const drehung: Lesson = {
             }),
           ],
           steps: [
-            `|ZP| = |ZP'|, also ist das Dreieck ZPP' gleichschenklig mit der Spitze Z, und die Basiswinkel bei P und P' sind beide ${base}° groß.`,
+            `${len("ZP")} = ${len("ZP'")}, also ist das Dreieck ZPP' gleichschenklig mit der Spitze Z, und die Basiswinkel bei P und P' sind beide ${base}° groß.`,
             `Innenwinkelsumme: Der Winkel bei Z ist 180° − 2 · ${base}° = ${size}°.`,
             `Er ist so groß wie der Betrag des Drehwinkels. Die Drehung läuft ${clockwise ? "im" : "gegen den"} Uhrzeigersinn, also φ = ${deg(phi)}.`,
             `<strong>Winkel bei Z: ${size}°; φ = ${deg(phi)}</strong>`,
@@ -660,7 +660,7 @@ const punktspiegelung: Lesson = {
   whyItMatters:
     "Radkappen, Windräder, Blüten und Rosettenfenster sehen nach einer Teildrehung wieder genauso aus. Mit der Punktspiegelung berechnest du fehlende Ecken von Parallelogrammen, und in Etappe 3 suchst du Symmetriezentren von Körpern.",
   explanationHtml: `
-    <p>Die Drehung um Z mit φ = 180° heißt <strong>Punktspiegelung</strong> an Z. Weil 180° und −180° dieselbe Drehung beschreiben, spielt die Drehrichtung keine Rolle. P, Z und P' liegen auf einer Geraden, und Z ist der Mittelpunkt der Strecke [PP']. Zum Konstruieren zeichnest du die Gerade PZ und trägst die Länge |ZP| auf der anderen Seite von Z ab.</p>
+    <p>Die Drehung um Z mit φ = 180° heißt <strong>Punktspiegelung</strong> an Z. Weil 180° und −180° dieselbe Drehung beschreiben, spielt die Drehrichtung keine Rolle. P, Z und P' liegen auf einer Geraden, und Z ist der Mittelpunkt der Strecke [PP']. Zum Konstruieren zeichnest du die Gerade PZ und trägst die Länge ${len("ZP")} auf der anderen Seite von Z ab.</p>
     <p>Als Drehung ist die Punktspiegelung eine Kongruenzabbildung, die den Umlaufsinn erhält. Dazu kommen zwei besondere Eigenschaften:</p>
     <ul>
       <li>Jede Gerade ist zu ihrer Bildgeraden parallel; eine Gerade durch Z wird auf sich selbst abgebildet.</li>
@@ -1236,7 +1236,7 @@ const vektoren: Lesson = {
           const half = "[AD] ist doppelt so lang wie [AB]: Verdopple beide Koordinaten des gedrehten Vektors.";
           return {
             prompt: `Das Rechteck ABCD hat die Eckpunkte A${pt(a)} und B${pt(b)}; seine Ecken folgen gegen den Uhrzeigersinn aufeinander, und die Seite [AD] ist doppelt so lang wie die Seite [AB]. Berechne die Koordinaten von C und D.`,
-            given: [`A${pt(a)}`, `B${pt(b)}`, "|AD| = 2 · |AB|, Ecken gegen den Uhrzeigersinn"],
+            given: [`A${pt(a)}`, `B${pt(b)}`, `${len("AD")} = 2 · ${len("AB")}, Ecken gegen den Uhrzeigersinn`],
             fields: [
               coord("C: x =", c.x, [{ value: add(b, turned).x, hint: half }]),
               coord("y =", c.y, [{ value: add(b, turned).y, hint: half }]),
