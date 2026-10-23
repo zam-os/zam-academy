@@ -1,4 +1,4 @@
-import { fmt, fmtUnit } from "../exercises/format";
+import { fmt, fmtUnit, frac } from "../exercises/format";
 import type { Rng } from "../exercises/rng";
 import {
   CASES,
@@ -14,6 +14,22 @@ import {
   oppositeText,
   sideCheck,
   ssaLengths,
+  anglesText,
+  diagonalsText,
+  familyPoints,
+  FREEHAND_START,
+  problemAngles,
+  problemArea,
+  quadInfo,
+  redrawFreehand,
+  sidesText,
+  symmetryText,
+  withArticle,
+  ZUG_FIGURES,
+  ZUG_START,
+  zugConstructionText,
+  zugKeeps,
+  zugPoints,
 } from "../lab/views-dreiecke-vierecke";
 import type { AnswerField, ChoiceField, ExerciseTask, LabValues, Lesson, Stage } from "../model/types";
 import { choiceField, numberField } from "./helpers";
@@ -1283,6 +1299,1065 @@ const kongruenz: Lesson = {
   celebrationMessage: "Du erkennst, welche drei Stücke ein Dreieck festlegen, und schließt daraus auf gleiche Seiten und Winkel.",
 };
 
+// ─── Vierecke (both Zweige) ────────────────────────────────────────────────
+
+const BOTH = "M8 LB 1 (I) · M8 LB 1 (II/III)";
+const QUAD = ["A", "B", "C", "D"];
+
+// Column vectors and vector names in HTML, as in Mathematik 10 (no CSS class of the app draws them).
+const COLUMN_STYLE =
+  "display:inline-flex;flex-direction:column;align-items:center;vertical-align:middle;line-height:1.15;padding:0.05em 0.38em;margin:0 0.12em;border-left:1.5px solid currentColor;border-right:1.5px solid currentColor;border-radius:0.65em / 50%";
+
+/** A column vector (x over y) in round brackets. */
+function vecHtml(x: number, y: number): string {
+  return `<span class="vec" style="${COLUMN_STYLE}"><span>${fmt(x)}</span><span>${fmt(y)}</span></span>`;
+}
+
+/** A vector name with the arrow above it: vn("BC") is BC→. */
+function vn(name: string): string {
+  return `<span class="vname" style="display:inline-block;position:relative;line-height:1;padding-top:0.42em"><span aria-hidden="true" style="position:absolute;left:0;right:0;top:0;text-align:center;font-size:0.7em;line-height:0.8">⟶</span>${name}</span>`;
+}
+
+const pt = (x: number, y: number): string => `(${fmt(x)} | ${fmt(y)})`;
+
+// 1.4 Das Haus der Vierecke ────────────────────────────────────────────────
+
+/** The names a quadrilateral is most easily confused with, the wrong options of the tasks. */
+export const QUAD_NEIGHBOURS: Record<string, string[]> = {
+  Quadrat: ["Rechteck", "Raute", "Parallelogramm"],
+  Rechteck: ["Quadrat", "Parallelogramm", "gleichschenkliges Trapez"],
+  Raute: ["Quadrat", "Parallelogramm", "Drachenviereck"],
+  Parallelogramm: ["Rechteck", "Raute", "Trapez"],
+  "gleichschenkliges Trapez": ["Trapez", "Rechteck", "Parallelogramm"],
+  Trapez: ["gleichschenkliges Trapez", "Parallelogramm", "Drachenviereck"],
+  Drachenviereck: ["Raute", "Quadrat", "Trapez"],
+};
+
+/** The number of symmetry axes each name guarantees. */
+export const QUAD_AXES: Record<string, number> = { Quadrat: 4, Rechteck: 2, Raute: 2, Parallelogramm: 0, "gleichschenkliges Trapez": 1, Trapez: 0, Drachenviereck: 1 };
+
+const AXIS_SLIPS: Record<string, Array<{ value: number; hint: string }>> = {
+  Quadrat: [{ value: 2, hint: "Beim Quadrat sind beide Diagonalen und beide Mittellinien Symmetrieachsen." }],
+  Rechteck: [{ value: 4, hint: "Die Diagonalen eines Rechtecks sind keine Symmetrieachsen: Faltest du längs einer Diagonale, liegen die Ecken nicht aufeinander." }],
+  Raute: [{ value: 4, hint: "Bei der Raute liegen die Symmetrieachsen auf den Diagonalen; durch die Seitenmitten geht keine." }],
+  Parallelogramm: [{ value: 2, hint: "Ein Parallelogramm ist nur punktsymmetrisch. Symmetrieachsen hat es erst als Rechteck oder Raute." }],
+  "gleichschenkliges Trapez": [{ value: 2, hint: "Das gleichschenklige Trapez hat nur die Achse durch die Mitten der parallelen Seiten." }],
+  Trapez: [{ value: 1, hint: "Eine Symmetrieachse hat erst das gleichschenklige Trapez." }],
+  Drachenviereck: [{ value: 2, hint: "Beim Drachen ist nur eine Diagonale Symmetrieachse." }],
+};
+
+/** Which lines are the symmetry axes of each name. */
+const AXIS_TEXT: Record<string, string> = {
+  Quadrat: "beide Diagonalen und beide Geraden durch gegenüberliegende Seitenmitten, also 4",
+  Rechteck: "die beiden Geraden durch gegenüberliegende Seitenmitten, also 2",
+  Raute: "die beiden Diagonalen, also 2",
+  Parallelogramm: "keine, es ist nur punktsymmetrisch",
+  "gleichschenkliges Trapez": "die Gerade durch die Mitten der parallelen Seiten, also 1",
+  Trapez: "keine",
+  Drachenviereck: "die Diagonale, die die andere senkrecht halbiert, also 1",
+};
+
+interface NamedCase {
+  text: string;
+  name: string;
+  why: string;
+}
+
+/** A quadrilateral described by its sides and angles (1.4, Level 1). */
+function propertyCase(rng: Rng): NamedCase & { kind: number; params: Record<string, number> } {
+  const kind = rng.int(0, 6);
+  const s = rng.stepped(3, 8, 0.5);
+  const t = draw(() => rng.stepped(2, 7.5, 0.5), (x) => x !== s, s === 7.5 ? 4 : s + 0.5);
+  const phi = multiple(rng, 40, 85, 5);
+  if (kind === 0) return { params: { s, t, phi, psi: 0 }, kind, name: "Raute", text: `Alle vier Seiten sind ${cm(s)} lang; die Winkel betragen ${phi}°, ${180 - phi}°, ${phi}° und ${180 - phi}°.`, why: "Vier gleich lange Seiten, aber kein rechter Winkel: eine Raute, kein Quadrat." };
+  if (kind === 1) return { params: { s, t, phi, psi: 0 }, kind, name: "Rechteck", text: `Alle vier Winkel sind rechte Winkel; die Seiten sind ${cm(s)}, ${cm(t)}, ${cm(s)} und ${cm(t)} lang.`, why: "Vier rechte Winkel, aber benachbarte Seiten verschieden lang: ein Rechteck, kein Quadrat." };
+  if (kind === 2) return { params: { s, t, phi, psi: 0 }, kind, name: "Quadrat", text: `Alle vier Seiten sind ${cm(s)} lang, und ein Winkel ist ein rechter Winkel.`, why: "Vier gleich lange Seiten (Raute) und ein rechter Winkel: ein Quadrat." };
+  if (kind === 3)
+    return {
+      params: { s, t, phi, psi: 0 },
+      kind,
+      name: "Parallelogramm",
+      text: `Gegenüberliegende Seiten sind parallel; die Seiten sind ${cm(s)}, ${cm(t)}, ${cm(s)} und ${cm(t)} lang, die Winkel ${phi}°, ${180 - phi}°, ${phi}° und ${180 - phi}°.`,
+      why: "Zwei Paare paralleler Seiten, aber weder ein rechter Winkel noch vier gleich lange Seiten: ein Parallelogramm.",
+    };
+  if (kind === 4) return { params: { s, t, phi, psi: 0 }, kind, name: "gleichschenkliges Trapez", text: `AB ∥ CD, die Winkel bei A und bei B sind beide ${phi}° groß, und [AB] ist länger als [CD].`, why: "Ein Paar paralleler Seiten mit gleich großen Basiswinkeln: Die Mittelsenkrechte von [AB] ist Symmetrieachse, also ein gleichschenkliges Trapez." };
+  if (kind === 5) {
+    const psi = draw(() => multiple(rng, 40, 85, 5), (x) => x !== phi, phi === 60 ? 70 : 60);
+    return { params: { s, t, phi, psi }, kind, name: "Trapez", text: `AB ∥ CD, der Winkel bei A ist ${phi}° groß, der Winkel bei B ${psi}°.`, why: "Ein Paar paralleler Seiten, aber verschieden große Basiswinkel: ein Trapez, kein gleichschenkliges, und wegen α + β < 180° kein Parallelogramm." };
+  }
+  return { params: { s, t, phi, psi: 0 }, kind, name: "Drachenviereck", text: `Es gilt AB = AD = ${cm(s)} und CB = CD = ${cm(t)}.`, why: `Zwei Paare gleich langer Nachbarseiten: Die Diagonale [AC] ist Symmetrieachse. Weil ${cm(s)} und ${cm(t)} verschieden sind, ist es keine Raute.` };
+}
+
+/** A quadrilateral given only by its diagonals: two sticks whose ends are the corners (1.4, Level 2). */
+function diagonalCase(rng: Rng): NamedCase & { kind: number; params: Record<string, number> } {
+  const kind = rng.int(0, 6);
+  const p = rng.int(30, 90);
+  const q = draw(() => rng.int(30, 90), (x) => Math.abs(x - p) >= 10, p >= 60 ? p - 20 : p + 20);
+  const long = Math.max(p, q);
+  const short = Math.min(p, q);
+  const corners = "Ihre Enden sind die Ecken eines Vierecks.";
+  if (kind === 0)
+    return {
+      params: { p, q, u: 0, w: 0 },
+      kind,
+      name: "Rechteck",
+      text: `Ein Schreiner prüft einen viereckigen Fensterrahmen. Er misst beide Diagonalen: Sie sind je ${p} cm lang und halbieren sich gegenseitig.`,
+      why: "Diagonalen, die sich halbieren: ein Parallelogramm. Sind sie zudem gleich lang, ist es ein Rechteck. Ob sie senkrecht aufeinander stehen, weiß er nicht.",
+    };
+  if (kind === 1)
+    return {
+      params: { p, q, u: 0, w: 0 },
+      kind,
+      name: "Drachenviereck",
+      text: `Für einen Drachen werden zwei Leisten, ${long} cm und ${short} cm lang, senkrecht zueinander verbunden. Die lange Leiste trifft die kurze genau in deren Mitte, die kurze die lange aber nicht in der Mitte. Die Leistenenden sind die Ecken.`,
+      why: "Die lange Diagonale halbiert die kurze senkrecht: Sie ist Symmetrieachse. Weil die kurze die lange nicht halbiert, ist es keine Raute.",
+    };
+  if (kind === 2) return { params: { p, q, u: 0, w: 0 }, kind, name: "Quadrat", text: `Zwei gleich lange Stäbe, je ${p} cm, kreuzen sich in ihren Mitten unter einem rechten Winkel. ${corners}`, why: "Die Diagonalen halbieren sich (Parallelogramm), sind gleich lang (Rechteck) und stehen senkrecht (Raute): ein Quadrat." };
+  if (kind === 3) return { params: { p, q, u: 0, w: 0 }, kind, name: "Raute", text: `Zwei Stäbe, ${long} cm und ${short} cm lang, kreuzen sich in ihren Mitten unter einem rechten Winkel. ${corners}`, why: "Die Diagonalen halbieren sich senkrecht, sind aber verschieden lang: eine Raute." };
+  if (kind === 4) return { params: { p, q, u: 0, w: 0 }, kind, name: "Parallelogramm", text: `Zwei Stäbe, ${long} cm und ${short} cm lang, kreuzen sich in ihren Mitten, aber nicht unter einem rechten Winkel. ${corners}`, why: "Die Diagonalen halbieren sich, sind aber weder gleich lang noch senkrecht: ein Parallelogramm." };
+  if (kind === 5) return { params: { p, q, u: 0, w: 0 }, kind, name: "Rechteck", text: `Zwei gleich lange Stäbe, je ${p} cm, kreuzen sich in ihren Mitten, aber nicht unter einem rechten Winkel. ${corners}`, why: "Die Diagonalen halbieren sich und sind gleich lang, stehen aber nicht senkrecht: ein Rechteck, kein Quadrat." };
+  const u = rng.int(10, 40);
+  const w = draw(() => rng.int(10, 40), (x) => Math.abs(x - u) >= 5, u + 10);
+  return {
+    params: { p, q, u, w },
+    kind,
+    name: "gleichschenkliges Trapez",
+    text: `Zwei gleich lange Stäbe [AC] und [BD] kreuzen sich im Punkt S, und zwar so, dass AS = BS = ${u} cm und CS = DS = ${w} cm ist. Die Enden A, B, C und D sind die Ecken eines Vierecks.`,
+    why: "Die Diagonalen sind gleich lang und teilen sich im gleichen Verhältnis, halbieren sich aber nicht. Die Figur ist symmetrisch zur Winkelhalbierenden bei S, und AB ∥ CD: ein gleichschenkliges Trapez.",
+  };
+}
+
+/** True and false statements about the Haus der Vierecke, with the reason. */
+export const STATEMENTS: Array<[string, boolean, string]> = [
+  ["Jedes Quadrat ist ein Rechteck.", true, "Ein Quadrat ist ein Parallelogramm mit rechtem Winkel, also ein Rechteck."],
+  ["Jedes Rechteck ist ein Quadrat.", false, "Benachbarte Seiten eines Rechtecks dürfen verschieden lang sein."],
+  ["Jede Raute ist ein Parallelogramm.", true, "Bei vier gleich langen Seiten sind die Gegenseiten parallel."],
+  ["Jedes Parallelogramm ist eine Raute.", false, "Die Seiten eines Parallelogramms müssen nicht alle gleich lang sein."],
+  ["Jede Raute ist ein Drachenviereck.", true, "Bei der Raute sind sogar beide Diagonalen Symmetrieachsen."],
+  ["Jedes Drachenviereck ist eine Raute.", false, "Beim Drachen sind nur die Nachbarseiten paarweise gleich lang."],
+  ["Jedes Rechteck ist ein gleichschenkliges Trapez.", true, "Es hat parallele Gegenseiten und eine Symmetrieachse durch deren Mitten."],
+  ["Jedes Parallelogramm ist ein Trapez.", true, "Ein Trapez braucht ein Paar paralleler Seiten; das Parallelogramm hat sogar zwei."],
+  ["Jedes Trapez ist ein Parallelogramm.", false, "Ein Trapez braucht nur ein Paar paralleler Seiten."],
+  ["Jedes Quadrat ist eine Raute.", true, "Ein Quadrat hat vier gleich lange Seiten."],
+  ["Jede Raute ist ein Quadrat.", false, "Eine Raute braucht keinen rechten Winkel."],
+  ["Jedes gleichschenklige Trapez ist ein Rechteck.", false, "Seine Basiswinkel müssen keine rechten Winkel sein."],
+  ["Die Diagonalen jedes Rechtecks sind gleich lang.", true, "Die Symmetrieachse durch die Seitenmitten bildet die eine Diagonale auf die andere ab."],
+  ["Die Diagonalen jedes Rechtecks stehen senkrecht aufeinander.", false, "Das gilt nur beim Quadrat."],
+  ["Die Diagonalen jeder Raute stehen senkrecht aufeinander.", true, "Sie sind Symmetrieachsen und halbieren sich senkrecht."],
+  ["Die Diagonalen jedes Parallelogramms halbieren sich.", true, "Eine halbe Drehung um den Diagonalenschnittpunkt bildet das Parallelogramm auf sich ab."],
+  ["Die Diagonalen jedes Parallelogramms sind gleich lang.", false, "Das gilt nur, wenn es ein Rechteck ist."],
+  ["Jedes Parallelogramm ist achsensymmetrisch.", false, "Es ist punktsymmetrisch; Symmetrieachsen hat es erst als Rechteck oder Raute."],
+  ["Jedes Drachenviereck hat zueinander senkrechte Diagonalen.", true, "Die Symmetrieachse steht senkrecht auf der anderen Diagonale."],
+  ["In jedem gleichschenkligen Trapez sind die Diagonalen gleich lang.", true, "Die Symmetrieachse bildet die eine Diagonale auf die andere ab."],
+  ["Jedes Quadrat ist ein Drachenviereck.", true, "Seine Diagonalen sind Symmetrieachsen."],
+  ["Jedes Trapez hat eine Symmetrieachse.", false, "Eine Symmetrieachse hat erst das gleichschenklige Trapez."],
+];
+
+/** "zugleich X und Y": the most special name such a quadrilateral surely has, and its fewest symmetry axes. */
+export const COMBOS: Array<[string, string, string]> = [
+  ["zugleich ein Drachenviereck und ein Trapez", "Raute", "Ein Drachen mit einem Paar paralleler Seiten hat wegen der Symmetrie auch das zweite Paar parallel; mit den gleichen Nachbarseiten sind alle vier Seiten gleich lang."],
+  ["zugleich ein Drachenviereck und ein Parallelogramm", "Raute", "Im Parallelogramm sind Gegenseiten gleich lang, im Drachen Nachbarseiten: Also sind alle vier Seiten gleich lang."],
+  ["zugleich ein Drachenviereck und ein Rechteck", "Quadrat", "Ein Rechteck, dessen Diagonale Symmetrieachse ist, hat gleich lange Nachbarseiten."],
+  ["zugleich eine Raute und ein Rechteck", "Quadrat", "Vier gleich lange Seiten und vier rechte Winkel."],
+  ["zugleich ein gleichschenkliges Trapez und ein Parallelogramm", "Rechteck", "Die Symmetrieachse macht die Basiswinkel gleich groß; im Parallelogramm ergänzen sie sich zu 180°, also je 90°."],
+  ["zugleich eine Raute und ein gleichschenkliges Trapez", "Quadrat", "Gleich große Basiswinkel, die sich zu 180° ergänzen, sind rechte Winkel; dazu vier gleich lange Seiten."],
+  ["ein Parallelogramm mit einem rechten Winkel", "Rechteck", "Das ist die Festlegung des Rechtecks."],
+  ["ein Parallelogramm mit zueinander senkrechten Diagonalen", "Raute", "Diagonalen, die sich senkrecht halbieren, gehören zur Raute."],
+  ["ein Parallelogramm mit gleich langen Diagonalen", "Rechteck", "Diagonalen, die sich halbieren und gleich lang sind, gehören zum Rechteck."],
+  ["ein Rechteck mit zueinander senkrechten Diagonalen", "Quadrat", "Dann ist es auch eine Raute, also ein Quadrat."],
+  ["eine Raute mit gleich langen Diagonalen", "Quadrat", "Dann ist sie auch ein Rechteck, also ein Quadrat."],
+  ["ein Drachenviereck, dessen Diagonalen sich gegenseitig halbieren", "Raute", "Halbieren sich die Diagonalen, ist es ein Parallelogramm; ein Drachen, der Parallelogramm ist, ist eine Raute."],
+  ["ein Trapez mit einer Symmetrieachse durch die Mitten der parallelen Seiten", "gleichschenkliges Trapez", "Das ist die Festlegung des gleichschenkligen Trapezes."],
+  ["ein Trapez, dessen Diagonalen sich gegenseitig halbieren", "Parallelogramm", "Diagonalen, die sich halbieren, gehören zum Parallelogramm."],
+];
+
+const familyInfo = (v: LabValues) => quadInfo(familyPoints(v));
+
+const hausDerVierecke: Lesson = {
+  id: "dv-4-vierecke",
+  stageId: STAGE_ID,
+  stepNumber: 4,
+  title: "1.4 Das Haus der Vierecke",
+  subtitle: "Besondere Vierecke an Seiten, Winkeln, Diagonalen und Symmetrie erkennen und ordnen",
+  tracks: ["I", "II_III"],
+  lehrplan: `${BOTH}: Besondere Vierecke`,
+  whyItMatters:
+    "Ob ein Fensterrahmen wirklich rechtwinklig ist oder ein Drachen symmetrisch, erkennst du an wenigen Eigenschaften. Wer die Vierecke ordnen kann, weiß sofort, welche Eigenschaften und Formeln er nutzen darf: Was für jedes Parallelogramm gilt, gilt auch für jedes Rechteck.",
+  explanationHtml: `
+    <p><strong>Wiederholung aus M5 bis M7:</strong> Ein Viereck ABCD wird gegen den Uhrzeigersinn beschriftet. a = [AB], b = [BC], c = [CD] und d = [DA] sind die Seiten, e = [AC] und f = [BD] die Diagonalen, α, β, γ und δ die Winkel bei A, B, C und D. Die Innenwinkelsumme beträgt 360°. Drachenviereck, Raute, gleichschenkliges Trapez, Rechteck und Quadrat kennst du aus M6 als achsensymmetrische Figuren.</p>
+    <p>Jedes besondere Viereck hat eine <strong>charakteristische Eigenschaft</strong>: eine kurze Festlegung, aus der alle anderen Eigenschaften folgen.</p>
+    <table class="mini">
+      <tr><th>Viereck</th><th>charakteristische Eigenschaft</th><th>daraus folgt unter anderem</th></tr>
+      <tr><td>Trapez</td><td>mindestens ein Paar paralleler Seiten</td><td>an jeder der beiden anderen Seiten ergänzen sich die Winkel zu 180°</td></tr>
+      <tr><td>gleichschenkliges Trapez</td><td>Trapez mit einer Symmetrieachse durch die Mitten der parallelen Seiten</td><td>Schenkel gleich lang, Basiswinkel gleich groß, Diagonalen gleich lang</td></tr>
+      <tr><td>Parallelogramm</td><td>zwei Paare paralleler Seiten</td><td>Gegenseiten gleich lang, Gegenwinkel gleich groß, Diagonalen halbieren sich, punktsymmetrisch</td></tr>
+      <tr><td>Rechteck</td><td>Parallelogramm mit einem rechten Winkel</td><td>vier rechte Winkel, Diagonalen gleich lang, zwei Symmetrieachsen durch die Seitenmitten</td></tr>
+      <tr><td>Raute</td><td>vier gleich lange Seiten</td><td>Diagonalen halbieren sich senkrecht und halbieren die Winkel, zwei Symmetrieachsen auf den Diagonalen</td></tr>
+      <tr><td>Quadrat</td><td>Raute mit einem rechten Winkel</td><td>alles von Rechteck und Raute, vier Symmetrieachsen</td></tr>
+      <tr><td>Drachenviereck</td><td>eine Diagonale ist Symmetrieachse</td><td>zwei Paare gleich langer Nachbarseiten, Diagonalen senkrecht, die Achse halbiert die andere Diagonale</td></tr>
+    </table>
+    <p><strong>Punktsymmetrie:</strong> Dreht man ein Parallelogramm um eine halbe Drehung um den Schnittpunkt Z seiner Diagonalen, landet jede Ecke auf der gegenüberliegenden. Das Parallelogramm ist <strong>punktsymmetrisch</strong>; deshalb halbieren sich seine Diagonalen, und Gegenseiten wie Gegenwinkel sind gleich groß.</p>
+    <p><strong>Das Haus der Vierecke</strong> ordnet die Vierecke wie einen Stammbaum: Ganz oben steht das allgemeine Viereck, darunter Trapez und Drachenviereck. Unter dem Trapez stehen gleichschenkliges Trapez und Parallelogramm, unter dem Parallelogramm Rechteck und Raute, ganz unten das Quadrat. Das Rechteck ist zugleich ein gleichschenkliges Trapez, die Raute zugleich ein Drachenviereck. Ein Viereck hat <strong>alle Eigenschaften</strong> der Vierecke über ihm.</p>
+    <div class="example"><strong>Beispiel:</strong> Ein Viereck hat vier gleich lange Seiten, aber keinen rechten Winkel. Es ist eine <strong>Raute</strong> und damit auch ein Parallelogramm, ein Trapez und ein Drachenviereck: Gegenseiten sind parallel, die Diagonalen halbieren sich senkrecht, und es hat zwei Symmetrieachsen. Ein Rechteck ist es nicht, also auch kein Quadrat.<br>Ebenso gilt: Jedes Quadrat ist ein Rechteck, aber nicht jedes Rechteck ist ein Quadrat.</div>
+    <p><strong>An den Diagonalen erkennen:</strong> Halbieren sich die Diagonalen, ist das Viereck ein Parallelogramm. Sind sie dazu gleich lang, ist es ein Rechteck; stehen sie dazu senkrecht aufeinander, ist es eine Raute; beides zusammen ergibt ein Quadrat. Halbiert nur eine Diagonale die andere senkrecht, ist es ein Drachenviereck. Ein Drachenviereck kann auch nach innen geknickt sein (nicht konvex).</p>
+    <p><strong>Typische Fehler:</strong> „Ein Quadrat ist kein Rechteck“ (doch, es hat alle Eigenschaften eines Rechtecks); gleich lange Diagonalen allein machen noch kein Rechteck, auch das gleichschenklige Trapez hat sie; senkrechte Diagonalen allein machen noch keinen Drachen; ein Parallelogramm hat zwar gleich lange Gegenseiten, ist aber meist kein gleichschenkliges Trapez, weil ihm die Symmetrieachse fehlt.</p>
+    <div class="merke"><strong>Merke:</strong> Jedes Viereck im Haus der Vierecke hat alle Eigenschaften der Vierecke über ihm. Den speziellsten Namen findest du, wenn du von oben nach unten prüfst: parallele Seiten, gleich lange Seiten, rechte Winkel, Symmetrie. Auch die Diagonalen verraten ihn: Halbieren sie sich, ist es ein Parallelogramm.</div>
+  `,
+  formulas: [
+    { name: "Parallelogramm", html: "AB ∥ CD und BC ∥ DA", quantities: "Gegenseiten gleich lang, Gegenwinkel gleich groß, Diagonalen halbieren sich, punktsymmetrisch" },
+    { name: "Rechteck", html: "Parallelogramm mit α = 90°", quantities: "Diagonalen gleich lang; zwei Symmetrieachsen durch die Seitenmitten" },
+    { name: "Raute", html: "a = b = c = d", quantities: "Diagonalen halbieren sich senkrecht; zwei Symmetrieachsen auf den Diagonalen" },
+    { name: "Drachenviereck", html: "Diagonale [AC] ist Symmetrieachse: AB = AD, CB = CD", quantities: "e ⊥ f, und e halbiert f" },
+    { name: "Haus der Vierecke", html: "Quadrat → Rechteck, Raute → Parallelogramm → Trapez", quantities: "→ heißt „ist auch ein“; außerdem Rechteck → gleichschenkliges Trapez, Raute → Drachenviereck" },
+  ],
+  quiz: {
+    question: "Welche Aussage ist richtig?",
+    options: ["Jedes Rechteck ist ein Quadrat.", "Jede Raute ist ein Rechteck.", "Jedes Quadrat ist ein Rechteck.", "Jedes Drachenviereck ist eine Raute."],
+    correctIndex: 2,
+    explanation:
+      "Ein Quadrat ist ein Parallelogramm mit rechtem Winkel, also ein Rechteck, das zusätzlich vier gleich lange Seiten hat. Umgekehrt gilt es nicht: Ein Rechteck mit 4 cm und 2 cm ist kein Quadrat, und eine Raute ohne rechten Winkel ist kein Rechteck.",
+  },
+  lab: {
+    kind: "quadrilateral-family",
+    title: "Labor: Das Viereck auf dem Gitter",
+    intro:
+      "Ziehe die vier Ecken auf Gitterpunkte. Striche markieren gleich lange Seiten, Pfeilspitzen parallele Seiten, kleine Quadrate rechte Winkel und lila Linien Symmetrieachsen. Oben steht der speziellste Name mit seiner charakteristischen Eigenschaft.",
+    params: [
+      { type: "choice", key: "sel", label: "Regler für die Ecke", options: QUAD.map((n, i) => ({ value: i, label: n })), value: 0 },
+      ...QUAD.flatMap((n, i) => [
+        { type: "range" as const, key: `x${n}`, label: `x-Koordinate von ${n}`, unit: "", min: 0, max: 12, step: 1, value: [1, 7, 8, 3][i], showIf: (v: LabValues) => v.sel === i },
+        { type: "range" as const, key: `y${n}`, label: `y-Koordinate von ${n}`, unit: "", min: 0, max: 7, step: 1, value: [1, 1, 5, 6][i], showIf: (v: LabValues) => v.sel === i },
+      ]),
+    ],
+    readouts: [
+      { key: "name", label: "Speziellster Name", emphasis: true, compute: (v) => familyInfo(v).name },
+      { key: "seiten", label: "Seiten", compute: (v) => sidesText(familyInfo(v)) },
+      { key: "winkel", label: "Winkel", compute: (v) => anglesText(familyInfo(v), familyPoints(v)) },
+      { key: "diagonalen", label: "Diagonalen", compute: (v) => diagonalsText(familyInfo(v)) },
+      { key: "symmetrie", label: "Symmetrie", compute: (v) => symmetryText(familyInfo(v)) },
+    ],
+    goals: [
+      {
+        id: "raute",
+        text: "Baue eine Raute, die kein Quadrat ist. Welche Eigenschaft fehlt ihr zum Quadrat?",
+        check: (v) => familyInfo(v).name === "Raute",
+      },
+      {
+        id: "senkrecht",
+        text: "Ziehe die Ecken so, dass die Diagonalen senkrecht aufeinander stehen, das Viereck aber kein Drachenviereck ist. Was fehlt zum Drachen?",
+        check: (v) => {
+          const info = familyInfo(v);
+          return info.convex && info.diagPerp && info.axes.length === 0;
+        },
+      },
+      {
+        id: "diagonalen",
+        text: "Finde ein Viereck mit gleich langen Diagonalen, das kein Rechteck ist. Welche Eigenschaft fehlt seinen Diagonalen?",
+        check: (v) => {
+          const info = familyInfo(v);
+          return info.convex && info.diagEqual && info.name !== "Rechteck" && info.name !== "Quadrat";
+        },
+      },
+    ],
+  },
+  exercises: [
+    {
+      id: "name",
+      make: (rng, level): ExerciseTask => {
+        const c = level === 1 ? propertyCase(rng) : diagonalCase(rng);
+        const axes = QUAD_AXES[c.name];
+        return {
+          prompt:
+            level === 1
+              ? `Von einem Viereck ABCD weißt du: ${c.text} Wie heißt es mit dem speziellsten Namen, und wie viele Symmetrieachsen hat es?`
+              : `${c.text} Welches Viereck ist es auf jeden Fall (der speziellste Name, der sicher passt)? Wie viele Symmetrieachsen hat es mindestens?`,
+          given: [],
+          formulaHint: level === 1 ? "Prüfe von oben nach unten: parallele Seiten (Trapez, Parallelogramm), vier gleiche Seiten (Raute), rechter Winkel (Rechteck, Quadrat), Symmetrieachse (gleichschenkliges Trapez, Drachenviereck)." : undefined,
+          fields: [
+            shuffledChoice(rng, level === 1 ? "Speziellster Name:" : "Auf jeden Fall ein …", c.name, QUAD_NEIGHBOURS[c.name]),
+            numberField(level === 1 ? "Anzahl der Symmetrieachsen:" : "mindestens … Symmetrieachsen:", axes, "", 0, { slips: AXIS_SLIPS[c.name] }),
+          ],
+          steps: [c.why, `Symmetrieachsen: ${AXIS_TEXT[c.name]}.`, `<strong>${c.name}; ${level === 2 ? "mindestens " : ""}${axes} Symmetrieachse${axes === 1 ? "" : "n"}</strong>`],
+          meta: { kind: c.kind, axes, ...c.params },
+        };
+      },
+    },
+    {
+      id: "aussagen",
+      make: (rng, level): ExerciseTask => {
+        if (level === 1) {
+          const [i, j] = draw(() => [rng.int(0, STATEMENTS.length - 1), rng.int(0, STATEMENTS.length - 1)], ([x, y]) => x !== y, [0, 1]);
+          const [s1, s2] = [STATEMENTS[i], STATEMENTS[j]];
+          return {
+            prompt: `Wahr oder falsch?<br>(1) ${s1[0]}<br>(2) ${s2[0]}`,
+            given: [],
+            formulaHint: "Ein spezielleres Viereck hat alle Eigenschaften der Vierecke über ihm im Haus der Vierecke; umgekehrt gilt das nicht.",
+            fields: [choiceField("(1)", ["wahr", "falsch"], s1[1] ? 0 : 1), choiceField("(2)", ["wahr", "falsch"], s2[1] ? 0 : 1)],
+            steps: [`(1) ${s1[2]}`, `(2) ${s2[2]}`, `<strong>(1) ${s1[1] ? "wahr" : "falsch"}, (2) ${s2[1] ? "wahr" : "falsch"}</strong>`],
+            meta: { i, j },
+          };
+        }
+        const k = rng.int(0, COMBOS.length - 1);
+        const [combo, name, why] = COMBOS[k];
+        const axes = QUAD_AXES[name];
+        return {
+          prompt: `Ein Viereck ist ${combo}. Welches Viereck ist es auf jeden Fall (der speziellste Name, der sicher passt)? Wie viele Symmetrieachsen hat es mindestens?`,
+          given: [],
+          fields: [shuffledChoice(rng, "Auf jeden Fall ein …", name, QUAD_NEIGHBOURS[name]), numberField("mindestens … Symmetrieachsen:", axes, "", 0, { slips: AXIS_SLIPS[name] })],
+          steps: [why, `<strong>${name}; mindestens ${axes} Symmetrieachse${axes === 1 ? "" : "n"}</strong>`],
+          meta: { k, axes },
+        };
+      },
+    },
+  ],
+  requiredCorrect: 3,
+  celebrationMessage: "Du ordnest jedes Viereck ins Haus der Vierecke ein und weißt, was daraus folgt.",
+};
+
+// 1.5 Vierecke konstruieren ────────────────────────────────────────────────
+
+/** Which pieces fix which quadrilateral (1.5, Level 1). */
+export const PIECE_CASES: Array<{ type: string; pieces: string[]; fixed: boolean; need: number; why: string }> = [
+  { type: "Parallelogramm", pieces: ["a", "b", "α"], fixed: true, need: 3, why: "Das Dreieck ABD ist nach SWS festgelegt, C folgt über die Parallelen." },
+  { type: "Parallelogramm", pieces: ["a", "b"], fixed: false, need: 3, why: "Ohne Winkel lässt sich das Parallelogramm wie ein Gelenk zusammenschieben." },
+  { type: "Parallelogramm", pieces: ["a", "α", "β"], fixed: false, need: 3, why: "β = 180° − α ist kein neues Stück; die Seite b fehlt." },
+  { type: "Raute", pieces: ["a", "α"], fixed: true, need: 2, why: "Das Dreieck ABD mit AB = AD = a und α ist nach SWS festgelegt." },
+  { type: "Raute", pieces: ["e", "f"], fixed: true, need: 2, why: "Die Diagonalen halbieren sich senkrecht: B und D liegen auf der Mittelsenkrechten von [AC], je f : 2 vom Mittelpunkt entfernt." },
+  { type: "Raute", pieces: ["a"], fixed: false, need: 2, why: "Mit derselben Seitenlänge gibt es Rauten mit ganz verschiedenen Winkeln." },
+  { type: "Rechteck", pieces: ["a", "b"], fixed: true, need: 2, why: "Das Dreieck ABC mit dem rechten Winkel bei B ist nach SWS festgelegt." },
+  { type: "Rechteck", pieces: ["e"], fixed: false, need: 2, why: "Viele verschiedene Rechtecke haben gleich lange Diagonalen." },
+  { type: "Rechteck", pieces: ["a", "e"], fixed: true, need: 2, why: "Im Dreieck ABC liegt der rechte Winkel bei B der längsten Seite e gegenüber: SsW." },
+  { type: "Quadrat", pieces: ["e"], fixed: true, need: 1, why: "Die Diagonalen sind gleich lang und halbieren sich senkrecht: Aus e folgt das ganze Quadrat." },
+  { type: "Drachenviereck", pieces: ["e", "a", "b"], fixed: true, need: 3, why: "Das Dreieck ABC ist nach SSS festgelegt (AC = e, AB = a, BC = b), D ist das Spiegelbild von B an AC." },
+  { type: "Drachenviereck", pieces: ["a", "b"], fixed: false, need: 3, why: "Ohne Diagonale oder Winkel lässt sich der Drachen verformen." },
+  { type: "Trapez", pieces: ["a", "c", "h"], fixed: false, need: 4, why: "Die obere Seite c lässt sich auf der Parallelen verschieben; es fehlt ein Winkel oder ein Schenkel." },
+  { type: "gleichschenkliges Trapez", pieces: ["a", "c", "h"], fixed: true, need: 3, why: "c liegt symmetrisch über der Mitte von a, im Abstand h." },
+  { type: "allgemeines Viereck", pieces: ["a", "b", "c", "d"], fixed: false, need: 5, why: "Vier Seiten allein lassen das Viereck noch wackeln wie ein Gelenk; es fehlt eine Diagonale oder ein Winkel." },
+];
+
+/** Construction plans for quadrilaterals with a diagonal (1.5, Level 2): the first triangle and its theorem. */
+export const PLAN_CASES: Array<{ type: string; pieces: string[]; triangle: string; others: string[]; theorem: number; why: string }> = [
+  { type: "Parallelogramm", pieces: ["a", "b", "e"], triangle: "ABC", others: ["ABD", "BCD"], theorem: 0, why: "AB = a, BC = b und AC = e: Dreieck ABC nach SSS; D = A ⊕ BC→." },
+  { type: "Parallelogramm", pieces: ["a", "e", "∢BAC"], triangle: "ABC", others: ["ABD", "BCD"], theorem: 1, why: "AB = a, AC = e und der Winkel ∢BAC zwischen ihnen: Dreieck ABC nach SWS." },
+  { type: "Raute", pieces: ["a", "e"], triangle: "ABC", others: ["ABD", "BCD"], theorem: 0, why: "AB = BC = a und AC = e: Dreieck ABC nach SSS; D ist das Spiegelbild von B an AC." },
+  { type: "Raute", pieces: ["a", "f"], triangle: "ABD", others: ["ABC", "ACD"], theorem: 0, why: "AB = AD = a und BD = f: Dreieck ABD nach SSS; C ist das Spiegelbild von A an BD." },
+  { type: "Drachenviereck", pieces: ["e", "a", "b"], triangle: "ABC", others: ["ABD", "BCD"], theorem: 0, why: "AC = e, AB = a und BC = b: Dreieck ABC nach SSS; D ist das Spiegelbild von B an AC." },
+  { type: "Drachenviereck", pieces: ["a", "e", "∢BAC"], triangle: "ABC", others: ["ABD", "BCD"], theorem: 1, why: "AB = a, AC = e und ∢BAC dazwischen: Dreieck ABC nach SWS; D ist das Spiegelbild von B an AC." },
+  { type: "gleichschenkliges Trapez", pieces: ["a", "d", "α"], triangle: "ABD", others: ["ACD", "BCD"], theorem: 1, why: "AB = a, AD = d und α dazwischen: Dreieck ABD nach SWS; C ist das Spiegelbild von D an der Mittelsenkrechten von [AB]." },
+];
+
+const THEOREMS_SHORT = ["SSS", "SWS", "WSW", "SsW"];
+
+/** Plausible values for the pieces of a quadrilateral task. */
+function pieceValues(rng: Rng, type: string, pieces: string[]): Record<string, number> {
+  return draw(
+    () => {
+      const a = rng.stepped(4, 9, 0.5);
+      const b = rng.stepped(2.5, 7, 0.5);
+      const alpha = draw(() => multiple(rng, 40, 140, 5), (x) => x !== 90, 70);
+      const values: Record<string, number> = { a, b, d: b, c: rng.stepped(2, a - 1, 0.5), h: rng.stepped(2, 6, 0.5), α: type === "gleichschenkliges Trapez" ? multiple(rng, 50, 80, 5) : alpha, e: rng.stepped(3, 11, 0.5), f: rng.stepped(2, 8, 0.5), "∢BAC": multiple(rng, 20, 60, 5) };
+      values.β = 180 - values.α;
+      if (type === "Rechteck" && pieces.includes("e")) values.e = pieces.includes("a") ? a + rng.stepped(0.5, 3, 0.5) : rng.stepped(4, 11, 0.5);
+      return values;
+    },
+    (x) => {
+      if (type === "Parallelogramm" && pieces.includes("e") && pieces.includes("b")) return sideCheck(x.a, x.b, x.e).meet === "two";
+      if (type === "Raute" && pieces.includes("e") && pieces.includes("a")) return x.e < 2 * x.a;
+      if (type === "Raute" && pieces.includes("f") && pieces.includes("a")) return x.f < 2 * x.a;
+      if (type === "Drachenviereck" && pieces.includes("b")) return sideCheck(x.e, x.a, x.b).meet === "two" && x.a !== x.b;
+      // an isosceles trapezoid from a, d and α needs a top side: a − 2 · d · cos α > 0 (checked here, not asked)
+      if (type === "gleichschenkliges Trapez" && pieces.includes("d")) return x.a - 2 * x.d * Math.cos((x.α * Math.PI) / 180) >= 1;
+      return true;
+    },
+    { a: 6, b: 4, d: 4, c: 3, h: 3, α: 70, β: 110, e: 7, f: 5, "∢BAC": 30 },
+  );
+}
+
+function pieceText(name: string, value: number): string {
+  return name === "α" || name === "β" || name === "∢BAC" ? `${name} = ${value}°` : `${name} = ${cm(value)}`;
+}
+
+function zugInfo(v: LabValues) {
+  const { P } = zugPoints(v);
+  return quadInfo(P, 1e-6);
+}
+
+function zugState(v: LabValues): string {
+  const info = zugInfo(v);
+  const fig = ZUG_FIGURES[v.fig];
+  if (zugKeeps(v.fig, info)) return info.name === fig ? `ja, ABCD ist ${withArticle(fig)}` : `ja, sogar ${withArticle(info.name)}`;
+  return info.simple ? `nein, jetzt nur noch ${withArticle(info.name)}` : `nein: ${info.broken}`;
+}
+
+const viereckskonstruktion: Lesson = {
+  id: "dv-5-viereckskonstruktion",
+  stageId: STAGE_ID,
+  stepNumber: 5,
+  title: "1.5 Vierecke konstruieren",
+  subtitle: "Mit Teildreiecken und Eigenschaften konstruieren und im Zugmodus prüfen",
+  tracks: ["I", "II_III"],
+  lehrplan: `${BOTH}: Vierecke konstruieren`,
+  whyItMatters:
+    "Ob Beet, Drachen oder Werkstück: Erst wenn du weißt, welche Stücke ein Viereck festlegen, kannst du es maßstäblich zeichnen oder in einer Geometriesoftware so konstruieren, dass es beim Ziehen nicht auseinanderfällt.",
+  explanationHtml: `
+    <p><strong>Wiederholung:</strong> Dreiecke konstruierst du aus drei passenden Stücken (SSS, SWS, WSW, SsW). Ein Viereck zerlegst du meist mit einer Diagonale in zwei Dreiecke und konstruierst eines nach dem anderen. Die Parallelverschiebung kennst du aus M7: P' = P ⊕ ${vn("v")}.</p>
+    <p><strong>Wie viele Stücke braucht man?</strong> Ein allgemeines Viereck ist erst durch fünf Stücke festgelegt, zum Beispiel durch die Diagonale [AC] und je zwei weitere Seiten für die Dreiecke ABC und ACD. Besondere Vierecke brauchen weniger, weil ihre Eigenschaften Stücke liefern: das Quadrat eines, Rechteck und Raute zwei, Parallelogramm, Drachenviereck und gleichschenkliges Trapez drei, ein Trapez vier.</p>
+    <ul>
+      <li><strong>Parallelogramm aus a, b und α:</strong> Dreieck ABD nach SWS (AB = a, AD = b, α dazwischen). C ist der Schnittpunkt der Parallelen zu AB durch D und der Parallelen zu AD durch B, oder C = B ⊕ ${vn("AD")}.</li>
+      <li><strong>Raute aus den Diagonalen e und f:</strong> [AC] mit der Länge e zeichnen, dann die Mittelsenkrechte von [AC] (Fundamentalkonstruktion aus M6). Auf ihr liegen B und D, je f : 2 vom Mittelpunkt M entfernt.</li>
+      <li><strong>Drachenviereck aus e = [AC], a = AB und b = BC:</strong> Dreieck ABC nach SSS, dann D als Spiegelbild von B an der Geraden AC.</li>
+      <li><strong>Trapez aus a, c und h:</strong> [AB] zeichnen, die Parallele zu AB im Abstand h, darauf [DC] mit der Länge c. Wo [DC] liegt, legen a, c und h noch nicht fest; dafür brauchst du ein viertes Stück, etwa α. Beim gleichschenkligen Trapez liegt [DC] symmetrisch über der Mitte von [AB].</li>
+    </ul>
+    <div class="example"><strong>Beispiel:</strong> Parallelogramm ABCD mit a = 6 cm, b = 4 cm und α = 60°. In der Planfigur treffen sich a und b in A, α liegt zwischen ihnen.
+      <ol class="steps">
+        <li>Zeichne die Strecke [AB] mit a = 6 cm.</li>
+        <li>Trage in A an [AB] den Winkel α = 60° an und markiere auf dem freien Schenkel D mit AD = 4 cm.</li>
+        <li>Zeichne die Parallele zu AB durch D und die Parallele zu AD durch B; ihr Schnittpunkt ist C.</li>
+      </ol>
+      In Koordinaten: Für A(1 | 1), B(6 | 1) und C(8 | 4) ist ${vn("BC")} = ${vecHtml(2, 3)}, also D = A ⊕ ${vn("BC")} = (1 + 2 | 1 + 3) = (3 | 4).</div>
+    <p><strong>Dynamische Geometriesoftware und der Zugmodus:</strong> In einer Geometriesoftware konstruierst du D aus A, B und C, etwa als Schnittpunkt zweier Parallelen. Ziehst du dann an einer Ecke, bleibt die Figur ein Parallelogramm. Setzt du D dagegen nur nach Augenmaß an die passende Stelle, zerfällt die Figur beim Ziehen. Der Zugmodus ist also die Probe, ob wirklich konstruiert wurde.</p>
+    <p><strong>Typische Fehler:</strong> D = B ⊕ ${vn("AC")} statt D = A ⊕ ${vn("BC")} (dann entsteht ein anderes Parallelogramm); bei der Raute die Diagonalen nicht in ihren Mitten kreuzen lassen; glauben, a, c und h legten ein Trapez schon fest.</p>
+    <div class="merke"><strong>Merke:</strong> Zerlege das Viereck mit einer Diagonale in Dreiecke und nutze seine Eigenschaften: Parallelen, gleiche Seiten, Symmetrie. Im Parallelogramm ABCD gilt D = A ⊕ ${vn("BC")}. Eine echte Konstruktion übersteht den Zugmodus.</div>
+  `,
+  formulas: [
+    { name: "Vierte Ecke im Parallelogramm", html: `D = A ⊕ ${vn("BC")}`, quantities: "zu A den Pfeil von B nach C addieren; ebenso C = B ⊕ AD→" },
+    { name: "Nötige Stücke", html: "Quadrat 1; Rechteck, Raute 2; Parallelogramm, Drachen, gleichschenkliges Trapez 3; Trapez 4; Viereck 5", quantities: "so viele Längen und Winkel legen das Viereck mindestens fest" },
+    { name: "Raute aus e und f", html: "B, D auf der Mittelsenkrechten von [AC], je f : 2 von M", quantities: "M Mittelpunkt von [AC]" },
+    { name: "Drachenviereck", html: "D ist das Spiegelbild von B an der Geraden AC", quantities: "AC ist die Symmetrieachse" },
+  ],
+  quiz: {
+    question: "Mit welchen Angaben ist ein Parallelogramm ABCD eindeutig festgelegt?",
+    options: ["a = 6 cm und b = 4 cm", "α = 70° und β = 110°", "a = 6 cm und α = 70°", "a = 6 cm, b = 4 cm und α = 70°"],
+    correctIndex: 3,
+    explanation:
+      "Ein Parallelogramm braucht drei Stücke: Aus a, b und α konstruierst du das Dreieck ABD nach SWS, C folgt über die Parallelen. Mit a und b allein lässt es sich wie ein Gelenk zusammenschieben, und β = 180° − α ist kein neues Stück.",
+  },
+  lab: {
+    kind: "quadrilateral-construction",
+    title: "Labor: Zugmodus",
+    intro:
+      "Ziehe A, B und C; die orange Ecke entsteht durch die Konstruktion. Stelle auf „nach Augenmaß“ um: Dann bleibt diese Ecke liegen, wo sie gerade ist, und du siehst, was beim Ziehen passiert. Der Knopf setzt sie wieder nach Augenmaß an die passende Stelle.",
+    params: [
+      {
+        type: "choice",
+        key: "fig",
+        label: "Figur",
+        options: [
+          { value: 0, label: "Parallelogramm: D = A ⊕ BC→" },
+          { value: 1, label: "Raute aus den Diagonalen e und f" },
+          { value: 2, label: "Drachenviereck mit der Symmetrieachse AC" },
+        ],
+        value: 0,
+      },
+      {
+        type: "choice",
+        key: "modus",
+        label: "Die orange Ecke ist",
+        options: [
+          { value: 0, label: "konstruiert (Zugmodus)" },
+          { value: 1, label: "nach Augenmaß gezeichnet" },
+        ],
+        value: 0,
+      },
+      { type: "choice", key: "sel", label: "Regler für die Ecke", options: QUAD.slice(0, 3).map((n, i) => ({ value: i, label: n })), value: 0 },
+      ...QUAD.slice(0, 3).flatMap((n, i) => [
+        { type: "range" as const, key: `x${n}`, label: `x-Koordinate von ${n}`, unit: "", min: 0, max: 12, step: 1, value: [ZUG_START.xA, ZUG_START.xB, ZUG_START.xC][i], showIf: (v: LabValues) => v.sel === i && !(v.fig === 1 && i === 1) },
+        { type: "range" as const, key: `y${n}`, label: `y-Koordinate von ${n}`, unit: "", min: 0, max: 7, step: 1, value: [ZUG_START.yA, ZUG_START.yB, ZUG_START.yC][i], showIf: (v: LabValues) => v.sel === i && !(v.fig === 1 && i === 1) },
+      ]),
+      { type: "range", key: "f", label: "Diagonale f = [BD]", unit: "", min: 1, max: 7, step: 0.5, value: ZUG_START.f, digits: 1, showIf: (v) => v.fig === 1 },
+      { type: "state", key: "pDx", value: FREEHAND_START.p.x },
+      { type: "state", key: "pDy", value: FREEHAND_START.p.y },
+      { type: "state", key: "rBx", value: FREEHAND_START.rB.x },
+      { type: "state", key: "rBy", value: FREEHAND_START.rB.y },
+      { type: "state", key: "rDx", value: FREEHAND_START.rD.x },
+      { type: "state", key: "rDy", value: FREEHAND_START.rD.y },
+      { type: "state", key: "kDx", value: FREEHAND_START.k.x },
+      { type: "state", key: "kDy", value: FREEHAND_START.k.y },
+    ],
+    readouts: [
+      { key: "zustand", label: "Bleibt die Figur erhalten?", emphasis: true, compute: zugState },
+      { key: "konstruktion", label: "Konstruktion", compute: zugConstructionText },
+      { key: "seiten", label: "Seiten", compute: (v) => sidesText(zugInfo(v)) },
+      { key: "diagonalen", label: "Diagonalen", compute: (v) => diagonalsText(zugInfo(v)) },
+    ],
+    goals: [
+      {
+        id: "rechteck",
+        text: "Konstruiertes Parallelogramm: Ziehe an den Ecken, bis ein Rechteck entsteht. Wie viele rechte Winkel musst du dafür einstellen?",
+        check: (v) => v.fig === 0 && v.modus === 0 && ["Rechteck", "Quadrat"].includes(zugInfo(v).name),
+      },
+      {
+        id: "augenmass",
+        text: "Parallelogramm nach Augenmaß: Ziehe an A, B oder C, bis ABCD kein Parallelogramm mehr ist. Was hätte die Konstruktion verhindert?",
+        check: (v) => v.fig === 0 && v.modus === 1 && zugInfo(v).simple && !zugKeeps(0, zugInfo(v)),
+      },
+      {
+        id: "drachen-raute",
+        text: "Konstruiertes Drachenviereck: Ziehe B so, dass aus dem Drachen eine Raute wird. Wo trifft das Lot von B dann auf [AC]?",
+        check: (v) => v.fig === 2 && v.modus === 0 && zugInfo(v).allEqual && zugInfo(v).simple,
+      },
+    ],
+    actions: [{ id: "augenmass", label: "Ecken nach Augenmaß neu setzen", apply: redrawFreehand }],
+  },
+  exercises: [
+    {
+      id: "stuecke",
+      make: (rng, level): ExerciseTask => {
+        if (level === 1) {
+          const k = rng.int(0, PIECE_CASES.length - 1);
+          const c = PIECE_CASES[k];
+          const values = pieceValues(rng, c.type, c.pieces);
+          const given = c.pieces.map((p) => pieceText(p, values[p]));
+          const article = c.type === "Raute" ? "eine" : "ein";
+          return {
+            prompt: `Ist ${article} ${c.type} ABCD durch ${listText(given)} eindeutig festgelegt? Wie viele Stücke braucht man für ${c.type === "Raute" ? "eine Raute" : `ein ${c.type}`} mindestens?`,
+            given,
+            formulaHint: "Quadrat 1 Stück; Rechteck und Raute 2; Parallelogramm, Drachenviereck und gleichschenkliges Trapez 3; Trapez 4; allgemeines Viereck 5. Neue Stücke liefern nur Angaben, die nicht schon aus den anderen folgen.",
+            fields: [
+              choiceField("Eindeutig festgelegt?", ["ja", "nein"], c.fixed ? 0 : 1),
+              numberField("Mindestens nötige Stücke:", c.need, "", 0, { slips: [{ value: 5, hint: "Die Eigenschaften dieses Vierecks liefern schon Stücke mit: gleiche Seiten, gleiche Winkel, Symmetrie." }] }),
+            ],
+            steps: [c.why, `<strong>${c.fixed ? "ja" : "nein"}; ${c.need} Stück${c.need === 1 ? "" : "e"}</strong>`],
+            meta: { k },
+          };
+        }
+        const k = rng.int(0, PLAN_CASES.length - 1);
+        const c = PLAN_CASES[k];
+        const values = pieceValues(rng, c.type, c.pieces);
+        const given = c.pieces.map((p) => pieceText(p, values[p]));
+        const article = c.type === "Raute" ? "eine" : "ein";
+        return {
+          prompt: `${article.charAt(0).toUpperCase()}${article.slice(1)} ${c.type} ABCD soll aus ${listText(given)} konstruiert werden. Mit welchem Teildreieck beginnst du, und nach welchem Kongruenzsatz konstruierst du es?`,
+          given,
+          fields: [shuffledChoice(rng, "Erstes Teildreieck:", c.triangle, c.others), choiceField("Kongruenzsatz:", THEOREMS_SHORT, c.theorem)],
+          steps: [c.why, `<strong>Dreieck ${c.triangle} nach ${THEOREMS_SHORT[c.theorem]}</strong>`],
+          meta: { k },
+        };
+      },
+    },
+    {
+      id: "koordinaten",
+      make: (rng, level): ExerciseTask => {
+        const P = (lo: number, hi: number) => ({ x: rng.int(lo, hi), y: rng.int(lo, hi - 1) });
+        if (level === 1) {
+          const [A, B, C] = draw(
+            () => [P(-2, 8), P(-2, 8), P(-2, 8)],
+            ([a, b, c]) => {
+              const area = (b.x - a.x) * (c.y - a.y) - (b.y - a.y) * (c.x - a.x);
+              return Math.abs(area) >= 6 && b.x !== c.x && b.y !== c.y && Math.abs(c.x - b.x) + Math.abs(c.y - b.y) >= 3;
+            },
+            [
+              { x: 1, y: 1 },
+              { x: 6, y: 1 },
+              { x: 8, y: 4 },
+            ],
+          );
+          const v = { x: C.x - B.x, y: C.y - B.y };
+          const D = { x: A.x + v.x, y: A.y + v.y };
+          const wrongD = { x: B.x + C.x - A.x, y: B.y + C.y - A.y };
+          const slipD = "So entsteht ein anderes Parallelogramm. In ABCD liegt D neben A und C, gegenüber von B: D = A ⊕ BC→.";
+          return {
+            prompt: `Die Punkte A${pt(A.x, A.y)}, B${pt(B.x, B.y)} und C${pt(C.x, C.y)} sind Ecken des Parallelogramms ABCD. Berechne den Vektor ${vn("BC")} und die Koordinaten von D.`,
+            given: [`A${pt(A.x, A.y)}`, `B${pt(B.x, B.y)}`, `C${pt(C.x, C.y)}`],
+            formulaHint: `${vn("BC")} = C − B (Spitze minus Fuß); D = A ⊕ ${vn("BC")}`,
+            fields: [
+              numberField(`${vn("BC")}: x =`, v.x, "", 0, { slips: [{ value: -v.x, hint: "Der Pfeil BC→ geht von B nach C: Rechne C minus B, nicht B minus C." }] }),
+              numberField("y =", v.y, "", 0, { slips: [{ value: -v.y, hint: "Der Pfeil BC→ geht von B nach C: Rechne C minus B, nicht B minus C." }] }),
+              numberField("D: x =", D.x, "", 0, { slips: [{ value: wrongD.x, hint: slipD }] }),
+              numberField("y =", D.y, "", 0, { slips: [{ value: wrongD.y, hint: slipD }] }),
+            ],
+            steps: [
+              `${vn("BC")} = ${vecHtml(C.x, C.y)} − ${vecHtml(B.x, B.y)} = ${vecHtml(v.x, v.y)}`,
+              `D = A ⊕ ${vn("BC")}: ${pt(A.x, A.y)} ⊕ ${vecHtml(v.x, v.y)} = (${fmt(A.x)} ${v.x < 0 ? "−" : "+"} ${fmt(Math.abs(v.x))} | ${fmt(A.y)} ${v.y < 0 ? "−" : "+"} ${fmt(Math.abs(v.y))})`,
+              `<strong>${vn("BC")} = ${vecHtml(v.x, v.y)}; D${pt(D.x, D.y)}</strong>`,
+            ],
+            meta: { ax: A.x, ay: A.y, bx: B.x, by: B.y, cx: C.x, cy: C.y },
+          };
+        }
+        const variant = rng.int(0, 2);
+        if (variant === 0) {
+          // a missing vertex B or C of a parallelogram
+          const [A, Q, R] = draw(
+            () => [P(-2, 8), P(-2, 8), P(-2, 8)],
+            ([a, b, c]) => Math.abs((b.x - a.x) * (c.y - a.y) - (b.y - a.y) * (c.x - a.x)) >= 6,
+            [
+              { x: 0, y: 1 },
+              { x: 5, y: 0 },
+              { x: 2, y: 4 },
+            ],
+          );
+          const missingB = rng.next() < 0.5;
+          // missing B: A, C = Q, D = R given, B = A ⊕ DC→; missing C: A, B = Q, D = R given, C = B ⊕ AD→
+          const X = missingB ? { x: A.x + Q.x - R.x, y: A.y + Q.y - R.y } : { x: Q.x + R.x - A.x, y: Q.y + R.y - A.y };
+          const name = missingB ? "B" : "C";
+          const known = missingB ? `A${pt(A.x, A.y)}, C${pt(Q.x, Q.y)} und D${pt(R.x, R.y)}` : `A${pt(A.x, A.y)}, B${pt(Q.x, Q.y)} und D${pt(R.x, R.y)}`;
+          const rule = missingB ? `B = A ⊕ ${vn("DC")}` : `C = B ⊕ ${vn("AD")}`;
+          const arrow = missingB ? { x: Q.x - R.x, y: Q.y - R.y } : { x: R.x - A.x, y: R.y - A.y };
+          const start = missingB ? A : Q;
+          return {
+            prompt: `Für ein Beet in Form eines Parallelogramms ABCD sind auf einem Plan die Ecken ${known} eingezeichnet (1 Einheit = 1 m). Wo muss die Ecke ${name} liegen?`,
+            given: missingB ? [`A${pt(A.x, A.y)}`, `C${pt(Q.x, Q.y)}`, `D${pt(R.x, R.y)}`] : [`A${pt(A.x, A.y)}`, `B${pt(Q.x, Q.y)}`, `D${pt(R.x, R.y)}`],
+            fields: [numberField(`${name}: x =`, X.x, "", 0), numberField("y =", X.y, "", 0)],
+            steps: [
+              missingB ? `Im Parallelogramm ABCD ist ${vn("AB")} = ${vn("DC")}, also ${rule}.` : `Im Parallelogramm ABCD ist ${vn("BC")} = ${vn("AD")}, also ${rule}.`,
+              `${missingB ? vn("DC") : vn("AD")} = ${vecHtml(arrow.x, arrow.y)}; ${name} = ${pt(start.x, start.y)} ⊕ ${vecHtml(arrow.x, arrow.y)}`,
+              `<strong>${name}${pt(X.x, X.y)}</strong>`,
+            ],
+            meta: { variant, missingB: missingB ? 1 : 0, ax: A.x, ay: A.y, qx: Q.x, qy: Q.y, rx: R.x, ry: R.y },
+          };
+        }
+        if (variant === 1) {
+          // A, B and the meeting point M of the diagonals: C and D by halving
+          const [A, B, C] = draw(
+            () => [P(-2, 8), P(-2, 8), P(-2, 8)],
+            ([a, b, c]) => Math.abs((b.x - a.x) * (c.y - a.y) - (b.y - a.y) * (c.x - a.x)) >= 6,
+            [
+              { x: 0, y: 0 },
+              { x: 6, y: 1 },
+              { x: 7, y: 5 },
+            ],
+          );
+          const M = { x: (A.x + C.x) / 2, y: (A.y + C.y) / 2 };
+          const D = { x: A.x + C.x - B.x, y: A.y + C.y - B.y };
+          return {
+            prompt: `Im Parallelogramm ABCD sind A${pt(A.x, A.y)} und B${pt(B.x, B.y)} bekannt, und die Diagonalen schneiden sich in M${pt(M.x, M.y)}. Berechne die Koordinaten von C und D.`,
+            given: [`A${pt(A.x, A.y)}`, `B${pt(B.x, B.y)}`, `M${pt(M.x, M.y)}`],
+            fields: [
+              numberField("C: x =", C.x, "", 0, { slips: [{ value: M.x + (M.x - B.x), hint: "Das wäre D: C liegt A gegenüber, also C = M ⊕ AM→." }] }),
+              numberField("y =", C.y, "", 0),
+              numberField("D: x =", D.x, "", 0, { slips: [{ value: M.x + (M.x - A.x), hint: "Das wäre C: D liegt B gegenüber, also D = M ⊕ BM→." }] }),
+              numberField("y =", D.y, "", 0),
+            ],
+            steps: [
+              "Die Diagonalen eines Parallelogramms halbieren sich: M ist der Mittelpunkt von [AC] und von [BD].",
+              `${vn("AM")} = ${vecHtml(M.x - A.x, M.y - A.y)}, also C = M ⊕ ${vn("AM")} = ${pt(C.x, C.y)}; ${vn("BM")} = ${vecHtml(M.x - B.x, M.y - B.y)}, also D = M ⊕ ${vn("BM")} = ${pt(D.x, D.y)}.`,
+              `<strong>C${pt(C.x, C.y)}, D${pt(D.x, D.y)}</strong>`,
+            ],
+            meta: { variant, ax: A.x, ay: A.y, bx: B.x, by: B.y, cx: C.x, cy: C.y },
+          };
+        }
+        // a kite with its symmetry axis AC parallel to the x-axis
+        const y0 = rng.int(0, 4);
+        const x1 = rng.int(-2, 2);
+        const x2 = x1 + 2 * rng.int(3, 5);
+        const rhombus = rng.next() < 0.35;
+        const xb = rhombus ? (x1 + x2) / 2 : draw(() => rng.int(x1 + 1, x2 - 1), (x) => x !== (x1 + x2) / 2, x1 + 1);
+        const yb = y0 - rng.int(2, 4);
+        const D = { x: xb, y: 2 * y0 - yb };
+        return {
+          prompt: `Das Drachenviereck ABCD hat die Symmetrieachse AC mit A${pt(x1, y0)} und C${pt(x2, y0)}; außerdem ist B${pt(xb, yb)}. Berechne die Koordinaten von D. Ist ABCD sogar eine Raute?`,
+          given: [`A${pt(x1, y0)}`, `C${pt(x2, y0)}`, `B${pt(xb, yb)}`],
+          fields: [
+            numberField("D: x =", D.x, "", 0),
+            numberField("y =", D.y, "", 0, { slips: [{ value: -yb, hint: `Gespiegelt wird an der Geraden AC (y = ${fmt(y0)}), nicht an der x-Achse.` }] }),
+            choiceField("Ist ABCD eine Raute?", ["ja", "nein"], rhombus ? 0 : 1),
+          ],
+          steps: [
+            `AC liegt auf der Geraden y = ${fmt(y0)}. D ist das Spiegelbild von B: gleiche x-Koordinate, und B liegt ${fmt(y0 - yb)} unter der Achse, also liegt D ${fmt(y0 - yb)} darüber.`,
+            rhombus
+              ? `Das Lot von B trifft AC bei x = ${fmt(xb)}, genau in der Mitte von [AC] (${fmt(x1)} + ${fmt(x2)}) : 2 = ${fmt((x1 + x2) / 2)}. Die Diagonalen halbieren sich: eine Raute.`
+              : `Die Mitte von [AC] liegt bei x = ${fmt((x1 + x2) / 2)}, das Lot von B trifft AC aber bei x = ${fmt(xb)}. [BD] halbiert [AC] nicht: keine Raute.`,
+            `<strong>D${pt(D.x, D.y)}; ${rhombus ? "ja, eine Raute" : "nein, keine Raute"}</strong>`,
+          ],
+          meta: { variant, x1, x2, y0, xb, yb, rhombus: rhombus ? 1 : 0 },
+        };
+      },
+    },
+  ],
+  requiredCorrect: 3,
+  celebrationMessage: "Du weißt, welche Stücke ein Viereck festlegen, und konstruierst so, dass es auch im Zugmodus hält.",
+};
+
+// 1.6 Mit Viereckseigenschaften rechnen ────────────────────────────────────
+
+function problemFormula(v: LabValues): string {
+  if (v.fig === 0) return `m = (a + c) : 2 = ${cmText((v.a + v.c) / 2)}; A = m · h`;
+  if (v.fig === 1) return `Rechteck e · f = ${fmt(v.e * v.f)} cm²; der Drachen ist die Hälfte`;
+  return `h ≈ ${cmText(v.b * Math.sin((v.alpha * Math.PI) / 180), 2)} (gemessen); A = a · h`;
+}
+
+function problemAngleText(v: LabValues): string {
+  const w = problemAngles(v);
+  const sign = v.fig === 2 ? "=" : "≈";
+  return w.map((x, i) => `${["α", "β", "γ", "δ"][i]} ${sign} ${fmt(x, 1)}°`).join(", ");
+}
+
+const viereckeAnwenden: Lesson = {
+  id: "dv-6-vierecke-anwenden",
+  stageId: STAGE_ID,
+  stepNumber: 6,
+  title: "1.6 Mit Viereckseigenschaften rechnen",
+  subtitle: "Winkel aus den Eigenschaften, Flächen von Parallelogramm, Trapez und Drachen",
+  tracks: ["I", "II_III"],
+  lehrplan: `${BOTH}: Viereckseigenschaften nutzen`,
+  whyItMatters:
+    "Winkel und Flächen von Dachflächen, Grundstücken, Fliesen oder Drachen berechnest du aus wenigen Maßen, wenn du die Eigenschaften des Vierecks kennst. Die Flächenformeln brauchst du wieder, sobald du Oberflächen und Volumen von Körpern berechnest.",
+  explanationHtml: `
+    <p><strong>Winkel in besonderen Vierecken.</strong> Die Innenwinkelsumme jedes Vierecks ist 360° (Wiederholung aus M7). Dazu kommen die Eigenschaften:</p>
+    <ul>
+      <li><strong>Parallelogramm:</strong> Gegenüberliegende Winkel sind gleich groß (α = γ, β = δ), benachbarte ergänzen sich zu 180° (α + β = 180°), denn an parallelen Seiten sind sie Ergänzungswinkel.</li>
+      <li><strong>Trapez</strong> mit AB ∥ CD: α + δ = 180° und β + γ = 180°. Im <strong>gleichschenkligen Trapez</strong> sind außerdem die Basiswinkel gleich groß: α = β und γ = δ.</li>
+      <li><strong>Drachenviereck</strong> mit der Symmetrieachse AC: Die Winkel an den beiden anderen Ecken sind gleich groß (β = δ), und AC halbiert die Winkel α und γ.</li>
+      <li><strong>Raute:</strong> Beide Diagonalen halbieren die Winkel und stehen senkrecht aufeinander.</li>
+    </ul>
+    <div class="example"><strong>Beispiel (Winkel):</strong> In der Raute ABCD ist α = 70°. Dann ist γ = 70° und β = δ = 180° − 70° = 110°. Die Diagonale [AC] halbiert α, also ∢CAB = 35°. Im Dreieck ABM mit dem rechten Winkel bei M ist ∢ABM = 180° − 90° − 35° = 55°, die Hälfte von β.</div>
+    <p><strong>Flächeninhalte (Wiederholung aus M6):</strong></p>
+    <table class="mini">
+      <tr><th>Viereck</th><th>Flächeninhalt</th><th>Begründung</th></tr>
+      <tr><td>Parallelogramm</td><td>A = g · h</td><td>ein Dreieck abschneiden und auf der anderen Seite anlegen: Rechteck g · h</td></tr>
+      <tr><td>Trapez</td><td>A = ½ · (a + c) · h</td><td>zwei gleiche Trapeze, eines auf den Kopf gestellt angelegt, ergeben ein Parallelogramm mit der Grundseite a + c</td></tr>
+      <tr><td>Drachenviereck, Raute</td><td>A = ½ · e · f</td><td>die Hälfte des Rechtecks mit den Seiten e und f</td></tr>
+    </table>
+    <p>Die Höhe h ist immer der senkrechte Abstand zur Grundseite, nie die schräge Seite. Beim Trapez heißt m = ½ · (a + c) die <strong>Mittellinie</strong>; damit ist A = m · h. Verschiebst du die obere Seite eines Trapezes auf ihrer Geraden, ändern sich a, c und h nicht, also auch nicht der Flächeninhalt.</p>
+    <div class="example"><strong>Beispiel (Fläche):</strong> Trapez mit a = 9 cm, c = 5 cm und h = 6 cm: A = ½ · (9 cm + 5 cm) · 6 cm = 7 cm · 6 cm = 42 cm². Rückwärts: Ein Trapez mit A = 42 cm², a = 9 cm und c = 5 cm hat die Höhe h = 2 · A : (a + c) = 84 cm² : 14 cm = 6 cm. Ein Drachen mit e = 8 cm und f = 5 cm hat A = ½ · 8 cm · 5 cm = 20 cm².</div>
+    <p><strong>Typische Fehler:</strong> beim Trapez oder Drachen das ½ vergessen; beim Parallelogramm die schräge Seite statt der Höhe nehmen; im Parallelogramm benachbarte Winkel gleichsetzen statt gegenüberliegende.</p>
+    <div class="merke"><strong>Merke:</strong> Parallelogramm: α = γ, β = δ, α + β = 180° und A = g · h. Trapez: A = ½ · (a + c) · h. Drachen und Raute: A = ½ · e · f. Die Höhe steht immer senkrecht auf der Grundseite.</div>
+  `,
+  formulas: [
+    { name: "Parallelogramm", html: "A = g · h; α = γ, β = δ, α + β = 180°", quantities: "g Grundseite, h die Höhe zu g" },
+    { name: "Trapez", html: `A = ${frac("a + c", 2)} · h = m · h`, quantities: "a, c parallele Seiten, h ihr Abstand, m Mittellinie" },
+    { name: "Drachenviereck und Raute", html: `A = ${frac("e · f", 2)}`, quantities: "e, f die Diagonalen" },
+    { name: "Winkel", html: "gleichschenkliges Trapez: α = β, γ = δ; Drachen: β = δ", quantities: "Innenwinkelsumme im Viereck 360°" },
+  ],
+  quiz: {
+    question: "Ein Parallelogramm hat die Seiten a = 8 cm und b = 5 cm, die Höhe zur Seite a ist 4 cm lang. Wie groß ist sein Flächeninhalt?",
+    options: ["40 cm²", "32 cm²", "16 cm²", "20 cm²"],
+    correctIndex: 1,
+    explanation:
+      "A = g · h = 8 cm · 4 cm = 32 cm². 40 cm² wäre a · b, aber die schräge Seite b ist nicht die Höhe. 16 cm² entsteht, wenn man wie beim Dreieck halbiert, 20 cm² mit b statt a als Grundseite.",
+  },
+  lab: {
+    kind: "quadrilateral-problems",
+    title: "Labor: Flächen und Winkel",
+    intro:
+      "Wähle eine Figur und ziehe an ihren Ecken. Beim Trapez verschiebst du mit D die obere Seite, beim Drachen mit M den Kreuzungspunkt der Diagonalen. Die Hilfsfigur zeigt, woher die Flächenformel kommt.",
+    params: [
+      {
+        type: "choice",
+        key: "fig",
+        label: "Figur",
+        options: [
+          { value: 0, label: "Trapez: obere Seite verschieben" },
+          { value: 1, label: "Drachenviereck im Rechteck" },
+          { value: 2, label: "Parallelogramm: Winkel ändern" },
+        ],
+        value: 0,
+      },
+      {
+        type: "choice",
+        key: "hilfe",
+        label: "Hilfsfigur",
+        options: [
+          { value: 0, label: "ausblenden" },
+          { value: 1, label: "zeigen" },
+        ],
+        value: 0,
+      },
+      { type: "range", key: "a", label: "Grundseite a", unit: "cm", min: 3, max: 10, step: 0.5, value: 8, digits: 1, showIf: (v) => v.fig !== 1 },
+      { type: "range", key: "c", label: "obere Seite c", unit: "cm", min: 1, max: 8, step: 0.5, value: 4, digits: 1, showIf: (v) => v.fig === 0 },
+      { type: "range", key: "h", label: "Höhe h", unit: "cm", min: 1, max: 6, step: 0.5, value: 4, digits: 1, showIf: (v) => v.fig === 0 },
+      { type: "range", key: "s", label: "Verschiebung der oberen Seite", unit: "cm", min: -2, max: 6, step: 0.5, value: 1, digits: 1, showIf: (v) => v.fig === 0 },
+      { type: "range", key: "e", label: "Diagonale e = [AC]", unit: "cm", min: 2, max: 10, step: 0.5, value: 8, digits: 1, showIf: (v) => v.fig === 1 },
+      { type: "range", key: "f", label: "Diagonale f = [BD]", unit: "cm", min: 1, max: 6, step: 0.5, value: 5, digits: 1, showIf: (v) => v.fig === 1 },
+      { type: "range", key: "p", label: "Lage von M auf [AC]", unit: "%", min: 10, max: 90, step: 5, value: 30, showIf: (v) => v.fig === 1 },
+      { type: "range", key: "b", label: "Seite b", unit: "cm", min: 1, max: 6, step: 0.5, value: 4, digits: 1, showIf: (v) => v.fig === 2 },
+      { type: "range", key: "alpha", label: "Winkel α", unit: "°", min: 15, max: 165, step: 5, value: 60, showIf: (v) => v.fig === 2 },
+    ],
+    readouts: [
+      { key: "flaeche", label: "Flächeninhalt", unit: "cm²", digits: 2, emphasis: true, compute: problemArea },
+      { key: "formel", label: "So rechnest du", compute: problemFormula },
+      { key: "winkel", label: "Winkel", compute: problemAngleText },
+    ],
+    goals: [
+      {
+        id: "gleichschenklig",
+        text: "Trapez: Verschiebe die obere Seite, bis das Trapez gleichschenklig ist und α = β gilt. Ändert sich dabei der Flächeninhalt?",
+        check: (v) => v.fig === 0 && v.c < v.a && Math.abs(2 * v.s + v.c - v.a) < 1e-9,
+      },
+      {
+        id: "raute",
+        text: "Drachenviereck: Verschiebe den Kreuzungspunkt M so, dass aus dem Drachen eine Raute wird. Welcher Anteil des Rechtecks bleibt bedeckt?",
+        check: (v) => v.fig === 1 && v.p === 50,
+      },
+      {
+        id: "doppelt",
+        text: "Parallelogramm: Stelle α so ein, dass α doppelt so groß ist wie β. Welche Winkelbeziehung hilft dir dabei?",
+        check: (v) => v.fig === 2 && v.alpha === 120,
+      },
+    ],
+  },
+  exercises: [
+    {
+      id: "winkel",
+      make: (rng, level): ExerciseTask => {
+        if (level === 1) {
+          const kind = rng.int(0, 4);
+          if (kind === 0) {
+            const alpha = draw(() => rng.int(40, 140), (x) => x !== 90, 64);
+            return {
+              prompt: `Im Parallelogramm ABCD ist α = ${alpha}°. Berechne β und γ.`,
+              given: [`α = ${alpha}°`],
+              formulaHint: "Parallelogramm: α + β = 180°, α = γ, β = δ",
+              fields: [
+                numberField("β =", 180 - alpha, "°", 0, { slips: [{ value: alpha, hint: "Benachbarte Winkel ergänzen sich zu 180°; gleich groß sind die gegenüberliegenden." }] }),
+                numberField("γ =", alpha, "°", 0, { slips: [{ value: 180 - alpha, hint: "γ liegt α gegenüber und ist deshalb genauso groß." }] }),
+              ],
+              steps: [`β = 180° − ${alpha}° = ${180 - alpha}° (Ergänzungswinkel an den Parallelen AB und CD)`, `γ liegt α gegenüber: γ = ${alpha}°.`, `<strong>β = ${180 - alpha}°; γ = ${alpha}°</strong>`],
+              meta: { kind, alpha },
+            };
+          }
+          if (kind === 1) {
+            const alpha = rng.int(40, 85);
+            return {
+              prompt: `Im gleichschenkligen Trapez ABCD mit AB ∥ CD ist der Basiswinkel α = ${alpha}°. Berechne β und γ.`,
+              given: [`α = ${alpha}°`, "AB ∥ CD, AD = BC"],
+              formulaHint: "gleichschenkliges Trapez: α = β, γ = δ; α + δ = 180°",
+              fields: [
+                numberField("β =", alpha, "°", 0, { slips: [{ value: 180 - alpha, hint: "Im gleichschenkligen Trapez sind die Basiswinkel α und β gleich groß." }] }),
+                numberField("γ =", 180 - alpha, "°", 0, { slips: [{ value: alpha, hint: "γ und β liegen an der Seite [BC] zwischen den Parallelen: Sie ergänzen sich zu 180°." }] }),
+              ],
+              steps: ["Die Symmetrieachse macht die Basiswinkel gleich groß: β = α.", `β und γ ergänzen sich zu 180°: γ = 180° − ${alpha}° = ${180 - alpha}°.`, `<strong>β = ${alpha}°; γ = ${180 - alpha}°</strong>`],
+              meta: { kind, alpha },
+            };
+          }
+          if (kind === 2) {
+            const [alpha, gamma] = draw(
+              () => [2 * rng.int(20, 60), 2 * rng.int(15, 50)],
+              ([a, g]) => Math.abs(a - g) >= 10 && (360 - a - g) / 2 >= 40 && (360 - a - g) / 2 <= 130,
+              [80, 120],
+            );
+            const beta = (360 - alpha - gamma) / 2;
+            return {
+              prompt: `Im Drachenviereck ABCD mit der Symmetrieachse AC sind α = ${alpha}° und γ = ${gamma}°. Berechne β und den Winkel ∢CAB.`,
+              given: [`α = ${alpha}°`, `γ = ${gamma}°`],
+              formulaHint: "Drachen: β = δ; α + β + γ + δ = 360°; AC halbiert α und γ",
+              fields: [
+                numberField("β =", beta, "°", 0, { slips: [{ value: 360 - alpha - gamma, hint: "β und δ sind gleich groß und teilen sich den Rest zu 360°." }] }),
+                numberField("∢CAB =", alpha / 2, "°", 0, { slips: [{ value: alpha, hint: "Die Symmetrieachse AC halbiert den Winkel α." }] }),
+              ],
+              steps: [`β = δ = (360° − ${alpha}° − ${gamma}°) : 2 = ${fmt(beta)}°`, `AC halbiert α: ∢CAB = ${alpha}° : 2 = ${alpha / 2}°`, `<strong>β = ${fmt(beta)}°; ∢CAB = ${alpha / 2}°</strong>`],
+              meta: { kind, alpha, gamma },
+            };
+          }
+          if (kind === 3) {
+            const alpha = draw(() => 2 * rng.int(20, 70), (x) => x !== 90, 70);
+            return {
+              prompt: `In der Raute ABCD ist α = ${alpha}°. Berechne β und den Winkel ∢CAB, den die Diagonale [AC] mit der Seite [AB] bildet.`,
+              given: [`α = ${alpha}°`],
+              formulaHint: "Raute: α + β = 180°; die Diagonalen halbieren die Winkel",
+              fields: [
+                numberField("β =", 180 - alpha, "°", 0, { slips: [{ value: alpha, hint: "Benachbarte Winkel der Raute ergänzen sich zu 180°." }] }),
+                numberField("∢CAB =", alpha / 2, "°", 0, { slips: [{ value: (180 - alpha) / 2, hint: "Das ist die Hälfte von β. Die Diagonale [AC] halbiert den Winkel bei A." }] }),
+              ],
+              steps: [`β = 180° − ${alpha}° = ${180 - alpha}°`, `[AC] halbiert α: ∢CAB = ${alpha / 2}°`, `<strong>β = ${180 - alpha}°; ∢CAB = ${alpha / 2}°</strong>`],
+              meta: { kind, alpha },
+            };
+          }
+          const [alpha, beta] = draw(() => [rng.int(40, 85), rng.int(40, 85)], ([a, b]) => Math.abs(a - b) >= 5, [60, 75]);
+          return {
+            prompt: `Im Trapez ABCD mit AB ∥ CD sind α = ${alpha}° und β = ${beta}°. Berechne γ und δ.`,
+            given: [`α = ${alpha}°`, `β = ${beta}°`, "AB ∥ CD"],
+            formulaHint: "Trapez mit AB ∥ CD: α + δ = 180°, β + γ = 180°",
+            fields: [
+              numberField("γ =", 180 - beta, "°", 0, { slips: [{ value: 180 - alpha, hint: "γ liegt an der Seite [BC], zusammen mit β." }] }),
+              numberField("δ =", 180 - alpha, "°", 0, { slips: [{ value: 180 - beta, hint: "δ liegt an der Seite [AD], zusammen mit α." }] }),
+            ],
+            steps: [`An [BC] zwischen den Parallelen: γ = 180° − ${beta}° = ${180 - beta}°.`, `An [AD]: δ = 180° − ${alpha}° = ${180 - alpha}°.`, `<strong>γ = ${180 - beta}°; δ = ${180 - alpha}°</strong>`],
+            meta: { kind, alpha, beta },
+          };
+        }
+        const ctx = rng.int(0, 4);
+        if (ctx === 0) {
+          const x = draw(() => rng.int(20, 70), (n) => n !== 45, 30);
+          return {
+            prompt: `Ein Fenster hat die Form einer Raute ABCD; die Diagonalen schneiden sich in M. Die Diagonale [BD] bildet mit der Seite [AB] den Winkel ∢MBA = ${x}°. Berechne die Innenwinkel α und β der Raute.`,
+            given: [`∢MBA = ${x}°`],
+            fields: [
+              numberField("α =", 180 - 2 * x, "°", 0, { slips: [{ value: 90 - x, hint: "Das ist ∢BAM, die Hälfte von α: Die Diagonale [AC] halbiert den Winkel bei A." }] }),
+              numberField("β =", 2 * x, "°", 0, { slips: [{ value: x, hint: "[BD] halbiert β: Der ganze Winkel ist doppelt so groß." }] }),
+            ],
+            steps: [`Die Diagonalen stehen senkrecht: Im Dreieck ABM ist ∢BAM = 180° − 90° − ${x}° = ${90 - x}°.`, `Die Diagonalen halbieren die Winkel: α = 2 · ${90 - x}° = ${180 - 2 * x}°, β = 2 · ${x}° = ${2 * x}°.`, `<strong>α = ${180 - 2 * x}°; β = ${2 * x}°</strong>`],
+            meta: { ctx, x, a1: 180 - 2 * x, a2: 2 * x },
+          };
+        }
+        if (ctx === 1) {
+          const [x, y] = draw(() => [rng.int(20, 60), rng.int(20, 60)], ([p, q]) => Math.abs(p - q) >= 5, [35, 50]);
+          return {
+            prompt: `Ein Grundstück hat die Form eines Parallelogramms ABCD. Die Diagonale [AC] teilt den Winkel bei A in ∢CAB = ${x}° und ∢DAC = ${y}°. Berechne den Winkel β bei B und den Winkel ∢ACB.`,
+            given: [`∢CAB = ${x}°`, `∢DAC = ${y}°`],
+            fields: [
+              numberField("β =", 180 - x - y, "°", 0, { slips: [{ value: x + y, hint: "Das ist α. β ergänzt α zu 180°." }] }),
+              numberField("∢ACB =", y, "°", 0, { slips: [{ value: x, hint: "∢ACB und ∢DAC sind Wechselwinkel an den Parallelen AD und BC, nicht ∢CAB." }] }),
+            ],
+            steps: [`α = ${x}° + ${y}° = ${x + y}°, also β = 180° − ${x + y}° = ${180 - x - y}°.`, `AD ∥ BC: ∢ACB und ∢DAC sind Wechselwinkel, also ∢ACB = ${y}°.`, `<strong>β = ${180 - x - y}°; ∢ACB = ${y}°</strong>`],
+            meta: { ctx, x, y, a1: 180 - x - y, a2: y },
+          };
+        }
+        if (ctx === 2) {
+          const w = rng.int(25, 60);
+          const p = rng.stepped(3, 6, 0.5);
+          const q = p + rng.stepped(1, 4, 0.5);
+          return {
+            prompt: `Im Parallelogramm ABCD ist α = ${2 * w}°, AD = ${cm(p)} und CD = ${cm(q)}. Die Winkelhalbierende von α schneidet die Seite [CD] im Punkt E. Berechne den Winkel ∢DEA und die Länge [CE].`,
+            given: [`α = ${2 * w}°`, `AD = ${cm(p)}`, `CD = ${cm(q)}`],
+            fields: [
+              numberField("∢DEA =", w, "°", 0, { slips: [{ value: 2 * w, hint: "Die Winkelhalbierende teilt α: ∢EAB ist nur die Hälfte, und ∢DEA ist sein Wechselwinkel." }] }),
+              numberField("CE =", q - p, "cm", 1, { slips: [{ value: p, hint: "Das ist DE. Gesucht ist das restliche Stück CE = CD − DE." }] }),
+            ],
+            steps: [
+              `∢EAB = ${2 * w}° : 2 = ${w}°. AB ∥ CD: ∢DEA und ∢EAB sind Wechselwinkel, also ∢DEA = ${w}°.`,
+              `Im Dreieck AED sind die Winkel bei A und E je ${w}° groß: Es ist gleichschenklig mit DE = AD = ${cm(p)}.`,
+              `<strong>∢DEA = ${w}°; CE = ${cm(q)} − ${cm(p)} = ${cm(q - p)}</strong>`,
+            ],
+            meta: { ctx, w, p, q, a1: w, a2: q - p },
+          };
+        }
+        if (ctx === 3) {
+          const [x, y] = draw(() => [rng.int(20, 45), rng.int(20, 45)], ([p, q]) => p + q < 85 && Math.abs(p - q) >= 4, [30, 40]);
+          return {
+            prompt: `Der Querschnitt eines Deichs ist ein gleichschenkliges Trapez ABCD mit AB ∥ CD und AD = BC. Die Diagonale [AC] teilt den Winkel bei A in ∢CAB = ${x}° und ∢DAC = ${y}°. Berechne den Winkel γ bei C und den Winkel ∢ACD.`,
+            given: [`∢CAB = ${x}°`, `∢DAC = ${y}°`],
+            fields: [
+              numberField("γ =", 180 - x - y, "°", 0, { slips: [{ value: x + y, hint: "Das ist β = α. γ ergänzt β zu 180°." }] }),
+              numberField("∢ACD =", x, "°", 0, { slips: [{ value: y, hint: "∢ACD und ∢CAB sind Wechselwinkel an den Parallelen AB und CD." }] }),
+            ],
+            steps: [`α = ${x}° + ${y}° = ${x + y}°; im gleichschenkligen Trapez ist β = α, also γ = 180° − ${x + y}° = ${180 - x - y}°.`, `AB ∥ CD: ∢ACD = ∢CAB = ${x}° (Wechselwinkel).`, `<strong>γ = ${180 - x - y}°; ∢ACD = ${x}°</strong>`],
+            meta: { ctx, x, y, a1: 180 - x - y, a2: x },
+          };
+        }
+        const [x, y] = draw(() => [rng.int(20, 60), rng.int(25, 70)], ([p, q]) => p + q > 90 && p + q < 150 && Math.abs(p - q) >= 5, [40, 65]);
+        return {
+          prompt: `Ein Drachen ABCD hat die Symmetrieachse AC. Die Leiste [AC] bildet mit der Seite [AB] den Winkel ∢CAB = ${x}° und mit der Seite [BC] den Winkel ∢BCA = ${y}°. Berechne den Winkel β bei B und den Winkel γ bei C.`,
+          given: [`∢CAB = ${x}°`, `∢BCA = ${y}°`],
+          fields: [
+            numberField("β =", 180 - x - y, "°", 0, { slips: [{ value: 360 - 2 * x - 2 * y, hint: "Das sind β und δ zusammen. β allein folgt aus dem Dreieck ABC." }] }),
+            numberField("γ =", 2 * y, "°", 0, { slips: [{ value: y, hint: "AC halbiert γ: Der ganze Winkel ist doppelt so groß wie ∢BCA." }] }),
+          ],
+          steps: [`Im Dreieck ABC: β = 180° − ${x}° − ${y}° = ${180 - x - y}°.`, `AC halbiert den Winkel bei C: γ = 2 · ${y}° = ${2 * y}°.`, `<strong>β = ${180 - x - y}°; γ = ${2 * y}°</strong>`],
+          meta: { ctx, x, y, a1: 180 - x - y, a2: 2 * y },
+        };
+      },
+    },
+    {
+      id: "flaeche",
+      make: (rng, level): ExerciseTask => {
+        if (level === 1) {
+          const kind = rng.int(0, 3);
+          if (kind === 0) {
+            const g = rng.stepped(3, 12, 0.5);
+            const h = rng.stepped(2, 8, 0.5);
+            const b = h + rng.stepped(0.5, 3, 0.5);
+            return {
+              prompt: `Ein Parallelogramm hat die Grundseite g = ${cm(g)}, die schräge Seite b = ${cm(b)} und die Höhe h = ${cm(h)} zur Grundseite. Berechne seinen Flächeninhalt.`,
+              given: [`g = ${cm(g)}`, `b = ${cm(b)}`, `h = ${cm(h)}`],
+              formulaHint: "Parallelogramm: A = g · h",
+              fields: [
+                numberField("A =", g * h, "cm²", 2, {
+                  slips: [
+                    { value: g * b, hint: "Die schräge Seite b ist nicht die Höhe. Die Höhe steht senkrecht auf der Grundseite." },
+                    { value: (g * h) / 2, hint: "Beim Parallelogramm wird nicht halbiert; das gilt für Dreiecke." },
+                  ],
+                }),
+              ],
+              steps: ["Die Höhe steht senkrecht auf g; die schräge Seite b brauchst du nicht.", `<strong>A = ${cm(g)} · ${cm(h)} = ${fmtUnit(g * h, "cm²")}</strong>`],
+              meta: { kind, g, h, b },
+            };
+          }
+          if (kind === 1) {
+            const a = rng.stepped(4, 12, 0.5);
+            const c = rng.stepped(1, a - 1, 0.5);
+            const h = rng.stepped(2, 8, 1);
+            const m = (a + c) / 2;
+            return {
+              prompt: `Ein Trapez hat die parallelen Seiten a = ${cm(a)} und c = ${cm(c)} und die Höhe h = ${cm(h)}. Berechne die Mittellinie m und den Flächeninhalt.`,
+              given: [`a = ${cm(a)}`, `c = ${cm(c)}`, `h = ${cm(h)}`],
+              formulaHint: `Trapez: m = ${frac("a + c", 2)}; A = m · h`,
+              fields: [
+                numberField("m =", m, "cm", 2, { slips: [{ value: a + c, hint: "Die Mittellinie ist die Hälfte von a + c." }] }),
+                numberField("A =", m * h, "cm²", 2, { slips: [{ value: (a + c) * h, hint: "Das ½ fehlt: A = ½ · (a + c) · h." }] }),
+              ],
+              steps: [`m = (${cm(a)} + ${cm(c)}) : 2 = ${cm(m, 2)}`, `<strong>m = ${cm(m, 2)}; A = ${cm(m, 2)} · ${cm(h)} = ${fmtUnit(m * h, "cm²")}</strong>`],
+              meta: { kind, a, c, h },
+            };
+          }
+          const e = rng.stepped(2, 12, 0.5);
+          const f = draw(() => rng.stepped(2, 12, 1), (x) => x !== e, e === 12 ? 6 : 7);
+          const name = kind === 2 ? "Ein Drachenviereck" : "Eine Raute";
+          return {
+            prompt: `${name} hat die Diagonalen e = ${cm(e)} und f = ${cm(f)}. Berechne den Flächeninhalt des Rechtecks mit den Seiten e und f und den Flächeninhalt ${kind === 2 ? "des Drachenvierecks" : "der Raute"}.`,
+            given: [`e = ${cm(e)}`, `f = ${cm(f)}`],
+            formulaHint: `A = ${frac("e · f", 2)}`,
+            fields: [
+              numberField("Rechteck e · f =", e * f, "cm²", 2, { slips: [{ value: (e * f) / 2, hint: "Das ist schon die halbe Fläche. Das Rechteck hat e · f." }] }),
+              numberField("A =", (e * f) / 2, "cm²", 2, { slips: [{ value: e * f, hint: "Die Figur bedeckt nur die Hälfte des Rechtecks: A = ½ · e · f." }] }),
+            ],
+            steps: [`Rechteck: ${cm(e)} · ${cm(f)} = ${fmtUnit(e * f, "cm²")}`, `<strong>A = ½ · ${fmtUnit(e * f, "cm²")} = ${fmtUnit((e * f) / 2, "cm²")}</strong>`],
+            meta: { kind, e, f },
+          };
+        }
+        const ctx = rng.int(0, 3);
+        if (ctx === 0) {
+          const a = rng.int(20, 40);
+          const c = rng.int(8, a - 6);
+          const h = rng.int(10, 30);
+          const area = ((a + c) / 2) * h;
+          return {
+            prompt: `Ein Grundstück hat die Form eines Trapezes. Die beiden parallelen Grenzen sind ${a} m und ${c} m lang, der Flächeninhalt beträgt ${fmt(area)} m². Wie weit sind die parallelen Grenzen voneinander entfernt?`,
+            given: [`a = ${a} m`, `c = ${c} m`, `A = ${fmt(area)} m²`],
+            fields: [numberField("h =", h, "m", 2, { slips: [{ value: area / (a + c), hint: "Das ½ aus der Formel: A = ½ · (a + c) · h, also h = 2 · A : (a + c)." }, { value: (2 * area) / a, hint: "Teile 2 · A durch a + c, nicht nur durch a." }] })],
+            steps: [`A = ½ · (a + c) · h, also h = 2 · A : (a + c).`, `h = 2 · ${fmt(area)} m² : ${a + c} m = ${fmt(2 * area)} m² : ${a + c} m`, `<strong>h = ${h} m</strong>`],
+            meta: { ctx, a, c, h },
+          };
+        }
+        if (ctx === 1) {
+          const e = rng.stepped(10, 30, 1);
+          const f = draw(() => rng.stepped(6, 24, 2), (x) => x !== e, 12);
+          const area = (e * f) / 2;
+          return {
+            prompt: `Eine Fliese hat die Form einer Raute mit dem Flächeninhalt ${fmt(area)} cm². Ihre lange Diagonale ist ${cm(Math.max(e, f))} lang. Wie lang ist die kurze Diagonale?`,
+            given: [`A = ${fmt(area)} cm²`, `e = ${cm(Math.max(e, f))}`],
+            fields: [numberField("f =", Math.min(e, f), "cm", 2, { slips: [{ value: area / Math.max(e, f), hint: "A = ½ · e · f, also f = 2 · A : e. Das ½ nicht vergessen." }] })],
+            steps: [`A = ½ · e · f, also f = 2 · A : e.`, `<strong>f = 2 · ${fmt(area)} cm² : ${cm(Math.max(e, f))} = ${cm(Math.min(e, f))}</strong>`],
+            meta: { ctx, e: Math.max(e, f), f: Math.min(e, f) },
+          };
+        }
+        if (ctx === 2) {
+          const a = rng.stepped(5, 10, 0.5);
+          const b = rng.stepped(3, a - 0.5, 0.5);
+          const ha = rng.stepped(2, b - 0.5, 0.5);
+          const area = a * ha;
+          const hb = area / b;
+          return {
+            prompt: `Ein Parallelogramm hat die Seiten a = ${cm(a)} und b = ${cm(b)}; die Höhe zur Seite a ist ${cm(ha)} lang. Berechne den Flächeninhalt und die Höhe zur Seite b.`,
+            given: [`a = ${cm(a)}`, `b = ${cm(b)}`, `Höhe zu a: ${cm(ha)}`],
+            fields: [
+              numberField("A =", area, "cm²", 2, { slips: [{ value: a * b, hint: "a · b ist kein Flächeninhalt des Parallelogramms: Nimm die Höhe, die senkrecht auf a steht." }] }),
+              numberField("Höhe zu b:", hb, "cm", 2, { slips: [{ value: ha, hint: "Zu jeder Seite gehört ihre eigene Höhe. Aus A = b · h folgt die Höhe zu b." }] }),
+            ],
+            steps: [`A = a · (Höhe zu a) = ${cm(a)} · ${cm(ha)} = ${fmtUnit(area, "cm²")}`, `Derselbe Flächeninhalt ist b · (Höhe zu b), also Höhe zu b = ${fmtUnit(area, "cm²")} : ${cm(b)}`, `<strong>A = ${fmtUnit(area, "cm²")}; Höhe zu b ${Math.abs(hb - Math.round(hb * 100) / 100) < 1e-9 ? "=" : "≈"} ${cm(hb, 2)}</strong>`],
+            meta: { ctx, a, b, ha },
+          };
+        }
+        const a = rng.stepped(5, 12, 0.5);
+        const c = rng.stepped(2, a - 1, 0.5);
+        const h = rng.stepped(2, 7, 1);
+        return {
+          prompt: `Lena legt zwei gleiche Trapeze mit a = ${cm(a)}, c = ${cm(c)} und h = ${cm(h)} so aneinander, dass das zweite auf dem Kopf steht und ein Parallelogramm entsteht. Wie lang ist die Grundseite dieses Parallelogramms, und wie groß ist der Flächeninhalt eines Trapezes?`,
+          given: [`a = ${cm(a)}`, `c = ${cm(c)}`, `h = ${cm(h)}`],
+          fields: [
+            numberField("Grundseite:", a + c, "cm", 2, { slips: [{ value: a, hint: "Unten liegt a des ersten Trapezes neben c des zweiten." }] }),
+            numberField("Trapez A =", ((a + c) * h) / 2, "cm²", 2, { slips: [{ value: (a + c) * h, hint: "Das ist das ganze Parallelogramm aus zwei Trapezen; ein Trapez ist die Hälfte." }] }),
+          ],
+          steps: [`Unten liegen a und c nebeneinander: Grundseite a + c = ${cm(a + c)}, Höhe ${cm(h)}.`, `Parallelogramm: ${cm(a + c)} · ${cm(h)} = ${fmtUnit((a + c) * h, "cm²")}; ein Trapez ist die Hälfte.`, `<strong>Grundseite ${cm(a + c)}; A = ${fmtUnit(((a + c) * h) / 2, "cm²")}</strong>`],
+          meta: { ctx, a, c, h },
+        };
+      },
+    },
+  ],
+  requiredCorrect: 3,
+  celebrationMessage: "Winkel aus Eigenschaften, Flächen vorwärts und rückwärts: Mit Vierecken rechnest du jetzt sicher.",
+};
+
 export const STAGE_DREIECKE_VIERECKE: Stage = {
   id: STAGE_ID,
   stageNumber: 1,
@@ -1292,5 +2367,5 @@ export const STAGE_DREIECKE_VIERECKE: Stage = {
   accent: "#2563eb",
   badgeTitle: "Figurenkenner",
   lehrplanLabel: "LB 1 Vierecke (I) · LB 1 Dreiecke und Vierecke (II/III)",
-  lessons: [dreiecksexistenz, dreieckskonstruktion, kongruenz],
+  lessons: [dreiecksexistenz, dreieckskonstruktion, kongruenz, hausDerVierecke, viereckskonstruktion, viereckeAnwenden],
 };

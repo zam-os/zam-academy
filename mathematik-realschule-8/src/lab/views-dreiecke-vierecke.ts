@@ -1,6 +1,6 @@
 import { fmt } from "../exercises/format";
 import type { LabValues } from "../model/types";
-import { angleMark, arcPath, clipped, H, handle, type LabView, line, open, polar, polygon, type Pt, r1, sectorPath, sideLabel, text, W } from "./svg";
+import { angleMark, arcPath, clipped, H, handle, type LabView, line, open, Plot, polar, polygon, type Pt, r1, rect, sectorPath, sideLabel, text, W } from "./svg";
 
 // ─── Shared helpers of this stage ──────────────────────────────────────────
 // Lengths in the labs are in cm, points in cm have y upwards; a Frame maps
@@ -770,9 +770,738 @@ const radiusB = (f: Frame) => ({ x: "b", drag: (p: Pt) => ({ b: dist(p, scr(f, O
 /** The compass around B: the radius a. */
 const radiusA = (f: Frame) => ({ x: "a", drag: (p: Pt, v: LabValues) => ({ a: dist(p, scr(f, { x: v.c, y: 0 })) / f.k }) });
 
-// ─── 1.4 to 1.6: written in the next step ──────────────────────────────────
+// ─── Quadrilaterals: properties, exact on grid points ──────────────────────
+// A quadrilateral ABCD (counterclockwise): sides a = [AB], b = [BC], c = [CD],
+// d = [DA], diagonals e = [AC], f = [BD], angles α, β, γ, δ at A, B, C, D.
 
-const placeholder: LabView = { render: () => '<svg viewBox="0 0 520 340" xmlns="http://www.w3.org/2000/svg"></svg>' };
+const sub = (p: Pt, q: Pt): Pt => ({ x: p.x - q.x, y: p.y - q.y });
+const cross = (u: Pt, w: Pt): number => u.x * w.y - u.y * w.x;
+const dotP = (u: Pt, w: Pt): number => u.x * w.x + u.y * w.y;
+const len2 = (u: Pt): number => u.x * u.x + u.y * u.y;
+const QV = ["A", "B", "C", "D"];
+const QW = ["α", "β", "γ", "δ"];
+const SIDE_NAMES = ["AB", "BC", "CD", "DA"];
+
+/** Whether the segments [p1p2] and [p3p4] meet, touching included. */
+function segmentsMeet(p1: Pt, p2: Pt, p3: Pt, p4: Pt, eps: number): boolean {
+  const d1 = cross(sub(p4, p3), sub(p1, p3));
+  const d2 = cross(sub(p4, p3), sub(p2, p3));
+  const d3 = cross(sub(p2, p1), sub(p3, p1));
+  const d4 = cross(sub(p2, p1), sub(p4, p1));
+  const opposite = (s: number, t: number) => (s > eps && t < -eps) || (s < -eps && t > eps);
+  if (opposite(d1, d2) && opposite(d3, d4)) return true;
+  const on = (p: Pt, q: Pt, r: Pt) => Math.min(p.x, q.x) - eps <= r.x && r.x <= Math.max(p.x, q.x) + eps && Math.min(p.y, q.y) - eps <= r.y && r.y <= Math.max(p.y, q.y) + eps;
+  return (Math.abs(d1) <= eps && on(p3, p4, p1)) || (Math.abs(d2) <= eps && on(p3, p4, p2)) || (Math.abs(d3) <= eps && on(p1, p2, p3)) || (Math.abs(d4) <= eps && on(p1, p2, p4));
+}
+
+export interface QuadInfo {
+  simple: boolean;
+  /** Why ABCD is no quadrilateral, or "". */
+  broken: string;
+  convex: boolean;
+  /** AB ∥ CD and BC ∥ DA. */
+  par: [boolean, boolean];
+  /** The squared side lengths a², b², c², d². */
+  sides2: number[];
+  allEqual: boolean;
+  /** Right angles at A, B, C, D. */
+  right: boolean[];
+  diagEqual: boolean;
+  diagPerp: boolean;
+  diagBisect: boolean;
+  /** [AC] halves [BD], [BD] halves [AC]. */
+  eHalvesF: boolean;
+  fHalvesE: boolean;
+  /** Symmetry axes: "AC", "BD" (diagonals), "AB|CD", "BC|DA" (through the midpoints of two sides). */
+  axes: string[];
+  pointSym: boolean;
+  /** The most special name in the Haus der Vierecke. */
+  name: string;
+}
+
+/** Every property the Haus der Vierecke asks about; exact for grid points (eps for constructed ones). */
+export function quadInfo(P: Pt[], eps = 1e-9): QuadInfo {
+  const [A, B, C, D] = P;
+  const zero = (x: number) => Math.abs(x) <= eps;
+  const edges = [sub(B, A), sub(C, B), sub(D, C), sub(A, D)];
+  const turns = edges.map((e, i) => cross(e, edges[(i + 1) % 4]));
+  const collinear = edges.some((e) => zero(len2(e))) || turns.some(zero);
+  const crossing = !collinear && (segmentsMeet(A, B, C, D, eps) || segmentsMeet(B, C, D, A, eps));
+  const simple = !collinear && !crossing;
+  const convex = simple && (turns.every((t) => t > eps) || turns.every((t) => t < -eps));
+  const sides2 = edges.map(len2);
+  const par: [boolean, boolean] = [zero(cross(edges[0], edges[2])), zero(cross(edges[1], edges[3]))];
+  const right = [0, 1, 2, 3].map((i) => zero(dotP(edges[(i + 3) % 4], edges[i])));
+  const e = sub(C, A);
+  const f = sub(D, B);
+  const diagEqual = zero(len2(e) - len2(f));
+  const diagPerp = zero(dotP(e, f));
+  const diagBisect = zero(A.x + C.x - B.x - D.x) && zero(A.y + C.y - B.y - D.y);
+  const eHalvesF = zero(cross(e, { x: B.x + D.x - 2 * A.x, y: B.y + D.y - 2 * A.y }));
+  const fHalvesE = zero(cross(f, { x: A.x + C.x - 2 * B.x, y: A.y + C.y - 2 * B.y }));
+  const axes: string[] = [];
+  if (simple) {
+    if (diagPerp && eHalvesF) axes.push("AC");
+    if (diagPerp && fHalvesE) axes.push("BD");
+    if (par[0] && zero(dotP({ x: C.x + D.x - A.x - B.x, y: C.y + D.y - A.y - B.y }, edges[0]))) axes.push("AB|CD");
+    if (par[1] && zero(dotP({ x: A.x + D.x - B.x - C.x, y: A.y + D.y - B.y - C.y }, edges[1]))) axes.push("BC|DA");
+  }
+  const allEqual = sides2.every((s) => zero(s - sides2[0]));
+  let name: string;
+  if (!simple) name = "kein Viereck";
+  else if (allEqual && right[0]) name = "Quadrat";
+  else if (par[0] && par[1] && right[0]) name = "Rechteck";
+  else if (allEqual) name = "Raute";
+  else if (par[0] && par[1]) name = "Parallelogramm";
+  else if (axes.some((a) => a.includes("|"))) name = "gleichschenkliges Trapez";
+  else if (axes.length) name = convex ? "Drachenviereck" : "Drachenviereck (nicht konvex)";
+  else if (par[0] || par[1]) name = "Trapez";
+  else name = convex ? "allgemeines Viereck" : "Viereck (nicht konvex)";
+  return {
+    simple,
+    broken: collinear ? "Drei Ecken liegen auf einer Geraden." : crossing ? "Die Seiten überschneiden sich." : "",
+    convex,
+    par,
+    sides2,
+    allEqual,
+    right,
+    diagEqual,
+    diagPerp,
+    diagBisect,
+    eHalvesF,
+    fHalvesE,
+    axes,
+    pointSym: simple && diagBisect,
+    name,
+  };
+}
+
+/** Whether the interior angles at the vertices i and j are equal (convex quadrilaterals). */
+function sameAngle(P: Pt[], i: number, j: number): boolean {
+  const parts = (k: number) => {
+    const u = sub(P[(k + 3) % 4], P[k]);
+    const w = sub(P[(k + 1) % 4], P[k]);
+    return { d: dotP(u, w), l: len2(u) * len2(w) };
+  };
+  const p = parts(i);
+  const q = parts(j);
+  if (Math.sign(Math.round(p.d * 1e6)) !== Math.sign(Math.round(q.d * 1e6))) return false;
+  const x = p.d * p.d * q.l;
+  const y = q.d * q.d * p.l;
+  return Math.abs(x - y) <= 1e-9 * Math.max(1, Math.abs(x), Math.abs(y));
+}
+
+export function sidesText(info: QuadInfo): string {
+  if (!info.simple) return info.broken;
+  const parallel = info.par[0] && info.par[1] ? "AB ∥ CD, BC ∥ DA" : info.par[0] ? "AB ∥ CD" : info.par[1] ? "BC ∥ DA" : "keine parallelen Seiten";
+  const s = info.sides2;
+  const same = (i: number, j: number) => Math.abs(s[i] - s[j]) <= 1e-9 * Math.max(1, s[i]);
+  const pairs: string[] = [];
+  if (info.allEqual) pairs.push("alle vier gleich lang");
+  else
+    ([[0, 2], [1, 3], [0, 1], [1, 2], [2, 3], [3, 0]] as Array<[number, number]>).forEach(([i, j]) => {
+      if (same(i, j)) pairs.push(`${SIDE_NAMES[i]} = ${SIDE_NAMES[j]}`);
+    });
+  return `${parallel}; ${pairs.length ? pairs.join(", ") : "keine gleich langen Seiten"}`;
+}
+
+export function anglesText(info: QuadInfo, P: Pt[]): string {
+  if (!info.simple) return info.broken;
+  const rights = info.right.map((r, i) => (r ? QV[i] : "")).filter(Boolean);
+  if (rights.length === 4) return "vier rechte Winkel";
+  const parts: string[] = [];
+  if (rights.length) parts.push(`rechter Winkel bei ${listText(rights)}`);
+  if (info.convex) {
+    ([[0, 2], [1, 3], [0, 1], [1, 2], [2, 3], [3, 0]] as Array<[number, number]>).forEach(([i, j]) => {
+      if (sameAngle(P, i, j) && !(info.right[i] && info.right[j])) parts.push(`${QW[i]} = ${QW[j]}`);
+    });
+  }
+  return parts.length ? parts.join("; ") : "keine rechten oder gleich großen Winkel";
+}
+
+export function diagonalsText(info: QuadInfo): string {
+  if (!info.simple) return info.broken;
+  const parts: string[] = [];
+  if (info.diagEqual) parts.push("gleich lang");
+  if (info.diagPerp) parts.push("senkrecht zueinander");
+  if (info.diagBisect) parts.push("halbieren sich gegenseitig");
+  else if (info.convex && info.eHalvesF) parts.push("[AC] halbiert [BD]");
+  else if (info.convex && info.fHalvesE) parts.push("[BD] halbiert [AC]");
+  return parts.length ? parts.join(", ") : "keine besondere Eigenschaft";
+}
+
+export function symmetryText(info: QuadInfo): string {
+  if (!info.simple) return info.broken;
+  const n = info.axes.length;
+  const axes = n === 0 ? "keine Symmetrieachse" : n === 1 ? "1 Symmetrieachse" : `${n} Symmetrieachsen`;
+  return `${axes}${info.pointSym ? "; punktsymmetrisch" : ""}`;
+}
+
+function listText(items: string[]): string {
+  return items.length <= 1 ? items.join("") : `${items.slice(0, -1).join(", ")} und ${items[items.length - 1]}`;
+}
+
+/** The characteristic property of each name, and why it is not more special. */
+const CHARACTERISTIC: Record<string, string> = {
+  Quadrat: "vier gleich lange Seiten und vier rechte Winkel",
+  Rechteck: "Parallelogramm mit rechtem Winkel; kein Quadrat: verschieden lange Seiten",
+  Raute: "vier gleich lange Seiten; kein Quadrat: kein rechter Winkel",
+  Parallelogramm: "zwei Paare paralleler Seiten; weder rechte Winkel noch vier gleiche Seiten",
+  "gleichschenkliges Trapez": "Trapez mit Symmetrieachse durch die Mitten der Parallelen",
+  Drachenviereck: "eine Diagonale ist Symmetrieachse; keine Raute",
+  "Drachenviereck (nicht konvex)": "eine Diagonale ist Symmetrieachse, eine Ecke zeigt nach innen",
+  Trapez: "ein Paar paralleler Seiten; keine Symmetrieachse",
+  "allgemeines Viereck": "keine parallelen Seiten, keine Symmetrie",
+  "Viereck (nicht konvex)": "eine Ecke zeigt nach innen",
+};
+
+/** The dashes that mark equal sides and the arrowheads that mark parallel sides, as in the exercise book. */
+function sideMarks(S: Pt[], info: QuadInfo): string {
+  let out = "";
+  const s = info.sides2;
+  const groups: number[][] = [];
+  s.forEach((value, i) => {
+    const group = groups.find((g) => Math.abs(s[g[0]] - value) <= 1e-9 * Math.max(1, value));
+    if (group) group.push(i);
+    else groups.push([i]);
+  });
+  let ticks = 0;
+  for (const group of groups) {
+    if (group.length < 2) continue;
+    ticks += 1;
+    for (const i of group) {
+      const p = S[i];
+      const q = S[(i + 1) % 4];
+      const u = unitOf(p, q);
+      const n = { x: -u.y, y: u.x };
+      const m = { x: (p.x + q.x) / 2, y: (p.y + q.y) / 2 };
+      for (let k = 0; k < ticks; k++) {
+        const o = (k - (ticks - 1) / 2) * 5;
+        const c = { x: m.x + u.x * o, y: m.y + u.y * o };
+        out += line(c.x - n.x * 6, c.y - n.y * 6, c.x + n.x * 6, c.y + n.y * 6, "lab-ink");
+      }
+    }
+  }
+  const chevron = (p: Pt, q: Pt, dir: Pt, count: number) => {
+    let marks = "";
+    for (let k = 0; k < count; k++) {
+      const t = 0.28 + k * 0.06;
+      const c = { x: p.x + (q.x - p.x) * t, y: p.y + (q.y - p.y) * t };
+      const n = { x: -dir.y, y: dir.x };
+      const back = { x: c.x - dir.x * 6, y: c.y - dir.y * 6 };
+      marks += `<path d="M${r1(back.x + n.x * 4.5)} ${r1(back.y + n.y * 4.5)} L${r1(c.x)} ${r1(c.y)} L${r1(back.x - n.x * 4.5)} ${r1(back.y - n.y * 4.5)}" class="lab-ink" />`;
+    }
+    return marks;
+  };
+  if (info.par[0]) {
+    const dir = unitOf(S[0], S[1]);
+    out += chevron(S[0], S[1], dir, 1) + chevron(S[3], S[2], dir, 1);
+  }
+  if (info.par[1]) {
+    const dir = unitOf(S[1], S[2]);
+    out += chevron(S[1], S[2], dir, 2) + chevron(S[0], S[3], dir, 2);
+  }
+  return out;
+}
+
+/** A long line through p and q, to be clipped by the plot. */
+function longLine(p: Pt, q: Pt, cls: string): string {
+  const u = unitOf(p, q);
+  return line(p.x - u.x * 900, p.y - u.y * 900, p.x + u.x * 900, p.y + u.y * 900, cls);
+}
+
+/** The point where the diagonals [AC] and [BD] cross (lines), or null when they are parallel. */
+function diagonalCross(S: Pt[]): Pt | null {
+  const e = sub(S[2], S[0]);
+  const f = sub(S[3], S[1]);
+  const det = cross(e, f);
+  if (Math.abs(det) < 1e-9) return null;
+  const t = cross(sub(S[1], S[0]), f) / det;
+  return { x: S[0].x + e.x * t, y: S[0].y + e.y * t };
+}
+
+/** Diagonals, symmetry axes, centre, the outline with its marks and the vertex names of a quadrilateral on a plot. */
+function quadFigure(plot: Plot, P: Pt[], info: QuadInfo, clipId: string, options: { axes?: boolean; marks?: boolean } = {}): string {
+  const S = P.map((p) => plot.P(p.x, p.y));
+  let out = polygon(S, info.simple ? "lab-fill-a" : "lab-fill-b");
+  let inner = line(S[0].x, S[0].y, S[2].x, S[2].y, "lab-dashed") + line(S[1].x, S[1].y, S[3].x, S[3].y, "lab-dashed");
+  if (options.axes !== false && info.simple) {
+    for (const axis of info.axes) {
+      if (axis === "AC") inner += longLine(S[0], S[2], "lab-curve-c");
+      else if (axis === "BD") inner += longLine(S[1], S[3], "lab-curve-c");
+      else {
+        const [i, j] = axis === "AB|CD" ? [0, 2] : [1, 3];
+        const m1 = { x: (S[i].x + S[(i + 1) % 4].x) / 2, y: (S[i].y + S[(i + 1) % 4].y) / 2 };
+        const m2 = { x: (S[j].x + S[(j + 1) % 4].x) / 2, y: (S[j].y + S[(j + 1) % 4].y) / 2 };
+        inner += longLine(m1, m2, "lab-curve-c");
+      }
+    }
+  }
+  out += clipped(clipId, inner);
+  out += polygon(S, "lab-ink", 'style="fill:none"');
+  if (info.convex) {
+    const M = diagonalCross(S);
+    if (M) {
+      if (info.diagPerp) out += angleMark(M, S[2], S[1], 9, "lab-angle", true);
+      out += dot(M, info.pointSym ? "lab-bar-c" : "lab-dot-small", info.pointSym ? 4 : 2.5);
+      if (info.pointSym) out += halo(text(M.x + 7, M.y + 14, "Z", "lab-text-small lab-text-c"));
+    }
+    info.right.forEach((r, i) => {
+      if (r) out += angleMark(S[i], S[(i + 1) % 4], S[(i + 3) % 4], 13, "lab-angle", true);
+    });
+  }
+  if (options.marks !== false && info.simple) out += sideMarks(S, info);
+  const center = centroid(...S);
+  S.forEach((p, i) => (out += clampedLabel(plot, p, center, QV[i], "lab-text")));
+  return out;
+}
+
+/** The name of a vertex outside its figure, but kept inside the plot box. */
+function clampedLabel(plot: Plot, P: Pt, center: Pt, name: string, cls: string, d = 17): string {
+  const u = unitOf(center, P);
+  const { box } = plot;
+  const x = Math.min(box.x + box.w - 8, Math.max(box.x + 8, P.x + u.x * d));
+  const y = Math.min(box.y + box.h - 4, Math.max(box.y + 14, P.y + u.y * d + 4));
+  return halo(text(x, y, name, cls, "middle"));
+}
+
+/** Background, lattice and, if asked, the numbers on the axes of a grid plot. */
+function lattice(plot: Plot, numbers: boolean): string {
+  const { box } = plot;
+  let out = rect(box.x, box.y, box.w, box.h, "lab-plot-bg");
+  for (let x = Math.ceil(plot.xmin); x <= plot.xmax; x++) out += line(plot.X(x), box.y, plot.X(x), box.y + box.h, "lab-grid");
+  for (let y = Math.ceil(plot.ymin); y <= plot.ymax; y++) out += line(box.x, plot.Y(y), box.x + box.w, plot.Y(y), "lab-grid");
+  if (numbers) {
+    for (let x = 0; x <= plot.xmax; x += 2) out += text(plot.X(x), box.y + box.h + 12, String(x), "lab-text-tick", "middle");
+    for (let y = 0; y <= plot.ymax; y += 1) out += text(box.x - 5, plot.Y(y) + 3.5, String(y), "lab-text-tick", "end");
+  }
+  return out;
+}
+
+// ─── 1.4 Das Haus der Vierecke ─────────────────────────────────────────────
+
+export const FAMILY_PLOT = new Plot(-0.5, 12.5, -0.25, 7.25, { x: 14, y: 54, w: 492, h: 284 });
+
+/** The four vertices of the Haus-der-Vierecke lab, in grid units. */
+export const familyPoints = (v: LabValues): Pt[] => QV.map((n) => ({ x: v[`x${n}`], y: v[`y${n}`] }));
+
+function quadrilateralFamily(v: LabValues): string {
+  const plot = FAMILY_PLOT;
+  const P = familyPoints(v);
+  const info = quadInfo(P);
+  let out = open("Ein Viereck mit ziehbaren Ecken auf Gitterpunkten; seine Eigenschaften und sein speziellster Name");
+  out += `<defs>${plot.clip("fam-clip")}</defs>`;
+  out += lattice(plot, false);
+  out += quadFigure(plot, P, info, "fam-clip");
+  out += text(16, 24, info.name === "kein Viereck" ? "Kein Viereck" : info.name.charAt(0).toUpperCase() + info.name.slice(1), info.simple ? "lab-text lab-text-big" : "lab-text lab-text-big lab-text-bad");
+  out += text(16, 43, info.simple ? CHARACTERISTIC[info.name] : info.broken, "lab-text-muted");
+  if (info.axes.length) out += text(W - 14, 24, "lila: Symmetrieachsen", "lab-text-small lab-text-c", "end");
+  P.forEach((p, i) => {
+    const s = plot.P(p.x, p.y);
+    out += handle(QV[i], s.x, s.y, `Ecke ${QV[i]}`);
+  });
+  out += `</svg>`;
+  return out;
+}
+
+const familyDrag = (i: number) => ({
+  x: `x${QV[i]}`,
+  y: `y${QV[i]}`,
+  drag: (p: Pt) => ({ [`x${QV[i]}`]: FAMILY_PLOT.invX(p.x), [`y${QV[i]}`]: FAMILY_PLOT.invY(p.y), sel: i }),
+});
+
+// ─── 1.5 Vierecke konstruieren: der Zugmodus ───────────────────────────────
+
+export const ZUG_PLOT = new Plot(0, 12, 0, 7, { x: 34, y: 54, w: 456, h: 266 });
+export const ZUG_FIGURES = ["Parallelogramm", "Raute", "Drachenviereck"];
+
+const half = (x: number): number => Math.round(x * 2) / 2;
+
+/** The vertices the construction of figure `fig` gives from the free points A, B, C (and f for the Raute). */
+export function zugConstructed(fig: number, A: Pt, B: Pt, C: Pt, f: number): Pt[] {
+  if (fig === 0) return [A, B, C, { x: A.x + C.x - B.x, y: A.y + C.y - B.y }];
+  if (fig === 1) {
+    const M = { x: (A.x + C.x) / 2, y: (A.y + C.y) / 2 };
+    const d = Math.hypot(C.x - A.x, C.y - A.y);
+    const n = d > 1e-9 ? { x: -(C.y - A.y) / d, y: (C.x - A.x) / d } : { x: 0, y: 1 };
+    return [A, { x: M.x - (n.x * f) / 2, y: M.y - (n.y * f) / 2 }, C, { x: M.x + (n.x * f) / 2, y: M.y + (n.y * f) / 2 }];
+  }
+  const d2 = len2(sub(C, A));
+  if (d2 < 1e-9) return [A, B, C, B];
+  const t = dotP(sub(B, A), sub(C, A)) / d2;
+  const F = { x: A.x + (C.x - A.x) * t, y: A.y + (C.y - A.y) * t };
+  return [A, B, C, { x: 2 * F.x - B.x, y: 2 * F.y - B.y }];
+}
+
+/** The start of the Zugmodus lab; the freehand vertices start where the construction puts them, rounded to half units. */
+export const ZUG_START = { xA: 1, yA: 1, xB: 6, yB: 1, xC: 8, yC: 4, f: 3 };
+function freehandStart(fig: number): Pt[] {
+  const s = ZUG_START;
+  return zugConstructed(fig, { x: s.xA, y: s.yA }, { x: s.xB, y: s.yB }, { x: s.xC, y: s.yC }, s.f).map((p) => ({ x: half(p.x), y: half(p.y) }));
+}
+export const FREEHAND_START = { p: freehandStart(0)[3], rB: freehandStart(1)[1], rD: freehandStart(1)[3], k: freehandStart(2)[3] };
+
+/** The four vertices the Zugmodus lab shows, and which of them depend on the others (constructed or frozen). */
+export function zugPoints(v: LabValues): { P: Pt[]; dependent: boolean[] } {
+  const A = { x: v.xA, y: v.yA };
+  const B = { x: v.xB, y: v.yB };
+  const C = { x: v.xC, y: v.yC };
+  const built = zugConstructed(v.fig, A, B, C, v.f);
+  if (v.modus === 0) return { P: built, dependent: [false, v.fig === 1, false, true] };
+  if (v.fig === 0) return { P: [A, B, C, { x: v.pDx, y: v.pDy }], dependent: [false, false, false, true] };
+  if (v.fig === 1) return { P: [A, { x: v.rBx, y: v.rBy }, C, { x: v.rDx, y: v.rDy }], dependent: [false, true, false, true] };
+  return { P: [A, B, C, { x: v.kDx, y: v.kDy }], dependent: [false, false, false, true] };
+}
+
+/** Whether ABCD still is the figure its construction promises. */
+export function zugKeeps(fig: number, info: QuadInfo): boolean {
+  if (!info.simple) return false;
+  if (fig === 0) return info.par[0] && info.par[1];
+  if (fig === 1) return info.allEqual;
+  return info.axes.includes("AC");
+}
+
+/** The values after "Ecken nach Augenmaß neu setzen": the frozen vertices where the construction puts them now, rounded. */
+export function redrawFreehand(v: LabValues): LabValues {
+  const built = zugConstructed(v.fig, { x: v.xA, y: v.yA }, { x: v.xB, y: v.yB }, { x: v.xC, y: v.yC }, v.f).map((p) => ({ x: half(p.x), y: half(p.y) }));
+  if (v.fig === 0) return { ...v, pDx: built[3].x, pDy: built[3].y };
+  if (v.fig === 1) return { ...v, rBx: built[1].x, rBy: built[1].y, rDx: built[3].x, rDy: built[3].y };
+  return { ...v, kDx: built[3].x, kDy: built[3].y };
+}
+
+/** A thin arrow in the colour of side c, with a filled head. */
+function vectorArrow(p: Pt, q: Pt, dashed = false): string {
+  const len = dist(p, q);
+  if (len < 2) return "";
+  const u = unitOf(p, q);
+  const head = Math.min(10, len * 0.45);
+  const b = { x: q.x - u.x * head, y: q.y - u.y * head };
+  const n = { x: -u.y * head * 0.45, y: u.x * head * 0.45 };
+  return (
+    `<line x1="${r1(p.x)}" y1="${r1(p.y)}" x2="${r1(b.x)}" y2="${r1(b.y)}" class="lab-side-c" style="stroke-width:2.2${dashed ? ";stroke-dasharray:6 4" : ""}" />` +
+    polygon([q, { x: b.x + n.x, y: b.y + n.y }, { x: b.x - n.x, y: b.y - n.y }], "lab-bar-c")
+  );
+}
+
+const pointText = (p: Pt): string => `(${fmt(p.x, 2)} | ${fmt(p.y, 2)})`;
+
+/** "ein Parallelogramm", "eine Raute". */
+export const withArticle = (name: string): string => `${name === "Raute" ? "eine" : "ein"} ${name}`;
+
+function quadrilateralConstruction(v: LabValues): string {
+  const plot = ZUG_PLOT;
+  const { P, dependent } = zugPoints(v);
+  const info = quadInfo(P, 1e-6);
+  const keeps = zugKeeps(v.fig, info);
+  const S = P.map((p) => plot.P(p.x, p.y));
+  const fig = ZUG_FIGURES[v.fig];
+  let out = open("Zugmodus: Eine konstruierte Figur behält ihre Eigenschaften, eine nach Augenmaß gezeichnete nicht.");
+  out += `<defs>${plot.clip("zug-clip")}</defs>`;
+  out += lattice(plot, true);
+  const built = zugConstructed(v.fig, P[0], { x: v.xB, y: v.yB }, P[2], v.f);
+  let aids = "";
+  if (v.fig === 0) {
+    // the arrow BC→ beside [BC], and the same arrow from A, beside [AD]: both pushed away from the figure
+    const D = plot.P(built[3].x, built[3].y);
+    const center = centroid(S[0], S[1], S[2], D);
+    const away = (p: Pt, q: Pt): Pt => {
+      const u = unitOf(p, q);
+      const n = { x: -u.y, y: u.x };
+      const mid = { x: (p.x + q.x) / 2, y: (p.y + q.y) / 2 };
+      const sign = (mid.x - center.x) * n.x + (mid.y - center.y) * n.y >= 0 ? 1 : -1;
+      return { x: n.x * sign * 11, y: n.y * sign * 11 };
+    };
+    const o1 = away(S[1], S[2]);
+    const o2 = away(S[0], D);
+    aids += vectorArrow({ x: S[1].x + o1.x, y: S[1].y + o1.y }, { x: S[2].x + o1.x, y: S[2].y + o1.y });
+    aids += vectorArrow({ x: S[0].x + o2.x, y: S[0].y + o2.y }, { x: D.x + o2.x, y: D.y + o2.y }, true);
+    const mid1 = { x: (S[1].x + S[2].x) / 2 + o1.x * 2.2, y: (S[1].y + S[2].y) / 2 + o1.y * 2.2 + 4 };
+    const mid2 = { x: (S[0].x + D.x) / 2 + o2.x * 2.2, y: (S[0].y + D.y) / 2 + o2.y * 2.2 + 4 };
+    aids += halo(text(mid1.x, mid1.y, "BC→", "lab-text-small lab-text-c", "middle"));
+    aids += halo(text(mid2.x, mid2.y, "BC→", "lab-text-small lab-text-c", "middle"));
+  } else if (v.fig === 1) {
+    const M = plot.P((P[0].x + P[2].x) / 2, (P[0].y + P[2].y) / 2);
+    const Bc = plot.P(built[1].x, built[1].y);
+    aids += line(S[0].x, S[0].y, S[2].x, S[2].y, "lab-thin");
+    aids += clipped("zug-clip", longLine(Bc, plot.P(built[3].x, built[3].y), "lab-curve-c"));
+    if (dist(Bc, M) > 2) aids += angleMark(M, S[2], Bc, 10, "lab-angle", true);
+    aids += dot(M, "lab-bar-c", 3.5) + halo(text(M.x + 8, M.y - 6, "M", "lab-text-small lab-text-c"));
+  } else {
+    const B = plot.P(v.xB, v.yB);
+    const d2 = len2(sub(P[2], P[0]));
+    const t = d2 > 1e-9 ? dotP(sub({ x: v.xB, y: v.yB }, P[0]), sub(P[2], P[0])) / d2 : 0;
+    const F = plot.P(P[0].x + (P[2].x - P[0].x) * t, P[0].y + (P[2].y - P[0].y) * t);
+    aids += clipped("zug-clip", longLine(S[0], S[2], "lab-curve-c"));
+    aids += line(B.x, B.y, F.x, F.y, "lab-dashed") + line(F.x, F.y, plot.P(built[3].x, built[3].y).x, plot.P(built[3].x, built[3].y).y, "lab-dashed");
+    if (dist(B, F) > 2) aids += angleMark(F, B, S[2], 10, "lab-angle", true);
+  }
+  out += polygon(S, keeps ? "lab-fill-a" : "lab-fill-b");
+  out += aids;
+  out += polygon(S, "lab-ink", 'style="fill:none"');
+  if (info.simple) out += sideMarks(S, info);
+  if (v.modus === 1) {
+    // where the construction would put the frozen vertices
+    built.forEach((p, i) => {
+      if (!dependent[i]) return;
+      const at = plot.P(p.x, p.y);
+      if (dist(at, S[i]) > 3) out += `<circle cx="${r1(at.x)}" cy="${r1(at.y)}" r="9" class="lab-target" />`;
+    });
+  }
+  const center = centroid(...S);
+  S.forEach((p, i) => {
+    out += clampedLabel(plot, p, center, QV[i], dependent[i] ? "lab-text lab-text-b" : "lab-text");
+    if (dependent[i]) out += dot(p, v.modus === 0 ? "lab-point-b" : "lab-point", 5.5);
+  });
+  out += text(16, 22, keeps ? `ABCD ist ${withArticle(fig)}${info.name !== fig ? `, sogar ${withArticle(info.name)}` : ""}.` : `ABCD ist ${fig === "Raute" ? "keine" : "kein"} ${fig} mehr.`, keeps ? "lab-text lab-text-big lab-text-ok" : "lab-text lab-text-big lab-text-bad");
+  const how =
+    v.modus === 0
+      ? ["D = A ⊕ BC→ hängt an A, B und C: Ziehe, es bleibt ein Parallelogramm.", "B und D liegen auf der Senkrechten durch M, je f : 2 von M entfernt.", "D ist das Spiegelbild von B an AC: Ziehe, es bleibt ein Drachen."][v.fig]
+      : `Nach Augenmaß: ${v.fig === 1 ? "B und D bleiben" : "D bleibt"} liegen, wenn du ziehst. Kreis: Hier gehört ${v.fig === 1 ? "es" : "D"} hin.`;
+  out += text(16, 40, how, "lab-text-muted");
+  // handles for the free vertices
+  [0, 1, 2].forEach((i) => {
+    if (v.fig === 1 && i === 1) return;
+    out += handle(QV[i], S[i].x, S[i].y, `Ecke ${QV[i]}`);
+  });
+  out += `</svg>`;
+  return out;
+}
+
+const zugDrag = (i: number) => ({
+  x: `x${QV[i]}`,
+  y: `y${QV[i]}`,
+  drag: (p: Pt) => ({ [`x${QV[i]}`]: ZUG_PLOT.invX(p.x), [`y${QV[i]}`]: ZUG_PLOT.invY(p.y), sel: i }),
+});
+
+/** "D = (3 | 4)" style coordinates of the Zugmodus readout. */
+export function zugConstructionText(v: LabValues): string {
+  const { P } = zugPoints(v);
+  if (v.modus === 1) return v.fig === 1 ? `B = ${pointText(P[1])} und D = ${pointText(P[3])} liegen fest` : `D = ${pointText(P[3])} liegt fest`;
+  if (v.fig === 0) {
+    const bc = { x: v.xC - v.xB, y: v.yC - v.yB };
+    return `BC→ = (${fmt(bc.x)} | ${fmt(bc.y)}), D = A ⊕ BC→ = ${pointText(P[3])}`;
+  }
+  if (v.fig === 1) return `M = ${pointText({ x: (v.xA + v.xC) / 2, y: (v.yA + v.yC) / 2 })}, f = ${fmt(v.f)}: B und D je ${fmt(v.f / 2)} von M`;
+  return `D = Spiegelbild von B an AC ≈ ${pointText(P[3])}`;
+}
+
+// ─── 1.6 Mit Viereckseigenschaften rechnen ─────────────────────────────────
+
+export const TRAP: Frame = { ax: 80, base: 292, k: 30 };
+export const KITE: Frame = { ax: 80, base: 200, k: 36 };
+export const PARA: Frame = { ax: 148, base: 296, k: 22 };
+
+/** The trapezoid of the lab: A(0 | 0), B(a | 0), C(s + c | h), D(s | h). */
+export const trapezoidPoints = (v: LabValues): Pt[] => [ORIGIN, { x: v.a, y: 0 }, { x: v.s + v.c, y: v.h }, { x: v.s, y: v.h }];
+/** The kite of the lab: A(0 | 0), C(e | 0), B and D on the vertical through M at p % of e. */
+export const kitePoints = (v: LabValues): Pt[] => {
+  const m = (v.e * v.p) / 100;
+  return [ORIGIN, { x: m, y: -v.f / 2 }, { x: v.e, y: 0 }, { x: m, y: v.f / 2 }];
+};
+/** The parallelogram of the lab: A(0 | 0), B(a | 0), D = b · (cos α | sin α), C = B + D. */
+export const parallelogramPoints = (v: LabValues): Pt[] => {
+  const D = { x: v.b * cosD(v.alpha), y: v.b * sinD(v.alpha) };
+  return [ORIGIN, { x: v.a, y: 0 }, { x: v.a + D.x, y: D.y }, D];
+};
+
+/** The interior angles of a convex quadrilateral in degrees, as with the protractor. */
+export function quadAngles(P: Pt[]): number[] {
+  return [0, 1, 2, 3].map((i) => {
+    const u = sub(P[(i + 3) % 4], P[i]);
+    const w = sub(P[(i + 1) % 4], P[i]);
+    return toDeg(Math.acos(Math.max(-1, Math.min(1, dotP(u, w) / Math.sqrt(len2(u) * len2(w))))));
+  });
+}
+
+/** The area of the quadrilateral of figure `fig`. */
+export function problemArea(v: LabValues): number {
+  if (v.fig === 0) return ((v.a + v.c) / 2) * v.h;
+  if (v.fig === 1) return (v.e * v.f) / 2;
+  return v.a * v.b * sinD(v.alpha);
+}
+
+/** Whole degrees for a pair of angles that add up to 180°: both rounded the same way. */
+function supplementPair(x: number): [number, number] {
+  const r = Math.round(x);
+  return [r, 180 - r];
+}
+
+/** The four angles of the figure as the readout and the drawing show them. */
+export function problemAngles(v: LabValues): number[] {
+  if (v.fig === 2) return [v.alpha, 180 - v.alpha, v.alpha, 180 - v.alpha];
+  if (v.fig === 0) {
+    const [al, be] = quadAngles(trapezoidPoints(v));
+    const [alpha, delta] = supplementPair(al);
+    const [beta, gamma] = supplementPair(be);
+    return [alpha, beta, gamma, delta];
+  }
+  const raw = quadAngles(kitePoints(v));
+  const alpha = Math.round(raw[0]);
+  const gamma = Math.round(raw[2]);
+  const beta = (360 - alpha - gamma) / 2;
+  return [alpha, beta, gamma, beta];
+}
+
+/**
+ * Arcs and values of the four angles. Very small or very flat angles get only
+ * their letter (the readout has the value); `nudge` moves a label off a
+ * diagonal that runs along its bisector.
+ */
+function angleLabels(S: Pt[], values: number[], cls: string[], exact: boolean, nudge: Pt[] = []): string {
+  let out = "";
+  S.forEach((p, i) => {
+    const prev = S[(i + 3) % 4];
+    const next = S[(i + 1) % 4];
+    out += angleArc(p, next, prev, 18);
+    const content = values[i] < 20 || values[i] > 160 ? QW[i] : `${QW[i]} ${exact ? "=" : "≈"} ${fmt(values[i], 1)}°`;
+    const shift = nudge[i] ?? { x: 0, y: 0 };
+    const u = unitOf(p, next);
+    const w = unitOf(p, prev);
+    const bis = unitOf({ x: 0, y: 0 }, { x: u.x + w.x, y: u.y + w.y });
+    const d = values[i] < 20 ? 52 : 36;
+    out += halo(text(p.x + bis.x * d + shift.x, p.y + bis.y * d + 4 + shift.y, content, cls[i], "middle"));
+  });
+  return out;
+}
+
+function quadrilateralProblems(v: LabValues): string {
+  let out = open("Flächeninhalt und Winkel eines Trapezes, eines Drachenvierecks oder eines Parallelogramms; die Hilfsfigur zeigt, woher die Formel kommt.");
+  const angles = problemAngles(v);
+  const area = problemArea(v);
+  const angleCls = ["lab-text-small lab-text-a", "lab-text-small lab-text-b", "lab-text-small lab-text-a", "lab-text-small lab-text-b"];
+  if (v.fig === 0) {
+    const f = TRAP;
+    const P = trapezoidPoints(v);
+    const S = P.map((p) => scr(f, p));
+    const iso = Math.abs(2 * v.s + v.c - v.a) < 1e-9;
+    out += text(16, 24, `A = (a + c) : 2 · h = (${fmt(v.a)} + ${fmt(v.c)}) : 2 · ${fmt(v.h)} = ${fmt(area)} cm²`, "lab-text lab-text-big");
+    out += text(16, 46, iso ? "Gleichschenklig: α = β und γ = δ." : "α + δ = 180° und β + γ = 180°: Ergänzungswinkel an den Parallelen.", iso ? "lab-text-muted lab-text-ok" : "lab-text-muted");
+    if (v.hilfe === 1) {
+      const m = (v.a + v.c) / 2;
+      const left = v.s / 2;
+      out += polygon([scr(f, { x: left, y: 0 }), scr(f, { x: left + m, y: 0 }), scr(f, { x: left + m, y: v.h }), scr(f, { x: left, y: v.h })], "lab-ghost");
+    }
+    out += polygon(S, "lab-fill-a");
+    // the height from D, on the extended base when D lies outside
+    const foot = scr(f, { x: v.s, y: 0 });
+    const lo = Math.min(S[0].x, foot.x, S[3].x);
+    const hi = Math.max(S[1].x, foot.x, S[2].x);
+    out += line(lo - 8, S[0].y, hi + 8, S[0].y, "lab-thin");
+    out += line(S[3].x, S[3].y, foot.x, foot.y, "lab-dashed");
+    out += angleMark(foot, S[3], foot.x > S[0].x + 1 ? S[0] : S[1], 9, "lab-angle", true);
+    const hLeft = v.s < 0 && foot.x > 40;
+    out += halo(text(S[3].x + (hLeft ? -6 : 6), (S[3].y + foot.y) / 2, "h", "lab-text-small", hLeft ? "end" : "start"));
+    out += line(S[0].x, S[0].y, S[1].x, S[1].y, "lab-side-a") + line(S[3].x, S[3].y, S[2].x, S[2].y, "lab-side-b");
+    out += line(S[1].x, S[1].y, S[2].x, S[2].y, "lab-ink") + line(S[3].x, S[3].y, S[0].x, S[0].y, "lab-ink");
+    out += angleLabels(S, angles, angleCls, false);
+    out += halo(text((S[0].x + S[1].x) / 2, S[0].y + 36, `a = ${cmText(v.a)}`, "lab-text lab-text-a", "middle"));
+    out += halo(text((S[3].x + S[2].x) / 2, S[3].y - 10, `c = ${cmText(v.c)}`, "lab-text lab-text-b", "middle"));
+    if (v.hilfe === 1) {
+      const m = (v.a + v.c) / 2;
+      const L = scr(f, { x: v.s / 2, y: v.h / 2 });
+      const R = scr(f, { x: (v.a + v.s + v.c) / 2, y: v.h / 2 });
+      out += line(L.x, L.y, R.x, R.y, "lab-curve-c");
+      out += halo(text((L.x + R.x) / 2, L.y - 6, `m = (a + c) : 2 = ${cmText(m)}`, "lab-text-small lab-text-c", "middle"));
+      out += text(16, 64, "gestrichelt: Rechteck m · h, gleich groß wie das Trapez", "lab-text-small");
+    }
+    const center = centroid(...S);
+    S.forEach((p, i) => (out += vertexLabel(p, center, QV[i], "lab-text", 15)));
+    out += handle("B", S[1].x, S[1].y, "Ecke B: Seite a");
+    out += handle("C", S[2].x, S[2].y, "Ecke C: Seite c");
+    out += handle("D", S[3].x, S[3].y, "Ecke D: obere Seite verschieben und Höhe");
+  } else if (v.fig === 1) {
+    const f = KITE;
+    const P = kitePoints(v);
+    const S = P.map((p) => scr(f, p));
+    const M = scr(f, { x: (v.e * v.p) / 100, y: 0 });
+    out += text(16, 24, `A = e · f : 2 = ${fmt(v.e)} · ${fmt(v.f)} : 2 = ${fmt(area)} cm²`, "lab-text lab-text-big");
+    out += text(16, 46, v.p === 50 ? "Raute: Die Diagonalen halbieren sich, α = γ und β = δ." : "Die Symmetrieachse AC halbiert f; β = δ.", v.p === 50 ? "lab-text-muted lab-text-ok" : "lab-text-muted");
+    const box = [scr(f, { x: 0, y: -v.f / 2 }), scr(f, { x: v.e, y: -v.f / 2 }), scr(f, { x: v.e, y: v.f / 2 }), scr(f, { x: 0, y: v.f / 2 })];
+    out += polygon(box, "lab-ghost");
+    if (v.hilfe === 1) {
+      // the four corner triangles of the rectangle: each one as large as a quarter of the kite
+      const corners: Array<[Pt, Pt, Pt]> = [
+        [box[0], S[0], S[1]],
+        [box[1], S[1], S[2]],
+        [box[2], S[2], S[3]],
+        [box[3], S[3], S[0]],
+      ];
+      for (const t of corners) out += polygon(t, "lab-fill-b");
+      out += text(16, 64, `Rechteck e · f = ${fmt(v.e * v.f)} cm²: Die orangen Ecken sind so groß wie der Drachen.`, "lab-text-small");
+    }
+    out += polygon(S, "lab-fill-a");
+    out += line(S[0].x, S[0].y, S[2].x, S[2].y, "lab-side-a") + line(S[1].x, S[1].y, S[3].x, S[3].y, "lab-side-b");
+    out += angleMark(M, S[2], S[3], 9, "lab-angle", true);
+    out += polygon(S, "lab-ink", 'style="fill:none"');
+    // α and γ lie on the bisecting diagonal e, β and δ on f: their labels move off the lines
+    out += angleLabels(S, angles, angleCls, false, [
+      { x: 0, y: -12 },
+      { x: -22, y: 0 },
+      { x: 0, y: -12 },
+      { x: -22, y: 0 },
+    ]);
+    const eMid = v.p < 50 ? (M.x + S[2].x) / 2 : (S[0].x + M.x) / 2;
+    out += halo(text(eMid, M.y + 17, `e = ${cmText(v.e)}`, "lab-text-small lab-text-a", "middle"));
+    out += halo(text(M.x + 7, (S[3].y + M.y) / 2 + 4, `f = ${cmText(v.f)}`, "lab-text-small lab-text-b", "start"));
+    const center = centroid(...S);
+    S.forEach((p, i) => (out += vertexLabel(p, center, QV[i], "lab-text", 15)));
+    out += handle("C", S[2].x, S[2].y, "Ecke C: Diagonale e");
+    out += handle("D", S[3].x, S[3].y, "Ecke D: Diagonale f");
+    out += handle("M", M.x, M.y, "Kreuzungspunkt M der Diagonalen");
+  } else {
+    const f = PARA;
+    const P = parallelogramPoints(v);
+    const S = P.map((p) => scr(f, p));
+    const h = v.b * sinD(v.alpha);
+    out += text(16, 24, `A = a · h ≈ ${fmt(v.a)} cm · ${fmt(h, 2)} cm ≈ ${fmt(area, 2)} cm²`, "lab-text lab-text-big");
+    out += text(16, 46, v.alpha === 90 ? "Rechteck: Die Höhe ist so lang wie b." : "α + β = 180°, α = γ und β = δ.", "lab-text-muted");
+    const foot = scr(f, { x: P[3].x, y: 0 });
+    if (v.hilfe === 1) {
+      out += polygon([foot, scr(f, { x: P[3].x + v.a, y: 0 }), scr(f, { x: P[3].x + v.a, y: h }), S[3]], "lab-ghost");
+      out += text(16, 64, "gestrichelt: Rechteck a · h, gleich groß wie das Parallelogramm", "lab-text-small");
+    }
+    out += polygon(S, "lab-fill-a");
+    out += line(Math.min(S[0].x, foot.x) - 8, S[0].y, Math.max(S[1].x, foot.x) + 8, S[0].y, "lab-thin");
+    out += line(S[3].x, S[3].y, foot.x, foot.y, "lab-dashed");
+    if (Math.abs(foot.x - S[0].x) > 1) out += angleMark(foot, S[3], foot.x > S[0].x ? S[0] : S[1], 9, "lab-angle", true);
+    const hLeft = v.alpha > 90 && foot.x > 40;
+    out += halo(text(S[3].x + (hLeft ? -6 : 6), (S[3].y + foot.y) / 2, "h", "lab-text-small", hLeft ? "end" : "start"));
+    out += line(S[0].x, S[0].y, S[1].x, S[1].y, "lab-side-a") + line(S[3].x, S[3].y, S[2].x, S[2].y, "lab-side-a");
+    out += line(S[1].x, S[1].y, S[2].x, S[2].y, "lab-side-b") + line(S[3].x, S[3].y, S[0].x, S[0].y, "lab-side-b");
+    if (v.alpha === 90) out += angleMark(S[0], S[1], S[3], 13, "lab-angle", true);
+    out += angleLabels(S, angles, angleCls, true);
+    out += halo(text((S[0].x + S[1].x) / 2, S[0].y + 36, `a = ${cmText(v.a)}`, "lab-text lab-text-a", "middle"));
+    out += edgeLabel(S[1], S[2], `b = ${cmText(v.b)}`, "lab-text lab-text-b");
+    const center = centroid(...S);
+    S.forEach((p, i) => (out += vertexLabel(p, center, QV[i], "lab-text", 15)));
+    out += handle("B", S[1].x, S[1].y, "Ecke B: Seite a");
+    out += handle("D", S[3].x, S[3].y, "Ecke D: Winkel α und Seite b");
+  }
+  out += `</svg>`;
+  return out;
+}
+
+const problemHandles: Record<string, { x?: string; y?: string; drag: (p: Pt, v: LabValues) => Partial<LabValues> }> = {
+  B: { x: "a", drag: (p, v) => ({ a: (p.x - (v.fig === 2 ? PARA : TRAP).ax) / (v.fig === 2 ? PARA : TRAP).k }) },
+  C: {
+    x: "c",
+    drag: (p, v) => (v.fig === 1 ? { e: (p.x - KITE.ax) / KITE.k } : { c: (p.x - TRAP.ax) / TRAP.k - v.s }),
+  },
+  D: {
+    x: "s",
+    y: "h",
+    drag: (p, v) => {
+      if (v.fig === 1) return { f: (2 * (KITE.base - p.y)) / KITE.k };
+      if (v.fig === 2) {
+        const A = scr(PARA, ORIGIN);
+        const angle = direction(A, p);
+        return { alpha: angle < 0 ? (p.x >= A.x ? 15 : 165) : angle, b: dist(p, A) / PARA.k };
+      }
+      return { s: (p.x - TRAP.ax) / TRAP.k, h: (TRAP.base - p.y) / TRAP.k };
+    },
+  },
+  M: { x: "p", drag: (p, v) => ({ p: (100 * (p.x - KITE.ax)) / (KITE.k * v.e) }) },
+};
 
 export const DREIECKE_VIERECKE_VIEWS: Record<"triangle-existence" | "triangle-construction" | "congruence" | "quadrilateral-family" | "quadrilateral-construction" | "quadrilateral-problems", LabView> = {
   "triangle-existence": {
@@ -798,7 +1527,16 @@ export const DREIECKE_VIERECKE_VIEWS: Record<"triangle-existence" | "triangle-co
     render: congruence,
     handles: { B: baseHandle(KON), HA: legA(KON), HB: legB(KON), Rb: radiusB(KON), Ra: radiusA(KON) },
   },
-  "quadrilateral-family": placeholder,
-  "quadrilateral-construction": placeholder,
-  "quadrilateral-problems": placeholder,
+  "quadrilateral-family": {
+    render: quadrilateralFamily,
+    handles: { A: familyDrag(0), B: familyDrag(1), C: familyDrag(2), D: familyDrag(3) },
+  },
+  "quadrilateral-construction": {
+    render: quadrilateralConstruction,
+    handles: { A: zugDrag(0), B: zugDrag(1), C: zugDrag(2) },
+  },
+  "quadrilateral-problems": {
+    render: quadrilateralProblems,
+    handles: problemHandles,
+  },
 };

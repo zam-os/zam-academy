@@ -30,4 +30,28 @@ export const GOAL_WITNESSES_STAGE_1: Record<string, Record<string, LabValues>> =
     // 60°, 60° and 60°: equilateral, of any size
     gleichseitig: { art: 4, c: 6, a: 5, b: 4, alpha: 60, beta: 60 },
   },
+  "dv-4-vierecke": {
+    // AB→ = (4 | 1), AD→ = (1 | 4): four sides √17, no right angle
+    raute: { sel: 0, xA: 1, yA: 1, xB: 5, yB: 2, xC: 6, yC: 6, xD: 2, yD: 5 },
+    // AC on y = 3, BD on x = 3: perpendicular, but neither halves the other
+    senkrecht: { sel: 0, xA: 1, yA: 3, xB: 3, yB: 1, xC: 7, yC: 3, xD: 3, yD: 6 },
+    // isosceles trapezoid: AC→ = (6 | 4), BD→ = (−6 | 4), both √52
+    diagonalen: { sel: 0, xA: 1, yA: 1, xB: 9, yB: 1, xC: 7, yC: 5, xD: 3, yD: 5 },
+  },
+  "dv-5-viereckskonstruktion": {
+    // B(6 | 1) under C(6 | 4): right angle at B, D = A ⊕ BC→ = (1 | 4)
+    rechteck: { fig: 0, modus: 0, sel: 1, xA: 1, yA: 1, xB: 6, yB: 1, xC: 6, yC: 4, f: 3 },
+    // freehand D stays at (3 | 4) while B moves to (5 | 1): AB ∥ CD, but BC and DA are not parallel
+    augenmass: { fig: 0, modus: 1, sel: 1, xA: 1, yA: 1, xB: 5, yB: 1, xC: 8, yC: 4, f: 3 },
+    // the Lot from B(4 | 1) meets AC in its midpoint (4 | 3): D = (4 | 5), four sides √13
+    "drachen-raute": { fig: 2, modus: 0, sel: 1, xA: 1, yA: 3, xB: 4, yB: 1, xC: 7, yC: 3, f: 3 },
+  },
+  "dv-6-vierecke-anwenden": {
+    // 2 · 2 + 4 = 8: the top side sits in the middle
+    gleichschenklig: { fig: 0, hilfe: 0, a: 8, c: 4, h: 4, s: 2, e: 8, f: 5, p: 30, b: 4, alpha: 60 },
+    // M in the middle of [AC]
+    raute: { fig: 1, hilfe: 1, a: 8, c: 4, h: 4, s: 1, e: 8, f: 5, p: 50, b: 4, alpha: 60 },
+    // α = 120°, β = 60°
+    doppelt: { fig: 2, hilfe: 0, a: 8, c: 4, h: 4, s: 1, e: 8, f: 5, p: 30, b: 4, alpha: 120 },
+  },
 };
