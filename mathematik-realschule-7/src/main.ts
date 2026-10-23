@@ -15,6 +15,7 @@ import {
 } from "./exercises/checker";
 import { esc, fmt, fmtUnit } from "./exercises/format";
 import { quizOrder } from "./exercises/quiz-order";
+import { shuffleTaskChoices } from "./exercises/choice-order";
 import { createRng, seedFrom } from "./exercises/rng";
 import {
   applyAction,
@@ -805,7 +806,7 @@ class MatheApp {
     saveLearnerProgress(this.progress);
     const generator = lesson.exercises[(counter - 1) % lesson.exercises.length];
     const rng = createRng(seedFrom(`${lesson.id}:${level}:${counter}`));
-    this.task = generator.make(rng, level);
+    this.task = shuffleTaskChoices(generator.make(rng, level), rng);
     this.taskLessonId = lesson.id;
     this.taskLevel = level;
     this.taskInputs = this.task.fields.map(() => "");

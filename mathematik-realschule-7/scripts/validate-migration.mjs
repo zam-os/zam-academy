@@ -33,6 +33,15 @@ const oldCells = mapping.sources.map((source) => {
 const oldIds = oldCells.flatMap((tile) =>
   tile.atoms.flatMap((atom) => atom.practice_items.map((item) => item.id)),
 );
+for (const item of oldCells.flatMap((tile) =>
+  tile.atoms.flatMap((atom) => atom.practice_items),
+)) {
+  assert.deepEqual(
+    mapping.rows.find((row) => row.de_by_id === item.id).de_by_question,
+    item.question_segments ?? item.question,
+    `exact original question, including segments: ${item.id}`,
+  );
+}
 assert.deepEqual(
   [...oldIds].sort(),
   mapping.rows.map((row) => row.de_by_id).sort(),
@@ -44,11 +53,35 @@ const db = await zam.openDatabase({
   useConfiguredCloud: false,
 });
 const snapshot = async (database = db) => ({
+  tokens: await database.prepare("SELECT * FROM tokens ORDER BY id").all(),
+  replacements: await database
+    .prepare(
+      "SELECT * FROM practice_item_replacements ORDER BY old_item_id, new_item_id",
+    )
+    .all(),
   cards: await database.prepare("SELECT * FROM cards ORDER BY id").all(),
   reviews: await database
     .prepare("SELECT * FROM review_logs ORDER BY id")
     .all(),
 });
+function assertRepeatedProposal(before, after, retired) {
+  assert.deepEqual(after.cards, before.cards);
+  assert.deepEqual(after.reviews, before.reviews);
+  assert.deepEqual(after.replacements, before.replacements);
+  assert.equal(after.tokens.length, before.tokens.length);
+  for (const token of before.tokens) {
+    const fresh = after.tokens.find((candidate) => candidate.id === token.id);
+    assert.ok(fresh);
+    if (!retired.has(token.id)) {
+      assert.deepEqual(fresh, token);
+      continue;
+    }
+    // zam-core 0.54.0 stamps updated_at on every retired_items application.
+    // Record this exact limitation; no other token field or history may drift.
+    assert.deepEqual({ ...fresh, updated_at: token.updated_at }, token);
+    assert.ok(Date.parse(fresh.updated_at) >= Date.parse(token.updated_at));
+  }
+}
 try {
   for (const tile of oldCells) await zam.installKvtTile(db, tile);
   const userId = cell.atoms[0].id;
@@ -73,11 +106,27 @@ try {
   assert.equal(before.cards.length, 30);
   assert.equal(before.reviews.length, 60);
   await zam.installKvtTile(db, cell);
+  const installed = await snapshot();
   assert.deepEqual(
-    await snapshot(),
-    before,
-    "install invents no enrolment or mastery and alters no old state",
+    installed.cards,
+    before.cards,
+    "install invents no enrolment or mastery",
   );
+  assert.deepEqual(
+    installed.reviews,
+    before.reviews,
+    "every review stays unchanged",
+  );
+  assert.deepEqual(
+    installed.replacements,
+    before.replacements,
+    "no transfer declared",
+  );
+  for (const token of before.tokens)
+    assert.deepEqual(
+      installed.tokens.find((candidate) => candidate.id === token.id),
+      token,
+    );
   for (const id of oldIds)
     assert.equal((await zam.getTokenById(db, id)).deprecated_at, null);
   const queue = await zam.buildReviewQueue(db, {
@@ -135,6 +184,14 @@ async function rehearseProposal() {
   );
   const proposed = structuredClone(cell);
   proposed.version = "2026.10.2";
+  const retirements = mapping.rows.filter(
+    (row) => row.action === "propose-retire-after-approval",
+  );
+  const retired = new Set(retirements.map((row) => row.de_by_id));
+  proposed.retired_items = retirements.map((row) => ({
+    id: row.de_by_id,
+    reason: row.reason,
+  }));
   const items = proposed.atoms.flatMap((atom) => atom.practice_items);
   const expected = new Map();
   for (const row of rows) {
@@ -193,8 +250,19 @@ async function rehearseProposal() {
     for (const id of oldIds) {
       const token = await zam.getTokenById(trial, id);
       assert.ok(token);
-      assert.equal(Boolean(token.deprecated_at), expected.has(id));
+      assert.equal(
+        Boolean(token.deprecated_at),
+        expected.has(id) || retired.has(id),
+      );
     }
+    assert.deepEqual(
+      after.replacements.map(({ old_item_id, new_item_id }) => [
+        old_item_id,
+        new_item_id,
+      ]),
+      [...expected.entries()].sort(([a], [b]) => a.localeCompare(b)),
+      "only the seven proposed transfers, never a replacement for the corrected C card",
+    );
     const queue = await zam.buildReviewQueue(trial, {
       userId,
       tokenIds: oldIds,
@@ -202,9 +270,12 @@ async function rehearseProposal() {
       buryNewSiblings: false,
       buryReviewSiblings: false,
     });
-    assert.equal(queue.items.length, oldIds.length - rows.length);
+    assert.equal(
+      queue.items.length,
+      oldIds.length - rows.length - retired.size,
+    );
     await zam.installKvtTile(trial, proposed);
-    assert.deepEqual(await snapshot(trial), after);
+    assertRepeatedProposal(after, await snapshot(trial), retired);
     const atoms = proposed.atoms.map((atom) => atom.id);
     for (let round = 0; round < 5; round++) {
       const result = await zam.materialiseKvtCards(trial, userId, atoms);
@@ -234,7 +305,7 @@ async function rehearseProposal() {
     });
     assert.deepEqual(await snapshot(trial), complete);
     console.log(
-      `ok   proposal simulation only: ${rows.length} histories moved with every evidence field intact; ${oldIds.length - rows.length} C cards stay active; repeat install/enrolment idempotent`,
+      `ok   proposal simulation only: ${rows.length} histories moved; ${retired.size} C card retired with history intact; ${oldIds.length - rows.length - retired.size} C cards active; all repeated state stable except zam-core 0.54.0 refreshing retired token updated_at`,
     );
   } finally {
     await trial.close();
@@ -254,11 +325,17 @@ async function rehearseProposal() {
     const before = await snapshot(collision);
     await assert.rejects(
       () => zam.installKvtTile(collision, proposed),
-      /holds a card on both|merge/i,
+      (error) => {
+        assert.equal(
+          error.message,
+          `Cannot move ${row.de_by_id} to ${expected.get(row.de_by_id)}: ${userId} holds a card on both. That is a merge, and mastery is never merged automatically — resolve it explicitly and re-test.`,
+        );
+        return true;
+      },
     );
     assert.deepEqual(await snapshot(collision), before);
     console.log(
-      "ok   proposal collision: two existing histories refuse automatic merge; all evidence intact",
+      "ok   proposal collision: exact old/new/user error; tokens, replacement declarations and all evidence rolled back",
     );
   } finally {
     await collision.close();

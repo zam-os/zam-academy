@@ -103,6 +103,11 @@ describe("Lehrplan und Umfang", () => {
         expect(lesson.lehrplan).toContain(
           `(${track === "I" ? "I" : "II/III"})`,
         );
+      const topic = STAGES.find(
+        (stage) => stage.id === lesson.stageId,
+      )!.lehrplanLabel.split(": ")[1];
+      expect(topic.length).toBeGreaterThan(0);
+      expect(lesson.lehrplan.split(": ")[1]).toBe(topic);
     }
   });
   it("maps all 62 current official competences verbatim and only to applicable lessons", () => {
@@ -213,7 +218,7 @@ describe("Fortschritt und Links", () => {
   });
 });
 describe("ZAM-Karten", () => {
-  it("pins all generated identities and keeps the original five lesson identities", () => {
+  it("pins all 42 lesson identities and 168 atom/item IDs, including the original five lessons", () => {
     expect(
       cell.atoms.map((a) => ({
         lesson: a.slug,
@@ -290,13 +295,21 @@ describe("ZAM-Karten", () => {
       }
     }
   });
-  it("accounts for 30 old items with seven unapproved proposals and no applied transfer", () => {
+  it("accounts for 30 old items with seven transfer proposals, one retirement proposal and no applied migration", () => {
     expect(mapping.approved).toBeNull();
     expect(mapping.status).toBe("proposal-only");
     expect(mapping.rows).toHaveLength(30);
     expect(new Set(mapping.rows.map((r) => r.de_by_id)).size).toBe(30);
     expect(mapping.sources).toHaveLength(4);
     expect(mapping.rows.filter((r) => r.category === "A")).toHaveLength(7);
+    expect(mapping.rows.filter((r) => r.action === "keep-active")).toHaveLength(
+      22,
+    );
+    expect(
+      mapping.rows
+        .filter((r) => r.action === "propose-retire-after-approval")
+        .map((r) => r.de_by_id),
+    ).toEqual(["01K4M7K0000000000000000J02"]);
     for (const r of mapping.rows) {
       expect(r.reason.length).toBeGreaterThan(40);
       if (r.category === "A") {
@@ -309,7 +322,11 @@ describe("ZAM-Karten", () => {
       } else {
         expect(r.category).toBe("C");
         expect(r.academy_slug).toBeNull();
-        expect(r.action).toBe("keep-active");
+        expect(r.action).toBe(
+          r.de_by_id === "01K4M7K0000000000000000J02"
+            ? "propose-retire-after-approval"
+            : "keep-active",
+        );
       }
     }
   });

@@ -299,7 +299,7 @@ const kongruenz = L(3, {
   subtitle: "Auch der Sonderfall SsW hat eine Bedingung",
   whyItMatters:
     "Drei Angaben machen ein Dreieck nicht automatisch eindeutig. Kongruenzsätze zeigen, wann zwei Dreiecke deckungsgleich sein müssen.",
-  explanationHtml: `<p>Deckungsgleiche Dreiecke heißen <strong>kongruent</strong>. SSS, SWS und WSW (auch SWW nach Ergänzung des dritten Winkels) legen ein Dreieck bis auf seine Lage und eine Spiegelung eindeutig fest.</p><p>Bei <strong>SsW</strong> sind zwei Seiten und ein nicht eingeschlossener Winkel gegeben. Eindeutigkeit besteht, wenn der Winkel der <em>längeren</em> gegebenen Seite gegenüberliegt. Ist der Winkel der kürzeren Seite gegenüber, können zwei verschiedene Dreiecke entstehen. WWW legt nur die Form fest, nicht die Größe.</p><div class="example">a = 6 cm, b = 4 cm und α = 50°: α liegt der längeren gegebenen Seite a gegenüber, also SsW. Dagegen a = 4 cm, b = 6 cm und α = 30°: Ein Kreis um B mit Radius 4 cm schneidet den Winkelschenkel von A zweimal; zwei nicht kongruente Dreiecke sind möglich.</div><div class="merke"><strong>Merke:</strong> Prüfe bei SWS den eingeschlossenen Winkel und bei SsW die gegenüberliegende längere Seite. WWW ist kein Kongruenzsatz.</div>`,
+  explanationHtml: `<p>Deckungsgleiche Dreiecke heißen <strong>kongruent</strong>. SSS, SWS und WSW (auch SWW nach Ergänzung des dritten Winkels) legen ein Dreieck bis auf seine Lage und eine Spiegelung eindeutig fest.</p><p>Bei <strong>SsW</strong> sind zwei Seiten und ein nicht eingeschlossener Winkel gegeben. Eindeutigkeit besteht, wenn der Winkel der <em>längeren</em> gegebenen Seite gegenüberliegt. Ist der Winkel der kürzeren Seite gegenüber, können zwei verschiedene Dreiecke entstehen. WWW legt nur die Form fest, nicht die Größe.</p><div class="example">a = 6 cm, b = 4 cm und α = 50°: α liegt der längeren gegebenen Seite a gegenüber, also SsW. Dagegen a = 4 cm, b = 6 cm und α = 30°: Lege A und C mit AC = b = 6 cm fest und zeichne bei A den Winkelschenkel mit α = 30°. Ein Kreis um C mit Radius a = 4 cm schneidet diesen Schenkel zweimal; die Schnittpunkte B₁ und B₂ ergeben zwei nicht kongruente Dreiecke.</div><div class="merke"><strong>Merke:</strong> Prüfe bei SWS den eingeschlossenen Winkel und bei SsW die gegenüberliegende längere Seite. WWW ist kein Kongruenzsatz.</div>`,
   formulas: [
     {
       name: "Kongruenzsätze",
@@ -400,7 +400,10 @@ const kongruenz = L(3, {
           [
             pick(
               "SsW-Kongruenzsatz anwendbar?",
-              ["ja, gegenüber der längeren Seite", "nicht garantiert"],
+              [
+                "ja: Winkel gegenüber langer Seite",
+                "nein: Winkel gegenüber kurzer Seite",
+              ],
               oppositeLong ? 0 : 1,
             ),
             ...(level === 2
@@ -408,9 +411,9 @@ const kongruenz = L(3, {
                   pick(
                     "Für den Satz entscheidend ist …",
                     [
-                      "welcher gegebenen Seite der Winkel gegenüberliegt",
-                      "die Lage auf dem Zeichenblatt",
-                      "die Farbe der beiden Seiten",
+                      "Längere gegebene Seite gegenüber dem Winkel.",
+                      "Beide gegebenen Seiten schließen den Winkel ein.",
+                      "Kürzere gegebene Seite gegenüber dem Winkel.",
                     ],
                     0,
                   ),
@@ -504,8 +507,8 @@ const begruenden = L(4, {
                     "Begründung der Teilkongruenz",
                     [
                       "SSS: Schenkel, halbe Basis, gemeinsame Seite",
-                      "WWW: gleiche Form reicht",
-                      "gleiche Fläche reicht",
+                      "WWW: Gleiche Winkel legen auch die Seitenlängen fest.",
+                      "Fläche: Gleiche Flächeninhalte erzwingen Kongruenz.",
                     ],
                     0,
                   ),
@@ -535,9 +538,9 @@ const begruenden = L(4, {
                 pick(
                   "Begründung",
                   [
-                    "WSW: zwei Wechselwinkelpaare und die gemeinsame Seite AC",
-                    "WWW allein",
-                    "die Diagonale halbiert jede Seite",
+                    "WSW: Wechselwinkelpaare und gemeinsame Diagonale.",
+                    "WWW: Gleiche Winkel legen auch die Seitenlängen fest.",
+                    "SSS: Die Diagonale halbiert alle vier Seitenlängen.",
                   ],
                   0,
                 ),

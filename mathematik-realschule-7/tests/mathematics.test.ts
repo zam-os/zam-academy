@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { ALL_LESSONS, findLessonById } from "../src/curriculum";
-import { sampleExpectation } from "../src/curriculum/stage-8-daten";
+import { sampleGroupShare } from "../src/curriculum/stage-8-daten";
 import { compare } from "../src/curriculum/stage-6-algebra";
 import { createRng, seedFrom } from "../src/exercises/rng";
 import {
@@ -288,9 +288,9 @@ describe("Unabhängige mathematische Gegenproben", () => {
         expect(n[1]).toBe(b + (level === 1 ? 1 : 2));
         if (level === 2) expect(n[2]).toBe(8);
       }
-    expect(sampleExpectation(20, 20)).toBe(50);
-    expect(sampleExpectation(10, 30)).toBe(65);
-    expect(sampleExpectation(0, 0)).toBeNull();
+    expect(sampleGroupShare(20, 20)).toBe(50);
+    expect(sampleGroupShare(10, 30)).toBe(25);
+    expect(sampleGroupShare(0, 0)).toBeNull();
   });
   it("keeps circle boundary membership distinct for strict, closed and intersected regions", () => {
     const circle = findLessonById("ol-1-kreisbereiche")!.lesson.lab;

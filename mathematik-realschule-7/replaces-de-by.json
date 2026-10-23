@@ -2,7 +2,7 @@
   "schema": 1,
   "approved": null,
   "status": "proposal-only",
-  "source": "Stand 23.10.2026: vollständiger M7-Ausbau. Sieben A-Vorschläge, keine B-Übernahme, 23 C/keep-active. Keine Freigabe und keine Änderung persönlicher Historien. Veröffentlichung zunächst ohne replaces und retired_items gemäß Paketstandard.",
+  "source": "Stand 23.10.2026 nach Review von PR 32: sieben A-Vorschläge, keine B-Übernahme; von 23 C-Zeilen bleiben 22 keep-active, für die fehlerhafte SsW-Synthesekarte wird Stilllegung ohne Übertragung vorgeschlagen. Keine Freigabe und keine Änderung persönlicher Historien. Veröffentlichung zunächst ohne replaces und retired_items gemäß Paketstandard.",
   "source_repository": "zam-os/zam",
   "source_commit": "3ff6ee18389b6b2ac602a7265a2ecd695f395107",
   "sources": [
@@ -112,16 +112,53 @@
     {
       "de_by_cell": "de-by:realschule-7-mathematik-kongruenz-dreiecke-vektoren",
       "de_by_id": "01K4M7K0000000000000000J02",
-      "de_by_question": "Definiere den Begriff der geometrischen Kongruenz (Deckungsgleichheit kongruent zu: zwei Figuren stimmen in allen Seitenlängen und Winkelmaßen überein und können durch Kongruenzabbildungen aufeinander abgebildet werden), formuliere die 4 Kongruenzsätze für Dreiecke (1. SSS: drei Seiten, 2. SWS: zwei Seiten und der von ihnen eingeschlossene Winkel, 3. WSW bzw. SWW: eine Seite und zwei Winkel, 4. Ssw: zwei Seiten und der Gegenwinkel der größeren Seite) und begründe, warum 'WWW' (drei Winkel) KEIN Kongruenzsatz ist (sondern nur Ähnlichkeit proportional zu garantiert).",
+      "de_by_question": [
+        {
+          "type": "text",
+          "text": "Definiere den Begriff der geometrischen Kongruenz (Deckungsgleichheit "
+        },
+        {
+          "type": "math",
+          "tex": "\\cong",
+          "speech": "kongruent zu"
+        },
+        {
+          "type": "text",
+          "text": ": zwei Figuren stimmen in allen Seitenlängen und Winkelmaßen überein und können durch Kongruenzabbildungen aufeinander abgebildet werden), formuliere die 4 Kongruenzsätze für Dreiecke (1. SSS: drei Seiten, 2. SWS: zwei Seiten und der von ihnen eingeschlossene Winkel, 3. WSW bzw. SWW: eine Seite und zwei Winkel, 4. Ssw: zwei Seiten und der Gegenwinkel der größeren Seite) und begründe, warum 'WWW' (drei Winkel) KEIN Kongruenzsatz ist (sondern nur Ähnlichkeit "
+        },
+        {
+          "type": "math",
+          "tex": "\\sim",
+          "speech": "proportional zu"
+        },
+        {
+          "type": "text",
+          "text": " garantiert)."
+        }
+      ],
       "category": "C",
       "academy_slug": null,
-      "action": "keep-active",
-      "reason": "Die alte Gesamtfrage kombiniert Kongruenzdefinition, alle Sätze und WWW-Begründung; neue Karten teilen dies auf und vermeiden die pauschale Aussage, Gegenlage zur kürzeren Seite ergebe immer zwei Lösungen."
+      "action": "propose-retire-after-approval",
+      "reason": "Die alte Gesamtfrage wird auf mehrere neue Abrufe verteilt. Ihre Musterlösung behauptet fälschlich, ein Winkel gegenüber der kürzeren gegebenen Seite ergebe stets zwei Dreiecke; es können auch null oder eine Lösung sein. Daher Kategorie C mit vorgeschlagener Stilllegung ohne Historienübertrag. Bis Thomas dies ausdrücklich freigibt, deklariert die ausgelieferte Zelle keine Stilllegung."
     },
     {
       "de_by_cell": "de-by:realschule-7-mathematik-kongruenz-dreiecke-vektoren",
       "de_by_id": "01K4M7K0000000000000000J03",
-      "de_by_question": "In welchem Schnittpunkt liegt der Mittelpunkt des Umkreises (Kreis, der durch alle 3 Eckpunkte A, B, C des Dreiecks verläuft)?",
+      "de_by_question": [
+        {
+          "type": "text",
+          "text": "In welchem Schnittpunkt liegt der Mittelpunkt des Umkreises (Kreis, der durch alle 3 Eckpunkte "
+        },
+        {
+          "type": "math",
+          "tex": "A, B, C",
+          "speech": "A, B, C"
+        },
+        {
+          "type": "text",
+          "text": " des Dreiecks verläuft)?"
+        }
+      ],
       "category": "A",
       "academy_slug": "m7-ol-7-umkreis-inkreis-1",
       "action": "propose-replace-after-approval",
@@ -130,7 +167,102 @@
     {
       "de_by_cell": "de-by:realschule-7-mathematik-kongruenz-dreiecke-vektoren",
       "de_by_id": "01K4M7K0000000000000000J04",
-      "de_by_question": "Charakterisiere die 4 ausgezeichneten Punkte und Transversalen des Dreiecks: 1. Mittelsenkrechte (m a, m b, m c): Stehen senkrecht auf den Seitenmitten; ihr Schnittpunkt U ist der Mittelpunkt des Umkreises (Radius r gleich U A gleich U B gleich U C), 2. Winkelhalbierende (w Alpha, w Beta, w Gamma): Halbieren die Innenwinkel; ihr Schnittpunkt I ist der Mittelpunkt des Inkreises (berührt alle 3 Dreiecksseiten von innen), 3. Seitenhalbierende (s a, s b, s c): Verbinden Eckpunkte mit gegenüberliegenden Seitenmitten; schneiden sich im Schwerpunkt S, der jede Seitenhalbierende im Verhältnis 2 zu 1 (vom Eckpunkt aus) teilt, 4. Höhen (h a, h b, h c): Stehen senkrecht auf den Seiten durch den gegenüberliegenden Eckpunkt; schneiden sich im Höhenschnittpunkt H.",
+      "de_by_question": [
+        {
+          "type": "text",
+          "text": "Charakterisiere die 4 ausgezeichneten Punkte und Transversalen des Dreiecks: 1. Mittelsenkrechte ("
+        },
+        {
+          "type": "math",
+          "tex": "m_a, m_b, m_c",
+          "speech": "m a, m b, m c"
+        },
+        {
+          "type": "text",
+          "text": "): Stehen senkrecht auf den Seitenmitten; ihr Schnittpunkt "
+        },
+        {
+          "type": "math",
+          "tex": "U",
+          "speech": "U"
+        },
+        {
+          "type": "text",
+          "text": " ist der Mittelpunkt des Umkreises (Radius "
+        },
+        {
+          "type": "math",
+          "tex": "r=UA=UB=UC",
+          "speech": "r gleich U A gleich U B gleich U C"
+        },
+        {
+          "type": "text",
+          "text": "), 2. Winkelhalbierende ("
+        },
+        {
+          "type": "math",
+          "tex": "w_\\alpha, w_\\beta, w_\\gamma",
+          "speech": "w Alpha, w Beta, w Gamma"
+        },
+        {
+          "type": "text",
+          "text": "): Halbieren die Innenwinkel; ihr Schnittpunkt "
+        },
+        {
+          "type": "math",
+          "tex": "I",
+          "speech": "I"
+        },
+        {
+          "type": "text",
+          "text": " ist der Mittelpunkt des Inkreises (berührt alle 3 Dreiecksseiten von innen), 3. Seitenhalbierende ("
+        },
+        {
+          "type": "math",
+          "tex": "s_a, s_b, s_c",
+          "speech": "s a, s b, s c"
+        },
+        {
+          "type": "text",
+          "text": "): Verbinden Eckpunkte mit gegenüberliegenden Seitenmitten; schneiden sich im Schwerpunkt "
+        },
+        {
+          "type": "math",
+          "tex": "S",
+          "speech": "S"
+        },
+        {
+          "type": "text",
+          "text": ", der jede Seitenhalbierende im Verhältnis "
+        },
+        {
+          "type": "math",
+          "tex": "2:1",
+          "speech": "2 zu 1"
+        },
+        {
+          "type": "text",
+          "text": " (vom Eckpunkt aus) teilt, 4. Höhen ("
+        },
+        {
+          "type": "math",
+          "tex": "h_a, h_b, h_c",
+          "speech": "h a, h b, h c"
+        },
+        {
+          "type": "text",
+          "text": "): Stehen senkrecht auf den Seiten durch den gegenüberliegenden Eckpunkt; schneiden sich im Höhenschnittpunkt "
+        },
+        {
+          "type": "math",
+          "tex": "H",
+          "speech": "H"
+        },
+        {
+          "type": "text",
+          "text": "."
+        }
+      ],
       "category": "C",
       "academy_slug": null,
       "action": "keep-active",
@@ -139,7 +271,39 @@
     {
       "de_by_cell": "de-by:realschule-7-mathematik-kongruenz-dreiecke-vektoren",
       "de_by_id": "01K4M7K0000000000000000J05",
-      "de_by_question": "Wie lauten die Koordinaten des Vektors Vektor v gleich Vektor A B von Punkt Punkt A mit den Koordinaten 2 und 1 zum Bildpunkt Punkt B mit den Koordinaten 7 und 4 nach der 'Spitze-minus-Schaft'-Regel?",
+      "de_by_question": [
+        {
+          "type": "text",
+          "text": "Wie lauten die Koordinaten des Vektors "
+        },
+        {
+          "type": "math",
+          "tex": "\\vec{v} = \\vec{AB}",
+          "speech": "Vektor v gleich Vektor A B"
+        },
+        {
+          "type": "text",
+          "text": " von Punkt "
+        },
+        {
+          "type": "math",
+          "tex": "A(2|1)",
+          "speech": "Punkt A mit den Koordinaten 2 und 1"
+        },
+        {
+          "type": "text",
+          "text": " zum Bildpunkt "
+        },
+        {
+          "type": "math",
+          "tex": "B(7|4)",
+          "speech": "Punkt B mit den Koordinaten 7 und 4"
+        },
+        {
+          "type": "text",
+          "text": " nach der 'Spitze-minus-Schaft'-Regel?"
+        }
+      ],
       "category": "A",
       "academy_slug": "m7-pv-2-vektoren-3",
       "action": "propose-replace-after-approval",
@@ -148,7 +312,111 @@
     {
       "de_by_cell": "de-by:realschule-7-mathematik-kongruenz-dreiecke-vektoren",
       "de_by_id": "01K4M7K0000000000000000J06",
-      "de_by_question": "Erkläre den Vektorbegriff der bayerischen Realschulmathematik: 1. Vektor als Menge aller parallelen, gleich langen und gleich gerichteten Pfeile (Repräsentant einer Parallelverschiebung), 2. Berechnung des Verbindungsvektors zweier Punkte Punkt A mit den Koordinaten x A und y A und Punkt B mit den Koordinaten x B und y B über die Regel 'Spitze minus Schaft': Vektor A B gleich Spaltenvektor x B minus x A, y B minus y A, 3. Der Gegenvektor minus Vektor v gleich dem Vektor aus minus v x und minus v y (gleiche Länge und Richtung, entgegengesetzte Orientierung), 4. Vektoraddition (Hintereinanderausführung): Vektor u plus Vektor w gleich Spaltenvektor u x plus w x, u y plus w y und berechne für Punkt P mit den Koordinaten minus 3 und 4, Vektor v gleich Spaltenvektor 6, minus 2 und Vektor w gleich Spaltenvektor minus 1, 5 den Bildpunkt P Strich nach Verschiebung um Vektor v sowie den Summenvektor Vektor s gleich Vektor v plus Vektor w.",
+      "de_by_question": [
+        {
+          "type": "text",
+          "text": "Erkläre den Vektorbegriff der bayerischen Realschulmathematik: 1. Vektor als Menge aller parallelen, gleich langen und gleich gerichteten Pfeile (Repräsentant einer Parallelverschiebung), 2. Berechnung des Verbindungsvektors zweier Punkte "
+        },
+        {
+          "type": "math",
+          "tex": "A(x_A|y_A)",
+          "speech": "Punkt A mit den Koordinaten x A und y A"
+        },
+        {
+          "type": "text",
+          "text": " und "
+        },
+        {
+          "type": "math",
+          "tex": "B(x_B|y_B)",
+          "speech": "Punkt B mit den Koordinaten x B und y B"
+        },
+        {
+          "type": "text",
+          "text": " über die Regel 'Spitze minus Schaft': "
+        },
+        {
+          "type": "math",
+          "tex": "\\vec{AB} = \\begin{pmatrix} x_B - x_A \\\\ y_B - y_A \\end{pmatrix}",
+          "speech": "Vektor A B gleich Spaltenvektor x B minus x A, y B minus y A"
+        },
+        {
+          "type": "text",
+          "text": ", 3. Der Gegenvektor "
+        },
+        {
+          "type": "math",
+          "tex": "-\\vec{v} = \\begin{pmatrix} -v_x \\\\ -v_y \\end{pmatrix}",
+          "speech": "minus Vektor v gleich dem Vektor aus minus v x und minus v y"
+        },
+        {
+          "type": "text",
+          "text": " (gleiche Länge und Richtung, entgegengesetzte Orientierung), 4. Vektoraddition (Hintereinanderausführung): "
+        },
+        {
+          "type": "math",
+          "tex": "\\vec{u} + \\vec{w} = \\begin{pmatrix} u_x + w_x \\\\ u_y + w_y \\end{pmatrix}",
+          "speech": "Vektor u plus Vektor w gleich Spaltenvektor u x plus w x, u y plus w y"
+        },
+        {
+          "type": "text",
+          "text": " und berechne für "
+        },
+        {
+          "type": "math",
+          "tex": "P(-3|4)",
+          "speech": "Punkt P mit den Koordinaten minus 3 und 4"
+        },
+        {
+          "type": "text",
+          "text": ", "
+        },
+        {
+          "type": "math",
+          "tex": "\\vec{v} = \\begin{pmatrix} 6 \\\\ -2 \\end{pmatrix}",
+          "speech": "Vektor v gleich Spaltenvektor 6, minus 2"
+        },
+        {
+          "type": "text",
+          "text": " und "
+        },
+        {
+          "type": "math",
+          "tex": "\\vec{w} = \\begin{pmatrix} -1 \\\\ 5 \\end{pmatrix}",
+          "speech": "Vektor w gleich Spaltenvektor minus 1, 5"
+        },
+        {
+          "type": "text",
+          "text": " den Bildpunkt "
+        },
+        {
+          "type": "math",
+          "tex": "P'",
+          "speech": "P Strich"
+        },
+        {
+          "type": "text",
+          "text": " nach Verschiebung um "
+        },
+        {
+          "type": "math",
+          "tex": "\\vec{v}",
+          "speech": "Vektor v"
+        },
+        {
+          "type": "text",
+          "text": " sowie den Summenvektor "
+        },
+        {
+          "type": "math",
+          "tex": "\\vec{s} = \\vec{v} + \\vec{w}",
+          "speech": "Vektor s gleich Vektor v plus Vektor w"
+        },
+        {
+          "type": "text",
+          "text": "."
+        }
+      ],
       "category": "C",
       "academy_slug": null,
       "action": "keep-active",

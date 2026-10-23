@@ -8,7 +8,7 @@ LehrplanPLUS Bayern für beide Wahlpflichtfächergruppen: **42 Lektionen für Zw
 | Parallelverschiebung | LB 2 | LB 2 | 8 / 6 |
 | Dreiecke | LB 3 | – | 4 / – |
 | Raumgeometrie | LB 4 | – | 3 / – |
-| Ortslinien und Ortsbereiche | LB 5 | LB 3 | 8 / 6 |
+| Geometrische Ortslinien und Ortsbereiche | LB 5 | LB 3 | 8 / 6 |
 | Terme, Gleichungen und Ungleichungen | LB 6 | LB 4 | 5 / 5 |
 | Proportionalitäten | LB 7 | LB 5 | 5 / 5 |
 | Auswertung von Daten | LB 8 | LB 6 | 4 / 4 |
@@ -27,9 +27,9 @@ M6 liefert rationale Zahlen, Rechengesetze, Spiegelungen und direkte Proportiona
 
 Eine Lektion hat ein Atom mit drei Karten in [cell.json](cell.json), davon zwei kurze Abrufe und eine Transferfrage mit Musterlösung. Die ursprünglichen fünf Lektionen und ihre 15 Karten behalten ihre Kennungen. Alle neuen Kennungen sind einmal erzeugte ULIDs und in [public-contract.json](tests/fixtures/public-contract.json) fixiert.
 
-Vier alte Zellen enthalten 30 Karten. Bytegleiche Schnappschüsse, Herkunftscommit und SHA-256 stehen in [replaces-de-by.json](replaces-de-by.json). Sieben A-Zuordnungen schlagen denselben Einzelabruf als Nachfolger vor; 23 C-Zeilen bleiben aktiv, da kein vollständiger identischer Abruf erhalten ist oder das Thema zum Vorwissen gehört. Die Zuordnung ist **unfreigegeben** (`approved: null`). Die ausgelieferte Zelle enthält weder `replaces` noch `retired_items`, deshalb bleiben derzeit alle 30 alten Karten und ihre Historien aktiv.
+Vier alte Zellen enthalten 30 Karten. Bytegleiche Schnappschüsse, Herkunftscommit und SHA-256 stehen in [replaces-de-by.json](replaces-de-by.json). Sieben A-Zuordnungen schlagen denselben Einzelabruf als Nachfolger vor; Von 23 C-Zeilen bleiben 22 als `keep-active` vorgeschlagen, da kein vollständiger identischer Abruf erhalten ist oder das Thema zum Vorwissen gehört. Für die alte SsW-Synthesekarte mit fehlerhafter Musterlösung wird eine Stilllegung ohne Historienübertragung vorgeschlagen. Auch dieser Vorschlag ist noch nicht freigegeben. Die Zuordnung ist **unfreigegeben** (`approved: null`). Die ausgelieferte Zelle enthält weder `replaces` noch `retired_items`, deshalb bleiben derzeit alle 30 alten Karten und ihre Historien aktiv.
 
-Die Historienprüfung testet sowohl diesen unveränderten Zustand als auch eine nur im Arbeitsspeicher erzeugte spätere Fassung mit den sieben Vorschlägen. Die Simulation ersetzt keine Freigabe. Sie prüft alle FSRS-Felder, Reviewereignisse, wiederholte Installation/Einschreibung und die Ablehnung beim gleichzeitigen Besitz beider Karten. Keine persönliche Bibliothek wird geöffnet.
+Die Historienprüfung testet sowohl diesen unveränderten Zustand als auch eine nur im Arbeitsspeicher erzeugte spätere Fassung mit sieben Ersetzungen und der einen Stilllegung. Sie vergleicht zusätzlich Tokens und Ersetzungsdeklarationen. Bei der vorgeschlagenen Stilllegung erneuert zam-core 0.54.0 bei jeder Installation lediglich `updated_at`; alle übrigen Felder und Lernbelege bleiben stabil. Diese Einschränkung ist vor einer späteren Anwendung zu klären. Die Simulation ersetzt keine Freigabe. Sie prüft alle FSRS-Felder, Reviewereignisse, wiederholte Installation/Einschreibung und die Ablehnung beim gleichzeitigen Besitz beider Karten. Keine persönliche Bibliothek wird geöffnet.
 
 ## Lokal starten und prüfen
 
@@ -52,6 +52,6 @@ ZAM_CORE=<Datei-URL von zam-core 0.54.0/dist/index.js> node scripts/validate-cel
 ZAM_CORE=<Datei-URL von zam-core 0.54.0/dist/index.js> node mathematik-realschule-7/scripts/validate-migration.mjs
 ```
 
-Geprüft am 23.10.2026: 49 Pakettests, 28 Katalog-/Registrytests, Typprüfung, Build, Offline-Zip, Installation der 126 Karten und alle kuratierten Distraktoren mit zam-core 0.54.0. Die Labortests prüfen Reglergitter, alle 126 Zielzeugen, keinen freien Start und Zeigerpositionen. Je Lektion/Stufe werden 80 erzeugte Aufgaben mit Dezimalkomma und Dezimalpunkt geprüft, insgesamt 6720 Aufgaben. Zusätzlich gibt es unabhängige Gegenproben für Potenzen, Geometrie, Kreisberührung, Gleichungen/Ungleichungen, Preise/Zinsen, Produktgleichheit und Kenngrößen.
+Geprüft am 23.10.2026: 63 Pakettests, 28 Katalog-/Registrytests, Typprüfung, Build, Offline-Zip, Installation der 126 Karten und alle kuratierten Distraktoren mit zam-core 0.54.0. Die Labortests prüfen Reglergitter, alle 126 Zielzeugen, keinen freien Start und Zeigerpositionen. Je Lektion/Stufe werden 80 erzeugte Aufgaben mit Dezimalkomma und Dezimalpunkt geprüft, insgesamt 6720 Aufgaben. Zusätzlich gibt es unabhängige Gegenproben für Potenzen, Geometrie, Kreisberührung, Gleichungen/Ungleichungen, Preise/Zinsen, Produktgleichheit und Kenngrößen.
 
-Die gebaute App wurde über die lokale Vorschau im Browser geprüft: alle 42 Lektionen mit Labor sowie Aufgaben auf beiden Stufen in Hell und Dunkel, der gefilterte II/III-Pfad, Navigation und Formelsammlung. Der [Lehrplanbericht](../docs/mathematik-7-coverage.md) beschreibt Umfang und praktische Grenzen. Das Paket ist noch nicht veröffentlicht.
+Die gebaute App wurde über die lokale Vorschau im Browser geprüft: alle 42 Lektionen mit Labor sowie Aufgaben auf beiden Stufen in Hell und Dunkel, der gefilterte II/III-Pfad, Navigation und Formelsammlung. Der [Lehrplanbericht](../docs/mathematik-7-coverage.md) beschreibt Umfang und praktische Grenzen. Die Nachbesserungen aus PR 32 sind im [Review-Nachweis](../docs/mathematik-7-review-32.md) erläutert; die Veröffentlichung erfolgt nach dem Merge.

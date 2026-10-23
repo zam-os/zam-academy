@@ -13,8 +13,8 @@ import {
 const L = (step: number, content: Parameters<typeof lesson>[3]) =>
   lesson(8, step, [8, 6], content);
 const values = (v: Record<string, number>) => [v.a, v.b, v.c, v.d, v.e];
-export const sampleExpectation = (a: number, b: number) =>
-  a + b === 0 ? null : ((0.2 * a + 0.8 * b) / (a + b)) * 100;
+export const sampleGroupShare = (a: number, b: number) =>
+  a + b === 0 ? null : (a / (a + b)) * 100;
 
 const kennzahlen = L(1, {
   id: "da-1-kenngroessen",
@@ -301,7 +301,7 @@ const stichprobe = L(3, {
   lab: lab(
     "sample",
     "Auswahlverzerrung im Modell",
-    "Zwei gleich große Gruppen haben Ja-Anteile 20 % und 80 %. Wähle die Stichprobenzusammensetzung. Die Anzeige zeigt den erwarteten Anteil bei zufälliger Auswahl innerhalb jeder Gruppe; echte Ergebnisse können schwanken.",
+    "Die Schule besteht aus zwei gleich großen Gruppen A und B. Wähle, wie viele Personen du aus jeder Gruppe befragst. Vergleiche ihre tatsächlichen Anteile in der Stichprobe mit der Grundgesamtheit und beachte das Auswahlverfahren.",
     [
       r("a", "Befragte aus Gruppe A", 0, 50, 5, 5),
       r("b", "Befragte aus Gruppe B", 0, 50, 20, 5),
@@ -314,11 +314,11 @@ const stichprobe = L(3, {
     ],
     [
       o("size", "Umfang", (v) => v.a + v.b),
-      o("expected", "Erwarteter Ja-Anteil im Zufallsmodell", (v) => {
-        const p = sampleExpectation(v.a, v.b);
+      o("sampleA", "Anteil Gruppe A in der Stichprobe", (v) => {
+        const p = sampleGroupShare(v.a, v.b);
         return p === null ? "keine Stichprobe" : fmt(p) + " %";
       }),
-      o("population", "Ja-Anteil der Grundgesamtheit", () => "50 %"),
+      o("population", "Anteil Gruppe A in der Grundgesamtheit", () => "50 %"),
       o("caution", "Auswahlhinweis", (v) =>
         v.method === 0
           ? "Selbstauswahl kann zusätzliche Verzerrung erzeugen"
@@ -393,30 +393,30 @@ const stichprobe = L(3, {
       make: (rng, level) => {
         const a = rng.pick([10, 20, 30]),
           b = level === 1 ? a : 3 * a,
-          p = sampleExpectation(a, b)!;
+          p = sampleGroupShare(a, b)!;
         return task(
           level,
-          `Zwei gleich große Gruppen haben Ja-Anteile 20 % und 80 %. Es werden je ${a} zufällig Befragte ausgewählt. Welcher Ja-Anteil wird im Modell erwartet?`,
-          `Zwei gleich große Gruppen haben Ja-Anteile 20 % und 80 %. Eine Stichprobe enthält ${a} aus A und ${b} aus B, jeweils zufällig ausgewählt. Bestimme den erwarteten Anteil und beurteile die Gruppengewichtung.`,
+          `Eine Schule besteht aus zwei gleich großen Gruppen A und B. Für eine Stichprobe werden je ${a} Personen ausgewählt. Wie viel Prozent der Stichprobe gehören zu Gruppe A?`,
+          `Zwei Schulgruppen A und B sind gleich groß. Ein Befragungsplan wählt ${a} Personen aus A und ${b} aus B aus. Berechne den Anteil von A in der Stichprobe und vergleiche ihn mit den 50 % in der Schule.`,
           [
-            num("Erwarteter Anteil =", p, "%", 2),
+            num("Anteil Gruppe A =", p, "%", 2),
             ...(level === 2
               ? [
                   pick(
-                    "Gruppen sind …",
+                    "Gruppenvertretung im Befragungsplan",
                     [
-                      "ungleich gewichtet",
-                      "gleich gewichtet",
-                      "wegen großer Zahl automatisch repräsentativ",
+                      "Gruppe A ist gegenüber ihrem Schulanteil untervertreten.",
+                      "Beide Gruppen sind entsprechend ihrer Schulgröße vertreten.",
+                      "Die große Zahl der Befragten gleicht jeden Gruppenanteil aus.",
                     ],
                     0,
                   ),
                 ]
               : []),
           ],
-          "Erwartete Ja-Zahl = 0,2 · n_A + 0,8 · n_B; durch Gesamtzahl teilen.",
-          `(0,2 · ${a} + 0,8 · ${b}) : ${a + b} · 100. Das ist ein Erwartungswert, keine Garantie für das beobachtete Ergebnis.`,
-          `${fmt(p)} %; ${a === b ? "ausgewogene" : "ungleiche"} Gewichtung.`,
+          "Teile die Anzahl aus A durch den gesamten Stichprobenumfang und multipliziere mit 100. Vergleiche mit dem Schulanteil von 50 %.",
+          `${a} : (${a} + ${b}) · 100 = ${fmt(p)} %. Eine größere Stichprobe mit demselben Gruppenverhältnis ändert diesen Anteil nicht.`,
+          `${fmt(p)} % aus A; ${a === b ? "beide Gruppen sind anteilig gleich vertreten" : "Gruppe A ist gegenüber ihren 50 % in der Schule untervertreten"}.`,
           { a, b, p },
         );
       },
@@ -521,24 +521,30 @@ const diagramme = L(4, {
             "Ein Bildsymbol wird bei doppeltem Wert in Höhe und Breite verdoppelt.",
           ],
           fixes = [
-            "Säulen ab 0 und klare Achsenbeschriftung",
-            "Zeitabstände proportional zum Kalenderabstand",
-            "gleich breite Säulen statt flächenvergrößerter Symbole",
+            "Säulen bei 0 beginnen und die Achse beschriften.",
+            "Jahresabstände im Verhältnis 1 : 4 einzeichnen.",
+            "Bildbreite beibehalten und nur die Höhe verdoppeln.",
+          ],
+          distractors = [
+            [
+              "Achsenbeginn 80 behalten und nur die Farben ändern.",
+              "Alle Säulen breiter machen und den Achsenbeginn verbergen.",
+            ],
+            [
+              "Alle Jahre gleich weit setzen und Zahlen größer schreiben.",
+              "Zeitachse entfernen und nur Säulenhöhen vergleichen.",
+            ],
+            [
+              "Beide Bildmaße verdoppeln und die Zahlen dazuschreiben.",
+              "Bildbreite verdoppeln und die Höhe ebenfalls vergrößern.",
+            ],
           ];
         return task(
           level,
           `Untersuche die Darstellung: ${issues[mode]} Wähle eine passende Verbesserung.`,
           `In einer Werbung gilt: ${issues[mode]} Wähle eine angemessenere Darstellung und beurteile, ob die Zahlen allein einen fairen Bildeindruck garantieren.`,
           [
-            pick(
-              "Verbesserung",
-              [
-                fixes[mode],
-                "Beschriftungen entfernen",
-                "Maßstab noch stärker verzerren",
-              ],
-              0,
-            ),
+            pick("Verbesserung", [fixes[mode], ...distractors[mode]], 0),
             ...(level === 2
               ? [
                   pick(

@@ -1,4 +1,4 @@
-import { fmt } from "../exercises/format";
+import { fmt, linear, paren, term } from "../exercises/format";
 import { flipRelation, linearSolution } from "../models";
 import { numberField as num, choiceField as pick } from "./helpers";
 import {
@@ -62,10 +62,10 @@ const terme = L(1, {
       ),
       o("simple", "Vereinfachter Term", (v) =>
         v.mode === 0
-          ? `(${fmt(v.a + v.b)})x`
+          ? term(v.a + v.b, "x", true) || "0"
           : v.mode === 1
-            ? `(${fmt(v.a * v.b)})x²`
-            : `(${fmt(v.a)})x + (${fmt(v.a * v.b)})`,
+            ? term(v.a * v.b, "x²", true) || "0"
+            : linear(v.a, v.a * v.b),
       ),
       o("check", "Wert nach Vereinfachung", (v) =>
         v.mode === 0
@@ -239,8 +239,8 @@ const gleichungen = L(2, {
           d = rng.int(1, 3);
         return task(
           level,
-          `Bestimme die Lösung der Gleichung ${fmt(a)}x + (${fmt(b)}) = ${fmt(c)} in ℚ.`,
-          `Fasse zusammen und löse: ${fmt(a + d)}x + (${fmt(b)}) = ${d}x + (${fmt(c)}). Gib auch den gemeinsamen Wert beider Seiten bei der Lösung an.`,
+          `Bestimme die Lösung der Gleichung ${linear(a, b)} = ${fmt(c)} in ℚ.`,
+          `Fasse zusammen und löse: ${linear(a + d, b)} = ${linear(d, c)}. Gib auch den gemeinsamen Wert beider Seiten bei der Lösung an.`,
           [
             num("x =", x, "", 0, {
               slips: [
@@ -255,8 +255,8 @@ const gleichungen = L(2, {
               : []),
           ],
           "Zuerst b subtrahieren, dann durch a teilen.",
-          `${level === 2 ? `Auf beiden Seiten ${d}x subtrahieren. ` : ""}${fmt(a)}x = ${fmt(c)} − (${fmt(b)}) = ${fmt(a * x)}; durch ${fmt(a)} teilen.`,
-          `L = {${fmt(x)}}.`,
+          `${level === 2 ? `Auf beiden Seiten ${term(d, "x", true)} subtrahieren. ` : ""}${term(a, "x", true)} = ${fmt(c)} − ${paren(b)} = ${fmt(a * x)}; durch ${fmt(a)} teilen.`,
+          `L = {${fmt(x)}}.${level === 2 ? ` Beide Seiten ergeben ${d} · ${paren(x)}${term(c, "", false)} = ${fmt(d * x + c)}.` : ""}`,
           { a, b, c, d, x },
         );
       },
@@ -377,8 +377,8 @@ const ungleichungen = L(3, {
           closed = rel === 1 || rel === 3;
         return task(
           level,
-          `Löse ${fmt(a)}x + (${fmt(b)}) ${RELATIONS[rel]} ${fmt(c)}. Gib Grenze und Vergleichszeichen für x an.`,
-          `Eine Lösungsmenge wird aus ${fmt(a)}x + (${fmt(b)}) ${RELATIONS[rel]} ${fmt(c)} ermittelt. Bestimme Grenze und Richtung; entscheide zusätzlich über den Randpunkt.`,
+          `Löse ${linear(a, b)} ${RELATIONS[rel]} ${fmt(c)}. Gib Grenze und Vergleichszeichen für x an.`,
+          `Eine Lösungsmenge wird aus ${linear(a, b)} ${RELATIONS[rel]} ${fmt(c)} ermittelt. Bestimme Grenze und Richtung; entscheide zusätzlich über den Randpunkt.`,
           [
             num("Grenze =", bound, "", 0),
             pick("Zeichen für x", RELATIONS, RELATIONS.indexOf(flipped)),
@@ -675,9 +675,11 @@ const sachungleichung = L(5, {
                 ]
               : []),
           ],
-          "Löse fee + price · x ≤ Budget und runde die obere Grenze bei ganzen Mengen nach unten.",
+          level === 1
+            ? "Löse Grundgebühr + Preis · x ≤ Budget und runde die obere Grenze auf die größte erlaubte ganze Anzahl ab."
+            : "Löse Grundgebühr + Preis · x < Budget. Die ganzzahlige Grenze selbst ist ausgeschlossen: Wähle die nächstkleinere ganze Anzahl und prüfe ihre Kosten.",
           `${fee} + ${price}x ${level === 1 ? "≤" : "<"} ${fmt(budget)} ⇒ x ${level === 1 ? "≤" : "<"} ${fmt((budget - fee) / price)}. ${level === 2 ? "Die ganzzahlige Grenze selbst ist ausgeschlossen." : "Nur ganze Fahrten sind erlaubt."}`,
-          `Höchstens ${answer} Fahrten.`,
+          `Höchstens ${answer} Fahrten kosten ${fmt(fee + price * answer)} €. ${answer + 1} Fahrten kosten ${fmt(fee + price * (answer + 1))} €${level === 2 ? ` und treffen das ausgeschlossene Budget von ${fmt(budget)} € genau` : ` und überschreiten das Budget von ${fmt(budget)} €`}.`,
           { fee, price, budget, answer },
         );
       },
