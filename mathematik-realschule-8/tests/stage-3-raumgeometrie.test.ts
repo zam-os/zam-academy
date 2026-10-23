@@ -1,6 +1,8 @@
 import { describe, expect, it } from "vitest";
 import {
+  ANGLE_CASES,
   BODIES,
+  COMPARE,
   COMPOSITE_SECTIONS,
   cuboidVertex,
   LOCATIONS,
@@ -12,11 +14,11 @@ import {
 } from "../src/curriculum/stage-3-raumgeometrie";
 import { createRng, seedFrom } from "../src/exercises/rng";
 import { computeReadouts, defaultLabValues, enumerateLabGrid } from "../src/lab/engine";
-import { axialSlant, axialWidth, locationOf, pictureDistance, SYM_BODIES, symmetryOf, vec } from "../src/lab/views-raumgeometrie";
+import { axialSlant, axialWidth, drawnAngle, locationOf, obliqueDims, obliqueSolid, pictureDistance, solidTop, solidVertices, SYM_BODIES, symmetryOf, trueFigure, vec } from "../src/lab/views-raumgeometrie";
 import type { ChoiceField, DifficultyLevel, ExerciseTask, LabDefinition, LabValues } from "../src/model/types";
 import { GOAL_WITNESSES_STAGE_3 } from "./witnesses-stage-3";
 
-const IDS = ["rg-1-koerpersymmetrie", "rg-2-axialschnitte", "rg-3-raumkoordinaten"];
+const IDS = ["rg-1-koerpersymmetrie", "rg-2-axialschnitte", "rg-3-raumkoordinaten", "rg-4-koerper-koordinaten", "rg-5-schraegbilder", "rg-6-wahre-groesse"];
 
 const SEEDS = Array.from({ length: 200 }, (_, i) => seedFrom(`stage-3:${i}`));
 
@@ -396,6 +398,177 @@ describe("Aufgaben der Etappe 3 rechnen richtig", () => {
       expect(distance).toBe([pz, py, px][target]);
     }
   });
+
+  it("3.4 corners of moved cuboids and edge lengths from two corners", () => {
+    const names = ["A", "B", "C", "D", "E", "F", "G", "H"];
+    for (const task of tasks("rg-4-koerper-koordinaten", "quader-ecken", 1)) {
+      const m = meta(task);
+      if (m.variant === 0) {
+        const name = names[m.vertex];
+        const expected = [m.ax + ("BCFG".includes(name) ? m.a : 0), m.ay + ("CDGH".includes(name) ? m.b : 0), m.az + ("EFGH".includes(name) ? m.c : 0)];
+        expected.forEach((v, i) => expect(num(task, i), task.prompt).toBe(v));
+        expect(name).not.toBe("A");
+      } else {
+        expect([num(task, 0), num(task, 1), num(task, 2)]).toEqual([m.a, m.b, m.c]);
+        // the shown G is A plus the edges
+        expect(plain(task.prompt)).toContain(`G(${m.ax + m.a} | ${m.ay + m.b} | ${m.az + m.c})`);
+      }
+    }
+    for (const task of tasks("rg-4-koerper-koordinaten", "quader-ecken", 2)) {
+      const m = meta(task);
+      const expected = [
+        [m.a + m.dx, m.b + m.dy, m.c + m.t],
+        [m.ax + m.a, m.ay + m.b + m.m, 0],
+        [m.s, m.s, m.n * m.s],
+      ][m.ctx];
+      expected.forEach((v, i) => expect(num(task, i), task.prompt).toBe(v));
+      if (m.ctx === 1) expect(num(task, 3)).toBe(m.b);
+    }
+  });
+
+  it("3.4 apex of a pyramid over the midpoint of the diagonal, a tent ridge and a moved apex", () => {
+    for (const task of tasks("rg-4-koerper-koordinaten", "pyramide-spitze", 1)) {
+      const m = meta(task);
+      [(m.x1 + m.x2) / 2, (m.y1 + m.y2) / 2, m.z0 + m.h].forEach((v, i) => expect(num(task, i)).toBe(v));
+      expect(Number.isInteger((m.x1 + m.x2) / 2) && Number.isInteger((m.y1 + m.y2) / 2)).toBe(true);
+    }
+    for (const task of tasks("rg-4-koerper-koordinaten", "pyramide-spitze", 2)) {
+      const m = meta(task);
+      const expected = [
+        [m.p / 2, m.q / 2, m.T + m.r],
+        [m.L, m.W / 2, m.H],
+        [(m.x1 + m.x2) / 2, (m.y1 + m.y2) / 2 + m.dy, m.h + m.dz],
+      ][m.ctx];
+      expected.forEach((v, i) => close(num(task, i), v));
+      if (m.ctx === 1) expect(num(task, 3)).toBe(m.L);
+    }
+  });
+
+  it("3.5 drawn lengths and angles follow from q and ω, recomputed from the Schrägbild itself", () => {
+    // picture of a point (x along s, y into the depth, z up)
+    const pic = (q: number, omega: number, x: number, y: number, z: number): [number, number] => [x + q * y * Math.cos((omega * Math.PI) / 180), z + q * y * Math.sin((omega * Math.PI) / 180)];
+    const angleAt = (v: [number, number], p: [number, number], r: [number, number]) => {
+      const a = Math.atan2(p[1] - v[1], p[0] - v[0]);
+      const b = Math.atan2(r[1] - v[1], r[0] - v[0]);
+      let d = Math.abs(a - b) * (180 / Math.PI);
+      if (d > 180) d = 360 - d;
+      return d;
+    };
+    for (const task of tasks("rg-5-schraegbilder", "zeichnen", 1)) {
+      const { q, omega, front, depth, h } = meta(task);
+      const B = pic(q, omega, front, 0, 0);
+      const C = pic(q, omega, front, depth, 0);
+      close(num(task, 0), front);
+      close(num(task, 1), Math.hypot(C[0] - B[0], C[1] - B[1]), 1e-9);
+      close(num(task, 2), h);
+      // the drawn length has at most two decimals and is exact
+      expect(Math.abs(num(task, 1) * 100 - Math.round(num(task, 1) * 100))).toBeLessThan(1e-6);
+    }
+    for (const task of tasks("rg-5-schraegbilder", "zeichnen", 2)) {
+      const m = meta(task);
+      if (m.kind === 0) {
+        close(num(task, 0), m.q * m.b);
+        close(num(task, 1), m.h);
+        const A = pic(m.q, m.omega, 0, 0, 0);
+        const B = pic(m.q, m.omega, m.a, 0, 0);
+        const C = pic(m.q, m.omega, m.a, m.b, 0);
+        close(num(task, 2), angleAt(B, A, C), 1e-9);
+        expect(picked(task, 3)).toBe("[AB] und [MS]");
+      } else {
+        expect(m.onS + m.depth).toBe(m.onS === m.B ? m.B + m.L : m.L + m.B);
+        expect(picked(task, 0)).toBe(`die Fläche ${m.onS} cm × ${m.H} cm`);
+        close(num(task, 1), m.depth / 2);
+        close(num(task, 2), 180 - m.omega);
+      }
+    }
+  });
+
+  it("3.5 true lengths from the picture: divided by q, and the square base only when the edges agree", () => {
+    for (const task of tasks("rg-5-schraegbilder", "zurueck", 1)) {
+      const m = meta(task);
+      close(num(task, 0), m.front);
+      close(num(task, 1), m.drawn / m.q);
+      close(num(task, 2), m.h);
+    }
+    let squares = 0;
+    for (const task of tasks("rg-5-schraegbilder", "zurueck", 2)) {
+      const m = meta(task);
+      close(num(task, 0), m.drawn / m.q);
+      close(num(task, 1), m.a * (m.drawn / m.q));
+      expect(choice(task, 2).correctIndex === 0).toBe(m.a === m.b);
+      squares += m.square;
+    }
+    expect(squares).toBeGreaterThan(60);
+    expect(squares).toBeLessThan(140);
+  });
+
+  it("3.6 Tiefenkanten, the right figure for a lateral edge and the half diagonal", () => {
+    for (const task of tasks("rg-6-wahre-groesse", "tiefenkanten", 1)) {
+      const m = meta(task);
+      close(num(task, 0), m.drawn / m.q);
+      expect(picked(task, 1)).toBe("die Kante [BF]");
+      expect(picked(task, 2)).toBe("∢ABF");
+    }
+    for (const task of tasks("rg-6-wahre-groesse", "tiefenkanten", 2)) {
+      const m = meta(task);
+      close(num(task, 0), m.b);
+      expect(Math.abs(m.d - Math.hypot(m.a, m.b))).toBeLessThanOrEqual(0.05 + 1e-9);
+      close(num(task, 2), m.d / 2);
+      expect(picked(task, 1)).toMatch(/^das Dreieck [ABCD]MS mit dem rechten Winkel bei M$/);
+      const corner = picked(task, 1).charAt(12);
+      expect(plain(task.prompt)).toContain(`Gesucht ist die Seitenkante [${corner}S]`);
+    }
+  });
+
+  it("3.6 special angles: their true size, and how they look in the Schrägbild (ω = 45°, q = ½)", () => {
+    const q = 0.5;
+    const c45 = Math.SQRT1_2;
+    const pic = (p: P3): [number, number] => [p[0] + q * p[1] * c45, p[2] + q * p[1] * c45];
+    const angle3 = (v: P3, p: P3, r: P3) => (Math.acos(dot3(sub3(p, v), sub3(r, v)) / (norm3(sub3(p, v)) * norm3(sub3(r, v)))) * 180) / Math.PI;
+    const angle2 = (v: [number, number], p: [number, number], r: [number, number]) => {
+      const u = [p[0] - v[0], p[1] - v[1]];
+      const w = [r[0] - v[0], r[1] - v[1]];
+      return (Math.acos((u[0] * w[0] + u[1] * w[1]) / (Math.hypot(u[0], u[1]) * Math.hypot(w[0], w[1]))) * 180) / Math.PI;
+    };
+    // cube 4, cuboid 6 × 4 × 3, pyramid with all edges 4 (height 4 : √2)
+    const cube: Record<string, P3> = { A: [0, 0, 0], B: [4, 0, 0], C: [4, 4, 0], D: [0, 4, 0], E: [0, 0, 4], F: [4, 0, 4], G: [4, 4, 4], H: [0, 4, 4] };
+    const cuboid: Record<string, P3> = { A: [0, 0, 0], B: [6, 0, 0], C: [6, 4, 0], D: [0, 4, 0], E: [0, 0, 3], F: [6, 0, 3], G: [6, 4, 3], H: [0, 4, 3] };
+    const pyr: Record<string, P3> = { A: [0, 0, 0], B: [4, 0, 0], S: [2, 2, 4 * Math.SQRT1_2] };
+    const bodies = [cube, cube, cuboid, cuboid, cuboid, pyr, cube, cuboid];
+    expect(bodies).toHaveLength(ANGLE_CASES.length);
+    ANGLE_CASES.forEach((c, i) => {
+      const pts = bodies[i];
+      const [p, v, r] = c.name.slice(1).split("").map((n) => pts[n]);
+      close(angle3(v, p, r), c.value, 1e-9);
+      const drawn = angle2(pic(v), pic(p), pic(r));
+      const expected = Math.abs(drawn - c.value) < 1e-6 ? "gleich" : drawn < c.value ? "kleiner" : "größer";
+      expect(c.picture, `${c.name}: ${drawn.toFixed(1)}° im Bild`).toBe(expected);
+    });
+    for (const task of tasks("rg-6-wahre-groesse", "winkel-figur", 1)) {
+      const c = ANGLE_CASES[meta(task).index];
+      expect(num(task, 0)).toBe(c.value);
+      expect(picked(task, 1)).toBe(COMPARE[["kleiner", "gleich", "größer"].indexOf(c.picture)]);
+    }
+  });
+
+  it("3.6 diagonal sections in true size: a rectangle or an isosceles triangle, never borderline", () => {
+    for (const task of tasks("rg-6-wahre-groesse", "winkel-figur", 2)) {
+      const m = meta(task);
+      expect(Math.abs(m.d - Math.hypot(m.a, m.b))).toBeLessThanOrEqual(0.05 + 1e-9);
+      if (m.kind === 0) {
+        expect(picked(task, 0)).toBe("ein Rechteck");
+        close(num(task, 1), m.d * m.c);
+        close(num(task, 2), 2 * (m.d + m.c));
+        expect(Math.abs(m.d - m.c)).toBeGreaterThanOrEqual(0.5);
+      } else {
+        expect(picked(task, 0)).toBe("ein gleichschenkliges Dreieck");
+        close(num(task, 1), m.d / 2);
+        close(num(task, 2), (m.d * m.h) / 2);
+        // far from equilateral: the legs differ clearly from the base
+        expect(Math.abs(Math.hypot(m.h, m.d / 2) - m.d)).toBeGreaterThan(0.3);
+      }
+    }
+  });
 });
 
 describe("Labore der Etappe 3", () => {
@@ -469,5 +642,70 @@ describe("Labore der Etappe 3", () => {
     expect(pictureDistance(vec(0, 2, 2), vec(3, 3, 3))).toBeLessThan(0.1);
     const witness = GOAL_WITNESSES_STAGE_3["rg-3-raumkoordinaten"]["gleiches-bild"];
     expect(at(lab, witness).r.bild).toBeLessThan(0.1);
+  });
+
+  it("3.4 the corners of the three bodies, and the apex goal exactly where S = (2 | 3 | 5)", () => {
+    const lab = lesson("rg-4-koerper-koordinaten").lab;
+    const start = at(lab, {});
+    expect(start.r.top).toBe("G(3 | 4 | 2)");
+    expect(start.r.M).toBe("M(1,5 | 2 | 0)");
+    expect(at(lab, { body: 1 }).r.top).toBe("S(1,5 | 2 | 2)");
+    expect(at(lab, { body: 2 }).r.top).toBe("First von E(0 | 2 | 2) bis F(3 | 2 | 2)");
+    expect(at(lab, { ax: 1, ay: 2, az: 1 }).r.top).toBe("G(4 | 6 | 3)");
+    const names = solidVertices({ ...start.v, body: 0 }).map((n) => n.name).join("");
+    expect(names).toBe("ABCDEFGH");
+    const goal = lab.goals.find((g) => g.id === "spitze")!;
+    for (const values of enumerateLabGrid(lab, 5)) {
+      const v = values as LabValues;
+      const S = solidTop(v).p;
+      expect(goal.check(v, computeReadouts(lab, v))).toBe(v.body === 1 && S.x === 2 && S.y === 3 && S.z === 5);
+    }
+  });
+
+  it("3.5 the picture of the base is a square exactly in the goal's settings", () => {
+    const lab = lesson("rg-5-schraegbilder").lab;
+    const start = at(lab, {});
+    expect(start.r.tiefe).toBe("½ · 4 cm = 2 cm");
+    expect(start.r.vorne).toBe("a = 5 cm, unverkürzt");
+    expect(at(lab, { pos: 1 }).r.tiefe).toBe("½ · 5 cm = 2,5 cm");
+    expect(at(lab, { q: 0.25, b: 6 }).r.tiefe).toBe("¼ · 6 cm = 1,5 cm");
+    const goal = lab.goals.find((g) => g.id === "quadrat-bild")!;
+    const pic = (v: LabValues, p: { x: number; y: number; z: number }): [number, number] => [p.x + v.q * p.y * Math.cos((v.omega * Math.PI) / 180), p.z + v.q * p.y * Math.sin((v.omega * Math.PI) / 180)];
+    for (const values of enumerateLabGrid(lab, 4)) {
+      const v = values as LabValues;
+      if (v.body !== 2) continue;
+      const [A, B, , D] = obliqueSolid(v).verts.map((p) => pic(v, p));
+      const ab = [B[0] - A[0], B[1] - A[1]];
+      const ad = [D[0] - A[0], D[1] - A[1]];
+      const square = Math.abs(Math.hypot(ab[0], ab[1]) - Math.hypot(ad[0], ad[1])) < 1e-9 && Math.abs(ab[0] * ad[0] + ab[1] * ad[1]) < 1e-9;
+      const { front, depth } = obliqueDims(v);
+      expect(goal.check(v, computeReadouts(lab, v)), JSON.stringify(v)).toBe(square && front !== depth);
+    }
+  });
+
+  it("3.6 the measured lengths and angles of the true-size figures, and the numbers of the example", () => {
+    const lab = lesson("rg-6-wahre-groesse").lab;
+    const start = at(lab, {});
+    // the example of the lesson: 6 × 4 × 3, [AC] ≈ 7,2 cm, [AG] ≈ 7,8 cm, in the picture about 8,6 cm
+    expect(start.r.strecke).toBe("[AG] ≈ 7,8 cm");
+    close(Math.hypot(6, 4), 7.211, 1e-3);
+    const G = [6 + 0.5 * 4 * Math.SQRT1_2, 3 + 0.5 * 4 * Math.SQRT1_2];
+    close(Math.hypot(G[0], G[1]), 8.63, 1e-3);
+    expect(at(lab, { figQ: 0, a: 5, b: 5 }).r.wahr).toBe("∢BAC ≈ 45°");
+    close(drawnAngle({ ...start.v, figQ: 0, a: 5, b: 5 }), (Math.atan(0.5 * Math.SQRT1_2 / (1 + 0.5 * Math.SQRT1_2)) * 180) / Math.PI, 1e-9);
+    const pyr = { ...start.v, body: 1, figP: 1, a: 6, b: 8, h: 5 };
+    close(trueFigure(pyr).length, Math.sqrt(25 + 25));
+    expect(trueFigure({ ...pyr, figP: 2 }).wantedName).toBe("[NS]");
+    close(trueFigure({ ...pyr, figP: 2 }).length, Math.sqrt(25 + 16));
+    const goal = lab.goals.find((g) => g.id === "gleichseitig")!;
+    let reached = 0;
+    for (const values of enumerateLabGrid(lab, 11)) {
+      const v = values as LabValues;
+      const s = Math.sqrt(v.h * v.h + (v.a * v.a) / 4 + (v.b * v.b) / 4);
+      const ok = v.body === 1 && v.figP === 0 && Math.abs(s - v.a) <= 0.02 * v.a;
+      expect(goal.check(v, computeReadouts(lab, v))).toBe(ok);
+      if (ok) reached += 1;
+    }
+    expect(reached).toBeGreaterThan(0);
   });
 });

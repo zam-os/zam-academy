@@ -957,10 +957,435 @@ function dragYZ(f: Frame, p: Pt, x: number): { y: number; z: number } {
   return { y: (p.x - f.ox) / f.k + XQ * x, z: (f.oy - p.y) / f.k + XQ * x };
 }
 
-// ─── Lab views of this stage ────────────────────────────────────────────────
+// ─── 3.4 Körper im Koordinatensystem ───────────────────────────────────────
 
-// Placeholder drawings until the labs of lessons 3.4 to 3.6 are written.
-const placeholder: LabView = { render: () => '<svg viewBox="0 0 520 340" xmlns="http://www.w3.org/2000/svg"></svg>' };
+export const SOLID_NAMES = ["Quader", "Pyramide", "Zelt (dreiseitiges Prisma)"];
+export const SOLID_FRAME: Frame = { ox: 96, oy: 238, k: 28 };
+
+export interface NamedPoint {
+  name: string;
+  p: V3;
+}
+
+/** The corners of the body in lab 3.4: base ABCD from A(ax | ay | az), a along x, b along y, height c. */
+export function solidVertices(v: LabValues): NamedPoint[] {
+  const { a, b, c, ax, ay, az } = v;
+  const base: NamedPoint[] = [
+    { name: "A", p: vec(ax, ay, az) },
+    { name: "B", p: vec(ax + a, ay, az) },
+    { name: "C", p: vec(ax + a, ay + b, az) },
+    { name: "D", p: vec(ax, ay + b, az) },
+  ];
+  if (v.body === 1) return [...base, { name: "S", p: vec(ax + a / 2, ay + b / 2, az + c) }];
+  if (v.body === 2) return [...base, { name: "E", p: vec(ax, ay + b / 2, az + c) }, { name: "F", p: vec(ax + a, ay + b / 2, az + c) }];
+  return [...base, ...["E", "F", "G", "H"].map((name, i) => ({ name, p: vec(base[i].p.x, base[i].p.y, az + c) }))];
+}
+
+function solidFaces(body: number): number[][] {
+  if (body === 1) return [[0, 1, 2, 3], [0, 1, 4], [1, 2, 4], [2, 3, 4], [3, 0, 4]];
+  if (body === 2) return [[0, 1, 2, 3], [0, 3, 4], [1, 2, 5], [0, 1, 5, 4], [3, 2, 5, 4]];
+  return [[0, 1, 2, 3], [4, 5, 6, 7], [0, 1, 5, 4], [1, 2, 6, 5], [2, 3, 7, 6], [3, 0, 4, 7]];
+}
+
+/** The highest point the handle moves: G of the Quader, the apex S, the front end F of the ridge. */
+export function solidTop(v: LabValues): NamedPoint {
+  const pts = solidVertices(v);
+  return pts[v.body === 1 ? 4 : v.body === 2 ? 5 : 6];
+}
+
+/** The midpoint M of the base, the midpoint of its diagonal [AC]. */
+export function baseCentre(v: LabValues): V3 {
+  return vec(v.ax + v.a / 2, v.ay + v.b / 2, v.az);
+}
+
+/** The top in words for the readout: "G(3 | 4 | 2)", "S(…)" or the ridge "E(…) bis F(…)". */
+export function solidTopText(v: LabValues): string {
+  const pts = solidVertices(v);
+  const name = (n: NamedPoint) => `${n.name}${point3(n.p.x, n.p.y, n.p.z)}`;
+  return v.body === 2 ? `First von ${name(pts[4])} bis ${name(pts[5])}` : name(solidTop(v));
+}
+
+function solidCoordinatesView(v: LabValues): string {
+  const f = SOLID_FRAME;
+  const pts = solidVertices(v);
+  const solid: Solid = { verts: pts.map((n) => n.p), faces: solidFaces(v.body) };
+  const cam = frameCamera(f);
+  let out = open("Ein Körper im dreidimensionalen Koordinatensystem mit den Koordinaten seiner Ecken");
+  out += axes3(f, 7, 10, 8);
+  out += helperPath(f, v.ax, v.ay, v.az, 1.6, true);
+  if (v.body === 1) {
+    const P = pts.map((n) => frameProject(f, n.p));
+    const M = frameProject(f, baseCentre(v));
+    out += seg(P[0], P[2], "lab-dashed", 'style="stroke-width:1"') + seg(P[1], P[3], "lab-dashed", 'style="stroke-width:1"');
+    out += seg(M, P[4], "lab-side-c", 'style="stroke-width:2;stroke-dasharray:5 4"');
+    out += circle(M.x, M.y, 3.5, "lab-dot-small") + text(M.x + 6, M.y + 13, "M", "lab-text-small");
+  }
+  out += drawSolid(solid, cam, { fill: "lab-fill-a" });
+  const screen = pts.map((n) => frameProject(f, n.p));
+  const cx = screen.reduce((s, p) => s + p.x, 0) / screen.length;
+  const cy = screen.reduce((s, p) => s + p.y, 0) / screen.length;
+  pts.forEach((n, i) => {
+    const p = screen[i];
+    const dx = p.x - cx;
+    const dy = p.y - cy;
+    const l = Math.hypot(dx, dy) || 1;
+    out += text(p.x + (dx / l) * 14, p.y + (dy / l) * 14 + 4, n.name, "lab-text lab-text-a", "middle");
+  });
+  const A = screen[0];
+  const C = screen[2];
+  const T = frameProject(f, solidTop(v).p);
+  out += handle("corner", A.x, A.y, "Ecke A ziehen: den Körper nach rechts oder oben verschieben");
+  out += handle("side", C.x, C.y, "Ecke C ziehen: die Breite b ändern");
+  out += handle("top", T.x, T.y, "Oben ziehen: die Höhe ändern");
+
+  const px = 394;
+  let y = 34;
+  let panel = text(px, y, ["Quader", "Pyramide", "Zelt"][v.body] ?? "", "lab-text lab-text-big");
+  for (const n of pts) panel += text(px, (y += 18), `${n.name}${point3(n.p.x, n.p.y, n.p.z)}`, "lab-text-small");
+  if (v.body !== 0) {
+    const M = baseCentre(v);
+    panel += text(px, (y += 18), `M${point3(M.x, M.y, M.z)}`, "lab-text-small");
+  }
+  panel += text(px, (y += 24), `[AB] = ${fmt(v.a)}`, "lab-text-small");
+  panel += text(px, (y += 17), `[BC] = ${fmt(v.b)}`, "lab-text-small");
+  panel += text(px, (y += 17), `Höhe ${fmt(v.c)}`, "lab-text-small");
+  out += rect(px - 8, 12, 126, y - 2, "lab-panel", 'rx="10"') + panel;
+  out += `</svg>`;
+  return out;
+}
+
+// ─── 3.5 Schrägbilder von Prismen und Pyramiden ────────────────────────────
+
+export const OBLIQUE_NAMES = ["Quader", "dreiseitiges Prisma", "Pyramide"];
+const OBL = { x0: 66, y0: 300, k: 19 };
+
+/** q as the books write it: ¼, ½, ¾, 1. */
+export function qText(q: number): string {
+  return q === 0.25 ? "¼" : q === 0.5 ? "½" : q === 0.75 ? "¾" : fmt(q);
+}
+
+/** The edge on s (front) and the edge into the depth, by the chosen position. */
+export function obliqueDims(v: LabValues): { front: number; depth: number; frontName: string; depthName: string } {
+  return v.pos === 1 ? { front: v.b, depth: v.a, frontName: "b", depthName: "a" } : { front: v.a, depth: v.b, frontName: "a", depthName: "b" };
+}
+
+/** Schrägbild: x along s, y into the depth (at ω, shortened by q), z up. */
+function obliqueCamera(q: number, omega: number, x0: number, y0: number, k: number): Camera {
+  const c = Math.cos(omega * DEG);
+  const s = Math.sin(omega * DEG);
+  return {
+    project: (p) => ({ x: x0 + k * (p.x + q * p.y * c), y: y0 - k * (p.z + q * p.y * s) }),
+    view: vec(-q * c, 1, -q * s),
+  };
+}
+
+/** The body of lab 3.5 in space: the Quader, the prism over a right triangle (right angle at A) or the pyramid. */
+export function obliqueSolid(v: LabValues): Solid {
+  const { front: F, depth: D } = obliqueDims(v);
+  const h = v.h;
+  if (v.body === 1) {
+    return {
+      verts: [vec(0, 0, 0), vec(F, 0, 0), vec(0, D, 0), vec(0, 0, h), vec(F, 0, h), vec(0, D, h)],
+      faces: [[0, 1, 2], [3, 4, 5], [0, 1, 4, 3], [1, 2, 5, 4], [2, 0, 3, 5]],
+    };
+  }
+  if (v.body === 2) {
+    return {
+      verts: [vec(0, 0, 0), vec(F, 0, 0), vec(F, D, 0), vec(0, D, 0), vec(F / 2, D / 2, h)],
+      faces: [[0, 1, 2, 3], [0, 1, 4], [1, 2, 4], [2, 3, 4], [3, 0, 4]],
+    };
+  }
+  return {
+    verts: [vec(0, 0, 0), vec(F, 0, 0), vec(F, D, 0), vec(0, D, 0), vec(0, 0, h), vec(F, 0, h), vec(F, D, h), vec(0, D, h)],
+    faces: [[0, 1, 2, 3], [4, 5, 6, 7], [0, 1, 5, 4], [1, 2, 6, 5], [2, 3, 7, 6], [3, 0, 4, 7]],
+  };
+}
+
+/** A Tiefenkante runs straight into the depth: only y changes. */
+function isDepthEdge(solid: Solid, edge: Edge): boolean {
+  const p = solid.verts[edge.a];
+  const q = solid.verts[edge.b];
+  return Math.abs(p.x - q.x) < 1e-9 && Math.abs(p.z - q.z) < 1e-9 && Math.abs(p.y - q.y) > 1e-9;
+}
+
+const DEPTH_STYLE = (seen: boolean) => `style="stroke-width:2.4${seen ? "" : ";stroke-dasharray:5 4"}"`;
+
+/** What appears in true size in the Schrägbild of the chosen body. */
+export function obliqueTrueSize(v: LabValues): string {
+  const { front } = obliqueDims(v);
+  if (v.body === 2) return "die Kanten auf s und die Höhe [MS]";
+  if (v.body === 1) return `die Vorderfläche ${fmt(front)} cm × ${fmt(v.h)} cm`;
+  return `Vorder- und Rückfläche, ${fmt(front)} cm × ${fmt(v.h)} cm`;
+}
+
+function obliqueView(v: LabValues): string {
+  const { x0, y0, k } = OBL;
+  const { front, depth, frontName, depthName } = obliqueDims(v);
+  const cam = obliqueCamera(v.q, v.omega, x0, y0, k);
+  const solid = obliqueSolid(v);
+  const P = solid.verts.map(cam.project);
+  let out = open("Schrägbild eines Prismas oder einer Pyramide mit Schrägbildachse, Verzerrungswinkel und Verzerrungsmaßstab");
+  out += line(14, y0, Math.min(318, x0 + front * k + 60), y0, "lab-axis");
+  out += text(Math.min(318, x0 + front * k + 60) - 2, y0 - 6, "s", "lab-text-axis", "end");
+  if (v.body === 2) {
+    const M = cam.project(vec(front / 2, depth / 2, 0));
+    out += seg(P[0], P[2], "lab-dashed", 'style="stroke-width:1"') + seg(P[1], P[3], "lab-dashed", 'style="stroke-width:1"');
+    out += seg(M, P[4], "lab-side-c", 'style="stroke-width:2;stroke-dasharray:5 4"');
+    out += circle(M.x, M.y, 3.5, "lab-dot-small") + text(M.x - 4, M.y + 14, "M", "lab-text-small", "end");
+    out += text(M.x + 8, (M.y + P[4].y) / 2 + 4, `h = ${fmt(v.h)} cm`, "lab-text lab-text-c");
+  }
+  out += drawSolid(solid, cam, {
+    fill: "lab-fill-a",
+    edgeClass: (edge, seen) => (isDepthEdge(solid, edge) ? "lab-side-b" : seen ? "lab-ink" : "lab-dashed"),
+    edgeStyle: (edge, seen) => (isDepthEdge(solid, edge) ? DEPTH_STYLE(seen) : ""),
+  });
+  // ω at A, between s and the Tiefenkante that starts there
+  const A = P[0];
+  out += path(`M${r1(A.x + 26)} ${r1(A.y)} A26 26 0 0 0 ${r1(A.x + 26 * Math.cos(v.omega * DEG))} ${r1(A.y - 26 * Math.sin(v.omega * DEG))}`, "lab-angle");
+  const lab = polar(A.x, A.y, 38, v.omega / 2);
+  out += text(lab.x, lab.y + 4, "ω", "lab-text", "middle");
+  out += text(x0 + (front * k) / 2, y0 + 20, `${frontName} = ${fmt(front)} cm`, "lab-text", "middle");
+  const depthLabel = `${qText(v.q)} · ${fmt(depth)} cm = ${fmt(v.q * depth)} cm`;
+  if (v.body === 1) {
+    const mid = { x: (P[3].x + P[5].x) / 2, y: (P[3].y + P[5].y) / 2 };
+    out += text(mid.x - 8, mid.y - 6, depthLabel, "lab-text lab-text-b", "end");
+  } else {
+    const mid = { x: (P[1].x + P[2].x) / 2, y: (P[1].y + P[2].y) / 2 };
+    out += text(mid.x + 10, mid.y + 12, depthLabel, "lab-text lab-text-b");
+  }
+  if (v.body !== 2) out += text(x0 - 8, y0 - (v.h * k) / 2 + 4, `h = ${fmt(v.h)} cm`, "lab-text", "end");
+  const top = v.body === 2 ? P[4] : cam.project(vec(front, 0, v.h));
+  const back = P[2];
+  out += handle("front", P[1].x, P[1].y, "Ecke B ziehen: die Kante auf s ändern");
+  out += handle("depth", back.x, back.y, "Hintere Ecke ziehen: die Tiefe ändern");
+  out += handle("top", top.x, top.y, "Oben ziehen: die Höhe ändern");
+
+  const px = 344;
+  let y = 34;
+  let panel = text(px, y, OBLIQUE_NAMES[v.body] ?? "", "lab-text lab-text-big");
+  panel += text(px, (y += 22), `ω = ${fmt(v.omega)}°, q = ${qText(v.q)}`, "lab-text");
+  panel += text(px, (y += 24), `auf s: ${frontName} = ${fmt(front)} cm`, "lab-text-small");
+  panel += text(px, (y += 15), "in wahrer Größe", "lab-text-small");
+  panel += text(px, (y += 22), `Tiefe ${depthName}: ${qText(v.q)} · ${fmt(depth)} cm`, "lab-text-small lab-text-b");
+  panel += text(px, (y += 15), `gezeichnet ${fmt(v.q * depth)} cm`, "lab-text-small lab-text-b");
+  panel += text(px, (y += 22), `Höhe: ${fmt(v.h)} cm,`, "lab-text-small");
+  panel += text(px, (y += 15), "in wahrer Größe", "lab-text-small");
+  y += 8;
+  for (const l of wrap(`Unverzerrt: ${obliqueTrueSize(v)}`, 26)) panel += text(px, (y += 15), l, "lab-text-small");
+  y += 8;
+  for (const l of wrap(`Der rechte Winkel bei A erscheint als ${fmt(v.omega)}°.`, 26)) panel += text(px, (y += 15), l, "lab-text-small");
+  out += rect(px - 8, 12, 176, y + 2, "lab-panel", 'rx="10"') + panel;
+  out += `</svg>`;
+  return out;
+}
+
+/** Inverse of the handles of lab 3.5. */
+function obliqueDrag(handleId: "front" | "depth" | "top", p: Pt, v: LabValues): Partial<LabValues> {
+  const { x0, y0, k } = OBL;
+  const { front, depth } = obliqueDims(v);
+  const frontKey = v.pos === 1 ? "b" : "a";
+  const depthKey = v.pos === 1 ? "a" : "b";
+  if (handleId === "front") return { [frontKey]: (p.x - x0) / k };
+  const c = Math.cos(v.omega * DEG);
+  const s = Math.sin(v.omega * DEG);
+  if (handleId === "depth") {
+    const start = v.body === 1 ? { x: x0, y: y0 } : { x: x0 + front * k, y: y0 };
+    return { [depthKey]: ((p.x - start.x) * c - (p.y - start.y) * s) / (v.q * k) };
+  }
+  const lift = v.body === 2 ? v.q * (depth / 2) * s : 0;
+  return { h: (y0 - p.y) / k - lift };
+}
+
+// ─── 3.6 Strecken und Winkel in wahrer Größe ───────────────────────────────
+
+export const TRUE_BODIES = ["Quader", "Pyramide"];
+export const TRUE_FIGURES = [
+  ["Grundfläche ABCD", "Diagonalschnitt ACGE", "Seitenfläche BCGF"],
+  ["Seitenfläche ABS", "Dreieck AMS", "Dreieck NMS"],
+];
+const TS = { x0: 34, y0: 292, k: 18, q: 0.5 };
+
+/** One plane figure inside the body: its corners in space, the same figure flat in true size, the wanted segment and angle. */
+export interface TrueFigure {
+  name: string;
+  shape: string;
+  /** Names and corners in space (for the Schrägbild). */
+  names: string[];
+  corners: V3[];
+  /** The figure in true size, in cm (x right, y up). */
+  flat: Array<[number, number]>;
+  /** Corners with a right angle in true size. */
+  right: number[];
+  known: string;
+  wanted: [number, number];
+  wantedName: string;
+  length: number;
+  /** The angle at corner `at` between the rays to `from` and `to`. */
+  angle: { at: number; from: number; to: number; name: string; value: number };
+}
+
+export function trueFigure(v: LabValues): TrueFigure {
+  const { a, b, h } = v;
+  const fig = clamp(Math.round(v.body === 1 ? v.figP : v.figQ), 0, 2);
+  const atan = (y: number, x: number) => Math.atan2(y, x) / DEG;
+  if (v.body === 1) {
+    const s = Math.sqrt(h * h + (a * a) / 4 + (b * b) / 4);
+    const ha = Math.sqrt(h * h + (b * b) / 4);
+    const m = Math.hypot(a, b) / 2;
+    const A = vec(0, 0, 0);
+    const B = vec(a, 0, 0);
+    const S = vec(a / 2, b / 2, h);
+    const M = vec(a / 2, b / 2, 0);
+    const N = vec(a / 2, 0, 0);
+    if (fig === 0) {
+      return { name: TRUE_FIGURES[1][0], shape: "ein gleichschenkliges Dreieck", names: ["A", "B", "S"], corners: [A, B, S], flat: [[0, 0], [a, 0], [a / 2, ha]], right: [], known: `[AB] = ${fmt(a)} cm, [AS] = [BS]`, wanted: [0, 2], wantedName: "[AS]", length: s, angle: { at: 0, from: 1, to: 2, name: "∢BAS", value: atan(ha, a / 2) } };
+    }
+    if (fig === 1) {
+      return { name: TRUE_FIGURES[1][1], shape: "ein rechtwinkliges Dreieck", names: ["A", "M", "S"], corners: [A, M, S], flat: [[0, 0], [m, 0], [m, h]], right: [1], known: `[AM] ≈ ${fmt(m, 1)} cm (halbe Diagonale), [MS] = ${fmt(h)} cm`, wanted: [0, 2], wantedName: "[AS]", length: s, angle: { at: 0, from: 1, to: 2, name: "∢MAS", value: atan(h, m) } };
+    }
+    return { name: TRUE_FIGURES[1][2], shape: "ein rechtwinkliges Dreieck", names: ["N", "M", "S"], corners: [N, M, S], flat: [[0, 0], [b / 2, 0], [b / 2, h]], right: [1], known: `[NM] = ${fmt(b / 2)} cm, [MS] = ${fmt(h)} cm`, wanted: [0, 2], wantedName: "[NS]", length: ha, angle: { at: 0, from: 1, to: 2, name: "∢MNS", value: atan(h, b / 2) } };
+  }
+  const d = Math.hypot(a, b);
+  const P = (x: number, y: number, z: number) => vec(x, y, z);
+  if (fig === 0) {
+    return { name: TRUE_FIGURES[0][0], shape: "ein Rechteck", names: ["A", "B", "C", "D"], corners: [P(0, 0, 0), P(a, 0, 0), P(a, b, 0), P(0, b, 0)], flat: [[0, 0], [a, 0], [a, b], [0, b]], right: [0, 1, 2, 3], known: `[AB] = ${fmt(a)} cm, [BC] = ${fmt(b)} cm`, wanted: [0, 2], wantedName: "[AC]", length: d, angle: { at: 0, from: 1, to: 2, name: "∢BAC", value: atan(b, a) } };
+  }
+  if (fig === 1) {
+    return { name: TRUE_FIGURES[0][1], shape: "ein Rechteck", names: ["A", "C", "G", "E"], corners: [P(0, 0, 0), P(a, b, 0), P(a, b, h), P(0, 0, h)], flat: [[0, 0], [d, 0], [d, h], [0, h]], right: [0, 1, 2, 3], known: `[AC] ≈ ${fmt(d, 1)} cm (aus ABCD), [CG] = ${fmt(h)} cm`, wanted: [0, 2], wantedName: "[AG]", length: Math.hypot(d, h), angle: { at: 0, from: 1, to: 2, name: "∢CAG", value: atan(h, d) } };
+  }
+  return { name: TRUE_FIGURES[0][2], shape: "ein Rechteck", names: ["B", "C", "G", "F"], corners: [P(a, 0, 0), P(a, b, 0), P(a, b, h), P(a, 0, h)], flat: [[0, 0], [b, 0], [b, h], [0, h]], right: [0, 1, 2, 3], known: `[BC] = ${fmt(b)} cm, [CG] = ${fmt(h)} cm`, wanted: [0, 2], wantedName: "[BG]", length: Math.hypot(b, h), angle: { at: 0, from: 1, to: 2, name: "∢CBG", value: atan(h, b) } };
+}
+
+function trueCamera(v: LabValues): Camera {
+  return obliqueCamera(TS.q, v.omega, TS.x0, TS.y0, TS.k);
+}
+
+/** The same angle as it looks in the Schrägbild. */
+export function drawnAngle(v: LabValues): number {
+  const t = trueFigure(v);
+  const cam = trueCamera(v);
+  const at = cam.project(t.corners[t.angle.at]);
+  const p = cam.project(t.corners[t.angle.from]);
+  const q = cam.project(t.corners[t.angle.to]);
+  const a1 = Math.atan2(at.y - p.y, p.x - at.x);
+  const a2 = Math.atan2(at.y - q.y, q.x - at.x);
+  let d = Math.abs(a1 - a2) / DEG;
+  if (d > 180) d = 360 - d;
+  return d;
+}
+
+function trueSolid(v: LabValues): Solid {
+  const { a, b, h } = v;
+  if (v.body === 1) return { verts: [vec(0, 0, 0), vec(a, 0, 0), vec(a, b, 0), vec(0, b, 0), vec(a / 2, b / 2, h)], faces: [[0, 1, 2, 3], [0, 1, 4], [1, 2, 4], [2, 3, 4], [3, 0, 4]] };
+  return {
+    verts: [vec(0, 0, 0), vec(a, 0, 0), vec(a, b, 0), vec(0, b, 0), vec(0, 0, h), vec(a, 0, h), vec(a, b, h), vec(0, b, h)],
+    faces: [[0, 1, 2, 3], [4, 5, 6, 7], [0, 1, 5, 4], [1, 2, 6, 5], [2, 3, 7, 6], [3, 0, 4, 7]],
+  };
+}
+
+const SOLID_LETTERS = [
+  ["A", "B", "C", "D", "E", "F", "G", "H"],
+  ["A", "B", "C", "D", "S"],
+];
+
+function trueSizeView(v: LabValues): string {
+  const t = trueFigure(v);
+  const cam = trueCamera(v);
+  const solid = trueSolid(v);
+  const P = solid.verts.map(cam.project);
+  let out = open("Links ein Körper im Schrägbild mit einer ebenen Figur, rechts dieselbe Figur in wahrer Größe");
+  out += text(14, 24, "Schrägbild", "lab-text lab-text-big");
+  out += text(14, 44, `ω = ${fmt(v.omega)}°, q = ½`, "lab-text-muted");
+  if (v.body === 1) {
+    const M = cam.project(vec(v.a / 2, v.b / 2, 0));
+    const N = cam.project(vec(v.a / 2, 0, 0));
+    out += seg(P[0], P[2], "lab-dashed", 'style="stroke-width:1"') + seg(P[1], P[3], "lab-dashed", 'style="stroke-width:1"');
+    out += seg(M, P[4], "lab-dashed");
+    out += circle(M.x, M.y, 3, "lab-dot-small") + text(M.x + 5, M.y + 13, "M", "lab-text-small");
+    out += circle(N.x, N.y, 3, "lab-dot-small") + text(N.x, N.y + 15, "N", "lab-text-small", "middle");
+  }
+  out += drawSolid(solid, cam, { fill: "lab-fill-a" });
+  out += polygon(t.corners.map(cam.project), "lab-thin", ACCENT_FILL);
+  const w0 = cam.project(t.corners[t.wanted[0]]);
+  const w1 = cam.project(t.corners[t.wanted[1]]);
+  out += seg(w0, w1, "lab-thin", ACCENT_LINE);
+  const cx = P.reduce((s, p) => s + p.x, 0) / P.length;
+  const cy = P.reduce((s, p) => s + p.y, 0) / P.length;
+  P.forEach((p, i) => {
+    const dx = p.x - cx;
+    const dy = p.y - cy;
+    const l = Math.hypot(dx, dy) || 1;
+    out += text(p.x + (dx / l) * 13, p.y + (dy / l) * 13 + 4, SOLID_LETTERS[v.body][i], "lab-text-small", "middle");
+  });
+  out += handle("front", P[1].x, P[1].y, "Ecke B ziehen: die Kante [AB] ändern");
+  out += handle("depth", P[2].x, P[2].y, "Ecke C ziehen: die Tiefe [BC] ändern");
+  const top = v.body === 1 ? P[4] : P[5];
+  out += handle("top", top.x, top.y, "Oben ziehen: die Höhe ändern");
+
+  // right: the figure in true size
+  out += text(258, 24, "wahre Größe", "lab-text lab-text-big");
+  out += text(258, 44, t.name, "lab-text-muted");
+  const xs = t.flat.map(([x]) => x);
+  const ys = t.flat.map(([, y]) => y);
+  const W = Math.max(...xs) - Math.min(...xs);
+  const Hh = Math.max(...ys) - Math.min(...ys);
+  const kk = Math.min(26, 220 / W, 196 / Hh);
+  const left = 266 + (232 - W * kk) / 2 - Math.min(...xs) * kk;
+  const base = 286;
+  const F = t.flat.map(([x, y]) => ({ x: left + x * kk, y: base - y * kk }));
+  out += polygon(F, "lab-thin", ACCENT_FILL);
+  const fcx = F.reduce((s, p) => s + p.x, 0) / F.length;
+  const fcy = F.reduce((s, p) => s + p.y, 0) / F.length;
+  for (const i of t.right) {
+    const n = F.length;
+    out += angleMarkRight(F[i], F[(i + n - 1) % n], F[(i + 1) % n]);
+  }
+  out += seg(F[t.wanted[0]], F[t.wanted[1]], "lab-thin", ACCENT_LINE);
+  // the angle
+  const at = F[t.angle.at];
+  const a0 = Math.atan2(at.y - F[t.angle.from].y, F[t.angle.from].x - at.x) / DEG;
+  const a1 = Math.atan2(at.y - F[t.angle.to].y, F[t.angle.to].x - at.x) / DEG;
+  out += path(`M${r1(polar(at.x, at.y, 24, a0).x)} ${r1(polar(at.x, at.y, 24, a0).y)} A24 24 0 0 0 ${r1(polar(at.x, at.y, 24, a1).x)} ${r1(polar(at.x, at.y, 24, a1).y)}`, "lab-angle-ok");
+  const al = polar(at.x, at.y, 44, (a0 + a1) / 2);
+  out += text(al.x, al.y + 4, `${fmt(t.angle.value, 1)}°`, "lab-text-small lab-text-ok", "middle");
+  F.forEach((p, i) => {
+    const dx = p.x - fcx;
+    const dy = p.y - fcy;
+    const l = Math.hypot(dx, dy) || 1;
+    out += text(p.x + (dx / l) * 13, p.y + (dy / l) * 13 + 4, t.names[i], "lab-text", "middle");
+  });
+  const wm = { x: (F[t.wanted[0]].x + F[t.wanted[1]].x) / 2, y: (F[t.wanted[0]].y + F[t.wanted[1]].y) / 2 };
+  out += accentText(wm.x - 6, wm.y - 8, `≈ ${fmt(t.length, 1)} cm`, "end");
+  out += text(258, 318, `gemessen: ${t.wantedName} ≈ ${fmt(t.length, 1)} cm`, "lab-text-small");
+  out += text(258, 333, `im Schrägbild: ${t.angle.name} ≈ ${fmt(drawnAngle(v), 1)}°`, "lab-text-small");
+  out += `</svg>`;
+  return out;
+}
+
+/** A right-angle mark at vertex v between the rays to p and q. */
+function angleMarkRight(vtx: Pt, p: Pt, q: Pt): string {
+  const u = { x: p.x - vtx.x, y: p.y - vtx.y };
+  const w = { x: q.x - vtx.x, y: q.y - vtx.y };
+  const lu = Math.hypot(u.x, u.y) || 1;
+  const lw = Math.hypot(w.x, w.y) || 1;
+  const s = 11;
+  const p1 = { x: vtx.x + (u.x / lu) * s, y: vtx.y + (u.y / lu) * s };
+  const p3 = { x: vtx.x + (w.x / lw) * s, y: vtx.y + (w.y / lw) * s };
+  const p2 = { x: p1.x + (w.x / lw) * s, y: p1.y + (w.y / lw) * s };
+  return path(pathOf([p1, p2, p3]), "lab-angle") + circle(vtx.x + ((u.x / lu + w.x / lw) * s) / 2, vtx.y + ((u.y / lu + w.y / lw) * s) / 2, 1.5, "lab-dot-small");
+}
+
+/** Inverse of the handles of lab 3.6. */
+function trueDrag(handleId: "front" | "depth" | "top", p: Pt, v: LabValues): Partial<LabValues> {
+  const { x0, y0, k, q } = TS;
+  const c = Math.cos(v.omega * DEG);
+  const s = Math.sin(v.omega * DEG);
+  if (handleId === "front") return { a: (p.x - x0) / k };
+  if (handleId === "depth") return { b: ((p.x - (x0 + v.a * k)) * c - (p.y - y0) * s) / (q * k) };
+  return { h: (y0 - p.y) / k - (v.body === 1 ? q * (v.b / 2) * s : 0) };
+}
+
+// ─── Lab views of this stage ────────────────────────────────────────────────
 
 export const RAUMGEOMETRIE_VIEWS: Record<"solid-symmetry" | "axial-section" | "space-coordinates" | "solid-coordinates" | "oblique-drawing" | "true-size", LabView> = {
   "solid-symmetry": {
@@ -999,7 +1424,35 @@ export const RAUMGEOMETRIE_VIEWS: Record<"solid-symmetry" | "axial-section" | "s
       },
     },
   },
-  "solid-coordinates": placeholder,
-  "oblique-drawing": placeholder,
-  "true-size": placeholder,
+  "solid-coordinates": {
+    render: solidCoordinatesView,
+    handles: {
+      corner: {
+        x: "ay",
+        y: "az",
+        drag: (p, v) => {
+          const { y, z } = dragYZ(SOLID_FRAME, p, v.ax);
+          return { ay: y, az: z };
+        },
+      },
+      side: { x: "b", drag: (p, v) => ({ b: (p.x - SOLID_FRAME.ox) / SOLID_FRAME.k + XQ * (v.ax + v.a) - v.ay }) },
+      top: { y: "c", drag: (p, v) => ({ c: (SOLID_FRAME.oy - p.y) / SOLID_FRAME.k + XQ * solidTop(v).p.x - v.az }) },
+    },
+  },
+  "oblique-drawing": {
+    render: obliqueView,
+    handles: {
+      front: { x: "a", drag: (p, v) => obliqueDrag("front", p, v) },
+      depth: { y: "b", drag: (p, v) => obliqueDrag("depth", p, v) },
+      top: { y: "h", drag: (p, v) => obliqueDrag("top", p, v) },
+    },
+  },
+  "true-size": {
+    render: trueSizeView,
+    handles: {
+      front: { x: "a", drag: (p, v) => trueDrag("front", p, v) },
+      depth: { y: "b", drag: (p, v) => trueDrag("depth", p, v) },
+      top: { y: "h", drag: (p, v) => trueDrag("top", p, v) },
+    },
+  },
 };

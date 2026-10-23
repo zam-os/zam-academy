@@ -7,6 +7,18 @@ import {
   axialSectionName,
   axialSlant,
   axialWidth,
+  drawnAngle,
+  OBLIQUE_NAMES,
+  obliqueDims,
+  obliqueTrueSize,
+  qText,
+  SOLID_NAMES,
+  solidTop,
+  solidTopText,
+  solidVertices,
+  TRUE_BODIES,
+  TRUE_FIGURES,
+  trueFigure,
   hasCentre,
   locationOf,
   pictureDistance,
@@ -24,6 +36,7 @@ import { choiceField, numberField, yesNo } from "./helpers";
 
 const STAGE_ID = "stage-3-raumgeometrie";
 const LP_I = "M8 LB 3 (I)";
+const LP_II = "M8 LB 2 (II/III)";
 
 // ─── Helpers of this stage ─────────────────────────────────────────────────
 
@@ -1067,6 +1080,726 @@ const raumkoordinaten: Lesson = {
   celebrationMessage: "Du liest und setzt Punkte im Raum mit drei Koordinaten und erkennst ihre Lage.",
 };
 
+// 3.4 Körper im Koordinatensystem ───────────────────────────────────────────
+
+const koerperKoordinaten: Lesson = {
+  id: "rg-4-koerper-koordinaten",
+  stageId: STAGE_ID,
+  stepNumber: 4,
+  title: "3.4 Körper im Koordinatensystem",
+  subtitle: "Strecken, Vielecke, Quader, Pyramiden und Prismen",
+  tracks: ["I"],
+  lehrplan: `${LP_I}: Strecken, Vielecke und Körper im Koordinatensystem`,
+  whyItMatters:
+    "Architekten, Spieleentwickler und 3D-Drucker beschreiben Körper durch die Koordinaten ihrer Ecken. Wer aus wenigen Angaben alle Ecken eines Quaders oder die Spitze einer Pyramide bestimmen kann, zeichnet jeden einfachen Körper sicher ins Koordinatensystem.",
+  explanationHtml: `
+    <p>Im dreidimensionalen Koordinatensystem zeichnest du Strecken, Vielecke und Körper, indem du ihre Eckpunkte mit Hilfslinien einträgst und sie verbindest. Eine Strecke [PQ] hat die Endpunkte P und Q, ein Dreieck oder Viereck zeichnest du Ecke für Ecke. Verdeckte Kanten eines Körpers werden gestrichelt.</p>
+    <p><strong>Quader:</strong> Liegt A im Ursprung und laufen die Kanten [AB], [AD] und [AE] entlang der x-, y- und z-Achse, dann folgen alle acht Ecken aus der Länge a (x-Richtung), der Breite b (y-Richtung) und der Höhe c: A(0 | 0 | 0), B(a | 0 | 0), C(a | b | 0), D(0 | b | 0), E(0 | 0 | c), F(a | 0 | c), G(a | b | c), H(0 | b | c). Die Ecken der Deckfläche haben dieselben x- und y-Koordinaten wie die Ecken darunter, nur z = c. Liegt A nicht im Ursprung, addierst du a, b und c zu den Koordinaten von A.</p>
+    <p><strong>Kantenlängen:</strong> Eine Kante parallel zu einer Achse ist so lang wie der Unterschied der einen Koordinate, die sich ändert: Von B(4 | 0 | 0) nach C(4 | 3 | 0) ändert sich nur y, also ist [BC] = 3 − 0 = 3. Die Länge einer schrägen Strecke wie einer Flächendiagonale kannst du so nicht ablesen; wie man sie berechnet, lernst du in Klasse 9.</p>
+    <p><strong>Pyramide:</strong> Bei einer geraden Pyramide über einem Rechteck liegt die Spitze S senkrecht über dem Mittelpunkt M der Grundfläche. M ist der Mittelpunkt der Diagonale [AC]: Von den x-Koordinaten und von den y-Koordinaten bildest du jeweils den Mittelwert, M((x₁ + x₂) : 2 | (y₁ + y₂) : 2 | z). Die Spitze hat dieselben x- und y-Koordinaten wie M, ihre z-Koordinate ist die Höhe der Grundfläche plus die Höhe h der Pyramide.</p>
+    <p><strong>Prisma:</strong> Ein dreiseitiges Prisma, etwa ein Zelt mit dem First [EF], hat zwei gleiche Dreiecke als Grund- und Deckfläche. Steht das Zelt auf dem Rechteck ABCD und ist der First parallel zu [AB], liegt er genau über der Mittellinie des Bodens: E und F haben die y-Koordinate (y₁ + y₂) : 2 und als z-Koordinate die Firsthöhe.</p>
+    <p><strong>Verschieben:</strong> Wird ein Körper um 2 Einheiten in y-Richtung verschoben, wächst bei jeder Ecke die y-Koordinate um 2, x und z bleiben. Die Kantenlängen ändern sich dabei nicht.</p>
+    <div class="example"><strong>Beispiel:</strong> Die Grundfläche einer geraden Pyramide ist das Rechteck ABCD mit A(1 | 2 | 0), B(5 | 2 | 0), C(5 | 8 | 0) und D(1 | 8 | 0); die Pyramide ist 6 hoch.<br>
+      1. Kantenlängen: [AB] = 5 − 1 = 4 (nur x ändert sich), [BC] = 8 − 2 = 6 (nur y ändert sich).<br>
+      2. Mittelpunkt der Diagonale [AC]: M((1 + 5) : 2 | (2 + 8) : 2 | 0) = M(3 | 5 | 0).<br>
+      3. Spitze senkrecht darüber: S(3 | 5 | 6).<br>
+      4. Stellt man die Pyramide auf einen 3 hohen Sockel, kommt zu jeder z-Koordinate 3 dazu: S′(3 | 5 | 9).</div>
+    <p>Typische Fehler: bei der Spitze die Höhe vergessen oder die Höhe der Grundfläche nicht dazuzählen; den Mittelpunkt einer Kante statt der Diagonale nehmen; den Unterschied (x₂ − x₁) statt des Mittelwerts bilden; beim Verschieben auch die anderen Koordinaten ändern.</p>
+    <div class="merke"><strong>Merke:</strong> Mittelpunkt einer Strecke: M((x₁ + x₂) : 2 | (y₁ + y₂) : 2 | (z₁ + z₂) : 2). Die Spitze einer geraden Pyramide liegt senkrecht über dem Mittelpunkt der Grundfläche. Kante parallel zu einer Achse: Länge = Unterschied der einen Koordinate, die sich ändert. Verschieben: zur passenden Koordinate jeder Ecke dieselbe Zahl addieren.</div>
+  `,
+  formulas: [
+    { name: "Quader mit A im Ursprung", html: "B(a | 0 | 0), C(a | b | 0), D(0 | b | 0), G(a | b | c)", quantities: "a Länge in x-Richtung, b Breite in y-Richtung, c Höhe in z-Richtung" },
+    { name: "Mittelpunkt einer Strecke", html: "M((x₁ + x₂) : 2 | (y₁ + y₂) : 2 | (z₁ + z₂) : 2)", quantities: "die Spitze einer geraden Pyramide liegt senkrecht über dem Mittelpunkt der Diagonale [AC]" },
+    { name: "Kante parallel zu einer Achse", html: "Länge = größere minus kleinere Koordinate", quantities: "nur eine Koordinate ändert sich" },
+    { name: "Verschiebung", html: "(x | y | z) → (x + u | y + v | z + w)", quantities: "alle Ecken um dieselben Zahlen; die Kantenlängen bleiben" },
+  ],
+  quiz: {
+    question: "Die Grundfläche einer geraden Pyramide hat die Ecken A(0 | 0 | 0), B(4 | 0 | 0), C(4 | 6 | 0) und D(0 | 6 | 0); die Pyramide ist 5 hoch. Wo liegt die Spitze S?",
+    options: ["S(4 | 6 | 5)", "S(2 | 3 | 0)", "S(0 | 0 | 5)", "S(2 | 3 | 5)"],
+    correctIndex: 3,
+    explanation:
+      "Die Spitze liegt senkrecht über dem Mittelpunkt M der Diagonale [AC]: M((0 + 4) : 2 | (0 + 6) : 2 | 0) = M(2 | 3 | 0). Darüber in der Höhe 5 liegt S(2 | 3 | 5). S(4 | 6 | 5) läge über der Ecke C, und (2 | 3 | 0) ist erst der Mittelpunkt ohne die Höhe.",
+  },
+  lab: {
+    kind: "solid-coordinates",
+    title: "Labor: Körper im Koordinatensystem",
+    intro:
+      "Wähle einen Körper und stelle Länge, Breite, Höhe und die Lage der Ecke A ein; rechts stehen die Koordinaten aller Ecken. Ziehe A, um den Körper zu verschieben, die Ecke C für die Breite und die oberste Ecke für die Höhe.",
+    params: [
+      { type: "choice", key: "body", label: "Körper", options: SOLID_NAMES.map((label, value) => ({ value, label })), value: 0 },
+      { type: "range", key: "a", label: "Länge a (x-Richtung)", unit: "", min: 1, max: 4, step: 0.5, value: 3, digits: 1 },
+      { type: "range", key: "b", label: "Breite b (y-Richtung)", unit: "", min: 1, max: 6, step: 0.5, value: 4, digits: 1 },
+      { type: "range", key: "c", label: "Höhe c (z-Richtung)", unit: "", min: 1, max: 5, step: 0.5, value: 2, digits: 1 },
+      { type: "range", key: "ax", label: "x-Koordinate von A", unit: "", min: 0, max: 2, step: 0.5, value: 0, digits: 1 },
+      { type: "range", key: "ay", label: "y-Koordinate von A", unit: "", min: 0, max: 3, step: 0.5, value: 0, digits: 1 },
+      { type: "range", key: "az", label: "z-Koordinate von A", unit: "", min: 0, max: 2, step: 0.5, value: 0, digits: 1 },
+    ],
+    readouts: [
+      { key: "A", label: "Ecke A", compute: (v) => `A${point3(v.ax, v.ay, v.az)}` },
+      { key: "top", label: "Oben", emphasis: true, compute: (v) => solidTopText(v) },
+      { key: "M", label: "Mittelpunkt der Grundfläche", compute: (v) => `M${point3(v.ax + v.a / 2, v.ay + v.b / 2, v.az)}` },
+      { key: "kanten", label: "Kanten", compute: (v) => `[AB] = ${fmt(v.a)}, [BC] = ${fmt(v.b)}, Höhe ${fmt(v.c)}` },
+    ],
+    goals: [
+      {
+        id: "wuerfel",
+        text: "Baue einen Würfel mit der Kantenlänge 3, dessen Deckfläche in der Höhe z = 4 liegt.",
+        check: (v) => v.body === 0 && v.a === 3 && v.b === 3 && v.c === 3 && v.az + v.c === 4,
+      },
+      {
+        id: "spitze",
+        text: "Stelle eine Pyramide ein, deren Spitze im Punkt S(2 | 3 | 5) liegt.",
+        check: (v) => {
+          const S = solidTop(v).p;
+          return v.body === 1 && S.x === 2 && S.y === 3 && S.z === 5;
+        },
+      },
+      {
+        id: "first",
+        text: "Stelle ein Zelt ein, dessen First von E(1 | 2 | 3) bis F(5 | 2 | 3) reicht.",
+        check: (v) => {
+          const [, , , , E, F] = solidVertices(v);
+          return v.body === 2 && E.p.x === 1 && E.p.y === 2 && E.p.z === 3 && F.p.x === 5 && F.p.y === 2 && F.p.z === 3;
+        },
+      },
+    ],
+  },
+  exercises: [
+    {
+      id: "quader-ecken",
+      make: (rng, level): ExerciseTask => {
+        if (level === 1) {
+          const variant = rng.int(0, 1);
+          const A: [number, number, number] = [rng.int(0, 3), rng.int(1, 4), rng.int(0, 2)];
+          const a = rng.int(2, 6);
+          const b = rng.int(2, 6);
+          const c = rng.int(1, 5);
+          if (variant === 0) {
+            const vertex = rng.pick(["C", "F", "G", "H", "B", "D", "E"]);
+            const target = cuboidVertex(vertex, a, b, c, A);
+            const sums = target.map((value, i) => (value !== A[i] ? `${["x", "y", "z"][i]} = ${fmt(A[i])} + ${fmt(value - A[i])} = ${fmt(value)}` : `${["x", "y", "z"][i]} = ${fmt(A[i])}`));
+            return {
+              prompt: `Ein Quader ABCDEFGH hat die Ecke A${point3(...A)}; seine Kanten sind parallel zu den Achsen. [AB] ist ${a} lang (x-Richtung), [AD] ist ${b} lang (y-Richtung), [AE] ist ${c} lang (z-Richtung). Gib die Koordinaten der Ecke ${vertex} an.`,
+              given: [CUBOID_GIVEN],
+              formulaHint: "Ecke = A plus die Kantenlängen in x-, y- und z-Richtung, die du auf dem Weg zur Ecke gehst",
+              fields: [numberField("x =", target[0], "", 1), numberField("y =", target[1], "", 1), numberField("z =", target[2], "", 1)],
+              steps: [
+                `Von A nach ${vertex}: ${["B", "C", "F", "G"].includes(vertex) ? `${a} in x-Richtung` : "nichts in x-Richtung"}, ${["C", "D", "G", "H"].includes(vertex) ? `${b} in y-Richtung` : "nichts in y-Richtung"}, ${["E", "F", "G", "H"].includes(vertex) ? `${c} nach oben` : "nichts nach oben"}.`,
+                sums.join("; "),
+                `<strong>${vertex}${point3(...target)}</strong>`,
+              ],
+              meta: { variant, ax: A[0], ay: A[1], az: A[2], a, b, c, vertex: VERTEX_NAMES.indexOf(vertex), x: target[0], y: target[1], z: target[2] },
+            };
+          }
+          const G = cuboidVertex("G", a, b, c, A);
+          const slip = (value: number, answer: number) => (value !== answer ? [{ value, hint: "Die Kantenlänge ist der Unterschied der Koordinaten: Koordinate von G minus Koordinate von A." }] : []);
+          return {
+            prompt: `Ein Quader ABCDEFGH hat die Ecken A${point3(...A)} und G${point3(...G)}; seine Kanten sind parallel zu den Achsen. Wie lang sind die Kanten [AB] (x-Richtung), [AD] (y-Richtung) und [AE] (z-Richtung)?`,
+            given: [CUBOID_GIVEN],
+            formulaHint: "Kante parallel zu einer Achse: Länge = Unterschied der Koordinate, die sich ändert",
+            fields: [numberField("[AB] =", a, "", 1, { slips: slip(G[0], a) }), numberField("[AD] =", b, "", 1, { slips: slip(G[1], b) }), numberField("[AE] =", c, "", 1, { slips: slip(G[2], c) })],
+            steps: ["G liegt A gegenüber: Von A nach G ändern sich alle drei Koordinaten, jede um eine Kantenlänge.", `[AB] = ${G[0]} − ${A[0]} = ${a}; [AD] = ${G[1]} − ${A[1]} = ${b}; [AE] = ${G[2]} − ${A[2]} = ${c}`, `<strong>[AB] = ${a}, [AD] = ${b}, [AE] = ${c}</strong>`],
+            meta: { variant, ax: A[0], ay: A[1], az: A[2], a, b, c },
+          };
+        }
+        const ctx = rng.int(0, 2);
+        if (ctx === 0) {
+          const a = rng.pick([3, 4, 5]);
+          const b = rng.pick([2, 3, 4]);
+          const c = rng.pick([2, 3]);
+          const dx = rng.pick([1, 2, 3]);
+          const dy = rng.pick([2, 3, 4]);
+          const t = rng.pick([7, 8]);
+          const G: [number, number, number] = [a + dx, b + dy, c + t];
+          return {
+            prompt: `Ein Karton (Quader ABCDEFGH) ist ${a} dm lang, ${b} dm breit und ${c} dm hoch. Er steht zuerst so, dass A im Ursprung liegt und [AB], [AD] und [AE] entlang der x-, y- und z-Achse laufen (1 Einheit = 1 dm). Dann wird er ${dx} dm nach vorne und ${dy} dm nach rechts geschoben und auf einen ${t} dm hohen Tisch gehoben. Gib die neuen Koordinaten der Ecke G an.`,
+            given: [CUBOID_GIVEN, "x nach vorne, y nach rechts, z nach oben"],
+            fields: [
+              numberField("x =", G[0], "", 1, { slips: [{ value: a, hint: "Das ist G vor dem Verschieben. Nach vorne heißt: Zur x-Koordinate kommt etwas dazu." }] }),
+              numberField("y =", G[1], "", 1, { slips: [{ value: b, hint: "Das ist G vor dem Verschieben. Nach rechts heißt: Zur y-Koordinate kommt etwas dazu." }] }),
+              numberField("z =", G[2], "", 1, { slips: [{ value: t, hint: "Der Karton steht auf dem Tisch: Zur Tischhöhe kommt seine eigene Höhe dazu." }, { value: c, hint: "Der Tisch hebt den Karton an: Zu jeder z-Koordinate kommt die Tischhöhe dazu." }] }),
+            ],
+            steps: [`Vorher: G(${a} | ${b} | ${c}).`, `Verschieben: x + ${dx}, y + ${dy}; auf den Tisch: z + ${t}.`, `<strong>G′${point3(...G)}</strong>`],
+            meta: { ctx, a, b, c, dx, dy, t, x: G[0], y: G[1], z: G[2] },
+          };
+        }
+        if (ctx === 1) {
+          const A: [number, number, number] = [rng.int(0, 2), rng.int(1, 3), 0];
+          const a = rng.int(2, 5);
+          const b = rng.int(2, 5);
+          const c = rng.int(1, 4);
+          const m = rng.pick([2, 3, 4, 5]);
+          const G = cuboidVertex("G", a, b, c, A);
+          const C: [number, number, number] = [G[0], G[1] + m, 0];
+          return {
+            prompt: `Eine Kiste (Quader ABCDEFGH) hat die Ecken A${point3(...A)} und G${point3(...G)}; ihre Kanten sind parallel zu den Achsen. Sie wird um ${m} Einheiten in y-Richtung verschoben. Gib die Koordinaten der verschobenen Ecke C an und die Länge der Kante [BC].`,
+            given: [CUBOID_GIVEN],
+            fields: [
+              numberField("x =", C[0], "", 1),
+              numberField("y =", C[1], "", 1, { slips: [{ value: G[1], hint: "Das ist C vor dem Verschieben: Zur y-Koordinate kommt noch die Verschiebung dazu." }] }),
+              numberField("z =", C[2], "", 1, { slips: [{ value: G[2], hint: "C liegt in der Grundfläche, unter G: Die z-Koordinate ist die von A." }] }),
+              numberField("[BC] =", b, "", 1, { slips: [{ value: b + m, hint: "Beim Verschieben ändert sich keine Kantenlänge." }, { value: G[1], hint: "Die Länge ist der Unterschied der y-Koordinaten von G und A." }] }),
+            ],
+            steps: [`C liegt unter G in der Grundfläche: vorher C(${G[0]} | ${G[1]} | 0).`, `Verschoben um ${m} in y-Richtung: y = ${G[1]} + ${m} = ${G[1] + m}. [BC] läuft in y-Richtung: ${G[1]} − ${A[1]} = ${b}; beim Verschieben bleibt die Länge.`, `<strong>C′${point3(...C)}; [BC] = ${b}</strong>`],
+            meta: { ctx, ax: A[0], ay: A[1], a, b, c, m, x: C[0], y: C[1], z: C[2] },
+          };
+        }
+        const s = rng.pick([2, 3, 4]);
+        const n = rng.pick([2, 3]);
+        return {
+          prompt: `${n === 2 ? "Zwei" : "Drei"} gleiche Würfel mit der Kantenlänge ${s} werden genau übereinandergestapelt. Der unterste Würfel ABCDEFGH hat die Ecke A im Ursprung, und seine Kanten [AB], [AD], [AE] laufen entlang der x-, y- und z-Achse. Gib die Koordinaten der obersten Ecke des Turms an, die senkrecht über C liegt.`,
+          given: [CUBOID_GIVEN],
+          fields: [numberField("x =", s, "", 1), numberField("y =", s, "", 1), numberField("z =", n * s, "", 1, { slips: [{ value: s, hint: `Das ist die Ecke G des untersten Würfels. Der Turm ist ${n} Würfel hoch.` }] })],
+          steps: [`C(${s} | ${s} | 0). Senkrecht darüber ändert sich nur z.`, `Der Turm ist ${n} · ${s} = ${n * s} hoch.`, `<strong>(${s} | ${s} | ${n * s})</strong>`],
+          meta: { ctx, s, n, x: s, y: s, z: n * s },
+        };
+      },
+    },
+    {
+      id: "pyramide-spitze",
+      make: (rng, level): ExerciseTask => {
+        if (level === 1) {
+          const x1 = rng.int(0, 3);
+          const y1 = rng.int(0, 3);
+          const x2 = x1 + rng.pick([2, 4, 6]);
+          const y2 = y1 + rng.pick([2, 4, 6]);
+          const z0 = rng.pick([0, 0, 1, 2]);
+          const h = rng.int(3, 8);
+          const S: [number, number, number] = [(x1 + x2) / 2, (y1 + y2) / 2, z0 + h];
+          const zSlips = [{ value: z0, hint: "Die Höhe der Pyramide fehlt: z = Höhe der Grundfläche + h." }, ...(z0 > 0 ? [{ value: h, hint: `Die Grundfläche liegt schon in der Höhe ${z0}: z = ${z0} + ${h}.` }] : [])];
+          return {
+            prompt: `Die Grundfläche einer geraden Pyramide ABCDS ist das Rechteck ABCD mit A${point3(x1, y1, z0)} und der gegenüberliegenden Ecke C${point3(x2, y2, z0)}; die Kanten sind parallel zur x- und zur y-Achse. Die Pyramide ist ${h} hoch. Gib die Koordinaten der Spitze S an.`,
+            given: [],
+            formulaHint: "S liegt senkrecht über M, dem Mittelpunkt von [AC]: M((x₁ + x₂) : 2 | (y₁ + y₂) : 2 | z)",
+            fields: [
+              numberField("x =", S[0], "", 1, { slips: [{ value: x2, hint: "Die Spitze liegt über der Mitte der Grundfläche, nicht über der Ecke C." }, { value: x2 - x1, hint: "Für die Mitte bildest du den Mittelwert (x₁ + x₂) : 2, nicht den Unterschied." }] }),
+              numberField("y =", S[1], "", 1, { slips: [{ value: y2, hint: "Die Spitze liegt über der Mitte der Grundfläche, nicht über der Ecke C." }, { value: y2 - y1, hint: "Für die Mitte bildest du den Mittelwert (y₁ + y₂) : 2, nicht den Unterschied." }] }),
+              numberField("z =", S[2], "", 1, { slips: zSlips }),
+            ],
+            steps: [`M ist der Mittelpunkt der Diagonale [AC]: M((${x1} + ${x2}) : 2 | (${y1} + ${y2}) : 2 | ${z0}) = M${point3(S[0], S[1], z0)}.`, `S liegt ${h} senkrecht über M: z = ${z0} + ${h} = ${z0 + h}.`, `<strong>S${point3(...S)}</strong>`],
+            meta: { x1, y1, x2, y2, z0, h, x: S[0], y: S[1], z: S[2] },
+          };
+        }
+        const ctx = rng.int(0, 2);
+        if (ctx === 0) {
+          const p = rng.pick([4, 6, 8]);
+          const q = rng.pick([4, 6]);
+          const T = rng.pick([8, 10, 12]);
+          const r = rng.pick([3, 4, 5]);
+          const S: [number, number, number] = [p / 2, q / 2, T + r];
+          return {
+            prompt: `Ein Turm ist ein Quader mit der Grundfläche ABCD, A(0 | 0 | 0) und C(${p} | ${q} | 0), und der Höhe ${T}. Auf ihm sitzt ein Dach in Form einer geraden Pyramide mit derselben Grundfläche und der Höhe ${r}. Gib die Koordinaten der Dachspitze an.`,
+            given: ["Die Kanten des Turms sind parallel zu den Achsen; 1 Einheit = 1 m"],
+            fields: [numberField("x =", S[0], "", 1), numberField("y =", S[1], "", 1), numberField("z =", S[2], "", 1, { slips: [{ value: r, hint: "Das Dach sitzt oben auf dem Turm: z = Turmhöhe + Dachhöhe." }, { value: T, hint: "Das ist die Höhe der Dachkante. Die Spitze liegt noch um die Dachhöhe höher." }] })],
+            steps: [`Die Spitze liegt über der Mitte der Grundfläche: x = ${p} : 2 = ${fmt(p / 2)}, y = ${q} : 2 = ${fmt(q / 2)}.`, `Das Dach beginnt in der Höhe ${T}: z = ${T} + ${r} = ${T + r}.`, `<strong>${point3(...S)}</strong>`],
+            meta: { ctx, p, q, T, r, x: S[0], y: S[1], z: S[2] },
+          };
+        }
+        if (ctx === 1) {
+          const L = rng.pick([3, 4, 5]);
+          const W = rng.pick([2, 3, 4]);
+          const H = rng.pick([1.5, 2, 2.5]);
+          return {
+            prompt: `Ein Zelt hat die Form eines dreiseitigen Prismas ABCDEF. Es steht auf dem Rechteck ABCD mit A(0 | 0 | 0), B(${L} | 0 | 0), C(${L} | ${W} | 0) und D(0 | ${W} | 0). Der First [EF] ist parallel zu [AB] und liegt ${fmt(H)} hoch genau über der Mittellinie des Bodens; F liegt über der Kante [BC]. Gib die Koordinaten von F und die Länge des Firsts an.`,
+            given: ["1 Einheit = 1 m"],
+            fields: [
+              numberField("x =", L, "", 1),
+              numberField("y =", W / 2, "", 2, { slips: [{ value: W, hint: "Der First liegt über der Mitte des Bodens: y = (0 + Breite) : 2." }] }),
+              numberField("z =", H, "", 1),
+              numberField("[EF] =", L, "", 1, { slips: [{ value: W, hint: "Der First ist parallel zu [AB], also so lang wie [AB]." }] }),
+            ],
+            steps: [`F liegt über der Mitte von [BC]: x = ${L}, y = (0 + ${W}) : 2 = ${fmt(W / 2)}, z = ${fmt(H)}.`, `Der First [EF] ist parallel zu [AB] und gleich lang: ${L}.`, `<strong>F${point3(L, W / 2, H)}; [EF] = ${L}</strong>`],
+            meta: { ctx, L, W, H, x: L, y: W / 2, z: H },
+          };
+        }
+        const x1 = rng.int(0, 2);
+        const y1 = rng.int(0, 2);
+        const x2 = x1 + rng.pick([2, 4, 6]);
+        const y2 = y1 + rng.pick([2, 4, 6]);
+        const h = rng.int(3, 6);
+        const dy = rng.pick([2, 3, 4]);
+        const dz = rng.pick([1, 2, 3]);
+        const S: [number, number, number] = [(x1 + x2) / 2, (y1 + y2) / 2 + dy, h + dz];
+        return {
+          prompt: `Eine gerade Pyramide hat das Rechteck ABCD mit A${point3(x1, y1, 0)} und C${point3(x2, y2, 0)} als Grundfläche und ist ${h} hoch. Sie wird um ${dy} Einheiten in y-Richtung verschoben und auf einen ${dz} hohen Sockel gestellt. Gib die Koordinaten der verschobenen Spitze an.`,
+          given: ["Die Kanten der Grundfläche sind parallel zur x- und zur y-Achse"],
+          fields: [
+            numberField("x =", S[0], "", 1),
+            numberField("y =", S[1], "", 1, { slips: [{ value: (y1 + y2) / 2, hint: "Das ist die Spitze vor dem Verschieben: Zur y-Koordinate kommt die Verschiebung dazu." }] }),
+            numberField("z =", S[2], "", 1, { slips: [{ value: h, hint: "Der Sockel hebt die Pyramide an: z = Höhe + Sockel." }] }),
+          ],
+          steps: [`Spitze vorher: über M((${x1} + ${x2}) : 2 | (${y1} + ${y2}) : 2 | 0) in der Höhe ${h}, also S${point3((x1 + x2) / 2, (y1 + y2) / 2, h)}.`, `Verschieben: y + ${dy}; Sockel: z + ${dz}.`, `<strong>S′${point3(...S)}</strong>`],
+          meta: { ctx, x1, y1, x2, y2, h, dy, dz, x: S[0], y: S[1], z: S[2] },
+        };
+      },
+    },
+  ],
+  requiredCorrect: 3,
+  celebrationMessage: "Du bestimmst die Ecken von Quadern, Pyramiden und Prismen im Raum und verschiebst Körper sicher.",
+};
+
+// 3.5 Schrägbilder von Prismen und Pyramiden ─────────────────────────────────
+
+/** Verzerrungsmaßstäbe of the tasks, with the true lengths that give simple drawn lengths. */
+const Q_CHOICES: Array<{ q: number; text: string; lengths: number[] }> = [
+  { q: 0.5, text: "½", lengths: [2, 3, 4, 5, 6, 7, 8, 9, 10] },
+  { q: 0.5, text: "½", lengths: [3, 4, 5, 6, 8] },
+  { q: 1 / 3, text: "⅓", lengths: [3, 6, 9, 12] },
+  { q: 0.25, text: "¼", lengths: [4, 8, 10, 12] },
+  { q: 0.75, text: "¾", lengths: [4, 8, 12] },
+];
+
+const OBLIQUE_HINT = "Tiefenkante: gezeichnete Länge = q · wahre Länge; Kanten auf s und Höhen in wahrer Größe";
+
+const schraegbilder: Lesson = {
+  id: "rg-5-schraegbilder",
+  stageId: STAGE_ID,
+  stepNumber: 5,
+  title: "3.5 Schrägbilder von Prismen und Pyramiden",
+  subtitle: "Schrägbildachse, Verzerrungswinkel und Verzerrungsmaßstab",
+  tracks: ["II_III"],
+  lehrplan: `${LP_II}: Schrägbilder`,
+  whyItMatters:
+    "Ein Schrägbild zeigt einen Körper räumlich auf dem Papier, so dass jeder ihn nach denselben Regeln zeichnen und lesen kann. In der Abschlussprüfung beginnt fast jede Aufgabe zur Raumgeometrie mit dem Schrägbild eines Prismas oder einer Pyramide.",
+  explanationHtml: `
+    <p><strong>Wiederholung aus M5:</strong> Schrägbilder von Würfeln und Quadern kennst du schon. Damit jeder ein Schrägbild gleich zeichnet, gelten feste Regeln:</p>
+    <ul>
+      <li>Die <strong>Schrägbildachse s</strong> ist eine waagrechte Gerade. Eine Kante der Grundfläche liegt auf s; sie bildet die Vorderkante.</li>
+      <li>Alle Strecken und Flächen parallel zur Zeichenebene erscheinen in <strong>wahrer Größe</strong>: die Vorderfläche, Kanten parallel zu s, senkrechte Kanten und Höhen.</li>
+      <li>Kanten, die senkrecht zur Zeichenebene nach hinten laufen, heißen <strong>Tiefenkanten</strong>. Du zeichnest sie unter dem <strong>Verzerrungswinkel ω</strong> zu s (meist 45°) und verkürzt sie mit dem <strong>Verzerrungsmaßstab q</strong> (meist ½): gezeichnete Länge = q · wahre Länge.</li>
+      <li><strong>Verdeckte Kanten</strong> zeichnest du gestrichelt.</li>
+    </ul>
+    <p><strong>Prisma, Schritt für Schritt</strong> (Grundfläche unten, eine Grundkante auf s): 1. Die Grundkante auf s in wahrer Größe zeichnen. 2. Die Tiefenkanten unter ω antragen, Länge q · wahre Länge; so entsteht das Schrägbild der Grundfläche. Ist sie ein Dreieck, trägst du seine Höhe als Tiefenstrecke ab. 3. In jeder Ecke die Höhe des Prismas senkrecht nach oben in wahrer Größe antragen. 4. Die Deckfläche verbinden und die verdeckten Kanten stricheln.</p>
+    <p><strong>Pyramide, Schritt für Schritt:</strong> 1. Die Grundfläche wie beim Prisma zeichnen. 2. Die Diagonalen schneiden sich im Mittelpunkt M, dem Fußpunkt der Höhe. 3. Von M aus die Höhe h senkrecht nach oben in wahrer Größe antragen: Das ist die Spitze S. 4. S mit den Ecken verbinden, die Höhe [MS] und verdeckte Kanten stricheln.</p>
+    <p><strong>Was sich ändert:</strong> Ein größeres ω lässt die Tiefenkanten steiler laufen, ein kleineres q macht sie kürzer. Welche Fläche vorne in wahrer Größe erscheint, hängt davon ab, welche Kante auf s liegt. Ein rechter Winkel zwischen der Vorderkante und einer Tiefenkante wird im Bild vorne links zum Winkel ω und vorne rechts zum Winkel 180° − ω.</p>
+    <div class="example"><strong>Beispiel:</strong> Ein Quader ist 6 cm lang, 4 cm breit und 3 cm hoch; die 6 cm lange Kante liegt auf s, ω = 45°, q = ½.<br>
+      1. Vorderkante: 6 cm auf s, in wahrer Größe.<br>
+      2. Tiefenkanten: q · 4 cm = ½ · 4 cm = 2 cm, unter 45° nach rechts oben.<br>
+      3. Höhen: 3 cm senkrecht, in wahrer Größe.<br>
+      4. Die drei Kanten an der hinteren linken unteren Ecke sind verdeckt und werden gestrichelt. In wahrer Größe erscheinen die Vorderfläche 6 cm × 3 cm und die Rückfläche. Legst du stattdessen die 4 cm lange Kante auf s, erscheint vorne die Fläche 4 cm × 3 cm, und die Tiefenkanten werden ½ · 6 cm = 3 cm lang.</div>
+    <p>Typische Fehler: Tiefenkanten nicht verkürzen oder durch q teilen statt mit q zu multiplizieren; auch die Höhe verkürzen; ω von der falschen Seite abtragen; verdeckte Kanten durchgezogen zeichnen; die Spitze der Pyramide über einer Ecke statt über M ansetzen.</p>
+    <div class="merke"><strong>Merke:</strong> Kanten auf s, alle Strecken parallel zu s und alle senkrechten Strecken erscheinen in wahrer Größe. Tiefenkanten zeichnest du unter dem Verzerrungswinkel ω zu s und mit dem Verzerrungsmaßstab q verkürzt: gezeichnete Länge = q · wahre Länge. Verdeckte Kanten werden gestrichelt.</div>
+  `,
+  formulas: [
+    { name: "Tiefenkante", html: "gezeichnete Länge = q · wahre Länge", quantities: "q Verzerrungsmaßstab (meist ½); gezeichnet unter dem Verzerrungswinkel ω zu s (meist 45°)" },
+    { name: "Unverzerrt", html: "Strecken parallel zur Zeichenebene in wahrer Größe", quantities: "Kanten auf s und parallel zu s, senkrechte Kanten und Höhen" },
+    { name: "Rechter Winkel im Bild", html: "zwischen Vorderkante und Tiefenkante: ω (links) bzw. 180° − ω (rechts)", quantities: "ω Verzerrungswinkel" },
+    { name: "Zurückrechnen", html: "wahre Länge = gezeichnete Länge : q", quantities: "für Tiefenkanten, die du im Schrägbild misst" },
+  ],
+  quiz: {
+    question: "Ein Quader ist 8 cm lang, 6 cm breit und 5 cm hoch. Die 8 cm lange Kante liegt auf der Schrägbildachse, ω = 45°, q = ½. Wie lang zeichnest du die Tiefenkanten?",
+    options: ["6 cm", "12 cm", "3 cm", "4 cm"],
+    correctIndex: 2,
+    explanation:
+      "Die Tiefenkanten sind die 6 cm langen Kanten nach hinten; sie werden mit q verkürzt: ½ · 6 cm = 3 cm. 6 cm wäre unverkürzt, 12 cm entsteht, wenn man durch q teilt, und 4 cm wäre die Hälfte der Kante auf s, die gar nicht verkürzt wird.",
+  },
+  lab: {
+    kind: "oblique-drawing",
+    title: "Labor: Schrägbild-Werkstatt",
+    intro:
+      "Wähle Körper, Maße, den Verzerrungswinkel ω, den Verzerrungsmaßstab q und die Kante, die auf der Schrägbildachse s liegt. Orange sind die Tiefenkanten, gestrichelt die verdeckten Kanten. Die Ecken kannst du ziehen.",
+    params: [
+      { type: "choice", key: "body", label: "Körper", options: OBLIQUE_NAMES.map((label, value) => ({ value, label })), value: 0 },
+      { type: "choice", key: "pos", label: "Auf der Schrägbildachse s", options: [{ value: 0, label: "Kante a" }, { value: 1, label: "Kante b" }], value: 0 },
+      { type: "range", key: "a", label: "Kante a", unit: "cm", min: 2, max: 7, step: 0.5, value: 5, digits: 1 },
+      { type: "range", key: "b", label: "Kante b", unit: "cm", min: 2, max: 7, step: 0.5, value: 4, digits: 1 },
+      { type: "range", key: "h", label: "Höhe h", unit: "cm", min: 2, max: 7, step: 0.5, value: 3, digits: 1 },
+      { type: "range", key: "omega", label: "Verzerrungswinkel ω", unit: "°", min: 30, max: 90, step: 15, value: 45 },
+      { type: "range", key: "q", label: "Verzerrungsmaßstab q", unit: "", min: 0.25, max: 1, step: 0.25, value: 0.5, digits: 2 },
+    ],
+    readouts: [
+      { key: "vorne", label: "Kante auf s", compute: (v) => `${obliqueDims(v).frontName} = ${fmt(obliqueDims(v).front)} cm, unverkürzt` },
+      { key: "tiefe", label: "Tiefenkanten im Bild", emphasis: true, compute: (v) => `${qText(v.q)} · ${fmt(obliqueDims(v).depth)} cm = ${fmt(v.q * obliqueDims(v).depth)} cm` },
+      { key: "hoehe", label: "Höhe im Bild", compute: (v) => `${fmt(v.h)} cm, unverkürzt` },
+      { key: "winkel", label: "rechter Winkel bei A im Bild", unit: "°", digits: 0, compute: (v) => v.omega },
+      { key: "wahr", label: "In wahrer Größe", compute: (v) => obliqueTrueSize(v) },
+    ],
+    goals: [
+      {
+        id: "quadrat-bild",
+        text: "Stelle eine Pyramide mit rechteckiger, nicht quadratischer Grundfläche so ein, dass ihre Grundfläche im Schrägbild genau wie ein Quadrat aussieht. Welche Werte brauchen ω und q?",
+        check: (v) => {
+          const { front, depth } = obliqueDims(v);
+          return v.body === 2 && v.omega === 90 && v.q * depth === front && front !== depth;
+        },
+      },
+      {
+        id: "tiefe-zwei",
+        text: "Lege das dreiseitige Prisma so, dass die längere Kathete seines Grunddreiecks in die Tiefe läuft, und wähle ihre Länge und q so, dass sie im Bild genau 2 cm lang ist.",
+        check: (v) => {
+          const { front, depth } = obliqueDims(v);
+          return v.body === 1 && depth > front && v.q * depth === 2;
+        },
+      },
+      {
+        id: "wahre-flaeche",
+        text: "Ein Quader ist 6 cm lang, 4 cm breit und 3 cm hoch. Stelle ihn so ein, dass seine 4 cm × 3 cm große Seitenfläche vorne in wahrer Größe erscheint.",
+        check: (v) => {
+          const { front, depth } = obliqueDims(v);
+          return v.body === 0 && front === 4 && depth === 6 && v.h === 3;
+        },
+      },
+    ],
+  },
+  exercises: [
+    {
+      id: "zeichnen",
+      make: (rng, level): ExerciseTask => {
+        if (level === 1) {
+          const body = rng.int(0, 2);
+          const qc = rng.pick(Q_CHOICES);
+          const omega = rng.pick([45, 45, 30, 60]);
+          const depth = rng.pick(qc.lengths);
+          const front = rng.pick([4, 5, 6, 7, 8].filter((x) => x !== depth));
+          const h = rng.pick([3, 4, 5, 6, 7, 8]);
+          const drawn = qc.q * depth;
+          const names = [
+            { body: `Von einem Quader ABCDEFGH sind [AB] = ${front} cm, [BC] = ${depth} cm und [AE] = ${h} cm bekannt.`, front: "[AB]", depth: "[BC]", height: "[AE]" },
+            { body: `Ein gerades Prisma ABCDEF hat als Grundfläche das rechtwinklige Dreieck ABC mit dem rechten Winkel bei A, [AB] = ${front} cm und [AC] = ${depth} cm; die Höhe [AD] des Prismas ist ${h} cm.`, front: "[AB]", depth: "[AC]", height: "[AD]" },
+            { body: `Eine gerade Pyramide ABCDS hat das Rechteck ABCD mit [AB] = ${front} cm und [BC] = ${depth} cm als Grundfläche; ihre Höhe [MS] ist ${h} cm.`, front: "[AB]", depth: "[BC]", height: "[MS]" },
+          ][body];
+          return {
+            prompt: `${names.body} Im Schrägbild liegt [AB] auf der Schrägbildachse, ω = ${omega}°, q = ${qc.text}. Wie lang zeichnest du ${names.front}, die Tiefenkante ${names.depth} und die Höhe ${names.height}?`,
+            given: [],
+            formulaHint: OBLIQUE_HINT,
+            fields: [
+              numberField(`${names.front} im Bild:`, front, "cm", 2, { slips: [{ value: qc.q * front, hint: "Die Kante auf s liegt in der Zeichenebene und bleibt unverkürzt." }] }),
+              numberField(`${names.depth} im Bild:`, drawn, "cm", 2, { slips: [{ value: depth, hint: "Tiefenkanten werden verkürzt: gezeichnete Länge = q · wahre Länge." }, { value: depth / qc.q, hint: "Mit q multiplizieren, nicht durch q teilen: Die Tiefenkante wird kürzer, nicht länger." }] }),
+              numberField(`${names.height} im Bild:`, h, "cm", 2, { slips: [{ value: qc.q * h, hint: "Die Höhe steht senkrecht, parallel zur Zeichenebene: Sie bleibt unverkürzt." }] }),
+            ],
+            steps: [
+              `${names.front} liegt auf s und ${names.height} steht senkrecht: beide in wahrer Größe, ${front} cm und ${h} cm.`,
+              `${names.depth} läuft nach hinten: ${qc.text} · ${depth} cm = ${fmtUnit(drawn, "cm")}, gezeichnet unter ${omega}° zu s.`,
+              `<strong>${names.front}: ${front} cm; ${names.depth}: ${fmtUnit(drawn, "cm")}; ${names.height}: ${h} cm</strong>`,
+            ],
+            meta: { body, q: qc.q, omega, front, depth, h },
+          };
+        }
+        const kind = rng.int(0, 1);
+        const omega = rng.pick([30, 45, 60]);
+        if (kind === 0) {
+          const qc = rng.pick(Q_CHOICES);
+          const b = rng.pick(qc.lengths);
+          const a = rng.pick([5, 6, 7, 8, 9].filter((x) => x !== b));
+          const h = rng.pick([6, 7, 8, 9]);
+          return {
+            prompt: `Die Grundfläche der geraden Pyramide ABCDS ist das Rechteck ABCD mit [AB] = ${a} cm und [BC] = ${b} cm. Die Spitze S liegt ${h} cm senkrecht über dem Diagonalenschnittpunkt M. Im Schrägbild liegt [AB] auf der Schrägbildachse; ω = ${omega}°, q = ${qc.text}. Wie lang werden [BC] und [MS] gezeichnet? Wie groß erscheint der Winkel ∢ABC? Welche Strecken erscheinen in wahrer Größe?`,
+            given: [],
+            fields: [
+              numberField("[BC] im Bild:", qc.q * b, "cm", 2, { slips: [{ value: b, hint: "[BC] ist eine Tiefenkante und wird mit q verkürzt." }, { value: b / qc.q, hint: "Mit q multiplizieren, nicht durch q teilen." }] }),
+              numberField("[MS] im Bild:", h, "cm", 2, { slips: [{ value: qc.q * h, hint: "Die Höhe [MS] steht senkrecht und wird nicht verkürzt." }] }),
+              numberField("∢ABC im Bild:", 180 - omega, "°", 0, { slips: [{ value: omega, hint: "ω liegt vorne links bei A. Bei B liegt der Nebenwinkel: 180° − ω." }, { value: 90, hint: "In Wirklichkeit ist ∢ABC ein rechter Winkel, im Schrägbild nicht: Die Tiefenkante läuft unter ω." }] }),
+              shuffledChoice(rng, "In wahrer Größe:", "[AB] und [MS]", ["[BC] und [MS]", "[AB] und [BS]", "[AC] und [MS]"]),
+            ],
+            steps: [
+              `[BC] läuft in die Tiefe: ${qc.text} · ${b} cm = ${fmtUnit(qc.q * b, "cm")}. [MS] steht senkrecht: ${h} cm.`,
+              `Bei B liegen die Kante [BA] (nach links) und die Tiefenkante [BC] (unter ${omega}° nach rechts oben): ∢ABC = 180° − ${omega}° = ${180 - omega}°.`,
+              `<strong>[BC]: ${fmtUnit(qc.q * b, "cm")}; [MS]: ${h} cm; ∢ABC = ${180 - omega}°; wahre Größe: [AB] und [MS]</strong>`,
+            ],
+            meta: { kind, q: qc.q, omega, a, b, h },
+          };
+        }
+        const [L, B, H] = rng.shuffle([4, 5, 6, 8]).slice(0, 3);
+        const onS = rng.next() < 0.5 ? B : L;
+        const depth = onS === B ? L : B;
+        return {
+          prompt: `Ein Quader ist ${L} cm lang, ${B} cm breit und ${H} cm hoch. Er wird so gezeichnet, dass die ${onS} cm lange Kante der Grundfläche auf der Schrägbildachse liegt (ω = ${omega}°, q = ½). Welche Fläche erscheint vorne in wahrer Größe? Wie lang werden die Tiefenkanten gezeichnet? Wie groß erscheint der rechte Winkel der Grundfläche vorne rechts?`,
+          given: [],
+          fields: [
+            shuffledChoice(rng, "vorne in wahrer Größe:", `die Fläche ${onS} cm × ${H} cm`, [`die Fläche ${depth} cm × ${H} cm`, `die Fläche ${L} cm × ${B} cm`, "keine Fläche"]),
+            numberField("Tiefenkanten im Bild:", depth / 2, "cm", 2, { slips: [{ value: onS / 2, hint: "Die Kante auf s wird nicht verkürzt. In die Tiefe läuft die andere Kante der Grundfläche." }, { value: depth, hint: "Tiefenkanten werden mit q = ½ verkürzt." }] }),
+            numberField("Winkel vorne rechts:", 180 - omega, "°", 0, { slips: [{ value: omega, hint: "ω liegt vorne links. Vorne rechts liegt der Nebenwinkel 180° − ω." }] }),
+          ],
+          steps: [
+            `Auf s liegt die ${onS} cm lange Kante; mit der Höhe bildet sie die Vorderfläche ${onS} cm × ${H} cm in wahrer Größe.`,
+            `In die Tiefe läuft die ${depth} cm lange Kante: ½ · ${depth} cm = ${fmtUnit(depth / 2, "cm")}. Vorne rechts liegen die Kante auf s und eine Tiefenkante: 180° − ${omega}° = ${180 - omega}°.`,
+            `<strong>die Fläche ${onS} cm × ${H} cm; ${fmtUnit(depth / 2, "cm")}; ${180 - omega}°</strong>`,
+          ],
+          meta: { kind, omega, L, B, H, onS, depth },
+        };
+      },
+    },
+    {
+      id: "zurueck",
+      make: (rng, level): ExerciseTask => {
+        if (level === 1) {
+          const qc = rng.pick(Q_CHOICES);
+          const omega = rng.pick([45, 45, 30, 60]);
+          const depth = rng.pick(qc.lengths);
+          const front = rng.pick([4, 5, 6, 7, 8]);
+          const h = rng.pick([3, 4, 5, 6]);
+          const drawn = qc.q * depth;
+          return {
+            prompt: `Im Schrägbild eines Quaders ABCDEFGH (ω = ${omega}°, q = ${qc.text}) liegt [AB] auf der Schrägbildachse. Du misst [AB] = ${front} cm, die Tiefenkante [BC] = ${fmtUnit(drawn, "cm")} und die Höhe [BF] = ${h} cm. Wie lang sind die drei Kanten in Wirklichkeit?`,
+            given: [],
+            formulaHint: "wahre Länge einer Tiefenkante = gezeichnete Länge : q; Kanten auf s und Höhen sind unverkürzt",
+            fields: [
+              numberField("[AB] =", front, "cm", 2),
+              numberField("[BC] =", depth, "cm", 2, { slips: [{ value: drawn * qc.q, hint: "Im Bild ist die Tiefenkante schon verkürzt. Zurück rechnest du mit: gezeichnete Länge : q." }, { value: drawn, hint: "Die Tiefenkante ist im Bild verkürzt; teile durch q." }] }),
+              numberField("[BF] =", h, "cm", 2, { slips: [{ value: h / qc.q, hint: "Die Höhe ist im Bild nicht verkürzt: Sie ist so lang wie in Wirklichkeit." }] }),
+            ],
+            steps: [`[AB] liegt auf s und [BF] steht senkrecht: Beide sind unverkürzt, ${front} cm und ${h} cm.`, `[BC] ist eine Tiefenkante: ${fmt(drawn)} cm : ${qc.text} = ${depth} cm.`, `<strong>[AB] = ${front} cm, [BC] = ${depth} cm, [BF] = ${h} cm</strong>`],
+            meta: { q: qc.q, omega, front, depth, h, drawn },
+          };
+        }
+        const qc = rng.pick(Q_CHOICES);
+        const square = rng.next() < 0.5;
+        const b = rng.pick(qc.lengths);
+        const a = square ? b : rng.pick([4, 5, 6, 7, 8, 9, 10].filter((x) => x !== b));
+        const h = rng.pick([5, 6, 7, 8]);
+        const drawn = qc.q * b;
+        return {
+          prompt: `Im Schrägbild einer geraden Pyramide ABCDS mit rechteckiger Grundfläche liegt [AB] auf der Schrägbildachse (ω = 45°, q = ${qc.text}). Du misst [AB] = ${a} cm, [BC] = ${fmtUnit(drawn, "cm")} und die Höhe [MS] = ${h} cm. Wie lang ist [BC] in Wirklichkeit? Wie groß ist der Flächeninhalt der Grundfläche? Ist die Grundfläche ein Quadrat?`,
+          given: [],
+          fields: [
+            numberField("[BC] =", b, "cm", 2, { slips: [{ value: drawn, hint: "Im Bild ist [BC] verkürzt. Die wahre Länge ist gezeichnete Länge : q." }, { value: drawn * qc.q, hint: "Zurück rechnest du mit : q, nicht mit · q." }] }),
+            numberField("Grundfläche:", a * b, "cm²", 2, { slips: [{ value: a * drawn, hint: "Für den Flächeninhalt brauchst du die wahre Länge von [BC], nicht die Bildlänge." }] }),
+            yesNo("Quadrat?", square),
+          ],
+          steps: [`[BC] ist eine Tiefenkante: ${fmt(drawn)} cm : ${qc.text} = ${b} cm.`, `Grundfläche: ${a} cm · ${b} cm = ${a * b} cm². ${square ? "Beide Kanten sind gleich lang: ein Quadrat, auch wenn es im Bild wie ein Parallelogramm aussieht." : "Die Kanten sind verschieden lang: ein Rechteck, kein Quadrat."}`, `<strong>[BC] = ${b} cm; ${a * b} cm²; Quadrat: ${jaNein(square)}</strong>`],
+          meta: { q: qc.q, a, b, h, drawn, square: square ? 1 : 0 },
+        };
+      },
+    },
+  ],
+  requiredCorrect: 3,
+  celebrationMessage: "Du zeichnest und liest Schrägbilder mit Verzerrungswinkel, Verzerrungsmaßstab und Schrägbildachse.",
+};
+
+// 3.6 Strecken und Winkel in wahrer Größe ───────────────────────────────────
+
+/** Angles a Level-1 task asks for in true size; the stage test checks how they look in the Schrägbild (ω = 45°, q = ½). */
+export const ANGLE_CASES: Array<{ body: string; name: string; where: string; value: number; picture: "kleiner" | "gleich" | "größer"; why: string }> = [
+  { body: "einem Würfel ABCDEFGH mit der Kantenlänge 4 cm", name: "∢BAC", where: "zwischen der Kante [AB] und der Flächendiagonale [AC] der Grundfläche", value: 45, picture: "kleiner", why: "Die Grundfläche ist ein Quadrat: Die Diagonale halbiert den rechten Winkel, 90° : 2 = 45°." },
+  { body: "einem Würfel ABCDEFGH mit der Kantenlänge 4 cm", name: "∢ABF", where: "zwischen den Kanten [AB] und [BF] der Vorderfläche", value: 90, picture: "gleich", why: "Die Vorderfläche ist ein Quadrat: rechter Winkel. Sie liegt parallel zur Zeichenebene und erscheint unverzerrt." },
+  { body: "einem Quader ABCDEFGH (6 cm × 4 cm × 3 cm)", name: "∢BAD", where: "zwischen der Kante [AB] auf s und der Tiefenkante [AD]", value: 90, picture: "kleiner", why: "Die Grundfläche ist ein Rechteck: rechter Winkel. Im Bild läuft [AD] unter ω = 45° zu s." },
+  { body: "einem Quader ABCDEFGH (6 cm × 4 cm × 3 cm)", name: "∢ABC", where: "zwischen der Kante [BA] und der Tiefenkante [BC]", value: 90, picture: "größer", why: "Die Grundfläche ist ein Rechteck: rechter Winkel. Im Bild ist er 180° − 45° = 135° groß." },
+  { body: "einem Quader ABCDEFGH (6 cm × 4 cm × 3 cm)", name: "∢FBC", where: "zwischen der senkrechten Kante [BF] und der Tiefenkante [BC]", value: 90, picture: "kleiner", why: "Die rechte Seitenfläche ist ein Rechteck: rechter Winkel. Im Bild steht [BF] senkrecht und [BC] läuft unter 45°: 90° − 45° = 45°." },
+  { body: "einer quadratischen Pyramide ABCDS, deren acht Kanten alle 4 cm lang sind", name: "∢BAS", where: "in der Seitenfläche ABS bei der Ecke A", value: 60, picture: "kleiner", why: "Die Seitenfläche hat drei gleich lange Seiten: ein gleichseitiges Dreieck mit lauter 60°-Winkeln." },
+  { body: "einem Würfel ABCDEFGH mit der Kantenlänge 4 cm", name: "∢ACB", where: "zwischen der Flächendiagonale [CA] und der Tiefenkante [CB]", value: 45, picture: "kleiner", why: "Im Quadrat ABCD halbiert die Diagonale den rechten Winkel bei C: 45°." },
+  { body: "einem Quader ABCDEFGH (6 cm × 4 cm × 3 cm)", name: "∢AEH", where: "zwischen der senkrechten Kante [EA] und der Tiefenkante [EH]", value: 90, picture: "größer", why: "Die linke Seitenfläche ist ein Rechteck: rechter Winkel. Im Bild ist er 90° + 45° = 135° groß." },
+];
+export const COMPARE = ["kleiner als in Wirklichkeit", "genauso groß", "größer als in Wirklichkeit"];
+
+/** A face diagonal as a pupil measures it in a true-size drawing: to a tenth of a centimetre. */
+export function measured(a: number, b: number): number {
+  return Math.round(Math.hypot(a, b) * 10) / 10;
+}
+
+const wahreGroesse: Lesson = {
+  id: "rg-6-wahre-groesse",
+  stageId: STAGE_ID,
+  stepNumber: 6,
+  title: "3.6 Strecken und Winkel in wahrer Größe",
+  subtitle: "Ebene Figuren aus dem Schrägbild entnehmen",
+  tracks: ["II_III"],
+  lehrplan: `${LP_II}: Ebene Figuren in wahrer Größe`,
+  whyItMatters:
+    "Im Schrägbild sind Diagonalen, Seitenkanten und viele Winkel verzerrt; wer sie dort abmisst, misst falsch. Mit einer Figur in wahrer Größe bestimmst du sie richtig, etwa die Länge eines Dachsparrens oder die Neigung einer Pyramidenseite.",
+  explanationHtml: `
+    <p>Im Schrägbild sind nur Strecken parallel zur Zeichenebene unverzerrt. Tiefenkanten sind verkürzt, und schräge Strecken wie Diagonalen oder die Seitenkanten einer Pyramide erscheinen verzerrt, ebenso die Winkel zwischen ihnen: Ein rechter Winkel der Grundfläche sieht im Bild aus wie 45°, und eine Raumdiagonale ist im Bild nicht so lang wie in Wirklichkeit. Messen darfst du im Schrägbild deshalb nur unverzerrte Strecken.</p>
+    <p><strong>So ermittelst du eine Strecke oder einen Winkel:</strong></p>
+    <ol class="steps">
+      <li>Suche eine ebene Figur im Körper, in der die gesuchte Strecke oder der gesuchte Winkel liegt und von der du genug wahre Längen kennst.</li>
+      <li>Bestimme diese wahren Längen: Kanten auf s und Höhen sind unverkürzt; eine Tiefenkante misst du im Bild und teilst durch q.</li>
+      <li>Zeichne die Figur in wahrer Größe neben das Schrägbild, mit rechten Winkeln dort, wo der Körper rechte Winkel hat.</li>
+      <li>Miss die gesuchte Strecke oder den gesuchten Winkel in dieser Zeichnung.</li>
+    </ol>
+    <table class="mini">
+      <tr><th>gesucht</th><th>Figur in wahrer Größe</th><th>bekannte Stücke</th></tr>
+      <tr><td>Flächendiagonale [AC] eines Quaders</td><td>Grundfläche ABCD, ein Rechteck</td><td>[AB], [BC], rechter Winkel bei B</td></tr>
+      <tr><td>Raumdiagonale [AG] eines Quaders</td><td>Diagonalschnitt ACGE, ein Rechteck</td><td>[AC] aus der Grundfläche, Höhe [CG]</td></tr>
+      <tr><td>Seitenkante [AS] einer Pyramide</td><td>Dreieck AMS, rechter Winkel bei M</td><td>halbe Diagonale [AM], Höhe [MS]</td></tr>
+      <tr><td>Höhe der Seitenfläche ABS</td><td>Dreieck NMS (N Mitte von [AB]), rechter Winkel bei M</td><td>[NM] = halbe Kante [BC], Höhe [MS]</td></tr>
+    </table>
+    <p><strong>Winkel, die du ohne Messen kennst:</strong> Rechte Winkel des Körpers bleiben in wahrer Größe rechte Winkel. Die Diagonale eines Quadrats bildet mit seinen Seiten 45°. In einem gleichseitigen Dreieck, etwa der Seitenfläche einer Pyramide mit lauter gleich langen Kanten, misst jeder Winkel 60°. Im Schrägbild dagegen erscheint der Winkel zwischen einer Vorderkante und einer Tiefenkante als ω oder 180° − ω.</p>
+    <div class="example"><strong>Beispiel:</strong> Ein Quader ist 6 cm lang und 3 cm hoch; im Schrägbild (ω = 45°, q = ½) ist die Tiefenkante [BC] 2 cm lang. Gesucht ist die Raumdiagonale [AG].<br>
+      1. Figur: [AG] liegt im Diagonalschnitt ACGE, in Wahrheit ein Rechteck.<br>
+      2. Wahre Längen: [BC] = 2 cm : ½ = 4 cm. Zeichne die Grundfläche 6 cm × 4 cm in wahrer Größe und miss die Diagonale: [AC] ≈ 7,2 cm.<br>
+      3. Zeichne das Rechteck ACGE mit [AC] ≈ 7,2 cm und [CG] = 3 cm.<br>
+      4. Miss: [AG] ≈ 7,8 cm. Im Schrägbild ist [AG] dagegen etwa 8,6 cm lang.</div>
+    <p>Typische Fehler: die Strecke direkt im Schrägbild messen; die Tiefenkante mit ihrer Bildlänge statt der wahren Länge zeichnen; eine Figur wählen, in der nur eine Seite bekannt ist; einen rechten Winkel so zeichnen, wie er im Schrägbild aussieht.</p>
+    <div class="merke"><strong>Merke:</strong> Verzerrte Strecken und Winkel ermittelst du an einer ebenen Figur in wahrer Größe: Figur mit der gesuchten Größe wählen, ihre wahren Längen bestimmen (Tiefenkante = Bildlänge : q), die Figur mit ihren rechten Winkeln zeichnen und dort messen.</div>
+  `,
+  formulas: [
+    { name: "Wahre Länge einer Tiefenkante", html: "wahre Länge = gezeichnete Länge : q", quantities: "q Verzerrungsmaßstab" },
+    { name: "Raumdiagonale eines Quaders", html: "im Rechteck ACGE", quantities: "[AC] Flächendiagonale aus der Grundfläche, [CG] Höhe" },
+    { name: "Seitenkante einer Pyramide", html: "im Dreieck AMS mit dem rechten Winkel bei M", quantities: "[AM] halbe Diagonale der Grundfläche, [MS] Höhe" },
+    { name: "Feste Winkel", html: "Quadratdiagonale und Seite: 45°; gleichseitiges Dreieck: 60°; rechte Winkel bleiben 90°", quantities: "in wahrer Größe, nicht im Schrägbild" },
+  ],
+  quiz: {
+    question: "Gesucht ist die Länge der Seitenkante [CS] einer geraden quadratischen Pyramide ABCDS; die Spitze S liegt über dem Mittelpunkt M der Grundfläche. Welche Figur zeichnest du in wahrer Größe?",
+    options: ["die Seitenfläche BCS, so wie sie im Schrägbild aussieht", "das Dreieck MCS mit dem rechten Winkel bei M", "die Grundfläche ABCD", "das Dreieck ABS"],
+    correctIndex: 1,
+    explanation:
+      "Im Dreieck MCS kennst du zwei Seiten in wahrer Größe, die Höhe [MS] und die halbe Diagonale [MC] aus der Grundfläche, und der Winkel bei M ist ein rechter. Die Seitenfläche BCS ist im Schrägbild verzerrt, und von ihr kennst du gerade die gesuchte Seite nicht.",
+  },
+  lab: {
+    kind: "true-size",
+    title: "Labor: Wahre Größe",
+    intro:
+      "Links das Schrägbild (q = ½) mit der gewählten Figur in Türkis, rechts dieselbe Figur in wahrer Größe. Dort misst das Labor die gesuchte Strecke und den Winkel; unten steht zum Vergleich, wie groß der Winkel im Schrägbild aussieht.",
+    params: [
+      { type: "choice", key: "body", label: "Körper", options: TRUE_BODIES.map((label, value) => ({ value, label })), value: 0 },
+      { type: "choice", key: "figQ", label: "Figur im Quader", options: TRUE_FIGURES[0].map((label, value) => ({ value, label })), value: 1, showIf: (v) => v.body === 0 },
+      { type: "choice", key: "figP", label: "Figur in der Pyramide", options: TRUE_FIGURES[1].map((label, value) => ({ value, label })), value: 0, showIf: (v) => v.body === 1 },
+      { type: "range", key: "a", label: "Kante [AB]", unit: "cm", min: 2, max: 7, step: 0.5, value: 6, digits: 1 },
+      { type: "range", key: "b", label: "Kante [BC]", unit: "cm", min: 2, max: 7, step: 0.5, value: 4, digits: 1 },
+      { type: "range", key: "h", label: "Höhe", unit: "cm", min: 2, max: 7, step: 0.5, value: 3, digits: 1 },
+      { type: "range", key: "omega", label: "Verzerrungswinkel ω", unit: "°", min: 30, max: 90, step: 15, value: 45 },
+    ],
+    readouts: [
+      { key: "figur", label: "Figur", compute: (v) => `${trueFigure(v).name}: in Wahrheit ${trueFigure(v).shape}` },
+      { key: "bekannt", label: "Bekannt", compute: (v) => trueFigure(v).known },
+      { key: "strecke", label: "Gesuchte Strecke (gemessen)", emphasis: true, compute: (v) => `${trueFigure(v).wantedName} ≈ ${fmt(trueFigure(v).length, 1)} cm` },
+      { key: "wahr", label: "Winkel in wahrer Größe", compute: (v) => `${trueFigure(v).angle.name} ≈ ${fmt(trueFigure(v).angle.value, 1)}°` },
+      { key: "bild", label: "Derselbe Winkel im Schrägbild", compute: (v) => `${trueFigure(v).angle.name} ≈ ${fmt(drawnAngle(v), 1)}°` },
+    ],
+    goals: [
+      {
+        id: "hoehe-kante",
+        text: "Wähle die Figur, in der die Höhe der Pyramide und eine Seitenkante zusammen vorkommen. Welcher Winkel ist darin ein rechter?",
+        check: (v) => v.body === 1 && v.figP === 1,
+      },
+      {
+        id: "diagonale-45",
+        text: "Stelle die Grundfläche des Quaders so ein, dass die Diagonale [AC] in wahrer Größe mit der Kante [AB] einen Winkel von 45° bildet. Wie groß sieht der Winkel im Schrägbild aus?",
+        check: (v) => v.body === 0 && v.figQ === 0 && v.a === v.b,
+      },
+      {
+        id: "gleichseitig",
+        text: "Stelle die Pyramide so ein, dass ihre Seitenfläche ABS in wahrer Größe ein gleichseitiges Dreieck ist: Die Seitenkante [AS] muss so lang sein wie [AB] (auf 2 % genau).",
+        check: (v) => v.body === 1 && v.figP === 0 && Math.abs(trueFigure(v).length - v.a) <= 0.02 * v.a,
+      },
+    ],
+  },
+  exercises: [
+    {
+      id: "tiefenkanten",
+      make: (rng, level): ExerciseTask => {
+        if (level === 1) {
+          const qc = rng.pick(Q_CHOICES);
+          const depth = rng.pick(qc.lengths);
+          const front = rng.pick([4, 5, 6, 7]);
+          const h = rng.pick([3, 4, 5, 6]);
+          const drawn = qc.q * depth;
+          return {
+            prompt: `Im Schrägbild eines Quaders ABCDEFGH (ω = 45°, q = ${qc.text}) liegt [AB] auf der Schrägbildachse. Du misst [AB] = ${front} cm, die Tiefenkante [BC] = ${fmtUnit(drawn, "cm")} und [BF] = ${h} cm. Wie lang ist [BC] in Wirklichkeit? Welche Strecke darfst du im Schrägbild in wahrer Größe abmessen, und welcher Winkel erscheint dort unverzerrt?`,
+            given: [],
+            formulaHint: "wahre Länge einer Tiefenkante = gezeichnete Länge : q; unverzerrt sind nur Strecken und Winkel parallel zur Zeichenebene",
+            fields: [
+              numberField("[BC] =", depth, "cm", 2, { slips: [{ value: drawn, hint: "Das ist die Bildlänge. Tiefenkanten sind verkürzt: wahre Länge = Bildlänge : q." }, { value: drawn * qc.q, hint: "Zurück rechnest du mit : q, nicht mit · q." }] }),
+              shuffledChoice(rng, "Strecke in wahrer Größe:", "die Kante [BF]", ["die Tiefenkante [BC]", "die Diagonale [AC]", "die Diagonale [BG]"]),
+              shuffledChoice(rng, "Winkel unverzerrt:", "∢ABF", ["∢ABC", "∢BAD", "∢FBC"]),
+            ],
+            steps: [`[BC] ist eine Tiefenkante: ${fmt(drawn)} cm : ${qc.text} = ${depth} cm.`, "[BF] steht senkrecht und liegt wie [AB] in der Vorderfläche, also parallel zur Zeichenebene. ∢ABF liegt in der Vorderfläche und ist auch im Bild ein rechter Winkel; ∢ABC, ∢BAD und ∢FBC enthalten eine Tiefenkante und sind verzerrt.", `<strong>[BC] = ${depth} cm; [BF]; ∢ABF</strong>`],
+            meta: { q: qc.q, depth, front, h, drawn },
+          };
+        }
+        const qc = rng.pick(Q_CHOICES.slice(0, 3));
+        const b = rng.pick(qc.lengths.filter((x) => x <= 9));
+        const a = rng.pick([4, 5, 6, 7, 8].filter((x) => x !== b));
+        const h = rng.pick([5, 6, 7, 8, 9]);
+        const d = measured(a, b);
+        const corner = rng.pick(["A", "B", "C", "D"]);
+        const face = ({ A: "ABS", B: "BCS", C: "CDS", D: "DAS" } as Record<string, string>)[corner];
+        return {
+          prompt: `Von einer geraden Pyramide ABCDS mit rechteckiger Grundfläche ist ein Schrägbild gezeichnet ([AB] auf s, ω = 45°, q = ${qc.text}). Du misst [AB] = ${a} cm, [BC] = ${fmtUnit(qc.q * b, "cm")} und die Höhe [MS] = ${h} cm. Gesucht ist die Seitenkante [${corner}S]. Wie lang ist [BC] in Wirklichkeit? In welcher Figur zeichnest du [${corner}S] in wahrer Größe? Die Diagonale [AC] hast du in der Grundfläche in wahrer Größe zu ${fmt(d)} cm gemessen: Wie lang ist die Seite [${corner}M] dieser Figur?`,
+          given: [],
+          fields: [
+            numberField("[BC] =", b, "cm", 2, { slips: [{ value: qc.q * b, hint: "Das ist die Bildlänge. Die wahre Länge ist Bildlänge : q." }] }),
+            shuffledChoice(rng, "Figur:", `das Dreieck ${corner}MS mit dem rechten Winkel bei M`, [`die Seitenfläche ${face}, wie sie im Schrägbild aussieht`, "die Grundfläche ABCD", "das Dreieck NMS mit N in der Mitte von [AB]"]),
+            numberField(`[${corner}M] =`, d / 2, "cm", 2, { slips: [{ value: d, hint: "M halbiert die Diagonale: Die Seite zur Ecke ist die halbe Diagonale." }, { value: a / 2, hint: "M ist der Mittelpunkt der Diagonale, nicht der Kante: Nimm die halbe Diagonale." }] }),
+          ],
+          steps: [
+            `[BC] ist eine Tiefenkante: ${fmt(qc.q * b)} cm : ${qc.text} = ${b} cm.`,
+            `[${corner}S] liegt im Dreieck ${corner}MS: [MS] = ${h} cm ist die Höhe, [${corner}M] die halbe Diagonale, und bei M ist ein rechter Winkel. Die Seitenfläche ist im Bild verzerrt, und ihre Seitenkante ist ja gerade gesucht.`,
+            `[${corner}M] = ${fmt(d)} cm : 2 = ${fmtUnit(d / 2, "cm")}`,
+            `<strong>[BC] = ${b} cm; Dreieck ${corner}MS; [${corner}M] = ${fmtUnit(d / 2, "cm")}</strong>`,
+          ],
+          meta: { q: qc.q, a, b, h, d },
+        };
+      },
+    },
+    {
+      id: "winkel-figur",
+      make: (rng, level): ExerciseTask => {
+        if (level === 1) {
+          const index = rng.int(0, ANGLE_CASES.length - 1);
+          const c = ANGLE_CASES[index];
+          const answer = c.picture === "kleiner" ? 0 : c.picture === "gleich" ? 1 : 2;
+          return {
+            prompt: `In ${c.body} betrachtest du den Winkel ${c.name} ${c.where}. Wie groß ist er in Wirklichkeit? Wie erscheint er im Schrägbild mit ω = 45° und q = ½, wenn [AB] auf der Schrägbildachse liegt?`,
+            given: [],
+            formulaHint: "rechte Winkel bleiben in wahrer Größe 90°; Quadratdiagonale: 45°; gleichseitiges Dreieck: 60°",
+            fields: [
+              numberField(`${c.name} =`, c.value, "°", 0, { slips: c.value === 90 ? [{ value: 45, hint: "45° wäre der Winkel im Schrägbild. In Wirklichkeit ist der Winkel ein rechter." }, { value: 135, hint: "135° wäre der Winkel im Schrägbild. In Wirklichkeit ist der Winkel ein rechter." }] : [{ value: 90, hint: "Die Diagonale oder Seite teilt den rechten Winkel: Es sind nicht 90°." }] }),
+              choiceField("im Schrägbild:", COMPARE, answer),
+            ],
+            steps: [c.why, `Im Schrägbild: ${c.picture === "gleich" ? "Der Winkel liegt parallel zur Zeichenebene und erscheint genauso groß." : `Eine Tiefenkante läuft schräg nach hinten, der Winkel erscheint ${c.picture} als in Wirklichkeit.`}`, `<strong>${c.name} = ${c.value}°; im Schrägbild ${COMPARE[answer]}</strong>`],
+            meta: { index, value: c.value, answer },
+          };
+        }
+        const kind = rng.int(0, 1);
+        if (kind === 0) {
+          let a = 0;
+          let b = 0;
+          let c = 0;
+          let d = 0;
+          do {
+            a = rng.int(4, 8);
+            b = rng.int(3, 7);
+            c = rng.int(3, 8);
+            d = measured(a, b);
+          } while (Math.abs(d - c) < 0.5 || a === b);
+          return {
+            prompt: `Ein Quader ABCDEFGH ist ${a} cm lang, ${b} cm breit und ${c} cm hoch. Im Schrägbild sieht der Diagonalschnitt ACGE aus wie ein Parallelogramm. Die Flächendiagonale [AC] hast du in der Grundfläche in wahrer Größe zu ${fmt(d)} cm gemessen. Welche Form hat ACGE in wahrer Größe? Berechne seinen Flächeninhalt und seinen Umfang.`,
+            given: [],
+            fields: [
+              shuffledChoice(rng, "ACGE in wahrer Größe:", "ein Rechteck", ["ein Parallelogramm mit schiefen Winkeln", "ein Quadrat", "ein gleichschenkliges Trapez"]),
+              numberField("Flächeninhalt:", d * c, "cm²", 2, { slips: [{ value: a * c, hint: "Eine Seite des Diagonalschnitts ist die Diagonale [AC], nicht die Kante [AB]." }] }),
+              numberField("Umfang:", 2 * (d + c), "cm", 2, { slips: [{ value: d + c, hint: "Das Rechteck hat vier Seiten: u = 2 · ([AC] + [CG])." }] }),
+            ],
+            steps: [
+              `[AE] und [CG] stehen senkrecht auf der Grundfläche, also auch auf [AC]: In wahrer Größe ist ACGE ein Rechteck mit den Seiten [AC] ≈ ${fmt(d)} cm und [CG] = ${c} cm. Nur das Schrägbild verzerrt es zum Parallelogramm.`,
+              `A = ${fmt(d)} cm · ${c} cm = ${fmtUnit(d * c, "cm²")}; u = 2 · (${fmt(d)} cm + ${c} cm) = ${fmtUnit(2 * (d + c), "cm")}`,
+              `<strong>ein Rechteck; A = ${fmtUnit(d * c, "cm²")}; u = ${fmtUnit(2 * (d + c), "cm")}</strong>`,
+            ],
+            meta: { kind, a, b, c, d },
+          };
+        }
+        let a = 0;
+        let b = 0;
+        let h = 0;
+        let d = 0;
+        do {
+          a = rng.int(4, 8);
+          b = rng.int(3, 8);
+          h = rng.int(4, 9);
+          d = measured(a, b);
+        } while (Math.abs(h - (d * Math.sqrt(3)) / 2) < 0.5);
+        return {
+          prompt: `Eine gerade Pyramide ABCDS hat das Rechteck ABCD mit [AB] = ${a} cm und [BC] = ${b} cm als Grundfläche und die Höhe [MS] = ${h} cm. Die Diagonale [AC] hast du in wahrer Größe zu ${fmt(d)} cm gemessen. Welche Form hat der Diagonalschnitt ACS in wahrer Größe? Wie lang ist [AM], und wie groß ist der Flächeninhalt des Dreiecks ACS?`,
+          given: [],
+          fields: [
+            shuffledChoice(rng, "ACS in wahrer Größe:", "ein gleichschenkliges Dreieck", ["ein rechtwinkliges Dreieck", "ein gleichseitiges Dreieck", "ein Parallelogramm"]),
+            numberField("[AM] =", d / 2, "cm", 2, { slips: [{ value: d, hint: "M ist die Mitte der Diagonale: [AM] ist die halbe Diagonale." }] }),
+            numberField("Flächeninhalt:", (d * h) / 2, "cm²", 2, { slips: [{ value: d * h, hint: "Dreieck: A = ½ · Grundseite · Höhe." }, { value: (a * h) / 2, hint: "Die Grundseite des Dreiecks ACS ist die Diagonale [AC], nicht die Kante [AB]." }] }),
+          ],
+          steps: [
+            `S liegt über der Mitte M von [AC]: [AS] und [CS] sind gleich lang, das Dreieck ACS ist gleichschenklig mit der Grundseite [AC] ≈ ${fmt(d)} cm und der Höhe [MS] = ${h} cm.`,
+            `[AM] = ${fmt(d)} cm : 2 = ${fmtUnit(d / 2, "cm")}; A = ½ · ${fmt(d)} cm · ${h} cm = ${fmtUnit((d * h) / 2, "cm²")}`,
+            `<strong>ein gleichschenkliges Dreieck; [AM] = ${fmtUnit(d / 2, "cm")}; A = ${fmtUnit((d * h) / 2, "cm²")}</strong>`,
+          ],
+          meta: { kind, a, b, h, d },
+        };
+      },
+    },
+  ],
+  requiredCorrect: 3,
+  celebrationMessage: "Du findest die passende Figur, zeichnest sie in wahrer Größe und bestimmst Strecken und Winkel richtig.",
+};
+
 export const STAGE_RAUMGEOMETRIE: Stage = {
   id: STAGE_ID,
   stageNumber: 3,
@@ -1076,5 +1809,5 @@ export const STAGE_RAUMGEOMETRIE: Stage = {
   accent: "#0891b2",
   badgeTitle: "Raumforscher",
   lehrplanLabel: "LB 3 (I) · LB 2 (II/III)",
-  lessons: [symmetrischeKoerper, axialschnitte, raumkoordinaten],
+  lessons: [symmetrischeKoerper, axialschnitte, raumkoordinaten, koerperKoordinaten, schraegbilder, wahreGroesse],
 };
