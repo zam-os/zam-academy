@@ -2,10 +2,11 @@
 // Runs against the same pinned published zam-core as the Academy's cell checks.
 // Uses only disposable libraries. No learner library or configuration is opened.
 //
-// The mapping is still a proposal (approved: null), so the committed cell
-// declares no replaces and changes no history. The A and B rows are only
-// rehearsed: an in-memory copy of the cell gets exactly their replaces and
-// is installed into temporary libraries, never written or published.
+// Thomas approved the mapping (replaces-de-by.json, approved 2026-10-23), so
+// the committed cell declares the replaces of the 9 A and 8 B rows: their
+// histories move unchanged, the 7 C cards stay active. While a mapping is
+// still a proposal (approved: null), the committed cell must declare no
+// replaces and the A and B rows are only rehearsed on an in-memory copy.
 //
 //   ZAM_CORE=<file URL of zam-core's dist/index.js> node mathematik-realschule-8/scripts/validate-migration.mjs
 import assert from "node:assert/strict";
@@ -19,7 +20,7 @@ const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const zam = await import(process.env.ZAM_CORE ?? "zam-core");
 const cell = JSON.parse(readFileSync(join(root, "cell.json"), "utf8"));
 const mapping = JSON.parse(readFileSync(join(root, "replaces-de-by.json"), "utf8"));
-assert.equal(mapping.approved, null, "this check describes the unapproved proposal; an approved mapping ships its replaces");
+const approved = mapping.approved !== null;
 const legacy = mapping.sources.map((source) => {
   // The repository stores LF; a Windows checkout may hold CRLF.
   const bytes = Buffer.from(readFileSync(join(root, source.file), "utf8").replace(/\r\n/g, "\n"), "utf8");
@@ -31,21 +32,31 @@ const legacy = mapping.sources.map((source) => {
   return JSON.parse(bytes.toString("utf8"));
 });
 const items = cell.atoms.flatMap((atom) => atom.practice_items);
-assert.ok(items.every((item) => !item.replaces?.length), "the committed cell declares no replaces");
-assert.ok(!cell.retired_items?.length, "the committed cell retires nothing");
-
+assert.ok(!cell.retired_items?.length, "the C cards stay active: the cell retires nothing");
 const moved = mapping.rows.filter((row) => row.category !== "C");
-const proposal = structuredClone(cell);
-proposal.version = `${cell.version}.1`;
-const proposedBySlug = new Map(proposal.atoms.flatMap((atom) => atom.practice_items).map((item) => [item.slug, item]));
+if (approved) {
+  const declared = items.flatMap((item) => (item.replaces ?? []).map((id) => `${item.slug} ${id}`)).sort();
+  assert.deepEqual(declared, moved.map((row) => `${row.academy_slug} ${row.de_by_id}`).sort(), "the cell declares exactly the approved replaces");
+} else {
+  assert.ok(items.every((item) => !item.replaces?.length), "an unapproved mapping ships no replaces");
+}
+
+// The cell that moves the histories: the committed one once approved,
+// otherwise an in-memory copy with exactly the A and B replaces.
+const moving = structuredClone(cell);
+const movingBySlug = new Map(moving.atoms.flatMap((atom) => atom.practice_items).map((item) => [item.slug, item]));
 const targets = new Map();
 for (const row of moved) {
-  const item = proposedBySlug.get(row.academy_slug);
+  const item = movingBySlug.get(row.academy_slug);
   assert.ok(item, `${row.de_by_id}: successor ${row.academy_slug} exists in the cell`);
-  assert.ok(!item.replaces, `${row.academy_slug} takes one history only`);
-  item.replaces = [row.de_by_id];
+  if (!approved) {
+    assert.ok(!item.replaces, `${row.academy_slug} takes one history only`);
+    item.replaces = [row.de_by_id];
+  }
   targets.set(row.de_by_id, item.id);
 }
+// A later version of the cell, for the collision check.
+const later = { ...moving, version: `${cell.version}.1` };
 
 const dir = mkdtempSync(join(tmpdir(), "zam-m8-migration-"));
 const userId = cell.atoms[0].id;
@@ -78,10 +89,13 @@ async function open(name) {
 }
 
 try {
-  for (const [name, tile, expected] of [
-    ["committed cell", cell, new Map()],
-    ["rehearsal of the A and B rows", proposal, targets],
-  ]) {
+  const scenarios = approved
+    ? [["approved cell", cell, targets]]
+    : [
+        ["committed cell", cell, new Map()],
+        ["rehearsal of the A and B rows", moving, targets],
+      ];
+  for (const [name, tile, expected] of scenarios) {
     const db = await open(name.replace(/\W+/g, "-"));
     try {
       await reviewed(db, mapping.rows.map((row) => row.de_by_id));
@@ -157,13 +171,22 @@ try {
     }
   }
 
-  const db = await open("collision");
+  // A learner who already holds cards on an old id and on its successor (the
+  // cell was installed before the old cell, or before the approval) gets no
+  // automatic merge from the next install.
+  const db = await zam.openDatabase({ dbPath: join(dir, "collision.db"), initialize: true, useConfiguredCloud: false });
   try {
-    await zam.installKvtTile(db, cell);
+    if (approved) {
+      await zam.installKvtTile(db, cell);
+      for (const tile of legacy) await zam.installKvtTile(db, tile);
+    } else {
+      for (const tile of legacy) await zam.installKvtTile(db, tile);
+      await zam.installKvtTile(db, cell);
+    }
     const row = moved.find((entry) => entry.category === "A");
-    await reviewed(db, [row.de_by_id, proposedBySlug.get(row.academy_slug).id]);
+    await reviewed(db, [row.de_by_id, targets.get(row.de_by_id)]);
     const before = await snapshot(db);
-    await assert.rejects(() => zam.installKvtTile(db, proposal), /holds a card on both|merge/i);
+    await assert.rejects(() => zam.installKvtTile(db, approved ? later : moving), /holds a card on both|merge/i);
     assert.deepEqual(await snapshot(db), before, "a collision must leave both histories intact");
     console.log("ok   Mathematik 8: a learner with cards on an old id and its successor refuses an automatic merge; both histories stay unchanged");
   } finally {

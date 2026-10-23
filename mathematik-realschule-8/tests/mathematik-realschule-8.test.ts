@@ -385,7 +385,7 @@ describe("ZAM-Zelle (cell.json)", () => {
     }
   });
 
-  describe("keeps the old de-by Realschule 8 mathematics cells as a proposal", () => {
+  describe("takes over the three de-by Realschule 8 mathematics cells as Thomas approved", () => {
     interface MappingRow {
       de_by_cell: string;
       de_by_id: string;
@@ -411,12 +411,27 @@ describe("ZAM-Zelle (cell.json)", () => {
     };
     const legacy = table.sources.map((source) => ({ source, tile: SNAPSHOTS[source.file] }));
 
-    it("awaits Thomas's approval: no date, no quoted approval, no replaces or retirements in the cell", () => {
-      expect(table.approved).toBeNull();
-      expect(table.source).toBeNull();
-      expect(table.status).toBe("proposal-only");
-      for (const item of items) expect(item.replaces ?? [], item.slug).toEqual([]);
+    it("is approved only with Thomas's words and date, or still awaits approval without any replaces", () => {
+      if (table.approved === null) {
+        expect(table.source).toBeNull();
+        for (const item of items) expect(item.replaces ?? [], item.slug).toEqual([]);
+      } else {
+        expect(table.approved).toMatch(/^\d{4}-\d{2}-\d{2}$/);
+        expect(table.status).toBe("approved");
+        expect(table.source, "an approval quotes Thomas and where he gave it").toMatch(/Thomas/);
+      }
+      // The C cards stay active: nothing is retired.
       expect(cell.retired_items ?? []).toEqual([]);
+    });
+
+    it("declares exactly the approved replaces, one de-by item per card", () => {
+      if (table.approved === null) return;
+      const declared = items.flatMap((item) => (item.replaces ?? []).map((id) => [item.slug, id] as const));
+      expect(declared.map(([, id]) => id).sort()).toEqual(table.rows.filter((row) => row.category !== "C").map((row) => row.de_by_id).sort());
+      for (const item of items) expect((item.replaces ?? []).length, `${item.slug} replaces at most one item`).toBeLessThanOrEqual(1);
+      for (const row of table.rows.filter((entry) => entry.category !== "C")) {
+        expect(bySlug.get(row.academy_slug ?? "")?.replaces, `${row.de_by_id} → ${row.academy_slug}`).toEqual([row.de_by_id]);
+      }
     });
 
     it("keeps snapshots of all three old cells", () => {
