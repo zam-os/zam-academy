@@ -564,6 +564,12 @@ function pointSymmetryView(v: LabValues): string {
   const verdict = !real ? ["zählt nicht (0° oder 360°)", "lab-text-small"] : fits ? ["ja", "lab-text lab-text-ok"] : ["nein", "lab-text lab-text-bad"];
   out += text(PX, 176, verdict[0], verdict[1]);
   if (pattern === 2 && arm > 0 && !fits) out += text(PX, 194, "Die Farben passen nicht.", "lab-text-small");
+  if (pattern === 2 && n % 2 === 1) {
+    // an odd number of arms cannot alternate all the way round: arm n and arm 1 have the same colour
+    out += text(PX, 224, `Arm ${n} und Arm 1 haben`, "lab-text-small");
+    out += text(PX, 240, "dieselbe Farbe: Diese Figur", "lab-text-small");
+    out += text(PX, 256, "ist nicht drehsymmetrisch.", "lab-text-small");
+  }
   out += text(PX, 300, "Ziehe die Spitze 1'.", "lab-text-small");
   out += handle("tip", tipImage.x, tipImage.y, "Spitze des gedrehten Arms 1 (Drehwinkel)", "lab-handle lab-handle-b");
   out += "</svg>";

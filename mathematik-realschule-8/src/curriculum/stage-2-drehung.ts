@@ -320,7 +320,7 @@ const drehung: Lesson = {
               }),
             ],
             steps: [
-              `Zwei Drehungen um dasselbe Zentrum: φ = φ<sub>1</sub> + φ<sub>2</sub> = ${deg(p1)} + ${paren(p2)}° = ${deg(total)}.`,
+              `Zwei Drehungen um dasselbe Zentrum: φ = φ<sub>1</sub> + φ<sub>2</sub> = ${deg(p1)} + ${p2 < 0 ? `(${deg(p2)})` : deg(p2)} = ${deg(total)}.`,
               `${deg(total)} ${total > 0 ? "−" : "+"} 360° = ${deg(inRange)} beschreibt dieselbe Drehung, ${dirWord(inRange)}.`,
               `<strong>φ = ${deg(total)}, gleichwertig φ = ${deg(inRange)}</strong>`,
             ],
@@ -451,7 +451,7 @@ const drehung: Lesson = {
               ];
         const midSlip = "Der Mittelpunkt von [AA'] liegt zwar auf der Mittelsenkrechten, ist aber nicht das Drehzentrum: Schneide sie mit der Mittelsenkrechten von [BB'].";
         return {
-          prompt: `Eine Drehung bildet das Dreieck ABC mit A${pt(A)}, B${pt(B)} und C${pt(C)} auf das Dreieck A'B'C' mit A'${pt(A1)}, B'${pt(B1)} und C'${pt(C1)} ab. Bestimme das Drehzentrum Z mithilfe der Mittelsenkrechten und den Drehwinkel φ mit −180° &lt; φ ≤ 180°.`,
+          prompt: `Eine Drehung bildet das Dreieck ABC mit A${pt(A)}, B${pt(B)} und C${pt(C)} auf das Dreieck A'B'C' mit A'${pt(A1)}, B'${pt(B1)} und C'${pt(C1)} ab. Zeichne beide Dreiecke in ein Koordinatensystem, bestimme das Drehzentrum Z mithilfe der Mittelsenkrechten und den Drehwinkel φ mit −180° &lt; φ ≤ 180°.`,
           given: [`A${pt(A)}, B${pt(B)}, C${pt(C)}`, `A'${pt(A1)}, B'${pt(B1)}, C'${pt(C1)}`],
           fields: [
             coord("Z: x =", z.x, phi === 180 ? [] : [{ value: M1.x, hint: midSlip }]),
@@ -683,6 +683,7 @@ const punktspiegelung: Lesson = {
       <tr><td>regelmäßiges Sechseck, Schneeflocke</td><td>60°</td><td>ja</td></tr>
       <tr><td>Parallelogramm, Rechteck, Raute; die Buchstaben N, S, Z</td><td>180°</td><td>ja</td></tr>
     </table>
+    <p>Punktsymmetrisch sind auch die Druckbuchstaben H, I, O und X: Nach einer Drehung um 180° sehen sie wieder genauso aus. Die Buchstaben A, T und V sind nur achsensymmetrisch.</p>
     <p>Auch das Muster zählt: Ein Rosettenfenster mit 12 Feldern, die abwechselnd rot und blau sind, deckt sich erst nach zwei Feldern wieder, also nach 360° : 6 = 60°. Das Symmetriezentrum einer punktsymmetrischen Figur ist der Mittelpunkt der Strecke zwischen zwei zugeordneten Punkten, beim Parallelogramm also der Schnittpunkt der Diagonalen (Etappe 1: Im Parallelogramm halbieren sich die Diagonalen).</p>
     <p><strong>Typische Fehler:</strong> punktsymmetrisch und achsensymmetrisch verwechseln (das gleichseitige Dreieck hat drei Symmetrieachsen, ist aber nicht punktsymmetrisch), 360° als Drehwinkel mitzählen, beim Spiegeln am Ursprung statt an Z spiegeln oder den Gegenvektor an P statt an Z anhängen.</p>
     <div class="merke"><strong>Merke:</strong> Die Punktspiegelung an Z ist die Drehung um Z mit 180°: Z ist der Mittelpunkt von [PP'], und ${vn("ZP'")} = −${vn("ZP")}. Eine Figur aus n gleichen Teilen um Z ist drehsymmetrisch mit dem kleinsten Drehwinkel 360° : n; sie ist punktsymmetrisch, wenn 180° ein Vielfaches dieses Winkels ist.</div>
