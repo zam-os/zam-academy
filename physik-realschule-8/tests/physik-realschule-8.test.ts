@@ -520,6 +520,16 @@ describe("ZAM-Zelle (cell.json)", () => {
     expect(cell.atoms.flatMap((atom) => atom.practice_items).filter((item) => item.question_segments !== undefined || item.concept_segments !== undefined).length).toBe(12);
   });
 
+  it("asks about switches in parallel to each other, not parallel to the lamp (a switch across a lamp short-circuits it)", () => {
+    const items = cell.atoms.flatMap((atom) => atom.practice_items);
+    const oder = items.find((item) => item.slug === "ph8-schalter-parallel-oder");
+    expect(oder?.question).toBe("Zwei Schalter liegen parallel zueinander und zusammen in Reihe mit der Lampe. Wann leuchtet die Lampe?");
+    // "parallel zu(r) Lampe" is right only for a meter, which short-circuits it.
+    for (const item of items) {
+      if (/parallel zu(r|m)? (einer |der )?Lampe/.test(item.question ?? "")) expect(item.question, item.slug).toMatch(/Amperemeter/);
+    }
+  });
+
   it("cites for every card the lesson of its atom, and binds the atom to its stage, Zweige and Lernbereich", () => {
     for (const atom of cell.atoms) {
       const lessonId = lessonOf(atom.source_link);
