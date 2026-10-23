@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import {
   COMBOS,
+  CONGRUENCE_REASONS,
   COUNT_OPTIONS,
   EXIST_OPTIONS,
   FALL_OPTIONS,
@@ -195,6 +196,7 @@ describe("Aufgaben der Etappe 1 rechnen richtig", () => {
       expect(task.given.join(" ")).not.toContain(`${"αβγ"[missing]} =`);
     }
     const contexts = [0, 0, 0];
+    const possible = [0, 0];
     for (const task of tasks("dv-1-dreiecksexistenz", "seiten-winkel", 2)) {
       const m = meta(task);
       contexts[m.ctx] += 1;
@@ -210,12 +212,20 @@ describe("Aufgaben der Etappe 1 rechnen richtig", () => {
         const largest = [m.x, m.y, z].indexOf(Math.max(m.x, m.y, z));
         expect(picked(task, 1)).toBe(["[BC]", "[CA]", "[AB]"][largest]);
       } else {
-        expect(m.x + m.y).toBeGreaterThanOrEqual(180);
         expect(num(task, 0)).toBe(m.x + m.y);
-        expect(picked(task, 1)).toContain("gibt es nicht");
+        if (m.x + m.y >= 180) {
+          expect(picked(task, 1)).toContain("gibt es nicht");
+          possible[1] += 1;
+        } else {
+          expect(picked(task, 1)).toBe(`Das Beet gibt es: Für den Winkel bei C bleiben ${180 - m.x - m.y}° übrig.`);
+          expect(180 - m.x - m.y).toBeGreaterThanOrEqual(5);
+          possible[0] += 1;
+        }
       }
     }
     expect(contexts.every((n) => n > 30), `${contexts}`).toBe(true);
+    // plans to check: both verdicts occur, so "prüfe" gives nothing away
+    expect(Math.min(...possible), `${possible}`).toBeGreaterThan(15);
   });
 
   it("1.2 the case of three pieces, recomputed from the given lines", () => {
@@ -227,7 +237,6 @@ describe("Aufgaben der Etappe 1 rechnen richtig", () => {
       const angleNames = Object.keys(angles);
       let kind: number;
       let exists: boolean;
-      let missing = Number.NaN;
       if (sideNames.length === 3) {
         kind = 0;
         exists = sideCheck(sides.a, sides.b, sides.c).meet === "two";
@@ -244,12 +253,11 @@ describe("Aufgaben der Etappe 1 rechnen richtig", () => {
         const sum = angles[angleNames[0]] + angles[angleNames[1]];
         exists = sum < 180;
         kind = angleNames.some((w) => OPPOSITE[w] === sideNames[0]) ? 3 : 2;
-        if (kind === 3 && exists) missing = 180 - sum;
       }
       expect(picked(task, 0)).toBe(FALL_OPTIONS[kind]);
       expect(picked(task, 1)).toBe(COUNT_OPTIONS[exists ? 0 : 1]);
-      if (Number.isNaN(missing)) expect(task.fields).toHaveLength(2);
-      else expect(num(task, 2)).toBe(missing);
+      // the same two questions in every case: no extra field gives the case away
+      expect(task.fields).toHaveLength(2);
       kinds[kind] += 1;
       if (!exists) none += 1;
     }
@@ -259,10 +267,16 @@ describe("Aufgaben der Etappe 1 rechnen richtig", () => {
   });
 
   it("1.2 a side and two angles in a real situation: the case, the missing angle and the length on paper", () => {
+    const seen = new Set<string>();
     for (const task of tasks("dv-2-dreieckskonstruktion", "fall", 2)) {
       const { ctx, L, x, y, angle, drawn } = meta(task);
       const c = SCALE_CONTEXTS[ctx];
-      expect(picked(task, 0)).toBe(FALL_OPTIONS[c.kind]);
+      // the case from the given angles: the second one at B (WSW) or at C (SWW)
+      const atB = task.given.some((g) => g.startsWith("∢CBA"));
+      const atC = task.given.some((g) => g.startsWith("∢ACB"));
+      expect(atB !== atC).toBe(true);
+      expect(picked(task, 0)).toBe(atB ? "WSW" : "SWW");
+      seen.add(`${ctx}:${atB ? "WSW" : "SWW"}`);
       expect(angle).toBe(180 - x - y);
       expect(num(task, 1)).toBe(180 - x - y);
       expect(angle).toBeGreaterThanOrEqual(30);
@@ -273,6 +287,8 @@ describe("Aufgaben der Etappe 1 rechnen richtig", () => {
       expect(drawn).toBeLessThanOrEqual(10);
       expect(Math.abs(drawn * 10 - Math.round(drawn * 10))).toBeLessThan(1e-9);
     }
+    // every context with both cases, so that the context does not give the case away
+    expect(seen.size).toBe(6);
   });
 
   it("1.2 the next two construction steps are the ones of the Konstruktionsbeschreibung", () => {
@@ -295,7 +311,8 @@ describe("Aufgaben der Etappe 1 rechnen richtig", () => {
   });
 
   it("1.2 SsW conditions: obtuse angles need the longest side, two solutions only opposite the shorter side", () => {
-    const variants = [0, 0, 0];
+    const variants = [0, 0];
+    const claims = [0, 0];
     for (const task of tasks("dv-2-dreieckskonstruktion", "schritt", 2)) {
       const m = meta(task);
       variants[m.variant] += 1;
@@ -306,17 +323,17 @@ describe("Aufgaben der Etappe 1 rechnen richtig", () => {
         expect(ssaLengths(m.c, aMin, m.alpha)).toHaveLength(1);
         expect(ssaLengths(m.c, aMin - 1, m.alpha)).toHaveLength(0);
         expect(picked(task, 1)).toBe("genau eines");
-      } else if (m.variant === 1) {
-        expect(m.a).toBeLessThan(m.c);
-        expect(ssaLengths(m.c, m.a, m.alpha)).toHaveLength(2);
-        expect(picked(task, 0)).toContain("Zwei Dreiecke sind möglich");
       } else {
-        expect(m.a).toBeGreaterThan(m.c);
-        expect(ssaLengths(m.c, m.a, m.alpha)).toHaveLength(1);
-        expect(num(task, 0)).toBe(1);
+        // the claim "two triangles" is right exactly when the construction gives two
+        const count = ssaLengths(m.c, m.a, m.alpha).length;
+        expect(count).toBe(m.two ? 2 : 1);
+        expect(picked(task, 0).startsWith(count === 2 ? "Das ist möglich" : "Das geht nicht")).toBe(true);
+        expect(picked(task, 1)).toBe(m.a < m.c ? "der kürzeren der beiden Seiten" : "der längeren der beiden Seiten");
+        claims[m.two] += 1;
       }
     }
     expect(variants.every((n) => n > 40), `${variants}`).toBe(true);
+    expect(claims.every((n) => n > 25), `${claims}`).toBe(true);
   });
 
   it("1.3 which theorem: recomputed from the given equal pieces", () => {
@@ -337,28 +354,27 @@ describe("Aufgaben der Etappe 1 rechnen richtig", () => {
         } else throw new Error(line);
       }
       const names = Object.keys(sides);
-      let expected: number;
-      if (names.length === 3) expected = 0;
-      else if (angles.length === 3) expected = 4;
-      else if (names.length === 1) expected = 2;
+      // the case: 0 SSS, 1 SWS, 2 WSW, 3 SWW, 4 SsW, 5 SSW (angle opposite the shorter side), 6 WWW
+      let kind: number;
+      if (names.length === 3) kind = 0;
+      else if (angles.length === 3) kind = 6;
+      else if (names.length === 1) kind = angles.every((vertex) => names[0].includes(vertex)) ? 2 : 3;
       else {
         const vertex = angles[0];
-        if (names.every((n) => n.includes(vertex))) expected = 1;
+        if (names.every((n) => n.includes(vertex))) kind = 1;
         else {
           const opposite = names.find((n) => !n.includes(vertex))!;
           const other = names.find((n) => n !== opposite)!;
-          expected = sides[opposite] > sides[other] ? 3 : 4;
+          kind = sides[opposite] > sides[other] ? 4 : 5;
         }
       }
+      const expected = [0, 1, 2, 2, 3, 4, 4][kind];
       expect(picked(task, 0), task.given.join("; ")).toBe(THEOREM_OPTIONS[expected]);
+      expect(picked(task, 1), task.given.join("; ")).toBe(CONGRUENCE_REASONS[kind]);
+      // the reasons offered mix both kinds, so the second question gives nothing away
+      expect(choice(task, 1).options).toHaveLength(4);
+      expect(task.fields).toHaveLength(2);
       answers[expected] += 1;
-      if (expected === 4) expect(picked(task, 1)).toBe(angles.length === 3 ? "Gleiche Winkel legen die Größe nicht fest." : "Der Winkel liegt der kürzeren Seite gegenüber.");
-      else {
-        // the second question names the corresponding piece: replace A, B, C by D, E, F
-        const label = plain(choice(task, 1).label);
-        const piece = /(\[[A-C]{2}\]|∢[A-C]{3})/.exec(label)![1];
-        expect(picked(task, 1)).toBe(piece.replace(/A/g, "D").replace(/B/g, "E").replace(/C/g, "F"));
-      }
     }
     expect(answers.every((n) => n > 15), `${answers}`).toBe(true);
   });

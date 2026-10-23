@@ -387,25 +387,26 @@ const dreiecksexistenz: Lesson = {
             meta: { ctx: 1, x, y },
           };
         }
-        const x = rng.int(80, 120);
-        const y = rng.int(180 - x, 120);
+        // a plan to check: about half of them are possible, so that "prüfe" does not mean "nein"
+        const possible = rng.next() < 0.45;
+        const x = possible ? rng.int(60, 110) : rng.int(80, 120);
+        const y = possible ? rng.int(Math.max(40, 120 - x), 175 - x) : rng.int(180 - x, 120);
         const sum = x + y;
+        const yes = `Das Beet gibt es: Für den Winkel bei C bleiben ${180 - sum}° übrig.`;
+        const no = "Das Beet gibt es nicht: Zwei Winkel ergeben schon 180° oder mehr.";
+        const wrongYes = possible ? "Das Beet gibt es nur, wenn die Seiten lang genug sind." : "Das Beet gibt es: Der Winkel bei C ist eben sehr klein.";
         return {
           prompt: `Mia hat in den Plan eines dreieckigen Beets ABC die Winkel ∢BAC = ${x}° und ∢CBA = ${y}° eingetragen. Prüfe, ob es so ein Beet geben kann.`,
           given: [`∢BAC = ${x}°`, `∢CBA = ${y}°`],
-          fields: [
-            numberField("∢BAC + ∢CBA =", sum, "°", 0),
-            shuffledChoice(rng, "Ergebnis:", "Das Beet gibt es nicht: Zwei Winkel ergeben schon 180° oder mehr.", [
-              "Das Beet gibt es: Der Winkel bei C ist eben sehr klein.",
-              "Das Beet gibt es, wenn die Seiten lang genug sind.",
-            ]),
-          ],
+          fields: [numberField("∢BAC + ∢CBA =", sum, "°", 0), shuffledChoice(rng, "Ergebnis:", possible ? yes : no, possible ? [no, wrongYes] : [wrongYes, "Das Beet gibt es nur, wenn die Seiten lang genug sind."])],
           steps: [
             `${x}° + ${y}° = ${sum}°`,
-            sum === 180
-              ? "Für den Winkel bei C bliebe 0° übrig: Die freien Schenkel in A und B wären parallel."
-              : "Schon die beiden Winkel sind zusammen größer als 180°: Die freien Schenkel laufen auseinander.",
-            `<strong>${sum}° ≥ 180°: Das Beet gibt es nicht.</strong>`,
+            possible
+              ? `Das ist weniger als 180°: Für den Winkel bei C bleiben 180° − ${sum}° = ${180 - sum}°. Die Seitenlängen ändern daran nichts.`
+              : sum === 180
+                ? "Für den Winkel bei C bliebe 0° übrig: Die freien Schenkel in A und B wären parallel."
+                : "Schon die beiden Winkel sind zusammen größer als 180°: Die freien Schenkel laufen auseinander.",
+            possible ? `<strong>${sum}° &lt; 180°: Das Beet gibt es, ∢ACB = ${180 - sum}°.</strong>` : `<strong>${sum}° ≥ 180°: Das Beet gibt es nicht.</strong>`,
           ],
           meta: { ctx: 2, x, y },
         };
@@ -520,11 +521,11 @@ function makeCase(rng: Rng): CasePieces {
   };
 }
 
-/** The scale contexts of 1.2, Level 2: a side and two angles of a real triangle. */
+/** The scale contexts of 1.2, Level 2: a side of a real triangle in m or km and the scale of the drawing. */
 export const SCALE_CONTEXTS = [
-  { kind: 3, lengths: [30, 35, 40, 45, 50, 60], unit: "m", scale: 1000 },
-  { kind: 2, lengths: [2.4, 3, 3.6, 4, 4.5], unit: "m", scale: 50 },
-  { kind: 3, lengths: [1.2, 1.5, 1.8, 2], unit: "km", scale: 25000 },
+  { lengths: [30, 35, 40, 45, 50, 60], unit: "m", scale: 1000 },
+  { lengths: [2.4, 3, 3.6, 4, 4.5], unit: "m", scale: 50 },
+  { lengths: [1.2, 1.5, 1.8, 2], unit: "km", scale: 25000 },
 ];
 
 /** Steps 3 and 4 of a construction, each with its typical wrong alternatives. */
@@ -675,24 +676,18 @@ const dreieckskonstruktion: Lesson = {
         if (level === 1) {
           const t = makeCase(rng);
           const shown = rng.shuffle(t.pieces);
+          // the same two questions for every case, so that no extra field gives the case away
           const fields: AnswerField[] = [choiceField("Fall:", FALL_OPTIONS, t.kind), choiceField("Anzahl der Dreiecke:", COUNT_OPTIONS, t.exists ? 0 : 1)];
-          if (t.missing) {
-            fields.push(
-              numberField(`${t.missing.name} =`, t.missing.value, "°", 0, {
-                slips: [{ value: 360 - t.missing.from[0] - t.missing.from[1], hint: "Im Dreieck ist die Winkelsumme 180°." }],
-              }),
-            );
-          }
           return {
-            prompt: `Ein Dreieck ABC soll aus diesen Stücken konstruiert werden: ${listText(shown)}. Welcher Fall liegt vor, und wie viele Dreiecke gibt es?${t.missing ? ` Berechne außerdem den Winkel ${t.missing.name}, den du für die Konstruktion an der gegebenen Seite brauchst.` : ""}`,
+            prompt: `Ein Dreieck ABC soll aus diesen Stücken konstruiert werden: ${listText(shown)}. Welcher Fall liegt vor, und wie viele Dreiecke gibt es?`,
             given: shown,
             formulaHint: "Liegt der Winkel zwischen zwei Seiten (SWS), an den Enden einer Seite (WSW) oder einer Seite gegenüber (SWW, SsW)? SSS: längste Seite &lt; Summe; WSW: die beiden Winkel zusammen &lt; 180°.",
             fields,
             steps: [
               t.reason,
               t.condition,
-              ...(t.missing ? [`${t.missing.name} = 180° − ${t.missing.from[0]}° − ${t.missing.from[1]}° = ${t.missing.value}°; damit kennst du beide Winkel an der Seite und konstruierst nach WSW.`] : []),
-              `<strong>${FALL_OPTIONS[t.kind]}; ${t.exists ? "genau ein Dreieck" : "kein Dreieck"}${t.missing ? `; ${t.missing.name} = ${t.missing.value}°` : ""}</strong>`,
+              ...(t.missing ? [`Für die Konstruktion rechnest du ${t.missing.name} = 180° − ${t.missing.from[0]}° − ${t.missing.from[1]}° = ${t.missing.value}° und konstruierst nach WSW.`] : []),
+              `<strong>${FALL_OPTIONS[t.kind]}; ${t.exists ? "genau ein Dreieck" : "kein Dreieck"}</strong>`,
             ],
             meta: { kind: t.kind, exists: t.exists ? 1 : 0, r: t.r, missing: t.missing?.value ?? -1 },
           };
@@ -700,25 +695,32 @@ const dreieckskonstruktion: Lesson = {
         const ctx = rng.int(0, 2);
         const c = SCALE_CONTEXTS[ctx];
         const L = rng.pick(c.lengths);
-        const x = ctx === 1 ? rng.int(50, 80) : rng.int(38, 72);
-        const y = ctx === 1 ? rng.int(35, Math.min(75, 150 - x)) : rng.int(45, Math.min(90, 150 - x));
-        // ctx 0 and 2: x at A, y at C (opposite [AB]); ctx 1: x at A, y at B
+        // the second given angle lies at B (WSW) or at C, opposite [AB] (SWW), in every context
+        const kind = rng.next() < 0.5 ? 2 : 3;
+        const x = rng.int(38, 75);
+        const y = rng.int(40, Math.min(90, 150 - x));
         const angle = 180 - x - y;
         const lengthCm = c.unit === "km" ? L * 100000 : L * 100;
         const drawn = lengthCm / c.scale;
         const scaleText = `1 : ${fmt(c.scale, 0)}`;
+        const second = [
+          kind === 2 ? `bei B die Grenzen [AB] und [BC] einen Winkel von ${y}°` : `bei C treffen sich die Grenzen [AC] und [BC] unter ${y}°`,
+          kind === 2 ? `an der Ecke B die Kante [BC] einen Winkel von ${y}°` : `an der oberen Ecke C treffen sich die Kanten [AC] und [BC] unter ${y}°`,
+          kind === 2 ? `bei B die Wege nach A und nach C einen Winkel von ${y}°` : `bei C treffen sich die Wege von A und von B unter ${y}°`,
+        ][ctx];
+        const question = "Welcher Fall liegt vor? Berechne den dritten Winkel. Wie lang wird [AB] in der Zeichnung?";
         const prompts = [
-          `Ein dreieckiges Grundstück ABC grenzt mit der ${fmt(L)} m langen Seite [AB] an eine Straße. Bei A bilden die Grenzen [AB] und [AC] einen Winkel von ${x}°, bei C treffen sich die Grenzen [AC] und [BC] unter ${y}°. Das Grundstück soll im Maßstab ${scaleText} konstruiert werden. Welcher Fall liegt vor? Welchen Winkel musst du noch berechnen, und wie lang wird [AB] in der Zeichnung?`,
-          `Ein dreieckiges Sonnensegel ABC hat eine ${fmt(L)} m lange Unterkante [AB]. An der Ecke A schließt die Kante [AC] mit der Unterkante einen Winkel von ${x}° ein, an der Ecke B die Kante [BC] einen Winkel von ${y}°. Lena zeichnet das Segel im Maßstab ${scaleText}. Welcher Fall liegt vor? Wie groß wird der Winkel bei C, und wie lang zeichnet sie [AB]?`,
-          `Drei Hütten A, B und C sind durch gerade Wege verbunden. Der Weg von A nach B ist ${fmt(L)} km lang. Bei A bilden die Wege nach B und nach C einen Winkel von ${x}°, bei C treffen sich die Wege von A und von B unter ${y}°. Für eine Wanderkarte im Maßstab ${scaleText} wird das Dreieck konstruiert. Welcher Fall liegt vor? Welchen Winkel brauchst du noch, und wie lang wird der Weg [AB] auf der Karte?`,
+          `Ein dreieckiges Grundstück ABC grenzt mit der ${fmt(L)} m langen Seite [AB] an eine Straße. Bei A bilden die Grenzen [AB] und [AC] einen Winkel von ${x}°, ${second}. Das Grundstück soll im Maßstab ${scaleText} gezeichnet werden. ${question}`,
+          `Ein dreieckiges Sonnensegel ABC hat eine ${fmt(L)} m lange Unterkante [AB]. An der Ecke A schließt die Kante [AC] mit der Unterkante einen Winkel von ${x}° ein, ${second}. Lena zeichnet das Segel im Maßstab ${scaleText}. ${question}`,
+          `Drei Hütten A, B und C sind durch gerade Wege verbunden. Der Weg von A nach B ist ${fmt(L)} km lang. Bei A bilden die Wege nach B und nach C einen Winkel von ${x}°, ${second}. Für eine Wanderkarte im Maßstab ${scaleText} wird das Dreieck konstruiert. ${question}`,
         ];
-        const angleName = ctx === 1 ? "∢ACB" : "∢CBA";
+        const angleName = kind === 2 ? "∢ACB" : "∢CBA";
         const unitWord = c.unit === "km" ? "km" : "m";
         return {
           prompt: prompts[ctx],
-          given: ctx === 1 ? [`AB = ${fmt(L)} m`, `∢BAC = ${x}°`, `∢CBA = ${y}°`, `Maßstab ${scaleText}`] : [`AB = ${fmt(L)} ${unitWord}`, `∢BAC = ${x}°`, `∢ACB = ${y}°`, `Maßstab ${scaleText}`],
+          given: [`AB = ${fmt(L)} ${unitWord}`, `∢BAC = ${x}°`, kind === 2 ? `∢CBA = ${y}°` : `∢ACB = ${y}°`, `Maßstab ${scaleText}`],
           fields: [
-            choiceField("Fall:", FALL_OPTIONS, c.kind),
+            choiceField("Fall:", FALL_OPTIONS, kind),
             numberField(`${angleName} =`, angle, "°", 0, { slips: [{ value: 360 - x - y, hint: "Im Dreieck ist die Winkelsumme 180°." }] }),
             numberField("[AB] in der Zeichnung:", drawn, "cm", 1, {
               slips: [
@@ -728,16 +730,16 @@ const dreieckskonstruktion: Lesson = {
             }),
           ],
           steps: [
-            ctx === 1
+            kind === 2
               ? "Gegeben sind die Seite [AB] und die beiden Winkel an ihren Enden A und B: WSW."
               : "Gegeben sind die Seite [AB], der Winkel bei A an dieser Seite und der Winkel bei C, der ihr gegenüberliegt: SWW.",
-            ctx === 1
-              ? `Zur Kontrolle: ∢ACB = 180° − ${x}° − ${y}° = ${angle}°.`
-              : `Für die Konstruktion brauchst du auch den Winkel bei B an [AB]: ∢CBA = 180° − ${x}° − ${y}° = ${angle}°. Dann konstruierst du nach WSW.`,
+            kind === 2
+              ? `Der dritte Winkel liegt bei C: ∢ACB = 180° − ${x}° − ${y}° = ${angle}°.`
+              : `Der dritte Winkel liegt bei B, an [AB]: ∢CBA = 180° − ${x}° − ${y}° = ${angle}°. Mit ihm konstruierst du nach WSW.`,
             `Maßstab ${scaleText}: ${fmt(L)} ${unitWord} = ${fmt(lengthCm, 0)} cm, und ${fmt(lengthCm, 0)} cm : ${fmt(c.scale, 0)} = ${cm(drawn)}.`,
-            `<strong>${FALL_OPTIONS[c.kind]}; ${angleName} = ${angle}°; [AB] wird ${cm(drawn)} lang.</strong>`,
+            `<strong>${FALL_OPTIONS[kind]}; ${angleName} = ${angle}°; [AB] wird ${cm(drawn)} lang.</strong>`,
           ],
-          meta: { ctx, L, x, y, angle, drawn },
+          meta: { ctx, kind, L, x, y, angle, drawn },
         };
       },
     },
@@ -804,51 +806,40 @@ const dreieckskonstruktion: Lesson = {
             meta: { variant: 0, c, alpha, aMin },
           };
         }
-        if (roll < 0.7) {
-          const { c, a, alpha } = draw(
-            () => {
-              const alpha = multiple(rng, 25, 60, 5);
-              const c = rng.stepped(5, 9, 0.5);
-              return { c, a: rng.stepped(2, c - 0.5, 0.5), alpha };
-            },
-            (t) => t.a > t.c * Math.sin((t.alpha * Math.PI) / 180) + 0.3 && t.a < t.c - 0.25 && ssaLengths(t.c, t.a, t.alpha).length === 2,
-            { c: 7, a: 5, alpha: 40 },
-          );
-          return {
-            prompt: `Lena soll ein Dreieck ABC mit c = ${cm(c)}, a = ${cm(a)} und α = ${alpha}° konstruieren. Sie erhält zwei verschiedene Dreiecke und glaubt, sie habe sich verzeichnet. Was stimmt? Und wie müsste a sein, damit es sicher nur ein Dreieck gibt?`,
-            given: [`c = ${cm(c)}`, `a = ${cm(a)}`, `α = ${alpha}°`],
-            fields: [
-              shuffledChoice(rng, "Was stimmt?", "Zwei Dreiecke sind möglich: α liegt der kürzeren Seite a gegenüber.", [
-                "Sie hat sich verzeichnet: Zwei Seiten und ein Winkel ergeben immer genau ein Dreieck.",
-                "Sie hat sich verzeichnet: Weil a kürzer als c ist, gibt es gar kein Dreieck.",
-              ]),
-              choiceField("Sicher eindeutig wäre es, wenn a …", ["länger als c wäre", "kürzer als c wäre"], 0),
-            ],
-            steps: [
-              `α liegt a gegenüber, und a = ${cm(a)} ist kürzer als c = ${cm(c)}.`,
-              "Der Kreis um B mit dem Radius a kann den freien Schenkel von α dann zweimal schneiden: zwei Dreiecke ABC₁ und ABC₂, die nicht deckungsgleich sind.",
-              "Ist a länger als c, liegt α der längeren Seite gegenüber (SsW), und der Kreis schneidet den Schenkel nur einmal.",
-              "<strong>Lena hat richtig gezeichnet; eindeutig wäre es mit a länger als c.</strong>",
-            ],
-            meta: { variant: 1, c, a, alpha },
-          };
-        }
-        const alpha = multiple(rng, 30, 120, 5);
-        const c = rng.stepped(3, 7, 0.5);
-        const a = c + rng.stepped(0.5, 3, 0.5);
+        // a claim of two triangles: true when α lies opposite the shorter side (checked to give two), false when opposite the longer
+        const two = rng.next() < 0.5;
+        const name = rng.pick(["Lena", "Tim", "Aylin", "Jonas"]);
+        const { c, a, alpha } = two
+          ? draw(
+              () => {
+                const alpha = multiple(rng, 25, 60, 5);
+                const c = rng.stepped(5, 9, 0.5);
+                return { c, a: rng.stepped(2, c - 0.5, 0.5), alpha };
+              },
+              (t) => t.a > t.c * Math.sin((t.alpha * Math.PI) / 180) + 0.3 && t.a < t.c - 0.25 && ssaLengths(t.c, t.a, t.alpha).length === 2,
+              { c: 7, a: 5, alpha: 40 },
+            )
+          : (() => {
+              const c = rng.stepped(3, 7, 0.5);
+              return { c, a: c + rng.stepped(0.5, 3, 0.5), alpha: multiple(rng, 30, 120, 5) };
+            })();
+        const yes = "Das ist möglich: α liegt der kürzeren Seite gegenüber, der Kreis um B kann den Schenkel zweimal schneiden.";
+        const no = "Das geht nicht: α liegt der längeren Seite gegenüber (SsW), es gibt genau ein Dreieck.";
         return {
-          prompt: `Tim behauptet: „Mit c = ${cm(c)}, a = ${cm(a)} und α = ${alpha}° gibt es zwei verschiedene Dreiecke ABC.“ Wie viele Dreiecke gibt es wirklich, und warum?`,
+          prompt: `${name} konstruiert ein Dreieck ABC mit c = ${cm(c)}, a = ${cm(a)} und α = ${alpha}° und erhält zwei verschiedene Dreiecke. Kann das stimmen? Welcher der beiden Seiten liegt α gegenüber?`,
           given: [`c = ${cm(c)}`, `a = ${cm(a)}`, `α = ${alpha}°`],
           fields: [
-            numberField("Anzahl der Dreiecke:", 1, "", 0, { slips: [{ value: 2, hint: "Vergleiche a und c: Welcher Seite liegt α gegenüber, der längeren oder der kürzeren?" }] }),
-            shuffledChoice(rng, "Begründung:", "α liegt der längeren Seite a gegenüber (SsW).", ["α liegt der kürzeren Seite gegenüber.", "Ein Kreis schneidet einen Schenkel immer zweimal."]),
+            shuffledChoice(rng, "Kann das stimmen?", two ? yes : no, two ? [no, "Das geht nicht: Weil a kürzer als c ist, gibt es gar kein Dreieck."] : [yes, "Das ist möglich: Ein Kreis schneidet einen Schenkel immer zweimal."]),
+            choiceField("α liegt gegenüber …", ["der kürzeren der beiden Seiten", "der längeren der beiden Seiten"], two ? 0 : 1),
           ],
           steps: [
-            `α liegt a gegenüber, und a = ${cm(a)} ist länger als c = ${cm(c)}.`,
-            "Der Kreis um B mit dem Radius a schneidet den freien Schenkel von α dann genau einmal (SsW).",
-            "<strong>genau ein Dreieck; Tim irrt sich</strong>",
+            `α liegt a gegenüber, und a = ${cm(a)} ist ${two ? "kürzer" : "länger"} als c = ${cm(c)}.`,
+            two
+              ? "Der Kreis um B mit dem Radius a kann den freien Schenkel von α dann zweimal schneiden: zwei Dreiecke ABC₁ und ABC₂, die nicht deckungsgleich sind."
+              : "Der Kreis um B mit dem Radius a schneidet den freien Schenkel von α dann genau einmal; der zweite Schnittpunkt liegt auf der Verlängerung über A hinaus.",
+            `<strong>${two ? `Das kann stimmen; α liegt der kürzeren Seite gegenüber.` : `Das kann nicht stimmen; α liegt der längeren Seite gegenüber, es gibt genau ein Dreieck.`}</strong>`,
           ],
-          meta: { variant: 2, c, a, alpha },
+          meta: { variant: 1, two: two ? 1 : 0, c, a, alpha },
         };
       },
     },
@@ -860,7 +851,16 @@ const dreieckskonstruktion: Lesson = {
 // 1.3 Die Kongruenzsätze ───────────────────────────────────────────────────
 
 export const THEOREM_OPTIONS = ["SSS", "SWS", "WSW (auch SWW)", "SsW", "nicht entscheidbar"];
-const WHY_NOT = ["Der Winkel liegt der kürzeren Seite gegenüber.", "Gleiche Winkel legen die Größe nicht fest.", "Zwei Seiten allein legen kein Dreieck fest."];
+/** The reason for each case of a congruence pair: 0 SSS, 1 SWS, 2 WSW, 3 SWW, 4 SsW, 5 SSW (shorter side), 6 WWW. */
+export const CONGRUENCE_REASONS = [
+  "Alle drei Seiten stimmen überein.",
+  "Der Winkel liegt zwischen den beiden Seiten.",
+  "Die beiden Winkel liegen an den Enden der Seite.",
+  "Ein Winkel liegt an der Seite, einer gegenüber; der dritte folgt aus der Winkelsumme.",
+  "Der Winkel liegt der längeren der beiden Seiten gegenüber.",
+  "Der Winkel liegt der kürzeren der beiden Seiten gegenüber.",
+  "Gleiche Winkel legen die Größe nicht fest.",
+];
 
 /** The congruence lab's readout for the theorem the chosen pieces form. */
 function theoremReadout(v: LabValues): string {
@@ -909,7 +909,7 @@ interface CongruencePair {
 
 const DEF = ["D", "E", "F"];
 
-function makeCongruencePair(rng: Rng): CongruencePair & { r: number; ask?: { type: "side" | "angle"; index: number } } {
+function makeCongruencePair(rng: Rng): CongruencePair & { r: number } {
   const roll = rng.next();
   const kind = roll < 0.13 ? 0 : roll < 0.26 ? 1 : roll < 0.39 ? 2 : roll < 0.52 ? 3 : roll < 0.65 ? 4 : roll < 0.84 ? 5 : 6;
   const r = rng.int(0, 2);
@@ -927,7 +927,7 @@ function makeCongruencePair(rng: Rng): CongruencePair & { r: number; ask?: { typ
       (t) => sideCheck(t[0], t[1], t[2]).meet === "two",
       [5, 6, 7],
     );
-    return { kind, r, answer: 0, lines: [0, 1, 2].map((i) => side(i, s[i])), reason: "Alle drei Seiten stimmen überein: SSS.", ask: { type: "angle", index: rng.int(0, 2) } };
+    return { kind, r, answer: 0, lines: [0, 1, 2].map((i) => side(i, s[i])), reason: "Alle drei Seiten stimmen überein: SSS." };
   }
   if (kind === 1) {
     return {
@@ -936,7 +936,7 @@ function makeCongruencePair(rng: Rng): CongruencePair & { r: number; ask?: { typ
       answer: 1,
       lines: [side(1, rng.stepped(3, 9, 0.5)), side(2, rng.stepped(3, 9, 0.5)), angle(0, multiple(rng, 20, 140, 5))],
       reason: `Der Winkel ${angleOf(0)} liegt zwischen den Seiten [${sideOf(1)}] und [${sideOf(2)}]: SWS.`,
-      ask: { type: "side", index: 0 },
+
     };
   }
   if (kind === 2 || kind === 3) {
@@ -944,14 +944,14 @@ function makeCongruencePair(rng: Rng): CongruencePair & { r: number; ask?: { typ
     const q = multiple(rng, 20, 155 - p, 5);
     const s0 = rng.stepped(3, 9, 0.5);
     return kind === 2
-      ? { kind, r, answer: 2, lines: [side(0, s0), angle(1, p), angle(2, q)], reason: `Die Winkel ${angleOf(1)} und ${angleOf(2)} liegen an den Enden der Seite [${sideOf(0)}]: WSW.`, ask: { type: "side", index: 1 } }
+      ? { kind, r, answer: 2, lines: [side(0, s0), angle(1, p), angle(2, q)], reason: `Die Winkel ${angleOf(1)} und ${angleOf(2)} liegen an den Enden der Seite [${sideOf(0)}]: WSW.` }
       : {
           kind,
           r,
           answer: 2,
           lines: [side(0, s0), angle(1, p), angle(0, q)],
           reason: `${angleOf(1)} liegt an der Seite [${sideOf(0)}], ${angleOf(0)} ihr gegenüber; der dritte Winkel stimmt wegen der Winkelsumme auch überein: SWW, also WSW.`,
-          ask: { type: "angle", index: 2 },
+
         };
   }
   const short = rng.stepped(3, 7, 0.5);
@@ -963,7 +963,7 @@ function makeCongruencePair(rng: Rng): CongruencePair & { r: number; ask?: { typ
       answer: 3,
       lines: [side(0, long), side(1, short), angle(0, multiple(rng, 30, 140, 5))],
       reason: `Der Winkel ${angleOf(0)} liegt der Seite [${sideOf(0)}] gegenüber, und sie ist die längere der beiden: SsW.`,
-      ask: { type: "side", index: 2 },
+
     };
   }
   if (kind === 5) {
@@ -1087,43 +1087,17 @@ const kongruenz: Lesson = {
         if (level === 1) {
           const t = makeCongruencePair(rng);
           const shown = rng.shuffle(t.lines);
-          const at = (i: number) => (i + t.r) % 3;
-          const fields: ChoiceField[] = [choiceField("Kongruenzsatz:", THEOREM_OPTIONS, t.answer)];
-          let question: string;
-          let extraStep = "";
-          let answerLine: string;
-          if (t.ask) {
-            const i = t.ask.index;
-            if (t.ask.type === "side") {
-              const piece = `[${pair(VERTEX[at(i + 1)], VERTEX[at(i + 2)])}]`;
-              const right = `[${pair(DEF[at(i + 1)], DEF[at(i + 2)])}]`;
-              const wrong = [1, 2].map((d) => `[${pair(DEF[at(i + d + 1)], DEF[at(i + d + 2)])}]`);
-              fields.push(shuffledChoice(rng, `So lang wie ${piece} ist`, right, wrong));
-              question = ` Welche Seite des Dreiecks DEF ist dann so lang wie ${piece}?`;
-              extraStep = `Zu ${piece} gehört die Seite ${right}, denn ${VERTEX[at(i + 1)]} ↦ ${DEF[at(i + 1)]} und ${VERTEX[at(i + 2)]} ↦ ${DEF[at(i + 2)]}.`;
-              answerLine = `${THEOREM_OPTIONS[t.answer]}; ${right} ist so lang wie ${piece}.`;
-            } else {
-              const piece = `∢${VERTEX[at(i + 1)]}${VERTEX[at(i)]}${VERTEX[at(i + 2)]}`;
-              const right = `∢${DEF[at(i + 1)]}${DEF[at(i)]}${DEF[at(i + 2)]}`;
-              const wrong = [1, 2].map((d) => `∢${DEF[at(i + d + 1)]}${DEF[at(i + d)]}${DEF[at(i + d + 2)]}`);
-              fields.push(shuffledChoice(rng, `So groß wie ${piece} ist`, right, wrong));
-              question = ` Welcher Winkel des Dreiecks DEF ist dann so groß wie ${piece}?`;
-              extraStep = `Zum Winkel bei ${VERTEX[at(i)]} gehört der Winkel bei ${DEF[at(i)]}, denn ${VERTEX[at(i)]} ↦ ${DEF[at(i)]}.`;
-              answerLine = `${THEOREM_OPTIONS[t.answer]}; ${right} ist so groß wie ${piece}.`;
-            }
-          } else {
-            const why = t.kind === 5 ? 0 : 1;
-            fields.push(choiceField("Woran liegt es, falls kein Satz passt?", WHY_NOT, why));
-            question = " Falls kein Satz passt: Woran liegt es?";
-            answerLine = `nicht entscheidbar: ${WHY_NOT[why]}`;
-          }
+          // the same two questions for every pair: the theorem and its reason, chosen among all reasons
+          const reason = CONGRUENCE_REASONS[t.kind];
+          const others = rng.shuffle(CONGRUENCE_REASONS.filter((_, k) => k !== t.kind)).slice(0, 3);
+          const fields: ChoiceField[] = [choiceField("Kongruenzsatz:", THEOREM_OPTIONS, t.answer), shuffledChoice(rng, "Begründung:", reason, others)];
           return {
-            prompt: `Von den Dreiecken ABC und DEF kennst du die unten stehenden Stücke; dabei entspricht A dem Punkt D, B dem Punkt E und C dem Punkt F. Nach welchem Kongruenzsatz sind die Dreiecke kongruent, oder lässt es sich nicht entscheiden?${question}`,
+            prompt: "Von den Dreiecken ABC und DEF kennst du die unten stehenden Stücke; dabei entspricht A dem Punkt D, B dem Punkt E und C dem Punkt F. Nach welchem Kongruenzsatz sind die Dreiecke kongruent, oder lässt es sich nicht entscheiden? Wähle auch die Begründung.",
             given: shown,
             formulaHint: "Wo liegt der Winkel: zwischen den Seiten (SWS), an der Seite (WSW), gegenüber der längeren Seite (SsW)? WWW und SSW mit dem Winkel gegenüber der kürzeren Seite reichen nicht.",
             fields,
-            steps: [t.reason, ...(extraStep ? [extraStep] : []), `<strong>${answerLine}</strong>`],
-            meta: { kind: t.kind, r: t.r, answer: t.answer, ask: t.ask ? (t.ask.type === "side" ? 10 : 20) + t.ask.index : -1 },
+            steps: [t.reason, `<strong>${THEOREM_OPTIONS[t.answer]}: ${reason}</strong>`],
+            meta: { kind: t.kind, r: t.r, answer: t.answer },
           };
         }
         const ctx = rng.int(0, 5);
@@ -1496,7 +1470,7 @@ const hausDerVierecke: Lesson = {
       <tr><td>Quadrat</td><td>Raute mit einem rechten Winkel</td><td>alles von Rechteck und Raute, vier Symmetrieachsen</td></tr>
       <tr><td>Drachenviereck</td><td>eine Diagonale ist Symmetrieachse</td><td>zwei Paare gleich langer Nachbarseiten, Diagonalen senkrecht, die Achse halbiert die andere Diagonale</td></tr>
     </table>
-    <p><strong>Punktsymmetrie:</strong> Dreht man ein Parallelogramm um eine halbe Drehung um den Schnittpunkt Z seiner Diagonalen, landet jede Ecke auf der gegenüberliegenden. Das Parallelogramm ist <strong>punktsymmetrisch</strong>; deshalb halbieren sich seine Diagonalen, und Gegenseiten wie Gegenwinkel sind gleich groß.</p>
+    <p><strong>Punktsymmetrie:</strong> Führt man mit einem Parallelogramm eine halbe Drehung um den Schnittpunkt Z seiner Diagonalen aus, landet jede Ecke auf der gegenüberliegenden. Das Parallelogramm ist <strong>punktsymmetrisch</strong>; deshalb halbieren sich seine Diagonalen, und Gegenseiten wie Gegenwinkel sind gleich groß.</p>
     <p><strong>Das Haus der Vierecke</strong> ordnet die Vierecke wie einen Stammbaum: Ganz oben steht das allgemeine Viereck, darunter Trapez und Drachenviereck. Unter dem Trapez stehen gleichschenkliges Trapez und Parallelogramm, unter dem Parallelogramm Rechteck und Raute, ganz unten das Quadrat. Das Rechteck ist zugleich ein gleichschenkliges Trapez, die Raute zugleich ein Drachenviereck. Ein Viereck hat <strong>alle Eigenschaften</strong> der Vierecke über ihm.</p>
     <div class="example"><strong>Beispiel:</strong> Ein Viereck hat vier gleich lange Seiten, aber keinen rechten Winkel. Es ist eine <strong>Raute</strong> und damit auch ein Parallelogramm, ein Trapez und ein Drachenviereck: Gegenseiten sind parallel, die Diagonalen halbieren sich senkrecht, und es hat zwei Symmetrieachsen. Ein Rechteck ist es nicht, also auch kein Quadrat.<br>Ebenso gilt: Jedes Quadrat ist ein Rechteck, aber nicht jedes Rechteck ist ein Quadrat.</div>
     <p><strong>An den Diagonalen erkennen:</strong> Halbieren sich die Diagonalen, ist das Viereck ein Parallelogramm. Sind sie dazu gleich lang, ist es ein Rechteck; stehen sie dazu senkrecht aufeinander, ist es eine Raute; beides zusammen ergibt ein Quadrat. Halbiert nur eine Diagonale die andere senkrecht, ist es ein Drachenviereck. Ein Drachenviereck kann auch nach innen geknickt sein (nicht konvex).</p>
