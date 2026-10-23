@@ -153,6 +153,7 @@ describe("case work and self-assessment", () => {
   });
   it("accepts a self-assessment only for a real text and all three criteria", () => {
     expect(canAcceptSelfAssessment("zu kurz", [true, true, true])).toBe(false);
+    expect(canAcceptSelfAssessment("a".repeat(40), [true, true, true])).toBe(false);
     const text = "Ein ganzer Satz als Antwort auf die Aufgabe.";
     expect(canAcceptSelfAssessment(text, [true, true])).toBe(false);
     expect(canAcceptSelfAssessment(text, [true, false, true])).toBe(false);

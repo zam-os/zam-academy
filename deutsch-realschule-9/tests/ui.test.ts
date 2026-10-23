@@ -17,6 +17,13 @@ function open(id: string) {
   window.dispatchEvent(new HashChangeEvent("hashchange"));
 }
 
+/** Answers a gap that is a drop-down or, for long options, a list of radio buttons. */
+function choose(name: string, answer: number) {
+  const radio = document.querySelector<HTMLInputElement>(`input[type="radio"][name="${name}"][value="${answer}"]`);
+  if (radio) radio.checked = true;
+  else $<HTMLSelectElement>(`select[name="${name}"]`).value = String(answer);
+}
+
 function solveWorkshop(lesson: Lesson) {
   const w = lesson.workshop;
   if (w.kind === "classify") {
@@ -51,9 +58,7 @@ function solveWorkshop(lesson: Lesson) {
     });
     click($("#check-commas"));
   } else {
-    w.items.forEach((item, i) => {
-      $<HTMLSelectElement>(`[name="w-choose-${i}"]`).value = String(item.answer);
-    });
+    w.items.forEach((item, i) => choose(`w-choose-${i}`, item.answer));
     click($("#check-choose"));
   }
 }
@@ -67,9 +72,7 @@ function solvePracticeRound(lesson: Lesson) {
       for (const gap of item.commas) click($(`[data-gap="p:${i}:${gap}"]`));
     });
   else
-    round.items.forEach((item, i) => {
-      $<HTMLSelectElement>(`[name="p-choose-${i}"]`).value = String(item.answer);
-    });
+    round.items.forEach((item, i) => choose(`p-choose-${i}`, item.answer));
   click($("#check-practice"));
 }
 
@@ -159,7 +162,81 @@ describe("a learner can finish every lesson through the page", () => {
       expect($(`[data-seg="${first}"]`).getAttribute("aria-pressed")).toBe("true");
       click($(`[data-seg="${first}"]`));
       expect($(`[data-seg="${first}"]`).getAttribute("aria-pressed")).toBe("false");
+      // The message of the last check does not outlive the marks it described.
+      expect($("#workshop-feedback").textContent).toBe("");
       click($("#clear-marks"));
+    });
+    it("never names the category or the place of a wrong entry (Zuordnen and Ordnen)", () => {
+      const classify = findLesson("de-zuhoeren-reagieren");
+      if (!classify || classify.workshop.kind !== "classify") throw new Error("de-zuhoeren-reagieren needs a classify workshop");
+      const w = classify.workshop;
+      open(classify.id);
+      submit($("#workshop"));
+      all("[id^='case-feedback-']").forEach((el) => expect(el.textContent).toBe("Wähle eine Zuordnung."));
+      w.entries.forEach((entry, i) => {
+        $<HTMLSelectElement>(`[name="case-${i}"]`).value = String((entry.target + 1) % w.categories.length);
+      });
+      submit($("#workshop"));
+      const said = all("[id^='case-feedback-']").map((el) => el.textContent ?? "");
+      expect(said).toHaveLength(w.entries.length);
+      for (const text of said) for (const entry of w.entries) expect(text).not.toContain(entry.feedback);
+      for (const text of said) expect(text).toContain("Noch einmal prüfen");
+      expect(parseProgress(localStorage.getItem(STORAGE_KEY)).workshop).not.toContain(classify.id);
+
+      const order = findLesson("de-praesentation");
+      if (!order || order.workshop.kind !== "timeline") throw new Error("de-praesentation needs a timeline workshop");
+      open(order.id);
+      click($("#check-order"));
+      const lines = all("[id^='case-feedback-']").map((el) => el.textContent ?? "");
+      const wrong = lines.filter((text) => text.startsWith("Noch einmal prüfen"));
+      expect(wrong.length).toBeGreaterThan(0);
+      for (const text of wrong) for (const entry of order.workshop.entries) expect(text).not.toContain(entry.feedback);
+    });
+    it("keeps what is typed in or chosen when the level changes, and skipping to the content does not reload the page", () => {
+      const lesson = findLesson("de-zeichensetzung");
+      if (!lesson) throw new Error("de-zeichensetzung missing");
+      open(lesson.id);
+      click($('[data-gap="w:0:0"]'));
+      const radio = all<HTMLInputElement>('input[name="quiz"]')[0];
+      radio.checked = true;
+      const level = $<HTMLSelectElement>("#level");
+      level.value = "2";
+      fire(level, "change");
+      expect($('[data-gap="w:0:0"]').getAttribute("aria-pressed")).toBe("true");
+      expect(all<HTMLInputElement>('input[name="quiz"]')[0].checked).toBe(true);
+      expect($("#practice .eyebrow").textContent).toContain("Niveau 2");
+      expect($("#writing .eyebrow").textContent).toContain("Niveau 2");
+      expect($("#writing summary").textContent).toBe("Hinweise");
+      level.value = "1";
+      fire(level, "change");
+      expect($("#writing .eyebrow").textContent).toContain("Niveau 1");
+      expect($("#writing summary").textContent).toBe("Leitfragen");
+      const hash = window.location.hash;
+      click($(".skip-link"));
+      expect(window.location.hash).toBe(hash);
+      expect($('[data-gap="w:0:0"]').getAttribute("aria-pressed")).toBe("true");
+      click($('[data-gap="w:0:0"]'));
+    });
+    it("has one level-one heading, a title per lesson and long options as a list of radio buttons", () => {
+      const lesson = findLesson("de-gespraechsverhalten");
+      if (!lesson) throw new Error("de-gespraechsverhalten missing");
+      open(lesson.id);
+      expect(all("h1")).toHaveLength(1);
+      expect(document.title).toContain(lesson.title);
+      expect(all('.choose-long input[type="radio"]').length).toBeGreaterThan(0);
+      expect(all(".choose-long select")).toHaveLength(0);
+    });
+    it("does not open the comparison for a text that is one letter repeated", () => {
+      open(LESSONS[1].id);
+      const draft = $<HTMLTextAreaElement>("#draft");
+      draft.value = "a".repeat(40);
+      fire(draft, "input");
+      expect($<HTMLButtonElement>("#compare-writing").disabled).toBe(true);
+      draft.value = "Ich schreibe hier einen ersten ganzen Satz zum Thema.";
+      fire(draft, "input");
+      expect($<HTMLButtonElement>("#compare-writing").disabled).toBe(false);
+      draft.value = "";
+      fire(draft, "input");
     });
     it("rejects a comma in the wrong place and does not count a round whose solution was shown", () => {
       const lesson = findLesson("de-zeichensetzung");
@@ -209,5 +286,15 @@ describe("a learner can finish every lesson through the page", () => {
     expect(all(".map-card")).toHaveLength(4);
     expect(all(".map-lesson.done").length).toBe(CORE_LESSONS.length);
     expect(document.body.textContent).toContain("Alle Lektionen sind geschafft");
+  });
+  it("does not lose progress when another tab saves older progress", () => {
+    // A second tab that opened early saves a state with nothing done; this tab must keep all lessons and save them again.
+    const stale = JSON.stringify(parseProgress(null));
+    localStorage.setItem(STORAGE_KEY, stale);
+    window.dispatchEvent(new StorageEvent("storage", { key: STORAGE_KEY, newValue: stale }));
+    expect(all(".map-lesson.done").length).toBe(CORE_LESSONS.length);
+    expect(completion(parseProgress(localStorage.getItem(STORAGE_KEY))).done).toBe(0);
+    click($("[data-lesson]"));
+    expect(completion(parseProgress(localStorage.getItem(STORAGE_KEY))).done).toBe(CORE_LESSONS.length);
   });
 });

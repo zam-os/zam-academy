@@ -1,5 +1,6 @@
 import { CORE_LESSONS, findLesson, LESSONS } from "../curriculum";
 import { REQUIRED_ROUNDS } from "../exercises/practice";
+import { looksLikeDraft } from "../format";
 import { keyOf } from "./keys";
 
 export { keyOf };
@@ -62,7 +63,7 @@ export function parseProgress(raw: string | null): Progress {
       quiz: list(x.quiz, ids),
       workshop: list(x.workshop, ids),
       casework: list(x.casework, ids),
-      assessed: list(x.assessed, keys).filter((k) => (drafts[k]?.trim().length ?? 0) >= 20),
+      assessed: list(x.assessed, keys).filter((k) => looksLikeDraft(drafts[k] ?? "")),
       drafts,
       solved: counts(x.solved, 3),
       serial: counts(x.serial, 1_000_000),
@@ -82,7 +83,7 @@ export function isComplete(p: Progress, id: string) {
     p.workshop.includes(id) &&
     p.casework.includes(id) &&
     p.assessed.includes(key) &&
-    (p.drafts[key]?.trim().length ?? 0) >= 20 &&
+    looksLikeDraft(p.drafts[key] ?? "") &&
     (!lesson.practice || (p.solved[key] ?? 0) >= REQUIRED_ROUNDS)
   );
 }
@@ -93,6 +94,36 @@ export function completion(p: Progress) {
     done,
     total: CORE_LESSONS.length,
     percent: Math.round((done / CORE_LESSONS.length) * 100),
+  };
+}
+
+/**
+ * Joins what another tab saved with what this tab holds, so two open tabs do
+ * not wipe each other's progress (a ZAM card opens its lesson in a new tab).
+ * Finished parts only grow, so they are joined; the counters take the larger
+ * value; a text and the lesson, level and rating of this tab stand as they
+ * are, except that a rating stored for the very same text is kept.
+ */
+export function mergeProgress(stored: Progress, own: Progress): Progress {
+  const join = (a: string[], b: string[]) => [...new Set([...a, ...b])];
+  const largest = (a: Record<string, number>, b: Record<string, number>) => {
+    const out = { ...a };
+    for (const [k, n] of Object.entries(b)) out[k] = Math.max(out[k] ?? 0, n);
+    return out;
+  };
+  const drafts = { ...stored.drafts, ...own.drafts };
+  return {
+    ...own,
+    quiz: join(own.quiz, stored.quiz),
+    workshop: join(own.workshop, stored.workshop),
+    casework: join(own.casework, stored.casework),
+    assessed: join(
+      own.assessed,
+      stored.assessed.filter((k) => drafts[k] === stored.drafts[k]),
+    ),
+    drafts,
+    solved: largest(own.solved, stored.solved),
+    serial: largest(own.serial, stored.serial),
   };
 }
 

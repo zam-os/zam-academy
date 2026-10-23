@@ -1,7 +1,8 @@
 import { describe, expect, it } from "vitest";
 import { CORE_LESSONS, findLesson, LESSONS } from "../src/curriculum";
 import { REQUIRED_ROUNDS } from "../src/exercises/practice";
-import { completion, freshProgress, isComplete, keyOf, parseProgress } from "../src/storage/progress";
+import { looksLikeDraft } from "../src/format";
+import { completion, freshProgress, isComplete, keyOf, mergeProgress, parseProgress } from "../src/storage/progress";
 
 const plain = LESSONS.find((l) => !l.practice);
 const withPractice = LESSONS.find((l) => l.practice);
@@ -62,7 +63,7 @@ describe("learning evidence and local recovery", () => {
         active: id,
         quiz: [id, id, "bad"],
         casework: [id, 5],
-        drafts: { [keyOf(id, 1)]: "x".repeat(9000), bad: "x" },
+        drafts: { [keyOf(id, 1)]: "Ein Satz mit mehreren Wörtern. ".repeat(400), bad: "x" },
         assessed: [keyOf(id, 1), keyOf(LESSONS[1].id, 1)],
         solved: { [keyOf(id, 1)]: 900, [keyOf(LESSONS[1].id, 1)]: -1 },
         serial: { [keyOf(id, 1)]: 999999999 },
@@ -79,5 +80,36 @@ describe("learning evidence and local recovery", () => {
   });
   it("opens every lesson by id", () => {
     for (const lesson of LESSONS) expect(findLesson(lesson.id)).toBeDefined();
+  });
+  it("joins what another tab saved without wiping it", () => {
+    const [a, b] = LESSONS;
+    const stored = freshProgress();
+    stored.quiz.push(a.id);
+    stored.solved[keyOf(a.id, 1)] = 2;
+    stored.serial[keyOf(a.id, 1)] = 5;
+    stored.drafts[keyOf(a.id, 1)] = "Ein Komma trennt den Nebensatz vom Hauptsatz.";
+    stored.assessed.push(keyOf(a.id, 1));
+    const own = freshProgress();
+    own.level = 2;
+    own.casework.push(b.id);
+    own.solved[keyOf(a.id, 1)] = 1;
+    const merged = mergeProgress(stored, own);
+    expect(merged.quiz).toEqual([a.id]);
+    expect(merged.casework).toEqual([b.id]);
+    expect(merged.solved[keyOf(a.id, 1)]).toBe(2);
+    expect(merged.serial[keyOf(a.id, 1)]).toBe(5);
+    expect(merged.level).toBe(2);
+    expect(merged.drafts[keyOf(a.id, 1)]).toBe(stored.drafts[keyOf(a.id, 1)]);
+    // The rating stored for the very same text stays ...
+    expect(merged.assessed).toEqual([keyOf(a.id, 1)]);
+    // ... but not for a text this tab has changed since.
+    own.drafts[keyOf(a.id, 1)] = "Ich habe den Text danach noch einmal ganz neu geschrieben.";
+    expect(mergeProgress(stored, own).assessed).toEqual([]);
+  });
+  it("counts a text as an attempt only when it has some words", () => {
+    expect(looksLikeDraft("a".repeat(40))).toBe(false);
+    expect(looksLikeDraft("la la la la la la la la")).toBe(false);
+    expect(looksLikeDraft("zu kurz")).toBe(false);
+    expect(looksLikeDraft("Ein Komma trennt den Nebensatz vom Hauptsatz.")).toBe(true);
   });
 });

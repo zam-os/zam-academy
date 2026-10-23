@@ -218,12 +218,13 @@ button.primary {
   border: 1px solid var(--line);
   border-radius: 16px;
 }
-.sidebar h1 {
+.sidebar .side-title {
   margin: 0.15rem 0;
   font-size: 1.6rem;
+  font-weight: 700;
   line-height: 1.15;
 }
-.sidebar h1 span {
+.sidebar .side-title span {
   color: var(--brand);
 }
 .sidebar-heading p {
@@ -348,7 +349,7 @@ main:focus {
   color: #fff;
 }
 .lesson-band .eyebrow {
-  color: rgba(255, 255, 255, 0.85);
+  color: #fff;
 }
 .band-glyph {
   font-size: 2.6rem;
@@ -713,9 +714,9 @@ details summary {
   color: #fff;
 }
 .hero .eyebrow {
-  color: rgba(255, 255, 255, 0.85);
+  color: #fff;
 }
-.hero h2 {
+.hero h1 {
   margin: 0.25rem 0 0.5rem;
   font-size: 1.8rem;
 }
@@ -880,6 +881,17 @@ details summary {
   .lesson-title {
     font-size: 1.4rem;
   }
+}
+/* Text for screen readers only, for example "geschafft" next to a check mark that is only a picture. */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
 }
 @media (prefers-reduced-motion: reduce) {
   html {
@@ -1142,5 +1154,22 @@ details summary {
 }
 .choose-item select {
   min-width: 8rem;
+  max-width: 100%;
   margin: 0 0.25rem;
+}
+/* Long options: the sentence stands as a legend, the options as a list below it. */
+.choose-long fieldset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  min-width: 0;
+}
+.choose-long legend {
+  padding: 0;
+  margin-bottom: 0.3rem;
+  line-height: 1.6;
+}
+.choose-long .gap-mark {
+  margin: 0 0.25rem;
+  font-weight: 700;
 }

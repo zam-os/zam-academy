@@ -18,7 +18,7 @@ Every lesson has the same shape:
 - a **Textwerkstatt**, in one of five forms: **Zuordnen** (24 lessons), **Ordnen** (7), **Im Text markieren** (19: click the passages that show a Stilmittel, a feature of a Textsorte, a sentence structure), **Kommas setzen** (1) and **Richtig wählen** (2). The check is exact, and after a wrong try the app says what is wrong but never where the solution is,
 - a **Textfall**: a short own-written text or conversation worked through in three or four steps, each checked on its own,
 - **Übungsrunden** in nine lessons (Zeichensetzung, Rechtschreibstrategien, Fremdwörter, Satzverknüpfung, Zitieren, Fehler finden, Nachschlagen, Satzbau, Gliederungen): rounds of three sentences drawn from pools of eight to twelve sentences per level; a round counts only when all three are right and the solution stayed shut,
-- a **written task** on level 1 (with guiding questions) or level 2 (transfer to a new situation), compared with an example text and rated by the learner against three criteria. The app never claims to grade it.
+- a **written task** on level 1 (with guiding questions) or level 2 (transfer to a new situation, with hints), compared with an example text and rated by the learner against three criteria. The app never claims to grade it; it only asks for a text of some words before the comparison opens, so the rating is not ticked off on nothing.
 
 A lesson is complete when the quick check is right, the workshop and the text case are solved, two level-1 practice rounds are solved where the lesson has them, and the learner has rated their own text. Progress stays in `localStorage`; the Lernlandkarte shows it per Lernbereich and the app congratulates on a finished lesson or Lernbereich.
 

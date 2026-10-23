@@ -1,4 +1,4 @@
-import { placeAnswer, shuffle } from "./format";
+import { looksLikeDraft, placeAnswer, shuffle } from "./format";
 import type {
   CaseFile,
   ChooseItem,
@@ -108,7 +108,7 @@ export function checkCase(file: CaseFile, key: string, choices: number[]): boole
 }
 
 export function canReviewDraft(text: string): boolean {
-  return text.trim().length >= 20;
+  return looksLikeDraft(text);
 }
 
 export function canAcceptSelfAssessment(text: string, criteria: boolean[]): boolean {

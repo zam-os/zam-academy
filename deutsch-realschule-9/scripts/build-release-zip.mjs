@@ -7,10 +7,10 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const rootDir = resolve(__dirname, "..");
 const distHtml = join(rootDir, "dist", "index.html");
 const releaseRoot = join(rootDir, "release");
-const bundleDirName = "ZAM-Academy-WR-9";
+const bundleDirName = "ZAM-Academy-Deutsch-9";
 const bundleDir = join(releaseRoot, bundleDirName);
-const zipFilePath = join(releaseRoot, "ZAM-Academy-WR-9-offline.zip");
-const appFile = "ZAM-Academy-WR-9.html";
+const zipFilePath = join(releaseRoot, "ZAM-Academy-Deutsch-9-offline.zip");
+const appFile = "ZAM-Academy-Deutsch-9.html";
 
 if (!existsSync(distHtml)) {
   throw new Error(`Missing built file at ${distHtml}. Please run "npm run build" first.`);
@@ -56,7 +56,7 @@ writeFileSync(linuxShPath, linuxSh, "utf8");
 chmodSync(linuxShPath, 0o755);
 
 const readmeTxt = `========================================================================
-ZAM ACADEMY · WIRTSCHAFT UND RECHT 9 REALSCHULE (LehrplanPLUS Bayern)
+ZAM ACADEMY · DEUTSCH 9 REALSCHULE (LehrplanPLUS Bayern)
 ========================================================================
 
 SOFORT-START OHNE INSTALLATION
@@ -67,14 +67,13 @@ SOFORT-START OHNE INSTALLATION
    - Linux:   "${appFile}" oder "./start-linux.sh"
 
 Die App benötigt keine Installation, keinen Server und keine externe Verbindung.
-Zum Öffnen der verlinkten Gesetze und Quellen brauchst du eine
-Internetverbindung.
-Fortschritt und Praxisnotiz bleiben in diesem Browser, sofern er lokales
-Speichern erlaubt. Bei gesperrtem Speicher zeigt die App einen Hinweis.
+Zum Öffnen der verlinkten Quellen brauchst du eine Internetverbindung.
+Fortschritt und deine eigenen Texte bleiben in diesem Browser, sofern er
+lokales Speichern erlaubt. Bei gesperrtem Speicher zeigt die App einen Hinweis.
 
-Oben in der App wechselst du zwischen
-- Niveau 1 (mit Leitfragen) und
-- Niveau 2 (Transfer: selbständig begründen).
+In jeder Lektion wechselst du oben zwischen
+- Niveau 1 (Schreibaufgabe mit Leitfragen) und
+- Niveau 2 (Übertragen auf eine neue Situation, mit Hinweisen).
 
 Behalten mit ZAM: Die Zelle "Deutsch 9 Realschule (ZAM Academy)" ist im
 Academy-Katalog verfügbar. Jede Karte führt direkt zur passenden Lektion.

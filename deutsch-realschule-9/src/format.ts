@@ -11,6 +11,16 @@ export const esc = (text: string): string =>
       ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[char] ?? char,
   );
 
+/**
+ * Whether a learner's own text is worth comparing with the example: some words,
+ * not one letter repeated. The app does not grade the text; this only keeps
+ * the self-assessment from being ticked off on nothing.
+ */
+export function looksLikeDraft(text: string): boolean {
+  const words = text.toLowerCase().match(/\p{L}[\p{L}\p{N}'’-]*/gu) ?? [];
+  return text.trim().length >= 20 && words.length >= 5 && new Set(words).size >= 4;
+}
+
 /** Escapes first, then allows **bold** only, so lesson text stays inert HTML. */
 export const rich = (text: string): string => esc(text).replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
 

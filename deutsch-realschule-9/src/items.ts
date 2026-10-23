@@ -50,24 +50,40 @@ export function bindGaps(root: Element) {
   });
 }
 
-/** A sentence with a gap that is a drop-down; the options appear in a fixed shuffled order, the value is the index in the data. */
+/** Longer options than this do not fit into a drop-down inside a sentence on a phone; they become a list of radio buttons. */
+export const LONG_OPTION = 30;
+
+/**
+ * A sentence with a gap; the options appear in a fixed shuffled order, the value is the index in the data.
+ * Short options sit in a drop-down inside the sentence, long ones in a radio list below it.
+ */
 export function chooseItemHtml(item: ChooseItem, prefix: string, index: number, key: string, locked = false): string {
   const order = shuffle(
     item.options.map((_, i) => i),
     `${key}:choose:${index}`,
   );
-  return `<div class="choose-item"><p><span class="item-no">${index + 1}</span> ${esc(item.before)}<select name="${prefix}-choose-${index}" aria-label="Lücke in Satz ${index + 1}" ${locked ? "disabled" : ""}><option value="">…</option>${order.map((i) => `<option value="${i}">${esc(item.options[i])}</option>`).join("")}</select>${esc(item.after)}</p><p class="small item-feedback" id="${prefix}-feedback-${index}"></p></div>`;
+  const name = `${prefix}-choose-${index}`;
+  const feedback = `<p class="small item-feedback" id="${prefix}-feedback-${index}"></p>`;
+  if (item.options.some((option) => option.length > LONG_OPTION))
+    return `<div class="choose-item choose-long"><fieldset ${locked ? "disabled" : ""}><legend><span class="item-no">${index + 1}</span> ${esc(item.before)}<span class="gap-mark" aria-label="Lücke">…</span>${esc(item.after)}</legend>${order.map((i) => `<label class="option"><input type="radio" name="${name}" value="${i}"> <span>${esc(item.options[i])}</span></label>`).join("")}</fieldset>${feedback}</div>`;
+  return `<div class="choose-item"><p><span class="item-no">${index + 1}</span> ${esc(item.before)}<select name="${name}" aria-label="Lücke in Satz ${index + 1}" ${locked ? "disabled" : ""}><option value="">…</option>${order.map((i) => `<option value="${i}">${esc(item.options[i])}</option>`).join("")}</select>${esc(item.after)}</p>${feedback}</div>`;
 }
 
 /** The index in the data of the option chosen in a sentence, or -1 when none is chosen. */
 export function readChoose(prefix: string, index: number): number {
-  const value = document.querySelector<HTMLSelectElement>(`[name="${prefix}-choose-${index}"]`)?.value ?? "";
+  const name = `${prefix}-choose-${index}`;
+  const radio = document.querySelector<HTMLInputElement>(`input[type="radio"][name="${name}"]:checked`);
+  const value = radio?.value ?? document.querySelector<HTMLSelectElement>(`select[name="${name}"]`)?.value ?? "";
   return value === "" ? -1 : Number(value);
 }
 
 export function setChoose(prefix: string, index: number, answer: number) {
-  const select = document.querySelector<HTMLSelectElement>(`[name="${prefix}-choose-${index}"]`);
+  const name = `${prefix}-choose-${index}`;
+  const select = document.querySelector<HTMLSelectElement>(`select[name="${name}"]`);
   if (select) select.value = String(answer);
+  document.querySelectorAll<HTMLInputElement>(`input[type="radio"][name="${name}"]`).forEach((radio) => {
+    radio.checked = Number(radio.value) === answer;
+  });
 }
 
 /** The palette and the text of a Markieren-Werkstatt; `marking` holds what the learner has marked so far. */

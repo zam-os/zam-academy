@@ -1215,7 +1215,7 @@ export const LB3B: Lesson[] = [
           },
           {
             before: "Am Sonntag blieben wir den ganzen Tag zu Hause, weil ",
-            options: ["es heftig regnete", "regnete es heftig"],
+            options: ["es heftig regnete", "es regnete heftig"],
             answer: 0,
             after: ".",
             feedback: "In der Standardsprache steht das gebeugte Verb in einem Nebensatz mit „weil“ am Ende: „weil es heftig regnete“. Die Verbindung mit Verb an zweiter Stelle gehört zur gesprochenen Sprache.",
