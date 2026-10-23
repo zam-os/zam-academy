@@ -394,7 +394,7 @@ function representations(v: LabValues): string {
     const rising = Number.isFinite(ahead) ? ahead >= y : true;
     out += pointLabel(plot, P, `(${fmt(v.x)} | ${fmt(y)})`, "lab-text lab-text-ok", 10, rising ? 20 : -10);
   } else if (!inside) {
-    out += text(plot.X(v.x), plot.Y(0) - 14, "nicht in D", "lab-text-small lab-text-bad", "middle");
+    out += boxedText(plot, plot.X(v.x), plot.Y(0) - 14, "nicht in D", "lab-text-small lab-text-bad");
   }
   // the panel: equation, description, table
   const P = PANEL;
@@ -580,7 +580,11 @@ const squarePlot = () => new Plot(-6, 6, -6, 6, SQUARE_BOX);
 /** A target point: a dashed ring, green and filled once the line passes through it. */
 function targetPoint(plot: Plot, x: number, y: number, name: string, hit: boolean): string {
   const P = plot.P(x, y);
-  return circle(P.x, P.y, hit ? 6 : 8, hit ? "lab-point-ok" : "lab-target") + pointLabel(plot, P, `${name}(${fmt(x)} | ${fmt(y)})`, hit ? "lab-text-small lab-text-ok" : "lab-text-small", 10, 16);
+  const label = `${name}(${fmt(x)} | ${fmt(y)})`;
+  const cls = hit ? "lab-text-small lab-text-ok" : "lab-text-small";
+  // left of the y-axis the label goes to the left, so it never covers the axis numbers
+  const tag = x < 0 ? boxedText(plot, P.x - 10, P.y + 16, label, cls, "end") : pointLabel(plot, P, label, cls, 10, 16);
+  return circle(P.x, P.y, hit ? 6 : 8, hit ? "lab-point-ok" : "lab-target") + tag;
 }
 
 /** A label kept inside a plot box, centred or anchored at one side. */
@@ -616,8 +620,10 @@ function originLine(v: LabValues): string {
     drawing += line(A.x, A.y, C.x, C.y, "lab-side-a") + line(C.x, C.y, B.x, B.y, "lab-side-b");
     const dy = ratio(r[0] * v.d, r[1]);
     // labels: Δx on the side of the leg away from the triangle, Δy beside the vertical leg
+    // a narrow triangle gets its Δx label beside the leg: level with it when the vertical leg leaves room
     const narrow = Math.abs(C.x - A.x) < 48;
-    drawing += boxedText(plot, narrow ? C.x + 6 : (A.x + C.x) / 2, m >= 0 ? A.y + 16 : A.y - 7, `Δx = ${v.d}`, "lab-text-small lab-text-a", narrow ? "start" : "middle");
+    const level = narrow && Math.abs(B.y - C.y) >= 30;
+    drawing += boxedText(plot, narrow ? C.x + 6 : (A.x + C.x) / 2, level ? A.y + 4 : m >= 0 ? A.y + 16 : A.y - 7, `Δx = ${v.d}`, "lab-text-small lab-text-a", narrow ? "start" : "middle");
     if (m !== 0) drawing += boxedText(plot, C.x + 6, (C.y + B.y) / 2 + 4, `Δy = ${ratioText(dy)}`, "lab-text-small lab-text-b", "start");
     if (plot.contains(v.a, m * v.a)) handles += handle("A", A.x, A.y, "Anfang des Steigungsdreiecks", "lab-handle");
     if (plot.contains(v.a + v.d, m * (v.a + v.d))) handles += handle("B", B.x, B.y, "Breite des Steigungsdreiecks", "lab-handle lab-handle-b");
