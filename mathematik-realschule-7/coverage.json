@@ -1,0 +1,663 @@
+{
+  "schema": 1,
+  "checked": "2026-10-23",
+  "curriculum": {
+    "I": "https://www.lehrplanplus.bayern.de/fachlehrplan/realschule/7/mathematik/wpfg1",
+    "II_III": "https://www.lehrplanplus.bayern.de/fachlehrplan/realschule/7/mathematik/wpfg2-3"
+  },
+  "school_type": "realschule",
+  "grade": 7,
+  "subject": "mathematik",
+  "scope": "all-official-learning-areas",
+  "optional_lessons": [],
+  "scope_note": "Acht Lernbereiche für I, sechs für II/III; fachpraktische Konstruktionen und Messungen werden auf Papier bzw. in dynamischer Geometriesoftware ausgeführt. Videos folgen als separater Schritt.",
+  "rows": [
+    {
+      "track": "I",
+      "lb": 1,
+      "competence": "berechnen, aufbauend auf ihrem Wissen über Potenzen, Potenzwerte mit negativen ganzzahligen Exponenten.",
+      "lessons": [
+        "pt-1-negative-exponenten"
+      ],
+      "status": "implemented",
+      "evidence": "pt-1-negative-exponenten: Die Potenzleiter zeigt wiederholtes Teilen bis zu Exponent 0 und negativen Exponenten. kehrwert sowie vorzeichen-und-null berechnen Kehrwert und Potenzwert einschließlich negativer Basis."
+    },
+    {
+      "track": "I",
+      "lb": 1,
+      "competence": "wenden insbesondere bei Termen mit Variablen die Potenzgesetze (Potenzen mit gleicher Basis bzw. gleichen Exponenten multiplizieren und dividieren, Potenzen potenzieren) zum vorteilhaften Rechnen an.",
+      "lessons": [
+        "pt-2-gleiche-basis",
+        "pt-3-weitere-potenzgesetze"
+      ],
+      "status": "implemented",
+      "evidence": "pt-2-gleiche-basis: produkt und quotient wenden die Additions-/Subtraktionsregel der Exponenten an. pt-3-weitere-potenzgesetze: gleicher-exponent und potenz-potenzieren unterscheiden Produkt-/Quotientenpotenz und verschachtelte Potenz; die Erklärungen formulieren die Regeln auch mit Variablen."
+    },
+    {
+      "track": "I",
+      "lb": 1,
+      "competence": "nutzen Zehnerpotenzen mit positiven und negativen Exponenten sowie die Vorsilben bestimmter Zehnerpotenzen (von 10⁻¹⁸ bis 10¹⁸) zur Darstellung von Größen aus dem Alltag.",
+      "lessons": [
+        "pt-4-zehnerpotenzen",
+        "pt-5-vorsilben"
+      ],
+      "status": "implemented",
+      "evidence": "pt-4-zehnerpotenzen: normieren und mit-zehnerpotenzen-rechnen wechseln zwischen Dezimal- und Potenzschreibweise. pt-5-vorsilben: vorsilbe-lesen und einheiten-umrechnen ordnen die Vorsätze Atto bis Exa zu und halten beim Einheitenwechsel den Größenwert fest."
+    },
+    {
+      "track": "I",
+      "lb": 2,
+      "competence": "identifizieren die Parallelverschiebung als eine Kongruenzabbildung und beschreiben ihre Eigenschaften.",
+      "lessons": [
+        "pv-1-verschiebung"
+      ],
+      "status": "implemented",
+      "evidence": "Dreieck mit gemeinsamem Verschiebungspfeil; Erhaltung von Länge, Winkel und Umlaufsinn; Bild- und Urpunktaufgaben."
+    },
+    {
+      "track": "I",
+      "lb": 2,
+      "competence": "bilden mithilfe der Abbildungsvorschrift der Parallelverschiebung Punkte und ebene Figuren ab und nutzen dazu auch geeignete Geometriesoftware.",
+      "lessons": [
+        "pv-1-verschiebung",
+        "pv-2-vektoren"
+      ],
+      "status": "implemented",
+      "evidence": "Dreieck mit gemeinsamem Verschiebungspfeil; Erhaltung von Länge, Winkel und Umlaufsinn; Bild- und Urpunktaufgaben. Spitze minus Schaft, Gegenvektor und Rückweg im Koordinatenlabor."
+    },
+    {
+      "track": "I",
+      "lb": 2,
+      "competence": "geben zu Vektoren die zugehörigen Gegenvektoren an und führen die Umkehrabbildung der Parallelverschiebung durch.",
+      "lessons": [
+        "pv-2-vektoren"
+      ],
+      "status": "implemented",
+      "evidence": "Spitze minus Schaft, Gegenvektor und Rückweg im Koordinatenlabor."
+    },
+    {
+      "track": "I",
+      "lb": 2,
+      "competence": "berechnen die Koordinaten von Vektoren und Punkten (u. a. Eckpunkte von Parallelogrammen, Mittelpunkt einer Strecke) auch mithilfe der Vektoraddition.",
+      "lessons": [
+        "pv-2-vektoren",
+        "pv-3-vektoraddition",
+        "pv-4-parallelogramm-mitte"
+      ],
+      "status": "implemented",
+      "evidence": "Spitze minus Schaft, Gegenvektor und Rückweg im Koordinatenlabor. Vektorwege Spitze an Schaft, Summenvektor und fehlender Rückweg. Diagonalenmitte im veränderbaren Parallelogramm; vierte Ecke und Mittelpunkt berechnen."
+    },
+    {
+      "track": "I",
+      "lb": 2,
+      "competence": "berechnen den Flächeninhalt von Dreiecken, Parallelogrammen und weiteren Vielecken mithilfe zweireihiger Determinanten.",
+      "lessons": [
+        "pv-5-determinante"
+      ],
+      "status": "implemented",
+      "evidence": "Orientierte Determinante und halbe Betragsfläche; Viereck in zwei Dreiecke zerlegen; Maßstab bei Flächen."
+    },
+    {
+      "track": "I",
+      "lb": 2,
+      "competence": "begründen Winkelmaße an parallelen Geraden mithilfe von Stufen-, Wechsel- und Ergänzungswinkel und umgekehrt die Parallelität von Geraden.",
+      "lessons": [
+        "pv-6-parallelen-winkel"
+      ],
+      "status": "implemented",
+      "evidence": "Stufen-, Wechsel- und Ergänzungswinkel sowie Umkehrung; gedrehte zweite Gerade als Gegenprobe."
+    },
+    {
+      "track": "I",
+      "lb": 2,
+      "competence": "nutzen die Summe der Innenwinkelmaße im Dreieck, um den Außenwinkelsatz des Dreiecks sowie die Innenwinkelsumme im Viereck und weiteren Vielecken zu begründen. Damit berechnen sie die Winkelmaße in ebenen Figuren.",
+      "lessons": [
+        "pv-7-winkelsummen",
+        "pv-8-vielecke"
+      ],
+      "status": "implemented",
+      "evidence": "Begründung mit Parallele und Wechselwinkeln; Außenwinkelsatz und Viereckszerlegung; Winkelaufgaben. Allgemeine Zerlegung konvexer Vielecke in n − 2 Dreiecke mit Winkelsummen und Umkehraufgaben."
+    },
+    {
+      "track": "I",
+      "lb": 3,
+      "competence": "begründen mithilfe der Beziehungen zwischen den Seitenlängen sowie zwischen Seitenlängen und Winkelmaßen die Existenz von Dreiecken.",
+      "lessons": [
+        "dr-1-existenz"
+      ],
+      "status": "implemented",
+      "evidence": "Dreiecksungleichung und Winkelbedingungen mit Grenz- und unmöglichen Fällen."
+    },
+    {
+      "track": "I",
+      "lb": 3,
+      "competence": "beschreiben Dreieckskonstruktionen und führen diese mit Zirkel und Geodreieck und auch mithilfe dynamischer Geometriesoftware durch.",
+      "lessons": [
+        "dr-2-konstruktion"
+      ],
+      "status": "implemented",
+      "evidence": "Schrittfolge SSS, SWS und WSW/SWW mit Zirkel, Geodreieck und Software; Kreisbögen im Labor; Konstruktionspläne."
+    },
+    {
+      "track": "I",
+      "lb": 3,
+      "competence": "verwenden die Kongruenzsätze, um Dreiecke auf Kongruenz zu überprüfen, und führen damit auch Kongruenzbeweise durch.",
+      "lessons": [
+        "dr-3-kongruenz",
+        "dr-4-begruenden"
+      ],
+      "status": "implemented",
+      "evidence": "Kongruenzsätze einschließlich bedingtem SsW; zwei Kreisschnitte als Gegenbeispiel; Satzwahl und Schlussfolgerung. Ausformulierte SSS- und WSW-Beweisketten an gleichschenkligem Dreieck und Parallelogramm."
+    },
+    {
+      "track": "I",
+      "lb": 3,
+      "competence": "verwenden ihr Wissen über Kongruenz, um geometrische Sachverhalte zu begründen.",
+      "lessons": [
+        "dr-4-begruenden"
+      ],
+      "status": "implemented",
+      "evidence": "Ausformulierte SSS- und WSW-Beweisketten an gleichschenkligem Dreieck und Parallelogramm."
+    },
+    {
+      "track": "I",
+      "lb": 4,
+      "competence": "beschreiben für Geraden und Ebenen die möglichen Lagebeziehungen im Raum, u. a. um Winkel zwischen Gerade und Ebene und zwischen zwei Ebenen zu identifizieren.",
+      "lessons": [
+        "rg-1-lagebeziehungen"
+      ],
+      "status": "implemented",
+      "evidence": "Beschrifteter Quader; räumliche Lage unabhängig von Ansicht; Projektion und Normalschnitt für Winkel."
+    },
+    {
+      "track": "I",
+      "lb": 4,
+      "competence": "zeichnen Schrägbilder von Prismen und Pyramiden und beachten dabei das Maß des Verzerrungswinkels, den Verzerrungsmaßstab und die Lage der Schrägbildachse.",
+      "lessons": [
+        "rg-2-schraegbilder"
+      ],
+      "status": "implemented",
+      "evidence": "rg-2-schraegbilder: Vorderkante AB als unverzerrte Schrägbildachse, Verzerrungswinkel ω und Verzerrungsmaßstab q werden ausdrücklich unterschieden. Prisma/Pyramide, q und Winkel sind im Labor veränderbar; tiefenkante und einstellungen prüfen Bildmaß und Rückrechnung."
+    },
+    {
+      "track": "I",
+      "lb": 4,
+      "competence": "ermitteln Streckenlängen und Winkelmaße zu Schrägbildern in wahrer Größe.",
+      "lessons": [
+        "rg-3-wahre-groessen"
+      ],
+      "status": "implemented",
+      "evidence": "Wahre Tiefe rekonstruieren, unverzerrte Hilfsfiguren für Grund- und Raumdiagonale sowie Pyramidenschnitt; Konstruktion und Messung auf Papier."
+    },
+    {
+      "track": "I",
+      "lb": 5,
+      "competence": "zeichnen geometrische Ortslinien (Kreislinie, Mittelsenkrechte, Winkelhalbierende, Parallelenpaar, Thaleskreis) und die zur Kreislinie, zur Mittelsenkrechten und zum Parallelenpaar gehörigen geometrischen Ortsbereiche und verbalisieren die besonderen Eigenschaften der jeweiligen Punkte.",
+      "lessons": [
+        "ol-1-kreisbereiche",
+        "ol-2-abstandsorte",
+        "ol-3-thales"
+      ],
+      "status": "implemented",
+      "evidence": "Kreislinie, geschlossene und strenge Abstandsbereiche, sprachliche Rückübersetzung und Maßstab. Konstruktion und Prüfpunkte zu Mittelsenkrechter, Winkelhalbierender, Parallelenpaar sowie Halbebene und Abstandsband. Thalessatz mit Umkehrung und Begründung über gleiche Radien; Kreis-, Innen- und Außenpunkte."
+    },
+    {
+      "track": "I",
+      "lb": 5,
+      "competence": "unterscheiden die möglichen Lagebeziehungen von Kreis und Gerade auch anhand geeigneter Zeichnungen, stellen die besonderen Eigenschaften der Tangente an einen Kreis heraus und konstruieren die Tangenten an einen Kreis durch einen Punkt außerhalb des Kreises.",
+      "lessons": [
+        "ol-4-kreis-gerade",
+        "ol-5-tangenten-konstruktion"
+      ],
+      "status": "implemented",
+      "evidence": "Mittelpunktlot gegen Radius vergleichen; Sekante, Tangente, Passante und senkrechter Berührradius. Tangenten von äußerem P über Thaleskreis MP in vier Schritten; Konstruktions- und Anzahlaufgaben."
+    },
+    {
+      "track": "I",
+      "lb": 5,
+      "competence": "lösen geometrische Probleme auch zu realen Situationen, setzen dabei Formulierungen wie höchstens, mindestens, mehr als, weniger als in entsprechende Zeichnungen um und formulieren umgekehrt auch zu vorgegebenen bildlichen Darstellungen die entsprechenden Eigenschaften der jeweiligen Punkte.",
+      "lessons": [
+        "ol-1-kreisbereiche",
+        "ol-2-abstandsorte",
+        "ol-6-ortsschnitte"
+      ],
+      "status": "implemented",
+      "evidence": "Kreislinie, geschlossene und strenge Abstandsbereiche, sprachliche Rückübersetzung und Maßstab. Konstruktion und Prüfpunkte zu Mittelsenkrechter, Winkelhalbierender, Parallelenpaar sowie Halbebene und Abstandsband. Schnitt und Vereinigung zweier Kreisbereiche; Randbedingungen sowie Kreis mit Mittelsenkrechter."
+    },
+    {
+      "track": "I",
+      "lb": 5,
+      "competence": "lösen geometrische Probleme auch bei Verknüpfungen von Ortslinien bzw. Ortsbereichen zeichnerisch und formulieren umgekehrt zu vorgegebenen Zeichnungen die Eigenschaften der jeweiligen Punkte.",
+      "lessons": [
+        "ol-6-ortsschnitte"
+      ],
+      "status": "implemented",
+      "evidence": "Schnitt und Vereinigung zweier Kreisbereiche; Randbedingungen sowie Kreis mit Mittelsenkrechter."
+    },
+    {
+      "track": "I",
+      "lb": 5,
+      "competence": "nutzen Umkreis, Inkreis und Schwerpunkt des Dreiecks zur Lösung geometrischer Probleme.",
+      "lessons": [
+        "ol-7-umkreis-inkreis",
+        "ol-8-schwerpunkt"
+      ],
+      "status": "implemented",
+      "evidence": "Umkreis durch Mittelsenkrechte, Inkreis durch Winkelhalbierende und Lot; Lage- und Radiusaufgaben. Seitenhalbierende und Schwerpunkt mit Teilungsverhältnis 2 : 1, Konstruktion und Koordinaten."
+    },
+    {
+      "track": "I",
+      "lb": 6,
+      "competence": "fassen Terme (z. B. x + 2x; 2 ⋅ x ⋅ x²; 5x² : 2x) zur Vereinfachung und Überprüfung ihrer Äquivalenz zusammen und wenden dabei auch die Potenzgesetze an.",
+      "lessons": [
+        "al-1-terme"
+      ],
+      "status": "implemented",
+      "evidence": "Gleichartige Summanden, Produkte und Quotienten von Potenzen samt Definitionsbedingung; Klammer und Gegenprobe."
+    },
+    {
+      "track": "I",
+      "lb": 6,
+      "competence": "kombinieren die Äquivalenzumformungen aus der Jahrgangsstufe 6 zur Lösung von Gleichungen der Form ax + b = c sowie von Gleichungen, bei denen Rechts- und Linksterm zuerst zusammengefasst werden müssen.",
+      "lessons": [
+        "al-2-gleichungen"
+      ],
+      "status": "implemented",
+      "evidence": "Zusammenfassen auf beiden Seiten, Äquivalenzumformungen und Probe; eindeutige, leere und volle Lösungsmenge."
+    },
+    {
+      "track": "I",
+      "lb": 6,
+      "competence": "lösen Ungleichungen der Form ax + b ⋚ c und stellen die Lösungsmenge in Intervall- und Mengenschreibweise dar.",
+      "lessons": [
+        "al-3-ungleichungen"
+      ],
+      "status": "implemented",
+      "evidence": "Vier Relationszeichen, negative Division, offener/geschlossener Rand; Intervall- und Mengenschreibweise über ℚ."
+    },
+    {
+      "track": "I",
+      "lb": 6,
+      "competence": "bearbeiten Sachaufgaben durch Aufstellen von Gleichungen und Ungleichungen und verwenden dabei auch Begriffe wie höchstens, mindestens, weniger als, mehr als.",
+      "lessons": [
+        "al-4-sachgleichungen",
+        "al-5-sachungleichungen"
+      ],
+      "status": "implemented",
+      "evidence": "Variable und Einheit festlegen; Kostenvergleich und Zahlentexte als Gleichung mit Sachprobe. Höchstens/mindestens/weniger/mehr als; Ungleichung und kleinste/größte sachgerechte ganze Anzahl."
+    },
+    {
+      "track": "I",
+      "lb": 7,
+      "competence": "wenden das um den verminderten und vermehrten Grundwert erweiterte Wissen über die Prozentrechnung auch in Alltagssituationen (z. B. Berechnung von Preisen ohne MwSt., Preissteigerung bzw. -reduzierung) an.",
+      "lessons": [
+        "pr-1-veraenderter-grundwert",
+        "pr-2-grundwert-zurueck"
+      ],
+      "status": "implemented",
+      "evidence": "Erhöhungs-/Senkungsfaktoren, Rabatt, vorgegebene Mehrwertsteuer und aufeinanderfolgende Preisänderungen. Vermehrten und verminderten Grundwert rückwärts durch Division bestimmen; Netto aus Brutto."
+    },
+    {
+      "track": "I",
+      "lb": 7,
+      "competence": "übertragen ihre Kenntnisse und Fertigkeiten aus der Prozentrechnung auf die Zinsrechnung und nutzen dabei die Begriffe Kapital, Zinssatz und Zinsen.",
+      "lessons": [
+        "pr-3-zinsrechnung"
+      ],
+      "status": "implemented",
+      "evidence": "Ein Anlagejahr ohne Zusatzannahmen; Kapital, Zinssatz, Zinsen und Endbetrag in allen Umkehrungen."
+    },
+    {
+      "track": "I",
+      "lb": 7,
+      "competence": "erkennen indirekt proportionale Zuordnungen aus grafischen und tabellarischen Darstellungen sowie in mathematischen Aussagen und Sachsituationen, begründen die indirekte Proportionalität und verwenden dabei die Begriffe produktgleich, indirekt proportional und Hyperbelast.",
+      "lessons": [
+        "pr-4-indirekt-proportional",
+        "pr-5-zuordnungen"
+      ],
+      "status": "implemented",
+      "evidence": "Produktgleiche Tabelle, Hyperbelast und Kontext; indirekter Dreisatz, fehlende Werte und Modellannahmen. Konstante Quotienten/Produkte an Tabelle, Graph und Sachsituation; Grundpreis als nicht proportionaler Gegenfall."
+    },
+    {
+      "track": "I",
+      "lb": 7,
+      "competence": "stellen indirekt proportionale Zuordnungen grafisch, tabellarisch und sprachlich dar und nutzen die Produktgleichheit sowie den Dreisatz zur Berechnung fehlender Größen auch in Sachverhalten.",
+      "lessons": [
+        "pr-4-indirekt-proportional"
+      ],
+      "status": "implemented",
+      "evidence": "Produktgleiche Tabelle, Hyperbelast und Kontext; indirekter Dreisatz, fehlende Werte und Modellannahmen."
+    },
+    {
+      "track": "I",
+      "lb": 7,
+      "competence": "unterscheiden direkt, indirekt und nicht proportionale Zuordnungen in Sachverhalten und berechnen ggf. fehlende Größen.",
+      "lessons": [
+        "pr-5-zuordnungen"
+      ],
+      "status": "implemented",
+      "evidence": "Konstante Quotienten/Produkte an Tabelle, Graph und Sachsituation; Grundpreis als nicht proportionaler Gegenfall."
+    },
+    {
+      "track": "I",
+      "lb": 8,
+      "competence": "ermitteln bei Daten die statistischen Kenngrößen arithmetisches Mittel, Zentralwert, Modalwert und Spannweite.",
+      "lessons": [
+        "da-1-kenngroessen"
+      ],
+      "status": "implemented",
+      "evidence": "Alle vier Kenngrößen, gerade/ungerade Datenzahl, Sortieren und mehrere Modalwerte."
+    },
+    {
+      "track": "I",
+      "lb": 8,
+      "competence": "interpretieren Daten mithilfe von Kenngrößen und beschreiben dabei die Aussagekraft der verschiedenen Kenngrößen.",
+      "lessons": [
+        "da-2-aussagekraft"
+      ],
+      "status": "implemented",
+      "evidence": "Veränderbarer Ausreißer, passende Kennzahl und gleiche Mittelwerte bei verschiedener Spannweite."
+    },
+    {
+      "track": "I",
+      "lb": 8,
+      "competence": "beurteilen, ob bei einer Umfrage eine Stichprobe sinnvoll ist und unter welchen Umständen diese repräsentativ ist.",
+      "lessons": [
+        "da-3-stichproben"
+      ],
+      "status": "implemented",
+      "evidence": "da-3-stichproben: auswahl vergleicht Zufallsauswahl aus allen Jahrgängen mit AG-/Klassen-Selbstauswahl. gruppenanteile und das Labor vergleichen den tatsächlich geplanten Anteil beider Schulgruppen mit ihren 50 % in der Grundgesamtheit; Umfang allein heilt keine Auswahlverzerrung."
+    },
+    {
+      "track": "I",
+      "lb": 8,
+      "competence": "interpretieren Diagramme aus dem Alltag (z. B. Werbung), in denen die Daten verfälscht bzw. manipulativ dargestellt werden, und finden eine angemessenere Darstellung.",
+      "lessons": [
+        "da-4-diagramme"
+      ],
+      "status": "implemented",
+      "evidence": "Abgeschnittene Achse bei unveränderten Daten; reale Zunahme gegen sichtbare Höhen; Zeitabstände und Symbolflächen korrigieren."
+    },
+    {
+      "track": "II_III",
+      "lb": 1,
+      "competence": "berechnen, aufbauend auf ihrem Wissen über Potenzen, Potenzwerte mit negativen ganzzahligen Exponenten.",
+      "lessons": [
+        "pt-1-negative-exponenten"
+      ],
+      "status": "implemented",
+      "evidence": "pt-1-negative-exponenten: Die Potenzleiter zeigt wiederholtes Teilen bis zu Exponent 0 und negativen Exponenten. kehrwert sowie vorzeichen-und-null berechnen Kehrwert und Potenzwert einschließlich negativer Basis."
+    },
+    {
+      "track": "II_III",
+      "lb": 1,
+      "competence": "wenden insbesondere bei Termen mit Variablen die Potenzgesetze (Potenzen mit gleicher Basis bzw. gleichen Exponenten multiplizieren und dividieren, Potenzen potenzieren) zum vorteilhaften Rechnen an.",
+      "lessons": [
+        "pt-2-gleiche-basis",
+        "pt-3-weitere-potenzgesetze"
+      ],
+      "status": "implemented",
+      "evidence": "pt-2-gleiche-basis: produkt und quotient wenden die Additions-/Subtraktionsregel der Exponenten an. pt-3-weitere-potenzgesetze: gleicher-exponent und potenz-potenzieren unterscheiden Produkt-/Quotientenpotenz und verschachtelte Potenz; die Erklärungen formulieren die Regeln auch mit Variablen."
+    },
+    {
+      "track": "II_III",
+      "lb": 1,
+      "competence": "nutzen Zehnerpotenzen mit positiven und negativen Exponenten sowie die Vorsilben bestimmter Zehnerpotenzen (von 10⁻¹⁸ bis 10¹⁸) zur Darstellung von Größen aus dem Alltag.",
+      "lessons": [
+        "pt-4-zehnerpotenzen",
+        "pt-5-vorsilben"
+      ],
+      "status": "implemented",
+      "evidence": "pt-4-zehnerpotenzen: normieren und mit-zehnerpotenzen-rechnen wechseln zwischen Dezimal- und Potenzschreibweise. pt-5-vorsilben: vorsilbe-lesen und einheiten-umrechnen ordnen die Vorsätze Atto bis Exa zu und halten beim Einheitenwechsel den Größenwert fest."
+    },
+    {
+      "track": "II_III",
+      "lb": 2,
+      "competence": "identifizieren die Parallelverschiebung als eine Kongruenzabbildung und beschreiben ihre Eigenschaften.",
+      "lessons": [
+        "pv-1-verschiebung"
+      ],
+      "status": "implemented",
+      "evidence": "Dreieck mit gemeinsamem Verschiebungspfeil; Erhaltung von Länge, Winkel und Umlaufsinn; Bild- und Urpunktaufgaben."
+    },
+    {
+      "track": "II_III",
+      "lb": 2,
+      "competence": "bilden mithilfe der Abbildungsvorschrift der Parallelverschiebung Punkte und ebene Figuren ab und nutzen dazu auch geeignete Geometriesoftware.",
+      "lessons": [
+        "pv-1-verschiebung",
+        "pv-2-vektoren"
+      ],
+      "status": "implemented",
+      "evidence": "Dreieck mit gemeinsamem Verschiebungspfeil; Erhaltung von Länge, Winkel und Umlaufsinn; Bild- und Urpunktaufgaben. Spitze minus Schaft, Gegenvektor und Rückweg im Koordinatenlabor."
+    },
+    {
+      "track": "II_III",
+      "lb": 2,
+      "competence": "geben zu Vektoren die zugehörigen Gegenvektoren an und führen die Umkehrabbildung der Parallelverschiebung durch.",
+      "lessons": [
+        "pv-2-vektoren"
+      ],
+      "status": "implemented",
+      "evidence": "Spitze minus Schaft, Gegenvektor und Rückweg im Koordinatenlabor."
+    },
+    {
+      "track": "II_III",
+      "lb": 2,
+      "competence": "berechnen die Koordinaten von Vektoren und Punkten (u. a. Eckpunkte von Parallelogrammen, Mittelpunkt einer Strecke).",
+      "lessons": [
+        "pv-2-vektoren",
+        "pv-4-parallelogramm-mitte"
+      ],
+      "status": "implemented",
+      "evidence": "Spitze minus Schaft, Gegenvektor und Rückweg im Koordinatenlabor. Diagonalenmitte im veränderbaren Parallelogramm; vierte Ecke und Mittelpunkt berechnen."
+    },
+    {
+      "track": "II_III",
+      "lb": 2,
+      "competence": "berechnen den Flächeninhalt von Dreiecken und Vierecken mithilfe zweireihiger Determinanten.",
+      "lessons": [
+        "pv-5-determinante"
+      ],
+      "status": "implemented",
+      "evidence": "Orientierte Determinante und halbe Betragsfläche; Viereck in zwei Dreiecke zerlegen; Maßstab bei Flächen."
+    },
+    {
+      "track": "II_III",
+      "lb": 2,
+      "competence": "begründen Winkelmaße an parallelen Geraden mithilfe von Stufen-, Wechsel- und Ergänzungswinkel und umgekehrt die Parallelität von Geraden.",
+      "lessons": [
+        "pv-6-parallelen-winkel"
+      ],
+      "status": "implemented",
+      "evidence": "Stufen-, Wechsel- und Ergänzungswinkel sowie Umkehrung; gedrehte zweite Gerade als Gegenprobe."
+    },
+    {
+      "track": "II_III",
+      "lb": 2,
+      "competence": "berechnen die Winkelmaße in ebenen Figuren auch mithilfe der Innenwinkelsumme im Dreieck bzw. Viereck sowie des Außenwinkelsatzes des Dreiecks.",
+      "lessons": [
+        "pv-7-winkelsummen"
+      ],
+      "status": "implemented",
+      "evidence": "Begründung mit Parallele und Wechselwinkeln; Außenwinkelsatz und Viereckszerlegung; Winkelaufgaben."
+    },
+    {
+      "track": "II_III",
+      "lb": 3,
+      "competence": "zeichnen geometrische Ortslinien (Kreislinie, Mittelsenkrechte, Winkelhalbierende, Parallelenpaar, Thaleskreis) und die zur Kreislinie, zur Mittelsenkrechten und zum Parallelenpaar gehörigen geometrischen Ortsbereiche und verbalisieren die besonderen Eigenschaften der jeweiligen Punkte.",
+      "lessons": [
+        "ol-1-kreisbereiche",
+        "ol-2-abstandsorte",
+        "ol-3-thales"
+      ],
+      "status": "implemented",
+      "evidence": "Kreislinie, geschlossene und strenge Abstandsbereiche, sprachliche Rückübersetzung und Maßstab. Konstruktion und Prüfpunkte zu Mittelsenkrechter, Winkelhalbierender, Parallelenpaar sowie Halbebene und Abstandsband. Thalessatz mit Umkehrung und Begründung über gleiche Radien; Kreis-, Innen- und Außenpunkte."
+    },
+    {
+      "track": "II_III",
+      "lb": 3,
+      "competence": "unterscheiden die möglichen Lagebeziehungen von Kreis und Gerade auch anhand geeigneter Zeichnungen und stellen die besonderen Eigenschaften der Tangente an einen Kreis heraus.",
+      "lessons": [
+        "ol-4-kreis-gerade"
+      ],
+      "status": "implemented",
+      "evidence": "Mittelpunktlot gegen Radius vergleichen; Sekante, Tangente, Passante und senkrechter Berührradius."
+    },
+    {
+      "track": "II_III",
+      "lb": 3,
+      "competence": "lösen geometrische Probleme auch zu realen Situationen, setzen dabei Formulierungen wie höchstens, mindestens, mehr als, weniger als, und zugleich in entsprechende Zeichnungen um und formulieren umgekehrt auch zu vorgegebenen bildlichen Darstellungen die entsprechenden Eigenschaften der jeweiligen Punkte.",
+      "lessons": [
+        "ol-1-kreisbereiche",
+        "ol-2-abstandsorte",
+        "ol-6-ortsschnitte"
+      ],
+      "status": "implemented",
+      "evidence": "Kreislinie, geschlossene und strenge Abstandsbereiche, sprachliche Rückübersetzung und Maßstab. Konstruktion und Prüfpunkte zu Mittelsenkrechter, Winkelhalbierender, Parallelenpaar sowie Halbebene und Abstandsband. Schnitt und Vereinigung zweier Kreisbereiche; Randbedingungen sowie Kreis mit Mittelsenkrechter."
+    },
+    {
+      "track": "II_III",
+      "lb": 3,
+      "competence": "nutzen die Eigenschaften von In- und Umkreis des Dreiecks zur Bearbeitung einfacher geometrischer Sachverhalte.",
+      "lessons": [
+        "ol-7-umkreis-inkreis"
+      ],
+      "status": "implemented",
+      "evidence": "Umkreis durch Mittelsenkrechte, Inkreis durch Winkelhalbierende und Lot; Lage- und Radiusaufgaben."
+    },
+    {
+      "track": "II_III",
+      "lb": 4,
+      "competence": "fassen Terme (z. B. x + 2x; 2 ⋅ x ⋅ x²; 5x² : 2x) zur Vereinfachung und Überprüfung ihrer Äquivalenz zusammen und wenden dabei auch die Potenzgesetze an.",
+      "lessons": [
+        "al-1-terme"
+      ],
+      "status": "implemented",
+      "evidence": "Gleichartige Summanden, Produkte und Quotienten von Potenzen samt Definitionsbedingung; Klammer und Gegenprobe."
+    },
+    {
+      "track": "II_III",
+      "lb": 4,
+      "competence": "kombinieren die Äquivalenzumformungen aus der Jahrgangsstufe 6 zur Lösung von Gleichungen der Form ax + b = c sowie von Gleichungen, bei denen Rechts- und Linksterm zuerst zusammengefasst werden müssen.",
+      "lessons": [
+        "al-2-gleichungen"
+      ],
+      "status": "implemented",
+      "evidence": "Zusammenfassen auf beiden Seiten, Äquivalenzumformungen und Probe; eindeutige, leere und volle Lösungsmenge."
+    },
+    {
+      "track": "II_III",
+      "lb": 4,
+      "competence": "lösen Ungleichungen der Form ax + b ⋚ c und stellen die Lösungsmenge in Intervall- und Mengenschreibweise dar.",
+      "lessons": [
+        "al-3-ungleichungen"
+      ],
+      "status": "implemented",
+      "evidence": "Vier Relationszeichen, negative Division, offener/geschlossener Rand; Intervall- und Mengenschreibweise über ℚ."
+    },
+    {
+      "track": "II_III",
+      "lb": 4,
+      "competence": "bearbeiten Sachaufgaben durch Aufstellen von Gleichungen und Ungleichungen und verwenden dabei auch Begriffe wie höchstens, mindestens, weniger als, mehr als.",
+      "lessons": [
+        "al-4-sachgleichungen",
+        "al-5-sachungleichungen"
+      ],
+      "status": "implemented",
+      "evidence": "Variable und Einheit festlegen; Kostenvergleich und Zahlentexte als Gleichung mit Sachprobe. Höchstens/mindestens/weniger/mehr als; Ungleichung und kleinste/größte sachgerechte ganze Anzahl."
+    },
+    {
+      "track": "II_III",
+      "lb": 5,
+      "competence": "wenden das um den verminderten und vermehrten Grundwert erweiterte Wissen über die Prozentrechnung auch in Alltagssituationen (z. B. Berechnung von Preisen ohne MwSt., Preissteigerung bzw. reduzierung) an.",
+      "lessons": [
+        "pr-1-veraenderter-grundwert",
+        "pr-2-grundwert-zurueck"
+      ],
+      "status": "implemented",
+      "evidence": "Erhöhungs-/Senkungsfaktoren, Rabatt, vorgegebene Mehrwertsteuer und aufeinanderfolgende Preisänderungen. Vermehrten und verminderten Grundwert rückwärts durch Division bestimmen; Netto aus Brutto."
+    },
+    {
+      "track": "II_III",
+      "lb": 5,
+      "competence": "übertragen ihre Kenntnisse und Fertigkeiten aus der Prozentrechnung auf die Zinsrechnung und nutzen dabei die Begriffe Kapital, Zinssatz und Zinsen sachgerecht.",
+      "lessons": [
+        "pr-3-zinsrechnung"
+      ],
+      "status": "implemented",
+      "evidence": "Ein Anlagejahr ohne Zusatzannahmen; Kapital, Zinssatz, Zinsen und Endbetrag in allen Umkehrungen."
+    },
+    {
+      "track": "II_III",
+      "lb": 5,
+      "competence": "erkennen indirekt proportionale Zuordnungen aus grafischen und tabellarischen Darstellungen sowie in mathematischen Aussagen und Sachsituationen, begründen die indirekte Proportionalität und verwenden dabei die Begriffe produktgleich, indirekt proportional und Hyperbelast.",
+      "lessons": [
+        "pr-4-indirekt-proportional",
+        "pr-5-zuordnungen"
+      ],
+      "status": "implemented",
+      "evidence": "Produktgleiche Tabelle, Hyperbelast und Kontext; indirekter Dreisatz, fehlende Werte und Modellannahmen. Konstante Quotienten/Produkte an Tabelle, Graph und Sachsituation; Grundpreis als nicht proportionaler Gegenfall."
+    },
+    {
+      "track": "II_III",
+      "lb": 5,
+      "competence": "stellen indirekt proportionale Zuordnungen grafisch, tabellarisch und sprachlich dar und nutzen die Produktgleichheit sowie den Dreisatz zur Berechnung fehlender Größen auch in Sachverhalten.",
+      "lessons": [
+        "pr-4-indirekt-proportional"
+      ],
+      "status": "implemented",
+      "evidence": "Produktgleiche Tabelle, Hyperbelast und Kontext; indirekter Dreisatz, fehlende Werte und Modellannahmen."
+    },
+    {
+      "track": "II_III",
+      "lb": 5,
+      "competence": "unterscheiden direkt, indirekt und nicht proportionale Zuordnungen in Sachverhalten und berechnen ggf. fehlende Größen.",
+      "lessons": [
+        "pr-5-zuordnungen"
+      ],
+      "status": "implemented",
+      "evidence": "Konstante Quotienten/Produkte an Tabelle, Graph und Sachsituation; Grundpreis als nicht proportionaler Gegenfall."
+    },
+    {
+      "track": "II_III",
+      "lb": 6,
+      "competence": "ermitteln bei Daten die statistischen Kenngrößen arithmetisches Mittel, Zentralwert, Modalwert und Spannweite.",
+      "lessons": [
+        "da-1-kenngroessen"
+      ],
+      "status": "implemented",
+      "evidence": "Alle vier Kenngrößen, gerade/ungerade Datenzahl, Sortieren und mehrere Modalwerte."
+    },
+    {
+      "track": "II_III",
+      "lb": 6,
+      "competence": "interpretieren Daten mithilfe von Kenngrößen und beschreiben dabei die Aussagekraft der verschiedenen Kenngrößen.",
+      "lessons": [
+        "da-2-aussagekraft"
+      ],
+      "status": "implemented",
+      "evidence": "Veränderbarer Ausreißer, passende Kennzahl und gleiche Mittelwerte bei verschiedener Spannweite."
+    },
+    {
+      "track": "II_III",
+      "lb": 6,
+      "competence": "beurteilen, ob bei einer Umfrage eine Stichprobe sinnvoll ist und unter welchen Umständen diese repräsentativ ist.",
+      "lessons": [
+        "da-3-stichproben"
+      ],
+      "status": "implemented",
+      "evidence": "da-3-stichproben: auswahl vergleicht Zufallsauswahl aus allen Jahrgängen mit AG-/Klassen-Selbstauswahl. gruppenanteile und das Labor vergleichen den tatsächlich geplanten Anteil beider Schulgruppen mit ihren 50 % in der Grundgesamtheit; Umfang allein heilt keine Auswahlverzerrung."
+    },
+    {
+      "track": "II_III",
+      "lb": 6,
+      "competence": "interpretieren Diagramme aus dem Alltag (z. B. Werbung), in denen die Daten verfälscht bzw. manipulativ dargestellt werden, und finden eine angemessenere Darstellung.",
+      "lessons": [
+        "da-4-diagramme"
+      ],
+      "status": "implemented",
+      "evidence": "Abgeschnittene Achse bei unveränderten Daten; reale Zunahme gegen sichtbare Höhen; Zeitabstände und Symbolflächen korrigieren."
+    }
+  ]
+}
