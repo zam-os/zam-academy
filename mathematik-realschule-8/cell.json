@@ -4404,7 +4404,7 @@
           "question": "Welche Wertemenge hat f(x) = −3x + 3 auf der Definitionsmenge D = [−1; 2]?",
           "concept": "W = [−3; 6]",
           "materiality": "material",
-          "sample_solution": "f(−1) = −3 · (−1) + 3 = 6 und f(2) = −3 · 2 + 3 = −3. Die Gerade fällt, also ist f(2) der kleinste und f(−1) der größte Wert: W = [−3; 6].",
+          "sample_solution": "f(−1) = −3 · (−1) + 3 = 6 und f(2) = −3 · 2 + 3 = −3. f nimmt gleichmäßig ab (der Graph fällt), also ist f(2) der kleinste und f(−1) der größte Wert: W = [−3; 6].",
           "fast_check": {
             "type": "binary_choice",
             "options": [
@@ -4420,7 +4420,7 @@
             },
             {
               "text": "W = [0; 6]",
-              "reason": "0 ist hier keine Grenze von W: Die Gerade fällt weiter bis f(2) = −3."
+              "reason": "0 ist hier keine Grenze von W: f nimmt weiter ab bis f(2) = −3."
             }
           ]
         },
@@ -6142,31 +6142,41 @@
         },
         {
           "id": "01M5MGW21DW7P2CPPP0PN6VFH2",
-          "slug": "m8-schwankung-viele-versuche",
+          "slug": "m8-absolute-aus-relativer",
           "language": "de",
           "tier": "tier1_fast",
           "bloom_level": 2,
           "source_link": "https://academy.zam-os.org/mathematik-realschule-8/#lesson=dz-4-haeufigkeiten",
-          "question": "Was beobachtest du an der relativen Häufigkeit eines Ereignisses, wenn du ein Zufallsexperiment immer öfter wiederholst?",
-          "concept": "Am Anfang schwankt sie stark, mit wachsender Zahl der Versuche immer weniger.",
+          "question": "Ein Zufallsexperiment wurde n-mal durchgeführt, und das Ereignis E hat die relative Häufigkeit h(E). Wie berechnest du, wie oft E eingetreten ist?",
+          "concept_segments": [
+            {
+              "type": "text",
+              "text": "Relative Häufigkeit mal die Anzahl aller Versuche: "
+            },
+            {
+              "type": "math",
+              "tex": "H(E) = h(E) \\cdot n",
+              "speech": "H von E gleich h von E mal n"
+            }
+          ],
           "materiality": "material",
-          "sample_solution": "Nach 10 Würfen kann h(6) leicht 0 oder 0,4 sein; nach einigen hundert Würfen ändert sie sich von Wurf zu Wurf kaum noch. Deshalb schätzt man Gewinnchancen nur aus langen Versuchsreihen ein.",
+          "sample_solution": "Beispiel: Ein Reißnagel wird 250-mal geworfen, h(Spitze oben) = 0,36. Dann ist H(Spitze oben) = 0,36 · 250 = 90; er landete 90-mal mit der Spitze nach oben. In Prozent gerechnet: 36 % von 250 sind 90.",
           "fast_check": {
             "type": "binary_choice",
             "options": [
-              "Sie schwankt mit der Zeit immer weniger.",
-              "Sie wird mit jedem Versuch größer."
+              "H(E) = h(E) · n",
+              "H(E) = h(E) : n"
             ],
             "correct_index": 0
           },
           "choice_distractors": [
             {
-              "text": "Sie wird mit jedem weiteren Versuch größer, bis sie schließlich 1 erreicht.",
-              "reason": "Die relative Häufigkeit steigt nicht immer weiter; sie pendelt sich ein und schwankt immer weniger."
+              "text": "Anzahl aller Versuche durch die relative Häufigkeit, also n : h(E).",
+              "reason": "Geteilt wird hier nicht: Die Treffer sind der Anteil h(E) von allen n Versuchen, also h(E) · n."
             },
             {
-              "text": "Sie bleibt von Anfang an gleich, egal ob nach 10 oder 1000 Versuchen.",
-              "reason": "Nach wenigen Versuchen schwankt sie stark; erst lange Versuchsreihen geben einen ruhigen Wert."
+              "text": "Relative Häufigkeit mal 100, denn so wird der Anteil zur Anzahl.",
+              "reason": "Mal 100 ergibt den Prozentsatz, nicht die Anzahl der Treffer; die Anzahl ist h(E) · n."
             }
           ]
         }
