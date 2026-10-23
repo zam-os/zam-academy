@@ -13,8 +13,16 @@ import {
 } from "../src/lab/engine";
 import { labView } from "../src/lab/visuals";
 import type { ExerciseTask, LabDefinition, LabValues } from "../src/model/types";
+import cell from "../cell.json";
 import { GOAL_WITNESSES } from "./witnesses";
 
+/**
+ * Definitions- and Wertemenge are written 𝔻 and 𝕎 in every stage (stage 7
+ * needs D for the discriminant). A plain D or W naming a set is a slip; in a
+ * card it would also make the answer stand out from its distractors.
+ */
+const PLAIN_SET = /(?<![\w$.])[DW] = (?:ℝ|\\?\{)|(?:\bin|∉|\bzu) [DW](?![\w(₁₂ₙ'′])|menge [DW]\b|(?<![\w$.])[DW] und [DW]\b|(?<![\w$.])[DW]\(f|(?<![\w$.])D: 0 </;
+const plain = (html: string) => html.replace(/<[^>]+>/g, " ");
 
 /**
  * The settings a lab test walks: the full grid for few sliders, a coarser
@@ -75,6 +83,7 @@ describe("Labore", () => {
             expect(Number.isFinite(value), `${lesson.id}.${readout.key} at ${JSON.stringify(values)}`).toBe(true);
           } else {
             expect(value.length, `${lesson.id}.${readout.key}`).toBeGreaterThan(0);
+            expect(value, `${lesson.id}.${readout.key} writes a set as D or W`).not.toMatch(PLAIN_SET);
           }
         }
         const svg = view.render(values, readouts);
@@ -83,6 +92,9 @@ describe("Labore", () => {
         expect(svg, `${lesson.id} draws NaN at ${JSON.stringify(values)}`).not.toContain("NaN");
         expect(svg, `${lesson.id} draws undefined`).not.toContain("undefined");
         expect(svg, `${lesson.id} draws Infinity`).not.toContain("Infinity");
+        expect(plain(svg), `${lesson.id} writes a set as D or W at ${JSON.stringify(values)}`).not.toMatch(PLAIN_SET);
+        // The 𝔻 and 𝕎 bars of the function labs carry the set's name on its own.
+        if (/^(pt|el)-/.test(lesson.id)) expect(svg, `${lesson.id} labels a set D or W`).not.toMatch(/>[DW]<\/text>/);
       }
     }
   });
@@ -174,6 +186,8 @@ describe("Aufgaben", () => {
           if (level === 1) expect(task.formulaHint, where).toBeTruthy();
           const html = [task.prompt, ...task.given, ...task.steps, task.formulaHint ?? ""].join(" ");
           expect(html, where).not.toMatch(/NaN|undefined|Infinity|\+ −|− −|\+ -/);
+          const shown = [html, ...task.fields.flatMap((field) => [field.label, ...(field.kind === "choice" ? field.options : (field.slips ?? []).map((slip) => slip.hint))])];
+          for (const part of shown) expect(plain(part), `${where}: a set written as D or W`).not.toMatch(PLAIN_SET);
           // Negative numbers carry a real minus sign (−), as fmt() writes them.
           expect(html.replace(/<[^>]+>/g, " "), `${where}: hyphen as minus`).not.toMatch(/(^|[\s(=:|,{±])-\d/);
           for (const field of task.fields) {
@@ -218,6 +232,43 @@ describe("Aufgaben", () => {
             }
           }
         }
+      }
+    }
+  });
+});
+
+describe("Schreibweise", () => {
+  it("writes the Definitions- and Wertemenge as 𝔻 and 𝕎 in every lesson text and card", () => {
+    for (const lesson of ALL_LESSONS) {
+      const texts = [
+        lesson.title,
+        lesson.subtitle,
+        lesson.whyItMatters,
+        lesson.explanationHtml,
+        ...lesson.formulas.flatMap((formula) => [formula.name, formula.html, formula.quantities ?? ""]),
+        lesson.quiz.question,
+        ...lesson.quiz.options,
+        lesson.quiz.explanation,
+        lesson.lab.title,
+        lesson.lab.intro,
+        ...lesson.lab.params.flatMap((param) => [(param as { label?: string }).label ?? "", ...(param.type === "choice" ? param.options.map((o) => o.label) : [])]),
+        ...lesson.lab.readouts.map((readout) => readout.label),
+        ...lesson.lab.goals.map((goal) => goal.text),
+      ];
+      for (const text of texts) expect(plain(text), lesson.id).not.toMatch(PLAIN_SET);
+    }
+    // Every string a card shows: questions, answers, segments, fast checks, distractors.
+    const strings = (value: unknown, key = ""): string[] =>
+      typeof value === "string"
+        ? ["id", "slug", "source_link", "tier", "language"].includes(key) ? [] : [value]
+        : Array.isArray(value)
+          ? value.flatMap((item) => strings(item, key))
+          : value && typeof value === "object"
+            ? Object.entries(value).flatMap(([k, v]) => strings(v, k))
+            : [];
+    for (const atom of cell.atoms) {
+      for (const item of atom.practice_items) {
+        for (const text of strings(item)) expect(text, `${item.slug}: a set written as D or W`).not.toMatch(PLAIN_SET);
       }
     }
   });

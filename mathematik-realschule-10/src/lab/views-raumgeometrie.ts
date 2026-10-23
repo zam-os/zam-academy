@@ -853,7 +853,7 @@ function extremumView(v: LabValues): string {
       out += text(x0 + S / 2, y0 + S / 2 + 4, `a − 2x = ${fmt(v.L - 2 * v.c, 1)} cm`, "lab-text-small", "middle");
       if (c > 14) out += text(x0 + c / 2, y0 + c / 2 + 4, "x", "lab-text lab-text-b", "middle");
     } else {
-      out += text(sheetX + S / 2, sheetY + S / 2, "x liegt nicht in D", "lab-text lab-text-bad", "middle");
+      out += text(sheetX + S / 2, sheetY + S / 2, "x liegt nicht in 𝔻", "lab-text lab-text-bad", "middle");
     }
     out += text(16, 24, "Schachtel: V(x) = x · (a − 2x)²", "lab-text lab-text-big");
     out += text(16, 44, `Karton a = ${fmt(v.L, 0)} cm: Ecken x × x ausschneiden, Ränder hochklappen`, "lab-text-muted");
@@ -870,7 +870,7 @@ function extremumView(v: LabValues): string {
       out += line(cx, base + 1, cx + x * ke, base + 1, "lab-side-b");
       out += text(cx, base + 20, `x = ${fmt(x, 1)} cm, h(x) = ${fmt(hx, 2)} cm`, "lab-text lab-text-b", "middle");
     } else {
-      out += text(cx, base + 30, "x liegt nicht in D: kein Zylinder", "lab-text lab-text-bad", "middle");
+      out += text(cx, base + 30, "x liegt nicht in 𝔻: kein Zylinder", "lab-text lab-text-bad", "middle");
     }
     out += text(16, 24, v.qty === 1 ? "V(x) = π · x² · h(x)" : "M(x) = 2π · x · h(x)", "lab-text lab-text-big");
     out += text(16, 44, `Kegel: r = ${fmt(v.R, 1)} cm, h = ${fmt(v.hk, 1)} cm; h(x) mit dem Strahlensatz`, "lab-text-muted");
@@ -906,9 +906,9 @@ function extremumView(v: LabValues): string {
     out += circle(P.x, P.y, 6, "lab-point-b");
     out += text(box.x + box.w - 4, box.y + 14, `${name}(${fmt(x, 1)}) = ${fmt(value, 2)}`, "lab-text lab-text-b", "end");
   } else {
-    out += text(box.x + box.w / 2, box.y + 20, "x liegt nicht in D", "lab-text lab-text-bad", "middle");
+    out += text(box.x + box.w / 2, box.y + 20, "x liegt nicht in 𝔻", "lab-text lab-text-bad", "middle");
   }
-  out += text(box.x, box.y + box.h + 28, `D: 0 < x < ${fmt(bound, 1)}`, "lab-text-small");
+  out += text(box.x, box.y + box.h + 28, `𝔻: 0 < x < ${fmt(bound, 1)}`, "lab-text-small");
   out += `</svg>`;
   return out;
 }

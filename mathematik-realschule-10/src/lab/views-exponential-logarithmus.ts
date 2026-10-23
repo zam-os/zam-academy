@@ -678,7 +678,7 @@ function expShift(v: LabValues): string {
   const f = (x: number) => v.k * v.a ** (x - v.b) + v.c;
   let out = open("Verschobene und gestreckte Exponentialfunktion mit Asymptote, Wertemenge und Umkehrfunktion");
   out += plot.clip("clip-shift") + plot.grid(1, 2);
-  // W along the y-axis: everything above (k > 0) or below (k < 0) the asymptote.
+  // 𝕎 along the y-axis: everything above (k > 0) or below (k < 0) the asymptote.
   // The bar sits just right of the axis so the tick numbers on its left stay readable.
   if (v.k !== 0) {
     const top = v.k > 0 ? plot.ymax : v.c;
@@ -724,7 +724,7 @@ function expShift(v: LabValues): string {
   avoid.push(P, C);
   const box = cornerRect(plot, lines, avoid);
   out += mathBox(box.left + 8, box.top + 17, lines);
-  // "W" beside the bar, near the asymptote or at its open end: wherever the panel
+  // "𝕎" beside the bar, near the asymptote or at its open end: wherever the panel
   // leaves room and neither a curve, a tick number, the y-axis name nor the label
   // of (b | k + c) is close.
   if (v.k !== 0) {
@@ -746,7 +746,7 @@ function expShift(v: LabValues): string {
       .filter((p) => !inBox(p));
     if (candidates.length) {
       const best = candidates.reduce((a, b) => (clearance(b) > clearance(a) ? b : a));
-      out += text(best.x + (best.right ? -4 : 4), best.y + 4, "W", "lab-text-small lab-text-b", best.right ? "start" : "end");
+      out += text(best.x + (best.right ? -4 : 4), best.y + 4, "𝕎", "lab-text-small lab-text-b", best.right ? "start" : "end");
     }
   }
   // handles last, above the panel
@@ -782,10 +782,10 @@ function logGraph(v: LabValues): string {
   const point = (y: number): [number, number] | null => (v.k === 0 ? null : [v.b + v.a ** ((y - v.c) / v.k), y]);
   let out = open("Graph einer Logarithmusfunktion mit senkrechter Asymptote und Spiegelbild an y = x");
   out += plot.clip("clip-log") + plot.grid(1, 2);
-  // D along the x-axis: every x right of the asymptote
+  // 𝔻 along the x-axis: every x right of the asymptote
   const dLeft = Math.max(v.b, plot.xmin);
   out += rect(plot.X(dLeft), plot.Y(0) - 5, plot.X(plot.xmax) - plot.X(dLeft), 10, "lab-fill-b");
-  out += text(plot.X(plot.xmax) - 4, plot.Y(0) + 16, "D", "lab-text-small lab-text-b", "end");
+  out += text(plot.X(plot.xmax) - 4, plot.Y(0) + 16, "𝔻", "lab-text-small lab-text-b", "end");
   out += vline(plot, v.b, "lab-curve-c");
   const label: Pt = { x: plot.X(v.b) + (v.b > 4 ? -6 : 6), y: plot.Y(-4.6) };
   out += text(label.x, label.y, `Asymptote x = ${fmt(v.b)}`, "lab-text-small lab-text-c", v.b > 4 ? "end" : "start");

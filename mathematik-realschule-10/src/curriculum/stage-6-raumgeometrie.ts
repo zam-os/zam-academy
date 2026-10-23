@@ -1174,7 +1174,7 @@ const zusammengesetzt: Lesson = {
 
 /** The quantity of the extremum lab at the current x, as text. */
 function extremumText(v: LabValues): string {
-  if (!extremumInDomain(v)) return "x liegt nicht in D";
+  if (!extremumInDomain(v)) return "x liegt nicht in 𝔻";
   const name = v.task === 1 || v.qty === 1 ? "V" : "M";
   return `${name}(${fmt(extremumX(v), 1)}) = ${fmt(extremumAt(v, extremumX(v)), 2)} ${name === "V" ? "cm³" : "cm²"}`;
 }
@@ -1242,12 +1242,12 @@ const extremwerte: Lesson = {
       { type: "range", key: "c", label: "ausgeschnittenes Quadrat x", unit: "cm", min: 0, max: 15, step: 0.1, value: 1, digits: 1, showIf: (v) => v.task === 1 },
     ],
     readouts: [
-      { key: "D", label: "Definitionsmenge", compute: (v) => `0 < x < ${fmt(extremumBound(v), 1)}` },
+      { key: "D", label: "Definitionsmenge 𝔻", compute: (v) => `0 < x < ${fmt(extremumBound(v), 1)}` },
       {
         key: "dep",
         label: "Maße in Abhängigkeit von x",
         compute: (v) => {
-          if (!extremumInDomain(v)) return "x liegt nicht in D";
+          if (!extremumInDomain(v)) return "x liegt nicht in 𝔻";
           const x = extremumX(v);
           return v.task === 1 ? `Grundkante a − 2x = ${fmt(v.L - 2 * x, 1)} cm, Höhe x = ${fmt(x, 1)} cm` : `Radius x = ${fmt(x, 1)} cm, Höhe h(x) = ${fmt(v.hk * (1 - x / v.R), 2)} cm`;
         },

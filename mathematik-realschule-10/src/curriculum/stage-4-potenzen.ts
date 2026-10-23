@@ -758,7 +758,7 @@ const potenzfunktionen: Lesson = {
         emphasis: true,
         compute: (v) => {
           const y = powerOf(v.x, v.c);
-          return Number.isFinite(y) ? `P(${fmt(v.x, 2)} | ${fmt(y, 3)})` : `x = ${fmt(v.x, 2)} liegt nicht in D`;
+          return Number.isFinite(y) ? `P(${fmt(v.x, 2)} | ${fmt(y, 3)})` : `x = ${fmt(v.x, 2)} liegt nicht in 𝔻`;
         },
       },
     ],

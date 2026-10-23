@@ -843,12 +843,15 @@ class MatheApp {
               <thead><tr><th>Formel</th><th>Bedeutung</th><th>Lektion</th></tr></thead>
               <tbody>
                 ${stage.lessons
+                  // Only Zweig-I lessons get a mark: Zweig II/III can skip them. The
+                  // II/III lessons (Raumgeometrie, quadratische Funktionen) stay
+                  // unmarked, because Zweig I knows those formulas from grade 9.
                   .flatMap((lesson) =>
                     lesson.formulas.map(
                       (formula) => `<tr>
                         <td><strong>${esc(formula.name)}</strong><br><span class="formula">${formula.html}</span></td>
                         <td>${esc(formula.quantities)}</td>
-                        <td><button type="button" class="btn btn-ghost btn-sm" data-open-lesson="${lesson.id}">${esc(lesson.title)}</button>${lesson.tracks.length === 1 ? ` <span class="chip chip-track">nur ${TRACK_LABELS[lesson.tracks[0]]}</span>` : ""}</td>
+                        <td><button type="button" class="btn btn-ghost btn-sm" data-open-lesson="${lesson.id}">${esc(lesson.title)}</button>${lesson.tracks.length === 1 && lesson.tracks[0] === "I" ? ` <span class="chip chip-track">nur ${TRACK_LABELS.I}</span>` : ""}</td>
                       </tr>`,
                     ),
                   )

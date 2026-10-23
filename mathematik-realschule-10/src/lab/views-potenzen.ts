@@ -431,8 +431,8 @@ function powerGraph(v: LabValues): string {
     lines.push([axial ? "achsensymmetrisch" : "punktsymmetrisch", "lab-text-small"], [axial ? "zur y-Achse" : "zum Ursprung", "lab-text-small"]);
   }
   lines.push(["Asymptoten:", "lab-text-muted"], [sets.asymptotes, c < 0 ? "lab-text lab-text-c" : "lab-text"], ["", ""]);
-  lines.push([Number.isFinite(y) ? `P${point(x, y)}` : `P: ${fmt(x, 2)} ∉ D`, "lab-text-small"]);
-  if (x !== 0) lines.push([Number.isFinite(yMirror) ? `P′${point(-x, yMirror)}` : `P′: ${fmt(-x, 2)} ∉ D`, "lab-text-small"]);
+  lines.push([Number.isFinite(y) ? `P${point(x, y)}` : `P: ${fmt(x, 2)} ∉ 𝔻`, "lab-text-small"]);
+  if (x !== 0) lines.push([Number.isFinite(yMirror) ? `P′${point(-x, yMirror)}` : `P′: ${fmt(-x, 2)} ∉ 𝔻`, "lab-text-small"]);
   out += sidePanel(lines);
   out += handle("x", H.x, H.y, "Stelle x von P");
   out += `</svg>`;
