@@ -486,10 +486,10 @@ const axialschnitte: Lesson = {
       <li><strong>Zusammengesetzte Figuren</strong> ergeben zusammengesetzte Körper: ein Rechteck mit aufgesetztem Dreieck einen Zylinder mit Kegelspitze (eine Rakete, ein gespitzter Buntstift), zwei gleiche Dreiecke Spitze an Spitze eine Sanduhr.</li>
       <li>Liegt die Figur <strong>nicht an der Achse</strong>, bleibt in der Mitte ein Loch: Ein Rechteck im Abstand d ergibt ein Rohr mit dem Innenradius d.</li>
     </ul>
-    <div class="example"><strong>Beispiel:</strong> Der Axialschnitt eines Körpers ist ein gleichschenkliges Trapez, unten 8 cm und oben 4 cm breit und 6 cm hoch.<br>
-      1. Halbiert an der Symmetrieachse bleibt ein rechtwinkliges Trapez mit den parallelen Seiten 4 cm und 2 cm und der Höhe 6 cm.<br>
-      2. Es dreht sich um seinen Schenkel mit den rechten Winkeln: Es entsteht ein <strong>Kegelstumpf</strong>, zum Beispiel ein Blumentopf, der unten schmaler ist.<br>
-      3. Maße: Radius unten 8 cm : 2 = 4 cm, Radius oben 4 cm : 2 = 2 cm, Höhe 6 cm.</div>
+    <div class="example"><strong>Beispiel:</strong> Der Axialschnitt eines Körpers ist ein gleichschenkliges Trapez, unten 4 cm und oben 8 cm breit und 6 cm hoch.<br>
+      1. Halbiert an der Symmetrieachse bleibt ein rechtwinkliges Trapez mit den parallelen Seiten 2 cm (unten) und 4 cm (oben) und der Höhe 6 cm.<br>
+      2. Es dreht sich um seinen Schenkel mit den rechten Winkeln: Es entsteht ein <strong>Kegelstumpf</strong>, der oben breiter ist als unten, zum Beispiel ein Blumentopf.<br>
+      3. Maße: Radius unten 4 cm : 2 = 2 cm, Radius oben 8 cm : 2 = 4 cm, Höhe 6 cm.</div>
     <p>Typische Fehler: die ganze Breite des Axialschnitts als Radius nehmen; das Spiegelbild vergessen, dann ist der „Axialschnitt“ nur halb so breit; die falsche Seite als Achse nehmen. Ein Rechteck 2 cm × 5 cm ergibt um die 5 cm lange Seite gedreht einen schlanken Zylinder mit r = 2 cm und h = 5 cm, um die 2 cm lange Seite einen flachen mit r = 5 cm und h = 2 cm.</p>
     <div class="merke"><strong>Merke:</strong> Axialschnitt = erzeugende Figur + ihr Spiegelbild an der Achse. Er ist 2r breit und so hoch wie der Körper; die Achse ist seine Symmetrieachse.</div>
   `,
@@ -926,12 +926,12 @@ const raumkoordinaten: Lesson = {
             const p = cuboidVertex(edge[0], a, b, c);
             const q = cuboidVertex(edge[1], a, b, c);
             target = [(p[0] + q[0]) / 2, (p[1] + q[1]) / 2, (p[2] + q[2]) / 2];
-            name = `den Mittelpunkt M der Kante [${edge[0]}${edge[1]}]`;
+            name = `des Mittelpunkts M der Kante [${edge[0]}${edge[1]}]`;
             route = `${edge[0]}${point3(...p)} und ${edge[1]}${point3(...q)}; M liegt in der Mitte: Jede Koordinate ist der Mittelwert, ((x₁ + x₂) : 2 | (y₁ + y₂) : 2 | (z₁ + z₂) : 2).`;
           } else {
             const vertex = rng.pick(["B", "C", "D", "E", "F", "G", "H"]);
             target = cuboidVertex(vertex, a, b, c);
-            name = `die Ecke ${vertex}`;
+            name = `der Ecke ${vertex}`;
             route = `Von A aus: ${fmt(target[0])} in x-Richtung (nach vorne), ${fmt(target[1])} in y-Richtung (nach rechts), ${fmt(target[2])} nach oben.`;
           }
           const label = mid ? "M" : name.slice(-1);

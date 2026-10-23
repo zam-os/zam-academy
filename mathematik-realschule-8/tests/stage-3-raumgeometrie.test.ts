@@ -349,7 +349,7 @@ describe("Aufgaben der Etappe 3 rechnen richtig", () => {
         target = p.map((v, i) => (v + q[i]) / 2);
         for (const v of target) expect(Number.isInteger(v), task.prompt).toBe(true);
       } else {
-        const name = plain(task.prompt).match(/die Ecke ([B-H])/)?.[1] ?? "";
+        const name = plain(task.prompt).match(/der Ecke ([B-H])/)?.[1] ?? "";
         target = [name === "B" || name === "C" || name === "F" || name === "G" ? m.a : 0, "CDGH".includes(name) ? m.b : 0, "EFGH".includes(name) ? m.c : 0];
       }
       target.forEach((v, i) => expect(num(task, i)).toBe(v));

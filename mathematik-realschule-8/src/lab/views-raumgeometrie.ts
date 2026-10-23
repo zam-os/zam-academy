@@ -1057,7 +1057,12 @@ function solidCoordinatesView(v: LabValues): string {
 // ─── 3.5 Schrägbilder von Prismen und Pyramiden ────────────────────────────
 
 export const OBLIQUE_NAMES = ["Quader", "dreiseitiges Prisma", "Pyramide"];
-const OBL = { x0: 66, y0: 300, k: 19 };
+const OBL = { x0: 66, y0: 300 };
+
+/** Scale of lab 3.5 in px per cm: as large as the biggest body (7 cm edges) allows for this ω and q, so dragging an edge never rescales. */
+function oblScale(v: LabValues): number {
+  return Math.min(26, 248 / (7 + 7 * v.q * Math.cos(v.omega * DEG)), 262 / (7 + 7 * v.q * Math.sin(v.omega * DEG)));
+}
 
 /** q as the books write it: ¼, ½, ¾, 1. */
 export function qText(q: number): string {
@@ -1119,7 +1124,8 @@ export function obliqueTrueSize(v: LabValues): string {
 }
 
 function obliqueView(v: LabValues): string {
-  const { x0, y0, k } = OBL;
+  const { x0, y0 } = OBL;
+  const k = oblScale(v);
   const { front, depth, frontName, depthName } = obliqueDims(v);
   const cam = obliqueCamera(v.q, v.omega, x0, y0, k);
   const solid = obliqueSolid(v);
@@ -1185,7 +1191,8 @@ function obliqueView(v: LabValues): string {
 
 /** Inverse of the handles of lab 3.5. */
 function obliqueDrag(handleId: "front" | "depth" | "top", p: Pt, v: LabValues): Partial<LabValues> {
-  const { x0, y0, k } = OBL;
+  const { x0, y0 } = OBL;
+  const k = oblScale(v);
   const { front, depth } = obliqueDims(v);
   const frontKey = v.pos === 1 ? "b" : "a";
   const depthKey = v.pos === 1 ? "a" : "b";
@@ -1207,7 +1214,12 @@ export const TRUE_FIGURES = [
   ["Grundfläche ABCD", "Diagonalschnitt ACGE", "Seitenfläche BCGF"],
   ["Seitenfläche ABS", "Dreieck AMS", "Dreieck NMS"],
 ];
-const TS = { x0: 34, y0: 292, k: 18, q: 0.5 };
+const TS = { x0: 34, y0: 292, q: 0.5 };
+
+/** Scale of the Schrägbild in lab 3.6, fixed for each ω (the handles change only the edges). */
+function tsScale(v: LabValues): number {
+  return Math.min(22, 212 / (7 + 3.5 * Math.cos(v.omega * DEG)), 226 / (7 + 3.5 * Math.sin(v.omega * DEG)));
+}
 
 /** One plane figure inside the body: its corners in space, the same figure flat in true size, the wanted segment and angle. */
 export interface TrueFigure {
@@ -1261,7 +1273,7 @@ export function trueFigure(v: LabValues): TrueFigure {
 }
 
 function trueCamera(v: LabValues): Camera {
-  return obliqueCamera(TS.q, v.omega, TS.x0, TS.y0, TS.k);
+  return obliqueCamera(TS.q, v.omega, TS.x0, TS.y0, tsScale(v));
 }
 
 /** The same angle as it looks in the Schrägbild. */
@@ -1381,7 +1393,8 @@ function angleMarkRight(vtx: Pt, p: Pt, q: Pt): string {
 
 /** Inverse of the handles of lab 3.6. */
 function trueDrag(handleId: "front" | "depth" | "top", p: Pt, v: LabValues): Partial<LabValues> {
-  const { x0, y0, k, q } = TS;
+  const { x0, y0, q } = TS;
+  const k = tsScale(v);
   const c = Math.cos(v.omega * DEG);
   const s = Math.sin(v.omega * DEG);
   if (handleId === "front") return { a: (p.x - x0) / k };
