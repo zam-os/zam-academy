@@ -792,8 +792,8 @@ const stromkreis: Lesson = {
     <p>Im <strong>Schaltplan</strong> zeichnet man Bauteile mit <strong>Schaltsymbolen</strong>: Quelle (zwei verschieden lange Striche), Lampe (Kreis mit Kreuz), Schalter (offen oder geschlossen), Motor (Kreis mit M), Leitung (gerade Linie), Sicherung. Man baut Schaltungen nach Plan auf und achtet darauf, dass jede Verbindung fest ist.</p>
     <ul>
       <li><strong>Leiter</strong> haben frei bewegliche Ladungsträger: Metalle (Elektronen), Graphit, Salzlösungen (Ionen). <strong>Isolatoren</strong> haben keine: Kunststoff, Glas, Gummi, Holz, trockene Luft, destilliertes Wasser.</li>
-      <li><strong>Reihenschaltung</strong> (alle Bauteile hintereinander, ein einziger Kreis): Fällt eines aus, ist der Kreis unterbrochen und alle sind aus (frühere Lichterketten). Zwei Schalter in Reihe: Die Lampe leuchtet nur, wenn <em>beide</em> geschlossen sind (UND).</li>
-      <li><strong>Parallelschaltung</strong> (Verzweigung, jedes Bauteil an der Quelle): Jedes Bauteil arbeitet unabhängig (Haushalt). Zwei Schalter parallel: Die Lampe leuchtet, wenn <em>mindestens einer</em> geschlossen ist (ODER).</li>
+      <li><strong>Reihenschaltung</strong> (alle Bauteile hintereinander, ein einziger Kreis): Fällt eines aus, ist der Kreis unterbrochen und alle sind aus (frühere Lichterketten). Zwei Schalter hintereinander, in Reihe mit der Lampe: Die Lampe leuchtet nur, wenn <em>beide</em> geschlossen sind (UND).</li>
+      <li><strong>Parallelschaltung</strong> (Verzweigung, jedes Bauteil an der Quelle): Jedes Bauteil arbeitet unabhängig (Haushalt). Zwei Schalter parallel zueinander, zusammen in Reihe mit der Lampe: Die Lampe leuchtet, wenn <em>mindestens einer</em> geschlossen ist (ODER). Läge ein Schalter parallel zur Lampe selbst, würde er sie im geschlossenen Zustand kurzschließen.</li>
       <li><strong>Wechselschaltung</strong> (Treppenhaus): Zwei Wechselschalter schalten dieselbe Lampe von beiden Enden aus.</li>
     </ul>
     <div class="merke"><strong>Merke:</strong> Strom braucht einen geschlossenen Kreis aus Leitern. Schalter in Reihe: UND, parallel: ODER.</div>
