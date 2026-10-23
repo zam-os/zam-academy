@@ -78,9 +78,16 @@ describe("Etappe 5: Bruchterme und Bruchgleichungen", () => {
     for (const l of STAGE_BRUCHTERME.lessons) {
       for (const g of l.exercises) {
         for (const level of [1, 2] as const) {
-          for (const task of tasks(l.id, g.id, level).slice(0, 40)) {
+          for (const task of tasks(l.id, g.id, level)) {
             const html = [task.prompt, ...task.given, ...task.steps, task.formulaHint ?? "", ...task.fields.map((f) => (f.kind === "choice" ? f.options.join(" ") : f.label))].join(" ");
-            expect(html, `${l.id}/${g.id}`).not.toMatch(/ℝ|\\|(^|[^\d,])1x|\+ 0(?![\d,])|− 0(?![\d,])|= ≈/);
+            expect(html, `${l.id}/${g.id}`).not.toMatch(/ℝ|\\|(^|[^\d,])1x|\+ 0(?![\d,])|− 0(?![\d,])|= ≈|\)\(x\)|: \(x\)|ist 0 = 0/);
+            // no doubled step such as "x = 0 ⇔ x = 0"
+            for (const step of task.steps) {
+              const parts = step.replace(/<[^>]+>/g, "").split("⇔").map((p) => p.trim());
+              parts.forEach((part, i) => {
+                if (i > 0) expect(part, `${l.id}/${g.id}: ${step}`).not.toBe(parts[i - 1]);
+              });
+            }
           }
         }
       }
@@ -106,6 +113,12 @@ describe("Labore der Etappe 5", () => {
     expect(r.t2).toBe("(x + 1) : (2x − 3); D₂ = ℚ ∖ {1,5}");
     expect(computeReadouts(lab, { b: 2, typ: 0, a: 0, c: 4, x: 1 }).t2).toBe("(x + 1) : 4; D₂ = ℚ, aber T₂ ist kein Bruchterm: Im Nenner steht keine Variable.");
     expect(computeReadouts(lab, { b: 2, typ: 0, a: 0, c: 0, x: 1 }).t2).toContain("D₂ = { }");
+    // "ueberall" needs a · x + c with a = 0: choosing x² + 1 from the list is no investigation
+    const ueberall = lab.goals.find((g) => g.id === "ueberall")!;
+    for (const v of enumerateLabGrid(lab, 9)) {
+      const r = computeReadouts(lab, v);
+      expect(ueberall.check(v, r), JSON.stringify(v)).toBe(v.typ === 0 && v.a === 0 && v.c !== 0);
+    }
   });
 
   it("5.2: the builder excludes exactly the zeros of its Nenner and writes the product as the board does", () => {
@@ -184,6 +197,8 @@ describe("Aufgaben der Etappe 5 rechnen richtig", () => {
         close(num(task, 0), m.s / m.v1);
         close(num(task, 1), (m.s / m.v1 - m.s / m.v2) * 60);
         expect(Number.isInteger(num(task, 1))).toBe(true);
+        // the steps show both times with "=": they must be exact
+        expect(twoDecimals(m.s / m.v1) && twoDecimals(m.s / m.v2)).toBe(true);
       } else {
         close(num(task, 0), m.area / m.w1);
         close(num(task, 1), 2 * m.w2 + (2 * m.area) / m.w2);
@@ -233,6 +248,30 @@ describe("Aufgaben der Etappe 5 rechnen richtig", () => {
       close(num(task, 0), sorted[0]);
       close(num(task, 1), sorted[1]);
       expect(task.steps[task.steps.length - 1]).toContain(domain(sorted, 0));
+    }
+  });
+
+  it("5.2 grundmenge: no wrong option names the right set (ℕ ∖ {−1} is ℕ)", () => {
+    const parse = (t: string) => {
+      const [n, d] = t.replace("−", "-").replace(",", ".").split("/");
+      return d === undefined ? Number(n) : Number(n) / Number(d);
+    };
+    for (const level of [1, 2] as const) {
+      for (const task of tasks("br-2-definitionsmenge", "grundmenge", level)) {
+        const field = task.fields[1];
+        if (field.kind !== "choice") throw new Error("no choice");
+        const G = meta(task).G;
+        const setOf = (option: string): string | null => {
+          const match = option.match(/^D = ([ℚℤℕ])(?: ∖ \{(.*)\})?$/);
+          if (!match || match[1] !== G_NAMES[G]) return null;
+          const numbers = match[2] ? match[2].split("; ").map(parse) : [];
+          return numbers.filter((x) => inG(x, G)).sort((a, b) => a - b).join(";");
+        };
+        const right = setOf(field.options[field.correctIndex]);
+        field.options.forEach((option, i) => {
+          if (i !== field.correctIndex) expect(setOf(option), `${task.prompt}: ${option}`).not.toBe(right);
+        });
+      }
     }
   });
 

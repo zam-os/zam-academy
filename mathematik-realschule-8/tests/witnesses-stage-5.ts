@@ -11,8 +11,8 @@ export const GOAL_WITNESSES_STAGE_5: Record<string, Record<string, LabValues>> =
     "kein-wert": { b: 2, typ: 0, a: 2, c: -3, x: 1.5 },
     // T₁ = 6 : (x − 1,5) and T₂ = (x + 1) : (2x − 3) both have no value at 1,5
     "gleiche-luecke": { b: 1.5, typ: 0, a: 2, c: -3, x: 3 },
-    // x² + 1 is never 0
-    ueberall: { b: 2, typ: 1, a: 2, c: -3, x: 3 },
+    // a = 0: the Nenner is the fixed number 4, never 0, and T₂ is no Bruchterm any more
+    ueberall: { b: 2, typ: 0, a: 0, c: 4, x: 3 },
   },
   "br-2-definitionsmenge": {
     // (x + 1)(x − 3)

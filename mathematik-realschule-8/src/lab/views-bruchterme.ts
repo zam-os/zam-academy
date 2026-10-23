@@ -426,7 +426,8 @@ export const proportionText = (v: LabValues): string => `${paren(v.a)} : (${xPlu
 
 /** "6(x + 1) = 4(x − 2)": the equation after multiplying with the Hauptnenner. */
 export function crossText(v: LabValues): string {
-  const factor = (k: number, b: number) => (b === 0 ? `${fmt(k)}x` : k === 1 ? `(${xPlus(b)})` : k === -1 ? `${MINUS}(${xPlus(b)})` : `${fmt(k)}(${xPlus(b)})`);
+  const factor = (k: number, b: number) =>
+    k === 0 ? "0" : b === 0 ? (k === 1 ? "x" : k === -1 ? `${MINUS}x` : `${fmt(k)}x`) : k === 1 ? `(${xPlus(b)})` : k === -1 ? `${MINUS}(${xPlus(b)})` : `${fmt(k)}(${xPlus(b)})`;
   return `${factor(v.a, v.d)} = ${factor(v.c, v.b)}`;
 }
 
@@ -464,7 +465,8 @@ function proportionView(v: LabValues): string {
   };
   out += pan(L, fmt(v.a), xPlus(v.b), left, "a");
   out += pan(R, fmt(v.c), xPlus(v.d), right, "b");
-  out += text(172, 30, defined ? (Math.abs(left - right) < 1e-9 ? "Gleichgewicht" : left > right ? "links mehr" : "rechts mehr") : "eine Seite hat keinen Wert", defined && Math.abs(left - right) < 1e-9 ? "lab-text lab-text-ok" : defined ? "lab-text-muted" : "lab-text lab-text-bad", "middle");
+  const noValue = Number.isNaN(left) && Number.isNaN(right) ? "keine Seite hat einen Wert" : "eine Seite hat keinen Wert";
+  out += text(172, 30, defined ? (Math.abs(left - right) < 1e-9 ? "Gleichgewicht" : left > right ? "links mehr" : "rechts mehr") : noValue, defined && Math.abs(left - right) < 1e-9 ? "lab-text lab-text-ok" : defined ? "lab-text-muted" : "lab-text lab-text-bad", "middle");
 
   // the number line for x with the excluded numbers
   const NL = { x0: 30, x1: 314, y: 300, lo: -10, hi: 10 };
@@ -484,7 +486,8 @@ function proportionView(v: LabValues): string {
   // the side panel: D, the cross product and, when shown, the solution
   const PX = 342;
   out += text(PX, 30, `D = ${domainText(s.excluded)}`, "lab-text");
-  out += text(PX, 58, "mit dem Hauptnenner", "lab-text-muted");
+  // over the cross: with different Nenner the same as multiplying with the Hauptnenner (x + b)(x + d)
+  out += text(PX, 58, "über Kreuz", "lab-text-muted");
   out += text(PX, 76, "multipliziert:", "lab-text-muted");
   out += text(PX, 98, crossText(v), "lab-text");
   const crossLeft = v.a * (v.x + v.d);
