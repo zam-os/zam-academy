@@ -687,13 +687,6 @@ export function wheelLeader(record: GameRecord): number {
   return record.counts[0] > record.counts[1] ? 1 : 2;
 }
 
-/** The smallest and largest relative frequency in the second half of the trials, from the 10th trial on. */
-export function fluctuation(history: readonly number[]): [number, number] | null {
-  if (history.length < 20) return null;
-  const tail = history.slice(Math.floor(history.length / 2));
-  return [Math.min(...tail), Math.max(...tail)];
-}
-
 export const gameTrials = (v: LabValues, count: number): LabValues => ({ ...v, [`n${v.spiel}`]: v[`n${v.spiel}`] + count });
 export const gameRestart = (v: LabValues): LabValues => ({ ...v, [`n${v.spiel}`]: 0, [`s${v.spiel}`]: nextSeed(v[`s${v.spiel}`]) });
 
@@ -783,15 +776,11 @@ function frequencySimulationView(v: LabValues): string {
   });
   if (record.n > 0 && !wheels) out += text(BARS.x1, 40, `Summe aller h: ${fmt(shares.reduce((a, b) => a + b, 0), 2)}`, "lab-text-small", "end");
 
-  // the course of the relative frequency over the trials
+  // the course of the relative frequency over the trials: an outlook on grade 9, no goal reads it
   const N = Math.max(10, record.n);
   const xC = (t: number) => COURSE.x0 + ((COURSE.x1 - COURSE.x0) * t) / N;
   const yC = (h: number) => COURSE.bottom - (COURSE.bottom - COURSE.top) * h * 2;
-  out += text(COURSE.x0, COURSE.top - 10, wheels ? "Verlauf von h(Gewinn A) und h(Gewinn B)" : `Verlauf von h(${focusLabel})`, "lab-text-muted");
-  if (v.spiel === 0) {
-    out += rect(COURSE.x0, yC(0.22), COURSE.x1 - COURSE.x0, yC(0.12) - yC(0.22), "lab-fill-ok");
-    out += text(COURSE.x1 - 4, yC(0.22) - 4, "0,12 bis 0,22", "lab-text-small lab-text-ok", "end");
-  }
+  out += text(COURSE.x0, COURSE.top - 10, `Ausblick auf Klasse 9: ${wheels ? "Verlauf von h(Gewinn A) und h(Gewinn B)" : `Verlauf von h(${focusLabel})`}`, "lab-text-muted");
   for (const h of [0, 0.25, 0.5]) {
     out += line(COURSE.x0, yC(h), COURSE.x1, yC(h), h === 0 ? "lab-ink" : "lab-grid");
     out += text(COURSE.x0 - 5, yC(h) + 4, fmt(h, 2), "lab-text-tick", "end");
