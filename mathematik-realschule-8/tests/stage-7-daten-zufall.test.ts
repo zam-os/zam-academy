@@ -985,3 +985,20 @@ describe("7.4 Absolute und relative Häufigkeiten: the tasks compute right", () 
     for (const k of kinds) expect(k).toBeGreaterThan(60);
   });
 });
+
+describe("Etappe 7: predicted slips", () => {
+  it("name each wrong value once: two slips of a field never share a value", () => {
+    let fields = 0;
+    for (const l of lessons)
+      for (const g of l.exercises)
+        for (const level of [1, 2] as const)
+          for (const task of tasks(l.id, g.id, level))
+            for (const field of task.fields) {
+              if (field.kind !== "number" || !field.slips?.length) continue;
+              const values = field.slips.map((s) => s.value.toFixed(9));
+              expect(new Set(values).size, `${l.id}/${g.id} L${level}: ${field.label} in ${task.prompt}`).toBe(values.length);
+              fields += 1;
+            }
+    expect(fields).toBeGreaterThan(1000);
+  });
+});

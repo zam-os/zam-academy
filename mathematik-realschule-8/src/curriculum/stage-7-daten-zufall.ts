@@ -42,7 +42,13 @@ import {
 } from "../lab/views-daten-zufall";
 import { toleranceOf } from "../exercises/checker";
 import type { ChoiceField, ExerciseTask, LabValues, Lesson, NumberField, Stage } from "../model/types";
-import { choiceField, numberField, yesNo } from "./helpers";
+import { choiceField, numberField as plainNumberField, yesNo } from "./helpers";
+
+/** numberField() with every slip value once: when two predicted mistakes give the same number, the first hint is kept. */
+function numberField(label: string, answer: number, unit = "", digits = 2, extra: Partial<NumberField> = {}): NumberField {
+  const slips = extra.slips?.filter((slip, i, all) => all.findIndex((other) => Math.abs(other.value - slip.value) < 1e-9) === i);
+  return plainNumberField(label, answer, unit, digits, slips ? { ...extra, slips } : extra);
+}
 
 const STAGE_ID = "stage-7-daten-zufall";
 /** Both Zweige learn this stage: Zweig I in LB 7, Zweig II/III in LB 6. */
@@ -1586,6 +1592,8 @@ function hBoth(count: number, n: number): string {
 function withEarlyRounding(field: NumberField, count: number, n: number): NumberField {
   const early = roundedRatio(count, n, 2) * 100;
   if (Math.abs(early - field.answer) <= toleranceOf(field)) return field;
+  // a value the field already names keeps its first hint
+  if ((field.slips ?? []).some((slip) => Math.abs(slip.value - early) < 1e-9)) return field;
   const hint = `Zu früh gerundet: Rechne ${count} : ${n} ungerundet in Prozent um und runde erst dann auf eine Nachkommastelle.`;
   return { ...field, slips: [...(field.slips ?? []), { value: early, hint }] };
 }
