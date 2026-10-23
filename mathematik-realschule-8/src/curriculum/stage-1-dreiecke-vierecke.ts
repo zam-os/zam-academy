@@ -808,7 +808,8 @@ const dreieckskonstruktion: Lesson = {
                   ? [{ value: c, hint: `Mit a = c wäre das Dreieck gleichschenklig, und auch der Winkel bei C wäre ${alpha}° groß. Zwei solche Winkel passen nicht in ein Dreieck.` }]
                   : [{ value: Math.floor(c), hint: "Diese Länge ist kürzer als c. Dem größten Winkel muss aber die längste Seite gegenüberliegen." }],
               }),
-              choiceField("Anzahl der Dreiecke:", ["genau eines", "zwei", "keines"], 0),
+              // shuffled: the app shows choice options in their order, and the answer is always "genau eines"
+              shuffledChoice(rng, "Anzahl der Dreiecke:", "genau eines", ["zwei", "keines"]),
             ],
             steps: [
               `α = ${alpha}° ist ${alpha === 90 ? "ein rechter" : "ein stumpfer"} Winkel, also der größte Winkel des Dreiecks. Ihm muss die längste Seite gegenüberliegen: a &gt; c = ${cm(c)}.`,
