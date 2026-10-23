@@ -1,8 +1,9 @@
-import { shuffle } from "./format";
+import { placeAnswer, shuffle } from "./format";
 import type {
   CaseFile,
   ChooseItem,
   CommaItem,
+  Lesson,
   MarkWorkshop,
   SortWorkshop,
 } from "./model/types";
@@ -90,11 +91,15 @@ export function shownOptions(
   key: string,
 ): { options: string[]; answer: number } {
   const source = file.steps[step];
-  const order = shuffle(
-    source.options.map((_, i) => i),
-    `${key}:case:${step}`,
-  );
-  return { options: order.map((i) => source.options[i]), answer: order.indexOf(source.answer) };
+  const wrong = source.options.filter((_, i) => i !== source.answer);
+  const { items, answer } = placeAnswer(source.options[source.answer], wrong, `${key}:case`, step);
+  return { options: items, answer };
+}
+
+/** The options of the quick check as the learner sees them, with the right one's position. */
+export function quizOptions(lesson: Lesson): { options: string[]; answer: number } {
+  const { items, answer } = placeAnswer(lesson.quiz.answer, lesson.quiz.wrong, `${lesson.id}:quiz`, 0);
+  return { options: items, answer };
 }
 
 /** A case is solved when every step has the right option; an unanswered step is wrong. */

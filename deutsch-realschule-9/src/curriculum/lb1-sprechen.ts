@@ -62,7 +62,7 @@ export const LB1: Lesson[] = [
       kind: "classify",
       title: "Welche Reaktion ist das?",
       instruction:
-        "In der Klasse sagt jemand: „Wir sollten den Ausflug in den Wald machen, weil das billiger ist.“ Ordne jede Antwort der Reaktion zu, die sie darstellt.",
+        "In der Klasse sagt jemand: „Wir sollten den Ausflug in den Wald machen, weil das billiger ist.“ Ordne jede Antwort der Reaktion zu, die sie darstellt. Eine Rückmeldung bewertet den Beitrag selbst und gibt einen Tipp, ein Gegenargument widerspricht dem Vorschlag.",
       categories: ["Nachfrage", "Paraphrase", "Gegenargument", "Konstruktive Rückmeldung"],
       entries: [
         {
@@ -71,7 +71,7 @@ export const LB1: Lesson[] = [
           feedback: "Sie fragt nach einer genaueren Angabe zu einer Behauptung und will etwas klären.",
         },
         {
-          text: "„Du schlägst also den Wald vor, weil er weniger kostet?“",
+          text: "„Wenn ich dich richtig verstehe, möchtest du in den Wald, weil das Geld spart.“",
           target: 1,
           feedback: "Sie gibt die Aussage mit eigenen Worten wieder, um das Verständnis abzusichern.",
         },
@@ -102,13 +102,13 @@ export const LB1: Lesson[] = [
     casework: {
       title: "Provokation oder Aufforderung?",
       story:
-        "In der AG der Schülerzeitung sagt Jonas zu Aylin: **„Du schreibst doch eh immer nur Kurzes. Mach endlich mal den Bericht über den Sporttag fertig!“** Aylin zählt innerlich bis fünf.",
+        "In der AG der Schülerzeitung sagt Jonas zu Aylin: **„Du schreibst doch eh immer nur Kurzes. Mach endlich mal den Bericht über den Sporttag fertig!“** Abgabetermin für den Bericht ist Donnerstag. Aylin zählt innerlich bis fünf.",
       steps: [
         {
           question: "Welche Absicht steckt im ersten Satz („Du schreibst doch eh immer nur Kurzes.“)?",
           options: [
             "Eine Provokation: Jonas stichelt und will Aylin aus der Ruhe bringen.",
-            "Eine Information: Jonas beschreibt sachlich, wie Aylin arbeitet.",
+            "Eine Information: Jonas beschreibt sachlich und ohne Wertung, wie Aylin arbeitet.",
             "Eine Bitte: Jonas hofft auf Hilfe bei einem längeren Text.",
           ],
           answer: 0,
@@ -118,18 +118,18 @@ export const LB1: Lesson[] = [
         {
           question: "Welche Absicht steckt im zweiten Satz („Mach endlich mal den Bericht über den Sporttag fertig!“)?",
           options: [
-            "Eine Frage nach dem Stand des Berichts.",
-            "Eine Aufforderung: Aylin soll den Bericht abgeben.",
-            "Ein Lob für Aylins bisherige Arbeit.",
+            "Eine Frage: Jonas will wissen, wie weit Aylin mit dem Bericht ist.",
+            "Eine Aufforderung: Aylin soll den Bericht endlich abgeben.",
+            "Ein Lob: Jonas würdigt Aylins bisherige Arbeit für die Zeitung.",
           ],
           answer: 1,
           explanation:
             "Der Befehlssatz verlangt eine Handlung. Auch wenn der Ton unfreundlich ist, steckt hier ein sachliches Anliegen.",
         },
         {
-          question: "Welche Reaktion von Aylin ist angemessen und sachlich?",
+          question: "Aylin will nur die Aufforderung beantworten und die Stichelei übergehen. Welche Reaktion ist angemessen und sachlich?",
           options: [
-            "„Mach du doch erst mal deinen eigenen Teil fertig, du Besserwisser!“",
+            "„Mach du doch erst mal deinen eigenen Teil fertig, du Besserwisser, bevor du mich anmachst!“",
             "„Du möchtest den Bericht bald haben? Bis Donnerstag liegt er bei dir.“",
             "„Wenn du das so sagst, schreibe ich am besten gar nichts mehr.“",
           ],
@@ -292,7 +292,7 @@ export const LB1: Lesson[] = [
           question: "Was schreibst du beim Hören der Runde auf?",
           options: [
             "Stichwörter und Namen: Skatepark, Parkplatz gefährlich, Sportplatz nah an Häusern, Lärm prüfen",
-            "Jeden Satz Wort für Wort, damit nichts verloren geht, auch wenn ich nicht alles schaffe",
+            "Jeden Satz Wort für Wort, möglichst in Schönschrift, damit nichts verloren geht, auch wenn ich nicht alles schaffe",
             "Nur das Ergebnis am Ende, weil alles Davorliegende für die Notiz keine Rolle spielt",
           ],
           answer: 0,
@@ -302,9 +302,9 @@ export const LB1: Lesson[] = [
         {
           question: "Du schreibst ein Verlaufsprotokoll der Runde. Welcher Satz gehört hinein?",
           options: [
-            "Frau Roth erklärt, der Standort müsse zuerst geprüft werden, weil er nah an Wohnhäusern liege.",
-            "Frau Roth war ziemlich genervt und hat Tims Idee eigentlich nicht ernst genommen.",
-            "Skatepark – Sportplatz – Lärm – prüfen – Ende März – Schülervertretung",
+            "Frau Roth erklärt, der Standort liege nah an Wohnhäusern und müsse geprüft werden.",
+            "Frau Roth war ziemlich genervt von Tims Idee und hat sie eigentlich nicht ernst genommen.",
+            "Skatepark – Sportplatz – Lärm – prüfen – Ende März – Schülervertretung – Roth – Sander",
           ],
           answer: 0,
           explanation:
@@ -313,8 +313,8 @@ export const LB1: Lesson[] = [
         {
           question: "Welcher Satz gehört in ein Ergebnisprotokoll der Runde?",
           options: [
-            "Beschluss: Die Stadt prüft den Standort am Sportplatz. Frau Roth meldet sich bis Ende März bei der Schülervertretung.",
-            "Tim Sander erklärt, der Parkplatz am Supermarkt sei gefährlich.",
+            "Beschluss: Die Stadt prüft den Standort. Frau Roth meldet sich bis Ende März.",
+            "Tim Sander von der Schülervertretung erklärt, der Parkplatz am Supermarkt sei gefährlich.",
             "Die Moderatorin eröffnet die Runde mit der Frage, warum die Stadt einen Skatepark braucht.",
           ],
           answer: 0,
@@ -325,7 +325,7 @@ export const LB1: Lesson[] = [
           question: "Du hältst später ein Referat über Freizeitangebote. Wie nutzt du deine Notizen?",
           options: [
             "Ich ordne die Stichwörter unter Überschriften und übernehme Aussagen mit Namen und Quelle.",
-            "Ich lese die Notizen vor, damit nichts verfälscht wird.",
+            "Ich lese die Notizen im Vortrag nacheinander vor, damit nichts verfälscht wird.",
             "Ich schreibe sie wörtlich ab, ohne sie zu ordnen, damit sie vollständig bleiben.",
           ],
           answer: 0,
@@ -462,9 +462,9 @@ export const LB1: Lesson[] = [
           feedback: "Die Handbewegung veranschaulicht die Größe, das ist Gestik und damit nonverbal.",
         },
         {
-          t: "Er nennt zu Beginn die drei Gliederungspunkte. ",
+          t: "Er sagt zu Beginn: „Ich stelle euch drei Punkte vor.“ ",
           label: 0,
-          feedback: "Die Vorstellung der Gliederung betrifft Aufbau und Wortwahl, also die verbale Ebene.",
+          feedback: "Mit diesen Worten kündigt er den Aufbau an. Was gesagt wird, gehört zur verbalen Ebene.",
         },
         { t: "Die Beobachterin sitzt in der letzten Reihe. " },
         {
@@ -491,7 +491,7 @@ export const LB1: Lesson[] = [
           question: "Was passt bei Jana nicht zusammen?",
           options: [
             "Ihre Worte klingen begeistert, aber Körpersprache und Seufzer zeigen Desinteresse.",
-            "Sie spricht zu laut für einen Klassenraum und stört dadurch die Runde.",
+            "Sie spricht viel zu laut für einen Klassenraum und stört dadurch die ganze Runde beim Zuhören.",
             "Sie nennt Argumente, die gar nicht zu Mos Vorschlag mit den Fotos passen.",
           ],
           answer: 0,
@@ -512,8 +512,8 @@ export const LB1: Lesson[] = [
         {
           question: "Wie beeinflusst der Widerspruch den Gesprächsverlauf?",
           options: [
-            "Mo wird unsicher und leiser, denn er weiß nicht, ob die Idee wirklich Zustimmung findet.",
-            "Mo ist sicher, dass alle zustimmen, und lässt sofort abstimmen.",
+            "Mo wird unsicher und leiser, weil er nicht weiß, ob die Idee Zustimmung findet.",
+            "Mo fühlt sich bestätigt und plant schon die Fotos für die Wand, ohne weiter nachzufragen.",
             "Der Verlauf bleibt gleich, weil in einem Gespräch nur die Worte zählen.",
           ],
           answer: 0,
@@ -524,8 +524,8 @@ export const LB1: Lesson[] = [
           question: "Welche Rückmeldung an Jana ist konstruktiv und beruht auf Beobachtung?",
           options: [
             "Du sagst „klasse“, schaust aber aus dem Fenster. Ich bin nicht sicher, ob du zustimmst. Was stört dich?",
-            "Du bist unhöflich und hörst nie zu, das merkt wirklich jeder hier in der Klasse.",
-            "Beim nächsten Mal sagst du bitte nichts, wenn du nicht dafür bist, und seufzt nicht.",
+            "Du bist unhöflich und hörst nie zu, das merkt wirklich jeder hier in der Klasse, nicht nur ich.",
+            "Beim nächsten Mal sagst du bitte nichts, wenn du nicht dafür bist, und seufzt auch nicht so laut.",
           ],
           answer: 0,
           explanation:
@@ -637,7 +637,7 @@ export const LB1: Lesson[] = [
       categories: ["Sachinhalt", "Selbstoffenbarung", "Beziehung", "Appell"],
       entries: [
         {
-          text: "Von den acht Folien für den Vortrag sind erst drei fertig.",
+          text: "Ein Teil der Folien für den Vortrag fehlt noch.",
           target: 0,
           feedback: "Das ist eine Information über die Sache, ohne Gefühl und ohne Aufforderung.",
         },
@@ -657,14 +657,14 @@ export const LB1: Lesson[] = [
           feedback: "Das ist die Aufforderung, etwas zu tun: der Appell.",
         },
         {
-          text: "Ben ist gestresst und möchte, dass der Vortrag gut wird.",
+          text: "Ben ist gestresst und fühlt sich selbst unter großem Druck.",
           target: 1,
-          feedback: "Gefühl und Wunsch der sprechenden Person gehören zur Selbstoffenbarung.",
+          feedback: "Gefühle der sprechenden Person gehören zur Selbstoffenbarung.",
         },
         {
-          text: "Der Ton klingt, als müsste Ben Ayla ständig kontrollieren.",
+          text: "Der Ton klingt, als stünde Ben über Ayla und dürfe ihre Arbeit kontrollieren.",
           target: 2,
-          feedback: "Der Ton zeigt, wie Ben zu Ayla steht: Das ist die Beziehungsseite.",
+          feedback: "Der Ton zeigt, wie Ben zu Ayla steht und wer über wem steht: die Beziehungsseite.",
         },
       ],
       conclusion:
@@ -679,8 +679,8 @@ export const LB1: Lesson[] = [
           question: "Welche Seite von Saras Satz „Du bist immer zu spät!“ trifft Kerem am stärksten?",
           options: [
             "Die Beziehungsseite: Sie spricht über Kerem als Person und wertet ihn ab.",
-            "Der Sachinhalt: Sie nennt nur sachlich die Uhrzeit, zu der Kerem kam.",
-            "Die Selbstoffenbarung: Sie sagt nur, wie sie sich fühlt.",
+            "Der Sachinhalt: Sie nennt nur sachlich die Uhrzeit, zu der Kerem kam, und sonst nichts.",
+            "Die Selbstoffenbarung: Sie sagt nur, wie sie sich fühlt, und spricht nicht über Kerem.",
           ],
           answer: 0,
           explanation:
@@ -702,7 +702,7 @@ export const LB1: Lesson[] = [
           options: [
             "Ich ärgere mich, wenn wir warten müssen. Ich wünsche mir, dass du vorher Bescheid sagst.",
             "Du musst endlich lernen, pünktlich zu sein, sonst fliegst du aus der Gruppe.",
-            "Man kann sich auf dich einfach nicht verlassen, und das merkt auch die ganze Gruppe.",
+            "Man kann sich auf dich einfach nicht verlassen, und das merkt auch die ganze Gruppe schon lange.",
           ],
           answer: 0,
           explanation:
@@ -711,13 +711,13 @@ export const LB1: Lesson[] = [
         {
           question: "Welche Lösung ist ein Kompromiss?",
           options: [
-            "Sara beginnt pünktlich mit den Aufgaben, die Kerem nicht braucht, und Kerem meldet sich bei Verspätung vorher.",
-            "Kerem verspricht, nie wieder zu spät zu kommen, und Sara muss sich um nichts mehr kümmern.",
+            "Sara verschiebt den Beginn um zehn Minuten, und Kerem meldet sich vorher, wenn es doch nicht klappt.",
+            "Kerem verspricht, nie wieder zu spät zu kommen, und Sara muss sich um nichts mehr kümmern, auch nicht ums Erinnern.",
             "Beide sprechen nie wieder darüber, damit der Streit nicht neu beginnt.",
           ],
           answer: 0,
           explanation:
-            "Im Kompromiss geben beide etwas nach: Sara wartet nicht mehr, Kerem sagt Bescheid. In den anderen Lösungen gibt nur einer nach, oder das Problem wird vermieden.",
+            "Im Kompromiss geben beide etwas nach: Sara verschiebt den Beginn, Kerem sagt Bescheid. In den anderen Lösungen gibt nur einer nach, oder das Problem wird vermieden.",
         },
       ],
       verdict:
@@ -859,18 +859,18 @@ export const LB1: Lesson[] = [
           options: [
             "Sie bietet zu viel auf einmal, deshalb liest das Publikum, statt zuzuhören.",
             "Sie nennt zu wenige Zahlen, deshalb wirkt das Praktikum unwichtig.",
-            "Sie enthält Diagramme, und Diagramme gehören nicht in eine Präsentation.",
+            "Sie enthält Diagramme, und Diagramme gehören grundsätzlich nicht in eine Präsentation.",
           ],
           answer: 0,
           explanation:
             "Text, Diagramme und Farben konkurrieren miteinander, und die Zuhörenden wissen nicht, wohin sie schauen sollen. Diagramme sind dagegen gute Medien, wenn sie einzeln und klar eingesetzt werden.",
         },
         {
-          question: "Wie sieht eine bessere Folie 3 aus?",
+          question: "Wie sieht eine bessere Folie 3 aus, wenn sie nur noch einen Schwerpunkt haben soll?",
           options: [
             "Ein Gedanke, drei Stichwörter und ein Diagramm in gut lesbarer Schrift.",
             "Derselbe Text in größerer Schrift, sodass er die ganze Folie füllt.",
-            "Nur ein Foto ohne Beschriftung, das jeder auf seine Weise deuten kann.",
+            "Nur ein großes Foto ohne Beschriftung, das jeder auf seine Weise deuten kann.",
           ],
           answer: 0,
           explanation:
@@ -881,18 +881,18 @@ export const LB1: Lesson[] = [
           options: [
             "Es erlangt Aufmerksamkeit und führt anschaulich zum Thema.",
             "Es ersetzt die Einleitung, sodass Lara nichts sagen muss.",
-            "Es hebt den wichtigsten Teilaspekt des Hauptteils hervor.",
+            "Es hebt eine wichtige Zahl aus der Auswertung des Praktikums hervor.",
           ],
           answer: 0,
           explanation:
-            "Ein Bild zu Beginn weckt Interesse und macht das Thema greifbar. Es ersetzt Laras Einstieg nicht, und mit dem Hauptteil hat es noch nichts zu tun.",
+            "Ein Bild zu Beginn weckt Interesse und macht das Thema greifbar. Es ersetzt Laras Einstieg nicht, und es zeigt einen Hund, keine Zahl, die etwas hervorheben könnte.",
         },
         {
           question: "Was sollte Lara bei jeder Folie anders machen?",
           options: [
-            "Sie sollte zum Publikum sprechen und ergänzen, was die Folie zeigt, statt sie vorzulesen.",
-            "Sie sollte die Folie länger zeigen, damit alle sie in Ruhe lesen können.",
-            "Sie sollte alles, was auf der Folie steht, noch einmal wörtlich wiederholen.",
+            "Sie sollte frei sprechen und ergänzen, was die Folie zeigt, statt sie vorzulesen.",
+            "Sie sollte jede Folie deutlich länger zeigen, damit alle sie in Ruhe lesen können.",
+            "Sie sollte alles, was auf der Folie steht, noch einmal ganz wörtlich und langsam wiederholen.",
           ],
           answer: 0,
           explanation:
@@ -1021,7 +1021,7 @@ export const LB1: Lesson[] = [
           feedback:
             "Hier erwartet niemand eine Antwort. Die Frage sagt: Wir warten schon viel zu lange. Das ist eine rhetorische Frage.",
         },
-        { t: "Die Unterschriftenliste hängt im Sekretariat. " },
+        { t: "Die Unterschriftenliste liegt im Sekretariat, und 63 von uns haben schon unterschrieben. " },
         {
           t: "Unterschreibt bis Freitag, damit die Schulleitung sieht, wie viele von uns sichere Ständer wollen! ",
           label: 2,
@@ -1046,11 +1046,11 @@ export const LB1: Lesson[] = [
           options: [
             "Er nennt eine Behauptung und eine Begründung.",
             "Er nennt nur eine Behauptung ohne Begründung.",
-            "Er beginnt mit einem Appell und nennt dann einen Beleg.",
+            "Er beginnt mit einer Frage und nennt dann einen Beleg.",
           ],
           answer: 0,
           explanation:
-            "Der Satz fordert etwas (Behauptung) und begründet es mit „denn“ (Begründung). Ein Beleg wie eine Zahl fehlt noch, und ein Appell ist nicht zu erkennen.",
+            "Der Satz fordert etwas (Behauptung) und begründet es mit „denn“ (Begründung). Ein Beleg wie eine Zahl fehlt noch, und eine Frage steht nicht am Anfang.",
         },
         {
           question: "Welches Mittel steckt in Paulas Satz „Das wäre ja wirklich ein Fortschritt!“?",
@@ -1187,7 +1187,7 @@ export const LB1: Lesson[] = [
       categories: ["Sprechtempo", "Lautstärke", "Stimmführung und Betonung", "Pausen"],
       entries: [
         {
-          text: "Du sprichst die Zahlen so schnell, dass niemand mitschreiben kann.",
+          text: "Du sprichst die Zahlen im Eiltempo, sodass niemand mitschreiben kann.",
           target: 0,
           feedback: "Das Tempo ist das Problem: Bei Zahlen sprichst du langsamer.",
         },
@@ -1202,7 +1202,7 @@ export const LB1: Lesson[] = [
           feedback: "Die Stimme hat keine Melodie. Mit Heben und Senken wird der Text lebendig.",
         },
         {
-          text: "Nach dem wichtigsten Satz sprichst du ohne Unterbrechung weiter, sodass er im nächsten untergeht.",
+          text: "Nach dem wichtigsten Satz machst du keine Pause, sondern sprichst sofort weiter, sodass er im nächsten untergeht.",
           target: 3,
           feedback: "Eine Pause nach der wichtigen Stelle gibt den Zuhörenden Zeit zum Mitdenken.",
         },
@@ -1226,7 +1226,7 @@ export const LB1: Lesson[] = [
         "Lea soll den Anfang einer Geschichte vorlesen: **„Es war still im Haus. Dann klopfte es. Dreimal. Langsam ging die Tür auf.“** Auf ihrem Blatt steht am Rand: „schnell lesen, laut“. Sie liest den Text so zweimal durch, nimmt sich auf und hört die Aufnahme an.",
       steps: [
         {
-          question: "Welche Randbemerkung passt zur Stimmung der Stelle?",
+          question: "Welche Randbemerkung passt zur stillen, spannenden Stimmung der Stelle?",
           options: [
             "leise und langsam, vor „Dreimal“ eine Pause",
             "schnell und laut, damit es spannend wirkt",
@@ -1355,10 +1355,10 @@ export const LB1: Lesson[] = [
     sourceIds: ["lp"],
     quiz: {
       question: "Wie begründest du im Bewerbungsgespräch die Stärke „zuverlässig“ am überzeugendsten?",
-      answer: "Mit einem konkreten Beispiel, zum Beispiel: Im Praktikum war ich nie unpünktlich.",
+      answer: "Mit einem konkreten Beispiel, etwa: Im Praktikum kam ich nie zu spät.",
       wrong: [
-        "Mit dem Hinweis, dass jeder Betrieb zuverlässige Leute sucht.",
-        "Mit der Aussage, dass du zuverlässiger bist als andere Bewerbende.",
+        "Mit dem Hinweis, dass jeder Betrieb zuverlässige Leute sucht und braucht.",
+        "Mit der Aussage, dass du zuverlässiger bist als die meisten anderen Bewerbenden.",
       ],
       explanation:
         "Ein Beleg macht die Behauptung überprüfbar. Der Hinweis auf die Wünsche des Betriebs sagt nichts über dich, und ein Vergleich mit anderen Bewerbenden wirkt überheblich und lässt sich nicht belegen.",
@@ -1421,15 +1421,15 @@ export const LB1: Lesson[] = [
             "Jonas nennt einen konkreten Beleg aus einer beruflichen Situation. So wird aus der Behauptung eine überprüfbare Aussage.",
         },
         {
-          question: "Welche Angabe in Jonas’ Antwort ist der schwächste Beleg?",
+          question: "Welche Angabe in Jonas’ Antwort lässt sich am schlechtesten überprüfen?",
           options: [
             "Dass man ihm zu Hause sagt, er sei geduldig",
             "Dass er im Praktikum Kundschaft beraten hat",
-            "Dass das Feedback im Praktikum gut war",
+            "Dass er sein Praktikum in einem Sportgeschäft gemacht hat",
           ],
           answer: 0,
           explanation:
-            "Was man zu Hause sagt, lässt sich nicht prüfen und hat mit dem Beruf wenig zu tun. Die Praktikumserfahrung ist konkret und berufsnah.",
+            "Was man zu Hause sagt, lässt sich nicht prüfen und hat mit dem Beruf wenig zu tun. Das Praktikum im Sportgeschäft ist konkret und berufsnah, der Betrieb kann es bestätigen.",
         },
         {
           question: "Wie geht Jonas mit der Frage nach seinen Schwächen um?",
@@ -1551,7 +1551,7 @@ export const LB1: Lesson[] = [
       kind: "choose",
       title: "Welche Reaktion passt?",
       instruction:
-        "Wähle in jedem Satz die Reaktion, die zur Situation passt. Achte auf Sachlichkeit, Sprachebene und den Bezug auf andere.",
+        "Wähle in jedem Satz die Reaktion, die zur Situation passt. Achte auf die Absicht, die Sachlichkeit, die Sprachebene und den Bezug auf andere.",
       items: [
         {
           before: "Paul fällt dir im Klassenrat ins Wort. Du sagst: „",
@@ -1598,7 +1598,7 @@ export const LB1: Lesson[] = [
             "Du würdigst den Beitrag und holst das Gespräch freundlich zum Thema zurück: So steuerst du den Verlauf.",
         },
         {
-          before: "Du möchtest die Klasse für eine Müllsammelaktion gewinnen. Du sagst: „",
+          before: "Du möchtest, dass die Klasse bei einer Müllsammelaktion mitmacht. Du forderst sie dazu auf: „",
           options: [
             "Lasst uns am Samstag gemeinsam den Pausenhof säubern, jede Hand zählt!",
             "Der Pausenhof war am Montag voller Verpackungen.",
@@ -1621,9 +1621,9 @@ export const LB1: Lesson[] = [
         {
           question: "Was fällt an Bens erstem Beitrag auf?",
           options: [
-            "Er spricht umgangssprachlich und sieht beim Sprechen zur Decke, nicht zu den Zuhörenden.",
-            "Er spricht sehr förmlich und zu leise, sodass man ihn kaum versteht.",
-            "Er knüpft genau an die Aussage einer Vorrednerin an und widerspricht sachlich.",
+            "Er spricht umgangssprachlich und sieht zur Decke, nicht zu den Zuhörenden.",
+            "Er spricht sehr förmlich und zu leise, sodass man ihn in der letzten Reihe kaum versteht.",
+            "Er begründet seine Meinung ausführlich mit Zahlen und Belegen aus dem Prospekt des Parks.",
           ],
           answer: 0,
           explanation:
@@ -1633,8 +1633,8 @@ export const LB1: Lesson[] = [
           question: "Welcher Satz von Mara knüpft sachlich an Ben an?",
           options: [
             "„Du hast gesagt, dass dort viel geboten ist. Das stimmt, aber der Eintritt kostet 38 Euro.“",
-            "„Dort geht ja nur Geld drauf, und irgendein anderes Ziel wäre sowieso besser.“",
-            "„Ich habe schon gesagt, dass ich dagegen bin, und dabei bleibe ich auch.“",
+            "„Dort geht ja nur Geld drauf, und irgendein anderes Ziel wäre sowieso viel besser für uns alle.“",
+            "„Ich habe schon gesagt, dass ich dagegen bin, und dabei bleibe ich auch, egal was ihr sagt.“",
           ],
           answer: 0,
           explanation:
@@ -1764,12 +1764,12 @@ export const LB1: Lesson[] = [
       categories: [],
       entries: [
         {
-          text: "Eröffnung: Die Moderation nennt die Streitfrage, die Regeln und die Redezeiten.",
+          text: "Eröffnung: Die Moderation nennt die Streitfrage, die Regeln und die Redezeiten, noch bevor eine Seite spricht.",
           target: 0,
           feedback: "Am Anfang erklärt die Moderation, worum es geht und wie die Debatte läuft. Ohne Streitfrage gibt es nichts zu debattieren.",
         },
         {
-          text: "Eröffnungsstatements: Pro und Contra tragen nacheinander ihre Position mit den wichtigsten Argumenten vor.",
+          text: "Eröffnungsstatements: Nach der Eröffnung tragen Pro und Contra nacheinander ihre Position mit den wichtigsten Argumenten vor.",
           target: 1,
           feedback: "Erst müssen beide Positionen bekannt sein, bevor die Seiten aufeinander antworten können.",
         },
@@ -1800,14 +1800,14 @@ export const LB1: Lesson[] = [
     casework: {
       title: "Eine Debatte über den Schulgarten",
       story:
-        "Streitfrage: Soll die Schule jede Woche eine Stunde für den Schulgarten freihalten? Moderatorin Ida: „Ich eröffne die Debatte. Pro hat zwei Minuten.“ Sam (Pro): „Der Garten verbindet Lernen und Bewegung, denn wer Beete anlegt, lernt Biologie mit den Händen.“ Yara (Contra): **„Sam sagt, dass der Garten Lernen und Bewegung verbindet. Das stimmt. Aber die Stunde fehlt dann in Mathematik und Deutsch. Man könnte den Garten auch in einer AG pflegen.“** Pia (Zeit): „Noch dreißig Sekunden.“",
+        "Streitfrage: Soll die Schule jede Woche eine Stunde für den Schulgarten freihalten? Die Eröffnungsstatements sind gehalten, jetzt läuft der Schlagabtausch. Moderatorin Ida: „Pro, bitte beginne.“ Sam (Pro): „Der Garten verbindet Lernen und Bewegung, denn wer Beete anlegt, lernt Biologie mit den Händen.“ Yara (Contra): **„Sam sagt, dass der Garten Lernen und Bewegung verbindet. Das stimmt. Aber die Stunde fehlt dann in Mathematik und Deutsch. Man könnte den Garten auch in einer AG pflegen.“** Pia (Zeit): „Noch dreißig Sekunden.“",
       steps: [
         {
           question: "Welche Aufgabe hat Ida?",
           options: [
             "Sie leitet die Debatte neutral, nennt die Regeln und erteilt das Wort.",
-            "Sie vertritt die Pro-Seite und trägt das Schlussstatement vor.",
-            "Sie entscheidet am Ende, welche Seite recht hat.",
+            "Sie vertritt die Pro-Seite und trägt für sie das Schlussstatement vor.",
+            "Sie entscheidet am Ende allein, welche Seite recht hat und gewonnen hat.",
           ],
           answer: 0,
           explanation:
@@ -1816,9 +1816,9 @@ export const LB1: Lesson[] = [
         {
           question: "Wie geht Yara mit Sams Argument um?",
           options: [
-            "Sie gibt ihm in einem Punkt recht und widerspricht dann mit einem eigenen Grund.",
+            "Sie gibt ihm in einem Punkt recht und widerspricht mit einem eigenen Grund.",
             "Sie überhört es und beginnt stattdessen mit einem ganz neuen Thema.",
-            "Sie wiederholt es wörtlich und stimmt Sam in jedem Punkt vollständig zu.",
+            "Sie wiederholt es wörtlich und stimmt Sam in jedem Punkt vollständig zu, ohne zu widersprechen.",
           ],
           answer: 0,
           explanation:
@@ -1827,9 +1827,9 @@ export const LB1: Lesson[] = [
         {
           question: "Welche Technik nutzt Yara mit dem Satz „Man könnte den Garten auch in einer AG pflegen“?",
           options: [
-            "Sie schlägt eine Alternative vor, die der Gegenseite entgegenkommt.",
+            "Sie schlägt eine Alternative vor, die das Anliegen der Pro-Seite erhält.",
             "Sie greift Sam persönlich an und stellt seine Absicht infrage.",
-            "Sie stellt eine rhetorische Frage, auf die sie keine Antwort erwartet.",
+            "Sie stellt eine rhetorische Frage, auf die sie von Sam keine Antwort erwartet.",
           ],
           answer: 0,
           explanation:
@@ -1838,9 +1838,9 @@ export const LB1: Lesson[] = [
         {
           question: "Was sollte Sam auf seiner Rollenkarte vorbereitet haben, um Yara zu antworten?",
           options: [
-            "Eine Antwort auf den erwartbaren Einwand, dass die Stunde in anderen Fächern fehlt",
-            "Noch mehr Argumente derselben Art, aber keine Antwort auf Einwände",
-            "Seine private Meinung zum Fach Biologie und zum Schulgarten",
+            "Eine Antwort auf den Einwand, dass die Stunde in anderen Fächern fehlt",
+            "Noch mehr Argumente derselben Art, aber keine Antwort auf mögliche Einwände der Gegenseite",
+            "Seine private Meinung zum Fach Biologie und zum Schulgarten, unabhängig von seiner Rolle",
           ],
           answer: 0,
           explanation:
@@ -1932,10 +1932,10 @@ export const LB1: Lesson[] = [
     sourceIds: ["lp", "dwds", "oldenburg"],
     quiz: {
       question: "Was ist ein Standbild im szenischen Spiel?",
-      answer: "Eine Szene, in der die Spielenden still stehen und durch Haltung, Mimik und Abstand die Situation zeigen.",
+      answer: "Eine eingefrorene Szene ohne Worte, in der Haltung, Mimik und Abstand die Situation zeigen.",
       wrong: [
         "Eine kurze, oft humorvolle Spielszene mit Dialog, die meist mit einer Pointe endet.",
-        "Ein Foto, das nach der Aufführung gemacht und später gemeinsam ausgewertet wird.",
+        "Ein Foto, das nach der Aufführung gemacht und später mit der Klasse gemeinsam ausgewertet wird.",
       ],
       explanation:
         "Ein Standbild kommt ohne Bewegung und Worte aus: Die Körper erzählen. Die kurze Szene mit Dialog und Pointe ist ein Sketch. Ein Foto der Aufführung kann bei der Auswertung helfen, ist aber kein Standbild.",
@@ -1984,7 +1984,7 @@ export const LB1: Lesson[] = [
     casework: {
       title: "Auswertung einer gespielten Szene",
       story:
-        "Eine Gruppe hat einen Auszug aus einer erfundenen Erzählung gespielt: Jana erfährt von ihrem Freund Max, dass er in eine andere Stadt zieht. Im Video sieht man: **Jana steht mit verschränkten Armen am Fenster, sagt nur „Ach so.“ und schaut zu Boden. Ihre Stimme zittert leicht.** Max redet viel und lacht laut.",
+        "Eine Gruppe hat einen Auszug aus einer erfundenen Erzählung gespielt: Jana erfährt von ihrem Freund Max, dass er in eine andere Stadt zieht. Im Video sieht man: **Jana steht mit verschränkten Armen am Fenster, sagt nur „Ach so.“ und schaut zu Boden. Ihre Stimme zittert leicht.** Max redet viel und lacht laut, schaut Jana dabei aber kaum an.",
       steps: [
         {
           question: "Welcher Satz beschreibt nur, was im Video zu sehen und zu hören ist?",
@@ -2000,9 +2000,9 @@ export const LB1: Lesson[] = [
         {
           question: "Welche Deutung von Janas Reaktion ist durch das Video am besten begründet?",
           options: [
-            "Sie ist getroffen und zeigt es nicht, denn sie verschränkt die Arme und blickt zu Boden.",
-            "Sie freut sich für Max und will ihn nicht aufhalten, denn sie antwortet nur kurz.",
-            "Es ist ihr gleichgültig, denn sie sagt nur zwei Wörter und redet nicht weiter.",
+            "Sie ist getroffen und zeigt es nicht: Sie verschränkt die Arme, blickt zu Boden, die Stimme zittert.",
+            "Sie freut sich für Max und will ihn nicht aufhalten, denn sie reagiert nur ruhig und kurz.",
+            "Es ist ihr gleichgültig, denn sie sagt nur zwei Wörter und redet danach nicht mehr mit Max.",
           ],
           answer: 0,
           explanation:
@@ -2011,9 +2011,9 @@ export const LB1: Lesson[] = [
         {
           question: "Welche Rückmeldung an die Person, die Max spielt, ist konstruktiv?",
           options: [
-            "Dein lautes Lachen wirkt stimmig, weil Max so seine Unsicherheit überspielt. Ein kurzes Stocken könnte das verstärken.",
+            "Dass du laut lachst und Jana kaum ansiehst, wirkt überspielt und passt gut zur Szene. Ein kurzes Stocken könnte das verstärken.",
             "Du hast insgesamt schlecht gespielt, das war einfach nicht gut und nicht überzeugend, und alle haben es gemerkt.",
-            "Du lachst immer so komisch, das nervt alle und ist völlig unglaubwürdig, lass es lieber sein.",
+            "Du lachst immer so komisch, das nervt alle und ist völlig unglaubwürdig, lass es lieber sein, sonst wird das nichts.",
           ],
           answer: 0,
           explanation:
@@ -2022,9 +2022,9 @@ export const LB1: Lesson[] = [
         {
           question: "Wie wendest du dieselben Fragen auf einen Film an?",
           options: [
-            "Du achtest darauf, wie Mimik, Gestik und Stimme der Spielenden Gefühle und Motive zeigen.",
-            "Du prüfst nur, ob der Film lang genug ist, um eine Handlung zu erzählen.",
-            "Du achtest nur auf die Handlung und nicht auf die Darstellung der Figuren.",
+            "Du achtest darauf, wie Mimik, Gestik und Stimme der Spielenden Gefühle zeigen.",
+            "Du prüfst nur, ob der Film lang genug ist, um eine ganze Handlung zu erzählen.",
+            "Du achtest nur auf die Handlung und nicht auf die Darstellung der Figuren durch die Spielenden.",
           ],
           answer: 0,
           explanation:

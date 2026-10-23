@@ -67,7 +67,7 @@ export const LB4B: Lesson[] = [
       kind: "mark",
       title: "Stilmittel im Text finden",
       instruction:
-        "Wähle oben ein Stilmittel aus und klicke dann im Text die Stelle an, die es zeigt. Die Anapher erkennst du an den wiederholten Satzanfängen. Nicht jede Stelle ist ein Stilmittel.",
+        "Wähle oben ein Stilmittel aus und klicke dann im Text die Stelle an, die es zeigt. Die Anapher erkennst du an den wiederholten Satzanfängen: Markiere jeden dieser Anfänge einzeln. Steht „wie“ im Bild, ist es ein Vergleich, auch wenn es übertreibt. Nicht jede Stelle ist ein Stilmittel.",
       labels: ["Metapher", "Vergleich", "Hyperbel", "Anapher"],
       text: [
         { t: "Montagmorgen, " },
@@ -117,7 +117,11 @@ export const LB4B: Lesson[] = [
       steps: [
         {
           question: "Welches Stilmittel ist „Durstlöscher-Held“?",
-          options: ["Ein Neologismus: ein neu gebildetes Wort", "Eine Anapher", "Eine Interjektion"],
+          options: [
+            "Ein Neologismus: ein neu gebildetes, ungewohntes Wort",
+            "Eine Anapher: Ein Wort steht am Satzanfang mehrfach",
+            "Eine Interjektion: ein Ausruf, der ein Gefühl zeigt",
+          ],
           answer: 0,
           explanation:
             "Das Wort ist aus „Durstlöscher“ und „Held“ neu zusammengesetzt und gehört nicht zum üblichen Wortschatz. Das ist ein Neologismus.",
@@ -137,8 +141,8 @@ export const LB4B: Lesson[] = [
           question: "Welche Wirkung haben Übertreibung und Wortneuschöpfung in einer Werbung?",
           options: [
             "Sie sollen das Produkt auffallen lassen und Lust darauf machen.",
-            "Sie sollen genau über die Inhaltsstoffe informieren.",
-            "Sie sollen beide Seiten einer Streitfrage abwägen.",
+            "Sie sollen genau über die Inhaltsstoffe und den Preis informieren.",
+            "Sie sollen beide Seiten einer Streitfrage fair gegeneinander abwägen.",
           ],
           answer: 0,
           explanation:
@@ -147,9 +151,9 @@ export const LB4B: Lesson[] = [
         {
           question: "Warum passt eine Hyperbel in einen Zeitungsbericht schlecht?",
           options: [
-            "Weil Hyperbeln nur in Gedichten und Liedern erlaubt sind",
-            "Weil sie den Text für Jugendliche schwer verständlich machen",
-            "Weil ein Bericht genau informieren soll und Übertreibung die Fakten verzerrt",
+            "Weil Hyperbeln nur in Gedichten, Liedern und Romanen erlaubt sind",
+            "Weil sie den Text für Jugendliche schwer verständlich und lang machen",
+            "Weil ein Bericht genau informieren soll und Übertreibung Fakten verzerrt",
           ],
           answer: 2,
           explanation:
@@ -249,7 +253,7 @@ export const LB4B: Lesson[] = [
       kind: "mark",
       title: "Nominalisierungen und Funktionsverbgefüge finden",
       instruction:
-        "Der Aushang ist im Nominalstil geschrieben. Wähle oben eine Kategorie und klicke die passenden Stellen an. Eine Nominalisierung ist ein Substantiv, das aus einem Verb entstanden ist, meist auf -ung. Ein Funktionsverbgefüge ist ein Verb mit Substantiv, das zusammen nur ein Tun ausdrückt, zum Beispiel „Hilfe leisten“ für „helfen“. Klicke immer die ganze Verbindung an: Steckt in ihr ein Substantiv auf -ung, zählt sie als Funktionsverbgefüge. Nicht jede Stelle gehört dazu.",
+        "Der Aushang ist im Nominalstil geschrieben. Wähle oben eine Kategorie und klicke die passenden Stellen an. Eine Nominalisierung ist ein einzelnes Substantiv, das aus einem Verb entstanden ist, meist auf -ung. Ein Funktionsverbgefüge ist ein Verb mit Substantiv, das zusammen nur ein Tun ausdrückt, zum Beispiel „Hilfe leisten“ für „helfen“. Du klickst es immer als ganze Verbindung an, auch wenn darin ein Substantiv auf -ung steckt. Nicht jede Stelle gehört dazu.",
       labels: ["Nominalisierung", "Funktionsverbgefüge"],
       text: [
         { t: "Der Elternbeirat " },
@@ -267,14 +271,14 @@ export const LB4B: Lesson[] = [
             "„Beendigung“ ist aus dem Verb „beenden“ gebildet. Im Verbalstil hieße es „wenn der Elternabend zu Ende ist“.",
         },
         { t: " des Elternabends. " },
-        { t: "Die Hausmeisterin übernimmt die " },
+        { t: "Die Hausmeisterin ist für die " },
         {
           t: "Reinigung",
           label: 0,
           feedback:
             "„Reinigung“ kommt von „reinigen“. Im Verbalstil: „Die Hausmeisterin reinigt die Flure.“",
         },
-        { t: " der Flure. " },
+        { t: " der Flure zuständig. " },
         { t: "Ab Montag sollen die neuen Schulregeln " },
         {
           t: "Anwendung finden",
@@ -311,9 +315,9 @@ export const LB4B: Lesson[] = [
         {
           question: "Welcher Stil herrscht in diesem Satz vor?",
           options: [
-            "Nominalstil: Substantive wie „Entnahme“, „Verteilung“ und „Beachtung“ tragen den Inhalt",
-            "Verbalstil: Verben beschreiben, was die Spielenden tun",
-            "Umgangssprache: Der Satz klingt wie ein Gespräch unter Freunden",
+            "Nominalstil: Substantive wie „Entnahme“ und „Verteilung“ tragen den Inhalt",
+            "Verbalstil: Verben beschreiben genau, was die Spielenden nacheinander tun",
+            "Umgangssprache: Der Satz klingt wie ein lockeres Gespräch unter Freunden",
           ],
           answer: 0,
           explanation:
@@ -345,8 +349,8 @@ export const LB4B: Lesson[] = [
           question: "Für welchen Text wäre der ursprüngliche Nominalstil dagegen passend?",
           options: [
             "Für die Spielordnung eines Vereins, die als Regelwerk gelten soll",
-            "Für eine Nachricht an eine Freundin über das Wochenende",
-            "Für eine Erzählung über einen Ausflug mit der Klasse",
+            "Für eine lockere Nachricht an eine Freundin über das Wochenende",
+            "Für eine spannende Erzählung über einen Ausflug mit der Klasse",
           ],
           answer: 0,
           explanation:
@@ -507,8 +511,8 @@ export const LB4B: Lesson[] = [
           question: "Welche Probe hilft Jonas, diesen Fehlerschwerpunkt zu beheben?",
           options: [
             "Die Ersatzprobe mit „dieses“, „jenes“ oder „welches“",
-            "Die Verlängerungsprobe mit der Mehrzahl",
-            "Die Artikelprobe mit „der“, „die“ oder „ein“",
+            "Die Verlängerungsprobe mit der Mehrzahl des Wortes",
+            "Die Artikelprobe mit „der“, „die“, „das“ oder „ein“",
           ],
           answer: 0,
           explanation:
@@ -528,9 +532,9 @@ export const LB4B: Lesson[] = [
         {
           question: "Wie behebt Jonas seinen Fehlerschwerpunkt auf Dauer am besten?",
           options: [
-            "Er sammelt Fehlerwörter, übt sie mit der passenden Probe und prüft neue Texte gezielt darauf",
-            "Er lernt jede Woche eine lange Liste schwieriger Wörter auswendig",
-            "Er verlässt sich auf das Rechtschreibprogramm, das alle Fehler findet",
+            "Er sammelt Fehlerwörter, übt sie mit der passenden Probe und prüft neue Texte",
+            "Er lernt jede Woche eine lange Liste schwieriger Wörter auswendig und schreibt sie ab",
+            "Er verlässt sich auf das Rechtschreibprogramm, das ihm alle Fehler anzeigt",
           ],
           answer: 0,
           explanation:
@@ -756,7 +760,7 @@ export const LB4B: Lesson[] = [
     paragraphs: [
       "Telefon, Mikroskop, Antibiotikum: Diese Wörter wirken fremd, bestehen aber aus wenigen Bausteinen, die du immer wieder findest. Viele stammen aus dem Griechischen oder Lateinischen. Wer die Bausteine kennt, versteht ein neues Fremdwort schneller und schreibt es sicherer. Aus „tele-“ („fern“) und „-fon“ („Klang, Stimme“) wird das Telefon, aus „mikro-“ („klein“) und „-skop“ („betrachten“) das Mikroskop, aus „anti-“ („gegen“) und „bio-“ („Leben“) das Antibiotikum.",
       "Einige häufige Bausteine: **pro-** („vor, voran, für“: Programm, Projekt), **anti-** („gegen“: Antibiotikum, Antipathie), **re-** („zurück, wieder“: Reaktion, reparieren), **tele-** („fern“: Teleskop), **mikro-** („klein“: Mikroskop), **graf-** oder **graph-** („schreiben, zeichnen“: Biografie, Grafik) und **fon-** oder **phon-** („Klang, Stimme“: Telefon). Die Vorsilbe **in-** bedeutet „nicht“ (inaktiv) oder „hinein“ (Injektion). Vor l, m und r gleicht sie sich an: in + legal wird **il**legal, in + mobil wird **im**mobil, in + relevant wird **ir**relevant. Darum steht dort ein doppelter Konsonant. Vor b und p wird aus in- ein im-, so entsteht zum Beispiel „Import“.",
-      "Auch die Endungen verraten viel. **-ion** bildet Substantive („Information“, „Reaktion“) mit der Mehrzahl auf -ionen, **-ik** bezeichnet Fächer und Künste („Mathematik“, „Musik“), **-ismus** eine Haltung oder Richtung („Optimismus“, „Realismus“) und **-ieren** macht Verben („kopieren“, „telefonieren“). Aus dem Griechischen stammen Schreibungen, die anders klingen, als man sie schreibt: **ph** klingt wie f („Philosophie“, „Physik“), **th** wie t („Theater“, „Mathematik“), **rh** wie r („Rhythmus“, „Rhetorik“) und **y** wie ü („System“, „Gymnasium“). Bei Bausteinen wie -graph-, -phon- und -photo- sind in vielen Wörtern ph und f erlaubt („Grafik“ oder „Graphik“, „Mikrofon“ oder „Mikrophon“), bei anderen gilt nur eine Schreibung („Telefon“, „fotografieren“). Im Zweifel schlägst du nach. In den Übungen stehen nur Wörter mit einer einzigen richtigen Schreibung.",
+      "Auch die Endungen verraten viel. **-ion** bildet Substantive („Information“, „Reaktion“) mit der Mehrzahl auf -ionen, **-ik** bezeichnet Fächer und Künste („Mathematik“, „Musik“), **-ismus** eine Haltung oder Richtung („Optimismus“, „Realismus“) und **-ieren** macht Verben („kopieren“, „telefonieren“). Aus dem Griechischen stammen Schreibungen, die anders klingen, als man sie schreibt: **ph** klingt wie f („Philosophie“, „Physik“), **th** wie t („Theater“, „Mathematik“), **rh** wie r („Rhythmus“, „Rhetorik“) und **y** wie ü („System“, „Gymnasium“). Bei Bausteinen wie -graph-, -phon- und -photo- sind in vielen Wörtern ph und f erlaubt („Grafik“ oder „Graphik“, „Mikrofon“ oder „Mikrophon“), bei anderen gilt nur eine Schreibung („Telefon“, „telefonieren“, „fotografieren“). Im Zweifel schlägst du nach. In den Übungen stehen nur Wörter mit einer einzigen richtigen Schreibung.",
       "Fremdwörter werden wie deutsche Wörter gebeugt, haben aber oft eigene Formen. Bei Substantiven auf -um lautet die Mehrzahl meist -a oder -en: das Praktikum – die Praktika, das Museum – die Museen. „Computer“ bleibt in der Mehrzahl gleich: zwei Computer, aber „mit den Computern“. **Verben auf -ieren** konjugierst du regelmäßig: ich kopiere, du kopierst, er kopiert, im Präteritum er kopierte. Weil die Betonung auf -ie- liegt, bekommt das Partizip II kein ge-: „Ich habe die Seite kopiert“, nicht „gekopiert“. Dasselbe gilt für telefoniert, studiert und fotografiert.",
     ],
     terms: [
@@ -866,7 +870,7 @@ export const LB4B: Lesson[] = [
           question: "Warum heißt es „Ich habe Bücher kopiert“ und nicht „gekopiert“?",
           options: [
             "Verben auf -ieren bekommen im Partizip II kein ge-",
-            "Weil „kopieren“ ein unregelmäßiges Verb ist",
+            "Weil „kopieren“ ein unregelmäßiges Verb mit eigener Form ist",
             "Weil das Wort aus dem Englischen stammt",
           ],
           answer: 0,
@@ -1318,7 +1322,7 @@ export const LB4B: Lesson[] = [
             feedback: "Der vorangestellte „obwohl“-Satz und der angehängte „weil“-Satz werden jeweils vom Hauptsatz abgetrennt.",
           },
           {
-            words: ["Nicht", "der", "Lärm", "sondern", "die", "Hitze", "machte", "uns", "zu", "schaffen."],
+            words: ["Nicht", "der", "Lärm", "sondern", "die", "Hitze", "störte", "uns", "beim", "Lernen."],
             commas: [2],
             feedback: "Vor „sondern“ steht ein Komma.",
           },
@@ -1421,13 +1425,13 @@ export const LB4B: Lesson[] = [
         "– einen Lebenslauf, – ein Anschreiben, und – deine Zeugnisse.",
       ],
       explanation:
-        "Die Punkte setzen den Satz fort, darum beginnen sie klein und werden wie in einer Aufzählung durch Kommas getrennt. Vor „und“ steht kein Komma, am Schluss ein Punkt. Große Anfänge und Punkte nach jedem Punkt passen zu ganzen Sätzen.",
+        "Die Punkte setzen den Satz fort, darum beginnen sie klein und werden wie in einer Aufzählung durch Kommas getrennt. Vor „und“ steht kein Komma, am Schluss ein Punkt. Große Anfänge und Punkte nach jedem Punkt passen zu ganzen Sätzen. Ganz ohne Satzzeichen kommen nur freistehende Stichwortlisten aus.",
     },
     workshop: {
       kind: "mark",
       title: "Fehler in einer Gliederung finden",
       instruction:
-        "Diese Gliederung enthält Fehler. Wähle oben die Art des Fehlers und klicke die Zeile an, die ihn zeigt. Nicht jede Zeile ist falsch.",
+        "Diese Gliederung enthält Fehler. Die erste Zeile ist ihre Überschrift. Wähle oben die Art des Fehlers und klicke die Zeile an, die ihn zeigt. Nicht jede Zeile ist falsch.",
       labels: ["Kleiner Anfang", "Punkt am Zeilenende"],
       text: [
         { t: "Gliederung: Handys in der Schule\n" },
@@ -1462,14 +1466,14 @@ export const LB4B: Lesson[] = [
     casework: {
       title: "Lenas Checkliste für Ferienjobs",
       story:
-        "Lena schreibt für die Schülerzeitung eine Hilfe zur Bewerbung. Ihr Entwurf lautet: **„Für die Bewerbung um einen Ferienjob brauchst du • einen Lebenslauf • ein Anschreiben • deine letzten Zeugnisse“** Die Satzzeichen am Ende der Punkte fehlen noch.",
+        "Lena schreibt für die Schülerzeitung eine Hilfe zur Bewerbung. Ihr Entwurf lautet: **„Für die Bewerbung um einen Ferienjob brauchst du • einen Lebenslauf • ein Anschreiben und • deine letzten Zeugnisse“** Die Satzzeichen am Ende der Punkte fehlen noch.",
       steps: [
         {
           question: "Wie sind die Punkte von Lenas Liste gebaut?",
           options: [
-            "Sie setzen den Satz „Für die Bewerbung … brauchst du“ fort: Es sind Satzteile.",
-            "Es sind ganze Sätze mit eigenem Verb.",
-            "Es sind Überschriften einer Gliederung.",
+            "Sie setzen den Satz „Für die Bewerbung … brauchst du“ fort: Satzteile.",
+            "Es sind ganze Sätze, jeder mit eigenem Verb und eigenem Subjekt.",
+            "Es sind Überschriften einer Gliederung, die jeweils ein Kapitel nennen.",
           ],
           answer: 0,
           explanation:
@@ -1491,11 +1495,11 @@ export const LB4B: Lesson[] = [
           options: [
             "Kommas zwischen den Punkten, vor „und“ keines, am Ende ein Punkt",
             "Nach jedem Punkt ein Punkt, damit jeder für sich endet",
-            "Gar keine Zeichen, weil Listen ohne Satzzeichen auskommen",
+            "Gar keine Zeichen, weil Listenpunkte immer ohne Satzzeichen stehen",
           ],
           answer: 0,
           explanation:
-            "Die Liste folgt den Regeln einer Aufzählung: Kommas zwischen den Gliedern, kein Komma vor „und“, am Satzende ein Punkt.",
+            "Die Liste setzt den Satz fort und folgt den Regeln einer Aufzählung: Kommas zwischen den Gliedern, kein Komma vor „und“, am Satzende ein Punkt. Ganz ohne Zeichen kommen nur freistehende Stichwortlisten aus.",
         },
         {
           question: "Lena macht aus den Punkten ganze Sätze („Du brauchst einen Lebenslauf.“ und so weiter). Was ist dann üblich?",
@@ -1516,7 +1520,7 @@ export const LB4B: Lesson[] = [
       kind: "choose",
       title: "Gliederungen und Listen: drei Sätze pro Runde",
       instruction:
-        "Wähle für jede Lücke die richtige Schreibweise. Es geht um Anfänge nach Gliederungsangaben, um Zeilenenden und um die Schreibung nach einem Doppelpunkt. Eine Runde zählt, wenn alle drei Sätze stimmen.",
+        "Wähle für jede Lücke die richtige Schreibweise. Es geht um Anfänge nach Gliederungsangaben, um Zeilenenden und um die Schreibung nach einem Doppelpunkt. Zeilen aus Gliederungen und Inhaltsverzeichnissen stehen frei in einer eigenen Zeile und sind keine Sätze im Fließtext. Eine Runde zählt, wenn alle drei Sätze stimmen.",
       pool: {
         1: [
           {

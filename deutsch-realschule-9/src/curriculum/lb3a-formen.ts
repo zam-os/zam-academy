@@ -132,9 +132,9 @@ export const LB3A: Lesson[] = [
         {
           question: "Was stimmt an der E-Mail-Adresse nicht?",
           options: [
-            "Sie klingt nach Spitzname und Freizeit; eine seriöse Adresse enthält zum Beispiel Vor- und Nachname.",
+            "Sie klingt nach Spitzname und Freizeit; seriös wäre zum Beispiel Vor- und Nachname.",
             "Sie ist zu lang für einen Lebenslauf und passt nicht in die Tabelle.",
-            "E-Mail-Adressen gehören nicht in einen Lebenslauf, nur in das Anschreiben.",
+            "E-Mail-Adressen gehören nicht in einen Lebenslauf, sondern nur in das Anschreiben unter den Absender.",
           ],
           answer: 0,
           explanation:
@@ -143,9 +143,9 @@ export const LB3A: Lesson[] = [
         {
           question: "Welche Aussage zum Bewerbungsfoto stimmt?",
           options: [
-            "Es ist keine Pflicht mehr; wer eines beilegt, wählt ein ordentliches Bewerbungsfoto.",
-            "Es ist gesetzlich vorgeschrieben, sonst wird die Bewerbung abgelehnt.",
-            "Es ist grundsätzlich verboten, ein Foto beizulegen.",
+            "Es ist keine Pflicht mehr; wer eines beilegt, nimmt ein professionelles Foto statt eines Selfies.",
+            "Es ist gesetzlich vorgeschrieben, sonst wird die Bewerbung von der Firma sofort abgelehnt.",
+            "Es ist grundsätzlich verboten, weil ein Foto die Entscheidung der Firma unfair beeinflussen könnte.",
           ],
           answer: 0,
           explanation:
@@ -300,7 +300,7 @@ export const LB3A: Lesson[] = [
           options: [
             "Ein Säulen- oder Balkendiagramm, weil Personen miteinander verglichen werden",
             "Ein Liniendiagramm, weil die Freunde nacheinander genannt werden",
-            "Keine andere, denn das Kreisdiagramm zeigt jeden Betrag am deutlichsten",
+            "Keine andere, denn das Kreisdiagramm zeigt jeden einzelnen Betrag am deutlichsten",
           ],
           answer: 0,
           explanation:
@@ -309,9 +309,9 @@ export const LB3A: Lesson[] = [
         {
           question: "Was leistet ein guter Titel?",
           options: [
-            "Er sagt, was gezeigt wird, zum Beispiel „Monatliches Taschengeld von sechs Freunden“.",
-            "Er ist so kurz wie möglich, ein Wort wie „Umfrage“ genügt.",
-            "Er bleibt leer, weil die Zahlen für sich sprechen.",
+            "Er sagt, was gezeigt wird, zum Beispiel „Taschengeld von sechs Freunden“.",
+            "Er ist so kurz wie möglich, denn ein einzelnes Wort wie „Umfrage“ genügt völlig.",
+            "Er bleibt leer, weil die Zahlen für sich sprechen und jedes Wort nur ablenkt.",
           ],
           answer: 0,
           explanation:
@@ -320,8 +320,8 @@ export const LB3A: Lesson[] = [
         {
           question: "Was muss außerdem an oder unter das Schaubild?",
           options: [
-            "Die Einheit (Euro pro Monat) an der Achse und die Quelle mit dem Hinweis „angenommene Werte“",
-            "Nur eine Legende, denn Einheit und Quelle sind selbstverständlich",
+            "Die Einheit (Euro pro Monat) an der Achse und die Quelle mit „angenommene Werte“",
+            "Nur eine Legende mit den Namen der Freunde, denn Einheit und Quelle sind selbstverständlich",
             "Nur die Quelle, denn die Einheit ergibt sich aus den Zahlen von selbst",
           ],
           answer: 0,
@@ -332,7 +332,7 @@ export const LB3A: Lesson[] = [
           question: "Was lässt Merve am besten weg?",
           options: [
             "Den 3D-Rand und Farben, die nichts bedeuten",
-            "Die Zahlenangaben, weil sie Platz brauchen",
+            "Die Zahlenangaben, weil sie zu viel Platz brauchen",
             "Den Titel, weil das Bild für sich spricht",
           ],
           answer: 0,
@@ -437,7 +437,7 @@ export const LB3A: Lesson[] = [
       kind: "mark",
       title: "Die Bausteine eines Eintrags finden",
       instruction:
-        "Wähle oben einen Baustein und klicke im Eintrag die Stelle an, die ihn zeigt. Nicht jeder Satz gehört zu einem dieser vier Bausteine.",
+        "Wähle oben einen Baustein und klicke im Eintrag die Stelle an, die ihn zeigt. Sätze über Schritte und Ergebnis gehören zu keinem dieser vier Bausteine und bleiben unmarkiert.",
       labels: ["Ziel", "Problem", "Reflexion", "Beleg"],
       text: [
         { t: "Eintrag vom 25.11.2026: " },
@@ -485,7 +485,7 @@ export const LB3A: Lesson[] = [
           question: "Welcher Baustein steht in einem Portfolio meist ganz vorn?",
           options: [
             "Ein Deckblatt mit Titel, Namen, Klasse und Datum",
-            "Die Pflanzenliste, weil sie das Wichtigste ist",
+            "Die Pflanzenliste, weil sie das Wichtigste des ganzen Projekts ist",
             "Eine Reflexion über das nächste Projekt",
           ],
           answer: 0,
@@ -495,9 +495,9 @@ export const LB3A: Lesson[] = [
         {
           question: "Wozu dient das Inhaltsverzeichnis?",
           options: [
-            "Es nennt alle Teile mit Seitenzahlen, damit man schnell findet, was man sucht.",
-            "Es fasst das Projekt in drei Sätzen zusammen.",
-            "Es ersetzt die Überschriften im Text.",
+            "Es nennt alle Teile mit Seitenzahlen, damit man sie schnell findet.",
+            "Es fasst das ganze Projekt in drei Sätzen für Lesende zusammen.",
+            "Es ersetzt die Überschriften im Text und spart damit Platz auf den Seiten.",
           ],
           answer: 0,
           explanation:
@@ -506,9 +506,9 @@ export const LB3A: Lesson[] = [
         {
           question: "Was fehlt noch, damit aus der Sammlung ein Portfolio wird?",
           options: [
-            "Eine kurze Begründung der Auswahl und eine Reflexion über das eigene Lernen",
-            "Mehr Fotos, denn Bilder zählen mehr als Text",
-            "Eine Kopie aller Arbeitsblätter des Schuljahres",
+            "Eine Begründung der Auswahl und eine Reflexion über das eigene Lernen",
+            "Mehr Fotos, denn Bilder zählen mehr als Text und wirken stärker",
+            "Eine Kopie aller Arbeitsblätter des Schuljahres als Beleg für den Fleiß",
           ],
           answer: 0,
           explanation:
@@ -517,9 +517,9 @@ export const LB3A: Lesson[] = [
         {
           question: "Welche Ordnung der Beiträge ist nachvollziehbar?",
           options: [
-            "Nach dem Verlauf des Projekts, etwa Planung, Pflanzen, Pflege und Auswertung",
+            "Nach dem Verlauf des Projekts, etwa Planung, Pflege und Auswertung",
             "In der Reihenfolge, in der die Dateien zufällig im Ordner liegen",
-            "Nach der Länge der Beiträge, die kürzesten zuerst",
+            "Nach der Länge der Beiträge, die kürzesten zuerst und die längsten zuletzt",
           ],
           answer: 0,
           explanation:
@@ -624,7 +624,7 @@ export const LB3A: Lesson[] = [
       kind: "mark",
       title: "Zitate und Quellenangaben im Absatz finden",
       instruction:
-        "Hier siehst du einen Absatz aus der Erörterung einer Schülerin (eigens verfasst). Wähle oben eine Art und klicke dann die Stelle an. Eigene Gedanken der Schülerin bleiben unmarkiert.",
+        "Hier siehst du einen Absatz aus der Erörterung einer Schülerin (eigens verfasst). Wähle oben eine Art und klicke dann die Stelle an; als Quellenangabe zählt nur die Klammer mit der Zeilenangabe. Eigene Gedanken und eigene Satzteile der Schülerin bleiben unmarkiert.",
       labels: ["Wörtliches Zitat", "Sinngemäßes Zitat", "Quellenangabe"],
       text: [
         { t: "Meiner Meinung nach macht die neue Fahrradstraße den Schulweg sicherer. " },
@@ -669,9 +669,9 @@ export const LB3A: Lesson[] = [
         {
           question: "Was fehlt Jonas’ erstem Satz, damit klar ist, dass er wörtlich aus der Vorlage stammt?",
           options: [
-            "Anführungszeichen um die übernommene Stelle und die Quellenangabe (Z. 5)",
-            "Nur ein Doppelpunkt vor dem Satz",
-            "Ein Ausrufezeichen am Ende, damit der Satz hervorsticht",
+            "Anführungszeichen um die Stelle und die Quellenangabe (Z. 5)",
+            "Nur ein Doppelpunkt vor dem Satz, wie vor einer Aufzählung",
+            "Ein Ausrufezeichen am Ende, damit der Satz stärker hervorsticht",
           ],
           answer: 0,
           explanation:
@@ -702,9 +702,9 @@ export const LB3A: Lesson[] = [
         {
           question: "Was fehlt Jonas’ Absatz noch, damit das Zitat ein Beleg und kein Ersatz für eigene Gedanken ist?",
           options: [
-            "Eine eigene Erklärung, was das Zitat zeigt, zum Beispiel „Das zeigt, dass …“",
-            "Ein zweites Zitat mit demselben Inhalt",
-            "Nichts, denn ein Zitat erklärt sich selbst",
+            "Eine eigene Erklärung, was das Zitat zeigt, etwa „Das zeigt, dass …“",
+            "Ein zweites Zitat mit demselben Inhalt aus einer anderen Zeile",
+            "Nichts, denn ein Zitat erklärt sich selbst und braucht keinen Kommentar",
           ],
           answer: 0,
           explanation:
@@ -996,7 +996,7 @@ export const LB3A: Lesson[] = [
           options: [
             "Informieren: Sie nennen sachlich Ereignis, Zahlen und Regelung.",
             "Erzählen: Sie schildern spannend ein persönliches Erlebnis.",
-            "Argumentieren: Sie begründen eine Forderung.",
+            "Argumentieren: Sie begründen eine Forderung mit mehreren Argumenten.",
           ],
           answer: 0,
           explanation:
@@ -1005,19 +1005,19 @@ export const LB3A: Lesson[] = [
         {
           question: "Woran erkennst du, dass der dritte Satz argumentiert?",
           options: [
-            "Er stellt mit „sollte jedes Jahr stattfinden“ eine Forderung auf und begründet sie mit „denn“.",
-            "Er enthält viele Zahlen und nennt Ort und Zeit.",
-            "Er verwendet wörtliche Rede und beschreibt Gefühle.",
+            "Er fordert mit „sollte jedes Jahr stattfinden“ etwas und begründet es mit „denn“.",
+            "Er enthält viele Zahlen und nennt genau Ort, Zeit und Länge des Spendenlaufs.",
+            "Er verwendet wörtliche Rede und beschreibt die Gefühle der Läuferinnen und Läufer.",
           ],
           answer: 0,
           explanation:
-            "Eine Behauptung oder Forderung mit einer Begründung ist das Kennzeichen des Argumentierens. Zahlen, Ort und Zeit gehören zum Informieren.",
+            "Eine Behauptung oder Forderung mit einer Begründung ist das Kennzeichen des Argumentierens. Zahlen, Ort und Zeit gehören zum Informieren, wörtliche Rede und Gefühle zum Erzählen.",
         },
         {
           question: "Welche Rolle hat die Information am Anfang für die Stellungnahme?",
           options: [
             "Sie liefert die Grundlage, auf der die Meinung aufbaut.",
-            "Sie soll die Leserschaft vor allem unterhalten.",
+            "Sie soll die Leserschaft vor allem unterhalten und ihr Spannung bieten.",
             "Sie ersetzt die Begründung der Meinung.",
           ],
           answer: 0,
@@ -1027,7 +1027,7 @@ export const LB3A: Lesson[] = [
         {
           question: "Der Text steht in der Schülerzeitung. Welche Sprache passt zu den Lesenden?",
           options: [
-            "Verständliche Standardsprache, sachlich und lebendig",
+            "Verständliche Standardsprache, klar und anschaulich",
             "Fachsprache mit vielen Fremdwörtern, damit der Text gelehrt wirkt",
             "Umgangssprache mit Jugendslang und Abkürzungen",
           ],

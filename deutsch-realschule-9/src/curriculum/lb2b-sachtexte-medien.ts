@@ -67,7 +67,7 @@ export const LB2B: Lesson[] = [
       kind: "mark",
       title: "Merkmale einer Karikatur finden",
       instruction:
-        "Hier ist eine Karikatur als Text beschrieben. Wähle oben eine Bezeichnung und klicke die Stelle an, die sie zeigt. Ein Symbol steht für einen Gedanken, eine Übertreibung macht etwas viel zu groß oder zu viel. Nicht jede Stelle ist ein Merkmal.",
+        "Hier ist eine Karikatur als Text beschrieben. Wähle oben eine Bezeichnung und klicke die Stelle an, die sie zeigt. Eine Beschriftung ist jeder Text in der Zeichnung, etwa Titel oder Aufschrift. Ein Symbol ist ein Zeichen, das für einen Gedanken steht, zum Beispiel eine Waage für Gerechtigkeit. Eine Übertreibung macht etwas unmöglich groß oder zu viel. Nicht jede Stelle ist ein Merkmal.",
       labels: ["Übertreibung", "Symbol", "Beschriftung"],
       text: [
         { t: "Die Zeichnung trägt den Titel " },
@@ -122,7 +122,7 @@ export const LB2B: Lesson[] = [
           question: "Was zeigt ein Liniendiagramm wie dieses vor allem?",
           options: [
             "Die Entwicklung des Verkaufs über fünf Wochen",
-            "Den Anteil jeder Woche am gesamten Verkauf",
+            "Den Anteil jeder Woche am gesamten Verkauf der fünf Wochen",
             "Den Vergleich zweier Kioske miteinander",
           ],
           answer: 0,
@@ -132,7 +132,7 @@ export const LB2B: Lesson[] = [
         {
           question: "Die senkrechte Achse beginnt bei 80 statt bei 0. Welche Folge hat das für den Eindruck?",
           options: [
-            "Der Anstieg wirkt steiler, als es im Verhältnis zu den Zahlen angemessen ist.",
+            "Der Anstieg wirkt steiler, als es die Zahlen hergeben.",
             "Der Anstieg wirkt flacher, weil die Linie dadurch kürzer wird.",
             "Der Eindruck bleibt gleich, weil die Werte dieselben sind.",
           ],
@@ -144,8 +144,8 @@ export const LB2B: Lesson[] = [
           question: "Um wie viel ist der Verkauf in den fünf Wochen laut den Zahlen gestiegen?",
           options: [
             "Um 14 Brote pro Woche, von 85 auf 99",
-            "Um 99 Brote pro Woche",
-            "Er hat sich ungefähr verdoppelt",
+            "Um 99 Brote pro Woche seit dem Start",
+            "Er hat sich in fünf Wochen ungefähr verdoppelt",
           ],
           answer: 0,
           explanation: "99 minus 85 ergibt 14. Verdoppelt hätte sich der Verkauf erst bei etwa 170 Broten pro Woche.",
@@ -253,8 +253,8 @@ export const LB2B: Lesson[] = [
       question: "Woran erkennst du am sichersten, dass ein Text ein Kommentar ist?",
       answer: "Der Text bezieht Stellung, begründet eine Meinung und will die Lesenden überzeugen.",
       wrong: [
-        "Der Text beginnt mitten im Geschehen und beschreibt Eindrücke vor Ort.",
-        "Der Text beantwortet sachlich die W-Fragen und nennt nur Fakten.",
+        "Der Text beginnt mitten im Geschehen und beschreibt Eindrücke und Stimmen vor Ort.",
+        "Der Text beantwortet sachlich die W-Fragen und nennt nur geprüfte Fakten.",
       ],
       explanation:
         "Ein Kommentar ist ein Meinungstext mit These und Argumenten. Der Einstieg mitten im Geschehen ist typisch für die Reportage, die sachliche Antwort auf die W-Fragen für den Bericht.",
@@ -309,8 +309,8 @@ export const LB2B: Lesson[] = [
           question: "Welche Textsorte liegt vor?",
           options: [
             "Ein Kommentar, weil der Text eine Meinung vertritt und eine Forderung stellt",
-            "Ein Bericht, weil der Text ein Problem an der Schule nennt",
-            "Eine Reportage, weil der Text die Lage am Morgen schildert",
+            "Ein Bericht, weil der Text ein Problem an der Schule nennt und darüber informiert",
+            "Eine Reportage, weil der Text die Lage am Morgen an den Ständern schildert",
           ],
           answer: 0,
           explanation:
@@ -331,7 +331,7 @@ export const LB2B: Lesson[] = [
           question: "Welche Wirkung hat die Frage am Ende des Textes?",
           options: [
             "Eine rhetorische Frage: Sie erwartet keine Antwort, sondern unterstreicht die Forderung.",
-            "Eine offene Frage: Der Text erwartet, dass die Lesenden schriftlich antworten.",
+            "Eine offene Frage: Der Text erwartet, dass die Lesenden der Schulleitung schriftlich antworten.",
             "Eine Information: Sie meldet, dass bereits ein Rad kaputtgegangen ist.",
           ],
           answer: 0,
@@ -341,9 +341,9 @@ export const LB2B: Lesson[] = [
         {
           question: "Welche Wiedergabe gibt den Inhalt sachlich und in eigenen Worten wieder?",
           options: [
-            "Der Text fordert, dass die Schulleitung neue Fahrradständer aufstellt, weil die Räder sonst beschädigt werden und der Weg versperrt ist.",
-            "Die Schulleitung tut nichts und ist schuld, wenn Räder kaputtgehen.",
-            "Jeden Morgen dasselbe: Wer mit dem Rad kommt, kämpft sich durch einen Wirrwarr.",
+            "Der Text fordert von der Schulleitung neue Fahrradständer, damit die Räder heil bleiben und der Weg frei ist.",
+            "Die Schulleitung tut nichts und ist schuld, wenn die Räder kaputtgehen und niemand mehr durchkommt.",
+            "Jeden Morgen dasselbe: Wer mit dem Rad kommt, kämpft sich durch einen Wirrwarr aus Lenkern und Pedalen.",
           ],
           answer: 0,
           explanation:
@@ -441,8 +441,8 @@ export const LB2B: Lesson[] = [
       question: "Woran erkennst du, dass ein Satz eine Meinung und keine Information ausdrückt?",
       answer: "Er enthält Wertungen, die man nicht nachprüfen, sondern nur begründen oder bestreiten kann.",
       wrong: [
-        "Er steht im Konjunktiv, weil Meinungen immer im Konjunktiv ausgedrückt werden.",
-        "Er enthält keine Zahlen, denn Meinungen werden nie mit Zahlen belegt.",
+        "Er steht im Konjunktiv, weil Meinungen in Texten immer im Konjunktiv ausgedrückt werden.",
+        "Er enthält keine Zahlen, denn Meinungen werden in Texten nie mit Zahlen belegt.",
       ],
       explanation:
         "Eine Meinung erkennst du an ihrer Wertung. Der Konjunktiv I zeigt nur, dass jemand etwas wiedergibt, und auch eine Meinung kann sich auf Zahlen stützen.",
@@ -451,7 +451,7 @@ export const LB2B: Lesson[] = [
       kind: "mark",
       title: "Wertung, Forderung und fremde Aussage finden",
       instruction:
-        "Text und Zahl sind erfunden. Wähle oben eine Bezeichnung und klicke im Text die Stelle an, die dazu passt. Sachliche Angaben mit Zahl oder Quelle sind keine Wertung und bleiben unmarkiert.",
+        "Text und Zahl sind erfunden. Wähle oben eine Bezeichnung und klicke im Text die Stelle an, die dazu passt: ein wertendes Wort oder eine wertende Wendung, eine Forderung (der ganze Satz) oder eine fremde Aussage im Konjunktiv I (der Teilsatz mit der Verbform). Alles andere bleibt unmarkiert, auch sachliche Angaben mit Zahl oder Quelle.",
       labels: ["Wertendes Wort", "Forderung", "Konjunktiv I (fremde Aussage)"],
       text: [
         { t: "Die Stadtbibliothek schließt samstags künftig ganz" },
@@ -482,12 +482,11 @@ export const LB2B: Lesson[] = [
         { t: ". " },
         { t: "Jugendliche lernen dort für Klassenarbeiten" },
         { t: ". " },
-        { t: "Die Stadt " },
         {
-          t: "muss die Entscheidung überdenken",
+          t: "Die Stadt muss die Entscheidung überdenken",
           label: 1,
           feedback:
-            "„muss“ drückt eine Forderung aus. Der Text sagt, was geschehen soll, und nimmt damit Stellung.",
+            "„muss“ drückt eine Forderung aus. Der ganze Satz sagt, was geschehen soll, und nimmt damit Stellung.",
         },
         { t: "." },
       ],
@@ -533,7 +532,7 @@ export const LB2B: Lesson[] = [
           options: [
             "Er nennt den Einwand und entkräftet ihn mit einem eigenen Argument.",
             "Er verschweigt den Einwand, damit der Text überzeugender wirkt.",
-            "Er gibt dem Einwand recht und ändert daraufhin seinen Standpunkt.",
+            "Er gibt dem Einwand recht und ändert daraufhin seinen Standpunkt grundlegend.",
           ],
           answer: 0,
           explanation:
@@ -683,7 +682,7 @@ export const LB2B: Lesson[] = [
           question: "Wie finanzieren sich viele kostenlose Apps?",
           options: [
             "Oft durch Werbung, die zu den gesammelten Daten der Nutzenden passt",
-            "Immer durch freiwillige Spenden der Nutzerinnen und Nutzer",
+            "Immer durch freiwillige Spenden, die Nutzerinnen und Nutzer in der App geben",
             "Gar nicht, die Anbieter verlieren dabei meist Geld",
           ],
           answer: 0,
@@ -705,8 +704,8 @@ export const LB2B: Lesson[] = [
           question: "Welche Entscheidung ist am besten begründet?",
           options: [
             "Sie erlaubt nur, was die App zum Funktionieren braucht, und prüft die Datenschutz-Einstellungen.",
-            "Sie erlaubt alles, weil die App kostenlos ist und alle sie nutzen.",
-            "Sie verzichtet auf jede App, weil jede App Daten missbraucht.",
+            "Sie erlaubt alles, weil die App kostenlos ist und alle sie nutzen, auch ihre Freunde.",
+            "Sie verzichtet auf jede App, weil jede App Daten missbraucht und niemand ihr vertrauen kann.",
           ],
           answer: 0,
           explanation:
@@ -836,7 +835,7 @@ export const LB2B: Lesson[] = [
           feedback: "Die Totale zeigt den ganzen Raum und gibt einen Überblick über den Ort.",
         },
         { t: ": " },
-        { t: "Die große Halle liegt im Dunkeln" },
+        { t: "Die große Halle ist leer" },
         { t: ". " },
         {
           t: "Man hört nur das leise Summen der Lampen",
@@ -855,7 +854,7 @@ export const LB2B: Lesson[] = [
         { t: ": " },
         { t: "Mia sucht mit der Taschenlampe den Boden ab" },
         { t: ". " },
-        { t: "Plötzlich rollt hinter ihr ein Ball über den Boden" },
+        { t: "Plötzlich dreht sie sich erschrocken um" },
         { t: ". " },
         {
           t: "Harter Schnitt",
@@ -939,8 +938,8 @@ export const LB2B: Lesson[] = [
           question: "Was bewirkt der harte Schnitt auf die lachende Klasse?",
           options: [
             "Er stellt Toms Einsamkeit der Gemeinschaft der anderen gegenüber.",
-            "Er zeigt, dass die Klasse Tom bewusst ausgrenzt.",
-            "Er geht sanft in eine Erinnerung von Tom über.",
+            "Er zeigt, dass die Klasse Tom bewusst ausgrenzt und meidet.",
+            "Er geht sanft in eine frühere Erinnerung von Tom über.",
           ],
           answer: 0,
           explanation:
@@ -1048,7 +1047,7 @@ export const LB2B: Lesson[] = [
       kind: "timeline",
       title: "Vom Einfall zum fertigen Beitrag",
       instruction:
-        "Bringe die Arbeitsschritte eines Teams in die richtige Reihenfolge, vom ersten Schritt oben bis zur Veröffentlichung unten.",
+        "Bringe die sechs Arbeitsschritte eines Teams in die richtige Reihenfolge, vom ersten Schritt oben bis zur Veröffentlichung unten. Die Einwilligungen klärt das Team erst, wenn der Plan steht.",
       categories: [],
       entries: [
         {
@@ -1095,8 +1094,8 @@ export const LB2B: Lesson[] = [
           question: "Was ist an den zufällig gefilmten Schülerinnen und Schülern für die geplante Veröffentlichung ein Problem?",
           options: [
             "Wer erkennbar zu sehen ist, muss in der Regel vor der Veröffentlichung einwilligen.",
-            "Nichts, weil das Video ja nur für die Schule gedacht ist.",
-            "Nichts, weil auf dem Pausenhof ohnehin alle gefilmt werden dürfen.",
+            "Nichts, weil das Video ja nur für die Schule gedacht ist und nicht für fremde Leute.",
+            "Nichts, weil auf dem Pausenhof ohnehin alle gefilmt werden dürfen, die dort gerade sind.",
           ],
           answer: 0,
           explanation:
@@ -1105,8 +1104,8 @@ export const LB2B: Lesson[] = [
         {
           question: "Was ist beim bekannten Hit aus dem Radio zu beachten?",
           options: [
-            "Fremde Musik darf nicht ohne Weiteres verwendet werden; das Team braucht Erlaubnis oder nimmt Musik, deren Nutzung erlaubt ist.",
-            "Der Hit darf frei verwendet werden, wenn er nur wenige Sekunden läuft.",
+            "Fremde Musik braucht eine Erlaubnis, oder das Team nimmt Musik, deren Nutzung erlaubt ist.",
+            "Der Hit darf frei verwendet werden, wenn er nur wenige Sekunden lang zu hören ist.",
             "Der Hit darf verwendet werden, wenn der Name der Sängerin im Abspann steht.",
           ],
           answer: 0,
@@ -1114,11 +1113,11 @@ export const LB2B: Lesson[] = [
             "Musik gehört in der Regel den Urhebern und Rechteinhabern. Eine Sekundengrenze, ab der Musik frei ist, gibt es nicht, und der Name der Sängerin im Abspann ist keine Erlaubnis.",
         },
         {
-          question: "Was fehlt in den Notizen noch, bevor gedreht wird?",
+          question: "Welches Planungsdokument fehlt in den Notizen noch, bevor gedreht wird?",
           options: [
             "Ein Skript oder Drehbuch, das Ablauf und Texte festlegt",
-            "Ein fertiger Schnitt des Videos",
-            "Die Veröffentlichung auf dem Kanal der Klasse",
+            "Ein fertiger Schnitt des Videos mit Musik und Titeln",
+            "Die Veröffentlichung auf dem öffentlichen Kanal der Klasse",
           ],
           answer: 0,
           explanation:
@@ -1128,7 +1127,7 @@ export const LB2B: Lesson[] = [
           question: "Was sollte das Team vor dem Hochladen mit der Lehrkraft klären?",
           options: [
             "Wo das Video gezeigt werden darf und ob alle Einwilligungen vorliegen",
-            "Wie viele Personen das Video am Ende anschauen sollen",
+            "Wie viele Personen das Video am Ende mindestens anschauen und teilen sollen",
             "Welche Musik zurzeit am beliebtesten ist",
           ],
           answer: 0,

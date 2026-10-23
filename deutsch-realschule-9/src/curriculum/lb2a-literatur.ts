@@ -134,9 +134,9 @@ export const LB2A: Lesson[] = [
         {
           question: "Wie klärt Jonas das Wort „Ehrenamtliche“?",
           options: [
-            "Er liest weiter und lässt das Wort einfach aus.",
+            "Er liest weiter und lässt das Wort einfach aus, weil es für den Rest nicht wichtig scheint.",
             "Er erschließt die Bedeutung aus dem Satz und schlägt sie bei Bedarf nach.",
-            "Er bricht ab und sucht sich einen leichteren Text.",
+            "Er bricht ab und sucht sich einen leichteren Text, weil er das Wort nicht kennt.",
           ],
           answer: 1,
           explanation:
@@ -146,7 +146,7 @@ export const LB2A: Lesson[] = [
           question: "Nach dem Lesen vergleicht Jonas seine Notizen mit denen von Aylin. Wozu ist das nützlich?",
           options: [
             "Sie sehen, ob sie dieselbe Kernaussage verstanden haben, und klären Unterschiede.",
-            "Sie suchen den besseren der beiden Zettel heraus und werfen den anderen weg.",
+            "Sie suchen den besseren der beiden Zettel heraus und behalten künftig nur noch diesen einen.",
             "Sie sparen Zeit, weil künftig nur noch einer von beiden lesen muss.",
           ],
           answer: 0,
@@ -295,9 +295,9 @@ export const LB2A: Lesson[] = [
         {
           question: "Stimmt Jonas’ Behauptung, wenn du sie am Text prüfst?",
           options: [
-            "Nein: Der Text sagt nur, dass 140 Jugendliche kommen würden. Das ist ein Umfrageergebnis, keine Tatsache.",
-            "Ja, denn der Text nennt die Zahl 140.",
-            "Das lässt sich am Text nicht prüfen.",
+            "Nein: Der Text sagt nur, dass 140 Jugendliche kommen würden, nicht dass sie es tun.",
+            "Ja, denn der Text nennt die Zahl 140 als Ergebnis einer Umfrage unter 200 Jugendlichen.",
+            "Das lässt sich am Text nicht prüfen, weil man dafür die Umfrage selbst kennen müsste.",
           ],
           answer: 0,
           explanation:
@@ -307,8 +307,8 @@ export const LB2A: Lesson[] = [
           question: "Worauf bezieht sich „Deshalb“ im letzten Satz?",
           options: [
             "Auf das Umfrageergebnis davor: Es ist der Grund für die Forderung.",
-            "Nur auf den ersten Satz über die Öffnung der Bibliothek.",
-            "Auf die Zahl 200 allein.",
+            "Nur auf den ersten Satz über die Öffnung der Bibliothek am Sonntag.",
+            "Auf die Zahl 200 allein, denn sie steht im Satz direkt davor.",
           ],
           answer: 0,
           explanation:
@@ -329,7 +329,7 @@ export const LB2A: Lesson[] = [
           question: "Welcher Satz gibt die Textaussage wieder und nicht eine eigene Meinung?",
           options: [
             "Der Text fordert einen Versuch, weil laut Umfrage viele Jugendliche sonntags kommen würden.",
-            "Ich finde, die Bibliothek sollte sonntags öffnen, weil das Lernen leichter wird.",
+            "Ich finde, die Bibliothek sollte sonntags öffnen, weil das Lernen dort für alle leichter wird.",
             "Die Umfrage ist bestimmt zugunsten der Bibliothek ausgefallen.",
           ],
           answer: 0,
@@ -442,23 +442,23 @@ export const LB2A: Lesson[] = [
         "Ein alltägliches Ereignis, das der Erzähler besonders ausführlich schildert.",
       ],
       explanation:
-        "„Unerhört“ bedeutet hier „noch nie gehört“, also außergewöhnlich, und nicht „empörend“. Die Novelle erzählt gerade kein alltägliches Geschehen, sondern ein einzelnes Ereignis, das aus dem Rahmen fällt.",
+        "Im Alltag heißt „unerhört“ oft „empörend“, bei Goethe aber „noch nie gehört“, also außergewöhnlich. Die Novelle erzählt gerade kein alltägliches Geschehen, sondern ein einzelnes Ereignis, das aus dem Rahmen fällt.",
     },
     workshop: {
       kind: "mark",
       title: "Merkmale einer Novelle im Text finden (erfundene Novelle)",
       instruction:
-        "Wähle oben ein Merkmal und klicke dann im Text die passende Stelle an. Beim Dingsymbol markierst du nur den Gegenstand selbst, und er kommt mehr als einmal vor. Der Wendepunkt ist die Stelle, an der sich das Verhalten der Hauptfigur dreht. Nicht jeder Satz ist ein Merkmal.",
+        "Wähle oben ein Merkmal und klicke dann im Text die passende Stelle an. Beim Dingsymbol markierst du nur den Gegenstand selbst, mit seinem Artikel, und er kommt mehr als einmal vor. Der Wendepunkt ist die Stelle, an der sich das Verhalten der Hauptfigur ändert. Nicht jeder Satz ist ein Merkmal.",
       labels: ["Dingsymbol", "Unerhörte Begebenheit", "Wendepunkt"],
       text: [
         { t: "Seit dem Streit vor dreißig Jahren spricht Großvater Kern nicht mehr von seinem Sohn. " },
         {
-          t: "Die alte Standuhr im Flur",
+          t: "Die Standuhr",
           label: 0,
           feedback:
             "Die Standuhr steht im ganzen Text für den Stillstand zwischen Vater und Sohn. Sie taucht mehrmals auf und trägt die Bedeutung.",
         },
-        { t: " geht seither falsch, und niemand darf sie anrühren. " },
+        { t: " im Flur geht seither falsch, und niemand darf sie anrühren. " },
         {
           t: "Eines Nachts schlägt es dreizehn, und im selben Augenblick klopft es an der Tür: Draußen steht der verschollene Sohn. ",
           label: 1,
@@ -491,9 +491,9 @@ export const LB2A: Lesson[] = [
         {
           question: "Welches Ereignis ist die unerhörte Begebenheit?",
           options: [
-            "Der Sturm vernichtet die ganze Flotte, und nur Jonas, der an Land blieb, überlebt.",
-            "Die Fischer trinken vor der Ausfahrt aus der Kupferkanne.",
-            "Die Kanne hängt am Ende leer an der Wand.",
+            "Der Sturm vernichtet die Flotte, nur Jonas, der an Land blieb, überlebt.",
+            "Die Fischer trinken vor jeder Ausfahrt aus der Kupferkanne der Wirtin.",
+            "Die Kanne hängt seitdem leer an der Wand, und das Dorf spricht von einem Wunder.",
           ],
           answer: 0,
           explanation:
@@ -503,8 +503,8 @@ export const LB2A: Lesson[] = [
           question: "Wofür steht die Kupferkanne?",
           options: [
             "Für den Glauben an Bräuche, auf die sich das ganze Dorf verlässt.",
-            "Für den Reichtum der Wirtin.",
-            "Für nichts, sie gehört nur zur Kulisse.",
+            "Für den Wohlstand der Wirtin, die mit der Kanne ein gutes Geschäft macht.",
+            "Für nichts Bestimmtes, sie gehört nur zur Kulisse eines Fischerdorfs.",
           ],
           answer: 0,
           explanation:
@@ -514,8 +514,8 @@ export const LB2A: Lesson[] = [
           question: "Welche Haltung zeigt Jonas?",
           options: [
             "Er verlässt sich auf eigene Beobachtung statt auf Brauch und Gruppendruck.",
-            "Er hält die anderen Fischer für dumm und verachtet sie.",
-            "Er glaubt noch stärker als die anderen an die Kraft der Kanne.",
+            "Er hält die anderen Fischer für dumm und verachtet sie wegen ihres Glaubens.",
+            "Er glaubt noch stärker als die anderen an die Kraft der Kanne und bleibt deshalb an Land.",
           ],
           answer: 0,
           explanation:
@@ -524,9 +524,9 @@ export const LB2A: Lesson[] = [
         {
           question: "Wie vergleichst du Jonas’ Haltung sinnvoll mit deiner eigenen?",
           options: [
-            "Ich überlege, wann ich selbst gegen Gruppendruck entschieden habe, und begründe, ob ich wie Jonas gehandelt hätte.",
-            "Ich übernehme seine Haltung, weil er am Ende überlebt.",
-            "Ich lehne sie ab, weil Fischer früher abergläubisch waren.",
+            "Ich frage, wann ich selbst gegen Gruppendruck entschieden habe, und begründe meinen Vergleich.",
+            "Ich übernehme seine Haltung ohne weitere Prüfung, weil er am Ende als Einziger überlebt.",
+            "Ich lehne sie ab, weil Menschen früher abergläubisch waren und so etwas heute nicht mehr vorkommt.",
           ],
           answer: 0,
           explanation:
@@ -688,8 +688,8 @@ export const LB2A: Lesson[] = [
           question: "Welche Redeform ist Lenas erster Auftritt?",
           options: [
             "Ein Monolog: Sie spricht allein zu sich selbst.",
-            "Ein Dialog, weil sie laut spricht.",
-            "Eine Regieanweisung, weil sie leise spricht.",
+            "Ein Dialog, weil sie laut und deutlich für das Publikum spricht.",
+            "Eine Regieanweisung, weil sie leise spricht und nicht gehört werden soll.",
           ],
           answer: 0,
           explanation:
@@ -698,24 +698,24 @@ export const LB2A: Lesson[] = [
         {
           question: "Was erfahren die Zuschauer durch den Monolog, was Ben nicht weiß?",
           options: [
-            "Lena weiß, wer das Foto gepostet hat, und schwankt, ob sie es sagen oder Ben die Schuld tragen lassen soll.",
-            "Lena hat das Foto absichtlich gepostet, um Ben zu schaden.",
-            "Lena und Ben sind sich einig, wie sie weiter vorgehen.",
+            "Lena weiß, wer das Foto gepostet hat, und schwankt zwischen Sagen und Schweigen.",
+            "Lena hat das Foto absichtlich gepostet, um sich an Ben zu rächen, und ist stolz darauf.",
+            "Lena und Ben haben sich abgesprochen, wie sie dem Gerücht begegnen wollen.",
           ],
           answer: 0,
           explanation:
-            "Der Monolog zeigt, dass Lena mehr weiß, als sie Ben sagt, und zwischen Wahrheit und Schweigen schwankt. Dass sie Ben schaden will oder mit ihm einig ist, widerspricht dem Text.",
+            "Der Monolog zeigt, dass Lena mehr weiß, als sie Ben sagt, und zwischen Wahrheit und Schweigen schwankt. Dass sie sich an Ben rächen will oder sich mit ihm abgesprochen hat, widerspricht dem Text.",
         },
         {
           question: "Wie vergleichst du Lenas Haltung am besten mit deiner eigenen?",
           options: [
-            "Ich frage mich, was mir in dieser Lage wichtiger wäre, Fairness gegenüber Ben oder der Schutz der Person, die das Foto gepostet hat, und begründe meine Entscheidung.",
-            "Ich gebe ihr recht, weil sie die Hauptfigur ist.",
-            "Ich urteile nicht, weil Figuren erfunden sind.",
+            "Ich frage mich, was mir wichtiger wäre: Fairness gegenüber Ben oder Rücksicht auf die andere Person.",
+            "Ich gebe ihr recht, weil sie die Hauptfigur ist und deshalb immer richtig entscheidet.",
+            "Ich urteile nicht, weil Figuren erfunden sind und ihre Entscheidungen mich nichts angehen.",
           ],
           answer: 0,
           explanation:
-            "Beim Vergleich fragst du nach den Werten hinter der Entscheidung und begründest deine eigene. Dass jemand Hauptfigur ist oder erfunden wurde, macht ein Urteil weder richtig noch unmöglich.",
+            "Beim Vergleich fragst du nach den Werten hinter der Entscheidung und stellst sie deinen eigenen gegenüber. Dass jemand Hauptfigur ist oder erfunden wurde, macht ein Urteil weder richtig noch unmöglich.",
         },
       ],
       verdict:
@@ -766,7 +766,7 @@ export const LB2A: Lesson[] = [
       "Jede Erzählung hat zwei Zeiten. Die **Erzählzeit** ist die Zeit, die du zum Lesen oder Hören brauchst. Die **erzählte Zeit** ist der Zeitraum, über den sich die Handlung erstreckt. Das kennst du aus Klasse 8. Meist passen die beiden nicht zusammen. Bei der **Zeitraffung** ist die Erzählzeit kürzer als die erzählte Zeit: „Sieben Jahre vergingen.“ Ein ganzer Zeitraum steckt in einem Satz. Bei der **Zeitdehnung** ist die Erzählzeit länger: Ein kurzer Moment, etwa der Pfiff vor einem Elfmeter, wird über viele Sätze erzählt. Bei der **Zeitdeckung** sind beide etwa gleich lang, zum Beispiel in einem Dialog. Raffung treibt die Handlung voran, Dehnung hebt Wichtiges hervor.",
       "Auch die Reihenfolge kann verändert sein. Eine **Rückblende** unterbricht die Handlung und erzählt Früheres, zum Beispiel: „Vor zehn Jahren hatte sie hier zum letzten Mal gestanden.“ Sie erklärt oft, warum eine Figur so handelt. Eine **Vorausdeutung** weist auf Späteres hin: „Dass es ihre wichtigste Fahrt werden würde, ahnte sie nicht.“ Sie weckt Spannung, weil du wissen willst, wie es dazu kommt. Fachsprachlich heißen Rückblende und Vorausdeutung auch Analepse und Prolepse. Wenn du einen Text untersuchst, markiere solche Stellen und frage, welche Wirkung sie haben: Wird etwas erklärt, hervorgehoben oder spannend gemacht?",
       "Die **Figurenkonstellation** beschreibt, wie die Figuren zueinander stehen: Wer ist Hauptfigur, wer Gegenspieler, wer Freund oder Vertrauter? Dazu gehört die Art der Beziehung, etwa Freundschaft, Rivalität, Abhängigkeit oder Streit. Du kannst sie als Beziehungsgeflecht skizzieren: Figuren in Kästchen, Pfeile mit kurzer Beschriftung wie „misstraut“ oder „hilft“. Achte darauf, ob sich die Beziehungen im Verlauf ändern, denn oft liegt gerade darin die Handlung: Aus Freunden werden Gegner, aus Fremden Verbündete. Das kennst du als Personenkonstellation aus Klasse 8.",
-      "Ein **Motiv** ist ein inhaltlicher Baustein, der in vielen Texten vorkommt. Es ist kleiner als eine ganze Handlung, aber man erkennt es wieder. Typische Motive sind feindliche Brüder (von Kain und Abel in der Bibel bis zu Schillers „Die Räuber“), der Doppelgänger, der Heimkehrer, das Verbrechen, das ans Licht kommt, oder der Wettlauf mit der Zeit. Wenn du ein Motiv erkennst, kannst du Texte vergleichen: Wie wird dasselbe Motiv hier anders gestaltet? Ein **Leitmotiv** ist ein Motiv, das innerhalb eines Werkes immer wiederkehrt.",
+      "Ein **Motiv** ist ein inhaltlicher Baustein, der in vielen Texten vorkommt. Es ist kleiner als eine ganze Handlung, aber man erkennt es wieder. Typische Motive sind feindliche Brüder (von Kain und Abel in der Bibel bis zu Schillers „Die Räuber“), der Doppelgänger, der Heimkehrer, die Eifersucht, das Verbrechen, das ans Licht kommt, oder der Wettlauf mit der Zeit. Wenn du ein Motiv erkennst, kannst du Texte vergleichen: Wie wird dasselbe Motiv hier anders gestaltet? Ein **Leitmotiv** ist ein Motiv, das innerhalb eines Werkes immer wiederkehrt.",
     ],
     terms: [
       {
@@ -821,7 +821,7 @@ export const LB2A: Lesson[] = [
       kind: "mark",
       title: "Zeitgestaltung im Text finden",
       instruction:
-        "Wähle oben eine Technik und klicke dann im Text die passende Stelle an. Nicht jeder Satz zeigt eine dieser Techniken.",
+        "Wähle oben eine Technik und klicke dann im Text die passende Stelle an. Eine Zeitraffung bringt die Handlung in wenigen Worten voran, eine Rückblende springt zurück. Nicht jeder Satz zeigt eine dieser Techniken.",
       labels: ["Zeitraffung", "Zeitdehnung", "Rückblende", "Vorausdeutung"],
       text: [
         { t: "Lena steht am Bahnsteig und wartet auf den Zug. " },
@@ -877,9 +877,9 @@ export const LB2A: Lesson[] = [
         {
           question: "Welche Beziehung bildet den Kern der Figurenkonstellation?",
           options: [
-            "Die Freundschaft zwischen Ben und Max, die durch Eifersucht zerbrach und neu beginnt.",
-            "Die Rivalität zwischen Ben und seiner Schwester Mila.",
-            "Die Abhängigkeit von Max und Anna.",
+            "Die Freundschaft von Ben und Max, die durch Eifersucht zerbrach und neu beginnt.",
+            "Die Rivalität zwischen Ben und seiner Schwester Mila, die ihn nicht versteht.",
+            "Die Abhängigkeit von Max und Anna, wegen der er schließlich wegzieht.",
           ],
           answer: 0,
           explanation:
@@ -888,17 +888,17 @@ export const LB2A: Lesson[] = [
         {
           question: "Welches Motiv steckt in der Geschichte?",
           options: [
-            "Eine zerbrochene und wiedergefundene Freundschaft.",
-            "Das Verbrechen, das ans Licht kommt.",
-            "Der Wettlauf mit der Zeit.",
+            "Eifersucht, die eine Freundschaft zerbrechen lässt, bis sie neu beginnt.",
+            "Das Verbrechen, das ans Licht kommt und die Täter am Ende überführt.",
+            "Der Wettlauf mit der Zeit, bei dem die Freunde das Wiedersehen noch erreichen müssen.",
           ],
           answer: 0,
           explanation:
-            "Von einer Straftat oder einem Wettlauf ist keine Rede. Der wiederkehrende Baustein ist die Freundschaft, die zerbricht und wieder zusammenfindet.",
+            "Von einer Straftat oder einem Wettlauf ist keine Rede. Der wiederkehrende Baustein ist die Eifersucht, die die Freundschaft zerbrechen lässt, bis sich beide wieder die Hand reichen.",
         },
       ],
       verdict:
-        "Die Geschichte nutzt eine Rückblende für den Streit und dehnt das Wiedersehen. Die Figurenkonstellation und das Motiv der wiedergefundenen Freundschaft zeigen, worum es dem Text geht.",
+        "Die Geschichte nutzt eine Rückblende für den Streit und dehnt das Wiedersehen. Die Figurenkonstellation und das Motiv der Eifersucht, die eine Freundschaft zerbrechen lässt, zeigen, worum es dem Text geht.",
     },
     tasks: {
       1: {
@@ -982,10 +982,10 @@ export const LB2A: Lesson[] = [
     sourceIds: ["lp"],
     quiz: {
       question: "Warum verstehst du einen Text besser, wenn du ihn weiterschreibst?",
-      answer: "Ich muss genau wissen, wie die Figuren sind und was offenbleibt, damit meine Fortsetzung passt.",
+      answer: "Ich muss die Figuren und das Offene im Text genau kennen, damit die Fortsetzung passt.",
       wrong: [
-        "Ich lerne den Text auswendig, weil ich ihn dafür mehrmals abschreibe.",
-        "Ich darf den Text verändern, bis er mir besser gefällt.",
+        "Ich lerne den Text dabei auswendig, weil ich ihn dafür mehrmals abschreibe.",
+        "Ich darf den Text frei verändern und umschreiben, bis er mir persönlich besser gefällt.",
       ],
       explanation:
         "Eine Fortsetzung gelingt nur, wenn sie zu Figuren, Ton und Handlung passt. Deshalb musst du den Text genau lesen und erkennen, was er offenlässt. Auswendiglernen und beliebiges Verändern sind keine Methoden des Verstehens.",
@@ -994,7 +994,7 @@ export const LB2A: Lesson[] = [
       kind: "classify",
       title: "Welche produktive Methode ist das?",
       instruction:
-        "Lies jeden Ausschnitt aus einer Schülerarbeit und ordne ihn der produktiven Methode zu, die er zeigt.",
+        "Lies jeden Ausschnitt aus einer Schülerarbeit und ordne ihn der produktiven Methode zu, die er zeigt. Eine Hörspiel- oder Filmszene erkennst du an Geräuschen, Einstellungen oder Spielanweisungen. Reine Rede mit Sprechernamen, aber ohne solche Angaben, ist ein Dialog.",
       categories: ["Geschichte weiterschreiben", "Fiktiver Dialog", "Hörspiel- oder Filmszene"],
       entries: [
         {
@@ -1039,9 +1039,9 @@ export const LB2A: Lesson[] = [
         {
           question: "Welche Fortsetzung passt am besten zum Ende des Textes?",
           options: [
-            "Mira geht zum Fluss, setzt sich ans Ufer und überlegt, was sie Jule sagen soll.",
-            "Plötzlich landet ein Raumschiff am Fluss, und Außerirdische laden Mira ein.",
-            "Mira ist erleichtert und freut sich, dass Jule wegzieht.",
+            "Mira geht die Straße entlang und überlegt, was sie Jule beim Abschied sagen soll.",
+            "Plötzlich landet ein Raumschiff vor ihr auf der Straße, und Außerirdische laden Mira ein.",
+            "Mira ist erleichtert, freut sich, dass Jule wegzieht, und ruft gleich ihre anderen Freunde an.",
           ],
           answer: 0,
           explanation:
@@ -1051,8 +1051,8 @@ export const LB2A: Lesson[] = [
           question: "Welche Zeile passt zu einem fiktiven Dialog zwischen Mira und Jule?",
           options: [
             "MIRA: Wann wolltest du mir eigentlich sagen, dass du wegziehst?",
-            "JULE: Hurra, ich ziehe um, endlich bin ich dich los!",
-            "MIRA: Heute ist Mittwoch, und morgen scheint die Sonne.",
+            "JULE: Hurra, ich ziehe um, endlich bin ich dich und deine ewigen Fragen los!",
+            "MIRA: Heute ist Mittwoch, und morgen scheint die Sonne, das Wetter bleibt gut.",
           ],
           answer: 0,
           explanation:
@@ -1062,8 +1062,8 @@ export const LB2A: Lesson[] = [
           question: "Wie wird Miras Gefühl in einer Hörspielszene hörbar, ohne dass nur erzählt wird?",
           options: [
             "Der Umschlag raschelt, die Tür fällt hart ins Schloss, und Mira atmet hörbar aus.",
-            "Ein Sprecher liest eine lange Beschreibung ihres Zimmers vor.",
-            "Ein Sprecher erklärt in einem Satz, dass Mira traurig ist.",
+            "Ein Sprecher liest zuerst eine lange Beschreibung ihres Zimmers und der Möbel darin vor.",
+            "Ein Sprecher erklärt in einem Satz, dass Mira traurig ist und gleich gehen will.",
           ],
           answer: 0,
           explanation:
@@ -1073,8 +1073,8 @@ export const LB2A: Lesson[] = [
           question: "Was gewinnst du durch diese produktive Arbeit für dein Textverständnis?",
           options: [
             "Ich erkenne, was der Text offenlässt, und kann Miras Gefühl besser nachvollziehen.",
-            "Ich weiß jetzt, wie die Geschichte wirklich weitergeht.",
-            "Ich muss den Originaltext nicht mehr lesen.",
+            "Ich weiß jetzt sicher, wie die Geschichte nach dem Ende des Textes wirklich weitergeht.",
+            "Ich muss den Originaltext nicht mehr lesen, weil meine Fassung ihn ersetzt.",
           ],
           answer: 0,
           explanation:
@@ -1203,7 +1203,7 @@ export const LB2A: Lesson[] = [
           feedback: "Die Kritik zeigt sich im Lebensweg der Hauptfigur und nicht in einer Anklage.",
         },
         {
-          text: "Ein Roman, der 1918 als Buch erscheint, macht einen angepassten Karrieristen im Kaiserreich durch Spott lächerlich.",
+          text: "Ein Roman von 1918 macht einen angepassten Karrieristen im Kaiserreich durch Spott und Übertreibung lächerlich.",
           target: 3,
           feedback: "Spott und Übertreibung sind die Mittel der Satire.",
         },
@@ -1213,9 +1213,9 @@ export const LB2A: Lesson[] = [
           feedback: "Der Sprecher nennt die Schuldigen und fordert eine Änderung: eine direkte Anklage.",
         },
         {
-          text: "In einer erfundenen Erzählung wird gezeigt, wie ein Mädchen wegen eines Gerüchts im Dorf gemieden wird, bis es wegzieht.",
+          text: "Eine erfundene Erzählung begleitet nur das Mädchen Lea: Wegen eines Gerüchts wird sie von allen gemieden und zieht schließlich weg.",
           target: 2,
-          feedback: "Die Kritik steckt im Schicksal des Mädchens, ohne dass jemand ausdrücklich angeklagt wird.",
+          feedback: "Die Erzählung folgt einer einzigen Figur; die Kritik steckt in ihrem Schicksal, ohne dass jemand ausdrücklich angeklagt wird.",
         },
       ],
       conclusion:
@@ -1237,8 +1237,8 @@ export const LB2A: Lesson[] = [
           question: "Was kritisiert die Novelle vor allem?",
           options: [
             "Dass Menschen nach Kleidung und Auftreten statt nach ihrem Wesen beurteilt werden.",
-            "Dass Weber für ihren Lohn hungern müssen.",
-            "Dass ein Kaiser sein Volk zu Untertanen erzieht.",
+            "Dass Weber in Schlesien für einen sehr niedrigen Lohn arbeiten und hungern müssen.",
+            "Dass ein Kaiser sein Volk zu gehorsamen Untertanen erzieht.",
           ],
           answer: 0,
           explanation:
@@ -1247,9 +1247,9 @@ export const LB2A: Lesson[] = [
         {
           question: "Wie kritisiert die Novelle?",
           options: [
-            "Sie führt in der Handlung vor, wie leicht eine Stadt sich täuschen lässt, und lässt die Lesenden urteilen.",
-            "Sie klagt offen die Schuldigen an und fordert eine Änderung.",
-            "Sie schildert genau und ungeschönt das Elend der Armen.",
+            "Sie zeigt am Schicksal des Schneiders, wie leicht sich eine Stadt täuschen lässt.",
+            "Sie klagt offen die Schuldigen an, nennt sie beim Namen und fordert eine Änderung.",
+            "Sie schildert genau und ungeschönt das Elend der Armen in der Stadt.",
           ],
           answer: 0,
           explanation:
@@ -1258,13 +1258,13 @@ export const LB2A: Lesson[] = [
         {
           question: "Welche Stellungnahme ist am besten begründet?",
           options: [
-            "Das Thema ist noch aktuell: Auch wir beurteilen andere oft nach dem ersten Eindruck, zum Beispiel nach Kleidung oder Fotos im Netz; die Novelle regt an, das zu prüfen.",
-            "Die Novelle ist alt und deshalb für uns unwichtig.",
-            "Die Kritik stimmt nicht, weil kein Mensch nach Kleidung urteilt.",
+            "Das Thema ist noch aktuell: Auch wir urteilen oft nach dem ersten Eindruck, etwa nach Fotos im Netz.",
+            "Die Novelle ist über hundert Jahre alt und erzählt von einer anderen Zeit, deshalb ist sie für uns unwichtig.",
+            "Die Kritik stimmt nicht, weil heute kein Mensch mehr nach Kleidung urteilt und alle gleich behandelt werden.",
           ],
           answer: 0,
           explanation:
-            "Eine begründete Stellungnahme prüft, ob das Problem heute noch eine Rolle spielt, und belegt es mit einem Beispiel. Alter allein macht ein Werk nicht unwichtig, und die dritte Aussage ist nicht belegt.",
+            "Eine begründete Stellungnahme prüft, ob das Problem heute noch eine Rolle spielt, und belegt es mit einem Beispiel. Alter allein macht ein Werk nicht unwichtig, und dass heute kein Mensch mehr nach Kleidung urteile, ist nicht belegt.",
         },
       ],
       verdict:
@@ -1358,7 +1358,7 @@ export const LB2A: Lesson[] = [
     sourceIds: ["lp", "wikisource", "dta"],
     quiz: {
       question: "Was zeigt der Konjunktiv II in „Als flöge sie nach Haus“?",
-      answer: "Das Geschehen wird nur vorgestellt und als Gefühl dargestellt, nicht als wirklich.",
+      answer: "Das Geschehen wird nur vorgestellt, nicht als wirklich dargestellt.",
       wrong: [
         "Das Geschehen liegt weit in der Vergangenheit und ist längst vorbei.",
         "Das Geschehen wird als sicher und bereits erledigt dargestellt.",
@@ -1389,7 +1389,7 @@ export const LB2A: Lesson[] = [
           feedback: "Ein sprechender Spiegel kommt in der Wirklichkeit nicht vor und wird doch selbstverständlich erzählt.",
         },
         {
-          text: "Im Jahr 2150 entscheidet ein Rechner, wer in der Stadt wohnen darf, und niemand kann ihm widersprechen.",
+          text: "Im Jahr 2150 entscheidet ein Rechner anhand von Daten, wer in der Stadt wohnen darf, und niemand kann ihm widersprechen.",
           target: 3,
           feedback: "Der Text denkt eine mögliche Zukunft mit Technik weiter, wie es die Science-Fiction tut.",
         },
@@ -1416,8 +1416,8 @@ export const LB2A: Lesson[] = [
           question: "Woran erkennst du, dass es sich um einen Traum handelt?",
           options: [
             "An „träumt“ und „beim Aufwachen“, die das Geschehen einrahmen.",
-            "An der Stimme, die Mira ruft.",
-            "An der Zeichnung in den Heften.",
+            "An der geheimnisvollen Stimme, die Mira am Seeufer beim Namen ruft.",
+            "An der Zeichnung des Sees, die Mira in jedes ihrer Hefte malt.",
           ],
           answer: 0,
           explanation:
@@ -1427,8 +1427,8 @@ export const LB2A: Lesson[] = [
           question: "Was verrät das „Ziehen in der Brust, als hätte sie etwas Wichtiges verloren“?",
           options: [
             "Eine Sehnsucht nach etwas, das fehlt und das Mira nicht benennen kann.",
-            "Eine konkrete Angst vor Wasser.",
-            "Eine Erinnerung an einen wirklichen Urlaub.",
+            "Eine konkrete Angst vor dem tiefen Wasser, die Mira im Traum überfällt.",
+            "Eine Erinnerung an einen wirklichen Urlaub am Meer, den Mira vergessen hat.",
           ],
           answer: 0,
           explanation:
@@ -1438,8 +1438,8 @@ export const LB2A: Lesson[] = [
           question: "Welche Funktion hat der Traum für die Figur?",
           options: [
             "Er zeigt einen inneren Wunsch nach Weite, der im Alltag keinen Platz hat.",
-            "Er liefert Informationen über einen wirklich existierenden Ort.",
-            "Er verschönert die Erzählung, hat aber keine Bedeutung.",
+            "Er liefert Hinweise auf einen wirklich existierenden Ort in der Nähe.",
+            "Er verschönert die Erzählung, hat aber keine Bedeutung für Mira.",
           ],
           answer: 0,
           explanation:
@@ -1448,13 +1448,13 @@ export const LB2A: Lesson[] = [
         {
           question: "Warum darf man solche Darstellungen als Facette menschlicher Existenz sehen?",
           options: [
-            "Weil viele Menschen Sehnsüchte kennen und der Text sie in einem Bild fassbar macht.",
-            "Weil Träume immer die Zukunft vorhersagen.",
-            "Weil nur Dichter solche Gefühle haben.",
+            "Weil viele Menschen Sehnsüchte kennen und der Text sie fassbar macht.",
+            "Weil Träume immer die Zukunft vorhersagen und deshalb für alle Menschen wichtig sind.",
+            "Weil nur Schriftstellerinnen und Schriftsteller solche Gefühle haben und sie aufschreiben.",
           ],
           answer: 0,
           explanation:
-            "Sehnsüchte und Träume gehören zum Menschsein, und die Literatur gibt ihnen ein Bild. Dass Träume die Zukunft vorhersagen, ist nicht belegt, und Gefühle haben nicht nur Dichter.",
+            "Sehnsüchte und Träume gehören zum Menschsein, und die Literatur gibt ihnen ein Bild. Dass Träume die Zukunft vorhersagen, ist nicht belegt, und solche Gefühle haben nicht nur Schreibende.",
         },
       ],
       verdict:
@@ -1570,7 +1570,7 @@ export const LB2A: Lesson[] = [
           feedback: "Das Spiel vor Publikum, bei dem jeder Abend anders ist, kennzeichnet das Theater.",
         },
         {
-          text: "Eine Nahaufnahme zeigt das Gesicht der Figur genau, und die Musik verstärkt die Stimmung.",
+          text: "Eine Nahaufnahme zeigt das Gesicht der Figur genau, und die Kamera folgt ihr danach durch eine Straße.",
           target: 2,
           feedback: "Die Nahaufnahme ist ein Mittel der Kamera und gehört zum Film.",
         },
@@ -1608,9 +1608,9 @@ export const LB2A: Lesson[] = [
         {
           question: "Wie macht der Film Toms Gefühle erkennbar, obwohl man seine Gedanken nicht liest?",
           options: [
-            "Durch Bilder, Mimik und Musik, zum Beispiel Toms Schweigen am Strand zu ruhiger Musik.",
+            "Durch Bilder, Mimik und Musik, zum Beispiel durch Toms Schweigen am Strand.",
             "Durch einen langen Text auf dem Bildschirm, der alle Gedanken erklärt.",
-            "Gar nicht, Gefühle lassen sich nur lesen.",
+            "Gar nicht, denn Gefühle lassen sich nur in Worten ausdrücken und also nur lesen.",
           ],
           answer: 0,
           explanation:
@@ -1620,8 +1620,8 @@ export const LB2A: Lesson[] = [
           question: "Welche Wirkung hat die Verfolgungsjagd wahrscheinlich?",
           options: [
             "Sie bringt Tempo und Spannung, nimmt aber Raum für Toms innere Entwicklung.",
-            "Sie macht den Film langsamer und ruhiger.",
-            "Sie ändert nichts an der Wirkung.",
+            "Sie macht den Film langsamer und ruhiger und gibt den Gedanken mehr Raum.",
+            "Sie ändert nichts an der Wirkung, weil nur die Handlung des Films betroffen ist.",
           ],
           answer: 0,
           explanation:
@@ -1630,9 +1630,9 @@ export const LB2A: Lesson[] = [
         {
           question: "Welches Urteil ist am besten begründet?",
           options: [
-            "Der Film ist anders: Er gewinnt Spannung, verliert aber Toms Gedanken. Ob das gelungen ist, hängt davon ab, was er erreichen will.",
-            "Der Film ist schlecht, weil er vom Buch abweicht.",
-            "Der Film ist besser, weil er kürzer ist.",
+            "Der Film ist anders: Er gewinnt Spannung, verliert aber Toms Gedanken; ob das gelingt, hängt vom Ziel ab.",
+            "Der Film ist schlecht, weil er vom Buch abweicht und Szenen weglässt, die im Buch wichtig sind.",
+            "Der Film ist besser, weil er kürzer ist und schneller erzählt, ohne lange Gedanken der Figur.",
           ],
           answer: 0,
           explanation:
@@ -1725,9 +1725,9 @@ export const LB2A: Lesson[] = [
     sourceIds: ["lp", "wikisource"],
     quiz: {
       question: "Was unterscheidet eine Dokumentation der Leseerfahrung von einer reinen Nacherzählung?",
-      answer: "Sie enthält zusätzlich eigene Gedanken, eine begründete Meinung und einen Rückblick.",
+      answer: "Sie enthält zusätzlich eine begründete Meinung und einen Rückblick.",
       wrong: [
-        "Sie ist deutlich länger und gibt jede Szene des Buches wieder.",
+        "Sie ist deutlich länger und gibt jede Szene des Buches Satz für Satz wieder.",
         "Sie verzichtet auf Angaben zu Autor, Titel und Erscheinungsjahr.",
       ],
       explanation:
@@ -1737,7 +1737,7 @@ export const LB2A: Lesson[] = [
       kind: "timeline",
       title: "Ein Leseportfolio Schritt für Schritt aufbauen",
       instruction:
-        "Bringe die fünf Arbeitsschritte, mit denen du ein Leseportfolio zu einer Ganzschrift anlegst, in eine sinnvolle Reihenfolge.",
+        "Bringe die fünf Arbeitsschritte, mit denen du ein Leseportfolio zu einer Ganzschrift anlegst, in die Reihenfolge, in der du sie nacheinander erledigst: Jeder Schritt baut auf dem vorigen auf.",
       categories: [],
       entries: [
         {
@@ -1775,33 +1775,33 @@ export const LB2A: Lesson[] = [
         "Ben gibt für sein Lektüreportfolio diese Seite ab: **„Das Buch ist gut. Es geht um einen Jungen und ein Mädchen. Am Ende sind sie zusammen. Ich fand es gut, weil es spannend war. Quelle: Internet.“** Seine Lehrerin bittet ihn, die Seite zu überarbeiten, damit sie als Dokumentation einer Leseerfahrung taugt.",
       steps: [
         {
-          question: "Welche Angaben fehlen zuerst, damit klar ist, welches Buch gemeint ist?",
+          question: "Welche Angaben braucht Ben mindestens, damit klar ist, welches Buch gemeint ist?",
           options: [
             "Autor, Titel und Erscheinungsjahr.",
             "Die Seitenzahl und das Gewicht des Buches.",
-            "Der Preis und der Verlag der Schulbibliothek.",
+            "Der Preis und die Regalnummer in der Schulbibliothek.",
           ],
           answer: 0,
           explanation:
-            "Ohne Autor, Titel und Jahr weiß niemand, welches Buch gemeint ist. Preis, Gewicht und Verlag der Bibliothek gehören nicht zur Dokumentation der Leseerfahrung.",
+            "Ohne Autor, Titel und Jahr weiß niemand, welches Buch gemeint ist. Seitenzahl, Gewicht, Preis und Regalnummer gehören nicht zur Dokumentation der Leseerfahrung.",
         },
         {
           question: "Wie verbessert Ben seine Meinung „Ich fand es gut, weil es spannend war“?",
           options: [
-            "Er nennt eine Stelle, zitiert sie mit Seitenangabe und erklärt, was sie spannend macht.",
-            "Er schreibt „sehr gut“ statt „gut“.",
+            "Er zitiert eine Stelle mit Seitenangabe und erklärt, was sie spannend macht.",
+            "Er schreibt „sehr gut“ statt „gut“ und setzt zur Verstärkung ein Ausrufezeichen.",
             "Er streicht die Meinung, weil eine Dokumentation sachlich bleiben soll.",
           ],
           answer: 0,
           explanation:
-            "Eine Meinung wird überzeugend, wenn sie sich auf eine Textstelle stützt. Ein stärkeres Wort begründet nichts, und eine Dokumentation der Leseerfahrung will gerade die eigene Meinung zeigen.",
+            "Eine Meinung wird überzeugend, wenn sie sich auf eine Textstelle stützt. Ein stärkeres Wort oder ein Ausrufezeichen begründet nichts, und eine Dokumentation der Leseerfahrung will gerade die eigene Meinung zeigen.",
         },
         {
           question: "Wie geht Ben mit „Quelle: Internet“ um?",
           options: [
-            "Er nennt die genaue Quelle mit Seite und Datum und trennt Fremdes von Eigenem.",
-            "Er lässt es stehen, weil Quellen nur bei Büchern nötig sind.",
-            "Er löscht den Satz, damit niemand merkt, woher die Angaben stammen.",
+            "Er nennt die genaue Adresse mit Abrufdatum und trennt Fremdes von Eigenem.",
+            "Er lässt es stehen, weil Quellen nur bei gedruckten Büchern nötig sind.",
+            "Er löscht den Satz, damit niemand merkt, woher seine Angaben stammen.",
           ],
           answer: 0,
           explanation:
@@ -1810,9 +1810,9 @@ export const LB2A: Lesson[] = [
         {
           question: "Welche Ergänzung macht aus der Seite eine Reflexion der Leseerfahrung?",
           options: [
-            "Ein Absatz, was ihn überrascht hat und was er über Menschen oder über sich gelernt hat.",
-            "Eine zweite Inhaltsangabe mit anderen Worten.",
-            "Ein Foto vom Buchcover.",
+            "Ein Absatz dazu, was ihn überrascht und was er über sich gelernt hat.",
+            "Eine zweite Inhaltsangabe, in der er die Handlung mit anderen Worten wiedergibt.",
+            "Ein Foto vom Buchcover mit Titel und dem Namen des Autors.",
           ],
           answer: 0,
           explanation:

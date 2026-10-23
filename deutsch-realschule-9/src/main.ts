@@ -40,6 +40,7 @@ import {
   initialOrder,
   type Marking,
   moveEntry,
+  quizOptions,
   shownOptions,
   toggleMark,
 } from "./workshop";
@@ -268,7 +269,7 @@ function updateEvidence() {
 }
 
 function quizHtml(l: Lesson, number: string) {
-  const options = shuffle([l.quiz.answer, ...l.quiz.wrong], l.id);
+  const { options } = quizOptions(l);
   return `<section class="panel"><div class="eyebrow">${number} · Abrufen</div><h2>Schnellcheck</h2><form id="quiz"><fieldset><legend>${esc(l.quiz.question)}</legend>${options.map((option, i) => `<label class="option"><input type="radio" name="quiz" value="${i}"> <span>${esc(option)}</span></label>`).join("")}</fieldset><button type="submit">Antwort prüfen</button></form><p id="quiz-feedback" class="feedback" role="status"></p></section>`;
 }
 function bindQuiz(l: Lesson) {
@@ -279,8 +280,7 @@ function bindQuiz(l: Lesson) {
       $("#quiz-feedback").textContent = "Wähle zuerst eine Antwort.";
       return;
     }
-    const right =
-      shuffle([l.quiz.answer, ...l.quiz.wrong], l.id)[Number(checked.value)] === l.quiz.answer;
+    const right = Number(checked.value) === quizOptions(l).answer;
     if (right) {
       const was = isComplete(p, l.id);
       addOnce(p.quiz, l.id);

@@ -122,19 +122,23 @@ export const LB4A: Lesson[] = [
           question: "Warum versteht die 7. Klasse Jonas nicht?",
           options: [
             "Er benutzt Fremdwörter und einen Fachbegriff, ohne sie zu ersetzen oder zu erklären.",
-            "Er spricht über ein Thema, das für eine 7. Klasse zu schwer ist.",
-            "Seine Sätze sind zu kurz, um etwas verständlich zu erklären.",
+            "Er spricht über ein Thema, das für eine 7. Klasse zu schwer ist und zu viel Vorwissen verlangt.",
+            "Seine Sätze sind zu kurz und zu knapp, um etwas verständlich zu erklären.",
           ],
           answer: 0,
           explanation:
             "Nicht das Thema, sondern die Wortwahl ist das Problem. „permanent“, „Impulse“ und „animieren“ sind Fremdwörter, „Algorithmus“ ist ein Fachbegriff, und nichts davon wird erklärt.",
         },
         {
-          question: "Welches Wort ist ein Fachbegriff, den Jonas besser erklärt, statt ihn zu ersetzen?",
-          options: ["Algorithmus", "permanent", "animieren"],
+          question: "Welches Wort ist ein Fachbegriff, den Jonas besser erklärt, statt ihn zu ersetzen, und warum?",
+          options: [
+            "„Algorithmus“: Er gehört zur Informatik, und ein einzelnes deutsches Wort ersetzt ihn nicht genau.",
+            "„permanent“: Es gehört zur Physik und lässt sich durch kein deutsches Wort ersetzen.",
+            "„animieren“: Es kommt nur in der Werbung vor und hat kein gleichwertiges deutsches Wort.",
+          ],
           answer: 0,
           explanation:
-            "„Algorithmus“ gehört zur Informatik, und ein einzelnes deutsches Wort ersetzt ihn nicht genau. Für „permanent“ und „animieren“ gibt es bekannte Wörter wie „ständig“ und „anregen“.",
+            "„Algorithmus“ gehört zur Informatik, und ein einzelnes deutsches Wort ersetzt ihn nicht genau. „permanent“ und „animieren“ sind keine Fachbegriffe: Dafür gibt es bekannte Wörter wie „ständig“ und „anregen“.",
         },
         {
           question: "Welche Fassung des ersten Satzes versteht die Klasse am besten?",
@@ -150,9 +154,9 @@ export const LB4A: Lesson[] = [
         {
           question: "Wie führt Jonas den Begriff „Algorithmus“ am besten ein?",
           options: [
-            "Er erklärt ihn beim ersten Gebrauch kurz, zum Beispiel mit „also eine Schritt-für-Schritt-Anleitung für den Computer“.",
-            "Er lässt ihn weg, weil Fachbegriffe in Referaten nicht vorkommen dürfen.",
-            "Er wiederholt ihn dreimal, bis sich die Klasse an das Wort gewöhnt hat.",
+            "Er erklärt ihn beim ersten Gebrauch kurz, zum Beispiel mit „also eine Schritt-für-Schritt-Anleitung“.",
+            "Er lässt ihn weg, weil Fachbegriffe in Referaten für Kinder nicht vorkommen dürfen und der Satz auch ohne ihn klar bleibt.",
+            "Er wiederholt ihn mehrmals hintereinander, bis sich die Klasse an das Wort gewöhnt und es sich gemerkt hat.",
           ],
           answer: 0,
           explanation:
@@ -205,7 +209,7 @@ export const LB4A: Lesson[] = [
       "Wörter können verletzen, auch wenn niemand das will. Du erkennst, wie Sprache abwertet, und prüfst die Wirkung deiner Wörter.",
     paragraphs: [
       "Jonas ruft quer durch den Raum: „Typisch Mädchen, die verstehen das nie!“ Er meint es als Scherz. Doch Lena hört etwas anderes: Sie wird mit allen Mädchen in einen Topf geworfen, und ihr wird etwas abgesprochen, nur weil sie ein Mädchen ist. Daran zeigt sich der wichtigste Gedanke dieser Lektion: Bei Sprache zählt nicht nur, was du meinst, sondern auch, was bei anderen ankommt. Von **Diskriminierung** spricht man, wenn Menschen wegen eines Merkmals, zum Beispiel ihres Geschlechts, ihrer Herkunft, ihres Alters oder einer Behinderung, abgewertet oder benachteiligt werden. Das kann auch durch Sprache geschehen.",
-      "Sprache kann auf mehreren Wegen abwerten oder ausgrenzen. Erstens durch **Pauschalisierung**: Aussagen mit „alle“, „typisch“ oder „immer“ schreiben jedem Mitglied einer Gruppe dieselbe Eigenschaft zu, obwohl Menschen verschieden sind. Zweitens durch **abwertende Bezeichnungen**: Sie stempeln Menschen ab und reduzieren sie auf ein Merkmal. Drittens durch ein Wir-gegen-die-Denken, das manche zu Außenstehenden macht, etwa mit Sätzen wie „Die gehören eben nicht zu uns.“ Ob eine Äußerung so wirkt, hängt vom Zusammenhang ab. Deshalb hilft es, die Wirkung zu prüfen, statt nur auf einzelne Wörter zu achten.",
+      "Sprache kann auf mehreren Wegen abwerten oder ausgrenzen. Erstens durch **Pauschalisierung**: Aussagen mit „alle“, „typisch“ oder „immer“ schreiben jedem Mitglied einer Gruppe dieselbe Eigenschaft zu, obwohl Menschen verschieden sind. Zweitens durch **abwertende Bezeichnungen**: Sie stempeln Menschen ab und reduzieren sie auf ein Merkmal. Drittens durch ein Wir-gegen-die-Denken, das manche zu Außenstehenden macht, etwa mit Sätzen wie „Die gehören eben nicht zu uns.“ Ob eine Äußerung so wirkt, hängt vom Zusammenhang ab. Ein Merkmal sachlich zu nennen, etwa um zu helfen, ist dagegen keine Abwertung. Deshalb hilft es, die Wirkung zu prüfen, statt nur auf einzelne Wörter zu achten.",
       "Die sprachkritische Aktion „Unwort des Jahres“ lenkt den Blick auf solche Wörter. Sie wurde 1991 von dem Sprachwissenschaftler Horst Dieter Schlosser ins Leben gerufen. Jede Person kann bis zum 31. Dezember Vorschläge mit Begründung und Quellenangabe einreichen. Eine unabhängige Jury aus Sprachwissenschaft und Journalismus wählt in der ersten Januarhälfte des folgenden Jahres aus den Vorschlägen aus. Als Kriterien nennt sie zum Beispiel: Ein Ausdruck verstößt gegen die Menschenwürde oder gegen demokratische Prinzipien, er diskriminiert gesellschaftliche Gruppen oder er ist beschönigend, verschleiernd oder irreführend. Die Jury versteht sich nach eigener Aussage nicht als Sprachschützerin, sondern als Vermittlerin öffentlichen Unbehagens an bestimmten Sprachgebräuchen. Die Aktion will das Sprachbewusstsein fördern.",
       "Wie weit Sprachkritik gehen soll, ist umstritten. Manche sagen: Wörter prägen Denken und Verhalten, deshalb lohnt es sich, abwertende Ausdrücke zu meiden. Andere meinen: Wer Wörter verbietet, löst keine Probleme, und entscheidend sei die Absicht. Auch „politisch korrekt“ wird unterschiedlich gebraucht: Die einen meinen damit Respekt, die anderen spotten über übertriebene Sprachregeln. Du musst dich nicht auf eine Seite schlagen, aber du kannst die Wirkung prüfen: Wer könnte sich getroffen fühlen? Wird jemand auf ein Merkmal reduziert? Wird eine ganze Gruppe über einen Kamm geschoren? Gibt es eine sachliche Alternative, die dasselbe sagt?",
     ],
@@ -256,7 +260,7 @@ export const LB4A: Lesson[] = [
       kind: "classify",
       title: "Wie wirkt dieser Satz?",
       instruction:
-        "Ordne jeden Satz zu: Verallgemeinert er über eine ganze Gruppe, wertet er eine einzelne Person ab, oder bleibt er sachlich und respektvoll?",
+        "Ordne jeden Satz zu: Verallgemeinert er über eine ganze Gruppe, wertet er eine einzelne Person ab, oder bleibt er sachlich und respektvoll? Ein Merkmal sachlich zu nennen, etwa um zu helfen, ist noch keine Abwertung.",
       categories: ["Verallgemeinert über eine Gruppe", "Wertet eine Person ab", "Bleibt sachlich und respektvoll"],
       entries: [
         {
@@ -296,36 +300,36 @@ export const LB4A: Lesson[] = [
     casework: {
       title: "Eine Überschrift in der Schülerzeitung",
       story:
-        "Die Redaktion der Schülerzeitung plant für die Titelseite die Überschrift **„Die Alten blockieren alle Computer in der Stadtbücherei“**. Im Artikel geht es darum, dass ältere Menschen dort oft lange am Rechner sitzen und Jugendliche kaum Plätze bekommen.",
+        "Die Redaktion der Schülerzeitung plant für die Titelseite die Überschrift **„Die Alten blockieren immer die Computer in der Stadtbücherei“**. Im Artikel geht es darum, dass ältere Menschen dort oft lange am Rechner sitzen und Jugendliche kaum Plätze bekommen.",
       steps: [
         {
           question: "Welche Wirkung kann die Überschrift auf ältere Menschen haben?",
           options: [
-            "Sie ordnet alle Älteren in dieselbe Gruppe ein und wertet sie ab, auch die, die gar nichts blockieren.",
-            "Sie wirkt neutral, weil sie nur eine Tatsache nennt.",
-            "Sie hat keine Wirkung, weil nur die Absicht der Redaktion zählt.",
+            "Sie ordnet alle Älteren einer Gruppe zu und wertet sie ab, auch wer nichts blockiert.",
+            "Sie wirkt neutral, weil sie nur eine Tatsache nennt und keine Gruppe ausdrücklich beschimpft.",
+            "Sie hat keine Wirkung, weil nur die Absicht der Redaktion zählt und die ist ja nicht böse gemeint.",
           ],
           answer: 0,
           explanation:
             "Die Überschrift trifft alle Älteren, nicht nur die, um die es im Artikel geht. Die Absicht der Redaktion ändert nichts daran, wie sie bei den Betroffenen ankommt.",
         },
         {
-          question: "Welche Wörter machen die Überschrift pauschal und abwertend?",
+          question: "Welche Wörter machen die Überschrift pauschal?",
           options: [
-            "„Die Alten“ und „alle“",
+            "„Die Alten“ und „immer“",
             "„blockieren“ und „Stadtbücherei“",
             "„Computer“ und „Titelseite“",
           ],
           answer: 0,
           explanation:
-            "„Die Alten“ steckt alle Älteren in eine Schublade, und „alle“ behauptet, dass es ohne Ausnahme so ist. Die anderen Wörter sind sachlich.",
+            "„Die Alten“ steckt alle Älteren in eine Schublade, und „immer“ behauptet, dass es ohne Ausnahme so ist. Im Artikel steht dagegen nur „oft“. Die anderen Wörter sind sachlich.",
         },
         {
           question: "Welche Überschrift nennt dasselbe Anliegen sachlicher und respektvoller?",
           options: [
             "Zu wenige Computerplätze: Wer darf wie lange an den Rechner?",
-            "Schluss mit der Computer-Belagerung durch Senioren!",
-            "Computerplätze in der Bücherei: Die Jungen haben das Nachsehen!",
+            "Schluss mit der Computer-Belagerung durch alle Senioren!",
+            "Computerplätze: Die Jungen haben das Nachsehen!",
           ],
           answer: 0,
           explanation:
@@ -335,9 +339,9 @@ export const LB4A: Lesson[] = [
           question:
             "Zwei Redaktionsmitglieder streiten: Eine sagt, Überschriften dürften zuspitzen. Der andere meint, jede Zuspitzung sei Diskriminierung. Was ist ein ausgewogenes Vorgehen?",
           options: [
-            "Zuspitzen ist erlaubt, wenn die Redaktion prüft, wer sich getroffen fühlen könnte, und eine respektvolle Alternative erwägt.",
-            "Zuspitzungen werden grundsätzlich verboten, damit sich niemand getroffen fühlen kann.",
-            "Beschwerden werden nicht beachtet, weil sich Sprache ohnehin nicht regeln lässt.",
+            "Zuspitzen ist erlaubt, wenn die Redaktion die Wirkung prüft und eine respektvolle Alternative erwägt.",
+            "Zuspitzungen werden grundsätzlich verboten, damit sich niemand getroffen fühlen kann und es keine Beschwerden gibt.",
+            "Beschwerden werden nicht beachtet, weil sich Sprache ohnehin nicht regeln lässt und jeder sie anders versteht.",
           ],
           answer: 0,
           explanation:
@@ -390,7 +394,7 @@ export const LB4A: Lesson[] = [
       "Mit Freunden sprichst du anders als im Bewerbungsgespräch. Du lernst, die Sprachebene bewusst auf die Situation abzustimmen.",
     paragraphs: [
       "Lena schreibt ihrer Freundin: „Hab voll verpennt, sorry, komm gleich!“ Eine Stunde später schreibt sie an eine Firma: „Sehr geehrte Frau Berger, leider habe ich verschlafen und bitte um Entschuldigung.“ Beide Nachrichten sagen fast dasselbe, aber auf unterschiedlicher **Sprachebene**. Die **Umgangssprache** ist die Sprache des Alltags, vor allem im Mündlichen: Sie verkürzt („hab“), nutzt lockere Wörter („verpennen“, „Bock haben“) und Füllwörter („halt“, „irgendwie“) und baut oft unvollständige Sätze. Die **Standardsprache** gilt überall, wo du dich verständlich und allgemein anerkannt ausdrücken willst: in der Schule, in Briefen, in der Zeitung und in Bewerbungen. Sie verwendet vollständige Sätze, ausgeschriebene Formen und eine neutrale Wortwahl.",
-      "Daneben gibt es weitere Ebenen. Die **gehobene Sprache** klingt feierlich und gewählt, zum Beispiel in Reden („Wir gedenken der Verstorbenen“). Die **Jugendsprache** verbindet Gruppen von Jugendlichen durch eigene Wörter, die sich schnell ändern; wer die Gruppe nicht kennt, versteht sie oft nicht. Welche Ebene passt, hängt von vier Dingen ab: vom Anlass, von den Angesprochenen, vom Medium (gesprochen oder geschrieben) und von deiner Absicht. In einem Bewerbungsgespräch erwartet man Standardsprache: vollständige, höfliche Sätze und eine sachliche Wortwahl. Im Chat mit Freunden wirkt dieselbe Sprache dagegen schnell steif.",
+      "Daneben gibt es weitere Ebenen. Die **gehobene Sprache** klingt feierlich und gewählt, zum Beispiel in Reden („Wir gedenken der Verstorbenen“). Auch förmliche Wörter wie „Obliegenheiten“ statt „Aufgaben“ gelten als gehoben. Die **Jugendsprache** verbindet Gruppen von Jugendlichen durch eigene Wörter, die sich schnell ändern; wer die Gruppe nicht kennt, versteht sie oft nicht. Welche Ebene passt, hängt von vier Dingen ab: vom Anlass, von den Angesprochenen, vom Medium (gesprochen oder geschrieben) und von deiner Absicht. In einem Bewerbungsgespräch erwartet man Standardsprache: vollständige, höfliche Sätze und eine sachliche Wortwahl. Im Chat mit Freunden wirkt dieselbe Sprache dagegen schnell steif.",
       "Eine falsch gewählte Ebene wirkt in beide Richtungen. Zu umgangssprachlich („Ich hab halt voll Bock auf die Ausbildung“) kann im Bewerbungsgespräch respektlos oder unvorbereitet wirken. Zu gehoben („Ich erlaube mir, meiner Freude über Ihre Einladung Ausdruck zu verleihen“) klingt gekünstelt. So wechselst du gezielt in die Standardsprache: Du ersetzt lockere Wörter durch neutrale („Bock haben“ durch „Lust haben“), schreibst Verkürzungen aus („hab“ wird „habe“), streichst Füllwörter wie „halt“ und „irgendwie“ und baust vollständige Sätze. Nach „weil“ steht in der Standardsprache das Verb am Ende: „weil ich Zeit habe“. Im Gespräch hörst du oft „weil ich habe Zeit“; der Duden führt diese Stellung als nicht standardsprachlich.",
     ],
     terms: [
@@ -473,9 +477,9 @@ export const LB4A: Lesson[] = [
           feedback: "„Obliegenheiten“ ist ein gehobenes Wort für „Aufgaben“ und klingt im Gespräch gekünstelt. Natürlicher wäre „Ich erledige meine Aufgaben gewissenhaft.“",
         },
         {
-          t: "Ich gedenke, in Ihrem Betrieb meine Ausbildung zu beginnen.",
+          t: "Ich gedenke, mich in Ihrem geschätzten Hause zu bewähren.",
           label: 1,
-          feedback: "„gedenken“ im Sinne von „vorhaben“ ist gehoben und wirkt im Gespräch steif. In einem Bewerbungsgespräch genügt „Ich möchte bei Ihnen meine Ausbildung machen.“",
+          feedback: "„gedenken“ im Sinne von „vorhaben“ und „in Ihrem geschätzten Hause“ sind gehoben und wirken im Gespräch steif. In einem Bewerbungsgespräch genügt „Ich möchte mich bei Ihnen bewähren.“",
         },
       ],
       conclusion:
@@ -490,7 +494,7 @@ export const LB4A: Lesson[] = [
           question: "Auf welcher Sprachebene schreibt Jonas?",
           options: [
             "Umgangssprache, wie in einer Chatnachricht an Freunde",
-            "Gehobene Sprache, wie in einer feierlichen Rede",
+            "Gehobene Sprache, wie in einer feierlichen Rede vor Gästen",
             "Fachsprache des Schreinerhandwerks",
           ],
           answer: 0,
@@ -500,9 +504,9 @@ export const LB4A: Lesson[] = [
         {
           question: "Warum passt diese Sprachebene hier nicht?",
           options: [
-            "Herr Brandt ist ein fremder Erwachsener, und bei einer Anfrage erwartet man Standardsprache mit höflicher Anrede.",
-            "Umgangssprache ist grundsätzlich falsch und darf nie benutzt werden.",
-            "Herr Brandt versteht umgangssprachliche Wörter nicht.",
+            "Herr Brandt ist ein fremder Erwachsener, und eine Anfrage verlangt höfliche Standardsprache.",
+            "Umgangssprache ist grundsätzlich falsch und darf in keiner Nachricht an einen Erwachsenen benutzt werden.",
+            "Herr Brandt versteht umgangssprachliche Wörter nicht, weil er älter ist als Jonas.",
           ],
           answer: 0,
           explanation:
@@ -523,8 +527,8 @@ export const LB4A: Lesson[] = [
           question: "Wäre eine ähnlich lockere Nachricht in einem Chat mit einem Freund auch falsch?",
           options: [
             "Nein, dort passt die lockere Sprache, denn es kommt auf die Situation an.",
-            "Ja, denn Umgangssprache ist in jeder Situation falsch.",
-            "Ja, denn auch Freunde erwarten eine förmliche Anrede.",
+            "Ja, denn Umgangssprache ist in jeder Situation falsch, auch unter Freunden.",
+            "Ja, denn auch Freunde erwarten eine förmliche Anrede und vollständige Sätze.",
           ],
           answer: 0,
           explanation:
@@ -628,7 +632,7 @@ export const LB4A: Lesson[] = [
       title: "Verallgemeinerungen und Doppelungen finden",
       instruction:
         "Wähle oben eine Markierung und klicke im Kommentar die Stellen an, die eine Verallgemeinerung oder eine Doppelung zeigen. Genaue Angaben bleiben unmarkiert.",
-      labels: ["Verallgemeinerung", "Doppelung"],
+      labels: ["Verallgemeinerung", "Doppelung (Pleonasmus)"],
       text: [
         { t: "Unsere Schule braucht dringend mehr Fahrradständer. " },
         { t: "Morgens ist " },
@@ -643,7 +647,7 @@ export const LB4A: Lesson[] = [
           label: 0,
           feedback: "„alle“ schreibt der ganzen Gruppe ein Verhalten zu. Genauer wäre „viele Jugendliche“ oder eine Zahl.",
         },
-        { t: " müssen ihre Räder deshalb irgendwo anketten, und " },
+        { t: " müssen ihre Räder deshalb an Geländern und Laternen anketten, und " },
         {
           t: "kein Mensch",
           label: 0,
@@ -679,7 +683,7 @@ export const LB4A: Lesson[] = [
           options: [
             "„immer“ und „alle“: Sie behaupten etwas ohne Ausnahme",
             "„Unterricht“ und „Bildschirm“: Sie sind zu allgemein",
-            "„stören“ und „starren“: Sie sind zu negativ",
+            "„stören“ und „starren“: Sie sind zu negativ und zu drastisch",
           ],
           answer: 0,
           explanation:
@@ -688,9 +692,9 @@ export const LB4A: Lesson[] = [
         {
           question: "Welche Fassung ist differenziert, ohne vage zu werden?",
           options: [
-            "Handys können den Unterricht stören, vor allem wenn sie während einer Arbeitsphase benutzt werden.",
+            "Handys können den Unterricht stören, besonders wenn sie in Arbeitsphasen benutzt werden.",
             "Handys stören eigentlich fast immer, und zwar jeden Tag, jede Stunde und überall.",
-            "Handys sind laut mancher Leute vielleicht irgendwie ein bisschen schädlich.",
+            "Handys sind laut mancher Leute vielleicht irgendwie ein bisschen schädlich, jedenfalls manchmal.",
           ],
           answer: 0,
           explanation:
@@ -708,8 +712,12 @@ export const LB4A: Lesson[] = [
             "Ein „neues“ Verbot, das „neu eingeführt“ wird, sagt zweimal dasselbe. Ein Wort davon kann wegfallen.",
         },
         {
-          question: "Welches Verb ersetzt „macht kaputt“ im letzten Satz am genauesten, ohne zu übertreiben?",
-          options: ["beeinträchtigt", "zerstört", "ruiniert"],
+          question: "Welche Fassung ersetzt „macht die Konzentration kaputt“ am genauesten, ohne zu übertreiben?",
+          options: [
+            "beeinträchtigt die Konzentration",
+            "zerstört die Konzentration auf Dauer",
+            "ruiniert die Konzentration vollständig",
+          ],
           answer: 0,
           explanation:
             "„beeinträchtigen“ sagt genau, dass die Konzentration schwächer wird. „zerstören“ und „ruinieren“ übertreiben und behaupten wieder etwas ohne Ausnahme.",
@@ -872,9 +880,9 @@ export const LB4A: Lesson[] = [
         {
           question: "Was drückt der zweite Satz („Wenn wir mehr Zeit gehabt hätten, wären wir besser vorbereitet gewesen.“) aus?",
           options: [
-            "Etwas, das nicht eingetreten ist: Es wurde zu wenig trainiert, also waren sie nicht gut vorbereitet.",
-            "Die Wiedergabe einer fremden Aussage in indirekter Rede.",
-            "Eine Aufforderung an die Mannschaft.",
+            "Etwas, das nicht eingetreten ist: Es wurde zu wenig trainiert, also fehlte die Vorbereitung.",
+            "Die Wiedergabe einer fremden Aussage in indirekter Rede, die die Trainerin zitiert.",
+            "Eine Aufforderung an die Mannschaft, im nächsten Jahr mehr zu trainieren.",
           ],
           answer: 0,
           explanation:
@@ -884,12 +892,12 @@ export const LB4A: Lesson[] = [
           question: "Welcher Teil des dritten Satzes ist eine Infinitivgruppe?",
           options: [
             "im nächsten Jahr den Pokal zu gewinnen",
-            "Ich hoffe",
-            "im nächsten Jahr",
+            "Ich hoffe, im nächsten Jahr den Pokal",
+            "Ich hoffe, im nächsten Jahr",
           ],
           answer: 0,
           explanation:
-            "Eine Infinitivgruppe enthält „zu“ und ein Verb im Infinitiv: „zu gewinnen“. „Ich hoffe“ ist der Hauptsatz, „im nächsten Jahr“ nur eine Zeitangabe.",
+            "Eine Infinitivgruppe enthält „zu“ und ein Verb im Infinitiv: „zu gewinnen“. In den anderen Ausschnitten steht der Hauptsatz „Ich hoffe“, und der Infinitiv mit „zu“ fehlt.",
         },
         {
           question:
@@ -1090,7 +1098,7 @@ export const LB4A: Lesson[] = [
     intro:
       "Mit Konjunktionen, Adverbien und Relativsätzen verbindest du Sätze sinnvoll und löst verschachtelte Sätze lesefreundlich auf.",
     paragraphs: [
-      "Vergleiche: „Es regnete. Wir blieben zu Hause.“ und „Weil es regnete, blieben wir zu Hause.“ Der erste Text reiht Aussagen nur aneinander. Der zweite sagt auch, wie sie zusammenhängen: Der Regen ist der Grund. Das leisten **Konjunktionen**. Nebenordnende Konjunktionen („und“, „aber“, „denn“, „oder“, „sondern“) verbinden gleichrangige Sätze, und das Verb bleibt an zweiter Stelle: „Es regnete, aber wir gingen hinaus.“ Unterordnende Konjunktionen leiten einen Nebensatz ein, in dem das Verb am Ende steht: „Obwohl es regnete, gingen wir hinaus.“ Sie drücken verschiedene Beziehungen aus: einen Grund („weil“, „da“), einen Gegensatz („obwohl“), einen Zweck („damit“), eine Bedingung („falls“, „wenn“) oder eine Zeit („als“, „nachdem“, „bevor“).",
+      "Vergleiche: „Es regnete. Wir blieben zu Hause.“ und „Weil es regnete, blieben wir zu Hause.“ Der erste Text reiht Aussagen nur aneinander. Der zweite sagt auch, wie sie zusammenhängen: Der Regen ist der Grund. Das leisten **Konjunktionen**. Nebenordnende Konjunktionen („und“, „aber“, „denn“, „oder“, „sondern“) verbinden gleichrangige Sätze, und das Verb bleibt an zweiter Stelle: „Es regnete, aber wir gingen hinaus.“ Unterordnende Konjunktionen leiten einen Nebensatz ein, in dem das Verb am Ende steht: „Obwohl es regnete, gingen wir hinaus.“ Sie drücken verschiedene Beziehungen aus: einen Grund („weil“, „da“), einen Gegensatz oder eine Einräumung („obwohl“: Es geschieht das Gegenteil des Erwarteten), einen Zweck („damit“), eine Bedingung („falls“, „wenn“) oder eine Zeit („als“, „nachdem“, „bevor“).",
       "Auch **Adverbien** wie „deshalb“, „trotzdem“, „außerdem“, „dann“ und „allerdings“ verknüpfen Sätze. Sie sind Teil des Satzes: Steht ein solches Adverb am Satzanfang, folgt das Verb direkt dahinter: „Es regnete in Strömen. Trotzdem gingen wir hinaus.“ Ein **Relativsatz** hängt eine Zusatzinformation an ein Nomen und beginnt mit einem Relativpronomen wie „der“, „die“ oder „das“: Aus „Ich habe eine Jacke. Die Jacke ist wasserdicht.“ wird „Ich habe eine Jacke, die wasserdicht ist.“ So sparst du Wiederholungen und baust zusammenhängende Texte. Achte auf die Beziehung: „deshalb“ verbindet einen Grund mit seiner Folge, „trotzdem“ nennt einen Gegensatz, „außerdem“ eine Ergänzung. Wer das falsche Wort wählt, ändert den Sinn.",
       "Ein **Schachtelsatz** entsteht, wenn mehrere Nebensätze ineinander stecken. Dann liegen Subjekt und Prädikat des Hauptsatzes weit auseinander, und die Lesenden verlieren den Faden: „Die Lehrerin, die uns, nachdem wir das Heft, das wir abgeben sollten, vergessen hatten, ermahnte, war verärgert.“ So löst du ihn auf: Erstens suchst du die Kernaussage des Hauptsatzes („Die Lehrerin war verärgert.“). Zweitens zerlegst du den Rest in einzelne Aussagen, meist eine pro Verb. Drittens ordnest du sie in der Reihenfolge, in der etwas geschah, und verbindest sie mit passenden Wörtern: „Wir hatten das Heft vergessen, das wir abgeben sollten. Deshalb ermahnte uns die Lehrerin. Sie war verärgert.“",
       "Sätze umzuformen heißt auch, die Bauform zu wechseln, damit der Text zur Absicht passt. Aus einem langen Satzgefüge machst du zwei Hauptsätze, oder du verbindest zwei kurze Sätze zu einem. Du kannst den Nebensatz an den Anfang stellen, wenn der Grund zuerst wichtig ist („Weil der Bus ausfiel, kam Mia zu spät.“), oder ans Ende, wenn die Hauptsache zuerst stehen soll („Mia kam zu spät, weil der Bus ausfiel.“). Eine Empfehlung für lesefreundliche Texte lautet: pro Satz ein Hauptgedanke und möglichst höchstens ein oder zwei Nebensätze. Das ist keine feste Regel, sondern eine Faustregel. Prüfe eigene Texte laut: Wo du Luft holen musst oder den Faden verlierst, teilst du den Satz.",
@@ -1132,8 +1140,8 @@ export const LB4A: Lesson[] = [
       question: "Was machst du als Erstes, wenn du einen Schachtelsatz auflösen willst?",
       answer: "Ich suche die Kernaussage des Hauptsatzes und zerlege den Rest dann in einzelne Aussagen.",
       wrong: [
-        "Ich streiche alle Nebensätze und lasse die Informationen darin weg.",
-        "Ich ersetze alle Konjunktionen durch „und“ und lasse den Rest stehen.",
+        "Ich streiche alle Nebensätze, damit der Satz kürzer wird, und lasse die Informationen darin weg.",
+        "Ich ersetze alle Konjunktionen durch „und“ und lasse den Rest unverändert stehen.",
       ],
       explanation:
         "Erst wenn du weißt, was die Hauptaussage ist, kannst du die übrigen Informationen ordnen. Nebensätze zu streichen verliert Inhalt, und lauter „und“ verwischt, wie die Aussagen zusammenhängen.",
@@ -1143,7 +1151,7 @@ export const LB4A: Lesson[] = [
       title: "Welche Beziehung stellt die Verknüpfung her?",
       instruction:
         "Jeder Satz verbindet zwei Aussagen mit einem Bindewort oder Adverb. Ordne ihn der Beziehung zu, die damit ausgedrückt wird.",
-      categories: ["Grund", "Gegensatz", "Zweck", "Bedingung"],
+      categories: ["Grund und Folge", "Gegensatz oder Einräumung", "Zweck", "Bedingung"],
       entries: [
         {
           text: "Da der Zug Verspätung hatte, kam Jonas zu spät zum Konzert.",
@@ -1188,8 +1196,8 @@ export const LB4A: Lesson[] = [
           question: "Was ist die Hauptaussage des Satzes?",
           options: [
             "Die Rektorin bedankte sich bei allen Mitwirkenden.",
-            "Die Schule wurde vor zehn Jahren gegründet.",
-            "Die Gäste wurden begrüßt.",
+            "Die Schule wurde vor zehn Jahren gegründet und wächst noch immer.",
+            "Die Gäste wurden von der Rektorin begrüßt.",
           ],
           answer: 0,
           explanation:
@@ -1198,9 +1206,9 @@ export const LB4A: Lesson[] = [
         {
           question: "Was macht den Satz schwer lesbar?",
           options: [
-            "Mehrere Nebensätze stecken ineinander, sodass Subjekt und Prädikat des Hauptsatzes weit auseinanderliegen.",
-            "Er enthält zu viele Adjektive.",
-            "Er steht in einer falschen Zeitform.",
+            "Mehrere Nebensätze stecken ineinander, und Subjekt und Prädikat liegen weit auseinander.",
+            "Er enthält zu viele Adjektive und Adverbien, die jeden Satzteil unnötig ausschmücken und verlängern.",
+            "Er steht in einer falschen Zeitform, weil Berichte immer im Präsens stehen müssen.",
           ],
           answer: 0,
           explanation:
@@ -1209,9 +1217,9 @@ export const LB4A: Lesson[] = [
         {
           question: "Welche Auflösung ist am besten gelungen?",
           options: [
-            "Die Rektorin begrüßte zuerst die Gäste. Dann sagte sie in ihrer Rede, die Schule wachse noch immer. Gegründet wurde die Schule vor zehn Jahren. Am Ende bedankte sie sich bei allen Mitwirkenden.",
-            "Die Rektorin, die begrüßte, sagte, dass die Schule wächst, bedankte sich.",
-            "Die Rektorin begrüßte die Gäste, die Schule wächst, bedankte sich bei allen Mitwirkenden vor zehn Jahren.",
+            "Die Rektorin begrüßte die Gäste. In ihrer Rede sagte sie, die Schule wachse noch immer. Sie wurde vor zehn Jahren gegründet. Zuletzt dankte sie allen Mitwirkenden.",
+            "Die Rektorin, die in ihrer Rede, nachdem sie die Gäste begrüßt hatte, sagte, dass die Schule wächst, bedankte sich bei allen Mitwirkenden und Gästen.",
+            "Die Rektorin begrüßte die Gäste, in ihrer Rede wächst die Schule, vor zehn Jahren gegründet, bedankte sich bei allen Mitwirkenden.",
           ],
           answer: 0,
           explanation:
@@ -1298,11 +1306,11 @@ export const LB4A: Lesson[] = [
           },
           {
             before: "Ich wollte zum Training kommen, ",
-            options: ["aber", "weil", "dass"],
+            options: ["aber", "damit", "dass"],
             answer: 0,
             after: " ich war krank.",
             feedback:
-              "Die nebenordnende Konjunktion „aber“ lässt das Verb im zweiten Satz an zweiter Stelle. „weil“ und „dass“ verlangen das Verb am Ende.",
+              "Die nebenordnende Konjunktion „aber“ lässt das Verb im zweiten Satz an zweiter Stelle. „damit“ und „dass“ verlangen das Verb am Ende.",
           },
         ],
         2: [
@@ -1364,11 +1372,11 @@ export const LB4A: Lesson[] = [
           },
           {
             before: "Die Gruppe wollte den Gipfel noch vor dem Gewitter erreichen, ",
-            options: ["aber", "weil", "dass"],
+            options: ["aber", "damit", "dass"],
             answer: 0,
             after: " der Aufstieg dauerte länger als geplant.",
             feedback:
-              "Die nebenordnende Konjunktion „aber“ verbindet zwei Hauptsätze und lässt das Verb im zweiten an zweiter Stelle.",
+              "Die nebenordnende Konjunktion „aber“ verbindet zwei Hauptsätze und lässt das Verb im zweiten an zweiter Stelle. „damit“ und „dass“ verlangen das Verb am Ende.",
           },
         ],
       },
@@ -1472,9 +1480,9 @@ export const LB4A: Lesson[] = [
       text: [
         { t: "Der Wecker klingelte um sechs. " },
         {
-          t: "Müde. ",
+          t: "Müde und genervt. ",
           label: 0,
-          feedback: "Es fehlt das Verb, aber der Sinn bleibt klar („Ich war müde.“). Das ist eine Ellipse.",
+          feedback: "Subjekt und Verb fehlen, aber der Sinn bleibt klar („Ich war müde und genervt.“). Das ist eine Ellipse.",
         },
         {
           t: "Ich stand auf, ich putzte mir die Zähne, ich zog mich an. ",
@@ -1521,20 +1529,20 @@ export const LB4A: Lesson[] = [
         {
           question: "Welche Struktur hat die Überschrift „Feuer in der Turnhalle!“?",
           options: [
-            "Eine Ellipse: Es fehlt ein Verb, aber der Sinn bleibt klar.",
-            "Eine Satzreihe aus drei Hauptsätzen",
-            "Ein Satzgefüge mit einem Nebensatz",
+            "Eine Ellipse: Das Verb fehlt („Es brennt …“), der Sinn bleibt klar.",
+            "Eine Satzreihe: Mehrere Hauptsätze stehen gleichrangig nebeneinander",
+            "Ein Satzgefüge: Ein Hauptsatz wird durch einen Nebensatz ergänzt",
           ],
           answer: 0,
           explanation:
-            "Die Überschrift hat kein Verb und ist trotzdem verständlich. Das ist eine Ellipse, wie man sie oft in Schlagzeilen findet.",
+            "Die Überschrift hat kein Verb und ist trotzdem verständlich, denn man ergänzt „Es brennt in der Turnhalle!“. Das ist eine Ellipse, wie man sie oft in Schlagzeilen findet.",
         },
         {
           question: "Welche Struktur hat der zweite Satz („Die Sirenen heulten, die Lehrkräfte rannten, …“)?",
           options: [
             "Eine Satzreihe: mehrere Hauptsätze nebeneinander",
-            "Ein Satzgefüge: Er enthält Nebensätze",
-            "Eine Ellipse: Er ist unvollständig",
+            "Ein Satzgefüge: Er enthält auch Nebensätze",
+            "Eine Ellipse: Er ist unvollständig, aber klar",
           ],
           answer: 0,
           explanation:
@@ -1543,9 +1551,9 @@ export const LB4A: Lesson[] = [
         {
           question: "Welche Wirkung hat die Reihung kurzer Hauptsätze hier?",
           options: [
-            "Sie wirkt schnell und hektisch und lässt die Lesenden das Durcheinander miterleben.",
-            "Sie wirkt ruhig und erklärt genau, warum alles geschieht.",
-            "Sie wirkt wie eine sachliche Begründung.",
+            "Sie wirkt schnell und hektisch und lässt das Durcheinander spüren.",
+            "Sie wirkt ruhig und gelassen und erklärt genau, warum alles geschieht.",
+            "Sie wirkt wie eine sachliche Begründung mit Gründen und Folgen.",
           ],
           answer: 0,
           explanation:
@@ -1554,9 +1562,9 @@ export const LB4A: Lesson[] = [
         {
           question: "Warum steht am Schluss ein Satzgefüge („Weil alle den Notausgang kannten, wurde niemand verletzt.“)?",
           options: [
-            "Der Nebensatz nennt den Grund für den glücklichen Ausgang und beruhigt den Text nach der Hektik.",
-            "Das Satzgefüge erzeugt noch mehr Spannung als die Reihung.",
-            "Satzgefüge dürfen nur am Ende eines Berichts stehen.",
+            "Der Nebensatz nennt den Grund für den guten Ausgang und beruhigt den Text.",
+            "Das Satzgefüge erzeugt noch mehr Spannung und Tempo als die Reihung davor.",
+            "Satzgefüge dürfen in einem Bericht nur ganz am Ende stehen, nie am Anfang.",
           ],
           answer: 0,
           explanation:

@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { findLesson } from "../src/curriculum";
+import { findLesson, LESSONS } from "../src/curriculum";
 import {
   createRound,
   REQUIRED_ROUNDS,
@@ -8,7 +8,7 @@ import {
   skipRound,
   submitRound,
 } from "../src/exercises/practice";
-import { esc, rich, shuffle } from "../src/format";
+import { esc, hashKey, placeAnswer, rich, shuffle } from "../src/format";
 import type { CaseFile, ChooseItem, CommaItem, MarkWorkshop, SortWorkshop } from "../src/model/types";
 import { freshProgress, keyOf } from "../src/storage/progress";
 import {
@@ -23,6 +23,7 @@ import {
   initialOrder,
   markTargets,
   moveEntry,
+  quizOptions,
   shownOptions,
   toggleMark,
 } from "../src/workshop";
@@ -221,5 +222,47 @@ describe("text helpers and links", () => {
     expect(parseTrainingDeepLink("#lesson=de-stilmittel&level=2")).toEqual({ lessonId: "de-stilmittel", level: 2 });
     expect(parseTrainingDeepLink("#lesson=../x")).toEqual({});
     expect(parseTrainingDeepLink("", "?lesson=de-zeichensetzung")).toEqual({ lessonId: "de-zeichensetzung" });
+  });
+});
+
+describe("placing the right option", () => {
+  it("gives keys that differ in one character unrelated hashes", () => {
+    const hashes = ["l:case:0", "l:case:1", "l:case:2", "l:case:3"].map(hashKey);
+    expect(new Set(hashes).size).toBe(4);
+    expect(new Set(hashes.map((h) => h % 3)).size).toBeGreaterThan(1);
+  });
+  it("moves the right option from step to step and keeps every option once", () => {
+    const wrong = ["a", "b"];
+    const places = [0, 1, 2].map((step) => placeAnswer("R", wrong, "key", step).answer);
+    expect(new Set(places).size).toBe(3);
+    for (let step = 0; step < 4; step++) {
+      const { items, answer } = placeAnswer("R", wrong, "key", step);
+      expect(items[answer]).toBe("R");
+      expect([...items].sort()).toEqual(["R", "a", "b"]);
+      expect(placeAnswer("R", wrong, "key", step)).toEqual({ items, answer });
+    }
+  });
+  it("never keeps the right answer at one place through all steps of a lesson", () => {
+    for (const lesson of LESSONS) {
+      const places = lesson.casework.steps.map((_, i) => {
+        const shown = shownOptions(lesson.casework, i, lesson.id);
+        expect(shown.options[shown.answer]).toBe(lesson.casework.steps[i].options[lesson.casework.steps[i].answer]);
+        return shown.answer;
+      });
+      expect(new Set(places).size, lesson.id).toBeGreaterThan(1);
+    }
+  });
+  it("spreads the right answers of the quick checks over the three places", () => {
+    const count = [0, 0, 0];
+    for (const lesson of LESSONS) {
+      const { options, answer } = quizOptions(lesson);
+      expect(options[answer]).toBe(lesson.quiz.answer);
+      expect([...options].sort()).toEqual([lesson.quiz.answer, ...lesson.quiz.wrong].sort());
+      count[answer] += 1;
+    }
+    for (const n of count) {
+      expect(n).toBeGreaterThan(LESSONS.length / 3 - 8);
+      expect(n).toBeLessThan(LESSONS.length / 3 + 8);
+    }
   });
 });

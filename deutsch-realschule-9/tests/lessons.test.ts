@@ -175,6 +175,26 @@ describe("lesson contract", () => {
         // The right answer must not stand out by being much longer than its distractors.
         expect(Math.max(...wrong.map((w) => w.length))).toBeGreaterThan(answer.length * 0.6);
       });
+      it("does not give the right answer away by its length", () => {
+        // A learner must not be able to solve a question by choosing the longest option.
+        const { answer, wrong } = lesson.quiz;
+        expect(answer.length, "Schnellcheck: richtige Antwort viel länger als die falschen").toBeLessThanOrEqual(
+          Math.max(...wrong.map((w) => w.length)) * 1.15,
+        );
+        let longest = 0;
+        lesson.casework.steps.forEach((step, i) => {
+          const right = step.options[step.answer].length;
+          const others = step.options.filter((_, j) => j !== step.answer).map((o) => o.length);
+          expect(right, `Textfall Schritt ${i + 1}: richtige Option viel länger als die falschen`).toBeLessThanOrEqual(
+            Math.max(...others) * 1.15,
+          );
+          if (right > Math.max(...others)) longest += 1;
+        });
+        expect(
+          longest,
+          "Textfall: die richtige Option ist in mehr als der Hälfte der Schritte die längste",
+        ).toBeLessThanOrEqual(Math.floor(lesson.casework.steps.length / 2));
+      });
       it("has a workshop that can be solved and is not solved by chance", () => {
         const w = lesson.workshop;
         expect(w.title.length).toBeGreaterThan(5);

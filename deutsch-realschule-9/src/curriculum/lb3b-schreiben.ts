@@ -91,7 +91,7 @@ export const LB3B: Lesson[] = [
           feedback: "Hier wird ein zentraler Begriff geklärt und abgegrenzt, bevor der Text entsteht.",
         },
         {
-          text: "Er notiert in drei Minuten alle Wörter, die ihm zu „Helfen“ einfallen, auch ungewöhnliche.",
+          text: "Er schreibt drei Minuten lang jeden Einfall zu „Ehrenamt“ auf, auch ungewöhnliche, und streicht noch nichts durch.",
           target: 0,
           feedback: "Schnelles Sammeln ohne Bewertung ist ein Brainstorming zu einem Schlüsselbegriff.",
         },
@@ -320,8 +320,8 @@ export const LB3B: Lesson[] = [
           question: "Welche Änderung würde den zweiten Text schwächer machen?",
           options: [
             "Der Satz mit der erhobenen Hand wird durch „Er ist sehr traurig.“ ersetzt.",
-            "Das Wort „Gleis“ wird durch „Bahnsteig“ ersetzt.",
-            "Der Satz über den Kaffee wird vor den ersten Satz gestellt.",
+            "Das Wort „Gleis“ wird durch das Wort „Bahnsteig“ ersetzt, das auch in Lenas Text vorkommt.",
+            "Der Satz über den Kaffee wird vor den ersten Satz gestellt, sonst bleibt alles gleich.",
           ],
           answer: 0,
           explanation:
@@ -331,8 +331,8 @@ export const LB3B: Lesson[] = [
           question: "Was bewirkt es, den Abschied auch aus der Sicht des Vaters zu schildern?",
           options: [
             "Man sieht, dass der Abschied für Lena und ihren Vater Unterschiedliches bedeutet.",
-            "Der Text wird sachlicher, weil nur noch Tatsachen übrig bleiben.",
-            "Der Text wird kürzer, weil die Gefühle wegfallen.",
+            "Der Text wird sachlicher, weil nur noch Tatsachen und keine Gefühle mehr übrig bleiben.",
+            "Der Text wird kürzer, weil die Gefühle des Vaters wegfallen und nichts Neues dazukommt.",
           ],
           answer: 0,
           explanation:
@@ -440,7 +440,7 @@ export const LB3B: Lesson[] = [
       kind: "classify",
       title: "Welche Schreibform ist das?",
       instruction:
-        "Alle Aufgaben gehören zum Märchen „Rotkäppchen“ der Brüder Grimm. Ordne jede Aufgabe der kreativen Schreibform zu, die sie verlangt.",
+        "Alle Aufgaben gehören zum Märchen „Rotkäppchen“ der Brüder Grimm. Ordne jede Aufgabe der kreativen Schreibform zu, die sie verlangt. Beim Umschreiben bleibt der Inhalt, nur die Form ändert sich, zum Beispiel Sicht, Zeit oder Textsorte.",
       categories: ["Fortsetzen", "Umschreiben", "Leerstelle füllen", "Handlungsstrang variieren"],
       entries: [
         {
@@ -449,7 +449,7 @@ export const LB3B: Lesson[] = [
           feedback: "Die Vorlage ist zu Ende, und du schreibst danach weiter.",
         },
         {
-          text: "Du erzählst das Märchen noch einmal, diesmal aus der Sicht des Wolfs in der Ich-Form.",
+          text: "Du erzählst das Märchen mit demselben Verlauf noch einmal, diesmal aus der Sicht des Wolfs in der Ich-Form.",
           target: 1,
           feedback: "Derselbe Inhalt wird verändert erzählt, hier mit einer anderen Perspektive.",
         },
@@ -464,12 +464,12 @@ export const LB3B: Lesson[] = [
           feedback: "Wegen einer anderen Entscheidung nimmt die Handlung einen neuen Weg.",
         },
         {
-          text: "Du verfasst aus dem Märchen einen Zeitungsbericht, wie ihn eine Lokalzeitung schreiben könnte.",
+          text: "Du verfasst aus dem Märchen einen Zeitungsbericht, wie ihn eine Lokalzeitung schreiben könnte. Der Inhalt bleibt, die Textsorte ändert sich.",
           target: 1,
           feedback: "Derselbe Inhalt erscheint in einer anderen Textsorte, er wird also umgeschrieben.",
         },
         {
-          text: "Du erfindest, was die Mutter tut, während Rotkäppchen im Wald Blumen pflückt.",
+          text: "Du erfindest, was die Mutter tut, während Rotkäppchen im Wald Blumen pflückt. Der Verlauf des Märchens bleibt dabei unverändert.",
           target: 2,
           feedback: "Diese Szene wird im Märchen nicht erzählt. Du füllst die Lücke mit einer eigenen Idee.",
         },
@@ -503,8 +503,8 @@ export const LB3B: Lesson[] = [
           question: "Warum passt Bens Fortsetzung schlecht zur Vorlage?",
           options: [
             "Jonas und der Rucksack kommen nicht mehr vor, und der Ton wechselt ohne Grund.",
-            "Eine Fortsetzung darf grundsätzlich keine Fantasiefigur enthalten.",
-            "Sie ist zu kurz, um überhaupt als Fortsetzung zu gelten.",
+            "Eine Fortsetzung darf grundsätzlich keine Fantasiefigur enthalten, weil sie realistisch bleiben muss.",
+            "Sie hat nur einen einzigen Satz und ist zu kurz, um überhaupt als Fortsetzung zu gelten.",
           ],
           answer: 0,
           explanation:
@@ -514,8 +514,8 @@ export const LB3B: Lesson[] = [
           question: "Wie könnte Ben seine Idee retten?",
           options: [
             "Er lässt Jonas den Rucksack öffnen und darin ein Gerät finden, das das Ufo ruft.",
-            "Er streicht den Rucksack und schreibt nur noch über das Ufo.",
-            "Er schreibt dazu, dass in einer Fortsetzung jede Idee erlaubt ist.",
+            "Er streicht den Rucksack und schreibt nur noch über das Ufo und den König der Sterne.",
+            "Er schreibt dazu, dass in einer Fortsetzung jede Idee erlaubt ist, auch ohne Bezug zur Vorlage.",
           ],
           answer: 0,
           explanation:
@@ -638,12 +638,12 @@ export const LB3B: Lesson[] = [
           feedback: "Die Aussage wird in indirekter Rede wiedergegeben, ohne sie zu bewerten.",
         },
         {
-          text: "Auffällig ist, dass der Text sachlich bleibt: Er nennt Zahlen und Aussagen, aber kaum wertende Wörter.",
+          text: "Sprachlich fällt auf, dass der Text sachlich bleibt: Er nennt Zahlen und Aussagen, aber kaum wertende Wörter.",
           target: 2,
           feedback: "Der Satz beschreibt die Sprache des Textes und nicht seinen Inhalt.",
         },
         {
-          text: "Die Überschrift ist kurz und nennt nur das Thema, sie bewertet nichts.",
+          text: "Sprachlich fällt auch die Überschrift auf: Sie ist sehr kurz und nüchtern formuliert, ohne wertende Wörter.",
           target: 2,
           feedback: "Hier wird eine Auffälligkeit der sprachlichen Gestaltung benannt.",
         },
@@ -659,7 +659,7 @@ export const LB3B: Lesson[] = [
     casework: {
       title: "Eine Textwiedergabe prüfen",
       story:
-        "Mia soll den Erzähltext „Der Schlüssel“ (eigens verfasst) wiedergeben. Darin findet der Junge Elias am Bahnhof einen Schlüssel und gibt ihn zurück. Ihr Entwurf lautet: **„Elias ging nach der Schule zum Bahnhof und fand dort einen Schlüssel. ‚Das ist bestimmt wichtig‘, sagte er zu sich. Er gab ihn der Besitzerin zurück, und sie freute sich sehr. Ich finde, Elias war richtig nett.“**",
+        "Mia soll den Erzähltext „Der Schlüssel“ (eigens verfasst) wiedergeben und am Schluss das Verhalten des Jungen bewerten. In dem Text findet der Junge Elias am Bahnhof einen Schlüssel und gibt ihn zurück. Ihr Entwurf lautet: **„Elias ging nach der Schule zum Bahnhof und fand dort einen Schlüssel. ‚Das ist bestimmt wichtig‘, sagte er zu sich. Er gab ihn der Besitzerin zurück, und sie freute sich sehr. Ich finde, Elias war richtig nett.“**",
       steps: [
         {
           question: "Was fehlt am Anfang von Mias Entwurf?",
@@ -686,7 +686,7 @@ export const LB3B: Lesson[] = [
         {
           question: "Wie sollte Mia den Satz mit der wörtlichen Rede behandeln?",
           options: [
-            "In indirekter Rede oder mit eigenen Worten wiedergeben, etwa: Elias vermutet, der Schlüssel sei wichtig",
+            "In indirekter Rede wiedergeben, etwa: Elias vermutet, der Schlüssel sei wichtig",
             "Wörtlich in Anführungszeichen übernehmen, damit nichts verfälscht wird oder verloren geht",
             "Ganz durch einen eigenen Kommentar ersetzen, was sie von dem Gedanken hält",
           ],
@@ -697,13 +697,13 @@ export const LB3B: Lesson[] = [
         {
           question: "Was ist an dem Satz „Ich finde, Elias war richtig nett.“ zu verbessern?",
           options: [
-            "Er braucht eine Begründung und steht getrennt vom Inhalt am Schluss.",
+            "Er braucht eine Begründung und sollte als eigener Teil am Schluss stehen.",
             "Er muss gestrichen werden, weil eine Wiedergabe nie eine Meinung enthält.",
             "Er gehört in den Einleitungssatz, damit die Lesenden die Meinung gleich kennen.",
           ],
           answer: 0,
           explanation:
-            "Eine Wertung ist erlaubt, wenn die Aufgabe sie verlangt. Sie wird aber begründet und steht getrennt vom Inhalt, damit erkennbar bleibt, was im Text steht und was Mias Urteil ist.",
+            "Mias Aufgabe verlangt eine Bewertung, deshalb darf sie bleiben. Sie wird aber begründet und steht getrennt vom Inhalt, damit erkennbar bleibt, was im Text steht und was Mias Urteil ist.",
         },
       ],
       verdict:
@@ -797,7 +797,7 @@ export const LB3B: Lesson[] = [
       question: "Welcher Satz ist ein Argument und nicht nur eine Behauptung?",
       answer: "Die Bibliothek sollte nachmittags länger öffnen, weil viele von uns dort nach dem Unterricht lernen.",
       wrong: [
-        "Die Bibliothek sollte unbedingt nachmittags länger öffnen, das ist doch völlig klar.",
+        "Die Bibliothek sollte unbedingt nachmittags länger öffnen, das ist doch völlig klar und selbstverständlich.",
         "Alle in meiner Klasse finden, dass die Bibliothek nachmittags länger öffnen sollte.",
       ],
       explanation:
@@ -807,7 +807,7 @@ export const LB3B: Lesson[] = [
       kind: "mark",
       title: "Bausteine eines Kommentars finden",
       instruction:
-        "Wähle oben einen Baustein und klicke im Text die Stelle an, die ihn bildet. Die These steht früh im Text, der Appell fordert am Schluss zum Handeln auf. Der Aufhänger und die Überleitungen sind keine dieser Bausteine.",
+        "Wähle oben einen Baustein und klicke im Text die Stelle an, die ihn bildet. Die These sagt in einem Satz, was gefordert wird, der Appell fordert am Schluss ausdrücklich zum Handeln auf. Der Aufhänger und Überleitungen, die nur zum nächsten Gedanken führen, gehören zu keinem dieser Bausteine und bleiben unmarkiert.",
       labels: ["These", "Begründung", "Beispiel", "Appell"],
       text: [
         { t: "Am Freitagmittag packen viele von uns die schwerste Schultasche der Woche. " },
@@ -846,7 +846,7 @@ export const LB3B: Lesson[] = [
         },
       ],
       conclusion:
-        "Die These nennt die Meinung, Begründungen und Beispiele stützen sie, und der Appell fordert am Schluss zum Handeln auf. Überleitungen und Hinführungen gehören zum Text, sind aber keine dieser Bausteine.",
+        "Die These nennt die Meinung, Begründungen und Beispiele stützen sie, und der Appell fordert am Schluss zum Handeln auf. Überleitungen und Hinführungen gehören zum Text, bilden aber keinen dieser Bausteine.",
     },
     casework: {
       title: "Ein Kommentarentwurf zum Überarbeiten",
@@ -878,9 +878,9 @@ export const LB3B: Lesson[] = [
         {
           question: "Wie lässt sich „Außerdem sieht man in Uniform schlecht aus.“ zu einem vollständigen Argument ausbauen?",
           options: [
-            "Mit Begründung und Beispiel, etwa: Einheitliche Kleidung lässt wenig Platz für eigenen Stil, denn alle tragen dasselbe.",
-            "Mit mehr Ausrufezeichen und Übertreibungen, damit die Behauptung stärker und lauter wirkt.",
-            "Mit einem zweiten Satz, der dieselbe Behauptung mit anderen Worten noch einmal wiederholt.",
+            "Mit Begründung und Beispiel, etwa: Einheitliche Kleidung lässt wenig Raum für Stil, denn alle tragen dasselbe.",
+            "Mit mehr Ausrufezeichen und Übertreibungen, damit die Behauptung noch stärker und lauter wirkt als bisher.",
+            "Mit einem zweiten Satz, der dieselbe Behauptung mit anderen Worten noch einmal wiederholt und betont.",
           ],
           answer: 0,
           explanation:
@@ -890,7 +890,7 @@ export const LB3B: Lesson[] = [
           question: "Mia will, dass ihr Kommentar auf einen überzeugenden Höhepunkt zuläuft. Wie ordnet sie ihre Argumente?",
           options: [
             "Das schwächere zuerst und das stärkste zuletzt, vor dem Fazit",
-            "Das stärkste zuerst und danach immer schwächere",
+            "Das stärkste zuerst und danach immer schwächere bis zum Schluss",
             "Die Reihenfolge ist egal, wenn alle Argumente vorkommen",
           ],
           answer: 0,
@@ -1007,11 +1007,11 @@ export const LB3B: Lesson[] = [
           feedback: "Nach dem langen Vokal „a“ steht „ß“, also „Straße“.",
         },
         { t: " entlang bis zum Eingang. " },
-        { t: "Mein Freund " },
+        { t: "Mein Freund Jonas, der gern " },
         {
-          t: "Jonas der gern fotografiert hat",
+          t: "fotografiert hat",
           label: 1,
-          feedback: "Der Relativsatz „der gern fotografiert“ ist eingeschoben und braucht zwei Kommas, eines vor „der“ und eines nach „fotografiert“.",
+          feedback: "Der Relativsatz „der gern fotografiert“ ist eingeschoben. Das Komma davor steht schon, es fehlt das zweite hinter „fotografiert“.",
         },
         { t: " viele Bilder gemacht. " },
         { t: "Ich glaube, " },
@@ -1084,8 +1084,8 @@ export const LB3B: Lesson[] = [
           question: "Wie kann Ben bei einem unsicheren „das“ oder „dass“ entscheiden?",
           options: [
             "Er versucht, das Wort durch „dieses“ oder „welches“ zu ersetzen. Geht das, schreibt er „das“.",
-            "Er schreibt im Zweifel immer „dass“, weil ein Fehler dort weniger auffällt.",
-            "Er schreibt „das“ vor Nomen und „dass“ nach einem Komma, so passt es meistens.",
+            "Er schreibt im Zweifel immer „dass“, weil ein Fehler dort weniger auffällt und selten bewertet wird.",
+            "Er schreibt „das“ vor Nomen und „dass“ nach einem Komma, so passt es in den meisten Sätzen.",
           ],
           answer: 0,
           explanation:
@@ -1095,8 +1095,8 @@ export const LB3B: Lesson[] = [
           question: "Warum trägt Ben jeden gefundenen Fehler in sein Fehlertagebuch ein?",
           options: [
             "So sieht er nach einiger Zeit, ob sich seine Schwerpunkte verändern, und kann gezielt üben.",
-            "So kann die Lehrkraft seine Fehler beim Korrigieren leichter zählen.",
-            "So muss er den nächsten Text nicht mehr gründlich überprüfen.",
+            "So kann die Lehrkraft seine Fehler beim Korrigieren leichter zählen und die Note schneller berechnen.",
+            "So muss er den nächsten Text nicht mehr gründlich überprüfen, weil er seine Fehler schon kennt.",
           ],
           answer: 0,
           explanation:
@@ -1242,7 +1242,7 @@ export const LB3B: Lesson[] = [
             feedback: "Nach „heute“ wird die Tageszeit als Nomen großgeschrieben: „heute Morgen“.",
           },
           {
-            before: "Obwohl wir alles genau vorbereitet hatten, ist das Experiment ",
+            before: "Schon beim ersten Versuch war etwas schiefgegangen, und obwohl wir alles genau vorbereitet hatten, ist das Experiment ",
             options: ["wieder", "wider"],
             answer: 0,
             after: " misslungen.",
@@ -1370,7 +1370,7 @@ export const LB3B: Lesson[] = [
           feedback: "Nur die Reihenfolge der Satzglieder ändert sich, der Inhalt bleibt gleich.",
         },
         {
-          text: "Der Satz „Die Veranstaltung wurde aufgrund der Witterungsverhältnisse abgesagt“ wird neu gefasst: „Weil das Wetter schlecht war, fiel die Veranstaltung aus.“",
+          text: "Der umständliche Satz „Die Veranstaltung wurde aufgrund der Witterungsverhältnisse abgesagt“ wird mit anderen Worten und anderem Satzbau noch einmal gesagt: „Weil das Wetter schlecht war, fiel die Veranstaltung aus.“",
           target: 2,
           feedback: "Dieselbe Aussage wird mit anderen Worten und einfacher noch einmal formuliert.",
         },
@@ -1420,8 +1420,8 @@ export const LB3B: Lesson[] = [
           question: "Was an Bens Rückmeldung ist typisch für eine Fragelawine?",
           options: [
             "Er stellt Fragen an den Text, und offene Fragen zeigen Aylin, was sie ergänzen muss.",
-            "Er korrigiert alle Fehler selbst und gibt Aylin den fertigen Text zurück.",
-            "Er schreibt eine eigene Einladung und ersetzt damit ihren Entwurf.",
+            "Er korrigiert alle Fehler selbst und gibt Aylin den fertigen, fehlerfreien Text zurück.",
+            "Er schreibt eine eigene Einladung und ersetzt damit ihren Entwurf vollständig.",
           ],
           answer: 0,
           explanation:
@@ -1698,11 +1698,11 @@ export const LB3B: Lesson[] = [
             feedback: "„seit“ nennt den Beginn einer Zeitspanne. „seid“ ist eine Form von „sein“ und passt nur zu „ihr“.",
           },
           {
-            before: "Opa rasiert sich jeden Morgen den ",
-            options: ["Bart", "Bad"],
+            before: "Meine Schwester ",
+            options: ["malt", "mahlt"],
             answer: 0,
-            after: ".",
-            feedback: "Man rasiert den „Bart“. Ein „Bad“ ist ein Badezimmer oder das Baden und passt nicht zu „rasieren“.",
+            after: " gern Bilder von Tieren.",
+            feedback: "„malen“ heißt, mit Farben ein Bild herzustellen. „mahlen“ heißt, Feststoffe wie Getreide oder Kaffeebohnen fein zu zerkleinern.",
           },
         ],
         2: [
