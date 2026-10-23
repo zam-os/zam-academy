@@ -7,6 +7,7 @@ Hands-on training apps that build understanding before [ZAM](https://github.com/
 | UML 2.5.1 | [`uml/`](uml/) | https://academy.zam-os.org/uml/ | `zam-academy:uml` |
 | Physik 9 Realschule (LehrplanPLUS Bayern) | [`physik-realschule-9/`](physik-realschule-9/) | https://academy.zam-os.org/physik-realschule-9/ | `zam-academy:physik-realschule-9` |
 | Relationale Datenbanken und SQL (DE/EN, LehrplanPLUS IT 2.3.1/2.3.2) | [`sql/`](sql/) | https://academy.zam-os.org/sql/ | `zam-academy:sql` |
+| Mathematik 7 Realschule (LehrplanPLUS Bayern, Zweig I und II/III) | [`mathematik-realschule-7/`](mathematik-realschule-7/) | https://academy.zam-os.org/mathematik-realschule-7/ | `zam-academy:mathematik-realschule-7` |
 | Mathematik 9 Realschule (LehrplanPLUS Bayern) | [`mathematik-realschule-9/`](mathematik-realschule-9/) | https://academy.zam-os.org/mathematik-realschule-9/ | `zam-academy:mathematik-realschule-9` |
 | Chemie 9 Realschule (LehrplanPLUS Bayern, Zweig I und II/III) | [`chemie-realschule-9/`](chemie-realschule-9/) | https://academy.zam-os.org/chemie-realschule-9/ | `zam-academy:chemie-realschule-9` |
 | Geschichte 9 Realschule (LehrplanPLUS Bayern, gemeinsamer Lernpfad) | [`geschichte-realschule-9/`](geschichte-realschule-9/) | https://academy.zam-os.org/geschichte-realschule-9/ | `zam-academy:geschichte-realschule-9` |
@@ -51,6 +52,7 @@ cd uml                 # or: cd physik-realschule-9 (dev server on :5181), cd sq
 # Wirtschaft und Recht 9: cd wirtschaft-recht-realschule-9 (dev server on :5192)
 # Deutsch 9: cd deutsch-realschule-9 (dev server on :5193)
 # Mathematik 10: cd mathematik-realschule-10 (dev server on :5194)
+# Mathematik 7: cd mathematik-realschule-7 (dev server on :5195)
 npm ci
 npm run dev      # http://localhost:5180/uml/
 npm test
