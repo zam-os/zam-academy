@@ -930,7 +930,7 @@ function parallelFamily(v: LabValues): string {
     ["", ""],
     ["h ⊥ g durch P:", "lab-text-muted"],
     [`h: y = ${linear(h.m, h.t)}`, "lab-text lab-text-b"],
-    [`${fmt(v.m)} · (${fmt(h.m)}) = −1`, "lab-text-small"],
+    [`${fmt(v.m)} · ${h.m < 0 ? `(${fmt(h.m)})` : fmt(h.m)} = −1`, "lab-text-small"],
     ["", ""],
     ["Schnittpunkt von g und h:", "lab-text-muted"],
     [`S(${fmt(S.x, 2)} | ${fmt(S.y, 2)})`, Math.abs(S.x) < 1e-9 ? "lab-text lab-text-ok" : "lab-text"],
@@ -1111,7 +1111,8 @@ function vArrow(from: Pt, to: Pt, tone: "a" | "b"): string {
 }
 
 /** The area term A(x) of the figure, valid where the vertices run against the clock. */
-export const AREA_TERMS = ["A(x) = (3x + 6) FE für x > −2", "A(x) = (−0,25x² + 1,5x + 4) FE für −2 < x < 8"];
+/** No-break spaces keep "x > −2" together when the readout wraps. */
+export const AREA_TERMS = ["A(x) = (3x + 6) FE für x > −2", "A(x) = (−0,25x² + 1,5x + 4) FE für −2 < x < 8"];
 const AREA_TERMS_SHORT = ["A(x) = 3x + 6 (x > −2)", "A(x) = −0,25x² + 1,5x + 4"];
 
 function determinantArea(v: LabValues): string {

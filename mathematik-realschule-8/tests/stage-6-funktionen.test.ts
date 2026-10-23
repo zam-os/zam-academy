@@ -97,6 +97,36 @@ describe("Etappe 6: Funktionen", () => {
       expect(text, l.id).not.toMatch(/Parabel|Scheitel|Pythagoras|ℝ/);
     }
   });
+
+  it("keeps the parameter form, programmer notation and doubled steps out of the tasks", () => {
+    const allTexts = (task: ExerciseTask) =>
+      [
+        task.prompt,
+        ...task.given,
+        task.formulaHint ?? "",
+        ...task.steps,
+        ...task.fields.flatMap((f) => (f.kind === "number" ? [f.label, ...(f.slips ?? []).map((s) => s.hint)] : [f.label, ...f.options])),
+      ]
+        .map(plain)
+        .join(" \n ");
+    for (const [index, l] of STAGE_FUNKTIONEN.lessons.entries()) {
+      for (const g of l.exercises) {
+        for (const level of [1, 2] as const) {
+          for (const task of tasks(l.id, g.id, level)) {
+            const text = allTexts(task);
+            // Zweig II/III meets y = mx + t only in M9
+            if (index < 5) expect(text, `${l.id}/${g.id}`).not.toMatch(/mx \+ t|m · x \+ t|y-Achsenabschnitt/);
+            expect(text, `${l.id}/${g.id}: y_P or a backslash`).not.toMatch(/[a-z]_[A-Za-z]|\\/);
+            expect(text, `${l.id}/${g.id}: a step written twice`).not.toMatch(/⇔ (x = [^⇔;]+) ⇔ \1/);
+            expect(text, `${l.id}/${g.id}: "1x" or "0 € Grundgebühr"`).not.toMatch(/(^|[^\d,])1x|(^|\s)0 € Grundgebühr/);
+            expect(text, `${l.id}/${g.id}: hyphen as minus`).not.toMatch(/(^|[\s(=:|,{±;[\]])-\d/);
+            // decimal comma; "1.200" is a thousands separator
+            expect(text, `${l.id}/${g.id}: decimal point`).not.toMatch(/\d\.(\d{1,2}|\d{4,})(?!\d)/);
+          }
+        }
+      }
+    }
+  });
 });
 
 describe("Aufgaben der Etappe 6 rechnen richtig", () => {
@@ -263,6 +293,8 @@ describe("Aufgaben der Etappe 6 rechnen richtig", () => {
       close(num(task, 1), Math.max(...values));
       const x = num(task, 2);
       close(m * x + t, y);
+      // D comes from the text, it is not given away
+      expect(task.given.join(" ")).not.toContain("D =");
       // the asked value is reached inside the domain, and nothing is negative
       expect(x).toBeGreaterThan(a);
       expect(x).toBeLessThan(b);
@@ -356,6 +388,8 @@ describe("Aufgaben der Etappe 6 rechnen richtig", () => {
       close(num(task, 1), by / bx);
       expect(choice(task, 2).correctIndex).toBe(ax * bx + ay * by === 0 ? 0 : 1);
       for (const c of [ax, ay, bx, by]) expect(Math.abs(c)).toBeLessThanOrEqual(10);
+      // two different paths: B is not on the line OK
+      expect(ax * by - ay * bx, `K(${ax} | ${ay}), B(${bx} | ${by})`).not.toBe(0);
     }
   });
 
@@ -406,15 +440,19 @@ describe("Aufgaben der Etappe 6 rechnen richtig", () => {
   });
 
   it("6.7 lines through two points: m and t from the points themselves", () => {
+    let onAxis = 0;
     for (const task of tasks("fu-7-geraden-bestimmen", "zwei-punkte", 1)) {
       const [x1, y1] = parsePoint(task.given[0]);
       const [x2, y2] = parsePoint(task.given[1]);
       expect(x1).not.toBe(x2);
+      onAxis += Number(x1 === 0 || x2 === 0);
       const m = (y2 - y1) / (x2 - x1);
       close(num(task, 0), m);
       close(num(task, 1), y1 - m * x1);
       close(num(task, 1), y2 - m * x2);
     }
+    // a point on the y-axis gives t away; that may happen, but rarely
+    expect(onAxis, `${onAxis} of 200 tasks have a point on the y-axis`).toBeLessThan(40);
     for (const task of tasks("fu-7-geraden-bestimmen", "zwei-punkte", 2)) {
       const { kind, xAsk, yAsk } = meta(task);
       const [x1, y1] = parsePoint(task.given[0]);

@@ -81,6 +81,12 @@ function linearAt(m: number, t: number, x: number): string {
   return `${times(m)}${paren(x)}${term(t, "", false)}`;
 }
 
+/** "a · x = r ⇔ x = s"; for a = 1 just "x = s", so that no step is written twice. */
+function solveStep(a: number, rhs: number, solution: number): string {
+  const left = sum([[a, "x"]]);
+  return left === "x" ? `x = ${fmt(solution)}` : `${left} = ${fmt(rhs)} ⇔ x = ${fmt(solution)}`;
+}
+
 /** A ratio in HTML: a decimal where it ends, a stacked fraction otherwise. */
 function ratioHtml(r: Ratio): string {
   const shown = ratioText(r);
@@ -294,7 +300,7 @@ const funktionOderNicht: Lesson = {
   tracks: ["I", "II_III"],
   lehrplan: `${BOTH}: Funktionale Zusammenhänge`,
   whyItMatters:
-    "Nur eine eindeutige Zuordnung lässt sich als Funktion mit Gleichung und Graph beschreiben. Mit dieser Frage beginnt jede Aufgabe zu Funktionen, von der Taxirechnung bis zur Abschlussprüfung.",
+    "Nur eine eindeutige Zuordnung lässt sich als Funktion mit Gleichung und Graph beschreiben. Ob ein Taxitarif, ein Füllgraph oder eine Messreihe eine Funktion ist, entscheidest du mit genau dieser Frage.",
   explanationHtml: `
     <p><strong>Wiederholung aus M6 und M7:</strong> Eine <strong>Zuordnung</strong> ordnet Größen einander zu, etwa jeder Menge Äpfel ihren Preis. Du kennst schon direkt proportionale Zuordnungen (quotientengleich, der Graph liegt auf einer Ursprungshalbgeraden) und indirekt proportionale (produktgleich, der Graph ist ein Hyperbelast).</p>
     <p>Eine Zuordnung heißt <strong>Funktion</strong>, wenn zu <strong>jedem</strong> x aus der Definitionsmenge D <strong>genau ein</strong> y gehört. x ist die <strong>unabhängige Größe</strong> (du wählst sie), y die <strong>abhängige Größe</strong> (sie ergibt sich aus x). Die Menge aller x heißt <strong>Definitionsmenge D</strong>, die Menge aller y, die vorkommen, <strong>Wertemenge W</strong>.</p>
@@ -688,7 +694,7 @@ const darstellungen: Lesson = {
       <li><strong>Verbale Beschreibung:</strong> der Zusammenhang in Worten, etwa „Ein Taxi kostet 3,50 € Grundgebühr und 2 € je Kilometer“.</li>
     </ul>
     <p><strong>Term → Tabelle → Graph:</strong> Wähle eine passende Schrittweite (meist 1, bei großen Werten 2, für feinere Kurven 0,5), setze jeden x-Wert in den Term ein und trage die Punkte ein. Negative Zahlen setzt du in Klammern: Für y = x² − 2 ist f(−3) = (−3)² − 2 = 9 − 2 = 7, nicht −11.</p>
-    <p><strong>Beschreibung → Term:</strong> Beim Taxi zahlst du für x Kilometer 2 · x Euro und dazu einmal 3,50 €, also y = 2x + 3,5 mit x ≥ 0. <strong>Tabelle → Term:</strong> Suche ein Muster und prüfe es an <em>allen</em> Wertepaaren, nicht nur am ersten. Wächst y bei jedem Schritt um 1 nach rechts um denselben Betrag, steckt ein Term wie 2x + 1 dahinter; ist das Produkt x · y immer gleich, eine indirekte Proportionalität wie y = 12 : x (Wiederholung aus M7).</p>
+    <p><strong>Beschreibung → Term:</strong> Beim Taxi zahlst du für x Kilometer 2 · x Euro und dazu einmal 3,50 €, also y = 2x + 3,5 mit x ≥ 0. <strong>Tabelle → Term:</strong> Suche ein Muster und prüfe es an <em>allen</em> Wertepaaren, nicht nur am ersten. Wächst y immer um denselben Betrag, wenn x um 1 wächst, steckt ein Term wie 2x + 1 dahinter; ist das Produkt x · y immer gleich, eine indirekte Proportionalität wie y = 12 : x (Wiederholung aus M7).</p>
     <p><strong>Punkte verbinden oder nicht?</strong> Verbinde die Punkte nur, wenn auch die Zwischenwerte einen Sinn haben. Zeit, Länge und Strecke können jeden Wert annehmen, dann zeichnest du eine durchgehende Linie. Bei Stückzahlen wie Brezen oder Eintrittskarten gibt es keine 2,5 Stück: Der Graph besteht aus einzelnen Punkten.</p>
     <div class="example"><strong>Beispiel:</strong> Ein Rechteck hat den Flächeninhalt 12 cm². Zur Länge x gehört die Breite y = 12 : x, D = ℚ⁺.
       <table class="mini"><tr><th>x in cm</th><td>1</td><td>2</td><td>3</td><td>4</td><td>6</td></tr><tr><th>y in cm</th><td>12</td><td>6</td><td>4</td><td>3</td><td>2</td></tr></table>
@@ -923,20 +929,20 @@ function domainContext(rng: Rng) {
     const a = rng.pick([1, 2, 3]);
     const b = rng.pick([20, 25, 30]);
     const y = g + p * rng.int(a + 2, b - 2);
-    return { kind, v: "x", m: p, t: g, a, b, y, text: `Ein Taxi kostet ${fmtUnit(g, "€")} Grundgebühr und ${fmtUnit(p, "€")} je Kilometer. Es fährt Strecken zwischen ${a} km und ${b} km.`, fx: `f(x) = ${linear(p, g)} (x in km, y in €)`, ask: (c: number) => `Strecke für ${fmtUnit(c, "€")}:`, unit: "€", xUnit: "km" };
+    return { kind, v: "x", m: p, t: g, a, b, y, text: `Ein Taxi kostet ${fmtUnit(g, "€")} Grundgebühr und ${fmtUnit(p, "€")} je Kilometer. Es fährt Strecken zwischen ${a} km und ${b} km.`, fx: `f(x) = ${linear(p, g)} (x in km, y in €)`, ask: (c: number) => `Strecke für ${fmtUnit(c, "€")}:`, question: `Wie weit fährt man für ${fmtUnit(y, "€")}?`, result: (x: number) => `für ${fmtUnit(y, "€")} fährt man ${fmtUnit(x, "km")}`, unit: "€", xUnit: "km" };
   }
   if (kind === 1) {
     const h0 = rng.pick([45, 60, 80]);
     const r = rng.pick([1.5, 2, 2.5]);
     const b = rng.pick([10, 12, 16].filter((s) => s * r < h0));
     const y = rng.pick([h0 - r * 4, h0 - r * 6, h0 - r * 8]);
-    return { kind, v: "t", m: -r, t: h0, a: 0, b, y, text: `Eine Gondel einer Seilbahn fährt aus ${h0} m Höhe mit ${fmt(r)} m pro Sekunde abwärts. Betrachtet werden die ersten ${b} Sekunden der Fahrt.`, fx: `h(t) = ${linear(-r, h0).replace("x", "t")} (t in s, h in m)`, ask: (c: number) => `Zeit bis zur Höhe ${fmtUnit(c, "m")}:`, unit: "m", xUnit: "s" };
+    return { kind, v: "t", m: -r, t: h0, a: 0, b, y, text: `Eine Gondel einer Seilbahn fährt aus ${h0} m Höhe mit ${fmt(r)} m pro Sekunde abwärts. Betrachtet werden die ersten ${b} Sekunden der Fahrt.`, fx: `h(t) = ${linear(-r, h0).replace("x", "t")} (t in s, h in m)`, ask: (c: number) => `Zeit bis zur Höhe ${fmtUnit(c, "m")}:`, question: `Wann ist die Gondel in ${fmtUnit(y, "m")} Höhe?`, result: (x: number) => `${fmtUnit(y, "m")} Höhe nach ${fmtUnit(x, "s")}`, unit: "m", xUnit: "s" };
   }
   const v0 = rng.pick([20, 40, 60]);
   const r = rng.pick([12, 15, 25]);
   const b = rng.pick([10, 12, 20]);
   const y = v0 + r * rng.pick([3, 4, 6]);
-  return { kind, v: "t", m: r, t: v0, a: 0, b, y, text: `In einem Aquarium sind ${v0} l Wasser. Ein Schlauch füllt pro Minute ${r} l nach, ${b} Minuten lang.`, fx: `V(t) = ${linear(r, v0).replace("x", "t")} (t in min, V in l)`, ask: (c: number) => `Zeit bis ${fmtUnit(c, "l")}:`, unit: "l", xUnit: "min" };
+  return { kind, v: "t", m: r, t: v0, a: 0, b, y, text: `In einem Aquarium sind ${v0} l Wasser. Ein Schlauch füllt pro Minute ${r} l nach, ${b} Minuten lang.`, fx: `V(t) = ${linear(r, v0).replace("x", "t")} (t in min, V in l)`, ask: (c: number) => `Zeit bis ${fmtUnit(c, "l")}:`, question: `Wann sind ${fmtUnit(y, "l")} im Aquarium?`, result: (x: number) => `${fmtUnit(y, "l")} nach ${fmtUnit(x, "min")}`, unit: "l", xUnit: "min" };
 }
 
 const werteNullstellen: Lesson = {
@@ -952,7 +958,7 @@ const werteNullstellen: Lesson = {
   explanationHtml: `
     <p><strong>Funktionswert:</strong> Den Wert an einer Stelle berechnest du durch Einsetzen: Für f(x) = 0,5x − 1 ist f(6) = 0,5 · 6 − 1 = 2. Umgekehrt kannst du nach der Stelle zu einem Wert fragen: f(x) = 3 ist die Gleichung 0,5x − 1 = 3, also 0,5x = 4 und x = 8.</p>
     <p><strong>Nullstelle:</strong> Eine Stelle x₀ mit f(x₀) = 0 heißt Nullstelle. Dort trifft der Graph die x-Achse, im Punkt N(x₀ | 0). Du findest sie, indem du f(x) = 0 setzt und die Gleichung löst: 0,5x − 1 = 0 ⇔ 0,5x = 1 ⇔ x₀ = 2, also N(2 | 0). Eine Funktion kann keine, eine oder mehrere Nullstellen haben: y = 0,5x² − 2 hat die beiden Nullstellen −2 und 2.</p>
-    <p><strong>Definitionsmenge D:</strong> alle x, die du einsetzen darfst. Die Grundmenge ist ℚ. Eingeschränkt wird sie durch die Rechnung, etwa bei y = 12 : x, wo x nicht 0 sein darf (D = ℚ \\ {0}, siehe Bruchterme in Etappe 5), und durch den Sachzusammenhang: Zeiten und Längen sind nicht negativ, und eine Kerze brennt nur, bis sie abgebrannt ist. Intervalle schreibst du mit eckigen Klammern: [−2; 4] heißt −2 ≤ x ≤ 4, und ]0; 5] heißt 0 &lt; x ≤ 5.</p>
+    <p><strong>Definitionsmenge D:</strong> alle x, die du einsetzen darfst. Die Grundmenge ist ℚ. Eingeschränkt wird sie durch die Rechnung, etwa bei y = 12 : x, wo x nicht 0 sein darf (D = ℚ ∖ {0}, siehe Bruchterme in Etappe 5), und durch den Sachzusammenhang: Zeiten und Längen sind nicht negativ, und eine Kerze brennt nur, bis sie abgebrannt ist. Intervalle schreibst du mit eckigen Klammern: [−2; 4] heißt −2 ≤ x ≤ 4, und ]0; 5] heißt 0 &lt; x ≤ 5.</p>
     <p><strong>Wertemenge W:</strong> alle y-Werte, die tatsächlich vorkommen. Bei einer Geraden über D = [a; b] liegt W zwischen f(a) und f(b); fällt die Gerade, ist f(a) der größte Wert. Ändert der Graph in D seine Richtung, gehört auch der tiefste Punkt dazu: Für y = 0,5x² − 2 auf D = [−1; 4] ist W = [−2; 6], denn der kleinste Wert ist f(0) = −2, der größte f(4) = 6.</p>
     <div class="example"><strong>Beispiel Kerze:</strong> Eine 12 cm hohe Kerze brennt pro Stunde 0,8 cm ab: h(t) = 12 − 0,8t (t in h, h in cm).
       <ul class="steps">
@@ -966,7 +972,7 @@ const werteNullstellen: Lesson = {
   `,
   formulas: [
     { name: "Nullstelle", html: "f(x₀) = 0; N(x₀ | 0)", quantities: "f(x) = 0 setzen und die Gleichung nach x lösen" },
-    { name: "Definitionsmenge", html: "D: alle erlaubten x, z. B. D = [0; 15] oder D = ℚ \\ {0}", quantities: "eingeschränkt durch Nenner ≠ 0 oder den Sachzusammenhang" },
+    { name: "Definitionsmenge", html: "D: alle erlaubten x, z. B. D = [0; 15] oder D = ℚ ∖ {0}", quantities: "eingeschränkt durch Nenner ≠ 0 oder den Sachzusammenhang" },
     { name: "Wertemenge einer Geraden", html: "D = [a; b] ⇒ W liegt zwischen f(a) und f(b)", quantities: "steigend: W = [f(a); f(b)]; fallend: W = [f(b); f(a)]" },
   ],
   quiz: {
@@ -1034,10 +1040,12 @@ const werteNullstellen: Lesson = {
             formulaHint: "f(a): einsetzen. f(x) = b und f(x) = 0: Gleichung aufstellen und nach x lösen.",
             fields: [
               numberField(`f(${fmt(a)}) =`, m * a + t, "", 2),
-              numberField(`x (für f(x) = ${fmt(b)}) =`, xb, "", 2, { slips: [{ value: (b + t) / m, hint: `Beim Umformen: Ziehe auf beiden Seiten ${fmt(t)} ab, bevor du durch ${fmt(m)} teilst.` }] }),
+              numberField(`x (für f(x) = ${fmt(b)}) =`, xb, "", 2, {
+                slips: [{ value: (b + t) / m, hint: `Beim Umformen: ${t > 0 ? `Subtrahiere ${fmt(t)}` : `Addiere ${fmt(-t)}`} auf beiden Seiten${m === 1 ? "" : `, bevor du durch ${paren(m)} teilst`}.` }],
+              }),
               numberField("x₀ =", x0, "", 2, {
                 slips: [
-                  { value: t / m, hint: "Vorzeichen: Aus 0 = m · x + t folgt m · x = −t, also x = −t : m." },
+                  { value: t / m, hint: `Vorzeichen: Aus ${linear(m, t)} = 0 folgt ${sum([[m, "x"]])} = ${fmt(-t)}.` },
                   { value: t, hint: `${fmt(t)} = f(0) ist der Schnittpunkt mit der y-Achse, nicht die Nullstelle. Setze f(x) = 0.` },
                 ],
               }),
@@ -1054,13 +1062,16 @@ const werteNullstellen: Lesson = {
         const ctx = fallingContext(rng);
         const t1 = rng.pick([2, 3, 4, 5, 6, 8, 10].filter((s) => s < ctx.T));
         const value = ctx.v0 - ctx.r * t1;
-        const options = [`D = [0; ${fmt(ctx.T)}], W = [0; ${fmt(ctx.v0)}]`, `D = [0; ${fmt(ctx.v0)}], W = [0; ${fmt(ctx.T)}]`, "D = ℚ, W = ℚ"];
+        // the swapped sets, and a D without the end of the process
+        const options = [`D = [0; ${fmt(ctx.T)}], W = [0; ${fmt(ctx.v0)}]`, `D = [0; ${fmt(ctx.v0)}], W = [0; ${fmt(ctx.T)}]`, `D = ℚ₀⁺, W = [0; ${fmt(ctx.v0)}]`];
         return {
           prompt: `${ctx.text} Berechne den Wert nach ${t1} ${ctx.tUnit === "Tagen" ? "Tagen" : "Stunden"} und die Nullstelle. Welche Definitionsmenge und welche Wertemenge passen zum Sachzusammenhang?`,
           given: [`${ctx.name}(t) = ${fmt(ctx.v0)} − ${fmt(ctx.r)}t`],
           fields: [
             numberField(ctx.valueLabel(t1), value, ctx.unit, 2, { slips: [{ value: ctx.v0 + ctx.r * t1, hint: "Die Menge nimmt ab: Ziehe ab, was in dieser Zeit verbraucht wird." }] }),
-            numberField(ctx.zeroLabel, ctx.T, ctx.tUnit === "Tagen" ? "Tage" : "h", 2, { slips: [{ value: ctx.r / ctx.v0, hint: "Aus 0 = v₀ − r · t folgt t = v₀ : r, nicht r : v₀." }] }),
+            numberField(ctx.zeroLabel, ctx.T, ctx.tUnit === "Tagen" ? "Tage" : "h", 2, {
+              slips: [{ value: ctx.r / ctx.v0, hint: `Aus ${fmt(ctx.v0)} − ${fmt(ctx.r)}t = 0 folgt ${fmt(ctx.r)}t = ${fmt(ctx.v0)}: Teile ${fmt(ctx.v0)} durch ${fmt(ctx.r)}, nicht umgekehrt.` }],
+            }),
             shuffledChoice(rng, "Definitions- und Wertemenge", options[0], options.slice(1)),
           ],
           steps: [
@@ -1107,8 +1118,8 @@ const werteNullstellen: Lesson = {
         const [lo, hi] = [Math.min(fa, fb), Math.max(fa, fb)];
         const x = (ctx.y - ctx.t) / ctx.m;
         return {
-          prompt: `${ctx.text} Stelle die Funktionsgleichung auf, gib die Definitionsmenge an und berechne die Wertemenge W. Wann wird der Wert ${fmtUnit(ctx.y, ctx.unit)} erreicht?`,
-          given: [`D = [${fmt(ctx.a)}; ${fmt(ctx.b)}]`],
+          prompt: `${ctx.text} Stelle die Funktionsgleichung auf, gib die Definitionsmenge an und berechne die Wertemenge W. ${ctx.question}`,
+          given: ["Anfangswert, Änderung pro Einheit und Grenzen für x aus dem Text"],
           fields: [
             numberField("untere Grenze von W:", lo, ctx.unit, 2, { slips: [{ value: ctx.t, hint: "Die Wertemenge hängt von D ab: Setze beide Enden von D ein." }] }),
             numberField("obere Grenze von W:", hi, ctx.unit, 2),
@@ -1118,7 +1129,7 @@ const werteNullstellen: Lesson = {
             `${ctx.fx}, D = [${fmt(ctx.a)}; ${fmt(ctx.b)}]`,
             `Werte an den Enden: ${fmt(fa)} und ${fmt(fb)}, also W = [${fmt(lo)}; ${fmt(hi)}] (in ${ctx.unit}).`,
             `${linear(ctx.m, ctx.t).replace("x", ctx.v)} = ${fmt(ctx.y)} ⇔ ${sum([[ctx.m, ctx.v]])} = ${fmt(ctx.y - ctx.t)} ⇔ ${ctx.v} = ${fmt(ctx.y - ctx.t)} : ${paren(ctx.m)} = ${fmt(x)}`,
-            `<strong>W = [${fmt(lo)}; ${fmt(hi)}]; ${fmtUnit(ctx.y, ctx.unit)} nach ${fmtUnit(x, ctx.xUnit)}</strong>`,
+            `<strong>D = [${fmt(ctx.a)}; ${fmt(ctx.b)}], W = [${fmt(lo)}; ${fmt(hi)}]; ${ctx.result(x)}</strong>`,
           ],
           meta: { kind: ctx.kind, m: ctx.m, t: ctx.t, a: ctx.a, b: ctx.b, y: ctx.y, x },
         };
@@ -1159,10 +1170,10 @@ function proportionalContext(rng: Rng) {
 function claimContext(rng: Rng) {
   const kind = rng.int(0, 3);
   const base = [
-    { m: rng.pick([1.5, 2, 2.5]), xs: [2, 3, 4], x2s: [5, 6, 7], x3s: [8, 10, 12], text: (x: number, y: number) => `Ein Heizlüfter verbraucht in ${x} Stunden ${fmt(y)} kWh Strom; der Verbrauch ist proportional zur Zeit.`, claim: (x: number, y: number) => `Tim behauptet: „In ${x} Stunden sind es ${fmt(y)} kWh.“`, xUnit: "h", yUnit: "kWh", ask3: (y: number) => `Zeit für ${fmt(y)} kWh:` },
-    { m: rng.pick([80, 90, 120]), xs: [1.5, 2, 2.5], x2s: [3, 4, 5], x3s: [6, 7], text: (x: number, y: number) => `Ein Zug fährt mit gleichbleibendem Tempo und legt in ${fmt(x)} Stunden ${fmt(y)} km zurück.`, claim: (x: number, y: number) => `Lea behauptet: „In ${x} Stunden schafft er ${fmt(y)} km.“`, xUnit: "h", yUnit: "km", ask3: (y: number) => `Zeit für ${fmt(y)} km:` },
-    { m: rng.pick([6, 7.5, 12]), xs: [2, 3, 4], x2s: [5, 6, 8], x3s: [10, 12], text: (x: number, y: number) => `Im Stoffladen kosten ${x} m eines Stoffes ${fmtUnit(y, "€")}.`, claim: (x: number, y: number) => `Mia behauptet: „${x} m kosten ${fmtUnit(y, "€")}.“`, xUnit: "m", yUnit: "€", ask3: (y: number) => `Stoff für ${fmtUnit(y, "€")}:` },
-    { m: rng.pick([8, 9, 12]), xs: [3, 4, 5], x2s: [6, 7, 10], x3s: [12, 15], text: (x: number, y: number) => `Eine Dusche verbraucht in ${x} Minuten ${fmt(y)} l Wasser, gleichmäßig.`, claim: (x: number, y: number) => `Ben behauptet: „In ${x} Minuten sind es ${fmt(y)} l.“`, xUnit: "min", yUnit: "l", ask3: (y: number) => `Zeit für ${fmt(y)} l:` },
+    { m: rng.pick([1.5, 2, 2.5]), xs: [2, 3, 4], x2s: [5, 6, 7], x3s: [8, 10, 12], text: (x: number, y: number) => `Ein Heizlüfter verbraucht in ${x} Stunden ${fmt(y)} kWh Strom; der Verbrauch ist proportional zur Zeit.`, claim: (x: number, y: number) => `Tim behauptet: „In ${x} Stunden sind es ${fmt(y)} kWh.“`, xUnit: "h", yUnit: "kWh", ask3: (y: number) => `Zeit für ${fmt(y)} kWh:`, question: (y: number) => `Nach wie vielen Stunden sind ${fmt(y)} kWh verbraucht?`, result: (x: number, y: number) => `${fmt(y)} kWh nach ${fmtUnit(x, "h")}` },
+    { m: rng.pick([80, 90, 120]), xs: [1.5, 2, 2.5], x2s: [3, 4, 5], x3s: [6, 7], text: (x: number, y: number) => `Ein Zug fährt mit gleichbleibendem Tempo und legt in ${fmt(x)} Stunden ${fmt(y)} km zurück.`, claim: (x: number, y: number) => `Lea behauptet: „In ${x} Stunden schafft er ${fmt(y)} km.“`, xUnit: "h", yUnit: "km", ask3: (y: number) => `Zeit für ${fmt(y)} km:`, question: (y: number) => `Nach wie vielen Stunden hat er ${fmt(y)} km zurückgelegt?`, result: (x: number, y: number) => `${fmt(y)} km nach ${fmtUnit(x, "h")}` },
+    { m: rng.pick([6, 7.5, 12]), xs: [2, 3, 4], x2s: [5, 6, 8], x3s: [10, 12], text: (x: number, y: number) => `Im Stoffladen kosten ${x} m eines Stoffes ${fmtUnit(y, "€")}.`, claim: (x: number, y: number) => `Mia behauptet: „${x} m kosten ${fmtUnit(y, "€")}.“`, xUnit: "m", yUnit: "€", ask3: (y: number) => `Stoff für ${fmtUnit(y, "€")}:`, question: (y: number) => `Wie viel Stoff bekommt man für ${fmtUnit(y, "€")}?`, result: (x: number, y: number) => `für ${fmtUnit(y, "€")} bekommt man ${fmtUnit(x, "m")}` },
+    { m: rng.pick([8, 9, 12]), xs: [3, 4, 5], x2s: [6, 7, 10], x3s: [12, 15], text: (x: number, y: number) => `Eine Dusche verbraucht in ${x} Minuten ${fmt(y)} l Wasser, gleichmäßig.`, claim: (x: number, y: number) => `Ben behauptet: „In ${x} Minuten sind es ${fmt(y)} l.“`, xUnit: "min", yUnit: "l", ask3: (y: number) => `Zeit für ${fmt(y)} l:`, question: (y: number) => `Nach wie vielen Minuten sind ${fmt(y)} l verbraucht?`, result: (x: number, y: number) => `${fmt(y)} l nach ${fmtUnit(x, "min")}` },
   ][kind];
   const x1 = rng.pick(base.xs);
   const x2 = rng.pick(base.x2s);
@@ -1172,7 +1183,8 @@ function claimContext(rng: Rng) {
   // mode 0: true; 1: additive thinking (one unit more, one unit of y more); 2: a rounding error
   let claimed = mode === 0 ? truth : mode === 1 ? base.m * x1 + (x2 - x1) : truth - rng.pick([1, 2, 5]);
   if (Math.abs(claimed - truth) < 1e-9 && mode !== 0) claimed = truth + 1;
-  return { kind, mode, x1, x2, x3, m: base.m, truth, claimed, text: base.text(x1, base.m * x1), claim: base.claim(x2, claimed), xUnit: base.xUnit, yUnit: base.yUnit, ask3: base.ask3(base.m * x3) };
+  const y3 = base.m * x3;
+  return { kind, mode, x1, x2, x3, m: base.m, truth, claimed, text: base.text(x1, base.m * x1), claim: base.claim(x2, claimed), xUnit: base.xUnit, yUnit: base.yUnit, ask3: base.ask3(y3), question: base.question(y3), result: base.result(x3, y3) };
 }
 
 const PROBE_SLOPES: Ratio[] = [[1, 2], [3, 4], [2, 3], [-1, 2], [-3, 2], [2, 1], [-3, 1], [5, 2], [-2, 5], [4, 3], [-4, 3], [3, 5]];
@@ -1396,7 +1408,7 @@ const ursprungsgeraden: Lesson = {
         const right = Math.abs(c.claimed - c.truth) < 1e-9;
         const y3 = c.m * c.x3;
         return {
-          prompt: `${c.text} ${c.claim} Prüfe die Behauptung mit der Gleichung y = m · x. Wie viel ist es wirklich, und wann wird der Wert ${fmtUnit(y3, c.yUnit)} erreicht?`,
+          prompt: `${c.text} ${c.claim} Prüfe die Behauptung mit der Gleichung y = m · x. Wie viel ist es wirklich? ${c.question}`,
           given: [`${fmtUnit(c.x1, c.xUnit)} ↦ ${fmtUnit(c.m * c.x1, c.yUnit)}`],
           fields: [
             choiceField("Stimmt die Behauptung?", ["ja", "nein"], right ? 0 : 1),
@@ -1407,7 +1419,7 @@ const ursprungsgeraden: Lesson = {
             `m = ${fmt(c.m * c.x1)} : ${fmt(c.x1)} = ${fmt(c.m)}, also y = ${fmt(c.m)} · x.`,
             `${fmt(c.m)} · ${fmt(c.x2)} = ${fmtUnit(c.truth, c.yUnit)}${right ? ": Die Behauptung stimmt." : ` ≠ ${fmtUnit(c.claimed, c.yUnit)}: Die Behauptung stimmt nicht.`}`,
             `${fmt(y3)} = ${fmt(c.m)} · x ⇔ x = ${fmt(y3)} : ${fmt(c.m)} = ${fmtUnit(c.x3, c.xUnit)}`,
-            `<strong>${right ? "ja" : "nein"}; richtig sind ${fmtUnit(c.truth, c.yUnit)}; ${fmtUnit(y3, c.yUnit)} nach ${fmtUnit(c.x3, c.xUnit)}</strong>`,
+            `<strong>${right ? "ja" : "nein"}; richtig sind ${fmtUnit(c.truth, c.yUnit)}; ${c.result}</strong>`,
           ],
           meta: { kind: c.kind, mode: c.mode, m: c.m, x1: c.x1, x2: c.x2, x3: c.x3, claimed: c.claimed },
         };
@@ -1611,7 +1623,8 @@ const senkrecht: Lesson = {
           const s = nonzero(rng, 2) * rng.pick([1, 2]);
           perp = rng.next() < 0.5;
           B = perp ? { x: (-A.y / g) * s, y: (A.x / g) * s } : rng.next() < 0.5 ? { x: (A.y / g) * s, y: (A.x / g) * s } : { x: (-A.y / g) * s + rng.pick([-1, 1]), y: (A.x / g) * s };
-        } while (B.x === 0 || B.y === 0 || Math.abs(B.x) > 10 || Math.abs(B.y) > 10 || (A.x * B.x + A.y * B.y === 0) !== perp);
+          // two different paths: B must not lie on the line OK (the mirror image of K at y = x does when |x| = |y|)
+        } while (B.x === 0 || B.y === 0 || Math.abs(B.x) > 10 || Math.abs(B.y) > 10 || A.x * B.y - A.y * B.x === 0 || (A.x * B.x + A.y * B.y === 0) !== perp);
         const rg = ratio(A.y, A.x);
         const rh = ratio(B.y, B.x);
         const pr = product(rg, rh);
@@ -2063,7 +2076,8 @@ const geradenBestimmen: Lesson = {
             if (rng.next() < 0.3) [x1, x2] = [x2, x1];
             y1 = value(r) * x1 + t;
             y2 = value(r) * x2 + t;
-          } while (Math.abs(y1) > 12 || Math.abs(y2) > 12 || Math.abs(x1) > 9 || Math.abs(x2) > 9);
+            // a point on the y-axis would give t away: allowed only now and then
+          } while (Math.abs(y1) > 12 || Math.abs(y2) > 12 || Math.abs(x1) > 9 || Math.abs(x2) > 9 || ((x1 === 0 || x2 === 0) && rng.next() < 0.85));
           const dx = x2 - x1;
           const dy = y2 - y1;
           return {
@@ -2126,7 +2140,7 @@ const geradenBestimmen: Lesson = {
             given: [`m = ${ratioHtml(r)}`, `P(${fmt(xp)} | ${fmt(yp)})`],
             formulaHint: "t = y<sub>P</sub> − m · x<sub>P</sub>; Punktprobe: x<sub>R</sub> einsetzen und mit y<sub>R</sub> vergleichen.",
             fields: [
-              numberField("t =", t, "", 2, { slips: [{ value: yp + value(r) * xp, hint: "t = y_P − m · x_P: Das Produkt wird abgezogen. Achte auf die Klammer bei negativem x_P." }] }),
+              numberField("t =", t, "", 2, { slips: [{ value: yp + value(r) * xp, hint: "Setze die Koordinaten von P ein und löse nach t auf: Das Produkt aus m und der x-Koordinate wird abgezogen. Achte auf die Klammer bei negativem x." }] }),
               choiceField("Liegt R auf g?", ["ja", "nein"], onLine ? 0 : 1),
             ],
             steps: [
@@ -2310,7 +2324,7 @@ const parallelenscharen: Lesson = {
           steps: [
             `g₂: m = ${fmt(m)}, ${fmt(b)} = ${fmt(m)} · ${paren(a)} + t ⇒ t = ${fmt(t2)}, also g₂: y = ${linear(m, t2)}`,
             `h: m = −1 : ${paren(m)} = ${ratioHtml(rh)}, t = 0, also h: ${lineHtml(rh)}`,
-            `S: ${linear(m, t1)} = ${linear(c, d)} ⇔ ${sum([[m - c, "x"]])} = ${fmt(d - t1)} ⇔ x = ${fmt(xS)}; y = ${fmt(m)} · ${paren(xS)}${term(t1, "", false)} = ${fmt(yS)}`,
+            `S: ${linear(m, t1)} = ${linear(c, d)} ⇔ ${solveStep(m - c, d - t1, xS)}; y =${fmt(m)} · ${paren(xS)}${term(t1, "", false)} = ${fmt(yS)}`,
             `<strong>g₂: y = ${linear(m, t2)}; h: ${lineHtml(rh)}; S${point(xS, yS)}</strong>`,
           ],
           meta: { m, t1, a, b, c, d },
@@ -2333,7 +2347,7 @@ const parallelenscharen: Lesson = {
             given: [schar, `P(${fmt(a)} | ${fmt(b)})`, `x₀ = ${fmt(x0)}`],
             formulaHint: "Bedingung in y = mx + t einsetzen und nach t auflösen; Nullstelle heißt y = 0.",
             fields: [
-              numberField("t (durch P) =", tP, "", 2, { slips: [{ value: b + value(r) * a, hint: "t = y_P − m · x_P: Das Produkt wird abgezogen." }] }),
+              numberField("t (durch P) =", tP, "", 2, { slips: [{ value: b + value(r) * a, hint: "Setze die Koordinaten von P ein und löse nach t auf: Das Produkt aus m und der x-Koordinate wird abgezogen, nicht addiert." }] }),
               numberField("t (Nullstelle) =", tN, "", 2, { slips: [{ value: x0, hint: "Die Nullstelle ist nicht t: Setze den Punkt (x₀ | 0) ein." }] }),
             ],
             steps: [
@@ -2357,13 +2371,13 @@ const parallelenscharen: Lesson = {
           given: [`g<sub>t</sub>: y = ${linear(m, 0)} + t`, `k: y = ${linear(c, d)}`],
           fields: [
             numberField("t (y-Achse) =", tY, "", 2),
-            numberField("t (x-Achse) =", tX, "", 2, { slips: [{ value: xk, hint: "Das ist die Nullstelle von k. Gesucht ist das t, für das auch g_t dort die Nullstelle hat." }] }),
+            numberField("t (x-Achse) =", tX, "", 2, { slips: [{ value: xk, hint: "Das ist die Nullstelle von k. Gesucht ist das t, für das auch das Element der Schar dort seine Nullstelle hat." }] }),
             numberField("x<sub>S</sub> =", xS, "", 2),
           ],
           steps: [
             `Auf der y-Achse ist x = 0: g<sub>t</sub> hat dort den Wert t, k den Wert ${fmt(d)}. Also t = ${fmt(tY)}.`,
             `Nullstelle von k: ${linear(c, d)} = 0 ⇔ x = ${fmt(xk)}. g<sub>t</sub> soll dort auch den Wert 0 haben: 0 = ${fmt(m)} · ${paren(xk)} + t ⇒ t = ${fmt(tX)}`,
-            `${linear(m, tStar)} = ${linear(c, d)} ⇔ ${sum([[m - c, "x"]])} = ${fmt(d - tStar)} ⇔ x = ${fmt(xS)}`,
+            `${linear(m, tStar)} = ${linear(c, d)} ⇔ ${solveStep(m - c, d - tStar, xS)}`,
             `<strong>t = ${fmt(tY)}; t = ${fmt(tX)}; x<sub>S</sub> = ${fmt(xS)}</strong>`,
           ],
           meta: { m, c, d, tStar, xk },
@@ -2411,16 +2425,17 @@ function limitedProcess(rng: Rng) {
   if (kind === 1) {
     for (;;) {
       const l0 = rng.pick([10, 20, 25, 40]);
-      const r = rng.pick([1.5, 2, 2.5, 3, 4, 5]);
+      const r = rng.pick([1.5, 2, 2.5, 3]);
       const T = (100 - l0) / r;
       if (!Number.isInteger(T)) continue;
       return { kind, t: l0, m: r, T, top: 100, text: `Ein Handy hat noch ${l0} % Akku und lädt gleichmäßig mit ${fmt(r)} Prozentpunkten pro Minute bis 100 %.`, xUnit: "min", yUnit: "%", fullLabel: "voll nach", valueLabel: (x: number) => `Ladestand nach ${fmt(x)} min:` };
     }
   }
   const h0 = rng.pick([600, 800, 1000, 1200]);
-  const r = rng.pick([4, 5, 6, 8]);
-  const T = rng.pick([60, 75, 90, 100, 120]);
-  return { kind, t: h0, m: r, T, top: h0 + r * T, text: `Eine Seilbahn startet in ${fmt(h0)} m Höhe und gewinnt gleichmäßig ${r} m Höhe pro Sekunde bis zur Bergstation in ${fmt(h0 + r * T)} m Höhe.`, xUnit: "s", yUnit: "m", fullLabel: "oben nach", valueLabel: (x: number) => `Höhe nach ${fmt(x)} s:` };
+  // a large cable car climbs 2 to 4 m per second (the Zugspitze one about 1.950 m in 10 minutes)
+  const r = rng.pick([2, 2.5, 3, 4]);
+  const T = rng.pick([150, 180, 200, 240, 300]);
+  return { kind, t: h0, m: r, T, top: h0 + r * T, text: `Eine Seilbahn startet in ${fmt(h0)} m Höhe und gewinnt gleichmäßig ${fmt(r)} m Höhe pro Sekunde bis zur Bergstation in ${fmt(h0 + r * T)} m Höhe.`, xUnit: "s", yUnit: "m", fullLabel: "oben nach", valueLabel: (x: number) => `Höhe nach ${fmt(x)} s:` };
 }
 
 const round2 = (x: number) => Math.round(x * 100) / 100;
@@ -2533,7 +2548,7 @@ const anwendungen: Lesson = {
         const y1 = c.m * x1 + c.t;
         const options = [`D = [0; ${fmt(c.T)}], W = [${fmt(c.t)}; ${fmt(c.top)}]`, `D = [${fmt(c.t)}; ${fmt(c.top)}], W = [0; ${fmt(c.T)}]`, `D = [0; ${fmt(c.T)}], W = [0; ${fmt(c.top)}]`, "D = ℚ₀⁺, W = ℚ₀⁺"];
         return {
-          prompt: `${c.text} Beschreibe den Vorgang mit einer linearen Funktion (x in ${c.xUnit}, y in ${c.yUnit}). Wann ist das Ende erreicht, welchen Wert gibt es nach ${fmt(x1)} ${c.xUnit}, und welche Definitions- und Wertemenge passen?`,
+          prompt: `${c.text} Beschreibe den Vorgang mit einer linearen Funktion (x in ${c.xUnit}, y in ${c.yUnit}). Wann ist das Ende erreicht, welchen Wert hat y nach ${fmt(x1)} ${c.xUnit}, und welche Definitions- und Wertemenge passen?`,
           given: [`Anfangswert und Rate aus dem Text`],
           fields: [
             numberField(c.fullLabel, c.T, c.xUnit, 2, { slips: [{ value: c.top / c.m, hint: "Was zu Beginn schon da ist, muss nicht mehr dazukommen: (Endwert − Anfangswert) : Rate." }] }),
@@ -2569,9 +2584,11 @@ const anwendungen: Lesson = {
         const cheaperA = costA < costB;
         const unit = km ? "km" : "h";
         const per = km ? "je km" : "je Stunde";
+        /** "keine Grundgebühr" rather than "0 € Grundgebühr". */
+        const base = (t: number) => (t === 0 ? "keine Grundgebühr" : `${euro(t)} € Grundgebühr`);
         if (level === 1) {
           return {
-            prompt: `Zwei ${km ? "Carsharing-Anbieter" : "Fahrradverleihe"} im Vergleich: A verlangt ${euro(A.t)} € Grundgebühr und ${euro(A.m)} € ${per}, B ${euro(B.t)} € Grundgebühr und ${euro(B.m)} € ${per}. Bei welcher ${km ? "Strecke" : "Leihdauer"} kosten beide gleich viel, und wie viel? Welcher ist bei ${fmt(x0)} ${unit} günstiger?`,
+            prompt: `Zwei ${km ? "Carsharing-Anbieter" : "Fahrradverleihe"} im Vergleich: A verlangt ${base(A.t)} und ${euro(A.m)} € ${per}, B ${base(B.t)} und ${euro(B.m)} € ${per}. Bei welcher ${km ? "Strecke" : "Leihdauer"} kosten beide gleich viel, und wie viel? Welcher ist bei ${fmt(x0)} ${unit} günstiger?`,
             given: [`A: y = ${linear(A.m, A.t)}`, `B: y = ${linear(B.m, B.t)}`],
             formulaHint: "Gleichsetzen: m<sub>A</sub> · x + t<sub>A</sub> = m<sub>B</sub> · x + t<sub>B</sub>, dann nach x lösen.",
             fields: [
@@ -2580,8 +2597,8 @@ const anwendungen: Lesson = {
               choiceField(`günstiger bei ${fmt(x0)} ${unit}:`, ["Anbieter A", "Anbieter B"], cheaperA ? 0 : 1),
             ],
             steps: [
-              `${linear(A.m, A.t)} = ${linear(B.m, B.t)} ⇔ ${fmt(Math.abs(A.t - B.t))} = ${fmt(round2(Math.abs(B.m - A.m)))}x ⇔ x = ${fmt(xS)}`,
-              `Kosten: ${fmt(A.m)} · ${fmt(xS)} + ${fmt(A.t)} = ${euro(cost)} €`,
+              `${linear(A.m, A.t)} = ${linear(B.m, B.t)} ⇔ ${fmt(Math.abs(A.t - B.t))} = ${sum([[round2(Math.abs(B.m - A.m)), "x"]])} ⇔ x = ${fmt(xS)}`,
+              `Kosten: ${fmt(A.m)} · ${fmt(xS)}${term(A.t, "", false)} = ${euro(cost)} €`,
               `Bei ${fmt(x0)} ${unit}: A ${euro(costA)} €, B ${euro(costB)} €.`,
               `<strong>gleich teuer bei ${fmtUnit(xS, unit)} (${euro(cost)} €); bei ${fmtUnit(x0, unit)} ist ${cheaperA ? "A" : "B"} günstiger</strong>`,
             ],
@@ -2594,8 +2611,8 @@ const anwendungen: Lesson = {
         const b1 = round2(B.m * h1 + B.t);
         const b2 = round2(B.m * h2 + B.t);
         return {
-          prompt: `${km ? "Carsharing-Anbieter" : "Fahrradverleih"} A verlangt ${euro(A.t)} € Grundgebühr und ${euro(A.m)} € ${per}. Von Anbieter B kennt Jonas nur zwei Rechnungen: Für ${fmt(h1)} ${unit} zahlte er ${euro(b1)} €, für ${fmt(h2)} ${unit} ${euro(b2)} €. Bei welcher ${km ? "Strecke" : "Leihdauer"} kosten beide gleich viel? Welcher Anbieter ist bei ${fmt(x0)} ${unit} günstiger, und wie viel spart man dort?`,
-          given: [`A: ${euro(A.t)} € + ${euro(A.m)} € ${per}`, `B: ${fmt(h1)} ${unit} → ${euro(b1)} €, ${fmt(h2)} ${unit} → ${euro(b2)} €`],
+          prompt: `${km ? "Carsharing-Anbieter" : "Fahrradverleih"} A verlangt ${base(A.t)} und ${euro(A.m)} € ${per}. Von Anbieter B kennt Jonas nur zwei Rechnungen: Für ${fmt(h1)} ${unit} zahlte er ${euro(b1)} €, für ${fmt(h2)} ${unit} ${euro(b2)} €. Bei welcher ${km ? "Strecke" : "Leihdauer"} kosten beide gleich viel? Welcher Anbieter ist bei ${fmt(x0)} ${unit} günstiger, und wie viel spart man dort?`,
+          given: [A.t === 0 ? `A: ${euro(A.m)} € ${per}, keine Grundgebühr` : `A: ${euro(A.t)} € + ${euro(A.m)} € ${per}`,`B: ${fmt(h1)} ${unit} → ${euro(b1)} €, ${fmt(h2)} ${unit} → ${euro(b2)} €`],
           fields: [
             numberField("gleich teuer bei x =", xS, unit, 2),
             choiceField(`günstiger bei ${fmt(x0)} ${unit}:`, ["Anbieter A", "Anbieter B"], cheaperA ? 0 : 1),
@@ -2741,7 +2758,7 @@ const flaechen: Lesson = {
       { key: "term", label: "Term", compute: (v) => AREA_TERMS[v.fig] },
     ],
     goals: [
-      { id: "sechs", text: "Stelle ein Dreieck mit dem Flächeninhalt 6 FE ein. Findest du in jeder Figur zwei passende Werte von x?", check: (v) => Math.abs(areaOf(v) - 6) < 1e-9 },
+      { id: "sechs", text: "Stelle ein Dreieck mit dem Flächeninhalt 6 FE ein. Wie viele passende Werte von x findest du in jeder der beiden Figuren?", check: (v) => Math.abs(areaOf(v) - 6) < 1e-9 },
       { id: "auf-ab", text: "Bewege Cₙ in der ersten Figur auf die Gerade AB. Welchen Wert hat die Determinante dann?", check: (v) => v.fig === 0 && Math.abs(areaDet(v)) < 1e-9 },
       { id: "maximum", text: "Finde bei den Dreiecken ABₙCₙ das x mit dem größten Flächeninhalt. Wie groß ist er?", check: (v) => v.fig === 1 && v.x === 3 },
     ],
@@ -2777,7 +2794,7 @@ const flaechen: Lesson = {
             given: [`A${pt(A.x, A.y)}`, `B${pt(B.x, B.y)}`, `${second}${pt(C.x, C.y)}`],
             formulaHint: `${detHtml("a<sub>x</sub>", "b<sub>x</sub>", "a<sub>y</sub>", "b<sub>y</sub>")} = a<sub>x</sub> · b<sub>y</sub> − a<sub>y</sub> · b<sub>x</sub>; ${parallelogram ? "A = det FE" : "A<sub>Δ</sub> = ½ · det FE"} (bei negativer Determinante ihr Betrag)`,
             fields: [
-              numberField("det =", D, "", 2, { slips: [{ value: u.x * w.y + u.y * w.x, hint: "Über Kreuz wird subtrahiert: a_x · b_y − a_y · b_x." }, { value: u.x * w.x - u.y * w.y, hint: "Multipliziere über Kreuz: x des ersten mal y des zweiten Vektors." }] }),
+              numberField("det =", D, "", 2, { slips: [{ value: u.x * w.y + u.y * w.x, hint: "Über Kreuz wird subtrahiert: x des ersten mal y des zweiten Vektors minus y des ersten mal x des zweiten." }, { value: u.x * w.x - u.y * w.y, hint: "Multipliziere über Kreuz: x des ersten mal y des zweiten Vektors." }] }),
               numberField("A =", area, "FE", 2, {
                 slips: parallelogram
                   ? [{ value: Math.abs(D) / 2, hint: "Das Parallelogramm ist doppelt so groß wie das Dreieck: kein Faktor ½." }]
@@ -2794,7 +2811,7 @@ const flaechen: Lesson = {
         }
         const { A, B, a, b, k, c, x0, xStar } = movingPoint(rng);
         return {
-          prompt: `Die Punkte C<sub>n</sub>(x | ${linear(a, b)}) liegen auf der Geraden g: y = ${linear(a, b)}. Zusammen mit A${pt(A.x, A.y)} und B${pt(B.x, B.y)} bilden sie Dreiecke ABC<sub>n</sub> für x ${k > 0 ? "&gt;" : "&lt;"} ${fmt(xStar)}. Zeige, dass für ihren Flächeninhalt A(x) = (p · x + q) FE gilt, gib p und q an und berechne den Flächeninhalt für x = ${fmt(x0)}.`,
+          prompt: `Die Punkte C<sub>n</sub>(x | ${linear(a, b)}) liegen auf der Geraden g: y = ${linear(a, b)}. Zusammen mit A${pt(A.x, A.y)} und B${pt(B.x, B.y)} bilden sie für x ${k > 0 ? "&gt;" : "&lt;"} ${fmt(xStar)} Dreiecke ABC<sub>n</sub>. Berechne ihren Flächeninhalt A(x) in Abhängigkeit von x in der Form A(x) = (p · x + q) FE und den Flächeninhalt für x = ${fmt(x0)}.`,
           given: [`A${pt(A.x, A.y)}`, `B${pt(B.x, B.y)}`, `C<sub>n</sub>(x | ${linear(a, b)})`],
           fields: [
             numberField("p =", k / 2, "", 2, { slips: [{ value: k, hint: "Vergiss den Faktor ½ nicht: A(x) = ½ · det." }] }),
@@ -2829,7 +2846,7 @@ const flaechen: Lesson = {
               numberField("x (auf AB) =", xStar, "", 2),
             ],
             steps: [
-              `${linear(k / 2, c / 2)} = ${fmt(target)} ⇔ ${sum([[k / 2, "x"]])} = ${fmt(target - c / 2)} ⇔ x = ${fmt(xA)}`,
+              `${linear(k / 2, c / 2)} = ${fmt(target)} ⇔ ${solveStep(k / 2, target - c / 2, xA)}`,
               `${linear(k / 2, c / 2)} = 0 ⇔ x = ${fmt(xStar)}: Dann liegen A, B und C<sub>n</sub> auf einer Geraden.`,
               `<strong>x = ${fmt(xA)} für ${fmt(target)} FE; x = ${fmt(xStar)} für C<sub>n</sub> auf AB</strong>`,
             ],
