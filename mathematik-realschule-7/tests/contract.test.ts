@@ -21,6 +21,8 @@ import coverage from "../coverage.json";
 import rawCell from "../cell.json";
 import mapping from "../replaces-de-by.json";
 import contract from "./fixtures/public-contract.json";
+import teacherVideos from "../src/curriculum/teacher-videos.json";
+import teacherVideoIds from "./fixtures/teacher-video-ids.json";
 interface Item {
   id: string;
   slug: string;
@@ -84,7 +86,6 @@ describe("Lehrplan und Umfang", () => {
       expect(lesson.lab.goals).toHaveLength(3);
       expect(lesson.exercises.length).toBeGreaterThanOrEqual(2);
       expect(lesson.requiredCorrect).toBe(3);
-      expect(lesson.teacherVideo).toBeUndefined();
       expect(
         [
           lesson.quiz.question,
@@ -168,6 +169,32 @@ describe("Lehrplan und Umfang", () => {
     ).toBe(true);
   });
 });
+describe("Lehrervideos", () => {
+  it("keeps the manually verified video ids on exactly the intended lessons", () => {
+    expect(Object.keys(teacherVideos)).toEqual(IDS);
+    expect(Object.keys(teacherVideoIds)).toEqual(IDS);
+    const pinned: Record<string, string> = teacherVideoIds;
+    for (const lesson of ALL_LESSONS) {
+      expect(lesson.teacherVideo, lesson.id).toEqual({
+        ...teacherVideos[lesson.id as keyof typeof teacherVideos],
+        url: `https://www.youtube.com/watch?v=${pinned[lesson.id]}`,
+      });
+      expect(lesson.teacherVideo?.title.trim().length).toBeGreaterThan(8);
+      expect(lesson.teacherVideo?.author?.trim().length).toBeGreaterThan(3);
+    }
+  });
+  it("uses direct HTTPS watch links without embeds or tracking parameters", () => {
+    for (const lesson of ALL_LESSONS) {
+      const url = new URL(lesson.teacherVideo!.url);
+      expect(url.origin).toBe("https://www.youtube.com");
+      expect(url.pathname).toBe("/watch");
+      expect([...url.searchParams.keys()]).toEqual(["v"]);
+      expect(url.searchParams.get("v")).toMatch(/^[A-Za-z0-9_-]{11}$/);
+      expect(url.hash).toBe("");
+    }
+  });
+});
+
 describe("Fortschritt und Links", () => {
   it("requires every goal, quiz and three correct tasks at each level", () => {
     const p = blank(),

@@ -27,7 +27,7 @@ Dreiecke behandeln Existenzbedingungen samt Seiten-Winkel-Ordnung, SSS/SWS/WSW u
 
 Raumgeometrie nutzt Lagebeziehungen, Projektionswinkel, Normalschnitt, Schrägbildachse, Verzerrungswinkel und Verkürzungsfaktor. Wahre Längen und Winkel werden über unverzerrte Hilfsfiguren konstruiert und gemessen. Interne Zeichenrechnung ist kein Unterricht zu Pythagoras oder Trigonometrie. Freie Handkonstruktionen und Messgenauigkeit werden nicht automatisch bewertet; das Paket fordert die praktische Ausführung auf Papier oder in Geometriesoftware auf.
 
-Ortsbereiche unterscheiden Kreisrand, Halbebene, Abstandsband, strenge und geschlossene Grenzen sowie Schnitt/Vereinigung. Algebra umfasst Definitionsbedingungen beim Kürzen, leere/volle Lösungsmenge, negative Division, Intervall- und Mengenschreibweise über ℚ und ganzzahlige Sachgrenzen. Prozentrechnung verwendet wechselnde Grundwerte und Rückwärtsrechnung; Zinsen beziehen sich ausdrücklich auf ein Anlagejahr. Bei Stichproben unterscheidet das Modell Erwartungswert, zufällige Schwankung und Auswahlverzerrung. Videos bleiben gemäß Paketstandard ein separater Folgeschritt.
+Ortsbereiche unterscheiden Kreisrand, Halbebene, Abstandsband, strenge und geschlossene Grenzen sowie Schnitt/Vereinigung. Algebra umfasst Definitionsbedingungen beim Kürzen, leere/volle Lösungsmenge, negative Division, Intervall- und Mengenschreibweise über ℚ und ganzzahlige Sachgrenzen. Prozentrechnung verwendet wechselnde Grundwerte und Rückwärtsrechnung; Zinsen beziehen sich ausdrücklich auf ein Anlagejahr. Bei Stichproben unterscheidet das Modell Erwartungswert, zufällige Schwankung und Auswahlverzerrung. Der getrennte [Videoschritt](mathematik-7-lehrervideos.md) ergänzt 42 Erklärvideolinks mit dokumentierten Originaltiteln, Kanälen, ausgewählten Teilaspekten und Prüfumfang.
 
 ## Alte Karten und Historien
 
@@ -45,7 +45,7 @@ Die A-Vorschläge betreffen Nebenwinkelsumme, Dreieckswinkelsumme, SsW-Bedingung
 
 ## Verifikation
 
-Im Paket: `npm ci`, `npm run typecheck`, `npm test` (49 Tests), `npm run build`, `npm run package:zip`. Am Stamm: `node --test scripts/build-catalog.test.mjs scripts/academy-registry.test.mjs` (28 Tests), Zellen-/Distraktorenprüfung und Historienprobe mit dem in CI festgelegten veröffentlichten `zam-core@0.54.0`.
+Im Paket: `npm ci`, `npm run typecheck`, `npm test` (51 Tests einschließlich der zwei Video-Vertragstests), `npm run build`, `npm run package:zip`. Am Stamm: `node --test scripts/build-catalog.test.mjs scripts/academy-registry.test.mjs` (28 Tests), Zellen-/Distraktorenprüfung und Historienprobe mit dem in CI festgelegten veröffentlichten `zam-core@0.54.0`. `node scripts/verify-teacher-videos.mjs` bestätigt im Paket alle 42 Videotitel und Kanäle über oEmbed.
 
 Die Laborprüfungen verwenden die Reglergitter der Mathematik-Referenz, alle 126 Zielzeugen und Zeigerpositionen. Sie erkennen auch unerlaubte Startziele und unendliche/ungültige Ausgaben. 80 Aufgaben pro Lektion und Stufe werden mit Punkt und Komma eingelesen: 6720 erzeugte Aufgaben. Zusätzliche mathematische Gegenproben rekonstruieren Seiten/Winkel, prüfen Um-/Inkreis und Tangenten geometrisch, setzen Gleichungslösungen ein, testen beide Nachbarn von Sachgrenzen und rechnen Preis-, Zins-, Produkt- und Datenbeispiele unabhängig nach.
 
