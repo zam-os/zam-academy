@@ -179,7 +179,17 @@ export function checkTask(task: ExerciseTask, inputs: string[]): TaskResult {
   return { status, fields };
 }
 
-const plain = (html: string) => html.replace(/<[^>]+>/g, "").replace(/\s*=\s*$/, "").trim();
+/**
+ * A field label as plain text for a hint. A vector name drawn with its arrow
+ * above (the stages' `vn()`: an aria-hidden arrow span before the name) reads
+ * "BC→", not "⟶BC".
+ */
+const plain = (html: string) =>
+  html
+    .replace(/<span aria-hidden="true"[^>]*>[⟶→]<\/span>((?:[^<]|<su[bp]>[^<]*<\/su[bp]>)*)/g, "$1→")
+    .replace(/<[^>]+>/g, "")
+    .replace(/\s*=\s*$/, "")
+    .trim();
 
 function near(value: number, target: number, field: NumberField): boolean {
   if (!Number.isFinite(target)) return false;
@@ -194,7 +204,7 @@ function near(value: number, target: number, field: NumberField): boolean {
  */
 export function wrongAnswerHint(task: ExerciseTask, result: TaskResult): string {
   if (result.status === "invalid") {
-    return "Fülle jedes Feld aus: Zahlen mit Komma, Brüche wie 3/5 oder Vielfache von π wie 4π.";
+    return "Fülle jedes Feld aus: Zahlen mit Komma oder Brüche wie 3/5.";
   }
   if (result.status !== "wrong") return "";
   const numbers = task.fields

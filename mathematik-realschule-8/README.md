@@ -1,54 +1,43 @@
-# Mathematik 8 Realschule Bayern · ZAM Academy
+# Mathematik 8 Realschule · ZAM Academy
 
-Lokaler, noch unveröffentlichter Paketentwurf vom 22. Oktober 2026: **33 Lektionen, 33 Labore und 99 ZAM-Karten**. Der Lernpfad trennt Wahlpflichtfächergruppe I (**28 Lektionen**) von II/III (**23 Lektionen**). Als Grundlage dienen die aktuellen offiziellen Fachlehrpläne für [M8 I](https://www.lehrplanplus.bayern.de/fachlehrplan/realschule/8/mathematik/wpfg1) und [M8 II/III](https://www.lehrplanplus.bayern.de/fachlehrplan/realschule/8/mathematik/wpfg2-3).
+Mathematik für die 8. Klasse der bayerischen Realschule (LehrplanPLUS) als Lernpfad mit Laboren zum Anfassen, für Zweig I und Zweig II/III. Live at https://academy.zam-os.org/mathematik-realschule-8/. German only, like the curriculum it follows.
 
-## Lernangebot
+## What it teaches
 
-| Etappe | Inhalte | I | II/III |
-| --- | --- | --- | --- |
-| Dreiecke und Vierecke | Existenz, Konstruktion, Kongruenz; Viereckfamilien, Konstruktion und Flächen | 2 Lektionen · LB 1 | 5 Lektionen · LB 1 |
-| Drehung | Kongruenzabbildung, Punktspiegelung, Drehsymmetrie, Vektordrehung | 3 · LB 2 | — |
-| Raumgeometrie | I: Körpersymmetrie, Axialschnitte, Raumkoordinaten; II/III: Schrägbilder und wahre Größe | 3 · LB 3 | 2 · LB 2 |
-| Terme und Gleichungen | Summenterme, höhere Potenzen, binomische Formeln, Faktorisieren, Extremwerte, lineare Gleichungen und Sachaufgaben; Ungleichungen nur I | 7 · LB 4 | 6 · LB 3 |
-| Bruchterme und Bruchgleichungen | Definitionsmenge, ursprüngliche Nennerausschlüsse, Verhältnisgleichungen, Formeln umstellen | 3 · LB 5 | 3 · LB 4 |
-| Funktionen | Eindeutigkeit, Darstellungen und Mengen, Ursprungsgeraden, Orthogonalität; Achsenabschnitt, Zwei-Punkte-Form und Determinanten nur I | 7 · LB 6 | 4 · LB 5 |
-| Daten und Zufall | Ergebnis/Ereignis, Baumdiagramm, Vierfeldertafel, absolute/relative Häufigkeiten und Simulationen | 3 · LB 7 | 3 · LB 6 |
+Seven stages follow the Lernbereiche of LehrplanPLUS Mathematik 8. The two Zweige have different Fachlehrpläne: Zweig I has the Drehung, symmetric bodies, Axialschnitte, the three-dimensional coordinate system, Ungleichungen and the full chapter on straight lines y = mx + t; Zweig II/III has triangles (existence, constructions, congruence) and Schrägbilder, which Zweig I learnt in grade 7, and meets y = mx + t only in grade 9. Each lesson says which Zweig needs it, and the learner can filter the path by their own Zweig (Zweig I: 36 lessons, Zweig II/III: 28, all: 41).
 
-Die [Lehrplanmatrix](coverage.json) ordnet alle **23 Kompetenzerwartungen von I und 19 von II/III** konkreten Lernangeboten zu. Konstruktionen auf Papier, freies Arbeiten mit Geometriesoftware, Messen mit Zirkel und Geodreieck, eigene Begründungen und eine echte Würfelserie bleiben zusätzlich zu üben. Die App bewertet diese Leistungen nicht. Die Matrix ist kein Nachweis individueller Beherrschung; eine unabhängige didaktische Fachprüfung steht noch aus.
+1. **Dreiecke und Vierecke** (LB 1 in both Zweige; 1.1 to 1.3 Zweig II/III): wann es ein Dreieck gibt, Dreieckskonstruktionen, Kongruenzsätze, das Haus der Vierecke, Vierecke konstruieren, mit Viereckseigenschaften rechnen (Flächen as Wiederholung aus M6)
+2. **Drehung** (LB 2, Zweig I): die Drehung als Kongruenzabbildung, Punktspiegelung und Drehsymmetrie, Vektoren um ±90° und 180° drehen
+3. **Raumgeometrie** (LB 3 in Zweig I, LB 2 in Zweig II/III): symmetrische Körper, Rotationskörper und Axialschnitte, Punkte und Körper im dreidimensionalen Koordinatensystem (Zweig I); Schrägbilder von Prismen und Pyramiden, Strecken und Winkel in wahrer Größe (Zweig II/III)
+4. **Terme und Gleichungen** (LB 4 in Zweig I, LB 3 in Zweig II/III; 4.9 Zweig I): Terme mit mehreren Variablen, Summenterme multiplizieren, binomische Formeln, Faktorisieren, Extremwerte quadratischer Terme mit der quadratischen Ergänzung, Extremwertprobleme, Gleichungen mit Klammern und binomischen Formeln, Text- und Sachaufgaben, Ungleichungen
+5. **Bruchterme und Bruchgleichungen** (LB 5 in Zweig I, LB 4 in Zweig II/III): Bruchterme, die Definitionsmenge, Verhältnisgleichungen a/b = c/d
+6. **Funktionen** (LB 6 in Zweig I, LB 5 in Zweig II/III; 6.6 to 6.10 Zweig I): Funktion oder nicht, Darstellungsformen, Funktionswerte, Nullstellen, Definitions- und Wertemenge, Ursprungsgeraden y = mx, senkrechte Geraden (m₁ · m₂ = −1), Geraden y = mx + t, Geradengleichungen aus zwei Bestimmungsstücken, Parallelenscharen, lineare Funktionen im Alltag, Flächen mit Determinanten (Wiederholung aus M7)
+7. **Daten und Zufall** (LB 7 in Zweig I, LB 6 in Zweig II/III): Ergebnis und Ereignis, Baumdiagramme, Vierfeldertafeln, absolute und relative Häufigkeiten
 
-Jede Lektion enthält Erklärung, Formeln, Schnellcheck, veränderliches SVG-Labor mit zwei überprüfbaren Aufträgen und zufällig erzeugte Aufgaben. Level 1 bietet eine Verfahrenshilfe, Level 2 verlangt Transfer. Nach richtigem Schnellcheck, beiden Laboraufträgen und drei Aufgaben auf Level 1 gilt die App-Lektion als abgeschlossen; drei weitere Transferaufgaben bringen das Bonusabzeichen. Diese Zählung beschreibt die App-Teilhandlungen.
+Every lesson has the shape of Mathematik 9 and 10: an explanation with worked example and Merke box, a **Schnellcheck**, a **Labor** (SVG drawing with sliders, draggable points or simulations and three Laboraufträge) and **Aufgaben** from at least two generators, Level 1 guided with a formula hint, Level 2 a transfer task in the style of the Abschlussprüfung. Grade 8 works over ℚ (the real numbers come in grade 9), without Pythagoras and trigonometry. Teacher videos are added in a separate, checked step (AGENTS.md, section 4); no lesson links one yet. Progress stays in `localStorage`.
 
-Zweigauswahl, Navigation, Formelsammlung und Fortschritt berücksichtigen den gewählten Lernpfad. Fortschritt bleibt lokal im Browser; die App braucht weder Konto noch Internet und lädt keine Drittinhalte nach. Externe Quellen öffnen nur nach einem Klick.
+`coverage.json` maps all 42 Kompetenzerwartungen of both Zweige (23 in Zweig I, 19 in Zweig II/III, verbatim) to lessons; the test checks the mapping both ways. `docs/mathematik-8-coverage.md` explains the choices.
 
-## Videos später ergänzen
+## Keep it with ZAM
 
-Die Videosuche ist ausdrücklich zurückgestellt. [video-tasks.json](video-tasks.json) enthält für jede der 33 stabilen Lektionskennungen einen offenen Rechercheauftrag. Alle `teacherVideo`-Felder fehlen bislang. Ein späterer Agent kann nach Prüfung eines echten Direktlinks Titel, Urheber und URL an der jeweiligen Lektion ergänzen. Die Texte, Labore, Aufgaben und Karten funktionieren vollständig ohne Video.
+The ZAM cell `zam-academy:mathematik-realschule-8` is `cell.json` in this folder: CARD_COUNT review cards, one atom per lesson, ids generated as ULIDs. Each card links to its lesson as `https://academy.zam-os.org/mathematik-realschule-8/#lesson=<lesson id>`. Formulas are math segments with spoken text, every minus sign in card text is `−`, and every card has two curated distractors with reasons that pass zam-core's `checkCandidate` and `checkShownSet`. The atoms carry the LehrplanPLUS binding (Realschule, Jahrgangsstufe 8, Zweig, Lernbereich) and their prerequisites.
 
-## ZAM-Karten und Altbestand
+zam-os/zam bundles three older cells for grade 8 (`de-by:realschule-8-mathematik-ebene-geometrie-vierecke`, `…-lineare-funktionen`, `…-terme-gleichungen`, 24 cards). `replaces-de-by.json` proposes a mapping of all 24: 9 **A** (same atomic retrieval), 8 **B** (the whole old multi-part prompt with its answer on one dedicated card) and 7 **C** (no successor here: content of grades 6, 7 and 9, or an incomplete old answer). It is a proposal (`"approved": null`): the cell ships without `replaces` and `retired_items`, and a later version declares them once Thomas approves the list. `tests/fixtures/` holds byte-exact snapshots of the three old cells, and `scripts/validate-migration.mjs` proves with the pinned zam-core that the committed cell changes no history and rehearses the A and B rows in memory: every history moves unchanged, the old ids leave active reviews, repeated installs change nothing and a learner holding cards on both ids refuses an automatic merge.
 
-`cell.json` ist die einzige Kartenquelle der App. Jede der 99 Fragen fragt einen einzelnen Punkt ab und verlinkt ihre Lektion als `https://academy.zam-os.org/mathematik-realschule-8/#lesson=<id>`. Formeln und Formelalternativen sind Card-Text-Segmente mit LaTeX und Sprechtext. Die Zellkennung lautet `zam-academy:mathematik-realschule-8`.
+## Develop
 
-Die drei bisherigen Klasse-8-Teilzellen enthalten zusammen 24 Karten. [replaces-de-by.json](replaces-de-by.json) dokumentiert jede davon als **Vorschlag**: neun A-Zuordnungen für gleiche Einzelabrufe und 15 C-Fälle ohne sicheren Gesamtnachfolger. Mehrteilige Abrufe werden nicht auf neue Teilfragen verteilt. Auch alte Inhalte außerhalb des geprüften M8-Pflichtumfangs werden nicht stillschweigend umgedeutet. Die ursprünglichen Fixtures liegen bytegleich mit Prüfsummen unter `tests/fixtures/`.
-
-**Es gibt keine Freigabe einer Übertragung oder Ablösung.** Der Entwurf enthält deshalb weder `replaces` noch `retired_items`; `approved` bleibt `null`. Der [Bestandsabgleich](../docs/mathematik-8-coverage.md) beschreibt den Stand. Veröffentlichung, Freigabe der konkreten Zuordnungen und Übernahme ins ZAM-Repository sind weitere Schritte; hier wurde nichts veröffentlicht oder in persönliche Bibliotheken aufgenommen.
-
-Der Migrationstest prüft den unveränderten Entwurf und eine ausschließlich im Speicher gebaute Probe der neun A-Zuordnungen in temporären Bibliotheken. Er erhält 24 Kartenstände und 48 Reviewereignisse einschließlich aller FSRS-Felder. Er prüft außerdem frische unbewertete Karten und die Ablehnung eines automatischen Zusammenführens zweier bestehender Historien. Bei bereits belegten Atomen nimmt `zam-core` 0.54 zusätzliche Geschwisterkarten schrittweise auf; die Probe berücksichtigt beide Aufnahmen, bevor sie Wiederholbarkeit ohne weitere Änderung prüft. C-Karten bleiben in diesem Vorschlag aktiv und unverändert.
-
-## Entwickeln und prüfen
-
-Wie Mathematik 9 verwendet das Paket ausschließlich die bereits vorhandenen Academy-Werkzeuge TypeScript, Vite, Singlefile und Vitest; es führt keine neue Bibliothek ein.
-
-```sh
+```bash
 npm ci
 npm run dev          # http://localhost:5193/mathematik-realschule-8/
-npm run typecheck
 npm test
-npm run build        # eigenständige dist/index.html
-npm run package:zip  # Offline-Paket mit Startdateien für Windows, macOS und Linux
-npm run cell:generate
-ZAM_CORE=<Datei-URL des veröffentlichten zam-core/dist/index.js> node scripts/validate-migration.mjs
+npm run build        # single-file build in dist/index.html
+npm run package:zip  # offline zip in release/ (needs the zip command)
 ```
 
-`src/curriculum/outline.json` hält Lektionskennungen, Zweigbindungen und Voraussetzungen; die sieben Etappendateien enthalten die Inhalte. `scripts/card-content.mjs` enthält die Kartenentwürfe, `scripts/card-ids.json` ihre mit `ulid()` erzeugten, erhaltenen Identitäten. Der Generator erzeugt daraus `cell.json` reproduzierbar. Nach einer Inhaltsänderung `cell:generate` ausführen und die Zelle mit dem veröffentlichten Kern prüfen. Sobald veröffentlicht, bleiben Lektionskennungen, Karten-IDs und Slugs stabil.
+Lesson content lives in `src/curriculum/stage-*.ts`, the lab drawings in `src/lab/views-*.ts` (one per stage), the goal witnesses in `tests/witnesses-stage-*.ts`, the stage-specific checks in `tests/stage-*.test.ts`. `tests/labs-tasks.test.ts` walks every lab grid and 80 generated tasks per level and lesson; `tests/lessons.test.ts` checks the shape and the conventions of every lesson; `tests/mathematik-realschule-8.test.ts` checks the path, the Zweige, the coverage matrix, the cell and the mapping.
 
-Die 114 Tests prüfen unter anderem erreichbare Laborziele, Randkonfigurationen aller Zeichnungen, 100 reproduzierbare Aufgaben je Generator und Level, mathematische Identitäten durch Einsetzen, Definitionsausschlüsse, Simulationszustand, Zweigbindung und alle Kartenlinks. Eine Browserprobe prüft Zweigauswahl, Schnellcheck, Eingaben und Laboraufträge zusätzlich.
+## Sources
+
+- [LehrplanPLUS Realschule, Mathematik 8, Wahlpflichtfächergruppe I](https://www.lehrplanplus.bayern.de/fachlehrplan/realschule/8/mathematik/wpfg1) ([snapshot 2024-04-13](https://web.archive.org/web/20240413214556/https://www.lehrplanplus.bayern.de/fachlehrplan/realschule/8/mathematik/wpfg1))
+- [LehrplanPLUS Realschule, Mathematik 8, Wahlpflichtfächergruppen II/III](https://www.lehrplanplus.bayern.de/fachlehrplan/realschule/8/mathematik/wpfg2-3) ([snapshot 2026-04-18](https://web.archive.org/web/20260418170947/https://www.lehrplanplus.bayern.de/fachlehrplan/realschule/8/mathematik/wpfg2-3))
+- Neighbouring grades for the boundaries: Mathematik 5, 6, 7 and 9 of the Realschule (Wayback snapshots from 2025-04-05 to 2026-07-11).

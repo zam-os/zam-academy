@@ -147,6 +147,15 @@ describe("Prüfen der Eingabe", () => {
     expect(checkTask(empty, ["1", ""]).status).toBe("invalid");
   });
 
+  it("names a vector field as BC→ in a hint, not ⟶BC", () => {
+    const vector = '<span class="vname" style="display:inline-block"><span aria-hidden="true" style="position:absolute">⟶</span>BC</span>: x =';
+    const two = { ...task(field(2, 0), field(5, 0)) };
+    two.fields[0] = { ...two.fields[0], label: vector } as NumberField;
+    const hint = wrongAnswerHint(two, checkTask(two, ["2", "4"]));
+    expect(hint).toContain("BC→");
+    expect(hint).not.toContain("⟶");
+  });
+
   it("writes terms the way the blackboard does", () => {
     expect(linear(0.5, -2)).toBe("0,5x − 2");
     expect(quadratic(2, -4, -6)).toBe("2x² − 4x − 6");
