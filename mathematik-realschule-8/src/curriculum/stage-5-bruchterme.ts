@@ -163,7 +163,7 @@ const bruchterme: Lesson = {
       {
         type: "choice",
         key: "typ",
-        label: "Nenner von T₂(x) = (x + 1) : Nenner",
+        label: "Nenner von T₂",
         options: [
           { value: 0, label: "a · x + c" },
           { value: 1, label: "x² + 1" },

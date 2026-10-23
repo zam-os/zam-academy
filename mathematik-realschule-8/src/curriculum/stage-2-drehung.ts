@@ -227,11 +227,11 @@ const drehung: Lesson = {
       {
         type: "choice",
         key: "hilfe",
-        label: "Hilfslinien",
+        label: "Hilfslinien: Mittelsenkrechten",
         options: [
           { value: 0, label: "keine" },
-          { value: 1, label: "Mittelsenkrechten zu Dreieck 1" },
-          { value: 2, label: "Mittelsenkrechten zu Dreieck 2" },
+          { value: 1, label: "zu Dreieck 1" },
+          { value: 2, label: "zu Dreieck 2" },
         ],
         value: 0,
       },
@@ -1013,10 +1013,10 @@ const vektoren: Lesson = {
       {
         type: "choice",
         key: "phi",
-        label: "Drehwinkel",
+        label: "Drehwinkel (+ gegen, − im Uhrzeigersinn)",
         options: [
-          { value: 90, label: "+90° (gegen den Uhrzeigersinn)" },
-          { value: -90, label: "−90° (im Uhrzeigersinn)" },
+          { value: 90, label: "+90°" },
+          { value: -90, label: "−90°" },
           { value: 180, label: "180°" },
         ],
         value: 90,
@@ -1068,7 +1068,7 @@ const vektoren: Lesson = {
             prompt: `Drehe den Vektor ${vn("v")} = ${colHtml(v)} um φ = ${ruleAngle(phi)}${phi === 180 ? "" : ` (${dirWord(phi)})`}. Gib die Koordinaten des Bildvektors ${vn("v'")} an.`,
             given: [`${vn("v")} = ${colHtml(v)}`, `φ = ${ruleAngle(phi)}`],
             formulaHint: `${ruleAngle(phi)}: ${RULE_HTML[phi]}`,
-            fields: [coord("v'→: x' =", w.x, slips.x), coord("y' =", w.y, slips.y)],
+            fields: [coord("x' =", w.x, slips.x), coord("y' =", w.y, slips.y)],
             steps: [
               `Regel für ${ruleAngle(phi)}: ${RULE_HTML[phi]}`,
               `Mit x = ${fmt(v.x)} und y = ${fmt(v.y)}: ${vn("v'")} = ${ruleWithNumbers(v, phi)} = ${colHtml(w)}`,
