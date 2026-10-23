@@ -216,6 +216,9 @@ describe("Aufgaben", () => {
             for (const slip of field.slips ?? []) {
               expect(Math.abs(slip.value - field.answer) > toleranceOf(field), `${where}: slip ${slip.value} equals the answer ${field.answer}`).toBe(true);
             }
+            // ... and each wrong value has one hint: no value twice
+            const values = (field.slips ?? []).map((slip) => slip.value);
+            expect(values.filter((value, i) => values.findIndex((other) => Math.abs(other - value) < 1e-9) !== i), `${where}: ${field.label}`).toEqual([]);
           }
         }
       }

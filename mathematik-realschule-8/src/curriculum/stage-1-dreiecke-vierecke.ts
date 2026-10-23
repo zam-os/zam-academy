@@ -2199,7 +2199,7 @@ const viereckskonstruktion: Lesson = {
           return {
             prompt: `Die Punkte A${pt(A.x, A.y)}, B${pt(B.x, B.y)} und C${pt(C.x, C.y)} sind Ecken des Parallelogramms ABCD. Berechne den Vektor ${vn("BC")} und die Koordinaten von D.`,
             given: [`A${pt(A.x, A.y)}`, `B${pt(B.x, B.y)}`, `C${pt(C.x, C.y)}`],
-            formulaHint: `${vn("BC")} = C − B (Spitze minus Fuß); D = A ⊕ ${vn("BC")}`,
+            formulaHint: `${vn("BC")} = C − B (Spitze minus Schaft); D = A ⊕ ${vn("BC")}`,
             fields: [
               numberField(`${vn("BC")}: x =`, v.x, "", 0, { slips: [{ value: -v.x, hint: "Der Pfeil BC→ geht von B nach C: Rechne C minus B, nicht B minus C." }] }),
               numberField(`${vn("BC")}: y =`, v.y, "", 0, { slips: [{ value: -v.y, hint: "Der Pfeil BC→ geht von B nach C: Rechne C minus B, nicht B minus C." }] }),

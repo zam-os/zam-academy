@@ -242,13 +242,30 @@ describe("Aufgaben der Etappe 5 rechnen richtig", () => {
         expect(fractions.length).toBe(m.findFraction ? 1 : 3);
       }
     }
+    const values = new Set<number>();
     for (const task of tasks("br-1-bruchterme", "erkennen", 2)) {
       const m = meta(task);
       const zero = -m.s / m.r;
       close(num(task, 1), zero);
-      expect(num(task, 2)).toBe(0);
       expect(m.r * -m.p + m.s).not.toBe(0);
       expect(chosen(task, 0)).toBe(m.right ? "ja" : "nein");
+      // the third number is neither excluded nor the zero of the Zähler: T has a value other than 0 there
+      expect(m.k).not.toBe(zero);
+      expect(m.k).not.toBe(-m.p);
+      const value = (m.k + m.p) / (m.r * m.k + m.s);
+      close(num(task, 2), value);
+      expect(value).not.toBe(0);
+      expect(Math.abs(value * 100 - Math.round(value * 100))).toBeLessThan(1e-9);
+      values.add(value);
+    }
+    expect(values.size).toBeGreaterThan(20);
+  });
+
+  it("5.1 writes a Bruchterm in a line with spaces around the colon: „12 : (2x − 6)“", () => {
+    for (const task of tasks("br-1-bruchterme", "erkennen", 1)) {
+      const field = task.fields[0];
+      if (field.kind !== "choice") throw new Error("no choice");
+      for (const option of field.options) expect(option, option).not.toMatch(/\S:|:\S/);
     }
   });
 
@@ -272,6 +289,30 @@ describe("Aufgaben der Etappe 5 rechnen richtig", () => {
     }
   });
 
+  it("5.2 nenner-null L2: the classmate's solution has exactly the mistake the right option names", () => {
+    const ERRORS = ["sign", "coefficient", "root", "divide", "second", "numerator"];
+    const seen = new Set<string>();
+    for (const task of tasks("br-2-definitionsmenge", "nenner-null", 2)) {
+      const m = meta(task);
+      const right = [...new Set((m.kind === 0 ? [m.u, -m.w / m.m] : m.kind === 1 ? [-m.c, m.c] : m.kind === 2 ? [0, m.z] : m.kind === 3 ? [-m.c, -m.e] : [-m.n / m.m, -m.e]).map((z) => z + 0))].sort((a, b) => a - b);
+      // the classmate's numbers, recomputed from the mistake of each kind
+      const error = ERRORS[m.error];
+      const wrong =
+        m.kind === 0 ? (m.m !== 1 ? [m.u, -m.w] : [m.u, m.w]) : m.kind === 1 ? [m.c] : m.kind === 2 ? [m.z] : m.kind === 3 ? [-m.c] : [-m.n / m.m, m.e];
+      const expectedError = m.kind === 0 ? (m.m !== 1 ? "coefficient" : "sign") : ["", "root", "divide", "second", "sign"][m.kind];
+      expect(error, task.prompt).toBe(expectedError);
+      const shownWrong = [...new Set(wrong.map((z) => z + 0))].sort((a, b) => a - b);
+      expect(task.prompt).toContain(`also ${domain(shownWrong, 0)}.`);
+      // the classmate's set is wrong, and the field the learner fills holds the right one
+      expect(shownWrong.join(";")).not.toBe(right.join(";"));
+      const choice = task.fields[2];
+      if (choice.kind !== "choice") throw new Error("no choice");
+      expect(new Set(choice.options).size).toBe(3);
+      seen.add(error);
+    }
+    expect([...seen].sort()).toEqual(["coefficient", "divide", "root", "second", "sign"]);
+  });
+
   it("5.2 grundmenge: no wrong option names the right set (ℕ ∖ {−1} is ℕ)", () => {
     const parse = (t: string) => {
       const [n, d] = t.replace("−", "-").replace(",", ".").split("/");
@@ -279,7 +320,7 @@ describe("Aufgaben der Etappe 5 rechnen richtig", () => {
     };
     for (const level of [1, 2] as const) {
       for (const task of tasks("br-2-definitionsmenge", "grundmenge", level)) {
-        const field = task.fields[1];
+        const field = task.fields[task.fields.length - 1];
         if (field.kind !== "choice") throw new Error("no choice");
         const G = meta(task).G;
         const setOf = (option: string): string | null => {
@@ -309,12 +350,32 @@ describe("Aufgaben der Etappe 5 rechnen richtig", () => {
       seen.add(`${m.form}/${m.G}`);
     }
     expect(seen.size).toBeGreaterThanOrEqual(10);
+    const grundmengen = new Set<number>();
+    let shared = 0;
     for (const task of tasks("br-2-definitionsmenge", "grundmenge", 2)) {
       const m = meta(task);
-      const zeros = [...(m.shape === 0 ? [-m.c, m.c] : [0, m.c]), -m.n / m.m];
-      const inside = [...new Set(zeros.filter((z) => inG(z, m.G)))];
-      expect(num(task, 0)).toBe(inside.length);
-      expect(chosen(task, 1)).toBe(domain(inside, m.G));
+      const zeros = [...new Set([...(m.shape === 0 ? [-m.c, m.c] : [0, m.c]), -m.n / m.m].map((z) => z + 0))];
+      const inside = zeros.filter((z) => inG(z, m.G));
+      // Sophie over ℚ excludes every zero, Paul over ℤ or ℕ only those in his Grundmenge
+      expect(m.G).not.toBe(0);
+      expect(num(task, 0)).toBe(zeros.length);
+      expect(num(task, 1)).toBe(inside.length);
+      expect(chosen(task, 2)).toBe(domain(inside, m.G));
+      expect(task.steps.join(" ")).toContain(domain(zeros, 0));
+      expect(zeros.length).toBe(m.shared ? 2 : 3);
+      grundmengen.add(m.G);
+      shared += m.shared;
+    }
+    expect([...grundmengen].sort()).toEqual([1, 2]);
+    // Sophie's count is not always 3: now and then both Nenner share a zero
+    expect(shared).toBeGreaterThan(25);
+    expect(shared).toBeLessThan(80);
+  });
+
+  it("5.3 anwendung L2: every amount is written with fmt(), 1.125 g as well as 1.250 g", () => {
+    const shown = (html: string) => html.replace(/<[^>]+>/g, " ");
+    for (const task of tasks("br-3-verhaeltnisgleichungen", "anwendung", 2)) {
+      for (const text of [task.prompt, ...task.given, ...task.steps]) expect(shown(text), text).not.toMatch(/(?<![\d.,])\d{4,}(?!\d)/);
     }
   });
 

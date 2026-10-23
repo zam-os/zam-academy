@@ -1,4 +1,5 @@
 import { describe, expect, it } from "vitest";
+import { STAGES } from "../src/curriculum";
 import { STAGE_DREHUNG } from "../src/curriculum/stage-2-drehung";
 import { createRng, seedFrom } from "../src/exercises/rng";
 import { computeReadouts, defaultLabValues } from "../src/lab/engine";
@@ -405,5 +406,136 @@ describe("Aufgaben der Etappe 2 rechnen richtig", () => {
         expect([C[0] - m.bx, C[1] - m.by]).toEqual(ad);
       }
     }
+  });
+});
+
+/** Twice the signed area (shoelace), written out again: positive for corners counter-clockwise. */
+function twiceArea(pts: P[]): number {
+  return pts.reduce((sum, p, i) => {
+    const q = pts[(i + 1) % pts.length];
+    return sum + p[0] * q[1] - q[0] * p[1];
+  }, 0);
+}
+
+/** The interior angles of a convex polygon, in degrees. */
+function angles(pts: P[]): number[] {
+  return pts.map((p, i) => {
+    const u = pts[(i + pts.length - 1) % pts.length];
+    const w = pts[(i + 1) % pts.length];
+    const a = Math.atan2(u[1] - p[1], u[0] - p[0]);
+    const b = Math.atan2(w[1] - p[1], w[0] - p[0]);
+    const d = Math.abs(a - b) * (180 / Math.PI);
+    return d > 180 ? 360 - d : d;
+  });
+}
+
+describe("Figuren der Etappe 2 sind gegen den Uhrzeigersinn beschriftet und nicht flach", () => {
+  const SEEDS_1000 = Array.from({ length: 1000 }, (_, i) => seedFrom(`stage-2:shape:${i}`));
+  const make = (lessonId: string, generatorId: string) => {
+    const generator = lesson(lessonId).exercises.find((e) => e.id === generatorId)!;
+    return SEEDS_1000.map((seed) => generator.make(createRng(seed), 2));
+  };
+  const check = (pts: P[], minArea: number, where: string) => {
+    const twice = twiceArea(pts);
+    expect(twice, `${where}: Ecken gegen den Uhrzeigersinn`).toBeGreaterThan(0);
+    expect(twice / 2, `${where}: Flächeninhalt`).toBeGreaterThanOrEqual(minArea);
+    for (const angle of angles(pts)) expect(angle, `${where}: kein fast flacher Winkel`).toBeGreaterThanOrEqual(20);
+  };
+
+  it("2.1 gitter L2: ABC and A'B'C' counter-clockwise, at least 3 FE, every angle at least 20°", () => {
+    for (const task of make("dr-1-drehung", "gitter")) {
+      const m = meta(task);
+      const corners: P[] = [[m.ax, m.ay], [m.bx, m.by], [m.cx, m.cy]];
+      check(corners, 3, task.prompt);
+      check(corners.map((p) => rot(p, [m.zx, m.zy], m.phi)), 3, task.prompt);
+    }
+  });
+
+  it("2.2 punktspiegelung L2: the parallelogram ABCD counter-clockwise, at least 6 FE, every angle at least 20°", () => {
+    let parallelograms = 0;
+    for (const task of make("dr-2-punktspiegelung", "punktspiegelung")) {
+      const m = meta(task);
+      if (m.kind !== 1) continue;
+      parallelograms++;
+      const C: P = [2 * m.mx - m.ax, 2 * m.my - m.ay];
+      const D: P = [2 * m.mx - m.bx, 2 * m.my - m.by];
+      check([[m.ax, m.ay], [m.bx, m.by], C, D], 6, task.prompt);
+    }
+    expect(parallelograms).toBeGreaterThan(400);
+  });
+
+  it("2.3 vektor L2: the triangle ABC turned about A counter-clockwise, at least 3 FE, every angle at least 20°", () => {
+    let triangles = 0;
+    for (const task of make("dr-3-vektoren", "vektor")) {
+      const m = meta(task);
+      if (m.kind !== 1) continue;
+      triangles++;
+      check([[m.ax, m.ay], [m.bx, m.by], [m.cx, m.cy]], 3, task.prompt);
+      check([[m.ax, m.ay], [num(task, 0), num(task, 1)], [num(task, 2), num(task, 3)]], 3, task.prompt);
+    }
+    expect(triangles).toBeGreaterThan(450);
+  });
+
+  it("2.1 eigenschaften L1: the two lengths and the two angles differ, so every slip keeps its hint", () => {
+    for (const seed of SEEDS_1000) {
+      const generator = lesson("dr-1-drehung").exercises.find((e) => e.id === "eigenschaften")!;
+      const task = generator.make(createRng(seed), 1);
+      const m = meta(task);
+      expect(m.za, task.prompt).not.toBe(m.ab);
+      expect(Math.abs(m.phi), task.prompt).not.toBe(m.alpha);
+      for (const index of [0, 1, 2]) {
+        const field = task.fields[index];
+        expect(field.kind === "number" && field.slips?.length, `${task.prompt}: field ${index}`).toBe(1);
+      }
+    }
+  });
+});
+
+describe("Wortlaut der Etappen 1 und 2", () => {
+  const texts = (stageNumbers: number[]) =>
+    STAGES.filter((s) => stageNumbers.includes(s.stageNumber)).flatMap((s) =>
+      s.lessons.flatMap((l) => {
+        const out = [l.explanationHtml, l.whyItMatters, l.quiz.question, ...l.quiz.options, l.quiz.explanation, l.lab.intro, ...l.lab.goals.map((g) => g.text), ...l.formulas.flatMap((f) => [f.html, f.quantities])];
+        for (const generator of l.exercises) {
+          for (const level of [1, 2] as const) {
+            for (let i = 0; i < 100; i++) {
+              const t = generator.make(createRng(seedFrom(`wording:${generator.id}:${i}`)), level);
+              out.push(t.prompt, ...t.given, t.formulaHint ?? "", ...t.steps, ...t.fields.flatMap((f) => (f.kind === "number" ? [f.label, ...(f.slips ?? []).map((s) => s.hint)] : [f.label, ...f.options])));
+            }
+          }
+        }
+        return out.map((text) => ({ id: l.id, text }));
+      }),
+    );
+
+  it("names the vector between two points with one rule, „Spitze minus Schaft“, as Mathematik 10 does", () => {
+    const all = texts([1, 2]);
+    expect(all.filter(({ text }) => /Spitze minus (?!Schaft)/.test(text)).map(({ id, text }) => `${id}: ${text}`)).toEqual([]);
+    expect(all.some(({ text }) => text.includes("Spitze minus Schaft"))).toBe(true);
+  });
+
+  it("says „drehsymmetrisch, aber nicht punktsymmetrisch“ and leaves the Steigungsdreieck to lesson 6.4", () => {
+    const all = texts([2]);
+    expect(all.filter(({ text }) => /nur drehsymmetrisch|Steigungsdreieck/.test(text)).map(({ id }) => id)).toEqual([]);
+    expect(lesson("dr-2-punktspiegelung").explanationHtml).toContain("drehsymmetrisch, aber nicht punktsymmetrisch");
+  });
+
+  it("writes vector names in HTML with vn() (the arrow above the name), never as a plain „BC→“", () => {
+    // plain „BC→“ stays in hints, quiz and drawings, which the app shows as text
+    const html = STAGES.filter((s) => [1, 2, 3, 5].includes(s.stageNumber)).flatMap((s) =>
+      s.lessons.flatMap((l) => {
+        const out = [l.explanationHtml, ...l.formulas.map((f) => f.html)];
+        for (const generator of l.exercises) {
+          for (const level of [1, 2] as const) {
+            for (let i = 0; i < 100; i++) {
+              const t = generator.make(createRng(seedFrom(`vn:${generator.id}:${i}`)), level);
+              out.push(t.prompt, ...t.given, t.formulaHint ?? "", ...t.steps, ...t.fields.map((f) => f.label));
+            }
+          }
+        }
+        return out.map((text) => ({ id: l.id, text: text.replace(/<span aria-hidden="true"[^>]*>[⟶→]<\/span>/g, "") }));
+      }),
+    );
+    expect(html.filter(({ text }) => /[A-Za-z]'?→/.test(text)).map(({ id, text }) => `${id}: ${text.slice(0, 120)}`)).toEqual([]);
   });
 });

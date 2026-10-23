@@ -14,11 +14,11 @@ export interface QuizQuestion {
 }
 
 export interface FormulaEntry {
-  /** What the formula is called, e.g. "Satz des Pythagoras". */
+  /** What the formula is called, e.g. "Innenwinkelsumme". */
   name: string;
-  /** The formula as HTML (<sup>, <sub>, the helpers in math-html.ts), never LaTeX. */
+  /** The formula as HTML (<sup>, <sub>, the fraction helpers in format.ts), never LaTeX. */
   html: string;
-  /** What the letters mean, e.g. "a, b Katheten, c Hypotenuse". */
+  /** What the letters mean, e.g. "α, β, γ die Innenwinkel des Dreiecks". */
   quantities: string;
 }
 

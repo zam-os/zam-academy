@@ -158,6 +158,19 @@ export function relevantLessons(stage: Stage, filter: TrackFilter = "alle"): Les
   return stage.lessons.filter((lesson) => lesson.tracks.includes(filter));
 }
 
+/**
+ * The lesson "Weiter mit …" and the Lektion tab open: the active lesson while
+ * it belongs to the chosen Zweig. A lesson outside it, such as the default
+ * dv-1 (Zweig II/III only) for a learner of Zweig I, gives way to the first
+ * lesson of that Zweig the learner has not completed, or to its first lesson
+ * once all are complete.
+ */
+export function continueLessonId(progress: LearnerProgress, stages: Stage[]): string {
+  const lessons = stages.flatMap((stage) => relevantLessons(stage, progress.trackFilter));
+  if (lessons.length === 0 || lessons.some((lesson) => lesson.id === progress.activeLessonId)) return progress.activeLessonId;
+  return (lessons.find((lesson) => !isLessonComplete(progress, lesson)) ?? lessons[0]).id;
+}
+
 /** Progress in a stage, counting only the lessons of the chosen Zweig. */
 export function stageStats(
   progress: LearnerProgress,

@@ -898,7 +898,7 @@ const raumkoordinaten: Lesson = {
       {
         id: "gleiches-bild",
         text: "Stelle Q so ein, dass sein Bildpunkt auf dem von P liegt (höchstens 1 mm daneben), obwohl Q andere Koordinaten hat. Schalte dann die Hilfslinien für Q ein.",
-        check: (v) => (v.u !== v.x || v.v !== v.y || v.w !== v.z) && pictureDistance(vec(v.x, v.y, v.z), vec(v.u, v.v, v.w)) <= 0.1,
+        check: (v) => v.qpath === 1 && (v.u !== v.x || v.v !== v.y || v.w !== v.z) && pictureDistance(vec(v.x, v.y, v.z), vec(v.u, v.v, v.w)) <= 0.1,
       },
       {
         id: "fusspunkt",
@@ -1030,7 +1030,7 @@ const raumkoordinaten: Lesson = {
           return {
             prompt: `Gegeben ist der Punkt P${point3(x, y, z)}. Wo liegt P? Wie weit ist P von der ${planeName}-Ebene entfernt?`,
             given: [],
-            formulaHint: "eine Koordinate 0: Koordinatenebene, benannt nach den beiden anderen Achsen; zwei Koordinaten 0: Achse; Abstand von der xy-Ebene = |z|",
+            formulaHint: "eine Koordinate 0: Koordinatenebene, benannt nach den beiden anderen Achsen; zwei Koordinaten 0: Achse; Abstand von der xy-Ebene = |z|, von der xz-Ebene = |y|, von der yz-Ebene = |x|",
             fields: [shuffledChoice(rng, "Lage von P", where, wrong.slice(0, 3)), numberField(`Abstand von der ${planeName}-Ebene:`, distance, "", 1, { slips: otherSlips })],
             steps: [
               zeros === 0
@@ -1558,21 +1558,40 @@ const schraegbilder: Lesson = {
             meta: { q: qc.q, omega, front, depth, h, drawn },
           };
         }
+        // read the picture back, then draw the body again turned by 90°: [BC] on s, [AB] in the depth
         const qc = rng.pick(Q_CHOICES);
-        const square = rng.next() < 0.5;
+        const square = rng.next() < 0.3;
         const b = rng.pick(qc.lengths);
-        const a = square ? b : rng.pick([4, 5, 6, 7, 8, 9, 10].filter((x) => x !== b));
+        // [AB] becomes a Tiefenkante, so it is a length that q shortens to a neat value
+        const a = square ? b : rng.pick(qc.lengths.filter((x) => x !== b));
         const h = rng.pick([5, 6, 7, 8]);
         const drawn = qc.q * b;
+        const lisaAB = qc.q * a;
         return {
-          prompt: `Im Schrägbild einer geraden Pyramide ABCDS mit rechteckiger Grundfläche liegt [AB] auf der Schrägbildachse (ω = 45°, q = ${qc.text}). Im Bild misst du: [AB] ist ${a} cm lang, [BC] ${fmtUnit(drawn, "cm")} und die Höhe [MS] ${h} cm. Wie lang ist [BC] in Wirklichkeit? Wie groß ist der Flächeninhalt der Grundfläche? Ist die Grundfläche ein Quadrat?`,
+          prompt: `Im Schrägbild einer geraden Pyramide ABCDS mit rechteckiger Grundfläche liegt [AB] auf der Schrägbildachse (ω = 45°, q = ${qc.text}). Im Bild misst du: [AB] ist ${a} cm lang, [BC] ${fmtUnit(drawn, "cm")} und die Höhe [MS] ${h} cm. Lisa zeichnet dieselbe Pyramide noch einmal mit demselben ω und q, diesmal aber mit [BC] auf der Schrägbildachse. Wie lang zeichnet sie [BC] und [AB]? Wie groß ist der Flächeninhalt der Grundfläche in Wirklichkeit, und ist sie ein Quadrat?`,
           given: [],
           fields: [
-            numberField(`${len("BC")} =`, b, "cm", 2, { slips: [{ value: drawn, hint: "Im Bild ist [BC] verkürzt. Die wahre Länge ist gezeichnete Länge : q." }, { value: drawn * qc.q, hint: "Zurück rechnest du mit : q, nicht mit · q." }] }),
+            numberField(`${len("BC")} bei Lisa:`, b, "cm", 2, {
+              slips: [
+                { value: drawn, hint: "Das ist die Länge im ersten Bild, wo [BC] eine Tiefenkante ist. Bei Lisa liegt [BC] auf s und erscheint in wahrer Größe: Rechne zuerst zurück, Bildlänge : q." },
+                { value: drawn * qc.q, hint: "Zurück rechnest du mit : q, nicht mit · q." },
+              ],
+            }),
+            numberField(`${len("AB")} bei Lisa:`, lisaAB, "cm", 2, {
+              slips: [
+                { value: a, hint: "Bei Lisa ist [AB] eine Tiefenkante: Sie steht senkrecht auf [BC] und wird mit q verkürzt." },
+                { value: a / qc.q, hint: "Eine Tiefenkante wird mit q multipliziert, nicht durch q geteilt." },
+              ],
+            }),
             numberField("Grundfläche:", a * b, "cm²", 2, { slips: [{ value: a * drawn, hint: "Für den Flächeninhalt brauchst du die wahre Länge von [BC], nicht die Bildlänge." }] }),
             yesNo("Quadrat?", square),
           ],
-          steps: [`[BC] ist eine Tiefenkante: ${fmt(drawn)} cm : ${qc.text} = ${b} cm.`, `Grundfläche: ${a} cm · ${b} cm = ${a * b} cm². ${square ? "Beide Kanten sind gleich lang: ein Quadrat, auch wenn es im Bild wie ein Parallelogramm aussieht." : "Die Kanten sind verschieden lang: ein Rechteck, kein Quadrat."}`, `<strong>${len("BC")} = ${b} cm; ${a * b} cm²; Quadrat: ${jaNein(square)}</strong>`],
+          steps: [
+            `Im ersten Bild ist [BC] eine Tiefenkante: ${len("BC")} = ${fmt(drawn)} cm : ${qc.text} = ${b} cm. [AB] liegt auf s: ${len("AB")} = ${a} cm.`,
+            `Bei Lisa liegt [BC] auf s und erscheint in wahrer Größe, ${b} cm. [AB] steht senkrecht auf [BC] und läuft jetzt in die Tiefe: ${qc.text} · ${a} cm = ${fmtUnit(lisaAB, "cm")}. Die Höhe [MS] bleibt in beiden Bildern ${h} cm.`,
+            `Grundfläche: ${a} cm · ${b} cm = ${a * b} cm². ${square ? "Beide Kanten sind gleich lang: ein Quadrat, auch wenn es im Bild wie ein Parallelogramm aussieht; Lisas Bild sieht genauso aus wie das erste." : "Die Kanten sind verschieden lang: ein Rechteck, kein Quadrat."}`,
+            `<strong>bei Lisa: ${len("BC")} = ${b} cm, ${len("AB")} = ${fmtUnit(lisaAB, "cm")}; ${a * b} cm²; Quadrat: ${jaNein(square)}</strong>`,
+          ],
           meta: { q: qc.q, a, b, h, drawn, square: square ? 1 : 0 },
         };
       },
@@ -1589,16 +1608,53 @@ const schraegbilder: Lesson = {
  * look in the Schrägbild (ω = 45°, q = ½). Each name ∢XYZ is measured
  * counterclockwise from ray YX to ray YZ in the Schrägbild ([AB] on s, the
  * Tiefenkanten to the right and up), as Bavarian books name angles.
+ *
+ * `seen` gives the reason how the angle looks in the picture. Where that
+ * follows from ω alone (a Tiefenkante against an edge parallel to the
+ * Zeichenebene), the learner works it out; where it does not (a diagonal,
+ * a tilted side face), the task states the angle measured in the picture
+ * (`measured`, whole degrees as with a Geodreieck), so "kleiner" or
+ * "größer" can be decided.
  */
-export const ANGLE_CASES: Array<{ body: string; name: string; where: string; value: number; picture: "kleiner" | "gleich" | "größer"; why: string }> = [
-  { body: "einem Würfel ABCDEFGH mit der Kantenlänge 4 cm", name: "∢BAC", where: "zwischen der Kante [AB] und der Flächendiagonale [AC] der Grundfläche", value: 45, picture: "kleiner", why: "Die Grundfläche ist ein Quadrat: Die Diagonale halbiert den rechten Winkel, 90° : 2 = 45°." },
-  { body: "einem Würfel ABCDEFGH mit der Kantenlänge 4 cm", name: "∢FBA", where: "zwischen den Kanten [BF] und [BA] der Vorderfläche", value: 90, picture: "gleich", why: "Die Vorderfläche ist ein Quadrat: rechter Winkel. Sie liegt parallel zur Zeichenebene und erscheint unverzerrt." },
-  { body: "einem Quader ABCDEFGH (6 cm × 4 cm × 3 cm)", name: "∢BAD", where: "zwischen der Kante [AB] auf s und der Tiefenkante [AD]", value: 90, picture: "kleiner", why: "Die Grundfläche ist ein Rechteck: rechter Winkel. Im Bild läuft [AD] unter ω = 45° zu s." },
-  { body: "einem Quader ABCDEFGH (6 cm × 4 cm × 3 cm)", name: "∢CBA", where: "zwischen der Tiefenkante [BC] und der Kante [BA]", value: 90, picture: "größer", why: "Die Grundfläche ist ein Rechteck: rechter Winkel. Im Bild ist er 180° − 45° = 135° groß." },
-  { body: "einem Quader ABCDEFGH (6 cm × 4 cm × 3 cm)", name: "∢CBF", where: "zwischen der Tiefenkante [BC] und der senkrechten Kante [BF]", value: 90, picture: "kleiner", why: "Die rechte Seitenfläche ist ein Rechteck: rechter Winkel. Im Bild steht [BF] senkrecht und [BC] läuft unter 45°: 90° − 45° = 45°." },
-  { body: "einer quadratischen Pyramide ABCDS mit acht gleich langen Kanten von je 4 cm", name: "∢BAS", where: "in der Seitenfläche ABS bei der Ecke A", value: 60, picture: "kleiner", why: "Die Seitenfläche hat drei gleich lange Seiten: ein gleichseitiges Dreieck mit lauter 60°-Winkeln." },
-  { body: "einem Würfel ABCDEFGH mit der Kantenlänge 4 cm", name: "∢ACB", where: "zwischen der Flächendiagonale [CA] und der Tiefenkante [CB]", value: 45, picture: "kleiner", why: "Im Quadrat ABCD halbiert die Diagonale den rechten Winkel bei C: 45°." },
-  { body: "einem Quader ABCDEFGH (6 cm × 4 cm × 3 cm)", name: "∢AEH", where: "zwischen der senkrechten Kante [EA] und der Tiefenkante [EH]", value: 90, picture: "größer", why: "Die linke Seitenfläche ist ein Rechteck: rechter Winkel. Im Bild ist er 90° + 45° = 135° groß." },
+export const ANGLE_CASES: Array<{ body: string; name: string; where: string; value: number; picture: "kleiner" | "gleich" | "größer"; why: string; seen: string; measured?: number; measuredHint?: string }> = [
+  {
+    body: "einem Würfel ABCDEFGH mit der Kantenlänge 4 cm",
+    name: "∢BAC",
+    where: "zwischen der Kante [AB] und der Flächendiagonale [AC] der Grundfläche",
+    value: 45,
+    picture: "kleiner",
+    why: "Die Grundfläche ist ein Quadrat: Die Diagonale halbiert den rechten Winkel, 90° : 2 = 45°.",
+    measured: 15,
+    seen: "Im Bild ist die Tiefenkante [BC] auf die Hälfte verkürzt; darum verläuft [AC] viel flacher als in Wirklichkeit: gemessen etwa 15°, weniger als 45°.",
+    measuredHint: "Etwa 15° misst du im Schrägbild. In Wirklichkeit halbiert die Diagonale den rechten Winkel des Quadrats.",
+  },
+  { body: "einem Würfel ABCDEFGH mit der Kantenlänge 4 cm", name: "∢FBA", where: "zwischen den Kanten [BF] und [BA] der Vorderfläche", value: 90, picture: "gleich", why: "Die Vorderfläche ist ein Quadrat: rechter Winkel.", seen: "Die Vorderfläche liegt parallel zur Zeichenebene: [BA] liegt auf s, [BF] steht senkrecht, und ∢FBA erscheint unverzerrt als 90°." },
+  { body: "einem Quader ABCDEFGH (6 cm × 4 cm × 3 cm)", name: "∢BAD", where: "zwischen der Kante [AB] auf s und der Tiefenkante [AD]", value: 90, picture: "kleiner", why: "Die Grundfläche ist ein Rechteck: rechter Winkel.", seen: "Im Bild läuft die Tiefenkante [AD] unter ω = 45° zur Kante [AB] auf s: ∢BAD erscheint als 45°, kleiner als 90°." },
+  { body: "einem Quader ABCDEFGH (6 cm × 4 cm × 3 cm)", name: "∢CBA", where: "zwischen der Tiefenkante [BC] und der Kante [BA]", value: 90, picture: "größer", why: "Die Grundfläche ist ein Rechteck: rechter Winkel.", seen: "Im Bild läuft [BC] unter 45° nach rechts oben, [BA] auf s nach links: ∢CBA erscheint als Nebenwinkel von ω, 180° − 45° = 135°, größer als 90°." },
+  { body: "einem Quader ABCDEFGH (6 cm × 4 cm × 3 cm)", name: "∢CBF", where: "zwischen der Tiefenkante [BC] und der senkrechten Kante [BF]", value: 90, picture: "kleiner", why: "Die rechte Seitenfläche ist ein Rechteck: rechter Winkel.", seen: "Im Bild steht [BF] senkrecht auf s, und [BC] läuft unter 45° zu s: ∢CBF erscheint als 90° − 45° = 45°, kleiner als 90°." },
+  {
+    body: "einer quadratischen Pyramide ABCDS mit acht gleich langen Kanten von je 4 cm",
+    name: "∢BAS",
+    where: "in der Seitenfläche ABS bei der Ecke A",
+    value: 60,
+    picture: "kleiner",
+    why: "Die Seitenfläche hat drei gleich lange Seiten: ein gleichseitiges Dreieck mit lauter 60°-Winkeln.",
+    measured: 53,
+    seen: "Die Spitze S liegt über der Mitte der Grundfläche, also hinter [AB]; im Bild rückt S darum nach rechts, und [AS] steht flacher: gemessen etwa 53°, weniger als 60°.",
+    measuredHint: "Etwa 53° misst du im Schrägbild. In Wirklichkeit ist die Seitenfläche ein gleichseitiges Dreieck.",
+  },
+  {
+    body: "einem Würfel ABCDEFGH mit der Kantenlänge 4 cm",
+    name: "∢ACB",
+    where: "zwischen der Flächendiagonale [CA] und der Tiefenkante [CB]",
+    value: 45,
+    picture: "kleiner",
+    why: "Im Quadrat ABCD halbiert die Diagonale den rechten Winkel bei C: 45°.",
+    measured: 30,
+    seen: "Im Bild läuft [CB] unter 45° und [CA] viel flacher, weil die Tiefenkante verkürzt ist: gemessen etwa 30°, weniger als 45°.",
+    measuredHint: "Etwa 30° misst du im Schrägbild. In Wirklichkeit halbiert die Diagonale den rechten Winkel des Quadrats.",
+  },
+  { body: "einem Quader ABCDEFGH (6 cm × 4 cm × 3 cm)", name: "∢AEH", where: "zwischen der senkrechten Kante [EA] und der Tiefenkante [EH]", value: 90, picture: "größer", why: "Die linke Seitenfläche ist ein Rechteck: rechter Winkel.", seen: "Im Bild zeigt [EA] senkrecht nach unten, und [EH] läuft unter 45° nach rechts oben: ∢AEH erscheint als 90° + 45° = 135°, größer als 90°." },
 ];
 export const COMPARE = ["kleiner als in Wirklichkeit", "genauso groß", "größer als in Wirklichkeit"];
 
@@ -1758,23 +1814,27 @@ const wahreGroesse: Lesson = {
           const index = rng.int(0, ANGLE_CASES.length - 1);
           const c = ANGLE_CASES[index];
           const answer = c.picture === "kleiner" ? 0 : c.picture === "gleich" ? 1 : 2;
+          const drawing = `Im Schrägbild liegt [AB] auf der Schrägbildachse (ω = 45°, q = ½)${c.measured === undefined ? "." : `; dort misst du ${c.name} ≈ ${c.measured}°.`}`;
           return {
-            prompt: `In ${c.body} betrachtest du den Winkel ${c.name} ${c.where}. Wie groß ist er in Wirklichkeit? Wie erscheint er im Schrägbild mit ω = 45° und q = ½, wenn [AB] auf der Schrägbildachse liegt?`,
-            given: [],
-            formulaHint: "rechte Winkel bleiben in wahrer Größe 90°; Quadratdiagonale: 45°; gleichseitiges Dreieck: 60°",
+            prompt: `In ${c.body} betrachtest du den Winkel ${c.name} ${c.where}. ${drawing} Wie groß ist der Winkel in Wirklichkeit? Erscheint er im Schrägbild kleiner, genauso groß oder größer?`,
+            given: c.measured === undefined ? [] : [`im Schrägbild gemessen: ${c.name} ≈ ${c.measured}°`],
+            formulaHint: "in wahrer Größe: rechte Winkel 90°, Quadratdiagonale und Seite 45°, gleichseitiges Dreieck 60°; im Schrägbild bildet eine Tiefenkante mit s den Winkel ω",
             fields: [
               numberField(`${c.name} =`, c.value, "°", 0, {
                 slips:
                   c.value === 90
                     ? [45, 135].map((value) => ({ value, hint: "So groß kann der Winkel im Schrägbild aussehen. In Wirklichkeit ist er ein rechter Winkel." }))
-                    : c.value === 60
-                      ? [{ value: 90, hint: "Die Seitenfläche hat drei gleich lange Seiten: ein gleichseitiges Dreieck, jeder Winkel misst 60°." }]
-                      : [{ value: 90, hint: "Die Diagonale halbiert den rechten Winkel des Quadrats: Es sind nicht 90°." }],
+                    : [
+                        ...(c.measured !== undefined ? [{ value: c.measured, hint: c.measuredHint ?? "" }] : []),
+                        c.value === 60
+                          ? { value: 90, hint: "Die Seitenfläche hat drei gleich lange Seiten: ein gleichseitiges Dreieck, jeder Winkel misst 60°." }
+                          : { value: 90, hint: "Die Diagonale halbiert den rechten Winkel des Quadrats: Es sind nicht 90°." },
+                      ],
               }),
               choiceField("im Schrägbild:", COMPARE, answer),
             ],
-            steps: [c.why, c.picture === "gleich" ? "Im Schrägbild: Der Winkel liegt parallel zur Zeichenebene und erscheint genauso groß." : `Im Schrägbild erscheint der Winkel ${c.picture} als in Wirklichkeit, denn die Fläche, in der er liegt, ist nicht parallel zur Zeichenebene.`, `<strong>${c.name} = ${c.value}°; im Schrägbild ${COMPARE[answer]}</strong>`],
-            meta: { index, value: c.value, answer },
+            steps: [c.why, c.seen, `<strong>${c.name} = ${c.value}°; im Schrägbild ${COMPARE[answer]}</strong>`],
+            meta: { index, value: c.value, answer, measured: c.measured ?? 0 },
           };
         }
         const kind = rng.int(0, 1);

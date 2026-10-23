@@ -13,14 +13,16 @@ export function within(value: number, target: number, delta: number): boolean {
   return Number.isFinite(value) && Math.abs(value - target) <= delta;
 }
 
-export const DEG = Math.PI / 180;
+/**
+ * sin of an angle in degrees. Grade 8 teaches no trigonometry; stage 1 uses
+ * it only inside a generator, never in learner text: with the angle opposite
+ * the shorter side, two triangles exist only while that side is longer than
+ * the distance l · sin(w) of the far corner from the other leg.
+ */
+export const sinD = (deg: number): number => Math.sin((deg * Math.PI) / 180);
 
-export const sinD = (deg: number): number => Math.sin(deg * DEG);
-export const cosD = (deg: number): number => Math.cos(deg * DEG);
-export const tanD = (deg: number): number => Math.tan(deg * DEG);
-export const asinD = (ratio: number): number => Math.asin(ratio) / DEG;
-export const acosD = (ratio: number): number => Math.acos(ratio) / DEG;
-export const atanD = (ratio: number): number => Math.atan(ratio) / DEG;
+/** The same number twice, up to floating-point noise. */
+const sameValue = (a: number, b: number): boolean => Math.abs(a - b) <= 1e-9 * Math.max(1, Math.abs(a), Math.abs(b));
 
 /** A number field; `digits` decimals in the solution. */
 export function numberField(
@@ -32,8 +34,11 @@ export function numberField(
 ): NumberField {
   const field: NumberField = { kind: "number", label, answer, unit, digits, ...extra };
   // A slip the checker would accept as right is no slip; every value it
-  // rejects keeps its targeted hint.
-  const slips = extra.slips?.filter((slip) => Number.isFinite(slip.value) && Math.abs(slip.value - answer) > toleranceOf(field));
+  // rejects keeps its targeted hint. Two slips with the same value would
+  // compete for one wrong answer: the first one keeps it.
+  const slips = extra.slips
+    ?.filter((slip) => Number.isFinite(slip.value) && Math.abs(slip.value - answer) > toleranceOf(field))
+    .filter((slip, index, all) => all.findIndex((other) => sameValue(other.value, slip.value)) === index);
   return slips ? { ...field, slips } : field;
 }
 
@@ -46,7 +51,3 @@ export function choiceField(label: string, options: string[], correctIndex: numb
 export function yesNo(label: string, yes: boolean): ChoiceField {
   return choiceField(label, ["ja", "nein"], yes ? 0 : 1);
 }
-
-/** The slip a calculator set to RAD gives for c · sin(α°), so the hint can name it. */
-export const RAD_HINT =
-  "Steht dein Taschenrechner auf RAD? Für Winkel in Grad muss er auf DEG (D) stehen.";

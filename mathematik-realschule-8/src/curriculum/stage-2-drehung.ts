@@ -95,6 +95,40 @@ function shuffledChoice(rng: Rng, label: string, options: string[], correct: num
 /** The largest absolute coordinate of some points. */
 const reach = (...pts: Vec[]): number => Math.max(...pts.map((p) => Math.max(Math.abs(p.x), Math.abs(p.y))));
 
+/** The area of a polygon with sign (shoelace formula): positive when its corners run counter-clockwise. */
+function signedArea(pts: Vec[]): number {
+  let twice = 0;
+  pts.forEach((p, i) => {
+    const q = pts[(i + 1) % pts.length];
+    twice += p.x * q.y - q.x * p.y;
+  });
+  return twice / 2;
+}
+
+/** The smallest interior angle of a convex polygon, in degrees. */
+function smallestAngle(pts: Vec[]): number {
+  return Math.min(
+    ...pts.map((p, i) => {
+      const u = sub(pts[(i + pts.length - 1) % pts.length], p);
+      const w = sub(pts[(i + 1) % pts.length], p);
+      const cos = (u.x * w.x + u.y * w.y) / (Math.hypot(u.x, u.y) * Math.hypot(w.x, w.y));
+      return (Math.acos(Math.max(-1, Math.min(1, cos))) * 180) / Math.PI;
+    }),
+  );
+}
+
+/** The smallest angle a generated figure may have: no nearly flat triangles or parallelograms. */
+const MIN_ANGLE = 20;
+
+/**
+ * A figure the learner draws and names: its corners run counter-clockwise
+ * (as the package names every figure), it covers at least `minArea` FE and
+ * has no angle under MIN_ANGLE.
+ */
+function wellShaped(pts: Vec[], minArea: number): boolean {
+  return signedArea(pts) >= minArea && smallestAngle(pts) >= MIN_ANGLE;
+}
+
 // 2.1 Die Drehung ────────────────────────────────────────────────────────────
 
 /** A rotation by ±90° or 180° about a grid point, P and P' inside −7 … 7. */
@@ -142,8 +176,8 @@ function findCentre(rng: Rng) {
     const corners = [a, b, c].map((d) => add(z, d));
     const images = [a, b, c].map((d) => add(z, turn(d, phi)));
     if ([a, b, c].some((d) => d.x === 0 && d.y === 0)) continue;
-    const area = (corners[1].x - corners[0].x) * (corners[2].y - corners[0].y) - (corners[1].y - corners[0].y) * (corners[2].x - corners[0].x);
-    if (Math.abs(area) < 4) continue;
+    // ABC counter-clockwise and not flat; the image keeps both
+    if (!wellShaped(corners, 3)) continue;
     if (reach(...corners, ...images) > 7) continue;
     // no corner of the image on a corner of the triangle, no corner on Z
     if (images.some((q) => corners.some((p) => same(p, q))) || corners.some((p) => same(p, z))) continue;
@@ -469,8 +503,11 @@ const drehung: Lesson = {
         if (level === 1) {
           const ab = rng.int(25, 90) / 10;
           const alpha = rng.int(25, 115);
-          const za = rng.int(20, 70) / 10;
-          const phi = rng.sign() * rng.pick([35, 40, 55, 65, 75, 80, 100, 115, 125, 140, 160]);
+          // two different lengths and α different from |φ|: each slip keeps its hint
+          let za = ab;
+          while (za === ab) za = rng.int(20, 70) / 10;
+          let phi = alpha;
+          while (Math.abs(phi) === alpha) phi = rng.sign() * rng.pick([35, 40, 55, 65, 75, 80, 100, 115, 125, 140, 160]);
           const ccw = rng.next() < 0.5;
           const sense = ccw ? "gegen den Uhrzeigersinn" : "im Uhrzeigersinn";
           return {
@@ -674,7 +711,7 @@ const punktspiegelung: Lesson = {
       3. P' = Z ⊕ ${vn("ZP'")}: x' = 2 + (−3) = −1 und y' = 3 + 2 = 5, also P'(−1 | 5).<br>
       Probe: Der Mittelpunkt von [PP'] ist ((5 + (−1)) : 2 | (1 + 5) : 2) = (2 | 3), also Z.</div>
     <p><strong>Drehsymmetrische Figuren:</strong> Eine Figur heißt <strong>drehsymmetrisch</strong>, wenn eine Drehung um einen Punkt Z mit 0° &lt; φ &lt; 360° sie auf sich selbst abbildet. Besteht sie aus n gleichen Teilen, die gleichmäßig um Z verteilt sind (ein regelmäßiges n-Eck, ein Stern mit n gleichen Zacken), ist der <strong>kleinste Drehwinkel 360° : n</strong>. Jedes Vielfache davon unter 360° bildet die Figur ebenfalls auf sich ab; das sind n − 1 Drehwinkel. 360° zählt nicht mit, denn eine volle Umdrehung bildet jede Figur auf sich ab.</p>
-    <p>Eine Figur ist <strong>punktsymmetrisch</strong>, wenn die Punktspiegelung an Z sie auf sich abbildet, wenn also 180° einer ihrer Drehwinkel ist; Z heißt dann Symmetriezentrum. Ein regelmäßiges n-Eck ist für gerades n punktsymmetrisch, für ungerades n nur drehsymmetrisch.</p>
+    <p>Eine Figur ist <strong>punktsymmetrisch</strong>, wenn die Punktspiegelung an Z sie auf sich abbildet, wenn also 180° einer ihrer Drehwinkel ist; Z heißt dann Symmetriezentrum. Ein regelmäßiges n-Eck ist für gerades n punktsymmetrisch, für ungerades n drehsymmetrisch, aber nicht punktsymmetrisch.</p>
     <table class="mini">
       <tr><th>Figur</th><th>kleinster Drehwinkel</th><th>punktsymmetrisch?</th></tr>
       <tr><td>gleichseitiges Dreieck, Windrad mit drei Flügeln</td><td>120°</td><td>nein</td></tr>
@@ -699,7 +736,7 @@ const punktspiegelung: Lesson = {
     options: ["ein gleichseitiges Dreieck", "ein Parallelogramm", "ein regelmäßiges Fünfeck", "ein Windrad mit drei Flügeln"],
     correctIndex: 1,
     explanation:
-      "Punktsymmetrisch heißt: Die Drehung um 180° bildet die Figur auf sich ab. Beim Parallelogramm gelingt das um den Schnittpunkt der Diagonalen. Dreieck, Fünfeck und Windrad haben die kleinsten Drehwinkel 120°, 72° und 120°, und 180° ist kein Vielfaches davon; sie sind nur drehsymmetrisch.",
+      "Punktsymmetrisch heißt: Die Drehung um 180° bildet die Figur auf sich ab. Beim Parallelogramm gelingt das um den Schnittpunkt der Diagonalen. Dreieck, Fünfeck und Windrad haben die kleinsten Drehwinkel 120°, 72° und 120°, und 180° ist kein Vielfaches davon; sie sind drehsymmetrisch, aber nicht punktsymmetrisch.",
   },
   lab: {
     kind: "point-symmetry",
@@ -790,8 +827,8 @@ const punktspiegelung: Lesson = {
             const b = add(m, vec(rng.int(0, 5), rng.int(-5, -1)));
             const c = sub(add(m, m), a);
             const d = sub(add(m, m), b);
-            const cross = (b.x - a.x) * (m.y - a.y) - (b.y - a.y) * (m.x - a.x);
-            if (cross === 0 || reach(a, b, c, d) > 8) continue;
+            // ABCD counter-clockwise, at least 6 FE and not flat
+            if (!wellShaped([a, b, c, d], 6) || reach(a, b, c, d) > 8) continue;
             const ma = sub(a, m);
             const mb = sub(b, m);
             const swap = "C liegt A gegenüber, D liegt B gegenüber: Spiegle A an M, um C zu erhalten, und B an M für D.";
@@ -958,7 +995,7 @@ const vektoren: Lesson = {
     "Mit gedrehten Vektoren berechnest du die Ecken von Quadraten und gedrehten Figuren, ohne zu zeichnen. Solche Aufgaben kommen in Prüfungen immer wieder vor, wenn Figuren im Koordinatensystem gedreht oder Quadrate aus zwei Ecken ergänzt werden.",
   explanationHtml: `
     <p><strong>Wiederholung aus M7:</strong> Ein Vektor ${vn("v")} = ${vecHtml("x", "y")} sagt, wie weit man nach rechts (x) und nach oben (y) geht. Den Vektor zwischen zwei Punkten berechnest du mit „Spitze minus Schaft“, und P ⊕ ${vn("v")} hängt ${vn("v")} an den Punkt P an.</p>
-    <p><strong>Warum die Koordinaten die Plätze tauschen:</strong> Zeichne zu ${vn("v")} = ${vecHtml(3, 1)} das Steigungsdreieck: 3 nach rechts, 1 nach oben. Dreht man das ganze Dreieck um 90° gegen den Uhrzeigersinn, wird aus „3 nach rechts“ der Weg „3 nach oben“ und aus „1 nach oben“ der Weg „1 nach links“. Der Bildvektor ist ${vecHtml(-1, 3)}: Die Koordinaten tauschen die Plätze, und die neue x-Koordinate bekommt das andere Vorzeichen.</p>
+    <p><strong>Warum die Koordinaten die Plätze tauschen:</strong> Zeichne zu ${vn("v")} = ${vecHtml(3, 1)} den Weg auf dem Gitter: 3 Kästchen nach rechts, dann 1 nach oben. Zusammen mit dem Pfeil von ${vn("v")} bildet dieser Kästchenweg ein rechtwinkliges Dreieck. Dreht man das ganze Dreieck um 90° gegen den Uhrzeigersinn, wird aus „3 nach rechts“ der Weg „3 nach oben“ und aus „1 nach oben“ der Weg „1 nach links“. Der Bildvektor ist ${vecHtml(-1, 3)}: Die Koordinaten tauschen die Plätze, und die neue x-Koordinate bekommt das andere Vorzeichen.</p>
     <table class="mini">
       <tr><th>Drehwinkel</th><th>Bildvektor von ${vecHtml("x", "y")}</th><th>Beispiel ${vecHtml(3, 1)}</th></tr>
       <tr><td>+90° (gegen den Uhrzeigersinn)</td><td>${vecHtml("−y", "x")}</td><td>${vecHtml(-1, 3)}</td></tr>
@@ -998,7 +1035,7 @@ const vektoren: Lesson = {
     kind: "vector-rotation",
     title: "Labor: Vektoren drehen",
     intro:
-      "Wähle, was gedreht wird: ein Vektor am Ursprung, ein fester Punkt P um ein Zentrum Z oder die Seite AB eines Quadrats. Die gestrichelten Steigungsdreiecke zeigen, wie die Koordinaten beim Drehen die Plätze tauschen; rechts steht die Rechnung.",
+      "Wähle, was gedreht wird: ein Vektor am Ursprung, ein fester Punkt P um ein Zentrum Z oder die Seite AB eines Quadrats. Die gestrichelten Kästchenwege an den Pfeilen (erst nach rechts oder links, dann nach oben oder unten) zeigen, wie die Koordinaten beim Drehen die Plätze tauschen; rechts steht die Rechnung.",
     params: [
       {
         type: "choice",
@@ -1084,11 +1121,13 @@ const vektoren: Lesson = {
             const a = vec(rng.int(-4, 4), rng.int(-4, 4));
             const ab = vec(rng.int(-4, 4), rng.int(-4, 4));
             const ac = vec(rng.int(-4, 4), rng.int(-4, 4));
-            if (ab.x * ac.y - ab.y * ac.x === 0 || (ab.x === 0 && ab.y === 0) || (ac.x === 0 && ac.y === 0)) continue;
+            if ((ab.x === 0 && ab.y === 0) || (ac.x === 0 && ac.y === 0)) continue;
             if (same(a, ORIGIN)) continue;
             const phi = rng.pick([90, -90, 180]);
             const b = add(a, ab);
             const c = add(a, ac);
+            // ABC counter-clockwise and not flat
+            if (!wellShaped([a, b, c], 3)) continue;
             const b1 = add(a, turn(ab, phi));
             const c1 = add(a, turn(ac, phi));
             if (reach(a, b, c, b1, c1) > 8) continue;
