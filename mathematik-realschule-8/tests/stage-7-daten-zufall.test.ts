@@ -500,6 +500,18 @@ describe("7.2 Baumdiagramme: the tasks compute right", () => {
       expect(full).toContain(picked(task, 2));
     }
   });
+
+  it("Level 2: the impossible path is never the only option that repeats a colour (over 1000 seeds)", () => {
+    const generator = lesson("dz-2-baumdiagramm").exercises.find((e) => e.id === "pfade")!;
+    let giveaways = 0;
+    for (let i = 0; i < 1000; i++) {
+      const task = generator.make(createRng(seedFrom(`stage-7:cue:${i}`)), 2);
+      const f = choice(task, 2);
+      const repeated = f.options.map((o) => new Set(o).size < o.length);
+      if (repeated.filter(Boolean).length === 1 && repeated[f.correctIndex]) giveaways += 1;
+    }
+    expect(giveaways).toBe(0);
+  });
 });
 
 // ─── 7.3 Vierfeldertafeln ──────────────────────────────────────────────────

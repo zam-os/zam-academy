@@ -628,7 +628,7 @@ const ergebnisEreignis: Lesson = {
   formulas: [
     { name: "Ergebnis", html: "ein möglicher Ausgang, z. B. die Augenzahl 4", quantities: "bei jeder Durchführung tritt genau ein Ergebnis ein" },
     { name: "Ereignis", html: "E: „gerade Augenzahl“ = {2; 4; 6}", quantities: "E tritt ein, wenn das Ergebnis zu E gehört" },
-    { name: "Sicheres und unmögliches Ereignis", html: "alle Ergebnisse gehören dazu · E = { }", quantities: "z. B. „Augenzahl kleiner als 7“ und „Augenzahl 7“ beim Würfel" },
+    { name: "Sicheres und unmögliches Ereignis", html: "sicher: alle Ergebnisse gehören dazu; unmöglich: E = { }", quantities: "z. B. „Augenzahl kleiner als 7“ und „Augenzahl 7“ beim Würfel" },
   ],
   quiz: {
     question: "Ein Würfel wird geworfen. Welche Ergebnisse gehören zum Ereignis „Augenzahl mindestens 4“?",
@@ -958,14 +958,18 @@ function pfadeTask(rng: Rng, level: 1 | 2): ExerciseTask {
     const impossible = drawSequences(symbols, null, s).map((p) => p.join("")).filter((p) => !paths.includes(p));
     const id = rng.int(0, URN_EVENTS.length - 1);
     const E = paths.filter(URN_EVENTS[id].test);
-    if ((impossible.length === 0 || E.length === 0 || E.length === paths.length || paths.length > 18) && attempt < 80) continue;
+    // an impossible path always repeats a colour; a possible one must repeat one too, or the repetition gives the answer away
+    const repeats = (p: string) => new Set(p).size < p.length;
+    const possibleRepeats = paths.filter(repeats);
+    if ((impossible.length === 0 || possibleRepeats.length === 0 || E.length === 0 || E.length === paths.length || paths.length > 18) && attempt < 80) continue;
     const content = ballsText([
       [red, "rote"],
       [blue, "blaue"],
       [green, "grüne"],
     ]);
     const nope = rng.pick(impossible);
-    const possible = rng.shuffle(paths).slice(0, 2);
+    const twin = rng.pick(possibleRepeats.length > 0 ? possibleRepeats : paths);
+    const possible = [twin, rng.pick(paths.filter((p) => p !== twin))];
     const Ewith = drawSequences(symbols, null, s).map((p) => p.join("")).filter(URN_EVENTS[id].test).length;
     return {
       prompt: `In einer Urne liegen ${content}. Es wird ${s === 2 ? "zweimal" : "dreimal"} nacheinander ohne Zurücklegen gezogen und jedes Mal die Farbe notiert (r, b${green ? ", g" : ""}). Wie viele Ergebnisse hat das Zufallsexperiment? Wie viele Pfade gehören zum Ereignis „${URN_EVENTS[id].words}“? Welches dieser Ergebnisse ist unmöglich?`,
@@ -1449,7 +1453,7 @@ const vierfeldertafel: Lesson = {
     <div class="merke"><strong>Merke:</strong> Die Vierfeldertafel zeigt die vier Kombinationen zweier Merkmale. Jede Zeile und jede Spalte ergibt ihre Summe, alle vier Felder zusammen die Gesamtzahl. Bei „A oder B“ zählst du die drei passenden Felder, jedes nur einmal: Anzahl von A plus Anzahl von B minus Anzahl von „A und B“.</div>
   `,
   formulas: [
-    { name: "Vierfeldertafel", html: "zwei Felder einer Zeile = Zeilensumme · zwei Felder einer Spalte = Spaltensumme · alle vier Felder = Gesamtzahl", quantities: "in den vier Feldern stehen die absoluten Häufigkeiten der vier Kombinationen" },
+    { name: "Vierfeldertafel", html: "Felder einer Zeile ergeben die Zeilensumme, Felder einer Spalte die Spaltensumme; alle vier Felder ergeben die Gesamtzahl", quantities: "in den vier Feldern stehen die absoluten Häufigkeiten der vier Kombinationen" },
     { name: "„A oder B“", html: "Anzahl(A oder B) = Anzahl(A) + Anzahl(B) − Anzahl(A und B)", quantities: "das gemeinsame Feld „A und B“ nur einmal zählen" },
     { name: "Häufigkeitsbaum", html: "Gesamtzahl → 1. Merkmal → 2. Merkmal", quantities: "die vier Endzahlen sind die vier inneren Felder der Tafel" },
   ],
@@ -1619,7 +1623,7 @@ function relativTask(rng: Rng, level: 1 | 2): ExerciseTask {
         }),
         numberField(`${s.label} in Prozent:`, 100 * h, "%", 1),
       ],
-      steps: [`${s.label} = H : n = ${H} : ${n} = ${fracHtml(H, n)} ${hBoth(H, n)}`, `<strong>${s.label} ${hDecimal(H, n)} · ${s.label} ${hPercent(H, n)}</strong>`],
+      steps: [`${s.label} = H : n = ${H} : ${n} = ${fracHtml(H, n)} ${hBoth(H, n)}`, `<strong>${s.label} ${hDecimal(H, n)}; in Prozent: ${s.label} ${hPercent(H, n)}</strong>`],
       meta: { level: 1, ctx, n, H },
     };
   }
@@ -1845,7 +1849,8 @@ const haeufigkeiten: Lesson = {
   formulas: [
     { name: "Absolute Häufigkeit", html: "H(E) = Anzahl der Versuche, bei denen E eintritt", quantities: "eine ganze Zahl von 0 bis n" },
     { name: "Relative Häufigkeit", html: `h(E) = H(E) : n = ${frac("H(E)", "n")}`, quantities: "n Anzahl aller Versuche; 0 ≤ h(E) ≤ 1, auch in Prozent" },
-    { name: "Summe und Umkehrung", html: "h(1) + h(2) + … + h(6) = 1 · H(E) = h(E) · n", quantities: "die relativen Häufigkeiten aller Ergebnisse ergeben 1; H aus h und n zurückrechnen" },
+    { name: "Summe der relativen Häufigkeiten", html: "h(1) + h(2) + … + h(6) = 1", quantities: "beim Würfel; allgemein ergeben die relativen Häufigkeiten aller Ergebnisse zusammen 1" },
+    { name: "Absolute aus relativer Häufigkeit", html: "H(E) = h(E) · n", quantities: "zum Beispiel 0,38 · 50 = 19" },
   ],
   quiz: {
     question: "In 40 Würfen fiel 8-mal eine Sechs. Wie groß ist die relative Häufigkeit der Sechs?",
@@ -1897,7 +1902,7 @@ const haeufigkeiten: Lesson = {
           const g = GAMES[v.spiel] ?? GAMES[0];
           const r = gameOf(v);
           if (r.n === 0) return "noch kein Versuch";
-          if (v.spiel === 3) return `A: ${relText(r.counts[0], r.n)} · B: ${relText(r.counts[1], r.n)}`;
+          if (v.spiel === 3) return `A: ${relText(r.counts[0], r.n)}; B: ${relText(r.counts[1], r.n)}`;
           return `h(${g.outcomes[g.focus]}) = ${relText(r.counts[g.focus], r.n)} ${hPercent(r.counts[g.focus], r.n)}`;
         },
       },
@@ -1925,7 +1930,7 @@ const haeufigkeiten: Lesson = {
             const r = gameOf(v, g);
             return r.n === 0 ? "noch nicht gewürfelt" : `h(6) ≈ ${fmt(relFreq(r, 5), 2)} (${r.n} Würfe)`;
           };
-          return `normal: ${part(0)} · Fundbüro: ${part(1)}`;
+          return `normal: ${part(0)}; Fundbüro: ${part(1)}`;
         },
       },
     ],

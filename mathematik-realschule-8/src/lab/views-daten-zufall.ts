@@ -89,11 +89,14 @@ export interface OutcomeExperiment {
   size: number;
   trial: string;
   trials: string;
+  /** "Letzter Wurf" or "Letzte Drehung", and the sentence before the first trial. */
+  last: string;
+  none: string;
 }
 
 export const OUTCOME_EXPERIMENTS: OutcomeExperiment[] = [
-  { name: "Würfel", noun: "Augenzahl", size: 6, trial: "Wurf", trials: "Würfe" },
-  { name: "Glücksrad mit 8 gleich großen Feldern", noun: "Zahl", size: 8, trial: "Drehung", trials: "Drehungen" },
+  { name: "Würfel", noun: "Augenzahl", size: 6, trial: "Wurf", trials: "Würfe", last: "Letzter Wurf", none: "Noch kein Wurf" },
+  { name: "Glücksrad mit 8 gleich großen Feldern", noun: "Zahl", size: 8, trial: "Drehung", trials: "Drehungen", last: "Letzte Drehung", none: "Noch keine Drehung" },
 ];
 
 export interface EventKind {
@@ -183,13 +186,14 @@ function outcomeEventView(v: LabValues): string {
       const at = polar(OE.cx, OE.cy, OE.wheelR * 0.68, a0 - step / 2);
       out += text(at.x, at.y + 5, String(e), inE(e) ? "lab-text lab-text-c" : "lab-text", "middle");
     });
-    if (last > 0) out += needle(OE.cx, OE.cy, OE.wheelR * 0.86, 90 - (last - 0.5) * step);
+    // the needle stops short of the number, so the result stays readable at its tip
+    if (last > 0) out += needle(OE.cx, OE.cy, OE.wheelR * 0.5, 90 - (last - 0.5) * step);
     else out += circle(OE.cx, OE.cy, 4.5, "lab-dot-small");
   }
   if (record.n === 0) {
-    out += text(OE.cx, 296, `Noch kein ${ex.trial}: Starte mit den Knöpfen.`, "lab-text-small", "middle");
+    out += text(OE.cx, 296, `${ex.none}: Starte mit den Knöpfen.`, "lab-text-small", "middle");
   } else {
-    out += text(OE.cx, 294, `Letzter ${ex.trial}: ${last}`, "lab-text", "middle");
+    out += text(OE.cx, 294, `${ex.last}: ${last}`, "lab-text", "middle");
     out += text(OE.cx, 314, inE(last) ? "E ist eingetreten." : "E ist nicht eingetreten.", inE(last) ? "lab-text lab-text-ok" : "lab-text lab-text-bad", "middle");
   }
 
@@ -209,7 +213,7 @@ function outcomeEventView(v: LabValues): string {
   const parts = results.map((e) => record.tally[e]);
   const sum = results.length >= 2 && results.length <= 4 && record.n > 0 ? `${parts.join(" + ")} = ` : "";
   out += text(OE.tableX, below + 22, countWord(record.n, ex.trial, ex.trials), "lab-text-small");
-  out += text(OE.tableX, below + 42, `E ist ${sum}${record.hits}-mal eingetreten.`, "lab-text lab-text-c");
+  out += text(OE.tableX, below + 42, record.n === 0 ? "Die Strichliste ist noch leer." : `E ist ${sum}${record.hits}-mal eingetreten.`, "lab-text lab-text-c");
   out += close();
   return out;
 }
@@ -351,9 +355,9 @@ function treeDiagramView(v: LabValues): string {
 
   let out = open("Baumdiagramm eines mehrstufigen Zufallsexperiments, die Pfade eines Ereignisses lila markiert");
   out += text(14, 24, branches && depth > 1 ? `Zählprinzip: ${branches.join(" · ")} = ${L} Ergebnisse` : `${L} Ergebnisse${branches ? "" : " (Pfade gezählt)"}`, "lab-text lab-text-big");
-  const head = `E: „${treeEventWords(s, v.ereignis)}“ · ${marked.length} von ${L} Pfaden`;
+  const head = `E: „${treeEventWords(s, v.ereignis)}“, ${marked.length} von ${L} Pfaden`;
   const list = `E = ${setText(marked)}`;
-  out += text(14, 44, (head.length + list.length + 3) * 6.2 < 380 ? `${head} · ${list}` : head, "lab-text-small lab-text-c");
+  out += text(14, 44, (head.length + list.length + 3) * 6.2 < 380 ? `${head}; ${list}` : head, "lab-text-small lab-text-c");
 
   // what is drawn from: the coin or the urn, top right
   if (s.exp === 0) {
@@ -700,8 +704,8 @@ function luckyWheel(cx: number, cy: number, r: number, fields: Array<[number, nu
   return out;
 }
 
-const BARS = { x0: 192, x1: 506, top: 46, bottom: 146 };
-const COURSE = { x0: 46, x1: 506, top: 214, bottom: 314 };
+const BARS = { x0: 192, x1: 506, top: 60, bottom: 140 };
+const COURSE = { x0: 46, x1: 506, top: 200, bottom: 300 };
 
 function frequencySimulationView(v: LabValues): string {
   const game = GAMES[v.spiel] ?? GAMES[0];
@@ -713,8 +717,8 @@ function frequencySimulationView(v: LabValues): string {
   // the result so far, in one line
   let head: string;
   if (record.n === 0) head = "Noch kein Versuch: Starte mit den Knöpfen.";
-  else if (wheels) head = `n = ${record.n} · h(Gewinn A) ≈ ${fmt(relFreq(record, 0), 2)} · h(Gewinn B) ≈ ${fmt(relFreq(record, 1), 2)}`;
-  else head = `n = ${record.n} · H(${focusLabel}) = ${record.counts[game.focus]} · h ${relText(record.counts[game.focus], record.n).replace(/^\d+ : \d+ /, "")}`;
+  else if (wheels) head = `n = ${record.n};  h(Gewinn A) ≈ ${fmt(relFreq(record, 0), 2)};  h(Gewinn B) ≈ ${fmt(relFreq(record, 1), 2)}`;
+  else head = `n = ${record.n};  H(${focusLabel}) = ${record.counts[game.focus]};  h(${focusLabel}) ${relText(record.counts[game.focus], record.n).replace(/^\d+ : \d+ /, "")}`;
   out += text(14, 24, head, "lab-text lab-text-big");
 
   // the object: die, thumbtack or the two wheels, with the last result
@@ -737,9 +741,11 @@ function frequencySimulationView(v: LabValues): string {
     out += text(80, 160, "grün: Gewinn", "lab-text-small", "middle");
   }
 
-  // the bars: relative frequency on the axis, absolute frequency on top
-  const yBar = (h: number) => BARS.bottom - (BARS.bottom - BARS.top) * Math.min(h, 1) * 2;
-  for (const h of [0, 0.25, 0.5]) {
+  // the bars: relative frequency on the axis (up to 0,5, or up to 1 when a bar needs it), absolute frequency on top
+  const shares = record.counts.map((c) => (record.n > 0 ? c / record.n : 0));
+  const yMax = shares.some((h) => h > 0.5) ? 1 : 0.5;
+  const yBar = (h: number) => BARS.bottom - ((BARS.bottom - BARS.top) * h) / yMax;
+  for (const h of [0, yMax / 2, yMax]) {
     out += line(BARS.x0, yBar(h), BARS.x1, yBar(h), h === 0 ? "lab-ink" : "lab-grid");
     out += text(BARS.x0 - 5, yBar(h) + 4, fmt(h, 2), "lab-text-tick", "end");
   }
@@ -747,17 +753,16 @@ function frequencySimulationView(v: LabValues): string {
   const slot = (BARS.x1 - BARS.x0) / k;
   const barW = Math.min(46, slot * 0.6);
   game.outcomes.forEach((name, i) => {
-    const count = record.counts[i];
-    const h = record.n > 0 ? count / record.n : 0;
+    const h = shares[i];
     const cx = BARS.x0 + slot * (i + 0.5);
     const cls = wheels ? (i === 0 ? "lab-bar-a" : "lab-bar-b") : i === game.focus ? "lab-bar-c" : "lab-bar-a";
-    const top = Math.max(BARS.top - 6, yBar(h));
+    const top = yBar(h);
     if (record.n > 0) out += rect(cx - barW / 2, top, barW, BARS.bottom - top, cls);
-    out += text(cx, top - 4, record.n > 0 ? String(count) : "", "lab-text-small", "middle");
+    out += text(cx, top - 4, record.n > 0 ? String(record.counts[i]) : "", "lab-text-small", "middle");
     out += text(cx, BARS.bottom + 15, name, i === game.focus && !wheels ? "lab-text-small lab-text-c" : "lab-text-small", "middle");
     if (record.n > 0) out += text(cx, BARS.bottom + 29, fmt(h, 2), "lab-text-small", "middle");
   });
-  if (record.n > 0 && !wheels) out += text(BARS.x1, BARS.top - 6, `Summe aller h: ${fmt(record.counts.reduce((a, b) => a + b, 0) / record.n, 2)}`, "lab-text-small", "end");
+  if (record.n > 0 && !wheels) out += text(BARS.x1, 40, `Summe aller h: ${fmt(shares.reduce((a, b) => a + b, 0), 2)}`, "lab-text-small", "end");
 
   // the course of the relative frequency over the trials
   const N = Math.max(10, record.n);
@@ -773,11 +778,13 @@ function frequencySimulationView(v: LabValues): string {
     out += text(COURSE.x0 - 5, yC(h) + 4, fmt(h, 2), "lab-text-tick", "end");
   }
   for (const t of [0, Math.round(N / 2), N]) out += text(xC(t), COURSE.bottom + 14, String(t), "lab-text-tick", "middle");
-  out += text((COURSE.x0 + COURSE.x1) / 2, COURSE.bottom + 26, `Anzahl n der ${game.trials}`, "lab-text-axis", "middle");
+  out += text((COURSE.x0 + COURSE.x1) / 2, COURSE.bottom + 30, `Anzahl n der ${game.trials}`, "lab-text-axis", "middle");
   if (v.spiel === 1 && v.n0 > 0) {
     const h0 = relFreq(gameOf(v, 0), 5);
+    // the label on the side of the dashed line away from the end of the curve
+    const above = record.n === 0 || relFreq(record, 5) < h0;
     out += line(COURSE.x0, yC(h0), COURSE.x1, yC(h0), "lab-dashed");
-    out += text(COURSE.x0 + 6, yC(h0) - 4, `normaler Würfel: ${fmt(h0, 2)}`, "lab-text-small");
+    out += text(COURSE.x1 - 4, yC(h0) + (above ? -5 : 13), `normaler Würfel: ${fmt(h0, 2)}`, "lab-text-small", "end");
   }
   const clipId = "dz-course-clip";
   out += `<clipPath id="${clipId}"><rect x="${COURSE.x0}" y="${COURSE.top - 2}" width="${COURSE.x1 - COURSE.x0}" height="${COURSE.bottom - COURSE.top + 4}" /></clipPath>`;
