@@ -6,11 +6,13 @@ import legacyVierecke from "./fixtures/de-by-realschule-8-mathematik-ebene-geome
 import legacyFunktionen from "./fixtures/de-by-realschule-8-mathematik-lineare-funktionen-kvt.json";
 import legacyTerme from "./fixtures/de-by-realschule-8-mathematik-terme-gleichungen-kvt.json";
 import { ALL_LESSONS, findLessonById, lessonsForTrack, STAGES } from "../src/curriculum";
+import { numberField } from "../src/curriculum/helpers";
 import { checkTask, parseNumber, parseNumberCandidates, wrongAnswerHint } from "../src/exercises/checker";
 import { factorForm, linear, quadratic, vertexForm } from "../src/exercises/format";
 import { quizOrder } from "../src/exercises/quiz-order";
 import type { ExerciseTask, NumberField, Track } from "../src/model/types";
 import {
+  continueLessonId,
   DEFAULT_LESSON_ID,
   isLessonComplete,
   isStageComplete,
@@ -147,6 +149,23 @@ describe("Prüfen der Eingabe", () => {
     expect(checkTask(empty, ["1", ""]).status).toBe("invalid");
   });
 
+  it("keeps one hint per wrong value: numberField drops a slip that repeats an earlier value or is the answer", () => {
+    const made = numberField("x =", 4, "", 0, {
+      slips: [
+        { value: -4, hint: "first" },
+        { value: 8, hint: "doubled" },
+        { value: -4, hint: "second" },
+        { value: 4, hint: "the answer itself" },
+        { value: 8 + 1e-12, hint: "doubled again" },
+      ],
+    });
+    expect(made.slips).toEqual([
+      { value: -4, hint: "first" },
+      { value: 8, hint: "doubled" },
+    ]);
+    expect(wrongAnswerHint(task(made), checkTask(task(made), ["-4"]))).toBe("first");
+  });
+
   it("names a vector field as BC→ in a hint, not ⟶BC", () => {
     const vector = '<span class="vname" style="display:inline-block"><span aria-hidden="true" style="position:absolute">⟶</span>BC</span>: x =';
     const two = { ...task(field(2, 0), field(5, 0)) };
@@ -209,6 +228,36 @@ describe("Lektionsabschluss", () => {
     }
     expect(isStageComplete(progress, vierecke, "I")).toBe(true);
     expect(isStageComplete(progress, vierecke, "II_III")).toBe(false);
+  });
+
+  it("„Weiter mit …“ stays in the chosen Zweig: the first open lesson of it, not the Zweig-II/III-only default", () => {
+    const complete = (progress: LearnerProgress, id: string) => {
+      const lesson = findLessonById(id)!.lesson;
+      progress.quizDone.push(id);
+      progress.labGoals[id] = lesson.lab.goals.map((goal) => goal.id);
+      progress.solved[id] = { 1: lesson.requiredCorrect, 2: 0 };
+    };
+    const firstI = lessonsForTrack("I")[0].id;
+    const secondI = lessonsForTrack("I")[1].id;
+    // the default lesson is the first of the package, in Zweig II/III only
+    expect(findLessonById(DEFAULT_LESSON_ID)!.lesson.tracks).toEqual(["II_III"]);
+    const fresh = blank();
+    expect(continueLessonId(fresh, STAGES)).toBe(DEFAULT_LESSON_ID);
+    expect(continueLessonId({ ...fresh, trackFilter: "II_III" }, STAGES)).toBe(DEFAULT_LESSON_ID);
+    // Zweig I: the default is no lesson of it, so the first lesson of Zweig I opens
+    const zweigI: LearnerProgress = { ...blank(), trackFilter: "I" };
+    expect(continueLessonId(zweigI, STAGES)).toBe(firstI);
+    expect(findLessonById(firstI)!.lesson.tracks).toContain("I");
+    // ... and once that one is complete, the next open one
+    complete(zweigI, firstI);
+    expect(continueLessonId(zweigI, STAGES)).toBe(secondI);
+    // a lesson of the Zweig the learner opened stays the one to continue with
+    const opened: LearnerProgress = { ...blank(), trackFilter: "I", activeLessonId: "fu-4-ursprungsgeraden" };
+    expect(continueLessonId(opened, STAGES)).toBe("fu-4-ursprungsgeraden");
+    // everything done: back to the first lesson of the Zweig
+    const done: LearnerProgress = { ...blank(), trackFilter: "I" };
+    for (const lesson of lessonsForTrack("I")) complete(done, lesson.id);
+    expect(continueLessonId(done, STAGES)).toBe(firstI);
   });
 });
 

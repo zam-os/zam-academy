@@ -28,6 +28,7 @@ import type {
 } from "./model/types";
 import { TRACK_LABELS, TRACK_LONG_LABELS } from "./model/types";
 import {
+  continueLessonId,
   DEFAULT_LESSON_ID,
   goalsReached,
   isLessonComplete,
@@ -172,6 +173,11 @@ class MatheApp {
   }
 
   private switchView(view: ActiveView): void {
+    // From the Lernpfad or the Formelsammlung, the Lektion tab goes on where "Weiter mit …" does: in the chosen Zweig.
+    if (view === "lesson" && this.view !== "lesson") {
+      this.progress.activeLessonId = continueLessonId(this.progress, STAGES);
+      saveLearnerProgress(this.progress);
+    }
     this.view = view;
     if (view === "lesson") {
       this.setLessonHash(this.progress.activeLessonId);
@@ -225,7 +231,8 @@ class MatheApp {
     const filter = this.progress.trackFilter;
     const stats = overallStats(this.progress, STAGES, filter);
     const relevant = new Set(lessonsForTrack(filter).map((lesson) => lesson.id));
-    const active = findLessonById(this.progress.activeLessonId) ?? findLessonById(DEFAULT_LESSON_ID)!;
+    // the active lesson, or the first open lesson of the chosen Zweig when the active one is not in it
+    const active = findLessonById(continueLessonId(this.progress, STAGES)) ?? findLessonById(DEFAULT_LESSON_ID)!;
 
     host.innerHTML = `
       <div class="path">
@@ -262,7 +269,7 @@ class MatheApp {
           </div>
         </section>
 
-        ${STAGES.map((stage) => this.renderStageCard(stage, relevant, filter)).join("")}
+        ${STAGES.map((stage) => this.renderStageCard(stage, relevant, filter, active.lesson.id)).join("")}
       </div>
     `;
 
@@ -289,7 +296,7 @@ class MatheApp {
     });
   }
 
-  private renderStageCard(stage: Stage, relevant: Set<string>, filter: TrackFilter): string {
+  private renderStageCard(stage: Stage, relevant: Set<string>, filter: TrackFilter, activeId: string): string {
     const stats = stageStats(this.progress, stage, filter);
     const progressLabel =
       stats.total === 0 ? "nicht in deinem Zweig" : `${stats.completed} / ${stats.total}`;
@@ -316,7 +323,7 @@ class MatheApp {
               const goals = goalsReached(this.progress, lesson.id).length;
               const solved1 = solvedCount(this.progress, lesson.id, 1);
               return `
-              <li class="lesson-row ${complete ? "is-complete" : ""} ${isRelevant ? "" : "is-optional"} ${lesson.id === this.progress.activeLessonId ? "is-active" : ""}">
+              <li class="lesson-row ${complete ? "is-complete" : ""} ${isRelevant ? "" : "is-optional"} ${lesson.id === activeId ? "is-active" : ""}">
                 <button type="button" class="lesson-link" data-open-lesson="${lesson.id}">
                   <span class="lesson-state" aria-hidden="true">${complete ? "✅" : "○"}</span>
                   <span class="lesson-text">
