@@ -18,6 +18,7 @@ import {
   TURN_CASES,
   TURN_OBJECTS,
 } from "../src/curriculum/stage-3-raumgeometrie";
+import { lenText } from "../src/exercises/format";
 import { createRng, seedFrom } from "../src/exercises/rng";
 import { computeReadouts, defaultLabValues, enumerateLabGrid } from "../src/lab/engine";
 import { axialSlant, axialWidth, drawnAngle, locationOf, obliqueDims, obliqueSolid, pictureDistance, solidTop, solidVertices, SYM_BODIES, symmetryOf, trueFigure, vec } from "../src/lab/views-raumgeometrie";
@@ -744,7 +745,7 @@ describe("Labore der Etappe 3", () => {
     const lab = lesson("rg-6-wahre-groesse").lab;
     const start = at(lab, {});
     // the example of the lesson: 6 × 4 × 3, [AC] ≈ 7,2 cm, [AG] ≈ 7,8 cm, in the picture about 8,6 cm
-    expect(start.r.strecke).toBe("[AG] ≈ 7,8 cm");
+    expect(start.r.strecke).toBe(`${lenText("AG")} ≈ 7,8 cm`);
     close(Math.hypot(6, 4), 7.211, 1e-3);
     const G = [6 + 0.5 * 4 * Math.SQRT1_2, 3 + 0.5 * 4 * Math.SQRT1_2];
     close(Math.hypot(G[0], G[1]), 8.63, 1e-3);
