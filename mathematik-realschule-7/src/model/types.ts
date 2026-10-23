@@ -200,6 +200,8 @@ export interface TeacherVideo {
   url: string;
   title: string;
   author?: string;
+  /** The part this video teaches; name remaining lesson content explicitly. */
+  scope: string;
 }
 
 export interface Lesson {
@@ -223,6 +225,7 @@ export interface Lesson {
   celebrationMessage: string;
   /** Teacher explainer video, e.g. by Daniel Jung. */
   teacherVideo?: TeacherVideo;
+  additionalTeacherVideos?: TeacherVideo[];
 }
 
 export interface Stage {

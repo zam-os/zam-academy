@@ -1,4 +1,5 @@
-import type { Lesson, Stage, Track } from "../model/types";
+import type { Lesson, Stage, TeacherVideo, Track } from "../model/types";
+import teacherVideoData from "./teacher-videos.json";
 import { STAGE_POTENZEN } from "./stage-1-potenzen";
 import { STAGE_VERSCHIEBUNG } from "./stage-2-verschiebung";
 import { STAGE_DREIECKE } from "./stage-3-dreiecke";
@@ -7,6 +8,11 @@ import { STAGE_ORTSLINIEN } from "./stage-5-ortslinien";
 import { STAGE_ALGEBRA } from "./stage-6-algebra";
 import { STAGE_PROPORTIONEN } from "./stage-7-proportionen";
 import { STAGE_DATEN } from "./stage-8-daten";
+
+const teacherVideos: Record<
+  string,
+  TeacherVideo & { additional?: TeacherVideo[] }
+> = teacherVideoData;
 
 /** One stage per Lernbereich in Zweig I; track labels preserve the II/III numbering. */
 export const STAGES: Stage[] = [
@@ -18,7 +24,13 @@ export const STAGES: Stage[] = [
   STAGE_ALGEBRA,
   STAGE_PROPORTIONEN,
   STAGE_DATEN,
-];
+].map((stage) => ({
+  ...stage,
+  lessons: stage.lessons.map((lesson) => {
+    const { additional = [], ...teacherVideo } = teacherVideos[lesson.id];
+    return { ...lesson, teacherVideo, additionalTeacherVideos: additional };
+  }),
+}));
 export const ALL_LESSONS: Lesson[] = STAGES.flatMap((stage) => stage.lessons);
 
 export function findLessonById(
