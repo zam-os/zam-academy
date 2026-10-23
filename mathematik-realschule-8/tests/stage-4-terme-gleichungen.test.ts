@@ -569,7 +569,24 @@ describe("Aufgaben der Etappe 4 rechnen richtig (4.7 bis 4.9)", () => {
       } else {
         close(left(m.x1), m.c);
         expect(Math.abs(left(m.x1 + 1) - left(m.x1))).toBeGreaterThan(1e-9);
+        // k is determined: another k would not give the solution x1 (for x1 = −q every k would)
+        expect(m.x1 + m.q, task.prompt).not.toBe(0);
+        const other = (x: number) => (x + m.p) ** 2 - (x + m.q) * (x + k + 1);
+        expect(Math.abs(other(m.x1) - m.c)).toBeGreaterThan(1e-9);
       }
+      expect(m.p, "no common factor (x + p) on both sides").not.toBe(m.q);
+    }
+  });
+
+  it("4.7 equations: the minus-bracket slip is the value that slip really gives", () => {
+    for (const task of tasks("tg-7-gleichungen", "gleichung", 1)) {
+      const { s, p, q, r } = meta(task);
+      // turning only the x² term of the bracket behind the minus
+      const wrong = (x: number) => (s === 1 ? (x + p) ** 2 - x * x + (q + r) * x + q * r : (x + q) * (x + r) - x * x + 2 * p * x + p * p);
+      const field = task.fields[0];
+      if (field.kind !== "number") throw new Error("field 0");
+      for (const slip of field.slips ?? []) close(slip.value, wrong(1) - wrong(0));
+      expect(q, "no product of two equal brackets").not.toBe(r);
     }
   });
 
@@ -655,6 +672,16 @@ describe("Aufgaben der Etappe 4 rechnen richtig (4.7 bis 4.9)", () => {
     for (const level of [1, 2] as const) {
       for (const task of tasks("tg-9-ungleichungen", "sachaufgabe", level)) {
         const m = meta(task);
+        // a boundary like 12,5 ends and gets no "…"; one like 55,55… is cut, never rounded up
+        const bound = task.steps.map((step) => step.match(/x (?:≤|≥|&gt;) ([\d.,]+)(…?)$/)).find(Boolean);
+        expect(bound, task.steps.join(" ")).not.toBeNull();
+        const shown = Number((bound?.[1] ?? "").replace(/\./g, "").replace(",", "."));
+        const exactBound = m.kind === 0 ? (m.budget - m.base) / m.perMin : m.kind === 1 ? (m.target - m.bonus) / m.wage : m.kind === 2 ? (m.baseB - m.baseA) / (m.perA - m.perB) : m.season / (m.single - m.perVisit);
+        const ends = endsAfterTwoDecimals(exactBound);
+        expect(bound?.[2] === "…", task.steps.join(" ")).toBe(!ends);
+        if (ends) close(shown, exactBound);
+        else expect(shown <= exactBound && exactBound - shown < 0.01, `${shown} for ${exactBound}`).toBe(true);
+        expect(task.prompt, "no fee of 0,00 €").not.toMatch(/(^|[^\d.,])0,00 €/);
         if (m.kind === 0) {
           expect(m.base + m.perMin * m.minutes).toBeLessThanOrEqual(m.budget);
           expect(m.base + m.perMin * (m.minutes + 1)).toBeGreaterThan(m.budget);

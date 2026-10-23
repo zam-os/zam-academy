@@ -446,7 +446,7 @@ const terme: Lesson = {
         const factor = volume ? c ** 3 : 6 * c * c;
         const [eu, ew] = volume ? [3 * m, 3 * n] : [2 * m, 2 * n];
         return {
-          prompt: `Ein Würfel hat die Kantenlänge k = ${edge} (in cm). Berechne ${volume ? "sein Volumen V = k<sup>3</sup>" : "seinen Oberflächeninhalt O = 6 · k<sup>2</sup>"} und schreibe es als ein Produkt aus Zahl und Potenzen.`,
+          prompt: `Ein Würfel hat die Kantenlänge k = ${edge} (in cm). Berechne ${volume ? "sein Volumen V = k<sup>3</sup> und schreibe es" : "seinen Oberflächeninhalt O = 6 · k<sup>2</sup> und schreibe ihn"} als ein Produkt aus Zahl und Potenzen.`,
           given: [`k = ${edge}`],
           fields: expFields(factor, eu, ew, {
             f: volume
@@ -679,8 +679,12 @@ const ausmultiplizieren: Lesson = {
       id: "flaeche",
       make: guarded((rng, level): ExerciseTask => {
         if (level === 1) {
-          const [a, c] = [rng.int(1, 3), rng.int(1, 3)];
-          const [b, d] = [rng.int(1, 9), rng.int(1, 9)];
+          // two different sides: (2x + 5)(2x + 5) would be a square
+          let [a, b, c, d] = [1, 1, 1, 1];
+          do {
+            [a, c] = [rng.int(1, 3), rng.int(1, 3)];
+            [b, d] = [rng.int(1, 9), rng.int(1, 9)];
+          } while (a === c && b === d);
           const k = rng.int(1, 6);
           const result = polyMul(lin(a, b), lin(c, d));
           const A = (a * k + b) * (c * k + d);
@@ -802,7 +806,7 @@ const binomischeFormeln: Lesson = {
     <div class="example"><strong>Beispiel:</strong> (3x − 4y)<sup>2</sup> mit a = 3x und b = 4y:<br>
       a<sup>2</sup> = (3x)<sup>2</sup> = 9x<sup>2</sup>; 2ab = 2 · 3x · 4y = 24xy; b<sup>2</sup> = (4y)<sup>2</sup> = 16y<sup>2</sup><br>
       (3x − 4y)<sup>2</sup> = 9x<sup>2</sup> − 24xy + 16y<sup>2</sup></div>
-    <p>Weil ein Quadrat nie negativ ist, gilt (−a − b)<sup>2</sup> = (a + b)<sup>2</sup> und (−a + b)<sup>2</sup> = (a − b)<sup>2</sup>.</p>
+    <p>Eine Zahl und ihre Gegenzahl haben dasselbe Quadrat: (−c)<sup>2</sup> = c<sup>2</sup>. Weil −a − b = −(a + b) ist, gilt (−a − b)<sup>2</sup> = (a + b)<sup>2</sup>; ebenso ist (−a + b)<sup>2</sup> = (a − b)<sup>2</sup>, denn −a + b = −(a − b).</p>
     <p><strong>Geschickt rechnen:</strong> 49<sup>2</sup> = (50 − 1)<sup>2</sup> = 2500 − 100 + 1 = 2401 und 21 · 19 = (20 + 1)(20 − 1) = 400 − 1 = 399. <strong>Lücken füllen:</strong> Bei (x + □)<sup>2</sup> = x<sup>2</sup> + 10x + □ ist 10x das Mischglied 2 · x · □, also gehört 5 in die erste Lücke und 5<sup>2</sup> = 25 in die zweite.</p>
     <p><strong>Typische Fehler:</strong> (x + 3)<sup>2</sup> = x<sup>2</sup> + 9 (Mischglied vergessen), (3x)<sup>2</sup> = 3x<sup>2</sup> (die Zahl nicht quadriert), (x − 4)<sup>2</sup> = x<sup>2</sup> − 8x − 16 (b<sup>2</sup> ist immer positiv), ab statt 2ab.</p>
     <div class="merke"><strong>Merke:</strong> (a + b)<sup>2</sup> = a<sup>2</sup> + 2ab + b<sup>2</sup>, (a − b)<sup>2</sup> = a<sup>2</sup> − 2ab + b<sup>2</sup>, (a + b)(a − b) = a<sup>2</sup> − b<sup>2</sup>. Beim Quadrieren eines Binoms nie das Mischglied 2ab vergessen.</div>
@@ -857,7 +861,7 @@ const binomischeFormeln: Lesson = {
       },
       {
         id: "dritte",
-        text: "Wähle die 3. Formel: Finde a und b, bei denen das umgelegte Rechteck genau 24 FE groß ist.",
+        text: "Wähle die 3. Formel: Finde a und b, bei denen das neue Rechteck mit den Seiten a + b und a − b genau 24 FE groß ist.",
         check: (v) => v.mode === 2 && v.a > v.b && Math.abs(v.a * v.a - v.b * v.b - 24) < 1e-9,
       },
     ],
@@ -1107,7 +1111,7 @@ const faktorisieren: Lesson = {
   tracks: ["I", "II_III"],
   lehrplan: `${LP}: Faktorisieren`,
   whyItMatters:
-    "Ein Produkt verrät mehr als eine Summe: An 2(x + 3)(x − 3) siehst du sofort, wann der Term null wird, und Bruchterme in Lernbereich 5 kürzt du nur in faktorisierter Form. Die quadratische Ergänzung der nächsten Lektion beruht darauf, ein vollständiges Quadrat zu erkennen.",
+    "Ein Produkt verrät mehr als eine Summe: An 2(x + 3)(x − 3) siehst du sofort, wann der Term null wird, und Bruchterme in Etappe 5 kürzt du nur in faktorisierter Form. Die quadratische Ergänzung der nächsten Lektion beruht darauf, ein vollständiges Quadrat zu erkennen.",
   explanationHtml: `
     <p><strong>Faktorisieren</strong> heißt, eine Summe als Produkt zu schreiben. Es ist die Umkehrung des Ausmultiplizierens. Zwei Werkzeuge kennst du schon: das Distributivgesetz und die binomischen Formeln, beide rückwärts gelesen.</p>
     <p><strong>1. Ausklammern:</strong> Suche den größten gemeinsamen Faktor aller Glieder: den ggT der Zahlen und jede Variable, die in allen Gliedern vorkommt, mit ihrem kleinsten Exponenten. Teile dann jedes Glied durch diesen Faktor.</p>
@@ -1226,7 +1230,7 @@ const faktorisieren: Lesson = {
             ],
             steps: [
               `ggT der Zahlen: ${g}. ${p === 0 ? `${u} fehlt in einem Glied.` : `${u} steckt in jedem Glied mindestens als ${varsHtml({ [u]: p })}.`} ${q === 0 ? `${w} fehlt in einem Glied.` : `${w} steckt in jedem Glied mindestens als ${varsHtml({ [w]: q })}.`}`,
-              `Jedes Glied durch ${monoHtml(g, G)} teilen: ${T.map((t) => `${monoHtml(t.c, t.m)} : ${factorHtml(g, G)} = ${monoHtml(t.c / g, mono2(u, w, (t.m[u] ?? 0) - p, (t.m[w] ?? 0) - q))}`).join("; ")}`,
+              `Jedes Glied durch ${monoHtml(g, G)} teilen: ${T.map((t) => `${monoHtml(t.c, t.m)} : (${monoHtml(g, G)}) = ${monoHtml(t.c / g, mono2(u, w, (t.m[u] ?? 0) - p, (t.m[w] ?? 0) - q))}`).join("; ")}`,
               `<strong>${shown} = ${monoHtml(g, G)}(${polyHtml(bracketTerms)})</strong>`,
             ],
             meta: { g, p, q, terms: T.length, ...Object.fromEntries(T.flatMap((t, i) => [[`c${i}`, t.c], [`u${i}`, t.m[u] ?? 0], [`w${i}`, t.m[w] ?? 0]])) },
@@ -1746,7 +1750,7 @@ const extremwertprobleme: Lesson = {
         if (kind === 0) {
           const L = rng.pick(WALL);
           const [xBest, y, best] = [L / 4, L / 2, (L * L) / 8];
-          const what = rng.pick(["ein rechteckiges Beet an einer Hauswand", "ein rechteckiger Auslauf an einer Stallwand", "ein rechteckiger Spielbereich an einer Mauer"]);
+          const what = rng.pick(["ein rechteckiges Beet an einer Hauswand", "ein rechteckiger Auslauf an einer Stallwand", "ein rechteckiger Spielbereich an einer Hallenwand"]);
           const steps = [
             `A(x) = x · (${L} − 2x) = ${polyHtml([{ c: -2, m: X2 }, { c: L, m: X1 }])}; sinnvoll ist x ∈ ]0; ${fmt(L / 2)}[`,
             `A(x) = −2[x<sup>2</sup> − ${fmt(L / 2)}x] = −2[(x − ${fmt(xBest)})<sup>2</sup> − ${fmt(xBest * xBest)}] = −2(x − ${fmt(xBest)})<sup>2</sup> + ${fmt(best)}`,
@@ -1863,6 +1867,9 @@ function reducedSteps(A: number, B: number): string[] {
 /** " + 3k", " − k": q · k after another term. */
 const kTerm = (q: number) => (q === 1 ? " + k" : q === -1 ? ` ${MINUS} k` : `${signed(q)}k`);
 
+/** "k", "−k", "3k": q · k on its own. */
+const kMono = (q: number) => (q === 1 ? "k" : q === -1 ? `${MINUS}k` : `${fmt(q)}k`);
+
 const CASES = ["genau eine Lösung", "keine Lösung", "unendlich viele Lösungen (allgemeingültig)"];
 
 const gleichungen: Lesson = {
@@ -1946,7 +1953,7 @@ const gleichungen: Lesson = {
           do {
             [p, q, r] = [nonZero(rng, 6), nonZero(rng, 6), nonZero(rng, 6)];
             A = s * (2 * p - q - r);
-          } while (A === 0 || Math.abs(A) > 10);
+          } while (A === 0 || Math.abs(A) > 10 || q === r);
           const rest = s * (p * p - q * r);
           const x0 = niceSolution(rng, A);
           const k = A * x0 + rest;
@@ -1955,16 +1962,20 @@ const gleichungen: Lesson = {
           const shown = s === 1 ? `${sqHtml(p)} − ${prodHtml(q, r)} = ${fmt(k)}` : `${prodHtml(q, r)} − ${sqHtml(p)} = ${fmt(k)}`;
           const expanded = s === 1 ? `${polyHtml(sq)} − (${polyHtml(prod)})` : `${polyHtml(prod)} − (${polyHtml(sq)})`;
           const opened = s === 1 ? polyHtml([...sq, ...polyScale(prod, -1)], false) : polyHtml([...prod, ...polyScale(sq, -1)], false);
-          const wrongA = s * (2 * p + q + r);
+          // The slip of a minus that turns only the x² term of what stands behind it:
+          // behind the minus stands the product (s = 1) or the square (s = −1).
+          const wrongA = 2 * p + q + r;
+          const wrongRest = p * p + q * r;
+          const behind = s === 1 ? "im ausmultiplizierten Produkt" : "in der ausmultiplizierten Klammer";
           const leftAt = (x: number) => (s === 1 ? (x + p) ** 2 - (x + q) * (x + r) : (x + q) * (x + r) - (x + p) ** 2);
           return {
             prompt: `Löse die Gleichung über G = ℚ: ${shown}. Vereinfache dazu zuerst die linke Seite zu □x + □.`,
             given: [shown],
-            formulaHint: "(a + b)<sup>2</sup> = a<sup>2</sup> + 2ab + b<sup>2</sup>; Minus vor dem Produkt: erst ausmultiplizieren, Ergebnis in Klammern, dann jedes Vorzeichen umdrehen",
+            formulaHint: "(a ± b)<sup>2</sup> = a<sup>2</sup> ± 2ab + b<sup>2</sup>; Minus vor einer Klammer: erst ausmultiplizieren, Ergebnis in Klammern, dann jedes Vorzeichen umdrehen",
             fields: [
-              intField("linke Seite: Zahl vor x", A, [{ value: wrongA, hint: "Das Minus vor der Klammer gilt für jedes Glied des Produkts: Auch das x-Glied ändert sein Vorzeichen." }]),
-              intField("linke Seite: Zahl ohne x", rest, [{ value: s * (p * p + q * r), hint: "Das Minus vor der Klammer gilt auch für die Zahl im ausmultiplizierten Produkt." }]),
-              numberField("x =", x0, "", 2, { slips: wrongA !== 0 ? [{ value: (k - rest) / wrongA, hint: "Prüfe die Minusklammer: Jedes Glied des ausmultiplizierten Produkts ändert sein Vorzeichen." }] : [] }),
+              intField("linke Seite: Zahl vor x", A, [{ value: wrongA, hint: `Das Minus vor der Klammer gilt für jedes Glied ${behind}: Auch das x-Glied ändert sein Vorzeichen.` }]),
+              intField("linke Seite: Zahl ohne x", rest, [{ value: wrongRest, hint: `Das Minus vor der Klammer gilt auch für die Zahl ${behind}.` }]),
+              numberField("x =", x0, "", 2, { slips: wrongA !== 0 ? [{ value: (k - rest) / wrongA, hint: `Prüfe die Minusklammer: Jedes Glied ${behind} ändert sein Vorzeichen.` }] : [] }),
             ],
             steps: [
               `Ausmultiplizieren: ${expanded} = ${fmt(k)}`,
@@ -2031,7 +2042,7 @@ const gleichungen: Lesson = {
         do {
           [p, q, r] = [nonZero(rng, 6), nonZero(rng, 6), nonZero(rng, 6)];
           A = 2 * p - q - r;
-        } while (A === 0 || Math.abs(A) > 10);
+        } while (A === 0 || Math.abs(A) > 10 || q === r);
         const wantIn = rng.next() < 0.5;
         let x0 = niceSolution(rng, A, 12);
         for (let tries = 0; tries < 40 && inGrundmenge(x0, G) !== wantIn; tries++) x0 = wantIn ? (G === 2 ? rng.int(1, 9) : rng.int(-8, 8)) : niceSolution(rng, A, 12);
@@ -2068,7 +2079,7 @@ const gleichungen: Lesson = {
             do {
               [p, q] = [nonZero(rng, 6), nonZero(rng, 6)];
               r = kind === 0 ? nonZero(rng, 6) : 2 * p - q;
-            } while (r === 0 || Math.abs(r) > 9 || (kind === 0 && 2 * p - q - r === 0));
+            } while (r === 0 || q === r || Math.abs(r) > 9 || (kind === 0 && 2 * p - q - r === 0));
             const rest = p * p - q * r;
             const k = kind === 2 ? rest : kind === 1 ? rest + nonZero(rng, 6) : rng.int(-10, 20);
             const [A, B] = [2 * p - q - r, k - rest];
@@ -2106,7 +2117,7 @@ const gleichungen: Lesson = {
             fields: [intField("a =", A, [{ value: m * a + n * c - e, hint: "Minus vor der zweiten Klammer: Auch ihr x-Glied ändert sein Vorzeichen." }]), intField("b =", B, [{ value: f - m * b - n * d, hint: "Minus vor der zweiten Klammer: Auch die Zahl darin ändert ihr Vorzeichen." }]), choiceField("Lösungsfall:", CASES, kind)],
             steps: [
               `Klammern auflösen: ${polyHtml([{ c: m * a, m: X1 }, { c: m * b, m: X0 }, { c: -n * c, m: X1 }, { c: -n * d, m: X0 }], false)} = ${right}`,
-              `Zusammenfassen: ${polyHtml(lin(slope, constant))} = ${right}`,
+              `Zusammenfassen: ${slope === 0 ? `0 · x${constant === 0 ? "" : signed(constant)}` : polyHtml(lin(slope, constant))} = ${right}`,
               ...reducedSteps(A, B),
               `<strong>a = ${fmt(A)}, b = ${fmt(B)}: ${CASES[kind]}</strong>`,
             ],
@@ -2116,10 +2127,12 @@ const gleichungen: Lesson = {
         // Level 2: a parameter decides the case.
         const variant = rng.int(0, 2);
         let [p, q] = [1, 1];
+        // p ≠ q: otherwise (x + p)² − (x + p)(x + k) hides the task in a common factor.
         do {
           [p, q] = [nonZero(rng, 5), nonZero(rng, 5)];
-        } while (q === -2 || 2 * p - q === 0 || Math.abs(2 * p - q) > 9);
+        } while (q === -2 || p === q || 2 * p - q === 0 || Math.abs(2 * p - q) > 9);
         const kStar = 2 * p - q;
+        const xCoef = `${fmt(2 * p - q)} − k`;
         if (variant === 0) {
           let c = rng.int(-10, 20);
           while (c === (p - q) ** 2) c = rng.int(-10, 20);
@@ -2127,7 +2140,7 @@ const gleichungen: Lesson = {
           return {
             prompt: `Für welchen Wert des Parameters k hat die Gleichung ${shown} keine Lösung? Begründe mit der Form a · x = b.`,
             given: [shown],
-            fields: [intField("k =", kStar, [{ value: -kStar, hint: "Prüfe das Vorzeichen: Die Zahl vor x ist 2p − q − k." }, { value: 2 * p + q, hint: "Das Minus vor dem Produkt gilt auch für das Glied qx." }])],
+            fields: [intField("k =", kStar, [{ value: -kStar, hint: `Prüfe das Vorzeichen: Die Zahl vor x ist ${xCoef}.` }, { value: 2 * p + q, hint: `Das Minus vor dem Produkt gilt auch für das Glied ${monoHtml(q, X1)}.` }])],
             steps: [
               `${polyHtml(polyMul(lin(1, p), lin(1, p)))} − (${polyHtml([{ c: 1, m: X2 }, { c: q, m: X1 }])} + kx${kTerm(q)}) = ${fmt(c)}`,
               `(${fmt(2 * p - q)} − k) · x = ${fmt(c - p * p)}${kTerm(q)}`,
@@ -2143,7 +2156,7 @@ const gleichungen: Lesson = {
           return {
             prompt: `Bestimme die Parameter k und c so, dass die Gleichung ${shown} allgemeingültig ist.`,
             given: [shown],
-            fields: [intField("k =", kStar, [{ value: -kStar, hint: "Prüfe das Vorzeichen: Die Zahl vor x ist 2p − q − k." }]), intField("c =", c, [{ value: p * p, hint: "Auch das Produkt liefert eine Zahl ohne x: q · k." }])],
+            fields: [intField("k =", kStar, [{ value: -kStar, hint: `Prüfe das Vorzeichen: Die Zahl vor x ist ${xCoef}.` }]), intField("c =", c, [{ value: p * p, hint: `Auch das Produkt liefert eine Zahl ohne x: ${kMono(q)}.` }])],
             steps: [
               `${polyHtml(polyMul(lin(1, p), lin(1, p)))} − (${polyHtml([{ c: 1, m: X2 }, { c: q, m: X1 }])} + kx${kTerm(q)}) = c`,
               `(${fmt(2 * p - q)} − k) · x = c − ${fmt(p * p)}${kTerm(q)}`,
@@ -2153,8 +2166,9 @@ const gleichungen: Lesson = {
             meta: { variant, p, q, c, k: kStar },
           };
         }
-        // The parameter that gives the solution x = s.
-        const x1 = rng.pick([-3, -2, -1, 1, 2, 3, 4]);
+        // The parameter that gives the solution x = s. For x = −q the factor
+        // (x + q) is 0 and every k would fit, so that x is never asked.
+        const x1 = rng.pick([-3, -2, -1, 1, 2, 3, 4].filter((n) => n + q !== 0));
         let k = nonZero(rng, 6);
         while (2 * p - q - k === 0) k = nonZero(rng, 6);
         const c = (2 * p - q - k) * x1 + p * p - q * k;
@@ -2165,7 +2179,7 @@ const gleichungen: Lesson = {
           fields: [intField("k =", k, [{ value: -k, hint: "Prüfe das Vorzeichen beim Auflösen nach k." }])],
           steps: [
             `x = ${fmt(x1)} einsetzen: ${paren(x1 + p)}<sup>2</sup> − ${paren(x1 + q)} · (${fmt(x1)} + k) = ${fmt(c)}`,
-            `${fmt((x1 + p) ** 2)}${signed(-(x1 + q) * x1)}${signed(-(x1 + q))}k = ${fmt(c)}, also ${fmt(-(x1 + q))}k = ${fmt(c - (x1 + p) ** 2 + (x1 + q) * x1)}`,
+            `${fmt((x1 + p) ** 2)}${signed(-(x1 + q) * x1)}${kTerm(-(x1 + q))} = ${fmt(c)}, also ${kMono(-(x1 + q))} = ${fmt(c - (x1 + p) ** 2 + (x1 + q) * x1)}`,
             `<strong>k = ${fmt(k)}</strong>; Probe: Mit k = ${fmt(k)} ergibt x = ${fmt(x1)} links ${fmt((x1 + p) ** 2 - (x1 + q) * (x1 + k))} = ${fmt(c)}.`,
           ],
           meta: { variant, p, q, c, k, x1 },
@@ -2190,13 +2204,13 @@ for (let d = 3; d <= 12; d++) {
   }
 }
 
-/** A cyclist (v1) and a moped (v2) that starts Δ hours later: catching-up times with short decimals. */
+/** A cyclist (v1) and a motor scooter (v2, at most 45 km/h) that starts Δ hours later: catching-up times with short decimals. */
 const CHASES: Array<[number, number, number, number]> = [];
 for (const v1 of [12, 15, 16, 18, 20]) {
   for (const v2 of [24, 25, 30, 32, 36, 40, 45]) {
     for (const delta of [0.5, 1, 1.5, 2]) {
       const t = (v2 * delta) / (v2 - v1);
-      if (t <= 6 && Math.abs(t * 100 - Math.round(t * 100)) < 1e-9 && Math.abs(v1 * t * 100 - Math.round(v1 * t * 100)) < 1e-9) CHASES.push([v1, v2, delta, t]);
+      if (t <= 4 && Math.abs(t * 100 - Math.round(t * 100)) < 1e-9 && Math.abs(v1 * t * 100 - Math.round(v1 * t * 100)) < 1e-9) CHASES.push([v1, v2, delta, t]);
     }
   }
 }
@@ -2441,19 +2455,19 @@ const sachaufgaben: Lesson = {
           const s = v1 * t;
           const eq = `${v1} · t = ${v2} · (t − ${fmt(delta)})`;
           return {
-            prompt: `Ein Radfahrer fährt mit ${v1} km/h los. ${fmt(delta)} h später startet am selben Ort ein Mofa mit ${v2} km/h auf derselben Strecke.${l1 ? ` Mit der Fahrzeit t des Radfahrers (in h) gilt: ${eq}.` : ""} Nach welcher Fahrzeit des Radfahrers holt das Mofa ihn ein, und wie weit sind beide dann gefahren?`,
-            given: l1 ? [eq] : [`Radfahrer ${v1} km/h`, `Mofa ${v2} km/h, ${fmt(delta)} h später`],
+            prompt: `Ein Radfahrer fährt mit ${v1} km/h los. ${fmt(delta)} h später startet am selben Ort ein Motorroller mit ${v2} km/h auf derselben Strecke.${l1 ? ` Mit der Fahrzeit t des Radfahrers (in h) gilt: ${eq}.` : ""} Nach welcher Fahrzeit des Radfahrers holt der Motorroller ihn ein, und wie weit sind beide dann gefahren?`,
+            given: l1 ? [eq] : [`Radfahrer ${v1} km/h`, `Motorroller ${v2} km/h, ${fmt(delta)} h später`],
             ...(l1 ? { formulaHint: "Beide haben denselben Weg zurückgelegt: s = v · t" } : {}),
             fields: [
-              numberField("t =", t, "h", 2, { slips: [{ value: t - delta, hint: "Das ist die Fahrzeit des Mofas. Gefragt ist die Zeit des Radfahrers." }] }),
+              numberField("t =", t, "h", 2, { slips: [{ value: t - delta, hint: "Das ist die Fahrzeit des Motorrollers. Gefragt ist die Zeit des Radfahrers." }] }),
               numberField("Weg:", s, "km", 2),
             ],
             steps: [
-              `t sei die Fahrzeit des Radfahrers in h; das Mofa fährt t − ${fmt(delta)} h. Beim Einholen sind die Wege gleich.`,
+              `t sei die Fahrzeit des Radfahrers in h; der Motorroller fährt t − ${fmt(delta)} h. Beim Einholen sind die Wege gleich.`,
               `${eq}   ⇔   ${v1}t = ${v2}t − ${fmt(v2 * delta)}   | − ${v2}t`,
               `${fmt(v1 - v2)}t = ${fmt(-v2 * delta)}   | : (${fmt(v1 - v2)}), also t = ${fmt(t)}`,
-              `Probe am Text: Radfahrer ${v1} km/h · ${fmt(t)} h = ${fmt(s)} km, Mofa ${v2} km/h · ${fmt(t - delta)} h = ${fmt(v2 * (t - delta))} km.`,
-              `<strong>Nach ${fmt(t)} h holt das Mofa den Radfahrer ein; beide sind dann ${fmt(s)} km gefahren.</strong>`,
+              `Probe am Text: Radfahrer ${v1} km/h · ${fmt(t)} h = ${fmt(s)} km, Motorroller ${v2} km/h · ${fmt(t - delta)} h = ${fmt(v2 * (t - delta))} km.`,
+              `<strong>Nach ${fmt(t)} h holt der Motorroller den Radfahrer ein; beide sind dann ${fmt(s)} km gefahren.</strong>`,
             ],
             meta: { context, v1, v2, delta, t },
           };
@@ -2511,6 +2525,15 @@ const REL_FIELD = ["x <", "x ≤", "x >", "x ≥"];
 
 /** "]−∞; 3[" and friends in HTML (the same text, the minus is real). */
 const interval = (rel: number, g: number) => intervalText(rel, fmt(g, 2));
+
+/**
+ * A positive boundary as the calculator gives it: "12,5" when the decimal
+ * ends, otherwise cut after two decimals with "…" (55,55…, never 55,56…).
+ */
+function boundText(v: number): string {
+  if (Math.abs(v * 100 - Math.round(v * 100)) < 1e-9) return fmt(v, 2);
+  return `${(Math.floor(v * 100 + 1e-9) / 100).toFixed(2).replace(".", ",")}…`;
+}
 
 const ungleichungen: Lesson = {
   id: "tg-9-ungleichungen",
@@ -2628,7 +2651,7 @@ const ungleichungen: Lesson = {
           const f = A * g + m * p - n * q;
           const solved = A > 0 ? rel : FLIPPED[rel];
           const right = e === 0 ? fmt(f) : polyHtml(lin(e, f));
-          const shown = `${m}${linHtml(1, p)} − ${n}${linHtml(1, q)} ${RELATIONS[rel].replace("<", "&lt;").replace(">", "&gt;")} ${right}`;
+          const shown = `${m}${linHtml(1, p)} − ${n === 1 ? "" : n}${linHtml(1, q)} ${RELATIONS[rel].replace("<", "&lt;").replace(">", "&gt;")} ${right}`;
           const R = (i: number) => RELATIONS[i].replace("<", "&lt;").replace(">", "&gt;");
           return {
             prompt: `Löse die Ungleichung über G = ℚ: ${shown}. Gib die Randzahl und das Zeichen der Lösung x ⋚ Randzahl an.`,
@@ -2693,7 +2716,7 @@ const ungleichungen: Lesson = {
               given: [`Ansatz: ${ansatz} (x: Minuten)`],
               formulaHint: "höchstens heißt ≤; x ist eine Anzahl von Minuten, also eine natürliche Zahl",
               fields: [exactField("höchstens", minutes, exact ? [] : [{ value: minutes + 1, hint: "Aufgerundet wäre das Budget überschritten: Bei „höchstens“ wird abgerundet." }], "Minuten")],
-              steps: [`${ansatz}   | − ${fmt(base / 100)}`, `${fmt(perMin / 100)} · x ≤ ${fmt(extra / 100)}   | : ${fmt(perMin / 100)}`, `x ≤ ${fmt(extra / perMin, 2)}${exact ? "" : "…"}`, `<strong>Lena darf höchstens ${minutes} Minuten telefonieren.</strong>`],
+              steps: [`${ansatz}   | − ${fmt(base / 100)}`, `${fmt(perMin / 100)} · x ≤ ${fmt(extra / 100)}   | : ${fmt(perMin / 100)}`, `x ≤ ${boundText(extra / perMin)}`, `<strong>Lena darf höchstens ${minutes} Minuten telefonieren.</strong>`],
               meta: { kind: 0, base, perMin, budget, minutes },
             };
           }
@@ -2709,7 +2732,7 @@ const ungleichungen: Lesson = {
             given: [`Ansatz: ${ansatz} (x: Stunden)`],
             formulaHint: "mindestens heißt ≥; x ist eine Anzahl ganzer Stunden",
             fields: [exactField("mindestens", hours, exact ? [] : [{ value: hours - 1, hint: "Abgerundet reicht das Geld nicht: Bei „mindestens“ wird aufgerundet." }], "Stunden")],
-            steps: [...(bonus ? [`${ansatz}   | − ${fmt(bonus / 100)}`] : []), `${fmt(wage / 100)} · x ≥ ${fmt((target - bonus) / 100)}   | : ${fmt(wage / 100)}`, `x ≥ ${fmt((target - bonus) / wage, 2)}${exact ? "" : "…"}`, `<strong>Tim muss mindestens ${hours} Stunden arbeiten.</strong>`],
+            steps: [...(bonus ? [`${ansatz}   | − ${fmt(bonus / 100)}`] : []), `${fmt(wage / 100)} · x ≥ ${fmt((target - bonus) / 100)}   | : ${fmt(wage / 100)}`, `x ≥ ${boundText((target - bonus) / wage)}`, `<strong>Tim muss mindestens ${hours} Stunden arbeiten.</strong>`],
             meta: { kind: 1, wage, bonus, target, hours },
           };
         }
@@ -2721,17 +2744,18 @@ const ungleichungen: Lesson = {
           const perB = perA - rng.pick([3, 4, 5, 6, 7]);
           const g = (baseB - baseA) / (perA - perB);
           const from = integerEdge(2, g);
+          const tariffA = baseA === 0 ? `Tarif A hat keine Grundgebühr und kostet ${perA} ct pro Minute` : `Tarif A kostet ${euro(baseA)} € Grundgebühr im Monat und ${perA} ct pro Minute`;
           return {
-            prompt: `Tarif A kostet ${euro(baseA)} € Grundgebühr im Monat und ${perA} ct pro Minute, Tarif B ${euro(baseB)} € Grundgebühr und ${perB} ct pro Minute. Welcher Tarif ist für wenige Minuten günstiger? Ab wie vielen Minuten im Monat ist Tarif B günstiger als Tarif A?`,
-            given: [`A: ${euro(baseA)} € + ${perA} ct/min`, `B: ${euro(baseB)} € + ${perB} ct/min`],
+            prompt: `${tariffA}, Tarif B ${euro(baseB)} € Grundgebühr und ${perB} ct pro Minute. Welcher Tarif ist für wenige Minuten günstiger? Ab wie vielen Minuten im Monat ist Tarif B günstiger als Tarif A?`,
+            given: [`A: ${baseA === 0 ? "" : `${euro(baseA)} € + `}${perA} ct/min`, `B: ${euro(baseB)} € + ${perB} ct/min`],
             fields: [
               choiceField("Für wenige Minuten günstiger:", ["Tarif A", "Tarif B"], 0),
               exactField("Tarif B ist günstiger ab", from, Number.isInteger(g) ? [{ value: g, hint: `Bei genau ${g} Minuten kosten beide gleich viel. „Günstiger“ heißt echt kleiner.` }] : [{ value: Math.floor(g), hint: "Bei dieser Minutenzahl ist Tarif B noch nicht günstiger: aufrunden." }], "Minuten"),
             ],
             steps: [
-              `x sei die Zahl der Minuten. Tarif B günstiger: ${fmt(baseB / 100)} + ${fmt(perB / 100)}x &lt; ${fmt(baseA / 100)} + ${fmt(perA / 100)}x`,
-              `${fmt((perB - perA) / 100)}x &lt; ${fmt((baseA - baseB) / 100)}   | : (${fmt((perB - perA) / 100)}), Zeichen umdrehen: x &gt; ${fmt(g, 2)}${Number.isInteger(g * 100) ? "" : "…"}`,
-              `Für wenige Minuten ist A günstiger, weil seine Grundgebühr kleiner ist.`,
+              `x sei die Zahl der Minuten. Tarif B günstiger: ${fmt(baseB / 100)} + ${fmt(perB / 100)}x &lt; ${baseA === 0 ? "" : `${fmt(baseA / 100)} + `}${fmt(perA / 100)}x   | − ${fmt(perA / 100)}x − ${fmt(baseB / 100)}`,
+              `${fmt((perB - perA) / 100)}x &lt; ${fmt((baseA - baseB) / 100)}   | : (${fmt((perB - perA) / 100)}), Zeichen umdrehen: x &gt; ${boundText(g)}`,
+              `Für wenige Minuten ist A günstiger, weil ${baseA === 0 ? "es dort keine Grundgebühr gibt" : "seine Grundgebühr kleiner ist"}.`,
               `<strong>Ab ${from} Minuten im Monat ist Tarif B günstiger.</strong>`,
             ],
             meta: { kind: 2, baseA, baseB, perA, perB, from },
@@ -2750,7 +2774,7 @@ const ungleichungen: Lesson = {
           steps: [
             `x sei die Zahl der Besuche: ${fmt(season / 100)} + ${cx(perVisit / 100)} &lt; ${cx(single / 100)}   | − ${cx(perVisit / 100)}`,
             `${fmt(season / 100)} &lt; ${cx((single - perVisit) / 100)}${single - perVisit === 100 ? "" : `   | : ${fmt((single - perVisit) / 100)}`}`,
-            `x &gt; ${fmt(g, 2)}${Number.isInteger(g * 100) ? "" : "…"}`,
+            `x &gt; ${boundText(g)}`,
             `<strong>Ab ${from} Besuchen ist die Saisonkarte günstiger.</strong>`,
           ],
           meta: { kind: 3, single, perVisit, season, from },

@@ -659,13 +659,13 @@ function completingSquareView(v: LabValues): string {
   if (S > 0) {
     out += rect(sx, sy, S, S, "lab-fill-a");
     if (S >= 64) out += text(sx + S / 2, sy + S / 2 + 5, label, "lab-text lab-text-a", "middle");
-    out += text(sx + S + 8, sy + 14, `${S >= 64 ? "" : `${label} `}= ${fmt(sq, 3)}`, "lab-text lab-text-a");
+    out += text(sx + S + 8, sy + 14, `${S >= 64 ? "" : `${label} `}= ${fmt(sq, 4)}`, "lab-text lab-text-a");
     out += text(sx + S / 2, sy - 5, `|x ${MINUS} d| = ${fmt(Math.abs(x - d), 3)}`, "lab-text-small", "middle");
   } else {
     out += circle(sx + 3, sy + 4, 4, "lab-point-ok");
     out += text(sx + 14, sy + 9, `${label} = 0: Das Quadrat ist weg.`, "lab-text lab-text-ok");
   }
-  out += text(14, 330, `T(${fmt(x)}) = ${factorText(a) === "" ? "" : `${paren(a)} · `}${fmt(sq, 3)}${e < 0 ? ` ${MINUS} ${fmt(-e, 3)}` : ` + ${fmt(e, 3)}`} = ${fmt(T, 3)}`, "lab-text");
+  out += text(14, 330, `T(${fmt(x)}) = ${factorText(a) === "" ? "" : `${paren(a)} · `}${fmt(sq, 4)}${e < 0 ? ` ${MINUS} ${fmt(-e, 4)}` : ` + ${fmt(e, 4)}`} = ${fmt(T, 4)}`, "lab-text");
 
   // The value table as points, the current x highlighted.
   const plot = csPlot(v);
@@ -685,13 +685,13 @@ function completingSquareView(v: LabValues): string {
   const P = plot.P(x, T);
   out += line(P.x, P.y, P.x, plot.Y(e), "lab-thin");
   out += circle(plot.X(d), plot.Y(e), 4.5, "lab-point-ok");
-  // A small value table around d.
+  // A small value table around d; five columns wide enough for values like −27,88.
   const ty = 240;
-  const cw = 29;
+  const cw = 38;
   out += rect(box.x, ty, cw, 22, "lab-cell-sum") + rect(box.x, ty + 22, cw, 22, "lab-cell-sum");
   out += text(box.x + cw / 2, ty + 15, "x", "lab-text-tick", "middle") + text(box.x + cw / 2, ty + 37, "T(x)", "lab-text-tick", "middle");
-  for (let k = -3; k <= 3; k++) {
-    const cx = box.x + (k + 4) * cw;
+  for (let k = -2; k <= 2; k++) {
+    const cx = box.x + (k + 3) * cw;
     const hit = k === 0;
     out += rect(cx, ty, cw, 22, hit ? "lab-fill-ok" : "lab-cell") + rect(cx, ty + 22, cw, 22, hit ? "lab-fill-ok" : "lab-cell");
     out += text(cx + cw / 2, ty + 15, fmt(d + k, 2), "lab-text-tick", "middle");
@@ -813,7 +813,9 @@ function extremumProblem(v: LabValues): string {
   out += text(16, 27, model.title, "lab-text lab-text-big");
   if (!inside) {
     out += text(x0, y0 + 40, `x = ${fmt(x)} liegt nicht in ]0; ${model.upper}[:`, "lab-text lab-text-bad");
-    out += text(x0, y0 + 62, x <= 0 ? "Für x = 0 ändert sich nichts." : "Eine Seite wäre nicht mehr positiv.", "lab-text lab-text-bad");
+    // x = 0 leaves the old rectangle (mode 0) or the whole square (mode 2); fence and perimeter give no rectangle.
+    const atZero = mode === 0 || mode === 2 ? "Für x = 0 ändert sich nichts." : "Für x = 0 gibt es kein Rechteck.";
+    out += text(x0, y0 + 62, x <= 0 ? atZero : "Eine Seite wäre nicht mehr positiv.", "lab-text lab-text-bad");
   } else if (mode === 0) {
     const w = (8 - x) * s;
     const h = (5 + 2 * x) * s;
@@ -859,7 +861,7 @@ function extremumProblem(v: LabValues): string {
   out += text(box.x, box.y - 8, `A in ${u}²`, "lab-text-axis");
   out += text(box.x + box.w, box.y + box.h + 26, `x in ${u}`, "lab-text-axis", "end");
   for (const t of [0, model.upper / 2, model.upper]) out += text(plot.X(t), box.y + box.h + 12, fmt(t), "lab-text-tick", "middle");
-  out += text(box.x - 4, plot.Y(plot.ymax / 1.15) + 4, fmt(plot.ymax / 1.15), "lab-text-tick", "end");
+  out += text(box.x - 4, plot.Y(plot.ymax / 1.15) + 4, fmt(plot.ymax / 1.15, 3), "lab-text-tick", "end");
   const stepX = model.upper / 32;
   for (let i = 1; i < 32; i++) out += circle(plot.X(i * stepX), plot.Y(model.area(i * stepX)), 1.8, "lab-dot-small");
   if (inside) {
