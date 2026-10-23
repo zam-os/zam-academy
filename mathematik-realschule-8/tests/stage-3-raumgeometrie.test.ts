@@ -438,11 +438,11 @@ describe("Labore der Etappe 3", () => {
     const lab = lesson("rg-2-axialschnitte").lab;
     const start = at(lab, {});
     expect(start.r.body).toBe("Zylinder");
-    expect(start.r.section).toBe("Rechteck 4 cm × 3 cm");
-    expect(start.r.breite).toBe(4);
+    expect(start.r.section).toBe("Rechteck 5 cm × 4 cm");
+    expect(start.r.breite).toBe(5);
     expect(start.r.s).toBe("keine");
-    expect(at(lab, { d: 1.5 }).r.section).toBe("zwei Rechtecke je 2 cm × 3 cm, 3 cm voneinander entfernt");
-    expect(at(lab, { d: 1.5 }).r.breite).toBe(7);
+    expect(at(lab, { r: 2, h: 3, d: 1.5 }).r.section).toBe("zwei Rechtecke je 2 cm × 3 cm, 3 cm voneinander entfernt");
+    expect(at(lab, { r: 2, d: 1.5 }).r.breite).toBe(7);
     expect(at(lab, { shape: 2, r: 3 }).r.hoehe).toBe(6);
     expect(at(lab, { shape: 3, r: 2, r2: 2 }).r.body).toBe("Zylinder");
     close(Number(at(lab, { shape: 1, r: 3, h: 4 }).r.s), 5);

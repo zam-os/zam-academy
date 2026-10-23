@@ -321,7 +321,8 @@ export function symCandidate(b: SymBody, k: number): { type: CandidateType; d: V
     const [d, e] = list[i - 3];
     return { type: "E", d, normal: cross(d, e) };
   }
-  const V = [vec(hx, hy, hz), vec(hx, hy, -hz), vec(hx, -hy, hz), vec(-hx, hy, hz)][i - 9];
+  // ordered so that the first one is clearly seen at the default view (30°), not edge-on
+  const V = [vec(-hx, hy, hz), vec(hx, hy, -hz), vec(hx, -hy, hz), vec(hx, hy, hz)][i - 9];
   return { type: "V", d: V, normal: V };
 }
 
@@ -458,7 +459,7 @@ export function symImageText(v: LabValues): string {
   return s.symmetric ? `${what} deckt sich mit dem Körper.` : `${what} deckt sich nicht.`;
 }
 
-const SYM = { cx: 162, cy: 178, e: 22, dial: { cx: 420, cy: 270, r: 34 } };
+const SYM = { cx: 162, cy: 178, e: 22, dial: { cx: 420, cy: 250, r: 32 } };
 
 function symScale(b: SymBody): number {
   return 108 / Math.hypot(b.hx, b.hy, b.hz);
@@ -521,7 +522,7 @@ function roundSamples(b: SymBody): V3[][] {
   return [rim(-b.hz), rim(b.hz)];
 }
 
-const GHOST = 'style="stroke-width:1.6;stroke-dasharray:6 4"';
+const GHOST = 'style="stroke-width:1.3;stroke-dasharray:6 4"';
 
 /** The image of the body under the mapping, dashed in orange, so it can be compared with the body. */
 function ghostOf(b: SymBody, iso: Iso, cam: Camera): string {
@@ -618,7 +619,7 @@ function symmetryView(v: LabValues): string {
       const end = polar(cx, cy, r, 90 - v.alpha);
       out += path(`M${r1(cx)} ${r1(cy)} L${r1(cx)} ${r1(cy - r)} A${r} ${r} 0 ${v.alpha > 180 ? 1 : 0} 1 ${r1(end.x)} ${r1(end.y)} Z`, "lab-fill-c");
     }
-    out += text(cx, cy + 4, `α = ${fmt(v.alpha)}°`, "lab-text-small", "middle");
+    out += text(cx, cy + r + 20, `α = ${fmt(v.alpha)}°`, "lab-text", "middle");
     const knob = polar(cx, cy, r, 90 - v.alpha);
     out += handle("alpha", knob.x, knob.y, "Drehwinkel α ändern");
   }
@@ -628,7 +629,7 @@ function symmetryView(v: LabValues): string {
 
 // ─── 3.2 Rotationskörper und Axialschnitte ─────────────────────────────────
 
-const AXIAL = { cx: 128, sx: 392, base: 296, k: 18 };
+const AXIAL = { cx: 128, sx: 392, base: 282, k: 18 };
 /** How flat a circle looks from slightly above: the ellipse has ry = FLAT · rx. */
 const FLAT = 0.3;
 
@@ -776,7 +777,8 @@ function axialSectionView(v: LabValues): string {
     }
     out += polygon(prof.map(([rho, y]) => P(rho, y, v.phi)), "lab-fill-b");
   }
-  out += text(cx, base + 30, "Drehachse", "lab-text-small", "middle");
+  const bottomRim = v.phi >= 360 ? axialSilhouette(v)[0][0] : 0;
+  out += text(cx, base + Math.max(30, bottomRim * k * FLAT + 16), "Drehachse", "lab-text-small", "middle");
   out += text(14, 24, v.phi >= 360 ? axialBody(v) : `Drehung: ${fmt(v.phi)}°`, "lab-text lab-text-big");
   out += text(14, 44, v.phi >= 360 ? "rechts: sein Axialschnitt" : "Drehe die Figur bis 360°.", "lab-text-muted");
 
@@ -796,14 +798,14 @@ function axialSectionView(v: LabValues): string {
     out += text(sx + (v.r * k) / 2, base - v.r * k - 6, `r = ${fmt(v.r)}`, "lab-text lab-text-a", "middle");
   } else {
     out += line(sx, base, sx + outer * k, base, "lab-side-a");
-    out += text(sx + (outer * k) / 2, base + 21, `r = ${fmt(outer)}`, "lab-text lab-text-a", "middle");
+    out += text(sx + (outer * k) / 2, base + 25, `r = ${fmt(outer)}`, "lab-text lab-text-a", "middle");
     // h beside the figure, or beside the mirror image where the right edge is near
     const hLabel = `h = ${fmt(v.h)}`;
     const atRight = sx + outer * k + 8 + hLabel.length * 7.3 < 516;
     out += text(atRight ? sx + outer * k + 8 : sx - outer * k - 8, base - (v.h * k) / 2 + 4, hLabel, "lab-text", atRight ? "start" : "end");
   }
   if (v.shape === 0 && v.d > 0) out += text(sx, base - v.h * k - 22, `Loch: ${fmt(2 * v.d)} cm breit`, "lab-text-small", "middle");
-  if (v.shape === 3) out += text(sx + (v.r2 * k) / 2, base - v.h * k - 6, `r₂ = ${fmt(v.r2)}`, "lab-text lab-text-a", "middle");
+  if (v.shape === 3) out += text(sx - 8, base - v.h * k - 8, `r₂ = ${fmt(v.r2)}`, "lab-text lab-text-a", "end");
   if (v.shape === 4) out += text(sx - v.r * k - 8, base - (v.h + v.k / 2) * k + 4, `k = ${fmt(v.k)}`, "lab-text", "end");
   out += handle("rim", sx + outer * k, v.shape === 2 ? base - v.r * k : base, "Rand: Radius r ändern");
   if (v.shape === 0 || v.shape === 1 || v.shape === 4) out += handle("top", sx, base - v.h * k, "Höhe h ändern");

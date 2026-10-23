@@ -24,7 +24,7 @@ export const GOAL_WITNESSES_STAGE_3: Record<string, Record<string, LabValues>> =
   },
   "rg-3-raumkoordinaten": {
     // P(0 | 3 | 2) lies in the yz-plane
-    "yz-ebene": { x: 0, y: 3, z: 2, u: 4, v: 1, w: 3, qpath: 0 },
+    "yz-ebene": { x: 0, y: 3, z: 2, u: 1, v: 5, w: 3, qpath: 0 },
     // (0 | 2 | 2) and (3 | 3 | 3) are 0,09 cm apart in the picture
     "gleiches-bild": { x: 0, y: 2, z: 2, u: 3, v: 3, w: 3, qpath: 1 },
     // Q(2 | 3 | 0) lies below P(2 | 3 | 2)
