@@ -1,0 +1,427 @@
+{
+  "schema": 1,
+  "checked": "2026-10-22",
+  "curriculum": {
+    "I": "https://www.lehrplanplus.bayern.de/fachlehrplan/realschule/8/mathematik/wpfg1",
+    "II_III": "https://www.lehrplanplus.bayern.de/fachlehrplan/realschule/8/mathematik/wpfg2-3"
+  },
+  "snapshots": {
+    "I": "https://web.archive.org/web/20240413214556/https://www.lehrplanplus.bayern.de/fachlehrplan/realschule/8/mathematik/wpfg1",
+    "II_III": "https://web.archive.org/web/20260418170947/https://www.lehrplanplus.bayern.de/fachlehrplan/realschule/8/mathematik/wpfg2-3"
+  },
+  "school_type": "realschule",
+  "grade": 8,
+  "subject": "mathematik",
+  "optional_lessons": [],
+  "scope_note": "Zweig I: LB 1 Vierecke (12 Std.), LB 2 Drehung (6), LB 3 Raumgeometrie (13), LB 4 Terme, Gleichungen und Ungleichungen (40), LB 5 Bruchterme und Bruchgleichungen (7), LB 6 Funktionen (26), LB 7 Daten und Zufall (8). Zweig II/III: LB 1 Dreiecke und Vierecke (16), LB 2 Raumgeometrie (7), LB 3 Terme und Gleichungen (40), LB 4 Bruchterme und Bruchgleichungen (5), LB 5 Funktionen (8), LB 6 Daten und Zufall (8). Zweig I hatte Dreiecke (Existenz, Konstruktion, Kongruenz) sowie Schrägbilder und wahre Größe schon in M7; Zweig II/III lernt y = mx + t erst in M9. dv-6 wiederholt die Flächenformeln aus M6, fu-10 die Determinante aus M7.",
+  "rows": [
+    {
+      "track": "I",
+      "lb": 1,
+      "competence": "unterscheiden Trapez, Drachenviereck, Parallelogramm, Raute, Rechteck und Quadrat anhand ihrer charakteristischen Eigenschaften.",
+      "lessons": [
+        "dv-4-vierecke"
+      ],
+      "evidence": "Haus der Vierecke: Eigenschaften von Seiten, Winkeln, Diagonalen und Symmetrie; Viereck-Labor mit ziehbaren Ecken"
+    },
+    {
+      "track": "I",
+      "lb": 1,
+      "competence": "konstruieren Vierecke auch mithilfe dynamischer Geometriesoftware und nutzen die charakteristischen Eigenschaften von Trapez, Drachenviereck, Parallelogramm, Raute, Rechteck und Quadrat zur Lösung geometrischer Problemstellungen.",
+      "lessons": [
+        "dv-5-viereckskonstruktion",
+        "dv-6-vierecke-anwenden"
+      ],
+      "evidence": "Konstruktionen mit Planfigur und Zugmodus wie in dynamischer Geometriesoftware; Winkel und Flächen aus Viereckseigenschaften"
+    },
+    {
+      "track": "I",
+      "lb": 2,
+      "competence": "identifizieren die Drehung als Kongruenzabbildung und beschreiben ihre Eigenschaften.",
+      "lessons": [
+        "dr-1-drehung"
+      ],
+      "evidence": "Abbildungsvorschrift und Eigenschaften der Drehung als Kongruenzabbildung, Umlaufsinn, Fixpunkt"
+    },
+    {
+      "track": "I",
+      "lb": 2,
+      "competence": "identifizieren die Punktspiegelung als Sonderfall der Drehung.",
+      "lessons": [
+        "dr-2-punktspiegelung"
+      ],
+      "evidence": "Punktspiegelung als Drehung um 180°"
+    },
+    {
+      "track": "I",
+      "lb": 2,
+      "competence": "bilden mithilfe der Abbildungsvorschrift der Drehung Punkte und ebene Figuren ab und lösen geometrische Problemstellungen auch mit Unterstützung geeigneter Geometriesoftware.",
+      "lessons": [
+        "dr-1-drehung",
+        "dr-3-vektoren"
+      ],
+      "evidence": "Bildpunkte und Bildfiguren, Drehzentrum aus Mittelsenkrechten, gedrehte Figuren im Koordinatensystem"
+    },
+    {
+      "track": "I",
+      "lb": 2,
+      "competence": "untersuchen dreh- und punktsymmetrische Figuren (auch z. B. aus Alltag, Natur und Kunst) und bestimmen deren Drehzentrum und Drehwinkel.",
+      "lessons": [
+        "dr-2-punktspiegelung"
+      ],
+      "evidence": "Dreh- und punktsymmetrische Figuren aus Alltag, Natur und Kunst, kleinster Drehwinkel 360° : n"
+    },
+    {
+      "track": "I",
+      "lb": 2,
+      "competence": "drehen Vektoren um φ = ± 90° und φ = 180°, geben ihre Koordinaten an und berechnen damit Punktkoordinaten.",
+      "lessons": [
+        "dr-3-vektoren"
+      ],
+      "evidence": "Vektoren um +90°, −90° und 180° drehen und damit Bildpunkte berechnen"
+    },
+    {
+      "track": "I",
+      "lb": 3,
+      "competence": "identifizieren und beschreiben symmetrische Körper (z. B. in Natur, Kunst, bei Alltagsgegenständen) und bestimmen deren Symmetrieebenen, -achsen bzw. -zentren.",
+      "lessons": [
+        "rg-1-koerpersymmetrie"
+      ],
+      "evidence": "Symmetrieebenen, Drehachsen und Symmetriezentren von Quader, Würfel, Pyramide, Zylinder, Kegel und Kugel"
+    },
+    {
+      "track": "I",
+      "lb": 3,
+      "competence": "zeichnen bzw. skizzieren Axialschnitte von Rotationskörpern und beschreiben die Form von Rotationskörpern aus gegebenen Axialschnitten und umgekehrt.",
+      "lessons": [
+        "rg-2-axialschnitte"
+      ],
+      "evidence": "Rotationskörper aus ebenen Figuren und ihre Axialschnitte in beide Richtungen"
+    },
+    {
+      "track": "I",
+      "lb": 3,
+      "competence": "verwenden das dreidimensionale Koordinatensystem als Orientierungsmöglichkeit im Raum (z. B. Koordinatisierung von Gegenständen) und zeichnen geometrische Elemente (z. B. Punkte, Strecken, Vielecke, einfache Körper) darin ein.",
+      "lessons": [
+        "rg-3-raumkoordinaten",
+        "rg-4-koerper-koordinaten"
+      ],
+      "evidence": "Punkte, Strecken, Vielecke und Körper im dreidimensionalen Koordinatensystem"
+    },
+    {
+      "track": "I",
+      "lb": 4,
+      "competence": "vereinfachen komplexere Terme (auch mit verschiedenen Variablen und mit höheren Potenzen) und addieren, subtrahieren, multiplizieren und faktorisieren Summenterme auch mithilfe der binomischen Formeln.",
+      "lessons": [
+        "tg-1-terme",
+        "tg-2-ausmultiplizieren",
+        "tg-3-binomische-formeln",
+        "tg-4-faktorisieren"
+      ],
+      "evidence": "Gleichartige Glieder, Potenzgesetze, Summenterme multiplizieren, binomische Formeln, Ausklammern und Faktorisieren"
+    },
+    {
+      "track": "I",
+      "lb": 4,
+      "competence": "ermitteln rechnerisch die Extremwerte quadratischer Terme der Form ax² + bx + c und lösen Aufgaben mit Extremwertproblemen (z. B. Flächenberechnung).",
+      "lessons": [
+        "tg-5-extremwerte",
+        "tg-6-extremwertprobleme"
+      ],
+      "evidence": "Quadratische Ergänzung, kleinster und größter Termwert, Extremwertprobleme mit Flächen"
+    },
+    {
+      "track": "I",
+      "lb": 4,
+      "competence": "lösen lineare Gleichungen und Ungleichungen, deren Links- und Rechtsterm aus Termen mit Variablen (auch Produkte von Summentermen und binomischen Formeln) bestehen, und wenden dies bei Text- und Sachaufgaben an.",
+      "lessons": [
+        "tg-7-gleichungen",
+        "tg-8-sachaufgaben",
+        "tg-9-ungleichungen"
+      ],
+      "evidence": "Gleichungen und Ungleichungen mit Produkten von Summentermen und binomischen Formeln, Lösungsfälle, Text- und Sachaufgaben"
+    },
+    {
+      "track": "I",
+      "lb": 5,
+      "competence": "erkennen Terme mit Variablen im Nenner als Bruchterme und erläutern die Notwendigkeit der Definitionsmenge.",
+      "lessons": [
+        "br-1-bruchterme"
+      ],
+      "evidence": "Bruchterme erkennen, Division durch null, Notwendigkeit der Definitionsmenge"
+    },
+    {
+      "track": "I",
+      "lb": 5,
+      "competence": "Bestimmen die Definitionsmenge von Bruchtermen und lösen einfache Bruchgleichungen (Verhältnisgleichungen) der Form a/b = c/d.",
+      "lessons": [
+        "br-2-definitionsmenge",
+        "br-3-verhaeltnisgleichungen"
+      ],
+      "evidence": "Definitionsmengen bestimmen, Verhältnisgleichungen a/b = c/d mit Prüfung der Lösung"
+    },
+    {
+      "track": "I",
+      "lb": 6,
+      "competence": "beschreiben funktionale Zusammenhänge und unterscheiden sie von nicht eindeutigen Zuordnungen.",
+      "lessons": [
+        "fu-1-funktionen"
+      ],
+      "evidence": "Eindeutige und nicht eindeutige Zuordnungen, Graphen-Test"
+    },
+    {
+      "track": "I",
+      "lb": 6,
+      "competence": "stellen Funktionen durch Funktionsgleichungen und -terme, Graphen und Wertetabellen sowie durch verbale Beschreibung dar, wechseln zwischen diesen Darstellungsformen, berechnen Funktionswerte sowie Nullstellen und verwenden dabei die Definitions- und Wertemengen.",
+      "lessons": [
+        "fu-2-darstellungen",
+        "fu-3-werte-nullstellen"
+      ],
+      "evidence": "Gleichung, Term, Wertetabelle, Graph und Beschreibung; Funktionswerte, Nullstellen, Definitions- und Wertemenge"
+    },
+    {
+      "track": "I",
+      "lb": 6,
+      "competence": "identifizieren Funktionsgleichungen der Form y = mx + t als Gleichungen von Geraden und beschreiben die Bedeutung der Parameter m und t.",
+      "lessons": [
+        "fu-4-ursprungsgeraden",
+        "fu-6-geraden"
+      ],
+      "evidence": "Ursprungsgeraden y = mx und Geraden y = mx + t, Bedeutung von m und t"
+    },
+    {
+      "track": "I",
+      "lb": 6,
+      "competence": "zeichnen Graphen von linearen Funktionen auch mithilfe von Steigungsdreieck und y-Achsenabschnitt t, bestimmen Funktionsgleichungen aus vorgegebenen Graphen und wissen um die Sonderfälle achsenparalleler Geraden.",
+      "lessons": [
+        "fu-4-ursprungsgeraden",
+        "fu-6-geraden"
+      ],
+      "evidence": "Zeichnen mit Steigungsdreieck und y-Achsenabschnitt, Gleichung aus dem Graphen, achsenparallele Geraden"
+    },
+    {
+      "track": "I",
+      "lb": 6,
+      "competence": "bestimmen Funktionsgleichungen aus zwei vorgegebenen Bestimmungsstücken und nutzen den Zusammenhang der Steigungsfaktoren bei orthogonalen bzw. parallelen Geraden und untersuchen Parallelenscharen.",
+      "lessons": [
+        "fu-5-senkrecht",
+        "fu-7-geraden-bestimmen",
+        "fu-8-parallelenscharen"
+      ],
+      "evidence": "Geraden aus Punkt und Steigung oder zwei Punkten, parallele und orthogonale Geraden, Parallelenscharen"
+    },
+    {
+      "track": "I",
+      "lb": 6,
+      "competence": "verwenden lineare Funktionen auch bei praxisorientierten Aufgaben und berechnen Flächeninhalte von ebenen Figuren im Koordinatensystem mit funktionalen Abhängigkeiten auch unter Zuhilfenahme zweireihiger Determinanten.",
+      "lessons": [
+        "fu-9-anwendungen",
+        "fu-10-flaechen"
+      ],
+      "evidence": "Tarife und Sachsituationen mit linearen Funktionen; Flächen mit zweireihigen Determinanten bei Punkten auf Geraden"
+    },
+    {
+      "track": "I",
+      "lb": 7,
+      "competence": "stellen die möglichen Ergebnisse von Zufallsexperimenten (z. B. mit Baumdiagrammen, Vierfeldertafeln) dar und verwenden dabei sachgerecht die Begriffe Ergebnis und Ereignis.",
+      "lessons": [
+        "dz-1-ergebnis-ereignis",
+        "dz-2-baumdiagramm",
+        "dz-3-vierfeldertafel"
+      ],
+      "evidence": "Ergebnisse und Ereignisse, Baumdiagramme und Vierfeldertafeln"
+    },
+    {
+      "track": "I",
+      "lb": 7,
+      "competence": "ermitteln absolute und relative Häufigkeiten von Ereignissen bei Zufallsexperimenten (z. B. zum Einschätzen von Gewinnchancen).",
+      "lessons": [
+        "dz-3-vierfeldertafel",
+        "dz-4-haeufigkeiten"
+      ],
+      "evidence": "Absolute und relative Häufigkeiten aus Tafeln und Simulationen, Gewinnchancen vergleichen"
+    },
+    {
+      "track": "II_III",
+      "lb": 1,
+      "competence": "begründen mithilfe der Beziehungen zwischen den Seitenlängen sowie zwischen Seitenlängen und Winkelmaßen die Existenz von Dreiecken.",
+      "lessons": [
+        "dv-1-dreiecksexistenz"
+      ],
+      "evidence": "Dreiecksungleichung, Seiten-Winkel-Beziehung und Winkelsumme als Begründung der Existenz"
+    },
+    {
+      "track": "II_III",
+      "lb": 1,
+      "competence": "beschreiben Dreieckskonstruktionen und führen diese mit Zirkel und Geodreieck und auch mithilfe dynamischer Geometriesoftware durch.",
+      "lessons": [
+        "dv-2-dreieckskonstruktion"
+      ],
+      "evidence": "Planfigur, Konstruktionsbeschreibung, Konstruktionen SSS, SWS, WSW, SsW mit Zirkel, Geodreieck und Zugmodus"
+    },
+    {
+      "track": "II_III",
+      "lb": 1,
+      "competence": "verwenden die Kongruenzsätze, um Dreiecke auf Kongruenz zu überprüfen.",
+      "lessons": [
+        "dv-3-kongruenz"
+      ],
+      "evidence": "Kongruenzsätze SSS, SWS, WSW, SsW; WWW und SSW als Gegenbeispiele"
+    },
+    {
+      "track": "II_III",
+      "lb": 1,
+      "competence": "unterscheiden Trapez, Drachenviereck, Parallelogramm, Raute, Rechteck und Quadrat anhand ihrer charakteristischen Eigenschaften.",
+      "lessons": [
+        "dv-4-vierecke"
+      ],
+      "evidence": "Haus der Vierecke: Eigenschaften von Seiten, Winkeln, Diagonalen und Symmetrie; Viereck-Labor mit ziehbaren Ecken"
+    },
+    {
+      "track": "II_III",
+      "lb": 1,
+      "competence": "konstruieren Vierecke und nutzen die charakteristischen Eigenschaften von Trapez, Drachenviereck, Parallelogramm, Raute, Rechteck und Quadrat zur Lösung geometrischer Aufgaben.",
+      "lessons": [
+        "dv-5-viereckskonstruktion",
+        "dv-6-vierecke-anwenden"
+      ],
+      "evidence": "Konstruktionen mit Planfigur; Winkel und Flächen aus Viereckseigenschaften"
+    },
+    {
+      "track": "II_III",
+      "lb": 2,
+      "competence": "zeichnen Schrägbilder von Prismen und Pyramiden und beachten dabei das Maß des Verzerrungswinkels, den Verzerrungsmaßstab und die Lage der Schrägbildachse.",
+      "lessons": [
+        "rg-5-schraegbilder"
+      ],
+      "evidence": "Schrägbilder von Prismen und Pyramiden mit Verzerrungswinkel, Verzerrungsmaßstab und Schrägbildachse"
+    },
+    {
+      "track": "II_III",
+      "lb": 2,
+      "competence": "zeichnen ebene Figuren, die sie aus Schrägbildern entnehmen, in wahrer Größe und ermitteln damit Streckenlängen und Winkelmaße.",
+      "lessons": [
+        "rg-6-wahre-groesse"
+      ],
+      "evidence": "Ebene Figuren aus Schrägbildern in wahrer Größe, Strecken und Winkel ermitteln"
+    },
+    {
+      "track": "II_III",
+      "lb": 3,
+      "competence": "vereinfachen komplexere Terme (auch mit verschiedenen Variablen und mit höheren Potenzen) und addieren, subtrahieren, multiplizieren und faktorisieren Summenterme auch mithilfe der binomischen Formeln.",
+      "lessons": [
+        "tg-1-terme",
+        "tg-2-ausmultiplizieren",
+        "tg-3-binomische-formeln",
+        "tg-4-faktorisieren"
+      ],
+      "evidence": "Gleichartige Glieder, Potenzgesetze, Summenterme multiplizieren, binomische Formeln, Ausklammern und Faktorisieren"
+    },
+    {
+      "track": "II_III",
+      "lb": 3,
+      "competence": "ermitteln rechnerisch die Extremwerte quadratischer Terme der Form ax² + bx + c und lösen Aufgaben mit Extremwertproblemen (z. B. Flächenberechnung).",
+      "lessons": [
+        "tg-5-extremwerte",
+        "tg-6-extremwertprobleme"
+      ],
+      "evidence": "Quadratische Ergänzung, kleinster und größter Termwert, Extremwertprobleme mit Flächen"
+    },
+    {
+      "track": "II_III",
+      "lb": 3,
+      "competence": "lösen lineare Gleichungen, deren Links- und Rechtsterm aus Termen mit Variablen (auch Produkte von Summentermen und binomischen Formeln) bestehen, und wenden dies bei Text- und Sachaufgaben an.",
+      "lessons": [
+        "tg-7-gleichungen",
+        "tg-8-sachaufgaben"
+      ],
+      "evidence": "Gleichungen mit Produkten von Summentermen und binomischen Formeln, Lösungsfälle, Text- und Sachaufgaben"
+    },
+    {
+      "track": "II_III",
+      "lb": 4,
+      "competence": "erkennen Terme mit Variablen im Nenner als Bruchterme und erläutern die Notwendigkeit der Definitionsmenge.",
+      "lessons": [
+        "br-1-bruchterme"
+      ],
+      "evidence": "Bruchterme erkennen, Division durch null, Notwendigkeit der Definitionsmenge"
+    },
+    {
+      "track": "II_III",
+      "lb": 4,
+      "competence": "Bestimmen die Definitionsmenge von Bruchtermen und lösen einfache Bruchgleichungen (Verhältnisgleichungen) der Form a/b = c/d.",
+      "lessons": [
+        "br-2-definitionsmenge",
+        "br-3-verhaeltnisgleichungen"
+      ],
+      "evidence": "Definitionsmengen bestimmen, Verhältnisgleichungen a/b = c/d mit Prüfung der Lösung"
+    },
+    {
+      "track": "II_III",
+      "lb": 5,
+      "competence": "erfassen und beschreiben funktionale Zusammenhänge und unterscheiden sie von nicht eindeutigen Zuordnungen.",
+      "lessons": [
+        "fu-1-funktionen"
+      ],
+      "evidence": "Eindeutige und nicht eindeutige Zuordnungen, Graphen-Test"
+    },
+    {
+      "track": "II_III",
+      "lb": 5,
+      "competence": "stellen Funktionen durch Funktionsgleichungen und -terme, Graphen und Wertetabellen sowie durch verbale Beschreibung dar, wechseln zwischen diesen Darstellungsformen, berechnen Funktionswerte sowie Nullstellen und verwenden dabei die Definitions- und Wertemengen.",
+      "lessons": [
+        "fu-2-darstellungen",
+        "fu-3-werte-nullstellen"
+      ],
+      "evidence": "Gleichung, Term, Wertetabelle, Graph und Beschreibung; Funktionswerte, Nullstellen, Definitions- und Wertemenge"
+    },
+    {
+      "track": "II_III",
+      "lb": 5,
+      "competence": "identifizieren Funktionsgleichungen der Form y = mx als Gleichungen von Ursprungsgeraden und beschreiben die Bedeutung des Parameters m.",
+      "lessons": [
+        "fu-4-ursprungsgeraden"
+      ],
+      "evidence": "Ursprungsgeraden y = mx, Bedeutung von m"
+    },
+    {
+      "track": "II_III",
+      "lb": 5,
+      "competence": "zeichnen Graphen von linearen Funktionen auch mithilfe von Steigungsdreiecken und bestimmen Funktionsgleichungen aus vorgegebenen Graphen.",
+      "lessons": [
+        "fu-4-ursprungsgeraden"
+      ],
+      "evidence": "Zeichnen mit Steigungsdreiecken, Gleichung aus dem Graphen"
+    },
+    {
+      "track": "II_III",
+      "lb": 5,
+      "competence": "bestimmen die Steigung orthogonaler Geraden, indem sie den Zusammenhang m1 ⋅ m2 = −1 anwenden.",
+      "lessons": [
+        "fu-5-senkrecht"
+      ],
+      "evidence": "Orthogonale Ursprungsgeraden mit m₁ · m₂ = −1"
+    },
+    {
+      "track": "II_III",
+      "lb": 6,
+      "competence": "stellen die möglichen Ergebnisse von Zufallsexperimenten (z. B. mit Baumdiagrammen, Vierfeldertafeln) dar und verwenden dabei sachgerecht die Begriffe Ergebnis und Ereignis.",
+      "lessons": [
+        "dz-1-ergebnis-ereignis",
+        "dz-2-baumdiagramm",
+        "dz-3-vierfeldertafel"
+      ],
+      "evidence": "Ergebnisse und Ereignisse, Baumdiagramme und Vierfeldertafeln"
+    },
+    {
+      "track": "II_III",
+      "lb": 6,
+      "competence": "ermitteln absolute und relative Häufigkeiten von Ereignissen bei Zufallsexperimenten (z. B. zum Einschätzen von Gewinnchancen).",
+      "lessons": [
+        "dz-3-vierfeldertafel",
+        "dz-4-haeufigkeiten"
+      ],
+      "evidence": "Absolute und relative Häufigkeiten aus Tafeln und Simulationen, Gewinnchancen vergleichen"
+    }
+  ]
+}
