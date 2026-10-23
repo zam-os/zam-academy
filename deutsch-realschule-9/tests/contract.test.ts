@@ -114,6 +114,22 @@ describe("public learning contract", () => {
     });
     expect(edges).toBe(52);
   });
+  it("places each lesson in an area ZAM's Wissensatlas already has, except Sprechen", () => {
+    // `deutsch/<segment>`: the key of an area of the atlas seed for Deutsch (grammatik, rechtschreibung,
+    // schreiben, literatur, medien) or one of its aliases (argumentation). Only Sprechen und Zuhören has no
+    // area there, so it keeps its own (zam-os/zam#443, review).
+    const counts: Record<string, number> = {};
+    for (const atom of cell.atoms) counts[atom.domain] = (counts[atom.domain] ?? 0) + 1;
+    expect(counts).toEqual({
+      "deutsch/sprechen": 10,
+      "deutsch/argumentation": 1,
+      "deutsch/literatur": 10,
+      "deutsch/medien": 6,
+      "deutsch/schreiben": 13,
+      "deutsch/grammatik": 9,
+      "deutsch/rechtschreibung": 4,
+    });
+  });
   it("describes itself with the real count and links its sources", () => {
     expect(cell.description).toContain(`${LESSONS.length} Lektionen`);
     expect(cell.sources.map((s) => s.uri)).toContain("https://academy.zam-os.org/deutsch-realschule-9/");
@@ -206,7 +222,7 @@ describe("takeover of the old partial cell", () => {
     const retired = (cell as { retired_items?: Array<{ id: string; reason: string }> }).retired_items ?? [];
     expect(retired.map((r) => r.id)).toEqual(rows.filter((r) => r.category === "C").map((r) => r.de_by_id));
     for (const r of retired) expect(r.reason.length).toBeGreaterThan(40);
-    expect(cell.version).toBe("2026.10.2");
+    expect(cell.version).toBe("2026.10.3");
   });
   it("is published only on Thomas's approval: a date with his words, never a flag", () => {
     const approved = mapping.approved as string | null;
