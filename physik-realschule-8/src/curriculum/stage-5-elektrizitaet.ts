@@ -160,13 +160,13 @@ const magnetfeld: Lesson = {
       <li>Die Nordspitze einer <strong>Magnetnadel</strong> zeigt in Feldrichtung, also an der Feldlinie entlang.</li>
       <li><strong>Feldbilder:</strong> Stabmagnet (Linien laufen von Pol zu Pol), Hufeisenmagnet (zwischen den Schenkeln fast <em>homogenes</em> Feld mit parallelen Linien), zwei gleichnamige Pole (Linien weichen einander aus, in der Mitte ist das Feld null), zwei ungleichnamige Pole (Linien laufen geradlinig vom Nord- zum Südpol).</li>
       <li><strong>Magnetfeld der Erde:</strong> Die Erde wirkt wie ein riesiger Stabmagnet. Die Nordspitze der Kompassnadel zeigt nach Norden, also liegt dort der magnetische <strong>Südpol</strong> der Erde (nahe dem geografischen Nordpol). Die Feldlinien neigen sich gegen den Erdboden (in Deutschland etwa 66°).</li>
-      <li>Das Erdfeld schützt vor dem Sonnenwind (Polarlicht) und hilft Zugvögeln bei der Orientierung. Die Nadel weicht vom geografischen Norden etwas ab (<strong>Missweisung</strong>, in Bayern etwa 3° nach Osten).</li>
+      <li>Das Erdfeld schützt vor dem Sonnenwind (Polarlicht) und hilft Zugvögeln bei der Orientierung. Die Nadel weicht vom geografischen Norden etwas ab (<strong>Missweisung</strong>, in Bayern etwa 4° nach Osten).</li>
     </ul>
     <div class="merke"><strong>Merke:</strong> Feldlinien laufen außen von Nord nach Süd. Der Kompass-Nordpol zeigt zum magnetischen Südpol der Erde im geografischen Norden.</div>
   `,
   formulas: [
     { name: "Feldrichtung", html: "Feldlinien: Nordpol → Südpol (außerhalb)", quantities: "Nordspitze der Nadel zeigt in Feldrichtung" },
-    { name: "Kompasskurs", html: "Kompasskurs = Kartenkurs − Missweisung", quantities: "Missweisung östlich positiv, in Bayern etwa +3°" },
+    { name: "Kompasskurs", html: "Kompasskurs = Kartenkurs − Missweisung", quantities: "Missweisung östlich positiv, in Bayern etwa +4°" },
   ],
   quiz: {
     question: "Die Nordspitze einer Kompassnadel zeigt zum geografischen Norden. Welcher Pol des Erdmagneten liegt dort?",
@@ -375,9 +375,10 @@ const ladung: Lesson = {
         }
         const k = rng.int(1, 3);
         const q = k * 1.6;
+        const electrons = k === 1 ? "1 Elektron" : `${k} Elektronen`;
         return {
-          prompt: `Aus einem neutralen Atom werden ${k} Elektronen herausgelöst. Wie groß ist die Ladung des entstandenen Ions in Einheiten von 10⁻¹⁹ C?`,
-          given: [`${k} Elektronen fehlen`, "e = 1,6 · 10⁻¹⁹ C"],
+          prompt: `Aus einem neutralen Atom ${k === 1 ? "wird" : "werden"} ${electrons} herausgelöst. Wie groß ist die Ladung des entstandenen Ions in Einheiten von 10⁻¹⁹ C?`,
+          given: [`${electrons} ${k === 1 ? "fehlt" : "fehlen"}`, "e = 1,6 · 10⁻¹⁹ C"],
           answer: q,
           unit: "· 10⁻¹⁹ C",
           digits: 1,
@@ -651,7 +652,7 @@ const strom: Lesson = {
       <li>Die Elektronen wandern vom Minuspol zum Pluspol. Aus historischen Gründen legte man die <strong>technische Stromrichtung</strong> vom Plus- zum Minuspol fest.</li>
       <li>Die <strong>Stromstärke I</strong> sagt, wie viel Ladung Q in welcher Zeit t durch den Querschnitt des Leiters fließt: <strong>I = Q / t</strong>. Einheit: <strong>1 Ampere (A) = 1 C/s</strong>. Außerdem 1 mA = 0,001 A.</li>
       <li>Die Ladung besteht aus Elementarladungen: Q = N · e mit e = 1,6 · 10<sup>−19</sup> C. Bei 1 A fließen pro Sekunde 6,25 · 10<sup>18</sup> Elektronen durch den Querschnitt.</li>
-      <li>Die einzelnen Elektronen bewegen sich dabei nur mit wenigen Millimetern pro Sekunde, das elektrische Feld breitet sich aber fast mit Lichtgeschwindigkeit aus. Deshalb leuchtet die Lampe sofort.</li>
+      <li>Die einzelnen Elektronen bewegen sich dabei nur sehr langsam (in Haushaltsleitungen weniger als 1 mm pro Sekunde), das elektrische Feld breitet sich aber fast mit Lichtgeschwindigkeit aus. Deshalb leuchtet die Lampe sofort.</li>
     </ul>
     <p>Typische Stromstärken: Taschenlampe etwa 0,3 A, Handy-Ladegerät 1 bis 2 A, Blitz bis über 30 000 A.</p>
     <div class="merke"><strong>Merke:</strong> Stromstärke = Ladung pro Zeit. Ein Ampere sind 1 Coulomb pro Sekunde.</div>
@@ -1182,7 +1183,7 @@ const gefahren: Lesson = {
       <li><strong>Sicherung / Leitungsschutzschalter</strong> (zum Beispiel 16 A): unterbricht bei Überlast oder Kurzschluss, damit sich Leitungen nicht gefährlich erhitzen.</li>
       <li><strong>Schutzleiter (Schutzkontakt):</strong> verbindet das Metallgehäuse mit der Erde. Bei einem Defekt fließt der Strom über den Schutzleiter ab, die Sicherung löst aus.</li>
       <li><strong>Schutzisolierung:</strong> Gehäuse aus Kunststoff (Doppelquadrat-Zeichen), kein Schutzleiter nötig.</li>
-      <li><strong>FI-Schutzschalter (Fehlerstrom-Schutzschalter):</strong> vergleicht den Strom im Hin- und Rückleiter. Weicht er um mehr als etwa 30 mA ab (Strom fließt durch einen Körper oder die Erde), schaltet er in weniger als 0,03 s ab.</li>
+      <li><strong>FI-Schutzschalter (Fehlerstrom-Schutzschalter):</strong> vergleicht den Strom im Hin- und Rückleiter. Weicht er um mehr als etwa 30 mA ab (Strom fließt durch einen Körper oder die Erde), schaltet er in Bruchteilen einer Sekunde ab (vorgeschrieben sind höchstens 0,3 s).</li>
     </ul>
     <p><strong>Verhalten:</strong> Nasse Hände und Wasser meiden, defekte Kabel nicht benutzen, nach einem Unfall zuerst den Strom abschalten (Sicherung, Stecker), dann Hilfe rufen (112).</p>
     <div class="merke"><strong>Merke:</strong> Gefährlich ist der Strom durch den Körper: Ab etwa 30 mA wird es ernst. Der FI-Schalter schaltet bei etwa 30 mA Fehlerstrom blitzschnell ab.</div>

@@ -2346,9 +2346,6 @@
               "text": "Gewichtskraft (parallel zur Ebene) und Auftriebskraft (senkrecht dazu).",
               "reason": "Die Gewichtskraft selbst wird zerlegt, sie ist keine Komponente ihrer selbst."
             }
-          ],
-          "replaces": [
-            "01K4P8M0000000000000000J03"
           ]
         },
         {
@@ -2378,9 +2375,6 @@
               "text": "Je länger der Weg, desto größer muss die Kraft werden.",
               "reason": "Es ist umgekehrt: Ein längerer Weg erlaubt eine kleinere Kraft."
             }
-          ],
-          "replaces": [
-            "01K4P8M0000000000000000J07"
           ]
         },
         {
@@ -2479,9 +2473,6 @@
               "text": "Die Kräfte sind unabhängig von den Hebelarmen gleich groß: F₁ = F₂",
               "reason": "Das gilt nur bei gleich langen Hebelarmen."
             }
-          ],
-          "replaces": [
-            "01K4P8M0000000000000000J05"
           ]
         },
         {
@@ -4994,9 +4985,6 @@
               "text": "Positive Ionen, die durch den Draht wandern.",
               "reason": "In Metallen wandern keine Ionen, nur Elektronen."
             }
-          ],
-          "replaces": [
-            "01K4P8E0000000000000000J01"
           ]
         },
         {
@@ -5666,7 +5654,7 @@
           "source_link": "https://academy.zam-os.org/physik-realschule-8/#lesson=el-10-gefahren-schutz",
           "question": "Wie arbeitet ein FI-Schutzschalter?",
           "concept": "Er schaltet ab, wenn Hin- und Rückstrom um etwa 30 mA voneinander abweichen.",
-          "sample_solution": "Ein Fehlerstrom über einen Körper oder die Erde fehlt im Rückleiter. Der FI schaltet in weniger als 0,03 s ab.",
+          "sample_solution": "Ein Fehlerstrom über einen Körper oder die Erde fehlt im Rückleiter. Der FI schaltet in Bruchteilen einer Sekunde ab.",
           "fast_check": {
             "type": "binary_choice",
             "options": [
@@ -6280,48 +6268,6 @@
           ]
         }
       ]
-    }
-  ],
-  "retired_items": [
-    {
-      "id": "01K4P8E0000000000000000J02",
-      "reason": "Mehrteiliger Gesamtabruf von Stromkreis, Leitern und Isolatoren sowie Stromrichtung. Aufgeteilt in atomare Fragen; keine Beherrschung auf Teilfragen verteilen."
-    },
-    {
-      "id": "01K4P8E0000000000000000J03",
-      "reason": "Die Aussage „ausnahmslos jeder Leiter“ ist nicht lehrplanfest (Supraleiter zeigen keine Wärmewirkung). Die Wirkungen des Stroms werden jetzt einzeln gefragt."
-    },
-    {
-      "id": "01K4P8E0000000000000000J04",
-      "reason": "Mehrteiliger Gesamtabruf von vier Stromwirkungen mit Geräten und Prinzipien. Neue atomare Fragen übertragen keine Teilbeherrschung."
-    },
-    {
-      "id": "01K4P8E0000000000000000J05",
-      "reason": "Amperemeter und Voltmeter in einer Frage: Das Amperemeter gehört zu Physik 8, das Voltmeter zu Physik 9. Aufgeteilt; neue Fragen beginnen ohne übertragene Beherrschung."
-    },
-    {
-      "id": "01K4P8E0000000000000000J06",
-      "reason": "Mehrteiliger Abruf aus Stromstärke, Spannung, Innenwiderständen und Kurzschluss; Spannung und Innenwiderstand gehören nicht in Physik 8. Aufgeteilt."
-    },
-    {
-      "id": "01K4P8M0000000000000000J01",
-      "reason": "Zwei Fakten in einer Frage (Einheit der Kraft, Ortsunabhängigkeit der Masse). Aufgeteilt in eigene Karten."
-    },
-    {
-      "id": "01K4P8M0000000000000000J02",
-      "reason": "Mehrteiliger Gesamtabruf von Masse, Gewichtskraft, Hookeschem Gesetz und einer Rechnung. Aufgeteilt; keine Beherrschung auf einzelne Teilfragen verteilen."
-    },
-    {
-      "id": "01K4P8M0000000000000000J04",
-      "reason": "Mehrteiliger Abruf mit Kräfteparallelogramm, Satz des Pythagoras und Winkelfunktion; Letzteres liegt nicht im Lehrplan von Physik 8. Aufgeteilt."
-    },
-    {
-      "id": "01K4P8M0000000000000000J06",
-      "reason": "Mehrteiliger Abruf von Drehmoment, Hebelarten und Brechstangen-Rechnung. Aufgeteilt in atomare Fragen."
-    },
-    {
-      "id": "01K4P8M0000000000000000J08",
-      "reason": "Mehrteiliger Abruf von fester und loser Rolle, Flaschenzugformeln und einer Rechnung. Aufgeteilt in atomare Fragen."
     }
   ]
 }

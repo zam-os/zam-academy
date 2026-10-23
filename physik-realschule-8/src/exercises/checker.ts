@@ -2,15 +2,16 @@ import type { ExerciseTask } from "../model/types";
 
 /**
  * Every reading of a number the way a learner types it: "2,5", "2.5",
- * "1 500", "1.234,5", "1.000.000", "-3,2". A comma is always the decimal
- * separator; several points group thousands. A single point followed by
- * exactly three digits is ambiguous ("1.500" is 1,5 or the German thousands
- * 1500), so both readings are returned, the decimal one first; the checker
- * accepts whichever matches. A unit typed after the number is ignored.
- * Empty when there is no number.
+ * "1 500", "1.234,5", "1.000.000", "-3,2", "−3,2" (the real minus the app
+ * shows). A comma is always the decimal separator; several points group
+ * thousands. A single point followed by exactly three digits is ambiguous
+ * ("1.500" is 1,5 or the German thousands 1500), so both readings are
+ * returned, the decimal one first; the checker accepts whichever matches. A
+ * unit typed after the number is ignored. Empty when there is no number.
  */
 export function parseNumberCandidates(raw: string): number[] {
-  let text = raw.trim().replace(/\s+/g, "");
+  // The app writes the real minus sign; keyboards often give a hyphen or en dash.
+  let text = raw.trim().replace(/\s+/g, "").replace(/[\u2212\u2013\u2012]/g, "-");
   if (!text) return [];
   // Drop a trailing unit such as "Pa" or "kWh", but keep digits and signs.
   text = text.replace(/[^0-9.,+\-]+$/u, "");

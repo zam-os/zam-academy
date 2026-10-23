@@ -392,7 +392,8 @@ code {
 
 .app-footer {
   border-top: 1px solid var(--line);
-  padding: 1rem 1.25rem;
+  /* Room below the text for the fixed "ZAM Academy" link, so it never covers it. */
+  padding: 1rem 1.25rem 3.5rem;
   font-size: 0.8rem;
   color: var(--muted);
   display: flex;

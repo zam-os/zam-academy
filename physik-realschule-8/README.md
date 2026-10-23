@@ -51,15 +51,15 @@ Jede Karte fragt einen Punkt. `concept` ist die nackte Antwort, gegen die ZAM pr
 
 Zwei ältere ZAM-Zellen decken Teile der Physik 8 ab (`de-by:realschule-8-physik-elektrik-grundlagen` und `…-mechanik-kraft-bewegung`, zusammen 16 Karten). `replaces-de-by.json` schlägt die Übernahme Zeile für Zeile vor: **4 A** (gleicher Einzelabruf, genau ein `replaces`), **10 C** (mehrteilig oder fachlich zu pauschal; die Historie bleibt erhalten, die Karte verlässt die aktive Wiederholung, neue Fragen beginnen unbewertet) und **2 C ohne Nachfolger** (Stoff der Jahrgangsstufe 9, bleiben unverändert).
 
-**Die Übernahme ist noch nicht freigegeben.** `approved` ist `null`. Solange dort kein gültiges Datum steht, bricht der Katalogbau (`scripts/build-catalog.mjs`), und damit CI und Pages, ab. Die Freigabe darf nur Thomas eintragen. Siehe [die Matrix](../docs/physik-8-coverage.md#lernstandsübernahme).
+**Die Übernahme ist ein Vorschlag und nicht freigegeben:** `approved` ist `null`, `status` ist `proposal-only`. Die veröffentlichte Zelle enthält deshalb weder `replaces` noch `retired_items`; sie braucht keine Freigabe, und alle alten Lernstände bleiben unverändert aktiv (Paketstandard, AGENTS.md Abschnitt 6). Erst wenn Thomas das Mapping freigibt und ein gültiges Datum einträgt, folgt eine neue Zellversion, die genau diese Zeilen deklariert; der Katalogbau (`scripts/build-catalog.mjs`) lässt eine Zelle mit `replaces` oder `retired_items` nur mit diesem Datum zu. Die Lücke bis dahin soll kurz bleiben: Wer inzwischen Karten auf einer alten ID und auf deren Nachfolger hält, bringt zam-core dazu, die Installation der späteren Version ganz zu verweigern. Siehe [die Matrix](../docs/physik-8-coverage.md#lernstandsübernahme).
 
-`scripts/validate-migration.mjs` prüft in temporären Bibliotheken mit dem gepinnten zam-core: die Fixture-Prüfsummen, 4 verschobene und 10 ausgeschiedene Historien, 32 erhaltene Review-Ereignisse mit unveränderten FSRS-Feldern, 148 unbewertete neue Karten, wiederholte Installation und das Zurückweisen eines Konflikts zweier bestehender Historien. Er öffnet keine persönliche Bibliothek.
+`scripts/validate-migration.mjs` prüft in temporären Bibliotheken mit dem gepinnten zam-core: die Fixture-Prüfsummen; dass die veröffentlichte Zelle alle 16 alten Historien mit 32 Review-Ereignissen unverändert aktiv lässt, 152 unbewertete Karten anlegt und wiederholt installiert nichts ändert; und als Probelauf auf einer Kopie der Zelle den Vorschlag (4 verschobene und 10 ausgeschiedene Historien, unveränderte FSRS-Felder, 148 unbewertete neue Karten, Zurückweisen eines Konflikts zweier bestehender Historien). Er öffnet keine persönliche Bibliothek.
 
 ## Entwickeln und prüfen
 
 ```bash
 npm ci
-npm run dev          # http://localhost:5192/physik-realschule-8/
+npm run dev          # http://localhost:5196/physik-realschule-8/
 npm test
 npm run typecheck
 npm run build        # Single-File-Build in dist/index.html
@@ -68,11 +68,11 @@ npm run package:zip  # Offline-Zip (Windows/macOS/Linux-Starter) in release/
 
 Vom Repository-Stamm: `ZAM_CORE=<file-URL des gepinnten zam-core> node physik-realschule-8/scripts/validate-migration.mjs`.
 
-Lektionsinhalte stehen in `src/curriculum/stage-*.ts`, die Laborzeichnungen in `src/lab/visuals-*.ts`, die Physik dahinter in `src/lab/physics.ts`, die Aufgaben in `src/exercises/`. Eine neue Lektion braucht: einen Eintrag in der Etappendatei (ID, Erklärung, Quiz, Labor, zwei Aufgabengeneratoren), ihre Laborzeichnung, einen Zielzeugen in `tests/witnesses.ts` und Karten in `cell.json`.
+Lektionsinhalte stehen in `src/curriculum/stage-*.ts`, die Laborzeichnungen in `src/lab/visuals-*.ts`, die Physik dahinter in `src/lab/physics.ts`, die Aufgaben in `src/exercises/`. Eine neue Lektion braucht: einen Eintrag in der Etappendatei (ID, Erklärung, Quiz, Labor, zwei Aufgabengeneratoren), ihre Laborzeichnung, einen Zielzeugen in `tests/witnesses.ts`, Karten in `cell.json` und eine Zeile in `coverage.json`.
 
 ## Quellen
 
-Lehrplanabgleich: 22. Oktober 2026. Die Lehrplanseiten waren zum Zeitpunkt der Erstellung nur über archivierte Abrufe lesbar; vor der Veröffentlichung ist ein Abgleich mit der Live-Fassung sinnvoll.
+Lehrplanabgleich: 23. Oktober 2026 gegen die Live-Fassung beider Fachlehrpläne. `coverage.json` führt jede Kompetenzerwartung wörtlich, je Zweig, mit den Lektionen, die sie abdecken, und den Stunden je Lernbereich; `tests/physik-realschule-8.test.ts` prüft, dass jede Kompetenz eine Lektion ihres Zweigs hat und jede Lektion eine Kompetenz.
 
 - [LehrplanPLUS Realschule, Physik 8, Wahlpflichtfächergruppe I](https://www.lehrplanplus.bayern.de/fachlehrplan/realschule/8/physik/wpfg1)
 - [LehrplanPLUS Realschule, Physik 8, Wahlpflichtfächergruppen II/III](https://www.lehrplanplus.bayern.de/fachlehrplan/realschule/8/physik/wpfg2-3)

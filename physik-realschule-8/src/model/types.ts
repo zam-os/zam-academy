@@ -18,7 +18,7 @@ export interface FormulaEntry {
   name: string;
   /** The formula as HTML with <sub>/<sup>, never LaTeX. */
   html: string;
-  /** Quantities and units, e.g. "p in Pa, F in N, A in m²". */
+  /** Quantities and units, e.g. "p in Pa, F in N, A in m²"; only <sub> and <sup> are markup. */
   quantities: string;
 }
 

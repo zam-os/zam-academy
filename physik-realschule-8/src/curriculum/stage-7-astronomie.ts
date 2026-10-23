@@ -130,10 +130,10 @@ const sonnensystem: Lesson = {
   whyItMatters:
     "Das Sonnensystem ist riesig und fast leer. Erst im Modell mit Maßstab wird klar, wie weit die Planeten voneinander entfernt sind und warum Raumsonden Jahre unterwegs sind.",
   explanationHtml: `
-    <p><strong>Das Sonnensystem:</strong> Im Mittelpunkt steht die <strong>Sonne</strong>, ein Stern (Durchmesser 1,39 Millionen km, Oberfläche etwa 5500 °C). Sie enthält 99,9 % der Masse des Systems. Um sie kreisen auf fast kreisförmigen Bahnen acht Planeten: die erdähnlichen <strong>Merkur, Venus, Erde, Mars</strong> und die Gasriesen <strong>Jupiter, Saturn, Uranus, Neptun</strong>. Dazu kommen Zwergplaneten (zum Beispiel Pluto), Monde, Asteroiden und Kometen.</p>
+    <p><strong>Das Sonnensystem:</strong> Im Mittelpunkt steht die <strong>Sonne</strong>, ein Stern (Durchmesser 1,39 Millionen km, Oberfläche etwa 5500 °C). Sie enthält 99,9 % der Masse des Systems. Um sie kreisen auf fast kreisförmigen Bahnen acht Planeten: die erdähnlichen <strong>Merkur, Venus, Erde, Mars</strong> und die Riesenplaneten <strong>Jupiter, Saturn, Uranus, Neptun</strong> (Gas- und Eisriesen). Dazu kommen Zwergplaneten (zum Beispiel Pluto), Monde, Asteroiden und Kometen.</p>
     <ul>
       <li>Die <strong>Astronomische Einheit (AE)</strong> ist der mittlere Abstand Erde–Sonne: 1 AE ≈ 150 Millionen km. Das Licht braucht dafür etwa <strong>8,3 Minuten</strong> (Lichtminuten). Jupiter ist 5,2 AE von der Sonne entfernt, Neptun 30 AE.</li>
-      <li><strong>Modell mit Maßstab:</strong> Wählt man 1 AE ≙ 1 m (Planetenweg), steht Neptun 30 m von der Sonne, die Erde nur 1 m, die Sonne selbst ist dabei nur ein Ball von 1,4 cm.</li>
+      <li><strong>Modell mit Maßstab:</strong> Wählt man 1 AE ≙ 1 m (Planetenweg), steht Neptun 30 m von der Sonne, die Erde nur 1 m, die Sonne selbst ist dabei nur ein Ball von etwa 9 mm Durchmesser.</li>
       <li><strong>Milchstraße:</strong> unsere Galaxie aus etwa 100 bis 300 Milliarden Sternen, eine Scheibe von etwa <strong>100 000 Lichtjahren</strong> Durchmesser. Die Sonne ist etwa 26 000 Lichtjahre vom Zentrum entfernt und braucht rund 230 Millionen Jahre für einen Umlauf. Die Andromedagalaxie ist 2,5 Millionen Lichtjahre entfernt.</li>
       <li><strong>Sterne:</strong> Sie entstehen aus Gas, leuchten Millionen bis Milliarden Jahre durch Kernfusion. Es gibt Rote Zwerge, Sonnen, Riesen und Weiße Zwerge. Die Sonne ist etwa 4,6 Milliarden Jahre alt.</li>
     </ul>

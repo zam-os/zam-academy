@@ -470,7 +470,7 @@ function bodyCurrent(v: LabValues, r: ReadoutValues): string {
     text(190, 136, "0,1 mA", "lab-text-small", "start") +
     text(490, 136, "300 mA", "lab-text-small", "end") +
     text(190, 228, `${fmt(v.I, 1)} mA über ${fmt(v.t, 1)} s${v.fi === 1 ? ", FI-Schalter 30 mA" : ""}`, "lab-text-muted") +
-    text(190, 252, fiShort ? "FI schaltet in 0,03 s ab" : "", "lab-text lab-text-force-2") +
+    text(190, 252, fiShort ? "FI schaltet sofort ab" : "", "lab-text lab-text-force-2") +
     text(20, 24, effect, "lab-text lab-text-big") +
     text(190, 46, "Skala (logarithmisch): Körperstrom in mA", "lab-text-small") +
     CLOSE

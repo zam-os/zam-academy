@@ -1,6 +1,7 @@
 /**
  * Number formatting the way a German physics lesson writes it: decimal
- * comma, a thin space before the unit, thousands separated by a point.
+ * comma, a thin space before the unit, thousands separated by a point and a
+ * real minus sign (−) for negative values.
  */
 const formatters = new Map<number, Intl.NumberFormat>();
 
@@ -16,12 +17,14 @@ function formatter(maxDigits: number): Intl.NumberFormat {
   return cached;
 }
 
-/** `fmt(1234.5)` → "1.234,5"; up to `digits` decimals, trailing zeros dropped. */
+export const MINUS = "−";
+
+/** `fmt(1234.5)` → "1.234,5"; up to `digits` decimals, trailing zeros dropped, "−" for negatives. */
 export function fmt(value: number, digits = 2): string {
   if (!Number.isFinite(value)) return "–";
   const rounded = Number(value.toFixed(digits));
   // Avoid "-0".
-  return formatter(digits).format(rounded === 0 ? 0 : rounded);
+  return formatter(digits).format(rounded === 0 ? 0 : rounded).replace("-", MINUS);
 }
 
 /** `fmtUnit(2.5, "A")` → "2,5 A" (narrow no-break space). */
@@ -52,4 +55,9 @@ export function esc(text: string): string {
     .replace(/</g, "&lt;")
     .replace(/>/g, "&gt;")
     .replace(/"/g, "&quot;");
+}
+
+/** Escapes text but keeps `<sub>` and `<sup>`, for quantity lines such as "E<sub>pot</sub> = m · g · h". */
+export function escScript(text: string): string {
+  return esc(text).replace(/&lt;(\/?)(sub|sup)&gt;/g, "<$1$2>");
 }

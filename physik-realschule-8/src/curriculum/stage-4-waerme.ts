@@ -37,7 +37,7 @@ const innereEnergie: Lesson = {
       <li>durch <strong>Wärme Q</strong>: Energie, die wegen eines Temperaturunterschieds von selbst vom wärmeren zum kälteren Körper übergeht. Wärme ist eine <strong>Übertragungsgröße</strong> (Einheit J), keine Eigenschaft eines Körpers.</li>
     </ul>
     <p class="formula-line">ΔU = W + Q</p>
-    <p>Wird Energie zu- oder abgeführt (W und Q als Zahlen mit Vorzeichen), ändert sich U. Steigt die innere Energie durch gleiche Teilchenmasse, bewegen sich die Teilchen im Mittel schneller, und der Körper wird wärmer.</p>
+    <p>Wird Energie zu- oder abgeführt (W und Q als Zahlen mit Vorzeichen), ändert sich U. Steigt die innere Energie und ändert sich dabei nicht der Aggregatzustand, bewegen sich die Teilchen im Mittel schneller, und der Körper wird wärmer.</p>
     <div class="merke"><strong>Merke:</strong> Körper haben innere Energie, aber keine Wärme. Wärme „fließt“ vom heißen zum kalten Körper. Arbeit und Wärme können dasselbe bewirken.</div>
   `,
   formulas: [
@@ -383,7 +383,7 @@ const ausdehnung: Lesson = {
     <p>Bei Erwärmung dehnen sich fast alle Körper aus. <strong>Teilchenmodell:</strong> Die Teilchen schwingen stärker und stoßen sich weiter voneinander ab, der mittlere Abstand wächst.</p>
     <ul>
       <li><strong>Feste Körper:</strong> Die Längenänderung ΔL ist <strong>proportional zur Anfangslänge L<sub>0</sub></strong> und <strong>proportional zur Temperaturänderung ΔT</strong>: Doppelt so lange Stange, doppelt so viel Dehnung. Doppelt so viel Erwärmung, doppelt so viel Dehnung.</li>
-      <li>Der Stoff entscheidet: Aluminium dehnt sich etwa doppelt so stark aus wie Glas, Eisen liegt dazwischen. (Zusatz: ΔL = α · L<sub>0</sub> · ΔT mit Stahl α = 12 · 10<sup>−6</sup> 1/K, Aluminium 23 · 10<sup>−6</sup> 1/K, Kupfer 17 · 10<sup>−6</sup> 1/K, Glas 9 · 10<sup>−6</sup> 1/K.)</li>
+      <li>Der Stoff entscheidet: Aluminium dehnt sich mehr als doppelt so stark aus wie Glas, Eisen liegt dazwischen. (Zusatz: ΔL = α · L<sub>0</sub> · ΔT mit Stahl α = 12 · 10<sup>−6</sup> 1/K, Aluminium 23 · 10<sup>−6</sup> 1/K, Kupfer 17 · 10<sup>−6</sup> 1/K, Glas 9 · 10<sup>−6</sup> 1/K.)</li>
       <li><strong>Flüssigkeiten</strong> dehnen sich bei gleichem Volumen stärker aus als Feststoffe (Flüssigkeitsthermometer, Heizöltank nicht randvoll füllen), <strong>Gase</strong> am stärksten.</li>
       <li><strong>Technik:</strong> Dehnungsfugen an Brücken und Schienen, Spiel in Bauteilen, <strong>Bimetallstreifen</strong> (zwei Metalle, die verschieden stark dehnen, biegen sich bei Wärme: Thermostat, Blinkerrelais).</li>
     </ul>
@@ -714,7 +714,7 @@ const waermeleitung: Lesson = {
         const P1 = rng.pick([100, 120, 150]);
         const P2 = (P1 * d1) / d2;
         return {
-          prompt: `Ein Hausbesitzer ersetzt eine ${fmtUnit(d1, "cm", 0)} dicke Dämmung (Wärmeverlust ${fmtUnit(P1, "W", 0)}) durch eine ${fmtUnit(d2, "cm", 0)} dicke aus demselben Stoff. Um wie viel Prozent der alten Verluste sinkt der Wärmeverlust? Gib den neuen Wärmeverlust in Watt an.`,
+          prompt: `Ein Hausbesitzer ersetzt eine ${fmtUnit(d1, "cm", 0)} dicke Dämmung (Wärmeverlust ${fmtUnit(P1, "W", 0)}) durch eine ${fmtUnit(d2, "cm", 0)} dicke aus demselben Stoff. Wie groß ist der neue Wärmeverlust?`,
           given: [`${fmtUnit(d1, "cm", 0)}: ${fmtUnit(P1, "W", 0)}`, `neu: ${fmtUnit(d2, "cm", 0)}`],
           answer: P2,
           unit: "W",

@@ -704,7 +704,7 @@ const masseGewicht: Lesson = {
   whyItMatters:
     "Auf dem Mond könntest du sechsmal so hoch springen. Dein Körper ist dort aber nicht leichter geworden, nur die Anziehung ist schwächer. Masse und Gewichtskraft sind zwei verschiedene Größen.",
   explanationHtml: `
-    <p>Die <strong>Masse m</strong> (Einheit kg) ist ein Maß für die Stoffmenge, für die <strong>Trägheit</strong> und für die <strong>Schwere</strong> eines Körpers. Sie ist <strong>ortsunabhängig</strong>. Man misst sie mit der Balkenwaage durch Vergleich mit Massestücken.</p>
+    <p>Die <strong>Masse m</strong> (Einheit kg) ist ein Maß für die Trägheit und für die Schwere eines Körpers; sie hängt davon ab, wie viel Materie der Körper enthält. Sie ist <strong>ortsunabhängig</strong>. Man misst sie mit der Balkenwaage durch Vergleich mit Massestücken.</p>
     <p>Die <strong>Gewichtskraft F<sub>G</sub></strong> (Einheit N) ist die Kraft, mit der ein Himmelskörper (<strong>Gravitation</strong>) einen Körper anzieht. Sie zeigt zum Mittelpunkt des Himmelskörpers und hängt vom Ort ab. Man misst sie mit dem Kraftmesser.</p>
     <p class="formula-line">F<sub>G</sub> = m · g</p>
     <ul>

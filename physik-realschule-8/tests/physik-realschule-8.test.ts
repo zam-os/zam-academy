@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import cellJson from "../cell.json";
+import coverageJson from "../coverage.json";
 import replacesJson from "../replaces-de-by.json";
 import { ALL_LESSONS, findLessonById, lessonsForTrack, STAGES } from "../src/curriculum";
 import {
@@ -9,7 +10,7 @@ import {
   toleranceOf,
   wrongAnswerHint,
 } from "../src/exercises/checker";
-import { fmt } from "../src/exercises/format";
+import { esc, escScript, fmt } from "../src/exercises/format";
 import { createRng, seedFrom } from "../src/exercises/rng";
 import {
   clampParam,
@@ -141,6 +142,54 @@ describe("Lernpfad", () => {
   });
 });
 
+describe("Lerntexte ohne sichtbares Markup", () => {
+  // main.ts escapes these fields, so a tag in them would show up as text on the page.
+  const TAG = /<\/?[a-z][^>]*>|&[a-z]+;/i;
+
+  it("keeps HTML out of every field the app prints as plain text", () => {
+    for (const stage of STAGES) {
+      for (const text of [stage.title, stage.subtitle, stage.lehrplanLabel, stage.badgeTitle]) expect(text, stage.id).not.toMatch(TAG);
+    }
+    for (const lesson of ALL_LESSONS) {
+      const plain = [
+        lesson.title,
+        lesson.subtitle,
+        lesson.lehrplan,
+        lesson.whyItMatters,
+        lesson.celebrationMessage,
+        lesson.quiz.question,
+        lesson.quiz.explanation,
+        ...lesson.quiz.options,
+        lesson.lab.title,
+        lesson.lab.intro,
+        ...lesson.lab.goals.map((goal) => goal.text),
+        ...lesson.lab.readouts.map((readout) => readout.label),
+        ...lesson.lab.params.flatMap((param) => [param.label, ...(param.type === "choice" ? param.options.map((option) => option.label) : [])]),
+        ...lesson.formulas.map((formula) => formula.name),
+      ];
+      for (const text of plain) expect(text, `${lesson.id}: ${text}`).not.toMatch(TAG);
+      for (const formula of lesson.formulas) {
+        // Quantity lines may carry <sub> and <sup>, nothing else.
+        expect(formula.quantities.replace(/<\/?(sub|sup)>/g, ""), `${lesson.id}: ${formula.quantities}`).not.toMatch(TAG);
+      }
+      for (const generator of lesson.exercises) {
+        for (const level of [1, 2] as const) {
+          for (let seed = 1; seed <= 20; seed++) {
+            const task = generator.make(createRng(seed), level);
+            for (const text of [...task.given, task.formulaHint ?? "", task.unit]) expect(text, `${lesson.id}/${generator.id}`).not.toMatch(TAG);
+          }
+        }
+      }
+    }
+  });
+
+  it("prints sub- and superscripts in quantity lines and escapes everything else", () => {
+    expect(escScript("E<sub>pot</sub> = 10<sup>−3</sup> J")).toBe("E<sub>pot</sub> = 10<sup>−3</sup> J");
+    expect(escScript('<img src=x onerror="a">')).toBe(esc('<img src=x onerror="a">'));
+    expect(escScript("<sub onclick=x>")).not.toContain("<sub");
+  });
+});
+
 describe("Labore", () => {
   it("start with every slider on its own range and every choice on an option", () => {
     for (const lesson of ALL_LESSONS) {
@@ -255,6 +304,11 @@ describe("Aufgaben", () => {
     expect(parseNumber("1 500")).toBe(1500);
     expect(parseNumber("1.234,5")).toBe(1234.5);
     expect(parseNumber("-3,2")).toBe(-3.2);
+    // The app shows the real minus sign; a keyboard gives a hyphen or an en dash.
+    expect(parseNumber("−196,15")).toBe(-196.15);
+    expect(parseNumber("–4 dpt")).toBe(-4);
+    expect(fmt(-196.15, 2)).toBe("−196,15");
+    expect(fmt(-0.001, 2)).toBe("0");
     expect(parseNumber("12 N")).toBe(12);
     expect(parseNumber("0,004")).toBe(0.004);
     expect(parseNumber("abc")).toBeNull();
@@ -442,7 +496,7 @@ describe("ZAM-Zelle (cell.json)", () => {
     curricula?: CellBinding[];
     practice_items: CellItem[];
   }
-  const cell = cellJson as unknown as { tile_id: string; version: string; atoms: CellAtom[]; retired_items: Array<{ id: string; reason: string }> };
+  const cell = cellJson as unknown as { tile_id: string; version: string; atoms: CellAtom[] };
   const prefix = `${ZAM_ACADEMY_APP_URL}#lesson=`;
   const ULID = /^[0-9A-HJKMNP-TV-Z]{26}$/;
   const lessonOf = (link: string | undefined) => (link?.startsWith(prefix) ? link.slice(prefix.length) : "");
@@ -528,7 +582,7 @@ describe("ZAM-Zelle (cell.json)", () => {
     expect(ids.size).toBe(cell.atoms.length + cell.atoms.reduce((n, atom) => n + atom.practice_items.length, 0));
   });
 
-  describe("takes over from the two de-by Realschule 8 physics cells as proposed", () => {
+  describe("proposes the takeover from the two de-by Realschule 8 physics cells without applying it", () => {
     interface MappingRow {
       de_by_cell: string;
       de_by_id: string;
@@ -537,8 +591,9 @@ describe("ZAM-Zelle (cell.json)", () => {
       academy_slug: string | null;
       action: "replace" | "retire" | "keep";
       note: string;
+      retire_reason?: string;
     }
-    const table = replacesJson as unknown as { approved: string | null; rows: MappingRow[] };
+    const table = replacesJson as unknown as { approved: string | null; status: string; rows: MappingRow[] };
     const items = cell.atoms.flatMap((atom) => atom.practice_items);
     const bySlug = new Map(items.map((item) => [item.slug, item]));
     const DE_BY = /^01K4P8[EM]0000000000000000J\d{2}$/;
@@ -556,25 +611,99 @@ describe("ZAM-Zelle (cell.json)", () => {
       }
     });
 
-    it("declares exactly the proposed replaces and retirements", () => {
-      const declared = items.flatMap((item) => (item.replaces ?? []).map((id) => [item.slug, id] as const));
-      expect(declared.map(([, id]) => id).sort()).toEqual(table.rows.filter((row) => row.action === "replace").map((row) => row.de_by_id).sort());
-      for (const item of items) expect((item.replaces ?? []).length, `${item.slug} replaces at most one item`).toBeLessThanOrEqual(1);
+    it("names an existing successor for every replaced row and a reason for every retired row", () => {
       for (const row of table.rows.filter((r) => r.action === "replace")) {
-        const item = bySlug.get(row.academy_slug ?? "");
-        expect(item, `${row.de_by_id} → ${row.academy_slug}`).toBeDefined();
-        expect(item?.replaces).toEqual([row.de_by_id]);
+        expect(bySlug.get(row.academy_slug ?? ""), `${row.de_by_id} → ${row.academy_slug}`).toBeDefined();
       }
-      for (const row of table.rows.filter((r) => r.action !== "replace")) {
-        expect(declared.some(([, id]) => id === row.de_by_id), `${row.de_by_id} has no successor`).toBe(false);
+      const successors = table.rows.filter((r) => r.action === "replace").map((r) => r.academy_slug);
+      expect(new Set(successors).size, "one history per successor").toBe(4);
+      for (const row of table.rows.filter((r) => r.action === "retire")) {
+        expect(row.academy_slug, `${row.de_by_id} has no successor`).toBeNull();
+        expect(row.retire_reason?.length, row.de_by_id).toBeGreaterThan(30);
       }
-      expect(cell.retired_items.map((entry) => entry.id).sort()).toEqual(table.rows.filter((row) => row.action === "retire").map((row) => row.de_by_id).sort());
-      for (const entry of cell.retired_items) expect(entry.reason.length, entry.id).toBeGreaterThan(30);
     });
 
-    it("keeps the approval open until it is a real date given by Thomas", () => {
-      // Publication is blocked by scripts/build-catalog.mjs until `approved` is a valid date.
-      if (table.approved !== null) expect(table.approved).toMatch(/^\d{4}-\d{2}-\d{2}$/);
+    it("ships the cell without replaces and retired_items while the mapping is only a proposal", () => {
+      // Package standard: a new cell ships first without declarations, so it needs no approval.
+      // scripts/build-catalog.mjs blocks any cell with replaces or retired_items until `approved` is a valid date.
+      expect(table.approved).toBeNull();
+      expect(table.status).toBe("proposal-only");
+      expect("retired_items" in cell).toBe(false);
+      for (const item of items) expect("replaces" in item, `${item.slug} replaces nothing`).toBe(false);
     });
+  });
+});
+
+describe("Lehrplan-Abdeckung (coverage.json)", () => {
+  interface CoverageRow {
+    track: "I" | "II_III";
+    lb: number;
+    unit?: string;
+    competence: string;
+    lessons: string[];
+    status: string;
+    evidence: string;
+  }
+  const coverage = coverageJson as unknown as {
+    checked: string;
+    curriculum: Record<string, string>;
+    learning_areas: Array<{ track: string; lb: number; hours: number }>;
+    optional_lessons: string[];
+    elective_lessons: string[];
+    rows: CoverageRow[];
+  };
+  const unitOf = (row: CoverageRow) => row.unit ?? String(row.lb);
+
+  it("lists every Kompetenzerwartung of both Fachlehrpläne: 20 for Zweig II/III, 19 for Zweig I", () => {
+    expect(coverage.checked).toMatch(/^\d{4}-\d{2}-\d{2}$/);
+    expect(Object.keys(coverage.curriculum).sort()).toEqual(["I", "II_III"]);
+    const perUnit = (track: string) => {
+      const counts: Record<string, number> = {};
+      for (const row of coverage.rows.filter((r) => r.track === track)) counts[unitOf(row)] = (counts[unitOf(row)] ?? 0) + 1;
+      return counts;
+    };
+    expect(perUnit("II_III")).toEqual({ "1": 9, "2": 5, "3": 6 });
+    expect(perUnit("I")).toEqual({ "1": 4, "2": 6, "3": 4, "4.1": 3, "4.2": 2 });
+    const hours = (track: string) => coverage.learning_areas.filter((a) => a.track === track).reduce((n, a) => n + a.hours, 0);
+    expect({ I: hours("I"), II_III: hours("II_III") }).toEqual({ I: 56, II_III: 56 });
+    expect(new Set(coverage.rows.map((row) => `${row.track}|${row.competence}`)).size, "no competence is listed twice").toBe(coverage.rows.length);
+    for (const row of coverage.rows) {
+      expect(row.competence.length, `${row.track} LB ${unitOf(row)}`).toBeGreaterThan(60);
+      expect(row.competence).not.toContain("\u00ad");
+    }
+  });
+
+  it("gives every competence a lesson of its Zweig and its Lernbereich, with evidence", () => {
+    for (const row of coverage.rows) {
+      const where = `${row.track} LB ${unitOf(row)}: ${row.competence.slice(0, 40)}`;
+      expect(row.status, where).toBe("implemented");
+      expect(row.lessons.length, where).toBeGreaterThan(0);
+      expect(row.evidence.length, where).toBeGreaterThan(40);
+      for (const id of row.lessons) {
+        const lesson = findLessonById(id)?.lesson;
+        expect(lesson, `${where}: ${id}`).toBeDefined();
+        expect(lesson?.tracks, `${where}: ${id} serves the Zweig`).toContain(row.track);
+        expect(lesson?.lehrplan, `${where}: ${id} names the Lernbereich`).toContain(`Ph8 LB ${unitOf(row)} (`);
+      }
+    }
+  });
+
+  it("gives every lesson a competence, and keeps the elective lessons out of the progress total", () => {
+    const covered = new Set(coverage.rows.flatMap((row) => row.lessons));
+    for (const lesson of ALL_LESSONS) {
+      expect(covered.has(lesson.id) || coverage.optional_lessons.includes(lesson.id), `${lesson.id} serves a competence`).toBe(true);
+    }
+    expect(coverage.elective_lessons.slice().sort()).toEqual(ALL_LESSONS.filter((lesson) => lesson.optional).map((lesson) => lesson.id).sort());
+  });
+
+  it("binds every ZAM atom to the Lernbereich of the competences its lesson serves, per Zweig", () => {
+    for (const atom of (cellJson as unknown as { atoms: Array<{ source_link: string; curricula: Array<{ provider: string; track?: string; topic_code: string }> }> }).atoms) {
+      const lessonId = atom.source_link.split("#lesson=")[1];
+      const bindings = atom.curricula.filter((binding) => binding.provider === "lehrplanplus-bayern");
+      for (const binding of bindings) {
+        const units = coverage.rows.filter((row) => row.track === binding.track && row.lessons.includes(lessonId)).map(unitOf);
+        expect(units.map((unit) => `lb${unit}`), `${lessonId} (${binding.track})`).toContain(binding.topic_code);
+      }
+    }
   });
 });

@@ -8,7 +8,7 @@ import {
   STAGES,
 } from "./curriculum";
 import { checkAnswer, wrongAnswerHint } from "./exercises/checker";
-import { esc, fmt, fmtUnit } from "./exercises/format";
+import { esc, escScript, fmt, fmtUnit } from "./exercises/format";
 import { createRng, seedFrom } from "./exercises/rng";
 import {
   clampParam,
@@ -383,7 +383,7 @@ class PhysikApp {
           <div class="formula-box">
             <h4>Formeln dieser Lektion</h4>
             <dl>
-              ${lesson.formulas.map((f) => `<div><dt>${esc(f.name)}</dt><dd><span class="formula">${f.html}</span>${f.quantities ? `<small>${esc(f.quantities)}</small>` : ""}</dd></div>`).join("")}
+              ${lesson.formulas.map((f) => `<div><dt>${esc(f.name)}</dt><dd><span class="formula">${f.html}</span>${f.quantities ? `<small>${escScript(f.quantities)}</small>` : ""}</dd></div>`).join("")}
             </dl>
           </div>
 
@@ -734,7 +734,7 @@ class PhysikApp {
                     lesson.formulas.map(
                       (formula) => `<tr>
                         <td><strong>${esc(formula.name)}</strong><br><span class="formula">${formula.html}</span></td>
-                        <td>${esc(formula.quantities)}</td>
+                        <td>${escScript(formula.quantities)}</td>
                         <td><button type="button" class="btn btn-ghost btn-sm" data-open-lesson="${lesson.id}">${esc(lesson.title)}</button></td>
                       </tr>`,
                     ),
