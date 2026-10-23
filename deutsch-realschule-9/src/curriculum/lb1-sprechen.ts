@@ -348,7 +348,7 @@ export const LB1: Lesson[] = [
           "Notiz: Verein Lesezeit – ab Oktober – dienstags 15 Uhr – Stadtbücherei – 45 Min. – kostenlos – Anmeldung bis Fr. Protokoll: Die Sendung berichtet, der Verein Lesezeit biete ab Oktober jeden Dienstag um 15 Uhr in der Stadtbücherei eine Vorlesestunde für Kinder an. Sie dauere 45 Minuten und sei kostenlos, eine Anmeldung sei bis Freitag nötig.",
         criteria: [
           "Die Notiz besteht aus Stichwörtern ohne ganze Sätze und nennt Veranstalter, Zeit, Ort, Dauer, Kosten und Anmeldung.",
-          "Die Protokollsätze sind sachlich, stehen im Präsens und enthalten keine eigene Meinung.",
+          "Die Protokollsätze sind sachlich, stehen im Präsens (Aussagen anderer in indirekter Rede) und enthalten keine eigene Meinung.",
           "Die Protokollsätze geben nur Angaben aus dem Hörtext wieder.",
         ],
       },
@@ -1557,8 +1557,8 @@ export const LB1: Lesson[] = [
           before: "Paul fällt dir im Klassenrat ins Wort. Du sagst: „",
           options: [
             "Lass mich bitte kurz ausreden, dann höre ich dir zu.",
-            "Halt doch mal den Mund, du Quatschkopf!",
-            "Typisch, du hörst ja sowieso nie zu.",
+            "Halt doch mal den Mund, du Quatschkopf, das nervt echt!",
+            "Typisch, du hörst ja sowieso nie zu, du redest immer dazwischen.",
           ],
           answer: 0,
           after: "“",
@@ -1568,7 +1568,7 @@ export const LB1: Lesson[] = [
           before: "Du stellst bei einem Elternabend dein Projekt vor. Du beginnst mit: „",
           options: [
             "Guten Abend, ich freue mich, dass Sie gekommen sind.",
-            "Hey Leute, cool, dass ihr da seid.",
+            "Hey Leute, cool, dass ihr heute alle da seid, dann legen wir mal los.",
           ],
           answer: 0,
           after: "“",
@@ -1578,8 +1578,8 @@ export const LB1: Lesson[] = [
           before: "Lena hat gerade gesagt, dass sie Gruppenarbeit anstrengend findet. Du antwortest: „",
           options: [
             "Du hast gerade gesagt, dass dich Gruppenarbeit anstrengt. Was genau fällt dir schwer?",
-            "Ich mag Einzelarbeit sowieso lieber, egal was ihr sagt.",
-            "Darüber reden wir jetzt nicht, ich habe ein anderes Thema.",
+            "Ich mag Einzelarbeit sowieso lieber, egal was ihr dazu sagt, mir ist das einfach lästig.",
+            "Darüber reden wir jetzt nicht, ich habe ein ganz anderes Thema und wenig Zeit.",
           ],
           answer: 0,
           after: "“",
@@ -1588,9 +1588,9 @@ export const LB1: Lesson[] = [
         {
           before: "Die Diskussion schweift vom Wandertag zum Pausenverkauf ab. Als Gesprächsleitung sagst du: „",
           options: [
-            "Danke für den Hinweis, den Pausenverkauf besprechen wir später. Jetzt zurück zum Wandertag.",
-            "Mir ist egal, worüber ihr redet.",
-            "Ihr redet alle nur Unsinn.",
+            "Danke, den Pausenverkauf besprechen wir später. Jetzt zurück zum Wandertag.",
+            "Mir ist völlig egal, worüber ihr gerade redet, Hauptsache, es ist bald vorbei.",
+            "Ihr redet alle nur Unsinn, und ich habe keine Lust mehr, euch zuzuhören.",
           ],
           answer: 0,
           after: "“",

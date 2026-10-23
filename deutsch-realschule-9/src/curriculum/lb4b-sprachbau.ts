@@ -473,7 +473,7 @@ export const LB4B: Lesson[] = [
           feedback: "Die Mehrzahl macht den Laut am Wortende hörbar. Das ist Verlängern.",
         },
         {
-          text: "Du fragst dich, ob in „Ich hoffe, ... du kommst“ „das“ oder „dass“ steht. Mit „dieses“ klingt der Satz falsch.",
+          text: "Du fragst dich, ob in „Ich hoffe, … du kommst“ „das“ oder „dass“ steht. Mit „dieses“ klingt der Satz falsch.",
           target: 2,
           feedback: "Du setzt ein Ersatzwort ein und prüfst, ob der Satz noch stimmt. Das ist die Ersatzprobe.",
         },
@@ -621,7 +621,7 @@ export const LB4B: Lesson[] = [
             answer: 0,
             after: " und danach schwimmen.",
             feedback:
-              "Verbindungen aus Substantiv und Verb schreibt man in der Regel getrennt. Das Substantiv bleibt dabei groß.",
+              "„Rad fahren“ schreibt man getrennt, und das Substantiv bleibt groß; so steht es im Wörterverzeichnis des Amtlichen Regelwerks. Nur wenige Verbindungen aus Substantiv und Verb gelten als feste Zusammensetzung, im Zweifel schlägst du nach.",
           },
           {
             before: "Zum Frühstück trinke ich ein Glas ",
@@ -761,7 +761,7 @@ export const LB4B: Lesson[] = [
       "Telefon, Mikroskop, Antibiotikum: Diese Wörter wirken fremd, bestehen aber aus wenigen Bausteinen, die du immer wieder findest. Viele stammen aus dem Griechischen oder Lateinischen. Wer die Bausteine kennt, versteht ein neues Fremdwort schneller und schreibt es sicherer. Aus „tele-“ („fern“) und „-fon“ („Klang, Stimme“) wird das Telefon, aus „mikro-“ („klein“) und „-skop“ („betrachten“) das Mikroskop, aus „anti-“ („gegen“) und „bio-“ („Leben“) das Antibiotikum.",
       "Einige häufige Bausteine: **pro-** („vor, voran, für“: Programm, Projekt), **anti-** („gegen“: Antibiotikum, Antipathie), **re-** („zurück, wieder“: Reaktion, reparieren), **tele-** („fern“: Teleskop), **mikro-** („klein“: Mikroskop), **graf-** oder **graph-** („schreiben, zeichnen“: Biografie, Grafik) und **fon-** oder **phon-** („Klang, Stimme“: Telefon). Die Vorsilbe **in-** bedeutet „nicht“ (inaktiv) oder „hinein“ (Injektion). Vor l, m und r gleicht sie sich an: in + legal wird **il**legal, in + mobil wird **im**mobil, in + relevant wird **ir**relevant. Darum steht dort ein doppelter Konsonant. Vor b und p wird aus in- ein im-, so entsteht zum Beispiel „Import“.",
       "Auch die Endungen verraten viel. **-ion** bildet Substantive („Information“, „Reaktion“) mit der Mehrzahl auf -ionen, **-ik** bezeichnet Fächer und Künste („Mathematik“, „Musik“), **-ismus** eine Haltung oder Richtung („Optimismus“, „Realismus“) und **-ieren** macht Verben („kopieren“, „telefonieren“). Aus dem Griechischen stammen Schreibungen, die anders klingen, als man sie schreibt: **ph** klingt wie f („Philosophie“, „Physik“), **th** wie t („Theater“, „Mathematik“), **rh** wie r („Rhythmus“, „Rhetorik“) und **y** wie ü („System“, „Gymnasium“). Bei Bausteinen wie -graph-, -phon- und -photo- sind in vielen Wörtern ph und f erlaubt („Grafik“ oder „Graphik“, „Mikrofon“ oder „Mikrophon“), bei anderen gilt nur eine Schreibung („Telefon“, „telefonieren“, „fotografieren“). Im Zweifel schlägst du nach. In den Übungen stehen nur Wörter mit einer einzigen richtigen Schreibung.",
-      "Fremdwörter werden wie deutsche Wörter gebeugt, haben aber oft eigene Formen. Bei Substantiven auf -um lautet die Mehrzahl meist -a oder -en: das Praktikum – die Praktika, das Museum – die Museen. „Computer“ bleibt in der Mehrzahl gleich: zwei Computer, aber „mit den Computern“. **Verben auf -ieren** konjugierst du regelmäßig: ich kopiere, du kopierst, er kopiert, im Präteritum er kopierte. Weil die Betonung auf -ie- liegt, bekommt das Partizip II kein ge-: „Ich habe die Seite kopiert“, nicht „gekopiert“. Dasselbe gilt für telefoniert, studiert und fotografiert.",
+      "Fremdwörter werden wie deutsche Wörter gebeugt, haben aber oft eigene Formen. Bei Substantiven auf -um lautet die Mehrzahl meist -a oder -en: das Praktikum – die Praktika, das Museum – die Museen. „Computer“ bleibt in der Mehrzahl gleich: zwei Computer, aber „mit den Computern“. **Verben auf -ieren** konjugierst du regelmäßig: ich kopiere, du kopierst, er kopiert, im Präteritum er kopierte. Das Partizip II bekommt kein ge-: „Ich habe die Seite kopiert“, nicht „gekopiert“. Dasselbe gilt für telefoniert, studiert und fotografiert.",
     ],
     terms: [
       {
@@ -875,7 +875,7 @@ export const LB4B: Lesson[] = [
           ],
           answer: 0,
           explanation:
-            "Bei Verben auf -ieren liegt die Betonung auf -ie-, deshalb fehlt das ge-: kopiert, telefoniert, studiert.",
+            "Das Partizip II der Verben auf -ieren hat kein ge-: kopiert, telefoniert, studiert.",
         },
         {
           question: "Was verrät der Baustein tele- im Wort „Telefon“?",
@@ -969,7 +969,7 @@ export const LB4B: Lesson[] = [
             answer: 0,
             after: ".",
             feedback:
-              "Verben auf -ieren bilden das Partizip II ohne ge-, weil die Betonung auf -ie- liegt.",
+              "Verben auf -ieren bilden das Partizip II ohne ge-.",
           },
           {
             before: "In unserer Stadt gibt es drei ",
@@ -1019,7 +1019,7 @@ export const LB4B: Lesson[] = [
             answer: 0,
             after: ", bevor sie nach Hamburg zog.",
             feedback:
-              "Verben auf -ieren bilden das Partizip II ohne ge-. Prüfe, wo die Betonung liegt.",
+              "Verben auf -ieren bilden das Partizip II ohne ge-. Achte auf die Endung des Verbs.",
           },
           {
             before: "Beim Arbeiten mit den ",
@@ -1035,7 +1035,7 @@ export const LB4B: Lesson[] = [
             answer: 0,
             after: ", bevor der Unterricht begann.",
             feedback:
-              "Verben auf -ieren bilden das Partizip II ohne ge-. Prüfe, wo die Betonung liegt.",
+              "Verben auf -ieren bilden das Partizip II ohne ge-. Achte auf die Endung des Verbs.",
           },
           {
             before: "In den ",

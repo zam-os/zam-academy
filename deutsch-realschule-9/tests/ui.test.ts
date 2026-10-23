@@ -4,7 +4,7 @@ import { CORE_LESSONS, findLesson, LESSONS } from "../src/curriculum";
 import { createRound, REQUIRED_ROUNDS } from "../src/exercises/practice";
 import type { Lesson } from "../src/model/types";
 import { completion, isComplete, keyOf, parseProgress, STORAGE_KEY } from "../src/storage/progress";
-import { shownOptions } from "../src/workshop";
+import { quizOptions, shownOptions } from "../src/workshop";
 
 const $ = <T extends Element = HTMLElement>(s: string) => document.querySelector<T>(s) as T;
 const all = <T extends Element = HTMLElement>(s: string) => [...document.querySelectorAll<T>(s)];
@@ -15,6 +15,11 @@ const click = (el: Element) => (el as HTMLElement).click();
 function open(id: string) {
   window.location.hash = `#lesson=${id}`;
   window.dispatchEvent(new HashChangeEvent("hashchange"));
+}
+
+/** The index of the right option of a lesson's quick check as the page shows it. */
+function shownQuizAnswer(lesson: Lesson) {
+  return quizOptions(lesson).answer;
 }
 
 /** Answers a gap that is a drop-down or, for long options, a list of radio buttons. */
@@ -154,7 +159,9 @@ describe("a learner can finish every lesson through the page", () => {
       click($(`[data-seg="${first}"]`));
       click($("#check-marks"));
       expect($("#workshop-feedback").textContent).toContain("Noch nicht alles stimmt");
-      expect($("#workshop-feedback").textContent).toContain("Noch zu finden");
+      // Nothing marked is wrong here, so it says only that marks are missing, not how many or which.
+      expect($("#workshop-feedback").textContent).toContain("Es fehlen noch Markierungen");
+      expect($("#workshop-feedback").textContent).not.toContain("Noch zu finden");
       expect($("#workshop-feedback").textContent).not.toContain("graue Zuckerwatte");
       expect(isComplete(parseProgress(localStorage.getItem(STORAGE_KEY)), lesson.id)).toBe(false);
       expect(parseProgress(localStorage.getItem(STORAGE_KEY)).workshop).not.toContain(lesson.id);
@@ -165,6 +172,46 @@ describe("a learner can finish every lesson through the page", () => {
       // The message of the last check does not outlive the marks it described.
       expect($("#workshop-feedback").textContent).toBe("");
       click($("#clear-marks"));
+    });
+    for (const id of ["de-stilmittel", "de-sprachebenen", "de-gliederungen-aufzaehlungen"])
+      it(`${id}: a wrong marking says nothing about targets, other labels or how many are missing`, () => {
+        const lesson = findLesson(id);
+        if (!lesson || lesson.workshop.kind !== "mark") throw new Error(`${id} needs a marking workshop`);
+        const w = lesson.workshop;
+        open(id);
+        // Mark every piece one can click with the first label, then check.
+        const radio = $<HTMLInputElement>('input[name="mark-label"][value="0"]');
+        radio.checked = true;
+        fire(radio, "change");
+        all("[data-seg]").forEach((piece) => {
+          click($(`[data-seg="${piece.getAttribute("data-seg")}"]`));
+        });
+        click($("#check-marks"));
+        const lines = all(".mark-feedback li").map((li) => li.textContent ?? "");
+        expect(lines.length).toBeGreaterThan(0);
+        // Every wrong mark gets the same sentence, whether the piece is a target of another label or no target at all.
+        for (const line of lines) expect(line).toMatch(/^✗ „[\s\S]+“: Diese Markierung stimmt noch nicht\.$/);
+        const said = $("#workshop-feedback").textContent ?? "";
+        expect(said).not.toContain("kein anderes");
+        expect(said).not.toContain("Noch zu finden");
+        expect(said).not.toContain("×");
+        for (const label of w.labels) expect(said).not.toContain(`„${label}“`);
+        expect(parseProgress(localStorage.getItem(STORAGE_KEY)).workshop).not.toContain(id);
+        click($("#clear-marks"));
+      });
+    it("a wrong quick check does not explain the right answer and does not count", () => {
+      const lesson = LESSONS[3];
+      open(lesson.id);
+      const right = shownQuizAnswer(lesson);
+      const inputs = all<HTMLInputElement>('input[name="quiz"]');
+      inputs[(right + 1) % inputs.length].checked = true;
+      submit($("#quiz"));
+      expect($("#quiz-feedback").textContent).toBe("Noch nicht. Lies die Frage und alle Antworten noch einmal.");
+      expect($("#quiz-feedback").textContent).not.toContain(lesson.quiz.explanation.slice(0, 40));
+      expect(parseProgress(localStorage.getItem(STORAGE_KEY)).quiz).not.toContain(lesson.id);
+      inputs[right].checked = true;
+      submit($("#quiz"));
+      expect($("#quiz-feedback").textContent).toContain(lesson.quiz.explanation);
     });
     it("never names the category or the place of a wrong entry (Zuordnen and Ordnen)", () => {
       const classify = findLesson("de-zuhoeren-reagieren");
@@ -216,6 +263,28 @@ describe("a learner can finish every lesson through the page", () => {
       expect(window.location.hash).toBe(hash);
       expect($('[data-gap="w:0:0"]').getAttribute("aria-pressed")).toBe("true");
       click($('[data-gap="w:0:0"]'));
+    });
+    it("keeps the clicks of an open practice round when the level is switched and back, and names the task of the round", () => {
+      const lesson = findLesson("de-zeichensetzung");
+      if (!lesson?.practice) throw new Error("de-zeichensetzung needs a practice round");
+      open(lesson.id);
+      expect($("#practice-feedback").textContent).toContain("Setze in jedem Satz die Kommas");
+      expect($("#practice-feedback").textContent).not.toContain("wähle");
+      click($('[data-gap="p:0:0"]'));
+      const level = $<HTMLSelectElement>("#level");
+      level.value = "2";
+      fire(level, "change");
+      expect($("#practice .eyebrow").textContent).toContain("Niveau 2");
+      expect($('[data-gap="p:0:0"]').getAttribute("aria-pressed")).toBe("false");
+      level.value = "1";
+      fire(level, "change");
+      expect($("#practice .eyebrow").textContent).toContain("Niveau 1");
+      expect($('[data-gap="p:0:0"]').getAttribute("aria-pressed")).toBe("true");
+      click($('[data-gap="p:0:0"]'));
+      const choose = findLesson("de-fremdwoerter-schreiben");
+      if (!choose?.practice || choose.practice.kind !== "choose") throw new Error("de-fremdwoerter-schreiben needs a choose round");
+      open(choose.id);
+      expect($("#practice-feedback").textContent).toContain("Wähle in jedem Satz die passende Möglichkeit");
     });
     it("has one level-one heading, a title per lesson and long options as a list of radio buttons", () => {
       const lesson = findLesson("de-gespraechsverhalten");
@@ -286,6 +355,18 @@ describe("a learner can finish every lesson through the page", () => {
     expect(all(".map-card")).toHaveLength(4);
     expect(all(".map-lesson.done").length).toBe(CORE_LESSONS.length);
     expect(document.body.textContent).toContain("Alle Lektionen sind geschafft");
+  });
+  it("puts the focus back on a button of the practice round after it was drawn again", () => {
+    const lesson = findLesson("de-zeichensetzung");
+    if (!lesson?.practice) throw new Error("de-zeichensetzung needs a practice round");
+    open(lesson.id);
+    solvePracticeRound(lesson);
+    expect(document.activeElement?.id).toBe("new-round");
+    click($("#new-round"));
+    expect(document.activeElement?.id).toBe("check-practice");
+    click($("#solution-button"));
+    expect(document.activeElement?.id).toBe("new-round");
+    click($("#map-button"));
   });
   it("does not lose progress when another tab saves older progress", () => {
     // A second tab that opened early saves a state with nothing done; this tab must keep all lessons and save them again.

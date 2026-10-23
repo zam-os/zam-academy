@@ -727,7 +727,7 @@ details summary {
 }
 .map-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
   gap: 1rem;
   margin: 1.25rem 0;
 }
@@ -854,9 +854,6 @@ details summary {
     opacity: 0;
     transform: translateY(8px);
   }
-}
-#practice-note textarea {
-  margin-bottom: 0.5rem;
 }
 .menu-only {
   display: none;

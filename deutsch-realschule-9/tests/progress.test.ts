@@ -104,6 +104,33 @@ describe("learning evidence and local recovery", () => {
     expect(merged.assessed).toEqual([keyOf(a.id, 1)]);
     // ... but not for a text this tab has changed since.
     own.drafts[keyOf(a.id, 1)] = "Ich habe den Text danach noch einmal ganz neu geschrieben.";
+    expect(mergeProgress(stored, own, new Set([keyOf(a.id, 1)])).assessed).toEqual([]);
+  });
+  it("keeps a newer text another tab saved over an older one this tab only loaded", () => {
+    const [a] = LESSONS;
+    const key = keyOf(a.id, 1);
+    const newer = "Ich habe diesen Text im anderen Tab ganz neu geschrieben.";
+    const older = "Das ist noch die alte Fassung vom Laden des Tabs.";
+    const stored = freshProgress();
+    stored.drafts[key] = newer;
+    stored.assessed.push(key);
+    const own = freshProgress();
+    own.drafts[key] = older;
+    // This tab did not touch the text: the saved one stays, and its rating with it.
+    const merged = mergeProgress(stored, own);
+    expect(merged.drafts[key]).toBe(newer);
+    expect(merged.assessed).toEqual([key]);
+    // This tab typed a new one: that one replaces the saved text and the old rating goes.
+    const typed = mergeProgress(stored, own, new Set([key]));
+    expect(typed.drafts[key]).toBe(older);
+    expect(typed.assessed).toEqual([]);
+    // A rating given in this tab to a text this tab holds stays, while the other tab has nothing to say about it.
+    own.assessed.push(key);
+    stored.drafts[key] = older;
+    stored.assessed = [];
+    expect(mergeProgress(stored, own).assessed).toEqual([key]);
+    // But not when the other tab saved a different text in the meantime.
+    stored.drafts[key] = newer;
     expect(mergeProgress(stored, own).assessed).toEqual([]);
   });
   it("counts a text as an attempt only when it has some words", () => {

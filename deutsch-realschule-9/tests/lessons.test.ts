@@ -195,6 +195,29 @@ describe("lesson contract", () => {
           "Textfall: die richtige Option ist in mehr als der Hälfte der Schritte die längste",
         ).toBeLessThanOrEqual(Math.floor(lesson.casework.steps.length / 2));
       });
+      it("does not give a gap's right option away by its length (Werkstatt and practice)", () => {
+        const sets: Array<{ name: string; items: ChooseItem[] }> = [];
+        if (lesson.workshop.kind === "choose") sets.push({ name: "Werkstatt", items: lesson.workshop.items });
+        if (lesson.practice?.kind === "choose")
+          for (const level of [1, 2] as const) sets.push({ name: `Übung Niveau ${level}`, items: lesson.practice.pool[level] });
+        for (const { name, items } of sets) {
+          // Options that differ by a letter or a comma (Rechtschreibung, Zeichensetzung) cannot hide a cue; long wordings can.
+          const size = (option: string) => option.replace(/[^\p{L}\p{N}]/gu, "").length;
+          const long = items.filter((item) => Math.max(...item.options.map(size)) > 15);
+          let longest = 0;
+          for (const item of long) {
+            const right = size(item.options[item.answer]);
+            const others = item.options.filter((_, j) => j !== item.answer).map(size);
+            expect(right, `${name}: „${item.options[item.answer]}“ ist viel länger als die falschen Optionen`).toBeLessThanOrEqual(
+              Math.max(...others) * 1.15,
+            );
+            if (right > Math.max(...others)) longest += 1;
+          }
+          expect(longest, `${name}: die richtige Option ist in mehr als der Hälfte der Lücken die längste`).toBeLessThanOrEqual(
+            Math.floor(long.length / 2),
+          );
+        }
+      });
       it("has a workshop that can be solved and is not solved by chance", () => {
         const w = lesson.workshop;
         expect(w.title.length).toBeGreaterThan(5);

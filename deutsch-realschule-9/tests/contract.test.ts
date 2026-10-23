@@ -112,7 +112,7 @@ describe("public learning contract", () => {
         expect(index.get(pre.atom_id), atom.slug).toBeLessThan(i);
       }
     });
-    expect(edges).toBeGreaterThan(40);
+    expect(edges).toBe(52);
   });
   it("describes itself with the real count and links its sources", () => {
     expect(cell.description).toContain(`${LESSONS.length} Lektionen`);
@@ -188,7 +188,9 @@ describe("takeover of the old partial cell", () => {
     const normalised = legacyBytes.replaceAll("\r\n", "\n");
     const digest = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(normalised));
     const hex = [...new Uint8Array(digest)].map((b) => b.toString(16).padStart(2, "0")).join("");
-    expect(hex).toBe(source.sha256);
+    // Pinned here as well as in the mapping, so changing the snapshot and its hash together does not pass unnoticed.
+    expect(hex).toBe("77734aac15cf57c4d6f514a31993cf42c6f80057c8a1d1ff66f71e7e4441ecdc");
+    expect(source.sha256).toBe(hex);
     expect(source.tile_id).toBe(legacy.tile_id);
   });
   it("names an existing card for every A or B row and none for a C row", () => {

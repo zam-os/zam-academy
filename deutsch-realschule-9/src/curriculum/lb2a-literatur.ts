@@ -612,9 +612,9 @@ export const LB2A: Lesson[] = [
     examples: [
       {
         title: "Nebentext und Monolog: Fausts erster Monolog (Auszug)",
-        text: "In einem hochgewölbten, engen gotischen Zimmer Faust, unruhig auf seinem Sessel am Pulte.\nFaust:\nHabe nun, ach! Philosophie,\nJuristerei und Medizin,\n…\nDa steh ich nun, ich armer Tor!\nUnd bin so klug als wie zuvor;",
+        text: "In einem hochgewölbten, engen gotischen Zimmer Faust,\nunruhig auf seinem Sessel am Pulte.\nFAUST.\nHabe nun, ach! Philosophie,\nJuristerei und Medizin,\n…\nDa steh ich nun, ich armer Tor!\nUnd bin so klug als wie zuvor;",
         analysis:
-          "Die erste Zeile ist eine **Regieanweisung** (Nebentext): Sie nennt Ort und Fausts Haltung, wird aber nicht gesprochen. Danach folgt Figurenrede (Haupttext). Faust ist allein, also ist es ein **Monolog**: Wir erfahren seine Gedanken und seine Unzufriedenheit trotz aller Gelehrsamkeit. So zeigt der Monolog die Ausgangslage der Hauptfigur.",
+          "Die ersten beiden Zeilen sind eine **Regieanweisung** (Nebentext): Sie nennt Ort und Fausts Haltung, wird aber nicht gesprochen. Danach folgt unter dem Namen „FAUST.“ die Figurenrede (Haupttext). Faust ist allein, also ist es ein **Monolog**: Wir erfahren seine Gedanken und seine Unzufriedenheit trotz aller Gelehrsamkeit. So zeigt der Monolog die Ausgangslage der Hauptfigur.",
         source:
           "Johann Wolfgang von Goethe: Faust. Der Tragödie erster Teil (1808), Szene „Nacht“, gekürzt; Text nach Projekt Gutenberg",
       },

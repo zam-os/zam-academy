@@ -73,10 +73,29 @@ const $ = <T extends Element = HTMLElement>(selector: string): T => {
 };
 const app = $("#app");
 
+/** The texts this tab has changed since it loaded; only these may replace what another tab saved. */
+const dirtyDrafts = new Set<string>();
+
+/** Shows in the text box what another tab saved, as long as this tab has not touched that text. */
+function syncDraft() {
+  const area = document.querySelector<HTMLTextAreaElement>("#draft");
+  const lesson = findLesson(p.active);
+  if (!area || !lesson || view !== "lesson") return;
+  const key = keyOf(lesson.id, p.level);
+  const saved = p.drafts[key] ?? "";
+  if (dirtyDrafts.has(key) || area.value === saved) return;
+  area.value = saved;
+  const compare = document.querySelector<HTMLButtonElement>("#compare-writing");
+  if (compare) compare.disabled = !looksLikeDraft(saved);
+}
+
 function persist() {
   // Another tab may have saved progress since this one loaded: join, then save.
   const stored = loadProgress();
-  if (stored.persistent) Object.assign(p, mergeProgress(stored.progress, p));
+  if (stored.persistent) {
+    Object.assign(p, mergeProgress(stored.progress, p, dirtyDrafts));
+    syncDraft();
+  }
   persistent = saveProgress(p);
   const warning = document.querySelector<HTMLElement>("#storage-warning");
   if (warning) warning.hidden = persistent;
@@ -95,7 +114,8 @@ function deepLink() {
   if (link.level) p.level = link.level;
 }
 deepLink();
-if (!location.hash && isFresh()) view = "map";
+// A first visit without any link opens the map; a link to a lesson (hash or ?lesson=) opens that lesson.
+if (!location.hash && !parseTrainingDeepLink(location.hash, location.search).lessonId && isFresh()) view = "map";
 
 function navigate(id: string) {
   if (!findLesson(id)) return;
@@ -103,6 +123,7 @@ function navigate(id: string) {
   view = "lesson";
   menuOpen = false;
   rounds.clear();
+  openRoundState.clear();
   history.replaceState(null, "", `#lesson=${encodeURIComponent(id)}`);
   persist();
   render();
@@ -171,10 +192,12 @@ function render() {
   $("#sources-button").addEventListener("click", () => {
     const d = $<HTMLDetailsElement>("#sources-note");
     d.open = true;
-    d.scrollIntoView({ behavior: "smooth" });
+    d.scrollIntoView({ behavior: window.matchMedia?.("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
   });
   if (view === "map") return;
   $("#level").addEventListener("change", (e) => {
+    const open = rounds.get(keyOf(lesson.id, p.level));
+    if (open) rememberRound(open);
     p.level = (e.target as HTMLSelectElement).value === "2" ? 2 : 1;
     persist();
     // Only the parts that depend on the level are drawn again; answers given above stay.
@@ -310,8 +333,10 @@ function bindQuiz(l: Lesson) {
       addOnce(p.quiz, l.id);
       afterProgress(l, was);
     }
-    $("#quiz-feedback").textContent =
-      `${right ? "Richtig." : "Prüfe noch einmal."} ${l.quiz.explanation}`;
+    // The explanation names the right answer, so it comes only after a right one.
+    $("#quiz-feedback").textContent = right
+      ? `Richtig. ${l.quiz.explanation}`
+      : "Noch nicht. Lies die Frage und alle Antworten noch einmal.";
   });
 }
 
@@ -463,26 +488,13 @@ function bindWorkshop(l: Lesson) {
           $("#workshop-feedback").innerHTML = `<p>Alles richtig. ${esc(w.conclusion)}</p><ul class="mark-feedback">${lines.map((x) => `<li>${esc(x)}</li>`).join("")}</ul>`;
           return;
         }
-        // A miss says what is wrong with the marks that stand and what is still missing, never where it is.
-        const lines: string[] = [];
+        // A miss marks the pieces that do not stand right, all with the same sentence: it never says whether
+        // a piece is a target, which label it has instead, or how many are still missing.
+        const wrong: string[] = [];
         w.text.forEach((segment, i) => {
-          const mark = marking[i];
-          if (mark !== undefined && mark !== segment.label)
-            lines.push(
-              segment.label === undefined
-                ? `✗ „${segment.t.trim()}“ ist hier kein Beispiel für „${w.labels[mark]}“ und auch für kein anderes Label.`
-                : `✗ „${segment.t.trim()}“ ist nicht „${w.labels[mark]}“. Prüfe die Merkmale noch einmal.`,
-            );
+          if (marking[i] !== undefined && marking[i] !== segment.label) wrong.push(`✗ „${segment.t.trim()}“: Diese Markierung stimmt noch nicht.`);
         });
-        const missing = w.labels
-          .map((label, k) => ({
-            label,
-            n: w.text.filter((segment, i) => segment.label === k && marking[i] !== k).length,
-          }))
-          .filter((x) => x.n > 0);
-        if (missing.length)
-          lines.push(`Noch zu finden: ${missing.map((x) => `${x.n} × ${x.label}`).join(", ")}.`);
-        $("#workshop-feedback").innerHTML = `<p>Noch nicht alles stimmt.</p><ul class="mark-feedback">${lines.map((x) => `<li>${esc(x)}</li>`).join("")}</ul>`;
+        $("#workshop-feedback").innerHTML = `<p>Noch nicht alles stimmt.${wrong.length ? " Prüfe die Markierungen mit ✗." : " Es fehlen noch Markierungen."}</p>${wrong.length ? `<ul class="mark-feedback">${wrong.map((x) => `<li>${esc(x)}</li>`).join("")}</ul>` : ""}`;
       });
     };
     bindMark();
@@ -564,12 +576,37 @@ function practiceHtml(l: Lesson, number: string) {
         ? "Gezählt: Die Runde ist ohne Hilfe gelungen."
         : `Gelungen: Die Transferrunde stimmt. Sie ist freiwillig; für den Abschluss zählen ${REQUIRED_ROUNDS} Runden auf Niveau 1.`
       : "Lösung angesehen; diese Runde zählt nicht."
-    : "Setze die Kommas und wähle die Wörter. Eine Runde zählt, wenn alle drei Sätze stimmen.";
+    : r.kind === "commas"
+      ? "Setze in jedem Satz die Kommas. Eine Runde zählt, wenn alle drei Sätze stimmen."
+      : "Wähle in jedem Satz die passende Möglichkeit. Eine Runde zählt, wenn alle drei Sätze stimmen.";
   return `<section class="panel" id="practice"><div class="eyebrow">${number} · Üben · Niveau ${p.level}</div><h2>${esc(practice.title)}</h2><p>${esc(practice.instruction)}</p><div id="practice-items">${items}</div><div class="actions"><button type="button" id="check-practice" ${r.finished ? "disabled" : ""}>Runde prüfen</button><button type="button" id="solution-button" class="quiet" ${r.finished ? "disabled" : ""}>Lösung ansehen</button><button type="button" id="new-round" class="quiet">Neue Runde</button></div><p id="practice-feedback" role="status">${esc(message)}</p></section>`;
 }
+/** What a learner has set in a round that is still open, so a redraw (a level switch) does not lose it. */
+const openRoundState = new Map<string, { commas?: number[][]; choices?: number[] }>();
+function rememberRound(r: Round) {
+  if (r.finished) return;
+  openRoundState.set(
+    r.key,
+    r.kind === "commas"
+      ? { commas: r.items.map((_, i) => readCommas("p", i)) }
+      : { choices: r.items.map((_, i) => readChoose("p", i)) },
+  );
+}
+function restoreRound(r: Round) {
+  const state = openRoundState.get(r.key);
+  if (!state || r.finished) return;
+  state.commas?.forEach((commas, i) => {
+    setCommas("p", i, commas);
+  });
+  state.choices?.forEach((choice, i) => {
+    if (choice >= 0) setChoose("p", i, choice);
+  });
+}
+
 function bindPractice(l: Lesson) {
   const r = roundFor(l);
   bindGaps($("#practice-items"));
+  restoreRound(r);
   if (r.finished) {
     // A finished round keeps showing its answers after a re-render.
     if (r.revealed || r.credited) showSolution(r);
@@ -587,20 +624,21 @@ function bindPractice(l: Lesson) {
     });
     const was = isComplete(p, l.id);
     if (submitRound(p, r, correct)) {
-      refreshPractice(l);
+      refreshPractice(l, "#new-round");
       afterProgress(l, was);
     } else $("#practice-feedback").textContent = "Noch nicht alle drei Sätze stimmen. Prüfe die Sätze mit „Noch nicht“ noch einmal.";
   });
   $("#solution-button").addEventListener("click", () => {
     revealRound(p, r);
     persist();
-    refreshPractice(l);
+    refreshPractice(l, "#new-round");
   });
   $("#new-round").addEventListener("click", () => {
     skipRound(p, r);
     persist();
     rounds.delete(r.key);
-    refreshPractice(l);
+    openRoundState.delete(r.key);
+    refreshPractice(l, "#check-practice");
   });
 }
 /** Shows the right answers in a finished round. */
@@ -618,10 +656,12 @@ function showSolution(r: Round) {
       if (el) el.textContent = `${chooseSentence(item)} ${item.feedback}`;
     });
 }
-function refreshPractice(l: Lesson) {
+/** Draws the practice round again; `focus` names the button that gets the focus back, because the one pressed is gone. */
+function refreshPractice(l: Lesson, focus?: string) {
   const number = $("#practice .eyebrow").textContent?.slice(0, 2) ?? "05";
   $("#practice").outerHTML = practiceHtml(l, number);
   bindPractice(l);
+  if (focus) document.querySelector<HTMLButtonElement>(focus)?.focus();
 }
 
 function writingHtml(l: Lesson, number: string) {
@@ -641,6 +681,7 @@ function bindWriting(l: Lesson) {
   const key = keyOf(l.id, p.level);
   $("#draft").addEventListener("input", (e) => {
     const value = (e.target as HTMLTextAreaElement).value;
+    dirtyDrafts.add(key);
     p.drafts[key] = value;
     p.assessed = p.assessed.filter((x) => x !== key);
     document.querySelectorAll<HTMLInputElement>('[name="criterion"]').forEach((x) => {
@@ -678,13 +719,17 @@ function footerHtml() {
 // Another tab saved progress: take it over, without drawing this page anew.
 window.addEventListener("storage", (event) => {
   if (event.key !== STORAGE_KEY) return;
-  Object.assign(p, mergeProgress(parseProgress(event.newValue), p));
+  Object.assign(p, mergeProgress(parseProgress(event.newValue), p, dirtyDrafts));
   if (view === "map") render();
-  else updateEvidence();
+  else {
+    syncDraft();
+    updateEvidence();
+  }
 });
 
 window.addEventListener("hashchange", () => {
   rounds.clear();
+  openRoundState.clear();
   deepLink();
   persist();
   render();

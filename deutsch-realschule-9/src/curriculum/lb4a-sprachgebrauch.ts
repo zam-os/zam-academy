@@ -101,8 +101,8 @@ export const LB4A: Lesson[] = [
           before: "Lea erklärt einer 5. Klasse, die das Wort noch nie gehört hat: „Ein Ökosystem, ",
           options: [
             "also das Zusammenspiel von Lebewesen und ihrem Lebensraum,",
-            "wie ihr bestimmt alle wisst,",
-            "ein Begriff aus der Ökologie,",
+            "wie ihr bestimmt alle aus dem Biologieunterricht wisst und kennt,",
+            "ein Begriff aus der Ökologie, den Fachleute oft benutzen,",
           ],
           answer: 0,
           after: " ist zum Beispiel ein Teich.“",
@@ -928,7 +928,7 @@ export const LB4A: Lesson[] = [
             answer: 0,
             after: " heute krank.",
             feedback:
-              "In der indirekten Rede steht der Konjunktiv I. Zu „er“ gehört „sei“, die sich vom Indikativ „ist“ unterscheidet.",
+              "In der indirekten Rede steht der Konjunktiv I. Zu „er“ gehört „sei“, das sich vom Indikativ „ist“ unterscheidet.",
           },
           {
             before: "Mia schreibt, ihre Schwester ",

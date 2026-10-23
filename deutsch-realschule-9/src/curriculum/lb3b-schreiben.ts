@@ -1110,7 +1110,7 @@ export const LB3B: Lesson[] = [
       kind: "choose",
       title: "Richtig oder falsch geschrieben: drei Sätze pro Runde",
       instruction:
-        "Wähle in jedem Satz die richtige Schreibung oder Form für die Lücke. Eine Runde zählt, wenn alle drei Sätze stimmen.",
+        "Wähle in jedem Satz die richtige Schreibung, Form oder Satzstellung für die Lücke; maßgeblich ist die geschriebene Standardsprache. Eine Runde zählt, wenn alle drei Sätze stimmen.",
       pool: {
         1: [
           {

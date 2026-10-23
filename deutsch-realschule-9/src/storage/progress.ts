@@ -101,24 +101,28 @@ export function completion(p: Progress) {
  * Joins what another tab saved with what this tab holds, so two open tabs do
  * not wipe each other's progress (a ZAM card opens its lesson in a new tab).
  * Finished parts only grow, so they are joined; the counters take the larger
- * value; a text and the lesson, level and rating of this tab stand as they
- * are, except that a rating stored for the very same text is kept.
+ * value; the lesson and level of this tab stand. A text is the one that was
+ * saved, unless this tab changed it since it loaded (`dirty`): only a real
+ * input of this tab may replace a text another tab saved. A rating stays
+ * only with the very text it was given for.
  */
-export function mergeProgress(stored: Progress, own: Progress): Progress {
+export function mergeProgress(stored: Progress, own: Progress, dirty: ReadonlySet<string> = new Set()): Progress {
   const join = (a: string[], b: string[]) => [...new Set([...a, ...b])];
   const largest = (a: Record<string, number>, b: Record<string, number>) => {
     const out = { ...a };
     for (const [k, n] of Object.entries(b)) out[k] = Math.max(out[k] ?? 0, n);
     return out;
   };
-  const drafts = { ...stored.drafts, ...own.drafts };
+  const drafts: Record<string, string> = {};
+  for (const key of new Set([...Object.keys(stored.drafts), ...Object.keys(own.drafts)]))
+    drafts[key] = dirty.has(key) ? (own.drafts[key] ?? "") : (stored.drafts[key] ?? own.drafts[key] ?? "");
   return {
     ...own,
     quiz: join(own.quiz, stored.quiz),
     workshop: join(own.workshop, stored.workshop),
     casework: join(own.casework, stored.casework),
     assessed: join(
-      own.assessed,
+      own.assessed.filter((k) => drafts[k] === own.drafts[k]),
       stored.assessed.filter((k) => drafts[k] === stored.drafts[k]),
     ),
     drafts,
