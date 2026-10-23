@@ -76,5 +76,7 @@ jobs:
         run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node wirtschaft-recht-realschule-9/scripts/validate-migration.mjs
       - name: Preserve Mathematik 10 histories and refuse automatic merges
         run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node mathematik-realschule-10/scripts/validate-migration.mjs
+      - name: Preserve Deutsch 9 histories of the retired cards
+        run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node deutsch-realschule-9/scripts/validate-migration.mjs
       - name: Build the catalog (requires explicit mapping approval)
         run: node scripts/build-catalog.mjs "$RUNNER_TEMP/catalog.json"

@@ -200,17 +200,25 @@ describe("takeover of the old partial cell", () => {
       else expect(slugs.filter((s) => s === row.academy_slug)).toHaveLength(1);
     }
   });
-  it("changes no history until the mapping is approved", () => {
+  it("declares exactly the documented replacements and retirements", () => {
+    for (const row of rows)
+      expect(successors(row.de_by_id).map((i) => i.slug)).toEqual(row.category === "C" ? [] : [row.academy_slug]);
+    const retired = (cell as { retired_items?: Array<{ id: string; reason: string }> }).retired_items ?? [];
+    expect(retired.map((r) => r.id)).toEqual(rows.filter((r) => r.category === "C").map((r) => r.de_by_id));
+    for (const r of retired) expect(r.reason.length).toBeGreaterThan(40);
+    expect(cell.version).toBe("2026.10.2");
+  });
+  it("is published only on Thomas's approval: a date with his words, never a flag", () => {
     const approved = mapping.approved as string | null;
     expect(approved === null || /^\d{4}-\d{2}-\d{2}$/.test(approved)).toBe(true);
+    // Without an approval the cell would have to stay a plain new cell: no retirement, no replacement.
     if (approved === null) {
-      expect(mapping.status).toBe("proposal-only");
       expect(cell).not.toHaveProperty("retired_items");
       for (const item of ITEMS) expect(item).not.toHaveProperty("replaces");
       return;
     }
     expect(String(mapping.source)).toContain("Thomas");
-    for (const row of rows)
-      expect(successors(row.de_by_id).map((i) => i.slug)).toEqual(row.category === "C" ? [] : [row.academy_slug]);
+    expect(mapping.authorization).toBeTruthy();
+    expect(mapping).not.toHaveProperty("status");
   });
 });

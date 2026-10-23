@@ -1,6 +1,6 @@
-# Deutsch 9 · Lehrplanabgleich und Vorschlag zur Alt-Zelle
+# Deutsch 9 · Lehrplanabgleich und Zuordnung der Alt-Zelle
 
-Stand: 23. Oktober 2026. **Die acht Zuordnungen unten sind ein Vorschlag und nicht freigegeben.** Das neue [Academy-Paket](../deutsch-realschule-9/) ist eine neue Zelle: Sie deklariert weder `replaces` noch `retired_items`, daher ändert ihre Veröffentlichung keine Lernhistorie. Die alte Zelle `de-by:realschule-9-deutsch-argumentation-eroerterung` bleibt in ZAM unverändert aktiv, bis die Zuordnung ausdrücklich freigegeben ist.
+Stand: 23. Oktober 2026. Das [Academy-Paket](../deutsch-realschule-9/) wurde als Zelle `2026.10.1` ohne `replaces` und `retired_items` veröffentlicht. Die Zelle in Version `2026.10.2` deklariert die acht `retired_items` der C-Zeilen und kein `replaces`, genau wie unten dokumentiert. **Thomas hat die Zuordnung am 23. Oktober 2026 freigegeben und alle acht Karten zur Stilllegung bestätigt** (`approved` in `replaces-de-by.json`, sein Wortlaut in `source`). Die alte Zelle `de-by:realschule-9-deutsch-argumentation-eroerterung` wird danach in ZAM nicht mehr gebündelt; Karten und Reviewhistorien bleiben erhalten.
 
 ## Lehrplan
 
@@ -30,7 +30,7 @@ Die Teilzelle (Version `2026.08.1`) hat vier Atome und acht Karten zu Argumentat
 
 Die vollständigen Alttexte stehen im SHA-256-geprüften [Snapshot](../deutsch-realschule-9/tests/fixtures/de-by-realschule-9-deutsch-argumentation-eroerterung-kvt.json). `replaces-de-by.json` nennt ID, vollständige Altfrage, Kategorie und Begründung je Karte. Ähnlichkeit allein entscheidet keine Zuordnung.
 
-| Alte Karte | Bisheriger Abruf | Vorschlag | Begründung |
+| Alte Karte | Bisheriger Abruf | Zuordnung | Begründung |
 | --- | --- | --- | --- |
 | `…J01` | Baustein eines Arguments, der Beispiel oder Beleg liefert | **C** | Gleiches Thema, aber andere Abrufrichtung: Die neuen Karten fragen, woraus ein Argument besteht |
 | `…J02` | Dreigliedriger Aufbau erklären und eigenes Argument formulieren | **C** | Mehrteilig; die Schreibaufgaben üben das Formulieren |
@@ -41,11 +41,11 @@ Die vollständigen Alttexte stehen im SHA-256-geprüften [Snapshot](../deutsch-r
 | `…J07` | Kennzeichnung eines wörtlichen Zitats | **C** | Kein identischer Nachfolger: Die neuen Zitierkarten fragen Auslassung, Einbau und sinngemäßes Zitat |
 | `…J08` | Wörtliches und sinngemäßes Zitat, vier Kriterien der Quellenkritik | **C** | Mehrteilig; Quellenkritik an Online-Quellen kommt nicht als eigener Abruf vor |
 
-Bei **C** bleiben Karte und Reviews beim alten Token, und es gibt kein `replaces`. Es gibt in diesem Vorschlag keine **A**-Zeile: Keine neue Karte fragt denselben Einzelpunkt wie eine alte. Wer die alten Karten aus der aktiven Wiederholung nehmen will, nimmt ihre IDs in `retired_items` auf, die Kategorie C lässt das ausdrücklich zu. Ob alle acht, nur die nicht lehrplankonformen (J03, J04, J05) oder keine stillgelegt werden, entscheidet Thomas.
+Bei **C** bleiben Karte und Reviews beim alten Token, und es gibt kein `replaces`. Es gibt keine **A**-Zeile: Keine neue Karte fragt denselben Einzelpunkt wie eine alte. Alle acht IDs stehen in `retired_items`, damit die alten Karten aus der aktiven Wiederholung verschwinden; Thomas hat auf die Rückfrage, ob alle acht, nur die nicht lehrplankonformen (J03, J04, J05) oder keine stillgelegt werden, „Alle acht“ gewählt. Die fünf Karten J01, J02, J06, J07 und J08 fragen ihre Inhalte in der neuen Zelle feiner oder anders; ihre Historie bleibt am alten Token erhalten.
 
-## Was bei Freigabe geschieht
+## Was geprüft ist
 
-1. `approved` erhält das Freigabedatum, `source` den Wortlaut und `authorization` die erlaubten `retired_items`.
-2. Die Zelle erhält `retired_items` für die gewünschten Karten und die Version `2026.10.2`; `tests/contract.test.ts` prüft die Deklaration gegen die Zuordnung.
-3. Ein Skript `scripts/validate-migration.mjs` wie bei den anderen Paketen prüft mit dem veröffentlichten zam-core, dass die stillgelegten Karten die aktive Wiederholung verlassen und ihre Historie behalten; der CI-Job wird ergänzt.
-4. ZAM übernimmt die veröffentlichten Bytes über `academy:sync`, ergänzt das Lehrplanangebot und löst die alte Teilzelle ab.
+1. `tests/contract.test.ts` prüft, dass die Zelle genau die dokumentierten `retired_items` und kein `replaces` deklariert und `approved` ein Datum mit Thomas' Wortlaut oder `null` ist, nie ein Flag.
+2. `scripts/validate-migration.mjs` läuft mit dem in der CI festgelegten zam-core in Wegwerf-Bibliotheken: Die acht alten Karten und ihre 16 Reviewereignisse bleiben unverändert, die alten Tokens sind `deprecated` und kommen nie in die Wiederholung zurück, ein wiederholter Install und die Einschreibung der 159 neuen Karten ändern nichts an ihnen, und ein Upgrade von `2026.10.1` ohne alte Zelle ändert keine Karte.
+3. Freigabe: `approved` trägt das Datum, `source` den Wortlaut und `authorization` die erlaubten `retired_items`. Damit besteht der Katalogschritt der CI (`scripts/mapping-approval.mjs` prüft zusätzlich, dass die Zelle genau die dokumentierten Zeilen deklariert).
+4. ZAM übernimmt die veröffentlichten Bytes über `academy:sync`, löst die alte Teilzelle ab und bündelt den Alt-Snapshot nur noch als Testfixture.
