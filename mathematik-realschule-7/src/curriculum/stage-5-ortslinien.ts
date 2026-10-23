@@ -1,4 +1,4 @@
-import { fmt } from "../exercises/format";
+import { fmt, sum } from "../exercises/format";
 import { angle } from "../models";
 import { numberField as num, choiceField as pick } from "./helpers";
 import {
@@ -410,9 +410,9 @@ const thales = L(3, {
                   pick(
                     "Gleiche Teilwinkel wegen …",
                     [
-                      "gleichschenkliger Teildreiecke aus gleichen Radien",
-                      "gleicher Farbe der Kreisbögen",
-                      "parallel verlaufender Radien",
+                      "gleicher Basiswinkel in gleichschenkligen Teildreiecken",
+                      "gleich großer Mittelpunktswinkel bei beliebiger Lage von C",
+                      "paralleler Radien an beliebigen Endpunkten eines Kreisbogens",
                     ],
                     0,
                   ),
@@ -754,7 +754,7 @@ const schnitt = L(6, {
       make: (rng, level) => {
         const radius = rng.int(3, 6),
           a = radius + rng.pick([-1, 1]),
-          b = radius - 1,
+          b = radius + rng.pick([-1, 1]),
           and = rng.pick([true, false]),
           yes = and ? a <= radius && b <= radius : a <= radius || b <= radius;
         return task(
@@ -774,7 +774,7 @@ const schnitt = L(6, {
               : []),
           ],
           "Prüfe beide Vergleiche einzeln, danach und oder oder.",
-          `${a} ≤ ${radius}: ${a <= radius ? "wahr" : "falsch"}; ${b} ≤ ${radius}: wahr. ${and ? "Beide müssen wahr sein." : "Mindestens eine wahre Bedingung reicht."}`,
+          `${a} ≤ ${radius}: ${a <= radius ? "wahr" : "falsch"}; ${b} ≤ ${radius}: ${b <= radius ? "wahr" : "falsch"}. ${and ? "Beide müssen wahr sein." : "Mindestens eine wahre Bedingung reicht."}`,
           `P ${yes ? "erlaubt" : "nicht erlaubt"}; ${and ? "Schnittmenge" : "Vereinigung"}.`,
           { radius, a, b, and: Number(and) },
         );
@@ -932,14 +932,14 @@ const zentren = L(7, {
               level === 1 ? "Lage von U" : "Aussage über beide Mittelpunkte",
               level === 1
                 ? [
-                    "Mitte der längsten Seite",
-                    "immer im Inneren",
-                    "im rechten Eckpunkt",
+                    "Mitte der längsten Dreiecksseite",
+                    "Innerer Schnittpunkt der drei Winkelhalbierenden",
+                    "Rechter Eckpunkt des gegebenen Dreiecks",
                   ]
                 : [
-                    "Für U falsch; I liegt immer innen",
-                    "für beide immer richtig",
-                    "für beide immer falsch",
+                    "U kann außen liegen; I liegt innen.",
+                    "U liegt immer innen; I kann außen liegen.",
+                    "U und I liegen bei jedem Dreieck innen.",
                   ],
               0,
             ),
@@ -1059,7 +1059,11 @@ const schwerpunkt = L(8, {
               : []),
           ],
           "Bilde den Mittelwert der drei x- und der drei y-Koordinaten.",
-          `x_S = (0 + ${b} + (${fmt(x)})) : 3; y_S = ${h} : 3. Seitenhalbierende und Mittelsenkrechte sind verschiedene Konstruktionen.`,
+          `x_S = (${sum([
+            [0, ""],
+            [b, ""],
+            [x, ""],
+          ])}) : 3; y_S = ${h} : 3. Seitenhalbierende und Mittelsenkrechte sind verschiedene Konstruktionen.`,
           `S(${fmt((b + x) / 3)}|${h / 3}); nicht allgemein U.`,
           { b, x, h },
         );
@@ -1069,7 +1073,7 @@ const schwerpunkt = L(8, {
 });
 export const STAGE_ORTSLINIEN = makeStage(
   5,
-  "Ortslinien und Ortsbereiche",
+  "Geometrische Ortslinien und Ortsbereiche",
   "Abstandsbedingungen, Thales und Dreiecksmittelpunkte",
   "#059669",
   "◎",

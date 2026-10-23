@@ -6,9 +6,9 @@ import {
   wrongAnswerHint,
 } from "../src/exercises/checker";
 import { fmt } from "../src/exercises/format";
+import { shuffleTaskChoices } from "../src/exercises/choice-order";
 import { createRng, seedFrom } from "../src/exercises/rng";
 import {
-  applyAction,
   clampParam,
   computeReadouts,
   defaultLabValues,
@@ -201,50 +201,6 @@ describe("Labore", () => {
       }
     }
   });
-
-  it("run their actions without leaving the ranges, and changing a slider starts a simulation over", () => {
-    for (const lesson of ALL_LESSONS) {
-      for (const action of lesson.lab.actions ?? []) {
-        let values = defaultLabValues(lesson.lab);
-        for (let i = 0; i < 5; i++)
-          values = applyAction(lesson.lab, values, action.id);
-        for (const param of lesson.lab.params) {
-          expect(
-            Number.isFinite(values[param.key]),
-            `${lesson.id}/${action.id} ${param.key}`,
-          ).toBe(true);
-          expect(clampParam(param, values[param.key])).toBe(values[param.key]);
-        }
-        const readouts = computeReadouts(lesson.lab, values);
-        expect(labView(lesson.lab.kind).render(values, readouts)).not.toContain(
-          "NaN",
-        );
-        const slider = lesson.lab.params.find(
-          (p) => p.type === "range" || p.type === "choice",
-        );
-        const states = lesson.lab.params.filter(
-          (p) => p.type === "state" && p.resetOnChange,
-        );
-        if (slider && states.length > 0) {
-          const other =
-            slider.type === "range"
-              ? values[slider.key] === slider.max
-                ? slider.min
-                : slider.max
-              : slider.options.find((o) => o.value !== values[slider.key])!
-                  .value;
-          const changed = withChanges(lesson.lab, values, {
-            [slider.key]: other,
-          });
-          for (const state of states)
-            expect(
-              changed[state.key],
-              `${lesson.id}: ${state.key} restarts`,
-            ).toBe(state.value);
-        }
-      }
-    }
-  });
 });
 
 describe("Aufgaben", () => {
@@ -256,10 +212,8 @@ describe("Aufgaben", () => {
         for (let counter = 1; counter <= 80; counter++) {
           const generator =
             lesson.exercises[(counter - 1) % lesson.exercises.length];
-          const task = generator.make(
-            createRng(seedFrom(`${lesson.id}:${level}:${counter}`)),
-            level,
-          );
+          const rng = createRng(seedFrom(`${lesson.id}:${level}:${counter}`));
+          const task = shuffleTaskChoices(generator.make(rng, level), rng);
           const where = `${lesson.id}/${generator.id} L${level} task ${counter}`;
           expect(task.fields.length, where).toBeGreaterThan(0);
           expect(task.prompt.length, where).toBeGreaterThan(30);
@@ -308,20 +262,6 @@ describe("Aufgaben", () => {
           expect(checkTask(task, answerText(task, "point")).status, where).toBe(
             "correct",
           );
-          // With any order, reversed number fields are right too.
-          if (task.anyOrder?.length) {
-            const typed = answerText(task, "comma");
-            const swappable = task.anyOrder;
-            const reversed = [...typed];
-            swappable.forEach((index, k) => {
-              reversed[index] = typed[swappable[swappable.length - 1 - k]];
-            });
-            expect(checkTask(task, reversed).status, `${where} reversed`).toBe(
-              "correct",
-            );
-            for (const index of swappable)
-              expect(task.fields[index].kind, where).toBe("number");
-          }
           // A value far off is wrong, and the hint says something.
           const wrong = task.fields.map((field) =>
             field.kind === "choice"

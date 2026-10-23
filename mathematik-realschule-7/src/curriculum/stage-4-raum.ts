@@ -140,21 +140,21 @@ const lagen = L(1, {
               level === 1
                 ? mode === 0
                   ? [
-                      "AE steht senkrecht auf der Grundebene",
-                      "AE liegt in der Grundebene",
-                      "scheinbarer Winkel im Bild",
+                      "AE steht senkrecht auf der Grundebene.",
+                      "AE liegt in der waagrechten Grundebene.",
+                      "AE hat nur im Bild einen rechten Winkel.",
                     ]
                   : ["Schnittgerade AB", "Schnittpunkt E", "Schnittgerade CG"]
                 : mode === 0
                   ? [
-                      "senkrechte Projektion der Geraden auf die Ebene",
-                      "beliebige Linie in der Ebene",
-                      "eine Parallele zur Geraden",
+                      "Senkrechte Projektion der Geraden auf die Ebene.",
+                      "Beliebige Gerade der Ebene durch den Schnittpunkt.",
+                      "Zur Geraden parallele Hilfslinie außerhalb der Ebene.",
                     ]
                   : [
-                      "in beiden Ebenen Senkrechte zu g im selben Punkt",
-                      "zwei beliebige Kanten",
-                      "zwei Parallele zu g",
+                      "Senkrechte zu g in beiden Ebenen am selben Punkt.",
+                      "Parallele zu g in beiden Ebenen an zwei Punkten.",
+                      "Beliebige Geraden beider Ebenen durch denselben Punkt.",
                     ],
               0,
             ),
@@ -177,12 +177,13 @@ const schraeg = L(2, {
   subtitle: "Prisma und Pyramide mit Winkel und Faktor",
   whyItMatters:
     "Ein Schrägbild zeigt einen Körper auf einem Blatt. Damit die Zeichnung eindeutig ist, legst du fest, welche Richtung verkürzt wird.",
-  explanationHtml: `<p>Beim Schrägbild liegt eine <strong>Frontfläche parallel zur Zeichenebene</strong>; ihre Strecken und Winkel erscheinen in wahrer Größe. Zur Tiefe laufende, zur Front senkrechte Strecken zeichnest du parallel, im Verzerrungswinkel ω und mit dem Verkürzungsfaktor q. Nur für diese gewählte Tiefenrichtung gilt Bildlänge = q · wahre Länge.</p><p>Für ein gerades Prisma zeichnest du zunächst die Front, dann die parallelen Tiefenstrecken und verbindest die zugehörigen Eckpunkte. Beim geraden Pyramidenmodell zeichnest du die Grundfläche als Parallelogramm, bestimmst ihren Diagonalenschnitt M und trägst die zur Front parallele Körperhöhe über M senkrecht in wahrer Länge ab. Verbinde die Spitze mit den Grundflächenecken; verdeckte Kanten werden gestrichelt.</p><div class="example">Ein Quader mit Breite 6 cm, Höhe 4 cm und Tiefe 5 cm wird mit ω = 45° und q = 0,5 dargestellt. Die Front ist 6 cm × 4 cm. Die Tiefenpfeile sind 2,5 cm lang und liegen bei 45°. Der scheinbare Winkel im Bild ist kein räumlicher Flächenwinkel.</div><div class="merke"><strong>Merke:</strong> Gib Front, ω und q an. Verkürze nicht jede Kante, sondern nur die zur gewählten Tiefenachse parallelen Strecken.</div>`,
+  explanationHtml: `<p>Beim Schrägbild liegt eine <strong>Frontfläche parallel zur Zeichenebene</strong>; ihre Strecken und Winkel erscheinen in wahrer Größe. Die <strong>Schrägbildachse</strong> ist die unverzerrte Bezugslinie der Grundfläche, hier die Vorderkante AB. Zur Grundfläche gehörige Strecken parallel zu AB bleiben in wahrer Länge. In der Grundfläche senkrecht zu AB verlaufende Tiefenstrecken zeichnest du parallel zueinander unter dem <strong>Verzerrungswinkel ω</strong> zur Schrägbildachse und mit dem <strong>Verzerrungsmaßstab q</strong> (hier einem Verkürzungsfaktor). Nur für diese gewählte Tiefenrichtung gilt Bildlänge = q · wahre Länge.</p><p>Für ein gerades Prisma zeichnest du zunächst die Front, dann die parallelen Tiefenstrecken und verbindest die zugehörigen Eckpunkte. Beim geraden Pyramidenmodell zeichnest du die Grundfläche als Parallelogramm, bestimmst ihren Diagonalenschnitt M und trägst die zur Front parallele Körperhöhe über M senkrecht in wahrer Länge ab. Verbinde die Spitze mit den Grundflächenecken; verdeckte Kanten werden gestrichelt.</p><div class="example">Ein Quader mit Breite 6 cm, Höhe 4 cm und Tiefe 5 cm wird mit ω = 45° und q = 0,5 dargestellt. Die Front hat Breite 6 cm und Höhe 4 cm; AB liegt auf der Schrägbildachse. Die Tiefenpfeile sind 2,5 cm lang und liegen bei 45°. Der scheinbare Winkel im Bild ist kein räumlicher Flächenwinkel.</div><div class="merke"><strong>Merke:</strong> Gib Schrägbildachse, Verzerrungswinkel ω und Verzerrungsmaßstab q an. Verkürze nicht jede Kante, sondern nur die zur gewählten Tiefenachse parallelen Strecken.</div>`,
   formulas: [
     {
       name: "Tiefenrichtung",
       html: "s<sub>Bild</sub> = q · s<sub>wahr</sub>",
-      quantities: "q Verkürzungsfaktor; nur gewählte Tiefenrichtung",
+      quantities:
+        "q Verzerrungsmaßstab; nur Tiefenstrecken in der Grundfläche senkrecht zur Schrägbildachse",
     },
   ],
   quiz: {
@@ -205,7 +206,7 @@ const schraeg = L(2, {
       r("width", "Breite", 3, 7, 5),
       r("depth", "Tiefe", 2, 6, 4),
       r("height", "Höhe", 2, 5, 3),
-      r("q", "Verkürzungsfaktor", 0.25, 0.75, 0.5, 0.25),
+      r("q", "Verzerrungsmaßstab q", 0.25, 0.75, 0.5, 0.25),
       r("angle", "Verzerrungswinkel", 30, 60, 45, 15, "°"),
     ],
     [
@@ -215,7 +216,7 @@ const schraeg = L(2, {
     [
       {
         id: "quader",
-        text: "Zeichne einen Quader 6 × 4 × 4 cm mit q = 0,5 und ω = 45°.",
+        text: "Zeichne einen Quader mit Breite 6 cm, Tiefe 4 cm und Höhe 4 cm mit q = 0,5 und ω = 45°.",
         check: (v) =>
           v.shape === 0 &&
           v.width === 6 &&
@@ -313,7 +314,7 @@ const wahr = L(3, {
   subtitle: "Hilfsdreiecke aus dem Schrägbild herausklappen",
   whyItMatters:
     "Schräg gezeichnete Diagonalen darfst du nicht einfach mit dem Lineal als wahre Länge übernehmen. Du brauchst eine unverzerrte Hilfsfigur.",
-  explanationHtml: `<p>Rekonstruiere zunächst die wahren Maße: Frontstrecken werden übernommen; Tiefenstrecken erhältst du aus Bildlänge : q. Für eine Grundflächendiagonale eines Quaders zeichnest du dann das Rechteck aus wahrer Breite und wahrer Tiefe in der Zeichenebene. Seine Diagonale kannst du in wahrer Länge messen.</p><p>Für eine Raumdiagonale zeichnest du ein zweites Hilfsdreieck: eine Kathete ist die konstruierte Grundflächendiagonale, die andere die Körperhöhe. Die Verbindung ist die wahre Raumdiagonale. Ihr Winkel zur Grundebene liegt zwischen Raumdiagonale und Grundflächendiagonale. Bei einer geraden Pyramide liefert der Schnitt durch Spitze, Grundflächenmitte und Kantenmitte einen senkrechten Hilfsschnitt: Körperhöhe und halbe Grundflächentiefe bestimmen darin Seitenhöhe und Flächenwinkel.</p><div class="example">Im Schrägbild sind Breite 4 cm und Bildtiefe 1,5 cm bei q = 0,5 gegeben. Die wahre Tiefe ist 3 cm. Konstruiere ein Rechteck 4 cm × 3 cm; seine Diagonale misst 5 cm. Mit einer Körperhöhe von 2 cm konstruierst du daran das Hilfsdreieck der Raumdiagonale. Miss Länge und Winkel in diesem Hilfsdreieck, nicht im Schrägbild.</div><div class="merke"><strong>Merke:</strong> Wahre Maße → unverzerrte Hilfsfigur → Länge oder Winkel messen. Hier brauchst du noch keinen Satz des Pythagoras und keine Winkelfunktionen.</div>`,
+  explanationHtml: `<p>Rekonstruiere zunächst die wahren Maße: Frontstrecken werden übernommen; Tiefenstrecken erhältst du aus Bildlänge : q. Für eine Grundflächendiagonale eines Quaders zeichnest du dann das Rechteck aus wahrer Breite und wahrer Tiefe in der Zeichenebene. Seine Diagonale kannst du in wahrer Länge messen.</p><p>Für eine Raumdiagonale zeichnest du ein zweites Hilfsdreieck: eine Kathete ist die konstruierte Grundflächendiagonale, die andere die Körperhöhe. Die Verbindung ist die wahre Raumdiagonale. Ihr Winkel zur Grundebene liegt zwischen Raumdiagonale und Grundflächendiagonale. Bei einer geraden Pyramide liefert der Schnitt durch Spitze, Grundflächenmitte und Grundkantenmitte einen senkrechten Hilfsschnitt: Körperhöhe und halbe Grundflächentiefe bestimmen darin Seitenhöhe und Flächenwinkel.</p><div class="example">Im Schrägbild sind Breite 4 cm und Bildtiefe 1,5 cm bei q = 0,5 gegeben. Die wahre Tiefe ist 3 cm. Konstruiere ein Rechteck mit Breite 4 cm und Tiefe 3 cm; seine Diagonale misst 5 cm. Mit einer Körperhöhe von 2 cm konstruierst du daran das Hilfsdreieck der Raumdiagonale. Miss Länge und Winkel in diesem Hilfsdreieck, nicht im Schrägbild.</div><div class="merke"><strong>Merke:</strong> Wahre Maße → unverzerrte Hilfsfigur → Länge oder Winkel messen. Hier brauchst du noch keinen Satz des Pythagoras und keine Winkelfunktionen.</div>`,
   formulas: [
     {
       name: "Wahre Tiefe",
@@ -347,7 +348,7 @@ const wahr = L(3, {
       r("width", "Wahre Breite", 2, 6, 4),
       r("depth", "Wahre Tiefe", 2, 6, 3),
       r("height", "Körperhöhe", 1, 5, 2),
-      r("q", "Verkürzungsfaktor", 0.25, 0.75, 0.5, 0.25),
+      r("q", "Verzerrungsmaßstab q", 0.25, 0.75, 0.5, 0.25),
       c(
         "section",
         "Hilfsfigur",
@@ -405,7 +406,7 @@ const wahr = L(3, {
     [
       {
         id: "grund",
-        text: "Zeige die Grundfläche 3 × 4 cm bei Höhe 2 und q = 0,25.",
+        text: "Zeige die Grundfläche mit Breite 3 cm und Tiefe 4 cm bei Höhe 2 und q = 0,25.",
         check: (v) =>
           v.section === 0 &&
           v.width === 3 &&
@@ -415,7 +416,7 @@ const wahr = L(3, {
       },
       {
         id: "raum",
-        text: "Zeige den Raumdiagonalenschnitt bei 4 × 3 × 2 cm und q = 0,5.",
+        text: "Zeige den Raumdiagonalenschnitt bei Breite 4 cm, Tiefe 3 cm und Höhe 2 cm und q = 0,5.",
         check: (v) =>
           v.section === 1 &&
           v.width === 4 &&
@@ -454,9 +455,9 @@ const wahr = L(3, {
                   pick(
                     "Katheten des Hilfsdreiecks",
                     [
-                      "Grundflächendiagonale und Körperhöhe",
-                      "Bildtiefe und Körperhöhe",
-                      "Breite und Bildtiefe",
+                      "Wahre Grunddiagonale und Körperhöhe",
+                      "Verkürzte Bildtiefe und Körperhöhe",
+                      "Wahre Breite und verkürzte Bildtiefe",
                     ],
                     0,
                   ),
@@ -465,7 +466,7 @@ const wahr = L(3, {
           "Tiefe durch q teilen; Frontbreite bleibt wahr.",
           `${fmt(d * q)} : ${fmt(q)} = ${d}. Zuerst das wahre Grundrechteck zeichnen und dessen Diagonale konstruieren.`,
           level === 1
-            ? `Hilfsrechteck: ${w} cm × ${d} cm.`
+            ? `Hilfsrechteck: Breite ${w} cm, Tiefe ${d} cm.`
             : `Tiefe ${d} cm; Grunddiagonale und Höhe bilden die Katheten.`,
           { w, d, q },
         );
@@ -478,7 +479,7 @@ const wahr = L(3, {
           h = rng.int(3, 6);
         return task(
           level,
-          `Eine gerade quadratische Pyramide hat Grundkante ${side} cm und Höhe ${h} cm. Welche waagrechte Kathete hat der senkrechte Schnitt zur Kantenmitte?`,
+          `Eine gerade quadratische Pyramide hat Grundkante ${side} cm und Höhe ${h} cm. Welche waagrechte Kathete hat der senkrechte Schnitt zur Grundkantenmitte?`,
           `Du sollst den Winkel zwischen einer Seitenfläche und der Grundfläche einer geraden quadratischen Pyramide bestimmen (Grundkante ${side} cm, Höhe ${h} cm). Gib die beiden Katheten des wahren Hilfsdreiecks an und wähle den Messwinkel.`,
           [
             num("waagrechte Kathete =", side / 2, "cm", 0),
@@ -497,9 +498,9 @@ const wahr = L(3, {
                 ]
               : []),
           ],
-          "Der Mittelpunkt der Grundfläche liegt eine halbe Grundkante von der Kantenmitte entfernt.",
-          "Der Schnitt steht senkrecht auf der betreffenden Grundkante. Darin liegt der wahre Flächenwinkel an der Kantenmitte.",
-          `Hilfsdreieck: ${side / 2} cm waagrecht und ${h} cm senkrecht; Winkel an der Kantenmitte.`,
+          "Der Mittelpunkt der Grundfläche liegt eine halbe Grundkante von der Grundkantenmitte entfernt.",
+          "Der Schnitt steht senkrecht auf der betreffenden Grundkante. Darin liegt der wahre Flächenwinkel an der Grundkantenmitte.",
+          `Hilfsdreieck: ${side / 2} cm waagrecht und ${h} cm senkrecht; Winkel an der Grundkantenmitte.`,
           { side, h },
         );
       },
@@ -512,7 +513,7 @@ const wahr = L(3, {
         return task(
           level,
           `Eine quadratische Grundfläche ist ${a} cm breit; ihre Bildtiefe ist ${fmt(a * q)} cm bei q = ${fmt(q)}. Konstruiere das wahre Quadrat und bestimme den Winkel seiner Diagonale zu einer Seite.`,
-          `Eine gerade quadratische Pyramide hat Grundkante ${2 * a} cm und Körperhöhe ${a} cm. Konstruiere den senkrechten Schnitt durch Spitze, Grundflächenmitte und Kantenmitte. Bestimme den Winkel zwischen Seitenfläche und Grundfläche.`,
+          `Eine gerade quadratische Pyramide hat Grundkante ${2 * a} cm und Körperhöhe ${a} cm. Konstruiere den senkrechten Schnitt durch Spitze, Grundflächenmitte und Grundkantenmitte. Bestimme den Winkel zwischen Seitenfläche und Grundfläche.`,
           [
             num("Wahrer Winkel =", 45, "°", 0),
             ...(level === 2 ? [num("waagrechte Kathete =", a, "cm", 0)] : []),

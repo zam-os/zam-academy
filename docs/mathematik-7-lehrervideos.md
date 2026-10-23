@@ -61,8 +61,10 @@ Die Vorwahl enthielt zwei veraltete Links aus der Lehrerliste (`S9XJvsa2gx8`, `L
 
 ## Technische Nachweise
 
-Erfolgreich ausgeführt: `npm ci`, `npm run typecheck`, `npm test` (51 Tests), `npm run package:zip` (einschließlich TypeScript- und Vite-Build). Die zwei zusätzlichen Vertragstests prüfen die festgehaltene Zuordnung aller 42 Videos und direkte HTTPS-Links ohne Trackingparameter. Die vorhandenen Lehrplan-, Mathematik-, Labor- und Historienprüfungen bleiben erhalten. Am Stamm bestehen `node --test scripts/build-catalog.test.mjs scripts/academy-registry.test.mjs` (28 Tests).
+Erfolgreich ausgeführt: `npm ci`, `npm run typecheck`, `npm test` (65 Tests nach Übernahme der Review-Korrekturen aus PR 32), `npm run package:zip` (einschließlich TypeScript- und Vite-Build). Die zwei zusätzlichen Vertragstests prüfen die festgehaltene Zuordnung aller 42 Videos und direkte HTTPS-Links ohne Trackingparameter. Die vorhandenen Lehrplan-, Mathematik-, Labor- und Historienprüfungen bleiben erhalten. Am Stamm bestehen `node --test scripts/build-catalog.test.mjs scripts/academy-registry.test.mjs` (28 Tests).
 
 Die Browserprüfung der gebauten Einzeldatei kontrollierte alle 42 neuen Linkboxen in Hell und Dunkel (84 Ansichten) sowie den II/III-Lernpfad mit 31 Lektionen und sechs Etappen. Jeder angezeigte Link und Originaltitel stimmt mit der ausgewählten Zuordnung überein; alle öffnen mit `target="_blank"` und `rel="noopener noreferrer"`. Auch lange Titel und Kanäle passen ohne horizontalen Überlauf; kein iframe ist vorhanden. Die 84 Bildschirmfotos wurden zusätzlich in acht Kontaktbögen visuell geprüft. Lokale Prüfbilder und DOM-Protokoll liegen während der Arbeit unter `/private/tmp/zam-mathe7-videos/browser`.
+
+Die Korrekturen aus [PR 32](https://github.com/zam-os/zam-academy/pull/32) wurden übernommen; der [Review-Nachweis](mathematik-7-review-32.md) beschreibt Inhalt und Historienprobe. Die 42 Videozuordnungen sind dabei unverändert. Nach der Übernahme wurden erneut alle 84 Linkansichten mit der Zuordnung verglichen und in sechs Kontaktbögen kontrolliert; lokale Belege: `/private/tmp/zam-mathe7-review-qa/videos`.
 
 Die ZAM-Zelle, Kartenkennungen und Historienzuordnung werden durch die Video-Ergänzung nicht geändert. `replaces-de-by.json` bleibt ein unfreigegebener Vorschlag.

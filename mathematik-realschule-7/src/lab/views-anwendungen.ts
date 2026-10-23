@@ -1,4 +1,4 @@
-import { fmt } from "../exercises/format";
+import { fmt, linear, sum, term as formatTerm } from "../exercises/format";
 import { flipRelation } from "../models";
 import { compare, RELATIONS } from "../curriculum/stage-6-algebra";
 import {
@@ -16,9 +16,12 @@ import { rail, railHandle, railX, title } from "./view-helpers";
 const term: LabView = {
   render(v, r) {
     const expressions = [
-      `${fmt(v.a)}x + (${fmt(v.b)})x`,
-      `${fmt(v.a)}x · (${fmt(v.b)})x`,
-      `${fmt(v.a)}(x + (${fmt(v.b)}))`,
+      sum([
+        [v.a, "x"],
+        [v.b, "x"],
+      ]),
+      `(${formatTerm(v.a, "x", true) || "0"}) · (${formatTerm(v.b, "x", true) || "0"})`,
+      formatTerm(v.a, `(${linear(1, v.b)})`, true) || "0",
     ];
     return (
       open("Originalterm und vereinfachter Term mit derselben Probezahl") +
@@ -46,7 +49,7 @@ const equation: LabView = {
       open(
         "Zwei Gleichungsseiten als gerichtete Werte um eine gemeinsame Null",
       ) +
-      title(`${fmt(v.a)}x + (${fmt(v.b)}) = ${fmt(v.d)}x + (${fmt(v.c)})`) +
+      title(`${linear(v.a, v.b)} = ${linear(v.d, v.c)}`) +
       line(260, 65, 260, 240, "lab-dashed") +
       text(260, 58, "0", "lab-text-tick", "middle") +
       rect(260, 90, left * s, 38, "lab-fill-a") +
@@ -76,9 +79,7 @@ const inequality: LabView = {
       px = (n: number) => railX(n, min, max);
     let out =
       open("Lösungsmenge einer linearen Ungleichung auf der Zahlengeraden") +
-      title(
-        `${fmt(v.a)}x + (${fmt(v.b)}) ${RELATIONS[v.relation]} ${fmt(v.c)}`,
-      ) +
+      title(`${linear(v.a, v.b)} ${RELATIONS[v.relation]} ${fmt(v.c)}`) +
       line(65, y, 455, y, "lab-axis");
     for (let n = min; n <= max; n++)
       out +=
@@ -330,11 +331,17 @@ const sample: LabView = {
       title("Grundgesamtheit: A und B gleich groß") +
       rect(65, 60, 195, 35, "lab-fill-a") +
       rect(260, 60, 195, 35, "lab-fill-b") +
-      text(65, 119, "A: 20 % Ja", "lab-text-small") +
-      text(455, 119, "B: 80 % Ja", "lab-text-small", "end") +
+      text(65, 119, "Gruppe A: 50 % der Schule", "lab-text-small") +
+      text(455, 119, "Gruppe B: 50 % der Schule", "lab-text-small", "end") +
       rect(65, 145, width, 30, "lab-fill-a") +
       rect(65 + width, 145, sum === 0 ? 0 : 390 - width, 30, "lab-fill-b") +
-      text(260, 198, `Stichprobe: ${r.expected}`, "lab-text", "middle") +
+      text(
+        260,
+        198,
+        `Anteil A in der Stichprobe: ${r.sampleA}`,
+        "lab-text",
+        "middle",
+      ) +
       rail("a", "Befragte aus A", v.a, 0, 50, 245) +
       rail("b", "Befragte aus B", v.b, 0, 50, 310) +
       "</svg>"

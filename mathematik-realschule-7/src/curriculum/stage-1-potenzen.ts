@@ -915,6 +915,6 @@ export const STAGE_POTENZEN: Stage = {
   icon: "🧮",
   accent: "#2563eb",
   badgeTitle: "Potenzen verstanden",
-  lehrplanLabel: "M7 LB 1 · I und II/III · ca. 10 Std.",
+  lehrplanLabel: LEHRPLAN,
   lessons: [reciprocal, sameBase, rules, tens, prefixes],
 };

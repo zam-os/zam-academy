@@ -8,6 +8,25 @@ import type {
 } from "../model/types";
 
 export const BOTH: Track[] = ["I", "II_III"];
+const TOPICS = [
+  "",
+  "Potenzen",
+  "Parallelverschiebung",
+  "Dreiecke",
+  "Raumgeometrie",
+  "Geometrische Ortslinien und Ortsbereiche",
+  "Terme, Gleichungen und Ungleichungen",
+  "Proportionalitäten",
+  "Auswertung von Daten",
+];
+
+function curriculumLabel(
+  lb: [number, number | null],
+  tracks: Track[],
+  topic: string,
+): string {
+  return `${tracks.map((track) => `M7 LB ${track === "I" ? lb[0] : lb[1]} (${track === "I" ? "I" : "II/III"})`).join(" · ")}: ${topic}`;
+}
 export const range = (
   key: string,
   label: string,
@@ -68,12 +87,7 @@ export function makeLesson(
     tracks,
     stageId: `stage-${stage}`,
     stepNumber: step,
-    lehrplan: tracks
-      .map(
-        (track) =>
-          `M7 LB ${track === "I" ? lb[0] : lb[1]} (${track === "I" ? "I" : "II/III"})`,
-      )
-      .join(" · "),
+    lehrplan: curriculumLabel(lb, tracks, TOPICS[stage]),
     requiredCorrect: 3,
     celebrationMessage:
       "Du hast Schnellcheck, Labor und beide Aufgabenstufen bearbeitet.",
@@ -97,7 +111,11 @@ export function makeStage(
     accent,
     icon,
     badgeTitle: title,
-    lehrplanLabel: `LB ${lb[0]} (I)${lb[1] === null ? " · nur Zweig I" : ` · LB ${lb[1]} (II/III)`}`,
+    lehrplanLabel: curriculumLabel(
+      lb,
+      lb[1] === null ? ["I"] : BOTH,
+      TOPICS[number],
+    ),
     lessons,
   };
 }

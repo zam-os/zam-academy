@@ -466,7 +466,11 @@ const indirekt = L(4, {
                     "direkt proportional, quotientgleich",
                     "keine Proportionalität",
                   ]
-                : ["nicht definiert", "y = 0", "y = k"],
+                : [
+                    "kein endlicher y-Wert",
+                    "y-Wert ist immer null",
+                    "y-Wert ist gleich k",
+                  ],
               0,
             ),
           ],
