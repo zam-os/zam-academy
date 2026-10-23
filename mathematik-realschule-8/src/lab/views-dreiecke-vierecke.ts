@@ -1,4 +1,4 @@
-import { fmt } from "../exercises/format";
+import { fmt, lenText } from "../exercises/format";
 import type { LabValues } from "../model/types";
 import { angleMark, arcPath, clipped, H, handle, type LabView, line, open, Plot, polar, polygon, type Pt, r1, rect, sectorPath, sideLabel, text, W } from "./svg";
 
@@ -900,7 +900,7 @@ export function sidesText(info: QuadInfo): string {
   if (info.allEqual) pairs.push("alle vier gleich lang");
   else
     ([[0, 2], [1, 3], [0, 1], [1, 2], [2, 3], [3, 0]] as Array<[number, number]>).forEach(([i, j]) => {
-      if (same(i, j)) pairs.push(`${SIDE_NAMES[i]} = ${SIDE_NAMES[j]}`);
+      if (same(i, j)) pairs.push(`${lenText(SIDE_NAMES[i])} = ${lenText(SIDE_NAMES[j])}`);
     });
   return `${parallel}; ${pairs.length ? pairs.join(", ") : "keine gleich langen Seiten"}`;
 }

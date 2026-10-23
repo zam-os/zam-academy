@@ -1,4 +1,4 @@
-import { fmt, fmtUnit, frac } from "../exercises/format";
+import { fmt, fmtUnit, frac, len, lenText } from "../exercises/format";
 import type { Rng } from "../exercises/rng";
 import {
   CASES,
@@ -105,7 +105,7 @@ export const EXIST_OPTIONS = ["ja", "nein: Die Summe ist kleiner als die längst
 /** The three range contexts of 1.1, Level 2: the unit, the name of the third length and the field labels. */
 export const RANGE_CONTEXTS = [
   { unit: "dm", name: "x", labels: ["Leiste x mindestens:", "Leiste x höchstens:", "Anzahl der Längen:"] },
-  { unit: "km", name: "AC", labels: ["kleinste Entfernung AC:", "größte Entfernung AC:", "Anzahl:"] },
+  { unit: "km", name: len("AC"), labels: [`kleinste Entfernung ${len("AC")}:`, `größte Entfernung ${len("AC")}:`, "Anzahl:"] },
   { unit: "cm", name: "c", labels: ["kleinstes c:", "größtes c:", "Anzahl:"] },
 ];
 
@@ -276,12 +276,12 @@ const dreiecksexistenz: Lesson = {
         const { unit, name, labels } = RANGE_CONTEXTS[ctx];
         const prompt = [
           `Lukas baut aus drei Holzleisten einen dreieckigen Rahmen. Zwei Leisten sind ${p} dm und ${q} dm lang. Die dritte Leiste x gibt es im Baumarkt nur in ganzen Dezimetern. Wie lang muss sie mindestens sein, wie lang darf sie höchstens sein, und wie viele Längen kommen in Frage?`,
-          `Vom Dorf A zum Dorf B sind es ${p} km Luftlinie, von B zum Dorf C sind es ${q} km. Die drei Dörfer liegen nicht auf einer Geraden, und die Entfernung AC ist eine ganze Zahl von Kilometern. Welche Entfernung AC ist die kleinste, welche die größte, und wie viele sind möglich?`,
+          `Vom Dorf A zum Dorf B sind es ${p} km Luftlinie, von B zum Dorf C sind es ${q} km. Die drei Dörfer liegen nicht auf einer Geraden, und die Entfernung ${len("AC")} ist eine ganze Zahl von Kilometern. Welche Entfernung ${len("AC")} ist die kleinste, welche die größte, und wie viele sind möglich?`,
           `Ein Dreieck ABC hat die Seiten a = ${p} cm und b = ${q} cm. Für welche ganzzahligen Längen c (in cm) gibt es ein solches Dreieck? Gib die kleinste und die größte Länge und die Anzahl der Möglichkeiten an.`,
         ][ctx];
         return {
           prompt,
-          given: ctx === 1 ? [`AB = ${p} km`, `BC = ${q} km`] : ctx === 0 ? [`zwei Leisten: ${p} dm und ${q} dm`] : [`a = ${p} cm`, `b = ${q} cm`],
+          given: ctx === 1 ? [`${len("AB")} = ${p} km`, `${len("BC")} = ${q} km`] : ctx === 0 ? [`zwei Leisten: ${p} dm und ${q} dm`] : [`a = ${p} cm`, `b = ${q} cm`],
           fields: [
             numberField(labels[0], lo, unit, 0, {
               slips: [{ value: q - p, hint: `Bei ${q - p} ${unit} wäre die Seite mit ${q} ${unit} genau so lang wie die beiden anderen zusammen: Die drei Punkte lägen auf einer Geraden. Nimm die nächste ganze Zahl.` }],
@@ -731,11 +731,11 @@ const dreieckskonstruktion: Lesson = {
         const unitWord = c.unit === "km" ? "km" : "m";
         return {
           prompt: prompts[ctx],
-          given: [`AB = ${fmt(L)} ${unitWord}`, `∢BAC = ${x}°`, kind === 2 ? `∢CBA = ${y}°` : `∢ACB = ${y}°`, `Maßstab ${scaleText}`],
+          given: [`${len("AB")} = ${fmt(L)} ${unitWord}`, `∢BAC = ${x}°`, kind === 2 ? `∢CBA = ${y}°` : `∢ACB = ${y}°`, `Maßstab ${scaleText}`],
           fields: [
             choiceField("Fall:", FALL_OPTIONS, kind),
             numberField(`${angleName} =`, angle, "°", 0, { slips: [{ value: 360 - x - y, hint: "Im Dreieck ist die Winkelsumme 180°." }] }),
-            numberField("[AB] in der Zeichnung:", drawn, "cm", 1, {
+            numberField(`${len("AB")} in der Zeichnung:`, drawn, "cm", 1, {
               slips: [
                 { value: L / c.scale, hint: `Das ist die Länge in ${unitWord === "km" ? "Kilometern" : "Metern"}. Rechne zuerst in Zentimeter um.` },
                 { value: L, hint: `Teile die wirkliche Länge (in cm) durch ${big(c.scale, 0)}.` },
@@ -899,7 +899,7 @@ function piecesReadout(v: LabValues): string {
   const O = { x: 0, y: 0 };
   if (res.apexes.length === 2) {
     const [m1, m2] = res.apexes.map((C) => measure(O, B, C));
-    return `[AC₁] ≈ ${cmText(m1.b)}, γ₁ ≈ ${deg(m1.gamma)}; [AC₂] ≈ ${cmText(m2.b)}, γ₂ ≈ ${deg(m2.gamma)}`;
+    return `${lenText("AC")}₁ ≈ ${cmText(m1.b)}, γ₁ ≈ ${deg(m1.gamma)}; ${lenText("AC")}₂ ≈ ${cmText(m2.b)}, γ₂ ≈ ${deg(m2.gamma)}`;
   }
   const m = measure(O, B, res.apexes[0]);
   const parts = [
@@ -931,7 +931,7 @@ function makeCongruencePair(rng: Rng): CongruencePair & { r: number } {
   // side i joins the vertices i + 1 and i + 2; the angle at vertex i lies between them
   const sideName = (i: number, names: string[]) => pair(names[at(i + 1)], names[at(i + 2)]);
   const angleName = (i: number, names: string[]) => `∢${names[at(i + 1)]}${names[at(i)]}${names[at(i + 2)]}`;
-  const side = (i: number, x: number) => `${sideName(i, VERTEX)} = ${sideName(i, DEF)} = ${cm(x)}`;
+  const side = (i: number, x: number) => `${len(sideName(i, VERTEX))} = ${len(sideName(i, DEF))} = ${cm(x)}`;
   const angle = (i: number, x: number) => `${angleName(i, VERTEX)} = ${angleName(i, DEF)} = ${x}°`;
   const sideOf = (i: number) => sideName(i, VERTEX);
   const angleOf = (i: number) => angleName(i, VERTEX);
@@ -1023,7 +1023,7 @@ const kongruenz: Lesson = {
   whyItMatters:
     "Mit einem Kongruenzsatz zeigst du, dass zwei Dreiecke in allen Seiten und Winkeln übereinstimmen, ohne sie auszumessen. So begründest du etwa, warum eine Diagonale ein Parallelogramm in zwei gleiche Hälften teilt oder wie man eine Flussbreite vom Ufer aus misst.",
   explanationHtml: `
-    <p><strong>Kongruent</strong> heißt deckungsgleich: Zwei Figuren sind kongruent, wenn man die eine durch Achsenspiegelungen und Parallelverschiebungen (M6, M7), auch nacheinander ausgeführt, genau auf die andere legen kann. Man schreibt ABC ≅ DEF. Die Reihenfolge der Buchstaben sagt, welche Ecken einander entsprechen: A ↦ D, B ↦ E, C ↦ F. Entsprechende Seiten und Winkel sind gleich groß, also AB = DE, ∢BAC = ∢EDF und so weiter.</p>
+    <p><strong>Kongruent</strong> heißt deckungsgleich: Zwei Figuren sind kongruent, wenn man die eine durch Achsenspiegelungen und Parallelverschiebungen (M6, M7), auch nacheinander ausgeführt, genau auf die andere legen kann. Man schreibt ABC ≅ DEF. Die Reihenfolge der Buchstaben sagt, welche Ecken einander entsprechen: A ↦ D, B ↦ E, C ↦ F. Entsprechende Seiten und Winkel sind gleich groß, also ${len("AB")} = ${len("DE")}, ∢BAC = ∢EDF und so weiter.</p>
     <p>Du musst nicht alle sechs Stücke vergleichen. Die <strong>Kongruenzsätze</strong> sagen: Zwei Dreiecke sind schon kongruent, wenn sie übereinstimmen in</p>
     <ul>
       <li><strong>SSS:</strong> allen drei Seiten,</li>
@@ -1033,8 +1033,8 @@ const kongruenz: Lesson = {
     </ul>
     <p>Der Grund steckt in Lektion 1.2: Genau diese Stücke legen die Konstruktion eindeutig fest. Jedes Dreieck mit denselben Stücken ist also dasselbe Dreieck, höchstens verschoben oder gespiegelt.</p>
     <p><strong>Keine Kongruenzsätze:</strong> Bei <em>WWW</em> legen drei gleiche Winkel nur die Form fest; ein kleines und ein großes Dreieck mit 50°, 60° und 70° sind nicht kongruent. Bei <em>SSW mit dem Winkel gegenüber der kürzeren Seite</em> kann der Zirkelkreis den freien Schenkel zweimal schneiden, und es entstehen zwei verschiedene Dreiecke.</p>
-    <div class="example"><strong>Beispiel:</strong> Im Dreieck ABC sind AB = 5 cm, BC = 7 cm und ∢CBA = 40°, im Dreieck DEF sind DE = 5 cm, EF = 7 cm und ∢FED = 40°. Der Winkel liegt jeweils zwischen den beiden Seiten: Nach SWS ist ABC ≅ DEF mit A ↦ D, B ↦ E und C ↦ F. Daraus folgt ohne Nachmessen AC = DF und ∢ACB = ∢DFE.<br>Ein zweites Paar: Beide Dreiecke haben a = 4 cm, c = 6 cm und α = 35°. Der Winkel α liegt a gegenüber, und a ist die <em>kürzere</em> der beiden Seiten. Daraus folgt keine Kongruenz.</div>
-    <p><strong>Anwenden:</strong> Die Diagonale [AC] zerlegt ein Parallelogramm ABCD in die Dreiecke ABC und CDA. Gegenüberliegende Seiten sind gleich lang (AB = CD, BC = DA), und [AC] gehört zu beiden Dreiecken: Nach SSS sind sie kongruent, also ist ∢CBA = ∢ADC. Beim Drachenviereck zeigst du genauso, dass die Symmetrieachse [AC] die Winkel bei A und C halbiert.</p>
+    <div class="example"><strong>Beispiel:</strong> Im Dreieck ABC sind ${len("AB")} = 5 cm, ${len("BC")} = 7 cm und ∢CBA = 40°, im Dreieck DEF sind ${len("DE")} = 5 cm, ${len("EF")} = 7 cm und ∢FED = 40°. Der Winkel liegt jeweils zwischen den beiden Seiten: Nach SWS ist ABC ≅ DEF mit A ↦ D, B ↦ E und C ↦ F. Daraus folgt ohne Nachmessen ${len("AC")} = ${len("DF")} und ∢ACB = ∢DFE.<br>Ein zweites Paar: Beide Dreiecke haben a = 4 cm, c = 6 cm und α = 35°. Der Winkel α liegt a gegenüber, und a ist die <em>kürzere</em> der beiden Seiten. Daraus folgt keine Kongruenz.</div>
+    <p><strong>Anwenden:</strong> Die Diagonale [AC] zerlegt ein Parallelogramm ABCD in die Dreiecke ABC und CDA. Gegenüberliegende Seiten sind gleich lang (${len("AB")} = ${len("CD")}, ${len("BC")} = ${len("DA")}), und [AC] gehört zu beiden Dreiecken: Nach SSS sind sie kongruent, also ist ∢CBA = ∢ADC. Beim Drachenviereck zeigst du genauso, dass die Symmetrieachse [AC] die Winkel bei A und C halbiert.</p>
     <p><strong>Typische Fehler:</strong> bei SWS einen Winkel nehmen, der nicht zwischen den beiden Seiten liegt; die Ecken falsch zuordnen; aus drei gleichen Winkeln auf Kongruenz schließen.</p>
     <div class="merke"><strong>Merke:</strong> Zwei Dreiecke sind kongruent, wenn sie nach SSS, SWS, WSW (oder SWW) oder SsW übereinstimmen. WWW und SSW mit dem Winkel gegenüber der kürzeren Seite reichen nicht. In kongruenten Dreiecken sind entsprechende Seiten und Winkel gleich groß.</div>
   `,
@@ -1127,60 +1127,60 @@ const kongruenz: Lesson = {
         if (ctx === 0) {
           const x = draw(() => multiple(rng, 50, 130, 2), (n) => n !== 90, 64);
           return {
-            prompt: `Die Diagonale [AC] zerlegt das Parallelogramm ABCD in die Dreiecke ABC und CDA. Bekannt ist: AB = CD und BC = DA (gegenüberliegende Seiten), und [AC] gehört zu beiden Dreiecken. Nach welchem Kongruenzsatz sind die Dreiecke kongruent? Wie groß ist ∢ADC, wenn ∢CBA = ${x}° ist?`,
-            given: ["AB = CD", "BC = DA", "[AC] gemeinsam", `∢CBA = ${x}°`],
+            prompt: `Die Diagonale [AC] zerlegt das Parallelogramm ABCD in die Dreiecke ABC und CDA. Bekannt ist: ${len("AB")} = ${len("CD")} und ${len("BC")} = ${len("DA")} (gegenüberliegende Seiten), und [AC] gehört zu beiden Dreiecken. Nach welchem Kongruenzsatz sind die Dreiecke kongruent? Wie groß ist ∢ADC, wenn ∢CBA = ${x}° ist?`,
+            given: [`${len("AB")} = ${len("CD")}`, `${len("BC")} = ${len("DA")}`, "[AC] gemeinsam", `∢CBA = ${x}°`],
             fields: [choiceField("Kongruenzsatz:", THEOREM_OPTIONS, 0), numberField("∢ADC =", x, "°", 0, { slips: [{ value: 180 - x, hint: "∢ADC entspricht dem Winkel bei B im kongruenten Dreieck; er ist gleich groß, nicht die Ergänzung zu 180°." }] })],
-            steps: ["Drei Paare gleich langer Seiten: AB = CD, BC = DA und die gemeinsame Seite [AC]. Das ist SSS.", "Bei ABC ≅ CDA entspricht B dem Punkt D, also ist ∢ADC = ∢CBA.", `<strong>SSS; ∢ADC = ${x}°</strong>`],
+            steps: [`Drei Paare gleich langer Seiten: ${len("AB")} = ${len("CD")}, ${len("BC")} = ${len("DA")} und die gemeinsame Seite [AC]. Das ist SSS.`, "Bei ABC ≅ CDA entspricht B dem Punkt D, also ist ∢ADC = ∢CBA.", `<strong>SSS; ∢ADC = ${x}°</strong>`],
             meta: { ctx, x, answer: x },
           };
         }
         if (ctx === 1) {
           const y = rng.int(20, 70);
           return {
-            prompt: `Im Drachenviereck ABCD gilt AB = AD und CB = CD. Die Diagonale [AC] zerlegt es in die Dreiecke ABC und ADC. Nach welchem Kongruenzsatz sind sie kongruent? Wie groß ist der Winkel ∢BAD bei A, wenn ∢BAC = ${y}° ist?`,
-            given: ["AB = AD", "CB = CD", "[AC] gemeinsam", `∢BAC = ${y}°`],
+            prompt: `Im Drachenviereck ABCD gilt ${len("AB")} = ${len("AD")} und ${len("CB")} = ${len("CD")}. Die Diagonale [AC] zerlegt es in die Dreiecke ABC und ADC. Nach welchem Kongruenzsatz sind sie kongruent? Wie groß ist der Winkel ∢BAD bei A, wenn ∢BAC = ${y}° ist?`,
+            given: [`${len("AB")} = ${len("AD")}`, `${len("CB")} = ${len("CD")}`, "[AC] gemeinsam", `∢BAC = ${y}°`],
             fields: [choiceField("Kongruenzsatz:", THEOREM_OPTIONS, 0), numberField("∢BAD =", 2 * y, "°", 0, { slips: [{ value: y, hint: "Das ist nur die Hälfte: ∢BAD besteht aus ∢BAC und dem gleich großen ∢CAD." }] })],
-            steps: ["AB = AD, CB = CD und die gemeinsame Seite [AC]: SSS.", `Also ist ∢CAD = ∢BAC = ${y}°: Die Diagonale [AC] halbiert den Winkel bei A.`, `<strong>SSS; ∢BAD = 2 · ${y}° = ${2 * y}°</strong>`],
+            steps: [`${len("AB")} = ${len("AD")}, ${len("CB")} = ${len("CD")} und die gemeinsame Seite [AC]: SSS.`, `Also ist ∢CAD = ∢BAC = ${y}°: Die Diagonale [AC] halbiert den Winkel bei A.`, `<strong>SSS; ∢BAD = 2 · ${y}° = ${2 * y}°</strong>`],
             meta: { ctx, y, answer: 2 * y },
           };
         }
         if (ctx === 2) {
           const gamma = multiple(rng, 30, 140, 2);
           return {
-            prompt: `Im gleichschenkligen Dreieck ABC ist AC = BC. M ist der Mittelpunkt der Basis [AB]. Die Strecke [CM] zerlegt das Dreieck in die Dreiecke AMC und BMC. Nach welchem Kongruenzsatz sind sie kongruent? Wie groß ist ∢ACM, wenn der Winkel an der Spitze ∢ACB = ${gamma}° beträgt?`,
-            given: ["AC = BC", "AM = BM", "[CM] gemeinsam", `∢ACB = ${gamma}°`],
+            prompt: `Im gleichschenkligen Dreieck ABC ist ${len("AC")} = ${len("BC")}. M ist der Mittelpunkt der Basis [AB]. Die Strecke [CM] zerlegt das Dreieck in die Dreiecke AMC und BMC. Nach welchem Kongruenzsatz sind sie kongruent? Wie groß ist ∢ACM, wenn der Winkel an der Spitze ∢ACB = ${gamma}° beträgt?`,
+            given: [`${len("AC")} = ${len("BC")}`, `${len("AM")} = ${len("BM")}`, "[CM] gemeinsam", `∢ACB = ${gamma}°`],
             fields: [choiceField("Kongruenzsatz:", THEOREM_OPTIONS, 0), numberField("∢ACM =", gamma / 2, "°", 0, { slips: [{ value: gamma, hint: "[CM] teilt den Winkel an der Spitze in zwei gleich große Teile." }, { value: (180 - gamma) / 2, hint: "Das ist ein Basiswinkel. Gesucht ist der Teil des Winkels an der Spitze." }] })],
-            steps: ["AC = BC, AM = BM und die gemeinsame Seite [CM]: SSS.", "Entsprechende Winkel sind gleich groß: ∢ACM = ∢MCB. Zusammen ergeben sie ∢ACB.", `<strong>SSS; ∢ACM = ${gamma}° : 2 = ${fmt(gamma / 2)}°</strong>`],
+            steps: [`${len("AC")} = ${len("BC")}, ${len("AM")} = ${len("BM")} und die gemeinsame Seite [CM]: SSS.`, "Entsprechende Winkel sind gleich groß: ∢ACM = ∢MCB. Zusammen ergeben sie ∢ACB.", `<strong>SSS; ∢ACM = ${gamma}° : 2 = ${fmt(gamma / 2)}°</strong>`],
             meta: { ctx, gamma, answer: gamma / 2 },
           };
         }
         if (ctx === 3) {
           const s = rng.stepped(2.5, 7, 0.1);
           return {
-            prompt: `Die Strecken [AD] und [BE] schneiden sich im Punkt M, und M ist der Mittelpunkt beider Strecken: AM = DM und BM = EM. Die Winkel ∢BMA und ∢EMD sind Scheitelwinkel. Nach welchem Kongruenzsatz sind die Dreiecke ABM und DEM kongruent? Wie lang ist [DE], wenn AB = ${cm(s)} ist?`,
-            given: ["AM = DM", "BM = EM", "∢BMA = ∢EMD (Scheitelwinkel)", `AB = ${cm(s)}`],
-            fields: [choiceField("Kongruenzsatz:", THEOREM_OPTIONS, 1), numberField("DE =", s, "cm", 1)],
-            steps: ["Zwei Seiten (AM = DM, BM = EM) und der Winkel zwischen ihnen bei M stimmen überein: SWS.", "Bei ABM ≅ DEM entspricht [AB] der Seite [DE].", `<strong>SWS; DE = ${cm(s)}</strong>`],
+            prompt: `Die Strecken [AD] und [BE] schneiden sich im Punkt M, und M ist der Mittelpunkt beider Strecken: ${len("AM")} = ${len("DM")} und ${len("BM")} = ${len("EM")}. Die Winkel ∢BMA und ∢EMD sind Scheitelwinkel. Nach welchem Kongruenzsatz sind die Dreiecke ABM und DEM kongruent? Wie lang ist [DE], wenn ${len("AB")} = ${cm(s)} ist?`,
+            given: [`${len("AM")} = ${len("DM")}`, `${len("BM")} = ${len("EM")}`, "∢BMA = ∢EMD (Scheitelwinkel)", `${len("AB")} = ${cm(s)}`],
+            fields: [choiceField("Kongruenzsatz:", THEOREM_OPTIONS, 1), numberField(`${len("DE")} =`, s, "cm", 1)],
+            steps: [`Zwei Seiten (${len("AM")} = ${len("DM")}, ${len("BM")} = ${len("EM")}) und der Winkel zwischen ihnen bei M stimmen überein: SWS.`, "Bei ABM ≅ DEM entspricht [AB] der Seite [DE].", `<strong>SWS; ${len("DE")} = ${cm(s)}</strong>`],
             meta: { ctx, s, answer: s },
           };
         }
         if (ctx === 4) {
           const d = rng.stepped(4, 12, 0.1);
           return {
-            prompt: `Im Rechteck ABCD betrachtest du die Dreiecke ABC und BAD. Die Seite [AB] gehört zu beiden, BC = AD, und die Winkel bei B und bei A sind rechte Winkel. Nach welchem Kongruenzsatz sind die Dreiecke kongruent? Wie lang ist die Diagonale [BD], wenn AC = ${cm(d)} ist?`,
-            given: ["[AB] gemeinsam", "BC = AD", "∢CBA = ∢BAD = 90°", `AC = ${cm(d)}`],
-            fields: [choiceField("Kongruenzsatz:", THEOREM_OPTIONS, 1), numberField("BD =", d, "cm", 1)],
-            steps: ["Zwei Seiten ([AB] und BC = AD) und der rechte Winkel zwischen ihnen: SWS.", "Bei ABC ≅ BAD entspricht die Diagonale [AC] der Diagonale [BD]: Im Rechteck sind die Diagonalen gleich lang.", `<strong>SWS; BD = ${cm(d)}</strong>`],
+            prompt: `Im Rechteck ABCD betrachtest du die Dreiecke ABC und BAD. Die Seite [AB] gehört zu beiden, ${len("BC")} = ${len("AD")}, und die Winkel bei B und bei A sind rechte Winkel. Nach welchem Kongruenzsatz sind die Dreiecke kongruent? Wie lang ist die Diagonale [BD], wenn ${len("AC")} = ${cm(d)} ist?`,
+            given: ["[AB] gemeinsam", `${len("BC")} = ${len("AD")}`, "∢CBA = ∢BAD = 90°", `${len("AC")} = ${cm(d)}`],
+            fields: [choiceField("Kongruenzsatz:", THEOREM_OPTIONS, 1), numberField(`${len("BD")} =`, d, "cm", 1)],
+            steps: [`Zwei Seiten, [AB] und die gleich langen [BC] und [AD], und der rechte Winkel zwischen ihnen: SWS.`, "Bei ABC ≅ BAD entspricht die Diagonale [AC] der Diagonale [BD]: Im Rechteck sind die Diagonalen gleich lang.", `<strong>SWS; ${len("BD")} = ${cm(d)}</strong>`],
             meta: { ctx, d, answer: d },
           };
         }
         const p = rng.int(15, 40);
         const w = rng.int(20, 60);
         return {
-          prompt: `Um die Breite AB eines Flusses zu bestimmen, geht Tim vom Punkt A am Ufer aus senkrecht zu AB am Ufer entlang ${p} m bis C und dann noch einmal ${p} m weiter bis D. Von D aus geht er senkrecht vom Fluss weg, bis er einen Punkt E erreicht, von dem aus C und der Baum B am anderen Ufer genau hintereinander liegen. Er misst DE = ${w} m. Nach welchem Kongruenzsatz sind die Dreiecke ABC und DEC kongruent? Wie breit ist der Fluss?`,
-          given: ["AC = DC", "∢CAB = ∢CDE = 90°", "∢BCA = ∢ECD (Scheitelwinkel)", `DE = ${w} m`],
-          fields: [choiceField("Kongruenzsatz:", THEOREM_OPTIONS, 2), numberField("AB =", w, "m", 0, { slips: [{ value: p, hint: "Das ist der Weg am Ufer. Die Flussbreite AB entspricht im kongruenten Dreieck der Strecke [DE]." }, { value: 2 * p, hint: "Das ist der ganze Weg am Ufer. Die Flussbreite AB entspricht der Strecke [DE]." }] })],
-          steps: [`Die Seite AC = DC = ${p} m, an ihrem Ende A bzw. D je ein rechter Winkel, an ihrem Ende C die Scheitelwinkel: WSW.`, "Bei ABC ≅ DEC entspricht [AB] der Strecke [DE].", `<strong>WSW; der Fluss ist ${w} m breit.</strong>`],
+          prompt: `Um die Breite ${len("AB")} eines Flusses zu bestimmen, geht Tim vom Punkt A am Ufer aus senkrecht zu AB am Ufer entlang ${p} m bis C und dann noch einmal ${p} m weiter bis D. Von D aus geht er senkrecht vom Fluss weg, bis er einen Punkt E erreicht, von dem aus C und der Baum B am anderen Ufer genau hintereinander liegen. Er misst ${len("DE")} = ${w} m. Nach welchem Kongruenzsatz sind die Dreiecke ABC und DEC kongruent? Wie breit ist der Fluss?`,
+          given: [`${len("AC")} = ${len("DC")}`, "∢CAB = ∢CDE = 90°", "∢BCA = ∢ECD (Scheitelwinkel)", `${len("DE")} = ${w} m`],
+          fields: [choiceField("Kongruenzsatz:", THEOREM_OPTIONS, 2), numberField(`${len("AB")} =`, w, "m", 0, { slips: [{ value: p, hint: `Das ist der Weg am Ufer. Die Flussbreite ${lenText("AB")} entspricht im kongruenten Dreieck der Länge ${lenText("DE")}.` }, { value: 2 * p, hint: `Das ist der ganze Weg am Ufer. Die Flussbreite ${lenText("AB")} entspricht der Länge ${lenText("DE")}.` }] })],
+          steps: [`Die Seiten [AC] und [DC] sind gleich lang, ${len("AC")} = ${len("DC")} = ${p} m; an ihren Enden A und D liegt je ein rechter Winkel, an ihrem gemeinsamen Ende C liegen die Scheitelwinkel: WSW.`, "Bei ABC ≅ DEC entspricht [AB] der Strecke [DE].", `<strong>WSW; der Fluss ist ${w} m breit.</strong>`],
           meta: { ctx, p, w, answer: w },
         };
       },
@@ -1201,11 +1201,11 @@ const kongruenz: Lesson = {
           const sideName = pair(img(0), img(1));
           const angleName = `∢${img(0)}${img(2)}${img(1)}`;
           return {
-            prompt: `Die Dreiecke ABC und DEF sind kongruent: ABC ≅ ${img(0)}${img(1)}${img(2)}, also A ↦ ${img(0)}, B ↦ ${img(1)} und C ↦ ${img(2)}. Im Dreieck ABC sind AB = ${cm(ab)}, BC = ${cm(bc)}, ∢BAC = ${alpha}° und ∢CBA = ${beta}°. Wie lang ist [${sideName}], und wie groß ist der Winkel ${angleName} bei ${img(2)}?`,
-            given: [`ABC ≅ ${img(0)}${img(1)}${img(2)}`, `AB = ${cm(ab)}`, `BC = ${cm(bc)}`, `∢BAC = ${alpha}°`, `∢CBA = ${beta}°`],
+            prompt: `Die Dreiecke ABC und DEF sind kongruent: ABC ≅ ${img(0)}${img(1)}${img(2)}, also A ↦ ${img(0)}, B ↦ ${img(1)} und C ↦ ${img(2)}. Im Dreieck ABC sind ${len("AB")} = ${cm(ab)}, ${len("BC")} = ${cm(bc)}, ∢BAC = ${alpha}° und ∢CBA = ${beta}°. Wie lang ist [${sideName}], und wie groß ist der Winkel ${angleName} bei ${img(2)}?`,
+            given: [`ABC ≅ ${img(0)}${img(1)}${img(2)}`, `${len("AB")} = ${cm(ab)}`, `${len("BC")} = ${cm(bc)}`, `∢BAC = ${alpha}°`, `∢CBA = ${beta}°`],
             formulaHint: "Entsprechende Stücke kongruenter Dreiecke sind gleich groß. Winkelsumme: α + β + γ = 180°.",
             fields: [
-              numberField(`${sideName} =`, ab, "cm", 1, { slips: [{ value: bc, hint: `Das ist die Länge von [BC]. Zu [${sideName}] gehört die Seite zwischen A und B.` }] }),
+              numberField(`${len(sideName)} =`, ab, "cm", 1, { slips: [{ value: bc, hint: `Das ist die Länge von [BC]. Zu [${sideName}] gehört die Seite zwischen A und B.` }] }),
               numberField(`${angleName} =`, gamma, "°", 0, {
                 slips: [
                   { value: alpha, hint: `Das ist der Winkel bei A. Zur Ecke ${img(2)} gehört die Ecke C.` },
@@ -1214,9 +1214,9 @@ const kongruenz: Lesson = {
               }),
             ],
             steps: [
-              `A ↦ ${img(0)} und B ↦ ${img(1)}: [${sideName}] entspricht [AB], also ${sideName} = ${cm(ab)}.`,
+              `A ↦ ${img(0)} und B ↦ ${img(1)}: [${sideName}] entspricht [AB], also ${len(sideName)} = ${cm(ab)}.`,
               `C ↦ ${img(2)}: Der Winkel bei ${img(2)} entspricht dem Winkel bei C. ∢ACB = 180° − ${alpha}° − ${beta}° = ${gamma}°.`,
-              `<strong>${sideName} = ${cm(ab)}; ${angleName} = ${gamma}°</strong>`,
+              `<strong>${len(sideName)} = ${cm(ab)}; ${angleName} = ${gamma}°</strong>`,
             ],
             meta: { ab, bc, alpha, beta, p0: perm[0], p1: perm[1], p2: perm[2] },
           };
@@ -1264,19 +1264,19 @@ const kongruenz: Lesson = {
           const x = rng.int(30, 80);
           const z = rng.int(40, Math.min(110, 150 - x));
           return {
-            prompt: `Die Strecken [AD] und [BE] halbieren sich gegenseitig im Punkt M. Deshalb sind die Dreiecke ABM und DEM nach SWS kongruent (A ↦ D, B ↦ E, M ↦ M). Es ist AB = ${cm(s)}, ∢MAB = ${x}° und ∢BMA = ${z}°. Wie lang ist [DE], und wie groß ist ∢DEM?`,
-            given: [`AB = ${cm(s)}`, `∢MAB = ${x}°`, `∢BMA = ${z}°`, "ABM ≅ DEM"],
+            prompt: `Die Strecken [AD] und [BE] halbieren sich gegenseitig im Punkt M. Deshalb sind die Dreiecke ABM und DEM nach SWS kongruent (A ↦ D, B ↦ E, M ↦ M). Es ist ${len("AB")} = ${cm(s)}, ∢MAB = ${x}° und ∢BMA = ${z}°. Wie lang ist [DE], und wie groß ist ∢DEM?`,
+            given: [`${len("AB")} = ${cm(s)}`, `∢MAB = ${x}°`, `∢BMA = ${z}°`, "ABM ≅ DEM"],
             fields: [
-              numberField("DE =", s, "cm", 1),
+              numberField(`${len("DE")} =`, s, "cm", 1),
               numberField("∢DEM =", 180 - x - z, "°", 0, { slips: [{ value: x, hint: "Das ist der Winkel bei A; ihm entspricht der Winkel bei D. Gesucht ist der Winkel bei E, er entspricht dem bei B." }] }),
             ],
-            steps: [`[DE] entspricht [AB]: DE = ${cm(s)}.`, `Der Winkel bei E entspricht dem Winkel bei B: ∢ABM = 180° − ${x}° − ${z}° = ${180 - x - z}°.`, `<strong>DE = ${cm(s)}; ∢DEM = ${180 - x - z}°</strong>`],
+            steps: [`[DE] entspricht [AB]: ${len("DE")} = ${cm(s)}.`, `Der Winkel bei E entspricht dem Winkel bei B: ∢ABM = 180° − ${x}° − ${z}° = ${180 - x - z}°.`, `<strong>${len("DE")} = ${cm(s)}; ∢DEM = ${180 - x - z}°</strong>`],
             meta: { ctx, s, x, z, a1: s, a2: 180 - x - z },
           };
         }
         const gamma = multiple(rng, 30, 140, 2);
         return {
-          prompt: `Im gleichschenkligen Dreieck ABC mit AC = BC ist M der Mittelpunkt der Basis [AB]. Die Dreiecke AMC und BMC sind nach SSS kongruent. Der Winkel an der Spitze ist ∢ACB = ${gamma}°. Berechne ∢ACM und den Basiswinkel ∢MAC.`,
+          prompt: `Im gleichschenkligen Dreieck ABC mit ${len("AC")} = ${len("BC")} ist M der Mittelpunkt der Basis [AB]. Die Dreiecke AMC und BMC sind nach SSS kongruent. Der Winkel an der Spitze ist ∢ACB = ${gamma}°. Berechne ∢ACM und den Basiswinkel ∢MAC.`,
           given: [`∢ACB = ${gamma}°`, "AMC ≅ BMC"],
           fields: [
             numberField("∢ACM =", gamma / 2, "°", 0, { slips: [{ value: gamma, hint: "[CM] halbiert den Winkel an der Spitze." }] }),
@@ -1382,7 +1382,7 @@ function propertyCase(rng: Rng): NamedCase & { kind: number; params: Record<stri
     const psi = draw(() => multiple(rng, 40, 85, 5), (x) => x !== phi, phi === 60 ? 70 : 60);
     return { params: { s, t, phi, psi }, kind, name: "Trapez", text: `AB ∥ CD, der Winkel bei A ist ${phi}° groß, der Winkel bei B ${psi}°.`, why: "Ein Paar paralleler Seiten, aber verschieden große Basiswinkel: ein Trapez, kein gleichschenkliges, und wegen α + β < 180° kein Parallelogramm." };
   }
-  return { params: { s, t, phi, psi: 0 }, kind, name: "Drachenviereck", text: `Es gilt AB = AD = ${cm(s)} und CB = CD = ${cm(t)}.`, why: `Zwei Paare gleich langer Nachbarseiten: Die Diagonale [AC] ist Symmetrieachse. Weil ${cm(s)} und ${cm(t)} verschieden sind, ist es keine Raute.` };
+  return { params: { s, t, phi, psi: 0 }, kind, name: "Drachenviereck", text: `Es gilt ${len("AB")} = ${len("AD")} = ${cm(s)} und ${len("CB")} = ${len("CD")} = ${cm(t)}.`, why: `Zwei Paare gleich langer Nachbarseiten: Die Diagonale [AC] ist Symmetrieachse. Weil ${cm(s)} und ${cm(t)} verschieden sind, ist es keine Raute.` };
 }
 
 /** A quadrilateral given only by its diagonals: two sticks whose ends are the corners (1.4, Level 2). */
@@ -1419,7 +1419,7 @@ function diagonalCase(rng: Rng): NamedCase & { kind: number; params: Record<stri
     params: { p, q, u, w },
     kind,
     name: "gleichschenkliges Trapez",
-    text: `Zwei gleich lange Stäbe [AC] und [BD] kreuzen sich im Punkt S, und zwar so, dass AS = BS = ${u} cm und CS = DS = ${w} cm ist. Die Enden A, B, C und D sind die Ecken eines Vierecks.`,
+    text: `Zwei gleich lange Stäbe [AC] und [BD] kreuzen sich im Punkt S, und zwar so, dass ${len("AS")} = ${len("BS")} = ${u} cm und ${len("CS")} = ${len("DS")} = ${w} cm ist. Die Enden A, B, C und D sind die Ecken eines Vierecks.`,
     why: "Die Diagonalen sind gleich lang und teilen sich im gleichen Verhältnis, halbieren sich aber nicht. Die Figur ist symmetrisch zur Winkelhalbierenden bei S, und AB ∥ CD: ein gleichschenkliges Trapez.",
   };
 }
@@ -1468,6 +1468,146 @@ export const COMBOS: Array<[string, string, string]> = [
   ["ein Trapez, dessen Diagonalen sich gegenseitig halbieren", "Parallelogramm", "Diagonalen, die sich halbieren, gehören zum Parallelogramm."],
 ];
 
+/**
+ * What 1.4, Level 2 computes once the name is found: a value given, a value
+ * asked, and the chain of properties the name brings along (each quadrilateral
+ * has every property of those above it). `variant` picks among the questions
+ * of one name.
+ */
+interface ComboQuestion {
+  variant: number;
+  given: string;
+  givenLine: string;
+  ask: string;
+  label: string;
+  unit: string;
+  digits: number;
+  value: number;
+  answer: number;
+  chain: string[];
+  slips: Array<{ value: number; hint: string }>;
+}
+
+export function comboQuestion(rng: Rng, name: string): ComboQuestion {
+  const even = (lo: number, hi: number) => draw(() => 2 * rng.int(lo / 2, hi / 2), (x) => x !== 90, 70);
+  if (name === "Raute") {
+    if (rng.next() < 0.5) {
+      const a = even(40, 140);
+      return {
+        variant: 0,
+        given: `Der Winkel bei A ist ∢BAD = ${a}°.`,
+        givenLine: `∢BAD = ${a}°`,
+        ask: "den Winkel ∢BAC, den die Diagonale [AC] mit der Seite [AB] bildet",
+        label: "∢BAC =",
+        unit: "°",
+        digits: 0,
+        value: a,
+        answer: a / 2,
+        chain: [`In der Raute halbiert die Diagonale [AC] den Winkel bei A: ∢BAC = ${a}° : 2 = ${a / 2}°.`],
+        slips: [
+          { value: a, hint: "Die Diagonale [AC] halbiert den Winkel bei A: ∢BAC ist nur die Hälfte von ∢BAD." },
+          { value: (180 - a) / 2, hint: "Das ist die Hälfte des Winkels bei B. Gesucht ist der Winkel bei A zwischen [AB] und [AC]." },
+        ],
+      };
+    }
+    const b = even(40, 140);
+    return {
+      variant: 1,
+      given: `Der Winkel bei B ist ∢CBA = ${b}°.`,
+      givenLine: `∢CBA = ${b}°`,
+      ask: "den Winkel ∢BAC, den die Diagonale [AC] mit der Seite [AB] bildet",
+      label: "∢BAC =",
+      unit: "°",
+      digits: 0,
+      value: b,
+      answer: (180 - b) / 2,
+      chain: [
+        `Jede Raute ist ein Parallelogramm: Benachbarte Winkel ergänzen sich zu 180°, also ∢BAD = 180° − ${b}° = ${180 - b}°.`,
+        `Die Diagonale [AC] halbiert den Winkel bei A: ∢BAC = ${180 - b}° : 2 = ${(180 - b) / 2}°.`,
+      ],
+      slips: [
+        { value: b / 2, hint: "Das ist die Hälfte des Winkels bei B. Die Diagonale [AC] halbiert den Winkel bei A, und der ergänzt ∢CBA zu 180°." },
+        { value: 180 - b, hint: "Das ist der ganze Winkel bei A; die Diagonale [AC] halbiert ihn." },
+      ],
+    };
+  }
+  if (name === "Rechteck") {
+    const x = draw(() => rng.int(20, 70), (n) => n !== 45, 30);
+    return {
+      variant: 0,
+      given: `Die Diagonale [AC] bildet mit der Seite [AB] den Winkel ∢BAC = ${x}°; die Diagonalen schneiden sich im Punkt M.`,
+      givenLine: `∢BAC = ${x}°`,
+      ask: "den Winkel ∢AMB, unter dem sich die Diagonalen schneiden",
+      label: "∢AMB =",
+      unit: "°",
+      digits: 0,
+      value: x,
+      answer: 180 - 2 * x,
+      chain: [
+        `Im Rechteck sind die Diagonalen gleich lang und halbieren sich, also ist ${len("MA")} = ${len("MB")}: Das Dreieck ABM ist gleichschenklig mit ∢MBA = ∢BAM = ${x}°.`,
+        `Winkelsumme im Dreieck ABM: ∢AMB = 180° − 2 · ${x}° = ${180 - 2 * x}°.`,
+      ],
+      slips: [
+        { value: 2 * x, hint: "Das ist der Nebenwinkel ∢BMC. Gesucht ist der Winkel bei M im Dreieck ABM." },
+        { value: 90 - x, hint: "∢MBA ist kein rechter Winkel, denn [BM] ist ein Stück der Diagonale. Im Rechteck sind die Diagonalen gleich lang und halbieren sich: Das Dreieck ABM ist gleichschenklig." },
+      ],
+    };
+  }
+  if (name === "Quadrat") {
+    const e = rng.int(4, 12);
+    return {
+      variant: 0,
+      given: `Seine Diagonale [AC] ist ${cm(e)} lang.`,
+      givenLine: `${len("AC")} = ${cm(e)}`,
+      ask: "seinen Flächeninhalt",
+      label: "A =",
+      unit: "cm²",
+      digits: 2,
+      value: e,
+      answer: (e * e) / 2,
+      chain: [
+        "Jedes Quadrat ist auch eine Raute, also gilt A = ½ · e · f.",
+        `Jedes Quadrat ist auch ein Rechteck, seine Diagonalen sind also gleich lang: f = e = ${cm(e)}.`,
+        `A = ½ · ${cm(e)} · ${cm(e)} = ${fmtUnit((e * e) / 2, "cm²")}`,
+      ],
+      slips: [{ value: e * e, hint: "Das ist das Rechteck mit den Seiten e und f. Das Quadrat bedeckt nur die Hälfte: A = ½ · e · f, und im Quadrat ist f = e." }],
+    };
+  }
+  if (name === "gleichschenkliges Trapez") {
+    const a = rng.int(45, 80);
+    return {
+      variant: 0,
+      given: `Dabei ist AB ∥ CD, und der Winkel bei A ist α = ${a}°.`,
+      givenLine: `α = ${a}°`,
+      ask: "den Winkel γ bei C",
+      label: "γ =",
+      unit: "°",
+      digits: 0,
+      value: a,
+      answer: 180 - a,
+      chain: [
+        `Die Symmetrieachse bildet A auf B ab, also sind die Basiswinkel gleich groß: β = α = ${a}°.`,
+        `β und γ liegen an der Seite [BC] zwischen den Parallelen und ergänzen sich zu 180°: γ = 180° − ${a}° = ${180 - a}°.`,
+      ],
+      slips: [{ value: a, hint: "Das ist β. γ liegt mit β an der Seite [BC]; die beiden ergänzen sich zu 180°." }],
+    };
+  }
+  const a = even(40, 140);
+  return {
+    variant: 0,
+    given: `Der Winkel bei A ist α = ${a}°.`,
+    givenLine: `α = ${a}°`,
+    ask: "den Winkel δ bei D",
+    label: "δ =",
+    unit: "°",
+    digits: 0,
+    value: a,
+    answer: 180 - a,
+    chain: [`Im Parallelogramm liegen α und δ an der Seite [AD] zwischen den Parallelen AB und CD; sie ergänzen sich zu 180°: δ = 180° − ${a}° = ${180 - a}°.`],
+    slips: [{ value: a, hint: "δ liegt neben α, nicht gegenüber: Benachbarte Winkel ergänzen sich zu 180°." }],
+  };
+}
+
 const familyInfo = (v: LabValues) => quadInfo(familyPoints(v));
 
 const hausDerVierecke: Lesson = {
@@ -1504,7 +1644,7 @@ const hausDerVierecke: Lesson = {
     { name: "Parallelogramm", html: "AB ∥ CD und BC ∥ DA", quantities: "Gegenseiten gleich lang, Gegenwinkel gleich groß, Diagonalen halbieren sich, punktsymmetrisch" },
     { name: "Rechteck", html: "Parallelogramm mit α = 90°", quantities: "Diagonalen gleich lang; zwei Symmetrieachsen durch die Seitenmitten" },
     { name: "Raute", html: "a = b = c = d", quantities: "Diagonalen halbieren sich senkrecht; zwei Symmetrieachsen auf den Diagonalen" },
-    { name: "Drachenviereck", html: "Diagonale [AC] ist Symmetrieachse: AB = AD, CB = CD", quantities: "e ⊥ f, und e halbiert f" },
+    { name: "Drachenviereck", html: `Diagonale [AC] ist Symmetrieachse: ${len("AB")} = ${len("AD")}, ${len("CB")} = ${len("CD")}`, quantities: "e ⊥ f, und e halbiert f" },
     { name: "Haus der Vierecke", html: "Quadrat → Rechteck, Raute → Parallelogramm → Trapez", quantities: "→ heißt „ist auch ein“; außerdem Rechteck → gleichschenkliges Trapez, Raute → Drachenviereck" },
   ],
   quiz: {
@@ -1594,15 +1734,26 @@ const hausDerVierecke: Lesson = {
             meta: { i, j },
           };
         }
+        // exam style: find the name from a combination, then use the properties it brings along
         const k = rng.int(0, COMBOS.length - 1);
         const [combo, name, why] = COMBOS[k];
         const axes = QUAD_AXES[name];
+        const q = comboQuestion(rng, name);
         return {
-          prompt: `Ein Viereck ist ${combo}. Welches Viereck ist es auf jeden Fall (der speziellste Name, der sicher passt)? Wie viele Symmetrieachsen hat es mindestens?`,
-          given: [],
-          fields: [shuffledChoice(rng, "Auf jeden Fall ein …", name, QUAD_NEIGHBOURS[name]), numberField("mindestens … Symmetrieachsen:", axes, "", 0, { slips: AXIS_SLIPS[name] })],
-          steps: [why, `<strong>${name}; mindestens ${axes} Symmetrieachse${axes === 1 ? "" : "n"}</strong>`],
-          meta: { k, axes },
+          prompt: `Ein Viereck ABCD ist ${combo}. ${q.given} Welches Viereck ist es auf jeden Fall (der speziellste Name, der sicher passt)? Berechne ${q.ask}. Wie viele Symmetrieachsen hat das Viereck mindestens?`,
+          given: [q.givenLine],
+          fields: [
+            shuffledChoice(rng, "Auf jeden Fall ein …", name, QUAD_NEIGHBOURS[name]),
+            numberField(q.label, q.answer, q.unit, q.digits, { slips: q.slips }),
+            numberField("mindestens … Symmetrieachsen:", axes, "", 0, { slips: AXIS_SLIPS[name] }),
+          ],
+          steps: [
+            `${why} Es ist auf jeden Fall ${withArticle(name)}.`,
+            ...q.chain,
+            `Symmetrieachsen: ${AXIS_TEXT[name]}.`,
+            `<strong>${name}; ${q.label} ${fmtUnit(q.answer, q.unit, q.digits)}; mindestens ${axes} Symmetrieachse${axes === 1 ? "" : "n"}</strong>`,
+          ],
+          meta: { k, axes, variant: q.variant, value: q.value, answer: q.answer },
         };
       },
     },
@@ -1618,32 +1769,227 @@ export const PIECE_CASES: Array<{ type: string; pieces: string[]; fixed: boolean
   { type: "Parallelogramm", pieces: ["a", "b", "α"], fixed: true, need: 3, why: "Das Dreieck ABD ist nach SWS festgelegt, C folgt über die Parallelen." },
   { type: "Parallelogramm", pieces: ["a", "b"], fixed: false, need: 3, why: "Ohne Winkel lässt sich das Parallelogramm wie ein Gelenk zusammenschieben." },
   { type: "Parallelogramm", pieces: ["a", "α", "β"], fixed: false, need: 3, why: "β = 180° − α ist kein neues Stück; die Seite b fehlt." },
-  { type: "Raute", pieces: ["a", "α"], fixed: true, need: 2, why: "Das Dreieck ABD mit AB = AD = a und α ist nach SWS festgelegt." },
+  { type: "Raute", pieces: ["a", "α"], fixed: true, need: 2, why: `Das Dreieck ABD mit ${len("AB")} = ${len("AD")} = a und α ist nach SWS festgelegt.` },
   { type: "Raute", pieces: ["e", "f"], fixed: true, need: 2, why: "Die Diagonalen halbieren sich senkrecht: B und D liegen auf der Mittelsenkrechten von [AC], je f : 2 vom Mittelpunkt entfernt." },
   { type: "Raute", pieces: ["a"], fixed: false, need: 2, why: "Mit derselben Seitenlänge gibt es Rauten mit ganz verschiedenen Winkeln." },
   { type: "Rechteck", pieces: ["a", "b"], fixed: true, need: 2, why: "Das Dreieck ABC mit dem rechten Winkel bei B ist nach SWS festgelegt." },
   { type: "Rechteck", pieces: ["e"], fixed: false, need: 2, why: "Viele verschiedene Rechtecke haben gleich lange Diagonalen." },
   { type: "Rechteck", pieces: ["a", "e"], fixed: true, need: 2, why: "Im Dreieck ABC liegt der rechte Winkel bei B der längsten Seite e gegenüber: SsW." },
   { type: "Quadrat", pieces: ["e"], fixed: true, need: 1, why: "Die Diagonalen sind gleich lang und halbieren sich senkrecht: Aus e folgt das ganze Quadrat." },
-  { type: "Drachenviereck", pieces: ["e", "a", "b"], fixed: true, need: 3, why: "Das Dreieck ABC ist nach SSS festgelegt (AC = e, AB = a, BC = b), D ist das Spiegelbild von B an AC." },
+  { type: "Drachenviereck", pieces: ["e", "a", "b"], fixed: true, need: 3, why: `Das Dreieck ABC ist nach SSS festgelegt (${len("AC")} = e, ${len("AB")} = a, ${len("BC")} = b), D ist das Spiegelbild von B an der Geraden AC.` },
   { type: "Drachenviereck", pieces: ["a", "b"], fixed: false, need: 3, why: "Ohne Diagonale oder Winkel lässt sich der Drachen verformen." },
   { type: "Trapez", pieces: ["a", "c", "h"], fixed: false, need: 4, why: "Die obere Seite c lässt sich auf der Parallelen verschieben; es fehlt ein Winkel oder ein Schenkel." },
   { type: "gleichschenkliges Trapez", pieces: ["a", "c", "h"], fixed: true, need: 3, why: "c liegt symmetrisch über der Mitte von a, im Abstand h." },
   { type: "allgemeines Viereck", pieces: ["a", "b", "c", "d"], fixed: false, need: 5, why: "Vier Seiten allein lassen das Viereck noch wackeln wie ein Gelenk; es fehlt eine Diagonale oder ein Winkel." },
 ];
 
-/** Construction plans for quadrilaterals with a diagonal (1.5, Level 2): the first triangle and its theorem. */
-export const PLAN_CASES: Array<{ type: string; pieces: string[]; triangle: string; others: string[]; theorem: number; why: string }> = [
-  { type: "Parallelogramm", pieces: ["a", "b", "e"], triangle: "ABC", others: ["ABD", "BCD"], theorem: 0, why: "AB = a, BC = b und AC = e: Dreieck ABC nach SSS; D = A ⊕ BC→." },
-  { type: "Parallelogramm", pieces: ["a", "e", "∢BAC"], triangle: "ABC", others: ["ABD", "BCD"], theorem: 1, why: "AB = a, AC = e und der Winkel ∢BAC zwischen ihnen: Dreieck ABC nach SWS." },
-  { type: "Raute", pieces: ["a", "e"], triangle: "ABC", others: ["ABD", "BCD"], theorem: 0, why: "AB = BC = a und AC = e: Dreieck ABC nach SSS; D ist das Spiegelbild von B an AC." },
-  { type: "Raute", pieces: ["a", "f"], triangle: "ABD", others: ["ABC", "ACD"], theorem: 0, why: "AB = AD = a und BD = f: Dreieck ABD nach SSS; C ist das Spiegelbild von A an BD." },
-  { type: "Drachenviereck", pieces: ["e", "a", "b"], triangle: "ABC", others: ["ABD", "BCD"], theorem: 0, why: "AC = e, AB = a und BC = b: Dreieck ABC nach SSS; D ist das Spiegelbild von B an AC." },
-  { type: "Drachenviereck", pieces: ["a", "e", "∢BAC"], triangle: "ABC", others: ["ABD", "BCD"], theorem: 1, why: "AB = a, AC = e und ∢BAC dazwischen: Dreieck ABC nach SWS; D ist das Spiegelbild von B an AC." },
-  { type: "gleichschenkliges Trapez", pieces: ["a", "d", "α"], triangle: "ABD", others: ["ACD", "BCD"], theorem: 1, why: "AB = a, AD = d und α dazwischen: Dreieck ABD nach SWS; C ist das Spiegelbild von D an der Mittelsenkrechten von [AB]." },
+const THEOREMS_SHORT = ["SSS", "SWS", "WSW", "SsW"];
+
+/**
+ * Construction plans of 1.5, Level 2, in exam style: a figure from three
+ * pieces named by their endpoints. The learner finds the partial triangle
+ * that holds every given piece and its theorem, then a piece the figure's
+ * properties give (an angle or the length around it) and a length on the
+ * plan that follows from equal sides.
+ */
+export const PLAN_TASKS: Array<{ type: string; triangle: string; others: string[]; theorem: number; plan: string }> = [
+  { type: "Drachenviereck", triangle: "ABC", others: ["ABD", "BCD"], theorem: 1, plan: "AD" },
+  { type: "Drachenviereck", triangle: "ABC", others: ["ABD", "BCD"], theorem: 0, plan: "CD" },
+  { type: "Parallelogramm", triangle: "ABC", others: ["ABD", "BCD"], theorem: 1, plan: "CD" },
+  { type: "Parallelogramm", triangle: "ABC", others: ["ABD", "BCD"], theorem: 0, plan: "CD" },
+  { type: "Raute", triangle: "ABD", others: ["ABC", "BCD"], theorem: 1, plan: "BC" },
+  { type: "gleichschenkliges Trapez", triangle: "ABD", others: ["ABC", "BCD"], theorem: 1, plan: "BC" },
+  { type: "Raute", triangle: "ABD", others: ["ABC", "BCD"], theorem: 0, plan: "CD" },
 ];
 
-const THEOREMS_SHORT = ["SSS", "SWS", "WSW", "SsW"];
+function planTask(rng: Rng): ExerciseTask {
+  const k = rng.int(0, PLAN_TASKS.length - 1);
+  const c = PLAN_TASKS[k];
+  const five = (lo: number, hi: number) => 5 * rng.int(lo / 5, hi / 5);
+  const m = (value: number) => `${fmt(value)} m`;
+  const deg = (value: number) => `${fmt(value)}°`;
+  // what each case asks beside the plan: label, unit, answer, why, slips
+  let context: string;
+  let given: string[];
+  let pieces: string;
+  let ask: string;
+  let label: string;
+  let unit: string;
+  let answer: number;
+  let chain: string;
+  let slips: Array<{ value: number; hint: string }>;
+  let unitReal: "cm" | "m";
+  let scale: number;
+  let real: number;
+  let rule: string;
+  let meta: Record<string, number>;
+  if (k === 0 || k === 1) {
+    unitReal = "cm";
+    scale = 10;
+    const e = five(70, 100);
+    if (k === 0) {
+      const a = five(35, 60);
+      const w = rng.int(20, 40);
+      context = `Jonas baut einen Drachen ABCD mit der Symmetrieachse [AC]. Die Längsleiste ist ${len("AC")} = ${cm(e, 0)} lang, die Seite ${len("AB")} = ${cm(a, 0)}, und [AB] bildet mit der Leiste [AC] den Winkel ∢BAC = ${w}°. Bevor er baut, zeichnet er den Drachen im Maßstab 1 : 10.`;
+      given = [`${len("AC")} = ${cm(e, 0)}`, `${len("AB")} = ${cm(a, 0)}`, `∢BAC = ${w}°`, "Maßstab 1 : 10"];
+      pieces = `Im Dreieck ABC liegen ${len("AC")}, ${len("AB")} und der Winkel ∢BAC zwischen [AC] und [AB]: SWS.`;
+      ask = "den Winkel ∢BAD an der Spitze A";
+      label = "∢BAD =";
+      unit = "°";
+      answer = 2 * w;
+      chain = `D ist das Spiegelbild von B an der Symmetrieachse AC: ∢CAD = ∢BAC = ${w}°, also ∢BAD = 2 · ${w}° = ${2 * w}°.`;
+      slips = [{ value: w, hint: "Das ist ∢BAC. D ist das Spiegelbild von B an AC: ∢CAD ist genauso groß, ∢BAD also doppelt so groß." }];
+      real = a;
+      rule = `D ist das Spiegelbild von B: ${len("AD")} = ${len("AB")} = ${cm(a, 0)}`;
+      meta = { k, e, a, w };
+    } else {
+      const [a, b] = draw(
+        () => [five(30, 50), five(50, 75)],
+        ([x, y]) => x !== y && x + y >= e + 10 && x * x + e * e > y * y + 1,
+        [40, 60],
+      );
+      context = `Jonas baut einen Drachen ABCD mit der Symmetrieachse [AC]: ${len("AC")} = ${cm(e, 0)}, ${len("AB")} = ${cm(a, 0)} und ${len("BC")} = ${cm(b, 0)}. Rundherum spannt er eine Schnur von Ecke zu Ecke. Bevor er baut, zeichnet er den Drachen im Maßstab 1 : 10.`;
+      given = [`${len("AC")} = ${cm(e, 0)}`, `${len("AB")} = ${cm(a, 0)}`, `${len("BC")} = ${cm(b, 0)}`, "Maßstab 1 : 10"];
+      pieces = `Im Dreieck ABC liegen alle drei Seiten ${len("AC")}, ${len("AB")} und ${len("BC")}: SSS.`;
+      ask = "die Länge der Schnur";
+      label = "Schnur:";
+      unit = "cm";
+      answer = 2 * (a + b);
+      chain = `Die Symmetrie liefert ${len("AD")} = ${len("AB")} = ${cm(a, 0)} und ${len("CD")} = ${len("CB")} = ${cm(b, 0)}. Die Schnur ist 2 · ${cm(a, 0)} + 2 · ${cm(b, 0)} = ${cm(answer, 0)} lang.`;
+      slips = [
+        { value: a + b, hint: "Das ist nur der halbe Rand: [DA] und [CD] sind so lang wie [AB] und [BC]." },
+        { value: 2 * (a + b) + e, hint: "Die Längsleiste [AC] liegt innen; die Schnur läuft nur außen herum." },
+      ];
+      real = b;
+      rule = `D ist das Spiegelbild von B: ${len("CD")} = ${len("CB")} = ${cm(b, 0)}`;
+      meta = { k, e, a, b };
+    }
+  } else if (k === 2 || k === 3) {
+    unitReal = "m";
+    if (k === 2) {
+      scale = 200;
+      const a = rng.int(8, 16);
+      const e = a + rng.int(2, 8);
+      const w = rng.int(15, 40);
+      context = `Ein Beet ABCD hat die Form eines Parallelogramms. Die Seite [AB] ist ${len("AB")} = ${m(a)} lang, die Diagonale ${len("AC")} = ${m(e)}, und die beiden bilden den Winkel ∢BAC = ${w}°. Die Gärtnerin zeichnet das Beet im Maßstab 1 : 200.`;
+      given = [`${len("AB")} = ${m(a)}`, `${len("AC")} = ${m(e)}`, `∢BAC = ${w}°`, "Maßstab 1 : 200"];
+      pieces = `Im Dreieck ABC liegen ${len("AB")}, ${len("AC")} und der Winkel ∢BAC zwischen [AB] und [AC]: SWS.`;
+      ask = "den Winkel ∢DCA zwischen der Diagonale [CA] und der Seite [CD]";
+      label = "∢DCA =";
+      unit = "°";
+      answer = w;
+      chain = `AB ∥ CD: ∢DCA und ∢BAC sind Wechselwinkel an den Parallelen, also ist ∢DCA = ${w}°.`;
+      slips = [{ value: 180 - w, hint: "∢DCA und ∢BAC sind Wechselwinkel an den Parallelen AB und CD: Sie sind gleich groß, sie ergänzen sich nicht zu 180°." }];
+      real = a;
+      rule = `Gegenseiten sind gleich lang: ${len("CD")} = ${len("AB")} = ${m(a)}`;
+      meta = { k, a, e, w };
+    } else {
+      scale = 1000;
+      const a = five(30, 60);
+      const b = five(20, 45);
+      const e = draw(() => five(20, 100), (x) => x >= Math.abs(a - b) + 10 && x <= a + b - 10, Math.max(a, b) + 5);
+      context = `Ein Grundstück ABCD hat die Form eines Parallelogramms mit ${len("AB")} = ${m(a)}, ${len("BC")} = ${m(b)} und der Diagonale ${len("AC")} = ${m(e)}. Es wird ringsum eingezäunt und für den Bauplan im Maßstab 1 : 1000 gezeichnet.`;
+      given = [`${len("AB")} = ${m(a)}`, `${len("BC")} = ${m(b)}`, `${len("AC")} = ${m(e)}`, "Maßstab 1 : 1000"];
+      pieces = `Im Dreieck ABC liegen alle drei Seiten ${len("AB")}, ${len("BC")} und ${len("AC")}: SSS.`;
+      ask = "die Länge des Zauns";
+      label = "Zaun:";
+      unit = "m";
+      answer = 2 * (a + b);
+      chain = `Gegenseiten sind gleich lang: ${len("CD")} = ${len("AB")} = ${m(a)} und ${len("DA")} = ${len("BC")} = ${m(b)}. Der Zaun ist 2 · ${m(a)} + 2 · ${m(b)} = ${m(answer)} lang.`;
+      slips = [
+        { value: a + b, hint: "Das ist nur der halbe Zaun: Die Gegenseiten [CD] und [DA] sind so lang wie [AB] und [BC]." },
+        { value: a + b + e, hint: "Die Diagonale [AC] liegt im Inneren; der Zaun läuft außen um alle vier Seiten." },
+      ];
+      real = a;
+      rule = `Gegenseiten sind gleich lang: ${len("CD")} = ${len("AB")} = ${m(a)}`;
+      meta = { k, a, b, e };
+    }
+  } else if (k === 4 || k === 6) {
+    unitReal = "cm";
+    if (k === 4) {
+      scale = 2;
+      const a = rng.int(10, 20);
+      const alpha = draw(() => 2 * rng.int(20, 70), (x) => x !== 90, 70);
+      context = `Eine Fliese hat die Form einer Raute ABCD mit der Seitenlänge ${len("AB")} = ${cm(a, 0)} und dem Winkel ∢BAD = ${alpha}°. Für einen Verlegeplan wird sie im Maßstab 1 : 2 gezeichnet.`;
+      given = [`${len("AB")} = ${cm(a, 0)}`, `∢BAD = ${alpha}°`, "Maßstab 1 : 2"];
+      pieces = `Im Dreieck ABD liegen ${len("AB")}, ${len("AD")} = ${len("AB")} (alle Seiten der Raute sind gleich lang) und der Winkel ∢BAD zwischen [AB] und [AD]: SWS.`;
+      ask = "den Winkel ∢DBA, den die Diagonale [BD] mit der Seite [BA] bildet";
+      label = "∢DBA =";
+      unit = "°";
+      answer = (180 - alpha) / 2;
+      chain = `Wegen ${len("AD")} = ${len("AB")} ist das Dreieck ABD gleichschenklig; seine Basiswinkel bei B und D sind gleich groß: ∢DBA = (180° − ${alpha}°) : 2 = ${deg(answer)}.`;
+      slips = [
+        { value: 180 - alpha, hint: "Das ist der ganze Winkel ∢CBA bei B. Die Diagonale [BD] halbiert ihn." },
+        { value: alpha / 2, hint: "Das wäre ∢BAC bei A. Gesucht ist ein Basiswinkel des gleichschenkligen Dreiecks ABD: (180° − ∢BAD) : 2." },
+      ];
+      real = a;
+      rule = `Alle Seiten der Raute sind gleich lang: ${len("BC")} = ${len("AB")} = ${cm(a, 0)}`;
+      meta = { k, a, alpha };
+    } else {
+      scale = 5;
+      const a = five(20, 40);
+      const f = draw(() => five(10, 75), (x) => x <= 2 * a - 5, a);
+      context = `Ein Schild hat die Form einer Raute ABCD mit der Seitenlänge ${len("AB")} = ${cm(a, 0)} und der Diagonale ${len("BD")} = ${cm(f, 0)}. Rundherum bekommt es eine Zierleiste. Für den Entwurf wird es im Maßstab 1 : 5 gezeichnet.`;
+      given = [`${len("AB")} = ${cm(a, 0)}`, `${len("BD")} = ${cm(f, 0)}`, "Maßstab 1 : 5"];
+      pieces = `Im Dreieck ABD liegen ${len("AB")}, ${len("AD")} = ${len("AB")} (alle Seiten der Raute sind gleich lang) und ${len("BD")}: SSS.`;
+      ask = "die Länge der Zierleiste";
+      label = "Zierleiste:";
+      unit = "cm";
+      answer = 4 * a;
+      chain = `Alle vier Seiten der Raute sind ${cm(a, 0)} lang: Die Zierleiste ist 4 · ${cm(a, 0)} = ${cm(answer, 0)} lang.`;
+      slips = [
+        { value: 2 * a, hint: "Die Raute hat vier gleich lange Seiten, nicht zwei." },
+        { value: 4 * a + f, hint: "Die Diagonale [BD] liegt innen; die Zierleiste läuft nur außen herum." },
+      ];
+      real = a;
+      rule = `Alle Seiten der Raute sind gleich lang: ${len("CD")} = ${len("AB")} = ${cm(a, 0)}`;
+      meta = { k, a, f };
+    }
+  } else {
+    unitReal = "m";
+    scale = 200;
+    const [a, d, alpha] = draw(
+      () => [2 * rng.int(8, 14), rng.int(6, 12), 5 * rng.int(6, 12)],
+      ([x, y, w]) => x - 2 * y * Math.cos((w * Math.PI) / 180) >= 4,
+      [24, 8, 45],
+    );
+    context = `Der Querschnitt eines Deichs ist ein gleichschenkliges Trapez ABCD mit AB ∥ CD. Die Grundseite ist ${len("AB")} = ${m(a)} lang, die Böschung ${len("AD")} = ${m(d)}, und der Böschungswinkel ist ∢BAD = ${alpha}°. Für den Bauplan wird der Querschnitt im Maßstab 1 : 200 gezeichnet.`;
+    given = [`${len("AB")} = ${m(a)}`, `${len("AD")} = ${m(d)}`, `∢BAD = ${alpha}°`, "Maßstab 1 : 200"];
+    pieces = `Im Dreieck ABD liegen ${len("AB")}, ${len("AD")} und der Winkel ∢BAD zwischen [AB] und [AD]: SWS.`;
+    ask = "den Winkel γ bei C";
+    label = "γ =";
+    unit = "°";
+    answer = 180 - alpha;
+    chain = `Die Symmetrieachse macht die Basiswinkel gleich groß: β = ${alpha}°. β und γ liegen an der Seite [BC] zwischen den Parallelen und ergänzen sich zu 180°: γ = 180° − ${alpha}° = ${deg(answer)}.`;
+    slips = [{ value: alpha, hint: "Das ist β. γ liegt mit β an der Seite [BC]; die beiden ergänzen sich zu 180°." }];
+    real = d;
+    rule = `Die Schenkel sind gleich lang: ${len("BC")} = ${len("AD")} = ${m(d)}`;
+    meta = { k, a, d, alpha };
+  }
+  const realCm = unitReal === "m" ? real * 100 : real;
+  const plan = realCm / scale;
+  const scaleText = `1 : ${big(scale, 0)}`;
+  const planSlips = [{ value: real, hint: `Das ist die wirkliche Länge. Im Maßstab ${scaleText} ist der Plan ${big(scale, 0)}-mal kleiner: Teile durch ${big(scale, 0)}.` }];
+  if (unitReal === "m") planSlips.push({ value: real / scale, hint: "Das ist die Länge in Metern. Rechne zuerst in Zentimeter um: 1 m = 100 cm." });
+  const valueText = unit === "°" ? deg(answer) : fmtUnit(answer, unit, 0);
+  return {
+    prompt: `${context} In welchem Teildreieck liegen alle gegebenen Stücke, und nach welchem Kongruenzsatz konstruierst du es? Berechne ${ask}. Wie lang wird [${c.plan}] im Plan?`,
+    given,
+    fields: [
+      shuffledChoice(rng, "Erstes Teildreieck:", c.triangle, c.others),
+      choiceField("Kongruenzsatz:", THEOREMS_SHORT, c.theorem),
+      numberField(label, answer, unit, 0, { slips }),
+      numberField(`${len(c.plan)} im Plan:`, plan, "cm", 2, { slips: planSlips }),
+    ],
+    steps: [
+      pieces,
+      chain,
+      `${rule}. Im Maßstab ${scaleText}: ${unitReal === "m" ? `${m(real)} = ${big(realCm, 0)} cm, und ` : ""}${big(realCm, 0)} cm : ${big(scale, 0)} = ${cm(plan, 2)}.`,
+      `<strong>Dreieck ${c.triangle} nach ${THEOREMS_SHORT[c.theorem]}; ${label} ${valueText}; ${len(c.plan)} wird im Plan ${cm(plan, 2)} lang.</strong>`,
+    ],
+    meta: { ...meta, scale, answer, plan },
+  };
+}
 
 /** Plausible values for the pieces of a quadrilateral task. */
 function pieceValues(rng: Rng, type: string, pieces: string[]): Record<string, number> {
@@ -1707,15 +2053,15 @@ const viereckskonstruktion: Lesson = {
     <p><strong>Wiederholung:</strong> Dreiecke konstruierst du aus drei passenden Stücken (SSS, SWS, WSW, SsW). Ein Viereck zerlegst du meist mit einer Diagonale in zwei Dreiecke und konstruierst eines nach dem anderen. Die Parallelverschiebung kennst du aus M7: P' = P ⊕ ${vn("v")}.</p>
     <p><strong>Wie viele Stücke braucht man?</strong> Ein allgemeines Viereck ist erst durch fünf Stücke festgelegt, zum Beispiel durch die Diagonale [AC] und je zwei weitere Seiten für die Dreiecke ABC und ACD. Besondere Vierecke brauchen weniger, weil ihre Eigenschaften Stücke liefern: das Quadrat eines, Rechteck und Raute zwei, Parallelogramm, Drachenviereck und gleichschenkliges Trapez drei, ein Trapez vier.</p>
     <ul>
-      <li><strong>Parallelogramm aus a, b und α:</strong> Dreieck ABD nach SWS (AB = a, AD = b, α dazwischen). C ist der Schnittpunkt der Parallelen zu AB durch D und der Parallelen zu AD durch B, oder C = B ⊕ ${vn("AD")}.</li>
+      <li><strong>Parallelogramm aus a, b und α:</strong> Dreieck ABD nach SWS (${len("AB")} = a, ${len("AD")} = b, α dazwischen). C ist der Schnittpunkt der Parallelen zu AB durch D und der Parallelen zu AD durch B, oder C = B ⊕ ${vn("AD")}.</li>
       <li><strong>Raute aus den Diagonalen e und f:</strong> [AC] mit der Länge e zeichnen, dann die Mittelsenkrechte von [AC] (Fundamentalkonstruktion aus M6). Auf ihr liegen B und D, je f : 2 vom Mittelpunkt M entfernt.</li>
-      <li><strong>Drachenviereck aus e = [AC], a = AB und b = BC:</strong> Dreieck ABC nach SSS, dann D als Spiegelbild von B an der Geraden AC.</li>
+      <li><strong>Drachenviereck aus e = ${len("AC")}, a = ${len("AB")} und b = ${len("BC")}:</strong> Dreieck ABC nach SSS, dann D als Spiegelbild von B an der Geraden AC.</li>
       <li><strong>Trapez aus a, c und h:</strong> [AB] zeichnen, die Parallele zu AB im Abstand h, darauf [DC] mit der Länge c. Wo [DC] liegt, legen a, c und h noch nicht fest; dafür brauchst du ein viertes Stück, etwa α. Beim gleichschenkligen Trapez liegt [DC] symmetrisch über der Mitte von [AB].</li>
     </ul>
     <div class="example"><strong>Beispiel:</strong> Parallelogramm ABCD mit a = 6 cm, b = 4 cm und α = 60°. In der Planfigur treffen sich a und b in A, α liegt zwischen ihnen.
       <ol class="steps">
         <li>Zeichne die Strecke [AB] mit a = 6 cm.</li>
-        <li>Trage in A an [AB] den Winkel α = 60° an und markiere auf dem freien Schenkel D mit AD = 4 cm.</li>
+        <li>Trage in A an [AB] den Winkel α = 60° an und markiere auf dem freien Schenkel D mit ${len("AD")} = 4 cm.</li>
         <li>Zeichne die Parallele zu AB durch D und die Parallele zu AD durch B; ihr Schnittpunkt ist C.</li>
       </ol>
       In Koordinaten: Für A(1 | 1), B(6 | 1) und C(8 | 4) ist ${vn("BC")} = ${vecHtml(2, 3)}. D = A ⊕ ${vn("BC")} ergibt D(1 + 2 | 1 + 3), also D(3 | 4).</div>
@@ -1825,18 +2171,7 @@ const viereckskonstruktion: Lesson = {
             meta: { k },
           };
         }
-        const k = rng.int(0, PLAN_CASES.length - 1);
-        const c = PLAN_CASES[k];
-        const values = pieceValues(rng, c.type, c.pieces);
-        const given = c.pieces.map((p) => pieceText(p, values[p]));
-        const article = c.type === "Raute" ? "eine" : "ein";
-        return {
-          prompt: `${article.charAt(0).toUpperCase()}${article.slice(1)} ${c.type} ABCD soll aus ${listText(given)} konstruiert werden. Mit welchem Teildreieck beginnst du, und nach welchem Kongruenzsatz konstruierst du es?`,
-          given,
-          fields: [shuffledChoice(rng, "Erstes Teildreieck:", c.triangle, c.others), choiceField("Kongruenzsatz:", THEOREMS_SHORT, c.theorem)],
-          steps: [c.why, `<strong>Dreieck ${c.triangle} nach ${THEOREMS_SHORT[c.theorem]}</strong>`],
-          meta: { k },
-        };
+        return planTask(rng);
       },
     },
     {
@@ -2115,7 +2450,7 @@ const viereckeAnwenden: Lesson = {
             const alpha = rng.int(40, 85);
             return {
               prompt: `Im gleichschenkligen Trapez ABCD mit AB ∥ CD ist der Basiswinkel α = ${alpha}°. Berechne β und γ.`,
-              given: [`α = ${alpha}°`, "AB ∥ CD, AD = BC"],
+              given: [`α = ${alpha}°`, `AB ∥ CD, ${len("AD")} = ${len("BC")}`],
               formulaHint: "gleichschenkliges Trapez: α = β, γ = δ; α + δ = 180°",
               fields: [
                 numberField("β =", alpha, "°", 0, { slips: [{ value: 180 - alpha, hint: "Im gleichschenkligen Trapez sind die Basiswinkel α und β gleich groß." }] }),
@@ -2203,16 +2538,16 @@ const viereckeAnwenden: Lesson = {
           const p = rng.stepped(3, 6, 0.5);
           const q = p + rng.stepped(1, 4, 0.5);
           return {
-            prompt: `Im Parallelogramm ABCD ist α = ${2 * w}°, AD = ${cm(p)} und CD = ${cm(q)}. Die Winkelhalbierende von α schneidet die Seite [CD] im Punkt E. Berechne den Winkel ∢DEA und die Länge [CE].`,
-            given: [`α = ${2 * w}°`, `AD = ${cm(p)}`, `CD = ${cm(q)}`],
+            prompt: `Im Parallelogramm ABCD ist α = ${2 * w}°, ${len("AD")} = ${cm(p)} und ${len("CD")} = ${cm(q)}. Die Winkelhalbierende von α schneidet die Seite [CD] im Punkt E. Berechne den Winkel ∢DEA und die Länge der Strecke [CE].`,
+            given: [`α = ${2 * w}°`, `${len("AD")} = ${cm(p)}`, `${len("CD")} = ${cm(q)}`],
             fields: [
               numberField("∢DEA =", w, "°", 0, { slips: [{ value: 2 * w, hint: "Die Winkelhalbierende teilt α: ∢BAE ist nur die Hälfte, und ∢DEA ist sein Wechselwinkel." }] }),
-              numberField("CE =", q - p, "cm", 1, { slips: [{ value: p, hint: "Das ist DE. Gesucht ist das restliche Stück CE = CD − DE." }] }),
+              numberField(`${len("CE")} =`, q - p, "cm", 1, { slips: [{ value: p, hint: `Das ist ${lenText("DE")}. Gesucht ist das restliche Stück ${lenText("CE")} = ${lenText("CD")} − ${lenText("DE")}.` }] }),
             ],
             steps: [
               `∢BAE = ${2 * w}° : 2 = ${w}°. AB ∥ CD: ∢DEA und ∢BAE sind Wechselwinkel, also ∢DEA = ${w}°.`,
-              `Im Dreieck AED sind die Winkel bei A und E je ${w}° groß: Es ist gleichschenklig mit DE = AD = ${cm(p)}.`,
-              `<strong>∢DEA = ${w}°; CE = ${cm(q)} − ${cm(p)} = ${cm(q - p)}</strong>`,
+              `Im Dreieck AED sind die Winkel bei A und E je ${w}° groß: Es ist gleichschenklig mit ${len("DE")} = ${len("AD")} = ${cm(p)}.`,
+              `<strong>∢DEA = ${w}°; ${len("CE")} = ${cm(q)} − ${cm(p)} = ${cm(q - p)}</strong>`,
             ],
             meta: { ctx, w, p, q, a1: w, a2: q - p },
           };
@@ -2220,7 +2555,7 @@ const viereckeAnwenden: Lesson = {
         if (ctx === 3) {
           const [x, y] = draw(() => [rng.int(20, 45), rng.int(20, 45)], ([p, q]) => p + q < 85 && Math.abs(p - q) >= 4, [30, 40]);
           return {
-            prompt: `Der Querschnitt eines Deichs ist ein gleichschenkliges Trapez ABCD mit AB ∥ CD und AD = BC. Die Diagonale [AC] teilt den Winkel bei A in ∢BAC = ${x}° und ∢CAD = ${y}°. Berechne den Winkel γ bei C und den Winkel ∢DCA.`,
+            prompt: `Der Querschnitt eines Deichs ist ein gleichschenkliges Trapez ABCD mit AB ∥ CD und ${len("AD")} = ${len("BC")}. Die Diagonale [AC] teilt den Winkel bei A in ∢BAC = ${x}° und ∢CAD = ${y}°. Berechne den Winkel γ bei C und den Winkel ∢DCA.`,
             given: [`∢BAC = ${x}°`, `∢CAD = ${y}°`],
             fields: [
               numberField("γ =", 180 - x - y, "°", 0, { slips: [{ value: x + y, hint: "Das ist β = α. γ ergänzt β zu 180°." }] }),
