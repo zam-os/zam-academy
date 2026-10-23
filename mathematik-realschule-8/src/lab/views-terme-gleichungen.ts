@@ -774,7 +774,7 @@ export function extremumSides(v: LabValues): string {
 
 const EX = { x0: 44, y0: 60 };
 const EX_SCALE = [11.5, 6.2, 29, 22];
-const EX_PLOT = { x: 318, y: 46, w: 188, h: 150 };
+const EX_PLOT = { x: 318, y: 62, w: 188, h: 134 };
 
 function extremumPlot(mode: number): Plot {
   const model = EXTREMUM_MODELS[mode];
@@ -870,10 +870,10 @@ function extremumProblem(v: LabValues): string {
     out += handle("figure", H.x, H.y, "Figur verändern: x ändern");
   }
   // the calculation, when asked for
-  const ly = 238;
+  const ly = 242;
   if (v.show === 1) {
     model.steps.forEach((content, i) => {
-      out += text(box.x - 12, ly + i * 17, content, i === model.steps.length - 1 ? "lab-text-small lab-text-ok" : "lab-text-small");
+      out += text(box.x - 12, ly + i * 16, content, i === model.steps.length - 1 ? "lab-text-small lab-text-ok" : "lab-text-small");
     });
   } else {
     out += text(box.x - 12, ly, "Die Rechnung ist verdeckt.", "lab-text-small");

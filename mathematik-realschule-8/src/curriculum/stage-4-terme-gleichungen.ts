@@ -1899,7 +1899,7 @@ const gleichungen: Lesson = {
     <div class="merke"><strong>Merke:</strong> Erst beide Seiten vereinfachen, dann mit Äquivalenzumformungen zu a · x = b. a ≠ 0: genau eine Lösung; a = 0 und b ≠ 0: keine Lösung; a = 0 und b = 0: allgemeingültig. Nie mit 0 multiplizieren, nie durch 0 teilen.</div>
   `,
   formulas: [
-    { name: "Äquivalenzumformungen", html: "T<sub>1</sub> = T<sub>2</sub> ⇔ T<sub>1</sub> + c = T<sub>2</sub> + c; T<sub>1</sub> = T<sub>2</sub> ⇔ c · T<sub>1</sub> = c · T<sub>2</sub> für c ≠ 0", quantities: "auf beiden Seiten dasselbe; nie mit 0 multiplizieren" },
+    { name: "Äquivalenz­umformungen", html: "T<sub>1</sub> = T<sub>2</sub> ⇔ T<sub>1</sub> + c = T<sub>2</sub> + c; T<sub>1</sub> = T<sub>2</sub> ⇔ c · T<sub>1</sub> = c · T<sub>2</sub> für c ≠ 0", quantities: "auf beiden Seiten dasselbe; nie mit 0 multiplizieren" },
     { name: "Lösungsfälle", html: "a · x = b", quantities: "a ≠ 0: x = b : a; a = 0 und b ≠ 0: L = { }; a = 0 und b = 0: L = G" },
     { name: "Minus vor einem Produkt", html: "−(x − 1)(x + 2) = −(x<sup>2</sup> + x − 2) = −x<sup>2</sup> − x + 2", quantities: "erst ausmultiplizieren, dann jedes Vorzeichen umdrehen" },
   ],
@@ -2551,7 +2551,7 @@ const ungleichungen: Lesson = {
   `,
   formulas: [
     { name: "Inversionsgesetz", html: "a &lt; b ⇔ −a &gt; −b; aus a &lt; b folgt a · c &gt; b · c für c &lt; 0", quantities: "Multiplizieren oder Dividieren mit einer negativen Zahl kehrt das Zeichen um" },
-    { name: "Intervalle", html: "]−∞; a[  ]−∞; a]  ]a; ∞[  [a; ∞[", quantities: "eine Klammer, die von a weg zeigt: a gehört nicht dazu" },
+    { name: "Intervalle", html: "x &lt; a: ]−∞; a[, x ≤ a: ]−∞; a], x &gt; a: ]a; ∞[, x ≥ a: [a; ∞[", quantities: "eine Klammer, die von a weg zeigt: a gehört nicht dazu" },
     { name: "Signalwörter", html: "höchstens: ≤; mindestens: ≥; weniger als: &lt;; mehr als: &gt;", quantities: "für Sachaufgaben" },
   ],
   quiz: {
