@@ -20,6 +20,7 @@ Hands-on training apps that build understanding before [ZAM](https://github.com/
 | Datennetze und Internet (DE/EN, LehrplanPLUS IT 2.5.1, HTTPS als Ergänzung) | [`datennetze/`](datennetze/) | https://academy.zam-os.org/datennetze/ | `zam-academy:datennetze` |
 | BwR 9 Realschule (LehrplanPLUS Bayern, Zweig II) | [`bwr-realschule-9/`](bwr-realschule-9/) | https://academy.zam-os.org/bwr-realschule-9/ | `zam-academy:bwr-realschule-9` |
 | Wirtschaft und Recht 9 Realschule (LehrplanPLUS Bayern, WPFG I und III) | [`wirtschaft-recht-realschule-9/`](wirtschaft-recht-realschule-9/) | https://academy.zam-os.org/wirtschaft-recht-realschule-9/ | `zam-academy:wirtschaft-recht-realschule-9` |
+| Französisch 9 Realschule (LehrplanPLUS Bayern, Wahlpflichtfächergruppe IIIa, zweite Fremdsprache) | [`franzoesisch-realschule-9/`](franzoesisch-realschule-9/) | https://academy.zam-os.org/franzoesisch-realschule-9/ | `zam-academy:franzoesisch-realschule-9` |
 | Mathematik 10 Realschule (LehrplanPLUS Bayern, Zweig I und II/III) | [`mathematik-realschule-10/`](mathematik-realschule-10/) | https://academy.zam-os.org/mathematik-realschule-10/ | `zam-academy:mathematik-realschule-10` |
 | Deutsch 9 Realschule (LehrplanPLUS Bayern, alle Wahlpflichtfächergruppen) | [`deutsch-realschule-9/`](deutsch-realschule-9/) | https://academy.zam-os.org/deutsch-realschule-9/ | `zam-academy:deutsch-realschule-9` |
 
@@ -57,6 +58,7 @@ cd uml                 # or: cd physik-realschule-9 (dev server on :5181), cd sq
 # Mathematik 7: cd mathematik-realschule-7 (dev server on :5195)
 # Physik 8: cd physik-realschule-8 (dev server on :5196)
 # Mathematik 8: cd mathematik-realschule-8 (dev server on :5197)
+# Französisch 9: cd franzoesisch-realschule-9 (dev server on :5198)
 npm ci
 npm run dev      # http://localhost:5180/uml/
 npm test
