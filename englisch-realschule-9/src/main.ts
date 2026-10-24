@@ -489,7 +489,7 @@ document
 	?.addEventListener("click", () =>
 		showDialog(
 			"Mit ZAM behalten",
-			`<p>Zum Paket gehören 80 Wiederholungsfragen in ZAM. Jede führt zurück zu ihrer Lektion.</p><p>Öffne ZAM und bitte deinen Agenten:</p><p class="material">${esc(zamEnrolRequest())}</p><p>Die Übertragung früherer Englisch-Karten ist noch nicht freigegeben. Die Academy-Karten starten eigenständig.</p><p>Hier kannst du ohne Konto weiterüben.</p>`,
+			`<p>Zum Paket gehören 80 Wiederholungsfragen in ZAM. Jede führt zurück zu ihrer Lektion.</p><p>Öffne ZAM und bitte deinen Agenten:</p><p class="material">${esc(zamEnrolRequest())}</p><p>Wenn du schon Fragen aus dem alten Englisch-Grammatikpaket übst, bleiben ihre Lernverläufe erhalten. Drei passende Fragen werden übernommen; fünf überarbeitete Fragen verlassen die Wiederholung. Neue Fragen beginnen ohne bisherigen Lernstand.</p><p>Hier kannst du ohne Konto weiterüben.</p>`,
 		),
 	);
 document.querySelector("#reset")?.addEventListener("click", () => {

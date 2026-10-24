@@ -1,9 +1,9 @@
 {
   "$schema": "https://zam.app/schemas/v1/kvt-tile.json",
   "tile_id": "zam-academy:englisch-realschule-9",
-  "version": "2026.10.1",
+  "version": "2026.10.2",
   "title": "Englisch 9 Realschule (ZAM Academy)",
-  "description": "36 Kernlektionen zu Berufsorientierung, Indien, Australien, digitalen Medien, Sprache und Literatur; vier freiwillige Grammatikergänzungen. 80 gezielte Wiederholungsfragen mit Lektionslinks. Kommunikative Praxis, natürliche Aufnahmen und eigene Recherche zusätzlich üben. Lokaler Entwurf ohne Altübertragung.",
+  "description": "36 Kernlektionen zu Berufsorientierung, Indien, Australien, digitalen Medien, Sprache und Literatur; vier freiwillige Grammatikergänzungen. 80 gezielte Wiederholungsfragen mit Lektionslinks. Kommunikative Praxis, natürliche Aufnahmen und eigene Recherche zusätzlich üben. Drei freigegebene Altzuordnungen erhalten ihre Lernverläufe; fünf korrigierte oder mehrteilige Altfragen verlassen die aktive Wiederholung ohne Beherrschungsübertrag.",
   "publisher": "ZAM Academy",
   "sources": [
     {
@@ -2056,7 +2056,10 @@
             ],
             "correct_index": 0
           },
-          "materiality": "material"
+          "materiality": "material",
+          "replaces": [
+            "01K4E9G0000000000000000J05"
+          ]
         },
         {
           "id": "01M5P68F0E16E9W8WPNZJNJ3ZG",
@@ -2849,7 +2852,10 @@
             ],
             "correct_index": 0
           },
-          "materiality": "material"
+          "materiality": "material",
+          "replaces": [
+            "01K4E9G0000000000000000J01"
+          ]
         },
         {
           "id": "01M5P68F0EWW41PZNB9B391VF0",
@@ -2902,7 +2908,10 @@
             ],
             "correct_index": 0
           },
-          "materiality": "material"
+          "materiality": "material",
+          "replaces": [
+            "01K4E9G0000000000000000J03"
+          ]
         },
         {
           "id": "01M5P68F0E4WXY6QFG6D4KFKPV",
@@ -3029,6 +3038,28 @@
           "materiality": "material"
         }
       ]
+    }
+  ],
+  "retired_items": [
+    {
+      "id": "01K4E9G0000000000000000J02",
+      "reason": "Alter Sammelabruf zu drei Bedingungstypen und je einem Beispiel. Neue Karten sind Einzelabrufe; kein sicher gleicher Gesamtumfang auf einer Karte."
+    },
+    {
+      "id": "01K4E9G0000000000000000J04",
+      "reason": "Alte Musterlösung vertauscht Subjekt/Objekt und vermischt reine Passivumformung mit Wechsel von Zeitform und Aspekt. Korrigierter Umfang ohne sicheren Beherrschungsübertrag."
+    },
+    {
+      "id": "01K4E9G0000000000000000J06",
+      "reason": "Sammelabruf mehrerer Zeit-, Personen- und Ortswechsel; Korrektur mechanischer Ersetzungsregeln. Neue Einzelkarten bilden keinen sicheren Gesamtnachfolger."
+    },
+    {
+      "id": "01K4E9G0000000000000000J07",
+      "reason": "Alte Antwort only who or which ist fachlich unvollständig: whose, when und where sind ebenfalls möglich. Korrigierte Regel übernimmt keine Beherrschung."
+    },
+    {
+      "id": "01K4E9G0000000000000000J08",
+      "reason": "Alter Sammelabruf und teils falsche Musterlösung (only who or which); neue Einzelabrufe zu Funktion, Besitz, Kommas und Auslassung sind kein sicher gleicher Gesamtumfang."
     }
   ]
 }

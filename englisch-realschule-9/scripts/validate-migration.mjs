@@ -13,27 +13,12 @@ const zam = await import(process.env.ZAM_CORE ?? "zam-core");
 const read = (file) => JSON.parse(readFileSync(join(root, file), "utf8"));
 const cell = read("cell.json"),
 	mapping = read("replaces-de-by.json");
-assert.equal(mapping.approved, null);
+assert.equal(mapping.approved, "2026-10-24");
+assert.equal(mapping.status, "approved");
+assert.ok(mapping.source.includes("„Freigabe erteile ich“"));
 const items = cell.atoms.flatMap((atom) => atom.practice_items);
-assert.ok(items.every((item) => !item.replaces?.length));
-assert.ok(!cell.retired_items?.length);
-const old = mapping.sources.map((source) => {
-	const bytes = readFileSync(join(root, source.file));
-	assert.equal(createHash("sha256").update(bytes).digest("hex"), source.sha256);
-	return JSON.parse(bytes);
-});
-const proposal = structuredClone(cell);
-proposal.version = "2026.10.2";
-const bySlug = new Map(
-	proposal.atoms
-		.flatMap((atom) => atom.practice_items)
-		.map((item) => [item.slug, item]),
-);
+const bySlug = new Map(items.map((item) => [item.slug, item]));
 const targets = new Map();
-// Rehearse C retirements only in memory, alongside the proposed A transfers.
-proposal.retired_items = mapping.rows
-	.filter((row) => row.category === "C")
-	.map((row) => ({ id: row.de_by_id, reason: row.reason }));
 for (const row of mapping.rows) {
 	if (row.category === "C") {
 		assert.equal(row.academy_slug, null);
@@ -41,12 +26,34 @@ for (const row of mapping.rows) {
 	}
 	assert.equal(row.category, "A");
 	const item = bySlug.get(row.academy_slug);
-	assert.ok(item && !item.replaces);
-	item.replaces = [row.de_by_id];
+	assert.ok(item);
+	assert.deepEqual(item.replaces, [row.de_by_id]);
 	targets.set(row.de_by_id, item.id);
 }
 assert.equal(targets.size, 3);
-const dir = mkdtempSync(join(tmpdir(), "zam-english9-proposal-"));
+assert.deepEqual(
+	items.flatMap((item) => item.replaces ?? []).sort(),
+	[...targets.keys()].sort(),
+);
+assert.deepEqual(
+	cell.retired_items.map((item) => item.id).sort(),
+	mapping.rows
+		.filter((row) => row.category === "C")
+		.map((row) => row.de_by_id)
+		.sort(),
+);
+const old = mapping.sources.map((source) => {
+	const bytes = readFileSync(join(root, source.file));
+	assert.equal(createHash("sha256").update(bytes).digest("hex"), source.sha256);
+	return JSON.parse(bytes);
+});
+// Simulate the earlier unapproved version while testing the actual shipped cell.
+const previousCell = structuredClone(cell);
+previousCell.version = "2026.10.1";
+delete previousCell.retired_items;
+for (const atom of previousCell.atoms)
+	for (const item of atom.practice_items) delete item.replaces;
+const dir = mkdtempSync(join(tmpdir(), "zam-english9-migration-"));
 const userId = cell.atoms[0].id;
 const snapshot = async (db) => ({
 	cards: await db.prepare("SELECT * FROM cards ORDER BY id").all(),
@@ -79,11 +86,14 @@ async function seed(db, ids) {
 }
 try {
 	for (const [name, tile, transfers] of [
-		["unchanged-draft", cell, new Map()],
-		["in-memory-rehearsal", proposal, targets],
+		["previous-version-without-mapping", previousCell, new Map()],
+		["approved-first-install", cell, targets],
+		["approved-upgrade", cell, targets],
 	]) {
 		const db = await open(name);
 		try {
+			if (name === "approved-upgrade")
+				await zam.installKvtTile(db, previousCell);
 			await seed(
 				db,
 				mapping.rows.map((row) => row.de_by_id),
@@ -105,7 +115,7 @@ try {
 			assert.equal(
 				(await zam.buildReviewQueue(db, queueOptions)).items.length,
 				8,
-				"All old cards must be eligible before the rehearsal",
+				"All old cards must be eligible before installation",
 			);
 			await zam.installKvtTile(db, tile);
 			const after = await snapshot(db);
@@ -129,7 +139,7 @@ try {
 				assert.equal(
 					Boolean(token.deprecated_at),
 					transfers.size > 0,
-					"Only the in-memory proposal removes superseded and corrected items from active use",
+					"Only the approved cell removes superseded and corrected items from active use",
 				);
 				if (transfers.size > 0 && row.category === "C")
 					assert.equal(token.editorial_state, "deprecated");
@@ -137,7 +147,7 @@ try {
 			assert.equal(
 				(await zam.buildReviewQueue(db, queueOptions)).items.length,
 				transfers.size > 0 ? 0 : 8,
-				"Rehearsed retirements leave active reviews; the published cell keeps all old cards active",
+				"Approved retirements leave active reviews; the previous version keeps old cards active",
 			);
 			await zam.installKvtTile(db, tile);
 			assert.deepEqual(
@@ -188,7 +198,7 @@ try {
 			});
 			assert.deepEqual(await snapshot(db), final);
 			console.log(
-				`ok   ${name}: 8 card states / 16 review events intact; ${transfers.size} rehearsed transfers; ${transfers.size ? "8 old items leave active reviews" : "8 old items remain active"}; fresh cards have no mastery`,
+				`ok   ${name}: 8 card states / 16 review events intact; ${transfers.size} explicit transfers; ${transfers.size ? "8 old items leave active reviews" : "8 old items remain active"}; fresh cards have no mastery`,
 			);
 		} finally {
 			await db.close();
@@ -196,12 +206,12 @@ try {
 	}
 	const db = await open("collision");
 	try {
-		await zam.installKvtTile(db, cell);
+		await zam.installKvtTile(db, previousCell);
 		const row = mapping.rows.find((entry) => entry.category === "A");
 		await seed(db, [row.de_by_id, bySlug.get(row.academy_slug).id]);
 		const before = await snapshot(db);
 		await assert.rejects(
-			() => zam.installKvtTile(db, proposal),
+			() => zam.installKvtTile(db, cell),
 			/holds a card on both|merge/i,
 		);
 		assert.deepEqual(
@@ -210,7 +220,7 @@ try {
 			"A collision preserves both complete histories",
 		);
 		console.log(
-			"ok   proposed transfer refuses to merge two existing histories; committed proposal stays unapproved",
+			"ok   approved transfer refuses to merge two existing histories; both complete histories stay intact",
 		);
 	} finally {
 		await db.close();

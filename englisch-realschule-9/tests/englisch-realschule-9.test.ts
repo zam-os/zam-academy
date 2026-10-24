@@ -34,7 +34,11 @@ function required<T>(value: T | undefined): T {
 	if (value === undefined) throw new Error("Missing lesson or card fixture");
 	return value;
 }
-const items = cell.atoms.flatMap((atom) => atom.practice_items);
+const items = cell.atoms.flatMap((atom) => atom.practice_items) as Array<
+	(typeof cell.atoms)[number]["practice_items"][number] & {
+		replaces?: string[];
+	}
+>;
 const oldItems = legacy.atoms.flatMap((atom) => atom.practice_items);
 
 describe("curriculum, cards and public lesson links", () => {
@@ -400,21 +404,34 @@ describe("local progress and routes", () => {
 		).toBe("/englisch-realschule-9/");
 	});
 });
-describe("legacy mapping proposal", () => {
+describe("approved legacy mapping", () => {
 	it("accounts for all eight old cards with an immutable source snapshot", () => {
-		expect(mapping.approved).toBeNull();
-		expect(mapping.status).toBe("proposal-only");
+		expect(mapping.approved).toBe("2026-10-24");
+		expect(mapping.source).toContain("„Freigabe erteile ich“");
+		expect(mapping.status).toBe("approved");
+		expect(cell.version).toBe("2026.10.2");
 		expect(mapping.rows.map((row) => row.de_by_id).sort()).toEqual(
 			oldItems.map((item) => item.id).sort(),
 		);
 		expect(mapping.rows.filter((row) => row.category === "A")).toHaveLength(3);
 		expect(mapping.rows.filter((row) => row.category === "C")).toHaveLength(5);
-		expect(items.every((item) => !("replaces" in item))).toBe(true);
-		expect("retired_items" in cell).toBe(false);
+		expect(items.flatMap((item) => item.replaces ?? []).sort()).toEqual(
+			mapping.rows
+				.filter((row) => row.category === "A")
+				.map((row) => row.de_by_id)
+				.sort(),
+		);
+		expect(cell.retired_items.map((item) => item.id).sort()).toEqual(
+			mapping.rows
+				.filter((row) => row.category === "C")
+				.map((row) => row.de_by_id)
+				.sort(),
+		);
 		for (const row of mapping.rows) {
-			if (row.category === "A")
-				expect(items.some((item) => item.slug === row.academy_slug)).toBe(true);
-			else expect(row.academy_slug).toBeNull();
+			if (row.category === "A") {
+				const successor = items.find((item) => item.slug === row.academy_slug);
+				expect(successor?.replaces).toEqual([row.de_by_id]);
+			} else expect(row.academy_slug).toBeNull();
 		}
 	});
 });

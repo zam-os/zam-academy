@@ -1,8 +1,8 @@
 {
   "schema": 1,
   "proposed": "2026-10-24",
-  "approved": null,
-  "description": "Prüfvorschlag: drei gleiche Einzelabrufe (A), fünf korrigierte/mehrteilige Abrufe ohne sicheren Nachfolger (C). Keine aktive Übertragung oder Ablösung.",
+  "approved": "2026-10-24",
+  "description": "Freigegebene Zuordnung: drei gleiche Einzelabrufe (A) mit erhaltenem Lernverlauf; fünf korrigierte oder mehrteilige Abrufe (C) verlassen die aktive Wiederholung ohne Übertragung ihrer Beherrschung.",
   "sources": [
     {
       "file": "tests/fixtures/de-by-realschule-9-englisch-grammatik-syntax-kvt.json",
@@ -79,7 +79,9 @@
       "reason": "Alter Sammelabruf und teils falsche Musterlösung (only who or which); neue Einzelabrufe zu Funktion, Besitz, Kommas und Auslassung sind kein sicher gleicher Gesamtumfang."
     }
   ],
-  "status": "proposal-only",
+  "status": "approved",
   "source_repository": "https://github.com/zam-os/zam",
-  "source_commit": "4ca430dd146de311fda3614264edf550a31e25a1"
+  "source_commit": "4ca430dd146de311fda3614264edf550a31e25a1",
+  "source": "Thomas im Codex-Chat zu zam-os/zam-academy#38 am 24. Oktober 2026, nach der Prüfung der PR-Reviews und der besprochenen Zuordnung 3 A / 5 C: „Freigabe erteile ich“.",
+  "authorization": "Die Freigabe gilt den acht hier dokumentierten Zeilen: drei A-Übertragungen auf jeweils einen gleichen Einzelabruf und fünf C-Ablösungen ohne Beherrschungsübertrag. Die Zelle darf diese replaces und retired_items mit der Academy-Veröffentlichung ausliefern. Persönliche Bibliotheken werden in diesem PR nicht geöffnet; die Prüfung nutzt ausschließlich Wegwerfbibliotheken."
 }
