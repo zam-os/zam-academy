@@ -41,7 +41,7 @@ The first publication (2026.10.1) is a new cell that replaces and retires nothin
 
 ```bash
 npm ci
-npm run dev          # http://localhost:5198/franzoesisch-realschule-9/
+npm run dev          # http://localhost:5199/franzoesisch-realschule-9/
 npm test
 npm run build        # single-file build in dist/index.html
 npm run package:zip  # offline zip (Windows/macOS/Linux launchers) in release/

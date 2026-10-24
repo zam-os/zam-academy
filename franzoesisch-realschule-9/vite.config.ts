@@ -7,7 +7,7 @@ export default defineConfig({
   base: "/franzoesisch-realschule-9/",
   plugins: [viteSingleFile()],
   server: {
-    port: 5198,
+    port: 5199,
     open: false,
   },
   // The jsdom file starts slowly; with five workers at once it can miss the start timeout.

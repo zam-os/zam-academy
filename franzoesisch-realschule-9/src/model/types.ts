@@ -155,7 +155,7 @@ export interface Lesson {
   casework: CaseFile;
   tasks: Record<Level, WrittenTask>;
   practice?: Practice;
-  /** Set by the curriculum index, for example "D9 LB 4.2: Sprachliche Strukturen untersuchen und reflektieren". */
+  /** Set by the curriculum index, for example "F9 LB 1.2: Grammatik". */
   lehrplan?: string;
 }
 

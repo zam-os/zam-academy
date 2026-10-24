@@ -65,3 +65,34 @@ test("every app links back to the academy online and in an offline file", () => 
     }
   }
 });
+
+test("kein_unterricht names known subjects and schools, explains itself and never contradicts a package", () => {
+  const faecher = new Map(registry.faecher.map((f) => [f.id, f]));
+  const schulen = new Map(registry.schulen.map((s) => [s.id, s]));
+  const seen = new Set();
+  for (const e of registry.kein_unterricht ?? []) {
+    const where = `${e.fach} ${e.grade} ${e.school}`;
+    assert.ok(faecher.has(e.fach), `${where}: unknown Fach`);
+    const school = schulen.get(e.school);
+    assert.ok(school, `${where}: unknown school`);
+    assert.ok(
+      e.grade >= school.from && e.grade <= school.to,
+      `${where}: grade outside the school`,
+    );
+    assert.ok(e.grade >= faecher.get(e.fach).from, `${where}: before the Fach starts`);
+    assert.ok(e.note?.length > 20, `${where}: note`);
+    assert.match(e.source ?? "", /^https:\/\//, `${where}: source`);
+    assert.ok(!seen.has(where), `${where}: duplicate`);
+    seen.add(where);
+    assert.ok(
+      !pakete.some(
+        (p) => p.fach === e.fach && p.grade === e.grade && p.school === e.school,
+      ),
+      `${where}: a package exists for a cell declared as no-lesson`,
+    );
+  }
+});
+
+test("every school names where it is taught, for sentences like 'am Gymnasium'", () => {
+  for (const s of registry.schulen) assert.match(s.wo, /^(an|am) /, s.id);
+});

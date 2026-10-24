@@ -1,0 +1,23 @@
+{
+  "name": "zam-academy-englisch-realschule-9",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Englisch 9 Realschule Bayern: kommunikative Aufgaben, Sprachwerkstatt und ZAM-Zelle.",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit",
+    "package:zip": "npm run build && node scripts/build-release-zip.mjs"
+  },
+  "devDependencies": {
+    "typescript": "^6.0.3",
+    "vite": "^8.1.5",
+    "vite-plugin-singlefile": "^2.3.3",
+    "vitest": "^4.1.10"
+  },
+  "license": "Apache-2.0"
+}

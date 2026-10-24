@@ -466,7 +466,7 @@ export const S2E: Lesson[] = [
           "Nutze verschiedene Personen: je, nous, mes amis.",
         ],
         model:
-          "L’année prochaine, je serai en dixième classe. Mes amis et moi, nous irons en Italie pour le voyage de classe. Je ferai du sport avec mon frère. Mes parents pourront nous accompagner. J’aurai un nouveau portable et je prendrai beaucoup de photos.",
+          "L’année prochaine, je serai en dernière année. Mes amis et moi, nous irons en Italie pour le voyage de classe. Je ferai du sport avec mon frère. Mes parents pourront nous accompagner. J’aurai un nouveau portable et je prendrai beaucoup de photos.",
         criteria: [
           "Mindestens fünf Verben im futur simple.",
           "Mindestens drei davon mit unregelmäßigem Stamm.",
@@ -541,7 +541,7 @@ export const S2E: Lesson[] = [
         { before: "Quand tu ", options: ["arriveras", "arrives", "arrivais"], answer: 0, after: ", appelle-moi tout de suite.", feedback: "Nach quand steht in einem Zukunftssatz der futur simple: Quand tu arriveras." },
         { before: "Demain, il ", options: ["fera", "fait", "faisait"], answer: 0, after: " beau dans tout le pays.", feedback: "Demain zeigt die Zukunft. Faire hat im futur simple den Stamm fer-." },
         { before: "Dès que nous ", options: ["aurons", "avons", "avions"], answer: 0, after: " le temps, nous visiterons Paris.", feedback: "Nach dès que steht der futur simple, wenn von der Zukunft die Rede ist." },
-        { before: "L’année prochaine, je ", options: ["serai", "suis", "étais"], answer: 0, after: " en dixième classe.", feedback: "L’année prochaine zeigt die Zukunft: je serai." },
+        { before: "L’année prochaine, je ", options: ["serai", "suis", "étais"], answer: 0, after: " en dernière année.", feedback: "L’année prochaine zeigt die Zukunft: je serai." },
         { before: "Je t’", options: ["aiderai", "aide", "aidais"], answer: 0, after: " demain, promis!", feedback: "Ein Versprechen für morgen steht im futur simple." },
       ],
       conclusion: "Zukunft heißt futur simple, auch nach quand und dès que. Das Präsens gibt es in solchen Sätzen im Französischen nicht.",

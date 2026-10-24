@@ -122,7 +122,7 @@ export const S4: Lesson[] = [
       "Für Touristen sind die großen Sehenswürdigkeiten wichtig: **la tour Eiffel** (gebaut für die Weltausstellung 1889), **le Louvre** (heute ein berühmtes Museum, früher ein Königspalast), **Notre-Dame**, **l’Arc de triomphe**, **les Champs-Élysées**, **Montmartre** mit der Kirche du Sacré-Cœur und **la Seine**, auf der Ausflugsschiffe fahren. Touristen sagen: « Nous voulons voir la tour Eiffel et prendre des photos. »",
       "Paris ist auch **Stadt der Mode und Kultur**: Bekannt sind die Modehäuser (la haute couture), die Museen, die Theater und das Kino. Viele Menschen kommen, um ein Museum zu besuchen, Mode zu sehen oder in einem Café zu sitzen. Paris ist in 20 Stadtbezirke (arrondissements) eingeteilt, die nummeriert sind.",
       "Für **Einheimische** sieht das Leben anders aus: Sie fahren mit dem métro oder dem RER zur Arbeit (« Je prends le métro tous les jours. »). Typische **Großstadtprobleme** sind die Verkehrsdichte (la circulation, les embouteillages), der Lärm (le bruit), die Menschenmengen (la foule), die Luftverschmutzung (la pollution) und hohe Mieten (le loyer). Viele Menschen wohnen deshalb am Stadtrand, in der banlieue, und pendeln.",
-      "Wenn du über Paris sprichst, kannst du Sichtweisen und Meinungen verbinden: « À mon avis, Paris est belle, mais trop bruyante. » Typische Fehler sind Verallgemeinerungen (« Tous les Parisiens sont stressés ») und die Verwechslung von Touristenangeboten mit dem Alltag. Beschreibe, was du belegen kannst, und frage, welche Sicht jemand einnimmt.",
+      "Wenn du über Paris sprichst, kannst du Sichtweisen und Meinungen verbinden: « À mon avis, Paris est beau, mais trop bruyant. » Typische Fehler sind Verallgemeinerungen (« Tous les Parisiens sont stressés ») und die Verwechslung von Touristenangeboten mit dem Alltag. Beschreibe, was du belegen kannst, und frage, welche Sicht jemand einnimmt.",
     ],
     terms: [
       { term: "la banlieue", text: "Die Vororte einer Großstadt. Viele Menschen wohnen dort und pendeln nach Paris, weil das Wohnen im Zentrum teuer ist." },
@@ -205,7 +205,7 @@ export const S4: Lesson[] = [
           "Verwende Konnektoren wie mais, donc, c’est pourquoi.",
         ],
         model:
-          "Pour les touristes, Paris est la ville de la mode et de la culture. Ils visitent la tour Eiffel, le Louvre et Montmartre. Les touristes adorent aussi les cafés. Pour les Parisiens, la vie est différente. Ils prennent le métro tous les jours et ils trouvent la ville bruyante. Le loyer est cher, c’est pourquoi beaucoup de gens habitent dans la banlieue. À mon avis, Paris est belle, mais je préfère une ville plus calme.",
+          "Pour les touristes, Paris est la ville de la mode et de la culture. Ils visitent la tour Eiffel, le Louvre et Montmartre. Les touristes adorent aussi les cafés. Pour les Parisiens, la vie est différente. Ils prennent le métro tous les jours et ils trouvent la ville bruyante. Le loyer est cher, c’est pourquoi beaucoup de gens habitent dans la banlieue. À mon avis, Paris est beau, mais je préfère une ville plus calme.",
         criteria: [
           "Beide Sichtweisen werden beschrieben.",
           "Sehenswürdigkeiten und Großstadtprobleme kommen vor.",
@@ -294,7 +294,7 @@ export const S4: Lesson[] = [
           "Nenne die Uhrzeit von Beginn und Ende.",
         ],
         model:
-          "Je vais à la Realschule, c’est une école pour les élèves de la cinquième à la dixième classe. Je suis en classe neuf. Mes cours commencent à huit heures et finissent à treize heures ou plus tard. Der Text erklärt die Schulart und nennt Klasse und Uhrzeiten.",
+          "Je vais à la Realschule, une école qui existe en Bavière. Elle va de la classe 5 à la classe 10. Je suis en classe 9. Mes cours commencent à huit heures et finissent à treize heures ou plus tard.",
         criteria: [
           "Die Schulart wird erklärt, nicht nur übersetzt.",
           "Klasse und Uhrzeit werden genannt.",

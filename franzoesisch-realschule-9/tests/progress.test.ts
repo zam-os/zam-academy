@@ -2,12 +2,16 @@ import { describe, expect, it } from "vitest";
 import { CORE_LESSONS, findLesson, LESSONS } from "../src/curriculum";
 import { REQUIRED_ROUNDS } from "../src/exercises/practice";
 import { looksLikeDraft } from "../src/format";
-import { completion, freshProgress, isComplete, keyOf, mergeProgress, parseProgress } from "../src/storage/progress";
+import { completion, freshProgress, isComplete, keyOf, mergeProgress, parseProgress, STORAGE_KEY } from "../src/storage/progress";
 
 const plain = LESSONS.find((l) => !l.practice);
 const withPractice = LESSONS.find((l) => l.practice);
 
 describe("learning evidence and local recovery", () => {
+  it("keeps its progress under its own key, apart from the other Academy apps on the same origin", () => {
+    expect(STORAGE_KEY).toBe("franzoesisch_rs9_academy_progress_v1");
+  });
+
   it("counts a lesson only when every kind of evidence is there", () => {
     if (!plain) throw new Error("a lesson without practice is needed");
     const p = freshProgress();

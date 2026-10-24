@@ -5,7 +5,7 @@ import { keyOf } from "./keys";
 
 export { keyOf };
 
-export const STORAGE_KEY = "de_rs9_academy_progress_v1";
+export const STORAGE_KEY = "franzoesisch_rs9_academy_progress_v1";
 
 export interface Progress {
   active: string;
