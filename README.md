@@ -25,6 +25,7 @@ Hands-on training apps that build understanding before [ZAM](https://github.com/
 | Französisch 9 Realschule (LehrplanPLUS Bayern, Wahlpflichtfächergruppe IIIa, zweite Fremdsprache) | [`franzoesisch-realschule-9/`](franzoesisch-realschule-9/) | https://academy.zam-os.org/franzoesisch-realschule-9/ | `zam-academy:franzoesisch-realschule-9` |
 | Mathematik 10 Realschule (LehrplanPLUS Bayern, Zweig I und II/III) | [`mathematik-realschule-10/`](mathematik-realschule-10/) | https://academy.zam-os.org/mathematik-realschule-10/ | `zam-academy:mathematik-realschule-10` |
 | Deutsch 9 Realschule (LehrplanPLUS Bayern, alle Wahlpflichtfächergruppen) | [`deutsch-realschule-9/`](deutsch-realschule-9/) | https://academy.zam-os.org/deutsch-realschule-9/ | `zam-academy:deutsch-realschule-9` |
+| Informatik 10 Realschule · fünf wählbare IT-Vertiefungen (Bayern) | [`informatik-realschule-10/`](informatik-realschule-10/) | https://academy.zam-os.org/informatik-realschule-10/ | `zam-academy:informatik-realschule-10` |
 
 ## How an app and its ZAM cell fit together
 
@@ -62,7 +63,8 @@ cd uml                 # or: cd physik-realschule-9 (dev server on :5181), cd sq
 # Mathematik 8: cd mathematik-realschule-8 (dev server on :5197)
 # Englisch 9: cd englisch-realschule-9 (dev server on :5198)
 # Französisch 9: cd franzoesisch-realschule-9 (dev server on :5199)
-# Chemie 10: cd chemie-realschule-10 (dev server on :5200)
+# Informatik 10: cd informatik-realschule-10 (dev server on :5200)
+# Chemie 10: cd chemie-realschule-10 (dev server on :5201)
 npm ci
 npm run dev      # http://localhost:5180/uml/
 npm test
@@ -91,3 +93,5 @@ No accounts, cookies, trackers or third-party requests. Learner progress stays i
 Apache-2.0, like ZAM.
 
 The [English 9 package](englisch-realschule-9/) adds 36 core lessons, four optional grammar refreshers and 80 cards. Its [coverage matrix](englisch-realschule-9/coverage.json) keeps natural listening/viewing, spoken assessment, extended reading and current research as additional practice. The [legacy review](docs/englisch-9-bestandsabgleich.md) documents three equivalent single-card mappings and five retirements without mastery transfer, approved by Thomas on 2026-10-24. App and cell publish together through Pages; synchronizing the bundled ZAM library is a separate step.
+
+The [Informatik 10 package](informatik-realschule-10/) adds 36 lessons and 72 cards for five selectable advanced IT modules, with local packet-filter, class-programming, logic, robot and decision-tree workshops. Its [coverage matrix](informatik-realschule-10/coverage.json) distinguishes these modules from full subject coverage. Existing IT cells keep their own cards and review histories.

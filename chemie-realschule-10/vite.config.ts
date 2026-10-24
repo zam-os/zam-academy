@@ -7,7 +7,7 @@ export default defineConfig({
   base: "/chemie-realschule-10/",
   plugins: [viteSingleFile()],
   server: {
-    port: 5200,
+    port: 5201,
     open: false,
   },
   build: {

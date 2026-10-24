@@ -78,7 +78,7 @@ eine Person alte und neue Karte, verweigert der Kernel die Zusammenführung.
 
 ```sh
 npm ci
-npm run dev          # http://localhost:5200/chemie-realschule-10/
+npm run dev          # http://localhost:5201/chemie-realschule-10/
 npm test
 npm run typecheck
 npm run build        # dist/index.html, eine Datei
