@@ -639,6 +639,11 @@ describe("The cell is the only card source, and every card leads to a taught les
         const plain = item[field];
         if (plain && /[₀-₉⁺⁻⇌]/.test(plain))
           expect(item[`${field}_segments`]?.length, `${item.slug}.${field}`).toBeGreaterThan(0);
+        // ZAM bundles a card field as plain text or as segments, never both
+        // (ADR 2026-10-14b in zam-os/zam).
+        expect(plain === undefined, `${item.slug}.${field}: plain or segments`).toBe(
+          item[`${field}_segments`] !== undefined,
+        );
       }
     }
   });
