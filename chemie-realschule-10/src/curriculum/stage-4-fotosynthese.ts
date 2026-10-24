@@ -2,7 +2,7 @@ import { C_WATER, FUELS } from "../chemistry/model";
 import { fmt, round } from "../exercises/format";
 import { makeLab } from "../lab/definitions";
 import type { Stage } from "../model/types";
-import { cases, cc, lesson, numberField } from "./helpers";
+import { cases, cc, lesson, numberField, withSlips } from "./helpers";
 
 const id = "fotosynthese";
 export const STAGE_FOTOSYNTHESE: Stage = {
@@ -21,7 +21,7 @@ export const STAGE_FOTOSYNTHESE: Stage = {
       subtitle: "Verkohlung und Kalkwasserprobe",
       bindings: { I: 3, II_III: 4 },
       why: "Alle organischen Stoffe enthalten Kohlenstoff, und zwei einfache Versuche zeigen ihn.",
-      html: "<p>Organische Verbindungen sind Kohlenstoffverbindungen: Zucker, Fette, Eiweiße, Holz, Erdöl und Kunststoffe. Kohlenstoff lässt sich auf zwei Wegen nachweisen. Bei der <strong>Verkohlung</strong> erhitzt man einen Stoff unter Luftmangel stark: Ein schwarzer Rückstand aus Kohlenstoff bleibt zurück, oft kondensiert zusätzlich Wasser. Bei der <strong>Kalkwasserprobe</strong> verbrennt man den Stoff und leitet die Abgase in Kalkwasser: Es trübt sich, weil Kohlenstoffdioxid mit Calciumhydroxid schwer lösliches Calciumcarbonat bildet.</p><p>Die Verkohlung zeigt den Kohlenstoff direkt, die Kalkwasserprobe indirekt über das Verbrennungsprodukt CO₂. Ausnahmen wie Kohlenstoffdioxid, Carbonate und Kohlenstoffmonooxid zählt man trotz Kohlenstoff zu den anorganischen Stoffen.</p><div class=\"example\"><strong>Beispiel:</strong> Mehl verkohlt beim Erhitzen; die Abgase einer brennenden Kerze trüben Kalkwasser: CO₂ + Ca(OH)₂ → CaCO₃ + H₂O.</div>",
+      html: "<p>Organische Verbindungen sind Kohlenstoffverbindungen: Zucker, Fette, Eiweiße, Holz, Erdöl und Kunststoffe. Kohlenstoff lässt sich auf zwei Wegen nachweisen. Bei der <strong>Verkohlung</strong> erhitzt man einen Stoff unter Luftmangel stark: Ein schwarzer Rückstand aus Kohlenstoff bleibt zurück, oft kondensiert zusätzlich Wasser. Bei der <strong>Kalkwasserprobe</strong> verbrennt man den Stoff und leitet die Abgase in Kalkwasser: Es trübt sich, weil Kohlenstoffdioxid mit Calciumhydroxid schwer lösliches Calciumcarbonat bildet.</p><p>Die Verkohlung zeigt den Kohlenstoff direkt, die Kalkwasserprobe indirekt über das Verbrennungsprodukt CO₂. Ausnahmen wie Kohlenstoffdioxid, Carbonate und Kohlenstoffmonoxid zählt man trotz Kohlenstoff zu den anorganischen Stoffen.</p><div class=\"example\"><strong>Beispiel:</strong> Mehl verkohlt beim Erhitzen; die Abgase einer brennenden Kerze trüben Kalkwasser: CO₂ + Ca(OH)₂ → CaCO₃ + H₂O.</div>",
       rule: "Verkohlung: schwarzer Rückstand = C · Kalkwasser trüb: CO₂ aus dem Kohlenstoff des Stoffes",
       terms: [["Kalkwasserprobe", "CO₂ + Ca(OH)₂ → CaCO₃ + H₂O", "Trübung durch Calciumcarbonat"]],
       quiz: [
@@ -91,7 +91,7 @@ export const STAGE_FOTOSYNTHESE: Stage = {
               prompt: `Ein Blatt nimmt ${co2} g Kohlenstoffdioxid auf (M = 44 g/mol). Wie viel Gramm Glucose (M = 180 g/mol) kann es daraus höchstens bilden?`,
               given: [],
               formulaHint: "n(CO₂) → n(Glucose) = n(CO₂) : 6 → m = n · M",
-              fields: [{ ...numberField("m(Glucose)", mass, "g", 1), tolerance: 0.01 }],
+              fields: [{ ...withSlips(numberField("m(Glucose)", mass, "g", 1), [round((co2 / 44) * 180, 1), "Für ein Glucosemolekül braucht die Pflanze sechs CO₂-Moleküle: Teile n(CO₂) durch 6."]), tolerance: 0.01 }],
               steps: [`n(CO₂) = ${co2} g : 44 g/mol = ${fmt(co2 / 44, 0)} mol`, `n(Glucose) = ${fmt(co2 / 44, 0)} mol : 6`, `<strong>m = ${fmt(mass, 1)} g</strong>`],
             };
           },
@@ -130,24 +130,33 @@ export const STAGE_FOTOSYNTHESE: Stage = {
           id: "waerme",
           make(rng, level) {
             const water = rng.pick([100, 150, 200, 250]);
-            const rise = rng.int(5, 30);
-            const q = (C_WATER * water * rise) / 1000;
-            if (level === 1)
+            if (level === 1) {
+              const rise = rng.int(5, 30);
+              const q = (C_WATER * water * rise) / 1000;
               return {
                 prompt: `${water} g Wasser erwärmen sich beim Verbrennen einer Probe um ${rise} K. Berechne die vom Wasser aufgenommene Wärme in kJ.`,
                 given: ["c(Wasser) = 4,19 J/(g·K)", `m = ${water} g`, `ΔT = ${rise} K`],
                 formulaHint: "Q = c · m · ΔT",
-                fields: [{ ...numberField("Q", round(q, 2), "kJ", 2), tolerance: 0.01 }],
+                fields: [{ ...withSlips(numberField("Q", round(q, 2), "kJ", 2), [round(q * 1000, 0), "Das Ergebnis ist in Joule. Teile durch 1000 für Kilojoule."]), tolerance: 0.01 }],
                 steps: [`Q = 4,19 J/(g·K) · ${water} g · ${rise} K`, `Q = ${fmt(q * 1000, 0)} J`, `<strong>${fmt(q, 2)} kJ</strong>`],
               };
+            }
+            // Level 2 draws the temperature rise so that the measured value stays
+            // between 8 and 24 kJ/g: a peanut holds about 25 kJ/g, and an open
+            // set-up always loses heat, so the result must stay below that.
             const sample = rng.pick([0.5, 0.8, 1, 1.2]);
+            const kjPerGramPerKelvin = (C_WATER * water) / 1000 / sample;
+            const minRise = Math.max(5, Math.ceil(8 / kjPerGramPerKelvin));
+            const maxRise = Math.min(30, Math.floor(24 / kjPerGramPerKelvin));
+            const rise = rng.int(minRise, maxRise);
+            const q = (C_WATER * water * rise) / 1000;
             const perGram = q / sample;
             return {
               prompt: `Eine Erdnuss mit ${fmt(sample, 1)} g erwärmt beim Verbrennen ${water} g Wasser um ${rise} K. Welchen Energiegehalt in kJ/g ergibt dieser Versuch?`,
               given: [],
               formulaHint: "Erst Q = c · m · ΔT, dann durch die Probenmasse teilen",
-              fields: [{ ...numberField("Energiegehalt", round(perGram, 1), "kJ/g", 1), tolerance: 0.02 }],
-              steps: [`Q = 4,19 · ${water} · ${rise} J = ${fmt(q, 2)} kJ`, `${fmt(q, 2)} kJ : ${fmt(sample, 1)} g`, `<strong>${fmt(perGram, 1)} kJ/g</strong> (kleiner als der Tabellenwert 25 kJ/g wegen Wärmeverlusten)`],
+              fields: [{ ...withSlips(numberField("Energiegehalt", round(perGram, 1), "kJ/g", 1), [round(q, 2), "Das ist die Wärme der ganzen Probe. Teile noch durch ihre Masse."], [round(perGram * 1000, 0), "Rechne Joule in Kilojoule um: durch 1000 teilen."]), tolerance: 0.02 }],
+              steps: [`Q = 4,19 J/(g·K) · ${water} g · ${rise} K = ${fmt(q * 1000, 0)} J = ${fmt(q, 2)} kJ`, `${fmt(q, 2)} kJ : ${fmt(sample, 1)} g`, `<strong>${fmt(perGram, 1)} kJ/g</strong>; kleiner als der Tabellenwert von etwa 25 kJ/g, weil Wärme an Luft und Gefäß verloren geht`],
             };
           },
         },

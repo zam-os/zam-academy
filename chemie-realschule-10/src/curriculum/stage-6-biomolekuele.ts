@@ -2,7 +2,7 @@ import { FATTY_ACIDS, fatState } from "../chemistry/model";
 import { fmt } from "../exercises/format";
 import { makeLab } from "../lab/definitions";
 import type { Stage } from "../model/types";
-import { cases, cc, choiceField, lesson, numberField } from "./helpers";
+import { cases, cc, choiceField, lesson, numberField, withSlips } from "./helpers";
 
 const id = "biomolekuele";
 const PROTEINE = "C10 LB 5.1 (I) · C10 LB 6.2 (II/III), Wahlbereich";
@@ -26,10 +26,10 @@ export const STAGE_BIOMOLEKUELE: Stage = {
       bindings: { I: 5, II_III: 6 },
       lehrplan: PROTEINE,
       why: "Aminosäuren sind die Bausteine aller Proteine; ihre zwei Gruppen machen die Verknüpfung möglich.",
-      html: "<p>Ein Aminosäuremolekül trägt an einem C-Atom eine <strong>Aminogruppe</strong> –NH₂ und eine <strong>Carboxygruppe</strong> –COOH, dazu ein H-Atom und einen Rest R. Die einfachste ist Glycin (R = H): H₂N–CH₂–COOH. In Proteinen kommen 20 verschiedene Aminosäuren vor; sie unterscheiden sich im Rest R, der polar, unpolar, sauer oder basisch sein kann.</p><p>Die funktionellen Gruppen lassen sich nachweisen. Erhitzt man Glycin mit Natronlauge, entweicht Ammoniak, das feuchtes Indikatorpapier blau färbt: Das Molekül enthält Stickstoff in einer Aminogruppe. Aminosäuren mit einer zusätzlichen Carboxygruppe, wie Glutaminsäure, färben Universalindikator orange-rot: Die Carboxygruppe kann Protonen abgeben. Einige Aminosäuren kann der Mensch nicht selbst herstellen; sie müssen mit der Nahrung aufgenommen werden (essenzielle Aminosäuren).</p><div class=\"example\"><strong>Beispiel:</strong> Alanin H₂N–CH(CH₃)–COOH: Rest R = CH₃.</div>",
+      html: "<p>Ein Aminosäuremolekül trägt an einem C-Atom eine <strong>Aminogruppe</strong> –NH₂ und eine <strong>Carboxygruppe</strong> –COOH, dazu ein H-Atom und einen Rest R. Die einfachste ist Glycin (R = H): H₂N–CH₂–COOH. In Proteinen kommen 20 verschiedene Aminosäuren vor; sie unterscheiden sich im Rest R, der polar, unpolar, sauer oder basisch sein kann.</p><p>Die funktionellen Gruppen lassen sich nachweisen. Erhitzt man Glycin trocken im Reagenzglas, entweicht Ammoniak, das angefeuchtetes Universalindikatorpapier blau färbt: Das Molekül enthält Stickstoff in einer Aminogruppe. Ein zweiter Nachweis der Aminogruppe ist die <strong>Ninhydrinreaktion</strong>: Mit Ninhydrin färbt sich eine Aminosäurelösung beim Erwärmen violett. Die Carboxygruppe gibt Protonen ab: Eine Aminosäurelösung reagiert mit einem unedlen Metall wie Magnesium, das entstehende Gas zeigt die Knallgasprobe als Wasserstoff. Aminosäuren mit einer zusätzlichen Carboxygruppe, wie Glutaminsäure, färben Universalindikator orange-rot. Einige Aminosäuren kann der Mensch nicht selbst herstellen; sie müssen mit der Nahrung aufgenommen werden (essenzielle Aminosäuren).</p><div class=\"example\"><strong>Beispiel:</strong> Alanin H₂N–CH(CH₃)–COOH: Rest R = CH₃.</div>",
       rule: "Aminosäure = Aminogruppe –NH₂ + Carboxygruppe –COOH + Rest R an einem C-Atom",
       terms: [
-        ["Aminogruppe", "–NH₂", "Nachweis: NH₃ beim Erhitzen mit Natronlauge"],
+        ["Aminogruppe", "–NH₂", "Nachweis: trockenes Erhitzen (Indikatorpapier blau) oder Ninhydrin (violett)"],
         ["Carboxygruppe", "–COOH", "saure Reaktion"],
       ],
       quiz: [
@@ -45,7 +45,7 @@ export const STAGE_BIOMOLEKUELE: Stage = {
           [
             cc("Welche Gruppe ist in H₂N–CH₂–COOH für die saure Wirkung verantwortlich?", "Die Carboxygruppe –COOH.", ["Die Aminogruppe –NH₂.", "Die CH₂-Gruppe."], "Die O–H-Bindung der Carboxygruppe kann ein Proton abgeben.", "Säuregruppe suchen."),
             cc("Worin unterscheiden sich die 20 proteinogenen Aminosäuren?", "Im Rest R.", ["In der Zahl der Carboxygruppen am zentralen C-Atom.", "Sie unterscheiden sich gar nicht."], "Aminogruppe, Carboxygruppe und H-Atom sind bei allen gleich.", "Was ist variabel?"),
-            cc("Welcher Befund zeigt Stickstoff in Glycin?", "Beim Erhitzen mit Natronlauge färbt sich feuchtes Indikatorpapier blau.", ["Glycin entfärbt Bromwasser.", "Glycin trübt Kalkwasser ohne Verbrennung."], "Es entweicht Ammoniak NH₃.", "Welches Gas ist alkalisch?"),
+            cc("Welcher Befund zeigt Stickstoff in Glycin?", "Beim trockenen Erhitzen färbt sich angefeuchtetes Universalindikatorpapier blau.", ["Glycin entfärbt Bromwasser.", "Glycin trübt Kalkwasser ohne Verbrennung."], "Es entweicht Ammoniak NH₃.", "Welches Gas ist alkalisch?"),
           ],
           [
             cc("Warum muss der Mensch bestimmte Aminosäuren mit der Nahrung aufnehmen?", "Er kann diese essenziellen Aminosäuren nicht selbst herstellen.", ["Weil Aminosäuren im Körper nicht vorkommen.", "Weil sie nur als Energiequelle dienen."], "Ohne sie können bestimmte Proteine nicht gebildet werden.", "Was heißt essenziell?"),
@@ -59,7 +59,7 @@ export const STAGE_BIOMOLEKUELE: Stage = {
             cc("Wie heißt die einfachste Aminosäure?", "Glycin", ["Glucose", "Glycerin"], "Bei Glycin ist der Rest ein H-Atom.", "Nicht mit Zucker und Glycerin verwechseln."),
           ],
           [
-            cc("Ein Stoff enthält C, H, O und N, reagiert sauer und liefert mit Natronlauge Ammoniak. Was ist er vermutlich?", "Eine Aminosäure mit zusätzlicher Säuregruppe.", ["Ein Fett.", "Ein Kohlenhydrat."], "Fette und Kohlenhydrate enthalten keinen Stickstoff.", "Welche Biomoleküle enthalten N?"),
+            cc("Ein Stoff enthält C, H, O und N, reagiert sauer und färbt sich mit Ninhydrin violett. Was ist er vermutlich?", "Eine Aminosäure mit zusätzlicher Säuregruppe.", ["Ein Fett.", "Ein Kohlenhydrat."], "Fette und Kohlenhydrate enthalten keinen Stickstoff.", "Welche Biomoleküle enthalten N?"),
             cc("Warum spielt die Kombination aus Amino- und Carboxygruppe eine Schlüsselrolle für Proteine?", "Die Gruppen zweier Aminosäuren können sich zu einer Peptidbindung verknüpfen.", ["Sie verhindern jede Verknüpfung.", "Sie machen Aminosäuren zu Fetten."], "Kondensation zwischen –COOH und –NH₂.", "Wie entstehen Ketten?"),
           ],
         ),
@@ -95,7 +95,7 @@ export const STAGE_BIOMOLEKUELE: Stage = {
                 prompt: `Ein Peptid besteht aus ${n} Aminosäuren. Wie viele Peptidbindungen enthält es, und wie viele Wassermoleküle wurden abgespalten?`,
                 given: ["Jede Verknüpfung: eine Peptidbindung, ein H₂O"],
                 formulaHint: "n Bausteine → n − 1 Verknüpfungen",
-                fields: [numberField("Peptidbindungen", n - 1), numberField("Wassermoleküle", n - 1)],
+                fields: [withSlips(numberField("Peptidbindungen", n - 1), [n, "Eine Kette aus n Gliedern hat nur n − 1 Verbindungsstellen."]), withSlips(numberField("Wassermoleküle", n - 1), [n, "Jede Peptidbindung spaltet ein H₂O ab: so viele wie Bindungen, nicht wie Aminosäuren."])],
                 steps: [`${n} Aminosäuren in einer Kette.`, `${n} − 1 = ${n - 1} Verknüpfungen.`, `<strong>${n - 1} und ${n - 1}</strong>`],
               };
             }
@@ -105,7 +105,7 @@ export const STAGE_BIOMOLEKUELE: Stage = {
               prompt: `Aus ${k} verschiedenen Aminosäuren soll ein Peptid entstehen, in dem jede genau einmal vorkommt. Wie viele verschiedene Primärstrukturen sind möglich?`,
               given: [],
               formulaHint: "Für die erste Stelle k Möglichkeiten, für die zweite k − 1, …",
-              fields: [numberField("Sequenzen", count)],
+              fields: [withSlips(numberField("Sequenzen", count), [k, "Die Reihenfolge zählt: Für jede Stelle gibt es eine Möglichkeit weniger. Multipliziere."])],
               steps: ["Die Reihenfolge zählt: Gly-Ala ist nicht Ala-Gly.", `${Array.from({ length: k }, (_, i) => k - i).join(" · ")}`, `<strong>${count}</strong>`],
             };
           },
@@ -172,7 +172,7 @@ export const STAGE_BIOMOLEKUELE: Stage = {
       bindings: { I: 5, II_III: 6 },
       lehrplan: KOHLENHYDRATE,
       why: "Glucose und Fructose haben dieselbe Summenformel, aber verschiedene Strukturen und Nachweise.",
-      html: "<p><strong>Glucose</strong> (Traubenzucker) und <strong>Fructose</strong> (Fruchtzucker) haben beide die Summenformel C₆H₁₂O₆; sie sind Isomere. In Wasser liegen sie überwiegend als Ringe vor. In der <strong>Haworth-Projektion</strong> zeichnet man den Ring flach und schräg von vorne; alle Atomsymbole werden angegeben, die OH-Gruppen zeigen nach oben oder unten. Glucose bildet einen Sechsring aus fünf C-Atomen und einem O-Atom, Fructose einen Fünfring aus vier C-Atomen und einem O-Atom. Viele OH-Gruppen machen beide gut wasserlöslich und süß.</p><p>Zur Unterscheidung nutzt man zwei Nachweise. <strong>Glucoseteststäbchen</strong> enthalten ein Enzym, das nur Glucose umsetzt; die Testzone verfärbt sich. Die <strong>Seliwanow-Reaktion</strong> (Erhitzen mit Resorcin in Salzsäure) färbt Fructose schnell rot, Glucose in derselben Zeit nicht.</p><div class=\"example\"><strong>Beispiel:</strong> Honig: Teststäbchen positiv und Seliwanow positiv, er enthält Glucose und Fructose.</div>",
+      html: "<p><strong>Glucose</strong> (Traubenzucker) und <strong>Fructose</strong> (Fruchtzucker) haben beide die Summenformel C₆H₁₂O₆; sie sind Isomere. In Wasser liegen sie überwiegend als Ringe vor. In der <strong>Haworth-Projektion</strong> zeichnet man den Ring flach und schräg von vorne; alle Atomsymbole werden angegeben, die OH-Gruppen zeigen nach oben oder unten. Glucose bildet einen Sechsring aus fünf C-Atomen und einem O-Atom. Fructose zeichnet man als Fünfring aus vier C-Atomen und einem O-Atom, so wie sie in der Saccharose gebunden ist; gelöst liegt sie auch als Sechsring vor. Viele OH-Gruppen machen beide gut wasserlöslich und süß.</p><p>Zur Unterscheidung nutzt man zwei Nachweise. <strong>Glucoseteststäbchen</strong> enthalten ein Enzym, das nur Glucose umsetzt; die Testzone verfärbt sich. Die <strong>Seliwanow-Reaktion</strong> (Erhitzen mit Resorcin in Salzsäure) färbt Fructose schnell rot, Glucose in derselben Zeit nicht.</p><div class=\"example\"><strong>Beispiel:</strong> Honig: Teststäbchen positiv und Seliwanow positiv, er enthält Glucose und Fructose.</div>",
       rule: "Glucose: Sechsring, Teststäbchen positiv · Fructose: Fünfring, Seliwanow schnell rot · beide C₆H₁₂O₆",
       terms: [
         ["Glucose", "C₆H₁₂O₆, Sechsring (5 C + 1 O)", "Glucoseteststäbchen"],
@@ -240,7 +240,7 @@ export const STAGE_BIOMOLEKUELE: Stage = {
                 prompt: `Ein Amylose-Ausschnitt besteht aus ${n} Glucosebausteinen. Wie viele Wassermoleküle wurden bei seiner Bildung abgespalten?`,
                 given: ["Jede Verknüpfung spaltet ein H₂O ab."],
                 formulaHint: "n Bausteine → n − 1 Verknüpfungen",
-                fields: [numberField("Wassermoleküle", n - 1)],
+                fields: [withSlips(numberField("Wassermoleküle", n - 1), [n, "Eine Kette aus n Bausteinen hat nur n − 1 Verknüpfungen."])],
                 steps: [`${n} Glucosebausteine.`, `${n} − 1 = ${n - 1} Verknüpfungen.`, `<strong>${n - 1} H₂O</strong>`],
               };
             const mass = n * 180 - (n - 1) * 18;
@@ -248,7 +248,7 @@ export const STAGE_BIOMOLEKUELE: Stage = {
               prompt: `Berechne die molare Masse eines Kettenausschnitts aus ${n} Glucosebausteinen (M(Glucose) = 180 g/mol, M(Wasser) = 18 g/mol).`,
               given: [],
               formulaHint: "n · 180 g/mol − (n − 1) · 18 g/mol",
-              fields: [numberField("M", mass, "g/mol")],
+              fields: [withSlips(numberField("M", mass, "g/mol"), [n * 180, "Bei jeder Verknüpfung wird ein Wassermolekül abgespalten: Ziehe (n − 1) · 18 g/mol ab."], [n * 180 - n * 18, "Es gibt nur n − 1 Verknüpfungen, also n − 1 abgespaltene Wassermoleküle."])],
               steps: [`${n} · 180 g/mol = ${fmt(n * 180, 0)} g/mol`, `− ${n - 1} · 18 g/mol = − ${fmt((n - 1) * 18, 0)} g/mol`, `<strong>${fmt(mass, 0)} g/mol</strong>`],
             };
           },
@@ -316,7 +316,7 @@ export const STAGE_BIOMOLEKUELE: Stage = {
       lehrplan: FETTE,
       why: "Ob ein Fett fest oder flüssig ist und wie gesund es ist, hängt an seinen Fettsäuren.",
       html: "<p>Ein Fettmolekül ist ein <strong>Ester</strong> aus einem Glycerinmolekül und drei Fettsäuremolekülen (<strong>Trifettsäureglycerinester</strong>); bei seiner Bildung werden drei Wassermoleküle abgespalten. Fettsäuren sind langkettige Alkansäuren. <strong>Gesättigte</strong> Fettsäuren wie Stearinsäure haben nur Einfachbindungen; ihre gestreckten Ketten lagern sich dicht aneinander, die Van-der-Waals-Kräfte sind stark: Das Fett ist bei Raumtemperatur fest. <strong>Ungesättigte</strong> Fettsäuren wie Ölsäure haben C=C-Doppelbindungen, die einen Knick in die Kette bringen; die Moleküle liegen lockerer: fette Öle sind flüssig. Doppelbindungen entfärben Bromwasser.</p><p>Fette sind unpolar: Sie lösen sich nicht in Wasser, aber in Heptan. Sie sind brennbar und liefern rund 37 kJ/g. Als Nahrungsmittel liefern sie Energie und lebenswichtige mehrfach ungesättigte Fettsäuren; zu viel gesättigtes Fett gilt als ungesund. Als nachwachsender Rohstoff dienen fette Öle für Biodiesel, Seifen und Schmierstoffe; dabei konkurrieren sie mit der Ernährung.</p><div class=\"example\"><strong>Beispiel:</strong> Tristearin C₅₇H₁₁₀O₆ ist fest; Triolein mit drei Ölsäureresten ist flüssig und entfärbt Bromwasser.</div>",
-      rule: "Glycerin + 3 Fettsäuren → Fett + 3 H₂O · gesättigt → eher fest · ungesättigt (C=C) → eher flüssig",
+      rule: "Glycerin + 3 Fettsäuren → Fett + 3 H₂O · höchstens ein ungesättigter Rest → eher fest · zwei oder drei ungesättigte Reste (C=C) → eher flüssig",
       terms: [
         ["Fett", "Trifettsäureglycerinester", "Glycerin + 3 Fettsäuren − 3 H₂O"],
         ["Fettsäuren", "Palmitinsäure C₁₅H₃₁COOH · Stearinsäure C₁₇H₃₅COOH · Ölsäure C₁₇H₃₃COOH", ""],
@@ -340,22 +340,23 @@ export const STAGE_BIOMOLEKUELE: Stage = {
                 prompt: `Ein Fettmolekül enthält die Reste von ${names}. Wie viele C=C-Doppelbindungen hat es?`,
                 given: acids.map((a) => `${a.name}: ${a.doubleBonds} C=C`),
                 formulaHint: "Doppelbindungen der drei Reste addieren",
-                fields: [numberField("C=C", bonds)],
+                fields: [withSlips(numberField("C=C", bonds), [acids.filter((a) => a.doubleBonds > 0).length, "Linolsäure und Linolensäure haben mehr als eine Doppelbindung: Addiere die Zahlen."])],
                 steps: ["Glycerin selbst hat keine Doppelbindung.", acids.map((a) => a.doubleBonds).join(" + "), `<strong>${bonds}</strong>`],
               };
+            const unsaturated = acids.filter((a) => a.doubleBonds > 0).length;
             const state = fatState(acids) === "fest" ? "eher fest" : "eher flüssig";
             const bromine = bonds > 0 ? "entfärbt" : "bleibt braun";
             return {
               prompt: `Ein Fettmolekül enthält die Reste von ${names}. Ist es bei 20 °C eher fest oder flüssig, und wie verhält es sich gegenüber Bromwasser?`,
               given: [],
-              formulaHint: "Ungesättigte Reste zählen; Doppelbindungen entfärben Bromwasser.",
+              formulaHint: "Ungesättigte Reste zählen: ab zwei eher flüssig; Doppelbindungen entfärben Bromwasser.",
               fields: [
                 choiceField(rng, "Bei 20 °C", state, [state === "eher fest" ? "eher flüssig" : "eher fest", "gasförmig"]),
                 choiceField(rng, "Bromwasser", bromine, [bonds > 0 ? "bleibt braun" : "entfärbt", "wird blau"]),
               ],
               steps: [
-                `Ungesättigte Reste: ${acids.filter((a) => a.doubleBonds > 0).length}, Doppelbindungen: ${bonds}.`,
-                "Mehrere geknickte Ketten → lockere Packung → flüssig; C=C addiert Brom.",
+                `Ungesättigte Reste: ${unsaturated}, Doppelbindungen: ${bonds}.`,
+                `${unsaturated >= 2 ? "Zwei oder drei geknickte Ketten → lockere Packung → eher flüssig" : "Höchstens eine geknickte Kette → dichte Packung → eher fest"}; ${bonds > 0 ? "C=C addiert Brom" : "ohne C=C wird kein Brom addiert"}.`,
                 `<strong>${state}; Bromwasser ${bromine}</strong>`,
               ],
             };

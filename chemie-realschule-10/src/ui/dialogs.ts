@@ -40,7 +40,7 @@ export function showZamDialog(): void {
       <div class="dialog-header">
         <div>
           <span class="dialog-kicker">🧠 HIER ÜBEN → IN ZAM BEHALTEN</span>
-          <h2 class="dialog-title">Chemie 9 mit ZAM behalten</h2>
+          <h2 class="dialog-title">Chemie 10 mit ZAM behalten</h2>
         </div>
         <button type="button" class="icon-btn" data-close aria-label="Schließen">✕</button>
       </div>

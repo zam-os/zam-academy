@@ -8,9 +8,10 @@ import {
   saltName,
   saltRatio,
 } from "../chemistry/model";
+import { paren } from "../exercises/format";
 import { ION_METALS, ION_NONMETALS, makeLab, REDOX_REACTIONS } from "../lab/definitions";
 import type { Stage } from "../model/types";
-import { cases, cc, choiceField, lesson, numberField } from "./helpers";
+import { cases, cc, choiceField, lesson, numberField, signed, withSlips } from "./helpers";
 
 const id = "elektronen";
 
@@ -79,7 +80,7 @@ export const STAGE_ELEKTRONEN: Stage = {
               prompt: `Aus den Elementen ${metal.element} und ${nonmetalName} werden ${units} Formeleinheiten ${saltFormula(metal, nonmetal)} gebildet. Wie viele Elektronen werden dabei insgesamt übertragen?`,
               given: [],
               formulaHint: "Erst Elektronen je Formeleinheit, dann mit der Zahl der Formeleinheiten multiplizieren",
-              fields: [numberField("Elektronen", units * electrons)],
+              fields: [withSlips(numberField("Elektronen", units * electrons), [electrons, "Das ist eine Formeleinheit. Multipliziere mit der Zahl der Formeleinheiten."], [units * metal.charge, "Zähle alle Kationen einer Formeleinheit, nicht nur eines."])],
               steps: [
                 `Ionen ${ionFormula(metal)} und ${ionFormula(nonmetal)}: je Formeleinheit ${c} · ${metal.charge} = ${electrons} e⁻.`,
                 `${units} · ${electrons}`,
@@ -174,8 +175,8 @@ export const STAGE_ELEKTRONEN: Stage = {
       subtitle: "Aus Ionenladungen zur Formel und zurück",
       bindings: { II_III: 2 },
       why: "Aus den Ionenladungen ergibt sich die Formel eines Salzes, aus dem Namen die Ladungen.",
-      html: "<p>Ein Salz ist nach außen elektrisch neutral. Die <strong>Verhältnisformel</strong> gibt das kleinste ganzzahlige Verhältnis von Kationen zu Anionen im Ionengitter an: Al³⁺ und O²⁻ gleichen sich im Verhältnis 2 : 3 aus, also Al₂O₃. Mehratomige Ionen wie Sulfat SO₄²⁻ setzt man in Klammern, wenn mehrere davon vorkommen: Al₂(SO₄)₃.</p><p>Der Name nennt zuerst das Metall mit seiner Oxidationszahl in römischen Ziffern, dann das Anion: Eisen(III)-oxid, Natrium(I)-chlorid. Bei Metallen mit nur einer üblichen Ionenladung lässt man die Zahl im Alltag oft weg (Natriumchlorid); bei Eisen oder Kupfer ist sie nötig. Anders als eine <strong>Molekülformel</strong> (H₂O beschreibt ein einzelnes Molekül) beschreibt die Verhältnisformel kein einzelnes Teilchen, sondern ein Zahlenverhältnis im Gitter.</p><div class=\"example\"><strong>Beispiel:</strong> Eisen(III)-sulfat: Fe³⁺ und SO₄²⁻ → 2 · (+3) = 3 · (−2) → Fe₂(SO₄)₃.</div>",
-      rule: "Summe der Ladungen = 0 → kleinstes ganzzahliges Verhältnis · Name: Metall(Oxidationszahl)-Anion",
+      html: "<p>Ein Salz ist nach außen elektrisch neutral. Die <strong>Verhältnisformel</strong> gibt das kleinste ganzzahlige Verhältnis von Kationen zu Anionen im Ionengitter an: Al³⁺ und O²⁻ gleichen sich im Verhältnis 2 : 3 aus, also Al₂O₃. Mehratomige Ionen wie Sulfat SO₄²⁻ setzt man in Klammern, wenn mehrere davon vorkommen: Al₂(SO₄)₃.</p><p>Der Name nennt zuerst das Metall, dann das Anion: Natriumchlorid. Bildet ein Metall Ionen mit verschiedenen Ladungen, steht seine Oxidationszahl in römischen Ziffern dahinter: Eisen(III)-oxid. Anders als eine <strong>Molekülformel</strong> (H₂O beschreibt ein einzelnes Molekül) beschreibt die Verhältnisformel kein einzelnes Teilchen, sondern ein Zahlenverhältnis im Gitter.</p><div class=\"example\"><strong>Beispiel:</strong> Eisen(III)-sulfat: Fe³⁺ und SO₄²⁻ → 2 · (+3) = 3 · (−2) → Fe₂(SO₄)₃.</div>",
+      rule: "Summe der Ladungen = 0 → kleinstes ganzzahliges Verhältnis · Name: Metall + Anion, bei mehreren Ionenladungen Metall(Oxidationszahl)-Anion",
       terms: [
         ["Verhältnisformel", "Kationen : Anionen im Gitter, kleinste ganze Zahlen", "z. B. MgCl₂"],
         ["Molekülformel", "Atome eines einzelnen Moleküls", "z. B. H₂O, CO₂"],
@@ -323,8 +324,8 @@ export const STAGE_ELEKTRONEN: Stage = {
                 fields: [numberField("Bilanz", delta, "kJ/mol")],
                 steps: [
                   "Zum Lösen wird die Gitterenergie aufgewendet, die Hydratationsenergie wird frei.",
-                  `${lattice} − ${hydration} = ${delta}`,
-                  `<strong>${delta > 0 ? "+" : ""}${delta} kJ/mol</strong>: Die Lösung ${delta > 0 ? "kühlt ab" : "erwärmt sich"}.`,
+                  `${lattice} − ${hydration} = ${signed(delta)}`,
+                  `<strong>${delta > 0 ? "+" : ""}${signed(delta)} kJ/mol</strong>: Die Lösung ${delta > 0 ? "kühlt ab" : "erwärmt sich"}.`,
                 ],
               };
             return {
@@ -334,7 +335,7 @@ export const STAGE_ELEKTRONEN: Stage = {
               fields: [numberField("Gitterenergie", lattice, "kJ/mol")],
               steps: [
                 "Gitterenergie = Bilanz + Hydratationsenergie",
-                `${delta} + ${hydration} = ${lattice}`,
+                `${paren(delta, 0)} + ${hydration} = ${lattice}`,
                 `<strong>${lattice} kJ/mol</strong>`,
               ],
             };

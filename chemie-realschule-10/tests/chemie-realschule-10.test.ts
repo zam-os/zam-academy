@@ -227,7 +227,7 @@ describe("Chemie models: scientific edge cases", () => {
   const ion = (core: string, charge: number) =>
     must([...CATIONS, ...ANIONS].find((i) => i.core === core && i.charge === charge));
 
-  it("reduces salt ratios, brackets polyatomic ions and names metals with their oxidation number", () => {
+  it("reduces salt ratios, brackets polyatomic ions and names variable-charge metals with their oxidation number", () => {
     expect(saltRatio(3, -2)).toEqual([2, 3]);
     expect(saltRatio(2, -2)).toEqual([1, 1]);
     expect(saltFormula(ion("Al", 3), ion("O", -2))).toBe("Al₂O₃");
@@ -236,8 +236,8 @@ describe("Chemie models: scientific edge cases", () => {
     expect(saltFormula(ion("Ca", 2), ion("PO₄", -3))).toBe("Ca₃(PO₄)₂");
     expect(saltFormula(ion("Na", 1), ion("NO₃", -1))).toBe("NaNO₃");
     expect(saltName(ion("Fe", 3) as (typeof CATIONS)[number], ion("O", -2))).toBe("Eisen(III)-oxid");
-    expect(saltName(CATIONS[0], ion("Cl", -1))).toBe("Natrium(I)-chlorid");
-    expect(saltName(CATIONS[0], ion("Cl", -1), false)).toBe("Natriumchlorid");
+    expect(saltName(CATIONS[0], ion("Cl", -1))).toBe("Natriumchlorid");
+    expect(saltName(CATIONS[0], ion("Cl", -1), true)).toBe("Natrium(I)-chlorid");
     for (const c of CATIONS)
       for (const a of ANIONS) {
         const [nc, na] = saltRatio(c.charge, a.charge);
@@ -355,6 +355,11 @@ describe("Every lab can be completed by interacting with the model", () => {
         const svg = labView(lab.kind).render(values, readouts);
         expect(svg).toContain('role="img"');
         expect(svg).not.toMatch(/\bNaN\b|Infinity|undefined/);
+        // Learner-facing text uses the real minus sign (U+2212), never "-3".
+        for (const [, text] of svg.matchAll(/>([^<]+)</g))
+          expect(text, `${lesson.id}: SVG text`).not.toMatch(/(^|[\s(:=])-\d/);
+        for (const value of Object.values(readouts))
+          if (typeof value === "string") expect(value, `${lesson.id}: readout`).not.toMatch(/(^|[\s(:=])-\d/);
       }
     });
 
@@ -383,6 +388,8 @@ describe("Every task generator over varied seeds and both levels", () => {
               level,
             );
             prompts[level].add(task.prompt);
+            for (const text of [task.prompt, ...task.given, ...task.steps])
+              expect(text, `${lesson.id} ${generator.id}: real minus sign`).not.toMatch(/(^|[\s(:=>])-\d/);
             expect(task.fields.length).toBeGreaterThan(0);
             expect(task.steps.length).toBeGreaterThanOrEqual(3);
             expect(task.prompt).not.toMatch(/\bNaN\b|undefined|Infinity/);
@@ -421,6 +428,14 @@ describe("Every task generator over varied seeds and both levels", () => {
                   : String(field.answer + Math.max(10, Math.abs(field.answer) * 2));
               expect(checkTask(task, wrong).status).toBe("wrong");
               expect(wrongAnswerHint(task, checkTask(task, wrong))).toBeTruthy();
+              // A typical mistake is graded wrong and gets its own hint.
+              for (const slip of field.kind === "number" ? (field.slips ?? []) : []) {
+                const typed = [...answers];
+                typed[index] = String(slip.value).replace(".", ",");
+                const result = checkTask(task, typed);
+                expect(result.status, `${lesson.id} ${generator.id}: slip ${slip.value}`).toBe("wrong");
+                expect(wrongAnswerHint(task, result)).toBe(slip.hint);
+              }
             }
           }
         // The level changes the task, not only the wording.
@@ -430,6 +445,71 @@ describe("Every task generator over varied seeds and both levels", () => {
         expect(overlap, `${lesson.id} ${generator.id}`).toHaveLength(0);
       }
     });
+
+  it("gives targeted hints for typical mistakes in the calculations", () => {
+    const withSlips = ALL_LESSONS.filter((lesson) =>
+      lesson.exercises.some((generator) =>
+        [1, 2].some((level) =>
+          generator
+            .make(createRng(seedFrom(`slips:${lesson.id}:${level}`)), level as 1 | 2)
+            .fields.some((field) => field.kind === "number" && field.slips?.length),
+        ),
+      ),
+    );
+    expect(withSlips.map((lesson) => lesson.id)).toEqual(
+      expect.arrayContaining([
+        "ch-ionenbildung",
+        "ch-ph-oxonium",
+        "ch-neutralisation",
+        "ch-titration",
+        "ch-fotosynthese",
+        "ch-energiegehalt",
+        "ch-peptide",
+        "ch-saccharose-polysaccharide",
+        "ch-fette",
+        "ch-silikone",
+        "ch-brennstoffzelle",
+      ]),
+    );
+  });
+
+  it("keeps the peanut measurement plausible and below the table value", () => {
+    const generator = must(must(findLessonById("ch-energiegehalt")).lesson.exercises.find((g) => g.id === "waerme"));
+    for (let seed = 0; seed < 400; seed++) {
+      const task = generator.make(createRng(seedFrom(`peanut:${seed}`)), 2);
+      const field = task.fields[0];
+      if (field.kind !== "number") throw new Error("Expected number field");
+      expect(field.answer, task.prompt).toBeGreaterThanOrEqual(8);
+      expect(field.answer, task.prompt).toBeLessThan(25);
+      // The derivation shows joules before kilojoules.
+      expect(task.steps[0]).toMatch(/ J = .* kJ$/);
+    }
+  });
+
+  it("explains the fat state and the bromine test with the same rule it grades", () => {
+    const generator = must(must(findLessonById("ch-fette")).lesson.exercises.find((g) => g.id === "fett-bau"));
+    for (let seed = 0; seed < 200; seed++) {
+      const task = generator.make(createRng(seedFrom(`fat:${seed}`)), 2);
+      const [state, bromine] = task.fields;
+      if (state.kind !== "choice" || bromine.kind !== "choice") throw new Error("Expected choices");
+      const solid = state.options[state.correctIndex] === "eher fest";
+      expect(task.steps[1].includes("eher fest"), task.prompt).toBe(solid);
+      const decolours = bromine.options[bromine.correctIndex] === "entfärbt";
+      expect(task.steps[1].includes("kein Brom"), task.prompt).toBe(!decolours);
+    }
+    expect(must(findLessonById("ch-fette")).lesson.formulas[0].html).toContain("höchstens ein ungesättigter Rest");
+  });
+
+  it("grades the silicone type with the lab's rule", () => {
+    const generator = must(must(findLessonById("ch-silikone")).lesson.exercises.find((g) => g.id === "chlorwasserstoff"));
+    for (let seed = 0; seed < 200; seed++) {
+      const task = generator.make(createRng(seedFrom(`silicone:${seed}`)), 2);
+      const [di, tri] = [...task.prompt.matchAll(/(\d+) \(?CH₃/g)].map((m) => Number(m[1]));
+      const field = task.fields[0];
+      if (field.kind !== "choice") throw new Error("Expected choice");
+      expect(field.options[field.correctIndex], task.prompt).toBe(siliconeType(1, di, tri).split(":")[0]);
+    }
+  });
 
   it("accepts decimal commas, signs and units", () => {
     expect(parseNumber("1,5")).toBe(1.5);
@@ -549,6 +629,17 @@ describe("The cell is the only card source, and every card leads to a taught les
       for (const item of atom.practice_items) expect(item.source_link).toBe(lessonLink(lesson.id));
       for (const prerequisite of atom.prerequisites)
         expect(atoms.some((other) => other.id === prerequisite.atom_id)).toBe(true);
+    }
+  });
+
+  it("writes chemical formulas on cards as segments with speech, except the kept legacy B cards", () => {
+    for (const item of items) {
+      if (item.slug.includes("legacy")) continue;
+      for (const field of ["question", "concept"] as const) {
+        const plain = item[field];
+        if (plain && /[₀-₉⁺⁻⇌]/.test(plain))
+          expect(item[`${field}_segments`]?.length, `${item.slug}.${field}`).toBeGreaterThan(0);
+      }
     }
   });
 

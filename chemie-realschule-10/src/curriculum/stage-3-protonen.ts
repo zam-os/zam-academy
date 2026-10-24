@@ -2,7 +2,7 @@ import { ACIDS, indicatorColor } from "../chemistry/model";
 import { fmt, round } from "../exercises/format";
 import { acidReaction, CARBONATE_ACIDS, CARBONATE_REACTANTS, makeLab } from "../lab/definitions";
 import type { Stage } from "../model/types";
-import { cases, cc, choiceField, lesson, numberField } from "./helpers";
+import { cases, cc, choiceField, lesson, numberField, withSlips } from "./helpers";
 
 const id = "protonen";
 export const STAGE_PROTONEN: Stage = {
@@ -205,7 +205,7 @@ export const STAGE_PROTONEN: Stage = {
                 prompt: `Der pH-Wert einer sauren Lösung steigt durch Verdünnen von ${from} auf ${from + delta}. Um welchen Faktor sinkt c(H₃O⁺)?`,
                 given: [`Differenz: ${delta} pH-Einheit${delta > 1 ? "en" : ""}`],
                 formulaHint: "Jede pH-Einheit: Faktor 10",
-                fields: [numberField("Faktor", factor)],
+                fields: [withSlips(numberField("Faktor", factor), [10 * delta, "Jede pH-Einheit bedeutet „mal 10“, nicht „plus 10“: Multipliziere die Zehnen."], [delta, "Das ist die pH-Differenz. Gefragt ist der Faktor der Konzentration."])],
                 steps: ["Eine pH-Einheit entspricht dem Faktor 10.", `${delta} Einheiten: 10${delta > 1 ? ["", "", "²", "³"][delta] : ""}`, `<strong>${fmt(factor, 0)}</strong>`],
               };
             const volume = rng.pick([10, 20, 50]);
@@ -214,7 +214,7 @@ export const STAGE_PROTONEN: Stage = {
               prompt: `${volume} ml Salzsäure mit pH ${from} werden mit Wasser auf ${fmt(final, 0)} ml aufgefüllt. Welchen pH-Wert hat die verdünnte Lösung?`,
               given: [],
               formulaHint: "Verdünnungsfaktor → Zahl der Zehnerschritte",
-              fields: [numberField("pH", from + delta)],
+              fields: [withSlips(numberField("pH", from + delta), [Math.max(0, from - delta), "Verdünnen macht eine saure Lösung weniger sauer: Der pH-Wert steigt."], [from + factor, "Zähle die Zehnerschritte des Verdünnungsfaktors, nicht den Faktor selbst."])],
               steps: [`Verdünnung ${volume} ml → ${fmt(final, 0)} ml: Faktor ${fmt(factor, 0)}.`, `Das sind ${delta} Schritte zu je 1 : 10.`, `<strong>pH ${from + delta}</strong>`],
             };
           },
@@ -255,18 +255,32 @@ export const STAGE_PROTONEN: Stage = {
             const acidV = rng.pick([10, 20, 25, 50]);
             const acidC = rng.pick([0.1, 0.2, 0.5]);
             const baseC = rng.pick([0.1, 0.2, 0.5].filter((c) => c !== acidC));
-            const baseV = round((acidV * acidC) / baseC, 1);
+            if (level === 1) {
+              const baseV = round((acidV * acidC) / baseC, 1);
+              return {
+                prompt: `${acidV} ml Salzsäure mit c = ${fmt(acidC, 1)} mol/l sollen mit Natronlauge (c = ${fmt(baseC, 1)} mol/l) neutralisiert werden. Wie viel Natronlauge brauchst du?`,
+                given: ["n(H₃O⁺) = n(OH⁻)", "n = c · V"],
+                formulaHint: "c(Säure) · V(Säure) = c(Lauge) · V(Lauge)",
+                fields: [withSlips(numberField("V(Natronlauge)", baseV, "ml", 1), [round((acidV * baseC) / acidC, 1), "Die Konzentrationen sind vertauscht: n(H₃O⁺) = c(Säure) · V(Säure), dann durch c(Lauge) teilen."])],
+                steps: [
+                  `n(H₃O⁺) = ${fmt(acidC, 1)} mol/l · ${acidV} ml = ${fmt(acidC * acidV, 1)} mmol`,
+                  `V = ${fmt(acidC * acidV, 1)} mmol : ${fmt(baseC, 1)} mol/l`,
+                  `<strong>${fmt(baseV, 1)} ml</strong>`,
+                ],
+              };
+            }
+            // Level 2 switches to Schwefelsäure: each molecule gives two
+            // protons, so the learner needs the extra factor 2.
+            const protons = 2 * acidC * acidV;
+            const baseV = round(protons / baseC, 1);
             return {
-              prompt:
-                level === 1
-                  ? `${acidV} ml Salzsäure mit c = ${fmt(acidC, 1)} mol/l sollen mit Natronlauge (c = ${fmt(baseC, 1)} mol/l) neutralisiert werden. Wie viel Natronlauge brauchst du?`
-                  : `Im Chemieraum stehen ${acidV} ml Salzsäurerest (${fmt(acidC, 1)} mol/l). Zum Neutralisieren gibt es nur Natronlauge mit ${fmt(baseC, 1)} mol/l. Berechne das nötige Volumen.`,
-              given: level === 1 ? ["n(H₃O⁺) = n(OH⁻)", "n = c · V"] : [],
-              formulaHint: "c(Säure) · V(Säure) = c(Lauge) · V(Lauge)",
-              fields: [{ ...numberField("V(Natronlauge)", baseV, "ml", 1) }],
+              prompt: `Im Chemieraum stehen ${acidV} ml verdünnte Schwefelsäure (H₂SO₄, ${fmt(acidC, 1)} mol/l). Zum Neutralisieren gibt es nur Natronlauge mit ${fmt(baseC, 1)} mol/l. Berechne das nötige Volumen.`,
+              given: [],
+              formulaHint: "Ein H₂SO₄-Molekül gibt zwei Protonen ab: n(OH⁻) = 2 · n(H₂SO₄)",
+              fields: [withSlips(numberField("V(Natronlauge)", baseV, "ml", 1), [round(protons / 2 / baseC, 1), "Ein H₂SO₄-Molekül gibt zwei Protonen ab: Du brauchst doppelt so viel OH⁻."])],
               steps: [
-                `n(H₃O⁺) = ${fmt(acidC, 1)} mol/l · ${acidV} ml = ${fmt(acidC * acidV, 1)} mmol`,
-                `V = ${fmt(acidC * acidV, 1)} mmol : ${fmt(baseC, 1)} mol/l`,
+                `n(H₂SO₄) = ${fmt(acidC, 1)} mol/l · ${acidV} ml = ${fmt(acidC * acidV, 1)} mmol → n(H₃O⁺) = 2 · ${fmt(acidC * acidV, 1)} mmol = ${fmt(protons, 1)} mmol`,
+                `V = ${fmt(protons, 1)} mmol : ${fmt(baseC, 1)} mol/l`,
                 `<strong>${fmt(baseV, 1)} ml</strong>`,
               ],
             };
@@ -317,7 +331,7 @@ export const STAGE_PROTONEN: Stage = {
                 prompt: `${sampleV} ml Salzsäure verbrauchen bis zum Umschlag ${fmt(baseV, 1)} ml Natronlauge mit c = 0,1 mol/l. Berechne c(HCl).`,
                 given: [`V(Säure) = ${sampleV} ml`, `V(Lauge) = ${fmt(baseV, 1)} ml`, "c(Lauge) = 0,1 mol/l"],
                 formulaHint: "c(Säure) = c(Lauge) · V(Lauge) : V(Säure)",
-                fields: [{ ...numberField("c(HCl)", round(c, 4), "mol/l", 4), tolerance: 0.01 }],
+                fields: [{ ...withSlips(numberField("c(HCl)", round(c, 4), "mol/l", 4), [round((baseC * sampleV) / baseV, 4), "Die Volumina sind vertauscht: c(Säure) = c(Lauge) · V(Lauge) : V(Säure)."]), tolerance: 0.01 }],
                 steps: [
                   `n(OH⁻) = 0,1 mol/l · ${fmt(baseV, 1)} ml = ${fmt(baseC * baseV, 2)} mmol`,
                   `c(HCl) = ${fmt(baseC * baseV, 2)} mmol : ${sampleV} ml`,
@@ -329,7 +343,7 @@ export const STAGE_PROTONEN: Stage = {
               prompt: `Verdünnter Essig wird titriert: ${sampleV} ml verbrauchen ${fmt(baseV, 1)} ml Natronlauge (c = 0,1 mol/l). Wie viel Gramm Essigsäure (M = 60 g/mol) enthält ein Liter dieses verdünnten Essigs?`,
               given: [],
               formulaHint: "Erst c(Essigsäure), dann β = c · M",
-              fields: [{ ...numberField("β(Essigsäure)", round(beta, 2), "g/l", 2), tolerance: 0.01 }],
+              fields: [{ ...withSlips(numberField("β(Essigsäure)", round(beta, 2), "g/l", 2), [round(c, 4), "Das ist die Stoffmengenkonzentration in mol/l. Multipliziere noch mit M = 60 g/mol."]), tolerance: 0.01 }],
               steps: [
                 `c = 0,1 mol/l · ${fmt(baseV, 1)} ml : ${sampleV} ml = ${fmt(c, 4)} mol/l`,
                 `β = ${fmt(c, 4)} mol/l · 60 g/mol`,

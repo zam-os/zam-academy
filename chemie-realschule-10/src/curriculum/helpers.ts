@@ -7,10 +7,27 @@ import type {
   NumberField,
   Track,
 } from "../model/types";
+import { MINUS } from "../exercises/format";
 import type { Rng } from "../exercises/rng";
+
+/** An integer with the real minus sign, without thousands separator: "−25", "2852". */
+export function signed(value: number): string {
+  return String(value).replace("-", MINUS);
+}
 
 export function numberField(label: string, answer: number, unit = "", digits = 0): NumberField {
   return { kind: "number", label, answer, unit, digits };
+}
+
+/**
+ * Adds targeted hints for typical wrong results. A slip that lands within 5 %
+ * of the answer for this task is dropped, so it never marks a right answer.
+ */
+export function withSlips(field: NumberField, ...slips: Array<[number, string]>): NumberField {
+  const kept = slips
+    .filter(([value]) => Math.abs(value - field.answer) > Math.max(0.05 * Math.abs(field.answer), 10 ** -field.digits / 2))
+    .map(([value, hint]) => ({ value, hint }));
+  return kept.length ? { ...field, slips: kept } : field;
 }
 
 export function choiceField(

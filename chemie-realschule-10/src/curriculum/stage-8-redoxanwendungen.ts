@@ -1,6 +1,6 @@
 import { makeLab } from "../lab/definitions";
 import type { Stage } from "../model/types";
-import { cases, cc, lesson, numberField } from "./helpers";
+import { cases, cc, lesson, numberField, withSlips } from "./helpers";
 
 const id = "redoxanwendungen";
 const REDOX = "C10 LB 6.1 (II/III), Wahlbereich";
@@ -88,7 +88,7 @@ export const STAGE_REDOXANWENDUNGEN: Stage = {
                 prompt: `In einer Brennstoffzelle reagieren ${h2} Wasserstoffmoleküle vollständig. Wie viele Elektronen fließen durch den äußeren Stromkreis, und wie viele O₂-Moleküle werden verbraucht?`,
                 given: ["H₂ → 2 H⁺ + 2 e⁻", "2 H₂ + O₂ → 2 H₂O"],
                 formulaHint: "2 e⁻ je H₂ · ein O₂ je zwei H₂",
-                fields: [numberField("Elektronen", 2 * h2), numberField("O₂-Moleküle", h2 / 2)],
+                fields: [withSlips(numberField("Elektronen", 2 * h2), [h2, "Jedes H₂-Molekül gibt zwei Elektronen ab."]), withSlips(numberField("O₂-Moleküle", h2 / 2), [h2, "Ein O₂ reagiert mit zwei H₂: Teile durch 2."])],
                 steps: [`${h2} · 2 = ${2 * h2} Elektronen`, `${h2} : 2 = ${h2 / 2} O₂`, `<strong>${2 * h2} e⁻ und ${h2 / 2} O₂</strong>`],
               };
             const volume = rng.pick([2, 4, 6, 10]);
@@ -96,7 +96,7 @@ export const STAGE_REDOXANWENDUNGEN: Stage = {
               prompt: `Eine Brennstoffzelle verbraucht ${volume} l Wasserstoff. Wie viel Liter Sauerstoff braucht sie bei gleichen Bedingungen?`,
               given: [],
               formulaHint: "Gleiche Bedingungen: Volumenverhältnis = Teilchenverhältnis",
-              fields: [numberField("V(O₂)", volume / 2, "l", 1)],
+              fields: [withSlips(numberField("V(O₂)", volume / 2, "l", 1), [volume * 2, "Sauerstoff wird nur halb so viel gebraucht wie Wasserstoff: 2 H₂ + O₂."], [volume, "Das Verhältnis ist 2 : 1, nicht 1 : 1."])],
               steps: ["2 H₂ + O₂ → 2 H₂O: Verhältnis 2 : 1.", `${volume} l : 2`, `<strong>${volume / 2} l</strong>`],
             };
           },

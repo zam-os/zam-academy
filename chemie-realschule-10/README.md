@@ -24,9 +24,11 @@ Zweig II/III und Level 1. Der Zweig ist jederzeit im Lernpfad auswählbar.
 Die App bietet alle Wahl-Teilbereiche an; die Lehrkraft wählt zwei. Lektionen
 eines anderen Zweigs stehen als freiwillige Ergänzung im aufklappbaren
 Bereich. Jede Lektion hat eine Erklärung mit Beispiel, einen Merksatz,
-Begriffe für die Formelsammlung, einen Schnellcheck, ein Modelllabor mit drei
-prüfbaren Aufträgen und mindestens zwei Aufgabengeneratoren. Level 1 gibt
-Werte und Modellhilfe, Level 2 stellt eine andere Transferaufgabe. Für den
+Begriffe für die Formelsammlung, einen Schnellcheck, ein Labor mit drei
+prüfbaren Aufträgen (29 Modelle, 11 Modellversuche) und mindestens zwei
+Aufgabengeneratoren. Level 1 gibt Werte und Modellhilfe, Level 2 stellt eine
+andere Transferaufgabe; typische Rechenfehler bekommen einen gezielten
+Hinweis. Für den
 Abschluss braucht es Schnellcheck, alle Laboraufträge und drei gelöste
 Aufgaben auf Level 1.
 
@@ -53,7 +55,9 @@ unbeaufsichtigte Versuche.
 
 ## Die ZAM-Zelle und bestehende Lernstände
 
-`cell.json` ist die einzige Kartenquelle: **40 Atome, 100 Karten**. Jede
+`cell.json` ist die einzige Kartenquelle: **40 Atome, 100 Karten**. Chemische
+Formeln stehen als Segmente mit TeX und deutscher Sprechfassung in der Karte;
+nur die beiden B-Karten behalten den alten Text unverändert. Jede
 Karte zitiert ihre Lektion als
 `https://academy.zam-os.org/chemie-realschule-10/#lesson=<id>` und trägt die
 Lernbereichsbindung jedes Zweigs. Alle Schnellkarten haben einen binären

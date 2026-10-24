@@ -12,7 +12,7 @@ import {
 } from "../chemistry/model";
 import { ALCOHOLS, COMPARE_SUBSTANCES, makeLab, OX_MOLECULES } from "../lab/definitions";
 import type { Stage } from "../model/types";
-import { cases, cc, choiceField, lesson, numberField } from "./helpers";
+import { cases, cc, choiceField, lesson, numberField, signed } from "./helpers";
 
 const id = "organik";
 export const STAGE_ORGANIK: Stage = {
@@ -154,7 +154,7 @@ export const STAGE_ORGANIK: Stage = {
                 fields: [choiceField(rng, "Molekül", `${m.name}, ${m.atom}`, rng.shuffle(others).slice(0, 2).map((o) => `${o.name}, ${o.atom}`))],
                 steps: [
                   "Für jedes Molekül Bindungen zu O und H-Atome am betrachteten C-Atom zählen.",
-                  `${m.name}: +${m.o} − ${m.h} = ${answer}`,
+                  `${m.name}: +${m.o} − ${m.h} = ${signed(answer)}`,
                   `<strong>${m.name}</strong>`,
                 ],
               };

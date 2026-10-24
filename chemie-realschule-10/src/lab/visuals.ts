@@ -142,7 +142,7 @@ function draw(kind: LabKind, v: LabValues, r: ReadoutValues): string {
         text(380, 305, "Hydrathüllen (frei)", "lab-text", "middle") +
         atom(260, 170, "Na⁺", "lab-fill-b", 24) +
         dots(1, 300, 170, "δ−", "lab-fill-c") +
-        text(260, 40, `Bilanz: ${r.delta} kJ/mol`, "lab-text", "middle")
+        text(260, 40, `Bilanz: ${fmt(Number(r.delta), 0)} kJ/mol`, "lab-text", "middle")
       );
     case "indikator":
       return flask(String(r.color), `pH ${v.ph}`) + text(260, 325, String(r.class), "lab-text", "middle");
@@ -242,7 +242,7 @@ function draw(kind: LabKind, v: LabValues, r: ReadoutValues): string {
       return (
         atom(260, 160, "C", "lab-fill-a", 34) +
         text(260, 70, String(r.partners), "lab-text", "middle") +
-        text(260, 260, `Deine Zahl: ${v.guess > 0 ? "+" : ""}${v.guess}`, "lab-text lab-text-big", "middle") +
+        text(260, 260, `Deine Zahl: ${v.guess > 0 ? "+" : ""}${fmt(v.guess, 0)}`, "lab-text lab-text-big", "middle") +
         text(260, 300, String(r.check), "lab-text-small", "middle")
       );
     case "alkanol":

@@ -106,11 +106,11 @@ export function saltFormula(cation: Ion, anion: Ion): string {
 }
 
 /**
- * The name with the oxidation number of the metal, as LehrplanPLUS writes it
- * (Natrium(I)-chlorid); `always: false` gives the everyday name for metals with
- * only one common ion charge (Natriumchlorid).
+ * The salt name as German school books write it: the Roman numeral only for
+ * metals with more than one common ion charge (Eisen(III)-oxid), the plain
+ * name otherwise (Natriumchlorid). `always: true` adds the numeral everywhere.
  */
-export function saltName(cation: Metal, anion: Ion, always = true): string {
+export function saltName(cation: Metal, anion: Ion, always = false): string {
   if (always || cation.variable)
     return `${cation.element}(${ROMAN[cation.charge]})-${anion.name.toLowerCase()}`;
   return `${cation.element}${anion.name.toLowerCase()}`;

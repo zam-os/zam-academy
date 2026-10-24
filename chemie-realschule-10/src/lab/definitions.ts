@@ -256,15 +256,15 @@ export const EXPERIMENTS: Partial<Record<LabKind, Experiment>> = {
     ],
     cases: [
       {
-        name: "Glycin mit Natronlauge erhitzen, feuchtes Indikatorpapier darüber",
+        name: "Glycin trocken erhitzen, angefeuchtetes Universalindikatorpapier darüber",
         observation:
           "Das Indikatorpapier färbt sich blau: Ammoniak entweicht. Sein Stickstoff stammt aus der Aminogruppe.",
         answer: 0,
       },
       {
-        name: "Glutaminsäure-Lösung mit Universalindikator",
+        name: "Glycin-Lösung mit Magnesiumpulver, das Gas auffangen und entzünden",
         observation:
-          "Die Lösung färbt sich orange-rot: Glutaminsäure hat eine zusätzliche Carboxygruppe, die Protonen abgeben kann.",
+          "Das Gas verbrennt mit Knall: Wasserstoff. Die Carboxygruppe gibt Protonen ab; Magnesium reduziert sie zu Wasserstoff.",
         answer: 1,
       },
       {
@@ -769,7 +769,7 @@ export function makeLab(kind: LabKind): LabDefinition {
         "Mineralwasser mit Kohlensäure",
         "reines Wasser",
         "Meerwasser",
-        "Seifenlösung",
+        "Backpulverlösung",
         "Seifenlösung",
         "Ammoniaklösung (Glasreiniger)",
         "Kalkwasser",
@@ -819,7 +819,7 @@ export function makeLab(kind: LabKind): LabDefinition {
           }),
           read("limit", "Hinweis", (v) =>
             v.protons > ACIDS[v.acid].steps.length
-              ? `${ACIDS[v.acid].formula} kann höchstens ${ACIDS[v.acid].steps.length} Proton(en) abgeben.`
+              ? `${ACIDS[v.acid].formula} kann höchstens ${ACIDS[v.acid].steps.length === 1 ? "ein Proton" : `${ACIDS[v.acid].steps.length} Protonen`} abgeben.`
               : ACIDS[v.acid].organic
                 ? "Das Proton stammt aus der Carboxygruppe."
                 : "Summenformel genügt für anorganische Säuren.",
@@ -841,7 +841,7 @@ export function makeLab(kind: LabKind): LabDefinition {
         [
           read("c", "c(H₃O⁺)", (v) => `${fmt(10 ** -(1 + v.steps), 1 + v.steps)} mol/l`),
           read("ph", "pH-Wert", (v) => 1 + v.steps),
-          read("factor", "Oxoniumionen im Vergleich zum Start", (v) => (v.steps === 0 ? "Ausgangslösung" : `1 : ${fmt(10 ** v.steps, 0)}`)),
+          read("factor", "Oxoniumionen im Vergleich zum Start", (v) => (v.steps === 0 ? "Ausgangslösung" : `1 : ${fmt(10 ** v.steps, 0).replace(".", " ")}`)),
           read("note", "Hinweis", (v) =>
             v.steps === 4
               ? "Weiteres Verdünnen nähert den pH-Wert 7, überschreitet ihn aber nicht."

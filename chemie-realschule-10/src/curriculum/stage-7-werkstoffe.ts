@@ -1,6 +1,6 @@
-import { CONDENSATES, makeLab, POLYMERS } from "../lab/definitions";
+import { CONDENSATES, makeLab, POLYMERS, siliconeType } from "../lab/definitions";
 import type { Stage } from "../model/types";
-import { cases, cc, choiceField, lesson, numberField } from "./helpers";
+import { cases, cc, choiceField, lesson, numberField, withSlips } from "./helpers";
 
 const id = "werkstoffe";
 const KUNSTSTOFFE = "C10 LB 6 (I) · C10 LB 6.5 (II/III), Wahlbereich";
@@ -209,16 +209,19 @@ export const STAGE_WERKSTOFFE: Stage = {
                 prompt: `Ein Gemisch aus ${mono} (CH₃)₃SiCl, ${di} (CH₃)₂SiCl₂ und ${tri} CH₃SiCl₃ wird vollständig mit Wasser umgesetzt. Wie viele HCl-Moleküle entstehen?`,
                 given: ["Jede Si–Cl-Bindung liefert ein HCl."],
                 formulaHint: "Cl-Atome zählen: 1 · a + 2 · b + 3 · c",
-                fields: [numberField("HCl", hcl)],
+                fields: [withSlips(numberField("HCl", hcl), [mono + di + tri, "Zähle die Cl-Atome, nicht die Moleküle: Jede Si–Cl-Bindung liefert ein HCl."])],
                 steps: [`${mono} · 1 + ${di} · 2 + ${tri} · 3`, `${mono} + ${2 * di} + ${3 * tri}`, `<strong>${hcl} HCl</strong>`],
               };
-            const type = tri === 0 ? "Silikonöl" : tri / (di + tri) <= 0.2 ? "Silikonelastomer" : "Silikonharz";
+            // Level 2 uses at least four chain links, so the lab's rule
+            // (siliconeType) always names one of the three silicone types.
+            const chain = Math.max(4, di);
+            const type = siliconeType(mono, chain, tri).split(":")[0];
             return {
-              prompt: `Aus ${di} (CH₃)₂SiCl₂, ${tri} CH₃SiCl₃ und Kettenenden entsteht ein Silikon. Welcher Typ ist zu erwarten?`,
+              prompt: `Aus ${chain} (CH₃)₂SiCl₂, ${tri} CH₃SiCl₃ und Kettenenden entsteht ein Silikon. Welcher Typ ist zu erwarten?`,
               given: [],
-              formulaHint: "Kein Vernetzer → Öl · wenig → Elastomer · viel → Harz (Modell: Anteil bis 20 %)",
+              formulaHint: "Kein Vernetzer → Öl · wenig → Elastomer · viel → Harz (Modell: Vernetzeranteil bis 20 % → Elastomer)",
               fields: [choiceField(rng, "Typ", type, ["Silikonöl", "Silikonelastomer", "Silikonharz"].filter((t) => t !== type))],
-              steps: [`Vernetzeranteil: ${tri} von ${di + tri} Bausteinen.`, tri === 0 ? "Ohne Vernetzer bleiben lineare Ketten." : "CH₃SiCl₃ verknüpft Ketten miteinander.", `<strong>${type}</strong>`],
+              steps: [`Vernetzeranteil: ${tri} von ${chain + tri} Bausteinen.`, tri === 0 ? "Ohne Vernetzer bleiben lineare Ketten." : "CH₃SiCl₃ verknüpft Ketten miteinander.", `<strong>${type}</strong>`],
             };
           },
         },
