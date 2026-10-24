@@ -1,7 +1,6 @@
 #!/usr/bin/env node
-// Public cell: preserve every old history. The mapping is proposal-only (four C rows,
-// no A or B), so the cell declares no replaces and no retired_items.
-// Reads only snapshots and opens only disposable databases, never a learner library.
+// Runs against the same pinned published zam-core as the Academy's cell checks.
+// Uses only disposable libraries. No learner library or configuration is opened.
 import assert from "node:assert/strict";
 import { createHash } from "node:crypto";
 import { mkdtempSync, readFileSync, rmSync } from "node:fs";
@@ -12,209 +11,193 @@ import { fileURLToPath } from "node:url";
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const zam = await import(process.env.ZAM_CORE ?? "zam-core");
 const cell = JSON.parse(readFileSync(join(root, "cell.json"), "utf8"));
-const mapping = JSON.parse(
-  readFileSync(join(root, "replaces-de-by.json"), "utf8"),
-);
-assert.equal(mapping.approved, null);
-assert.equal(mapping.status, "proposal-only");
-assert.equal(cell.retired_items, undefined);
-assert.ok(
-  cell.atoms.every((atom) =>
-    atom.practice_items.every((item) => !item.replaces),
-  ),
-);
-assert.ok(
-  mapping.rows.every(
-    (row) => row.category === "C" && row.action === "keep-active",
-  ),
-  "only C rows that keep the old card active: nothing to move or retire",
-);
-const itemCount = cell.atoms.reduce(
-  (n, atom) => n + atom.practice_items.length,
-  0,
-);
-const oldCells = mapping.sources.map((source) => {
-  const bytes = readFileSync(join(root, source.file));
-  assert.equal(createHash("sha256").update(bytes).digest("hex"), source.sha256);
-  return JSON.parse(bytes.toString("utf8"));
-});
-const oldItems = oldCells.flatMap((tile) =>
-  tile.atoms.flatMap((atom) => atom.practice_items),
-);
-const oldIds = oldItems.map((item) => item.id);
-for (const item of oldItems) {
-  assert.deepEqual(
-    mapping.rows.find((row) => row.de_by_id === item.id).de_by_question,
-    item.question_segments ?? item.question,
-    `exact original question: ${item.id}`,
-  );
-}
-assert.deepEqual(
-  [...oldIds].sort(),
-  mapping.rows.map((row) => row.de_by_id).sort(),
-);
-const newIds = new Set(
-  cell.atoms.flatMap((atom) => atom.practice_items.map((item) => item.id)),
-);
-for (const id of oldIds)
-  assert.ok(!newIds.has(id), `no id of the old cell is reused: ${id}`);
+const mapping = JSON.parse(readFileSync(join(root, "replaces-de-by.json"), "utf8"));
 
-const dir = mkdtempSync(join(tmpdir(), "zam-franzoesisch9-history-"));
-const db = await zam.openDatabase({
-  dbPath: join(dir, "history.db"),
-  initialize: true,
-  useConfiguredCloud: false,
+// The repository stores LF; a Windows checkout may hold CRLF. Hash the LF bytes.
+const legacy = mapping.sources.map((source) => {
+  const text = readFileSync(join(root, source.file), "utf8").replaceAll("\r\n", "\n");
+  assert.equal(
+    createHash("sha256").update(text).digest("hex"),
+    source.sha256,
+    "legacy source snapshots must not drift",
+  );
+  return JSON.parse(text);
 });
-const snapshot = async (database = db) => ({
-  tokens: await database.prepare("SELECT * FROM tokens ORDER BY id").all(),
-  replacements: await database
-    .prepare(
-      "SELECT * FROM practice_item_replacements ORDER BY old_item_id, new_item_id",
-    )
-    .all(),
-  cards: await database.prepare("SELECT * FROM cards ORDER BY id").all(),
-  reviews: await database
-    .prepare("SELECT * FROM review_logs ORDER BY id")
-    .all(),
-});
+
+// The cell as first published (2026.10.1): the same cards without the
+// retirements and the version bump (its atoms carry the later domains, which
+// change nothing about cards and reviews).
+const published = structuredClone(cell);
+published.version = "2026.10.1";
+delete published.retired_items;
+
+const items = cell.atoms.flatMap((atom) => atom.practice_items);
+const retired = mapping.rows.filter((row) => row.category === "C");
+const dir = mkdtempSync(join(tmpdir(), "zam-fr9-migration-"));
+const withoutToken = ({ token_id, ...rest }) => rest;
+
+async function openDb(name) {
+  return zam.openDatabase({
+    dbPath: join(dir, name),
+    initialize: true,
+    useConfiguredCloud: false,
+  });
+}
+
+async function reviewedCard(db, tokenId, userId, index) {
+  const card = await zam.ensureCard(db, tokenId, userId);
+  const now = new Date();
+  await zam.evaluateRating(db, {
+    cardId: card.id,
+    tokenId,
+    userId,
+    rating: index % 3 === 0 ? 1 : 3,
+    answerFormat: "recall",
+    responseTimeMs: 1000 + index * 300,
+    now,
+  });
+  await zam.evaluateRating(db, {
+    cardId: card.id,
+    tokenId,
+    userId,
+    rating: index % 2 === 0 ? 3 : 4,
+    answerFormat: "recall",
+    responseTimeMs: 1600 + index * 200,
+    now: new Date(now.getTime() + (index + 1) * 86_400_000),
+  });
+}
+
+async function snapshot(db) {
+  return {
+    cards: await db.prepare("SELECT * FROM cards ORDER BY id").all(),
+    reviews: await db.prepare("SELECT * FROM review_logs ORDER BY id").all(),
+  };
+}
+
+function laterThanAllDue(cards) {
+  return new Date(Math.max(...cards.map((card) => Date.parse(card.due_at))) + 86_400_000);
+}
+
 try {
-  for (const tile of oldCells) await zam.installKvtTile(db, tile);
-  const userId = cell.atoms[0].id;
-  for (const [index, tokenId] of oldIds.entries()) {
-    const card = await zam.ensureCard(db, tokenId, userId);
-    for (const [pass, rating] of [
-      index % 3 === 0 ? 1 : 3,
-      index % 2 === 0 ? 3 : 4,
-    ].entries()) {
-      await zam.evaluateRating(db, {
-        cardId: card.id,
-        tokenId,
+  assert.equal(mapping.approved, "2026-10-24");
+  assert.equal(mapping.rows.length, 4);
+  assert.equal(retired.length, 4, "every old card is category C: no replaces");
+  assert.equal(cell.retired_items.length, retired.length);
+  assert.equal(
+    items.filter((item) => (item.replaces?.length ?? 0) > 0).length,
+    0,
+    "the cell moves no history, it only retires",
+  );
+
+  {
+    const db = await openDb("history.db");
+    try {
+      for (const tile of legacy) await zam.installKvtTile(db, tile);
+      const userId = cell.atoms[0].id;
+      for (const [index, row] of mapping.rows.entries())
+        await reviewedCard(db, row.de_by_id, userId, index);
+      const before = await snapshot(db);
+      assert.equal(before.cards.length, 4);
+      assert.equal(before.reviews.length, 8);
+      const oldQueue = await zam.buildReviewQueue(db, {
         userId,
-        rating,
-        answerFormat: "recall",
-        responseTimeMs: 1200 + index * 100,
-        now: new Date(Date.UTC(2026, 8, 1 + pass * 10)),
+        tokenIds: cell.retired_items.map((entry) => entry.id),
+        now: laterThanAllDue(before.cards),
+        buryNewSiblings: false,
+        buryReviewSiblings: false,
       });
+      assert.equal(oldQueue.items.length, 4, "all four old questions were active before migration");
+
+      await zam.installKvtTile(db, cell);
+      const after = await snapshot(db);
+      assert.equal(after.cards.length, before.cards.length, "installing a cell must not enrol fresh cards");
+      assert.equal(after.reviews.length, before.reviews.length);
+      for (const oldCard of before.cards) {
+        const fresh = after.cards.find((card) => card.id === oldCard.id);
+        assert.deepEqual(withoutToken(fresh), withoutToken(oldCard), `FSRS state changed on ${oldCard.token_id}`);
+        assert.equal(fresh.token_id, oldCard.token_id, "a retired card stays on its own token");
+      }
+      for (const oldReview of before.reviews) {
+        const fresh = after.reviews.find((review) => review.id === oldReview.id);
+        assert.deepEqual(withoutToken(fresh), withoutToken(oldReview), `review evidence changed on ${oldReview.id}`);
+        assert.equal(fresh.token_id, oldReview.token_id);
+      }
+      for (const row of mapping.rows) {
+        const token = await zam.getTokenById(db, row.de_by_id);
+        assert.ok(token, "an old token must never be deleted");
+        assert.ok(token.deprecated_at, "retired old items must leave active use");
+        assert.equal(token.editorial_state, "deprecated");
+      }
+      const retiredQueue = await zam.buildReviewQueue(db, {
+        userId,
+        tokenIds: retired.map((row) => row.de_by_id),
+        now: laterThanAllDue(after.cards),
+        buryNewSiblings: false,
+        buryReviewSiblings: false,
+      });
+      assert.equal(retiredQueue.items.length, 0, "retired old questions must never return to active reviews");
+
+      await zam.installKvtTile(db, cell);
+      assert.deepEqual(await snapshot(db), after, "a repeated install must preserve every schedule and review");
+
+      const atomIds = cell.atoms.map((atom) => atom.id);
+      const enrolled = await zam.materialiseKvtCards(db, userId, atomIds);
+      assert.deepEqual(enrolled, { cardsCreated: items.length, cardsReused: 0 });
+      const complete = await snapshot(db);
+      assert.equal(
+        complete.cards.length,
+        items.length + 4,
+        "168 active cards plus 4 preserved retired histories",
+      );
+      assert.deepEqual(complete.reviews, after.reviews, "enrolment invents no review evidence");
+      for (const oldCard of after.cards) {
+        assert.deepEqual(
+          complete.cards.find((card) => card.id === oldCard.id),
+          oldCard,
+        );
+      }
+      const originalIds = new Set(after.cards.map((card) => card.id));
+      for (const fresh of complete.cards.filter((card) => !originalIds.has(card.id))) {
+        assert.equal(fresh.state, "new");
+        assert.equal(fresh.stability, 0);
+        assert.equal(fresh.reps, 0);
+        assert.equal(fresh.last_review_at, null);
+      }
+      assert.deepEqual(await zam.materialiseKvtCards(db, userId, atomIds), {
+        cardsCreated: 0,
+        cardsReused: items.length,
+      });
+      assert.deepEqual(await snapshot(db), complete, "repeat enrolment must not duplicate or reschedule");
+      console.log(
+        "ok   Französisch 9: 4 old histories untouched and retired, 8 review events preserved; 168 fresh cards start unlearned; repeated install/enrolment is idempotent",
+      );
+    } finally {
+      await db.close();
     }
   }
-  const before = await snapshot();
-  assert.equal(before.cards.length, oldIds.length);
-  assert.equal(before.reviews.length, oldIds.length * 2);
-  await zam.installKvtTile(db, cell);
-  const installed = await snapshot();
-  assert.deepEqual(
-    installed.cards,
-    before.cards,
-    "install invents no enrolment or mastery",
-  );
-  assert.deepEqual(
-    installed.reviews,
-    before.reviews,
-    "every review stays unchanged",
-  );
-  assert.deepEqual(
-    installed.replacements,
-    before.replacements,
-    "no transfer declared",
-  );
-  for (const token of before.tokens)
-    assert.deepEqual(
-      installed.tokens.find((candidate) => candidate.id === token.id),
-      token,
-      "old tokens untouched",
-    );
-  for (const id of oldIds)
-    assert.equal((await zam.getTokenById(db, id)).deprecated_at, null);
-  const queue = await zam.buildReviewQueue(db, {
-    userId,
-    tokenIds: oldIds,
-    now: new Date("2030-01-01T00:00:00Z"),
-    buryNewSiblings: false,
-    buryReviewSiblings: false,
-  });
-  assert.equal(queue.items.length, oldIds.length, "every old card stays active");
-  const atoms = cell.atoms.map((atom) => atom.id);
-  assert.deepEqual(await zam.materialiseKvtCards(db, userId, atoms), {
-    cardsCreated: itemCount,
-    cardsReused: 0,
-  });
-  const complete = await snapshot();
-  assert.equal(complete.cards.length, oldIds.length + itemCount);
-  assert.deepEqual(complete.reviews, before.reviews);
-  for (const card of before.cards)
-    assert.deepEqual(
-      complete.cards.find((candidate) => candidate.id === card.id),
-      card,
-    );
-  for (const card of complete.cards.filter(
-    (card) => !oldIds.includes(card.token_id),
-  )) {
-    assert.equal(card.state, "new");
-    assert.equal(card.stability, 0);
-    assert.equal(card.reps, 0);
-    assert.equal(card.last_review_at, null);
-  }
-  await zam.installKvtTile(db, cell);
-  assert.deepEqual(await zam.materialiseKvtCards(db, userId, atoms), {
-    cardsCreated: 0,
-    cardsReused: itemCount,
-  });
-  assert.deepEqual(
-    await snapshot(),
-    complete,
-    "repeated install and enrolment change nothing",
-  );
-  console.log(
-    `ok   Französisch 9 public cell: ${oldIds.length} old cards active; all FSRS fields and ${before.reviews.length} reviews unchanged; ${itemCount} fresh unlearned cards; repeat install/enrolment idempotent`,
-  );
-} finally {
-  await db.close();
-}
 
-// Collision protection: a learner who already holds a card on a token the cell tries to
-// take over must never get an automatic merge. Reached only through an explicit
-// replaces declaration, which this cell does not make; the probe shows the guard holds.
-const collision = await zam.openDatabase({
-  dbPath: join(dir, "collision.db"),
-  initialize: true,
-  useConfiguredCloud: false,
-});
-try {
-  for (const tile of oldCells) await zam.installKvtTile(collision, tile);
-  await zam.installKvtTile(collision, cell);
-  const userId = cell.atoms[0].id;
-  const oldId = oldIds[0];
-  const successor = cell.atoms[0].practice_items[0];
-  const reviewed = async (tokenId, rating) => {
-    const card = await zam.ensureCard(collision, tokenId, userId);
-    await zam.evaluateRating(collision, {
-      cardId: card.id,
-      tokenId,
-      userId,
-      rating,
-      answerFormat: "recall",
-      responseTimeMs: 2400,
-      now: new Date("2026-09-10T00:00:00Z"),
-    });
-  };
-  await reviewed(oldId, 1);
-  await reviewed(successor.id, 3);
-  const before = await snapshot(collision);
-  const attempt = structuredClone(cell);
-  attempt.version = "2026.10.99";
-  attempt.atoms[0].practice_items[0].replaces = [oldId];
-  await assert.rejects(
-    () => zam.installKvtTile(collision, attempt),
-    (error) => {
-      assert.match(error.message, /holds a card on both/);
-      return true;
-    },
-  );
-  assert.deepEqual(await snapshot(collision), before);
-  console.log(
-    "ok   collision guard: an explicit replaces onto a doubly held token is refused and rolled back; the shipped cell declares none",
-  );
+  {
+    const upgrade = await openDb("upgrade-without-old-cell.db");
+    try {
+      await zam.installKvtTile(upgrade, published);
+      const userId = cell.atoms[2].id;
+      const atomIds = cell.atoms.map((atom) => atom.id);
+      await zam.materialiseKvtCards(upgrade, userId, atomIds);
+      for (const [index, item] of items.slice(0, 3).entries())
+        await reviewedCard(upgrade, item.id, userId, index);
+      const before = await snapshot(upgrade);
+      assert.equal(before.cards.length, items.length);
+      await zam.installKvtTile(upgrade, cell);
+      assert.deepEqual(
+        await snapshot(upgrade),
+        before,
+        "a learner who never had the old cell keeps every card and review through the upgrade",
+      );
+      console.log("ok   Französisch 9: upgrading from 2026.10.1 without the old cell changes no card and no review");
+    } finally {
+      await upgrade.close();
+    }
+  }
 } finally {
-  await collision.close();
   rmSync(dir, { recursive: true, force: true });
 }

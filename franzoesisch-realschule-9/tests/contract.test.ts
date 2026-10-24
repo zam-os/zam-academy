@@ -213,7 +213,7 @@ describe("curriculum coverage", () => {
   });
 });
 
-describe("proposal for the old partial cell", () => {
+describe("approved retirement of the old partial cell", () => {
   const rows = mapping.rows as Array<{
     de_by_cell: string;
     de_by_id: string;
@@ -243,20 +243,22 @@ describe("proposal for the old partial cell", () => {
     expect(source.sha256).toBe(hex);
     expect(source.tile_id).toBe(legacy.tile_id);
   });
-  it("proposes no replacement and no retirement, and names only cards that exist", () => {
+  it("moves no history and retires each old card as category C, naming only cards that exist", () => {
     for (const row of rows) {
       expect(row.category).toBe("C");
       expect(row.academy_slug).toBeNull();
-      expect(row.action).toBe("keep-active");
+      expect(row).not.toHaveProperty("action");
       // A reason that points at a new card names it by slug, and the card exists.
       for (const slug of row.reason.match(/fr9-[a-z0-9-]+/g) ?? []) expect(slugs, slug).toContain(slug);
     }
   });
-  it("is a proposal only: the cell publishes without replaces and retired_items, and nobody approved it", () => {
-    expect(mapping.approved).toBeNull();
-    expect(mapping.status).toBe("proposal-only");
-    expect(cell).not.toHaveProperty("retired_items");
+  it("is approved by Thomas and the cell declares exactly the four retirements and no replaces", () => {
+    expect(mapping.approved).toBe("2026-10-24");
+    expect(mapping).not.toHaveProperty("status");
+    expect((cell as { retired_items?: Array<{ id: string; reason: string }> }).retired_items).toEqual(
+      rows.map((r) => ({ id: r.de_by_id, reason: r.reason })),
+    );
     for (const item of ITEMS) expect(item).not.toHaveProperty("replaces");
-    expect(cell.version).toBe("2026.10.1");
+    expect(cell.version).toBe("2026.10.2");
   });
 });

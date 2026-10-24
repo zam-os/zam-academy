@@ -1,6 +1,6 @@
 # Französisch 9 · Lehrplanabgleich und Zuordnung der Alt-Zelle
 
-Stand: 24. Oktober 2026. Das [Academy-Paket](../franzoesisch-realschule-9/) erscheint als Zelle `2026.10.1` **ohne** `replaces` und `retired_items`. Die Zuordnung der vier alten Karten ist ein Vorschlag (`"status": "proposal-only"`, `approved: null`). **Sie ist nicht freigegeben.** Die alte Zelle `de-by:realschule-9-franzoesisch-imparfait-futur-objektpronomen` bleibt in ZAM unverändert aktiv.
+Stand: 24. Oktober 2026. Das [Academy-Paket](../franzoesisch-realschule-9/) erscheint ab Version `2026.10.2` mit vier `retired_items` und **ohne** `replaces`. Die Zuordnung der vier alten Karten (alle C) hat Thomas am 24. Oktober 2026 ausdrücklich freigegeben. Die alte Zelle `de-by:realschule-9-franzoesisch-imparfait-futur-objektpronomen` wird danach in ZAM nicht mehr gebündelt; ihre Karten und Reviewhistorien bleiben erhalten.
 
 ## Wer Französisch 9 hat
 
@@ -25,19 +25,19 @@ Unter `outside_app` in `coverage.json` und in den betroffenen Zeilen der Matrix 
 
 ## Die vier alten Karten
 
-Die Teilzelle (Version `2026.08.1`) hat zwei Atome und vier Karten: Imparfait (Bildung, Verwendung gegenüber dem passé composé) und Objektpronomen (direkt, indirekt, Stellung). Sie bindet ihre Atome an Klasse 9, Gruppe IIIa und den Lernbereich 1. Das passt zur neuen Zelle. Die Zuordnung (`replaces-de-by.json`, vier Zeilen mit Grund) schlägt vor:
+Die Teilzelle (Version `2026.08.1`) hat zwei Atome und vier Karten: Imparfait (Bildung, Verwendung gegenüber dem passé composé) und Objektpronomen (direkt, indirekt, Stellung). Sie bindet ihre Atome an Klasse 9, Gruppe IIIa und den Lernbereich 1. Das passt zur neuen Zelle. Die Zuordnung (`replaces-de-by.json`, vier Zeilen mit Grund) hält fest:
 
-| Alte Karte | Vorschlag | Grund |
+| Alte Karte | Entscheidung | Grund |
 | --- | --- | --- |
-| J01 Stamm des imparfait | C, bleibt aktiv | Die neuen Karten fragen die Bildung samt Ausnahme `être` und einzelne Formen, kein sicher gleicher Einzelabruf. |
-| J02 Bildung, Gebrauch und passé composé in einer Antwort | C, bleibt aktiv | Die neue Zelle trennt das in drei Lektionen mit eigenen Karten; keine hat den Gesamtumfang. |
-| J03 Stellung der Objektpronomen | C, bleibt aktiv | Objektpronomen sind Vorwissen aus Klasse 7 und 8 und nicht Teil des Plans der Klasse 9; die neue Zelle hat nur eine Karte zur Stellung von `y` und `en`. |
-| J04 direkte und indirekte Objektpronomen | C, bleibt aktiv | Die Unterscheidung steht im Plan der Klasse 8; kein Nachfolger. |
+| J01 Stamm des imparfait | C, stillgelegt | Die neuen Karten fragen die Bildung samt Ausnahme `être` und einzelne Formen, kein sicher gleicher Einzelabruf. |
+| J02 Bildung, Gebrauch und passé composé in einer Antwort | C, stillgelegt | Die neue Zelle trennt das in drei Lektionen mit eigenen Karten; keine hat den Gesamtumfang. |
+| J03 Stellung der Objektpronomen | C, stillgelegt | Objektpronomen sind Vorwissen aus Klasse 7 und 8 und nicht Teil des Plans der Klasse 9; die neue Zelle hat nur eine Karte zur Stellung von `y` und `en`. |
+| J04 direkte und indirekte Objektpronomen | C, stillgelegt | Die Unterscheidung steht im Plan der Klasse 8; kein Nachfolger. |
 
-Der Plan der Klasse 8 nennt „les pronoms objets directs (le, la, les) + position“ und „les pronoms objets indirects (lui, leur) + position“, der Plan der Klasse 7 „les pronoms objets directs dans la phrase affirmative et négative“. Damit sind die Objektpronomen Vorwissen. Persönliche Karten und Reviewhistorien bleiben in jedem Fall erhalten. Wenn Thomas einzelne Zeilen anders entscheidet (zum Beispiel J01 als A mit der Kernkarte), ändern sich `replaces` und die Zellenversion in einem eigenen Schritt.
+Der Plan der Klasse 8 nennt „les pronoms objets directs (le, la, les) + position“ und „les pronoms objets indirects (lui, leur) + position“, der Plan der Klasse 7 „les pronoms objets directs dans la phrase affirmative et négative“. Damit sind die Objektpronomen Vorwissen. Persönliche Karten und Reviewhistorien bleiben in jedem Fall erhalten; stillgelegt heißt, dass die Karten nicht mehr in aktive Wiederholungen kommen. Die Objektpronomen (J03, J04) sind Vorwissen aus Klasse 7 und 8; das Paket Französisch 9 übt sie nicht mehr, ein Paket Französisch 8 würde sie abdecken.
 
 ## Reihenfolge bis zur nächsten ZAM-Veröffentlichung
 
 1. Academy-App, Zelle, Matrix und diese Zuordnung reviewen; eine Fachlehrkraft Französisch liest die Lektionen gegen.
 2. Academy mergen und die Veröffentlichung der Zelle im Katalog prüfen.
-3. In einem eigenen ZAM-PR gezielt `franzoesisch-realschule-9` synchronisieren. Die alte Zelle bleibt aktiv, solange die Zuordnung nicht freigegeben ist. Ein Lernender, der Karten auf alter und neuer Zelle hat, ist davon nicht betroffen, weil kein `replaces` deklariert wird.
+3. In einem eigenen ZAM-PR gezielt `franzoesisch-realschule-9` synchronisieren (Version 2026.10.2) und die alte Zelle aus dem Bundle nehmen. Weil kein `replaces` deklariert wird, ändert sich an den Karten der neuen Zelle nichts; die vier alten Karten verlassen die aktiven Wiederholungen.
