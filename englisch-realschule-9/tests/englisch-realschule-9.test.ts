@@ -30,6 +30,10 @@ import {
 import legacy from "./fixtures/de-by-realschule-9-englisch-grammatik-syntax-kvt.json";
 import contract from "./fixtures/public-contract.json";
 
+function required<T>(value: T | undefined): T {
+	if (value === undefined) throw new Error("Missing lesson or card fixture");
+	return value;
+}
 const items = cell.atoms.flatMap((atom) => atom.practice_items);
 const oldItems = legacy.atoms.flatMap((atom) => atom.practice_items);
 
@@ -135,7 +139,9 @@ describe("curriculum, cards and public lesson links", () => {
 	it.each(LESSONS)(
 		"keeps the card content and actual curriculum scope in sync: $id",
 		(lesson) => {
-			const atom = cell.atoms.find((entry) => entry.slug === lesson.id)!;
+			const atom = required(
+				cell.atoms.find((entry) => entry.slug === lesson.id),
+			);
 			expect(atom.source_link).toBe(lessonLink(lesson.id));
 			const bindings = atom.curricula.filter(
 				(entry) => entry.provider === "lehrplanplus-bayern",
@@ -156,7 +162,7 @@ describe("curriculum, cards and public lesson links", () => {
 				concept: lesson.quiz.answer,
 				language: "en",
 			});
-			const fast = atom.practice_items[0].fast_check!;
+			const fast = required(atom.practice_items[0].fast_check);
 			expect(fast.correct_index).toBe(0);
 			expect(fast.options[fast.correct_index]).toBe(lesson.quiz.answer);
 			expect(atom.practice_items[1]).toMatchObject({
@@ -164,9 +170,12 @@ describe("curriculum, cards and public lesson links", () => {
 				concept: expect.any(String),
 				language: "en",
 			});
-			expect(atom.practice_items[1].sample_solution).toBe(
-				atom.practice_items[1].concept,
+			expect(atom.practice_items[1].sample_solution?.length).toBeGreaterThan(
+				atom.practice_items[1].concept.length,
 			);
+			expect(
+				atom.practice_items.every((item) => item.materiality === "material"),
+			).toBe(true);
 			for (const item of atom.practice_items)
 				expect(item.source_link).toBe(lessonLink(lesson.id));
 			for (const prerequisite of atom.prerequisites)
@@ -176,13 +185,15 @@ describe("curriculum, cards and public lesson links", () => {
 		},
 	);
 	it("corrects the relative-clause and passive errors found in the legacy material", () => {
-		const relative = LESSONS.find(
-			(lesson) => lesson.id === "e9-relative-extra",
-		)!;
+		const relative = required(
+			LESSONS.find((lesson) => lesson.id === "e9-relative-extra"),
+		);
 		expect(relative.material).toContain("whose");
 		expect(relative.material).toContain("where");
 		expect(relative.material).toContain("when");
-		const passive = LESSONS.find((lesson) => lesson.id === "e9-passive")!;
+		const passive = required(
+			LESSONS.find((lesson) => lesson.id === "e9-passive"),
+		);
 		expect(
 			cell.atoms.find((atom) => atom.slug === passive.id)?.practice_items[1]
 				.concept,
@@ -205,7 +216,7 @@ describe("practice and honest self-assessment", () => {
 			for (const [index, item] of lesson.practice.entries())
 				for (const alternative of item.answers) {
 					const changed = [...correct];
-					changed[index] = alternative.toUpperCase() + ".";
+					changed[index] = `${alternative.toUpperCase()}.`;
 					expect(checkPractice(lesson.practice, changed).every(Boolean)).toBe(
 						true,
 					);
@@ -303,7 +314,7 @@ describe("local progress and routes", () => {
 		);
 		p.writingDone.push(writingKey(id, 1));
 		expect(isComplete(p, id)).toBe(false);
-		p.listening[id] = "partner";
+		p.listening[id] = { synthetic: false, partner: true };
 		expect(isComplete(p, id)).toBe(true);
 	});
 	it("invalidates only the edited draft’s old assessment and round trips all meaningful state", () => {
@@ -314,7 +325,7 @@ describe("local progress and routes", () => {
 		updateDraft(p, id, 1, "A sufficiently detailed original answer.");
 		updateDraft(p, id, 2, "A sufficiently detailed original transfer.");
 		p.writingDone.push(key, transfer);
-		p.listening["e9-business-call"] = "partner";
+		p.listening["e9-business-call"] = { synthetic: false, partner: true };
 		expect(parseProgress(JSON.stringify(p))).toEqual(p);
 		updateDraft(p, id, 1, "A changed sufficiently detailed original answer.");
 		expect(p.writingDone).toEqual([transfer]);
@@ -343,7 +354,9 @@ describe("local progress and routes", () => {
 		expect(p.drafts[key]).toHaveLength(8000);
 		expect(p.drafts.unknown).toBeUndefined();
 		expect(p.writingDone).toEqual([key]);
-		expect(p.listening).toEqual({ "e9-announcement": "partner" });
+		expect(p.listening).toEqual({
+			"e9-announcement": { synthetic: false, partner: true },
+		});
 	});
 	it.each([null, "null", "[]", "22", "{", '"string"'])(
 		"recovers from invalid storage: %s",
@@ -360,7 +373,7 @@ describe("local progress and routes", () => {
 		});
 		try {
 			expect(loadProgress()).toEqual(freshProgress());
-			expect(saveProgress(freshProgress())).toBe(false);
+			expect(saveProgress(freshProgress(), freshProgress())).toBe(false);
 		} finally {
 			vi.unstubAllGlobals();
 		}

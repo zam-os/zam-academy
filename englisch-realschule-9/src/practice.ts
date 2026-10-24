@@ -46,6 +46,20 @@ export function quizOptions(lesson: Lesson): string[] {
 	return [...options.slice(offset), ...options.slice(0, offset)];
 }
 
+/** Explain a solved field only after a correct attempt. */
+export function practiceFeedback(item: Practice, correct: boolean): string {
+	return correct
+		? item.feedback
+		: "Deine Kurzantwort passt noch nicht. Prüfe die Aufgabe und den Materialtext noch einmal.";
+}
+
+export function quizFeedback(lesson: Lesson, selected: string): string {
+	if (selected === lesson.quiz.answer)
+		return `Richtig. ${lesson.quiz.explanation}`;
+	const index = lesson.quiz.wrong.indexOf(selected);
+	return `Noch einmal überlegen. ${lesson.quiz.wrongFeedback[index] ?? "Lies die Frage und den Materialtext noch einmal."}`;
+}
+
 export const canReview = (text: string): boolean => text.trim().length >= 20;
 export const canAccept = (text: string, checks: boolean[]): boolean =>
 	canReview(text) && checks.length === 3 && checks.every(Boolean);

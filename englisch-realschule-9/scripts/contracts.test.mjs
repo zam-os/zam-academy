@@ -1,5 +1,5 @@
 import { createHash } from "node:crypto";
-import { existsSync, readFileSync } from "node:fs";
+import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { expect, it } from "vitest";
 
 const root = new URL("../", import.meta.url);
@@ -15,10 +15,15 @@ it("pins the original legacy source snapshot byte-for-byte", () => {
 	}
 });
 it("ships no automatic network, microphone or remote voice paths", () => {
-	const main = readFileSync(new URL("src/main.ts", root), "utf8");
-	expect(main).not.toMatch(
-		/\bfetch\s*\(|XMLHttpRequest|getUserMedia|MediaRecorder/,
-	);
+	const source = new URL("src/", root);
+	for (const path of readdirSync(source, { recursive: true }).filter((path) =>
+		/\.(?:ts|css|json)$/.test(path),
+	)) {
+		const content = readFileSync(new URL(path, source), "utf8");
+		expect(content, path).not.toMatch(
+			/\bfetch\s*\(|XMLHttpRequest|WebSocket|EventSource|sendBeacon|getUserMedia|MediaRecorder|@import\s+(?:url\()?['"]https?:/,
+		);
+	}
 	const html = readFileSync(new URL("index.html", root), "utf8");
 	expect(html).not.toMatch(/<iframe|<video|<audio|src=["']https?:/i);
 });

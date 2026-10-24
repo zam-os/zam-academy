@@ -1,6 +1,6 @@
 # Englisch 9 Realschule Bayern · ZAM Academy
 
-Lokaler, noch unveröffentlichter Entwurf vom 24. Oktober 2026: **36 Kernlektionen, vier freiwillige Grammatikergänzungen, 120 Kurzaufgaben und 80 ZAM-Karten**. Gemeinsamer Lernpfad für alle Wahlpflichtfächergruppen nach dem [offiziellen LehrplanPLUS Englisch 9](https://www.lehrplanplus.bayern.de/fachlehrplan/realschule/9/englisch).
+Lehrplanabgleich vom 24. Oktober 2026: **36 Kernlektionen, vier freiwillige Grammatikergänzungen, 120 Kurzaufgaben und 80 ZAM-Karten**. Gemeinsamer Lernpfad für alle Wahlpflichtfächergruppen nach dem [offiziellen LehrplanPLUS Englisch 9](https://www.lehrplanplus.bayern.de/fachlehrplan/realschule/9/englisch).
 
 ## Lernangebot
 
@@ -20,13 +20,13 @@ Jede Lektion enthält Erklärung, selbst verfasstes Material, Schnellcheck, drei
 
 ## Hören, Sprechen und Grenzen
 
-Zwei längere, eigens verfasste Skripte können mit einer **installierten lokalen englischen Computerstimme** vorgelesen werden. Remote-Stimmen werden nicht verwendet. Der Text bleibt zunächst zugeklappt. Erst das vollständige Vorlesen speichert eine neue synthetische Zuhörübung; Abbruch und Fehler tun das nicht. Als Alternative kann ein Partner das Skript vorlesen und der Lernende diese Übung selbst bestätigen. Ohne Stimme oder Partner bleibt der Text zugänglich, die Zuhörübung offen.
+Zwei längere, eigens verfasste Skripte können mit einer **installierten lokalen englischen Computerstimme** vorgelesen werden. Remote-Stimmen werden nicht verwendet. Der Text bleibt zunächst zugeklappt. Erst das vollständige Vorlesen speichert eine neue synthetische Zuhörübung; Abbruch und Fehler tun das nicht. Als Alternative kann ein Partner das Skript vorlesen und der Lernende diese Übung selbst bestätigen. Ohne Stimme oder Partner bleibt der Text zugänglich, die Zuhörübung offen. Beim ersten Start wartet die App kurz auf die installierten Stimmen. Die beiden Hörnachweise werden unabhängig gespeichert; das Abwählen des Partnerfelds löscht keine abgeschlossene Computerstimme.
 
-Das ersetzt keine natürlichen Sprecher, australischen Varietäten, Hintergrundgeräusche oder authentischen Hörsehtexte. Zusätzliche echte Aufnahmen sind verlinkt. Für Sprechen gibt es Partneraufträge und Notizen; die App nimmt nichts auf und bewertet Aussprache, Intonation oder Flüssigkeit nicht. Längere Lektüre, eigene aktuelle Recherche und der vollständige Jahreswortschatz bleiben zusätzliche Lernarbeit. Die Projektmuster enthalten keine recherchierten Ergebnisse. Eine unabhängige didaktische Fachprüfung steht noch aus.
+Das ersetzt keine natürlichen Sprecher, australischen Varietäten, Hintergrundgeräusche oder Videos mit natürlicher Sprache. Zusätzliche echte Aufnahmen sind verlinkt. Für Sprechen gibt es Partneraufträge und Notizen; die App nimmt nichts auf und bewertet Aussprache, Intonation oder Flüssigkeit nicht. Die Lektüre einer englischsprachigen Ganzschrift, weitere Autoren, eigene aktuelle Recherche und der vollständige Jahreswortschatz bleiben zusätzliche Lernarbeit. Die Projektmuster enthalten keine recherchierten Ergebnisse. Eine unabhängige didaktische Fachprüfung steht noch aus.
 
 Firmen, Personen, Dialoge, Umfragewerte und Klimazahlen sind ausdrücklich als fiktive Übungen bezeichnet. Die Kurzgeschichte ist ein vollständiger eigener didaktischer Text. Die Shakespeare-Beschreibung ist eine eigene Zusammenfassung; Originaltext und Aufführung werden über einen gesonderten Auftrag verglichen. Historische und sprachliche Aussagen nennen ihre Quellen. Quellen öffnen erst auf Klick.
 
-Fortschritt und Texte bleiben in diesem Browser. Keine Konten, Cookies, Mikrofonzugriffe, Analyse-Dienste oder automatisch nachgeladenen Drittinhalte. Bei blockiertem Speicher funktioniert die Übung weiter und zeigt einen Hinweis. Die eigenständige HTML-Datei läuft auch ohne Server; externe Quellen benötigen Internet, lokale Stimmen ihre Installation.
+Fortschritt und Texte bleiben in diesem Browser. Mehrere Tabs führen erledigte Schritte zusammen; nur ein tatsächlich geänderter Entwurf ersetzt den zuletzt gespeicherten Text. Sein Mustervergleich gilt ausschließlich für diesen Text. Ein bestätigtes Zurücksetzen gilt auch für die anderen Tabs. Keine Konten, Cookies, Mikrofonzugriffe, Analyse-Dienste oder automatisch nachgeladenen Drittinhalte. Bei blockiertem Speicher funktioniert die Übung weiter und zeigt einen Hinweis. Die eigenständige HTML-Datei läuft auch ohne Server; externe Quellen benötigen Internet, lokale Stimmen ihre Installation.
 
 ## ZAM-Karten und Altbestand
 
@@ -34,7 +34,7 @@ Fortschritt und Texte bleiben in diesem Browser. Keine Konten, Cookies, Mikrofon
 
 Die alte Grammatikzelle enthält acht Karten. [replaces-de-by.json](replaces-de-by.json) dokumentiert einen Vorschlag mit **3 A-Zuordnungen und 5 C-Fällen**; die [Begründung](../docs/englisch-9-bestandsabgleich.md) erläutert jeden Fall. Mehrteilige Fragen, unvollständige Relativsatzregeln und fehlerhafte Passivregeln erhalten keinen unsicheren Beherrschungsübertrag.
 
-**Keine Zuordnung ist freigegeben.** `approved` bleibt `null`; die Zelle enthält weder `replaces` noch `retired_items`. Bestehende Karten bleiben aktiv. Der Test spielt eine ausschließlich im Speicher erzeugte Übertragung in temporären Bibliotheken durch. Veröffentlichung und Übernahme in ZAM sind weitere Schritte. In persönlichen Bibliotheken wurde nichts verändert.
+**Keine Zuordnung ist freigegeben.** `approved` bleibt `null`; die Zelle enthält weder `replaces` noch `retired_items`. Bestehende Karten bleiben aktiv. Der Test spielt eine ausschließlich im Speicher erzeugte Übertragung in temporären Bibliotheken durch. App und eigenständige Zelle werden über die Academy veröffentlicht. Die Übernahme in den gebündelten ZAM-Bestand erfolgt dort mit einer gesonderten Synchronisierung. Im Dialog „Mit ZAM behalten“ steht die Anfrage für die Aufnahme der Academy-Zelle. In persönlichen Bibliotheken wurde nichts verändert.
 
 ## Entwickeln und prüfen
 
@@ -52,4 +52,4 @@ ZAM_CORE=<Datei-URL des veröffentlichten zam-core/dist/index.js> node scripts/v
 
 `src/curriculum/lessons.json` enthält Materialien und Lernaufgaben; der Schnellcheck liest seine Frage und Antwort aus `cell.json`. `outline.json` hält Etappen und Quellen. Kartentexte werden ausschließlich in `cell.json` gepflegt, ohne zweite Kartenliste oder Generator. Die einmal mit `ulid()` erzeugten Identitäten bleiben erhalten. `tests/fixtures/public-contract.json` pinnt Lektionsanker, Atom- und Kartenidentitäten. Die Altdatei ist bytegleich mit SHA-256 gesichert.
 
-Die Migration wurde mit dem veröffentlichten **zam-core 0.54.0** geprüft: acht vollständige Kartenstände und 16 Reviewereignisse bleiben im Entwurf wie in der Probe erhalten. Die Probe überträgt nur drei A-Karten. Wiederholte Installation und Aufnahme ändern keine bestehende Planung; neue Karten besitzen keine erfundene Beherrschung. Ein Kollisionsfall mit zwei schon bewerteten Karten wird vollständig zurückgewiesen.
+Die Migration wurde mit dem veröffentlichten **zam-core 0.54.0** geprüft: acht vollständige Kartenstände und 16 Reviewereignisse bleiben im Entwurf wie in der Probe erhalten. Die Probe überträgt drei A-Karten und nimmt die fünf C-Karten aus aktiven Wiederholungen; Kartenstände und Reviewereignisse bleiben erhalten. Die veröffentlichte Zelle lässt weiterhin alle acht Altkarten aktiv. Der Test prüft beide Zustände über Tokenstatus und Übungsschlange. Wiederholte Installation und Aufnahme ändern keine bestehende Planung; neue Karten besitzen keine erfundene Beherrschung. Ein Kollisionsfall mit zwei schon bewerteten Karten wird vollständig zurückgewiesen.

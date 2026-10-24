@@ -8,7 +8,7 @@ Hands-on training apps that build understanding before [ZAM](https://github.com/
 | Physik 8 Realschule (LehrplanPLUS Bayern, Zweig I und II/III) | [`physik-realschule-8/`](physik-realschule-8/) | https://academy.zam-os.org/physik-realschule-8/ | `zam-academy:physik-realschule-8` |
 | Physik 9 Realschule (LehrplanPLUS Bayern) | [`physik-realschule-9/`](physik-realschule-9/) | https://academy.zam-os.org/physik-realschule-9/ | `zam-academy:physik-realschule-9` |
 | Relationale Datenbanken und SQL (DE/EN, LehrplanPLUS IT 2.3.1/2.3.2) | [`sql/`](sql/) | https://academy.zam-os.org/sql/ | `zam-academy:sql` |
-| Englisch 9 Realschule (LehrplanPLUS Bayern, lokaler Entwurf) | [`englisch-realschule-9/`](englisch-realschule-9/) | Noch unveröffentlicht | `zam-academy:englisch-realschule-9` |
+| Englisch 9 Realschule (LehrplanPLUS Bayern) | [`englisch-realschule-9/`](englisch-realschule-9/) | https://academy.zam-os.org/englisch-realschule-9/ | `zam-academy:englisch-realschule-9` |
 | Mathematik 7 Realschule (LehrplanPLUS Bayern, Zweig I und II/III) | [`mathematik-realschule-7/`](mathematik-realschule-7/) | https://academy.zam-os.org/mathematik-realschule-7/ | `zam-academy:mathematik-realschule-7` |
 | Mathematik 8 Realschule (LehrplanPLUS Bayern, Zweig I und II/III) | [`mathematik-realschule-8/`](mathematik-realschule-8/) | https://academy.zam-os.org/mathematik-realschule-8/ | `zam-academy:mathematik-realschule-8` |
 | Mathematik 9 Realschule (LehrplanPLUS Bayern) | [`mathematik-realschule-9/`](mathematik-realschule-9/) | https://academy.zam-os.org/mathematik-realschule-9/ | `zam-academy:mathematik-realschule-9` |

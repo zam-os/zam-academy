@@ -39,6 +39,7 @@ export interface Lesson {
 		question: string;
 		answer: string;
 		wrong: [string, string];
+		wrongFeedback: [string, string];
 		explanation: string;
 	};
 	practice: Practice[];

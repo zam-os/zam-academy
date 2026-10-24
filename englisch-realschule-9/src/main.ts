@@ -6,20 +6,26 @@ import {
 	SOURCES,
 	STAGES,
 } from "./curriculum";
-import { localEnglishVoices } from "./listening";
+import { waitForLocalEnglishVoice } from "./listening";
 import {
 	canAccept,
 	canReview,
 	checkPractice,
 	esc,
+	practiceFeedback,
+	quizFeedback,
 	quizOptions,
 } from "./practice";
 import {
 	completion,
-	freshProgress,
 	isComplete,
 	loadProgress,
+	markSyntheticListening,
+	mergeProgress,
+	resetProgress,
+	STORAGE_KEY,
 	saveProgress,
+	setPartnerListening,
 	updateDraft,
 	writingKey,
 } from "./storage/progress";
@@ -27,7 +33,7 @@ import type { Lesson, Level } from "./types";
 import {
 	parseTrainingDeepLink,
 	trainingBaseUrl,
-	ZAM_CELL_ID,
+	zamEnrolRequest,
 } from "./zam/zam-link";
 
 function required<T>(value: T | undefined | null): T {
@@ -42,15 +48,53 @@ function element<T extends Element = HTMLElement>(selector: string): T {
 const main = element<HTMLElement>("#main");
 const dialog = element<HTMLDialogElement>("#dialog");
 let progress = loadProgress();
+let baseline = structuredClone(progress);
 let view: "path" | "lesson" | "reference" = "path";
 let routeNotice = "";
 const practiceAnswers = new Map<string, string[]>();
 let speaking: SpeechSynthesisUtterance | undefined;
 let speechSession = 0;
+let voiceRequest: AbortController | undefined;
 
 function persist(): void {
-	element<HTMLElement>("#storage-warning").hidden = saveProgress(progress);
+	const saved = saveProgress(progress, baseline);
+	if (saved) baseline = structuredClone(progress);
+	element<HTMLElement>("#storage-warning").hidden = saved;
+	syncSavedState();
 	renderStats();
+}
+
+/** Update saved evidence without replacing an open form or its focus. */
+function syncSavedState(): void {
+	if (view !== "lesson") return;
+	const id = progress.activeLessonId;
+	const draft = document.querySelector<HTMLTextAreaElement>("#draft");
+	if (draft) {
+		const key = writingKey(id, progress.level);
+		const saved = progress.drafts[key] ?? "";
+		if (draft.value !== saved) {
+			draft.value = saved;
+			element<HTMLButtonElement>("#compare").disabled = !canReview(saved);
+			element("#comparison").innerHTML = "";
+		}
+		element("#writing-status").textContent = progress.writingDone.includes(key)
+			? "Eigener Mustervergleich gespeichert."
+			: canReview(saved)
+				? "Entwurf geändert · bitte mit einem Muster vergleichen."
+				: "";
+	}
+	const partner = document.querySelector<HTMLInputElement>("#partner-listened");
+	if (partner) {
+		const evidence = progress.listening[id];
+		partner.checked = evidence?.partner === true;
+		const modes = [
+			evidence?.synthetic ? "lokale Computerstimme" : "",
+			evidence?.partner ? "Partner hat vorgelesen" : "",
+		].filter(Boolean);
+		element("#listened-status").textContent = modes.length
+			? `Zuhörübung gespeichert: ${modes.join(" und ")}.`
+			: "Zuhörübung noch offen.";
+	}
 }
 function renderStats(): void {
 	const count = completion(progress);
@@ -59,6 +103,8 @@ function renderStats(): void {
 }
 function cancelSpeech(): void {
 	speechSession++;
+	voiceRequest?.abort();
+	voiceRequest = undefined;
 	if (speaking && "speechSynthesis" in window) window.speechSynthesis.cancel();
 	speaking = undefined;
 }
@@ -111,7 +157,7 @@ function renderPath(): void {
 		CORE_LESSONS.find((lesson) => !isComplete(progress, lesson.id)) ??
 		CORE_LESSONS[0];
 	main.innerHTML = `${routeNotice ? `<p class="notice" role="status">${esc(routeNotice)}</p>` : ""}
-    <section class="hero"><div><div class="eyebrow">LehrplanPLUS Bayern · alle Wahlpflichtfächergruppen</div><h1>Englisch, das du<br> anwenden kannst.</h1><p>Ein Gespräch führen, eine Bewerbung schreiben, andere Perspektiven verstehen: Übe an konkreten Situationen und erkläre deine Gedanken mit eigenen Worten.</p><button type="button" class="button accent" id="continue">${completion(progress).completed ? "Weiterüben" : "Mit Englisch starten"} <span aria-hidden="true">↗</span></button><p class="small">36 Kernlektionen · 4 freiwillige Grammatikergänzungen · lokaler Entwurf</p></div>
+    <section class="hero"><div><div class="eyebrow">LehrplanPLUS Bayern · alle Wahlpflichtfächergruppen</div><h1>Englisch, das du<br> anwenden kannst.</h1><p>Ein Gespräch führen, eine Bewerbung schreiben, andere Perspektiven verstehen: Übe an konkreten Situationen und erkläre deine Gedanken mit eigenen Worten.</p><button type="button" class="button accent" id="continue">${completion(progress).completed ? "Weiterüben" : "Mit Englisch starten"} <span aria-hidden="true">↗</span></button><p class="small">36 Kernlektionen · 4 freiwillige Grammatikergänzungen</p></div>
     <aside class="hero-note"><div class="eyebrow">Dein nächster Schritt</div><strong>${esc(next.title)}</strong><p>Erst verstehen, dann ausprobieren. Schreibe oder sprich selbst, bevor du ein Muster vergleichst.</p><span class="small">Ohne Konto · Fortschritt in diesem Browser</span></aside></section>
     <div class="path-heading"><div><h2>Dein Lernpfad</h2><p>Themen und Sprachwerkstatt greifen ineinander. Du kannst jede Lektion direkt öffnen.</p></div><label class="toggle"><input id="foundations" type="checkbox" ${progress.includeFoundations ? "checked" : ""}>Grammatikergänzungen zeigen</label></div>
     <div class="stages">${STAGES.filter(
@@ -163,7 +209,7 @@ function renderLesson(lesson: Lesson): void {
 	main.innerHTML = `<div class="lesson-top"><button type="button" class="text-button" id="back">← Zum Lernpfad</button><label class="level-select" for="level">Aufgabenstufe <select id="level"><option value="1" ${progress.level === 1 ? "selected" : ""}>Level 1 · Anwenden</option><option value="2" ${progress.level === 2 ? "selected" : ""}>Level 2 · Transfer</option></select></label></div>
     <div class="lesson-heading" style="--stage-hue:${stage.hue}"><div class="eyebrow">${esc(stage.title)}${lesson.optional ? " · freiwillige Ergänzung" : ""}</div><h1 lang="en">${esc(lesson.title)}</h1><p class="intro">${esc(lesson.skill)}</p></div>
     <div class="lesson-columns"><div class="lesson-content"><section class="panel"><h2>Verstehen</h2>${lesson.paragraphs.map((text) => `<p>${esc(text)}</p>`).join("")}<div class="takeaway"><strong>Merke</strong>${esc(lesson.takeaway)}</div></section>
-    <section class="panel" aria-labelledby="material-heading"><h2 id="material-heading">${lesson.listening ? "Zuerst hören" : "Dein Material"}</h2><p class="small">${esc(lesson.materialLabel)}</p>${lesson.listening ? `<p>Höre zuerst ohne mitzulesen. Die lokale Computerstimme spricht ein Übungsskript; natürliche Stimmen und Hörsehtexte übst du zusätzlich.</p><div class="self-actions"><button type="button" class="button accent" id="listen">Skript anhören</button><button type="button" class="button secondary" id="stop-listen">Stoppen</button></div><p class="small" id="voice-status" role="status"></p><details id="transcript"><summary>Transkript / Text zum Vorlesen</summary><p class="material" lang="${lesson.materialLanguage}">${esc(lesson.material)}</p></details><label class="toggle"><input type="checkbox" id="partner-listened" ${progress.listening[lesson.id] === "partner" ? "checked" : ""}>Ein Partner hat mir den Text vorgelesen; ich habe zuerst ohne Mitlesen zugehört.</label><p class="small" id="listened-status" role="status"></p>` : `${renderGraphic(lesson)}<p class="material" lang="${lesson.materialLanguage}">${esc(lesson.material)}</p>`}</section>
+    <section class="panel" aria-labelledby="material-heading"><h2 id="material-heading">${lesson.listening ? "Zuerst hören" : "Dein Material"}</h2><p class="small">${esc(lesson.materialLabel)}</p>${lesson.listening ? `<p>Höre zuerst ohne mitzulesen. Die lokale Computerstimme spricht ein Übungsskript; natürliche Stimmen und Videos übst du zusätzlich.</p><div class="self-actions"><button type="button" class="button accent" id="listen">Skript anhören</button><button type="button" class="button secondary" id="stop-listen">Stoppen</button></div><p class="small" id="voice-status" role="status"></p><details id="transcript"><summary>Transkript / Text zum Vorlesen</summary><p class="material" lang="${lesson.materialLanguage}">${esc(lesson.material)}</p></details><label class="toggle"><input type="checkbox" id="partner-listened" ${progress.listening[lesson.id]?.partner ? "checked" : ""}>Ein Partner hat mir den Text vorgelesen; ich habe zuerst ohne Mitlesen zugehört.</label><p class="small" id="listened-status" role="status"></p>` : `${renderGraphic(lesson)}<p class="material" lang="${lesson.materialLanguage}">${esc(lesson.material)}</p>`}</section>
     <section class="panel"><h2>1 · Schnellcheck</h2><p lang="en">${esc(lesson.quiz.question)}</p><div class="quiz-options">${quizOptions(
 			lesson,
 		)
@@ -205,8 +251,8 @@ function renderLesson(lesson: Lesson): void {
 		(button) =>
 			void button.addEventListener("click", () => {
 				const correct = button.textContent === lesson.quiz.answer;
-				progress.quizDone = progress.quizDone.filter((id) => id !== lesson.id);
-				if (correct) progress.quizDone.push(lesson.id);
+				if (correct && !progress.quizDone.includes(lesson.id))
+					progress.quizDone.push(lesson.id);
 				main
 					.querySelectorAll(".quiz-choice")
 					.forEach(
@@ -214,7 +260,7 @@ function renderLesson(lesson: Lesson): void {
 							void entry.classList.toggle("selected", entry === button),
 					);
 				element("#quiz-feedback").innerHTML =
-					`<div class="feedback ${correct ? "success" : "hint"}">${correct ? "Richtig. " : "Noch einmal überlegen. "}${esc(lesson.quiz.explanation)}</div>`;
+					`<div class="feedback ${correct ? "success" : "hint"}">${esc(quizFeedback(lesson, button.textContent ?? ""))}</div>`;
 				persist();
 			}),
 	);
@@ -227,12 +273,10 @@ function renderLesson(lesson: Lesson): void {
 			].map((input) => input.value);
 			practiceAnswers.set(lesson.id, answers);
 			const results = checkPractice(lesson.practice, answers);
-			progress.practiceDone = progress.practiceDone.filter(
-				(id) => id !== lesson.id,
-			);
-			if (results.every(Boolean)) progress.practiceDone.push(lesson.id);
+			if (results.every(Boolean) && !progress.practiceDone.includes(lesson.id))
+				progress.practiceDone.push(lesson.id);
 			element("#practice-feedback").innerHTML =
-				`<div class="feedback ${results.every(Boolean) ? "success" : "hint"}"><strong>${results.filter(Boolean).length} von ${results.length} richtig.</strong><ol>${results.map((correct, itemIndex) => `<li>${correct ? "✓ " : "Noch prüfen: "}${esc(lesson.practice[itemIndex].feedback)}</li>`).join("")}</ol></div>`;
+				`<div class="feedback ${results.every(Boolean) ? "success" : "hint"}"><strong>${results.filter(Boolean).length} von ${results.length} richtig.</strong><ol>${results.map((correct, itemIndex) => `<li>${correct ? "✓ " : ""}${esc(practiceFeedback(lesson.practice[itemIndex], correct))}</li>`).join("")}</ol></div>`;
 			main
 				.querySelectorAll<HTMLInputElement>(".practice-input")
 				.forEach(
@@ -252,9 +296,6 @@ function renderLesson(lesson: Lesson): void {
 					[...main.querySelectorAll<HTMLInputElement>(".practice-input")].map(
 						(entry) => entry.value,
 					),
-				);
-				progress.practiceDone = progress.practiceDone.filter(
-					(id) => id !== lesson.id,
 				);
 				element("#practice-feedback").innerHTML = "";
 				input.removeAttribute("aria-invalid");
@@ -298,14 +339,8 @@ function renderLesson(lesson: Lesson): void {
 }
 function bindListening(lesson: Lesson): void {
 	const status = element("#voice-status");
-	const heardStatus = element("#listened-status");
-	const refreshStatus = () => {
-		heardStatus.textContent = progress.listening[lesson.id]
-			? `Zuhörübung gespeichert: ${progress.listening[lesson.id] === "partner" ? "Partner hat vorgelesen" : "lokale Computerstimme"}.`
-			: "Zuhörübung noch offen.";
-	};
-	refreshStatus();
-	document.querySelector("#listen")?.addEventListener("click", () => {
+	syncSavedState();
+	document.querySelector("#listen")?.addEventListener("click", async () => {
 		cancelSpeech();
 		const token = speechSession;
 		if (
@@ -316,7 +351,15 @@ function bindListening(lesson: Lesson): void {
 				"Vorlesen ist hier nicht verfügbar. Ein Partner kann dir den Text vorlesen; das Transkript bleibt zugänglich.";
 			return;
 		}
-		const voice = localEnglishVoices(window.speechSynthesis.getVoices())[0];
+		const request = new AbortController();
+		voiceRequest = request;
+		status.textContent = "Installierte englische Stimmen werden geladen …";
+		const voice = await waitForLocalEnglishVoice(
+			window.speechSynthesis,
+			request.signal,
+		);
+		if (token !== speechSession || request.signal.aborted) return;
+		voiceRequest = undefined;
 		if (!voice) {
 			status.textContent =
 				"Keine lokale englische Stimme gefunden. Versuche es später noch einmal oder bitte einen Partner, den Text vorzulesen.";
@@ -330,12 +373,10 @@ function bindListening(lesson: Lesson): void {
 		status.textContent = `Lokale Computerstimme: ${voice.name} (${voice.lang}). Zuhören läuft …`;
 		speaking.onend = () => {
 			if (token !== speechSession) return;
-			progress.listening[lesson.id] = "synthetic";
-			element<HTMLInputElement>("#partner-listened").checked = false;
+			markSyntheticListening(progress, lesson.id);
 			status.textContent =
 				"Skript zu Ende vorgelesen. Natürliche Aufnahmen übst du zusätzlich.";
 			speaking = undefined;
-			refreshStatus();
 			persist();
 		};
 		speaking.onerror = () => {
@@ -362,9 +403,7 @@ function bindListening(lesson: Lesson): void {
 		?.addEventListener("change", (event) => {
 			cancelSpeech();
 			const checked = (event.target as HTMLInputElement).checked;
-			if (checked) progress.listening[lesson.id] = "partner";
-			else delete progress.listening[lesson.id];
-			refreshStatus();
+			setPartnerListening(progress, lesson.id, checked);
 			persist();
 		});
 }
@@ -450,7 +489,7 @@ document
 	?.addEventListener("click", () =>
 		showDialog(
 			"Mit ZAM behalten",
-			`<p>Für dieses Paket sind 80 Wiederholungsfragen vorbereitet. Jede führt zurück zu ihrer Lektion.</p><p>Das Paket ist noch ein lokaler Entwurf. Die Zelle <strong>${esc(ZAM_CELL_ID)}</strong> ist noch nicht im veröffentlichten Academy-Katalog verfügbar.</p><p>Bis dahin kannst du hier ohne Konto weiterüben.</p>`,
+			`<p>Zum Paket gehören 80 Wiederholungsfragen in ZAM. Jede führt zurück zu ihrer Lektion.</p><p>Öffne ZAM und bitte deinen Agenten:</p><p class="material">${esc(zamEnrolRequest())}</p><p>Die Übertragung früherer Englisch-Karten ist noch nicht freigegeben. Die Academy-Karten starten eigenständig.</p><p>Hier kannst du ohne Konto weiterüben.</p>`,
 		),
 	);
 document.querySelector("#reset")?.addEventListener("click", () => {
@@ -459,7 +498,7 @@ document.querySelector("#reset")?.addEventListener("click", () => {
 		'<p>Deine lokalen Antworten und Häkchen dieses Englisch-Pakets werden gelöscht. Das lässt sich nicht rückgängig machen.</p><button type="button" class="button danger" id="confirm-reset">Fortschritt löschen</button>',
 	);
 	document.querySelector("#confirm-reset")?.addEventListener("click", () => {
-		progress = freshProgress();
+		progress = resetProgress(progress);
 		practiceAnswers.clear();
 		dialog.close();
 		navigate();
@@ -467,4 +506,18 @@ document.querySelector("#reset")?.addEventListener("click", () => {
 });
 window.addEventListener("hashchange", applyRoute);
 window.addEventListener("pagehide", cancelSpeech);
+window.addEventListener("storage", (event) => {
+	if (event.key !== STORAGE_KEY) return;
+	// Read the current value: an older queued event must not undo a newer save.
+	const stored = loadProgress();
+	if (stored.resetAt > progress.resetAt) {
+		cancelSpeech();
+		practiceAnswers.clear();
+	}
+	progress = mergeProgress(stored, progress, baseline);
+	baseline = structuredClone(stored);
+	if (view === "path") renderPath();
+	else syncSavedState();
+	renderStats();
+});
 applyRoute();

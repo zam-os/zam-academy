@@ -30,6 +30,10 @@ const bySlug = new Map(
 		.map((item) => [item.slug, item]),
 );
 const targets = new Map();
+// Rehearse C retirements only in memory, alongside the proposed A transfers.
+proposal.retired_items = mapping.rows
+	.filter((row) => row.category === "C")
+	.map((row) => ({ id: row.de_by_id, reason: row.reason }));
 for (const row of mapping.rows) {
 	if (row.category === "C") {
 		assert.equal(row.academy_slug, null);
@@ -87,6 +91,22 @@ try {
 			const before = await snapshot(db);
 			assert.equal(before.cards.length, 8);
 			assert.equal(before.reviews.length, 16);
+			const oldIds = mapping.rows.map((row) => row.de_by_id);
+			const queueOptions = {
+				userId,
+				tokenIds: oldIds,
+				now: new Date(
+					Math.max(...before.cards.map((card) => Date.parse(card.due_at))) +
+						86_400_000,
+				),
+				buryNewSiblings: false,
+				buryReviewSiblings: false,
+			};
+			assert.equal(
+				(await zam.buildReviewQueue(db, queueOptions)).items.length,
+				8,
+				"All old cards must be eligible before the rehearsal",
+			);
 			await zam.installKvtTile(db, tile);
 			const after = await snapshot(db);
 			assert.equal(after.cards.length, 8);
@@ -103,13 +123,22 @@ try {
 						transfers.get(original.token_id) ?? original.token_id,
 					);
 				}
-			for (const row of mapping.rows.filter((row) => row.category === "C")) {
+			for (const row of mapping.rows) {
 				const token = await zam.getTokenById(db, row.de_by_id);
-				assert.ok(
-					token && !token.deprecated_at,
-					"C cards stay active and untouched",
+				assert.ok(token, "Old knowledge and review evidence are never deleted");
+				assert.equal(
+					Boolean(token.deprecated_at),
+					transfers.size > 0,
+					"Only the in-memory proposal removes superseded and corrected items from active use",
 				);
+				if (transfers.size > 0 && row.category === "C")
+					assert.equal(token.editorial_state, "deprecated");
 			}
+			assert.equal(
+				(await zam.buildReviewQueue(db, queueOptions)).items.length,
+				transfers.size > 0 ? 0 : 8,
+				"Rehearsed retirements leave active reviews; the published cell keeps all old cards active",
+			);
 			await zam.installKvtTile(db, tile);
 			assert.deepEqual(
 				await snapshot(db),
@@ -138,8 +167,10 @@ try {
 				assert.ok(pass < 2, "Enrolment must converge");
 			}
 			const final = await snapshot(db),
-				oldIds = new Set(before.cards.map((card) => card.id));
-			for (const fresh of final.cards.filter((card) => !oldIds.has(card.id))) {
+				oldCardIds = new Set(before.cards.map((card) => card.id));
+			for (const fresh of final.cards.filter(
+				(card) => !oldCardIds.has(card.id),
+			)) {
 				assert.equal(fresh.state, "new");
 				assert.equal(fresh.stability, 0);
 				assert.equal(fresh.reps, 0);
@@ -157,7 +188,7 @@ try {
 			});
 			assert.deepEqual(await snapshot(db), final);
 			console.log(
-				`ok   ${name}: 8 card states / 16 review events intact; ${transfers.size} explicit rehearsed transfers; fresh cards have no mastery`,
+				`ok   ${name}: 8 card states / 16 review events intact; ${transfers.size} rehearsed transfers; ${transfers.size ? "8 old items leave active reviews" : "8 old items remain active"}; fresh cards have no mastery`,
 			);
 		} finally {
 			await db.close();

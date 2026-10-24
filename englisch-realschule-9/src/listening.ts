@@ -10,3 +10,40 @@ export function localEnglishVoices(
 				Number(left.lang.toLowerCase() === "en-au"),
 		);
 }
+
+/** Browsers may populate installed voices only after the first getVoices call. */
+export function waitForLocalEnglishVoice(
+	synthesis: Pick<
+		SpeechSynthesis,
+		"getVoices" | "addEventListener" | "removeEventListener"
+	>,
+	signal: AbortSignal,
+	timeoutMs = 1500,
+): Promise<SpeechSynthesisVoice | undefined> {
+	return new Promise((resolve) => {
+		let timer: ReturnType<typeof setTimeout> | undefined;
+		const finish = (voice?: SpeechSynthesisVoice) => {
+			clearTimeout(timer);
+			synthesis.removeEventListener("voiceschanged", changed);
+			signal.removeEventListener("abort", aborted);
+			resolve(voice);
+		};
+		const aborted = () => finish();
+		const changed = () => {
+			try {
+				const voice = localEnglishVoices(synthesis.getVoices())[0];
+				if (voice) finish(voice);
+			} catch {
+				finish();
+			}
+		};
+		if (signal.aborted) {
+			resolve(undefined);
+			return;
+		}
+		synthesis.addEventListener("voiceschanged", changed);
+		signal.addEventListener("abort", aborted, { once: true });
+		timer = setTimeout(() => finish(), timeoutMs);
+		changed();
+	});
+}
