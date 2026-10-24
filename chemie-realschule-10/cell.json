@@ -1,7 +1,7 @@
 {
   "$schema": "https://zam.app/schemas/v1/kvt-tile.json",
   "tile_id": "zam-academy:chemie-realschule-10",
-  "version": "2026.10.1",
+  "version": "2026.10.2",
   "title": "Chemie 10 Realschule (ZAM Academy)",
   "description": "Chemie 10 nach LehrplanPLUS Bayern: getrennte Lernpfade für Zweig I und II/III, digitale Modelle und Aufgaben. Jede Karte führt zur passenden Lektion zurück.",
   "publisher": "ZAM Academy",
@@ -415,7 +415,6 @@
           "bloom_level": 2,
           "source_link": "https://academy.zam-os.org/chemie-realschule-10/#lesson=ch-redox-teilgleichungen",
           "question": "Formuliere für die Reaktion von Magnesium mit Sauerstoff die beiden Teilgleichungen und die Gesamtgleichung und gib die Oxidationszahlen an.",
-          "concept": "Oxidation: 2 Mg → 2 Mg²⁺ + 4 e⁻; Reduktion: O₂ + 4 e⁻ → 2 O²⁻; gesamt: 2 Mg + O₂ → 2 MgO; Mg 0 → +II, O 0 → −II",
           "concept_segments": [
             {
               "type": "text",
@@ -498,7 +497,6 @@
           "bloom_level": 1,
           "source_link": "https://academy.zam-os.org/chemie-realschule-10/#lesson=ch-salzformeln",
           "question": "Welche Verhältnisformel hat Aluminiumoxid?",
-          "concept": "Al₂O₃",
           "concept_segments": [
             {
               "type": "math",
@@ -563,7 +561,6 @@
           "bloom_level": 2,
           "source_link": "https://academy.zam-os.org/chemie-realschule-10/#lesson=ch-salzformeln",
           "question": "Gib die Formeln von Eisen(III)-chlorid und Calciumnitrat an und begründe sie mit den Ionenladungen.",
-          "concept": "FeCl₃ (Fe³⁺, 3 Cl⁻); Ca(NO₃)₂ (Ca²⁺, 2 NO₃⁻)",
           "concept_segments": [
             {
               "type": "math",
@@ -823,7 +820,6 @@
           "bloom_level": 2,
           "source_link": "https://academy.zam-os.org/chemie-realschule-10/#lesson=ch-hydratation",
           "question": "Beschreibe den Lösungsvorgang von Natriumchlorid in Wasser auf Teilchenebene und erkläre, wovon es abhängt, ob sich die Lösung erwärmt oder abkühlt.",
-          "concept": "Wasserdipole lagern sich an die Ionen an (δ−-O zu Na⁺, δ+-H zu Cl⁻), lösen sie aus dem Gitter und bilden Hydrathüllen; Gitterenergie wird aufgewendet, Hydratationsenergie wird frei; die größere bestimmt die Temperaturänderung.",
           "concept_segments": [
             {
               "type": "text",
@@ -1019,7 +1015,6 @@
           "bloom_level": 1,
           "source_link": "https://academy.zam-os.org/chemie-realschule-10/#lesson=ch-broensted",
           "question": "Welche Ionen entstehen, wenn Chlorwasserstoff mit Wasser reagiert?",
-          "concept": "Oxoniumionen H₃O⁺ und Chloridionen Cl⁻.",
           "concept_segments": [
             {
               "type": "text",
@@ -1072,7 +1067,6 @@
           "bloom_level": 2,
           "source_link": "https://academy.zam-os.org/chemie-realschule-10/#lesson=ch-broensted",
           "question": "Erkläre mithilfe des Säure/Base-Konzepts nach Brönsted, warum eine Ammoniaklösung alkalisch ist und den Strom leitet. Unterscheide dabei Base und alkalische Lösung.",
-          "concept": "NH₃ + H₂O ⇌ NH₄⁺ + OH⁻; NH₃ ist Protonenakzeptor (Base), H₂O Protonendonator (Säure); OH⁻-Ionen bewirken die alkalische Eigenschaft, die Ionen die Leitfähigkeit; die Base ist ein Teilchen, die alkalische Lösung das Stoffgemisch.",
           "concept_segments": [
             {
               "type": "math",
@@ -1160,7 +1154,6 @@
           "bloom_level": 1,
           "source_link": "https://academy.zam-os.org/chemie-realschule-10/#lesson=ch-protolyse-saeurereste",
           "question": "Welches Säurerestion bleibt, wenn Schwefelsäure beide Protonen abgegeben hat?",
-          "concept": "Das Sulfation SO₄²⁻.",
           "concept_segments": [
             {
               "type": "text",
@@ -1204,7 +1197,6 @@
           "bloom_level": 1,
           "source_link": "https://academy.zam-os.org/chemie-realschule-10/#lesson=ch-protolyse-saeurereste",
           "question": "Wie heißt das Säurerestion der Ethansäure (Essigsäure)?",
-          "concept": "Acetation CH₃COO⁻",
           "concept_segments": [
             {
               "type": "text",
@@ -1275,7 +1267,6 @@
           "tier": "tier1_fast",
           "bloom_level": 1,
           "source_link": "https://academy.zam-os.org/chemie-realschule-10/#lesson=ch-ph-oxonium",
-          "question": "Um welchen Faktor ändert sich c(H₃O⁺), wenn der pH-Wert einer sauren Lösung von 3 auf 5 steigt?",
           "question_segments": [
             {
               "type": "text",
@@ -1394,7 +1385,6 @@
           "bloom_level": 1,
           "source_link": "https://academy.zam-os.org/chemie-realschule-10/#lesson=ch-neutralisation",
           "question": "Welche Teilchenreaktion ist allen Neutralisationen saurer und alkalischer Lösungen gemeinsam?",
-          "concept": "H₃O⁺ + OH⁻ → 2 H₂O",
           "concept_segments": [
             {
               "type": "math",
@@ -1697,7 +1687,6 @@
           "bloom_level": 2,
           "source_link": "https://academy.zam-os.org/chemie-realschule-10/#lesson=ch-carbonate-metalle",
           "question": "Erkläre, warum Essig einen verkalkten Wasserkocher reinigt. Nenne das Gas, seinen Nachweis und das entstehende Salz und formuliere die Reaktionsgleichung.",
-          "concept": "CaCO₃ + 2 CH₃COOH → Ca(CH₃COO)₂ + H₂O + CO₂; Gas: Kohlenstoffdioxid (Kalkwasser trüb); Salz: Calciumacetat, löslich",
           "concept_segments": [
             {
               "type": "math",
@@ -1868,7 +1857,6 @@
           "bloom_level": 1,
           "source_link": "https://academy.zam-os.org/chemie-realschule-10/#lesson=ch-fotosynthese",
           "question": "Welche Bruttogleichung beschreibt die Fotosynthese?",
-          "concept": "6 CO₂ + 6 H₂O → C₆H₁₂O₆ + 6 O₂",
           "concept_segments": [
             {
               "type": "math",
@@ -2057,7 +2045,6 @@
           "bloom_level": 2,
           "source_link": "https://academy.zam-os.org/chemie-realschule-10/#lesson=ch-energiegehalt",
           "question": "Ein Erdnussstück von 1,0 g erwärmt beim Verbrennen 200 g Wasser um 15 K. Berechne den Energiegehalt und erkläre, warum er kleiner ist als der Tabellenwert von 25 kJ/g.",
-          "concept": "Q = c·m·ΔT = 4,19 J/(g·K) · 200 g · 15 K ≈ 12 570 J ≈ 12,6 kJ → 12,6 kJ/g; Wärmeverluste an Luft und Gefäß",
           "concept_segments": [
             {
               "type": "math",
@@ -2157,7 +2144,6 @@
           "bloom_level": 1,
           "source_link": "https://academy.zam-os.org/chemie-realschule-10/#lesson=ch-rohstoffe",
           "question": "Warum verstärkt die Verbrennung fossiler Brennstoffe den Treibhauseffekt?",
-          "concept": "Sie setzt lange gebundenen Kohlenstoff zusätzlich als CO₂ frei.",
           "concept_segments": [
             {
               "type": "text",
@@ -2301,7 +2287,6 @@
           "bloom_level": 2,
           "source_link": "https://academy.zam-os.org/chemie-realschule-10/#lesson=ch-addition",
           "question": "Beschreibe den Mechanismus der Addition von Brom an Ethen (Zweig I) mit Strukturformeln in Worten.",
-          "concept": "Polarisierung von Br₂ durch die Doppelbindung (Brδ+–Brδ−); das positivierte Br bindet an ein C-Atom, es entstehen ein positiv geladenes Zwischenteilchen und Br⁻; Br⁻ bindet an das positive C-Atom: 1,2-Dibromethan",
           "concept_segments": [
             {
               "type": "text",
@@ -2436,7 +2421,6 @@
           "bloom_level": 2,
           "source_link": "https://academy.zam-os.org/chemie-realschule-10/#lesson=ch-substitution",
           "question": "Formuliere die Radikal-Kettenreaktion von Methan mit Brom mit Start, zwei Kettenschritten und einer Abbruchreaktion.",
-          "concept": "Start: Br₂ → 2 Br· (Licht); Kette: Br· + CH₄ → HBr + ·CH₃, ·CH₃ + Br₂ → CH₃Br + Br·; Abbruch: z. B. Br· + ·CH₃ → CH₃Br",
           "concept_segments": [
             {
               "type": "text",
@@ -2545,7 +2529,6 @@
           "tier": "tier1_fast",
           "bloom_level": 1,
           "source_link": "https://academy.zam-os.org/chemie-realschule-10/#lesson=ch-oxidationszahlen-organisch",
-          "question": "Welche Oxidationszahl hat das C-Atom im Methanol CH₃–OH?",
           "question_segments": [
             {
               "type": "text",
@@ -2696,7 +2679,6 @@
           "bloom_level": 1,
           "source_link": "https://academy.zam-os.org/chemie-realschule-10/#lesson=ch-alkanole-oxidation",
           "question": "Welche funktionellen Gruppen durchläuft ein primäres Alkanol bei vollständiger Oxidation?",
-          "concept": "–OH → –CHO → –COOH",
           "concept_segments": [
             {
               "type": "math",
@@ -2732,7 +2714,6 @@
           "bloom_level": 2,
           "source_link": "https://academy.zam-os.org/chemie-realschule-10/#lesson=ch-alkanole-oxidation",
           "question": "Erkläre die Reaktion von Ethanol mit heißem Kupfer(II)-oxid als Redoxreaktion mithilfe von Oxidationszahlen.",
-          "concept": "CH₃–CH₂–OH + CuO → CH₃–CHO + Cu + H₂O; C1: −I → +I (Oxidation); Cu: +II → 0 (Reduktion); CuO ist Oxidationsmittel",
           "concept_segments": [
             {
               "type": "math",
@@ -2954,7 +2935,6 @@
           "bloom_level": 2,
           "source_link": "https://academy.zam-os.org/chemie-realschule-10/#lesson=ch-estersynthese",
           "question": "Formuliere die Estersynthese aus Ethansäure und Ethanol mit Halbstrukturformeln, nenne den Reaktionstyp und erkläre den Doppelpfeil.",
-          "concept": "CH₃–COOH + HO–CH₂–CH₃ ⇌ CH₃–COO–CH₂–CH₃ + H₂O; Kondensation; umkehrbar (Esterspaltung)",
           "concept_segments": [
             {
               "type": "math",
@@ -3125,7 +3105,6 @@
           "bloom_level": 1,
           "source_link": "https://academy.zam-os.org/chemie-realschule-10/#lesson=ch-aminosaeuren",
           "question": "Welche funktionellen Gruppen hat jede Aminosäure?",
-          "concept": "Eine Aminogruppe –NH₂ und eine Carboxygruppe –COOH.",
           "concept_segments": [
             {
               "type": "text",
@@ -3304,7 +3283,6 @@
           "bloom_level": 2,
           "source_link": "https://academy.zam-os.org/chemie-realschule-10/#lesson=ch-peptide",
           "question": "Beschreibe die Bildung eines Tripeptids aus drei Aminosäuren und gib an, wie viele Peptidbindungen und Wassermoleküle entstehen. Nenne einen Nachweis für Proteine.",
-          "concept": "Kondensation: COOH der einen + NH₂ der nächsten → –CO–NH– + H₂O; Tripeptid: 2 Peptidbindungen, 2 H₂O; Biuret-Probe violett",
           "concept_segments": [
             {
               "type": "text",
@@ -4011,7 +3989,6 @@
           "bloom_level": 2,
           "source_link": "https://academy.zam-os.org/chemie-realschule-10/#lesson=ch-polymerisation",
           "question": "Beschreibe die radikalische Polymerisation von Ethen mit Start, Kettenwachstum und Abbruch und gib die Wiederholungseinheit an.",
-          "concept": "Start: Starter zerfällt in Radikale R·; R· öffnet C=C: R–CH₂–CH₂·; Wachstum: Radikal addiert weitere Ethenmoleküle; Abbruch: zwei Radikale verbinden sich; [–CH₂–CH₂–]_n",
           "concept_segments": [
             {
               "type": "text",
@@ -4305,7 +4282,6 @@
           "bloom_level": 1,
           "source_link": "https://academy.zam-os.org/chemie-realschule-10/#lesson=ch-silikone",
           "question": "Welches Gerüst haben Silikone?",
-          "concept": "Abwechselnd Si- und O-Atome mit CH₃-Gruppen.",
           "concept_segments": [
             {
               "type": "text",
@@ -4349,7 +4325,6 @@
           "bloom_level": 1,
           "source_link": "https://academy.zam-os.org/chemie-realschule-10/#lesson=ch-silikone",
           "question": "Welcher Baustein vernetzt bei der Silikonherstellung die Ketten?",
-          "concept": "CH₃SiCl₃ mit drei Cl-Atomen.",
           "concept_segments": [
             {
               "type": "math",
@@ -4389,7 +4364,6 @@
           "bloom_level": 2,
           "source_link": "https://academy.zam-os.org/chemie-realschule-10/#lesson=ch-silikone",
           "question": "Beschreibe die Herstellung von Silikonen aus Chlormethylsilanen und erkläre die Einteilung in Silikonöle, -elastomere und -harze sowie die Sonderstellung der Silikonöle.",
-          "concept": "Si–Cl + H₂O → Si–OH + HCl; 2 Si–OH → Si–O–Si + H₂O; Öl: unvernetzte Ketten (flüssig); Elastomer: weitmaschig vernetzt; Harz: engmaschig vernetzt; Silikonöle sind flüssig und passen nicht in die Einteilung fester Kunststoffe",
           "concept_segments": [
             {
               "type": "math",
@@ -4684,7 +4658,6 @@
           "bloom_level": 1,
           "source_link": "https://academy.zam-os.org/chemie-realschule-10/#lesson=ch-batterie-akku",
           "question": "Was geschieht beim Entladen der Zink-Iod-Batterie an der Zinkelektrode?",
-          "concept": "Zink wird oxidiert: Zn → Zn²⁺ + 2 e⁻.",
           "concept_segments": [
             {
               "type": "text",
@@ -4824,7 +4797,6 @@
           "bloom_level": 2,
           "source_link": "https://academy.zam-os.org/chemie-realschule-10/#lesson=ch-brennstoffzelle",
           "question": "Erkläre Aufbau und Funktion der Wasserstoff/Sauerstoff-Brennstoffzelle mit Teilgleichungen und bewerte ihren ökologischen Nutzen.",
-          "concept": "Minuspol: H₂ → 2 H⁺ + 2 e⁻; Pluspol: O₂ + 4 H⁺ + 4 e⁻ → 2 H₂O; Membran trennt Gase, lässt H⁺ durch; Elektronen über äußeren Stromkreis; nur Wasser als Abgas; ökologisch nur mit regenerativ erzeugtem Wasserstoff",
           "concept_segments": [
             {
               "type": "text",

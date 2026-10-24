@@ -123,7 +123,9 @@ Thomas hat diese Zuordnung am 24.10.2026 vor dem Merge von
 zam-os/zam-academy#43 freigegeben („Kartenzuordnung freigegeben. Du darfst
 dann mergen“). Die Zelle erscheint deshalb schon in ihrer ersten
 veröffentlichten Version (2026.10.1) mit den sieben `replaces` (A und B) und
-ohne `retired_items`. `scripts/validate-migration.mjs` prüft das in
+ohne `retired_items`. Version 2026.10.2 ändert nur die Kartenform: Wo eine
+Karte Formelsegmente trägt, entfällt das gleichlautende Klartextfeld, weil ZAM
+je Feld genau eine Form bündelt. `scripts/validate-migration.mjs` prüft das in
 Wegwerf-Bibliotheken: Historien ziehen unverändert um, die C-Karten bleiben
 aktiv, und eine Kollision alte/neue Karte wird für jede der sieben Zeilen
 abgelehnt.
