@@ -1,0 +1,2536 @@
+[
+	{
+		"id": "e9-job-ad",
+		"stage": "work",
+		"title": "Read a job advert",
+		"skill": "Lesen · scanning",
+		"bindings": ["1.1-lesen", "3", "5-arbeit", "4"],
+		"paragraphs": [
+			"Beim Überfliegen suchst du zuerst Textsorte, Zweck und Zielgruppe. Scanning bedeutet, eine bestimmte Angabe wie Arbeitszeit oder Anforderung gezielt zu finden. Skimming liefert dagegen den Gesamtüberblick. Markiere in einer Stellenanzeige Tätigkeiten und Anforderungen getrennt; freundlich klingende Werbung ist noch keine konkrete Arbeitsbedingung.",
+			"Ein Arbeitgeber nennt nicht immer alles. Unterscheide ausdrücklich genannte Informationen von Vermutungen. Hier ist die Bewerbung per E-Mail verlangt; eine Telefonnummer fehlt. Formuliere offene Fragen, statt eine Bezahlung oder Altersgrenze zu erfinden. Die Anzeige ist ein Übungstext und kein echtes Stellenangebot."
+		],
+		"material": "RIVER WORKSHOP · Work experience week\nOur small bicycle repair shop is looking for a student for one week in July. You will welcome customers, label spare parts and help the team keep the workshop tidy. You do not need repair experience, but you should enjoy working with people. You must be available from Monday to Friday, 9 a.m. to 3 p.m. Please send a short email explaining your interest and availability by 12 June. We will arrange a short conversation with suitable applicants. Ask us about any arrangements you need before the placement starts.",
+		"materialLabel": "Für diese Übung verfasster Text · fiktiver Fall, keine Originalquelle.",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"wrong": ["Predicting", "Retelling"],
+			"explanation": "Scanning sucht eine bestimmte Information; hier ist es das Datum.",
+			"wrongFeedback": [
+				"Vorhersagen hilft beim Vermuten des Inhalts, aber nicht beim gezielten Finden eines Datums.",
+				"Nacherzählen fasst einen gelesenen Text zusammen; gefragt ist die Suche nach einer einzelnen Angabe."
+			]
+		},
+		"practice": [
+			{
+				"prompt": "The application must arrive by ___ June.",
+				"answers": ["12"],
+				"feedback": "Die Anzeige nennt ausdrücklich 12 June."
+			},
+			{
+				"prompt": "Write the first working day of the week.",
+				"answers": ["Monday"],
+				"feedback": "Monday to Friday sind fünf Tage."
+			},
+			{
+				"prompt": "Is repair experience required? Answer yes or no.",
+				"answers": ["no"],
+				"feedback": "You do not need repair experience."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Write a 60–80 word email asking about one missing detail and stating when you are available. Use fictional details.",
+				"model": "Dear River Workshop team, I am interested in your work experience week because I enjoy helping people. I am available for the whole week in July. Could you tell me whether I need to bring any special clothing? I would also like to know who will supervise students. Thank you for your help. Kind regards, Alex",
+				"criteria": [
+					"Du nennst deine Verfügbarkeit.",
+					"Du fragst höflich nach einer fehlenden Angabe.",
+					"Du nutzt Anrede und Schlussformel."
+				]
+			},
+			"2": {
+				"prompt": "Compare an advert with a school timetable: explain why the same scanning strategy works, and name a detail you must not assume.",
+				"model": "Both texts contain information that can be located without reading every word. I would scan for a date or a time. However, the advert does not say whether the placement is paid. A friendly description is not evidence of payment, so I would ask before making a decision.",
+				"criteria": [
+					"Du überträgst scanning auf zwei Textsorten.",
+					"Du nennst ein konkretes Suchziel.",
+					"Du trennst Beleg und Vermutung."
+				]
+			}
+		},
+		"materialLanguage": "en",
+		"takeaway": "Skimming klärt Zweck und Zielgruppe; Scanning findet gezielt einzelne Angaben wie die Bewerbungsfrist."
+	},
+	{
+		"id": "e9-cv",
+		"stage": "work",
+		"title": "A clear CV",
+		"skill": "Schreiben · Lebenslauf",
+		"bindings": ["1.1-schreiben", "3", "5-arbeit"],
+		"paragraphs": [
+			"Ein CV ordnet relevante Erfahrungen so, dass ein Leser schnell passende Belege findet. Ausbildung, praktische Erfahrung, Fähigkeiten und Interessen stehen unter klaren Überschriften. Innerhalb einer Rubrik kann die jüngste Erfahrung zuerst stehen. Nutze einheitliche Zeitangaben und genaue Tätigkeitswörter. Ein Lernprojekt darf als Lernprojekt genannt werden; erfinde keine Berufserfahrung.",
+			"Für eine Übungsbewerbung verwendest du erfundene Kontaktdaten und lässt private Angaben weg, die für die Aufgabe unnötig sind. Eine Stärke wird glaubwürdiger durch ein Beispiel: organised a class event zeigt mehr als very organised. Beschreibe Sprachkenntnisse ehrlich. Ein kurzer CV muss zur Stelle passen und gut lesbar bleiben."
+		],
+		"material": "Alex Morgan · sample CV\nEducation: Riverside Secondary School, Year 9.\nExperience: School charity day, May: organised a book stall with three classmates; answered visitors’ questions.\nSkills: English and German; basic spreadsheets; careful record keeping.\nInterests: Cycling and repairing old bikes with a school club.\nAvailability: One week in July.\nAll details are fictional. This example intentionally contains no home address or real contact details.",
+		"materialLabel": "Für diese Übung verfasster Text · fiktiver Fall, keine Originalquelle.",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"wrong": [
+				"Describes every family member",
+				"Calls all hobbies professional work"
+			],
+			"explanation": "Eine gemeinsam ausgeführte Tätigkeit belegt die Behauptung.",
+			"wrongFeedback": [
+				"Angaben über Familienmitglieder belegen keine eigene Zusammenarbeit.",
+				"Ein Hobby wird durch diese Bezeichnung noch nicht zur Berufserfahrung."
+			]
+		},
+		"practice": [
+			{
+				"prompt": "CV stands for curriculum ___.",
+				"answers": ["vitae"],
+				"feedback": "CV ist die Abkürzung für curriculum vitae."
+			},
+			{
+				"prompt": "Under which heading do languages belong here: Skills or Availability?",
+				"answers": ["Skills"],
+				"feedback": "Sprachen sind Fähigkeiten, keine Zeitangabe."
+			},
+			{
+				"prompt": "Complete the action verb: ___ visitors’ questions.",
+				"answers": ["answered"],
+				"feedback": "Answered nennt eine beobachtbare Tätigkeit."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Draft three CV entries for a fictional student applying to the bicycle shop. Give evidence for one skill.",
+				"model": "Education: Riverside Secondary School, Year 9. Experience: Helped organise a school cycle day and checked visitors’ tickets. Skills: Teamwork, shown by planning the event with four classmates; English and German. Interests: Repairing bicycles in the school club. Availability: One week in July.",
+				"criteria": [
+					"Die Rubriken sind verständlich.",
+					"Eine Fähigkeit hat einen konkreten Beleg.",
+					"Die Angaben passen zur Stelle."
+				]
+			},
+			"2": {
+				"prompt": "Explain which two entries you would prioritise for a library placement instead, and why.",
+				"model": "For a library placement I would prioritise answering visitors’ questions and careful record keeping. Both are useful when helping readers find books and checking loans. I would keep the cycling interest short unless it demonstrates a relevant responsibility. I would not invent experience in a real library.",
+				"criteria": [
+					"Du wählst zwei passende Einträge.",
+					"Du begründest die Auswahl mit Aufgaben.",
+					"Du erfindest keine Erfahrung."
+				]
+			}
+		},
+		"materialLanguage": "en",
+		"takeaway": "Belege eine Fähigkeit mit einer passenden Tätigkeit und ordne Erfahrungen übersichtlich."
+	},
+	{
+		"id": "e9-application",
+		"stage": "work",
+		"title": "A convincing application",
+		"skill": "Schreiben · Bewerbung",
+		"bindings": ["1.1-schreiben", "3", "5-arbeit", "2"],
+		"paragraphs": [
+			"Ein Bewerbungsschreiben verbindet Interesse, passende Erfahrung und die konkrete Stelle. Ein einfacher Aufbau ist Anlass, Beleg, Verfügbarkeit und höflicher Abschluss. Schreibe sachlich und adressatenbezogen. Die Anrede Dear … ist bei bekanntem Namen passend; für ein unbekanntes Team kann Dear … team verwendet werden.",
+			"Begründe Aussagen mit Tätigkeiten aus deinem CV, statt nur Adjektive aufzuzählen. Prüfe am Ende, ob der Empfänger weiß, auf welche Stelle du dich beziehst und wie es weitergehen kann. Die Mustertexte sind mögliche Lösungen, keine einzige richtige Formulierung. In einer echten Bewerbung prüfst du aktuelle Angaben selbst."
+		],
+		"material": "Dear River Workshop team,\nI am writing to apply for your work experience week in July. I enjoy cycling and would like to learn how a small workshop serves its customers. At our school charity day, I helped visitors and kept a simple sales record. This taught me to explain things clearly and check details. I am available for the full week. I would be pleased to answer your questions in a short conversation.\nKind regards,\nAlex Morgan",
+		"materialLabel": "Für diese Übung verfasster Text · fiktiver Fall, keine Originalquelle.",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"wrong": [
+				"I am perfect at absolutely everything.",
+				"My friend says every job is easy."
+			],
+			"explanation": "Die konkrete Tätigkeit wird mit einer passenden Fähigkeit verbunden.",
+			"wrongFeedback": [
+				"Eine pauschale Selbsteinschätzung enthält keinen überprüfbaren Beleg für eine Fähigkeit.",
+				"Die Einschätzung eines Freundes verknüpft keine eigene Erfahrung mit der Stelle."
+			]
+		},
+		"practice": [
+			{
+				"prompt": "Complete: I am writing to ___ for your placement.",
+				"answers": ["apply"],
+				"feedback": "Apply for benennt die Bewerbung auf eine Stelle."
+			},
+			{
+				"prompt": "Complete the phrase: I look forward to ___ from you.",
+				"answers": ["hearing"],
+				"feedback": "Nach to als Präposition steht hier die -ing-Form."
+			},
+			{
+				"prompt": "Complete: I am available ___ the full week.",
+				"answers": ["for"],
+				"feedback": "For nennt hier den Zeitraum."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Write a 90–120 word application for the fictional workshop. Mention the placement, one evidenced skill and availability.",
+				"model": "Dear River Workshop team, I am writing to apply for the placement in July. I would like to learn how a repair business works because I enjoy practical tasks and meeting people. I helped at a school event where I welcomed visitors and checked tickets. This experience taught me to be patient and accurate. I am available for the full week from Monday to Friday. I would appreciate the opportunity to discuss the placement with you. Thank you for considering my application. Kind regards, Alex Morgan",
+				"criteria": [
+					"Du benennst die konkrete Stelle.",
+					"Du belegst eine passende Fähigkeit.",
+					"Du schreibst höflich und zusammenhängend."
+				]
+			},
+			"2": {
+				"prompt": "Revise “I am the best. Give me the job.” into a credible, polite paragraph and explain one change.",
+				"model": "I would welcome the opportunity to join your team for a week. At our school event, I answered visitors’ questions and helped solve a booking problem. I hope to use these communication skills while learning from your staff. I replaced an unsupported claim with a specific example and a respectful request.",
+				"criteria": [
+					"Du ersetzt eine unbelegte Behauptung.",
+					"Du gibst einen passenden Erfahrungsbeleg.",
+					"Du erklärst eine sprachliche Änderung."
+				]
+			}
+		},
+		"materialLanguage": "en",
+		"takeaway": "Nenne die konkrete Stelle und verbinde eine passende Erfahrung mit einer dafür nützlichen Fähigkeit."
+	},
+	{
+		"id": "e9-interview",
+		"stage": "work",
+		"title": "Keep an interview going",
+		"skill": "Sprechen · Gespräch",
+		"bindings": ["1.1-sprechen", "2", "5-arbeit", "4"],
+		"paragraphs": [
+			"Im Gespräch hörst du die ganze Frage und antwortest mit einem passenden Beispiel. Die Abfolge situation, action, result hilft beim Erzählen. Ein kurzer Denkhinweis wie Let me think hält den Gesprächskontakt aufrecht. Bei Unklarheit ist Could you explain what you mean? hilfreicher als eine auswendig gelernte Antwort auf eine andere Frage.",
+			"Übe mit einem Partner: Einer fragt, der andere antwortet und stellt eine sinnvolle Rückfrage. Sprecht die Rollen anschließend vertauscht. Die App speichert nur Notizen; sie nimmt keine Stimme auf und beurteilt weder Flüssigkeit noch Aussprache. Die Selbsteinschätzung beschreibt deine Übung, keine geprüfte berufliche Eignung."
+		],
+		"material": "Interviewer: Tell me about a time you worked with other people.\nAlex: At our school book sale, the queue became very long. I suggested that one person take payments while another answered questions. The queue moved faster, and we stayed calm.\nInterviewer: What would you like to learn here?\nAlex: I would like to learn how your team deals with a customer who is unsure what a repair will cost. Could I observe someone explaining an estimate?",
+		"materialLabel": "Für diese Übung verfasster Text · fiktiver Fall, keine Originalquelle.",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"wrong": [
+				"I will answer a different question.",
+				"You should already know my answer."
+			],
+			"explanation": "Eine Rückfrage klärt die Bedeutung und erhält das Gespräch.",
+			"wrongFeedback": [
+				"Ein Themenwechsel lässt die ursprüngliche Frage ungeklärt.",
+				"Diese Antwort wirkt abweisend und klärt das Verständnisproblem nicht."
+			]
+		},
+		"practice": [
+			{
+				"prompt": "Complete: Could you ___ the question, please?",
+				"answers": ["repeat"],
+				"feedback": "Repeat bittet um Wiederholung."
+			},
+			{
+				"prompt": "Complete: I worked ___ three classmates.",
+				"answers": ["with"],
+				"feedback": "With nennt die Zusammenarbeit."
+			},
+			{
+				"prompt": "Complete: What would you like to ___ here?",
+				"answers": ["learn"],
+				"feedback": "Learn beschreibt das Lernziel."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "With a partner, give a 45-second answer about teamwork and ask one follow-up question. Save your notes.",
+				"model": "Situation: a busy school sale. Action: I suggested separate roles and checked that everyone agreed. Result: visitors were served more quickly. I learned to listen before changing a plan. My question: What kind of teamwork would a student see during a normal day in your workshop?",
+				"criteria": [
+					"Du hast die Antwort laut gesprochen.",
+					"Du nennst Handlung und Ergebnis.",
+					"Du stellst eine passende Rückfrage."
+				]
+			},
+			"2": {
+				"prompt": "Role-play an unexpected follow-up: “What did not go well?” Explain a difficulty without blaming a whole group.",
+				"model": "At first I explained the new roles too quickly, and one classmate was confused. I asked what was unclear and explained the plan again. Next time I would check understanding before starting. Could you tell me how your team shares instructions during a busy period?",
+				"criteria": [
+					"Du gehst auf die neue Frage ein.",
+					"Du reflektierst deinen eigenen Anteil.",
+					"Du führst das Gespräch respektvoll fort."
+				]
+			}
+		},
+		"speaking": true,
+		"materialLanguage": "en",
+		"takeaway": "Bitte bei Unklarheit um Erklärung und beantworte die gestellte Frage mit einem konkreten Beispiel."
+	},
+	{
+		"id": "e9-business-call",
+		"stage": "work",
+		"title": "Listen to a change of plan",
+		"skill": "Hören · Telefongespräch",
+		"bindings": ["1.1-hoeren", "1.1-sprechen", "5-arbeit", "2", "4"],
+		"paragraphs": [
+			"Höre zuerst auf Anlass und Absicht, beim zweiten Mal auf Zeiten, Orte und die gewünschte Handlung. Notiere Änderungen mit before und now. In einem Telefonat kannst du eine wichtige Angabe wiederholen, um Missverständnisse zu vermeiden. Nicht jedes unbekannte Wort muss geklärt sein, bevor du die Kerninformation verstehst.",
+			"Das selbst verfasste Telefonskript kann eine lokale Computerstimme vorlesen. Sie ersetzt keine natürliche Aufnahme mit unterschiedlichen Sprechern oder Hintergrundgeräuschen. Ohne lokale Stimme liest ein Partner den zugeklappten Text vor. Öffne das Transkript erst nach dem ersten Versuch; zusätzliche echte Hörtexte findest du über die Quellen."
+		],
+		"material": "Hello Alex, this is Sam from River Workshop. I am calling about your visit on Tuesday. We had planned to meet at nine, but our team meeting will take longer than expected. Could you arrive at half past ten instead? Please use the side entrance next to the blue bicycle rack. The front entrance will be closed while a delivery is unloaded. You do not need to bring tools, but please bring a notebook and wear comfortable shoes. If you cannot make the new time, call us before four this afternoon. We can then arrange another day. I am sorry about the change. We are looking forward to meeting you and showing you the workshop. Please leave a message confirming that you have received this information. Thank you.",
+		"materialLabel": "Für diese Übung verfasster Text · fiktiver Fall, keine Originalquelle.",
+		"sourceIds": ["lp", "listen"],
+		"quiz": {
+			"wrong": ["09:00", "16:00"],
+			"explanation": "Half past ten ist die neue Ankunftszeit; vier Uhr ist die Rückmeldefrist.",
+			"wrongFeedback": [
+				"Das ist die frühere Vereinbarung. Höre noch einmal auf die Änderung.",
+				"Für diese Uhrzeit gibt es in der Nachricht keinen Beleg. Prüfe die tatsächlich genannte Änderung."
+			]
+		},
+		"practice": [
+			{
+				"prompt": "New arrival time, as digits: ___.",
+				"answers": ["10:30", "10.30"],
+				"feedback": "Half past ten bedeutet 10:30."
+			},
+			{
+				"prompt": "Which entrance should Alex use: side or front?",
+				"answers": ["side"],
+				"feedback": "Die Vorderseite ist wegen einer Lieferung geschlossen."
+			},
+			{
+				"prompt": "Bring a ___ for notes.",
+				"answers": ["notebook"],
+				"feedback": "Werkzeuge sind nicht nötig; ein Notizbuch schon."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Listen without the transcript. Leave a short spoken confirmation and save your notes.",
+				"model": "Hello Sam, this is Alex. Thank you for your message. I confirm that I will arrive on Tuesday at half past ten and use the side entrance by the blue bicycle rack. I will bring a notebook. Please let me know if anything else changes. I look forward to meeting the team.",
+				"criteria": [
+					"Du hast zuerst ohne Transkript zugehört.",
+					"Du bestätigst neue Zeit und Eingang.",
+					"Du sprichst eine verständliche Rückmeldung."
+				]
+			},
+			"2": {
+				"prompt": "Role-play that the new time is impossible. Propose an alternative without pretending the employer already agreed.",
+				"model": "Hello Sam, thank you for calling. I am afraid I cannot arrive at half past ten on Tuesday because of a school appointment. Would Wednesday morning be possible instead? I understand that you need to check with the team. Please call me back when you have a suitable time. Thank you.",
+				"criteria": [
+					"Du erklärst das Zeitproblem.",
+					"Du bietest eine Alternative an.",
+					"Du unterscheidest Vorschlag und Bestätigung."
+				]
+			}
+		},
+		"listening": true,
+		"speaking": true,
+		"materialLanguage": "en",
+		"takeaway": "Erfasse zuerst den Anlass. Notiere dann geänderte Angaben und bestätige sie dem Anrufer."
+	},
+	{
+		"id": "e9-trade-automation",
+		"stage": "work",
+		"title": "Explain a production chain",
+		"skill": "Lesen · Wirtschaftssprache",
+		"bindings": ["1.1-lesen", "5-arbeit"],
+		"paragraphs": [
+			"Wörter wie supplier, manufacturer und retailer beschreiben Rollen einer Lieferkette. Ein Gut kann Grenzen mehrfach überqueren, bevor es verkauft wird. Die Sprache hilft, Vorgänge zu erklären; das Fallbeispiel zeigt eine vereinfachte Kette und keine recherchierte reale Firma. Unterscheide einen Prozessschritt von seiner möglichen Folge.",
+			"Automation kann einzelne Tätigkeiten verändern. Aussagen über Gewinner, Verlierer oder Beschäftigung brauchen einen Zeitraum und Belege. Im Übungsfall sparen Maschinen Sortierzeit, während Beschäftigte Kontrollaufgaben übernehmen. Formuliere Möglichkeiten mit may oder could. Eine mögliche Folge ist keine sichere Vorhersage für alle Unternehmen."
+		],
+		"material": "A fictional lamp company buys parts from two suppliers. A manufacturer assembles the lamps. A retailer sells them to customers. The company introduces a machine that sorts small parts. Staff now spend less time sorting and more time checking quality and helping customers. Training takes time. The manager says the machine could reduce mistakes, but the team wants to compare error records before and after the change.",
+		"materialLabel": "Für diese Übung verfasster Text · fiktiver Fall, keine Originalquelle.",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"wrong": ["Supplier", "Manufacturer"],
+			"explanation": "Der retailer verkauft an Endkunden; Rollen können in echten Firmen zusammenfallen.",
+			"wrongFeedback": [
+				"Ein Zulieferer beliefert andere Beteiligte der Kette; gesucht ist die Rolle am Ende beim Kunden.",
+				"Ein Hersteller produziert die Ware. Gefragt ist der Verkauf an den Endkunden."
+			]
+		},
+		"practice": [
+			{
+				"prompt": "A company providing parts is a ___.",
+				"answers": ["supplier"],
+				"feedback": "Supplier liefert Materialien oder Teile."
+			},
+			{
+				"prompt": "The firm making the final product is the ___.",
+				"answers": ["manufacturer"],
+				"feedback": "Manufacturer stellt das Produkt her."
+			},
+			{
+				"prompt": "Complete: staff need ___ to learn the new system.",
+				"answers": ["training"],
+				"feedback": "Training benennt das Lernen für neue Aufgaben."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Explain the fictional chain in four sentences and name one possible effect of the machine.",
+				"model": "Suppliers provide the parts. The manufacturer assembles the lamps. A retailer sells them to customers. The machine could reduce sorting time, but staff still need to check quality. The company should compare records before claiming that the new process is better.",
+				"criteria": [
+					"Du ordnest die drei Rollen richtig.",
+					"Du nennst eine mögliche Wirkung.",
+					"Du markierst Unsicherheit sprachlich."
+				]
+			},
+			"2": {
+				"prompt": "A headline says “Machines always remove every job.” Write a balanced response using this case.",
+				"model": "The headline makes an absolute claim that the example does not support. Sorting has changed, but the staff also check quality and help customers. Some tasks may disappear while others change. We would need evidence from more workplaces and a clear time period before making a wider claim.",
+				"criteria": [
+					"Du erkennst die Verallgemeinerung.",
+					"Du nutzt den Fall als begrenzten Beleg.",
+					"Du benennst fehlende weitere Daten."
+				]
+			}
+		},
+		"materialLanguage": "en",
+		"takeaway": "Unterscheide Lieferant, Hersteller und Einzelhändler. Could beschreibt eine Möglichkeit, keine sichere Folge."
+	},
+	{
+		"id": "e9-money-words",
+		"stage": "work",
+		"title": "Understand money vocabulary",
+		"skill": "Lesen · Begriffe",
+		"bindings": ["1.1-lesen", "5-arbeit"],
+		"paragraphs": [
+			"In englischen Wirtschaftstexten ist revenue der Umsatz beziehungsweise Erlös vor dem Abzug von Kosten. Profit ist der verbleibende Gewinn im vereinfachten Beispiel. A loan ist geliehenes Geld, das nach vereinbarten Bedingungen zurückgezahlt wird; a share bezeichnet einen Anteil an einem Unternehmen. Wortbedeutungen sind noch keine Entscheidung über ein Finanzprodukt.",
+			"Eine Börsenmeldung beschreibt oft eine einzelne Preisbewegung. Daraus folgt weder ein sicherer Gewinn noch eine Aussage über jedes Unternehmen. Übe, Beträge und Bezugsgrößen zu erklären. Das Beispiel enthält absichtlich erfundene Zahlen und keine echten Wertpapiere, Angebote oder Anlageempfehlungen."
+		],
+		"material": "A fictional school mini-company sells notebooks. Its revenue for the day is £120. Its costs are £90, so the simplified profit is £30. A news exercise describes a different fictional company whose share price went down yesterday. That change tells us what happened to one price during one period. It does not tell us what will happen tomorrow. A bank loan would have repayment conditions; it would not be free income.",
+		"materialLabel": "Für diese Übung verfasster Text · fiktiver Fall, keine Originalquelle.",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"wrong": ["A loan", "A share"],
+			"explanation": "Der vereinfachte Gewinn ist 120 minus 90, also 30 Pfund.",
+			"wrongFeedback": [
+				"Ein Darlehen ist geliehenes Geld, keine Bezeichnung für das Ergebnis nach Kostenabzug.",
+				"Ein Unternehmensanteil bezeichnet Eigentum und nicht das Ergebnis dieser Rechnung."
+			]
+		},
+		"practice": [
+			{
+				"prompt": "The revenue in the example is £___.",
+				"answers": ["120"],
+				"feedback": "Revenue steht vor dem Kostenabzug."
+			},
+			{
+				"prompt": "The simplified profit is £___.",
+				"answers": ["30"],
+				"feedback": "120 minus 90 ergibt 30."
+			},
+			{
+				"prompt": "Money borrowed with repayment conditions is a ___.",
+				"answers": ["loan"],
+				"feedback": "Ein Darlehen ist kein kostenloses Einkommen."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Explain the three amounts to a classmate in English, using revenue, costs and profit.",
+				"model": "The mini-company received £120 from selling notebooks. This amount is its revenue. It spent £90 on the materials and other costs in our simplified case. After subtracting those costs, the remaining £30 is its profit. Revenue and profit are therefore different amounts.",
+				"criteria": [
+					"Du nennst alle drei Beträge richtig.",
+					"Du unterscheidest revenue und profit.",
+					"Du beziehst dich auf den vereinfachten Fall."
+				]
+			},
+			"2": {
+				"prompt": "Rewrite “The share fell yesterday, so it will fall tomorrow” as a careful report.",
+				"model": "The fictional company’s share price fell yesterday. This reports a past movement during a particular period. It does not establish what the price will do tomorrow. A prediction would require more evidence and would still be uncertain. I would keep the observation separate from the prediction.",
+				"criteria": [
+					"Du beschreibst die vergangene Beobachtung.",
+					"Du vermeidest einen sicheren Zukunftsschluss.",
+					"Du verwendest zeitlich genaue Sprache."
+				]
+			}
+		},
+		"materialLanguage": "en",
+		"takeaway": "Revenue ist der Erlös; nach Abzug der Kosten bleibt im vereinfachten Fall profit, der Gewinn."
+	},
+	{
+		"id": "e9-work-report",
+		"stage": "work",
+		"title": "Write an experience report",
+		"skill": "Schreiben · Bericht",
+		"bindings": ["1.1-schreiben", "5-arbeit"],
+		"paragraphs": [
+			"Ein Erfahrungsbericht verbindet einen nachvollziehbaren Ablauf mit konkreten Beobachtungen und einer Reflexion. Die Ereignisse stehen meist im simple past. Nutze past continuous für einen Hintergrundvorgang und past perfect, wenn eine frühere Handlung für die Erzählung wichtig ist. Die Tempuswahl folgt der Bedeutung und nicht bloß einem einzelnen Signalwort.",
+			"Eine Reflexion erklärt, was du gelernt hast und was du beim nächsten Mal ändern würdest. Trenne Beobachtung, Gefühl und Interpretation. I felt nervous beschreibt dein Gefühl; everyone disliked me ist ohne Beleg eine Vermutung. Im Übungstext stammen alle Tätigkeiten aus einem fiktiven Praktikum."
+		],
+		"material": "On my first morning at River Workshop, I felt nervous. While Sam was explaining the booking system, a customer arrived early. I had already read the appointment list, so I could find the customer’s name. I asked Sam before changing anything. Later, I labelled boxes of spare parts. I made one spelling mistake and corrected it after a colleague checked the labels. By the end of the day, I understood why careful records matter. Next time, I would ask for feedback sooner.",
+		"materialLabel": "Für diese Übung verfasster Text · fiktiver Fall, keine Originalquelle.",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"wrong": [
+				"The list contained twelve appointments.",
+				"The shop opened at nine that morning."
+			],
+			"explanation": "Ein Gefühl wird als eigene Wahrnehmung benannt.",
+			"wrongFeedback": [
+				"Eine Anzahl ist eine überprüfbare Beobachtung, kein Ausdruck eines persönlichen Gefühls.",
+				"Eine Öffnungszeit beschreibt einen äußeren Ablauf. Suche nach einer subjektiven Reaktion."
+			]
+		},
+		"practice": [
+			{
+				"prompt": "Complete the past form: Yesterday I ___ the labels. (check)",
+				"answers": ["checked"],
+				"feedback": "Für das abgeschlossene Ereignis steht simple past."
+			},
+			{
+				"prompt": "Complete: While Sam ___ explaining, a customer arrived.",
+				"answers": ["was"],
+				"feedback": "Was explaining bildet den Hintergrundvorgang."
+			},
+			{
+				"prompt": "Complete: I had already ___ the list. (read)",
+				"answers": ["read"],
+				"feedback": "Das past participle von read wird gleich geschrieben."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Write 90–120 words about a fictional first day. Include one event, one feeling and a lesson learned.",
+				"model": "On my first day, I helped a colleague prepare a display. I felt unsure because I did not know where the materials were kept. While she was answering a customer’s question, I checked the written instructions. I noticed that one label did not match the product. I asked before changing it, and we corrected the display together. I learned that asking a precise question can prevent a mistake. Next time I would check the labels before arranging all the products.",
+				"criteria": [
+					"Du schilderst einen klaren Ablauf.",
+					"Du unterscheidest Gefühl und Beobachtung.",
+					"Du leitest einen Lernschritt ab."
+				]
+			},
+			"2": {
+				"prompt": "Explain how the report would change for a school newsletter rather than a private diary.",
+				"model": "For a newsletter I would explain the context so readers understand the placement. I would select events that show what students can learn and avoid unnecessary private details. A diary could focus more on personal feelings. Both texts should distinguish what happened from what the writer only assumed.",
+				"criteria": [
+					"Du berücksichtigst beide Adressaten.",
+					"Du nennst konkrete Änderungen.",
+					"Du begründest deine Auswahl."
+				]
+			}
+		},
+		"materialLanguage": "en",
+		"takeaway": "Trenne beobachtbare Ereignisse von Gefühlen und schließe mit dem, was du gelernt hast."
+	},
+	{
+		"id": "e9-india-history",
+		"stage": "india",
+		"title": "Whose account of history?",
+		"skill": "Lesen · Perspektiven",
+		"bindings": ["1.1-lesen", "2", "5-indien"],
+		"paragraphs": [
+			"Ein historischer Kurztext kann dieselben Ereignisse aus verschiedenen Blickwinkeln erzählen. Britische Kolonialherrschaft bedeutete ungleiche politische Macht. Indien wurde 1947 unabhängig; Teilung und Unabhängigkeit hängen zusammen, beschreiben aber verschiedene Vorgänge. Eine Darstellung, die nur von britischen Leistungen spricht, lässt indische Handlungsmöglichkeiten, Widerstand und Erfahrungen aus.",
+			"Frage bei Quellen nach Verfasser, Zeitpunkt, Zweck und fehlenden Stimmen. Die beiden folgenden Sätze sind bewusst verfasste Darstellungen und keine historischen Zitate. Die Wertung modern civilisation verrät eine Perspektive; sie belegt keine neutrale Überlegenheit. Eine kritische Antwort kann diese Wortwahl analysieren, ohne heutige Menschen mit früheren Herrschern gleichzusetzen."
+		],
+		"material": "Two invented captions for a classroom discussion:\nA: “The empire brought modern civilisation to India.”\nB: “British colonial rule limited Indian self-government; independence movements challenged that unequal power.”\nIndia became independent from British rule in August 1947. Partition also created a new political division and forced many people to move. A short caption cannot explain every experience. Compare who acts in each sentence and ask whose voices are missing.",
+		"materialLabel": "Für diese Übung verfasster Text · fiktiver Fall, keine Originalquelle.",
+		"sourceIds": ["lp", "independence", "india-archive"],
+		"quiz": {
+			"wrong": [
+				"Does the writer sound very confident?",
+				"Can one caption explain every life?"
+			],
+			"explanation": "Verfasser, Perspektive und ausgelassene Stimmen sind zentral.",
+			"wrongFeedback": [
+				"Ein selbstsicherer Ton sagt noch nichts darüber, welche Sichtweisen eine Darstellung berücksichtigt.",
+				"Eine einzelne Bildunterschrift kann nicht alle Lebensgeschichten erklären. Prüfe die Reichweite der Aussage."
+			]
+		},
+		"practice": [
+			{
+				"prompt": "India became independent in ___.",
+				"answers": ["1947"],
+				"feedback": "Die Quelle des indischen Nationalportals belegt das Jahr."
+			},
+			{
+				"prompt": "Complete: A writer’s viewpoint is a ___.",
+				"answers": ["perspective"],
+				"feedback": "Perspective benennt den Blickwinkel."
+			},
+			{
+				"prompt": "Which caption explicitly mentions unequal power: A or B?",
+				"answers": ["B"],
+				"feedback": "B benennt die politische Ungleichheit."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Compare the two captions in 60–90 words. Identify one value judgement and one missing voice.",
+				"model": "Caption A presents the empire as a helpful actor and treats civilisation as something Britain gave to India. That is a value judgement. Caption B identifies unequal political power and Indian resistance. Neither caption lets an individual person speak. I would add Indian accounts from different groups and check when and why each account was produced.",
+				"criteria": [
+					"Du belegst eine Wertung am Wortlaut.",
+					"Du vergleichst die Perspektiven.",
+					"Du benennst eine fehlende Stimme."
+				]
+			},
+			"2": {
+				"prompt": "Plan how to check a museum caption using two different kinds of primary evidence.",
+				"model": "I would compare the caption with a dated official document and a personal account from someone affected by colonial rule. I would record who created each source and for what audience. The official text could show rules, while a personal account could show an experience. Neither would represent every person.",
+				"criteria": [
+					"Du unterscheidest zwei Quellenarten.",
+					"Du fragst nach Kontext und Zweck.",
+					"Du begrenzt die Aussagekraft."
+				]
+			}
+		},
+		"materialLanguage": "en",
+		"takeaway": "Prüfe bei einer historischen Darstellung, wer erzählt und wessen Perspektive fehlt."
+	},
+	{
+		"id": "e9-india-diversity",
+		"stage": "india",
+		"title": "People, beliefs and assumptions",
+		"skill": "Interkulturell · Gespräch",
+		"bindings": ["1.1-sprechen", "2", "5-indien"],
+		"paragraphs": [
+			"Indien ist sprachlich, religiös und sozial vielfältig. Hinduismus, Islam, Christentum, Sikhismus, Buddhismus und Jainismus sind Beispiele religiöser Traditionen; ein einzelner Mensch kann religiös oder nicht religiös sein. Die indische Verfassung schützt Religionsfreiheit. Aus einem Land, Namen oder Kleidungsstück lässt sich die persönliche Überzeugung nicht zuverlässig ableiten.",
+			"Kulturell sensibles Handeln beginnt mit einer offenen Frage statt einer Zuschreibung. Bei einer gemeinsamen Mahlzeit fragt man nach individuellen Bedürfnissen, statt für eine ganze Gruppe Regeln anzunehmen. In unserer fiktiven Austauschgruppe entscheiden die Beteiligten selbst, was sie teilen möchten. Vergleiche Gemeinsamkeiten und Unterschiede innerhalb von Gruppen ebenso wie zwischen Ländern."
+		],
+		"material": "An exchange group is planning lunch. Mira says, “Please ask everyone what they can eat. My preferences do not represent everyone in my country.” Ben replies, “I had assumed we all needed the same menu. I will send an open question instead.” They agree to offer several choices and let people answer privately. Nobody has to explain a religious or personal reason in front of the group.",
+		"materialLabel": "Für diese Übung verfasster Text · fiktiver Fall, keine Originalquelle.",
+		"sourceIds": ["lp", "constitution"],
+		"quiz": {
+			"wrong": [
+				"Do all people from your country eat exactly alike?",
+				"Can I guess your beliefs from your name alone?"
+			],
+			"explanation": "Eine offene individuelle Frage ersetzt die pauschale Zuschreibung.",
+			"wrongFeedback": [
+				"Die Frage unterstellt gleiche Essgewohnheiten für ein ganzes Land. Frage stattdessen nach der Person.",
+				"Ein Name erlaubt keinen sicheren Schluss auf persönliche Überzeugungen."
+			]
+		},
+		"practice": [
+			{
+				"prompt": "An oversimplified group belief is a ___.",
+				"answers": ["stereotype"],
+				"feedback": "Stereotype übertragen wenige Merkmale auf ganze Gruppen."
+			},
+			{
+				"prompt": "Complete: Please ask each person about ___ own needs.",
+				"answers": ["their"],
+				"feedback": "Singular they eignet sich, wenn das Geschlecht nicht bekannt ist."
+			},
+			{
+				"prompt": "Does Mira represent every person in India? Answer yes or no.",
+				"answers": ["no"],
+				"feedback": "Eine persönliche Stimme vertritt nicht ein ganzes Land."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Role-play planning a meal with an exchange partner. Ask one open question and respond respectfully.",
+				"model": "We are planning lunch for the group. Are there any food needs you would like us to consider? You can tell me privately if you prefer. We can offer several choices. Thank you for explaining what works for you; I will not assume that everyone else has the same preferences.",
+				"criteria": [
+					"Du hast den Dialog laut geübt.",
+					"Du stellst eine offene Frage.",
+					"Du respektierst die individuelle Antwort."
+				]
+			},
+			"2": {
+				"prompt": "Explain why “positive” stereotypes can still be unfair, using a fictional school example.",
+				"model": "Saying that every student from one country must be excellent at mathematics may sound positive, but it still places an expectation on individuals. A student who finds the subject difficult may feel unable to ask for help. I would ask about the person’s interests and experience instead of assigning an ability to the group.",
+				"criteria": [
+					"Du nennst ein konkretes Beispiel.",
+					"Du erklärst die Wirkung auf Einzelne.",
+					"Du formulierst eine respektvolle Alternative."
+				]
+			}
+		},
+		"speaking": true,
+		"materialLanguage": "en",
+		"takeaway": "Frage nach den Bedürfnissen einer Person, statt sie aus Herkunft, Namen oder Religion abzuleiten."
+	},
+	{
+		"id": "e9-india-work",
+		"stage": "india",
+		"title": "Technology and unequal opportunities",
+		"skill": "Lesen · differenzieren",
+		"bindings": ["1.1-lesen", "2", "5-indien"],
+		"paragraphs": [
+			"Ein Land kann gleichzeitig moderne Technologieunternehmen und große soziale Unterschiede haben. Ein Bericht über eine IT-Firma zeigt nicht das ganze Land. A city, a sector und a country sind unterschiedliche Bezugsebenen. Nutze some, many oder in this example, wenn der Text keine allgemeine Aussage belegt.",
+			"Der fiktive Fall zeigt mögliche Zugangsbedingungen wie verlässlichen Internetzugang und verfügbare Lernzeit. Die Figuren sind erfunden und liefern keine Statistik über Indien. Verbinde eine Behauptung mit dem passenden Beleg und benenne Daten, die für eine weitergehende Aussage nötig wären. So wird ein englischer Sachtext präziser und vermeidet Klischees."
+		],
+		"material": "In a fictional report, Dev studies coding at a well-equipped city college. His cousin Asha shares a family device and sometimes cannot join an online lesson. Both want to work in technology. Dev says, “A story about my college would miss the barriers my cousin faces.” Asha adds, “A story only about barriers would miss what people are building.” Neither story can stand for every region or household.",
+		"materialLabel": "Für diese Übung verfasster Text · fiktiver Fall, keine Originalquelle.",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"wrong": [
+				"It measures every household in India.",
+				"It proves all regions have the same access."
+			],
+			"explanation": "Ein erfundener Fall illustriert Möglichkeiten, liefert aber keine Landesstatistik.",
+			"wrongFeedback": [
+				"Zwei erfundene Fälle sind keine Erhebung aller Haushalte.",
+				"Aus zwei unterschiedlichen Beispielen folgt keine Gleichheit aller Regionen."
+			]
+		},
+		"practice": [
+			{
+				"prompt": "Dev studies at a city ___.",
+				"answers": ["college"],
+				"feedback": "Das College ist ausdrücklich Teil des erfundenen Falls."
+			},
+			{
+				"prompt": "Asha shares a family ___.",
+				"answers": ["device"],
+				"feedback": "Device bezeichnet hier ein digitales Gerät."
+			},
+			{
+				"prompt": "Complete: A case study is not a national ___.",
+				"answers": ["statistic", "survey"],
+				"feedback": "Ein Einzelfall ersetzt keine repräsentative Statistik."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Write a balanced 70-word summary of the fictional cousins’ experiences.",
+				"model": "Dev and Asha both want to work in technology, but their learning conditions differ. Dev has access to a well-equipped college, while Asha shares a device and misses some online lessons. Their story illustrates opportunities and barriers in two situations. It does not measure a whole country or show how common either situation is.",
+				"criteria": [
+					"Du nennst Chance und Hindernis.",
+					"Du vergleichst die beiden Figuren.",
+					"Du begrenzt die Aussage auf den Fall."
+				]
+			},
+			"2": {
+				"prompt": "What evidence would you seek before comparing digital access across two regions? Write a short research plan.",
+				"model": "I would look for recent data using the same definition of internet access in both regions. I would check the date, sample and whether the figures describe households or individuals. I would also consider differences within each region. The fictional story could help formulate questions, but it could not provide the answer.",
+				"criteria": [
+					"Du benennst vergleichbare Daten.",
+					"Du prüfst Datum und Bezugsgröße.",
+					"Du trennst Fall und Forschungsergebnis."
+				]
+			}
+		},
+		"materialLanguage": "en",
+		"takeaway": "Ein Einzelfall veranschaulicht eine Situation; er belegt keine Aussage über ein ganzes Land."
+	},
+	{
+		"id": "e9-india-mediation",
+		"stage": "india",
+		"title": "Mediate for a visitor",
+		"skill": "Sprachmittlung · DE → EN",
+		"bindings": ["1.1-mediation", "2", "5-indien", "4"],
+		"paragraphs": [
+			"Sprachmittlung richtet sich danach, was die andere Person wissen muss. Du übersetzt keinen Text Wort für Wort, sondern wählst die relevanten Informationen und erklärst Unbekanntes. Bei einem Besuch braucht der Gast Ort, Zeit, Kosten und wichtige Regeln. Werbung oder lange Hintergrundtexte können für diesen Zweck entfallen.",
+			"Prüfe Zahlen und Einschränkungen besonders genau. A reservation is required bedeutet nicht nur, dass eine Reservierung möglich ist. Wenn ein Begriff fehlt, umschreibe ihn mit einfachen Worten. Die folgenden Angaben sind ein erfundener deutschsprachiger Aushang für eine Austauschgruppe, kein echtes Veranstaltungsangebot."
+		],
+		"material": "Aushang: Werkstattbesuch für die deutsch-indische Austauschgruppe\nTreffen am Donnerstag um 14 Uhr am Haupteingang der Schule. Die Führung beginnt um 14:30 Uhr und dauert eine Stunde. Teilnahme kostenlos; Anmeldung bei Frau Berger bis Dienstag nötig. Geschlossene Schuhe tragen. Fotografieren ist nur nach Rückfrage erlaubt. Der Text nennt außerdem die lange Geschichte des Schulgebäudes.\nDein englischsprachiger Gast möchte mitkommen und wissen, was er organisieren muss.",
+		"materialLabel": "Für diese Übung verfasster Text · fiktiver Fall, keine Originalquelle.",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"wrong": [
+				"The original order of every sentence.",
+				"The length of the least useful detail."
+			],
+			"explanation": "Adressat und Zweck bestimmen Auswahl und Erklärung.",
+			"wrongFeedback": [
+				"Die Satzreihenfolge des Originals kann für den neuen Adressaten unpraktisch sein.",
+				"Ein unwichtiges Detail wird nicht durch seine Länge relevant. Prüfe den Zweck der Vermittlung."
+			]
+		},
+		"practice": [
+			{
+				"prompt": "Meet at the school at ___ p.m.",
+				"answers": ["2"],
+				"feedback": "14 Uhr entspricht 2 p.m."
+			},
+			{
+				"prompt": "Register by which day?",
+				"answers": ["Tuesday"],
+				"feedback": "Bis Dienstag anmelden, nicht erst am Donnerstag."
+			},
+			{
+				"prompt": "The visit lasts one ___.",
+				"answers": ["hour"],
+				"feedback": "Eine Stunde wird als one hour vermittelt."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Tell your visitor what to organise in 60–90 English words. Include the photography condition.",
+				"model": "We meet at the main school entrance on Thursday at two in the afternoon. The tour starts at half past two and lasts an hour. It is free, but you need to register with Ms Berger by Tuesday. Please wear shoes that cover your feet. Ask before taking any photographs. I can help you with the registration if you like.",
+				"criteria": [
+					"Zeiten und Anmeldung stimmen.",
+					"Du nennst Schuhe und Fotobedingung.",
+					"Du wählst besuchsrelevante Informationen."
+				]
+			},
+			"2": {
+				"prompt": "The visitor thinks “free” means no registration. Repair the misunderstanding politely.",
+				"model": "The visit does not cost anything, but registration is still required. Please tell Ms Berger by Tuesday that you would like to join. Free describes the price; it does not mean that everyone can arrive without signing up. We should check that your name is on the list before Thursday.",
+				"criteria": [
+					"Du klärst das konkrete Missverständnis.",
+					"Du erklärst Preis und Anmeldung getrennt.",
+					"Du bleibst höflich und präzise."
+				]
+			}
+		},
+		"materialLanguage": "de",
+		"takeaway": "Wähle für den konkreten Zweck relevante Informationen aus und erkläre Unbekanntes mit einfachen Worten."
+	},
+	{
+		"id": "e9-australia-climate",
+		"stage": "australia",
+		"title": "Read a climate comparison",
+		"skill": "Lesen · Grafik",
+		"bindings": ["1.1-lesen", "1.1-mediation", "3", "5-australien"],
+		"paragraphs": [
+			"Australien hat mehrere Klimazonen: im Norden tropische, im Süden gemäßigte Bereiche und große trockene Gebiete im Inneren. Eine einzige Landesdurchschnittszahl erklärt die Unterschiede nicht. Ein Klimadiagramm beschreibt typische längere Zeiträume; ein Tageswetterbericht beantwortet eine andere Frage. Beachte Einheit, Ort und Zeitraum.",
+			"Die Grafik zeigt erfundene Monatsniederschläge zweier Übungsorte, keine gemessenen Werte australischer Städte. Beschreibe zuerst sichtbare Unterschiede und bewerte dann ihre mögliche Bedeutung. Die Balken reichen nicht, um Reisegefahren oder aktuelle Wetterbedingungen festzustellen. Für einen realen Plan wären aktuelle lokale Informationen nötig."
+		],
+		"material": "Fictional practice data · rainfall in millimetres\nNorth Bay: January 240, July 20.\nSouth Bay: January 35, July 70.\nNorth Bay has more rainfall in January than in July in this teaching example. South Bay shows the opposite pattern. These are invented values for comparing language and units, not observations of real places. Useful phrases: more than, less than, whereas, in contrast.",
+		"materialLabel": "Für diese Übung verfasster Text · fiktiver Fall, keine Originalquelle.",
+		"sourceIds": ["lp", "climate"],
+		"quiz": {
+			"wrong": [
+				"Every Australian place is wetter in January.",
+				"A July storm is certain at both locations."
+			],
+			"explanation": "Die Aussage bleibt bei Ort und Monaten der erfundenen Werte.",
+			"wrongFeedback": [
+				"Die Werte betreffen zwei erfundene Orte; sie erlauben keine Verallgemeinerung auf alle Orte.",
+				"Monatssummen sagen keinen einzelnen Sturm sicher voraus."
+			]
+		},
+		"practice": [
+			{
+				"prompt": "The unit shown is ___ (abbreviation).",
+				"answers": ["mm"],
+				"feedback": "Niederschlag ist in Millimetern angegeben."
+			},
+			{
+				"prompt": "North Bay’s January value is ___.",
+				"answers": ["240"],
+				"feedback": "Die Übung nennt 240 mm."
+			},
+			{
+				"prompt": "South Bay has more rain in which month shown?",
+				"answers": ["July"],
+				"feedback": "70 mm im Juli sind mehr als 35 mm im Januar."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Describe two differences in the fictional data and say why they do not give tomorrow’s weather.",
+				"model": "North Bay has 240 millimetres of rainfall in January but only 20 in July. South Bay has more rainfall in July than in January. The pattern therefore differs between the two practice locations. These invented monthly values are not a forecast, and they cannot tell us whether it will rain tomorrow.",
+				"criteria": [
+					"Du nennst zwei richtige Vergleiche.",
+					"Du verwendest die Einheit.",
+					"Du unterscheidest Übungsdaten und Vorhersage."
+				]
+			},
+			"2": {
+				"prompt": "Mediate the graph to a German-speaking visitor who thinks all Australian places have the same seasons and rainfall.",
+				"model": "Australien hat unterschiedliche Klimazonen. Die erfundene Grafik zeigt zwei verschiedene Niederschlagsmuster, aber keine echten Stadtwerte. Im Norden gibt es tropische und im Süden gemäßigte Bereiche. Für eine Reise müssen wir den konkreten Ort, den Zeitraum und aktuelle Informationen prüfen, statt einen Landesdurchschnitt zu verwenden.",
+				"criteria": [
+					"Du erklärst regionale Unterschiede.",
+					"Du kennzeichnest die erfundenen Zahlen.",
+					"Du nennst den konkreten Informationsbedarf."
+				]
+			}
+		},
+		"graphic": "climate",
+		"materialLanguage": "en",
+		"takeaway": "Lies bei Klimagrafiken Ort, Monat, Einheit und Skala. Einzelne Werte gelten nicht für ganz Australien."
+	},
+	{
+		"id": "e9-first-peoples",
+		"stage": "australia",
+		"title": "First Peoples and living cultures",
+		"skill": "Interkulturell · Geschichte",
+		"bindings": ["1.1-lesen", "2", "5-australien"],
+		"paragraphs": [
+			"Aboriginal and Torres Strait Islander peoples bezeichnet unterschiedliche First Peoples Australiens, mit vielfältigen Sprachen und lebendigen Kulturen. Britische Kolonisierung begann 1788 in Sydney Cove; sie war kein Beginn menschlicher Geschichte auf dem Kontinent. Die heutige Föderation entstand 1901. Historische Eckdaten allein erklären keine heutigen individuellen Erfahrungen.",
+			"Eine sensible Darstellung nennt Menschen nicht bloß als Teil einer vergangenen Welt. Beachte, wer selbst spricht und wer über andere spricht. Wenn eine Community einen eigenen Namen oder eine bestimmte Bezeichnung bevorzugt, berücksichtige das im jeweiligen Kontext. Der Übungstext ist eine redaktionelle Darstellung, kein authentisches Zeugnis einer indigenen Person."
+		],
+		"material": "A school display originally used the title “Australia began in 1788”. A class changes it to “British colonisation at Sydney Cove, 1788”. They add that First Peoples had lived on the continent long before the First Fleet and continue to shape its present. They also add a panel about federation in 1901. The class plans to consult material created by Aboriginal and Torres Strait Islander organisations, rather than treating one outside account as the only perspective.",
+		"materialLabel": "Für diese Übung verfasster Text · fiktiver Fall, keine Originalquelle.",
+		"sourceIds": ["lp", "first", "federation"],
+		"quiz": {
+			"wrong": [
+				"It says federation happened in the twentieth century.",
+				"It distinguishes colonisation from earlier histories."
+			],
+			"explanation": "1788 bezeichnet britische Kolonisierung und nicht den Beginn menschlicher Geschichte.",
+			"wrongFeedback": [
+				"Das Gründungsdatum des Bundes ist eine andere Frage als der behauptete Beginn aller Geschichte.",
+				"Die Aussage unterscheidet diese früheren Geschichten gerade nicht. Prüfe, wessen Geschichte sie ausblendet."
+			]
+		},
+		"practice": [
+			{
+				"prompt": "The First Fleet arrived at Sydney Cove in ___.",
+				"answers": ["1788"],
+				"feedback": "Das Datum ist ein Kolonisationsdatum."
+			},
+			{
+				"prompt": "Federation took place in ___.",
+				"answers": ["1901"],
+				"feedback": "1901 ist das Jahr der Föderation."
+			},
+			{
+				"prompt": "Complete the common expression: Aboriginal and Torres Strait ___ peoples.",
+				"answers": ["Islander"],
+				"feedback": "Beide werden in dieser Sammelbezeichnung genannt."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Write a respectful 60–90 word replacement for the original display label.",
+				"model": "British colonisation at Sydney Cove began in 1788 with the arrival of the First Fleet. This was not the beginning of human history in Australia. First Peoples had lived on the continent long before that date, and their diverse cultures continue today. The colonies federated in 1901. A fuller display should include perspectives created by First Peoples themselves.",
+				"criteria": [
+					"Du ordnest 1788 und 1901 richtig ein.",
+					"Du beschreibst lebendige vielfältige Kulturen.",
+					"Du benennst die Bedeutung eigener Stimmen."
+				]
+			},
+			"2": {
+				"prompt": "Explain why adding one outside summary is not the same as representing all First Peoples.",
+				"model": "A summary can provide an introduction, but it selects information from one viewpoint. Aboriginal and Torres Strait Islander peoples include many communities and languages. No single outside text can speak for all of them. I would seek community-created sources, identify their particular context and avoid treating one speaker as a representative of everyone.",
+				"criteria": [
+					"Du erklärst die Begrenzung der Zusammenfassung.",
+					"Du berücksichtigst Vielfalt.",
+					"Du schlägst einen konkreten Quellenzugang vor."
+				]
+			}
+		},
+		"materialLanguage": "en",
+		"takeaway": "Unterscheide die lange Geschichte der First Peoples, die britische Kolonisierung und die Föderation 1901."
+	},
+	{
+		"id": "e9-exchange-blog",
+		"stage": "australia",
+		"title": "Read between the lines",
+		"skill": "Lesen · Blog",
+		"bindings": ["1.1-lesen", "2", "5-australien", "4"],
+		"paragraphs": [
+			"Reading between the lines bedeutet, aus Textsignalen eine begründete Deutung abzuleiten. Ein Blog enthält oft Gefühle und persönliche Auswahl. Markiere zunächst, was ausdrücklich gesagt wird. Leite anschließend eine mögliche Bedeutung ab und zeige, welches Detail sie stützt. Eine Deutung bleibt schwächer als ein ausdrücklich genannter Sachverhalt.",
+			"Im Beispiel verändert sich die Stimmung der Erzählerin. Wörter wie finally und smiled helfen bei dieser Deutung. Du weißt aber nicht, was alle anderen Personen denken. Ein eigener Blogeintrag darf Perspektive und Gefühle zeigen; allgemeine Aussagen über ein ganzes Land brauchen mehr als eine persönliche Erfahrung."
+		],
+		"material": "My first week at an Australian partner school was louder than I expected. At lunch I carried my tray around the room twice. “Plenty of space here,” said a student, moving a bag from the next chair. I finally sat down. Nobody asked me to give a speech about Germany. We argued about which school clubs to try, and I forgot to check my phone. On the bus home, I realised I had missed my stop. For the first time that week, I smiled at my own mistake.",
+		"materialLabel": "Für diese Übung verfasster Text · fiktiver Fall, keine Originalquelle.",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"wrong": [
+				"Every student disliked the exchange programme.",
+				"The narrator had already visited every school."
+			],
+			"explanation": "Finally und das vorherige Herumgehen stützen die vorsichtige Deutung.",
+			"wrongFeedback": [
+				"Über die Gefühle aller Schüler sagt die zitierte Stelle nichts aus.",
+				"Die zitierte Stelle enthält keine Information über Besuche an allen Schulen."
+			]
+		},
+		"practice": [
+			{
+				"prompt": "Which object was moved to make room?",
+				"answers": ["a bag", "bag"],
+				"feedback": "Der andere Schüler räumt eine Tasche weg."
+			},
+			{
+				"prompt": "What did the narrator forget to check?",
+				"answers": ["a phone", "phone", "my phone", "her phone", "their phone"],
+				"feedback": "Das Telefon wird ausdrücklich genannt."
+			},
+			{
+				"prompt": "The narrator missed a bus ___.",
+				"answers": ["stop"],
+				"feedback": "Der verpasste Halt steht am Ende."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Explain the change in mood with two textual details. Avoid claiming to know every student’s thoughts.",
+				"model": "At first the narrator seems unsure because they walk around with a tray twice. Moving a bag creates an invitation to sit down. Later, the narrator stops checking the phone and smiles at a mistake. These details suggest growing comfort, although the text does not tell us what everyone else thinks.",
+				"criteria": [
+					"Du nutzt zwei konkrete Textdetails.",
+					"Du erklärst eine Stimmungsveränderung.",
+					"Du kennzeichnest Deutung als Deutung."
+				]
+			},
+			"2": {
+				"prompt": "Write a short continuation from another student’s viewpoint without contradicting the stated events.",
+				"model": "I noticed the visitor walking around the room, so I moved my bag. I did not want to turn lunch into an interview about another country. We started talking about clubs instead. Later, I wondered whether they had found the right bus. I could not know how they felt, but I hoped our conversation had helped.",
+				"criteria": [
+					"Du hältst die genannten Ereignisse ein.",
+					"Du wechselst die Perspektive erkennbar.",
+					"Du vermeidest unbelegtes Wissen über Gefühle."
+				]
+			}
+		},
+		"materialLanguage": "en",
+		"takeaway": "Stütze eine Deutung von Gefühlen auf eine konkrete Textstelle und kennzeichne sie als Deutung."
+	},
+	{
+		"id": "e9-announcement",
+		"stage": "australia",
+		"title": "Hear the important change",
+		"skill": "Hören · Durchsage",
+		"bindings": ["1.1-hoeren", "4", "5-australien"],
+		"paragraphs": [
+			"Bei Durchsagen können eine alte und eine neue Information dicht nebeneinander stehen. Achte auf but, instead und please. Höre zunächst den Zweck, dann die neue Handlung. Zahlen notierst du erst nach dem vollständigen Satz, damit du eine erwähnte alte Zeit nicht mit der gültigen verwechselst.",
+			"Dieses Skript ist eine erfundene Museumsdurchsage. Die lokale Computerstimme ist weder ein echter australischer Sprecher noch eine natürliche Hörsehaufnahme. Wiederhole die Aufgabe später mit einer realen englischen Aufnahme und beobachte zusätzlich Sprechtempo, Intonation und sichtbare Hinweise. Ein Transkript ist eine Lesehilfe und belegt allein kein Hörverstehen."
+		],
+		"material": "Good afternoon, everyone. This is an update for visitors joining the school tour. The tour was due to start at two o’clock in Room Four, but that room is now being prepared for another group. Please meet your guide in Room Seven at quarter past two instead. Your tickets remain valid, so you do not need to queue at the front desk again. If you are waiting outside, please come into the main hall. A member of staff in a green shirt will show you the way. We know that some visitors have a bus to catch later. If the change causes a problem, speak to the guide before the tour begins. Thank you for your patience.",
+		"materialLabel": "Für diese Übung verfasster Text · fiktiver Fall, keine Originalquelle.",
+		"sourceIds": ["lp", "listen"],
+		"quiz": {
+			"wrong": ["Room Four", "The front desk"],
+			"explanation": "Room Seven ist der neue Treffpunkt; Room Four ist die alte Angabe.",
+			"wrongFeedback": [
+				"Das ist der bisherige Raum. Achte auf die ersetzende Angabe.",
+				"Der Empfang ist eine andere Ortsangabe. Prüfe, welcher Ort als neuer Treffpunkt genannt wird."
+			]
+		},
+		"practice": [
+			{
+				"prompt": "New room number, as a digit: ___.",
+				"answers": ["7"],
+				"feedback": "Die neue Raumangabe ist Seven."
+			},
+			{
+				"prompt": "New time, as digits: ___.",
+				"answers": ["14:15", "2:15"],
+				"feedback": "Quarter past two entspricht 14:15."
+			},
+			{
+				"prompt": "What colour is the staff member’s shirt?",
+				"answers": ["green"],
+				"feedback": "Green ist ein Erkennungsmerkmal."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "After listening, give a German-speaking friend the changed room, time and ticket information.",
+				"model": "Wir treffen die Führung jetzt in Raum 7 um 14:15 Uhr. Raum 4 und 14 Uhr waren die ursprünglichen Angaben. Die Tickets bleiben gültig, wir müssen also nicht erneut an der Kasse anstehen. Bei Problemen mit der späteren Busfahrt sollen wir vor Beginn mit der Führung sprechen.",
+				"criteria": [
+					"Du hast vor dem Lesen zugehört.",
+					"Du gibst neuen Raum und neue Zeit richtig wieder.",
+					"Du erklärst die weiterhin gültigen Tickets."
+				]
+			},
+			"2": {
+				"prompt": "Plan a real listening-and-viewing follow-up using an English museum or travel clip. State what the app script cannot test.",
+				"model": "I would choose a short real announcement with video and listen once for the purpose, then for details. I would compare the spoken instruction with signs and gestures. The app’s synthetic script cannot test understanding of natural Australian speech, background noise or a speaker’s body language. I would discuss my interpretation with a partner.",
+				"criteria": [
+					"Du planst eine echte Hörsehaufgabe.",
+					"Du berücksichtigst Bild und Ton.",
+					"Du benennst die Grenze des Skripts."
+				]
+			}
+		},
+		"listening": true,
+		"materialLanguage": "en",
+		"takeaway": "Achte bei Änderungen auf Signalwörter wie instead und halte die zuletzt gültige Information fest."
+	},
+	{
+		"id": "e9-digital-privacy",
+		"stage": "digital",
+		"title": "Ask before sharing",
+		"skill": "Schreiben · Mediennutzung",
+		"bindings": ["1.1-schreiben", "3", "5-digital"],
+		"paragraphs": [
+			"Online communication hat reale Adressaten, auch wenn ein Beitrag schnell geschrieben ist. Prüfe vor dem Teilen, ob eine Person erkennbar ist und ob sie zugestimmt hat. Eine kleine Gruppe kann Inhalte weiterleiten. Der Übungsfall dient dazu, Handlungsoptionen sprachlich zu erklären; eine Zustimmung zu einer konkreten Veröffentlichung ist keine pauschale Erlaubnis für alle späteren Zwecke.",
+			"Ein respektvoller Widerspruch benennt die Handlung und schlägt einen nächsten Schritt vor. Could we remove the photo until everyone agrees? ist konkreter als eine persönliche Beschimpfung. Nutze keine echten Namen, Bilder oder Kontodaten für die Aufgabe. Das Notizfeld bleibt in diesem Browser und wird nicht als Nachricht verschickt."
+		],
+		"material": "A club group wants to post a photo after an event. One student says, “It is only our group chat, so we do not need to ask.” Another replies, “People can forward it. Let us check with everyone who appears in the picture first.” A third student suggests posting a photo of the display without faces while the group waits for replies.",
+		"materialLabel": "Für diese Übung verfasster Text · fiktiver Fall, keine Originalquelle.",
+		"sourceIds": ["lp", "esafety"],
+		"quiz": {
+			"wrong": [
+				"Assume silence always means agreement.",
+				"Share it first and ask several weeks later."
+			],
+			"explanation": "Nachfragen vor dem Teilen berücksichtigt die betroffenen Personen.",
+			"wrongFeedback": [
+				"Schweigen belegt keine Zustimmung zur Veröffentlichung.",
+				"Nachträgliches Fragen verhindert nicht, dass ein Foto bereits weitergegeben wurde."
+			]
+		},
+		"practice": [
+			{
+				"prompt": "Complete: Ask before you ___ the photo online.",
+				"answers": ["share", "post"],
+				"feedback": "Share bezeichnet das Weitergeben."
+			},
+			{
+				"prompt": "People can ___ a group message to others.",
+				"answers": ["forward"],
+				"feedback": "Forward bedeutet weiterleiten."
+			},
+			{
+				"prompt": "Use fictional names in this exercise: yes or no?",
+				"answers": ["yes"],
+				"feedback": "Für die Übung sind keine realen personenbezogenen Angaben nötig."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Write a calm message proposing what the fictional group should do next.",
+				"model": "Could we wait before posting the photo? Some people in it have not replied yet, and the picture could be forwarded outside the group. We can ask everyone first. In the meantime, we could share a picture of the display without faces. That would let us celebrate the event without making assumptions about anyone’s wishes.",
+				"criteria": [
+					"Du benennst das konkrete Problem.",
+					"Du schlägst eine umsetzbare Alternative vor.",
+					"Du formulierst respektvoll."
+				]
+			},
+			"2": {
+				"prompt": "Explain the difference between agreeing to one club photo and agreeing to an unrelated public advertisement.",
+				"model": "Someone may agree to a particular club photo for a limited audience. An advertisement has a different purpose and may reach many more people. I would therefore ask about that new use instead of treating the first answer as unlimited permission. The explanation should name the purpose and audience clearly.",
+				"criteria": [
+					"Du unterscheidest Zweck und Publikum.",
+					"Du erklärst die notwendige neue Rückfrage.",
+					"Du vermeidest eine pauschale Zuschreibung."
+				]
+			}
+		},
+		"materialLanguage": "en",
+		"takeaway": "Frage vor dem Teilen erkennbarer Fotos nach Zustimmung; weitergeleitete Kopien lassen sich kaum kontrollieren."
+	},
+	{
+		"id": "e9-advertising",
+		"stage": "digital",
+		"title": "Describe a graphic and question an ad",
+		"skill": "Lesen · Infografik",
+		"bindings": ["1.1-lesen", "3", "5-digital"],
+		"paragraphs": [
+			"Bei einer Infografik beschreibst du zuerst Gegenstand, Datenbasis und sichtbare Werte. Danach erklärst du eine Hauptaussage und mögliche Grenzen. Die Grafik dieser Lektion zeigt eine erfundene Befragung von 20 Clubmitgliedern: 12 bevorzugen Reparaturtipps, fünf Werbung und drei Nachrichten. Das ist keine Umfrage über alle Jugendlichen.",
+			"Werbung kann Gestaltung und Auswahl nutzen, um einen Eindruck zu verstärken. A majority of this club ist genauer als everyone. Unterscheide eine beschriebene Beobachtung von einer Behauptung, die erst belegt werden müsste. Ein Balken kann eine Zahl richtig darstellen und trotzdem in einem zu weitgehenden Werbespruch verwendet werden."
+		],
+		"material": "Fictional club survey · 20 answers\nRepair tips: 12 · Product ads: 5 · News: 3.\nAn invented advertisement uses the headline “Everyone wants product ads!” It does not mention the club or the sample size. In this example, five of twenty respondents preferred ads. The largest group preferred repair tips. The chart is a classroom exercise, not a real market survey.",
+		"materialLabel": "Für diese Übung verfasster Text · fiktiver Fall, keine Originalquelle.",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"wrong": [
+				"Every young person in the world was counted.",
+				"The chart proves what all future users will want."
+			],
+			"explanation": "Stichprobe und erfundener Charakter begrenzen die Aussage.",
+			"wrongFeedback": [
+				"Die beschriebene Gruppe ist klar begrenzt; sie umfasst keine weltweite Erhebung.",
+				"Eine kleine aktuelle Befragung beweist keine Wünsche aller zukünftigen Nutzer."
+			]
+		},
+		"practice": [
+			{
+				"prompt": "How many answers are shown in total?",
+				"answers": ["20"],
+				"feedback": "12 plus 5 plus 3 ergibt 20."
+			},
+			{
+				"prompt": "How many preferred repair tips?",
+				"answers": ["12"],
+				"feedback": "Die größte Gruppe hat zwölf Mitglieder."
+			},
+			{
+				"prompt": "Five out of twenty is ___ percent.",
+				"answers": ["25"],
+				"feedback": "Fünf ist ein Viertel von zwanzig."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Describe the fictional chart in English and correct the advertisement’s headline.",
+				"model": "The chart shows preferences among twenty fictional club members. Twelve preferred repair tips, five chose product ads and three chose news. Repair tips were the most popular option. The headline is misleading because only a quarter of respondents chose ads. A more accurate version would say that some members wanted product advertisements.",
+				"criteria": [
+					"Du nennst Datenbasis und Hauptaussage.",
+					"Du verwendest richtige Werte.",
+					"Du korrigierst die Übertreibung."
+				]
+			},
+			"2": {
+				"prompt": "Explain how a cropped graph with no labels could mislead even when its bar heights are drawn correctly.",
+				"model": "Without labels, we might not know what the bars measure, who answered or which period is covered. Correctly drawn heights do not supply that missing context. I would ask for the full chart and its source before accepting a broad claim. A clear description should include the sample and the meaning of each value.",
+				"criteria": [
+					"Du benennst fehlenden Kontext.",
+					"Du trennst Zeichnung und Interpretation.",
+					"Du forderst einen überprüfbaren Beleg."
+				]
+			}
+		},
+		"graphic": "survey",
+		"materialLanguage": "en",
+		"takeaway": "Benenne zuerst Datenbasis und Werte einer Grafik. Eine kleine Befragung erlaubt keine Aussage über alle."
+	},
+	{
+		"id": "e9-online-discussion",
+		"stage": "digital",
+		"title": "Disagree and keep talking",
+		"skill": "Sprechen · Argumentieren",
+		"bindings": ["1.1-sprechen", "1.1-schreiben", "2", "5-digital"],
+		"paragraphs": [
+			"Eine Meinung wird nachvollziehbar durch einen Grund und ein Beispiel. Beim Widersprechen greifst du den Gedanken des anderen auf, statt die Person abzuwerten. I see your point, but … zeigt Bezug. Eine Rückfrage kann einen unklaren Begriff klären und das Gespräch weiterführen. Pausen dürfen durch kurze speech fillers überbrückt werden.",
+			"Im Übungsfall geht es um Handys während einer Clubbesprechung. Unterscheide Konzentration von Erreichbarkeit und suche eine Regel für die konkrete Situation. Eine eigene Erfahrung kann ein Argument veranschaulichen, beweist aber keine Wirkung für alle Jugendlichen. In Partnerarbeit achtet ihr darauf, dass beide ungefähr gleich viel sprechen."
+		],
+		"material": "A: I think we should put phones away during the club meeting because messages interrupt our planning.\nB: I see your point, but some people need to be reachable. Could we agree on silent mode and short breaks instead?\nA: That might work. What should someone do if they are waiting for an important call?\nB: They could tell the group beforehand and step outside quietly.",
+		"materialLabel": "Für diese Übung verfasster Text · fiktiver Fall, keine Originalquelle.",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"wrong": [
+				"Only foolish people disagree with me at all.",
+				"Your idea is worthless because it is yours."
+			],
+			"explanation": "Die Antwort nimmt den Gedanken auf und macht einen Vorschlag.",
+			"wrongFeedback": [
+				"Eine Beleidigung begründet die eigene Position nicht und erschwert die Diskussion.",
+				"Die Person abzuwerten ersetzt keine Auseinandersetzung mit ihrem Vorschlag."
+			]
+		},
+		"practice": [
+			{
+				"prompt": "Complete: I see your ___, but I disagree.",
+				"answers": ["point"],
+				"feedback": "I see your point erkennt das Argument an."
+			},
+			{
+				"prompt": "Complete: Could you give an ___?",
+				"answers": ["example"],
+				"feedback": "Ein Beispiel konkretisiert einen Gedanken."
+			},
+			{
+				"prompt": "Complete: In my ___, we need a short break.",
+				"answers": ["opinion"],
+				"feedback": "In my opinion markiert eine Meinung."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Discuss the fictional phone rule with a partner. Give a reason, respond to their point and ask a question.",
+				"model": "I would keep phones on silent during planning because notifications interrupt my concentration. I understand that someone may need an urgent call, so that person could let the group know. What would be a fair way to handle repeated interruptions? Perhaps we could try the rule for two meetings and then review it.",
+				"criteria": [
+					"Du hast mit einem Partner laut gesprochen.",
+					"Du begründest deine Position.",
+					"Du greifst einen anderen Gedanken auf."
+				]
+			},
+			"2": {
+				"prompt": "Write a short comment that acknowledges the strongest opposing argument before proposing a compromise.",
+				"model": "The strongest reason against putting phones away is that some members need to remain reachable. A rule should allow for that. However, ordinary notifications can interrupt a shared task. I suggest silent mode, an agreed exception for urgent calls and a short break. We could review the arrangement after trying it.",
+				"criteria": [
+					"Du gibst die Gegenposition fair wieder.",
+					"Du begründest eine Abwägung.",
+					"Du formulierst einen überprüfbaren Kompromiss."
+				]
+			}
+		},
+		"speaking": true,
+		"materialLanguage": "en",
+		"takeaway": "Begründe deine Meinung, greife den Gedanken anderer auf und teile die Redezeit fair."
+	},
+	{
+		"id": "e9-fact-check",
+		"stage": "digital",
+		"title": "Check a current claim",
+		"skill": "Recherche · Quellen",
+		"bindings": ["3", "4", "5-digital"],
+		"paragraphs": [
+			"Ein Suchtreffer ist ein Einstieg und kein Beweis. Formuliere die überprüfbare Behauptung möglichst genau: Wer soll was wann festgestellt haben? Suche dann nach der ursprünglichen Untersuchung oder Veröffentlichung. Vergleiche Datum, Bezugsgröße und Aussage. Zwei Seiten, die denselben Text kopieren, liefern keine zwei unabhängigen Belege.",
+			"Hier prüfst du zuerst einen erfundenen Werbesatz und planst danach eine echte Recherche zu einem selbst gewählten aktuellen Thema. Die App prüft keine externen Seiten und bestätigt weder Aktualität noch Richtigkeit deiner Notizen. Quellen öffnest du bewusst im Browser. Dokumentiere Titel, Herausgeber, Datum, URL und einen passenden Beleg in eigenen Worten."
+		],
+		"material": "Invented claim: “A new study proves that every teenager learns twice as fast with our app.”\nThe advert names no authors, date, sample or comparison task. A repost repeats the sentence without adding evidence. Questions to investigate: What did the study measure? Who took part? Twice as fast compared with what? Is the source independent of the seller? Can the original report be found?",
+		"materialLabel": "Für diese Übung verfasster Text · fiktiver Fall, keine Originalquelle.",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"wrong": [
+				"Count how many reposts repeat the same sentence.",
+				"Accept the claim because the graphic is colourful."
+			],
+			"explanation": "Die Originalstudie ermöglicht die Prüfung von Methode und Aussage.",
+			"wrongFeedback": [
+				"Mehrere Kopien derselben Aussage liefern keine voneinander unabhängigen Belege.",
+				"Die Gestaltung einer Grafik sagt nichts über die Güte der zugrunde liegenden Untersuchung aus."
+			]
+		},
+		"practice": [
+			{
+				"prompt": "Complete: Record the publication ___ to judge recency.",
+				"answers": ["date"],
+				"feedback": "Das Veröffentlichungsdatum hilft, den Zeitbezug zu prüfen."
+			},
+			{
+				"prompt": "Twenty copied posts are twenty independent studies: yes or no?",
+				"answers": ["no"],
+				"feedback": "Wiederholung ersetzt keine unabhängige Untersuchung."
+			},
+			{
+				"prompt": "Complete: Ask what the result was compared ___.",
+				"answers": ["with", "to"],
+				"feedback": "Compared with fragt nach der Vergleichsbasis."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Write three questions that must be answered before accepting the invented advert.",
+				"model": "Who conducted the study, and where is the original report? What task did participants complete, and what does twice as fast mean? How many people took part, and what comparison group was used? I would also check whether the seller funded the work. Until these questions are answered, the advert’s claim is not established.",
+				"criteria": [
+					"Du fragst nach der Originalquelle.",
+					"Du prüfst Messung und Vergleich.",
+					"Du behandelst die Behauptung als ungeprüft."
+				]
+			},
+			"2": {
+				"prompt": "Choose a real current topic. Record two sources with titles, publishers, dates and URLs, then compare one claim. Do this research yourself.",
+				"model": "Example structure, not a completed investigation: My precise question is … Source A: title, publisher, publication date, URL and relevant evidence. Source B: the same fields. Both sources agree that … They differ on … I checked whether one copied the other. My provisional conclusion is … A remaining uncertainty is …",
+				"criteria": [
+					"Du hast zwei reale Quellen selbst geprüft.",
+					"Du dokumentierst Datum und konkreten Beleg.",
+					"Du unterscheidest Ergebnis und Unsicherheit."
+				]
+			}
+		},
+		"materialLanguage": "en",
+		"takeaway": "Prüfe die ursprüngliche Quelle und ihre Methode. Wiederholungen derselben Behauptung sind keine unabhängigen Belege."
+	},
+	{
+		"id": "e9-digital-mediation",
+		"stage": "digital",
+		"title": "Explain the rules that matter",
+		"skill": "Sprachmittlung · EN → DE",
+		"bindings": ["1.1-mediation", "4", "5-digital"],
+		"paragraphs": [
+			"Bei der Vermittlung einer Anleitung sind Handlung, Bedingung und Reihenfolge wichtiger als jedes einzelne englische Wort. Lies den gesamten Abschnitt, bevor du das Wesentliche wiedergibst. In einer deutschen Erklärung darfst du Fachwörter umschreiben. Betone Einschränkungen wie only after oder before, damit die Handlung nicht ungewollt umgekehrt wird.",
+			"Die fiktive Anleitung betrifft ein Schulgerät ohne echte Konten oder Dienste. Deine Freundin möchte ihre Arbeit sichern und das Leihgerät abgeben. Sie braucht dafür andere Informationen als jemand, der die App erstmals gestaltet. Nenne nur die Schritte, die ihrem Zweck dienen, und erfinde keine Funktion, die im Text fehlt."
+		],
+		"material": "Fictional school tablet instructions\nBefore returning the tablet, save your work in the folder assigned by your teacher. Check that the saved file opens correctly. Only after checking the file should you sign out of the school account. Do not erase other students’ work. If a file will not open, ask the teacher before returning the device. The rest of the booklet describes optional colour themes and keyboard layouts.",
+		"materialLabel": "Für diese Übung verfasster Text · fiktiver Fall, keine Originalquelle.",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"wrong": [
+				"Before saving any part of the school work.",
+				"Only after deleting every other student’s file."
+			],
+			"explanation": "Erst speichern und prüfen; danach abmelden.",
+			"wrongFeedback": [
+				"So könnte ungespeicherte Arbeit verloren gehen. Prüfe die Reihenfolge im Auftrag.",
+				"Das Löschen fremder Dateien gehört nicht zu diesem Auftrag und würde anderen schaden."
+			]
+		},
+		"practice": [
+			{
+				"prompt": "Complete: Save and ___ that the file opens.",
+				"answers": ["check"],
+				"feedback": "Die Prüfung gehört vor das Abmelden."
+			},
+			{
+				"prompt": "Complete: Sign ___ of the account afterwards.",
+				"answers": ["out"],
+				"feedback": "Sign out bedeutet abmelden."
+			},
+			{
+				"prompt": "Who should help if the file will not open?",
+				"answers": ["the teacher", "teacher"],
+				"feedback": "Die Anleitung nennt die Lehrkraft."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Explain the return procedure in German to your friend. Leave out colour settings.",
+				"model": "Speichere deine Arbeit zunächst in dem von der Lehrkraft zugewiesenen Ordner. Prüfe dann, ob du die gespeicherte Datei öffnen kannst. Erst danach meldest du dich vom Schulkonto ab. Lösche keine Arbeiten anderer. Wenn die Datei nicht aufgeht, fragst du vor der Rückgabe die Lehrkraft. Die Farbeinstellungen sind dafür nicht wichtig.",
+				"criteria": [
+					"Du gibst die Reihenfolge richtig wieder.",
+					"Du erhältst Warnung und Hilfeschritt.",
+					"Du lässt unwichtige Gestaltung weg."
+				]
+			},
+			"2": {
+				"prompt": "Your friend says “I should sign out first.” Repair the misunderstanding and explain the phrase that caused it.",
+				"model": "Nicht zuerst abmelden: Die Anleitung sagt, dass du vorher speichern und die Datei prüfen sollst. Only after checking bedeutet erst nach der Prüfung. Wenn du den Ausdruck Wort für Wort ohne den ganzen Satz liest, kann die Reihenfolge unklar werden. Wir kontrollieren deshalb den Ablauf noch einmal.",
+				"criteria": [
+					"Du korrigierst die konkrete Reihenfolge.",
+					"Du erklärst only after sinngemäß.",
+					"Du bleibst beim vorliegenden Text."
+				]
+			}
+		},
+		"materialLanguage": "en",
+		"takeaway": "Erhalte bei Anleitungen die Bedingungen und Reihenfolge der Schritte, auch wenn du die Formulierung vereinfachst."
+	},
+	{
+		"id": "e9-tenses",
+		"stage": "language",
+		"title": "Choose a tense for the meaning",
+		"skill": "Sprachliche Mittel · Wiederholung",
+		"bindings": ["1.2-grammatik"],
+		"paragraphs": [
+			"Zeitformen zeigen zeitliche Beziehungen und die Sicht auf einen Vorgang. Simple past beschreibt etwa einen abgeschlossenen Besuch; present perfect kann bisherige Erfahrung ohne abgeschlossenen Zeitpunkt ausdrücken. Past continuous zeigt einen damaligen laufenden Hintergrund. Past perfect ordnet eine Handlung vor einem anderen vergangenen Ereignis ein.",
+			"Frage zuerst nach der Aussage, die du machen möchtest. In I visited the shop yesterday ist der Zeitpunkt abgeschlossen. In I have visited the shop twice so far zählt die Erfahrung bis jetzt. Ein einzelnes Signalwort ist keine sichere Regel für alle Kontexte. Present perfect und simple past werden regional teilweise unterschiedlich verwendet; die Übungen verlangen den ausdrücklich beschriebenen Kontext."
+		],
+		"material": "Yesterday Alex visited the workshop. While Sam was speaking to a customer, Alex checked a list. Alex had read the instructions before the visit began. So far this term, Alex has visited two local businesses. The first three sentences describe a past sequence; the last one counts experience up to now without naming a finished date.",
+		"materialLabel": "Für diese Übung verfasster Text · fiktiver Fall, keine Originalquelle.",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"wrong": ["has visited", "visits"],
+			"explanation": "Der ausdrücklich abgeschlossene Zeitpunkt verlangt hier simple past.",
+			"wrongFeedback": [
+				"Diese Form stellt einen Gegenwartsbezug her. Die Aufgabe nennt einen abgeschlossenen Zeitpunkt.",
+				"Diese Form beschreibt hier eine Gegenwartsgewohnheit; prüfe die abgeschlossene Zeitangabe."
+			]
+		},
+		"practice": [
+			{
+				"prompt": "Yesterday I ___ the workshop. (visit)",
+				"answers": ["visited"],
+				"feedback": "Simple past für das abgeschlossene Ereignis."
+			},
+			{
+				"prompt": "While Sam ___ talking, I took notes.",
+				"answers": ["was"],
+				"feedback": "Past continuous gibt den Hintergrund."
+			},
+			{
+				"prompt": "I ___ read the rules before the visit started.",
+				"answers": ["had"],
+				"feedback": "Had read ist past perfect."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Write three connected sentences about a fictional visit using simple past, past continuous and past perfect.",
+				"model": "I had checked the meeting time before I left home. When I arrived, the guide was speaking to another group. I waited near the entrance and wrote down two questions. The past perfect places the checking before the journey, while the continuous form shows the activity in progress at arrival.",
+				"criteria": [
+					"Du stellst eine Vorzeitigkeit dar.",
+					"Du beschreibst einen laufenden Hintergrund.",
+					"Du ordnest die Ereignisse nachvollziehbar."
+				]
+			},
+			"2": {
+				"prompt": "Explain the meaning difference between “I visited India in 2024” and “I have visited India”.",
+				"model": "The first sentence places the visit in a finished past year, so simple past is appropriate. The second describes experience up to now without giving a finished date. Both can refer to a real visit, but they answer different questions. The intended time reference determines the form.",
+				"criteria": [
+					"Du erklärst den abgeschlossenen Zeitpunkt.",
+					"Du erklärst die bisherige Erfahrung.",
+					"Du verbindest Form und Aussageabsicht."
+				]
+			}
+		},
+		"materialLanguage": "en",
+		"takeaway": "Wähle die Zeitform nach dem Zeitbezug: yesterday verlangt hier simple past; Vorvergangenheit wird mit past perfect markiert."
+	},
+	{
+		"id": "e9-used-to",
+		"stage": "language",
+		"title": "Describe a former habit",
+		"skill": "Sprachliche Mittel · used to",
+		"bindings": ["1.2-grammatik"],
+		"paragraphs": [
+			"Used to mit Infinitiv beschreibt eine frühere Gewohnheit oder einen früheren Zustand, der heute nicht mehr gilt. I used to walk to school sagt daher mehr als ein einzelner vergangener Spaziergang. Für eine heutige Gewohnheit verwendest du usually mit einer passenden Gegenwartsform.",
+			"In den hier geübten Schulformen stehen Fragen und Verneinungen mit did beziehungsweise did not und use to ohne d. Verwechsle die Struktur nicht mit be used to, das Vertrautheit ausdrückt. Vergleiche die Bedeutungen im jeweiligen Kontext, statt nur ähnlich aussehende Wörter zuzuordnen."
+		],
+		"material": "When Alex was younger, the workshop used to close at five. Alex used to walk past it on the way home. Now it closes later, and Alex usually takes the bus. A classmate asks, “Did you use to stop there?” Alex replies, “No, I did not use to go inside.” The passage contrasts former habits with the present.",
+		"materialLabel": "Für diese Übung verfasster Text · fiktiver Fall, keine Originalquelle.",
+		"sourceIds": ["lp", "used"],
+		"quiz": {
+			"wrong": [
+				"Walking is only a plan for next Saturday.",
+				"Walking is unfamiliar but becoming easier now."
+			],
+			"explanation": "Used to mit Infinitiv beschreibt eine frühere Gewohnheit.",
+			"wrongFeedback": [
+				"Die Formulierung beschreibt keine bloße Zukunftsabsicht.",
+				"Vertrautwerden ist ein anderes Muster; prüfe, ob von einer früheren Gewohnheit die Rede ist."
+			]
+		},
+		"practice": [
+			{
+				"prompt": "I ___ to walk, but now I take the bus.",
+				"answers": ["used"],
+				"feedback": "Die Aussagestruktur lautet used to."
+			},
+			{
+				"prompt": "Did you ___ to live here?",
+				"answers": ["use"],
+				"feedback": "Nach did steht use ohne d."
+			},
+			{
+				"prompt": "I did not use to ___ coffee. (drink)",
+				"answers": ["drink"],
+				"feedback": "Nach use to steht der Infinitiv."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Write a short paragraph contrasting two fictional former habits with the present.",
+				"model": "I used to walk to school with my neighbour, but now we take different buses. I also used to leave my homework until the evening. These days I usually finish it before dinner. Did you use to have a similar routine? I did not use to think much about how I planned my time.",
+				"criteria": [
+					"Du nennst frühere Gewohnheiten.",
+					"Du machst den heutigen Unterschied klar.",
+					"Du verwendest use to nach did richtig."
+				]
+			},
+			"2": {
+				"prompt": "Explain why “I used to visit the shop once yesterday” does not match the intended single-event meaning.",
+				"model": "Used to normally describes repeated past behaviour or a past state that has changed. A single visit on one finished day is better expressed as I visited the shop yesterday. If the visits happened regularly in an earlier period, I could say I used to visit the shop every week.",
+				"criteria": [
+					"Du erkennst den Einzelereigniskontext.",
+					"Du gibst eine passende Korrektur.",
+					"Du erläuterst einen passenden used-to-Kontext."
+				]
+			}
+		},
+		"materialLanguage": "en",
+		"takeaway": "Für eine beendete frühere Gewohnheit steht used to + Infinitiv; nach did steht use to."
+	},
+	{
+		"id": "e9-be-used-to",
+		"stage": "language",
+		"title": "Say what feels familiar",
+		"skill": "Sprachliche Mittel · be used to",
+		"bindings": ["1.2-grammatik"],
+		"paragraphs": [
+			"Be used to beschreibt Vertrautheit: I am used to getting up early bedeutet, dass frühes Aufstehen für mich normal ist. Nach to steht hier ein Nomen, Pronomen oder eine -ing-Form, denn to ist Teil einer präpositionalen Verbindung. Die Form von be passt du an Person und Zeit an.",
+			"Get used to beschreibt den Prozess des Gewöhnens. Used to ohne be und mit Infinitiv beschreibt dagegen eine frühere Gewohnheit. Vergleiche I used to work alone mit I am used to working alone: Im ersten Satz hat sich die frühere Situation geändert; im zweiten ist die Tätigkeit vertraut."
+		],
+		"material": "On the first day, Alex was not used to answering customer calls. After several practice conversations, it felt less strange. “I am getting used to it,” Alex said. Sam is used to speaking with customers every day. Alex used to avoid phone calls, but now wants to practise more. The similar words perform different jobs in these sentences.",
+		"materialLabel": "Für diese Übung verfasster Text · fiktiver Fall, keine Originalquelle.",
+		"sourceIds": ["lp", "used"],
+		"quiz": {
+			"wrong": ["get up", "got up"],
+			"explanation": "Nach be used to kann ein Verb nur in der -ing-Form folgen.",
+			"wrongFeedback": [
+				"Nach diesem to steht kein bloßer Infinitiv. Prüfe das Muster für Vertrautheit.",
+				"Eine Vergangenheitsform passt nicht als Ergänzung in diesem Muster."
+			]
+		},
+		"practice": [
+			{
+				"prompt": "I am used to ___ in a team. (work)",
+				"answers": ["working"],
+				"feedback": "Nach der Präposition steht die -ing-Form."
+			},
+			{
+				"prompt": "She ___ used to the noise now. (be)",
+				"answers": ["is"],
+				"feedback": "Be stimmt hier mit she überein."
+			},
+			{
+				"prompt": "I am getting used ___ the new timetable.",
+				"answers": ["to"],
+				"feedback": "Die Verbindung lautet get used to."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Describe something a fictional exchange student is getting used to, and contrast it with a former habit.",
+				"model": "The student used to have lunch at home. Now they eat at school and are getting used to choosing food in a busy hall. They are not yet used to speaking English all day, but short conversations are becoming easier. The first structure describes the former routine; the others describe growing familiarity.",
+				"criteria": [
+					"Du unterscheidest Gewohnheit und Vertrautheit.",
+					"Du verwendest die -ing-Form nach be used to.",
+					"Du machst den Gewöhnungsprozess klar."
+				]
+			},
+			"2": {
+				"prompt": "Correct “I am used to work here last year” in two different ways, explaining the intended meaning.",
+				"model": "If I mean a former job, I would say I used to work here. If I mean familiarity with this workplace, I would say I am used to working here. To refer to familiarity last year, I could say I was used to working here. Each correction expresses a different meaning.",
+				"criteria": [
+					"Du gibst zwei grammatische Möglichkeiten.",
+					"Du erklärst den Bedeutungsunterschied.",
+					"Du passt die Zeitform an den Kontext an."
+				]
+			}
+		},
+		"materialLanguage": "en",
+		"takeaway": "Be used to + Nomen oder -ing bedeutet Vertrautheit; get used to beschreibt das Vertrautwerden."
+	},
+	{
+		"id": "e9-so-neither",
+		"stage": "language",
+		"title": "Agree briefly with someone",
+		"skill": "Sprachliche Mittel · so, neither, nor",
+		"bindings": ["1.2-grammatik"],
+		"paragraphs": [
+			"Mit So do I stimmst du einer positiven Aussage zu; Neither do I oder Nor do I passen zu einer negativen. Das Hilfsverb folgt der Ausgangsaussage: I can swim – So can I. I was nervous – So was I. Die Reihenfolge ist so beziehungsweise neither oder nor, Hilfsverb, Subjekt.",
+			"Bei Vollverben im simple present oder simple past brauchst du do, does oder did. Bei be übernimmst du die passende Form von be. Neither trägt bereits die negative Bedeutung; füge nicht zusätzlich not ein. Nutze die kurzen Antworten im Gespräch nur, wenn sie wirklich zu deiner eigenen Aussage passen."
+		],
+		"material": "A: I enjoy working with people. B: So do I.\nA: I cannot repair a bicycle yet. B: Neither can I.\nA: I was nervous yesterday. B: So was I.\nA: I did not understand the first question. B: Nor did I.\nThese replies share the first speaker’s positive or negative meaning without repeating the full sentence.",
+		"materialLabel": "Für diese Übung verfasster Text · fiktiver Fall, keine Originalquelle.",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"wrong": ["So can I.", "Neither do I."],
+			"explanation": "Die Ausgangsaussage ist negativ und verwendet can.",
+			"wrongFeedback": [
+				"Diese Einleitung stimmt einer positiven Aussage zu. Die Ausgangsaussage ist verneint.",
+				"Prüfe, ob das Hilfsverb zur Aussage über eine Fähigkeit passt."
+			]
+		},
+		"practice": [
+			{
+				"prompt": "I like it. So ___ I.",
+				"answers": ["do"],
+				"feedback": "Simple present mit Vollverb: do."
+			},
+			{
+				"prompt": "I was tired. So ___ I.",
+				"answers": ["was"],
+				"feedback": "Be wird als Hilfsverb übernommen."
+			},
+			{
+				"prompt": "I have not finished. Neither ___ I.",
+				"answers": ["have"],
+				"feedback": "Die Ausgangsform ist present perfect."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "With a partner, create four short exchanges using two positive and two negative statements.",
+				"model": "A: I like meeting new people. B: So do I. A: I was nervous at first. B: So was I. A: I cannot drive. B: Neither can I. A: I did not finish the form. B: Nor did I. We checked the auxiliary and the positive or negative meaning after each exchange.",
+				"criteria": [
+					"Du hast die Dialoge laut geübt.",
+					"Du wählst passende Hilfsverben.",
+					"Du unterscheidest positive und negative Zustimmung."
+				]
+			},
+			"2": {
+				"prompt": "Explain why “Neither do I” does not correctly agree with “I am not ready”.",
+				"model": "The first statement uses the verb be, so the matching agreement is Neither am I. Do is used with an ordinary present-simple verb, as in I do not understand. The auxiliary in the short response should match the structure and time of the original statement.",
+				"criteria": [
+					"Du korrigierst mit am.",
+					"Du erklärst die Wahl des Hilfsverbs.",
+					"Du gibst einen passenden do-Kontext."
+				]
+			}
+		},
+		"speaking": true,
+		"materialLanguage": "en",
+		"takeaway": "Übernimm beim Zustimmen das passende Hilfsverb: positiv so, negativ neither oder nor, danach das Subjekt."
+	},
+	{
+		"id": "e9-reported-statements",
+		"stage": "language",
+		"title": "Report what someone said",
+		"skill": "Sprachliche Mittel · Aussagen",
+		"bindings": ["1.2-grammatik"],
+		"paragraphs": [
+			"Indirekte Rede gibt eine fremde Aussage in deinen Satz eingebettet wieder. Nach einem vergangenen Einleitungsverb wird häufig zurückverschoben: present perfect wird etwa zu past perfect. Wenn du mit Backshift berichtest, wird aus I have lost my key im vorgegebenen Fall Tom said that he had lost his key.",
+			"Pronomen hängen davon ab, wer spricht und wer gemeint ist. Zeit- und Ortswörter ändern sich nur, wenn der neue Kontext es verlangt: here kann am gleichen Ort here bleiben. Auch Backshift ist bei weiterhin gültigen Aussagen nicht immer nötig. Die Übungen verlangen ausdrücklich einen späteren Bericht mit Backshift, damit die erwartete Form eindeutig ist."
+		],
+		"material": "Direct statement on Monday: Tom says, “I have lost my key.”\nLater report with backshift: Tom said that he had lost his key.\nDirect statement: “I will call you tomorrow,” Mira told Ben on Monday.\nBen reports it on Wednesday: Mira told me that she would call me the following day. The words must fit who reports, when and where; changes are not a blind substitution table.",
+		"materialLabel": "Für diese Übung verfasster Text · fiktiver Fall, keine Originalquelle.",
+		"sourceIds": ["lp", "reported"],
+		"quiz": {
+			"wrong": ["has lost", "will lose"],
+			"explanation": "Mit vorgegebenem Backshift wird present perfect zu past perfect.",
+			"wrongFeedback": [
+				"Das übernimmt die ursprüngliche Zeitform. Die Aufgabe verlangt ausdrücklich Backshift.",
+				"Diese Form verschiebt die Aussage in die Zukunft und verändert damit den Zeitbezug."
+			]
+		},
+		"practice": [
+			{
+				"prompt": "With backshift: “I am tired.” She said she ___ tired.",
+				"answers": ["was"],
+				"feedback": "Am wird im vorgegebenen Backshift zu was."
+			},
+			{
+				"prompt": "With backshift: “I can help.” He said he ___ help.",
+				"answers": ["could"],
+				"feedback": "Can wird zu could."
+			},
+			{
+				"prompt": "With backshift: “I will phone.” She said she ___ phone.",
+				"answers": ["would"],
+				"feedback": "Will wird zu would."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Report these statements with backshift: Mira: “I am busy.” Tom: “I have finished.” Explain who the pronouns refer to.",
+				"model": "Mira said that she was busy. Tom said that he had finished. She refers to Mira, and he refers to Tom. Am changes to was, while have finished changes to had finished. These forms follow the task’s instruction to report later with backshift; pronouns must still fit the people being described.",
+				"criteria": [
+					"Du verwendest die passenden Personenbezüge.",
+					"Du bildest beide Backshift-Formen richtig.",
+					"Du erklärst den Berichtskontext."
+				]
+			},
+			"2": {
+				"prompt": "Explain why “today” may remain unchanged when reporting a message later the same day.",
+				"model": "Today refers to the day of speaking. If the report is made on that same day, today can still identify the correct date. If the report is made another day, that day may be needed instead. The choice should preserve the original meaning in the reporting context rather than follow a mechanical replacement rule.",
+				"criteria": [
+					"Du beachtest den Berichtstag.",
+					"Du erklärst zwei mögliche Kontexte.",
+					"Du erhältst den ursprünglichen Zeitbezug."
+				]
+			}
+		},
+		"materialLanguage": "en",
+		"takeaway": "Beim Backshift nach said wird have lost zu had lost. Personen-, Zeit- und Ortsangaben folgen dem tatsächlichen Kontext."
+	},
+	{
+		"id": "e9-reported-questions",
+		"stage": "language",
+		"title": "Report a question",
+		"skill": "Sprachliche Mittel · Fragen",
+		"bindings": ["1.2-grammatik"],
+		"paragraphs": [
+			"Indirekte Fragen haben im eingebetteten Satz die Wortfolge einer Aussage: She asked where I lived. Die direkte Frage Where do you live? behält ihr do nicht. Bei Ja-Nein-Fragen verwendest du if oder whether; bei einer Frage mit Fragewort bleibt dieses erhalten.",
+			"Passe bei einem späteren Bericht Pronomen und bei verlangtem Backshift die Zeitform an. Eine höfliche direkte Frage wie Could you tell me where the office is? enthält ebenfalls eine eingebettete Frage ohne Inversion. Achte deshalb auf die Grenze zwischen Einleitung und eingebettetem Satz. Die abschließende Zeichensetzung richtet sich nach dem gesamten Satz."
+		],
+		"material": "Direct: “Where do you work?”\nReported later with backshift: She asked me where I worked.\nDirect: “Are you available?”\nReported later with backshift: He asked whether I was available.\nDirect polite question: “Could you tell me where the office is?”\nThe embedded clause has subject before verb. An ordinary reported statement does not become a direct question just because it reports one.",
+		"materialLabel": "Für diese Übung verfasster Text · fiktiver Fall, keine Originalquelle.",
+		"sourceIds": ["lp", "questions"],
+		"quiz": {
+			"wrong": ["She asked where did I work.", "She asked where worked I."],
+			"explanation": "Im eingebetteten Fragesatz steht das Subjekt vor dem Verb.",
+			"wrongFeedback": [
+				"Hier wurde die direkte Frageform mit do in den eingebetteten Satz übernommen.",
+				"Hier steht das Vollverb vor dem Subjekt. Prüfe die Wortfolge im eingebetteten Satz."
+			]
+		},
+		"practice": [
+			{
+				"prompt": "She asked ___ I was ready. (use if or whether)",
+				"answers": ["if", "whether"],
+				"feedback": "Ja-Nein-Fragen werden mit if oder whether eingebettet."
+			},
+			{
+				"prompt": "He asked where I ___. (work; backshift)",
+				"answers": ["worked"],
+				"feedback": "Das do fällt weg; worked trägt die Vergangenheit."
+			},
+			{
+				"prompt": "Could you tell me where the office ___?",
+				"answers": ["is"],
+				"feedback": "Im eingebetteten Satz steht office vor is."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Report “Where do you live?” and “Can you come?” later with backshift. Explain the word order.",
+				"model": "She asked me where I lived. He asked whether I could come. The first keeps the question word where. The second uses whether because the direct question could be answered yes or no. In both embedded clauses, the subject comes before the verb, and no extra do is used.",
+				"criteria": [
+					"Du verwendest Fragewort und whether passend.",
+					"Du nutzt Aussagewortstellung.",
+					"Du passt die Zeitform an."
+				]
+			},
+			"2": {
+				"prompt": "Compare “Where is the office?” with “Could you tell me where the office is?” and explain both question marks.",
+				"model": "The first is a direct question with is before the subject. The second is also a direct question overall because Could you tell me asks the listener for information. Inside it, where the office is has statement word order. Both whole sentences therefore take a question mark, despite their different internal structures.",
+				"criteria": [
+					"Du unterscheidest Gesamtsatz und Einbettung.",
+					"Du erklärst beide Wortstellungen.",
+					"Du begründest die Fragezeichen."
+				]
+			}
+		},
+		"materialLanguage": "en",
+		"takeaway": "Nach einem Fragewort oder if/whether folgt in der indirekten Frage die Wortfolge Subjekt vor Verb, ohne Frage-do."
+	},
+	{
+		"id": "e9-reported-requests",
+		"stage": "language",
+		"title": "Report instructions and requests",
+		"skill": "Sprachliche Mittel · Aufforderungen",
+		"bindings": ["1.2-grammatik"],
+		"paragraphs": [
+			"Eine berichtete Bitte kann asked + Person + to-Infinitiv verwenden. Für eine Anweisung passt told + Person + to-Infinitiv. Im Beispiel wird Please wait here zu She asked me to wait there, wenn sich der Ort geändert hat. Der Empfänger steht als Objekt im Satz.",
+			"Eine negative Aufforderung wird mit not to wiedergegeben: He told us not to open the box. Do not bleibt nicht als direkte Imperativform stehen. Entscheidend ist auch die Bedeutung: Eine höfliche Frageform kann eine Bitte ausdrücken. Berichte die beabsichtigte Handlung und achte weiterhin auf Personen-, Zeit- und Ortsbezüge."
+		],
+		"material": "Sam says to Alex, “Please bring a notebook.”\nAlex reports: Sam asked me to bring a notebook.\nThe guide says to the group, “Do not touch the display.”\nA visitor reports: The guide told us not to touch the display.\nThe choice between asked and told can signal whether the original was a request or an instruction.",
+		"materialLabel": "Für diese Übung verfasster Text · fiktiver Fall, keine Originalquelle.",
+		"sourceIds": ["lp", "orders"],
+		"quiz": {
+			"wrong": ["not opening", "did not open"],
+			"explanation": "Die negative berichtete Aufforderung verwendet not to plus Infinitiv.",
+			"wrongFeedback": [
+				"Die -ing-Form passt hier nicht zum Muster für eine berichtete Aufforderung.",
+				"Diese Form macht aus der Aufforderung eine verneinte Aussage in der Vergangenheit."
+			]
+		},
+		"practice": [
+			{
+				"prompt": "Sam asked me ___ bring a notebook.",
+				"answers": ["to"],
+				"feedback": "Asked plus Objekt plus to-Infinitiv."
+			},
+			{
+				"prompt": "She told us ___ to touch it.",
+				"answers": ["not"],
+				"feedback": "Die Verneinung steht vor to."
+			},
+			{
+				"prompt": "He asked ___ to wait. (we)",
+				"answers": ["us"],
+				"feedback": "Das Objektpronomen zu we lautet us."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Report a polite request to bring a notebook and an instruction not to take photos. Identify the recipient.",
+				"model": "Sam asked me to bring a notebook. The guide told us not to take photos. In the first sentence, me is the person receiving the request. In the second, us is the group receiving the instruction. The negative action is expressed with not to followed by the infinitive.",
+				"criteria": [
+					"Du verwendest Objektpronomen passend.",
+					"Du bildest den to-Infinitiv.",
+					"Du gibst die negative Aufforderung richtig wieder."
+				]
+			},
+			"2": {
+				"prompt": "Explain why “She told to wait” is incomplete in the intended request-reporting pattern and repair it.",
+				"model": "In this pattern, told needs a recipient before the infinitive. I could say She told me to wait or She told the students to wait. The recipient shows who was instructed to perform the action. If I want a polite reported request, I could instead say She asked me to wait.",
+				"criteria": [
+					"Du ergänzt einen Empfänger.",
+					"Du gibst zwei mögliche Formulierungen.",
+					"Du erklärst den Unterschied von asked und told."
+				]
+			}
+		},
+		"materialLanguage": "en",
+		"takeaway": "Berichte eine Bitte mit asked + Empfänger + to-Infinitiv; die negative Aufforderung mit not to."
+	},
+	{
+		"id": "e9-word-building",
+		"stage": "language",
+		"title": "Build and check vocabulary",
+		"skill": "Wortschatz · Wortbildung",
+		"bindings": ["1.2-wortschatz", "4"],
+		"paragraphs": [
+			"Wortfamilien helfen beim Erschließen: employ, employer, employee und employment teilen einen Stamm, haben aber verschiedene Funktionen. Präfixe können Bedeutungen ändern; Suffixe können Wortarten oder Rollen anzeigen. Diese Hinweise liefern eine Hypothese, die du am Satz und bei Bedarf im Wörterbuch prüfst.",
+			"Ein bekanntes Muster erlaubt keine beliebige Neuschöpfung. Notiere ein neues Wort mit Bedeutung, Wortart und einem eigenen Beispielsatz. Unterscheide auch zusammengesetzte Wörter und verkürzte Formen. Job advertisement und job ad können denselben Text meinen, passen aber unterschiedlich zum Stil des jeweiligen Zusammenhangs."
+		],
+		"material": "The employer offers a training place. The employee works for the organisation. Employment refers to work or the state of having a job. Unemployment describes being without employment in the relevant sense. An online job advertisement may be shortened to job ad. Similar spelling helps you investigate a meaning, but the sentence must still make sense.",
+		"materialLabel": "Für diese Übung verfasster Text · fiktiver Fall, keine Originalquelle.",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"wrong": ["Employee", "Employment"],
+			"explanation": "Employer ist der Arbeitgeber; employee die beschäftigte Person.",
+			"wrongFeedback": [
+				"Diese Person erhält Arbeit, statt sie anzubieten.",
+				"Das Wort bezeichnet ein Beschäftigungsverhältnis und keine Person, die Arbeit anbietet."
+			]
+		},
+		"practice": [
+			{
+				"prompt": "A person who works for an employer is an ___.",
+				"answers": ["employee"],
+				"feedback": "Die Endungen unterscheiden die Rollen."
+			},
+			{
+				"prompt": "The noun for the state of having a job is ___.",
+				"answers": ["employment"],
+				"feedback": "Employment ist nicht die Person."
+			},
+			{
+				"prompt": "A common short form of advertisement is ___.",
+				"answers": ["ad"],
+				"feedback": "Ad ist eine Verkürzung."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Create four word-family entries with one original example each, using the employ family.",
+				"model": "Employ: a workshop may employ three people. Employer: the employer explains the duties. Employee: an employee checks the booking list. Employment: the course prepares students for employment. I would record the word class and pronunciation as well as the meaning, so that I can use each word accurately in a new sentence.",
+				"criteria": [
+					"Du unterscheidest die vier Bedeutungen.",
+					"Du schreibst passende eigene Sätze.",
+					"Du notierst die Wortarten oder Rollen."
+				]
+			},
+			"2": {
+				"prompt": "A learner assumes every word ending in -er is a person. Explain how to test that rule.",
+				"model": "Some words ending in -er do name people, such as employer, but the spelling pattern is not a guarantee. I would look at the word in a sentence and check a dictionary entry before deciding its meaning or word class. A pattern is useful evidence for a guess, not permission to ignore the actual word.",
+				"criteria": [
+					"Du behandelst das Muster als Vermutung.",
+					"Du nutzt Kontext und Nachschlagewerk.",
+					"Du erklärst die Grenze der Verallgemeinerung."
+				]
+			}
+		},
+		"materialLanguage": "en",
+		"takeaway": "Prüfe bei einer Wortfamilie Stamm, Vorsilbe, Endung und Wortart; bestätige die Bedeutung im Zusammenhang."
+	},
+	{
+		"id": "e9-chunks",
+		"stage": "language",
+		"title": "Learn useful phrases as units",
+		"skill": "Wortschatz · chunks",
+		"bindings": ["1.2-wortschatz", "5-arbeit"],
+		"paragraphs": [
+			"Chunks sind häufig gemeinsam verwendete Wörter. Lerne eine Wendung mit ihrem Satzmuster: decide to apply, enjoy helping, bear in mind und put up with. In have something done veranlasst die Person eine Handlung, statt sie notwendigerweise selbst auszuführen. I had my bike repaired kann daher eine Werkstattleistung beschreiben.",
+			"Be said to kennzeichnet eine zugeschriebene Aussage: The shop is said to be busy sagt zunächst etwas über Berichte, nicht über deren Beweis. Im neuen Kontext musst du Bedeutung und Wortfolge prüfen. Ein selbst geschriebener Beispielsatz ist oft hilfreicher als die isolierte Übersetzung eines einzelnen Bestandteils."
+		],
+		"material": "Alex decided to apply for a placement and enjoys helping customers. Sam said, “Bear in mind that the front door may be closed.” Alex does not want to put up with a broken bicycle, so Alex has the bike repaired. The shop is said to be reliable, but Alex still checks what work is included. These phrases have different grammatical patterns and purposes.",
+		"materialLabel": "Für diese Übung verfasster Text · fiktiver Fall, keine Originalquelle.",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"wrong": [
+				"I certainly repaired the bicycle by myself.",
+				"I decided the bicycle could never be repaired."
+			],
+			"explanation": "Have something done kann das Veranlassen einer Fremdleistung ausdrücken.",
+			"wrongFeedback": [
+				"Der Satz legt nicht fest, dass die sprechende Person selbst die Reparatur ausgeführt hat.",
+				"Der Satz berichtet von einer veranlassten Handlung, nicht von einer Entscheidung gegen jede Reparatur."
+			]
+		},
+		"practice": [
+			{
+				"prompt": "I decided ___ apply.",
+				"answers": ["to"],
+				"feedback": "Decide wird hier mit to-Infinitiv verbunden."
+			},
+			{
+				"prompt": "I enjoy ___ customers. (help)",
+				"answers": ["helping"],
+				"feedback": "Enjoy wird hier mit einer -ing-Form verbunden."
+			},
+			{
+				"prompt": "I cannot put up ___ the noise.",
+				"answers": ["with"],
+				"feedback": "Die Wendung lautet put up with."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Write a short workplace paragraph using decide to, enjoy + -ing and bear in mind.",
+				"model": "I decided to apply for a placement at the workshop because I enjoy helping people. I also want to understand how bookings are organised. I will bear in mind that students need to ask before changing customer records. These phrases let me express a decision, an interest and a useful reminder without translating each word separately.",
+				"criteria": [
+					"Du nutzt alle drei Wendungen.",
+					"Du bildest Infinitiv und -ing richtig.",
+					"Du schreibst einen passenden Zusammenhang."
+				]
+			},
+			"2": {
+				"prompt": "Compare “I repaired my bike” with “I had my bike repaired”, then explain why “is said to” is not proof.",
+				"model": "The sentence “I repaired my bike” normally presents me as the person who did the work. The sentence “I had my bike repaired” normally says that I arranged for the work to be done. The sentence “The shop is said to be reliable” reports a claim about it. That wording does not by itself establish that the claim is true.",
+				"criteria": [
+					"Du unterscheidest Ausführen und Veranlassen.",
+					"Du gibst passende Beispiele.",
+					"Du unterscheidest Zuschreibung und Beleg."
+				]
+			}
+		},
+		"materialLanguage": "en",
+		"takeaway": "Lerne Wendungen mit ihrem Satzmuster: decide to apply, enjoy helping, put up with; prüfe ihre Bedeutung im neuen Kontext."
+	},
+	{
+		"id": "e9-story",
+		"stage": "literature",
+		"title": "Read a complete short story",
+		"skill": "Literatur · Textbeleg",
+		"bindings": ["1.1-lesen", "2", "5-literatur"],
+		"paragraphs": [
+			"Bei einer Erzählung unterscheidest du Verfasser, Erzähler und Figuren. Ein Ich-Erzähler zeigt eine begrenzte Sicht. Seine Beobachtungen sind Textbelege; vermutete Gedanken anderer Figuren müssen als Deutung erkennbar bleiben. Fasse die Handlung zunächst ohne Wertung zusammen und erkläre dann, was ein Detail bedeuten könnte.",
+			"Die folgende vollständige Kurzgeschichte wurde für diese App geschrieben. Sie ist weder ein Auszug eines bekannten Autors noch ein historisches Zeugnis. Damit kannst du Anfang, Konflikt und Schluss am selben Werk untersuchen. Eine zusätzliche längere Lektüre im Unterricht vertieft Ausdauer, Sprachvielfalt und den Umgang mit komplexeren Figuren."
+		],
+		"material": "The Empty Chair · an original classroom story\nI had saved the chair beside me for Nia. We always worked together. When Mr Lane asked us to choose partners, I put my bag on the seat.\nA new student stopped at our table. “Is anyone sitting here?” he asked.\n“Yes,” I said too quickly.\nAcross the room, Nia was already opening a project folder with someone else. I looked down at the bag. The new student turned towards the only empty desk, at the back.\n“Wait,” I called. “I meant that I was expecting someone. But the chair is free.”\nHe sat down without asking why I had changed my mind. His first idea for our project was better than anything I had written in my notebook.\nAt the end of the lesson, Nia asked how we had got on.\n“Well,” I said. This time, I moved the bag before anyone had to ask.",
+		"materialLabel": "Für diese Übung verfasster Text · fiktiver Fall, keine Originalquelle.",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"wrong": [
+				"They keep the chair blocked all lesson.",
+				"They refuse to consider a partner’s idea."
+			],
+			"explanation": "Das Handeln am Schluss greift die Ausgangssituation verändert auf.",
+			"wrongFeedback": [
+				"Diese Handlung würde das ursprüngliche Verhalten fortsetzen. Suche nach einem tatsächlichen Wechsel.",
+				"Diese Reaktion wäre eine Ablehnung. Prüfe die Handlung am Ende der Geschichte."
+			]
+		},
+		"practice": [
+			{
+				"prompt": "What object initially blocks the chair?",
+				"answers": ["a bag", "bag"],
+				"feedback": "Die Tasche blockiert den Platz."
+			},
+			{
+				"prompt": "What is the narrator’s expected partner called?",
+				"answers": ["Nia"],
+				"feedback": "Nia wird am Anfang genannt."
+			},
+			{
+				"prompt": "The new student’s first idea is better than those in the ___.",
+				"answers": ["notebook"],
+				"feedback": "Der Vergleich betrifft die Ideen im Notizbuch."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Explain the narrator’s change using one detail from the beginning and one from the ending.",
+				"model": "At the beginning, the narrator places a bag on the chair and quickly says the seat is taken. This shows a wish to keep the usual partnership. At the end, the narrator moves the bag before anyone asks. The repeated action changes meaning and suggests greater willingness to include someone new.",
+				"criteria": [
+					"Du nennst Anfang und Schluss.",
+					"Du stützt die Deutung auf konkrete Handlungen.",
+					"Du unterscheidest Beobachtung und Schlussfolgerung."
+				]
+			},
+			"2": {
+				"prompt": "Retell the key moment from the new student’s viewpoint without claiming to know the narrator’s private thoughts.",
+				"model": "I asked whether the chair was free, but the student said someone was sitting there. I started walking to the back desk. Then I heard “Wait” and was invited to sit down. I did not know why the answer had changed. I opened my notebook and suggested an idea, hoping we could begin the project together.",
+				"criteria": [
+					"Du hältst die Ereignisse ein.",
+					"Du begrenzt das Wissen der neuen Figur.",
+					"Du gestaltest eine erkennbare Perspektive."
+				]
+			}
+		},
+		"materialLanguage": "en",
+		"takeaway": "Unterscheide Verfasser und Erzähler. Belege Aussagen über eine Figur mit ihren Worten oder Handlungen."
+	},
+	{
+		"id": "e9-shakespeare",
+		"stage": "literature",
+		"title": "A play, a conflict, an adaptation",
+		"skill": "Literatur · Shakespeare",
+		"bindings": ["1.1-lesen", "2", "5-literatur"],
+		"paragraphs": [
+			"William Shakespeare schrieb für die Bühne. In Romeo and Juliet geraten zwei junge Menschen in den Konflikt verfeindeter Familien. Ein Drama vermittelt Geschehen durch Dialog, Handlung und Inszenierung. Eine moderne Nacherzählung kann den Konflikt erklären, ist aber nicht der Originalwortlaut des Stücks.",
+			"Die folgende Kurzbeschreibung ist eine eigene Zusammenfassung. Für die zusätzliche Lektüre führt die Quelle zur Folger-Ausgabe mit Originaltext und Erläuterungen. Vergleiche beim Transfer eine konkrete Szene mit ihrer Darstellung auf der Bühne oder im Film: Was wird gesprochen, was durch Bild, Ton oder Spiel gezeigt? Die App selbst enthält keine Verfilmung."
+		],
+		"material": "Original classroom synopsis, not Shakespeare’s wording:\nRomeo and Juliet belong to families involved in a bitter feud. Their relationship creates a conflict between personal attachment and family expectations. A director adapting the story for a modern stage must decide how to make those pressures visible. Costume, setting, silence and the delivery of a line can all affect an audience’s interpretation. A summary can explain the basic conflict but cannot reproduce the experience of reading or watching the play.",
+		"materialLabel": "Für diese Übung verfasster Text · fiktiver Fall, keine Originalquelle.",
+		"sourceIds": ["lp", "folger"],
+		"quiz": {
+			"wrong": [
+				"It must report only the summariser’s own school day.",
+				"It can contain no choices about voice or movement."
+			],
+			"explanation": "Ein Drama wird durch Figurenrede und Bühnenhandlung gestaltet.",
+			"wrongFeedback": [
+				"Eine persönliche Alltagserzählung ist keine notwendige Eigenschaft eines Dramas.",
+				"Sprecher und Darsteller treffen gerade solche Entscheidungen. Prüfe den Unterschied zur Inhaltszusammenfassung."
+			]
+		},
+		"practice": [
+			{
+				"prompt": "The author’s surname is ___.",
+				"answers": ["Shakespeare"],
+				"feedback": "William Shakespeare ist der Autor."
+			},
+			{
+				"prompt": "Romeo and Juliet is a play, not this classroom ___.",
+				"answers": ["synopsis", "summary"],
+				"feedback": "Synopsis bezeichnet eine Zusammenfassung."
+			},
+			{
+				"prompt": "Words spoken between characters form a ___.",
+				"answers": ["dialogue"],
+				"feedback": "Dialogue ist Figurenrede im Wechsel."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Explain the play’s central conflict in your own words and suggest one staging choice.",
+				"model": "The young characters’ relationship conflicts with the hostility between their families. A director could place the two family groups on opposite sides of the stage to make the division visible. That staging choice would be an interpretation, not a new fact about the original text. I would compare it with a particular scene.",
+				"criteria": [
+					"Du benennst den Konflikt.",
+					"Du schlägst ein konkretes Bühnenmittel vor.",
+					"Du unterscheidest Interpretation und Text."
+				]
+			},
+			"2": {
+				"prompt": "Read a scene using the linked Folger edition and compare it with a performance you choose. Record the scene and the performance source yourself.",
+				"model": "Comparison plan: identify the act and scene, then summarise the spoken exchange. Record the performance title, company and source. Describe one choice of gesture, costume, camera or sound and explain how it affects the scene. Distinguish Shakespeare’s words from the director’s interpretation, and support the comparison with a specific moment.",
+				"criteria": [
+					"Du hast Text und Aufführung tatsächlich verglichen.",
+					"Du dokumentierst beide Fundstellen.",
+					"Du erklärst die Wirkung eines Gestaltungsmittels."
+				]
+			}
+		},
+		"materialLanguage": "en",
+		"takeaway": "Ein Drama entfaltet Handlung in Dialog und Spiel. Vergleiche den Text mit Stimme, Bewegung und Wirkung einer Aufführung."
+	},
+	{
+		"id": "e9-presentation",
+		"stage": "literature",
+		"title": "Present and answer questions",
+		"skill": "Sprechen · Präsentation",
+		"bindings": ["1.1-sprechen", "4"],
+		"paragraphs": [
+			"Eine Präsentation braucht eine klare Frage, wenige Hauptpunkte, passende Beispiele und ein Fazit. Nutze Stichwörter als Gedächtnisstütze. Phrases wie First, I will explain … und To sum up … zeigen den Aufbau. Eine Frage an das Publikum kann Vorwissen aktivieren oder prüfen, ob der Gedanke angekommen ist.",
+			"Eine Folie unterstützt die Erklärung, ersetzt sie aber nicht. Beschreibe Grafiken mit Einheit und Datenbasis und nenne verwendete Quellen. Nachfragen gehören zur Präsentation: Wiederhole gegebenenfalls die Frage und sage offen, wenn du etwas noch prüfen musst. Die App speichert deinen Plan und bewertet keinen mündlichen Vortrag."
+		],
+		"material": "Presentation notes · Can our club reduce waste?\nOpening question: What did we throw away after the last event?\nPoint 1: Describe one observed source of waste.\nPoint 2: Compare two practical alternatives.\nPoint 3: Explain what we should measure during the next event.\nConclusion: Suggest a small trial and a review date.\nAudience question: What would make the trial difficult for you?\nThese are speaking notes, not a researched report about a real club.",
+		"materialLabel": "Für diese Übung verfasster Text · fiktiver Fall, keine Originalquelle.",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"wrong": [
+				"A full script in tiny type read without looking up.",
+				"An unrelated picture without any explanation at all."
+			],
+			"explanation": "Stichpunkte und eine passende beschriftete Darstellung unterstützen den Vortrag.",
+			"wrongFeedback": [
+				"Sehr kleine Schrift und bloßes Ablesen helfen dem Publikum kaum, dem Vortrag zu folgen.",
+				"Ein Bild ohne Bezug oder Erklärung unterstützt die zentrale Aussage nicht."
+			]
+		},
+		"practice": [
+			{
+				"prompt": "Complete: First, I will ___ the problem.",
+				"answers": ["explain"],
+				"feedback": "Explain leitet den ersten Hauptpunkt ein."
+			},
+			{
+				"prompt": "Complete the closing phrase: To sum ___.",
+				"answers": ["up"],
+				"feedback": "To sum up signalisiert die Zusammenfassung."
+			},
+			{
+				"prompt": "Complete: Do you have any ___?",
+				"answers": ["questions"],
+				"feedback": "Fragen ermöglichen Rückmeldung."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Give a one-minute presentation from five bullet points, then answer a partner’s question. Save your notes.",
+				"model": "Question: how can our fictional club reduce waste? First, we can count leftover cups. Next, we can compare reusable cups with the current arrangement. We should also check washing and storage. I suggest trying one option at the next event and recording the results. What difficulty should we plan for before starting?",
+				"criteria": [
+					"Du hast frei von Stichpunkten gesprochen.",
+					"Du begründest einen Vorschlag mit einem Beispiel.",
+					"Du bist auf eine Nachfrage eingegangen."
+				]
+			},
+			"2": {
+				"prompt": "Adapt the same presentation for visitors who do not know the club. Explain two changes.",
+				"model": "I would first explain what kind of events the club organises, because visitors lack that context. I would also explain our terms and label any graphic clearly. The main question could stay the same, but examples should not depend on knowing individual members. I would invite a question to check understanding.",
+				"criteria": [
+					"Du berücksichtigst neues Vorwissen.",
+					"Du nennst zwei konkrete Anpassungen.",
+					"Du erklärst den Zweck der Änderungen."
+				]
+			}
+		},
+		"speaking": true,
+		"materialLanguage": "en",
+		"takeaway": "Führe von einer klaren Frage über wenige belegte Hauptpunkte zu einem Fazit; Folien unterstützen deinen Vortrag."
+	},
+	{
+		"id": "e9-dictionary",
+		"stage": "literature",
+		"title": "Use a dictionary and check pronunciation",
+		"skill": "Methoden · Aussprache",
+		"bindings": ["1.2-aussprache", "1.2-wortschatz", "4"],
+		"paragraphs": [
+			"Ein Wörterbucheintrag enthält mehr als eine Übersetzung: Bedeutung, Wortart, Aussprache, Betonung und Beispielsätze helfen bei der Auswahl. Lies den Satzkontext, um die passende Bedeutung zu finden. Record kann beispielsweise ein Nomen oder Verb sein; bei diesen häufigen Verwendungen unterscheidet sich die Betonung.",
+			"Für unbekannte Wörter nutzt du das Aussprachebeispiel eines geeigneten Wörterbuchs und sprichst nach. Prüfe auch die Satzintonation und betone die für deine Aussage wichtigen Wörter. Die App besitzt keine Spracherkennung und misst keine Aussprache. Öffne das verlinkte Wörterbuch bei Bedarf selbst; ohne Internet kannst du mit einem gedruckten Eintrag oder einem Partner arbeiten."
+		],
+		"material": "Mini dictionary exercise · classroom paraphrase\nrecord, noun: a stored account or piece of information; stress commonly on the first syllable.\nrecord, verb: to store information or sound; stress commonly on the second syllable.\nExample: We keep a record of appointments. We record the appointment time.\nA full dictionary can provide pronunciation audio and distinguish additional meanings. Choose the entry that matches the sentence, then check its actual pronunciation.",
+		"materialLabel": "Für diese Übung verfasster Text · fiktiver Fall, keine Originalquelle.",
+		"sourceIds": ["lp", "dictionary"],
+		"quiz": {
+			"wrong": [
+				"Only the first translation listed on the page.",
+				"Only whether the spelling looks like German."
+			],
+			"explanation": "Kontext und Wortart helfen bei der passenden Bedeutung.",
+			"wrongFeedback": [
+				"Die erste Übersetzung muss im konkreten Satz nicht passen. Prüfe weitere Angaben im Eintrag.",
+				"Ähnliche Schreibweisen können täuschen. Die Bedeutung muss zum Satz passen."
+			]
+		},
+		"practice": [
+			{
+				"prompt": "In “a record of visits”, record is a ___.",
+				"answers": ["noun"],
+				"feedback": "Der Artikel a zeigt hier den nominalen Gebrauch."
+			},
+			{
+				"prompt": "In “we record visits”, record is a ___.",
+				"answers": ["verb"],
+				"feedback": "Record beschreibt hier eine Tätigkeit."
+			},
+			{
+				"prompt": "Which syllable is commonly stressed in the noun record: first or second?",
+				"answers": ["first"],
+				"feedback": "Beim Nomen liegt die Betonung in diesen Verwendungen auf der ersten Silbe."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Use a dictionary to check a word from another lesson. Note meaning, word class, stress and one example, then say the example aloud.",
+				"model": "Example entry: employer, noun, a person or organisation that employs people. I would check the audio or stress mark in the dictionary, then practise the whole sentence: The employer explains the duties. My note should record the meaning that fits the lesson, rather than copy every unrelated dictionary sense.",
+				"criteria": [
+					"Du hast Bedeutung und Wortart geprüft.",
+					"Du hast die Betonung nachgeschlagen.",
+					"Du hast einen Beispielsatz laut gesprochen."
+				]
+			},
+			"2": {
+				"prompt": "Explain why accepting the first bilingual translation can produce a wrong sentence. Use record as an example.",
+				"model": "A bilingual list may give several meanings without showing which one matches the sentence. In a record of visits, record is a noun referring to stored information. In we record visits, it is a verb. I would check the word class, pronunciation and examples before choosing a translation or using the word in a new context.",
+				"criteria": [
+					"Du erläuterst den Kontextbezug.",
+					"Du unterscheidest Nomen und Verb.",
+					"Du beschreibst einen konkreten Prüfschritt."
+				]
+			}
+		},
+		"speaking": true,
+		"materialLanguage": "en",
+		"takeaway": "Wähle die Bedeutung anhand von Wortart und Kontext; prüfe auch Aussprache, Betonung und Beispielsatz."
+	},
+	{
+		"id": "e9-feedback",
+		"stage": "literature",
+		"title": "Revise after useful feedback",
+		"skill": "Methoden · Fehlerprotokoll",
+		"bindings": ["1.1-schreiben", "4"],
+		"paragraphs": [
+			"Wirksames Feedback benennt eine konkrete Stelle, erklärt ihre Wirkung und schlägt einen nächsten Schritt vor. Gute Ansätze dürfen ebenso genannt werden. Eine allgemeine Bewertung wie bad English hilft weniger als The reader cannot tell which time is new. Korrigiere zuerst die Aussage und den Aufbau, dann einzelne Formen.",
+			"Ein Fehlerprotokoll hält wiederkehrende Muster, eigene Verbesserungen und eine kurze Regel fest. Prüfe das Muster später in einem neuen Satz. Die App speichert Textentwürfe lokal; wenn du einen abgeschlossenen Entwurf änderst, gilt die bisherige Selbsteinschätzung dafür nicht automatisch weiter. Das verhindert, dass eine alte Bestätigung für einen anderen Text steht."
+		],
+		"material": "First draft: “She asked where did I work. I said I am used to work early.”\nFeedback: “Your meaning is understandable. In the reported question, use statement word order. After be used to, check the verb form.”\nRevision: “She asked where I worked. I said I was used to working early.”\nError log: reported questions → subject before verb; be used to → noun or -ing form. The past reporting context motivates was here.",
+		"materialLabel": "Für diese Übung verfasster Text · fiktiver Fall, keine Originalquelle.",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"wrong": [
+				"Everything you wrote is simply terrible.",
+				"Become perfect at all English immediately."
+			],
+			"explanation": "Konkrete Rückmeldung ermöglicht eine gezielte Überarbeitung.",
+			"wrongFeedback": [
+				"Eine pauschale Abwertung nennt weder eine überprüfbare Stelle noch einen nächsten Arbeitsschritt.",
+				"Ein unerreichbares Gesamtziel hilft nicht bei der gezielten Überarbeitung einer konkreten Stelle."
+			]
+		},
+		"practice": [
+			{
+				"prompt": "She asked where I ___. (work; backshift)",
+				"answers": ["worked"],
+				"feedback": "Im berichteten Fragesatz ohne did."
+			},
+			{
+				"prompt": "I was used to ___ early. (work)",
+				"answers": ["working"],
+				"feedback": "Nach be used to steht hier -ing."
+			},
+			{
+				"prompt": "Write the missing word: specific ___ helps a writer revise.",
+				"answers": ["feedback"],
+				"feedback": "Feedback benennt die Rückmeldung."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Revise the two draft sentences and write one helpful feedback sentence for a partner.",
+				"model": "She asked where I worked. I said I was used to working early. My feedback would be: Your reader understands the situation; now check the subject–verb order in the reported question. I would add one example to my error log and test the rule in a new sentence rather than only copying this correction.",
+				"criteria": [
+					"Du korrigierst beide Strukturen.",
+					"Du gibst eine konkrete respektvolle Rückmeldung.",
+					"Du notierst einen Transfer für das Fehlerprotokoll."
+				]
+			},
+			"2": {
+				"prompt": "Design a short practice plan for a recurring personal error and explain how you would check improvement.",
+				"model": "I would collect three examples of my recurring error, write corrected versions and identify the common pattern. A day later, I would write new sentences without looking at the examples. I would ask a partner or teacher to check them and update the log. Recopying one correct answer would not show transfer.",
+				"criteria": [
+					"Du identifizierst ein konkretes Fehlermuster.",
+					"Du planst neue eigenständige Anwendungen.",
+					"Du nennst eine überprüfbare Rückmeldung."
+				]
+			}
+		},
+		"materialLanguage": "en",
+		"takeaway": "Gutes Feedback nennt eine konkrete Stelle, erklärt ihre Wirkung und schlägt einen erreichbaren nächsten Schritt vor."
+	},
+	{
+		"id": "e9-own-topic",
+		"stage": "literature",
+		"title": "Investigate a topic you choose",
+		"skill": "Projekt · Interessen",
+		"bindings": ["1.1-sprechen", "1.1-schreiben", "3", "4", "5-interessen"],
+		"paragraphs": [
+			"Ein eigenes Interessenthema verbindet Recherche mit Sprache. Formuliere eine kleine Frage, die sich mit zwei geeigneten Quellen bearbeiten lässt. Sport, Musik, Spiele oder Umweltfragen können Ausgangspunkte sein. Eine zu große Frage wie everything about Australia wird durch eine konkrete Vergleichsfrage bearbeitbar.",
+			"Erstelle ein kurzes englisches Ergebnis für einen benannten Adressaten und dokumentiere deine Quellen. Präsentiere es einem Partner und überarbeite eine Stelle nach Rückmeldung. Das Beispiel unten ist nur ein Projektplan. Eine abgeschlossene App-Aufgabe ersetzt weder eigene aktuelle Recherche noch die Beurteilung der tatsächlichen Präsentation durch eine Lehrkraft."
+		],
+		"material": "Project plan template\nMy question: Which repair options could our school club compare before replacing a broken item?\nAudience: new club members.\nEvidence needed: two relevant sources with publisher, date and link; observations clearly separated from claims.\nProduct: a short English explanation with one labelled visual.\nPresentation: two minutes, followed by a partner’s question.\nRevision: one change made after feedback.\nThis plan contains no completed research findings.",
+		"materialLabel": "Für diese Übung verfasster Text · fiktiver Fall, keine Originalquelle.",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"wrong": [
+				"What is everything that has ever happened online?",
+				"Why does every person like exactly the same music?"
+			],
+			"explanation": "Eine enge Vergleichsfrage erlaubt gezielte Belege.",
+			"wrongFeedback": [
+				"Diese Frage ist für eine kurze Untersuchung viel zu breit.",
+				"Die Frage setzt eine unbelegte Gleichheit aller Vorlieben voraus und ist zu weit gefasst."
+			]
+		},
+		"practice": [
+			{
+				"prompt": "Complete: Name the ___ who will read your result.",
+				"answers": ["audience"],
+				"feedback": "Die Zielgruppe beeinflusst Sprache und Auswahl."
+			},
+			{
+				"prompt": "Complete: Keep a record of each source’s ___. (web address)",
+				"answers": ["URL", "link"],
+				"feedback": "URL benennt die Webadresse."
+			},
+			{
+				"prompt": "Complete: Improve one part after receiving ___.",
+				"answers": ["feedback"],
+				"feedback": "Rückmeldung führt zu einer begründeten Überarbeitung."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Choose your own question and write a plan with an audience, two source needs and a final product.",
+				"model": "My question is how two guides explain the same bicycle fault. I will write for new members of a fictional repair club. I need two relevant guides, their publication details and a record of the steps they recommend. My final product will be a short English comparison with a labelled process diagram. I will ask a partner which step remains unclear.",
+				"criteria": [
+					"Du formulierst eine kleine eigene Frage.",
+					"Du nennst Adressat und Belegbedarf.",
+					"Du planst ein konkretes Ergebnis."
+				]
+			},
+			"2": {
+				"prompt": "Carry out the project with real sources, present it, and save your source notes plus one revision. Do the research yourself.",
+				"model": "Record structure, not a finished project: question and audience; Source A and Source B with title, publisher, date and URL; evidence in my own words; comparison and remaining uncertainty; presentation notes; partner’s question; the change I made after feedback. I should be able to explain how each conclusion follows from a source.",
+				"criteria": [
+					"Du hast reale Belege selbst geprüft.",
+					"Du hast das Ergebnis vorgestellt und Fragen beantwortet.",
+					"Du dokumentierst eine begründete Überarbeitung."
+				]
+			}
+		},
+		"speaking": true,
+		"materialLanguage": "en",
+		"takeaway": "Grenze eine recherchierbare Frage ein und halte zu jedem Beleg Quelle und Fundstelle fest."
+	},
+	{
+		"id": "e9-conditionals",
+		"stage": "foundations",
+		"title": "Revisit conditional meanings",
+		"skill": "Ergänzung · conditionals",
+		"bindings": [],
+		"paragraphs": [
+			"Bedingungssätze können reale Möglichkeiten, gedachte gegenwärtige Situationen oder eine nicht mehr änderbare Vergangenheit ausdrücken. Typ I verwendet häufig if + simple present und will + Infinitiv. Typ II verbindet if + simple past mit would + Infinitiv. Typ III verwendet if + past perfect und would have + past participle.",
+			"Die Bezeichnungen beschreiben verbreitete Muster, nicht jede denkbare Bedingungsform. Vergleiche die Bedeutung vor der Formwahl. Diese Lektion vertieft einen Teil des alten Bestands; sie ist kein eigener neuer Grammatikschwerpunkt des geprüften E9-Lehrplans. Dein Kernfortschritt hängt deshalb nicht von dieser Ergänzung ab. Die Typ-III-Form gehört bereits zu E8; diese Lektion ist eine Wiederholung aus Klasse 8."
+		],
+		"material": "If it rains tomorrow, we will stay inside. (A real possibility.)\nIf I had more time now, I would join the club. (An imagined present situation.)\nIf she had studied harder, she would have passed the exam. (An unreal past situation.)\nThe last sentence imagines a different past result. It does not describe a plan that can still be carried out.",
+		"materialLabel": "Für diese Übung verfasster Text · fiktiver Fall, keine Originalquelle.",
+		"sourceIds": ["conditionals"],
+		"quiz": {
+			"wrong": ["would pass", "will pass"],
+			"explanation": "Eine irreale Vergangenheit verwendet hier would have plus past participle.",
+			"wrongFeedback": [
+				"Diese Form passt zum gedachten Gegenwartsfall. Gefragt ist eine nicht eingetretene Vergangenheit.",
+				"Diese Form beschreibt eine mögliche Zukunftsfolge. Prüfe den Zeitbezug der Bedingung."
+			]
+		},
+		"practice": [
+			{
+				"prompt": "If it rains tomorrow, we ___ stay inside.",
+				"answers": ["will"],
+				"feedback": "Typ I beschreibt hier eine reale Zukunftsmöglichkeit."
+			},
+			{
+				"prompt": "If I had more time now, I ___ help.",
+				"answers": ["would"],
+				"feedback": "Typ II beschreibt die gedachte Gegenwart."
+			},
+			{
+				"prompt": "If she had studied, she would ___ passed.",
+				"answers": ["have"],
+				"feedback": "Typ III benötigt would have plus past participle."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Write one example for each of the three conditional patterns and identify its time reference.",
+				"model": "If I finish early tomorrow, I will call you: a real future possibility. If I had a free afternoon now, I would visit: an imagined present situation. If I had left earlier yesterday, I would have caught the bus: an unreal past. The final example cannot change yesterday’s event.",
+				"criteria": [
+					"Du verwendest alle drei Muster.",
+					"Du erklärst ihren Zeitbezug.",
+					"Du unterscheidest Möglichkeit und irreale Vergangenheit."
+				]
+			},
+			"2": {
+				"prompt": "Explain why “would pass” does not complete the unreal-past result in the task.",
+				"model": "Would pass normally fits an imagined present or future result in the common Type II pattern. The given if-clause uses had studied and refers to an unreal past. Its matching Type III result is would have passed. The extra have and past participle locate the imagined result in the past.",
+				"criteria": [
+					"Du liest den Zeitbezug der Bedingung.",
+					"Du nennst die richtige Ergebnisform.",
+					"Du erklärst den Bedeutungsunterschied."
+				]
+			}
+		},
+		"optional": true,
+		"materialLanguage": "en",
+		"takeaway": "Typ III beschreibt eine gedachte andere Vergangenheit: if + past perfect, would have + past participle."
+	},
+	{
+		"id": "e9-passive",
+		"stage": "foundations",
+		"title": "Keep the tense in a passive sentence",
+		"skill": "Ergänzung · passive voice",
+		"bindings": [],
+		"paragraphs": [
+			"Im Passiv wird das betroffene Objekt des Aktivsatzes zum Subjekt des Passivsatzes. Das Prädikat verwendet eine passende Form von be und das past participle. Den Handelnden kannst du mit by nennen, wenn er für die Aussage wichtig ist. Die Zeitform bleibt bei einer reinen Aktiv-Passiv-Umformung erhalten. Die einfache Passivform wird bereits in E8 eingeführt.",
+			"Aus Shakespeare wrote Romeo and Juliet wird Romeo and Juliet was written by Shakespeare. Bei The engineers are building a bridge lautet die entsprechende progressive Passivform A bridge is being built by the engineers. Was built und has been built beschreiben andere Zeitbezüge; sie sind keine zeitgleichen Umformungen dieses Ausgangssatzes."
+		],
+		"material": "Active: Shakespeare wrote Romeo and Juliet.\nPassive with the same tense: Romeo and Juliet was written by Shakespeare.\nActive: The engineers are building a bridge.\nPassive with the same tense: A bridge is being built by the engineers.\nDifferent time reference: A bridge has been built. This reports completion with present relevance; it does not keep the ongoing meaning of are building.",
+		"materialLabel": "Für diese Übung verfasster Text · fiktiver Fall, keine Originalquelle.",
+		"sourceIds": ["passives", "folger"],
+		"quiz": {
+			"wrong": [
+				"Romeo and Juliet is written by Shakespeare",
+				"Romeo and Juliet will be written by Shakespeare"
+			],
+			"explanation": "Wrote ist simple past; die passende Passivform lautet was written.",
+			"wrongFeedback": [
+				"Hier wurde die Zeitform zur Gegenwart geändert. Die Aufgabe verlangt, sie beizubehalten.",
+				"Hier wurde die Handlung in die Zukunft verschoben. Prüfe die Zeitform des Ausgangssatzes."
+			]
+		},
+		"practice": [
+			{
+				"prompt": "Romeo and Juliet ___ written by Shakespeare.",
+				"answers": ["was"],
+				"feedback": "Der Titel bezeichnet hier ein Werk im Singular."
+			},
+			{
+				"prompt": "A bridge is ___ built right now.",
+				"answers": ["being"],
+				"feedback": "Being erhält die progressive Bedeutung."
+			},
+			{
+				"prompt": "A new bridge has ___ built.",
+				"answers": ["been"],
+				"feedback": "Present perfect passive verwendet has been built."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Transform “They are repairing the bike” into the passive without changing tense or aspect. Explain the role of being.",
+				"model": "The bike is being repaired. The object the bike becomes the passive subject. Is being repaired keeps the present continuous meaning of are repairing. By them is usually unnecessary when the people are not important to the message. The form was repaired would move the statement into a different time reference.",
+				"criteria": [
+					"Du erhältst Gegenwart und Verlaufsform.",
+					"Du erklärst being.",
+					"Du benennst den Wechsel zum Passivsubjekt."
+				]
+			},
+			"2": {
+				"prompt": "Explain why changing “are building” to “has been built” changes the message instead of only the voice.",
+				"model": "Are building describes an activity currently in progress. Is being built keeps that ongoing meaning in the passive. Has been built instead presents the construction as completed with a present connection. That may be a sensible new sentence, but it is not a passive transformation preserving the original time and aspect.",
+				"criteria": [
+					"Du vergleichst laufend und abgeschlossen.",
+					"Du nennst die passende progressive Passivform.",
+					"Du unterscheidest Umformung und neue Aussage."
+				]
+			}
+		},
+		"optional": true,
+		"materialLanguage": "en",
+		"takeaway": "Das Aktivobjekt wird zum Passivsubjekt. Verwende be + past participle und erhalte Zeitform und Aspekt."
+	},
+	{
+		"id": "e9-relative-defining",
+		"stage": "foundations",
+		"title": "Identify a person or thing",
+		"skill": "Ergänzung · defining relatives",
+		"bindings": [],
+		"paragraphs": [
+			"Ein bestimmender Relativsatz erklärt, welche Person oder Sache gemeint ist. In The bike that I repaired is blue identifiziert der Relativsatz das Fahrrad. Solche Relativsätze stehen ohne abtrennende Kommas. Who kann Personen, which Dinge und that in bestimmenden Sätzen Personen oder Dinge beziehen; whose drückt Besitz aus.",
+			"Das Relativpronomen kann in einem solchen Satz entfallen, wenn es Objekt des Relativsatzes ist: The bike I repaired. Als Subjekt darf es nicht einfach fehlen: The person who called benötigt who. Prüfe daher die Funktion im Relativsatz, statt jedes Relativwort nach Gefühl zu streichen."
+		],
+		"material": "The student who called is waiting. (Who performs the calling.)\nThe student whom I called is waiting. (I perform the calling; the student receives it.)\nThe student I called is waiting. (Object pronoun omitted.)\nThe student whose bike broke is waiting. (Whose expresses possession.)\nThese clauses identify the student; no separating commas are used.",
+		"materialLabel": "Für diese Übung verfasster Text · fiktiver Fall, keine Originalquelle.",
+		"sourceIds": ["cambridge"],
+		"quiz": {
+			"wrong": [
+				"Whenever it is the subject of the relative clause.",
+				"Whenever its removal leaves an unclear sentence."
+			],
+			"explanation": "Die Objektfunktion erlaubt hier einen contact clause; die Subjektfunktion nicht.",
+			"wrongFeedback": [
+				"Ohne ein Subjekt wäre der Relativsatz unvollständig. Prüfe die Rolle des Relativpronomens.",
+				"Eine unklare oder unvollständige Form ist kein Grund zum Weglassen. Prüfe die grammatische Funktion."
+			]
+		},
+		"practice": [
+			{
+				"prompt": "The student ___ called is waiting. (use who)",
+				"answers": ["who"],
+				"feedback": "Who ist das Subjekt von called."
+			},
+			{
+				"prompt": "The person ___ bike broke is here.",
+				"answers": ["whose"],
+				"feedback": "Whose drückt die Besitzbeziehung aus."
+			},
+			{
+				"prompt": "Can who be omitted in “The person who called is here”? yes/no",
+				"answers": ["no"],
+				"feedback": "Es ist das Subjekt des Relativsatzes."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Write two identifying relative clauses: one with who as subject and one where an object pronoun can be omitted.",
+				"model": "The student who organised the event is here. Who is the subject of organised, so it must remain. The student I met yesterday is here. In the second sentence, I is the subject of met and the student is its object, so the relative pronoun can be left out in this defining clause.",
+				"criteria": [
+					"Du bildest zwei bestimmende Relativsätze.",
+					"Du erkennst Subjekt und Objekt.",
+					"Du erklärst die mögliche Auslassung."
+				]
+			},
+			"2": {
+				"prompt": "Explain how removing “whose” from “The student whose bike broke” changes the grammar.",
+				"model": "Whose links the bike to the student through a possessive relationship. It is not an optional object pronoun in this clause. Removing it would leave the student bike broke, which does not express the intended identifying relation. The contact-clause rule therefore cannot be applied to every relative word.",
+				"criteria": [
+					"Du erklärst den Besitzbezug.",
+					"Du begrenzt die Auslassungsregel.",
+					"Du untersuchst die konkrete Satzstruktur."
+				]
+			}
+		},
+		"optional": true,
+		"materialLanguage": "en",
+		"takeaway": "Ein bestimmender Relativsatz identifiziert die Person oder Sache ohne Trennkommas. Nur ein Objektpronomen kann entfallen."
+	},
+	{
+		"id": "e9-relative-extra",
+		"stage": "foundations",
+		"title": "Add extra information accurately",
+		"skill": "Ergänzung · non-defining relatives",
+		"bindings": [],
+		"paragraphs": [
+			"Ein nicht-bestimmender Relativsatz ergänzt Informationen zu einer bereits identifizierten Person oder Sache und wird mit Kommas abgetrennt. That ist hier nicht möglich, und das einleitende Relativwort darf nicht fehlen. Neben who und which können auch whose sowie relative when oder where passen.",
+			"My aunt, whose bike was stolen, called the police zeigt eine Besitzbeziehung in einem nicht-bestimmenden Satz. Die Kurzregel only who or which wäre deshalb falsch. Bei einem Vergleich bestimmender und ergänzender Sätze erklärst du Bedeutung, Zeichensetzung und Funktion des Relativworts zusammen; eine korrigierte Regel übernimmt keinen alten Lernstand automatisch."
+		],
+		"material": "My aunt, whose bike was stolen, called the police.\nMelbourne, where our fictional visitor stayed, has many different neighbourhoods.\nFriday, when our group arrived, was busy.\nThe workshop, which opened early, welcomed the students.\nThe commas mark extra information. The relative words differ according to whether the clause refers to possession, place, time or a thing. That cannot replace them here.",
+		"materialLabel": "Für diese Übung verfasster Text · fiktiver Fall, keine Originalquelle.",
+		"sourceIds": ["relative", "cambridge"],
+		"quiz": {
+			"wrong": ["that", "no relative word"],
+			"explanation": "Whose ist auch mit abgetrennten Zusatzinformationen möglich.",
+			"wrongFeedback": [
+				"Diese Form passt nicht zu einem mit Kommas abgetrennten Zusatz und drückt hier keinen Besitz aus.",
+				"Ohne Relativwort wird in diesem Zusatz der Besitzbezug nicht ausgedrückt."
+			]
+		},
+		"practice": [
+			{
+				"prompt": "My aunt, ___ bike was stolen, called.",
+				"answers": ["whose"],
+				"feedback": "Whose beschreibt den Besitzbezug."
+			},
+			{
+				"prompt": "The workshop, ___ opened early, was busy.",
+				"answers": ["which"],
+				"feedback": "Which bezieht sich hier auf eine Sache."
+			},
+			{
+				"prompt": "Can the relative word be omitted in a non-defining clause? yes/no",
+				"answers": ["no"],
+				"feedback": "Es darf hier nicht ausgelassen werden."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Write one non-defining clause with whose and explain why “only who or which” is an incomplete rule.",
+				"model": "My neighbour, whose son works at the library, helped me. The clause adds information about an already identified neighbour and is separated by commas. Whose expresses possession or association. It is therefore incorrect to claim that only who and which are possible in non-defining clauses. That, however, cannot be used here.",
+				"criteria": [
+					"Du nutzt whose in einem Zusatzsatz.",
+					"Du setzt die abtrennenden Kommas.",
+					"Du korrigierst die unvollständige Regel."
+				]
+			},
+			"2": {
+				"prompt": "Compare “The students who arrived early helped” with “The students, who arrived early, helped”.",
+				"model": "Without commas, who arrived early identifies the subgroup that helped; other students may have arrived later. With commas, the clause adds information about the already identified students, presenting them as having arrived early. Punctuation therefore affects the meaning. In the non-defining version, that cannot replace who and the relative word cannot disappear.",
+				"criteria": [
+					"Du erklärst Auswahl und Zusatzinformation.",
+					"Du verbindest Kommas und Bedeutung.",
+					"Du beachtest die Pronomenregel."
+				]
+			}
+		},
+		"optional": true,
+		"materialLanguage": "en",
+		"takeaway": "Zusatzinformationen stehen zwischen Kommas. Nutze ein passendes Relativwort, auch whose, where oder when; that passt hier nicht."
+	}
+]

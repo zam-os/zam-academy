@@ -8,6 +8,7 @@ Hands-on training apps that build understanding before [ZAM](https://github.com/
 | Physik 8 Realschule (LehrplanPLUS Bayern, Zweig I und II/III) | [`physik-realschule-8/`](physik-realschule-8/) | https://academy.zam-os.org/physik-realschule-8/ | `zam-academy:physik-realschule-8` |
 | Physik 9 Realschule (LehrplanPLUS Bayern) | [`physik-realschule-9/`](physik-realschule-9/) | https://academy.zam-os.org/physik-realschule-9/ | `zam-academy:physik-realschule-9` |
 | Relationale Datenbanken und SQL (DE/EN, LehrplanPLUS IT 2.3.1/2.3.2) | [`sql/`](sql/) | https://academy.zam-os.org/sql/ | `zam-academy:sql` |
+| Englisch 9 Realschule (LehrplanPLUS Bayern) | [`englisch-realschule-9/`](englisch-realschule-9/) | https://academy.zam-os.org/englisch-realschule-9/ | `zam-academy:englisch-realschule-9` |
 | Mathematik 7 Realschule (LehrplanPLUS Bayern, Zweig I und II/III) | [`mathematik-realschule-7/`](mathematik-realschule-7/) | https://academy.zam-os.org/mathematik-realschule-7/ | `zam-academy:mathematik-realschule-7` |
 | Mathematik 8 Realschule (LehrplanPLUS Bayern, Zweig I und II/III) | [`mathematik-realschule-8/`](mathematik-realschule-8/) | https://academy.zam-os.org/mathematik-realschule-8/ | `zam-academy:mathematik-realschule-8` |
 | Mathematik 9 Realschule (LehrplanPLUS Bayern) | [`mathematik-realschule-9/`](mathematik-realschule-9/) | https://academy.zam-os.org/mathematik-realschule-9/ | `zam-academy:mathematik-realschule-9` |
@@ -57,6 +58,7 @@ cd uml                 # or: cd physik-realschule-9 (dev server on :5181), cd sq
 # Mathematik 7: cd mathematik-realschule-7 (dev server on :5195)
 # Physik 8: cd physik-realschule-8 (dev server on :5196)
 # Mathematik 8: cd mathematik-realschule-8 (dev server on :5197)
+# Englisch 9: cd englisch-realschule-9 (dev server on :5198)
 npm ci
 npm run dev      # http://localhost:5180/uml/
 npm test
@@ -83,3 +85,5 @@ No accounts, cookies, trackers or third-party requests. Learner progress stays i
 ## License
 
 Apache-2.0, like ZAM.
+
+The [English 9 package](englisch-realschule-9/) adds 36 core lessons, four optional grammar refreshers and 80 cards. Its [coverage matrix](englisch-realschule-9/coverage.json) keeps natural listening/viewing, spoken assessment, extended reading and current research as additional practice. The [legacy review](docs/englisch-9-bestandsabgleich.md) documents three equivalent single-card mappings and five retirements without mastery transfer, approved by Thomas on 2026-10-24. App and cell publish together through Pages; synchronizing the bundled ZAM library is a separate step.
