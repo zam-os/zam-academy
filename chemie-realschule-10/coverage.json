@@ -1,0 +1,841 @@
+{
+  "schema": 1,
+  "checked": "2026-10-24",
+  "curriculum": {
+    "I": "https://www.lehrplanplus.bayern.de/fachlehrplan/realschule/10/chemie/wpfg1",
+    "II_III": "https://www.lehrplanplus.bayern.de/fachlehrplan/realschule/10/chemie/wpfg2-3"
+  },
+  "school_type": "realschule",
+  "grade": 10,
+  "subject": "chemie",
+  "optional_lessons": [],
+  "scope_note": "Zweig I: LB 1 Wie Chemiker denken und arbeiten (integriert), LB 2 Protonenübergänge II (ca. 7 Std.), LB 3 Herkunft organischer Verbindungen/Fotosynthese (ca. 5), LB 4 Grundlegende Reaktionen organischer Moleküle (ca. 12), LB 5 Biomoleküle (ca. 12, zwei von drei Teilbereichen 5.1–5.3), LB 6 Kunststoffe und Silikone (ca. 12). Zweig II/III: LB 1 (integriert), LB 2 Elektronenübergänge (ca. 12), LB 3 Protonenübergänge (ca. 10), LB 4 Fotosynthese (ca. 5), LB 5 Grundlegende Reaktionen organischer Moleküle (ca. 9), LB 6 Wahlbereich (ca. 12, zwei von fünf Teilbereichen 6.1–6.5). Die App bietet alle Wahl-Teilbereiche an. Zweig I hat Elektronenübergänge, Indikatoren, Brönsted und Redoxanwendungen in C9 (I) gelernt; diese C10-Lektionen sind für Zweig I freiwillige Wiederholung ohne Bindung. Die Titration rechnet mit n = c · V (Stoffmenge aus C8, Zweig I).",
+  "rows": [
+    {
+      "track": "I",
+      "lb": 1,
+      "competence": "kennen die Bedeutung der Gefahrstoffkennzeichnung und leiten daraus Maßnahmen zum sicherheitsgerechten Umgang mit Chemikalien und deren Entsorgung ab.",
+      "lessons": [
+        "ch-gefahrstoffe"
+      ],
+      "evidence": "Erklärung zu GHS-Piktogrammen und Entsorgung, Versuchslabor mit vier Gefahrstoffen, Aufgaben zu Schutzmaßnahmen"
+    },
+    {
+      "track": "I",
+      "lb": 1,
+      "competence": "nutzen Modellvorstellungen, um intra- und intermolekulare Wechselwirkungen bei Makromolekülen zu beschreiben.",
+      "lessons": [
+        "ch-proteinstruktur",
+        "ch-saccharose-polysaccharide",
+        "ch-kunststoffklassen"
+      ],
+      "evidence": "Wasserstoffbrücken in Helix, Faltblatt und Cellulose; Vernetzungsmodell der Kunststoffe"
+    },
+    {
+      "track": "I",
+      "lb": 1,
+      "competence": "wählen geeignete Modelle aus und nutzen Fachwissen aus anderen Fächern, um chemische Fragestellungen zu bearbeiten und zu erklären bzw. um Hypothesen herzuleiten.",
+      "lessons": [
+        "ch-versuche-planen",
+        "ch-ester-eigenschaften"
+      ],
+      "evidence": "Hypothese, Variablenkontrolle, Strukturmodell zum Siedevergleich"
+    },
+    {
+      "track": "I",
+      "lb": 1,
+      "competence": "diskutieren und bewerten gesellschaftsrelevante Aussagen (z. B. zu Silikonen, Batterien, Kunststoffen), um nachhaltig (ökonomisch, ökologisch, sozial) zu handeln.",
+      "lessons": [
+        "ch-rohstoffe",
+        "ch-kunststoffabfall",
+        "ch-biokunststoff-oekobilanz"
+      ],
+      "evidence": "Bewertungsaufgaben zu Rohstoffen, Kunststoffabfall, Silikon und Biokunststoff"
+    },
+    {
+      "track": "I",
+      "lb": 1,
+      "competence": "beschreiben biochemische Grundbausteine in ihrer Bedeutung für Organismen.",
+      "lessons": [
+        "ch-aminosaeuren",
+        "ch-saccharose-polysaccharide",
+        "ch-fette"
+      ],
+      "evidence": "Bedeutung von Proteinen, Kohlenhydraten und Fetten als Bau- und Betriebsstoffe"
+    },
+    {
+      "track": "I",
+      "lb": 2,
+      "competence": "führen eine Titration einer sauren Lösung mit einer alkalischen Lösung durch und wenden das Säure/Base-Konzept auf Neutralisationsreaktionen an.",
+      "lessons": [
+        "ch-neutralisation",
+        "ch-titration"
+      ],
+      "evidence": "Neutralisationsmodell, Titrationslabor mit drei Proben, Konzentrations- und Massenaufgaben"
+    },
+    {
+      "track": "I",
+      "lb": 2,
+      "competence": "beschreiben eine Änderung des pH-Werts mit einer Zu- bzw. Abnahme der Oxoniumionen-Konzentration in sauren und alkalischen Lösungen und bewerten deren Gefährdungspotenzial.",
+      "lessons": [
+        "ch-ph-oxonium"
+      ],
+      "evidence": "Verdünnungsreihe 1 : 10, Faktoraufgaben, Gefährdung"
+    },
+    {
+      "track": "I",
+      "lb": 2,
+      "competence": "führen qualitative experimentelle Untersuchungen des Verhaltens von sauren Lösungen gegenüber Carbonaten und unedlen Metallen durch, um deren Bedeutung in Bezug auf die Verwendung im Haushalt und den Einfluss auf die Umwelt zu bewerten.",
+      "lessons": [
+        "ch-carbonate-metalle"
+      ],
+      "evidence": "Modell saure Lösung + Carbonat/Metall mit Gas, Nachweis, Salzname und Gleichung"
+    },
+    {
+      "track": "I",
+      "lb": 3,
+      "competence": "führen qualitative Experimente durch, um Kohlenstoff als Grundbaustein organischer Verbindungen nachzuweisen.",
+      "lessons": [
+        "ch-kohlenstoff-nachweis"
+      ],
+      "evidence": "Versuchslabor Verkohlung und Kalkwasserprobe"
+    },
+    {
+      "track": "I",
+      "lb": 3,
+      "competence": "deuten den Energiegehalt ausgewählter organischer Stoffe, um die Bedeutung der durch die Fotosynthese gebildeten Biomasse als Energieträger zu beschreiben.",
+      "lessons": [
+        "ch-fotosynthese",
+        "ch-energiegehalt"
+      ],
+      "evidence": "Fotosynthese-Teilchenmodell, Modellkalorimeter, Q = c · m · ΔT"
+    },
+    {
+      "track": "I",
+      "lb": 3,
+      "competence": "nutzen Informationsquellen, um Aufbau, Entstehung und Verwendung der fossilen Rohstoffe Erdöl, Kohle und Erdgas zu beschreiben.",
+      "lessons": [
+        "ch-rohstoffe"
+      ],
+      "evidence": "Entstehung und Verwendung von Kohle, Erdöl, Erdgas"
+    },
+    {
+      "track": "I",
+      "lb": 3,
+      "competence": "diskutieren und bewerten ökologische, ökonomische und ethische Aspekte der Nutzung fossiler und nachwachsender Rohstoffe.",
+      "lessons": [
+        "ch-rohstoffe"
+      ],
+      "evidence": "Ökologische, ökonomische und ethische Bewertung (Teller oder Tank)"
+    },
+    {
+      "track": "I",
+      "lb": 4,
+      "competence": "erklären den Ablauf der Bromwasserprobe als Additionsreaktion und beschreiben den Reaktionsmechanismus der Addition anhand von Strukturformelgleichungen.",
+      "lessons": [
+        "ch-addition"
+      ],
+      "evidence": "Mechanismus in vier Schritten im Labor, Produktbenennung, Synthesekarte"
+    },
+    {
+      "track": "I",
+      "lb": 4,
+      "competence": "erklären anhand der Substitution von Alkanen mit Halogenen den Reaktionsmechanismus einer Radikal-Kettenreaktion und beschreiben diese mithilfe von Strukturformelgleichungen.",
+      "lessons": [
+        "ch-substitution"
+      ],
+      "evidence": "Radikal-Kettenreaktion mit Start, Kette und Abbruch im Labor"
+    },
+    {
+      "track": "I",
+      "lb": 4,
+      "competence": "erklären die Reaktion von Alkoholen zu Alkanalen, Alkansäuren und Alkanonen mithilfe von Oxidationszahlen als Redoxreaktionen und stellen solche Reaktionen mithilfe geeigneter Schreibweisen dar.",
+      "lessons": [
+        "ch-oxidationszahlen-organisch",
+        "ch-alkanole-oxidation",
+        "ch-alkanone"
+      ],
+      "evidence": "OZ-Labor, Oxidationsreihe Alkanol → Alkanal → Alkansäure, sekundäre Alkanole → Alkanone"
+    },
+    {
+      "track": "I",
+      "lb": 4,
+      "competence": "leiten aus experimentellen Beobachtungen die Bildung von Estern aus Alkanolen und Alkansäuren in einer Kondensationsreaktion ab und begründen Stoffeigenschaften der Ester mithilfe der zwischenmolekularen Wechselwirkungen.",
+      "lessons": [
+        "ch-estersynthese",
+        "ch-ester-eigenschaften"
+      ],
+      "evidence": "Esterlabor mit Namen und Gerüchen, Siedevergleich bei gleicher Masse"
+    },
+    {
+      "track": "I",
+      "lb": 4,
+      "competence": "nutzen ein einfaches Strukturmodell und das Wissen über die Eigenschaften der Ausgangsstoffe, um diese mit den Eigenschaften der Ester zu vergleichen.",
+      "lessons": [
+        "ch-ester-eigenschaften"
+      ],
+      "evidence": "Vergleich Ester – Säure – Alkohol – Alkan im Labor"
+    },
+    {
+      "track": "I",
+      "lb": 5,
+      "teilbereich": "5.1",
+      "competence": "weisen die funktionellen Gruppen ausgewählter Aminosäuremoleküle experimentell nach, um deren Struktur zu beschreiben.",
+      "lessons": [
+        "ch-aminosaeuren"
+      ],
+      "evidence": "Versuchslabor: Ammoniak aus der Aminogruppe, saure Glutaminsäure, Biuret"
+    },
+    {
+      "track": "I",
+      "lb": 5,
+      "teilbereich": "5.1",
+      "competence": "wenden den Reaktionstyp der Kondensation an, um den Aufbau von Peptid- und Proteinmolekülen (Primärstruktur) mithilfe von Strukturformeln darzustellen und weisen Proteine experimentell nach.",
+      "lessons": [
+        "ch-peptide"
+      ],
+      "evidence": "Kettenlabor mit Peptidbindungen, Wasser und Biuret-Probe"
+    },
+    {
+      "track": "I",
+      "lb": 5,
+      "teilbereich": "5.1",
+      "competence": "beschreiben die Bedeutung des Aufbaus der Primärstruktur eines Proteins und grenzen davon die Eigenschaften ab, die sich aus der Sekundärstruktur ergeben.",
+      "lessons": [
+        "ch-peptide",
+        "ch-proteinstruktur"
+      ],
+      "evidence": "Primärstruktur und Sequenzzahl; Helix und Faltblatt"
+    },
+    {
+      "track": "I",
+      "lb": 5,
+      "teilbereich": "5.1",
+      "competence": "untersuchen experimentell die denaturierende Wirkung von hoher Temperatur, Ethanol, sauren und alkalischen Lösungen sowie Schwermetallionen, um deren gefährliche Wirkung auf den Menschen abzuschätzen und bewerten hierbei auch die Wirkung energiereicher Strahlung.",
+      "lessons": [
+        "ch-proteinstruktur"
+      ],
+      "evidence": "Versuchslabor Denaturierung inkl. Strahlung und Verdauung"
+    },
+    {
+      "track": "I",
+      "lb": 5,
+      "teilbereich": "5.2",
+      "competence": "unterscheiden mithilfe geeigneter Nachweisreaktionen Glucose von Fructose, um die Bausteine der Saccharose zu identifizieren.",
+      "lessons": [
+        "ch-glucose-fructose",
+        "ch-saccharose-polysaccharide"
+      ],
+      "evidence": "Versuchslabor mit Teststäbchen und Seliwanow; Saccharose nach Säurespaltung"
+    },
+    {
+      "track": "I",
+      "lb": 5,
+      "teilbereich": "5.2",
+      "competence": "wenden den Reaktionstyp der Kondensation an, um den Aufbau der Saccharosemoleküle mithilfe einer Strukturformel zu beschreiben.",
+      "lessons": [
+        "ch-saccharose-polysaccharide"
+      ],
+      "evidence": "Kondensation zu Saccharose im Labor"
+    },
+    {
+      "track": "I",
+      "lb": 5,
+      "teilbereich": "5.2",
+      "competence": "beschreiben unter Verwendung vereinfachter Strukturformeln die Entstehung und den schematischen Aufbau von Polysacchariden, um die unterschiedliche biologische Bedeutung in Organismen zu erläutern.",
+      "lessons": [
+        "ch-saccharose-polysaccharide"
+      ],
+      "evidence": "Amylose (Helix) und Cellulose (Fasern), Bedeutung"
+    },
+    {
+      "track": "I",
+      "lb": 5,
+      "teilbereich": "5.2",
+      "competence": "weisen Amylose und Cellulose experimentell nach, um deren Vorkommen in Stoffen aus der Natur zu überprüfen.",
+      "lessons": [
+        "ch-saccharose-polysaccharide"
+      ],
+      "evidence": "Iod-Kaliumiodid und Chlorzinkiod"
+    },
+    {
+      "track": "I",
+      "lb": 5,
+      "teilbereich": "5.3",
+      "competence": "bestätigen die Struktur des Glycerinmoleküls anhand experimenteller Befunde und erklären damit die Eigenschaften von Glycerin.",
+      "lessons": [
+        "ch-glycerin"
+      ],
+      "evidence": "Versuchslabor Befund → Struktur des Glycerins"
+    },
+    {
+      "track": "I",
+      "lb": 5,
+      "teilbereich": "5.3",
+      "competence": "beschreiben den Bau eines exemplarischen Fettmoleküls als Trifettsäureglycerinester mit geeigneten Darstellungsformen, um die Eigenschaften von Fetten zu erklären.",
+      "lessons": [
+        "ch-fette"
+      ],
+      "evidence": "Fettmolekül-Baukasten mit Summenformel, Zustand und Bromwasser"
+    },
+    {
+      "track": "I",
+      "lb": 5,
+      "teilbereich": "5.3",
+      "competence": "erläutern die Bedeutung von Fetten und fetten Ölen als Nahrungsmittel und nachwachsender Rohstoff und bewerten deren Verwendungsmöglichkeiten.",
+      "lessons": [
+        "ch-fette"
+      ],
+      "evidence": "Nahrungsmittel vs. nachwachsender Rohstoff"
+    },
+    {
+      "track": "I",
+      "lb": 6,
+      "competence": "wenden die Reaktionstypen der Polykondensation und der radikalischen Polymerisation an, um die Bildung von Polymeren mithilfe von Strukturformeln zu beschreiben und aus Polymeren die Monomere zu identifizieren.",
+      "lessons": [
+        "ch-polymerisation",
+        "ch-polykondensation"
+      ],
+      "evidence": "Polymerisations- und Polykondensationslabor, Monomer aus Wiederholungseinheit"
+    },
+    {
+      "track": "I",
+      "lb": 6,
+      "competence": "beschreiben die Herstellung von Silikonen, um die Strukturformeln der Silikone abzuleiten.",
+      "lessons": [
+        "ch-silikone"
+      ],
+      "evidence": "Chlorsilan-Labor mit Hydrolyse und Kondensation"
+    },
+    {
+      "track": "I",
+      "lb": 6,
+      "competence": "erklären die Einteilung der Silikone in Silikonöle, Silikonelastomere und Silikonharze aufgrund ihrer unterschiedlichen Vernetzungsstruktur.",
+      "lessons": [
+        "ch-silikone"
+      ],
+      "evidence": "Öl, Elastomer, Harz aus dem Vernetzeranteil"
+    },
+    {
+      "track": "I",
+      "lb": 6,
+      "competence": "ermitteln experimentell typische Eigenschaften von Silikonen (Feststoffe und Flüssigkeiten) und Kunststoffen und schätzen aus deren Vergleich Möglichkeiten und Grenzen ihrer Anwendung ab.",
+      "lessons": [
+        "ch-silikone",
+        "ch-kunststoffklassen"
+      ],
+      "evidence": "Eigenschaften (Hydrophobie, Hitzebeständigkeit, Viskosität, Wärmeverhalten) im Vergleich"
+    },
+    {
+      "track": "I",
+      "lb": 6,
+      "competence": "klassifizieren verschiedene Kunststoffe und Silikone nach ihrer Vernetzungsstruktur in Duroplaste, Thermoplaste und Elastomere und berücksichtigen dabei die Sonderstellung der Silikonöle.",
+      "lessons": [
+        "ch-kunststoffklassen",
+        "ch-silikone"
+      ],
+      "evidence": "Vernetzungslabor; Sonderstellung der Silikonöle"
+    },
+    {
+      "track": "I",
+      "lb": 6,
+      "competence": "ermitteln aus den Rohstoffquellen und Herstellungsverfahren eines biogenen Kunststoffs eine vereinfachte Ökobilanz, um sie mit der eines Kunststoffs auf Erdölbasis und eines Silikons zu vergleichen.",
+      "lessons": [
+        "ch-biokunststoff-oekobilanz"
+      ],
+      "evidence": "PLA-Herstellung und Vergleich PE – PLA – Silikon"
+    },
+    {
+      "track": "I",
+      "lb": 6,
+      "competence": "recherchieren Umweltprobleme in Bezug auf Kunststoffabfälle und leiten daraus die Notwendigkeit geeigneter Verwertungsmöglichkeiten her.",
+      "lessons": [
+        "ch-kunststoffabfall"
+      ],
+      "evidence": "Verwertungswege und Mikroplastik"
+    },
+    {
+      "track": "II_III",
+      "lb": 1,
+      "competence": "kennen die Bedeutung der Gefahrstoffkennzeichnung und leiten daraus Maßnahmen zum sicherheitsgerechten Umgang mit Chemikalien und deren Entsorgung ab.",
+      "lessons": [
+        "ch-gefahrstoffe"
+      ],
+      "evidence": "GHS-Piktogramme, Schutzmaßnahmen, Entsorgung"
+    },
+    {
+      "track": "II_III",
+      "lb": 1,
+      "competence": "führen Experimente unter Beachtung von Sicherheits- und Umweltaspekten durch, protokollieren die Beobachtung überwiegend selbständig und werten die Versuchsergebnisse aus.",
+      "lessons": [
+        "ch-versuche-planen",
+        "ch-gefahrstoffe"
+      ],
+      "evidence": "Protokoll mit Beobachtung und Deutung, sichere Durchführung"
+    },
+    {
+      "track": "II_III",
+      "lb": 1,
+      "competence": "setzen grundlegende Arbeitstechniken bei der Durchführung einfacher selbst geplanter oder komplexer angeleiteter Experimente ein.",
+      "lessons": [
+        "ch-versuche-planen",
+        "ch-kohlenstoff-nachweis"
+      ],
+      "evidence": "Planung fairer Versuche, Nachweisverfahren"
+    },
+    {
+      "track": "II_III",
+      "lb": 1,
+      "competence": "beschreiben chemische Reaktionen durch Formelgleichungen sowie durch Teilgleichungen in Elektronenschreibweise.",
+      "lessons": [
+        "ch-redox-teilgleichungen",
+        "ch-batterie-akku"
+      ],
+      "evidence": "Teilgleichungen in Elektronenschreibweise"
+    },
+    {
+      "track": "II_III",
+      "lb": 1,
+      "competence": "entwickeln aus Phänomenen des Alltags und aus technischen Vorgängen eigenständig einfache Fragestellungen (auch Hypothesen), die mithilfe chemischer Kenntnisse und Untersuchungsmethoden, insbesondere durch chemische Experimente, zu überprüfen sind.",
+      "lessons": [
+        "ch-versuche-planen"
+      ],
+      "evidence": "Vom Alltagsphänomen zur prüfbaren Hypothese"
+    },
+    {
+      "track": "II_III",
+      "lb": 1,
+      "competence": "nutzen Modellvorstellungen, um Wechselwirkungen zwischen Ionen und polaren bzw. unpolaren Molekülen zu beschreiben.",
+      "lessons": [
+        "ch-hydratation",
+        "ch-ester-eigenschaften"
+      ],
+      "evidence": "Hydrathülle um Ionen; Wechselwirkungen polarer und unpolarer Moleküle"
+    },
+    {
+      "track": "II_III",
+      "lb": 1,
+      "competence": "wählen geeignete Modelle aus und nutzen Fachwissen aus anderen Fächern, um chemische Fragestellungen zu bearbeiten und zu erklären bzw. um Hypothesen herzuleiten.",
+      "lessons": [
+        "ch-versuche-planen",
+        "ch-gitterenergie"
+      ],
+      "evidence": "Modellwahl: Teilchenmodell, Gittermodell"
+    },
+    {
+      "track": "II_III",
+      "lb": 1,
+      "competence": "wenden die Fachsprache an, um komplexe chemische Sachverhalte exakt zu beschreiben. Dabei reflektieren sie auch Ungenauigkeiten der Alltagssprache, um Fach- und Alltagssprache kontextbezogen zu verwenden.",
+      "lessons": [
+        "ch-broensted",
+        "ch-batterie-akku"
+      ],
+      "evidence": "Säure vs. saure Lösung, ‚volle/leere Batterie‘"
+    },
+    {
+      "track": "II_III",
+      "lb": 1,
+      "competence": "wenden Regeln zur Benennung von Salzen und organischen Verbindungen an.",
+      "lessons": [
+        "ch-salzformeln",
+        "ch-estersynthese"
+      ],
+      "evidence": "Salznamen mit Oxidationszahl, Esternamen"
+    },
+    {
+      "track": "II_III",
+      "lb": 1,
+      "competence": "dokumentieren und präsentieren den Verlauf und die Ergebnisse ihrer Arbeit (z. B. Schülerübungen oder Schülerexperimente) selbständig.",
+      "lessons": [
+        "ch-versuche-planen"
+      ],
+      "evidence": "Protokollstruktur"
+    },
+    {
+      "track": "II_III",
+      "lb": 1,
+      "competence": "diskutieren und bewerten gesellschaftsrelevante Aussagen (z. B. zu Brennstoffzellen, Batterien, Kunststoffen), um nachhaltig (ökonomisch, ökologisch, sozial) zu handeln.",
+      "lessons": [
+        "ch-brennstoffzelle",
+        "ch-batterie-akku",
+        "ch-kunststoffabfall"
+      ],
+      "evidence": "Bewertung von Brennstoffzellen, Batterien und Kunststoffen"
+    },
+    {
+      "track": "II_III",
+      "lb": 2,
+      "competence": "beschreiben die experimentelle Herstellung einer Ionenverbindung und erläutern die Ionenbildung mithilfe des Donator-Akzeptor-Konzepts als Elektronenübergang zwischen Metall- und Nichtmetallatomen unter Bildung von Metallkationen und Nichtmetallanionen.",
+      "lessons": [
+        "ch-ionenbildung"
+      ],
+      "evidence": "Ionenbildungslabor Metall + Nichtmetall"
+    },
+    {
+      "track": "II_III",
+      "lb": 2,
+      "competence": "formulieren Redoxvorgänge unter Verwendung von Oxidationszahlen mit zwei Teilgleichungen und einer Gesamtgleichung, um Elektronenaufnahme und ‑abgabe als Reduktions- und Oxidationsvorgang zu verdeutlichen.",
+      "lessons": [
+        "ch-redox-teilgleichungen"
+      ],
+      "evidence": "Teilgleichungslabor mit Oxidationszahlen und Gesamtgleichung"
+    },
+    {
+      "track": "II_III",
+      "lb": 2,
+      "competence": "erklären den exothermen Verlauf der Ionengitterbildung mithilfe der Gitterenergie.",
+      "lessons": [
+        "ch-gitterenergie"
+      ],
+      "evidence": "Gitterenergie-Labor mit Tabellenwerten"
+    },
+    {
+      "track": "II_III",
+      "lb": 2,
+      "competence": "leiten aus Ionenladungen die Verhältnisformeln von binären Salzen ab und überführen Salznamen in Formeln und umgekehrt.",
+      "lessons": [
+        "ch-salzformeln"
+      ],
+      "evidence": "Salzformel-Labor, Name ↔ Formel"
+    },
+    {
+      "track": "II_III",
+      "lb": 2,
+      "competence": "erklären den Unterschied zwischen einer Molekülformel und der Verhältnisformel einer Ionenverbindung unter Verwendung geeigneter Modelle.",
+      "lessons": [
+        "ch-salzformeln"
+      ],
+      "evidence": "Molekülformel vs. Verhältnisformel"
+    },
+    {
+      "track": "II_III",
+      "lb": 2,
+      "competence": "beschreiben das Schmelzen und Lösen von Salzen als Vorgänge, bei denen die Gitterenergie überwunden werden muss, um frei bewegliche Ionen zu erhalten.",
+      "lessons": [
+        "ch-gitterenergie",
+        "ch-hydratation"
+      ],
+      "evidence": "Schmelzen und Lösen als Überwinden der Gitterenergie"
+    },
+    {
+      "track": "II_III",
+      "lb": 2,
+      "competence": "beschreiben das Ausbilden einer Hydrathülle, um die Löslichkeit von Salzen in Wasser zu erklären.",
+      "lessons": [
+        "ch-hydratation"
+      ],
+      "evidence": "Lösungslabor mit Energiebilanz"
+    },
+    {
+      "track": "II_III",
+      "lb": 3,
+      "competence": "nennen und beschreiben wichtige saure und alkalische Lösungen des Alltags mit ihren typischen Eigenschaften sowie deren Gefährdungspotenzial.",
+      "lessons": [
+        "ch-saure-alkalische-loesungen"
+      ],
+      "evidence": "Alltagslösungen, Eigenschaften, Gefährdung"
+    },
+    {
+      "track": "II_III",
+      "lb": 3,
+      "competence": "charakterisieren saure, neutrale und alkalische Lösungen, indem sie Indikatoren und die pH-Skala verwenden.",
+      "lessons": [
+        "ch-saure-alkalische-loesungen"
+      ],
+      "evidence": "Indikatorlabor mit drei Indikatoren"
+    },
+    {
+      "track": "II_III",
+      "lb": 3,
+      "competence": "leiten aus experimentellen Befunden (elektrische Leitfähigkeit, Indikatorreaktion) zu den Reaktionen von Chlorwasserstoff und Ammoniak mit Wasser die Vorgänge auf Teilchenebene ab und erklären unter Verwendung von Strukturformeln die Protonenübergänge und das Säure/Base-Konzept nach Brönsted.",
+      "lessons": [
+        "ch-broensted"
+      ],
+      "evidence": "Versuchslabor HCl/NH₃ in Wasser und HCl in Heptan"
+    },
+    {
+      "track": "II_III",
+      "lb": 3,
+      "competence": "grenzen die Stoff- und die Teilchenebene voneinander ab, indem sie die Begriffe Säure und Base zur Beschreibung von Teilchen, saure und alkalische Lösungen zur Beschreibung entsprechender Stoffgemische verwenden. Dabei unterscheiden sie auch die unterschiedliche Verwendung der Begriffe in der Alltags- und Fachsprache.",
+      "lessons": [
+        "ch-broensted"
+      ],
+      "evidence": "Stoff- und Teilchenebene, Alltags- und Fachsprache"
+    },
+    {
+      "track": "II_III",
+      "lb": 3,
+      "competence": "beschreiben Protolysereaktionen wichtiger organischer und anorganischer Säuren und benennen deren Säurerestionen.",
+      "lessons": [
+        "ch-protolyse-saeurereste"
+      ],
+      "evidence": "Säurerest-Labor mit mehrprotonigen und organischen Säuren"
+    },
+    {
+      "track": "II_III",
+      "lb": 3,
+      "competence": "wenden das Säure/Base-Konzept auf Neutralisationsreaktionen an.",
+      "lessons": [
+        "ch-neutralisation"
+      ],
+      "evidence": "Neutralisationslabor"
+    },
+    {
+      "track": "II_III",
+      "lb": 3,
+      "competence": "führen qualitative experimentelle Untersuchungen des Verhaltens von sauren Lösungen gegenüber Carbonaten und unedlen Metallen durch, um deren Bedeutung in Bezug auf die Verwendung im Haushalt und den Einfluss auf die Umwelt zu bewerten.",
+      "lessons": [
+        "ch-carbonate-metalle"
+      ],
+      "evidence": "Carbonat/Metall-Labor"
+    },
+    {
+      "track": "II_III",
+      "lb": 4,
+      "competence": "führen qualitative Experimente durch, um Kohlenstoff als Grundbaustein organischer Verbindungen nachzuweisen.",
+      "lessons": [
+        "ch-kohlenstoff-nachweis"
+      ],
+      "evidence": "Verkohlung und Kalkwasserprobe"
+    },
+    {
+      "track": "II_III",
+      "lb": 4,
+      "competence": "deuten den Energiegehalt ausgewählter organischer Stoffe, um die Bedeutung der durch die Fotosynthese gebildeten Biomasse als Energieträger zu beschreiben.",
+      "lessons": [
+        "ch-fotosynthese",
+        "ch-energiegehalt"
+      ],
+      "evidence": "Fotosynthese-Modell, Modellkalorimeter"
+    },
+    {
+      "track": "II_III",
+      "lb": 4,
+      "competence": "nutzen Informationsquellen, um Aufbau, Entstehung und Verwendung der fossilen Rohstoffe Erdöl, Kohle und Erdgas zu beschreiben.",
+      "lessons": [
+        "ch-rohstoffe"
+      ],
+      "evidence": "Fossile Rohstoffe"
+    },
+    {
+      "track": "II_III",
+      "lb": 4,
+      "competence": "diskutieren und bewerten ökologische, ökonomische und ethische Aspekte der Nutzung fossiler und nachwachsender Rohstoffe.",
+      "lessons": [
+        "ch-rohstoffe"
+      ],
+      "evidence": "Bewertung fossil vs. nachwachsend"
+    },
+    {
+      "track": "II_III",
+      "lb": 5,
+      "competence": "erklären den Ablauf der Bromwasserprobe als Additionsreaktion und beschreiben die Addition anhand von Strukturformelgleichungen.",
+      "lessons": [
+        "ch-addition"
+      ],
+      "evidence": "Bromwasserprobe und Addition"
+    },
+    {
+      "track": "II_III",
+      "lb": 5,
+      "competence": "erklären die Reaktion von Alkanolen zu Alkanalen und Alkansäuren mithilfe von Oxidationszahlen als Redoxreaktion und stellen solche Reaktionen mithilfe geeigneter Schreibweisen dar.",
+      "lessons": [
+        "ch-oxidationszahlen-organisch",
+        "ch-alkanole-oxidation"
+      ],
+      "evidence": "OZ-Labor, Oxidationsreihe primärer Alkanole"
+    },
+    {
+      "track": "II_III",
+      "lb": 5,
+      "competence": "leiten aus experimentellen Beobachtungen die Bildung von Estern aus Alkanolen und Alkansäuren in einer Kondensationsreaktion ab und begründen Stoffeigenschaften der Ester mithilfe der zwischenmolekularen Wechselwirkungen.",
+      "lessons": [
+        "ch-estersynthese",
+        "ch-ester-eigenschaften"
+      ],
+      "evidence": "Estersynthese, Eigenschaften"
+    },
+    {
+      "track": "II_III",
+      "lb": 5,
+      "competence": "nutzen ein einfaches Strukturmodell und das Wissen über die Eigenschaften der Ausgangsstoffe, um diese mit den Eigenschaften der Ester zu vergleichen.",
+      "lessons": [
+        "ch-ester-eigenschaften"
+      ],
+      "evidence": "Vergleich mit Ausgangsstoffen"
+    },
+    {
+      "track": "II_III",
+      "lb": 6,
+      "teilbereich": "6.1",
+      "competence": "leiten mithilfe von Schülerexperimenten die Reversibilität der Redoxreaktionen aus dem Zusammenhang zwischen freiwillig ablaufender Redoxreaktion und erzwungener Redoxreaktion ab und bewerten u. a. Alltagsformulierungen wie „volle und leere Batterie“, „geladener und ungeladener Akku“.",
+      "lessons": [
+        "ch-batterie-akku"
+      ],
+      "evidence": "Zink-Iod-Akku: Entladen und Laden, Alltagssprache"
+    },
+    {
+      "track": "II_III",
+      "lb": 6,
+      "teilbereich": "6.1",
+      "competence": "werten Experimente zur Wasserstoff/Sauerstoff-Brennstoffzelle aus, um die Umwandlung von chemischer in elektrische Energie zu erklären.",
+      "lessons": [
+        "ch-brennstoffzelle"
+      ],
+      "evidence": "Brennstoffzellenlabor mit Elektronenbilanz"
+    },
+    {
+      "track": "II_III",
+      "lb": 6,
+      "teilbereich": "6.1",
+      "competence": "diskutieren den Einsatz von Wasserstoff als regenerativ gewonnenem Energieträger in Brennstoffzellen, um den ökologischen Nutzen von Brennstoffzellen zu bewerten.",
+      "lessons": [
+        "ch-brennstoffzelle"
+      ],
+      "evidence": "Grüner Wasserstoff bewerten"
+    },
+    {
+      "track": "II_III",
+      "lb": 6,
+      "teilbereich": "6.2",
+      "competence": "weisen die funktionellen Gruppen ausgewählter Aminosäuremoleküle experimentell nach, um deren Struktur zu beschreiben.",
+      "lessons": [
+        "ch-aminosaeuren"
+      ],
+      "evidence": "Funktionelle Gruppen nachweisen"
+    },
+    {
+      "track": "II_III",
+      "lb": 6,
+      "teilbereich": "6.2",
+      "competence": "wenden den Reaktionstyp der Kondensation an, um den Aufbau von Peptid- und Proteinmolekülen (Primärstruktur) mithilfe von Strukturformeln darzustellen und weisen Proteine experimentell nach.",
+      "lessons": [
+        "ch-peptide"
+      ],
+      "evidence": "Peptidbindung, Primärstruktur, Biuret"
+    },
+    {
+      "track": "II_III",
+      "lb": 6,
+      "teilbereich": "6.2",
+      "competence": "beschreiben die Bedeutung des Aufbaus der Primärstruktur eines Proteins und grenzen davon die Eigenschaften ab, die sich aus der Sekundärstruktur ergeben.",
+      "lessons": [
+        "ch-peptide",
+        "ch-proteinstruktur"
+      ],
+      "evidence": "Primär- und Sekundärstruktur"
+    },
+    {
+      "track": "II_III",
+      "lb": 6,
+      "teilbereich": "6.2",
+      "competence": "untersuchen experimentell die denaturierende Wirkung von hoher Temperatur, Ethanol, sauren und alkalischen Lösungen sowie Schwermetallionen, um deren gefährliche Wirkung auf den Menschen abzuschätzen und bewerten hierbei auch die Wirkung energiereicher Strahlung.",
+      "lessons": [
+        "ch-proteinstruktur"
+      ],
+      "evidence": "Denaturierung"
+    },
+    {
+      "track": "II_III",
+      "lb": 6,
+      "teilbereich": "6.3",
+      "competence": "unterscheiden mithilfe geeigneter Nachweisreaktionen Glucose von Fructose, um die Bausteine der Saccharose zu identifizieren.",
+      "lessons": [
+        "ch-glucose-fructose",
+        "ch-saccharose-polysaccharide"
+      ],
+      "evidence": "Zuckernachweise"
+    },
+    {
+      "track": "II_III",
+      "lb": 6,
+      "teilbereich": "6.3",
+      "competence": "wenden den Reaktionstyp der Kondensation an, um den Aufbau der Saccharosemoleküle mithilfe einer Strukturformel zu beschreiben.",
+      "lessons": [
+        "ch-saccharose-polysaccharide"
+      ],
+      "evidence": "Saccharose durch Kondensation"
+    },
+    {
+      "track": "II_III",
+      "lb": 6,
+      "teilbereich": "6.3",
+      "competence": "beschreiben unter Verwendung vereinfachter Strukturformeln die Entstehung und den schematischen Aufbau von Polysacchariden, um die unterschiedliche biologische Bedeutung in Organismen zu erläutern.",
+      "lessons": [
+        "ch-saccharose-polysaccharide"
+      ],
+      "evidence": "Polysaccharide"
+    },
+    {
+      "track": "II_III",
+      "lb": 6,
+      "teilbereich": "6.3",
+      "competence": "weisen Amylose und Cellulose experimentell nach, um deren Vorkommen in Stoffen aus der Natur zu überprüfen.",
+      "lessons": [
+        "ch-saccharose-polysaccharide"
+      ],
+      "evidence": "Amylose- und Cellulosenachweis"
+    },
+    {
+      "track": "II_III",
+      "lb": 6,
+      "teilbereich": "6.4",
+      "competence": "bestätigen die Struktur des Glycerinmoleküls anhand experimenteller Befunde und erklären damit die Eigenschaften von Glycerin.",
+      "lessons": [
+        "ch-glycerin"
+      ],
+      "evidence": "Glycerin: Befund → Struktur"
+    },
+    {
+      "track": "II_III",
+      "lb": 6,
+      "teilbereich": "6.4",
+      "competence": "beschreiben den Bau eines exemplarischen Fettmoleküls als Trifettsäureglycerinester mit geeigneten Darstellungsformen, um die Eigenschaften von Fetten zu erklären.",
+      "lessons": [
+        "ch-fette"
+      ],
+      "evidence": "Fettmolekül-Baukasten"
+    },
+    {
+      "track": "II_III",
+      "lb": 6,
+      "teilbereich": "6.4",
+      "competence": "erläutern die Bedeutung von Fetten und fetten Ölen als Nahrungsmittel und nachwachsender Rohstoff und bewerten deren Verwendungsmöglichkeiten.",
+      "lessons": [
+        "ch-fette"
+      ],
+      "evidence": "Bedeutung der Fette"
+    },
+    {
+      "track": "II_III",
+      "lb": 6,
+      "teilbereich": "6.5",
+      "competence": "wenden die Reaktionstypen der Polykondensation und der radikalischen Polymerisation an, um die Bildung von Polymeren mithilfe von Strukturformeln zu beschreiben und aus Polymeren die Monomere zu identifizieren.",
+      "lessons": [
+        "ch-polymerisation",
+        "ch-polykondensation"
+      ],
+      "evidence": "Polymerisation und Polykondensation als Gesamtreaktion"
+    },
+    {
+      "track": "II_III",
+      "lb": 6,
+      "teilbereich": "6.5",
+      "competence": "leiten aus einem einfachen Strukturmodell Eigenschaften von verschiedenen Kunststoffarten ab, um sie in Duroplaste, Thermoplaste und Elastomere einzuteilen.",
+      "lessons": [
+        "ch-kunststoffklassen"
+      ],
+      "evidence": "Vernetzungslabor: Thermoplast, Elastomer, Duroplast"
+    },
+    {
+      "track": "II_III",
+      "lb": 6,
+      "teilbereich": "6.5",
+      "competence": "recherchieren Umweltprobleme in Bezug auf Kunststoffabfälle und leiten daraus die Notwendigkeit geeigneter Verwertungsmöglichkeiten her.",
+      "lessons": [
+        "ch-kunststoffabfall"
+      ],
+      "evidence": "Umweltproblematik und Verwertung"
+    }
+  ]
+}
