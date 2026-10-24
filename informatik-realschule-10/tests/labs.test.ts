@@ -21,6 +21,7 @@ import {
   checkNetwork,
   filterPacket,
   NETWORK_CASES,
+  NETWORK_STARTER,
   type Rule,
   tlsResult,
 } from "../src/labs/network";
@@ -61,7 +62,7 @@ describe("packet filtering and separate TLS trust", () => {
     ).toEqual(NETWORK_CASES.map((packet) => packet.expected));
     expect(checkNetwork([], secure).passed).toBe(false);
   });
-  it("rejects extra allowed ports even when all seven demonstration cases match", () => {
+  it("rejects extra allowed ports even when all eight demonstration cases match", () => {
     const broad: Rule[] = [
       { direction: "out", protocol: "TCP", port: 80, action: "deny" },
       { direction: "out", protocol: "TCP", port: 53, action: "deny" },
@@ -79,6 +80,18 @@ describe("packet filtering and separate TLS trust", () => {
           secure,
         ).passed,
       ).toBe(false);
+  });
+  it("keeps the actual UI starter below the goal even with valid TLS", () => {
+    expect(checkNetwork(NETWORK_STARTER, secure).passed).toBe(false);
+    expect(
+      filterPacket(
+        { direction: "out", protocol: "TCP", port: 80, label: "HTTP" },
+        NETWORK_STARTER,
+      ).allowed,
+    ).toBe(true);
+    const reply = NETWORK_CASES.find((packet) => packet.port === 51234)!;
+    expect(filterPacket(reply, rules).allowed).toBe(false);
+    expect(reply.direction).toBe("in");
   });
   it("honors the first rule rather than preferring a later denial", () => {
     const packet = NETWORK_CASES[3];
@@ -119,13 +132,49 @@ describe("packet filtering and separate TLS trust", () => {
 });
 
 describe("Boolean circuits and sequential memory", () => {
-  it.each(LOGIC_TASKS)(
-    "checks every input for $title and catches the starter error",
-    (task) => {
-      expect(checkLogic(task.id, [...task.solutions]).passed).toBe(true);
-      expect(checkLogic(task.id, [...task.starter]).passed).toBe(false);
+  it.each([
+    {
+      id: "logic-schutz",
+      witness: ["A UND NICHT B"],
+      table: [[0], [0], [0], [0], [1], [1], [0], [0]],
+    },
+    {
+      id: "logic-xor",
+      witness: ["(A UND NICHT B) ODER (NICHT A UND B)"],
+      table: [[0], [0], [1], [1], [1], [1], [0], [0]],
+    },
+    {
+      id: "logic-adder",
+      witness: ["A XOR B XOR C", "(A UND B) ODER (A UND C) ODER (B UND C)"],
+      table: [
+        [0, 0],
+        [1, 0],
+        [1, 0],
+        [0, 1],
+        [1, 0],
+        [0, 1],
+        [0, 1],
+        [1, 1],
+      ],
+    },
+  ])(
+    "matches the independently resolved truth table for $id",
+    ({ id, witness, table }) => {
+      const result = checkLogic(id, witness);
+      expect(result.rows.map((row) => row.targets)).toEqual(table);
+      expect(result.rows.map((row) => row.values)).toEqual(table);
+      expect(result.passed).toBe(true);
+      const task = LOGIC_TASKS.find((entry) => entry.id === id)!;
+      expect(checkLogic(id, [...task.starter]).passed).toBe(false);
     },
   );
+  it("accepts German operators while retaining the English input aliases", () => {
+    for (const inputs of INPUT_ROWS) {
+      const expected = inputs.A === 1 && inputs.B === 0 ? 1 : 0;
+      expect(evaluateLogic(parseLogic("A UND NICHT B"), inputs)).toBe(expected);
+      expect(evaluateLogic(parseLogic("A AND NOT B"), inputs)).toBe(expected);
+    }
+  });
   it("agrees with integer addition for every full-adder input", () => {
     const result = checkLogic("logic-adder", [
       "A XOR B XOR C",
@@ -240,6 +289,17 @@ describe("bounded object language", () => {
       "class Konto { constructor(start) { this.guthaben = start; } abheben(betrag) { if (betrag > 0 && betrag <= 100) { this.guthaben = this.guthaben - betrag; } } }";
     expect(testObjects("objects-account", bad).passed).toBe(false);
   });
+  it("uses decimal commas and mathematical minus signs in object test readouts", () => {
+    const task = OBJECT_TASKS.find((entry) => entry.id === "objects-counter")!;
+    const result = testObjects(task.id, task.solution);
+    expect(result.tests.some((test) => test.actual === "−2")).toBe(true);
+    for (const entry of OBJECT_TASKS) {
+      const output = testObjects(entry.id, entry.solution);
+      expect(
+        output.tests.map((test) => test.label + test.actual).join(" "),
+      ).not.toMatch(/-\d/);
+    }
+  });
   it("does not accept numerically correct results that mutate the input fractions", () => {
     const bad =
       "class Bruch { constructor(zaehler, nenner) { this.zaehler = zaehler; this.nenner = nenner; } addiere(anderer) { this.zaehler = this.zaehler * anderer.nenner + anderer.zaehler * this.nenner; this.nenner = this.nenner * anderer.nenner; return this; } }";
@@ -258,9 +318,30 @@ describe("robot traces and feedback", () => {
     expect(result.passed).toBe(false);
     expect(result.results.some((entry) => entry.collision)).toBe(true);
   });
+  it("rejects a transferable open-loop route and a sensor with identical branches", () => {
+    const path =
+      "vor(); vor(); rechts(); vor(); vor(); vor(); links(); vor(); vor(); rechts(); vor(); rechts(); vor(); vor();";
+    const direct = checkRobot(path, "robot-sensor");
+    expect(direct.results.every((entry) => entry.reached)).toBe(true);
+    expect(direct.passed).toBe(false);
+    // Read the actual sensor before every action, but ignore its value.
+    const dummy = path
+      .split(";")
+      .filter((word) => word.trim())
+      .map((word) => `wennFrei { ${word}; } sonst { ${word}; }`)
+      .join(" ");
+    const ignored = checkRobot(dummy, "robot-sensor");
+    expect(ignored.results.every((entry) => entry.reached)).toBe(true);
+    expect(ignored.results.some((entry) => entry.blockedSensorReads > 0)).toBe(
+      true,
+    );
+    expect(ignored.sensorResponsive).toBe(false);
+    expect(ignored.passed).toBe(false);
+  });
   it("runs the sensor solution on all three maps and keeps the trace inside the board", () => {
     const result = checkRobot(ROBOT_SOLUTION, "robot-sensor");
     expect(result.passed).toBe(true);
+    expect(result.sensorResponsive).toBe(true);
     for (const entry of result.results) {
       expect(entry.trace.at(-1)).toMatchObject({
         x: entry.board.goal[0],

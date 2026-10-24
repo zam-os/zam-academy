@@ -1,3 +1,5 @@
+import { fmt } from "../html";
+
 // A deliberately small class language. It parses and interprets its own AST;
 // learner text never reaches eval, Function, a script element or native property lookup.
 type Expr =
@@ -414,25 +416,25 @@ export function testObjects(
     tests.push({
       label: "10 plus 3 ergibt 13",
       passed: first.fields.get("wert") === 13,
-      actual: String(first.fields.get("wert")),
+      actual: observed(first.fields.get("wert")),
     });
     vm.call(first, "addiere", [2]);
     tests.push({
       label: "Noch einmal plus 2 ergibt 15",
       passed: first.fields.get("wert") === 15,
-      actual: String(first.fields.get("wert")),
+      actual: observed(first.fields.get("wert")),
     });
     tests.push({
       label: "Zweite Instanz bleibt bei 1",
       passed: other.fields.get("wert") === 1,
-      actual: String(other.fields.get("wert")),
+      actual: observed(other.fields.get("wert")),
     });
     const zero = vm.create([0]);
     vm.call(zero, "addiere", [-2]);
     tests.push({
       label: "Auch negative Schritte: 0 plus −2",
       passed: zero.fields.get("wert") === -2,
-      actual: String(zero.fields.get("wert")),
+      actual: observed(zero.fields.get("wert")),
     });
   } else if (taskId === "objects-account") {
     for (const amount of [30, 101, -10, 0, 100]) {
@@ -440,9 +442,9 @@ export function testObjects(
       vm.call(account, "abheben", [amount]);
       const expected = amount > 0 && amount <= 100 ? 100 - amount : 100;
       tests.push({
-        label: `100 Guthaben, Aufruf mit ${amount}: erwartet ${expected}`,
+        label: `100 Guthaben, Aufruf mit ${fmt(amount)}: erwartet ${fmt(expected)}`,
         passed: account.fields.get("guthaben") === expected,
-        actual: String(account.fields.get("guthaben")),
+        actual: observed(account.fields.get("guthaben")),
       });
     }
     for (const start of [45, 150]) {
@@ -452,9 +454,9 @@ export function testObjects(
         if (amount > 0 && amount <= balance) balance -= amount;
         vm.call(account, "abheben", [amount]);
         tests.push({
-          label: `Start ${start}, nächster Aufruf ${amount}: erwartet ${balance}`,
+          label: `Start ${fmt(start)}, nächster Aufruf ${fmt(amount)}: erwartet ${fmt(balance)}`,
           passed: account.fields.get("guthaben") === balance,
-          actual: String(account.fields.get("guthaben")),
+          actual: observed(account.fields.get("guthaben")),
         });
       }
     }
@@ -484,14 +486,18 @@ export function testObjects(
         right.fields.get("zaehler") === c &&
         right.fields.get("nenner") === d;
       tests.push({
-        label: `${a}/${b} plus ${c}/${d}; neuer Bruch, Ausgangswerte erhalten`,
+        label: `${fmt(a)}/${fmt(b)} plus ${fmt(c)}/${fmt(d)}; neuer Bruch, Ausgangswerte erhalten`,
         passed: valid && unchanged && result !== left && result !== right,
         actual:
           n === undefined
             ? "Kein Ergebnisbruch"
-            : `${n}/${denominator}${unchanged ? "" : " · Ausgangswert verändert"}`,
+            : `${observed(n)}/${observed(denominator)}${unchanged ? "" : " · Ausgangswert verändert"}`,
       });
     }
   }
   return { passed: tests.every((entry) => entry.passed), tests, model };
+}
+
+function observed(value: unknown): string {
+  return typeof value === "number" ? fmt(value) : String(value);
 }

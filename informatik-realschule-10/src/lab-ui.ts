@@ -17,9 +17,15 @@ import {
   type Inputs,
   LOGIC_TASKS,
   type LogicNode,
+  logicLabel,
   rsLatch,
 } from "./labs/logic";
-import { checkNetwork, type Rule, type TlsSettings } from "./labs/network";
+import {
+  checkNetwork,
+  NETWORK_STARTER,
+  type Rule,
+  type TlsSettings,
+} from "./labs/network";
 import { OBJECT_TASKS, testObjects } from "./labs/objects";
 import {
   BOARDS,
@@ -176,10 +182,7 @@ function mountNetwork(
             action: row.action === "deny" ? "deny" : "allow",
           };
         })
-      : [
-          { direction: "out", protocol: "TCP", port: "80", action: "allow" },
-          { direction: "out", protocol: "UDP", port: "53", action: "allow" },
-        ];
+      : NETWORK_STARTER.map((rule) => ({ ...rule, port: String(rule.port) }));
   const savedTls = record(data.tls);
   const tls: TlsSettings = {
     encrypted: savedTls.encrypted !== false,
@@ -189,7 +192,7 @@ function mountNetwork(
   };
   const save = () => dirty({ rules, tls });
   const render = () => {
-    host.innerHTML = `<p class="task">Erlaube nur ausgehendes TCP 443 und UDP 53. Sperre alles andere. Stelle außerdem eine verschlüsselte Verbindung zu einer erfolgreich geprüften Gegenstelle her.</p><p>Die erste passende Regel entscheidet. Ohne Treffer: <strong>abweisen</strong>. Portfeld: eine Zahl von 1 bis 65535 oder „any“.</p><div class="table-scroll"><table class="rule-table"><thead><tr><th>Nr.</th><th>Richtung</th><th>Protokoll</th><th>Zielport</th><th>Aktion</th><th>Reihenfolge</th></tr></thead><tbody>${rules.map((rule, index) => `<tr data-rule="${index}"><td>${index + 1}</td><td><select data-field="direction" aria-label="Richtung Regel ${index + 1}">${options(["out", "in", "any"], rule.direction, ["ausgehend", "eingehend", "beide"])}</select></td><td><select data-field="protocol" aria-label="Protokoll Regel ${index + 1}">${options(["TCP", "UDP", "any"], rule.protocol, ["TCP", "UDP", "alle"])}</select></td><td><input data-field="port" aria-label="Zielport Regel ${index + 1}" value="${esc(rule.port)}" maxlength="5" size="5" /></td><td><select data-field="action" aria-label="Aktion Regel ${index + 1}">${options(["allow", "deny"], rule.action, ["erlauben", "abweisen"])}</select></td><td class="rule-actions"><button data-up="${index}" aria-label="Regel ${index + 1} nach oben" ${index === 0 ? "disabled" : ""}>↑</button><button data-down="${index}" aria-label="Regel ${index + 1} nach unten" ${index === rules.length - 1 ? "disabled" : ""}>↓</button><button data-remove="${index}" aria-label="Regel ${index + 1} entfernen">×</button></td></tr>`).join("")}</tbody></table></div><button class="button secondary" id="add-rule" ${rules.length >= 8 ? "disabled" : ""}>Regel hinzufügen</button><fieldset class="tls"><legend>Geschützte Verbindung prüfen</legend>${(
+    host.innerHTML = `<p class="task">Prüfe die Anfragepakete einer eingeschränkten Freigabe: Erlaube nur ausgehendes TCP 443 und UDP 53. Sperre in dieser Übung alles andere. Prüfe die TLS-Eigenschaften getrennt; der Filter simuliert keinen vollständigen Verbindungsaufbau.</p><p>Die erste passende Regel entscheidet. Ohne Treffer: <strong>abweisen</strong>. Portfeld: eine Zahl von 1 bis 65535 oder „any“.</p><div class="table-scroll"><table class="rule-table"><thead><tr><th>Nr.</th><th>Richtung</th><th>Protokoll</th><th>Zielport</th><th>Aktion</th><th>Reihenfolge</th></tr></thead><tbody>${rules.map((rule, index) => `<tr data-rule="${index}"><td>${index + 1}</td><td><select data-field="direction" aria-label="Richtung Regel ${index + 1}">${options(["out", "in", "any"], rule.direction, ["ausgehend", "eingehend", "beide"])}</select></td><td><select data-field="protocol" aria-label="Protokoll Regel ${index + 1}">${options(["TCP", "UDP", "any"], rule.protocol, ["TCP", "UDP", "alle"])}</select></td><td><input data-field="port" aria-label="Zielport Regel ${index + 1}" value="${esc(rule.port)}" maxlength="5" size="5" /></td><td><select data-field="action" aria-label="Aktion Regel ${index + 1}">${options(["allow", "deny"], rule.action, ["erlauben", "abweisen"])}</select></td><td class="rule-actions"><button data-up="${index}" aria-label="Regel ${index + 1} nach oben" ${index === 0 ? "disabled" : ""}>↑</button><button data-down="${index}" aria-label="Regel ${index + 1} nach unten" ${index === rules.length - 1 ? "disabled" : ""}>↓</button><button data-remove="${index}" aria-label="Regel ${index + 1} entfernen">×</button></td></tr>`).join("")}</tbody></table></div><button class="button secondary" id="add-rule" ${rules.length >= 8 ? "disabled" : ""}>Regel hinzufügen</button><fieldset class="tls"><legend>Geschützte Verbindung prüfen</legend>${(
       [
         ["encrypted", "Verschlüsselte Verbindung"],
         ["trusted", "Vertrauenswürdige Zertifikatskette"],
@@ -203,7 +206,7 @@ function mountNetwork(
       )
       .join(
         "",
-      )}</fieldset><button class="button" id="run-network">Alle Verbindungen prüfen</button><div id="lab-result" aria-live="polite"></div><p class="limit">Zustandsloses Paketmodell ohne echte Verbindungen. Rückpakete sind eigene Fälle. Kein vollständiger DNS-Dienst, kein TLS-Handshake, keine Prüfung von Webinhalten. DNS kann in der Praxis auch TCP benötigen; der Auftrag erlaubt hier bewusst nur UDP 53.</p>`;
+      )}</fieldset><button class="button" id="run-network">Alle Verbindungen prüfen</button><div id="lab-result" aria-live="polite"></div><p class="limit">Zustandsloses Paketmodell: Der Auftrag bildet nur die Freigabe von Anfragepaketen ab. Auch mögliche Antworten an Clientports werden gesperrt; so kommt keine nutzbare Verbindung zustande. Der Filter kennt nur Richtung, Protokoll und Zielport und kann Antworten nicht von anderen eingehenden Paketen unterscheiden. Für echte Verbindungen braucht es passende Rückverkehrsregeln oder Zustandsverfolgung. Die TLS-Schalter beschreiben davon getrennte Eigenschaften, keinen ausgeführten Handshake. Kein vollständiger DNS-Dienst, kein TLS-Handshake, keine Prüfung von Webinhalten. DNS kann in der Praxis auch TCP benötigen; der Auftrag erlaubt hier bewusst nur UDP 53.</p>`;
     host
       .querySelectorAll<HTMLInputElement | HTMLSelectElement>("[data-field]")
       .forEach((input) => {
@@ -324,7 +327,11 @@ function mountObjects(
 
 function circuit(node: LogicNode, inputs: Inputs): string {
   const label =
-    node.kind === "input" ? node.name : node.kind === "not" ? "NOT" : node.gate;
+    node.kind === "input"
+      ? node.name
+      : node.kind === "not"
+        ? "NICHT"
+        : logicLabel(node.gate);
   const children =
     node.kind === "input"
       ? ""
@@ -349,7 +356,7 @@ function mountLogic(
       ? String(saved[index]).slice(0, 600)
       : starter,
   );
-  host.innerHTML = `<p class="task">${esc(task.task)}</p><p>Erlaubt: A, B, C, NOT, AND, OR, XOR, NAND, NOR, XNOR und Klammern. Klammern machen zusammengesetzte Verknüpfungen eindeutig.</p>${task.outputs.map((output, index) => `<label class="field-label" for="term-${index}">Term für ${esc(output)}</label><input id="term-${index}" class="term" data-term="${index}" value="${esc(terms[index])}" maxlength="600" spellcheck="false">`).join("")}<button class="button" id="run-logic">Alle Eingangskombinationen prüfen</button><div id="lab-result" aria-live="polite"></div><details class="extra"><summary>NOR-RS-Speicher ausprobieren</summary><p>Startzustand Q = 0. S setzt, R löscht; 00 hält. 11 ist verboten.</p><div class="actions"><label><input id="rs-set" type="checkbox">S</label><label><input id="rs-reset" type="checkbox">R</label></div><output id="rs-value">Q = 0 · Anfangszustand</output></details><p class="limit">Ideale Bits ohne elektrische Pegel, Laufzeiten oder Kontaktprellen. Der Gatterbaum zeigt die logische Verknüpfung; ein vollständiger normgerechter Schaltplan bleibt eine zusätzliche Zeichenaufgabe.</p>`;
+  host.innerHTML = `<p class="task">${esc(task.task)}</p><p>Erlaubt: A, B, C, NICHT, UND, ODER, XOR, NAND, NOR, XNOR und Klammern. NOT, AND und OR funktionieren auch als englische Schreibweisen. Klammern machen zusammengesetzte Verknüpfungen eindeutig.</p>${task.outputs.map((output, index) => `<label class="field-label" for="term-${index}">Term für ${esc(output)}</label><input id="term-${index}" class="term" data-term="${index}" value="${esc(terms[index])}" maxlength="600" spellcheck="false">`).join("")}<button class="button" id="run-logic">Alle Eingangskombinationen prüfen</button><div id="lab-result" aria-live="polite"></div><details class="extra"><summary>NOR-RS-Speicher ausprobieren</summary><p>Startzustand Q = 0. S setzt, R löscht; 00 hält. 11 ist verboten.</p><div class="actions"><label><input id="rs-set" type="checkbox">S</label><label><input id="rs-reset" type="checkbox">R</label></div><output id="rs-value">Q = 0 · Anfangszustand</output></details><p class="limit">Ideale Bits ohne elektrische Pegel, Laufzeiten oder Kontaktprellen. Der Gatterbaum zeigt die logische Verknüpfung; ein vollständiger normgerechter Schaltplan bleibt eine zusätzliche Zeichenaufgabe.</p>`;
   host.querySelectorAll<HTMLInputElement>("[data-term]").forEach((input) => {
     input.addEventListener("input", () => {
       terms[Number(input.dataset.term)] = input.value;
@@ -427,7 +434,7 @@ function mountRobot(
   dirty: Dirty,
   finish: Finish,
 ): void {
-  host.innerHTML = `<p class="task">${id === "robot-route" ? "Erreiche das Ziel im freien Hof. Der Roboter startet links unten und blickt nach Norden." : "Schreibe ein Programm, das auf allen drei Höfen ohne Kollision das Ziel erreicht. Nutze den Freisensor vor der Bewegung."}</p><div class="robot-layout"><div><label class="field-label" for="robot-code">Dein Roboterprogramm</label><textarea id="robot-code" class="code" spellcheck="false" rows="13" maxlength="6000">${esc(draft ?? ROBOT_STARTER)}</textarea><button class="button" id="run-robot">${id === "robot-route" ? "Hof testen" : "Alle drei Höfe testen"}</button></div><div id="robot-preview">${boardView(BOARDS[0], { x: 0, y: 4, direction: 0, action: "Start", clear: true })}</div></div><details><summary>Befehle und Lösungsansatz</summary><p>vor(); links(); rechts(); wiederhole(4) { … }; eine Wiederholung endet mit der schließenden Klammer ohne Semikolon. Bedingungen: wennFrei { … } sonst { … }. // beginnt einen Kommentar. Das ist eine eigene Werkstattsprache.</p><p>Für die Sensoraufgabe: Prüfe vor jedem Vorwärtsschritt, ob der Weg frei ist. Drehe sonst nach rechts.</p><pre>${esc(ROBOT_SOLUTION)}</pre><p>Die Strategie ist für die drei Übungshöfe geeignet. Sie findet nicht in jedem Labyrinth einen Weg.</p></details><div id="lab-result" aria-live="polite"></div><details class="extra"><summary>Rückkopplung am Modellthermostat</summary><p>Sollwert 20, Hystereseband 1. Unter 19 ein, über 21 aus. Im Zwischenbereich bleibt der vorherige Zustand erhalten.</p><label for="temperature">Isttemperatur <output id="temperature-label">18</output></label><input id="temperature" type="range" min="16" max="24" step="0.5" value="18"><output id="heating">Heizung an</output></details><p class="limit">Rastermodell mit idealem Freisensor, ohne echte Hardware, Sensorstreuung, Radschlupf oder Heizphysik. Zielkontakt beendet den Lauf automatisch. Höchstens 1.500 Anweisungen und 300 Bewegungen. Montage und reale Erprobung bleiben eigene Aufgaben.</p>`;
+  host.innerHTML = `<p class="task">${id === "robot-route" ? "Erreiche das Ziel im freien Hof. Der Roboter startet links unten und blickt nach Norden." : "Schreibe ein Programm, das auf allen drei Höfen ohne Kollision das Ziel erreicht. Nutze den Freisensor vor der Bewegung und reagiere auf eine blockierte Front mit einem anderen Bewegungsweg."}</p><div class="robot-layout"><div><label class="field-label" for="robot-code">Dein Roboterprogramm</label><textarea id="robot-code" class="code" spellcheck="false" rows="13" maxlength="6000">${esc(draft ?? ROBOT_STARTER)}</textarea><button class="button" id="run-robot">${id === "robot-route" ? "Hof testen" : "Alle drei Höfe testen"}</button></div><div id="robot-preview">${boardView(BOARDS[0], { x: 0, y: 4, direction: 0, action: "Start", clear: true })}</div></div><details><summary>Befehle und Lösungsansatz</summary><p>vor(); links(); rechts(); wiederhole(4) { … }; eine Wiederholung endet mit der schließenden Klammer ohne Semikolon. Bedingungen: wennFrei { … } sonst { … }. // beginnt einen Kommentar. Das ist eine eigene Werkstattsprache.</p><p>Für die Sensoraufgabe: Prüfe vor jedem Vorwärtsschritt, ob der Weg frei ist. Drehe sonst nach rechts.</p><pre>${esc(ROBOT_SOLUTION)}</pre><p>Die Strategie ist für die drei Übungshöfe geeignet. Sie findet nicht in jedem Labyrinth einen Weg.</p></details><div id="lab-result" aria-live="polite"></div><details class="extra"><summary>Rückkopplung am Modellthermostat</summary><p>Sollwert 20, Hystereseband 1. Unter 19 ein, über 21 aus. Im Zwischenbereich bleibt der vorherige Zustand erhalten.</p><label for="temperature">Isttemperatur <output id="temperature-label">18</output></label><input id="temperature" type="range" min="16" max="24" step="0.5" value="18"><output id="heating">Heizung an</output></details><p class="limit">Rastermodell mit idealem Freisensor, ohne echte Hardware, Sensorstreuung, Radschlupf oder Heizphysik. Zielkontakt beendet den Lauf automatisch. Höchstens 1.500 Anweisungen und 300 Bewegungen. Montage und reale Erprobung bleiben eigene Aufgaben.</p>`;
   const editor = host.querySelector<HTMLTextAreaElement>("#robot-code")!;
   editor.addEventListener("input", () => {
     dirty(editor.value, true);
@@ -444,7 +451,9 @@ function mountRobot(
         feedback(
           result.passed
             ? "Alle geforderten Höfe erreicht. Vergleiche die Spur und benenne die Grenzen deiner Strategie."
-            : "Mindestens ein Hof ist noch nicht geschafft. Wähle ihn aus und verfolge die erste Abweichung.",
+            : result.results.every((entry) => entry.reached)
+              ? "Alle Ziele erreicht, aber der Freisensor verändert den Bewegungsweg noch nicht. Ein fester Weg oder gleiche Aktionen in beiden Zweigen erfüllen die Sensoraufgabe nicht."
+              : "Mindestens ein Hof ist noch nicht geschafft. Wähle ihn aus und verfolge die erste Abweichung.",
           result.passed,
         ) +
         `<div class="actions">${result.results.map((entry, index) => `<button class="button secondary" data-board="${index}">${entry.reached ? "✓" : "✗"} ${esc(entry.board.title)}</button>`).join("")}</div><div id="trace-view"></div>`;

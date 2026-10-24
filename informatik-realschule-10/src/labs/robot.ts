@@ -27,6 +27,7 @@ export interface RobotResult {
   collision: boolean;
   trace: RobotStep[];
   message: string;
+  blockedSensorReads: number;
 }
 export const BOARDS: Board[] = [
   {
@@ -41,7 +42,7 @@ export const BOARDS: Board[] = [
   },
   {
     id: "wand",
-    title: "Eine veränderte Startposition",
+    title: "Eine Wand im Weg",
     width: 5,
     height: 5,
     walls: [[0, 1]],
@@ -135,7 +136,11 @@ export function frontClear(board: Board, state: RobotState): boolean {
   );
 }
 
-export function runRobot(program: Instruction[], board: Board): RobotResult {
+export function runRobot(
+  program: Instruction[],
+  board: Board,
+  assumeClear = false,
+): RobotResult {
   const state: RobotState = {
     x: board.start[0],
     y: board.start[1],
@@ -145,6 +150,7 @@ export function runRobot(program: Instruction[], board: Board): RobotResult {
     { ...state, action: "Start", clear: frontClear(board, state) },
   ];
   let collision = false;
+  let blockedSensorReads = 0;
   let stopped = false;
   let instructions = 0;
   const reached = () => state.x === board.goal[0] && state.y === board.goal[1];
@@ -160,9 +166,11 @@ export function runRobot(program: Instruction[], board: Board): RobotResult {
           execute(item.body);
           if (stopped || reached()) break;
         }
-      } else if (item.kind === "sensor")
-        execute(frontClear(board, state) ? item.yes : item.no);
-      else {
+      } else if (item.kind === "sensor") {
+        const clear = frontClear(board, state);
+        if (!clear) blockedSensorReads++;
+        execute(clear || assumeClear ? item.yes : item.no);
+      } else {
         if (item.action === "vor") {
           if (!frontClear(board, state)) {
             collision = true;
@@ -186,6 +194,7 @@ export function runRobot(program: Instruction[], board: Board): RobotResult {
   return {
     reached: reached() && !collision,
     collision,
+    blockedSensorReads,
     trace,
     message: collision
       ? "Der Roboter fährt gegen ein Hindernis. Werte den Sensor vor dem Schritt aus."
@@ -207,7 +216,28 @@ export function checkRobot(
     board,
     ...runRobot(program, board),
   }));
-  return { passed: results.every((result) => result.reached), results };
+  // Compare the actual moves with a counterfactual sensor that always reports
+  // “free”. Reading a sensor, or putting the same actions in both branches,
+  // is not evidence that the program responds to an obstacle.
+  const moves = (result: RobotResult) =>
+    result.trace
+      .filter(
+        (step) => step.action === "vor" || step.action.startsWith("Kollision"),
+      )
+      .map((step) => [step.x, step.y, step.direction, step.action]);
+  const sensorResponsive =
+    task === "robot-route" ||
+    results.some(
+      (result) =>
+        result.blockedSensorReads > 0 &&
+        JSON.stringify(moves(result)) !==
+          JSON.stringify(moves(runRobot(program, result.board, true))),
+    );
+  return {
+    passed: results.every((result) => result.reached) && sensorResponsive,
+    sensorResponsive,
+    results,
+  };
 }
 
 /** A discrete two-point feedback controller, no simulation of real heating hardware. */

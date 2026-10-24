@@ -60,12 +60,12 @@ ausdrücklich beauftragten Veröffentlichung kann ein ZAM-Release sie über
 `npm run academy:sync` übernehmen. Keine gebündelte Zelle wird hier von Hand
 bearbeitet oder vorzeitig ersetzt.
 
-## Prüfung vor dem PR
+## Prüfung des PR-Standes nach den Reviews
 
-Am 24.10.2026 auf `origin/main` (`a20c297`) geprüft:
+Am 24.10.2026 den PR-Zweig auf Basis von `origin/main` (`a20c297`) geprüft:
 
 - Im Paket: `npm ci --offline`, `npm run typecheck`, `npm test`,
-  `npm run build`, `npm run package:zip`. Die 114 Tests in vier Dateien bestehen;
+  `npm run build`, `npm run package:zip`. Die 121 Tests in vier Dateien bestehen;
   darunter erreichbare, anfänglich offene Ziele für alle 36 Fallwerkstätten,
   die ausführbaren Modelle, Direktlinks und die lokale Fortschrittsspeicherung.
 - Am Repo-Root: `node --test scripts/build-catalog.test.mjs scripts/academy-registry.test.mjs`
@@ -75,13 +75,16 @@ Am 24.10.2026 auf `origin/main` (`a20c297`) geprüft:
   `node scripts/validate-cells.mjs` installiert alle 21 Zellen erfolgreich;
   `node informatik-realschule-10/scripts/validate-cell.mjs` prüft die oben
   beschriebenen unveränderten Bestandskarten und die neue Zelle.
-- Der gebaute Einzeldatei-Lernpfad wurde über `npm run preview -- --host 127.0.0.1 --port 5196`
+- Der gebaute Einzeldatei-Lernpfad wurde über `npm run preview -- --host 127.0.0.1 --port 5200`
   im Browser geprüft: 36 Lektionen auf beiden Niveaus in heller und dunkler
   Ansicht (144 Ansichten), Lernpfad, Quellen und alle zehn ausführbaren
   Werkstätten in beiden Ansichten. DOM-Abgleich und Sichtprüfung der Aufnahmen
-  zeigen die passenden Aufgaben und keinen horizontalen Überlauf bei 886 px
+  zeigen die passenden Aufgaben und keinen horizontalen Überlauf bei 1280 px
   Fensterbreite. Erfolgreiche Fallzuordnung, Selbsteinschätzung, Wiederöffnen
   und Rücknahme nach Änderung wurden zusätzlich durchgespielt.
+- Das Paket wurde zusätzlich ohne andere Academy-Pakete in einen temporären
+  Ordner kopiert: `npm ci --offline`, `npm test` und `npm run build` bestehen
+  dort ebenfalls. Die Pakettests benötigen keinen vollständigen Repo-Checkout.
 - Eine unabhängige Agentenprüfung hat zu Regressionstests für zu breite
   Firewall-Freigaben, Navigation aus Query-Direktlinks, ungelöste Startzustände
   und aufeinanderfolgende Kontoabbuchungen geführt. Eine unklare Zuordnung
@@ -93,3 +96,30 @@ bzw. auf ihren Zielsystemen ausgeführt. Die ZIP-Prüfung vergleicht stattdessen
 HTML-Bytes und fehlende externe Laufzeitressourcen. Reale Robotik, freie
 standardisierte Diagramme und die in der Abdeckungsmatrix genannten zusätzlichen
 Unterrichtsleistungen bleiben außerhalb dieser digitalen Nachweise.
+
+## Bearbeitung beider Reviews vom 24.10.2026
+
+Berücksichtigt sind die beiden ausführlichen PR-Kommentare
+[erste Fachprüfung](https://github.com/zam-os/zam-academy/pull/42#issuecomment-6386109236)
+und [späteres Gemini-Review](https://github.com/zam-os/zam-academy/pull/42#issuecomment-6386312615)
+sowie die drei Inline-Befunde. Die Korrekturen erfolgen vor der ersten
+Veröffentlichung; sämtliche 108 IDs und 36 Lektionsanker bleiben erhalten.
+
+| Befund | Korrektur und Nachweis |
+| --- | --- |
+| Sensorziel mit festem Weg lösbar | Alle Höfe müssen erreicht werden und mindestens ein blockierter Sensorwert muss den Bewegungsweg beeinflussen. Ein begrenzter Gegenlauf mit stets freiem Sensor prüft diese Wirkung. Feste Route und identische Zweige scheitern im Test und Browser; eine reaktive Lösung besteht. |
+| Mehrdeutiger RS-Fall | Die Werkstatt fragt nach Setzen, Rücksetzen, Halten und verbotenem Eingang. Setzen bei Q = 1 lässt den Wert gleich; das wird ausdrücklich erklärt. Regression gegen `rsLatch` und gelöste Browserzuordnung. |
+| Falsche KI-Vergleichszahl | Der Transferauftrag nennt nun den reproduzierbaren Vergleich: Tiefe 4 mit 12/12 und 5/6, Tiefe 1 mit 11/12 und 6/6. Test berechnet die Werte mit dem Trainer und prüft den Aufgabentext. Zelle neu erzeugt. |
+| Türsensor-Widerspruch | Start A = 1 und geschlossene Tür B = 0 erlauben den Motor. Test prüft den deutschen Term für geschlossene und offene Tür; Karte und Lektion sind synchron. |
+| Offizielle Modulnamen und Kompetenzen | Modulnamen in App, Zelle und Abdeckung stimmen mit dem aktuellen Fachlehrplan überein. Die 19 `competence`-Texte sind der amtliche Wortlaut nach dem dortigen Satzanfang; nur Leerzeichen wurden vereinheitlicht. Eigene Kurzfassungen und Nachweise stehen in getrennten Feldern. Direkter LehrplanPLUS-Abgleich am 24.10.2026. |
+| Zustandsloser Filter und Rückverkehr | Achte Anschauungsprobe für ein mögliches Rückpaket ergänzt. Die App benennt, dass alle Eingänge einschließlich möglicher Antworten gesperrt sind und die Übungsregel allein keinen nutzbaren Webzugang herstellt. TLS-Eigenschaften werden getrennt geprüft. |
+| Deutsche Fachsprache und Ausgaben | UND, ODER, NICHT in Erklärungen, Karten und Gatterbaum; Parser akzeptiert deutsche und bestehende englische Eingaben. Objekttests verwenden `fmt()` mit Komma und echtem Minus; Hofname korrigiert. |
+| Schnellchecks und Niveaus | 36 eigene Erklärungen begründen die Antwort und typische Verwechslungen. Ungeeignete Distraktoren wurden ersetzt. Alle 36 Levelpaare fachlich gelesen: Level 2 verlangt je nach Thema Transfer, Gegenprobe, Vertragsentwurf oder begründetes Urteil; Tests prüfen zusätzlich unterschiedliche Musterlösungen und Beurteilungskriterien. Das ersetzt keine menschliche Didaktikprüfung. |
+| Test- und Formatierungshinweise | Logiktests nutzen unabhängig aufgelöste Wertetabellen; tatsächliche Netzwerk-Startregeln werden geprüft. Der Import des Nachbarpakets entfällt. Portliste sortiert; Registrierungsformat bereinigt. Zweifache `npm run cell:generate` ergibt bytegleiches `cell.json`. |
+
+Die erneute unabhängige Agentenprüfung der Korrekturen fand keine weiteren
+materiellen Fehler. Die neue Browserprüfung verwendet Port 5200; die Erstprüfung
+lief auf dem damaligen temporären Vorschauport 5196. Der Inhaltsgenerator bleibt
+die Schreibstelle für die projizierten Karten; `cell.json` wird anschließend
+nicht von Hand umformatiert. Der Academy-Rücklink folgt unverändert dem Muster
+der übrigen Pakete und öffnet im selben Tab.

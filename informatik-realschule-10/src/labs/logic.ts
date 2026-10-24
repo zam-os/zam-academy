@@ -4,6 +4,16 @@ export type LogicNode =
   | { kind: "input"; name: keyof Inputs }
   | { kind: "not"; child: LogicNode }
   | { kind: "gate"; gate: string; left: LogicNode; right: LogicNode };
+const aliases: Record<string, string> = {
+  UND: "AND",
+  ODER: "OR",
+  NICHT: "NOT",
+  "!": "NOT",
+  "&&": "AND",
+  "||": "OR",
+};
+export const logicLabel = (gate: string): string =>
+  ({ AND: "UND", OR: "ODER", NOT: "NICHT" })[gate] ?? gate;
 const precedences: Record<string, number> = {
   OR: 1,
   NOR: 1,
@@ -20,19 +30,11 @@ export function parseLogic(source: string): LogicNode {
   const tokens = source.toUpperCase().match(/\s+|[A-Z]+|&&|\|\||[!()]/g) ?? [];
   if (tokens.join("") !== source.toUpperCase())
     throw new Error(
-      "Erlaubt sind A, B, C, NOT, AND, OR, XOR, NAND, NOR, XNOR und Klammern.",
+      "Erlaubt sind A, B, C, NICHT, UND, ODER, XOR, NAND, NOR, XNOR und Klammern.",
     );
   const words = tokens
     .filter((token) => token.trim())
-    .map((token) =>
-      token === "!"
-        ? "NOT"
-        : token === "&&"
-          ? "AND"
-          : token === "||"
-            ? "OR"
-            : token,
-    );
+    .map((token) => aliases[token] ?? token);
   let position = 0;
   let nodes = 0;
   function expression(minimum = 0, depth = 0): LogicNode {
@@ -104,8 +106,8 @@ export const LOGIC_TASKS = [
     title: "Schutzschaltung",
     task: "Der Motor läuft genau dann, wenn Start A an ist und die offene Schutztür B nicht gemeldet wird. C wird nicht gebraucht.",
     outputs: ["Motor"],
-    solutions: ["A AND NOT B"],
-    starter: ["A OR B"],
+    solutions: ["A UND NICHT B"],
+    starter: ["A ODER B"],
   },
   {
     id: "logic-xor",
@@ -113,15 +115,15 @@ export const LOGIC_TASKS = [
     task: "Das Licht leuchtet genau dann, wenn die beiden Schalter A und B verschieden stehen. C wird nicht gebraucht.",
     outputs: ["Licht"],
     solutions: ["A XOR B"],
-    starter: ["A OR B"],
+    starter: ["A ODER B"],
   },
   {
     id: "logic-adder",
     title: "Volladdierer",
     task: "Addiere A, B und den Eingangsübertrag C. Entwickle einen Term für das Summenbit und einen für den Ausgangsübertrag.",
     outputs: ["Summe", "Übertrag"],
-    solutions: ["A XOR B XOR C", "(A AND B) OR (C AND (A XOR B))"],
-    starter: ["A XOR B", "A AND B"],
+    solutions: ["A XOR B XOR C", "(A UND B) ODER (C UND (A XOR B))"],
+    starter: ["A XOR B", "A UND B"],
   },
 ] as const;
 

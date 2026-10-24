@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { LESSONS, WORKSHOPS } from "../src/curriculum";
 import { fmt } from "../src/html";
+import { rsLatch } from "../src/labs/logic";
 import { checkWorkshop, workshopSolved } from "../src/workshop";
 
 describe("lesson-specific case workshops", () => {
@@ -36,6 +37,20 @@ describe("lesson-specific case workshops", () => {
       }
     },
   );
+  it("distinguishes set and hold operations even when the stored bit is already 1", () => {
+    const workshop = WORKSHOPS["it10-speicher"];
+    const set = workshop.entries.find(
+      (entry) => entry.text === "S = 1, R = 0",
+    )!;
+    const hold = workshop.entries.find(
+      (entry) => entry.text === "S = 0, R = 0",
+    )!;
+    expect(rsLatch(1, 1, 0).q).toBe(1);
+    expect(rsLatch(1, 0, 0).q).toBe(1);
+    expect(workshop.categories[set.target]).toBe("Setzen (Q = 1)");
+    expect(workshop.categories[hold.target]).toBe("Halten (Q bleibt 1)");
+    expect(workshop.instruction).toContain("Operation");
+  });
   it("formats German numeric readouts", () => {
     expect(fmt(5.5)).toBe("5,5");
     expect(fmt(-2.5)).toBe("−2,5");

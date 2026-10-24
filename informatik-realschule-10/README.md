@@ -49,9 +49,11 @@ IT-Modulbereiche und werden hier nicht als abgedeckt ausgewiesen.
 ## Grenzen der ausführbaren Modelle
 
 - Der Filter arbeitet zustandslos nach der ersten passenden Regel und weist
-  standardmäßig ab. Sieben Anschauungsfälle werden durch Gegenproben für alle
+  standardmäßig ab. Acht Anschauungsfälle werden durch Gegenproben für alle
   durch die Regeln unterscheidbaren Portklassen ergänzt. Das ist kein vollständiger
-  DNS- oder Netzwerkstack. Es gibt keine echten Verbindungen oder kryptografischen
+  DNS- oder Netzwerkstack. Die Freigabeaufgabe betrachtet Anfragepakete; eingehende
+  Antworten werden ebenfalls gesperrt, weshalb diese Übungsregel allein keinen
+  nutzbaren Webzugang herstellt. Die TLS-Eigenschaften werden getrennt geprüft. Es gibt keine echten Verbindungen oder kryptografischen
   Operationen. Portfreigabe, Transportschutz und ehrliche Inhalte werden getrennt.
 - Der eigene Klasseninterpreter führt ausschließlich seinen geparsten
   JavaScript-Ausschnitt aus. Kein `eval`, `Function`, DOM- oder Netzwerkzugriff
@@ -66,7 +68,9 @@ IT-Modulbereiche und werden hier nicht als abgedeckt ausgewiesen.
 - Der Rasterroboter hat einen idealen Freisensor. Ein Zielkontakt beendet den
   Lauf automatisch. Die Rechtsdrehstrategie löst die drei Übungshöfe, nicht
   beliebige Labyrinthe. Grenzen: 6.000 Zeichen, acht Blockebenen, 1.500
-  Anweisungen und 300 Bewegungen. Der Thermostat ist ein diskreter
+  Anweisungen und 300 Bewegungen. Der Sensorauftrag verlangt eine wirksame
+  Reaktion auf eine blockierte Front: Ein Gegenlauf mit stets freiem Sensor
+  muss einen anderen Bewegungsweg ergeben. Der Thermostat ist ein diskreter
   Zweipunktregler ohne Wärmephysik.
 - Alle KI-Beispiele sind erfunden. Der Trainingsalgorithmus sieht ausschließlich
   ausgewählte Trainingsbeispiele. Die sechs disjunkten Vergleichsfälle werden

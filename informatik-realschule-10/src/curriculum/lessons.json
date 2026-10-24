@@ -18,7 +18,7 @@
         "Das Internet ist eine einzelne Webseite mit vielen Unterseiten.",
         "Web und Internet sind technisch vollständig dasselbe."
       ],
-      "explanation": "Ein Dienst nutzt die Netzinfrastruktur; seine Inhalte und Regeln entstehen zusätzlich."
+      "explanation": "Das Web bietet Webseiten über die Infrastruktur des Internets an; daneben gibt es etwa E-Mail. Eine Webseite ist ein einzelner Inhalt und nicht das gesamte Netz. Deshalb sind Internet und Web keine austauschbaren Begriffe."
     },
     "tasks": {
       "1": {
@@ -65,7 +65,7 @@
         "Jede Nachricht muss auch nachts sofort beantwortet werden.",
         "Die Anzahl der Nachrichten ist das einzige Qualitätskriterium."
       ],
-      "explanation": "Kommunikationsregeln sollen zum Zweck und zu den beteiligten Menschen passen."
+      "explanation": "Vereinbarte Antwortzeiten machen deutlich, wann du mit einer Reaktion rechnen kannst. Sofortige Antworten auch nachts erhöhen den Druck; viele Nachrichten allein sagen nichts über die Qualität der Zusammenarbeit aus."
     },
     "tasks": {
       "1": {
@@ -115,7 +115,7 @@
         "Es entfernt automatisch alle Verbindungsdaten des Dienstes.",
         "Es verhindert technisch jede Verbindung zu einer realen Person."
       ],
-      "explanation": "Ein verdeckter Name ist keine Garantie für Anonymität."
+      "explanation": "Ein Pseudonym verändert den sichtbaren Namen. Verbindungsdaten oder Angaben im Inhalt können trotzdem eine Zuordnung ermöglichen; sie werden durch den anderen Namen nicht automatisch gelöscht."
     },
     "tasks": {
       "1": {
@@ -165,7 +165,7 @@
         "Eine Quellenangabe überträgt automatisch sämtliche Rechte am Foto.",
         "Ein im Internet sichtbares Bild hat grundsätzlich keine geschützten Rechte."
       ],
-      "explanation": "Quelle, Nutzungsbefugnis und Rechte betroffener Personen sind verschiedene Prüffragen."
+      "explanation": "Die Quelle nennt die Herkunft, überträgt aber keine Nutzungsrechte. Bei einem Personenfoto sind außerdem die Rechte der erkennbaren Personen zu prüfen; öffentlich sichtbar bedeutet nicht frei verwendbar."
     },
     "tasks": {
       "1": {
@@ -215,7 +215,7 @@
         "Immer die letzte Regel, unabhängig von ihrer Position.",
         "Jedes Paket wird erlaubt, sobald irgendwo eine Erlaubnis steht."
       ],
-      "explanation": "Regelreihenfolge, genaue Merkmale und der Standardfall bestimmen das Filterergebnis."
+      "explanation": "Der Filter arbeitet die Liste von oben nach unten ab und endet beim ersten Treffer. Eine spätere Freigabe hebt eine frühere passende Sperre deshalb nicht auf; ohne Treffer gilt die Standardaktion."
     },
     "tasks": {
       "1": {
@@ -266,7 +266,7 @@
         "Der öffentlich verteilbare Schlüssel.",
         "Die öffentlich bekannte Beschreibung des Verfahrens."
       ],
-      "explanation": "Geheimhaltung des privaten Schlüssels und Prüfung der Gegenstelle erfüllen unterschiedliche Aufgaben."
+      "explanation": "Der private Schlüssel bleibt geheim, weil er nur seinem vorgesehenen Besitzer zur Verfügung stehen soll. Der öffentliche Schlüssel darf verteilt werden; die Sicherheit soll nicht davon abhängen, dass das Verfahren unbekannt bleibt."
     },
     "tasks": {
       "1": {
@@ -316,7 +316,7 @@
         "Jeder angebotene Artikel wurde von der Zertifizierungsstelle geprüft.",
         "Die Webseite kann danach keine personenbezogenen Daten mehr verarbeiten."
       ],
-      "explanation": "Transportschutz bestätigt weder Wahrheit noch die Vertrauenswürdigkeit eines Geschäftsmodells."
+      "explanation": "HTTPS schützt die Übertragung zur geprüften Gegenstelle. Eine Zertifikatsprüfung bewertet weder das Warenangebot noch die Wahrheit des Inhalts und verhindert nicht, dass die Seite personenbezogene Daten verarbeitet."
     },
     "tasks": {
       "1": {
@@ -366,7 +366,7 @@
         "Nur denselben erfolgreichen Aufruf mehrfach wiederholen.",
         "Nach einem erfolgreichen Aufruf alle Warnmeldungen abschalten."
       ],
-      "explanation": "Ein begründetes Sicherheitsurteil braucht gewünschte Fälle, Gegenproben und benannte Grenzen."
+      "explanation": "Ein erfolgreicher erlaubter Aufruf prüft nur den gewünschten Fall. Unerlaubte Zugriffe und fehlerhafte Zertifikate sind zusätzliche Gegenproben; bloßes Wiederholen desselben Erfolgs oder Abschalten von Warnungen prüft sie nicht."
     },
     "tasks": {
       "1": {
@@ -417,7 +417,7 @@
         "Möglichst viele Fachwörter ohne ein beobachtbares Ergebnis.",
         "Die Forderung, dass das Programm irgendwie modern wirkt."
       ],
-      "explanation": "Eine klare Anforderung verbindet einen beobachtbaren Ablauf mit einer begründeten Erwartung."
+      "explanation": "Ausgangszustand, Aktion und erwartetes Ergebnis lassen sich in einem Test gegenüberstellen. Allgemeine Qualitätswünsche oder bloße Fachwörter liefern noch kein beobachtbares Kriterium dafür, ob die Anforderung erfüllt ist."
     },
     "tasks": {
       "1": {
@@ -467,7 +467,7 @@
         "Die Liste aller möglichen Klassennamen.",
         "Ein Diagramm, in dem grundsätzlich keine Werte vorkommen."
       ],
-      "explanation": "Gemeinsame Methoden bedeuten nicht, dass alle Instanzen dieselben Attributwerte teilen."
+      "explanation": "Eine Instanz ist ein bestimmtes Objekt, dessen Attribute konkrete Werte besitzen. Die Klassendefinition beschreibt den gemeinsamen Typ; sie ist weder eine Liste aller Klassennamen noch ein Ersatz für den Zustand einzelner Objekte."
     },
     "tasks": {
       "1": {
@@ -517,7 +517,7 @@
         "Immer den Parameter schritt des letzten beliebigen Aufrufs.",
         "Eine einzige gemeinsame globale Zahl für alle Klassen."
       ],
-      "explanation": "Die Wirkung eines Aufrufs ergibt sich aus Empfänger, bisherigen Attributen und Argumenten."
+      "explanation": "this bezeichnet im Aufruf die angesprochene Instanz; this.wert ist deren Attribut. Der Parameter schritt liefert dagegen ein Argument für diesen Aufruf und ist kein gemeinsamer Speicher für alle Zähler."
     },
     "tasks": {
       "1": {
@@ -568,7 +568,7 @@
         "Jeder negative Betrag ist automatisch eine gültige Abhebung.",
         "Der Betrag muss größer als das Guthaben sein."
       ],
-      "explanation": "Eine Vorbedingung schützt den vereinbarten Objektzustand vor ungültigen Änderungen."
+      "explanation": "Ein positiver Betrag bis einschließlich des aktuellen Guthabens erhält den vereinbarten Kontozustand. Ein zu großer Betrag würde ihn negativ machen; eine negative Abhebung würde ihn beim Subtrahieren unzulässig erhöhen."
     },
     "tasks": {
       "1": {
@@ -619,7 +619,7 @@
         "Ihr Name kommt als Substantiv im Auftrag vor, unabhängig vom Zweck.",
         "Jede einzelne Zahl muss grundsätzlich eine eigene Klasse bekommen."
       ],
-      "explanation": "Eine Modellentscheidung wird durch den Systemzweck und die Verantwortung der Teile begründet."
+      "explanation": "Eine Klasse bündelt zusammengehörige Zustände und Verhalten für den konkreten Systemzweck. Ein Substantiv im Auftrag ist nur ein Hinweis, kein Beweis für eine eigene Klasse; einzelne Zahlen brauchen ebenfalls nicht automatisch eigene Klassen."
     },
     "tasks": {
       "1": {
@@ -669,7 +669,7 @@
         "a plus c, unabhängig von den Nennern.",
         "b plus d, unabhängig von den Zählern."
       ],
-      "explanation": "Ein korrekter Summenwert und der vereinbarte Umgang mit Ausgangsobjekten werden getrennt geprüft."
+      "explanation": "Beim Erweitern auf den gemeinsamen Nenner b · d werden die Zähler zu a · d und c · b. Deren Summe ist der neue Zähler; bloßes Addieren der alten Zähler oder der Nenner berücksichtigt die unterschiedlichen Bruchteile nicht."
     },
     "tasks": {
       "1": {
@@ -720,7 +720,7 @@
         "Alle möglichen Programmeingaben sind damit mathematisch bewiesen.",
         "Weitere Tests sind nach späteren Änderungen immer überflüssig."
       ],
-      "explanation": "Tests liefern konkrete Evidenz; ihre Auswahl und Reichweite gehören zum Ergebnisbericht."
+      "explanation": "Die Tests belegen das beobachtete Verhalten für die tatsächlich geprüften Eingaben. Sie beweisen nicht automatisch alle anderen Fälle; nach einer Änderung können auch zuvor bestandene Fälle wieder fehlschlagen."
     },
     "tasks": {
       "1": {
@@ -767,7 +767,7 @@
       "question": "Welchen Dezimalwert hat die binäre Zahl 101?",
       "answer": "5.",
       "wrong": ["101.", "3."],
-      "explanation": "Bitmuster erhalten ihre Bedeutung durch eine vereinbarte Codierung und Stellenwerte."
+      "explanation": "Die Stellenwerte von 101 sind 4, 2 und 1: 1 · 4 + 0 · 2 + 1 · 1 = 5. 101 wäre das Ergebnis bei dezimaler Lesart; 3 entsteht nicht aus diesen binären Stellenwerten."
     },
     "tasks": {
       "1": {
@@ -802,7 +802,7 @@
     "intro": "Grundgatter verbinden einfache Bedingungen zu einem gewünschten Verhalten.",
     "paragraphs": [
       "UND ergibt nur dann 1, wenn beide Eingänge 1 sind. ODER ist bereits dann 1, wenn mindestens ein Eingang 1 ist; auch zwei Einsen ergeben 1. NICHT kehrt einen Eingang um. Diese Regeln lassen sich für jede Kombination in einer Wertetabelle festhalten.",
-      "Für eine Schutzschaltung bedeutet A Startsignal und B offene Tür. Der Motor darf nur laufen, wenn A gilt und B nicht gilt. Der Funktionsterm lautet A AND NOT B. Die Werkstatt zeigt dazu alle Kombinationen; der zusätzliche Eingang C hat in dieser Aufgabe keinen Einfluss."
+      "Für eine Schutzschaltung bedeutet A Startsignal und B offene Tür. Der Motor darf nur laufen, wenn A gilt und B nicht gilt. Der Funktionsterm lautet A UND NICHT B. Die Werkstatt zeigt dazu alle Kombinationen; der zusätzliche Eingang C hat in dieser Aufgabe keinen Einfluss."
     ],
     "takeaway": "Gewöhnliches ODER schließt den Fall zweier wahrer Eingänge ein.",
     "sourceIds": ["lp"],
@@ -814,7 +814,7 @@
         "Nur wenn genau ein Eingang 1 ist.",
         "Nur wenn beide Eingänge 0 sind."
       ],
-      "explanation": "Gewöhnliches ODER schließt den Fall zweier wahrer Eingänge ein."
+      "explanation": "ODER liefert bei 01, 10 und 11 den Ausgang 1. Nur bei 00 ist der Ausgang 0; die Einschränkung auf genau einen wahren Eingang gehört zu XOR."
     },
     "tasks": {
       "1": {
@@ -836,7 +836,7 @@
           "Die Bedeutung des Sensors beachten",
           "Den korrekten Term begründen"
         ],
-        "model": "Der Term ist A AND NOT B. Bei Start 1 und offener Tür 1 bleibt der Motor 0. Bei Start 1 und offener Tür 0 wird der Ausgang 1. Das invertierte Türsignal übersetzt die Sensorkodierung in die erlaubte Bedingung.",
+        "model": "Der Term ist A UND NICHT B. Bei Start 1 und offener Tür 1 bleibt der Motor 0. Bei Start 1 und geschlossener Tür (Sensor B = 0) wird der Ausgang 1. Das invertierte Türsignal übersetzt die Sensorkodierung in die erlaubte Bedingung.",
         "criteria": [
           "Die Bedeutung des Sensors beachten",
           "Den korrekten Term begründen",
@@ -853,7 +853,7 @@
     "intro": "Mit n unabhängigen binären Eingängen gibt es zwei hoch n Kombinationen.",
     "paragraphs": [
       "Eine Wertetabelle enthält jede Eingangskombination genau einmal und daneben die zugehörigen Ausgänge. Zwei Eingänge erzeugen vier Zeilen, drei Eingänge acht. So fallen Fälle auf, die bei einem einzelnen Beispiel leicht übersehen werden.",
-      "Klammern machen die Zusammensetzung eines Terms eindeutig. In der Werkstatt bindet NOT stärker als AND und AND stärker als OR. Zusammengesetzte NAND-, NOR- oder XOR-Terme werden am besten ausdrücklich geklammert. Ein Schaltplan stellt dieselben Verknüpfungen als verbundene Gatter dar."
+      "Klammern machen die Zusammensetzung eines Terms eindeutig. In der Werkstatt bindet NICHT stärker als UND und UND stärker als ODER. Zusammengesetzte NAND-, NOR- oder XOR-Terme werden am besten ausdrücklich geklammert. Ein Schaltplan stellt dieselben Verknüpfungen als verbundene Gatter dar."
     ],
     "takeaway": "Eine vollständige Tabelle prüft alle Kombinationen des gewählten binären Eingangsmodells.",
     "sourceIds": ["lp"],
@@ -862,7 +862,7 @@
       "question": "Wie viele Eingangskombinationen müssen bei drei unabhängigen Bits geprüft werden?",
       "answer": "8.",
       "wrong": ["3.", "6."],
-      "explanation": "Eine vollständige Tabelle prüft alle Kombinationen des gewählten binären Eingangsmodells."
+      "explanation": "Jeder der drei Eingänge kann unabhängig 0 oder 1 sein. Deshalb gibt es 2 · 2 · 2 = 8 Kombinationen; weder die Anzahl der Eingänge noch ihre Verdopplung zählt alle Möglichkeiten."
     },
     "tasks": {
       "1": {
@@ -879,7 +879,7 @@
         ]
       },
       "2": {
-        "prompt": "Vergleiche A OR (B AND C) mit (A OR B) AND C an einer Belegung, die verschiedene Ergebnisse liefert.",
+        "prompt": "Vergleiche A ODER (B UND C) mit (A ODER B) UND C an einer Belegung, die verschiedene Ergebnisse liefert.",
         "hints": [
           "Eine unterscheidende Belegung wählen",
           "Beide Ergebnisse schrittweise bestimmen"
@@ -909,7 +909,7 @@
       "question": "Wann liefert XOR bei zwei Eingängen 1?",
       "answer": "Wenn die Eingänge verschieden sind.",
       "wrong": ["Wenn beide Eingänge 1 sind.", "Wenn beide Eingänge 0 sind."],
-      "explanation": "Antivalenz bedeutet verschieden, Äquivalenz bedeutet gleich."
+      "explanation": "XOR ist bei 01 und 10 wahr, weil die Eingänge verschieden sind. Bei 00 und 11 ist es falsch; gleiche Eingänge gehören zum wahren Fall von XNOR."
     },
     "tasks": {
       "1": {
@@ -931,7 +931,7 @@
           "Einen äquivalenten Term angeben",
           "Die zwei verschiedenen Belegungen erklären"
         ],
-        "model": "XOR lässt sich als (A AND NOT B) OR (NOT A AND B) schreiben. Der erste Teil erfasst 10, der zweite 01. Bei 00 und 11 sind beide Teile falsch, sodass der Ausgang 0 bleibt.",
+        "model": "XOR lässt sich als (A UND NICHT B) ODER (NICHT A UND B) schreiben. Der erste Teil erfasst 10, der zweite 01. Bei 00 und 11 sind beide Teile falsch, sodass der Ausgang 0 bleibt.",
         "criteria": [
           "Einen äquivalenten Term angeben",
           "Die zwei verschiedenen Belegungen erklären",
@@ -947,7 +947,7 @@
     "title": "Halbaddierer und Volladdierer",
     "intro": "Eine binäre Summe kann mehr Stellen brauchen als ihre einzelnen Eingaben.",
     "paragraphs": [
-      "Ein Halbaddierer addiert zwei Bits. Das Summenbit ist A XOR B; der Übertrag ist A AND B. Bei 1 plus 1 ergibt sich daher Summe 0 mit Übertrag 1, also die binäre Zahl 10.",
+      "Ein Halbaddierer addiert zwei Bits. Das Summenbit ist A XOR B; der Übertrag ist A UND B. Bei 1 plus 1 ergibt sich daher Summe 0 mit Übertrag 1, also die binäre Zahl 10.",
       "Ein Volladdierer verarbeitet zusätzlich den Eingangsübertrag C. Das Summenbit ist A XOR B XOR C. Der Ausgangsübertrag wird 1, sobald mindestens zwei Eingänge 1 sind. Mehrere Volladdierer können ihre Überträge an die nächste Stelle weitergeben. Die Werkstatt prüft beide Ausgänge für alle acht Belegungen."
     ],
     "takeaway": "Summenbit und Übertrag codieren gemeinsam die Anzahl der eingehenden Einsen.",
@@ -960,7 +960,7 @@
         "Summenbit 0 und Ausgangsübertrag 0.",
         "Summenbit 1 und Ausgangsübertrag 0."
       ],
-      "explanation": "Summenbit und Übertrag codieren gemeinsam die Anzahl der eingehenden Einsen."
+      "explanation": "Drei eingehende Einsen ergeben die Zahl 3. Das Paar aus Summenbit 1 und Übertrag 1 codiert 1 + 2 · 1 = 3; ohne Übertrag wäre nur die Zahl 1 dargestellt."
     },
     "tasks": {
       "1": {
@@ -977,12 +977,12 @@
         ]
       },
       "2": {
-        "prompt": "Ein Volladdierer verwendet für den Übertrag nur A AND B. Finde eine Gegenprobe und erkläre eine Korrektur.",
+        "prompt": "Ein Volladdierer verwendet für den Übertrag nur A UND B. Finde eine Gegenprobe und erkläre eine Korrektur.",
         "hints": [
           "Eine fehleraufdeckende Belegung wählen",
           "Erwarteten und tatsächlichen Übertrag vergleichen"
         ],
-        "model": "Bei A gleich 1, B gleich 0 und C gleich 1 beträgt die Summe 2. Es ist ein Übertrag nötig, aber A AND B liefert 0. Ein passender Term ist (A AND B) OR (C AND (A XOR B)); er berücksichtigt auch den Übertrag aus C und genau einem der anderen Eingänge.",
+        "model": "Bei A gleich 1, B gleich 0 und C gleich 1 beträgt die Summe 2. Es ist ein Übertrag nötig, aber A UND B liefert 0. Ein passender Term ist (A UND B) ODER (C UND (A XOR B)); er berücksichtigt auch den Übertrag aus C und genau einem der anderen Eingänge.",
         "criteria": [
           "Eine fehleraufdeckende Belegung wählen",
           "Erwarteten und tatsächlichen Übertrag vergleichen",
@@ -1011,7 +1011,7 @@
         "Der Ausgang wird unabhängig von vorher immer 0.",
         "Der Ausgang wird unabhängig von vorher immer 1."
       ],
-      "explanation": "Ein Speicher wird durch Eingänge und Vorgeschichte beschrieben; ein verbotener Zustand ist kein gültiger Speicherwert."
+      "explanation": "Bei 00 ist weder Setzen noch Rücksetzen aktiv. Ein bekannter vorheriger Zustand bleibt deshalb erhalten; ohne seine Vorgeschichte lässt sich nicht pauschal 0 oder 1 angeben."
     },
     "tasks": {
       "1": {
@@ -1061,7 +1061,7 @@
         "Ihre Terme enthalten gleich viele Buchstaben.",
         "Ihre Ausgänge stimmen nur bei allen Eingängen gleich 0 überein."
       ],
-      "explanation": "Eine funktionale Gleichheit im Bitmodell ist eine begrenzte, genau prüfbare Aussage."
+      "explanation": "Kombinatorische Schaltungen sind im Bitmodell funktionsgleich, wenn jede mögliche Eingabe dieselben Ausgänge liefert. Gleiche Termlänge oder eine einzelne passende Tabellenzeile reichen dafür nicht aus."
     },
     "tasks": {
       "1": {
@@ -1111,7 +1111,7 @@
         "Ein Sensor als bloßer Messwertgeber.",
         "Eine Datei mit einer Anleitung."
       ],
-      "explanation": "Sensor, Verarbeitung und Aktor haben unterschiedliche Rollen in derselben Wirkungskette."
+      "explanation": "Ein Aktor wirkt auf die physische Umgebung, etwa durch die Drehung eines Motors. Ein Sensor liefert eine Messung und eine Anleitung beschreibt einen Ablauf; beides führt für sich noch keine Motorbewegung aus."
     },
     "tasks": {
       "1": {
@@ -1158,7 +1158,7 @@
         "Nur einmal beim Programmstart, unabhängig von späteren Positionen.",
         "Erst nachdem er bereits durch das Hindernis gefahren ist."
       ],
-      "explanation": "Eine situationsabhängige Bewegung braucht die passende Messung zur passenden Zeit."
+      "explanation": "Vor jedem Vorwärtsschritt sind Position und Blickrichtung möglicherweise anders als zuvor. Eine Messung nur am Start kann deshalb veraltet sein; eine Prüfung nach der Kollision kann die schon ausgeführte Bewegung nicht verhindern."
     },
     "tasks": {
       "1": {
@@ -1205,10 +1205,10 @@
       "question": "Was gehört zu einem nachvollziehbaren Zustandsübergang?",
       "answer": "Ausgangszustand, Bedingung oder Ereignis und Zielzustand.",
       "wrong": [
-        "Nur die Farbe eines Zustandskastens.",
-        "Eine Liste aller Dateinamen ohne Bedingungen."
+        "Nur der aktuelle Messwert ohne Ausgangszustand.",
+        "Eine Aktionsfolge ohne Bedingungen oder festgelegten Zielzustand."
       ],
-      "explanation": "Ein Zustandsmodell beschreibt mögliche Übergänge und die Bedingungen, unter denen sie gelten."
+      "explanation": "Ein Übergang beschreibt, von welchem Zustand das System unter welcher Bedingung in welchen Zielzustand wechselt. Ein Messwert oder eine bloße Aktionsfolge ohne diese Zuordnung beschreibt den Übergang noch nicht vollständig."
     },
     "tasks": {
       "1": {
@@ -1258,7 +1258,7 @@
         "Es gibt grundsätzlich keine Messwerte.",
         "Eine Aktion wird immer nur nach einer Uhrzeit beendet."
       ],
-      "explanation": "Rückkopplung unterscheidet die Regelung von einer bloßen festen Aktionsfolge."
+      "explanation": "Die Rückführung des gemessenen Istwerts beeinflusst die nächste Entscheidung. Ein fester Zeitablauf ohne Rückmeldung steuert dagegen nur eine Aktion und prüft nicht, ob der gewünschte Zustand erreicht wurde."
     },
     "tasks": {
       "1": {
@@ -1308,7 +1308,7 @@
         "Weil ein Erfolg auf einem Hof bereits jede weitere Umgebung beweist.",
         "Damit die Sollposition während des Tests zufällig verschoben werden kann."
       ],
-      "explanation": "Ein übertragbares Verhalten muss gegen gezielt veränderte Situationen geprüft werden."
+      "explanation": "Veränderte Höfe prüfen, ob das Programm an seinem ersten Beispielweg hängt. Ein einzelner Erfolg ist kein Beleg für beliebige Umgebungen; die Ziele bleiben während jedes Tests fest."
     },
     "tasks": {
       "1": {
@@ -1359,7 +1359,7 @@
         "Ein Erfolg ersetzt jede Montage und jede reale Sicherheitsprüfung.",
         "Das Modell misst den tatsächlichen Akkuzustand eines Roboters."
       ],
-      "explanation": "Digitale Evidenz muss an den modellierten Eigenschaften gemessen werden."
+      "explanation": "Der Rasterlauf überprüft nur die modellierten Positionen und idealen Messungen. Sensorstreuung, Radschlupf und Akkuzustand werden nicht real gemessen; dafür brauchst du zusätzliche Hardwareversuche."
     },
     "tasks": {
       "1": {
@@ -1403,13 +1403,13 @@
     "sourceIds": ["lp", "ml"],
     "prerequisites": [],
     "quiz": {
-      "question": "Welche Frage hilft bei der fachlichen Einordnung eines KI-Systems?",
+      "question": "Welche Frage untersucht die Arbeitsweise eines KI-Systems am treffendsten?",
       "answer": "Welche Eingaben verarbeitet es nach welchem Ansatz zu welchen Ausgaben?",
       "wrong": [
-        "Welche Farbe hat das Firmenlogo?",
-        "Wie oft wird das Wort intelligent in der Werbung wiederholt?"
+        "Kann es viele Daten speichern und feste Befehle schnell abarbeiten?",
+        "Verändert es seine Regeln bei jeder einzelnen Nutzung automatisch?"
       ],
-      "explanation": "Die tatsächliche Aufgabe und Arbeitsweise sind aussagekräftiger als ein KI-Etikett."
+      "explanation": "Eingaben, Ansatz und Ausgaben zeigen, welche Aufgabe das System wie löst. Schnelle Datenverarbeitung allein belegt keinen KI-Ansatz; auch ein KI-System muss seine Regeln nicht bei jeder Nutzung neu lernen."
     },
     "tasks": {
       "1": {
@@ -1459,7 +1459,7 @@
         "Ob das Ergebnis als Zahl oder als Wort angezeigt wird.",
         "Ob bei jedem Aufruf zwingend eine Internetverbindung besteht."
       ],
-      "explanation": "Der Ursprung einer Regel entscheidet über den Ansatz; dieselbe Ausgabe kann auf verschiedenen Wegen entstehen."
+      "explanation": "Eine Fachperson kann die Regel ausdrücklich vorgeben, während ein Lernverfahren sie aus Trainingsbeispielen ermittelt. Ausgabeformat und Internetzugang unterscheiden diese Entstehungswege nicht."
     },
     "tasks": {
       "1": {
@@ -1509,7 +1509,7 @@
         "Nur eine Belohnung nach einer Aktionsfolge ohne Zielklasse pro Beispiel.",
         "Unbeschriftete Beispiele ohne vorgegebene Zielklassen."
       ],
-      "explanation": "Die Art der Rückmeldung unterscheidet überwachte, unüberwachte und verstärkende Lernaufgaben."
+      "explanation": "Beim überwachten Lernen geben die Zielklassen an, welche Zuordnung gelernt werden soll. Unbeschriftete Beispiele kennzeichnen eine unüberwachte Aufgabe; eine Belohnung nach Aktionen ist eine andere Rückmeldungsart."
     },
     "tasks": {
       "1": {
@@ -1556,10 +1556,10 @@
       "question": "Was ist in einer überwachten Klassifikation das Label?",
       "answer": "Die vorgegebene Zielklasse eines Trainingsbeispiels.",
       "wrong": [
-        "Die zufällige Reihenfolge der angezeigten Beispiele.",
-        "Die Zahl der installierten Programme auf dem Gerät."
+        "Ein Eingabewert wie der Massewert des Objekts.",
+        "Jede Modellvorhersage, die das richtige Trainingslabel automatisch ersetzt."
       ],
-      "explanation": "Merkmale sind Eingaben; Labels liefern die Zielinformation für das überwachte Lernen."
+      "explanation": "Das Label ist die Zielklasse, an der das überwachte Verfahren seine Zuordnung lernt. Ein Merkmal wie die Masse ist dagegen Eingabe; eine Modellvorhersage ist nicht automatisch ein korrektes Trainingslabel."
     },
     "tasks": {
       "1": {
@@ -1603,10 +1603,10 @@
       "question": "Was beschreibt ein Blatt unseres Klassifikationsbaums?",
       "answer": "Die vorhergesagte Klasse für die dort ankommenden Beispiele.",
       "wrong": [
-        "Den Namen eines unbenutzten Netzwerkports.",
-        "Eine neue Zufallszahl, die das Label grundsätzlich ignoriert."
+        "Eine Trennfrage, die Eingaben an weitere Knoten verteilt.",
+        "Die Gesamtliste aller Trainingsbeispiele ohne Vorhersage."
       ],
-      "explanation": "Ein Baum besteht aus gelernten Trennfragen und Klassenentscheidungen an seinen Blättern."
+      "explanation": "Ein Blatt liefert die Klasse für den bereits durchlaufenen Pfad. Trennfragen gehören zu inneren Knoten; die Trainingsliste allein ist noch keine Vorhersage für ein neues Objekt."
     },
     "tasks": {
       "1": {
@@ -1657,7 +1657,7 @@
         "Trainingsdaten enthalten grundsätzlich niemals Zielklassen.",
         "Ein Modell kann auf Trainingsdaten prinzipiell keine richtige Antwort geben."
       ],
-      "explanation": "Wiederholt zur Anpassung verwendete Testdaten sind keine unangetastete Abschlussprüfung mehr."
+      "explanation": "Die Regeln wurden anhand der Trainingsbeispiele ausgewählt und können gerade deren Besonderheiten ausnutzen. Gute Trainingstreffer zeigen deshalb noch nicht, wie gut passende neue Beispiele eingeordnet werden."
     },
     "tasks": {
       "1": {
@@ -1707,7 +1707,7 @@
         "Jede Verbesserung auf neuen Beispielen ist automatisch ein Fehler.",
         "Ein tieferer Baum ist unter allen Umständen immer schlechter."
       ],
-      "explanation": "Bewerte Modellkomplexität mit getrennten Daten und prüfe, welche Fälle die Auswahl überhaupt abdeckt."
+      "explanation": "Eine große Lücke zwischen Training und passenden neuen Fällen kann auf Überanpassung hinweisen. Die Tiefe allein entscheidet das nicht: Ein größerer Baum kann auch sinnvoll sein, wenn sich die getrennten Ergebnisse verbessern."
     },
     "tasks": {
       "1": {
@@ -1724,7 +1724,7 @@
         ]
       },
       "2": {
-        "prompt": "Ein tiefer Baum erreicht 12 von 12 im Training, aber 4 von 6 im Vergleich; ein flacher erreicht 11 von 12 und 6 von 6. Was lässt sich daraus folgern und was bleibt offen?",
+        "prompt": "In der Werkstatt mit allen zwölf Trainingsbeispielen und beiden Merkmalen: Ein Baum mit Tiefe 4 erreicht 12 von 12 im Training, aber 5 von 6 im Vergleich; ein Baum mit Tiefe 1 erreicht 11 von 12 und 6 von 6. Was lässt sich daraus folgern und was bleibt offen?",
         "hints": [
           "Beide Ergebnisarten vergleichen",
           "Den Befund als möglichen Overfitting-Hinweis erklären"
@@ -1757,7 +1757,7 @@
         "Die Berechnung der bereits gemessenen richtigen Ergebnisse.",
         "Die Möglichkeit, zwei Testzahlen miteinander zu vergleichen."
       ],
-      "explanation": "Die Qualität einer Anwendung hängt auch von Zweck, Folgen und überprüfbarer Verantwortung ab."
+      "explanation": "Eine Trefferquote misst Ergebnisse für die geprüften Fälle, nicht die Folgen jeder möglichen Nutzung. Einsatzkontext, betroffene Menschen und Zuständigkeiten brauchen deshalb zusätzlich eine begründete Prüfung."
     },
     "tasks": {
       "1": {

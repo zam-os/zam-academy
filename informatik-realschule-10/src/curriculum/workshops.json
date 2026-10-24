@@ -501,12 +501,12 @@
   },
   "it10-speicher": {
     "title": "Den NOR-Speicher verfolgen",
-    "instruction": "Q war zuletzt 1. Betrachte die Eingabepaare jeweils aus diesem bekannten Zustand. S = R = 1 ist verboten.",
+    "instruction": "Q war zuletzt 1. Betrachte jedes Eingangspaar einzeln aus diesem bekannten Zustand. Ordne die ausgelöste Operation zu; Setzen auf einen bereits gesetzten Wert ändert Q nicht. S = R = 1 ist verboten.",
     "categories": [
-      "Q wird 1",
-      "Q wird 0",
-      "Q bleibt 1",
-      "Kein gültiger Speicherwert"
+      "Setzen (Q = 1)",
+      "Rücksetzen (Q = 0)",
+      "Halten (Q bleibt 1)",
+      "Verbotener Eingangszustand"
     ],
     "entries": [
       {
@@ -522,7 +522,7 @@
       {
         "text": "S = 1, R = 0",
         "target": 0,
-        "feedback": "S setzt den Ausgang auf 1."
+        "feedback": "S ist aktiv und setzt Q auf 1. Weil Q vorher schon 1 war, bleibt der Bitwert dabei gleich; die Operation ist trotzdem Setzen."
       },
       {
         "text": "S = 1, R = 1",

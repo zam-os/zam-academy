@@ -11,6 +11,10 @@ export interface Rule {
   port: number | "any";
   action: "allow" | "deny";
 }
+export const NETWORK_STARTER: Rule[] = [
+  { direction: "out", protocol: "TCP", port: 80, action: "allow" },
+  { direction: "out", protocol: "UDP", port: 53, action: "allow" },
+];
 export interface Decision {
   allowed: boolean;
   rule: number | null;
@@ -63,7 +67,7 @@ export const NETWORK_CASES: NetworkCase[] = [
     expected: false,
   },
   {
-    label: "Unangeforderter Zugriff von außen",
+    label: "Eingehendes Paket zu Zielport 443; keine Antworterkennung",
     direction: "in",
     protocol: "TCP",
     port: 443,
@@ -81,6 +85,13 @@ export const NETWORK_CASES: NetworkCase[] = [
     direction: "out",
     protocol: "UDP",
     port: 9000,
+    expected: false,
+  },
+  {
+    label: "Mögliches Rückpaket an Client-Zielport 51234; im Modell gesperrt",
+    direction: "in",
+    protocol: "TCP",
+    port: 51234,
     expected: false,
   },
   {

@@ -56,13 +56,13 @@ cd uml                 # or: cd physik-realschule-9 (dev server on :5181), cd sq
 # BwR 9: cd bwr-realschule-9 (dev server on :5191)
 # Wirtschaft und Recht 9: cd wirtschaft-recht-realschule-9 (dev server on :5192)
 # Deutsch 9: cd deutsch-realschule-9 (dev server on :5193)
-# Informatik 10: cd informatik-realschule-10 (dev server on :5200)
 # Mathematik 10: cd mathematik-realschule-10 (dev server on :5194)
 # Mathematik 7: cd mathematik-realschule-7 (dev server on :5195)
 # Physik 8: cd physik-realschule-8 (dev server on :5196)
 # Mathematik 8: cd mathematik-realschule-8 (dev server on :5197)
 # Englisch 9: cd englisch-realschule-9 (dev server on :5198)
 # Französisch 9: cd franzoesisch-realschule-9 (dev server on :5199)
+# Informatik 10: cd informatik-realschule-10 (dev server on :5200)
 npm ci
 npm run dev      # http://localhost:5180/uml/
 npm test

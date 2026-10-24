@@ -13,7 +13,7 @@
     {
       "id": "netze",
       "module": "2.5.2",
-      "title": "Sicher im Netz",
+      "title": "Datennetze II",
       "kind": "Wahlmodul",
       "hours": 14,
       "lessons": [
@@ -36,7 +36,8 @@
             "it10-datenspuren",
             "it10-sicherheitskonzept"
           ],
-          "practice": "Eigene Nutzung mit erfundenen Fällen vergleichen und ein begründetes Kommunikationskonzept schreiben."
+          "practice": "Eigene Nutzung mit erfundenen Fällen vergleichen und ein begründetes Kommunikationskonzept schreiben.",
+          "competence": "bewerten Chancen und Risiken der eigenen Kommunikationsgewohnheiten vor dem Hintergrund gesellschaftlicher Aspekte beim Umgang mit Internetdiensten."
         },
         {
           "id": "2.5.2-k2",
@@ -46,7 +47,8 @@
             "it10-rechte",
             "it10-sicherheitskonzept"
           ],
-          "practice": "Zweck, Datenbedarf, Personenrechte und Nutzungsbefugnisse in getrennten Prüfschritten bearbeiten; eigene reale Veröffentlichungen zusätzlich im Unterricht klären."
+          "practice": "Zweck, Datenbedarf, Personenrechte und Nutzungsbefugnisse in getrennten Prüfschritten bearbeiten; eigene reale Veröffentlichungen zusätzlich im Unterricht klären.",
+          "competence": "setzen ihre Kenntnisse über die rechtlichen Regelungen und die ethischen Konsequenzen der Verwendung von personenbezogenen Daten (z. B. Fotos) bei ihrer eigenen digitalen Kommunikation um."
         },
         {
           "id": "2.5.2-k3",
@@ -57,7 +59,8 @@
             "it10-https",
             "it10-sicherheitskonzept"
           ],
-          "practice": "Geordneten Paketfilter bearbeiten, sieben erlaubte und verbotene Verbindungen testen; Verschlüsselung, Zertifikatsvertrauen, Hostname und Gültigkeit separat prüfen."
+          "practice": "Geordneten Paketfilter bearbeiten, acht Anfrage- und Eingangsbeispiele sowie weitere Portklassen testen. Das zustandslose Modell sperrt auch Rückpakete; Verschlüsselung, Zertifikatsvertrauen, Hostname und Gültigkeit werden als getrennte Eigenschaften geprüft.",
+          "competence": "ergreifen durch den Einsatz einer Firewall und verschlüsselter Verbindungen Maßnahmen zur Absicherung eines Netzwerks (z. B. anhand einer Simulationssoftware)."
         }
       ],
       "content_map": [
@@ -92,7 +95,7 @@
     {
       "id": "objekte",
       "module": "2.6.2",
-      "title": "Mit Objekten programmieren",
+      "title": "Objektorientierte Softwareentwicklung",
       "kind": "Wahlmodul",
       "hours": 14,
       "lessons": [
@@ -109,13 +112,15 @@
           "id": "2.6.2-k1",
           "focus": "Anforderungen analysieren und objektorientierte Modelle darstellen",
           "lessons": ["it10-analyse", "it10-klasse", "it10-modellstruktur"],
-          "practice": "Typ, Attribute, Methoden, Instanzen und Verantwortungen erklären; frei gezeichnete standardisierte Diagramme zusätzlich im Unterricht oder der UML-App erstellen."
+          "practice": "Typ, Attribute, Methoden, Instanzen und Verantwortungen erklären; frei gezeichnete standardisierte Diagramme zusätzlich im Unterricht oder der UML-App erstellen.",
+          "competence": "analysieren Aufgabenstellungen (z. B. Programm für das Rechnen mit Brüchen) und erstellen hierfür objektorientierte Modelle unter Verwendung standardisierter Notationsformen."
         },
         {
           "id": "2.6.2-k2",
           "focus": "Algorithmen für Methoden entwickeln",
           "lessons": ["it10-methoden", "it10-invarianten", "it10-bruch"],
-          "practice": "Zustandsänderung, Eingabebedingungen und wertgleiche Bruchaddition im selbst geschriebenen Methodenkörper umsetzen."
+          "practice": "Zustandsänderung, Eingabebedingungen und wertgleiche Bruchaddition im selbst geschriebenen Methodenkörper umsetzen.",
+          "competence": "entwickeln Lösungsansätze mithilfe von Algorithmen (z. B. für eine Methode zur Addition zweier Brüche)."
         },
         {
           "id": "2.6.2-k3",
@@ -126,18 +131,20 @@
             "it10-invarianten",
             "it10-bruch"
           ],
-          "practice": "Eigene Klassen im begrenzten textuellen Interpreter schreiben; constructor, this-Attribute, Parameter, if/else, return und neue Instanzen ausführen."
+          "practice": "Eigene Klassen im begrenzten textuellen Interpreter schreiben; constructor, this-Attribute, Parameter, if/else, return und neue Instanzen ausführen.",
+          "competence": "implementieren objektorientierte Programme mit einem geeigneten Programmierwerkzeug."
         },
         {
           "id": "2.6.2-k4",
-          "focus": "Programme testen, optimieren und warten",
+          "focus": "Objektorientierte Programme testen und optimieren",
           "lessons": [
             "it10-analyse",
             "it10-invarianten",
             "it10-bruch",
             "it10-testen"
           ],
-          "practice": "Mehrere Beispiel- und Grenztests, getrennte Instanzen, Rückgaben und unveränderte Eingänge prüfen; Änderung und Regression begründen."
+          "practice": "Mehrere Beispiel- und Grenztests, getrennte Instanzen, Rückgaben und unveränderte Eingänge prüfen; Änderung und Regression begründen.",
+          "competence": "testen und optimieren ihre objektorientierten Programme."
         }
       ],
       "content_map": [
@@ -179,19 +186,22 @@
           "id": "2.7.1-k1",
           "focus": "Digitale Anwendungsfälle mit Grundschaltungen modellieren",
           "lessons": ["it10-bits", "it10-gatter", "it10-xor"],
-          "practice": "Schutzschaltung und Antivalenz aus eigener Boolescher Eingabe berechnen."
+          "practice": "Schutzschaltung und Antivalenz aus eigener Boolescher Eingabe berechnen.",
+          "competence": "beschreiben und modellieren einfache Anwendungsbeispiele digitaler Logik (z. B. Schutzschalter) mithilfe logischer Grundschaltungen."
         },
         {
           "id": "2.7.1-k2",
           "focus": "Wertetabellen und Funktionsterme vergleichen",
           "lessons": ["it10-wertetabelle", "it10-xor", "it10-schaltungstest"],
-          "practice": "Alle acht Belegungen von A, B und C prüfen und den berechneten Gatterbaum interaktiv verfolgen; normgerechte Schaltpläne zusätzlich zeichnen."
+          "practice": "Alle acht Belegungen von A, B und C prüfen und den berechneten Gatterbaum interaktiv verfolgen; normgerechte Schaltpläne zusätzlich zeichnen.",
+          "competence": "verwenden Schaltpläne, Wertetabellen und Funktionsterme, um kombinierte logische Grundschaltungen (z. B. Lichtschaltung im Treppenhaus als Antivalenzschaltung) darstellen zu können."
         },
         {
           "id": "2.7.1-k3",
           "focus": "Eine Rechenwerksfunktion modellieren",
           "lessons": ["it10-addierer"],
-          "practice": "Summenbit und Übertrag eines Volladdierers getrennt implementieren und für alle acht Kombinationen prüfen."
+          "practice": "Summenbit und Übertrag eines Volladdierers getrennt implementieren und für alle acht Kombinationen prüfen.",
+          "competence": "analysieren und modellieren eine Funktionalität des Rechenwerks (z. B. Addition zweier Dualzahlen) mithilfe logischer Schaltungen."
         },
         {
           "id": "2.7.1-k4",
@@ -203,7 +213,8 @@
             "it10-speicher",
             "it10-schaltungstest"
           ],
-          "practice": "Eigene Terme mit unabhängigen Erwartungswerten vergleichen, Gegenbeispiele verwenden; NOR-RS-Speicher mit ausdrücklich ungültigem Zustand 11 untersuchen."
+          "practice": "Eigene Terme mit unabhängigen Erwartungswerten vergleichen, Gegenbeispiele verwenden; NOR-RS-Speicher mit ausdrücklich ungültigem Zustand 11 untersuchen.",
+          "competence": "implementieren Modelle digitaler Schaltungen (z. B. mit Technikbaukasten oder Simulationssoftware), um das richtige Schaltverhalten testen und optimieren zu können."
         }
       ],
       "content_map": [
@@ -228,7 +239,7 @@
     {
       "id": "robotik",
       "module": "2.7.2",
-      "title": "Roboter steuern",
+      "title": "Robotik und eingebettete Systeme",
       "kind": "Wahlmodul",
       "hours": 14,
       "lessons": [
@@ -244,7 +255,8 @@
           "id": "2.7.2-k1",
           "focus": "Bauteile und Informationsverarbeitung erklären",
           "lessons": ["it10-roboter", "it10-sensoren", "it10-regelung"],
-          "practice": "Sensor, Verarbeitung und Aktor an Aufgaben zuordnen; idealen Freisensor und einfachen Modellthermostat verändern."
+          "practice": "Sensor, Verarbeitung und Aktor an Aufgaben zuordnen; idealen Freisensor und einfachen Modellthermostat verändern.",
+          "competence": "beschreiben das Zusammenspiel von Bauteilen (z. B. Sensoren, Aktoren) und die Informationsverarbeitung eines Roboters bzw. eines eingebetteten Systems und dessen situationsbezogene Interaktion mit der physischen Welt."
         },
         {
           "id": "2.7.2-k2",
@@ -254,19 +266,22 @@
             "it10-regelung",
             "it10-roboterprogramm"
           ],
-          "practice": "Übergänge, Bedingungen und Prioritäten beschreiben, anschließend an der Programmspur nachvollziehen. Freies standardisiertes Zustandsdiagramm zusätzlich zeichnen."
+          "practice": "Übergänge, Bedingungen und Prioritäten beschreiben, anschließend an der Programmspur nachvollziehen. Freies standardisiertes Zustandsdiagramm zusätzlich zeichnen.",
+          "competence": "erzeugen Modelle, um Zustände und Verhalten eines Roboters bzw. eines eingebetteten Systems zu planen."
         },
         {
           "id": "2.7.2-k3",
           "focus": "Passende Bauteile auswählen und einen Aufbau ausstatten",
           "lessons": ["it10-roboter", "it10-sensoren", "it10-robotertest"],
-          "practice": "Bauteilauswahl in eigenen Begründungen; reale Montage und Hardwareprüfung bleiben ausdrücklich zusätzlicher Unterricht."
+          "practice": "Bauteilauswahl in eigenen Begründungen; reale Montage und Hardwareprüfung bleiben ausdrücklich zusätzlicher Unterricht.",
+          "competence": "statten einen Roboter bzw. ein eingebettetes System mit den zur Lösung einer Aufgabe nötigen Bauteilen (z. B. Sensoren, Aktoren) aus."
         },
         {
           "id": "2.7.2-k4",
           "focus": "Programme implementieren, testen und optimieren",
           "lessons": ["it10-roboterprogramm", "it10-robotertest"],
-          "practice": "Rasterprogramm mit Wiederholung und Sensorauswahl schreiben, auf drei Höfen ausführen, Kollisionen und begrenzte Spuren prüfen; reale Sensorstreuung zusätzlich erproben."
+          "practice": "Rasterprogramm mit Wiederholung und Sensorauswahl schreiben, auf drei Höfen ausführen, Kollisionen und begrenzte Spuren prüfen; reale Sensorstreuung zusätzlich erproben.",
+          "competence": "implementieren, testen und optimieren ein Programm, um mit dem konstruierten Roboter bzw. eingebetteten System eine Aufgabe zu lösen (z. B. Folgen einer Linie)."
         }
       ],
       "content_map": [
@@ -291,7 +306,7 @@
     {
       "id": "ki",
       "module": "2.7.3",
-      "title": "KI verstehen und beurteilen",
+      "title": "Künstliche Intelligenz",
       "kind": "Wahlmodul",
       "hours": 14,
       "lessons": [
@@ -309,13 +324,15 @@
           "id": "2.7.3-k1",
           "focus": "KI-Merkmale und Anwendungsgebiete untersuchen",
           "lessons": ["it10-ki-beispiele", "it10-ki-verantwortung"],
-          "practice": "Eingabe, Verarbeitung und Ausgabe vergleichen; generierte Form von fachlich belegtem Inhalt trennen."
+          "practice": "Eingabe, Verarbeitung und Ausgabe vergleichen; generierte Form von fachlich belegtem Inhalt trennen.",
+          "competence": "beschreiben Merkmale und Anwendungsgebiete Künstlicher Intelligenz, indem sie Beispiele KI-gestützter Systeme untersuchen."
         },
         {
           "id": "2.7.3-k2",
           "focus": "Wissensbasierte und lernende Ansätze unterscheiden",
           "lessons": ["it10-wissensregeln", "it10-lernarten", "it10-merkmale"],
-          "practice": "Vorgegebene Regeln mit aus Daten ermittelten Trennfragen vergleichen; Lernarten nach ihrer Zielinformation einordnen."
+          "practice": "Vorgegebene Regeln mit aus Daten ermittelten Trennfragen vergleichen; Lernarten nach ihrer Zielinformation einordnen.",
+          "competence": "unterscheiden maschinelles Lernen und wissensbasierte Ansätze Künstlicher Intelligenz, indem sie exemplarisch die jeweiligen Herangehensweisen untersuchen."
         },
         {
           "id": "2.7.3-k3",
@@ -326,17 +343,19 @@
             "it10-testdaten",
             "it10-bias"
           ],
-          "practice": "Beispiele und Merkmale auswählen, einen numerischen Entscheidungsbaum mit Gini-Unreinheit tatsächlich lokal trainieren; bekannte und getrennte Fälle auswerten, Auswahlverzerrung und Tiefe vergleichen."
+          "practice": "Beispiele und Merkmale auswählen, einen numerischen Entscheidungsbaum mit Gini-Unreinheit tatsächlich lokal trainieren; bekannte und getrennte Fälle auswerten, Auswahlverzerrung und Tiefe vergleichen.",
+          "competence": "wenden ein Verfahren aus dem Bereich des überwachten Lernens (z. B. Entscheidungsbaum-Algorithmus) an und bewerten das resultierende Modell."
         },
         {
           "id": "2.7.3-k4",
-          "focus": "Chancen, Risiken und Verantwortung diskutieren",
+          "focus": "Chancen, Risiken und Herausforderungen für Individuum und Gesellschaft diskutieren",
           "lessons": [
             "it10-ki-beispiele",
             "it10-bias",
             "it10-ki-verantwortung"
           ],
-          "practice": "Eigenes begründetes Urteil mit Kriterien; gemeinsame Diskussion und Präsentation bleiben ergänzende Leistungen."
+          "practice": "Eigenes begründetes Urteil mit Kriterien; gemeinsame Diskussion und Präsentation bleiben ergänzende Leistungen.",
+          "competence": "diskutieren Chancen, Risiken und Herausforderungen des Einsatzes Künstlicher Intelligenz für Individuum und Gesellschaft."
         }
       ],
       "content_map": [
@@ -398,7 +417,7 @@
     {
       "lb": 2,
       "module": "2.5.2",
-      "competence": "Kommunikationsnutzung mit Chancen und Risiken beurteilen",
+      "competence": "bewerten Chancen und Risiken der eigenen Kommunikationsgewohnheiten vor dem Hintergrund gesellschaftlicher Aspekte beim Umgang mit Internetdiensten.",
       "lessons": [
         "it10-internet",
         "it10-kommunikation",
@@ -410,40 +429,40 @@
     {
       "lb": 2,
       "module": "2.5.2",
-      "competence": "Personenbezogene Daten, Rechte und ethische Folgen berücksichtigen",
+      "competence": "setzen ihre Kenntnisse über die rechtlichen Regelungen und die ethischen Konsequenzen der Verwendung von personenbezogenen Daten (z. B. Fotos) bei ihrer eigenen digitalen Kommunikation um.",
       "lessons": ["it10-datenspuren", "it10-rechte", "it10-sicherheitskonzept"],
       "evidence": "Zweck, Datenbedarf, Personenrechte und Nutzungsbefugnisse in getrennten Prüfschritten bearbeiten; eigene reale Veröffentlichungen zusätzlich im Unterricht klären."
     },
     {
       "lb": 2,
       "module": "2.5.2",
-      "competence": "Filterregeln und geschützte Verbindungen gezielt einsetzen",
+      "competence": "ergreifen durch den Einsatz einer Firewall und verschlüsselter Verbindungen Maßnahmen zur Absicherung eines Netzwerks (z. B. anhand einer Simulationssoftware).",
       "lessons": [
         "it10-firewall",
         "it10-schluessel",
         "it10-https",
         "it10-sicherheitskonzept"
       ],
-      "evidence": "Geordneten Paketfilter bearbeiten, sieben erlaubte und verbotene Verbindungen testen; Verschlüsselung, Zertifikatsvertrauen, Hostname und Gültigkeit separat prüfen."
+      "evidence": "Geordneten Paketfilter bearbeiten, acht Anfrage- und Eingangsbeispiele sowie weitere Portklassen testen. Das zustandslose Modell sperrt auch Rückpakete; Verschlüsselung, Zertifikatsvertrauen, Hostname und Gültigkeit werden als getrennte Eigenschaften geprüft."
     },
     {
       "lb": 2,
       "module": "2.6.2",
-      "competence": "Anforderungen analysieren und objektorientierte Modelle darstellen",
+      "competence": "analysieren Aufgabenstellungen (z. B. Programm für das Rechnen mit Brüchen) und erstellen hierfür objektorientierte Modelle unter Verwendung standardisierter Notationsformen.",
       "lessons": ["it10-analyse", "it10-klasse", "it10-modellstruktur"],
       "evidence": "Typ, Attribute, Methoden, Instanzen und Verantwortungen erklären; frei gezeichnete standardisierte Diagramme zusätzlich im Unterricht oder der UML-App erstellen."
     },
     {
       "lb": 2,
       "module": "2.6.2",
-      "competence": "Algorithmen für Methoden entwickeln",
+      "competence": "entwickeln Lösungsansätze mithilfe von Algorithmen (z. B. für eine Methode zur Addition zweier Brüche).",
       "lessons": ["it10-methoden", "it10-invarianten", "it10-bruch"],
       "evidence": "Zustandsänderung, Eingabebedingungen und wertgleiche Bruchaddition im selbst geschriebenen Methodenkörper umsetzen."
     },
     {
       "lb": 2,
       "module": "2.6.2",
-      "competence": "Objektorientierte Programme implementieren",
+      "competence": "implementieren objektorientierte Programme mit einem geeigneten Programmierwerkzeug.",
       "lessons": [
         "it10-klasse",
         "it10-methoden",
@@ -455,7 +474,7 @@
     {
       "lb": 2,
       "module": "2.6.2",
-      "competence": "Programme testen, optimieren und warten",
+      "competence": "testen und optimieren ihre objektorientierten Programme.",
       "lessons": [
         "it10-analyse",
         "it10-invarianten",
@@ -467,28 +486,28 @@
     {
       "lb": 2,
       "module": "2.7.1",
-      "competence": "Digitale Anwendungsfälle mit Grundschaltungen modellieren",
+      "competence": "beschreiben und modellieren einfache Anwendungsbeispiele digitaler Logik (z. B. Schutzschalter) mithilfe logischer Grundschaltungen.",
       "lessons": ["it10-bits", "it10-gatter", "it10-xor"],
       "evidence": "Schutzschaltung und Antivalenz aus eigener Boolescher Eingabe berechnen."
     },
     {
       "lb": 2,
       "module": "2.7.1",
-      "competence": "Wertetabellen und Funktionsterme vergleichen",
+      "competence": "verwenden Schaltpläne, Wertetabellen und Funktionsterme, um kombinierte logische Grundschaltungen (z. B. Lichtschaltung im Treppenhaus als Antivalenzschaltung) darstellen zu können.",
       "lessons": ["it10-wertetabelle", "it10-xor", "it10-schaltungstest"],
       "evidence": "Alle acht Belegungen von A, B und C prüfen und den berechneten Gatterbaum interaktiv verfolgen; normgerechte Schaltpläne zusätzlich zeichnen."
     },
     {
       "lb": 2,
       "module": "2.7.1",
-      "competence": "Eine Rechenwerksfunktion modellieren",
+      "competence": "analysieren und modellieren eine Funktionalität des Rechenwerks (z. B. Addition zweier Dualzahlen) mithilfe logischer Schaltungen.",
       "lessons": ["it10-addierer"],
       "evidence": "Summenbit und Übertrag eines Volladdierers getrennt implementieren und für alle acht Kombinationen prüfen."
     },
     {
       "lb": 2,
       "module": "2.7.1",
-      "competence": "Digitale Schaltungen implementieren, testen und verbessern",
+      "competence": "implementieren Modelle digitaler Schaltungen (z. B. mit Technikbaukasten oder Simulationssoftware), um das richtige Schaltverhalten testen und optimieren zu können.",
       "lessons": [
         "it10-gatter",
         "it10-xor",
@@ -501,59 +520,60 @@
     {
       "lb": 2,
       "module": "2.7.2",
-      "competence": "Bauteile und Informationsverarbeitung erklären",
+      "competence": "beschreiben das Zusammenspiel von Bauteilen (z. B. Sensoren, Aktoren) und die Informationsverarbeitung eines Roboters bzw. eines eingebetteten Systems und dessen situationsbezogene Interaktion mit der physischen Welt.",
       "lessons": ["it10-roboter", "it10-sensoren", "it10-regelung"],
       "evidence": "Sensor, Verarbeitung und Aktor an Aufgaben zuordnen; idealen Freisensor und einfachen Modellthermostat verändern."
     },
     {
       "lb": 2,
       "module": "2.7.2",
-      "competence": "Zustände und Verhalten planen",
+      "competence": "erzeugen Modelle, um Zustände und Verhalten eines Roboters bzw. eines eingebetteten Systems zu planen.",
       "lessons": ["it10-zustaende", "it10-regelung", "it10-roboterprogramm"],
       "evidence": "Übergänge, Bedingungen und Prioritäten beschreiben, anschließend an der Programmspur nachvollziehen. Freies standardisiertes Zustandsdiagramm zusätzlich zeichnen."
     },
     {
       "lb": 2,
       "module": "2.7.2",
-      "competence": "Passende Bauteile auswählen und einen Aufbau ausstatten",
+      "competence": "statten einen Roboter bzw. ein eingebettetes System mit den zur Lösung einer Aufgabe nötigen Bauteilen (z. B. Sensoren, Aktoren) aus.",
       "lessons": ["it10-roboter", "it10-sensoren", "it10-robotertest"],
       "evidence": "Bauteilauswahl in eigenen Begründungen; reale Montage und Hardwareprüfung bleiben ausdrücklich zusätzlicher Unterricht."
     },
     {
       "lb": 2,
       "module": "2.7.2",
-      "competence": "Programme implementieren, testen und optimieren",
+      "competence": "implementieren, testen und optimieren ein Programm, um mit dem konstruierten Roboter bzw. eingebetteten System eine Aufgabe zu lösen (z. B. Folgen einer Linie).",
       "lessons": ["it10-roboterprogramm", "it10-robotertest"],
       "evidence": "Rasterprogramm mit Wiederholung und Sensorauswahl schreiben, auf drei Höfen ausführen, Kollisionen und begrenzte Spuren prüfen; reale Sensorstreuung zusätzlich erproben."
     },
     {
       "lb": 2,
       "module": "2.7.3",
-      "competence": "KI-Merkmale und Anwendungsgebiete untersuchen",
+      "competence": "beschreiben Merkmale und Anwendungsgebiete Künstlicher Intelligenz, indem sie Beispiele KI-gestützter Systeme untersuchen.",
       "lessons": ["it10-ki-beispiele", "it10-ki-verantwortung"],
       "evidence": "Eingabe, Verarbeitung und Ausgabe vergleichen; generierte Form von fachlich belegtem Inhalt trennen."
     },
     {
       "lb": 2,
       "module": "2.7.3",
-      "competence": "Wissensbasierte und lernende Ansätze unterscheiden",
+      "competence": "unterscheiden maschinelles Lernen und wissensbasierte Ansätze Künstlicher Intelligenz, indem sie exemplarisch die jeweiligen Herangehensweisen untersuchen.",
       "lessons": ["it10-wissensregeln", "it10-lernarten", "it10-merkmale"],
       "evidence": "Vorgegebene Regeln mit aus Daten ermittelten Trennfragen vergleichen; Lernarten nach ihrer Zielinformation einordnen."
     },
     {
       "lb": 2,
       "module": "2.7.3",
-      "competence": "Überwachtes Lernen anwenden und Modellgüte bewerten",
+      "competence": "wenden ein Verfahren aus dem Bereich des überwachten Lernens (z. B. Entscheidungsbaum-Algorithmus) an und bewerten das resultierende Modell.",
       "lessons": ["it10-merkmale", "it10-baum", "it10-testdaten", "it10-bias"],
       "evidence": "Beispiele und Merkmale auswählen, einen numerischen Entscheidungsbaum mit Gini-Unreinheit tatsächlich lokal trainieren; bekannte und getrennte Fälle auswerten, Auswahlverzerrung und Tiefe vergleichen."
     },
     {
       "lb": 2,
       "module": "2.7.3",
-      "competence": "Chancen, Risiken und Verantwortung diskutieren",
+      "competence": "diskutieren Chancen, Risiken und Herausforderungen des Einsatzes Künstlicher Intelligenz für Individuum und Gesellschaft.",
       "lessons": ["it10-ki-beispiele", "it10-bias", "it10-ki-verantwortung"],
       "evidence": "Eigenes begründetes Urteil mit Kriterien; gemeinsame Diskussion und Präsentation bleiben ergänzende Leistungen."
     }
   ],
-  "optional_lessons": []
+  "optional_lessons": [],
+  "competence_text": "Amtlicher Wortlaut der Kompetenzerwartungen, fortgesetzt nach „Die Schülerinnen und Schüler …“; geschützte und mehrfache Leerzeichen für JSON vereinheitlicht. Eigene Kurzfassungen stehen getrennt in focus, eigene Nachweise in practice bzw. evidence."
 }
