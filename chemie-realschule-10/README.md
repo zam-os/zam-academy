@@ -66,17 +66,19 @@ Schnellcheck und zwei kuratierte Distraktoren mit Begründung.
 `replaces-de-by.json` ordnet alle **16 Items** der beiden alten Zellen
 `de-by:realschule-10-chemie-organik-kohlenwasserstoffe` und
 `de-by:realschule-10-chemie-saeuren-basen-neutralisation` zu (zam-os/zam
-`87a708b4`): **5 A, 2 B, 9 C**. Das Mapping ist ein **Vorschlag**
-(`"approved": null`, `"status": "proposal-only"`). Die Zelle erscheint
-deshalb zunächst ohne `replaces` und `retired_items`; Thomas gibt das Mapping
-frei, danach folgt eine Version mit den sieben `replaces`. Die beiden
-B-Nachfolger tragen schon jetzt Frage, Antwort und Musterlösung der alten
-Synthesekarten wortgleich.
+`87a708b4`): **5 A, 2 B, 9 C**. Thomas hat die Zuordnung am 24.10.2026
+freigegeben (`"approved": "2026-10-24"`). Die Zelle erscheint deshalb schon
+bei ihrer ersten Veröffentlichung mit den sieben `replaces` (A und B); keine
+Karte wird stillgelegt, alle neun C-Karten bleiben aktiv. Die beiden
+B-Nachfolger tragen Frage, Antwort und Musterlösung der alten Synthesekarten
+wortgleich.
 
-`scripts/validate-migration.mjs` prüft mit `zam-core` 0.54.0: Die jetzige
-Zelle lässt alle 16 alten Karten und 32 Reviews unverändert; die Probe des
-Vorschlags verschiebt sieben Historien und lässt neun C-Karten aktiv; hält
-eine Person alte und neue Karte, verweigert der Kernel die Zusammenführung.
+`scripts/validate-migration.mjs` prüft mit `zam-core` 0.54.0: Sieben
+Historien ziehen mit allen FSRS-Feldern und allen 32 Reviews unverändert um,
+die neun C-Karten bleiben in der aktiven Wiederholung, wiederholtes
+Installieren ändert nichts; hält eine Person für eine der sieben Zeilen alte
+und neue Karte, verweigert der Kernel die Zusammenführung und rollt alles
+zurück.
 
 ## Entwickeln und prüfen
 

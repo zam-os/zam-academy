@@ -665,7 +665,7 @@ describe("The cell is the only card source, and every card leads to a taught les
   });
 });
 
-describe("History mapping: a complete proposal, no transfer before Thomas approves", () => {
+describe("History mapping: approved by Thomas, exactly the documented transfers", () => {
   const bySlug = new Map(items.map((item) => [item.slug, item]));
   const originals: Item[] = [legacyOrganik, legacySaeuren].flatMap((tile) =>
     tile.atoms.flatMap((atom) => atom.practice_items as unknown as Item[]),
@@ -683,11 +683,22 @@ describe("History mapping: a complete proposal, no transfer before Thomas approv
     for (const row of mapping.rows) expect(row.reason).toBeTruthy();
   });
 
-  it("ships without replaces or retired_items while the mapping is a proposal", () => {
-    expect(mapping.approved).toBeNull();
-    expect(mapping.status).toBe("proposal-only");
+  it("declares exactly the seven approved replaces and retires no card", () => {
+    expect(mapping.approved).toBe("2026-10-24");
+    expect(mapping.status).toBe("approved");
+    expect(mapping.source).toContain("Kartenzuordnung freigegeben");
     expect("retired_items" in cell).toBe(false);
-    for (const item of items) expect(item.replaces).toBeUndefined();
+    const declared = items
+      .filter((item) => item.replaces)
+      .map((item) => [item.slug, item.replaces])
+      .sort();
+    const approved = mapping.rows
+      .filter((row) => row.category !== "C")
+      .map((row) => [row.academy_slug, [row.de_by_id]])
+      .sort();
+    expect(declared).toEqual(approved);
+    expect(declared).toHaveLength(7);
+    for (const row of mapping.rows.filter((row) => row.category === "C")) expect(row.action).toBe("keep-active");
   });
 
   it("names an existing successor for every A and B row and none for C", () => {

@@ -1,10 +1,11 @@
 {
   "schema": 1,
-  "approved": null,
-  "status": "proposal-only",
-  "source": "Vorschlag vom 24.10.2026 zur Freigabe durch Thomas: 5 A, 2 B, 9 C (alle C bleiben aktiv, keine Stilllegung). Noch keine Freigabe; die Zelle erscheint zunächst ohne replaces und retired_items gemäß Paketstandard.",
+  "approved": "2026-10-24",
+  "status": "approved",
+  "source": "Thomas in diesem Claude-Code-Chat am 2026-10-24, nach den Reviews zu zam-os/zam-academy#43 und der Überarbeitung in Commit a9263b9: „Kartenzuordnung freigegeben. Du darfst dann mergen“. Die Freigabe gilt der Zuordnung der 16 de-by-Karten in dieser Datei (5 A, 2 B, 9 C; alle C-Karten bleiben aktiv).",
   "source_repository": "zam-os/zam",
   "source_commit": "87a708b43bb380f75827b5c589ee58cc9679c744",
+  "authorization": "Thomas hat am 24. Oktober 2026 die hier dokumentierten 16 Zuordnungen ausdrücklich freigegeben. Die sieben genannten replaces (5 A, 2 B) erscheinen mit der ersten Veröffentlichung der Zelle; keine Karte wird stillgelegt, persönliche Karten und Reviewhistorien bleiben erhalten.",
   "policy": "A: same atomic retrieval, one successor declares replaces. B: original whole multi-part prompt, answer and sample solution retained on one dedicated successor. C: content of another grade or school type, or a split demand; no replaces, no mastery transfer; the old card stays active unless a row says otherwise.",
   "sources": [
     {

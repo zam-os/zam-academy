@@ -87,7 +87,7 @@ Die Zweige unterscheiden sich im Inhalt, nicht nur in der Tiefe:
 | 6.5 | 3 | `ch-polymerisation`, `ch-polykondensation`, `ch-kunststoffklassen`, `ch-kunststoffabfall` |
 
 
-## Bestehende ZAM-Karten (Vorschlag, nicht freigegeben)
+## Bestehende ZAM-Karten (freigegeben am 24.10.2026)
 
 Quelle: zam-os/zam, Commit `87a708b43bb380f75827b5c589ee58cc9679c744`,
 `tests/fixtures/curriculum/`. Byte-genaue Kopien liegen in
@@ -119,8 +119,11 @@ Quelle: zam-os/zam, Commit `87a708b43bb380f75827b5c589ee58cc9679c744`,
 | `J08` saeuren-basen-neutralisation: Beschreibe den Versuchsaufbau einer Säure-Base-Titration (Bürette mit … | B | `c10-titration-legacy-synthese` | Die ganze Synthese (Versuchsaufbau der Titration und Berechnung c(HCl) = 0,075 mol/l) bleibt mit Antwort und Musterlösung wortgleich auf einer eigenen Karte; Titration ist C10 Zweig I LB 2, die Stoffmenge kennt Zweig I aus C8. |
 
 
-Gemäß Paketstandard erscheint die Zelle zuerst ohne `replaces` und
-`retired_items` (Version 2026.10.1). Nach Thomas' Freigabe trägt eine neue
-Version die sieben `replaces` (A und B); `approved` erhält dann das Datum.
-`scripts/validate-migration.mjs` probt den Vorschlag bereits in Wegwerf-
-Bibliotheken.
+Thomas hat diese Zuordnung am 24.10.2026 vor dem Merge von
+zam-os/zam-academy#43 freigegeben („Kartenzuordnung freigegeben. Du darfst
+dann mergen“). Die Zelle erscheint deshalb schon in ihrer ersten
+veröffentlichten Version (2026.10.1) mit den sieben `replaces` (A und B) und
+ohne `retired_items`. `scripts/validate-migration.mjs` prüft das in
+Wegwerf-Bibliotheken: Historien ziehen unverändert um, die C-Karten bleiben
+aktiv, und eine Kollision alte/neue Karte wird für jede der sieben Zeilen
+abgelehnt.
