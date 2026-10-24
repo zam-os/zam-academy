@@ -430,7 +430,7 @@
       .node {
         outline: none;
       }
-      .node:not(.disabled) {
+      .node[role="button"] {
         cursor: pointer;
       }
       .node .shape {
@@ -438,8 +438,8 @@
         transform-box: fill-box;
         transform-origin: center;
       }
-      .node:not(.disabled):hover .shape,
-      .node:not(.disabled):focus-visible .shape {
+      .node[role="button"]:hover .shape,
+      .node[role="button"]:focus-visible .shape {
         transform: scale(1.06);
       }
       .hexfill {
@@ -450,13 +450,18 @@
       .live .hexfill {
         filter: none;
       }
-      /* Not implemented: grey, flat, quiet, not selectable */
+      /* Not implemented: grey, flat, quiet (still enterable, to see what is missing) */
       .disabled .hexfill {
         fill: #14172a;
         stroke: #2c3150;
         stroke-width: 1.2;
         stroke-dasharray: none;
         filter: none;
+      }
+      /* No such Fach in this Schulart and grade: dashed outline, nothing planned */
+      .none .hexfill {
+        fill: transparent;
+        stroke-dasharray: 5 4;
       }
       .sheen {
         fill: url(#sheen);
@@ -486,6 +491,23 @@
       }
       .t.sub {
         opacity: 0.85;
+      }
+      .disabled .t.schools {
+        fill: var(--text);
+      }
+      .t.schools tspan {
+        opacity: 0.7;
+      }
+      .t.schools tspan.on {
+        opacity: 1;
+        font-weight: 700;
+      }
+      .t.schools tspan.sep {
+        opacity: 0.4;
+      }
+      .schoolnote {
+        font-size: 0.9rem;
+        color: var(--text);
       }
       .pip {
         fill: none;
@@ -1003,9 +1025,9 @@
         <div class="outline" id="outline" hidden></div>
 
         <p class="legend" aria-label="Legende">
-          <span><i></i> farbig: Lernpaket verfügbar, anklickbar</span>
-          <span><i class="g"></i> grau: noch nicht umgesetzt, nicht wählbar (Ziel: Ende 2026)</span>
-          <span>Farbe = Fach · Punkte = Pakete je Schulart</span>
+          <span><i></i> farbig: Lernpaket verfügbar</span>
+          <span><i class="g"></i> grau: noch nicht umgesetzt (Ziel: Ende 2026), zum Nachsehen trotzdem anklickbar</span>
+          <span>Farbe = Fach · Kürzel = Schularten, die das Fach in dieser Klasse haben (hell: Paket verfügbar)</span>
         </p>
       </section>
 
@@ -1104,6 +1126,9 @@
       /* ---------- data -> trees ---------- */
       function buildTrees() {
         const fachBy = Object.fromEntries(D.faecher.map((f) => [f.id, f]));
+        const schulBy = Object.fromEntries(D.schulen.map((x) => [x.id, x]));
+        const entfaellt = (fach, grade, school) =>
+          (D.kein_unterricht ?? []).find((e) => e.fach === fach && e.grade === grade && e.school === school);
         const pkgNode = (p) => ({
           kind: "pkg",
           id: p.id,
@@ -1111,6 +1136,7 @@
           glyph: fachBy[p.fach].glyph,
           hue: fachBy[p.fach].hue,
           pkg: p,
+          school: schulBy[p.school],
           planned: false,
         });
         const ghost = (id, label, f, extra = {}) => ({
@@ -1144,8 +1170,9 @@
               if (g < sch.from || g > sch.to) continue;
               const ps = D.pakete.filter((p) => p.fach === f.id && p.grade === g && p.school === sch.id);
               ps.forEach((p) => used.add(p.id));
+              const gap = entfaellt(f.id, g, sch.id);
               if (ps.length) kids.push(...ps.map(pkgNode));
-              else kids.push(ghost(`plan-${sch.id}`, sch.name, f, { school: sch, grade: g, sub: `${f.name} ${g}` }));
+              else kids.push(ghost(`plan-${sch.id}`, sch.name, f, { school: sch, grade: g, sub: `${f.name} ${g}`, entfaellt: gap }));
             }
             D.pakete
               .filter((p) => p.fach === f.id && p.grade === g && !used.has(p.id))
@@ -1177,8 +1204,8 @@
                 const ps = D.pakete.filter((p) => p.fach === f.id && p.grade === g);
                 if (ps.length) kids.push(...ps.map(pkgNode));
                 else {
-                  const wo = D.schulen.filter((x) => g >= x.from && g <= x.to).map((x) => x.short);
-                  kids.push(ghost(`plan-k${g}`, `Klasse ${g}`, f, { grade: g, sub: wo.join(" · ") }));
+                  const wo = D.schulen.filter((x) => g >= x.from && g <= x.to && !entfaellt(f.id, g, x.id)).map((x) => x.short);
+                  kids.push(ghost(`plan-k${g}`, `Klasse ${g}`, f, { grade: g, sub: wo.join(" · ") || "kein Fach" }));
                 }
               }
               return fachNode(f, kids);
@@ -1195,7 +1222,7 @@
             node.total = node.children.reduce((a, c) => a + c.total, 0);
           } else {
             node.live = node.planned ? 0 : 1;
-            node.total = 1;
+            node.total = node.entfaellt ? 0 : 1;
           }
         };
         for (const [lens, name, children] of [
@@ -1220,6 +1247,12 @@
       const schulName = (id) => D.schulen.find((x) => x.id === id)?.name ?? "";
       const noun = (n) => (n === 1 ? "Paket" : "Pakete");
       const enabled = (n) => n.live > 0;
+      /* which Schularten teach a Fach in the grade, and which do not */
+      const schoolsOf = (n) => {
+        const ks = (n.children ?? []).filter((c) => c.school);
+        return { have: ks.filter((c) => !c.entfaellt), none: ks.filter((c) => c.entfaellt) };
+      };
+      const joinDe = (xs) => (xs.length > 1 ? `${xs.slice(0, -1).join(", ")} und ${xs.at(-1)}` : (xs[0] ?? ""));
 
       /* ---------- hex geometry ---------- */
       const SQ3 = Math.sqrt(3);
@@ -1261,32 +1294,37 @@
       };
       const alpha = (n) => (n.live > 0 ? 0.55 + 0.45 * (n.live / n.total) : 1);
       const ariaFor = (n) => {
+        if (n.entfaellt) return `${n.fachName} ${n.label}, kein Fach in Klasse ${n.grade}`;
+        if (n.kind === "fach" && schoolsOf(n).have.length + schoolsOf(n).none.length) {
+          const { have, none } = schoolsOf(n);
+          const wo = have.length ? `Unterricht an: ${joinDe(have.map((c) => c.school.name))}` : "kein Unterricht in dieser Klasse";
+          const nv = none.length && have.length ? `, kein Fach an: ${joinDe(none.map((c) => c.school.name))}` : "";
+          return `${n.label}, ${wo}${nv}, ${enabled(n) ? `${n.live} von ${n.total} ${noun(n.total)} verfügbar` : "noch nicht verfügbar"}`;
+        }
         if (!enabled(n)) return `${n.fachName ? n.fachName + " " : ""}${n.label}, noch nicht verfügbar`;
         if (n.kind === "pkg") return `${n.label}, Lernpaket, ${n.pkg.lessons} Lektionen`;
         return `${n.label}, ${n.live} von ${n.total} ${noun(n.total)} verfügbar`;
       };
-      const interactive = (n, extra) =>
-        enabled(n)
-          ? {
-              tabindex: 0,
-              role: "button",
-              onclick: (e) => activate(n, e),
-              onkeydown: (e) => {
-                if (e.key === "Enter" || e.key === " ") {
-                  e.preventDefault();
-                  activate(n, e, true);
-                }
-              },
-              ...extra,
-            }
-          : { role: "img", "aria-disabled": "true", ...extra };
+      /* every node can be entered, also grey ones: they explain what is missing and why */
+      const interactive = (n, extra) => ({
+        tabindex: 0,
+        role: "button",
+        onclick: (e) => activate(n, e),
+        onkeydown: (e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            activate(n, e, true);
+          }
+        },
+        ...extra,
+      });
 
       /* ---------- drawing ---------- */
       let animFrom = null;
       function nodeGroup(n, cx, cy, R) {
         const on = enabled(n);
         const g = s("g", {
-          class: `node ${on ? "live" : "disabled"}${state.sel === n ? " sel" : ""}`,
+          class: `node ${on ? "live" : "disabled"}${n.entfaellt ? " none" : ""}${state.sel === n ? " sel" : ""}`,
           style: `--h:${n.hue};--a:${alpha(n)}`,
           "aria-label": ariaFor(n),
           ...interactive(n),
@@ -1303,7 +1341,7 @@
           lines.forEach((ln, i) =>
             shape.append(s("text", { class: "t", x: cx, y: y0 + fs * 1.5 + i * fs * 1.15, "font-size": fs, "font-weight": 600 }, ln)),
           );
-          const sub = n.planned ? "noch nicht verfügbar" : n.pkg.grade == null ? "übergreifend" : `${n.pkg.lessons} Lektionen`;
+          const sub = n.entfaellt ? "kein Fach" : n.planned ? (n.school || !n.sub ? "noch nicht verfügbar" : n.sub) : n.pkg.grade == null ? "übergreifend" : `${n.pkg.lessons} Lektionen`;
           shape.append(s("text", { class: "t sub", x: cx, y: cy + R * 0.62, "font-size": fs * 0.74 }, sub));
         } else {
           const lines = wrap(n.label, Math.max(8, Math.round(R / 5.2)));
@@ -1311,12 +1349,26 @@
           lines.forEach((ln, i) =>
             shape.append(s("text", { class: "t", x: cx, y: cy + R * 0.2 + i * fs * 1.15, "font-size": fs, "font-weight": 600 }, ln)),
           );
-          const pr = R * 0.065;
-          const kids = n.children.slice(0, 8);
-          const w = kids.length * pr * 3;
-          kids.forEach((k, i) =>
-            shape.append(s("circle", { class: `pip${k.live > 0 ? " on" : ""}`, cx: cx - w / 2 + pr * 1.5 + i * pr * 3, cy: cy + R * 0.66, r: pr })),
-          );
+          const ks = n.children.filter((k) => k.school);
+          if (ks.length) {
+            /* Schulform labels: bright = Paket live, dim = planned, struck out = no such Fach there (omitted) */
+            const have = ks.filter((k) => !k.entfaellt);
+            const label = s("text", { class: "t schools", x: cx, y: cy + R * 0.62, "font-size": fs * 0.9 });
+            if (have.length)
+              have.forEach((k, i) => {
+                if (i) label.append(s("tspan", { class: "sep" }, " · "));
+                label.append(s("tspan", { class: k.live > 0 ? "on" : "" }, k.school.short));
+              });
+            else label.append(s("tspan", { class: "on" }, "kein Fach"));
+            shape.append(label);
+          } else {
+            const pr = R * 0.065;
+            const kids = n.children.slice(0, 8);
+            const w = kids.length * pr * 3;
+            kids.forEach((k, i) =>
+              shape.append(s("circle", { class: `pip${k.live > 0 ? " on" : ""}`, cx: cx - w / 2 + pr * 1.5 + i * pr * 3, cy: cy + R * 0.66, r: pr })),
+            );
+          }
         }
         return g;
       }
@@ -1391,10 +1443,10 @@
         $("up").hidden = node.kind === "root";
         $("hint").textContent =
           node.kind === "root"
-            ? "Farbige Inseln zoomen hinein · graue sind noch nicht verfügbar"
+            ? "Inseln zoomen hinein · graue sind noch nicht verfügbar"
             : node.kind === "island"
-              ? "Wähle ein farbiges Fach · Esc geht zurück"
-              : "Wähle ein farbiges Lernpaket · Esc geht zurück";
+              ? "Wähle ein Fach, auch graue zeigen, wo es unterrichtet wird · Esc geht zurück"
+              : "Wähle eine Schulart oder ein Lernpaket · Esc geht zurück";
         if (dir && !reduceMotion) {
           const o = animFrom || [50, 50];
           const m = $("map");
@@ -1421,7 +1473,6 @@
         else location.hash = hash;
       };
       function activate(n, ev, kb) {
-        if (!enabled(n)) return;
         if (ev && !kb && ev.currentTarget) {
           const st = $("stage").getBoundingClientRect();
           const r = ev.currentTarget.getBoundingClientRect();
@@ -1442,7 +1493,7 @@
         const lens = known ? parts[0] : state.lens;
         const root = state.trees[lens];
         let n = (known && nodeAt(root, parts.slice(1))) || root;
-        while (n.kind !== "root" && !enabled(n)) n = n.parent;
+        while (n.kind !== "root" && !state.planned && !enabled(n)) n = n.parent;
         const prev = state.focus;
         const prevLens = state.lens;
         state.lens = lens;
@@ -1505,7 +1556,7 @@
           );
           return;
         }
-        const kicker = { island: n.parent.id === "schule" ? "Klassenstufe" : "Wissensbereich", fach: "Fach", pkg: "Lernpaket" }[n.kind];
+        const kicker = { island: n.parent.id === "schule" ? "Klassenstufe" : "Wissensbereich", fach: "Fach", pkg: n.pkg ? "Lernpaket" : n.school ? "Schulart" : "Klasse" }[n.kind];
         const crumbs = [];
         for (let a = n.parent; a && a.kind !== "root"; a = a.parent) crumbs.unshift(a.label);
         p.append(
@@ -1514,6 +1565,20 @@
             h("div", {}, h("p", { class: "kicker" }, kicker), crumbs.length ? h("p", { style: "font-size:.85rem" }, crumbs.join(" › ")) : null),
           ),
         );
+        if (n.kind === "pkg" && !n.pkg) {
+          const what = n.fachName ? `${n.fachName}${n.grade ? ` · Klasse ${n.grade}` : ""}` : n.label;
+          p.append(h("h2", {}, n.label), h("p", { class: "kicker" }, what));
+          if (n.entfaellt) {
+            p.append(
+              h("p", {}, n.entfaellt.note),
+              n.entfaellt.source ? h("p", {}, h("a", { href: n.entfaellt.source, rel: "noopener" }, "Quelle: Stundentafel")) : null,
+              h("p", {}, "Dafür ist kein Lernpaket geplant."),
+            );
+          } else {
+            p.append(h("p", {}, "Dieses Lernpaket ist noch nicht umgesetzt. Es folgt bis Ende 2026."));
+          }
+          return;
+        }
         if (n.kind === "pkg") {
           const k = n.pkg;
           p.append(
@@ -1534,13 +1599,24 @@
           return;
         }
         p.append(h("h2", {}, n.label), progressBlock(n));
+        if (n.kind === "fach") {
+          const { have, none } = schoolsOf(n);
+          const grade = n.children.find((c) => c.grade)?.grade;
+          if (grade && state.lens === "schule")
+            p.append(
+              h("p", { class: "schoolnote" },
+                have.length ? [h("b", {}, `Klasse ${grade}: `), `${n.label} gibt es an ${joinDe(have.map((c) => c.school.name))}.`] : [h("b", {}, `Klasse ${grade}: `), `Dieses Fach gibt es in keiner dieser Schularten.`],
+                none.length ? ` Kein Fach an ${joinDe(none.map((c) => c.school.name))}.` : null,
+              ),
+            );
+        }
         p.append(
           h("ul", { class: "tags", "aria-label": "Inhalt" },
             visible(n).map((c) => {
-              const txt = `${c.label}${c.kind === "pkg" ? "" : ` · ${c.live}/${c.total}`}`;
-              return enabled(c)
-                ? h("li", {}, h("button", { type: "button", onclick: () => go(c.path) }, txt))
-                : h("li", { class: "off", title: "noch nicht verfügbar" }, txt);
+              const state_ = c.entfaellt ? " · kein Fach" : c.planned ? " · noch nicht verfügbar" : "";
+              const txt = `${c.label}${c.kind === "pkg" ? state_ : ` · ${c.live}/${c.total}`}`;
+              return h("li", { class: enabled(c) ? "" : c.entfaellt ? "off none" : "off" },
+                h("button", { type: "button", onclick: () => go(c.path) }, txt));
             }),
           ),
         );
@@ -1608,7 +1684,7 @@
           for (const f of visible(isl)) {
             ul.append(h("li", { class: `fach${enabled(f) ? "" : " off"}`, style: `--h:${f.hue}`, ...currentAttrs(f) }, f.label, h("small", { style: "font-weight:400" }, `${f.live}/${f.total}`)));
             for (const k of visible(f))
-              ul.append(h("li", { class: k.planned ? "planned" : "" }, k.planned ? `${k.label} (noch nicht verfügbar)` : h("a", { href: `${k.pkg.app}/`, ...currentAttrs(k) }, k.label)));
+              ul.append(h("li", { class: k.planned ? "planned" : "" }, k.entfaellt ? `${k.label} (kein Fach in Klasse ${k.grade})` : k.planned ? `${k.label} (noch nicht verfügbar)` : h("a", { href: `${k.pkg.app}/`, ...currentAttrs(k) }, k.label)));
           }
           d.append(ul);
           o.append(d);
@@ -1672,6 +1748,12 @@
           for (const g of grades) {
             if (!(g >= sch.from && g <= sch.to && g >= f.from)) {
               tr.append(h("td", {}, h("span", { class: "na", "aria-label": "nicht vorgesehen" }, "·")));
+              continue;
+            }
+            const gap = (D.kein_unterricht ?? []).find((e) => e.fach === f.id && e.grade === g && e.school === sch.id);
+            if (gap) {
+              const label = `${f.name} Klasse ${g}, ${sch.name}: kein Fach`;
+              tr.append(h("td", {}, h("span", { class: "na", role: "img", "aria-label": label, title: gap.note }, "·")));
               continue;
             }
             const p = D.pakete.find((x) => x.fach === f.id && x.grade === g && x.school === sch.id);
