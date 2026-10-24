@@ -2,10 +2,10 @@
   "schema": 1,
   "goal": "Bis Ende 2026: alle Themen der Klassen 5 bis 13 in Bayern",
   "schulen": [
-    { "id": "realschule", "name": "Realschule", "short": "Real", "from": 5, "to": 10 },
-    { "id": "gymnasium", "name": "Gymnasium", "short": "Gym", "from": 5, "to": 13 },
-    { "id": "mittelschule", "name": "Mittelschule", "short": "MS", "from": 5, "to": 10 },
-    { "id": "fosbos", "name": "FOS / BOS", "short": "FOS/BOS", "from": 11, "to": 13 }
+    { "id": "realschule", "name": "Realschule", "wo": "an der Realschule", "short": "Real", "from": 5, "to": 10 },
+    { "id": "gymnasium", "name": "Gymnasium", "wo": "am Gymnasium", "short": "Gym", "from": 5, "to": 13 },
+    { "id": "mittelschule", "name": "Mittelschule", "wo": "an der Mittelschule", "short": "MS", "from": 5, "to": 10 },
+    { "id": "fosbos", "name": "FOS / BOS", "wo": "an der FOS / BOS", "short": "FOS/BOS", "from": 11, "to": 13 }
   ],
   "bereiche": [
     { "id": "sprachen", "name": "Sprachen", "glyph": "Aa" },
@@ -18,6 +18,7 @@
   "faecher": [
     { "id": "deutsch", "name": "Deutsch", "bereich": "sprachen", "glyph": "Aa", "hue": 340, "from": 5 },
     { "id": "englisch", "name": "Englisch", "bereich": "sprachen", "glyph": "EN", "hue": 8, "from": 5 },
+    { "id": "franzoesisch", "name": "Französisch", "bereich": "sprachen", "glyph": "FR", "hue": 322, "from": 5 },
     { "id": "mathematik", "name": "Mathematik", "bereich": "mathematik", "glyph": "a²+b²=c²", "hue": 215, "from": 5 },
     { "id": "physik", "name": "Physik", "bereich": "naturwissenschaften", "glyph": "F=m·a", "hue": 258, "from": 6 },
     { "id": "chemie", "name": "Chemie", "bereich": "naturwissenschaften", "glyph": "H₂O", "hue": 168, "from": 8 },
@@ -40,6 +41,62 @@
       "grade": 9,
       "school": "mittelschule",
       "note": "Die Mittelschule führt kein eigenes Fach Biologie. In Klasse 9 steht Natur und Technik (3 Wochenstunden).",
+      "source": "https://www.gesetze-bayern.de/Content/Document/BayMSO-ANL_1"
+    },
+    {
+      "fach": "franzoesisch",
+      "grade": 5,
+      "school": "realschule",
+      "note": "Die Realschule beginnt Französisch erst in Klasse 7, und nur in Wahlpflichtfächergruppe IIIa (zweite Fremdsprache).",
+      "source": "https://www.gesetze-bayern.de/Content/Document/BayRSO-ANL_1"
+    },
+    {
+      "fach": "franzoesisch",
+      "grade": 6,
+      "school": "realschule",
+      "note": "Die Realschule beginnt Französisch erst in Klasse 7, und nur in Wahlpflichtfächergruppe IIIa (zweite Fremdsprache).",
+      "source": "https://www.gesetze-bayern.de/Content/Document/BayRSO-ANL_1"
+    },
+    {
+      "fach": "franzoesisch",
+      "grade": 5,
+      "school": "mittelschule",
+      "note": "Die Mittelschule hat in ihrer Stundentafel kein Fach Französisch.",
+      "source": "https://www.gesetze-bayern.de/Content/Document/BayMSO-ANL_1"
+    },
+    {
+      "fach": "franzoesisch",
+      "grade": 6,
+      "school": "mittelschule",
+      "note": "Die Mittelschule hat in ihrer Stundentafel kein Fach Französisch.",
+      "source": "https://www.gesetze-bayern.de/Content/Document/BayMSO-ANL_1"
+    },
+    {
+      "fach": "franzoesisch",
+      "grade": 7,
+      "school": "mittelschule",
+      "note": "Die Mittelschule hat in ihrer Stundentafel kein Fach Französisch.",
+      "source": "https://www.gesetze-bayern.de/Content/Document/BayMSO-ANL_1"
+    },
+    {
+      "fach": "franzoesisch",
+      "grade": 8,
+      "school": "mittelschule",
+      "note": "Die Mittelschule hat in ihrer Stundentafel kein Fach Französisch.",
+      "source": "https://www.gesetze-bayern.de/Content/Document/BayMSO-ANL_1"
+    },
+    {
+      "fach": "franzoesisch",
+      "grade": 9,
+      "school": "mittelschule",
+      "note": "Die Mittelschule hat in ihrer Stundentafel kein Fach Französisch.",
+      "source": "https://www.gesetze-bayern.de/Content/Document/BayMSO-ANL_1"
+    },
+    {
+      "fach": "franzoesisch",
+      "grade": 10,
+      "school": "mittelschule",
+      "note": "Die Mittelschule hat in ihrer Stundentafel kein Fach Französisch.",
       "source": "https://www.gesetze-bayern.de/Content/Document/BayMSO-ANL_1"
     }
   ],
@@ -324,6 +381,20 @@
         "Literatur"
       ],
       "desc": "Deutschsprachige Lernhilfe mit englischen Materialien: 36 Kernlektionen und vier freiwillige Grammatikergänzungen mit eigenen Antworten, Partneraufträgen und lokalem Fortschritt. Natürliche Hör-/Hörsehtexte und weitere Praxis zusätzlich üben."
+    },
+    {
+      "id": "franzoesisch-realschule-9",
+      "app": "franzoesisch-realschule-9",
+      "title": "Französisch 9",
+      "fach": "franzoesisch",
+      "grade": 9,
+      "school": "realschule",
+      "zweige": "Wahlpflichtfächergruppe IIIa",
+      "lessons": 56,
+      "cards": 168,
+      "lang": ["de"],
+      "gebiete": ["Verstehen und sich mitteilen", "Grammatik", "Wortschatz und Aussprache", "Frankreich erleben", "Texte und Medien", "Lernen lernen", "Themengebiete"],
+      "desc": "Grammatik von Relativsatz bis Bedingung, Wortschatz, Lesen, Schreiben und Sprachmittlung, Paris, Schule und Praktikum, mit Werkstätten, Übungsrunden und eigenen Texten. LehrplanPLUS Bayern, zweite Fremdsprache."
     }
   ]
 }
