@@ -1,0 +1,897 @@
+{
+  "it10-internet": {
+    "title": "Dienst oder Infrastruktur?",
+    "instruction": "Ordne die Bausteine eines Schulnetzwerks ihrer Aufgabe zu.",
+    "categories": ["Netzinfrastruktur", "Internetdienst", "Webinhalt"],
+    "entries": [
+      {
+        "text": "Ein Router leitet Pakete zwischen zwei Netzen weiter.",
+        "target": 0,
+        "feedback": "Der Router stellt einen Übertragungsweg bereit; er legt keine Webinhalte fest."
+      },
+      {
+        "text": "Ein Mailserver nimmt Nachrichten an und stellt sie bereit.",
+        "target": 1,
+        "feedback": "E-Mail ist ein Dienst, der die Infrastruktur nutzt. Sie ist kein Teil des World Wide Web."
+      },
+      {
+        "text": "Eine Seite erklärt die Hausordnung der Schule.",
+        "target": 2,
+        "feedback": "Die Hausordnung ist ein Inhalt, den Menschen über den Webdienst bereitstellen."
+      }
+    ]
+  },
+  "it10-kommunikation": {
+    "title": "Den passenden Kanal wählen",
+    "instruction": "Eine Klasse plant einen gemeinsamen Ausflug. Wähle für jeden Zweck die passendste Vereinbarung.",
+    "categories": [
+      "Zeitversetzt und dokumentiert",
+      "Zeitgleich mit Rückfragen",
+      "Privat und gezielt"
+    ],
+    "entries": [
+      {
+        "text": "Alle sollen bis Freitag einen begründeten Vorschlag abgeben und andere Beiträge später nachlesen.",
+        "target": 0,
+        "feedback": "Ein moderiertes Forum oder gemeinsames Dokument macht Beiträge zeitversetzt nachvollziehbar."
+      },
+      {
+        "text": "Die Gruppe muss ein Missverständnis sofort gemeinsam klären.",
+        "target": 1,
+        "feedback": "Ein kurzes Gespräch erlaubt direkte Rückfragen. Ein Chat allein garantiert keine Klärung."
+      },
+      {
+        "text": "Eine Person muss der Lehrkraft eine persönliche Einschränkung mitteilen.",
+        "target": 2,
+        "feedback": "Persönliche Angaben gehören in einen passenden privaten Kanal, nicht in die ganze Gruppe."
+      }
+    ]
+  },
+  "it10-datenspuren": {
+    "title": "Was verrät die Spur?",
+    "instruction": "Unterscheide Identität, Metadaten und den Inhalt einer Nachricht.",
+    "categories": ["Direkte persönliche Angabe", "Metadatum", "Inhalt"],
+    "entries": [
+      {
+        "text": "Im Profil steht der vollständige Name mit Anschrift.",
+        "target": 0,
+        "feedback": "Die Angaben können die Person unmittelbar zuordnen."
+      },
+      {
+        "text": "Der Server protokolliert Uhrzeit und IP-Adresse eines Zugriffs.",
+        "target": 1,
+        "feedback": "Diese Angaben beschreiben den Zugriff und können weitere Zuordnungen ermöglichen, auch ohne Klarnamen."
+      },
+      {
+        "text": "In der Nachricht steht die selbst geschriebene Ausflugsplanung.",
+        "target": 2,
+        "feedback": "Der Nachrichtentext ist Inhalt. Inhalt kann seinerseits persönliche Angaben enthalten."
+      }
+    ]
+  },
+  "it10-rechte": {
+    "title": "Getrennte Prüffragen",
+    "instruction": "Ein Gruppenfoto soll auf die Schulwebsite. Ordne jede Frage dem passenden Prüfbereich zu.",
+    "categories": [
+      "Nutzungsbefugnis am Werk",
+      "Rechte der abgebildeten Personen",
+      "Quellenangabe"
+    ],
+    "entries": [
+      {
+        "text": "Erlaubt die Fotografin die Veröffentlichung unter den vorgesehenen Bedingungen?",
+        "target": 0,
+        "feedback": "Die Erlaubnis der Urheberin betrifft die Nutzung ihres Fotos."
+      },
+      {
+        "text": "Dürfen die erkennbaren Mitschülerinnen und Mitschüler hier öffentlich gezeigt werden?",
+        "target": 1,
+        "feedback": "Die Zustimmung der Fotografin beantwortet die Rechte der erkennbaren Personen noch nicht."
+      },
+      {
+        "text": "Wie müssen Name und Lizenz genannt werden, wenn die Lizenz das verlangt?",
+        "target": 2,
+        "feedback": "Eine korrekte Quelle erfüllt eine Kennzeichnungspflicht; sie ersetzt keine fehlende Erlaubnis."
+      }
+    ]
+  },
+  "it10-firewall": {
+    "title": "Welche Regel greift zuerst?",
+    "instruction": "Gegeben sind: 1. Eingehendes TCP sperren. 2. TCP 443 erlauben. Standard: sperren. Entscheide für jedes Paket.",
+    "categories": [
+      "Gesperrt durch Regel 1",
+      "Erlaubt durch Regel 2",
+      "Gesperrt durch Standard"
+    ],
+    "entries": [
+      {
+        "text": "Eingehend · TCP · Zielport 443",
+        "target": 0,
+        "feedback": "Die erste passende Regel sperrt. Die spätere Freigabe wird nicht mehr betrachtet."
+      },
+      {
+        "text": "Ausgehend · TCP · Zielport 443",
+        "target": 1,
+        "feedback": "Regel 1 passt wegen der Richtung nicht. Regel 2 erlaubt das Paket."
+      },
+      {
+        "text": "Ausgehend · UDP · Zielport 53",
+        "target": 2,
+        "feedback": "Keine der beiden TCP-Regeln passt zu UDP. Deshalb gilt der Standard."
+      }
+    ]
+  },
+  "it10-schluessel": {
+    "title": "Was schützt welche Maßnahme?",
+    "instruction": "Ordne die Maßnahmen ihrer unmittelbaren Aufgabe zu.",
+    "categories": [
+      "Inhalt verschlüsseln",
+      "Gegenstelle prüfen",
+      "Geheimnis schützen"
+    ],
+    "entries": [
+      {
+        "text": "Zwei Seiten verwenden einen vereinbarten Sitzungsschlüssel für die Nutzdaten.",
+        "target": 0,
+        "feedback": "Ein symmetrischer Sitzungsschlüssel schützt die übertragenen Inhalte."
+      },
+      {
+        "text": "Der Browser prüft Zertifikatskette, Gültigkeit und passenden Hostnamen.",
+        "target": 1,
+        "feedback": "Diese Prüfung verbindet die angesprochene Adresse mit der nachgewiesenen Gegenstelle."
+      },
+      {
+        "text": "Der private Schlüssel bleibt auf dem vorgesehenen Gerät und wird nicht weitergegeben.",
+        "target": 2,
+        "feedback": "Wer den privaten Schlüssel erhält, kann seine Schutzfunktion unterlaufen. Öffentlich und privat sind unterschiedliche Rollen."
+      }
+    ]
+  },
+  "it10-https": {
+    "title": "Was lässt sich daraus schließen?",
+    "instruction": "Für eine korrekt geprüfte HTTPS-Verbindung: Entscheide, ob die Aussage aus dem Transportschutz folgt.",
+    "categories": ["Folgt aus dem Modell", "Folgt daraus nicht"],
+    "entries": [
+      {
+        "text": "Der Inhalt ist auf dem Übertragungsweg verschlüsselt.",
+        "target": 0,
+        "feedback": "Verschlüsselung schützt den Transport zwischen den vorgesehenen Endpunkten."
+      },
+      {
+        "text": "Alle Aussagen im Shop sind deshalb wahr.",
+        "target": 1,
+        "feedback": "Eine bestätigte Gegenstelle kann trotzdem falsche Inhalte anbieten."
+      },
+      {
+        "text": "Der Name im gültigen Zertifikat passt zur aufgerufenen Adresse.",
+        "target": 0,
+        "feedback": "Die Namensprüfung gehört zur hier vorausgesetzten erfolgreichen Zertifikatsprüfung."
+      },
+      {
+        "text": "Das Gerät ist durch HTTPS vor jeder Schadsoftware geschützt.",
+        "target": 1,
+        "feedback": "HTTPS ist kein vollständiges Sicherheitskonzept für Endgeräte."
+      }
+    ]
+  },
+  "it10-sicherheitskonzept": {
+    "title": "Belege mit Grenzen",
+    "instruction": "Ordne Beobachtungen eines Sicherheitstests ein.",
+    "categories": ["Gewünschter Fall", "Gegenprobe", "Ungeprüfte Grenze"],
+    "entries": [
+      {
+        "text": "Der erlaubte HTTPS-Aufruf erreicht den vorgesehenen Server.",
+        "target": 0,
+        "feedback": "Ein gewünschter Fall prüft, ob die notwendige Funktion erhalten bleibt."
+      },
+      {
+        "text": "Ein unerwünschter eingehender Zugriff wird abgewiesen.",
+        "target": 1,
+        "feedback": "Eine Gegenprobe prüft, ob eine verbotene Aktion wirklich scheitert."
+      },
+      {
+        "text": "Die Übung untersucht nicht, ob der Shop nach Zahlung tatsächlich liefert.",
+        "target": 2,
+        "feedback": "Diese Vertrauensfrage liegt außerhalb des Paketfilters und des TLS-Modells."
+      }
+    ]
+  },
+  "it10-analyse": {
+    "title": "Vom Wunsch zum Test",
+    "instruction": "Unterscheide Zweck, überprüfbare Anforderung und konkreten Testfall für ein Ausleihsystem.",
+    "categories": ["Zweck", "Anforderung", "Testfall"],
+    "entries": [
+      {
+        "text": "Die Verwaltung der Schulgeräte soll für die Klasse verständlich werden.",
+        "target": 0,
+        "feedback": "Das beschreibt den beabsichtigten Nutzen. Für einen Test fehlen noch beobachtbare Bedingungen."
+      },
+      {
+        "text": "Ein bereits ausgeliehenes Gerät darf nicht erneut verliehen werden.",
+        "target": 1,
+        "feedback": "Die Regel legt ein überprüfbares Verhalten des Systems fest."
+      },
+      {
+        "text": "Gerät 17 ist ausgeliehen. Ein zweiter Ausleihversuch muss seinen Zustand unverändert lassen.",
+        "target": 2,
+        "feedback": "Ausgangszustand, Aktion und erwartetes Ergebnis machen diesen Fall ausführbar."
+      }
+    ]
+  },
+  "it10-klasse": {
+    "title": "Klasse oder Instanz?",
+    "instruction": "Ein Modell enthält die Klasse Fahrrad und zwei Fahrräder. Ordne die Angaben zu.",
+    "categories": ["Klassendefinition", "Objekt schulrad", "Objekt leihrad"],
+    "entries": [
+      {
+        "text": "Fahrrad legt das Attribut gang und die Methode schalten fest.",
+        "target": 0,
+        "feedback": "Die Klasse beschreibt gemeinsame Struktur und Verhalten, nicht einen gemeinsamen aktuellen Gang."
+      },
+      {
+        "text": "Das Fahrrad mit dem Namen schulrad steht gerade im dritten Gang.",
+        "target": 1,
+        "feedback": "Ein benanntes Objekt hat seinen eigenen momentanen Attributwert."
+      },
+      {
+        "text": "Das Fahrrad mit dem Namen leihrad steht im ersten Gang, obwohl schulrad umschaltet.",
+        "target": 2,
+        "feedback": "Die zweite Instanz hat einen unabhängigen Zustand."
+      }
+    ]
+  },
+  "it10-methoden": {
+    "title": "Einen Aufruf verfolgen",
+    "instruction": "z1 startet bei 3, z2 bei 8. Danach: z1.addiere(4), z2.addiere(−2), z1.addiere(1). Ordne die Beobachtungen zu.",
+    "categories": ["z1 hat Wert 7", "z2 hat Wert 6", "z1 hat Wert 8"],
+    "entries": [
+      {
+        "text": "Zustand direkt nach dem ersten Aufruf",
+        "target": 0,
+        "feedback": "Nur z1 verändert sich: 3 + 4 = 7."
+      },
+      {
+        "text": "Zustand des Empfängers direkt nach dem zweiten Aufruf",
+        "target": 1,
+        "feedback": "z2 verändert sich unabhängig: 8 + (−2) = 6."
+      },
+      {
+        "text": "Zustand des Empfängers direkt nach dem dritten Aufruf",
+        "target": 2,
+        "feedback": "z1 baut auf seinem bisherigen Wert auf: 7 + 1 = 8."
+      }
+    ]
+  },
+  "it10-invarianten": {
+    "title": "Abheben bei aktuellem Guthaben",
+    "instruction": "Das Konto hat jetzt 40. Ordne jeden einzeln geprüften Aufruf seiner Wirkung zu. Regel: Betrag > 0 und Betrag ≤ aktuelles Guthaben.",
+    "categories": ["Guthaben wird 15", "Guthaben bleibt 40", "Guthaben wird 0"],
+    "entries": [
+      {
+        "text": "abheben(25)",
+        "target": 0,
+        "feedback": "25 ist positiv und höchstens 40. Deshalb bleiben 15."
+      },
+      {
+        "text": "abheben(50)",
+        "target": 1,
+        "feedback": "Der Betrag übersteigt den aktuellen Zustand. Ein gültiger Aufruf darf hier nichts abbuchen."
+      },
+      {
+        "text": "abheben(40)",
+        "target": 2,
+        "feedback": "Die Grenze ist eingeschlossen. Das Konto darf genau geleert werden."
+      },
+      {
+        "text": "abheben(−5)",
+        "target": 1,
+        "feedback": "Ein negativer Betrag darf das Guthaben durch Subtraktion nicht erhöhen."
+      }
+    ]
+  },
+  "it10-modellstruktur": {
+    "title": "Verantwortung zuordnen",
+    "instruction": "Ein Ausleihsystem besitzt die Teile Gerät, Ausleihe und Katalog. Wo gehört die Verantwortung am ehesten hin?",
+    "categories": ["Gerät", "Ausleihe", "Katalog"],
+    "entries": [
+      {
+        "text": "Inventarnummer und Modellbezeichnung eines einzelnen Geräts halten",
+        "target": 0,
+        "feedback": "Diese Werte beschreiben das Gerät unabhängig von einer konkreten Ausleihe."
+      },
+      {
+        "text": "Rückgabetermin und die Zuordnung einer Person zu einem Gerät verwalten",
+        "target": 1,
+        "feedback": "Eine Ausleihe verbindet Beteiligte für einen konkreten Vorgang."
+      },
+      {
+        "text": "Alle zum Suchbegriff passenden Geräte finden",
+        "target": 2,
+        "feedback": "Die Suche betrifft die Sammlung. Sie ist keine Aufgabe eines einzelnen Geräts."
+      }
+    ]
+  },
+  "it10-bruch": {
+    "title": "Ergebnis und Ausgangswerte",
+    "instruction": "a = 1/2, b = 1/3. addiere soll ein neues Objekt liefern. Bewerte die Beobachtungen getrennt.",
+    "categories": [
+      "Vertrag erfüllt",
+      "Summenwert falsch",
+      "Ausgangsobjekt unzulässig geändert"
+    ],
+    "entries": [
+      {
+        "text": "Ergebnis 5/6; a bleibt 1/2 und b bleibt 1/3.",
+        "target": 0,
+        "feedback": "Der Wert stimmt und das Ergebnis ist vom unveränderten Ausgangszustand getrennt."
+      },
+      {
+        "text": "Ergebnis 2/5; beide Ausgangsobjekte bleiben erhalten.",
+        "target": 1,
+        "feedback": "Zähler und Nenner einzeln zu addieren ergibt nicht den Summenwert."
+      },
+      {
+        "text": "Das zurückgegebene a enthält jetzt 5/6; b bleibt 1/3.",
+        "target": 2,
+        "feedback": "Der Summenwert stimmt, aber das vereinbarte neue Ergebnisobjekt fehlt."
+      }
+    ]
+  },
+  "it10-testen": {
+    "title": "Tests auswählen",
+    "instruction": "Ordne die Testabsicht zu, wenn eine Abhebung nur positive Beträge bis zum aktuellen Guthaben zulässt.",
+    "categories": [
+      "Normalfall",
+      "Grenzfall",
+      "Verbotener Fall",
+      "Folge mehrerer Aufrufe"
+    ],
+    "entries": [
+      {
+        "text": "Bei 80 werden 20 abgehoben.",
+        "target": 0,
+        "feedback": "Der Betrag liegt klar im zulässigen Bereich."
+      },
+      {
+        "text": "Bei 80 werden genau 80 abgehoben.",
+        "target": 1,
+        "feedback": "Die Gleichheit prüft den eingeschlossenen Rand."
+      },
+      {
+        "text": "Bei 80 wird −1 abgehoben.",
+        "target": 2,
+        "feedback": "Eine negative Eingabe darf den Zustand nicht gültig verändern."
+      },
+      {
+        "text": "Bei 80 werden zuerst 50, danach nochmals 50 angefordert.",
+        "target": 3,
+        "feedback": "Der zweite Aufruf muss den neuen Zustand 30 prüfen, nicht den ursprünglichen Startwert."
+      }
+    ]
+  },
+  "it10-bits": {
+    "title": "Codierung lesen",
+    "instruction": "Das Muster 101 wird unterschiedlich vereinbart. Ordne jeweils den passenden Zahlenwert zu.",
+    "categories": ["Wert 5", "Wert 3", "Keine eindeutige Zahl"],
+    "entries": [
+      {
+        "text": "101 als vorzeichenlose Binärzahl mit Stellenwerten 4, 2, 1",
+        "target": 0,
+        "feedback": "1 · 4 + 0 · 2 + 1 · 1 = 5."
+      },
+      {
+        "text": "011 als vorzeichenlose Binärzahl mit Stellenwerten 4, 2, 1",
+        "target": 1,
+        "feedback": "0 · 4 + 1 · 2 + 1 · 1 = 3."
+      },
+      {
+        "text": "101 ohne irgendeine Vereinbarung zur Bedeutung",
+        "target": 2,
+        "feedback": "Dasselbe Bitmuster kann eine Zahl, ein Zeichen oder drei Zustände codieren."
+      }
+    ]
+  },
+  "it10-gatter": {
+    "title": "Wirkungen der Grundgatter",
+    "instruction": "A = 1 und B = 0. Welcher Wert entsteht? Prüfe jeden Ausdruck unabhängig.",
+    "categories": ["Ausgang 0", "Ausgang 1"],
+    "entries": [
+      {
+        "text": "A UND B",
+        "target": 0,
+        "feedback": "UND braucht beide Eingänge wahr. B ist hier falsch."
+      },
+      {
+        "text": "A ODER B",
+        "target": 1,
+        "feedback": "Ein wahrer Eingang reicht für ODER."
+      },
+      {
+        "text": "NICHT B",
+        "target": 1,
+        "feedback": "Die Negation des falschen Eingangs ist wahr."
+      },
+      {
+        "text": "NICHT (A ODER B)",
+        "target": 0,
+        "feedback": "Zuerst liefert ODER den Wert 1, danach kehrt NICHT ihn um."
+      }
+    ]
+  },
+  "it10-wertetabelle": {
+    "title": "Alle Kombinationen prüfen",
+    "instruction": "Bewerte für (A ODER B) UND NICHT C die folgenden Eingaben.",
+    "categories": ["Ausgang 0", "Ausgang 1"],
+    "entries": [
+      {
+        "text": "A = 0, B = 0, C = 0",
+        "target": 0,
+        "feedback": "Der erste Teil A ODER B bleibt 0."
+      },
+      {
+        "text": "A = 1, B = 0, C = 0",
+        "target": 1,
+        "feedback": "ODER ist 1 und NICHT C ist ebenfalls 1."
+      },
+      {
+        "text": "A = 0, B = 1, C = 1",
+        "target": 0,
+        "feedback": "NICHT C sperrt den Ausgang trotz des wahren ODER-Teils."
+      },
+      {
+        "text": "A = 1, B = 1, C = 0",
+        "target": 1,
+        "feedback": "Gewöhnliches ODER schließt zwei wahre Eingänge ein."
+      }
+    ]
+  },
+  "it10-xor": {
+    "title": "Antivalenz und Äquivalenz",
+    "instruction": "Untersuche die vier Gatter bei A = 1 und B = 1.",
+    "categories": ["Ausgang 0", "Ausgang 1"],
+    "entries": [
+      {
+        "text": "A XOR B",
+        "target": 0,
+        "feedback": "XOR verlangt verschiedene Eingänge; hier sind beide gleich."
+      },
+      {
+        "text": "A XNOR B",
+        "target": 1,
+        "feedback": "Äquivalenz ist bei gleichen Eingängen wahr."
+      },
+      {
+        "text": "A NAND B",
+        "target": 0,
+        "feedback": "UND ist hier 1. Die anschließende Negation ergibt 0."
+      },
+      {
+        "text": "A NOR B",
+        "target": 0,
+        "feedback": "ODER ist hier 1. Seine Negation ergibt 0."
+      }
+    ]
+  },
+  "it10-addierer": {
+    "title": "Summe und Übertrag verbinden",
+    "instruction": "Ein Volladdierer verarbeitet A, B und C. Ordne das Paar (Summenbit, Übertrag) zu.",
+    "categories": ["(0, 0)", "(1, 0)", "(0, 1)", "(1, 1)"],
+    "entries": [
+      {
+        "text": "A = 0, B = 0, C = 0",
+        "target": 0,
+        "feedback": "Keine Eins ergibt die Zahl 0: 0 + 2 · 0."
+      },
+      {
+        "text": "A = 1, B = 0, C = 0",
+        "target": 1,
+        "feedback": "Eine Eins bleibt im Summenbit: 1 + 2 · 0."
+      },
+      {
+        "text": "A = 1, B = 1, C = 0",
+        "target": 2,
+        "feedback": "Zwei Einsen erzeugen einen Übertrag: 0 + 2 · 1."
+      },
+      {
+        "text": "A = 1, B = 1, C = 1",
+        "target": 3,
+        "feedback": "Drei Einsen ergeben 1 im Summenbit und 1 als Übertrag: 1 + 2 · 1."
+      }
+    ]
+  },
+  "it10-speicher": {
+    "title": "Den NOR-Speicher verfolgen",
+    "instruction": "Q war zuletzt 1. Betrachte die Eingabepaare jeweils aus diesem bekannten Zustand. S = R = 1 ist verboten.",
+    "categories": [
+      "Q wird 1",
+      "Q wird 0",
+      "Q bleibt 1",
+      "Kein gültiger Speicherwert"
+    ],
+    "entries": [
+      {
+        "text": "S = 0, R = 0",
+        "target": 2,
+        "feedback": "Beide Eingänge inaktiv: Der bekannte Zustand bleibt erhalten."
+      },
+      {
+        "text": "S = 0, R = 1",
+        "target": 1,
+        "feedback": "R setzt den Ausgang zurück."
+      },
+      {
+        "text": "S = 1, R = 0",
+        "target": 0,
+        "feedback": "S setzt den Ausgang auf 1."
+      },
+      {
+        "text": "S = 1, R = 1",
+        "target": 3,
+        "feedback": "Der verbotene Fall darf nicht als gewöhnlicher Speicherzustand gewertet werden."
+      }
+    ]
+  },
+  "it10-schaltungstest": {
+    "title": "Wie weit reicht ein Beleg?",
+    "instruction": "Unterscheide Prüfung und Reichweite für eine Schaltung mit drei binären Eingängen.",
+    "categories": [
+      "Vollständiger funktionaler Beleg im Modell",
+      "Unvollständige Funktionsprobe",
+      "Eigenschaft außerhalb des Bitmodells"
+    ],
+    "entries": [
+      {
+        "text": "Zwei Terme liefern in allen acht Eingabekombinationen dieselben Werte.",
+        "target": 0,
+        "feedback": "Für drei binäre Eingänge sind die acht möglichen Zeilen vollständig."
+      },
+      {
+        "text": "Ein Term stimmt nur bei A = B = C = 0 mit dem Soll überein.",
+        "target": 1,
+        "feedback": "Eine einzige passende Zeile beweist die übrigen sieben nicht."
+      },
+      {
+        "text": "Eine reale Schaltung soll bei Hitze und kurzen Spannungsspitzen zuverlässig arbeiten.",
+        "target": 2,
+        "feedback": "Zeitverhalten und elektrische Bedingungen werden in der idealen Wertetabelle nicht modelliert."
+      }
+    ]
+  },
+  "it10-roboter": {
+    "title": "Die Wirkungskette zusammensetzen",
+    "instruction": "Ordne die Bauteile einer automatischen Tür nach ihrer Rolle zu.",
+    "categories": ["Sensor", "Verarbeitung", "Aktor"],
+    "entries": [
+      {
+        "text": "Ein Abstandsmesser liefert die Entfernung vor der Tür.",
+        "target": 0,
+        "feedback": "Der Sensor wandelt eine Umwelteigenschaft in eine auswertbare Messung um."
+      },
+      {
+        "text": "Das Programm entscheidet aus Messwert und Zustand, ob geöffnet werden soll.",
+        "target": 1,
+        "feedback": "Die Verarbeitung verbindet Eingaben mit den vereinbarten Verhaltensregeln."
+      },
+      {
+        "text": "Ein Motor bewegt den Türflügel.",
+        "target": 2,
+        "feedback": "Der Aktor wirkt auf die Umgebung zurück."
+      }
+    ]
+  },
+  "it10-sensoren": {
+    "title": "Was misst der Sensor wirklich?",
+    "instruction": "Ein Wagen soll Hindernisse meiden. Ordne die Aussagen nach ihrer Belastbarkeit zu.",
+    "categories": [
+      "Unmittelbare Messung",
+      "Begründete Modellentscheidung",
+      "Nicht durch diesen Messwert belegt"
+    ],
+    "entries": [
+      {
+        "text": "Der Abstandssensor meldet 12 cm in seiner Messrichtung.",
+        "target": 0,
+        "feedback": "Das ist die konkrete Messinformation des gewählten Sensors."
+      },
+      {
+        "text": "Im Modell wird bei weniger als 15 cm gestoppt.",
+        "target": 1,
+        "feedback": "Der Grenzwert verbindet die Messung mit einer vereinbarten Aktion."
+      },
+      {
+        "text": "Hinter dem Wagen ist ebenfalls alles frei.",
+        "target": 2,
+        "feedback": "Ein nach vorn gerichteter Messwert liefert keine Aussage über den rückwärtigen Bereich."
+      }
+    ]
+  },
+  "it10-zustaende": {
+    "title": "Übergänge planen",
+    "instruction": "Eine Tür kennt geschlossen, öffnend und offen. Ordne die beschriebenen Auslöser ihrem Zielzustand zu.",
+    "categories": ["öffnend", "offen", "geschlossen"],
+    "entries": [
+      {
+        "text": "Aus geschlossen wird bei gültigem Öffnungssignal der Motor gestartet.",
+        "target": 0,
+        "feedback": "Der Übergang beginnt die Bewegung; die Tür ist nicht sofort vollständig offen."
+      },
+      {
+        "text": "Aus öffnend meldet der Endsensor die vollständig offene Position.",
+        "target": 1,
+        "feedback": "Die Sensorbedingung bestätigt das Ende des Öffnens."
+      },
+      {
+        "text": "Nach dem Schließen bestätigt der andere Endsensor die geschlossene Position.",
+        "target": 2,
+        "feedback": "Ein bestätigter Zielzustand beendet diesen Bewegungsablauf."
+      }
+    ]
+  },
+  "it10-regelung": {
+    "title": "Rückkopplung erkennen",
+    "instruction": "Unterscheide feste Aktionen und Regelung. Für den Thermostat gilt: unter 19 an, über 21 aus, dazwischen bisherigen Zustand halten.",
+    "categories": ["Feste Steuerung", "Heizung an", "Heizung aus"],
+    "entries": [
+      {
+        "text": "Der Motor läuft jeden Morgen genau zehn Sekunden, unabhängig vom Ergebnis.",
+        "target": 0,
+        "feedback": "Ohne Messung und Rückführung wird nur eine feste Folge gesteuert."
+      },
+      {
+        "text": "Temperatur 18; Heizung war aus.",
+        "target": 1,
+        "feedback": "Unterhalb der unteren Grenze wird eingeschaltet."
+      },
+      {
+        "text": "Temperatur 20; Heizung war aus.",
+        "target": 2,
+        "feedback": "Im Hystereseband bleibt der vorherige Zustand aus erhalten."
+      },
+      {
+        "text": "Temperatur 20; Heizung war an.",
+        "target": 1,
+        "feedback": "Derselbe Messwert kann wegen der Vorgeschichte einen anderen Aktorzustand ergeben."
+      }
+    ]
+  },
+  "it10-roboterprogramm": {
+    "title": "Bewegung vorhersagen",
+    "instruction": "Im Raster: Start (0, 4), Blick nach Norden, x nach rechts, y nach unten. Ordne die Endposition zu. Alle Schritte liegen im freien Hof.",
+    "categories": ["(0, 2)", "(2, 4)", "(1, 3)"],
+    "entries": [
+      {
+        "text": "vor(); vor();",
+        "target": 0,
+        "feedback": "Zwei Schritte nach Norden verringern y um 2."
+      },
+      {
+        "text": "rechts(); vor(); vor();",
+        "target": 1,
+        "feedback": "Nach der Drehung nach Osten erhöhen zwei Schritte x um 2."
+      },
+      {
+        "text": "vor(); rechts(); vor();",
+        "target": 2,
+        "feedback": "Ein Schritt verändert y, der nächste nach der Drehung x."
+      }
+    ]
+  },
+  "it10-robotertest": {
+    "title": "Vom Modell zur Wirklichkeit",
+    "instruction": "Ordne die Nachweise nach ihrer Rolle im Roboterprojekt zu.",
+    "categories": ["Simulation", "Reale Erprobung", "Dokumentation der Grenze"],
+    "entries": [
+      {
+        "text": "Das Programm erreicht das Ziel auf drei idealen Rastern.",
+        "target": 0,
+        "feedback": "Das ist ein digitaler Funktionsnachweis für genau diese Modellbedingungen."
+      },
+      {
+        "text": "Mit echtem Sensor wird der Bremsweg auf glattem Boden gemessen.",
+        "target": 1,
+        "feedback": "Das prüft physische Eigenschaften, die im Raster nicht enthalten sind."
+      },
+      {
+        "text": "Der Bericht benennt, dass Schlupf und Sensorstreuung im Modell fehlen.",
+        "target": 2,
+        "feedback": "Eine benannte Grenze hilft, den Simulationserfolg angemessen einzuordnen."
+      }
+    ]
+  },
+  "it10-ki-beispiele": {
+    "title": "Aufgaben hinter dem Etikett",
+    "instruction": "Ordne die beschriebenen Systeme nach ihrer Aufgabe zu.",
+    "categories": [
+      "Klassifikation",
+      "Erzeugen neuer Inhalte",
+      "Feste direkte Steuerung"
+    ],
+    "entries": [
+      {
+        "text": "Ein aus markierten Beispielen gelerntes Modell ordnet Bilder den Klassen A oder B zu.",
+        "target": 0,
+        "feedback": "Das Modell wählt eine Klasse für eine Eingabe."
+      },
+      {
+        "text": "Ein Modell formuliert aus einer Beschreibung einen neuen Text.",
+        "target": 1,
+        "feedback": "Hier wird Inhalt erzeugt. Plausible Formulierungen garantieren keine Wahrheit."
+      },
+      {
+        "text": "Ein Schalter verbindet beim Drücken direkt einen Stromkreis.",
+        "target": 2,
+        "feedback": "Die beschriebene feste Wirkung zeigt weder Lernen noch eine KI-Aufgabe."
+      }
+    ]
+  },
+  "it10-wissensregeln": {
+    "title": "Woher kommt die Regel?",
+    "instruction": "Unterscheide ausdrücklich vorgegebene Regeln und Regeln aus Beispielen.",
+    "categories": [
+      "Wissensbasiert vorgegeben",
+      "Aus Beispielen gelernt",
+      "Aus der Ausgabe allein nicht entscheidbar"
+    ],
+    "entries": [
+      {
+        "text": "Eine Fachperson legt fest: Bei Temperatur über 50 eine Warnung ausgeben.",
+        "target": 0,
+        "feedback": "Die Regel wird mit ihrer Bedingung ausdrücklich programmiert."
+      },
+      {
+        "text": "Ein Verfahren bestimmt eine Trennschwelle durch Vergleich markierter Messbeispiele.",
+        "target": 1,
+        "feedback": "Die konkrete Regel entsteht aus den Trainingsdaten."
+      },
+      {
+        "text": "Auf dem Bildschirm steht nur: Warnung.",
+        "target": 2,
+        "feedback": "Die gleiche Ausgabe kann durch beide Ansätze zustande kommen."
+      }
+    ]
+  },
+  "it10-lernarten": {
+    "title": "Welche Rückmeldung liegt vor?",
+    "instruction": "Ordne die Lernaufgaben nach ihrer Rückmeldung zu.",
+    "categories": [
+      "Überwachtes Lernen",
+      "Unüberwachtes Lernen",
+      "Verstärkendes Lernen"
+    ],
+    "entries": [
+      {
+        "text": "Zu jedem Trainingsbild ist die gewünschte Klasse angegeben.",
+        "target": 0,
+        "feedback": "Die Zielinformation ist als Label direkt vorhanden."
+      },
+      {
+        "text": "Unmarkierte Beispiele werden nach Ähnlichkeit in Gruppen geordnet.",
+        "target": 1,
+        "feedback": "Es fehlen vorgegebene Zielklassen; das Verfahren sucht eine Struktur."
+      },
+      {
+        "text": "Ein System wählt Aktionen und erhält für ihre Folgen eine Belohnung.",
+        "target": 2,
+        "feedback": "Die Rückmeldung bewertet Folgen von Aktionen, statt jede richtige Aktion direkt vorzugeben."
+      }
+    ]
+  },
+  "it10-merkmale": {
+    "title": "Eingabe, Ziel und Auswahl",
+    "instruction": "Ordne Angaben zur künstlichen Objektklassifikation zu.",
+    "categories": ["Merkmal", "Label", "Auswahlentscheidung"],
+    "entries": [
+      {
+        "text": "Ein Objekt besitzt den Massewert 4.",
+        "target": 0,
+        "feedback": "Der Massewert kann dem Modell als Eingabe dienen."
+      },
+      {
+        "text": "Für ein Trainingsobjekt ist Klasse B vorgegeben.",
+        "target": 1,
+        "feedback": "Die Klasse ist die Zielinformation für das überwachte Lernen."
+      },
+      {
+        "text": "Im Training werden nur Objekte mit einem Massewert unter 5 verwendet.",
+        "target": 2,
+        "feedback": "Diese Auswahl verändert die abgedeckten Fälle; sie ist kein zusätzliches Merkmal."
+      }
+    ]
+  },
+  "it10-baum": {
+    "title": "Einen Baum durchlaufen",
+    "instruction": "Ein Baum fragt zuerst: Masse ≤ 5? Ja → Klasse A. Nein → Farbe ≤ 3? Ja → B, Nein → A. Ordne die Objekte ihrer Vorhersage zu.",
+    "categories": ["Klasse A", "Klasse B"],
+    "entries": [
+      {
+        "text": "Masse 4, Farbe 8",
+        "target": 0,
+        "feedback": "Die erste Frage führt sofort zum Blatt A. Die Farbe wird auf diesem Pfad nicht geprüft."
+      },
+      {
+        "text": "Masse 7, Farbe 2",
+        "target": 1,
+        "feedback": "Die erste Antwort ist Nein, die zweite Ja. Der Pfad endet in B."
+      },
+      {
+        "text": "Masse 6, Farbe 4",
+        "target": 0,
+        "feedback": "Beide Fragen werden mit Nein beantwortet. Das zweite Blatt A wird erreicht."
+      }
+    ]
+  },
+  "it10-testdaten": {
+    "title": "Datenrollen auseinanderhalten",
+    "instruction": "Ordne die Nutzung der Daten ihrer Rolle im Entwicklungsablauf zu.",
+    "categories": ["Training", "Validierung", "Unabhängiger Abschlusstest"],
+    "entries": [
+      {
+        "text": "Das Lernverfahren berechnet daraus die Trennschwellen.",
+        "target": 0,
+        "feedback": "Diese Daten bestimmen die gelernten Regeln unmittelbar."
+      },
+      {
+        "text": "Nach mehreren Vergleichen wird die Baumtiefe mit den besten Ergebnissen gewählt.",
+        "target": 1,
+        "feedback": "Der wiederholte Blick beeinflusst die Modellauswahl; diese Daten sind nicht mehr unangetastet."
+      },
+      {
+        "text": "Erst nach allen Modellentscheidungen wird ein zurückgehaltener Datensatz einmal ausgewertet.",
+        "target": 2,
+        "feedback": "Diese Daten liefern eine getrennte Abschlussbewertung, solange sie keine weiteren Anpassungen steuern."
+      }
+    ]
+  },
+  "it10-bias": {
+    "title": "Ergebnisse einordnen",
+    "instruction": "Ein kleiner und ein großer Baum werden mit denselben getrennten Vergleichsdaten beurteilt. Ordne die Beobachtungen zu.",
+    "categories": [
+      "Hinweis auf Überanpassung",
+      "Hinweis auf einseitige Auswahl",
+      "Begrenzter positiver Befund"
+    ],
+    "entries": [
+      {
+        "text": "Der große Baum trifft alle Trainingsbeispiele, aber weniger neue Fälle als der kleine.",
+        "target": 0,
+        "feedback": "Der bessere Trainingswert geht hier mit schlechterer Übertragung einher."
+      },
+      {
+        "text": "Im Training fehlen sämtliche schweren Objekte.",
+        "target": 1,
+        "feedback": "Der fehlende Bereich ist eine Frage der Datenauswahl, nicht nur der Baumtiefe."
+      },
+      {
+        "text": "Sechs von sechs künstlichen Vergleichsobjekten werden richtig eingeordnet.",
+        "target": 2,
+        "feedback": "Das ist ein Befund für diese sechs Beispiele. Eine allgemeine Einsatzfreigabe folgt daraus nicht."
+      }
+    ]
+  },
+  "it10-ki-verantwortung": {
+    "title": "Verantwortung konkret machen",
+    "instruction": "Ordne die Maßnahmen ihrer Rolle bei einer KI-Anwendung zu.",
+    "categories": [
+      "Menschliche Prüfung",
+      "Datenauswahl prüfen",
+      "Zuständigkeit und Grenzen klären"
+    ],
+    "entries": [
+      {
+        "text": "Eine Person prüft eine erzeugte Behauptung anhand einer verlässlichen Quelle.",
+        "target": 0,
+        "feedback": "Die Prüfung bewertet den Inhalt und verlässt sich nicht allein auf eine plausible Ausgabe."
+      },
+      {
+        "text": "Das Team untersucht, welche Gruppen und Situationen in den Beispielen fehlen.",
+        "target": 1,
+        "feedback": "Diese Frage macht mögliche Auswahlverzerrungen sichtbar."
+      },
+      {
+        "text": "Es wird festgelegt, wer Entscheidungen begründet und fehlerhafte Ergebnisse korrigiert.",
+        "target": 2,
+        "feedback": "Verantwortung braucht benannte Personen und einen überprüfbaren Umgang mit Fehlern."
+      }
+    ]
+  }
+}

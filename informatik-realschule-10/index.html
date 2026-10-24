@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Informatik für die Realschule: verstehen, programmieren und selbst ausprobieren. Fünf wählbare IT-Vertiefungen nach LehrplanPLUS Bayern." />
+    <meta name="color-scheme" content="light dark" />
+    <title>Informatik 10 · ZAM Academy</title>
+  </head>
+  <body>
+    <a class="skip" href="#main">Zum Inhalt</a>
+    <header class="header">
+      <a class="brand" href="#view=path" aria-label="Informatik 10 – Lernpfad"><span class="brand-symbol" aria-hidden="true">&lt;/&gt;</span><span>ZAM ACADEMY<small>Informatik 10 · Realschule</small></span></a>
+      <nav aria-label="Hauptnavigation">
+        <a href="#view=path" data-view="path">Lernpfad</a>
+        <a href="#view=labs" data-view="labs">Werkstätten</a>
+        <a href="#view=sources" data-view="sources">Quellen</a>
+      </nav>
+      <button type="button" id="theme" class="text-button" aria-label="Dunkle Ansicht">☾ Dunkel</button>
+      <button type="button" id="zam" class="button secondary">Mit ZAM behalten</button>
+    </header>
+    <p id="storage-notice" class="notice" role="status" hidden>Dein Browser erlaubt das Speichern gerade nicht. Du kannst weiterüben; der Stand bleibt nur bis zum Schließen dieser Seite erhalten.</p>
+    <main id="main" tabindex="-1"></main>
+    <footer><a class="zam-home-link" href="https://academy.zam-os.org/">← ZAM Academy</a>Alles läuft in deinem Browser. Kein Konto, keine Übertragung deiner Antworten.<button type="button" class="text-button" id="reset">Fortschritt zurücksetzen</button></footer>
+    <dialog id="dialog" aria-labelledby="dialog-title"></dialog>
+    <div id="toast" role="status" aria-live="polite"></div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+{
+  "name": "zam-academy-informatik-realschule-10",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Informatik 10: wählbare IT-Vertiefungen mit lokalen Programmier-, Logik-, Netzwerk-, Robotik- und KI-Werkstätten.",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "package:zip": "npm run build && node scripts/build-release-zip.mjs",
+    "cell:generate": "node scripts/generate-cell.mjs"
+  },
+  "devDependencies": {
+    "typescript": "^6.0.3",
+    "vite": "^8.1.5",
+    "vite-plugin-singlefile": "^2.3.3",
+    "vitest": "^4.1.10"
+  },
+  "license": "Apache-2.0"
+}

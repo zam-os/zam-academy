@@ -1,0 +1,1791 @@
+[
+  {
+    "id": "it10-internet",
+    "module": "netze",
+    "title": "Internet und Web unterscheiden",
+    "intro": "Eine Verbindung ist die Infrastruktur. Ein Dienst ist das, was darauf angeboten wird.",
+    "paragraphs": [
+      "Das Internet verbindet viele Netze mit gemeinsamen Protokollen. Darauf laufen unterschiedliche Dienste: Webseiten, E-Mail oder Dateiübertragung. Das World Wide Web nutzt verlinkte Ressourcen und Webadressen. Es ist ein Dienst im Internet, kein zweiter Name für das gesamte Netz.",
+      "1989 schlug Tim Berners-Lee am CERN das Web vor. Ende 1990 liefen dort ein Webserver und ein Browser. 1993 gab CERN die Websoftware frei. Offene Standards erleichterten das Veröffentlichen und Verknüpfen von Informationen. Sie garantieren aber weder gleiche Zugangschancen noch verlässliche Inhalte."
+    ],
+    "takeaway": "Ein Dienst nutzt die Netzinfrastruktur; seine Inhalte und Regeln entstehen zusätzlich.",
+    "sourceIds": ["lp", "cern"],
+    "prerequisites": [],
+    "quiz": {
+      "question": "Welche Aussage beschreibt das Verhältnis von Web und Internet?",
+      "answer": "Das Web ist ein Dienst, der die Infrastruktur des Internets nutzt.",
+      "wrong": [
+        "Das Internet ist eine einzelne Webseite mit vielen Unterseiten.",
+        "Web und Internet sind technisch vollständig dasselbe."
+      ],
+      "explanation": "Ein Dienst nutzt die Netzinfrastruktur; seine Inhalte und Regeln entstehen zusätzlich."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Eine E-Mail kommt an, während eine Webseite ausfällt. Erkläre, weshalb das kein Widerspruch ist.",
+        "hints": ["Netzinfrastruktur benennen", "Zwei Dienste unterscheiden"],
+        "model": "E-Mail und Web sind unterschiedliche Dienste auf derselben Netzinfrastruktur. Eine Störung am Webserver kann den Webzugriff verhindern, während der Maildienst weiter erreichbar ist.",
+        "criteria": [
+          "Netzinfrastruktur benennen",
+          "Zwei Dienste unterscheiden",
+          "Eine begrenzte Störungsursache nennen"
+        ]
+      },
+      "2": {
+        "prompt": "Eine Schule behauptet: Weil das Web offen ist, können alle Menschen gleich gut teilnehmen. Prüfe die Aussage anhand zweier Hürden.",
+        "hints": [
+          "Offene Standards einordnen",
+          "Zwei konkrete Hürden erläutern"
+        ],
+        "model": "Offene Webstandards ermöglichen unterschiedliche Browser und eigene Veröffentlichungen. Teilnahme hängt zusätzlich von Netzanschluss, geeigneten Geräten, barrierefreier Gestaltung und Fähigkeiten ab. Offenheit allein beseitigt diese Hürden nicht.",
+        "criteria": [
+          "Offene Standards einordnen",
+          "Zwei konkrete Hürden erläutern",
+          "Eine begründete Schlussfolgerung ziehen"
+        ]
+      }
+    }
+  },
+  {
+    "id": "it10-kommunikation",
+    "module": "netze",
+    "title": "Kommunikation bewusst gestalten",
+    "intro": "Ein Klassenchat kann Zusammenarbeit erleichtern und zugleich Druck erzeugen.",
+    "paragraphs": [
+      "Schnelle Nachrichten helfen bei Absprachen, verlangen aber keine ständige Erreichbarkeit. Benachrichtigungen, Weiterleitungen und öffentliche Kennzahlen können Aufmerksamkeit binden. Ob ein Dienst nützt oder belastet, hängt von Situation, Gestaltung und eigenen Gewohnheiten ab.",
+      "Bewerte eine Nutzung mit konkreten Kriterien: Wer braucht welche Nachricht? Welcher Kanal passt? Wann ist eine Antwort nötig? Für schulische Zusammenarbeit helfen verabredete Zeiten, klare Aufgaben und ein ruhiger Alternativkanal. Eine pauschale Bewertung aller Bildschirmzeit übersieht den Zweck."
+    ],
+    "takeaway": "Kommunikationsregeln sollen zum Zweck und zu den beteiligten Menschen passen.",
+    "sourceIds": ["lp"],
+    "prerequisites": [],
+    "quiz": {
+      "question": "Welche Vereinbarung verringert vermeidbaren Erreichbarkeitsdruck?",
+      "answer": "Für nicht dringende Aufgaben feste Antwortzeiten vereinbaren.",
+      "wrong": [
+        "Jede Nachricht muss auch nachts sofort beantwortet werden.",
+        "Die Anzahl der Nachrichten ist das einzige Qualitätskriterium."
+      ],
+      "explanation": "Kommunikationsregeln sollen zum Zweck und zu den beteiligten Menschen passen."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Eine Lerngruppe schreibt abends 80 Nachrichten. Nenne einen Nutzen, ein Risiko und eine passende Vereinbarung.",
+        "hints": [
+          "Einen konkreten Nutzen nennen",
+          "Ein zur Situation passendes Risiko erklären"
+        ],
+        "model": "Der Chat ermöglicht schnelle Rückfragen. Viele Nachrichten können Erholung stören und Aufgaben verdecken. Die Gruppe sammelt Fragen in einem Aufgabenkanal und vereinbart Antwortzeiten bis zum frühen Abend.",
+        "criteria": [
+          "Einen konkreten Nutzen nennen",
+          "Ein zur Situation passendes Risiko erklären",
+          "Eine umsetzbare Vereinbarung formulieren"
+        ]
+      },
+      "2": {
+        "prompt": "Ein Betrieb plant eine öffentliche Rangliste der schnellsten Chatantworten. Beurteile die Idee und schlage eine bessere Messgröße vor.",
+        "hints": [
+          "Messgröße auf ihren Zweck prüfen",
+          "Eine mögliche Nebenwirkung begründen"
+        ],
+        "model": "Antwortgeschwindigkeit allein belohnt ständige Erreichbarkeit und kurze statt hilfreicher Antworten. Das kann Druck erzeugen. Für die Zusammenarbeit eignen sich gemeinsam vereinbarte Fristen und Rückmeldungen dazu, ob Fragen vollständig geklärt wurden.",
+        "criteria": [
+          "Messgröße auf ihren Zweck prüfen",
+          "Eine mögliche Nebenwirkung begründen",
+          "Eine passendere Alternative erklären"
+        ]
+      }
+    }
+  },
+  {
+    "id": "it10-datenspuren",
+    "module": "netze",
+    "title": "Datenspuren und vermeintliche Anonymität",
+    "intro": "Ein erfundener Nutzername verbirgt nicht automatisch jede Verbindung zu einer Person.",
+    "paragraphs": [
+      "Ein Dienst kann neben veröffentlichten Inhalten auch Zeitpunkte, Geräteinformationen oder Verbindungsdaten verarbeiten. Mehrere für sich unauffällige Angaben können zusammen ein erkennbares Muster bilden. Eine technische Kennung ist nicht von sich aus ein verlässlicher Personenbeweis.",
+      "Ein Pseudonym ersetzt den offen sichtbaren Namen. Anonymität würde bedeuten, dass eine Person mit vertretbaren Mitteln nicht identifiziert werden kann. Veröffentliche deshalb auch unter einem Spitznamen keine unnötigen Orts-, Termin- oder Kontaktdaten. Vor einer Weitergabe prüfst du Zweck, Empfänger und Folgen."
+    ],
+    "takeaway": "Ein verdeckter Name ist keine Garantie für Anonymität.",
+    "sourceIds": ["lp", "privacy"],
+    "prerequisites": ["it10-kommunikation"],
+    "quiz": {
+      "question": "Was leistet ein Pseudonym allein?",
+      "answer": "Es ersetzt den sichtbaren Namen, verhindert aber nicht jede Zuordnung.",
+      "wrong": [
+        "Es entfernt automatisch alle Verbindungsdaten des Dienstes.",
+        "Es verhindert technisch jede Verbindung zu einer realen Person."
+      ],
+      "explanation": "Ein verdeckter Name ist keine Garantie für Anonymität."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Ein Profil zeigt keinen Namen, aber Schule, Mannschaft und Trainingszeit. Erkläre das Zuordnungsrisiko.",
+        "hints": [
+          "Kombination der Angaben betrachten",
+          "Pseudonym und Anonymität trennen"
+        ],
+        "model": "Die Kombination kann den Kreis möglicher Personen stark einschränken. Der Spitzname verhindert eine Zuordnung dann nicht zuverlässig. Für den Zweck unnötige Angaben sollten entfallen.",
+        "criteria": [
+          "Kombination der Angaben betrachten",
+          "Pseudonym und Anonymität trennen",
+          "Eine passende Verringerung der Daten nennen"
+        ]
+      },
+      "2": {
+        "prompt": "Eine App will genaue Standortverläufe speichern, um einen Stundenplan anzuzeigen. Begründe eine datensparsamere Lösung.",
+        "hints": [
+          "Zweck konkret benennen",
+          "Erforderlichkeit der Daten prüfen"
+        ],
+        "model": "Ein gewöhnlicher Stundenplan benötigt keine genauen Bewegungsprofile. Die ausgewählte Schule oder ein lokal eingetragener Plan genügt. Die Standorterfassung sollte für diesen Zweck entfallen; eine zusätzliche Funktion müsste gesondert begründet und geprüft werden.",
+        "criteria": [
+          "Zweck konkret benennen",
+          "Erforderlichkeit der Daten prüfen",
+          "Eine funktionierende Alternative erläutern"
+        ]
+      }
+    }
+  },
+  {
+    "id": "it10-rechte",
+    "module": "netze",
+    "title": "Fotos, Quellen und personenbezogene Daten",
+    "intro": "Online auffindbar bedeutet nicht automatisch frei weiterverwendbar.",
+    "paragraphs": [
+      "Bei einem Foto können verschiedene Rechte zusammenkommen: Rechte der abgebildeten Personen, Rechte der Fotografin oder des Fotografen und Datenschutz. Für eine Veröffentlichung im Klassenprojekt klärt ihr vorab Zweck, Zielgruppe und Berechtigungen. Eine Namensnennung allein ersetzt keine erforderliche Erlaubnis.",
+      "Einwilligung ist eine mögliche Rechtsgrundlage, aber nicht die einzige. Für konkrete Veröffentlichungen müssen die tatsächlichen Voraussetzungen geprüft werden. Auch ein Zitat braucht einen nachvollziehbaren Zitatzweck und einen dazu passenden Umfang. In dieser Übung nutzt du erfundene Fälle statt echter Fotos oder persönlicher Angaben."
+    ],
+    "takeaway": "Quelle, Nutzungsbefugnis und Rechte betroffener Personen sind verschiedene Prüffragen.",
+    "sourceIds": ["lp", "privacy", "photo", "copyright"],
+    "prerequisites": ["it10-datenspuren"],
+    "quiz": {
+      "question": "Weshalb genügt bei einem fremden Personenfoto die Quellenangabe allein nicht?",
+      "answer": "Nutzungsrechte und Rechte der abgebildeten Person müssen zusätzlich geklärt sein.",
+      "wrong": [
+        "Eine Quellenangabe überträgt automatisch sämtliche Rechte am Foto.",
+        "Ein im Internet sichtbares Bild hat grundsätzlich keine geschützten Rechte."
+      ],
+      "explanation": "Quelle, Nutzungsbefugnis und Rechte betroffener Personen sind verschiedene Prüffragen."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Eine Gruppe will ein fremdes Mannschaftsfoto auf ihre öffentliche Projektseite kopieren. Nenne zwei getrennte Prüfungen und eine Alternative.",
+        "hints": [
+          "Rechte am Werk berücksichtigen",
+          "Rechte der Personen gesondert berücksichtigen"
+        ],
+        "model": "Sie prüft die Nutzungsbefugnis am Foto und die Rechte der abgebildeten Personen einschließlich der passenden Grundlage für die Veröffentlichung. Als Alternative erstellt sie eine eigene Grafik ohne erkennbare Personen und dokumentiert deren Herkunft.",
+        "criteria": [
+          "Rechte am Werk berücksichtigen",
+          "Rechte der Personen gesondert berücksichtigen",
+          "Eine praktikable Alternative nennen"
+        ]
+      },
+      "2": {
+        "prompt": "Eine Schülerin meint: Mit einer Quellenangabe darf ich jedes Bild als Zitat benutzen. Widerlege die Begründung ohne eine pauschale Regel für alle Einzelfälle zu erfinden.",
+        "hints": [
+          "Quellenangabe von Erlaubnis trennen",
+          "Zitatzweck und Umfang erläutern"
+        ],
+        "model": "Eine Quellenangabe macht eine beliebige Bildübernahme nicht zum zulässigen Zitat. Dafür braucht es einen eigenen Zitatzweck und einen dadurch gerechtfertigten Umfang; weitere Voraussetzungen sind zu prüfen. Eine passende Lizenz oder eine eigene Darstellung kann stattdessen die Nutzung ermöglichen.",
+        "criteria": [
+          "Quellenangabe von Erlaubnis trennen",
+          "Zitatzweck und Umfang erläutern",
+          "Eine geeignete Alternative angeben"
+        ]
+      }
+    }
+  },
+  {
+    "id": "it10-firewall",
+    "module": "netze",
+    "title": "Filterregeln statt Alles-oder-nichts",
+    "intro": "Eine Firewall entscheidet über Datenverkehr anhand einer festgelegten Regelmenge.",
+    "paragraphs": [
+      "Ein Paketfilter betrachtet zum Beispiel Richtung, Protokoll und Zielport. In unserer Werkstatt gilt die erste passende Regel. Trifft keine Regel zu, wird das Paket abgewiesen. Deshalb kann eine breite Erlaubnis am Anfang eine spätere Sperre wirkungslos machen.",
+      "Erlaubt werden nur die Dienste, die für den Auftrag nötig sind. Danach prüfst du erwünschten und unerwünschten Verkehr. Die Werkstatt bildet einen zustandslosen Filter ab: Antwortverkehr wird nicht automatisch durchgelassen. Reale Systeme können zusätzlich Verbindungszustände und viele weitere Merkmale auswerten."
+    ],
+    "takeaway": "Regelreihenfolge, genaue Merkmale und der Standardfall bestimmen das Filterergebnis.",
+    "sourceIds": ["lp", "firewalls"],
+    "prerequisites": [],
+    "quiz": {
+      "question": "Welche Regel entscheidet im Modell bei mehreren passenden Filterregeln?",
+      "answer": "Die erste passende Regel in der geordneten Liste.",
+      "wrong": [
+        "Immer die letzte Regel, unabhängig von ihrer Position.",
+        "Jedes Paket wird erlaubt, sobald irgendwo eine Erlaubnis steht."
+      ],
+      "explanation": "Regelreihenfolge, genaue Merkmale und der Standardfall bestimmen das Filterergebnis."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Vor einer Sperre für eingehendes TCP steht eine Regel, die jeden Verkehr erlaubt. Erkläre, warum die Sperre nicht wirkt.",
+        "hints": [
+          "Erste passende Regel benennen",
+          "Den Ablauf an einem Paket erklären"
+        ],
+        "model": "Die erste Regel passt bereits auf das Paket und erlaubt es. Die spätere Sperre wird nicht mehr ausgewertet. Die breite Erlaubnis muss entfallen oder so präzisiert werden, dass unerwünschte Pakete sie nicht treffen.",
+        "criteria": [
+          "Erste passende Regel benennen",
+          "Den Ablauf an einem Paket erklären",
+          "Eine passende Korrektur vorschlagen"
+        ]
+      },
+      "2": {
+        "prompt": "Entwirf eine lokale Filterstrategie, die nur ausgehendes TCP 443 und UDP 53 zulässt. Nenne zwei Gegenproben und eine Grenze des Modells.",
+        "hints": [
+          "Richtung, Protokoll und Port präzise angeben",
+          "Mindestens zwei unerwünschte Fälle testen"
+        ],
+        "model": "Ich erlaube ausgehend TCP mit Zielport 443 und UDP mit Zielport 53. Der Standardfall ist Abweisen. Als Gegenproben müssen eingehendes TCP 443 und ausgehendes TCP 80 scheitern. Das zustandslose Modell behandelt Rückpakete separat und prüft keine tatsächlichen Webinhalte.",
+        "criteria": [
+          "Richtung, Protokoll und Port präzise angeben",
+          "Mindestens zwei unerwünschte Fälle testen",
+          "Die zustandslose Modellgrenze nennen"
+        ]
+      }
+    },
+    "lab": "network-web"
+  },
+  {
+    "id": "it10-schluessel",
+    "module": "netze",
+    "title": "Verschlüsseln und Schlüssel unterscheiden",
+    "intro": "Eine geschützte Verbindung braucht mehr als einen geheim klingenden Namen.",
+    "paragraphs": [
+      "Bei symmetrischer Verschlüsselung teilen die Beteiligten einen geheimen Schlüssel. Bei asymmetrischen Verfahren gehören ein öffentlicher und ein privater Schlüssel zusammen. Ein öffentlicher Schlüssel darf verteilt werden; der private bleibt bei seinem Besitzer. Die konkrete Verwendung hängt vom Verfahren ab.",
+      "Verschlüsselung soll Vertraulichkeit schützen. Digitale Signaturen können Herkunft und Unverändertheit prüfbar machen, ohne den Text zu verstecken. Moderne Verbindungen kombinieren Verfahren: Ein abgesicherter Schlüsselaustausch ermöglicht einen gemeinsamen Sitzungsschlüssel für die Nutzdaten. Die Zahlenverfahren werden hier fachlich erklärt, nicht selbst kryptografisch implementiert."
+    ],
+    "takeaway": "Geheimhaltung des privaten Schlüssels und Prüfung der Gegenstelle erfüllen unterschiedliche Aufgaben.",
+    "sourceIds": ["lp", "tls"],
+    "prerequisites": [],
+    "quiz": {
+      "question": "Welcher Teil eines asymmetrischen Schlüsselpaars muss geheim bleiben?",
+      "answer": "Der private Schlüssel.",
+      "wrong": [
+        "Der öffentlich verteilbare Schlüssel.",
+        "Die öffentlich bekannte Beschreibung des Verfahrens."
+      ],
+      "explanation": "Geheimhaltung des privaten Schlüssels und Prüfung der Gegenstelle erfüllen unterschiedliche Aufgaben."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Warum kann ein öffentlicher Schlüssel verteilt werden, während ein privater Schlüssel geschützt werden muss?",
+        "hints": [
+          "Das Schlüsselpaar benennen",
+          "Unterschiedliche Rollen erklären"
+        ],
+        "model": "Das Verfahren ist so konstruiert, dass der öffentliche Teil bekannt sein darf. Der private Teil ermöglicht die zugehörige geheime Operation, etwa Entschlüsselung oder Signatur je nach Verfahren. Wer ihn erhält, könnte diese Rolle übernehmen.",
+        "criteria": [
+          "Das Schlüsselpaar benennen",
+          "Unterschiedliche Rollen erklären",
+          "Die Folge eines privaten Schlüsselverlusts nennen"
+        ]
+      },
+      "2": {
+        "prompt": "Eine Nachricht ist digital signiert, aber nicht verschlüsselt. Erkläre zwei mögliche Schutzaussagen und eine fehlende Eigenschaft.",
+        "hints": [
+          "Herkunft an eine vertrauenswürdige Schlüsselzuordnung binden",
+          "Unverändertheit erläutern"
+        ],
+        "model": "Eine erfolgreich und vertrauenswürdig geprüfte Signatur kann die Herkunft vom zugehörigen Schlüssel und die Unverändertheit der signierten Nachricht belegen. Der Klartext bleibt lesbar; Vertraulichkeit entsteht dadurch nicht. Ob der Inhalt wahr ist, entscheidet die Signatur ebenfalls nicht.",
+        "criteria": [
+          "Herkunft an eine vertrauenswürdige Schlüsselzuordnung binden",
+          "Unverändertheit erläutern",
+          "Fehlende Vertraulichkeit klar nennen"
+        ]
+      }
+    }
+  },
+  {
+    "id": "it10-https",
+    "module": "netze",
+    "title": "HTTPS und WLAN-Schutz einordnen",
+    "intro": "Eine Portnummer ist kein Beweis für eine sichere Verbindung.",
+    "paragraphs": [
+      "HTTPS verwendet TLS für die Übertragung zwischen Browser und Webserver. Der Browser prüft unter anderem, ob das Serverzertifikat vertrauenswürdig ist, zum aufgerufenen Namen passt und zeitlich gültig ist. Nur verschlüsselte Bytes von einer ungeprüften Gegenstelle reichen für eine vertrauenswürdige Verbindung nicht.",
+      "WPA schützt die Funkstrecke eines WLANs. Das ersetzt keinen durchgängigen Schutz zum entfernten Webserver. Umgekehrt macht ein HTTPS-Schloss einen Shop nicht ehrlich. Die Werkstatt zeigt diese unterschiedlichen Prüffragen mit Schaltern; sie führt keinen realen TLS-Handshake und keine WLAN-Verschlüsselung aus."
+    ],
+    "takeaway": "Transportschutz bestätigt weder Wahrheit noch die Vertrauenswürdigkeit eines Geschäftsmodells.",
+    "sourceIds": ["lp", "tls"],
+    "prerequisites": ["it10-schluessel"],
+    "quiz": {
+      "question": "Was folgt aus einem erfolgreichen HTTPS-Verbindungsaufbau allein?",
+      "answer": "Die Übertragung zur geprüften Gegenstelle ist geschützt, der Inhalt kann trotzdem täuschen.",
+      "wrong": [
+        "Jeder angebotene Artikel wurde von der Zertifizierungsstelle geprüft.",
+        "Die Webseite kann danach keine personenbezogenen Daten mehr verarbeiten."
+      ],
+      "explanation": "Transportschutz bestätigt weder Wahrheit noch die Vertrauenswürdigkeit eines Geschäftsmodells."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Eine Warnung sagt, das Zertifikat passe nicht zur Webadresse. Warum genügt die aktive Verschlüsselung nicht?",
+        "hints": [
+          "Vertraulichkeit von Identitätsprüfung trennen",
+          "Den Namensfehler erklären"
+        ],
+        "model": "Die Verschlüsselung schützt Bytes zur Gegenstelle. Passt deren Zertifikat nicht zum angeforderten Namen, ist die Identität der gewünschten Gegenstelle nicht erfolgreich bestätigt. Die Warnung darf deshalb nicht allein wegen aktiver Verschlüsselung übergangen werden.",
+        "criteria": [
+          "Vertraulichkeit von Identitätsprüfung trennen",
+          "Den Namensfehler erklären",
+          "Eine passende Handlungsfolge nennen"
+        ]
+      },
+      "2": {
+        "prompt": "Im geschützten Schul-WLAN wird eine unverschlüsselte HTTP-Seite geöffnet. Welche Strecken sind geschützt und welche Aussage wäre zu weitgehend?",
+        "hints": [
+          "Die lokale Funkstrecke benennen",
+          "Den weiteren Übertragungsweg unterscheiden"
+        ],
+        "model": "Der WLAN-Schutz betrifft die Funkstrecke zwischen Gerät und WLAN-Zugangspunkt. Er schützt nicht automatisch den weiteren Weg zum HTTP-Server. Die Aussage, alle Internetinhalte seien durch das WLAN vollständig verschlüsselt, wäre deshalb falsch.",
+        "criteria": [
+          "Die lokale Funkstrecke benennen",
+          "Den weiteren Übertragungsweg unterscheiden",
+          "Die pauschale Schutzbehauptung zurückweisen"
+        ]
+      }
+    }
+  },
+  {
+    "id": "it10-sicherheitskonzept",
+    "module": "netze",
+    "title": "Ein Sicherheitskonzept prüfen",
+    "intro": "Technik, Verhalten und überprüfbare Regeln ergänzen sich.",
+    "paragraphs": [
+      "Für einen fiktiven Projektserver beschreibst du zuerst Zweck, benötigte Dienste und schützenswerte Daten. Daraus entstehen konkrete Maßnahmen: knappe Freigaben, geprüfte verschlüsselte Verbindungen, passende Zugriffsrechte und ein Verfahren bei Fehlermeldungen. Jede Maßnahme braucht einen nachvollziehbaren Test.",
+      "Prüfe auch unerwünschte Fälle: falscher Hostname, abgelaufenes Zertifikat oder unerlaubter Port. Ein einzelner erfolgreicher Aufruf beweist keine vollständige Sicherheit. Fasse dein Ergebnis so zusammen, dass andere die erlaubten Dienste, die Gegenproben und die verbleibenden Grenzen erkennen."
+    ],
+    "takeaway": "Ein begründetes Sicherheitsurteil braucht gewünschte Fälle, Gegenproben und benannte Grenzen.",
+    "sourceIds": ["lp", "firewalls", "tls"],
+    "prerequisites": ["it10-firewall", "it10-https"],
+    "quiz": {
+      "question": "Welche Prüfung ergänzt einen erfolgreichen Webaufruf sinnvoll?",
+      "answer": "Auch unerlaubte Zugriffe und fehlgeschlagene Zertifikatsprüfungen testen.",
+      "wrong": [
+        "Nur denselben erfolgreichen Aufruf mehrfach wiederholen.",
+        "Nach einem erfolgreichen Aufruf alle Warnmeldungen abschalten."
+      ],
+      "explanation": "Ein begründetes Sicherheitsurteil braucht gewünschte Fälle, Gegenproben und benannte Grenzen."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Formuliere zu einer Webfreigabe je einen erlaubten und einen verbotenen Testfall.",
+        "hints": [
+          "Einen erlaubten Fall genau beschreiben",
+          "Einen unterscheidbaren verbotenen Fall beschreiben"
+        ],
+        "model": "Ausgehendes TCP mit Zielport 443 soll erlaubt sein. Ein unangeforderter eingehender Zugriff mit demselben Zielport soll abgewiesen werden. Zusätzlich prüfe ich den Namen und die Gültigkeit des Zertifikats, weil die Portregel allein keine sichere Gegenstelle bestätigt.",
+        "criteria": [
+          "Einen erlaubten Fall genau beschreiben",
+          "Einen unterscheidbaren verbotenen Fall beschreiben",
+          "Filter und Gegenstellenprüfung verbinden"
+        ]
+      },
+      "2": {
+        "prompt": "Ein Team meldet nach sieben erfolgreichen Modelltests: Unser echter Server ist jetzt vollständig sicher. Beurteile diese Aussage.",
+        "hints": [
+          "Ergebnis auf die geprüften Fälle begrenzen",
+          "Mindestens zwei fehlende reale Aspekte nennen"
+        ],
+        "model": "Die Modelltests belegen nur das geprüfte Verhalten des vereinfachten Filters und der Modell-Zertifikatsprüfung. Softwarefehler, echte Schlüsselverwaltung, Benutzerrechte und weitere Angriffe sind damit nicht überprüft. Der Bericht sollte die Testfälle und ihre Reichweite nennen und zusätzliche Prüfungen für den realen Betrieb planen.",
+        "criteria": [
+          "Ergebnis auf die geprüften Fälle begrenzen",
+          "Mindestens zwei fehlende reale Aspekte nennen",
+          "Eine überprüfbare weitere Maßnahme formulieren"
+        ]
+      }
+    },
+    "lab": "network-web"
+  },
+  {
+    "id": "it10-analyse",
+    "module": "objekte",
+    "title": "Vom Auftrag zum überprüfbaren Modell",
+    "intro": "Ein Programm beginnt mit einer präzisen Aufgabe, nicht mit möglichst viel Code.",
+    "paragraphs": [
+      "Bei der Analyse beschreibst du, was ein System leisten soll und was ausdrücklich außerhalb des Auftrags liegt. Für einen Ausleihzähler kann eine Anforderung lauten: Ein gültiger Vorgang erhöht den Bestand um eins. Ein konkreter Beispielablauf und sein erwartetes Ergebnis machen diese Aussage prüfbar.",
+      "Darauf folgen Entwurf, Implementierung und Test. Optimierung verändert eine Lösung gezielt; Wartung hält sie bei neuen Anforderungen funktionsfähig. Die Schritte werden oft mehrfach durchlaufen. Ein früher Test kann zeigen, dass bereits die Anforderung unklar war."
+    ],
+    "takeaway": "Eine klare Anforderung verbindet einen beobachtbaren Ablauf mit einer begründeten Erwartung.",
+    "sourceIds": ["lp", "classes"],
+    "prerequisites": [],
+    "quiz": {
+      "question": "Was macht eine Anforderung gut überprüfbar?",
+      "answer": "Ein konkreter Ausgangszustand, eine Aktion und ein erwartetes Ergebnis.",
+      "wrong": [
+        "Möglichst viele Fachwörter ohne ein beobachtbares Ergebnis.",
+        "Die Forderung, dass das Programm irgendwie modern wirkt."
+      ],
+      "explanation": "Eine klare Anforderung verbindet einen beobachtbaren Ablauf mit einer begründeten Erwartung."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Ersetze die Anforderung Der Zähler soll funktionieren durch einen konkreten Testfall.",
+        "hints": [
+          "Einen Ausgangszustand angeben",
+          "Eine konkrete Aktion nennen"
+        ],
+        "model": "Der Zähler startet bei 10. Nach addiere(3) soll sein Wert 13 sein. Eine andere Instanz, die bei 1 startet, soll weiterhin den Wert 1 haben.",
+        "criteria": [
+          "Einen Ausgangszustand angeben",
+          "Eine konkrete Aktion nennen",
+          "Das erwartete Ergebnis festlegen"
+        ]
+      },
+      "2": {
+        "prompt": "Ein Team implementiert bereits eine Konto-App, obwohl Überziehen vielleicht erlaubt ist. Erkläre, welche Entscheidung vor den Tests geklärt werden muss.",
+        "hints": [
+          "Die unklare Anforderung benennen",
+          "Zwei mögliche Folgen unterscheiden"
+        ],
+        "model": "Vor der Implementierung der Abheberegel muss feststehen, ob ein negativer Kontostand zulässig ist und welche Beträge gültig sind. Daraus entstehen unterschiedliche Tests, etwa für eine Abhebung über dem Guthaben. Ohne diese Anforderung kann derselbe Ablauf je nach Erwartung richtig oder falsch erscheinen.",
+        "criteria": [
+          "Die unklare Anforderung benennen",
+          "Zwei mögliche Folgen unterscheiden",
+          "Einen daraus abgeleiteten Testfall nennen"
+        ]
+      }
+    }
+  },
+  {
+    "id": "it10-klasse",
+    "module": "objekte",
+    "title": "Klasse und Objekt auseinanderhalten",
+    "intro": "Ein Bauplan beschreibt gemeinsame Eigenschaften; Instanzen besitzen eigene Zustände.",
+    "paragraphs": [
+      "Eine Klasse bündelt Attribute und Methoden eines Objekttyps. Ein Objekt ist eine konkrete Instanz dieser Klasse. Zwei Objekte der Klasse Zaehler können dieselben Methoden besitzen und gleichzeitig unterschiedliche Werte speichern.",
+      "Ein Klassendiagramm zeigt den Typ mit seinem Namen, Attributen und Methoden. Ein Objektdiagramm zeigt konkrete Instanzen und ihre momentanen Werte. In der Werkstatt werden Klassen als begrenzter JavaScript-Ausschnitt geschrieben. Der Testbereich erzeugt daraus mehrere Instanzen und beobachtet sie getrennt."
+    ],
+    "takeaway": "Gemeinsame Methoden bedeuten nicht, dass alle Instanzen dieselben Attributwerte teilen.",
+    "sourceIds": ["lp", "classes"],
+    "prerequisites": ["it10-analyse"],
+    "quiz": {
+      "question": "Was ist die Instanz einer Klasse?",
+      "answer": "Ein konkretes Objekt mit eigenem Zustand.",
+      "wrong": [
+        "Die Liste aller möglichen Klassennamen.",
+        "Ein Diagramm, in dem grundsätzlich keine Werte vorkommen."
+      ],
+      "explanation": "Gemeinsame Methoden bedeuten nicht, dass alle Instanzen dieselben Attributwerte teilen."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Zwei Zähler starten mit 10 und 1. Nur der erste erhält addiere(3). Beschreibe die erwarteten Zustände.",
+        "hints": [
+          "Beide Ausgangswerte berücksichtigen",
+          "Die Wirkung dem richtigen Objekt zuordnen"
+        ],
+        "model": "Der erste Zähler hat danach den Wert 13. Der zweite bleibt bei 1. Beide sind Instanzen derselben Klasse, aber der Methodenaufruf verändert nur den Zustand des angesprochenen Objekts.",
+        "criteria": [
+          "Beide Ausgangswerte berücksichtigen",
+          "Die Wirkung dem richtigen Objekt zuordnen",
+          "Gemeinsame Klasse und getrennte Zustände erklären"
+        ]
+      },
+      "2": {
+        "prompt": "Eine Schülerin zeichnet Zaehler mit dem Attribut wert und daneben schulkasse mit wert gleich 20. Welche Darstellung beschreibt einen Typ und welche eine Instanz?",
+        "hints": [
+          "Die Klasse korrekt zuordnen",
+          "Die Instanz korrekt zuordnen"
+        ],
+        "model": "Zaehler mit Attributdefinition beschreibt die Klasse und damit den Typ. schulkasse mit dem konkreten Wert 20 beschreibt eine Instanz zu einem Zeitpunkt. Im Klassendiagramm gehören zusätzlich die Methoden zum Typ; konkrete Momentwerte gehören in die Objektdarstellung.",
+        "criteria": [
+          "Die Klasse korrekt zuordnen",
+          "Die Instanz korrekt zuordnen",
+          "Definition von einem momentanen Wert unterscheiden"
+        ]
+      }
+    }
+  },
+  {
+    "id": "it10-methoden",
+    "module": "objekte",
+    "title": "Methoden verändern einen Zustand",
+    "intro": "Ein Parameter ist eine Eingabe für einen Aufruf, kein Ersatz für den bisherigen Zustand.",
+    "paragraphs": [
+      "In addiere(schritt) bezeichnet schritt den übergebenen Betrag. this.wert bezeichnet das Attribut der angesprochenen Instanz. Die Zuweisung this.wert = this.wert + schritt verbindet den bisherigen Zustand mit der Eingabe.",
+      "Der Konstruktor legt den Anfangszustand beim Erzeugen eines Objekts fest. Ein Methodenaufruf arbeitet anschließend mit diesem Objekt. Einige Methoden verändern es, andere geben einen Wert oder ein neues Objekt zurück. Ob eine Änderung erwünscht ist, legt der Vertrag der Methode fest."
+    ],
+    "takeaway": "Die Wirkung eines Aufrufs ergibt sich aus Empfänger, bisherigen Attributen und Argumenten.",
+    "sourceIds": ["lp", "classes"],
+    "prerequisites": ["it10-klasse"],
+    "quiz": {
+      "question": "Was bedeutet this.wert im Methodenaufruf unserer Zählerklasse?",
+      "answer": "Das Attribut wert der gerade angesprochenen Instanz.",
+      "wrong": [
+        "Immer den Parameter schritt des letzten beliebigen Aufrufs.",
+        "Eine einzige gemeinsame globale Zahl für alle Klassen."
+      ],
+      "explanation": "Die Wirkung eines Aufrufs ergibt sich aus Empfänger, bisherigen Attributen und Argumenten."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Weshalb ist this.wert = schritt keine passende Implementierung für addiere(schritt)?",
+        "hints": [
+          "Ersetzen und Addieren trennen",
+          "Ein Zahlenbeispiel nachvollziehen"
+        ],
+        "model": "Die Zuweisung ersetzt den bisherigen Wert durch schritt. Ein Startwert von 10 würde nach addiere(3) zu 3 statt 13. Die Addition muss den bisherigen Attributwert einbeziehen.",
+        "criteria": [
+          "Ersetzen und Addieren trennen",
+          "Ein Zahlenbeispiel nachvollziehen",
+          "Die benötigte bisherige Größe nennen"
+        ]
+      },
+      "2": {
+        "prompt": "Eine Methode soll eine Summe liefern, während der Originalzähler unverändert bleibt. Wie unterscheidet sich dieser Vertrag von addiere?",
+        "hints": [
+          "Rückgabe von Zustandsänderung unterscheiden",
+          "Die Umsetzung am Attribut erläutern"
+        ],
+        "model": "Eine reine Abfragemethode berechnet aus this.wert und dem Argument einen Rückgabewert und weist this.wert nichts Neues zu. Die verändernde Methode addiere aktualisiert dagegen den Attributwert. Die Tests müssen deshalb sowohl Rückgabe als auch unveränderten oder veränderten Zustand prüfen.",
+        "criteria": [
+          "Rückgabe von Zustandsänderung unterscheiden",
+          "Die Umsetzung am Attribut erläutern",
+          "Beide Aspekte in Tests berücksichtigen"
+        ]
+      }
+    },
+    "lab": "objects-counter"
+  },
+  {
+    "id": "it10-invarianten",
+    "module": "objekte",
+    "title": "Gültige Zustände erhalten",
+    "intro": "Ein Objektvertrag beschreibt auch, welche Zustände nicht entstehen dürfen.",
+    "paragraphs": [
+      "Eine Invariante ist eine Bedingung, die für gültige Objektzustände erhalten bleiben soll. Im Lernkonto lautet sie: Das Guthaben wird durch eine Abhebung nicht negativ. Zusätzlich verlangt der Auftrag einen positiven Abhebebetrag. Eine negative Eingabe darf nicht zu einer versteckten Einzahlung werden.",
+      "Geeignete Methoden prüfen ihre Voraussetzungen vor der Änderung. Kapselung hilft, Änderungen durch kontrollierte Zugänge zu führen. Unsere Werkstatt zeigt die Prüfung im Methodenkörper; die verwendeten this-Attribute sind in echtem JavaScript öffentlich und werden dadurch nicht automatisch technisch privat."
+    ],
+    "takeaway": "Eine Vorbedingung schützt den vereinbarten Objektzustand vor ungültigen Änderungen.",
+    "sourceIds": ["lp", "classes"],
+    "prerequisites": ["it10-methoden"],
+    "quiz": {
+      "question": "Welche Bedingung passt zum Lernkonto vor einer Abhebung?",
+      "answer": "Der Betrag ist positiv und höchstens so groß wie das Guthaben.",
+      "wrong": [
+        "Jeder negative Betrag ist automatisch eine gültige Abhebung.",
+        "Der Betrag muss größer als das Guthaben sein."
+      ],
+      "explanation": "Eine Vorbedingung schützt den vereinbarten Objektzustand vor ungültigen Änderungen."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Warum reicht im Lernkonto die Prüfung betrag <= guthaben allein nicht aus?",
+        "hints": [
+          "Einen negativen Gegenfall einsetzen",
+          "Die unerwünschte Wirkung erklären"
+        ],
+        "model": "Ein negativer Betrag erfüllt diese Bedingung ebenfalls. Beim Abziehen würde das Guthaben steigen. Deshalb muss zusätzlich betrag > 0 gelten; ungültige Aufrufe lassen den Zustand unverändert.",
+        "criteria": [
+          "Einen negativen Gegenfall einsetzen",
+          "Die unerwünschte Wirkung erklären",
+          "Die zusätzliche Bedingung nennen"
+        ]
+      },
+      "2": {
+        "prompt": "Ein Konto startet bei 100. Entwirf Tests für eine normale Abhebung und drei Grenzen der erlaubten Eingabe.",
+        "hints": [
+          "Einen normalen und einen Randfall abdecken",
+          "Zu große und nicht positive Beträge prüfen"
+        ],
+        "model": "Für 30 erwarte ich 70. Für 100 erwarte ich 0. Für 101 bleibt der Wert 100. Für 0 oder einen negativen Betrag bleibt er ebenfalls 100. Diese Fälle prüfen normale Nutzung, Randwert und ungültige Eingaben, beweisen aber nicht die vollständige Korrektheit aller möglichen Aufrufe.",
+        "criteria": [
+          "Einen normalen und einen Randfall abdecken",
+          "Zu große und nicht positive Beträge prüfen",
+          "Erwartete Zustände ausdrücklich angeben"
+        ]
+      }
+    },
+    "lab": "objects-account"
+  },
+  {
+    "id": "it10-modellstruktur",
+    "module": "objekte",
+    "title": "Modelle sinnvoll zerlegen",
+    "intro": "Nicht jedes Substantiv im Auftrag muss eine eigene Klasse werden.",
+    "paragraphs": [
+      "Ein Modell enthält die Eigenschaften und Beziehungen, die für seine Aufgabe wichtig sind. In einer Ausleihe können Buch, Exemplar und Ausleihvorgang unterschiedliche Rollen haben. Ein Buchtitel beschreibt nicht zuverlässig jedes einzelne physische Exemplar.",
+      "Modularisierung trennt zusammengehörige Aufgaben mit klaren Schnittstellen. Eine Anzeige kann Werte lesen, während eine Fachklasse die gültigen Änderungen kontrolliert. In einem Klassendiagramm dokumentierst du die ausgewählten Typen, Attribute, Methoden und Beziehungen. Zum freien Zeichnen führt ein Link in die vorhandene UML-Werkstatt."
+    ],
+    "takeaway": "Eine Modellentscheidung wird durch den Systemzweck und die Verantwortung der Teile begründet.",
+    "sourceIds": ["lp", "uml"],
+    "prerequisites": ["it10-klasse", "it10-invarianten"],
+    "quiz": {
+      "question": "Was ist ein sinnvoller Grund für eine zusätzliche Klasse?",
+      "answer": "Sie bündelt für den Auftrag eigene Zustände und zusammengehöriges Verhalten.",
+      "wrong": [
+        "Ihr Name kommt als Substantiv im Auftrag vor, unabhängig vom Zweck.",
+        "Jede einzelne Zahl muss grundsätzlich eine eigene Klasse bekommen."
+      ],
+      "explanation": "Eine Modellentscheidung wird durch den Systemzweck und die Verantwortung der Teile begründet."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Eine Bibliothek hat drei Exemplare desselben Titels. Weshalb kann eine Trennung von Buchbeschreibung und Exemplar sinnvoll sein?",
+        "hints": [
+          "Gemeinsame Angaben erkennen",
+          "Individuelle Zustände benennen"
+        ],
+        "model": "Titel und Autor gehören zur gemeinsamen Buchbeschreibung. Jedes Exemplar braucht dagegen eine eigene Kennung und kann unabhängig ausgeliehen sein. Die Trennung bildet diese unterschiedlichen Zustände ab.",
+        "criteria": [
+          "Gemeinsame Angaben erkennen",
+          "Individuelle Zustände benennen",
+          "Die Trennung am Auftrag begründen"
+        ]
+      },
+      "2": {
+        "prompt": "Eine Klasse zeichnet die Oberfläche und berechnet zugleich sämtliche Abheberegeln. Schlage eine Zerlegung mit einer Schnittstelle vor.",
+        "hints": [
+          "Zwei Verantwortungen unterscheiden",
+          "Eine konkrete Schnittstelle benennen"
+        ],
+        "model": "Die Fachklasse Konto verwaltet das Guthaben und prüft Abhebungen. Die Oberfläche zeigt den Zustand an und übergibt gewünschte Beträge über eine Methode. So kann die Oberfläche verändert werden, ohne die Abheberegeln neu zu schreiben; Fachtests prüfen die Regel getrennt von der Darstellung.",
+        "criteria": [
+          "Zwei Verantwortungen unterscheiden",
+          "Eine konkrete Schnittstelle benennen",
+          "Einen Vorteil für Änderung oder Tests erläutern"
+        ]
+      }
+    }
+  },
+  {
+    "id": "it10-bruch",
+    "module": "objekte",
+    "title": "Einen Bruch als Objekt modellieren",
+    "intro": "Mathematische Bedeutung und technische Darstellung müssen zusammenpassen.",
+    "paragraphs": [
+      "Ein Bruchobjekt speichert Zähler und Nenner. Der Nenner darf für einen gültigen Bruch nicht null sein. Gleicher Wert bedeutet nicht gleiche Darstellung: Ein Halb und zwei Viertel sind wertgleich. Tests dürfen deshalb bei einer Wertanforderung nicht nur dieselben Zahlenpaare akzeptieren.",
+      "Beim Addieren werden beide Werte auf einen gemeinsamen Nenner gebracht. Für a durch b plus c durch d erhältst du den Zähler a mal d plus c mal b und den Nenner b mal d. Die Werkstatt fordert einen neuen Ergebnisbruch; die Ausgangsobjekte bleiben unverändert. Kürzen und eine vollständige Prüfung aller Konstruktorwerte sind zusätzliche Aufgaben außerhalb dieses Testauftrags."
+    ],
+    "takeaway": "Ein korrekter Summenwert und der vereinbarte Umgang mit Ausgangsobjekten werden getrennt geprüft.",
+    "sourceIds": ["lp", "classes"],
+    "prerequisites": ["it10-methoden", "it10-invarianten"],
+    "quiz": {
+      "question": "Wie lautet der Zähler der Summe von a/b und c/d beim gemeinsamen Nenner b mal d?",
+      "answer": "a mal d plus c mal b.",
+      "wrong": [
+        "a plus c, unabhängig von den Nennern.",
+        "b plus d, unabhängig von den Zählern."
+      ],
+      "explanation": "Ein korrekter Summenwert und der vereinbarte Umgang mit Ausgangsobjekten werden getrennt geprüft."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre am Beispiel ein Halb plus ein Drittel, weshalb man nicht einfach Zähler und Nenner addiert.",
+        "hints": [
+          "Unterschiedliche Teilgrößen erkennen",
+          "Einen gemeinsamen Nenner verwenden"
+        ],
+        "model": "Die Teile sind unterschiedlich groß. Ein Halb entspricht drei Sechsteln, ein Drittel zwei Sechsteln. Zusammen sind es fünf Sechstel. Die bloße Addition der Zahlenpaare würde zwei Fünftel und damit einen anderen Wert ergeben.",
+        "criteria": [
+          "Unterschiedliche Teilgrößen erkennen",
+          "Einen gemeinsamen Nenner verwenden",
+          "Die falsche Kurzregel am Ergebnis widerlegen"
+        ]
+      },
+      "2": {
+        "prompt": "Für zwei Viertel plus ein Viertel liefert eine Methode sechs Achtel und verändert keinen Eingang. Ist das beim Werkstattvertrag korrekt? Begründe und nenne eine zusätzliche mögliche Anforderung.",
+        "hints": [
+          "Wertgleichheit prüfen",
+          "Den tatsächlichen Vertrag anwenden"
+        ],
+        "model": "Sechs Achtel ist wertgleich zu drei Vierteln. Da der Auftrag nur den korrekten Summenwert in einem neuen Objekt und unveränderte Eingänge verlangt, ist das zulässig. Eine zusätzliche Anforderung könnte die vollständig gekürzte Darstellung mit positivem Nenner sein; dafür wären weitere Implementierung und Tests nötig.",
+        "criteria": [
+          "Wertgleichheit prüfen",
+          "Den tatsächlichen Vertrag anwenden",
+          "Eine zusätzliche Anforderung als zusätzliche Aufgabe kennzeichnen"
+        ]
+      }
+    },
+    "lab": "objects-fraction"
+  },
+  {
+    "id": "it10-testen",
+    "module": "objekte",
+    "title": "Testen, verbessern und warten",
+    "intro": "Ein grüner Test ist ein belegter Fall, kein Beweis für jedes denkbare Verhalten.",
+    "paragraphs": [
+      "Ein guter Test beschreibt Ausgangslage, Eingabe und Erwartung. Normale Beispiele zeigen typische Nutzung. Grenzfälle und gezielte Gegenbeispiele prüfen, ob Bedingungen an den richtigen Stellen stehen. Bei Zustandsobjekten müssen auch mehrere aufeinanderfolgende Aufrufe betrachtet werden.",
+      "Nach einer Änderung führst du die bisherigen Tests erneut aus, damit eine Verbesserung keine andere zugesicherte Eigenschaft beschädigt. Optimierung braucht ein Ziel, etwa weniger doppelte Berechnung, und erhält den Vertrag. Wartung kann neue Anforderungen aufnehmen; dann werden Modell, Implementierung und Tests gemeinsam angepasst."
+    ],
+    "takeaway": "Tests liefern konkrete Evidenz; ihre Auswahl und Reichweite gehören zum Ergebnisbericht.",
+    "sourceIds": ["lp", "classes"],
+    "prerequisites": ["it10-bruch"],
+    "quiz": {
+      "question": "Was bedeutet ein bestandener Satz von Beispieltests?",
+      "answer": "Für diese Eingaben wurde das erwartete Verhalten beobachtet.",
+      "wrong": [
+        "Alle möglichen Programmeingaben sind damit mathematisch bewiesen.",
+        "Weitere Tests sind nach späteren Änderungen immer überflüssig."
+      ],
+      "explanation": "Tests liefern konkrete Evidenz; ihre Auswahl und Reichweite gehören zum Ergebnisbericht."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Ein Zähler besteht nur den Test Start 0, plus 3 ergibt 3. Welche falsche Implementierung könnte unentdeckt bleiben?",
+        "hints": [
+          "Einen noch passenden Fehler nennen",
+          "Eine unterscheidende Ausgangslage wählen"
+        ],
+        "model": "Die fehlerhafte Zuweisung this.wert = schritt liefert in diesem Fall ebenfalls 3. Ein Startwert 10 und mehrere Aufrufe zeigen den Unterschied zur korrekten Addition.",
+        "criteria": [
+          "Einen noch passenden Fehler nennen",
+          "Eine unterscheidende Ausgangslage wählen",
+          "Einen weiteren aufeinanderfolgenden Aufruf einplanen"
+        ]
+      },
+      "2": {
+        "prompt": "Nach einer Optimierung addiert eine Bruchmethode richtig, verändert aber den linken Eingangsbruch. Warum ist das trotz richtiger Zahl ein Fehler?",
+        "hints": [
+          "Den vollständigen Vertrag nennen",
+          "Die übersehene Nebenwirkung benennen"
+        ],
+        "model": "Der Vertrag fordert einen neuen Ergebnisbruch und unveränderte Eingänge. Der Zahlenwert allein deckt nur einen Teil davon ab. Ein Regressionstest vergleicht deshalb beide Ausgangsobjekte vor und nach dem Aufruf und prüft, dass das Ergebnis eine neue Instanz ist.",
+        "criteria": [
+          "Den vollständigen Vertrag nennen",
+          "Die übersehene Nebenwirkung benennen",
+          "Einen konkreten Regressionstest beschreiben"
+        ]
+      }
+    }
+  },
+  {
+    "id": "it10-bits",
+    "module": "logik",
+    "title": "Binäre Zustände und digitale Modelle",
+    "intro": "Digitale Schaltungen arbeiten mit festgelegten logischen Zuständen.",
+    "paragraphs": [
+      "In einem binären Modell steht ein Bit für einen von zwei Zuständen: 0 oder 1. Die Bedeutung wird vereinbart, etwa Schalter aus oder an. Ein physischer elektrischer Pegel muss dazu zuverlässig einem logischen Zustand zugeordnet werden; das Modell lässt Übergänge und Störungen zunächst weg.",
+      "Mehrere Bits können Zahlen darstellen. Bei drei Stellen haben die Gewichte von rechts nach links die Werte 1, 2 und 4. Das Muster 101 bedeutet daher 4 plus 0 plus 1, also 5. Ein einzelnes Bit kann denselben Zahlenbereich nicht ausdrücken."
+    ],
+    "takeaway": "Bitmuster erhalten ihre Bedeutung durch eine vereinbarte Codierung und Stellenwerte.",
+    "sourceIds": ["lp"],
+    "prerequisites": [],
+    "quiz": {
+      "question": "Welchen Dezimalwert hat die binäre Zahl 101?",
+      "answer": "5.",
+      "wrong": ["101.", "3."],
+      "explanation": "Bitmuster erhalten ihre Bedeutung durch eine vereinbarte Codierung und Stellenwerte."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre den Wert des Bitmusters 110 mit seinen Stellenwerten.",
+        "hints": ["Die drei Stellenwerte angeben", "Die Beiträge addieren"],
+        "model": "Die linke Eins zählt 4, die mittlere Eins 2 und die rechte Null 0. Zusammen ergeben sich 6. Drei binäre Stellen beschreiben Werte von 0 bis 7, wenn sie als vorzeichenlose Dualzahl gelesen werden.",
+        "criteria": [
+          "Die drei Stellenwerte angeben",
+          "Die Beiträge addieren",
+          "Die vereinbarte Zahlendarstellung nennen"
+        ]
+      },
+      "2": {
+        "prompt": "Ein Sensor liefert 1. Darf daraus ohne weitere Information geschlossen werden, dass eine Tür geschlossen ist? Begründe.",
+        "hints": [
+          "Logischen Wert von Bedeutung trennen",
+          "Eine notwendige Codierungsvereinbarung nennen"
+        ],
+        "model": "Nein. Erst die vereinbarte Codierung legt fest, ob 1 für geschlossen oder offen steht. Auch die elektrische Auswertung und mögliche Fehler sind im realen System zu beachten. Die Zahl allein bestimmt die Bedeutung nicht.",
+        "criteria": [
+          "Logischen Wert von Bedeutung trennen",
+          "Eine notwendige Codierungsvereinbarung nennen",
+          "Eine Grenze des einfachen Modells benennen"
+        ]
+      }
+    }
+  },
+  {
+    "id": "it10-gatter",
+    "module": "logik",
+    "title": "UND, ODER und NICHT",
+    "intro": "Grundgatter verbinden einfache Bedingungen zu einem gewünschten Verhalten.",
+    "paragraphs": [
+      "UND ergibt nur dann 1, wenn beide Eingänge 1 sind. ODER ist bereits dann 1, wenn mindestens ein Eingang 1 ist; auch zwei Einsen ergeben 1. NICHT kehrt einen Eingang um. Diese Regeln lassen sich für jede Kombination in einer Wertetabelle festhalten.",
+      "Für eine Schutzschaltung bedeutet A Startsignal und B offene Tür. Der Motor darf nur laufen, wenn A gilt und B nicht gilt. Der Funktionsterm lautet A AND NOT B. Die Werkstatt zeigt dazu alle Kombinationen; der zusätzliche Eingang C hat in dieser Aufgabe keinen Einfluss."
+    ],
+    "takeaway": "Gewöhnliches ODER schließt den Fall zweier wahrer Eingänge ein.",
+    "sourceIds": ["lp"],
+    "prerequisites": ["it10-bits"],
+    "quiz": {
+      "question": "Wann liefert ein ODER-Gatter den Ausgang 1?",
+      "answer": "Wenn mindestens ein Eingang 1 ist, auch wenn beide 1 sind.",
+      "wrong": [
+        "Nur wenn genau ein Eingang 1 ist.",
+        "Nur wenn beide Eingänge 0 sind."
+      ],
+      "explanation": "Gewöhnliches ODER schließt den Fall zweier wahrer Eingänge ein."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Bestimme UND und ODER für A gleich 1 und B gleich 1 und erkläre den Unterschied zur Alltagssprache entweder oder.",
+        "hints": [
+          "Beide Gatterwerte korrekt angeben",
+          "Die Regel für ODER erläutern"
+        ],
+        "model": "UND liefert 1, weil beide Bedingungen gelten. ODER liefert ebenfalls 1, weil mindestens eine gilt. Ein ausschließendes Entweder-oder wäre dagegen nur bei verschiedenen Eingängen wahr.",
+        "criteria": [
+          "Beide Gatterwerte korrekt angeben",
+          "Die Regel für ODER erläutern",
+          "Ausschließendes Entweder-oder abgrenzen"
+        ]
+      },
+      "2": {
+        "prompt": "Ein Motor soll nur bei aktivem Startsignal und geschlossener Tür laufen. Der Türsensor meldet 1 bei offener Tür. Begründe den passenden Term und zwei Testfälle.",
+        "hints": [
+          "Die Bedeutung des Sensors beachten",
+          "Den korrekten Term begründen"
+        ],
+        "model": "Der Term ist A AND NOT B. Bei Start 1 und offener Tür 1 bleibt der Motor 0. Bei Start 1 und offener Tür 0 wird der Ausgang 1. Das invertierte Türsignal übersetzt die Sensorkodierung in die erlaubte Bedingung.",
+        "criteria": [
+          "Die Bedeutung des Sensors beachten",
+          "Den korrekten Term begründen",
+          "Einen erlaubten und einen gesperrten Fall prüfen"
+        ]
+      }
+    },
+    "lab": "logic-schutz"
+  },
+  {
+    "id": "it10-wertetabelle",
+    "module": "logik",
+    "title": "Vom Term zur vollständigen Wertetabelle",
+    "intro": "Mit n unabhängigen binären Eingängen gibt es zwei hoch n Kombinationen.",
+    "paragraphs": [
+      "Eine Wertetabelle enthält jede Eingangskombination genau einmal und daneben die zugehörigen Ausgänge. Zwei Eingänge erzeugen vier Zeilen, drei Eingänge acht. So fallen Fälle auf, die bei einem einzelnen Beispiel leicht übersehen werden.",
+      "Klammern machen die Zusammensetzung eines Terms eindeutig. In der Werkstatt bindet NOT stärker als AND und AND stärker als OR. Zusammengesetzte NAND-, NOR- oder XOR-Terme werden am besten ausdrücklich geklammert. Ein Schaltplan stellt dieselben Verknüpfungen als verbundene Gatter dar."
+    ],
+    "takeaway": "Eine vollständige Tabelle prüft alle Kombinationen des gewählten binären Eingangsmodells.",
+    "sourceIds": ["lp"],
+    "prerequisites": ["it10-gatter"],
+    "quiz": {
+      "question": "Wie viele Eingangskombinationen müssen bei drei unabhängigen Bits geprüft werden?",
+      "answer": "8.",
+      "wrong": ["3.", "6."],
+      "explanation": "Eine vollständige Tabelle prüft alle Kombinationen des gewählten binären Eingangsmodells."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Warum reichen die Fälle 000 und 111 nicht, um eine Schaltung mit drei Eingängen vollständig zu prüfen?",
+        "hints": [
+          "Die Gesamtzahl nennen",
+          "Die fehlenden gemischten Fälle erkennen"
+        ],
+        "model": "Bei drei unabhängigen Bits gibt es acht Kombinationen. Die sechs gemischten Belegungen fehlen. Ein Fehler, der nur bei 101 auftritt, würde dadurch nicht entdeckt.",
+        "criteria": [
+          "Die Gesamtzahl nennen",
+          "Die fehlenden gemischten Fälle erkennen",
+          "Einen übersehenen Fehlerfall erläutern"
+        ]
+      },
+      "2": {
+        "prompt": "Vergleiche A OR (B AND C) mit (A OR B) AND C an einer Belegung, die verschiedene Ergebnisse liefert.",
+        "hints": [
+          "Eine unterscheidende Belegung wählen",
+          "Beide Ergebnisse schrittweise bestimmen"
+        ],
+        "model": "Bei A gleich 1, B gleich 0 und C gleich 0 liefert der erste Term 1: A genügt für ODER. Der zweite Term liefert 0, weil das äußere UND C verlangt. Die Klammerung verändert also die Schaltungsfunktion.",
+        "criteria": [
+          "Eine unterscheidende Belegung wählen",
+          "Beide Ergebnisse schrittweise bestimmen",
+          "Die Wirkung der Klammern erklären"
+        ]
+      }
+    }
+  },
+  {
+    "id": "it10-xor",
+    "module": "logik",
+    "title": "Antivalenz, Äquivalenz, NAND und NOR",
+    "intro": "Zusammengesetzte Gatter lassen sich aus Grundfunktionen herleiten.",
+    "paragraphs": [
+      "XOR, die Antivalenz, ergibt 1 bei verschiedenen Eingängen. XNOR, die Äquivalenz, ergibt 1 bei gleichen Eingängen. Für zwei Schalter kann eine XOR-Funktion bewirken, dass ein Umschalten eines der beiden den Lichtzustand wechselt.",
+      "NAND ist das verneinte UND, NOR das verneinte ODER. Du kannst ihre Tabellen berechnen, indem du erst die Grundfunktion bestimmst und dann das Ergebnis umkehrst. Gleiche Ausgänge bei wenigen Beispielen beweisen noch keine Gleichheit der Funktionen; dafür vergleichst du alle Zeilen."
+    ],
+    "takeaway": "Antivalenz bedeutet verschieden, Äquivalenz bedeutet gleich.",
+    "sourceIds": ["lp"],
+    "prerequisites": ["it10-wertetabelle"],
+    "quiz": {
+      "question": "Wann liefert XOR bei zwei Eingängen 1?",
+      "answer": "Wenn die Eingänge verschieden sind.",
+      "wrong": ["Wenn beide Eingänge 1 sind.", "Wenn beide Eingänge 0 sind."],
+      "explanation": "Antivalenz bedeutet verschieden, Äquivalenz bedeutet gleich."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Vergleiche ODER und XOR für die Eingänge 11. Weshalb ist das eine nützliche Gegenprobe?",
+        "hints": [
+          "Beide Ausgänge korrekt bestimmen",
+          "Gleiche Fälle als unzureichend erkennen"
+        ],
+        "model": "ODER ergibt 1, XOR dagegen 0. Bei 01 und 10 wären beide Ausgänge 1. Der Fall 11 trennt deshalb die beiden Regeln und entdeckt die Verwechslung.",
+        "criteria": [
+          "Beide Ausgänge korrekt bestimmen",
+          "Gleiche Fälle als unzureichend erkennen",
+          "Die Gegenprobe begründen"
+        ]
+      },
+      "2": {
+        "prompt": "Formuliere XOR allein mit UND, ODER und NICHT und begründe die beiden erlaubten Fälle.",
+        "hints": [
+          "Einen äquivalenten Term angeben",
+          "Die zwei verschiedenen Belegungen erklären"
+        ],
+        "model": "XOR lässt sich als (A AND NOT B) OR (NOT A AND B) schreiben. Der erste Teil erfasst 10, der zweite 01. Bei 00 und 11 sind beide Teile falsch, sodass der Ausgang 0 bleibt.",
+        "criteria": [
+          "Einen äquivalenten Term angeben",
+          "Die zwei verschiedenen Belegungen erklären",
+          "Die gleichen Belegungen ausschließen"
+        ]
+      }
+    },
+    "lab": "logic-xor"
+  },
+  {
+    "id": "it10-addierer",
+    "module": "logik",
+    "title": "Halbaddierer und Volladdierer",
+    "intro": "Eine binäre Summe kann mehr Stellen brauchen als ihre einzelnen Eingaben.",
+    "paragraphs": [
+      "Ein Halbaddierer addiert zwei Bits. Das Summenbit ist A XOR B; der Übertrag ist A AND B. Bei 1 plus 1 ergibt sich daher Summe 0 mit Übertrag 1, also die binäre Zahl 10.",
+      "Ein Volladdierer verarbeitet zusätzlich den Eingangsübertrag C. Das Summenbit ist A XOR B XOR C. Der Ausgangsübertrag wird 1, sobald mindestens zwei Eingänge 1 sind. Mehrere Volladdierer können ihre Überträge an die nächste Stelle weitergeben. Die Werkstatt prüft beide Ausgänge für alle acht Belegungen."
+    ],
+    "takeaway": "Summenbit und Übertrag codieren gemeinsam die Anzahl der eingehenden Einsen.",
+    "sourceIds": ["lp"],
+    "prerequisites": ["it10-xor"],
+    "quiz": {
+      "question": "Welche Ausgänge hat ein Volladdierer bei A gleich 1, B gleich 1 und C gleich 1?",
+      "answer": "Summenbit 1 und Ausgangsübertrag 1.",
+      "wrong": [
+        "Summenbit 0 und Ausgangsübertrag 0.",
+        "Summenbit 1 und Ausgangsübertrag 0."
+      ],
+      "explanation": "Summenbit und Übertrag codieren gemeinsam die Anzahl der eingehenden Einsen."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre die zwei Ausgänge des Halbaddierers bei 1 plus 1.",
+        "hints": [
+          "Dezimalen Wert bestimmen",
+          "Die binäre Zweistellendarstellung erklären"
+        ],
+        "model": "Die Summe beträgt dezimal 2 und binär 10. Das Summenbit an der niedrigen Stelle ist 0. Der Übertrag zur nächsten Stelle ist 1. XOR liefert das Summenbit, UND den Übertrag.",
+        "criteria": [
+          "Dezimalen Wert bestimmen",
+          "Die binäre Zweistellendarstellung erklären",
+          "Die beiden Gatter zuordnen"
+        ]
+      },
+      "2": {
+        "prompt": "Ein Volladdierer verwendet für den Übertrag nur A AND B. Finde eine Gegenprobe und erkläre eine Korrektur.",
+        "hints": [
+          "Eine fehleraufdeckende Belegung wählen",
+          "Erwarteten und tatsächlichen Übertrag vergleichen"
+        ],
+        "model": "Bei A gleich 1, B gleich 0 und C gleich 1 beträgt die Summe 2. Es ist ein Übertrag nötig, aber A AND B liefert 0. Ein passender Term ist (A AND B) OR (C AND (A XOR B)); er berücksichtigt auch den Übertrag aus C und genau einem der anderen Eingänge.",
+        "criteria": [
+          "Eine fehleraufdeckende Belegung wählen",
+          "Erwarteten und tatsächlichen Übertrag vergleichen",
+          "Eine vollständige Korrektur erläutern"
+        ]
+      }
+    },
+    "lab": "logic-adder"
+  },
+  {
+    "id": "it10-speicher",
+    "module": "logik",
+    "title": "Zustand im RS-Speicher",
+    "intro": "Bei einer Speicherschaltung zählt neben den Eingängen auch der bisherige Zustand.",
+    "paragraphs": [
+      "Eine reine kombinatorische Schaltung liefert zu denselben Eingängen denselben Ausgang. Ein Speicher kann dagegen eine frühere Information behalten. Beim hier betrachteten NOR-RS-Speicher setzt S gleich 1 den gespeicherten Zustand; R gleich 1 setzt ihn zurück.",
+      "Bei S gleich 0 und R gleich 0 bleibt der bisherige Zustand erhalten. S gleich 1 und R gleich 1 ist beim NOR-RS-Speicher der verbotene Eingangszustand. Nach gleichzeitigem Loslassen ist der folgende Zustand nicht zuverlässig festgelegt. Die Werkstatt zeigt dafür ausdrücklich kein gültiges gespeichertes Bit."
+    ],
+    "takeaway": "Ein Speicher wird durch Eingänge und Vorgeschichte beschrieben; ein verbotener Zustand ist kein gültiger Speicherwert.",
+    "sourceIds": ["lp"],
+    "prerequisites": ["it10-gatter"],
+    "quiz": {
+      "question": "Was passiert beim NOR-RS-Speicher bei S gleich 0 und R gleich 0?",
+      "answer": "Der zuvor gespeicherte Zustand bleibt erhalten.",
+      "wrong": [
+        "Der Ausgang wird unabhängig von vorher immer 0.",
+        "Der Ausgang wird unabhängig von vorher immer 1."
+      ],
+      "explanation": "Ein Speicher wird durch Eingänge und Vorgeschichte beschrieben; ein verbotener Zustand ist kein gültiger Speicherwert."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Ein NOR-RS-Speicher enthält 1. Danach werden beide Eingänge 0. Welcher Wert bleibt und warum?",
+        "hints": [
+          "Den Anfangszustand beachten",
+          "Setzen und Rücksetzen unterscheiden"
+        ],
+        "model": "Der gespeicherte Wert bleibt 1. Bei beiden Eingängen 0 fordert weder Setzen noch Rücksetzen eine Änderung an. Das ist die Haltefunktion des Speichers.",
+        "criteria": [
+          "Den Anfangszustand beachten",
+          "Setzen und Rücksetzen unterscheiden",
+          "Die Haltefunktion erklären"
+        ]
+      },
+      "2": {
+        "prompt": "Warum sollte eine Simulation bei S und R gleich 1 nicht einfach den letzten gültigen Ausgang als sichere Antwort ausgeben?",
+        "hints": [
+          "Den konkreten Speichertyp nennen",
+          "Den verbotenen Zustand erkennen"
+        ],
+        "model": "Diese Eingabe ist beim NOR-RS-Speicher verboten. Sie kann die normale komplementäre Beziehung der Ausgänge verletzen; nach gleichzeitigem Loslassen ist der Folgezustand nicht festgelegt. Ein stillschweigend übernommener Wert würde eine nicht vorhandene Zuverlässigkeit vortäuschen.",
+        "criteria": [
+          "Den konkreten Speichertyp nennen",
+          "Den verbotenen Zustand erkennen",
+          "Die Unbestimmtheit nach dem Loslassen erläutern"
+        ]
+      }
+    }
+  },
+  {
+    "id": "it10-schaltungstest",
+    "module": "logik",
+    "title": "Schaltungen systematisch prüfen",
+    "intro": "Eine Schaltung muss den Auftrag erfüllen, nicht nur ein vertrautes Muster zeigen.",
+    "paragraphs": [
+      "Beginne mit einer Anforderung in Worten. Leite daraus den Funktionsterm und eine Erwartungstabelle ab. Danach vergleichst du die implementierte Schaltung für jede Belegung mit dieser unabhängigen Erwartung. Unterschiede zeigen eine konkrete fehlerhafte Situation.",
+      "Bei der Optimierung kann ein kürzerer Term dieselbe Funktion haben. Vergleiche dafür die vollständigen Tabellen. Die Prüfung idealer Bits erfasst keine elektrischen Zeitverläufe, Spannungsgrenzen oder Kontaktprellen. Für reale Sicherheitstechnik sind zusätzliche Anforderungen und praktische Prüfungen nötig."
+    ],
+    "takeaway": "Eine funktionale Gleichheit im Bitmodell ist eine begrenzte, genau prüfbare Aussage.",
+    "sourceIds": ["lp"],
+    "prerequisites": ["it10-addierer", "it10-speicher"],
+    "quiz": {
+      "question": "Woran erkennt man im idealen binären Modell zwei funktionsgleiche kombinatorische Schaltungen?",
+      "answer": "Ihre Ausgänge stimmen für jede mögliche Eingangsbelegung überein.",
+      "wrong": [
+        "Ihre Terme enthalten gleich viele Buchstaben.",
+        "Ihre Ausgänge stimmen nur bei allen Eingängen gleich 0 überein."
+      ],
+      "explanation": "Eine funktionale Gleichheit im Bitmodell ist eine begrenzte, genau prüfbare Aussage."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Du hast einen Term für eine Schutzschaltung verkürzt. Wie prüfst du, dass die Änderung ihre Funktion erhält?",
+        "hints": [
+          "Alle Belegungen erfassen",
+          "Die Ausgänge zeilenweise vergleichen"
+        ],
+        "model": "Ich vergleiche die Ausgänge des ursprünglichen und des neuen Terms für jede mögliche Belegung der verwendeten Eingänge. Jede Zeile muss übereinstimmen. Ein Vergleich nur für den normalen Betriebsfall würde einen Fehler in einer Sperrsituation übersehen.",
+        "criteria": [
+          "Alle Belegungen erfassen",
+          "Die Ausgänge zeilenweise vergleichen",
+          "Eine relevante Gegenprobe nennen"
+        ]
+      },
+      "2": {
+        "prompt": "Ein digitaler Schutzschalter besteht alle Tabellenfälle. Weshalb reicht das nicht als Freigabe für eine echte gefährliche Maschine?",
+        "hints": [
+          "Die bewiesene Modellreichweite benennen",
+          "Mindestens zwei reale fehlende Aspekte erklären"
+        ],
+        "model": "Die Tabelle prüft nur das idealisierte logische Verhalten. Reale Sensorfehler, Verzögerungen, Leitungsunterbrechungen und weitere technische Sicherheitsanforderungen sind damit nicht untersucht. Die praktische Freigabe braucht dafür geeignete zusätzliche Prüfungen und verantwortliche Fachleute.",
+        "criteria": [
+          "Die bewiesene Modellreichweite benennen",
+          "Mindestens zwei reale fehlende Aspekte erklären",
+          "Die nötige zusätzliche Prüfung ableiten"
+        ]
+      }
+    }
+  },
+  {
+    "id": "it10-roboter",
+    "module": "robotik",
+    "title": "Roboter und eingebettete Systeme",
+    "intro": "Wahrnehmen, verarbeiten und wirken bilden eine zusammenhängende Kette.",
+    "paragraphs": [
+      "Ein Sensor erfasst eine Größe aus der Umgebung. Eine Verarbeitungseinheit wertet die Daten mithilfe eines Programms aus. Ein Aktor bewirkt eine physische Änderung, etwa eine Motorbewegung. Ein eingebettetes System ist in eine größere technische Aufgabe eingebunden, zum Beispiel die Steuerung einer Tür.",
+      "Bei der Auswahl der Teile zählt der Auftrag. Ein Linienfolger braucht eine geeignete Erfassung der Linie und eine steuerbare Bewegung. Ein Entfernungssensor beantwortet eine andere Frage als ein Farbsensor. Die digitale Werkstatt simuliert solche Beziehungen, baut aber keine reale Hardware auf."
+    ],
+    "takeaway": "Sensor, Verarbeitung und Aktor haben unterschiedliche Rollen in derselben Wirkungskette.",
+    "sourceIds": ["lp"],
+    "prerequisites": [],
+    "quiz": {
+      "question": "Welche Komponente führt eine physische Wirkung wie eine Motorbewegung aus?",
+      "answer": "Ein Aktor.",
+      "wrong": [
+        "Ein Sensor als bloßer Messwertgeber.",
+        "Eine Datei mit einer Anleitung."
+      ],
+      "explanation": "Sensor, Verarbeitung und Aktor haben unterschiedliche Rollen in derselben Wirkungskette."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Ordne bei einer automatischen Tür Entfernungsmessung, Programmentscheidung und Motor den drei Rollen zu.",
+        "hints": ["Sensorik korrekt zuordnen", "Die Verarbeitung erklären"],
+        "model": "Die Entfernungsmessung ist die Sensorik. Das Programm entscheidet anhand der Messung und des Zustands, ob die Tür bewegt werden soll. Der Motor ist der Aktor und setzt die Bewegung um.",
+        "criteria": [
+          "Sensorik korrekt zuordnen",
+          "Die Verarbeitung erklären",
+          "Den Aktor mit seiner Wirkung nennen"
+        ]
+      },
+      "2": {
+        "prompt": "Eine Gruppe möchte einen Linienfolger bauen und kauft nur einen Motor. Welche beiden Arten von Ergänzung fehlen für eine situationsabhängige Reaktion?",
+        "hints": [
+          "Die fehlende Wahrnehmung benennen",
+          "Die fehlende Verarbeitung benennen"
+        ],
+        "model": "Es fehlen geeignete Sensoren zum Erkennen der Linie sowie eine Verarbeitungseinheit mit einem passenden Programm. Der Motor allein erzeugt Bewegung, kennt aber die Umgebung nicht und trifft keine aufgabenbezogene Entscheidung.",
+        "criteria": [
+          "Die fehlende Wahrnehmung benennen",
+          "Die fehlende Verarbeitung benennen",
+          "Die Verbindung zum Auftrag erklären"
+        ]
+      }
+    }
+  },
+  {
+    "id": "it10-sensoren",
+    "module": "robotik",
+    "title": "Messwerte passend auswerten",
+    "intro": "Ein Messwert wird erst durch eine festgelegte Regel zu einer Entscheidung.",
+    "paragraphs": [
+      "Der digitale Hofroboter fragt vor einer Bewegung ab, ob die nächste Zelle frei ist. Das Ergebnis ist ein idealisiertes Ja oder Nein. In einem realen System müssen dagegen Messbereich, Auflösung, Störungen und eine geeignete Entscheidungsschwelle berücksichtigt werden.",
+      "Ein Sensorwert kann veraltet sein, wenn zwischen Messung und Bewegung Zeit vergeht. Deshalb muss eine Reaktion zum richtigen Zeitpunkt stattfinden. Für Tests änderst du die Umgebung bewusst: freier Weg, Hindernis, Rand des Arbeitsbereichs. Ein funktionierender Fall ersetzt diese Gegenproben nicht."
+    ],
+    "takeaway": "Eine situationsabhängige Bewegung braucht die passende Messung zur passenden Zeit.",
+    "sourceIds": ["lp"],
+    "prerequisites": ["it10-roboter"],
+    "quiz": {
+      "question": "Wann sollte der Hofroboter seine Prüfung auf ein Hindernis verwenden?",
+      "answer": "Vor dem jeweiligen Vorwärtsschritt.",
+      "wrong": [
+        "Nur einmal beim Programmstart, unabhängig von späteren Positionen.",
+        "Erst nachdem er bereits durch das Hindernis gefahren ist."
+      ],
+      "explanation": "Eine situationsabhängige Bewegung braucht die passende Messung zur passenden Zeit."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Der Roboter prüft einmal freie Fahrt und führt danach zehn Schritte aus. Erkläre das Risiko.",
+        "hints": [
+          "Die Gültigkeit der ersten Messung begrenzen",
+          "Eine veränderte Situation beschreiben"
+        ],
+        "model": "Die erste Prüfung bezieht sich nur auf die damalige Situation. Nach einem Schritt kann vor dem Roboter ein Hindernis oder der Rand liegen. Die Prüfung muss deshalb vor dem jeweiligen Schritt erneut in die Entscheidung eingehen.",
+        "criteria": [
+          "Die Gültigkeit der ersten Messung begrenzen",
+          "Eine veränderte Situation beschreiben",
+          "Eine erneute Prüfung begründen"
+        ]
+      },
+      "2": {
+        "prompt": "Ein echter Abstandssensor schwankt um eine Schaltschwelle. Welche zwei Maßnahmen könnten hektische Wechsel verringern, und was muss zusätzlich getestet werden?",
+        "hints": [
+          "Zwei geeignete Maßnahmen nennen",
+          "Eine mögliche Nebenwirkung erklären"
+        ],
+        "model": "Eine geeignete Filterung mehrerer Messwerte und getrennte Ein- und Ausschaltschwellen können hektische Wechsel verringern. Dabei entsteht möglicherweise Verzögerung. Reaktionszeit und sichere Abstände müssen deshalb unter realen Bedingungen zusätzlich geprüft werden.",
+        "criteria": [
+          "Zwei geeignete Maßnahmen nennen",
+          "Eine mögliche Nebenwirkung erklären",
+          "Einen praktischen Folgetest benennen"
+        ]
+      }
+    }
+  },
+  {
+    "id": "it10-zustaende",
+    "module": "robotik",
+    "title": "Verhalten als Zustandsmodell planen",
+    "intro": "Ein Zustandsmodell macht sichtbar, wann das System welche Aktion ausführt.",
+    "paragraphs": [
+      "Ein Modell kann die Zustände Warten, Fahren und Anhalten unterscheiden. Ein Übergang braucht ein auslösendes Ereignis oder eine Bedingung. Ein Hindernissignal kann zum Beispiel von Fahren nach Anhalten führen. Die Aktion Motor aus gehört zur vereinbarten Wirkung dieses Übergangs oder Zustands.",
+      "Nicht jede beliebige Bedingung darf gleichzeitig widersprüchliche Aktionen auslösen. Lege Prioritäten fest, etwa ein sicherer Stopp vor einer gewöhnlichen Fahranforderung. Zeichne das Modell vor dem Programm und verfolge anschließend die Ausführung als Folge von Zuständen und Eingaben."
+    ],
+    "takeaway": "Ein Zustandsmodell beschreibt mögliche Übergänge und die Bedingungen, unter denen sie gelten.",
+    "sourceIds": ["lp"],
+    "prerequisites": ["it10-sensoren"],
+    "quiz": {
+      "question": "Was gehört zu einem nachvollziehbaren Zustandsübergang?",
+      "answer": "Ausgangszustand, Bedingung oder Ereignis und Zielzustand.",
+      "wrong": [
+        "Nur die Farbe eines Zustandskastens.",
+        "Eine Liste aller Dateinamen ohne Bedingungen."
+      ],
+      "explanation": "Ein Zustandsmodell beschreibt mögliche Übergänge und die Bedingungen, unter denen sie gelten."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Formuliere einen Übergang für einen fahrenden Roboter, der ein Hindernis erkennt.",
+        "hints": [
+          "Ausgangs- und Zielzustand nennen",
+          "Das auslösende Ereignis benennen"
+        ],
+        "model": "Im Zustand Fahren führt das Ereignis Hindernis erkannt zum Zustand Anhalten. Dabei wird der Motor ausgeschaltet. Die Bedingung und die Aktion werden im Modell ausdrücklich festgehalten.",
+        "criteria": [
+          "Ausgangs- und Zielzustand nennen",
+          "Das auslösende Ereignis benennen",
+          "Die passende Wirkung angeben"
+        ]
+      },
+      "2": {
+        "prompt": "Gleichzeitig liegen Startsignal und Stoppsignal vor. Warum braucht das Modell eine ausdrückliche Regel statt zweier unverbundener Aktionen?",
+        "hints": [
+          "Den möglichen Widerspruch erklären",
+          "Eine klare Priorität festlegen"
+        ],
+        "model": "Ohne Priorität könnten Starten und Stoppen gleichzeitig oder je nach Ausführungsreihenfolge wirken. Für den vereinbarten Sicherheitsfall erhält Stoppen Vorrang. Der Test mit beiden Signalen prüft, ob das Programm diese Modellentscheidung tatsächlich umsetzt.",
+        "criteria": [
+          "Den möglichen Widerspruch erklären",
+          "Eine klare Priorität festlegen",
+          "Einen dazu passenden Test formulieren"
+        ]
+      }
+    }
+  },
+  {
+    "id": "it10-regelung",
+    "module": "robotik",
+    "title": "Steuern und Regeln unterscheiden",
+    "intro": "Eine Regelung führt eine gemessene Wirkung in die nächste Entscheidung zurück.",
+    "paragraphs": [
+      "Bei einer einfachen Steuerung läuft eine Aktion nach einer Vorgabe ab, etwa ein Motor für eine festgelegte Zeit. Eine Regelung nutzt dagegen eine Rückmeldung: Der Istwert wird mit einem Sollwert verglichen und die Stellgröße entsprechend angepasst.",
+      "Der Modellthermostat schaltet unterhalb der unteren Schwelle ein und oberhalb der oberen aus. Im Zwischenbereich behält er den vorherigen Zustand. Dieses Hystereseband verringert schnelles Hin-und-her-Schalten. Es ist ein diskretes Lernmodell ohne Wärmeträgheit, Raumverluste oder reale Hardwareprüfung."
+    ],
+    "takeaway": "Rückkopplung unterscheidet die Regelung von einer bloßen festen Aktionsfolge.",
+    "sourceIds": ["lp"],
+    "prerequisites": ["it10-zustaende"],
+    "quiz": {
+      "question": "Welches Merkmal kennzeichnet eine Regelung?",
+      "answer": "Der gemessene Istwert fließt in die weitere Entscheidung zurück.",
+      "wrong": [
+        "Es gibt grundsätzlich keine Messwerte.",
+        "Eine Aktion wird immer nur nach einer Uhrzeit beendet."
+      ],
+      "explanation": "Rückkopplung unterscheidet die Regelung von einer bloßen festen Aktionsfolge."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Eine Heizung läuft jeden Morgen zehn Minuten, unabhängig von der Raumtemperatur. Was fehlt für eine Temperaturregelung?",
+        "hints": [
+          "Den festen Ablauf erkennen",
+          "Die fehlende Messrückmeldung benennen"
+        ],
+        "model": "Es fehlt die Rückmeldung der aktuellen Raumtemperatur in die Entscheidung. Für eine Regelung wird der Istwert mit dem Sollwert verglichen und die Heizwirkung danach angepasst. Ein fester Zeitablauf allein leistet das nicht.",
+        "criteria": [
+          "Den festen Ablauf erkennen",
+          "Die fehlende Messrückmeldung benennen",
+          "Den Soll-Ist-Vergleich erklären"
+        ]
+      },
+      "2": {
+        "prompt": "Ein Modellthermostat hat Sollwert 20 und Band 1. Bei Temperatur 20 bleibt eine eingeschaltete Heizung an, eine ausgeschaltete aus. Ist das widersprüchlich?",
+        "hints": [
+          "Das Hystereseband richtig bestimmen",
+          "Den gespeicherten vorherigen Zustand erklären"
+        ],
+        "model": "Nein. Zwischen 19 und 21 behält der Zweipunktregler seinen bisherigen Zustand. Genau diese Abhängigkeit von der Vorgeschichte ist die Hysterese. Erst unter 19 wird eingeschaltet und über 21 ausgeschaltet; die Grenzen sind eine hier festgelegte Modellkonvention.",
+        "criteria": [
+          "Das Hystereseband richtig bestimmen",
+          "Den gespeicherten vorherigen Zustand erklären",
+          "Die Modellschwellen korrekt benennen"
+        ]
+      }
+    }
+  },
+  {
+    "id": "it10-roboterprogramm",
+    "module": "robotik",
+    "title": "Ein Programm auf mehreren Höfen testen",
+    "intro": "Aus einem gezeichneten Weg wird eine ausführbare und überprüfbare Vorschrift.",
+    "paragraphs": [
+      "Die Werkstattsprache kennt vor(), links() und rechts(). wiederhole(n) wiederholt einen Block. wennFrei wählt abhängig vom Sensor zwischen zwei Blöcken. Der Parser führt nur diese festgelegten Befehle aus. Die Pfeilrichtung im Hof zeigt die aktuelle Blickrichtung des Roboters.",
+      "Ein fest einprogrammierter Weg kann auf einem Hof funktionieren und auf einem anderen kollidieren. Die Sensoraufgabe prüft deshalb drei unterschiedliche Höfe. Die vorgeschlagene Rechtsdrehstrategie löst diese Übungshöfe, ist aber kein allgemeiner Wegfindungsalgorithmus für beliebige Labyrinthe. Ein Zielkontakt beendet jeden Modelllauf automatisch."
+    ],
+    "takeaway": "Ein übertragbares Verhalten muss gegen gezielt veränderte Situationen geprüft werden.",
+    "sourceIds": ["lp"],
+    "prerequisites": ["it10-sensoren", "it10-zustaende"],
+    "quiz": {
+      "question": "Warum wird dasselbe Programm auf mehreren Höfen geprüft?",
+      "answer": "Um Abhängigkeiten vom einzelnen Beispielweg und Fehler bei veränderter Umgebung zu finden.",
+      "wrong": [
+        "Weil ein Erfolg auf einem Hof bereits jede weitere Umgebung beweist.",
+        "Damit die Sollposition während des Tests zufällig verschoben werden kann."
+      ],
+      "explanation": "Ein übertragbares Verhalten muss gegen gezielt veränderte Situationen geprüft werden."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Vier Schritte vorwärts, rechts drehen, vier Schritte vorwärts löst den freien Hof. Warum scheitert das auf dem Hof mit Hindernis?",
+        "hints": [
+          "Den Unterschied der Höfe nennen",
+          "Die Ursache der Kollision erklären"
+        ],
+        "model": "Die feste Befehlsfolge berücksichtigt das Hindernis nicht und versucht weiter vorwärts zu fahren. Ein vorher ausgewerteter Freisensor ermöglicht eine alternative Aktion. Der geänderte Hof macht eine Abhängigkeit sichtbar, die im freien Hof unbemerkt bleibt.",
+        "criteria": [
+          "Den Unterschied der Höfe nennen",
+          "Die Ursache der Kollision erklären",
+          "Eine situationsabhängige Alternative beschreiben"
+        ]
+      },
+      "2": {
+        "prompt": "Alle drei Werkstatthöfe sind geschafft. Welche Aussage über andere Labyrinthe ist zulässig und wie würdest du weiter testen?",
+        "hints": [
+          "Die Erfolgsreichweite begrenzen",
+          "Eine mögliche Schwäche beschreiben"
+        ],
+        "model": "Das Programm löst die drei geprüften Höfe. Für andere Labyrinthe folgt daraus keine allgemeine Garantie; eine reine Rechtsdrehstrategie kann etwa in einer Schleife bleiben. Weitere Tests könnten Sackgassen, anders liegende Ziele und andere Startausrichtungen enthalten.",
+        "criteria": [
+          "Die Erfolgsreichweite begrenzen",
+          "Eine mögliche Schwäche beschreiben",
+          "Mindestens zwei weitere Teständerungen nennen"
+        ]
+      }
+    },
+    "lab": "robot-sensor"
+  },
+  {
+    "id": "it10-robotertest",
+    "module": "robotik",
+    "title": "Simulation und reale Erprobung verbinden",
+    "intro": "Eine Simulation spart Versuche, ersetzt aber keine echte Montage und Prüfung.",
+    "paragraphs": [
+      "Die Ablaufspur enthält für jeden ausgeführten Bewegungsbefehl Position, Richtung und die danach gemeldete freie Front. Damit kannst du die erste Abweichung vom Plan suchen. Bei einer Kollision stoppt das Modell sofort. Ein kurzer Testbericht benennt Programmstand, Hof, Erwartung und beobachtetes Ergebnis.",
+      "Reale Roboter benötigen passende Bauteile, sichere Montage und praktische Erprobung. Räder können rutschen, Sensorwerte streuen und Akkus schwächer werden. Diese Eigenschaften kommen im Rastermodell nicht vor. Eine Optimierung sollte deshalb ein klares Ziel haben und anschließend sowohl im Modell als auch am realen Aufbau angemessen geprüft werden."
+    ],
+    "takeaway": "Digitale Evidenz muss an den modellierten Eigenschaften gemessen werden.",
+    "sourceIds": ["lp"],
+    "prerequisites": ["it10-roboterprogramm"],
+    "quiz": {
+      "question": "Welche Aussage beschreibt die Grenze des digitalen Hofmodells?",
+      "answer": "Es prüft Rasterbewegungen, aber nicht reale Sensorstreuung oder Radschlupf.",
+      "wrong": [
+        "Ein Erfolg ersetzt jede Montage und jede reale Sicherheitsprüfung.",
+        "Das Modell misst den tatsächlichen Akkuzustand eines Roboters."
+      ],
+      "explanation": "Digitale Evidenz muss an den modellierten Eigenschaften gemessen werden."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Ein Roboter endet an der falschen Stelle. Wie hilft eine Ablaufspur bei der Fehlersuche?",
+        "hints": [
+          "Erwartete und tatsächliche Folge vergleichen",
+          "Die erste Abweichung suchen"
+        ],
+        "model": "Ich vergleiche die erwartete und die aufgezeichnete Folge von Positionen und Richtungen. An der ersten Abweichung prüfe ich den zuletzt ausgeführten Befehl und die Sensorbedingung. So suche ich die Ursache statt nur den falschen Endpunkt zu betrachten.",
+        "criteria": [
+          "Erwartete und tatsächliche Folge vergleichen",
+          "Die erste Abweichung suchen",
+          "Befehl und Sensorbedingung gemeinsam betrachten"
+        ]
+      },
+      "2": {
+        "prompt": "Nach einem erfolgreichen Simulationslauf fährt der echte Roboter an einer Kurve vorbei. Nenne zwei plausible Modelllücken und passende Prüfungen.",
+        "hints": [
+          "Zwei physische Modelllücken nennen",
+          "Dazu passende reale Tests vorschlagen"
+        ],
+        "model": "Räder könnten rutschen und der Sensor könnte die Linie verzögert erkennen. Ich prüfe die Fahrt bei geringerer Geschwindigkeit sowie wiederholte Sensormessungen an der Kurve. Die Ergebnisse werden mit dem Modell verglichen; eine erfolgreiche Rasterfahrt allein entscheidet die reale Aufgabe nicht.",
+        "criteria": [
+          "Zwei physische Modelllücken nennen",
+          "Dazu passende reale Tests vorschlagen",
+          "Die begrenzte Aussage der Simulation erläutern"
+        ]
+      }
+    }
+  },
+  {
+    "id": "it10-ki-beispiele",
+    "module": "ki",
+    "title": "KI an Aufgaben erkennen",
+    "intro": "Eine nützliche Einordnung beginnt mit Eingaben, Verarbeitung und Ausgaben.",
+    "paragraphs": [
+      "KI-Systeme können zum Beispiel Muster in Bildern erkennen, Sprache verarbeiten oder Vorhersagen treffen. Manche verwenden von Menschen formulierte Wissensregeln, andere lernen Modellparameter oder Strukturen aus Beispielen. Nicht jede Automatisierung benötigt dafür ein lernendes Modell.",
+      "Eine starre Zeitsteuerung schaltet nach einem festen Plan. Ein Klassifikationsmodell ordnet anhand von Merkmalen eine Klasse zu. Ein Textgenerator erzeugt plausible Textfortsetzungen und kann dabei unzutreffende Aussagen bilden. Aus einem überzeugenden Ergebnis folgt weder menschliches Verstehen noch eine Garantie richtiger Inhalte."
+    ],
+    "takeaway": "Die tatsächliche Aufgabe und Arbeitsweise sind aussagekräftiger als ein KI-Etikett.",
+    "sourceIds": ["lp", "ml"],
+    "prerequisites": [],
+    "quiz": {
+      "question": "Welche Frage hilft bei der fachlichen Einordnung eines KI-Systems?",
+      "answer": "Welche Eingaben verarbeitet es nach welchem Ansatz zu welchen Ausgaben?",
+      "wrong": [
+        "Welche Farbe hat das Firmenlogo?",
+        "Wie oft wird das Wort intelligent in der Werbung wiederholt?"
+      ],
+      "explanation": "Die tatsächliche Aufgabe und Arbeitsweise sind aussagekräftiger als ein KI-Etikett."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Vergleiche eine feste Zeitschaltung mit einer Bilderkennung anhand von Eingabe und Ausgabe.",
+        "hints": [
+          "Eingabe der Zeitschaltung benennen",
+          "Eingabe und Ausgabe der Bilderkennung benennen"
+        ],
+        "model": "Die Zeitschaltung nutzt Uhrzeit und Vorgabe für eine feste Schaltentscheidung. Eine Bilderkennung verarbeitet Bildmerkmale und liefert beispielsweise eine Klassenzuordnung. Die zweite Aufgabe kann mit einem aus Beispielen gelernten Modell gelöst werden; die erste benötigt das nicht zwingend.",
+        "criteria": [
+          "Eingabe der Zeitschaltung benennen",
+          "Eingabe und Ausgabe der Bilderkennung benennen",
+          "Automatisierung von Lernen unterscheiden"
+        ]
+      },
+      "2": {
+        "prompt": "Ein Textgenerator liefert eine flüssige, aber falsche Erklärung. Weshalb ist die flüssige Form kein ausreichender Qualitätsnachweis?",
+        "hints": [
+          "Sprachliche Form von Wahrheit trennen",
+          "Eine mögliche Fehlerquelle benennen"
+        ],
+        "model": "Die Form zeigt, dass ein plausibler Text erzeugt wurde. Sie belegt nicht, dass jede Aussage fachlich geprüft oder wahr ist. Zentrale Behauptungen müssen anhand geeigneter unabhängiger Quellen und nachvollziehbarer Belege kontrolliert werden.",
+        "criteria": [
+          "Sprachliche Form von Wahrheit trennen",
+          "Eine mögliche Fehlerquelle benennen",
+          "Einen konkreten Prüfweg nennen"
+        ]
+      }
+    }
+  },
+  {
+    "id": "it10-wissensregeln",
+    "module": "ki",
+    "title": "Wissensbasierte Regeln untersuchen",
+    "intro": "Explizite Regeln und gelernte Entscheidungen haben unterschiedliche Entstehungswege.",
+    "paragraphs": [
+      "Ein wissensbasiertes System kann von Menschen formulierte Wenn-dann-Regeln verwenden. Eine Regel für die erfundene Sortieraufgabe lautet etwa: Wenn der Massewert größer als 5 ist, wähle Klasse B. Die Grenze kommt dann aus dem vorgegebenen Wissen, nicht aus einem Trainingslauf.",
+      "Bei einem lernenden Entscheidungsbaum werden Merkmal und Trennwert aus beschrifteten Beispielen ermittelt. Beide Ansätze können am Ende gleich aussehende Entscheidungen liefern. Um sie zu unterscheiden, musst du deshalb auf die Entstehung der Regel schauen, nicht nur auf die Ausgabe."
+    ],
+    "takeaway": "Der Ursprung einer Regel entscheidet über den Ansatz; dieselbe Ausgabe kann auf verschiedenen Wegen entstehen.",
+    "sourceIds": ["lp", "ml"],
+    "prerequisites": ["it10-ki-beispiele"],
+    "quiz": {
+      "question": "Was unterscheidet eine vorgegebene Wissensregel von einer gelernten Baumregel?",
+      "answer": "Ob die Entscheidungsregel ausdrücklich vorgegeben oder aus Trainingsbeispielen ermittelt wurde.",
+      "wrong": [
+        "Ob das Ergebnis als Zahl oder als Wort angezeigt wird.",
+        "Ob bei jedem Aufruf zwingend eine Internetverbindung besteht."
+      ],
+      "explanation": "Der Ursprung einer Regel entscheidet über den Ansatz; dieselbe Ausgabe kann auf verschiedenen Wegen entstehen."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Zwei Systeme verwenden dieselbe Masseschwelle. Eines erhält die Schwelle von einer Fachperson, eines lernt sie. Sind die Entstehungswege gleich?",
+        "hints": [
+          "Die vorgegebene Regel zuordnen",
+          "Die gelernte Regel zuordnen"
+        ],
+        "model": "Nein. Beim ersten ist die Schwelle ausdrücklich vorgegebenes Wissen. Beim zweiten wurde sie aus Trainingsbeispielen gewählt. Ein gleiches Entscheidungsergebnis beweist deshalb keinen gleichen Entwicklungsprozess.",
+        "criteria": [
+          "Die vorgegebene Regel zuordnen",
+          "Die gelernte Regel zuordnen",
+          "Ausgabe und Entstehung trennen"
+        ]
+      },
+      "2": {
+        "prompt": "Eine Fachregel ist leicht erklärbar, liefert bei Sonderfällen aber falsche Ergebnisse. Vergleiche eine manuelle Regeländerung mit einem erneuten Training.",
+        "hints": [
+          "Die manuelle Regelpflege erklären",
+          "Die Rolle der Trainingsdaten erklären"
+        ],
+        "model": "Bei der Wissensregel prüfen Fachpersonen die Begründung und ändern oder ergänzen die ausdrücklichen Bedingungen. Beim lernenden Modell werden passende beschriftete Daten geprüft und das Trainingsverfahren erneut angewendet. Beide Wege brauchen unabhängige Prüfung der Ergebnisse und können neue Fehler erzeugen.",
+        "criteria": [
+          "Die manuelle Regelpflege erklären",
+          "Die Rolle der Trainingsdaten erklären",
+          "Den gemeinsamen Prüfbedarf nennen"
+        ]
+      }
+    }
+  },
+  {
+    "id": "it10-lernarten",
+    "module": "ki",
+    "title": "Lernarten an ihren Rückmeldungen unterscheiden",
+    "intro": "Nicht alle Verfahren bekommen dieselbe Art von Zielinformation.",
+    "paragraphs": [
+      "Beim überwachten Lernen liegen Beispiele mit einer gewünschten Zielgröße oder Klasse vor. Ein Verfahren sucht daraus ein Modell, das ähnliche neue Fälle bearbeiten soll. Unsere Sortierwerkstatt verwendet Merkmale und die Beschriftungen A oder B.",
+      "Unüberwachtes Lernen sucht beispielsweise Gruppen in Daten ohne vorgegebene Klassenbeschriftungen. Verstärkendes Lernen verwendet Rückmeldungen wie Belohnungen für Aktionen in einer Umgebung. Diese Einordnung beschreibt die Lernaufgabe, nicht automatisch die Qualität oder Eignung eines Systems."
+    ],
+    "takeaway": "Die Art der Rückmeldung unterscheidet überwachte, unüberwachte und verstärkende Lernaufgaben.",
+    "sourceIds": ["lp", "ml"],
+    "prerequisites": ["it10-wissensregeln"],
+    "quiz": {
+      "question": "Welche Daten passen zum überwachten Lernen einer Klassifikation?",
+      "answer": "Beispiele mit Merkmalen und zugehörigen Zielklassen.",
+      "wrong": [
+        "Nur eine Belohnung nach einer Aktionsfolge ohne Zielklasse pro Beispiel.",
+        "Unbeschriftete Beispiele ohne vorgegebene Zielklassen."
+      ],
+      "explanation": "Die Art der Rückmeldung unterscheidet überwachte, unüberwachte und verstärkende Lernaufgaben."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Ordne beschriftete Bildbeispiele, Gruppensuche ohne Klassen und belohnte Spielzüge den drei Lernarten zu.",
+        "hints": [
+          "Überwachtes Lernen korrekt zuordnen",
+          "Unüberwachtes Lernen korrekt zuordnen"
+        ],
+        "model": "Beschriftete Bildbeispiele passen zum überwachten Lernen. Gruppensuche ohne Klassen passt zum unüberwachten Lernen. Belohnte Spielzüge passen zum verstärkenden Lernen, weil Aktionen Rückmeldungen über ihre Folgen erhalten.",
+        "criteria": [
+          "Überwachtes Lernen korrekt zuordnen",
+          "Unüberwachtes Lernen korrekt zuordnen",
+          "Verstärkendes Lernen über Aktionsrückmeldung erklären"
+        ]
+      },
+      "2": {
+        "prompt": "Eine Firma nennt jede automatische Gruppierung überwachtes Lernen. Welche Information müsstest du prüfen, bevor du zustimmst?",
+        "hints": [
+          "Zielbeschriftungen als Kriterium nennen",
+          "Gruppierung ohne Zielvorgabe einordnen"
+        ],
+        "model": "Ich prüfe, ob beim Training gewünschte Zielgrößen oder Klassen für die Beispiele vorlagen. Ohne solche Zielvorgaben kann eine reine Gruppensuche unüberwacht sein. Das automatische Ausführen allein entscheidet die Lernart nicht.",
+        "criteria": [
+          "Zielbeschriftungen als Kriterium nennen",
+          "Gruppierung ohne Zielvorgabe einordnen",
+          "Automatisierung nicht mit Lernart verwechseln"
+        ]
+      }
+    }
+  },
+  {
+    "id": "it10-merkmale",
+    "module": "ki",
+    "title": "Merkmale, Labels und Datenauswahl",
+    "intro": "Ein Modell sieht die ausgewählten Daten, nicht die vollständige Wirklichkeit.",
+    "paragraphs": [
+      "Ein Merkmal ist eine verwendete Eingangsgröße. Ein Label ist beim überwachten Klassifizieren die vorgegebene Klasse. In der Werkstatt besitzen erfundene Objekte einen Massewert, einen Farbwert und die Klasse A oder B. Die Zahlen und Klassen sind didaktisch festgelegt und keine gemessenen Frucht- oder Personendaten.",
+      "Unpassende oder einseitig erhobene Beispiele können das Modell verzerren. Auch ein Merkmal, das im Training zufällig mit dem Label zusammenhängt, muss außerhalb dieser Daten nicht hilfreich sein. Dokumentiere deshalb Herkunft, Auswahl und beabsichtigten Einsatz, bevor du eine hohe Trefferzahl als Gütenachweis verwendest."
+    ],
+    "takeaway": "Merkmale sind Eingaben; Labels liefern die Zielinformation für das überwachte Lernen.",
+    "sourceIds": ["lp", "ml"],
+    "prerequisites": ["it10-lernarten"],
+    "quiz": {
+      "question": "Was ist in einer überwachten Klassifikation das Label?",
+      "answer": "Die vorgegebene Zielklasse eines Trainingsbeispiels.",
+      "wrong": [
+        "Die zufällige Reihenfolge der angezeigten Beispiele.",
+        "Die Zahl der installierten Programme auf dem Gerät."
+      ],
+      "explanation": "Merkmale sind Eingaben; Labels liefern die Zielinformation für das überwachte Lernen."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "In einer Sortieraufgabe stehen Massewert 3, Farbwert 8 und Klasse A. Welche Angaben sind Merkmale und welche das Label?",
+        "hints": ["Beide Merkmale benennen", "Das Label zuordnen"],
+        "model": "Massewert und Farbwert sind die zwei Eingangsmerkmale. Klasse A ist das Label. Beim Vorhersagen eines neuen Beispiels sind die Merkmale bekannt; die Zielklasse wird vom Modell geschätzt.",
+        "criteria": [
+          "Beide Merkmale benennen",
+          "Das Label zuordnen",
+          "Training von Vorhersage unterscheiden"
+        ]
+      },
+      "2": {
+        "prompt": "Für ein Modell werden nur leichte Objekte aufgenommen, eingesetzt werden soll es später auch für schwere. Welche Lücke entsteht?",
+        "hints": [
+          "Auswahl und Einsatzbereich vergleichen",
+          "Die Unsicherheit des ungedeckten Bereichs erklären"
+        ],
+        "model": "Die Trainingsauswahl bildet den späteren Einsatzbereich nicht vollständig ab. Für schwere Objekte fehlt passende Erfahrung, sodass Vorhersagen dort besonders unsicher sein können. Es werden repräsentative zusätzliche Beispiele und eine getrennte Prüfung dieses Bereichs benötigt.",
+        "criteria": [
+          "Auswahl und Einsatzbereich vergleichen",
+          "Die Unsicherheit des ungedeckten Bereichs erklären",
+          "Datenergänzung und Prüfung vorschlagen"
+        ]
+      }
+    }
+  },
+  {
+    "id": "it10-baum",
+    "module": "ki",
+    "title": "Einen Entscheidungsbaum aus Beispielen lernen",
+    "intro": "Der Trainingslauf wählt tatsächlich Merkmale und Trennwerte aus den ausgewählten Daten.",
+    "paragraphs": [
+      "Ein Entscheidungsbaum stellt an jedem inneren Knoten eine Frage, etwa Massewert höchstens 5. Je nach Antwort folgt der linke oder rechte Ast. Ein Blatt enthält die vorhergesagte Klasse. Unsere Werkstatt wählt unter möglichen numerischen Trennwerten denjenigen, der die Klassen möglichst gut trennt.",
+      "Als Maß dient die Gini-Unreinheit: Ein Knoten mit nur einer Klasse hat den Wert 0. Ein gleich gemischter Knoten ist unreiner. Das Verfahren vergleicht die nach Beispielzahl gewichtete Unreinheit der beiden Teilgruppen. Es wiederholt diese Aufteilung bis zur gewählten Tiefengrenze oder bis keine passende Verbesserung mehr entsteht. Bei Gleichstand ist die Auswahl hier fest und reproduzierbar."
+    ],
+    "takeaway": "Ein Baum besteht aus gelernten Trennfragen und Klassenentscheidungen an seinen Blättern.",
+    "sourceIds": ["lp", "ml", "trees", "gini"],
+    "prerequisites": ["it10-merkmale"],
+    "quiz": {
+      "question": "Was beschreibt ein Blatt unseres Klassifikationsbaums?",
+      "answer": "Die vorhergesagte Klasse für die dort ankommenden Beispiele.",
+      "wrong": [
+        "Den Namen eines unbenutzten Netzwerkports.",
+        "Eine neue Zufallszahl, die das Label grundsätzlich ignoriert."
+      ],
+      "explanation": "Ein Baum besteht aus gelernten Trennfragen und Klassenentscheidungen an seinen Blättern."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Ein Baum fragt Massewert höchstens 5. Ein neues Objekt hat Massewert 7. Welchen Ast nimmt es und woher stammt am Ende seine Klasse?",
+        "hints": [
+          "Die Bedingung korrekt auswerten",
+          "Den passenden Ast nennen"
+        ],
+        "model": "Die Bedingung ist falsch, daher folgt es dem rechten Ast. Weitere Fragen können folgen. Am erreichten Blatt steht die aus den dortigen Trainingsbeispielen abgeleitete Klasse.",
+        "criteria": [
+          "Die Bedingung korrekt auswerten",
+          "Den passenden Ast nennen",
+          "Die Blattentscheidung aus dem Training erklären"
+        ]
+      },
+      "2": {
+        "prompt": "Ein möglicher Split trennt zwölf Beispiele in zwei Gruppen mit je nur einer Klasse. Ein anderer lässt beide Gruppen gemischt. Welchen bevorzugt das Werkstattverfahren bei sonst gleichen Voraussetzungen?",
+        "hints": [
+          "Reine und gemischte Gruppen vergleichen",
+          "Das verwendete Gütemaß erklären"
+        ],
+        "model": "Es bevorzugt den Split mit den reinen Gruppen, weil deren gewichtete Gini-Unreinheit 0 ist. Die gemischten Gruppen haben einen höheren Wert. Das ist ein Trainingskriterium; es garantiert noch keine guten Vorhersagen auf neuen Daten.",
+        "criteria": [
+          "Reine und gemischte Gruppen vergleichen",
+          "Das verwendete Gütemaß erklären",
+          "Trainingskriterium von Generalisierung trennen"
+        ]
+      }
+    },
+    "lab": "ki-model"
+  },
+  {
+    "id": "it10-testdaten",
+    "module": "ki",
+    "title": "Trainieren und unabhängig prüfen",
+    "intro": "Beispiele, aus denen gelernt wird, sind kein unabhängiger Abschlusstest.",
+    "paragraphs": [
+      "Trainingsdaten bestimmen die Modellstruktur. Getrennte Daten prüfen, wie gut das Modell andere Beispiele bearbeitet. Eine hohe Trefferzahl auf den eigenen Trainingsbeispielen kann durch Anpassung an Einzelheiten entstehen und sagt allein wenig über neue Situationen aus.",
+      "In der Werkstatt sind Trainings- und Vergleichsbeispiele verschieden. Weil du das Vergleichsergebnis wiederholt ansehen und zur Modellwahl nutzen kannst, wird dieser Satz praktisch zu Validierungsdaten. Ein unabhängiger Abschlusstest müsste mit frischen, vorher nicht zur Auswahl verwendeten Daten erfolgen. Die kleine Trefferquote hier ist eine Übungsbeobachtung, keine verlässliche Einsatzfreigabe."
+    ],
+    "takeaway": "Wiederholt zur Anpassung verwendete Testdaten sind keine unangetastete Abschlussprüfung mehr.",
+    "sourceIds": ["lp", "ml"],
+    "prerequisites": ["it10-baum"],
+    "quiz": {
+      "question": "Weshalb reicht die Trefferquote auf den Trainingsdaten nicht zur Bewertung neuer Fälle?",
+      "answer": "Das Modell wurde gerade an diese Beispiele angepasst.",
+      "wrong": [
+        "Trainingsdaten enthalten grundsätzlich niemals Zielklassen.",
+        "Ein Modell kann auf Trainingsdaten prinzipiell keine richtige Antwort geben."
+      ],
+      "explanation": "Wiederholt zur Anpassung verwendete Testdaten sind keine unangetastete Abschlussprüfung mehr."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Ein Modell trifft alle zwölf Trainingsbeispiele richtig. Welche zusätzliche Prüfung brauchst du für eine Aussage über andere Fälle?",
+        "hints": [
+          "Getrennte Beispiele fordern",
+          "Wiederholte Modellwahl berücksichtigen"
+        ],
+        "model": "Ich brauche passende getrennte Beispiele, die nicht beim Training verwendet wurden. Wenn ich deren Ergebnisse mehrfach zur Modellwahl nutze, brauche ich für den unabhängigen Abschluss noch einen frischen Testsatz. Auch dessen Aussage hängt von Umfang und Passung der Daten ab.",
+        "criteria": [
+          "Getrennte Beispiele fordern",
+          "Wiederholte Modellwahl berücksichtigen",
+          "Umfang und Einsatzbereich der Prüfung benennen"
+        ]
+      },
+      "2": {
+        "prompt": "Ein Team wählt nach zwanzig Versuchen das Modell mit dem besten Ergebnis auf demselben Testsatz. Ist dieser Satz noch eine unabhängige Abschlussprüfung? Begründe.",
+        "hints": [
+          "Einfluss auf die Modellwahl erkennen",
+          "Indirekte Anpassung erklären"
+        ],
+        "model": "Nein. Die Ergebnisse haben die Auswahl des Modells beeinflusst. Damit wurde indirekt an diesen Satz angepasst. Er dient nun der Validierung; für eine unabhängige Abschlussbewertung braucht es neue, bisher nicht für Entscheidungen verwendete Testdaten.",
+        "criteria": [
+          "Einfluss auf die Modellwahl erkennen",
+          "Indirekte Anpassung erklären",
+          "Eine frische Abschlussprüfung verlangen"
+        ]
+      }
+    }
+  },
+  {
+    "id": "it10-bias",
+    "module": "ki",
+    "title": "Bias und Überanpassung sichtbar machen",
+    "intro": "Mehr Anpassung an Trainingsdaten ist nicht automatisch eine bessere Lösung.",
+    "paragraphs": [
+      "Bias kann durch eine einseitige Datenauswahl oder ungeeignete Annahmen entstehen. Entferne in der Werkstatt schwere Objekte aus dem Training und beobachte, welche Bereiche das Modell dann schlecht abdeckt. Das zeigt eine konkrete Auswahlverzerrung, keine vollständige Untersuchung gesellschaftlicher Fairness.",
+      "Overfitting bedeutet übermäßige Anpassung an Besonderheiten der Trainingsdaten. Ein tiefer Baum kann auch das absichtlich ungewöhnlich beschriftete Beispiel lernen. Vergleiche einen flachen und einen tieferen Baum anhand von Trainings- und Vergleichsergebnis. Ob sich Überanpassung zeigt, hängt von den gewählten Daten und Merkmalen ab; tiefer ist nicht in jedem Datensatz schlechter."
+    ],
+    "takeaway": "Bewerte Modellkomplexität mit getrennten Daten und prüfe, welche Fälle die Auswahl überhaupt abdeckt.",
+    "sourceIds": ["lp", "ml"],
+    "prerequisites": ["it10-testdaten"],
+    "quiz": {
+      "question": "Welcher Befund kann auf Überanpassung hinweisen?",
+      "answer": "Sehr gutes Trainingsergebnis bei deutlich schwächerem Ergebnis auf passenden neuen Beispielen.",
+      "wrong": [
+        "Jede Verbesserung auf neuen Beispielen ist automatisch ein Fehler.",
+        "Ein tieferer Baum ist unter allen Umständen immer schlechter."
+      ],
+      "explanation": "Bewerte Modellkomplexität mit getrennten Daten und prüfe, welche Fälle die Auswahl überhaupt abdeckt."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Ein Baum erkennt nur die im Training gezeigten leichten Objekte zuverlässig. Erkläre eine plausible Ursache und eine sinnvolle Gegenmaßnahme.",
+        "hints": [
+          "Die Auswahlverzerrung benennen",
+          "Eine gezielte Datenergänzung vorschlagen"
+        ],
+        "model": "Die Auswahl kann den späteren Bereich schwerer Objekte unzureichend abbilden. Repräsentative zusätzliche Trainingsbeispiele können diese Lücke verkleinern. Die Wirkung wird anschließend auf getrennten passenden Beispielen geprüft.",
+        "criteria": [
+          "Die Auswahlverzerrung benennen",
+          "Eine gezielte Datenergänzung vorschlagen",
+          "Getrennte Bewertung beibehalten"
+        ]
+      },
+      "2": {
+        "prompt": "Ein tiefer Baum erreicht 12 von 12 im Training, aber 4 von 6 im Vergleich; ein flacher erreicht 11 von 12 und 6 von 6. Was lässt sich daraus folgern und was bleibt offen?",
+        "hints": [
+          "Beide Ergebnisarten vergleichen",
+          "Den Befund als möglichen Overfitting-Hinweis erklären"
+        ],
+        "model": "Für diese kleine Vergleichsmenge generalisiert der flache Baum besser, während der tiefe stärker an die Trainingsdaten angepasst ist. Das passt zu Überanpassung. Sechs Vergleichsfälle reichen aber nicht für eine allgemeine Qualitätsgarantie; eine größere passende unabhängige Prüfung bleibt nötig.",
+        "criteria": [
+          "Beide Ergebnisarten vergleichen",
+          "Den Befund als möglichen Overfitting-Hinweis erklären",
+          "Die kleine Datenbasis als Grenze nennen"
+        ]
+      }
+    }
+  },
+  {
+    "id": "it10-ki-verantwortung",
+    "module": "ki",
+    "title": "KI-Ergebnisse verantwortlich verwenden",
+    "intro": "Eine technische Trefferquote entscheidet keine gesellschaftliche Wertfrage.",
+    "paragraphs": [
+      "Für einen Einsatz beurteilst du Nutzen, mögliche Schäden, betroffene Menschen, Datenherkunft und Möglichkeiten zur Kontrolle. Bei wichtigen Entscheidungen brauchen Verantwortliche nachvollziehbare Gründe, angemessene Prüfung und einen Weg, Fehler anzufechten. Ein Modell übernimmt keine menschliche Verantwortung.",
+      "Bei generierten Texten kontrollierst du zentrale Behauptungen anhand verlässlicher unabhängiger Quellen. Gib keine vertraulichen Angaben in ungeprüfte Dienste ein. Die Sortierwerkstatt verwendet ausschließlich erfundene Daten und lokale Berechnungen. Sie zeigt einen Lernansatz, keine verlässliche Beurteilung von Personen oder realen Einsatzfällen."
+    ],
+    "takeaway": "Die Qualität einer Anwendung hängt auch von Zweck, Folgen und überprüfbarer Verantwortung ab.",
+    "sourceIds": ["lp", "ml"],
+    "prerequisites": ["it10-bias"],
+    "quiz": {
+      "question": "Was ersetzt eine hohe technische Trefferquote nicht?",
+      "answer": "Die Prüfung von Einsatzkontext, Folgen, Betroffenen und menschlicher Verantwortung.",
+      "wrong": [
+        "Die Berechnung der bereits gemessenen richtigen Ergebnisse.",
+        "Die Möglichkeit, zwei Testzahlen miteinander zu vergleichen."
+      ],
+      "explanation": "Die Qualität einer Anwendung hängt auch von Zweck, Folgen und überprüfbarer Verantwortung ab."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Ein KI-System soll Bewerbungen vorsortieren. Nenne zwei Fragen, die eine bloße Gesamt-Trefferquote nicht beantwortet.",
+        "hints": [
+          "Mindestens eine mögliche Benachteiligung betrachten",
+          "Daten oder Zweck prüfen"
+        ],
+        "model": "Sie zeigt nicht, ob bestimmte Gruppen systematisch benachteiligt werden oder ob die Daten zum tatsächlichen Auswahlzweck passen. Außerdem bleibt zu klären, wer Entscheidungen prüft und wie Betroffene einen Fehler korrigieren lassen können.",
+        "criteria": [
+          "Mindestens eine mögliche Benachteiligung betrachten",
+          "Daten oder Zweck prüfen",
+          "Menschliche Kontrolle oder Korrekturweg ansprechen"
+        ]
+      },
+      "2": {
+        "prompt": "Eine Gruppe will eine überzeugende KI-Erklärung ungeprüft in einer Projektpräsentation übernehmen. Entwirf einen kurzen Prüfablauf.",
+        "hints": [
+          "Konkrete Behauptungen isolieren",
+          "Unabhängige Belege prüfen"
+        ],
+        "model": "Die Gruppe markiert zuerst überprüfbare Kernaussagen. Sie sucht dazu verlässliche unabhängige Quellen und vergleicht deren tatsächliche Belege. Nicht belegte oder widersprüchliche Aussagen werden korrigiert oder als offen benannt. Anschließend dokumentiert sie Quellen und den Einsatz der Unterstützung für die Präsentation.",
+        "criteria": [
+          "Konkrete Behauptungen isolieren",
+          "Unabhängige Belege prüfen",
+          "Korrektur und transparente Dokumentation vorsehen"
+        ]
+      }
+    }
+  }
+]
