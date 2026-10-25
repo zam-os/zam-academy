@@ -502,6 +502,24 @@ describe("cell", () => {
     }
   });
 
+  it("keeps the corrections of the ZAM review (zam-os/zam#455) in 2026.10.3", () => {
+    const bySlug = new Map(items.map((item) => [item.slug, item]));
+    // The reasoning card about a photo answers with questions about a photo.
+    expect(bySlug.get("g10-bild-und-lied-begruenden")!.concept).toContain("fotografierte");
+    // The census of 29 October 1946 counted 9,938,191 people who had lived east of
+    // Oder and Neiße or abroad in 1939 (four zones and Groß-Berlin).
+    expect(bySlug.get("g10-schaubild-merken")!.concept).toBe("Rund 9,9 Millionen");
+    expect(findLesson("g10-schaubild")!.workshop.dataTable!.rows[0].value).toBe(9.9);
+    expect(findLesson("g10-schaubild")!.workshop.dataTable!.sourceId).toBe("volkszaehlung-1946");
+    for (const slug of [
+      "g10-film-begruenden",
+      "g10-deutsche-frage-begruenden",
+      "g10-instrumentalisierung-begruenden",
+      "g10-en-cold-war-begruenden",
+    ])
+      expect(bySlug.get(slug)!.concept).toMatch(/etwa|Tag von Potsdam|in Vietnam/);
+  });
+
   it("pins every published id and slug independently of content edits", () => {
     expect(
       cell.atoms.map((atom) => ({
@@ -565,8 +583,8 @@ describe("approved mapping of the old ZAM cell", () => {
     expect(new Set(targets).size).toBe(targets.length);
   });
 
-  it("declares exactly the approved replaces and retirements in version 2026.10.2", () => {
-    expect(cell.version).toBe("2026.10.2");
+  it("declares exactly the approved replaces and retirements since version 2026.10.2", () => {
+    expect(cell.version).toBe("2026.10.3");
     expect(mapping.status).toBe("approved");
     expect(mapping.approved).toBe("2026-10-25");
     expect(mapping.source).toContain("Ich gebe die Zuordnung 2 A / 0 B / 2 C");

@@ -44,6 +44,12 @@ export const SOURCES: Source[] = [
     url: lemo("nachkriegsjahre/alltag/flucht-und-vertreibung"),
   },
   {
+    id: "volkszaehlung-1946",
+    label:
+      "Statistische Bibliothek · Volkszählung vom 29. Oktober 1946 in den vier Besatzungszonen und Groß-Berlin (Textteil)",
+    url: "https://www.statistischebibliothek.de/mir/servlets/MCRFileNodeServlet/DEHeft_derivate_00096650/volkszaehlungtextteil.pdf",
+  },
+  {
     id: "lemo-laender",
     label: "LeMO · Neugründung der Länder",
     url: lemo("nachkriegsjahre/neuanfaenge/laender"),
