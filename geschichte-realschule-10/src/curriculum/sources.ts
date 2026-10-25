@@ -237,6 +237,11 @@ export const SOURCES: Source[] = [
     url: lemo("deutsche-einheit/friedliche-revolution/fall-der-mauer"),
   },
   {
+    id: "lemo-volkskammerwahl",
+    label: "LeMO · Freie Volkskammerwahl 1990 (Beitritt nach Artikel 23 des Grundgesetzes)",
+    url: lemo("deutsche-einheit/weg-zur-einheit/freie-volkskammerwahl"),
+  },
+  {
     id: "lemo-wwsu",
     label: "LeMO · Wirtschafts-, Währungs- und Sozialunion",
     url: lemo("deutsche-einheit/weg-zur-einheit/wirtschafts-waehrungs-und-sozialunion"),
@@ -340,7 +345,8 @@ export const SOURCES: Source[] = [
   },
   {
     id: "gg-art23",
-    label: "Bundesministerium der Justiz · Grundgesetz Artikel 23 (heutige Fassung)",
+    label:
+      "Bundesministerium der Justiz · Grundgesetz Artikel 23 heute: Europa-Artikel seit 1992, nicht der Beitrittsartikel von 1990",
     url: "https://www.gesetze-im-internet.de/gg/art_23.html",
   },
   {

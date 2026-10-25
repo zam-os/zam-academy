@@ -18,7 +18,7 @@ Die 41 Kompetenzerwartungen stehen wörtlich in [`coverage.json`](../geschichte-
 - **Gegenwart:** Lektionen zu Ukraine und Nahost tragen den Stand Oktober 2026 und fordern auf, aktuelle Nachrichten zu prüfen. Opferzahlen laufender Kriege werden nur als Größenordnung genannt.
 - **Zahlen in Werkstätten** stammen aus LeMO (Stiftung Haus der Geschichte): Flüchtlinge 1946/1950, Flucht aus der DDR bis 1961, ausländische Arbeitnehmer 1960–1973, Leipziger Montagsdemonstrationen, Treuhand-Bilanz. Vertriebene in Bayern 1949 (rund 1,9 Millionen, etwa 21 Prozent) nach German History in Documents and Images.
 - **Originaltext:** Die Präambel der Bayerischen Verfassung wurde gegen gesetze-bayern.de geprüft; Art. 2, 70, 74 und 100 ebenso.
-- **Quellen:** 107 Quellen in `src/curriculum/sources.ts`; am 25.10.2026 antworteten 106 mit HTTP 200. UNHCR lehnt Skriptabrufe ab (403); die verlinkte Seite „Global Trends 2024“ existiert.
+- **Quellen:** 108 Quellen in `src/curriculum/sources.ts`; am 25.10.2026 antworteten 107 mit HTTP 200. UNHCR lehnt Skriptabrufe ab (403); die verlinkte Seite „Global Trends 2024“ existiert.
 
 ## Die vier alten Karten
 

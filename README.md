@@ -66,7 +66,7 @@ cd uml                 # or: cd physik-realschule-9 (dev server on :5181), cd sq
 # Französisch 9: cd franzoesisch-realschule-9 (dev server on :5199)
 # Informatik 10: cd informatik-realschule-10 (dev server on :5200)
 # Chemie 10: cd chemie-realschule-10 (dev server on :5201)
-# Geschichte 10: cd geschichte-realschule-10 (dev server on :5202)
+# Geschichte 10: cd geschichte-realschule-10 (dev server on :5203)
 npm ci
 npm run dev      # http://localhost:5180/uml/
 npm test

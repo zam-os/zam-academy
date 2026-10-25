@@ -7,7 +7,7 @@ export default defineConfig({
   base: "/geschichte-realschule-10/",
   plugins: [viteSingleFile()],
   server: {
-    port: 5202,
+    port: 5203,
     open: false,
   },
   build: {

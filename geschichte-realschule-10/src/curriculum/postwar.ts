@@ -240,9 +240,9 @@ export const postwar: Lesson[] = [
             "Alle Staatsgewalt geht vom Volk aus.",
           ],
           [
-            "Ein Zehntel der Stimmberechtigten kann ein Volksbegehren erzwingen. (Art. 74)",
+            "Unterstützt ein Zehntel der Stimmberechtigten ein Volksbegehren, muss ein Volksentscheid stattfinden. (Art. 74)",
             0,
-            "Das Volk kann selbst Gesetze anstoßen.",
+            "Das Volk kann so selbst über ein Gesetz abstimmen.",
           ],
           [
             "Die Würde des Menschen ist unantastbar. (Art. 100)",

@@ -401,11 +401,18 @@ export const coldwar: Lesson[] = [
     paragraphs: [
       "Aus dem Ruf „Wir sind das Volk“ wurde bald „Wir sind ein Volk“. Bundeskanzler Helmut Kohl legte im November 1989 einen Zehn-Punkte-Plan vor. Bei der ersten freien Volkskammerwahl am 18. März 1990 siegte das Bündnis, das eine rasche Einheit versprach; Lothar de Maizière (CDU) wurde Ministerpräsident. Am 1. Juli 1990 trat die Wirtschafts-, Währungs- und Sozialunion in Kraft: Die D-Mark wurde Zahlungsmittel in der DDR.",
       "Die Einheit brauchte auch die Zustimmung der vier Siegermächte. Die USA unterstützten sie, Großbritannien und Frankreich waren anfangs skeptisch, Polen sorgte sich um seine Westgrenze. Im Sommer 1990 stimmte Gorbatschow zu, dass das vereinte Deutschland in der NATO bleiben durfte. Am 12. September 1990 unterzeichneten die beiden deutschen Staaten und die vier Mächte den Zwei-plus-Vier-Vertrag: Deutschland erhielt die volle Souveränität, die Oder-Neiße-Grenze wurde endgültig, die Bundeswehr verkleinert, die sowjetischen Truppen zogen bis 1994 ab.",
-      "Der Einigungsvertrag vom 31. August 1990 regelte die innerstaatlichen Fragen. Am 3. Oktober 1990 trat die DDR nach Artikel 23 des Grundgesetzes der Bundesrepublik bei; die neu gegründeten Länder Brandenburg, Mecklenburg-Vorpommern, Sachsen, Sachsen-Anhalt und Thüringen wurden Teil der Bundesrepublik, Berlin wurde vereint. Der 3. Oktober ist seitdem als „Tag der Deutschen Einheit“ Nationalfeiertag.",
+      "Der Einigungsvertrag vom 31. August 1990 regelte die innerstaatlichen Fragen. Am 3. Oktober 1990 trat die DDR nach Artikel 23 des Grundgesetzes in seiner damaligen Fassung der Bundesrepublik bei; dieser Beitrittsartikel wurde danach aufgehoben, seit 1992 regelt Artikel 23 die Mitwirkung in der Europäischen Union. die neu gegründeten Länder Brandenburg, Mecklenburg-Vorpommern, Sachsen, Sachsen-Anhalt und Thüringen wurden Teil der Bundesrepublik, Berlin wurde vereint. Der 3. Oktober ist seitdem als „Tag der Deutschen Einheit“ Nationalfeiertag.",
     ],
     takeaway:
       "Freie Volkskammerwahl, Währungsunion, Einigungsvertrag und Zwei-plus-Vier-Vertrag führten zum Beitritt der DDR am 3. Oktober 1990.",
-    sourceIds: ["lemo-wwsu", "lemo-einigungsvertrag", "lemo-2plus4", "gg-art23", "bpb-einheit"],
+    sourceIds: [
+      "lemo-volkskammerwahl",
+      "lemo-wwsu",
+      "lemo-einigungsvertrag",
+      "lemo-2plus4",
+      "gg-art23",
+      "bpb-einheit",
+    ],
     quiz: check(
       "Welcher Vertrag gab dem vereinten Deutschland 1990 die volle Souveränität?",
       "Der Zwei-plus-Vier-Vertrag.",
@@ -435,7 +442,7 @@ export const coldwar: Lesson[] = [
         ["Rolle der vier Mächte", "NATO-Frage", "Grenzfrage"],
       ),
       2: writing(
-        "Erörtere Voraussetzungen und Folgen der schnellen Einheit nach Artikel 23.",
+        "Erörtere Voraussetzungen und Folgen der schnellen Einheit durch Beitritt nach dem damaligen Artikel 23.",
         ["Warum so schnell?", "Was bedeutete die schnelle Währungsunion für Betriebe?"],
         "Die schnelle Einheit nutzte ein günstiges Zeitfenster, solange Gorbatschow zustimmte, und entsprach dem Wahlergebnis vom März 1990. Die D-Mark brachte den Menschen Kaufkraft, setzte die ostdeutschen Betriebe aber schlagartig dem Weltmarkt aus, viele waren nicht konkurrenzfähig. So waren politische Freiheit und Einheit gewonnen, wirtschaftliche Probleme und Arbeitslosigkeit folgten. Ein langsamerer Weg hätte die Einheit womöglich gefährdet.",
         ["Gründe für die Geschwindigkeit", "Folgen", "Abgewogenes Urteil"],

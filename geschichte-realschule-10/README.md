@@ -35,7 +35,7 @@ ZAM bündelt bisher die Teilzelle `de-by:realschule-10-geschichte-kalter-krieg-t
 
 ```sh
 npm ci
-npm run dev            # http://localhost:5202/geschichte-realschule-10/
+npm run dev            # http://localhost:5203/geschichte-realschule-10/
 npm run typecheck
 npm test
 npm run build          # dist/index.html: eine offlinefähige Datei
