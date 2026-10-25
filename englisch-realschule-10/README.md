@@ -1,6 +1,6 @@
 # Englisch 10 Realschule Bayern · ZAM Academy
 
-Lokaler, unveröffentlichter Entwurf: **46 Kernlektionen, 138 Kurzaufgaben und 92 ZAM-Karten**. Gemeinsamer Lernpfad für I, II, IIIa und IIIb nach dem [LehrplanPLUS Englisch 10](https://www.lehrplanplus.bayern.de/fachlehrplan/realschule/10/englisch), geprüft am 25. Oktober 2026. Die App baut auf der geprüften Englisch-9-Shell mit eigenem Fortschrittsspeicher auf.
+**46 Kernlektionen, 138 Kurzaufgaben und 92 ZAM-Karten**. Gemeinsamer Lernpfad für I, II, IIIa und IIIb nach dem [LehrplanPLUS Englisch 10](https://www.lehrplanplus.bayern.de/fachlehrplan/realschule/10/englisch), geprüft am 25. Oktober 2026. Die App baut auf der geprüften Englisch-9-Shell mit eigenem Fortschrittsspeicher auf.
 
 | Etappe | Lektionen | Schwerpunkt |
 | --- | ---: | --- |
@@ -39,7 +39,7 @@ Texte und Fortschritt bleiben in `localStorage` dieses Browsers; Englisch 10 hat
 
 Die vier alten Englisch-10-Karten bleiben aktiv. `replaces-de-by.json` ist **proposal-only**, `approved: null`, vier Zeilen `C / keep-active`. Die bytegleiche Altdatei ist mit Quellcommit und SHA-256 gesichert. Kein `replaces`, keine `retired_items`, keine Beherrschungsübertragung. Eine spätere Änderung der Lernverläufe braucht Thomas ausdrücklich. Die alte Englisch-9-Freigabe wird nicht übernommen.
 
-App und Zelle werden erst nach beauftragter Veröffentlichung über die Academy angeboten. Ein späterer ZAM-PR übernimmt veröffentlichte Bytes über `academy:sync`. Hier wird keine persönliche Bibliothek geöffnet oder verändert.
+Die Pages-Veröffentlichung nach dem Merge stellt App und Zelle über die Academy bereit. Ein späterer ZAM-PR übernimmt veröffentlichte Bytes über `academy:sync`. Hier wird keine persönliche Bibliothek geöffnet oder verändert.
 
 ## Entwickeln und prüfen
 

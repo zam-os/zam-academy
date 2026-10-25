@@ -82,8 +82,9 @@ Oben in der App wechselst du zwischen
 - 🌱 Level 1 (geführt: Leitfragen helfen) und
 - 🦅 Level 2 (Transfer: selbständig begründen).
 
-Behalten mit ZAM: Die vorbereitete Zelle "Englisch 10 Realschule (ZAM Academy)" ist noch
-unveröffentlicht. Jede Karte verlinkt ihre Lektion.
+Behalten mit ZAM: Sobald das Paket in der Academy veröffentlicht ist, kannst
+du die Zelle "Englisch 10 Realschule (ZAM Academy)" aufnehmen. Jede Karte
+verlinkt ihre Lektion.
 
 Hören: Optional steht eine lokale englische Computerstimme zur Verfügung.
 Fehlt sie, kann ein Partner den aufklappbaren Text vorlesen. Echte Aufnahmen

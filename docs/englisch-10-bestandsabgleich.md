@@ -1,7 +1,8 @@
 # Englisch 10 · Lehrplan- und Bestandsabgleich
 
-Stand: 25. Oktober 2026. Lokaler Entwurf unter `englisch-realschule-10/`,
-46 Kernlektionen, 92 Wiederholungsfragen. Noch kein Push, PR oder Veröffentlichung.
+Stand: 25. Oktober 2026. Neues Paket unter `englisch-realschule-10/` mit
+46 Kernlektionen und 92 Wiederholungsfragen. Die Pages-Veröffentlichung folgt
+nach dem Merge; die Übernahme in ZAM erfolgt in einem separaten PR.
 
 ## Lehrplanbasis und Grenzen
 
@@ -74,8 +75,8 @@ Aufnahme müssen idempotent bleiben. Persönliche Bibliotheken sind unberührt.
 
 ## Prüfnachweise
 
-Stand der lokalen Prüfung am 25. Oktober 2026; kein GitHub-CI-Lauf, weil das
-Paket noch nicht gepusht ist.
+Die folgenden Ergebnisse wurden am 25. Oktober 2026 vor dem Push lokal
+ermittelt. GitHub-CI und Reviews sind separat am PR nachvollziehbar.
 
 - `npm ci`: 47 Pakete installiert; dieselben vier Entwicklungswerkzeuge wie
   in Englisch 9, keine zusätzliche Abhängigkeit.
