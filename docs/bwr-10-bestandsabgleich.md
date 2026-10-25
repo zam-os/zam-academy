@@ -1,6 +1,6 @@
 # BwR 10 · Lehrplanabgleich und Bestandsabgleich
 
-Stand: 25. Oktober 2026. Das neue Paket [`bwr-realschule-10/`](../bwr-realschule-10/) ergänzt die Academy um 36 Kernlektionen, zwei optionale Auffrischungen und 76 Karten (Zelle `zam-academy:bwr-realschule-10`, Version 2026.10.1).
+Stand: 25. Oktober 2026. Das neue Paket [`bwr-realschule-10/`](../bwr-realschule-10/) ergänzt die Academy um 36 Kernlektionen, zwei optionale Auffrischungen und 76 Karten (Zelle `zam-academy:bwr-realschule-10`; erste Veröffentlichung 2026.10.1 am 25.10.2026 mit #50, freigegebene Zuordnung ab 2026.10.2).
 
 ## Lehrplan
 
@@ -23,18 +23,18 @@ Schulkonventionen: Kontennummern und Abkürzungen nach dem [ISB-Kontenplan Lehrp
 
 Ausgangsbestand: `de-by:realschule-10-bwr-kosten-leistungsrechnung-kalkulation-bilanzanalyse` (Version 2026.08.1, zwei Atome, vier Karten). Die bytegenaue Kopie liegt unter `bwr-realschule-10/tests/fixtures/`; SHA-256 `a42ac47333b9e922cb44280544ebf19489b9cfbccb37535053a65a6ef3daa0ea`, Git-Blob identisch auf `zam-os/zam` main (`cd1a71b5e8a91aa3eec601b5db06095844d024e3`). Beide alten Atome sind als `lb1` gebunden, obwohl Kalkulation und Deckungsbeitrag zu LB 3 und LB 4 gehören.
 
-| Alte Karte | Inhalt | Vorschlag | Nachfolger |
+| Alte Karte | Inhalt | Zuordnung | Nachfolger |
 | --- | --- | --- | --- |
 | `01K4WAK0000000000000000J01` | Herstellkosten = FM + MGK + FL + FGK | **A**, gleicher Einzelabruf | `bwr10-vk-zuschlagskalkulation-check` |
 | `01K4WAK0000000000000000J02` | Ganzes Kalkulationsschema bis Bruttoverkaufspreis plus Rechnung | **C**, mehrteilig und teils nicht lehrplankonform („11-stufiges Schema“, USt-Aufschlag); Stilllegung vorgeschlagen | keiner |
 | `01K4WAK0000000000000000J03` | db = p − kv | **A**, gleiche Frage, gleiche Formel | `bwr10-tk-db-check` |
 | `01K4WAK0000000000000000J04` | Kostenauflösung, db, DB, Gewinnschwelle, Zusatzauftrag und Rechnung | **C**, mehrteilig, auf vier Lektionen verteilt; Stilllegung vorgeschlagen | keiner |
 
-Nach der Standardregel vom 22.10.2026 erscheint die Zelle zuerst **ohne** `replaces` und `retired_items`. `replaces-de-by.json` hat `status: "proposal-only"` und `approved: null`; der Katalog-Gate blockiert deshalb nichts. Erst nach ausdrücklicher Freigabe durch Thomas folgt Version 2026.10.2 mit den zwei `replaces` und den zwei `retired_items`. Diese Lücke sollte kurz bleiben: Wer in der Zwischenzeit Karten auf einer alten und ihrer neuen ID hält, lässt die spätere Installation scheitern.
+Nach der Standardregel vom 22.10.2026 erschien die Zelle zuerst als 2026.10.1 **ohne** `replaces` und `retired_items`. Thomas hat die Zuordnung am 25.10.2026 nach dem Merge von #50 in diesem Claude-Code-Chat freigegeben („Freigabe erteilt …“, auf Rückfrage ausdrücklich für die Kartenzuordnung bestätigt). Version 2026.10.2 deklariert genau die zwei `replaces` und die zwei `retired_items`; `replaces-de-by.json` steht auf `status: "approved"`, `approved: "2026-10-25"`. ZAM bündelt erst 2026.10.2; 2026.10.1 stand nur kurz im Academy-Katalog.
 
 ## Prüfung
 
 `bwr-realschule-10/scripts/validate-migration.mjs` (in CI registriert) läuft mit `zam-core@0.54.0` in temporären Bibliotheken:
 
-1. Veröffentlichte Zelle: Die vier alten Karten mit acht Reviews bleiben nach zweimaliger Installation bytegleich und aktiv; die Einschreibung erzeugt 76 neue, unbewertete Karten; wiederholte Einschreibung ändert nichts.
-2. Probe des Vorschlags an einer Kopie im Arbeitsspeicher: Die zwei A-Historien wandern unverändert auf ihre Nachfolger, die zwei C-Karten verlassen die aktive Wiederholung mit erhaltenen Reviews, 74 neue Karten; ein Lernender mit Karten auf alter und neuer ID lässt die Installation eine automatische Zusammenführung verweigern.
+1. Lernender mit den vier alten Karten und acht Reviews: Die zwei A-Historien wandern mit unveränderten FSRS-Feldern und Reviews auf ihre Nachfolger, die zwei C-Karten verlassen die aktive Wiederholung, ihre Historie bleibt am alten Token. Die Einschreibung erzeugt 74 neue, unbewertete Karten und nutzt die zwei übernommenen; wiederholte Installation und Einschreibung ändern nichts.
+2. Lernender, der 2026.10.1 schon eingeschrieben hat und Karten auf einer alten ID und ihrem Nachfolger hält: Die Installation von 2026.10.2 verweigert die automatische Zusammenführung und lässt beide Historien unverändert.

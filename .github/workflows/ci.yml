@@ -99,7 +99,7 @@ jobs:
         run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node deutsch-realschule-10/scripts/validate-cell.mjs
       - name: Move the two approved Geschichte 10 histories and retire two old cards in temporary libraries
         run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node geschichte-realschule-10/scripts/validate-migration.mjs
-      - name: Keep BwR 10 histories unchanged and rehearse the proposed mapping in temporary libraries
+      - name: Move the two approved BwR 10 histories and retire two old cards in temporary libraries
         run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node bwr-realschule-10/scripts/validate-migration.mjs
       - name: Build the catalog (requires explicit mapping approval)
         run: node scripts/build-catalog.mjs "$RUNNER_TEMP/catalog.json"
