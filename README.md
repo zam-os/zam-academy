@@ -26,7 +26,7 @@ Hands-on training apps that build understanding before [ZAM](https://github.com/
 | Mathematik 10 Realschule (LehrplanPLUS Bayern, Zweig I und II/III) | [`mathematik-realschule-10/`](mathematik-realschule-10/) | https://academy.zam-os.org/mathematik-realschule-10/ | `zam-academy:mathematik-realschule-10` |
 | Deutsch 9 Realschule (LehrplanPLUS Bayern, alle Wahlpflichtfächergruppen) | [`deutsch-realschule-9/`](deutsch-realschule-9/) | https://academy.zam-os.org/deutsch-realschule-9/ | `zam-academy:deutsch-realschule-9` |
 | Informatik 10 Realschule · fünf wählbare IT-Vertiefungen (Bayern) | [`informatik-realschule-10/`](informatik-realschule-10/) | https://academy.zam-os.org/informatik-realschule-10/ | `zam-academy:informatik-realschule-10` |
-| Deutsch 10 Realschule (LehrplanPLUS Bayern, Entwurf) | [`deutsch-realschule-10/`](deutsch-realschule-10/) | Nach Veröffentlichung über Pages | `zam-academy:deutsch-realschule-10` |
+| Deutsch 10 Realschule (LehrplanPLUS Bayern, alle Wahlpflichtfächergruppen) | [`deutsch-realschule-10/`](deutsch-realschule-10/) | https://academy.zam-os.org/deutsch-realschule-10/ | `zam-academy:deutsch-realschule-10` |
 
 ## How an app and its ZAM cell fit together
 

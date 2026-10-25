@@ -65,9 +65,9 @@ ZAM-Release das Paket über `npm run academy:sync` bündeln.
 
 Am 25.10.2026 geprüft:
 
-- 47 Pakettests, TypeScript-Prüfung und Produktionsbuild bestehen. Biome meldet
+- 48 Pakettests, TypeScript-Prüfung und Produktionsbuild bestehen. Biome meldet
   für die neuen Quellen und Tests weder Fehler noch Warnungen.
-- Eine getrennte Kopie ohne Nachbarpakete besteht mit `npm ci --offline`,
+- Eine getrennte Kopie ohne Nachbarpakete besteht mit `npm ci`,
   denselben Tests, Build, ZIP-Erstellung und Artefaktprüfung.
 - Die 90 IDs und 30 Lektionsanker sind unabhängig im öffentlichen Vertrag
   gepinnt. Karteninhalte werden ausschließlich in `cell.json` gepflegt.
@@ -96,7 +96,7 @@ Ausgeführte Prüfkommandos im PR-Checkout:
 
 ```sh
 cd deutsch-realschule-10
-npm ci --offline --no-audit --no-fund
+npm ci --no-audit --no-fund
 npm run typecheck
 npm test
 npm run package:zip
@@ -114,3 +114,37 @@ mit ausschließlich dem neuen Paket ausgeführt; sie braucht keinen Nachbarordne
 Die aktuelle Lehrplanmatrix enthält 48 Kurzfassungen. Sach- und Beziehungsebene,
 modellgestützte Kommunikationsanalyse sowie zielorientierte Gesprächsführung
 und wechselnde Diskussionsrollen sind in 1.1 und 1.3 jeweils gesondert erfasst.
+
+
+## Bearbeitung der Reviews zu PR #46
+
+Die [Sammelprüfung](https://github.com/zam-os/zam-academy/pull/46#issuecomment-6393987310)
+und das nachfolgende Inline-Review sind berücksichtigt:
+
+- Die Mappingquelle verwendet `file` und verweist auf die tatsächlich mitgelieferte
+  Fixture. SHA-256, `tile_id` und `version` werden beim Einlesen geprüft.
+  Die vier `de_by_question`-Texte entsprechen den vollständigen alten Fragen;
+  die segmentierte Frage wird mit `kvtItemPlainTexts` lesbar wiedergegeben.
+  Die Prüfung vergleicht jede Frage und die vollständige ID-Menge gegen den
+  Snapshot. Alle vier Zeilen bleiben C / `keep-active`, `approved` bleibt `null`.
+- Die Erklärung in `d10-zuhoeren` formuliert die Absicht nun grammatisch korrekt.
+  Das Muster in `d10-wandel` nennt ausschließlich den Wegfall der Freitagszeiten,
+  kennzeichnet „optimiert“ als zitierte Formulierung und lässt den unbekannten
+  Grund ausdrücklich offen. Ein fehlender Betreuungsdienst wird nicht erfunden.
+- Die Root-README führt die kanonische App-URL. Der PR-Titel folgt der deutschen
+  Schreibweise mit Scope.
+- Port 5202 bleibt gemäß dem späteren
+  [Inline-Hinweis zu Deutsch 10](https://github.com/zam-os/zam-academy/pull/46#discussion_r4369826225)
+  reserviert. Für Geschichte 10 wurde im
+  [zugehörigen Review von PR #45](https://github.com/zam-os/zam-academy/pull/45#discussion_r4369808226)
+  Port 5203 angefordert. Änderungen an Geschichte 10 gehören zu jenem PR.
+  `origin/main` ist in diesen Zweig integriert; gegen den aktuellen Hauptzweig
+  besteht kein Konflikt. Nach dem ersten Merge ist der jeweils andere PR erneut
+  mit `main` abzugleichen, weil beide die Integrationslisten erweitern.
+
+
+Die isolierte Nachprüfung der Reviewkorrekturen verwendet
+`npm ci --no-audit --no-fund --cache /private/tmp/zam-deutsch10-npm-cache`.
+Ein im Standardcache fehlendes Werkzeugarchiv wurde aus dem bestehenden
+Lockfile geladen; Abhängigkeiten und Lockfile wurden nicht geändert.
+Typecheck, alle 48 Tests, Build und ZIP-Prüfung bestehen auch in dieser Kopie.

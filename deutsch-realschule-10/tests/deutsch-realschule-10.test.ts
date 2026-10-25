@@ -1,6 +1,7 @@
 import { describe, expect, it, vi } from "vitest";
 import tileData from "../cell.json";
 import coverage from "../coverage.json";
+import mapping from "../replaces-de-by.json";
 import { LESSONS, SOURCES, STAGES } from "../src/curriculum";
 import {
 	canAccept,
@@ -50,6 +51,33 @@ describe("Lernpfad und veröffentlichbarer Vertrag", () => {
 				expect("replaces" in item).toBe(false);
 				expect(oldIds.has(item.id)).toBe(false);
 			}
+	});
+	it("documents all old questions against the bundled fixture and its version", () => {
+		expect(mapping.sources[0]).toMatchObject({
+			file: "tests/fixtures/de-by-deutsch-10.json",
+			tile_id: old.tile_id,
+			version: old.version,
+		});
+		expect(mapping.approved).toBeNull();
+		expect(mapping.status).toBe("proposal-only");
+		const items = old.atoms.flatMap((atom) =>
+			atom.practice_items.map((item) => ({
+				id: item.id,
+				question: item.question,
+			})),
+		);
+		expect(mapping.rows.map((row) => row.de_by_id).sort()).toEqual(
+			items.map((item) => item.id).sort(),
+		);
+		for (const row of mapping.rows) {
+			expect(row.de_by_cell).toBe(old.tile_id);
+			expect(row.de_by_question.length).toBeGreaterThan(30);
+			expect(row.action).toBe("keep-active");
+			expect(row.category).toBe("C");
+			expect(row.academy_slug).toBeNull();
+			const item = items.find((entry) => entry.id === row.de_by_id);
+			if (item?.question) expect(row.de_by_question).toBe(item.question);
+		}
 	});
 	it("traces 48 expectations to real lessons and matching sections, with limits", () => {
 		expect(coverage.rows).toHaveLength(48);

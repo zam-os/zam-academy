@@ -10,26 +10,42 @@ import { fileURLToPath } from "node:url";
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const zam = await import(process.env.ZAM_CORE ?? "zam-core");
 const tile = JSON.parse(readFileSync(join(root, "cell.json"), "utf8"));
-const legacy = JSON.parse(
-	readFileSync(join(root, "tests/fixtures/de-by-deutsch-10.json"), "utf8"),
-);
 const mapping = JSON.parse(
 	readFileSync(join(root, "replaces-de-by.json"), "utf8"),
 );
-const snapshotBytes = readFileSync(join(root, mapping.sources[0].snapshot));
+const source = mapping.sources[0];
+const snapshotBytes = readFileSync(join(root, source.file));
+const legacy = JSON.parse(snapshotBytes.toString("utf8"));
 assert.equal(
 	createHash("sha256").update(snapshotBytes).digest("hex"),
-	mapping.sources[0].sha256,
+	source.sha256,
 );
+assert.equal(source.tile_id, legacy.tile_id);
+assert.equal(source.version, legacy.version);
 assert.equal(mapping.approved, null);
 assert.equal(mapping.status, "proposal-only");
-assert.equal(new Set(mapping.rows.map((row) => row.de_by_id)).size, 4);
+const oldItems = legacy.atoms.flatMap((atom) => atom.practice_items);
+const oldById = new Map(oldItems.map((item) => [item.id, item]));
+assert.equal(mapping.rows.length, oldItems.length);
+assert.deepEqual(
+	new Set(mapping.rows.map((row) => row.de_by_id)),
+	new Set(oldById.keys()),
+);
 assert.ok(
 	mapping.rows.every(
-		(row) => row.category === "C" && row.academy_slug === null,
+		(row) =>
+			row.category === "C" &&
+			row.academy_slug === null &&
+			row.action === "keep-active",
 	),
 );
-const oldItems = legacy.atoms.flatMap((atom) => atom.practice_items);
+for (const row of mapping.rows) {
+	assert.equal(row.de_by_cell, legacy.tile_id);
+	assert.equal(
+		row.de_by_question,
+		zam.kvtItemPlainTexts(oldById.get(row.de_by_id)).question,
+	);
+}
 const dir = mkdtempSync(join(tmpdir(), "zam-deutsch10-"));
 const user = tile.atoms[0].id;
 const snapshot = async (db) => ({
