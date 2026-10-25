@@ -73,5 +73,49 @@ Prüfungen im separaten PR-Arbeitsstand:
   Bytegleichheit des HTML im Offline-ZIP wird separat im Pakettest geprüft.
 
 Die Übungs- und Modellgrenzen aus README und Abdeckungsmatrix gelten weiter.
-Keine Videos hinzugefügt. Eine unabhängige zweite Reviewrunde nach dem
-Paketstandard steht vor dem Merge noch aus.
+Keine Videos hinzugefügt. Die späteren Reviewbefunde und ihre Bearbeitung sind nachfolgend dokumentiert.
+
+
+## Reviewkorrekturen zu PR #52
+
+Der [Inline-Befund](https://github.com/zam-os/zam-academy/pull/52#discussion_r4372040358)
+und der [ergänzende Review](https://github.com/zam-os/zam-academy/pull/52#issuecomment-6402359049)
+wurden am 25. Oktober 2026 geprüft.
+
+- `from: 8` bleibt für das schulartübergreifende Fach erhalten. Fünf
+  `kein_unterricht`-Einträge nehmen Realschule 8/9 und Mittelschule 8/9/10 aus
+  den fehlenden Paketen und der Abdeckungssumme heraus. Grundlage sind
+  [RSO Anlage 1](https://www.gesetze-bayern.de/Content/Document/BayRSO-ANL_1)
+  und [MSO Anlage 1](https://www.gesetze-bayern.de/Content/Document/BayMSO-ANL_1).
+  Der Gymnasium-Pfad ab Klasse 8 und das Realschule-10-Paket bleiben vorhanden.
+- README nennt alle drei erreichbaren Zweier-Kompromisse. Der Arbeitsauftrag,
+  zwei verschiedene Mehrheiten zu finden, bleibt eine Auswahlaufgabe.
+- Die UI und README benennen die Fälle als Aussagenprüfungen (Richtig/Falsch).
+  Die eigene politische Abwägung bleibt in den offenen Schreibaufgaben.
+- LB1/5 benennt jetzt auch Konflikt als Merkmal der Demokratie, LB2/1 die
+  Bedeutung aktiver Teilnahme. Beide Inhalte waren bereits in den Lektionen
+  enthalten. Der Originallehrplan wurde direkt per HTTPS geladen und der
+  normalisierte Text mit einem HTML-Parser geprüft.
+- Zahlen im Modell verwenden U+2212 für negative Werte. Die Level-Bezeichnung
+  ist in Auswahlfeld, Fortschritt und Anleitung vereinheitlicht. Die
+  Academy-Tabelle trägt die kanonische URL.
+- Die BIP-Frage nennt ihre Ausgangslage selbst; die Antwort lautet knapp
+  „Sie bleibt unverändert.“. Der Konjunkturabsatz erläutert den Verlauf,
+  während die geordnete Begriffsliste nur aus der Zelle als Merksatz kommt.
+- Der neue Korrekturcommit hat einen deutschen Betreff. Der bereits geprüfte
+  erste Commit wird nicht nachträglich umgeschrieben.
+
+`npm test` besteht nach der Korrektur mit 65 Tests, einschließlich
+Regressionsprüfungen für die fünf Fächer-Ausnahmen und das Zahlenformat.
+`npm run typecheck`, Biome-Check und `npm run package:zip` sind erfolgreich.
+Die 30 Katalog-/Registry-Tests, alle 27 Zellinstallationen mit
+`zam-core@0.54.0` sowie der Bestandsschutztest sind ebenfalls erfolgreich.
+
+Browserkontrolle nach den Reviewkorrekturen: Die Realschulmatrix zeigt
+PuG 8/9 als „kein Fach“ und PuG 10 als verfügbar (23 von 56 Feldern insgesamt).
+Die Mittelschule zeigt PuG 8/9/10 als „kein Fach“ (0 von 51 Feldern insgesamt).
+Gymnasium 8/9 bleiben als noch fehlende Pakete sichtbar (0 von 97 Feldern
+insgesamt). Der korrigierte Paket-Build wurde erneut in allen 128 Kombinationen
+von 32 Lektionen, zwei Leveln und heller/dunkler Darstellung auf Lektionsinhalt
+und Aussagenprüfung kontrolliert. Bei Menge 60 und Preis 10 zeigt das BIP-Modell
+für nominalen und realen Wert jeweils „600 Euro (−40 %)“.

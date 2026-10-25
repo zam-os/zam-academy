@@ -52,8 +52,10 @@ export function productResult(quantity: number, price: number) {
 		realChange: quantity - 100,
 	};
 }
-const number = (n: number) =>
-	new Intl.NumberFormat("de-DE", { maximumFractionDigits: 1 }).format(n);
+export const formatNumber = (n: number) =>
+	new Intl.NumberFormat("de-DE", { maximumFractionDigits: 1 })
+		.format(n)
+		.replace(/^-/, "−");
 export function renderLab(id: string): string {
 	if (id === "p10-satire")
 		return `<svg class="caricature" viewBox="0 0 600 320" role="img" aria-labelledby="cartoon-title cartoon-desc"><title id="cartoon-title">Hier kommt jede Stimme zu Wort</title><desc id="cartoon-desc">Eigene erfundene Karikatur. Eine große Person steht am Redepult, zwei kleine Zuhörende daneben. Trotz des Beteiligungsversprechens zeigt ihre Redezeituhr bereits null.</desc><g fill="none" stroke="currentColor" stroke-width="3"><path d="M35 280H565"/><rect x="55" y="25" width="490" height="55" rx="10"/><circle cx="185" cy="130" r="27"/><path d="M145 202V165Q185 145 225 165V202M185 158V205"/><path d="M110 210H260L242 280H128Z"/><circle cx="400" cy="205" r="17"/><circle cx="475" cy="205" r="17"/><path d="M380 265V232H420V265M455 265V232H495V265"/><rect x="365" y="112" width="150" height="55" rx="7"/></g><g fill="currentColor" text-anchor="middle" font-family="system-ui,sans-serif"><text x="300" y="60" font-size="20">Hier kommt jede Stimme zu Wort.</text><text x="440" y="132" font-size="12">Eure Redezeit</text><text x="440" y="156" font-size="23">0:00</text><text x="185" y="246" font-size="14">Sitzungsleitung</text></g></svg>`;
@@ -112,7 +114,7 @@ export function bindLab(root: HTMLElement, id: string): void {
 					? productResult(Number(quantity.value), Number(price.value))
 					: null;
 			output.innerHTML = r
-				? `<p><strong>Nominal: ${number(r.nominal)} Euro (${number(r.nominalChange)} %)</strong></p><div class="bar-track"><div class="bar-fill" style="width:${r.nominal / 60}%"></div></div><p><strong>Zu Ausgangspreisen: ${number(r.real)} Euro (${number(r.realChange)} %)</strong></p><div class="bar-track"><div class="bar-fill" style="width:${r.real / 60}%"></div></div><p class="small">Gemeinsame Balkenskala: 0 bis 6.000 Euro. Aus der nominalen Veränderung allein lässt sich kein realer Mengenzuwachs ableiten.</p>`
+				? `<p><strong>Nominal: ${formatNumber(r.nominal)} Euro (${formatNumber(r.nominalChange)} %)</strong></p><div class="bar-track"><div class="bar-fill" style="width:${r.nominal / 60}%"></div></div><p><strong>Zu Ausgangspreisen: ${formatNumber(r.real)} Euro (${formatNumber(r.realChange)} %)</strong></p><div class="bar-track"><div class="bar-fill" style="width:${r.real / 60}%"></div></div><p class="small">Gemeinsame Balkenskala: 0 bis 6.000 Euro. Aus der nominalen Veränderung allein lässt sich kein realer Mengenzuwachs ableiten.</p>`
 				: "Bitte gib eine Menge von 0 bis 200 und einen Preis von 0 bis 30 Euro ein.";
 		};
 		quantity.addEventListener("input", update);

@@ -1,8 +1,14 @@
 import { describe, expect, it, vi } from "vitest";
+import registry from "../../academy.json";
 import tileData from "../cell.json";
 import coverage from "../coverage.json";
 import { LESSONS, SOURCES, STAGES } from "../src/curriculum";
-import { councilResult, productResult, renderLab } from "../src/labs";
+import {
+	councilResult,
+	formatNumber,
+	productResult,
+	renderLab,
+} from "../src/labs";
 import {
 	canAccept,
 	canReview,
@@ -360,5 +366,39 @@ describe("Zwei verschiedene Kompromisse und klare Modellgrenzen", () => {
 		expect(renderLab("p10-debatte")).toContain('max="100"');
 		expect(renderLab("p10-bip")).toContain('max="200"');
 		expect(renderLab("p10-verfassung")).toBe("");
+	});
+});
+
+describe("Reviewregression: Fachangebot und Zahlendarstellung", () => {
+	it("keeps PuG 8 at Gymnasium but excludes the five non-subject school fields", () => {
+		expect(registry.faecher.find((subject) => subject.id === "pug")?.from).toBe(
+			8,
+		);
+		const absent = registry.kein_unterricht.filter(
+			(entry) => entry.fach === "pug",
+		);
+		expect(
+			absent.map((entry) => `${entry.school}:${entry.grade}`).sort(),
+		).toEqual([
+			"mittelschule:10",
+			"mittelschule:8",
+			"mittelschule:9",
+			"realschule:8",
+			"realschule:9",
+		]);
+		for (const entry of absent) {
+			expect(entry.note.length).toBeGreaterThan(20);
+			expect(entry.source).toBe(
+				`https://www.gesetze-bayern.de/Content/Document/${entry.school === "realschule" ? "BayRSO" : "BayMSO"}-ANL_1`,
+			);
+		}
+		expect(
+			registry.pakete.find((pkg) => pkg.app === "politik-realschule-10"),
+		).toMatchObject({ fach: "pug", grade: 10, school: "realschule" });
+	});
+	it("uses the German decimal comma and real minus sign for declining model values", () => {
+		expect(formatNumber(-40)).toBe("−40");
+		expect(formatNumber(-0.5)).toBe("−0,5");
+		expect(formatNumber(12.5)).toBe("12,5");
 	});
 });

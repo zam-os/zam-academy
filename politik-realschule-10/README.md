@@ -1,7 +1,7 @@
 # Politik und Gesellschaft 10 · Realschule Bayern
 
-Lokaler, unveröffentlichter Entwurf mit **32 Lektionen, 64 Fallentscheidungen,
-64 eigenen Aufgaben auf zwei Niveaus und 64 ZAM-Karten**. Ein gemeinsamer
+Lokaler, unveröffentlichter Entwurf mit **32 Lektionen, 64 Aussagenprüfungen (Richtig/Falsch),
+64 eigenen Aufgaben auf zwei Leveln und 64 ZAM-Karten**. Ein gemeinsamer
 Lernpfad für alle Wahlpflichtfächergruppen nach dem
 [LehrplanPLUS Bayern](https://www.lehrplanplus.bayern.de/fachlehrplan/realschule/10/pug).
 
@@ -20,27 +20,29 @@ Erwartung ergänzende Praxis. Kurzfassungen sind eigene Zusammenfassungen;
 Leistungen. Die Zahl der zugeordneten Erwartungen ist kein vollständiger
 Kompetenznachweis. Methoden werden auch in den Sachbereichen angewandt.
 
-Der Direktabruf des Lehrplans zeigte teilweise einen Wartungshinweis; der
-Fachlehrplan war über den aktuellen Suchindex abrufbar. Regeln wurden zusätzlich
-mit den verlinkten Primärquellen geprüft. Das Paket enthält keine aktuellen
+Nach dem anfänglichen Wartungshinweis war der Fachlehrplan am 25. Oktober 2026
+wieder direkt abrufbar. Die beiden im Review präzisierten Kurzfassungen wurden
+am Original geprüft. Regeln wurden zusätzlich mit den verlinkten Primärquellen abgeglichen. Das Paket enthält keine aktuellen
 Amtsinhabernamen, Parteiempfehlungen oder behaupteten Live-Wirtschaftsdaten.
 
 ## Lernen und eigenes Urteil
 
 Jede Lektion bietet Erklärung, eigenes fiktives Material, Schnellcheck,
-zwei Fallentscheidungen und je eine eigene Aufgabe pro Niveau mit
+zwei Aussagenprüfungen (Richtig/Falsch) und je eine eigene Aufgabe pro Level mit
 Vergleichsantwort und drei Kriterien. Level 1 übt Anwendung, Level 2 vertieft
-Vergleich, Urteil oder eigenständige Recherche.
+Vergleich, Urteil oder eigenständige Recherche. Die Aussagenprüfungen prüfen
+fachliche Richtigkeit; die eigene politische Abwägung findet in den offenen
+Schreibaufgaben statt.
 
-Als bearbeitet zählt eine Lektion auf dem gewählten Niveau nach richtigem
-Schnellcheck, zwei richtigen Fällen und bestätigtem Mustervergleich der eigenen
+Als bearbeitet zählt eine Lektion auf dem gewählten Level nach richtigem
+Schnellcheck, zwei richtig gelösten Aussagenprüfungen und bestätigtem Mustervergleich der eigenen
 Antwort. Eine Mindestlänge von 20 Zeichen öffnet lediglich den Vergleich.
 **Die App bewertet keine politischen Meinungen und benotet eigene Texte nicht.**
 Muster sind mögliche Lösungen. Gute begründete Urteile dürfen anders ausfallen.
 
 Entwürfe und Fortschritt werden getrennt von anderen Apps lokal im Browser
-gehalten. Beide Niveaus haben eigene Entwürfe und Abschlüsse. Änderungen am
-Entwurf entfernen dessen Selbsteinschätzung; veränderte Fallantworten und
+gehalten. Beide Level haben eigene Entwürfe und Abschlüsse. Änderungen am
+Entwurf entfernen dessen Selbsteinschätzung; veränderte Antworten in der Aussagenprüfung und
 falsche Schnellchecks entfernen den betreffenden Nachweis. Bei gesperrtem
 Speicher bleibt der Besuch nutzbar und zeigt einen Hinweis.
 
@@ -52,7 +54,7 @@ Speicher bleibt der Besuch nutzbar und zeigt einen Hinweis.
   Original und kein Beleg über einen tatsächlichen politischen Vorgang.
 - Die Budgetwerkstatt verteilt höchstens 100 Punkte auf Bus, Grün und Kultur.
   Drei erfundene Ratsgruppen mit 40, 35 und 25 Sitzen stimmen nach offengelegten
-  Mindestwerten geschlossen zu. Zwei verschiedene Kompromisse sind erreichbar;
+  Mindestwerten geschlossen zu. Drei verschiedene Zweier-Kompromisse sind erreichbar;
   alle Mindestforderungen zusammen übersteigen das Budget. Es gibt keine
   automatisch beste politische Lösung, keine Enthaltungen, Pflichtausgaben
   oder wirkliche Verhandlung. Eine Budgetüberschreitung erzeugt keine Mehrheit.

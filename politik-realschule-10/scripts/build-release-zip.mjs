@@ -36,7 +36,7 @@ chmodSync(join(bundle, "Start-Mac.command"), 0o755);
 chmodSync(join(bundle, "start-linux.sh"), 0o755);
 writeFileSync(
 	join(bundle, "README-START.txt"),
-	`ZAM ACADEMY · POLITIK UND GESELLSCHAFT 10 REALSCHULE\n\n1. ZIP entpacken.\n2. ${app} im Browser öffnen oder den passenden Starter nutzen.\n\nKeine Installation und kein Server nötig. 32 Lektionen mit 64 Fallentscheidungen\nund eigenen Aufgaben auf zwei Stufen. Entwürfe und Fortschritt bleiben in diesem\nBrowser; bei gesperrtem Speicher zeigt die App einen Hinweis.\n\nEigene Texte werden nicht automatisch bewertet. Mustervergleich und\nSelbsteinschätzung ersetzen kein Lehrkraftfeedback. Aktuelle Recherche,\nDebatten, Rollenspiele und politische Erkundungen ergänzen die App.\n\nDie 64 ZAM-Karten werden nach Veröffentlichung über ZAM aufgenommen.\nExterne Quellen benötigen eine Verbindung und öffnen nur auf deinen Klick.\n`,
+	`ZAM ACADEMY · POLITIK UND GESELLSCHAFT 10 REALSCHULE\n\n1. ZIP entpacken.\n2. ${app} im Browser öffnen oder den passenden Starter nutzen.\n\nKeine Installation und kein Server nötig. 32 Lektionen mit 64 Aussagenprüfungen (Richtig/Falsch)\nund eigenen Aufgaben auf zwei Leveln. Entwürfe und Fortschritt bleiben in diesem\nBrowser; bei gesperrtem Speicher zeigt die App einen Hinweis.\n\nEigene Texte werden nicht automatisch bewertet. Mustervergleich und\nSelbsteinschätzung ersetzen kein Lehrkraftfeedback. Aktuelle Recherche,\nDebatten, Rollenspiele und politische Erkundungen ergänzen die App.\n\nDie 64 ZAM-Karten werden nach Veröffentlichung über ZAM aufgenommen.\nExterne Quellen benötigen eine Verbindung und öffnen nur auf deinen Klick.\n`,
 );
 const zip = join(release, `${name}-offline.zip`);
 execFileSync("zip", ["-r", "-q", zip, name], { cwd: release });
