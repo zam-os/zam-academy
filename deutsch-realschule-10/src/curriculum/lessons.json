@@ -1,0 +1,1881 @@
+[
+	{
+		"id": "d10-zuhoeren",
+		"stage": "sprechen",
+		"title": "Zuhören und Absichten erkennen",
+		"skill": "Aussage, Absicht und Darbietung getrennt betrachten.",
+		"bindings": ["1.1"],
+		"paragraphs": [
+			"Beim Zuhören trennst du Inhalt, Absicht und Darbietung. Inhalt ist das Gesagte; die Absicht kann informieren oder überzeugen sein. Tonfall und Tempo sind paraverbal, Mimik und Gestik nonverbal. Ein überzeugender Ton ersetzt keinen Beleg.",
+			"Notiere Schlüsselgedanken, offene Fragen und deine Bewertung in getrennten Spalten. Gib eine fremde Position zunächst fair wieder, bevor du ihr zustimmst oder widersprichst. Ein Transkript zeigt keine Körpersprache."
+		],
+		"material": "Jugendrat: „Unser Lernraum soll bis 18 Uhr geöffnet sein. Bei unserer Befragung nannten 18 von 30 Teilnehmenden den Nachmittag. Ich bitte um einen vierwöchigen Versuch; über die Betreuung müssen wir noch sprechen.“",
+		"materialLabel": "Eigenes, erfundenes Übungsmaterial der ZAM Academy.",
+		"sourceIds": ["lehrplan"],
+		"quiz": {
+			"question": "Was ist hier ein Appell?",
+			"answer": "Die Bitte um einen vierwöchigen Versuch.",
+			"wrong": [
+				"Die Angabe der 30 Teilnehmenden.",
+				"Die noch ungeklärte Betreuung."
+			],
+			"explanation": "Die Bitte fordert eine Handlung. Die Zahl informiert, die Betreuung bleibt eine offene Bedingung."
+		},
+		"cases": [
+			{
+				"prompt": "Die Zahl 18 von 30 ist …",
+				"options": [
+					"eine überprüfbare Angabe",
+					"bereits ein Beweis für alle Jugendlichen"
+				],
+				"answer": "eine überprüfbare Angabe",
+				"feedback": "Die Angabe beschreibt nur die genannte Gruppe."
+			},
+			{
+				"prompt": "Das Sprechtempo erkennst du …",
+				"options": ["allein am Transkript", "beim Hören"],
+				"answer": "beim Hören",
+				"feedback": "Im Schrifttext ist das tatsächliche Tempo nicht enthalten."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Fasse Anliegen, Beleg und offene Frage des Beitrags in drei Sätzen zusammen.",
+				"model": "Der Jugendrat wünscht längere Öffnungszeiten. Er verweist auf 18 von 30 Befragten. Vor dem Versuch muss die Betreuung geklärt werden.",
+				"criteria": [
+					"Ich gebe das Anliegen neutral wieder.",
+					"Ich nenne die begrenzte Befragung.",
+					"Ich benenne die ungeklärte Betreuung."
+				]
+			},
+			"2": {
+				"prompt": "Formuliere eine faire Rückfrage zur Aussagekraft des Belegs und eine zur Umsetzung. Begründe die Trennung.",
+				"model": "Wer hat an der Befragung teilgenommen? Wer kann den Lernraum betreuen? Die erste Frage prüft den Beleg; die zweite prüft die praktische Durchführbarkeit.",
+				"criteria": [
+					"Ich prüfe die Auswahl der Befragten.",
+					"Ich frage nach der Umsetzung.",
+					"Ich erkläre den Unterschied."
+				]
+			}
+		},
+		"extension": "Lass dir den Text vorlesen, ohne mitzulesen, und notiere Kernaussagen. Wiederholt ihn mit anderem Tonfall und vergleicht die Wirkung. Für Mimik und Gestik braucht ihr einen sichtbaren Vortrag.",
+		"takeaway": "Trenne Aussage, Absicht und Darbietung; ein sicherer Ton ersetzt keinen Beleg."
+	},
+	{
+		"id": "d10-vortrag",
+		"stage": "sprechen",
+		"title": "Ein Vortrag braucht eine Richtung",
+		"skill": "Informationen auswählen und verständlich präsentieren.",
+		"bindings": ["1.2"],
+		"paragraphs": [
+			"Ein Vortrag richtet sich an ein bestimmtes Publikum und verfolgt ein Ziel. Wähle wenige Kernaussagen, ordne sie und kündige die Gliederung an. Ein Beispiel macht abstrakte Aussagen greifbar; eine Folie soll diese stützen.",
+			"Freies Sprechen kann durch Stichworte gestützt werden. Für präzise Passagen eignet sich ein Manuskript. Blickkontakt, Pausen und klare Betonung helfen. Bei fremden oder eigenen literarischen Texten macht der Vortrag eine Deutung hörbar."
+		],
+		"material": "Auftrag: Informiere eine neue 5. Klasse in zwei Minuten über den Lernraum. Material: geöffnet an drei Tagen; Anmeldung vor Ort; leise Arbeitszone; Spiele nur im Nebenraum. Eine Folie enthält bereits 170 Wörter.",
+		"materialLabel": "Eigenes, erfundenes Übungsmaterial der ZAM Academy.",
+		"sourceIds": ["lehrplan"],
+		"quiz": {
+			"question": "Welche Folie unterstützt diesen Kurzvortrag besser?",
+			"answer": "Drei Stichpunkte und ein einfacher Raumplan.",
+			"wrong": [
+				"Ein vollständiges Vorlesemanuskript in kleiner Schrift.",
+				"Nur ein dekoratives Bild ohne Bezug."
+			],
+			"explanation": "Die Auswahl entlastet das Publikum und verdeutlicht die Raumaufteilung."
+		},
+		"cases": [
+			{
+				"prompt": "„Heute zeige ich euch zuerst …“ dient …",
+				"options": ["dem Quellenbeleg", "der Orientierung"],
+				"answer": "der Orientierung",
+				"feedback": "Eine Gliederungsankündigung zeigt den Weg durch den Vortrag."
+			},
+			{
+				"prompt": "Eine Pause vor der Kernforderung kann …",
+				"options": ["die Aussage hervorheben", "ihre Richtigkeit beweisen"],
+				"answer": "die Aussage hervorheben",
+				"feedback": "Betonung beeinflusst Wahrnehmung, nicht die Beweislage."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Entwirf einen Einstieg und drei Folienstichpunkte für die 5. Klasse.",
+				"model": "Wo könnt ihr nachmittags in Ruhe lernen? Unser Lernraum hilft euch dabei. Folie: drei Öffnungstage; Anmeldung vor Ort; leise Zone und separater Spielraum.",
+				"criteria": [
+					"Mein Einstieg spricht die Klasse an.",
+					"Ich wähle höchstens drei Kernpunkte.",
+					"Ich erkläre die Trennung der Räume."
+				]
+			},
+			"2": {
+				"prompt": "Plane denselben Inhalt für eine Schulkonferenz, die über Personal entscheidet. Was änderst du und warum?",
+				"model": "Ich beginne mit dem Betreuungsbedarf und unterscheide bekannte Öffnungstage von offenen Personalfragen. Ein Raumplan bleibt sinnvoll, die Anmeldeerklärung wird kürzer. Die Konferenz braucht Entscheidungsgrundlagen.",
+				"criteria": [
+					"Ich benenne das neue Ziel.",
+					"Ich ändere die Gewichtung.",
+					"Ich begründe die Medienwahl."
+				]
+			}
+		},
+		"extension": "Halte den Vortrag wirklich. Lass Inhalt, Blickkontakt, Lautstärke und Pausen von einer anderen Person beobachten; diese App bewertet den Auftritt nicht.",
+		"takeaway": "Wähle Inhalte und Medien nach Ziel, Publikum und verfügbarer Zeit."
+	},
+	{
+		"id": "d10-diskussion",
+		"stage": "sprechen",
+		"title": "Diskutieren und Ergebnisse sichern",
+		"skill": "Widerspruch begründen und ein Ergebnisprotokoll schreiben.",
+		"bindings": ["1.2", "1.3"],
+		"paragraphs": [
+			"Ein Diskussionsbeitrag knüpft an eine konkrete Aussage an. Nenne deine Position, begründe sie und beziehe einen Einwand ein. Prüfe Ideen statt Personen. Eine Moderation sorgt für Redeanteile und hält die Streitfrage sichtbar.",
+			"Ein Ergebnisprotokoll ordnet Beschlüsse, offene Fragen und Zuständigkeiten. Es ist keine wortgetreue Mitschrift. Bei der Auswertung prüfst du auch dein eigenes Verhalten: Habe ich zugehört, nachgefragt und andere ausreden lassen?"
+		],
+		"material": "AG-Sitzung, 12.10., Raum 3. Mia möchte zwei zusätzliche Öffnungstage. Ben hält die Betreuung für ungeklärt. Beschlossen wird ein Versuch am Mittwoch; Mia fragt bis Freitag zwei Betreuende an. Die zweite Öffnung bleibt offen.",
+		"materialLabel": "Eigenes, erfundenes Übungsmaterial der ZAM Academy.",
+		"sourceIds": ["lehrplan"],
+		"quiz": {
+			"question": "Was gehört als Beschluss ins Ergebnisprotokoll?",
+			"answer": "Ein zusätzlicher Mittwoch wird versuchsweise angeboten.",
+			"wrong": [
+				"Zwei zusätzliche Tage sind sicher beschlossen.",
+				"Ben ist grundsätzlich gegen den Lernraum."
+			],
+			"explanation": "Nur der Mittwoch wurde beschlossen. Bens Einwand richtet sich gegen die ungeklärte Betreuung."
+		},
+		"cases": [
+			{
+				"prompt": "„Du hast ja nie gute Ideen“ ist …",
+				"options": ["ein persönlicher Angriff", "ein sachlicher Einwand"],
+				"answer": "ein persönlicher Angriff",
+				"feedback": "Die Person wird abgewertet; die Idee wird nicht geprüft."
+			},
+			{
+				"prompt": "Die zweite Öffnung ist …",
+				"options": ["ein verbindlicher Beschluss", "eine offene Frage"],
+				"answer": "eine offene Frage",
+				"feedback": "Der Text nennt dazu noch keinen Beschluss."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Schreibe ein kurzes Ergebnisprotokoll mit Kopf, Beschluss und Aufgabe.",
+				"model": "AG-Sitzung, 12.10., Raum 3. Beschluss: Versuch mit zusätzlicher Mittwochsöffnung. Mia fragt bis Freitag zwei Betreuende an. Eine zweite zusätzliche Öffnung bleibt offen.",
+				"criteria": [
+					"Ich nenne Datum und Anlass.",
+					"Ich unterscheide Beschluss und offene Frage.",
+					"Ich halte Person und Frist fest."
+				]
+			},
+			"2": {
+				"prompt": "Formuliere Bens Einwand konstruktiv um und ergänze zwei Beobachtungskriterien für die nächste Diskussion.",
+				"model": "Ich unterstütze mehr Lernzeit, wenn die Betreuung gesichert ist. Können wir zuerst einen Tag testen? Beobachtet werden sachliche Bezugnahmen und die Verteilung der Redeanteile.",
+				"criteria": [
+					"Ich bewahre den sachlichen Einwand.",
+					"Ich mache einen prüfbaren Vorschlag.",
+					"Ich nenne zwei beobachtbare Kriterien."
+				]
+			}
+		},
+		"extension": "Diskutiert eine reale Schulfrage in einer Gruppe. Beobachtet eure Beiträge und vergleicht das Ergebnisprotokoll mit den tatsächlichen Beschlüssen.",
+		"takeaway": "Halte Beschlüsse, Zuständigkeiten und Fristen getrennt von offenen Fragen fest."
+	},
+	{
+		"id": "d10-gespraech",
+		"stage": "sprechen",
+		"title": "Schwierige Gespräche führen",
+		"skill": "Anliegen klären, ohne den Konflikt zu verschärfen.",
+		"bindings": ["1.3", "1.1"],
+		"paragraphs": [
+			"In einem Vermittlungs- oder beruflichen Gespräch klärst du zuerst Anlass, Rollen und Ziel. Beschreibe eine konkrete Beobachtung, ihre Folge und deinen Wunsch. Unterstellungen erschweren eine Lösung.",
+			"Aktives Zuhören bedeutet nachfragen, zusammenfassen und prüfen, ob du richtig verstanden hast. Das ist noch keine Zustimmung. Eine tragfähige Vereinbarung ist konkret und berücksichtigt beide Seiten.",
+			"Die Sachebene betrifft den Inhalt, die Beziehungsebene die mögliche Aussage darüber, wie die Beteiligten zueinander stehen. Derselbe Satz kann sachlich gemeint sein und dennoch als Vorwurf ankommen. Frage nach, statt eine vermutete Absicht als Tatsache zu behandeln.",
+			"Das Nachrichtenquadrat von Schulz von Thun unterscheidet Sachinformation, Selbstkundgabe, Beziehung und Appell. „Die Frist fehlt“ kann einen fehlenden Termin mitteilen, Unsicherheit zeigen, als Kritik verstanden werden und um Ergänzung bitten. Das Modell hilft, mögliche Lesarten zu vergleichen; es liest keine Gedanken. Bei Watzlawick hilft etwa die Unterscheidung von Inhalts- und Beziehungsaspekt, einen stockenden Austausch zu untersuchen."
+		],
+		"material": "Im Praktikum fehlen mehrfach Angaben in deiner Aufgabenliste. Du wartest deshalb lange. Deine Betreuung sagt: „Ich dachte, die Aufträge seien klar.“ Du willst für morgen eine verlässliche Absprache.",
+		"materialLabel": "Eigenes, erfundenes Übungsmaterial der ZAM Academy.",
+		"sourceIds": ["lehrplan"],
+		"quiz": {
+			"question": "Welche Aussage zur fehlenden Frist bleibt zunächst auf der Sachebene?",
+			"answer": "Der Termin ist nicht eingetragen.",
+			"wrong": [
+				"Die Betreuung respektiert mich sicher nicht.",
+				"Bitte nehmen Sie sich mehr Zeit für mich."
+			],
+			"explanation": "Der fehlende Termin ist ein sachlicher Befund. Die vermutete Geringschätzung betrifft die Beziehungsebene; die Bitte fordert eine Handlung. Eine solche Lesart legt keine sichere Absicht fest."
+		},
+		"cases": [
+			{
+				"prompt": "„In der Liste steht keine Frist.“ Welche Lesart betrifft zunächst die Sachebene?",
+				"options": [
+					"Der Termin ist nicht eingetragen.",
+					"Die Betreuung respektiert mich sicher nicht."
+				],
+				"answer": "Der Termin ist nicht eingetragen.",
+				"feedback": "Der fehlende Termin ist der sachliche Befund. Die vermutete Geringschätzung ist eine Beziehungsdeutung und müsste geklärt werden."
+			},
+			{
+				"prompt": "„Bitte ergänzen wir den Termin.“ Welche Seite des Nachrichtenquadrats ist hier besonders deutlich?",
+				"options": [
+					"Selbstkundgabe: Ich bin erschöpft.",
+					"Appell: Ergänzt den Termin mit mir."
+				],
+				"answer": "Appell: Ergänzt den Termin mit mir.",
+				"feedback": "Die Bitte fordert eine Handlung. Sie legt weder die Gefühle noch die Haltung der Betreuung eindeutig fest."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Schreibe eine sachliche Bitte und eine überprüfbare Vereinbarung für morgen.",
+				"model": "Mir fehlten heute zwei Fristen. Bitte ergänzen wir morgen um 8 Uhr bei jedem Auftrag Ergebnis und Abgabezeit gemeinsam.",
+				"criteria": [
+					"Ich beschreibe einen konkreten Anlass.",
+					"Ich formuliere respektvoll.",
+					"Ich nenne eine überprüfbare Absprache."
+				]
+			},
+			"2": {
+				"prompt": "Analysiere „Ich dachte, die Aufträge seien klar“ mit dem Nachrichtenquadrat. Nenne zwei mögliche Lesarten und eine Rückfrage, ohne die Absicht der Betreuung festzulegen.",
+				"model": "Sachlich kann der Satz eine bisherige Annahme mitteilen. Auf der Beziehungsebene könnte er als Kritik an meinem Verständnis ankommen; das ist noch keine gesicherte Absicht. Ich frage: Welche Angaben meinen Sie genau, und können wir die fehlenden Fristen gemeinsam ergänzen? So prüfe ich die Lesart statt eine Unterstellung zurückzugeben.",
+				"criteria": [
+					"Ich unterscheide zwei Seiten des Modells.",
+					"Ich behandle Beziehungsaussagen als mögliche Deutung.",
+					"Ich formuliere eine klärende Rückfrage."
+				]
+			}
+		},
+		"extension": "Spielt das Gespräch mit vertauschten Rollen. Die Notizen ersetzen keine echte Gesprächsführung.",
+		"takeaway": "Unterscheide den sachlichen Inhalt von möglichen Beziehungsaussagen und sichere dein Verständnis durch Rückfragen."
+	},
+	{
+		"id": "d10-szene",
+		"stage": "sprechen",
+		"title": "Eine Szene deuten und inszenieren",
+		"skill": "Regieentscheidungen aus dem Text begründen.",
+		"bindings": ["1.2", "1.4", "2.2"],
+		"paragraphs": [
+			"Eine Inszenierung interpretiert einen Text durch Stimme, Körper, Raum und Requisiten. Es gibt mehrere mögliche Deutungen, doch sie müssen an Handlungen und Worten überprüfbar bleiben. Eine Regieanweisung ist eine Entscheidung, kein Beweis für die einzig richtige Deutung.",
+			"Eine Aufführungskritik trennt Beobachtung und Wertung. Nenne zunächst, was hörbar oder sichtbar war. Erkläre dann die Wirkung und lege deinen Maßstab offen, etwa Verständlichkeit oder Stimmigkeit mit der Textdeutung."
+		],
+		"material": "Lea legt den Schlüssel auf den Tisch. „Du kannst gehen“, sagt sie. Tom bleibt an der Tür stehen. „Und wer schließt dann ab?“ Lea zieht den Schlüssel wieder zu sich. Beide schweigen.",
+		"materialLabel": "Eigenes, erfundenes Übungsmaterial der ZAM Academy.",
+		"sourceIds": ["lehrplan"],
+		"quiz": {
+			"question": "Welche Aussage ist zunächst eine Beobachtung?",
+			"answer": "Lea zieht den Schlüssel wieder zu sich.",
+			"wrong": [
+				"Lea handelt eindeutig aus Hass.",
+				"Tom ist sicher schuld an allem."
+			],
+			"explanation": "Die Bewegung steht im Text. Motive müssen erst als Deutung begründet werden."
+		},
+		"cases": [
+			{
+				"prompt": "Eine lange Pause kann hier …",
+				"options": [
+					"Spannung oder Unsicherheit betonen",
+					"Leas Motiv zweifelsfrei festlegen"
+				],
+				"answer": "Spannung oder Unsicherheit betonen",
+				"feedback": "Dieselbe Pause kann verschiedene begründete Deutungen zulassen."
+			},
+			{
+				"prompt": "„Ich fand es schlecht“ enthält …",
+				"options": [
+					"schon eine belegte Aufführungskritik",
+					"noch keinen offengelegten Maßstab"
+				],
+				"answer": "noch keinen offengelegten Maßstab",
+				"feedback": "Die Wertung braucht Beobachtung und Begründung."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Ergänze zwei Regieanweisungen und begründe eine davon.",
+				"model": "Lea spricht leise und vermeidet Blickkontakt. Tom macht einen Schritt zurück. Das leise Sprechen kann Leas Unsicherheit hervorheben; ihr Zurückziehen des Schlüssels stützt diese Deutung.",
+				"criteria": [
+					"Ich nenne zwei spielbare Anweisungen.",
+					"Ich verknüpfe eine mit dem Text.",
+					"Ich kennzeichne das Motiv als Deutung."
+				]
+			},
+			"2": {
+				"prompt": "Entwirf eine zweite Inszenierung mit anderer Wirkung. Formuliere einen fairen Vergleich beider Fassungen.",
+				"model": "Lea spricht diesmal betont sachlich und hält Blickkontakt. Dadurch wirkt das Schlüsselnehmen kontrollierend statt unsicher. Beide Fassungen passen zur knappen Rede; überzeugend ist für mich die Fassung, deren Gestik und Stimme zusammenwirken.",
+				"criteria": [
+					"Ich ändere konkrete Spielmittel.",
+					"Ich beschreibe die andere Wirkung.",
+					"Ich lege meinen Bewertungsmaßstab offen."
+				]
+			}
+		},
+		"extension": "Spielt und beobachtet beide Fassungen. Ergänzt die Kritik durch eine echte Theateraufführung oder Aufzeichnung und konstruktives Feedback.",
+		"takeaway": "Begründe eine Regieentscheidung mit Textbeobachtung, Wirkung und offenem Bewertungsmaßstab."
+	},
+	{
+		"id": "d10-leseplan",
+		"stage": "lesen",
+		"title": "Mit einer Lesefrage starten",
+		"skill": "Lesestrategien bewusst auswählen.",
+		"bindings": ["2.1"],
+		"paragraphs": [
+			"Vor dem Lesen klärst du, welche Information du brauchst. Überfliegen gibt einen Überblick, suchendes Lesen findet gezielt Daten, genaues Lesen erschließt Argumente und Zusammenhänge. Eine Strategie ist ein Werkzeug für eine bestimmte Frage.",
+			"Markiere nicht alles. Formuliere Abschnittskernaussagen und prüfe unbekannte Begriffe im Kontext oder im Nachschlagewerk. Vergleiche bei zwei Texten gemeinsame Fragen statt nur ihre Reihenfolge."
+		],
+		"material": "Text A: Der Lernraum öffnet montags und mittwochs um 14 Uhr. Die Anmeldung erfolgt im Sekretariat. Text B: Eine Schülerin lobt die Ruhe, kritisiert aber die fehlende Öffnung am Freitag.",
+		"materialLabel": "Eigenes, erfundenes Übungsmaterial der ZAM Academy.",
+		"sourceIds": ["lehrplan"],
+		"quiz": {
+			"question": "Du suchst zunächst nur die Öffnungstage. Welche Strategie passt?",
+			"answer": "Suchendes Lesen nach Zeitangaben.",
+			"wrong": [
+				"Jedes Wort zunächst sprachlich analysieren.",
+				"Nur die Überschrift lesen und raten."
+			],
+			"explanation": "Gezieltes Suchen passt zur eng begrenzten Informationsfrage; eine Bewertung verlangt anschließend genaueres Lesen."
+		},
+		"cases": [
+			{
+				"prompt": "Text A beantwortet vor allem …",
+				"options": [
+					"eine persönliche Bewertung",
+					"eine organisatorische Frage"
+				],
+				"answer": "eine organisatorische Frage",
+				"feedback": "A nennt überprüfbare Abläufe und Zeiten."
+			},
+			{
+				"prompt": "Eine gemeinsame Vergleichsfrage wäre …",
+				"options": [
+					"Welche Nutzung wird ermöglicht oder vermisst?",
+					"Welche Wörter stehen jeweils an dritter Stelle?"
+				],
+				"answer": "Welche Nutzung wird ermöglicht oder vermisst?",
+				"feedback": "Die gemeinsame Frage verbindet Inhalt und Aussageabsicht."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Notiere je eine Kernaussage und einen inhaltlichen Zusammenhang der Texte.",
+				"model": "A nennt zwei Öffnungstage und die Anmeldung. B bewertet die Nutzung positiv, vermisst aber Freitag. Die feste Öffnung ermöglicht Lernen, deckt jedoch nicht jeden Wunsch ab.",
+				"criteria": [
+					"Ich fasse beide Texte getrennt zusammen.",
+					"Ich benenne einen Zusammenhang.",
+					"Ich ergänze keine erfundenen Zeiten."
+				]
+			},
+			"2": {
+				"prompt": "Entwirf einen Leseplan für die Frage, ob mehr Öffnungstage sinnvoll sind. Nenne auch fehlende Informationen.",
+				"model": "Zuerst überfliege ich beide Texte, dann markiere ich Angebote und Bewertungen. Genau lese ich die Begründungen. Für ein Urteil fehlen Auslastung, Betreuungsmöglichkeiten und die Interessen weiterer Lernender.",
+				"criteria": [
+					"Ich ordne Strategien einem Zweck zu.",
+					"Ich vergleiche beide Texte.",
+					"Ich benenne Informationslücken."
+				]
+			}
+		},
+		"takeaway": "Wähle die Lesestrategie passend zu deiner Frage und vergleiche Texte unter gemeinsamen Aspekten."
+	},
+	{
+		"id": "d10-journalistik",
+		"stage": "lesen",
+		"title": "Nachricht, Kommentar oder Glosse?",
+		"skill": "Textsorten anhand ihrer Funktion prüfen.",
+		"bindings": ["2.3"],
+		"paragraphs": [
+			"Nachricht und Bericht informieren über Geschehen; eine Reportage veranschaulicht es zusätzlich durch szenische Beobachtungen. Ein Kommentar nimmt begründet Stellung. Eine Glosse kritisiert zugespitzt, häufig ironisch. Mischformen sind möglich.",
+			"Begründe die Zuordnung am konkreten Text: Wortwahl, Perspektive, Aufbau und Absicht. Ein wertendes Wort allein macht noch keine ganze Textsorte aus. Informationen und Meinungen können in einem Text nebeneinanderstehen."
+		],
+		"material": "A: „Am Montag beschloss der Jugendrat einen vierwöchigen Versuch.“ B: „Dieser Versuch ist richtig: Wer Ruhe zum Lernen braucht, verdient einen verlässlichen Ort.“ C: „Endlich eine bahnbrechende Idee: Ein Raum, in dem man tatsächlich lernen darf!“",
+		"materialLabel": "Eigenes, erfundenes Übungsmaterial der ZAM Academy.",
+		"sourceIds": ["lehrplan"],
+		"quiz": {
+			"question": "Welcher Ausschnitt formuliert ausdrücklich eine begründete Wertung?",
+			"answer": "B: Der Versuch wird befürwortet und begründet.",
+			"wrong": [
+				"A: Das Datum bewertet den Beschluss.",
+				"C: Ironie ist immer eine neutrale Information."
+			],
+			"explanation": "B verbindet Urteil und Begründung. C ist zugespitzt ironisch, A berichtet ein Geschehen."
+		},
+		"cases": [
+			{
+				"prompt": "A erfüllt hier vor allem eine …",
+				"options": ["informierende Funktion", "appellierende Schlussforderung"],
+				"answer": "informierende Funktion",
+				"feedback": "Der Satz berichtet den Beschluss."
+			},
+			{
+				"prompt": "C nutzt vor allem …",
+				"options": ["einen statistischen Beleg", "ironische Zuspitzung"],
+				"answer": "ironische Zuspitzung",
+				"feedback": "Der scheinbar überschwängliche Lobton kritisiert die Selbstverständlichkeit."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Ordne A, B und C begründet ein. Verwende bei C eine vorsichtige Formulierung.",
+				"model": "A ähnelt einer Nachricht, weil ein Beschluss sachlich berichtet wird. B ist kommentierend, weil es begründet wertet. C wirkt glossenartig durch ironische Überhöhung; für eine sichere Textsortenzuordnung bräuchte ich den ganzen Text.",
+				"criteria": [
+					"Ich nenne sprachliche Belege.",
+					"Ich unterscheide Funktion und Thema.",
+					"Ich beachte die Kürze der Ausschnitte."
+				]
+			},
+			"2": {
+				"prompt": "Formuliere dieselbe Information einmal als Nachricht und einmal als Kommentar. Erläutere die Änderung.",
+				"model": "Nachricht: Der Jugendrat beschloss am Montag einen Versuch. Kommentar: Der Versuch verdient Unterstützung, weil er den Bedarf praktisch prüft. Der zweite Satz fügt eine begründete Bewertung hinzu.",
+				"criteria": [
+					"Beide Fassungen bewahren den Sachverhalt.",
+					"Nur die Kommentarfassung wertet ausdrücklich.",
+					"Ich erkläre die Funktionsänderung."
+				]
+			}
+		},
+		"takeaway": "Begründe eine Textsortenzuordnung mit Funktion, Aufbau und sprachlichen Merkmalen."
+	},
+	{
+		"id": "d10-daten",
+		"stage": "lesen",
+		"title": "Zahlen brauchen einen Kontext",
+		"skill": "Diskontinuierliche Texte kritisch lesen.",
+		"bindings": ["2.3"],
+		"paragraphs": [
+			"Bei Tabellen und Diagrammen prüfst du Titel, Einheit, Bezugsgruppe, Zeitpunkt und Quelle. Vergleiche erst dann Werte. Absolute Zahlen und Anteile beantworten verschiedene Fragen; ein Anteil gilt zunächst für seine Bezugsgruppe.",
+			"Aus einem gemeinsamen Auftreten folgt noch keine Ursache. Auch eine korrekte Zahl kann in einer Überschrift zu weit verallgemeinert werden. Benenne präzise, was die Daten zeigen und was offenbleibt."
+		],
+		"material": "Erfundene Umfrage in einer AG, 30 Teilnehmende: Lernraum am Nachmittag gewünscht: 18; nicht gewünscht: 9; keine Angabe: 3. Überschrift im Entwurf: „60 Prozent aller Jugendlichen brauchen unseren Lernraum.“",
+		"materialLabel": "Eigenes, erfundenes Übungsmaterial der ZAM Academy.",
+		"sourceIds": ["lehrplan"],
+		"quiz": {
+			"question": "Welche Aussage ist durch die Daten gedeckt?",
+			"answer": "18 von 30 Befragten der AG wünschen das Angebot.",
+			"wrong": [
+				"60 Prozent aller Jugendlichen brauchen es.",
+				"Die Öffnung verbessert sicher jede Schulnote."
+			],
+			"explanation": "Die Daten betreffen diese AG und einen Wunsch. Sie belegen weder Repräsentativität noch eine Wirkung auf Noten."
+		},
+		"cases": [
+			{
+				"prompt": "18 von 30 sind …",
+				"options": [
+					"60 Prozent aller Jugendlichen",
+					"60 Prozent der Befragten"
+				],
+				"answer": "60 Prozent der Befragten",
+				"feedback": "Der Nenner ist die Gruppe der 30 Befragten."
+			},
+			{
+				"prompt": "Die drei fehlenden Angaben sind …",
+				"options": [
+					"als eigene Kategorie zu nennen",
+					"automatisch Gegenstimmen"
+				],
+				"answer": "als eigene Kategorie zu nennen",
+				"feedback": "Keine Angabe ist nicht dasselbe wie Ablehnung."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Schreibe zwei sachliche Sätze zu den Daten und korrigiere die Überschrift.",
+				"model": "In der AG wünschen 18 von 30 Befragten das Angebot; neun wünschen es nicht und drei machten keine Angabe. Passende Überschrift: Mehrheit der befragten AG wünscht Nachmittagsangebot.",
+				"criteria": [
+					"Ich nenne die Bezugsgruppe.",
+					"Ich berücksichtige fehlende Angaben.",
+					"Ich verallgemeinere nicht auf alle Jugendlichen."
+				]
+			},
+			"2": {
+				"prompt": "Entwirf eine zusätzliche Erhebung, die eine Entscheidung besser stützt. Nenne eine Grenze auch dieser Erhebung.",
+				"model": "Ich befrage alle Jahrgangsstufen nach konkreten Nutzungstagen und dokumentiere Teilnahme und Nichtantworten. Zusätzlich prüfe ich die spätere Nutzung. Wünsche können vom tatsächlichen Verhalten abweichen.",
+				"criteria": [
+					"Ich erweitere die Datengrundlage gezielt.",
+					"Ich dokumentiere die Auswahl.",
+					"Ich nenne eine verbleibende Grenze."
+				]
+			}
+		},
+		"takeaway": "Nenne Bezugsgruppe und Informationslücken, bevor du aus Zahlen eine allgemeine Aussage ableitest."
+	},
+	{
+		"id": "d10-quellen",
+		"stage": "lesen",
+		"title": "Quellen prüfen und Medien bewusst nutzen",
+		"skill": "Behauptungen zurückverfolgen und die eigene Nutzung reflektieren.",
+		"bindings": ["2.4", "3.2"],
+		"paragraphs": [
+			"Prüfe Autor, Veröffentlichung, Datum, Belege und erkennbare Interessen einer Quelle. Suche bei wichtigen Behauptungen den ursprünglichen Bericht. Mehrere Kopien derselben Meldung sind keine unabhängigen Bestätigungen.",
+			"Eine Suche beginnt mit präzisen Begriffen und einer prüfbaren Frage. Notiere Fundstelle und Zweck. Plane auch deine Mediennutzung: Ein Gruppenboard kann Ideen sammeln, ein Timer die Recherche begrenzen. Prüfe anschließend, was dir wirklich geholfen hat."
+		],
+		"material": "Ein gesponserter Post behauptet: „Unsere Lernlampe steigert jede Note.“ Er verweist auf eine Studie ohne Link, Stichprobe oder Datum. Drei weitere Accounts teilen wortgleich denselben Post.",
+		"materialLabel": "Eigenes, erfundenes Übungsmaterial der ZAM Academy.",
+		"sourceIds": ["lehrplan"],
+		"quiz": {
+			"question": "Was ist der sinnvollste nächste Prüfschritt?",
+			"answer": "Die ursprüngliche Untersuchung und ihre Bedingungen suchen.",
+			"wrong": [
+				"Vier identische Posts als vier Belege zählen.",
+				"Den Werbezweck als sicheren Beweis für Falschheit nehmen."
+			],
+			"explanation": "Werbung ist ein Interesse, kein automatischer Gegenbeweis. Die Behauptung braucht nachvollziehbare Untersuchungen."
+		},
+		"cases": [
+			{
+				"prompt": "„Gesponsert“ zeigt …",
+				"options": ["ein kommerzielles Interesse", "zwingend eine Lüge"],
+				"answer": "ein kommerzielles Interesse",
+				"feedback": "Interessen müssen bei der Prüfung berücksichtigt werden."
+			},
+			{
+				"prompt": "Ein datierter Originalbericht wäre …",
+				"options": [
+					"automatisch unangreifbar",
+					"ein besser prüfbarer Ausgangspunkt"
+				],
+				"answer": "ein besser prüfbarer Ausgangspunkt",
+				"feedback": "Auch eine Originalquelle muss methodisch geprüft werden."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Formuliere eine Suchfrage und drei Prüffragen zum Post.",
+				"model": "Suchfrage: Welche Untersuchung prüft Lernlampen und schulische Leistung? Wer führte sie durch? Mit welcher Vergleichsgruppe? Was wurde tatsächlich gemessen?",
+				"criteria": [
+					"Ich suche die Ursprungsaussage.",
+					"Ich frage nach der Methode.",
+					"Ich trenne Werbeversprechen und Messgröße."
+				]
+			},
+			"2": {
+				"prompt": "Plane eine kooperative Recherche mit Rollen, Belegnotizen und anschließender Nutzungsreflexion.",
+				"model": "Eine Person sucht den Originalbericht, eine prüft Methode und Finanzierung, eine sucht unabhängige Gegenprüfungen. Wir notieren Links und offene Fragen. Danach prüfen wir, ob das gemeinsame Board Doppelarbeit vermieden oder abgelenkt hat.",
+				"criteria": [
+					"Ich verteile sinnvolle Rollen.",
+					"Ich dokumentiere Belege und Unsicherheiten.",
+					"Ich reflektiere die Medienwahl."
+				]
+			}
+		},
+		"takeaway": "Prüfe die ursprüngliche Quelle und ihre Methode; Wiederholung ersetzt keine unabhängige Bestätigung."
+	},
+	{
+		"id": "d10-medien",
+		"stage": "lesen",
+		"title": "Vom Text zur filmischen Wirkung",
+		"skill": "Bild, Ton und Wort im Zusammenspiel untersuchen.",
+		"bindings": ["2.4"],
+		"paragraphs": [
+			"Eine filmische Umsetzung übernimmt einen Text nicht einfach. Kamera, Schnitt, Licht, Geräusch und Musik lenken Aufmerksamkeit und verändern Nähe oder Spannung. Beschreibe die Mittel, bevor du ihre Wirkung deutest.",
+			"Beim Vergleich fragst du: Was bleibt erhalten, was wird verändert, welche Deutung entsteht? Eine andere Wirkung ist nicht automatisch ein Fehler. Beurteile anhand eines offengelegten Ziels. Ein Drehbuchplan ersetzt jedoch keine tatsächliche Filmanalyse."
+		],
+		"material": "Text: „Lea wartete an der Tür. Als Schritte kamen, steckte sie den Brief ein.“ Filmplan A: Nahaufnahme des Briefs, langsame Schritte, leiser tiefer Ton. Filmplan B: Totale des belebten Flurs, schnelle Musik, Brief kaum sichtbar.",
+		"materialLabel": "Eigenes, erfundenes Übungsmaterial der ZAM Academy.",
+		"sourceIds": ["lehrplan"],
+		"quiz": {
+			"question": "Welches Mittel lenkt besonders auf den Brief?",
+			"answer": "Die Nahaufnahme im Plan A.",
+			"wrong": [
+				"Die Totale mit kaum sichtbarem Brief in B.",
+				"Allein der Name der Figur."
+			],
+			"explanation": "Die Nahaufnahme gibt dem Gegenstand optisch Gewicht; die weiteren Mittel können Spannung verstärken."
+		},
+		"cases": [
+			{
+				"prompt": "Die tiefe Musik ist …",
+				"options": [
+					"ein wörtlicher Bestandteil des Ausgangstexts",
+					"ein zusätzliches filmisches Gestaltungsmittel"
+				],
+				"answer": "ein zusätzliches filmisches Gestaltungsmittel",
+				"feedback": "Der Ausgangstext nennt keine Musik."
+			},
+			{
+				"prompt": "Plan B kann …",
+				"options": [
+					"den belebten Alltag stärker gewichten",
+					"überhaupt keine Deutung enthalten"
+				],
+				"answer": "den belebten Alltag stärker gewichten",
+				"feedback": "Auch das Zurücknehmen des Briefs verändert die Gewichtung."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Vergleiche die geplante Wirkung von A und B mit je einem Beleg.",
+				"model": "A hebt den Brief durch die Nahaufnahme hervor und kann Geheimhaltung betonen. B stellt durch die Totale den Alltag im Flur in den Vordergrund. Beide Pläne deuten den knappen Text unterschiedlich.",
+				"criteria": [
+					"Ich nenne Mittel aus beiden Plänen.",
+					"Ich beschreibe eine mögliche Wirkung.",
+					"Ich unterscheide Plan und fertigen Film."
+				]
+			},
+			"2": {
+				"prompt": "Entwirf einen dritten Filmplan, der Leas Unsicherheit zeigt, ohne sie auszusprechen. Begründe zwei Entscheidungen.",
+				"model": "Eine ruhige Halbnahe zeigt Leas zögernde Hand am Brief. Beim Schrittgeräusch stockt die Bewegung, dann folgt eine Pause ohne Musik. So werden Zögern und Reaktion sichtbar, ohne ein Motiv eindeutig festzuschreiben.",
+				"criteria": [
+					"Ich plane Bild und Ton bewusst.",
+					"Ich begründe zwei Wirkungen.",
+					"Ich vermeide eine unbelegte Eindeutigkeit."
+				]
+			}
+		},
+		"extension": "Vergleiche eine tatsächlich gesehene Literaturverfilmung mit der passenden Originalstelle. Verwende genaue Zeit- und Seitenangaben.",
+		"takeaway": "Vergleiche Text und Film anhand konkreter Gestaltungsmittel und ihrer jeweiligen Wirkung."
+	},
+	{
+		"id": "d10-parabel",
+		"stage": "lesen",
+		"title": "Eine Parabel öffnen",
+		"skill": "Bildebene und übertragene Bedeutung verbinden.",
+		"bindings": ["2.2", "3.2"],
+		"paragraphs": [
+			"Eine Parabel erzählt einen konkreten Vorgang, der auf eine allgemeinere Frage übertragen werden kann. Unterscheide Bildebene und mögliche Sachebene. Die Übertragung muss an Einzelheiten der Geschichte anschließen.",
+			"Eine Deutung ist keine beliebige Moral. Prüfe auch die Grenze des Vergleichs und mögliche Gegenlesarten. Ein produktiver Gegentext kann sichtbar machen, welche Annahmen die ursprüngliche Geschichte trägt."
+		],
+		"material": "Der Brückenwart prüfte jeden Morgen, ob die Brücke betreten werden durfte. Eines Tages fehlte das Schild. „Ohne Erlaubnis kein Übergang“, sagte er. Die Wartenden bauten neben ihm einen Steg. Am Abend bewachte er allein das leere Ufer.",
+		"materialLabel": "Eigenes, erfundenes Übungsmaterial der ZAM Academy.",
+		"sourceIds": ["lehrplan"],
+		"quiz": {
+			"question": "Was wäre eine begründete Sachebene?",
+			"answer": "Regeln können ihren Zweck verlieren, wenn sie jedes Handeln blockieren.",
+			"wrong": [
+				"Jede Brücke ist tatsächlich immer verboten.",
+				"Die Geschichte beweist, dass jede Regel schädlich ist."
+			],
+			"explanation": "Der leere bewachte Ort stützt die Kritik an zweckvergessener Regelanwendung, aber keine pauschale Ablehnung aller Regeln."
+		},
+		"cases": [
+			{
+				"prompt": "Der fehlende Erlaubnisschild gehört zur …",
+				"options": ["Bildebene", "sicher einzigen Moral"],
+				"answer": "Bildebene",
+				"feedback": "Es ist zunächst ein konkretes Erzähldetail."
+			},
+			{
+				"prompt": "„Jede Regel ist schädlich“ ist …",
+				"options": [
+					"durch die Geschichte bewiesen",
+					"eine zu weite Verallgemeinerung"
+				],
+				"answer": "eine zu weite Verallgemeinerung",
+				"feedback": "Die Geschichte zeigt einen speziellen Konflikt."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Deute den Schluss in vier Sätzen mit zwei Textbezügen.",
+				"model": "Der Wärter sichert am Ende einen ungenutzten Ort. Sein Beharren auf dem Schild verhindert den Übergang. Der neue Steg zeigt die Handlungsfähigkeit der Wartenden. Die Geschichte kann eine Verwaltung kritisieren, die ihren Zweck vergisst.",
+				"criteria": [
+					"Ich beschreibe den Schluss.",
+					"Ich verbinde zwei Details mit der Deutung.",
+					"Ich kennzeichne die Übertragung als Lesart."
+				]
+			},
+			"2": {
+				"prompt": "Schreibe einen Gegentext, in dem die Regel einen sinnvollen Zweck hat. Erkläre, wie sich die Aussage ändert.",
+				"model": "Unter der Brücke war ein Träger gebrochen. Der Wärter hielt die Wartenden zurück und ließ den Schaden prüfen. Der Steg wurde erst nach Sicherung freigegeben. Die Regel schützt hier Menschen statt nur sich selbst.",
+				"criteria": [
+					"Ich bewahre den Ausgangskonflikt.",
+					"Ich ändere eine entscheidende Bedingung.",
+					"Ich erkläre die neue Aussage."
+				]
+			}
+		},
+		"takeaway": "Verknüpfe die Bildebene mit einer begründeten Sachebene und benenne Grenzen der Übertragung."
+	},
+	{
+		"id": "d10-roman",
+		"stage": "lesen",
+		"title": "Erzählperspektive und literarischer Kontext",
+		"skill": "Figuren nicht mit Erzähler oder Autor verwechseln.",
+		"bindings": ["2.2", "3.2"],
+		"paragraphs": [
+			"Autor, Erzähler und Figur sind verschiedene Ebenen. Prüfe, wer spricht, wessen Wahrnehmung zugänglich ist und welche Informationen fehlen. Figuren, Raum, Zeit und Konflikt werden durch diese Auswahl gestaltet.",
+			"Thomas Manns Roman Buddenbrooks erschien 1901; Mann erhielt 1929 den Literaturnobelpreis. Im Romananfang wird ein Familiengespräch erzählt. Erzählte Zeit und Erscheinungsjahr sind zu unterscheiden. Historische und biografische Informationen ergänzen die Analyse, ersetzen aber keine Textbelege."
+		],
+		"material": "Eigenes Beispiel: „Ich lächelte, als die Tür aufging. Ob Mira meinen Brief gelesen hatte, wusste ich nicht. Die Uhr schlug zehn; ich starrte auf ihre leeren Hände.“",
+		"materialLabel": "Eigenes, erfundenes Übungsmaterial der ZAM Academy.",
+		"sourceIds": ["lehrplan", "mann", "nobel"],
+		"quiz": {
+			"question": "Was wissen wir über Miras Gedanken?",
+			"answer": "Der Ausschnitt gibt sie nicht direkt wieder.",
+			"wrong": [
+				"Der Ich-Erzähler kennt sie vollständig.",
+				"Der Autor ist zwangsläufig das erzählende Ich."
+			],
+			"explanation": "Die Unsicherheit gehört zur begrenzten Wahrnehmung des erzählenden Ichs."
+		},
+		"cases": [
+			{
+				"prompt": "„Ich wusste es nicht“ markiert …",
+				"options": [
+					"eine allwissende Übersicht",
+					"eine Wissensgrenze des Erzählers"
+				],
+				"answer": "eine Wissensgrenze des Erzählers",
+				"feedback": "Die Perspektive ist hier begrenzt."
+			},
+			{
+				"prompt": "1901 bezeichnet bei Buddenbrooks …",
+				"options": [
+					"das Erscheinungsjahr",
+					"zwingend das Jahr jeder erzählten Szene"
+				],
+				"answer": "das Erscheinungsjahr",
+				"feedback": "Entstehungs- und erzählte Zeit sind verschiedene Angaben."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Beschreibe Perspektive, Raum- und Zeitangabe des eigenen Beispiels und ihre Wirkung.",
+				"model": "Das Ich kennt Miras Gedanken nicht. Tür, Hände und Uhr fokussieren einen angespannten Augenblick um zehn. Die begrenzte Wahrnehmung lässt den Inhalt des Briefs und Miras Reaktion offen.",
+				"criteria": [
+					"Ich belege die Wissensgrenze.",
+					"Ich nenne Raum- und Zeitdetails.",
+					"Ich erkläre eine mögliche Wirkung."
+				]
+			},
+			"2": {
+				"prompt": "Lies zusätzlich im verlinkten Original den Beginn von Buddenbrooks (Erster Teil, erstes Kapitel). Vergleiche Erzählzugang und Familienrollen mit dem Ich-Beispiel. Notiere zwei eigene Fundstellen.",
+				"model": "Strukturhilfe: Zuerst benenne ich Erzählerzugang und die im Gespräch sichtbaren Rollen. Dann belege ich zwei Beobachtungen mit Stellen aus meiner Ausgabe. Abschließend vergleiche ich die Wissensverteilung mit der Unsicherheit des Ich-Beispiels. Die Fundstellen ergänze ich selbst.",
+				"criteria": [
+					"Ich verwende wirklich gelesene Originalstellen.",
+					"Ich belege zwei Beobachtungen mit Fundstellen.",
+					"Ich unterscheide Figur, Erzähler und Autor."
+				]
+			}
+		},
+		"extension": "Plane und lies mindestens eine geeignete Ganzschrift des 20. oder 21. Jahrhunderts nach Absprache mit der Lehrkraft. Führe ein Lesetagebuch und stelle das Werk vor. Ein Romananfang erfüllt die Ganzschriftaufgabe nicht.",
+		"takeaway": "Trenne Autor, Erzähler und Figur sowie Erscheinungsjahr und erzählte Zeit."
+	},
+	{
+		"id": "d10-satire",
+		"stage": "lesen",
+		"title": "Satire: das Übertriebene ernst nehmen",
+		"skill": "Kritik aus Zuspitzung und Widerspruch erschließen.",
+		"bindings": ["2.2", "2.3"],
+		"paragraphs": [
+			"Satire kritisiert Verhältnisse oder Verhaltensweisen etwa durch Übertreibung, Ironie oder Verfremdung. Die wörtliche Aussage und die gemeinte Bewertung können auseinanderfallen. Suche nach dem Ziel der Kritik.",
+			"Nicht jeder Witz ist Satire, und Ironie ist nicht automatisch erkennbar. Belege deine Deutung an einem Widerspruch zwischen scheinbarem Lob und dargestellten Folgen. Eine Glosse ist eine journalistische Form, die satirisch arbeiten kann."
+		],
+		"material": "„Unsere Schule spart endlich Zeit: Damit niemand mehr auf einen freien Platz warten muss, wurde der Lernraum geschlossen. Die Erfolgsbilanz ist glänzend: keine einzige Warteperson im Raum!“",
+		"materialLabel": "Eigenes, erfundenes Übungsmaterial der ZAM Academy.",
+		"sourceIds": ["lehrplan"],
+		"quiz": {
+			"question": "Worauf zielt die Kritik?",
+			"answer": "Auf eine Erfolgsstatistik, die den Zweck des Angebots verdrängt.",
+			"wrong": [
+				"Auf die sichere Behauptung, Lernen sei unnötig.",
+				"Auf eine sachliche Empfehlung zur Schließung."
+			],
+			"explanation": "Das scheinbare Lob widerspricht dem Verlust des Lernangebots. Die Kennzahl wird auf Kosten des eigentlichen Ziels verbessert."
+		},
+		"cases": [
+			{
+				"prompt": "„glänzend“ wirkt hier …",
+				"options": ["im Kontext ironisch", "als neutraler Messwert"],
+				"answer": "im Kontext ironisch",
+				"feedback": "Das positive Wort passt nicht zum verlorenen Nutzen."
+			},
+			{
+				"prompt": "Die Statistik ist problematisch, weil …",
+				"options": [
+					"jede Zahl grundsätzlich nutzlos ist",
+					"sie den Angebotsverlust ausblendet"
+				],
+				"answer": "sie den Angebotsverlust ausblendet",
+				"feedback": "Die Auswahl der Kennzahl verzerrt das Urteil."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Erkläre die satirische Pointe mit zwei Textbezügen.",
+				"model": "Die Schließung beseitigt das Warten, aber zugleich das Lernen im Raum. „Glänzend“ lobt daher einen scheinbaren Erfolg. Kritisiert wird das Verwechseln einer Kennzahl mit dem eigentlichen Zweck.",
+				"criteria": [
+					"Ich nenne den Widerspruch.",
+					"Ich belege den Lobton.",
+					"Ich benenne das Ziel der Kritik."
+				]
+			},
+			"2": {
+				"prompt": "Schreibe eine kurze Parodie einer Erfolgsmeldung zu einem anderen Schulproblem und erläutere die Kritik.",
+				"model": "„Die Bibliothek meldet einen Rekord: Seit keine Bücher mehr ausgeliehen werden, ist keines zu spät zurückgekommen.“ Die Meldung kritisiert eine Bewertung, die pünktliche Rückgabe höher gewichtet als Zugang zu Büchern.",
+				"criteria": [
+					"Ich übertrage das Prinzip auf einen neuen Fall.",
+					"Ich mache den Widerspruch erkennbar.",
+					"Ich erläutere das kritisierte Verhalten."
+				]
+			}
+		},
+		"takeaway": "Prüfe den Widerspruch zwischen wörtlichem Lob und dargestellter Folge, um satirische Kritik zu erschließen."
+	},
+	{
+		"id": "d10-expressionismus",
+		"stage": "lesen",
+		"title": "Expressionismus: eine Welt gerät ins Wanken",
+		"skill": "Ein authentisches Gedicht mit heutigen Erfahrungen vergleichen.",
+		"bindings": ["2.2"],
+		"paragraphs": [
+			"Expressionistische Lyrik des frühen 20. Jahrhunderts gestaltet häufig Krisenerfahrung, Großstadt, Angst oder Entfremdung durch auffällige Bilder und abrupte Verknüpfungen. Das sind Analysemöglichkeiten, keine Liste, die jedes Gedicht vollständig erfüllt.",
+			"Jakob van Hoddis veröffentlichte Weltende 1911. Schon der Anfang verbindet eine alltägliche Figur mit einer bedrohlichen Geräuschwelt. Prüfe das Bild und den Vergleich am Wortlaut. Eigene heutige Erfahrungen können den Zugang öffnen, sind aber kein Beleg für die historische Absicht."
+		],
+		"material": "Dem Bürger fliegt vom spitzen Kopf der Hut\nIn allen Lüften hallt es wie Geschrei.",
+		"materialLabel": "Jakob van Hoddis: Weltende (1911), Anfang; nach der digitalen Edition der Bibliotheca Augustana. Zeilenumbrüche erhalten. Volltext über die Quelle.",
+		"sourceIds": ["lehrplan", "weltende"],
+		"quiz": {
+			"question": "Welches sprachliche Signal stellt ausdrücklich einen Vergleich her?",
+			"answer": "Das Wort „wie“ in der zweiten Zeile.",
+			"wrong": [
+				"Allein das Wort „Hut“.",
+				"Die Nennung einer Figur im ersten Vers."
+			],
+			"explanation": "„Wie Geschrei“ verknüpft das Geräusch mit menschlichem Schreien und kann die Bedrohlichkeit verstärken."
+		},
+		"cases": [
+			{
+				"prompt": "Die Geräuschwelt kann …",
+				"options": [
+					"nur als sachlicher Wetterbericht gelten",
+					"als beunruhigend gedeutet werden"
+				],
+				"answer": "als beunruhigend gedeutet werden",
+				"feedback": "Der Vergleich mit Geschrei unterstützt eine beunruhigende Lesart."
+			},
+			{
+				"prompt": "Eine heutige Angst ist …",
+				"options": [
+					"ein möglicher Vergleichspunkt",
+					"der Beweis für die Autorenabsicht von 1911"
+				],
+				"answer": "ein möglicher Vergleichspunkt",
+				"feedback": "Die Zeiten und Kontexte bleiben verschieden."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Beschreibe die Wirkung der beiden Verse mit einem kurzen Textbeleg und einer vorsichtigen Deutung.",
+				"model": "Der Vergleich „wie Geschrei“ macht das Geräusch menschlich und bedrohlich. Der fliegende Hut zeigt eine alltägliche Ordnung in Bewegung. Zusammen können die Verse Verunsicherung ausdrücken.",
+				"criteria": [
+					"Ich benenne den Vergleich.",
+					"Ich beziehe mich auf beide Verse.",
+					"Ich begründe eine mögliche Wirkung."
+				]
+			},
+			"2": {
+				"prompt": "Lies das ganze Gedicht über die Quelle. Vergleiche die Verbindung von Alltag und Katastrophe mit einem eigenen heutigen Miniaturtext über digitale Überforderung. Erkläre auch einen Unterschied.",
+				"model": "Strukturhilfe: Ich untersuche im Original den Wechsel zwischen alltäglichem Detail und Katastrophenbild. Mein heutiger Text stellt etwa stille Benachrichtigungen einer überwältigenden Nachrichtenflut gegenüber. Die digitale Situation ist meine Übertragung und keine historische Aussage des Gedichts.",
+				"criteria": [
+					"Ich lese und belege das ganze Original.",
+					"Ich gestalte einen eigenen Gegenwartstext.",
+					"Ich benenne eine Grenze des Vergleichs."
+				]
+			}
+		},
+		"takeaway": "Belege die Deutung am Gedicht und unterscheide historischen Kontext von heutiger Assoziation."
+	},
+	{
+		"id": "d10-politische-lyrik",
+		"stage": "lesen",
+		"title": "Politische Lyrik: Wer spricht zu wem?",
+		"skill": "Appell, Bild und historischen Kontext zusammendenken.",
+		"bindings": ["2.2"],
+		"paragraphs": [
+			"Politische Lyrik greift Fragen von Macht, Gemeinschaft und gesellschaftlichem Handeln auf. Untersuche Sprecher, Adressaten, zentrale Bilder und Aufforderungen. Das lyrische Wir ist eine gestaltete Stimme, nicht automatisch der Autor oder die ganze Bevölkerung.",
+			"Für den Vergleich historischer Gedichte brauchst du Entstehungssituation und Quellen. Ein ähnliches Wort kann unter verschiedenen Bedingungen anders wirken. Die folgenden Miniaturen sind heutige Übungstexte und keine historischen Dokumente."
+		],
+		"material": "A: „Wir tragen den Schlüssel, wir öffnen das Tor. Kein Name verstummt mehr im staubigen Chor.“ B: „Du hältst deine Stimme im sicheren Haus. Wer hört dich noch draußen? Geh einmal hinaus.“",
+		"materialLabel": "Eigenes, erfundenes Übungsmaterial der ZAM Academy.",
+		"sourceIds": ["lehrplan"],
+		"quiz": {
+			"question": "Was unterscheidet die Ansprache?",
+			"answer": "A gestaltet ein gemeinsames Wir, B spricht ein Du an.",
+			"wrong": [
+				"A ist automatisch eine amtliche Erklärung.",
+				"B enthält deshalb keine gesellschaftliche Frage."
+			],
+			"explanation": "Pronomen strukturieren die Ansprache, beweisen aber weder historische Herkunft noch politische Legitimation."
+		},
+		"cases": [
+			{
+				"prompt": "„wir öffnen“ ist hier …",
+				"options": [
+					"eine gemeinsame Handlungsperspektive",
+					"ein Beleg für die Meinung aller Menschen"
+				],
+				"answer": "eine gemeinsame Handlungsperspektive",
+				"feedback": "Das lyrische Wir beansprucht Gemeinsamkeit, repräsentiert aber nicht automatisch alle."
+			},
+			{
+				"prompt": "„Geh einmal hinaus“ ist …",
+				"options": ["eine neutrale Ortsangabe", "eine Aufforderung"],
+				"answer": "eine Aufforderung",
+				"feedback": "Der Imperativ fordert zum Handeln auf."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Vergleiche Ansprache und Appell der beiden Miniaturen mit je einem Beleg.",
+				"model": "A betont durch „wir“ gemeinsame Handlung und Öffnung. B spricht ein einzelnes „Du“ an und fordert mit „Geh“ zum Heraustreten auf. Beide können gesellschaftliche Beteiligung thematisieren.",
+				"criteria": [
+					"Ich vergleiche beide Texte.",
+					"Ich belege Pronomen und Aufforderung.",
+					"Ich formuliere die Aussage vorsichtig."
+				]
+			},
+			"2": {
+				"prompt": "Plane den Vergleich zweier tatsächlich historischer politischer Gedichte aus dem Unterricht. Welche Daten und welche Textbeobachtungen brauchst du?",
+				"model": "Ich notiere Autor, Titel, Erscheinungsdatum, Konfliktlage und gesicherte Quelle. Danach vergleiche ich Sprecher, Adressaten, Bilder und Appelle an konkreten Versen. Ähnliche Formulierungen deute ich erst im jeweiligen Kontext.",
+				"criteria": [
+					"Ich trenne Kontext und Textbeobachtung.",
+					"Ich nenne konkrete Vergleichsaspekte.",
+					"Ich vermeide gleiche Wirkung allein aus gleichen Wörtern."
+				]
+			}
+		},
+		"extension": "Vergleiche zusätzlich zwei echte politische Gedichte oder Liedtexte im historischen Kontext. Die erfundenen Miniaturen erfüllen diesen historischen Vergleich nicht.",
+		"takeaway": "Untersuche Sprecher, Adressaten, Bilder und Appelle im jeweiligen historischen Zusammenhang."
+	},
+	{
+		"id": "d10-argument",
+		"stage": "schreiben",
+		"title": "Ein Argument trägt eine Behauptung",
+		"skill": "Begründung und Beleg passend verbinden.",
+		"bindings": ["3.2"],
+		"paragraphs": [
+			"Ein Argument verbindet eine Behauptung mit einer nachvollziehbaren Begründung. Ein Beispiel veranschaulicht sie; ein geeigneter Beleg kann sie stützen. Frage immer, ob der Beleg tatsächlich zur behaupteten Wirkung passt.",
+			"Unterscheide persönliche Erfahrung, überprüfbare Daten und Wertmaßstäbe. Eine einzelne Erfahrung kann wichtig sein, rechtfertigt aber keine Aussage über alle Menschen. Überzeugend wird ein Argument auch durch eine klare Einschränkung."
+		],
+		"material": "Behauptung: Ein ruhiger Lernraum sollte bleiben. Begründung: Manche Lernende haben zu Hause keinen ruhigen Platz. Beispiel: Sam teilt sich ein Zimmer mit zwei Geschwistern. Überzogene Fassung: Deshalb verbessern sich dort garantiert alle Noten.",
+		"materialLabel": "Eigenes, erfundenes Übungsmaterial der ZAM Academy.",
+		"sourceIds": ["lehrplan"],
+		"quiz": {
+			"question": "Welche Funktion hat Sams Situation?",
+			"answer": "Sie veranschaulicht den Bedarf an einem ruhigen Ort.",
+			"wrong": [
+				"Sie beweist eine Notenverbesserung für alle.",
+				"Sie ersetzt jede weitere Begründung."
+			],
+			"explanation": "Das Beispiel zeigt eine konkrete Lage, belegt aber keine universelle Wirkung auf Leistungen."
+		},
+		"cases": [
+			{
+				"prompt": "„Manche Lernende“ …",
+				"options": ["behauptet dasselbe wie alle", "begrenzt die Behauptung"],
+				"answer": "begrenzt die Behauptung",
+				"feedback": "Die Einschränkung macht die Aussage genauer."
+			},
+			{
+				"prompt": "„garantiert alle Noten“ …",
+				"options": [
+					"überschreitet die Beleglage",
+					"folgt zwingend aus Sams Beispiel"
+				],
+				"answer": "überschreitet die Beleglage",
+				"feedback": "Eine einzelne Situation belegt keine allgemeine Kausalwirkung."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Schreibe ein begrenztes Argument für den Lernraum.",
+				"model": "Der Lernraum sollte bleiben, weil er Lernenden ohne ruhigen Platz eine Arbeitsmöglichkeit bietet. Sams geteiltes Zimmer veranschaulicht diesen Bedarf. Ob sich Noten ändern, müsste gesondert geprüft werden.",
+				"criteria": [
+					"Ich verbinde Position und Grund.",
+					"Ich nutze das Beispiel passend.",
+					"Ich begrenze die Aussage über Leistungen."
+				]
+			},
+			"2": {
+				"prompt": "Ergänze einen anderen Maßstab als Noten und erläutere, welche Daten dazu passen würden.",
+				"model": "Auch ein verlässlicher Zugang zu einem Arbeitsplatz ist ein Maßstab. Dazu passen Öffnungstage, Auslastung und Rückmeldungen zur Nutzbarkeit. Diese Daten messen Zugang und Nutzung, nicht automatisch Lernerfolg.",
+				"criteria": [
+					"Ich wähle einen klaren Maßstab.",
+					"Ich ordne passende Daten zu.",
+					"Ich unterscheide Nutzung und Leistung."
+				]
+			}
+		},
+		"takeaway": "Eine Behauptung braucht einen passenden Grund; ein Beispiel trägt keine weitergehende Verallgemeinerung."
+	},
+	{
+		"id": "d10-gegengrund",
+		"stage": "schreiben",
+		"title": "Gegenargumente fair behandeln",
+		"skill": "Einen Einwand prüfen statt abwerten.",
+		"bindings": ["3.2", "2.3"],
+		"paragraphs": [
+			"Formuliere einen Einwand so, dass die Gegenseite ihn wiedererkennen könnte. Prüfe dann seine Voraussetzung, Reichweite und Beleglage. Du kannst zustimmen, einschränken, widerlegen oder eine Bedingung vorschlagen.",
+			"Ein Zugeständnis schwächt eine Argumentation nicht automatisch. Es zeigt, dass du Zielkonflikte siehst. Ein Urteil sollte erklären, warum ein Maßstab in der konkreten Situation mehr Gewicht erhält."
+		],
+		"material": "Position: Der Lernraum soll täglich öffnen. Einwand: Ohne zusätzliche Betreuung müssten die vorhandenen Kräfte mehr arbeiten. Alternative: Zunächst zwei Tage testen und den Bedarf sowie die tatsächliche Belastung dokumentieren.",
+		"materialLabel": "Eigenes, erfundenes Übungsmaterial der ZAM Academy.",
+		"sourceIds": ["lehrplan"],
+		"quiz": {
+			"question": "Welche Reaktion setzt sich sachlich mit dem Einwand auseinander?",
+			"answer": "Ein Versuch mit gesicherter Betreuung kann Bedarf und Belastung prüfen.",
+			"wrong": [
+				"Wer das sagt, mag keine Jugendlichen.",
+				"Betreuung spielt grundsätzlich keine Rolle."
+			],
+			"explanation": "Die Antwort nimmt die Bedingung ernst und schlägt einen prüfbaren Schritt vor."
+		},
+		"cases": [
+			{
+				"prompt": "Die Mehrbelastung ist hier …",
+				"options": [
+					"ein relevanter Einwand zur Umsetzung",
+					"ein Beweis gegen jeden Lernraum"
+				],
+				"answer": "ein relevanter Einwand zur Umsetzung",
+				"feedback": "Sie betrifft die geplante tägliche Öffnung ohne zusätzliches Personal."
+			},
+			{
+				"prompt": "Ein begrenzter Versuch ist …",
+				"options": [
+					"eine Widerlegung aller Einwände",
+					"ein bedingter Lösungsvorschlag"
+				],
+				"answer": "ein bedingter Lösungsvorschlag",
+				"feedback": "Auch im Versuch müssen Bedingungen geprüft werden."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Schreibe eine Antwort mit Zugeständnis und begründetem Vorschlag.",
+				"model": "Die zusätzliche Belastung ist ein berechtigter Einwand. Deshalb sollten wir zwei betreute Tage testen. Nutzungszahlen und dokumentierte Arbeitszeit helfen, über eine Erweiterung zu entscheiden.",
+				"criteria": [
+					"Ich gebe den Einwand fair wieder.",
+					"Ich formuliere eine Bedingung.",
+					"Ich nenne ein Entscheidungskriterium."
+				]
+			},
+			"2": {
+				"prompt": "Der Versuch zeigt hohe Nachfrage und hohe Belastung. Entwirf ein abgewogenes Urteil, ohne eine Seite zu unterschlagen.",
+				"model": "Die Nachfrage rechtfertigt ein weiteres Angebot, die Belastung spricht gegen eine unveränderte Ausweitung. Ich befürworte zusätzliche Tage erst mit verbindlich gesicherter Betreuung; sonst bleibt das kleinere Angebot. Zugang und Arbeitsbedingungen müssen gemeinsam erfüllt werden.",
+				"criteria": [
+					"Ich verarbeite beide Ergebnisse.",
+					"Ich gewichte offen.",
+					"Ich formuliere eine überprüfbare Bedingung."
+				]
+			}
+		},
+		"takeaway": "Gib einen Einwand fair wieder und prüfe, welche Bedingung oder Einschränkung daraus folgt."
+	},
+	{
+		"id": "d10-gliederung",
+		"stage": "schreiben",
+		"title": "Eine Erörterung sinnvoll ordnen",
+		"skill": "Aspekte verbinden und zu einem Urteil kommen.",
+		"bindings": ["3.1", "3.2"],
+		"paragraphs": [
+			"Eine dialektische Erörterung prüft unterschiedliche Positionen zu einer Streitfrage. Im Blockmodell stehen Positionen in getrennten Blöcken; im aspektbezogenen Modell werden Gegengründe zu derselben Teilfrage zusammen behandelt. Wähle nach Aufgabe und Material.",
+			"Das klassische Sanduhrmodell beginnt mit der Gegenseite und führt zur eigenen Position. Es ist ein mögliches Unterrichtsmodell, keine hier belegte Pflicht für jede Abschlussprüfung. Entscheidend bleiben nachvollziehbare Übergänge, faire Gewichtung und ein begründetes Schlussurteil."
+		],
+		"material": "Streitfrage: Soll der Lernraum täglich öffnen? Aspekte: Zugang zu Ruhe; Betreuung; Kosten. Position A betont mehr Lernmöglichkeiten, Position B die knappen Betreuungszeiten. Ein Versuch ist als bedingte Lösung denkbar.",
+		"materialLabel": "Eigenes, erfundenes Übungsmaterial der ZAM Academy.",
+		"sourceIds": ["lehrplan"],
+		"quiz": {
+			"question": "Wie ordnet das aspektbezogene Modell?",
+			"answer": "Es behandelt Pro und Contra jeweils zu derselben Teilfrage.",
+			"wrong": [
+				"Es zählt alle Pro-Sätze ohne Zusammenhang auf.",
+				"Es lässt Gegenargumente im Schluss verschwinden."
+			],
+			"explanation": "Der gemeinsame Aspekt verbindet die Gegenpositionen; das Urteil muss ihre Gewichtung erklären."
+		},
+		"cases": [
+			{
+				"prompt": "„Zuerst Zugang, dann Betreuung“ ordnet …",
+				"options": ["zwingend nach der Länge der Sätze", "nach Aspekten"],
+				"answer": "nach Aspekten",
+				"feedback": "Die Teilfragen bilden die Struktur."
+			},
+			{
+				"prompt": "Eine Synthese muss …",
+				"options": [
+					"als Lösung begründet werden",
+					"immer genau die Mitte wählen"
+				],
+				"answer": "als Lösung begründet werden",
+				"feedback": "Abwägung ist kein automatisches Halbieren."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Entwirf eine aspektbezogene Gliederung mit Schlussposition.",
+				"model": "Einleitung: Streitfrage und Anlass. Hauptteil: Zugang mit Pro und Contra; Betreuung mit Pro und Contra; Kosten unter Berücksichtigung der Materialien. Schluss: Erweiterung nur bei gesicherter Betreuung, zunächst als Versuch.",
+				"criteria": [
+					"Ich formuliere die Streitfrage.",
+					"Ich verbinde Gegengründe nach Aspekten.",
+					"Mein Schluss folgt aus der Gewichtung."
+				]
+			},
+			"2": {
+				"prompt": "Vergleiche Block- und Aspektmodell für dieses Material. Begründe deine Wahl und formuliere einen Übergang.",
+				"model": "Das Aspektmodell erleichtert den direkten Vergleich von Zugang und Betreuung. Ein Blockmodell könnte die Positionen geschlossener darstellen. Ich wähle die Aspekte: Mehr Zugang ist wünschenswert; seine Umsetzung hängt jedoch von verlässlicher Betreuung ab.",
+				"criteria": [
+					"Ich vergleiche zwei Ordnungswege.",
+					"Ich begründe die Wahl am Material.",
+					"Ich verbinde zwei Gedanken im Übergang."
+				]
+			}
+		},
+		"takeaway": "Ordne Argumente nachvollziehbar und begründe dein Urteil durch Gewichtung statt durch bloße Wiederholung."
+	},
+	{
+		"id": "d10-material",
+		"stage": "schreiben",
+		"title": "Materialgestützt urteilen",
+		"skill": "Belege auswählen, ohne ihre Grenzen zu verdecken.",
+		"bindings": ["3.1", "3.2", "2.3"],
+		"paragraphs": [
+			"Materialgestütztes Schreiben beginnt mit dem Arbeitsauftrag: Adressaten, Textsorte und Frage. Ordne Informationen den Aspekten zu und unterscheide Daten, Meinungen und Lücken. Nicht jedes bereitgestellte Detail muss in den Text.",
+			"In der Argumentation stellst du nicht nur Materialien nacheinander vor. Du nutzt passende Angaben für deine Gedanken und kennzeichnest ihre Herkunft. Widersprüche werden geprüft, nicht stillschweigend beseitigt."
+		],
+		"material": "M1, erfundene AG-Umfrage: 18 von 30 Befragten wünschen Nachmittagsöffnung. M2, erfundene Personalnotiz: Mittwoch ist eine Betreuung frei, Freitag nicht. M3, erfundene Einzelstimme: „Freitag wäre für mich ideal.“ Auftrag: Empfehlung an die Schulleitung.",
+		"materialLabel": "Eigenes, erfundenes Übungsmaterial der ZAM Academy.",
+		"sourceIds": ["lehrplan"],
+		"quiz": {
+			"question": "Welche Empfehlung berücksichtigt alle drei Materialien?",
+			"answer": "Mittwoch testen und den unerfüllten Freitagswunsch benennen.",
+			"wrong": [
+				"Freitag sei personell bereits gesichert.",
+				"Die Einzelstimme beweise den Wunsch aller."
+			],
+			"explanation": "Die Empfehlung muss Bedarf, verfügbare Betreuung und offene Wünsche unterscheiden."
+		},
+		"cases": [
+			{
+				"prompt": "M2 informiert vor allem über …",
+				"options": ["Durchführbarkeit", "die Wünsche aller Lernenden"],
+				"answer": "Durchführbarkeit",
+				"feedback": "Die Personalnotiz beschreibt verfügbare Betreuung."
+			},
+			{
+				"prompt": "M3 ist …",
+				"options": [
+					"eine repräsentative Befragung",
+					"eine relevante Einzelperspektive"
+				],
+				"answer": "eine relevante Einzelperspektive",
+				"feedback": "Eine Stimme zeigt einen Bedarf, aber keine Häufigkeit."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Schreibe eine kurze Empfehlung mit Bezug auf M1 und M2 sowie einer offenen Frage.",
+				"model": "Ich empfehle einen Versuch am Mittwoch. M1 zeigt einen Wunsch in der befragten AG; M2 nennt für Mittwoch Betreuung. Offen bleibt, wie viele Lernende das Angebot außerhalb der AG nutzen würden.",
+				"criteria": [
+					"Ich kennzeichne beide Quellen.",
+					"Ich begründe die Empfehlung.",
+					"Ich nenne eine Informationslücke."
+				]
+			},
+			"2": {
+				"prompt": "Formuliere einen Absatz, der M3 fair einbezieht und trotzdem nicht mehr verspricht, als M2 erlaubt.",
+				"model": "Der Freitagswunsch aus M3 sollte dokumentiert werden, denn der Mittwoch passt nicht allen. Da M2 für Freitag keine Betreuung ausweist, kann dieser Tag noch nicht zugesagt werden. Eine spätere Erweiterung braucht eine verbindliche Personalplanung.",
+				"criteria": [
+					"Ich berücksichtige die Einzelperspektive.",
+					"Ich beachte die Personalgrenze.",
+					"Ich formuliere eine Bedingung statt einer unbelegten Zusage."
+				]
+			}
+		},
+		"takeaway": "Verknüpfe gekennzeichnete Belege nach Aspekten und berücksichtige ihre Grenzen."
+	},
+	{
+		"id": "d10-leserbrief",
+		"stage": "schreiben",
+		"title": "Leserbrief und Beschwerde",
+		"skill": "Ein Anliegen adressatengerecht vertreten.",
+		"bindings": ["3.1", "3.2"],
+		"paragraphs": [
+			"Ein Leserbrief reagiert auf einen veröffentlichten Beitrag und bringt eine begründete Position vor. Eine Beschwerde beschreibt einen konkreten Missstand und fordert eine angemessene Abhilfe. Anlass, Adressaten und gewünschte Wirkung bestimmen Ton und Form.",
+			"Formale Vorgaben hängen von Aufgabe und Medium ab. Nenne einen nachvollziehbaren Bezug, ordne deine Argumente und schließe mit einem konkreten Anliegen. Sachlichkeit und klare Wertung schließen sich nicht aus."
+		],
+		"material": "Im Schulblog steht: „Der Lernraum wird selten gebraucht und sollte schließen.“ Du nutzt ihn regelmäßig. Eine dokumentierte Nutzungszahl fehlt. Auftrag: Verfasse einen sachlichen Leserbrief an die Redaktion.",
+		"materialLabel": "Eigenes, erfundenes Übungsmaterial der ZAM Academy.",
+		"sourceIds": ["lehrplan"],
+		"quiz": {
+			"question": "Welcher Einstieg passt am besten?",
+			"answer": "Zu Ihrem Beitrag über den Lernraum möchte ich eine andere Perspektive ergänzen.",
+			"wrong": [
+				"Wer so schreibt, ist offensichtlich ahnungslos.",
+				"Hiermit bestätige ich die unbelegte Behauptung über alle Nutzer."
+			],
+			"explanation": "Der Einstieg nennt den Bezug und eröffnet eine sachliche Gegenposition."
+		},
+		"cases": [
+			{
+				"prompt": "Deine regelmäßige Nutzung ist …",
+				"options": [
+					"schon eine vollständige Nutzungsstatistik",
+					"eine eigene Erfahrung"
+				],
+				"answer": "eine eigene Erfahrung",
+				"feedback": "Sie widerspricht nicht zwingend einer Aussage über die Gesamtauslastung."
+			},
+			{
+				"prompt": "Die Forderung nach Nutzungszahlen ist …",
+				"options": [
+					"ein sachlicher Klärungsschritt",
+					"ein persönlicher Angriff"
+				],
+				"answer": "ein sachlicher Klärungsschritt",
+				"feedback": "Sie macht die Entscheidungsgrundlage prüfbar."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Schreibe einen kurzen Leserbrief mit Bezug, Argument und Bitte.",
+				"model": "Sehr geehrte Redaktion, zu Ihrem Beitrag möchte ich ergänzen: Für mich bietet der Lernraum einen ruhigen Arbeitsplatz. Meine Erfahrung ersetzt jedoch keine Statistik. Bitte prüfen Sie vor einer Schließung die tatsächliche Nutzung. Mit freundlichen Grüßen",
+				"criteria": [
+					"Ich nenne den Anlass.",
+					"Ich begrenze meine Erfahrung.",
+					"Ich formuliere eine konkrete Bitte."
+				]
+			},
+			"2": {
+				"prompt": "Formuliere denselben Sachverhalt als Beschwerde über eine unangekündigte Schließung. Erläutere die Anpassung.",
+				"model": "Sehr geehrtes Betreuungsteam, am Mittwoch stand ich während der angekündigten Zeit vor verschlossener Tür. Bitte informieren Sie künftig rechtzeitig über Ausfälle. Anders als der Leserbrief fordert diese Beschwerde konkrete organisatorische Abhilfe.",
+				"criteria": [
+					"Ich benenne einen konkreten Missstand.",
+					"Ich fordere angemessene Abhilfe.",
+					"Ich erkläre den Textsortenwechsel."
+				]
+			}
+		},
+		"takeaway": "Richte Anlass, Ton, Form und konkrete Bitte an der jeweiligen Textsorte und ihrem Publikum aus."
+	},
+	{
+		"id": "d10-exzerpt",
+		"stage": "schreiben",
+		"title": "Vom Material zur brauchbaren Notiz",
+		"skill": "Exzerpieren statt wahllos abschreiben.",
+		"bindings": ["3.1", "3.2", "2.4"],
+		"paragraphs": [
+			"Ein Exzerpt ist eine zweckbezogene Auswahl aus einer Quelle. Halte Leitfrage, Kernaussagen und Fundstelle fest. Trenne wörtliche Zitate, sinngemäße Notizen und eigene Gedanken sichtbar voneinander.",
+			"Eine Stoffsammlung kann als Tabelle, Mindmap oder gemeinsames Ideenblatt entstehen. Wähle die Form passend zum Auftrag. Vor dem Schreiben prüfst du, welche Notizen wirklich relevant und belastbar sind."
+		],
+		"material": "Quelle: erfundene Schulnotiz, 10.10., Absatz 2. „Der Lernraum öffnet an zwei Tagen. Eine Erweiterung braucht zusätzliche Betreuung. Die Wände werden im November gestrichen.“ Leitfrage: Unter welcher Bedingung kann das Angebot wachsen?",
+		"materialLabel": "Eigenes, erfundenes Übungsmaterial der ZAM Academy.",
+		"sourceIds": ["lehrplan"],
+		"quiz": {
+			"question": "Welche Information gehört vorrangig ins Exzerpt?",
+			"answer": "Die notwendige zusätzliche Betreuung mit Fundstelle.",
+			"wrong": [
+				"Nur die geplante Wandfarbe ohne Bezug.",
+				"Eine erfundene Zusage für täglich offene Räume."
+			],
+			"explanation": "Der Schreibzweck entscheidet über die Auswahl. Die Quelle macht die Notiz überprüfbar."
+		},
+		"cases": [
+			{
+				"prompt": "„Mehr Betreuung wäre nötig“ ist …",
+				"options": [
+					"eine sinngemäße Notiz",
+					"ein wortgetreues Zitat der Vorlage"
+				],
+				"answer": "eine sinngemäße Notiz",
+				"feedback": "Der Wortlaut wurde geändert."
+			},
+			{
+				"prompt": "Der Novemberanstrich ist hier …",
+				"options": [
+					"die genannte Bedingung der Erweiterung",
+					"für die Leitfrage nachrangig"
+				],
+				"answer": "für die Leitfrage nachrangig",
+				"feedback": "Die Quelle nennt Betreuung als Bedingung."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Erstelle eine Exzerptnotiz zur Leitfrage.",
+				"model": "Leitfrage: Bedingung für Erweiterung. Paraphrase: Zusätzliche Betreuung ist nötig. Quelle: Schulnotiz vom 10.10., Absatz 2. Eigene Frage: Wer kann die Betreuung übernehmen?",
+				"criteria": [
+					"Ich wähle die relevante Aussage.",
+					"Ich notiere die Fundstelle.",
+					"Ich trenne eigene Frage und Quellenaussage."
+				]
+			},
+			"2": {
+				"prompt": "Plane eine Stoffsammlung aus drei Quellen, die sich zur Betreuung widersprechen. Beschreibe dein Vorgehen.",
+				"model": "Ich erstelle eine Tabelle mit Quelle, Datum, Aussage zur Betreuung und Beleg. Widersprüche markiere ich, prüfe Aktualität und Zuständigkeit und formuliere eine offene Klärungsfrage. Ich wähle nicht einfach die bequemste Aussage.",
+				"criteria": [
+					"Ich mache Quellen vergleichbar.",
+					"Ich prüfe Widersprüche.",
+					"Ich halte offene Fragen fest."
+				]
+			}
+		},
+		"takeaway": "Notiere Aussage und Fundstelle und trenne Zitat, Paraphrase und eigene Gedanken."
+	},
+	{
+		"id": "d10-zitieren",
+		"stage": "schreiben",
+		"title": "Zitate sauber einbauen",
+		"skill": "Wortlaut, Paraphrase und eigenen Schluss unterscheiden.",
+		"bindings": ["3.1"],
+		"paragraphs": [
+			"Ein wörtliches Zitat übernimmt den Wortlaut und kennzeichnet ihn durch Anführungszeichen sowie eine Fundstelle. Auslassungen werden kenntlich gemacht, etwa durch eckige Klammern mit Auslassungspunkten. Sie dürfen den Sinn nicht verändern.",
+			"Eine Paraphrase gibt fremde Gedanken in eigenen Worten wieder und braucht ebenfalls einen Quellenhinweis. Ein Zitat beweist nicht jede anschließende Deutung. Erkläre, welcher Teil deines Gedankens dadurch gestützt wird."
+		],
+		"material": "Eigene Übungsquelle, Schulnotiz, Absatz 2: „Eine Erweiterung braucht zusätzliche Betreuung.“ Fehlerhafter Entwurf: Die Schule verspricht die tägliche Öffnung, denn sie schreibt: „Eine Erweiterung“ (Abs. 2).",
+		"materialLabel": "Eigenes, erfundenes Übungsmaterial der ZAM Academy.",
+		"sourceIds": ["lehrplan"],
+		"quiz": {
+			"question": "Was ist am Entwurf problematisch?",
+			"answer": "Die Verkürzung stützt eine Zusage, die im Original nicht steht.",
+			"wrong": [
+				"Jede Quellenangabe macht jede Deutung korrekt.",
+				"Ein Zitat darf niemals in einen eigenen Satz eingebaut werden."
+			],
+			"explanation": "Die notwendige Bedingung wurde ausgeblendet. Auch kurze Zitate müssen den Zusammenhang bewahren."
+		},
+		"cases": [
+			{
+				"prompt": "Ein ausgelassener Teil darf …",
+				"options": [
+					"jede unbequeme Einschränkung unsichtbar machen",
+					"den Sinn nicht verfälschen"
+				],
+				"answer": "den Sinn nicht verfälschen",
+				"feedback": "Die Aussage muss auch nach Kürzung korrekt wiedergegeben sein."
+			},
+			{
+				"prompt": "Eine Paraphrase braucht …",
+				"options": [
+					"einen Quellenhinweis",
+					"grundsätzlich nie einen Quellenhinweis"
+				],
+				"answer": "einen Quellenhinweis",
+				"feedback": "Der Gedanke bleibt fremd, auch wenn die Worte eigenständig sind."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Verbessere den Entwurf mit einem vollständigen Zitat und einer passenden Folgerung.",
+				"model": "Die Notiz erklärt: „Eine Erweiterung braucht zusätzliche Betreuung“ (Abs. 2). Eine tägliche Öffnung ist damit noch nicht zugesagt; zuerst muss die Betreuung geklärt werden.",
+				"criteria": [
+					"Ich übernehme den Wortlaut korrekt.",
+					"Ich nenne die Fundstelle.",
+					"Meine Folgerung bewahrt die Bedingung."
+				]
+			},
+			"2": {
+				"prompt": "Schreibe dieselbe Aussage als Paraphrase und erläutere die Grenze ihres Beweiswerts.",
+				"model": "Laut Schulnotiz setzt ein größeres Angebot mehr Betreuung voraus (Abs. 2). Daraus lässt sich keine vorhandene Personalzusage ableiten. Die Notiz beschreibt eine Voraussetzung, nicht deren Erfüllung.",
+				"criteria": [
+					"Ich formuliere eigenständig.",
+					"Ich kennzeichne die Quelle.",
+					"Ich unterscheide Voraussetzung und Zusage."
+				]
+			}
+		},
+		"takeaway": "Bewahre beim Zitieren den Sinn und kennzeichne auch sinngemäße Übernahmen mit ihrer Quelle."
+	},
+	{
+		"id": "d10-analyse",
+		"stage": "schreiben",
+		"title": "Eine Textanalyse begründen",
+		"skill": "Befund, Beleg und Funktion verknüpfen.",
+		"bindings": ["2.1", "2.3", "3.2"],
+		"paragraphs": [
+			"Eine Analyse beantwortet eine textbezogene Frage. Verbinde eine Beobachtung mit einem kurzen Beleg und einer Erklärung der Funktion im Zusammenhang. Das bloße Aufzählen von Stilmitteln erklärt noch keine Wirkung.",
+			"Metaphern übertragen Bedeutungen, Anaphern wiederholen Satzanfänge, Antithesen stellen Gegensätze gegenüber und Hyperbeln übertreiben. Eine rhetorische Frage erwartet im Kontext keine tatsächliche Antwort. Die Wirkung hängt jeweils vom Text ab."
+		],
+		"material": "Kommentar: „Wir brauchen Ruhe. Wir brauchen Zeit. Soll Lernen ein Wettlauf gegen den Lärm bleiben? Ein offener Lernraum wäre eine Insel im Schulalltag.“",
+		"materialLabel": "Eigenes, erfundenes Übungsmaterial der ZAM Academy.",
+		"sourceIds": ["lehrplan"],
+		"quiz": {
+			"question": "Welche Analyse ist am besten begründet?",
+			"answer": "Die Wiederholung „Wir brauchen“ bündelt gemeinsame Bedürfnisse und verstärkt den Appell.",
+			"wrong": [
+				"Jede Wiederholung beweist, dass der Inhalt wahr ist.",
+				"Die Metapher hat immer exakt dieselbe Wirkung."
+			],
+			"explanation": "Die Aussage verbindet Form, Wortlaut und Funktion im konkreten Kommentar."
+		},
+		"cases": [
+			{
+				"prompt": "„eine Insel im Schulalltag“ ist hier …",
+				"options": ["eine Metapher", "eine überprüfte geografische Angabe"],
+				"answer": "eine Metapher",
+				"feedback": "Das Bild überträgt Abgrenzung und Ruhe auf den Lernraum."
+			},
+			{
+				"prompt": "Die Frage nach dem Wettlauf wirkt hier …",
+				"options": [
+					"als offene Frage nach einer Sportdisziplin",
+					"rhetorisch appellierend"
+				],
+				"answer": "rhetorisch appellierend",
+				"feedback": "Sie legt eine ablehnende Antwort auf den Lärm nahe."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Analysiere die Insel-Metapher in drei verbundenen Sätzen.",
+				"model": "Der Lernraum wird als „Insel im Schulalltag“ bezeichnet. Das Bild hebt ihn als geschützten Bereich aus einem unruhigen Umfeld hervor. Dadurch unterstützt es die Forderung nach einem offenen ruhigen Raum.",
+				"criteria": [
+					"Ich benenne das Mittel.",
+					"Ich zitiere kurz und korrekt.",
+					"Ich erkläre die Funktion im Anliegen."
+				]
+			},
+			"2": {
+				"prompt": "Prüfe kritisch, welche Grenze das Inselbild für die Argumentation hat. Formuliere einen Analyseabsatz mit Einschränkung.",
+				"model": "Die Metapher macht den Ruhebedarf anschaulich, belegt aber weder Auslastung noch Betreuung. Sie unterstützt den Appell emotional; für die organisatorische Entscheidung sind zusätzliche sachliche Angaben nötig.",
+				"criteria": [
+					"Ich beschreibe die Wirkung.",
+					"Ich unterscheide Bild und Beleg.",
+					"Ich nenne fehlende Sachinformationen."
+				]
+			}
+		},
+		"takeaway": "Verbinde Befund, kurzen Textbeleg und Erklärung der Funktion im Zusammenhang."
+	},
+	{
+		"id": "d10-kreativ",
+		"stage": "schreiben",
+		"title": "Perspektiven produktiv verändern",
+		"skill": "Eine Deutung durch eigenes Schreiben prüfen.",
+		"bindings": ["2.2", "3.2", "3.1"],
+		"paragraphs": [
+			"Ein innerer Monolog gestaltet unausgesprochene Gedanken einer Figur. Ein Perspektivenwechsel erzählt aus einer anderen Sicht; ein Gegentext verändert die Aussage. Solche Verfahren können Textverständnis sichtbar machen.",
+			"Deine Gestaltung soll zu den gegebenen Handlungen passen. Ergänzte Gedanken sind deine Deutung, keine versteckten Originalinformationen. Prüfe am Ende, ob du zentrale Details aufgenommen oder unbegründet umgeschrieben hast."
+		],
+		"material": "Lea legt den Schlüssel auf den Tisch. „Du kannst gehen“, sagt sie. Tom bleibt an der Tür stehen. „Und wer schließt dann ab?“ Lea zieht den Schlüssel wieder zu sich. Beide schweigen.",
+		"materialLabel": "Eigenes, erfundenes Übungsmaterial der ZAM Academy.",
+		"sourceIds": ["lehrplan"],
+		"quiz": {
+			"question": "Was muss ein textnaher innerer Monolog beachten?",
+			"answer": "Er soll zu Leas Handlungen passen und Ergänzungen als Gestaltung behandeln.",
+			"wrong": [
+				"Er muss die einzige wahre Autorenabsicht behaupten.",
+				"Er darf den Schlüssel ohne Begründung aus dem Text entfernen."
+			],
+			"explanation": "Textnähe begrenzt die Gestaltung, lässt aber verschiedene begründete Gedanken zu."
+		},
+		"cases": [
+			{
+				"prompt": "Ein Gedanke wie „Ich zögere“ ist …",
+				"options": [
+					"wörtlich im Ausgangstext belegt",
+					"eine mögliche ergänzte Deutung"
+				],
+				"answer": "eine mögliche ergänzte Deutung",
+				"feedback": "Der Text beschreibt Handlungen, keine direkten Gedanken."
+			},
+			{
+				"prompt": "Ein Gegentext verändert gezielt …",
+				"options": [
+					"eine Perspektive oder Aussage",
+					"zwingend jedes Wort ohne Zusammenhang"
+				],
+				"answer": "eine Perspektive oder Aussage",
+				"feedback": "Die Veränderung sollte einen interpretierbaren Zweck haben."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Schreibe Leas kurzen inneren Monolog und erkläre einen Bezug zur Schlüsselbewegung.",
+				"model": "Soll er wirklich gehen? Wenn ich den Schlüssel loslasse, endet unser Gespräch. Ich nehme ihn zurück, obwohl mir die Worte fehlen. Das Zurücknehmen gestaltet meine Lesart von Leas Zögern.",
+				"criteria": [
+					"Ich schreibe aus Leas Innensicht.",
+					"Ich nutze die Schlüsselbewegung.",
+					"Ich kennzeichne die Gedanken als eigene Gestaltung."
+				]
+			},
+			"2": {
+				"prompt": "Schreibe dieselbe Situation aus Toms Sicht. Vergleiche, wie sich Wissensgrenzen und Schuldzuweisung ändern.",
+				"model": "Ich weiß nicht, ob Lea mich fortschickt oder nur eine Entscheidung verlangt. Ich frage nach dem Abschließen, weil ich bleiben möchte. Diese Sicht zeigt Toms mögliche Absicht; sie macht Leas Motiv nicht sicher und verteilt keine eindeutige Schuld.",
+				"criteria": [
+					"Ich gestalte Toms Sicht eigenständig.",
+					"Ich beachte sein begrenztes Wissen.",
+					"Ich vergleiche die Deutungsfolgen."
+				]
+			}
+		},
+		"takeaway": "Gestalte eine mögliche Innensicht textnah und kennzeichne ergänzte Gedanken als eigene Deutung."
+	},
+	{
+		"id": "d10-ueberarbeiten",
+		"stage": "schreiben",
+		"title": "Inhalt vor Komma prüfen",
+		"skill": "Einen Text in gezielten Durchgängen verbessern.",
+		"bindings": ["3.3", "4.3"],
+		"paragraphs": [
+			"Überarbeite in getrennten Durchgängen: zuerst Auftrag, Inhalt und Belege; dann Gliederung und Übergänge; danach Sprache, Grammatik und Rechtschreibung. So werden sachliche Probleme nicht von kleinen Korrekturen verdeckt.",
+			"Nutze eigene Fehlerschwerpunkte und passende Strategien. Nachschlagewerke und digitale Korrekturhilfen helfen, aber sie prüfen nicht zuverlässig die Wahrheit deiner Aussage oder alle Bezüge. Dokumentiere eine Korrektur mit ihrer Begründung."
+		],
+		"material": "Entwurf: „Alle Jugendlichen brauchen täglich den Raum. Das zeigt eine Befragung von 30 AG-Mitgliedern. Deshalb ist die Betreuung schon gesichert.“ Die Quelle nennt nur einen Wunsch von 18 Befragten; zur Betreuung steht dort nichts.",
+		"materialLabel": "Eigenes, erfundenes Übungsmaterial der ZAM Academy.",
+		"sourceIds": ["lehrplan"],
+		"quiz": {
+			"question": "Welche Überarbeitung hat zuerst Vorrang?",
+			"answer": "Die überzogenen Schlussfolgerungen und fehlenden Belege korrigieren.",
+			"wrong": [
+				"Nur ein schöneres Synonym für Raum suchen.",
+				"Die Aussage unverändert durch eine Rechtschreibprüfung schicken."
+			],
+			"explanation": "Die Hauptprobleme betreffen Reichweite und Logik. Orthografische Korrektheit würde sie nicht beheben."
+		},
+		"cases": [
+			{
+				"prompt": "Eine Rechtschreibprüfung kann …",
+				"options": [
+					"bei formalen Fehlern helfen",
+					"die gesicherte Betreuung aus der Umfrage ableiten"
+				],
+				"answer": "bei formalen Fehlern helfen",
+				"feedback": "Ein Werkzeug ersetzt keine Quellen- und Logikprüfung."
+			},
+			{
+				"prompt": "Die Aussage „alle“ ist hier …",
+				"options": ["nur typografisch auffällig", "inhaltlich zu weit"],
+				"answer": "inhaltlich zu weit",
+				"feedback": "Die Stichprobe und ihr Ergebnis tragen keine Aussage über alle Jugendlichen."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Überarbeite den Absatz und erkläre zwei Änderungen.",
+				"model": "18 von 30 befragten AG-Mitgliedern wünschen das Angebot. Daraus folgt ein Bedarf in dieser Gruppe; eine tägliche Öffnung und ihre Betreuung sind damit noch nicht gesichert. Ich begrenze die Bezugsgruppe und entferne die unbelegte Personalzusage.",
+				"criteria": [
+					"Ich korrigiere die Reichweite.",
+					"Ich entferne den Fehlschluss.",
+					"Ich begründe zwei Änderungen."
+				]
+			},
+			"2": {
+				"prompt": "Entwirf einen persönlichen Überarbeitungsplan für einen längeren argumentativen Text. Nutze einen eigenen Fehlerschwerpunkt.",
+				"model": "Zuerst prüfe ich jede Behauptung gegen die Quelle. Dann kontrolliere ich Übergänge und Urteil. Zuletzt suche ich gezielt nach meinen unsicheren Nebensatzkommas und prüfe sie am Satzbau. Ein digitales Werkzeug nutze ich als Hinweisgeber.",
+				"criteria": [
+					"Ich plane mehrere sinnvolle Durchgänge.",
+					"Ich nenne einen persönlichen Schwerpunkt.",
+					"Ich erkläre die Grenze eines Hilfsmittels."
+				]
+			}
+		},
+		"takeaway": "Prüfe zuerst Inhalt und Aufbau, dann Sprache und eigene Fehlerschwerpunkte."
+	},
+	{
+		"id": "d10-register",
+		"stage": "sprache",
+		"title": "Fachsprache und Varietäten bewusst wählen",
+		"skill": "Sprache an Situation und Adressaten anpassen.",
+		"bindings": ["4.1"],
+		"paragraphs": [
+			"Fachsprache ermöglicht genaue Verständigung unter Fachkundigen. Gegenüber Laien müssen Begriffe oft erklärt werden. Alltagssprache, Dialekt und Standardsprache haben unterschiedliche soziale und situative Funktionen; keine Varietät macht ihre Sprecher grundsätzlich weniger wert.",
+			"Angemessenheit hängt von Anlass, Beziehung und Medium ab. Ein präziser Fachbegriff kann nützlich sein; unnötige Fremdwörter können ausschließen. Wähle die Form, die deinen Inhalt verständlich und passend vermittelt."
+		],
+		"material": "Aushangentwurf: „Die Kapazitätsauslastung des Lernraums erfordert ein Reservationsverfahren.“ Nachricht an einen Freund: „Voll hier, reservier lieber.“ Beide betreffen die begrenzten Plätze.",
+		"materialLabel": "Eigenes, erfundenes Übungsmaterial der ZAM Academy.",
+		"sourceIds": ["lehrplan"],
+		"quiz": {
+			"question": "Welche Fassung eignet sich als verständlicher öffentlicher Aushang?",
+			"answer": "Die Plätze sind begrenzt. Bitte reserviere vorher einen Platz.",
+			"wrong": [
+				"Ein Reservationsverfahren determiniert die Kapazitätsauslastung.",
+				"Voll, Leute, ihr wisst schon."
+			],
+			"explanation": "Die Fassung benennt Problem und Handlung klar und ist für ein breites Publikum verständlich."
+		},
+		"cases": [
+			{
+				"prompt": "Dialekt kann …",
+				"options": [
+					"grundsätzlich keine differenzierten Inhalte vermitteln",
+					"Zugehörigkeit und Nähe ausdrücken"
+				],
+				"answer": "Zugehörigkeit und Nähe ausdrücken",
+				"feedback": "Varietäten haben soziale Funktionen und sind nicht mit Denkfähigkeit gleichzusetzen."
+			},
+			{
+				"prompt": "Ein Fachbegriff ist sinnvoll, wenn …",
+				"options": [
+					"er präzisiert und verstanden oder erklärt wird",
+					"er unabhängig vom Publikum möglichst schwer klingt"
+				],
+				"answer": "er präzisiert und verstanden oder erklärt wird",
+				"feedback": "Präzision und Verständlichkeit gehören zusammen."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Überarbeite den Aushang für neue Schülerinnen und Schüler und begründe eine Wortwahl.",
+				"model": "Im Lernraum gibt es nur wenige Plätze. Bitte melde dich vorher an. Ich ersetze Reservationsverfahren durch anmelden, weil die geforderte Handlung so unmittelbar verständlich wird.",
+				"criteria": [
+					"Ich bewahre die Information.",
+					"Ich formuliere eine klare Handlung.",
+					"Ich begründe die Wortwahl am Publikum."
+				]
+			},
+			"2": {
+				"prompt": "Formuliere den Sachverhalt für eine Raumplanungsbesprechung und für einen Freund. Begründe Unterschiede ohne eine Varietät abzuwerten.",
+				"model": "Besprechung: Bei 20 Plätzen brauchen wir ein nachvollziehbares Reservierungsverfahren. Freund: Meld dich vorher an, sonst ist vielleicht alles voll. Die fachliche Besprechung braucht genaue Kapazitäten, die private Nachricht eine schnelle Handlungshilfe.",
+				"criteria": [
+					"Ich passe zwei Fassungen an.",
+					"Ich erkläre ihre Funktionen.",
+					"Ich werte keine Sprechergruppe ab."
+				]
+			}
+		},
+		"takeaway": "Wähle Fachsprache und Varietät nach Situation und Verständlichkeit, ohne Sprecher abzuwerten."
+	},
+	{
+		"id": "d10-wandel",
+		"stage": "sprache",
+		"title": "Sprachwandel und beschönigende Wörter",
+		"skill": "Neue Formen nach ihrer Funktion beurteilen.",
+		"bindings": ["4.1"],
+		"paragraphs": [
+			"Neue Medien bringen neue Wörter und Zeichen in Umlauf. Neologismen benennen neue Erfahrungen oder setzen Akzente; Emoticons und Emojis können Ton oder Beziehung markieren. Ihre Bedeutung ist vom Zusammenhang abhängig.",
+			"Ein Euphemismus stellt etwas milder oder angenehmer dar, als eine direkte Benennung es täte. Frage, was sichtbar und was verdeckt wird. Sprachwandel ist weder automatisch Verfall noch automatisch Verbesserung."
+		],
+		"material": "A: „Der Lernraum wird kapazitätsbedingt optimiert.“ Tatsächlich entfallen alle Freitagszeiten. B: „Dann lernen wir eben im Flur 🙃.“ C: „Wir organisieren einen Lerntreff.“",
+		"materialLabel": "Eigenes, erfundenes Übungsmaterial der ZAM Academy.",
+		"sourceIds": ["lehrplan"],
+		"quiz": {
+			"question": "Was sollte an A sprachkritisch geprüft werden?",
+			"answer": "Ob „optimiert“ den Verlust der Freitagsöffnung beschönigt.",
+			"wrong": [
+				"Ob jedes Fremdwort grundsätzlich falsch ist.",
+				"Ob Optimierung immer mehr Öffnungszeit beweist."
+			],
+			"explanation": "Die positive Bewertung kann eine Einschränkung verdecken. Die konkrete Änderung muss benannt werden."
+		},
+		"cases": [
+			{
+				"prompt": "Das Emoji in B kann …",
+				"options": [
+					"einen ironischen Ton andeuten",
+					"seine Bedeutung in jedem Kontext eindeutig festlegen"
+				],
+				"answer": "einen ironischen Ton andeuten",
+				"feedback": "Der Ton wird markiert, bleibt aber interpretationsabhängig."
+			},
+			{
+				"prompt": "„Lerntreff“ ist …",
+				"options": [
+					"allein wegen seiner Neuheit ein Fehler",
+					"eine verständliche Wortbildung"
+				],
+				"answer": "eine verständliche Wortbildung",
+				"feedback": "Neue Wörter sind nach Funktion und Verständlichkeit zu beurteilen."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Formuliere A transparent um und erläutere, was vorher verdeckt wurde.",
+				"model": "Der Lernraum bleibt freitags geschlossen, weil die Betreuung fehlt. Optimiert stellte die Änderung positiv dar, ohne den konkreten Verlust zu nennen.",
+				"criteria": [
+					"Ich benenne die tatsächliche Änderung.",
+					"Ich erkläre die Wertung des Originals.",
+					"Ich bleibe bei den gegebenen Informationen."
+				]
+			},
+			"2": {
+				"prompt": "Vergleiche B als Chatnachricht und als offizielle Mitteilung ohne gemeinsamen Kontext. Schlage eine eindeutige Fassung vor.",
+				"model": "Im vertrauten Chat kann das Emoji Frust ironisch markieren. In einer offiziellen Mitteilung ist diese Lesart unsicher. Klarer wäre: Die Schließung erschwert ruhiges Lernen; bitte prüfen Sie eine Alternative.",
+				"criteria": [
+					"Ich beachte Beziehung und Medium.",
+					"Ich benenne Mehrdeutigkeit.",
+					"Ich formuliere ein klares Anliegen."
+				]
+			}
+		},
+		"takeaway": "Beurteile neue oder beschönigende Formen nach ihrer Funktion im konkreten Zusammenhang."
+	},
+	{
+		"id": "d10-sprachvergleich",
+		"stage": "sprache",
+		"title": "Sprachen vergleichen, genauer verstehen",
+		"skill": "Strukturen statt bloß Wörter vergleichen.",
+		"bindings": ["4.1"],
+		"paragraphs": [
+			"Beim Sprachvergleich beschreibst du eine konkrete Form und ihre Funktion. Vergleiche Wortstellung, Artikel oder Ausdrucksweisen an ganzen Sätzen. Eine Beobachtung an einem Satz ist keine pauschale Bewertung einer Sprache.",
+			"Im deutschen Aussagesatz steht das finite Verb gewöhnlich an zweiter Satzgliedposition. Nach einem vorangestellten Nebensatz folgt deshalb das Verb des Hauptsatzes. Das englische Beispiel unten hat einen anderen Hauptsatzbau."
+		],
+		"material": "Deutsch: „Weil es regnet, bleiben wir drinnen.“ Englisch: „Because it is raining, we stay inside.“ Der vorangestellte deutsche Nebensatz besetzt die erste Position des Hauptsatzes.",
+		"materialLabel": "Eigenes, erfundenes Übungsmaterial der ZAM Academy.",
+		"sourceIds": ["lehrplan"],
+		"quiz": {
+			"question": "Welche deutsche Fassung entspricht dem gegebenen Satzbau?",
+			"answer": "Weil es regnet, bleiben wir drinnen.",
+			"wrong": [
+				"Weil es regnet, wir bleiben drinnen.",
+				"Weil regnet es, bleiben wir drinnen."
+			],
+			"explanation": "Im weil-Nebensatz steht das finite Verb am Ende; danach folgt im Hauptsatz das finite Verb vor dem Subjekt."
+		},
+		"cases": [
+			{
+				"prompt": "„Weil es regnet“ ist hier …",
+				"options": [
+					"das finite Verb des Hauptsatzes",
+					"ein vorangestellter Nebensatz"
+				],
+				"answer": "ein vorangestellter Nebensatz",
+				"feedback": "Die ganze Einheit besetzt die erste Satzgliedposition des Hauptsatzes."
+			},
+			{
+				"prompt": "Aus diesem Vergleich folgt …",
+				"options": [
+					"eine konkrete Strukturbeobachtung",
+					"eine Rangordnung der Sprachen"
+				],
+				"answer": "eine konkrete Strukturbeobachtung",
+				"feedback": "Verschiedene Strukturen bedeuten keine unterschiedliche Wertigkeit."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Erkläre die Stellung von „bleiben“ und bilde einen eigenen Satz mit vorangestelltem weil-Nebensatz.",
+				"model": "Der ganze Nebensatz steht vor dem Hauptsatz. Daher folgt bleiben vor wir. Eigenes Beispiel: Weil der Raum offen ist, lernen wir dort.",
+				"criteria": [
+					"Ich erkläre die Satzgliedposition.",
+					"Ich bilde einen korrekten Beispielsatz.",
+					"Ich unterscheide Haupt- und Nebensatz."
+				]
+			},
+			"2": {
+				"prompt": "Vergleiche mit einer weiteren Sprache, die du kennst. Notiere eine geprüfte Beobachtung und wie du sie abgesichert hast.",
+				"model": "Strukturhilfe: Ich notiere zwei tatsächlich geprüfte Beispielsätze, markiere die finiten Verben und beschreibe genau einen Unterschied. Eine Grammatik oder sprachkundige Person prüft meine Beobachtung. Ich verallgemeinere nicht aus einem Satz auf die ganze Sprache.",
+				"criteria": [
+					"Ich verwende eigene geprüfte Beispiele.",
+					"Ich beschreibe eine konkrete Struktur.",
+					"Ich dokumentiere eine Absicherung."
+				]
+			}
+		},
+		"takeaway": "Vergleiche geprüfte Satzstrukturen und leite daraus keine Rangordnung der Sprachen ab."
+	},
+	{
+		"id": "d10-kohaerenz",
+		"stage": "sprache",
+		"title": "Zusammenhang sprachlich herstellen",
+		"skill": "Verknüpfungen und Bezüge gezielt überarbeiten.",
+		"bindings": ["4.2", "3.3"],
+		"paragraphs": [
+			"Konjunktionen und Adverbien zeigen Beziehungen wie Grund, Gegensatz oder Folge. Pronomen stellen Bezüge her. Für Textkohärenz müssen sowohl die Beziehung als auch der Bezug inhaltlich passen.",
+			"Ein Verknüpfungswort kann keinen fehlenden Grund ersetzen. Prüfe außerdem Tempus, Satzbau, Kongruenz und die aus Klasse 9 bekannten Strukturen. Bei mehrdeutigen Pronomen ist die Wiederholung eines Namens oft klarer."
+		],
+		"material": "Entwurf: „Mia sprach mit Lea, nachdem sie den Raum geschlossen hatte. Der Raum ist beliebt. Deshalb gibt es bereits genug Betreuung.“ Zur Betreuung liegt keine Information vor.",
+		"materialLabel": "Eigenes, erfundenes Übungsmaterial der ZAM Academy.",
+		"sourceIds": ["lehrplan"],
+		"quiz": {
+			"question": "Welches Problem hat der erste Satz?",
+			"answer": "„Sie“ kann sich auf Mia oder Lea beziehen.",
+			"wrong": [
+				"Er enthält grundsätzlich kein Verb.",
+				"Jedes Pronomen ist immer eindeutig."
+			],
+			"explanation": "Beide Personen kommen als Bezug infrage. Der Satz braucht eine präzisere Benennung."
+		},
+		"cases": [
+			{
+				"prompt": "Für einen Gegensatz passt häufig …",
+				"options": ["jedoch", "deshalb"],
+				"answer": "jedoch",
+				"feedback": "Jedoch markiert einen Gegensatz; deshalb eine Folge."
+			},
+			{
+				"prompt": "Die Beliebtheit belegt …",
+				"options": [
+					"automatisch einen fertigen Dienstplan",
+					"noch keine gesicherte Betreuung"
+				],
+				"answer": "noch keine gesicherte Betreuung",
+				"feedback": "Nachfrage und Personalverfügbarkeit sind verschiedene Sachverhalte."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Überarbeite beide Stellen so, dass Lea geschlossen hat und die Betreuung offenbleibt.",
+				"model": "Nachdem Lea den Raum geschlossen hatte, sprach Mia mit ihr. Der Raum ist beliebt; ob genügend Betreuung vorhanden ist, muss noch geklärt werden.",
+				"criteria": [
+					"Ich mache den Bezug eindeutig.",
+					"Ich bewahre die vorgegebene Handlung.",
+					"Ich entferne den unbelegten Schluss."
+				]
+			},
+			"2": {
+				"prompt": "Verbinde Nachfrage und knappe Betreuung mit einem Gegensatz und leite einen bedingten Vorschlag ab.",
+				"model": "Der Raum ist beliebt, jedoch ist die Betreuung knapp. Eine Erweiterung ist sinnvoll, wenn zusätzliche Kräfte verbindlich eingeplant werden. So werden Bedarf und Durchführbarkeit verbunden, ohne eine Personalzusage zu erfinden.",
+				"criteria": [
+					"Ich nutze einen passenden Gegensatz.",
+					"Ich formuliere eine echte Bedingung.",
+					"Ich prüfe die sachliche Beziehung."
+				]
+			}
+		},
+		"takeaway": "Prüfe sowohl den Bezug eines Pronomens als auch die sachliche Beziehung eines Verknüpfungsworts."
+	},
+	{
+		"id": "d10-rechtschreibung",
+		"stage": "sprache",
+		"title": "Eigene Fehler systematisch abbauen",
+		"skill": "Grammatik und Rechtschreibstrategien verbinden.",
+		"bindings": ["3.3", "4.3", "4.2"],
+		"paragraphs": [
+			"Erstelle aus deinen eigenen Texten eine kurze Fehlerliste mit Korrektur und Strategie. Bei das oder dass hilft die grammatische Funktion: Ein Artikel oder Pronomen kann oft durch dieses, jenes oder welches ersetzt werden; die Konjunktion dass nicht.",
+			"Kommas grenzen unter anderem Nebensätze vom Hauptsatz ab. Prüfe den Satzbau statt nur Sprechpausen. Bei Zweifeln nutzt du ein verlässliches Wörterbuch und liest auch die Regelhinweise. Ein einmal korrigierter Satz beseitigt noch keinen persönlichen Fehlerschwerpunkt."
+		],
+		"material": "Entwurf: „Ich hoffe das der Raum öffnet. Das Angebot das wir nutzen ist hilfreich.“ Gemeint sind ein Wunsch und ein näher bestimmter Gegenstand.",
+		"materialLabel": "Eigenes, erfundenes Übungsmaterial der ZAM Academy.",
+		"sourceIds": ["lehrplan"],
+		"quiz": {
+			"question": "Welche erste Satzfassung ist korrekt?",
+			"answer": "Ich hoffe, dass der Raum öffnet.",
+			"wrong": [
+				"Ich hoffe das, der Raum öffnet.",
+				"Ich hoffe, das der Raum öffnet."
+			],
+			"explanation": "Dass leitet hier den Inhalt des Hoffens als Nebensatz ein; es lässt sich nicht durch dieses ersetzen."
+		},
+		"cases": [
+			{
+				"prompt": "Im zweiten Satz heißt es …",
+				"options": [
+					"Das Angebot dass wir nutzen ist hilfreich.",
+					"Das Angebot, das wir nutzen, ist hilfreich."
+				],
+				"answer": "Das Angebot, das wir nutzen, ist hilfreich.",
+				"feedback": "Das Relativpronomen kann hier durch welches ersetzt werden; der Relativsatz wird mit Kommas abgegrenzt."
+			},
+			{
+				"prompt": "Die Ersatzprobe hilft hier …",
+				"options": [
+					"die Wortfunktion zu prüfen",
+					"jede denkbare Kommaregel zu ersetzen"
+				],
+				"answer": "die Wortfunktion zu prüfen",
+				"feedback": "Wortschreibung und Satzgrenzen sind zusammen, aber jeweils gezielt zu prüfen."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Korrigiere beide Sätze und begründe die Schreibungen von das und dass.",
+				"model": "Ich hoffe, dass der Raum öffnet. Das Angebot, das wir nutzen, ist hilfreich. Dass ist eine Konjunktion; das vor wir ist ein Relativpronomen und durch welches ersetzbar. Der Artikel Das gehört zu Angebot.",
+				"criteria": [
+					"Ich korrigiere Wortschreibung und Kommas.",
+					"Ich unterscheide Artikel, Pronomen und Konjunktion.",
+					"Ich erkläre eine passende Probe."
+				]
+			},
+			"2": {
+				"prompt": "Formuliere zwei neue eigene Sätze zu deinem Fehlerschwerpunkt und entwirf eine spätere Gegenprobe.",
+				"model": "Beispiel: Ich sehe, dass das Licht brennt. Das Heft, das hier liegt, gehört mir. Später prüfe ich neue Sätze ohne Vorlage, markiere die Funktionen und vergleiche mit einem Regelhinweis. Eigene Fehler müssen meine tatsächlichen Texte bestimmen.",
+				"criteria": [
+					"Ich bilde neue Sätze.",
+					"Ich begründe die Korrektur mit einer Strategie.",
+					"Ich plane eine spätere Anwendung."
+				]
+			}
+		},
+		"takeaway": "Nutze grammatische Funktion, passende Proben und eigene neue Beispiele gegen wiederkehrende Fehler."
+	}
+]

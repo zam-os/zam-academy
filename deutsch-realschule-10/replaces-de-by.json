@@ -1,0 +1,45 @@
+{
+  "schema": 1,
+  "status": "proposal-only",
+  "approved": null,
+  "note": "Nur Bestandsabgleich: Die neue Zelle enthält weder replaces noch retired_items. Vier C-Zeilen ohne vorgeschlagenen identischen Nachfolger; die alten Karten bleiben aktiv. Eine spätere Stilllegung oder Ersetzung braucht Thomas ausdrücklich.",
+  "source_repository": "zam-os/zam",
+  "source_commit": "0370098ff1fb50ba130984c4b16612bd509d680e",
+  "sources": [
+    {
+      "path": "tests/fixtures/curriculum/de-by-realschule-10-deutsch-dialektische-eroerterung-textanalyse-stilmittel-kvt.json",
+      "snapshot": "tests/fixtures/de-by-deutsch-10.json",
+      "sha256": "410f617eb200faafda06d38dbc8befb1398c11a3493f7d33d532ca35766eb0f5"
+    }
+  ],
+  "rows": [
+    {
+      "de_by_cell": "de-by:realschule-10-deutsch-dialektische-eroerterung-textanalyse-stilmittel",
+      "de_by_id": "01K4DAE0000000000000000J01",
+      "category": "C",
+      "academy_slug": null,
+      "reason": "Die alte Frage verlangt die erste Seite des klassischen Sanduhrmodells; die neue Gliederungsfrage prüft ein aspektbezogenes Modell. Kein identischer Abruf."
+    },
+    {
+      "de_by_cell": "de-by:realschule-10-deutsch-dialektische-eroerterung-textanalyse-stilmittel",
+      "de_by_id": "01K4DAE0000000000000000J02",
+      "category": "C",
+      "academy_slug": null,
+      "reason": "Die alte mehrteilige Frage umfasst mehrere Ordnungsmodelle und den Schluss. Die neuen Einzelkarten erhalten diesen Gesamtabruf nicht."
+    },
+    {
+      "de_by_cell": "de-by:realschule-10-deutsch-dialektische-eroerterung-textanalyse-stilmittel",
+      "de_by_id": "01K4DAE0000000000000000J03",
+      "category": "C",
+      "academy_slug": null,
+      "reason": "Die alte Karte verlangt die Benennung der rhetorischen Frage; die neue Analysekarte prüft die Verbindung von Befund, Beleg und Funktion. Kein identischer Einzelabruf."
+    },
+    {
+      "de_by_cell": "de-by:realschule-10-deutsch-dialektische-eroerterung-textanalyse-stilmittel",
+      "de_by_id": "01K4DAE0000000000000000J04",
+      "category": "C",
+      "academy_slug": null,
+      "reason": "Sechs Stilmittel samt Beispielen und Wirkungen und das Analyseverfahren werden in der alten Gesamtfrage verbunden. Kein einzelner neuer Nachfolger erhält diesen Gesamtabruf."
+    }
+  ]
+}
