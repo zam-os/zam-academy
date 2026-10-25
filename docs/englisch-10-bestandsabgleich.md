@@ -43,7 +43,7 @@ gekennzeichnete Mansfield-Auszug. Originale Quellen stehen im Paket in
   Anerkennung der South African Sign Language 2023, erste demokratische Wahl
   1994, individuelle Stimmen statt pauschaler Länderurteile.
 - Literatur: eigene vollständige Kurzgeschichte „The Spare Chair“, authentischer
-  erster Absatz von Mansfields „Miss Brill“, verlinkte Tolkien-Illustrationen.
+  Anfang des ersten Absatzes von Mansfields „Miss Brill“, verlinkte Tolkien-Illustrationen.
   Keine kopierten fremden Bilder oder geschützten Tolkien-Textpassagen.
 - Sprachquellen: British Council und Cambridge für Funktionen und Aussprache.
   Aktuelle Hörquellen sind zusätzliche Klickziele; synthetisches Vorlesen
@@ -134,3 +134,43 @@ ermittelt. GitHub-CI und Reviews sind separat am PR nachvollziehbar.
   längerer Schreibtexte/komplexerer Sprachmittlung präzisiert. Eine fachliche
   Abnahme durch eine Lehrkraft und echte Gesprächs-/Aussprachebewertung bleiben
   zusätzliche Leistungen.
+
+
+## Korrekturen nach dem PR-Review
+
+Die Rückmeldungen zu Paar-Nomen, Wortbildung und der Frage nach einer
+Aussprachevorliebe sind grammatisch bereinigt. Die SASL-Lücke fragt nach dem
+Namen der Sprache; die Stuhlfrage bezieht sich ausdrücklich auf die Aussage
+des Erzählers. Level 1 zeigt alle drei später abgefragten Kriterien.
+
+Der Mansfield-Text ist als Anfang des ersten Absatzes gekennzeichnet;
+Kurzantwortfeedback und Beschreibung behaupten keinen vollständigen Absatz.
+Das Himmelszitat übernimmt den Artikel „the“ aus dem Original.
+
+Die Recherchezeile `media-5` und der Text-/Medienbereich sind `partial`:
+Die App bereitet die Quellenarbeit vor, die selbständige Recherche erfolgt
+mit echten Suchdiensten, Enzyklopädien oder Printmedien außerhalb der App.
+Grammatik, Wortschatz sowie allgemeine Aussprache-/Überarbeitungstexte
+zählen nicht mehr als eigene Themenarbeit in LB 5;
+Bereiche, Zeilen, Lektions- und Zellbindungen sind entsprechend abgeglichen.
+Die Energiepräsentation bleibt ein tatsächlicher Themenbeleg.
+
+Die beiden im Review wegen Bot-Schutz/Serverfehlern offenen Quellen wurden
+am 25. Oktober 2026 auch im Browser geöffnet: NZHistory zeigte die Angaben
+zu 1975/1987, das Waitangi Tribunal die erste Unterzeichnung am 6. Februar
+1840 und die weiteren Signaturen. Der NZHistory-Sicherheitsdienst leitete
+ohne Eingabe selbständig zum Artikel weiter.
+
+`fast_check.correct_index` bleibt entsprechend dem ausdrücklichen
+Academy-Vertrag auf 0; die App verteilt die richtige Position über
+`quizOptions`. Aufgabensprache ist Englisch, Sprachmittlung EN–DE enthält
+erwartungsgemäß deutsche Antworten.
+
+
+Nach den Korrekturen sind Typprüfung, alle 189 Pakettests, 30 Registertests,
+Zellinstallation und Altbestandsschutz erneut erfolgreich durchgelaufen;
+das Offline-ZIP wurde neu gebaut und geprüft. Die sieben textlich geänderten
+Lektionen wurden auf beiden Stufen in hell/dunkel gezielt kontrolliert
+(28 Ansichten ohne fehlende Felder oder Aufgaben); die drei korrigierten
+Rückmeldungen und der vollständige Kriterienhinweis wurden im Browser
+angezeigt. Die unabhängige zweite Agentenprüfung meldet keine offenen Befunde.
