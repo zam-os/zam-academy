@@ -1,11 +1,11 @@
 {
   "$schema": "https://zam.app/schemas/v1/kvt-tile.json",
   "tile_id": "zam-academy:bwr-realschule-10",
-  "version": "2026.10.1",
+  "version": "2026.10.2",
   "title": "BwR 10 Realschule (ZAM Academy)",
   "description": "Alle vier Lernbereiche von BwR 10 an der Realschule Bayern, Wahlpflichtfächergruppe II: periodenrichtige Erfolgsermittlung und Rückstellungen, Abschluss und Kennzahlen, Vollkostenrechnung und Teilkostenrechnung. 36 Kernlektionen und zwei optionale Grundlagenauffrischungen.",
   "publisher": "ZAM Academy",
-  "published_at": "2026-10-25T12:00:00Z",
+  "published_at": "2026-10-25T18:00:00Z",
   "sources": [
     {
       "uri": "https://academy.zam-os.org/bwr-realschule-10/",
@@ -21,6 +21,16 @@
       "uri": "https://www.isb.bayern.de/fileadmin/user_upload/Realschule/BwR/Kontenplaene/Kontenplan_LehrplanPLUS.pdf",
       "checked": "2026-10-25",
       "label": "ISB · Kontenplan LehrplanPLUS"
+    }
+  ],
+  "retired_items": [
+    {
+      "id": "01K4WAK0000000000000000J02",
+      "reason": "Mehrteiliger Gesamtabruf: ganzes Kalkulationsschema bis zum Bruttoverkaufspreis und eine Rechnung bis zum Barverkaufspreis. Die neue Zelle teilt das in Selbstkosten (vk-zuschlagskalkulation) und Angebotspreis (vk-angebotspreis); die alte Musterlösung nennt ein „11-stufiges bayerisches Schema“ und schlägt die Umsatzsteuer auf, der Lehrplan verlangt den Listenverkaufspreis netto. Kein Lernstandsübertrag; die Historie bleibt am alten Token."
+    },
+    {
+      "id": "01K4WAK0000000000000000J04",
+      "reason": "Mehrteiliger Abruf aus Kostenauflösung, Stück- und Gesamtdeckungsbeitrag, Gewinnschwelle, Zusatzauftrag und einer Rechnung. Die neue Zelle verteilt diese Teile auf tk-voll-teil, tk-db, tk-gewinnschwelle und tk-zusatzauftrag; eine Verteilung einer Historie auf mehrere Karten ist ausgeschlossen. Kein Lernstandsübertrag; die Historie bleibt am alten Token."
     }
   ],
   "atoms": [
@@ -1798,7 +1808,10 @@
               "Selbstkosten + Gewinnzuschlag"
             ],
             "correct_index": 0
-          }
+          },
+          "replaces": [
+            "01K4WAK0000000000000000J01"
+          ]
         },
         {
           "id": "01M5SWZ156CYWT5DBJ024SSN0A",
@@ -2121,7 +2134,10 @@
               "db = p + kv"
             ],
             "correct_index": 0
-          }
+          },
+          "replaces": [
+            "01K4WAK0000000000000000J03"
+          ]
         },
         {
           "id": "01M5SWZ167YHCVQFM413J61SVA",

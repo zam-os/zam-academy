@@ -150,24 +150,37 @@ describe("public learning contract", () => {
 
 describe("existing ZAM cards", () => {
   const oldItems = legacy.atoms.flatMap((a) => a.practice_items as unknown as Item[]);
-  it("maps every old card once and ships no history change before Thomas approves", () => {
+  it("maps every old card once and declares exactly the approved two replaces and two retirements", () => {
     expect(mapping.rows.map((r) => r.de_by_id)).toEqual(oldItems.map((i) => i.id));
-    expect(mapping.status).toBe("proposal-only");
-    expect(mapping.approved).toBeNull();
-    expect(mapping.rows.filter((r) => r.category === "A").map((r) => r.academy_slug)).toEqual([
+    expect(mapping.status).toBe("approved");
+    expect(mapping.approved).toBe("2026-10-25");
+    expect(mapping.source).toMatch(/Thomas/);
+    expect(cell.version).toBe("2026.10.2");
+    for (const row of mapping.rows) {
+      expect(row.reason.length).toBeGreaterThan(60);
+      const successors = ITEMS.filter((i) => i.replaces?.includes(row.de_by_id));
+      if (row.category === "A") {
+        expect(row.action).toBe("replace");
+        expect(successors.map((i) => i.slug)).toEqual([row.academy_slug]);
+      } else {
+        expect(row.category).toBe("C");
+        expect(row.action).toBe("retire");
+        expect(row.academy_slug).toBeNull();
+        expect(successors).toHaveLength(0);
+        expect(cell.retired_items.some((r) => r.id === row.de_by_id)).toBe(true);
+      }
+    }
+    expect(ITEMS.filter((i) => i.replaces?.length).map((i) => i.slug)).toEqual([
       "bwr10-vk-zuschlagskalkulation-check",
       "bwr10-tk-db-check",
     ]);
-    for (const row of mapping.rows) {
-      expect(row.reason.length).toBeGreaterThan(60);
-      if (row.category === "A") expect(ITEMS.some((i) => i.slug === row.academy_slug)).toBe(true);
-      else expect(row.academy_slug).toBeNull();
-    }
-    expect(ITEMS.some((i) => i.replaces?.length)).toBe(false);
-    expect("retired_items" in cell).toBe(false);
+    expect(cell.retired_items.map((r) => r.id)).toEqual([
+      "01K4WAK0000000000000000J02",
+      "01K4WAK0000000000000000J04",
+    ]);
     expect(mapping.sources[0].tile_id).toBe(legacy.tile_id);
   });
-  it("proposes successors that ask the very same retrieval", () => {
+  it("names successors that ask the very same retrieval", () => {
     const succ = (slug: string) => ITEMS.find((i) => i.slug === slug);
     expect(plain(succ("bwr10-tk-db-check")?.concept, succ("bwr10-tk-db-check")?.concept_segments)).toBe(
       "db = p - k_v",
