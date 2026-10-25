@@ -15,6 +15,7 @@ Hands-on training apps that build understanding before [ZAM](https://github.com/
 | Chemie 9 Realschule (LehrplanPLUS Bayern, Zweig I und II/III) | [`chemie-realschule-9/`](chemie-realschule-9/) | https://academy.zam-os.org/chemie-realschule-9/ | `zam-academy:chemie-realschule-9` |
 | Chemie 10 Realschule (LehrplanPLUS Bayern, Zweig I und II/III) | [`chemie-realschule-10/`](chemie-realschule-10/) | https://academy.zam-os.org/chemie-realschule-10/ | `zam-academy:chemie-realschule-10` |
 | Geschichte 9 Realschule (LehrplanPLUS Bayern, gemeinsamer Lernpfad) | [`geschichte-realschule-9/`](geschichte-realschule-9/) | https://academy.zam-os.org/geschichte-realschule-9/ | `zam-academy:geschichte-realschule-9` |
+| Geschichte 10 Realschule (LehrplanPLUS Bayern, gemeinsamer Lernpfad) | [`geschichte-realschule-10/`](geschichte-realschule-10/) | https://academy.zam-os.org/geschichte-realschule-10/ | `zam-academy:geschichte-realschule-10` |
 | Geographie 9 Realschule (LehrplanPLUS Bayern, gemeinsamer Lernpfad) | [`geographie-realschule-9/`](geographie-realschule-9/) | https://academy.zam-os.org/geographie-realschule-9/ | `zam-academy:geographie-realschule-9` |
 | Biologie 10 Realschule (LehrplanPLUS Bayern, gemeinsamer Lernpfad) | [`biologie-realschule-10/`](biologie-realschule-10/) | https://academy.zam-os.org/biologie-realschule-10/ | `zam-academy:biologie-realschule-10` |
 | Physik 10 Realschule (LehrplanPLUS Bayern, Zweig I und II/III) | [`physik-realschule-10/`](physik-realschule-10/) | https://academy.zam-os.org/physik-realschule-10/ | `zam-academy:physik-realschule-10` |
@@ -67,6 +68,7 @@ cd uml                 # or: cd physik-realschule-9 (dev server on :5181), cd sq
 # Informatik 10: cd informatik-realschule-10 (dev server on :5200)
 # Chemie 10: cd chemie-realschule-10 (dev server on :5201)
 # Deutsch 10: cd deutsch-realschule-10 (dev server on :5202)
+# Geschichte 10: cd geschichte-realschule-10 (dev server on :5203)
 npm ci
 npm run dev      # http://localhost:5180/uml/
 npm test
