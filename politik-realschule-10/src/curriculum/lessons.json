@@ -1,0 +1,1890 @@
+[
+	{
+		"id": "p10-verfassung",
+		"stage": "methoden",
+		"title": "Eine Verfassung befragen",
+		"skill": "Artikel finden und begründet auf einen Fall beziehen",
+		"bindings": ["1", "3"],
+		"paragraphs": [
+			"Eine Verfassung begrenzt staatliche Macht und ordnet politische Entscheidungen. Für eine Frage suchst du zuerst das passende Thema im Inhaltsverzeichnis, liest den ganzen Artikel und unterscheidest Regel, Voraussetzung und Grenze. Das Grundgesetz gilt für Deutschland; Bayern hat zusätzlich eine eigene Verfassung.",
+			"Ein Artikel ist noch kein fertiges Fallurteil. Formuliere die Rechtsfrage, nenne die Fundstelle und erkläre, welche Angaben fehlen. Art. 17 GG schützt das Recht, sich schriftlich mit Bitten oder Beschwerden an zuständige Stellen und Volksvertretungen zu wenden. Eine Petition erzwingt keine Zustimmung zur eigenen Forderung."
+		],
+		"material": "Ein Jugendtreff soll schließen. Die Gruppe möchte dem Gemeinderat schriftlich ihre Gründe nennen und um eine andere Entscheidung bitten. Eine Person sagt: Eine Petition garantiert uns den Jugendtreff.",
+		"materialLabel": "Eigenes, fiktives Unterrichtsmaterial · keine Nachricht und kein amtlicher Fall",
+		"sourceIds": ["gg", "bayverf"],
+		"quiz": {
+			"extraWrong": "Ein Recht auf einen bestimmten Wahlausgang.",
+			"explanation": "Die Stelle muss das Anliegen im rechtlichen Rahmen behandeln; das Petitionsrecht garantiert nicht das gewünschte Ergebnis."
+		},
+		"cases": [
+			{
+				"prompt": "Die Gruppe schreibt dem Rat. Was ist ein passender Ausgangspunkt?",
+				"answer": "Art. 17 GG nachlesen.",
+				"options": [
+					"Art. 17 GG nachlesen.",
+					"Die Anzahl der Likes als Rechtsgrundlage nutzen."
+				],
+				"feedback": "Die Verfassung ist eine Rechtsquelle; Zustimmung im Netz schafft keinen Rechtsanspruch."
+			},
+			{
+				"prompt": "Muss der Rat die Schließung zurücknehmen?",
+				"answer": "Das folgt nicht allein aus dem Petitionsrecht.",
+				"options": [
+					"Ja, jede Petition ist verbindlich umzusetzen.",
+					"Das folgt nicht allein aus dem Petitionsrecht."
+				],
+				"feedback": "Das Recht auf Eingabe und die Sachentscheidung sind zwei verschiedene Fragen."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Erkläre der Gruppe in drei Sätzen ihr Recht und seine Grenze. Nenne die Fundstelle.",
+				"model": "Ihr könnt euch nach Art. 17 GG schriftlich an die zuständige Stelle wenden. Beschreibt die Folgen der Schließung und eure Alternative. Die Petition garantiert nicht, dass der Treff erhalten bleibt.",
+				"criteria": [
+					"Art. 17 genannt",
+					"Recht am Fall erklärt",
+					"Ergebnisgarantie zurückgewiesen"
+				]
+			},
+			"2": {
+				"prompt": "Formuliere eine Recherchefrage, die du mit der Bayerischen Verfassung zusätzlich prüfen würdest. Erkläre dein Vorgehen.",
+				"model": "Ich prüfe, wie das Petitionsrecht in Art. 115 der Bayerischen Verfassung gefasst ist. Ich lese den Artikel im amtlichen Text und vergleiche Adressaten und Inhalt mit Art. 17 GG. Über Zuständigkeit und konkrete Finanzierung brauche ich weitere Informationen.",
+				"criteria": [
+					"Konkrete Frage formuliert",
+					"Amtlichen Text eingeplant",
+					"Grenze der Aussage benannt"
+				]
+			}
+		},
+		"extension": "Öffne auf eigenen Klick die amtlichen Texte und notiere eine passende Fundstelle. Die App führt keine Rechtsprüfung deines persönlichen Falls durch."
+	},
+	{
+		"id": "p10-information",
+		"stage": "methoden",
+		"title": "Nachricht oder Meinung?",
+		"skill": "Überprüfbare Aussagen von Wertungen trennen",
+		"bindings": ["1", "2"],
+		"paragraphs": [
+			"Eine Tatsachenbehauptung lässt sich grundsätzlich an Belegen prüfen; sie kann trotzdem falsch sein. Eine Meinung bewertet oder empfiehlt etwas. Nachrichten sollen Ereignisse nachvollziehbar darstellen, Kommentare eine begründete Position sichtbar machen. Auch eine Reportage verbindet beobachtete Szenen mit einer Auswahl und Perspektive.",
+			"Prüfe Wortwahl, Belege und Darstellungsform getrennt. Eine genaue Zahl ist ohne Herkunft kein Beweis. Eine wertende Aussage wird nicht dadurch zur Nachricht, dass sie oft geteilt wird. Für ein eigenes Urteil brauchst du nachvollziehbare Informationen und offengelegte Maßstäbe."
+		],
+		"material": "A: Der Rat stimmte gestern mit 12 zu 8 für den Umbau. B: Diese Entscheidung ist kurzsichtig. C: Das Sitzungsprotokoll wird nächste Woche veröffentlicht. Alle Sätze sind erfunden.",
+		"materialLabel": "Eigenes, fiktives Unterrichtsmaterial · keine Nachricht und kein amtlicher Fall",
+		"sourceIds": ["lehrplan"],
+		"quiz": {
+			"extraWrong": "Das Protokoll wird nächste Woche veröffentlicht.",
+			"explanation": "Kurzsichtig bewertet die Entscheidung. Auch überprüfbare Behauptungen brauchen erst einen Beleg."
+		},
+		"cases": [
+			{
+				"prompt": "Eine Zahl steht ohne Quelle im Beitrag.",
+				"answer": "Ihre Herkunft muss geprüft werden.",
+				"options": [
+					"Die Zahl beweist ihre eigene Richtigkeit.",
+					"Ihre Herkunft muss geprüft werden."
+				],
+				"feedback": "Präzise Formulierungen ersetzen keine überprüfbare Herkunft."
+			},
+			{
+				"prompt": "Ein Kommentar nennt Belege und Gegengründe.",
+				"answer": "Er bleibt eine begründete Meinungsäußerung.",
+				"options": [
+					"Er bleibt eine begründete Meinungsäußerung.",
+					"Er wird dadurch zu einer reinen Nachricht."
+				],
+				"feedback": "Argumente machen eine Wertung nachvollziehbar, ändern aber nicht ihre Darstellungsform."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Ordne A und B zu und beschreibe, wie du A prüfen würdest.",
+				"model": "A ist eine überprüfbare Tatsachenbehauptung, B eine Wertung. Für A würde ich Abstimmungsergebnis, Datum und Protokoll vergleichen. Ohne diese Belege ist A noch nicht bestätigt.",
+				"criteria": [
+					"A und B unterschieden",
+					"Beleg vorgeschlagen",
+					"Behauptung nicht als bewiesen ausgegeben"
+				]
+			},
+			"2": {
+				"prompt": "Schreibe einen kurzen Kommentar zum Umbau mit ausdrücklich erfundenem Beispiel und einem Gegenargument.",
+				"model": "Im erfundenen Beispiel unterstütze ich den Umbau, weil er den Zugang erleichtern könnte. Dagegen sprechen mögliche Kosten. Vor einem endgültigen Urteil brauche ich den Finanzierungsplan; meine Bewertung hängt von diesem Maßstab ab.",
+				"criteria": [
+					"Eigene Wertung erkennbar",
+					"Gegenargument aufgenommen",
+					"Offene Information benannt"
+				]
+			}
+		},
+		"extension": "Vergleiche eine aktuelle Nachricht und einen Kommentar zum selben Thema. Halte Datum, Medium, Belege und wertende Wörter fest."
+	},
+	{
+		"id": "p10-quellen",
+		"stage": "methoden",
+		"title": "Quellen und Diagramme prüfen",
+		"skill": "Herkunft, Bezugsgrößen und Aussagegrenzen untersuchen",
+		"bindings": ["1", "2", "4"],
+		"paragraphs": [
+			"Frage bei jeder Quelle nach Urheber, Veröffentlichungsdatum, Erhebungsmethode, Interesse und überprüfbaren Belegen. Ein amtlicher Datensatz eignet sich für eine Messgröße, entscheidet aber nicht allein, was politisch wünschenswert ist. Zwei Beiträge, die dieselbe Meldung abschreiben, sind keine unabhängige Bestätigung.",
+			"Bei Diagrammen prüfst du Einheit, Zeitraum, Achsen und Grundgesamtheit. Eine kleine freiwillige Onlineumfrage erlaubt keine sichere Aussage über alle Jugendlichen. Ein Zusammenhang zweier Reihen beweist keine Ursache. Ein übersichtliches Schaubild muss diese Grenzen behalten."
+		],
+		"material": "Eine Schulgruppe fragt freiwillig 20 Teilnehmende im Jugendtreff. 14 wünschen längere Öffnungszeiten. Ein Posting behauptet: 70 Prozent aller Jugendlichen in Bayern verlangen das.",
+		"materialLabel": "Eigenes, fiktives Unterrichtsmaterial · keine Nachricht und kein amtlicher Fall",
+		"sourceIds": ["destatis", "lehrplan"],
+		"quiz": {
+			"extraWrong": "Jede Gemeinde muss die Öffnung gesetzlich verlängern.",
+			"explanation": "Der Anteil gilt für die kleine befragte Gruppe. Die Auswahl ist keine repräsentative Stichprobe für Bayern."
+		},
+		"cases": [
+			{
+				"prompt": "Zwei Seiten übernehmen denselben Agenturtext.",
+				"answer": "Die gemeinsame Herkunft muss sichtbar bleiben.",
+				"options": [
+					"Die gemeinsame Herkunft muss sichtbar bleiben.",
+					"Zwei URLs sind immer zwei unabhängige Belege."
+				],
+				"feedback": "Unabhängigkeit hängt von der Herkunft und Erhebung ab, nicht von der Zahl der Links."
+			},
+			{
+				"prompt": "Ein Balkendiagramm beginnt bei 65 statt bei 0 Prozent.",
+				"answer": "Die verkürzte Achse kann Unterschiede optisch verstärken.",
+				"options": [
+					"Die Skala beeinflusst die Wahrnehmung nicht.",
+					"Die verkürzte Achse kann Unterschiede optisch verstärken."
+				],
+				"feedback": "Bei Balken verändert eine abgeschnittene Achse den Eindruck der Größenverhältnisse."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Korrigiere die Überschrift und nenne zwei Grenzen der Befragung.",
+				"model": "14 von 20 freiwillig Befragten im Jugendtreff wünschen längere Öffnung. Die kleine, selbst ausgewählte Gruppe repräsentiert nicht ganz Bayern; außerdem fehlen Angaben zu Frageformulierung und Erhebungsdatum.",
+				"criteria": [
+					"Grundgesamtheit korrekt",
+					"Auswahlproblem benannt",
+					"Weitere fehlende Angabe genannt"
+				]
+			},
+			"2": {
+				"prompt": "Plane ein transparentes Schaubild und eine bessere Untersuchung zur Frage.",
+				"model": "Ich zeichne 14 Ja- und 6 andere Antworten mit voller Achse und nenne die 20 freiwillig Befragten. Für eine breitere Aussage würde ich verschiedene Orte und Altersgruppen systematisch einbeziehen, die Frage offenlegen und die verbleibenden Auswahlgrenzen dokumentieren.",
+				"criteria": [
+					"Daten nachvollziehbar visualisiert",
+					"Verbesserte Auswahl geplant",
+					"Grenzen beibehalten"
+				]
+			}
+		},
+		"extension": "Recherchiere zwei aktuelle Quellen zu einer politischen Frage und präsentiere ein eigenes Schaubild mit Datum, Einheit und Herkunft."
+	},
+	{
+		"id": "p10-satire",
+		"stage": "methoden",
+		"title": "Eine politische Karikatur deuten",
+		"skill": "Darstellung, Deutung und Urteil auseinanderhalten",
+		"bindings": ["1", "2"],
+		"paragraphs": [
+			"Eine Karikatur überzeichnet, um eine politische Aussage zuzuspitzen. Beschreibe zuerst sichtbar Dargestelltes: Personen, Symbole, Größen, Beschriftungen und Gegensätze. Erkläre dann, wofür sie stehen könnten. Eine Deutung braucht Hinweise im Bild und Wissen über den Zusammenhang.",
+			"Untersuche mögliche Absicht, angesprochenes Publikum und Wirkung. Satire darf provozieren; die Darstellung ist trotzdem kein Tatsachenbeleg. Unterschiedliche plausible Deutungen sind möglich. Beurteile, welche Perspektive fehlt und ob die Zuspitzung ein Problem erhellt oder verzerrt."
+		],
+		"material": "Eigene erfundene Karikatur: Eine große Person spricht am Pult. Darüber steht: Hier kommt jede Stimme zu Wort. Neben zwei klein gezeichneten Zuhörenden zeigt eine Uhr bereits 0:00. Die Zeichnung steht unter diesem Text.",
+		"materialLabel": "Eigenes, fiktives Unterrichtsmaterial · keine Nachricht und kein amtlicher Fall",
+		"sourceIds": ["lehrplan", "gg"],
+		"quiz": {
+			"extraWrong": "Alle Parlamente verbieten Kritik.",
+			"explanation": "Die sichtbare Uhr kann beschrieben werden. Die politische Bedeutung muss anschließend begründet erschlossen werden."
+		},
+		"cases": [
+			{
+				"prompt": "Die Überschrift verspricht Beteiligung, die Uhr verhindert Redezeit.",
+				"answer": "Der Widerspruch kann Scheinbeteiligung kritisieren.",
+				"options": [
+					"Der Widerspruch beweist eine konkrete Straftat.",
+					"Der Widerspruch kann Scheinbeteiligung kritisieren."
+				],
+				"feedback": "Die Zuspitzung trägt eine mögliche Deutung, liefert aber keinen Beweis für einen realen Fall."
+			},
+			{
+				"prompt": "Eine Mitschülerin deutet das Bild anders.",
+				"answer": "Nach Bildhinweisen und Kontext fragen.",
+				"options": [
+					"Nach Bildhinweisen und Kontext fragen.",
+					"Ihre Deutung ohne Begründung verbieten."
+				],
+				"feedback": "Plausibilität entsteht durch nachvollziehbare Bildbezüge und Kontext."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Beschreibe zwei Elemente und begründe eine Deutung der Zeichnung.",
+				"model": "Die Person am Pult ist groß, die anderen klein. Die Uhr steht trotz Beteiligungsversprechen auf null. Das kann kritisieren, dass eine Leitung Beteiligung verspricht, aber anderen keine wirksame Redezeit lässt.",
+				"criteria": [
+					"Zwei Bildmerkmale beschrieben",
+					"Deutung mit Widerspruch belegt",
+					"Deutung nicht als Tatsache ausgegeben"
+				]
+			},
+			"2": {
+				"prompt": "Beurteile die Wirkung auf eine Sitzungsleitung und auf Zuhörende. Benenne eine fehlende Perspektive.",
+				"model": "Zuhörende könnten sich in ihrem Eindruck von Ausschluss bestätigt sehen. Eine Leitung könnte die Zeichnung als unfair empfinden, wenn Redezeit vorher verteilt wurde. Die Vorgeschichte fehlt; die Karikatur stellt keine ausgewogene Sitzungsdokumentation dar.",
+				"criteria": [
+					"Zwei Adressaten betrachtet",
+					"Wirkung begründet",
+					"Fehlenden Kontext benannt"
+				]
+			}
+		},
+		"extension": "Untersuche eine aktuelle Karikatur oder einen Satirebeitrag mit Quelle, Datum und politischem Kontext. Vergleiche eure Deutungen im Unterricht."
+	},
+	{
+		"id": "p10-debatte",
+		"stage": "methoden",
+		"title": "Fair streiten und Position beziehen",
+		"skill": "Argumente, Gegengründe und Rollen unterscheiden",
+		"bindings": ["1", "2", "4"],
+		"paragraphs": [
+			"Demokratischer Streit macht unterschiedliche Interessen sichtbar. Ein Argument verbindet Forderung, Begründung und Beleg. Gib den stärksten Gegengrund fair wieder, bevor du antwortest. Ein Kompromiss kann verschiedene Ziele teilweise erfüllen; Grundrechte stehen nicht zur freien Abstimmung.",
+			"Im Rollenspiel vertrittst du eine zugewiesene Perspektive, ohne sie als eigene Haltung ausgeben zu müssen. Vermeide Klischees über Gruppen. Ein Leserbrief nennt Anlass, Position und begründete Forderung. Mündliche Rede, respektvolles Zuhören und tatsächliche Rückmeldungen müssen zusätzlich gemeinsam geübt werden."
+		],
+		"material": "Fiktive Gemeinde: 100 Budgetpunkte stehen für Bus, Grünflächen und Jugendkultur bereit. Drei Ratsgruppen gewichten die Ziele verschieden. In der Werkstatt kannst du Angebote verändern. Punkte sind keine realen Euro oder Prognosen.",
+		"materialLabel": "Eigenes, fiktives Unterrichtsmaterial · keine Nachricht und kein amtlicher Fall",
+		"sourceIds": ["lehrplan", "gg"],
+		"quiz": {
+			"extraWrong": "Ein Angriff auf die Person statt auf ihre Aussage.",
+			"explanation": "Eine begründete Position lässt sich prüfen und mit Gegengründen abwägen. Lautstärke oder persönliche Angriffe ersetzen das nicht."
+		},
+		"cases": [
+			{
+				"prompt": "Eine Rolle fordert mehr Busse wegen schlechter Erreichbarkeit.",
+				"answer": "Das Interesse sachlich prüfen.",
+				"options": [
+					"Das Interesse sachlich prüfen.",
+					"Der Rolle eine persönliche Eigenschaft unterstellen."
+				],
+				"feedback": "Die Rolle beschreibt ein Anliegen; persönliche Abwertung hilft nicht beim Vergleich von Lösungen."
+			},
+			{
+				"prompt": "Zwei Gruppen ändern ihr Angebot.",
+				"answer": "Ein Kompromiss kann trotzdem begründet sein.",
+				"options": [
+					"Jede Änderung ist automatisch Verrat.",
+					"Ein Kompromiss kann trotzdem begründet sein."
+				],
+				"feedback": "Demokratische Aushandlung erlaubt begründete Zugeständnisse und erfordert transparente Grenzen."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Formuliere einen kurzen Leserbrief zum fiktiven Budget: Anlass, Forderung und ein Gegengrund.",
+				"model": "Zum geplanten Budget wünsche ich mehr Mittel für Busse, damit Jugendliche den Treff erreichen. Kulturangebote bleiben wichtig; deshalb schlage ich vor, einen Mindestbetrag dafür zu sichern und den Fahrbedarf vorab zu erheben.",
+				"criteria": [
+					"Anlass und Forderung erkennbar",
+					"Sachliche Begründung gegeben",
+					"Gegengrund fair behandelt"
+				]
+			},
+			"2": {
+				"prompt": "Erprobe zwei mehrheitsfähige Angebote in der Werkstatt und begründe, welches du vorziehst. Trenne Rolle und eigenes Urteil.",
+				"model": "Ein mögliches Angebot ist Bus 40, Grün 40, Kultur 20; ein anderes Bus 40, Grün 20, Kultur 40. Beide binden unterschiedliche Gruppen ein. Ich würde erst den Bedarf prüfen; meine eigene Gewichtung kann von einer gespielten Ratsrolle abweichen.",
+				"criteria": [
+					"Zwei Angebote verglichen",
+					"Gewichtung begründet",
+					"Rolle und eigenes Urteil getrennt"
+				]
+			}
+		},
+		"extension": "Führt die Debatte mit verteilten Rollen, Redezeit und Rückmeldung durch. Protokolliert einen Kompromiss und eine begründete Gegenposition. Ein Klick in der Werkstatt ersetzt kein Gruppenspiel."
+	},
+	{
+		"id": "p10-erkundung",
+		"stage": "methoden",
+		"title": "Politik vor Ort erkunden",
+		"skill": "Eine echte politische Frage recherchieren und präsentieren",
+		"bindings": ["1", "2", "3"],
+		"paragraphs": [
+			"Wähle eine konkrete Frage, zum Beispiel zur sicheren Erreichbarkeit eines Jugendangebots. Kläre, welche Stelle entscheiden kann. Eine Schule, eine Gemeinde und ein Landtag haben verschiedene Aufgaben. Bereite eine Erkundung mit Zuständigkeitsfrage, Materialsuche und respektvollen Fragen vor.",
+			"Dokumentiere Datum, Quelle, Beobachtung und eigene Deutung getrennt. Vergleiche mindestens eine zuständige oder amtliche Quelle mit einer weiteren journalistischen Perspektive. Lege im Ergebnis offen, was ungeklärt bleibt. Eine tatsächliche Sitzung, ein Gespräch oder eine geeignete digitale Erkundung ergänzt die Vorbereitung."
+		],
+		"material": "Projektgerüst: Meine Frage – zuständige Stelle – zwei datierte Quellen – eine Beobachtung – verschiedene Interessen – begründetes Urteil – offene Frage – Präsentationsplan. Wähle selbst ein reales aktuelles Thema. Es sind keine persönlichen Kontaktdaten nötig.",
+		"materialLabel": "Eigenes, fiktives Unterrichtsmaterial · keine Nachricht und kein amtlicher Fall",
+		"sourceIds": ["lehrplan", "bayverf"],
+		"quiz": {
+			"extraWrong": "Eine Liste privater Adressen der Beteiligten.",
+			"explanation": "Die Frage steuert Materialsuche und Beobachtung. Private Daten sind für dieses Lernprojekt nicht nötig."
+		},
+		"cases": [
+			{
+				"prompt": "Ein Artikel zitiert nur eine Initiative.",
+				"answer": "Weitere Perspektiven und Zuständigkeit prüfen.",
+				"options": [
+					"Daraus den Willen aller Einwohner ableiten.",
+					"Weitere Perspektiven und Zuständigkeit prüfen."
+				],
+				"feedback": "Eine Initiative ist eine relevante Perspektive, aber nicht automatisch repräsentativ."
+			},
+			{
+				"prompt": "Die Simulation ist abgeschlossen.",
+				"answer": "Eine reale Erkundung bleibt zusätzliche Praxis.",
+				"options": [
+					"Eine reale Erkundung bleibt zusätzliche Praxis.",
+					"Damit ist ein echter Ratsbesuch nachgewiesen."
+				],
+				"feedback": "Ein Modell dokumentiert keine Teilnahme an einer tatsächlichen politischen Sitzung."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Entwirf einen Rechercheplan für ein selbst gewähltes aktuelles Thema. Verwende das Projektgerüst.",
+				"model": "Als Strukturhilfe: Ich frage nach der Erreichbarkeit eines Jugendangebots, prüfe zunächst die Zuständigkeit und suche ein datiertes Ratsdokument sowie einen unabhängigen Bericht. Ich notiere Belege und offene Fragen und plane eine kurze Präsentation. Das Thema und die wirklichen Quellen muss ich selbst ergänzen.",
+				"criteria": [
+					"Eigene konkrete Frage gewählt",
+					"Zwei datierte Quellen eingeplant",
+					"Präsentation und offene Fragen vorgesehen"
+				]
+			},
+			"2": {
+				"prompt": "Führe die Recherche und Erkundung außerhalb der App durch. Schreibe anschließend eine belegte Auswertung mit einem Gegenargument.",
+				"model": "Eine mögliche Struktur lautet: Fragestellung und Zuständigkeit, Beobachtung mit Datum, Vergleich zweier tatsächlicher Quellen, unterschiedliche Interessen, eigenes Urteil und Grenze. Konkrete Ergebnisse können erst aus meiner wirklichen Recherche stammen.",
+				"criteria": [
+					"Reale Durchführung dokumentiert",
+					"Echte Belege und Gegenargument genannt",
+					"Grenze des Urteils offengelegt"
+				]
+			}
+		},
+		"extension": "Führe das Projekt tatsächlich durch und bespreche die Präsentation. Die App prüft weder Quellen noch Durchführung und sendet keine Nachricht an politische Stellen."
+	},
+	{
+		"id": "p10-mitwirken",
+		"stage": "mitwirkung",
+		"title": "Vom Anliegen zur Mitwirkung",
+		"skill": "Parteien, Initiativen und Petitionen vergleichen",
+		"bindings": ["1", "2"],
+		"paragraphs": [
+			"Parteien bündeln politische Vorstellungen und wirken an der politischen Willensbildung mit. Sie treten zu Wahlen an und brauchen innere demokratische Verfahren. Eine Bürgerinitiative konzentriert sich meist auf ein konkretes Anliegen. Verbände vertreten bestimmte Interessen; ihre Stellungnahmen sind keine staatlichen Beschlüsse.",
+			"Wähle den Weg passend zum Ziel: eine Petition für eine begründete Bitte, eine Initiative für gemeinsames Engagement oder Parteiarbeit für breitere politische Programme. Soziale Netzwerke können Aufmerksamkeit schaffen. Reichweite ersetzt aber weder ein rechtliches Verfahren noch eine verbindliche Entscheidung."
+		],
+		"material": "Eine Gruppe will eine sichere Querung vor dem Jugendtreff. Sie vergleicht eine öffentliche Informationsveranstaltung, eine Petition an die Gemeinde und die Mitarbeit in einer Partei. Jede Möglichkeit hat Aufwand, Reichweite und Grenzen.",
+		"materialLabel": "Eigenes, fiktives Unterrichtsmaterial · keine Nachricht und kein amtlicher Fall",
+		"sourceIds": ["gg"],
+		"quiz": {
+			"extraWrong": "Eine Partei ersetzt alle Vereine und Initiativen.",
+			"explanation": "Parteien wirken an der politischen Willensbildung mit. Eine Initiative kann ein einzelnes Thema verfolgen, ohne selbst staatlich entscheiden zu können."
+		},
+		"cases": [
+			{
+				"prompt": "Die Gruppe sammelt Unterschriften.",
+				"answer": "Sie kann damit ihr Anliegen sichtbar machen.",
+				"options": [
+					"Sie kann damit ihr Anliegen sichtbar machen.",
+					"Die Straße wird dadurch automatisch umgebaut."
+				],
+				"feedback": "Politischer Druck und ein verbindlicher Verwaltungs- oder Ratsbeschluss sind verschieden."
+			},
+			{
+				"prompt": "Eine Partei diskutiert intern ein Programm.",
+				"answer": "Innere Demokratie ist eine verbindliche Anforderung.",
+				"options": [
+					"Parteiführung muss keine demokratischen Regeln beachten.",
+					"Innere Demokratie ist eine verbindliche Anforderung."
+				],
+				"feedback": "Art. 21 GG verlangt eine innere Ordnung nach demokratischen Grundsätzen."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Wähle zwei Mitwirkungswege für die Querung und erkläre je eine Chance und Grenze.",
+				"model": "Eine Initiative bündelt Betroffene und kann Bedarf dokumentieren, entscheidet aber nicht über den Umbau. Eine Petition bringt das Anliegen zur zuständigen Stelle, garantiert jedoch keine Zustimmung. Beide Wege können sich ergänzen.",
+				"criteria": [
+					"Zwei Wege genannt",
+					"Je eine Chance erklärt",
+					"Je eine Grenze erklärt"
+				]
+			},
+			"2": {
+				"prompt": "Entwirf einen Ablauf vom Anliegen bis zur überprüfbaren Rückmeldung. Begründe die Reihenfolge.",
+				"model": "Zuerst kläre ich Zuständigkeit und dokumentiere das Problem ohne personenbezogene Daten. Dann bespreche ich mit Betroffenen eine Alternative und reiche eine sachliche Petition ein. Anschließend prüfe ich Antwort und öffentliches Protokoll; eine ausbleibende Zustimmung ist kein Beweis fehlender Demokratie.",
+				"criteria": [
+					"Zuständigkeit vor Handlung geprüft",
+					"Mitwirkung sachlich geplant",
+					"Ergebnis und Grenzen überprüfbar gemacht"
+				]
+			}
+		},
+		"extension": ""
+	},
+	{
+		"id": "p10-medien",
+		"stage": "mitwirkung",
+		"title": "Medien und öffentliche Kontrolle",
+		"skill": "Informationsfunktion und Auswahlmacht einschätzen",
+		"bindings": ["1", "2"],
+		"paragraphs": [
+			"Freie Medien informieren, ermöglichen öffentliche Diskussion und kontrollieren Macht durch Recherche und Kritik. Sie entscheiden zugleich, welche Themen sichtbar werden und welche Perspektiven zu Wort kommen. Deshalb lohnt sich der Vergleich von Quellen und Darstellungsformen.",
+			"Pressefreiheit ist durch Art. 5 GG geschützt. Sie befreit nicht von sorgfältiger Prüfung. Werbung, redaktionelle Inhalte und bezahlte Kooperationen müssen unterscheidbar sein. Empfehlungsalgorithmen können Aufmerksamkeit verstärken; viele Aufrufe zeigen keine Verlässlichkeit und keine Mehrheitsmeinung."
+		],
+		"material": "Zwei erfundene Beiträge zum Jugendbudget: Ein Lokalbericht nennt Beschluss, Gegenstimmen und Dokumentenlink. Ein gesponsertes Video zeigt nur eine Forderung und wirbt für ein Produkt. Beide können Reichweite haben.",
+		"materialLabel": "Eigenes, fiktives Unterrichtsmaterial · keine Nachricht und kein amtlicher Fall",
+		"sourceIds": ["gg", "lehrplan"],
+		"quiz": {
+			"extraWrong": "Sie garantieren, dass jeder Beitrag richtig ist.",
+			"explanation": "Öffentliche Kontrolle braucht unabhängige Recherche und zugängliche Belege; die politische Entscheidung bleibt bei den zuständigen Organen."
+		},
+		"cases": [
+			{
+				"prompt": "Das Video hat sehr viele Aufrufe.",
+				"answer": "Belege und Kennzeichnung trotzdem prüfen.",
+				"options": [
+					"Die Aufrufe beweisen die Sachbehauptung.",
+					"Belege und Kennzeichnung trotzdem prüfen."
+				],
+				"feedback": "Verbreitung macht eine Behauptung nicht wahr."
+			},
+			{
+				"prompt": "Ein Bericht nennt Gegenargumente und Quellen.",
+				"answer": "Das erleichtert die eigene Urteilsbildung.",
+				"options": [
+					"Das erleichtert die eigene Urteilsbildung.",
+					"Damit darf kein anderes Medium verglichen werden."
+				],
+				"feedback": "Transparenz hilft, ersetzt aber keinen kritischen Vergleich."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Vergleiche die Beiträge nach Zweck, Belegen und Perspektiven.",
+				"model": "Der Lokalbericht will über den Beschluss informieren und nennt überprüfbare Dokumente sowie Gegenstimmen. Das gesponserte Video verbindet eine Forderung mit Werbung. Für mein Urteil prüfe ich beide, trenne Werbung ab und suche die fehlenden Perspektiven.",
+				"criteria": [
+					"Zwecke unterschieden",
+					"Belege bewertet",
+					"Fehlende Perspektive benannt"
+				]
+			},
+			"2": {
+				"prompt": "Entwirf drei Regeln für einen transparenten politischen Schulbeitrag und begründe sie.",
+				"model": "Ich kennzeichne Kommentar und Werbung, damit Absichten erkennbar bleiben. Ich verlinke datierte Belege, damit Aussagen prüfbar sind. Ich gebe wesentliche Gegenargumente fair wieder, damit Leser selbst urteilen können.",
+				"criteria": [
+					"Drei Regeln formuliert",
+					"Demokratische Funktion erklärt",
+					"Eigenständiges Urteil ermöglicht"
+				]
+			}
+		},
+		"extension": "Untersuche aktuelle Print-, Rundfunk- und Onlinebeiträge zum gleichen Thema und vergleiche ihre Auswahl."
+	},
+	{
+		"id": "p10-volksentscheid",
+		"stage": "mitwirkung",
+		"title": "Direkte Demokratie in Bayern",
+		"skill": "Volksbegehren und Volksentscheid unterscheiden",
+		"bindings": ["1", "2", "3"],
+		"paragraphs": [
+			"Bayerische Volksgesetzgebung ergänzt die repräsentative Demokratie. Für den Zulassungsantrag sind 25.000 Unterschriften Stimmberechtigter nötig. Beim zugelassenen Volksbegehren müssen sich innerhalb von zwei Wochen mindestens zehn Prozent der Stimmberechtigten amtlich eintragen. Ein begründeter Gesetzentwurf gehört dazu.",
+			"Ein erfolgreiches Volksbegehren ist noch kein beschlossenes Gesetz: Der Landtag behandelt den Entwurf. Nimmt er ihn nicht an, folgt ein Volksentscheid. Für verfassungsändernde Vorhaben gelten besondere Regeln. Themen zum Staatshaushalt sind ausgeschlossen. Ein kommunales Bürgerbegehren ist ein anderes Verfahren."
+		],
+		"material": "Ein fiktiver Verein behauptet: Unsere Onlinepetition hat 30.000 Klicks, also ist das Landesgesetz beschlossen. Prüfe Antrag, Volksbegehren, Behandlung im Landtag und möglichen Volksentscheid getrennt.",
+		"materialLabel": "Eigenes, fiktives Unterrichtsmaterial · keine Nachricht und kein amtlicher Fall",
+		"sourceIds": ["volksbegehren", "bayverf"],
+		"quiz": {
+			"extraWrong": "Ein Onlineklick ersetzt jede amtliche Eintragung.",
+			"explanation": "Erfolg im Volksbegehren eröffnet den weiteren gesetzlichen Weg. Er ist noch nicht die Annahme des Gesetzes."
+		},
+		"cases": [
+			{
+				"prompt": "30.000 Klicks stehen unter einer Onlinepetition.",
+				"answer": "Das ist kein Nachweis eines erfolgreichen Volksbegehrens.",
+				"options": [
+					"Das ist kein Nachweis eines erfolgreichen Volksbegehrens.",
+					"Damit sind alle gesetzlichen Hürden erfüllt."
+				],
+				"feedback": "Das gesetzliche Verfahren verlangt unter anderem Stimmberechtigung, Zulassung und amtliche Eintragung."
+			},
+			{
+				"prompt": "Der Landtag übernimmt einen einfachen Gesetzentwurf aus dem Volksbegehren.",
+				"answer": "Ein zusätzlicher Volksentscheid ist dann nicht nötig.",
+				"options": [
+					"Ein Volksentscheid ist bei jedem einfachen Gesetz zwingend.",
+					"Ein zusätzlicher Volksentscheid ist dann nicht nötig."
+				],
+				"feedback": "Die Übernahme eines einfachen Gesetzentwurfs unterscheidet sich von besonderen Regeln zu Verfassungsänderungen."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Erkläre dem Verein den Fehler und ordne die Verfahrensschritte.",
+				"model": "Klicks sind keine amtlichen Eintragungen. Auf den unterstützten Zulassungsantrag folgen das zugelassene Volksbegehren und die Behandlung im Landtag. Wird der Entwurf dort nicht angenommen, folgt der Volksentscheid. Ein einfacher Onlineaufruf beschließt kein Gesetz.",
+				"criteria": [
+					"Onlineaktion vom Verfahren getrennt",
+					"Schritte geordnet",
+					"Landtagsbehandlung berücksichtigt"
+				]
+			},
+			"2": {
+				"prompt": "Wäge eine Chance und zwei Grenzen der Volksgesetzgebung ab.",
+				"model": "Sie kann ein Anliegen gegen geringe Aufmerksamkeit im Parlament sichtbar und entscheidbar machen. Beteiligung braucht jedoch Zeit, Information und Mobilisierung; Minderheitenrechte bleiben verbindlich. Komplexe Fragen werden zudem auf eine Abstimmungsentscheidung verdichtet.",
+				"criteria": [
+					"Chance erläutert",
+					"Zwei Grenzen begründet",
+					"Grundrechtsbindung berücksichtigt"
+				]
+			}
+		},
+		"extension": "Prüfe die aktuellen amtlichen Verfahrensangaben vor einer echten Beteiligung. Verfassungsänderungen und kommunale Verfahren werden hier nicht vollständig abgebildet."
+	},
+	{
+		"id": "p10-verbaende",
+		"stage": "mitwirkung",
+		"title": "Interessen organisieren",
+		"skill": "Pluralismus, Gewerkschaften und Lobbyismus beurteilen",
+		"bindings": ["1", "2", "4"],
+		"paragraphs": [
+			"Gewerkschaften vertreten Arbeitnehmerinteressen, Wirtschaftsverbände Interessen ihrer Mitglieder. Auch Umwelt-, Sozial- und andere Verbände bringen Wissen und Forderungen ein. Organisierte Interessen können Sachkenntnis vermitteln und politischen Druck erzeugen.",
+			"Ein Verband spricht nicht für alle Menschen. Zugang, Geld, Zeit und Expertise sind ungleich verteilt. Prüfe Transparenz, betroffene Gruppen und die Qualität der Argumente. Interessenvertretung ist ein normaler Teil pluralistischer Demokratie; problematisch werden etwa verdeckte Abhängigkeiten oder unzulässige Vorteile."
+		],
+		"material": "Im erfundenen Anhörungsverfahren zur Ladenöffnung sprechen eine Gewerkschaft, ein Handelsverband und eine Jugendvertretung. Die Gruppen betonen Freizeit, Umsatz und Zugang. Es fehlen bisher Stimmen kleiner Betriebe und betreuender Angehöriger.",
+		"materialLabel": "Eigenes, fiktives Unterrichtsmaterial · keine Nachricht und kein amtlicher Fall",
+		"sourceIds": ["gg", "lehrplan"],
+		"quiz": {
+			"extraWrong": "Alle Gruppen verfügen automatisch über gleich viel Einfluss.",
+			"explanation": "Meinungsvielfalt ist demokratisch wichtig. Einflusschancen müssen dennoch auf Ungleichheiten und Transparenz geprüft werden."
+		},
+		"cases": [
+			{
+				"prompt": "Ein Verband bringt eine fachliche Studie ein.",
+				"answer": "Methode und Finanzierungsinteressen mitprüfen.",
+				"options": [
+					"Das Verbandslogo beweist die Neutralität.",
+					"Methode und Finanzierungsinteressen mitprüfen."
+				],
+				"feedback": "Sachkenntnis und Interesse können zusammen auftreten; offengelegte Methoden helfen bei der Prüfung."
+			},
+			{
+				"prompt": "Eine kleine Gruppe hat keine hauptamtliche Vertretung.",
+				"answer": "Ihr Anliegen kann trotzdem relevant sein.",
+				"options": [
+					"Ihr Anliegen kann trotzdem relevant sein.",
+					"Ihr Anliegen darf deshalb nicht angehört werden."
+				],
+				"feedback": "Demokratische Relevanz hängt nicht nur von Ressourcen oder professionellem Auftreten ab."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Ordne den drei Gruppen plausible Interessen zu und benenne eine fehlende Perspektive.",
+				"model": "Die Gewerkschaft kann planbare Freizeit betonen, der Handelsverband Umsatzchancen und die Jugendvertretung Zugang. Kleine Betriebe könnten unter Personalknappheit leiden. Diese Zuordnung ist ein Ausgangspunkt und ersetzt keine tatsächliche Stellungnahme.",
+				"criteria": [
+					"Drei Interessen zugeordnet",
+					"Fehlende Perspektive genannt",
+					"Keine Gruppe auf Klischee reduziert"
+				]
+			},
+			"2": {
+				"prompt": "Entwirf ein faireres Anhörungsverfahren und begründe zwei Regeln.",
+				"model": "Ich veröffentliche Stellungnahmen und Finanzierungshinweise und lade auch weniger ressourcenstarke Betroffene ein. Gleiche Redezeit und zugängliche Unterlagen erleichtern Mitwirkung. Ein abschließender Bericht erklärt, welche Argumente berücksichtigt wurden und warum.",
+				"criteria": [
+					"Zwei Verfahrensregeln genannt",
+					"Ungleiche Ressourcen berücksichtigt",
+					"Transparente Abwägung vorgesehen"
+				]
+			}
+		},
+		"extension": ""
+	},
+	{
+		"id": "p10-wahlgrundsaetze",
+		"stage": "mitwirkung",
+		"title": "Was macht eine Wahl demokratisch?",
+		"skill": "Wahlgrundsätze und Funktionen anwenden",
+		"bindings": ["1", "2", "3"],
+		"paragraphs": [
+			"Für Bundestagswahlen nennt Art. 38 GG die Grundsätze allgemein, unmittelbar, frei, gleich und geheim. Sie schützen demokratische Mitwirkung: Wahlberechtigte sollen ohne unzulässigen Ausschluss, ohne zwischengeschaltete Wahlpersonen und ohne Zwang entscheiden können. Stimmen haben grundsätzlich gleiches Gewicht; die Entscheidung muss nicht offengelegt werden.",
+			"Wahlen legitimieren Herrschaft auf Zeit, ermöglichen Kontrolle und können einen friedlichen Machtwechsel bewirken. Ein demokratisches System braucht außerdem faire politische Konkurrenz, Grundrechte und unabhängige Kontrolle. Die bloße Durchführung einer Abstimmung genügt nicht."
+		],
+		"material": "Fiktive Fälle: A verlangt die Veröffentlichung der persönlichen Wahlentscheidung. B droht Beschäftigten bei einer unliebsamen Wahl. C lässt alle wahlberechtigten Personen unter gleichen Regeln abstimmen.",
+		"materialLabel": "Eigenes, fiktives Unterrichtsmaterial · keine Nachricht und kein amtlicher Fall",
+		"sourceIds": ["gg", "wahlrecht"],
+		"quiz": {
+			"extraWrong": "Die Übertragbarkeit der Stimme an Vorgesetzte.",
+			"explanation": "Die Geheimhaltung der individuellen Wahlentscheidung schützt vor Kontrolle und Druck durch andere."
+		},
+		"cases": [
+			{
+				"prompt": "Der Arbeitgeber droht wegen einer Wahlentscheidung.",
+				"answer": "Das verletzt die Freiheit der Wahl.",
+				"options": [
+					"Das verletzt die Freiheit der Wahl.",
+					"Das ist ein zulässiger Ersatz für Argumente."
+				],
+				"feedback": "Wahlentscheidungen dürfen nicht durch Drohungen erzwungen werden."
+			},
+			{
+				"prompt": "Es findet regelmäßig eine Abstimmung ohne freie Opposition statt.",
+				"answer": "Die Abstimmung allein belegt keine Demokratie.",
+				"options": [
+					"Regelmäßige Termine genügen für demokratische Wahlen.",
+					"Die Abstimmung allein belegt keine Demokratie."
+				],
+				"feedback": "Freier Wettbewerb und gesicherte Rechte gehören zu einer demokratischen Wahlumgebung."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Ordne A und B je einen besonders betroffenen Wahlgrundsatz zu und erkläre die Funktion.",
+				"model": "A gefährdet das Wahlgeheimnis, weil persönliche Entscheidungen offengelegt werden sollen. B gefährdet die freie Wahl durch Drohung. Beide Regeln schützen selbständige Entscheidungen ohne Kontrolle durch andere.",
+				"criteria": [
+					"Zwei Fälle zugeordnet",
+					"Je eine Begründung gegeben",
+					"Schutzfunktion erklärt"
+				]
+			},
+			"2": {
+				"prompt": "Begründe, warum Wahlen notwendig sind, aber Demokratie nicht allein garantieren.",
+				"model": "Wahlen geben Regierungsgewalt eine zeitlich begrenzte Legitimation und ermöglichen Wechsel. Ohne freie Medien, Opposition und einklagbare Rechte könnten Mächtige die Auswahl jedoch manipulieren. Deshalb müssen Wahlverfahren und politische Rahmenbedingungen gemeinsam geprüft werden.",
+				"criteria": [
+					"Zwei Wahlfunktionen erläutert",
+					"Weitere Voraussetzung genannt",
+					"Zusammenhang begründet"
+				]
+			}
+		},
+		"extension": ""
+	},
+	{
+		"id": "p10-bundestagswahl",
+		"stage": "mitwirkung",
+		"title": "Erststimme und Zweitstimme",
+		"skill": "Die Aufgaben beider Stimmen korrekt erklären",
+		"bindings": ["1", "2", "3"],
+		"paragraphs": [
+			"Bei der Bundestagswahl wählst du mit der Erststimme eine Person im Wahlkreis und mit der Zweitstimme die Landesliste einer Partei. Die Zweitstimme ist für die parteibezogene Sitzverteilung maßgeblich. Der Bundestag hat nach dem reformierten Wahlrecht grundsätzlich 630 Sitze.",
+			"Seit der Wahl 2025 reicht bei Parteibewerbern der erste Platz im Wahlkreis allein nicht für einen Sitz: Es braucht Zweitstimmendeckung. Für erfolgreiche Einzelbewerber gelten besondere Regeln. Auch die Fünfprozenthürde kennt geltende Ausnahmen. Die App erklärt die Stimmenfunktionen, berechnet aber keine Sitzverteilung oder Ausnahmen."
+		],
+		"material": "Erfundenes Lernbeispiel: Person A erhält in einem Wahlkreis die meisten Erststimmen. Ihrer Partei steht im betreffenden Land nur eine begrenzte Zahl von Sitzen zu. Eine Schülerin sagt: A zieht deshalb immer sicher ein.",
+		"materialLabel": "Eigenes, fiktives Unterrichtsmaterial · keine Nachricht und kein amtlicher Fall",
+		"sourceIds": ["wahlrecht"],
+		"quiz": {
+			"extraWrong": "Eine dritte Stimme für die Bundesregierung.",
+			"explanation": "Die Zweitstimmen bestimmen grundsätzlich die Sitzanteile. Ein Wahlkreiserfolg einer Parteiperson benötigt zusätzlich Zweitstimmendeckung."
+		},
+		"cases": [
+			{
+				"prompt": "A ist Parteibewerberin und im Wahlkreis vorn.",
+				"answer": "Ob sie einen Sitz erhält, hängt auch von Zweitstimmendeckung ab.",
+				"options": [
+					"Der erste Platz garantiert ihr immer einen zusätzlichen Sitz.",
+					"Ob sie einen Sitz erhält, hängt auch von Zweitstimmendeckung ab."
+				],
+				"feedback": "Die Reform bindet Parteiwahlkreissitze an das nach Zweitstimmen zustehende Sitzkontingent."
+			},
+			{
+				"prompt": "Die Erst- und Zweitstimme gehen an verschiedene Parteien.",
+				"answer": "Die beiden Entscheidungen sind getrennt möglich.",
+				"options": [
+					"Die beiden Entscheidungen sind getrennt möglich.",
+					"Beide Stimmen werden dadurch automatisch ungültig."
+				],
+				"feedback": "Die Stimmen haben verschiedene Funktionen und müssen nicht derselben Partei zugutekommen."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Erkläre einer jüngeren Person beide Stimmen und korrigiere die Aussage über A.",
+				"model": "Die Erststimme wählt eine Person im Wahlkreis, die Zweitstimme eine Landesliste und bestimmt maßgeblich die Sitzverteilung. A hat als Parteibewerberin mit dem ersten Platz noch keine Sitzgarantie, weil zusätzlich Zweitstimmendeckung nötig ist.",
+				"criteria": [
+					"Beide Stimmen korrekt",
+					"Bedeutung der Zweitstimme erklärt",
+					"Sitzgarantie korrigiert"
+				]
+			},
+			"2": {
+				"prompt": "Wäge den Zielkonflikt zwischen fester Parlamentsgröße und Wahlkreisvertretung ab. Formuliere eine offene Prüfungsfrage.",
+				"model": "Eine feste Größe kann Planbarkeit fördern. Zweitstimmendeckung kann aber dazu führen, dass nicht jeder Wahlkreiserste einzieht. Wie gut die regionale Vertretung gelingt, muss man an tatsächlichen Ergebnissen und den geltenden Ausnahmen prüfen.",
+				"criteria": [
+					"Zwei Ziele benannt",
+					"Folge der Regel beschrieben",
+					"Offene Frage sachlich formuliert"
+				]
+			}
+		},
+		"extension": "Prüfe vor einer echten Wahl die aktuellen amtlichen Regeln einschließlich Sperrklausel und Ausnahmen. Die Bundeswahlleiterin erläutert die Wahl 2025; hier gibt es keine Wahlempfehlung."
+	},
+	{
+		"id": "p10-eu",
+		"stage": "mitwirkung",
+		"title": "Wie EU-Regeln den Alltag verändern",
+		"skill": "Supranationale Entscheidungen am Beispiel prüfen",
+		"bindings": ["1", "2", "3"],
+		"paragraphs": [
+			"In übertragenen Zuständigkeitsbereichen können gemeinsame EU-Regeln über nationale Grenzen hinweg verbindlich wirken. Beim üblichen Gesetzgebungsverfahren wirken Europäisches Parlament und Rat der EU zusammen, meist auf Vorschlag der Kommission. Der Rat besteht aus zuständigen Regierungsmitgliedern der Mitgliedstaaten; er ist nicht der Europarat.",
+			"Ein konkretes Beispiel ist die Roamingverordnung 2022/612: Für vorübergehende Reisen innerhalb der EU gilt grundsätzlich Nutzung zum Inlandstarif mit Bedingungen, etwa angemessener Nutzung. Das bedeutet nicht unbegrenzte weltweite Gratisverbindungen. Die Regelung gilt bis Juni 2032. Kosten, Nutzen und Grenzen lassen sich aus dem Rechtstext prüfen."
+		],
+		"material": "Fiktive Reiseplanung: Eine Klasse fährt von Bayern nach Frankreich. Ein Beitrag behauptet: Seit der EU-Regel sind alle Handyanrufe weltweit kostenlos. Prüfe räumlichen Geltungsbereich, Tarif und Bedingungen.",
+		"materialLabel": "Eigenes, fiktives Unterrichtsmaterial · keine Nachricht und kein amtlicher Fall",
+		"sourceIds": ["roaming", "eu-institutionen"],
+		"quiz": {
+			"extraWrong": "Abschaffung aller Mobilfunktarife in Deutschland.",
+			"explanation": "Die Verordnung regelt Roaming unter festgelegten Bedingungen. Sie macht Mobilfunk weder weltweit noch generell kostenlos."
+		},
+		"cases": [
+			{
+				"prompt": "Die Gruppe reist in ein Land außerhalb des Geltungsbereichs.",
+				"answer": "Tarif und Regelungsbereich gesondert prüfen.",
+				"options": [
+					"Tarif und Regelungsbereich gesondert prüfen.",
+					"EU-Regeln gelten automatisch weltweit."
+				],
+				"feedback": "Geografische Geltung und vertragliche Bedingungen müssen für die konkrete Reise geprüft werden."
+			},
+			{
+				"prompt": "Jemand verwechselt Rat der EU und Europarat.",
+				"answer": "Es handelt sich um unterschiedliche Einrichtungen.",
+				"options": [
+					"Beide Namen bezeichnen dasselbe EU-Organ.",
+					"Es handelt sich um unterschiedliche Einrichtungen."
+				],
+				"feedback": "Der Europarat ist eine eigene internationale Organisation, kein Organ der EU."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Korrigiere die Behauptung und erkläre eine Auswirkung auf die Reise.",
+				"model": "In Frankreich kann grundsätzlich der Inlandstarif unter den Roamingbedingungen genutzt werden. Das erleichtert die Kostenplanung. Weltweite kostenlose Nutzung folgt daraus nicht; Vertrag, angemessene Nutzung und Sonderfälle bleiben zu prüfen.",
+				"criteria": [
+					"Geltungsbereich genannt",
+					"Alltagsfolge erklärt",
+					"Grenze der Regel benannt"
+				]
+			},
+			"2": {
+				"prompt": "Wähle selbst eine aktuelle EU-Regel, suche eine amtliche Quelle und bewerte zwei Folgen für Betroffene.",
+				"model": "Als Strukturhilfe prüfe ich erst Datum und Geltungsbereich einer tatsächlich gewählten Regel. Dann unterscheide ich Vorteile für Nutzende und mögliche Kosten der Umsetzung. Mein Urteil muss auf der wirklichen Quelle beruhen; das Roamingbeispiel liefert nur das Vorgehen.",
+				"criteria": [
+					"Eigene aktuelle Regel recherchiert",
+					"Amtliche Quelle dokumentiert",
+					"Zwei Folgen mit Grenzen bewertet"
+				]
+			}
+		},
+		"extension": "Recherchiere eine aktuelle europapolitische Entscheidung und präsentiere ihren Bezug zu deinem Alltag. Die App prüft keine aktuellen Nachrichten automatisch."
+	},
+	{
+		"id": "p10-globalisierung",
+		"stage": "mitwirkung",
+		"title": "Kaufentscheidungen und globale Folgen",
+		"skill": "Lieferketten und Handlungsmöglichkeiten abwägen",
+		"bindings": ["1", "2", "4"],
+		"paragraphs": [
+			"Viele Produkte verbinden Rohstoffgewinnung, Verarbeitung, Transport und Verkauf in verschiedenen Ländern. Ein günstiger Preis sagt allein wenig über Löhne, Arbeitszeit, Umweltfolgen oder Verteilung des Erlöses aus. Prüfe Daten und Herkunft, bevor du Produktionsbedingungen bewertest.",
+			"Einzelne können Informationen verlangen, Produkte länger nutzen, reparieren oder gemeinsame Regeln unterstützen. Ihre Möglichkeiten hängen von Einkommen, Angebot und verlässlicher Kennzeichnung ab. Unternehmen und Politik tragen eigene Verantwortung; schwierige Lieferketten werden nicht allein durch ein moralisches Kaufurteil gelöst."
+		],
+		"material": "Fiktives T-Shirt: Verkaufspreis 20 Euro. Rohstoff 2, Fertigung 3, Transport 1, Vertrieb und weitere Kosten 14 Euro. Diese erfundene Aufteilung sagt weder den individuellen Arbeitslohn noch die tatsächlichen Bedingungen aus.",
+		"materialLabel": "Eigenes, fiktives Unterrichtsmaterial · keine Nachricht und kein amtlicher Fall",
+		"sourceIds": ["lehrplan"],
+		"quiz": {
+			"extraWrong": "Dass der gesamte Preis als Lohn ausgezahlt wird.",
+			"explanation": "Preisbestandteile und Arbeitsbedingungen sind verschiedene Informationen. Für eine Bewertung braucht es belegte Angaben zur Lieferkette."
+		},
+		"cases": [
+			{
+				"prompt": "Die Fertigungskosten betragen drei Euro.",
+				"answer": "Das ist nicht automatisch der Lohn einer Person.",
+				"options": [
+					"Eine Näherin erhält exakt drei Euro pro Shirt.",
+					"Das ist nicht automatisch der Lohn einer Person."
+				],
+				"feedback": "Fertigungskosten enthalten verschiedene Kosten und lassen keinen direkten individuellen Lohnschluss zu."
+			},
+			{
+				"prompt": "Ein Jugendlicher kann kein teureres Produkt kaufen.",
+				"answer": "Andere Handlungsmöglichkeiten und Rahmenbedingungen prüfen.",
+				"options": [
+					"Andere Handlungsmöglichkeiten und Rahmenbedingungen prüfen.",
+					"Sein Einkommen macht ihn persönlich für alle Missstände verantwortlich."
+				],
+				"feedback": "Politische Urteile sollen strukturelle Verantwortung und ungleiche Möglichkeiten berücksichtigen."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Nenne zwei fehlende Informationen zur Lieferkette und zwei mögliche Handlungen.",
+				"model": "Es fehlen belegte Angaben zu Lohn und Arbeitszeit sowie zur Umweltbelastung. Ich könnte verlässliche Auskünfte suchen und das Shirt länger nutzen. Zusätzlich lassen sich betriebliche und politische Regeln diskutieren.",
+				"criteria": [
+					"Zwei Informationslücken genannt",
+					"Zwei Handlungen erklärt",
+					"Keine unbelegte Lohnrechnung verwendet"
+				]
+			},
+			"2": {
+				"prompt": "Recherchiere eine aktuelle Lieferkettenfrage und vergleiche einen individuellen mit einem politischen Ansatz.",
+				"model": "Eine eigene Auswertung nennt zwei datierte Quellen zu einem realen Produkt oder Betrieb. Sie vergleicht etwa Reparatur mit kontrollierbaren Mindeststandards und berücksichtigt Kosten, Durchsetzung und Einkommen. Ohne die tatsächliche Recherche bleibt dies eine Strukturhilfe.",
+				"criteria": [
+					"Reale aktuelle Frage belegt",
+					"Zwei Handlungsebenen verglichen",
+					"Grenzen und Verteilung berücksichtigt"
+				]
+			}
+		},
+		"extension": "Ergänze aktuelle Unternehmens- und unabhängige Fachquellen. Die fiktive Kalkulation beschreibt kein Land und keinen realen Betrieb."
+	},
+	{
+		"id": "p10-grundrechte",
+		"stage": "strukturen",
+		"title": "Grundrechte schützen Menschen",
+		"skill": "Staatliche Bindung und gleiche Würde erkennen",
+		"bindings": ["1", "3"],
+		"paragraphs": [
+			"Das Grundgesetz schützt die Würde jedes Menschen und bindet staatliche Gewalt an Grundrechte. Viele Rechte gelten für alle Menschen, einige ausdrücklich für Deutsche. Der Gleichheitssatz verlangt eine sachlich begründbare Behandlung; er bedeutet nicht, dass jede unterschiedliche Situation identisch geregelt werden muss.",
+			"Grundrechte schützen besonders auch Einzelne und Minderheiten gegenüber Mehrheiten. Private Konflikte sind nicht automatisch derselbe Fall wie staatliche Eingriffe; Grundrechte wirken aber auch auf die Auslegung des Privatrechts ein. Für konkrete Streitfälle kommt es auf die beteiligten Rechte und Umstände an."
+		],
+		"material": "Fiktiver Fall: Ein Gemeinderat will nur den Mitgliedern einer missliebigen, rechtmäßigen Gruppe den Zugang zu einem allgemeinen öffentlichen Angebot verweigern. Als einzige Begründung nennt er deren unbequeme Kritik.",
+		"materialLabel": "Eigenes, fiktives Unterrichtsmaterial · keine Nachricht und kein amtlicher Fall",
+		"sourceIds": ["gg"],
+		"quiz": {
+			"extraWrong": "Nur für Mitglieder der Regierungsmehrheit.",
+			"explanation": "Menschenwürde hängt weder von Staatsangehörigkeit noch von politischer Zustimmung ab."
+		},
+		"cases": [
+			{
+				"prompt": "Die Mehrheit stimmt einer willkürlichen Benachteiligung zu.",
+				"answer": "Die Mehrheit bleibt an Grundrechte gebunden.",
+				"options": [
+					"Die Mehrheit bleibt an Grundrechte gebunden.",
+					"Die Abstimmung hebt Grundrechte automatisch auf."
+				],
+				"feedback": "Demokratische Verfahren erlauben keine beliebige Verletzung geschützter Rechte."
+			},
+			{
+				"prompt": "Zwei Situationen werden verschieden geregelt.",
+				"answer": "Eine sachliche Begründung ist zu prüfen.",
+				"options": [
+					"Jede Unterscheidung ist automatisch verboten.",
+					"Eine sachliche Begründung ist zu prüfen."
+				],
+				"feedback": "Gleichheit verlangt eine rechtlich tragfähige Unterscheidung, nicht immer identische Behandlung."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Erkläre, warum die Ratsmehrheit allein den Ausschluss nicht rechtfertigt.",
+				"model": "Eine Mehrheit ist an Grundrechte gebunden. Bloß unbequeme Kritik rechtfertigt keine willkürliche Benachteiligung beim allgemeinen öffentlichen Angebot. Zuständigkeit, konkrete Regeln und die betroffenen Rechte müssen geprüft werden.",
+				"criteria": [
+					"Bindung der Mehrheit erklärt",
+					"Willkürproblem am Fall benannt",
+					"Weitere Prüfung offen gelassen"
+				]
+			},
+			"2": {
+				"prompt": "Vergleiche Schutz von Minderheiten und Mehrheitsentscheidung. Entwickle eine faire Verfahrensregel.",
+				"model": "Mehrheiten ermöglichen Entscheidungen, Grundrechte setzen Grenzen. Für das Angebot sollten transparente, sachlich begründete Zugangskriterien gelten und eine Überprüfung möglich sein. Das schützt auch Personen, deren Meinung eine Mehrheit ablehnt.",
+				"criteria": [
+					"Beide Prinzipien erläutert",
+					"Sachliche Regel vorgeschlagen",
+					"Überprüfung berücksichtigt"
+				]
+			}
+		},
+		"extension": ""
+	},
+	{
+		"id": "p10-abwaegung",
+		"stage": "strukturen",
+		"title": "Freiheit und Sicherheit abwägen",
+		"skill": "Eingriffe mit nachvollziehbaren Kriterien prüfen",
+		"bindings": ["1", "3"],
+		"paragraphs": [
+			"In Konflikten können mehrere geschützte Interessen berührt sein. Bei einem staatlichen Eingriff fragst du nach gesetzlicher Grundlage und legitimem Zweck. Danach prüfst du, ob die Maßnahme geeignet ist, ob ein milderes gleich wirksames Mittel besteht und ob Belastung und Zweck angemessen zueinander stehen.",
+			"Dieses Schema der Verhältnismäßigkeit ist keine automatische Freigabe. Schutzbereich, konkrete Schranken und der Sachverhalt bleiben wichtig. Menschenwürde darf nicht gegen Nutzen verrechnet werden. Eine pauschale Berufung auf Sicherheit ersetzt keine Begründung."
+		],
+		"material": "Erfundenes Beispiel: Wegen einzelner Konflikte will eine Gemeinde eine ganze öffentliche Anlage dauerhaft für alle schließen. Alternativen sind begrenzte Zeiten, Aufsicht und gezielte Maßnahmen gegen konkrete Störungen. Es fehlen noch Angaben zu Gefahr und Rechtsgrundlage.",
+		"materialLabel": "Eigenes, fiktives Unterrichtsmaterial · keine Nachricht und kein amtlicher Fall",
+		"sourceIds": ["gg"],
+		"quiz": {
+			"extraWrong": "Ob jede Mehrheit sie gut findet.",
+			"explanation": "Erforderlichkeit vergleicht geeignete Mittel. Ein weniger belastendes gleich wirksames Mittel spricht gegen den stärkeren Eingriff."
+		},
+		"cases": [
+			{
+				"prompt": "Die Gemeinde nennt nur das Wort Sicherheit.",
+				"answer": "Zweck, Gefahr und Rechtsgrundlage konkretisieren.",
+				"options": [
+					"Das Wort rechtfertigt jeden Eingriff.",
+					"Zweck, Gefahr und Rechtsgrundlage konkretisieren."
+				],
+				"feedback": "Rechtsstaatliche Begründung braucht konkrete Voraussetzungen und Grenzen."
+			},
+			{
+				"prompt": "Eine begrenzte Aufsicht hilft ebenso gut wie Totalschließung.",
+				"answer": "Die mildere Alternative ist zu berücksichtigen.",
+				"options": [
+					"Die mildere Alternative ist zu berücksichtigen.",
+					"Eine mildere Alternative ist immer bedeutungslos."
+				],
+				"feedback": "Bei gleicher Wirksamkeit ist die geringere Belastung für die Erforderlichkeit wichtig."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Prüfe am Beispiel die Frage nach einem milderen Mittel. Benenne eine fehlende Information.",
+				"model": "Aufsicht oder begrenzte Zeiten könnten milder sein als eine dauerhafte Schließung. Ob sie gleich wirksam sind, hängt von Art und Ausmaß der Konflikte ab. Außerdem fehlt die gesetzliche Grundlage; daher ist noch kein abschließendes Urteil möglich.",
+				"criteria": [
+					"Alternative konkret genannt",
+					"Wirksamkeit geprüft",
+					"Fehlende Grundlage benannt"
+				]
+			},
+			"2": {
+				"prompt": "Formuliere eine begründete vorläufige Empfehlung und einen starken Gegengrund.",
+				"model": "Ich würde zunächst gezielte Maßnahmen prüfen, weil sie weniger Menschen belasten. Bei einer belegten schweren Gefahr könnte das unzureichend sein. Meine Empfehlung hängt daher von tatsächlicher Gefahrenlage, Rechtsgrundlage und der Wirksamkeit der Alternativen ab.",
+				"criteria": [
+					"Vorläufiges Urteil begründet",
+					"Gegengrund ernst genommen",
+					"Bedingungen offengelegt"
+				]
+			}
+		},
+		"extension": ""
+	},
+	{
+		"id": "p10-rechtsstaat",
+		"stage": "strukturen",
+		"title": "Macht an Recht binden",
+		"skill": "Gewaltenteilung und Rechtsschutz erklären",
+		"bindings": ["1", "3"],
+		"paragraphs": [
+			"Im Rechtsstaat ist staatliches Handeln an Recht und Gesetz gebunden. Gesetzgebung, vollziehende Gewalt und Rechtsprechung haben unterschiedliche Aufgaben. Unabhängige Gerichte können staatliche Entscheidungen kontrollieren. Rechtsschutz soll auch dann möglich sein, wenn eine Behörde ihre Entscheidung für richtig hält.",
+			"Die Gewalten sind im parlamentarischen System nicht vollständig voneinander getrennt: Das Parlament wählt die Regierungsspitze und kontrolliert die Regierung. Solche Verbindungen brauchen Gegenkontrollen. Eine Behörde darf einen Eingriff nicht allein mit Beliebtheit oder persönlichem Wunsch begründen."
+		],
+		"material": "Fiktiv: Eine Behörde lehnt einen Antrag ohne nachvollziehbare Grundlage ab. Auf Nachfrage sagt sie: Eine gerichtliche Kontrolle ist unnötig, denn die Verwaltung kennt sich am besten aus.",
+		"materialLabel": "Eigenes, fiktives Unterrichtsmaterial · keine Nachricht und kein amtlicher Fall",
+		"sourceIds": ["gg"],
+		"quiz": {
+			"extraWrong": "Gerichte müssen einer Regierungspartei gehorchen.",
+			"explanation": "Unabhängige Gerichte ermöglichen Kontrolle staatlicher Macht; Sachkenntnis einer Behörde ersetzt diese Kontrolle nicht."
+		},
+		"cases": [
+			{
+				"prompt": "Eine Regierung möchte einem Gericht das gewünschte Urteil vorgeben.",
+				"answer": "Das widerspricht richterlicher Unabhängigkeit.",
+				"options": [
+					"Das widerspricht richterlicher Unabhängigkeit.",
+					"Das ist die normale Bedeutung von Kontrolle."
+				],
+				"feedback": "Kontrolle der Regierung bedeutet nicht politische Weisungen für konkrete Urteile."
+			},
+			{
+				"prompt": "Das Parlament beschließt ein Gesetz.",
+				"answer": "Es übt Gesetzgebung aus.",
+				"options": [
+					"Es fällt damit ein Gerichtsurteil.",
+					"Es übt Gesetzgebung aus."
+				],
+				"feedback": "Gesetzgebung setzt allgemeine Regeln; Rechtsprechung entscheidet rechtliche Streitfälle."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Erkläre der Behörde, warum Sachkenntnis gerichtliche Kontrolle nicht ersetzt.",
+				"model": "Die Verwaltung muss rechtmäßig handeln und ihre Entscheidung begründen. Fachwissen schließt Fehler oder Machtmissbrauch nicht aus. Unabhängiger Rechtsschutz ermöglicht, eine staatliche Entscheidung im vorgesehenen Verfahren überprüfen zu lassen.",
+				"criteria": [
+					"Gesetzesbindung erklärt",
+					"Kontrollbedarf begründet",
+					"Unabhängigkeit berücksichtigt"
+				]
+			},
+			"2": {
+				"prompt": "Beurteile die Aussage: Eine effiziente Regierung braucht keine Kontrolle. Nutze einen Gegengrund.",
+				"model": "Schnelle Entscheidungen können nützlich sein. Ohne Kontrolle steigt jedoch das Risiko rechtswidriger Eingriffe und dauerhafter Machtkonzentration. Ich würde Verfahren verbessern, aber gerichtlichen Rechtsschutz und parlamentarische Kontrolle erhalten.",
+				"criteria": [
+					"Effizienzargument fair genannt",
+					"Rechtsstaatsrisiko erläutert",
+					"Begründetes Urteil formuliert"
+				]
+			}
+		},
+		"extension": ""
+	},
+	{
+		"id": "p10-sozialstaat",
+		"stage": "strukturen",
+		"title": "Soziale Sicherheit und Chancen",
+		"skill": "Solidarität, Finanzierung und Wandel abwägen",
+		"bindings": ["1", "3", "4"],
+		"paragraphs": [
+			"Das Sozialstaatsprinzip verpflichtet den Staat zu sozialer Verantwortung. Gesetzgebung gestaltet etwa Versicherungen, Unterstützung bei Bedürftigkeit und Zugänge zu Bildung. Nicht jede gewünschte Leistung folgt direkt aus einem Verfassungssatz; konkrete Ansprüche richten sich nach den geltenden Regeln.",
+			"Alterung, Veränderungen der Arbeitswelt und Integration können Finanzierungs- und Verteilungsfragen verschärfen. Vergleiche Bedürfnisse, Beiträge, Steuern und die Wirkung von Maßnahmen. Menschen mit Zuwanderungsgeschichte oder ältere Menschen sind keine einheitlichen Gruppen. Ein Urteil braucht differenzierte Daten und darf niemandes Würde vom Nutzen abhängig machen."
+		],
+		"material": "Erfundenes Szenario: Eine Gemeinde prüft mehr barrierefreie Zugänge, Sprachförderung und Unterstützung für Familien. Geld und Personal sind begrenzt. Ein Beitrag behauptet, man müsse nur eine Bevölkerungsgruppe pauschal ausschließen.",
+		"materialLabel": "Eigenes, fiktives Unterrichtsmaterial · keine Nachricht und kein amtlicher Fall",
+		"sourceIds": ["gg", "lehrplan"],
+		"quiz": {
+			"extraWrong": "Die Bewertung der Menschenwürde nach Einkommen.",
+			"explanation": "Der Verfassungsgrundsatz gibt eine soziale Verpflichtung vor; konkrete Leistungen und Bedingungen regeln Gesetze."
+		},
+		"cases": [
+			{
+				"prompt": "Ein pauschaler Ausschluss wird als einfache Lösung angeboten.",
+				"answer": "Rechte, tatsächliche Daten und differenzierte Folgen prüfen.",
+				"options": [
+					"Die Gruppe unabhängig von Rechten abwerten.",
+					"Rechte, tatsächliche Daten und differenzierte Folgen prüfen."
+				],
+				"feedback": "Demokratische Sozialpolitik muss Rechte und individuelle Unterschiede berücksichtigen."
+			},
+			{
+				"prompt": "Eine Leistung kostet Geld.",
+				"answer": "Nutzen, Finanzierung und Alternativen gemeinsam abwägen.",
+				"options": [
+					"Nutzen, Finanzierung und Alternativen gemeinsam abwägen.",
+					"Kosten allein beweisen, dass sie sinnlos ist."
+				],
+				"feedback": "Politische Bewertung braucht sowohl Wirkungen als auch tragfähige Finanzierung."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Erkläre zwei unterschiedliche Ziele des Szenarios und einen möglichen Konflikt.",
+				"model": "Barrierefreie Zugänge fördern Teilhabe; Sprachförderung kann Bildung und Verständigung erleichtern. Begrenztes Personal und Geld erzeugen Prioritätsfragen. Ein pauschaler Ausschluss ersetzt keine rechtewahrende Abwägung.",
+				"criteria": [
+					"Zwei Ziele erklärt",
+					"Ressourcenkonflikt genannt",
+					"Pauschale Abwertung vermieden"
+				]
+			},
+			"2": {
+				"prompt": "Suche aktuelle amtliche Daten zu einer demografischen Frage. Vergleiche zwei politische Handlungsoptionen.",
+				"model": "Meine eigene Untersuchung dokumentiert Quelle, Datum und Altersgruppen. Sie vergleicht etwa bessere Erwerbsbeteiligung und Änderungen der Finanzierung nach Wirkung und Belastung. Eine konkrete Bewertung erfordert die tatsächlichen Daten; das Muster ist keine Prognose.",
+				"criteria": [
+					"Aktuelle Daten dokumentiert",
+					"Zwei Optionen verglichen",
+					"Verteilungsfolgen und Grenzen genannt"
+				]
+			}
+		},
+		"extension": "Prüfe ein aktuelles Problem mit Daten und unterschiedlichen Betroffenenperspektiven. Das Szenario liefert keine Leistungsberatung oder reale Bevölkerungsprognose."
+	},
+	{
+		"id": "p10-parlamentarismus",
+		"stage": "strukturen",
+		"title": "Regieren mit parlamentarischer Mehrheit",
+		"skill": "Regierung, Opposition und Kontrolle unterscheiden",
+		"bindings": ["1", "3"],
+		"paragraphs": [
+			"Im parlamentarischen Regierungssystem wird die Bundesregierung politisch von einer Mehrheit im Bundestag getragen. Der Bundestag wählt den Bundeskanzler oder die Bundeskanzlerin. Bürgerinnen und Bürger wählen bei der Bundestagswahl keine Regierungsspitze direkt.",
+			"Die Opposition kritisiert und kontrolliert, macht Alternativen sichtbar und wirkt parlamentarisch mit. Auch Abgeordnete der Regierungsmehrheit haben ein freies Mandat. Zusammenarbeit zwischen Regierung und Mehrheit ist Gewaltenverschränkung; unabhängige Gerichte, Öffentlichkeit und Minderheitenrechte begrenzen Macht."
+		],
+		"material": "Fiktiv: Zwei Fraktionen einigen sich auf eine Regierungskoalition. Eine dritte Fraktion stellt kritische Anfragen und einen Gegenentwurf. Ein Posting behauptet, Kritik sei nach einer verlorenen Wahl nicht mehr erlaubt.",
+		"materialLabel": "Eigenes, fiktives Unterrichtsmaterial · keine Nachricht und kein amtlicher Fall",
+		"sourceIds": ["gg"],
+		"quiz": {
+			"extraWrong": "Der Bundesrat allein.",
+			"explanation": "Das Grundgesetz sieht die Wahl durch den Bundestag vor. Bundestagswahl und Kanzlerwahl sind verschiedene Entscheidungen."
+		},
+		"cases": [
+			{
+				"prompt": "Die Opposition kritisiert einen Regierungsentwurf.",
+				"answer": "Das gehört zu ihrer demokratischen Aufgabe.",
+				"options": [
+					"Das gehört zu ihrer demokratischen Aufgabe.",
+					"Nach einer Wahl darf sie keine Alternative mehr vorlegen."
+				],
+				"feedback": "Demokratische Legitimation der Regierung hebt Kontrolle und Wettbewerb nicht auf."
+			},
+			{
+				"prompt": "Eine Koalitionsfraktion stimmt mit der Regierung.",
+				"answer": "Das zeigt eine politische Verbindung, die Kontrolle weiterhin braucht.",
+				"options": [
+					"Dadurch sind unabhängige Gerichte abgeschafft.",
+					"Das zeigt eine politische Verbindung, die Kontrolle weiterhin braucht."
+				],
+				"feedback": "Gewaltenverschränkung beschreibt Zusammenarbeit; sie beseitigt andere Kontrollen nicht."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Korrigiere das Posting und erkläre die Aufgaben der dritten Fraktion.",
+				"model": "Eine verlorene Wahl nimmt der Opposition nicht ihr Recht auf Kritik. Sie kann Anfragen stellen und Alternativen vorlegen. Dadurch werden Entscheidungen öffentlich kontrollierbar und unterschiedliche Interessen sichtbar.",
+				"criteria": [
+					"Posting korrigiert",
+					"Zwei Oppositionsaufgaben genannt",
+					"Demokratische Funktion erklärt"
+				]
+			},
+			"2": {
+				"prompt": "Erkläre die Spannung zwischen tragfähiger Mehrheit und Kontrolle. Nenne eine Sicherung.",
+				"model": "Eine Mehrheit erleichtert die Umsetzung eines Programms, kann aber Regierungsvorhaben zu wenig hinterfragen. Freies Mandat, Minderheitenrechte, unabhängige Gerichte und Öffentlichkeit wirken dem entgegen. Eine stabile Regierung bleibt kontrollpflichtig.",
+				"criteria": [
+					"Vorteil der Mehrheit erläutert",
+					"Kontrollrisiko erklärt",
+					"Konkrete Sicherung genannt"
+				]
+			}
+		},
+		"extension": ""
+	},
+	{
+		"id": "p10-organe",
+		"stage": "strukturen",
+		"title": "Wer entscheidet im Bund?",
+		"skill": "Verfassungsorgane nach Aufgaben zuordnen",
+		"bindings": ["1", "3"],
+		"paragraphs": [
+			"Der Bundestag beschließt Bundesgesetze, wählt die Regierungsspitze und kontrolliert die Regierung. Im Bundesrat wirken Mitglieder der Landesregierungen an Bundesangelegenheiten mit. Die Bundesregierung leitet die Politik und bringt viele Gesetzentwürfe ein; die Bundesversammlung wählt den Bundespräsidenten.",
+			"Der Bundespräsident nimmt unter anderem repräsentative und verfassungsrechtliche Aufgaben wahr, fertigt Gesetze aus und verkündet sie. Das Bundesverfassungsgericht entscheidet in seinen Zuständigkeiten über Verfassungsfragen. Es ist keine zusätzliche politische Regierung und nicht die allgemeine nächste Instanz für jedes beliebige Urteil."
+		],
+		"material": "Ordne im fiktiven Ablauf zu: Eine Regierung legt einen Gesetzentwurf vor. Abgeordnete beraten und beschließen. Länder wirken mit. Das Gesetz wird ausgefertigt und verkündet. Bei zulässiger Anrufung wird seine Verfassungsmäßigkeit geprüft.",
+		"materialLabel": "Eigenes, fiktives Unterrichtsmaterial · keine Nachricht und kein amtlicher Fall",
+		"sourceIds": ["gg", "bundestag"],
+		"quiz": {
+			"extraWrong": "Der Bundespräsident als Chef aller Landesregierungen.",
+			"explanation": "Der Bundesrat besteht aus Mitgliedern der Landesregierungen. Die Bundesversammlung dient der Wahl des Bundespräsidenten."
+		},
+		"cases": [
+			{
+				"prompt": "Ein Entwurf wird im Bundestag beraten.",
+				"answer": "Parlamentarische Gesetzgebung.",
+				"options": [
+					"Wahl des Bundespräsidenten durch das Kabinett.",
+					"Parlamentarische Gesetzgebung."
+				],
+				"feedback": "Beratung und Beschluss von Bundesgesetzen gehören zu den Aufgaben des Bundestags."
+			},
+			{
+				"prompt": "Jemand nennt das Bundesverfassungsgericht eine zweite Regierung.",
+				"answer": "Es übt Verfassungsrechtsprechung aus.",
+				"options": [
+					"Es übt Verfassungsrechtsprechung aus.",
+					"Es ersetzt regelmäßig die politische Programmentscheidung."
+				],
+				"feedback": "Verfassungsprüfung ist rechtlich gebunden und keine freie Übernahme politischer Regierungsaufgaben."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Erstelle eine kurze Aufgabenübersicht zu Bundestag, Bundesrat und Bundesregierung.",
+				"model": "Der Bundestag beschließt Gesetze und kontrolliert. Der Bundesrat bringt Landesregierungen in Bundesentscheidungen ein. Die Bundesregierung führt die Politik und legt Entwürfe vor; sie kann Bundesgesetze nicht allein beschließen.",
+				"criteria": [
+					"Drei Organe zugeordnet",
+					"Kontrollfunktion genannt",
+					"Keine Alleinzuständigkeit der Regierung behauptet"
+				]
+			},
+			"2": {
+				"prompt": "Erkläre, warum die Verteilung von Aufgaben einen Gesetzentwurf verlangsamen und zugleich verbessern kann.",
+				"model": "Mehrere Organe brauchen Zeit für Beratung und Konfliktlösung. Dadurch können Länderinteressen, Einwände und Verfassungsgrenzen sichtbar werden. Ob ein Verfahren gut ist, hängt auch von Transparenz und sachlicher Prüfung ab; Geschwindigkeit allein genügt nicht.",
+				"criteria": [
+					"Zeitbedarf erklärt",
+					"Zwei Kontroll- oder Beteiligungsvorteile genannt",
+					"Urteil begründet"
+				]
+			}
+		},
+		"extension": ""
+	},
+	{
+		"id": "p10-gesetzgebung",
+		"stage": "strukturen",
+		"title": "Vom Entwurf zum Bundesgesetz",
+		"skill": "Mitwirkung und Vetomöglichkeiten unterscheiden",
+		"bindings": ["1", "3"],
+		"paragraphs": [
+			"Bundesgesetzentwürfe können von Bundesregierung, aus der Mitte des Bundestags oder durch den Bundesrat eingebracht werden. Der Bundestag berät sie, typischerweise mit Ausschussarbeit, und beschließt. Der Bundesrat wirkt je nach Gesetzestyp unterschiedlich stark mit.",
+			"Zustimmungsgesetze brauchen die Zustimmung des Bundesrats. Bei Einspruchsgesetzen kann der Bundesrat Einspruch erheben, den der Bundestag unter bestimmten Voraussetzungen überstimmen kann. Ein Vermittlungsausschuss kann Kompromisse suchen. Nach ordnungsgemäßem Verfahren folgen Ausfertigung, Verkündung und Inkrafttreten."
+		],
+		"material": "Fiktiver Vergleich: Gesetz A benötigt nach dem Grundgesetz Zustimmung des Bundesrats. Gesetz B ist ein Einspruchsgesetz. Ein Mitschüler sagt, der Bundesrat habe bei beiden exakt dasselbe endgültige Veto.",
+		"materialLabel": "Eigenes, fiktives Unterrichtsmaterial · keine Nachricht und kein amtlicher Fall",
+		"sourceIds": ["gg", "bundestag"],
+		"quiz": {
+			"extraWrong": "Die Bundesregierung kann Zustimmung durch eine Pressekonferenz ersetzen.",
+			"explanation": "Bei diesem Gesetzestyp ist Zustimmung eine notwendige Voraussetzung. Das unterscheidet ihn vom überstimmbaren Einspruch."
+		},
+		"cases": [
+			{
+				"prompt": "Der Bundesrat verweigert die erforderliche Zustimmung.",
+				"answer": "Der Entwurf kann so nicht Gesetz werden.",
+				"options": [
+					"Der Entwurf kann so nicht Gesetz werden.",
+					"Die Verweigerung ist immer rechtlich bedeutungslos."
+				],
+				"feedback": "Für Zustimmungsgesetze ist die Zustimmung kein bloßer Hinweis."
+			},
+			{
+				"prompt": "Ein Vermittlungsausschuss sucht einen Kompromiss.",
+				"answer": "Er vermittelt zwischen Bundestag und Bundesrat.",
+				"options": [
+					"Er ersetzt alle vorgeschriebenen Beschlüsse endgültig.",
+					"Er vermittelt zwischen Bundestag und Bundesrat."
+				],
+				"feedback": "Ein Vermittlungsvorschlag braucht weiterhin die vorgesehenen Entscheidungen."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Erkläre den Unterschied zwischen A und B in eigenen Worten.",
+				"model": "Bei A ist die Zustimmung notwendig; ohne sie kommt das Gesetz nicht zustande. Bei B kann ein Einspruch des Bundesrats unter den gesetzlichen Voraussetzungen im Bundestag zurückgewiesen werden. Daher ist die Wirkung nicht identisch.",
+				"criteria": [
+					"A richtig erklärt",
+					"B richtig erklärt",
+					"Unterschied ausdrücklich benannt"
+				]
+			},
+			"2": {
+				"prompt": "Zeichne gedanklich einen Ablauf mit einer Konfliktstelle und beurteile den Nutzen der Vermittlung.",
+				"model": "Entwurf, Bundestagsberatung, Beschluss und Bundesratsmitwirkung bilden den Kern. Bei Konflikten kann Vermittlung einen gemeinsamen Vorschlag ermöglichen. Das fördert Ausgleich, kann aber Zeit kosten und braucht transparente Begründungen.",
+				"criteria": [
+					"Ablauf sinnvoll geordnet",
+					"Konfliktstelle markiert",
+					"Nutzen und Grenze beurteilt"
+				]
+			}
+		},
+		"extension": ""
+	},
+	{
+		"id": "p10-foederalismus",
+		"stage": "strukturen",
+		"title": "Bund und Länder zusammen denken",
+		"skill": "Zuständigkeiten und Kooperation beurteilen",
+		"bindings": ["1", "3"],
+		"paragraphs": [
+			"Deutschland ist ein Bundesstaat. Länder haben eigene demokratische Institutionen und Zuständigkeiten. Nach dem Grundgesetz sind staatliche Aufgaben grundsätzlich Sache der Länder, soweit das Grundgesetz nichts anderes bestimmt. Viele Bundesgesetze werden durch Länder ausgeführt.",
+			"Bildungspolitik ist überwiegend Ländersache. Zusammenarbeit kann gemeinsame Standards unterstützen, braucht aber rechtlich geregelte Zuständigkeiten. Föderalismus ermöglicht Nähe und unterschiedliche Lösungen, kann Koordination jedoch aufwendiger machen. Unterschiede sind weder automatisch besser noch automatisch unfair."
+		],
+		"material": "Fiktiv: Zwei Länder erproben unterschiedliche Schulprojekte. Eine bundesweite Debatte fordert vergleichbare Abschlüsse. Es geht um regionale Gestaltung, gegenseitige Anerkennung und mögliche gemeinsame Vereinbarungen.",
+		"materialLabel": "Eigenes, fiktives Unterrichtsmaterial · keine Nachricht und kein amtlicher Fall",
+		"sourceIds": ["gg"],
+		"quiz": {
+			"extraWrong": "Jede Gemeinde kann das Grundgesetz außer Kraft setzen.",
+			"explanation": "Bundesstaatlichkeit verbindet eigene Länderzuständigkeiten mit gemeinsamen Bundesregeln und Mitwirkung."
+		},
+		"cases": [
+			{
+				"prompt": "Bildungspolitik wird beraten.",
+				"answer": "Die Länderzuständigkeit ist besonders wichtig.",
+				"options": [
+					"Der Bundestag kann ohne Rechtsgrundlage jede Schulfrage allein regeln.",
+					"Die Länderzuständigkeit ist besonders wichtig."
+				],
+				"feedback": "Kompetenzen müssen aus der Verfassung und den jeweiligen Gesetzen folgen."
+			},
+			{
+				"prompt": "Unterschiedliche Schulprojekte werden verglichen.",
+				"answer": "Ergebnisse und Ziele prüfen, bevor man Unterschiede bewertet.",
+				"options": [
+					"Ergebnisse und Ziele prüfen, bevor man Unterschiede bewertet.",
+					"Verschiedenheit beweist bereits bessere Qualität."
+				],
+				"feedback": "Eine Bewertung braucht Kriterien und Belege statt einer pauschalen Vorliebe für Einheit oder Vielfalt."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Erkläre am Schulbeispiel eine Chance und ein Koordinationsproblem.",
+				"model": "Länder können Projekte an regionale Bedürfnisse anpassen und voneinander lernen. Unterschiedliche Abschlüsse oder Regeln können Wechsel erschweren. Gemeinsame Standards brauchen deshalb Zusammenarbeit in den zulässigen Zuständigkeiten.",
+				"criteria": [
+					"Chance am Beispiel",
+					"Problem am Beispiel",
+					"Kooperation rechtlich eingeordnet"
+				]
+			},
+			"2": {
+				"prompt": "Begründe eine vorläufige Position zu gemeinsamen Bildungsstandards und nenne einen Gegengrund.",
+				"model": "Vergleichbare Standards können Mobilität und faire Chancen verbessern. Zu starre Vorgaben könnten passende regionale Lösungen verdrängen. Ich würde gemeinsame Ziele mit überprüfbaren Spielräumen verbinden und die rechtlichen Zuständigkeiten beachten.",
+				"criteria": [
+					"Position mit Kriterium begründet",
+					"Starken Gegengrund genannt",
+					"Zuständigkeiten berücksichtigt"
+				]
+			}
+		},
+		"extension": ""
+	},
+	{
+		"id": "p10-bayern",
+		"stage": "strukturen",
+		"title": "Politische Institutionen in Bayern",
+		"skill": "Landtag, Staatsregierung und Kontrolle verbinden",
+		"bindings": ["1", "3"],
+		"paragraphs": [
+			"Der Bayerische Landtag wird gewählt, beschließt Landesgesetze und den Haushalt und kontrolliert die Staatsregierung. Er wählt den Ministerpräsidenten oder die Ministerpräsidentin. Die Staatsregierung führt die Regierungsgeschäfte; Gemeinden entscheiden in ihrem eigenen Aufgabenbereich.",
+			"Der Bayerische Verfassungsgerichtshof entscheidet über Fragen der Bayerischen Verfassung in seinen Zuständigkeiten. Landespolitik ist nicht bloß ein kleiner Bundestag: Landesverfassung, Landesaufgaben und direkte Demokratie haben eigene Regeln. Unterscheide bei einer Frage immer Landtag, Regierung, Gericht und Gemeinde."
+		],
+		"material": "Fiktive Frage zum Jugendtreff: Die Öffnungszeiten sind eine örtliche Angelegenheit. Die Gruppe will trotzdem vom Landtag einen unmittelbaren Detailbeschluss verlangen. Parallel prüft der Landtag den Landeshaushalt.",
+		"materialLabel": "Eigenes, fiktives Unterrichtsmaterial · keine Nachricht und kein amtlicher Fall",
+		"sourceIds": ["bayverf", "landtag"],
+		"quiz": {
+			"extraWrong": "Der Bundespräsident bei jeder Gemeinderatswahl.",
+			"explanation": "Die Bayerische Verfassung ordnet die Wahl der Regierungsspitze dem Landtag zu."
+		},
+		"cases": [
+			{
+				"prompt": "Die Gruppe fragt nach örtlichen Öffnungszeiten.",
+				"answer": "Zuerst die kommunale Zuständigkeit klären.",
+				"options": [
+					"Zuerst die kommunale Zuständigkeit klären.",
+					"Der Landtag entscheidet jede einzelne Öffnungsminute."
+				],
+				"feedback": "Die politische Ebene muss zum konkreten Aufgabenbereich passen."
+			},
+			{
+				"prompt": "Es geht um die Vereinbarkeit mit Bayerns Verfassung.",
+				"answer": "Zuständigkeit des Verfassungsgerichtshofs prüfen.",
+				"options": [
+					"Eine Parteiversammlung ersetzt die Verfassungsgerichtsbarkeit.",
+					"Zuständigkeit des Verfassungsgerichtshofs prüfen."
+				],
+				"feedback": "Rechtliche Verfassungskontrolle folgt besonderen Zuständigkeiten und Verfahren."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Erkläre der Gruppe, welche Ebene sie zuerst prüfen sollte und wofür der Landtag zuständig ist.",
+				"model": "Für örtliche Öffnungszeiten sollte sie zunächst die Gemeindezuständigkeit klären. Der Landtag beschließt Landesgesetze und Haushalt und kontrolliert die Staatsregierung. Er übernimmt nicht jede kommunale Detailentscheidung.",
+				"criteria": [
+					"Gemeindezuständigkeit geprüft",
+					"Landtagsaufgaben genannt",
+					"Ebenen klar unterschieden"
+				]
+			},
+			"2": {
+				"prompt": "Plane zwei Fragen für eine Landtagserkundung und begründe ihren Erkenntniswert.",
+				"model": "Ich frage, wie ein Ausschuss Regierungsentscheidungen kontrolliert, und wie Landesmittel für Jugendangebote im Haushalt beraten werden. So untersuche ich Kontrolle und Finanzierung, ohne den Landtag als unmittelbare Leitung jedes örtlichen Treffs zu behandeln.",
+				"criteria": [
+					"Zwei konkrete Fragen",
+					"Politische Funktionen erklärt",
+					"Zuständigkeiten unterschieden"
+				]
+			}
+		},
+		"extension": "Erkunde einen realen politischen Entscheidungsort mit Vorbereitung und Auswertung. Ein Onlinebesuch oder Gespräch braucht eigene dokumentierte Beobachtungen."
+	},
+	{
+		"id": "p10-wehrhaft",
+		"stage": "strukturen",
+		"title": "Demokratie gegen Machtmissbrauch schützen",
+		"skill": "Verfassungskern und erlaubte Kritik unterscheiden",
+		"bindings": ["1", "3"],
+		"paragraphs": [
+			"Art. 79 Abs. 3 GG schützt zentrale Verfassungsgrundsätze vor Abschaffung durch eine Verfassungsänderung, darunter die in Art. 1 und Art. 20 niedergelegten Grundsätze sowie die Gliederung in Länder und ihre grundsätzliche Mitwirkung an der Gesetzgebung. Auch eine große Mehrheit kann diesen Kern nicht beliebig beseitigen.",
+			"Wehrhafte Demokratie nutzt rechtlich gebundene Mittel gegen Angriffe auf die demokratische Ordnung. Über ein Parteiverbot entscheidet das Bundesverfassungsgericht unter strengen Voraussetzungen. Unbequeme Kritik, friedlicher Protest oder ein Regierungswechsel sind für sich keine Verfassungsfeindschaft. Prävention, Bildung und faire Teilhabe gehören ebenfalls zur Auseinandersetzung."
+		],
+		"material": "Fiktiv: Eine Mehrheit fordert, freie Wahlen dauerhaft abzuschaffen. Ein anderer Beitrag kritisiert scharf eine Regierungsentscheidung und fordert friedlich deren Änderung. Unterscheide die beiden Aussagen anhand der demokratischen Grundsätze.",
+		"materialLabel": "Eigenes, fiktives Unterrichtsmaterial · keine Nachricht und kein amtlicher Fall",
+		"sourceIds": ["gg79", "gg21", "gg20"],
+		"quiz": {
+			"extraWrong": "Die jeweilige Regierung vor jeder Kritik.",
+			"explanation": "Die Ewigkeitsklausel schützt Verfassungsgrundsätze, nicht jede Einzelregel und keine Regierung vor demokratischem Widerspruch."
+		},
+		"cases": [
+			{
+				"prompt": "Ein friedlicher Beitrag fordert eine andere Regierungspolitik.",
+				"answer": "Das kann legitimer demokratischer Widerspruch sein.",
+				"options": [
+					"Jede Regierungskritik ist automatisch extremistisch.",
+					"Das kann legitimer demokratischer Widerspruch sein."
+				],
+				"feedback": "Freie Kritik und politischer Wettbewerb gehören zur Demokratie."
+			},
+			{
+				"prompt": "Die Mehrheit will freie Wahlen dauerhaft abschaffen.",
+				"answer": "Der demokratische Verfassungskern setzt Grenzen.",
+				"options": [
+					"Der demokratische Verfassungskern setzt Grenzen.",
+					"Eine große Mehrheit darf jede Grundordnung aufheben."
+				],
+				"feedback": "Demokratie ist an Grundrechte und geschützte Verfassungsprinzipien gebunden."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Erkläre den Unterschied zwischen den beiden Beiträgen und nenne eine Schutzregel.",
+				"model": "Die Abschaffung freier Wahlen greift den demokratischen Kern an. Scharfe friedliche Regierungskritik nutzt dagegen politische Freiheit. Art. 79 Abs. 3 schützt zentrale Grundsätze auch gegen eine verfassungsändernde Mehrheit.",
+				"criteria": [
+					"Beide Aussagen unterschieden",
+					"Schutzregel genannt",
+					"Kritik nicht pauschal abgewertet"
+				]
+			},
+			"2": {
+				"prompt": "Beurteile, warum Schutzmaßnahmen selbst rechtsstaatlich kontrolliert werden müssen.",
+				"model": "Schutz der Demokratie ist nötig, darf aber nicht zum Vorwand werden, Konkurrenz auszuschalten. Klare Voraussetzungen, unabhängige Gerichte und begründete Verfahren schützen Freiheitsrechte. Politische Bildung und faire Teilhabe ergänzen Eingriffe.",
+				"criteria": [
+					"Schutzbedarf erläutert",
+					"Missbrauchsrisiko benannt",
+					"Rechtsstaatliche Sicherung erklärt"
+				]
+			}
+		},
+		"extension": "Untersuche ein aktuelles belegtes Beispiel und unterscheide Tatsachen, rechtliche Einordnung und eigenes Urteil. Die App klassifiziert keine realen Personen oder Parteien."
+	},
+	{
+		"id": "p10-bip",
+		"stage": "handlungsfelder",
+		"title": "Wirtschaft messen: das BIP",
+		"skill": "Nominale und reale Entwicklung unterscheiden",
+		"bindings": ["1", "4"],
+		"paragraphs": [
+			"Das Bruttoinlandsprodukt erfasst den Wert der im Inland in einem Zeitraum hergestellten Endprodukte und Dienstleistungen, vereinfacht ohne Vorleistungen doppelt zu zählen. Nominale Werte verwenden laufende Preise. Für reales Wirtschaftswachstum wird der Preiseinfluss herausgerechnet.",
+			"Ein höheres BIP zeigt nicht automatisch gerechtere Verteilung, bessere Gesundheit oder intakte Natur. Durchschnitt und Gesamtsumme beantworten verschiedene Fragen. Im folgenden Einproduktmodell hältst du die Menge oder den Preis fest, um die Wirkungen zu unterscheiden. Es ersetzt keine amtliche Volkswirtschaftliche Gesamtrechnung."
+		],
+		"material": "Fiktive Einproduktwirtschaft: Im Ausgangsjahr 100 Einheiten zu 10 Euro, im Folgejahr 100 Einheiten zu 12 Euro. Es gibt keine Vorleistungen. Nominal steigt der Wert von 1.000 auf 1.200 Euro, die Menge bleibt gleich.",
+		"materialLabel": "Eigenes, fiktives Unterrichtsmaterial · keine Nachricht und kein amtlicher Fall",
+		"sourceIds": ["destatis"],
+		"quiz": {
+			"extraWrong": "Sie sinkt automatisch auf null.",
+			"explanation": "Der höhere nominale Wert entsteht nur durch höhere Preise. Zu Ausgangspreisen bleibt die Menge gleich bewertet."
+		},
+		"cases": [
+			{
+				"prompt": "Menge bleibt gleich, Preis steigt.",
+				"answer": "Nominaler Zuwachs ohne realen Mengenzuwachs.",
+				"options": [
+					"Nominaler Zuwachs ohne realen Mengenzuwachs.",
+					"Reale Menge und Preis sind dasselbe."
+				],
+				"feedback": "Im Einproduktmodell lässt sich die reine Preiswirkung isolieren."
+			},
+			{
+				"prompt": "Das BIP pro Kopf steigt.",
+				"answer": "Die Verteilung muss zusätzlich untersucht werden.",
+				"options": [
+					"Jede einzelne Person ist dadurch gleich viel reicher.",
+					"Die Verteilung muss zusätzlich untersucht werden."
+				],
+				"feedback": "Ein Durchschnitt zeigt nicht, wer den Zuwachs erhält."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Berechne den nominalen Zuwachs im Beispiel und erkläre die reale Veränderung.",
+				"model": "Der Wert wächst von 1.000 auf 1.200 Euro, also um 20 Prozent. Zu Ausgangspreisen ergeben 100 Einheiten weiterhin 1.000 Euro. Die reale Menge wächst nicht.",
+				"criteria": [
+					"Nominale Werte berechnet",
+					"20 Prozent korrekt",
+					"Reale Menge unterschieden"
+				]
+			},
+			"2": {
+				"prompt": "Erprobe Menge und Preis in der Werkstatt. Zeige zwei verschiedene Wege zum selben nominalen Wert und benenne eine Modellgrenze.",
+				"model": "120 Einheiten zu 10 Euro und 100 Einheiten zu 12 Euro ergeben beide 1.200 Euro. Nur der erste Fall erhöht die Menge gegenüber 100 Einheiten. Die echte Wirtschaft hat viele Güter und komplexe Preisbereinigung; das Modell ist keine vollständige BIP-Rechnung.",
+				"criteria": [
+					"Zwei Kombinationen verglichen",
+					"Reale Wirkung erklärt",
+					"Modellgrenze benannt"
+				]
+			}
+		},
+		"extension": ""
+	},
+	{
+		"id": "p10-konjunktur",
+		"stage": "handlungsfelder",
+		"title": "Konjunktur als Modell verstehen",
+		"skill": "Indikatoren gemeinsam und vorsichtig deuten",
+		"bindings": ["1", "4"],
+		"paragraphs": [
+			"Konjunktur beschreibt Schwankungen wirtschaftlicher Aktivität. Das Modell unterscheidet Aufschwung, Hochkonjunktur, Abschwung und Tiefphase. Produktion, Aufträge, Beschäftigung und Preise reagieren nicht immer gleichzeitig. Ein einzelner Wert bestimmt keine sichere Phase.",
+			"Die wirtschaftliche Entwicklung verläuft nicht als gleichmäßige Welle. Internationale Ereignisse, Angebotsschocks und Erwartungen können sie verändern. Für eine aktuelle Diagnose brauchst du datierte Daten und mehrere Indikatoren. Eine Prognose ist eine bedingte Aussage, keine Garantie."
+		],
+		"material": "Fiktive Daten: Aufträge fallen zwei Quartale lang, Produktion sinkt leicht, Arbeitslosigkeit steigt später. Gleichzeitig bleiben Energiepreise hoch. Die Reihen sind erfunden und beschreiben nicht Deutschland 2026.",
+		"materialLabel": "Eigenes, fiktives Unterrichtsmaterial · keine Nachricht und kein amtlicher Fall",
+		"sourceIds": ["destatis"],
+		"quiz": {
+			"extraWrong": "Ein Modell sagt den nächsten Wendepunkt exakt voraus.",
+			"explanation": "Aufträge, Produktion und Arbeitsmarkt können zeitversetzt reagieren. Ein Modell ordnet, garantiert aber keine Entwicklung."
+		},
+		"cases": [
+			{
+				"prompt": "Die Produktion sinkt, die Beschäftigung bleibt vorerst stabil.",
+				"answer": "Zeitliche Verzögerungen sind möglich.",
+				"options": [
+					"Die Daten müssen zwingend erfunden sein.",
+					"Zeitliche Verzögerungen sind möglich."
+				],
+				"feedback": "Unternehmen passen Beschäftigung nicht immer sofort an Produktionsänderungen an."
+			},
+			{
+				"prompt": "Ein Beitrag verspricht ein exaktes Datum des Aufschwungs.",
+				"answer": "Datenbasis und Unsicherheit hinterfragen.",
+				"options": [
+					"Datenbasis und Unsicherheit hinterfragen.",
+					"Jede Konjunkturprognose ist eine Gewissheit."
+				],
+				"feedback": "Wirtschaftliche Prognosen hängen von Annahmen und veränderlichen Bedingungen ab."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Ordne die Hinweise vorsichtig ein und nenne zwei zusätzlich benötigte Angaben.",
+				"model": "Sinkende Aufträge und Produktion können auf einen Abschwung hinweisen. Ich brauche Vergleichszeitraum und Bereinigung der Daten sowie weitere Indikatoren. Hohe Energiepreise allein zeigen keinen Boom.",
+				"criteria": [
+					"Vorläufige Einordnung",
+					"Zwei Zusatzangaben genannt",
+					"Keine sichere Prognose behauptet"
+				]
+			},
+			"2": {
+				"prompt": "Untersuche die aktuelle Lage mit mindestens zwei amtlichen Indikatoren. Trenne Daten und Interpretation.",
+				"model": "Ich dokumentiere die tatsächlich gefundenen Werte mit Datum und Bereinigung. Erst danach begründe ich eine vorläufige Einordnung und benenne widersprechende Hinweise. Die fiktive Reihe ist kein Ersatz für aktuelle deutsche Daten.",
+				"criteria": [
+					"Aktuelle Werte dokumentiert",
+					"Daten und Deutung getrennt",
+					"Unsicherheit benannt"
+				]
+			}
+		},
+		"extension": "Öffne aktuelle Konjunkturdaten auf eigenen Klick. Die App ruft sie nicht automatisch ab und behauptet keine aktuelle Wirtschaftsdiagnose."
+	},
+	{
+		"id": "p10-fiskal",
+		"stage": "handlungsfelder",
+		"title": "Staatsausgaben, Steuern und Schulden",
+		"skill": "Fiskalpolitik und Zielkonflikte erklären",
+		"bindings": ["1", "4"],
+		"paragraphs": [
+			"Fiskalpolitik wirkt über staatliche Einnahmen und Ausgaben. Antizyklische Politik soll Schwankungen dämpfen: in einer Nachfrageschwäche etwa durch zusätzliche Nachfrage, bei Überhitzung eher bremsend. Auch automatisch sinkende Steuereinnahmen und steigende Unterstützungszahlungen können stabilisieren.",
+			"Wirkung entsteht nicht sicher und nicht sofort. Planung braucht Zeit, Importe können einen Teil der Nachfrage binden und Kapazitäten können fehlen. Ein jährliches Defizit ist ein Strom; der Schuldenstand ist ein Bestand. Finanzierung, Zinsen und geltende Haushaltsregeln müssen berücksichtigt werden."
+		],
+		"material": "Fiktiv: Einnahmen 95 Budgeteinheiten, Ausgaben 100, bisheriger Schuldenstand 200. Ohne weitere Effekte entsteht ein Defizit von 5 und ein Schuldenstand von 205. Es ist keine Darstellung deutscher Haushaltsregeln.",
+		"materialLabel": "Eigenes, fiktives Unterrichtsmaterial · keine Nachricht und kein amtlicher Fall",
+		"sourceIds": ["gg20", "destatis", "lehrplan"],
+		"quiz": {
+			"extraWrong": "Ein Defizit ist immer der gesamte Schuldenstand.",
+			"explanation": "Einnahmen und Ausgaben einer Periode ergeben den Finanzierungssaldo. Der Schuldenbestand ist davon zu unterscheiden."
+		},
+		"cases": [
+			{
+				"prompt": "Die Einnahmen bleiben bei 95, Ausgaben steigen auf 105.",
+				"answer": "Das Defizit wächst auf 10 Einheiten.",
+				"options": [
+					"Das Defizit wächst auf 10 Einheiten.",
+					"Der Schuldenstand bleibt zwingend unverändert."
+				],
+				"feedback": "Im vereinfachten Modell vergrößert die zusätzliche Lücke die notwendige Finanzierung."
+			},
+			{
+				"prompt": "Ein Projekt beginnt erst nach dem Abschwung.",
+				"answer": "Die Verzögerung kann die Stabilisierung erschweren.",
+				"options": [
+					"Der Zeitpunkt spielt für Konjunkturpolitik nie eine Rolle.",
+					"Die Verzögerung kann die Stabilisierung erschweren."
+				],
+				"feedback": "Politische Maßnahmen können verspätet wirken und dann andere Bedingungen vorfinden."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Berechne Defizit und neuen Schuldenstand. Erkläre eine mögliche Wirkung zusätzlicher Ausgaben.",
+				"model": "Die Lücke beträgt 5, der vereinfachte Schuldenstand steigt von 200 auf 205. Zusätzliche Aufträge könnten Nachfrage stützen, wenn Kapazitäten und Umsetzung passen. Die Wirkung ist nicht garantiert.",
+				"criteria": [
+					"5 und 205 berechnet",
+					"Nachfragewirkung erklärt",
+					"Bedingung genannt"
+				]
+			},
+			"2": {
+				"prompt": "Wäge eine kreditfinanzierte Investition nach heutiger Wirkung und künftigen Folgen ab.",
+				"model": "Eine Investition kann Aufträge und später nutzbare Infrastruktur schaffen. Sie verursacht aber Finanzierungskosten und kann bei knappen Kapazitäten Preise erhöhen. Ich prüfe Nutzen, Zeitplan, Alternativen und geltende Haushaltsregeln, statt Schulden grundsätzlich gut oder schlecht zu nennen.",
+				"criteria": [
+					"Kurzfristige Wirkung erläutert",
+					"Künftige Chancen und Kosten",
+					"Regeln und Alternativen berücksichtigt"
+				]
+			}
+		},
+		"extension": "Prüfe bei realen Haushaltsfragen die jeweils aktuellen Regeln. Das Zahlenbeispiel enthält weder Zinsen noch Sondervermögen oder eine rechtliche Kreditgrenze."
+	},
+	{
+		"id": "p10-leitzins",
+		"stage": "handlungsfelder",
+		"title": "Geldpolitik und Leitzins",
+		"skill": "Zentralbankentscheidungen von Fiskalpolitik trennen",
+		"bindings": ["1", "4"],
+		"paragraphs": [
+			"Der EZB-Rat legt die Leitzinsen für den Euroraum fest. Sie beeinflussen Finanzierungsbedingungen der Banken und damit häufig Kredit- und Sparzinsen. Die EZB legt nicht jeden privaten Vertragszins fest. Ihr vorrangiges Ziel ist Preisstabilität.",
+			"Höhere Zinsen können Kreditnachfrage und Investitionen dämpfen und dadurch Preisdruck mindern. Wirkung und Zeitpunkt sind unsicher; ein Angebotsschock wird nicht unmittelbar beseitigt. Staatsausgaben und Steuern gehören zur Fiskalpolitik, Leitzinsentscheidungen zur Geldpolitik. Beide können unterschiedliche Verteilungsfolgen haben."
+		],
+		"material": "Fiktiv: Ein Betrieb prüft eine neue Maschine auf Kredit, ein Haushalt spart für eine Anschaffung. Gleichzeitig steigen Importpreise. Es wird kein aktueller Leitzinssatz genannt.",
+		"materialLabel": "Eigenes, fiktives Unterrichtsmaterial · keine Nachricht und kein amtlicher Fall",
+		"sourceIds": ["ezb"],
+		"quiz": {
+			"extraWrong": "Der Bundestag für jeden privaten Kreditvertrag.",
+			"explanation": "Die gemeinsame Geldpolitik wird im Eurosystem durch den EZB-Rat gesteuert; konkrete Vertragszinsen werden dadurch beeinflusst, aber nicht einzeln festgelegt."
+		},
+		"cases": [
+			{
+				"prompt": "Ein Staat erhöht seine Bildungsausgaben.",
+				"answer": "Das ist Fiskalpolitik.",
+				"options": [
+					"Das ist eine Leitzinsentscheidung der EZB.",
+					"Das ist Fiskalpolitik."
+				],
+				"feedback": "Staatliche Ausgaben gehören zur Haushaltspolitik, nicht zu den geldpolitischen Leitzinsen."
+			},
+			{
+				"prompt": "Importpreise steigen wegen eines Lieferausfalls.",
+				"answer": "Ein höherer Leitzins stellt die fehlenden Waren nicht direkt her.",
+				"options": [
+					"Ein höherer Leitzins stellt die fehlenden Waren nicht direkt her.",
+					"Ein höherer Leitzins beseitigt sofort jede Lieferknappheit."
+				],
+				"feedback": "Nachfragesteuerung kann keine fehlende physische Produktion unmittelbar ersetzen."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Beschreibe je eine mögliche Folge höherer Kreditzinsen für Betrieb und sparenden Haushalt.",
+				"model": "Der Betrieb könnte die Maschine später kaufen, weil Finanzierung teurer wird. Der Haushalt könnte bei höheren Sparzinsen eher sparen. Beide Reaktionen hängen von Vertrag, Einkommen und Erwartungen ab.",
+				"criteria": [
+					"Zwei Betroffene betrachtet",
+					"Wirkungskette erklärt",
+					"Bedingungen benannt"
+				]
+			},
+			"2": {
+				"prompt": "Beurteile den Zielkonflikt bei hohen Preisen und schwacher Produktion. Unterscheide zwei Politikebenen.",
+				"model": "Strengere Geldpolitik kann Preisdruck mindern, aber Finanzierung und Produktion belasten. Fiskalpolitik kann gezielt helfen, dabei aber Nachfrage und Haushaltskosten erhöhen. Ein Urteil braucht Ursachenanalyse und aktuelle Daten, keine automatische Einheitslösung.",
+				"criteria": [
+					"Zielkonflikt erklärt",
+					"Geld- und Fiskalpolitik unterschieden",
+					"Datenbedarf benannt"
+				]
+			}
+		},
+		"extension": "Prüfe bei aktueller Recherche den datierten EZB-Beschluss. Die App enthält keine Zinsprognose oder persönliche Finanzempfehlung."
+	},
+	{
+		"id": "p10-urteil",
+		"stage": "handlungsfelder",
+		"title": "Effizienz und Legitimität getrennt prüfen",
+		"skill": "Politische Eingriffe mit zwei Maßstäben beurteilen",
+		"bindings": ["1", "4"],
+		"paragraphs": [
+			"Effizienz fragt, ob ein Ziel mit vertretbarem Mitteleinsatz erreicht wird. Legitimität fragt nach demokratischer und rechtlicher Rechtfertigung sowie nach nachvollziehbaren Maßstäben wie Beteiligung und Gerechtigkeit. Eine billige Maßnahme kann Rechte verletzen; ein rechtmäßiges Verfahren garantiert noch keine gute Wirkung.",
+			"Lege Ziel, betroffene Gruppen und Zeithorizont offen. Prüfe Nebenfolgen und Alternativen. Ein politisches Urteil braucht begründete Gewichtung; ein Punkteschema darf nicht so tun, als ließen sich Rechte gegen jeden wirtschaftlichen Nutzen verrechnen."
+		],
+		"material": "Fiktiv: Die Gemeinde will Energie sparen. Vorschlag A senkt pauschal alle Raumtemperaturen, auch in besonders schutzbedürftigen Einrichtungen. Vorschlag B saniert gezielt, kostet zunächst mehr und beteiligt Betroffene. Es fehlen noch belastbare Wirkungsdaten.",
+		"materialLabel": "Eigenes, fiktives Unterrichtsmaterial · keine Nachricht und kein amtlicher Fall",
+		"sourceIds": ["gg20", "lehrplan"],
+		"quiz": {
+			"extraWrong": "Wie niedrig sind die Anschaffungskosten allein?",
+			"explanation": "Rechte und Verfahren betreffen die Rechtfertigung. Das Verhältnis von Zielerreichung und Kosten ist eine Effizienzfrage."
+		},
+		"cases": [
+			{
+				"prompt": "A spart laut Schätzung am billigsten.",
+				"answer": "Das beantwortet noch nicht die Frage nach Schutzrechten.",
+				"options": [
+					"Das beantwortet noch nicht die Frage nach Schutzrechten.",
+					"Damit ist jede rechtliche Grenze erledigt."
+				],
+				"feedback": "Ökonomische Vorteile ersetzen keine rechtliche Rechtfertigung."
+			},
+			{
+				"prompt": "B ist demokratisch beschlossen.",
+				"answer": "Wirkung und Kosten müssen weiterhin geprüft werden.",
+				"options": [
+					"Demokratischer Beschluss garantiert jede erwartete Einsparung.",
+					"Wirkung und Kosten müssen weiterhin geprüft werden."
+				],
+				"feedback": "Legitimes Verfahren und tatsächliche Effizienz sind verschiedene Prüfungen."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Stelle je eine Effizienz- und Legitimitätsfrage zu den Vorschlägen.",
+				"model": "Zur Effizienz frage ich nach verlässlich erwarteter Einsparung je Aufwand. Zur Legitimität prüfe ich Schutzpflichten und Beteiligung besonders Betroffener. Ohne Daten und Rechtsprüfung kann ich keinen Vorschlag abschließend bewerten.",
+				"criteria": [
+					"Zwei Kriterien unterschieden",
+					"Fallbezug hergestellt",
+					"Offenen Prüfbedarf genannt"
+				]
+			},
+			"2": {
+				"prompt": "Formuliere ein vorläufiges Urteil mit Gegengrund und einer Bedingung für eine Revision.",
+				"model": "Ich bevorzuge zunächst gezielte Maßnahmen, weil besondere Schutzbedarfe besser berücksichtigt werden können. Höhere Anfangskosten sind ein Gegengrund. Wenn Daten zeigen, dass eine mildere gleich wirksame Alternative rechtmäßig schneller hilft, würde ich mein Urteil überprüfen.",
+				"criteria": [
+					"Gewichtung offengelegt",
+					"Gegengrund genannt",
+					"Revisionsbedingung formuliert"
+				]
+			}
+		},
+		"extension": ""
+	},
+	{
+		"id": "p10-marktwirtschaft",
+		"stage": "handlungsfelder",
+		"title": "Soziale Marktwirtschaft und Zielkonflikte",
+		"skill": "Wettbewerb, Ausgleich und Umweltfolgen verbinden",
+		"bindings": ["1", "4"],
+		"paragraphs": [
+			"Märkte koordinieren viele Entscheidungen über Preise und Wettbewerb. Eine Soziale Marktwirtschaft verbindet das mit Regeln, sozialer Absicherung und Korrekturen etwa bei Marktmacht oder Umweltbelastung. Nicht jeder Schaden wird ohne Regeln vollständig im Preis berücksichtigt.",
+			"Politische Eingriffe können Zielkonflikte auslösen: Eine Umweltregel schützt Lebensgrundlagen, kann aber kurzfristig Kosten erhöhen. Vergleiche verschiedene Instrumente und ihre Verteilungsfolgen. Unternehmen, Beschäftigte, Konsumierende und künftige Generationen können unterschiedlich betroffen sein; keine Gruppe hat nur ein einziges Interesse."
+		],
+		"material": "Fiktive Werkstatt: Eine Produktion verschmutzt einen Bach. Diskutiert werden Grenzwerte, eine Abgabe und Förderung sauberer Technik. Beschäftigte wünschen sichere Arbeit, Anwohnende sauberes Wasser; beide Anliegen können dieselbe Person betreffen.",
+		"materialLabel": "Eigenes, fiktives Unterrichtsmaterial · keine Nachricht und kein amtlicher Fall",
+		"sourceIds": ["gg20", "lehrplan"],
+		"quiz": {
+			"extraWrong": "Weil wirtschaftliche Folgen niemals geprüft werden müssen.",
+			"explanation": "Externe Kosten können eine Regelung begründen. Ihre konkrete Ausgestaltung braucht trotzdem Wirksamkeits-, Verteilungs- und Rechtsprüfung."
+		},
+		"cases": [
+			{
+				"prompt": "Eine Abgabe macht Verschmutzung teurer.",
+				"answer": "Anreizwirkung und Belastungsverteilung untersuchen.",
+				"options": [
+					"Damit sind alle Umweltprobleme automatisch gelöst.",
+					"Anreizwirkung und Belastungsverteilung untersuchen."
+				],
+				"feedback": "Wirkung hängt unter anderem von Höhe, Kontrolle und Ausweichmöglichkeiten ab."
+			},
+			{
+				"prompt": "Jemand ist zugleich beschäftigt und wohnt am Bach.",
+				"answer": "Mehrere Interessen können dieselbe Person betreffen.",
+				"options": [
+					"Mehrere Interessen können dieselbe Person betreffen.",
+					"Menschen haben immer nur ein einziges Gruppeninteresse."
+				],
+				"feedback": "Betroffenenperspektiven dürfen nicht in starre Gegengruppen zerlegt werden."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Erkläre den Konflikt und vergleiche zwei Instrumente am Fall.",
+				"model": "Sauberes Wasser und sichere Beschäftigung sind wichtige Ziele. Ein Grenzwert setzt eine Grenze, eine Abgabe schafft einen Preisanreiz. Beide brauchen Kontrolle und können Kosten verursachen; Folgen für Betrieb, Beschäftigte und Anwohnende sind zu prüfen.",
+				"criteria": [
+					"Zielkonflikt beschrieben",
+					"Zwei Instrumente verglichen",
+					"Mehrere Betroffene berücksichtigt"
+				]
+			},
+			"2": {
+				"prompt": "Entwirf einen begründeten Maßnahmenmix und nenne einen Einwand.",
+				"model": "Ich würde einen wirksamen Mindestschutz mit überprüfbarer Unterstützung sauberer Technik verbinden. Dagegen sprechen öffentliche Kosten und das Risiko erfolgloser Förderung. Transparente Kriterien, Fristen und Wirkungskontrolle könnten diese Risiken begrenzen.",
+				"criteria": [
+					"Maßnahmenmix begründet",
+					"Einwand ernst genommen",
+					"Kontrolle und Grenzen vorgesehen"
+				]
+			}
+		},
+		"extension": ""
+	},
+	{
+		"id": "p10-lebensqualitaet",
+		"stage": "handlungsfelder",
+		"title": "Mehr als wirtschaftliches Wachstum",
+		"skill": "Lebensqualität mit mehreren Kriterien beurteilen",
+		"bindings": ["1", "4"],
+		"paragraphs": [
+			"Lebensqualität umfasst materielle Möglichkeiten, Gesundheit, Umwelt, Sicherheit, soziale Beziehungen und Teilhabe. Menschen können diese Bereiche unterschiedlich gewichten. Ein Durchschnittswert kann große Unterschiede zwischen Gruppen verdecken; deshalb braucht eine Bewertung auch Verteilungsfragen.",
+			"Untersuche staatliche Maßnahmen mit mehreren Indikatoren. Mehr Verkehr kann etwa Erreichbarkeit verbessern und zugleich Lärm erhöhen. Zahlen helfen beim Vergleich, bestimmen aber die Gewichtung nicht automatisch. Lege deine Kriterien offen und ändere dein Urteil, wenn wichtige Belege dagegen sprechen."
+		],
+		"material": "Zwei fiktive Quartiere: A hat höhere Durchschnittseinkommen, lange Wege und hohe Lärmbelastung. B hat kürzere Wege und mehr öffentliche Treffpunkte, aber weniger Einkommen. Diese Angaben reichen nicht für eine objektive Gesamtrangliste.",
+		"materialLabel": "Eigenes, fiktives Unterrichtsmaterial · keine Nachricht und kein amtlicher Fall",
+		"sourceIds": ["lehrplan", "destatis"],
+		"quiz": {
+			"extraWrong": "Es ersetzt alle Gesundheits- und Umweltdaten.",
+			"explanation": "Produktion ist eine wichtige, aber begrenzte Information. Weitere Bedingungen und ihre Verteilung müssen geprüft werden."
+		},
+		"cases": [
+			{
+				"prompt": "A hat das höhere Durchschnittseinkommen.",
+				"answer": "Verteilung und weitere Lebensbedingungen zusätzlich prüfen.",
+				"options": [
+					"Verteilung und weitere Lebensbedingungen zusätzlich prüfen.",
+					"Jede einzelne Person in A lebt dadurch besser."
+				],
+				"feedback": "Der Durchschnitt beantwortet weder Verteilung noch alle anderen Lebensbereiche."
+			},
+			{
+				"prompt": "Zwei Personen gewichten Ruhe und Einkommen verschieden.",
+				"answer": "Die Gewichtung kann begründet unterschiedlich sein.",
+				"options": [
+					"Eine einzige Zahl macht jede Wertentscheidung überflüssig.",
+					"Die Gewichtung kann begründet unterschiedlich sein."
+				],
+				"feedback": "Politische Urteile enthalten nachvollziehbare, aber diskutierbare Wertmaßstäbe."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Vergleiche A und B anhand von drei Kriterien und vermeide ein unbegründetes Gesamtranking.",
+				"model": "A liegt beim Durchschnittseinkommen vorn, B bei Wegen und Treffpunkten. Zur Sicherheit, Gesundheit und Einkommensverteilung fehlen Angaben. Ich kann daher Vor- und Nachteile benennen, aber kein vollständiges Ranking beweisen.",
+				"criteria": [
+					"Drei Kriterien verglichen",
+					"Fehlende Information genannt",
+					"Keine Scheingenauigkeit behauptet"
+				]
+			},
+			"2": {
+				"prompt": "Entwirf eine Maßnahme für ein Quartier und beurteile Nutzen, Nebenfolge und Verteilung.",
+				"model": "Ein zusätzlicher gut erreichbarer Treffpunkt könnte Teilhabe fördern. Bau und Betrieb kosten Geld und können Nutzungskonflikte auslösen. Ich würde besonders bisher schlecht versorgte Gruppen einbeziehen und Wirkung sowie Lärm nach der Einführung prüfen.",
+				"criteria": [
+					"Maßnahme mit Ziel erklärt",
+					"Nebenfolge berücksichtigt",
+					"Verteilung und Prüfung vorgesehen"
+				]
+			}
+		},
+		"extension": "Untersuche eine reale lokale Maßnahme mit aktuellen Daten und den Perspektiven mehrerer Betroffener. Eine Modellbewertung ersetzt keine Befragung."
+	},
+	{
+		"id": "p10-frieden",
+		"stage": "handlungsfelder",
+		"title": "Friedenssicherung und internationale Verantwortung",
+		"skill": "Ziele, Organisationen und Handlungsoptionen vergleichen",
+		"bindings": ["1", "4"],
+		"paragraphs": [
+			"Das Grundgesetz bindet deutsche Politik an Frieden und internationale Zusammenarbeit; Art. 26 verbietet Handlungen zur Vorbereitung eines Angriffskriegs. Die UN-Charta enthält das Gewaltverbot und regelt unter anderem Selbstverteidigung und Entscheidungen des Sicherheitsrats. Internationale Rechtsgrundlagen müssen im konkreten Fall geprüft werden.",
+			"Deutschland arbeitet in UN, EU und NATO mit unterschiedlichen Aufgaben und Verfahren zusammen. Diplomatie, humanitäre Hilfe, Sanktionen und Sicherheitsmaßnahmen haben verschiedene Chancen und Risiken. Ein Urteil fragt nach Rechtsgrundlage, Schutz Betroffener, Wirksamkeit, Nebenfolgen und langfristigen Perspektiven. Kein Instrument garantiert allein Frieden."
+		],
+		"material": "Fiktiver Krisenfall ohne reale Länder: Ein bewaffneter Konflikt bedroht Zivilpersonen. Vorgeschlagen werden Vermittlung, Hilfslieferungen und Sanktionen. Es fehlen verlässliche Angaben zur Lage, zum Mandat und zu möglichen Folgen.",
+		"materialLabel": "Eigenes, fiktives Unterrichtsmaterial · keine Nachricht und kein amtlicher Fall",
+		"sourceIds": ["gg26", "un", "nato", "eu-institutionen"],
+		"quiz": {
+			"extraWrong": "UN, EU und NATO sind dasselbe Organ.",
+			"explanation": "Eine Bewertung braucht Fakten und rechtliche Einordnung. Organisationen unterscheiden sich nach Aufgaben, Mitgliedschaft und Verfahren."
+		},
+		"cases": [
+			{
+				"prompt": "Eine Sanktion soll Druck erzeugen.",
+				"answer": "Wirkung und mögliche Folgen für Zivilpersonen prüfen.",
+				"options": [
+					"Sanktionen treffen immer nur Verantwortliche ohne Nebenfolgen.",
+					"Wirkung und mögliche Folgen für Zivilpersonen prüfen."
+				],
+				"feedback": "Auch nichtmilitärische Maßnahmen können unerwünschte und ungleich verteilte Folgen haben."
+			},
+			{
+				"prompt": "Eine Organisation unterstützt einen Vorschlag.",
+				"answer": "Mandat und Rechtsgrundlage bleiben zu prüfen.",
+				"options": [
+					"Mandat und Rechtsgrundlage bleiben zu prüfen.",
+					"Der Organisationsname allein klärt jede Rechtsfrage."
+				],
+				"feedback": "Die konkrete Zuständigkeit und Art der Entscheidung sind entscheidend."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Vergleiche Vermittlung und Hilfslieferungen nach Ziel und je einer Grenze.",
+				"model": "Vermittlung soll Verständigung ermöglichen, braucht aber erreichbare und verhandlungsbereite Beteiligte. Hilfslieferungen sollen Not lindern, brauchen sicheren Zugang und verlässliche Verteilung. Beide können wichtig sein und ersetzen keine Prüfung der konkreten Lage.",
+				"criteria": [
+					"Zwei Ziele unterschieden",
+					"Je eine Grenze genannt",
+					"Lageabhängigkeit erklärt"
+				]
+			},
+			"2": {
+				"prompt": "Recherchiere eine aktuelle deutsche außenpolitische Entscheidung. Beurteile sie mit zwei Kriterien und einem Gegengrund.",
+				"model": "Eine eigene Auswertung nennt die datierte amtliche Entscheidung und eine weitere verlässliche Quelle. Sie prüft Rechtsgrundlage und Folgen für Betroffene und diskutiert einen starken Einwand. Das fiktive Beispiel liefert nur die Struktur, kein Urteil über einen realen Konflikt.",
+				"criteria": [
+					"Reale Entscheidung belegt",
+					"Zwei Kriterien angewandt",
+					"Gegengrund und Unsicherheit genannt"
+				]
+			}
+		},
+		"extension": "Die aktuelle Rolle Deutschlands und ein realer Beschluss müssen mit datierten Quellen untersucht werden. Diskussion und Präsentation im Unterricht ergänzen die App."
+	}
+]
