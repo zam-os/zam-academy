@@ -221,11 +221,11 @@ export const methods: Lesson[] = [
     paragraphs: [
       "Eine Statistik nennt Größen, aber keine Gründe. Prüfe bei jeder Zahl: Wer hat erhoben, wann, mit welcher Abgrenzung, und in welcher Einheit? „Flüchtlinge“ konnte 1946 etwas anderes umfassen als 1950. Eine Geschichtskarte zeigt Räume, Grenzen und Bewegungen, ist aber selbst eine Darstellung mit Auswahl und Vereinfachung.",
       "Für ein Schaubild sammelst du zuerst Informationen aus Quellen und Darstellungen, aus Karten und Diagrammen. Dann entscheidest du, welche Beziehungen du zeigen willst: Ursachen und Folgen, Vergleiche oder Abläufe. Pfeile brauchen eine Bedeutung, etwa „führt zu“ oder „reagiert auf“. Ein gutes Schaubild nennt seine Quellen und trennt belegte Angaben von eigenen Schlussfolgerungen.",
-      "Beispiel: Laut Volkszählung vom Oktober 1946 lebten 9,6 Millionen Flüchtlinge in den vier Besatzungszonen. Um 1950 waren es etwa 8 Millionen in der Bundesrepublik und 4 Millionen in der DDR. Die Zahlen sind nicht direkt vergleichbar, weil Zeitpunkt und Zählweise verschieden sind. Sie zeigen aber: Beide deutschen Staaten mussten Millionen Menschen aufnehmen.",
+      "Beispiel: Die Volkszählung vom 29. Oktober 1946 zählte in den vier Besatzungszonen und Groß-Berlin rund 9,9 Millionen Zugewanderte, die 1939 östlich von Oder und Neiße oder im Ausland gewohnt hatten. Um 1950 lebten etwa 8 Millionen Flüchtlinge und Vertriebene in der Bundesrepublik und 4 Millionen in der DDR. Die Zahlen sind nicht direkt vergleichbar, weil Zeitpunkt, Gebiet und Abgrenzung verschieden sind; auch Darstellungen nennen für 1946 abweichende Werte. Sie zeigen aber: Beide deutschen Staaten mussten Millionen Menschen aufnehmen.",
     ],
     takeaway:
       "Zahlen brauchen Herkunft, Zeitpunkt und Einheit. Ein Schaubild verknüpft belegte Angaben mit klar benannten Beziehungen.",
-    sourceIds: ["lemo-vertreibung", "lehrplan"],
+    sourceIds: ["volkszaehlung-1946", "lemo-vertreibung", "lehrplan"],
     quiz: check(
       "Was musst du bei einer historischen Statistik zuerst prüfen?",
       "Herkunft, Zeitpunkt, Erhebungsweise und Einheit.",
@@ -250,9 +250,9 @@ export const methods: Lesson[] = [
             "8 und 4 Millionen: Das Verhältnis ist aus der Tabelle ablesbar.",
           ],
           [
-            "Zwischen 1946 und 1950 sind 1,6 Millionen Flüchtlinge gestorben.",
+            "Zwischen 1946 und 1950 ging die Zahl der Flüchtlinge um 1,9 Millionen zurück.",
             1,
-            "Die Zahlen beruhen auf unterschiedlichen Zählungen; Gründe für Unterschiede nennt die Tabelle nicht.",
+            "Die Zeile für 1950 gilt nur für die Bundesrepublik; zusammen mit der DDR waren es 1950 mehr als 1946. Die Zählungen grenzen zudem verschieden ab.",
           ],
           [
             "Die Aufnahme verlief in beiden Staaten ohne Konflikte.",
@@ -274,12 +274,12 @@ export const methods: Lesson[] = [
         max: 10,
         suffix: " Mio.",
         rows: [
-          { label: "Oktober 1946 · vier Besatzungszonen", value: 9.6 },
+          { label: "29. Oktober 1946 · vier Zonen und Groß-Berlin", value: 9.9 },
           { label: "1950 · Bundesrepublik", value: 8 },
           { label: "1950 · DDR", value: 4 },
         ],
-        sourceId: "lemo-vertreibung",
-        note: "Zeitpunkte und Zählweisen unterscheiden sich; die Zeilen sind nicht direkt vergleichbar.",
+        sourceId: "volkszaehlung-1946",
+        note: "1946: Volkszählung, Zugewanderte mit Wohnsitz 1939 östlich von Oder und Neiße oder im Ausland. 1950: Flüchtlinge und Vertriebene nach LeMO. Zeitpunkte, Gebiete und Abgrenzungen unterscheiden sich; die Zeilen sind nicht direkt vergleichbar.",
       },
     },
     tasks: {

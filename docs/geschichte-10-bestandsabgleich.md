@@ -1,6 +1,8 @@
 # Geschichte 10 · Lehrplanabgleich und Zuordnung der Alt-Zelle
 
-Stand: 25. Oktober 2026. **Thomas hat die Zuordnung der vier alten Karten am 25. Oktober 2026 in zam-os/zam-academy#45 freigegeben** („Ich gebe die Zuordnung 2 A / 0 B / 2 C mit Stilllegung der beiden C-Karten frei.“). Das [Academy-Paket](../geschichte-realschule-10/) erscheint deshalb als Zelle `2026.10.2` mit zwei `replaces` und zwei `retired_items`; `approved` trägt das Datum, `source` den Wortlaut.
+Stand: 25. Oktober 2026. **Thomas hat die Zuordnung der vier alten Karten am 25. Oktober 2026 in zam-os/zam-academy#45 freigegeben** („Ich gebe die Zuordnung 2 A / 0 B / 2 C mit Stilllegung der beiden C-Karten frei.“). Das [Academy-Paket](../geschichte-realschule-10/) erschien deshalb als Zelle `2026.10.2` mit zwei `replaces` und zwei `retired_items`; `approved` trägt das Datum, `source` den Wortlaut.
+
+**Version `2026.10.3`** setzt das Review von zam-os/zam#455 um, ohne IDs oder Zuordnung zu ändern: Die Begründungskarte zur Fotoquelle (`g10-bild-und-lied-begruenden`) trug die Antwort zur Liedfrage; vier weitere Begründungskarten nennen jetzt das Beispiel, nach dem ihre Frage verlangt. Die Merkkarte zur Volkszählung 1946 nannte nach LeMO 9,6 Millionen; der amtliche Textteil der Volkszählung vom 29. Oktober 1946 weist 9.938.191 Zugewanderte mit Wohnsitz 1939 östlich von Oder und Neiße oder im Ausland aus (vier Zonen und Groß-Berlin). Karte, Lektion und Datentabelle nennen jetzt rund 9,9 Millionen mit dieser Quelle. Die Frage der Mauerfall-Karte spricht nur noch von der „Öffnung der innerdeutschen Grenze“, ohne „in Berlin“.
 
 ## Lehrplan
 
@@ -16,7 +18,7 @@ Die 41 Kompetenzerwartungen stehen wörtlich in [`coverage.json`](../geschichte-
 - **Kuba-Krise 1961/62:** Der Plan datiert die Krise auf 1961/62; die Lektion erklärt das mit der Schweinebucht 1961 und der Raketenkrise 1962.
 - **Nahostkonflikt:** zwei Lektionen (Wurzeln bis 1949; seit 1967). Sie nennen beide Erinnerungen an 1948 (Unabhängigkeit und Nakba), die Flucht von Juden aus arabischen Ländern, Terror und Besatzung, den 7. Oktober 2023 und den Gaza-Krieg sowie Deutschlands besondere Verantwortung. Fachprüfer sollten Ausgewogenheit und Wortwahl gegenlesen.
 - **Gegenwart:** Lektionen zu Ukraine und Nahost tragen den Stand Oktober 2026 und fordern auf, aktuelle Nachrichten zu prüfen. Opferzahlen laufender Kriege werden nur als Größenordnung genannt.
-- **Zahlen in Werkstätten** stammen aus LeMO (Stiftung Haus der Geschichte): Flüchtlinge 1946/1950, Flucht aus der DDR bis 1961, ausländische Arbeitnehmer 1960–1973, Leipziger Montagsdemonstrationen, Treuhand-Bilanz. Vertriebene in Bayern 1949 (rund 1,9 Millionen, etwa 21 Prozent) nach German History in Documents and Images.
+- **Zahlen in Werkstätten** stammen aus der amtlichen Volkszählung 1946 (Zugewanderte) und aus LeMO (Stiftung Haus der Geschichte): Flüchtlinge 1950, Flucht aus der DDR bis 1961, ausländische Arbeitnehmer 1960–1973, Leipziger Montagsdemonstrationen, Treuhand-Bilanz. Vertriebene in Bayern 1949 (rund 1,9 Millionen, etwa 21 Prozent) nach German History in Documents and Images.
 - **Originaltext:** Die Präambel der Bayerischen Verfassung wurde gegen gesetze-bayern.de geprüft; Art. 2, 70, 74 und 100 ebenso.
 - **Quellen:** 108 Quellen in `src/curriculum/sources.ts`; am 25.10.2026 antworteten 107 mit HTTP 200. UNHCR lehnt Skriptabrufe ab (403); die verlinkte Seite „Global Trends 2024“ existiert.
 
