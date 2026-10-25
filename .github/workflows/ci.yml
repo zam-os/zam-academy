@@ -15,7 +15,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        app: [uml, physik-realschule-9, sql, mathematik-realschule-7, mathematik-realschule-8, mathematik-realschule-9, chemie-realschule-9, geschichte-realschule-9, geographie-realschule-9, biologie-realschule-10, physik-realschule-10, algorithmen, datennetze, bwr-realschule-9, wirtschaft-recht-realschule-9, mathematik-realschule-10, deutsch-realschule-9, physik-realschule-8, englisch-realschule-9, franzoesisch-realschule-9, informatik-realschule-10, chemie-realschule-10, deutsch-realschule-10, geschichte-realschule-10]
+        app: [uml, physik-realschule-9, sql, mathematik-realschule-7, mathematik-realschule-8, mathematik-realschule-9, chemie-realschule-9, geschichte-realschule-9, geographie-realschule-9, biologie-realschule-10, physik-realschule-10, algorithmen, datennetze, bwr-realschule-9, wirtschaft-recht-realschule-9, mathematik-realschule-10, deutsch-realschule-9, physik-realschule-8, englisch-realschule-9, franzoesisch-realschule-9, informatik-realschule-10, chemie-realschule-10, deutsch-realschule-10, geschichte-realschule-10, bwr-realschule-10]
     defaults:
       run:
         working-directory: ${{ matrix.app }}
@@ -99,5 +99,7 @@ jobs:
         run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node deutsch-realschule-10/scripts/validate-cell.mjs
       - name: Move the two approved Geschichte 10 histories and retire two old cards in temporary libraries
         run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node geschichte-realschule-10/scripts/validate-migration.mjs
+      - name: Keep BwR 10 histories unchanged and rehearse the proposed mapping in temporary libraries
+        run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node bwr-realschule-10/scripts/validate-migration.mjs
       - name: Build the catalog (requires explicit mapping approval)
         run: node scripts/build-catalog.mjs "$RUNNER_TEMP/catalog.json"
