@@ -2,7 +2,7 @@
 
 Stand: 25. Oktober 2026. Das neue Paket
 [`deutsch-realschule-10/`](../deutsch-realschule-10/) ergänzt die Academy um
-30 Lektionen und 60 Karten. Es ist lokal erstellt und noch unveröffentlicht.
+30 Lektionen und 60 Karten. Version 2026.10.1 wurde am 25.10.2026 veröffentlicht.
 
 ## Fachliche Zuordnung
 
@@ -148,3 +148,34 @@ Die isolierte Nachprüfung der Reviewkorrekturen verwendet
 Ein im Standardcache fehlendes Werkzeugarchiv wurde aus dem bestehenden
 Lockfile geladen; Abhängigkeiten und Lockfile wurden nicht geändert.
 Typecheck, alle 48 Tests, Build und ZIP-Prüfung bestehen auch in dieser Kopie.
+
+
+## Korrekturen aus dem ZAM-Integrationsreview (2026.10.2)
+
+Die neue Version bewahrt alle veröffentlichten Lektionsanker und alle 90
+Atom- und Karten-IDs. Sie ändert keine Zuordnung zu alten Karten.
+
+- Die 15 Atome aus Lesen und Sprache verwenden die vorhandenen Atlasgebiete
+  Literatur, Medien, Grammatik und Rechtschreibung wie Deutsch 9.
+- Die fünf Schnellchecks zu Diskussion, Roman, Satire, materialgestütztem
+  Schreiben und Kohärenz tragen ihr Übungsmaterial direkt in der Kartenfrage.
+  Die App zeigt dieses Material bereits vor dem Quiz; ihre Aufgaben bleiben gleich.
+- Alle 42 amtlichen LehrplanPLUS-Bindungen sind als prüfungsrelevant markiert.
+  Ein festes `published_at` verhindert eine bei jedem Aufruf wechselnde Datumsangabe.
+- Bloom-Stufe 2 bleibt für die Erklärungs- und Verfahrensfragen bestehen:
+  Die Antwortform `tier2_synthesis` allein begründet keine Anwendungsaufgabe
+  der Stufe 3. Die Schreibaufgaben der App üben Anwendung und Transfer getrennt.
+
+Die Pakettests prüfen die konkreten Atlasgebiete, die vollständige
+Materialangabe in den fünf Kartenfragen, die Prüfungsmarkierung sowie Datum,
+Version und die unveränderten öffentlichen IDs. Der Bestandsabgleich bleibt
+`proposal-only` mit `approved: null` und vier Zeilen `C / keep-active`.
+
+Für die Korrektur geprüft: `npm ci`, `npm run typecheck`, `npm test`
+(50 Tests), `npm run package:zip` einschließlich Build und ZIP-Abgleich.
+`node --test scripts/build-catalog.test.mjs scripts/academy-registry.test.mjs`
+und beide Installationsprüfungen (`scripts/validate-cells.mjs` sowie
+`deutsch-realschule-10/scripts/validate-cell.mjs`) bestehen mit dem von CI
+gepinnten `zam-core@0.54.0`. Im gebauten Lernpfad wurden alle 30
+Lektionsansichten auf beiden Aufgabenstufen anhand ihrer sichtbaren Inhalte
+geprüft; Quellenansicht sowie helle und dunkle Darstellung wurden angesehen.
