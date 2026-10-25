@@ -101,6 +101,24 @@ describe("Vollkostenrechnung", () => {
         [100, 0, 50, 7],
       ])
         expect(Math.round(distribute(total, w).reduce((s, x) => s + x, 0) * 100)).toBe(Math.round(total * 100));
+    // Review finding: 100 Euro over 0, 130, 190 and 0 m² once gave the empty last centre −0,01 Euro.
+    expect(distribute(100, [0, 130, 190, 0])).toEqual([0, 40.63, 59.37, 0]);
+    for (let total = 1; total <= 300; total += 7.13)
+      for (const w of [
+        [0, 130, 190, 0],
+        [1, 1, 1],
+        [0, 0, 3],
+        [7, 0, 11, 13],
+      ]) {
+        const shares = distribute(total, w);
+        expect(Math.round(shares.reduce((s, x) => s + x, 0) * 100)).toBe(Math.round(total * 100));
+        shares.forEach((x, i) => {
+          expect(x).toBeGreaterThanOrEqual(0);
+          if (w[i] === 0) expect(x).toBe(0);
+          // Never more than one cent away from the exact proportional share.
+          expect(Math.abs(x - (total * w[i]) / w.reduce((s, v) => s + v, 0))).toBeLessThan(0.0100001);
+        });
+      }
   });
   it("calculates the lesson's two orders step by step to the Listenverkaufspreis", () => {
     const a = calculation({ fm: 200, mgk: 10, fl: 300, fgk: 150, sek: 0, vwvt: 25, profit: 20, discount: 2, rebate: 10 });
@@ -188,7 +206,12 @@ describe("strict but usable answer checking", () => {
   it("accepts financial notation, units and rejects an error of one cent", () => {
     for (const value of ["1.234,50 €", "1,234.50", "1234.50", "1 234,50"]) expect(numberMatches(value, 1234.5)).toBe(true);
     expect(numberMatches("1.500", 1500)).toBe(true);
-    expect(numberMatches("1.500", 1.5)).toBe(true);
+    // A thousands point is never read as a decimal point as well.
+    expect(numberMatches("1.500", 1.5)).toBe(false);
+    expect(numberMatches("35.000", 35)).toBe(false);
+    expect(numberMatches("1.5", 1.5)).toBe(true);
+    expect(numberMatches("12.50", 12.5)).toBe(true);
+    expect(numberMatches("1.234.567", 1234567)).toBe(true);
     expect(numberMatches("−12,50", -12.5)).toBe(true);
     expect(numberMatches("1.143 Stück", 1143)).toBe(true);
     expect(numberMatches("−6 Prozentpunkte", -6)).toBe(true);

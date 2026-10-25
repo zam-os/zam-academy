@@ -389,7 +389,7 @@ function renderResult(kind: LabKind, v: Values): string {
           ["Gemeinkosten", r.mgkTotal, r.fgkTotal, r.rent[2], r.rent[3]],
           ["Zuschlagsgrundlage", num(v, "fm"), num(v, "fl"), "HKU", "HKU"],
         ],
-      )}<p class="result">MGK-Zuschlag: <strong>${fmt(r.mgk)} %</strong> · FGK-Zuschlag: <strong>${fmt(r.fgk)} %</strong></p><p class="small">Verwaltung und Vertrieb beziehen ihre Zuschläge auf die Herstellkosten des Umsatzes; sie werden hier nicht berechnet. Ein Rundungsrest der Mietverteilung fällt auf den Vertrieb.</p>`;
+      )}<p class="result">MGK-Zuschlag: <strong>${fmt(r.mgk)} %</strong> · FGK-Zuschlag: <strong>${fmt(r.fgk)} %</strong></p><p class="small">Verwaltung und Vertrieb beziehen ihre Zuschläge auf die Herstellkosten des Umsatzes; sie werden hier nicht berechnet. Rundungsreste der Mietverteilung gehen centweise an die Kostenstellen mit dem größten Rest.</p>`;
     }
     case "calc": {
       const r = calculation(calcInput(v));

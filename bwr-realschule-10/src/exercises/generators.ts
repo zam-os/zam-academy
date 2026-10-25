@@ -93,7 +93,7 @@ export function makeExercise(kind: PracticeKind, rng: Rng, level: Level): Exerci
         item = passive ? pick(rng, PREPAID_INCOME) : pick(rng, PREPAID.slice(0, 3)),
         amount = rng.int(3, 90) * 100;
       task.prompt = passive
-        ? `Zum 31. Dezember wurden ${fmt(amount)} Euro vorausbezahlter Ertrag für ${item.text} passiv abgegrenzt. Buche die Auflösung am 1. Januar des neuen Jahres.`
+        ? `Zum 31. Dezember wurden ${fmt(amount)} Euro vorauserhaltener Ertrag für ${item.text} passiv abgegrenzt. Buche die Auflösung am 1. Januar des neuen Jahres.`
         : `Zum 31. Dezember wurden ${fmt(amount)} Euro für ${item.text} aktiv abgegrenzt. Buche die Auflösung am 1. Januar des neuen Jahres.`;
       task.hint = passive
         ? "Die Abgrenzung wird umgekehrt: 4900 PRA an das Ertragskonto. Jetzt ist der Ertrag im richtigen Jahr."

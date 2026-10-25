@@ -62,7 +62,7 @@
           "Ausgabe und Aufwand unterscheiden",
           "Bestands- und Erfolgskonten nennen"
         ],
-        "model": "Beide Beträge sind Ausgaben, weil Geld vom Bankkonto abfließt. Nur die Zinsen von 360 Euro sind Aufwand und mindern auf 7510 ZAW den Gewinn. Die Tilgung von 2.400 Euro verringert die Darlehensschuld auf einem Bestandskonto und ist erfolgsneutral.",
+        "model": "Beide Beträge sind Ausgaben, weil Geld vom Bankkonto abfließt. Nur die Zinsen von 360 Euro sind Aufwand und mindern als Zinsaufwand den Gewinn (7510 ZAW). Die Tilgung von 2.400 Euro verringert die Darlehensschuld auf einem Bestandskonto und ist erfolgsneutral.",
         "criteria": [
           "Ausgabe und Aufwand richtig unterschieden",
           "Tilgung als erfolgsneutral erkannt",
@@ -1033,7 +1033,7 @@
     "intro": "Ist das langfristige Vermögen langfristig finanziert?",
     "paragraphs": [
       "Die Anlagendeckung prüft die goldene Bilanzregel: Langfristig gebundenes Vermögen soll langfristig finanziert sein. Anlagendeckung I = Eigenkapital · 100 : Anlagevermögen. Anlagendeckung II = (Eigenkapital + langfristiges Fremdkapital) · 100 : Anlagevermögen. Für die Anlagendeckung I gelten 70 bis 100 Prozent als Orientierung, die Anlagendeckung II sollte über 100 Prozent liegen.",
-      "Beispiel: Anlagevermögen 400.000, Eigenkapital 259.500, langfristiges Fremdkapital 160.000 Euro. Anlagendeckung I = 64,88 Prozent, Anlagendeckung II = 104,88 Prozent. Das Anlagevermögen ist vollständig langfristig finanziert. Liegt die Anlagendeckung II unter 100 Prozent, sind Anlagen teilweise mit kurzfristigen Krediten bezahlt; das gefährdet die Zahlungsfähigkeit, wenn diese Kredite fällig werden. Die Fristenregel kennst du aus BwR 9."
+      "Beispiel: Anlagevermögen 400.000, Eigenkapital 259.500, langfristiges Fremdkapital 160.000 Euro. Anlagendeckung I = 64,88 Prozent, Anlagendeckung II = 104,88 Prozent. Das Anlagevermögen ist vollständig langfristig finanziert. Liegt die Anlagendeckung II unter 100 Prozent, sind Anlagen teilweise mit kurzfristigen Krediten bezahlt; das gefährdet die Zahlungsfähigkeit, wenn diese Kredite fällig werden. Die goldene Finanzierungsregel kennst du aus BwR 9."
     ],
     "takeaway": "Anlagendeckung I = EK · 100 : AV, Anlagendeckung II = (EK + langfristiges FK) · 100 : AV; die Anlagendeckung II sollte über 100 Prozent liegen.",
     "sourceIds": [
@@ -1130,9 +1130,9 @@
       "answer": "15 %.",
       "wrong": [
         "6,67 %.",
-        "1,5 %."
+        "0,15 %."
       ],
-      "explanation": "24.000 · 100 : 160.000 = 15 %. Vertauscht man Zähler und Nenner, kommt kein sinnvoller Prozentwert heraus."
+      "explanation": "24.000 · 100 : 160.000 = 15 %. 6,67 entstehen, wenn man Eigenkapital durch Gewinn teilt (160.000 : 24.000); 0,15 entstehen, wenn das · 100 fehlt (24.000 : 160.000)."
     },
     "workshop": {
       "kind": "classify",
@@ -2747,7 +2747,7 @@
     "intro": "Welche Produkte bleiben im Sortiment?",
     "paragraphs": [
       "Bei der Fertigungsprogrammplanung entscheidet die Leitung, welche Produkte im Sortiment bleiben. Kurzfristig gilt: Ein Produkt mit positivem Stückdeckungsbeitrag trägt zur Deckung der Fixkosten bei und bleibt, auch wenn es nach Vollkosten einen Verlust zeigt. Ein Produkt mit negativem Stückdeckungsbeitrag verschlechtert das Ergebnis mit jedem Stück; es wird gestrichen, wenn keine anderen Gründe dagegen sprechen.",
-      "Die Fixkosten fallen beim Streichen eines Produkts kurzfristig weiter an. Beispiel: Hocker mit db −4 Euro bei 800 Stück kosten Lindner 3.200 Euro Ergebnis. Ohne Hocker verbessert sich das Betriebsergebnis um genau diesen Betrag. Gegen das Streichen können Gründe sprechen, etwa wenn Kunden ein vollständiges Sortiment erwarten. Freie Kapazitäten nutzt man bevorzugt für das Produkt mit dem höchsten Stückdeckungsbeitrag, solange es keinen Engpass gibt."
+      "Die Fixkosten fallen beim Streichen eines Produkts kurzfristig weiter an. Beispiel: Hocker mit db −4 Euro bei 800 Stück verschlechtern Lindners Ergebnis um 3.200 Euro. Ohne Hocker verbessert sich das Betriebsergebnis um genau diesen Betrag. Gegen das Streichen können Gründe sprechen, etwa wenn Kunden ein vollständiges Sortiment erwarten. Freie Kapazitäten nutzt man bevorzugt für das Produkt mit dem höchsten Stückdeckungsbeitrag, solange es keinen Engpass gibt."
     ],
     "takeaway": "Kurzfristig bleibt jedes Produkt mit positivem Stückdeckungsbeitrag im Programm; ein negativer Stückdeckungsbeitrag verschlechtert das Ergebnis, während die Fixkosten beim Streichen bleiben.",
     "sourceIds": [

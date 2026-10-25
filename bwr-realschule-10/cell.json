@@ -1781,15 +1781,21 @@
           "tier": "tier1_fast",
           "bloom_level": 2,
           "question": "Wie berechnen sich die Herstellkosten in der Zuschlagskalkulation?",
-          "concept": "Materialkosten + Fertigungskosten, also FM + MGK + FL + FGK (und gegebenenfalls SEKF).",
+          "concept_segments": [
+            {
+              "type": "math",
+              "tex": "\\text{HK} = \\text{MK} + \\text{FK} = \\text{FM} + \\text{MGK} + \\text{FL} + \\text{FGK}\\;(+\\,\\text{SEKF})",
+              "speech": "Herstellkosten gleich Materialkosten plus Fertigungskosten, also Fertigungsmaterial plus Materialgemeinkosten plus Fertigungslöhne plus Fertigungsgemeinkosten, gegebenenfalls plus Sondereinzelkosten der Fertigung"
+            }
+          ],
           "source_link": "https://academy.zam-os.org/bwr-realschule-10/#lesson=vk-zuschlagskalkulation",
           "materiality": "material",
           "sample_solution": "MK = FM + MGK; FK = FL + FGK + Sondereinzelkosten der Fertigung; HK = MK + FK.",
           "fast_check": {
             "type": "binary_choice",
             "options": [
-              "Materialkosten + Fertigungskosten, also FM + MGK + FL + FGK (und gegebenenfalls SEKF).",
-              "Selbstkosten + Gewinnzuschlag."
+              "Materialkosten + Fertigungskosten",
+              "Selbstkosten + Gewinnzuschlag"
             ],
             "correct_index": 0
           }
@@ -2664,15 +2670,21 @@
           "tier": "tier1_fast",
           "bloom_level": 2,
           "question": "Wie berechnet man aus einem Bruttobetrag mit 19 % Umsatzsteuer den Nettobetrag?",
-          "concept": "Bruttobetrag · 100 : 119.",
+          "concept_segments": [
+            {
+              "type": "math",
+              "tex": "\\text{Netto} = \\frac{\\text{Brutto} \\cdot 100}{119}",
+              "speech": "Netto gleich Brutto mal hundert durch hundertneunzehn"
+            }
+          ],
           "source_link": "https://academy.zam-os.org/bwr-realschule-10/#lesson=gr-vorsteuer",
           "materiality": "material",
           "sample_solution": "Beispiel: 1.190 · 100 : 119 = 1.000 Euro netto, 190 Euro Vorsteuer.",
           "fast_check": {
             "type": "binary_choice",
             "options": [
-              "Bruttobetrag · 100 : 119.",
-              "Bruttobetrag minus 19 % des Bruttobetrags."
+              "Bruttobetrag · 100 : 119",
+              "Bruttobetrag minus 19 % des Bruttobetrags"
             ],
             "correct_index": 0
           }

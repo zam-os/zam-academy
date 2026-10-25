@@ -22,8 +22,10 @@ export function parseNumbers(raw: string): number[] {
     if (!/^[+-]?\d+,\d+$/.test(value)) return [];
     candidates.push(value.replace(",", "."));
   } else {
-    if (/^[+-]?\d+(\.\d+)?$/.test(value)) candidates.push(value);
+    // German grouping wins: "35.000" is thirty-five thousand, never 35. A point
+    // counts as a decimal point only when no group of three digits follows it.
     if (/^[+-]?\d{1,3}(\.\d{3})+$/.test(value)) candidates.push(value.replaceAll(".", ""));
+    else if (/^[+-]?\d+(\.\d+)?$/.test(value)) candidates.push(value);
   }
   return [...new Set(candidates.map(Number).filter(Number.isFinite))];
 }

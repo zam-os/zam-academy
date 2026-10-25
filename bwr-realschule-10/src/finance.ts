@@ -128,15 +128,29 @@ export function ratios(b: Condensed, profit: number, equityStart: number) {
   };
 }
 
-/** Distribute an overhead total in proportion to a key; the rounding remainder goes to the last cost centre. */
+/**
+ * Distribute an overhead total in proportion to a key (largest remainder):
+ * every share is first rounded down to the cent, then the missing cents go one
+ * by one to the largest remainders. No share is negative and a key of zero
+ * always gets zero.
+ */
 export function distribute(total: number, weights: number[]) {
-  const sum = weights.reduce((s, w) => s + w, 0);
-  if (!positive(total) || weights.some((w) => !Number.isFinite(w) || w < 0) || sum <= 0)
+  if (!positive(total) || weights.some((w) => !Number.isFinite(w) || w < 0))
     throw new Error("Gemeinkosten und Schlüsselwerte prüfen.");
-  const cents = toCents(total);
-  const shares = weights.map((w) => mulDiv(cents, w, sum));
-  shares[shares.length - 1] += cents - shares.reduce((s, x) => s + x, 0);
-  return shares.map(euro);
+  // Keys such as m² or kWh are exact to a millionth here.
+  const keys = weights.map((w) => BigInt(Math.round(w * 1_000_000)));
+  const sum = keys.reduce((s, k) => s + k, 0n);
+  if (sum <= 0n) throw new Error("Gemeinkosten und Schlüsselwerte prüfen.");
+  const cents = BigInt(toCents(total));
+  const shares = keys.map((k) => (cents * k) / sum);
+  const rest = keys.map((k, i) => ({ i, r: (cents * k) % sum }));
+  let missing = Number(cents - shares.reduce((s, x) => s + x, 0n));
+  for (const { i } of rest.filter((x) => x.r > 0n).sort((a, b) => (b.r > a.r ? 1 : b.r < a.r ? -1 : a.i - b.i))) {
+    if (missing === 0) break;
+    shares[i] += 1n;
+    missing--;
+  }
+  return shares.map((x) => Number(x) / 100);
 }
 
 export interface CalcInput {

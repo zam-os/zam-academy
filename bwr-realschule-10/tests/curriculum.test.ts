@@ -173,7 +173,9 @@ describe("existing ZAM cards", () => {
       "db = p - k_v",
     );
     expect(succ("bwr10-vk-zuschlagskalkulation-check")?.question).toMatch(/Herstellkosten/);
-    expect(succ("bwr10-vk-zuschlagskalkulation-check")?.concept).toMatch(/^Materialkosten \+ Fertigungskosten/);
+    const hk = succ("bwr10-vk-zuschlagskalkulation-check");
+    expect(plain(hk?.concept, hk?.concept_segments)).toMatch(/^\\text\{HK\} = \\text\{MK\} \+ \\text\{FK\}/);
+    expect(hk?.fast_check?.options[0]).toBe("Materialkosten + Fertigungskosten");
   });
 });
 

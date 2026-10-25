@@ -26,7 +26,7 @@ Keine Anmeldung, Telemetrie, KI-Aufrufe oder Laufzeitanfragen. Externe Quellen �
 
 ## Karten und bisherige Lernstände
 
-Die 76 Karten stehen ausschließlich in `cell.json`, je zwei pro Lektion; Formeln stehen als Segmente mit gesprochener Fassung. Jede Karte verlinkt `https://academy.zam-os.org/bwr-realschule-10/#lesson=<id>`. Lektions-, Atom- und Karten-IDs sind in `tests/fixtures/public-contract.json` gepinnt.
+Die 76 Karten stehen ausschließlich in `cell.json`, je zwei pro Lektion. Ist die Frage oder die Antwort einer Karte eine Formel, steht sie als Segmente mit gesprochener Fassung (`question_segments`, `concept_segments`). Die zwei Optionen von `fast_check` und die `sample_solution` sind im KVT-Format reine Textfelder; dort stehen Formeln als Text mit „·“, „:“ und „−“. Jede Karte verlinkt `https://academy.zam-os.org/bwr-realschule-10/#lesson=<id>`. Lektions-, Atom- und Karten-IDs sind in `tests/fixtures/public-contract.json` gepinnt.
 
 ZAM enthält bereits die Zelle `de-by:realschule-10-bwr-kosten-leistungsrechnung-kalkulation-bilanzanalyse` mit vier Karten. Die erste Veröffentlichung dieser Zelle verändert **keine** Lernhistorie: kein `replaces`, keine `retired_items`. `replaces-de-by.json` ist ein Vorschlag (`proposal-only`, `approved: null`): zwei gleiche Einzelabrufe (A) und zwei mehrteilige Abrufe (C), die nach einer Freigabe durch Thomas stillgelegt würden. Der [Bestandsabgleich](../docs/bwr-10-bestandsabgleich.md) begründet jede Zeile.
 

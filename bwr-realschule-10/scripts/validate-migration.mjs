@@ -197,6 +197,7 @@ try {
       await reviewedCard(collision, row.de_by_id, userId, 1);
       await reviewedCard(collision, bySlug.get(row.academy_slug).id, userId, 3);
       const before = await snapshot(collision);
+      // Matches zam-core 0.54.0's wording; check it again when the pinned version is raised.
       await assert.rejects(() => zam.installKvtTile(collision, proposed), /holds a card on both|merge/i);
       assert.deepEqual(await snapshot(collision), before, "a collision must leave both histories intact");
       console.log(
