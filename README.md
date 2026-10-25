@@ -9,6 +9,7 @@ Hands-on training apps that build understanding before [ZAM](https://github.com/
 | Physik 9 Realschule (LehrplanPLUS Bayern) | [`physik-realschule-9/`](physik-realschule-9/) | https://academy.zam-os.org/physik-realschule-9/ | `zam-academy:physik-realschule-9` |
 | Relationale Datenbanken und SQL (DE/EN, LehrplanPLUS IT 2.3.1/2.3.2) | [`sql/`](sql/) | https://academy.zam-os.org/sql/ | `zam-academy:sql` |
 | Englisch 9 Realschule (LehrplanPLUS Bayern) | [`englisch-realschule-9/`](englisch-realschule-9/) | https://academy.zam-os.org/englisch-realschule-9/ | `zam-academy:englisch-realschule-9` |
+| Englisch 10 Realschule (LehrplanPLUS Bayern, alle Wahlpflichtfächergruppen) | [`englisch-realschule-10/`](englisch-realschule-10/) | https://academy.zam-os.org/englisch-realschule-10/ | `zam-academy:englisch-realschule-10` |
 | Mathematik 7 Realschule (LehrplanPLUS Bayern, Zweig I und II/III) | [`mathematik-realschule-7/`](mathematik-realschule-7/) | https://academy.zam-os.org/mathematik-realschule-7/ | `zam-academy:mathematik-realschule-7` |
 | Mathematik 8 Realschule (LehrplanPLUS Bayern, Zweig I und II/III) | [`mathematik-realschule-8/`](mathematik-realschule-8/) | https://academy.zam-os.org/mathematik-realschule-8/ | `zam-academy:mathematik-realschule-8` |
 | Mathematik 9 Realschule (LehrplanPLUS Bayern) | [`mathematik-realschule-9/`](mathematik-realschule-9/) | https://academy.zam-os.org/mathematik-realschule-9/ | `zam-academy:mathematik-realschule-9` |
@@ -70,6 +71,7 @@ cd uml                 # or: cd physik-realschule-9 (dev server on :5181), cd sq
 # Chemie 10: cd chemie-realschule-10 (dev server on :5201)
 # Deutsch 10: cd deutsch-realschule-10 (dev server on :5202)
 # Geschichte 10: cd geschichte-realschule-10 (dev server on :5203)
+# Englisch 10: cd englisch-realschule-10 (dev server on :5204)
 # BwR 10: cd bwr-realschule-10 (dev server on :5205)
 npm ci
 npm run dev      # http://localhost:5180/uml/
