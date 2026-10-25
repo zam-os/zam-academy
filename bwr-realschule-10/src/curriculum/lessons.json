@@ -1,0 +1,3230 @@
+[
+  {
+    "id": "pe-begriffe",
+    "lb": 1,
+    "title": "Ausgabe und Aufwand, Einnahme und Ertrag",
+    "intro": "Nicht jede Zahlung verändert den Gewinn.",
+    "paragraphs": [
+      "Eine Ausgabe ist ein Geldabfluss, eine Einnahme ein Geldzufluss. Ein Aufwand ist der Werteverzehr eines Geschäftsjahres und mindert den Gewinn, ein Ertrag ist der Wertezuwachs und erhöht ihn. Aufwendungen und Erträge stehen auf Erfolgskonten. Bestandswirksame Vorgänge berühren nur Bestandskonten und lassen den Gewinn unverändert.",
+      "Beispiele aus der fiktiven Möbelfabrik Lindner: Der Kauf einer Maschine per Banküberweisung ist eine Ausgabe, aber noch kein Aufwand; der Werteverzehr wird über Jahre als Abschreibung gebucht. Die Tilgung eines Darlehens ist eine Ausgabe ohne Aufwand, die Zinsen dagegen sind Aufwand. Eine Privatentnahme mindert das Eigenkapital, ist aber kein betrieblicher Aufwand. Weil der Gewinn die Grundlage der Einkommen- und Gewerbesteuer ist, muss er genau ermittelt werden."
+    ],
+    "takeaway": "Ausgabe und Einnahme beschreiben Geldströme; Aufwand und Ertrag beschreiben den Werteverzehr und Wertezuwachs eines Geschäftsjahres und bestimmen den Gewinn.",
+    "sourceIds": [
+      "lp",
+      "hgb252"
+    ],
+    "quiz": {
+      "question": "Die Möbelfabrik Lindner tilgt 5.000 Euro eines Bankdarlehens per Überweisung. Was liegt vor?",
+      "answer": "Eine Ausgabe, aber kein Aufwand.",
+      "wrong": [
+        "Ein Aufwand, aber keine Ausgabe.",
+        "Eine Ausgabe und zugleich ein Aufwand von 5.000 Euro."
+      ],
+      "explanation": "Die Tilgung verringert Bankguthaben und Darlehensschuld; der Gewinn ändert sich nicht. Nur Zinsen wären Aufwand."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Fälle untersuchen",
+      "instruction": "Ordne die Fälle zu. Prüfe anschließend deine Entscheidungen.",
+      "categories": [
+        "Ausgabe, kein Aufwand",
+        "Ausgabe und Aufwand",
+        "Aufwand, keine Ausgabe"
+      ],
+      "entries": [
+        {
+          "text": "Kauf einer Maschine per Banküberweisung.",
+          "target": 0,
+          "feedback": "Geld fließt ab; der Werteverzehr folgt erst über die Abschreibungen."
+        },
+        {
+          "text": "Überweisung der Zinsen für ein Darlehen.",
+          "target": 1,
+          "feedback": "Geld fließt ab und mindert als Zinsaufwand den Gewinn."
+        },
+        {
+          "text": "Jährliche Abschreibung der Maschine.",
+          "target": 2,
+          "feedback": "Werteverzehr ohne Geldabfluss im Abschlussjahr."
+        },
+        {
+          "text": "Privatentnahme von 800 Euro vom Geschäftskonto.",
+          "target": 0,
+          "feedback": "Geld fließt ab, aber das ist kein betrieblicher Aufwand; das Eigenkapital sinkt über das Privatkonto."
+        }
+      ],
+      "conclusion": "Geldströme und Erfolg fallen oft auseinander."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Lindner überweist am 15. Dezember 2.400 Euro Darlehenstilgung und 360 Euro Zinsen. Erkläre, welcher Teil den Gewinn mindert und warum.",
+        "hints": [
+          "Ausgabe und Aufwand unterscheiden",
+          "Bestands- und Erfolgskonten nennen"
+        ],
+        "model": "Beide Beträge sind Ausgaben, weil Geld vom Bankkonto abfließt. Nur die Zinsen von 360 Euro sind Aufwand und mindern als Zinsaufwand den Gewinn (7510 ZAW). Die Tilgung von 2.400 Euro verringert die Darlehensschuld auf einem Bestandskonto und ist erfolgsneutral.",
+        "criteria": [
+          "Ausgabe und Aufwand richtig unterschieden",
+          "Tilgung als erfolgsneutral erkannt",
+          "Zinsen als Aufwand mit Konto genannt"
+        ]
+      },
+      "2": {
+        "prompt": "Ein Mitschüler sagt: „Im Dezember haben wir viel Geld ausgegeben, also war der Gewinn niedrig.“ Prüfe die Aussage an zwei eigenen Beispielen und erkläre, warum der Gewinn periodenrichtig ermittelt werden muss.",
+        "hints": [
+          "Ein Beispiel für Ausgabe ohne Aufwand",
+          "Bezug zur Besteuerung"
+        ],
+        "model": "Die Aussage stimmt nicht allgemein. Wer im Dezember eine Maschine kauft oder ein Darlehen tilgt, gibt Geld aus, ohne dass im gleichen Umfang Aufwand entsteht. Umgekehrt mindert die Abschreibung den Gewinn ohne Ausgabe. Der Gewinn ist die Grundlage der Einkommen- und Gewerbesteuer und der Auswertung durch Banken; stünde Aufwand im falschen Jahr, wäre der Gewinn des einen Jahres zu niedrig und der des anderen zu hoch.",
+        "criteria": [
+          "Aussage begründet zurückgewiesen",
+          "Zwei passende eigene Beispiele",
+          "Bedeutung des richtigen Gewinns erklärt"
+        ]
+      }
+    }
+  },
+  {
+    "id": "pe-zuordnung",
+    "lb": 1,
+    "title": "Aufwand und Ertrag dem richtigen Jahr zuordnen",
+    "intro": "Gezahlt wird an einem Tag, verbraucht wird über einen Zeitraum.",
+    "paragraphs": [
+      "Das Geschäftsjahr endet am 31. Dezember. Aufwendungen und Erträge gehören in das Jahr, in dem sie wirtschaftlich verursacht wurden, unabhängig vom Zahlungstag. Das Handelsgesetzbuch schreibt diesen Grundsatz der Periodenabgrenzung vor. Für die Aufteilung zeichnest du eine Zeitleiste vom Beginn des Zeitraums bis zum 31. Dezember und weiter ins neue Jahr und rechnest monatsgenau.",
+      "Beispiel: Lindner zahlt am 1. Oktober 1.200 Euro Versicherungsbeitrag für ein Jahr im Voraus. Oktober bis Dezember sind drei Monate, also 300 Euro Aufwand im alten Jahr. Januar bis September sind neun Monate, also 900 Euro, die wirtschaftlich zum neuen Jahr gehören. Bei umsatzsteuerpflichtigen Vorgängen wird nur der Nettobetrag aufgeteilt; die Vorsteuer bleibt im Jahr der Rechnung."
+    ],
+    "takeaway": "Der Abgrenzungsbetrag ist der Nettobetrag geteilt durch die Monate der Laufzeit mal die Monate, die ins neue Jahr fallen; der Zahlungstag spielt dafür keine Rolle.",
+    "sourceIds": [
+      "lp",
+      "hgb252"
+    ],
+    "quiz": {
+      "question": "Am 1. April werden 2.400 Euro Miete für zwölf Monate im Voraus bezahlt. Welcher Betrag gehört wirtschaftlich ins neue Jahr?",
+      "answer": "600 Euro.",
+      "wrong": [
+        "1.800 Euro.",
+        "800 Euro."
+      ],
+      "explanation": "April bis Dezember sind neun Monate (1.800 Euro) im alten Jahr; Januar bis März sind drei Monate: 2.400 : 12 · 3 = 600 Euro."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Fälle untersuchen",
+      "instruction": "Ordne die Fälle zu. Prüfe anschließend deine Entscheidungen.",
+      "categories": [
+        "Nur altes Jahr",
+        "Teilweise neues Jahr",
+        "Nur neues Jahr"
+      ],
+      "entries": [
+        {
+          "text": "Am 1. Januar zahlt Lindner die Jahresmiete für Januar bis Dezember.",
+          "target": 0,
+          "feedback": "Der ganze Zeitraum liegt im laufenden Geschäftsjahr."
+        },
+        {
+          "text": "Am 1. September gehen Zinsen für zwölf Monate im Voraus ein.",
+          "target": 1,
+          "feedback": "September bis Dezember gehören ins alte, Januar bis August ins neue Jahr."
+        },
+        {
+          "text": "Am 15. Dezember wird die Kfz-Steuer für das gesamte nächste Kalenderjahr überwiesen.",
+          "target": 2,
+          "feedback": "Der Aufwand betrifft vollständig das neue Jahr; die Zahlung im Dezember ändert daran nichts."
+        }
+      ],
+      "conclusion": "Entscheidend ist der Zeitraum, nicht der Zahlungstag."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Lindner zahlt am 1. August 3.600 Euro Versicherungsbeitrag für ein Jahr. Beschreibe die Zeitleiste und begründe die Aufteilung auf beide Jahre.",
+        "hints": [
+          "Monate bis 31. Dezember zählen",
+          "Betrag je Monat bilden"
+        ],
+        "model": "Ein Monat kostet 3.600 : 12 = 300 Euro. August bis Dezember sind fünf Monate, also 1.500 Euro Aufwand im alten Jahr. Januar bis Juli sind sieben Monate, also 2.100 Euro, die ins neue Jahr gehören und abgegrenzt werden.",
+        "criteria": [
+          "Monate richtig gezählt",
+          "Betrag je Monat verwendet",
+          "Beide Teilbeträge genannt"
+        ]
+      },
+      "2": {
+        "prompt": "Am 1. November zahlt Lindner 1.800 Euro netto plus 342 Euro Umsatzsteuer für sechs Monate Werbung im Lokalradio. Ein Kollege will 1.428 Euro abgrenzen. Prüfe das und begründe den richtigen Betrag.",
+        "hints": [
+          "Nettobetrag als Grundlage",
+          "Laufzeit von sechs Monaten beachten"
+        ],
+        "model": "Abgegrenzt wird nur der Nettobetrag, weil die Vorsteuer mit der Rechnung im alten Jahr abziehbar ist. November und Dezember sind zwei Monate im alten Jahr, Januar bis April vier Monate im neuen: 1.800 : 6 · 4 = 1.200 Euro. Die 1.428 Euro entstehen, wenn man den Bruttobetrag von 2.142 Euro aufteilt; das ist falsch.",
+        "criteria": [
+          "Nettobetrag als Grundlage begründet",
+          "Sechs Monate richtig aufgeteilt",
+          "Fehler des Kollegen benannt"
+        ]
+      }
+    },
+    "practice": "split",
+    "lab": "accrual"
+  },
+  {
+    "id": "pe-ara",
+    "lb": 1,
+    "title": "Aktive Rechnungsabgrenzung buchen",
+    "intro": "Im alten Jahr bezahlt, im neuen Jahr verbraucht.",
+    "paragraphs": [
+      "Ist eine Ausgabe des alten Jahres teilweise Aufwand des neuen Jahres, wird dieser Teil am 31. Dezember aus dem Aufwandskonto herausgenommen und auf 2900 ARA (Aktive Rechnungsabgrenzung) gebucht. ARA steht auf der Aktivseite der Bilanz: Der Betrieb hat eine Leistung bereits bezahlt, die er erst im neuen Jahr erhält. Der Aufwand des alten Jahres sinkt, der Gewinn steigt auf den richtigen Wert.",
+      "Beispiel: Lindner hat am 1. Oktober 1.200 Euro Versicherungsbeitrag auf 6900 VBEI gebucht. Zum 31. Dezember gehören 900 Euro ins neue Jahr. Buchung: 2900 ARA 900 Euro an 6900 VBEI 900 Euro. War die Rechnung umsatzsteuerpflichtig, wird nur der Nettobetrag abgegrenzt. Typische Fälle sind vorausbezahlte Versicherungen, Kfz-Steuer, Miete und Werbung."
+    ],
+    "takeaway": "Aktive Rechnungsabgrenzung am 31. Dezember: 2900 ARA an Aufwandskonto, und zwar mit dem Nettobetrag, der wirtschaftlich zum neuen Jahr gehört.",
+    "sourceIds": [
+      "lp",
+      "konten",
+      "hgb250"
+    ],
+    "quiz": {
+      "question": "Am 1. Juli wurden 600 Euro Kfz-Steuer für zwölf Monate bezahlt und auf 7030 KFZST gebucht. Wie lautet die Buchung am 31. Dezember?",
+      "answer": "2900 ARA 300 Euro an 7030 KFZST 300 Euro.",
+      "wrong": [
+        "7030 KFZST 300 Euro an 2900 ARA 300 Euro.",
+        "2900 ARA 600 Euro an 2800 BK 600 Euro."
+      ],
+      "explanation": "Juli bis Dezember sind sechs Monate im alten Jahr; die übrigen 300 Euro gehören ins neue Jahr und werden aus dem Aufwand herausgenommen."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Fälle untersuchen",
+      "instruction": "Ordne die Fälle zu. Prüfe anschließend deine Entscheidungen.",
+      "categories": [
+        "Aktive Rechnungsabgrenzung",
+        "Passive Rechnungsabgrenzung",
+        "Keine Abgrenzung"
+      ],
+      "entries": [
+        {
+          "text": "Versicherung am 1. Mai für zwölf Monate bezahlt.",
+          "target": 0,
+          "feedback": "Januar bis April des neuen Jahres sind schon bezahlt."
+        },
+        {
+          "text": "Miete für Dezember am 1. Dezember bezahlt.",
+          "target": 2,
+          "feedback": "Zahlung und Aufwand liegen im gleichen Jahr."
+        },
+        {
+          "text": "Werbung für Januar bis März am 20. Dezember bezahlt.",
+          "target": 0,
+          "feedback": "Der gesamte Nettobetrag ist Aufwand des neuen Jahres."
+        },
+        {
+          "text": "Mieteinnahme für Januar bis Juni am 28. Dezember erhalten.",
+          "target": 1,
+          "feedback": "Ein Ertrag des neuen Jahres wurde schon vereinnahmt."
+        }
+      ],
+      "conclusion": "Aktiv grenzt man vorausbezahlten Aufwand ab, passiv vorauserhaltenen Ertrag."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Lindner bezahlt am 1. März 4.800 Euro Jahresmiete für eine Lagerhalle (umsatzsteuerfrei) und bucht sie auf 6700 AWMP. Bestimme den Abgrenzungsbetrag, nenne die Buchung zum 31. Dezember und erkläre, wie sich der Gewinn ändert.",
+        "hints": [
+          "Monate im neuen Jahr zählen",
+          "Wirkung auf den Gewinn"
+        ],
+        "model": "4.800 : 12 = 400 Euro je Monat. März bis Dezember sind zehn Monate im alten Jahr, Januar und Februar zwei Monate im neuen. Abgegrenzt werden 800 Euro: 2900 ARA 800 Euro an 6700 AWMP 800 Euro. Der Mietaufwand des alten Jahres sinkt auf 4.000 Euro, der Gewinn steigt um 800 Euro auf den periodenrichtigen Wert.",
+        "criteria": [
+          "800 Euro richtig berechnet",
+          "Buchungssatz mit ARA im Soll",
+          "Wirkung auf den Gewinn erklärt"
+        ]
+      },
+      "2": {
+        "prompt": "Lindner erhält am 1. Dezember eine Rechnung über Werbeplakate für Dezember bis Februar: 900 Euro netto plus 171 Euro Umsatzsteuer, sofort per Bank bezahlt. Bilde die Buchung bei Zahlung und die Abgrenzung zum 31. Dezember und begründe, warum die Vorsteuer nicht abgegrenzt wird.",
+        "hints": [
+          "Zahlungsbuchung mit Vorsteuer",
+          "Nur netto abgrenzen"
+        ],
+        "model": "Bei Zahlung: 6870 WER 900 Euro und 2600 VORST 171 Euro an 2800 BK 1.071 Euro. Von drei Monaten gehören Januar und Februar ins neue Jahr: 900 : 3 · 2 = 600 Euro. Zum 31. Dezember: 2900 ARA 600 Euro an 6870 WER 600 Euro. Die Vorsteuer ist mit der Rechnung im Dezember abziehbar und gehört nicht zum Aufwand, deshalb wird sie nicht abgegrenzt.",
+        "criteria": [
+          "Zahlungsbuchung vollständig",
+          "600 Euro netto abgegrenzt",
+          "Vorsteuer begründet nicht abgegrenzt"
+        ]
+      }
+    },
+    "practice": "ara"
+  },
+  {
+    "id": "pe-pra",
+    "lb": 1,
+    "title": "Passive Rechnungsabgrenzung buchen",
+    "intro": "Im alten Jahr kassiert, im neuen Jahr verdient.",
+    "paragraphs": [
+      "Ist eine Einnahme des alten Jahres teilweise Ertrag des neuen Jahres, wird dieser Teil am 31. Dezember aus dem Ertragskonto herausgenommen und auf 4900 PRA (Passive Rechnungsabgrenzung) gebucht. PRA steht auf der Passivseite: Der Betrieb hat Geld erhalten, schuldet dafür aber noch eine Leistung im neuen Jahr. Der Ertrag des alten Jahres sinkt, der Gewinn wird nicht zu hoch ausgewiesen.",
+      "Beispiel: Lindner vermietet einen Ausstellungsraum. Am 1. November gehen 1.800 Euro umsatzsteuerfreie Miete für sechs Monate ein und werden auf 5400 EMP gebucht. November und Dezember gehören ins alte Jahr (600 Euro), Januar bis April ins neue (1.200 Euro). Buchung zum 31. Dezember: 5400 EMP 1.200 Euro an 4900 PRA 1.200 Euro. Ebenso werden im Voraus erhaltene Zinsen auf 5710 ZE abgegrenzt."
+    ],
+    "takeaway": "Passive Rechnungsabgrenzung am 31. Dezember: Ertragskonto an 4900 PRA mit dem Teil der Einnahme, der wirtschaftlich zum neuen Jahr gehört.",
+    "sourceIds": [
+      "lp",
+      "konten",
+      "hgb250"
+    ],
+    "quiz": {
+      "question": "Am 1. Dezember gehen 3.000 Euro Zinsen für zwölf Monate im Voraus ein. Welche Buchung ist am 31. Dezember richtig?",
+      "answer": "5710 ZE 2.750 Euro an 4900 PRA 2.750 Euro.",
+      "wrong": [
+        "4900 PRA 2.750 Euro an 5710 ZE 2.750 Euro.",
+        "2900 ARA 2.750 Euro an 5710 ZE 2.750 Euro."
+      ],
+      "explanation": "Nur der Dezember (250 Euro) ist Ertrag des alten Jahres. Elf Monate, 2.750 Euro, werden als passive Abgrenzung aus dem Ertrag genommen."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Fälle untersuchen",
+      "instruction": "Ordne die Fälle zu. Prüfe anschließend deine Entscheidungen.",
+      "categories": [
+        "Aktivseite der Bilanz",
+        "Passivseite der Bilanz"
+      ],
+      "entries": [
+        {
+          "text": "2900 ARA: im Voraus bezahlte Versicherung",
+          "target": 0,
+          "feedback": "Ein Anspruch auf eine Leistung im neuen Jahr ist ein Vermögensposten."
+        },
+        {
+          "text": "4900 PRA: im Voraus erhaltene Miete",
+          "target": 1,
+          "feedback": "Lindner schuldet dem Mieter noch die Nutzung des Raums."
+        },
+        {
+          "text": "3900 RST: erwartete Prozesskosten",
+          "target": 1,
+          "feedback": "Eine ungewisse Verbindlichkeit gehört zum Fremdkapital."
+        },
+        {
+          "text": "2400 FO: noch nicht bezahlte Kundenrechnung",
+          "target": 0,
+          "feedback": "Eine Forderung ist Umlaufvermögen."
+        }
+      ],
+      "conclusion": "PRA ist eine Leistungsschuld und steht deshalb auf der Passivseite."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Lindner erhält am 1. Juli 6.000 Euro Pacht für eine vermietete Fläche (umsatzsteuerfrei) für ein Jahr im Voraus. Ermittle den Abgrenzungsbetrag, nenne die Buchung zum 31. Dezember und erkläre, warum PRA auf der Passivseite steht.",
+        "hints": [
+          "Monate im neuen Jahr zählen",
+          "Leistungsschuld erklären"
+        ],
+        "model": "Juli bis Dezember sind sechs Monate im alten Jahr, Januar bis Juni sechs im neuen: 6.000 : 12 · 6 = 3.000 Euro. Buchung: 5400 EMP 3.000 Euro an 4900 PRA 3.000 Euro. PRA steht auf der Passivseite, weil Lindner für das erhaltene Geld noch sechs Monate die Fläche überlassen muss; das ist eine Leistungsschuld gegenüber dem Pächter.",
+        "criteria": [
+          "3.000 Euro richtig berechnet",
+          "Buchungssatz mit PRA im Haben",
+          "Passivseite begründet"
+        ]
+      },
+      "2": {
+        "prompt": "Vergleiche aktive und passive Rechnungsabgrenzung: Auf welcher Bilanzseite stehen sie, welches Erfolgskonto wird am 31. Dezember berichtigt und wie wirkt die Buchung jeweils auf den Gewinn des alten Jahres? Erkläre an je einem eigenen Beispiel.",
+        "hints": [
+          "Bilanzseite und Erfolgskonto",
+          "Gewinnwirkung vergleichen"
+        ],
+        "model": "ARA steht auf der Aktivseite: Vorausbezahlter Aufwand wird aus dem Aufwandskonto genommen, zum Beispiel 2900 ARA an 6900 VBEI für eine im Oktober bezahlte Jahresversicherung. Der Aufwand sinkt, der Gewinn des alten Jahres steigt. PRA steht auf der Passivseite: Vorauserhaltener Ertrag wird aus dem Ertragskonto genommen, zum Beispiel 5710 ZE an 4900 PRA für im Voraus erhaltene Zinsen. Der Ertrag sinkt, der Gewinn des alten Jahres sinkt.",
+        "criteria": [
+          "Beide Bilanzseiten richtig",
+          "Je ein passendes Beispiel mit Buchung",
+          "Gegensätzliche Gewinnwirkung erklärt"
+        ]
+      }
+    },
+    "practice": "pra"
+  },
+  {
+    "id": "pe-aufloesung",
+    "lb": 1,
+    "title": "Abgrenzungsposten im neuen Jahr auflösen",
+    "intro": "Am 1. Januar kommt der Aufwand oder Ertrag dort an, wo er hingehört.",
+    "paragraphs": [
+      "Am 1. Januar des neuen Jahres werden die Abgrenzungsposten wieder aufgelöst. Die Buchung kehrt die Abgrenzung um: Bei aktiver Abgrenzung Aufwandskonto an 2900 ARA, bei passiver Abgrenzung 4900 PRA an Ertragskonto. Damit erscheinen Aufwand und Ertrag genau in dem Jahr, zu dem sie wirtschaftlich gehören, und ARA und PRA sind wieder ausgeglichen.",
+      "Beispiel: Zum 31. Dezember wurden 900 Euro Versicherungsbeitrag aktiv abgegrenzt. Am 1. Januar bucht Lindner 6900 VBEI 900 Euro an 2900 ARA 900 Euro. Im neuen Jahr wirkt der Betrag als Aufwand, obwohl in diesem Jahr kein Geld mehr fließt. Die Auflösung ist erfolgswirksam: Sie mindert oder erhöht den Gewinn des neuen Jahres."
+    ],
+    "takeaway": "Auflösung am 1. Januar: Aufwandskonto an 2900 ARA beziehungsweise 4900 PRA an Ertragskonto; so wirkt der abgegrenzte Betrag im neuen Jahr als Aufwand oder Ertrag.",
+    "sourceIds": [
+      "lp",
+      "konten"
+    ],
+    "quiz": {
+      "question": "Zum 31. Dezember stehen 1.200 Euro auf 4900 PRA für vorauserhaltene Mieteinnahmen. Wie wird am 1. Januar gebucht?",
+      "answer": "4900 PRA 1.200 Euro an 5400 EMP 1.200 Euro.",
+      "wrong": [
+        "5400 EMP 1.200 Euro an 4900 PRA 1.200 Euro.",
+        "4900 PRA 1.200 Euro an 2800 BK 1.200 Euro."
+      ],
+      "explanation": "Die passive Abgrenzung wird umgekehrt; der Mietertrag gehört jetzt ins neue Jahr. Es fließt kein Geld zurück."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Fälle untersuchen",
+      "instruction": "Ordne die Fälle zu. Prüfe anschließend deine Entscheidungen.",
+      "categories": [
+        "31. Dezember (Abgrenzung)",
+        "1. Januar (Auflösung)"
+      ],
+      "entries": [
+        {
+          "text": "2900 ARA an 6900 VBEI",
+          "target": 0,
+          "feedback": "Vorausbezahlter Aufwand wird aus dem alten Jahr genommen."
+        },
+        {
+          "text": "6900 VBEI an 2900 ARA",
+          "target": 1,
+          "feedback": "Der Aufwand kommt im neuen Jahr an."
+        },
+        {
+          "text": "5400 EMP an 4900 PRA",
+          "target": 0,
+          "feedback": "Vorauserhaltener Ertrag wird aus dem alten Jahr genommen."
+        },
+        {
+          "text": "4900 PRA an 5400 EMP",
+          "target": 1,
+          "feedback": "Der Ertrag kommt im neuen Jahr an."
+        }
+      ],
+      "conclusion": "Die Auflösung ist die Umkehrung der Abgrenzungsbuchung."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Zum 31. Dezember wurden 450 Euro Kfz-Steuer aktiv abgegrenzt. Nenne die Buchung am 1. Januar und erkläre, wie sie den Gewinn des neuen Jahres beeinflusst.",
+        "hints": [
+          "Umkehrung der Abgrenzung",
+          "Erfolgswirkung im neuen Jahr"
+        ],
+        "model": "Am 1. Januar bucht Lindner 7030 KFZST 450 Euro an 2900 ARA 450 Euro. Damit steht der Steueraufwand für die Monate des neuen Jahres auch im neuen Jahr und mindert dessen Gewinn um 450 Euro, obwohl die Zahlung schon im Vorjahr war.",
+        "criteria": [
+          "Buchungssatz richtig",
+          "Konto ARA wird ausgeglichen",
+          "Gewinnminderung im neuen Jahr erklärt"
+        ]
+      },
+      "2": {
+        "prompt": "Im Januar fragt die Inhaberin: „Warum steht ein Versicherungsaufwand von 900 Euro im neuen Jahr, obwohl wir nichts bezahlt haben?“ Erkläre ihr den Zusammenhang von Abgrenzung und Auflösung und was ohne Abgrenzung passiert wäre.",
+        "hints": [
+          "Zusammenhang beider Buchungen",
+          "Folgen ohne Abgrenzung"
+        ],
+        "model": "Die Versicherung wurde im Oktober für ein Jahr bezahlt. 900 Euro davon betreffen Januar bis September und wurden zum 31. Dezember aktiv abgegrenzt. Die Auflösung am 1. Januar bucht diesen Aufwand ins neue Jahr. Ohne Abgrenzung wäre der Gewinn des alten Jahres um 900 Euro zu niedrig und der des neuen um 900 Euro zu hoch ausgewiesen.",
+        "criteria": [
+          "Abgrenzung und Auflösung verbunden",
+          "Kein Geldfluss im neuen Jahr erklärt",
+          "Verzerrung beider Gewinne beschrieben"
+        ]
+      }
+    },
+    "practice": "reverse"
+  },
+  {
+    "id": "pe-rst-bilden",
+    "lb": 1,
+    "title": "Rückstellungen bilden",
+    "intro": "Der Aufwand ist sicher, nur Höhe und Termin noch nicht.",
+    "paragraphs": [
+      "Rückstellungen sind ungewisse Verbindlichkeiten: Der Aufwand ist im alten Jahr verursacht, aber Höhe oder Fälligkeit stehen am 31. Dezember noch nicht fest. Im Unterricht kommen zwei Anlässe vor: eine aufgeschobene Reparatur, die laut Kostenvoranschlag in den ersten drei Monaten des neuen Jahres nachgeholt wird, und die erwarteten Kosten eines laufenden Gerichtsverfahrens. Die Rückstellung steht auf 3900 RST auf der Passivseite.",
+      "Gebucht wird der geschätzte Nettobetrag, denn Vorsteuer entsteht erst mit der Rechnung. Beispiel: Die Lackieranlage müsste im Dezember gewartet werden; Lindner verschiebt die Reparatur auf Februar. Kostenvoranschlag 2.000 Euro netto. Buchung zum 31. Dezember: 6160 FRI 2.000 Euro an 3900 RST 2.000 Euro. Für erwartete Anwalts- und Gerichtskosten bucht man 6770 RBK an 3900 RST. Der Aufwand mindert den Gewinn des Jahres, in dem er verursacht wurde."
+    ],
+    "takeaway": "Rückstellungen erfassen ungewisse Aufwendungen des alten Jahres: 6160 FRI oder 6770 RBK an 3900 RST, immer mit dem geschätzten Nettobetrag.",
+    "sourceIds": [
+      "lp",
+      "konten",
+      "hgb249"
+    ],
+    "quiz": {
+      "question": "Ein Kostenvoranschlag für eine aufgeschobene Reparatur lautet über 3.000 Euro netto plus 570 Euro Umsatzsteuer. Welche Buchung ist zum 31. Dezember richtig?",
+      "answer": "6160 FRI 3.000 Euro an 3900 RST 3.000 Euro.",
+      "wrong": [
+        "6160 FRI 3.000 Euro und 2600 VORST 570 Euro an 3900 RST 3.570 Euro.",
+        "3900 RST 3.000 Euro an 6160 FRI 3.000 Euro."
+      ],
+      "explanation": "Die Vorsteuer entsteht erst mit der Rechnung im neuen Jahr; zurückgestellt wird nur der geschätzte Nettobetrag."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Fälle untersuchen",
+      "instruction": "Ordne die Fälle zu. Prüfe anschließend deine Entscheidungen.",
+      "categories": [
+        "Rückstellung (3900 RST)",
+        "Passive Rechnungsabgrenzung (4900 PRA)",
+        "Verbindlichkeit (4400 VE)"
+      ],
+      "entries": [
+        {
+          "text": "Ein Prozess läuft, die Anwaltskosten werden auf etwa 1.500 Euro geschätzt.",
+          "target": 0,
+          "feedback": "Höhe und Termin sind ungewiss, verursacht ist der Aufwand schon."
+        },
+        {
+          "text": "Die Mieteinnahme für Januar ist schon im Dezember eingegangen.",
+          "target": 1,
+          "feedback": "Ertrag des neuen Jahres, kein ungewisser Aufwand."
+        },
+        {
+          "text": "Eine Reparaturrechnung vom 20. Dezember über 800 Euro netto ist noch nicht bezahlt.",
+          "target": 2,
+          "feedback": "Höhe und Fälligkeit stehen fest: eine Verbindlichkeit."
+        },
+        {
+          "text": "Eine Wartung wird auf Februar verschoben, Kostenvoranschlag 2.400 Euro.",
+          "target": 0,
+          "feedback": "Unterlassene Instandhaltung, die bald nachgeholt wird."
+        }
+      ],
+      "conclusion": "Ungewissheit über Höhe oder Termin unterscheidet die Rückstellung von der Verbindlichkeit."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Bei Lindner läuft ein Rechtsstreit mit einem Lieferer. Die Anwältin schätzt die Kosten auf 2.500 Euro netto. Begründe, warum eine Rückstellung nötig ist, und nenne die Buchung zum 31. Dezember.",
+        "hints": [
+          "Merkmale einer Rückstellung",
+          "Nettobetrag buchen"
+        ],
+        "model": "Der Rechtsstreit wurde im alten Jahr verursacht, die Kosten sind aber in Höhe und Termin noch ungewiss. Damit der Gewinn des alten Jahres nicht zu hoch ausgewiesen wird, bildet Lindner eine Rückstellung: 6770 RBK 2.500 Euro an 3900 RST 2.500 Euro. Vorsteuer wird erst mit der Rechnung gebucht.",
+        "criteria": [
+          "Verursachung im alten Jahr genannt",
+          "Ungewissheit begründet",
+          "Buchung mit Nettobetrag"
+        ]
+      },
+      "2": {
+        "prompt": "Unterscheide Rückstellung, Verbindlichkeit und passive Rechnungsabgrenzung an je einem eigenen Beispiel. Achte darauf, was am 31. Dezember sicher ist und was nicht.",
+        "hints": [
+          "Gewissheit von Höhe und Fälligkeit",
+          "Je ein eigenes Beispiel"
+        ],
+        "model": "Eine Verbindlichkeit steht in Höhe und Fälligkeit fest, etwa eine Liefererrechnung über 800 Euro, zahlbar im Januar. Eine Rückstellung ist ungewiss in Höhe oder Termin, etwa geschätzte Prozesskosten. Eine passive Rechnungsabgrenzung entsteht, wenn Geld für eine Leistung des neuen Jahres schon eingegangen ist, etwa vorausbezahlte Miete; geschuldet wird keine Zahlung, sondern die Leistung.",
+        "criteria": [
+          "Drei Begriffe sauber getrennt",
+          "Passende eigene Beispiele",
+          "Gewissheit als Merkmal genutzt"
+        ]
+      }
+    },
+    "practice": "provision"
+  },
+  {
+    "id": "pe-rst-aufloesen",
+    "lb": 1,
+    "title": "Rückstellungen auflösen",
+    "intro": "Die Rechnung kommt: Wie gut war die Schätzung?",
+    "paragraphs": [
+      "Kommt im neuen Jahr die Rechnung, wird die Rückstellung aufgelöst. Die Rechnung enthält den tatsächlichen Nettobetrag und die Vorsteuer. Drei Fälle sind möglich: Stimmt der Nettobetrag mit der Rückstellung überein, ist die Auflösung erfolgsneutral. War die Rückstellung zu hoch, entsteht ein periodenfremder Ertrag auf 5490 PFE. War sie zu niedrig, entsteht ein periodenfremder Aufwand auf 6990 PFAW.",
+      "Beispiel: Rückstellung 2.000 Euro, Rechnung 2.300 Euro netto plus 437 Euro Umsatzsteuer auf Ziel. Buchung: 3900 RST 2.000 Euro, 6990 PFAW 300 Euro und 2600 VORST 437 Euro an 4400 VE 2.737 Euro. Lautet die Rechnung nur auf 1.800 Euro netto plus 342 Euro, bucht Lindner 3900 RST 2.000 Euro und 2600 VORST 342 Euro an 4400 VE 2.142 Euro und 5490 PFE 200 Euro. Periodenfremd heißt: Die Differenz betrifft eigentlich das alte Jahr, wird aber im neuen erfasst."
+    ],
+    "takeaway": "Bei der Auflösung wird die Rückstellung immer vollständig ausgebucht; ist sie zu niedrig, bucht man 6990 PFAW, ist sie zu hoch, bucht man 5490 PFE.",
+    "sourceIds": [
+      "lp",
+      "konten",
+      "hgb249"
+    ],
+    "quiz": {
+      "question": "Rückstellung 1.500 Euro, Rechnung 1.200 Euro netto plus 228 Euro Umsatzsteuer, Zahlung per Bank. Welche Buchung ist richtig?",
+      "answer": "3900 RST 1.500 und 2600 VORST 228 an 2800 BK 1.428 und 5490 PFE 300.",
+      "wrong": [
+        "3900 RST 1.200 und 2600 VORST 228 an 2800 BK 1.428.",
+        "3900 RST 1.500, 6990 PFAW 300 und 2600 VORST 228 an 2800 BK 2.028."
+      ],
+      "explanation": "Die Rückstellung wird vollständig aufgelöst. Weil 300 Euro zu viel zurückgestellt waren, entsteht ein periodenfremder Ertrag."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Fälle untersuchen",
+      "instruction": "Ordne die Fälle zu. Prüfe anschließend deine Entscheidungen.",
+      "categories": [
+        "Erfolgsneutral",
+        "Periodenfremder Ertrag (5490 PFE)",
+        "Periodenfremder Aufwand (6990 PFAW)"
+      ],
+      "entries": [
+        {
+          "text": "Rückstellung 900 Euro, Rechnung 900 Euro netto.",
+          "target": 0,
+          "feedback": "Die Schätzung war genau."
+        },
+        {
+          "text": "Rückstellung 2.000 Euro, Rechnung 1.750 Euro netto.",
+          "target": 1,
+          "feedback": "250 Euro wurden zu viel zurückgestellt."
+        },
+        {
+          "text": "Rückstellung 1.200 Euro, Rechnung 1.380 Euro netto.",
+          "target": 2,
+          "feedback": "180 Euro wurden zu wenig zurückgestellt."
+        }
+      ],
+      "conclusion": "Verglichen wird immer mit dem Nettobetrag der Rechnung."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Für einen Prozess wurden 3.000 Euro zurückgestellt. Im April kommt die Anwaltsrechnung: 3.400 Euro netto plus 646 Euro Umsatzsteuer, Zahlung später. Bilde den Buchungssatz und erkläre den Fall.",
+        "hints": [
+          "Netto mit Rückstellung vergleichen",
+          "Vorsteuer und Bruttoverbindlichkeit"
+        ],
+        "model": "3900 RST 3.000 Euro, 6990 PFAW 400 Euro und 2600 VORST 646 Euro an 4400 VE 4.046 Euro. Es wurde 400 Euro zu wenig zurückgestellt. Dieser Aufwand hätte wirtschaftlich das alte Jahr belastet und erscheint nun als periodenfremder Aufwand im neuen Jahr.",
+        "criteria": [
+          "Buchungssatz vollständig und ausgeglichen",
+          "Fall zu niedriger Rückstellung erkannt",
+          "Periodenfremd erklärt"
+        ]
+      },
+      "2": {
+        "prompt": "Eine Unternehmerin möchte Rückstellungen „sicherheitshalber“ sehr hoch ansetzen. Beurteile, wie sich das auf die Gewinne beider Jahre auswirkt und warum eine realistische Schätzung verlangt wird.",
+        "hints": [
+          "Wirkung im alten und neuen Jahr",
+          "Folgen für Steuer und Auswertung"
+        ],
+        "model": "Eine zu hohe Rückstellung erhöht den Aufwand und senkt den Gewinn des alten Jahres. Im neuen Jahr entsteht bei der Auflösung ein periodenfremder Ertrag, der den Gewinn erhöht. Der Gewinn wird also nur verschoben, die Bilanz zeigt zum Stichtag zu hohe Schulden und Banken oder das Finanzamt bekommen ein falsches Bild. Deshalb verlangt das Handelsrecht eine Schätzung nach vernünftiger kaufmännischer Beurteilung.",
+        "criteria": [
+          "Gewinnverschiebung erklärt",
+          "Periodenfremden Ertrag im neuen Jahr genannt",
+          "Begründete Beurteilung"
+        ]
+      }
+    },
+    "practice": "release",
+    "lab": "provision"
+  },
+  {
+    "id": "ua-abschluss",
+    "lb": 2,
+    "title": "Vom Geschäftsgang zum Jahresabschluss",
+    "intro": "Bilanz und GuV entstehen in einer festen Reihenfolge.",
+    "paragraphs": [
+      "Am Ende des Geschäftsjahres erstellt jeder Kaufmann einen Jahresabschluss aus Bilanz und Gewinn- und Verlustrechnung. Zuerst kommen die vorbereitenden Abschlussbuchungen: Unterkonten abschließen, Umsatzsteuer-Zahllast ermitteln, Abschreibungen, Bewertung der Forderungen, zeitliche Abgrenzung und Rückstellungen, Bestandsveränderungen. Dann werden alle Aufwands- und Ertragskonten über 8020 GUV abgeschlossen.",
+      "Ist die Summe der Erträge größer als die der Aufwendungen, entsteht ein Gewinn: 8020 GUV an 3000 EK. Bei einem Verlust lautet die Buchung 3000 EK an 8020 GUV. Zuletzt werden die Bestandskonten über 8010 SBK abgeschlossen: aktive Bestandskonten mit 8010 SBK an Konto, passive mit Konto an 8010 SBK. Beispiel: Erträge 812.000 Euro, Aufwendungen 768.500 Euro ergeben 43.500 Euro Gewinn."
+    ],
+    "takeaway": "Erst die vorbereitenden Abschlussbuchungen, dann die Erfolgskonten über 8020 GUV, dann 8020 GUV an 3000 EK im Gewinnfall, zuletzt die Bestandskonten über 8010 SBK.",
+    "sourceIds": [
+      "lp",
+      "konten",
+      "hgb242"
+    ],
+    "quiz": {
+      "question": "Auf 8020 GUV stehen im Soll 640.000 Euro Aufwendungen und im Haben 610.000 Euro Erträge. Wie wird abgeschlossen?",
+      "answer": "3000 EK 30.000 Euro an 8020 GUV 30.000 Euro.",
+      "wrong": [
+        "8020 GUV 30.000 Euro an 3000 EK 30.000 Euro.",
+        "8010 SBK 30.000 Euro an 8020 GUV 30.000 Euro."
+      ],
+      "explanation": "Die Aufwendungen überwiegen: Es ist ein Verlust von 30.000 Euro, der das Eigenkapital mindert."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Fälle untersuchen",
+      "instruction": "Ordne die Fälle zu. Prüfe anschließend deine Entscheidungen.",
+      "categories": [
+        "Vorbereitende Abschlussbuchung",
+        "Abschluss der Erfolgskonten",
+        "Abschluss der Bestandskonten"
+      ],
+      "entries": [
+        {
+          "text": "6520 ABSA an 0700 MA",
+          "target": 0,
+          "feedback": "Die Abschreibung gehört zu den vorbereitenden Buchungen."
+        },
+        {
+          "text": "5000 UEFE an 8020 GUV",
+          "target": 1,
+          "feedback": "Ein Ertragskonto wird über das GUV-Konto abgeschlossen."
+        },
+        {
+          "text": "8010 SBK an 2800 BK",
+          "target": 2,
+          "feedback": "Ein aktives Bestandskonto wird über das Schlussbilanzkonto abgeschlossen."
+        },
+        {
+          "text": "2900 ARA an 6900 VBEI",
+          "target": 0,
+          "feedback": "Die zeitliche Abgrenzung muss vor dem GUV-Abschluss stehen."
+        }
+      ],
+      "conclusion": "Was den Erfolg berichtigt, muss vor dem Abschluss der Erfolgskonten gebucht sein."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Ordne die Schritte des Jahresabschlusses in eine sinnvolle Reihenfolge und begründe, warum die Rechnungsabgrenzung vor dem Abschluss des GUV-Kontos gebucht werden muss.",
+        "hints": [
+          "Drei Stufen des Abschlusses",
+          "Wirkung der Abgrenzung auf GUV"
+        ],
+        "model": "Zuerst die vorbereitenden Abschlussbuchungen wie Abschreibungen, Abgrenzungen und Rückstellungen, dann der Abschluss der Erfolgskonten über 8020 GUV und der Abschluss des GUV-Kontos auf 3000 EK, zuletzt die Bestandskonten über 8010 SBK. Die Rechnungsabgrenzung berichtigt Aufwands- und Ertragskonten; wäre GUV schon abgeschlossen, enthielte der Gewinn die falschen Beträge.",
+        "criteria": [
+          "Reihenfolge vollständig",
+          "Begründung über die Erfolgskonten",
+          "GUV-Abschluss auf EK genannt"
+        ]
+      },
+      "2": {
+        "prompt": "Lindner vergisst zum 31. Dezember eine Rückstellung über 2.000 Euro für eine verschobene Reparatur. Erkläre die Folgen für GUV-Konto, Gewinn, Eigenkapital und Schlussbilanz.",
+        "hints": [
+          "Fehlender Aufwand",
+          "Wirkung auf Bilanz"
+        ],
+        "model": "Auf dem GUV-Konto fehlen 2.000 Euro Aufwand, der Gewinn ist um 2.000 Euro zu hoch. Über 8020 GUV an 3000 EK wird auch das Eigenkapital um 2.000 Euro zu hoch ausgewiesen. In der Schlussbilanz fehlt die Rückstellung im Fremdkapital; Kennzahlen wie Liquidität und Rentabilität werden zu günstig berechnet.",
+        "criteria": [
+          "Gewinn zu hoch erkannt",
+          "Eigenkapital und Fremdkapital betroffen",
+          "Folgen für die Auswertung"
+        ]
+      }
+    },
+    "practice": "closing"
+  },
+  {
+    "id": "ua-eigenkapital",
+    "lb": 2,
+    "title": "Gewinn und Eigenkapital",
+    "intro": "Wiederholung aus BwR 9 und Nebenrechnung für die Rentabilität.",
+    "paragraphs": [
+      "Der Gewinn erhöht das Eigenkapital, ein Verlust verringert es. Privatentnahmen und Privateinlagen der Inhaberin laufen über 3001 P und werden am Jahresende auf 3000 EK abgeschlossen. Es gilt: Eigenkapital am Jahresende gleich Eigenkapital am Jahresanfang plus Gewinn plus Einlagen minus Entnahmen. Privatvorgänge sind weder Aufwand noch Ertrag.",
+      "Beispiel: Anfangskapital 250.000 Euro, Gewinn 43.500 Euro, Einlagen 2.000 Euro, Entnahmen 36.000 Euro. Endkapital: 250.000 + 43.500 + 2.000 − 36.000 = 259.500 Euro. Weil die Entnahmen größer sind als die Einlagen, wird das Privatkonto mit 3000 EK 34.000 Euro an 3001 P 34.000 Euro abgeschlossen. Kennt man Anfangs- und Endkapital, lässt sich der Gewinn zurückrechnen."
+    ],
+    "takeaway": "Eigenkapital am Jahresende = Eigenkapital am Jahresanfang + Gewinn + Privateinlagen − Privatentnahmen; Privatvorgänge sind weder Aufwand noch Ertrag.",
+    "sourceIds": [
+      "lp",
+      "konten"
+    ],
+    "quiz": {
+      "question": "Anfangskapital 200.000 Euro, Endkapital 215.000 Euro, Entnahmen 30.000 Euro, keine Einlagen. Wie hoch war der Gewinn?",
+      "answer": "45.000 Euro.",
+      "wrong": [
+        "15.000 Euro.",
+        "−15.000 Euro."
+      ],
+      "explanation": "215.000 = 200.000 + Gewinn − 30.000, also Gewinn = 45.000 Euro. Wer nur die Differenz der Kapitalstände nimmt, übersieht die Entnahmen."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Fälle untersuchen",
+      "instruction": "Ordne die Fälle zu. Prüfe anschließend deine Entscheidungen.",
+      "categories": [
+        "Erhöht das Eigenkapital",
+        "Verringert das Eigenkapital",
+        "Ändert das Eigenkapital nicht"
+      ],
+      "entries": [
+        {
+          "text": "Jahresgewinn",
+          "target": 0,
+          "feedback": "Der Gewinn wird über 8020 GUV an 3000 EK gebucht."
+        },
+        {
+          "text": "Privatentnahme",
+          "target": 1,
+          "feedback": "Die Inhaberin nimmt Kapital aus dem Betrieb."
+        },
+        {
+          "text": "Tilgung eines Darlehens",
+          "target": 2,
+          "feedback": "Bank und Fremdkapital sinken gleichermaßen."
+        },
+        {
+          "text": "Privateinlage",
+          "target": 0,
+          "feedback": "Die Inhaberin bringt zusätzliches Kapital ein."
+        }
+      ],
+      "conclusion": "Gewinn, Verlust, Einlagen und Entnahmen verändern das Eigenkapital."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Anfangskapital 180.000 Euro, Gewinn 27.000 Euro, Entnahmen 24.000 Euro, Einlagen 5.000 Euro. Berechne das Endkapital und nenne die Abschlussbuchung des Privatkontos.",
+        "hints": [
+          "Formel der Eigenkapitalentwicklung",
+          "Saldo des Privatkontos"
+        ],
+        "model": "Endkapital = 180.000 + 27.000 + 5.000 − 24.000 = 188.000 Euro. Die Entnahmen übersteigen die Einlagen um 19.000 Euro; das Privatkonto wird mit 3000 EK 19.000 Euro an 3001 P 19.000 Euro abgeschlossen.",
+        "criteria": [
+          "188.000 Euro richtig",
+          "Saldo 19.000 Euro erkannt",
+          "Buchungsrichtung richtig"
+        ]
+      },
+      "2": {
+        "prompt": "Das Eigenkapital eines Betriebs ist im Jahr gesunken, obwohl ein Gewinn erzielt wurde. Erkläre, wie das möglich ist, und zeige es an eigenen Zahlen.",
+        "hints": [
+          "Entnahmen größer als Gewinn",
+          "Eigene Zahlen rechnen"
+        ],
+        "model": "Das Eigenkapital sinkt, wenn die Privatentnahmen größer sind als Gewinn und Einlagen zusammen. Beispiel: Anfangskapital 100.000 Euro, Gewinn 20.000 Euro, Entnahmen 30.000 Euro, keine Einlagen. Endkapital 90.000 Euro. Der Betrieb war erfolgreich, die Inhaberin hat aber mehr entnommen, als er verdient hat.",
+        "criteria": [
+          "Ursache richtig erklärt",
+          "Stimmiges Zahlenbeispiel",
+          "Gewinn und Kapitalveränderung unterschieden"
+        ]
+      }
+    },
+    "practice": "equity"
+  },
+  {
+    "id": "ua-aufbereiten",
+    "lb": 2,
+    "title": "Die Bilanz in sieben Posten aufbereiten",
+    "intro": "Aus vielen Konten werden wenige, vergleichbare Posten.",
+    "paragraphs": [
+      "Für die Auswertung wird die Schlussbilanz zu sieben Posten zusammengefasst. Aktivseite: Anlagevermögen (Grundstücke, Gebäude, Maschinen, Fuhrpark, Büromaschinen, Büroausstattung, Wertpapiere des Anlagevermögens), Vorräte (Roh-, Hilfs-, Betriebsstoffe, Fremdbauteile), Forderungen und flüssige Mittel. Passivseite: Eigenkapital, langfristiges und kurzfristiges Fremdkapital.",
+      "Zu den Forderungen zählen FO, ZWFO, VORST und ARA; die Wertberichtigungen EWB und PWB werden abgezogen. Flüssige Mittel sind Bank und Kasse. Langfristiges Fremdkapital sind die langfristigen Bankverbindlichkeiten (LBKV). Kurzfristiges Fremdkapital sind RST, KBKV, VE, UST, VFA, VSV und PRA; die Rückstellungen werden in unseren Fällen im Folgejahr aufgelöst. Beispiel: FO 60.000, ZWFO 4.000, VORST 2.500, ARA 900, EWB 1.500 und PWB 600 Euro ergeben Forderungen von 65.300 Euro."
+    ],
+    "takeaway": "Die aufbereitete Bilanz hat sieben Posten: Anlagevermögen, Vorräte, Forderungen, flüssige Mittel, Eigenkapital, langfristiges und kurzfristiges Fremdkapital.",
+    "sourceIds": [
+      "lp",
+      "konten"
+    ],
+    "quiz": {
+      "question": "Zu welchem Posten der aufbereiteten Bilanz gehört 3900 RST in unseren Schulfällen?",
+      "answer": "Zum kurzfristigen Fremdkapital.",
+      "wrong": [
+        "Zum Eigenkapital.",
+        "Zum langfristigen Fremdkapital."
+      ],
+      "explanation": "Die Rückstellungen werden im Folgejahr aufgelöst und deshalb dem kurzfristigen Fremdkapital zugerechnet."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Fälle untersuchen",
+      "instruction": "Ordne die Fälle zu. Prüfe anschließend deine Entscheidungen.",
+      "categories": [
+        "Anlagevermögen",
+        "Forderungen",
+        "Kurzfristiges Fremdkapital",
+        "Langfristiges Fremdkapital"
+      ],
+      "entries": [
+        {
+          "text": "0840 FP Fuhrpark",
+          "target": 0,
+          "feedback": "Fahrzeuge dienen dem Betrieb dauerhaft."
+        },
+        {
+          "text": "2900 ARA",
+          "target": 1,
+          "feedback": "Ein Anspruch auf eine schon bezahlte Leistung wird zu den Forderungen gerechnet."
+        },
+        {
+          "text": "4900 PRA",
+          "target": 2,
+          "feedback": "Die geschuldete Leistung wird im nächsten Jahr erbracht."
+        },
+        {
+          "text": "4250 LBKV",
+          "target": 3,
+          "feedback": "Langfristige Bankkredite bilden das langfristige Fremdkapital."
+        },
+        {
+          "text": "3680 PWB (wird abgezogen)",
+          "target": 1,
+          "feedback": "Wertberichtigungen mindern den Posten Forderungen."
+        }
+      ],
+      "conclusion": "Jedes Konto gehört zu genau einem der sieben Posten."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Schlussbilanz (Auszug): 2400 FO 48.000, 2600 VORST 3.000, 3670 EWB 2.000, 2800 BK 15.000, 2880 KA 600, 4400 VE 36.000, 4800 UST 5.200, 3900 RST 2.500 Euro. Ermittle Forderungen, flüssige Mittel und den hier sichtbaren Teil des kurzfristigen Fremdkapitals und begründe die Zuordnung der EWB.",
+        "hints": [
+          "Wertberichtigung abziehen",
+          "RST zum kurzfristigen Fremdkapital"
+        ],
+        "model": "Forderungen = 48.000 + 3.000 − 2.000 = 49.000 Euro, weil die EWB den erwarteten Ausfall abbildet und den Wert der Forderungen mindert. Flüssige Mittel = 15.000 + 600 = 15.600 Euro. Kurzfristiges Fremdkapital = 36.000 + 5.200 + 2.500 = 43.700 Euro.",
+        "criteria": [
+          "Forderungen 49.000 Euro",
+          "Flüssige Mittel 15.600 Euro",
+          "Kurzfristiges Fremdkapital 43.700 Euro mit RST"
+        ]
+      },
+      "2": {
+        "prompt": "Ein Mitschüler rechnet ARA zum kurzfristigen Fremdkapital und PRA zu den Forderungen. Erkläre den Fehler und zeige, wie er Einzugsliquidität und Barliquidität verfälscht.",
+        "hints": [
+          "Bilanzseiten von ARA und PRA",
+          "Wirkung auf Zähler und Nenner"
+        ],
+        "model": "ARA ist ein Anspruch auf eine bereits bezahlte Leistung und steht auf der Aktivseite bei den Forderungen; PRA ist eine Leistungsschuld auf der Passivseite beim kurzfristigen Fremdkapital. Durch die Vertauschung wird das kurzfristige Fremdkapital falsch, damit ändert sich der Nenner beider Liquiditätskennzahlen; die Einzugsliquidität ist zusätzlich im Zähler verfälscht.",
+        "criteria": [
+          "Richtige Zuordnung beider Posten",
+          "Wirkung auf den Nenner",
+          "Wirkung auf den Zähler der Einzugsliquidität"
+        ]
+      }
+    },
+    "practice": "condense",
+    "lab": "balance"
+  },
+  {
+    "id": "ua-barliquiditaet",
+    "lb": 2,
+    "title": "Barliquidität berechnen und beurteilen",
+    "intro": "Könnte Lindner die kurzfristigen Schulden sofort bezahlen?",
+    "paragraphs": [
+      "Liquidität ist die Fähigkeit, fällige Zahlungen pünktlich zu leisten. Die Barliquidität zeigt, welcher Anteil des kurzfristigen Fremdkapitals sofort mit flüssigen Mitteln bezahlt werden könnte: Barliquidität = flüssige Mittel · 100 : kurzfristiges Fremdkapital. Als Richtwert gelten im Unterricht etwa 20 Prozent.",
+      "Beispiel: flüssige Mittel 18.000 Euro, kurzfristiges Fremdkapital 120.000 Euro ergibt 15 Prozent. Lindner könnte nur 15 Prozent der kurzfristigen Schulden sofort begleichen. Ein deutlich zu hoher Wert ist auch nicht ideal: Viel Geld auf dem Konto bringt kaum Zinsen und fehlt für Investitionen. Verbessern lässt sich die Barliquidität zum Beispiel, indem kurzfristige in langfristige Kredite umgewandelt, Vorräte abgebaut oder nicht benötigte Anlagen verkauft werden."
+    ],
+    "takeaway": "Barliquidität = flüssige Mittel · 100 : kurzfristiges Fremdkapital; im Unterricht gelten etwa 20 Prozent als Richtwert.",
+    "sourceIds": [
+      "lp",
+      "isb"
+    ],
+    "quiz": {
+      "question": "Flüssige Mittel 30.000 Euro, kurzfristiges Fremdkapital 200.000 Euro. Wie hoch ist die Barliquidität?",
+      "answer": "15 %.",
+      "wrong": [
+        "666,67 %.",
+        "1,5 %."
+      ],
+      "explanation": "30.000 · 100 : 200.000 = 15 %. Das liegt unter dem Richtwert von 20 %."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Fälle untersuchen",
+      "instruction": "Ordne die Fälle zu. Prüfe anschließend deine Entscheidungen.",
+      "categories": [
+        "Barliquidität steigt",
+        "Barliquidität sinkt"
+      ],
+      "entries": [
+        {
+          "text": "Ein Kunde überweist eine offene Rechnung.",
+          "target": 0,
+          "feedback": "Flüssige Mittel steigen, das kurzfristige Fremdkapital bleibt."
+        },
+        {
+          "text": "Rohstoffe werden bar gekauft.",
+          "target": 1,
+          "feedback": "Flüssige Mittel sinken."
+        },
+        {
+          "text": "Ein kurzfristiger Bankkredit wird in ein langfristiges Darlehen umgewandelt.",
+          "target": 0,
+          "feedback": "Das kurzfristige Fremdkapital sinkt."
+        },
+        {
+          "text": "Rohstoffe werden auf Ziel gekauft.",
+          "target": 1,
+          "feedback": "Das kurzfristige Fremdkapital steigt, die flüssigen Mittel bleiben."
+        }
+      ],
+      "conclusion": "Zähler und Nenner getrennt prüfen."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Lindner hat 21.000 Euro flüssige Mittel und 140.000 Euro kurzfristiges Fremdkapital. Berechne die Barliquidität, beurteile sie am Richtwert und schlage eine Verbesserung vor.",
+        "hints": [
+          "Formel anwenden",
+          "Maßnahme begründen"
+        ],
+        "model": "Barliquidität = 21.000 · 100 : 140.000 = 15 %. Sie liegt 5 Prozentpunkte unter dem Richtwert von 20 %; Lindner könnte bei vielen fälligen Rechnungen in Zahlungsschwierigkeiten kommen. Eine Möglichkeit: einen Teil der kurzfristigen Bankschulden in ein langfristiges Darlehen umwandeln, das senkt den Nenner.",
+        "criteria": [
+          "15 % richtig",
+          "Vergleich mit 20 %",
+          "Passende Maßnahme mit Begründung"
+        ]
+      },
+      "2": {
+        "prompt": "Am 31. Dezember bezahlt Lindner eine Liefererrechnung über 10.000 Euro per Bank. Vorher: flüssige Mittel 30.000, kurzfristiges Fremdkapital 150.000 Euro. Berechne die Barliquidität vor und nach der Zahlung und erkläre, warum sie sinkt, obwohl auch die Schulden sinken.",
+        "hints": [
+          "Zähler und Nenner gleich verringern",
+          "Verhältnis unter 100 % beachten"
+        ],
+        "model": "Vorher 30.000 · 100 : 150.000 = 20 %, nachher 20.000 · 100 : 140.000 = 14,29 %. Zähler und Nenner sinken um denselben Betrag; weil der Zähler viel kleiner ist, ist das für ihn ein viel größerer Anteil. Bei einer Barliquidität unter 100 % senkt jede Schuldentilgung aus flüssigen Mitteln die Kennzahl.",
+        "criteria": [
+          "Beide Werte richtig",
+          "Relative Wirkung erklärt",
+          "Bedingung unter 100 % genannt"
+        ]
+      }
+    },
+    "practice": "cashratio"
+  },
+  {
+    "id": "ua-einzugsliquiditaet",
+    "lb": 2,
+    "title": "Einzugsliquidität berechnen und beurteilen",
+    "intro": "Reichen Bankguthaben und bald eingehende Forderungen?",
+    "paragraphs": [
+      "Die Einzugsliquidität rechnet zusätzlich die Forderungen ein, weil Kunden in kurzer Zeit zahlen: Einzugsliquidität = (Forderungen + flüssige Mittel) · 100 : kurzfristiges Fremdkapital. Der Richtwert liegt bei 100 Prozent: Dann könnten alle kurzfristigen Schulden aus flüssigen Mitteln und eingehenden Forderungen bezahlt werden.",
+      "Beispiel: Forderungen 65.300 Euro, flüssige Mittel 18.000 Euro, kurzfristiges Fremdkapital 120.000 Euro: (65.300 + 18.000) · 100 : 120.000 = 69,42 Prozent. Lindner ist auf weitere Einzahlungen oder Kredite angewiesen. Die Kennzahl ist ein Stichtagswert: Sie zeigt den 31. Dezember, nicht den Verlauf des Jahres, und unterstellt, dass die Forderungen tatsächlich eingehen."
+    ],
+    "takeaway": "Einzugsliquidität = (Forderungen + flüssige Mittel) · 100 : kurzfristiges Fremdkapital; der Richtwert liegt bei 100 Prozent.",
+    "sourceIds": [
+      "lp",
+      "isb"
+    ],
+    "quiz": {
+      "question": "Forderungen 50.000 Euro, flüssige Mittel 10.000 Euro, kurzfristiges Fremdkapital 75.000 Euro. Wie hoch ist die Einzugsliquidität?",
+      "answer": "80 %.",
+      "wrong": [
+        "66,67 %.",
+        "13,33 %."
+      ],
+      "explanation": "(50.000 + 10.000) · 100 : 75.000 = 80 %. Wer die flüssigen Mittel vergisst, erhält 66,67 %."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Fälle untersuchen",
+      "instruction": "Ordne die Fälle zu. Prüfe anschließend deine Entscheidungen.",
+      "categories": [
+        "Steigt",
+        "Sinkt",
+        "Bleibt gleich"
+      ],
+      "entries": [
+        {
+          "text": "Ein Kunde zahlt eine Forderung per Bank.",
+          "target": 2,
+          "feedback": "Forderungen sinken, flüssige Mittel steigen um denselben Betrag."
+        },
+        {
+          "text": "Die Inhaberin legt privat 5.000 Euro auf das Bankkonto ein.",
+          "target": 0,
+          "feedback": "Flüssige Mittel steigen, das kurzfristige Fremdkapital bleibt."
+        },
+        {
+          "text": "Lindner kauft eine Maschine per Bank.",
+          "target": 1,
+          "feedback": "Flüssige Mittel sinken, Anlagevermögen zählt nicht mit."
+        }
+      ],
+      "conclusion": "Umschichtungen innerhalb des Zählers ändern die Einzugsliquidität nicht."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Forderungen 72.000 Euro, flüssige Mittel 24.000 Euro, kurzfristiges Fremdkapital 120.000 Euro. Berechne Bar- und Einzugsliquidität und beurteile beide Werte.",
+        "hints": [
+          "Beide Formeln anwenden",
+          "Richtwerte 20 % und 100 %"
+        ],
+        "model": "Barliquidität = 24.000 · 100 : 120.000 = 20 %, genau der Richtwert. Einzugsliquidität = 96.000 · 100 : 120.000 = 80 %, deutlich unter 100 %. Sofort ist Lindner ausreichend zahlungsfähig, die kurzfristigen Schulden insgesamt können aber auch mit allen Kundenzahlungen nicht vollständig beglichen werden.",
+        "criteria": [
+          "Beide Werte richtig",
+          "Vergleich mit beiden Richtwerten",
+          "Unterschied der Aussagen erklärt"
+        ]
+      },
+      "2": {
+        "prompt": "Eine Bank prüft einen Kreditantrag und sieht eine Einzugsliquidität von 105 %. Nenne zwei Gründe, warum sie sich nicht allein darauf verlässt.",
+        "hints": [
+          "Stichtagswert",
+          "Qualität der Forderungen"
+        ],
+        "model": "Erstens ist die Kennzahl ein Stichtagswert vom 31. Dezember; im Jahresverlauf kann die Lage ganz anders sein, etwa kurz vor großen Zahlungsterminen. Zweitens unterstellt sie, dass alle Forderungen pünktlich eingehen; zweifelhafte oder spät zahlende Kunden verfälschen das Bild. Die Bank betrachtet deshalb auch den Zeitvergleich, Zahlungsziele und weitere Kennzahlen.",
+        "criteria": [
+          "Stichtagsproblem erklärt",
+          "Ausfallrisiko der Forderungen",
+          "Weitere Prüfung genannt"
+        ]
+      }
+    },
+    "practice": "quickratio"
+  },
+  {
+    "id": "ua-anlagendeckung",
+    "lb": 2,
+    "title": "Anlagendeckung I und II",
+    "intro": "Ist das langfristige Vermögen langfristig finanziert?",
+    "paragraphs": [
+      "Die Anlagendeckung prüft die goldene Bilanzregel: Langfristig gebundenes Vermögen soll langfristig finanziert sein. Anlagendeckung I = Eigenkapital · 100 : Anlagevermögen. Anlagendeckung II = (Eigenkapital + langfristiges Fremdkapital) · 100 : Anlagevermögen. Für die Anlagendeckung I gelten 70 bis 100 Prozent als Orientierung, die Anlagendeckung II sollte über 100 Prozent liegen.",
+      "Beispiel: Anlagevermögen 400.000, Eigenkapital 259.500, langfristiges Fremdkapital 160.000 Euro. Anlagendeckung I = 64,88 Prozent, Anlagendeckung II = 104,88 Prozent. Das Anlagevermögen ist vollständig langfristig finanziert. Liegt die Anlagendeckung II unter 100 Prozent, sind Anlagen teilweise mit kurzfristigen Krediten bezahlt; das gefährdet die Zahlungsfähigkeit, wenn diese Kredite fällig werden. Die goldene Finanzierungsregel kennst du aus BwR 9."
+    ],
+    "takeaway": "Anlagendeckung I = EK · 100 : AV, Anlagendeckung II = (EK + langfristiges FK) · 100 : AV; die Anlagendeckung II sollte über 100 Prozent liegen.",
+    "sourceIds": [
+      "lp",
+      "isb"
+    ],
+    "quiz": {
+      "question": "Anlagevermögen 500.000, Eigenkapital 300.000, langfristiges Fremdkapital 150.000 Euro. Wie hoch ist die Anlagendeckung II?",
+      "answer": "90 %.",
+      "wrong": [
+        "60 %.",
+        "111,11 %."
+      ],
+      "explanation": "(300.000 + 150.000) · 100 : 500.000 = 90 %. Ein Teil der Anlagen ist kurzfristig finanziert; die goldene Bilanzregel ist verletzt."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Fälle untersuchen",
+      "instruction": "Ordne die Fälle zu. Prüfe anschließend deine Entscheidungen.",
+      "categories": [
+        "Anlagendeckung II steigt",
+        "Anlagendeckung II sinkt"
+      ],
+      "entries": [
+        {
+          "text": "Ein langfristiges Darlehen wird aufgenommen, das Geld bleibt auf dem Bankkonto.",
+          "target": 0,
+          "feedback": "Der Zähler steigt, das Anlagevermögen bleibt."
+        },
+        {
+          "text": "Eine Maschine wird mit einem kurzfristigen Kredit bezahlt.",
+          "target": 1,
+          "feedback": "Das Anlagevermögen steigt, der Zähler nicht."
+        },
+        {
+          "text": "Die Inhaberin legt Geld ein.",
+          "target": 0,
+          "feedback": "Das Eigenkapital steigt."
+        },
+        {
+          "text": "Ein Verlust verringert das Eigenkapital.",
+          "target": 1,
+          "feedback": "Der Zähler sinkt."
+        }
+      ],
+      "conclusion": "Zähler: langfristiges Kapital, Nenner: Anlagevermögen."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Anlagevermögen 320.000, Eigenkapital 208.000, langfristiges Fremdkapital 96.000 Euro. Berechne Anlagendeckung I und II und beurteile die Finanzierung.",
+        "hints": [
+          "Beide Formeln",
+          "Goldene Bilanzregel"
+        ],
+        "model": "Anlagendeckung I = 208.000 · 100 : 320.000 = 65 %. Anlagendeckung II = 304.000 · 100 : 320.000 = 95 %. Das Eigenkapital deckt weniger als 70 %, und auch mit dem langfristigen Fremdkapital sind 5 % der Anlagen kurzfristig finanziert. Lindner sollte langfristiges Kapital aufnehmen oder Eigenkapital stärken.",
+        "criteria": [
+          "65 % und 95 % richtig",
+          "Goldene Bilanzregel angewandt",
+          "Sinnvolle Maßnahme"
+        ]
+      },
+      "2": {
+        "prompt": "Lindner kauft eine Maschine für 50.000 Euro und finanziert sie zur Hälfte mit Eigenkapital vom Bankkonto und zur Hälfte mit einem kurzfristigen Kontokorrentkredit. Erkläre die Wirkung auf Anlagendeckung II und Barliquidität und schlage eine bessere Finanzierung vor.",
+        "hints": [
+          "Wirkung auf AV und Kapital",
+          "Fristenkongruenz"
+        ],
+        "model": "Das Anlagevermögen steigt um 50.000 Euro, das langfristige Kapital nicht; die Anlagendeckung II sinkt. Die flüssigen Mittel sinken um 25.000 Euro und das kurzfristige Fremdkapital steigt um 25.000 Euro; die Barliquidität sinkt deutlich. Besser wäre ein langfristiges Darlehen, das der Nutzungsdauer der Maschine entspricht.",
+        "criteria": [
+          "Wirkung auf ALD II richtig",
+          "Wirkung auf Barliquidität richtig",
+          "Fristenkongruente Alternative"
+        ]
+      }
+    },
+    "practice": "coverage"
+  },
+  {
+    "id": "ua-ekrentabilitaet",
+    "lb": 2,
+    "title": "Eigenkapitalrentabilität",
+    "intro": "Hat sich das Kapital der Inhaberin gelohnt?",
+    "paragraphs": [
+      "Die Eigenkapitalrentabilität zeigt, wie sich das eingesetzte Eigenkapital in einem Jahr verzinst hat: Eigenkapitalrentabilität = Gewinn · 100 : Eigenkapital am Jahresanfang. Sie sollte deutlich über dem Zinssatz einer sicheren Geldanlage liegen, denn der Gewinn muss auch die Arbeit der Inhaberin und ihr Risiko abgelten. Im Unterricht gelten 10 bis 20 Prozent als Orientierung.",
+      "Beispiel: Gewinn 43.500 Euro, Eigenkapital am 1. Januar 250.000 Euro: 43.500 · 100 : 250.000 = 17,4 Prozent. Ist nur das Endkapital bekannt, berechnest du zuerst den Gewinn oder das Anfangskapital über die Eigenkapitalentwicklung. Ein Verlust ergibt eine negative Rentabilität."
+    ],
+    "takeaway": "Eigenkapitalrentabilität = Gewinn · 100 : Eigenkapital am Jahresanfang; sie soll deutlich über dem Marktzins liegen, weil Unternehmerlohn und Risiko abgegolten werden müssen.",
+    "sourceIds": [
+      "lp",
+      "isb"
+    ],
+    "quiz": {
+      "question": "Gewinn 24.000 Euro, Eigenkapital am Jahresanfang 160.000 Euro. Wie hoch ist die Eigenkapitalrentabilität?",
+      "answer": "15 %.",
+      "wrong": [
+        "6,67 %.",
+        "0,15 %."
+      ],
+      "explanation": "24.000 · 100 : 160.000 = 15 %. 6,67 entstehen, wenn man Eigenkapital durch Gewinn teilt (160.000 : 24.000); 0,15 entstehen, wenn das · 100 fehlt (24.000 : 160.000)."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Fälle untersuchen",
+      "instruction": "Ordne die Fälle zu. Prüfe anschließend deine Entscheidungen.",
+      "categories": [
+        "Spricht für eine gute Rentabilität",
+        "Spricht gegen eine gute Rentabilität"
+      ],
+      "entries": [
+        {
+          "text": "Eigenkapitalrentabilität 18 % bei 3 % Zins für sichere Anlagen.",
+          "target": 0,
+          "feedback": "Deutlich über dem Marktzins."
+        },
+        {
+          "text": "Eigenkapitalrentabilität 2 % bei 3 % Zins für sichere Anlagen.",
+          "target": 1,
+          "feedback": "Eine sichere Geldanlage hätte mehr gebracht, ohne Arbeit und Risiko."
+        },
+        {
+          "text": "Der Gewinn steigt bei gleichem Anfangskapital.",
+          "target": 0,
+          "feedback": "Der Zähler wächst."
+        },
+        {
+          "text": "Ein Verlust von 5.000 Euro.",
+          "target": 1,
+          "feedback": "Die Rentabilität wird negativ."
+        }
+      ],
+      "conclusion": "Vergleichsmaßstab ist der Zins einer risikoarmen Anlage."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Eigenkapital am 1. Januar 220.000 Euro, Gewinn 30.800 Euro. Berechne die Eigenkapitalrentabilität und beurteile sie bei einem Marktzins von 3 %.",
+        "hints": [
+          "Formel anwenden",
+          "Unternehmerlohn und Risiko"
+        ],
+        "model": "Eigenkapitalrentabilität = 30.800 · 100 : 220.000 = 14 %. Sie liegt 11 Prozentpunkte über dem Marktzins. Das ist im Orientierungsbereich von 10 bis 20 %; der Gewinn deckt die Arbeit der Inhaberin und ihr unternehmerisches Risiko.",
+        "criteria": [
+          "14 % richtig",
+          "Vergleich mit dem Marktzins",
+          "Begründung mit Unternehmerlohn und Risiko"
+        ]
+      },
+      "2": {
+        "prompt": "Eigenkapital am 1. Januar 300.000 Euro, am 31. Dezember 318.000 Euro, Entnahmen 36.000 Euro, Einlagen 6.000 Euro. Berechne Gewinn und Eigenkapitalrentabilität und erkläre, warum man nicht einfach die Differenz der Kapitalstände nehmen darf.",
+        "hints": [
+          "Gewinn zurückrechnen",
+          "Privatvorgänge beachten"
+        ],
+        "model": "318.000 = 300.000 + Gewinn + 6.000 − 36.000, also Gewinn = 48.000 Euro. Eigenkapitalrentabilität = 48.000 · 100 : 300.000 = 16 %. Die Differenz der Kapitalstände (18.000 Euro) enthält auch Entnahmen und Einlagen; sie sind kein Erfolg des Betriebs und würden die Rentabilität verfälschen.",
+        "criteria": [
+          "Gewinn 48.000 Euro",
+          "16 % richtig",
+          "Privatvorgänge als Fehlerquelle erklärt"
+        ]
+      }
+    },
+    "practice": "roe"
+  },
+  {
+    "id": "ua-vergleich",
+    "lb": 2,
+    "title": "Kennzahlen vergleichen und beurteilen",
+    "intro": "Eine Zahl allein sagt wenig.",
+    "paragraphs": [
+      "Erst der Vergleich macht eine Kennzahl aussagekräftig. Beim internen Vergleich (Zeitvergleich) betrachtest du dasselbe Unternehmen über mehrere Jahre, beim externen Vergleich (Branchenvergleich) ähnliche Betriebe. Unterschiede zweier Prozentwerte gibst du in Prozentpunkten an. Beispiel: Steigt die Barliquidität von 15 auf 18 Prozent, ist sie um 3 Prozentpunkte gestiegen; liegt der Branchendurchschnitt bei 20 Prozent, ist Lindner noch 2 Prozentpunkte darunter.",
+      "Auswertungen interessieren viele: die Unternehmensführung für Planung und Kontrolle, Banken bei der Kreditvergabe, Lieferer für Zahlungsziele, Beschäftigte für die Sicherheit ihrer Arbeitsplätze. Grenzen: Einzelunternehmen müssen ihren Abschluss nicht veröffentlichen, Betriebe sind unterschiedlich groß, und die Formeln sind gesetzlich nicht einheitlich festgelegt. Eine Bilanz ist außerdem eine Momentaufnahme zum 31. Dezember."
+    ],
+    "takeaway": "Kennzahlen werden im Zeitvergleich (intern) und im Branchenvergleich (extern) beurteilt; Unterschiede von Prozentwerten gibt man in Prozentpunkten an.",
+    "sourceIds": [
+      "lp",
+      "isb"
+    ],
+    "quiz": {
+      "question": "Die Eigenkapitalrentabilität sinkt von 12 % auf 9 %. Wie beschreibst du die Veränderung richtig?",
+      "answer": "Sie ist um 3 Prozentpunkte gesunken.",
+      "wrong": [
+        "Sie ist um 3 Prozent gesunken.",
+        "Sie ist um 25 Prozentpunkte gesunken."
+      ],
+      "explanation": "12 − 9 = 3 Prozentpunkte. Relativ wäre es ein Rückgang um 25 Prozent; das sind zwei verschiedene Aussagen."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Fälle untersuchen",
+      "instruction": "Ordne die Fälle zu. Prüfe anschließend deine Entscheidungen.",
+      "categories": [
+        "Interner Vergleich (Zeitvergleich)",
+        "Externer Vergleich (Branchenvergleich)"
+      ],
+      "entries": [
+        {
+          "text": "Lindners Barliquidität 2024 und 2025",
+          "target": 0,
+          "feedback": "Dasselbe Unternehmen in verschiedenen Jahren."
+        },
+        {
+          "text": "Lindners Eigenkapitalrentabilität gegenüber dem Durchschnitt der Möbelindustrie",
+          "target": 1,
+          "feedback": "Vergleich mit anderen Betrieben."
+        },
+        {
+          "text": "Entwicklung der Anlagendeckung über fünf Jahre",
+          "target": 0,
+          "feedback": "Ein Unternehmen über einen Zeitraum."
+        },
+        {
+          "text": "Lindner gegenüber einem gleich großen Konkurrenten",
+          "target": 1,
+          "feedback": "Vergleich mit einem anderen Betrieb."
+        }
+      ],
+      "conclusion": "Zeitvergleich: ein Betrieb, mehrere Jahre. Branchenvergleich: mehrere Betriebe."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Lindners Barliquidität: Vorjahr 22 %, Berichtsjahr 16 %. Beschreibe die Entwicklung richtig und nenne zwei mögliche Ursachen.",
+        "hints": [
+          "Prozentpunkte verwenden",
+          "Ursachen aus Zähler und Nenner"
+        ],
+        "model": "Die Barliquidität ist um 6 Prozentpunkte gesunken und liegt nun unter dem Richtwert von 20 %. Mögliche Ursachen: Lindner hat flüssige Mittel für eine Investition verwendet, oder das kurzfristige Fremdkapital ist gestiegen, etwa durch mehr Einkäufe auf Ziel oder einen Kontokorrentkredit.",
+        "criteria": [
+          "6 Prozentpunkte richtig",
+          "Zwei passende Ursachen",
+          "Bezug zum Richtwert"
+        ]
+      },
+      "2": {
+        "prompt": "Eine Bank vergleicht Lindner mit dem Branchendurchschnitt und lehnt einen Kredit ab. Erläutere, welche Interessen die Bank an Kennzahlen hat und welche Grenzen ein Branchenvergleich hat.",
+        "hints": [
+          "Interessen der Bank",
+          "Grenzen des Vergleichs"
+        ],
+        "model": "Die Bank will wissen, ob Lindner Zinsen und Tilgung zahlen kann; sie achtet auf Liquidität, Anlagendeckung und Eigenkapital. Ein Branchenvergleich ist aber begrenzt: Viele Einzelunternehmen veröffentlichen keine Zahlen, Betriebe sind unterschiedlich groß, die Formeln sind nicht einheitlich, und Bilanzen zeigen nur den Stand am 31. Dezember. Lindner sollte deshalb auch einen Zeitvergleich und Pläne vorlegen.",
+        "criteria": [
+          "Kreditwürdigkeit als Interesse",
+          "Mindestens zwei Grenzen",
+          "Sinnvolle Schlussfolgerung"
+        ]
+      }
+    },
+    "practice": "trend"
+  },
+  {
+    "id": "vk-rechnungskreise",
+    "lb": 3,
+    "title": "Rechnungskreis I und II",
+    "intro": "Zwei Rechnungen mit verschiedenen Fragen.",
+    "paragraphs": [
+      "Das Rechnungswesen eines Industriebetriebs hat zwei Rechnungskreise. Rechnungskreis I ist die Geschäftsbuchführung: Sie erfasst alle Aufwendungen und Erträge, erstellt Bilanz und GuV und informiert vor allem Außenstehende wie Finanzamt, Banken und Gläubiger. Sie folgt gesetzlichen Vorschriften. Rechnungskreis II ist die Betriebsbuchführung, auch Kosten- und Leistungsrechnung (KLR) genannt.",
+      "Die KLR ist ein internes Informationsinstrument für die Unternehmensführung. Sie erfasst nur, was mit dem Betriebszweck zusammenhängt, und beantwortet drei Fragen: Welche Kosten sind entstanden (Kostenartenrechnung)? Wo sind sie entstanden (Kostenstellenrechnung)? Wofür sind sie entstanden (Kostenträgerrechnung)? Ihre Aufgaben sind die Kalkulation von Angebotspreisen, die Kontrolle der Wirtschaftlichkeit und die Vorbereitung von Entscheidungen. Gesetzlich vorgeschrieben ist sie nicht. Beispiel: Ein Zinsertrag aus einer Geldanlage steht in Lindners GuV, in der KLR aber nicht, weil er mit der Möbelherstellung nichts zu tun hat."
+    ],
+    "takeaway": "Rechnungskreis I (Geschäftsbuchführung) informiert vor allem nach außen und folgt dem Gesetz; Rechnungskreis II (Kosten- und Leistungsrechnung) dient intern der Kalkulation, Kontrolle und Entscheidung.",
+    "sourceIds": [
+      "lp",
+      "isb"
+    ],
+    "quiz": {
+      "question": "Welche Aufgabe gehört zur Kosten- und Leistungsrechnung?",
+      "answer": "Den Angebotspreis eines Auftrags kalkulieren.",
+      "wrong": [
+        "Die Schlussbilanz für das Finanzamt aufstellen.",
+        "Die Umsatzsteuer-Zahllast an das Finanzamt überweisen."
+      ],
+      "explanation": "Die KLR ist ein internes Instrument; Bilanz und Steuer gehören zur Geschäftsbuchführung."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Fälle untersuchen",
+      "instruction": "Ordne die Fälle zu. Prüfe anschließend deine Entscheidungen.",
+      "categories": [
+        "Rechnungskreis I (Geschäftsbuchführung)",
+        "Rechnungskreis II (Kosten- und Leistungsrechnung)"
+      ],
+      "entries": [
+        {
+          "text": "Gewinn- und Verlustrechnung für den Jahresabschluss",
+          "target": 0,
+          "feedback": "Gesetzlich vorgeschrieben, informiert auch Außenstehende."
+        },
+        {
+          "text": "Selbstkosten eines Esstischs ermitteln",
+          "target": 1,
+          "feedback": "Kalkulation ist eine Kernaufgabe der KLR."
+        },
+        {
+          "text": "Gemeinkosten der Fertigung mit dem Vormonat vergleichen",
+          "target": 1,
+          "feedback": "Wirtschaftlichkeitskontrolle für die Leitung."
+        },
+        {
+          "text": "Zinsertrag aus einer Geldanlage buchen",
+          "target": 0,
+          "feedback": "Alle Erträge stehen in der Geschäftsbuchführung, auch betriebsfremde."
+        }
+      ],
+      "conclusion": "Nach außen und vollständig: Rechnungskreis I. Nach innen und betriebsbezogen: Rechnungskreis II."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre einem neuen Auszubildenden bei Lindner, wofür die Geschäftsbuchführung und wofür die Kosten- und Leistungsrechnung da ist. Nenne je einen Adressaten.",
+        "hints": [
+          "Externe und interne Adressaten",
+          "Gesetzliche Pflicht"
+        ],
+        "model": "Die Geschäftsbuchführung erfasst alle Geschäftsfälle, ermittelt den Gewinn und erstellt Bilanz und GuV; sie ist gesetzlich vorgeschrieben und informiert etwa Finanzamt und Bank. Die Kosten- und Leistungsrechnung erfasst nur betriebsbezogene Kosten und Leistungen; die Geschäftsleitung nutzt sie, um Preise zu kalkulieren und die Wirtschaftlichkeit zu kontrollieren.",
+        "criteria": [
+          "Beide Rechnungskreise beschrieben",
+          "Je ein passender Adressat",
+          "Pflicht und Freiwilligkeit unterschieden"
+        ]
+      },
+      "2": {
+        "prompt": "Lindner hat einen hohen Gewinn, weil im Jahr Aktien mit großem Gewinn verkauft wurden. Erkläre, warum die Leitung trotzdem die Kosten- und Leistungsrechnung braucht, und ordne die drei Fragen der KLR zu.",
+        "hints": [
+          "Betriebsfremder Erfolg",
+          "Kostenarten, -stellen, -träger"
+        ],
+        "model": "Der Aktiengewinn ist betriebsfremd und sagt nichts darüber, ob die Möbelproduktion wirtschaftlich ist. Die KLR blendet ihn aus und fragt: Welche Kosten sind entstanden (Kostenarten), wo sind sie entstanden (Kostenstellen) und wofür (Kostenträger)? So erkennt die Leitung, ob die Preise die Kosten der Möbel decken.",
+        "criteria": [
+          "Betriebsfremden Erfolg erkannt",
+          "Drei Fragen richtig zugeordnet",
+          "Nutzen für die Leitung erklärt"
+        ]
+      }
+    }
+  },
+  {
+    "id": "vk-grundbegriffe",
+    "lb": 3,
+    "title": "Aufwand und Kosten, Ertrag und Leistung",
+    "intro": "Nicht jeder Aufwand ist Kosten.",
+    "paragraphs": [
+      "Kosten sind der betriebsbedingte Werteverzehr zur Erstellung der Leistungen, Leistungen sind die Erträge aus dem Betriebszweck, bei Lindner vor allem die Umsatzerlöse für Möbel. Aufwendungen, die zugleich Kosten sind, heißen Zweckaufwand oder Grundkosten, etwa Rohstoffe, Löhne und Miete. Neutrale Aufwendungen sind betriebsfremd (Verlust aus einem Wertpapierverkauf), außerordentlich (ein nicht versicherter Schaden) oder periodenfremd (6990 PFAW). Ebenso gibt es neutrale Erträge, zum Beispiel Zinserträge oder periodenfremde Erträge.",
+      "Manche Kosten stehen in der Geschäftsbuchführung mit einem anderen Wert: Anderskosten wie die kalkulatorische Abschreibung. Andere stehen dort gar nicht: Zusatzkosten wie der kalkulatorische Unternehmerlohn, denn die Inhaberin eines Einzelunternehmens bezieht kein Gehalt. Im ISB-Kontenplan sind die Konten markiert, die in die Kosten- und Leistungsrechnung eingehen; Konten wie 5710 ZE, 6950 ABFO oder 7460 VAWP gehören nicht dazu."
+    ],
+    "takeaway": "Kosten sind betriebsbedingter Werteverzehr, Leistungen betriebsbedingter Wertezuwachs; neutrale Aufwendungen und Erträge sind betriebsfremd, außerordentlich oder periodenfremd und bleiben in der KLR außen vor.",
+    "sourceIds": [
+      "lp",
+      "konten"
+    ],
+    "quiz": {
+      "question": "Lindner verkauft Aktien mit Verlust (7460 VAWP). Wie wird dieser Aufwand in der Kosten- und Leistungsrechnung behandelt?",
+      "answer": "Als neutraler Aufwand; er ist keine Kosten.",
+      "wrong": [
+        "Als Grundkosten der Fertigung.",
+        "Als Zusatzkosten."
+      ],
+      "explanation": "Der Verlust hat nichts mit der Möbelproduktion zu tun; er ist betriebsfremd und geht nicht in die KLR ein."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Fälle untersuchen",
+      "instruction": "Ordne die Fälle zu. Prüfe anschließend deine Entscheidungen.",
+      "categories": [
+        "Grundkosten (Zweckaufwand)",
+        "Neutraler Aufwand",
+        "Zusatzkosten"
+      ],
+      "entries": [
+        {
+          "text": "6000 AWR: Rohstoffverbrauch für Tische",
+          "target": 0,
+          "feedback": "Betriebsbedingt und mit gleichem Wert in beiden Rechnungskreisen."
+        },
+        {
+          "text": "6990 PFAW: Nachzahlung für eine Reparatur des Vorjahres",
+          "target": 1,
+          "feedback": "Periodenfremd, gehört nicht zu den Kosten dieser Periode."
+        },
+        {
+          "text": "Kalkulatorischer Unternehmerlohn",
+          "target": 2,
+          "feedback": "Kosten ohne Aufwand in der Geschäftsbuchführung."
+        },
+        {
+          "text": "7460 VAWP: Verlust aus Wertpapierverkauf",
+          "target": 1,
+          "feedback": "Betriebsfremd."
+        },
+        {
+          "text": "6200 LG: Löhne der Schreiner",
+          "target": 0,
+          "feedback": "Betriebsbedingter Zweckaufwand."
+        }
+      ],
+      "conclusion": "Nur betriebsbedingter, periodenrichtiger Werteverzehr ist Kosten."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Ordne für Lindner zu und begründe: Rohstoffverbrauch, Spende an den Sportverein, periodenfremde Steuernachzahlung, Gehalt der Buchhalterin.",
+        "hints": [
+          "Betriebsbezug prüfen",
+          "Periodenbezug prüfen"
+        ],
+        "model": "Rohstoffverbrauch und Gehalt der Buchhalterin sind Zweckaufwand und damit Grundkosten, weil sie für die Möbelherstellung und -verwaltung anfallen. Die Spende ist betriebsfremd, die Steuernachzahlung periodenfremd; beide sind neutraler Aufwand und keine Kosten.",
+        "criteria": [
+          "Zwei Grundkosten richtig",
+          "Zwei neutrale Aufwendungen richtig",
+          "Begründung mit Betriebs- und Periodenbezug"
+        ]
+      },
+      "2": {
+        "prompt": "Erkläre den Unterschied zwischen Anderskosten und Zusatzkosten an je einem Beispiel und begründe, warum beide in der Kosten- und Leistungsrechnung angesetzt werden.",
+        "hints": [
+          "Anderer Wert oder kein Aufwand",
+          "Ziel der Kalkulation"
+        ],
+        "model": "Anderskosten stehen auch in der Geschäftsbuchführung, aber mit einem anderen Wert, etwa die kalkulatorische Abschreibung vom Wiederbeschaffungswert statt von den Anschaffungskosten. Zusatzkosten haben dort keinen Aufwand als Gegenstück, etwa der kalkulatorische Unternehmerlohn. Beide werden angesetzt, damit die Preise den tatsächlichen Werteverzehr decken, also auch die Ersatzbeschaffung und die Arbeit der Inhaberin.",
+        "criteria": [
+          "Anderskosten mit Beispiel",
+          "Zusatzkosten mit Beispiel",
+          "Zweck für die Preise erklärt"
+        ]
+      }
+    }
+  },
+  {
+    "id": "vk-ergebnis",
+    "lb": 3,
+    "title": "Gesamtergebnis, neutrales Ergebnis und Betriebsergebnis",
+    "intro": "Woher kommt der Gewinn wirklich?",
+    "paragraphs": [
+      "Das Gesamtergebnis der Geschäftsbuchführung (Erträge minus Aufwendungen) wird in zwei Teile zerlegt. Das neutrale Ergebnis sind neutrale Erträge minus neutrale Aufwendungen. Das Betriebsergebnis sind Leistungen minus Kosten; es zeigt den Erfolg des eigentlichen Betriebszwecks. Stimmen Kosten und Zweckaufwand überein, gilt: Gesamtergebnis = neutrales Ergebnis + Betriebsergebnis.",
+      "Beispiel: Erträge 812.000 Euro, darunter 7.000 Euro Zinserträge; Aufwendungen 768.500 Euro, darunter 3.500 Euro periodenfremd. Neutrales Ergebnis: 7.000 − 3.500 = 3.500 Euro. Betriebsergebnis: 805.000 − 765.000 = 40.000 Euro. Gesamtergebnis: 43.500 Euro. Ein hoher Gewinn kann also aus neutralen Erträgen stammen, während der Betrieb selbst kaum etwas verdient. Weichen Kosten wie die kalkulatorische Abschreibung vom Aufwand ab, kommen kostenrechnerische Korrekturen als dritter Teil hinzu."
+    ],
+    "takeaway": "Gesamtergebnis = neutrales Ergebnis + Betriebsergebnis (ohne kostenrechnerische Korrekturen); nur das Betriebsergebnis zeigt, was der Betriebszweck erwirtschaftet.",
+    "sourceIds": [
+      "lp",
+      "konten"
+    ],
+    "quiz": {
+      "question": "Gesamtergebnis 20.000 Euro, neutrales Ergebnis 26.000 Euro, Kosten und Zweckaufwand stimmen überein. Wie hoch ist das Betriebsergebnis?",
+      "answer": "−6.000 Euro.",
+      "wrong": [
+        "46.000 Euro.",
+        "6.000 Euro."
+      ],
+      "explanation": "20.000 − 26.000 = −6.000 Euro: Der Betrieb macht einen Verlust; der Gewinn stammt aus neutralen Erträgen."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Fälle untersuchen",
+      "instruction": "Ordne die Fälle zu. Prüfe anschließend deine Entscheidungen.",
+      "categories": [
+        "Neutrales Ergebnis",
+        "Betriebsergebnis"
+      ],
+      "entries": [
+        {
+          "text": "5000 UEFE: Umsatzerlöse für Möbel",
+          "target": 1,
+          "feedback": "Leistung aus dem Betriebszweck."
+        },
+        {
+          "text": "5710 ZE: Zinsen aus einer Geldanlage",
+          "target": 0,
+          "feedback": "Betriebsfremder Ertrag."
+        },
+        {
+          "text": "6200 LG: Löhne",
+          "target": 1,
+          "feedback": "Kosten der Produktion."
+        },
+        {
+          "text": "6950 ABFO: Abschreibung auf Forderungen",
+          "target": 0,
+          "feedback": "Laut ISB-Kontenplan geht dieses Konto nicht in die KLR ein."
+        }
+      ],
+      "conclusion": "Leistungen und Kosten bilden das Betriebsergebnis, alles Neutrale das neutrale Ergebnis."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erträge 650.000 Euro, davon 12.000 Euro neutral; Aufwendungen 610.000 Euro, davon 4.000 Euro neutral. Kosten und Zweckaufwand stimmen überein. Ermittle die drei Ergebnisse.",
+        "hints": [
+          "Neutrale Teile abziehen",
+          "Probe über das Gesamtergebnis"
+        ],
+        "model": "Gesamtergebnis = 650.000 − 610.000 = 40.000 Euro. Neutrales Ergebnis = 12.000 − 4.000 = 8.000 Euro. Betriebsergebnis = 638.000 − 606.000 = 32.000 Euro. Probe: 8.000 + 32.000 = 40.000 Euro.",
+        "criteria": [
+          "Gesamtergebnis richtig",
+          "Neutrales Ergebnis richtig",
+          "Betriebsergebnis mit Probe"
+        ]
+      },
+      "2": {
+        "prompt": "Lindner weist einen Gewinn von 30.000 Euro aus; das neutrale Ergebnis beträgt 45.000 Euro, vor allem aus einem Wertpapierverkauf. Beurteile die Lage des Betriebs und schlage vor, worauf die Leitung achten sollte.",
+        "hints": [
+          "Betriebsergebnis berechnen",
+          "Nachhaltigkeit des Erfolgs"
+        ],
+        "model": "Das Betriebsergebnis beträgt 30.000 − 45.000 = −15.000 Euro: Die Möbelproduktion deckt ihre Kosten nicht. Der Wertpapiergewinn ist einmalig und betriebsfremd. Die Leitung sollte mit der Kostenrechnung prüfen, welche Kosten zu hoch oder welche Preise zu niedrig sind, statt sich auf den Gesamtgewinn zu verlassen.",
+        "criteria": [
+          "−15.000 Euro richtig",
+          "Einmaligkeit des neutralen Erfolgs",
+          "Sinnvolle Handlungsempfehlung"
+        ]
+      }
+    },
+    "practice": "results"
+  },
+  {
+    "id": "vk-anders-zusatz",
+    "lb": 3,
+    "title": "Anderskosten und Zusatzkosten",
+    "intro": "Die Kostenrechnung rechnet mit eigenen Werten.",
+    "paragraphs": [
+      "Die KLR rechnet mit den Werten, die den tatsächlichen Werteverzehr am besten abbilden. Die bilanzielle Abschreibung geht von den Anschaffungskosten aus. Die kalkulatorische Abschreibung geht vom Wiederbeschaffungswert aus, damit über die Preise genug Geld für eine neue Maschine hereinkommt. Weil derselbe Werteverzehr in der KLR einen anderen Wert hat, heißt er Anderskosten.",
+      "Der kalkulatorische Unternehmerlohn gehört zu den Zusatzkosten: Die Inhaberin eines Einzelunternehmens arbeitet im Betrieb, erhält aber kein Gehalt, das als Aufwand gebucht würde; sie lebt von Privatentnahmen. Damit die Preise ihre Arbeit decken, setzt die KLR ein vergleichbares Geschäftsführergehalt als Kosten an. Beispiel: Maschine 60.000 Euro, Wiederbeschaffungswert 72.000 Euro, sechs Jahre: bilanziell 10.000 Euro, kalkulatorisch 12.000 Euro Abschreibung im Jahr."
+    ],
+    "takeaway": "Anderskosten haben in der KLR einen anderen Wert als der Aufwand (kalkulatorische Abschreibung vom Wiederbeschaffungswert); Zusatzkosten haben keinen Aufwand als Gegenstück (kalkulatorischer Unternehmerlohn).",
+    "sourceIds": [
+      "lp",
+      "isb"
+    ],
+    "quiz": {
+      "question": "Warum setzt eine Einzelunternehmerin einen kalkulatorischen Unternehmerlohn an?",
+      "answer": "Weil ihre Arbeit sonst in keinem Kostenwert enthalten wäre.",
+      "wrong": [
+        "Weil sie ihr Gehalt auf 6200 LG bucht.",
+        "Weil das Finanzamt ihn als Aufwand verlangt."
+      ],
+      "explanation": "Ihre Arbeit erscheint in der Geschäftsbuchführung nicht als Aufwand; ohne Zusatzkosten wären die Preise zu niedrig kalkuliert."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Fälle untersuchen",
+      "instruction": "Ordne die Fälle zu. Prüfe anschließend deine Entscheidungen.",
+      "categories": [
+        "Anderskosten",
+        "Zusatzkosten",
+        "Grundkosten"
+      ],
+      "entries": [
+        {
+          "text": "Kalkulatorische Abschreibung vom Wiederbeschaffungswert",
+          "target": 0,
+          "feedback": "Derselbe Werteverzehr, aber ein anderer Wert als in der Bilanz."
+        },
+        {
+          "text": "Kalkulatorischer Unternehmerlohn der Inhaberin",
+          "target": 1,
+          "feedback": "Kein Aufwand in der Geschäftsbuchführung."
+        },
+        {
+          "text": "Fertigungslöhne der Schreiner",
+          "target": 2,
+          "feedback": "Gleicher Wert in beiden Rechnungskreisen."
+        }
+      ],
+      "conclusion": "Anderskosten: anderer Wert. Zusatzkosten: zusätzlicher Wert."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Eine Maschine kostete 80.000 Euro, Nutzungsdauer acht Jahre. Eine neue gleichwertige Maschine kostet heute 96.000 Euro. Berechne bilanzielle und kalkulatorische Abschreibung und erkläre den Unterschied.",
+        "hints": [
+          "Zwei Grundlagen der Abschreibung",
+          "Wirkung auf die Preise"
+        ],
+        "model": "Bilanziell: 80.000 : 8 = 10.000 Euro, kalkulatorisch: 96.000 : 8 = 12.000 Euro je Jahr. Der Unterschied von 2.000 Euro sind Anderskosten. Kalkuliert Lindner mit 12.000 Euro, verdient der Betrieb über die Preise genug, um die teurere Ersatzmaschine zu finanzieren.",
+        "criteria": [
+          "10.000 und 12.000 Euro richtig",
+          "Unterschied als Anderskosten benannt",
+          "Zweck der kalkulatorischen Abschreibung"
+        ]
+      },
+      "2": {
+        "prompt": "Die Inhaberin von Lindner sagt: „Ich zahle mir kein Gehalt, also sind meine Möbel billiger als die der Konkurrenz mit angestelltem Geschäftsführer.“ Prüfe die Aussage.",
+        "hints": [
+          "Unternehmerlohn als Zusatzkosten",
+          "Privatentnahmen"
+        ],
+        "model": "Die Aussage täuscht. Die Inhaberin arbeitet genauso wie ein Geschäftsführer, ihre Arbeit wird aber nicht als Aufwand gebucht; sie lebt von Privatentnahmen aus dem Gewinn. Setzt sie keinen kalkulatorischen Unternehmerlohn an, kalkuliert sie zu niedrige Preise und bezahlt ihre eigene Arbeit nicht. Langfristig muss der Preis auch diese Zusatzkosten decken.",
+        "criteria": [
+          "Aussage begründet zurückgewiesen",
+          "Zusatzkosten erklärt",
+          "Folgen für die Preise genannt"
+        ]
+      }
+    },
+    "practice": "imputed"
+  },
+  {
+    "id": "vk-kostenarten",
+    "lb": 3,
+    "title": "Einzelkosten, Sondereinzelkosten und Gemeinkosten",
+    "intro": "Lassen sich die Kosten einem Produkt direkt zurechnen?",
+    "paragraphs": [
+      "Die Kostenartenrechnung fragt: Welche Kosten sind entstanden? Für die Kalkulation zählt, ob sich Kosten einem Kostenträger, also einem Produkt oder Auftrag, direkt zurechnen lassen. Einzelkosten sind direkt zurechenbar: Fertigungsmaterial (Rohstoffe, Fremdbauteile) und Fertigungslöhne. Sondereinzelkosten der Fertigung gehören zu einem bestimmten Auftrag, ohne Material oder Lohn zu sein, etwa ein Spezialwerkzeug, Lizenzgebühren oder Modellkosten.",
+      "Gemeinkosten fallen für mehrere Produkte gemeinsam an und lassen sich nur über Schlüssel zurechnen: Hilfs- und Betriebsstoffe, Miete, Strom, Abschreibungen auf Maschinen, Gehälter in Lager und Verwaltung, Werbung. Beispiel: Bei Lindner ist das Holz eines Esstischs Fertigungsmaterial, der Leim ein Hilfsstoff und damit Teil der Materialgemeinkosten, die Abschreibung der Hobelmaschine gehört zu den Fertigungsgemeinkosten."
+    ],
+    "takeaway": "Einzelkosten (Fertigungsmaterial, Fertigungslöhne) und Sondereinzelkosten der Fertigung lassen sich einem Kostenträger direkt zurechnen; Gemeinkosten nur über Verteilungsschlüssel und Zuschläge.",
+    "sourceIds": [
+      "lp",
+      "isb"
+    ],
+    "quiz": {
+      "question": "Lindner lässt für einen Großauftrag eine Spezialfräse anfertigen, die nur für diesen Auftrag verwendet wird. Wie ordnest du diese Kosten ein?",
+      "answer": "Sondereinzelkosten der Fertigung.",
+      "wrong": [
+        "Fertigungsgemeinkosten.",
+        "Materialgemeinkosten."
+      ],
+      "explanation": "Die Fräse gehört eindeutig zu diesem einen Auftrag, ist aber weder Material noch Lohn."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Fälle untersuchen",
+      "instruction": "Ordne die Fälle zu. Prüfe anschließend deine Entscheidungen.",
+      "categories": [
+        "Einzelkosten",
+        "Sondereinzelkosten der Fertigung",
+        "Gemeinkosten"
+      ],
+      "entries": [
+        {
+          "text": "Eichenholz für einen bestimmten Tisch",
+          "target": 0,
+          "feedback": "Fertigungsmaterial, direkt zurechenbar."
+        },
+        {
+          "text": "Lizenzgebühr für ein Designermodell",
+          "target": 1,
+          "feedback": "Auftragsbezogen, aber kein Material und kein Lohn."
+        },
+        {
+          "text": "Miete der Fertigungshalle",
+          "target": 2,
+          "feedback": "Fällt für alle Produkte gemeinsam an."
+        },
+        {
+          "text": "Akkordlohn des Schreiners je Tisch",
+          "target": 0,
+          "feedback": "Fertigungslohn, direkt zurechenbar."
+        },
+        {
+          "text": "Gehalt der Buchhalterin",
+          "target": 2,
+          "feedback": "Verwaltungsgemeinkosten."
+        }
+      ],
+      "conclusion": "Direkt zurechenbar oder nur über Schlüssel: Das entscheidet die Einordnung."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Ordne für einen Esstisch zu und begründe: Eichenholz, Lohn des Schreiners, Schleifpapier, Strom der Hobelmaschine, eine nur für diesen Tisch angefertigte Schablone.",
+        "hints": [
+          "Direkte Zurechenbarkeit prüfen",
+          "Auftragsbezug"
+        ],
+        "model": "Eichenholz ist Fertigungsmaterial und der Lohn des Schreiners Fertigungslohn, beides Einzelkosten. Die Schablone sind Sondereinzelkosten der Fertigung, weil sie nur zu diesem Auftrag gehört. Schleifpapier als Hilfsstoff und der Strom der Hobelmaschine fallen für viele Möbel an und sind Gemeinkosten.",
+        "criteria": [
+          "Einzelkosten richtig",
+          "Sondereinzelkosten richtig",
+          "Gemeinkosten mit Begründung"
+        ]
+      },
+      "2": {
+        "prompt": "Ein Kollege möchte auch die Miete der Werkhalle als Einzelkosten auf jeden Tisch rechnen, „weil jeder Tisch in der Halle gebaut wird“. Beurteile den Vorschlag.",
+        "hints": [
+          "Verursachung je Stück",
+          "Schlüssel statt direkter Zurechnung"
+        ],
+        "model": "Die Miete fällt für alle Produkte gemeinsam und unabhängig vom einzelnen Tisch an; man kann nicht messen, wie viel Miete ein bestimmter Tisch verursacht. Sie ist deshalb Gemeinkosten und wird über einen Schlüssel auf die Kostenstelle Fertigung verteilt und dann über den Zuschlag auf die Produkte gerechnet.",
+        "criteria": [
+          "Vorschlag begründet abgelehnt",
+          "Gemeinsames Anfallen erklärt",
+          "Weg über BAB und Zuschlag genannt"
+        ]
+      }
+    }
+  },
+  {
+    "id": "vk-kostenstellen",
+    "lb": 3,
+    "title": "Kostenstellen und Verteilungsschlüssel",
+    "intro": "Wo im Betrieb sind die Kosten entstanden?",
+    "paragraphs": [
+      "Die Kostenstellenrechnung fragt: Wo sind die Kosten entstanden? Lindner bildet nach dem Verursacherprinzip vier Kostenstellen: Material (Einkauf, Lager), Fertigung, Verwaltung und Vertrieb. Gemeinkosten, die eine Kostenstelle allein verursacht, werden ihr direkt zugeordnet, etwa das Gehalt der Lagerleiterin. Gemeinsame Gemeinkosten werden mit einem Verteilungsschlüssel aufgeteilt.",
+      "Ein guter Schlüssel spiegelt die Verursachung: Miete und Heizung nach Fläche in Quadratmetern, Strom nach Kilowattstunden, Hilfslöhne nach Arbeitsstunden, Abschreibungen und Versicherungen nach dem Anlagewert. Beispiel: 12.000 Euro Miete, Flächen 100, 400, 50 und 50 Quadratmeter. 12.000 : 600 = 20 Euro je Quadratmeter; die Fertigung trägt 400 · 20 = 8.000 Euro."
+    ],
+    "takeaway": "Gemeinkosten werden nach dem Verursacherprinzip mit passenden Schlüsseln (Fläche, Verbrauch, Stunden, Anlagewert) auf die Kostenstellen Material, Fertigung, Verwaltung und Vertrieb verteilt.",
+    "sourceIds": [
+      "lp",
+      "isb"
+    ],
+    "quiz": {
+      "question": "Welcher Schlüssel passt am besten für die Heizkosten?",
+      "answer": "Die beheizte Fläche in Quadratmetern.",
+      "wrong": [
+        "Die Zahl der verkauften Möbel.",
+        "Der Umsatz jeder Kostenstelle."
+      ],
+      "explanation": "Heizkosten entstehen durch die beheizte Fläche; Absatzzahlen haben damit nichts zu tun."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Fälle untersuchen",
+      "instruction": "Ordne die Fälle zu. Prüfe anschließend deine Entscheidungen.",
+      "categories": [
+        "Fläche (m²)",
+        "Verbrauch (kWh)",
+        "Anlagewert",
+        "Arbeitsstunden"
+      ],
+      "entries": [
+        {
+          "text": "Miete der Gebäude",
+          "target": 0,
+          "feedback": "Wer mehr Fläche belegt, verursacht mehr Miete."
+        },
+        {
+          "text": "Stromkosten",
+          "target": 1,
+          "feedback": "Gemessener Verbrauch je Kostenstelle."
+        },
+        {
+          "text": "Versicherung der Maschinen",
+          "target": 2,
+          "feedback": "Die Prämie richtet sich nach dem Wert."
+        },
+        {
+          "text": "Löhne der Reinigungskräfte",
+          "target": 3,
+          "feedback": "Die Stunden zeigen, wo gearbeitet wurde."
+        }
+      ],
+      "conclusion": "Der Schlüssel soll abbilden, wodurch die Kosten entstehen."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Strom 4.800 Euro wird nach Verbrauch verteilt: Material 2.000 kWh, Fertigung 9.000 kWh, Verwaltung 600 kWh, Vertrieb 400 kWh. Berechne die Anteile und mache die Probe.",
+        "hints": [
+          "Betrag je kWh",
+          "Summe der Anteile"
+        ],
+        "model": "Gesamtverbrauch 12.000 kWh, 4.800 : 12.000 = 0,40 Euro je kWh. Material 800 Euro, Fertigung 3.600 Euro, Verwaltung 240 Euro, Vertrieb 160 Euro. Probe: 800 + 3.600 + 240 + 160 = 4.800 Euro.",
+        "criteria": [
+          "0,40 Euro je kWh",
+          "Alle vier Anteile richtig",
+          "Probe durchgeführt"
+        ]
+      },
+      "2": {
+        "prompt": "Lindner verteilt die Stromkosten bisher nach Fläche. Die Fertigung hat wenig Fläche, aber große Maschinen. Beurteile den Schlüssel und erkläre die Folgen für Zuschlagssätze und Preise.",
+        "hints": [
+          "Verursacherprinzip",
+          "Wirkung auf Zuschläge"
+        ],
+        "model": "Der Flächenschlüssel bildet den Stromverbrauch schlecht ab: Die Fertigung bekommt zu wenig, Verwaltung und Vertrieb zu viel Strom zugerechnet. Dadurch ist der FGK-Zuschlag zu niedrig und der VwVtGK-Zuschlag zu hoch. Aufträge mit viel Fertigungslohn werden zu billig, andere zu teuer kalkuliert. Besser ist ein Schlüssel nach gemessenen Kilowattstunden.",
+        "criteria": [
+          "Schlüssel begründet kritisiert",
+          "Wirkung auf beide Zuschläge",
+          "Besserer Schlüssel vorgeschlagen"
+        ]
+      }
+    },
+    "practice": "key"
+  },
+  {
+    "id": "vk-bab",
+    "lb": 3,
+    "title": "Gemeinkosten im Betriebsabrechnungsbogen verteilen",
+    "intro": "Eine Tabelle ordnet jede Gemeinkostenart ihren Kostenstellen zu.",
+    "paragraphs": [
+      "Der Betriebsabrechnungsbogen (BAB) ist eine Tabelle: Zeilen sind die Gemeinkostenarten, Spalten die Kostenstellen. Jede Gemeinkostenart wird direkt oder mit ihrem Schlüssel verteilt, dann werden die Spalten addiert. Ergebnis sind die Gemeinkosten je Kostenstelle: Materialgemeinkosten (MGK), Fertigungsgemeinkosten (FGK), Verwaltungsgemeinkosten (VwGK) und Vertriebsgemeinkosten (VtGK). Lindner verwendet einen einstufigen BAB mit genau diesen vier Kostenstellen.",
+      "Der BAB ermöglicht eine Wirtschaftlichkeitskontrolle: Steigen die Gemeinkosten einer Kostenstelle stärker als ihre Leistung, sieht die Leitung, wo sie nachfragen muss. Als Probe muss die Summe aller Spalten gleich der Summe aller Gemeinkostenarten sein. Beispiel: 6.000 Euro Strom, verteilt nach 1.000, 3.000, 1.000 und 1.000 kWh, ergeben 1.000, 3.000, 1.000 und 1.000 Euro; zusammen mit den direkt zugeordneten Gehältern bilden sie die Spaltensummen. Rundungsreste werden so ausgeglichen, dass die Probe aufgeht."
+    ],
+    "takeaway": "Im einstufigen BAB wird jede Gemeinkostenart mit ihrem Schlüssel auf Material, Fertigung, Verwaltung und Vertrieb verteilt; die Spaltensummen sind MGK, FGK, VwGK und VtGK.",
+    "sourceIds": [
+      "lp",
+      "isb"
+    ],
+    "quiz": {
+      "question": "Im BAB summiert sich die Spalte Fertigung auf 84.000 Euro. Was ist dieser Betrag?",
+      "answer": "Die Fertigungsgemeinkosten.",
+      "wrong": [
+        "Die Fertigungslöhne.",
+        "Die Fertigungskosten."
+      ],
+      "explanation": "Im BAB stehen nur Gemeinkosten. Fertigungskosten wären erst Fertigungslöhne plus FGK plus Sondereinzelkosten."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Fälle untersuchen",
+      "instruction": "Ordne die Fälle zu. Prüfe anschließend deine Entscheidungen.",
+      "categories": [
+        "Steht im BAB",
+        "Steht nicht im BAB"
+      ],
+      "entries": [
+        {
+          "text": "Hilfsstoffverbrauch",
+          "target": 0,
+          "feedback": "Gemeinkosten, die verteilt werden."
+        },
+        {
+          "text": "Fertigungsmaterial",
+          "target": 1,
+          "feedback": "Einzelkosten werden dem Kostenträger direkt zugerechnet."
+        },
+        {
+          "text": "Gehalt des Werkmeisters",
+          "target": 0,
+          "feedback": "Gemeinkosten der Fertigung."
+        },
+        {
+          "text": "Fertigungslöhne",
+          "target": 1,
+          "feedback": "Einzelkosten, aber Bezugsgröße für den FGK-Zuschlag."
+        }
+      ],
+      "conclusion": "Der BAB verteilt nur Gemeinkosten; Einzelkosten dienen als Zuschlagsgrundlage."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "BAB von Lindner: Gehälter direkt zugeordnet (Material 4.000, Fertigung 6.000, Verwaltung 9.000, Vertrieb 5.000 Euro), Miete 10.000 Euro im Flächenverhältnis 1 : 5 : 2 : 2. Ermittle die Gemeinkosten je Kostenstelle und mache die Probe.",
+        "hints": [
+          "Miete nach Verhältnis aufteilen",
+          "Spaltensummen und Probe"
+        ],
+        "model": "Miete: 10.000 : 10 = 1.000 Euro je Teil, also 1.000, 5.000, 2.000 und 2.000 Euro. MGK = 5.000 Euro, FGK = 11.000 Euro, VwGK = 11.000 Euro, VtGK = 7.000 Euro. Probe: 5.000 + 11.000 + 11.000 + 7.000 = 34.000 Euro = 24.000 Euro Gehälter + 10.000 Euro Miete.",
+        "criteria": [
+          "Mietverteilung richtig",
+          "Vier Spaltensummen richtig",
+          "Probe über die Zeilen"
+        ]
+      },
+      "2": {
+        "prompt": "Erkläre, wie der BAB der Geschäftsleitung bei der Wirtschaftlichkeitskontrolle hilft, und beschreibe, warum ein falscher Schlüssel die Kontrolle verfälscht.",
+        "hints": [
+          "Vergleich der Kostenstellen",
+          "Verursachungsgerechte Verteilung"
+        ],
+        "model": "Der BAB zeigt, wie viel Gemeinkosten in jeder Kostenstelle anfallen. Vergleicht die Leitung Monate oder Planwerte, sieht sie, wo die Kosten steigen, und kann die verantwortliche Stelle fragen. Ist der Schlüssel falsch, werden Kosten der falschen Stelle zugerechnet: Eine sparsame Kostenstelle wirkt teuer, eine verschwenderische günstig.",
+        "criteria": [
+          "Kontrolle über Vergleiche erklärt",
+          "Verantwortung der Kostenstelle",
+          "Folge eines falschen Schlüssels"
+        ]
+      }
+    },
+    "practice": "bab",
+    "lab": "bab"
+  },
+  {
+    "id": "vk-zuschlagssaetze",
+    "lb": 3,
+    "title": "Gemeinkostenzuschlagssätze berechnen",
+    "intro": "Wie viel Gemeinkosten kommen auf einen Euro Einzelkosten?",
+    "paragraphs": [
+      "Aus dem BAB berechnet man Zuschlagssätze. Sie geben an, wie viel Prozent Gemeinkosten auf eine Bezugsgröße kommen. MGK-Zuschlag = MGK · 100 : Fertigungsmaterial. FGK-Zuschlag = FGK · 100 : Fertigungslöhne. Verwaltung und Vertrieb beziehen sich auf die Herstellkosten des Umsatzes: VwGK-Zuschlag = VwGK · 100 : HKU, VtGK-Zuschlag = VtGK · 100 : HKU.",
+      "Beispiel: MGK 9.000 Euro bei 60.000 Euro Fertigungsmaterial ergibt 15 Prozent; FGK 84.000 Euro bei 48.000 Euro Fertigungslöhnen ergibt 175 Prozent. Weil Verwaltung und Vertrieb dieselbe Bezugsgröße haben, kann man sie zu einem gemeinsamen VwVtGK-Zuschlag zusammenfassen. Mit den Zuschlagssätzen werden später einzelne Aufträge kalkuliert."
+    ],
+    "takeaway": "Zuschlagssatz = Gemeinkosten · 100 : Bezugsgröße; Material bezieht sich auf das Fertigungsmaterial, Fertigung auf die Fertigungslöhne, Verwaltung und Vertrieb auf die Herstellkosten des Umsatzes.",
+    "sourceIds": [
+      "lp",
+      "isb"
+    ],
+    "quiz": {
+      "question": "FGK 90.000 Euro, Fertigungslöhne 60.000 Euro, Fertigungsmaterial 120.000 Euro. Wie hoch ist der FGK-Zuschlag?",
+      "answer": "150 %.",
+      "wrong": [
+        "75 %.",
+        "66,67 %."
+      ],
+      "explanation": "90.000 · 100 : 60.000 = 150 %. Die FGK beziehen sich auf die Fertigungslöhne, nicht auf das Material."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Fälle untersuchen",
+      "instruction": "Ordne die Fälle zu. Prüfe anschließend deine Entscheidungen.",
+      "categories": [
+        "Bezugsgröße Fertigungsmaterial",
+        "Bezugsgröße Fertigungslöhne",
+        "Bezugsgröße Herstellkosten des Umsatzes"
+      ],
+      "entries": [
+        {
+          "text": "Materialgemeinkosten",
+          "target": 0,
+          "feedback": "MGK-Zuschlag = MGK · 100 : FM."
+        },
+        {
+          "text": "Fertigungsgemeinkosten",
+          "target": 1,
+          "feedback": "FGK-Zuschlag = FGK · 100 : FL."
+        },
+        {
+          "text": "Verwaltungsgemeinkosten",
+          "target": 2,
+          "feedback": "VwGK-Zuschlag = VwGK · 100 : HKU."
+        },
+        {
+          "text": "Vertriebsgemeinkosten",
+          "target": 2,
+          "feedback": "VtGK-Zuschlag = VtGK · 100 : HKU."
+        }
+      ],
+      "conclusion": "Jeder Zuschlag hat seine eigene Bezugsgröße."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Fertigungsmaterial 84.000, MGK 12.600, Fertigungslöhne 60.000, FGK 99.000, VwGK 25.560, VtGK 12.780 Euro, keine Bestandsveränderungen. Berechne alle vier Zuschlagssätze.",
+        "hints": [
+          "HKU zuerst bilden",
+          "Vier Bezugsgrößen"
+        ],
+        "model": "MGK-Zuschlag = 12.600 · 100 : 84.000 = 15 %. FGK-Zuschlag = 99.000 · 100 : 60.000 = 165 %. HKU = 84.000 + 12.600 + 60.000 + 99.000 = 255.600 Euro. VwGK-Zuschlag = 25.560 · 100 : 255.600 = 10 %, VtGK-Zuschlag = 12.780 · 100 : 255.600 = 5 %.",
+        "criteria": [
+          "MGK und FGK richtig",
+          "HKU richtig gebildet",
+          "VwGK und VtGK richtig"
+        ]
+      },
+      "2": {
+        "prompt": "Begründe, warum Verwaltungs- und Vertriebsgemeinkosten auf die Herstellkosten des Umsatzes und nicht auf die Herstellkosten der Erzeugung bezogen werden.",
+        "hints": [
+          "Verkaufte statt hergestellte Menge",
+          "Verursachung von Verwaltung und Vertrieb"
+        ],
+        "model": "Verwaltung und Vertrieb arbeiten für die verkauften Erzeugnisse: Rechnungen, Werbung, Versand. Erzeugnisse, die noch auf Lager liegen, haben diese Kosten noch nicht verursacht. Deshalb ist die Bezugsgröße der Wert der verkauften Erzeugnisse, die Herstellkosten des Umsatzes; Bestandsveränderungen werden vorher berücksichtigt.",
+        "criteria": [
+          "Bezug auf verkaufte Erzeugnisse",
+          "Beispiele für Verwaltung und Vertrieb",
+          "Rolle der Bestandsveränderung"
+        ]
+      }
+    },
+    "practice": "rates"
+  },
+  {
+    "id": "vk-gesamtrechnung",
+    "lb": 3,
+    "title": "Kostenträgerzeitrechnung mit Bestandsveränderungen",
+    "intro": "Die Kosten eines ganzen Monats auf einen Blick.",
+    "paragraphs": [
+      "Die Kostenträgerzeitrechnung (Gesamtkalkulation) ermittelt die Kosten eines ganzen Zeitraums, etwa eines Monats. Schema: Fertigungsmaterial + MGK = Materialkosten; Fertigungslöhne + FGK + Sondereinzelkosten der Fertigung = Fertigungskosten; Materialkosten + Fertigungskosten = Herstellkosten der Erzeugung (HKE).",
+      "Nicht alles Hergestellte wird im selben Monat verkauft. Eine Bestandsmehrung an fertigen und unfertigen Erzeugnissen wird abgezogen, eine Bestandsminderung addiert. So entstehen die Herstellkosten des Umsatzes (HKU). Auf sie werden VwGK und VtGK geschlagen; das Ergebnis sind die Selbstkosten des Umsatzes. Beispiel: HKE 250.000 Euro, Mehrbestand 10.000 Euro, HKU 240.000 Euro. Bei 10 Prozent VwGK und 5 Prozent VtGK betragen die Selbstkosten 276.000 Euro."
+    ],
+    "takeaway": "Herstellkosten der Erzeugung − Bestandsmehrung + Bestandsminderung = Herstellkosten des Umsatzes; HKU + VwGK + VtGK = Selbstkosten des Umsatzes.",
+    "sourceIds": [
+      "lp",
+      "isb"
+    ],
+    "quiz": {
+      "question": "HKE 180.000 Euro, Bestandsminderung 6.000 Euro. Wie hoch sind die Herstellkosten des Umsatzes?",
+      "answer": "186.000 Euro.",
+      "wrong": [
+        "174.000 Euro.",
+        "180.000 Euro."
+      ],
+      "explanation": "Bei einer Bestandsminderung wurde mehr verkauft als hergestellt; die Kosten der verkauften Lagerstücke kommen hinzu."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Fälle untersuchen",
+      "instruction": "Ordne die Fälle zu. Prüfe anschließend deine Entscheidungen.",
+      "categories": [
+        "Wird zu den HKE addiert",
+        "Wird von den HKE abgezogen"
+      ],
+      "entries": [
+        {
+          "text": "Bestandsminderung an fertigen Erzeugnissen",
+          "target": 0,
+          "feedback": "Verkaufte Stücke aus dem Lager kommen hinzu."
+        },
+        {
+          "text": "Bestandsmehrung an unfertigen Erzeugnissen",
+          "target": 1,
+          "feedback": "Hergestellt, aber noch nicht verkauft."
+        },
+        {
+          "text": "Das Lager an fertigen Tischen wächst im Monat.",
+          "target": 1,
+          "feedback": "Ein Mehrbestand wird abgezogen."
+        },
+        {
+          "text": "Das Lager an Stühlen schrumpft, weil mehr verkauft als gefertigt wurde.",
+          "target": 0,
+          "feedback": "Ein Minderbestand wird addiert."
+        }
+      ],
+      "conclusion": "Mehrbestand abziehen, Minderbestand addieren."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Fertigungsmaterial 100.000 Euro, MGK 12 %, Fertigungslöhne 80.000 Euro, FGK 150 %, Bestandsmehrung 12.000 Euro, VwGK 8 %, VtGK 4 %. Berechne HKE, HKU und Selbstkosten.",
+        "hints": [
+          "Schema Schritt für Schritt",
+          "Mehrbestand abziehen"
+        ],
+        "model": "MK = 100.000 + 12.000 = 112.000 Euro. FK = 80.000 + 120.000 = 200.000 Euro. HKE = 312.000 Euro. HKU = 312.000 − 12.000 = 300.000 Euro. VwGK = 24.000 Euro, VtGK = 12.000 Euro. Selbstkosten = 336.000 Euro.",
+        "criteria": [
+          "HKE richtig",
+          "HKU mit Mehrbestand richtig",
+          "Selbstkosten richtig"
+        ]
+      },
+      "2": {
+        "prompt": "Im Dezember verkauft Lindner viele Tische aus dem Lager, die im November gefertigt wurden. Erkläre, warum die Herstellkosten des Umsatzes höher sind als die der Erzeugung und was ohne Korrektur passieren würde.",
+        "hints": [
+          "Bestandsminderung",
+          "Zuordnung von Kosten und Erlösen"
+        ],
+        "model": "Im Dezember wurde mehr verkauft als hergestellt; es liegt eine Bestandsminderung vor. Die Herstellkosten der aus dem Lager verkauften Tische entstanden schon im November, gehören aber zu den Umsätzen im Dezember und werden deshalb addiert. Ohne Korrektur stünden den Dezember-Erlösen zu niedrige Kosten gegenüber; der Monat sähe besser aus, der November schlechter.",
+        "criteria": [
+          "Bestandsminderung erkannt",
+          "Addition begründet",
+          "Folgen ohne Korrektur"
+        ]
+      }
+    },
+    "practice": "period"
+  },
+  {
+    "id": "vk-zuschlagskalkulation",
+    "lb": 3,
+    "title": "Selbstkosten eines Auftrags kalkulieren",
+    "intro": "Mit den Zuschlagssätzen zum Preis eines einzelnen Esstischs.",
+    "paragraphs": [
+      "Die Kostenträgerstückrechnung kalkuliert einen einzelnen Auftrag mit den Zuschlagssätzen aus dem BAB. Das Schema: Fertigungsmaterial + Materialgemeinkosten = Materialkosten (MK). Fertigungslöhne + Fertigungsgemeinkosten + Sondereinzelkosten der Fertigung = Fertigungskosten (FK). Materialkosten + Fertigungskosten = Herstellkosten (HK). Herstellkosten + Verwaltungs- und Vertriebsgemeinkosten = Selbstkosten (SK). Bestandsveränderungen gibt es bei einem einzelnen Auftrag nicht.",
+      "Beispiel: FM 200 Euro, MGK 10 Prozent = 20 Euro, MK 220 Euro. FL 300 Euro, FGK 150 Prozent = 450 Euro, FK 750 Euro. HK 970 Euro. VwVtGK 25 Prozent = 242,50 Euro. SK 1.212,50 Euro. Typische Fehler: die FGK auf die Materialkosten statt auf die Fertigungslöhne beziehen oder die Sondereinzelkosten mit einem Zuschlag belegen."
+    ],
+    "takeaway": "Zuschlagskalkulation: FM + MGK = MK; FL + FGK + SEKF = FK; MK + FK = HK; HK + VwVtGK = SK. Jeder Zuschlag bezieht sich auf seine eigene Bezugsgröße.",
+    "sourceIds": [
+      "lp",
+      "isb"
+    ],
+    "quiz": {
+      "question": "Wie berechnen sich die Herstellkosten in der Zuschlagskalkulation?",
+      "answer": "Materialkosten plus Fertigungskosten.",
+      "wrong": [
+        "Selbstkosten plus Gewinn.",
+        "Fertigungsmaterial plus Fertigungslöhne."
+      ],
+      "explanation": "HK = MK + FK; dabei enthalten MK und FK auch die Gemeinkostenzuschläge und die Sondereinzelkosten der Fertigung."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Fälle untersuchen",
+      "instruction": "Ordne die Fälle zu. Prüfe anschließend deine Entscheidungen.",
+      "categories": [
+        "Materialkosten",
+        "Fertigungskosten",
+        "Verwaltung und Vertrieb"
+      ],
+      "entries": [
+        {
+          "text": "Fertigungsmaterial 200 Euro",
+          "target": 0,
+          "feedback": "Einzelkosten des Materialbereichs."
+        },
+        {
+          "text": "FGK 150 % auf 300 Euro Fertigungslöhne",
+          "target": 1,
+          "feedback": "Gemeinkosten der Fertigung."
+        },
+        {
+          "text": "Spezialwerkzeug nur für diesen Auftrag",
+          "target": 1,
+          "feedback": "Sondereinzelkosten gehören zu den Fertigungskosten."
+        },
+        {
+          "text": "Zuschlag von 25 % auf die Herstellkosten",
+          "target": 2,
+          "feedback": "VwVtGK beziehen sich auf die HK."
+        },
+        {
+          "text": "MGK 10 % auf das Fertigungsmaterial",
+          "target": 0,
+          "feedback": "Gemeinkosten des Materialbereichs."
+        }
+      ],
+      "conclusion": "Erst MK und FK bilden, dann HK und SK."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Kalkuliere die Selbstkosten eines Esstischs: Fertigungsmaterial 400 Euro, MGK 15 %, Fertigungslöhne 250 Euro, FGK 180 %, Sondereinzelkosten der Fertigung 40 Euro, VwVtGK 20 %.",
+        "hints": [
+          "Schema in vier Stufen",
+          "Sondereinzelkosten ohne Zuschlag"
+        ],
+        "model": "MGK = 60 Euro, MK = 460 Euro. FGK = 450 Euro, FK = 250 + 450 + 40 = 740 Euro. HK = 460 + 740 = 1.200 Euro. VwVtGK = 240 Euro. SK = 1.440 Euro.",
+        "criteria": [
+          "MK und FK richtig",
+          "HK richtig",
+          "SK richtig"
+        ]
+      },
+      "2": {
+        "prompt": "Ein Mitschüler rechnet die FGK von 180 % auf die Materialkosten von 460 Euro und erhält zu hohe Selbstkosten. Erkläre den Fehler, berechne die Abweichung der FGK und beschreibe die Folge für Lindners Angebote.",
+        "hints": [
+          "Richtige Bezugsgröße",
+          "Wirkung auf den Preis"
+        ],
+        "model": "Die FGK beziehen sich auf die Fertigungslöhne von 250 Euro und betragen 450 Euro. Auf 460 Euro gerechnet ergäben sich 828 Euro, also 378 Euro zu viel. Die Selbstkosten und damit der Angebotspreis wären deutlich zu hoch; Lindner könnte Aufträge an günstigere Konkurrenten verlieren.",
+        "criteria": [
+          "Fehler benannt",
+          "378 Euro Abweichung",
+          "Folge für den Wettbewerb"
+        ]
+      }
+    },
+    "practice": "unitcost",
+    "lab": "calc"
+  },
+  {
+    "id": "vk-angebotspreis",
+    "lb": 3,
+    "title": "Vom Selbstkostenpreis zum Angebotspreis",
+    "intro": "Wiederholung aus BwR 8: Gewinn, Skonto und Rabatt.",
+    "paragraphs": [
+      "Von den Selbstkosten führt die Verkaufskalkulation aus BwR 8 zum Angebotspreis. Der Gewinnzuschlag wird vom Hundert der Selbstkosten berechnet: SK + Gewinn = Barverkaufspreis (BVP). Der Kunde darf später Skonto abziehen und bekommt Rabatt. Damit nach diesen Abzügen der BVP bleibt, werden Skonto und Rabatt im Hundert aufgeschlagen.",
+      "Rechnung: Zielverkaufspreis = BVP · 100 : (100 − Skontosatz); Listenverkaufspreis = ZVP · 100 : (100 − Rabattsatz). Beispiel: SK 1.212,50 Euro, 20 Prozent Gewinn ergeben BVP 1.455 Euro. Mit 2 Prozent Skonto: 1.455 · 100 : 98 = 1.484,69 Euro. Mit 10 Prozent Rabatt: 1.484,69 · 100 : 90 = 1.649,66 Euro. Der Listenverkaufspreis ist der Nettoangebotspreis; die Umsatzsteuer kommt auf der Rechnung hinzu. Jeder Zwischenschritt wird auf Cent gerundet."
+    ],
+    "takeaway": "SK + Gewinn = BVP; BVP · 100 : (100 − Skonto) = ZVP; ZVP · 100 : (100 − Rabatt) = LVP. Skonto und Rabatt werden im Hundert gerechnet, weil der Kunde sie vom höheren Preis abzieht.",
+    "sourceIds": [
+      "lp",
+      "lp8"
+    ],
+    "quiz": {
+      "question": "Barverkaufspreis 980 Euro, 2 % Kundenskonto. Wie hoch ist der Zielverkaufspreis?",
+      "answer": "1.000 Euro.",
+      "wrong": [
+        "999,60 Euro.",
+        "960,40 Euro."
+      ],
+      "explanation": "980 · 100 : 98 = 1.000 Euro. Wer 2 % von 980 addiert, erhält 999,60 Euro; nach Abzug von 2 % Skonto blieben nur 979,61 Euro."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Fälle untersuchen",
+      "instruction": "Ordne die Fälle zu. Prüfe anschließend deine Entscheidungen.",
+      "categories": [
+        "Vom Hundert",
+        "Im Hundert"
+      ],
+      "entries": [
+        {
+          "text": "Gewinnzuschlag auf die Selbstkosten",
+          "target": 0,
+          "feedback": "Grundwert sind die Selbstkosten."
+        },
+        {
+          "text": "Kundenskonto",
+          "target": 1,
+          "feedback": "Der Kunde zieht ihn vom Zielverkaufspreis ab."
+        },
+        {
+          "text": "Kundenrabatt",
+          "target": 1,
+          "feedback": "Der Kunde erhält ihn vom Listenverkaufspreis."
+        },
+        {
+          "text": "MGK-Zuschlag",
+          "target": 0,
+          "feedback": "Grundwert ist das Fertigungsmaterial."
+        }
+      ],
+      "conclusion": "Im Hundert rechnet man, wenn der Prozentsatz vom gesuchten, höheren Wert abgezogen wird."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Selbstkosten eines Esstischs 1.440 Euro, Gewinn 15 %, Kundenskonto 3 %, Kundenrabatt 10 %. Kalkuliere den Listenverkaufspreis.",
+        "hints": [
+          "Gewinn vom Hundert",
+          "Skonto und Rabatt im Hundert"
+        ],
+        "model": "Gewinn = 216 Euro, BVP = 1.656 Euro. ZVP = 1.656 · 100 : 97 = 1.707,22 Euro. LVP = 1.707,22 · 100 : 90 = 1.896,91 Euro.",
+        "criteria": [
+          "BVP richtig",
+          "ZVP richtig gerundet",
+          "LVP richtig"
+        ]
+      },
+      "2": {
+        "prompt": "Ein Kollege schlägt Skonto vom Hundert auf: 1.656 Euro plus 3 % ergibt 1.705,68 Euro. Zeige, was nach Abzug des Skontos übrig bleibt, und erkläre, warum im Hundert gerechnet wird.",
+        "hints": [
+          "Probe mit Skontoabzug",
+          "Grundwert des Skontos"
+        ],
+        "model": "Zieht der Kunde 3 % von 1.705,68 Euro ab, zahlt er 1.654,51 Euro; Lindner fehlen 1,49 Euro gegenüber dem BVP von 1.656 Euro. Der Skonto wird vom Zielverkaufspreis berechnet, also vom höheren Wert. Deshalb entspricht der BVP 97 % des ZVP, und man rechnet 1.656 · 100 : 97.",
+        "criteria": [
+          "Probe richtig gerechnet",
+          "Fehlbetrag benannt",
+          "Begründung über den Grundwert"
+        ]
+      }
+    },
+    "practice": "offer"
+  },
+  {
+    "id": "vk-kontrolle",
+    "lb": 3,
+    "title": "Wirtschaftlichkeit der Kostenstellen kontrollieren",
+    "intro": "Steigende Gemeinkosten sind nicht immer schlecht.",
+    "paragraphs": [
+      "Die Kostenstellenrechnung dient auch der Wirtschaftlichkeitskontrolle. Absolute Gemeinkosten lassen sich zwischen Monaten schlecht vergleichen, wenn sich die Produktion ändert. Der Zuschlagssatz setzt die Gemeinkosten ins Verhältnis zur Bezugsgröße. Steigt der FGK-Zuschlag, fallen je Euro Fertigungslohn mehr Gemeinkosten an: Die Fertigung arbeitet weniger wirtschaftlich.",
+      "Beispiel: Januar FGK 84.000 Euro bei 48.000 Euro Fertigungslöhnen (175 Prozent), Februar 90.000 Euro bei 45.000 Euro (200 Prozent). Der Zuschlag ist um 25 Prozentpunkte gestiegen. Mögliche Ursachen sind teure Reparaturen, gestiegene Energiepreise oder eine schlechte Auslastung. Die Kostenstellenleitung muss die Ursache klären; die Kennzahl allein beweist noch kein Fehlverhalten."
+    ],
+    "takeaway": "Ein steigender Zuschlagssatz bedeutet mehr Gemeinkosten je Euro Bezugsgröße; der Vergleich der Zuschlagssätze macht die Wirtschaftlichkeit einer Kostenstelle sichtbar.",
+    "sourceIds": [
+      "lp",
+      "isb"
+    ],
+    "quiz": {
+      "question": "Die MGK steigen von 9.000 auf 9.600 Euro, das Fertigungsmaterial von 60.000 auf 80.000 Euro. Was zeigt der Zuschlagssatz?",
+      "answer": "Er sinkt von 15 % auf 12 %; je Euro Material fallen weniger Gemeinkosten an.",
+      "wrong": [
+        "Er steigt, weil die MGK gestiegen sind.",
+        "Er bleibt gleich, weil beide Werte gestiegen sind."
+      ],
+      "explanation": "9.600 · 100 : 80.000 = 12 %. Die Gemeinkosten sind langsamer gewachsen als das Material."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Fälle untersuchen",
+      "instruction": "Ordne die Fälle zu. Prüfe anschließend deine Entscheidungen.",
+      "categories": [
+        "Wirtschaftlichkeit besser",
+        "Wirtschaftlichkeit schlechter"
+      ],
+      "entries": [
+        {
+          "text": "Der FGK-Zuschlag sinkt von 180 % auf 160 %.",
+          "target": 0,
+          "feedback": "Weniger Gemeinkosten je Euro Lohn."
+        },
+        {
+          "text": "Der MGK-Zuschlag steigt von 12 % auf 15 %.",
+          "target": 1,
+          "feedback": "Mehr Gemeinkosten je Euro Material."
+        },
+        {
+          "text": "Die FGK steigen um 5 %, die Fertigungslöhne um 20 %.",
+          "target": 0,
+          "feedback": "Der Zuschlagssatz sinkt."
+        },
+        {
+          "text": "Die FGK bleiben gleich, die Fertigungslöhne sinken stark.",
+          "target": 1,
+          "feedback": "Der Zuschlagssatz steigt."
+        }
+      ],
+      "conclusion": "Entscheidend ist das Verhältnis, nicht der absolute Betrag."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Fertigung im Januar: FGK 72.000 Euro, Fertigungslöhne 40.000 Euro. Im Februar: FGK 75.600 Euro, Fertigungslöhne 45.000 Euro. Berechne beide Zuschlagssätze und beurteile die Entwicklung.",
+        "hints": [
+          "Zwei Zuschlagssätze",
+          "Prozentpunkte"
+        ],
+        "model": "Januar: 72.000 · 100 : 40.000 = 180 %. Februar: 75.600 · 100 : 45.000 = 168 %. Der Zuschlag ist um 12 Prozentpunkte gesunken, obwohl die FGK um 3.600 Euro gestiegen sind. Die Fertigung arbeitet wirtschaftlicher, weil die Löhne und damit die Produktion stärker gewachsen sind.",
+        "criteria": [
+          "180 % und 168 % richtig",
+          "Veränderung in Prozentpunkten",
+          "Begründete Beurteilung"
+        ]
+      },
+      "2": {
+        "prompt": "Der FGK-Zuschlag steigt in einem Monat stark an. Die Fertigungsleiterin sagt: „Wir hatten eine Großreparatur und zu wenige Aufträge.“ Beurteile, ob die Erklärung plausibel ist, und nenne, was die Leitung als Nächstes prüfen sollte.",
+        "hints": [
+          "Zähler und Nenner betrachten",
+          "Einmalige und dauerhafte Ursachen"
+        ],
+        "model": "Beide Gründe sind plausibel: Die Reparatur erhöht die FGK, wenige Aufträge senken die Fertigungslöhne; beides lässt den Zuschlag steigen. Die Leitung sollte prüfen, ob die Reparatur einmalig war und wie sich die Auslastung in den nächsten Monaten entwickelt. Bleibt der Zuschlag hoch, müssen Kosten gesenkt oder mehr Aufträge gewonnen werden, sonst sind die Kalkulationen zu niedrig.",
+        "criteria": [
+          "Wirkung beider Gründe erklärt",
+          "Einmalig und dauerhaft unterschieden",
+          "Nächste Schritte genannt"
+        ]
+      }
+    },
+    "practice": "control"
+  },
+  {
+    "id": "tk-voll-teil",
+    "lb": 4,
+    "title": "Vollkosten und Teilkosten unterscheiden",
+    "intro": "Fixe Kosten bleiben, variable Kosten wachsen mit der Menge.",
+    "paragraphs": [
+      "Die Vollkostenrechnung verteilt alle Kosten, auch die Fixkosten, über Zuschläge auf die Produkte. Das ist für den langfristigen Angebotspreis nötig. Für kurzfristige Entscheidungen ist sie problematisch, weil die Fixkosten je Stück von der Menge abhängen. Die Teilkostenrechnung trennt deshalb variable Kosten, die mit der Menge steigen (Fertigungsmaterial, Fertigungslöhne), und fixe Kosten, die unabhängig von der Menge anfallen (Miete, Gehälter, zeitabhängige Abschreibungen, Versicherungen).",
+      "Gesamtkosten = Fixkosten + variable Stückkosten · Menge. Beispiel: Fixkosten 40.000 Euro, variable Kosten 60 Euro je Stuhl. Bei 1.000 Stühlen kostet ein Stuhl 100 Euro, bei 2.000 Stühlen nur 80 Euro, weil sich die Fixkosten auf mehr Stücke verteilen (Fixkostendegression). Die variablen Kosten je Stück bleiben gleich. Für kurzfristige, marktorientierte Entscheidungen sind deshalb die variablen Kosten die Richtschnur."
+    ],
+    "takeaway": "Die Vollkostenrechnung verteilt alle Kosten auf die Produkte; die Teilkostenrechnung trennt fixe und variable Kosten und nutzt die variablen Kosten als Richtschnur für kurzfristige Entscheidungen.",
+    "sourceIds": [
+      "lp",
+      "isb"
+    ],
+    "quiz": {
+      "question": "Fixkosten 30.000 Euro, variable Kosten 20 Euro je Stück. Was passiert mit den Stückkosten, wenn die Menge von 1.000 auf 1.500 Stück steigt?",
+      "answer": "Sie sinken von 50 auf 40 Euro.",
+      "wrong": [
+        "Sie bleiben bei 50 Euro.",
+        "Sie steigen, weil mehr Material verbraucht wird."
+      ],
+      "explanation": "Die Fixkosten je Stück sinken von 30 auf 20 Euro; die variablen 20 Euro bleiben."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Fälle untersuchen",
+      "instruction": "Ordne die Fälle zu. Prüfe anschließend deine Entscheidungen.",
+      "categories": [
+        "Variable Kosten",
+        "Fixe Kosten"
+      ],
+      "entries": [
+        {
+          "text": "Holz für die Stühle",
+          "target": 0,
+          "feedback": "Mehr Stühle brauchen mehr Holz."
+        },
+        {
+          "text": "Miete der Werkhalle",
+          "target": 1,
+          "feedback": "Fällt an, egal wie viel produziert wird."
+        },
+        {
+          "text": "Gehalt der Buchhalterin",
+          "target": 1,
+          "feedback": "Monatlich gleich, unabhängig von der Menge."
+        },
+        {
+          "text": "Akkordlohn je Stuhl",
+          "target": 0,
+          "feedback": "Wird je gefertigtem Stück bezahlt."
+        },
+        {
+          "text": "Versicherung der Halle",
+          "target": 1,
+          "feedback": "Fester Jahresbeitrag."
+        }
+      ],
+      "conclusion": "Variable Kosten hängen von der Menge ab, fixe nicht."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Fixkosten 48.000 Euro im Monat, variable Kosten 35 Euro je Regal. Berechne die Stückkosten bei 1.200 und bei 2.400 Regalen und erkläre den Unterschied.",
+        "hints": [
+          "Gesamtkosten durch Menge",
+          "Fixkostendegression"
+        ],
+        "model": "Bei 1.200 Stück: (48.000 + 42.000) : 1.200 = 75 Euro. Bei 2.400 Stück: (48.000 + 84.000) : 2.400 = 55 Euro. Die variablen 35 Euro bleiben gleich; die Fixkosten je Stück sinken von 40 auf 20 Euro, weil sie sich auf doppelt so viele Regale verteilen.",
+        "criteria": [
+          "75 Euro richtig",
+          "55 Euro richtig",
+          "Fixkostendegression erklärt"
+        ]
+      },
+      "2": {
+        "prompt": "Ein Kunde fragt nach einem Preis für 500 zusätzliche Regale. Erkläre, warum die Selbstkosten aus der Vollkostenrechnung für diese kurzfristige Entscheidung eine schlechte Grundlage sind.",
+        "hints": [
+          "Fixkosten fallen ohnehin an",
+          "Variable Kosten als Richtschnur"
+        ],
+        "model": "Die Selbstkosten enthalten anteilige Fixkosten, deren Höhe je Stück von der geplanten Menge abhängt. Die Fixkosten fallen aber ohnehin an, auch ohne den Zusatzauftrag. Für die Entscheidung zählt, ob der Preis die zusätzlichen, also variablen Kosten übersteigt. Wer mit Vollkosten rechnet, lehnt womöglich einen Auftrag ab, der das Ergebnis verbessert hätte.",
+        "criteria": [
+          "Problem der Fixkosten je Stück",
+          "Zusätzliche Kosten als Maßstab",
+          "Folge einer falschen Entscheidung"
+        ]
+      }
+    },
+    "practice": "fixvar"
+  },
+  {
+    "id": "tk-db",
+    "lb": 4,
+    "title": "Deckungsbeitrag je Stück und gesamt",
+    "intro": "Was bleibt von jedem verkauften Stück für die Fixkosten?",
+    "paragraphs": [
+      "Der Stückdeckungsbeitrag (db) ist der Nettoverkaufspreis minus die variablen Stückkosten. Er zeigt, wie viel jedes verkaufte Stück zur Deckung der Fixkosten beiträgt. Der Gesamtdeckungsbeitrag ist db mal Absatzmenge. Zieht man die Fixkosten ab, erhält man das Betriebsergebnis.",
+      "Beispiel: Ein Stuhl kostet netto 95 Euro, die variablen Kosten betragen 60 Euro. db = 35 Euro. Bei 1.500 Stück beträgt der Deckungsbeitrag 52.500 Euro; bei 40.000 Euro Fixkosten bleibt ein Betriebsergebnis von 12.500 Euro. Solange der db positiv ist, verbessert jedes zusätzlich verkaufte Stück das Ergebnis, auch wenn insgesamt noch ein Verlust besteht."
+    ],
+    "takeaway": "Stückdeckungsbeitrag = Nettoverkaufspreis − variable Stückkosten; Betriebsergebnis = Stückdeckungsbeitrag · Menge − Fixkosten.",
+    "sourceIds": [
+      "lp",
+      "isb"
+    ],
+    "quiz": {
+      "question": "Preis 80 Euro, variable Stückkosten 50 Euro, Fixkosten 24.000 Euro, Absatz 1.000 Stück. Wie hoch ist das Betriebsergebnis?",
+      "answer": "6.000 Euro.",
+      "wrong": [
+        "30.000 Euro.",
+        "−6.000 Euro."
+      ],
+      "explanation": "db = 30 Euro, Deckungsbeitrag 30.000 Euro, minus 24.000 Euro Fixkosten ergibt 6.000 Euro."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Fälle untersuchen",
+      "instruction": "Ordne die Fälle zu. Prüfe anschließend deine Entscheidungen.",
+      "categories": [
+        "Stückdeckungsbeitrag",
+        "Gesamtdeckungsbeitrag",
+        "Betriebsergebnis"
+      ],
+      "entries": [
+        {
+          "text": "95 Euro Preis − 60 Euro variable Kosten",
+          "target": 0,
+          "feedback": "Bezogen auf ein Stück."
+        },
+        {
+          "text": "35 Euro · 1.500 Stück",
+          "target": 1,
+          "feedback": "Für die gesamte Absatzmenge."
+        },
+        {
+          "text": "52.500 Euro − 40.000 Euro Fixkosten",
+          "target": 2,
+          "feedback": "Erst nach Abzug der Fixkosten."
+        }
+      ],
+      "conclusion": "Vom Stück über die Menge zum Ergebnis."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Ein Tisch kostet netto 120 Euro, die variablen Kosten betragen 75 Euro. Lindner verkauft 900 Tische, die Fixkosten betragen 36.000 Euro. Berechne db, Deckungsbeitrag und Betriebsergebnis.",
+        "hints": [
+          "Drei Rechenschritte",
+          "Fixkosten erst am Ende"
+        ],
+        "model": "db = 120 − 75 = 45 Euro. Deckungsbeitrag = 45 · 900 = 40.500 Euro. Betriebsergebnis = 40.500 − 36.000 = 4.500 Euro.",
+        "criteria": [
+          "db richtig",
+          "Deckungsbeitrag richtig",
+          "Betriebsergebnis richtig"
+        ]
+      },
+      "2": {
+        "prompt": "Lindner macht mit einem Produkt insgesamt Verlust, der db ist aber positiv. Ein Kollege will die Produktion sofort einstellen. Erkläre mit eigenen Zahlen, warum das kurzfristig das Ergebnis verschlechtert.",
+        "hints": [
+          "Fixkosten bleiben",
+          "Positiver db"
+        ],
+        "model": "Beispiel: db 10 Euro, 2.000 Stück, Fixkosten 25.000 Euro: Betriebsergebnis −5.000 Euro. Stellt Lindner die Produktion ein, entfällt der Deckungsbeitrag von 20.000 Euro, die Fixkosten bleiben kurzfristig bestehen; das Ergebnis sinkt auf −25.000 Euro. Solange der db positiv ist, deckt jedes Stück einen Teil der Fixkosten.",
+        "criteria": [
+          "Stimmiges eigenes Beispiel",
+          "Fixkosten bleiben erkannt",
+          "Verschlechterung beziffert"
+        ]
+      }
+    },
+    "practice": "db"
+  },
+  {
+    "id": "tk-gewinnschwelle",
+    "lb": 4,
+    "title": "Die Gewinnschwelle berechnen",
+    "intro": "Ab welcher Menge wird aus Verlust Gewinn?",
+    "paragraphs": [
+      "Die Gewinnschwelle (Break-even-Point) ist die Absatzmenge, bei der der Gesamtdeckungsbeitrag genau die Fixkosten deckt; das Betriebsergebnis ist null. Gewinnschwellenmenge = Fixkosten : Stückdeckungsbeitrag. Weil man keine Teilstücke verkauft, wird immer auf ganze Stück aufgerundet: Erst ab dieser Menge entsteht kein Verlust mehr.",
+      "Beispiel: Fixkosten 40.000 Euro, db 35 Euro: 40.000 : 35 = 1.142,86, also 1.143 Stück. Grafisch ist die Gewinnschwelle der Schnittpunkt der Erlösgeraden mit der Gesamtkostengeraden; die Gesamtkostengerade beginnt in Höhe der Fixkosten. Links davon liegt die Verlustzone, rechts die Gewinnzone. Liegt die Gewinnschwelle über der Kapazität, kann der Betrieb mit diesem Preis keinen Gewinn erzielen."
+    ],
+    "takeaway": "Gewinnschwellenmenge = Fixkosten : Stückdeckungsbeitrag, immer auf ganze Stück aufgerundet; dort schneiden sich Erlös- und Gesamtkostengerade.",
+    "sourceIds": [
+      "lp",
+      "isb"
+    ],
+    "quiz": {
+      "question": "Fixkosten 50.000 Euro, Preis 70 Euro, variable Kosten 40 Euro. Wie hoch ist die Gewinnschwellenmenge?",
+      "answer": "1.667 Stück.",
+      "wrong": [
+        "1.666 Stück.",
+        "715 Stück."
+      ],
+      "explanation": "50.000 : 30 = 1.666,67; aufgerundet 1.667 Stück. Bei 1.666 Stück bliebe ein kleiner Verlust. 715 Stück entstehen, wenn man durch den Preis statt durch den db teilt."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Fälle untersuchen",
+      "instruction": "Ordne die Fälle zu. Prüfe anschließend deine Entscheidungen.",
+      "categories": [
+        "Verlustzone",
+        "Gewinnschwelle",
+        "Gewinnzone"
+      ],
+      "entries": [
+        {
+          "text": "Fixkosten 30.000 Euro, db 30 Euro, Absatz 800 Stück",
+          "target": 0,
+          "feedback": "Deckungsbeitrag 24.000 Euro deckt die Fixkosten nicht."
+        },
+        {
+          "text": "Fixkosten 30.000 Euro, db 30 Euro, Absatz 1.000 Stück",
+          "target": 1,
+          "feedback": "Deckungsbeitrag gleich Fixkosten."
+        },
+        {
+          "text": "Fixkosten 30.000 Euro, db 30 Euro, Absatz 1.200 Stück",
+          "target": 2,
+          "feedback": "6.000 Euro Gewinn."
+        }
+      ],
+      "conclusion": "An der Gewinnschwelle ist das Betriebsergebnis null."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Fixkosten 45.000 Euro, Nettopreis 90 Euro, variable Kosten 62 Euro. Berechne die Gewinnschwellenmenge und begründe das Runden mit einer Probe.",
+        "hints": [
+          "db zuerst",
+          "Probe mit beiden Mengen"
+        ],
+        "model": "db = 28 Euro. 45.000 : 28 = 1.607,14, also 1.608 Stück. Probe: 1.607 · 28 = 44.996 Euro, es fehlen 4 Euro; 1.608 · 28 = 45.024 Euro, 24 Euro Gewinn. Deshalb wird immer aufgerundet.",
+        "criteria": [
+          "1.608 Stück richtig",
+          "Probe mit 1.607 und 1.608",
+          "Aufrunden begründet"
+        ]
+      },
+      "2": {
+        "prompt": "Lindner plant eine neue Stuhlserie: Kapazität 3.000 Stück, Fixkosten 120.000 Euro, variable Kosten 55 Euro, geplanter Preis 95 Euro. Beurteile mit der Gewinnschwelle, ob die Serie sinnvoll ist, und nenne zwei Stellschrauben.",
+        "hints": [
+          "Gewinnschwelle und Kapazität",
+          "Preis, Kosten, Menge"
+        ],
+        "model": "db = 40 Euro, Gewinnschwelle = 120.000 : 40 = 3.000 Stück, genau die Kapazität. Selbst bei voller Auslastung entsteht kein Gewinn. Die Serie ist so nicht sinnvoll. Stellschrauben: niedrigere variable Kosten, etwa günstigeres Holz, oder geringere Fixkosten; ein höherer Preis senkt die Gewinnschwelle, kann aber den Absatz verringern.",
+        "criteria": [
+          "3.000 Stück richtig",
+          "Vergleich mit der Kapazität",
+          "Zwei sinnvolle Stellschrauben"
+        ]
+      }
+    },
+    "practice": "breakeven",
+    "lab": "breakeven"
+  },
+  {
+    "id": "tk-preisaenderung",
+    "lb": 4,
+    "title": "Preisänderungen und Gewinnschwelle",
+    "intro": "Was kostet eine Verkaufsaktion wirklich?",
+    "paragraphs": [
+      "Ändert sich der Preis, ändert sich der Stückdeckungsbeitrag um denselben Betrag, denn variable Stückkosten und Fixkosten bleiben gleich. Eine Preissenkung von 5 Euro senkt den db um 5 Euro und verschiebt die Gewinnschwelle nach rechts: Es müssen mehr Stück verkauft werden. Eine Preiserhöhung senkt die Gewinnschwellenmenge, kann aber Kunden kosten.",
+      "Beispiel: Ein Regal kostet 120 Euro, variable Kosten 80 Euro, Fixkosten 60.000 Euro. Gewinnschwelle 1.500 Stück. Bei einer Verkaufsaktion mit 10 Prozent Preisnachlass sinkt der Preis auf 108 Euro und der db von 40 auf 28 Euro, ein Rückgang um 30 Prozent. Die Gewinnschwelle steigt auf 2.143 Stück. Verkaufsförderung lohnt sich nur, wenn der Absatz stark genug wächst."
+    ],
+    "takeaway": "Eine Preissenkung verringert den Stückdeckungsbeitrag um den vollen Nachlass und erhöht die Gewinnschwellenmenge; der Absatz muss entsprechend stärker wachsen.",
+    "sourceIds": [
+      "lp",
+      "isb"
+    ],
+    "quiz": {
+      "question": "Preis 50 Euro, variable Kosten 30 Euro, Fixkosten 20.000 Euro. Der Preis sinkt um 10 %. Wie hoch ist die neue Gewinnschwellenmenge?",
+      "answer": "1.334 Stück.",
+      "wrong": [
+        "1.112 Stück.",
+        "1.000 Stück."
+      ],
+      "explanation": "Neuer Preis 45 Euro, db 15 Euro, 20.000 : 15 = 1.333,33, aufgerundet 1.334 Stück. 1.112 Stück entstehen, wenn man nur den db um 10 % kürzt."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Fälle untersuchen",
+      "instruction": "Ordne die Fälle zu. Prüfe anschließend deine Entscheidungen.",
+      "categories": [
+        "Gewinnschwelle steigt",
+        "Gewinnschwelle sinkt"
+      ],
+      "entries": [
+        {
+          "text": "Preissenkung bei gleichen Kosten",
+          "target": 0,
+          "feedback": "Der db sinkt."
+        },
+        {
+          "text": "Die Fixkosten steigen durch eine neue Halle.",
+          "target": 0,
+          "feedback": "Mehr Fixkosten müssen gedeckt werden."
+        },
+        {
+          "text": "Günstigeres Holz senkt die variablen Kosten.",
+          "target": 1,
+          "feedback": "Der db steigt."
+        },
+        {
+          "text": "Preiserhöhung bei gleichen Kosten",
+          "target": 1,
+          "feedback": "Der db steigt."
+        }
+      ],
+      "conclusion": "Alles, was den db senkt oder die Fixkosten erhöht, verschiebt die Gewinnschwelle nach rechts."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Ein Regal kostet 150 Euro, variable Kosten 100 Euro, Fixkosten 40.000 Euro. Lindner senkt den Preis um 8 %. Berechne alte und neue Gewinnschwelle.",
+        "hints": [
+          "Neuer Preis und db",
+          "Aufrunden"
+        ],
+        "model": "Alte Gewinnschwelle: 40.000 : 50 = 800 Stück. Neuer Preis 138 Euro, db 38 Euro. Neue Gewinnschwelle: 40.000 : 38 = 1.052,63, also 1.053 Stück. Für 8 % weniger Preis muss Lindner rund 32 % mehr Regale verkaufen, nur um keinen Verlust zu machen.",
+        "criteria": [
+          "800 Stück richtig",
+          "1.053 Stück richtig",
+          "Verhältnis von Preis und Menge erklärt"
+        ]
+      },
+      "2": {
+        "prompt": "Die Marketingabteilung schlägt 15 % Rabatt für alle Stühle vor und verspricht 20 % mehr Absatz. Preis 100 Euro, variable Kosten 70 Euro, bisher 3.000 Stück, Fixkosten 60.000 Euro. Prüfe den Vorschlag rechnerisch und beurteile ihn.",
+        "hints": [
+          "Betriebsergebnis vorher und nachher",
+          "Weitere Gesichtspunkte"
+        ],
+        "model": "Vorher: db 30 Euro, Deckungsbeitrag 90.000 Euro, Ergebnis 30.000 Euro. Nachher: Preis 85 Euro, db 15 Euro, 3.600 Stück, Deckungsbeitrag 54.000 Euro, Ergebnis −6.000 Euro. Der Vorschlag verschlechtert das Ergebnis um 36.000 Euro. Er wäre nur sinnvoll, wenn der Absatz viel stärker wächst oder andere Ziele wie Kundengewinnung den Verlust rechtfertigen.",
+        "criteria": [
+          "Beide Ergebnisse richtig",
+          "Verschlechterung erkannt",
+          "Abwägung mit weiteren Zielen"
+        ]
+      }
+    },
+    "practice": "pricechange"
+  },
+  {
+    "id": "tk-zwei-produkte",
+    "lb": 4,
+    "title": "Betriebsergebnis im Zweiproduktunternehmen",
+    "intro": "Deckungsbeiträge addieren, Fixkosten einmal abziehen.",
+    "paragraphs": [
+      "Stellt ein Betrieb mehrere Produkte her, rechnet man die Deckungsbeiträge je Produkt und addiert sie. Die Fixkosten werden erst vom gesamten Deckungsbeitrag abgezogen, denn sie fallen für den ganzen Betrieb an und lassen sich nicht verursachungsgerecht auf die Produkte verteilen.",
+      "Beispiel: Stühle db 35 Euro, 1.500 Stück, Deckungsbeitrag 52.500 Euro. Tische db 140 Euro, 400 Stück, Deckungsbeitrag 56.000 Euro. Gesamter Deckungsbeitrag 108.500 Euro, Fixkosten 90.000 Euro, Betriebsergebnis 18.500 Euro. Wer die Fixkosten auf die Produkte schlüsselt, kann den falschen Eindruck bekommen, ein Produkt mit positivem db mache Verlust."
+    ],
+    "takeaway": "Im Mehrproduktunternehmen gilt: Betriebsergebnis = Summe der Gesamtdeckungsbeiträge aller Produkte − gemeinsame Fixkosten.",
+    "sourceIds": [
+      "lp",
+      "isb"
+    ],
+    "quiz": {
+      "question": "Deckungsbeitrag Produkt A 30.000 Euro, Produkt B 25.000 Euro, Fixkosten 60.000 Euro. Wie hoch ist das Betriebsergebnis?",
+      "answer": "−5.000 Euro.",
+      "wrong": [
+        "55.000 Euro.",
+        "−35.000 Euro."
+      ],
+      "explanation": "30.000 + 25.000 − 60.000 = −5.000 Euro. Die Fixkosten werden einmal vom gesamten Deckungsbeitrag abgezogen."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Fälle untersuchen",
+      "instruction": "Ordne die Fälle zu. Prüfe anschließend deine Entscheidungen.",
+      "categories": [
+        "Je Produkt rechnen",
+        "Für den ganzen Betrieb rechnen"
+      ],
+      "entries": [
+        {
+          "text": "Stückdeckungsbeitrag",
+          "target": 0,
+          "feedback": "Preis und variable Kosten sind produktbezogen."
+        },
+        {
+          "text": "Fixkosten",
+          "target": 1,
+          "feedback": "Gemeinsam für den Betrieb."
+        },
+        {
+          "text": "Gesamtdeckungsbeitrag eines Produkts",
+          "target": 0,
+          "feedback": "db · Menge dieses Produkts."
+        },
+        {
+          "text": "Betriebsergebnis",
+          "target": 1,
+          "feedback": "Summe der Deckungsbeiträge minus Fixkosten."
+        }
+      ],
+      "conclusion": "Fixkosten erst am Schluss für den ganzen Betrieb."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Stühle: Preis 85 Euro, variable Kosten 55 Euro, 2.000 Stück. Tische: Preis 320 Euro, variable Kosten 210 Euro, 300 Stück. Fixkosten 100.000 Euro. Berechne das Betriebsergebnis.",
+        "hints": [
+          "db je Produkt",
+          "Fixkosten einmal abziehen"
+        ],
+        "model": "Stühle: db 30 Euro, Deckungsbeitrag 60.000 Euro. Tische: db 110 Euro, Deckungsbeitrag 33.000 Euro. Gesamt 93.000 Euro, Betriebsergebnis 93.000 − 100.000 = −7.000 Euro.",
+        "criteria": [
+          "Beide Deckungsbeiträge richtig",
+          "Summe richtig",
+          "Betriebsergebnis −7.000 Euro"
+        ]
+      },
+      "2": {
+        "prompt": "Ein Kollege verteilt die Fixkosten von 100.000 Euro je zur Hälfte auf Stühle und Tische und folgert, die Tische (Deckungsbeitrag 33.000 Euro) machten 17.000 Euro Verlust und sollten gestrichen werden. Beurteile die Rechnung.",
+        "hints": [
+          "Fixkosten fallen weiter an",
+          "Ergebnis ohne Tische"
+        ],
+        "model": "Die Aufteilung der Fixkosten ist willkürlich; sie fallen auch ohne Tische an. Ohne Tische bliebe nur der Deckungsbeitrag der Stühle von 60.000 Euro, das Betriebsergebnis sänke von −7.000 auf −40.000 Euro. Die Tische tragen 33.000 Euro zur Deckung der Fixkosten bei und sollten bleiben.",
+        "criteria": [
+          "Willkürliche Verteilung erkannt",
+          "Ergebnis ohne Tische berechnet",
+          "Begründete Empfehlung"
+        ]
+      }
+    },
+    "practice": "twoproducts"
+  },
+  {
+    "id": "tk-programm",
+    "lb": 4,
+    "title": "Das Fertigungsprogramm planen",
+    "intro": "Welche Produkte bleiben im Sortiment?",
+    "paragraphs": [
+      "Bei der Fertigungsprogrammplanung entscheidet die Leitung, welche Produkte im Sortiment bleiben. Kurzfristig gilt: Ein Produkt mit positivem Stückdeckungsbeitrag trägt zur Deckung der Fixkosten bei und bleibt, auch wenn es nach Vollkosten einen Verlust zeigt. Ein Produkt mit negativem Stückdeckungsbeitrag verschlechtert das Ergebnis mit jedem Stück; es wird gestrichen, wenn keine anderen Gründe dagegen sprechen.",
+      "Die Fixkosten fallen beim Streichen eines Produkts kurzfristig weiter an. Beispiel: Hocker mit db −4 Euro bei 800 Stück verschlechtern Lindners Ergebnis um 3.200 Euro. Ohne Hocker verbessert sich das Betriebsergebnis um genau diesen Betrag. Gegen das Streichen können Gründe sprechen, etwa wenn Kunden ein vollständiges Sortiment erwarten. Freie Kapazitäten nutzt man bevorzugt für das Produkt mit dem höchsten Stückdeckungsbeitrag, solange es keinen Engpass gibt."
+    ],
+    "takeaway": "Kurzfristig bleibt jedes Produkt mit positivem Stückdeckungsbeitrag im Programm; ein negativer Stückdeckungsbeitrag verschlechtert das Ergebnis, während die Fixkosten beim Streichen bleiben.",
+    "sourceIds": [
+      "lp",
+      "isb"
+    ],
+    "quiz": {
+      "question": "Ein Produkt hat nach Vollkosten einen Stückverlust von 3 Euro, aber einen Stückdeckungsbeitrag von 5 Euro. Was gilt kurzfristig?",
+      "answer": "Es bleibt im Programm, weil es zur Deckung der Fixkosten beiträgt.",
+      "wrong": [
+        "Es wird gestrichen, weil es Verlust macht.",
+        "Es ist für das Ergebnis gleichgültig."
+      ],
+      "explanation": "Fällt es weg, entfallen 5 Euro Deckungsbeitrag je Stück, die Fixkosten bleiben; das Ergebnis würde schlechter."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Fälle untersuchen",
+      "instruction": "Ordne die Fälle zu. Prüfe anschließend deine Entscheidungen.",
+      "categories": [
+        "Im Programm behalten",
+        "Streichen prüfen"
+      ],
+      "entries": [
+        {
+          "text": "Tisch: db 120 Euro",
+          "target": 0,
+          "feedback": "Hoher Beitrag zu den Fixkosten."
+        },
+        {
+          "text": "Hocker: db −4 Euro",
+          "target": 1,
+          "feedback": "Jedes Stück verschlechtert das Ergebnis."
+        },
+        {
+          "text": "Bank: Vollkostenverlust 6 Euro, db 9 Euro",
+          "target": 0,
+          "feedback": "Positiver db, kurzfristig behalten."
+        }
+      ],
+      "conclusion": "Maßstab ist der Stückdeckungsbeitrag, nicht der Vollkostenerfolg."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Stühle db 30 Euro bei 2.000 Stück, Tische db 110 Euro bei 500 Stück, Hocker db −5 Euro bei 1.000 Stück, Fixkosten 95.000 Euro. Berechne das Betriebsergebnis mit und ohne Hocker und gib eine Empfehlung.",
+        "hints": [
+          "Alle Deckungsbeiträge addieren",
+          "Fixkosten bleiben gleich"
+        ],
+        "model": "Mit Hockern: 60.000 + 55.000 − 5.000 − 95.000 = 15.000 Euro. Ohne Hocker: 60.000 + 55.000 − 95.000 = 20.000 Euro. Das Streichen verbessert das Ergebnis um 5.000 Euro; empfohlen, sofern die Hocker nicht für den Verkauf der Tische wichtig sind.",
+        "criteria": [
+          "Beide Ergebnisse richtig",
+          "Verbesserung beziffert",
+          "Empfehlung mit Vorbehalt"
+        ]
+      },
+      "2": {
+        "prompt": "Die Hocker haben einen negativen Stückdeckungsbeitrag, werden aber fast immer zusammen mit Tischen gekauft. Beurteile, ob Lindner sie streichen sollte, und nenne Alternativen.",
+        "hints": [
+          "Verbundener Absatz",
+          "Preis oder Kosten ändern"
+        ],
+        "model": "Wenn Kunden ohne Hocker auch weniger Tische kaufen, kann der Verlust an Deckungsbeitrag der Tische größer sein als der Gewinn durch das Streichen. Lindner sollte das schätzen, bevor entschieden wird. Alternativen: den Hockerpreis erhöhen, die variablen Kosten senken, etwa durch ein anderes Material, oder Hocker zukaufen statt selbst zu fertigen.",
+        "criteria": [
+          "Verbund mit Tischen berücksichtigt",
+          "Rechnerische Abwägung",
+          "Mindestens zwei Alternativen"
+        ]
+      }
+    },
+    "practice": "program"
+  },
+  {
+    "id": "tk-zusatzauftrag",
+    "lb": 4,
+    "title": "Einen Zusatzauftrag beurteilen",
+    "intro": "Unter Selbstkosten verkaufen und trotzdem gewinnen?",
+    "paragraphs": [
+      "Ein Zusatzauftrag ist eine Anfrage über den normalen Absatz hinaus, oft zu einem niedrigeren Preis. Er lohnt sich kurzfristig, wenn zwei Bedingungen erfüllt sind: Der Preis liegt über den variablen Stückkosten, also ist der Stückdeckungsbeitrag positiv, und es gibt freie Kapazitäten, sodass keine regulären Aufträge verdrängt werden. Die Fixkosten fallen ohnehin an und ändern sich durch den Auftrag nicht.",
+      "Beispiel: Ein Hotel will 300 Stühle zu 72 Euro. Nach Vollkosten kostet ein Stuhl 86 Euro, die variablen Kosten betragen 60 Euro. Mit 12 Euro db je Stuhl verbessert der Auftrag das Betriebsergebnis um 3.600 Euro. Bedenken: Andere Kunden könnten denselben Preis verlangen, und dauerhaft müssen auch die Fixkosten gedeckt werden. Mögliche Ziele sind Auslastung, Kundengewinnung und die Sicherung von Arbeitsplätzen."
+    ],
+    "takeaway": "Ein Zusatzauftrag lohnt sich kurzfristig, wenn freie Kapazitäten vorhanden sind und der Preis über den variablen Stückkosten liegt; das Ergebnis steigt um Stückdeckungsbeitrag mal Menge.",
+    "sourceIds": [
+      "lp",
+      "isb"
+    ],
+    "quiz": {
+      "question": "Freie Kapazität ist vorhanden. Angebot 55 Euro je Stück, Selbstkosten 70 Euro, variable Kosten 48 Euro. Was gilt?",
+      "answer": "Annehmen: Jedes Stück bringt 7 Euro Deckungsbeitrag.",
+      "wrong": [
+        "Ablehnen: Jedes Stück bringt 15 Euro Verlust.",
+        "Gleichgültig, weil die Fixkosten gleich bleiben."
+      ],
+      "explanation": "Die Fixkosten sind ohnehin da; zusätzlich entstehen nur 48 Euro variable Kosten je Stück. 55 − 48 = 7 Euro verbessern das Ergebnis."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Fälle untersuchen",
+      "instruction": "Ordne die Fälle zu. Prüfe anschließend deine Entscheidungen.",
+      "categories": [
+        "Kurzfristig annehmen",
+        "Ablehnen"
+      ],
+      "entries": [
+        {
+          "text": "Preis über den variablen Stückkosten, freie Kapazität",
+          "target": 0,
+          "feedback": "Positiver Deckungsbeitrag ohne Verdrängung."
+        },
+        {
+          "text": "Preis unter den variablen Stückkosten",
+          "target": 1,
+          "feedback": "Jedes Stück verschlechtert das Ergebnis."
+        },
+        {
+          "text": "Preis über den variablen Stückkosten, aber Kapazität voll; Stammaufträge mit höherem db fielen weg",
+          "target": 1,
+          "feedback": "Der Zusatzauftrag verdrängt besseren Deckungsbeitrag."
+        }
+      ],
+      "conclusion": "Positiver db und freie Kapazität müssen beide erfüllt sein."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Ein Hotel bietet für 400 Stühle 68 Euro je Stück. Selbstkosten 82 Euro, variable Kosten 60 Euro, freie Kapazität vorhanden. Berechne die Wirkung auf das Betriebsergebnis und gib eine Empfehlung.",
+        "hints": [
+          "db des Zusatzauftrags",
+          "Fixkosten unverändert"
+        ],
+        "model": "db = 68 − 60 = 8 Euro, das Betriebsergebnis steigt um 8 · 400 = 3.200 Euro. Obwohl der Preis 14 Euro unter den Selbstkosten liegt, sollte Lindner kurzfristig annehmen, weil die Fixkosten ohnehin anfallen und Kapazität frei ist.",
+        "criteria": [
+          "db 8 Euro richtig",
+          "3.200 Euro Verbesserung",
+          "Begründete Empfehlung"
+        ]
+      },
+      "2": {
+        "prompt": "Ein Stammkunde erfährt, dass das Hotel Stühle für 68 Euro bekommt, und verlangt denselben Preis. Erläutere das Risiko von Zusatzaufträgen zu Teilkostenpreisen und wie Lindner sich schützen kann.",
+        "hints": [
+          "Preisdruck auf Stammkunden",
+          "Langfristige Kostendeckung"
+        ],
+        "model": "Wenn Stammkunden ebenfalls nur 68 Euro zahlen, sinkt der Deckungsbeitrag des ganzen Absatzes, und die Fixkosten werden nicht mehr gedeckt. Langfristig muss der Preis die Selbstkosten decken. Lindner kann sich schützen, indem Zusatzaufträge zeitlich begrenzt, in anderen Märkten oder mit abweichender Ausführung angeboten werden.",
+        "criteria": [
+          "Risiko erkannt",
+          "Langfristige Kostendeckung erklärt",
+          "Schutzmaßnahme genannt"
+        ]
+      }
+    },
+    "practice": "extra"
+  },
+  {
+    "id": "tk-preisuntergrenze",
+    "lb": 4,
+    "title": "Kurzfristige und langfristige Preisuntergrenze",
+    "intro": "Wie weit darf der Preis sinken?",
+    "paragraphs": [
+      "Die kurzfristige Preisuntergrenze liegt bei den variablen Stückkosten: Bei diesem Preis ist der Stückdeckungsbeitrag null; ein Stück verschlechtert das Ergebnis nicht, trägt aber auch nichts zu den Fixkosten bei. Die langfristige Preisuntergrenze sind die Selbstkosten je Stück, also variable Stückkosten plus Fixkosten je Stück: Erst dann ist das Betriebsergebnis null.",
+      "Beispiel: variable Kosten 60 Euro, Fixkosten 40.000 Euro bei 2.000 Stühlen. Kurzfristige Preisuntergrenze 60 Euro, langfristige 60 + 20 = 80 Euro. In einer Absatzkrise kann Lindner kurzfristig Preise zwischen 60 und 80 Euro akzeptieren, um Kunden und Arbeitsplätze zu halten. Auf Dauer muss der Preis die vollen Kosten decken, sonst zehrt der Betrieb sein Eigenkapital auf."
+    ],
+    "takeaway": "Kurzfristige Preisuntergrenze = variable Stückkosten (db = 0); langfristige Preisuntergrenze = Selbstkosten je Stück (Betriebsergebnis = 0).",
+    "sourceIds": [
+      "lp",
+      "isb"
+    ],
+    "quiz": {
+      "question": "Variable Stückkosten 25 Euro, Fixkosten 30.000 Euro, Menge 3.000 Stück. Wie hoch ist die langfristige Preisuntergrenze?",
+      "answer": "35 Euro.",
+      "wrong": [
+        "25 Euro.",
+        "10 Euro."
+      ],
+      "explanation": "25 Euro variable Kosten plus 30.000 : 3.000 = 10 Euro Fixkosten je Stück. 25 Euro wäre die kurzfristige Grenze."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Fälle untersuchen",
+      "instruction": "Ordne die Fälle zu. Prüfe anschließend deine Entscheidungen.",
+      "categories": [
+        "Unter der kurzfristigen Grenze",
+        "Zwischen beiden Grenzen",
+        "Über der langfristigen Grenze"
+      ],
+      "entries": [
+        {
+          "text": "Preis 55 Euro bei 60 Euro variablen und 80 Euro Selbstkosten",
+          "target": 0,
+          "feedback": "Nicht einmal die variablen Kosten sind gedeckt."
+        },
+        {
+          "text": "Preis 70 Euro bei 60 Euro variablen und 80 Euro Selbstkosten",
+          "target": 1,
+          "feedback": "Kurzfristig vertretbar, langfristig nicht."
+        },
+        {
+          "text": "Preis 92 Euro bei 60 Euro variablen und 80 Euro Selbstkosten",
+          "target": 2,
+          "feedback": "Alle Kosten gedeckt, Gewinn je Stück."
+        }
+      ],
+      "conclusion": "Kurzfristig zählen die variablen, langfristig alle Kosten."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Variable Kosten 45 Euro je Regal, Fixkosten 54.000 Euro, Absatz 1.800 Regale. Ermittle kurz- und langfristige Preisuntergrenze und erkläre, was ein Preis von 60 Euro bedeutet.",
+        "hints": [
+          "Fixkosten je Stück",
+          "Zwischen den Grenzen"
+        ],
+        "model": "Kurzfristige Preisuntergrenze 45 Euro. Fixkosten je Stück 54.000 : 1.800 = 30 Euro, langfristige Preisuntergrenze 75 Euro. Bei 60 Euro deckt jedes Regal seine variablen Kosten und 15 Euro der Fixkosten; insgesamt fehlen aber 15 Euro je Regal, also entsteht ein Verlust. Das ist nur vorübergehend tragbar.",
+        "criteria": [
+          "45 Euro richtig",
+          "75 Euro richtig",
+          "Bedeutung von 60 Euro erklärt"
+        ]
+      },
+      "2": {
+        "prompt": "In einer Absatzkrise will Lindner ein Jahr lang Preise knapp über den variablen Kosten verlangen. Beurteile die Strategie aus Sicht der Unternehmerin, der Beschäftigten und der Bank.",
+        "hints": [
+          "Kurzfristig sinnvoll",
+          "Langfristige Grenzen"
+        ],
+        "model": "Für die Unternehmerin hält die Strategie Kunden und lastet die Fertigung aus; jeder Euro über den variablen Kosten mindert den Verlust. Die Beschäftigten behalten ihre Arbeit. Die Bank sieht aber, dass Verluste das Eigenkapital aufzehren und die Kennzahlen verschlechtern. Länger als eine Krise darf die Strategie nicht dauern, weil der Preis langfristig die Selbstkosten decken muss.",
+        "criteria": [
+          "Unternehmerinnensicht",
+          "Sicht der Beschäftigten",
+          "Sicht der Bank und zeitliche Grenze"
+        ]
+      }
+    },
+    "practice": "floor"
+  },
+  {
+    "id": "tk-make-or-buy",
+    "lb": 4,
+    "title": "Eigenfertigung oder Fremdbezug",
+    "intro": "Selbst machen oder einkaufen: make or buy.",
+    "paragraphs": [
+      "Bei der Entscheidung zwischen Eigenfertigung und Fremdbezug (make or buy) vergleicht man die Kosten beider Wege. Eigenfertigung kostet Fixkosten plus variable Stückkosten mal Menge, Fremdbezug Einstandspreis mal Menge. Die kritische Menge, bei der beide gleich teuer sind: Fixkosten : (Einstandspreis − variable Stückkosten). Oberhalb der kritischen Menge ist Eigenfertigung günstiger.",
+      "Beispiel: Ein Beschlag kostet im Einkauf 10 Euro. Eigene Fertigung: 12.000 Euro Fixkosten, 4 Euro variable Kosten. Kritische Menge 12.000 : 6 = 2.000 Stück. Bei 1.500 Stück ist der Fremdbezug mit 15.000 Euro günstiger als die Eigenfertigung mit 18.000 Euro. Neben den Kosten zählen Qualität, Unabhängigkeit vom Lieferer, Know-how, Flexibilität und Arbeitsplätze."
+    ],
+    "takeaway": "Eigenfertigung kostet Fixkosten + variable Stückkosten · Menge, Fremdbezug Einstandspreis · Menge; oberhalb der kritischen Menge Fixkosten : (Einstandspreis − variable Stückkosten) ist Eigenfertigung günstiger.",
+    "sourceIds": [
+      "lp",
+      "isb"
+    ],
+    "quiz": {
+      "question": "Fixkosten der Eigenfertigung 9.000 Euro, variable Kosten 7 Euro, Einstandspreis 10 Euro. Wie hoch ist die kritische Menge?",
+      "answer": "3.000 Stück.",
+      "wrong": [
+        "900 Stück.",
+        "1.286 Stück."
+      ],
+      "explanation": "9.000 : (10 − 7) = 3.000 Stück. Teilt man durch den Einstandspreis oder die variablen Kosten allein, entstehen falsche Werte."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Fälle untersuchen",
+      "instruction": "Ordne die Fälle zu. Prüfe anschließend deine Entscheidungen.",
+      "categories": [
+        "Spricht für Eigenfertigung",
+        "Spricht für Fremdbezug"
+      ],
+      "entries": [
+        {
+          "text": "Der Bedarf liegt weit über der kritischen Menge.",
+          "target": 0,
+          "feedback": "Dann ist Eigenfertigung günstiger."
+        },
+        {
+          "text": "Der Lieferer hat Spezialwissen und hohe Qualität.",
+          "target": 1,
+          "feedback": "Know-how des Lieferers nutzen."
+        },
+        {
+          "text": "Lindner will unabhängig von Lieferterminen sein.",
+          "target": 0,
+          "feedback": "Eigene Fertigung sichert die Versorgung."
+        },
+        {
+          "text": "Der Bedarf schwankt stark von Jahr zu Jahr.",
+          "target": 1,
+          "feedback": "Fremdbezug ist flexibel, Fixkosten entfallen."
+        }
+      ],
+      "conclusion": "Kosten und qualitative Gründe gehören beide zur Entscheidung."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Eigenfertigung eines Tischbeins: Fixkosten 18.000 Euro, variable Kosten 6 Euro. Fremdbezug: 15 Euro je Stück. Lindner braucht 2.500 Stück. Berechne die kritische Menge und die Kosten beider Möglichkeiten und entscheide.",
+        "hints": [
+          "Kritische Menge",
+          "Kostenvergleich"
+        ],
+        "model": "Kritische Menge = 18.000 : 9 = 2.000 Stück. Eigenfertigung: 18.000 + 6 · 2.500 = 33.000 Euro. Fremdbezug: 15 · 2.500 = 37.500 Euro. Weil der Bedarf über der kritischen Menge liegt, ist Eigenfertigung um 4.500 Euro günstiger.",
+        "criteria": [
+          "2.000 Stück richtig",
+          "Beide Kosten richtig",
+          "Entscheidung begründet"
+        ]
+      },
+      "2": {
+        "prompt": "Die Eigenfertigung ist rechnerisch knapp günstiger, braucht aber eine neue Maschine und Fachkräfte, die schwer zu finden sind. Beurteile die Entscheidung mit mindestens drei nicht rechnerischen Gesichtspunkten.",
+        "hints": [
+          "Qualitative Gründe",
+          "Risiko bei knappem Vorteil"
+        ],
+        "model": "Ein knapper Kostenvorteil kann schnell verschwinden, wenn die Menge sinkt; die neue Maschine bindet Kapital für Jahre. Fehlen Fachkräfte, leidet die Qualität. Andererseits macht Eigenfertigung unabhängig von Lieferzeiten und sichert Know-how im Betrieb. Bei unsicherem Bedarf und fehlendem Personal spricht viel für den Fremdbezug.",
+        "criteria": [
+          "Mindestens drei Gesichtspunkte",
+          "Risiko des knappen Vorteils",
+          "Begründetes Urteil"
+        ]
+      }
+    },
+    "practice": "makebuy",
+    "lab": "makebuy"
+  },
+  {
+    "id": "gr-vorsteuer",
+    "lb": 0,
+    "title": "Netto, Vorsteuer und Brutto",
+    "intro": "Optional: Auffrischung aus BwR 7 und 8 für die Rückstellungsauflösung.",
+    "paragraphs": [
+      "Eine Eingangsrechnung enthält den Nettobetrag und die Umsatzsteuer, die der Betrieb als Vorsteuer vom Finanzamt zurückbekommt. Bei 19 Prozent gilt: Vorsteuer = Nettobetrag · 19 : 100, Bruttobetrag = Nettobetrag · 119 : 100. Aufwand und Vorsteuer stehen im Soll, die Bruttoverbindlichkeit im Haben.",
+      "Beispiel: Reparaturrechnung über 2.000 Euro netto. Vorsteuer 380 Euro, brutto 2.380 Euro. Buchung: 6160 FRI 2.000 Euro und 2600 VORST 380 Euro an 4400 VE 2.380 Euro. Ist nur der Bruttobetrag bekannt, rechnet man zurück: Netto = Brutto · 100 : 119. Bei der Auflösung einer Rückstellung brauchst du genau diese Aufteilung."
+    ],
+    "takeaway": "Vorsteuer = Nettobetrag · 19 : 100, Nettobetrag = Bruttobetrag · 100 : 119; Aufwand und Vorsteuer im Soll, Bruttobetrag im Haben.",
+    "sourceIds": [
+      "konten"
+    ],
+    "quiz": {
+      "question": "Eine Rechnung lautet über 1.190 Euro brutto einschließlich 19 % Umsatzsteuer. Wie hoch ist der Nettobetrag?",
+      "answer": "1.000 Euro.",
+      "wrong": [
+        "963,90 Euro.",
+        "1.416,10 Euro."
+      ],
+      "explanation": "1.190 · 100 : 119 = 1.000 Euro. Zieht man 19 % vom Bruttobetrag ab, erhält man fälschlich 963,90 Euro."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Fälle untersuchen",
+      "instruction": "Ordne die Fälle zu. Prüfe anschließend deine Entscheidungen.",
+      "categories": [
+        "Soll",
+        "Haben"
+      ],
+      "entries": [
+        {
+          "text": "6160 FRI mit dem Nettobetrag",
+          "target": 0,
+          "feedback": "Aufwand im Soll."
+        },
+        {
+          "text": "2600 VORST",
+          "target": 0,
+          "feedback": "Anspruch gegen das Finanzamt im Soll."
+        },
+        {
+          "text": "4400 VE mit dem Bruttobetrag",
+          "target": 1,
+          "feedback": "Schuld beim Lieferer im Haben."
+        }
+      ],
+      "conclusion": "Aufwand und Vorsteuer im Soll, die Bruttoschuld im Haben."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Eine Reparaturrechnung lautet über 3.570 Euro brutto einschließlich 19 % Umsatzsteuer. Ermittle Netto und Vorsteuer und bilde den Buchungssatz bei Zahlung auf Ziel.",
+        "hints": [
+          "Netto zurückrechnen",
+          "Drei Konten"
+        ],
+        "model": "Netto = 3.570 · 100 : 119 = 3.000 Euro, Vorsteuer = 570 Euro. Buchung: 6160 FRI 3.000 Euro und 2600 VORST 570 Euro an 4400 VE 3.570 Euro.",
+        "criteria": [
+          "Netto richtig",
+          "Vorsteuer richtig",
+          "Buchungssatz vollständig"
+        ]
+      },
+      "2": {
+        "prompt": "Erkläre, warum Rückstellungen ohne Vorsteuer gebildet werden, die Vorsteuer bei der Auflösung aber gebucht wird.",
+        "hints": [
+          "Wann entsteht Vorsteuer?",
+          "Schätzung oder Rechnung"
+        ],
+        "model": "Vorsteuer darf nur aus einer ordnungsgemäßen Rechnung abgezogen werden. Am 31. Dezember gibt es nur eine Schätzung oder einen Kostenvoranschlag, deshalb wird die Rückstellung netto gebildet. Kommt im neuen Jahr die Rechnung, entsteht der Vorsteueranspruch und wird zusammen mit der Auflösung gebucht.",
+        "criteria": [
+          "Rechnung als Voraussetzung",
+          "Netto bei Bildung begründet",
+          "Vorsteuer bei Auflösung erklärt"
+        ]
+      }
+    },
+    "optional": true,
+    "practice": "vat"
+  },
+  {
+    "id": "gr-prozent",
+    "lb": 0,
+    "title": "Prozentrechnung vom Hundert und im Hundert",
+    "intro": "Optional: Auffrischung für Skonto und Rabatt in der Kalkulation.",
+    "paragraphs": [
+      "Vom Hundert rechnest du, wenn der Grundwert 100 Prozent ist und bekannt: 15 Prozent Gewinn von 1.000 Euro Selbstkosten sind 150 Euro. Im Hundert rechnest du, wenn der gesuchte Wert 100 Prozent ist und der bekannte Wert bereits um einen Prozentsatz vermindert wurde.",
+      "Beispiel: Der Barverkaufspreis von 970 Euro ist das, was nach 3 Prozent Skonto übrig bleibt, also 97 Prozent des Zielverkaufspreises. Zielverkaufspreis = 970 · 100 : 97 = 1.000 Euro. Probe: 3 Prozent von 1.000 Euro sind 30 Euro; 1.000 − 30 = 970 Euro. Mit dieser Probe erkennst du, ob du im Hundert richtig gerechnet hast."
+    ],
+    "takeaway": "Im Hundert gilt: gesuchter Wert = bekannter Wert · 100 : (100 − Prozentsatz); die Probe zieht den Prozentsatz vom gesuchten Wert wieder ab.",
+    "sourceIds": [
+      "lp8"
+    ],
+    "quiz": {
+      "question": "Nach 20 % Rabatt bleiben 800 Euro. Wie hoch war der Listenpreis?",
+      "answer": "1.000 Euro.",
+      "wrong": [
+        "960 Euro.",
+        "640 Euro."
+      ],
+      "explanation": "800 · 100 : 80 = 1.000 Euro. 960 Euro entstehen, wenn man 20 % von 800 Euro addiert."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Fälle untersuchen",
+      "instruction": "Ordne die Fälle zu. Prüfe anschließend deine Entscheidungen.",
+      "categories": [
+        "Vom Hundert",
+        "Im Hundert"
+      ],
+      "entries": [
+        {
+          "text": "Gewinn von 12 % auf 2.500 Euro Selbstkosten",
+          "target": 0,
+          "feedback": "Grundwert bekannt."
+        },
+        {
+          "text": "Zielverkaufspreis aus Barverkaufspreis und 2 % Skonto",
+          "target": 1,
+          "feedback": "Gesuchter Wert ist 100 %."
+        },
+        {
+          "text": "Listenpreis aus Zielverkaufspreis und 10 % Rabatt",
+          "target": 1,
+          "feedback": "Gesuchter Wert ist 100 %."
+        }
+      ],
+      "conclusion": "Ist der gesuchte Wert der Grundwert, rechnet man im Hundert."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Ein Barverkaufspreis von 1.176 Euro soll 2 % Skonto ermöglichen. Ermittle den Zielverkaufspreis und mache die Probe.",
+        "hints": [
+          "Prozentsatz vom gesuchten Wert",
+          "Probe"
+        ],
+        "model": "ZVP = 1.176 · 100 : 98 = 1.200 Euro. Probe: 2 % von 1.200 Euro sind 24 Euro; 1.200 − 24 = 1.176 Euro.",
+        "criteria": [
+          "1.200 Euro richtig",
+          "Probe gerechnet",
+          "Rechenweg im Hundert"
+        ]
+      },
+      "2": {
+        "prompt": "Erkläre an einem eigenen Zahlenbeispiel, warum 10 % Aufschlag und anschließend 10 % Abzug nicht wieder zum Ausgangswert führen.",
+        "hints": [
+          "Unterschiedliche Grundwerte",
+          "Eigene Zahlen"
+        ],
+        "model": "Beispiel: 500 Euro plus 10 % ergibt 550 Euro. 10 % von 550 Euro sind 55 Euro; 550 − 55 = 495 Euro. Der Abzug bezieht sich auf den höheren Wert, deshalb fehlen 5 Euro. Wer nach dem Abzug den Ausgangswert erhalten will, muss im Hundert rechnen: 500 · 100 : 90 = 555,56 Euro.",
+        "criteria": [
+          "Stimmiges Beispiel",
+          "Unterschiedliche Grundwerte erklärt",
+          "Lösung im Hundert gezeigt"
+        ]
+      }
+    },
+    "optional": true,
+    "practice": "percent"
+  }
+]
