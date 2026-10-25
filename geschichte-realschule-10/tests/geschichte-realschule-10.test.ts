@@ -455,7 +455,6 @@ describe("cell", () => {
       for (const item of atom.practice_items as Item[]) {
         expect(item.source_link).toBe(lessonLink(lesson.id));
         expect(item.language).toBe(lesson.language ?? "de");
-        expect(item.replaces).toBeUndefined();
       }
       for (const prereq of atom.prerequisites) {
         const target = cell.atoms.find((entry) => entry.id === prereq.atom_id);
@@ -514,7 +513,7 @@ describe("cell", () => {
   });
 });
 
-describe("mapping of the old ZAM cell (proposal only)", () => {
+describe("approved mapping of the old ZAM cell", () => {
   // The two old atoms have differently shaped sample solutions; only id and question matter here.
   const oldAtoms = legacy.atoms as unknown as Array<{
     practice_items: Array<{ id: string; question: string }>;
@@ -542,10 +541,10 @@ describe("mapping of the old ZAM cell (proposal only)", () => {
     for (const row of mapping.rows) {
       if (row.category === "A") {
         expect(slugs.has(row.academy_slug!)).toBe(true);
-        expect(row.action).toBe("propose-replace-after-approval");
+        expect(row.action).toBe("replace");
       } else {
         expect(row.academy_slug).toBeNull();
-        expect(row.action).toBe("propose-retire-after-approval");
+        expect(row.action).toBe("retire");
       }
       expect(row.reason.length).toBeGreaterThan(80);
     }
@@ -553,10 +552,26 @@ describe("mapping of the old ZAM cell (proposal only)", () => {
     expect(new Set(targets).size).toBe(targets.length);
   });
 
-  it("ships without replaces or retired_items until Thomas approves the mapping", () => {
-    expect(mapping.approved).toBeNull();
-    expect(mapping.status).toBe("proposal-only");
-    expect("retired_items" in cell).toBe(false);
-    expect(items.some((item) => item.replaces)).toBe(false);
+  it("declares exactly the approved replaces and retirements in version 2026.10.2", () => {
+    expect(cell.version).toBe("2026.10.2");
+    expect(mapping.status).toBe("approved");
+    expect(mapping.approved).toBe("2026-10-25");
+    expect(mapping.source).toContain("Ich gebe die Zuordnung 2 A / 0 B / 2 C");
+    expect(mapping.authorization).toContain("2 A, 0 B, 2 C");
+    const declared = items.flatMap((item) => (item.replaces ?? []).map((id) => [id, item.slug]));
+    expect(declared.sort()).toEqual(
+      mapping.rows
+        .filter((row) => row.category === "A")
+        .map((row) => [row.de_by_id, row.academy_slug])
+        .sort(),
+    );
+    for (const item of items) expect((item.replaces ?? []).length).toBeLessThanOrEqual(1);
+    const retired = (cell as { retired_items?: Array<{ id: string; reason: string }> })
+      .retired_items!;
+    expect(retired).toEqual(
+      mapping.rows
+        .filter((row) => row.category === "C")
+        .map((row) => ({ id: row.de_by_id, reason: row.reason })),
+    );
   });
 });

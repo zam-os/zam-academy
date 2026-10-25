@@ -1,11 +1,11 @@
 {
   "$schema": "https://zam.app/schemas/v1/kvt-tile.json",
   "tile_id": "zam-academy:geschichte-realschule-10",
-  "version": "2026.10.1",
+  "version": "2026.10.2",
   "title": "Geschichte 10 Realschule (ZAM Academy)",
   "description": "Geschichte 10 nach LehrplanPLUS Bayern: 49 Kernlektionen von der Nachkriegszeit über Teilung, Kalten Krieg und Einheit bis zur Gegenwart, Längsschnitte zu Migration und Geschichtskultur, vier optionale englische Vertiefungen. Ein gemeinsamer Lernpfad für alle Zweige; jede Karte führt zur passenden Lektion.",
   "publisher": "ZAM Academy",
-  "published_at": "2026-10-25T12:00:00Z",
+  "published_at": "2026-10-25T18:00:00Z",
   "sources": [
     {
       "uri": "https://academy.zam-os.org/geschichte-realschule-10/",
@@ -3123,6 +3123,9 @@
               "text": "In der Berlin-Blockade",
               "reason": "Die Blockade war 1948/49 und bedrohte West-Berlin, keinen Atomkrieg."
             }
+          ],
+          "replaces": [
+            "01K4HAK0000000000000000J01"
           ]
         },
         {
@@ -3668,6 +3671,9 @@
               "text": "Am 9. Oktober 1989",
               "reason": "Am 9. Oktober 1989 demonstrierten 70.000 Menschen in Leipzig."
             }
+          ],
+          "replaces": [
+            "01K4HAK0000000000000000J03"
           ]
         },
         {
@@ -6339,6 +6345,16 @@
           "materiality": "material"
         }
       ]
+    }
+  ],
+  "retired_items": [
+    {
+      "id": "01K4HAK0000000000000000J02",
+      "reason": "Vierteilige Gesamtfrage, deren Inhalte die neue Zelle auf mehrere Atome verteilt (Blockbildung, Kuba-Krise, Vietnamkrieg, Entspannung); eine Verteilung einer Historie auf mehrere Karten ist ausgeschlossen. Die Musterlösung wertet zugespitzt („in letzter Sekunde abgewendet“, „gigantisches“ Hilfsprogramm) statt zu erklären. Zudem bindet die Alt-Zelle das Atom an Lernbereich 1, der im Plan Methoden und Arbeitstechniken ist. Kein Lernstandsübertrag; die Karte wird stillgelegt, ihre Historie bleibt am alten Token."
+    },
+    {
+      "id": "01K4HAK0000000000000000J04",
+      "reason": "Vierteilige Gesamtfrage über vier Atome der neuen Zelle (Zwei Staaten, Mauerbau, Friedliche Revolution, Weg zur Einheit); keine Verteilung einer Historie. Die Musterlösung wertet mit Begriffen wie „Vasallenstaat“ und „schenken … die volle Souveränität“ statt zu erklären, nennt die Mauer insgesamt eine „155 km lange Betonmauer“ (155 km sind die Grenzanlagen um West-Berlin) und ordnet die Wiedervereinigung Lernbereich 2 zu, der im Plan die Nachkriegszeit ist (die Einheit steht in Lernbereich 4). Kein Lernstandsübertrag; die Karte wird stillgelegt, ihre Historie bleibt am alten Token."
     }
   ]
 }

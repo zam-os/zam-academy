@@ -1,6 +1,6 @@
 # Geschichte 10 · Lehrplanabgleich und Zuordnung der Alt-Zelle
 
-Stand: 25. Oktober 2026. Das [Academy-Paket](../geschichte-realschule-10/) erscheint als Zelle `2026.10.1` **ohne `replaces` und `retired_items`**. Die Zuordnung der vier alten Karten unten ist ein Vorschlag (`"status": "proposal-only"`, `"approved": null`) und wartet auf Thomas' ausdrückliche Freigabe.
+Stand: 25. Oktober 2026. **Thomas hat die Zuordnung der vier alten Karten am 25. Oktober 2026 in zam-os/zam-academy#45 freigegeben** („Ich gebe die Zuordnung 2 A / 0 B / 2 C mit Stilllegung der beiden C-Karten frei.“). Das [Academy-Paket](../geschichte-realschule-10/) erscheint deshalb als Zelle `2026.10.2` mit zwei `replaces` und zwei `retired_items`; `approved` trägt das Datum, `source` den Wortlaut.
 
 ## Lehrplan
 
@@ -24,20 +24,21 @@ Die 41 Kompetenzerwartungen stehen wörtlich in [`coverage.json`](../geschichte-
 
 Die Teilzelle `de-by:realschule-10-geschichte-kalter-krieg-teilung-wiedervereinigung` (Version `2026.08.1`, zwei Atome, vier Karten) ist in ZAM gebündelt. Ihr bytegleicher [Snapshot](../geschichte-realschule-10/tests/fixtures/de-by-realschule-10-geschichte-kalter-krieg-teilung-wiedervereinigung-kvt.json) stammt aus `zam-os/zam` Commit `b2bd246ec9ebb2cfde01e93d0c0dcf9d33024ba9` (SHA-256 `ecba7fe3…35e8ff`). Die Alt-Zelle nennt Geschichte 10 ein Fach der Abschlussprüfung und bindet ihre Atome an „lb1 Blockkonfrontation“ und „lb2 Deutschland nach 1945 und Wiedervereinigung“; im Plan ist LB 1 Methoden und die Einheit Teil von LB 4.
 
-| Alte Karte | Bisheriger Abruf | Vorschlag | Nachfolger | Begründung |
+| Alte Karte | Bisheriger Abruf | Zuordnung | Nachfolger | Begründung |
 | --- | --- | --- | --- | --- |
 | `…J01` | Krise 1962 am Rand des Atomkriegs | **A** | `g10-kuba-krise-merken` | Gleicher Einzelabruf; Antwort „Kuba-Krise“, alter Ablenker Suezkrise bleibt |
-| `…J02` | Kalter Krieg in vier Teilen (Ideologie, Truman/Marshall, Blöcke, Abschreckung) | **C**, Stilllegung vorgeschlagen | – | Mehrteilig über mehrere neue Atome; zugespitzte Musterlösung; falsche LB-Bindung |
+| `…J02` | Kalter Krieg in vier Teilen (Ideologie, Truman/Marshall, Blöcke, Abschreckung) | **C**, stillgelegt | – | Mehrteilig über mehrere neue Atome; zugespitzte Musterlösung; falsche LB-Bindung |
 | `…J03` | Datum des Mauerfalls | **A** | `g10-friedliche-revolution-merken` | Gleicher Einzelabruf; Antwort 9. November 1989, alter Ablenker 3. Oktober 1990 bleibt |
-| `…J04` | Teilung bis Einheit in vier Phasen | **C**, Stilllegung vorgeschlagen | – | Mehrteilig über vier neue Atome; wertende Begriffe („Vasallenstaat“), ungenaue Mauerangabe, falsche LB-Bindung |
+| `…J04` | Teilung bis Einheit in vier Phasen | **C**, stillgelegt | – | Mehrteilig über vier neue Atome; wertende Begriffe („Vasallenstaat“), ungenaue Mauerangabe, falsche LB-Bindung |
 
 Keine **B**-Zeile: Keine alte Gesamtfrage wird mit ganzer Antwort übernommen, weil beide Musterlösungen korrigiert werden müssten. Bei **C** bleiben Karte und Reviews am alten Token.
 
-**Zur Freigabe:** Thomas wird gebeten, 2 A / 0 B / 2 C mit Stilllegung der beiden C-Karten freizugeben oder zu ändern. Danach erhält die Zelle Version `2026.10.2` mit den zwei `replaces` und zwei `retired_items`, `approved` bekommt das Datum und `source` seinen Wortlaut.
+Bei **A** zieht die vollständige Karte samt Reviews auf genau einen Nachfolger. Die beiden C-Karten stehen in `retired_items` und kommen nicht mehr in die aktive Wiederholung.
 
 ## Was geprüft ist
 
-1. `npm test` im Paket: 137 Tests (Lektions-IDs, Inhalte, Werkstätten inklusive „kein Ziel zu Beginn erreicht“, Daten, Fortschritt, Abdeckungsmatrix, Grundbegriffe, Zelle, Vertrag, Mapping-Vorschlag).
+1. `npm test` im Paket: 137 Tests (Lektions-IDs, Inhalte, Werkstätten inklusive „kein Ziel zu Beginn erreicht“, Daten, Fortschritt, Abdeckungsmatrix, Grundbegriffe, Zelle, Vertrag, freigegebenes Mapping).
 2. `ZAM_CORE=… node scripts/validate-cells.mjs` mit zam-core 0.54.0: Installation und Auswahlprüfungen aller 159 Karten bestehen.
-3. `ZAM_CORE=… node geschichte-realschule-10/scripts/validate-migration.mjs`: vier alte Karten und acht Reviews bleiben unverändert und aktiv; Simulation des Vorschlags mit zwei Übertragungen, zwei Stilllegungen, stabiler Wiederholung und abgelehnter Zusammenführung.
-4. Die gebaute `dist/index.html` wurde in Headless Chrome geöffnet: Lernpfad, Lektionen mit Quelle und Datentabelle, Level 2, Nachschlagen, englische Vertiefungen, helles und dunkles Farbschema; Schnellcheck, Zeitleiste, Zuordnung und Selbsteinschätzung wurden per DevTools-Protokoll bedient, ohne Seitenfehler.
+3. `ZAM_CORE=… node geschichte-realschule-10/scripts/validate-migration.mjs`: zwei Historien ziehen mit allen FSRS-Feldern und acht Reviews unverändert um, zwei alte Karten sind stillgelegt und kommen nicht zurück, wiederholte Installation und Einschreibung sind idempotent, ein Upgrade von `2026.10.1` ohne alte Zelle ändert keine Karte, und Karten auf alter und neuer ID verweigern die automatische Zusammenführung.
+4. `node scripts/build-catalog.mjs`: Der Katalogschritt akzeptiert die Zelle, weil `approved` ein Datum trägt und die Zelle genau die dokumentierten Zeilen deklariert.
+5. Die gebaute `dist/index.html` wurde in Headless Chrome geöffnet: Lernpfad, Lektionen mit Quelle und Datentabelle, Level 2, Nachschlagen, englische Vertiefungen, helles und dunkles Farbschema; Schnellcheck, Zeitleiste, Zuordnung und Selbsteinschätzung wurden per DevTools-Protokoll bedient, ohne Seitenfehler.
