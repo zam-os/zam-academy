@@ -432,6 +432,19 @@ describe("cell", () => {
         exam_relevant: !lesson.optional,
       });
       expect("track" in binding).toBe(false);
+      // Knowledge atlas: LB 2–5 land in ZAM's area "20. Jahrhundert" via its aliases.
+      expect(atom.domain).toBe(
+        {
+          1: "geschichte/methoden",
+          2: "geschichte/nachkriegszeit",
+          3: "geschichte/nachkriegszeit",
+          4: "geschichte/wiedervereinigung",
+          5: "geschichte/zeitgeschichte",
+          6: "geschichte/migration",
+          7: "geschichte/geschichtskultur",
+          8: "geschichte/bilingual",
+        }[lesson.lb],
+      );
       const [quiz, fact, reason] = atom.practice_items as Item[];
       expect(atom.practice_items).toHaveLength(3);
       expect(quiz).toMatchObject({
