@@ -1,6 +1,6 @@
 # Deutsch 10 · Realschule Bayern
 
-Lokaler, unveröffentlichter Entwurf: **30 Lektionen, 60 Fallentscheidungen,
+Veröffentlichtes Lernpaket: **30 Lektionen, 60 Fallentscheidungen,
 60 eigene Aufgaben auf zwei Niveaus und 60 ZAM-Karten**. Die App verbindet
 Erklärungen und konkrete Materialien mit Schnellchecks, begründeten
 Fallentscheidungen und eigenen Texten. Helle und dunkle Ansicht, Direktlinks

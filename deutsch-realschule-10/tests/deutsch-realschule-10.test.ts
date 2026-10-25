@@ -26,8 +26,40 @@ import contract from "./fixtures/public-contract.json";
 
 const tile = tileData;
 const old = oldData;
+const contextRequired = new Set([
+	"d10-diskussion",
+	"d10-roman",
+	"d10-satire",
+	"d10-material",
+	"d10-kohaerenz",
+]);
 
 describe("Lernpfad und veröffentlichbarer Vertrag", () => {
+	it("publishes the corrected cell with a stable date", () => {
+		expect(tile.version).toBe("2026.10.2");
+		expect(tile.published_at).toMatch(/^2026-10-25T\d{2}:\d{2}:\d{2}Z$/);
+		expect(Number.isNaN(Date.parse(tile.published_at))).toBe(false);
+	});
+	it("keeps reading and language lessons in the existing German atlas areas", () => {
+		const areas = {
+			literatur: [
+				"leseplan",
+				"parabel",
+				"roman",
+				"satire",
+				"expressionismus",
+				"politische-lyrik",
+			],
+			medien: ["journalistik", "daten", "quellen", "medien"],
+			grammatik: ["register", "wandel", "sprachvergleich", "kohaerenz"],
+			rechtschreibung: ["rechtschreibung"],
+		};
+		for (const [area, slugs] of Object.entries(areas))
+			for (const slug of slugs)
+				expect(
+					tile.atoms.find((atom) => atom.slug === `d10-${slug}`)?.domain,
+				).toBe(`deutsch/${area}`);
+	});
 	it("pins 30 unique lesson anchors and all 90 ULIDs independently", () => {
 		expect(LESSONS.map((l) => l.id)).toEqual(contract.lessons);
 		expect(LESSONS).toHaveLength(30);
@@ -154,7 +186,11 @@ describe("Lernpfad und veröffentlichbarer Vertrag", () => {
 			const [fast, recall] = atom.practice_items;
 			const fastCheck = fast.fast_check;
 			if (!fastCheck) throw new Error("Missing fast check");
-			expect(fast.question).toBe(lesson.quiz.question);
+			expect(fast.question).toBe(
+				contextRequired.has(lesson.id)
+					? `${lesson.material}\n\n${lesson.quiz.question}`
+					: lesson.quiz.question,
+			);
 			expect(fast.concept).toBe(lesson.quiz.answer);
 			expect(fastCheck.options[fastCheck.correct_index]).toBe(fast.concept);
 			expect(fastCheck.correct_index).toBe(0);
@@ -179,6 +215,7 @@ describe("Lernpfad und veröffentlichbarer Vertrag", () => {
 					grade: 10,
 					subject: "deutsch",
 					school_type: "realschule",
+					exam_relevant: true,
 				});
 		},
 	);
