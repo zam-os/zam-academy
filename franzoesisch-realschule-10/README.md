@@ -35,7 +35,7 @@ The ZAM cell `zam-academy:franzoesisch-realschule-10` („Französisch 10 Realsc
 
 Each card asks one point. `concept` is the bare answer ZAM grades against; the worked example is `sample_solution`. The two curated distractors of every quick-check card are verified in CI with zam-core’s own `checkCandidate` and `checkShownSet` (`scripts/validate-cells.mjs`). The atoms carry the LehrplanPLUS binding (Realschule, Jahrgangsstufe 10, Französisch, Gruppe IIIa, Lernbereich) and the stage of the learning path, and 30 prerequisite links between lessons.
 
-The first publication (2026.10.1) is a new cell that replaces and retires nothing: ZAM holds no older Französisch 10 cell for the Realschule (only Gymnasium cells), so there is no mapping to approve.
+The first publication (2026.10.1) is a new cell that replaces and retires nothing: ZAM holds no older Französisch 10 cell for the Realschule (only Gymnasium cells), so there is no mapping to approve. Version 2026.10.2 corrects two distractor reasons (flash info, une jumelle) and one sample solution after the ZAM review (zam-os/zam#460); ids, slugs and lessons are unchanged.
 
 ## Develop
 

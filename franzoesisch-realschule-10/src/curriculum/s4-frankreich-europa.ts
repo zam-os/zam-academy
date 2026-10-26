@@ -152,7 +152,7 @@ export const S4: Lesson[] = [
           question: "Wie nennst du die Partnerschaft auf Französisch?",
           options: ["le jumelage entre nos deux villes", "le mariage entre nos deux villes", "la jumelle de nos deux villes"],
           answer: 0,
-          explanation: "Eine Städtepartnerschaft heißt un jumelage. Une jumelle ist ein Zwilling oder ein Fernglas.",
+          explanation: "Eine Städtepartnerschaft heißt un jumelage. Une jumelle ist eine Zwillingsschwester, und das Fernglas heißt des jumelles.",
         },
         {
           question: "Welcher Satz würdigt die Bedeutung für Europa?",

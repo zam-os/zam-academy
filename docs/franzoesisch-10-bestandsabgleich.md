@@ -1,6 +1,6 @@
 # Französisch 10 · Lehrplanabgleich und Kartenbestand
 
-Stand: 26. Oktober 2026. Das [Academy-Paket](../franzoesisch-realschule-10/) erscheint als Version `2026.10.1` einer neuen Zelle `zam-academy:franzoesisch-realschule-10`, **ohne** `replaces` und **ohne** `retired_items`. Es gibt keine Zuordnung, die freigegeben werden müsste.
+Stand: 26. Oktober 2026. Das [Academy-Paket](../franzoesisch-realschule-10/) erschien als Version `2026.10.1` einer neuen Zelle `zam-academy:franzoesisch-realschule-10`, **ohne** `replaces` und **ohne** `retired_items`. Version `2026.10.2` berichtigt nach dem ZAM-Review (zam-os/zam#460) zwei Distraktor-Begründungen und eine Musterlösung; Ids, Slugs und Lektionen bleiben gleich. Es gibt keine Zuordnung, die freigegeben werden müsste.
 
 ## Wer Französisch 10 hat
 

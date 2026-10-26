@@ -216,6 +216,6 @@ describe("no history transfer", () => {
     // docs/franzoesisch-10-bestandsabgleich.md records the check of zam-os/zam; only Gymnasium cells exist for grade 10.
     expect(cell).not.toHaveProperty("retired_items");
     for (const item of ITEMS) expect(item).not.toHaveProperty("replaces");
-    expect(cell.version).toBe("2026.10.1");
+    expect(cell.version).toBe("2026.10.2");
   });
 });
