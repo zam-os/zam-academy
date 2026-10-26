@@ -31,6 +31,7 @@ Hands-on training apps that build understanding before [ZAM](https://github.com/
 | Deutsch 10 Realschule (LehrplanPLUS Bayern, alle Wahlpflichtfächergruppen) | [`deutsch-realschule-10/`](deutsch-realschule-10/) | https://academy.zam-os.org/deutsch-realschule-10/ | `zam-academy:deutsch-realschule-10` |
 | BwR 10 Realschule (LehrplanPLUS Bayern, Zweig II) | [`bwr-realschule-10/`](bwr-realschule-10/) | https://academy.zam-os.org/bwr-realschule-10/ | `zam-academy:bwr-realschule-10` |
 | Politik und Gesellschaft 10 Realschule (LehrplanPLUS Bayern, gemeinsamer Lernpfad) | [`politik-realschule-10/`](politik-realschule-10/) | https://academy.zam-os.org/politik-realschule-10/ | `zam-academy:politik-realschule-10` |
+| Biologie 8 Realschule (LehrplanPLUS Bayern, gemeinsamer Lernpfad) | [`biologie-realschule-8/`](biologie-realschule-8/) | Noch unveröffentlicht | `zam-academy:biologie-realschule-8` |
 
 ## How an app and its ZAM cell fit together
 
@@ -75,6 +76,7 @@ cd uml                 # or: cd physik-realschule-9 (dev server on :5181), cd sq
 # Englisch 10: cd englisch-realschule-10 (dev server on :5204)
 # BwR 10: cd bwr-realschule-10 (dev server on :5205)
 # Politik und Gesellschaft 10: cd politik-realschule-10 (dev server on :5206)
+# Biologie 8: cd biologie-realschule-8 (dev server on :5207)
 npm ci
 npm run dev      # http://localhost:5180/uml/
 npm test
