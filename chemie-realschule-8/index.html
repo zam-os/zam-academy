@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
+    <script>
+      try {
+        const theme = localStorage.getItem("chemie_rs8_theme");
+        if (theme === "light" || theme === "dark") {
+          document.documentElement.dataset.theme = theme;
+          document.querySelector('meta[name="color-scheme"]').content = theme;
+        }
+      } catch {}
+    </script>
+    <title>Chemie 8 Realschule · ZAM Academy</title>
+    <meta
+      name="description"
+      content="Chemie 8 Realschule Bayern (Wahlpflichtfächergruppe I): 32 Lektionen in 5 Etappen mit digitalen Modellen, Versuchswerkstätten, Schnellchecks und Aufgaben auf zwei Niveaus."
+    />
+    <link rel="stylesheet" href="/src/styles.css" />
+  </head>
+  <body>
+    <div id="app" class="app-shell">
+      <header class="app-header">
+        <div class="brand">
+          <span class="brand-emblem" aria-hidden="true">⚗️</span>
+          <div>
+            <h1 class="brand-title">Chemie 8 · Realschule</h1>
+            <p class="brand-subtitle">Verstehen, Modelle untersuchen, selbst lösen. Behalten mit ZAM.</p>
+          </div>
+        </div>
+
+        <nav class="main-nav" aria-label="Navigation">
+          <button type="button" class="nav-tab is-active" data-view="path">🗺️ Lernpfad</button>
+          <button type="button" class="nav-tab" data-view="lesson">🎓 Lektion</button>
+          <button type="button" class="nav-tab" data-view="formulas">📖 Merksätze</button>
+        </nav>
+
+        <div class="header-controls">
+          <div class="segmented" role="group" aria-label="Schwierigkeit">
+            <button type="button" class="seg-btn is-active" data-level="1" title="Hinweise und Zwischenschritte helfen">🌱 Level 1: geführt</button>
+            <button type="button" class="seg-btn" data-level="2" title="Aufgaben ohne Modellhilfe">🦅 Level 2: Transfer</button>
+          </div>
+          <div class="progress-pill" id="header-progress">
+            <div class="progress-track"><div class="progress-fill" id="header-progress-bar"></div></div>
+            <span id="header-progress-text">0 / 32 Lektionen</span>
+          </div>
+          <button type="button" class="btn btn-zam" id="zam-btn" title="Wissen in ZAM festigen">🧠 In ZAM festigen</button>
+          <button type="button" class="icon-btn" id="theme-toggle-btn" title="Hell / Dunkel umschalten" aria-label="Farbschema umschalten">◐</button>
+        </div>
+      </header>
+
+      <main id="main-view-host" class="main-view-host"></main>
+
+      <footer class="app-footer">
+        <span>ZAM Academy · Chemie 8 Realschule folgt dem <a href="https://www.lehrplanplus.bayern.de/fachlehrplan/realschule/8/chemie/wpfg1" rel="noopener" target="_blank">LehrplanPLUS Bayern, Wahlpflichtfächergruppe I</a>.</span>
+        <span>Keine Konten, keine Cookies, kein Tracking. Dein Fortschritt bleibt in diesem Browser. Quelltext: <a href="https://github.com/zam-os/zam-academy" rel="noopener" target="_blank">zam-os/zam-academy</a></span>
+      </footer>
+    </div>
+
+    <div id="toast-stack" class="toast-stack" aria-live="polite"></div>
+
+    <script type="module" src="/src/main.ts"></script>
+  <a href="https://academy.zam-os.org/" class="zam-home-link" style="position:fixed;left:12px;bottom:12px;z-index:2147483000;padding:6px 12px;border-radius:999px;background:#12131f;color:#e8e9f5;border:1px solid #3a3d5c;font:500 13px system-ui,sans-serif;text-decoration:none">← ZAM Academy</a></body>
+</html>
