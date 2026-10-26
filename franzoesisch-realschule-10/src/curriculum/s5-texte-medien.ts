@@ -94,7 +94,7 @@ export const S5: Lesson[] = [
           "Beantworte zum Text über Chloé die Frage « Et vous, est-ce que vous seriez prêt(e) à ne plus prendre l’avion? Pourquoi? » in sechs bis acht Sätzen. Nenne deine Meinung, zwei Gründe und ein Beispiel.",
         hints: ["Der conditionnel passt zu einer Frage mit seriez.", "Gib ein Beispiel aus deinem Leben."],
         model:
-          "Personnellement, je serais prêt à prendre moins souvent l’avion, mais pas à l’arrêter complètement. D’un côté, je trouve que Chloé a raison: l’avion pollue beaucoup. Pour aller à Paris, je prendrais le train, parce que c’est presque aussi rapide. De l’autre, ma famille habite en partie en Turquie. Si je ne prenais plus l’avion, je ne verrais presque plus mes grands-parents. À mon avis, chacun peut faire des efforts, mais il faut trouver un équilibre. Par exemple, on pourrait voyager moins souvent, mais plus longtemps.",
+          "Personnellement, je serais prêt à prendre moins souvent l’avion, mais pas à arrêter complètement. D’un côté, je trouve que Chloé a raison: l’avion pollue beaucoup. Pour aller à Paris, je prendrais le train, parce que c’est presque aussi rapide. De l’autre, ma famille habite en partie en Turquie. Si je ne prenais plus l’avion, je ne verrais presque plus mes grands-parents. À mon avis, chacun peut faire des efforts, mais il faut trouver un équilibre. Par exemple, on pourrait voyager moins souvent, mais plus longtemps.",
         criteria: ["Die Meinung ist klar ausgedrückt.", "Zwei Gründe und ein Beispiel sind genannt.", "Der conditionnel ist richtig verwendet."],
       },
     },
