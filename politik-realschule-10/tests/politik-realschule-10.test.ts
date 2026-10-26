@@ -44,6 +44,26 @@ describe("Lernpfad und veröffentlichbarer Vertrag", () => {
 		expect(new Set(ids).size).toBe(96);
 		for (const id of ids) expect(id).toMatch(/^[0-7][0-9A-HJKMNP-TV-Z]{25}$/);
 	});
+	it("publishes stable metadata and classifies the actual recall operation", () => {
+		expect(tile.version).toBe("2026.10.2");
+		expect(tile.published_at).toBe("2026-10-26T05:46:58Z");
+		expect(tile.description).not.toContain("Entwurf");
+		const item = (slug: string, tier: string) =>
+			tile.atoms
+				.find((a) => a.slug === slug)
+				?.practice_items.find((i) => i.tier === tier);
+		expect(item("p10-wahlgrundsaetze", "tier2_synthesis")?.bloom_level).toBe(1);
+		expect(item("p10-medien", "tier2_synthesis")?.bloom_level).toBe(2);
+		expect(item("p10-quellen", "tier1_fast")?.bloom_level).toBe(3);
+		expect(item("p10-bip", "tier1_fast")?.bloom_level).toBe(3);
+		for (const atom of tile.atoms)
+			for (const practice of atom.practice_items) {
+				if (practice.bloom_level !== 2)
+					expect("materiality" in practice && practice.materiality).toBe(
+						"cosmetic",
+					);
+			}
+	});
 	it("does not transfer or retire existing histories", () => {
 		expect("retired_items" in tile).toBe(false);
 		for (const atom of tile.atoms)
@@ -131,9 +151,13 @@ describe("Lernpfad und veröffentlichbarer Vertrag", () => {
 				expect(item.source_link).toBe(
 					`https://academy.zam-os.org/politik-realschule-10/#lesson=${lesson.id}`,
 				);
-			const expectedAreas = [
-				...new Set(lesson.bindings.map((b) => `lb${b[0]}`)),
-			];
+			const primaryArea = {
+				methoden: "lb1",
+				mitwirkung: "lb2",
+				strukturen: "lb3",
+				handlungsfelder: "lb4",
+			}[lesson.stage];
+			const expectedAreas = [primaryArea];
 			const bindings = atom.curricula.filter(
 				(c) => c.provider === "lehrplanplus-bayern",
 			);
@@ -143,7 +167,19 @@ describe("Lernpfad und veröffentlichbarer Vertrag", () => {
 					grade: 10,
 					subject: "pug",
 					school_type: "realschule",
+					exam_relevant: false,
 				});
+			for (const retired of atom.retired_curricula) {
+				expect(retired.topic_code).not.toBe(primaryArea);
+				expect(retired).toMatchObject({
+					provider: "lehrplanplus-bayern",
+					school_type: "realschule",
+					grade: 10,
+					track: "",
+					subject: "pug",
+				});
+				expect(retired.reason.length).toBeGreaterThan(20);
+			}
 		},
 	);
 	it("varies answer positions across both checks and cases", () => {
