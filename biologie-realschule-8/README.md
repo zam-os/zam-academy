@@ -1,6 +1,6 @@
 # Biologie 8 · Realschule Bayern
 
-Lokaler Academy-Entwurf nach dem gemeinsamen [LehrplanPLUS Biologie 8](https://www.lehrplanplus.bayern.de/fachlehrplan/realschule/8/biologie), geprüft am **26. Oktober 2026**. Der Kurs und seine Zelle gehören zusammen: **30 Lektionen, 60 Fallentscheidungen, 60 eigene Aufgaben auf zwei Stufen und 60 ZAM-Karten**.
+Academy-Lernpaket nach dem gemeinsamen [LehrplanPLUS Biologie 8](https://www.lehrplanplus.bayern.de/fachlehrplan/realschule/8/biologie), geprüft am **26. Oktober 2026**. Der Kurs und seine Zelle gehören zusammen: **30 Lektionen, 60 Fallentscheidungen, 60 eigene Aufgaben auf zwei Stufen und 60 ZAM-Karten**.
 
 | Lernbereich | Lektionen | Schwerpunkte |
 | --- | ---: | --- |
@@ -27,7 +27,7 @@ Die Modellzahlen sind keine Messdaten oder individuellen Vorhersagen. Das Selekt
 
 ## Lehrplan und zusätzliche Praxis
 
-[coverage.json](coverage.json) ordnet die **46 Kompetenzerwartungen** in der Reihenfolge ihrer Abschnitte zu. `position` ist eine eigene Zählung, keine amtliche Nummerierung; `competence` enthält eigene Kurzfassungen mit Rückverweis auf den offiziellen Abschnitt. `guided` bedeutet geführte Teilübung, `preparation` Vorbereitung einer zusätzlichen Leistung. Keine Zuordnung behauptet vollständige Beherrschung.
+[coverage.json](coverage.json) ordnet die **46 Kompetenzerwartungen** in der Reihenfolge ihrer Abschnitte zu. `position` ist eine eigene Zählung, keine amtliche Nummerierung; `competence` enthält den offiziellen Wortlaut mit normalisiertem Leerraum; `focus` ergänzt ein eigenes Kurzlabel. `evidence` nennt pro Erwartung die konkrete Lektion, ihr Material und die zugehörige Aufgabe. `additional` benennt die zusätzlich zu erbringende Leistung. `guided` bedeutet geführte Teilübung, `preparation` Vorbereitung einer zusätzlichen Leistung. Keine Zuordnung behauptet vollständige Beherrschung.
 
 Echtes Mikroskopieren, Präparate herstellen, kontrollierte Experimente, eigene Quellenvergleiche, Präsentationen und ethische Diskussionen brauchen zusätzliche Durchführung und Unterrichtsfeedback. Texte über Fossilien und Anatomie bereiten den Vergleich konkreter Originalabbildungen und Befunde vor. Persönliche Familien-, Gesundheits- oder Sexualdaten werden nicht abgefragt. Der Kurs verlangt keine bestimmte persönliche Wertentscheidung.
 
@@ -59,4 +59,4 @@ ZAM_CORE=file:///absoluter/pfad/zam-core/dist/index.js node scripts/validate-cel
 
 Die Prüfung verwendet ausschließlich temporäre Bibliotheken. 16 vorhandene Karten mit 32 echten Review-Ereignissen bleiben unverändert. Installation allein erzeugt keine persönlichen Karten; ausdrückliche Aufnahme erzeugt 60 frische Karten ohne Reviews oder Stabilität. Wiederholte Installation und Aufnahme sind idempotent.
 
-Der Build besteht aus einer HTML-Datei. Das Offline-ZIP enthält die Datei sowie Startdateien für Windows, macOS und Linux. Der Artefaktcheck vergleicht die HTML-Bytes und prüft die Shellsyntax; die Startdateien wurden nicht auf allen drei Betriebssystemen ausgeführt. CI, Pages, Startseite und Katalog sind vorbereitet. Veröffentlichung und spätere Synchronisierung ins ZAM-Repository sind gesonderte Schritte.
+Der Build besteht aus einer HTML-Datei. Das Offline-ZIP enthält die Datei sowie Startdateien für Windows, macOS und Linux. Der Artefaktcheck vergleicht die HTML-Bytes und prüft die Shellsyntax; die Startdateien wurden nicht auf allen drei Betriebssystemen ausgeführt. Beim Merge in `main` veröffentlichen GitHub Pages, der Atlas und der Katalog Kurs und Zelle gemeinsam unter https://academy.zam-os.org/biologie-realschule-8/. Die spätere Synchronisierung in einen ZAM-Release und die Aufnahme in eine persönliche Bibliothek bleiben eigene Schritte.

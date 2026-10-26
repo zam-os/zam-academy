@@ -43,6 +43,7 @@ describe("Course and card contract", () => {
 		expect(ids.sort()).toEqual(Object.values(contract.ids).sort());
 		expect(new Set(ids).size).toBe(90);
 		for (const id of ids) expect(id).toMatch(/^[0-7][0-9A-HJKMNP-TV-Z]{25}$/);
+		expect(tile.published_at).toMatch(/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z$/);
 		expect("retired_items" in tile).toBe(false);
 		expect(
 			tile.atoms.flatMap((a) => a.practice_items).some((i) => "replaces" in i),
@@ -113,11 +114,22 @@ describe("Course and card contract", () => {
 		expect(
 			new Set(coverage.rows.map((e) => `${e.section}.${e.position}`)).size,
 		).toBe(46);
+		expect(
+			["1.1", "1.2", "1.3", "2", "3", "4", "5"].map(
+				(section) =>
+					coverage.rows.filter((row) => row.section === section).length,
+			),
+		).toEqual([9, 8, 3, 8, 8, 5, 5]);
+		expect(new Set(coverage.rows.map((row) => row.evidence)).size).toBe(46);
 		for (const row of coverage.rows) {
+			expect(row.competence).not.toBe(row.focus);
+			expect(row.competence.length).toBeGreaterThan(80);
 			expect(["guided", "preparation"]).toContain(row.support);
 			expect(row.additional.length).toBeGreaterThan(20);
-			for (const id of row.lessons)
+			for (const id of row.lessons) {
 				expect(LESSONS.some((l) => l.id === id)).toBe(true);
+				expect(row.evidence).toContain(id);
+			}
 		}
 		expect(
 			new Set(LESSONS.map((l) => quizOptions(l).indexOf(l.quiz.answer))).size,

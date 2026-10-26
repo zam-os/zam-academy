@@ -1,6 +1,6 @@
 # Biologie 8: neuer Academy-Kurs und vorhandener Bestand
 
-Stand: 26. Oktober 2026. Maßgeblich ist [LehrplanPLUS Biologie 8 Realschule](https://www.lehrplanplus.bayern.de/fachlehrplan/realschule/8/biologie). Die [Abdeckungsmatrix](../biologie-realschule-8/coverage.json) dokumentiert digitale Teilübungen und zusätzliche Praxis.
+Stand: 26. Oktober 2026. Maßgeblich ist [LehrplanPLUS Biologie 8 Realschule](https://www.lehrplanplus.bayern.de/fachlehrplan/realschule/8/biologie). Die [Abdeckungsmatrix](../biologie-realschule-8/coverage.json) führt alle 46 Kompetenzerwartungen im offiziellen Wortlaut, konkrete Lektions- und Aufgabenbezüge sowie die zusätzlich nötige Praxis auf.
 
 | Bestand | Verhältnis zum neuen Kurs | Umgang |
 | --- | --- | --- |
@@ -12,7 +12,7 @@ Die neue Zelle heißt `zam-academy:biologie-realschule-8` und besitzt 30 neue At
 
 Der Installationstest hält die beiden alten Pakete als unveränderte Fixtures vor, erzeugt für ihre 16 Items persönliche Karten mit je zwei echten Ratings und vergleicht anschließend alle Kartenfelder und alle 32 Reviews. Zweifache Installation der neuen Zelle verändert diese Daten nicht und erzeugt keine neuen persönlichen Karten. Erst die ausdrücklich im Test ausgeführte Aufnahme legt 60 neue Karten mit null Wiederholungen und null Stabilität an. Wiederholung beider Schritte erzeugt keine Duplikate.
 
-Der Kurs wird im Academy-Repository gepflegt. Gebündelte Zellen in `zam-os/zam`, die persönliche Bibliothek und bestehende Lernstände werden durch die Kursautorschaft nicht geändert. Erst eine gesonderte Veröffentlichung und ein ZAM-Release können den neuen Inhalt ausliefern.
+Der Kurs wird im Academy-Repository gepflegt. Gebündelte Zellen in `zam-os/zam`, die persönliche Bibliothek und bestehende Lernstände werden durch die Kursautorschaft nicht geändert. Ein Merge in den Academy-Hauptzweig veröffentlicht Kurs und Zelle gemeinsam über Pages, Atlas und Katalog. Die Synchronisierung der gebündelten Zellen und deren Auslieferung mit einem ZAM-Release folgen gesondert; die Aufnahme persönlicher Karten bleibt eine Handlung der Lernenden.
 
 ## Zeilenweiser Vorschlag
 
