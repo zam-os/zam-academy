@@ -230,10 +230,11 @@ describe("Learner progress persistence", () => {
   });
 });
 
-describe("ZAM cell and unapproved migration proposal", () => {
-  it("contains 32 atoms (1:1 with lessons) and 66 atomic cards with valid ULIDs and zero replaces", () => {
+describe("ZAM cell and approved migration mapping", () => {
+  it("contains 32 atoms (1:1 with lessons), 66 atomic cards with frozen ULIDs, 8 replaces and 8 retired_items", () => {
     expect(cell.tile_id).toBe(ZAM_CELL_ID);
-    expect("retired_items" in cell).toBe(false);
+    expect(cell.version).toBe("2026.10.2");
+    expect(cell.retired_items).toHaveLength(8);
     expect(atoms).toHaveLength(32);
     expect(items).toHaveLength(66);
     const ids = [...atoms.map((a) => a.id), ...items.map((i) => i.id)];
@@ -248,6 +249,12 @@ describe("ZAM cell and unapproved migration proposal", () => {
     expect(new Set(atoms.map((a) => a.source_link))).toEqual(
       new Set(LESSON_IDS.map((id) => lessonLink(id))),
     );
+    const expectedReplaces = new Map(
+      mapping.rows
+        .filter((r) => r.category === "A")
+        .map((r) => [must(r.academy_slug), [r.de_by_id]]),
+    );
+    expect(expectedReplaces.size).toBe(8);
     for (const atom of atoms) {
       expect(atom.practice_items.length).toBeGreaterThanOrEqual(2);
       const lessonId = must(parseTrainingDeepLink(new URL(atom.source_link).hash).lessonId);
@@ -257,7 +264,7 @@ describe("ZAM cell and unapproved migration proposal", () => {
       expect(lpp).toMatchObject({ grade: 8, track: "I", topic_code: `lb${lesson.bindings.I}` });
       for (const item of atom.practice_items as unknown as CellItem[]) {
         expect(item.source_link).toBe(lessonLink(lesson.id));
-        expect(item.replaces).toBeUndefined();
+        expect(item.replaces).toEqual(expectedReplaces.get(item.slug));
       }
     }
   });
@@ -287,9 +294,9 @@ describe("ZAM cell and unapproved migration proposal", () => {
     }
   });
 
-  it("keeps replaces-de-by.json strictly unapproved while accounting for all 16 legacy cards", () => {
-    expect(mapping.status).toBe("proposal-only");
-    expect(mapping.approved).toBeNull();
+  it("records the approved 8 A / 8 C mapping in replaces-de-by.json and matches cell declarations", () => {
+    expect(mapping.status).toBe("approved");
+    expect(mapping.approved).toBe("2026-10-26");
     const originals = [legacyStoffe, legacyReaktion].flatMap((tile) =>
       tile.atoms.flatMap((atom) => atom.practice_items),
     );
@@ -297,14 +304,21 @@ describe("ZAM cell and unapproved migration proposal", () => {
     expect(mapping.rows.map((r) => r.de_by_id).sort()).toEqual(
       originals.map((item) => item.id).sort(),
     );
-    expect(mapping.rows.filter((r) => r.category === "A")).toHaveLength(8);
-    expect(mapping.rows.filter((r) => r.category === "C")).toHaveLength(8);
+    const aRows = mapping.rows.filter((r) => r.category === "A");
+    const cRows = mapping.rows.filter((r) => r.category === "C");
+    expect(aRows).toHaveLength(8);
+    expect(cRows).toHaveLength(8);
     const bySlug = new Map(items.map((i) => [i.slug, i]));
     for (const row of mapping.rows) {
-      expect(row.action).toBe("keep-active");
       expect(row.reason.length).toBeGreaterThan(20);
-      if (row.category === "A") expect(bySlug.has(must(row.academy_slug))).toBe(true);
-      else expect(row.academy_slug).toBeNull();
+      if (row.category === "A") {
+        expect(row.action).toBe("replace");
+        expect(bySlug.get(must(row.academy_slug))?.replaces).toEqual([row.de_by_id]);
+      } else {
+        expect(row.action).toBe("retire");
+        expect(row.academy_slug).toBeNull();
+      }
     }
+    expect(cell.retired_items.map((entry) => entry.id)).toEqual(cRows.map((row) => row.de_by_id));
   });
 });

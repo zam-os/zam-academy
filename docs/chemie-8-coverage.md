@@ -42,38 +42,40 @@ auftreten, jede Lektion aus LB 2–5 exakt ihrem Lernbereich dient und jede der
 | 4 | 16 | `ch-merkmale-umgruppierung`, `ch-elemente-verbindungen`, `ch-wasser-analyse-synthese`, `ch-massenerhaltung-gleichungen`, `ch-innere-energie-diagramm`, `ch-katalyse-oberflaeche`, `ch-teilchenmasse-molare-masse`, `ch-stoffmenge-molvolumen`, `ch-stoffumsatz-rechnen`, `ch-alkane-verbrennung`, `ch-abgaskatalysator-partikelfilter`, `ch-verbrennung-explosion-brandschutz`, `ch-co2-bilanz-kohlenstoffkreislauf` |
 | 5 | 7 | `ch-rutherford-kern-huelle`, `ch-energiestufen-flammen`, `ch-pse-edelgasregel-ionen`, `ch-kugelwolkenmodell`, `ch-isotopie-molare-masse` |
 
-## Bestehende ZAM-Karten (Vorschlag, noch nicht freigegeben)
+## Bestehende ZAM-Karten (freigegebene Zuordnung ab `2026.10.2`)
 
 Quelle: `zam-os/zam`, Commit `cd1a71b5e8a91aa3eec601b5db06095844d024e3`,
 `tests/fixtures/curriculum/`. Byte-genaue Kopien liegen in
 `chemie-realschule-8/tests/fixtures/` mit SHA-256-Prüfsummen in
 [`replaces-de-by.json`](../chemie-realschule-8/replaces-de-by.json).
 
-**Status:** `"proposal-only"`, `"approved": null`. Die ausgelieferte
-[`cell.json`](../chemie-realschule-8/cell.json) enthält **keinerlei `replaces`
-und kein `retired_items`**. Alle 16 Altkarten bleiben aktiv und unverändert.
+**Status:** `"approved"`, `"approved": "2026-10-26"` (ausdrückliche Freigabe
+durch Thomas nach Merge von `zam-os/zam-academy#59`). Version `2026.10.2` der
+[`cell.json`](../chemie-realschule-8/cell.json) deklariert genau **acht
+`replaces`** und **acht `retired_items`**; sämtliche 98 ULIDs, Slugs,
+Lektionsanker und Kartentexte aus `2026.10.1` sind unverändert.
 
-| Kategorie | Anzahl | Bedeutung im Vorschlag (erst nach Freigabe wirksam) |
+| Kategorie | Anzahl | Wirkung in `2026.10.2` |
 | --- | --- | --- |
-| A | 8 | gleicher atomarer Einzelabruf; vorgeschlagener Nachfolger erhielte `replaces` |
+| A | 8 | gleicher atomarer Einzelabruf; Nachfolgekarte trägt `replaces`, Karte und Reviewhistorie ziehen um |
 | B | 0 | keine mehrteilige Altkarte wird als Sammelaufgabe fortgeführt |
-| C | 8 | mehrteilige Sammelaufgaben bzw. Vorgriffe (Chromatographie/Zentrifugieren, ΔH, falsche Zweig-II/III-Bindung in C8); aktuell `keep-active`, Vorschlag nach Freigabe: `retire` unter Erhalt aller Reviews |
+| C | 8 | mehrteilige Sammelaufgaben bzw. Vorgriffe (Chromatographie/Zentrifugieren, ΔH, fehlerhafte Zweig-II/III-Bindung in C8); per `retired_items` stillgelegt, Historie bleibt am alten Token erhalten |
 
-| Altes Item | Zelle | Kat. | Vorgeschlagener Nachfolger | Kurzbegründung |
+| Altes Item | Zelle | Kat. | Nachfolger / Wirkung | Kurzbegründung |
 | --- | --- | --- | --- | --- |
 | `01K4C8S...J01` | stoffe-stoffgemische-trennung | A | `c8-reinstoffe-gemische-suspension` | Gleicher Einzelabruf: Feststoffpartikel in Flüssigkeit = Suspension. |
-| `01K4C8S...J02` | stoffe-stoffgemische-trennung | C | — | Sechsteilige Stoffsystematik-Sammelaufgabe; aufgeteilt auf `ch-reinstoffe-gemische` und `ch-elemente-verbindungen`. |
+| `01K4C8S...J02` | stoffe-stoffgemische-trennung | C | `retired_items` | Sechsteilige Stoffsystematik-Sammelaufgabe; aufgeteilt auf `ch-reinstoffe-gemische` und `ch-elemente-verbindungen`. |
 | `01K4C8S...J03` | stoffe-stoffgemische-trennung | A | `c8-sinne-kenngroessen-dichte` | Gleicher Einzelabruf: Definition der Dichte ρ = m / V. |
-| `01K4C8S...J04` | stoffe-stoffgemische-trennung | C | — | Mehrteilige Sammelaufgabe aus Kenngrößenbegriff, Rechnung (135 g / 50 cm³) und Metallbestimmung. |
+| `01K4C8S...J04` | stoffe-stoffgemische-trennung | C | `retired_items` | Mehrteilige Sammelaufgabe aus Kenngrößenbegriff, Rechnung (135 g / 50 cm³) und Metallbestimmung. |
 | `01K4C8S...J05` | stoffe-stoffgemische-trennung | A | `c8-trennverfahren-destillation` | Gleicher Einzelabruf: Destillation nutzt unterschiedliche Siedetemperaturen. |
-| `01K4C8S...J06` | stoffe-stoffgemische-trennung | C | — | Fünf Trennverfahren inkl. Chromatographie/Zentrifugieren (nicht C8 LB 2) plus Dreistoff-Trennplan. |
+| `01K4C8S...J06` | stoffe-stoffgemische-trennung | C | `retired_items` | Fünf Trennverfahren inkl. Chromatographie/Zentrifugieren (nicht C8 LB 2) plus Dreistoff-Trennplan. |
 | `01K4C8S...J07` | stoffe-stoffgemische-trennung | A | `c8-teilchenmodell-phasen-sublimation` | Gleicher Einzelabruf: Phasenübergang fest → gasförmig = Sublimation. |
-| `01K4C8S...J08` | stoffe-stoffgemische-trennung | C | — | Gesamtabruf über alle drei Aggregatzustände, sechs Phasenübergänge und Diffusion auf einer Karte. |
+| `01K4C8S...J08` | stoffe-stoffgemische-trennung | C | `retired_items` | Gesamtabruf über alle drei Aggregatzustände, sechs Phasenübergänge und Diffusion auf einer Karte. |
 | `01K4C8R...J01` | chemische-reaktion-oxidation | A | `c8-merkmale-umgruppierung-unterschied` | Gleicher Einzelabruf: chemische Reaktion vs. physikalischer Vorgang. |
-| `01K4C8R...J02` | chemische-reaktion-oxidation | C | — | Mehrteilige Synthese (drei Kriterien + Vergleich Wachsschmelzen vs. Kerzenverbrennung). |
+| `01K4C8R...J02` | chemische-reaktion-oxidation | C | `retired_items` | Mehrteilige Synthese (drei Kriterien + Vergleich Wachsschmelzen vs. Kerzenverbrennung). |
 | `01K4C8R...J03` | chemische-reaktion-oxidation | A | `c8-katalyse-oberflaeche-wirkung` | Gleicher Einzelabruf: Wirkung eines Katalysators (senkt E_A, unverändert nach Reaktion). |
-| `01K4C8R...J04` | chemische-reaktion-oxidation | C | — | Mehrteiliger Zeichenauftrag inkl. Vorgriff auf Reaktionsenthalpie ΔH statt ΔEᵢ. |
+| `01K4C8R...J04` | chemische-reaktion-oxidation | C | `retired_items` | Mehrteiliger Zeichenauftrag inkl. Vorgriff auf Reaktionsenthalpie ΔH statt ΔEᵢ. |
 | `01K4C8R...J05` | chemische-reaktion-oxidation | A | `c8-verbrennung-explosion-brandschutz-dreieck` | Gleicher Einzelabruf: drei Bedingungen des Verbrennungsdreiecks. |
-| `01K4C8R...J06` | chemische-reaktion-oxidation | C | — | Sammelaufgabe aus Oxidationsbegriff, Verbrennungsdreieck und drei Löschprinzipien. |
+| `01K4C8R...J06` | chemische-reaktion-oxidation | C | `retired_items` | Sammelaufgabe aus Oxidationsbegriff, Verbrennungsdreieck und drei Löschprinzipien. |
 | `01K4C8R...J07` | chemische-reaktion-oxidation | A | `c8-massenerhaltung-gleichungen-lavoisier` | Gleicher Einzelabruf: Gesetz von der Erhaltung der Masse im geschlossenen System. |
-| `01K4C8R...J08` | chemische-reaktion-oxidation | C | — | Mehrteilige Sammelaufgabe (Teilchendeutung, Eisenwolle-Paradoxon, zwei Reaktionsgleichungen). |
+| `01K4C8R...J08` | chemische-reaktion-oxidation | C | `retired_items` | Mehrteilige Sammelaufgabe (Teilchendeutung, Eisenwolle-Paradoxon, zwei Reaktionsgleichungen). |
