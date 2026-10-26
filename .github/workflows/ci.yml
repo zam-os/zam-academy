@@ -109,5 +109,5 @@ jobs:
         run: node scripts/build-catalog.mjs "$RUNNER_TEMP/catalog.json"
       - name: Preserve Englisch 10 histories when adding fresh practice cards
         run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node englisch-realschule-10/scripts/validate-cell.mjs
-      - name: Preserve Chemie 8 histories and rehearse the proposed mapping in temporary libraries
+      - name: Move the eight approved Chemie 8 histories and retire eight old cards in temporary libraries
         run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node chemie-realschule-8/scripts/validate-migration.mjs

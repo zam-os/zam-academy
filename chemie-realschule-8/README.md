@@ -62,21 +62,21 @@ beides zugleich. Jede Karte verweist auf ihre Lektion unter
 `https://academy.zam-os.org/chemie-realschule-8/#lesson=<id>` und trägt die
 Lehrplanbindung für Jahrgangsstufe 8 (`track: "I"`).
 
-`replaces-de-by.json` dokumentiert für alle **16 Items** der beiden bestehenden
-Zellen `de-by:realschule-8-chemie-stoffe-stoffgemische-trennung` und
+`replaces-de-by.json` dokumentiert die am **26.10.2026 von Thomas ausdrücklich
+freigegebene Kartenzuordnung** (`"status": "approved"`, `"approved":
+"2026-10-26"`) für alle **16 Items** der beiden Altzellen
+`de-by:realschule-8-chemie-stoffe-stoffgemische-trennung` und
 `de-by:realschule-8-chemie-chemische-reaktion-oxidation` (zam-os/zam
-`cd1a71b5`) einen **unverbindlichen Zuordnungsvorschlag** (`"status":
-"proposal-only"`, `"approved": null`): **8 A, 0 B, 8 C**. Da noch keine
-Freigabe vorliegt, enthält `cell.json` **weder `replaces` noch
-`retired_items`**; alle 16 Altkarten und ihre Lernhistorien bleiben unverändert
-aktiv.
+`cd1a71b5`): **8 A, 0 B, 8 C**. Version `2026.10.2` von `cell.json` deklariert
+genau diese **acht `replaces`** und **acht `retired_items`**.
 
-`scripts/validate-migration.mjs` prüft mit `zam-core` 0.54.0 sowohl den
-ausgelieferten Zustand (alle 16 Altkarten und 32 Reviews bleiben aktiv und
-unverändert; 66 neue Karten starten frisch; Idempotenz) als auch trocken in
-Wegwerf-Datenbanken den Vorschlag für eine spätere Freigabe (8 atomare
-Historien ziehen um, 8 Sammelaufgaben würden unter Erhalt aller Reviews
-stillgelegt, Kollisionsschutz rollt sauber zurück).
+`scripts/validate-migration.mjs` prüft mit `zam-core` 0.54.0 in
+Wegwerf-Datenbanken die Übernahme der 8 atomaren Historien samt FSRS-Feldern,
+die Stilllegung der 8 mehrteiligen Sammelaufgaben unter vollständigem Erhalt
+aller 32 Reviews, das Anlegen von 58 frischen Karten bei Einschreibung, die
+Idempotenz bei wiederholter Installation/Einschreibung sowie den
+Kollisionsschutz gegen Lernende, die bereits Version `2026.10.1` eingeschrieben
+und Karten auf beiden IDs bewertet haben.
 
 ## Entwickeln und prüfen
 
