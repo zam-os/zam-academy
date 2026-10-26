@@ -1,5 +1,6 @@
 import { describe, expect, it, vi } from "vitest";
 import tile from "../cell.json";
+import mapping from "../replaces-de-by.json";
 import coverage from "../coverage.json";
 import { LESSONS, SOURCES, STAGES } from "../src/curriculum";
 import {
@@ -33,6 +34,15 @@ describe("Course and card contract", () => {
 	it("pins all lesson anchors and independently assigned IDs", () => {
 		expect(LESSONS.map((l) => l.id)).toEqual(contract.lessons);
 		expect(LESSONS).toHaveLength(30);
+		expect(tile.version).toBe("2026.10.2");
+		expect(mapping.status).toBe("proposal-only");
+		expect(mapping.approved).toBeNull();
+		expect(mapping.rows).toHaveLength(16);
+		expect(
+			mapping.rows.every(
+				(row) => row.category === "C" && row.academy_slug === null,
+			),
+		).toBe(true);
 		expect(
 			STAGES.map((s) => LESSONS.filter((l) => l.stage === s.id).length),
 		).toEqual([4, 6, 8, 5, 7]);
@@ -103,6 +113,7 @@ describe("Course and card contract", () => {
 				school_type: "realschule",
 				subject: "biologie",
 				topic_code: `lb${lesson.bindings[0]}`,
+				exam_relevant: false,
 			});
 		},
 	);
