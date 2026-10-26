@@ -1364,8 +1364,12 @@
           const gl = n.glyph.length > 6 ? 0.2 : 0.3;
           /* a live package names its Schulart on top, so it reads like the grey Schulart fields beside it */
           const kicker = !n.planned && n.school ? n.school.name : "";
-          const y0 = cy - R * 0.28 - (lines.length - 1) * fs * 0.55 + (kicker ? fs * 0.6 : 0);
-          if (kicker) shape.append(s("text", { class: "t kicker", x: cx, y: cy - R * 0.6, "font-size": fs * 0.7 }, kicker));
+          const ky = cy - R * 0.6;
+          let y0 = cy - R * 0.28 - (lines.length - 1) * fs * 0.55;
+          /* with a kicker, the glyph (about three quarters of its size above its baseline) stays below the kicker line,
+             also when a long title takes three lines and would push it up */
+          if (kicker) y0 = Math.max(y0 + fs * 0.6, ky + fs * 0.3 + R * gl * 0.75 + fs * 0.2);
+          if (kicker) shape.append(s("text", { class: "t kicker", x: cx, y: ky, "font-size": fs * 0.7 }, kicker));
           shape.append(s("text", { class: "t glyph", x: cx, y: y0 - fs * 0.2, "font-size": R * gl }, n.glyph));
           lines.forEach((ln, i) =>
             shape.append(s("text", { class: "t", x: cx, y: y0 + fs * 1.5 + i * fs * 1.15, "font-size": fs, "font-weight": 600 }, ln)),
@@ -1653,7 +1657,7 @@
           h("ul", { class: "tags", "aria-label": "Inhalt" },
             visible(n).map((c) => {
               const state_ = c.entfaellt ? " · kein Fach" : c.planned ? " · noch nicht verfügbar" : "";
-              const where = c.kind === "pkg" && !c.planned && c.school && n.kind === "fach" ? `${c.school.name}: ` : "";
+              const where = c.kind === "pkg" && !c.planned && c.school && n.kind === "fach" ? `${c.school.name} · ` : "";
               const txt = `${where}${c.label}${c.kind === "pkg" ? state_ : ` · ${c.live}/${c.total}`}`;
               return h("li", { class: enabled(c) ? "" : c.entfaellt ? "off none" : "off" },
                 h("button", { type: "button", onclick: () => go(c.path) }, txt));
