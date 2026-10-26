@@ -119,3 +119,54 @@ insgesamt). Der korrigierte Paket-Build wurde erneut in allen 128 Kombinationen
 von 32 Lektionen, zwei Leveln und heller/dunkler Darstellung auf Lektionsinhalt
 und Aussagenprüfung kontrolliert. Bei Menge 60 und Preis 10 zeigt das BIP-Modell
 für nominalen und realen Wert jeweils „600 Euro (−40 %)“.
+
+
+## Reviewkorrekturen zur ZAM-Integration #459 am 26. Oktober 2026
+
+Version 2026.10.2 korrigiert die veröffentlichte Zelle aus Academy #52:
+Jede Lektion trägt genau eine offizielle Bindung entsprechend ihrem Gebiet
+(Methoden lb1, Mitwirkung lb2, Strukturen lb3, Handlungsfelder lb4). Die
+Kompetenzmatrix bleibt als breiterer didaktischer Bezug erhalten. 42 bisherige
+zusätzliche Bindungen werden mit vollständigem Geltungsbereich und Begründung
+in `retired_curricula` ausdrücklich zurückgenommen. Das betrifft nur
+Lehrplanzuordnungen; `replaces` und `retired_items` bleiben leer.
+
+Alle 96 IDs, alle Slugs sowie Fragen, Antworten, Schnellchecks und Quellen
+bleiben unverändert (Feldvergleich mit `origin/main`). Die Metadaten enthalten
+einen festen Veröffentlichungszeitpunkt und `exam_relevant: false` entsprechend
+dem Katalog der regulären schriftlichen Prüfungsfächer in
+[RSO § 35](https://www.gesetze-bayern.de/Content/Document/BayRSO-35).
+Die Möglichkeit einer mündlichen Prüfung nach
+[RSO § 36](https://www.gesetze-bayern.de/Content/Document/BayRSO-36) bleibt bestehen.
+Die Bloom-Einstufungen folgen der Abrufhandlung statt dem Tier. Reine Fakten
+sind Stufe 1, Zusammenhänge Stufe 2, die zwei vorhandenen Rechen-/Modellanwendungen
+Stufe 3. Änderungen dieser Einstufung sind kosmetisch und ändern keine
+Kartenformulierungen oder Lernstände. Veröffentlichte Hinweise ersetzen den
+bisherigen Entwurfsstatus in Beschreibung, Footer, ZAM-Dialog und README.
+
+Die explizite Rücknahme benötigt die neue Kernunterstützung aus ZAM #459.
+Ältere Kerne verstehen neue korrekte Bindungen bei einer Frischinstallation,
+behalten beim Update aber bereits gespeicherte zusätzliche Bindungen. Der neue
+Kern holt genau diese Korrektur auch dann einmalig nach, wenn die gleiche
+Zellversion schon unter einem alten Kern installiert wurde. Neuere Zellversionen
+werden dabei nicht herabgestuft.
+
+Prüfungen im Korrekturzweig:
+
+- `npm ci --offline --no-audit --no-fund`, `npm test`, `npm run typecheck`
+  im Paket: 66 Tests und Typprüfung erfolgreich.
+- `npm run package:zip`: Build, bytegenaues Offline-HTML, drei Starter und
+  Shellsyntax erfolgreich.
+- `node --test scripts/build-catalog.test.mjs scripts/academy-registry.test.mjs`:
+  30 Tests erfolgreich.
+- `scripts/validate-cells.mjs` mit dem in CI gepinnten `zam-core@0.54.0`:
+  alle 27 Zellen erfolgreich installiert und Alternativen geprüft.
+- `politik-realschule-10/scripts/validate-cell.mjs` mit demselben Kern:
+  64 frische Karten; zwei vorhandene Geo9-Karten und vier Reviews unverändert.
+- Browser über die auf `dist` beschränkte lokale Vorschau: 128 Lektionsansichten
+  (32 × zwei Level × zwei Farbschemata) mit Titel, Aufgabe und Eingabefeld
+  geprüft; unterschiedliche Aufgaben pro Level bestätigt. Lernpfad, Quellenansicht
+  und veröffentlichter ZAM-Hinweis zusätzlich sichtbar geprüft.
+- Zweiter Agent: IDs/Kartentexte und alle 42 Rücknahmen unabhängig abgeglichen;
+  direkte .1→.2-Updates und den Nachholpfad mit 64 Karten und vorhandenen Reviews
+  gegen den aktuellen ZAM-Kern geprüft, wiederholte Anwendung stabil.
