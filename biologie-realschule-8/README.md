@@ -43,7 +43,7 @@ Die Zelle enthält weder `replaces` noch `retired_items`. Die zwei älteren Biol
 
 ```sh
 npm ci
-npm run dev          # http://localhost:5207/biologie-realschule-8/
+npm run dev          # http://localhost:5208/biologie-realschule-8/
 npm test
 npm run typecheck
 npm run package:zip

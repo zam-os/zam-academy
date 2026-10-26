@@ -492,6 +492,11 @@
       .t.sub {
         opacity: 0.85;
       }
+      .t.kicker {
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        opacity: 0.9;
+      }
       .disabled .t.schools {
         fill: var(--text);
       }
@@ -1323,7 +1328,7 @@
           return `${n.label}, ${wo}${nv}, ${enabled(n) ? `${n.live} von ${n.total} ${noun(n.total)} verfügbar` : "noch nicht verfügbar"}`;
         }
         if (!enabled(n)) return `${n.fachName ? n.fachName + " " : ""}${n.label}, noch nicht verfügbar`;
-        if (n.kind === "pkg") return `${n.label}, Lernpaket, ${n.pkg.lessons} Lektionen`;
+        if (n.kind === "pkg") return `${n.label}, Lernpaket${n.school ? ` ${n.school.wo}` : ""}, ${n.pkg.lessons} Lektionen`;
         return `${n.label}, ${n.live} von ${n.total} ${noun(n.total)} verfügbar`;
       };
       /* every node can be entered, also grey ones: they explain what is missing and why */
@@ -1357,7 +1362,14 @@
         if (n.kind === "pkg") {
           const lines = wrap(n.label, Math.max(9, Math.round(R / 5.4)));
           const gl = n.glyph.length > 6 ? 0.2 : 0.3;
-          const y0 = cy - R * 0.28 - (lines.length - 1) * fs * 0.55;
+          /* a live package names its Schulart on top, so it reads like the grey Schulart fields beside it */
+          const kicker = !n.planned && n.school ? n.school.name : "";
+          const ky = cy - R * 0.6;
+          let y0 = cy - R * 0.28 - (lines.length - 1) * fs * 0.55;
+          /* with a kicker, the glyph (about three quarters of its size above its baseline) stays below the kicker line,
+             also when a long title takes three lines and would push it up */
+          if (kicker) y0 = Math.max(y0 + fs * 0.6, ky + fs * 0.3 + R * gl * 0.75 + fs * 0.2);
+          if (kicker) shape.append(s("text", { class: "t kicker", x: cx, y: ky, "font-size": fs * 0.7 }, kicker));
           shape.append(s("text", { class: "t glyph", x: cx, y: y0 - fs * 0.2, "font-size": R * gl }, n.glyph));
           lines.forEach((ln, i) =>
             shape.append(s("text", { class: "t", x: cx, y: y0 + fs * 1.5 + i * fs * 1.15, "font-size": fs, "font-weight": 600 }, ln)),
@@ -1622,19 +1634,31 @@
         if (n.kind === "fach") {
           const { have, none } = schoolsOf(n);
           const grade = n.children.find((c) => c.grade)?.grade;
+          /* two separate statements: where the Fach is taught, and where a Lernpaket for it exists */
+          const live = have.filter((e) => e.live);
+          const open = have.filter((e) => !e.live);
           if (grade && state.lens === "schule")
             p.append(
               h("p", { class: "schoolnote" },
-                have.length ? [h("b", {}, `Klasse ${grade}: `), `${n.label} gibt es ${joinDe(have.map((e) => e.school.wo))}.`] : [h("b", {}, `Klasse ${grade}: `), `Dieses Fach gibt es in keiner dieser Schularten.`],
+                have.length ? [h("b", {}, `Klasse ${grade}: `), `${n.label} wird ${joinDe(have.map((e) => e.school.wo))} unterrichtet.`] : [h("b", {}, `Klasse ${grade}: `), `Dieses Fach gibt es in keiner dieser Schularten.`],
                 none.length ? ` Kein Fach ${joinDe(none.map((e) => e.school.wo))}.` : null,
               ),
+              have.length
+                ? h("p", { class: "schoolnote" },
+                    h("b", {}, "Lernpaket: "),
+                    live.length
+                      ? `verfügbar ${joinDe(live.map((e) => e.school.wo))}${open.length ? `, noch nicht ${joinDe(open.map((e) => e.school.wo))}` : ""}.`
+                      : "noch an keiner Schulart verfügbar.",
+                  )
+                : null,
             );
         }
         p.append(
           h("ul", { class: "tags", "aria-label": "Inhalt" },
             visible(n).map((c) => {
               const state_ = c.entfaellt ? " · kein Fach" : c.planned ? " · noch nicht verfügbar" : "";
-              const txt = `${c.label}${c.kind === "pkg" ? state_ : ` · ${c.live}/${c.total}`}`;
+              const where = c.kind === "pkg" && !c.planned && c.school && n.kind === "fach" ? `${c.school.name} · ` : "";
+              const txt = `${where}${c.label}${c.kind === "pkg" ? state_ : ` · ${c.live}/${c.total}`}`;
               return h("li", { class: enabled(c) ? "" : c.entfaellt ? "off none" : "off" },
                 h("button", { type: "button", onclick: () => go(c.path) }, txt));
             }),
@@ -1704,7 +1728,7 @@
           for (const f of visible(isl)) {
             ul.append(h("li", { class: `fach${enabled(f) ? "" : " off"}`, style: `--h:${f.hue}`, ...currentAttrs(f) }, f.label, h("small", { style: "font-weight:400" }, `${f.live}/${f.total}`)));
             for (const k of visible(f))
-              ul.append(h("li", { class: k.planned ? "planned" : "" }, k.entfaellt ? [`${k.label} (kein Fach in Klasse ${k.grade})`, h("span", { class: "why" }, k.entfaellt.note, k.entfaellt.source ? [" ", h("a", { href: k.entfaellt.source, rel: "noopener" }, "Quelle: Stundentafel")] : null)] : k.planned ? `${k.label} (noch nicht verfügbar)` : h("a", { href: `${k.pkg.app}/`, ...currentAttrs(k) }, k.label)));
+              ul.append(h("li", { class: k.planned ? "planned" : "" }, k.entfaellt ? [`${k.label} (kein Fach in Klasse ${k.grade})`, h("span", { class: "why" }, k.entfaellt.note, k.entfaellt.source ? [" ", h("a", { href: k.entfaellt.source, rel: "noopener" }, "Quelle: Stundentafel")] : null)] : k.planned ? `${k.label} (noch nicht verfügbar)` : [h("a", { href: `${k.pkg.app}/`, ...currentAttrs(k) }, k.label), k.school ? h("small", { style: "color:var(--muted);font-weight:400" }, ` · ${k.school.name}`) : null]));
           }
           d.append(ul);
           o.append(d);

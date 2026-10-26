@@ -7,7 +7,7 @@ export default defineConfig({
 	base: "/biologie-realschule-8/",
 	plugins: [viteSingleFile()],
 	server: {
-		port: 5207,
+		port: 5208,
 		open: false,
 	},
 	build: {
