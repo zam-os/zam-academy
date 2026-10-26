@@ -1,6 +1,6 @@
 # Politik und Gesellschaft 10 · Realschule Bayern
 
-Lokaler, unveröffentlichter Entwurf mit **32 Lektionen, 64 Aussagenprüfungen (Richtig/Falsch),
+Lernpaket mit **32 Lektionen, 64 Aussagenprüfungen (Richtig/Falsch),
 64 eigenen Aufgaben auf zwei Leveln und 64 ZAM-Karten**. Ein gemeinsamer
 Lernpfad für alle Wahlpflichtfächergruppen nach dem
 [LehrplanPLUS Bayern](https://www.lehrplanplus.bayern.de/fachlehrplan/realschule/10/pug).
@@ -85,7 +85,23 @@ müssen anhand aktueller amtlicher Quellen geprüft werden.
 verlinkt die passende Lektion unter
 `https://academy.zam-os.org/politik-realschule-10/#lesson=<id>`.
 Die Lehrplanbindungen verwenden `pug`, Realschule, Jahrgang 10 und `lb1` bis
-`lb4`. Weiche Voraussetzungen blockieren keine Lektion. IDs wurden einmal mit `ulid()` vergeben und sind in der unabhängigen
+`lb4`. Jede Lektion bindet an den Lernbereich ihres Fachgebiets. Die breitere
+Kompetenzmatrix dokumentiert weiterhin Methodenbezüge anderer Lernbereiche.
+Version 2026.10.2 zieht die zusätzlichen Bindungen der Version 2026.10.1
+mit vollständigem Geltungsbereich und Begründung als `retired_curricula` zurück.
+Ihre Verarbeitung in bestehenden Bibliotheken benötigt den ZAM-Kern mit
+Unterstützung dieses Felds; ältere Kerne behalten bereits gespeicherte Bindungen.
+`published_at` ist ein fester Veröffentlichungszeitpunkt. PuG ist kein reguläres
+schriftliches Abschlussprüfungsfach nach [RSO § 35](https://www.gesetze-bayern.de/Content/Document/BayRSO-35);
+daher steht `exam_relevant` ausdrücklich auf `false`. Die freiwillige mündliche
+Prüfung in Nichtprüfungsfächern nach [RSO § 36](https://www.gesetze-bayern.de/Content/Document/BayRSO-36)
+bleibt davon unberührt.
+
+Die Bloom-Stufe beschreibt die konkrete Abrufhandlung, nicht das Tier:
+Fakten aufzählen ist Stufe 1, Zusammenhänge erklären Stufe 2, einen Prozentanteil
+berechnen oder das Mengen-/Preismodell anwenden Stufe 3. Die Einstufungskorrekturen
+sind `materiality: "cosmetic"`: Fragen, Antworten, IDs und Lernstände bleiben gleich.
+Weiche Voraussetzungen blockieren keine Lektion. IDs wurden einmal mit `ulid()` vergeben und sind in der unabhängigen
 Fixture `tests/fixtures/public-contract.json` festgehalten. Kartenwortlaut,
 Schnellcheck und Musterlösung stehen ausschließlich in `cell.json`. Die App
 liest daraus ihre passenden Lernchecks und Merksätze. Es gibt keinen zweiten

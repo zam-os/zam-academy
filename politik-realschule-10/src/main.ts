@@ -300,7 +300,7 @@ element("#theme").addEventListener("click", () => {
 element("#zam").addEventListener("click", () =>
 	showDialog(
 		"Mit ZAM behalten",
-		"<p>64 Wiederholungsfragen führen direkt zu den passenden Lektionen zurück.</p><p>Dieses Paket ist ein lokaler Entwurf. Nach seiner Veröffentlichung kannst du es in der ZAM Academy auswählen und aufnehmen. Bis dahin kannst du hier ohne Konto weiterüben.</p>",
+		"<p>64 Wiederholungsfragen führen direkt zu den passenden Lektionen zurück.</p><p>Du kannst das veröffentlichte Paket in der ZAM Academy auswählen und aufnehmen. Hier kannst du auch ohne Konto weiterüben.</p>",
 	),
 );
 element("#reset").addEventListener("click", () => {
