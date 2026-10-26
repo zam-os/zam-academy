@@ -16,6 +16,11 @@ const mapping = JSON.parse(
 assert.equal(mapping.status, "proposal-only");
 assert.equal(mapping.approved, null);
 assert.equal(mapping.rows.length, 16);
+assert.ok(
+	mapping.rows.every(
+		(row) => row.category === "C" && row.academy_slug === null,
+	),
+);
 assert.equal(new Set(mapping.rows.map((row) => row.de_by_id)).size, 16);
 for (const source of mapping.sources) {
 	const bytes = readFileSync(join(root, source.file));

@@ -35,9 +35,9 @@ Echtes Mikroskopieren, Präparate herstellen, kontrollierte Experimente, eigene 
 
 `cell.json` ist die einzige Kartenquelle: **30 Atome und 60 Abrufe**. Kartenfragen und Antworten liegen ausschließlich in der Zelle; die Tests prüfen ihren Bezug zu den kanonischen Lektionsdaten. Jede Karte zitiert `https://academy.zam-os.org/biologie-realschule-8/#lesson=<id>`. Alle Bindungen gehören zu Biologie 8 Realschule; der Lernpfad gilt für alle Wahlpflichtfächergruppen.
 
-Die Zelle enthält weder `replaces` noch `retired_items`. Die zwei älteren Biologie-8-Pakete und die optionalen Evolutionseinheiten in Biologie 10 werden nicht umgeschrieben. Der [Bestandsabgleich](../docs/biologie-8-bestandsabgleich.md) dokumentiert Themenüberschneidungen und Grenzen. Es werden keine Lernstände aus Textähnlichkeit abgeleitet. Der zeilenweise Vorschlag in `replaces-de-by.json` ist nicht freigegeben (1 A, 0 B, 15 C) und verändert in dieser Version keine Historie.
+Die Zelle enthält weder `replaces` noch `retired_items`. Die zwei älteren Biologie-8-Pakete und die optionalen Evolutionseinheiten in Biologie 10 werden nicht umgeschrieben. Der [Bestandsabgleich](../docs/biologie-8-bestandsabgleich.md) dokumentiert Themenüberschneidungen und Grenzen. Es werden keine Lernstände aus Textähnlichkeit abgeleitet. Der zeilenweise Vorschlag in `replaces-de-by.json` ist nicht freigegeben (0 A, 0 B, 16 C) und verändert in dieser Version keine Historie.
 
-90 einmal mit `ulid()` vergebene IDs liegen in `scripts/card-ids.json`; eine unabhängige Fixture pinnt IDs und Lektionsanker. Die Item-IDs bleiben bei redaktionellen Änderungen erhalten; neue Fragen werden direkt in der Zelle gepflegt. Ab der ersten Veröffentlichung gelten die stabilen Academy-Verträge.
+90 einmal mit `ulid()` vergebene IDs liegen in `scripts/card-ids.json`; eine unabhängige Fixture pinnt IDs und Lektionsanker. Die Item-IDs bleiben bei redaktionellen Änderungen erhalten; neue Fragen werden direkt in der Zelle gepflegt. Ab der ersten Veröffentlichung gelten die stabilen Academy-Verträge. Version 2026.10.2 ergänzt für alle offiziellen Bindungen ausdrücklich `exam_relevant: false`: Der Jahrgangskurs ist kein Paket zur zentralen Realschulabschlussprüfung. IDs, Abrufe und Lektionsanker bleiben unverändert.
 
 ## Entwickeln und prüfen
 
