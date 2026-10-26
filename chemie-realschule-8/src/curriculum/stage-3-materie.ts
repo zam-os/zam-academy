@@ -277,7 +277,7 @@ export const STAGE_MATERIE: Stage = {
       subtitle: "Aus Bindigkeitszahlen Molekülformeln ableiten und binäre Nichtmetallverbindungen benennen",
       bindings: { I: 3 },
       why: "Warum heißt Wasser H₂O, Ammoniak NH₃ und Methan CH₄ — und niemals HO oder NH? Die Bindigkeit der Nichtmetallatome liefert den Schlüssel.",
-      html: "<p>Die <strong>Bindigkeit</strong> eines Nichtmetallatoms gibt an, wie viele Bindungen es zu Nachbaratomen eingehen kann: <strong>Wasserstoff (H)</strong> und die Halogene <strong>Fluor (F), Chlor (Cl), Iod (I)</strong> sind <strong>einbindig (1)</strong>, <strong>Sauerstoff (O)</strong> und <strong>Schwefel (S)</strong> sind in einfachen Hydriden/Oxiden oft <strong>zweibindig (2)</strong>, <strong>Stickstoff (N)</strong> und <strong>Phosphor (P)</strong> <strong>dreibindig (3)</strong>, <strong>Kohlenstoff (C)</strong> und <strong>Silicium (Si)</strong> <strong>vierbindig (4)</strong>. In einem Molekül müssen alle Bindigkeiten gegenseitig abgesättigt sein: Bei C (4) und H (1) ergibt das <strong>CH<sub>4</sub></strong>; bei N (3) und O (2) gleicht das kleinste gemeinsame Vielfache 6 die Bindigkeiten zu <strong>N<sub>2</sub>O<sub>3</sub></strong> aus (2 · 3 = 3 · 2). Auch viele Nichtmetallelemente bilden zweiatomige Moleküle: <strong>H<sub>2</sub>, N<sub>2</sub>, O<sub>2</sub>, F<sub>2</sub>, Cl<sub>2</sub>, Br<sub>2</sub>, I<sub>2</sub></strong>.</p><p><strong>Benennung binärer Nichtmetallverbindungen:</strong> Zuerst steht der deutsche Name des ersten Elements, danach der Wortstamm des zweiten Elements mit der Endung <strong>-id</strong> (<em>-oxid, -chlorid, -fluorid, -sulfid, -nitrid, -hydrid</em>). Die Atomzahlen gibst du mit <strong>griechischen Zahlwörtern</strong> an (<em>mono-, di-, tri-, tetra-, penta-, hexa-</em>), wobei <em>mono-</em> vor dem ersten Element weggelassen wird: CO = Kohlenstoffmonooxid, CO<sub>2</sub> = Kohlenstoffdioxid, N<sub>2</sub>O<sub>5</sub> = Distickstoffpentaoxid, PCl<sub>3</sub> = Phosphortrichlorid.</p><div class=\"example\"><strong>Beispiel:</strong> Silicium (4-bindig) und Chlor (1-bindig): 1 · 4 = 4 · 1 → Molekülformel <strong>SiCl<sub>4</sub></strong>, systematischer Name <strong>Siliciumtetrachlorid</strong>.</div>",
+      html: "<p>Die <strong>Bindigkeit</strong> eines Nichtmetallatoms gibt an, wie viele Bindungen es zu Nachbaratomen eingehen kann: <strong>Wasserstoff (H)</strong> und die Halogene <strong>Fluor (F), Chlor (Cl), Iod (I)</strong> sind <strong>einbindig (1)</strong>, <strong>Sauerstoff (O)</strong> und <strong>Schwefel (S)</strong> sind in einfachen Hydriden/Oxiden oft <strong>zweibindig (2)</strong>, <strong>Stickstoff (N)</strong> und <strong>Phosphor (P)</strong> <strong>dreibindig (3)</strong>, <strong>Kohlenstoff (C)</strong> und <strong>Silicium (Si)</strong> <strong>vierbindig (4)</strong>. In einem Molekül müssen alle Bindigkeiten gegenseitig abgesättigt sein: Bei C (4) und H (1) ergibt das <strong>CH<sub>4</sub></strong>; bei N (3) und O (2) gleicht das kleinste gemeinsame Vielfache 6 die Bindigkeiten zu <strong>N<sub>2</sub>O<sub>3</sub></strong> aus (2 · 3 = 3 · 2). Auch viele Nichtmetallelemente bilden zweiatomige Moleküle: <strong>H<sub>2</sub>, N<sub>2</sub>, O<sub>2</sub>, F<sub>2</sub>, Cl<sub>2</sub>, Br<sub>2</sub>, I<sub>2</sub></strong>.</p><p><strong>Benennung binärer Nichtmetallverbindungen:</strong> Zuerst steht der deutsche Name des ersten Elements, danach der Wortstamm des zweiten Elements mit der Endung <strong>-id</strong> (<em>-oxid, -chlorid, -fluorid, -sulfid, -nitrid, -hydrid</em>). Die Atomzahlen gibst du mit <strong>griechischen Zahlwörtern</strong> an (<em>mono-, di-, tri-, tetra-, penta-, hexa-</em>), wobei <em>mono-</em> vor dem ersten Element entfällt und vor <em>-oxid</em> das Schluss-<em>o</em> bzw. <em>-a</em> verkürzt wird: CO = Kohlenstoffmonoxid, CO<sub>2</sub> = Kohlenstoffdioxid, N<sub>2</sub>O<sub>5</sub> = Distickstoffpentoxid, PCl<sub>3</sub> = Phosphortrichlorid.</p><div class=\"example\"><strong>Beispiel:</strong> Silicium (4-bindig) und Chlor (1-bindig): 1 · 4 = 4 · 1 → Molekülformel <strong>SiCl<sub>4</sub></strong>, systematischer Name <strong>Siliciumtetrachlorid</strong>.</div>",
       rule: "Bindigkeit A · Anzahl A = Bindigkeit B · Anzahl B (kleinste ganze Zahlen) · Name: [Zahlwort]Element1 + [Zahlwort]Stamm2-id (ohne ‚Mono-‘ am Anfang)",
       terms: [
         ["Typische Bindigkeiten", "H, F, Cl, I: 1 · O, S: 2 · N, P: 3 · C, Si: 4", "Elementmoleküle: H<sub>2</sub>, N<sub>2</sub>, O<sub>2</sub>, F<sub>2</sub>, Cl<sub>2</sub>, Br<sub>2</sub>, I<sub>2</sub>"],
@@ -353,17 +353,17 @@ export const STAGE_MATERIE: Stage = {
           "binaere-nichtmetallnamen",
           [
             cc(
-              "Wie lautet die korrekte Molekülformel von Distickstoffpentaoxid?",
+              "Wie lautet die korrekte Molekülformel von Distickstoffpentoxid?",
               "N₂O₅",
               ["NO₅", "N₅O₂"],
-              "‚Di-‘ steht für 2 Stickstoffatome (N₂), ‚penta-‘ für 5 Sauerstoffatome (O₅).",
-              "Übersetze di = 2 und penta = 5 in tiefgestellte Indizes!",
+              "‚Di-‘ steht für 2 Stickstoffatome (N₂), ‚pent-‘ (von penta) für 5 Sauerstoffatome (O₅).",
+              "Übersetze di = 2 und pent(a) = 5 in tiefgestellte Indizes!",
             ),
             cc(
               "Wie heißt das giftige Gas mit der Molekülformel CO fachsprachlich exakt?",
-              "Kohlenstoffmonooxid",
+              "Kohlenstoffmonoxid",
               ["Monokohlenstoffdioxid", "Kohlenstoffsulfid"],
-              "Vor dem ersten Element entfällt ‚Mono-‘, vor dem einzelnen Sauerstoffatom steht ‚monooxid‘ zur Unterscheidung von CO₂.",
+              "Vor dem ersten Element entfällt ‚Mono-‘, vor dem einzelnen Sauerstoffatom steht ‚monoxid‘ zur Unterscheidung von CO₂.",
               "1 C-Atom und 1 O-Atom.",
             ),
             cc(

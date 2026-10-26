@@ -13,7 +13,7 @@ export const REAKTION_LESSONS_C: Lesson[] = [
     subtitle: "Summenformeln von Methan bis Octan, vollständige und unvollständige Verbrennung",
     bindings: { I: 4 },
     why: "Erdgas, Flüssiggas im Campingkocher, Feuerzeuggas und Benzin bestehen aus Alkanen — wie viel Luft hinzutritt, entscheidet über harmlose Wärme oder tödliches Atemgift!",
-    html: "<p>Die einfachsten organischen Kohlenwasserstoffe bilden die <strong>homologe Reihe der Alkane</strong> mit der allgemeinen Summenformel <strong>C<sub>n</sub>H<sub>2n+2</sub></strong>: Jedes folgende Glied unterscheidet sich vom vorherigen um eine <strong>CH<sub>2</sub>-Gruppe</strong>. Du kennst die Namen von n = 1 bis n = 8: <strong>Methan (CH<sub>4</sub>)</strong>, <strong>Ethan (C<sub>2</sub>H<sub>6</sub>)</strong>, <strong>Propan (C<sub>3</sub>H<sub>8</sub>)</strong>, <strong>Butan (C<sub>4</sub>H<sub>10</sub>)</strong>, <strong>Pentan (C<sub>5</sub>H<sub>12</sub>)</strong>, <strong>Hexan (C<sub>6</sub>H<sub>14</sub>)</strong>, <strong>Heptan (C<sub>7</sub>H<sub>16</sub>)</strong> und <strong>Octan (C<sub>8</sub>H<sub>18</sub>)</strong>.</p><p>Je nach Sauerstoffangebot verläuft die Verbrennung eines Alkans unterschiedlich:</p><ul><li><strong>Vollständige Verbrennung</strong> (ausreichend O<sub>2</sub>, geöffnete Luftzufuhr am Brenner, blaue nicht rußende Flamme): Es entstehen ausschließlich <strong>Kohlenstoffdioxid (CO<sub>2</sub>) und Wasser (H<sub>2</sub>O)</strong> — z.&nbsp;B. CH<sub>4</sub> + 2 O<sub>2</sub> → CO<sub>2</sub> + 2 H<sub>2</sub>O.</li><li><strong>Unvollständige Verbrennung</strong> (Sauerstoffmangel, geschlossene Luftzufuhr, gelb leuchtende Flamme): Neben Wasser entstehen das farb- und geruchlose, stark giftige <strong>Kohlenstoffmonooxid (CO)</strong> (blockiert den Sauerstofftransport des Hämoglobins im Blut!) und schwarzer <strong>Ruß (Kohlenstoff C)</strong>.</li></ul><div class=\"example\"><strong>Beispiel:</strong> Propan (n = 3 → C<sub>3</sub>H<sub>8</sub>) verbrennt vollständig nach <strong>C<sub>3</sub>H<sub>8</sub> + 5 O<sub>2</sub> → 3 CO<sub>2</sub> + 4 H<sub>2</sub>O</strong>, bei starkem Sauerstoffmangel dagegen rußend nach C<sub>3</sub>H<sub>8</sub> + 2 O<sub>2</sub> → 3 C + 4 H<sub>2</sub>O.</div>",
+    html: "<p>Die einfachsten organischen Kohlenwasserstoffe bilden die <strong>homologe Reihe der Alkane</strong> mit der allgemeinen Summenformel <strong>C<sub>n</sub>H<sub>2n+2</sub></strong>: Jedes folgende Glied unterscheidet sich vom vorherigen um eine <strong>CH<sub>2</sub>-Gruppe</strong>. Du kennst die Namen von n = 1 bis n = 8: <strong>Methan (CH<sub>4</sub>)</strong>, <strong>Ethan (C<sub>2</sub>H<sub>6</sub>)</strong>, <strong>Propan (C<sub>3</sub>H<sub>8</sub>)</strong>, <strong>Butan (C<sub>4</sub>H<sub>10</sub>)</strong>, <strong>Pentan (C<sub>5</sub>H<sub>12</sub>)</strong>, <strong>Hexan (C<sub>6</sub>H<sub>14</sub>)</strong>, <strong>Heptan (C<sub>7</sub>H<sub>16</sub>)</strong> und <strong>Octan (C<sub>8</sub>H<sub>18</sub>)</strong>.</p><p>Je nach Sauerstoffangebot verläuft die Verbrennung eines Alkans unterschiedlich:</p><ul><li><strong>Vollständige Verbrennung</strong> (ausreichend O<sub>2</sub>, geöffnete Luftzufuhr am Brenner, blaue nicht rußende Flamme): Es entstehen ausschließlich <strong>Kohlenstoffdioxid (CO<sub>2</sub>) und Wasser (H<sub>2</sub>O)</strong> — z.&nbsp;B. CH<sub>4</sub> + 2 O<sub>2</sub> → CO<sub>2</sub> + 2 H<sub>2</sub>O.</li><li><strong>Unvollständige Verbrennung</strong> (Sauerstoffmangel, geschlossene Luftzufuhr, gelb leuchtende Flamme): Neben Wasser entstehen das farb- und geruchlose, stark giftige <strong>Kohlenstoffmonoxid (CO)</strong> (blockiert den Sauerstofftransport des Hämoglobins im Blut!) und schwarzer <strong>Ruß (Kohlenstoff C)</strong>.</li></ul><div class=\"example\"><strong>Beispiel:</strong> Propan (n = 3 → C<sub>3</sub>H<sub>8</sub>) verbrennt vollständig nach <strong>C<sub>3</sub>H<sub>8</sub> + 5 O<sub>2</sub> → 3 CO<sub>2</sub> + 4 H<sub>2</sub>O</strong>, bei starkem Sauerstoffmangel dagegen rußend nach C<sub>3</sub>H<sub>8</sub> + 2 O<sub>2</sub> → 3 C + 4 H<sub>2</sub>O.</div>",
     rule: "Alkane: C<sub>n</sub>H<sub>2n+2</sub> (Methan bis Octan) · Vollständige Verbrennung (+ genug O<sub>2</sub>) → CO<sub>2</sub> + H<sub>2</sub>O · Unvollständige Verbrennung (O<sub>2</sub>-Mangel) → CO (Atemgift!) und/oder Ruß (C) + H<sub>2</sub>O",
     terms: [
       ["Alkane n = 1..4", "CH<sub>4</sub> Methan · C<sub>2</sub>H<sub>6</sub> Ethan · C<sub>3</sub>H<sub>8</sub> Propan · C<sub>4</sub>H<sub>10</sub> Butan", "bei 20 °C gasförmig"],
@@ -87,9 +87,9 @@ export const REAKTION_LESSONS_C: Lesson[] = [
         [
           cc(
             "Warum darf man einen Holzkohlegrill oder Gasheizstrahler niemals in geschlossenen, unbelüfteten Innenräumen betreiben?",
-            "Bei sinkendem Sauerstoffgehalt entsteht durch unvollständige Verbrennung farb- und geruchloses, tödliches Kohlenstoffmonooxid (CO).",
+            "Bei sinkendem Sauerstoffgehalt entsteht durch unvollständige Verbrennung farb- und geruchloses, tödliches Kohlenstoffmonoxid (CO).",
             ["Weil Kohlenstoffdioxid nach faulen Eiern riecht.", "Weil Holzkohle im Zimmer endotherm gefriert."],
-            "Kohlenstoffmonooxid ist mit den Sinnen nicht wahrnehmbar und blockiert den Sauerstofftransport im Blut.",
+            "Kohlenstoffmonoxid ist mit den Sinnen nicht wahrnehmbar und blockiert den Sauerstofftransport im Blut.",
             "Welches heimtückische Atemgift entsteht bei Sauerstoffmangel?",
           ),
           cc(
@@ -125,7 +125,7 @@ export const REAKTION_LESSONS_C: Lesson[] = [
     subtitle: "Schadstoffe aus Verbrennungsmotoren katalytisch umwandeln und Ruß abscheiden",
     bindings: { I: 4 },
     why: "Weil im Motor Millisekunden für die Verbrennung bleiben, entstehen CO, Kohlenwasserstoffreste, Stickoxide und Ruß — erst die Abgasnachbehandlung schützt Atemwege und Umwelt.",
-    html: "<p>In Verbrennungsmotoren verläuft die Verbrennung wegen extrem kurzer Reaktionszeiten und hoher Spitzentemperaturen nie ideal: Im Rohabgas treten giftiges <strong>Kohlenstoffmonooxid (CO)</strong>, unverbrannte <strong>Kohlenwasserstoffe (C<sub>x</sub>H<sub>y</sub>)</strong>, aus Luftstickstoff und Sauerstoff gebildete <strong>Stickoxide (NO<sub>x</sub>)</strong> sowie feinste, lungengängige <strong>Rußpartikel (C, Feinstaub)</strong> auf. Der Nachweis von CO und Ruß begründet unmittelbar die technische Abgasreinigung:</p><ul><li><strong>Drei-Wege-Abgaskatalysator:</strong> Ein hitzebeständiger Keramik-Wabenkörper mit riesiger innerer Oberfläche ist hauchdünn mit Edelmetallen (Platin, Rhodium, Palladium) beschichtet. Ab der Betriebstemperatur (~300 °C) laufen drei Schadstoffumwandlungen gleichzeitig ab: 1.&nbsp;<strong>2 CO + O<sub>2</sub> → 2 CO<sub>2</sub></strong>, 2.&nbsp;Rest-Kohlenwasserstoffe + O<sub>2</sub> → <strong>CO<sub>2</sub> + H<sub>2</sub>O</strong>, 3.&nbsp;<strong>2 NO + 2 CO → N<sub>2</sub> + 2 CO<sub>2</sub></strong>.</li><li><strong>Partikelfilter (Diesel- &amp; Ottopartikelfilter):</strong> Ein poröser Wandstromfilter hält feste <strong>Rußpartikel</strong> mechanisch zurück und brennt sie in regelmäßigen Regenerationsphasen bei hoher Abgastemperatur mit Sauerstoff zu gasförmigem CO<sub>2</sub> ab (C + O<sub>2</sub> → CO<sub>2</sub>).</li></ul><div class=\"example\"><strong>Beispiel:</strong> Auf winterlichen Ultrakurzstrecken (1 km zum Bäcker) erreicht der Abgaskatalysator seine Anspringtemperatur von rund 300 °C kaum — in dieser Kaltstartphase entweicht deutlich mehr CO als bei warmem Motor.</div>",
+    html: "<p>In Verbrennungsmotoren verläuft die Verbrennung wegen extrem kurzer Reaktionszeiten und hoher Spitzentemperaturen nie ideal: Im Rohabgas treten giftiges <strong>Kohlenstoffmonoxid (CO)</strong>, unverbrannte <strong>Kohlenwasserstoffe (C<sub>x</sub>H<sub>y</sub>)</strong>, aus Luftstickstoff und Sauerstoff gebildete <strong>Stickoxide (NO<sub>x</sub>)</strong> sowie feinste, lungengängige <strong>Rußpartikel (C, Feinstaub)</strong> auf. Der Nachweis von CO und Ruß begründet unmittelbar die technische Abgasreinigung:</p><ul><li><strong>Drei-Wege-Abgaskatalysator:</strong> Ein hitzebeständiger Keramik-Wabenkörper mit riesiger innerer Oberfläche ist hauchdünn mit Edelmetallen (Platin, Rhodium, Palladium) beschichtet. Ab der Betriebstemperatur (~300 °C) laufen drei Schadstoffumwandlungen gleichzeitig ab: 1.&nbsp;<strong>2 CO + O<sub>2</sub> → 2 CO<sub>2</sub></strong>, 2.&nbsp;Rest-Kohlenwasserstoffe + O<sub>2</sub> → <strong>CO<sub>2</sub> + H<sub>2</sub>O</strong>, 3.&nbsp;<strong>2 NO + 2 CO → N<sub>2</sub> + 2 CO<sub>2</sub></strong>.</li><li><strong>Partikelfilter (Diesel- &amp; Ottopartikelfilter):</strong> Ein poröser Wandstromfilter hält feste <strong>Rußpartikel</strong> mechanisch zurück und brennt sie in regelmäßigen Regenerationsphasen bei hoher Abgastemperatur mit Sauerstoff zu gasförmigem CO<sub>2</sub> ab (C + O<sub>2</sub> → CO<sub>2</sub>).</li></ul><div class=\"example\"><strong>Beispiel:</strong> Auf winterlichen Ultrakurzstrecken (1 km zum Bäcker) erreicht der Abgaskatalysator seine Anspringtemperatur von rund 300 °C kaum — in dieser Kaltstartphase entweicht deutlich mehr CO als bei warmem Motor.</div>",
     rule: "Drei-Wege-Katalysator wandelt gasförmige Schadstoffe (CO, C<sub>x</sub>H<sub>y</sub>, NO<sub>x</sub>) in CO<sub>2</sub>, H<sub>2</sub>O und N<sub>2</sub> um · Partikelfilter hält festen Ruß (Feinstaub) zurück",
     terms: [
       ["Drei-Wege-Katalysator", "beseitigt CO, C<sub>x</sub>H<sub>y</sub> und NO<sub>x</sub> gleichzeitig", "Wabenkörper mit Pt/Rh/Pd für riesige Oberfläche"],
@@ -146,7 +146,7 @@ export const REAKTION_LESSONS_C: Lesson[] = [
           cc(
             "Welche drei ungefährlicheren Stoffe verlassen den gereinigten Drei-Wege-Abgaskatalysator anstelle von CO, C_xH_y und NO_x?",
             "Kohlenstoffdioxid (CO₂), Wasserdampf (H₂O) und elementarer Stickstoff (N₂).",
-            ["Kohlenstoffmonooxid (CO), Ruß (C) und Ozon (O₃).", "Methan (CH₄), Wasserstoff (H₂) und Chlor (Cl₂)."],
+            ["Kohlenstoffmonoxid (CO), Ruß (C) und Ozon (O₃).", "Methan (CH₄), Wasserstoff (H₂) und Chlor (Cl₂)."],
             "CO und Kohlenwasserstoffe werden zu CO₂ und H₂O oxidiert; Stickoxide reagieren zu Luftstickstoff N₂.",
             "In welche Hauptbestandteile der Luft bzw. Verbrennungsprodukte werden C, H und N überführt?",
           ),
@@ -174,9 +174,9 @@ export const REAKTION_LESSONS_C: Lesson[] = [
             "Verschwinden die C-Atome des fossilen Kraftstoffs im Katalysator?",
           ),
           cc(
-            "Warum steigt unmittelbar nach dem Kaltstart eines Verbrennungsmotors auf den ersten hundert Metern besonders viel Kohlenstoffmonooxid aus dem Auspuff?",
+            "Warum steigt unmittelbar nach dem Kaltstart eines Verbrennungsmotors auf den ersten hundert Metern besonders viel Kohlenstoffmonoxid aus dem Auspuff?",
             "Weil der Edelmetall-Katalysator erst seine Betriebstemperatur von rund 300 °C erreichen muss, damit die Oberflächenreaktion schnell genug abläuft.",
-            ["Weil kalte Luft überhaupt keinen Sauerstoff enthält.", "Weil Benzin im kalten Tank aus Kohlenstoffmonooxid besteht."],
+            ["Weil kalte Luft überhaupt keinen Sauerstoff enthält.", "Weil Benzin im kalten Tank aus Kohlenstoffmonoxid besteht."],
             "Auch katalysierte Reaktionen besitzen noch eine (kleinere) Aktivierungsenergie, für die eine Mindesttemperatur nötig ist.",
             "Arbeitet der Abgaskatalysator bei −5 °C schon mit vollem Umsatz?",
           ),
@@ -186,7 +186,7 @@ export const REAKTION_LESSONS_C: Lesson[] = [
         "abgas-reaktionsgleichungen",
         [
           cc(
-            "Welche ausgeglichene Formelgleichung beschreibt den Abbau von giftigem Stickstoffmonooxid (NO) mit Kohlenstoffmonooxid (CO) im Drei-Wege-Katalysator?",
+            "Welche ausgeglichene Formelgleichung beschreibt den Abbau von giftigem Stickstoffmonoxid (NO) mit Kohlenstoffmonoxid (CO) im Drei-Wege-Katalysator?",
             "2 NO + 2 CO → N₂ + 2 CO₂",
             ["NO + CO → N₂O₂ + C", "2 NO + O₂ → 2 NO₂"],
             "Links: 2 N, 2 C, 4 O; rechts: 2 N (in N₂), 2 C und 4 O (in 2 CO₂) — zwei Schadstoffe entgiften sich gegenseitig!",
@@ -202,7 +202,7 @@ export const REAKTION_LESSONS_C: Lesson[] = [
         ],
         [
           cc(
-            "Im Abgastest eines defekten Heizkessels wird Kohlenstoffmonooxid nachgewiesen. Welche Ursache liegt vor und welche Maßnahme ist nötig?",
+            "Im Abgastest eines defekten Heizkessels wird Kohlenstoffmonoxid nachgewiesen. Welche Ursache liegt vor und welche Maßnahme ist nötig?",
             "Unvollständige Verbrennung durch Sauerstoffmangel oder verschmutzten Brenner — Anlage abschalten, lüften und Luftzufuhr vom Fachbetrieb einstellen lassen.",
             ["Vollständige Verbrennung — Luftzufuhr noch weiter schließen.", "Zu viel Stickstoff im Erdgas — Wasser in den Brenner gießen."],
             "CO im Abgas einer Heizung ist ein akutes Warnsignal für unvollständige Verbrennung und Lebensgefahr.",

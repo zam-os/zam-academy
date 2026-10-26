@@ -53,8 +53,10 @@ Experimente.
 
 ## Die ZAM-Zelle und bestehende Lernstände
 
-`cell.json` ist die einzige Kartenquelle: **32 Atome, 66 Karten**. Chemische
-Formeln und Größengleichungen sind als Segmente mit TeX und deutscher
+`cell.json` ist die einzige Kartenquelle: **32 Atome, 66 Karten**. Alle **98
+ULIDs** wurden einmalig mit `ulid()` erzeugt und sind zusammen mit den 32
+Lektionsankern in `tests/fixtures/public-contract.json` festgeschrieben.
+Chemische Formeln und Größengleichungen sind als Segmente mit TeX und deutscher
 Sprechfassung hinterlegt; Felder tragen entweder Klartext oder Segmente, nie
 beides zugleich. Jede Karte verweist auf ihre Lektion unter
 `https://academy.zam-os.org/chemie-realschule-8/#lesson=<id>` und trägt die

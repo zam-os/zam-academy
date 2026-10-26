@@ -39,12 +39,12 @@ export const STAGE_ARBEITEN: Stage = {
       subtitle: "GHS-Piktogramme lesen, Schutzmaßnahmen und Sammelwege ableiten",
       bindings: { I: 1 },
       why: "Jedes Etikett auf einer Chemikalienflasche verrät dir vor Versuchsbeginn, wie du dich und die Umwelt schützt.",
-      html: "<p>Im Chemieraum arbeitest du erst nach der <strong>Sicherheitsunterweisung</strong> und nur nach Anweisung. Chemikalien sind nach dem weltweit einheitlichen <strong>GHS-System</strong> gekennzeichnet: rot umrandete Piktogramme, ein Signalwort (<strong>‚Gefahr‘</strong> für schwerwiegende Gefahren, <strong>‚Achtung‘</strong> für weniger schwere Kategorien) sowie <strong>H-Sätze</strong> (Gefahrenhinweise) und <strong>P-Sätze</strong> (Sicherheitshinweise). Die Schutzbrille trägst du bei jedem Experiment; bei ätzenden Stoffen kommen Schutzhandschuhe hinzu, giftige oder stechend riechende Gase und Dämpfe gehören in den Abzug, entzündbare Flüssigkeiten weit weg von offenen Flammen.</p><p>Auch die <strong>Entsorgung</strong> richtet sich nach den Stoffeigenschaften: Schwermetallsalze, organische Lösungsmittel sowie saure oder alkalische Reste werden niemals einfach in den Ausguss geschüttet, sondern in beschrifteten <strong>Sammelbehältern</strong> getrennt erfasst.</p><div class=\"example\"><strong>Beispiel:</strong> Ethanol trägt das Piktogramm Flamme (GHS02) und das Signalwort ‚Gefahr‘. Daraus folgt: Vorratsflasche sofort verschließen, Gasbrenner in der Nähe löschen, Reste in den Sammelbehälter für halogenfreie organische Lösungsmittel geben.</div>",
-      rule: "GHS-Piktogramm + H-/P-Sätze lesen → Gefahr erkennen → Schutzmaßnahme ergreifen → Reste getrennt entsorgen",
+      html: "<p>Im Chemieraum arbeitest du erst nach der <strong>Sicherheitsunterweisung</strong> und nur nach Anweisung. Chemikalien sind nach dem weltweit einheitlichen <strong>GHS-System</strong> gekennzeichnet: neun rot umrandete Piktogramme (<strong>GHS01–GHS09</strong>), ein Signalwort (<strong>‚Gefahr‘</strong> für schwerwiegende Gefahren, <strong>‚Achtung‘</strong> für weniger schwere Kategorien) sowie <strong>H-Sätze</strong> (Gefahrenhinweise) und <strong>P-Sätze</strong> (Sicherheitshinweise). Explosive Stoffe (<strong>GHS01</strong>, explodierende Bombe) schützt du vor Schlag, Reibung und Wärme; Druckgasflaschen (<strong>GHS04</strong>, Gasflasche) vor Sonneneinstrahlung, Erhitzen und Umfallen. Die Schutzbrille trägst du bei jedem Experiment; bei ätzenden Stoffen (<strong>GHS05</strong>) kommen Schutzhandschuhe hinzu, giftige oder gesundheitsgefährdende Gase und Dämpfe (<strong>GHS06–GHS08</strong>) gehören in den Abzug, entzündbare oder brandfördernde Stoffe (<strong>GHS02/GHS03</strong>) fern von Zündquellen bzw. brennbaren Stoffen.</p><p>Auch die <strong>Entsorgung</strong> richtet sich nach den Stoffeigenschaften: Schwermetallsalze (<strong>GHS09</strong>), organische Lösungsmittel sowie saure oder alkalische Reste werden niemals einfach in den Ausguss geschüttet, sondern in beschrifteten <strong>Sammelbehältern</strong> getrennt erfasst.</p><div class=\"example\"><strong>Beispiel:</strong> Ethanol trägt das Piktogramm Flamme (GHS02) und das Signalwort ‚Gefahr‘. Daraus folgt: Vorratsflasche sofort verschließen, Gasbrenner in der Nähe löschen, Reste in den Sammelbehälter für halogenfreie organische Lösungsmittel geben.</div>",
+      rule: "GHS-Piktogramm (GHS01–GHS09) + H-/P-Sätze lesen → Gefahr erkennen → Schutzmaßnahme ergreifen → Reste getrennt entsorgen",
       terms: [
-        ["GHS02 / GHS03", "Flamme (entzündbar) · Flamme über Kreis (brandfördernd)", "Zündquellen bzw. brennbare Stoffe fernhalten"],
-        ["GHS05 / GHS06", "Ätzwirkung · Akute Toxizität (Totenkopf)", "Schutzbrille, Handschuhe, Abzug"],
-        ["GHS07 / GHS08 / GHS09", "Achtung (reizend) · Gesundheitsgefahr · Gewässergefährdend", "Sammelbehälter statt Ausguss"],
+        ["GHS01 / GHS02 / GHS03", "Explodierende Bombe · Flamme (entzündbar) · Flamme über Kreis (brandfördernd)", "Schlag/Wärme, Zündquellen bzw. brennbare Stoffe fernhalten"],
+        ["GHS04 / GHS05 / GHS06", "Gasflasche (Gas unter Druck) · Ätzwirkung · Akute Toxizität (Totenkopf)", "Vor Erhitzen/Umfallen sichern · Schutzbrille, Handschuhe, Abzug"],
+        ["GHS07 / GHS08 / GHS09", "Achtung (reizend) · Gesundheitsgefahr · Gewässergefährdend", "Haut-/Atemkontakt meiden · Sammelbehälter statt Ausguss"],
       ],
       quiz: [
         "Eine Lösung trägt die Piktogramme Ätzwirkung (GHS05) und Umwelt (GHS09). Welche Kombination aus Schutz und Entsorgung ist richtig?",
@@ -78,8 +78,22 @@ export const STAGE_ARBEITEN: Stage = {
               "H-Sätze nennen die Gefahren (Hazard), P-Sätze die Sicherheitsmaßnahmen (Precautionary Statements).",
               "P steht für Precautionary — Vorsichtsmaßnahme.",
             ),
+            cc(
+              "Welche Gefahr und welche Schutzmaßnahme gehören zum Piktogramm ‚Explodierende Bombe‘ (GHS01)?",
+              "Explosionsgefährlicher Stoff — Schlag, Reibung, Funken und Erwärmung unbedingt vermeiden.",
+              ["Unter Druck stehendes Kühlgas — im Wasserbad erwärmen.", "Harmloser Feststoff — kräftig im Mörser zerreiben."],
+              "GHS01 kennzeichnet explosive bzw. instabile Stoffe, die schon durch Stoß, Reibung oder Hitze heftig reagieren können.",
+              "Wodurch können instabile, explosionsgefährliche Stoffe ausgelöst werden?",
+            ),
           ],
           [
+            cc(
+              "Eine Druckgasflasche für Sauerstoff oder Kohlenstoffdioxid trägt das Piktogramm ‚Gasflasche‘ (GHS04). Wie wird sie im Vorbereitungsraum sicher gelagert?",
+              "Mit Kette oder Schelle gegen Umfallen sichern und vor Sonneneinstrahlung sowie starker Erwärmung schützen.",
+              ["Liegend direkt vor der Heizung lagern, damit das Gas leichter ausströmt.", "Das Ventil abschlagen, um den Innendruck zu senken."],
+              "GHS04 warnt vor Gasen unter Druck, die beim Erwärmen bersten können; umstürzende Stahlflaschen wirken bei abgerissenem Ventil wie Geschosse.",
+              "Was passiert mit dem Druck eines eingeschlossenen Gases beim Erhitzen?",
+            ),
             cc(
               "Du sollst mit verdünnter Natronlauge (GHS05) experimentieren. Ein Mitschüler setzt die Schutzbrille ab, weil sein eigener Brenner schon aus ist. Wie reagierst du fachgerecht?",
               "Die Schutzbrille bleibt auf, solange irgendwo im Raum mit Chemikalien gearbeitet oder aufgeräumt wird.",

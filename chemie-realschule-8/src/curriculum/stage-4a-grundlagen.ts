@@ -210,14 +210,14 @@ export const REAKTION_LESSONS_A: Lesson[] = [
   lesson(stageId, 3, {
     id: "ch-wasser-analyse-synthese",
     title: "Analyse, Synthese und Reversibilität am Beispiel Wasser",
-    subtitle: "Hofmannscher Wasserzersetzungsapparat, Diiodpentaoxid und Knallgasreaktion",
+    subtitle: "Hofmannscher Wasserzersetzungsapparat, Diiodpentoxid und Knallgasreaktion",
     bindings: { I: 4 },
     why: "Das Volumenverhältnis 2 : 1 bei der Wasserelektrolyse macht die unsichtbare Molekülformel H₂O im Messrohr direkt ablesbar!",
-    html: "<p>Zwei Grundtypen chemischer Reaktionen kehren einander um: Bei einer <strong>Analyse (Zerlegung)</strong> wird eine Verbindung in Elemente oder einfachere Verbindungen gespalten; bei einer <strong>Synthese (Bildung)</strong> vereinigen sich Elemente (oder einfachere Stoffe) zu einer Verbindung.</p><p>Im <strong>Hofmannschen Wasserzersetzungsapparat</strong> zerlegt Gleichstrom angesäuertes Wasser (endotherme Analyse): Am Minuspol (Kathode) entsteht <strong>Wasserstoff (H<sub>2</sub>)</strong>, am Pluspol (Anode) <strong>Sauerstoff (O<sub>2</sub>)</strong> — und zwar exakt im <strong>Volumenverhältnis V(H<sub>2</sub>) : V(O<sub>2</sub>) = 2 : 1</strong>! Da gleiche Gasvolumina bei gleichem Druck und gleicher Temperatur gleich viele Moleküle enthalten, entstehen doppelt so viele H<sub>2</sub>-Moleküle wie O<sub>2</sub>-Moleküle — das bestätigt die Molekülformel <strong>H<sub>2</sub>O</strong>: <strong>2 H<sub>2</sub>O → 2 H<sub>2</sub> + O<sub>2</sub></strong>. Eine zweite klassische Analyse ist die thermische Zerlegung (Thermolyse) von weißem <strong>Diiodpentaoxid</strong> im Reagenzglas zu violettem Ioddampf und Sauerstoff: <strong>2 I<sub>2</sub>O<sub>5</sub> → 2 I<sub>2</sub> + 5 O<sub>2</sub></strong>. Umgekehrt liefert die stark exotherme <strong>Synthese von Wasser</strong> (<strong>2 H<sub>2</sub> + O<sub>2</sub> → 2 H<sub>2</sub>O</strong>) oder von Kohlenstoffdioxid (<strong>C + O<sub>2</sub> → CO<sub>2</sub></strong>) wieder die Verbindung: Chemische Reaktionen sind grundsätzlich <strong>umkehrbar (reversibel)</strong>.</p><div class=\"example\"><strong>Beispiel:</strong> Sammeln sich bei der Wasserelektrolyse 36 ml Wasserstoff am Minuspol, so befinden sich am Pluspol gleichzeitig genau 18 ml Sauerstoff (Verhältnis 36 : 18 = 2 : 1).</div>",
+    html: "<p>Zwei Grundtypen chemischer Reaktionen kehren einander um: Bei einer <strong>Analyse (Zerlegung)</strong> wird eine Verbindung in Elemente oder einfachere Verbindungen gespalten; bei einer <strong>Synthese (Bildung)</strong> vereinigen sich Elemente (oder einfachere Stoffe) zu einer Verbindung.</p><p>Im <strong>Hofmannschen Wasserzersetzungsapparat</strong> zerlegt Gleichstrom angesäuertes Wasser (endotherme Analyse): Am Minuspol (Kathode) entsteht <strong>Wasserstoff (H<sub>2</sub>)</strong>, am Pluspol (Anode) <strong>Sauerstoff (O<sub>2</sub>)</strong> — und zwar exakt im <strong>Volumenverhältnis V(H<sub>2</sub>) : V(O<sub>2</sub>) = 2 : 1</strong>! Da gleiche Gasvolumina bei gleichem Druck und gleicher Temperatur gleich viele Moleküle enthalten, entstehen doppelt so viele H<sub>2</sub>-Moleküle wie O<sub>2</sub>-Moleküle — das bestätigt die Molekülformel <strong>H<sub>2</sub>O</strong>: <strong>2 H<sub>2</sub>O → 2 H<sub>2</sub> + O<sub>2</sub></strong>. Eine zweite klassische Analyse ist die thermische Zerlegung (Thermolyse) von weißem <strong>Diiodpentoxid</strong> im Reagenzglas zu violettem Ioddampf und Sauerstoff: <strong>2 I<sub>2</sub>O<sub>5</sub> → 2 I<sub>2</sub> + 5 O<sub>2</sub></strong>. Umgekehrt liefert die stark exotherme <strong>Synthese von Wasser</strong> (<strong>2 H<sub>2</sub> + O<sub>2</sub> → 2 H<sub>2</sub>O</strong>) oder von Kohlenstoffdioxid (<strong>C + O<sub>2</sub> → CO<sub>2</sub></strong>) wieder die Verbindung: Chemische Reaktionen sind grundsätzlich <strong>umkehrbar (reversibel)</strong>.</p><div class=\"example\"><strong>Beispiel:</strong> Sammeln sich bei der Wasserelektrolyse 36 ml Wasserstoff am Minuspol, so befinden sich am Pluspol gleichzeitig genau 18 ml Sauerstoff (Verhältnis 36 : 18 = 2 : 1).</div>",
     rule: "Analyse: Verbindung → Elemente (z. B. 2 H<sub>2</sub>O → 2 H<sub>2</sub> + O<sub>2</sub>, V(H<sub>2</sub>) : V(O<sub>2</sub>) = 2 : 1) · Synthese: Elemente → Verbindung (Umkehrreaktion, reversibel)",
     terms: [
       ["Wasseranalyse (Elektrolyse)", "2 H<sub>2</sub>O → 2 H<sub>2</sub> + O<sub>2</sub> (endotherm)", "V(H<sub>2</sub>) : V(O<sub>2</sub>) = 2 : 1 bestätigt H<sub>2</sub>O"],
-      ["Thermolyse Diiodpentaoxid", "2 I<sub>2</sub>O<sub>5</sub> → 2 I<sub>2</sub> + 5 O<sub>2</sub> (endotherm)", "violetter Ioddampf + positive Glimmspanprobe"],
+      ["Thermolyse Diiodpentoxid", "2 I<sub>2</sub>O<sub>5</sub> → 2 I<sub>2</sub> + 5 O<sub>2</sub> (endotherm)", "violetter Ioddampf + positive Glimmspanprobe"],
       ["Synthese & Reversibilität", "2 H<sub>2</sub> + O<sub>2</sub> → 2 H<sub>2</sub>O · C + O<sub>2</sub> → CO<sub>2</sub>", "Analyse und Synthese sind Umkehrreaktionen"],
     ],
     quiz: [
@@ -281,10 +281,10 @@ export const REAKTION_LESSONS_A: Lesson[] = [
         "analyse-synthese",
         [
           cc(
-            "Was beobachtest du beim kräftigen Erhitzen von weißem Diiodpentaoxid (I₂O₅) im Reagenzglas, und welcher Reaktionstyp liegt vor?",
+            "Was beobachtest du beim kräftigen Erhitzen von weißem Diiodpentoxid (I₂O₅) im Reagenzglas, und welcher Reaktionstyp liegt vor?",
             "Es steigt violetter Ioddampf auf und ein glimmender Span flammt auf (Sauerstoff) — es ist eine thermische Analyse (2 I₂O₅ → 2 I₂ + 5 O₂).",
             ["Das weiße Pulver verwandelt sich in flüssiges Eisen — eine Synthese.", "Es entsteht nur Wasserdampf ohne Farbänderung."],
-            "Diiodpentaoxid zerfällt beim Erhitzen endotherm in die beiden Elemente Iod und Sauerstoff.",
+            "Diiodpentoxid zerfällt beim Erhitzen endotherm in die beiden Elemente Iod und Sauerstoff.",
             "Zerlegung einer Verbindung durch Wärme = Thermolyse (Analyse).",
           ),
           cc(
@@ -362,9 +362,9 @@ export const REAKTION_LESSONS_A: Lesson[] = [
               ],
             };
           }
-          // Level 2: Lavoisier-Massenbilanz an einer Molekül- oder Metalloxidreaktion
-          const mMetal = round(rng.int(12, 48) * 0.5, 1);
-          const mOxide = round(mMetal * 1.4, 1);
+          // Level 2: Lavoisier-Massenbilanz an der stöchiometrischen Kupfer(II)-oxid-Bildung (M(CuO)/M(Cu) ≈ 1,25)
+          const mMetal = round(rng.int(4, 16) * 2, 1);
+          const mOxide = round(mMetal * 1.25, 1);
           const mOxygen = round(mOxide - mMetal, 1);
           return {
             prompt: `In einem geschlossenen Kolben verbrennen m(Metall) = ${fmt(mMetal, 1)} g Kupfer vollständig mit Sauerstoff zu genau m(Oxid) = ${fmt(mOxide, 1)} g schwarzem Kupfer(II)-oxid. Welche Masse m(O<sub>2</sub>) an Sauerstoff wurde bei dieser Reaktion chemisch gebunden?`,

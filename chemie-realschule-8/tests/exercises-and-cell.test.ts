@@ -8,13 +8,16 @@ import {
   isLessonComplete,
   isStageComplete,
   loadLearnerProgress,
+  mergeLearnerProgress,
   overallStats,
+  resetLearnerProgress,
   saveLearnerProgress,
 } from "../src/storage/progress";
 import { lessonLink, parseTrainingDeepLink, ZAM_CELL_ID } from "../src/zam/zam-link";
 import { LESSON_IDS } from "./lesson-ids";
 import legacyReaktion from "./fixtures/de-by-realschule-8-chemie-chemische-reaktion-oxidation-kvt.json";
 import legacyStoffe from "./fixtures/de-by-realschule-8-chemie-stoffe-stoffgemische-trennung-kvt.json";
+import contract from "./fixtures/public-contract.json";
 
 function must<T>(value: T | undefined | null, label = "expected value"): T {
   if (value === undefined || value === null) throw new Error(label);
@@ -136,6 +139,19 @@ describe("All 64 exercise generators across varied seeds and both levels", () =>
         "ch-isotopie-molare-masse",
       ]),
     );
+    const cuoGen = must(
+      findLessonById("ch-massenerhaltung-gleichungen")?.lesson.exercises.find(
+        (g) => g.id === "massenerhaltung-koeffizienten",
+      ),
+    );
+    for (let seed = 0; seed < 20; seed++) {
+      const task = cuoGen.make(createRng(seedFrom(`cuo:${seed}`)), 2);
+      const nums = [...task.prompt.matchAll(/(\d+(?:,\d+)?) g/g)].map((m) =>
+        Number(m[1].replace(",", ".")),
+      );
+      expect(nums).toHaveLength(2);
+      expect(nums[1] / nums[0]).toBeCloseTo(1.25, 5);
+    }
   });
 });
 
@@ -172,6 +188,46 @@ describe("Learner progress persistence", () => {
     memory.set("chemie_rs8_academy_progress_v1", "{corrupt");
     expect(loadLearnerProgress().activeLessonId).toBe("ch-gefahrstoffe-sicherheit");
   });
+
+  it("merges concurrent progress across open browser tabs without overwriting newer completions", () => {
+    const tabA = loadLearnerProgress();
+    const tabB = loadLearnerProgress();
+
+    tabA.quizDone.push("ch-gefahrstoffe-sicherheit");
+    tabA.labGoals["ch-gefahrstoffe-sicherheit"] = ["case-0", "case-1"];
+    tabA.solved["ch-gefahrstoffe-sicherheit"] = { 1: 3, 2: 0 };
+    tabA.attempts["ch-gefahrstoffe-sicherheit"] = 4;
+    saveLearnerProgress(tabA);
+
+    // Tab B still holds its older initial snapshot and now completes work in another lesson (plus an extra goal).
+    tabB.activeLessonId = "ch-luft-linde";
+    tabB.difficultyLevel = 2;
+    tabB.quizDone.push("ch-luft-linde");
+    tabB.labGoals["ch-gefahrstoffe-sicherheit"] = ["case-2"];
+    tabB.labGoals["ch-luft-linde"] = ["li-1"];
+    tabB.solved["ch-gefahrstoffe-sicherheit"] = { 1: 1, 2: 2 };
+    tabB.solved["ch-luft-linde"] = { 1: 0, 2: 1 };
+    tabB.attempts["ch-gefahrstoffe-sicherheit"] = 2;
+    saveLearnerProgress(tabB);
+
+    const reload = loadLearnerProgress();
+    expect(reload.activeLessonId).toBe("ch-luft-linde");
+    expect(reload.difficultyLevel).toBe(2);
+    expect(reload.quizDone).toEqual(["ch-gefahrstoffe-sicherheit", "ch-luft-linde"]);
+    expect(reload.labGoals["ch-gefahrstoffe-sicherheit"]).toEqual(["case-0", "case-1", "case-2"]);
+    expect(reload.labGoals["ch-luft-linde"]).toEqual(["li-1"]);
+    expect(reload.solved["ch-gefahrstoffe-sicherheit"]).toEqual({ 1: 3, 2: 2 });
+    expect(reload.solved["ch-luft-linde"]).toEqual({ 1: 0, 2: 1 });
+    expect(reload.attempts["ch-gefahrstoffe-sicherheit"]).toBe(4);
+    expect(mergeLearnerProgress(tabA, tabB).solved["ch-gefahrstoffe-sicherheit"]).toEqual({
+      1: 3,
+      2: 2,
+    });
+
+    const cleared = resetLearnerProgress();
+    expect(cleared.quizDone).toEqual([]);
+    expect(loadLearnerProgress().solved).toEqual({});
+  });
 });
 
 describe("ZAM cell and unapproved migration proposal", () => {
@@ -181,8 +237,13 @@ describe("ZAM cell and unapproved migration proposal", () => {
     expect(atoms).toHaveLength(32);
     expect(items).toHaveLength(66);
     const ids = [...atoms.map((a) => a.id), ...items.map((i) => i.id)];
-    expect(new Set(ids).size).toBe(ids.length);
+    expect(new Set(ids).size).toBe(98);
     for (const id of ids) expect(id).toMatch(/^[0-7][0-9A-HJKMNP-TV-Z]{25}$/);
+    expect(ALL_LESSONS.map((l) => l.id)).toEqual(contract.lessons);
+    expect([...ids].sort()).toEqual(Object.values(contract.ids).sort());
+    expect(new Set(ids.map((id) => id.slice(10))).size).toBe(98);
+    expect(new Set(ids.map((id) => id.slice(10, 20))).size).toBe(98);
+    expect(ids).not.toEqual([...ids].sort());
     expect(new Set(items.map((i) => i.slug)).size).toBe(items.length);
     expect(new Set(atoms.map((a) => a.source_link))).toEqual(
       new Set(LESSON_IDS.map((id) => lessonLink(id))),

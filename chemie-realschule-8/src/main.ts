@@ -85,6 +85,18 @@ class ChemieApp {
         window.scrollTo({ top: 0 });
       }
     });
+    window.addEventListener("storage", (event) => {
+      if (event.key !== "chemie_rs8_academy_progress_v1") return;
+      const incoming = loadLearnerProgress();
+      this.progress = {
+        ...incoming,
+        activeLessonId: this.progress.activeLessonId,
+        difficultyLevel: this.progress.difficultyLevel,
+        trackFilter: this.progress.trackFilter,
+      };
+      this.syncHeader();
+      if (this.view === "path") this.render();
+    });
   }
 
   /** Opens the lesson a ZAM card cites (`#lesson=<id>`, optionally `&level=2`). */

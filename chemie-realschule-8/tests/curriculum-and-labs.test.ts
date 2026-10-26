@@ -9,6 +9,8 @@ import {
   binaryMoleculeFormula,
   binaryNonmetalName,
   CATIONS,
+  ELEMENT_SYSTEM,
+  elementStateAt,
   heatingCurveTemp,
   kugelwolkenConfig,
   lindeFractionation,
@@ -21,6 +23,8 @@ import {
   saltName,
   saltRatio,
   stateOfMatter,
+  sub,
+  supNum,
   valenceElectrons,
 } from "../src/chemistry/model";
 import {
@@ -136,6 +140,18 @@ describe("Chemie 8 domain models: scientific invariants", () => {
     expect(stateOfMatter(water, 120)).toBe("gasförmig");
     expect(stateOfMatter(iodine, 100)).toBe("fest");
     expect(stateOfMatter(iodine, 120)).toBe("gasförmig");
+    const iodineEntry = must(ELEMENT_SYSTEM.find((e) => e.symbol === "I₂"));
+    expect(elementStateAt(iodineEntry, 100)).toBe("fest");
+    expect(elementStateAt(iodineEntry, 114)).toBe("gasförmig");
+    expect(elementStateAt(iodineEntry, 120)).toBe("gasförmig");
+    expect(elementStateAt(iodineEntry, 140)).toBe("gasförmig");
+    const ekLab = must(findLessonById("ch-dalton-elementklassen")).lesson.lab;
+    const iodineIdx = ELEMENT_SYSTEM.findIndex((e) => e.symbol === "I₂");
+    const ekReadouts = computeReadouts(ekLab, { element: iodineIdx, temp: 120 });
+    expect(ekReadouts.state).toBe("gasförmig");
+    expect(labView("elementklassen").render({ element: iodineIdx, temp: 120 }, ekReadouts)).toContain(
+      "Zustand: gasförmig",
+    );
     expect(lindeFractionation(-200)).toMatchObject({ n2: "flüssig", ar: "flüssig", o2: "flüssig" });
     expect(lindeFractionation(-190)).toMatchObject({ n2: "gasförmig", ar: "flüssig", o2: "flüssig" });
     expect(lindeFractionation(-184)).toMatchObject({ n2: "gasförmig", ar: "gasförmig", o2: "flüssig" });
@@ -143,10 +159,16 @@ describe("Chemie 8 domain models: scientific invariants", () => {
   });
 
   it("computes reduced ratios and IUPAC names for binary nonmetal molecules and binary salts", () => {
+    expect(supNum(1234567890)).toBe("¹²³⁴⁵⁶⁷⁸⁹⁰");
+    expect(`${supNum(7)}Li`).toBe("⁷Li");
+    expect(`${supNum(27)}Al`).toBe("²⁷Al");
+    expect(sub(2)).toBe("₂");
     expect(moleculeRatio(4, 2)).toEqual([1, 2]);
     expect(binaryMoleculeFormula("C", 1, "O", 2)).toBe("CO₂");
+    expect(binaryNonmetalName("Kohlenstoff", 1, "oxid", 1)).toBe("Kohlenstoffmonoxid");
     expect(binaryNonmetalName("Kohlenstoff", 1, "oxid", 2)).toBe("Kohlenstoffdioxid");
-    expect(binaryNonmetalName("Stickstoff", 2, "oxid", 5)).toBe("Distickstoffpentaoxid");
+    expect(binaryNonmetalName("Stickstoff", 2, "oxid", 5)).toBe("Distickstoffpentoxid");
+    expect(binaryNonmetalName("Silicium", 1, "chlorid", 4)).toBe("Siliciumtetrachlorid");
     const fe3 = must(CATIONS.find((c) => c.symbol === "Fe" && c.charge === 3));
     const al3 = must(CATIONS.find((c) => c.symbol === "Al"));
     const o2 = must(ANIONS.find((a) => a.symbol === "O"));
@@ -169,8 +191,14 @@ describe("Chemie 8 domain models: scientific invariants", () => {
     expect(alkaneMolarMass(4)).toBe(58);
     expect(alkaneCombustion(1, 2).equation).toBe("CH₄ + 2 O₂ → CO₂ + 2 H₂O");
     expect(alkaneCombustion(2, 2).equation).toBe("2 C₂H₆ + 7 O₂ → 4 CO₂ + 6 H₂O");
-    expect(alkaneCombustion(3, 1).mainCarbonProduct).toContain("CO");
+    expect(alkaneCombustion(3, 1).mainCarbonProduct).toContain("Kohlenstoffmonoxid");
     expect(alkaneCombustion(3, 0).mainCarbonProduct).toContain("Ruß");
+    expect(must(PSE_ELEMENTS.find((e) => e.symbol === "Al")).flameColor).toBe("keine charakteristische");
+    expect(must(PSE_ELEMENTS.find((e) => e.symbol === "P")).flameColor).toBe("keine charakteristische");
+    const ghsLesson = must(findLessonById("ch-gefahrstoffe-sicherheit")).lesson;
+    for (let n = 1; n <= 9; n++) {
+      expect(ghsLesson.explanationHtml + JSON.stringify(ghsLesson.formulas)).toContain(`GHS0${n}`);
+    }
     const he = must(PSE_ELEMENTS.find((e) => e.symbol === "He"));
     expect(he.hauptgruppe).toBe(8);
     expect(valenceElectrons(he)).toBe(2);

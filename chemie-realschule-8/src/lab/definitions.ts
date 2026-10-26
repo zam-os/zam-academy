@@ -10,6 +10,7 @@ import {
   binaryNonmetalName,
   CATIONS,
   ELEMENT_SYSTEM,
+  elementStateAt,
   EQUATION_REACTIONS,
   fmtSigned,
   fmtTemp,
@@ -492,7 +493,7 @@ export function makeLab(kind: LabKind): LabDefinition {
           read("kind", "Stoffklasse", (v) => ELEMENT_SYSTEM[v.element].kind),
           read("state", "Aggregatzustand bei ϑ", (v) => {
             const el = ELEMENT_SYSTEM[v.element];
-            return v.temp < el.mp ? "fest" : v.temp < el.bp ? "flüssig" : "gasförmig";
+            return elementStateAt(el, v.temp);
           }),
           read("props", "Dichte und Leitfähigkeit", (v) => {
             const el = ELEMENT_SYSTEM[v.element];
@@ -742,12 +743,12 @@ export function makeLab(kind: LabKind): LabDefinition {
     case "hofmann":
       return lab(
         kind,
-        "Analyse und Synthese: Wasser und Diiodpentaoxid",
-        "Untersuche das Volumenverhältnis 2 : 1 im Hofmannschen Wasserzersetzungsapparat, die Thermolyse von Diiodpentaoxid und die Umkehrreaktion.",
+        "Analyse und Synthese: Wasser und Diiodpentoxid",
+        "Untersuche das Volumenverhältnis 2 : 1 im Hofmannschen Wasserzersetzungsapparat, die Thermolyse von Diiodpentoxid und die Umkehrreaktion.",
         [
           choice("reaction", "Versuch", [
             "Elektrolyse von Wasser (Hofmann-Apparat)",
-            "Thermische Analyse von Diiodpentaoxid (2 I₂O₅ → 2 I₂ + 5 O₂)",
+            "Thermische Analyse von Diiodpentoxid (2 I₂O₅ → 2 I₂ + 5 O₂)",
             "Synthese von Wasser aus Knallgas (2 H₂ + O₂ → 2 H₂O)",
           ], 0),
           range("amount", "Umgesetzter Fortschritt", 0, 30, 0, 5, "Einheiten"),
@@ -768,7 +769,7 @@ export function makeLab(kind: LabKind): LabDefinition {
         ],
         [
           goal("hf-1", "Zersetze Wasser im Hofmann-Apparat bis mindestens 20 ml H₂ und 10 ml O₂ (2 : 1) vorliegen", (v) => v.reaction === 0 && v.amount >= 10),
-          goal("hf-2", "Führe die thermische Analyse von Diiodpentaoxid durch", (v) => v.reaction === 1 && v.amount >= 10),
+          goal("hf-2", "Führe die thermische Analyse von Diiodpentoxid durch", (v) => v.reaction === 1 && v.amount >= 10),
           goal("hf-3", "Kehre die Wasseranalyse durch die exotherme Wassersynthese um", (v) => v.reaction === 2 && v.amount >= 10),
         ],
       );
@@ -809,7 +810,7 @@ export function makeLab(kind: LabKind): LabDefinition {
         [
           goal("gw-1", "Gleiche die Wassersynthese 2 H₂ + O₂ → 2 H₂O aus", (v) => v.rx === 0 && v.a === 2 && v.b === 1 && v.c === 2),
           goal("gw-2", "Gleiche die Aluminiumverbrennung 4 Al + 3 O₂ → 2 Al₂O₃ aus", (v) => v.rx === 2 && v.a === 4 && v.b === 3 && v.c === 2),
-          goal("gw-3", "Gleiche die Diiodpentaoxid-Analyse 2 I₂O₅ → 2 I₂ + 5 O₂ aus", (v) => v.rx === 3 && v.a === 2 && v.b === 5 && v.c === 2),
+          goal("gw-3", "Gleiche die Diiodpentoxid-Analyse 2 I₂O₅ → 2 I₂ + 5 O₂ aus", (v) => v.rx === 3 && v.a === 2 && v.b === 5 && v.c === 2),
         ],
       );
 
@@ -976,7 +977,7 @@ export function makeLab(kind: LabKind): LabDefinition {
         ],
         [
           goal("av-1", "Untersuche Propan (C₃H₈) bei vollständiger Verbrennung zu CO₂ und H₂O", (v) => v.n === 3 && v.oxygen === 2),
-          goal("av-2", "Stelle eingeschränkte Luftzufuhr ein: Bildung von giftigem Kohlenstoffmonooxid (CO)", (v) => v.oxygen === 1),
+          goal("av-2", "Stelle eingeschränkte Luftzufuhr ein: Bildung von giftigem Kohlenstoffmonoxid (CO)", (v) => v.oxygen === 1),
           goal("av-3", "Beobachte bei Butan (C₄H₁₀) unter starkem O₂-Mangel die rußende Flamme", (v) => v.n === 4 && v.oxygen === 0),
         ],
       );
@@ -985,14 +986,14 @@ export function makeLab(kind: LabKind): LabDefinition {
       return lab(
         kind,
         "Abgasstrang: Drei-Wege-Katalysator und Partikelfilter",
-        "Prüfe den Einfluss der Betriebstemperatur sowie von Abgaskatalysator und Partikelfilter auf Kohlenstoffmonooxid (CO) und Ruß (C).",
+        "Prüfe den Einfluss der Betriebstemperatur sowie von Abgaskatalysator und Partikelfilter auf Kohlenstoffmonoxid (CO) und Ruß (C).",
         [
           range("temp", "Abgastemperatur ϑ", 100, 500, 100, 100, "°C"),
           choice("kat", "Abgaskatalysator", ["Ohne Katalysator", "Mit Drei-Wege-Katalysator (Pt/Rh-Waben)"], 0),
           choice("filter", "Partikelfilter", ["Ohne Partikelfilter", "Mit Wandstrom-Partikelfilter"], 0),
         ],
         [
-          read("co", "Kohlenstoffmonooxid (CO)", (v) => {
+          read("co", "Kohlenstoffmonoxid (CO)", (v) => {
             if (v.kat === 0) return "Unverändert hoch im Abgas (Atemgift!)";
             if (v.temp < 300) return "Kaltstart (< 300 °C): Katalysator erreicht noch nicht den vollen Umsatz";
             return "Zu über 95 % an der Edelmetalloberfläche zu CO₂ umgesetzt (2 CO + O₂ → 2 CO₂)";

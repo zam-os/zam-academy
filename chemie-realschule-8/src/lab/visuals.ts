@@ -4,6 +4,7 @@ import {
   alkaneFormula,
   averageMolarMass,
   ELEMENT_SYSTEM,
+  elementStateAt,
   EQUATION_REACTIONS,
   fmtSigned,
   fmtTemp,
@@ -255,7 +256,7 @@ function draw(kind: LabKind, v: LabValues, _r: ReadoutValues): string {
 
     case "elementklassen": {
       const el = ELEMENT_SYSTEM[v.element];
-      const st = v.temp < el.mp ? "fest" : v.temp < el.bp ? "flüssig" : "gasförmig";
+      const st = elementStateAt(el, v.temp);
       const color = el.kind === "Metall" ? "lab-fill-b" : "lab-fill-a";
       let atoms = "";
       for (let i = 0; i < 6; i++) {

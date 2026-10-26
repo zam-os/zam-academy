@@ -1,7 +1,7 @@
 import { fmt, gcd, MINUS, round } from "../exercises/format";
 
 const SUB = "₀₁₂₃₄₅₆₇₈₉";
-const SUP = "⁰¹²³⁴⁵⁶₇⁸⁹";
+const SUP = "⁰¹²³⁴⁵⁶⁷⁸⁹";
 
 export function sub(n: number): string {
   return n <= 1
@@ -181,9 +181,10 @@ export interface ElementEntry {
   symbol: string;
   name: string;
   kind: "Metall" | "Nichtmetall";
-  density: number; // g/cm³ (bei Gasen in g/l angegeben? Nein: einheitlich g/cm³ bzw. Hinweis)
+  density: number; // g/cm³
   mp: number;
   bp: number;
+  sublimates?: boolean;
   conductive: boolean;
   appearance: string;
 }
@@ -196,8 +197,15 @@ export const ELEMENT_SYSTEM: readonly ElementEntry[] = [
   { symbol: "S", name: "Schwefel", kind: "Nichtmetall", density: 2.07, mp: 115, bp: 445, conductive: false, appearance: "gelber, spröder Feststoff" },
   { symbol: "C", name: "Kohlenstoff (Graphit)", kind: "Nichtmetall", density: 2.26, mp: 3650, bp: 4200, conductive: true, appearance: "grauschwarz, leitet als Nichtmetall-Ausnahme" },
   { symbol: "Br₂", name: "Brom", kind: "Nichtmetall", density: 3.12, mp: -7, bp: 59, conductive: false, appearance: "rotbraune Flüssigkeit" },
-  { symbol: "I₂", name: "Iod", kind: "Nichtmetall", density: 4.93, mp: 114, bp: 184, conductive: false, appearance: "grauschwarze, violett glänzende Kristalle" },
+  { symbol: "I₂", name: "Iod", kind: "Nichtmetall", density: 4.93, mp: 114, bp: 114, sublimates: true, conductive: false, appearance: "grauschwarze, violett glänzende Kristalle (sublimiert ab 114 °C)" },
 ];
+
+export function elementStateAt(el: ElementEntry, tempC: number): "fest" | "flüssig" | "gasförmig" {
+  if (el.sublimates) {
+    return tempC < el.mp ? "fest" : "gasförmig";
+  }
+  return tempC < el.mp ? "fest" : tempC < el.bp ? "flüssig" : "gasförmig";
+}
 
 export interface NonmetalAtom {
   symbol: string;
@@ -246,7 +254,11 @@ export function binaryNonmetalName(
   secondCount: number,
 ): string {
   const p1 = firstCount > 1 ? (GREEK_NUMERALS[firstCount] ?? String(firstCount)) : "";
-  const p2 = GREEK_NUMERALS[secondCount] ?? String(secondCount);
+  const rawP2 = GREEK_NUMERALS[secondCount] ?? String(secondCount);
+  const p2 =
+    secondStem.startsWith("o") && (rawP2.endsWith("a") || rawP2.endsWith("o"))
+      ? rawP2.slice(0, -1)
+      : rawP2;
   const firstPart = p1 ? `${p1[0].toUpperCase()}${p1.slice(1)}${firstName.toLowerCase()}` : firstName;
   return `${firstPart}${p2}${secondStem}`;
 }
@@ -356,7 +368,7 @@ export const EQUATION_REACTIONS: readonly BalancedReaction[] = [
     ],
   },
   {
-    title: "Thermolyse von Diiodpentaoxid",
+    title: "Thermolyse von Diiodpentoxid",
     leftFormulas: ["I₂", "O₂"],
     rightFormula: "I₂O₅",
     target: [2, 5, 2],
@@ -507,12 +519,12 @@ export function alkaneCombustion(
     };
   }
   if (oxygenSupply === 1) {
-    // Unvollständige Verbrennung zu Kohlenstoffmonooxid: C_n H_{2n+2} + (2n+1)/2 O_2 -> n CO + (n+1) H_2O
+    // Unvollständige Verbrennung zu Kohlenstoffmonoxid: C_n H_{2n+2} + (2n+1)/2 O_2 -> n CO + (n+1) H_2O
     const fO2 = 2 * n + 1;
     return {
       mode: "unvollständige Verbrennung (Sauerstoffmangel)",
       flame: "gelblich-bläulich, giftiges Abgas",
-      mainCarbonProduct: "Kohlenstoffmonooxid (CO, Atemgift!)",
+      mainCarbonProduct: "Kohlenstoffmonoxid (CO, Atemgift!)",
       equation: `2 ${alkane} + ${fO2} O₂ → ${2 * n} CO + ${2 * (n + 1)} H₂O`,
     };
   }
@@ -558,9 +570,9 @@ export const PSE_ELEMENTS: readonly PseElement[] = [
   { z: 10, symbol: "Ne", name: "Neon", massNumber: 20, period: 2, hauptgruppe: 8, shells: [2, 8], kind: "Edelgas", flameColor: "keine charakteristische", ionCharge: 0 },
   { z: 11, symbol: "Na", name: "Natrium", massNumber: 23, period: 3, hauptgruppe: 1, shells: [2, 8, 1], kind: "Metall", flameColor: "gelb-orange", ionCharge: 1 },
   { z: 12, symbol: "Mg", name: "Magnesium", massNumber: 24, period: 3, hauptgruppe: 2, shells: [2, 8, 2], kind: "Metall", flameColor: "weiß blendend (Verbrennung)", ionCharge: 2 },
-  { z: 13, symbol: "Al", name: "Aluminium", massNumber: 27, period: 3, hauptgruppe: 3, shells: [2, 8, 3], kind: "Metall", flameColor: "silbrig funkelnd", ionCharge: 3 },
+  { z: 13, symbol: "Al", name: "Aluminium", massNumber: 27, period: 3, hauptgruppe: 3, shells: [2, 8, 3], kind: "Metall", flameColor: "keine charakteristische", ionCharge: 3 },
   { z: 14, symbol: "Si", name: "Silicium", massNumber: 28, period: 3, hauptgruppe: 4, shells: [2, 8, 4], kind: "Halbmetall", flameColor: "keine charakteristische", ionCharge: null },
-  { z: 15, symbol: "P", name: "Phosphor", massNumber: 31, period: 3, hauptgruppe: 5, shells: [2, 8, 5], kind: "Nichtmetall", flameColor: "fahlgrünlich", ionCharge: -3 },
+  { z: 15, symbol: "P", name: "Phosphor", massNumber: 31, period: 3, hauptgruppe: 5, shells: [2, 8, 5], kind: "Nichtmetall", flameColor: "keine charakteristische", ionCharge: -3 },
   { z: 16, symbol: "S", name: "Schwefel", massNumber: 32, period: 3, hauptgruppe: 6, shells: [2, 8, 6], kind: "Nichtmetall", flameColor: "bläulich (Verbrennung)", ionCharge: -2 },
   { z: 17, symbol: "Cl", name: "Chlor", massNumber: 35, period: 3, hauptgruppe: 7, shells: [2, 8, 7], kind: "Nichtmetall", flameColor: "keine charakteristische", ionCharge: -1 },
   { z: 18, symbol: "Ar", name: "Argon", massNumber: 40, period: 3, hauptgruppe: 8, shells: [2, 8, 8], kind: "Edelgas", flameColor: "keine charakteristische", ionCharge: 0 },

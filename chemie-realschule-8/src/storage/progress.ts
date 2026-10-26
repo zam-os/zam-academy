@@ -43,11 +43,13 @@ const isStringArray = (value: unknown): value is string[] =>
 const count = (value: unknown): number =>
   typeof value === "number" && Number.isSafeInteger(value) && value >= 0 ? value : 0;
 
-export function loadLearnerProgress(): LearnerProgress {
+const uniqueStrings = (a: readonly string[], b: readonly string[]): string[] =>
+  Array.from(new Set([...a, ...b]));
+
+function parseLearnerProgress(raw: string | null): LearnerProgress | null {
+  if (!raw) return null;
   const base = defaults();
   try {
-    const raw = localStorage.getItem(STORAGE_KEY);
-    if (!raw) return base;
     const parsed = JSON.parse(raw) as Partial<LearnerProgress>;
     const labGoals: Record<string, string[]> = {};
     if (parsed.labGoals && typeof parsed.labGoals === "object") {
@@ -86,21 +88,70 @@ export function loadLearnerProgress(): LearnerProgress {
         : [],
     };
   } catch {
-    return base;
+    return null;
   }
 }
 
-export function saveLearnerProgress(progress: LearnerProgress): void {
+export function mergeLearnerProgress(
+  stored: LearnerProgress,
+  incoming: LearnerProgress,
+): LearnerProgress {
+  const labGoals: Record<string, string[]> = {};
+  for (const key of uniqueStrings(Object.keys(stored.labGoals), Object.keys(incoming.labGoals))) {
+    labGoals[key] = uniqueStrings(stored.labGoals[key] ?? [], incoming.labGoals[key] ?? []);
+  }
+  const solved: Record<string, { 1: number; 2: number }> = {};
+  for (const key of uniqueStrings(Object.keys(stored.solved), Object.keys(incoming.solved))) {
+    solved[key] = {
+      1: Math.max(stored.solved[key]?.[1] ?? 0, incoming.solved[key]?.[1] ?? 0),
+      2: Math.max(stored.solved[key]?.[2] ?? 0, incoming.solved[key]?.[2] ?? 0),
+    };
+  }
+  const attempts: Record<string, number> = {};
+  for (const key of uniqueStrings(Object.keys(stored.attempts), Object.keys(incoming.attempts))) {
+    attempts[key] = Math.max(stored.attempts[key] ?? 0, incoming.attempts[key] ?? 0);
+  }
+  return {
+    activeLessonId: incoming.activeLessonId,
+    difficultyLevel: incoming.difficultyLevel,
+    trackFilter: incoming.trackFilter,
+    quizDone: uniqueStrings(stored.quizDone, incoming.quizDone),
+    labGoals,
+    solved,
+    attempts,
+    celebratedStageIds: uniqueStrings(stored.celebratedStageIds, incoming.celebratedStageIds),
+    celebratedLessonIds: uniqueStrings(stored.celebratedLessonIds, incoming.celebratedLessonIds),
+  };
+}
+
+export function loadLearnerProgress(): LearnerProgress {
   try {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(progress));
+    return parseLearnerProgress(localStorage.getItem(STORAGE_KEY)) ?? defaults();
+  } catch {
+    return defaults();
+  }
+}
+
+export function saveLearnerProgress(progress: LearnerProgress): LearnerProgress {
+  try {
+    const stored = parseLearnerProgress(localStorage.getItem(STORAGE_KEY));
+    const next = stored ? mergeLearnerProgress(stored, progress) : progress;
+    Object.assign(progress, next);
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(next));
+    return next;
   } catch {
     // Storage may be full or blocked; the app keeps working in memory.
+    return progress;
   }
 }
 
 export function resetLearnerProgress(): LearnerProgress {
   const fresh = defaults();
-  saveLearnerProgress(fresh);
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(fresh));
+  } catch {
+    // Storage may be full or blocked; the app keeps working in memory.
+  }
   return fresh;
 }
 

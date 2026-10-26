@@ -22,9 +22,9 @@ auftreten, jede Lektion aus LB 2–5 exakt ihrem Lernbereich dient und jede der
 | --- | --- | --- |
 | LB 1 Wie Chemiker denken und arbeiten | integriert | 3 Leit-Lektionen (`ch-gefahrstoffe-sicherheit`, `ch-experiment-protokoll`, `ch-modelle-fachsprache`) + durchgängige Einbindung in LB 2–5 |
 | LB 2 Stoffe und ihre Eigenschaften | 14 | 6 Lektionen |
-| LB 3 Aufbau der Materie | 12 | 5 Lektionen |
-| LB 4 Chemische Reaktionen | 22 | 13 Lektionen |
-| LB 5 Atombau und Periodensystem | 8 | 5 Lektionen |
+| LB 3 Aufbau der Materie | 10 | 5 Lektionen |
+| LB 4 Chemische Reaktion | 22 | 13 Lektionen |
+| LB 5 Atombau und Periodensystem der Elemente | 10 | 5 Lektionen |
 
 ## Abgrenzung zu Chemie 9 und Chemie 10
 
@@ -36,11 +36,11 @@ auftreten, jede Lektion aus LB 2–5 exakt ihrem Lernbereich dient und jede der
 
 | LB | Kompetenzen | Zugeordnete Lektionen |
 | --- | --- | --- |
-| 1 | 11 | `ch-gefahrstoffe-sicherheit`, `ch-experiment-protokoll`, `ch-modelle-fachsprache` sowie fachintegriert in `ch-sinne-kenngroessen`, `ch-nachweisreaktionen`, `ch-trennverfahren`, `ch-teilchenverbaende`, `ch-wasser-analyse-synthese`, `ch-innere-energie-diagramm`, `ch-katalyse-oberflaeche`, `ch-stoffumsatz-rechnen`, `ch-abgaskatalysator-partikelfilter`, `ch-co2-bilanz-kohlenstoffkreislauf`, `ch-rutherford-kern-huelle`, `ch-kugelwolkenmodell` |
-| 2 | 11 | `ch-sinne-kenngroessen`, `ch-nachweisreaktionen`, `ch-reinstoffe-gemische`, `ch-teilchenmodell-phasen`, `ch-trennverfahren`, `ch-luft-linde` |
-| 3 | 6 | `ch-dalton-elementklassen`, `ch-teilchenverbaende`, `ch-bindigkeit-molekuele`, `ch-ionenverhaeltnis-salze`, `ch-verband-eigenschaften` |
-| 4 | 15 | `ch-merkmale-umgruppierung`, `ch-elemente-verbindungen`, `ch-wasser-analyse-synthese`, `ch-massenerhaltung-gleichungen`, `ch-innere-energie-diagramm`, `ch-katalyse-oberflaeche`, `ch-teilchenmasse-molare-masse`, `ch-stoffmenge-molvolumen`, `ch-stoffumsatz-rechnen`, `ch-alkane-verbrennung`, `ch-abgaskatalysator-partikelfilter`, `ch-verbrennung-explosion-brandschutz`, `ch-co2-bilanz-kohlenstoffkreislauf` |
-| 5 | 8 | `ch-rutherford-kern-huelle`, `ch-energiestufen-flammen`, `ch-pse-edelgasregel-ionen`, `ch-kugelwolkenmodell`, `ch-isotopie-molare-masse` |
+| 1 | 13 | `ch-gefahrstoffe-sicherheit`, `ch-experiment-protokoll`, `ch-modelle-fachsprache` sowie fachintegriert in LB 2–5 |
+| 2 | 7 | `ch-sinne-kenngroessen`, `ch-nachweisreaktionen`, `ch-reinstoffe-gemische`, `ch-teilchenmodell-phasen`, `ch-trennverfahren`, `ch-luft-linde` |
+| 3 | 8 | `ch-dalton-elementklassen`, `ch-teilchenverbaende`, `ch-bindigkeit-molekuele`, `ch-ionenverhaeltnis-salze`, `ch-verband-eigenschaften` |
+| 4 | 16 | `ch-merkmale-umgruppierung`, `ch-elemente-verbindungen`, `ch-wasser-analyse-synthese`, `ch-massenerhaltung-gleichungen`, `ch-innere-energie-diagramm`, `ch-katalyse-oberflaeche`, `ch-teilchenmasse-molare-masse`, `ch-stoffmenge-molvolumen`, `ch-stoffumsatz-rechnen`, `ch-alkane-verbrennung`, `ch-abgaskatalysator-partikelfilter`, `ch-verbrennung-explosion-brandschutz`, `ch-co2-bilanz-kohlenstoffkreislauf` |
+| 5 | 7 | `ch-rutherford-kern-huelle`, `ch-energiestufen-flammen`, `ch-pse-edelgasregel-ionen`, `ch-kugelwolkenmodell`, `ch-isotopie-molare-masse` |
 
 ## Bestehende ZAM-Karten (Vorschlag, noch nicht freigegeben)
 
