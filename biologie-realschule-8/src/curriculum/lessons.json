@@ -1,0 +1,2075 @@
+[
+	{
+		"id": "b8-fragen",
+		"stage": "methoden",
+		"title": "Von einer Beobachtung zur prüfbaren Frage",
+		"skill": "Ein Teich ist nach einem warmen Wochenende grün geworden.",
+		"bindings": ["1"],
+		"paragraphs": [
+			"Ein Teich ist nach einem warmen Wochenende grün geworden. Das ist zunächst eine Beobachtung. Die Aussage „Dünger aus einem nahen Garten hat Algenwachstum gefördert“ ist eine mögliche Erklärung. Sie braucht überprüfbare Belege; gleichzeitig könnten sich Licht, Temperatur oder Wasserstand verändert haben.",
+			"Eine biologische Untersuchungsfrage benennt die beobachtete Größe, mögliche Einflussgrößen und den Vergleich. Eine Hypothese sagt einen begründeten Zusammenhang voraus. Eine Übereinstimmung mit Daten stützt sie, beweist aber nicht, dass keine andere Ursache beteiligt ist. Wiederholungen und alternative Erklärungen gehören zur Auswertung."
+		],
+		"materialLabel": "Eigens verfasstes Unterrichtsmaterial; Modellzahlen sind keine Messdaten.",
+		"material": "Eine Untersuchung trennt Daten von Erklärungen und Zielen.",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"question": "Was ist eine prüfbare biologische Hypothese?",
+			"answer": "Mehr Licht kann unter gleichen Bedingungen das Algenwachstum erhöhen.",
+			"wrong": [
+				"Ein grüner Teich ist grundsätzlich immer ein ökologisch schlechter Teich.",
+				"Ein einzelnes Foto beweist bereits, wodurch das Algenwachstum entstand."
+			],
+			"explanation": "Eine biologische Untersuchungsfrage benennt die beobachtete Größe, mögliche Einflussgrößen und den Vergleich. Eine Hypothese sagt einen begründeten Zusammenhang voraus. Eine Übereinstimmung mit Daten stützt sie, beweist aber nicht, dass keine andere Ursache beteiligt ist. Wiederholungen und alternative Erklärungen gehören zur Auswertung."
+		},
+		"cases": [
+			{
+				"prompt": "Die Wasserprobe erscheint grün.",
+				"options": ["Beobachtung", "Hypothese"],
+				"answer": "Beobachtung",
+				"feedback": "Eine wahrnehmbare Eigenschaft wird beschrieben."
+			},
+			{
+				"prompt": "Ein höheres Nährstoffangebot könnte das Wachstum fördern.",
+				"options": ["Hypothese", "Beobachtung"],
+				"answer": "Hypothese",
+				"feedback": "Hier wird ein möglicher Zusammenhang vorgeschlagen."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Formuliere für den grünen Teich eine Frage, eine Hypothese und eine mögliche Gegenprüfung.",
+				"model": "Die Frage lautet, ob mehr Nährstoffe bei gleicher Beleuchtung das Wachstum erhöhen. Meine Hypothese erwartet dann mehr Algen. Ich vergleiche mehrere gleich große, gleich beleuchtete Modellansätze mit unterschiedlichem Nährstoffangebot und prüfe zusätzlich Temperatur und Ausgangsmenge. Eine einzelne grüne Probe entscheidet die Frage nicht.",
+				"criteria": [
+					"Eine veränderbare Einflussgröße genannt",
+					"Eine beobachtbare Wirkung erwartet",
+					"Alternative Erklärung oder Vergleich beschrieben"
+				],
+				"hints": [
+					"Eine veränderbare Einflussgröße genannt",
+					"Eine beobachtbare Wirkung erwartet"
+				]
+			},
+			"2": {
+				"prompt": "Ein Foto wird mit „Das ist sicher der Garten-Dünger“ kommentiert. Beurteile die Belegstärke.",
+				"model": "Das Foto dokumentiert möglicherweise eine Färbung zu einem bestimmten Zeitpunkt. Es misst weder die Nährstoffkonzentration noch den Eintragspfad. Ohne Vergleichsdaten und Informationen zu weiteren Einflussgrößen ist die konkrete Ursache offen; die Aussage ist eine zu prüfende Hypothese und keine gesicherte Diagnose.",
+				"criteria": [
+					"Beobachtung vom Schluss getrennt",
+					"Fehlende Daten benannt",
+					"Ein prüfbarer nächster Schritt vorgeschlagen"
+				],
+				"hints": ["Beobachtung vom Schluss getrennt", "Fehlende Daten benannt"]
+			}
+		},
+		"extension": "Ergänze die digitale Übung durch Beobachtung, Modellvergleich oder Gespräch im Unterricht. Praktische Fertigkeiten und eigene Urteile brauchen zusätzliche Rückmeldung.",
+		"takeaway": "Eine Beobachtung beschreibt Wahrgenommenes; eine Hypothese ist eine überprüfbare mögliche Erklärung."
+	},
+	{
+		"id": "b8-kontrolle",
+		"stage": "methoden",
+		"title": "Variablen, Kontrolle und Wiederholung",
+		"skill": "In einem Gedankenexperiment wachsen Pflanzen in gleichen Gefäßen bei gleicher Wassermenge.",
+		"bindings": ["1"],
+		"paragraphs": [
+			"In einem Gedankenexperiment wachsen Pflanzen in gleichen Gefäßen bei gleicher Wassermenge. Nur das Lichtangebot wird variiert. Licht ist die unabhängige Variable; beispielsweise die Längenzunahme ist die abhängige Größe. Gefäß, Substrat, Art und Beobachtungszeit werden vergleichbar gehalten.",
+			"Mehrere Pflanzen pro Bedingung machen die natürliche Streuung sichtbar. Ein Kontrollansatz zeigt, was ohne die gezielte Veränderung geschieht. Messwerte brauchen Einheiten und einen Zeitpunkt. Wenn zugleich Licht und Dünger verändert werden, lässt sich ein Unterschied nicht eindeutig einem Faktor zuordnen. Das digitale Beispiel ersetzt keinen eigenen praktischen Versuch."
+		],
+		"materialLabel": "Eigens verfasstes Unterrichtsmaterial; Modellzahlen sind keine Messdaten.",
+		"material": "Vierstufiger Untersuchungsplan:\n1. Frage und erwartete Wirkung festhalten.\n2. Vergleichbare Ansätze und Kontrollbedingung planen.\n3. Messwerte mit Einheit und Zeitpunkt protokollieren.\n4. Unterschiede, Streuung und Fehlerquellen auswerten.\nDas ist eine vereinfachte Arbeitsfolge; ein Ergebnis kann neue Fragen auslösen.",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"question": "Welche Planung isoliert die Wirkung von Licht am besten?",
+			"answer": "Gleiche Pflanzen und Bedingungen; nur das Licht wird verändert.",
+			"wrong": [
+				"Andere Pflanzen, andere Erde und anderes Licht werden kombiniert.",
+				"Nur eine Pflanze wird ohne Vergleich ein einziges Mal betrachtet."
+			],
+			"explanation": "Mehrere Pflanzen pro Bedingung machen die natürliche Streuung sichtbar. Ein Kontrollansatz zeigt, was ohne die gezielte Veränderung geschieht. Messwerte brauchen Einheiten und einen Zeitpunkt. Wenn zugleich Licht und Dünger verändert werden, lässt sich ein Unterschied nicht eindeutig einem Faktor zuordnen. Das digitale Beispiel ersetzt keinen eigenen praktischen Versuch."
+		},
+		"cases": [
+			{
+				"prompt": "Im vierstufigen Plan: Frage und erwartete Wirkung festhalten. An welcher Stelle steht das?",
+				"options": ["Schritt 4", "Schritt 1"],
+				"answer": "Schritt 1",
+				"feedback": "Lege fest, was verglichen werden soll."
+			},
+			{
+				"prompt": "Im vierstufigen Plan: Vergleichbare Ansätze und Kontrollbedingung planen. An welcher Stelle steht das?",
+				"options": ["Schritt 3", "Schritt 2"],
+				"answer": "Schritt 2",
+				"feedback": "Prüfe Faktoren und Wiederholungen vor Beginn."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Plane ein Gedankenexperiment zur Lichtwirkung auf Pflanzenwachstum.",
+				"model": "Ich verwende gleichartige Pflanzen mit vergleichbarer Ausgangsgröße und variiere nur die Lichtdauer. Erde, Wasser und Temperatur bleiben möglichst gleich. Mehrere Pflanzen pro Gruppe werden über dieselbe Zeit gemessen; die Ergebnisse erhalten Einheit, Streuung und dokumentierte Abweichungen.",
+				"criteria": [
+					"Licht als Einflussgröße festgelegt",
+					"Konstanten und Vergleich benannt",
+					"Wiederholungen und Messgröße genannt"
+				],
+				"hints": [
+					"Licht als Einflussgröße festgelegt",
+					"Konstanten und Vergleich benannt"
+				]
+			},
+			"2": {
+				"prompt": "In einer Gruppe wird täglich gegossen und beleuchtet, in der anderen selten gegossen und abgedunkelt. Was folgt aus besserem Wachstum?",
+				"model": "Der Unterschied kann durch Licht, Wasser oder ihr Zusammenwirken entstehen. Der Versuch trennt diese Einflüsse nicht. Für die Lichtfrage müssten die Wassermengen gleich sein; alternativ wäre ein geplanter Vergleich aller Kombinationen nötig. Mehr Pflanzen allein beseitigen diesen systematischen Fehler nicht.",
+				"criteria": [
+					"Verwechslung zweier Einflüsse erkannt",
+					"Schlussfolgerung eingeschränkt",
+					"Verbesserte Planung erläutert"
+				],
+				"hints": [
+					"Verwechslung zweier Einflüsse erkannt",
+					"Schlussfolgerung eingeschränkt"
+				]
+			}
+		},
+		"extension": "Ergänze die digitale Übung durch Beobachtung, Modellvergleich oder Gespräch im Unterricht. Praktische Fertigkeiten und eigene Urteile brauchen zusätzliche Rückmeldung.",
+		"takeaway": "Damit ein Unterschied möglichst dem gezielt veränderten Faktor zugeordnet werden kann."
+	},
+	{
+		"id": "b8-mikroskop",
+		"stage": "methoden",
+		"title": "Mikroskopieren und sauber zeichnen",
+		"skill": "Ein Lichtmikroskop vergrößert kleine Strukturen mithilfe von Objektiv und Okular.",
+		"bindings": ["1"],
+		"paragraphs": [
+			"Ein Lichtmikroskop vergrößert kleine Strukturen mithilfe von Objektiv und Okular. Die Gesamtvergrößerung ist das Produkt ihrer Vergrößerungen. Beginne mit dem kleinsten Objektiv; dadurch findest du das Präparat leichter.",
+			"Eine biologische Zeichnung zeigt beobachtbare Strukturen mit klaren Linien und Beschriftungen. Zeichne nicht, was du nur erwartest. Vergrößerung und Präparat gehören zur Dokumentation. Die digitale Übung bereitet reales Mikroskopieren vor, prüft aber keine praktische Bedienfertigkeit."
+		],
+		"materialLabel": "Eigens verfasstes Unterrichtsmaterial; Modellzahlen sind keine Messdaten.",
+		"material": "Fiktives Protokoll: Okular zehnfach, Objektiv vierfach. Nach dem Wechsel auf ein vierzigfaches Objektiv ist nur ein kleinerer Ausschnitt sichtbar.",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"question": "Wie bestimmst du die Gesamtvergrößerung eines Lichtmikroskops?",
+			"answer": "Okularvergrößerung mal Objektivvergrößerung.",
+			"wrong": [
+				"Beide Vergrößerungen addieren.",
+				"Nur die Zahl am Okular ablesen."
+			],
+			"explanation": "Ein Lichtmikroskop vergrößert kleine Strukturen mithilfe von Objektiv und Okular. Die Gesamtvergrößerung ist das Produkt ihrer Vergrößerungen. Beginne mit dem kleinsten Objektiv; dadurch findest du das Präparat leichter."
+		},
+		"cases": [
+			{
+				"prompt": "Zehnfaches Okular und vierfaches Objektiv.",
+				"options": [
+					"Vierzigfache Gesamtvergrößerung.",
+					"Vierzehnfache Gesamtvergrößerung."
+				],
+				"answer": "Vierzigfache Gesamtvergrößerung.",
+				"feedback": "Die beiden Vergrößerungsfaktoren werden multipliziert."
+			},
+			{
+				"prompt": "Im Präparat ist kein Zellkern erkennbar.",
+				"options": [
+					"Die Zeichnung behauptet keinen sicher beobachteten Zellkern.",
+					"Ein erwarteter Zellkern wird als sicher beobachtet ergänzt."
+				],
+				"answer": "Die Zeichnung behauptet keinen sicher beobachteten Zellkern.",
+				"feedback": "Beobachtung und Erwartung müssen im Protokoll getrennt bleiben."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Plane das Finden eines Fertigpräparats und berechne die Gesamtvergrößerung mit zehnfachem Okular und vierzigfachem Objektiv.",
+				"model": "Ich starte mit dem kleinsten Objektiv, suche und zentriere die Struktur und vergrößere anschließend vorsichtig. Zehn mal vierzig ergibt vierhundert. Das Präparat und die Vergrößerung werden notiert. Die Bedienung übe ich zusätzlich am echten Gerät.",
+				"criteria": [
+					"Mit kleinem Objektiv begonnen",
+					"Vierhundertfach korrekt berechnet",
+					"Dokumentation und echte Geräteübung genannt"
+				],
+				"hints": [
+					"Mit kleinem Objektiv begonnen",
+					"Vierhundertfach korrekt berechnet"
+				]
+			},
+			"2": {
+				"prompt": "Eine Zeichnung zeigt nur auswendig gelernte Details. Entwirf eine bessere Dokumentation.",
+				"model": "Ich unterscheide klar sichtbare und unsichere Strukturen. Die Zeichnung enthält klare Linien, eine Überschrift, Beschriftungen und die Vergrößerung. Vermutungen kennzeichne ich im Text; ich gebe keine unbeobachteten Details als Messbefund aus.",
+				"criteria": [
+					"Beobachtung von Erwartung getrennt",
+					"Beschriftung und Vergrößerung vorgesehen",
+					"Unsicherheit kenntlich gemacht"
+				],
+				"hints": [
+					"Beobachtung von Erwartung getrennt",
+					"Beschriftung und Vergrößerung vorgesehen"
+				]
+			}
+		},
+		"extension": "Ergänze die digitale Übung durch Beobachtung, Modellvergleich oder Gespräch im Unterricht. Praktische Fertigkeiten und eigene Urteile brauchen zusätzliche Rückmeldung.",
+		"takeaway": "Das größere Gesichtsfeld erleichtert das Finden und Orientieren am Präparat."
+	},
+	{
+		"id": "b8-modelle",
+		"stage": "methoden",
+		"title": "Modelle und Quellen kritisch nutzen",
+		"skill": "Ein Modell zeigt ausgewählte Merkmale für eine bestimmte Frage.",
+		"bindings": ["1"],
+		"paragraphs": [
+			"Ein Modell zeigt ausgewählte Merkmale für eine bestimmte Frage. Größe, Farbe und Vollständigkeit stimmen dabei nicht automatisch mit der Wirklichkeit überein. Beim Schlüssel-Schloss-Modell steht die Passung im Mittelpunkt, nicht die genaue Form aller Moleküle.",
+			"Bei einer biologischen Meldung prüfst du Urheber, Datum, Belege und Zweck. Eine anschauliche Grafik ersetzt keinen Nachweis. Wissenschaftliches Wissen kann durch neue Belege verändert werden. Ein begründetes Urteil benennt neben Fakten auch Werte und mögliche Gegenargumente."
+		],
+		"materialLabel": "Eigens verfasstes Unterrichtsmaterial; Modellzahlen sind keine Messdaten.",
+		"material": "Erfundene Meldung: Unser farbiges Virusmodell beweist, dass alle Viren gleich aussehen. Daneben steht ein Plastikmodell mit drei großen Fortsätzen.",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"question": "Was ist eine sinnvolle Grenze eines farbigen Plastikmodells?",
+			"answer": "Farben und Größen sind nicht automatisch naturgetreu.",
+			"wrong": [
+				"Das Modell ersetzt grundsätzlich jeden anderen Beleg.",
+				"Die Anschaulichkeit beweist die vollständige Richtigkeit."
+			],
+			"explanation": "Ein Modell zeigt ausgewählte Merkmale für eine bestimmte Frage. Größe, Farbe und Vollständigkeit stimmen dabei nicht automatisch mit der Wirklichkeit überein. Beim Schlüssel-Schloss-Modell steht die Passung im Mittelpunkt, nicht die genaue Form aller Moleküle."
+		},
+		"cases": [
+			{
+				"prompt": "Ein Plastikmodell wird als Beweis für die exakte Farbe eines Virus verwendet.",
+				"options": [
+					"Die Farbe jedes Modells ist ein Messwert.",
+					"Die Modellgrenze wird überschritten."
+				],
+				"answer": "Die Modellgrenze wird überschritten.",
+				"feedback": "Darstellungsfarben sind meist frei gewählt und kein unmittelbarer Befund."
+			},
+			{
+				"prompt": "Eine Meldung nennt nur eine angebliche Studie ohne auffindbare Quelle.",
+				"options": [
+					"Das Wort Studie genügt als vollständiger Nachweis.",
+					"Der Beleg ist noch nicht nachprüfbar."
+				],
+				"answer": "Der Beleg ist noch nicht nachprüfbar.",
+				"feedback": "Eine Belegkette muss auffindbar sein und zur Behauptung passen."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Nenne eine Leistung und eine Grenze des Schlüssel-Schloss-Modells.",
+				"model": "Es verdeutlicht, dass nur passende Strukturen miteinander binden. Es bildet die räumliche Dynamik und die Chemie echter Moleküle nicht vollständig ab. Für genaue Aussagen braucht es weitere Befunde.",
+				"criteria": [
+					"Passung erklärt",
+					"Eine konkrete Grenze benannt",
+					"Modell und Wirklichkeit unterschieden"
+				],
+				"hints": ["Passung erklärt", "Eine konkrete Grenze benannt"]
+			},
+			"2": {
+				"prompt": "Beurteile die erfundene Virusmeldung und formuliere eine bessere Überschrift.",
+				"model": "Ein einzelnes Plastikmodell zeigt eine gewählte Darstellung und nicht die gesamte Vielfalt. Ohne Messdaten und Vergleich ist die Behauptung unbelegt. Besser: Ein vereinfachtes Virusmodell zeigt ausgewählte Strukturen.",
+				"criteria": [
+					"Unzulässige Verallgemeinerung erkannt",
+					"Fehlenden Beleg benannt",
+					"Sachgerechte Alternative formuliert"
+				],
+				"hints": [
+					"Unzulässige Verallgemeinerung erkannt",
+					"Fehlenden Beleg benannt"
+				]
+			}
+		},
+		"extension": "Ergänze die digitale Übung durch Beobachtung, Modellvergleich oder Gespräch im Unterricht. Praktische Fertigkeiten und eigene Urteile brauchen zusätzliche Rückmeldung.",
+		"takeaway": "Modelle müssen zu den überprüfbaren Befunden passen und werden bei neuen Erkenntnissen angepasst."
+	},
+	{
+		"id": "b8-pilze",
+		"stage": "mikroben",
+		"title": "Pilze sind ein eigenes Reich",
+		"skill": "Pilze sind Lebewesen mit Zellkern.",
+		"bindings": ["2"],
+		"paragraphs": [
+			"Pilze sind Lebewesen mit Zellkern. Sie betreiben keine Fotosynthese, sondern nehmen organische Stoffe auf. Viele bestehen aus feinen Fäden, den Hyphen; ihr Geflecht heißt Myzel. Der sichtbare Pilz ist bei vielen Arten nur der Fruchtkörper.",
+			"Hefen sind überwiegend einzellige Pilze. Pilze können organisches Material zersetzen, mit anderen Lebewesen zusammenleben oder Krankheiten verursachen. Eine einzelne Eigenschaft wie unbeweglich macht einen Organismus nicht zur Pflanze. Pilze wurden historisch oft Pflanzen zugerechnet; zusätzliche Befunde zu Ernährung, Zellaufbau und Verwandtschaft führten zu einer eigenen Einordnung. Systematik ist ein durch Befunde veränderbares Modell."
+		],
+		"materialLabel": "Eigens verfasstes Unterrichtsmaterial; Modellzahlen sind keine Messdaten.",
+		"material": "Ein Baumstumpf enthält ein Geflecht feiner Pilzfäden; daneben wächst ein Fruchtkörper. Unter dem Mikroskop werden einzelne Hefezellen mit Zellkern als Modell beschrieben.",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"question": "Wie nennt man das Geflecht aus Pilzhyphen?",
+			"answer": "Myzel.",
+			"wrong": ["Blutplasma.", "Viruskapsid."],
+			"explanation": "Pilze sind Lebewesen mit Zellkern. Sie betreiben keine Fotosynthese, sondern nehmen organische Stoffe auf. Viele bestehen aus feinen Fäden, den Hyphen; ihr Geflecht heißt Myzel. Der sichtbare Pilz ist bei vielen Arten nur der Fruchtkörper."
+		},
+		"cases": [
+			{
+				"prompt": "Ein Pilz ist unbeweglich.",
+				"options": [
+					"Das allein macht ihn nicht zur Pflanze.",
+					"Deshalb betreibt er zwingend Fotosynthese."
+				],
+				"answer": "Das allein macht ihn nicht zur Pflanze.",
+				"feedback": "Die Einordnung braucht Merkmale von Aufbau, Ernährung und Verwandtschaft."
+			},
+			{
+				"prompt": "Eine Hefe besteht aus einer Zelle mit Zellkern.",
+				"options": [
+					"Auch einzellige Formen können Pilze sein.",
+					"Alle Pilze müssen große Fruchtkörper bilden."
+				],
+				"answer": "Auch einzellige Formen können Pilze sein.",
+				"feedback": "Das Reich der Pilze enthält auch überwiegend einzellige Hefen."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Erkläre am Baumstumpf die Begriffe Hyphe, Myzel und Fruchtkörper.",
+				"model": "Eine Hyphe ist ein Pilzfaden. Viele Hyphen bilden das Myzel im Material. Der Fruchtkörper ist die sichtbare Struktur vieler Pilze und nur ein Teil des Organismus.",
+				"criteria": [
+					"Hyphe erklärt",
+					"Myzel als Geflecht beschrieben",
+					"Fruchtkörper vom gesamten Pilz getrennt"
+				],
+				"hints": ["Hyphe erklärt", "Myzel als Geflecht beschrieben"]
+			},
+			"2": {
+				"prompt": "Korrigiere die Aussage Pilze sind Pflanzen, die im Dunkeln wachsen.",
+				"model": "Pilze besitzen Zellkerne, aber sie ernähren sich durch Aufnahme organischer Stoffe und betreiben keine Fotosynthese. Dunkelheit allein ist kein Einteilungskriterium. Pilze bilden in der üblichen schulischen Einordnung ein eigenes Reich.",
+				"criteria": [
+					"Ernährung benannt",
+					"Dunkelheit als Kriterium zurückgewiesen",
+					"Eigene Einordnung erklärt"
+				],
+				"hints": [
+					"Ernährung benannt",
+					"Dunkelheit als Kriterium zurückgewiesen"
+				]
+			}
+		},
+		"extension": "Ergänze die digitale Übung durch Beobachtung, Modellvergleich oder Gespräch im Unterricht. Praktische Fertigkeiten und eigene Urteile brauchen zusätzliche Rückmeldung.",
+		"takeaway": "Sie nehmen organische Stoffe auf und betreiben keine Fotosynthese."
+	},
+	{
+		"id": "b8-bakterien",
+		"stage": "mikroben",
+		"title": "Bakterien: Zellen ohne Zellkern",
+		"skill": "Bakterien sind einzellige Organismen ohne abgegrenzten Zellkern.",
+		"bindings": ["2"],
+		"paragraphs": [
+			"Bakterien sind einzellige Organismen ohne abgegrenzten Zellkern. Ihr Erbmaterial liegt in der Zelle. Zellmembran, Zellplasma und Ribosomen gehören zum grundlegenden Aufbau. Viele besitzen eine Zellwand; manche zusätzliche Strukturen wie Geißeln.",
+			"Bakterien haben einen eigenen Stoffwechsel und können sich unter passenden Bedingungen durch Teilung vermehren. Viele sind nützlich. Aus einer schematischen Form allein lässt sich nicht ablesen, ob ein Bakterium Krankheit verursacht. Viele Bakterien nehmen organische Stoffe auf und leben damit heterotroph; die Gruppe enthält jedoch unterschiedliche Ernährungsweisen."
+		],
+		"materialLabel": "Eigens verfasstes Unterrichtsmaterial; Modellzahlen sind keine Messdaten.",
+		"material": "Modellzeichnung in Worten: Ein ovaler Körper enthält Zellplasma, Ribosomen und Erbmaterial; außen liegen Membran und Zellwand. Ein abgegrenzter Zellkern fehlt.",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"question": "Welches Merkmal fehlt Bakterien im Unterschied zu Pilzzellen?",
+			"answer": "Ein abgegrenzter Zellkern.",
+			"wrong": ["Eigenes Erbmaterial.", "Eine Zellmembran."],
+			"explanation": "Bakterien sind einzellige Organismen ohne abgegrenzten Zellkern. Ihr Erbmaterial liegt in der Zelle. Zellmembran, Zellplasma und Ribosomen gehören zum grundlegenden Aufbau. Viele besitzen eine Zellwand; manche zusätzliche Strukturen wie Geißeln."
+		},
+		"cases": [
+			{
+				"prompt": "Eine Zelle besitzt Erbmaterial, aber keinen Zellkern.",
+				"options": [
+					"Ohne Zellkern kann grundsätzlich kein Erbmaterial vorliegen.",
+					"Das passt zum Grundbau einer Bakterienzelle."
+				],
+				"answer": "Das passt zum Grundbau einer Bakterienzelle.",
+				"feedback": "Der Zellkern fehlt; das Erbmaterial befindet sich trotzdem in der Zelle."
+			},
+			{
+				"prompt": "Eine Bakterienart hilft bei der Lebensmittelherstellung.",
+				"options": [
+					"Das Modell widerspricht der Definition eines Bakteriums.",
+					"Bakterien sind nicht grundsätzlich Krankheitserreger."
+				],
+				"answer": "Bakterien sind nicht grundsätzlich Krankheitserreger.",
+				"feedback": "Die Gruppe umfasst viele verschiedene Lebensweisen und Wirkungen."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Beschrifte eine eigene Skizze mit Membran, Zellplasma, Erbmaterial und Ribosomen. Markiere, dass kein Zellkern vorliegt.",
+				"model": "Die Membran umschließt das Zellplasma. Erbmaterial und Ribosomen liegen in der Zelle; ein abgegrenzter Zellkern fehlt. Die Skizze ist ein vereinfachtes Schema ohne Größenmaßstab.",
+				"criteria": [
+					"Grundstrukturen passend beschriftet",
+					"Fehlenden Zellkern markiert",
+					"Schema als vereinfacht bezeichnet"
+				],
+				"hints": [
+					"Grundstrukturen passend beschriftet",
+					"Fehlenden Zellkern markiert"
+				]
+			},
+			"2": {
+				"prompt": "Warum beweist eine ovale Zeichnung nicht, dass ein Bakterium gefährlich ist?",
+				"model": "Eine Form zeigt weder sämtliche Stoffwechseleigenschaften noch das Zusammenwirken mit einem Wirt. Für die Beurteilung braucht man weitere biologische Informationen. Die Gleichsetzung Bakterium gleich Krankheitserreger ist falsch.",
+				"criteria": [
+					"Form und Wirkung getrennt",
+					"Zusätzliche Informationen verlangt",
+					"Vielfalt der Bakterien berücksichtigt"
+				],
+				"hints": [
+					"Form und Wirkung getrennt",
+					"Zusätzliche Informationen verlangt"
+				]
+			}
+		},
+		"extension": "Ergänze die digitale Übung durch Beobachtung, Modellvergleich oder Gespräch im Unterricht. Praktische Fertigkeiten und eigene Urteile brauchen zusätzliche Rückmeldung.",
+		"lab": "growth",
+		"takeaway": "Durch Teilung einer Zelle in zwei Zellen."
+	},
+	{
+		"id": "b8-viren",
+		"stage": "mikroben",
+		"title": "Viren brauchen Wirtszellen",
+		"skill": "Viren bestehen aus Erbmaterial und einer Proteinhülle; manche besitzen eine zusätzliche Hülle.",
+		"bindings": ["2"],
+		"paragraphs": [
+			"Viren bestehen aus Erbmaterial und einer Proteinhülle; manche besitzen eine zusätzliche Hülle. Sie sind keine Zellen und haben keinen eigenen Stoffwechsel. Für die Vermehrung nutzen sie geeignete Wirtszellen.",
+			"Im vereinfachten Ablauf bindet ein Virus an eine passende Zelle, bringt sein Erbmaterial hinein und nutzt Zellbestandteile zur Herstellung neuer Virusbestandteile. Diese werden zusammengesetzt und freigesetzt. Nicht jedes Virus kann jede Zellart befallen."
+		],
+		"materialLabel": "Eigens verfasstes Unterrichtsmaterial; Modellzahlen sind keine Messdaten.",
+		"material": "Didaktisches Ablaufschema: Andocken → Erbmaterial in der Zelle → Bestandteile herstellen → neue Viren zusammensetzen → Freisetzung. Die Art des Eintritts und der Freisetzung ist hier stark vereinfacht.",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"question": "Warum können sich Viren nicht unabhängig in einer Nährlösung wie Bakterien vermehren?",
+			"answer": "Ihnen fehlen ein eigener Stoffwechsel und die nötige Zellmaschinerie.",
+			"wrong": [
+				"Sie besitzen niemals Erbmaterial.",
+				"Sie sind vollständig aus Zellkernen aufgebaut."
+			],
+			"explanation": "Viren bestehen aus Erbmaterial und einer Proteinhülle; manche besitzen eine zusätzliche Hülle. Sie sind keine Zellen und haben keinen eigenen Stoffwechsel. Für die Vermehrung nutzen sie geeignete Wirtszellen."
+		},
+		"cases": [
+			{
+				"prompt": "Das Virus wird in einer geeigneten Zelle vervielfältigt.",
+				"options": [
+					"Die Zelle liefert dafür wichtige Bestandteile und Prozesse.",
+					"Das Virus braucht dabei grundsätzlich keine Zellfunktionen."
+				],
+				"answer": "Die Zelle liefert dafür wichtige Bestandteile und Prozesse.",
+				"feedback": "Viren vermehren sich nicht selbstständig, sondern nutzen die Wirtszelle."
+			},
+			{
+				"prompt": "Ein Modell zeigt bei allen Viren dieselbe äußere Hülle.",
+				"options": [
+					"Das ist eine Vereinfachung, nicht die gesamte Virusvielfalt.",
+					"Damit ist bewiesen, dass es nur einen Virustyp gibt."
+				],
+				"answer": "Das ist eine Vereinfachung, nicht die gesamte Virusvielfalt.",
+				"feedback": "Viren unterscheiden sich in Aufbau, Wirtsbereich und Vermehrung."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Beschreibe den Modellablauf vom Andocken bis zur Freisetzung in eigenen Worten.",
+				"model": "Das Virus erreicht eine passende Wirtszelle. Sein Erbmaterial gelangt hinein; mithilfe der Zelle entstehen Virusbestandteile. Sie werden zusammengesetzt und freigesetzt. Die genauen Wege hängen vom Virus ab.",
+				"criteria": [
+					"Wirtszelle genannt",
+					"Herstellung und Zusammensetzung beschrieben",
+					"Modellgrenze benannt"
+				],
+				"hints": [
+					"Wirtszelle genannt",
+					"Herstellung und Zusammensetzung beschrieben"
+				]
+			},
+			"2": {
+				"prompt": "Vergleiche die Aussage Das Virus vermehrt sich mit Das Bakterium teilt sich.",
+				"model": "Beide Aussagen beschreiben eine Zunahme, aber ein Bakterium ist eine Zelle mit eigenem Stoffwechsel und kann sich teilen. Ein Virus ist keine Zelle und braucht für neue Viruspartikel eine passende Wirtszelle.",
+				"criteria": [
+					"Gemeinsame Zunahme erkannt",
+					"Bakterielle Zellteilung beschrieben",
+					"Abhängigkeit des Virus erklärt"
+				],
+				"hints": [
+					"Gemeinsame Zunahme erkannt",
+					"Bakterielle Zellteilung beschrieben"
+				]
+			}
+		},
+		"extension": "Ergänze die digitale Übung durch Beobachtung, Modellvergleich oder Gespräch im Unterricht. Praktische Fertigkeiten und eigene Urteile brauchen zusätzliche Rückmeldung.",
+		"takeaway": "Eine geeignete Zelle, deren Bestandteile für die Virusvermehrung genutzt werden."
+	},
+	{
+		"id": "b8-vergleich",
+		"stage": "mikroben",
+		"title": "Drei Gruppen begründet vergleichen",
+		"skill": "Vergleichen heißt, dieselben Kriterien auf alle Gruppen anzuwenden.",
+		"bindings": ["2"],
+		"paragraphs": [
+			"Vergleichen heißt, dieselben Kriterien auf alle Gruppen anzuwenden. Für Pilze, Bakterien und Viren helfen Zellaufbau, Zellkern, Stoffwechsel und Vermehrung. Größe oder Form allein reichen nicht für jede Zuordnung.",
+			"Pilze haben Zellen mit Zellkern; Bakterien sind Zellen ohne Zellkern. Viren sind keine Zellen und vermehren sich nur mithilfe geeigneter Wirtszellen. Das Kriterium Zellkern darf nicht mit Erbmaterial verwechselt werden."
+		],
+		"materialLabel": "Eigens verfasstes Unterrichtsmaterial; Modellzahlen sind keine Messdaten.",
+		"material": "Modell A: Zelle mit Zellkern. Modell B: Zelle ohne Zellkern, eigener Stoffwechsel. Modell C: Erbmaterial mit Hülle, Vermehrung nur in geeigneter Zelle. Die Auswahl ist auf die drei hier behandelten Gruppen beschränkt.",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"question": "Welches Merkmal grenzt Viren hier von Pilzen und Bakterien ab?",
+			"answer": "Sie sind keine Zellen.",
+			"wrong": [
+				"Sie haben grundsätzlich kein Erbmaterial.",
+				"Sie sind alle größer als Pilze."
+			],
+			"explanation": "Vergleichen heißt, dieselben Kriterien auf alle Gruppen anzuwenden. Für Pilze, Bakterien und Viren helfen Zellaufbau, Zellkern, Stoffwechsel und Vermehrung. Größe oder Form allein reichen nicht für jede Zuordnung."
+		},
+		"cases": [
+			{
+				"prompt": "Modell B besitzt eine Zellmembran und eigenen Stoffwechsel, aber keinen Zellkern.",
+				"options": ["Virus.", "Bakterium."],
+				"answer": "Bakterium.",
+				"feedback": "In diesem Vergleich kennzeichnen Zellaufbau und eigener Stoffwechsel das Bakterium."
+			},
+			{
+				"prompt": "Modell A ist eine einzelne Zelle mit Zellkern.",
+				"options": [
+					"Es muss wegen der Einzelligkeit ein Bakterium sein.",
+					"Unter den drei Gruppen passt es zu einer Hefe."
+				],
+				"answer": "Unter den drei Gruppen passt es zu einer Hefe.",
+				"feedback": "Hefen zeigen, dass auch Pilze einzellig sein können."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Erstelle eine Tabelle der drei Gruppen mit Zellaufbau, Zellkern und Stoffwechsel.",
+				"model": "Pilze: Zellen, Zellkern, eigener Stoffwechsel. Bakterien: Zellen, kein Zellkern, eigener Stoffwechsel. Viren: keine Zellen, kein Zellkern, kein eigener Stoffwechsel. Die Einordnung verwendet mehrere Kriterien.",
+				"criteria": [
+					"Dieselben Kriterien verwendet",
+					"Alle drei Gruppen korrekt eingeordnet",
+					"Zellkern und Erbmaterial getrennt"
+				],
+				"hints": [
+					"Dieselben Kriterien verwendet",
+					"Alle drei Gruppen korrekt eingeordnet"
+				]
+			},
+			"2": {
+				"prompt": "Ein unbekanntes Modell zeigt nur eine Hülle mit Erbmaterial. Welche Aussagen bleiben offen?",
+				"model": "Eine stark vereinfachte Zeichnung kann Strukturen weglassen. Ich brauche Informationen zu Zellaufbau, Stoffwechsel und Vermehrung. Ohne diese Angaben wäre die sichere Zuordnung allein aus fehlenden Details zu weitgehend.",
+				"criteria": [
+					"Vereinfachung erkannt",
+					"Benötigte Kriterien benannt",
+					"Unsichere Zuordnung zurückgehalten"
+				],
+				"hints": ["Vereinfachung erkannt", "Benötigte Kriterien benannt"]
+			}
+		},
+		"extension": "Ergänze die digitale Übung durch Beobachtung, Modellvergleich oder Gespräch im Unterricht. Praktische Fertigkeiten und eigene Urteile brauchen zusätzliche Rückmeldung.",
+		"takeaway": "Auch Bakterien besitzen keinen Zellkern, sind aber selbst Zellen."
+	},
+	{
+		"id": "b8-hefe",
+		"stage": "mikroben",
+		"title": "Hefe und Gärung untersuchen",
+		"skill": "Hefen können Zucker bei der alkoholischen Gärung zu Ethanol und Kohlenstoffdioxid umsetzen.",
+		"bindings": ["2"],
+		"paragraphs": [
+			"Hefen können Zucker bei der alkoholischen Gärung zu Ethanol und Kohlenstoffdioxid umsetzen. Das Gas kann einen Teig lockern. Stoffumsetzungen liefern Hinweise auf Stoffwechsel; sichtbare Blasen allein benennen noch nicht automatisch das entstandene Gas.",
+			"Ein kontrollierter Vergleich verändert gezielt eine Bedingung und hält andere möglichst gleich. Ein Modellansatz mit Zucker und einer ohne Zucker helfen bei der Frage nach dem Substrat. Gleiche Hefemenge, Temperatur, Gefäße und Beobachtungszeit machen den Vergleich aussagekräftiger."
+		],
+		"materialLabel": "Eigens verfasstes Unterrichtsmaterial; Modellzahlen sind keine Messdaten.",
+		"material": "Fiktive Messreihe, keine Versuchsanleitung: Nach gleicher Zeit wurden im Modell mit Zucker 30 Gaseinheiten, ohne Zucker 2 Gaseinheiten gemessen. Die Einheit ist für die Übung frei gewählt.",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"question": "Welches Gas entsteht bei der alkoholischen Gärung durch Hefe?",
+			"answer": "Kohlenstoffdioxid.",
+			"wrong": ["Sauerstoff.", "Helium."],
+			"explanation": "Hefen können Zucker bei der alkoholischen Gärung zu Ethanol und Kohlenstoffdioxid umsetzen. Das Gas kann einen Teig lockern. Stoffumsetzungen liefern Hinweise auf Stoffwechsel; sichtbare Blasen allein benennen noch nicht automatisch das entstandene Gas."
+		},
+		"cases": [
+			{
+				"prompt": "Beide Ansätze unterscheiden sich in Zucker, Temperatur und Hefemenge.",
+				"options": [
+					"Die Wirkung des Zuckers ist nicht eindeutig isoliert.",
+					"Jeder Unterschied kann sicher nur am Zucker liegen."
+				],
+				"answer": "Die Wirkung des Zuckers ist nicht eindeutig isoliert.",
+				"feedback": "Mehrere gleichzeitig geänderte Faktoren lassen alternative Erklärungen offen."
+			},
+			{
+				"prompt": "Der Ansatz bildet Blasen; eine Gasbestimmung fehlt.",
+				"options": [
+					"Die Gasbildung ist beobachtet, die Gasart noch nicht nachgewiesen.",
+					"Blasen allein beweisen die genaue Gasart."
+				],
+				"answer": "Die Gasbildung ist beobachtet, die Gasart noch nicht nachgewiesen.",
+				"feedback": "Beobachtung und weitergehender Stoffnachweis sind zu unterscheiden."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Formuliere eine Frage und eine kontrollierte Vergleichsplanung zu den Modellansätzen.",
+				"model": "Ich prüfe, ob Zuckerzusatz die gemessene Gasbildung beeinflusst. Hefemenge, Temperatur und Zeit bleiben gleich; mehrere Ansätze mit und ohne Zusatz werden verglichen. Messwerte und Abweichungen werden dokumentiert.",
+				"criteria": [
+					"Eine Einflussgröße benannt",
+					"Kontrolle und Konstanten geplant",
+					"Wiederholungen und Messgröße vorgesehen"
+				],
+				"hints": [
+					"Eine Einflussgröße benannt",
+					"Kontrolle und Konstanten geplant"
+				]
+			},
+			"2": {
+				"prompt": "Bewerte die Behauptung Die Modellzahlen beweisen, dass Zucker immer genau fünfzehnmal so viel Gas erzeugt.",
+				"model": "Die Zahlen ergeben in dieser fiktiven Reihe ein Verhältnis von fünfzehn zu eins. Sie sind keine realen Messdaten und keine allgemeingültige Naturkonstante. Andere Bedingungen und Streuung müssen berücksichtigt werden.",
+				"criteria": [
+					"Rechnung vom Beweis getrennt",
+					"Fiktive Daten erkannt",
+					"Grenzen der Verallgemeinerung erklärt"
+				],
+				"hints": ["Rechnung vom Beweis getrennt", "Fiktive Daten erkannt"]
+			}
+		},
+		"lab": "growth",
+		"extension": "Ergänze die digitale Übung durch Beobachtung, Modellvergleich oder Gespräch im Unterricht. Praktische Fertigkeiten und eigene Urteile brauchen zusätzliche Rückmeldung.",
+		"takeaway": "Er zeigt, wie sich der Ansatz ohne den gezielt untersuchten Zuckerzusatz verhält."
+	},
+	{
+		"id": "b8-lebensmittel",
+		"stage": "mikroben",
+		"title": "Nützliche Mikroorganismen und Verderb",
+		"skill": "Mikroorganismen können Lebensmittel herstellen, verändern oder verderben.",
+		"bindings": ["2"],
+		"paragraphs": [
+			"Mikroorganismen können Lebensmittel herstellen, verändern oder verderben. Hefen lockern Teig, Milchsäurebakterien verändern Milchprodukte. Zersetzer tragen zum Stoffkreislauf bei. Nützlich oder schädlich hängt auch vom Zusammenhang ab. Als Destruenten bauen sie organische Reste ab. Dabei werden unter anderem mineralische Nährstoffe wieder verfügbar, die Pflanzen aufnehmen können; Stoffe werden so in Kreisläufe eingebunden.",
+			"Feuchtigkeit, Temperatur und verfügbare Nährstoffe beeinflussen Wachstum. Kühlung verlangsamt das Wachstum vieler Mikroorganismen, sterilisiert Lebensmittel aber nicht. Eine sichtbare Veränderung kann ein Hinweis sein; nicht jeder unerwünschte Keim wird durch Aussehen oder Geruch sicher erkannt."
+		],
+		"materialLabel": "Eigens verfasstes Unterrichtsmaterial; Modellzahlen sind keine Messdaten.",
+		"material": "Erfundene Fälle: Ein Teig geht durch Hefegärung auf. Ein gekühltes Produkt wird nach längerer Zeit verändert. Eine Werbung behauptet, Kühlung entferne sämtliche Mikroorganismen.",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"question": "Welche Aussage über Kühlung ist richtig?",
+			"answer": "Sie verlangsamt das Wachstum vieler Mikroorganismen.",
+			"wrong": [
+				"Sie entfernt immer alle Mikroorganismen.",
+				"Sie erzeugt erst alle Bakterien."
+			],
+			"explanation": "Mikroorganismen können Lebensmittel herstellen, verändern oder verderben. Hefen lockern Teig, Milchsäurebakterien verändern Milchprodukte. Zersetzer tragen zum Stoffkreislauf bei. Nützlich oder schädlich hängt auch vom Zusammenhang ab. Als Destruenten bauen sie organische Reste ab. Dabei werden unter anderem mineralische Nährstoffe wieder verfügbar, die Pflanzen aufnehmen können; Stoffe werden so in Kreisläufe eingebunden."
+		},
+		"cases": [
+			{
+				"prompt": "Hefe lockert einen Brotteig.",
+				"options": [
+					"Jede Aktivität von Mikroorganismen ist Verderb.",
+					"Das ist eine nützliche Nutzung von Stoffwechsel."
+				],
+				"answer": "Das ist eine nützliche Nutzung von Stoffwechsel.",
+				"feedback": "Der gewünschte Prozess wird gezielt bei der Herstellung eingesetzt."
+			},
+			{
+				"prompt": "Eine Kühlung wird als sichere vollständige Entkeimung beworben.",
+				"options": [
+					"Das entspricht der allgemeinen Wirkung jeder Kühlung.",
+					"Die Behauptung verwechselt Wachstumshemmung und Entfernung."
+				],
+				"answer": "Die Behauptung verwechselt Wachstumshemmung und Entfernung.",
+				"feedback": "Wachstum zu verlangsamen bedeutet nicht, sämtliche Mikroorganismen zu beseitigen."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Erkläre an zwei Fällen, warum dieselbe große Organismengruppe nützlich und unerwünscht wirken kann.",
+				"model": "Hefen können durch Gärung Teig lockern; andere mikrobielle Veränderungen können ein Lebensmittel unerwünscht verändern. Entscheidend sind Art, Bedingungen und gewünschter Zweck. Die Gruppe wird nicht pauschal als schlecht eingeordnet.",
+				"criteria": [
+					"Zwei Zusammenhänge genannt",
+					"Stoffwechsel oder Wachstum erklärt",
+					"Keine pauschale Gleichsetzung vorgenommen"
+				],
+				"hints": [
+					"Zwei Zusammenhänge genannt",
+					"Stoffwechsel oder Wachstum erklärt"
+				]
+			},
+			"2": {
+				"prompt": "Stelle einen vereinfachten Stoffkreislauf dar und beurteile, warum das Beseitigen aller Zersetzer in einem Boden kein sinnvolles Schutzkonzept wäre.",
+				"model": "Pflanzen bauen aus aufgenommenen Stoffen organische Biomasse auf. Tote Reste werden von Destruenten abgebaut; mineralische Nährstoffe werden wieder verfügbar. Eine pauschale Entfernung aller Zersetzer würde diese Funktionen beeinträchtigen. Ein Urteil berücksichtigt neben möglichen Einzelrisiken auch den Erhalt des Kreislaufs. Stoffkreislauf und Energiefluss sind nicht dasselbe.",
+				"criteria": [
+					"Produzenten, organische Reste und Abbau verbunden",
+					"Nährstoffrückführung erklärt",
+					"Ein Schutzurteil mit Funktion und Wert begründet"
+				],
+				"hints": [
+					"Produzenten, organische Reste und Abbau verbunden",
+					"Nährstoffrückführung erklärt"
+				]
+			}
+		},
+		"lab": "growth",
+		"extension": "Ergänze die digitale Übung durch Beobachtung, Modellvergleich oder Gespräch im Unterricht. Praktische Fertigkeiten und eigene Urteile brauchen zusätzliche Rückmeldung.",
+		"takeaway": "Viele Mikroorganismen sind nützlich oder ohne krankmachende Wirkung."
+	},
+	{
+		"id": "b8-barrieren",
+		"stage": "abwehr",
+		"title": "Die erste Grenze: Haut und Schleimhäute",
+		"skill": "Haut, Schleimhäute und ihre Sekrete erschweren das Eindringen vieler Krankheitserreger.",
+		"bindings": ["3"],
+		"paragraphs": [
+			"Haut, Schleimhäute und ihre Sekrete erschweren das Eindringen vieler Krankheitserreger. Die Haut bildet eine mechanische Barriere; Schleim kann Teilchen binden. Tränenflüssigkeit spült und enthält Stoffe mit schützender Wirkung.",
+			"Äußere Schutzmechanismen wirken vor einer spezifischen Immunantwort. Sie garantieren keine vollständige Undurchlässigkeit. Aus dem Übertragungsweg lässt sich ableiten, an welcher Stelle eine vorbeugende Maßnahme ansetzt. Unterschiedliche Erreger werden unterschiedlich übertragen."
+		],
+		"materialLabel": "Eigens verfasstes Unterrichtsmaterial; Modellzahlen sind keine Messdaten.",
+		"material": "Modellfall: Teilchen landen auf einer Schleimhaut. Schleim bindet einen Teil; Bewegungen und Flüssigkeit transportieren einen Teil wieder ab. Das Schema zeigt nicht alle beteiligten Mechanismen.",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"question": "Welche Aufgabe hat unverletzte Haut bei der Abwehr?",
+			"answer": "Sie erschwert als Barriere das Eindringen vieler Erreger.",
+			"wrong": [
+				"Sie bildet für jeden Erreger sofort neue Gedächtniszellen.",
+				"Sie ersetzt grundsätzlich alle inneren Abwehrmechanismen."
+			],
+			"explanation": "Haut, Schleimhäute und ihre Sekrete erschweren das Eindringen vieler Krankheitserreger. Die Haut bildet eine mechanische Barriere; Schleim kann Teilchen binden. Tränenflüssigkeit spült und enthält Stoffe mit schützender Wirkung."
+		},
+		"cases": [
+			{
+				"prompt": "Schleim bindet Teilchen und trägt zu ihrem Abtransport bei.",
+				"options": [
+					"Das ist ein äußerer Schutzmechanismus.",
+					"Das ist bereits die Bildung eines neuen Antikörpers."
+				],
+				"answer": "Das ist ein äußerer Schutzmechanismus.",
+				"feedback": "Eine Barriere und die spezifische Antikörperbildung sind unterschiedliche Ebenen der Abwehr."
+			},
+			{
+				"prompt": "Ein Schema zeigt nur eine geschlossene Hautfläche.",
+				"options": [
+					"Es stellt eine Schutzfunktion vereinfacht dar.",
+					"Es beweist, dass Erreger niemals eindringen können."
+				],
+				"answer": "Es stellt eine Schutzfunktion vereinfacht dar.",
+				"feedback": "Ein vereinfachtes Schema ist keine Garantie absoluter Undurchlässigkeit."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Beschreibe je eine Schutzwirkung von Haut, Schleim und Tränenflüssigkeit.",
+				"model": "Haut erschwert mechanisch das Eindringen. Schleim bindet Teilchen und unterstützt deren Abtransport. Tränenflüssigkeit spült und enthält schützende Stoffe. Die Schutzmechanismen sind wirksam, aber nicht absolut.",
+				"criteria": [
+					"Drei passende Funktionen",
+					"Äußere Schutzwirkung eingeordnet",
+					"Keine absolute Garantie behauptet"
+				],
+				"hints": [
+					"Drei passende Funktionen",
+					"Äußere Schutzwirkung eingeordnet"
+				]
+			},
+			"2": {
+				"prompt": "Entwirf eine schematische Darstellung eines Übertragungswegs und einer dazu passenden Unterbrechung.",
+				"model": "Ich zeichne einen beispielhaften Kontaktweg über Hände zu einer Schleimhaut. Eine Unterbrechung kann darin bestehen, die Weitergabe durch geeignete Händehygiene zu verringern. Das Schema ist auf diesen Weg begrenzt und erklärt nicht alle Infektionen.",
+				"criteria": [
+					"Weg nachvollziehbar dargestellt",
+					"Maßnahme am Weg erklärt",
+					"Geltungsgrenze benannt"
+				],
+				"hints": ["Weg nachvollziehbar dargestellt", "Maßnahme am Weg erklärt"]
+			}
+		},
+		"extension": "Ergänze die digitale Übung durch Beobachtung, Modellvergleich oder Gespräch im Unterricht. Praktische Fertigkeiten und eigene Urteile brauchen zusätzliche Rückmeldung.",
+		"takeaway": "Die Barriere erschwert das Eindringen, ohne erst eine auf ein bestimmtes Antigen abgestimmte Antwort aufzubauen."
+	},
+	{
+		"id": "b8-blut",
+		"stage": "abwehr",
+		"title": "Blut: Transport, Abwehr und Gerinnung",
+		"skill": "Blut besteht aus Plasma und zellulären Bestandteilen.",
+		"bindings": ["3"],
+		"paragraphs": [
+			"Blut besteht aus Plasma und zellulären Bestandteilen. Rote Blutkörperchen transportieren mithilfe von Hämoglobin Sauerstoff. Weiße Blutkörperchen übernehmen unterschiedliche Aufgaben in der Abwehr. Blutplättchen sind an der Blutstillung beteiligt.",
+			"Plasma transportiert unter anderem gelöste Stoffe und enthält Proteine. Eine Zeichnung zeigt ausgewählte Strukturen; Form und Färbung sind Darstellungen und nicht jede Zelle ist im Lichtmikroskop sofort eindeutig zuzuordnen. Die Aufgaben der Blutbestandteile ergänzen sich."
+		],
+		"materialLabel": "Eigens verfasstes Unterrichtsmaterial; Modellzahlen sind keine Messdaten.",
+		"material": "Fiktive Zuordnungskarten: Sauerstofftransport; unterschiedliche Abwehrfunktionen; Beteiligung an der Blutstillung; Transport gelöster Stoffe.",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"question": "Welche Blutbestandteile transportieren vor allem Sauerstoff?",
+			"answer": "Rote Blutkörperchen.",
+			"wrong": ["Blutplättchen.", "Nur die weißen Blutkörperchen."],
+			"explanation": "Blut besteht aus Plasma und zellulären Bestandteilen. Rote Blutkörperchen transportieren mithilfe von Hämoglobin Sauerstoff. Weiße Blutkörperchen übernehmen unterschiedliche Aufgaben in der Abwehr. Blutplättchen sind an der Blutstillung beteiligt."
+		},
+		"cases": [
+			{
+				"prompt": "Ein Modell ordnet Sauerstofftransport den roten Blutkörperchen zu.",
+				"options": [
+					"Sauerstofftransport ist ausschließlich Aufgabe der Blutplättchen.",
+					"Die Zuordnung passt."
+				],
+				"answer": "Die Zuordnung passt.",
+				"feedback": "Rote Blutkörperchen enthalten das sauerstoffbindende Hämoglobin."
+			},
+			{
+				"prompt": "Alle weißen Blutkörperchen werden als einzige Zellart mit genau derselben Aufgabe beschrieben.",
+				"options": [
+					"Die Beschreibung erfasst bereits alle Abwehrfunktionen.",
+					"Die Vielfalt der Abwehrzellen fehlt."
+				],
+				"answer": "Die Vielfalt der Abwehrzellen fehlt.",
+				"feedback": "Weiße Blutkörperchen umfassen verschiedene Zellarten mit unterschiedlichen Aufgaben."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Ordne die vier Zuordnungskarten den Blutbestandteilen zu.",
+				"model": "Rote Blutkörperchen: Sauerstofftransport. Weiße Blutkörperchen: verschiedene Abwehrfunktionen. Blutplättchen: Blutstillung. Plasma: Transport gelöster Stoffe. Die Funktionen ergänzen sich.",
+				"criteria": [
+					"Vier Zuordnungen korrekt",
+					"Zelluläre Bestandteile und Plasma getrennt",
+					"Ergänzende Aufgaben erläutert"
+				],
+				"hints": [
+					"Vier Zuordnungen korrekt",
+					"Zelluläre Bestandteile und Plasma getrennt"
+				]
+			},
+			"2": {
+				"prompt": "Begründe, warum ein rotes Scheibchen in einer schematischen Zeichnung noch kein vollständiger Untersuchungsbefund ist.",
+				"model": "Farbe und Form können vereinfacht oder künstlich gewählt sein. Für einen Befund braucht es Angaben zum Präparat, zur Beobachtungsmethode und zu den erkennbaren Strukturen. Ein Schema erklärt Zusammenhänge, ersetzt aber kein Präparat.",
+				"criteria": [
+					"Darstellung erkannt",
+					"Untersuchungsangaben verlangt",
+					"Schema und Befund unterschieden"
+				],
+				"hints": ["Darstellung erkannt", "Untersuchungsangaben verlangt"]
+			}
+		},
+		"extension": "Ergänze die digitale Übung durch Beobachtung, Modellvergleich oder Gespräch im Unterricht. Praktische Fertigkeiten und eigene Urteile brauchen zusätzliche Rückmeldung.",
+		"takeaway": "Sie sind an der Blutstillung und Gerinnselbildung beteiligt."
+	},
+	{
+		"id": "b8-angeboren",
+		"stage": "abwehr",
+		"title": "Angeborene Abwehr und Lymphsystem",
+		"skill": "Zur angeborenen Abwehr gehören rasche Reaktionen wie Entzündung und die Tätigkeit von Fresszellen.",
+		"bindings": ["3"],
+		"paragraphs": [
+			"Zur angeborenen Abwehr gehören rasche Reaktionen wie Entzündung und die Tätigkeit von Fresszellen. Makrophagen können Fremdmaterial aufnehmen und abbauen. Angeboren bedeutet nicht wirkungslos, sondern beschreibt einen anderen Erkennungs- und Reaktionstyp als die erworbene spezifische Antwort.",
+			"Das Lymphsystem transportiert Flüssigkeit und verbindet wichtige Orte der Immunabwehr. In Lymphknoten können Abwehrzellen und Antigene zusammentreffen. Angeborene und spezifische Abwehr wirken zusammen; sie sind keine voneinander unabhängigen Konkurrenzsysteme."
+		],
+		"materialLabel": "Eigens verfasstes Unterrichtsmaterial; Modellzahlen sind keine Messdaten.",
+		"material": "Vereinfachtes Ablaufbild: Eine Barriere wird überwunden. Abwehrzellen werden aktiv, Fremdmaterial wird aufgenommen; Informationen können weitere spezifische Reaktionen unterstützen.",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"question": "Welche Tätigkeit passt zu einem Makrophagen?",
+			"answer": "Fremdmaterial aufnehmen und abbauen.",
+			"wrong": [
+				"Sauerstoff wie ein rotes Blutkörperchen transportieren.",
+				"Ein Virus unabhängig von Zellen vervielfältigen."
+			],
+			"explanation": "Zur angeborenen Abwehr gehören rasche Reaktionen wie Entzündung und die Tätigkeit von Fresszellen. Makrophagen können Fremdmaterial aufnehmen und abbauen. Angeboren bedeutet nicht wirkungslos, sondern beschreibt einen anderen Erkennungs- und Reaktionstyp als die erworbene spezifische Antwort."
+		},
+		"cases": [
+			{
+				"prompt": "Eine Fresszelle nimmt Fremdmaterial auf.",
+				"options": [
+					"Das ist eine Abwehrtätigkeit.",
+					"Das ist die Befruchtung einer Eizelle."
+				],
+				"answer": "Das ist eine Abwehrtätigkeit.",
+				"feedback": "Die Aufnahme und der Abbau gehören zu den Aufgaben von Fresszellen."
+			},
+			{
+				"prompt": "Ein Modell lässt jede Verbindung zwischen angeborener und spezifischer Antwort weg.",
+				"options": [
+					"Eine wichtige Zusammenarbeit bleibt unsichtbar.",
+					"Es beweist, dass die Antworten unabhängig bleiben."
+				],
+				"answer": "Eine wichtige Zusammenarbeit bleibt unsichtbar.",
+				"feedback": "Ein Modell mit getrennten Kästen kann die Wechselwirkungen nur unvollständig zeigen."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Erkläre mit einer Skizze die Zusammenarbeit einer äußeren Barriere, angeborener Abwehr und weiterer spezifischer Antwort.",
+				"model": "Die Barriere erschwert den Eintritt. Gelangt Material hinein, reagieren unter anderem Fresszellen. Weitere Erkennungs- und Signalprozesse können spezifische Abwehrzellen beteiligen. Das Schema trennt Ebenen, zeigt aber auch Pfeile für ihr Zusammenwirken.",
+				"criteria": [
+					"Drei Ebenen unterschieden",
+					"Zusammenarbeit mit Pfeilen erläutert",
+					"Vereinfachung benannt"
+				],
+				"hints": [
+					"Drei Ebenen unterschieden",
+					"Zusammenarbeit mit Pfeilen erläutert"
+				]
+			},
+			"2": {
+				"prompt": "Ein Lerntext setzt unspezifisch mit ohne jede Erkennung gleich. Korrigiere ihn.",
+				"model": "Angeborene Abwehr erkennt bestimmte allgemeine Muster und reagiert rasch. Sie ist nicht auf dieselbe Weise individuell antigenbezogen wie die erworbene Antwort, aber sie arbeitet keineswegs ohne jede Erkennung. Beide Systeme beeinflussen sich.",
+				"criteria": [
+					"Begriff kritisch eingeordnet",
+					"Allgemeine Muster von spezifischer Antwort getrennt",
+					"Zusammenarbeit berücksichtigt"
+				],
+				"hints": [
+					"Begriff kritisch eingeordnet",
+					"Allgemeine Muster von spezifischer Antwort getrennt"
+				]
+			}
+		},
+		"extension": "Ergänze die digitale Übung durch Beobachtung, Modellvergleich oder Gespräch im Unterricht. Praktische Fertigkeiten und eigene Urteile brauchen zusätzliche Rückmeldung.",
+		"takeaway": "Sie ergänzen und beeinflussen einander bei der Abwehr."
+	},
+	{
+		"id": "b8-spezifisch",
+		"stage": "abwehr",
+		"title": "Antigen, Antikörper und Gedächtnis",
+		"skill": "Antigene sind Strukturen, die bei einer spezifischen Immunantwort erkannt werden können.",
+		"bindings": ["3"],
+		"paragraphs": [
+			"Antigene sind Strukturen, die bei einer spezifischen Immunantwort erkannt werden können. Passende Antikörper binden an bestimmte Strukturen. B-Zellen können zu antikörperbildenden Plasmazellen werden; T-Zellen übernehmen unter anderem Steuerungsaufgaben oder wirken gegen infizierte Zellen.",
+			"Nach einem Kontakt können Gedächtniszellen zurückbleiben. Ein späterer Kontakt kann dadurch eine schnellere passende Reaktion auslösen. Das Schlüssel-Schloss-Modell zeigt die Passung, nicht alle molekularen Einzelheiten. Antigen und Antikörper sind verschiedene Begriffe."
+		],
+		"materialLabel": "Eigens verfasstes Unterrichtsmaterial; Modellzahlen sind keine Messdaten.",
+		"material": "Fiktives Kurvenmodell: Beim ersten Kontakt beginnt die Antikörpermenge später zu steigen als beim erneuten Kontakt mit demselben Modellantigen. Die Achse verwendet freie Einheiten und keine klinischen Messwerte.",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"question": "Was bindet an passende Antigenstrukturen?",
+			"answer": "Ein passender Antikörper.",
+			"wrong": [
+				"Jedes beliebige Molekül unabhängig von seiner Struktur.",
+				"Nur ein rotes Blutkörperchen als Ganzes."
+			],
+			"explanation": "Antigene sind Strukturen, die bei einer spezifischen Immunantwort erkannt werden können. Passende Antikörper binden an bestimmte Strukturen. B-Zellen können zu antikörperbildenden Plasmazellen werden; T-Zellen übernehmen unter anderem Steuerungsaufgaben oder wirken gegen infizierte Zellen."
+		},
+		"cases": [
+			{
+				"prompt": "Ein erneuter Kontakt löst im Modell früher eine passende Antwort aus.",
+				"options": [
+					"Damit ist jede spätere Infektion ausgeschlossen.",
+					"Das passt zum immunologischen Gedächtnis."
+				],
+				"answer": "Das passt zum immunologischen Gedächtnis.",
+				"feedback": "Eine schnellere Antwort ist keine uneingeschränkte Garantie gegen jede Infektion."
+			},
+			{
+				"prompt": "Ein Antikörper wird als das eindringende Virus bezeichnet.",
+				"options": [
+					"Die Begriffe meinen grundsätzlich genau dasselbe.",
+					"Antikörper und erkannte Antigenstruktur werden verwechselt."
+				],
+				"answer": "Antikörper und erkannte Antigenstruktur werden verwechselt.",
+				"feedback": "Antikörper werden von Abwehrzellen gebildet; sie binden an passende Strukturen."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Beschreibe das Kurvenmodell und gib eine biologische Erklärung.",
+				"model": "Beim zweiten Modellkontakt steigt die passende Antikörpermenge früher. Gedächtniszellen können die erneute spezifische Antwort beschleunigen. Die Modellkurve ist keine Messung einer bestimmten Person und garantiert keine vollständige Infektionsvermeidung.",
+				"criteria": [
+					"Kurvenbeobachtung beschrieben",
+					"Gedächtnis als Erklärung genannt",
+					"Modellgrenze berücksichtigt"
+				],
+				"hints": [
+					"Kurvenbeobachtung beschrieben",
+					"Gedächtnis als Erklärung genannt"
+				]
+			},
+			"2": {
+				"prompt": "Erkläre am Schlüssel-Schloss-Modell sowohl Passung als auch eine Grenze.",
+				"model": "Eine bestimmte Form steht für die passende Bindung von Antikörper und Antigenstruktur. Echte Moleküle sind beweglich und chemisch komplexer; ihre Farben und starren Formen im Modell sind didaktische Entscheidungen. Die Passung bleibt die gezielt dargestellte Beziehung.",
+				"criteria": [
+					"Antigen und Antikörper unterschieden",
+					"Passung erklärt",
+					"Eine konkrete Grenze benannt"
+				],
+				"hints": ["Antigen und Antikörper unterschieden", "Passung erklärt"]
+			}
+		},
+		"lab": "immune",
+		"extension": "Ergänze die digitale Übung durch Beobachtung, Modellvergleich oder Gespräch im Unterricht. Praktische Fertigkeiten und eigene Urteile brauchen zusätzliche Rückmeldung.",
+		"takeaway": "Sie ermöglichen häufig eine schnellere spezifische Antwort."
+	},
+	{
+		"id": "b8-immunisierung",
+		"stage": "abwehr",
+		"title": "Aktive und passive Immunisierung",
+		"skill": "Aktive Immunisierung regt die eigene spezifische Immunantwort an.",
+		"bindings": ["3"],
+		"paragraphs": [
+			"Aktive Immunisierung regt die eigene spezifische Immunantwort an. Dabei können Gedächtniszellen entstehen. Der Aufbau benötigt Zeit. Bei passiver Immunisierung werden fertige passende Antikörper zugeführt.",
+			"Passive Antikörper können schnell wirken, werden aber mit der Zeit abgebaut; ihre Gabe erzeugt selbst kein entsprechendes immunologisches Gedächtnis. Aktive und passive Immunisierung sind unterschiedliche Mechanismen, die in bestimmten Situationen auch kombiniert werden können."
+		],
+		"materialLabel": "Eigens verfasstes Unterrichtsmaterial; Modellzahlen sind keine Messdaten.",
+		"material": "Modell A: Das eigene Immunsystem reagiert auf ein Antigen. Modell B: Fertige Antikörper werden zugeführt und später abgebaut. Das Schema stellt keine persönliche Impfentscheidung dar.",
+		"sourceIds": ["lp", "pei"],
+		"quiz": {
+			"question": "Was wird bei passiver Immunisierung zugeführt?",
+			"answer": "Fertige passende Antikörper.",
+			"wrong": [
+				"Eine Garantie lebenslanger Immunität.",
+				"Ausschließlich neue rote Blutkörperchen."
+			],
+			"explanation": "Aktive Immunisierung regt die eigene spezifische Immunantwort an. Dabei können Gedächtniszellen entstehen. Der Aufbau benötigt Zeit. Bei passiver Immunisierung werden fertige passende Antikörper zugeführt."
+		},
+		"cases": [
+			{
+				"prompt": "Modell A lässt die eigene Abwehr auf Antigene reagieren.",
+				"options": [
+					"Das ist der Mechanismus aktiver Immunisierung.",
+					"Das ist nur die Gabe fertiger Antikörper."
+				],
+				"answer": "Das ist der Mechanismus aktiver Immunisierung.",
+				"feedback": "Die eigene Immunantwort wird angeregt; Gedächtnis kann entstehen."
+			},
+			{
+				"prompt": "Fertige Antikörper wirken, ihre Menge nimmt später ab.",
+				"options": [
+					"Das passt zu passiver Immunisierung.",
+					"Damit ist ein unbegrenzter Schutz bewiesen."
+				],
+				"answer": "Das passt zu passiver Immunisierung.",
+				"feedback": "Zugeführte Antikörper werden abgebaut und wirken nur zeitlich begrenzt."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Vergleiche beide Mechanismen nach Herkunft der Antikörper und Gedächtnisbildung.",
+				"model": "Aktiv: Das eigene Immunsystem bildet eine passende Antwort und kann Gedächtniszellen aufbauen. Passiv: Fertige Antikörper kommen von außen; ihre Gabe allein bildet dieses Gedächtnis nicht. Die beiden Wege haben unterschiedliche zeitliche Eigenschaften.",
+				"criteria": [
+					"Herkunft unterschieden",
+					"Gedächtnis korrekt verglichen",
+					"Zeitlichen Unterschied benannt"
+				],
+				"hints": ["Herkunft unterschieden", "Gedächtnis korrekt verglichen"]
+			},
+			"2": {
+				"prompt": "Warum ist die Gleichsetzung passiv bedeutet nutzlos falsch?",
+				"model": "Passiv beschreibt die Herkunft fertiger Antikörper, nicht ihre Bedeutung. Sie können rasch wirken, während eine aktive Antwort Zeit braucht. Ihre zeitliche Begrenzung und das fehlende eigene Gedächtnis sind zu berücksichtigen; die Auswahl einer Anwendung ist eine medizinische Frage.",
+				"criteria": [
+					"Mechanismus statt Wertung erklärt",
+					"Schnelle Wirkung benannt",
+					"Begrenzung berücksichtigt"
+				],
+				"hints": [
+					"Mechanismus statt Wertung erklärt",
+					"Schnelle Wirkung benannt"
+				]
+			}
+		},
+		"lab": "immune",
+		"extension": "Ergänze die digitale Übung durch Beobachtung, Modellvergleich oder Gespräch im Unterricht. Praktische Fertigkeiten und eigene Urteile brauchen zusätzliche Rückmeldung.",
+		"takeaway": "Die aktive Antwort kann eigenes Gedächtnis aufbauen; zugeführte Antikörper allein tun das nicht."
+	},
+	{
+		"id": "b8-allergie",
+		"stage": "abwehr",
+		"title": "Allergien: eine fehlgeleitete Reaktion",
+		"skill": "Bei einer Allergie reagiert das Immunsystem auf Stoffe, die für viele Menschen harmlos sind.",
+		"bindings": ["3"],
+		"paragraphs": [
+			"Bei einer Allergie reagiert das Immunsystem auf Stoffe, die für viele Menschen harmlos sind. Ein solcher auslösender Stoff heißt Allergen. Pollen sind ein mögliches Beispiel; die Reaktionen und Auslöser unterscheiden sich zwischen Menschen.",
+			"Immunreaktion bedeutet nicht automatisch Infektion. Eine Allergie ist keine Vermehrung eines Krankheitserregers. Das Unterrichtsmodell ordnet Mechanismen zu; eine persönliche Diagnose oder die Auswahl einer Behandlung lässt sich aus solchen Beispielen nicht ableiten. Behandlungskonzepte können die Verringerung des Allergenkontakts, das Dämpfen von Reaktionen etwa durch Antihistaminika oder eine spezifische Immuntherapie umfassen. Sie wirken auf unterschiedliche Teile des Zusammenhangs; die passende Anwendung braucht fachliche Beurteilung."
+		],
+		"materialLabel": "Eigens verfasstes Unterrichtsmaterial; Modellzahlen sind keine Messdaten.",
+		"material": "Fiktiver Lernfall: Eine Immunreaktion wird durch Pollenbestandteile ausgelöst. In einem anderen Fall vermehrt sich ein Virus in Zellen. Die Fälle vergleichen Ursachen und sind keine Diagnoseaufgaben.",
+		"sourceIds": ["lp", "allergie"],
+		"quiz": {
+			"question": "Was bezeichnet man als Allergen?",
+			"answer": "Einen Stoff, der eine allergische Reaktion auslösen kann.",
+			"wrong": [
+				"Grundsätzlich jedes Antibiotikum als wirksame Therapie.",
+				"Eine sich teilende rote Blutzelle."
+			],
+			"explanation": "Bei einer Allergie reagiert das Immunsystem auf Stoffe, die für viele Menschen harmlos sind. Ein solcher auslösender Stoff heißt Allergen. Pollen sind ein mögliches Beispiel; die Reaktionen und Auslöser unterscheiden sich zwischen Menschen."
+		},
+		"cases": [
+			{
+				"prompt": "Pollenbestandteile lösen eine allergische Reaktion aus.",
+				"options": [
+					"Pollen sind deshalb automatisch Viren.",
+					"Der Auslöser ist ein Allergen."
+				],
+				"answer": "Der Auslöser ist ein Allergen.",
+				"feedback": "Ein auslösender Stoff und ein Krankheitserreger sind verschiedene Kategorien."
+			},
+			{
+				"prompt": "Zwei Personen reagieren unterschiedlich auf denselben Pollen.",
+				"options": [
+					"Eine unterschiedliche Reaktion ist biologisch unmöglich.",
+					"Allergische Empfindlichkeiten können verschieden sein."
+				],
+				"answer": "Allergische Empfindlichkeiten können verschieden sein.",
+				"feedback": "Auslöser und Reaktionslage sind nicht bei allen Menschen gleich."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Vergleiche den Pollenfall und den Virusfall nach dem auslösenden Mechanismus.",
+				"model": "Im Pollenfall reagiert die Abwehr auf ein Allergen; eine Erregervermehrung ist dafür nicht vorausgesetzt. Im Virusfall kann eine Infektion mit Vermehrung in Wirtszellen vorliegen. Ähnliche Beschwerden allein unterscheiden die Ursachen nicht zuverlässig.",
+				"criteria": [
+					"Auslöser unterschieden",
+					"Infektion nicht gleichgesetzt",
+					"Keine Diagnose aus Beschwerden behauptet"
+				],
+				"hints": ["Auslöser unterschieden", "Infektion nicht gleichgesetzt"]
+			},
+			"2": {
+				"prompt": "Verbessere die Überschrift Jede Immunreaktion bedeutet eine Ansteckung.",
+				"model": "Die Überschrift ist zu allgemein. Abwehrreaktionen können auf Erreger, aber auch bei Allergien auf bestimmte harmlose Stoffe gerichtet sein. Besser: Immunreaktionen haben unterschiedliche Auslöser. Ein persönlicher Fall müsste fachlich untersucht werden.",
+				"criteria": [
+					"Verallgemeinerung erkannt",
+					"Allergie als Gegenbeispiel erklärt",
+					"Sachgerechte Alternative formuliert"
+				],
+				"hints": [
+					"Verallgemeinerung erkannt",
+					"Allergie als Gegenbeispiel erklärt"
+				]
+			}
+		},
+		"extension": "Ergänze die digitale Übung durch Beobachtung, Modellvergleich oder Gespräch im Unterricht. Praktische Fertigkeiten und eigene Urteile brauchen zusätzliche Rückmeldung.",
+		"takeaway": "Sie kann durch eine Reaktion auf einen harmlosen Stoff entstehen, ohne dass sich ein Erreger vermehrt."
+	},
+	{
+		"id": "b8-antibiotika",
+		"stage": "abwehr",
+		"title": "Antibiotika und resistente Bakterien",
+		"skill": "Antibiotika können an bestimmten bakteriellen Strukturen oder Prozessen angreifen.",
+		"bindings": ["3"],
+		"paragraphs": [
+			"Antibiotika können an bestimmten bakteriellen Strukturen oder Prozessen angreifen. Viren besitzen diese Angriffspunkte nicht; ein Antibiotikum wirkt deshalb nicht gegen eine reine Virusinfektion. Ob eine Behandlung erforderlich ist, wird medizinisch beurteilt.",
+			"In einer Bakterienpopulation können resistente Varianten vorkommen oder entstehen. Unter einem passenden Antibiotikum überleben sie häufiger und vermehren sich weiter. Das Antibiotikum macht nicht den menschlichen Körper resistent. Unnötiger oder unsachgemäßer Einsatz kann die Auswahl resistenter Bakterien begünstigen."
+		],
+		"materialLabel": "Eigens verfasstes Unterrichtsmaterial; Modellzahlen sind keine Messdaten.",
+		"material": "Fiktives Selektionsmodell: Von 100 Bakterien sind 5 widerstandsfähig. Ein Modellwirkstoff trifft vor allem die empfindlichen Bakterien. Danach kann der Anteil widerstandsfähiger Varianten steigen. Es gibt keine Dosierungs- oder Einnahmeangabe.",
+		"sourceIds": ["lp", "kbv"],
+		"quiz": {
+			"question": "Warum wirken Antibiotika nicht gegen eine reine Virusinfektion?",
+			"answer": "Viren besitzen die bakteriellen Angriffspunkte nicht.",
+			"wrong": [
+				"Viren bestehen aus besonders vielen Bakterien.",
+				"Der Körper wird durch jede Virusinfektion antibiotisch."
+			],
+			"explanation": "Antibiotika können an bestimmten bakteriellen Strukturen oder Prozessen angreifen. Viren besitzen diese Angriffspunkte nicht; ein Antibiotikum wirkt deshalb nicht gegen eine reine Virusinfektion. Ob eine Behandlung erforderlich ist, wird medizinisch beurteilt."
+		},
+		"cases": [
+			{
+				"prompt": "Nach dem Modellwirkstoff vermehren sich resistente Bakterien weiter.",
+				"options": [
+					"Ihr Anteil in der Population kann steigen.",
+					"Alle Bakterien beschlossen gemeinsam, resistent zu werden."
+				],
+				"answer": "Ihr Anteil in der Population kann steigen.",
+				"feedback": "Unterschiedlicher Überlebens- und Fortpflanzungserfolg kann vorhandene Unterschiede verschieben."
+			},
+			{
+				"prompt": "Ein Text behauptet, die behandelte Person sei nun selbst antibiotikaresistent.",
+				"options": [
+					"Die Resistenz wird fälschlich dem Körper zugeschrieben.",
+					"Das ist die biologische Definition jeder Resistenz."
+				],
+				"answer": "Die Resistenz wird fälschlich dem Körper zugeschrieben.",
+				"feedback": "Resistenz bezeichnet hier Eigenschaften der Bakterien gegenüber dem Wirkstoff."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Erkläre die Veränderung im fiktiven Modell mit Variation und Auswahl.",
+				"model": "Es gibt empfindliche und resistente Bakterien. Der Wirkstoff trifft vor allem empfindliche Varianten; widerstandsfähige können relativ mehr Nachkommen stellen. Ihr Anteil steigt, ohne dass ein bewusster Anpassungswunsch nötig wäre.",
+				"criteria": [
+					"Varianten unterschieden",
+					"Auswahlwirkung erklärt",
+					"Population statt Körper beschrieben"
+				],
+				"hints": ["Varianten unterschieden", "Auswahlwirkung erklärt"]
+			},
+			"2": {
+				"prompt": "Korrigiere Antibiotika helfen bei jeder Infektion, wenn man nur mehr davon nimmt.",
+				"model": "Die Aussage ist falsch: Antibiotika richten sich gegen bestimmte bakterielle Angriffspunkte und nicht gegen reine Virusinfektionen. Ihre Anwendung und Auswahl gehören in medizinische Verantwortung. Das Unterrichtsmodell leitet keine Mengen oder Selbstbehandlung ab.",
+				"criteria": [
+					"Bakteriellen Angriffspunkt erklärt",
+					"Virusinfektion abgegrenzt",
+					"Keine Mengenbehauptung übernommen"
+				],
+				"hints": [
+					"Bakteriellen Angriffspunkt erklärt",
+					"Virusinfektion abgegrenzt"
+				]
+			}
+		},
+		"lab": "selection",
+		"extension": "Ergänze die digitale Übung durch Beobachtung, Modellvergleich oder Gespräch im Unterricht. Praktische Fertigkeiten und eigene Urteile brauchen zusätzliche Rückmeldung.",
+		"takeaway": "Die Bakterien, nicht der menschliche Körper."
+	},
+	{
+		"id": "b8-hiv",
+		"stage": "abwehr",
+		"title": "HIV und AIDS unterscheiden",
+		"skill": "HIV kann unter anderem bestimmte T-Helferzellen infizieren und dadurch die Koordination der Abwehr beeinträchtigen.",
+		"bindings": ["3"],
+		"paragraphs": [
+			"HIV kann unter anderem bestimmte T-Helferzellen infizieren und dadurch die Koordination der Abwehr beeinträchtigen. HIV-Infektion und AIDS sind nicht gleichbedeutend: AIDS bezeichnet ein fortgeschrittenes Krankheitsstadium bei schwerer Abwehrschwäche. Übertragungen können etwa durch infektiöses Blut oder bestimmte sexuelle Kontakte mit virushaltigen Körperflüssigkeiten erfolgen; passende Schutzmaßnahmen setzen an solchen Wegen an.",
+			"Eine wirksame antiretrovirale Therapie hemmt die Virusvermehrung und kann AIDS verhindern. Bei dauerhaft wirksam unterdrückter, nicht nachweisbarer Viruslast wird HIV sexuell nicht übertragen. Händeschütteln, gemeinsames Lernen oder Umarmen sind keine HIV-Übertragungswege. Biologische Aufklärung soll auch unbegründete Ausgrenzung verhindern.",
+			"Bei der Virusvermehrung können durch Mutation Varianten entstehen. Manche sind gegenüber einem Wirkstoff weniger empfindlich. Werden andere Varianten stärker gehemmt, können resistente Varianten relativ häufiger werden. Eine Kombination wirksamer Stoffe mit unterschiedlichen Angriffspunkten erschwert dieses Entkommen und soll die Virusvermehrung möglichst vollständig unterdrücken. Das ist ein biologisches Grundprinzip; die konkrete Therapie wird fachlich ausgewählt und kontrolliert."
+		],
+		"materialLabel": "Eigens verfasstes Unterrichtsmaterial; Modellzahlen sind keine Messdaten.",
+		"material": "Erfundenes Vergleichsmodell: Eine Virusvariante ist gegen Angriffspunkt A unempfindlich, gegen B aber noch empfindlich. Modell 1 hemmt nur A. Modell 2 hemmt A und B. Die übrigen biologischen und medizinischen Bedingungen werden hier stark vereinfacht.",
+		"sourceIds": ["lp", "hiv", "hivresistenz", "hivtherapie"],
+		"quiz": {
+			"question": "Was bezeichnet AIDS im Unterschied zu HIV?",
+			"answer": "Ein fortgeschrittenes Krankheitsstadium mit schwerer Abwehrschwäche.",
+			"wrong": [
+				"Jede HIV-Infektion ab dem ersten Tag.",
+				"Eine Form des Händeschüttelns."
+			],
+			"explanation": "HIV kann unter anderem bestimmte T-Helferzellen infizieren und dadurch die Koordination der Abwehr beeinträchtigen. HIV-Infektion und AIDS sind nicht gleichbedeutend: AIDS bezeichnet ein fortgeschrittenes Krankheitsstadium bei schwerer Abwehrschwäche. Übertragungen können etwa durch infektiöses Blut oder bestimmte sexuelle Kontakte mit virushaltigen Körperflüssigkeiten erfolgen; passende Schutzmaßnahmen setzen an solchen Wegen an."
+		},
+		"cases": [
+			{
+				"prompt": "Eine Person mit HIV sitzt in derselben Klasse.",
+				"options": [
+					"Die Person muss wegen der Sitznachbarschaft ausgeschlossen werden.",
+					"Gemeinsames Lernen ist kein HIV-Übertragungsweg."
+				],
+				"answer": "Gemeinsames Lernen ist kein HIV-Übertragungsweg.",
+				"feedback": "Sozialer Alltagskontakt wie gemeinsames Lernen überträgt HIV nicht."
+			},
+			{
+				"prompt": "Die Modellvariante ist gegen A unempfindlich, wird aber weiterhin durch B gehemmt.",
+				"options": [
+					"Eine Kombination verschiedener Angriffspunkte kann ihr Entkommen erschweren.",
+					"Mehrere Angriffspunkte sind grundsätzlich gleichbedeutend mit nur einem."
+				],
+				"answer": "Eine Kombination verschiedener Angriffspunkte kann ihr Entkommen erschweren.",
+				"feedback": "Die Unempfindlichkeit gegen einen Angriffspunkt bedeutet nicht automatisch Unempfindlichkeit gegen alle anderen. Das vereinfacht das Kombinationsprinzip."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Erkläre in drei Sätzen den Unterschied zwischen Virus, Infektion und AIDS.",
+				"model": "HIV ist ein Virus. Eine HIV-Infektion bedeutet, dass das Virus den Körper infiziert hat; das ist nicht automatisch AIDS. AIDS bezeichnet ein fortgeschrittenes Stadium schwerer Abwehrschwäche, dessen Entstehung eine wirksame Therapie verhindern kann.",
+				"criteria": [
+					"Virus und Infektion getrennt",
+					"AIDS korrekt eingeordnet",
+					"Wirkung der Therapie berücksichtigt"
+				],
+				"hints": ["Virus und Infektion getrennt", "AIDS korrekt eingeordnet"]
+			},
+			"2": {
+				"prompt": "Vergleiche die beiden Modellstrategien unter Berücksichtigung der Virusvariabilität. Warum kann eine Kombination sinnvoll sein, und warum garantiert dieses Schema keinen persönlichen Therapieerfolg?",
+				"model": "Mutationen können Varianten mit unterschiedlicher Empfindlichkeit erzeugen. Bei einer Hemmung nur von A kann die gegen A resistente Modellvariante relativ im Vorteil sein. Ein zusätzlich wirksamer Angriffspunkt B erschwert ihr Entkommen. Reale Resistenzen und Behandlungen sind komplexer und brauchen fachliche Auswahl sowie Kontrollen; das Modell enthält keinen individuellen Behandlungsplan.",
+				"criteria": [
+					"Variation und Resistenz unterschieden",
+					"Selektionswirkung und Kombinationsprinzip verbunden",
+					"Modellgrenze und fachliche Kontrolle benannt"
+				],
+				"hints": [
+					"Welche Variante wird durch A noch gehemmt?",
+					"Was ändert ein anderer wirksamer Angriffspunkt?"
+				]
+			}
+		},
+		"extension": "Ergänze die digitale Übung durch Beobachtung, Modellvergleich oder Gespräch im Unterricht. Praktische Fertigkeiten und eigene Urteile brauchen zusätzliche Rückmeldung.",
+		"takeaway": "Unterschiedliche wirksame Angriffspunkte erschweren es resistenten Virusvarianten, der Therapie zu entgehen."
+	},
+	{
+		"id": "b8-identitaet",
+		"stage": "entwicklung",
+		"title": "Entwicklung, Identität und Grenzen",
+		"skill": "Körperliche Entwicklung, persönliche Identität, soziale Rollen und sexuelle Orientierung sind verschiedene Aspekte menschlichen Lebens.",
+		"bindings": ["4"],
+		"paragraphs": [
+			"Körperliche Entwicklung, persönliche Identität, soziale Rollen und sexuelle Orientierung sind verschiedene Aspekte menschlichen Lebens. Eine gesellschaftliche Erwartung beschreibt nicht automatisch eine biologische Notwendigkeit. Menschen entwickeln sich individuell und verdienen unabhängig davon Respekt. Sexuelle Orientierung betrifft, zu wem sich Menschen angezogen fühlen; sie ist nicht mit einem Hobby oder einer sozialen Rollenerwartung gleichzusetzen.",
+			"Verantwortliche Beziehungen berücksichtigen Freiwilligkeit, gegenseitigen Respekt und persönliche Grenzen. Niemand muss im Unterricht private Erfahrungen mitteilen. Allgemeine fachliche Fragen können mit erfundenen Situationen untersucht werden. Eine Meinung braucht eine Begründung; Abwertung ist kein biologischer Befund."
+		],
+		"materialLabel": "Eigens verfasstes Unterrichtsmaterial; Modellzahlen sind keine Messdaten.",
+		"material": "Erfundene Situation: Eine Gruppe behauptet, eine bestimmte Freizeitbeschäftigung passe grundsätzlich nur zu einem Geschlecht. Eine andere Person möchte zu persönlichen Erfahrungen nichts sagen.",
+		"sourceIds": ["lp", "loveline"],
+		"quiz": {
+			"question": "Was ist eine gesellschaftliche Rollenerwartung?",
+			"answer": "Eine soziale Vorstellung darüber, wie Menschen sich verhalten sollen.",
+			"wrong": [
+				"Ein unveränderliches Naturgesetz für alle Personen.",
+				"Eine Messung der Blutgruppe."
+			],
+			"explanation": "Körperliche Entwicklung, persönliche Identität, soziale Rollen und sexuelle Orientierung sind verschiedene Aspekte menschlichen Lebens. Eine gesellschaftliche Erwartung beschreibt nicht automatisch eine biologische Notwendigkeit. Menschen entwickeln sich individuell und verdienen unabhängig davon Respekt. Sexuelle Orientierung betrifft, zu wem sich Menschen angezogen fühlen; sie ist nicht mit einem Hobby oder einer sozialen Rollenerwartung gleichzusetzen."
+		},
+		"cases": [
+			{
+				"prompt": "Eine Freizeitvorliebe wird als zwingende biologische Eigenschaft dargestellt.",
+				"options": [
+					"Eine soziale Erwartung wird mit Biologie verwechselt.",
+					"Jede Rollenerwartung ist ein Naturgesetz."
+				],
+				"answer": "Eine soziale Erwartung wird mit Biologie verwechselt.",
+				"feedback": "Soziale Zuschreibungen und biologische Befunde sind unterschiedliche Ebenen."
+			},
+			{
+				"prompt": "Eine Person will keine privaten Erfahrungen nennen.",
+				"options": [
+					"Die fachliche Arbeit kann ohne diese Angaben weitergehen.",
+					"Sie muss ihre Erfahrungen veröffentlichen."
+				],
+				"answer": "Die fachliche Arbeit kann ohne diese Angaben weitergehen.",
+				"feedback": "Respektvolle Bildung benötigt keine Offenlegung privater Lebensumstände."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Unterscheide an der erfundenen Situation eine soziale Zuschreibung und eine sachliche biologische Aussage.",
+				"model": "Die Behauptung über passende Hobbys ist eine soziale Zuschreibung. Eine biologische Aussage müsste auf geeigneten überprüfbaren Befunden beruhen und dürfte daraus keine pauschale Wertordnung ableiten. Individuelle Vorlieben werden respektiert.",
+				"criteria": [
+					"Soziale Ebene erkannt",
+					"Biologischen Belegmaßstab genannt",
+					"Keine Abwertung übernommen"
+				],
+				"hints": ["Soziale Ebene erkannt", "Biologischen Belegmaßstab genannt"]
+			},
+			"2": {
+				"prompt": "Formuliere drei begründete Regeln für eine Unterrichtsdiskussion über Entwicklung und Beziehungen.",
+				"model": "Wir stellen allgemeine fachliche Fragen statt private Auskünfte zu verlangen. Wir respektieren Grenzen und ein Nein. Wir bewerten Begründungen und Belege, nicht den persönlichen Wert eines Menschen. So werden respektvolle Beteiligung und sachliches Lernen möglich.",
+				"criteria": [
+					"Privatsphäre berücksichtigt",
+					"Freiwilligkeit und Grenzen erläutert",
+					"Regeln nachvollziehbar begründet"
+				],
+				"hints": [
+					"Privatsphäre berücksichtigt",
+					"Freiwilligkeit und Grenzen erläutert"
+				]
+			}
+		},
+		"extension": "Ergänze die digitale Übung durch Beobachtung, Modellvergleich oder Gespräch im Unterricht. Praktische Fertigkeiten und eigene Urteile brauchen zusätzliche Rückmeldung.",
+		"takeaway": "Die freiwilligen Entscheidungen und ein Nein der anderen Person zu respektieren."
+	},
+	{
+		"id": "b8-zyklus",
+		"stage": "entwicklung",
+		"title": "Der Eireifezyklus ist hormonell gesteuert",
+		"skill": "Im Eireifezyklus reift eine Eizelle in einem Follikel heran.",
+		"bindings": ["4"],
+		"paragraphs": [
+			"Im Eireifezyklus reift eine Eizelle in einem Follikel heran. FSH unterstützt die Follikelreifung; Östrogene tragen zum Aufbau der Gebärmutterschleimhaut bei. Ein LH-Anstieg löst den Eisprung aus. Die Eizelle wird aus dem Eierstock freigesetzt und vom Eileiter aufgenommen.",
+			"Der Gelbkörper bildet unter anderem Progesteron, das die Schleimhaut umgestaltet und erhält. Ohne Schwangerschaft bildet er sich zurück; sinkende Hormonspiegel führen zur Menstruation. Zeitpunkte und Zykluslängen sind individuell variabel. Eine idealisierte Abfolge ist kein Kalender zur sicheren Vorhersage fruchtbarer Tage."
+		],
+		"materialLabel": "Eigens verfasstes Unterrichtsmaterial; Modellzahlen sind keine Messdaten.",
+		"material": "Schematische Stationen ohne feste Tage: Follikelreifung und Schleimhautaufbau → Eisprung → Gelbkörperphase → bei ausbleibender Schwangerschaft hormoneller Abfall und Menstruation.",
+		"sourceIds": ["lp", "zyklus"],
+		"quiz": {
+			"question": "Welcher Hormonanstieg löst den Eisprung aus?",
+			"answer": "Ein Anstieg des luteinisierenden Hormons LH.",
+			"wrong": [
+				"Ein Anstieg von Hämoglobin.",
+				"Eine Vermehrung roter Blutkörperchen."
+			],
+			"explanation": "Im Eireifezyklus reift eine Eizelle in einem Follikel heran. FSH unterstützt die Follikelreifung; Östrogene tragen zum Aufbau der Gebärmutterschleimhaut bei. Ein LH-Anstieg löst den Eisprung aus. Die Eizelle wird aus dem Eierstock freigesetzt und vom Eileiter aufgenommen."
+		},
+		"cases": [
+			{
+				"prompt": "Eine Zeichnung setzt den Eisprung bei jeder Person auf denselben Kalendertag.",
+				"options": [
+					"Das ist eine sichere Vorhersage für jeden Zyklus.",
+					"Die individuelle zeitliche Variabilität fehlt."
+				],
+				"answer": "Die individuelle zeitliche Variabilität fehlt.",
+				"feedback": "Ein vereinfachtes Schema beschreibt einen Verlauf, keine verlässliche individuelle Datumsberechnung."
+			},
+			{
+				"prompt": "Der Gelbkörper bildet Progesteron.",
+				"options": [
+					"Dadurch werden rote Blutkörperchen zu Eizellen.",
+					"Das unterstützt die Umgestaltung und Erhaltung der Schleimhaut."
+				],
+				"answer": "Das unterstützt die Umgestaltung und Erhaltung der Schleimhaut.",
+				"feedback": "Der hormonelle Zusammenhang betrifft unter anderem die Gebärmutterschleimhaut."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Beschreibe die vier Modellstationen und ordne LH sowie Progesteron zu.",
+				"model": "Follikelreifung und Schleimhautaufbau gehen dem Eisprung voraus. Ein LH-Anstieg löst die Freisetzung der Eizelle aus. Danach bildet der Gelbkörper Progesteron. Ohne Schwangerschaft kann sein Rückgang mit sinkenden Hormonspiegeln zur Menstruation führen.",
+				"criteria": [
+					"Abfolge korrekt",
+					"LH dem Eisprung zugeordnet",
+					"Progesteron und Schleimhaut verbunden"
+				],
+				"hints": ["Abfolge korrekt", "LH dem Eisprung zugeordnet"]
+			},
+			"2": {
+				"prompt": "Warum wäre ein Kalender mit einem angeblich sicheren Eisprungtag eine falsche Verwendung dieses Unterrichtsmodells?",
+				"model": "Das Schema zeigt einen allgemeinen hormonellen Zusammenhang ohne persönliche Messung. Zeitpunkte und Längen variieren; eine starre Tageszahl lässt sich daraus nicht für einzelne Personen ableiten. Das Modell ist keine individuelle Verhütungsmethode.",
+				"criteria": [
+					"Modell und Einzelperson getrennt",
+					"Zeitliche Variabilität erklärt",
+					"Unzulässige Anwendung erkannt"
+				],
+				"hints": [
+					"Modell und Einzelperson getrennt",
+					"Zeitliche Variabilität erklärt"
+				]
+			}
+		},
+		"lab": "cycle",
+		"extension": "Ergänze die digitale Übung durch Beobachtung, Modellvergleich oder Gespräch im Unterricht. Praktische Fertigkeiten und eigene Urteile brauchen zusätzliche Rückmeldung.",
+		"takeaway": "Die Freisetzung einer Eizelle aus dem Eierstock."
+	},
+	{
+		"id": "b8-befruchtung",
+		"stage": "entwicklung",
+		"title": "Von Keimzellen zur Einnistung",
+		"skill": "Bei einer Befruchtung verschmelzen Ei- und Samenzelle.",
+		"bindings": ["4"],
+		"paragraphs": [
+			"Bei einer Befruchtung verschmelzen Ei- und Samenzelle. Es entsteht eine Zygote. Durch Zellteilungen entwickelt sich ein früher Embryo. Der Weg von der Befruchtung zur Einnistung umfasst verschiedene Schritte, die nicht alle am selben Ort stattfinden.",
+			"Die Befruchtung findet gewöhnlich im Eileiter statt; der frühe Embryo gelangt zur Gebärmutter und kann sich in deren Schleimhaut einnisten. Eizelle, Zygote und Embryo bezeichnen unterschiedliche Zustände. Eine Modellfolge beschreibt den üblichen Zusammenhang, ohne den Verlauf einer einzelnen Schwangerschaft vorherzusagen."
+		],
+		"materialLabel": "Eigens verfasstes Unterrichtsmaterial; Modellzahlen sind keine Messdaten.",
+		"material": "Sortierkarten: Ei- und Samenzelle; Verschmelzung; frühe Zellteilungen; Einnistung in die Gebärmutterschleimhaut. Alle Karten sind allgemeine biologische Darstellungen.",
+		"sourceIds": ["lp", "loveline"],
+		"quiz": {
+			"question": "Wie nennt man die befruchtete Eizelle?",
+			"answer": "Zygote.",
+			"wrong": ["Allergen.", "Antikörper."],
+			"explanation": "Bei einer Befruchtung verschmelzen Ei- und Samenzelle. Es entsteht eine Zygote. Durch Zellteilungen entwickelt sich ein früher Embryo. Der Weg von der Befruchtung zur Einnistung umfasst verschiedene Schritte, die nicht alle am selben Ort stattfinden."
+		},
+		"cases": [
+			{
+				"prompt": "Eine Zeichnung setzt die Befruchtung unmittelbar mit der Geburt gleich.",
+				"options": [
+					"Frühe Entwicklung und Schwangerschaft werden übersprungen.",
+					"Beide Begriffe meinen denselben Zeitpunkt."
+				],
+				"answer": "Frühe Entwicklung und Schwangerschaft werden übersprungen.",
+				"feedback": "Befruchtung, Entwicklung und Geburt sind unterschiedliche Stationen."
+			},
+			{
+				"prompt": "Der frühe Embryo nistet sich in der Gebärmutterschleimhaut ein.",
+				"options": [
+					"Das beschreibt die Einnistung.",
+					"Das beschreibt die Freisetzung der Eizelle aus dem Eierstock."
+				],
+				"answer": "Das beschreibt die Einnistung.",
+				"feedback": "Eisprung und Einnistung unterscheiden sich in Vorgang und Ort."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Ordne die Sortierkarten und erkläre zwei Übergänge.",
+				"model": "Ei- und Samenzelle verschmelzen zur Zygote. Zellteilungen führen zu weiteren Zellen des frühen Embryos. Bei der Einnistung verbindet sich der frühe Embryo mit der Gebärmutterschleimhaut. Die Befruchtung findet gewöhnlich zuvor im Eileiter statt.",
+				"criteria": [
+					"Abfolge sinnvoll",
+					"Befruchtung und Teilungen erläutert",
+					"Einnistung korrekt verortet"
+				],
+				"hints": ["Abfolge sinnvoll", "Befruchtung und Teilungen erläutert"]
+			},
+			"2": {
+				"prompt": "Ein Modell zeigt Eizelle, Zygote und Embryo als austauschbare Namen. Überarbeite seine Beschriftung.",
+				"model": "Die Eizelle liegt vor der Verschmelzung vor. Die Zygote ist die befruchtete Eizelle. Nach weiteren Zellteilungen wird der frühe Embryo beschrieben. Präzise Begriffe machen sichtbar, welchen Entwicklungsschritt das Modell jeweils zeigt.",
+				"criteria": [
+					"Drei Zustände getrennt",
+					"Beschriftung fachlich präzisiert",
+					"Nutzen der Unterscheidung erklärt"
+				],
+				"hints": ["Drei Zustände getrennt", "Beschriftung fachlich präzisiert"]
+			}
+		},
+		"extension": "Ergänze die digitale Übung durch Beobachtung, Modellvergleich oder Gespräch im Unterricht. Praktische Fertigkeiten und eigene Urteile brauchen zusätzliche Rückmeldung.",
+		"takeaway": "Die Befruchtung findet gewöhnlich im Eileiter statt."
+	},
+	{
+		"id": "b8-schwangerschaft",
+		"stage": "entwicklung",
+		"title": "Versorgung und Geburt im Überblick",
+		"skill": "Während der Schwangerschaft vermittelt die Plazenta den Stoffaustausch zwischen mütterlichem und kindlichem Organismus.",
+		"bindings": ["4"],
+		"paragraphs": [
+			"Während der Schwangerschaft vermittelt die Plazenta den Stoffaustausch zwischen mütterlichem und kindlichem Organismus. Sauerstoff und Nährstoffe gelangen zum Ungeborenen; Abfallstoffe werden in Gegenrichtung abgegeben. Die Nabelschnur verbindet den kindlichen Kreislauf mit der Plazenta.",
+			"Die Plazenta ist keine undurchlässige Schutzwand für alle Stoffe. Bei der Geburt werden im vereinfachten Überblick Eröffnung, Geburt des Kindes und Nachgeburt unterschieden. Unterschiedliche Verläufe brauchen medizinische Begleitung; das Lernschema erklärt allgemeine Stationen."
+		],
+		"materialLabel": "Eigens verfasstes Unterrichtsmaterial; Modellzahlen sind keine Messdaten.",
+		"material": "Vereinfachtes Pfeilbild: mütterlicher Organismus → Plazenta → kindlicher Organismus für Sauerstoff und Nährstoffe; Abfallstoffe in Gegenrichtung. Das Bild ist keine maßstäbliche Anatomiezeichnung.",
+		"sourceIds": ["lp", "plazenta"],
+		"quiz": {
+			"question": "Welches Organ vermittelt den Stoffaustausch während der Schwangerschaft?",
+			"answer": "Die Plazenta.",
+			"wrong": ["Die Hornhaut.", "Der Blinddarm."],
+			"explanation": "Während der Schwangerschaft vermittelt die Plazenta den Stoffaustausch zwischen mütterlichem und kindlichem Organismus. Sauerstoff und Nährstoffe gelangen zum Ungeborenen; Abfallstoffe werden in Gegenrichtung abgegeben. Die Nabelschnur verbindet den kindlichen Kreislauf mit der Plazenta."
+		},
+		"cases": [
+			{
+				"prompt": "Eine Pfeilzeichnung zeigt Nährstoffaustausch über die Plazenta.",
+				"options": [
+					"Sie beweist eine vollständige Undurchlässigkeit für alle schädlichen Stoffe.",
+					"Sie stellt eine Versorgungsbeziehung dar."
+				],
+				"answer": "Sie stellt eine Versorgungsbeziehung dar.",
+				"feedback": "Eine Austauschfunktion bedeutet gerade keine absolut undurchlässige Wand."
+			},
+			{
+				"prompt": "Die Plazenta wird als Nachgeburt bezeichnet.",
+				"options": [
+					"Sie ist ein anderer Name für die Befruchtung.",
+					"Ihre Ausstoßung folgt im vereinfachten Ablauf auf die Geburt des Kindes."
+				],
+				"answer": "Ihre Ausstoßung folgt im vereinfachten Ablauf auf die Geburt des Kindes.",
+				"feedback": "Die Begriffe beziehen sich auf unterschiedliche Stationen der Entwicklung."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Beschrifte das Pfeilbild mit Sauerstoff, Nährstoffen, Abfallstoffen und Nabelschnur.",
+				"model": "Sauerstoff und Nährstoffe gelangen über die Plazenta zum kindlichen Kreislauf; Abfallstoffe werden in Gegenrichtung abgegeben. Die Nabelschnur verbindet den kindlichen Kreislauf mit der Plazenta. Das Modell vereinfacht den tatsächlichen Aufbau.",
+				"criteria": [
+					"Transportrichtungen korrekt",
+					"Nabelschnur passend zugeordnet",
+					"Vereinfachung benannt"
+				],
+				"hints": [
+					"Transportrichtungen korrekt",
+					"Nabelschnur passend zugeordnet"
+				]
+			},
+			"2": {
+				"prompt": "Erkläre, warum Plazenta bedeutet absoluter Schutz eine zu weitgehende Aussage ist.",
+				"model": "Die Plazenta vermittelt Austausch und hält nicht grundsätzlich alle Stoffe zurück. Eine schematische Trennlinie darf nicht als vollständige Undurchlässigkeit verstanden werden. Für Aussagen über bestimmte Stoffe wären zusätzliche fachliche Informationen nötig.",
+				"criteria": [
+					"Austauschfunktion erklärt",
+					"Absolute Schutzbehauptung zurückgewiesen",
+					"Zusätzlichen Informationsbedarf benannt"
+				],
+				"hints": [
+					"Austauschfunktion erklärt",
+					"Absolute Schutzbehauptung zurückgewiesen"
+				]
+			}
+		},
+		"extension": "Ergänze die digitale Übung durch Beobachtung, Modellvergleich oder Gespräch im Unterricht. Praktische Fertigkeiten und eigene Urteile brauchen zusätzliche Rückmeldung.",
+		"takeaway": "Unter anderem die Plazenta."
+	},
+	{
+		"id": "b8-verhuetung",
+		"stage": "entwicklung",
+		"title": "Verhütung: zwei Schutzziele unterscheiden",
+		"skill": "Die Vermeidung einer Schwangerschaft und der Schutz vor sexuell übertragbaren Infektionen sind verschiedene Ziele.",
+		"bindings": ["4"],
+		"paragraphs": [
+			"Die Vermeidung einer Schwangerschaft und der Schutz vor sexuell übertragbaren Infektionen sind verschiedene Ziele. Kondome bilden bei korrekter Anwendung eine Barriere und können beide Ziele unterstützen. Sie vermindern viele Übertragungsrisiken, bieten aber keinen absoluten Schutz gegen jede Infektion.",
+			"Hormonelle Verhütung greift je nach Präparat unter anderem in den Eireifezyklus ein. Die Pille schützt nicht vor sexuell übertragbaren Infektionen. Methoden unterscheiden sich in Wirkung, Anwendung und Grenzen; Informationen für eine persönliche Auswahl gehören in eine sachliche Beratung. Verantwortung und Kommunikation betreffen beide Beteiligten."
+		],
+		"materialLabel": "Eigens verfasstes Unterrichtsmaterial; Modellzahlen sind keine Messdaten.",
+		"material": "Vergleichsraster mit zwei getrennten Spalten: Schwangerschaftsvermeidung und Verringerung von Infektionsrisiken. Die Übung fragt nach Mechanismen, nicht nach persönlichen Erfahrungen oder Medikamentenwahl.",
+		"sourceIds": ["lp", "kondom", "pille"],
+		"quiz": {
+			"question": "Schützt die Pille vor sexuell übertragbaren Infektionen?",
+			"answer": "Nein.",
+			"wrong": [
+				"Ja, vor allen Infektionen vollständig.",
+				"Nur wenn sie gemeinsam mit einem Lebensmittel eingenommen wird."
+			],
+			"explanation": "Die Vermeidung einer Schwangerschaft und der Schutz vor sexuell übertragbaren Infektionen sind verschiedene Ziele. Kondome bilden bei korrekter Anwendung eine Barriere und können beide Ziele unterstützen. Sie vermindern viele Übertragungsrisiken, bieten aber keinen absoluten Schutz gegen jede Infektion."
+		},
+		"cases": [
+			{
+				"prompt": "Eine hormonelle Methode wird mit sicherem Schutz vor jeder Infektion beworben.",
+				"options": [
+					"Die beiden Schutzziele werden unzulässig gleichgesetzt.",
+					"Jede Verhütung wirkt automatisch gegen sämtliche Erreger."
+				],
+				"answer": "Die beiden Schutzziele werden unzulässig gleichgesetzt.",
+				"feedback": "Schwangerschaftsvermeidung bedeutet nicht automatisch Infektionsschutz."
+			},
+			{
+				"prompt": "Ein Kondom wird als absolute Garantie gegen jede Infektion beschrieben.",
+				"options": [
+					"Die Aussage ist zu weitgehend.",
+					"Eine Barriere kann grundsätzlich niemals Grenzen haben."
+				],
+				"answer": "Die Aussage ist zu weitgehend.",
+				"feedback": "Kondome reduzieren Risiken, aber nicht jede mögliche Übertragung wird vollständig verhindert."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Vergleiche die beiden Schutzziele am Beispiel Kondom und Pille.",
+				"model": "Ein korrekt angewendetes Kondom kann Schwangerschafts- und viele Infektionsrisiken vermindern. Die Pille wirkt hormonell gegen Schwangerschaft, bietet aber keinen Schutz vor sexuell übertragbaren Infektionen. Die Wirkungsmechanismen und Grenzen müssen getrennt erklärt werden.",
+				"criteria": [
+					"Beide Schutzziele benannt",
+					"Methoden korrekt unterschieden",
+					"Keine absolute Garantie behauptet"
+				],
+				"hints": ["Beide Schutzziele benannt", "Methoden korrekt unterschieden"]
+			},
+			"2": {
+				"prompt": "Überarbeite eine erfundene Werbung: Ein Mittel, jede Situation, garantiert null Risiko.",
+				"model": "Die Werbung verschweigt Ziel, Anwendung und Grenzen. Ich würde getrennt nach Schwangerschaftsvermeidung und Infektionsschutz fragen und nachvollziehbare Informationen zu Wirkungsmechanismus und Anwendung verlangen. Eine absolute Garantie wird nicht aus dem Modell abgeleitet.",
+				"criteria": [
+					"Werbeübertreibung erkannt",
+					"Zwei Ziele getrennt",
+					"Konkrete Prüffragen formuliert"
+				],
+				"hints": ["Werbeübertreibung erkannt", "Zwei Ziele getrennt"]
+			}
+		},
+		"extension": "Ergänze die digitale Übung durch Beobachtung, Modellvergleich oder Gespräch im Unterricht. Praktische Fertigkeiten und eigene Urteile brauchen zusätzliche Rückmeldung.",
+		"takeaway": "Eine Methode kann eine Schwangerschaft verhindern, ohne vor Infektionen zu schützen."
+	},
+	{
+		"id": "b8-variation",
+		"stage": "evolution",
+		"title": "Erbliche Variation entsteht ohne Zielplan",
+		"skill": "Mutation bezeichnet eine Veränderung der Erbinformation.",
+		"bindings": ["5"],
+		"paragraphs": [
+			"Mutation bezeichnet eine Veränderung der Erbinformation. Solche Veränderungen entstehen nicht gezielt, weil ein Lebewesen sie gerade braucht. Erbliche Unterschiede können Variation in Populationen beitragen; nicht jede sichtbare Veränderung eines Individuums ist erblich.",
+			"Ob eine erbliche Variante vorteilhaft, nachteilig oder weitgehend neutral wirkt, hängt vom Zusammenhang ab. Eine im Leben erworbene Eigenschaft wird nicht automatisch genetisch vererbt. Die Entstehung einer Variante und ihre spätere Auswahl durch die Umwelt sind unterschiedliche Vorgänge."
+		],
+		"materialLabel": "Eigens verfasstes Unterrichtsmaterial; Modellzahlen sind keine Messdaten.",
+		"material": "Erfundene Käferpopulation: Helle und dunkle erbliche Farbvarianten kommen vor. Ein dunkler Boden wird später häufiger. Die Veränderung der Umwelt erzeugt nicht nach Wunsch bei jedem Käfer die passende Mutation.",
+		"sourceIds": ["lp", "evolution"],
+		"quiz": {
+			"question": "Entstehen Mutationen gezielt, weil ein Organismus sie braucht?",
+			"answer": "Nein, sie entstehen nicht nach einem solchen Zielplan.",
+			"wrong": [
+				"Ja, durch den Wunsch des einzelnen Organismus.",
+				"Ja, jede Umwelt bestellt genau die passende Mutation."
+			],
+			"explanation": "Mutation bezeichnet eine Veränderung der Erbinformation. Solche Veränderungen entstehen nicht gezielt, weil ein Lebewesen sie gerade braucht. Erbliche Unterschiede können Variation in Populationen beitragen; nicht jede sichtbare Veränderung eines Individuums ist erblich."
+		},
+		"cases": [
+			{
+				"prompt": "Ein Käfer wird für einen Versuch dunkel angemalt.",
+				"options": [
+					"Die Nachkommen müssen deshalb genetisch dunkel sein.",
+					"Die Farbe ist dadurch nicht automatisch erblich."
+				],
+				"answer": "Die Farbe ist dadurch nicht automatisch erblich.",
+				"feedback": "Eine äußere Veränderung ist nicht gleichbedeutend mit einer vererbbaren Änderung der Erbinformation."
+			},
+			{
+				"prompt": "Dunkle Varianten haben nach einer Umweltänderung mehr Nachkommen.",
+				"options": [
+					"Die Umwelt muss die passende Mutation bewusst geplant haben.",
+					"Entstehung und spätere Auswahl der Variante werden unterschieden."
+				],
+				"answer": "Entstehung und spätere Auswahl der Variante werden unterschieden.",
+				"feedback": "Auswahl kann Häufigkeiten verändern, ohne zielgerichtete Entstehung vorauszusetzen."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Trenne am Käferbeispiel erbliche Variation und Umweltänderung.",
+				"model": "Die Population besitzt erbliche Farbunterschiede. Die Umwelt verändert die Bedingungen, unter denen unterschiedliche Varianten verschieden erfolgreich sein können. Sie erzeugt nicht bewusst bei jedem Käfer die benötigte Farbe.",
+				"criteria": [
+					"Erbliche Unterschiede beschrieben",
+					"Umwelt als Auswahlbedingung erklärt",
+					"Kein Zielplan behauptet"
+				],
+				"hints": [
+					"Erbliche Unterschiede beschrieben",
+					"Umwelt als Auswahlbedingung erklärt"
+				]
+			},
+			"2": {
+				"prompt": "Vergleiche einen angemalten Käfer mit einer erblichen Farbvariante im Evolutionsmodell.",
+				"model": "Der Farbauftrag verändert das Aussehen, aber nicht automatisch die vererbbare Information. Eine erbliche Variante kann an Nachkommen weitergegeben werden. Für Evolution durch Selektion ist der unterschiedliche Fortpflanzungserfolg erblicher Varianten entscheidend.",
+				"criteria": [
+					"Äußere und erbliche Änderung getrennt",
+					"Weitergabe berücksichtigt",
+					"Bezug zur Selektion hergestellt"
+				],
+				"hints": [
+					"Äußere und erbliche Änderung getrennt",
+					"Weitergabe berücksichtigt"
+				]
+			}
+		},
+		"extension": "Ergänze die digitale Übung durch Beobachtung, Modellvergleich oder Gespräch im Unterricht. Praktische Fertigkeiten und eigene Urteile brauchen zusätzliche Rückmeldung.",
+		"takeaway": "Sie verändert nicht automatisch die an Nachkommen weitergegebene Erbinformation."
+	},
+	{
+		"id": "b8-selektion",
+		"stage": "evolution",
+		"title": "Variation und natürliche Selektion",
+		"skill": "In einer Population können vererbbare Unterschiede bestehen.",
+		"bindings": ["5"],
+		"paragraphs": [
+			"In einer Population können vererbbare Unterschiede bestehen. Unter bestimmten Umweltbedingungen tragen manche Varianten zu höherem Fortpflanzungserfolg bei. Dadurch kann sich die Zusammensetzung der Population über Generationen verändern. Natürliche Selektion ist kein planender Vorgang und bedeutet nicht einfach Stärke oder persönliches Bemühen.",
+			"Darwins historische Erklärung verband Variation, Überproduktion und unterschiedliche Fortpflanzungschancen. Die heutigen Begriffe Mutation, Rekombination und Genhäufigkeit ergänzen diese Erklärung; Darwin kannte ihre molekularen Grundlagen nicht. Am Giraffenbeispiel wird ein Unterschied zwischen Auswahl vorhandener Variation und einer zielgerichteten Vererbung bloß erworbener Eigenschaften sichtbar."
+		],
+		"materialLabel": "Eigens verfasstes Unterrichtsmaterial; Modellzahlen sind keine Messdaten.",
+		"material": "Die Abfolge ist ein vereinfachtes Selektionsmodell, keine Erklärung jedes Evolutionsprozesses.",
+		"sourceIds": ["lp", "evolution"],
+		"quiz": {
+			"question": "Welcher Mechanismus erklärt die Ausbreitung vorteilhafter vererbbarer Varianten über unterschiedlichen Fortpflanzungserfolg?",
+			"answer": "Natürliche Selektion: unterschiedlicher Fortpflanzungserfolg",
+			"wrong": [
+				"Gezielte Veränderung durch den Wunsch einzelner Lebewesen",
+				"Automatische Vererbung jeder im Leben erworbenen Eigenschaft"
+			],
+			"explanation": "Darwins historische Erklärung verband Variation, Überproduktion und unterschiedliche Fortpflanzungschancen. Die heutigen Begriffe Mutation, Rekombination und Genhäufigkeit ergänzen diese Erklärung; Darwin kannte ihre molekularen Grundlagen nicht. Am Giraffenbeispiel wird ein Unterschied zwischen Auswahl vorhandener Variation und einer zielgerichteten Vererbung bloß erworbener Eigenschaften sichtbar."
+		},
+		"cases": [
+			{
+				"prompt": "Erbliche Farbvarianten sind bereits in der Population vorhanden. Welche Rolle spielt das im Selektionsmodell?",
+				"options": [
+					"Es ist eine Voraussetzung für die Auswahl zwischen Varianten.",
+					"Es ist eine bewusste Entscheidung aller Tiere."
+				],
+				"answer": "Es ist eine Voraussetzung für die Auswahl zwischen Varianten.",
+				"feedback": "Selektion setzt bei vorhandenen erblichen Unterschieden und verschiedenem Fortpflanzungserfolg an."
+			},
+			{
+				"prompt": "Eine Variante hinterlässt unter bestimmten Bedingungen mehr Nachkommen.",
+				"options": [
+					"Die Umwelt bestellt gezielt die passende Mutation.",
+					"Ihr Anteil kann in späteren Generationen steigen."
+				],
+				"answer": "Ihr Anteil kann in späteren Generationen steigen.",
+				"feedback": "Unterschiedlicher Fortpflanzungserfolg verschiebt die Anteile erblicher Varianten ohne einen Zielplan."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Erkläre natürliche Selektion an einem erfundenen Populationsexempel.",
+				"model": "In einer Population unterscheiden sich Individuen in einem vererbbaren Merkmal. Bei bestimmten Bedingungen haben manche Varianten höheren Fortpflanzungserfolg. Dann können ihre Anteile in späteren Generationen zunehmen. Das passiert ohne Zielplanung; ein während des Lebens erworbener Vorteil ist nicht automatisch genetisch vererbbar.",
+				"criteria": [
+					"Vererbbare Variation",
+					"Unterschiedlicher Fortpflanzungserfolg",
+					"Veränderung über Generationen"
+				],
+				"hints": [
+					"Vererbbare Variation",
+					"Unterschiedlicher Fortpflanzungserfolg"
+				]
+			},
+			"2": {
+				"prompt": "Was wäre an „Darwin beschrieb DNA-Mutationen als Ursache der Variation“ historisch falsch?",
+				"model": "Die heutige Genetik erklärt wichtige Quellen vererbbarer Variation, doch Darwin kannte die molekulare DNA-Grundlage nicht. Sein historischer Beitrag und die spätere Erweiterung müssen unterschieden werden. Eine zeitgemäße Erklärung darf modernes Wissen nutzen, es aber nicht rückwirkend als damalige Kenntnis ausgeben.",
+				"criteria": [
+					"Historische Kenntnis getrennt",
+					"Moderne Ergänzung erklärt",
+					"Keine anachronistische Zuschreibung"
+				],
+				"hints": ["Historische Kenntnis getrennt", "Moderne Ergänzung erklärt"]
+			}
+		},
+		"lab": "selection",
+		"extension": "Ergänze die digitale Übung durch Beobachtung, Modellvergleich oder Gespräch im Unterricht. Praktische Fertigkeiten und eigene Urteile brauchen zusätzliche Rückmeldung.",
+		"takeaway": "Durch unterschiedlichen Fortpflanzungserfolg erblicher Varianten unter bestimmten Umweltbedingungen."
+	},
+	{
+		"id": "b8-artbildung",
+		"stage": "evolution",
+		"title": "Trennung, Artbildung und biologische Ordnung",
+		"skill": "Werden Populationen voneinander getrennt, kann der Austausch von Erbinformation eingeschränkt sein.",
+		"bindings": ["5"],
+		"paragraphs": [
+			"Werden Populationen voneinander getrennt, kann der Austausch von Erbinformation eingeschränkt sein. Durch verschiedene Veränderungen und Bedingungen können sich die Populationen auseinanderentwickeln. Entsteht langfristig eine Fortpflanzungsbarriere, kann eine Artaufspaltung vorliegen; eine räumliche Trennung allein beweist sie noch nicht.",
+			"Biologische Systematik ordnet Lebewesen nach Verwandtschaft. Schulische Übersichten unterscheiden unter anderem Bakterien und Archaeen von Eukaryoten mit Zellkern; innerhalb der Eukaryoten gehören Tiere, Pflanzen und Pilze zu wichtigen Gruppen. Ein Stammbaum zeigt Abstammungsbeziehungen statt eine Rangliste vermeintlich höherer Lebewesen."
+		],
+		"materialLabel": "Eigens verfasstes Unterrichtsmaterial; Modellzahlen sind keine Messdaten.",
+		"material": "Modellfall: Eine ursprüngliche Population wird durch eine neue Barriere in zwei Gruppen getrennt. Nach vielen Generationen zeigen sich Unterschiede. Ob eine Fortpflanzungsbarriere besteht, ist zunächst noch offen.",
+		"sourceIds": ["lp", "evolution"],
+		"quiz": {
+			"question": "Beweist eine räumliche Trennung allein schon die Entstehung zweier Arten?",
+			"answer": "Nein, weitere Entwicklung und Fortpflanzungsbarrieren sind zu prüfen.",
+			"wrong": [
+				"Ja, jede Entfernung erzeugt sofort eine neue Art.",
+				"Ja, jede Gruppe muss nach einer Generation eine neue Art sein."
+			],
+			"explanation": "Werden Populationen voneinander getrennt, kann der Austausch von Erbinformation eingeschränkt sein. Durch verschiedene Veränderungen und Bedingungen können sich die Populationen auseinanderentwickeln. Entsteht langfristig eine Fortpflanzungsbarriere, kann eine Artaufspaltung vorliegen; eine räumliche Trennung allein beweist sie noch nicht."
+		},
+		"cases": [
+			{
+				"prompt": "Zwei getrennte Gruppen sehen nach einiger Zeit verschieden aus.",
+				"options": [
+					"Jeder sichtbare Unterschied beweist zwei Arten.",
+					"Artaufspaltung ist damit allein noch nicht sicher belegt."
+				],
+				"answer": "Artaufspaltung ist damit allein noch nicht sicher belegt.",
+				"feedback": "Unterschiede und tatsächliche Fortpflanzungsbarrieren sind verschiedene Belegebenen."
+			},
+			{
+				"prompt": "Ein Baum ordnet Tiergruppen nach angeblichem persönlichem Wert.",
+				"options": [
+					"Eine Wertleiter ist die Definition biologischer Verwandtschaft.",
+					"Das verwechselt Abstammung mit Wertung."
+				],
+				"answer": "Das verwechselt Abstammung mit Wertung.",
+				"feedback": "Systematik beschreibt Verwandtschaft und keine moralische Rangfolge."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Erkläre einen möglichen Weg von Trennung zu Artaufspaltung und nenne eine offene Prüffrage.",
+				"model": "Die Trennung kann den Austausch verringern. Veränderungen und unterschiedliche Bedingungen können Gruppen auseinanderentwickeln. Ob daraus Arten werden, hängt unter anderem an Fortpflanzungsbarrieren; die Trennung allein beantwortet diese Frage nicht.",
+				"criteria": [
+					"Trennung und Austausch verbunden",
+					"Entwicklung über Generationen erklärt",
+					"Fortpflanzungsbarriere als Prüffrage genannt"
+				],
+				"hints": [
+					"Trennung und Austausch verbunden",
+					"Entwicklung über Generationen erklärt"
+				]
+			},
+			"2": {
+				"prompt": "Warum ist eine Liste nach Größe oder Nutzen kein geeigneter Abstammungsbaum?",
+				"model": "Größe und Nutzen für Menschen sind nicht automatisch gemeinsame Herkunft. Ein Stammbaum muss Verwandtschaftshypothesen mit Merkmalen und weiteren Belegen stützen. Er ist keine Rangliste und kann durch neue Befunde revidiert werden.",
+				"criteria": [
+					"Kriterien kritisch geprüft",
+					"Abstammungsbezug erklärt",
+					"Keine Wertleiter konstruiert"
+				],
+				"hints": ["Kriterien kritisch geprüft", "Abstammungsbezug erklärt"]
+			}
+		},
+		"extension": "Ergänze die digitale Übung durch Beobachtung, Modellvergleich oder Gespräch im Unterricht. Praktische Fertigkeiten und eigene Urteile brauchen zusätzliche Rückmeldung.",
+		"takeaway": "Nach ihren Verwandtschaftsbeziehungen."
+	},
+	{
+		"id": "b8-fossilien",
+		"stage": "evolution",
+		"title": "Fossilien und Mosaikmerkmale",
+		"skill": "Fossilien dokumentieren erhaltene Spuren und Reste früherer Lebewesen.",
+		"bindings": ["5"],
+		"paragraphs": [
+			"Fossilien dokumentieren erhaltene Spuren und Reste früherer Lebewesen. Ihre Aussage hängt von Erhaltung, Fundzusammenhang, Datierung und Vergleich ab. Die Überlieferung ist unvollständig; fehlende Funde sind nicht automatisch ein Beleg dafür, dass eine Form nie existiert hat.",
+			"Archaeopteryx besitzt eine Kombination von Merkmalen, darunter Federn und lange knöcherne Schwanzabschnitte. Solche Mosaikmerkmale helfen, die Entwicklung von Vögeln im Zusammenhang mit theropoden Dinosauriern zu untersuchen. Eine Einteilung in zwei völlig getrennte Gruppen „Reptilien gegen Vögel“ vereinfacht die Abstammungsbeziehungen zu stark. Einzelne Funktionsdeutungen brauchen zusätzliche Belege."
+		],
+		"materialLabel": "Eigens verfasstes Unterrichtsmaterial; Modellzahlen sind keine Messdaten.",
+		"material": "Wissenschaftliche Belege sind stark, wenn ihre Aussagegrenzen mitgenannt werden.",
+		"sourceIds": ["lp", "fossilien"],
+		"quiz": {
+			"question": "Was macht Mosaikmerkmale eines Fossils für Abstammungsfragen nützlich?",
+			"answer": "Sie verbinden mehrere Merkmalszustände in einem zeitlich einzuordnenden Fund.",
+			"wrong": [
+				"Sie beweisen unabhängig von jedem Vergleich automatisch jede Einzelhypothese.",
+				"Sie ersetzen grundsätzlich jede weitere Datierung und jede Prüfung der Erhaltung."
+			],
+			"explanation": "Archaeopteryx besitzt eine Kombination von Merkmalen, darunter Federn und lange knöcherne Schwanzabschnitte. Solche Mosaikmerkmale helfen, die Entwicklung von Vögeln im Zusammenhang mit theropoden Dinosauriern zu untersuchen. Eine Einteilung in zwei völlig getrennte Gruppen „Reptilien gegen Vögel“ vereinfacht die Abstammungsbeziehungen zu stark. Einzelne Funktionsdeutungen brauchen zusätzliche Belege."
+		},
+		"cases": [
+			{
+				"prompt": "Erhaltene Federn werden mit weiteren Skelettmerkmalen verglichen.",
+				"options": [
+					"Nachvollziehbare Belegnutzung",
+					"Zu weitgehende Behauptung"
+				],
+				"answer": "Nachvollziehbare Belegnutzung",
+				"feedback": "Mehrere Merkmale werden zusammen ausgewertet."
+			},
+			{
+				"prompt": "Ein einzelner Knochen beweise jede Fähigkeit des Tiers zweifelsfrei.",
+				"options": [
+					"Zu weitgehende Behauptung",
+					"Nachvollziehbare Belegnutzung"
+				],
+				"answer": "Zu weitgehende Behauptung",
+				"feedback": "Die Aussage überschreitet die Belegstärke."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Erläutere den Wert eines Fossils mit Mosaikmerkmalen und eine Grenze.",
+				"model": "Die Kombination von Merkmalen kann unterschiedliche Entwicklungszustände verbinden und Abstammungshypothesen stützen. Fundzusammenhang und Zeit geben zusätzlichen Kontext. Erhaltung und Vergleich begrenzen aber, was etwa über Bewegung oder Verhalten gesagt werden kann; ein Fossil ist kein vollständiger Film seines Lebens.",
+				"criteria": [
+					"Merkmalskombination",
+					"Zeit / Vergleich",
+					"Eine Erhaltungs- oder Deutungsgrenze"
+				],
+				"hints": ["Merkmalskombination", "Zeit / Vergleich"]
+			},
+			"2": {
+				"prompt": "Warum ist „Vögel haben mit Dinosauriern nichts zu tun, denn Archaeopteryx steht dazwischen“ missverständlich?",
+				"model": "Abstammung bildet ein verzweigtes System. Vögel stehen in einer Entwicklungslinie innerhalb der theropoden Dinosaurier; Mosaikmerkmale passen in diesen Zusammenhang. Das Bild eines isolierten Zwischenschritts zwischen zwei völlig getrennten Gruppen verschleiert Verwandtschaft und gemeinsame Herkunft.",
+				"criteria": [
+					"Verzweigung statt Leiter",
+					"Einordnung der Vögel",
+					"Missverständliche Trennung erklärt"
+				],
+				"hints": ["Verzweigung statt Leiter", "Einordnung der Vögel"]
+			}
+		},
+		"extension": "Ergänze die digitale Übung durch Beobachtung, Modellvergleich oder Gespräch im Unterricht. Praktische Fertigkeiten und eigene Urteile brauchen zusätzliche Rückmeldung.",
+		"takeaway": "Ein erhaltener Rest oder eine erhaltene Spur eines früheren Lebewesens."
+	},
+	{
+		"id": "b8-homologie",
+		"stage": "evolution",
+		"title": "Homologie und Analogie",
+		"skill": "Vorderextremitäten von Mensch, Vogel und Wal können auf einen gemeinsamen Grundbauplan zurückgeführt werden, obwohl sie unterschiedliche Aufgaben erfüllen.",
+		"bindings": ["5"],
+		"paragraphs": [
+			"Vorderextremitäten von Mensch, Vogel und Wal können auf einen gemeinsamen Grundbauplan zurückgeführt werden, obwohl sie unterschiedliche Aufgaben erfüllen. Die gemeinsame Herkunft bezeichnet man als Homologie. Unterschiede zwischen homologen Merkmalen können durch unterschiedliche Entwicklungslinien entstehen.",
+			"Analogie bezeichnet dagegen eine ähnliche Funktion oder Gestalt, die unabhängig entstanden ist. Für Abstammungsfragen werden Bau, Entwicklung und weitere Belege kombiniert. Eine einzelne Homologie begründet gemeinsame Herkunft des betrachteten Merkmals, aber nicht automatisch eine besonders nahe Verwandtschaft oder ein vollständiges Bild des Stammbaums."
+		],
+		"materialLabel": "Eigens verfasstes Unterrichtsmaterial; Modellzahlen sind keine Messdaten.",
+		"material": "Eine Verwandtschaftshypothese braucht mehr als ein oberflächliches Ähnlichkeitsurteil.",
+		"sourceIds": ["lp", "evolution"],
+		"quiz": {
+			"question": "Wie heißt die Beziehung zwischen Merkmalen mit gemeinsamem evolutionärem Ursprung trotz unterschiedlicher Funktionen?",
+			"answer": "Homologie (divergente Entwicklung)",
+			"wrong": [
+				"Analogie (konvergente Entwicklung)",
+				"Zufall ohne jede Abstammungsbeziehung"
+			],
+			"explanation": "Analogie bezeichnet dagegen eine ähnliche Funktion oder Gestalt, die unabhängig entstanden ist. Für Abstammungsfragen werden Bau, Entwicklung und weitere Belege kombiniert. Eine einzelne Homologie begründet gemeinsame Herkunft des betrachteten Merkmals, aber nicht automatisch eine besonders nahe Verwandtschaft oder ein vollständiges Bild des Stammbaums."
+		},
+		"cases": [
+			{
+				"prompt": "Die entsprechenden Knochen liegen in vergleichbarer Anordnung.",
+				"options": [
+					"Funktionsähnlichkeit allein",
+					"Hinweis auf gemeinsamen Grundbauplan"
+				],
+				"answer": "Hinweis auf gemeinsamen Grundbauplan",
+				"feedback": "Die Anordnung kann eine Homologiehypothese stützen."
+			},
+			{
+				"prompt": "Zwei ganz unterschiedlich gebaute Körperteile dienen dem Graben.",
+				"options": [
+					"Hinweis auf gemeinsamen Grundbauplan",
+					"Funktionsähnlichkeit allein"
+				],
+				"answer": "Funktionsähnlichkeit allein",
+				"feedback": "Gleiche Aufgabe allein beweist keinen gemeinsamen Merkmalsursprung."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Unterscheide Homologie und Analogie an Aufbau und Aufgabe.",
+				"model": "Homologe Merkmale gehen auf einen gemeinsamen Ursprung zurück und können unterschiedliche Aufgaben erhalten. Analoge Ähnlichkeiten entstehen unabhängig, etwa als ähnliche Lösung vergleichbarer Anforderungen. Für eine Zuordnung genügt die Funktion nicht; Struktur, Entwicklung und weitere Abstammungsbelege werden geprüft.",
+				"criteria": [
+					"Ursprung als Kriterium",
+					"Funktion nicht allein ausschlaggebend",
+					"Weitere Belege genannt"
+				],
+				"hints": [
+					"Ursprung als Kriterium",
+					"Funktion nicht allein ausschlaggebend"
+				]
+			},
+			"2": {
+				"prompt": "Warum beweist eine gemeinsame Vorderextremität nicht automatisch besonders nahe Verwandtschaft?",
+				"model": "Der Grundbauplan kann von einem weit zurückliegenden gemeinsamen Vorfahren stammen und in vielen Linien erhalten sein. Nähe im Stammbaum benötigt eine vergleichende Betrachtung weiterer Merkmale und ihrer Verteilung. Gemeinsamer Ursprung eines Merkmals und besonders nahe Verwandtschaft sind verschiedene Aussagen.",
+				"criteria": [
+					"Tiefe gemeinsame Herkunft",
+					"Weitere Merkmalsverteilung",
+					"Zwei Aussagen getrennt"
+				],
+				"hints": ["Tiefe gemeinsame Herkunft", "Weitere Merkmalsverteilung"]
+			}
+		},
+		"extension": "Ergänze die digitale Übung durch Beobachtung, Modellvergleich oder Gespräch im Unterricht. Praktische Fertigkeiten und eigene Urteile brauchen zusätzliche Rückmeldung.",
+		"takeaway": "Der gemeinsame evolutionäre Ursprung des betrachteten Merkmals."
+	},
+	{
+		"id": "b8-stammbaum",
+		"stage": "evolution",
+		"title": "Stammgeschichte als verzweigter Baum",
+		"skill": "Abstammungsdarstellungen zeigen Verwandtschaftshypothesen.",
+		"bindings": ["5"],
+		"paragraphs": [
+			"Abstammungsdarstellungen zeigen Verwandtschaftshypothesen. Ein Knoten steht für gemeinsame Vorfahren, eine Verzweigung für unterschiedliche Linien. Zeitliche Reihenfolge allein beweist keine direkte Vorfahr-Nachfahr-Beziehung. Mehrere Homininenformen lebten teilweise gleichzeitig, und die Einordnung kann sich durch neue Funde verändern.",
+			"Die vereinfachte Kette „Australopithecus, habilis, erectus, Neandertaler, sapiens“ erweckt eine unberechtigte Eindeutigkeit. Neandertaler und Homo sapiens werden als verwandte Linien mit komplexen Beziehungen und genetischem Austausch untersucht. Eine gute Darstellung benennt Unsicherheit und verknüpft Anatomie, Fundalter und weitere Daten, ohne heutige Menschen nach einem angeblichen Evolutionsrang zu ordnen."
+		],
+		"materialLabel": "Eigens verfasstes Unterrichtsmaterial; Modellzahlen sind keine Messdaten.",
+		"material": "Die Form des Baums ist eine begründete Hypothese, keine Wertleiter.",
+		"sourceIds": ["lp", "bipedie"],
+		"quiz": {
+			"question": "Welche Aussage über einen Abstammungsbaum ist korrekt?",
+			"answer": "Ein Verzweigungspunkt steht im Modell für gemeinsame Vorfahren.",
+			"wrong": [
+				"Ein Verzweigungspunkt beweist automatisch eine Rangordnung heutiger Menschen.",
+				"Ein Verzweigungspunkt macht zeitgleiche verwandte Linien grundsätzlich unmöglich."
+			],
+			"explanation": "Die vereinfachte Kette „Australopithecus, habilis, erectus, Neandertaler, sapiens“ erweckt eine unberechtigte Eindeutigkeit. Neandertaler und Homo sapiens werden als verwandte Linien mit komplexen Beziehungen und genetischem Austausch untersucht. Eine gute Darstellung benennt Unsicherheit und verknüpft Anatomie, Fundalter und weitere Daten, ohne heutige Menschen nach einem angeblichen Evolutionsrang zu ordnen."
+		},
+		"cases": [
+			{
+				"prompt": "Zwei Linien können gemeinsame Vorfahren haben.",
+				"options": ["Passende Interpretation", "Nicht allein ableitbar"],
+				"answer": "Passende Interpretation",
+				"feedback": "Das ist die Bedeutung eines gemeinsamen Knotens."
+			},
+			{
+				"prompt": "Die ältere gefundene Form muss direkt die jüngere hervorgebracht haben.",
+				"options": ["Nicht allein ableitbar", "Passende Interpretation"],
+				"answer": "Nicht allein ableitbar",
+				"feedback": "Fundalter allein beweist keine direkte Abstammung."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Korrigiere eine lineare Darstellung der menschlichen Evolution.",
+				"model": "Ich ersetze die starre Folge durch eine verzweigte Darstellung mit zeitlichen Überschneidungen und benannten Unsicherheiten. Ein älterer Fund ist nicht automatisch der direkte Vorfahr eines jüngeren. Die Verwandtschaft wird durch mehrere Belegarten gestützt; die Darstellung beschreibt keine Rangordnung heutiger Menschen.",
+				"criteria": [
+					"Verzweigung statt Kette",
+					"Zeit und Abstammung getrennt",
+					"Belege und keine Wertordnung"
+				],
+				"hints": ["Verzweigung statt Kette", "Zeit und Abstammung getrennt"]
+			},
+			"2": {
+				"prompt": "Warum dürfen Unterschiede heutiger Menschen nicht als verschiedene Evolutionsstufen bewertet werden?",
+				"model": "Alle heute lebenden Menschen gehören zu derselben Art mit gemeinsamer Entwicklungsgeschichte und vielfältiger Variation. Evolution ist keine Leiter mit einem vorgeschriebenen Höchstziel. Eine Rangordnung aus ausgewählten Merkmalen verwechselt Verwandtschaft und Variation mit einem unbegründeten Werturteil.",
+				"criteria": [
+					"Gemeinsame Art",
+					"Keine vorgegebene Leiter",
+					"Variation von Werturteil getrennt"
+				],
+				"hints": ["Gemeinsame Art", "Keine vorgegebene Leiter"]
+			}
+		},
+		"extension": "Ergänze die digitale Übung durch Beobachtung, Modellvergleich oder Gespräch im Unterricht. Praktische Fertigkeiten und eigene Urteile brauchen zusätzliche Rückmeldung.",
+		"takeaway": "Gemeinsame Vorfahren der daraus hervorgehenden Linien."
+	},
+	{
+		"id": "b8-mensch",
+		"stage": "evolution",
+		"title": "Aufrechter Gang und menschliche Evolution",
+		"skill": "Fossile Becken, Oberschenkelknochen, Füße und andere Befunde stützen die Rekonstruktion zweibeiniger Fortbewegung früher Homininen.",
+		"bindings": ["5"],
+		"paragraphs": [
+			"Fossile Becken, Oberschenkelknochen, Füße und andere Befunde stützen die Rekonstruktion zweibeiniger Fortbewegung früher Homininen. Ein regelmäßiger aufrechter Gang entwickelte sich deutlich vor der starken Gehirnvergrößerung in späteren Homo-Linien. Die Geschichte besteht aus Kombinationen von Merkmalen, nicht aus einem einzigen plötzlichen Wechsel.",
+			"Wirbelsäule, Becken und untere Gliedmaßen tragen zur Stabilität und Fortbewegung bei. Einige frühe Formen verbanden häufigen zweibeinigen Gang mit Fähigkeiten zum Klettern. Funktionsrekonstruktionen bleiben an konkrete Funde gebunden; heutige Eigenschaften dürfen nicht pauschal auf jeden frühen Vorfahren übertragen werden."
+		],
+		"materialLabel": "Eigens verfasstes Unterrichtsmaterial; Modellzahlen sind keine Messdaten.",
+		"material": "Funktionsdeutung verbindet mehrere Hinweise und benennt Unsicherheiten.",
+		"sourceIds": ["lp", "bipedie"],
+		"quiz": {
+			"question": "Welche Fortbewegungsweise ist bei frühen Homininen vor starker Gehirnvergrößerung belegt?",
+			"answer": "Aufrechter zweibeiniger Gang: Bipedie",
+			"wrong": [
+				"Der ausschließliche dauerhafte Flug mit Flügeln",
+				"Der vollständige dauerhafte Verzicht auf Bodenbewegung"
+			],
+			"explanation": "Wirbelsäule, Becken und untere Gliedmaßen tragen zur Stabilität und Fortbewegung bei. Einige frühe Formen verbanden häufigen zweibeinigen Gang mit Fähigkeiten zum Klettern. Funktionsrekonstruktionen bleiben an konkrete Funde gebunden; heutige Eigenschaften dürfen nicht pauschal auf jeden frühen Vorfahren übertragen werden."
+		},
+		"cases": [
+			{
+				"prompt": "Form von Becken und Oberschenkel wird gemeinsam betrachtet.",
+				"options": ["Grenze der Übertragung", "Funktioneller Beleg"],
+				"answer": "Funktioneller Beleg",
+				"feedback": "Mehrere Bauteile tragen zur Fortbewegung bei."
+			},
+			{
+				"prompt": "Jede frühe Form wird ohne Fundvergleich wie ein heutiger Mensch gezeichnet.",
+				"options": ["Funktioneller Beleg", "Grenze der Übertragung"],
+				"answer": "Grenze der Übertragung",
+				"feedback": "Unterschiedliche Merkmalskombinationen werden so verdeckt."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Erkläre, warum der aufrechte Gang nicht erst mit einem sehr großen Gehirn begann.",
+				"model": "Fossile Merkmale belegen zweibeinige Fortbewegung bereits bei frühen Homininen mit vergleichsweise kleinem Gehirn. Körpermerkmale und Gehirnvolumen entwickelten sich zeitlich unterschiedlich. Für eine Rekonstruktion werden konkrete Skelett- und gegebenenfalls Spurenbefunde kombiniert, statt eine einheitliche Fortschrittsleiter anzunehmen.",
+				"criteria": [
+					"Zeitliche Trennung",
+					"Fossile Belege",
+					"Keine Fortschrittsleiter"
+				],
+				"hints": ["Zeitliche Trennung", "Fossile Belege"]
+			},
+			"2": {
+				"prompt": "Eine Darstellung zeichnet alle frühen Homininen mit heutigem Körper und Verhalten. Was fehlt?",
+				"model": "Sie lässt die Vielfalt der Formen und die unterschiedlichen Merkmalskombinationen aus. Ein Körpermerkmal allein beweist kein vollständig heutiges Verhalten. Eine bessere Darstellung unterscheidet belegte Anatomie, vorsichtige Funktionsdeutung und offene Fragen anhand konkreter Funde.",
+				"criteria": [
+					"Vielfalt der Formen",
+					"Anatomie und Verhalten getrennt",
+					"Beleg und Unsicherheit sichtbar"
+				],
+				"hints": ["Vielfalt der Formen", "Anatomie und Verhalten getrennt"]
+			}
+		},
+		"extension": "Ergänze die digitale Übung durch Beobachtung, Modellvergleich oder Gespräch im Unterricht. Praktische Fertigkeiten und eigene Urteile brauchen zusätzliche Rückmeldung.",
+		"takeaway": "Der regelmäßige aufrechte zweibeinige Gang."
+	}
+]
