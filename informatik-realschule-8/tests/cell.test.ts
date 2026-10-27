@@ -36,7 +36,7 @@ const items: CellItem[] = atoms.flatMap((atom) => atom.practice_items as unknown
 describe("ZAM cell zam-academy:informatik-realschule-8", () => {
   it("has 40 atoms (one per lesson) and 87 cards with frozen ULIDs from the public contract", () => {
     expect(cell.tile_id).toBe(ZAM_CELL_ID);
-    expect(cell.version).toBe("2026.10.2");
+    expect(cell.version).toBe("2026.10.3");
     expect(atoms).toHaveLength(40);
     expect(items).toHaveLength(87);
     const ids = [...atoms.map((a) => a.id), ...items.map((i) => i.id)];
@@ -66,9 +66,21 @@ describe("ZAM cell zam-academy:informatik-realschule-8", () => {
       expect(atom.curricula).toContainEqual(
         expect.objectContaining({ provider: "zam-academy", subject: "informatik-realschule-8", topic_code: stage.id }),
       );
-      expect(atom.curricula).toContainEqual(
-        expect.objectContaining({ provider: "lehrplanplus-bayern", school_type: "realschule", grade: 8, subject: "it", topic_code: `it-${lesson.module}` }),
-      );
+      // The modules of the Anfangsunterricht are not tied to one grade (LehrplanPLUS lists them in every
+      // grade); schools teach them in grades 6 to 8, so each atom carries the same module binding for all three.
+      const official = atom.curricula.filter((entry) => entry.provider === "lehrplanplus-bayern");
+      expect(official.map((entry) => entry.grade)).toEqual([6, 7, 8]);
+      for (const entry of official) {
+        expect(entry).toEqual({
+          provider: "lehrplanplus-bayern",
+          school_type: "realschule",
+          grade: entry.grade,
+          subject: "it",
+          topic_code: `it-${lesson.module}`,
+          topic_title: official[0].topic_title,
+          exam_relevant: false,
+        });
+      }
       for (const prerequisite of atom.prerequisites) expect(atomIds.has(prerequisite.atom_id)).toBe(true);
       for (const item of atom.practice_items as unknown as CellItem[]) {
         expect(item.source_link).toBe(lessonLink(lesson.id));
