@@ -123,7 +123,7 @@ export const MAPS = {
 			{
 				id: "andes",
 				name: "Anden",
-				lon: -72,
+				lon: -68,
 				lat: -20,
 				note: "Gebirgskette am westlichen Rand Südamerikas.",
 			},
@@ -264,7 +264,7 @@ export function goals(kind: LabKind, state: LabState): boolean[] {
 			state.changed && state.education < 0.4,
 		];
 	return [
-		state.changed && state.population === 60,
+		state.changed && state.total === 600 && state.population === 60,
 		state.changed && state.total === 900 && state.population === 60,
 	];
 }

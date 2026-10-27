@@ -290,7 +290,7 @@ function descendants(node) {
     ? [node, ...node.children.flatMap(descendants)]
     : [];
 }
-function matrix(data) {
+function matrix(data, school = "mittelschule") {
   const nodes = { matrix: element("table"), schulart: element("div") },
     visits = [];
   const slot = html.slice(
@@ -311,7 +311,7 @@ function matrix(data) {
     `${slot}; ${render}; renderMatrix();`,
   )(
     data,
-    { schulart: "mittelschule", mode: "list" },
+    { schulart: school, mode: "list" },
     (id) => nodes[id],
     element,
     (path) => visits.push(path),
@@ -319,6 +319,50 @@ function matrix(data) {
   );
   return { nodes, visits };
 }
+
+test("coverage distinguishes pre-start grades from explicit timetable gaps and exposes their sources", () => {
+  for (const school of registry.schulen) {
+    const { nodes } = matrix(registry, school.id);
+    const rows = nodes.matrix.children.find((n) => n.tag === "tbody").children;
+    for (const [index, subject] of registry.faecher.entries()) {
+      for (let grade = 5; grade <= 13; grade++) {
+        const mark = rows[index].children[grade - 4].children[0];
+        const gap = registry.kein_unterricht.find(
+          (entry) =>
+            entry.fach === subject.id &&
+            entry.school === school.id &&
+            entry.grade === grade,
+        );
+        const combination = registry.fachverbunde.find(
+          (group) =>
+            group.school === school.id &&
+            group.grades.includes(grade) &&
+            group.paths.includes(subject.id),
+        );
+        if (grade < school.from || grade > school.to) {
+          assert.equal(mark.attrs.class, "na");
+        } else if (combination) {
+          assert.equal(mark.attrs.class, "cell");
+          assert.ok(mark.attrs["aria-label"].startsWith(combination.name));
+        } else if (gap) {
+          assert.equal(mark.attrs.class, "na none");
+          assert.equal(mark.tag, "a");
+          assert.equal(mark.attrs.href, gap.source);
+          assert.ok(
+            mark.attrs["aria-label"].includes(`kein Fach. ${gap.note}`),
+          );
+          assert.equal(mark.attrs.title, mark.attrs["aria-label"]);
+        } else if (grade < subject.from) {
+          assert.equal(mark.attrs.class, "na");
+          assert.ok(mark.attrs["aria-label"].endsWith("nicht vorgesehen"));
+          assert.equal(mark.attrs.title, mark.attrs["aria-label"]);
+        } else {
+          assert.equal(mark.attrs.class, "cell");
+        }
+      }
+    }
+  }
+});
 
 test("the coverage matrix links all three paths to one future package and counts the offer once", () => {
   const { data, p } = withGpgPackage(),

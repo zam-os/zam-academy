@@ -406,7 +406,7 @@ describe("Zwei verschiedene Kompromisse und klare Modellgrenzen", () => {
 });
 
 describe("Reviewregression: Fachangebot und Zahlendarstellung", () => {
-	it("keeps PuG 8 at Gymnasium but excludes the five non-subject school fields", () => {
+	it("keeps PuG 8 at Gymnasium, excludes absent Realschule fields and routes Mittelschule through GPG", () => {
 		expect(registry.faecher.find((subject) => subject.id === "pug")?.from).toBe(
 			8,
 		);
@@ -415,19 +415,20 @@ describe("Reviewregression: Fachangebot und Zahlendarstellung", () => {
 		);
 		expect(
 			absent.map((entry) => `${entry.school}:${entry.grade}`).sort(),
-		).toEqual([
-			"mittelschule:10",
-			"mittelschule:8",
-			"mittelschule:9",
-			"realschule:8",
-			"realschule:9",
-		]);
+		).toEqual(["realschule:8", "realschule:9"]);
 		for (const entry of absent) {
 			expect(entry.note.length).toBeGreaterThan(20);
 			expect(entry.source).toBe(
 				`https://www.gesetze-bayern.de/Content/Document/${entry.school === "realschule" ? "BayRSO" : "BayMSO"}-ANL_1`,
 			);
 		}
+		expect(
+			registry.fachverbunde.find((group) => group.id === "gpg"),
+		).toMatchObject({
+			school: "mittelschule",
+			grades: [5, 6, 7, 8, 9, 10],
+			paths: ["geschichte", "pug", "geographie"],
+		});
 		expect(
 			registry.pakete.find((pkg) => pkg.app === "politik-realschule-10"),
 		).toMatchObject({ fach: "pug", grade: 10, school: "realschule" });

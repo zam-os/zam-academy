@@ -4,6 +4,7 @@ import coverage from "../coverage.json";
 import curriculum from "../curriculum.json";
 import mapping from "../replaces-de-by.json";
 import { LESSONS, SOURCES, STAGES } from "../src/curriculum";
+import countries from "../src/data/countries.json";
 import {
 	developmentIndex,
 	freshLab,
@@ -215,6 +216,47 @@ describe("Models show mechanisms and their boundaries", () => {
 			expect(markup).toContain("Natural Earth");
 			expect(markup).not.toMatch(/NaN|Infinity/);
 		}
+	});
+	it("places the Andes orientation point on the Altiplano within the shipped land polygons", () => {
+		const andes = required(MAPS.america.points.find((p) => p.id === "andes"));
+		const bolivia = required(
+			countries.find((country) => country.code === "BOL"),
+		);
+		const inRing = (lon: number, lat: number, ring: number[][]) => {
+			let inside = false;
+			for (let i = 0, j = ring.length - 1; i < ring.length; j = i++) {
+				const [xi, yi] = ring[i];
+				const [xj, yj] = ring[j];
+				if (
+					yi > lat !== yj > lat &&
+					lon < ((xj - xi) * (lat - yi)) / (yj - yi) + xi
+				)
+					inside = !inside;
+			}
+			return inside;
+		};
+		// Bolivia is a Polygon; its outer ring contains this Altiplano point,
+		// while the former Pacific coordinate must remain outside.
+		expect(bolivia.geometry.type).toBe("Polygon");
+		const rings = bolivia.geometry.coordinates as number[][][];
+		expect(inRing(andes.lon, andes.lat, rings[0])).toBe(true);
+		expect(
+			rings.slice(1).some((ring) => inRing(andes.lon, andes.lat, ring)),
+		).toBe(false);
+		expect(inRing(-72, -20, rings[0])).toBe(false);
+	});
+	it("requires unchanged total output for the population-only comparison", () => {
+		expect(
+			goals("stats", { ...freshLab(), changed: true, population: 60 }),
+		).toEqual([true, false]);
+		expect(
+			goals("stats", {
+				...freshLab(),
+				changed: true,
+				total: 900,
+				population: 60,
+			}),
+		).toEqual([false, true]);
 	});
 	it("all model goals start open and have a reachable witness", () => {
 		const kinds: LabKind[] = [
