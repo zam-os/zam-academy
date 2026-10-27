@@ -1,0 +1,2305 @@
+[
+	{
+		"id": "g8-karte",
+		"stage": "amerika",
+		"title": "Amerika räumlich ordnen",
+		"skill": "Der Doppelkontinent erstreckt sich von der Arktis bis weit auf die Südhalbkugel.",
+		"subsection": "1.1",
+		"bindings": ["1"],
+		"paragraphs": [
+			"Der Doppelkontinent erstreckt sich von der Arktis bis weit auf die Südhalbkugel. Die Rocky Mountains und die Anden liegen im Westen. Östlich der Anden entwässert der Amazonas zum Atlantik. Kanada, die USA und Mexiko gehören zu Nordamerika; Brasilien liegt in Südamerika. Mittelamerika und die Karibik verbinden und gliedern den Raum.",
+			"Eine Lagebeschreibung nennt Himmelsrichtungen und Nachbarschaften. Brasilien liegt östlich von Peru und am Atlantik. Prüfe Kartenüberschrift, Legende und Maßstab; eine Länderkarte erklärt noch keine Höhen oder Vegetation. Die vereinfachte Karte der App ist zur Orientierung gedacht. Nutze zusätzlich eine physische Atlaskarte."
+		],
+		"materialLabel": "Eigens verfasstes Übungsmaterial. Angegebene Modellzahlen sind erfunden, keine aktuellen Länderwerte.",
+		"material": "Orientierungsreise: Rocky Mountains → Mississippi → Karibik → Amazonasbecken → Anden. Beschreibe jeweils die Lage statt nur Namen aufzuzählen.",
+		"takeaway": "Eine Lagebeschreibung nennt Himmelsrichtungen und Nachbarschaften.",
+		"sourceIds": ["lp", "ne"],
+		"quiz": {
+			"question": "Welcher Satz beschreibt die Lage des Amazonasbeckens richtig?",
+			"answer": "Es liegt östlich der Anden in Südamerika.",
+			"wrong": [
+				"Es liegt westlich der Rocky Mountains in Kanada.",
+				"Es liegt nördlich der Karibik in Nordamerika."
+			],
+			"explanation": "Die Anden bilden den westlichen Gebirgsrand Südamerikas; das Amazonasbecken liegt auf ihrer Ostseite."
+		},
+		"cases": [
+			{
+				"prompt": "Die Anden liegen am westlichen Rand Südamerikas.",
+				"options": ["Lagebeziehung", "Höhenmessung"],
+				"answer": "Lagebeziehung",
+				"feedback": "Der Satz verknüpft Gebirge und Teilkontinent räumlich."
+			},
+			{
+				"prompt": "Grün ist in einer unbekannten Karte zu sehen.",
+				"options": [
+					"Grün bedeutet immer Regenwald",
+					"Zuerst die Legende prüfen"
+				],
+				"answer": "Zuerst die Legende prüfen",
+				"feedback": "Farben können Höhenstufen, Vegetation oder andere Merkmale bedeuten."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Beschreibe eine Reise von Kanada nach Brasilien mit drei Lagebeziehungen.",
+				"model": "Kanada liegt nördlich der USA. Weiter südlich schließt Mexiko an. Über Mittelamerika gelangt man nach Südamerika; Brasilien liegt dort östlich der Anden am Atlantik.",
+				"criteria": [
+					"Teilkontinente unterschieden",
+					"Drei Lagebeziehungen genannt",
+					"Atlas oder Karte zur Kontrolle genutzt"
+				],
+				"hints": [
+					"Teilkontinente unterschieden",
+					"Drei Lagebeziehungen genannt"
+				]
+			},
+			"2": {
+				"prompt": "Warum kann ein großer Länderumriss auf der Bildschirmkarte keine genaue Entfernung belegen?",
+				"model": "Projektion, Maßstab und Auswahl des Ausschnitts beeinflussen die Darstellung. Die vereinfachte Karte ist nicht flächentreu. Für Kilometerwerte nutze ich eine geeignete Karte mit Maßstab oder ein Distanzmesswerkzeug.",
+				"criteria": [
+					"Kartendarstellung benannt",
+					"Grenze der Darstellung erklärt",
+					"Passendes Kontrollmittel genannt"
+				],
+				"hints": ["Kartendarstellung benannt", "Grenze der Darstellung erklärt"]
+			}
+		},
+		"lab": "america"
+	},
+	{
+		"id": "g8-platten",
+		"stage": "amerika",
+		"title": "Anden, Erdbeben und Hawaii",
+		"skill": "An der Westküste Südamerikas taucht die ozeanische Nazca-Platte unter die Südamerikanische Platte.",
+		"subsection": "1.1",
+		"bindings": ["1"],
+		"paragraphs": [
+			"An der Westküste Südamerikas taucht die ozeanische Nazca-Platte unter die Südamerikanische Platte. Druck, Verformung und Magmenbildung tragen zur Entstehung der Anden und vieler Vulkane bei. Wenn sich verhakte Plattenabschnitte ruckartig bewegen, entstehen Erdbeben. Der Ort eines Bebens und die Schadenshöhe sind verschiedene Aussagen.",
+			"Vulkanismus tritt nicht nur an Plattengrenzen auf. Hawaii ist eine Inselkette über einem Hotspot im Inneren der Pazifischen Platte. Die sich bewegende Platte trägt ältere Inseln vom Bereich des Hotspots weg. Eine Kette alter Vulkane ist deshalb kein Beleg dafür, dass dort zwei Kontinente zusammenstoßen."
+		],
+		"materialLabel": "Eigens verfasstes Übungsmaterial. Angegebene Modellzahlen sind erfunden, keine aktuellen Länderwerte.",
+		"material": "Skizzenfall A: Eine ozeanische Platte taucht unter einen Kontinentalrand. Fall B: Eine Platte bewegt sich über einen länger aktiven Magmenaufstieg.",
+		"takeaway": "Vulkanismus tritt nicht nur an Plattengrenzen auf.",
+		"sourceIds": ["lp", "usgs"],
+		"quiz": {
+			"question": "Welcher Vorgang erklärt den Vulkanismus der Anden?",
+			"answer": "Subduktion am westlichen Kontinentalrand.",
+			"wrong": [
+				"Ein Hotspot unter jedem Ort Südamerikas.",
+				"Nur die Verwitterung durch tropischen Regen."
+			],
+			"explanation": "Die Nazca-Platte taucht unter die Südamerikanische Platte."
+		},
+		"cases": [
+			{
+				"prompt": "Eine ozeanische Platte taucht unter eine andere Platte.",
+				"options": ["Ablagerung", "Subduktion"],
+				"answer": "Subduktion",
+				"feedback": "Subduktion ist das Abtauchen an einer konvergenten Plattengrenze."
+			},
+			{
+				"prompt": "Eine Inselkette entsteht im Platteninneren.",
+				"options": [
+					"Ein Hotspot ist eine mögliche Erklärung",
+					"Vulkanismus ist dort ausgeschlossen"
+				],
+				"answer": "Ein Hotspot ist eine mögliche Erklärung",
+				"feedback": "Hawaii zeigt, dass Vulkanismus auch innerhalb einer Platte vorkommt."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Vergleiche die Entstehung von Andenvulkanen und Hawaii.",
+				"model": "In den Anden gehört der Vulkanismus zu einer Subduktionszone. Hawaii entsteht über einem Hotspot im Inneren einer sich bewegenden Platte. Beide beruhen auf inneren Kräften, aber die tektonische Lage unterscheidet sich.",
+				"criteria": [
+					"Beide Beispiele verortet",
+					"Zwei Mechanismen unterschieden",
+					"Keine gleiche Ursache behauptet"
+				],
+				"hints": ["Beide Beispiele verortet", "Zwei Mechanismen unterschieden"]
+			},
+			"2": {
+				"prompt": "Eine Stadt liegt nahe einer Plattengrenze. Begründe, welche weiteren Informationen du vor einer Risikobewertung brauchst.",
+				"model": "Die Nähe erklärt eine mögliche Gefährdung, noch nicht die Folgen. Ich brauche Angaben zu Bebentyp und Stärke, Untergrund, Bebauung, Bevölkerungsverteilung und Schutzmaßnahmen. Für eine aktuelle Gefahreneinschätzung nutze ich zuständige Fachstellen.",
+				"criteria": [
+					"Gefährdung von Folgen getrennt",
+					"Verwundbarkeit berücksichtigt",
+					"Fachquelle gefordert"
+				],
+				"hints": [
+					"Gefährdung von Folgen getrennt",
+					"Verwundbarkeit berücksichtigt"
+				]
+			}
+		}
+	},
+	{
+		"id": "g8-stuerme",
+		"stage": "amerika",
+		"title": "Hurrikan, Tornado und Blizzard",
+		"skill": "Ein Hurrikan ist ein großräumiger tropischer Wirbelsturm über warmem Meer.",
+		"subsection": "1.1",
+		"bindings": ["1"],
+		"paragraphs": [
+			"Ein Hurrikan ist ein großräumiger tropischer Wirbelsturm über warmem Meer. Verdunstung liefert Feuchtigkeit; aufsteigende Luft und Kondensation unterstützen das Sturmsystem. Auch Windverhältnisse und die Erdrotation spielen eine Rolle. Warmes Meer allein garantiert keinen Hurrikan. Ein Tornado ist eine viel kleinere rotierende Luftsäule zwischen Gewitterwolke und Boden.",
+			"Ein Blizzard ist ein Schneesturm mit starkem Wind und stark eingeschränkter Sicht. Hurrikan, Tornado und Blizzard unterscheiden sich in Entstehung, Ausdehnung und Gefahren. Warnungen betreffen konkrete Orte und Zeiträume. Ein Hurrikan kann außer Wind auch Sturmflut und Starkregen mit Hochwasser verursachen."
+		],
+		"materialLabel": "Eigens verfasstes Übungsmaterial. Angegebene Modellzahlen sind erfunden, keine aktuellen Länderwerte.",
+		"material": "Drei Meldungen: tropischer Wirbel über dem Atlantik; rotierende Luftsäule unter einem Gewitter; verwehter Schnee bei Sturm und kaum Sicht.",
+		"takeaway": "Ein Blizzard ist ein Schneesturm mit starkem Wind und stark eingeschränkter Sicht.",
+		"sourceIds": ["lp", "noaa"],
+		"quiz": {
+			"question": "Welche Gefahr kann zusätzlich zum Hurrikanwind auftreten?",
+			"answer": "Sturmflut und Überschwemmung.",
+			"wrong": [
+				"Ausschließlich vulkanische Asche.",
+				"Nur eine dauerhafte Vereisung des Meeres."
+			],
+			"explanation": "Ein tropischer Wirbelsturm kann Wasser an die Küste drücken und starke Niederschläge bringen."
+		},
+		"cases": [
+			{
+				"prompt": "Eine schmale Luftsäule reicht aus einer Gewitterwolke zum Boden.",
+				"options": ["Tornado", "Blizzard"],
+				"answer": "Tornado",
+				"feedback": "Die räumlich kleine Luftsäule kennzeichnet einen Tornado."
+			},
+			{
+				"prompt": "Schneeverwehungen behindern bei Sturm die Sicht.",
+				"options": ["Hurrikan", "Blizzard"],
+				"answer": "Blizzard",
+				"feedback": "Beim Blizzard stehen Schneesturm und schlechte Sicht im Mittelpunkt."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Ordne die drei Meldungen ein und nenne je eine mögliche Folge.",
+				"model": "Über warmem tropischem Meer kann ein Hurrikan entstehen, der Sturmflut verursacht. Eine rotierende Luftsäule ist ein Tornado und kann Gebäude beschädigen. Schneesturm mit schlechter Sicht passt zum Blizzard und behindert den Verkehr.",
+				"criteria": [
+					"Drei Sturmtypen unterschieden",
+					"Je eine passende Folge genannt",
+					"Wetterlage statt Landesklischee genutzt"
+				],
+				"hints": [
+					"Drei Sturmtypen unterschieden",
+					"Je eine passende Folge genannt"
+				]
+			},
+			"2": {
+				"prompt": "Beurteile den Satz: Warmes Wasser bedeutet automatisch einen Hurrikan.",
+				"model": "Warmes Wasser ist ein wichtiger Energielieferant, aber weitere Bedingungen müssen passen, etwa Feuchtigkeit, eine anfängliche Störung und ausreichend geringe vertikale Windscherung. Der Satz verwechselt eine notwendige Rahmenbedingung mit einer sicheren Vorhersage.",
+				"criteria": [
+					"Weitere Bedingung genannt",
+					"Keine sichere Vorhersage behauptet",
+					"Energiequelle erklärt"
+				],
+				"hints": [
+					"Weitere Bedingung genannt",
+					"Keine sichere Vorhersage behauptet"
+				]
+			}
+		}
+	},
+	{
+		"id": "g8-risiko",
+		"stage": "amerika",
+		"title": "Warum gleiche Gefahren ungleiche Folgen haben",
+		"skill": "Eine Naturgefahr trifft nicht überall auf dieselbe Verwundbarkeit.",
+		"subsection": "1.1",
+		"bindings": ["1"],
+		"paragraphs": [
+			"Eine Naturgefahr trifft nicht überall auf dieselbe Verwundbarkeit. Zwei Küstenorte können gleich starkem Wind ausgesetzt sein, aber sich in Bauweise, Warnsystem, Evakuierungswegen und Gesundheitsversorgung unterscheiden. Exposition beschreibt, wer oder was im Gefahrenraum liegt. Verwundbarkeit beschreibt die Anfälligkeit und die Möglichkeiten, Folgen zu bewältigen.",
+			"Ein Ländername oder Durchschnittseinkommen entscheidet nicht allein über das Risiko. Auch innerhalb eines reichen Landes können Menschen besonders gefährdet sein. Vergleiche einen dokumentierten Sturm in den USA mit einem karibischen Beispiel nach denselben Kriterien und mit datierten Quellen; Opferzahlen allein erklären die Ursachen nicht."
+		],
+		"materialLabel": "Eigens verfasstes Übungsmaterial. Angegebene Modellzahlen sind erfunden, keine aktuellen Länderwerte.",
+		"material": "Erfundene Orte A und B: je 1.000 Menschen an einer Küste. A hat einen erreichbaren Schutzraum und Warnwege, B eine schwer passierbare Straße. Die Windstärke sei gleich.",
+		"takeaway": "Ein Ländername oder Durchschnittseinkommen entscheidet nicht allein über das Risiko.",
+		"sourceIds": ["lp", "noaa"],
+		"quiz": {
+			"question": "Warum können beim gleichen Sturm verschiedene Schäden entstehen?",
+			"answer": "Exposition und Verwundbarkeit unterscheiden sich.",
+			"wrong": [
+				"Die Landesfläche bestimmt jeden einzelnen Schaden.",
+				"Gleicher Wind führt zwingend zu gleichen Folgen."
+			],
+			"explanation": "Bauweise, Lage und Schutzmöglichkeiten beeinflussen die Folgen."
+		},
+		"cases": [
+			{
+				"prompt": "Viele Gebäude stehen direkt in einer überflutungsgefährdeten Ebene.",
+				"options": ["Keine Exposition", "Hohe Exposition"],
+				"answer": "Hohe Exposition",
+				"feedback": "Menschen und Sachwerte befinden sich im Gefahrenraum."
+			},
+			{
+				"prompt": "Warnungen erreichen Menschen ohne Internet über Sirenen.",
+				"options": ["Eine Schutzmöglichkeit", "Ein Beweis für stärkeren Wind"],
+				"answer": "Eine Schutzmöglichkeit",
+				"feedback": "Ein Warnweg verändert die Bewältigung, nicht die Windstärke."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Vergleiche die beiden erfundenen Orte anhand zweier Kriterien.",
+				"model": "Die Zahl exponierter Menschen ist gleich. In B ist die Evakuierung durch die Straße schwieriger. A hat mit Schutzraum und Warnwegen bessere Bewältigungsmöglichkeiten. Ohne Angaben zur Bauweise kann ich die Schäden trotzdem nicht genau vorhersagen.",
+				"criteria": [
+					"Gleiche Gefahr berücksichtigt",
+					"Zwei Schutzkriterien verglichen",
+					"Vorhersagegrenze genannt"
+				],
+				"hints": [
+					"Gleiche Gefahr berücksichtigt",
+					"Zwei Schutzkriterien verglichen"
+				]
+			},
+			"2": {
+				"prompt": "Plane den Quellenvergleich USA und Karibik für einen realen Sturm.",
+				"model": "Ich wähle je ein datiertes Ereignis und prüfe Intensität, betroffene Orte, Bauweise, Warnung und Versorgung mit vergleichbaren Quellen. Unterschiedliche Erfassungszeiträume oder Schadensdefinitionen notiere ich; aus zwei Fällen leite ich kein Urteil über alle Menschen eines Landes ab.",
+				"criteria": [
+					"Gleiche Kriterien gewählt",
+					"Datierte Quellen vorgesehen",
+					"Verallgemeinerung begrenzt"
+				],
+				"hints": ["Gleiche Kriterien gewählt", "Datierte Quellen vorgesehen"]
+			}
+		}
+	},
+	{
+		"id": "g8-siedlung",
+		"stage": "amerika",
+		"title": "Besiedlung hat eine Vorgeschichte",
+		"skill": "Amerika war lange vor der europäischen Eroberung von vielfältigen indigenen Gesellschaften bewohnt.",
+		"subsection": "1.2",
+		"bindings": ["1"],
+		"paragraphs": [
+			"Amerika war lange vor der europäischen Eroberung von vielfältigen indigenen Gesellschaften bewohnt. Kolonisierung bedeutete auch Gewalt, Enteignung, eingeschleppte Krankheiten und erzwungene Arbeit. Europäische Sprachen und koloniale Stadtgründungen prägen viele Räume bis heute, ohne indigene und afroamerikanische Lebenswelten zu ersetzen.",
+			"Toronto und São Paulo zeigen unterschiedliche Siedlungs- und Wirtschaftsgeschichten. Nordamerika ist nicht vollständig englischsprachig, Südamerika nicht vollständig spanischsprachig: In Brasilien ist Portugiesisch besonders verbreitet. Eine politische Grenzkarte, eine Sprachenkarte und eine historische Karte beantworten verschiedene Fragen."
+		],
+		"materialLabel": "Eigens verfasstes Übungsmaterial. Angegebene Modellzahlen sind erfunden, keine aktuellen Länderwerte.",
+		"material": "Vergleichsauftrag: Verorte Toronto in Kanada und São Paulo in Brasilien. Trenne historische Besitzansprüche von der tatsächlichen vorherigen Besiedlung.",
+		"takeaway": "Toronto und São Paulo zeigen unterschiedliche Siedlungs- und Wirtschaftsgeschichten.",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"question": "Was ist an „Europäer besiedelten einen leeren Kontinent“ falsch?",
+			"answer": "Indigene Gesellschaften lebten dort bereits.",
+			"wrong": [
+				"Vor der Kolonisierung gab es dort keinerlei Menschen.",
+				"Alle amerikanischen Städte entstanden erst im letzten Jahrhundert."
+			],
+			"explanation": "Die Formulierung blendet die bestehende Bevölkerung und die Folgen der Eroberung aus."
+		},
+		"cases": [
+			{
+				"prompt": "Eine Quelle nennt nur die europäischen Stadtgründer.",
+				"options": [
+					"Die indigene Perspektive ergänzen",
+					"Daraus eine menschenleere Vorgeschichte folgern"
+				],
+				"answer": "Die indigene Perspektive ergänzen",
+				"feedback": "Eine Quelle kann andere Bevölkerungsgruppen ausblenden."
+			},
+			{
+				"prompt": "Für Brasilien wird überall ausschließlich Spanisch angenommen.",
+				"options": [
+					"Die Aussage ist für ganz Amerika richtig",
+					"Die Sprachenkarte widerspricht dem"
+				],
+				"answer": "Die Sprachenkarte widerspricht dem",
+				"feedback": "In Brasilien ist Portugiesisch besonders verbreitet; regionale Sprachenvielfalt bleibt wichtig."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Erkläre zwei bis heute wirksame Folgen der Kolonisierung.",
+				"model": "Sprachen und Stadtstrukturen wurden durch europäische Herrschaft geprägt. Gleichzeitig führten Enteignung und Zwangsarbeit zu tiefen sozialen Ungleichheiten. Indigene Gesellschaften bestanden davor und bestehen bis heute; ihre Perspektiven gehören zum Vergleich.",
+				"criteria": [
+					"Vorherige Besiedlung benannt",
+					"Zwei Folgen erklärt",
+					"Vielfalt nicht ausgelöscht"
+				],
+				"hints": ["Vorherige Besiedlung benannt", "Zwei Folgen erklärt"]
+			},
+			"2": {
+				"prompt": "Vergleiche eine Stadtgründungsdarstellung mit einer Darstellung aus indigener Perspektive. Welche Fragen stellst du?",
+				"model": "Ich frage, wer spricht, für welchen Zeitraum und mit welchem Interesse. Ich prüfe, wem Land zugeschrieben wird, welche Gewalt oder Vertreibung erwähnt wird und welche Belege vorliegen. Unterschiedliche Perspektiven werden sichtbar, ohne jede Behauptung ungeprüft gleichzusetzen.",
+				"criteria": [
+					"Urheber geprüft",
+					"Landnahme und Folgen befragt",
+					"Belege eingefordert"
+				],
+				"hints": ["Urheber geprüft", "Landnahme und Folgen befragt"]
+			}
+		}
+	},
+	{
+		"id": "g8-stadt",
+		"stage": "amerika",
+		"title": "Stadtwachstum auf Bildern erkennen",
+		"skill": "Verstädterung bezeichnet einen steigenden Anteil der Stadtbevölkerung.",
+		"subsection": "1.2",
+		"bindings": ["1"],
+		"paragraphs": [
+			"Verstädterung bezeichnet einen steigenden Anteil der Stadtbevölkerung. Suburbanisierung verlagert Menschen oder Funktionen ins Umland. In Toronto und São Paulo können verschiedene Teilräume zugleich wachsen, sich verdichten oder soziale Unterschiede zeigen. Die Begriffe erklären Prozesse und sind keine Schubladen für ganze Kontinente.",
+			"Ein Luft- oder Satellitenbild zeigt sichtbare Strukturen zu einem Aufnahmezeitpunkt. Wohnkosten oder Einkommen lassen sich daraus nicht direkt ablesen. Vergleiche Bilder mit gleichem Ausschnitt und ähnlichem Maßstab; beachte Jahreszeit, Aufnahmedatum und Legende. Eine neue Straße allein beweist noch keinen Bevölkerungszuwachs."
+		],
+		"materialLabel": "Eigens verfasstes Übungsmaterial. Angegebene Modellzahlen sind erfunden, keine aktuellen Länderwerte.",
+		"material": "Fiktiver Bildvergleich: 2000 endet die geschlossene Bebauung an einer Ringstraße. 2020 liegen Wohnblöcke und Gewerbehallen jenseits davon. Die Bilder enthalten keine Einwohnerzahlen.",
+		"takeaway": "Ein Luft- oder Satellitenbild zeigt sichtbare Strukturen zu einem Aufnahmezeitpunkt.",
+		"sourceIds": ["lp", "nasa"],
+		"quiz": {
+			"question": "Was lässt sich aus dem Bildvergleich sicherer ableiten?",
+			"answer": "Die bebaute Fläche hat sich räumlich erweitert.",
+			"wrong": [
+				"Das Einkommen jedes Haushalts hat sich verdoppelt.",
+				"Alle neuen Gebäude sind von Zugezogenen bewohnt."
+			],
+			"explanation": "Sichtbar ist eine Flächenausdehnung, nicht die genaue Bevölkerungs- oder Einkommensentwicklung."
+		},
+		"cases": [
+			{
+				"prompt": "Menschen ziehen aus der Kernstadt in benachbarte Gemeinden.",
+				"options": ["Plattentektonik", "Suburbanisierung"],
+				"answer": "Suburbanisierung",
+				"feedback": "Der Prozess betrifft die Verlagerung ins städtische Umland."
+			},
+			{
+				"prompt": "Zwei Bilder haben verschiedene Maßstäbe.",
+				"options": [
+					"Ausschnitt und Maßstab zuerst angleichen",
+					"Die größere Bildfläche beweist Wachstum"
+				],
+				"answer": "Ausschnitt und Maßstab zuerst angleichen",
+				"feedback": "Unterschiedliche Darstellungen können Veränderungen nur vortäuschen."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Beschreibe den fiktiven Bildvergleich und trenne Beobachtung und Erklärung.",
+				"model": "Ich sehe zusätzliche Bebauung außerhalb der Ringstraße. Das kann auf räumliches Stadtwachstum hindeuten. Ob Suburbanisierung oder andere Prozesse dahinterstehen, prüfe ich mit Nutzungs- und Bevölkerungsdaten; die Bilder allein messen kein Einkommen.",
+				"criteria": [
+					"Sichtbares beschrieben",
+					"Erklärung als Hypothese markiert",
+					"Ergänzende Daten genannt"
+				],
+				"hints": ["Sichtbares beschrieben", "Erklärung als Hypothese markiert"]
+			},
+			"2": {
+				"prompt": "Plane einen Vergleich von Toronto und São Paulo mit echten Satellitenbildern.",
+				"model": "Ich wähle datierte Bilder und einen vergleichbaren Maßstab. Ich beschreibe Bebauung, Verkehrsachsen und Freiräume und prüfe Funktionen mit weiteren Quellen. Unterschiedliche Ausgangslagen, Bildauflösungen und soziale Teilräume begrenzen pauschale Aussagen über beide Städte.",
+				"criteria": [
+					"Zwei Städte verortet",
+					"Vergleichsmaßstab festgelegt",
+					"Aussagegrenzen erklärt"
+				],
+				"hints": ["Zwei Städte verortet", "Vergleichsmaßstab festgelegt"]
+			}
+		}
+	},
+	{
+		"id": "g8-agrar",
+		"stage": "amerika",
+		"title": "Landwirtschaft in den Great Plains",
+		"skill": "Die Great Plains liegen östlich der Rocky Mountains in Nordamerika.",
+		"subsection": "1.3",
+		"bindings": ["1"],
+		"paragraphs": [
+			"Die Great Plains liegen östlich der Rocky Mountains in Nordamerika. Große Felder, Maschinen und spezialisierte Betriebe ermöglichen dort hohe Arbeitsproduktivität. Niederschläge und Wasserverfügbarkeit unterscheiden sich räumlich. Bewässerung kann Erträge sichern, aber Grundwasservorräte belasten, wenn mehr entnommen wird als nachfließt.",
+			"Standortgunst ist keine Garantie für nachhaltige Nutzung. Fruchtfolgen, Bodendeckung und angepasste Bewirtschaftung können Erosion begrenzen. Vergleiche Ertrag, Einkommen, Wasserverbrauch und Bodenschutz getrennt. Ein Betrieb kann bei einem Kriterium gut abschneiden und bei einem anderen Nachteile haben."
+		],
+		"materialLabel": "Eigens verfasstes Übungsmaterial. Angegebene Modellzahlen sind erfunden, keine aktuellen Länderwerte.",
+		"material": "Erfundener Vergleich je Hektar: Betrieb A erntet 8 t und nutzt 400 m³ Bewässerungswasser; B erntet 6 t bei 150 m³. Kosten, Niederschlag und Bodenqualität sind nicht angegeben.",
+		"takeaway": "Standortgunst ist keine Garantie für nachhaltige Nutzung.",
+		"sourceIds": ["lp", "fao"],
+		"quiz": {
+			"question": "Warum reicht der Ertrag allein für ein Nachhaltigkeitsurteil nicht?",
+			"answer": "Wasser, Boden und soziale Bedingungen zählen ebenfalls.",
+			"wrong": [
+				"Ertrag und Wasserverbrauch sind dieselbe Größe.",
+				"Ein hoher Ertrag schließt jede Umweltbelastung aus."
+			],
+			"explanation": "Nachhaltigkeit verlangt mehrere begründete Kriterien."
+		},
+		"cases": [
+			{
+				"prompt": "Wind trägt unbedeckten Oberboden ab.",
+				"options": ["Bodenerosion", "Bodenbildung durch Bewässerung"],
+				"answer": "Bodenerosion",
+				"feedback": "Fehlende Bodenbedeckung kann Windabtrag begünstigen."
+			},
+			{
+				"prompt": "Es wird mehr Grundwasser entnommen als langfristig nachfließt.",
+				"options": [
+					"Der Vorrat bleibt dadurch zwingend gleich",
+					"Der Vorrat kann abnehmen"
+				],
+				"answer": "Der Vorrat kann abnehmen",
+				"feedback": "Entnahme und Neubildung müssen in einer Bilanz betrachtet werden."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Vergleiche die erfundenen Betriebe nach Ertrag und Wasser.",
+				"model": "A hat den höheren Hektarertrag, benötigt aber mehr Bewässerungswasser. B ist beim Wasserverbrauch günstiger. Ohne Angaben zu Kosten, Boden und Arbeitsbedingungen ergibt sich daraus keine Gesamtrangfolge der Nachhaltigkeit.",
+				"criteria": [
+					"Beide Zahlenpaare genutzt",
+					"Zielkonflikt erklärt",
+					"Fehlende Kriterien genannt"
+				],
+				"hints": ["Beide Zahlenpaare genutzt", "Zielkonflikt erklärt"]
+			},
+			"2": {
+				"prompt": "Entwirf einen Vorschlag gegen Bodenerosion, der auch die Betriebsführung berücksichtigt.",
+				"model": "Eine bodendeckende Fruchtfolge und Schutzstreifen können Wind und Wasserabtrag vermindern. Ich prüfe Arbeitsaufwand, Flächenbedarf und Ertrag sowie regionale Wasserbedingungen. Eine Maßnahme muss zum Standort passen und wird nicht allein nach kurzfristigem Ertrag beurteilt.",
+				"criteria": [
+					"Bodenschutzmaßnahme erklärt",
+					"Wirtschaftliche Folge berücksichtigt",
+					"Standortbezug hergestellt"
+				],
+				"hints": [
+					"Bodenschutzmaßnahme erklärt",
+					"Wirtschaftliche Folge berücksichtigt"
+				]
+			}
+		}
+	},
+	{
+		"id": "g8-plantagen",
+		"stage": "amerika",
+		"title": "Plantagenprodukte: Wer trägt die Folgen?",
+		"skill": "Bananen aus Ecuador oder Kakao aus tropischen Regionen können über internationale Handelsketten in Deutschland verkauft werden.",
+		"subsection": "1.3",
+		"bindings": ["1"],
+		"paragraphs": [
+			"Bananen aus Ecuador oder Kakao aus tropischen Regionen können über internationale Handelsketten in Deutschland verkauft werden. Plantagen spezialisieren sich häufig auf ein Verkaufsprodukt und große zusammenhängende Flächen; Kakao kann auch von kleineren Betrieben angebaut werden. Klima, Boden, Verkehrswege und Nachfrage beeinflussen die Produktion.",
+			"Monokulturen können Schädlingsdruck und den Bedarf an Pflanzenschutz erhöhen. Arbeitsbedingungen, Bezahlung, Gewässerschutz und Artenvielfalt sind getrennte Kriterien. Fair-Trade-Ansätze und nachvollziehbare Kontrollen können bestimmte Bedingungen verbessern, garantieren aber nicht automatisch jede Nachhaltigkeitswirkung. Konsum wirkt zusammen mit Unternehmen, Handel und politischen Regeln."
+		],
+		"materialLabel": "Eigens verfasstes Übungsmaterial. Angegebene Modellzahlen sind erfunden, keine aktuellen Länderwerte.",
+		"material": "Rollenspiel: Eine Bananenkooperative, Beschäftigte, eine Handelsfirma und eine Verbrauchergruppe beraten einen Vertrag. Diskutiert Preis, Schutzkleidung, Gewässerrandstreifen und unabhängige Kontrolle.",
+		"takeaway": "Monokulturen können Schädlingsdruck und den Bedarf an Pflanzenschutz erhöhen.",
+		"sourceIds": ["lp", "fairtrade", "fao"],
+		"quiz": {
+			"question": "Warum entscheidet ein günstiger Ladenpreis nicht allein über faire Produktionsbedingungen?",
+			"answer": "Verträge, Bezahlung und Schutzbedingungen müssen geprüft werden.",
+			"wrong": [
+				"Ein niedriger Preis garantiert automatisch hohe Löhne.",
+				"Ein hoher Preis beweist ohne weitere Belege jeden Schutzstandard."
+			],
+			"explanation": "Der Verkaufspreis allein belegt nicht, wie Nutzen und Kosten in der Kette verteilt sind."
+		},
+		"cases": [
+			{
+				"prompt": "Auf großer Fläche wird dieselbe Kultur angebaut.",
+				"options": ["Ein Beweis für hohe Artenvielfalt", "Eine Monokultur"],
+				"answer": "Eine Monokultur",
+				"feedback": "Einseitiger Anbau kann Risiken bündeln; konkrete Folgen sind standortabhängig."
+			},
+			{
+				"prompt": "Ein Vertrag nennt Schutzmaßnahmen, aber keine Kontrolle.",
+				"options": [
+					"Die Umsetzung bleibt zu prüfen",
+					"Das Papier beweist jede tatsächliche Bedingung"
+				],
+				"answer": "Die Umsetzung bleibt zu prüfen",
+				"feedback": "Zugesagte Regeln und überprüfte Praxis sind unterschiedliche Belege."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Formuliere für zwei Rollen je ein Interesse und einen überprüfbaren Vorschlag.",
+				"model": "Beschäftigte brauchen sichere Arbeit und nachvollziehbare Bezahlung. Eine Kooperative braucht tragfähige Preise und Planung. Ein Vertrag kann Schutzkleidung und klare Abnahmeregeln nennen; unabhängige Kontrollen und Beschwerdewege prüfen die Umsetzung.",
+				"criteria": [
+					"Zwei Rollen unterschieden",
+					"Konkrete Bedingung vorgeschlagen",
+					"Kontrolle eingeplant"
+				],
+				"hints": [
+					"Zwei Rollen unterschieden",
+					"Konkrete Bedingung vorgeschlagen"
+				]
+			},
+			"2": {
+				"prompt": "Beurteile einen teureren Bananenkauf als Nachhaltigkeitsmaßnahme.",
+				"model": "Ein Mehrpreis kann Bedingungen verbessern, wenn der Wirkungsweg durch Verträge und Kontrollen belegt ist. Ich prüfe Erzeugereinkommen, Arbeits- und Umweltschutz und vergleiche Alternativen. Preis und Siegel allein ersetzen keine Prüfung, und Verantwortung bleibt auch bei Handel und Politik.",
+				"criteria": [
+					"Wirkungsweg erklärt",
+					"Drei Dimensionen berücksichtigt",
+					"Grenze und weitere Verantwortung genannt"
+				],
+				"hints": ["Wirkungsweg erklärt", "Drei Dimensionen berücksichtigt"]
+			}
+		}
+	},
+	{
+		"id": "g8-amazonas",
+		"stage": "amerika",
+		"title": "Amazonien zwischen Nutzung und Schutz",
+		"skill": "Im Amazonasraum treffen eine große biologische Vielfalt und unterschiedliche Nutzungsinteressen aufeinander.",
+		"subsection": "1.3",
+		"bindings": ["1"],
+		"paragraphs": [
+			"Im Amazonasraum treffen eine große biologische Vielfalt und unterschiedliche Nutzungsinteressen aufeinander. Holzeinschlag, Weiden, Ackerbau und Bergbau können Waldflächen verändern. Nicht jede Rodung hat dieselbe Ursache. Kupferabbau in den Anden ist ein anderes räumliches Beispiel als Holznutzung im Amazonasbecken und muss auf der Karte getrennt verortet werden.",
+			"Die Folgen hängen von Verfahren, Umfang und Schutzrechten ab. Waldverlust kann Lebensräume, Wasserhaushalt und die Lebensgrundlagen lokaler und indigener Gemeinschaften beeinträchtigen. Der Regenwald wächst nicht überall auf dauerhaft fruchtbaren Böden. Nachhaltige Nutzung braucht nachvollziehbare Kontrollen, Beteiligung und langfristigen Schutz."
+		],
+		"materialLabel": "Eigens verfasstes Übungsmaterial. Angegebene Modellzahlen sind erfunden, keine aktuellen Länderwerte.",
+		"material": "Rollenspiel: Eine Gemeinde diskutiert eine neue Straße zu einer Holzkonzession. Arbeitsplätze stehen möglichen Waldverlusten und Eingriffen in lokale Nutzungsrechte gegenüber.",
+		"takeaway": "Die Folgen hängen von Verfahren, Umfang und Schutzrechten ab.",
+		"sourceIds": ["lp", "fao", "fsc"],
+		"quiz": {
+			"question": "Welche Information braucht ein begründetes Urteil zur neuen Straße?",
+			"answer": "Betroffene Flächen, Rechte und langfristige Folgen.",
+			"wrong": [
+				"Nur die Farbe der Straßenfahrzeuge.",
+				"Die Annahme, dass überall gleicher Boden vorliegt."
+			],
+			"explanation": "Ein Urteil muss mehrere Interessen und überprüfbare Folgen berücksichtigen."
+		},
+		"cases": [
+			{
+				"prompt": "Eine Firma verspricht Arbeitsplätze.",
+				"options": [
+					"Wirtschaftliche Perspektive",
+					"Schon ein Beweis für vollständige Nachhaltigkeit"
+				],
+				"answer": "Wirtschaftliche Perspektive",
+				"feedback": "Arbeitsplätze sind ein Kriterium; weitere Folgen müssen geprüft werden."
+			},
+			{
+				"prompt": "Indigene Landrechte werden nicht berücksichtigt.",
+				"options": [
+					"Naturfragen ersetzen jede Beteiligung",
+					"Eine wesentliche soziale und rechtliche Frage bleibt offen"
+				],
+				"answer": "Eine wesentliche soziale und rechtliche Frage bleibt offen",
+				"feedback": "Nutzung betrifft auch die Rechte der Menschen im Raum."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Formuliere für das Rollenspiel zwei Interessen und eine offene Prüffrage.",
+				"model": "Beschäftigte können Einkommen erwarten; lokale Gemeinschaften sorgen sich um Wald und Landrechte. Ich frage, welche Flächen betroffen sind, wer zustimmt und welche Kontrollen zugesichert werden. Eine Arbeitsplatzzahl allein entscheidet den Konflikt nicht.",
+				"criteria": [
+					"Zwei Perspektiven benannt",
+					"Konkrete Prüffrage gestellt",
+					"Einseitiges Urteil vermieden"
+				],
+				"hints": ["Zwei Perspektiven benannt", "Konkrete Prüffrage gestellt"]
+			},
+			"2": {
+				"prompt": "Vergleiche Holzgewinnung im Amazonasraum mit Kupferabbau in den Anden.",
+				"model": "Beide liefern handelbare Rohstoffe, verändern aber andere Räume und Ökosysteme. Bei Holz prüfe ich Einschlag und Regeneration; beim Bergbau Wasserbedarf, Abraum und Schadstoffe. In beiden Fällen beziehe ich Rechte, Einkommen und langfristige Sanierung ein.",
+				"criteria": [
+					"Beide Räume verortet",
+					"Nutzungsspezifische Folgen unterschieden",
+					"Soziale und ökologische Kriterien verbunden"
+				],
+				"hints": [
+					"Beide Räume verortet",
+					"Nutzungsspezifische Folgen unterschieden"
+				]
+			}
+		}
+	},
+	{
+		"id": "g8-vergleich",
+		"stage": "amerika",
+		"title": "USA und Brasilien mit Daten vergleichen",
+		"skill": "Wirtschaftliche Größe, Wohlstand und Bevölkerungsstruktur sind verschiedene Merkmale.",
+		"subsection": "1.4",
+		"bindings": ["1"],
+		"paragraphs": [
+			"Wirtschaftliche Größe, Wohlstand und Bevölkerungsstruktur sind verschiedene Merkmale. Das gesamte Bruttoinlandsprodukt beschreibt eine Wirtschaftsleistung; ein Pro-Kopf-Wert setzt eine Größe zur Bevölkerung ins Verhältnis. Kaufkraft, Preisstand und Berichtsjahr beeinflussen den Vergleich. Ein Durchschnitt sagt wenig über die Verteilung innerhalb eines Landes.",
+			"Vergleiche USA und Brasilien mit Daten aus demselben Jahr und derselben Methode. Unterscheide nominale Werte und kaufkraftbereinigte Werte sowie Bestandszahlen und Wachstumsraten. Recherchiere zusätzlich Altersstruktur oder Verstädterung. Die Übungswerte hier sind fiktiv und dürfen nicht als heutige Länderwerte zitiert werden."
+		],
+		"materialLabel": "Eigens verfasstes Übungsmaterial. Angegebene Modellzahlen sind erfunden, keine aktuellen Länderwerte.",
+		"material": "Fiktive Länder A und B: A erzeugt 600 Mrd. Geldeinheiten bei 20 Mio. Menschen; B 900 Mrd. bei 60 Mio. Menschen. Pro Kopf sind das 30.000 und 15.000.",
+		"takeaway": "Vergleiche USA und Brasilien mit Daten aus demselben Jahr und derselben Methode.",
+		"sourceIds": ["lp", "worldbank"],
+		"quiz": {
+			"question": "Welches fiktive Land hat die höhere Leistung pro Kopf?",
+			"answer": "A mit 30.000 Geldeinheiten.",
+			"wrong": [
+				"B allein wegen der höheren Gesamtsumme.",
+				"Beide zwingend denselben Wert."
+			],
+			"explanation": "Die Gesamtsumme wird durch die jeweilige Bevölkerung geteilt."
+		},
+		"cases": [
+			{
+				"prompt": "Die Quellen verwenden verschiedene Berichtsjahre.",
+				"options": [
+					"Die Werte ohne Hinweis als gleichzeitig behandeln",
+					"Vergleichbarkeit prüfen"
+				],
+				"answer": "Vergleichbarkeit prüfen",
+				"feedback": "Unterschiedliche Jahre können den Vergleich verzerren."
+			},
+			{
+				"prompt": "Der Landesdurchschnitt steigt.",
+				"options": [
+					"Die Verteilung bleibt damit noch offen",
+					"Jeder Haushalt hat genau diesen Zuwachs"
+				],
+				"answer": "Die Verteilung bleibt damit noch offen",
+				"feedback": "Durchschnitte verdecken Unterschiede zwischen Gruppen und Regionen."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Berechne die Pro-Kopf-Werte und erkläre den Unterschied zur Gesamtsumme.",
+				"model": "600 Mrd. geteilt durch 20 Mio. ergibt 30.000; 900 Mrd. geteilt durch 60 Mio. ergibt 15.000. B hat mehr Gesamtleistung, A den höheren Pro-Kopf-Wert. Daraus folgt noch keine Aussage über jeden Haushalt.",
+				"criteria": [
+					"Zwei Rechnungen richtig",
+					"Gesamt und pro Kopf getrennt",
+					"Durchschnitt begrenzt"
+				],
+				"hints": ["Zwei Rechnungen richtig", "Gesamt und pro Kopf getrennt"]
+			},
+			"2": {
+				"prompt": "Plane eine aktuelle Datentabelle zu USA und Brasilien.",
+				"model": "Ich erfasse für beide Länder dasselbe Jahr, Einheit, Quelle und Berechnungsmethode. Zur Gesamtleistung ergänze ich einen Pro-Kopf-Wert und eine demografische Größe. Ich kennzeichne Schätzungen und Datenlücken und vermeide ein Gesamturteil aus nur einer Kennzahl.",
+				"criteria": [
+					"Jahr und Methode festgelegt",
+					"Ökonomie und Demografie verbunden",
+					"Aussagegrenze erläutert"
+				],
+				"hints": [
+					"Jahr und Methode festgelegt",
+					"Ökonomie und Demografie verbunden"
+				]
+			}
+		},
+		"lab": "stats"
+	},
+	{
+		"id": "g8-kultur",
+		"stage": "amerika",
+		"title": "Amerikanisierung im eigenen Alltag",
+		"skill": "US-amerikanische Filme, Musik, Marken und digitale Plattformen erreichen viele Weltregionen.",
+		"subsection": "1.4",
+		"bindings": ["1"],
+		"paragraphs": [
+			"US-amerikanische Filme, Musik, Marken und digitale Plattformen erreichen viele Weltregionen. Dies wird häufig als Amerikanisierung bezeichnet. Die Verbreitung kann durch Unternehmensnetze, Medien und Konsum gefördert werden. Der Begriff beschreibt Einflüsse; er bedeutet nicht, dass überall alle Menschen dieselbe Lebensweise übernehmen.",
+			"Menschen wählen, verändern und verbinden kulturelle Angebote. Ein lokales Restaurant kann ein US-amerikanisches Fast-Food-Konzept aufgreifen und zugleich eigene Speisen anbieten. Trenne den Herkunftsort eines Unternehmens, den Produktionsort eines Produkts und die Bedeutung für seine Nutzerinnen und Nutzer."
+		],
+		"materialLabel": "Eigens verfasstes Übungsmaterial. Angegebene Modellzahlen sind erfunden, keine aktuellen Länderwerte.",
+		"material": "Alltagsbeobachtung ohne persönliche Daten: Ein Filmformat, eine Sportart und ein Essensangebot werden in verschiedenen Ländern unterschiedlich aufgenommen.",
+		"takeaway": "Menschen wählen, verändern und verbinden kulturelle Angebote.",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"question": "Was trifft auf Amerikanisierung zu?",
+			"answer": "Einflüsse werden übernommen und auch lokal verändert.",
+			"wrong": [
+				"Jeder Mensch übernimmt zwingend dieselbe Kultur.",
+				"Der Markenursprung bestimmt jeden Produktionsort."
+			],
+			"explanation": "Kulturelle Einflüsse bedeuten weder vollständige Gleichheit noch einen einzigen Herstellungsort."
+		},
+		"cases": [
+			{
+				"prompt": "Ein lokales Team spielt Basketball mit eigenen Vereinstraditionen.",
+				"options": [
+					"Übernahme und lokale Gestaltung",
+					"Vollständiges Verschwinden lokaler Kultur"
+				],
+				"answer": "Übernahme und lokale Gestaltung",
+				"feedback": "Ein übernommenes Angebot kann in lokale Zusammenhänge eingebettet werden."
+			},
+			{
+				"prompt": "Ein US-Markenprodukt wird in Asien gefertigt.",
+				"options": [
+					"Das Produkt muss in den USA gefertigt sein",
+					"Markensitz und Produktionsort unterscheiden sich"
+				],
+				"answer": "Markensitz und Produktionsort unterscheiden sich",
+				"feedback": "Internationale Arbeitsteilung trennt Unternehmenssitz und Herstellung."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Beschreibe zwei beobachtbare US-amerikanische Einflüsse und eine lokale Veränderung.",
+				"model": "Eine Sportart und ein Filmformat können aus den USA verbreitet werden. Vereine, Übersetzungen und lokale Themen verändern ihre Nutzung. Ich belege die Beispiele und schließe von einem Angebot nicht auf alle Menschen eines Ortes.",
+				"criteria": [
+					"Zwei konkrete Beispiele gewählt",
+					"Lokale Gestaltung beschrieben",
+					"Verallgemeinerung vermieden"
+				],
+				"hints": [
+					"Zwei konkrete Beispiele gewählt",
+					"Lokale Gestaltung beschrieben"
+				]
+			},
+			"2": {
+				"prompt": "Beurteile die Behauptung: Globale Medien machen alle Kulturen gleich.",
+				"model": "Globale Medien können gemeinsame Formate und Machtkonzentration fördern. Gleichzeitig werden Angebote ausgewählt, übersetzt oder mit lokalen Traditionen verbunden. Ein begründetes Urteil braucht konkrete Nutzungsbelege und die Perspektiven verschiedener Gruppen.",
+				"criteria": [
+					"Einfluss erklärt",
+					"Gegenperspektive berücksichtigt",
+					"Belege statt Pauschalurteil verlangt"
+				],
+				"hints": ["Einfluss erklärt", "Gegenperspektive berücksichtigt"]
+			}
+		}
+	},
+	{
+		"id": "g8-grenzen",
+		"stage": "amerika",
+		"title": "Politische und soziale Grenzen",
+		"skill": "Eine politische Grenze trennt staatliche Hoheitsgebiete, etwa zwischen den USA und Mexiko.",
+		"subsection": "1.5",
+		"bindings": ["1"],
+		"paragraphs": [
+			"Eine politische Grenze trennt staatliche Hoheitsgebiete, etwa zwischen den USA und Mexiko. Ein Fluss kann als natürliche Struktur den Verlauf mitprägen; die politische Grenzziehung bleibt eine menschliche Vereinbarung. Kulturelle und soziale Grenzen verlaufen nicht automatisch entlang von Staatsgrenzen.",
+			"Gated Communities sind räumlich abgeschlossene Wohnanlagen mit kontrolliertem Zugang. In einer südamerikanischen Stadt können sie Schutz versprechen und zugleich soziale Trennung verstärken. Vergleiche Interessen und Folgen auf beiden Seiten. Einzelne Beispiele erlauben keine Gleichsetzung aller Stadtviertel oder aller Menschen eines Landes."
+		],
+		"materialLabel": "Eigens verfasstes Übungsmaterial. Angegebene Modellzahlen sind erfunden, keine aktuellen Länderwerte.",
+		"material": "Vergleich: Grenzübergang USA–Mexiko und eine abgeschlossene Wohnanlage im Raum São Paulo. Frage jeweils, wer Zugang kontrolliert und wen dies betrifft.",
+		"takeaway": "Gated Communities sind räumlich abgeschlossene Wohnanlagen mit kontrolliertem Zugang.",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"question": "Welche Art Grenze zeigt eine bewachte Wohnanlage innerhalb einer Stadt?",
+			"answer": "Eine räumlich organisierte soziale Abgrenzung.",
+			"wrong": [
+				"Zwingend eine neue Staatsgrenze.",
+				"Eine Grenze zwischen zwei Lithosphärenplatten."
+			],
+			"explanation": "Zugangsregeln können Räume sozial trennen, ohne eine Staatsgrenze zu bilden."
+		},
+		"cases": [
+			{
+				"prompt": "Ein Fluss folgt streckenweise einer Staatsgrenze.",
+				"options": [
+					"Der Fluss legt jede Rechtsregel von selbst fest",
+					"Natürliche Struktur und politische Regelung treffen zusammen"
+				],
+				"answer": "Natürliche Struktur und politische Regelung treffen zusammen",
+				"feedback": "Die natürliche Struktur erklärt nicht allein den politischen Status."
+			},
+			{
+				"prompt": "Eine Wohnanlage verspricht Sicherheit.",
+				"options": [
+					"Auch Folgen für angrenzende Viertel prüfen",
+					"Damit sind soziale Folgen ausgeschlossen"
+				],
+				"answer": "Auch Folgen für angrenzende Viertel prüfen",
+				"feedback": "Schutzinteressen können mit Zugänglichkeit und sozialer Trennung in Konflikt geraten."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Vergleiche die beiden Grenzbeispiele nach Funktion und Betroffenen.",
+				"model": "Die Staatsgrenze regelt staatliche Zuständigkeiten und Grenzübertritte. Die Wohnanlage kontrolliert Zugang innerhalb einer Stadt. Beide grenzen Räume ab, betreffen aber unterschiedliche Rechte, Institutionen und soziale Beziehungen.",
+				"criteria": [
+					"Beide Orte verortet",
+					"Funktionen unterschieden",
+					"Betroffene Perspektiven einbezogen"
+				],
+				"hints": ["Beide Orte verortet", "Funktionen unterschieden"]
+			},
+			"2": {
+				"prompt": "Erörtere einen möglichen Konflikt um eine abgeschlossene Wohnanlage.",
+				"model": "Bewohner können Sicherheit und Ruhe erwarten; andere Menschen können Umwege oder stärkere soziale Trennung erleben. Ich prüfe öffentliche Wege, Zuständigkeiten und die tatsächliche Lage. Ein Urteil wägt Schutzbedürfnisse und zugänglichen Stadtraum anhand von Belegen ab.",
+				"criteria": [
+					"Zwei Interessen benannt",
+					"Räumliche Folge erklärt",
+					"Kriteriengestütztes Urteil formuliert"
+				],
+				"hints": ["Zwei Interessen benannt", "Räumliche Folge erklärt"]
+			}
+		}
+	},
+	{
+		"id": "g8-asien",
+		"stage": "asien",
+		"title": "China und Indien auf der Karte",
+		"skill": "China liegt in Ostasien, Indien in Südasien.",
+		"subsection": "2.1",
+		"bindings": ["2"],
+		"paragraphs": [
+			"China liegt in Ostasien, Indien in Südasien. Der Himalaya grenzt den indischen Subkontinent im Norden ab; das Hochland von Tibet liegt nördlich davon. Der Ganges fließt zum Golf von Bengalen. Der Jangtse durchquert China zum Ostchinesischen Meer. Solche Lagebeziehungen verbinden Namen zu einem Orientierungsnetz.",
+			"Ein Land ist kein einheitlicher Naturraum. China umfasst unter anderem trockene Binnenräume, Hochgebirge und feuchtere Küstengebiete. Auch Indien besitzt stark unterschiedliche Relief- und Klimaräume. Verorte Beijing, Shanghai, Delhi und Mumbai und vergleiche ihre Lage zu Küste, Flüssen und Gebirgen. Politische Karten ersetzen keine Reliefkarte."
+		],
+		"materialLabel": "Eigens verfasstes Übungsmaterial. Angegebene Modellzahlen sind erfunden, keine aktuellen Länderwerte.",
+		"material": "Kartenreise: Mumbai an der Westküste Indiens → Delhi im Binnenland → Himalaya → Tibet → Shanghai an Chinas Ostküste. Die Karte zeigt ausgewählte Orientierungspunkte.",
+		"takeaway": "Ein Land ist kein einheitlicher Naturraum.",
+		"sourceIds": ["lp", "ne"],
+		"quiz": {
+			"question": "Wo liegt das Hochland von Tibet im Verhältnis zum Himalaya?",
+			"answer": "Nördlich des Himalaya.",
+			"wrong": ["Südlich von Sri Lanka.", "Westlich des Atlantiks."],
+			"explanation": "Das Hochland schließt nördlich an den Himalaya an."
+		},
+		"cases": [
+			{
+				"prompt": "Mumbai liegt am Arabischen Meer.",
+				"options": ["Küstenlage", "Hochgebirgslage"],
+				"answer": "Küstenlage",
+				"feedback": "Die westindische Metropole liegt an der Küste."
+			},
+			{
+				"prompt": "China wird mit einem einzigen Klimatyp beschrieben.",
+				"options": [
+					"Die Aussage ist wegen einer Staatsgrenze zwingend richtig",
+					"Die naturräumliche Vielfalt fehlt"
+				],
+				"answer": "Die naturräumliche Vielfalt fehlt",
+				"feedback": "Große Staaten können viele Klima- und Landschaftsräume umfassen."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Beschreibe die Kartenreise mit drei Lagebeziehungen.",
+				"model": "Mumbai liegt an Indiens Westküste, Delhi weiter nördlich im Binnenland. Der Himalaya erhebt sich nördlich der Gangesebene, Tibet liegt wiederum nördlich davon. Shanghai liegt weit östlich an der chinesischen Küste.",
+				"criteria": [
+					"Drei Beziehungen beschrieben",
+					"Gebirge und Küste einbezogen",
+					"Mit einer Reliefkarte geprüft"
+				],
+				"hints": [
+					"Drei Beziehungen beschrieben",
+					"Gebirge und Küste einbezogen"
+				]
+			},
+			"2": {
+				"prompt": "Warum ist die Aussage „Das Klima Chinas ist so wie in Shanghai“ unzureichend?",
+				"model": "Shanghai ist ein Küstenbeispiel. Chinas Binnenräume, Wüsten und Hochgebirge unterscheiden sich in Höhenlage, Meeresnähe und Niederschlag. Ich wähle weitere Orte und vergleichbare Klimadaten, bevor ich ein räumliches Muster beschreibe.",
+				"criteria": [
+					"Teilraum erkannt",
+					"Zwei Klimafaktoren genannt",
+					"Geeigneten Vergleich geplant"
+				],
+				"hints": ["Teilraum erkannt", "Zwei Klimafaktoren genannt"]
+			}
+		},
+		"lab": "asia"
+	},
+	{
+		"id": "g8-monsun",
+		"stage": "asien",
+		"title": "Monsun: Regen im Jahresrhythmus",
+		"skill": "Monsun bezeichnet einen großräumigen jahreszeitlichen Wechsel der vorherrschenden Windrichtung.",
+		"subsection": "2.1",
+		"bindings": ["2"],
+		"paragraphs": [
+			"Monsun bezeichnet einen großräumigen jahreszeitlichen Wechsel der vorherrschenden Windrichtung. Unterschiedliche Erwärmung von Land und Meer, Druckverhältnisse und die wandernde tropische Zirkulation wirken zusammen. Im südasiatischen Sommer führt feuchte Luft vom Meer in viele Landesteile; beim Aufsteigen kann sie kräftige Niederschläge bringen.",
+			"Monsunregen ist für Landwirtschaft und Wasserversorgung wichtig, kann aber bei Starkregen Überschwemmungen auslösen. Lage, Relief und Jahresverlauf sorgen für Unterschiede. Ein verspäteter oder schwacher Regenbeginn kann ebenfalls Probleme machen. Der Modellkalender zeigt erfundene monatliche Regenmengen und keine Vorhersage für Indien."
+		],
+		"materialLabel": "Eigens verfasstes Übungsmaterial. Angegebene Modellzahlen sind erfunden, keine aktuellen Länderwerte.",
+		"material": "Erfundenes Küstenprofil: Januar bis März jeweils 20 mm; Juni bis September je 250 mm. Untersuche Jahressumme und Regenzeit. Vergleiche danach echte Daten eines benannten Ortes.",
+		"takeaway": "Monsunregen ist für Landwirtschaft und Wasserversorgung wichtig, kann aber bei Starkregen Überschwemmungen auslösen.",
+		"sourceIds": ["lp", "monsoon"],
+		"quiz": {
+			"question": "Was bezeichnet der Begriff Monsun vor allem?",
+			"answer": "Den jahreszeitlichen Wechsel vorherrschender Winde.",
+			"wrong": [
+				"Jeden einzelnen Regenschauer weltweit.",
+				"Eine ganzjährig unveränderte Windrichtung."
+			],
+			"explanation": "Der Richtungswechsel prägt Regen- und Trockenzeiten, aber nicht jeder Ort erhält dieselbe Regenmenge."
+		},
+		"cases": [
+			{
+				"prompt": "Sommerregen füllt Speicher und bewässert Felder.",
+				"options": [
+					"Ein Beweis, dass Regen immer schadet",
+					"Eine wichtige Nutzungsmöglichkeit"
+				],
+				"answer": "Eine wichtige Nutzungsmöglichkeit",
+				"feedback": "Die Wasserversorgung kann vom saisonalen Niederschlag abhängen."
+			},
+			{
+				"prompt": "Sehr starker Regen trifft dicht bebaute Flussauen.",
+				"options": [
+					"Hochwasserfolgen können zunehmen",
+					"Gefährdung ist dort ausgeschlossen"
+				],
+				"answer": "Hochwasserfolgen können zunehmen",
+				"feedback": "Gefahr, Exposition und Schutzmöglichkeiten wirken zusammen."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Erkläre, warum Monsunregen Nutzen und Risiko sein kann.",
+				"model": "Saisonaler Regen versorgt Felder und Speicher mit Wasser. Fällt er sehr stark oder auf bereits gesättigte Böden, können Überschwemmungen entstehen. Bleibt er aus oder kommt spät, fehlen Wasser und Planungssicherheit. Die Folgen unterscheiden sich nach Ort und Schutzmöglichkeiten.",
+				"criteria": [
+					"Jahresrhythmus erklärt",
+					"Nutzen und Gefahr genannt",
+					"Räumliche Unterschiede berücksichtigt"
+				],
+				"hints": ["Jahresrhythmus erklärt", "Nutzen und Gefahr genannt"]
+			},
+			"2": {
+				"prompt": "Übertrage das Modell auf eine reale Stadt: Welche zusätzlichen Angaben brauchst du?",
+				"model": "Ich brauche den benannten Ort, Messzeitraum, Einheiten und eine echte monatliche Messreihe. Relief, Einzugsgebiet, Versiegelung und Schutzmaßnahmen beeinflussen die Folgen. Aus einer erfundenen Regenkurve leite ich keine Wetterwarnung ab.",
+				"criteria": [
+					"Modell von Messung getrennt",
+					"Ortsbezogene Daten genannt",
+					"Keine Vorhersage behauptet"
+				],
+				"hints": ["Modell von Messung getrennt", "Ortsbezogene Daten genannt"]
+			}
+		},
+		"lab": "monsoon"
+	},
+	{
+		"id": "g8-daten",
+		"stage": "asien",
+		"title": "Länderkennzahlen fair darstellen",
+		"skill": "Länderkennzahlen brauchen eine Einheit, ein Bezugsjahr und eine Definition.",
+		"subsection": "2.1",
+		"bindings": ["2"],
+		"paragraphs": [
+			"Länderkennzahlen brauchen eine Einheit, ein Bezugsjahr und eine Definition. Einwohnerzahl und Bevölkerungsdichte sind verschiedene Größen. Die Dichte setzt Menschen ins Verhältnis zur Fläche. Ein hoher Landesdurchschnitt sagt nicht, dass Menschen gleichmäßig verteilt wohnen. Eine thematische Karte kann solche regionalen Unterschiede sichtbar machen.",
+			"Für China und Indien sammle vergleichbare Werte und entscheide dann über die Darstellungsform. Balken vergleichen Größen, Linien Entwicklungen über die Zeit. Ein Kreisdiagramm braucht Teile desselben Ganzen. Notiere Quellen und kennzeichne Schätzungen; fehlende Daten sind keine Nullwerte."
+		],
+		"materialLabel": "Eigens verfasstes Übungsmaterial. Angegebene Modellzahlen sind erfunden, keine aktuellen Länderwerte.",
+		"material": "Fiktives Land A: 80 Mio. Einwohner auf 400.000 km². Land B: 60 Mio. auf 100.000 km². Die Dichten sind 200 und 600 Menschen je km².",
+		"takeaway": "Für China und Indien sammle vergleichbare Werte und entscheide dann über die Darstellungsform.",
+		"sourceIds": ["lp", "worldbank"],
+		"quiz": {
+			"question": "Welches Diagramm passt für die Entwicklung einer Größe über mehrere Jahre?",
+			"answer": "Ein Liniendiagramm mit beschrifteten Achsen.",
+			"wrong": [
+				"Ein Kreisdiagramm aus unzusammenhängenden Einheiten.",
+				"Eine Karte ohne Legende und Zeitbezug."
+			],
+			"explanation": "Eine Linie kann die Zeitabfolge zeigen; Achsen, Einheit und Quelle gehören dazu."
+		},
+		"cases": [
+			{
+				"prompt": "Ein Land hat viele Einwohner und eine große Fläche.",
+				"options": [
+					"Die Dichte muss berechnet werden",
+					"Es hat zwingend die höchste Dichte"
+				],
+				"answer": "Die Dichte muss berechnet werden",
+				"feedback": "Die Bevölkerungszahl allein bestimmt die Dichte nicht."
+			},
+			{
+				"prompt": "Für einen Wert fehlen Daten.",
+				"options": ["Als gemessene Null eintragen", "Als fehlend kennzeichnen"],
+				"answer": "Als fehlend kennzeichnen",
+				"feedback": "Eine Datenlücke ist eine andere Aussage als der Wert null."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Berechne beide Dichten und beschreibe ihre Aussagegrenze.",
+				"model": "80 Mio. geteilt durch 400.000 ergibt 200 Menschen je km². Für B ergeben sich 600. B ist im Durchschnitt dichter besiedelt; einzelne Regionen und Städte können erheblich davon abweichen.",
+				"criteria": [
+					"Zwei Dichten berechnet",
+					"Einheit genannt",
+					"Landesdurchschnitt eingegrenzt"
+				],
+				"hints": ["Zwei Dichten berechnet", "Einheit genannt"]
+			},
+			"2": {
+				"prompt": "Entwirf eine vergleichbare Kennzahlentabelle für China und Indien.",
+				"model": "Ich wähle dasselbe Berichtsjahr und dieselbe Datenquelle oder prüfe gleiche Definitionen. Die Tabelle enthält Bevölkerung, Fläche und Dichte mit Einheiten. Für eine räumliche Aussage ergänze ich eine thematische Karte; Schätzungen und Lücken bleiben sichtbar.",
+				"criteria": [
+					"Vergleichbarkeit gesichert",
+					"Passende Darstellung gewählt",
+					"Datenlücken transparent gemacht"
+				],
+				"hints": ["Vergleichbarkeit gesichert", "Passende Darstellung gewählt"]
+			}
+		}
+	},
+	{
+		"id": "g8-standorte",
+		"stage": "asien",
+		"title": "Warum Wirtschaftszentren dort liegen",
+		"skill": "Shanghai liegt an Chinas Ostküste im Raum der Jangtsemündung; Bengaluru liegt im südlichen Binnenland Indiens.",
+		"subsection": "2.2",
+		"bindings": ["2"],
+		"paragraphs": [
+			"Shanghai liegt an Chinas Ostküste im Raum der Jangtsemündung; Bengaluru liegt im südlichen Binnenland Indiens. Beide stehen für unterschiedliche wirtschaftliche Schwerpunkte. Hafen, Verkehrsnetze, Zulieferer, Fachkräfte, Hochschulen und Absatzmärkte können Standorte begünstigen. Ein einzelner Faktor erklärt die Entwicklung selten vollständig.",
+			"Standortfaktoren hängen von einer Branche ab. Eine große Containerverladung braucht andere Voraussetzungen als eine Softwaredienstleistung. Internationale Kommunikation kann räumliche Entfernung teilweise überbrücken, ersetzt aber weder Infrastruktur noch Ausbildung. Vergleiche immer eine konkrete Tätigkeit und ihre Anforderungen."
+		],
+		"materialLabel": "Eigens verfasstes Übungsmaterial. Angegebene Modellzahlen sind erfunden, keine aktuellen Länderwerte.",
+		"material": "Fiktive Standortwahl: Eine Firma muss schwere Waren verschiffen; eine andere benötigt vor allem gut ausgebildete Programmierteams und stabile Datennetze.",
+		"takeaway": "Standortfaktoren hängen von einer Branche ab.",
+		"sourceIds": ["lp", "worldbank"],
+		"quiz": {
+			"question": "Welcher Faktor ist für regelmäßigen Containerexport besonders naheliegend?",
+			"answer": "Gute Anbindung an Hafen und Verkehrsnetz.",
+			"wrong": [
+				"Möglichst große Entfernung von jedem Verkehrsknoten.",
+				"Ausschließlich die Höhenlage über dem Meer."
+			],
+			"explanation": "Transportzugang kann Zeit und Kosten für die Warenbewegung beeinflussen."
+		},
+		"cases": [
+			{
+				"prompt": "Eine Softwarefirma sucht viele qualifizierte Beschäftigte.",
+				"options": [
+					"Ein Hafen ist zwingend ihr einziger Faktor",
+					"Fachkräfte sind ein Standortfaktor"
+				],
+				"answer": "Fachkräfte sind ein Standortfaktor",
+				"feedback": "Ausbildung und passende Arbeitskräfte sind für wissensbezogene Dienste wichtig."
+			},
+			{
+				"prompt": "Zwei Branchen beurteilen denselben Ort verschieden.",
+				"options": [
+					"Die Gewichtung der Standortfaktoren unterscheidet sich",
+					"Eine der Branchen muss falsch liegen"
+				],
+				"answer": "Die Gewichtung der Standortfaktoren unterscheidet sich",
+				"feedback": "Branchen haben unterschiedliche Bedürfnisse."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Ordne den beiden fiktiven Firmen je zwei Standortfaktoren zu.",
+				"model": "Der Warenexport benötigt Verkehrsanbindung und einen geeigneten Hafen. Die Softwarefirma gewichtet Fachkräfte und stabile Datennetze hoch. Auch Kosten und rechtliche Rahmenbedingungen können bei beiden wichtig sein.",
+				"criteria": [
+					"Zwei Branchen unterschieden",
+					"Je zwei Faktoren erklärt",
+					"Mehrere Einflüsse zugelassen"
+				],
+				"hints": ["Zwei Branchen unterschieden", "Je zwei Faktoren erklärt"]
+			},
+			"2": {
+				"prompt": "Vergleiche Shanghai und Bengaluru für eine selbst gewählte Branche.",
+				"model": "Ich verorte beide Zentren und recherchiere die konkreten Anforderungen der Branche. Dann prüfe ich Transport, Qualifikation, Netze, Kosten und politische Bedingungen mit datierten Quellen. Die bloße Landesgröße erlaubt keine Standortentscheidung.",
+				"criteria": [
+					"Beide Zentren verortet",
+					"Branchenbezug hergestellt",
+					"Belege und Grenzen benannt"
+				],
+				"hints": ["Beide Zentren verortet", "Branchenbezug hergestellt"]
+			}
+		}
+	},
+	{
+		"id": "g8-aufstieg",
+		"stage": "asien",
+		"title": "Wirtschaftlicher Wandel verändert Lebensräume",
+		"skill": "Der wirtschaftliche Aufstieg Chinas lässt sich unter anderem mit Industrialisierung, Exportproduktion, Infrastruktur und politischen Rahmenbedingungen untersuchen.",
+		"subsection": "2.2",
+		"bindings": ["2"],
+		"paragraphs": [
+			"Der wirtschaftliche Aufstieg Chinas lässt sich unter anderem mit Industrialisierung, Exportproduktion, Infrastruktur und politischen Rahmenbedingungen untersuchen. Die Entwicklung verläuft räumlich und sozial ungleich. Neue Arbeitsplätze und höhere Einkommen können mit Wanderung in Städte, Flächenverbrauch und Umweltbelastung verbunden sein.",
+			"Eine Produktionskette verbindet Rohstoffe, Bauteile, Montage, Transport und Dienstleistungen. Der Ort der Endmontage ist nicht automatisch der Ort der größten Wertschöpfung. Ein Exportüberschuss liegt vor, wenn der Wert der Ausfuhren den der Einfuhren im betrachteten Zeitraum übersteigt; er ist kein vollständiges Maß für Lebensqualität."
+		],
+		"materialLabel": "Eigens verfasstes Übungsmaterial. Angegebene Modellzahlen sind erfunden, keine aktuellen Länderwerte.",
+		"material": "Modellprodukt: Teile entstehen an mehreren Standorten, Montage erfolgt an der Küste, Entwicklung und Vertrieb anderswo. Eine einfache Herkunftsangabe bildet das Netzwerk nur teilweise ab.",
+		"takeaway": "Eine Produktionskette verbindet Rohstoffe, Bauteile, Montage, Transport und Dienstleistungen.",
+		"sourceIds": ["lp", "worldbank"],
+		"quiz": {
+			"question": "Wann liegt ein Warenexportüberschuss vor?",
+			"answer": "Wenn Ausfuhren wertmäßig die Einfuhren übersteigen.",
+			"wrong": [
+				"Wenn jeder einzelne Haushalt gleich viel verdient.",
+				"Wenn ein Land keinerlei Waren einführt."
+			],
+			"explanation": "Die Bilanz vergleicht Ausfuhr- und Einfuhrwerte eines bestimmten Zeitraums."
+		},
+		"cases": [
+			{
+				"prompt": "Ein neuer Betrieb schafft Jobs und belastet einen Fluss.",
+				"options": [
+					"Nutzen und Kosten getrennt untersuchen",
+					"Jobs schließen Umweltfolgen aus"
+				],
+				"answer": "Nutzen und Kosten getrennt untersuchen",
+				"feedback": "Wirtschaftlicher Nutzen und ökologische Folgen können gleichzeitig auftreten."
+			},
+			{
+				"prompt": "Auf der Verpackung steht ein Montageland.",
+				"options": [
+					"Dort entstand zwingend der gesamte Wert",
+					"Weitere Produktionsschritte recherchieren"
+				],
+				"answer": "Weitere Produktionsschritte recherchieren",
+				"feedback": "Montage, Entwicklung und Vertrieb können an verschiedenen Orten liegen."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Erkläre je eine Chance und eine Belastung wirtschaftlichen Wachstums.",
+				"model": "Neue Betriebe können Einkommen und Infrastruktur fördern. Zugleich können Wasserbelastung, Arbeitsdruck und Flächenverbrauch zunehmen. Ich prüfe, wer Nutzen und Kosten trägt und welche Regeln Schäden begrenzen.",
+				"criteria": [
+					"Chance mit Wirkung erklärt",
+					"Belastung mit Wirkung erklärt",
+					"Betroffene Gruppen berücksichtigt"
+				],
+				"hints": ["Chance mit Wirkung erklärt", "Belastung mit Wirkung erklärt"]
+			},
+			"2": {
+				"prompt": "Beurteile den Satz: Ein Exportüberschuss beweist gute Lebensbedingungen für alle.",
+				"model": "Die Bilanz misst den Wertunterschied von Ausfuhren und Einfuhren. Verteilung, Arbeitsrechte, Bildung und Umweltqualität werden dadurch nicht ausreichend erfasst. Für Lebensbedingungen brauche ich mehrere soziale und ökologische Indikatoren sowie regionale Daten.",
+				"criteria": [
+					"Indikator korrekt erklärt",
+					"Mindestens zwei Grenzen genannt",
+					"Weitere Daten vorgeschlagen"
+				],
+				"hints": [
+					"Indikator korrekt erklärt",
+					"Mindestens zwei Grenzen genannt"
+				]
+			}
+		}
+	},
+	{
+		"id": "g8-lebenslagen",
+		"stage": "asien",
+		"title": "Stadt und Land differenziert vergleichen",
+		"skill": "Lebensbedingungen unterscheiden sich innerhalb Chinas und Indiens nach Region, Einkommen, Geschlecht und Zugang zu Infrastruktur.",
+		"subsection": "2.3",
+		"bindings": ["2"],
+		"paragraphs": [
+			"Lebensbedingungen unterscheiden sich innerhalb Chinas und Indiens nach Region, Einkommen, Geschlecht und Zugang zu Infrastruktur. Stadt und Land sind hilfreiche Vergleichsräume, aber keine festen Urteile über jeden Menschen. Schulwege, Wasserzugang, Gesundheitsversorgung und Arbeitsmöglichkeiten lassen sich anhand konkreter Fälle vergleichen.",
+			"Auch ein deutscher Durchschnitt passt nicht auf jeden deutschen Haushalt. Vergleiche gleiche Kriterien und prüfe, ob ein Beispiel repräsentativ ist. Wirtschaftliche Möglichkeiten, öffentliche Versorgung und persönliche Handlungsspielräume gehören zusammen. Unterschiede zu beschreiben bedeutet nicht, die Menschen in eine Rangfolge ihres Werts zu setzen."
+		],
+		"materialLabel": "Eigens verfasstes Übungsmaterial. Angegebene Modellzahlen sind erfunden, keine aktuellen Länderwerte.",
+		"material": "Erfundene Fallkarten: A wohnt nahe einer Stadt und braucht 20 Minuten zur Schule. B lebt ländlich und braucht 70 Minuten. Einkommen und Unterrichtsqualität fehlen.",
+		"takeaway": "Auch ein deutscher Durchschnitt passt nicht auf jeden deutschen Haushalt.",
+		"sourceIds": ["lp", "unicef", "worldbank"],
+		"quiz": {
+			"question": "Was lässt sich aus den Fallkarten ableiten?",
+			"answer": "Die Schulwege dauern unterschiedlich lange.",
+			"wrong": [
+				"Alle Kinder eines Landes haben denselben Alltag.",
+				"Die Unterrichtsqualität ist durch die Fahrzeit bewiesen."
+			],
+			"explanation": "Die Fallkarten belegen einen Unterschied der Wegezeit, nicht alle Lebensbedingungen."
+		},
+		"cases": [
+			{
+				"prompt": "Ein Stadtteil hat kaum sauberes Wasser.",
+				"options": [
+					"Jede Stadt ist automatisch vollständig versorgt",
+					"Stadtlage garantiert keine gute Versorgung"
+				],
+				"answer": "Stadtlage garantiert keine gute Versorgung",
+				"feedback": "Infrastruktur unterscheidet sich auch innerhalb von Städten."
+			},
+			{
+				"prompt": "Ein Einzelfall wird auf alle Kinder Indiens übertragen.",
+				"options": [
+					"Die Verallgemeinerung braucht Prüfung",
+					"Ein Beispiel ersetzt eine repräsentative Erhebung"
+				],
+				"answer": "Die Verallgemeinerung braucht Prüfung",
+				"feedback": "Ein Fall kann Zusammenhänge zeigen, aber keine ganze Bevölkerung abbilden."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Vergleiche die Fallkarten und nenne zwei zusätzliche Informationen.",
+				"model": "B hat einen längeren Schulweg. Für die Lebensbedingungen brauche ich etwa Angaben zu Unterrichtsqualität und Wasserzugang. Ich weiß noch nicht, wie typisch die Fälle sind, und übertrage sie nicht auf alle Stadt- oder Landkinder.",
+				"criteria": [
+					"Belegten Unterschied genannt",
+					"Zwei Informationen ergänzt",
+					"Repräsentativität begrenzt"
+				],
+				"hints": ["Belegten Unterschied genannt", "Zwei Informationen ergänzt"]
+			},
+			"2": {
+				"prompt": "Plane einen Vergleich mit durchschnittlichen Lebensbedingungen in Deutschland.",
+				"model": "Ich wähle dieselben Kriterien, ähnliche Altersgruppen und ein gemeinsames Bezugsjahr. Zu Durchschnittswerten ergänze ich Streuung und regionale Unterschiede. Die Fälle zeigen einzelne Perspektiven, während vergleichbare Daten das allgemeine Muster prüfen helfen.",
+				"criteria": [
+					"Vergleichsmaßstab vereinheitlicht",
+					"Durchschnitt und Fall getrennt",
+					"Wertende Klischees vermieden"
+				],
+				"hints": [
+					"Vergleichsmaßstab vereinheitlicht",
+					"Durchschnitt und Fall getrennt"
+				]
+			}
+		}
+	},
+	{
+		"id": "g8-alltag",
+		"stage": "asien",
+		"title": "Alltag ohne Klischees vergleichen",
+		"skill": "Ein Alltagstext über Gleichaltrige in China oder Indien zeigt eine bestimmte Perspektive.",
+		"subsection": "2.3",
+		"bindings": ["2"],
+		"paragraphs": [
+			"Ein Alltagstext über Gleichaltrige in China oder Indien zeigt eine bestimmte Perspektive. Familie, Freizeit, Schule und kulturelle Normen sind vielfältig. Eine Darstellung braucht einen erkennbaren Ort, Zeitpunkt und Urheber. Ein Tourismusvideo, ein persönlicher Bericht und eine statistische Erhebung haben unterschiedliche Aussageabsichten.",
+			"Ein Perspektivenwechsel fragt, wie Entscheidungen aus der Situation einer anderen Person verständlich werden. Er ersetzt weder Faktenprüfung noch Menschenrechte. Vergleiche deinen Alltag nach sachlichen Kriterien, ohne private Daten anzugeben. Kennzeichne, was der Text tatsächlich belegt und was du nur vermutest."
+		],
+		"materialLabel": "Eigens verfasstes Übungsmaterial. Angegebene Modellzahlen sind erfunden, keine aktuellen Länderwerte.",
+		"material": "Fiktive Jugendliche A nutzt einen langen Schulweg zum Lesen; B hilft nach der Schule im Laden. Beide mögen Musik. Diese Figuren stehen nicht für ganze Länder.",
+		"takeaway": "Ein Perspektivenwechsel fragt, wie Entscheidungen aus der Situation einer anderen Person verständlich werden.",
+		"sourceIds": ["lp", "unicef"],
+		"quiz": {
+			"question": "Wie gelingt ein sachlicher Alltagsvergleich?",
+			"answer": "Mit konkreten Kriterien und einer Prüfung der Quelle.",
+			"wrong": [
+				"Mit einer Eigenschaft für alle Menschen eines Landes.",
+				"Mit Vermutungen, die als sichere Tatsachen erscheinen."
+			],
+			"explanation": "Konkrete Fälle und Quellenprüfung helfen, Unterschiede und Gemeinsamkeiten fair zu beschreiben."
+		},
+		"cases": [
+			{
+				"prompt": "Ein persönlicher Bericht beschreibt eine Familie.",
+				"options": [
+					"Eine einzelne Perspektive",
+					"Eine Vollerhebung des Landes"
+				],
+				"answer": "Eine einzelne Perspektive",
+				"feedback": "Die Erfahrung ist ein Fall und muss entsprechend eingeordnet werden."
+			},
+			{
+				"prompt": "Du verstehst ein Motiv aus der Lebenslage einer Figur.",
+				"options": [
+					"Automatischer Beweis jeder Aussage",
+					"Perspektivenwechsel"
+				],
+				"answer": "Perspektivenwechsel",
+				"feedback": "Verstehen und Überprüfen sind unterschiedliche Schritte."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Vergleiche die beiden Figuren nach zwei Kriterien.",
+				"model": "Beide interessieren sich für Musik. Ihre Zeit nach der Schule unterscheidet sich durch Weg und Mithilfe. Weitere Informationen zu Bildungschancen oder Freizeit fehlen; die erfundenen Figuren bilden keine ganze Kultur ab.",
+				"criteria": [
+					"Gemeinsamkeit beschrieben",
+					"Unterschied sachlich benannt",
+					"Fiktiven Charakter berücksichtigt"
+				],
+				"hints": ["Gemeinsamkeit beschrieben", "Unterschied sachlich benannt"]
+			},
+			"2": {
+				"prompt": "Ein Reisevideo behauptet: Dort leben alle Kinder so. Wie prüfst du das?",
+				"model": "Ich prüfe Urheber, Auswahl der Orte, Datum und erkennbares Interesse. Ich suche weitere Perspektiven und vergleichbare Daten. Das Video kann einzelne Lebenslagen zeigen, aber ohne Belege keine allgemeine Aussage über alle Kinder tragen.",
+				"criteria": [
+					"Quellenabsicht geprüft",
+					"Ergänzende Perspektive gesucht",
+					"Pauschalaussage begrenzt"
+				],
+				"hints": ["Quellenabsicht geprüft", "Ergänzende Perspektive gesucht"]
+			}
+		}
+	},
+	{
+		"id": "g8-rechte",
+		"stage": "asien",
+		"title": "Kinderrechte als gemeinsamer Maßstab",
+		"skill": "Kinderrechte gelten unabhängig von Herkunft, Geschlecht und Lebensort.",
+		"subsection": "2.3",
+		"bindings": ["2"],
+		"paragraphs": [
+			"Kinderrechte gelten unabhängig von Herkunft, Geschlecht und Lebensort. Dazu gehören Bildung, Schutz vor Ausbeutung und Beteiligung. Die UN-Kinderrechtskonvention liefert einen gemeinsamen Maßstab für den Vergleich konkreter Situationen. Eine staatliche Regel, ihre tatsächliche Umsetzung und die Erfahrung eines Kindes sind unterschiedliche Belege.",
+			"Vergleiche China und Indien an einem klar gewählten Recht und mit datierten, nachvollziehbaren Quellen. Unterschiede innerhalb der Länder bleiben wichtig. Kulturelle Normen können Handlungen erklären, heben den Anspruch auf grundlegende Rechte aber nicht auf. Sachliche Kritik richtet sich auf belegte Bedingungen, nicht auf den Wert einer Kultur oder Bevölkerung."
+		],
+		"materialLabel": "Eigens verfasstes Übungsmaterial. Angegebene Modellzahlen sind erfunden, keine aktuellen Länderwerte.",
+		"material": "Fiktiver Fall: Eine Schule ist rechtlich zugänglich, aber ein Kind kann sie wegen ausbeuterischer Arbeit nicht besuchen. Prüfe Recht, Umsetzung und Folgen.",
+		"takeaway": "Vergleiche China und Indien an einem klar gewählten Recht und mit datierten, nachvollziehbaren Quellen.",
+		"sourceIds": ["lp", "unicef"],
+		"quiz": {
+			"question": "Warum reicht eine gesetzliche Bildungszusage für den Vergleich nicht allein?",
+			"answer": "Die tatsächlichen Zugangsmöglichkeiten müssen geprüft werden.",
+			"wrong": [
+				"Ein Gesetz beweist den Schulbesuch jedes Kindes.",
+				"Kinderrechte hängen ausschließlich vom Wohnort ab."
+			],
+			"explanation": "Zwischen rechtlicher Anerkennung und tatsächlicher Umsetzung können Unterschiede liegen."
+		},
+		"cases": [
+			{
+				"prompt": "Ein Kind wird anstelle des Schulbesuchs ausgebeutet.",
+				"options": [
+					"Ein kultureller Hinweis erledigt jede Rechtsfrage",
+					"Schutz- und Bildungsrechte berühren den Fall"
+				],
+				"answer": "Schutz- und Bildungsrechte berühren den Fall",
+				"feedback": "Ein gemeinsamer Rechtsmaßstab bleibt auch bei unterschiedlichen Normen relevant."
+			},
+			{
+				"prompt": "Ein Bericht nennt einen konkreten Fall.",
+				"options": [
+					"Beleg und Reichweite des Falls prüfen",
+					"Damit ist jede Person des Landes beschrieben"
+				],
+				"answer": "Beleg und Reichweite des Falls prüfen",
+				"feedback": "Auch menschenrechtlich wichtige Beispiele brauchen eine saubere Einordnung."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Analysiere den fiktiven Fall mit einem Kinderrecht.",
+				"model": "Das Recht auf Bildung ist berührt, weil die Arbeit den Schulbesuch verhindert. Eine formale Schulzulassung sichert den Zugang noch nicht. Ich prüfe Schutzmaßnahmen und konkrete Hindernisse, ohne die Situation auf alle Kinder zu übertragen.",
+				"criteria": [
+					"Kinderrecht genannt",
+					"Recht und Umsetzung unterschieden",
+					"Beleggrenze eingehalten"
+				],
+				"hints": ["Kinderrecht genannt", "Recht und Umsetzung unterschieden"]
+			},
+			"2": {
+				"prompt": "Plane eine Diskussion über Bildungsrechte in China und Indien.",
+				"model": "Ich nutze denselben Artikel der Kinderrechtskonvention und datierte Quellen zu Zugang und Umsetzung in beiden Ländern. Ich unterscheide Gesetze, Statistiken und Einzelfälle. Das Urteil berücksichtigt regionale Unterschiede und überprüfbare Hürden statt pauschaler Kultururteile.",
+				"criteria": [
+					"Gemeinsamen Maßstab gewählt",
+					"Zwei Länder vergleichbar geprüft",
+					"Stereotype vermieden"
+				],
+				"hints": [
+					"Gemeinsamen Maßstab gewählt",
+					"Zwei Länder vergleichbar geprüft"
+				]
+			}
+		}
+	},
+	{
+		"id": "g8-praesentation",
+		"stage": "asien",
+		"title": "China und Indien begründet präsentieren",
+		"skill": "Eine gute Vergleichspräsentation beginnt mit einer gemeinsamen Frage.",
+		"subsection": "2.4",
+		"bindings": ["2"],
+		"paragraphs": [
+			"Eine gute Vergleichspräsentation beginnt mit einer gemeinsamen Frage. Du kannst beispielsweise untersuchen, wie Standortfaktoren und Infrastruktur wirtschaftliche Zentren prägen. Eine Karte verortet die Beispiele; eine Tabelle oder ein Diagramm zeigt vergleichbare Daten. Eine lange Faktenliste ist noch kein erklärender Vergleich.",
+			"Trenne Beschreibung, Erklärung und Urteil. Zu jedem Beleg gehören Quelle, Datum und Einheit. Am Ende beantwortest du die Ausgangsfrage und nennst Grenzen. Die App bereitet den Aufbau vor, prüft aber weder deine Quellen noch einen tatsächlich gehaltenen Vortrag. Dafür brauchst du eine eigene Präsentation und Rückmeldung."
+		],
+		"materialLabel": "Eigens verfasstes Übungsmaterial. Angegebene Modellzahlen sind erfunden, keine aktuellen Länderwerte.",
+		"material": "Entwurf: Frage → Karte → zwei gemeinsame Kriterien → belegte Gemeinsamkeit und Unterschied → begründetes Fazit → offene Frage und Quellen.",
+		"takeaway": "Trenne Beschreibung, Erklärung und Urteil.",
+		"sourceIds": ["lp", "worldbank"],
+		"quiz": {
+			"question": "Was macht zwei Länderbeispiele vergleichbar?",
+			"answer": "Eine gemeinsame Frage und dieselben Kriterien.",
+			"wrong": [
+				"Verschiedene Einheiten ohne Erläuterung.",
+				"Eine möglichst lange Liste ohne Zusammenhang."
+			],
+			"explanation": "Ein Vergleich braucht einen gemeinsamen Maßstab und nachvollziehbare Belege."
+		},
+		"cases": [
+			{
+				"prompt": "Die Tabelle nennt für beide Länder dasselbe Jahr und dieselbe Einheit.",
+				"options": [
+					"Eine wichtige Vergleichsbedingung",
+					"Ein Ersatz für jede Quellenangabe"
+				],
+				"answer": "Eine wichtige Vergleichsbedingung",
+				"feedback": "Jahr und Einheit helfen, die Daten passend einzuordnen."
+			},
+			{
+				"prompt": "Ein Vortrag endet mit einer unbelegten Verallgemeinerung.",
+				"options": [
+					"Die Verallgemeinerung durch größere Schrift absichern",
+					"Das Fazit an die Belege zurückbinden"
+				],
+				"answer": "Das Fazit an die Belege zurückbinden",
+				"feedback": "Darstellungsgestaltung ersetzt keine Begründung."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Schreibe einen sechszeiligen Präsentationsplan zum Vergleich zweier Wirtschaftszentren.",
+				"model": "Ich frage nach den Standortvorteilen. Eine Karte zeigt Shanghai und Bengaluru. Dann vergleiche ich Verkehr und Fachkräfte mit datierten Belegen. Ich erläutere einen Unterschied und eine Gemeinsamkeit. Das Fazit beantwortet die Frage; Quellen und offene Grenzen schließen ab.",
+				"criteria": [
+					"Gemeinsame Frage formuliert",
+					"Karte und Kriterien geplant",
+					"Belegtes Fazit vorgesehen"
+				],
+				"hints": ["Gemeinsame Frage formuliert", "Karte und Kriterien geplant"]
+			},
+			"2": {
+				"prompt": "Du bekommst widersprüchliche Zahlen. Wie gehst du im Vortrag damit um?",
+				"model": "Ich prüfe Jahr, Definition, Einheit und Datenrevision. Sind die Werte nicht vergleichbar, zeige ich die Unsicherheit und wähle passendere Daten. Ich verschweige den Konflikt nicht und leite kein eindeutiges Urteil aus ungeklärten Zahlen ab.",
+				"criteria": [
+					"Ursachen geprüft",
+					"Unsicherheit transparent gemacht",
+					"Urteil begrenzt"
+				],
+				"hints": ["Ursachen geprüft", "Unsicherheit transparent gemacht"]
+			}
+		}
+	},
+	{
+		"id": "g8-russland",
+		"stage": "russland",
+		"title": "Russlands Größe und Vielfalt",
+		"skill": "Russland erstreckt sich über Teile Europas und Asiens.",
+		"subsection": "3",
+		"bindings": ["3"],
+		"paragraphs": [
+			"Russland erstreckt sich über Teile Europas und Asiens. Westlich und östlich des Ural liegen große Ebenen; weiter östlich folgen weitere Gebirgsräume. Moskau liegt im europäischen Teil. Ausdehnung und Entfernungen beeinflussen Verkehr und Erschließung, sagen aber wenig darüber, wie dicht einzelne Räume besiedelt sind.",
+			"Der Staat umfasst viele Bevölkerungsgruppen und Sprachen. Tundra, Taiga und Steppe kennzeichnen unterschiedliche Landschaften, keine ethnischen Gruppen. Eine flächentreue Karte und eine bevölkerungsgewichtete Kartenanamorphose beantworten verschiedene Fragen. Große Kartenflächen sind kein direkter Maßstab für Einwohnerzahl, Wirtschaftskraft oder kulturellen Wert."
+		],
+		"materialLabel": "Eigens verfasstes Übungsmaterial. Angegebene Modellzahlen sind erfunden, keine aktuellen Länderwerte.",
+		"material": "Kartengedanke: In einer Anamorphose wird jede Region entsprechend ihrer Einwohnerzahl vergrößert oder verkleinert. Die geografische Fläche bleibt dabei nicht erhalten.",
+		"takeaway": "Der Staat umfasst viele Bevölkerungsgruppen und Sprachen.",
+		"sourceIds": ["lp", "ne"],
+		"quiz": {
+			"question": "Was zeigt eine bevölkerungsgewichtete Kartenanamorphose vor allem?",
+			"answer": "Die Verteilung der Bevölkerung nach der gewählten Gewichtung.",
+			"wrong": [
+				"Die unveränderte geografische Fläche jeder Region.",
+				"Den exakten Reiseweg zwischen zwei Orten."
+			],
+			"explanation": "Eine Anamorphose verändert Flächen bewusst nach einer statistischen Größe."
+		},
+		"cases": [
+			{
+				"prompt": "Moskau wird östlich des Pazifiks gesucht.",
+				"options": [
+					"Das folgt aus Russlands großer Fläche",
+					"Die Lage ist falsch"
+				],
+				"answer": "Die Lage ist falsch",
+				"feedback": "Moskau liegt im europäischen Teil Russlands."
+			},
+			{
+				"prompt": "Eine Kartenfläche wird nach Einwohnern verzerrt.",
+				"options": [
+					"Eine statistische Gewichtung",
+					"Eine Messung der tatsächlichen Landfläche"
+				],
+				"answer": "Eine statistische Gewichtung",
+				"feedback": "Die Aussage richtet sich nach dem gewählten Merkmal."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Erkläre, warum Russland mit zwei Karten unterschiedlich groß erscheinen kann.",
+				"model": "Die Projektion kann Flächen verzerren, und eine Anamorphose kann Regionen nach Bevölkerung gewichten. Ich prüfe die Legende und den Zweck. Aus einer großen Darstellung folgere ich nicht automatisch eine große Einwohnerzahl oder hohe Wirtschaftskraft.",
+				"criteria": [
+					"Zwei Darstellungsgründe unterschieden",
+					"Legende geprüft",
+					"Unzulässigen Schluss vermieden"
+				],
+				"hints": ["Zwei Darstellungsgründe unterschieden", "Legende geprüft"]
+			},
+			"2": {
+				"prompt": "Beschreibe einen sinnvollen Kartenvergleich zu Russlands Vielseitigkeit.",
+				"model": "Ich kombiniere eine physische Karte mit einer Klima- und Bevölkerungskarte. So verorte ich Ebenen, Gebirge und dicht besiedelte Räume. Für Bevölkerungsgruppen brauche ich weitere Quellen und darf Naturzonen nicht mit kulturellen Grenzen gleichsetzen.",
+				"criteria": [
+					"Drei Kartenfunktionen benannt",
+					"Lagebezug hergestellt",
+					"Natur und Kultur unterschieden"
+				],
+				"hints": ["Drei Kartenfunktionen benannt", "Lagebezug hergestellt"]
+			}
+		},
+		"lab": "russia"
+	},
+	{
+		"id": "g8-permafrost",
+		"stage": "russland",
+		"title": "Naturraum nutzen, Folgen mitdenken",
+		"skill": "Permafrost ist Untergrund, der mindestens zwei Jahre in Folge gefroren bleibt.",
+		"subsection": "3",
+		"bindings": ["3"],
+		"paragraphs": [
+			"Permafrost ist Untergrund, der mindestens zwei Jahre in Folge gefroren bleibt. Darüber kann eine oberste Schicht saisonal auftauen. In Teilen Nordasiens beeinflusst er Gebäude, Straßen und Leitungen. Taiga bezeichnet borealen Nadelwald, Tundra eine weitgehend baumlose Vegetationszone; Vegetation und Dauerfrost sind verschiedene Merkmale.",
+			"Rohstoffvorkommen schaffen wirtschaftliche Möglichkeiten, ihre Erschließung kann aber empfindliche Räume belasten. Wenn eisreicher Untergrund auftaut, kann er sich setzen und Infrastruktur beschädigen. Für eine Bewertung von Rohstoffförderung prüfst du Einkommen, Transport, Rechte lokaler Gruppen, Verschmutzung und langfristige Sanierung."
+		],
+		"materialLabel": "Eigens verfasstes Übungsmaterial. Angegebene Modellzahlen sind erfunden, keine aktuellen Länderwerte.",
+		"material": "Fiktiver Plan: Eine Pipeline soll durch einen Raum mit eisreichem Dauerfrost führen. Der Plan verspricht Einnahmen; Angaben zu Bodenstabilität und Leckschutz fehlen.",
+		"takeaway": "Rohstoffvorkommen schaffen wirtschaftliche Möglichkeiten, ihre Erschließung kann aber empfindliche Räume belasten.",
+		"sourceIds": ["lp", "nsidc"],
+		"quiz": {
+			"question": "Was bedeutet Permafrost?",
+			"answer": "Mindestens zwei Jahre durchgehend gefrorener Untergrund.",
+			"wrong": [
+				"Jeder Schnee, der über Nacht liegen bleibt.",
+				"Ein Gebiet, in dem niemals eine Oberflächenschicht taut."
+			],
+			"explanation": "Der Untergrund ist dauerhaft gefroren; eine saisonale Auftauschicht kann darüber liegen."
+		},
+		"cases": [
+			{
+				"prompt": "Die oberste Bodenschicht taut im Sommer.",
+				"options": [
+					"Permafrost darunter ist weiterhin möglich",
+					"Jeder Dauerfrost ist damit ausgeschlossen"
+				],
+				"answer": "Permafrost darunter ist weiterhin möglich",
+				"feedback": "Die Auftauschicht und der darunter gefrorene Untergrund sind zu unterscheiden."
+			},
+			{
+				"prompt": "Eine Rohstoffplanung nennt nur den Verkaufserlös.",
+				"options": [
+					"Damit sind alle Nachhaltigkeitsfragen beantwortet",
+					"Ökologische und soziale Folgen ergänzen"
+				],
+				"answer": "Ökologische und soziale Folgen ergänzen",
+				"feedback": "Einnahmen bilden nur einen Teil der Folgen ab."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Nenne für den Pipelineplan eine Chance, ein Risiko und eine Prüffrage.",
+				"model": "Einnahmen können wirtschaftliche Chancen bieten. Tauender eisreicher Untergrund kann Setzungen und Schäden verursachen. Ich frage nach Bauweise, Bodenuntersuchungen, Leckschutz und Verantwortlichkeit bei Schäden.",
+				"criteria": [
+					"Chance benannt",
+					"Bodenmechanismus erklärt",
+					"Konkrete Prüfung formuliert"
+				],
+				"hints": ["Chance benannt", "Bodenmechanismus erklärt"]
+			},
+			"2": {
+				"prompt": "Beurteile die Aussage: Ein Rohstoffvorkommen macht jeden Abbau sinnvoll.",
+				"model": "Ob Abbau sinnvoll ist, hängt von Erschließungskosten, Nachfrage und Umwelt- sowie Sozialfolgen ab. In empfindlichen Räumen können Schäden lange wirken. Ich vergleiche Alternativen und prüfe, wer Nutzen erhält und wer Risiken trägt.",
+				"criteria": [
+					"Mehrere Kriterien angewendet",
+					"Langfristigkeit einbezogen",
+					"Verteilung der Folgen betrachtet"
+				],
+				"hints": ["Mehrere Kriterien angewendet", "Langfristigkeit einbezogen"]
+			}
+		}
+	},
+	{
+		"id": "g8-aralsee",
+		"stage": "russland",
+		"title": "Aralsee: Folgen im verbundenen Raum",
+		"skill": "Der Aralsee liegt in Zentralasien zwischen Kasachstan und Usbekistan, nicht in Russland.",
+		"subsection": "3",
+		"bindings": ["3"],
+		"paragraphs": [
+			"Der Aralsee liegt in Zentralasien zwischen Kasachstan und Usbekistan, nicht in Russland. Er eignet sich als Beispiel für Nutzungsfolgen im postsowjetischen Raum. Große Wasserentnahmen aus seinen Zuflüssen für Bewässerung trugen seit der Sowjetzeit zur starken Schrumpfung bei. Eine Raumbeziehung kann politische Grenzen überschreiten.",
+			"Für einen abflusslosen See zählt die Bilanz aus Zufluss, Niederschlag, Verdunstung und Entnahme. Sinkt der Zufluss, kann das Volumen abnehmen. Versalzung, freigelegter Seeboden und der Verlust der Fischerei sind mögliche Folgen. Nord- und Südteil entwickelten sich unterschiedlich; ein einzelnes Bild ersetzt keine zeitlich eingeordnete Untersuchung."
+		],
+		"materialLabel": "Eigens verfasstes Übungsmaterial. Angegebene Modellzahlen sind erfunden, keine aktuellen Länderwerte.",
+		"material": "Fiktives Ein-Schritt-Modell in Volumeneinheiten: Anfang 100, Zufluss 30, Verdunstung 20, zusätzliche Entnahme zwischen 0 und 40. Endvolumen = Anfang + Zufluss − Verdunstung − Entnahme.",
+		"takeaway": "Für einen abflusslosen See zählt die Bilanz aus Zufluss, Niederschlag, Verdunstung und Entnahme.",
+		"sourceIds": ["lp", "aral"],
+		"quiz": {
+			"question": "In welchen Staaten liegt der Aralsee?",
+			"answer": "Kasachstan und Usbekistan.",
+			"wrong": ["Ausschließlich in Russland.", "Brasilien und Indien."],
+			"explanation": "Das Beispiel gehört zum zentralasiatischen, postsowjetischen Raum und darf nicht als See in Russland verortet werden."
+		},
+		"cases": [
+			{
+				"prompt": "Zufluss 30 und Verluste 40 bei Anfang 100.",
+				"options": ["Das Volumen steigt auf 170", "Das Volumen sinkt auf 90"],
+				"answer": "Das Volumen sinkt auf 90",
+				"feedback": "Die Bilanz lautet 100 + 30 − 40."
+			},
+			{
+				"prompt": "Ein Bild zeigt trockenen Seeboden ohne Datum.",
+				"options": [
+					"Zeitpunkt und Vergleichsaufnahme suchen",
+					"Damit ist die aktuelle Gesamtfläche bewiesen"
+				],
+				"answer": "Zeitpunkt und Vergleichsaufnahme suchen",
+				"feedback": "Für einen Wandel braucht es datierte und vergleichbare Beobachtungen."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Berechne das Modell mit Entnahme 20 und erkläre eine mögliche Folge.",
+				"model": "Das Volumen beträgt 100 + 30 − 20 − 20 = 90. Der Vorrat sinkt. Beim realen Aralsee können schrumpfende Wasserflächen und steigender Salzgehalt die Fischerei beeinträchtigen; das einfache Modell quantifiziert solche Folgen nicht.",
+				"criteria": [
+					"Bilanz richtig berechnet",
+					"Folge erklärt",
+					"Modellgrenze genannt"
+				],
+				"hints": ["Bilanz richtig berechnet", "Folge erklärt"]
+			},
+			"2": {
+				"prompt": "Untersuche die NASA-Zeitreihe und begründe, warum Nord- und Südteil getrennt zu betrachten sind.",
+				"model": "Ich notiere Aufnahmedaten und sichtbare Veränderungen für beide Teilräume. Eingriffe in Zufluss und Trennung können unterschiedliche Entwicklungen verursachen. Ich ordne die Bilder räumlich ein und ergänze die Ursachen aus dem Begleittext; die Modellbilanz ist keine gemessene Zeitreihe.",
+				"criteria": [
+					"Datierte Quelle genutzt",
+					"Teilräume unterschieden",
+					"Beobachtung und Erklärung getrennt"
+				],
+				"hints": ["Datierte Quelle genutzt", "Teilräume unterschieden"]
+			}
+		},
+		"lab": "water"
+	},
+	{
+		"id": "g8-handel",
+		"stage": "russland",
+		"title": "Russlands Verflechtungen zeitlich prüfen",
+		"skill": "Wirtschaftsbeziehungen verbinden Russland unter anderem mit Deutschland und China.",
+		"subsection": "3",
+		"bindings": ["3"],
+		"paragraphs": [
+			"Wirtschaftsbeziehungen verbinden Russland unter anderem mit Deutschland und China. Rohstoffe, Industriewaren, Transportwege und politische Beziehungen beeinflussen den Handel. Eine frühere Handelsstruktur ist keine Beschreibung der Gegenwart. Der russische Angriff auf die Ukraine 2022 und folgende Sanktionen veränderten die Rahmenbedingungen grundlegend.",
+			"Untersuche aktuelle Handelsdaten mit einem benannten Berichtsjahr und einer zuständigen Quelle. Unterscheide Wert und Menge sowie direkte Handelsbeziehungen und mögliche Zwischenstationen. Unterschiedliche Statistiken können unterschiedliche Erfassungsgrenzen haben. Die App nennt bewusst keine unüberprüften aktuellen Handelsanteile oder Sanktionslisten."
+		],
+		"materialLabel": "Eigens verfasstes Übungsmaterial. Angegebene Modellzahlen sind erfunden, keine aktuellen Länderwerte.",
+		"material": "Rechercheplan: Vergleiche einen früheren und einen neueren Berichtszeitraum für Deutschland–Russland; ergänze China–Russland mit demselben Warenbegriff. Notiere Unterschiede in Definitionen.",
+		"takeaway": "Untersuche aktuelle Handelsdaten mit einem benannten Berichtsjahr und einer zuständigen Quelle.",
+		"sourceIds": ["lp", "destatis", "worldbank"],
+		"quiz": {
+			"question": "Warum muss eine Handelskarte ein Bezugsjahr nennen?",
+			"answer": "Handelsströme und politische Bedingungen verändern sich.",
+			"wrong": [
+				"Der geografische Norden ändert sich jedes Berichtsjahr.",
+				"Alte Handelswerte gelten automatisch unverändert weiter."
+			],
+			"explanation": "Handelsdaten beschreiben einen Zeitraum und dürfen nicht zeitlos verwendet werden."
+		},
+		"cases": [
+			{
+				"prompt": "Ein Handelswert steigt bei höherem Preis und gleicher Menge.",
+				"options": [
+					"Wert und Menge unterscheiden",
+					"Die transportierte Menge muss gestiegen sein"
+				],
+				"answer": "Wert und Menge unterscheiden",
+				"feedback": "Ein Wertzuwachs kann auf Preisen statt auf mehr Waren beruhen."
+			},
+			{
+				"prompt": "Eine Karte von 2019 wird als heutige Lage gezeigt.",
+				"options": [
+					"Das alte Jahr reicht als Beweis der Gegenwart",
+					"Die Aktualität ist ungeprüft"
+				],
+				"answer": "Die Aktualität ist ungeprüft",
+				"feedback": "Der Zeitraum muss zum untersuchten Sachverhalt passen."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Formuliere drei Prüffragen für den Rechercheplan.",
+				"model": "Ich frage nach Jahr, Warenabgrenzung und Einheit. Ich prüfe, ob Werte oder Mengen verglichen werden und ob die Quelle direkte Partner oder Herkunftsländer zählt. Politische Veränderungen werden zeitlich eingeordnet und mit Fachquellen belegt.",
+				"criteria": [
+					"Jahr geprüft",
+					"Wert und Menge unterschieden",
+					"Statistische Definition befragt"
+				],
+				"hints": ["Jahr geprüft", "Wert und Menge unterschieden"]
+			},
+			"2": {
+				"prompt": "Wie vergleichst du Deutschland–Russland und China–Russland, ohne verschiedene Quellen gleichzusetzen?",
+				"model": "Ich vereinheitliche Zeitraum, Währung und Warenkategorie soweit möglich. Unterschiedliche Erfassungsmethoden kennzeichne ich. Veränderte Beziehungen erkläre ich mit datierten Quellen; aus einer Bilanz leite ich weder alle Transportwege noch die Wirkung jeder einzelnen Sanktion ab.",
+				"criteria": [
+					"Vergleichbarkeit hergestellt",
+					"Methodengrenze transparent",
+					"Kausalaussage begrenzt"
+				],
+				"hints": ["Vergleichbarkeit hergestellt", "Methodengrenze transparent"]
+			}
+		}
+	},
+	{
+		"id": "g8-smartphone",
+		"stage": "global",
+		"title": "Die Reise eines Smartphones",
+		"skill": "Ein Smartphone verbindet Rohstoffgewinnung, Bauteilfertigung, Montage, Transport, Nutzung und Entsorgung.",
+		"subsection": "4",
+		"bindings": ["4"],
+		"paragraphs": [
+			"Ein Smartphone verbindet Rohstoffgewinnung, Bauteilfertigung, Montage, Transport, Nutzung und Entsorgung. Die einzelnen Schritte können in verschiedenen Weltregionen stattfinden. Ein einziges Montageland beschreibt deshalb nicht das ganze Produktionsnetz. Kommunikation, Spezialisierung und Transport ermöglichen internationale Arbeitsteilung.",
+			"Untersuche zu jedem Schritt die ökonomische, ökologische und soziale Seite. Rohstoffabbau kann Einkommen und zugleich Wasserbelastung erzeugen; Montage schafft Arbeit, deren Bedingungen geprüft werden müssen. Die genaue Herkunft variiert nach Produkt und Jahr. Eine Modellkette ist keine Lieferantenauskunft eines echten Herstellers."
+		],
+		"materialLabel": "Eigens verfasstes Übungsmaterial. Angegebene Modellzahlen sind erfunden, keine aktuellen Länderwerte.",
+		"material": "Fiktive Kette: Kupfer aus Chile → Bauteile in Ostasien → Montage in China → Verkauf in Deutschland → Nutzung und geregelte Rückgabe. Dies ist ein Unterrichtsmodell, keine konkrete Marke.",
+		"takeaway": "Untersuche zu jedem Schritt die ökonomische, ökologische und soziale Seite.",
+		"sourceIds": ["lp", "fao"],
+		"quiz": {
+			"question": "Warum reicht die Angabe des Montagelandes nicht für die Produktkette?",
+			"answer": "Andere Schritte können an weiteren Orten liegen.",
+			"wrong": [
+				"Alle Rohstoffe entstehen zwingend am Montageort.",
+				"Nach dem Verkauf endet jede Umweltwirkung."
+			],
+			"explanation": "Die Kette umfasst Rohstoffe, Bauteile und weitere Schritte bis zur Entsorgung."
+		},
+		"cases": [
+			{
+				"prompt": "Die Montage liegt in einem anderen Staat als der Rohstoffabbau.",
+				"options": [
+					"Eine rein lokale Produktionskette",
+					"Internationale Arbeitsteilung"
+				],
+				"answer": "Internationale Arbeitsteilung",
+				"feedback": "Mehrere Standorte erfüllen unterschiedliche Aufgaben."
+			},
+			{
+				"prompt": "Ein gebrauchtes Smartphone wird als Restmüll entsorgt.",
+				"options": [
+					"Rohstoffe und sichere Rücknahme bedenken",
+					"Die Entsorgung hat keine Bedeutung"
+				],
+				"answer": "Rohstoffe und sichere Rücknahme bedenken",
+				"feedback": "Nutzung und Rückgabe gehören zur Betrachtung des Lebenswegs."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Verorte die Modellkette und nenne je eine soziale und ökologische Prüffrage.",
+				"model": "Ich ordne Chile Südamerika, China Ostasien und Deutschland Europa zu. Ich frage nach Arbeitsbedingungen in der Montage und nach Wasserbelastung beim Abbau. Für ein reales Gerät bräuchte ich die nachgewiesene Lieferkette.",
+				"criteria": [
+					"Standorte verortet",
+					"Zwei Dimensionen geprüft",
+					"Modell von Produktnachweis getrennt"
+				],
+				"hints": ["Standorte verortet", "Zwei Dimensionen geprüft"]
+			},
+			"2": {
+				"prompt": "Warum kann längere Nutzung sinnvoll sein, obwohl ein neues Gerät im Betrieb sparsamer ist?",
+				"model": "Ein Neukauf verursacht auch Herstellungsaufwand und Rohstoffbedarf. Ich vergleiche die zusätzliche Nutzungsdauer, Reparierbarkeit und Verbrauchsunterschiede über einen gemeinsamen Zeitraum. Ohne passende Lebenszyklusdaten lässt sich kein allgemeiner Kipppunkt nennen.",
+				"criteria": [
+					"Herstellung einbezogen",
+					"Gleichen Vergleichszeitraum gewählt",
+					"Pauschalantwort vermieden"
+				],
+				"hints": [
+					"Herstellung einbezogen",
+					"Gleichen Vergleichszeitraum gewählt"
+				]
+			}
+		}
+	},
+	{
+		"id": "g8-jeans",
+		"stage": "global",
+		"title": "Eine Jeans, viele Entscheidungen",
+		"skill": "Eine Jeans kann Baumwollanbau, Spinnen, Weben, Färben, Nähen, Transport und Verkauf verbinden.",
+		"subsection": "4",
+		"bindings": ["4"],
+		"paragraphs": [
+			"Eine Jeans kann Baumwollanbau, Spinnen, Weben, Färben, Nähen, Transport und Verkauf verbinden. Baumwollanbau braucht Wasser; die Menge hängt unter anderem vom Klima und vom Bewässerungssystem ab. Färben und Waschen können Gewässer belasten, wenn Abwässer nicht angemessen behandelt werden. Ein Herkunftsetikett bildet diese Schritte nur begrenzt ab.",
+			"Auch der Gebrauch zählt: Nutzungsdauer, Waschhäufigkeit, Reparatur und Weitergabe verändern den Lebensweg. Vergleiche eine Jeans und ein Smartphone nach denselben Nachhaltigkeitsdimensionen, aber berücksichtige unterschiedliche Materialien und Verfahren. Eine Zahl ohne Ort, Methode und Bezugsgröße ist kein tragfähiger Produktvergleich."
+		],
+		"materialLabel": "Eigens verfasstes Übungsmaterial. Angegebene Modellzahlen sind erfunden, keine aktuellen Länderwerte.",
+		"material": "Fiktiver Vergleich: Jeans A wird zwei Jahre getragen, B nach vier Monaten ersetzt. Produktionsbedingungen und Waschverhalten sind zunächst unbekannt.",
+		"takeaway": "Auch der Gebrauch zählt: Nutzungsdauer, Waschhäufigkeit, Reparatur und Weitergabe verändern den Lebensweg.",
+		"sourceIds": ["lp", "fao"],
+		"quiz": {
+			"question": "Welche Angabe ist für einen Wasservergleich besonders wichtig?",
+			"answer": "Ort, Methode und Bezugsgröße des Wasserwerts.",
+			"wrong": [
+				"Nur die Farbe des Verkaufsetiketts.",
+				"Die Annahme, jede Baumwolle werde gleich angebaut."
+			],
+			"explanation": "Ein Wasserwert braucht einen erklärten Kontext und eine vergleichbare Einheit."
+		},
+		"cases": [
+			{
+				"prompt": "Eine Jeans wird repariert und weitergetragen.",
+				"options": [
+					"Die Nutzungsdauer kann steigen",
+					"Die Herstellung wird rückwirkend wirkungslos"
+				],
+				"answer": "Die Nutzungsdauer kann steigen",
+				"feedback": "Reparatur kann Ersatzkäufe vermeiden, beseitigt aber vergangene Belastungen nicht."
+			},
+			{
+				"prompt": "Zwei Produkte haben unterschiedliche Gewichte und Funktionen.",
+				"options": [
+					"Unbeschriftete Summen direkt gleichsetzen",
+					"Die Vergleichseinheit klären"
+				],
+				"answer": "Die Vergleichseinheit klären",
+				"feedback": "Ein sinnvoller Vergleich braucht einen gemeinsamen Zweck oder eine erklärte Bezugsgröße."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Nenne drei Schritte der Jeanskette und passende Umweltfragen.",
+				"model": "Beim Baumwollanbau frage ich nach Bewässerung. Beim Färben prüfe ich die Abwasserbehandlung. Beim Gebrauch untersuche ich Waschhäufigkeit und Nutzungsdauer. Die jeweilige Region und konkrete Produktion bleiben wichtig.",
+				"criteria": [
+					"Drei Schritte genannt",
+					"Je eine Frage zugeordnet",
+					"Kontext berücksichtigt"
+				],
+				"hints": ["Drei Schritte genannt", "Je eine Frage zugeordnet"]
+			},
+			"2": {
+				"prompt": "Vergleiche Jeans und Smartphone mit einem gemeinsamen Bewertungsraster.",
+				"model": "Ich verorte die Schritte und prüfe Einkommen und Arbeitsbedingungen, Material- und Wasserbedarf sowie die Nutzungsdauer. Die Verfahren unterscheiden sich, deshalb vergleiche ich nicht unbeschriftete Gesamtsummen. Für ein Urteil brauche ich belegte Produktdaten und transparente Kriterien.",
+				"criteria": [
+					"Gleiche Dimensionen verwendet",
+					"Produktspezifische Unterschiede benannt",
+					"Belege eingefordert"
+				],
+				"hints": [
+					"Gleiche Dimensionen verwendet",
+					"Produktspezifische Unterschiede benannt"
+				]
+			}
+		}
+	},
+	{
+		"id": "g8-wertschoepfung",
+		"stage": "global",
+		"title": "Preis ist nicht gleich Verdienst",
+		"skill": "Der Verkaufspreis eines Produkts verteilt sich auf viele Tätigkeiten und Kosten.",
+		"subsection": "4",
+		"bindings": ["4"],
+		"paragraphs": [
+			"Der Verkaufspreis eines Produkts verteilt sich auf viele Tätigkeiten und Kosten. Rohstoffe, Verarbeitung, Transport, Entwicklung und Handel leisten Beiträge. Wertschöpfung beschreibt vereinfacht den zusätzlich geschaffenen Wert auf einer Stufe. Der Umsatz einer Stufe ist weder automatisch ihr Gewinn noch der Lohn aller Beschäftigten.",
+			"Eine Prozentaufteilung muss ein gemeinsames Ganzes haben und zusammen 100 ergeben. Ein großer Handelsanteil beweist ohne Kostendaten keinen entsprechend großen Gewinn. Untersuche Macht, Verträge und Verhandlungsmöglichkeiten entlang der Kette. Eine Veränderung kann Nutzen und Kosten zwischen Beteiligten verschieben."
+		],
+		"materialLabel": "Eigens verfasstes Übungsmaterial. Angegebene Modellzahlen sind erfunden, keine aktuellen Länderwerte.",
+		"material": "Erfundenes Preismodell für 100 Geldeinheiten: Rohstoffe 10, Fertigung 20, Transport 10, Entwicklung 20, Handel 40. Die Anteile sind keine Messwerte einer realen Branche.",
+		"takeaway": "Eine Prozentaufteilung muss ein gemeinsames Ganzes haben und zusammen 100 ergeben.",
+		"sourceIds": ["lp", "worldbank"],
+		"quiz": {
+			"question": "Was darf aus dem Handelsanteil von 40 nicht direkt gefolgert werden?",
+			"answer": "Dass der Handelsgewinn genau 40 beträgt.",
+			"wrong": [
+				"Dass er 40 Prozent des Modellpreises entspricht.",
+				"Dass alle Anteile zusammen 100 ergeben sollen."
+			],
+			"explanation": "Im Anteil können Kosten und verschiedene Einkommen stecken; Gewinn ist nicht gleich Umsatzanteil."
+		},
+		"cases": [
+			{
+				"prompt": "Eine Modellaufteilung summiert sich zu 115 Prozent.",
+				"options": [
+					"Damit ist eine normale vollständige Aufteilung belegt",
+					"Bezugsgröße oder Zuordnung prüfen"
+				],
+				"answer": "Bezugsgröße oder Zuordnung prüfen",
+				"feedback": "Eine disjunkte vollständige Aufteilung eines Ganzen muss 100 Prozent ergeben."
+			},
+			{
+				"prompt": "Der Fertigungsanteil steigt bei gleichem Gesamtpreis.",
+				"options": [
+					"Andere Anteile müssen zusammen sinken",
+					"Alle anderen Anteile bleiben zwingend gleich"
+				],
+				"answer": "Andere Anteile müssen zusammen sinken",
+				"feedback": "Bei fester Summe begrenzen die Teile einander."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Erkläre die Aufteilung des Modellpreises und eine Grenze.",
+				"model": "Die fünf Anteile ergeben 100. Handel umfasst 40 Prozent, aber daraus folgt kein Gewinn von 40. Die Aufteilung ist erfunden und erklärt nur die Logik eines gemeinsamen Ganzen; echte Kosten und Löhne müssten recherchiert werden.",
+				"criteria": [
+					"Summe geprüft",
+					"Anteil und Gewinn getrennt",
+					"Modellstatus erklärt"
+				],
+				"hints": ["Summe geprüft", "Anteil und Gewinn getrennt"]
+			},
+			"2": {
+				"prompt": "Ein Laden wirbt mit höherem Preis als fairer Bezahlung. Wie prüfst du die Aussage?",
+				"model": "Ich frage, welcher Teil des Mehrpreises wen erreicht und welche Verträge oder Kontrollen dies belegen. Ein höherer Verkaufspreis allein belegt keine höheren Löhne oder Erzeugereinkommen. Ich prüfe auch Kosten und die Vergleichsbasis.",
+				"criteria": [
+					"Wirkungsweg geprüft",
+					"Preis und Einkommen getrennt",
+					"Nachweise verlangt"
+				],
+				"hints": ["Wirkungsweg geprüft", "Preis und Einkommen getrennt"]
+			}
+		},
+		"lab": "chain"
+	},
+	{
+		"id": "g8-hdi",
+		"stage": "global",
+		"title": "Entwicklung mit mehreren Größen betrachten",
+		"skill": "Der Human Development Index, HDI, verbindet Gesundheit, Bildung und Lebensstandard.",
+		"subsection": "4",
+		"bindings": ["4"],
+		"paragraphs": [
+			"Der Human Development Index, HDI, verbindet Gesundheit, Bildung und Lebensstandard. Er nutzt dazu Lebenserwartung, Schuljahre und kaufkraftbereinigtes Einkommen pro Kopf. Die Teilgrößen werden normiert und geometrisch zusammengeführt. Ein hoher Einkommenswert ersetzt deshalb eine schwache Bildungs- oder Gesundheitsdimension nicht einfach eins zu eins.",
+			"Der HDI ist ein verdichteter Durchschnitt und kein vollständiges Bild einer Gesellschaft. Ungleichheit, politische Rechte und ökologische Belastungen werden im Grundindex nicht vollständig abgebildet. Vergleiche aktuelle veröffentlichte Werte aus derselben Ausgabe und ergänze weitere Indikatoren. Das digitale Modell verwendet erfundene, bereits normierte Teilindizes."
+		],
+		"materialLabel": "Eigens verfasstes Übungsmaterial. Angegebene Modellzahlen sind erfunden, keine aktuellen Länderwerte.",
+		"material": "Fiktive Teilindizes: Gesundheit 0,8, Bildung 0,8, Einkommen 0,2. Das Modell bildet ihr geometrisches Mittel; es berechnet keine reale Länderbewertung aus Rohdaten.",
+		"takeaway": "Der HDI ist ein verdichteter Durchschnitt und kein vollständiges Bild einer Gesellschaft.",
+		"sourceIds": ["lp", "undp", "undp-limits"],
+		"quiz": {
+			"question": "Welche drei Dimensionen verbindet der HDI?",
+			"answer": "Gesundheit, Bildung und Lebensstandard.",
+			"wrong": [
+				"Nur Exportmenge, Landesfläche und Küstenlänge.",
+				"Ausschließlich die jährliche Wirtschaftsleistung."
+			],
+			"explanation": "Der HDI erweitert den Blick über reine Wirtschaftsleistung hinaus."
+		},
+		"cases": [
+			{
+				"prompt": "Zwei Länder haben denselben HDI.",
+				"options": [
+					"Ihre Verteilung und Lebenslagen können sich unterscheiden",
+					"Alle Menschen leben damit identisch"
+				],
+				"answer": "Ihre Verteilung und Lebenslagen können sich unterscheiden",
+				"feedback": "Ein verdichteter Durchschnitt kann unterschiedliche Teilwerte und Ungleichheiten verdecken."
+			},
+			{
+				"prompt": "Umweltbelastung soll beurteilt werden.",
+				"options": [
+					"Der Grund-HDI beantwortet jede Umweltfrage",
+					"Weitere Indikatoren ergänzen"
+				],
+				"answer": "Weitere Indikatoren ergänzen",
+				"feedback": "Der Grundindex erfasst die ökologische Dimension nicht vollständig."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Erkläre Nutzen und zwei Grenzen des HDI.",
+				"model": "Der HDI verbindet Gesundheit, Bildung und Einkommen zu einer übersichtlichen Größe. Als Durchschnitt verdeckt er Unterschiede innerhalb eines Landes. Rechte und Umweltbelastungen werden nicht vollständig erfasst und brauchen weitere Belege.",
+				"criteria": [
+					"Drei Dimensionen genannt",
+					"Durchschnitt begrenzt",
+					"Weitere Grenze erklärt"
+				],
+				"hints": ["Drei Dimensionen genannt", "Durchschnitt begrenzt"]
+			},
+			"2": {
+				"prompt": "Vergleiche im Modell eine einseitige mit einer ausgewogenen Entwicklung.",
+				"model": "Ich halte zwei Teilindizes hoch und senke den dritten. Das geometrische Mittel fällt deutlich. Eine Verbesserung des schwachen Bereichs kann den Index erhöhen, aber das Modell misst weder konkrete Maßnahmen noch Verteilung oder Nachhaltigkeit. Für reale Aussagen nutze ich veröffentlichte Daten.",
+				"criteria": [
+					"Teilindizes gezielt verändert",
+					"Zusammenhang beschrieben",
+					"Modellgrenzen eingehalten"
+				],
+				"hints": ["Teilindizes gezielt verändert", "Zusammenhang beschrieben"]
+			}
+		},
+		"lab": "hdi"
+	},
+	{
+		"id": "g8-fussabdruck",
+		"stage": "global",
+		"title": "Ökologischer Fußabdruck mit Grenzen",
+		"skill": "Der ökologische Fußabdruck beschreibt die biologisch produktive Fläche, die rechnerisch nötig ist, um bestimmte Ressourcen bereitzustellen und Abfälle, insbesondere CO₂, aufzunehmen.",
+		"subsection": "4",
+		"bindings": ["4"],
+		"paragraphs": [
+			"Der ökologische Fußabdruck beschreibt die biologisch produktive Fläche, die rechnerisch nötig ist, um bestimmte Ressourcen bereitzustellen und Abfälle, insbesondere CO₂, aufzunehmen. Er wird in globalen Hektar angegeben und kann mit Biokapazität verglichen werden. Er ist keine direkte Vermessung der Bodenfläche unter einer Person.",
+			"Der Indikator macht Grenzen der Ressourcennutzung sichtbar, bildet aber nicht jeden Umweltschaden vollständig ab. Artenverlust oder lokale Wasserknappheit brauchen weitere Betrachtungen. Ein niedriger Fußabdruck bedeutet auch nicht automatisch gute soziale Lebensbedingungen. Kombiniere ökologische und soziale Kriterien bei Handlungsentscheidungen."
+		],
+		"materialLabel": "Eigens verfasstes Übungsmaterial. Angegebene Modellzahlen sind erfunden, keine aktuellen Länderwerte.",
+		"material": "Fiktiver Vergleich: Region A hat Fußabdruck 4 und Biokapazität 2 globale Hektar pro Person. Region B hat 2 und 3. Prüfe erst die Bezugsgrößen, dann den rechnerischen Unterschied.",
+		"takeaway": "Der Indikator macht Grenzen der Ressourcennutzung sichtbar, bildet aber nicht jeden Umweltschaden vollständig ab.",
+		"sourceIds": ["lp", "footprint"],
+		"quiz": {
+			"question": "Was bedeutet ein Fußabdruck oberhalb der zugeordneten Biokapazität?",
+			"answer": "Die rechnerische Nachfrage übersteigt die regenerative Kapazität.",
+			"wrong": [
+				"Alle Umweltprobleme seien vollständig gemessen.",
+				"Die reale Wohnfläche jeder Person sei größer."
+			],
+			"explanation": "Der Vergleich beschreibt ein rechnerisches Verhältnis, nicht die gesamte Nachhaltigkeit."
+		},
+		"cases": [
+			{
+				"prompt": "Die Einheit lautet globale Hektar pro Person.",
+				"options": [
+					"Die Wohnungsgröße in Quadratmetern",
+					"Eine normierte Flächengröße"
+				],
+				"answer": "Eine normierte Flächengröße",
+				"feedback": "Globale Hektar berücksichtigen unterschiedliche biologische Produktivität."
+			},
+			{
+				"prompt": "Ein kleiner Fußabdruck geht mit mangelndem Bildungszugang einher.",
+				"options": [
+					"Ökologische und soziale Lage gemeinsam betrachten",
+					"Damit ist jede Entwicklung bereits gut"
+				],
+				"answer": "Ökologische und soziale Lage gemeinsam betrachten",
+				"feedback": "Ein Indikator allein beurteilt nicht alle Nachhaltigkeitsdimensionen."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Vergleiche die beiden fiktiven Regionen und nenne eine Grenze.",
+				"model": "A liegt um 2 globale Hektar pro Person über der eigenen Biokapazität. B liegt um 1 darunter. Das sagt noch nicht, wie Bildung, Gesundheit oder lokale Wasserbelastung aussehen. Für ein Urteil ergänze ich passende soziale und ökologische Daten.",
+				"criteria": [
+					"Differenzen richtig bestimmt",
+					"Gleiche Bezugsgröße genutzt",
+					"Aussagegrenze erklärt"
+				],
+				"hints": ["Differenzen richtig bestimmt", "Gleiche Bezugsgröße genutzt"]
+			},
+			"2": {
+				"prompt": "Wie würdest du eine Konsumentscheidung mit HDI und Fußabdruck diskutieren?",
+				"model": "Der HDI kann soziale Entwicklungsdimensionen beleuchten, der Fußabdruck einen Teil des Ressourcenbedarfs. Keiner bewertet ein konkretes Produkt allein. Ich ergänze produktspezifische Arbeits-, Material- und Umweltdaten und erkläre Zielkonflikte statt einen Gesamtwert zu erfinden.",
+				"criteria": [
+					"Zwei Indikatoren unterschieden",
+					"Produktbezug geprüft",
+					"Keine Gesamtnote erfunden"
+				],
+				"hints": ["Zwei Indikatoren unterschieden", "Produktbezug geprüft"]
+			}
+		}
+	},
+	{
+		"id": "g8-bildung",
+		"stage": "global",
+		"title": "Bildung und Entwicklung wirken zusammen",
+		"skill": "Bildung kann Fähigkeiten, Berufsmöglichkeiten und gesellschaftliche Teilhabe fördern.",
+		"subsection": "4",
+		"bindings": ["4"],
+		"paragraphs": [
+			"Bildung kann Fähigkeiten, Berufsmöglichkeiten und gesellschaftliche Teilhabe fördern. Umgekehrt erleichtern Einkommen, Gesundheit, sichere Wege und öffentliche Infrastruktur den Bildungszugang. Ein Armutskreislauf beschreibt solche wechselseitigen Verstärkungen; er ist keine Behauptung, einzelne Menschen seien selbst schuld an ihrer Lage.",
+			"Untersuche ein konkretes Beispiel aus Südamerika oder Afrika und versetze dich in die Perspektive Gleichaltriger. Schulgebäude allein reichen nicht, wenn etwa Unterrichtsmaterial, Personal oder sichere Erreichbarkeit fehlen. Gute Vorschläge berücksichtigen Rechte und lokale Beteiligung und prüfen Wirkungen anhand nachvollziehbarer Kriterien."
+		],
+		"materialLabel": "Eigens verfasstes Übungsmaterial. Angegebene Modellzahlen sind erfunden, keine aktuellen Länderwerte.",
+		"material": "Fiktiver Ort in Ghana: Die Schule besteht, aber Materialkosten und ein langer Weg erschweren den Besuch. Ein Projekt kann entweder nur neue Wände bauen oder zugleich Zugangshürden bearbeiten.",
+		"takeaway": "Untersuche ein konkretes Beispiel aus Südamerika oder Afrika und versetze dich in die Perspektive Gleichaltriger.",
+		"sourceIds": ["lp", "unicef", "unesco"],
+		"quiz": {
+			"question": "Warum ist Bildung kein isolierter Entwicklungsschalter?",
+			"answer": "Zugang hängt auch von Einkommen, Gesundheit und Infrastruktur ab.",
+			"wrong": [
+				"Ein Schulgebäude beseitigt automatisch jede Ungleichheit.",
+				"Armut beweist mangelnden Lernwillen."
+			],
+			"explanation": "Bildung und weitere Lebensbedingungen beeinflussen einander."
+		},
+		"cases": [
+			{
+				"prompt": "Materialkosten verhindern regelmäßigen Unterrichtsbesuch.",
+				"options": [
+					"Eine konkrete Zugangshürde",
+					"Ein Beleg für fehlendes Interesse jedes Kindes"
+				],
+				"answer": "Eine konkrete Zugangshürde",
+				"feedback": "Finanzielle Hürden sind von persönlichen Fähigkeiten und Motiven zu unterscheiden."
+			},
+			{
+				"prompt": "Ein Projekt wird ohne lokale Beteiligung geplant.",
+				"options": [
+					"Beteiligung ist grundsätzlich bedeutungslos",
+					"Perspektiven und Bedürfnisse ergänzen"
+				],
+				"answer": "Perspektiven und Bedürfnisse ergänzen",
+				"feedback": "Betroffene können wichtige Informationen zu wirksamen Maßnahmen beitragen."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Erkläre am fiktiven Ort eine Wechselwirkung und einen Handlungsansatz.",
+				"model": "Geringes Einkommen erschwert Materialkauf und damit Bildungszugang; weniger Bildungsangebote können spätere Erwerbsmöglichkeiten begrenzen. Eine Unterstützung bei Material und sicheren Wegen kann Hürden senken. Ob sie wirkt, muss vor Ort geprüft werden.",
+				"criteria": [
+					"Wechselwirkung erklärt",
+					"Konkrete Hürde aufgegriffen",
+					"Wirkungsprüfung vorgesehen"
+				],
+				"hints": ["Wechselwirkung erklärt", "Konkrete Hürde aufgegriffen"]
+			},
+			"2": {
+				"prompt": "Plane eine reale Recherche zu Bildung in Ghana oder einem südamerikanischen Land.",
+				"model": "Ich verorte eine konkrete Region und nutze datierte Quellen zu Schulzugang und Lebensbedingungen. Ich beziehe die Perspektive Gleichaltriger ein, ohne für alle zu sprechen. Einen Handlungsansatz bewerte ich nach Zugang, Beteiligung und langfristiger Tragfähigkeit.",
+				"criteria": [
+					"Konkreten Raum gewählt",
+					"Belege und Perspektive verbunden",
+					"Kriterien für Maßnahme benannt"
+				],
+				"hints": ["Konkreten Raum gewählt", "Belege und Perspektive verbunden"]
+			}
+		}
+	},
+	{
+		"id": "g8-konsum",
+		"stage": "global",
+		"title": "Nachhaltigkeit als Verbraucher mitgestalten",
+		"skill": "Fair-Trade-Ansätze richten sich unter anderem auf Handelsbedingungen und Produzentenrechte.",
+		"subsection": "4",
+		"bindings": ["4"],
+		"paragraphs": [
+			"Fair-Trade-Ansätze richten sich unter anderem auf Handelsbedingungen und Produzentenrechte. FSC bezieht sich auf Waldwirtschaft, MSC auf zertifizierte Wildfischerei. Verschiedene Siegel prüfen unterschiedliche Kriterien und Geltungsbereiche. Ein Zeichen ersetzt deshalb nicht die Frage, was genau zertifiziert wurde und wer die Einhaltung kontrolliert.",
+			"Du kannst durch Nutzungsdauer, Reparatur, bewusste Auswahl und Nachfrage Einfluss nehmen. Unternehmen und politische Regeln tragen ebenfalls Verantwortung. Wähle eine konkrete Maßnahme, beschreibe ihren Wirkungsweg und prüfe Grenzen. Eine Entscheidung muss zur eigenen Lebenslage passen; die App bewertet keine persönliche Kaufkraft oder moralische Güte."
+		],
+		"materialLabel": "Eigens verfasstes Übungsmaterial. Angegebene Modellzahlen sind erfunden, keine aktuellen Länderwerte.",
+		"material": "Aktionsplan: Ein Klassenraum sammelt Reparaturmöglichkeiten und prüft an zwei Produkten, was ein Siegel tatsächlich zusagt. Es werden keine persönlichen Käufe erfasst.",
+		"takeaway": "Du kannst durch Nutzungsdauer, Reparatur, bewusste Auswahl und Nachfrage Einfluss nehmen.",
+		"sourceIds": ["lp", "fairtrade", "fsc", "msc"],
+		"quiz": {
+			"question": "Was ist bei einem Nachhaltigkeitssiegel zuerst zu prüfen?",
+			"answer": "Geltungsbereich, Kriterien und Kontrolle.",
+			"wrong": [
+				"Nur die Farbe des Logos.",
+				"Die Annahme, jedes Siegel garantiere alles."
+			],
+			"explanation": "Siegel decken verschiedene Aspekte ab und brauchen überprüfbare Kriterien."
+		},
+		"cases": [
+			{
+				"prompt": "FSC wird als Nachweis für jede Textilarbeitsbedingung ausgegeben.",
+				"options": [
+					"Jedes Waldsiegel belegt alle Arbeitsbedingungen jedes Produkts",
+					"Der Geltungsbereich passt so nicht"
+				],
+				"answer": "Der Geltungsbereich passt so nicht",
+				"feedback": "FSC betrifft Waldwirtschaft; konkrete Produkt- und Lieferkettenaussagen müssen gesondert geprüft werden."
+			},
+			{
+				"prompt": "Verbraucher sollen allein alle Produktionsprobleme lösen.",
+				"options": [
+					"Unternehmen und Politik mitbetrachten",
+					"Andere Akteure spielen keine Rolle"
+				],
+				"answer": "Unternehmen und Politik mitbetrachten",
+				"feedback": "Handels- und Produktionsregeln entstehen auf mehreren Ebenen."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Entwirf eine konkrete Klassenmaßnahme mit Ziel und Prüfkriterium.",
+				"model": "Wir erstellen eine Liste erreichbarer Reparaturangebote für häufig genutzte Gegenstände. Ziel ist längere Nutzung. Wir prüfen, welche Reparaturen tatsächlich möglich sind und welche Kosten oder Ersatzteile fehlen. Private Kaufdaten werden dafür nicht gebraucht.",
+				"criteria": [
+					"Konkrete Maßnahme beschrieben",
+					"Wirkungsweg erklärt",
+					"Prüfkriterium und Grenze genannt"
+				],
+				"hints": ["Konkrete Maßnahme beschrieben", "Wirkungsweg erklärt"]
+			},
+			"2": {
+				"prompt": "Ein Siegel verspricht Nachhaltigkeit. Formuliere eine begründete Verbraucherreaktion.",
+				"model": "Ich prüfe Produktbezug, veröffentlichte Kriterien und unabhängige Kontrolle. Ich vergleiche Reparatur oder längere Nutzung als Alternative. Das Zeichen ist eine Information, kein Beweis für jede soziale und ökologische Eigenschaft; Unternehmen und Regeln bleiben verantwortlich.",
+				"criteria": [
+					"Siegelkriterien geprüft",
+					"Alternative bedacht",
+					"Verantwortung differenziert"
+				],
+				"hints": ["Siegelkriterien geprüft", "Alternative bedacht"]
+			}
+		}
+	},
+	{
+		"id": "g8-recherche",
+		"stage": "projekt",
+		"title": "Eine aktuelle geographische Frage untersuchen",
+		"skill": "Wähle selbst ein tatsächliches aktuelles Ereignis mit räumlicher Bedeutung, etwa ein Hochwasser, eine neue Verkehrsplanung oder einen Konflikt um Landnutzung.",
+		"subsection": "5",
+		"bindings": ["5"],
+		"paragraphs": [
+			"Wähle selbst ein tatsächliches aktuelles Ereignis mit räumlicher Bedeutung, etwa ein Hochwasser, eine neue Verkehrsplanung oder einen Konflikt um Landnutzung. Benenne Ort, Zeitpunkt und eine prüfbare Frage. Ein erfundener Übungsfall bereitet die Methode vor, ersetzt aber kein reales aktuelles Ereignis.",
+			"Nutze mindestens eine fachliche oder amtliche Quelle und einen journalistischen Bericht. Notiere Urheber, Veröffentlichungsdatum und Kartenbezug. Zwei verschiedene Adressen garantieren noch keine unabhängigen Informationen. Trenne Beobachtung, Erklärung und Interesse. Eingegebene Links werden hier nicht geöffnet oder automatisch überprüft."
+		],
+		"materialLabel": "Eigens verfasstes Übungsmaterial. Angegebene Modellzahlen sind erfunden, keine aktuellen Länderwerte.",
+		"material": "Recherchebogen: Ort und Ereignisdatum; Frage; zwei datierte Quellen; Kartenbeschreibung; konkrete Belege. Verwende öffentliche Orte und keine privaten Anschriften.",
+		"takeaway": "Nutze mindestens eine fachliche oder amtliche Quelle und einen journalistischen Bericht.",
+		"sourceIds": ["lp", "nasa"],
+		"quiz": {
+			"question": "Was macht eine geographische Recherchefrage konkret?",
+			"answer": "Ein benannter Raum, ein Anlass und ein untersuchbarer Zusammenhang.",
+			"wrong": [
+				"Nur ein sehr allgemeines Thema ohne Ort.",
+				"Ein fertiges Urteil vor jeder Quellenprüfung."
+			],
+			"explanation": "Eine räumliche Frage legt fest, wo und welcher Zusammenhang untersucht werden soll."
+		},
+		"cases": [
+			{
+				"prompt": "Zwei Berichte übernehmen dieselbe Pressemitteilung.",
+				"options": [
+					"Die Unabhängigkeit muss geprüft werden",
+					"Zwei Adressen beweisen zwei unabhängige Belege"
+				],
+				"answer": "Die Unabhängigkeit muss geprüft werden",
+				"feedback": "Die Informationsquelle kann trotz verschiedener Webseiten dieselbe sein."
+			},
+			{
+				"prompt": "Ein Ereignis wurde für die App erfunden.",
+				"options": [
+					"Es ersetzt die eigene aktuelle Recherche",
+					"Es ist nur eine Methodenübung"
+				],
+				"answer": "Es ist nur eine Methodenübung",
+				"feedback": "Die geforderte aktuelle Frage braucht ein tatsächliches Ereignis."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Formuliere für ein eigenes aktuelles Ereignis eine räumliche Frage und einen Quellenplan.",
+				"model": "Meine eigene Antwort nennt Ort, Datum und Ereignis. Eine Frage kann untersuchen, welche Ortsteile von einer konkreten Verkehrsänderung betroffen sind. Ich wähle amtliche Planunterlagen und einen datierten Bericht, prüfe ihre Unabhängigkeit und ergänze eine passende Karte. Dieses Muster ersetzt meine echten Angaben nicht.",
+				"criteria": [
+					"Echtes Ereignis und Ort genannt",
+					"Untersuchbare Frage formuliert",
+					"Zwei Quellenarten eingeplant"
+				],
+				"hints": [
+					"Echtes Ereignis und Ort genannt",
+					"Untersuchbare Frage formuliert"
+				]
+			},
+			"2": {
+				"prompt": "Zwei Quellen widersprechen sich. Entwickle einen Prüfweg.",
+				"model": "Ich vergleiche Datum, räumlichen Ausschnitt, Definitionen und Belege. Ich prüfe, ob Beobachtungen oder Erwartungen gemeint sind und ob beide dieselbe Ausgangsquelle nutzen. Den ungeklärten Widerspruch dokumentiere ich statt eine scheinbar sichere Antwort auszuwählen.",
+				"criteria": [
+					"Kontext beider Quellen geprüft",
+					"Beleg und Interpretation getrennt",
+					"Unsicherheit dokumentiert"
+				],
+				"hints": [
+					"Kontext beider Quellen geprüft",
+					"Beleg und Interpretation getrennt"
+				]
+			}
+		},
+		"projectStep": "evidence"
+	},
+	{
+		"id": "g8-urteil",
+		"stage": "projekt",
+		"title": "Ergebnisse zeigen und begründet urteilen",
+		"skill": "Ein geographisches Urteil verbindet eine Aussage mit Belegen und einem offengelegten Maßstab.",
+		"subsection": "5",
+		"bindings": ["5"],
+		"paragraphs": [
+			"Ein geographisches Urteil verbindet eine Aussage mit Belegen und einem offengelegten Maßstab. Du kannst eine Verkehrsplanung nach Erreichbarkeit, Flächenverbrauch und sozialer Zugänglichkeit beurteilen. Interessen können sich widersprechen. Trenne die gesicherten Ergebnisse deiner Recherche von Erwartungen und deiner eigenen Bewertung.",
+			"Die Präsentation führt von Frage und Verortung über die Belege zum abgewogenen Ergebnis. Karten und Diagramme brauchen Titel, Datum, Einheit und Quelle. Nenne Unsicherheiten und einen möglichen nächsten Schritt. Der digitale Bogen prüft nur formale Vollständigkeit; tatsächliche Quellenqualität, Feldarbeit und Vortrag brauchen eigene Durchführung und Rückmeldung."
+		],
+		"materialLabel": "Eigens verfasstes Übungsmaterial. Angegebene Modellzahlen sind erfunden, keine aktuellen Länderwerte.",
+		"material": "Präsentationsgerüst: Frage und Karte → zwei belegte Ergebnisse → zwei betroffene Perspektiven → Urteil mit Kriterien → Grenze und Handlungsoption.",
+		"takeaway": "Die Präsentation führt von Frage und Verortung über die Belege zum abgewogenen Ergebnis.",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"question": "Was trägt ein begründetes Urteil?",
+			"answer": "Belege, offengelegte Kriterien und Abwägung.",
+			"wrong": [
+				"Nur eine starke Behauptung ohne Quelle.",
+				"Ausschließlich die Reihenfolge der Vortragsfolien."
+			],
+			"explanation": "Ein nachvollziehbares Urteil verbindet Informationen mit einem erklärten Bewertungsmaßstab."
+		},
+		"cases": [
+			{
+				"prompt": "Ein Ergebnis wird durch eine datierte Messreihe gestützt.",
+				"options": [
+					"Schon die vollständige Bewertung aller Interessen",
+					"Ein Beleg für eine Sachbehauptung"
+				],
+				"answer": "Ein Beleg für eine Sachbehauptung",
+				"feedback": "Eine Messung kann eine Aussage stützen, ersetzt aber keine offengelegten Wertmaßstäbe."
+			},
+			{
+				"prompt": "Der digitale Bogen ist ausgefüllt.",
+				"options": [
+					"Die formale Vorbereitung ist dokumentiert",
+					"Die Präsentation wurde damit automatisch gehalten"
+				],
+				"answer": "Die formale Vorbereitung ist dokumentiert",
+				"feedback": "Vollständige Felder beweisen weder Quellenqualität noch Durchführung."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Gliedere die Präsentation deiner realen Recherche und formuliere ein vorläufiges Urteil.",
+				"model": "Ich beginne mit meiner Frage und der Karte. Dann stelle ich datierte Belege und unterschiedliche Perspektiven vor. Mein vorläufiges Urteil nennt Kriterien und Grenzen. Ich ergänze meine tatsächlichen Ergebnisse selbst und bespreche offene Fragen im Unterricht.",
+				"criteria": [
+					"Frage und Raum verknüpft",
+					"Urteil an Belege gebunden",
+					"Tatsächliche Durchführung vorgesehen"
+				],
+				"hints": ["Frage und Raum verknüpft", "Urteil an Belege gebunden"]
+			},
+			"2": {
+				"prompt": "Eine Maßnahme verbessert Erreichbarkeit und verbraucht Freifläche. Erörtere den Zielkonflikt.",
+				"model": "Ich prüfe Nutzen und Belastung für die betroffenen Gruppen sowie mögliche Alternativen. Die Gewichtung von Erreichbarkeit und Freiraum erkläre ich. Ein begründeter Vorschlag nennt die Datenbasis und offene Folgen; andere Gewichtungen können zu einem anderen Urteil führen.",
+				"criteria": [
+					"Zwei Kriterien abgewogen",
+					"Alternative oder Perspektive genannt",
+					"Gewichtung und Unsicherheit erklärt"
+				],
+				"hints": [
+					"Zwei Kriterien abgewogen",
+					"Alternative oder Perspektive genannt"
+				]
+			}
+		},
+		"projectStep": "judgment"
+	}
+]

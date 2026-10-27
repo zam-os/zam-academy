@@ -458,11 +458,6 @@
         stroke-dasharray: none;
         filter: none;
       }
-      /* No such Fach in this Schulart and grade: dashed outline, nothing planned */
-      .none .hexfill {
-        fill: transparent;
-        stroke-dasharray: 5 4;
-      }
       .sheen {
         fill: url(#sheen);
         pointer-events: none;
@@ -879,16 +874,11 @@
         color: var(--off);
         opacity: 0.4;
       }
-      /* kein Fach in der Stundentafel (anders als "nicht vorgesehen"): gestrichelt wie die Hex-Zelle */
+      /* Explicit timetable gaps have a dashed mark and a source link. */
       .na.none {
         outline: 1px dashed currentColor;
         outline-offset: -4px;
         opacity: 0.7;
-      }
-      .outline .why {
-        display: block;
-        font-size: 0.8rem;
-        color: var(--muted);
       }
 
       .how {
@@ -1140,19 +1130,29 @@
       };
 
       /* ---------- data -> trees ---------- */
+      function curriculumSlot(fach, grade, school) {
+        const combination = (D.fachverbunde ?? []).find((group) =>
+          group.school === school && group.grades.includes(grade) && group.paths.includes(fach));
+        if (combination) return { subject: combination.id, combination };
+        const subject = D.faecher.find((f) => f.id === fach);
+        if (!subject || grade < subject.from || (D.kein_unterricht ?? []).some((entry) =>
+          entry.fach === fach && entry.grade === grade && entry.school === school)) return null;
+        return { subject: fach, combination: null };
+      }
+
       function buildTrees() {
-        const fachBy = Object.fromEntries(D.faecher.map((f) => [f.id, f]));
         const schulBy = Object.fromEntries(D.schulen.map((x) => [x.id, x]));
-        const entfaellt = (fach, grade, school) =>
-          (D.kein_unterricht ?? []).find((e) => e.fach === fach && e.grade === grade && e.school === school);
-        const pkgNode = (p) => ({
+        const pkgNode = (p, f, combination = null) => ({
           kind: "pkg",
           id: p.id,
           label: p.title,
-          glyph: fachBy[p.fach].glyph,
-          hue: fachBy[p.fach].hue,
+          glyph: combination ? combination.glyph : f.glyph,
+          hue: f.hue,
           pkg: p,
+          grade: p.grade,
           school: schulBy[p.school],
+          combination,
+          offerKey: `package:${p.id}`,
           planned: false,
         });
         const ghost = (id, label, f, extra = {}) => ({
@@ -1174,25 +1174,37 @@
           fach: f,
           children,
         });
+        const firstGrade = (f) => Math.min(f.from, ...(D.fachverbunde ?? [])
+          .filter((group) => group.paths.includes(f.id)).flatMap((group) => group.grades));
+        const gradeNodes = (f, grade, world = false) => {
+          const children = [];
+          const used = new Set();
+          for (const school of D.schulen) {
+            if (grade < school.from || grade > school.to) continue;
+            const slot = curriculumSlot(f.id, grade, school.id);
+            if (!slot) continue;
+            const packages = D.pakete.filter((p) => p.fach === slot.subject && p.grade === grade && p.school === school.id);
+            packages.forEach((p) => used.add(p.id));
+            if (packages.length) children.push(...packages.map((p) => pkgNode(p, f, slot.combination)));
+            else children.push(ghost(world ? `plan-k${grade}-${school.id}` : `plan-${school.id}`,
+              slot.combination?.name ?? (world ? `Klasse ${grade}` : school.name), f, {
+                grade, school, world, combination: slot.combination,
+                glyph: slot.combination?.glyph ?? f.glyph,
+                offerKey: `slot:${school.id}:${grade}:${slot.subject}`,
+              }));
+          }
+          // A grade-bound package without a school still has its own place.
+          D.pakete.filter((p) => p.fach === f.id && p.grade === grade && !p.school && !used.has(p.id))
+            .forEach((p) => children.push(pkgNode(p, f)));
+          return children;
+        };
 
         const schule = [];
         for (let g = 5; g <= 13; g++) {
           const faecher = [];
           for (const f of D.faecher) {
-            if (f.from > g) continue;
-            const kids = [];
-            const used = new Set();
-            for (const sch of D.schulen) {
-              if (g < sch.from || g > sch.to) continue;
-              const ps = D.pakete.filter((p) => p.fach === f.id && p.grade === g && p.school === sch.id);
-              ps.forEach((p) => used.add(p.id));
-              const gap = entfaellt(f.id, g, sch.id);
-              if (ps.length) kids.push(...ps.map(pkgNode));
-              else kids.push(ghost(`plan-${sch.id}`, sch.name, f, { school: sch, grade: g, sub: `${f.name} ${g}`, entfaellt: gap }));
-            }
-            D.pakete
-              .filter((p) => p.fach === f.id && p.grade === g && !used.has(p.id))
-              .forEach((p) => kids.push(pkgNode(p)));
+            if (firstGrade(f) > g) continue;
+            const kids = gradeNodes(f, g);
             if (kids.length) faecher.push(fachNode(f, kids));
           }
           schule.push({
@@ -1208,21 +1220,24 @@
         const over = D.faecher
           .map((f) => [f, D.pakete.filter((p) => p.fach === f.id && p.grade == null)])
           .filter(([, ps]) => ps.length)
-          .map(([f, ps]) => fachNode(f, ps.map(pkgNode)));
+          .map(([f, ps]) => fachNode(f, ps.map((p) => pkgNode(p, f))));
         schule.push({ kind: "island", id: "uebergreifend", label: "Übergreifend", glyph: "∞", hue: 190, children: over });
 
         const welt = D.bereiche.map((b) => {
           const faecher = D.faecher
             .filter((f) => f.bereich === b.id)
             .map((f) => {
-              const kids = D.pakete.filter((p) => p.fach === f.id && p.grade == null).map(pkgNode);
-              for (let g = f.from; g <= 13; g++) {
-                const ps = D.pakete.filter((p) => p.fach === f.id && p.grade === g);
-                if (ps.length) kids.push(...ps.map(pkgNode));
-                else {
-                  const wo = D.schulen.filter((x) => g >= x.from && g <= x.to && !entfaellt(f.id, g, x.id)).map((x) => x.short);
-                  kids.push(ghost(`plan-k${g}`, `Klasse ${g}`, f, { grade: g, sub: wo.join(" · ") || "kein Fach" }));
-                }
+              const kids = D.pakete.filter((p) => p.fach === f.id && p.grade == null).map((p) => pkgNode(p, f));
+              for (let g = firstGrade(f); g <= 13; g++) {
+                const nodes = gradeNodes(f, g, true);
+                const ordinary = nodes.filter((n) => n.planned && !n.combination);
+                kids.push(...nodes.filter((n) => !n.planned || n.combination));
+                // Keep the world lens compact: ordinary pending school offers
+                // share a grade marker; a combined subject keeps its own name.
+                if (ordinary.length) kids.push(ghost(`plan-k${g}`, `Klasse ${g}`, f, {
+                  grade: g, world: true, sub: ordinary.map((n) => n.school.short).join(" · "),
+                  offerGroup: ordinary.map((n) => n.offerKey),
+                }));
               }
               return fachNode(f, kids);
             });
@@ -1234,12 +1249,16 @@
           node.path = parent ? [...path, node.id] : [];
           if (node.children) {
             node.children.forEach((c) => finish(c, node, node.path));
-            node.live = node.children.reduce((a, c) => a + c.live, 0);
-            node.total = node.children.reduce((a, c) => a + c.total, 0);
+            // Several paths can point to one combined subject. Count its
+            // canonical offer or package only once at the shared ancestors.
+            node.offerKeys = new Set(node.children.flatMap((c) => [...c.offerKeys]));
+            node.liveKeys = new Set(node.children.flatMap((c) => [...c.liveKeys]));
           } else {
-            node.live = node.planned ? 0 : 1;
-            node.total = node.entfaellt ? 0 : 1;
+            node.offerKeys = new Set(node.offerGroup ?? [node.offerKey]);
+            node.liveKeys = new Set(node.planned ? [] : [node.offerKey]);
           }
+          node.live = node.liveKeys.size;
+          node.total = node.offerKeys.size;
         };
         for (const [lens, name, children] of [
           ["schule", "Schulsicht", schule],
@@ -1263,19 +1282,17 @@
       const schulName = (id) => D.schulen.find((x) => x.id === id)?.name ?? "";
       const noun = (n) => (n === 1 ? "Paket" : "Pakete");
       const enabled = (n) => n.live > 0;
-      /* which Schularten teach a Fach in the grade, and which do not: one entry per Schulart,
+      /* which Schularten teach a Fach in the grade: one entry per Schulart,
          only for a Fach inside a Klasse (Weltwissen and Übergreifend keep their pips) */
       const schoolsOf = (n) => {
         const by = new Map();
         if (n.kind === "fach" && n.parent?.grade != null)
           for (const c of n.children.filter((k) => k.school)) {
-            const e = by.get(c.school.id) ?? { school: c.school, live: false, teaches: false };
-            e.teaches ||= !c.entfaellt;
+            const e = by.get(c.school.id) ?? { school: c.school, live: false, combination: c.combination };
             e.live ||= c.live > 0;
             by.set(c.school.id, e);
           }
-        const all = [...by.values()];
-        return { have: all.filter((e) => e.teaches), none: all.filter((e) => !e.teaches) };
+        return [...by.values()];
       };
       const joinDe = (xs) => (xs.length > 1 ? `${xs.slice(0, -1).join(", ")} und ${xs.at(-1)}` : (xs[0] ?? ""));
 
@@ -1319,13 +1336,11 @@
       };
       const alpha = (n) => (n.live > 0 ? 0.55 + 0.45 * (n.live / n.total) : 1);
       const ariaFor = (n) => {
-        if (n.entfaellt) return `${n.fachName} ${n.label}, kein Fach in Klasse ${n.grade}`;
-        const sc = schoolsOf(n);
-        if (sc.have.length + sc.none.length) {
-          const { have, none } = sc;
-          const wo = have.length ? `Unterricht ${joinDe(have.map((e) => e.school.wo))}` : "kein Unterricht in dieser Klasse";
-          const nv = none.length && have.length ? `, kein Fach ${joinDe(none.map((e) => e.school.wo))}` : "";
-          return `${n.label}, ${wo}${nv}, ${enabled(n) ? `${n.live} von ${n.total} ${noun(n.total)} verfügbar` : "noch nicht verfügbar"}`;
+        if (n.combination) return `${n.combination.name}, ${n.school.name}, Klasse ${n.grade}, ${n.planned ? "gemeinsames Lernpaket noch nicht verfügbar" : `${n.pkg.lessons} Lektionen`}`;
+        const have = schoolsOf(n);
+        if (have.length) {
+          const wo = `Unterricht ${joinDe(have.map((e) => `${e.school.wo}${e.combination ? ` als ${e.combination.name}` : ""}`))}`;
+          return `${n.label}, ${wo}, ${enabled(n) ? `${n.live} von ${n.total} ${noun(n.total)} verfügbar` : "noch nicht verfügbar"}`;
         }
         if (!enabled(n)) return `${n.fachName ? n.fachName + " " : ""}${n.label}, noch nicht verfügbar`;
         if (n.kind === "pkg") return `${n.label}, Lernpaket${n.school ? ` ${n.school.wo}` : ""}, ${n.pkg.lessons} Lektionen`;
@@ -1350,7 +1365,7 @@
       function nodeGroup(n, cx, cy, R) {
         const on = enabled(n);
         const g = s("g", {
-          class: `node ${on ? "live" : "disabled"}${n.entfaellt ? " none" : ""}${state.sel === n ? " sel" : ""}`,
+          class: `node ${on ? "live" : "disabled"}${state.sel === n ? " sel" : ""}`,
           style: `--h:${n.hue};--a:${alpha(n)}`,
           "aria-label": ariaFor(n),
           ...interactive(n),
@@ -1358,12 +1373,12 @@
         const shape = s("g", { class: "shape" });
         shape.append(s("path", { class: "hexfill", d: hexPath(cx, cy, R) }), s("path", { class: "sheen", d: hexPath(cx, cy, R) }));
         g.append(shape);
-        const fs = R * 0.19;
+        const fs = R * (n.combination ? 0.16 : 0.19);
         if (n.kind === "pkg") {
-          const lines = wrap(n.label, Math.max(9, Math.round(R / 5.4)));
+          const lines = n.combination ? n.combination.name.split("/") : wrap(n.label, Math.max(9, Math.round(R / 5.4)));
           const gl = n.glyph.length > 6 ? 0.2 : 0.3;
           /* a live package names its Schulart on top, so it reads like the grey Schulart fields beside it */
-          const kicker = !n.planned && n.school ? n.school.name : "";
+          const kicker = n.school && (!n.planned || n.combination || n.world) ? n.school.name : "";
           const ky = cy - R * 0.6;
           let y0 = cy - R * 0.28 - (lines.length - 1) * fs * 0.55;
           /* with a kicker, the glyph (about three quarters of its size above its baseline) stays below the kicker line,
@@ -1374,7 +1389,7 @@
           lines.forEach((ln, i) =>
             shape.append(s("text", { class: "t", x: cx, y: y0 + fs * 1.5 + i * fs * 1.15, "font-size": fs, "font-weight": 600 }, ln)),
           );
-          const sub = n.entfaellt ? "kein Fach" : n.planned ? (n.school || !n.sub ? "noch nicht verfügbar" : n.sub) : n.pkg.grade == null ? "übergreifend" : `${n.pkg.lessons} Lektionen`;
+          const sub = n.planned ? (n.sub ?? (n.world ? `Klasse ${n.grade} · geplant` : "noch nicht verfügbar")) : n.pkg.grade == null ? "übergreifend" : `${n.pkg.lessons} Lektionen`;
           shape.append(s("text", { class: "t sub", x: cx, y: cy + R * 0.62, "font-size": fs * 0.74 }, sub));
         } else {
           const lines = wrap(n.label, Math.max(8, Math.round(R / 5.2)));
@@ -1382,16 +1397,14 @@
           lines.forEach((ln, i) =>
             shape.append(s("text", { class: "t", x: cx, y: cy + R * 0.2 + i * fs * 1.15, "font-size": fs, "font-weight": 600 }, ln)),
           );
-          const { have, none } = schoolsOf(n);
-          if (have.length + none.length) {
+          const have = schoolsOf(n);
+          if (have.length) {
             /* Schulform labels, one per Schulart: bright = Paket live, dim = planned, omitted = no such Fach there */
             const label = s("text", { class: "t schools", x: cx, y: cy + R * 0.62, "font-size": fs * 0.9 });
-            if (have.length)
-              have.forEach((e, i) => {
-                if (i) label.append(s("tspan", { class: "sep" }, " · "));
-                label.append(s("tspan", { class: e.live ? "on" : "" }, e.school.short));
-              });
-            else label.append(s("tspan", { class: "on" }, "kein Fach"));
+            have.forEach((e, i) => {
+              if (i) label.append(s("tspan", { class: "sep" }, " · "));
+              label.append(s("tspan", { class: e.live ? "on" : "" }, e.school.short));
+            });
             shape.append(label);
           } else {
             const pr = R * 0.065;
@@ -1598,17 +1611,11 @@
           ),
         );
         if (n.kind === "pkg" && !n.pkg) {
-          const what = n.fachName ? `${n.fachName}${n.grade ? ` · Klasse ${n.grade}` : ""}` : n.label;
+          const what = n.combination ? `${n.school.name} · Klasse ${n.grade}` : n.fachName ? `${n.fachName}${n.grade ? ` · Klasse ${n.grade}` : ""}` : n.label;
           p.append(h("h2", {}, n.label), h("p", { class: "kicker" }, what));
-          if (n.entfaellt) {
-            p.append(
-              h("p", {}, n.entfaellt.note),
-              n.entfaellt.source ? h("p", {}, h("a", { href: n.entfaellt.source, rel: "noopener" }, "Quelle: Stundentafel")) : null,
-              h("p", {}, "Dafür ist kein Lernpaket geplant."),
-            );
-          } else {
-            p.append(h("p", {}, "Dieses Lernpaket ist noch nicht umgesetzt. Es folgt bis Ende 2026."));
-          }
+          if (n.combination) p.append(h("p", {}, n.combination.note));
+          if (n.offerGroup) p.append(h("p", {}, `Geplante Lernangebote: ${n.sub}.`));
+          p.append(h("p", {}, "Dieses Lernpaket ist noch nicht umgesetzt. Es folgt bis Ende 2026."));
           return;
         }
         if (n.kind === "pkg") {
@@ -1628,20 +1635,24 @@
             h("ul", { class: "tags" }, k.gebiete.map((t) => h("li", {}, t))),
             h("a", { class: "cta", href: `${k.app}/` }, "Paket öffnen →"),
           );
+          if (n.combination) p.append(h("p", { class: "schoolnote" }, n.combination.note));
           return;
         }
         p.append(h("h2", {}, n.label), progressBlock(n));
         if (n.kind === "fach") {
-          const { have, none } = schoolsOf(n);
+          const have = schoolsOf(n);
           const grade = n.children.find((c) => c.grade)?.grade;
           /* two separate statements: where the Fach is taught, and where a Lernpaket for it exists */
           const live = have.filter((e) => e.live);
           const open = have.filter((e) => !e.live);
+          const separate = have.filter((e) => !e.combination);
+          const combined = have.filter((e) => e.combination);
           if (grade && state.lens === "schule")
             p.append(
               h("p", { class: "schoolnote" },
-                have.length ? [h("b", {}, `Klasse ${grade}: `), `${n.label} wird ${joinDe(have.map((e) => e.school.wo))} unterrichtet.`] : [h("b", {}, `Klasse ${grade}: `), `Dieses Fach gibt es in keiner dieser Schularten.`],
-                none.length ? ` Kein Fach ${joinDe(none.map((e) => e.school.wo))}.` : null,
+                h("b", {}, `Klasse ${grade}: `),
+                separate.length ? `${n.label} wird ${joinDe(separate.map((e) => e.school.wo))} unterrichtet.` : null,
+                combined.map((e) => ` ${e.school.wo.charAt(0).toUpperCase() + e.school.wo.slice(1)} führt dieser Pfad zum gemeinsamen Fach ${e.combination.name}.`).join(""),
               ),
               have.length
                 ? h("p", { class: "schoolnote" },
@@ -1656,10 +1667,10 @@
         p.append(
           h("ul", { class: "tags", "aria-label": "Inhalt" },
             visible(n).map((c) => {
-              const state_ = c.entfaellt ? " · kein Fach" : c.planned ? " · noch nicht verfügbar" : "";
+              const state_ = c.planned ? " · noch nicht verfügbar" : "";
               const where = c.kind === "pkg" && !c.planned && c.school && n.kind === "fach" ? `${c.school.name} · ` : "";
               const txt = `${where}${c.label}${c.kind === "pkg" ? state_ : ` · ${c.live}/${c.total}`}`;
-              return h("li", { class: enabled(c) ? "" : c.entfaellt ? "off none" : "off" },
+              return h("li", { class: enabled(c) ? "" : "off" },
                 h("button", { type: "button", onclick: () => go(c.path) }, txt));
             }),
           ),
@@ -1727,8 +1738,10 @@
           const ul = h("ul");
           for (const f of visible(isl)) {
             ul.append(h("li", { class: `fach${enabled(f) ? "" : " off"}`, style: `--h:${f.hue}`, ...currentAttrs(f) }, f.label, h("small", { style: "font-weight:400" }, `${f.live}/${f.total}`)));
-            for (const k of visible(f))
-              ul.append(h("li", { class: k.planned ? "planned" : "" }, k.entfaellt ? [`${k.label} (kein Fach in Klasse ${k.grade})`, h("span", { class: "why" }, k.entfaellt.note, k.entfaellt.source ? [" ", h("a", { href: k.entfaellt.source, rel: "noopener" }, "Quelle: Stundentafel")] : null)] : k.planned ? `${k.label} (noch nicht verfügbar)` : [h("a", { href: `${k.pkg.app}/`, ...currentAttrs(k) }, k.label), k.school ? h("small", { style: "color:var(--muted);font-weight:400" }, ` · ${k.school.name}`) : null]));
+            for (const k of visible(f)) {
+              const label = k.combination ? `${k.label} · ${k.school.name} · Klasse ${k.grade}` : k.label;
+              ul.append(h("li", { class: k.planned ? "planned" : "" }, k.planned ? `${label} (noch nicht verfügbar)` : [h("a", { href: `${k.pkg.app}/`, ...currentAttrs(k) }, label), k.school && !k.combination ? h("small", { style: "color:var(--muted);font-weight:400" }, ` · ${k.school.name}`) : null]));
+            }
           }
           d.append(ul);
           o.append(d);
@@ -1745,6 +1758,9 @@
         $("crumbs").hidden = m !== "map";
         $("outline").hidden = m !== "list";
         document.querySelectorAll("[data-mode]").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.mode === m)));
+        // Navigation in the list may have laid out the SVG while hidden.
+        // Measure again after showing it so switching back cannot crop nodes.
+        if (m === "map") fit($("map"), $("layer"));
       }
 
       /* ---------- search (only available content) ---------- */
@@ -1754,10 +1770,15 @@
         q = q.trim().toLowerCase();
         if (!q) return (res.hidden = true);
         const hits = [];
+        const seenPackages = new Set();
         const walk = (n) => {
           if (n.kind !== "root" && enabled(n)) {
-            const hay = [n.label, n.pkg?.desc, ...(n.pkg?.gebiete ?? [])].filter(Boolean).join(" ").toLowerCase();
-            if (hay.includes(q)) hits.push(n);
+            const aliases = n.combination ? [n.combination.id, ...n.combination.paths.map((id) => D.faecher.find((f) => f.id === id)?.name)] : [];
+            const hay = [n.label, n.pkg?.desc, ...(n.pkg?.gebiete ?? []), ...aliases].filter(Boolean).join(" ").toLowerCase();
+            if (hay.includes(q) && (!n.pkg || !seenPackages.has(n.pkg.id))) {
+              hits.push(n);
+              if (n.pkg) seenPackages.add(n.pkg.id);
+            }
           }
           n.children?.forEach(walk);
         };
@@ -1786,33 +1807,38 @@
         const grades = [5, 6, 7, 8, 9, 10, 11, 12, 13];
         tbl.append(h("thead", {}, h("tr", {}, h("th", {}, h("span", { class: "sr" }, "Fach")), grades.map((g) => h("th", { scope: "col" }, `Kl. ${g}`)))));
         const body = h("tbody");
-        let live = 0, total = 0;
+        const live = new Set(), total = new Set();
         for (const f of D.faecher) {
           const tr = h("tr", {}, h("th", { scope: "row" }, f.name));
           for (const g of grades) {
-            if (!(g >= sch.from && g <= sch.to && g >= f.from)) {
+            if (!(g >= sch.from && g <= sch.to)) {
               tr.append(h("td", {}, h("span", { class: "na", "aria-label": "nicht vorgesehen" }, "·")));
               continue;
             }
-            const p = D.pakete.find((x) => x.fach === f.id && x.grade === g && x.school === sch.id);
-            const gap = p ? null : (D.kein_unterricht ?? []).find((e) => e.fach === f.id && e.grade === g && e.school === sch.id);
-            if (gap) {
-              const label = `${f.name} Klasse ${g}, ${sch.name}: kein Fach`;
-              tr.append(h("td", {}, h("span", { class: "na none", role: "img", "aria-label": label, title: gap.note }, "·")));
+            const slot = curriculumSlot(f.id, g, sch.id);
+            if (!slot) {
+              const gap = (D.kein_unterricht ?? []).find((e) => e.fach === f.id && e.grade === g && e.school === sch.id);
+              const label = `${f.name} Klasse ${g}, ${sch.name}: ${gap ? "kein Fach" : "nicht vorgesehen"}`;
+              tr.append(h("td", {}, gap
+                ? h(gap.source ? "a" : "span", { class: "na none", href: gap.source, rel: gap.source ? "noopener" : null, "aria-label": `${label}. ${gap.note}${gap.source ? " Quelle: Stundentafel" : ""}`, title: `${label}. ${gap.note}${gap.source ? " Quelle: Stundentafel" : ""}` }, "·")
+                : h("span", { class: "na", "aria-label": label, title: label }, "·")));
               continue;
             }
-            total++;
-            if (p) live++;
-            const label = `${f.name} Klasse ${g}, ${sch.name}: ${p ? "verfügbar" : "noch nicht verfügbar"}`;
+            const p = D.pakete.find((x) => x.fach === slot.subject && x.grade === g && x.school === sch.id);
+            const key = `${sch.id}:${g}:${slot.subject}`;
+            total.add(key);
+            if (p) live.add(key);
+            const name = slot.combination?.name ?? f.name;
+            const label = `${name} Klasse ${g}, ${sch.name}${slot.combination ? `, Zugang über ${f.name}` : ""}: ${p ? "verfügbar" : "noch nicht verfügbar"}`;
             tr.append(
               h("td", {}, p
                 ? h("button", { class: "cell", type: "button", style: `--h:${f.hue}`, title: label, "aria-label": label, onclick: () => { go([`k${g}`, f.id, p.id], "schule"); if (state.mode === "map") $("atlas").scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth" }); } }, "●")
-                : h("span", { class: "cell", role: "img", "aria-label": label, title: "noch nicht verfügbar" }, "")),
+                : h("span", { class: "cell", role: "img", "aria-label": label, title: label }, slot.combination ? "↪" : "")),
             );
           }
           body.append(tr);
         }
-        tbl.append(h("caption", { class: "sr" }, `Abdeckung ${sch.name}: ${live} von ${total} Feldern verfügbar`), body);
+        tbl.append(h("caption", { class: "sr" }, `Abdeckung ${sch.name}: ${live.size} von ${total.size} Fachangeboten verfügbar; Kombinationsfächer einmal gezählt`), body);
       }
 
       /* ---------- boot ---------- */
