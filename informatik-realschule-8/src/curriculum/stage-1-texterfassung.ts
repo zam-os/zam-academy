@@ -128,7 +128,15 @@ const fingerTask: ExerciseGenerator = {
         .sort((a, b) => a.d - b.d)
         .slice(0, 2)
         .map((f) => f.name);
-      const home = KEYS.find((k) => k.row === "grund" && k.finger === entry.finger && HOME_KEYS.includes(k.key));
+      const home = KEYS.find((k) => k.row === "grund" && k.finger === entry.finger && HOME_KEYS.includes(k.key))!.key;
+      // The Grundreihe key in the same (slanted) column, e.g. H for N and Ä for Ü.
+      const column = KEY_ROWS.grund[KEY_ROWS[entry.row].indexOf(entry.key)];
+      const columnStep =
+        entry.row === "grund"
+          ? `${entry.key} liegt in der Grundreihe neben der Grundtaste ${home}.`
+          : `${entry.row === "oben" ? "Unter" : "Über"} ${entry.key} liegt in der Grundreihe die Taste ${column}${
+              column === home ? ", die Grundtaste dieses Fingers." : `; diese Spalte tippt der Finger von ${home} aus.`
+            }`;
       return {
         prompt: `Mit welchem Finger tippst du im Zehnfingersystem die Taste <strong>${entry.key}</strong>?`,
         given: [`Taste: ${entry.key} (${entry.row === "oben" ? "obere Reihe" : entry.row === "unten" ? "untere Reihe" : "Grundreihe"})`],
@@ -136,7 +144,7 @@ const fingerTask: ExerciseGenerator = {
         fields: [choiceField(rng, "Finger", answer, others)],
         steps: [
           "Suche die Grundtaste in derselben Tastenspalte.",
-          `Über bzw. unter ${entry.key} liegt in der Grundreihe die Taste ${home?.key ?? "G oder H"}.`,
+          columnStep,
           `<strong>${answer}</strong>`,
         ],
       };
@@ -326,8 +334,8 @@ export const STAGE_TEXTERFASSUNG: Stage = {
       subtitle: "Tastaturbereiche kennen, jede Buchstabentaste mit dem richtigen Finger tippen",
       why: "Wer blind mit zehn Fingern schreibt, schaut auf Vorlage und Bildschirm statt auf die Tasten und schreibt schneller und mit weniger Fehlern.",
       html: `<p>Die Tastatur hat mehrere <strong>Tastaturbereiche</strong>: das Schreibfeld mit den Buchstaben-, Ziffern- und Zeichentasten, die Funktionstasten F1 bis F12, die Steuertasten (Pfeile, Entf, Pos1) und rechts den Ziffernblock.</p>
-<p>Im <strong>Zehnfingersystem</strong> liegt jeder Finger auf einer festen <strong>Grundtaste</strong>. Die <strong>Grundstellung</strong> ist links A S D F, rechts J K L Ö. Die Zeigefinger finden F und J über kleine <strong>Tastmarken</strong>, die Daumen ruhen über der Leertaste. Von der Grundtaste aus erreicht jeder Finger die Tasten schräg darüber und darunter; die Zeigefinger tippen zusätzlich die Spalte zur Mitte hin (links G, T, B, rechts H, Z, N, U, M). Nach jedem Anschlag kehrt der Finger in die Grundstellung zurück.</p>
-<div class="example"><strong>Beispiel:</strong> Das E liegt über dem D. Also tippt es der <strong>linke Mittelfinger</strong>: von D schräg nach oben links, anschlagen, zurück auf D. Das N liegt unter dem J, deshalb tippt es der rechte Zeigefinger.</div>
+<p>Im <strong>Zehnfingersystem</strong> liegt jeder Finger auf einer festen <strong>Grundtaste</strong>. Die <strong>Grundstellung</strong> ist links A S D F, rechts J K L Ö. Die Zeigefinger finden F und J über kleine <strong>Tastmarken</strong>, die Daumen ruhen über der Leertaste. Von der Grundtaste aus erreicht jeder Finger die Tasten schräg darüber und darunter; die Zeigefinger tippen zusätzlich die Spalte zur Mitte hin (links G, T, B, rechts Z, H, N). Nach jedem Anschlag kehrt der Finger in die Grundstellung zurück.</p>
+<div class="example"><strong>Beispiel:</strong> Das E liegt über dem D. Also tippt es der <strong>linke Mittelfinger</strong>: von D schräg nach oben links, anschlagen, zurück auf D. Das N liegt unter dem H, in der Spalte zur Mitte; deshalb tippt es der rechte Zeigefinger von J aus. Das M liegt unter dem J.</div>
 <div class="merke"><strong>Merke:</strong> Grundstellung A S D F – J K L Ö. Jeder Finger tippt seine Grundtaste und die Tasten seiner Spalte; danach geht er zurück in die Grundstellung.</div>`,
       rule: "Grundstellung <strong>A S D F – J K L Ö</strong>, Tastmarken auf <strong>F</strong> und <strong>J</strong>, Daumen auf der Leertaste",
       terms: [

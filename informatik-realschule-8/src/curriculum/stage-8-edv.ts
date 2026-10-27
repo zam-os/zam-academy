@@ -92,7 +92,9 @@ export function sci(value: number): string {
 
 export function duration(seconds: number): string {
   if (seconds < 1) return "unter 1 Sekunde";
+  if (seconds < 60) return `≈ ${fmt(seconds, 0)} ${Math.round(seconds) === 1 ? "Sekunde" : "Sekunden"}`;
   if (seconds < 3600) return `≈ ${fmt(seconds / 60, 1)} Minuten`;
+  if (seconds < 86400) return `≈ ${fmt(seconds / 3600, 1)} Stunden`;
   if (seconds < 86400 * 365) return `≈ ${fmt(seconds / 86400, 1)} Tage`;
   return `≈ ${sci(seconds / (86400 * 365))} Jahre`;
 }

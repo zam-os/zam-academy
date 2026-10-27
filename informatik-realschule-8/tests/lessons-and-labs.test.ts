@@ -8,7 +8,10 @@ import {
   previousLesson,
   STAGES,
 } from "../src/curriculum/index";
+import { KEY_ROWS } from "../src/curriculum/keyboard";
+import { duration } from "../src/curriculum/stage-8-edv";
 import { quizOrder } from "../src/exercises/quiz-order";
+import { createRng, seedFrom } from "../src/exercises/rng";
 import {
   applyAction,
   clampParam,
@@ -174,5 +177,47 @@ describe("All 40 workshops", () => {
         }
       }
     }
+  });
+});
+
+describe("Subject details checked in review", () => {
+  it("places N under H and M under J, and names the Grundreihe key of the same column", () => {
+    const lesson = must(findLessonById("it8-zehnfingersystem")).lesson;
+    expect(KEY_ROWS.grund[KEY_ROWS.unten.indexOf("N")]).toBe("H");
+    expect(KEY_ROWS.grund[KEY_ROWS.unten.indexOf("M")]).toBe("J");
+    expect(lesson.explanationHtml).toContain("Das N liegt unter dem H");
+    expect(lesson.explanationHtml).toContain("rechts Z, H, N)");
+    const generator = must(lesson.exercises.find((g) => g.id === "finger-zuordnen"));
+    const seen = new Set<string>();
+    for (let seed = 0; seed < 300; seed++) {
+      const task = generator.make(createRng(seedFrom(`keys:${seed}`)), 1);
+      const key = must(task.prompt.match(/<strong>(.)<\/strong>/), task.prompt)[1];
+      seen.add(key);
+      const row = KEY_ROWS.oben.includes(key) ? "oben" : KEY_ROWS.unten.includes(key) ? "unten" : "grund";
+      const column = KEY_ROWS.grund[KEY_ROWS[row].indexOf(key)];
+      expect(task.steps[1], key).toContain(row === "grund" ? "neben der Grundtaste" : `die Taste ${column}`);
+    }
+    for (const key of ["N", "B", "Z", "T", "Ü", "Ä", "G", "H"]) expect(seen.has(key), key).toBe(true);
+  });
+
+  it("shows the Kasse result the visible program lines compute, negative included", () => {
+    const lab = must(findLessonById("it8-variablen-sequenz")).lesson.lab;
+    const values = { ...defaultLabValues(lab), preis: 1, anzahl: 1, gutschein: 5, order: 0 };
+    const readouts = computeReadouts(lab, values);
+    expect(readouts.summe).toBe(-4);
+    expect(reachedGoals(lab, values, readouts).map((goal) => goal.id)).not.toContain("gratis");
+    expect(lab.view.render(values, readouts)).toContain("summe = −4 €");
+    const exact = { ...values, preis: 5 };
+    expect(reachedGoals(lab, exact).map((goal) => goal.id)).toContain("gratis");
+  });
+
+  it("gives brute-force times under a minute in seconds", () => {
+    expect(duration(1)).toBe("≈ 1 Sekunde");
+    expect(duration(2.3)).toBe("≈ 2 Sekunden");
+    expect(duration(90)).toBe("≈ 1,5 Minuten");
+    expect(duration(7200)).toBe("≈ 2 Stunden");
+    const lab = must(findLessonById("it8-datensicherheit")).lesson.lab;
+    const pin10 = { ...defaultLabValues(lab), pool: 0, len: 10 };
+    expect(computeReadouts(lab, pin10).time).toBe("≈ 1 Sekunde");
   });
 });

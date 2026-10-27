@@ -179,7 +179,7 @@ function kasse(v: LabValues): { summe: number; first: number } {
   const product = v.preis * v.anzahl;
   if (v.order === 0) {
     const first = product;
-    return { first, summe: Math.max(0, first - v.gutschein) };
+    return { first, summe: first - v.gutschein };
   }
   return { first: -v.gutschein, summe: product };
 }
@@ -249,7 +249,8 @@ const variablenLab: LabDefinition = {
       });
       out += text(54, 230, `preis = ${v.preis} €   anzahl = ${v.anzahl}   gutschein = ${v.gutschein} €`, "lab-text");
       out += rect(30, 250, 460, 60, k.summe === 0 && v.anzahl > 0 ? "lab-fill-ok" : "lab-fill-a", 'rx="12"');
-      out += text(260, 288, `Ausgabe: summe = ${k.summe} €`, "lab-text-big", "middle");
+      out += text(260, 288, `Ausgabe: summe = ${fmt(k.summe, 0)} €`, "lab-text-big", "middle");
+      if (k.summe < 0) out += text(260, 332, "Negativ: Der Gutschein ist mehr wert als der Einkauf.", "lab-text-bad", "middle");
       return `${out}</svg>`;
     },
   },
