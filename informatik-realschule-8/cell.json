@@ -1,7 +1,7 @@
 {
   "$schema": "https://zam.app/schemas/v1/kvt-tile.json",
   "tile_id": "zam-academy:informatik-realschule-8",
-  "version": "2026.10.1",
+  "version": "2026.10.2",
   "title": "Informatik 8 Realschule (ZAM Academy)",
   "description": "IT-Anfangsunterricht nach LehrplanPLUS Bayern (Module 1.1–1.9, alle Wahlpflichtfächergruppen, spätestens Ende Jahrgangsstufe 8): neun Etappen mit 40 Lektionen von Zehnfingersystem und ersten Programmen über Textverarbeitung, Dualsystem, Bildbearbeitung und Tabellenkalkulation bis zu Präsentation, Computeraufbau, Datensicherheit und digitalen Medien. Jede Karte führt zur passenden Lektion zurück.",
   "publisher": "ZAM Academy",
@@ -16,6 +16,60 @@
       "uri": "https://www.lehrplanplus.bayern.de/fachlehrplan/realschule/8/it",
       "checked": "2026-10-27",
       "label": "LehrplanPLUS Realschule Informationstechnologie, Lernbereich 1 Anfangsunterricht"
+    }
+  ],
+  "retired_items": [
+    {
+      "id": "01K4A6T0000000000000000J02",
+      "reason": "Mehrteiliger Sammelabruf zu Zeichen- und Absatzformaten samt Formatvorlagen und Inhaltsverzeichnis; Formatvorlagen gehören nicht zum Anfangsunterricht 1.1–1.9. Keine Karte mit gleichem Gesamtumfang. Kein Lernstandsübertrag; stillgelegt, die Historie bleibt am alten Token."
+    },
+    {
+      "id": "01K4A6T0000000000000000J04",
+      "reason": "Sammelabruf zu fünf Textumbrucharten und Skalieren mit Umschalttaste; die neue Lektion behandelt Umbruch und Eckanfasser in getrennten Karten, kein gleicher Gesamtumfang. Kein Lernstandsübertrag; stillgelegt, die Historie bleibt am alten Token."
+    },
+    {
+      "id": "01K4A6T0000000000000000J05",
+      "reason": "Die Altkarte erklärt KISS als „Keep It Simple and Smart“; diese Auflösung ist nicht gesichert. Die neue Lektion lehrt die Gestaltungsregeln ohne das Akronym. Kein Lernstandsübertrag; stillgelegt, die Historie bleibt am alten Token."
+    },
+    {
+      "id": "01K4A6T0000000000000000J06",
+      "reason": "Mehrteiliger Abruf von fünf Folienregeln (u. a. starre 7x7-Regel, Titel 32–40 pt) und Folienmaster; die neue Zelle fragt Folienmaster und Gestaltungsregeln getrennt und mit anderen Faustregeln. Kein Lernstandsübertrag; stillgelegt, die Historie bleibt am alten Token."
+    },
+    {
+      "id": "01K4A6T0000000000000000J08",
+      "reason": "Sammelabruf zu Tabellenstruktur, drei Datentypen und drei Funktionen; in der neuen Zelle auf Bereich, Datentypen und MITTELWERT aufgeteilt. Kein Lernstandsübertrag; stillgelegt, die Historie bleibt am alten Token."
+    },
+    {
+      "id": "01K4A7D0000000000000000J02",
+      "reason": "Mehrteiliger Abruf zu Zeichen/Daten/Information, Codierung sowie Syntax und Semantik; Syntax/Semantik ist kein Inhalt von 1.4, kein gleicher Gesamtumfang. Kein Lernstandsübertrag; stillgelegt, die Historie bleibt am alten Token."
+    },
+    {
+      "id": "01K4A7D0000000000000000J06",
+      "reason": "Sammelabruf zu Binärpräfixen (KiB/MiB/GiB), ASCII gegen UTF-8 und Bitmuster von A; UTF-8-Bytelängen gehen über den Anfangsunterricht hinaus, kein gleicher Gesamtumfang. Kein Lernstandsübertrag; stillgelegt, die Historie bleibt am alten Token."
+    },
+    {
+      "id": "01K4A7D0000000000000000J08",
+      "reason": "Sammelabruf zu Baumstruktur, relativen Pfaden mit . und .. und Dateiendungen; relative Pfade sind kein Inhalt von 1.8, keine gleiche Karte. Kein Lernstandsübertrag; stillgelegt, die Historie bleibt am alten Token."
+    },
+    {
+      "id": "01K4A8V0000000000000000J02",
+      "reason": "Mehrteiliger Erklärabruf zur objektorientierten Modellierung ohne Musterlösung; die neue Zelle fragt Objekte, Attribute und Punktnotation an Textobjekten, nicht an einem Grafikkreis. Kein Lernstandsübertrag; stillgelegt, die Historie bleibt am alten Token."
+    },
+    {
+      "id": "01K4A8V0000000000000000J03",
+      "reason": "Methoden im objektorientierten Paradigma gehören zu IT 2.6.2 (Aufbauunterricht), nicht zum Anfangsunterricht dieses Pakets. Kein Lernstandsübertrag; stillgelegt, die Historie bleibt am alten Token."
+    },
+    {
+      "id": "01K4A8V0000000000000000J04",
+      "reason": "Klassen, Methodenaufrufe und UML-Klassendiagramm gehören zu IT 2.6.2 (Aufbauunterricht), nicht zum Anfangsunterricht dieses Pakets. Kein Lernstandsübertrag; stillgelegt, die Historie bleibt am alten Token."
+    },
+    {
+      "id": "01K4A8V0000000000000000J06",
+      "reason": "Systematischer Mehrfachvergleich nach vier Kriterien ohne Musterlösung; die neue Tier-2-Karte vergleicht Aufbau und Einsatz, nicht denselben Gesamtumfang. Kein Lernstandsübertrag; stillgelegt, die Historie bleibt am alten Token."
+    },
+    {
+      "id": "01K4A8V0000000000000000J08",
+      "reason": "Kombinierter Abruf zu RGB/CMYK und einer Speicherberechnung 4000 × 3000 ohne Musterlösung; die neue Karte rechnet ein anderes Beispiel, kein gleicher Gesamtumfang. Kein Lernstandsübertrag; stillgelegt, die Historie bleibt am alten Token."
     }
   ],
   "atoms": [
@@ -1007,6 +1061,9 @@
               "text": "Der Schriftgrad",
               "reason": "Die Schriftgröße ist ein Zeichenattribut."
             }
+          ],
+          "replaces": [
+            "01K4A6T0000000000000000J01"
           ]
         },
         {
@@ -1036,6 +1093,9 @@
               "text": "Die Methode des Objekts",
               "reason": "Eine Methode ist eine Fähigkeit des Objekts, keine Sammlung von Werten."
             }
+          ],
+          "replaces": [
+            "01K4A8V0000000000000000J01"
           ]
         },
         {
@@ -1114,6 +1174,9 @@
               "text": "Hinter den Text",
               "reason": "Dann liegt das Bild unter dem Text wie ein Wasserzeichen."
             }
+          ],
+          "replaces": [
+            "01K4A6T0000000000000000J03"
           ]
         },
         {
@@ -1186,6 +1249,9 @@
               "text": "Daten sind immer Zahlen, Information Text",
               "reason": "Auch Text sind Daten; erst die Deutung macht daraus Information."
             }
+          ],
+          "replaces": [
+            "01K4A7D0000000000000000J01"
           ]
         },
         {
@@ -1258,6 +1324,9 @@
               "text": "3",
               "reason": "3 ist nur die Anzahl der Einsen; jede 1 zählt ihren Stellenwert."
             }
+          ],
+          "replaces": [
+            "01K4A7D0000000000000000J03"
           ]
         },
         {
@@ -1282,7 +1351,10 @@
           "question": "Erkläre das Prinzip eines Stellenwertsystems am Vergleich von Dezimalsystem (Basis 10: 10^0, 10^1, 10^2, ...) und Dualsystem / Binärsystem (Basis 2: 2^0=1, 2^1=2, 2^2=4, 2^3=8, 2^4=16, 2^5=32, 2^6=64, 2^7=128), rechne die Dualzahl 110101_2 in das Dezimalsystem um und wandle die Dezimalzahl 43_10 über das Restwertverfahren (wiederholte Division durch 2 mit Rest) in eine Binärzahl um.",
           "concept": "Stellenwert Dualsystem = Potenzen zur Basis 2; 110101_2 = 1*32 + 1*16 + 0*8 + 1*4 + 0*2 + 1*1 = 32 + 16 + 4 + 1 = 53_10; Restwertverfahren für 43: 43:2=21 R1, 21:2=10 R1, 10:2=5 R0, 5:2=2 R1, 2:2=1 R0, 1:2=0 R1 -> von unten nach oben gelesen: 101011_2.",
           "materiality": "material",
-          "sample_solution": "1. Stellenwertsysteme im Vergleich: - Dezimalsystem (Basis 10): Ziffern 0–9. Stellenwerte sind Zehnerpotenzen: ... 10^3 (1000), 10^2 (100), 10^1 (10), 10^0 (1). - Dualsystem / Binärsystem (Basis 2): Verwendet ausschließlich zwei Ziffern: 0 und 1 (technisch: Strom aus / an). Stellenwerte sind Zweierpotenzen: ... 2^7 (128), 2^6 (64), 2^5 (32), 2^4 (16), 2^3 (8), 2^2 (4), 2^1 (2), 2^0 (1). 2. Umrechnung Dualzahl in Dezimalzahl: Dualzahl: 1 1 0 1 0 1_2 - Berechnung über Stellenwerte: 1 · 2^5 (32) + 1 · 2^4 (16) + 0 · 2^3 (0) + 1 · 2^2 (4) + 0 · 2^1 (0) + 1 · 2^0 (1) = 32 + 16 + 4 + 1 = 53_10. 3. Umrechnung Dezimalzahl in Dualzahl (Restwert-Divisionsverfahren): Dezimalzahl: 43_10 - 43 : 2 = 21  Rest 1 (niederwertigstes Bit LSB) - 21 : 2 = 10  Rest 1 - 10 : 2 = 5   Rest 0 -  5 : 2 = 2   Rest 1 -  2 : 2 = 1   Rest 0 -  1 : 2 = 0   Rest 1 (höchstwertigstes Bit MSB) - Ergebnis (Reste von unten nach oben gelesen): 43_10 = 101011_2 (Probe: 32 + 8 + 2 + 1 = 43)."
+          "sample_solution": "1. Stellenwertsysteme im Vergleich: - Dezimalsystem (Basis 10): Ziffern 0–9. Stellenwerte sind Zehnerpotenzen: ... 10^3 (1000), 10^2 (100), 10^1 (10), 10^0 (1). - Dualsystem / Binärsystem (Basis 2): Verwendet ausschließlich zwei Ziffern: 0 und 1 (technisch: Strom aus / an). Stellenwerte sind Zweierpotenzen: ... 2^7 (128), 2^6 (64), 2^5 (32), 2^4 (16), 2^3 (8), 2^2 (4), 2^1 (2), 2^0 (1). 2. Umrechnung Dualzahl in Dezimalzahl: Dualzahl: 1 1 0 1 0 1_2 - Berechnung über Stellenwerte: 1 · 2^5 (32) + 1 · 2^4 (16) + 0 · 2^3 (0) + 1 · 2^2 (4) + 0 · 2^1 (0) + 1 · 2^0 (1) = 32 + 16 + 4 + 1 = 53_10. 3. Umrechnung Dezimalzahl in Dualzahl (Restwert-Divisionsverfahren): Dezimalzahl: 43_10 - 43 : 2 = 21  Rest 1 (niederwertigstes Bit LSB) - 21 : 2 = 10  Rest 1 - 10 : 2 = 5   Rest 0 -  5 : 2 = 2   Rest 1 -  2 : 2 = 1   Rest 0 -  1 : 2 = 0   Rest 1 (höchstwertigstes Bit MSB) - Ergebnis (Reste von unten nach oben gelesen): 43_10 = 101011_2 (Probe: 32 + 8 + 2 + 1 = 43).",
+          "replaces": [
+            "01K4A7D0000000000000000J04"
+          ]
         }
       ]
     },
@@ -1353,6 +1425,9 @@
               "text": "8",
               "reason": "8 ist die Zahl der Bits in einem Byte, nicht die der Möglichkeiten."
             }
+          ],
+          "replaces": [
+            "01K4A7D0000000000000000J05"
           ]
         },
         {
@@ -1682,6 +1757,9 @@
               "text": "Sie wird beim Zoomen immer verpixelt.",
               "reason": "Verpixeln ist die Schwäche der Pixelgrafik."
             }
+          ],
+          "replaces": [
+            "01K4A8V0000000000000000J05"
           ]
         },
         {
@@ -1765,6 +1843,9 @@
               "text": "Grau",
               "reason": "Grau entsteht bei gleichen mittleren Werten, z. B. (128, 128, 128)."
             }
+          ],
+          "replaces": [
+            "01K4A8V0000000000000000J07"
           ]
         },
         {
@@ -2071,6 +2152,9 @@
               "text": "Mit dem Dollarzeichen $",
               "reason": "Das Dollarzeichen fixiert eine Adresse beim Kopieren."
             }
+          ],
+          "replaces": [
+            "01K4A6T0000000000000000J07"
           ]
         },
         {
@@ -2790,6 +2874,9 @@
               "text": "Mit dem Dateinamen",
               "reason": "Der Dateiname steht am Ende des Pfads."
             }
+          ],
+          "replaces": [
+            "01K4A7D0000000000000000J07"
           ]
         },
         {

@@ -36,7 +36,7 @@ const items: CellItem[] = atoms.flatMap((atom) => atom.practice_items as unknown
 describe("ZAM cell zam-academy:informatik-realschule-8", () => {
   it("has 40 atoms (one per lesson) and 87 cards with frozen ULIDs from the public contract", () => {
     expect(cell.tile_id).toBe(ZAM_CELL_ID);
-    expect(cell.version).toBe("2026.10.1");
+    expect(cell.version).toBe("2026.10.2");
     expect(atoms).toHaveLength(40);
     expect(items).toHaveLength(87);
     const ids = [...atoms.map((a) => a.id), ...items.map((i) => i.id)];
@@ -102,11 +102,22 @@ describe("ZAM cell zam-academy:informatik-realschule-8", () => {
     }
   });
 
-  it("ships the mapping only as a proposal: no replaces, no retired items, every old card mapped once", () => {
-    expect(mapping.status).toBe("proposal-only");
-    expect(mapping.approved).toBeNull();
-    expect(items.every((item) => item.replaces === undefined)).toBe(true);
-    expect("retired_items" in cell).toBe(false);
+  it("ships exactly the approved mapping: A/B rows replaced by one successor, C rows retired", () => {
+    expect(mapping.status).toBe("approved");
+    expect(mapping.approved).toBe("2026-10-27");
+    expect(mapping.source).toContain("Freigabe erteilt");
+    const replaced = items.filter((item) => item.replaces !== undefined);
+    expect(replaced).toHaveLength(11);
+    for (const item of replaced) {
+      expect(item.replaces).toHaveLength(1);
+      const row = must(mapping.rows.find((r) => r.de_by_id === must(item.replaces)[0]));
+      expect(row.category).not.toBe("C");
+      expect(row.academy_slug).toBe(item.slug);
+      expect(row.action).toBe("replace");
+    }
+    const retired = must(cell.retired_items).map((entry) => entry.id).sort();
+    expect(retired).toEqual(mapping.rows.filter((r) => r.category === "C").map((r) => r.de_by_id).sort());
+    for (const row of mapping.rows.filter((r) => r.category === "C")) expect(row.action).toBe("retire");
     type LegacyTile = { atoms: Array<{ practice_items: CellItem[] }> };
     const originals = ([legacy6, legacy7, legacy8] as unknown as LegacyTile[]).flatMap((tile) =>
       tile.atoms.flatMap((atom) => atom.practice_items),

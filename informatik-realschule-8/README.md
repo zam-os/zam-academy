@@ -47,12 +47,14 @@ Der Aufbauunterricht (2.x) liegt in eigenen Paketen:
 
 ## ZAM-Zelle und Bestandskarten
 
-`cell.json` (`zam-academy:informatik-realschule-8`, Version 2026.10.1) hat ein
+`cell.json` (`zam-academy:informatik-realschule-8`, Version 2026.10.2) hat ein
 Atom je Lektion und zitiert jede Lektion als `#lesson=<id>`. ZAM enthält drei
 ältere Zellen zum Thema (`de-by:realschule-6/7/8-informatik-…`, 24 Karten).
-[`replaces-de-by.json`](replaces-de-by.json) schlägt für jede alte Karte eine
-Kategorie vor (10 A, 1 B, 13 C) und ist **nicht freigegeben**; die Zelle
-enthält deshalb weder `replaces` noch `retired_items`. Begründung in
+[`replaces-de-by.json`](replaces-de-by.json) ordnet jede alte Karte einer
+Kategorie zu (10 A, 1 B, 13 C); Thomas hat die Zuordnung am 27.10.2026
+freigegeben. Die elf A/B-Nachfolger übernehmen per `replaces` den Lernverlauf,
+die 13 C-Karten gehen per `retired_items` aus den aktiven Wiederholungen, ihre
+Historie bleibt erhalten. Begründung in
 [docs/informatik-8-bestandsabgleich.md](../docs/informatik-8-bestandsabgleich.md).
 
 ## Entwickeln

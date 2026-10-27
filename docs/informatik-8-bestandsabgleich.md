@@ -1,8 +1,8 @@
 # Informatik 8 · Lehrplanabgleich und Bestandsabgleich
 
 Stand: 27. Oktober 2026. Paket: [`informatik-realschule-8/`](../informatik-realschule-8/),
-40 Lektionen, 87 Karten, Zelle `zam-academy:informatik-realschule-8` Version 2026.10.1.
-Noch nicht veröffentlicht und nicht in ZAM synchronisiert.
+40 Lektionen, 87 Karten, Zelle `zam-academy:informatik-realschule-8` Version 2026.10.2
+mit der freigegebenen Kartenzuordnung.
 
 ## Welcher Lehrplan gilt für „Informatik 8“?
 
@@ -59,15 +59,19 @@ und „Lernbereichen“ zu, die es im modularen IT-Lehrplan so nicht gibt:
 Byte-genaue Kopien mit SHA-256 liegen in `informatik-realschule-8/tests/fixtures/`
 und in `replaces-de-by.json` (`source_commit` b6fdcfecb6160b02e14e8914455c9a0414f8c81a).
 
-### Vorschlag zur Freigabe: 10 A · 1 B · 13 C
+### Freigegebene Zuordnung: 10 A · 1 B · 13 C
 
-**Nicht freigegeben.** Der Auftrag „Baue das Academy-Paket für Informatik
-Realschule 8“ ist keine Freigabe einer Lernstandsübertragung. Die Zelle 2026.10.1
-enthält deshalb weder `replaces` noch `retired_items`; `replaces-de-by.json` hat
-`"status": "proposal-only"` und `"approved": null`. Nach Thomas' Freigabe
-bekommen die elf A/B-Nachfolger je ein `replaces`, die Version steigt auf
-2026.10.2, und er entscheidet mit, ob die 13 C-Karten per `retired_items` aus
-den aktiven Wiederholungen gehen.
+**Freigegeben von Thomas am 27.10.2026** in der Claude-Code-Session zu
+zam-os/zam-academy#62: „Freigabe erteilt - und danach weiter mit ZAM-Integration“,
+auf Rückfrage ausdrücklich bestätigt mit der Auswahl „Mapping + 13 C stilllegen“.
+Der ursprüngliche Bauauftrag war noch keine Freigabe; der erste Stand des PRs
+enthielt deshalb weder `replaces` noch `retired_items`.
+
+`replaces-de-by.json` hat jetzt `"status": "approved"` und `"approved": "2026-10-27"`.
+Die Zelle 2026.10.2 deklariert genau elf `replaces` (die A/B-Nachfolger) und
+dreizehn `retired_items` (die C-Karten). Die Zelle wird erstmals mit dieser
+Version veröffentlicht, es gibt also keine Zwischenzeit, in der jemand Karten auf
+einer alten und ihrer neuen ID sammeln kann.
 
 | Altkarte | Alte Frage | Kat. | Nachfolger | Begründung |
 | --- | --- | --- | --- | --- |
@@ -96,10 +100,9 @@ den aktiven Wiederholungen gehen.
 | `J07` RS 8 | Welche Farbe entsteht bei der additiven Farbmischung (RGB-Modell) durch die maximale Üb… | **A** | `it8-bildgroesse-formate-rgb-weiss` | Gleicher Einzelabruf: RGB (255, 255, 255) ergibt Weiß. |
 | `J08` RS 8 | Unterscheide das additive Farbmodell (RGB: Bildschirme, Lichtfarben) vom subtraktiven F… | **C** | – | Kombinierter Abruf zu RGB/CMYK und einer Speicherberechnung 4000 × 3000 ohne Musterlösung; die neue Karte rechnet ein anderes Beispiel, kein gleicher Gesamtumfang. |
 
-Die Lücke zwischen erster Veröffentlichung und freigegebener Version sollte kurz
-bleiben: Wer in der Zwischenzeit Karten auf einer alten ID und ihrem Nachfolger
-hält, lässt zam-core die Installation der späteren Version verweigern (geprüft,
-siehe unten).
+Wer dennoch Karten auf einer alten ID und ihrem Nachfolger hält (etwa aus einer
+lokalen Installation des ersten PR-Stands), bei dem verweigert zam-core die
+automatische Zusammenführung (geprüft, siehe unten).
 
 ## Nachweise
 
@@ -114,12 +117,13 @@ Alle Befehle am 27.10.2026 im Worktree auf Basis von `main` (`9db4f95`):
   → 38 bestanden; `node scripts/build-catalog.mjs <temp>` schreibt den Katalog mit 32 Zellen.
 - Mit zam-core 0.54.0 (in CI gepinnt): `node scripts/validate-cells.mjs` installiert
   alle 32 Zellen, die kuratierten Ablenker der neuen Zelle bestehen
-  `checkCandidate`/`checkShownSet`. `node informatik-realschule-8/scripts/validate-migration.mjs`:
-  24 Altkarten mit 48 Bewertungen bleiben unverändert und aktiv, 87 neue Karten
-  starten ungelernt, Installation und Aufnahme sind wiederholbar; im Probelauf des
-  Vorschlags wandern 11 Verläufe zu ihren Nachfolgern, 13 Altkarten gehen mit
-  erhaltenen Bewertungen in den Ruhestand, und Karten auf alter und neuer ID
-  zugleich führen zur Verweigerung der automatischen Zusammenführung.
+  `checkCandidate`/`checkShownSet`. `node informatik-realschule-8/scripts/validate-migration.mjs` (Stand 2026.10.2):
+  Über drei Altzellen mit 24 bewerteten Karten installiert, wandern 11 Verläufe
+  mit unverändertem FSRS-Zustand und allen Bewertungen zu ihren Nachfolgern,
+  alle 24 alten IDs verlassen die aktiven Wiederholungen, die 48 Bewertungen
+  bleiben erhalten; die Aufnahme legt 76 neue Karten an, Installation und Aufnahme
+  sind wiederholbar; Karten auf alter und neuer ID zugleich führen zur Verweigerung
+  der automatischen Zusammenführung.
 - Browser: Das gebaute `dist/index.html` wurde mit headless Chrome über `file://`
   für alle 40 Lektionen auf beiden Niveaus gerendert (80 DOM-Abzüge: Titel,
   Erklärung mit Beispiel und Merke, Schnellcheck, Werkstatt-SVG mit Aufträgen,

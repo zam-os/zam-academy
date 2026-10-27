@@ -113,5 +113,5 @@ jobs:
         run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node englisch-realschule-10/scripts/validate-cell.mjs
       - name: Move the eight approved Chemie 8 histories and retire eight old cards in temporary libraries
         run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node chemie-realschule-8/scripts/validate-migration.mjs
-      - name: Preserve Informatik 6–8 histories when adding Informatik 8 and rehearse the proposed mapping in temporary libraries
+      - name: Move approved Informatik 6–8 histories to Informatik 8 and retire the C cards in temporary libraries
         run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node informatik-realschule-8/scripts/validate-migration.mjs
