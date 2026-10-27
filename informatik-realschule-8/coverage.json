@@ -1,0 +1,380 @@
+{
+  "schema": 1,
+  "checked": "2026-10-27",
+  "curriculum": "https://www.lehrplanplus.bayern.de/fachlehrplan/realschule/8/it",
+  "profile": "https://www.lehrplanplus.bayern.de/fachprofil/realschule/it",
+  "school_type": "realschule",
+  "grade": 8,
+  "tracks": "alle",
+  "subject": "it",
+  "scope_note": "Informationstechnologie ist an der Realschule modular und jahrgangsübergreifend (5–10). Der Anfangsunterricht (Lernbereich 1, Module 1.1–1.9, je ca. 14 Std.) ist für alle Wahlpflichtfächergruppen verbindlich, beginnt nach Schulplanung in Jgst. 5, 6 oder 7 und ist laut Fachprofil spätestens mit Ende der Jahrgangsstufe 8 abgeschlossen (Kompetenzniveau I). Dieses Paket deckt genau diesen Anfangsunterricht ab; Schulen verteilen die Module selbst auf die Jahrgangsstufen. Der Aufbauunterricht (2.x) gehört zu anderen Paketen (algorithmen, datennetze, sql, informatik-realschule-10).",
+  "core_lessons": 40,
+  "optional_lessons": [],
+  "outside_app": [
+    "Blindschreiben am echten Gerät und die Abschrift mit mindestens 80 Anschlägen pro Minute werden im Unterricht geübt und gemessen; die App rechnet und erklärt nur.",
+    "Eigene Programme in einer bildungsorientierten Entwicklungsumgebung, eigene Dokumente, Bilder, Tabellen und Präsentationen entstehen in den echten Programmen; die Werkstätten bereiten das vor.",
+    "Recherche zu einem eigenen Thema, Präsentation vor der Gruppe und Teamarbeit werden im Unterricht durchgeführt, nicht digital nachgewiesen.",
+    "Rechtliche Hinweise (Urheberrecht, Recht am eigenen Bild, DSGVO, Lizenzen) sind vereinfachte Schulmodelle, keine Rechtsberatung. Stand 27.10.2026.",
+    "Die Passwortstärke-Werkstatt rechnet mit einem angenommenen Angreifer von 10^10 Versuchen pro Sekunde; reale Angriffe nutzen zusätzlich Wörterbücher und Datenlecks."
+  ],
+  "rows": [
+    {
+      "lb": 1,
+      "module": "1.1",
+      "position": 1,
+      "competence": "erfassen einfache Texte griffsicher mit dem Zehnfingersystem.",
+      "lessons": [
+        "it8-zehnfingersystem"
+      ],
+      "evidence": "it8-zehnfingersystem: Grundstellung, Tastaturbereiche und Griffwege; Werkstatt ordnet Tasten aller drei Reihen dem Finger zu, Aufgaben fragen Finger (L1) und Anschläge je Hand in Wörtern (L2). Das blinde Schreiben selbst wird im Unterricht an der Tastatur geübt."
+    },
+    {
+      "lb": 1,
+      "module": "1.1",
+      "position": 2,
+      "competence": "erkennen, analysieren und verbessern Fehler bei der Texteingabe und setzen gezielt Möglichkeiten zu deren Vermeidung ein.",
+      "lessons": [
+        "it8-tippfehler"
+      ],
+      "evidence": "it8-tippfehler: Fehlerarten und Ursachen, Rechtschreibprüfung und ihre Grenze; Fehleranalyse-Werkstatt mit sechs Fällen, Fehlerquote berechnen (L1) und zulässige Fehler bestimmen (L2), Vermeidungsstrategien."
+    },
+    {
+      "lb": 1,
+      "module": "1.1",
+      "position": 3,
+      "competence": "wenden die Grundfunktionen eines Textverarbeitungsprogramms an und führen einfache Formatierungen an Fließtexten durch.",
+      "lessons": [
+        "it8-text-grundfunktionen"
+      ],
+      "evidence": "it8-text-grundfunktionen: Öffnen, Speichern, Speichern unter, Drucken, Druckvorschau; Werkstatt formatiert eine Überschrift (Schriftart, Schriftgrad, Schnitt, Farbe), Aufgaben wählen Grundfunktion und Format in Alltagsfällen."
+    },
+    {
+      "lb": 1,
+      "module": "1.1",
+      "position": 4,
+      "competence": "beachten bei der Arbeit am Computer wichtige ergonomische Aspekte, um ihre Leistungsfähigkeit zu erhalten und gesundheitlichen Schäden vorzubeugen.",
+      "lessons": [
+        "it8-ergonomie"
+      ],
+      "evidence": "it8-ergonomie: Haltung, Sehabstand, Bildschirmhöhe, Licht, Pausen und Lockerungsübungen; Arbeitsplatz-Werkstatt mit Ziehpunkt, Diagnoseaufgaben zu Beschwerden."
+    },
+    {
+      "lb": 1,
+      "module": "1.2",
+      "position": 1,
+      "competence": "analysieren, interpretieren und formulieren Handlungsvorschriften zur Lösung von beschreibbaren Abläufen.",
+      "lessons": [
+        "it8-handlungsvorschriften",
+        "it8-wiederholung"
+      ],
+      "evidence": "it8-handlungsvorschriften: eindeutig, ausführbar, endlich; Begriffe Software, Programmiersprache, Entwicklungsumgebung; Rasenroboter mit sechs Anweisungen und drei Zielen, Programme verfolgen (L1/L2). it8-wiederholung: Abläufe mit Wiederholung formulieren und Endlosschleifen erkennen."
+    },
+    {
+      "lb": 1,
+      "module": "1.2",
+      "position": 2,
+      "competence": "analysieren Eingabe- und Ausgabeereignisse einfacher Programme.",
+      "lessons": [
+        "it8-eingabe-ausgabe"
+      ],
+      "evidence": "it8-eingabe-ausgabe: Benutzereingaben, Sensorwerte, optische und akustische Ausgaben; Ereignis-Werkstatt mit sechs Fällen, Sensorprogramm auswerten mit einer (L1) und zwei Bedingungen (L2)."
+    },
+    {
+      "lb": 1,
+      "module": "1.2",
+      "position": 3,
+      "competence": "erstellen einfache Programme unter Verwendung von algorithmischen Grundbausteinen, Operatoren und Variablen.",
+      "lessons": [
+        "it8-variablen-sequenz",
+        "it8-auswahl",
+        "it8-wiederholung"
+      ],
+      "evidence": "it8-variablen-sequenz (Bezeichner, Wertzuweisung, Rechenoperatoren, Sequenz; Kassenprogramm), it8-auswahl (Vergleichsoperatoren, ein- und zweiseitige Auswahl; Lüftersteuerung), it8-wiederholung (feste Anzahl und Anfangsbedingung; Schleifenroboter). Programme werden verfolgt und ausgewertet; eigene Programme in einer Entwicklungsumgebung schreiben die Lernenden im Unterricht."
+    },
+    {
+      "lb": 1,
+      "module": "1.3",
+      "position": 1,
+      "competence": "erfassen Texte nach Vorlage mit einer Geschwindigkeit von mindestens 80 Anschlägen/Minute am Ende des Anfangsunterrichts (Kompetenzniveau I).",
+      "lessons": [
+        "it8-schreibtempo"
+      ],
+      "evidence": "it8-schreibtempo: Anschläge pro Minute, Ziel 80, Ziffern, Sonderzeichen (AltGr), Tastenkombinationen; Tempo-Werkstatt, Tempo und Schreibzeit berechnen. Die Abschrift mit 80 Anschlägen/Minute wird im Unterricht geschrieben und gemessen."
+    },
+    {
+      "lb": 1,
+      "module": "1.3",
+      "position": 2,
+      "competence": "wenden grundlegende Regeln und Normen beim Bearbeiten und Gestalten von Dokumenten an.",
+      "lessons": [
+        "it8-din-5008",
+        "it8-textobjekte"
+      ],
+      "evidence": "it8-din-5008: Datum, Uhrzeit, Telefonnummer, Zahlen, Prozent, Abkürzungen nach DIN 5008; Normprüfung an sechs Schreibweisen, zwei Aufgabengeneratoren. it8-textobjekte: Formatierung über die passenden Objektattribute."
+    },
+    {
+      "lb": 1,
+      "module": "1.3",
+      "position": 3,
+      "competence": "gestalten Textdokumente ansprechend, indem sie die enthaltenen Objekte bearbeiten und weitere einfügen.",
+      "lessons": [
+        "it8-textobjekte",
+        "it8-layout-objekte"
+      ],
+      "evidence": "it8-textobjekte: Objekte Zeichen, Absatz, Abschnitt, Dokument, Attribute, Zustand, Punktnotation; it8-layout-objekte: Grafik, Tabelle, Kopf- und Fußzeile, Textumbruch, proportionales Skalieren und Wirkung des Layouts; Layout-Werkstatt."
+    },
+    {
+      "lb": 1,
+      "module": "1.4",
+      "position": 1,
+      "competence": "nutzen ein Kommunikationsmodell, um grundlegende Vorgänge und Rahmenbedingungen des Informationsaustausches zu analysieren.",
+      "lessons": [
+        "it8-kommunikationsmodell"
+      ],
+      "evidence": "it8-kommunikationsmodell: Sender, Kanal, Empfänger, Codieren und Decodieren, Störung, Daten und Information; Übertragungs-Werkstatt mit drei Zielen, Morse-Decodierung (L1 Buchstabe, L2 Wort)."
+    },
+    {
+      "lb": 1,
+      "module": "1.4",
+      "position": 2,
+      "competence": "wenden einfache Codierungsvorschriften an, um Kommunikationsvorgänge (z. B. zwischen Mensch und Maschine) nachzuvollziehen.",
+      "lessons": [
+        "it8-dualsystem",
+        "it8-codierung"
+      ],
+      "evidence": "it8-dualsystem: Dezimal- und Dualsystem, Bit, Byte, Umrechnen in beide Richtungen; Bitschalter-Werkstatt. it8-codierung: ASCII- und Morsecode, Zeichen als Bitmuster (Mensch-Maschine), Datenmengen in Bit, Byte und kB."
+    },
+    {
+      "lb": 1,
+      "module": "1.4",
+      "position": 3,
+      "competence": "unterscheiden analoge und digitale Informationsdarstellung und erklären den Vorgang der Digitalisierung anhand konkreter Beispiele.",
+      "lessons": [
+        "it8-digitalisierung"
+      ],
+      "evidence": "it8-digitalisierung: analog und digital, Abtasten und Runden auf 2^n Stufen; Werkstatt digitalisiert eine Schwingung, Stufen und Datenmengen von Sprach- und CD-Aufnahmen berechnen."
+    },
+    {
+      "lb": 1,
+      "module": "1.4",
+      "position": 4,
+      "competence": "nutzen digitale Kommunikationsmittel, beugen dabei Gefahren vor und bewerten Formen der Diskreditierung und Ausgrenzung.",
+      "lessons": [
+        "it8-kommunikation-sicher"
+      ],
+      "evidence": "it8-kommunikation-sicher: E-Mail, soziale Netzwerke, Lernplattformen; Schadsoftware, Phishing, Belästigung, Diskreditierung, Ausgrenzung; Fallwerkstatt mit sechs Situationen, Reaktionen und faire Kommunikation."
+    },
+    {
+      "lb": 1,
+      "module": "1.4",
+      "position": 5,
+      "competence": "gehen sensibel mit ihren persönlichen Daten um und beachten rechtliche Aspekte beim Informationsaustausch in Netzwerken.",
+      "lessons": [
+        "it8-persoenliche-daten"
+      ],
+      "evidence": "it8-persoenliche-daten: personenbezogene Daten, DSGVO, Einwilligung, Recht am eigenen Bild, Privatsphäre; Fallwerkstatt „Darf ich das posten?“. Keine individuelle Rechtsberatung."
+    },
+    {
+      "lb": 1,
+      "module": "1.5",
+      "position": 1,
+      "competence": "unterscheiden Pixel- und Vektorgrafiken aufgrund ihres Aufbaus und ihrer Merkmale, um sie anforderungsgerecht einzusetzen.",
+      "lessons": [
+        "it8-pixel-vektor"
+      ],
+      "evidence": "it8-pixel-vektor: Aufbau und Merkmale von Pixel- und Vektorgrafiken, Anwendungsgebiete; Zoom-Werkstatt, Grafikart wählen, Pixelzahlen berechnen."
+    },
+    {
+      "lb": 1,
+      "module": "1.5",
+      "position": 2,
+      "competence": "erstellen und speichern digitale Bilder unter Berücksichtigung wichtiger Einheiten und Begriffe der Bildbearbeitung.",
+      "lessons": [
+        "it8-bildgroesse-formate"
+      ],
+      "evidence": "it8-bildgroesse-formate: Auflösung, Farbtiefe, RGB/CMYK, Dateigröße, JPEG, PNG, GIF, SVG; Bildrechner-Werkstatt mit Ziehpunkt, Dateigrößen berechnen. Eigene Bilder erstellen und speichern die Lernenden im Bildprogramm."
+    },
+    {
+      "lb": 1,
+      "module": "1.5",
+      "position": 3,
+      "competence": "nutzen typische Methoden der Bildbearbeitung, um Pixel- und Vektorgrafiken zu erzeugen und zu verändern.",
+      "lessons": [
+        "it8-bildbearbeitung"
+      ],
+      "evidence": "it8-bildbearbeitung: zuschneiden, drehen, freistellen, färben (Pixel) sowie färben, gruppieren, skalieren, rendern (Vektor); Vektorhaus-Werkstatt, Zuschnitt berechnen. Die Arbeit im echten Bildprogramm folgt im Unterricht."
+    },
+    {
+      "lb": 1,
+      "module": "1.5",
+      "position": 4,
+      "competence": "erkennen und bewerten Manipulationen an Pixelgrafiken und Vektorgrafiken.",
+      "lessons": [
+        "it8-manipulation"
+      ],
+      "evidence": "it8-manipulation: Retusche, Filter, Fotomontage, manipulierte Diagrammachsen; Säulendiagramm-Werkstatt mit Ziehpunkt, sichtbares und echtes Verhältnis berechnen, Manipulationen bewerten."
+    },
+    {
+      "lb": 1,
+      "module": "1.6",
+      "position": 1,
+      "competence": "erstellen und gestalten Tabellen, um numerische Daten übersichtlich darzustellen.",
+      "lessons": [
+        "it8-tabellen-datentypen"
+      ],
+      "evidence": "it8-tabellen-datentypen: Tabellenblatt, Zelladresse, Bereich, Gestaltung (Kopfzeile, Formate); Zelladressen und Bereichsgrößen bestimmen, Tabellengestaltung beurteilen."
+    },
+    {
+      "lb": 1,
+      "module": "1.6",
+      "position": 2,
+      "competence": "nutzen geeignete Modelle, um Lösungswege für einfache Aufgabenstellungen zu entwickeln und diese in einem Tabellenkalkulationsprogramm umzusetzen.",
+      "lessons": [
+        "it8-modell-mwst"
+      ],
+      "evidence": "it8-modell-mwst: Datenflussdiagramm und Struktogramm für die Mehrwertsteuer, Umsetzung mit absolutem Bezug; Datenfluss-Werkstatt, Brutto (L1) und Netto aus Brutto (L2)."
+    },
+    {
+      "lb": 1,
+      "module": "1.6",
+      "position": 3,
+      "competence": "wählen bei der Umsetzung von Modellen geeignete Datentypen und erstellen Formeln, die sie mit einfachen Funktionen erweitern.",
+      "lessons": [
+        "it8-tabellen-datentypen",
+        "it8-formeln-bezuege",
+        "it8-funktionen"
+      ],
+      "evidence": "it8-tabellen-datentypen (Text, Zahl, Datum, Formel), it8-formeln-bezuege (Formeln, relative und absolute Adressierung; Kopier-Werkstatt), it8-funktionen (SUMME, MIN, MAX, MITTELWERT; Ergebnisse berechnen und Funktionen schreiben)."
+    },
+    {
+      "lb": 1,
+      "module": "1.6",
+      "position": 4,
+      "competence": "gestalten und interpretieren Diagramme und bewerten kritisch Aussagekraft und Wirkung verschiedener Diagrammdarstellungen.",
+      "lessons": [
+        "it8-diagramme"
+      ],
+      "evidence": "it8-diagramme: Kreis-, Säulen-, Liniendiagramm passend wählen, Kreiswinkel berechnen, Aussagekraft und Wirkung (Mehrfachnennung, 3D, Linie zwischen Kategorien) bewerten."
+    },
+    {
+      "lb": 1,
+      "module": "1.7",
+      "position": 1,
+      "competence": "sammeln Informationsmaterial, setzen sich kritisch mit den Inhalten auseinander und bewerten deren Informations- und Wahrheitsgehalt.",
+      "lessons": [
+        "it8-recherche"
+      ],
+      "evidence": "it8-recherche: Suchoperatoren, Textsuche, Beurteilungskriterien, Stoffsammlung mit Quellenangaben; Suchanfrage-Werkstatt mit Trefferliste. Eine eigene Recherche zu einem altersgemäßen Thema bleibt Unterrichtsarbeit."
+    },
+    {
+      "lb": 1,
+      "module": "1.7",
+      "position": 2,
+      "competence": "berücksichtigen bei der Nutzung von Informationsquellen für eigene Präsentationen Regeln des Urheber- und Lizenzrechts.",
+      "lessons": [
+        "it8-urheberrecht-lizenzen"
+      ],
+      "evidence": "it8-urheberrecht-lizenzen: Urheberrecht, Zitat, Creative Commons (BY, NC, ND, SA, CC0), TULLU; CC-Werkstatt prüft geplante Nutzungen."
+    },
+    {
+      "lb": 1,
+      "module": "1.7",
+      "position": 3,
+      "competence": "planen ihre Präsentation ggf. im Team systematisch und setzen bei der Erstellung Gestaltungs- und Strukturierungsmöglichkeiten ein.",
+      "lessons": [
+        "it8-praesentation-gestalten"
+      ],
+      "evidence": "it8-praesentation-gestalten: Mindmap, Grob- und Feingliederung, Teamplanung, Folienmaster, Verknüpfungen, Gestaltungsregeln; Folien-Werkstatt. Die eigene Präsentation entsteht im Präsentationsprogramm."
+    },
+    {
+      "lb": 1,
+      "module": "1.7",
+      "position": 4,
+      "competence": "präsentieren ihre Arbeitsergebnisse sach- und adressatengerecht in der Gruppe.",
+      "lessons": [
+        "it8-vortragen"
+      ],
+      "evidence": "it8-vortragen: sach- und adressatengerecht, Vortragstechniken, Fragen, Feedback; Fallwerkstatt zu Vortragsverhalten. Der Vortrag vor der Gruppe wird im Unterricht gehalten, nicht digital nachgewiesen."
+    },
+    {
+      "lb": 1,
+      "module": "1.8",
+      "position": 1,
+      "competence": "erklären ein vereinfachtes Computermodell und beschreiben das EVA-Prinzip, um die grundsätzliche Funktionsweise von EDV-Systemen zu verstehen.",
+      "lessons": [
+        "it8-eva-computermodell"
+      ],
+      "evidence": "it8-eva-computermodell: EVA-Prinzip, Peripherie, Von-Neumann-Architektur, Konrad Zuse, Green IT; EVA-Werkstatt mit sechs Bauteilen."
+    },
+    {
+      "lb": 1,
+      "module": "1.8",
+      "position": 2,
+      "competence": "ordnen Hardware und Software, mit dem Betriebssystem als Schnittstelle, ihre Aufgaben zu, um z. B. einfache Computerprobleme zu lösen.",
+      "lessons": [
+        "it8-betriebssystem-dateien"
+      ],
+      "evidence": "it8-betriebssystem-dateien: Anwendungsprogramm, Betriebssystem, Hardware, Treiber, Dateisystem, Pfade, Dateioperationen, einfache Computerprobleme; Ordnerbaum-Werkstatt, Pfade schreiben (L1) und Kopieren/Verschieben (L2)."
+    },
+    {
+      "lb": 1,
+      "module": "1.8",
+      "position": 3,
+      "competence": "beachten lizenzrechtliche Bestimmungen bei der Auswahl und Verwendung von Softwareprodukten.",
+      "lessons": [
+        "it8-softwarelizenzen"
+      ],
+      "evidence": "it8-softwarelizenzen: kommerzielle Software, Freeware, Shareware, Open Source (GPL); Lizenz-Werkstatt mit sechs Programmen, Auswahlentscheidungen."
+    },
+    {
+      "lb": 1,
+      "module": "1.8",
+      "position": 4,
+      "competence": "nutzen ihre Kenntnisse zu Risiken sowie Sicherheitsregeln und -maßnahmen im Umgang mit Daten, um diese gezielt vor Verlust und Missbrauch zu schützen.",
+      "lessons": [
+        "it8-datensicherheit"
+      ],
+      "evidence": "it8-datensicherheit: Schadsoftware, Trojaner, sichere Passwörter, Backup, Virenschutz, Updates; Passwortstärke-Werkstatt (Modell: 10^10 Versuche pro Sekunde), Kombinationen und Durchprobierzeit berechnen."
+    },
+    {
+      "lb": 1,
+      "module": "1.9",
+      "position": 1,
+      "competence": "wählen zielgerichtet digitale Werkzeuge aus, um zeitgemäße Formen der Kommunikation, der Zusammenarbeit und des Lernens zu trainieren.",
+      "lessons": [
+        "it8-digitale-werkzeuge"
+      ],
+      "evidence": "it8-digitale-werkzeuge: Cloud-Computing, Kollaborationsplattform, E-Learning, KI mit Vorteilen und Konsequenzen; Werkzeugwahl-Werkstatt mit sechs Aufgaben. Das Training der Werkzeuge selbst geschieht im Unterricht."
+    },
+    {
+      "lb": 1,
+      "module": "1.9",
+      "position": 2,
+      "competence": "berücksichtigen bei ihren digitalen Interaktionen gesellschaftlich-ethische Normen und die Privatsphäre.",
+      "lessons": [
+        "it8-netiquette"
+      ],
+      "evidence": "it8-netiquette: Netiquette, Klassenchat-Regeln, Privatsphäre anderer; Netiquette-Werkstatt mit sechs Fällen."
+    },
+    {
+      "lb": 1,
+      "module": "1.9",
+      "position": 3,
+      "competence": "ergreifen Maßnahmen zum Schutz von persönlichen Daten, Gesundheit und Umwelt, um problematischen Aspekten im Umgang mit digitalen Umgebungen vorzubeugen.",
+      "lessons": [
+        "it8-schutzmassnahmen"
+      ],
+      "evidence": "it8-schutzmassnahmen: Einstellungen für Daten, Gesundheit, Umwelt; problematische Aspekte (Betrug, Desinformation, Sucht, Belästigung, Ressourcenverschwendung); Geräte-Check-Werkstatt."
+    },
+    {
+      "lb": 1,
+      "module": "1.9",
+      "position": 4,
+      "competence": "entscheiden situativ, welche Daten sie bei der Nutzung digitaler Angebote von sich preisgeben und reflektieren Motivationen zur Auswertung sowie Methoden für die Zuordnung von Daten durch digitale Dienstleister.",
+      "lessons": [
+        "it8-datenspuren"
+      ],
+      "evidence": "it8-datenspuren: preisgegebene Daten, Datensparsamkeit, Motivationen digitaler Dienstleister, Seitenbesuche, Cookies, Anmeldung, Browser-Fingerprinting; Datenspuren-Werkstatt."
+    }
+  ]
+}

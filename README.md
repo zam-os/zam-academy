@@ -35,6 +35,7 @@ Hands-on training apps that build understanding before [ZAM](https://github.com/
 | Politik und Gesellschaft 10 Realschule (LehrplanPLUS Bayern, gemeinsamer Lernpfad) | [`politik-realschule-10/`](politik-realschule-10/) | https://academy.zam-os.org/politik-realschule-10/ | `zam-academy:politik-realschule-10` |
 | Biologie 8 Realschule (LehrplanPLUS Bayern, gemeinsamer Lernpfad) | [`biologie-realschule-8/`](biologie-realschule-8/) | https://academy.zam-os.org/biologie-realschule-8/ | `zam-academy:biologie-realschule-8` |
 | Geographie 8 Realschule (LehrplanPLUS Bayern) | [`geographie-realschule-8/`](geographie-realschule-8/) | https://academy.zam-os.org/geographie-realschule-8/ | `zam-academy:geographie-realschule-8` |
+| Informatik 8 Realschule (LehrplanPLUS Bayern, IT-Anfangsunterricht 1.1–1.9, alle Wahlpflichtfächergruppen) | [`informatik-realschule-8/`](informatik-realschule-8/) | https://academy.zam-os.org/informatik-realschule-8/ | `zam-academy:informatik-realschule-8` |
 
 ## How an app and its ZAM cell fit together
 
@@ -82,6 +83,7 @@ cd uml                 # or: cd physik-realschule-9 (dev server on :5181), cd sq
 # Französisch 10: cd franzoesisch-realschule-10 (dev server on :5207)
 # Biologie 8: cd biologie-realschule-8 (dev server on :5208)
 # Chemie 8: cd chemie-realschule-8 (dev server on :5209)
+# Informatik 8: cd informatik-realschule-8 (dev server on :5211)
 npm ci
 npm run dev      # http://localhost:5180/uml/
 npm test
@@ -116,3 +118,5 @@ The [English 9 package](englisch-realschule-9/) adds 36 core lessons, four optio
 The [Informatik 10 package](informatik-realschule-10/) adds 36 lessons and 72 cards for five selectable advanced IT modules, with local packet-filter, class-programming, logic, robot and decision-tree workshops. Its [coverage matrix](informatik-realschule-10/coverage.json) distinguishes these modules from full subject coverage. Existing IT cells keep their own cards and review histories.
 
 Geographie 8: `cd geographie-realschule-8 && npm ci && npm run dev` (Port 5210). Die [Abdeckungsmatrix](geographie-realschule-8/coverage.json) ordnet alle 34 Pflicht-Kompetenzerwartungen den 34 Lektionen zu; [Bestandsabgleich](docs/geographie-8-bestandsabgleich.md).
+
+The [Informatik 8 package](informatik-realschule-8/) covers the IT Anfangsunterricht (modules 1.1–1.9, binding for all Wahlpflichtfächergruppen and completed by the end of grade 8) with 40 lessons, local workshops and 87 cards. Its [coverage matrix](informatik-realschule-8/coverage.json) maps all 35 Kompetenzerwartungen. The [legacy review](docs/informatik-8-bestandsabgleich.md) proposes 10 A, 1 B and 13 C rows for the 24 cards of the old Informatik 6–8 cells; the mapping is not approved, so the cell ships without `replaces` and `retired_items`.
