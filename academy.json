@@ -29,41 +29,50 @@
     { "id": "wirtschaft", "name": "Wirtschaft", "bereich": "wirtschaft", "glyph": "€", "hue": 296, "from": 7 },
     { "id": "pug", "name": "Politik und Gesellschaft", "bereich": "gesellschaft", "glyph": "§", "hue": 205, "from": 8 }
   ],
+  "fachverbunde": [
+    {
+      "id": "gpg",
+      "name": "Geschichte/Politik/Geographie",
+      "glyph": "GPG",
+      "school": "mittelschule",
+      "grades": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "paths": [
+        "geschichte",
+        "pug",
+        "geographie"
+      ],
+      "note": "Gemeinsames Fach der Mittelschule: Über Geschichte, Politik und Gesellschaft sowie Geographie erreichst du dasselbe Lernangebot.",
+      "source": "https://www.gesetze-bayern.de/Content/Document/BayMSO-ANL_1"
+    }
+  ],
   "kein_unterricht": [
     {
-      "fach": "pug",
-      "grade": 8,
-      "school": "realschule",
-      "note": "Politik und Gesellschaft wird an der Realschule nur in Klasse 10 unterrichtet, unabhängig von der Wahlpflichtfächergruppe.",
-      "source": "https://www.gesetze-bayern.de/Content/Document/BayRSO-ANL_1"
-    },
-    {
-      "fach": "pug",
-      "grade": 9,
-      "school": "realschule",
-      "note": "Politik und Gesellschaft wird an der Realschule nur in Klasse 10 unterrichtet, unabhängig von der Wahlpflichtfächergruppe.",
-      "source": "https://www.gesetze-bayern.de/Content/Document/BayRSO-ANL_1"
-    },
-    {
-      "fach": "pug",
-      "grade": 8,
-      "school": "mittelschule",
-      "note": "An der Mittelschule gibt es kein eigenes Fach Politik und Gesellschaft. Politische Inhalte gehören zum Fach Geschichte/Politik/Geographie.",
-      "source": "https://www.gesetze-bayern.de/Content/Document/BayMSO-ANL_1"
-    },
-    {
-      "fach": "pug",
-      "grade": 9,
-      "school": "mittelschule",
-      "note": "An der Mittelschule gibt es kein eigenes Fach Politik und Gesellschaft. Politische Inhalte gehören zum Fach Geschichte/Politik/Geographie.",
-      "source": "https://www.gesetze-bayern.de/Content/Document/BayMSO-ANL_1"
-    },
-    {
-      "fach": "pug",
+      "fach": "geographie",
       "grade": 10,
-      "school": "mittelschule",
-      "note": "An der Mittelschule gibt es kein eigenes Fach Politik und Gesellschaft. Politische Inhalte gehören zum Fach Geschichte/Politik/Geographie.",
-      "source": "https://www.gesetze-bayern.de/Content/Document/BayMSO-ANL_1"
+      "school": "realschule",
+      "note": "Geographie wird an der bayerischen Realschule in den Klassen 5 bis 9 unterrichtet. In Klasse 10 ist es in keiner Wahlpflichtfächergruppe vorgesehen.",
+      "source": "https://www.gesetze-bayern.de/Content/Document/BayRSO-ANL_1"
+    },
+    {
+      "fach": "pug",
+      "grade": 8,
+      "school": "realschule",
+      "note": "Politik und Gesellschaft wird an der Realschule nur in Klasse 10 unterrichtet, unabhängig von der Wahlpflichtfächergruppe.",
+      "source": "https://www.gesetze-bayern.de/Content/Document/BayRSO-ANL_1"
+    },
+    {
+      "fach": "pug",
+      "grade": 9,
+      "school": "realschule",
+      "note": "Politik und Gesellschaft wird an der Realschule nur in Klasse 10 unterrichtet, unabhängig von der Wahlpflichtfächergruppe.",
+      "source": "https://www.gesetze-bayern.de/Content/Document/BayRSO-ANL_1"
     },
     {
       "fach": "biologie",
@@ -611,6 +620,28 @@
         "Evolution"
       ],
       "desc": "30 Lektionen mit vier interaktiven Modellen, Aufgaben auf zwei Stufen, Druckansicht und verknüpften Lernkarten nach LehrplanPLUS Bayern."
+    },
+    {
+      "id": "geographie-realschule-8",
+      "app": "geographie-realschule-8",
+      "title": "Geographie 8",
+      "fach": "geographie",
+      "grade": 8,
+      "school": "realschule",
+      "zweige": "Alle Wahlpflichtfächergruppen",
+      "lessons": 34,
+      "cards": 68,
+      "lang": [
+        "de"
+      ],
+      "gebiete": [
+        "Doppelkontinent Amerika",
+        "China und Indien",
+        "Russland",
+        "Globale Verflechtungen im Alltag",
+        "Deine aktuelle geographische Frage"
+      ],
+      "desc": "34 Lektionen mit drei Offline-Karten, fünf Modellen, aktuellen Rechercheaufgaben, zwei Aufgabenstufen und 68 verknüpften ZAM-Karten."
     }
   ]
 }

@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Geographie 8 Realschule Bayern: Amerika, China und Indien, Russland und globale Verflechtungen. 34 interaktive Lektionen mit ZAM-Karten." />
+    <title>Geographie 8 Realschule · ZAM Academy</title>
+    <script>try { const theme = localStorage.getItem('geographie_rs8_theme'); if (theme === 'light' || theme === 'dark') document.documentElement.dataset.theme = theme; } catch {}</script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Zum Inhalt</a>
+    <header class="header">
+      <a class="brand" href="#" id="home"><span class="brand-mark" aria-hidden="true">G.</span><span>Geographie 8<small>Realschule Bayern · ZAM Academy</small></span></a>
+      <nav aria-label="Hauptnavigation"><button type="button" data-view="path">Lernpfad</button><button type="button" data-view="reference">Quellen & Praxis</button></nav>
+      <div class="header-actions"><button type="button" class="button secondary" id="zam">Mit ZAM behalten</button><button type="button" class="icon-button" id="theme" aria-label="Farbschema wechseln">◐</button></div>
+    </header>
+    <div class="progress-strip" id="progress-strip"></div>
+    <main id="main" tabindex="-1"></main>
+    <footer><a class="zam-home-link" href="https://academy.zam-os.org/">← Zur ZAM Academy</a><span>Lehrplanabgleich: 26. Oktober 2026 · ohne Konto</span><span>Deine Antworten bleiben in diesem Browser. Eigene Texte werden durch Mustervergleich und Selbsteinschätzung geübt.</span><button type="button" class="text-button" id="reset">Lokalen Fortschritt zurücksetzen</button></footer>
+    <dialog id="dialog" aria-labelledby="dialog-title"></dialog>
+    <div class="toast" id="storage-warning" role="status" hidden>Speichern ist hier gerade nicht möglich. Du kannst weiterüben; Änderungen gehen beim Schließen verloren.</div>
+    <article id="print-area"></article>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
