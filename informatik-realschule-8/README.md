@@ -47,8 +47,11 @@ Der Aufbauunterricht (2.x) liegt in eigenen Paketen:
 
 ## ZAM-Zelle und Bestandskarten
 
-`cell.json` (`zam-academy:informatik-realschule-8`, Version 2026.10.2) hat ein
-Atom je Lektion und zitiert jede Lektion als `#lesson=<id>`. ZAM enthält drei
+`cell.json` (`zam-academy:informatik-realschule-8`, Version 2026.10.3) hat ein
+Atom je Lektion und zitiert jede Lektion als `#lesson=<id>`. Jedes Atom ist an
+sein IT-Modul in den Jahrgangsstufen 6, 7 und 8 gebunden, denn der
+LehrplanPLUS ordnet die Module keiner Jahrgangsstufe zu; so findet ZAM die Zelle
+in jeder dieser Stufen. ZAM enthält drei
 ältere Zellen zum Thema (`de-by:realschule-6/7/8-informatik-…`, 24 Karten).
 [`replaces-de-by.json`](replaces-de-by.json) ordnet jede alte Karte einer
 Kategorie zu (10 A, 1 B, 13 C); Thomas hat die Zuordnung am 27.10.2026
