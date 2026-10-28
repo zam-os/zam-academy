@@ -161,6 +161,7 @@ Weiterüben-Ziel werden nach dem asynchronen Zusammenführen aktualisiert;
 ein Handler-Test mit verzögerter Sperre und die gebaute App prüfen dies.
 Die unabhängige Nachprüfung meldet keine verbleibenden Findings.
 
-Als separate Folgearbeit bleibt der Rückport des Stufenwechsel-Fixes und
-des Schutzes vor veralteten Tab-Ständen nach Deutsch 10, Geographie 8 und
-Biologie 8. Diese anderen Pakete werden in diesem PR nicht verändert.
+Der Rückport des Stufenwechsel-Fixes und des Schutzes vor veralteten
+Tab-Ständen nach Deutsch 10, Geographie 8 und Biologie 8 ist als separate
+Änderung umgesetzt; [Nachweise und Grenzen](2026-10-28-progress-backports.md).
+Academy-PR #64 selbst änderte diese anderen Pakete nicht.

@@ -60,3 +60,15 @@ ZAM_CORE=file:///absoluter/pfad/zam-core/dist/index.js node scripts/validate-cel
 Die Prüfung verwendet ausschließlich temporäre Bibliotheken. 16 vorhandene Karten mit 32 echten Review-Ereignissen bleiben unverändert. Installation allein erzeugt keine persönlichen Karten; ausdrückliche Aufnahme erzeugt 60 frische Karten ohne Reviews oder Stabilität. Wiederholte Installation und Aufnahme sind idempotent.
 
 Der Build besteht aus einer HTML-Datei. Das Offline-ZIP enthält die Datei sowie Startdateien für Windows, macOS und Linux. Der Artefaktcheck vergleicht die HTML-Bytes und prüft die Shellsyntax; die Startdateien wurden nicht auf allen drei Betriebssystemen ausgeführt. Beim Merge in `main` veröffentlichen GitHub Pages, der Atlas und der Katalog Kurs und Zelle gemeinsam unter https://academy.zam-os.org/biologie-realschule-8/. Die spätere Synchronisierung in einen ZAM-Release und die Aufnahme in eine persönliche Bibliothek bleiben eigene Schritte.
+
+## Fortschritt in mehreren Tabs
+
+Die Stufenwahl bereinigt alte `?level`- und `#level`-Parameter; die gewählte
+Stufe bleibt nach Neuladen erhalten. Beim Speichern werden nur ausdrückliche
+lokale Änderungen in den neuesten Stand anderer Tabs übernommen. Bestätigungen
+gelten für den tatsächlich verglichenen Text. Mit Web Locks ist der gesamte
+Lesen-/Zusammenführen-/Schreiben-Schritt koordiniert. Ohne verfügbare Sperr-API
+bleibt das Zusammenführen nutzbar, schützt aber nicht atomar vor überlappenden
+Zugriffen. Ändern zwei Tabs denselben Text, gilt die zuletzt gespeicherte
+Textänderung. Noch nicht abgeschickte Falländerungen ersetzen die letzte
+geprüfte Fassung erst mit „Entscheidungen prüfen“.

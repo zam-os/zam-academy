@@ -1,7 +1,7 @@
 import { describe, expect, it, vi } from "vitest";
 import tile from "../cell.json";
-import mapping from "../replaces-de-by.json";
 import coverage from "../coverage.json";
+import mapping from "../replaces-de-by.json";
 import { LESSONS, SOURCES, STAGES } from "../src/curriculum";
 import {
 	CYCLE,
@@ -259,7 +259,7 @@ describe("Progress requires work and keeps levels independent", () => {
 		expect(p.writingDone).toEqual([]);
 		expect(isComplete(p, lesson.id)).toBe(false);
 	});
-	it("continues when browser storage is blocked", () => {
+	it("continues when browser storage is blocked", async () => {
 		vi.stubGlobal("localStorage", {
 			getItem() {
 				throw Error("blocked");
@@ -270,7 +270,7 @@ describe("Progress requires work and keeps levels independent", () => {
 		});
 		try {
 			expect(loadProgress()).toEqual(freshProgress());
-			expect(saveProgress(freshProgress())).toBe(false);
+			expect(await saveProgress(freshProgress())).toBe(false);
 		} finally {
 			vi.unstubAllGlobals();
 		}

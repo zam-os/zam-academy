@@ -38,3 +38,20 @@ ZAM_CORE=file:///pfad/zam-core/dist/index.js node geographie-realschule-8/script
 ```
 
 Der Offline-ZIP enthält dieselbe eigenständige HTML-Datei und Starter für Windows, macOS und Linux. Die Druckansicht bietet Aufgaben und getrennte Musterlösungen. Fortschritt, eigene Texte und Rechercheheft bleiben lokal im Browser; bei gesperrtem Speicher bleibt die Sitzung nutzbar und zeigt einen Hinweis. Externe Quellen öffnen nur auf Klick. Keine Konten, Telemetrie, eingebetteten Videos oder neuen Bibliotheken. Pages veröffentlicht App, Zelle und Katalog nach dem Merge. Die Bündelung in ZAM erfolgt anschließend gesondert mit `npm run academy:sync`.
+
+## Fortschritt in mehreren Tabs
+
+Die Stufenwahl bereinigt alte `?level`- und `#level`-Parameter; die gewählte
+Stufe bleibt nach Neuladen erhalten. Beim Speichern werden nur ausdrückliche
+lokale Änderungen in den neuesten Stand anderer Tabs übernommen. Bestätigungen
+gelten für den tatsächlich verglichenen Text. Mit Web Locks ist der gesamte
+Lesen-/Zusammenführen-/Schreiben-Schritt koordiniert. Ohne verfügbare Sperr-API
+bleibt das Zusammenführen nutzbar, schützt aber nicht atomar vor überlappenden
+Zugriffen. Ändern zwei Tabs denselben Text, gilt die zuletzt gespeicherte
+Textänderung. Noch nicht abgeschickte Falländerungen ersetzen die letzte
+geprüfte Fassung erst mit „Entscheidungen prüfen“.
+
+Das Rechercheheft wird pro Feld zusammengeführt. Neue Orts-, Quellen- oder
+Fragenotizen anderer Tabs bleiben bei Änderungen an einem anderen Feld oder
+an einer Lektion erhalten. Geänderte Felder werden auch in der geöffneten
+Projektansicht sichtbar.

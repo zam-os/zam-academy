@@ -319,7 +319,7 @@ describe("Fortschritt mit getrennter Selbsteinschätzung", () => {
 });
 
 describe("Gesperrter Browserspeicher", () => {
-	it("keeps the visit usable and reports save failure", () => {
+	it("keeps the visit usable and reports save failure", async () => {
 		vi.stubGlobal("localStorage", {
 			getItem() {
 				throw new Error("blocked");
@@ -330,7 +330,7 @@ describe("Gesperrter Browserspeicher", () => {
 		});
 		try {
 			expect(loadProgress()).toEqual(freshProgress());
-			expect(saveProgress(freshProgress())).toBe(false);
+			expect(await saveProgress(freshProgress())).toBe(false);
 		} finally {
 			vi.unstubAllGlobals();
 		}
