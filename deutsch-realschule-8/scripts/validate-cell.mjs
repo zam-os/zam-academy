@@ -10,17 +10,20 @@ import { fileURLToPath } from "node:url";
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const zam = await import(process.env.ZAM_CORE ?? "zam-core");
 const tile = JSON.parse(readFileSync(join(root, "cell.json"), "utf8"));
-const legacy = JSON.parse(
-	readFileSync(join(root, "tests/fixtures/de-by-deutsch-8.json"), "utf8"),
-);
 const mapping = JSON.parse(
 	readFileSync(join(root, "replaces-de-by.json"), "utf8"),
 );
-const legacyBytes = readFileSync(join(root, mapping.sources[0].file));
+assert.equal(mapping.sources.length, 1);
+const source = mapping.sources[0];
+const legacyBytes = readFileSync(join(root, source.file));
+const legacy = JSON.parse(legacyBytes.toString("utf8"));
 assert.equal(
 	createHash("sha256").update(legacyBytes).digest("hex"),
-	mapping.sources[0].sha256,
+	source.sha256,
 );
+assert.equal(source.file, "tests/fixtures/de-by-deutsch-8.json");
+assert.equal(source.tile_id, legacy.tile_id);
+assert.equal(source.version, legacy.version);
 assert.equal(mapping.approved, null);
 assert.equal(mapping.status, "proposal-only");
 assert.ok(!("retired_items" in tile));
@@ -30,6 +33,22 @@ assert.ok(
 	),
 );
 const oldItems = legacy.atoms.flatMap((atom) => atom.practice_items);
+const oldById = new Map(oldItems.map((item) => [item.id, item]));
+assert.equal(mapping.rows.length, oldItems.length);
+assert.deepEqual(
+	new Set(mapping.rows.map((row) => row.de_by_id)),
+	new Set(oldById.keys()),
+);
+for (const row of mapping.rows) {
+	assert.equal(row.category, "C");
+	assert.equal(row.academy_slug, null);
+	assert.equal(row.action, "keep-active");
+	assert.equal(row.de_by_cell, legacy.tile_id);
+	assert.equal(
+		row.de_by_question,
+		zam.kvtItemPlainTexts(oldById.get(row.de_by_id)).question,
+	);
+}
 const dir = mkdtempSync(join(tmpdir(), "zam-deutsch8-"));
 const user = tile.atoms[0].id;
 const snapshot = async (db) => ({

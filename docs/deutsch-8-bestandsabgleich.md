@@ -94,7 +94,7 @@ Unterrichtsleistungen gehören nicht zur technischen Prüfung.
 Am 28.10.2026 besteht die PR-Fassung mit folgenden Nachweisen:
 
 - Im Paket: `npm ci --offline --no-audit --no-fund`, `npm run typecheck`,
-  `npm test` (62 Tests) und `npm run package:zip` einschließlich Build und
+  `npm test` (86 Tests) und `npm run package:zip` einschließlich Build und
   Prüfung der drei Starter sowie der bytegleichen Einzeldatei.
 - Im Repository: `node --test scripts/build-catalog.test.mjs scripts/academy-registry.test.mjs`
   (38 Tests), `ZAM_CORE=… node scripts/validate-cells.mjs` (33 Zellen),
@@ -118,3 +118,46 @@ Die Browserprüfung verwendet deshalb ausschließlich die gebaute HTML-Datei
 über die lokale Vorschau. Windows-, macOS- und Linux-Starter wurden nicht
 auf allen Zielbetriebssystemen praktisch ausgeführt. Das ZIP-Prüfskript
 prüft ihre Inhalte und die Shellsyntax, keine Betriebssystemintegration.
+
+## Review-Korrekturen vom 28.10.2026
+
+- Falsche Schnellcheck-Antworten zeigen einen neutralen Hinweis; die
+  Erklärung mit der Zielform erscheint erst nach der richtigen Wahl.
+- Drei Mustertexte wurden korrigiert: Zitatintegration ohne unpassenden
+  Konjunktiv, unveränderte Lage des Schuhs im Bildimpuls und eine klare
+  Erklärung von Wunsch und höflicher Bitte.
+- Nicht abgeschickte Falländerungen überschreiben den letzten geprüften
+  Stand nicht mehr. Erst das Abschicken ersetzt die beiden Entscheidungen.
+- Jeder Tab gleicht seine Änderungen mit dem neuesten gespeicherten Stand
+  ab. Ausdrückliche Quiz-, Fall- und Vergleichsentscheidungen werden auch
+  dann berücksichtigt, wenn ihr Wert dem alten Stand entspricht. Eine
+  Bestätigung wird nicht auf einen fremd geänderten Text übertragen.
+- Der vollständige Lesen/Zusammenführen/Schreiben-Schritt läuft mit Web Locks
+  unter einer gemeinsamen Sperre. Ohne verfügbare Sperr-API bleibt der
+  Zusammenführungsweg nutzbar, schützt aber nicht atomar vor wirklich
+  überlappenden Zugriffen. Gleichzeitige Änderungen am selben Text folgen
+  weiterhin der zuletzt gespeicherten Fassung.
+- Die tatsächlich installierte Altzelle wird aus denselben gehashten Bytes
+  gelesen. Datei, ID, Version sowie sämtliche Mapping-Zeilen werden gegen
+  diese Quelle geprüft. Die Vitest-Prüfung sichert dieselben Identitäten.
+- Live-Link und Zweigbezeichnung in der README und ein doppeltes „und“ in
+  der Offline-Anleitung wurden korrigiert.
+
+Die Tests führen jetzt auch die tatsächlichen Seiten-Handler in einer kleinen
+DOM-/Ereignis-Fixture ohne zusätzliche Abhängigkeit aus. Sie prüfen unter
+anderem alte Level-Parameter, lösungsfreie Fehlerrückmeldung, nicht
+abgeschickte Fälle sowie neuere Entwürfe und explizite Antworten anderer Tabs.
+Die Speicherprüfung umfasst parallele Sperranfragen, die Warteschlange
+A1/B1/A2, bereits quittierte doppelte Speicherungen und Fehlversuche mit
+anschließendem erneuten Speichern. Jeder Speicheraufruf hält seinen eigenen
+Stand fest; neuere lokale Aktionen bleiben bis zu ihrer Speicherung erhalten.
+
+Die gebaute Review-Fassung wurde auf Port 5280 zusätzlich geprüft: beide
+Tabs behielten ihre Entwürfe und Bestätigungen nach fremdem Speichern und
+Neuladen; ein nicht abgeschickter Fall-Fehlklick überstand den Stufenwechsel
+mit beiden zuvor geprüften Antworten. Alle drei korrigierten Mustertexte
+wurden in der App geöffnet.
+
+Als separate Folgearbeit bleibt der Rückport des Stufenwechsel-Fixes und
+des Schutzes vor veralteten Tab-Ständen nach Deutsch 10, Geographie 8 und
+Biologie 8. Diese anderen Pakete werden in diesem PR nicht verändert.

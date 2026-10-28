@@ -184,10 +184,24 @@ describe("Lernpfad und veröffentlichbarer Vertrag", () => {
 		);
 		expect(mapping.status).toBe("proposal-only");
 		expect(mapping.approved).toBeNull();
+		expect(mapping.sources).toHaveLength(1);
+		expect(mapping.sources[0].file).toBe("tests/fixtures/de-by-deutsch-8.json");
+		expect(mapping.sources[0].tile_id).toBe(old.tile_id);
+		expect(mapping.sources[0].version).toBe(old.version);
+		expect(mapping.rows).toHaveLength(
+			old.atoms.flatMap((a) => a.practice_items).length,
+		);
+
 		expect(mapping.rows.map((r) => r.de_by_id).sort()).toEqual(
 			old.atoms.flatMap((a) => a.practice_items.map((i) => i.id)).sort(),
 		);
 		for (const row of mapping.rows) {
+			expect(row.de_by_cell).toBe(old.tile_id);
+			const item = old.atoms
+				.flatMap((a) => a.practice_items)
+				.find((i) => i.id === row.de_by_id);
+			expect(row.de_by_question).toBe(item?.question);
+
 			expect(row.category).toBe("C");
 			expect(row.academy_slug).toBeNull();
 			expect(row.action).toBe("keep-active");
@@ -313,7 +327,7 @@ describe("Fortschritt mit getrennter Selbsteinschätzung", () => {
 });
 
 describe("Gesperrter Browserspeicher", () => {
-	it("keeps the visit usable and reports save failure", () => {
+	it("keeps the visit usable and reports save failure", async () => {
 		vi.stubGlobal("localStorage", {
 			getItem() {
 				throw new Error("blocked");
@@ -324,7 +338,7 @@ describe("Gesperrter Browserspeicher", () => {
 		});
 		try {
 			expect(loadProgress()).toEqual(freshProgress());
-			expect(saveProgress(freshProgress())).toBe(false);
+			expect(await saveProgress(freshProgress())).toBe(false);
 		} finally {
 			vi.unstubAllGlobals();
 		}

@@ -38,11 +38,24 @@ Text mit einem Muster verglichen, drei Kriterien geprüft und den Vergleich
 bestätigt hat. **Eigene Texte werden nicht automatisch bewertet.**
 
 20 Zeichen öffnen den Mustervergleich; die Länge ist kein Qualitätsmaßstab.
-Ändert sich ein Entwurf, wird seine Bestätigung zurückgenommen. Änderungen an
-Fallentscheidungen entfernen den bisherigen Fallnachweis bis zur erneuten
-Prüfung. Eine falsche Schnellcheckantwort entfernt dessen Nachweis.
-Nicht eingereichte Falländerungen sind flüchtig. Bei gesperrtem Speicher
+Ändert sich ein Entwurf, wird seine Bestätigung zurückgenommen. Erst das
+Abschicken von „Entscheidungen prüfen“ ersetzt die gespeicherten
+Fallentscheidungen. Noch nicht abgeschickte Änderungen bleiben flüchtig und
+lassen den bisherigen Fallnachweis bestehen, auch beim Stufenwechsel oder
+Verlassen der Lektion. Eine falsche Schnellcheckantwort entfernt dessen
+Nachweis; sie zeigt einen neutralen Hinweis. Die Erklärung erscheint nach
+einer richtigen Antwort. Bei gesperrtem Speicher
 bleibt die laufende Sitzung nutzbar und zeigt einen Hinweis.
+
+Beim Speichern werden unveränderte Felder aus dem inzwischen gespeicherten
+Stand anderer Tabs übernommen. Abgeschickte Antworten und Bestätigungen
+bleiben ausdrücklich erkennbar, auch wenn ihr Wert schon der alten Fassung
+entsprach. Eine Bestätigung gilt nur für den tatsächlich verglichenen Text.
+Unterstützt der Browser Web Locks, werden gleichzeitige Speicherzugriffe
+koordiniert. Ohne diese API, etwa bei manchen Offline-Dateiansichten, bleibt
+das Zusammenführen verfügbar; überlappende Schreibzugriffe sind dort nicht
+transaktional geschützt. Bearbeiten zwei Tabs denselben Entwurf, gilt die
+zuletzt gespeicherte Textänderung. Die Aufgabenauswahl bleibt tabbezogen.
 
 ## Quellen und zusätzliche Praxis
 
