@@ -2,7 +2,7 @@
 // Runs against the same pinned published zam-core as the Academy's cell checks.
 // Uses only disposable libraries. No learner library or configuration is opened.
 //
-// Version 2026.10.2 ships the mapping Thomas approved on 2026-10-27
+// Since version 2026.10.2 the cell ships the mapping Thomas approved on 2026-10-27
 // (replaces-de-by.json): each of the 10 A rows and the 1 B row is replaced by
 // its one successor, the 13 C rows are retired. Part 1 installs the cell over
 // the three old Informatik cells with reviewed cards: eleven histories move
@@ -10,6 +10,8 @@
 // missing fresh cards, and repeated installs change nothing. Part 2 checks
 // that a learner holding cards on an old id and its successor (from an
 // install without the mapping) makes the install refuse an automatic merge.
+// Part 3 upgrades a library from 2026.10.2 (bound to grade 8 only) to 2026.10.3
+// (grades 6, 7 and 8): the new bindings move no card and change no review.
 import assert from "node:assert/strict";
 import { createHash } from "node:crypto";
 import { mkdtempSync, readFileSync, rmSync } from "node:fs";
@@ -38,7 +40,7 @@ const withoutToken = ({ token_id, ...rest }) => rest;
 
 assert.equal(mapping.status, "approved");
 assert.equal(mapping.approved, "2026-10-27");
-assert.equal(cell.version, "2026.10.2");
+assert.equal(cell.version, "2026.10.3");
 assert.equal(items.length, 87);
 assert.equal(mapping.rows.length, 24);
 assert.deepEqual(
@@ -60,6 +62,16 @@ assert.deepEqual(
 	mapping.rows.filter((row) => row.category === "C").map((row) => row.de_by_id).sort(),
 	"the cell retires exactly the approved C rows",
 );
+
+/** The published 2026.10.2: the same cell, bound to LehrplanPLUS grade 8 only. */
+function gradeEightOnly() {
+	const copy = structuredClone(cell);
+	copy.version = "2026.10.2";
+	for (const atom of copy.atoms) {
+		atom.curricula = atom.curricula.filter((entry) => entry.provider !== "lehrplanplus-bayern" || entry.grade === 8);
+	}
+	return copy;
+}
 
 /** The same cell before the mapping: no replaces, no retired items. */
 function withoutMapping() {
@@ -155,7 +167,7 @@ try {
 				assert.equal(token.source_link, item.source_link);
 			}
 			console.log(
-				"ok   Informatik 8 (2026.10.2): 11 histories move to their successors, 13 old cards retire, 48 reviews kept; enrolment adds 76 fresh cards; install and enrolment repeat safely",
+				"ok   Informatik 8 (2026.10.3): 11 histories move to their successors, 13 old cards retire, 48 reviews kept; enrolment adds 76 fresh cards; install and enrolment repeat safely",
 			);
 		} finally {
 			await db.close();
@@ -176,9 +188,33 @@ try {
 			// Matches zam-core 0.54.0's wording; check it again when the pinned version is raised.
 			await assert.rejects(() => zam.installKvtTile(collision, cell), /holds a card on both|merge/i);
 			assert.deepEqual(await snapshot(collision), before, "a collision must leave both histories intact");
-			console.log("ok   Informatik 8 (2026.10.2): a learner with cards on an old id and its successor makes the install refuse an automatic merge");
+			console.log("ok   Informatik 8 (2026.10.3): a learner with cards on an old id and its successor makes the install refuse an automatic merge");
 		} finally {
 			await collision.close();
+		}
+	}
+
+	// Part 3: upgrading from 2026.10.2 adds the grade 6 and 7 bindings and nothing else.
+	{
+		const { db, userId } = await libraryWithHistories("upgrade.db");
+		try {
+			await zam.installKvtTile(db, gradeEightOnly());
+			for (let round = 0; round < 5; round++) {
+				if ((await zam.materialiseKvtCards(db, userId, atomIds)).cardsCreated === 0) break;
+			}
+			const before = await snapshot(db);
+			await zam.installKvtTile(db, cell);
+			assert.deepEqual(await snapshot(db), before, "the upgrade keeps every card, schedule and review");
+			assert.deepEqual(await zam.materialiseKvtCards(db, userId, atomIds), {
+				cardsCreated: 0,
+				cardsReused: items.length,
+			});
+			assert.deepEqual(await snapshot(db), before, "enrolment after the upgrade adds nothing");
+			console.log(
+				`ok   Informatik 8 (2026.10.2 → 2026.10.3): the upgrade keeps all ${before.cards.length} cards and ${before.reviews.length} reviews unchanged and enrols nothing new`,
+			);
+		} finally {
+			await db.close();
 		}
 	}
 } finally {

@@ -1,8 +1,8 @@
 # Informatik 8 · Lehrplanabgleich und Bestandsabgleich
 
 Stand: 27. Oktober 2026. Paket: [`informatik-realschule-8/`](../informatik-realschule-8/),
-40 Lektionen, 87 Karten, Zelle `zam-academy:informatik-realschule-8` Version 2026.10.2
-mit der freigegebenen Kartenzuordnung.
+40 Lektionen, 87 Karten, Zelle `zam-academy:informatik-realschule-8` Version 2026.10.3
+mit der freigegebenen Kartenzuordnung und Bindungen an die Jahrgangsstufen 6, 7 und 8.
 
 ## Welcher Lehrplan gilt für „Informatik 8“?
 
@@ -25,6 +25,22 @@ in ZAM-Curricula ohne `track`). Welche Module eine Schule in welcher Klasse
 unterrichtet, legt sie selbst fest. Der Aufbauunterricht liegt in anderen Paketen
 (Algorithmen 2.6.1, Datennetze 2.5.1, SQL 2.3, Informatik 10 mit fünf Wahlmodulen)
 und wird hier nicht wiederholt; Lektion 1.2 bereitet `algorithmen` vor.
+
+### Bindung an die Jahrgangsstufen 6, 7 und 8 (ab 2026.10.3)
+
+Die Zelle 2026.10.2 band jedes Atom nur an Jgst. 8. Mit der ZAM-Integration
+(zam-os/zam#466) verlassen die drei alten Zellen für Jgst. 6, 7 und 8 das Bündel,
+und Lernende der Jgst. 6 und 7 bekämen keinen Anfangsunterricht mehr angeboten.
+Weil der Fachlehrplan die Module keiner Jahrgangsstufe zuordnet, trägt seit
+Version 2026.10.3 jedes Atom dieselbe Modulbindung (`it-1.x`, ohne `track`,
+`exam_relevant: false`) für Jgst. 6, 7 und 8. Geprüft am 27.10.2026:
+`https://www.lehrplanplus.bayern.de/fachlehrplan/realschule/{6,7}/it` antworten
+mit HTTP 200 und liefern denselben Fachlehrplan („Realschule - 5, 6, 7, 8, 9, 10 -
+Informationstechnologie“, Module 1.1–1.9, derselbe Satz zur fehlenden
+Jahrgangszuordnung). ZAMs LehrplanPLUS-Manifest kennt `realschule|6|it` und
+`realschule|7|it` bereits. Ids, Slugs, Karten, `replaces` und `retired_items`
+bleiben unverändert. Jgst. 5, in der eine Schule laut Fachprofil ebenfalls
+beginnen kann, ist nicht gebunden; die alten Zellen deckten sie auch nicht ab.
 
 | Modul | Std. | Kompetenzerwartungen | Lektionen |
 | --- | ---: | ---: | ---: |
@@ -117,13 +133,15 @@ Alle Befehle am 27.10.2026 im Worktree auf Basis von `main` (`9db4f95`):
   → 38 bestanden; `node scripts/build-catalog.mjs <temp>` schreibt den Katalog mit 32 Zellen.
 - Mit zam-core 0.54.0 (in CI gepinnt): `node scripts/validate-cells.mjs` installiert
   alle 32 Zellen, die kuratierten Ablenker der neuen Zelle bestehen
-  `checkCandidate`/`checkShownSet`. `node informatik-realschule-8/scripts/validate-migration.mjs` (Stand 2026.10.2):
+  `checkCandidate`/`checkShownSet`. `node informatik-realschule-8/scripts/validate-migration.mjs` (Stand 2026.10.3):
   Über drei Altzellen mit 24 bewerteten Karten installiert, wandern 11 Verläufe
   mit unverändertem FSRS-Zustand und allen Bewertungen zu ihren Nachfolgern,
   alle 24 alten IDs verlassen die aktiven Wiederholungen, die 48 Bewertungen
   bleiben erhalten; die Aufnahme legt 76 neue Karten an, Installation und Aufnahme
   sind wiederholbar; Karten auf alter und neuer ID zugleich führen zur Verweigerung
-  der automatischen Zusammenführung.
+  der automatischen Zusammenführung. Das Upgrade einer Bibliothek von 2026.10.2 auf
+  2026.10.3 lässt alle 100 Karten (87 aktiv, 13 stillgelegt) und 48 Bewertungen
+  unverändert und legt keine Karte an.
 - Browser: Das gebaute `dist/index.html` wurde mit headless Chrome über `file://`
   für alle 40 Lektionen auf beiden Niveaus gerendert (80 DOM-Abzüge: Titel,
   Erklärung mit Beispiel und Merke, Schnellcheck, Werkstatt-SVG mit Aufträgen,
