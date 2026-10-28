@@ -1,18 +1,23 @@
 import "./styles.css";
-import { freshLab, renderLab, mountLab, type LabState } from "./labs";
+import { freshLab, type LabState, mountLab, renderLab } from "./labs";
+
 const labs = new Map<string, LabState>();
 const labState = (id: string): LabState => {
 	if (!labs.has(id)) labs.set(id, freshLab());
 	return labs.get(id)!;
 };
+
 import { findLesson, LESSONS, SOURCES, STAGES } from "./curriculum";
 import { canAccept, canReview, checkCases, esc, quizOptions } from "./practice";
 import {
 	completion,
+	confirmWriting,
 	freshProgress,
 	isComplete,
 	loadProgress,
+	recordQuizAnswer,
 	saveProgress,
+	submitCaseAnswers,
 	updateDraft,
 	writingKey,
 } from "./storage/progress";
@@ -40,8 +45,28 @@ function stats(): void {
 	element("#progress-strip").innerHTML =
 		`<label for="path-progress">Level ${progress.level}: ${count.completed} von ${count.total} bearbeitet</label><progress id="path-progress" value="${count.completed}" max="${count.total}"></progress>`;
 }
-function persist(): void {
-	element<HTMLElement>("#storage-warning").hidden = saveProgress(progress);
+async function persist(): Promise<void> {
+	const active = progress;
+	const saved = await saveProgress(active);
+	if (active !== progress) return;
+	element<HTMLElement>("#storage-warning").hidden = saved;
+	if (view === "path") {
+		// Navigation rendered before the asynchronous merge. Refresh the path's
+		// lesson marks, stage counts and next task from the adopted progress.
+		render();
+		return;
+	}
+	const draft = main.querySelector<HTMLTextAreaElement>("#draft");
+	if (view === "lesson" && draft) {
+		const current = progress.drafts[writingKey(lessonId, progress.level)] ?? "";
+		if (draft.value !== current) {
+			draft.value = current;
+			element<HTMLButtonElement>("#compare").disabled = !canReview(current);
+			element("#comparison").innerHTML = "";
+			element("#writing-status").textContent =
+				"Der Entwurf wurde in einem anderen Tab geändert. Bitte erneut vergleichen.";
+		}
+	}
 	stats();
 }
 function navigate(id?: string): void {
@@ -61,7 +86,7 @@ function navigate(id?: string): void {
 		"",
 		`${trainingBaseUrl(location.pathname, location.search)}${hash}`,
 	);
-	persist();
+	void persist();
 	render();
 	main.focus();
 	window.scrollTo({ top: 0, behavior: "instant" });
@@ -100,11 +125,7 @@ function render(): void {
 			progress.level = Number(
 				(event.target as HTMLSelectElement).value,
 			) as Level;
-			if (view === "lesson") navigate(lessonId);
-			else {
-				persist();
-				render();
-			}
+			navigate(view === "lesson" ? lessonId : undefined);
 		});
 }
 function renderPath(): void {
@@ -165,19 +186,18 @@ function renderLesson(lesson: Lesson): void {
 		(button) =>
 			void button.addEventListener("click", () => {
 				const correct = button.textContent === lesson.quiz.answer;
-				progress.quizDone = progress.quizDone.filter((id) => id !== lesson.id);
-				if (correct) progress.quizDone.push(lesson.id);
+				recordQuizAnswer(progress, lesson.id, correct);
 				main.querySelector("#quiz-done")?.remove();
 				main
 					.querySelectorAll(".quiz-choice")
 					.forEach((b) => void b.classList.toggle("selected", b === button));
 				element("#quiz-feedback").innerHTML =
 					`<p class="feedback ${correct ? "success" : "hint"}">${correct ? "Richtig. " : "Prüfe noch einmal. "}${esc(lesson.quiz.explanation)}</p>`;
-				persist();
+				void persist();
 			}),
 	);
-	// Selections are drafts until checked; changing one immediately removes the
-	// previous completion evidence. Only submitted decisions enter progress.cases.
+	// Only a submitted form replaces stored decisions. Unsubmitted selections
+	// remain local to this view and leave the previous evidence untouched.
 	const groups = () => [
 		...main.querySelectorAll<HTMLFieldSetElement>("[data-case]"),
 	];
@@ -187,10 +207,8 @@ function renderLesson(lesson: Lesson): void {
 	decisions().forEach(
 		(select) =>
 			void select.addEventListener("change", () => {
-				delete progress.cases[lesson.id];
 				element("#case-feedback").innerHTML = "";
 				groups().forEach((s) => void s.removeAttribute("aria-invalid"));
-				persist();
 			}),
 	);
 	element("#cases-form").addEventListener("submit", (event) => {
@@ -200,13 +218,13 @@ function renderLesson(lesson: Lesson): void {
 				group.querySelector<HTMLInputElement>("input:checked")?.value ?? "",
 		);
 		const results = checkCases(lesson.cases, values);
-		progress.cases[lesson.id] = values;
+		submitCaseAnswers(progress, lesson.id, values);
 		element("#case-feedback").innerHTML =
 			`<div class="feedback ${results.every(Boolean) ? "success" : "hint"}"><strong>${results.filter(Boolean).length} von ${results.length} richtig.</strong><ol>${results.map((correct, i) => `<li>${correct ? "✓ " : "Noch prüfen: "}${esc(lesson.cases[i].feedback)}</li>`).join("")}</ol></div>`;
 		groups().forEach(
 			(s, i) => void s.setAttribute("aria-invalid", String(!results[i])),
 		);
-		persist();
+		void persist();
 	});
 	const draft = element<HTMLTextAreaElement>("#draft");
 	draft.addEventListener("input", () => {
@@ -215,10 +233,11 @@ function renderLesson(lesson: Lesson): void {
 		element("#comparison").innerHTML = "";
 		element("#writing-status").textContent =
 			"Entwurf geändert · bitte erneut vergleichen.";
-		persist();
+		void persist();
 	});
 	element("#compare").addEventListener("click", () => {
 		if (!canReview(draft.value)) return;
+		const comparedText = draft.value;
 		element("#comparison").innerHTML =
 			`<div class="model-answer"><h3>Eine mögliche Lösung</h3><p class="material">${esc(task.model)}</p><p class="small">Bei Recherche- und Praxisaufgaben ist das Muster eine Strukturhilfe. Eigene Fundstellen und echte Durchführung ergänzt du selbst.</p><fieldset class="rubric"><legend>Meine Selbsteinschätzung</legend>${task.criteria.map((c) => `<label><input type="checkbox" class="criterion">${esc(c)}</label>`).join("")}</fieldset><button class="button accent" id="accept" disabled>Vergleich speichern</button></div>`;
 		const checks = () =>
@@ -234,11 +253,17 @@ function renderLesson(lesson: Lesson): void {
 		);
 		accept.addEventListener("click", () => {
 			if (!canAccept(draft.value, checks())) return;
-			if (!progress.writingDone.includes(key)) progress.writingDone.push(key);
-			element("#writing-status").textContent =
-				"Eigene Antwort verglichen und selbst eingeschätzt.";
+			const confirmed = confirmWriting(
+				progress,
+				lesson.id,
+				progress.level,
+				comparedText,
+			);
+			element("#writing-status").textContent = confirmed
+				? "Eigene Antwort verglichen und selbst eingeschätzt."
+				: "Der Entwurf wurde geändert. Bitte erneut vergleichen.";
 			accept.disabled = true;
-			persist();
+			void persist();
 		});
 	});
 }
@@ -291,7 +316,7 @@ function applyRoute(): void {
 				"Diese Lektion ist nicht vorhanden. Wähle eine Lektion aus dem Lernpfad.";
 		}
 	}
-	persist();
+	void persist();
 	render();
 	main.focus();
 	window.scrollTo({ top: 0, behavior: "instant" });

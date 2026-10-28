@@ -33,8 +33,7 @@ Person ihre eigene Antwort nach Öffnen des Musters anhand aller drei Kriterien
 eingeschätzt und bestätigt hat. **Eigene Texte werden nicht automatisch
 bewertet.** Die Mindestlänge von 20 Zeichen öffnet nur den Vergleich und ist
 kein Qualitätsmaßstab. Eine Textänderung entfernt den dazugehörigen Abschluss.
-Eine geänderte Fallentscheidung entfernt den bisherigen Fallnachweis bis zur
-erneuten Prüfung; eine falsche Schnellcheckantwort entfernt dessen Nachweis.
+Eine falsche Schnellcheckantwort entfernt dessen Nachweis.
 
 Geprüfte Fallentscheidungen, Entwürfe und Abschlüsse bleiben in diesem Browser.
 Nicht eingereichte Falländerungen sind flüchtig. Bei gesperrtem Speicher zeigt
@@ -130,3 +129,15 @@ persönlichen Karten; neue Karten beginnen ohne Reviews oder Stabilität.
 CI, Pages, der Atlas in `academy.json` und Katalog kennen das Paket. Veröffentlichung
 und spätere Übernahme in ein ZAM-Release sind gesonderte Schritte. Gebündelte
 Zellen in `zam-os/zam` werden hier nicht verändert.
+
+## Fortschritt in mehreren Tabs
+
+Die Stufenwahl bereinigt alte `?level`- und `#level`-Parameter; die gewählte
+Stufe bleibt nach Neuladen erhalten. Beim Speichern werden nur ausdrückliche
+lokale Änderungen in den neuesten Stand anderer Tabs übernommen. Bestätigungen
+gelten für den tatsächlich verglichenen Text. Mit Web Locks ist der gesamte
+Lesen-/Zusammenführen-/Schreiben-Schritt koordiniert. Ohne verfügbare Sperr-API
+bleibt das Zusammenführen nutzbar, schützt aber nicht atomar vor überlappenden
+Zugriffen. Ändern zwei Tabs denselben Text, gilt die zuletzt gespeicherte
+Textänderung. Noch nicht abgeschickte Falländerungen ersetzen die letzte
+geprüfte Fassung erst mit „Entscheidungen prüfen“.

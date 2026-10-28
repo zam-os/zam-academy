@@ -329,7 +329,7 @@ describe("Progress requires actual answers and keeps the two levels separate", (
 		);
 		expect(canReview(" ")).toBe(false);
 	});
-	it("bounds and filters stored data and tolerates unavailable storage", () => {
+	it("bounds and filters stored data and tolerates unavailable storage", async () => {
 		expect(parseProgress("{broken")).toEqual(freshProgress());
 		const p = parseProgress(
 			JSON.stringify({
@@ -354,7 +354,7 @@ describe("Progress requires actual answers and keeps the two levels separate", (
 			},
 		});
 		expect(loadProgress()).toEqual(freshProgress());
-		expect(saveProgress(ready())).toBe(false);
+		expect(await saveProgress(ready())).toBe(false);
 		vi.unstubAllGlobals();
 		expect(esc('<script>"&')).toBe("&lt;script&gt;&quot;&amp;");
 	});
