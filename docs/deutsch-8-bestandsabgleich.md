@@ -94,7 +94,7 @@ Unterrichtsleistungen gehören nicht zur technischen Prüfung.
 Am 28.10.2026 besteht die PR-Fassung mit folgenden Nachweisen:
 
 - Im Paket: `npm ci --offline --no-audit --no-fund`, `npm run typecheck`,
-  `npm test` (86 Tests) und `npm run package:zip` einschließlich Build und
+  `npm test` (87 Tests) und `npm run package:zip` einschließlich Build und
   Prüfung der drei Starter sowie der bytegleichen Einzeldatei.
 - Im Repository: `node --test scripts/build-catalog.test.mjs scripts/academy-registry.test.mjs`
   (38 Tests), `ZAM_CORE=… node scripts/validate-cells.mjs` (33 Zellen),
@@ -156,7 +156,10 @@ Die gebaute Review-Fassung wurde auf Port 5280 zusätzlich geprüft: beide
 Tabs behielten ihre Entwürfe und Bestätigungen nach fremdem Speichern und
 Neuladen; ein nicht abgeschickter Fall-Fehlklick überstand den Stufenwechsel
 mit beiden zuvor geprüften Antworten. Alle drei korrigierten Mustertexte
-wurden in der App geöffnet.
+wurden in der App geöffnet. Auch Lernpfad-Häkchen, Stufenzähler und
+Weiterüben-Ziel werden nach dem asynchronen Zusammenführen aktualisiert;
+ein Handler-Test mit verzögerter Sperre und die gebaute App prüfen dies.
+Die unabhängige Nachprüfung meldet keine verbleibenden Findings.
 
 Als separate Folgearbeit bleibt der Rückport des Stufenwechsel-Fixes und
 des Schutzes vor veralteten Tab-Ständen nach Deutsch 10, Geographie 8 und

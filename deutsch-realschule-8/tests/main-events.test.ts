@@ -202,6 +202,41 @@ async function openApp(route = "", initial = freshProgress()) {
 afterEach(() => vi.unstubAllGlobals());
 
 describe("Actual page event handlers", () => {
+	it("refreshes the whole path after a delayed merge adopts another tab's completion", async () => {
+		const lesson = LESSONS[0];
+		const app = await openApp(`#lesson=${lesson.id}`);
+		const remote = app.read();
+		const key = writingKey(lesson.id, 1);
+		remote.quizDone.push(lesson.id);
+		remote.cases[lesson.id] = lesson.cases.map((c) => c.answer);
+		remote.drafts[key] =
+			"Dieser Entwurf wurde im anderen Tab fertig verglichen.";
+		remote.writingDone.push(key);
+		app.stored.set(STORAGE_KEY, JSON.stringify(remote));
+		let finish: (() => void) | undefined;
+		vi.stubGlobal("navigator", {
+			locks: {
+				request: (_name: string, work: () => boolean) =>
+					new Promise<boolean>((resolve) => {
+						finish = () => resolve(work());
+					}),
+			},
+		});
+		await app.node("back").click();
+		expect(app.node("main").innerHTML).toContain('class="stage-count">0/6');
+		if (!finish) throw new Error("Missing queued save");
+		finish();
+		await vi.waitFor(() => {
+			expect(app.node("progress-strip").innerHTML).toContain("1 von 40");
+			expect(app.node("main").innerHTML).toContain('class="stage-count">1/6');
+			expect(app.node("main").innerHTML).toContain(
+				`class="lesson-link complete" data-lesson="${lesson.id}"`,
+			);
+		});
+		vi.stubGlobal("navigator", {});
+		await app.node("continue").click();
+		expect(app.url.hash).toContain(`lesson=${LESSONS[1].id}`);
+	});
 	it.each(["?level=1&from=zam", "#level=1"])(
 		"clears stale level routes after a select change: %s",
 		async (route) => {

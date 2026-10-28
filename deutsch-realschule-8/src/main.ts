@@ -42,6 +42,12 @@ async function persist(): Promise<void> {
 	const saved = await saveProgress(active);
 	if (active !== progress) return;
 	element<HTMLElement>("#storage-warning").hidden = saved;
+	if (view === "path") {
+		// Navigation rendered before the asynchronous merge. Refresh the path's
+		// lesson marks, stage counts and next task from the adopted progress.
+		render();
+		return;
+	}
 	const draft = main.querySelector<HTMLTextAreaElement>("#draft");
 	if (view === "lesson" && draft) {
 		const current = progress.drafts[writingKey(lessonId, progress.level)] ?? "";
