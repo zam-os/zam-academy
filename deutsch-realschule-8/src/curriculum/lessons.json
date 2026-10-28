@@ -1,0 +1,2436 @@
+[
+	{
+		"id": "d8-zuhoeren",
+		"stage": "sprechen",
+		"title": "Gehörtes sichern",
+		"skill": "Wichtiges notieren und Klang von Inhalt unterscheiden.",
+		"bindings": ["1.1", "3.1"],
+		"paragraphs": [
+			"Eine Mitschrift hält die Kernaussagen in Stichworten fest. Notiere Thema, wichtige Angaben, offene Fragen und vereinbarte Schritte. Ein Ergebnis ist etwas anderes als eine Vermutung oder ein noch offener Vorschlag.",
+			"Bei einem Hörtext wirken auch Pausen, Musik und Geräusche. Beschreibe erst, was du hörst, und erkläre danach eine mögliche Wirkung. Ein Transkript zeigt Wörter, kann die tatsächliche Klangwirkung aber nur vorbereiten."
+		],
+		"material": "Transkript eines erfundenen Schulradios: „Der Leseabend findet am Donnerstag um 17 Uhr in der Bibliothek statt. Ob es einen zweiten Termin gibt, klären wir am Montag.“ Regiehinweis: Vor der offenen Terminfrage verstummt die Musik.",
+		"materialLabel": "Eigenes, erfundenes Übungsmaterial",
+		"sourceIds": ["lehrplan"],
+		"cases": [
+			{
+				"prompt": "Eine Notiz lautet: „Donnerstag, 17 Uhr, Bibliothek: Leseabend.“",
+				"options": ["Gesicherte Angabe", "Bloße Vermutung"],
+				"answer": "Gesicherte Angabe",
+				"feedback": "Die drei Angaben stehen ausdrücklich im Transkript."
+			},
+			{
+				"prompt": "Die Pause vor der Terminfrage soll untersucht werden. Was ist angemessen?",
+				"options": [
+					"Sie beweist, dass die Sprecherin den Termin vergessen hat.",
+					"Sie kann die Aufmerksamkeit auf die offene Frage lenken."
+				],
+				"answer": "Sie kann die Aufmerksamkeit auf die offene Frage lenken.",
+				"feedback": "Eine Wirkung lässt sich begründet vermuten; eine persönliche Ursache ist ohne weitere Hinweise nicht belegt."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Verfasse drei Stichpunkte zum Schulradio: fester Termin, offene Frage und nächster Schritt.",
+				"model": "Leseabend: Donnerstag, 17 Uhr, Bibliothek. Zweiter Termin: offen. Am Montag wird ein möglicher zweiter Termin geklärt.",
+				"criteria": [
+					"Ich sichere den festen Termin.",
+					"Ich kennzeichne die offene Frage.",
+					"Ich verwechsle Veranstaltung und Klärung nicht."
+				]
+			},
+			"2": {
+				"prompt": "Entwirf zwei unterschiedliche Klanggestaltungen für die Terminfrage und erkläre ihre möglichen Wirkungen.",
+				"model": "Eine kurze Pause vor der Frage könnte die Aufmerksamkeit bündeln. Leise hektische Musik könnte dieselbe Frage dringlicher erscheinen lassen. Beide Gestaltungen verändern die Wirkung, nicht den gesicherten Termin; die Vermutungen müssten an einer echten Aufnahme geprüft werden.",
+				"criteria": [
+					"Ich entwerfe zwei Klangvarianten.",
+					"Ich verbinde Mittel und mögliche Wirkung.",
+					"Ich trenne Wirkung und Sachinformation."
+				]
+			}
+		},
+		"extension": "Höre einen echten kurzen Radiobeitrag zweimal ohne Transkript. Vergleiche anschließend deine Mitschrift mit einer zweiten Person und prüft Aussagen und Klangbeobachtungen.",
+		"check": {
+			"wrong": "Alle Leseabende werden auf Montag verschoben.",
+			"explanation": "Die Aussage nennt den Zeitpunkt der Klärung, keinen zweiten Veranstaltungstermin. Sichere Information und offene Frage bleiben getrennt."
+		},
+		"takeaway": "Halte sichere Angaben und offene Fragen getrennt fest.",
+		"lehrplan": "D8 LB 1.1, LB 3.1 · gemeinsamer Fachlehrplan"
+	},
+	{
+		"id": "d8-gespraech",
+		"stage": "sprechen",
+		"title": "Zuhören und Missverständnisse klären",
+		"skill": "Information, Gefühl und Appell erkennen.",
+		"bindings": ["1.1", "1.3"],
+		"paragraphs": [
+			"Eine Äußerung kann gleichzeitig informieren, ein Gefühl ausdrücken und zu etwas auffordern. Der Zusammenhang hilft bei der Deutung. Frage nach, statt einer Person eine Absicht sicher zuzuschreiben.",
+			"Paraphrasieren heißt, das Verstandene mit eigenen Worten zurückzugeben. Konstruktives Feedback benennt eine beobachtbare Stelle, ihre Wirkung auf dich und einen konkreten Vorschlag. Wertschätzung erleichtert eine Klärung auch bei akustischen oder sprachlichen Schwierigkeiten."
+		],
+		"material": "Mara sagt beim Gruppenplakat: „Ich mache hier schon wieder alles allein.“ Noel hat wegen Baulärm nur „allein“ verstanden. Auf dem Tisch liegen bereits Noels Notizen, die Mara noch nicht gesehen hat.",
+		"materialLabel": "Eigenes, erfundenes Übungsmaterial",
+		"sourceIds": ["lehrplan"],
+		"cases": [
+			{
+				"prompt": "Noel sagt: „Wegen des Lärms habe ich nur einen Teil gehört. Kannst du ihn wiederholen?“",
+				"options": ["Persönlicher Angriff", "Geeignete Klärungsstrategie"],
+				"answer": "Geeignete Klärungsstrategie",
+				"feedback": "Noel benennt die Hörschwierigkeit und bittet um die fehlende Information."
+			},
+			{
+				"prompt": "Mara sagt: „Du bist immer faul.“ Wie lässt sich daraus brauchbares Feedback machen?",
+				"options": [
+					"Heute fehlte mir dein Beitrag am Plakat; zeigst du mir deine Notizen?",
+					"Du bist eben grundsätzlich unzuverlässig."
+				],
+				"answer": "Heute fehlte mir dein Beitrag am Plakat; zeigst du mir deine Notizen?",
+				"feedback": "Eine konkrete Beobachtung mit einer offenen Nachfrage lässt sich klären; eine pauschale Abwertung nicht."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Schreibe für Noel eine Antwort mit Rückfrage und einem Vorschlag für die Arbeitsteilung.",
+				"model": "Ich habe dich wegen des Lärms nicht ganz verstanden. Meinst du, dass du zu viel am Plakat machst? Meine Notizen sind schon hier. Ich kann daraus die Infokästen schreiben, während du die Überschrift gestaltest.",
+				"criteria": [
+					"Ich frage nach dem Gemeinten.",
+					"Ich benenne die Hörschwierigkeit sachlich.",
+					"Ich schlage eine konkrete Aufteilung vor."
+				]
+			},
+			"2": {
+				"prompt": "Erkläre zwei mögliche Funktionen von Maras Satz und entwirf eine Antwort, die beiden gerecht wird.",
+				"model": "Der Satz kann Überforderung ausdrücken und zugleich zu mehr Mitarbeit auffordern. Noel könnte antworten: „Du wirkst unzufrieden mit der Verteilung. Habe ich das richtig verstanden? Ich zeige dir meine Notizen, dann teilen wir die nächsten Schritte auf.“ Das nimmt das mögliche Gefühl ernst, ohne es als bewiesen auszugeben.",
+				"criteria": [
+					"Ich unterscheide zwei Funktionen.",
+					"Ich vermeide eine sichere Absichtsunterstellung.",
+					"Ich entwickle eine klärende Reaktion."
+				]
+			}
+		},
+		"extension": "Spielt das Gespräch zu zweit. Gebt euch Feedback zu Wortwahl, Blickkontakt, Stimme und der tatsächlichen Wirkung der Rückfrage.",
+		"check": {
+			"wrong": "Du musst einfach lauter und schneller reden.",
+			"explanation": "Die Nachfrage bietet eine überprüfbare Deutung an. Erst nach der Klärung lässt sich eine faire Arbeitsverteilung vereinbaren."
+		},
+		"takeaway": "Gib das Verstandene in eigenen Worten zurück und frage nach.",
+		"lehrplan": "D8 LB 1.1, LB 1.3 · gemeinsamer Fachlehrplan"
+	},
+	{
+		"id": "d8-vortrag",
+		"stage": "sprechen",
+		"title": "Mit einem Vortrag etwas bewegen",
+		"skill": "Einstieg, roter Faden und Stimme planen.",
+		"bindings": ["1.2"],
+		"paragraphs": [
+			"Ein verständlicher Kurzvortrag hat eine Leitfrage, wenige geordnete Hauptpunkte und einen Abschluss. Der Einstieg kann eine konkrete Frage oder Beobachtung sein. Eine Folie zeigt Schlüsselwörter oder ein erklärtes Bild, während du Zusammenhänge sprichst.",
+			"Ein Appell richtet sich mit einer begründeten Bitte an eine bestimmte Gruppe. Stimme, Tempo, Betonung und Pausen unterstützen den Sinn. Beim literarischen Vortrag werden Entscheidungen am Text begründet; auswendig sprechen allein erzeugt noch keine passende Wirkung."
+		],
+		"material": "Auftrag: Überzeuge die Klasse in zwei Minuten, einen freiwilligen Lesetausch zu erproben. Material: Bücher können am Freitag in einer beschrifteten Kiste abgegeben werden; die Teilnahme ist freiwillig; die Klassenvertretung zählt nach zwei Wochen die Ausleihen.",
+		"materialLabel": "Eigenes, erfundenes Übungsmaterial",
+		"sourceIds": ["lehrplan"],
+		"cases": [
+			{
+				"prompt": "Der Einstieg lautet: „Welches Buch steht bei euch ungelesen herum?“",
+				"options": [
+					"Passender Bezug zur Zielgruppe",
+					"Schon ein Beweis für den Erfolg"
+				],
+				"answer": "Passender Bezug zur Zielgruppe",
+				"feedback": "Die Frage weckt einen lebensnahen Bezug. Sie belegt noch nicht, dass der Tausch funktionieren wird."
+			},
+			{
+				"prompt": "Bei einem Gedicht wird jede Zeile gleich schnell und gleich laut gesprochen. Was hilft?",
+				"options": [
+					"Nur möglichst schnell bis zum Ende sprechen.",
+					"Sinnabschnitte markieren und unterschiedliche Betonungen erproben."
+				],
+				"answer": "Sinnabschnitte markieren und unterschiedliche Betonungen erproben.",
+				"feedback": "Der Sinn des Texts gibt Anlass für Pausen und Betonungen; gleichförmiges Tempo erschwert diese Gestaltung."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Schreibe eine Gliederung für den Lesetausch-Vortrag mit Einstieg, zwei Hauptpunkten und einem begründeten Appell.",
+				"model": "Einstieg: Welches Buch liegt bei euch ungelesen? Erstens: freiwillige Abgabe am Freitag in der Kiste. Zweitens: Nach zwei Wochen prüfen wir die Nutzung. Appell: Bringt ein geeignetes Buch mit, damit wir den Tausch gemeinsam ausprobieren können.",
+				"criteria": [
+					"Ich gliedere den Vortrag erkennbar.",
+					"Ich verwende nur die gegebenen Angaben.",
+					"Ich richte einen begründeten Appell an die Klasse."
+				]
+			},
+			"2": {
+				"prompt": "Formuliere denselben Appell für die Klasse und die Schulleitung. Erkläre die unterschiedliche Gestaltung.",
+				"model": "Klasse: „Bringt am Freitag ein Buch mit und entdeckt neuen Lesestoff.“ Schulleitung: „Bitte erlauben Sie einen zweiwöchigen Versuch mit einer beschrifteten Kiste; die Klassenvertretung wertet die Ausleihen aus.“ Die Klasse wird zum Mitmachen eingeladen, die Schulleitung um einen begrenzten, überprüfbaren Versuch gebeten.",
+				"criteria": [
+					"Ich unterscheide die Zielgruppen.",
+					"Ich passe Anliegen und Begründung an.",
+					"Ich erkläre meine sprachliche Entscheidung."
+				]
+			}
+		},
+		"extension": "Halte den Vortrag vor anderen und bitte um Rückmeldung zu Verständlichkeit und Darbietung. Trage zusätzlich einen selbst gewählten kurzen literarischen Text mit begründeten Pausen vor.",
+		"check": {
+			"wrong": "Viele unkommentierte Bilder ohne Bezug zur Leitfrage.",
+			"explanation": "Schlüsselwörter stützen den roten Faden. Zuhörende müssen nicht gleichzeitig einen langen Text lesen und einen anderen Vortrag verfolgen."
+		},
+		"takeaway": "Richte Gliederung, Visualisierung und Vortrag auf dein Publikum aus.",
+		"lehrplan": "D8 LB 1.2 · gemeinsamer Fachlehrplan"
+	},
+	{
+		"id": "d8-debatte",
+		"stage": "sprechen",
+		"title": "Fair diskutieren",
+		"skill": "Auf andere eingehen und Positionen prüfen.",
+		"bindings": ["1.3", "1.2"],
+		"paragraphs": [
+			"In einer Debatte begründest du eine Position und nimmst auf Gegenbeiträge Bezug. Gib einen Einwand zunächst fair wieder, bevor du antwortest. Kritik betrifft die Aussage, nicht den Wert der Person.",
+			"Für eine tragfähige Vorbereitung brauchst du überprüfbare Informationen. Rollen können helfen, eine fremde Position zu verstehen, ohne sie persönlich zu übernehmen. Gesprächsregeln wie Ausredenlassen und Redezeitbegrenzung geben mehreren Stimmen Raum."
+		],
+		"material": "Erfundene Klassenratsfrage: Soll ein Teil des Schulhofs als Ruhezone dienen? Pro: Einige möchten in der Pause lesen. Einwand: Für Ballspiele bleibt dann weniger Platz. Noch unbekannt: Wie groß der benötigte Bereich ist und wie viele ihn nutzen würden.",
+		"materialLabel": "Eigenes, erfundenes Übungsmaterial",
+		"sourceIds": ["lehrplan"],
+		"cases": [
+			{
+				"prompt": "Eine Gruppe erfindet eine hohe Nutzungszahl, damit ihre Position gewinnt.",
+				"options": [
+					"Eine passende Zahl zählt auch ohne Erhebung als Beleg.",
+					"Die Zahl muss vor Verwendung überprüft werden."
+				],
+				"answer": "Die Zahl muss vor Verwendung überprüft werden.",
+				"feedback": "Eine erfundene Zahl ist kein Nachweis. Fehlende Informationen dürfen als offen benannt werden."
+			},
+			{
+				"prompt": "Du vertrittst in einer Übung die Gegenseite. Bedeutet das Zustimmung?",
+				"options": [
+					"Nein, die Rolle übt das Verständnis einer anderen Position.",
+					"Ja, eine Rolle legt die persönliche Meinung fest."
+				],
+				"answer": "Nein, die Rolle übt das Verständnis einer anderen Position.",
+				"feedback": "Rollenposition und eigene Überzeugung können auseinanderliegen; die Rollenübung fördert Perspektivwechsel."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Schreibe einen Diskussionsbeitrag, der den Einwand aufnimmt und einen nächsten Prüfschritt vorschlägt.",
+				"model": "Für Ballspiele muss genug Platz bleiben. Deshalb sollten wir vor einer Entscheidung einen kleinen möglichen Ruhebereich markieren und zwei Wochen lang beobachten, wie beide Bereiche genutzt werden. Dann können wir über die Größe entscheiden.",
+				"criteria": [
+					"Ich gebe den Einwand fair wieder.",
+					"Ich schlage eine konkrete Prüfung vor.",
+					"Ich vermeide erfundene Ergebnisse."
+				]
+			},
+			"2": {
+				"prompt": "Formuliere je einen starken Beitrag für beide Seiten und benenne eine Information, die für die Entscheidung noch fehlt.",
+				"model": "Pro: Ein begrenzter ruhiger Bereich bietet eine weitere Pausennutzung. Contra: Eine feste Abtrennung könnte Bewegung einschränken. Für eine Abwägung fehlen die verfügbaren Flächen und die tatsächlichen Nutzungswünsche; darüber sollte die Klasse zunächst Daten erheben.",
+				"criteria": [
+					"Ich begründe beide Positionen.",
+					"Ich karikiere die Gegenseite nicht.",
+					"Ich benenne entscheidungsrelevante Informationslücken."
+				]
+			}
+		},
+		"extension": "Recherchiert echte Informationen zur eigenen Schule und führt eine geregelte Diskussion. Beobachtet, ob Beiträge anderer aufgenommen werden und mehrere Personen zu Wort kommen.",
+		"check": {
+			"wrong": "Die Frage nach dem Platz ist grundsätzlich unwichtig.",
+			"explanation": "Die Antwort erkennt den Zielkonflikt an und schlägt eine Prüfung vor. Persönliche Zuschreibungen ersetzen keine Argumentation."
+		},
+		"takeaway": "Prüfe einen Einwand sachlich, bevor du darauf antwortest.",
+		"lehrplan": "D8 LB 1.3, LB 1.2 · gemeinsamer Fachlehrplan"
+	},
+	{
+		"id": "d8-interview",
+		"stage": "sprechen",
+		"title": "Ein Interview vorbereiten",
+		"skill": "Offene Fragen stellen und Antworten genau sichern.",
+		"bindings": ["1.3", "1.1"],
+		"paragraphs": [
+			"Ein Interviewleitfaden ordnet Fragen vom Einstieg zu genaueren Nachfragen. Offene Fragen ermöglichen ausführliche Antworten. Suggestivfragen legen eine erwünschte Antwort nahe und können die Auskunft verzerren.",
+			"Höre während des Interviews auf neue Hinweise und frage passend nach. Trenne bei der Auswertung die tatsächliche Antwort von deiner Deutung. Wenn du Aussagen wörtlich nutzen möchtest, sichere den genauen Wortlaut und kläre mit der befragten Person, wie du ihn verwenden darfst."
+		],
+		"material": "Geplantes Interview mit der Leiterin einer erfundenen Schulbibliothek. Thema: Leseinteressen. Fragenentwurf: „Alle lesen doch nur noch am Handy, oder?“ / „Welche Veränderungen beobachten Sie bei den Ausleihen?“ / „Können Sie dafür ein Beispiel nennen?“",
+		"materialLabel": "Eigenes, erfundenes Übungsmaterial",
+		"sourceIds": ["lehrplan"],
+		"cases": [
+			{
+				"prompt": "Die Person antwortet: „Das ist je nach Klasse unterschiedlich.“ Was passt?",
+				"options": [
+					"Woran erkennen Sie die Unterschiede?",
+					"Dann sind also alle Klassen gleich?"
+				],
+				"answer": "Woran erkennen Sie die Unterschiede?",
+				"feedback": "Die Nachfrage greift den tatsächlichen Unterschied auf und bittet um eine genauere Erläuterung."
+			},
+			{
+				"prompt": "In der Mitschrift fehlt ein Wort. Wie gehst du bei einem direkten Zitat vor?",
+				"options": [
+					"Das fehlende Wort unbemerkt ergänzen.",
+					"Den Wortlaut vor Verwendung klären."
+				],
+				"answer": "Den Wortlaut vor Verwendung klären.",
+				"feedback": "Ein direktes Zitat muss dem gesicherten Wortlaut entsprechen; eine eigene Ergänzung darf nicht als Original erscheinen."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Entwirf vier Interviewfragen: Einstieg, Beobachtung, Beispiel und offene Abschlussfrage.",
+				"model": "Welche Aufgaben haben Sie in der Bibliothek? Welche Veränderungen bei den Ausleihen beobachten Sie? Können Sie ein Beispiel nennen? Was möchten Sie den Klassen noch mitgeben?",
+				"criteria": [
+					"Ich ordne die Fragen sinnvoll.",
+					"Ich stelle offene, verständliche Fragen.",
+					"Ich plane eine vertiefende Nachfrage."
+				]
+			},
+			"2": {
+				"prompt": "Überarbeite die Suggestivfrage im Material und erkläre, wie du bei einer unerwarteten Antwort vom Leitfaden abweichen würdest.",
+				"model": "Statt „Alle lesen doch nur noch am Handy“ frage ich: „Welche Rolle spielen gedruckte und digitale Texte bei Ihren Besucherinnen und Besuchern?“ Falls die Antwort einen neuen Leseklub erwähnt, frage ich nach seinem Ablauf und komme anschließend zu den übrigen Leitfragen zurück.",
+				"criteria": [
+					"Ich entferne die Antwortvorgabe.",
+					"Ich plane eine antwortbezogene Nachfrage.",
+					"Ich begründe die flexible Nutzung des Leitfadens."
+				]
+			}
+		},
+		"extension": "Führe mit Zustimmung der Person ein echtes Interview durch. Vergleiche anschließend Frageplan, Mitschrift und die tatsächlich gewonnenen Informationen.",
+		"check": {
+			"wrong": "Sie finden den Lesetausch bestimmt großartig, stimmt’s?",
+			"explanation": "Die offene Frage fordert eine eigene Beobachtung an, statt eine Antwort durch eine Behauptung oder Zustimmungserwartung vorzugeben."
+		},
+		"takeaway": "Offene Fragen erkunden eine Sichtweise, Suggestivfragen lenken sie.",
+		"lehrplan": "D8 LB 1.3, LB 1.1 · gemeinsamer Fachlehrplan"
+	},
+	{
+		"id": "d8-szene",
+		"stage": "sprechen",
+		"title": "Eine Figur auf die Bühne bringen",
+		"skill": "Rollenabsicht, Stimme und Feedback verbinden.",
+		"bindings": ["1.4", "1.2", "2.4", "2.2"],
+		"paragraphs": [
+			"Eine Rollenbiografie sammelt, was der Text über eine Figur zeigt, und kennzeichnet eigene Ergänzungen als Spielentscheidungen. Frage nach Ziel, Beziehung, Hindernis und dem Wissen der Figur. Daraus entstehen begründete Entscheidungen für Haltung, Stimme, Bewegung und Requisiten.",
+			"Ein Spielkonzept lässt sich ausprobieren und verändern. Feedback beschreibt zunächst eine beobachtete Gestaltung und ihre Wirkung. Ein Vergleich mit einer Filmszene kann zusätzlich Einstellung, Schnitt und Ton untersuchen. Die schriftliche Planung ersetzt das Spielen und Anschauen nicht."
+		],
+		"material": "Eigene Miniaturszene: Vor einer geschlossenen Tür. Ada hält einen Umschlag. Ben: „Du kannst ihn jetzt abgeben.“ Ada: „Wenn es zu spät ist?“ Ben: „Dann wissen wir es wenigstens.“ Ada hebt die Hand und senkt sie wieder.",
+		"materialLabel": "Eigenes, erfundenes Übungsmaterial",
+		"sourceIds": ["lehrplan"],
+		"cases": [
+			{
+				"prompt": "Ben wird als geduldiger Freund gespielt. Was begründet diese Wahl?",
+				"options": [
+					"Der Text beweist, dass er jede Entscheidung Adas kennt.",
+					"Seine Antwort lässt Ada eine Handlungsmöglichkeit offen."
+				],
+				"answer": "Seine Antwort lässt Ada eine Handlungsmöglichkeit offen.",
+				"feedback": "Die Deutung kann an Bens Worten erläutert werden; umfassendes Wissen ist daraus nicht abzuleiten."
+			},
+			{
+				"prompt": "Nach der Aufführung heißt es: „War halt schlecht.“ Was hilft stattdessen?",
+				"options": [
+					"Beim Senken der Hand war deine Pause kaum wahrnehmbar; probiere eine längere.",
+					"Nächstes Mal spiel einfach grundsätzlich besser."
+				],
+				"answer": "Beim Senken der Hand war deine Pause kaum wahrnehmbar; probiere eine längere.",
+				"feedback": "Der konkrete Vorschlag kann im nächsten Durchlauf praktisch erprobt und besprochen werden."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Entwirf für Ada eine kurze Rollenkarte mit Ziel, Hindernis und zwei Spielentscheidungen.",
+				"model": "Ziel: Den Umschlag abgeben. Hindernis: Angst, zu spät zu sein. Ich halte den Umschlag fest und pausiere vor der Tür. Das feste Halten ergänze ich als Spielentscheidung; das Heben und Senken der Hand ist vorgegeben.",
+				"criteria": [
+					"Ich stütze die Rollenabsicht am Text.",
+					"Ich unterscheide Vorgabe und Ergänzung.",
+					"Ich plane zwei konkrete Ausdrucksmittel."
+				]
+			},
+			"2": {
+				"prompt": "Plane eine Bühnen- und eine Filmfassung derselben Szene. Begründe einen Unterschied in der Darstellung von Adas Zögern.",
+				"model": "Auf der Bühne kann Ada eine deutlich sichtbare Handbewegung und längere Pause nutzen. Im Film könnte eine Nahaufnahme der Hand am Umschlag das Zögern hervorheben. Die Nahaufnahme lenkt den Blick stärker, während auf der Bühne das gesamte Verhältnis der Figuren gleichzeitig sichtbar bleibt.",
+				"criteria": [
+					"Ich plane beide Darstellungsformen.",
+					"Ich benenne ein filmspezifisches Mittel.",
+					"Ich begründe seine Wirkung am gleichen Moment."
+				]
+			}
+		},
+		"extension": "Spielt die Szene, gebt konkretes Feedback und spielt eine veränderte Fassung. Vergleicht später einen echten Dramenauszug mit seiner tatsächlichen Verfilmung.",
+		"check": {
+			"wrong": "Ein Requisit ist stets wichtiger als die Beziehung der Figuren.",
+			"explanation": "Die Handbewegung ist vorgegeben. Weitere Eigenschaften können für die Rolle entwickelt werden, müssen aber als Ergänzung erkennbar bleiben."
+		},
+		"takeaway": "Begründe Spielentscheidungen am Text und erprobe Rückmeldungen.",
+		"lehrplan": "D8 LB 1.4, LB 1.2, LB 2.4, LB 2.2 · gemeinsamer Fachlehrplan"
+	},
+	{
+		"id": "d8-lesestrategien",
+		"stage": "lesen",
+		"title": "Mit einer Lesefrage starten",
+		"skill": "Orientieren, gezielt suchen und genau verstehen.",
+		"bindings": ["2.1"],
+		"paragraphs": [
+			"Die Lesefrage entscheidet über die Strategie. Beim orientierenden Lesen verschaffst du dir einen Überblick über Überschriften und Aufbau. Beim selektiven Lesen suchst du eine konkrete Angabe. Für Zusammenhänge liest du die entscheidenden Abschnitte genau und klärst unbekannte Wörter aus Kontext oder Nachschlagewerk.",
+			"Beim reziproken Lesen wechseln die Aufgaben in einer Gruppe: Fragen stellen, zusammenfassen, Unklares klären und den weiteren Inhalt vermuten. Eine Erwartung an den Text ist zunächst eine Vermutung, die du am tatsächlichen Inhalt überprüfst."
+		],
+		"material": "Aushang „Lesetausch auf Probe“: Ab Freitag steht im Klassenraum eine Tauschkiste. Wer ein Buch hineinlegt, beschriftet es mit einer kurzen Empfehlung. Nach zwei Wochen bespricht die Klasse, wie der Versuch gelaufen ist. Beschädigte Bücher bleiben zu Hause.",
+		"materialLabel": "Eigenes, erfundenes Übungsmaterial",
+		"sourceIds": ["lehrplan"],
+		"cases": [
+			{
+				"prompt": "Die Überschrift lautet „Lesetausch auf Probe“. Was darfst du daraus schließen?",
+				"options": [
+					"Ein Versuch ist zu erwarten; den Ablauf muss ich nachlesen.",
+					"Alle Einzelheiten des Ablaufs sind damit bereits bekannt."
+				],
+				"answer": "Ein Versuch ist zu erwarten; den Ablauf muss ich nachlesen.",
+				"feedback": "Die Überschrift erlaubt eine Leseerwartung, aber noch keine sicheren Aussagen zu Einzelheiten."
+			},
+			{
+				"prompt": "In der Gruppe ist „auf Probe“ unklar. Was passt zum reziproken Lesen?",
+				"options": [
+					"Unklare Stellen grundsätzlich übergehen.",
+					"Den Ausdruck gemeinsam aus dem Zusammenhang erklären."
+				],
+				"answer": "Den Ausdruck gemeinsam aus dem Zusammenhang erklären.",
+				"feedback": "Das Klären unbekannter Ausdrücke gehört ebenso zum Textverständnis wie Fragen und Zusammenfassen."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Formuliere zwei Lesefragen zum Aushang und beantworte sie mit der passenden Textinformation.",
+				"model": "Wann beginnt der Versuch? Am Freitag. Was geschieht nach zwei Wochen? Die Klasse bespricht den Verlauf. Für diese Angaben suche ich gezielt nach Zeit und Tätigkeit.",
+				"criteria": [
+					"Ich stelle konkrete Fragen.",
+					"Ich sichere Antworten aus dem Text.",
+					"Ich benenne eine passende Strategie."
+				]
+			},
+			"2": {
+				"prompt": "Entwirf einen Ablauf für reziprokes Lesen des Aushangs in einer Vierergruppe und erkläre den Nutzen eines Rollenwechsels.",
+				"model": "Eine Person fragt nach dem Ablauf, eine fasst zusammen, eine klärt „auf Probe“, eine vermutet mögliche Probleme bei der Auswertung. Danach wechseln die Rollen an einem neuen Text. So üben alle verschiedene Verstehenshandlungen; Vermutungen werden später am Text überprüft.",
+				"criteria": [
+					"Ich plane vier unterschiedliche Handlungen.",
+					"Ich kennzeichne Vermutungen.",
+					"Ich begründe den Rollenwechsel."
+				]
+			}
+		},
+		"extension": "Wähle einen längeren passenden Sachtext oder eine Erzählung. Lies ihn flüssig, kläre Wortschatz und probiere die Strategien an neuen Lesefragen aus.",
+		"check": {
+			"wrong": "Nur die Schriftfarbe betrachten und raten.",
+			"explanation": "Eine konkrete Suchfrage lenkt das selektive Lesen. Für die Erklärung des ganzen Ablaufs wäre anschließend genaueres Lesen nötig."
+		},
+		"takeaway": "Wähle deine Lesestrategie passend zur konkreten Lesefrage.",
+		"lehrplan": "D8 LB 2.1 · gemeinsamer Fachlehrplan"
+	},
+	{
+		"id": "d8-bericht-reportage",
+		"stage": "lesen",
+		"title": "Bericht und Reportage vergleichen",
+		"skill": "Sachinformation und erlebte Nähe unterscheiden.",
+		"bindings": ["2.3", "2.1"],
+		"paragraphs": [
+			"Ein Bericht ordnet wichtige Angaben zu einem Ereignis sachlich. Leitfragen wie Wer? Was? Wann? Wo? Wie? Warum? helfen, Informationen zu prüfen. Fehlende Ursachen werden nicht erfunden.",
+			"Eine Reportage kann eine Situation durch beobachtete Einzelheiten, szenische Passagen und Stimmen anschaulich machen. Sie bleibt an überprüfbare Tatsachen gebunden. Wertungen und persönliche Wahrnehmungen prüfst du getrennt von gesicherten Angaben; lebendige Sprache macht einen Text nicht automatisch unwahr."
+		],
+		"material": "Zwei erfundene Texte zum selben Ereignis. A: „Am Dienstag eröffnete die Klasse 8b einen Büchertausch. In der ersten Pause wurden zwölf Bücher abgegeben.“ B: „Ein Karton rutscht über den Tisch. ‚Das hier ist spannend‘, sagt Aylin und legt ein Buch hinein. In der ersten Pause füllt sich die Kiste mit zwölf Büchern.“",
+		"materialLabel": "Eigenes, erfundenes Übungsmaterial",
+		"sourceIds": ["lehrplan"],
+		"cases": [
+			{
+				"prompt": "In beiden Ausschnitten werden zwölf Bücher genannt.",
+				"options": [
+					"Die unterschiedliche Darstellung widerlegt die Zahl.",
+					"Diese Angabe stimmt in beiden Texten überein."
+				],
+				"answer": "Diese Angabe stimmt in beiden Texten überein.",
+				"feedback": "Die gleiche Sachangabe kann mit verschiedenen sprachlichen Mitteln vermittelt werden."
+			},
+			{
+				"prompt": "Jemand ergänzt ohne Quelle: „Alle waren begeistert.“",
+				"options": [
+					"Die pauschale Wertung braucht eine belastbare Grundlage.",
+					"Die anschauliche Form erlaubt beliebige Ergänzungen."
+				],
+				"answer": "Die pauschale Wertung braucht eine belastbare Grundlage.",
+				"feedback": "Ein Eindruck Einzelner darf nicht ohne Nachweis zu einer Aussage über alle werden."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Vergleiche beide Ausschnitte in drei Sätzen: gemeinsame Information, sprachlicher Unterschied, Wirkung.",
+				"model": "Beide nennen zwölf abgegebene Bücher in der ersten Pause. A ordnet die Angaben sachlich, B zeigt eine Szene mit einer Stimme. Dadurch wirkt B näher am unmittelbaren Geschehen.",
+				"criteria": [
+					"Ich benenne eine gemeinsame Angabe.",
+					"Ich belege einen Darstellungsunterschied.",
+					"Ich erkläre eine mögliche Wirkung."
+				]
+			},
+			"2": {
+				"prompt": "Schreibe einen sachlichen Kurzbericht aus den gesicherten Angaben beider Ausschnitte und benenne eine Frage, die offen bleibt.",
+				"model": "Am Dienstag eröffnete die Klasse 8b einen Büchertausch. In der ersten Pause gingen zwölf Bücher ein. Aylin beteiligte sich daran. Wie viele Personen insgesamt Bücher abgaben und wie der Tausch danach verlief, ist aus den Ausschnitten nicht bekannt.",
+				"criteria": [
+					"Ich verwende nur gesicherte Angaben.",
+					"Ich schreibe sachlich und geordnet.",
+					"Ich kennzeichne eine offene Frage."
+				]
+			}
+		},
+		"extension": "Vergleiche einen längeren echten Bericht und eine echte Reportage. Markiere Tatsachen, zugeschriebene Aussagen und Darstellungsentscheidungen.",
+		"check": {
+			"wrong": "Er besteht ausschließlich aus einer abstrakten Inhaltsübersicht.",
+			"explanation": "Szenisches Erzählen und Stimmen schaffen Nähe. Auch diese Darstellungsweise braucht gesicherte Tatsachen und erkennbare Perspektiven."
+		},
+		"takeaway": "Anschauliche Darstellung braucht ebenso überprüfbare Tatsachen wie ein Bericht.",
+		"lehrplan": "D8 LB 2.3, LB 2.1 · gemeinsamer Fachlehrplan"
+	},
+	{
+		"id": "d8-diagramme",
+		"stage": "lesen",
+		"title": "Zahlen genau lesen",
+		"skill": "Bezugsgröße, Zeitraum und Grenze einer Aussage prüfen.",
+		"bindings": ["2.3"],
+		"paragraphs": [
+			"Bevor du Daten deutest, kläre Thema, Quelle, Erhebungsgruppe, Zeitraum, Einheit und Bezugsgröße. Prozentanteile beziehen sich auf eine bestimmte Gesamtzahl. Fehlende Angaben begrenzen die Aussagekraft.",
+			"Beschreibe erst die Daten und formuliere dann eine vorsichtige Deutung. Eine Umfrage in einer Klasse sagt zunächst etwas über diese befragte Klasse. Aus einem Zusammenhang folgt noch keine Ursache, und ein Ergebnis wird nicht durch eine auffällige Überschrift allgemeingültig."
+		],
+		"material": "Erfundene Übungsumfrage: 25 Mitglieder der Klasse 8b antworten auf „Möchtest du eine Tauschkiste ausprobieren?“ 15: ja, 5: nein, 5: unentschieden. Befragung nur an einem Tag, keine Auswahl anderer Klassen. 15 von 25 entsprechen 60 Prozent.",
+		"materialLabel": "Eigenes, erfundenes Übungsmaterial",
+		"sourceIds": ["lehrplan"],
+		"cases": [
+			{
+				"prompt": "Ein Titel lautet „Alle wollen Büchertausch“.",
+				"options": [
+					"Der Titel übertreibt das Ergebnis.",
+					"Der Titel entspricht genau 15 von 25 Stimmen."
+				],
+				"answer": "Der Titel übertreibt das Ergebnis.",
+				"feedback": "Zehn Befragte haben nicht zugestimmt. Außerdem wurde nur eine Klasse befragt."
+			},
+			{
+				"prompt": "Jemand erklärt: „Die Abstimmung beweist, dass der Tausch später gut funktioniert.“",
+				"options": [
+					"Ein Wunsch und ein tatsächlicher Erfolg sind immer dasselbe.",
+					"Die Umfrage misst einen Wunsch, keinen späteren Erfolg."
+				],
+				"answer": "Die Umfrage misst einen Wunsch, keinen späteren Erfolg.",
+				"feedback": "Zwischen Zustimmung zu einem Versuch und seinen tatsächlichen Folgen liegt eine noch zu prüfende Entwicklung."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Beschreibe die Umfrage in zwei bis drei Sätzen und nenne eine Grenze.",
+				"model": "Von 25 Befragten stimmen 15 für den Versuch, also 60 Prozent. Je fünf lehnen ihn ab oder sind unentschieden. Das Ergebnis gilt für diese Klasse und belegt noch nicht die Meinung anderer Klassen.",
+				"criteria": [
+					"Ich nenne die Bezugsgröße.",
+					"Ich beschreibe alle Gruppen korrekt.",
+					"Ich begrenze die Reichweite der Aussage."
+				]
+			},
+			"2": {
+				"prompt": "Entwirf eine fairere Überschrift und einen Vorschlag, wie sich der tatsächliche Nutzen des Versuchs später prüfen ließe.",
+				"model": "Überschrift: „Mehrheit der befragten 8b für einen Tauschkistenversuch“. Nach zwei Wochen könnten Zahl der Ausleihen und Rückmeldungen zum Ablauf erhoben werden. Das wären andere Daten als die anfängliche Zustimmung; auch Schwierigkeiten müssten aufgenommen werden.",
+				"criteria": [
+					"Ich formuliere eine datengerechte Überschrift.",
+					"Ich unterscheide Wunsch und Nutzung.",
+					"Ich plane eine überprüfbare Auswertung."
+				]
+			}
+		},
+		"extension": "",
+		"check": {
+			"wrong": "Der Tausch verbessert nachweislich jede Schulnote.",
+			"explanation": "Die Bezugsgröße sind die 25 befragten Personen. Über andere Klassen oder eine Wirkung auf Noten wurde nichts erhoben."
+		},
+		"takeaway": "Prüfe immer, auf welche Gruppe und welchen Zeitraum sich Daten beziehen.",
+		"lehrplan": "D8 LB 2.3 · gemeinsamer Fachlehrplan"
+	},
+	{
+		"id": "d8-zeitung",
+		"stage": "lesen",
+		"title": "Sich in Zeitungen orientieren",
+		"skill": "Ressorts, Textarten und Leserlenkung untersuchen.",
+		"bindings": ["2.3", "2.4"],
+		"paragraphs": [
+			"Ressorts ordnen Themen, etwa Politik, Kultur, Sport und Lokales. Rubriken sind wiederkehrende Teile eines Angebots. Titel, Vorspann, Bilder, Bildunterschriften und Platzierung helfen bei der Orientierung und lenken zugleich Aufmerksamkeit.",
+			"Vergleiche bei zwei Darstellungen desselben Ereignisses Auswahl, Wortwahl, Quellen und Gestaltung. Eine große Schlagzeile macht einen Bericht nicht wahrer. Sachliche Angaben, Meinung und werbliche Absicht müssen anhand des Inhalts und seiner Kennzeichnung unterschieden werden."
+		],
+		"material": "Erfundene Titelseiten zum gleichen Projekt. Blatt A: Ressort „Lokales“, Überschrift „8b erprobt Büchertausch“, kleines Foto der Kiste. Blatt B: Überschrift „Bücherboom erobert die Schule!“, riesiges Foto jubelnder Personen; der Text nennt ebenfalls nur die Klasse 8b. Unbekannt ist, wann das Jubelfoto aufgenommen wurde.",
+		"materialLabel": "Eigenes, erfundenes Übungsmaterial",
+		"sourceIds": ["lehrplan"],
+		"cases": [
+			{
+				"prompt": "Du suchst Nachrichten aus dem eigenen Ort.",
+				"options": [
+					"Die Schriftgröße ersetzt die thematische Suche.",
+					"Das Ressort Lokales ist ein sinnvoller Einstieg."
+				],
+				"answer": "Das Ressort Lokales ist ein sinnvoller Einstieg.",
+				"feedback": "Ein Ressort ordnet Inhalte nach Themen und erleichtert gezieltes Finden."
+			},
+			{
+				"prompt": "Der Text nennt eine Klasse, die Überschrift die ganze Schule.",
+				"options": [
+					"Die Überschrift erweitert die Aussage über die Textgrundlage hinaus.",
+					"Überschriften dürfen jede Reichweite ohne Grundlage behaupten."
+				],
+				"answer": "Die Überschrift erweitert die Aussage über die Textgrundlage hinaus.",
+				"feedback": "Zwischen Klasse und Schule liegt ein sachlicher Unterschied, den die zugespitzte Überschrift verwischt."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Vergleiche die beiden Titelseiten anhand von zwei konkreten Merkmalen und ihrer Wirkung.",
+				"model": "A begrenzt die Überschrift auf die Klasse 8b und zeigt die Kiste. B verwendet „erobert“ und ein Jubelfoto, was einen großen Erfolg nahelegt. Der Text von B belegt diesen Eindruck für die ganze Schule nicht.",
+				"criteria": [
+					"Ich nenne zwei konkrete Merkmale.",
+					"Ich erläutere ihre Wirkung.",
+					"Ich prüfe die Wirkung an den Angaben."
+				]
+			},
+			"2": {
+				"prompt": "Entwirf für Blatt B eine neue Überschrift, Bildunterschrift und Ressortzuordnung. Begründe die Änderungen.",
+				"model": "Ressort: Lokales. Überschrift: „Klasse 8b startet Tauschkistenversuch“. Bildunterschrift: „Die Tauschkiste im Klassenraum“ – nur mit einem tatsächlich dort aufgenommenen Foto. Die Fassung begrenzt das Ereignis auf die belegte Gruppe und vermeidet einen ungesicherten Erfolgsanspruch.",
+				"criteria": [
+					"Ich gestalte alle drei Elemente.",
+					"Ich beschränke mich auf belegte Zusammenhänge.",
+					"Ich begründe die neue Leserlenkung."
+				]
+			}
+		},
+		"extension": "Vergleiche eine echte Printzeitung und eine Online-Ausgabe: Ressorts, Rubriken, Platzierung und Texte zum gleichen Thema. Untersuche auch einen gekennzeichneten Meinungsbeitrag.",
+		"check": {
+			"wrong": "Passt seine Farbe zu meinem liebsten Schulfach?",
+			"explanation": "Ein Bild kann einen Eindruck verstärken, obwohl sein Bezug ungeklärt ist. Die Bildherkunft und die zum Ereignis passende Beschreibung sind daher wichtig."
+		},
+		"takeaway": "Vergleiche den Eindruck einer Schlagzeile mit den tatsächlich belegten Angaben.",
+		"lehrplan": "D8 LB 2.3, LB 2.4 · gemeinsamer Fachlehrplan"
+	},
+	{
+		"id": "d8-quellen",
+		"stage": "lesen",
+		"title": "Informationen gegenprüfen",
+		"skill": "Urheberschaft, Beleg und Veröffentlichung unterscheiden.",
+		"bindings": ["2.4", "3.2"],
+		"paragraphs": [
+			"Für eine Recherche formulierst du zuerst eine genaue Frage. Prüfe dann, wer eine Angabe veröffentlicht, worauf sie sich stützt, wann sie erhoben wurde und ob andere unabhängige Quellen sie bestätigen. Ein Link oder eine professionelle Gestaltung allein ist kein Beleg.",
+			"Wähle Material passend zur Schreibfrage aus und notiere Quelle und Fundstelle. Eigene Beobachtung, fremde Aussage und überprüfter Nachweis bleiben unterscheidbar. Verwende für eigene Veröffentlichungen am besten eigenes oder ausdrücklich zur Nutzung freigegebenes Material und halte die angegebenen Bedingungen ein."
+		],
+		"material": "Erfundene Recherchemappe: A: Werbeseite eines Bücherregal-Anbieters: „Unsere Regale erhöhen die Leselust um 90 Prozent“, ohne Erhebung. B: Schulinterner Bericht: Datum, befragte Klasse und Antworten sind angegeben. C: Ein Blog kopiert die Aussage aus A und verlinkt A als einzige Quelle.",
+		"materialLabel": "Eigenes, erfundenes Übungsmaterial",
+		"sourceIds": ["lehrplan"],
+		"cases": [
+			{
+				"prompt": "Du willst über die Meinung der Klasse 8b schreiben.",
+				"options": [
+					"Der eingegrenzte Bericht B kann dafür relevant sein.",
+					"Die unbelegte Werbezahl A gilt automatisch für die Klasse."
+				],
+				"answer": "Der eingegrenzte Bericht B kann dafür relevant sein.",
+				"feedback": "Eine Quelle muss zur Frage und zur untersuchten Gruppe passen; die bloße Werbewirkung ist dafür unerheblich."
+			},
+			{
+				"prompt": "Du findest ein unbekanntes Foto im Internet für eine eigene öffentliche Seite.",
+				"options": [
+					"Ein sichtbares Foto ist automatisch frei verwendbar.",
+					"Zuerst Herkunft und Nutzungsbedingungen klären."
+				],
+				"answer": "Zuerst Herkunft und Nutzungsbedingungen klären.",
+				"feedback": "Auffindbarkeit ist keine Erklärung der Nutzungsmöglichkeiten. Eigene oder ausdrücklich freigegebene Bilder erleichtern eine verantwortliche Auswahl."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Schreibe eine Quellenprüfung zu A und C in drei Sätzen.",
+				"model": "A nennt eine hohe Werbezahl, aber keine nachvollziehbare Erhebung. C übernimmt dieselbe Aussage aus A. Deshalb sind die Seiten keine zwei unabhängigen Nachweise; die Grundlage der Zahl bleibt ungeklärt.",
+				"criteria": [
+					"Ich benenne den Ursprung.",
+					"Ich prüfe den tatsächlichen Beleg.",
+					"Ich unterscheide Wiederholung und Bestätigung."
+				]
+			},
+			"2": {
+				"prompt": "Plane eine eigene Recherche zur Frage, ob eine Tauschkiste in deiner Klasse genutzt würde. Nenne zwei Wege und ihre Grenzen.",
+				"model": "Ich befrage die Klasse mit einer neutralen Frage und dokumentiere Datum und Zahl der Antworten. Zusätzlich erprobe ich die Kiste zeitlich begrenzt und zähle Ausleihen. Wünsche und tatsächliche Nutzung ergänzen sich; aus einer Klasse lassen sich keine Aussagen über alle Schulen ableiten.",
+				"criteria": [
+					"Ich plane zwei unterscheidbare Informationswege.",
+					"Ich sichere die Herkunft der Angaben.",
+					"Ich begrenze die Schlussfolgerung."
+				]
+			}
+		},
+		"extension": "Führe eine eigene Recherche mit zwei voneinander unabhängigen Quellen durch. Dokumentiere Frage, Fundstellen, Auswahl und verworfene Angaben.",
+		"check": {
+			"wrong": "Eine Quellenangabe macht jede Werbezahl zuverlässig.",
+			"explanation": "A und C haben dieselbe ursprüngliche Grundlage. Ohne prüfbaren Nachweis entsteht durch das Kopieren keine unabhängige Evidenz."
+		},
+		"takeaway": "Eine wiederholte Behauptung wird dadurch noch nicht unabhängig bestätigt.",
+		"lehrplan": "D8 LB 2.4, LB 3.2 · gemeinsamer Fachlehrplan"
+	},
+	{
+		"id": "d8-medien",
+		"stage": "lesen",
+		"title": "Medienwirkung erkennen",
+		"skill": "Schnitt, Zustimmungssignale und eigene Nutzung reflektieren.",
+		"bindings": ["2.4"],
+		"paragraphs": [
+			"Medien zeigen eine ausgewählte und gestaltete Sicht. Bei einem Video beeinflussen Ausschnitt, Reihenfolge, Musik und Kommentar, wie du das Geschehen wahrnimmst. Ein Spiel kann durch Regeln und Belohnungen bestimmte Entscheidungen nahelegen. Sichtbare Gestaltung ist noch kein Beweis für Täuschung; entscheidend ist die Prüfung des Zusammenhangs.",
+			"Likes und häufige Wiederholung können Zustimmung sichtbar erscheinen lassen, messen aber nicht automatisch Wahrheit oder die Meinung aller. Begründe Medienvorlieben mit Kriterien und prüfe auch, wie Benachrichtigungen deine Aufmerksamkeit lenken. Eine bewusst gewählte Nutzungsregel lässt sich später an eigenen Erfahrungen überprüfen."
+		],
+		"material": "Fiktiver Clip: Ein Schüler lässt ein Buch fallen. Schnitt auf eine lachende Gruppe, dramatische Musik, Einblendung „Niemand mag Bücher“. Das Material verrät nicht, ob das Lachen zur gleichen Zeit aufgenommen wurde. Im Klassenchat erhält der Clip viele zustimmende Reaktionen.",
+		"materialLabel": "Eigenes, erfundenes Übungsmaterial",
+		"sourceIds": ["lehrplan"],
+		"cases": [
+			{
+				"prompt": "Die lachende Gruppe wird direkt nach dem fallenden Buch gezeigt.",
+				"options": [
+					"Die zeitliche Nachbarschaft der Aufnahmen beweist die Ursache.",
+					"Der Schnitt legt einen Zusammenhang nahe, belegt ihn aber nicht."
+				],
+				"answer": "Der Schnitt legt einen Zusammenhang nahe, belegt ihn aber nicht.",
+				"feedback": "Montage verbindet Bilder zu einer Wirkung. Ihre tatsächliche Entstehung muss dazu gesondert geprüft werden."
+			},
+			{
+				"prompt": "Eine App unterbricht häufig mit Hinweisen. Was ist eine überprüfbare Nutzungsregel?",
+				"options": [
+					"Für eine Lernphase Hinweise ausschalten und danach die Erfahrung vergleichen.",
+					"Alle Medien sind für jede Person grundsätzlich schlecht."
+				],
+				"answer": "Für eine Lernphase Hinweise ausschalten und danach die Erfahrung vergleichen.",
+				"feedback": "Eine konkrete, begrenzte Regel kann praktisch erprobt werden; ein pauschales Urteil erklärt die eigene Nutzung nicht."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Beschreibe zwei Gestaltungsmittel des Clips und erkläre, welche Deutung sie nahelegen.",
+				"model": "Der Schnitt vom Buch zur lachenden Gruppe legt Spott nahe. Dramatische Musik kann das Missgeschick wichtiger erscheinen lassen. Ob tatsächlich jemand über das Buch lachte, ist aus dem Clip nicht belegt.",
+				"criteria": [
+					"Ich benenne zwei Mittel.",
+					"Ich erkläre die nahegelegte Wirkung.",
+					"Ich trenne Wirkung und Nachweis."
+				]
+			},
+			"2": {
+				"prompt": "Entwirf einen faireren Kurzclip aus demselben Ereignis und eine begründete persönliche Nutzungsregel für Chats.",
+				"model": "Der Clip zeigt zunächst die ungeschnittene Situation und nennt gesicherte Umstände; unverbundene Reaktionsbilder entfallen. Für den Chat prüfe ich vor dem Weiterteilen Herkunft und Kontext und pausiere Benachrichtigungen während einer Lernphase. So entscheide ich über Aufmerksamkeit und Weitergabe bewusster.",
+				"criteria": [
+					"Ich ändere die Darstellung nachvollziehbar.",
+					"Ich begründe eine konkrete Nutzungsregel.",
+					"Ich verbinde Quellenprüfung und eigene Verantwortung."
+				]
+			}
+		},
+		"extension": "Vergleicht unterschiedliche Meinungen über ein tatsächlich gesehenes Medium mit gemeinsamen Kriterien. Untersucht auch ein Computerspiel und reflektiert freiwillig die eigene Nutzung, ohne persönliche Daten zu veröffentlichen.",
+		"check": {
+			"wrong": "Die Reaktionen bilden sicher die Meinung aller ab.",
+			"explanation": "Reaktionen zeigen ein Verhalten im jeweiligen Angebot. Ob Bild, Ton und Behauptung sachlich zusammenpassen, muss getrennt geprüft werden."
+		},
+		"takeaway": "Schnitt, Ton und Zustimmungssignale können Deutungen nahelegen.",
+		"lehrplan": "D8 LB 2.4 · gemeinsamer Fachlehrplan"
+	},
+	{
+		"id": "d8-figuren",
+		"stage": "lesen",
+		"title": "Figuren verstehen",
+		"skill": "Handlung, Motiv und Deutung auseinanderhalten.",
+		"bindings": ["2.2", "3.2"],
+		"paragraphs": [
+			"Eine Figurenbeschreibung verbindet äußeres Verhalten, Äußerungen und Beziehungen mit begründeten Deutungen. Ein Motiv ist ein möglicher Beweggrund. Unterscheide, was der Text ausdrücklich zeigt, und was du daraus erschließt.",
+			"Raum und Zeit bilden nicht bloß eine Kulisse: Eine verschlossene Tür oder eine knappe Frist können Handlungsmöglichkeiten verändern. Vergleiche Figurenbeziehungen mit eigenen oder erfundenen Erfahrungen, ohne einer Figur mehr Wissen zuzuschreiben, als der Text hergibt. Persönliches musst du dabei nicht offenlegen."
+		],
+		"material": "Eigene Erzählminiatur: Es war eine Minute vor dem Klingeln. Lia stand vor dem Musikraum. In ihrer Tasche lag der zerrissene Notenzettel. „Du gehst zuerst“, sagte sie zu Sam. Er schüttelte den Kopf und blieb neben ihr stehen. Hinter der Tür begann das Klavier.",
+		"materialLabel": "Eigenes, erfundenes Übungsmaterial",
+		"sourceIds": ["lehrplan"],
+		"cases": [
+			{
+				"prompt": "Der Raum ist verschlossen und die Zeit knapp.",
+				"options": [
+					"Beide Umstände können Lias Handlungsspielraum einschränken.",
+					"Raum und Zeit sind für eine Handlung grundsätzlich bedeutungslos."
+				],
+				"answer": "Beide Umstände können Lias Handlungsspielraum einschränken.",
+				"feedback": "Tür und Klingeln setzen konkrete Bedingungen für die Entscheidung der Figuren."
+			},
+			{
+				"prompt": "Sam bleibt neben Lia. Eine Deutung lautet: „Vielleicht will er sie unterstützen.“",
+				"options": [
+					"Das ist der einzige ausdrücklich genannte Grund.",
+					"Das ist eine begründbare, aber nicht sichere Motivdeutung."
+				],
+				"answer": "Das ist eine begründbare, aber nicht sichere Motivdeutung.",
+				"feedback": "Der Text zeigt Sams Verhalten; Unterstützung ist eine mögliche Erklärung dafür."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Beschreibe die Beziehung von Lia und Sam mit zwei Belegen und einer vorsichtigen Motivdeutung.",
+				"model": "Lia fordert Sam auf, zuerst zu gehen. Sam bleibt jedoch neben ihr stehen. Das kann darauf hindeuten, dass er sie nicht allein lassen möchte; sein genauer Grund wird nicht genannt.",
+				"criteria": [
+					"Ich verwende zwei Textbeobachtungen.",
+					"Ich deute die Beziehung nachvollziehbar.",
+					"Ich kennzeichne das Motiv als mögliche Erklärung."
+				]
+			},
+			"2": {
+				"prompt": "Entwickle zwei unterschiedliche Lesarten von Sams Verhalten und erläutere, welche zusätzliche Textinformation helfen würde.",
+				"model": "Sam könnte Lia unterstützen oder selbst Angst vor dem Eintreten haben. Für Unterstützung spricht sein Bleiben, für Angst könnte das Kopfschütteln passen. Ein weiterer Gedanke oder eine Äußerung Sams würde die Deutung eingrenzen; der vorhandene Text entscheidet sie nicht eindeutig.",
+				"criteria": [
+					"Ich entwickle zwei plausible Lesarten.",
+					"Ich stütze beide auf den Text.",
+					"Ich benenne eine entscheidende Informationslücke."
+				]
+			}
+		},
+		"extension": "Lies eine längere Erzählung und skizziere die Beziehungen der Figuren. Notiere Belege, Motive und eine Frage, die du mit anderen besprechen möchtest.",
+		"check": {
+			"wrong": "Lia hat den Notenzettel sicher absichtlich zerrissen.",
+			"explanation": "Das Bleiben wird ausdrücklich erzählt. Wissen und Absicht lassen sich aus dem kurzen Text nicht sicher ableiten."
+		},
+		"takeaway": "Belege eine Motivdeutung mit dem Verhalten oder den Worten der Figur.",
+		"lehrplan": "D8 LB 2.2, LB 3.2 · gemeinsamer Fachlehrplan"
+	},
+	{
+		"id": "d8-erzaehlzeit",
+		"stage": "lesen",
+		"title": "Wer erzählt und wie vergeht Zeit?",
+		"skill": "Autor, Erzähler, Rede und Zeitgestaltung unterscheiden.",
+		"bindings": ["2.2", "3.2"],
+		"paragraphs": [
+			"Der Autor ist die reale Person, die den Text schreibt. Der Erzähler ist die im Text gestaltete Stimme. Auch ein Ich-Erzähler ist nicht automatisch mit dem Autor gleichzusetzen. Prüfe, welches Wissen der Erzähler vermittelt und welche Sicht damit entsteht.",
+			"Erzählte Zeit ist der Zeitraum der Handlung, Erzählzeit die für das Erzählen beziehungsweise Lesen benötigte Zeit. Eine lange Handlung kann in wenigen Worten gerafft werden. Dialog gibt einen Wortwechsel wieder, Monolog die längere Rede einer einzelnen Figur; beides kann für Nähe und Tempo wichtig sein."
+		],
+		"material": "Eigener Text: „Drei Wochen wartete ich auf die Antwort. Dann klingelte es. ‚Machst du auf?‘, fragte Eren. ‚Gleich‘, sagte ich. Wie sollte ich ihm erklären, dass ich Angst vor einem Brief hatte?“",
+		"materialLabel": "Eigenes, erfundenes Übungsmaterial",
+		"sourceIds": ["lehrplan"],
+		"cases": [
+			{
+				"prompt": "„Machst du auf?“ – „Gleich.“",
+				"options": [
+					"Ein Bericht über eine öffentliche Abstimmung.",
+					"Ein Dialog zwischen zwei Figuren."
+				],
+				"answer": "Ein Dialog zwischen zwei Figuren.",
+				"feedback": "Die direkte Wechselrede zeigt zwei Stimmen in einer kurzen Gesprächssituation."
+			},
+			{
+				"prompt": "Die Angst wird aus der Ich-Sicht mitgeteilt. Was bleibt offen?",
+				"options": [
+					"Was Eren selbst in diesem Moment denkt.",
+					"Ob der Ich-Erzähler überhaupt eine Stimme hat."
+				],
+				"answer": "Was Eren selbst in diesem Moment denkt.",
+				"feedback": "Die Ich-Perspektive vermittelt hier keine ausdrücklichen Gedanken Erens; Leserwissen bleibt begrenzt."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Erkläre an zwei Stellen den Unterschied zwischen Zeitraffung und szenischem Erzählen.",
+				"model": "„Drei Wochen wartete ich“ rafft eine lange Zeit in einem Satz. Der kurze Wortwechsel zeigt dagegen einen einzelnen Moment ausführlicher. Dadurch rückt das Klingeln gegenüber der langen Wartezeit in den Vordergrund.",
+				"criteria": [
+					"Ich benenne beide Textstellen.",
+					"Ich unterscheide die Zeitgestaltung.",
+					"Ich erläutere ihre Wirkung."
+				]
+			},
+			"2": {
+				"prompt": "Schreibe den Moment aus Erens Ich-Sicht um. Erkläre danach, welche Information du als eigene Ergänzung eingeführt hast.",
+				"model": "„Ich hörte das Klingeln und fragte, ob sie aufmachen würde. Auf ihr knappes ‚Gleich‘ wusste ich nichts zu erwidern.“ Erens Ratlosigkeit ist meine Ergänzung. Die Angst vor dem Brief kann er ohne weitere Information nicht sicher kennen.",
+				"criteria": [
+					"Ich halte die neue Perspektive ein.",
+					"Ich beachte Grenzen des Figurenwissens.",
+					"Ich kennzeichne meine Ergänzung."
+				]
+			}
+		},
+		"extension": "",
+		"check": {
+			"wrong": "Die reale Schreibzeit des Autors beträgt genau drei Wochen.",
+			"explanation": "Ein längerer Handlungszeitraum wird kurz zusammengefasst. Daraus lässt sich weder die reale Schreibdauer noch eine dreiwöchige Lesezeit ableiten."
+		},
+		"takeaway": "Die erzählende Stimme ist gestaltet; lange Handlungszeit kann kurz erzählt werden.",
+		"lehrplan": "D8 LB 2.2, LB 3.2 · gemeinsamer Fachlehrplan"
+	},
+	{
+		"id": "d8-lyrik",
+		"stage": "lesen",
+		"title": "Bilder und Stimmen im Gedicht",
+		"skill": "Beobachtung, Bildsprache und Wirkung verbinden.",
+		"bindings": ["2.2", "1.2", "3.2"],
+		"paragraphs": [
+			"Ein Gedicht gestaltet Erfahrung unter anderem durch Verse, Klang, Wiederholungen und sprachliche Bilder. Benenne nicht nur ein Mittel, sondern erkläre seine Funktion an der Stelle. Das lyrische Ich ist eine gestaltete Sprechstimme und nicht automatisch der Autor.",
+			"Eine Personifikation verleiht Dingen menschliche Eigenschaften. Eine Metapher überträgt eine Bedeutung in einen anderen Zusammenhang. Deutungen bleiben am Text überprüfbar; ein Bild kann mehrere passende Lesarten ermöglichen. Bei eigenen Gedichten kannst du die Wirkung bewusst erproben."
+		],
+		"material": "Eigenes Übungsgedicht „Vor dem Auftritt“:\nDie Treppe hält den Atem an.\nMein Zettel ist ein kleines Boot.\nIch gehe los. Ich gehe los.\nDie Tür wird weit.",
+		"materialLabel": "Eigenes, erfundenes Übungsmaterial",
+		"sourceIds": ["lehrplan"],
+		"cases": [
+			{
+				"prompt": "„Mein Zettel ist ein kleines Boot.“",
+				"options": [
+					"Das Bild kann den Zettel als unsicheren Halt deuten lassen.",
+					"Der Text belegt eine tatsächliche Schiffsreise."
+				],
+				"answer": "Das Bild kann den Zettel als unsicheren Halt deuten lassen.",
+				"feedback": "Das Boot ist ein sprachliches Bild. Seine mögliche Funktion ergibt sich aus dem Auftritt und der angespannten Situation."
+			},
+			{
+				"prompt": "Die Wiederholung „Ich gehe los“ soll gesprochen werden.",
+				"options": [
+					"Für jede Deutung muss die Stimme völlig gleich bleiben.",
+					"Unterschiedliche Betonungen erproben und ihre Wirkung vergleichen."
+				],
+				"answer": "Unterschiedliche Betonungen erproben und ihre Wirkung vergleichen.",
+				"feedback": "Eine Wiederholung kann Selbstermutigung, Zögern oder Entschlossenheit nahelegen; der Vortrag kann diese Lesarten erproben."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Deute die Wiederholung „Ich gehe los“ in drei Sätzen mit Bezug zum Gedicht.",
+				"model": "Die Worte werden unmittelbar wiederholt. Das könnte zeigen, wie sich die Sprechstimme Mut macht. Zusammen mit dem angehaltenen Atem der Treppe entsteht der Eindruck eines angespannten Aufbruchs.",
+				"criteria": [
+					"Ich benenne die Wiederholung.",
+					"Ich erkläre eine mögliche Wirkung.",
+					"Ich beziehe eine weitere Textstelle ein."
+				]
+			},
+			"2": {
+				"prompt": "Schreibe zwei eigene Verse als Gegenstück zum Übungsgedicht und erkläre, wie ein gewähltes Mittel die Stimmung verändert.",
+				"model": "„Die Treppe lacht mir Schritte zu. / Mein Zettel wird ein heller Flügel.“ Die Personifikation der lachenden Treppe lässt die Umgebung freundlicher wirken; der Flügel ersetzt den unsicheren Halt durch ein Aufbruchsbild. Das ist eine eigene Fortgestaltung, kein weiterer Originalvers.",
+				"criteria": [
+					"Ich verfasse eigene Verse.",
+					"Ich erkläre ein bewusst eingesetztes Mittel.",
+					"Ich beschreibe die veränderte Stimmung."
+				]
+			}
+		},
+		"extension": "Trage das Gedicht in zwei Gestaltungen vor und hole Rückmeldung ein. Vergleiche danach mit einem selbst gewählten Originalgedicht.",
+		"check": {
+			"wrong": "Direktes Zitat: Eine andere Person wird wörtlich wiedergegeben.",
+			"explanation": "Eine Treppe kann nicht atmen. Die menschliche Eigenschaft überträgt die gespannte Wahrnehmung der Sprechstimme auf ihre Umgebung."
+		},
+		"takeaway": "Erkläre die Wirkung eines sprachlichen Bildes aus seinem Zusammenhang.",
+		"lehrplan": "D8 LB 2.2, LB 1.2, LB 3.2 · gemeinsamer Fachlehrplan"
+	},
+	{
+		"id": "d8-aufklaerung",
+		"stage": "lesen",
+		"title": "Toleranz als Handlungsfrage",
+		"skill": "Ein Ideal der Aufklärung am Text prüfen.",
+		"bindings": ["2.2"],
+		"paragraphs": [
+			"Die literarische Aufklärung verbindet vernünftiges Prüfen mit der Frage, wie Menschen verantwortlich miteinander leben. Toleranz verlangt, andere Menschen unabhängig von Vorurteilen ernst zu nehmen; sie macht eine begründete Auseinandersetzung nicht überflüssig.",
+			"In Lessings Nathan der Weise fordert die Ringparabel dazu auf, die behauptete Güte durch menschliches Handeln sichtbar zu machen. Eine Deutung verbindet die konkrete Äußerung mit dem dramatischen Zusammenhang. Die folgende kurze Originalstelle eröffnet eine Frage; sie ersetzt nicht die Lektüre der ganzen Szene."
+		],
+		"material": "Gotthold Ephraim Lessing, Nathan der Weise, III,7:\n„Es eifre jeder seiner unbestochnen\nVon Vorurteilen freien Liebe nach!“\nKontext in eigenen Worten: Der Richter lenkt den Streit um den echten Ring auf das Handeln der Beteiligten.",
+		"materialLabel": "Kurze Originalstelle; Kontextzusammenfassung und Aufgaben von ZAM Academy",
+		"sourceIds": ["lehrplan", "nathan"],
+		"cases": [
+			{
+				"prompt": "Eine Person sagt: „Meine Gruppe ist gut, also ist jede unserer Handlungen gut.“",
+				"options": [
+					"Die Gruppenzugehörigkeit ersetzt jede weitere Prüfung.",
+					"Die Handlung muss unabhängig von der Zugehörigkeit geprüft werden."
+				],
+				"answer": "Die Handlung muss unabhängig von der Zugehörigkeit geprüft werden.",
+				"feedback": "Das Ideal fordert die Prüfung des tatsächlichen Umgangs mit anderen, nicht pauschale Selbstbestätigung."
+			},
+			{
+				"prompt": "Toleranz wird als „Jede Behauptung ist gleich richtig“ erklärt.",
+				"options": [
+					"Das verwechselt Achtung vor Menschen mit ungeprüfter Zustimmung.",
+					"Das beschreibt genau die einzige Bedeutung von Toleranz."
+				],
+				"answer": "Das verwechselt Achtung vor Menschen mit ungeprüfter Zustimmung.",
+				"feedback": "Menschen zu achten schließt begründete Kritik an Aussagen und Handlungen nicht aus."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Erkläre die Originalstelle mit eigenen Worten und entwickle ein erfundenes Alltagsbeispiel.",
+				"model": "Jede Person soll sich um einen Umgang ohne Vorurteile bemühen. In einer erfundenen Klassensituation könnte das heißen, eine neue Mitschülerin nach ihren eigenen Beiträgen zu beurteilen und nicht nach Gerüchten über ihre Herkunft.",
+				"criteria": [
+					"Ich erkläre den Rat in eigenen Worten.",
+					"Ich entwickle ein passendes Beispiel.",
+					"Ich kennzeichne das Beispiel als eigene Übertragung."
+				]
+			},
+			"2": {
+				"prompt": "Prüfe die Aussage „Toleranz heißt, niemals zu widersprechen“ anhand der Originalstelle. Begründe ein differenziertes Urteil.",
+				"model": "Der Rat fordert vorurteilsfreie Liebe, aber kein Ende des Nachdenkens. Ich kann die Person achten und eine verletzende Behauptung begründet zurückweisen. Verantwortliches Handeln prüft die Wirkung der Aussage und vermeidet seinerseits pauschale Abwertung.",
+				"criteria": [
+					"Ich beziehe mich auf den Wortlaut.",
+					"Ich unterscheide Achtung und Zustimmung.",
+					"Ich entwickle ein begründetes Urteil."
+				]
+			}
+		},
+		"extension": "Lies die Ringparabel im Zusammenhang der Originalszene und besprecht unterschiedliche Deutungen. Vergleicht das Handlungsproblem mit einem tatsächlichen weiteren literarischen Text.",
+		"check": {
+			"wrong": "Jede Gegenposition ohne Prüfung durch Lautstärke abweisen.",
+			"explanation": "Der Rat richtet den Blick auf menschliches Handeln. Bloße Zugehörigkeit oder Selbstbehauptung entscheidet die Frage nach verantwortlichem Verhalten nicht."
+		},
+		"takeaway": "Toleranz bewährt sich im Handeln und lässt begründete Kritik zu.",
+		"lehrplan": "D8 LB 2.2 · gemeinsamer Fachlehrplan"
+	},
+	{
+		"id": "d8-goethe",
+		"stage": "lesen",
+		"title": "Goethe: Gefühl, Freiheit, Verantwortung",
+		"skill": "Sturm und Drang und Klassik an Textfragen erschließen.",
+		"bindings": ["2.2", "1.2"],
+		"paragraphs": [
+			"Sturm und Drang betont unter anderem starke Empfindung und den Anspruch des Einzelnen auf Selbstbestimmung. Goethes Prometheus stellt die Autorität des Zeus aus einer aufbegehrenden Sprechhaltung infrage. Diese Sprechstimme ist eine gestaltete Figur, keine unmittelbar ablesbare Meinung des realen Autors.",
+			"Goethes Ballade Der Zauberlehrling entstand 1797 im Umfeld der Weimarer Klassik. Der Lehrling setzt etwas in Gang, dessen Folgen er nicht mehr beherrscht. Im Vergleich fragen wir nach Freiheit, Gefühl, vernünftiger Selbstbegrenzung und Verantwortung. Eine Epoche erklärt einen Text nicht vollständig; genaue Textarbeit bleibt nötig."
+		],
+		"material": "Johann Wolfgang von Goethe, Der Zauberlehrling, kurze Originalstelle nach der Ausgabe 1827:\n„Die ich rief, die Geister,\nWerd’ ich nun nicht los.“\nEigene Vergleichsfrage: Wann wird aus dem Wunsch, selbst zu handeln, eine Verantwortung für Folgen? Prometheus wird als zusätzliche Originallektüre verlinkt.",
+		"materialLabel": "Kurze Goethe-Originalstelle; Kontext und Vergleichsaufträge in eigenen Worten",
+		"sourceIds": ["lehrplan", "zauberlehrling", "prometheus"],
+		"cases": [
+			{
+				"prompt": "Du ordnest Prometheus dem Sturm und Drang zu. Was brauchst du zusätzlich?",
+				"options": [
+					"Konkrete Textbelege für die aufbegehrende Sprechhaltung.",
+					"Nur den Epochennamen ohne jede Textstelle."
+				],
+				"answer": "Konkrete Textbelege für die aufbegehrende Sprechhaltung.",
+				"feedback": "Die Einordnung ist ein Kontext, ersetzt aber nicht die Untersuchung der sprachlichen Gestaltung."
+			},
+			{
+				"prompt": "Eine Deutung lautet: „Der Zauberlehrling verbietet jede neue Idee.“",
+				"options": [
+					"Das ist die einzig mögliche Aussage jedes klassischen Texts.",
+					"Das ist eine zu pauschale Folgerung aus dem Problem der Kontrolle."
+				],
+				"answer": "Das ist eine zu pauschale Folgerung aus dem Problem der Kontrolle.",
+				"feedback": "Die Folgenfrage ermöglicht differenzierte Deutungen; sie beweist kein allgemeines Verbot von Innovation."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Erkläre die kurze Originalstelle und übertrage die Folgenfrage auf ein erfundenes Beispiel.",
+				"model": "Der Lehrling erkennt, dass er die selbst gerufenen Kräfte nicht mehr stoppen kann. Ein erfundenes Beispiel wäre ein automatisch versendeter Kettenbeitrag, den jemand ohne Prüfung startet. Der Vergleich betrifft die Kontrolle von Folgen, nicht identische Umstände.",
+				"criteria": [
+					"Ich erkläre die Stelle im Handlungskontext.",
+					"Ich entwickle eine passende Übertragung.",
+					"Ich begrenze den Vergleich."
+				]
+			},
+			"2": {
+				"prompt": "Plane einen beleggestützten Vergleich von Prometheus und Der Zauberlehrling. Nenne zwei Vergleichskriterien und eine Frage, die erst die vollständige Lektüre klären kann.",
+				"model": "Kriterien sind der Umgang der Sprechstimme mit Autorität und die Verantwortung für das eigene Handeln. Ich würde zu beiden jeweils konkrete Äußerungen sammeln. Erst nach vollständiger Lektüre kann ich begründen, wie sich die Haltung im Verlauf verändert und welche Grenzen die Figuren anerkennen.",
+				"criteria": [
+					"Ich formuliere zwei sinnvolle Kriterien.",
+					"Ich plane konkrete Textbelege.",
+					"Ich benenne eine offene Lektürefrage."
+				]
+			}
+		},
+		"extension": "Lies beide Originaltexte vollständig, markiere je zwei Belege und vergleiche die Ergebnisse mit anderen. Ergänze eine weitere ausgewählte Stelle aus Sturm und Drang oder Klassik; die Kurzstelle allein erfüllt diesen Literaturvergleich nicht.",
+		"check": {
+			"wrong": "Die Figur hat mit dem ausgelösten Vorgang nichts zu tun.",
+			"explanation": "Der Rückbezug auf das eigene Rufen verbindet die Folgen mit einer vorausgegangenen Handlung. Selbstbestimmung und Folgenverantwortung lassen sich daran untersuchen."
+		},
+		"takeaway": "Vergleiche Freiheit und Folgenverantwortung an konkreten Textstellen.",
+		"lehrplan": "D8 LB 2.2, LB 1.2 · gemeinsamer Fachlehrplan"
+	},
+	{
+		"id": "d8-lesejournal",
+		"stage": "lesen",
+		"title": "Eine Ganzschrift begleiten",
+		"skill": "Lesespuren, eigene Fragen und Empfehlungen festhalten.",
+		"bindings": ["2.2", "2.1"],
+		"paragraphs": [
+			"Ein Lesejournal hält während einer Ganzschrift wichtige Entwicklungen, Figurenfragen, Fundstellen und eigene Reaktionen fest. Trenne Zusammenfassung, belegte Deutung und persönliche Bewertung. Seitenzahlen hängen von der Ausgabe ab und werden aus deinem Buch übernommen.",
+			"Eine Empfehlung verbindet Titel, Autor, eine knappe Information ohne unnötige Auflösung und begründete Kriterien wie Thema, Sprache oder Spannung. Wähle mit anderen ein passendes Jugendbuch; Vorlieben können verschieden sein. Niemand muss persönliche Konflikte offenlegen, um über eine Figur zu sprechen."
+		],
+		"material": "Erfundener Journalausschnitt zu einem erfundenen Jugendbuch: „Kapitel 3: Elif gibt den verlorenen Schlüssel nicht sofort zurück. Frage: Fürchtet sie eine Beschuldigung? Fundstelle noch nachtragen. Meine Reaktion: Ich finde ihr Zögern nachvollziehbar, aber problematisch.“",
+		"materialLabel": "Eigenes, erfundenes Übungsmaterial",
+		"sourceIds": ["lehrplan"],
+		"cases": [
+			{
+				"prompt": "„Ich finde ihr Zögern nachvollziehbar.“",
+				"options": [
+					"Ein vollständiger Beleg für Elifs tatsächliches Motiv.",
+					"Eine persönliche Reaktion, die begründet werden kann."
+				],
+				"answer": "Eine persönliche Reaktion, die begründet werden kann.",
+				"feedback": "Die Reaktion sagt etwas über die lesende Person; das Motiv der Figur braucht eigene Textbelege."
+			},
+			{
+				"prompt": "Für eine Empfehlung wird das Ende vollständig verraten, obwohl es nicht nötig ist.",
+				"options": [
+					"Für die Zielgruppe besser knapp und möglichst ohne unnötige Auflösung informieren.",
+					"Eine Empfehlung muss immer jede Wendung verraten."
+				],
+				"answer": "Für die Zielgruppe besser knapp und möglichst ohne unnötige Auflösung informieren.",
+				"feedback": "Eine Empfehlung soll eine begründete Auswahl ermöglichen und kann Spannung für die Lektüre erhalten."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Verbessere den Journaleintrag, ohne eine Seitenzahl oder einen nicht gelesenen Textbeleg zu erfinden.",
+				"model": "Inhalt: Elif gibt den Schlüssel zunächst nicht zurück. Deutung: Vielleicht fürchtet sie eine Beschuldigung; dafür muss ich in Kapitel 3 eine passende Stelle suchen. Bewertung: Ihr Zögern ist für mich verständlich, löst das Problem aber nicht. Fundstelle: nach der Lektüre aus meiner Ausgabe ergänzen.",
+				"criteria": [
+					"Ich trenne Inhalt, Deutung und Bewertung.",
+					"Ich lasse ungesicherte Angaben offen.",
+					"Ich plane einen konkreten Beleg."
+				]
+			},
+			"2": {
+				"prompt": "Entwirf einen Journalplan für eine echte Jugendbuch-Ganzschrift und Kriterien für eine spätere Empfehlung.",
+				"model": "Ich notiere nach jedem Leseabschnitt eine Entwicklung, eine Figurenfrage und eine Fundstelle aus meiner Ausgabe. An Wendepunkten überprüfe ich frühere Vermutungen. Für die Empfehlung prüfe ich Thema, sprachliche Zugänglichkeit und Spannung und belege mein Urteil mit einer Stelle, ohne das Ende unnötig zu verraten.",
+				"criteria": [
+					"Ich plane Einträge über die gesamte Lektüre.",
+					"Ich prüfe frühere Deutungen erneut.",
+					"Ich entwickle begründbare Empfehlungskriterien."
+				]
+			}
+		},
+		"extension": "Wähle mit Lehrkraft oder Bibliothek mindestens ein geeignetes Jugendbuch und lies es vollständig. Führe das Journal tatsächlich, tausche Leseerfahrungen aus und gib eine begründete Empfehlung.",
+		"check": {
+			"wrong": "Nur das allgemeine Urteil „gutes Buch“ ohne Erklärung.",
+			"explanation": "Das Journal macht eine Vermutung am Text überprüfbar. Eine Fundstelle muss aus der tatsächlich benutzten Ausgabe stammen."
+		},
+		"takeaway": "Halte Inhalt, Deutung und persönliche Bewertung im Lesejournal auseinander.",
+		"lehrplan": "D8 LB 2.2, LB 2.1 · gemeinsamer Fachlehrplan"
+	},
+	{
+		"id": "d8-protokoll",
+		"stage": "schreiben",
+		"title": "Vom Stichwort zum Protokoll",
+		"skill": "Ergebnisse, Aufgaben und offene Punkte sichern.",
+		"bindings": ["3.1", "1.1"],
+		"paragraphs": [
+			"Ein Ergebnisprotokoll hält fest, was vereinbart wurde, wer etwas übernimmt und welche Fragen offen bleiben. Es ist keine wörtliche Abschrift und kein persönlicher Kommentar. Für die Orientierung nennt es unter anderem Anlass, Datum, Beteiligte und Tagesordnung; die konkrete Form richtet sich nach dem Auftrag.",
+			"Ordne die Notizen nach Themen und formuliere sachlich im Präsens. Ein Vorschlag wird erst als Beschluss notiert, wenn die Runde ihn tatsächlich angenommen hat. Bei unklaren Angaben fragst du nach; fehlende Details werden nicht ergänzt, als wären sie sicher."
+		],
+		"material": "Erfundene Klassenratsnotizen vom 14.10.2026, 8b, TOP Büchertausch: Vorschlag: eine Kiste. Beschluss: Versuch zwei Wochen ab Freitag. Kim: Schild bis Donnerstag. Noch offen: Standort; Hausmeister fragen. Anwesenheitsliste liegt bei.",
+		"materialLabel": "Eigenes, erfundenes Übungsmaterial",
+		"sourceIds": ["lehrplan"],
+		"cases": [
+			{
+				"prompt": "Kim übernimmt das Schild bis Donnerstag.",
+				"options": [
+					"Aufgabe mit Zuständigkeit und Frist.",
+					"Unverbindliches persönliches Urteil."
+				],
+				"answer": "Aufgabe mit Zuständigkeit und Frist.",
+				"feedback": "Die Notiz enthält eine konkrete Tätigkeit, eine genannte Person und einen Termin."
+			},
+			{
+				"prompt": "Die protokollierende Person ergänzt: „Der Vorschlag war endlich mal vernünftig.“",
+				"options": [
+					"Jedes Ergebnisprotokoll braucht persönliche Kommentare.",
+					"Die Wertung gehört nicht ins sachliche Ergebnisprotokoll."
+				],
+				"answer": "Die Wertung gehört nicht ins sachliche Ergebnisprotokoll.",
+				"feedback": "Das Protokoll sichert gemeinsame Ergebnisse; die persönliche Bewertung ist eine andere Textfunktion."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Verfasse aus den Notizen einen kurzen Ergebnisabschnitt mit Beschluss, Aufgabe und offener Frage.",
+				"model": "TOP Büchertausch: Die Klasse beschließt einen zweiwöchigen Versuch ab Freitag. Kim erstellt bis Donnerstag ein Schild. Der Standort bleibt offen; der Hausmeister soll dazu gefragt werden. Eine Zuständigkeit für die Nachfrage ist in den Notizen nicht genannt.",
+				"criteria": [
+					"Ich trenne Beschluss und offene Frage.",
+					"Ich sichere Aufgabe und Frist.",
+					"Ich erfinde keine Zuständigkeit."
+				]
+			},
+			"2": {
+				"prompt": "Plane einen Protokollkopf und überarbeite den Ergebnisabschnitt so, dass eine abwesende Person damit weiterarbeiten kann.",
+				"model": "Kopf: Klassenrat 8b, 14.10.2026, TOP Büchertausch, Beteiligte laut Anwesenheitsliste. Ergebnis: zweiwöchiger Versuch ab Freitag; Schild: Kim, bis Donnerstag. Offen: Standort mit dem Hausmeister klären und Zuständigkeit nachfragen. Ort und protokollierende Person werden ergänzt, sobald sie gesichert sind.",
+				"criteria": [
+					"Ich plane einen nachvollziehbaren Kopf.",
+					"Ich mache nächste Schritte erkennbar.",
+					"Ich kennzeichne fehlende Angaben."
+				]
+			}
+		},
+		"extension": "Protokolliere eine echte Besprechung aus eigenen Notizen, möglichst auch mit einem Textprogramm. Lass die Beteiligten Beschlüsse und Zuständigkeiten gegenprüfen.",
+		"check": {
+			"wrong": "Die Klasse hat den Standort endgültig beschlossen.",
+			"explanation": "Die Notiz enthält weder einen Standort noch eine Zusage. Ein Protokoll bewahrt den Unterschied zwischen Beschluss und offener Aufgabe."
+		},
+		"takeaway": "Ein Protokoll sichert vereinbarte Ergebnisse und kennzeichnet offene Punkte.",
+		"lehrplan": "D8 LB 3.1, LB 1.1 · gemeinsamer Fachlehrplan"
+	},
+	{
+		"id": "d8-inhaltsangabe",
+		"stage": "schreiben",
+		"title": "Den Inhalt auf den Punkt bringen",
+		"skill": "Kernaussage und Zusammenhang ohne Ausschmückung darstellen.",
+		"bindings": ["3.2", "3.1"],
+		"paragraphs": [
+			"Eine Inhaltsangabe informiert knapp und sachlich über wesentliche Inhalte und Zusammenhänge. Sie wird meist im Präsens geschrieben. Der Einleitungssatz nennt die verfügbaren Textangaben und das Thema; unbekannte Titel, Autorennamen oder Erscheinungsjahre werden nicht erfunden.",
+			"Wähle Handlungen und Gründe aus, die zum Verständnis nötig sind. Gib Aussagen möglichst in eigenen Worten wieder und vermeide Spannungstricks, unnötige Einzelheiten und persönliche Wertung. Eine Textuntersuchung kann sich anschließen, ist aber eine andere Aufgabe als die reine Inhaltswiedergabe."
+		],
+		"material": "Eigene Erzählminiatur „Der Schlüssel“ (ZAM Academy): Nela findet vor dem Musikraum einen Schlüssel. Sie denkt zunächst daran, ihn heimlich zurückzulegen, weil sie keine Fragen beantworten möchte. Dann sieht sie die suchende Lehrkraft und gibt ihn ab. Die Lehrkraft bedankt sich.",
+		"materialLabel": "Eigenes, erfundenes Übungsmaterial",
+		"sourceIds": ["lehrplan"],
+		"cases": [
+			{
+				"prompt": "Das Motiv für Nelas erstes Zögern wird weggelassen.",
+				"options": [
+					"Motive sind in einer Inhaltsangabe grundsätzlich verboten.",
+					"Der Zusammenhang ihrer Entscheidung wird dadurch weniger verständlich."
+				],
+				"answer": "Der Zusammenhang ihrer Entscheidung wird dadurch weniger verständlich.",
+				"feedback": "Wesentliche Motive gehören dazu, wenn sie für den Handlungszusammenhang wichtig und im Text belegt sind."
+			},
+			{
+				"prompt": "Im Material steht kein Erscheinungsjahr.",
+				"options": [
+					"Ein unbekanntes Jahr nicht erfinden.",
+					"Ein beliebiges Jahr macht den Einleitungssatz vollständiger."
+				],
+				"answer": "Ein unbekanntes Jahr nicht erfinden.",
+				"feedback": "Sachliche Genauigkeit hat Vorrang vor einem scheinbar vollständigen Schema."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Verfasse eine Inhaltsangabe der Miniatur in drei bis vier Sätzen.",
+				"model": "Die Erzählminiatur „Der Schlüssel“ von ZAM Academy handelt von einer Entscheidung nach einem Fund. Nela findet einen Schlüssel und möchte ihn zuerst unbemerkt zurücklegen, um Fragen zu vermeiden. Als sie die suchende Lehrkraft sieht, gibt sie den Schlüssel ab und erhält deren Dank.",
+				"criteria": [
+					"Ich nenne Text und Thema.",
+					"Ich sichere Entscheidung und Zusammenhang.",
+					"Ich schreibe sachlich im Präsens."
+				]
+			},
+			"2": {
+				"prompt": "Schreibe je einen Einleitungssatz für eine Inhaltsangabe und eine Textuntersuchung. Erkläre den Unterschied der anschließenden Arbeit.",
+				"model": "Inhaltsangabe: „Die Miniatur ‚Der Schlüssel‘ von ZAM Academy handelt von Nelas Umgang mit einem Fund.“ Untersuchung: „Im Folgenden wird untersucht, wie Nelas Zögern und Entscheidung dargestellt werden.“ Die erste Arbeit sichert den Inhalt, die zweite erklärt Gestaltung und Funktion anhand von Belegen.",
+				"criteria": [
+					"Ich formuliere zwei passende Einstiege.",
+					"Ich unterscheide Wiedergabe und Untersuchung.",
+					"Ich erläutere die jeweilige weitere Arbeit."
+				]
+			}
+		},
+		"extension": "",
+		"check": {
+			"wrong": "Nela handelt natürlich viel besser als alle anderen.",
+			"explanation": "Die Formulierung fasst eine zentrale Handlung sachlich im Präsens zusammen. Spannungssprache und persönliche Wertung haben eine andere Funktion."
+		},
+		"takeaway": "Die Inhaltsangabe informiert sachlich über die wesentlichen Zusammenhänge.",
+		"lehrplan": "D8 LB 3.2, LB 3.1 · gemeinsamer Fachlehrplan"
+	},
+	{
+		"id": "d8-zitieren",
+		"stage": "schreiben",
+		"title": "Wiedergeben und belegen",
+		"skill": "Paraphrase, indirekte Rede und Zitat passend einsetzen.",
+		"bindings": ["3.1", "3.2"],
+		"paragraphs": [
+			"Eine Paraphrase gibt einen Gedanken in eigenen Worten wieder und nennt seine Herkunft. Ein direktes Zitat übernimmt den gesicherten Wortlaut, markiert ihn mit Anführungszeichen und weist die Fundstelle nach. Es wird grammatisch in den eigenen Satz eingebaut.",
+			"Indirekte Rede kennzeichnet eine fremde Aussage; häufig hilft dabei Konjunktiv I. Modalverben können eine im Original enthaltene Möglichkeit oder Verpflichtung erhalten. Aus „könnte“ darf beim Wiedergeben nicht „wird sicher“ werden. Ein Beleg muss die eigene Aussage tatsächlich stützen."
+		],
+		"material": "Eigener nummerierter Übungstext:\nZ. 1: Lea erklärt: „Der Tausch könnte neue Leseideen bringen.“\nZ. 2: Sie ergänzt: „Wir müssen den Versuch erst auswerten.“\nZ. 3: Der Bericht nennt noch keine Ergebnisse.",
+		"materialLabel": "Eigenes, erfundenes Übungsmaterial",
+		"sourceIds": ["lehrplan"],
+		"cases": [
+			{
+				"prompt": "Eine Analyse nennt Leas Vorsicht und zitiert „erst auswerten“ (Z. 2).",
+				"options": [
+					"Der kurze Beleg passt zur Aussage.",
+					"Ein Beleg muss immer den ganzen Text wiederholen."
+				],
+				"answer": "Der kurze Beleg passt zur Aussage.",
+				"feedback": "Die Formulierung stützt die beobachtete Zurückhaltung und ist mit der vorgegebenen Zeile auffindbar."
+			},
+			{
+				"prompt": "Jemand schreibt: Lea erklärt: „Der Tausch bringt sicher Erfolg.“",
+				"options": [
+					"Ein direktes Zitat darf die Unsicherheit stillschweigend entfernen.",
+					"Das verändert den Wortlaut und die Aussage unzulässig."
+				],
+				"answer": "Das verändert den Wortlaut und die Aussage unzulässig.",
+				"feedback": "Das neue Zitat steht nicht im Material und verstärkt zudem die Aussage gegenüber „könnte“."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Formuliere eine Paraphrase von Zeile 1 und einen Analysesatz mit kurzem Zitat aus Zeile 2.",
+				"model": "Lea hält neue Leseideen durch den Tausch für möglich (Z. 1). Die Formulierung „erst auswerten“ (Z. 2) zeigt, dass sie das Ergebnis nicht vorwegnimmt.",
+				"criteria": [
+					"Ich erhalte die Unsicherheit.",
+					"Ich integriere ein genaues kurzes Zitat.",
+					"Ich nenne die vorgegebenen Fundstellen."
+				]
+			},
+			"2": {
+				"prompt": "Vergleiche direkte und indirekte Wiedergabe von Zeile 2. Schreibe beide Fassungen und erläutere einen sinnvollen Einsatz.",
+				"model": "Direkt: Lea sagt: „Wir müssen den Versuch erst auswerten“ (Z. 2). Indirekt: Lea erklärt, die Gruppe müsse den Versuch erst auswerten (Z. 2). Das direkte Zitat zeigt den Wortlaut, die indirekte Fassung bindet die Aussage knapp in einen eigenen Bericht ein.",
+				"criteria": [
+					"Ich gebe den Wortlaut korrekt wieder.",
+					"Ich passe Person und Verbform sinnvoll an.",
+					"Ich erkläre den Einsatz beider Formen."
+				]
+			}
+		},
+		"extension": "",
+		"check": {
+			"wrong": "Lea erklärt die spätere Auswertung für überflüssig.",
+			"explanation": "Die Möglichkeit bleibt als Möglichkeit erkennbar. Aus dem Modalverb folgt weder ein Ergebnis noch eine sichere Vorhersage."
+		},
+		"takeaway": "Wähle zwischen eigenen Worten und genauem Zitat und mache die Herkunft deutlich.",
+		"lehrplan": "D8 LB 3.1, LB 3.2 · gemeinsamer Fachlehrplan"
+	},
+	{
+		"id": "d8-analyse",
+		"stage": "schreiben",
+		"title": "Eine Textstelle untersuchen",
+		"skill": "Befund, Beleg und Funktion verknüpfen.",
+		"bindings": ["3.2", "2.2", "2.3"],
+		"paragraphs": [
+			"Eine Textuntersuchung beantwortet eine konkrete Frage, etwa wie eine Figur als unsicher erscheint oder wie ein Text Zustimmung erzeugt. Sichere zunächst den passenden Inhalt und die auffällige Gestaltung.",
+			"Ein tragfähiger Absatz verbindet Befund, Beleg und Erklärung der Funktion. Ein Fachbegriff allein erklärt noch keine Wirkung. Beziehe deine Deutung auf den Zusammenhang und vermeide pauschale Sätze wie „Das macht den Text spannend“, wenn du nicht erklärst, wodurch und in welcher Hinsicht."
+		],
+		"material": "Eigener nummerierter Text:\nZ. 1: „Jetzt?“, fragte Ivo.\nZ. 2: Er hob die Hand zur Tür und zog sie zurück.\nZ. 3: „Vielleicht morgen.“\nUntersuchungsfrage: Wie wird Ivos Zögern dargestellt?",
+		"materialLabel": "Eigenes, erfundenes Übungsmaterial",
+		"sourceIds": ["lehrplan"],
+		"cases": [
+			{
+				"prompt": "„Vielleicht“ wird als Unsicherheitssignal untersucht.",
+				"options": [
+					"Einzelne Wörter können niemals eine Deutung stützen.",
+					"Das Wort passt zur Frage nach Ivos Zögern."
+				],
+				"answer": "Das Wort passt zur Frage nach Ivos Zögern.",
+				"feedback": "Die Wortwahl ist ein konkreter sprachlicher Befund und wird durch Handlung und Frage ergänzt."
+			},
+			{
+				"prompt": "Eine Untersuchung erzählt nur alle drei Zeilen nach.",
+				"options": [
+					"Die Erklärung der Gestaltung fehlt noch.",
+					"Eine Nacherzählung beantwortet automatisch jede Wirkungsfrage."
+				],
+				"answer": "Die Erklärung der Gestaltung fehlt noch.",
+				"feedback": "Inhaltswiedergabe schafft eine Grundlage, ersetzt aber nicht die Erklärung von Mitteln und Funktion."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Schreibe einen Untersuchungsabsatz mit zwei Belegen zur Frage nach Ivos Zögern.",
+				"model": "Ivos Zögern wird durch Handlung und Wortwahl gezeigt. Er zieht die schon gehobene Hand zurück (Z. 2), wodurch eine begonnene Handlung abbricht. Das Wort „Vielleicht“ (Z. 3) verstärkt den Eindruck, dass er sich noch nicht festlegt.",
+				"criteria": [
+					"Ich beantworte die Untersuchungsfrage.",
+					"Ich verwende zwei passende Belege.",
+					"Ich erkläre die Funktion der Beobachtungen."
+				]
+			},
+			"2": {
+				"prompt": "Prüfe die Deutung „Ivo ist feige“. Formuliere eine genauere Alternative und erkläre ihre Grenzen.",
+				"model": "Die Stelle zeigt Zögern in einer bestimmten Situation, beweist aber keine dauerhafte Charaktereigenschaft. Genauer wäre: „Ivo wirkt hier unsicher, weil er die Hand zurückzieht und den Zeitpunkt offenlässt.“ Über Gründe oder sein Verhalten in anderen Situationen fehlen Angaben.",
+				"criteria": [
+					"Ich prüfe das pauschale Urteil.",
+					"Ich entwickle eine genauere Deutung.",
+					"Ich begrenze sie mit Blick auf fehlende Angaben."
+				]
+			}
+		},
+		"extension": "",
+		"check": {
+			"wrong": "Es gibt eine Tür, damit ist Ivo sicher eine mutige Person.",
+			"explanation": "Die Aussage nennt eine konkrete Bewegung, macht sie auffindbar und erläutert ihre Bedeutung für die gestellte Frage nach dem Zögern."
+		},
+		"takeaway": "Eine Textuntersuchung verbindet Beobachtung und Beleg mit einer Erklärung.",
+		"lehrplan": "D8 LB 3.2, LB 2.2, LB 2.3 · gemeinsamer Fachlehrplan"
+	},
+	{
+		"id": "d8-bildimpuls",
+		"stage": "schreiben",
+		"title": "Aus einem Bild eine Geschichte entwickeln",
+		"skill": "Beobachten, auswählen und anschaulich erzählen.",
+		"bindings": ["3.2", "3.1"],
+		"paragraphs": [
+			"Ein Bildimpuls gibt Einzelheiten vor, aber nicht automatisch eine ganze Geschichte. Sammle zuerst sichtbare Beobachtungen und trenne davon eigene Einfälle. Wähle dann Figur, Situation, Konflikt und eine passende Erzählperspektive.",
+			"Anschauliches Erzählen zeigt gezielte Wahrnehmungen, Handlungen und Gedanken. Nicht möglichst viele Adjektive, sondern passende Details machen eine Situation erlebbar. Ein geordneter Verlauf hilft, deine Haltung oder die Veränderung einer Figur nachvollziehbar zu machen."
+		],
+		"material": "Bildimpuls als Beschreibung für die Offline-Übung: Ein leeres Wartehäuschen im Regen. Auf der Bank liegt ein geschlossener roter Umschlag. Daneben steht ein einzelner Schuh. Außerhalb des Häuschens sind auf nassem Boden Fußspuren zu erkennen. Die Herkunft der Dinge ist offen.",
+		"materialLabel": "Eigenes, erfundenes Übungsmaterial",
+		"sourceIds": ["lehrplan"],
+		"cases": [
+			{
+				"prompt": "Du erzählst aus der Sicht einer wartenden Person.",
+				"options": [
+					"Nur ihr zugängliches Wissen verwenden oder Ergänzungen begründet gestalten.",
+					"Sie weiß ohne Erklärung alle Gedanken jeder unbekannten Person."
+				],
+				"answer": "Nur ihr zugängliches Wissen verwenden oder Ergänzungen begründet gestalten.",
+				"feedback": "Eine gewählte Perspektive bestimmt, welche Informationen selbstverständlich verfügbar sind."
+			},
+			{
+				"prompt": "Ein Entwurf enthält zehn Adjektive, aber keine Handlung.",
+				"options": [
+					"Mehr Adjektive ersetzen jeden Handlungsverlauf.",
+					"Ein konkreter Handlungsschritt kann die Geschichte voranbringen."
+				],
+				"answer": "Ein konkreter Handlungsschritt kann die Geschichte voranbringen.",
+				"feedback": "Details wirken im Zusammenhang einer Situation; eine Erzählung braucht mehr als eine statische Eigenschaftsliste."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Schreibe einen Erzählanfang von vier bis fünf Sätzen aus der Sicht einer wartenden Person.",
+				"model": "Der Regen trommelte auf das Dach. Ich schob mich auf die trockene Seite der Bank und bemerkte den roten Umschlag. Niemand war zu sehen. Als ich ihn aufheben wollte, entdeckte ich daneben einen einzelnen Schuh. Ich zog die Hand zurück.",
+				"criteria": [
+					"Ich greife zwei Impulsdetails auf.",
+					"Ich halte eine Perspektive ein.",
+					"Ich beginne eine nachvollziehbare Handlung."
+				]
+			},
+			"2": {
+				"prompt": "Entwirf zwei verschiedene Geschichten zum gleichen Impuls und begründe, wie sie unterschiedliche Haltungen zeigen könnten.",
+				"model": "In einer Fassung sucht die Figur sofort Hilfe und entscheidet sich für Verantwortung. In einer zweiten steckt sie den Umschlag ein und gerät später in einen Gewissenskonflikt. Dieselben sichtbaren Gegenstände bleiben der Ausgangspunkt; die unterschiedlichen Entscheidungen sind eigene Ergänzungen.",
+				"criteria": [
+					"Ich entwickle zwei Handlungsansätze.",
+					"Ich verbinde Entscheidung und Haltung.",
+					"Ich trenne Vorgabe und Erfindung."
+				]
+			}
+		},
+		"extension": "Suche einen geeigneten echten Bildimpuls oder zeichne selbst einen. Verfasse eine längere Geschichte und vergleiche, welche Bilddetails deine Lesenden darin wiedererkennen.",
+		"check": {
+			"wrong": "Der Schuh gehört sicher einer verschwundenen Person.",
+			"explanation": "Die Beschreibung enthält den Umschlag ausdrücklich. Herkunft, Eigentum und Vorgeschichte bleiben offen und können erst für eine eigene Erzählung erfunden werden."
+		},
+		"takeaway": "Trenne sichtbare Bilddetails von der Geschichte, die du dazu erfindest.",
+		"lehrplan": "D8 LB 3.2, LB 3.1 · gemeinsamer Fachlehrplan"
+	},
+	{
+		"id": "d8-rollenbrief",
+		"stage": "schreiben",
+		"title": "In einer anderen Stimme schreiben",
+		"skill": "Textbindung und eigene Gestaltung verbinden.",
+		"bindings": ["3.2", "2.2"],
+		"paragraphs": [
+			"Ein Rollenbrief erschließt eine Figur durch produktives Schreiben. Er übernimmt die Perspektive, das Wissen und die Beziehungssituation der gewählten Figur. Eigene Ergänzungen sind erlaubt, wenn sie zum Text passen und nicht unbemerkt als Textbefunde ausgegeben werden.",
+			"Plane Anlass, Empfänger und Absicht. Wortwahl und Ton machen den Unterschied zwischen Figuren sichtbar. Eine anschließende Begründung deiner Schreibentscheidungen zeigt, wie der eigene Text das Verständnis der Vorlage vertieft."
+		],
+		"material": "Eigene Vorlage: Jona verspricht Mira, ihr ein Buch zurückzugeben. Am Nachmittag bemerkt er eine eingerissene Seite. Er legt das Buch neben die Tür, ohne Mira zu schreiben. Mira weiß noch nichts von dem Schaden. Auftrag: Ein Brief Jonas an Mira am selben Abend.",
+		"materialLabel": "Eigenes, erfundenes Übungsmaterial",
+		"sourceIds": ["lehrplan"],
+		"cases": [
+			{
+				"prompt": "Jona schreibt: „Ich habe den Riss heute bemerkt.“",
+				"options": [
+					"Das setzt Wissen voraus, das Jona unmöglich haben kann.",
+					"Das passt zu seinem Wissen aus der Vorlage."
+				],
+				"answer": "Das passt zu seinem Wissen aus der Vorlage.",
+				"feedback": "Jona hat den Riss selbst entdeckt. Die Aussage bleibt innerhalb seines gesicherten Wissens."
+			},
+			{
+				"prompt": "Er schreibt: „Du hast das Buch sicher zerrissen.“",
+				"options": [
+					"Das wäre eine unbelegte Beschuldigung.",
+					"Die Vorlage beweist Miras Schuld."
+				],
+				"answer": "Das wäre eine unbelegte Beschuldigung.",
+				"feedback": "Der Text nennt keine Ursache des Schadens; eine sichere Schuldzuweisung wäre nicht textgestützt."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Schreibe einen kurzen Rollenbrief Jonas mit Mitteilung, Gefühl und einem Vorschlag.",
+				"model": "Liebe Mira, ich habe heute eine eingerissene Seite in deinem Buch bemerkt. Mir ist unangenehm, dass ich dir noch nicht geschrieben habe. Ich weiß nicht, wie der Riss entstanden ist. Können wir morgen gemeinsam überlegen, was wir tun? Jona",
+				"criteria": [
+					"Ich halte Jonas Wissensstand ein.",
+					"Ich wähle einen passenden Ton.",
+					"Ich formuliere einen konkreten nächsten Schritt."
+				]
+			},
+			"2": {
+				"prompt": "Schreibe eine zweite Fassung, in der Jona ausweicht. Erkläre, wie zwei sprachliche Entscheidungen diese Haltung zeigen.",
+				"model": "„Hallo Mira, mit der Rückgabe dauert es vielleicht noch etwas. Es gibt da eine Kleinigkeit. Wir reden morgen.“ Das unbestimmte „Kleinigkeit“ verharmlost den Schaden, das Verschieben auf morgen vermeidet die genaue Mitteilung. Diese Haltung ist eine eigene Fortgestaltung, die Jonas bisheriges Schweigen aufgreift.",
+				"criteria": [
+					"Ich gestalte eine andere Haltung.",
+					"Ich erkläre zwei sprachliche Entscheidungen.",
+					"Ich beziehe mich auf die Vorlage."
+				]
+			}
+		},
+		"extension": "",
+		"check": {
+			"wrong": "Dass Jona den Riss auf jeden Fall selbst verursacht hat.",
+			"explanation": "Das Versprechen verbindet beide Figuren. Von der Entdeckung des Schadens weiß Mira laut Vorlage noch nichts; seine Ursache bleibt offen."
+		},
+		"takeaway": "Ein Rollenbrief wahrt Perspektive und Wissen der gewählten Figur.",
+		"lehrplan": "D8 LB 3.2, LB 2.2 · gemeinsamer Fachlehrplan"
+	},
+	{
+		"id": "d8-bewerbung",
+		"stage": "schreiben",
+		"title": "Eine Kurzbewerbung verfassen",
+		"skill": "Eignung konkret und adressatengerecht zeigen.",
+		"bindings": ["3.2", "3.1"],
+		"paragraphs": [
+			"Eine Kurzbewerbung für ein mögliches Praktikum verbindet Anlass, Interesse, passende eigene Erfahrungen und eine höfliche Bitte. Konkrete Tätigkeiten sagen mehr als unbelegte Selbstlobwörter. Behaupte keine Fähigkeiten oder Erlebnisse, die du nicht hast.",
+			"Plane eine klare Betreffzeile, passende Anrede, gegliederte Absätze und einen höflichen Abschluss. Welche Unterlagen verlangt werden, steht im jeweiligen Auftrag oder Angebot. Persönliche Daten gehören nur in die tatsächliche Bewerbung an den vorgesehenen Empfänger, nicht in öffentliche Übungsbeispiele."
+		],
+		"material": "Erfundene Übungsrolle Alex: sucht ein einwöchiges Schulpraktikum in einer Bibliothek; hilft seit drei Monaten bei der Klassenbücherei, sortiert Rückgaben und notiert Ausleihen; der genaue Praktikumszeitraum ist noch nicht geklärt. Es liegt keine echte Stellenausschreibung vor.",
+		"materialLabel": "Eigenes, erfundenes Übungsmaterial",
+		"sourceIds": ["lehrplan"],
+		"cases": [
+			{
+				"prompt": "Der Zeitraum ist noch offen.",
+				"options": [
+					"In der Übung offenlassen und vor einer echten Bewerbung klären.",
+					"Ein beliebiges Datum als vereinbart ausgeben."
+				],
+				"answer": "In der Übung offenlassen und vor einer echten Bewerbung klären.",
+				"feedback": "Ein ungeklärter Zeitraum darf nicht als feste Verfügbarkeit erscheinen."
+			},
+			{
+				"prompt": "Alex möchte einen höflichen Abschluss.",
+				"options": [
+					"Sie müssen mich sofort aufnehmen.",
+					"Ich freue mich über eine Rückmeldung zu einer möglichen Praktikumsstelle."
+				],
+				"answer": "Ich freue mich über eine Rückmeldung zu einer möglichen Praktikumsstelle.",
+				"feedback": "Eine höfliche konkrete Bitte passt zur Situation und lässt Raum für die Antwort des Empfängers."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Schreibe für die erfundene Rolle einen kurzen Bewerbungsabsatz mit Interesse, Erfahrung und Bitte.",
+				"model": "Ich interessiere mich für ein Schulpraktikum in Ihrer Bibliothek. Seit drei Monaten helfe ich in unserer Klassenbücherei, sortiere Bücher und notiere Ausleihen. Gern möchte ich kennenlernen, wie eine größere Bibliothek arbeitet. Können Sie grundsätzlich ein einwöchiges Praktikum ermöglichen? Den Zeitraum kläre ich noch mit der Schule.",
+				"criteria": [
+					"Ich nutze nur gegebene Erfahrungen.",
+					"Ich verknüpfe Interesse und Tätigkeit.",
+					"Ich formuliere Bitte und offenen Zeitraum klar."
+				]
+			},
+			"2": {
+				"prompt": "Überarbeite „Ich bin sehr gut mit Büchern und einfach perfekt geeignet“ für Alex und begründe zwei Verbesserungen.",
+				"model": "„In der Klassenbücherei sortiere ich seit drei Monaten Rückgaben. Dabei achte ich darauf, dass Bücher wieder auffindbar sind. Diese Erfahrung möchte ich in einer Bibliothek erweitern.“ Die konkrete Tätigkeit ersetzt unbelegtes Selbstlob; der Lernwunsch passt zu einem Praktikum. Die zusätzliche Genauigkeit muss vor echter Verwendung Alex’ Erfahrung entsprechen.",
+				"criteria": [
+					"Ich ersetze Selbstlob durch konkrete Angaben.",
+					"Ich formuliere einen passenden Lernwunsch.",
+					"Ich prüfe die Wahrhaftigkeit zusätzlicher Details."
+				]
+			}
+		},
+		"extension": "Prüfe mit einer Lehrkraft ein tatsächliches Praktikumsangebot und passe die Bewerbung an seine Angaben an. Versende aus dieser Übung keine Nachricht.",
+		"check": {
+			"wrong": "Ich habe schon alle Berufe vollständig kennengelernt.",
+			"explanation": "Die konkrete Tätigkeit macht eine passende Erfahrung nachvollziehbar. Pauschales Selbstlob und nicht gegebene Erfahrungen überzeugen weniger."
+		},
+		"takeaway": "Zeige passende Erfahrungen konkret und bleibe bei überprüfbaren Angaben.",
+		"lehrplan": "D8 LB 3.2, LB 3.1 · gemeinsamer Fachlehrplan"
+	},
+	{
+		"id": "d8-argument",
+		"stage": "schreiben",
+		"title": "Ein Argument tragfähig machen",
+		"skill": "Behauptung, Begründung und Beispiel verbinden.",
+		"bindings": ["3.2", "1.2"],
+		"paragraphs": [
+			"Eine Behauptung nennt den Gedanken, für den du eintreten möchtest. Die Begründung erklärt, warum er einleuchtet. Ein Beispiel veranschaulicht den Zusammenhang; ein belastbarer Beleg stützt ihn durch überprüfbare Information. Das 3B-Schema ist dafür eine Schreibhilfe, kein Ersatz für das Prüfen der Gründe.",
+			"Eine bloße Wiederholung der Behauptung ist keine Begründung. Ein erfundenes Beispiel darf als Veranschaulichung dienen, aber nicht als echte Beobachtung oder Studie erscheinen. Die Stärke eines Arguments hängt von Relevanz und Tragfähigkeit ab, nicht von seiner Lautstärke."
+		],
+		"material": "Erfundener Entwurf: „Wir sollten einen Lesetausch erproben. So können Bücher, die sonst ungenutzt im Regal stehen, andere Leser erreichen. Beispielsweise könnte jemand einen gelesenen Abenteuerroman mitbringen, den eine andere Person gern kennenlernen möchte.“ Der letzte Satz ist ein mögliches Beispiel, keine erhobene Wirkung.",
+		"materialLabel": "Eigenes, erfundenes Übungsmaterial",
+		"sourceIds": ["lehrplan"],
+		"cases": [
+			{
+				"prompt": "„Der Tausch ist sinnvoll, weil er eben sinnvoll ist.“",
+				"options": [
+					"Eine vollständige, überprüfbare Erklärung.",
+					"Eine Wiederholung statt einer inhaltlichen Begründung."
+				],
+				"answer": "Eine Wiederholung statt einer inhaltlichen Begründung.",
+				"feedback": "Der zweite Teil liefert keinen zusätzlichen Grund für die Behauptung."
+			},
+			{
+				"prompt": "Ein ausgedachter Fall wird als Studie einer Universität ausgegeben.",
+				"options": [
+					"Die Herkunft wird falsch dargestellt.",
+					"Eine wissenschaftlich klingende Angabe macht den Fall wahr."
+				],
+				"answer": "Die Herkunft wird falsch dargestellt.",
+				"feedback": "Erfundene Belege dürfen nicht als Forschung erscheinen. Die korrekte Kennzeichnung ist Teil fairer Argumentation."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Schreibe ein 3B-Argument für einen freiwilligen Lesetausch mit ausdrücklich möglichem Beispiel.",
+				"model": "Ein freiwilliger Lesetausch ist einen Versuch wert. Bereits gelesene Bücher können so weitere Leser finden. Ein mögliches Beispiel: Eine Person bringt einen Krimi mit, den jemand anderes gern lesen würde. Ob das tatsächlich geschieht, zeigt erst der Versuch.",
+				"criteria": [
+					"Ich formuliere einen klaren Gedanken.",
+					"Ich begründe den Zusammenhang.",
+					"Ich kennzeichne das Beispiel als Möglichkeit."
+				]
+			},
+			"2": {
+				"prompt": "Prüfe die Grenze deines Arguments: Was müsste erhoben werden, bevor du einen tatsächlichen Erfolg behaupten könntest?",
+				"model": "Das Argument macht eine mögliche Nutzung plausibel. Für einen tatsächlichen Erfolg müsste ich etwa dokumentierte Ausleihen und Rückmeldungen aus dem Versuch auswerten. Selbst dann wäre die Aussage zunächst auf diese Gruppe und diesen Zeitraum begrenzt.",
+				"criteria": [
+					"Ich unterscheide Plausibilität und Nachweis.",
+					"Ich nenne passende Daten.",
+					"Ich begrenze die Reichweite des Ergebnisses."
+				]
+			}
+		},
+		"extension": "",
+		"check": {
+			"wrong": "Es ersetzt die Begründung unabhängig vom Zusammenhang.",
+			"explanation": "Ein denkbarer Fall macht einen Gedanken anschaulich. Als Nachweis einer tatsächlichen Wirkung bräuchte er gesicherte Beobachtungen oder Daten."
+		},
+		"takeaway": "Ein mögliches Beispiel veranschaulicht, ein gesicherter Beleg stützt.",
+		"lehrplan": "D8 LB 3.2, LB 1.2 · gemeinsamer Fachlehrplan"
+	},
+	{
+		"id": "d8-belege",
+		"stage": "schreiben",
+		"title": "Material für eine Position auswählen",
+		"skill": "Relevanz und Reichweite von Belegen prüfen.",
+		"bindings": ["3.2", "2.3"],
+		"paragraphs": [
+			"Nicht jede gefundene Angabe passt zu deiner Frage. Prüfe zuerst die Verlässlichkeit und dann die Relevanz. Ein Beleg zur anfänglichen Zustimmung ist kein Beleg zur späteren Nutzung und erst recht keiner für bessere Noten.",
+			"Ordne Material nach seiner Bedeutung für die konkrete Position. Stelle Herkunft und Reichweite korrekt dar und erkläre den Zusammenhang zum Argument. Gegenläufige oder einschränkende Angaben dürfen nicht stillschweigend verschwinden."
+		],
+		"material": "Erfundene Materialmappe zum Tauschkistenversuch: M1: 15 von 25 Befragten der Klasse stimmen vorab zu. M2: In zwei Wochen werden acht Ausleihen notiert. M3: Zwei Bücher kommen beschädigt zurück. M4: Ein Werbespruch behauptet ohne Quelle bessere Noten durch jedes Bücherregal.",
+		"materialLabel": "Eigenes, erfundenes Übungsmaterial",
+		"sourceIds": ["lehrplan"],
+		"cases": [
+			{
+				"prompt": "M1 wird als Beweis für acht Ausleihen verwendet.",
+				"options": [
+					"Zustimmung und tatsächliche Nutzung werden verwechselt.",
+					"Beide Angaben messen genau denselben Sachverhalt."
+				],
+				"answer": "Zustimmung und tatsächliche Nutzung werden verwechselt.",
+				"feedback": "M1 und M2 beantworten unterschiedliche Fragen zu verschiedenen Zeitpunkten."
+			},
+			{
+				"prompt": "Du möchtest eine Fortsetzung empfehlen und lässt M3 weg.",
+				"options": [
+					"Unbequeme Angaben sind bei eigener Position grundsätzlich irrelevant.",
+					"Die Schäden sollten in einer fairen Abwägung berücksichtigt werden."
+				],
+				"answer": "Die Schäden sollten in einer fairen Abwägung berücksichtigt werden.",
+				"feedback": "Die Schäden betreffen die Bedingungen einer Fortsetzung und dürfen nicht allein wegen der gewünschten Schlussfolgerung verschwinden."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Schreibe einen materialgestützten Absatz mit M2 und M3 und einem begrenzten Fazit.",
+				"model": "Während des zweiwöchigen Versuchs wurden acht Ausleihen notiert. Die Kiste wurde also genutzt; zugleich kamen zwei Bücher beschädigt zurück. Eine Fortsetzung könnte deshalb mit klaren Regeln zum Umgang mit den Büchern erprobt werden. Über bessere Noten sagen diese Angaben nichts aus.",
+				"criteria": [
+					"Ich verwende beide Materialien korrekt.",
+					"Ich erkläre ihren Bezug zur Entscheidung.",
+					"Ich begrenze das Fazit."
+				]
+			},
+			"2": {
+				"prompt": "Ordne M1 bis M4 nach ihrer Bedeutung für die Frage nach einer Fortsetzung und erläutere deine Auswahl.",
+				"model": "M2 und M3 sind besonders relevant, weil sie tatsächliche Nutzung und ein Problem des Versuchs zeigen. M1 ergänzt das anfängliche Interesse, sagt aber weniger über den Verlauf. M4 verwerfe ich als unbelegte und zur Fortsetzungsfrage unzureichende Behauptung.",
+				"criteria": [
+					"Ich ordne nach der konkreten Frage.",
+					"Ich berücksichtige widersprechende Angaben.",
+					"Ich begründe eine Verwerfung."
+				]
+			}
+		},
+		"extension": "",
+		"check": {
+			"wrong": "Ein unbelegter Werbespruch zu besseren Noten.",
+			"explanation": "Die dokumentierten Ausleihen erfassen Nutzung im Versuchszeitraum. Zustimmung misst eine Absicht; der Werbespruch liefert keine nachvollziehbare Grundlage."
+		},
+		"takeaway": "Ein Beleg muss die konkrete Frage beantworten und darf nicht überdehnt werden.",
+		"lehrplan": "D8 LB 3.2, LB 2.3 · gemeinsamer Fachlehrplan"
+	},
+	{
+		"id": "d8-gegengrund",
+		"stage": "schreiben",
+		"title": "Auf Gegengründe antworten",
+		"skill": "Einwände ernst nehmen und die eigene Position präzisieren.",
+		"bindings": ["3.2", "1.3"],
+		"paragraphs": [
+			"Ein Gegengrund zeigt ein Problem deiner Position oder einen Vorteil einer anderen Lösung. Gib ihn möglichst so wieder, dass die Gegenseite sich darin wiedererkennt. Dann prüfe, ob er zutrifft und wie stark er für die konkrete Frage wiegt.",
+			"Du kannst einen berechtigten Teil anerkennen, eine Bedingung ergänzen oder eine belegte Gegenüberlegung formulieren. Eine Erwiderung muss nicht jeden Einwand vollständig auflösen. Manchmal führt der Gegenbeitrag zu einer besseren, engeren eigenen Position."
+		],
+		"material": "Erfundene Diskussion: Position: „Wir sollten den Büchertausch fortsetzen.“ Einwand: „Zwei Bücher wurden beschädigt; manche möchten deshalb ihre eigenen Bücher nicht abgeben.“ Bekannte Daten: acht Ausleihen, zwei beschädigte Rückgaben. Ursachen und Zahl beteiligter Personen sind ungeklärt.",
+		"materialLabel": "Eigenes, erfundenes Übungsmaterial",
+		"sourceIds": ["lehrplan"],
+		"cases": [
+			{
+				"prompt": "Ein Entwurf behauptet: „Die beschädigten Bücher beweisen absichtliche Zerstörung.“",
+				"options": [
+					"Schäden beweisen immer eine bestimmte Absicht.",
+					"Die Ursache ist aus den Daten nicht bekannt."
+				],
+				"answer": "Die Ursache ist aus den Daten nicht bekannt.",
+				"feedback": "Das Material nennt einen Zustand, aber keine gesicherte Entstehungsursache."
+			},
+			{
+				"prompt": "Die eigene Position ändert sich zu einem begrenzten neuen Versuch.",
+				"options": [
+					"Das kann eine begründete Reaktion auf den Einwand sein.",
+					"Jede Präzisierung bedeutet, dass Argumentieren gescheitert ist."
+				],
+				"answer": "Das kann eine begründete Reaktion auf den Einwand sein.",
+				"feedback": "Argumentation kann durch Gegenbeiträge genauer werden; unverändertes Festhalten ist kein Selbstzweck."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Schreibe eine Erwiderung mit Anerkennung, Vorschlag und Grenze des Vorschlags.",
+				"model": "Beschädigte Rückgaben sind ein berechtigtes Problem. Eine Fortsetzung sollte freiwillig bleiben und Regeln zur Rückgabe enthalten. Diese Regeln könnten Schäden verringern, garantieren aber nicht, dass jedes Buch unversehrt bleibt.",
+				"criteria": [
+					"Ich anerkenne den konkreten Einwand.",
+					"Ich antworte mit einem begründeten Vorschlag.",
+					"Ich nenne eine verbleibende Grenze."
+				]
+			},
+			"2": {
+				"prompt": "Vergleiche eine bedingte Fortsetzung und einen Abbruch. Formuliere ein vorläufiges Urteil mit einer offenen Prüffrage.",
+				"model": "Für einen Abbruch spricht, weitere Schäden zu vermeiden. Für eine bedingte Fortsetzung spricht die beobachtete Nutzung bei verbesserbaren Regeln. Vorläufig würde ich einen kurzen freiwilligen Versuch empfehlen, sofern geklärt wird, ob Beteiligte das verbleibende Risiko akzeptieren. Die unbekannten Schadensursachen bleiben eine offene Frage.",
+				"criteria": [
+					"Ich wäge beide Optionen nachvollziehbar ab.",
+					"Ich formuliere ein bedingtes Urteil.",
+					"Ich benenne eine entscheidende offene Frage."
+				]
+			}
+		},
+		"extension": "",
+		"check": {
+			"wrong": "Die Schäden sind ohne Prüfung ganz sicher unwichtig.",
+			"explanation": "Die Antwort erkennt den konkreten Nachteil an und schränkt die Empfehlung durch Bedingungen ein. Persönliche Abwertung ersetzt diese Prüfung nicht."
+		},
+		"takeaway": "Ein berechtigter Einwand kann die eigene Position genauer machen.",
+		"lehrplan": "D8 LB 3.2, LB 1.3 · gemeinsamer Fachlehrplan"
+	},
+	{
+		"id": "d8-gliederung",
+		"stage": "schreiben",
+		"title": "Eine Stellungnahme ordnen",
+		"skill": "Schreibfrage, Argumentfolge und Fazit verbinden.",
+		"bindings": ["3.1", "3.2"],
+		"paragraphs": [
+			"Der Schreibauftrag bestimmt den Aufbau. Eine begründete Stellungnahme führt in Anlass und Frage ein, entwickelt passende Argumente und schließt mit einem daraus folgenden Urteil. Überleitungen machen Beziehungen deutlich, etwa Ergänzung, Gegensatz oder Folgerung.",
+			"Eine lineare Erörterung entfaltet eine Begründungsrichtung. Ein steigernder Aufbau kann dabei sinnvoll sein; er ist ein Ordnungsmodell und keine aus dem Lehrplan ableitbare Pflicht für jeden Schreibauftrag. Welche Reihenfolge trägt, hängt von Argumenten, Zielgruppe und Auftrag ab. Ein Schluss führt keine überraschenden neuen Beweise ein."
+		],
+		"material": "Erfundener Auftrag: Schreibe für den Klassenrat eine begründete Stellungnahme zur Fortsetzung des Büchertauschs. Material: acht Ausleihen, zwei beschädigte Rückgaben. Ideensammlung: Nutzen für Leser; Regeln zum Umgang; freiwillige Teilnahme; begrenzter weiterer Versuch; ungeklärte Schadensursachen.",
+		"materialLabel": "Eigenes, erfundenes Übungsmaterial",
+		"sourceIds": ["lehrplan"],
+		"cases": [
+			{
+				"prompt": "Im Hauptteil werden Nutzen und Schäden getrennt und aufeinander bezogen.",
+				"options": [
+					"Das kann die Entscheidung nachvollziehbar machen.",
+					"Einwände dürfen in einer Stellungnahme niemals vorkommen."
+				],
+				"answer": "Das kann die Entscheidung nachvollziehbar machen.",
+				"feedback": "Die Berücksichtigung eines Gegenarguments kann die eigene Empfehlung präzisieren."
+			},
+			{
+				"prompt": "Im Schluss erscheint erstmals die erfundene Behauptung besserer Noten.",
+				"options": [
+					"Ein Fazit darf jede fehlende Grundlage ersetzen.",
+					"Die neue unbelegte Behauptung trägt das Fazit nicht."
+				],
+				"answer": "Die neue unbelegte Behauptung trägt das Fazit nicht.",
+				"feedback": "Ein Schluss soll aus der Argumentation folgen. Neue, dazu ungesicherte Belege lösen die Verbindung auf."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Entwirf eine dreiteilige Gliederung mit je einem konkreten Inhalt zu Einleitung, Hauptteil und Schluss.",
+				"model": "Einleitung: Frage nach der Fortsetzung des Versuchs. Hauptteil: beobachtete Nutzung, Schäden und mögliche Regeln abwägen. Schluss: begrenzten freiwilligen weiteren Versuch mit Auswertung empfehlen; ungeklärte Ursachen weiter prüfen.",
+				"criteria": [
+					"Ich benenne die Schreibfrage.",
+					"Ich ordne die relevanten Argumente.",
+					"Ich leite das Fazit aus ihnen ab."
+				]
+			},
+			"2": {
+				"prompt": "Vergleiche zwei mögliche Argumentfolgen und begründe eine Wahl für den Klassenrat.",
+				"model": "Folge A beginnt mit den acht Ausleihen, nennt dann Schäden und entwickelt Regeln. Folge B beginnt mit den Schäden und prüft anschließend, ob der Nutzen dennoch eine Fortsetzung rechtfertigt. Ich wähle A, wenn ich aus dem erprobten Nutzen eine bedingte Empfehlung entwickeln will; B könnte bei starker Sorge um Schäden sinnvoller sein.",
+				"criteria": [
+					"Ich entwerfe zwei plausible Ordnungen.",
+					"Ich erkläre ihre unterschiedliche Wirkung.",
+					"Ich begründe die Wahl mit der Zielgruppe."
+				]
+			}
+		},
+		"extension": "",
+		"check": {
+			"wrong": "An der Zahl der Wörter auf dem ersten Notizzettel.",
+			"explanation": "Der Schreibauftrag legt Zweck, Adressaten und die zu beantwortende Frage fest. Ordnungsmodelle helfen, müssen aber dazu passen."
+		},
+		"takeaway": "Der Schreibauftrag bestimmt die Gliederung; das Fazit folgt aus den Gründen.",
+		"lehrplan": "D8 LB 3.1, LB 3.2 · gemeinsamer Fachlehrplan"
+	},
+	{
+		"id": "d8-leserbrief",
+		"stage": "schreiben",
+		"title": "Mit einem Leserbrief Stellung beziehen",
+		"skill": "Auf einen Beitrag antworten und eine eigene Position begründen.",
+		"bindings": ["3.2", "3.1", "2.3"],
+		"paragraphs": [
+			"Ein Leserbrief reagiert auf einen konkreten veröffentlichten Beitrag oder eine darin behandelte Frage. Stelle den Bezug so her, dass Lesende ihn verstehen. Formuliere dann deine Position, begründe sie und greife einen wesentlichen Gegenpunkt fair auf.",
+			"Ein überzeugender Brief bleibt adressatengerecht und sachlich, auch wenn das Thema Gefühle auslöst. Die angegebenen Fakten müssen stimmen. Ein klarer Abschluss kann eine begrenzte Forderung enthalten. Form, Umfang und Angaben richten sich bei tatsächlicher Einsendung nach dem jeweiligen Angebot."
+		],
+		"material": "Erfundener Beitrag der Schülerzeitung: „Nach zwei Wochen mit acht Ausleihen soll der Büchertausch sofort für alle Klassen verpflichtend werden.“ Gegebener Zusatz: Zwei Bücher kamen beschädigt zurück. Zur Meinung anderer Klassen gibt es keine Erhebung.",
+		"materialLabel": "Eigenes, erfundenes Übungsmaterial",
+		"sourceIds": ["lehrplan"],
+		"cases": [
+			{
+				"prompt": "Der Brief behauptet: „Alle anderen Klassen lehnen den Tausch ab.“",
+				"options": [
+					"Die fehlende Erhebung beweist die Ablehnung.",
+					"Dafür fehlt im Material eine Erhebung."
+				],
+				"answer": "Dafür fehlt im Material eine Erhebung.",
+				"feedback": "Nicht erhobene Meinungen bleiben unbekannt; weder Zustimmung noch Ablehnung dürfen daraus erfunden werden."
+			},
+			{
+				"prompt": "Der Brief erkennt die acht Ausleihen an, widerspricht aber einer Pflicht.",
+				"options": [
+					"Zustimmung zu einem Befund und Kritik an einer Folgerung passen zusammen.",
+					"Wer einen Befund anerkennt, muss jede Folgerung übernehmen."
+				],
+				"answer": "Zustimmung zu einem Befund und Kritik an einer Folgerung passen zusammen.",
+				"feedback": "Die Frage ist, welche Empfehlung die Daten tragen. Ein Ereignis kann korrekt beschrieben und dennoch überdehnt interpretiert werden."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Schreibe einen kurzen Leserbrief gegen die sofortige Pflicht mit einem fairen Gegenpunkt.",
+				"model": "Liebe Redaktion, euer Vorschlag zur Ausweitung greift einen interessanten Versuch auf. Die acht Ausleihen zeigen Nutzung. Für eine Pflicht in allen Klassen reicht das aber noch nicht: Andere Klassen wurden nicht befragt, außerdem gab es beschädigte Rückgaben. Ich empfehle einen freiwilligen erweiterten Versuch mit klaren Regeln.",
+				"criteria": [
+					"Ich stelle den Beitragsbezug her.",
+					"Ich begründe die eigene Position mit Material.",
+					"Ich erkenne einen berechtigten Gegenpunkt an."
+				]
+			},
+			"2": {
+				"prompt": "Überarbeite denselben Brief für eine Leserschaft, die den Versuch nicht kennt. Erkläre zwei nötige Ergänzungen.",
+				"model": "Ich ergänze zuerst, dass eine Klasse den Tausch zwei Wochen lang erprobt hat. Dann erkläre ich die acht Ausleihen als Ergebnis dieses Zeitraums und die zwei Schäden als Rückgabeproblem. Dadurch werden Umfang und Grenzen des Versuchs verständlich; die Empfehlung bleibt freiwillig und vorläufig.",
+				"criteria": [
+					"Ich berücksichtige fehlendes Vorwissen.",
+					"Ich erläutere Umfang und Ergebnis korrekt.",
+					"Ich begründe die Ergänzungen."
+				]
+			}
+		},
+		"extension": "Lies einen echten passenden Beitrag, verfasse dazu einen längeren Leserbrief und hole Rückmeldung ein. Eine Einsendung ist ein eigener späterer Schritt.",
+		"check": {
+			"wrong": "Es war einmal eine völlig andere Geschichte ohne Bezug zum Beitrag.",
+			"explanation": "Der Satz nennt Thema und Vorschlag des Ausgangsbeitrags. So ist erkennbar, worauf die folgende Position reagiert."
+		},
+		"takeaway": "Der Leserbrief reagiert erkennbar auf einen Beitrag und begründet eine Position.",
+		"lehrplan": "D8 LB 3.2, LB 3.1, LB 2.3 · gemeinsamer Fachlehrplan"
+	},
+	{
+		"id": "d8-beschwerde",
+		"stage": "schreiben",
+		"title": "Eine Beschwerde wirksam formulieren",
+		"skill": "Sachverhalt, Wirkung und Bitte klar ausdrücken.",
+		"bindings": ["3.2", "1.3", "1.2"],
+		"paragraphs": [
+			"Eine sachliche Beschwerde nennt ein konkretes Problem, seine nachvollziehbare Auswirkung und eine angemessene Bitte. Sie kann Gefühle ausdrücken, ohne Personen anzugreifen oder unbelegte Schuld zuzuweisen. Die Ansprechperson muss verstehen, worum es geht und was du erreichen möchtest.",
+			"Ein mündliches Gespräch lässt Rückfragen und gemeinsame Klärung zu. Ein schriftlicher Text braucht dafür genügend Kontext. Ein Aufruf betont dagegen eine gemeinsame Handlung; beide Textformen verbinden ein Anliegen mit einer zur Zielgruppe passenden Begründung."
+		],
+		"material": "Erfundener Fall: Ein für die Klassenlektüre reserviertes Buch ist am vereinbarten Abholtag nicht da. Die Bibliothek hat noch keinen Grund genannt. Die Gruppe braucht für Montag einen Text. Entwurf: „Bei euch klappt nie etwas! Besorgt uns sofort alles!“",
+		"materialLabel": "Eigenes, erfundenes Übungsmaterial",
+		"sourceIds": ["lehrplan"],
+		"cases": [
+			{
+				"prompt": "Die Gruppe schreibt: „Wir sind enttäuscht, weil wir den Text für Montag brauchen.“",
+				"options": [
+					"Ein nachvollziehbares Gefühl mit konkretem Anlass.",
+					"Ein grundsätzlich unzulässiger persönlicher Angriff."
+				],
+				"answer": "Ein nachvollziehbares Gefühl mit konkretem Anlass.",
+				"feedback": "Gefühle können sachlich mitgeteilt werden; entscheidend sind Bezug, Ton und faire Behandlung der anderen Seite."
+			},
+			{
+				"prompt": "Die Bibliothek nennt später einen Lieferfehler.",
+				"options": [
+					"Die erste Schuldvermutung unabhängig von neuen Angaben beibehalten.",
+					"Die neue Information bei der Lösung berücksichtigen."
+				],
+				"answer": "Die neue Information bei der Lösung berücksichtigen.",
+				"feedback": "Ein Klärungsgespräch nimmt neue Informationen auf, statt an ungeprüften Zuschreibungen festzuhalten."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Schreibe die Beschwerde an die Bibliothek in vier höflichen Sätzen neu.",
+				"model": "Guten Tag, unser reserviertes Buch war am vereinbarten Abholtag nicht verfügbar. Wir brauchen die Lektüre für Montag und sind deshalb besorgt. Können Sie uns sagen, wann das Buch kommt? Falls es nicht rechtzeitig da ist, wären wir für eine passende Alternative dankbar.",
+				"criteria": [
+					"Ich schildere das konkrete Problem.",
+					"Ich erkläre seine Auswirkung.",
+					"Ich formuliere eine höfliche konkrete Bitte."
+				]
+			},
+			"2": {
+				"prompt": "Formuliere zum selben Problem eine mündliche Gesprächseröffnung und einen Aufruf an die Klasse, Alternativen zu sammeln. Erläutere den Unterschied.",
+				"model": "Gespräch: „Können wir klären, wie wir bis Montag an eine Lektüre kommen?“ Aufruf: „Sammelt bis morgen Vorschläge für verfügbare Ersatztexte, damit wir gemeinsam eine Lösung finden.“ Das Gespräch richtet eine Klärungsbitte an die Bibliothek, der Aufruf organisiert eine Handlung innerhalb der Klasse.",
+				"criteria": [
+					"Ich unterscheide Empfänger und Zweck.",
+					"Ich schreibe zwei passende Fassungen.",
+					"Ich erkläre die unterschiedliche Funktion."
+				]
+			}
+		},
+		"extension": "Spielt ein Beschwerdegespräch mit Rückfragen und einer möglichen Alternative. Gebt Rückmeldung zu Ton, Klarheit und Berücksichtigung der Antwort.",
+		"check": {
+			"wrong": "Ihre Bibliothek macht ausnahmslos jeden Tag alles falsch.",
+			"explanation": "Die konkrete Beschreibung und Bitte sind klärbar. Absicht und pauschale Häufigkeit sind durch den Fall nicht belegt."
+		},
+		"takeaway": "Beschreibe Problem und Wirkung und formuliere eine angemessene Bitte.",
+		"lehrplan": "D8 LB 3.2, LB 1.3, LB 1.2 · gemeinsamer Fachlehrplan"
+	},
+	{
+		"id": "d8-register",
+		"stage": "sprache",
+		"title": "Sprache für die Situation wählen",
+		"skill": "Varietäten, Fremdwörter und Wandel beurteilen.",
+		"bindings": ["4.1", "4.3"],
+		"paragraphs": [
+			"Umgangssprache, Fachsprache und gruppentypische Ausdrucksweisen erfüllen unterschiedliche Aufgaben. Eine Form kann im Freundeskreis passend und in einer formellen Anfrage unklar sein. Die Wahl einer Varietät bewertet nicht den Wert der Menschen, die sie sprechen.",
+			"Lehn- und Fremdwörter gehören zum Sprachgebrauch, etwa Büro und Chance aus dem Französischen oder Team und Meeting aus dem Englischen. Prüfe ihre Verständlichkeit und Wirkung für die Zielgruppe. Sprachwandel ist nicht automatisch Verfall oder Verbesserung; entscheidend ist ein begründetes Urteil im Kontext. Schreibungen wie Café oder Chance schlägst du bei Unsicherheit nach."
+		],
+		"material": "Erfundene Einladungen zum selben Treffen. A, Chat unter Freunden: „Unser Team trifft sich zum kurzen Check.“ B, Nachricht an Eltern: „Besprechung zur Klassenbücherei am Freitag, 15 Uhr.“ C, unklare Werbezeile: „Die ultimative Lese-Experience ist eure Chance!“",
+		"materialLabel": "Eigenes, erfundenes Übungsmaterial",
+		"sourceIds": ["lehrplan", "regelwerk"],
+		"cases": [
+			{
+				"prompt": "„Meeting“ soll für eine ungeübte Zielgruppe verständlicher werden.",
+				"options": [
+					"Nur die englische Herkunft als Werturteil über die Person nutzen.",
+					"Je nach Kontext durch „Besprechung“ ersetzen oder erklären."
+				],
+				"answer": "Je nach Kontext durch „Besprechung“ ersetzen oder erklären.",
+				"feedback": "Eine Erklärung oder passende Alternative verbessert die Verständlichkeit; eine Abwertung der Person trägt dazu nichts bei."
+			},
+			{
+				"prompt": "Eine Schülerin verwendet „Büro“ und „Chance“.",
+				"options": [
+					"Das sind gebräuchliche Wörter französischer Herkunft.",
+					"Das beweist mangelnde Deutschkenntnisse."
+				],
+				"answer": "Das sind gebräuchliche Wörter französischer Herkunft.",
+				"feedback": "Entlehnte Wörter können zum alltäglichen Wortschatz gehören. Ihre Herkunft ist kein persönlicher Mangel."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Überarbeite die Werbezeile C als verständliche Einladung an die Eltern. Erkläre eine Änderung.",
+				"model": "„Besuchen Sie unseren Lesetausch am Freitag um 15 Uhr.“ Zeit und Einladung sind direkt verständlich. Das unklare Werbewort „Lese-Experience“ entfällt. Die ergänzte Zeit stammt aus Einladung B; vor tatsächlicher Verwendung müsste ihre Geltung für den Lesetausch geklärt werden.",
+				"criteria": [
+					"Ich formuliere verständlich und adressatengerecht.",
+					"Ich erkläre eine sprachliche Änderung.",
+					"Ich prüfe die Herkunft ergänzter Angaben."
+				]
+			},
+			"2": {
+				"prompt": "Vergleiche Chat, Elternnachricht und Werbung. Beurteile, ob ein Anglizismus in jeder Fassung dieselbe Wirkung hätte, und plane eine eigene Beobachtung von Sprachwandel.",
+				"model": "„Check“ kann unter Freunden knapp und vertraut wirken, gegenüber Eltern aber unklar sein. In Werbung könnte es Modernität signalisieren, ohne den Inhalt zu erklären. Ich würde aktuelle echte Beispiele mit Kontext sammeln und ältere passende Texte vergleichen; aus einem einzelnen Wort lässt sich kein allgemeiner Sprachverfall ableiten.",
+				"criteria": [
+					"Ich unterscheide Situationen und Wirkungen.",
+					"Ich begründe ein Urteil über einen Anglizismus.",
+					"Ich plane einen vorsichtigen Vergleich zum Wandel."
+				]
+			}
+		},
+		"extension": "Sammle mit anderen tatsächliche Beispiele für Varietäten und neue Wörter. Prüfe auch zwei französische Fremdwörter im Wörterbuch und begründe ihre Verwendung.",
+		"check": {
+			"wrong": "Ein Fremdwort macht jede Aussage automatisch genauer.",
+			"explanation": "Wirkung und Verständlichkeit hängen von Zielgruppe, Situation und Bedeutung ab. Herkunft allein entscheidet nicht über eine gute Formulierung."
+		},
+		"takeaway": "Wähle die Sprachform passend zu Situation, Zielgruppe und Verständlichkeit.",
+		"lehrplan": "D8 LB 4.1, LB 4.3 · gemeinsamer Fachlehrplan"
+	},
+	{
+		"id": "d8-konjunktiv1",
+		"stage": "sprache",
+		"title": "Aussagen in indirekter Rede wiedergeben",
+		"skill": "Konjunktiv I bilden und Distanz zur Aussage zeigen.",
+		"bindings": ["4.2", "3.1"],
+		"paragraphs": [
+			"Konjunktiv I wird häufig zur Kennzeichnung fremder Aussagen verwendet. Typische Formen sind er sage, sie habe, er könne und sie sei. Dabei passen sich Pronomen und andere Bezüge an die neue Sprechsituation an. Die Form kennzeichnet die Wiedergabe; sie bedeutet nicht automatisch, dass die Aussage falsch ist.",
+			"Wenn Konjunktiv I und Indikativ gleich aussehen, kann Konjunktiv II als Ersatzform helfen. So lässt sich bei „sie haben“ die Form „sie hätten“ verwenden. Prüfe im Kontext, ob eine Form Redewiedergabe, Möglichkeit oder eine andere Funktion hat."
+		],
+		"material": "Eigene Beispielsätze: Direkt: Lea sagt: „Ich bin bereit und habe Zeit.“ Indirekt: Lea sagt, sie sei bereit und habe Zeit. Direkt, Plural: Die Gäste sagen: „Wir haben Zeit.“ Indirekt: Die Gäste sagen, sie hätten Zeit.",
+		"materialLabel": "Eigenes, erfundenes Übungsmaterial",
+		"sourceIds": ["lehrplan", "konjunktiv"],
+		"cases": [
+			{
+				"prompt": "„Sie habe Zeit“ wird als indirekte Aussage verwendet.",
+				"options": [
+					"„Habe“ ist hier Konjunktiv I.",
+					"„Habe“ beweist hier die Unwahrheit der Aussage."
+				],
+				"answer": "„Habe“ ist hier Konjunktiv I.",
+				"feedback": "Die Form markiert die fremde Stimme; die Wahrheit muss gesondert geprüft werden."
+			},
+			{
+				"prompt": "Plural: „Die Gäste sagen, sie hätten Zeit.“",
+				"options": [
+					"Konjunktiv II bedeutet hier zwingend einen unerfüllbaren Wunsch.",
+					"Konjunktiv II kann hier die gleichlautende Konjunktiv-I-Form ersetzen."
+				],
+				"answer": "Konjunktiv II kann hier die gleichlautende Konjunktiv-I-Form ersetzen.",
+				"feedback": "Bei „sie haben“ wäre die Formgleichheit unauffällig; „hätten“ macht die Wiedergabe deutlicher, ohne einen Wunsch zu behaupten."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Gib „Lea sagt: Ich habe Zeit und kann helfen“ indirekt wieder und erkläre eine Form.",
+				"model": "Lea sagt, sie habe Zeit und könne helfen. „Könne“ ist Konjunktiv I von „können“ in der dritten Person Singular und kennzeichnet Leas Aussage als wiedergegeben.",
+				"criteria": [
+					"Ich passe das Pronomen an.",
+					"Ich bilde beide Formen korrekt.",
+					"Ich erkläre die Funktion einer Form."
+				]
+			},
+			"2": {
+				"prompt": "Vergleiche „Lea sagt, sie sei bereit“ und „Lea wäre gern bereit“. Erkläre, weshalb die Formen unterschiedliche Aufgaben haben können.",
+				"model": "„Sie sei bereit“ kennzeichnet Leas wiedergegebene Aussage. „Sie wäre gern bereit“ formuliert durch „wäre“ und „gern“ einen Wunsch oder eine vorgestellte Bereitschaft. Die Funktion ergibt sich aus Form und Zusammenhang; eine einzelne Konjunktivform beweist keine Unwahrheit.",
+				"criteria": [
+					"Ich unterscheide beide Funktionen.",
+					"Ich beziehe den Zusammenhang ein.",
+					"Ich vermeide eine falsche Wahrheitsfolgerung."
+				]
+			}
+		},
+		"extension": "",
+		"check": {
+			"wrong": "Lea sagt, du wirst immer bereit sein.",
+			"explanation": "„Sei“ ist die passende Konjunktiv-I-Form von „sein“ in der dritten Person Singular. „Ich“ wird beim Berichten über Lea zu „sie“."
+		},
+		"takeaway": "Kennzeichne eine fremde Aussage, ohne ihr damit Wahrheit oder Unwahrheit zuzuschreiben.",
+		"lehrplan": "D8 LB 4.2, LB 3.1 · gemeinsamer Fachlehrplan"
+	},
+	{
+		"id": "d8-konjunktiv2",
+		"stage": "sprache",
+		"title": "Möglichkeiten und Wünsche ausdrücken",
+		"skill": "Konjunktiv II und Bedingungen sinnvoll einsetzen.",
+		"bindings": ["4.2", "3.1"],
+		"paragraphs": [
+			"Konjunktiv II kann Wünsche, vorgestellte Bedingungen und höfliche Bitten ausdrücken. Häufige Formen sind wäre, hätte und könnte. Bei vielen Verben ist auch eine würde-Form gebräuchlich. Die genaue Funktion ergibt sich aus dem Satz und der Situation.",
+			"Eine Bedingung verbindet Voraussetzung und Folge: „Wenn wir mehr Zeit hätten, könnten wir länger lesen.“ Daraus folgt nicht, dass die Voraussetzung erfüllt ist. Beim Wiedergeben fremder Aussagen kann Konjunktiv II außerdem als Ersatzform dienen; er bedeutet nicht in jedem Satz dasselbe."
+		],
+		"material": "Eigene Sätze: A: „Wenn wir einen ruhigen Raum hätten, könnten wir dort lesen.“ B: „Könnten Sie uns einen Raum nennen?“ C: „Die Gäste sagen, sie hätten Zeit.“ Die tatsächliche Verfügbarkeit eines Raums ist unbekannt.",
+		"materialLabel": "Eigenes, erfundenes Übungsmaterial",
+		"sourceIds": ["lehrplan", "konjunktiv"],
+		"cases": [
+			{
+				"prompt": "Satz A wird als sichere Raumzusage ausgegeben.",
+				"options": [
+					"Eine Wenn-Bedingung beweist immer ihre Erfüllung.",
+					"Die vorgestellte Bedingung wird mit einer Tatsache verwechselt."
+				],
+				"answer": "Die vorgestellte Bedingung wird mit einer Tatsache verwechselt.",
+				"feedback": "Der Satz beschreibt eine Möglichkeit unter einer Voraussetzung, keine zugesagte Raumvergabe."
+			},
+			{
+				"prompt": "In C wird „hätten“ als zwingend unerfüllbarer Wunsch gedeutet.",
+				"options": [
+					"Im Kontext dient es der Wiedergabe einer fremden Aussage.",
+					"Jede Form „hätten“ hat ausschließlich Wunschfunktion."
+				],
+				"answer": "Im Kontext dient es der Wiedergabe einer fremden Aussage.",
+				"feedback": "Konjunktiv II kann auch eine Ersatzform der indirekten Rede sein. Der Berichtsrahmen ist hier entscheidend."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Formuliere einen Wunsch und eine höfliche Bitte zum Lesen in einem ruhigen Raum.",
+				"model": "Ich hätte gern einen ruhigen Raum zum Lesen. Könnten Sie uns sagen, ob dafür ein Raum frei ist? Der erste Satz nennt einen Wunsch und behauptet nicht, dass ein Raum frei ist. Der zweite ist eine höfliche Bitte um Auskunft.",
+				"criteria": [
+					"Ich bilde passende Formen.",
+					"Ich unterscheide Wunsch und Bitte.",
+					"Ich behaupte keine ungeklärte Tatsache."
+				]
+			},
+			"2": {
+				"prompt": "Schreibe eine bedingte Empfehlung für einen Leseraum und erläutere, welche Informationen vor einer echten Entscheidung fehlen.",
+				"model": "Wenn ein passender Raum frei wäre und die Aufsicht geklärt wäre, könnten wir eine Lesezeit erproben. Vorher müssten Verfügbarkeit, Regeln und Zuständigkeiten geklärt werden. Die Empfehlung ist an Bedingungen geknüpft und keine Behauptung, dass schon alles organisiert ist.",
+				"criteria": [
+					"Ich verbinde Voraussetzung und Folge.",
+					"Ich nenne konkrete offene Bedingungen.",
+					"Ich unterscheide Möglichkeit und Feststellung."
+				]
+			}
+		},
+		"extension": "",
+		"check": {
+			"wrong": "Ein Bericht über eine bereits beschlossene Raumvergabe.",
+			"explanation": "Die Frage bittet höflich um Auskunft. Sie sagt noch nicht, dass ein geeigneter Raum vorhanden oder bereits zugesagt ist."
+		},
+		"takeaway": "Prüfe aus dem Zusammenhang, ob eine Form Bitte, Wunsch oder Wiedergabe ausdrückt.",
+		"lehrplan": "D8 LB 4.2, LB 3.1 · gemeinsamer Fachlehrplan"
+	},
+	{
+		"id": "d8-satzbau",
+		"stage": "sprache",
+		"title": "Sätze klar verknüpfen",
+		"skill": "Satzglieder und Beziehungen für verständliche Texte nutzen.",
+		"bindings": ["4.2"],
+		"paragraphs": [
+			"Satzglieder übernehmen Funktionen wie Subjekt, Objekt oder adverbiale Bestimmung. Verschiebeproben können helfen, zusammengehörige Gruppen zu erkennen. Wortart und Satzglied sind verschiedene Ebenen: Ein Nomen ist eine Wortart, eine ganze Nomengruppe kann als Subjekt oder Objekt dienen.",
+			"Haupt- und Nebensätze verbinden Informationen mit unterschiedlichen Beziehungen. „Weil“ nennt einen Grund, „obwohl“ einen Gegengrund. Pronomen und andere Verknüpfungsmittel müssen eindeutige Bezüge haben. Auch bekannte Strukturen wie Tempus, Aktiv und Passiv prüfst du beim Überarbeiten; einzelne Beispiele ersetzen keine vollständige Wiederholung der Klasse 7."
+		],
+		"material": "Eigene Beispiele: A: „Am Freitag bringt Mara der Klasse ein Buch.“ B: „Der Tausch wurde begonnen. Er war beschädigt.“ C: „Wir führen den Versuch fort, obwohl zwei Bücher beschädigt wurden.“",
+		"materialLabel": "Eigenes, erfundenes Übungsmaterial",
+		"sourceIds": ["lehrplan"],
+		"cases": [
+			{
+				"prompt": "In A wird „Am Freitag“ verschoben: „Mara bringt am Freitag der Klasse ein Buch.“",
+				"options": [
+					"Die Zeitangabe bleibt als zusammengehörige Gruppe erkennbar.",
+					"Die Verschiebung macht „Freitag“ automatisch zum Subjekt."
+				],
+				"answer": "Die Zeitangabe bleibt als zusammengehörige Gruppe erkennbar.",
+				"feedback": "Eine Verschiebung ändert hier die Position der Zeitangabe, nicht ihre grundlegende Funktion."
+			},
+			{
+				"prompt": "In B soll „Er war beschädigt“ das Buch meinen.",
+				"options": [
+					"Pronomen dürfen immer ohne möglichen Bezug stehen.",
+					"Der Bezug ist unklar; „Das Buch war beschädigt“ klärt ihn."
+				],
+				"answer": "Der Bezug ist unklar; „Das Buch war beschädigt“ klärt ihn.",
+				"feedback": "„Tausch“ ist das zuvor genannte Bezugswort; für das gemeinte Buch braucht es eine eindeutige Benennung."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Verbessere B und formuliere je einen Satz mit „weil“ und „obwohl“ zum Versuch.",
+				"model": "Der Tausch wurde begonnen. Ein zurückgegebenes Buch war beschädigt. Wir prüfen neue Regeln, weil Schäden aufgetreten sind. Wir erwägen eine Fortsetzung, obwohl es Probleme gab.",
+				"criteria": [
+					"Ich kläre den Pronomenbezug.",
+					"Ich verwende einen Grundsatz mit weil.",
+					"Ich verwende einen Gegengrundsatz mit obwohl."
+				]
+			},
+			"2": {
+				"prompt": "Formuliere A im Passiv und vergleiche den Fokus. Erkläre außerdem, warum dies nicht automatisch die bessere Fassung ist.",
+				"model": "„Am Freitag wird der Klasse von Mara ein Buch gebracht.“ Die Passivfassung rückt das Buch beziehungsweise den Vorgang stärker in den Vordergrund; die Aktivfassung nennt Mara unmittelbar als Handelnde. Für einen Text über Maras Beitrag kann das Aktiv klarer sein. Die Wahl hängt vom Zweck ab.",
+				"criteria": [
+					"Ich bilde ein korrektes Passiv.",
+					"Ich beschreibe die Fokusverschiebung.",
+					"Ich entscheide funktionsbezogen."
+				]
+			}
+		},
+		"extension": "Prüfe einen eigenen längeren Text auf Satzglieder, Verbformen und eindeutige Bezüge. Wiederhole aus Klasse 7 gezielt die Strukturen, bei denen du noch unsicher bist.",
+		"check": {
+			"wrong": "Eine Zeitangabe zum Beginn des nächsten Tages.",
+			"explanation": "„Obwohl“ verbindet den Fortsetzungsbeschluss mit einem entgegenstehenden Umstand. Es hat hier eine andere Funktion als das begründende „weil“."
+		},
+		"takeaway": "Verknüpfungen und eindeutige Bezüge machen Zusammenhänge verständlich.",
+		"lehrplan": "D8 LB 4.2 · gemeinsamer Fachlehrplan"
+	},
+	{
+		"id": "d8-wortarten",
+		"stage": "sprache",
+		"title": "Mit Wortarten Wirkung gestalten",
+		"skill": "Wortarthäufungen erkennen und gezielt verändern.",
+		"bindings": ["4.2", "3.2"],
+		"paragraphs": [
+			"Eine Häufung bestimmter Wortarten kann die Darstellung prägen. Viele Tätigkeitsverben können Handlungen hervorheben; viele Nomen können Prozesse verdichten; Adjektive können Eigenschaften genauer machen oder wertend überladen. Solche Wirkungen sind Möglichkeiten, keine festen Regeln für jeden Text.",
+			"Belege eine Häufung an mehreren passenden Wörtern und erkläre sie im Zusammenhang. Überarbeite nicht mechanisch alle Nomen oder Adjektive. Prüfe, welche Form für Zweck, Verständlichkeit und gewünschte Wirkung trägt."
+		],
+		"material": "Eigene Varianten: A: „Die Durchführung der Sortierung und die Dokumentation der Ausleihen erfolgen am Freitag.“ B: „Am Freitag sortieren wir die Bücher und notieren die Ausleihen.“ C: „Der sensationelle, einzigartige, wundervolle Tausch beginnt.“",
+		"materialLabel": "Eigenes, erfundenes Übungsmaterial",
+		"sourceIds": ["lehrplan"],
+		"cases": [
+			{
+				"prompt": "In C häufen sich stark wertende Adjektive.",
+				"options": [
+					"Das belegt einen tatsächlich einzigartigen Erfolg.",
+					"Das kann werblich und übertrieben wirken."
+				],
+				"answer": "Das kann werblich und übertrieben wirken.",
+				"feedback": "Wertungen gestalten einen Eindruck, liefern aber für sich keinen Nachweis der behaupteten Besonderheit."
+			},
+			{
+				"prompt": "Eine Überarbeitung soll für eine schnelle Arbeitsanweisung verständlich sein.",
+				"options": [
+					"Konkrete Tätigkeiten und Handelnde deutlich nennen.",
+					"Grundsätzlich jedes Nomen aus dem Text löschen."
+				],
+				"answer": "Konkrete Tätigkeiten und Handelnde deutlich nennen.",
+				"feedback": "Wortarten werden nach ihrer Funktion gewählt; ein pauschales Verbot führt nicht zu einer brauchbaren Anweisung."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Überarbeite A als direkte Anweisung an die Klasse und erkläre eine Änderung.",
+				"model": "„Sortiert am Freitag die Bücher und notiert jede Ausleihe.“ Die Verben nennen direkt, was getan werden soll. Aus dem beschreibenden Satz wird durch den Imperativ eine Handlungsanweisung.",
+				"criteria": [
+					"Ich erhalte die wesentlichen Tätigkeiten.",
+					"Ich wähle eine passende Anweisungsform.",
+					"Ich erkläre die Wirkung eines Verbs."
+				]
+			},
+			"2": {
+				"prompt": "Schreibe zwei Fassungen derselben Information: sachliche Mitteilung und werblicher Aufruf. Vergleiche bewusst gewählte Wortarten.",
+				"model": "Sachlich: „Der Büchertausch beginnt am Freitag.“ Aufruf: „Entdeckt neue Geschichten und bringt eure Bücher mit!“ Der Aufruf setzt Tätigkeitsverben ein und richtet sich unmittelbar an die Klasse. Er braucht keine unbelegten Superlative, um zur Handlung einzuladen.",
+				"criteria": [
+					"Ich formuliere zwei funktionsverschiedene Texte.",
+					"Ich benenne konkrete Wortarten.",
+					"Ich begründe ihre Wirkung im Kontext."
+				]
+			}
+		},
+		"extension": "",
+		"check": {
+			"wrong": "Die Zahl der Adjektive nimmt stark zu.",
+			"explanation": "„Sortieren“ und „notieren“ benennen Handlungen direkt. In A erscheinen die Vorgänge stärker als nominale Ausdrücke; der Unterschied kann die Verständlichkeit beeinflussen."
+		},
+		"takeaway": "Eine Wortarthäufung wirkt im Zusammenhang; erkläre sie an konkreten Wörtern.",
+		"lehrplan": "D8 LB 4.2, LB 3.2 · gemeinsamer Fachlehrplan"
+	},
+	{
+		"id": "d8-infinitiv-partizip",
+		"stage": "sprache",
+		"title": "Sätze verdichten, Bezüge erhalten",
+		"skill": "Infinitiv- und Partizipgruppen sinnvoll einsetzen.",
+		"bindings": ["4.2", "4.3", "3.1"],
+		"paragraphs": [
+			"Infinitivgruppen enthalten eine Verbform mit „zu“, etwa „um Bücher zu sortieren“. Sie können einen Zweck oder einen anderen Zusammenhang knapp ausdrücken. Satzwertige Infinitivgruppen werden nach dem Regelwerk 2024 mit Komma abgegrenzt; die sichere Zweckkonstruktion mit „um … zu“ wird hier geübt.",
+			"Partizipgruppen können eine Handlung oder einen Zustand verdichten: „Von der Auswahl überrascht, blieb Nora stehen.“ Der Bezug muss stimmen: Nora ist überrascht. Eine Gruppe wie „Laut lachend, öffnete sich die Tür“ wirkt schief, wenn die Tür selbst nicht als lachend gemeint ist. Bei der Zeichensetzung unterscheiden sich Partizipgruppen von satzwertigen Infinitivgruppen; nachgetragene Zusätze werden durch Kommas abgegrenzt."
+		],
+		"material": "Eigene Sätze: A: „Nora bleibt nach der Stunde, um Bücher zu sortieren.“ B: „Nora, von der Auswahl überrascht, blieb stehen.“ C: „Laut lachend, öffnete sich die Tür.“ Gemeint ist in C eine lachende Person, nicht eine personifizierte Tür.",
+		"materialLabel": "Eigenes, erfundenes Übungsmaterial",
+		"sourceIds": ["lehrplan", "regelwerk"],
+		"cases": [
+			{
+				"prompt": "In B ist „von der Auswahl überrascht“ eingeschoben.",
+				"options": [
+					"Der Zusatz wird links und rechts durch Kommas abgegrenzt.",
+					"Nur das erste Komma darf unabhängig vom Einschub stehen."
+				],
+				"answer": "Der Zusatz wird links und rechts durch Kommas abgegrenzt.",
+				"feedback": "Ein eingeschobener Zusatz wird auf beiden Seiten markiert; danach wird der Trägersatz fortgesetzt."
+			},
+			{
+				"prompt": "C soll eine lachende Person zeigen.",
+				"options": [
+					"Der ursprüngliche Satz benennt die lachende Person bereits eindeutig.",
+					"„Laut lachend öffnete Nora die Tür“ klärt den Bezug."
+				],
+				"answer": "„Laut lachend öffnete Nora die Tür“ klärt den Bezug.",
+				"feedback": "Durch die neue Form steht Nora als handelnde und lachende Person im Satz. Der Bezug auf die Tür wird vermieden."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Verbinde „Nora bleibt nach der Stunde. Sie will Bücher sortieren“ mit einer Zweckkonstruktion und erkläre die Zeichensetzung.",
+				"model": "Nora bleibt nach der Stunde, um Bücher zu sortieren. Die mit „um … zu“ eingeleitete Infinitivgruppe nennt den Zweck und wird durch ein Komma vom Hauptsatz abgegrenzt.",
+				"criteria": [
+					"Ich erhalte den Zweck.",
+					"Ich bilde eine passende Infinitivgruppe.",
+					"Ich begründe das Komma."
+				]
+			},
+			"2": {
+				"prompt": "Verdichte „Nora war von der Auswahl überrascht. Sie blieb stehen“ durch eine Partizipgruppe und vergleiche die Fassung mit einem Nebensatz.",
+				"model": "„Nora, von der Auswahl überrascht, blieb stehen.“ Die eingeschobene Gruppe verdichtet den Zustand und ist beidseitig abgegrenzt. „Weil Nora von der Auswahl überrascht war, blieb sie stehen“ nennt ausdrücklich einen Grund. Diese Kausalbeziehung sollte nur ergänzt werden, wenn sie zur gemeinten Aussage passt.",
+				"criteria": [
+					"Ich bilde einen klar bezogenen Zusatz.",
+					"Ich grenze den Einschub korrekt ab.",
+					"Ich prüfe die zusätzliche Kausalbehauptung."
+				]
+			}
+		},
+		"extension": "",
+		"check": {
+			"wrong": "Nora, bleibt um Bücher zu sortieren.",
+			"explanation": "Die mit „um … zu“ eingeleitete Infinitivgruppe wird vom übergeordneten Satz abgegrenzt. Das Komma steht nicht zwischen Subjekt und Prädikat."
+		},
+		"takeaway": "Prüfe bei Satzverdichtungen den Bezug und die grammatischen Grenzen.",
+		"lehrplan": "D8 LB 4.2, LB 4.3, LB 3.1 · gemeinsamer Fachlehrplan"
+	},
+	{
+		"id": "d8-rechtschreibung",
+		"stage": "sprache",
+		"title": "Schreibweisen begründet prüfen",
+		"skill": "Ersatzproben, Ausnahmen und Namen beachten.",
+		"bindings": ["4.3", "3.3"],
+		"paragraphs": [
+			"Bei „das“ oder „dass“ hilft eine Ersatzprobe: Lässt sich „das“ sinnvoll durch „dieses“, „jenes“ oder „welches“ ersetzen, handelt es sich um ein Demonstrativ- oder Relativpronomen beziehungsweise einen Artikel, nicht um die Konjunktion „dass“. Grammatische Prüfung ist genauer als das bloße Hören.",
+			"Besondere Schreibungen lernst du an Regeln und Beispielen: „am besten“ bezeichnet hier einen adverbialen Superlativ; in „Karl der Große“ ist der Beiname Teil des Eigennamens. Straßen- und Ortsnamen folgen eigenen Schreibmustern, etwa „Goethestraße“ und „Berliner Straße“. Bei Fremdwörtern und Zweifelsfällen nutzt du ein aktuelles Wörterbuch statt einer geratenen Verallgemeinerung."
+		],
+		"material": "Eigene Prüfsätze: A: „Das Buch, das du empfiehlst, ist spannend.“ B: „Ich hoffe, dass du mitkommst.“ C: „Das gelingt am besten gemeinsam.“ D: „Karl der Große“. E: „Goethestraße“ / „Berliner Straße“. Fremdwortprobe: „Café“ / „Chance“.",
+		"materialLabel": "Eigenes, erfundenes Übungsmaterial",
+		"sourceIds": ["lehrplan", "regelwerk"],
+		"cases": [
+			{
+				"prompt": "„Das gelingt am besten gemeinsam.“",
+				"options": [
+					"Nach jedem „am“ muss ausnahmslos großgeschrieben werden.",
+					"„besten“ bleibt in diesem adverbialen Superlativ klein."
+				],
+				"answer": "„besten“ bleibt in diesem adverbialen Superlativ klein.",
+				"feedback": "Hier bedeutet „am besten“ wie gut etwas gelingt. Ein pauschales Großschreibsignal wäre falsch."
+			},
+			{
+				"prompt": "Aus „Berliner Straße“ wird die Regel „Alle Straßennamen bestehen aus zwei Wörtern“.",
+				"options": [
+					"Die Regel passt nicht zu „Goethestraße“.",
+					"Das Beispiel beweist die Regel für jeden Straßennamen."
+				],
+				"answer": "Die Regel passt nicht zu „Goethestraße“.",
+				"feedback": "Unterschiedliche Bildungstypen brauchen unterschiedliche Schreibungen; eine Einzelbeobachtung darf nicht verallgemeinert werden."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Erkläre die Schreibungen des zweiten „das“ in A und von „dass“ in B mit einer Probe beziehungsweise Satzfunktion.",
+				"model": "In A passt „welches du empfiehlst“; es ist ein Relativpronomen mit Bezug auf das Buch. In B leitet „dass“ den Inhalt der Hoffnung ein und lässt sich nicht sinnvoll durch „welches“ ersetzen.",
+				"criteria": [
+					"Ich führe die Ersatzprobe aus.",
+					"Ich bestimme den Bezug in A.",
+					"Ich erkläre die Konjunktion in B."
+				]
+			},
+			"2": {
+				"prompt": "Erstelle einen persönlichen Prüfplan für die Beispiele C bis E und die Fremdwörter, ohne aus einem Beispiel eine falsche Gesamtregel zu machen.",
+				"model": "Ich prüfe bei „am besten“, ob ein adverbialer Superlativ vorliegt. Bei „Karl der Große“ beachte ich den Eigennamen. Straßennamen ordne ich nach ihrer Bildung und schlage den tatsächlichen Namen nach. Bei „Café“ und „Chance“ sichere ich die Schreibung im aktuellen Wörterbuch und sammle nur eigene unsichere Fälle für eine spätere Kontrolle.",
+				"criteria": [
+					"Ich nutze unterschiedliche passende Prüfwege.",
+					"Ich beachte Namen und Ausnahmen.",
+					"Ich plane einen erneuten Blick auf eigene Fehler."
+				]
+			}
+		},
+		"extension": "Prüfe echte Namen und persönliche Zweifelsfälle in einem aktuellen Wörterbuch. Sammle eigene Fehlerschwerpunkte über mehrere Texte, statt nur die vorgegebenen Beispiele zu lernen.",
+		"check": {
+			"wrong": "Die Ersatzprobe entscheidet hier nur über die Zeitform.",
+			"explanation": "„Welches du empfiehlst“ passt als Relativsatz zum Buch. Die Konjunktion „dass“ hätte diese ersetzbare Bezugsfunktion nicht."
+		},
+		"takeaway": "Kläre Zweifelsfälle mit passenden Proben und einem aktuellen Wörterbuch.",
+		"lehrplan": "D8 LB 4.3, LB 3.3 · gemeinsamer Fachlehrplan"
+	},
+	{
+		"id": "d8-kommas",
+		"stage": "sprache",
+		"title": "Kommas aus der Struktur setzen",
+		"skill": "Nebensätze und eingeschobene Zusätze erkennen.",
+		"bindings": ["4.3", "4.2"],
+		"paragraphs": [
+			"Kommas machen grammatische Strukturen sichtbar. Ein finiter Nebensatz wie „weil sie gern liest“ wird vom übergeordneten Satz abgegrenzt. Ist er eingeschoben, braucht er links und rechts ein Komma. Eine Sprechpause allein ist keine sichere Regel.",
+			"Auch eine eingeschobene erläuternde Apposition wird beidseitig abgegrenzt: „Mara, unsere Klassensprecherin, eröffnet das Treffen.“ Satzwertige Infinitivgruppen werden nach dem Regelwerk 2024 ebenfalls abgegrenzt. Verwechsle eine zusätzliche Erläuterung nicht mit jedem beliebigen Attribut und setze kein Komma zwischen ein gewöhnliches Subjekt und sein Prädikat."
+		],
+		"material": "Eigene Beispielsätze: A: „Das Buch, das Mara empfiehlt, liegt hier.“ B: „Mara, unsere Klassensprecherin, eröffnet das Treffen.“ C: „Wir bleiben, um die Bücher zu ordnen.“ Fehlerentwurf D: „Die Bücher unserer Klasse, liegen hier.“",
+		"materialLabel": "Eigenes, erfundenes Übungsmaterial",
+		"sourceIds": ["lehrplan", "regelwerk"],
+		"cases": [
+			{
+				"prompt": "In A fehlt das Komma nach „empfiehlt“.",
+				"options": [
+					"Die rechte Grenze des Relativsatzes fehlt.",
+					"Ein Relativsatz darf nur an seiner linken Grenze markiert werden."
+				],
+				"answer": "Die rechte Grenze des Relativsatzes fehlt.",
+				"feedback": "Der Einschub endet vor „liegt“. Ohne schließendes Komma bleibt die Abgrenzung unvollständig."
+			},
+			{
+				"prompt": "In D steht ein Komma vor „liegen“.",
+				"options": [
+					"Eine lange Subjektgruppe braucht immer ein abschließendes Komma.",
+					"Das Komma trennt hier unzulässig Subjekt und Prädikat."
+				],
+				"answer": "Das Komma trennt hier unzulässig Subjekt und Prädikat.",
+				"feedback": "„Die Bücher unserer Klasse“ bildet die Subjektgruppe; ihre Länge allein begründet kein Komma vor dem Prädikat."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Korrigiere „Das Buch das Mara empfiehlt liegt hier“ und erläutere beide Kommas.",
+				"model": "Das Buch, das Mara empfiehlt, liegt hier. Der Relativsatz „das Mara empfiehlt“ ist in den Hauptsatz eingeschoben. Das erste Komma öffnet und das zweite schließt den Einschub.",
+				"criteria": [
+					"Ich erkenne den Relativsatz.",
+					"Ich setze beide Grenzen.",
+					"Ich erkläre die Struktur statt einer Pause."
+				]
+			},
+			"2": {
+				"prompt": "Vergleiche „Mara, unsere Klassensprecherin, eröffnet“ mit „Unsere Klassensprecherin Mara eröffnet“. Erkläre die unterschiedliche Zeichensetzung und ergänze vollständige Sätze.",
+				"model": "„Mara, unsere Klassensprecherin, eröffnet das Treffen“ enthält einen eingeschobenen erläuternden Zusatz. „Unsere Klassensprecherin Mara eröffnet das Treffen“ hat in dieser Lesart eine zusammengehörige Subjektgruppe ohne Einschub. Die Kommas richten sich nach der Struktur und nicht allein nach dem Auftreten eines Namens.",
+				"criteria": [
+					"Ich ergänze vollständige Sätze.",
+					"Ich unterscheide Zusatz und Subjektgruppe.",
+					"Ich begründe die Zeichensetzung."
+				]
+			}
+		},
+		"extension": "",
+		"check": {
+			"wrong": "Mara unsere Klassensprecherin eröffnet, das Treffen.",
+			"explanation": "Die zusätzliche Erläuterung „unsere Klassensprecherin“ ist eingeschoben. Der Trägersatz „Mara eröffnet das Treffen“ läuft danach weiter, weshalb beide Grenzen markiert werden."
+		},
+		"takeaway": "Setze Kommas nach der Satzstruktur und schließe eingeschobene Zusätze beidseitig.",
+		"lehrplan": "D8 LB 4.3, LB 4.2 · gemeinsamer Fachlehrplan"
+	},
+	{
+		"id": "d8-ueberarbeiten",
+		"stage": "sprache",
+		"title": "Einen eigenen Text gezielt verbessern",
+		"skill": "Inhalt, Aufbau und Sprache in getrennten Schritten prüfen.",
+		"bindings": ["3.3", "4.3", "4.2"],
+		"paragraphs": [
+			"Überarbeiten beginnt mit dem Schreibziel. Prüfe zuerst, ob Inhalt und Begründung zur Frage passen, dann Aufbau und Bezüge, schließlich sprachliche Form und Rechtschreibung. Ein Überarbeitungsplan macht aus Rückmeldungen konkrete nächste Schritte.",
+			"Bei einem stummen Schreibgespräch können andere Randnotizen zu vereinbarten Kriterien geben. Du entscheidest begründet, welche Änderungen helfen. Ein Korrekturprogramm findet nicht jede unzutreffende Information oder jeden falschen Bezug. Persönliche Fehlerschwerpunkte werden an neuen eigenen Texten erneut geprüft."
+		],
+		"material": "Eigener Fehlerentwurf für eine Stellungnahme: „Alle wollen den Tausch. Das beweist das er jeder Note hilft. Die Bücher unserer Klasse, liegen in der Kiste. Deshalb muss jede Person sofort mitmachen.“ Tatsächlich gegeben sind nur 15 Zustimmungen bei 25 Befragten; Noten wurden nicht untersucht.",
+		"materialLabel": "Eigenes, erfundenes Übungsmaterial",
+		"sourceIds": ["lehrplan", "regelwerk"],
+		"cases": [
+			{
+				"prompt": "Eine Person markiert „Alle“ und schreibt: „Nur 15 von 25; genauer formulieren.“",
+				"options": [
+					"Das ist bloß eine unbegründete persönliche Abwertung.",
+					"Das ist eine konkrete Rückmeldung mit überprüfbarem Ansatz."
+				],
+				"answer": "Das ist eine konkrete Rückmeldung mit überprüfbarem Ansatz.",
+				"feedback": "Die Notiz bezieht sich auf eine benannte Textstelle und auf das gegebene Material."
+			},
+			{
+				"prompt": "Die Software meldet nach einer Kommakorrektur keine Fehler mehr.",
+				"options": [
+					"Inhaltliche und argumentative Prüfung bleibt dennoch nötig.",
+					"Damit sind automatisch alle Aussagen wahr."
+				],
+				"answer": "Inhaltliche und argumentative Prüfung bleibt dennoch nötig.",
+				"feedback": "Fehlende Softwarehinweise sind kein Beleg für Tatsachentreue oder überzeugende Argumentation."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Schreibe den Fehlerentwurf als drei sachlichere Sätze neu und nenne eine inhaltliche sowie eine formale Änderung.",
+				"model": "15 von 25 Befragten stimmen dem Versuch zu. Über eine Notenwirkung gibt es keine Daten. Die Bücher unserer Klasse liegen in der Kiste. Inhaltlich ersetze ich „alle“ und streiche die erfundene Wirkung; formal entferne ich das Komma zwischen Subjekt und Prädikat.",
+				"criteria": [
+					"Ich korrigiere die Reichweite der Daten.",
+					"Ich entferne eine unbelegte Behauptung.",
+					"Ich begründe eine formale Korrektur."
+				]
+			},
+			"2": {
+				"prompt": "Entwickle einen Überarbeitungsplan für einen eigenen längeren Leserbrief mit Teamfeedback und einem persönlichen Fehlerschwerpunkt.",
+				"model": "Zuerst prüfe ich jeden Beleg gegen das Ausgangsmaterial. Eine andere Person markiert still unklare Übergänge und nicht berücksichtigte Einwände. Danach entscheide ich über die Vorschläge und überarbeite Bezüge und Absätze. Zum Schluss prüfe ich gezielt meine häufigen das/dass-Stellen mit Ersatzprobe und Wörterbuch; an einem neuen Text kontrolliere ich, ob der Schwerpunkt seltener auftritt.",
+				"criteria": [
+					"Ich plane Inhalt, Aufbau und Sprache.",
+					"Ich nutze Kriterien für Teamfeedback.",
+					"Ich verfolge einen eigenen Schwerpunkt an neuen Texten."
+				]
+			}
+		},
+		"extension": "Führe das Schreibgespräch mit einem tatsächlichen eigenen Text durch. Bewahre Ausgangsfassung, Rückmeldung und Überarbeitung auf und begründe zwei Änderungen.",
+		"check": {
+			"wrong": "Alle Kommas entfernen und damit jede Schwäche beheben.",
+			"explanation": "Der Entwurf überdehnt die Zustimmung und erfindet eine Notenwirkung. Eine rein formale Korrektur würde die falsche Grundlage stehen lassen."
+		},
+		"takeaway": "Überarbeite erst Inhalt und Aufbau, dann gezielt die sprachliche Form.",
+		"lehrplan": "D8 LB 3.3, LB 4.3, LB 4.2 · gemeinsamer Fachlehrplan"
+	}
+]

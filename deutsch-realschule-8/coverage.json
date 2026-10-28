@@ -1,0 +1,636 @@
+{
+	"schema": 1,
+	"checked": "2026-10-28",
+	"curriculum": "https://www.lehrplanplus.bayern.de/fachlehrplan/realschule/8/deutsch",
+	"scope": "Deutsch 8, Realschule Bayern, gemeinsamer Fachlehrplan",
+	"school_type": "realschule",
+	"grade": 8,
+	"subject": "deutsch",
+	"core_lessons": 40,
+	"optional_lessons": [],
+	"hours": null,
+	"hours_note": "Keine Stundenkontingente in den Lernbereichsüberschriften des gemeinsamen Fachlehrplans angegeben.",
+	"note": "Eigene knappe Themenbezeichnungen, keine amtlichen Zitate. section und position verweisen auf die in tests/fixtures/official-curriculum.json wortgetreu gesicherten Erwartungen. guided: begrenzte Übung; preparation: Vorbereitung auf zusätzliche Praxis. Kein vollständiger Kompetenznachweis.",
+	"neighbouring_grades": [
+		{
+			"grade": 7,
+			"url": "https://www.lehrplanplus.bayern.de/fachlehrplan/realschule/7/deutsch",
+			"checked": "2026-10-28"
+		},
+		{
+			"grade": 9,
+			"url": "https://www.lehrplanplus.bayern.de/fachlehrplan/realschule/9/deutsch",
+			"checked": "2026-10-28"
+		}
+	],
+	"neighbouring_note": "D7 führt indirekte Rede und Adverbial-/Attributsätze ein; die Wiederholung wird benannt. D8 vertieft Konjunktivformen, Wortarthäufungen, Infinitiv-/Partizipkonstruktionen und Aufklärung, Sturm und Drang, Klassik. D9 vertieft unter anderem Gesellschaftskritik des 19./20. Jahrhunderts und eine entsprechende Ganzschrift; das ist nicht Ziel dieses Pakets.",
+	"rows": [
+		{
+			"lb": 1,
+			"section": "1.1",
+			"position": 1,
+			"competence": "Mitschrift anfertigen",
+			"lessons": ["d8-zuhoeren", "d8-protokoll"],
+			"support": "preparation",
+			"additional": "Einen tatsächlichen mündlichen Beitrag hören und seine Ergebnisse selbst notieren.",
+			"evidence": "Erklärung, Beispiel, Merksatz, Schnellcheck, Fallwerkstatt und eigene Antwort mit Mustervergleich. Zusätzliche Durchführung erforderlich."
+		},
+		{
+			"lb": 1,
+			"section": "1.1",
+			"position": 2,
+			"competence": "Hörgestaltung erschließen",
+			"lessons": ["d8-zuhoeren"],
+			"support": "preparation",
+			"additional": "Einen echten komplexeren Hörtext ohne Transkript auswerten; Klangbeobachtungen am Audio prüfen.",
+			"evidence": "Erklärung, Beispiel, Merksatz, Schnellcheck, Fallwerkstatt und eigene Antwort mit Mustervergleich. Zusätzliche Durchführung erforderlich."
+		},
+		{
+			"lb": 1,
+			"section": "1.1",
+			"position": 3,
+			"competence": "Äußerungsfunktionen unterscheiden",
+			"lessons": ["d8-gespraech"],
+			"support": "preparation",
+			"additional": "In einem tatsächlichen Gespräch Funktionen erkennen und angemessen reagieren.",
+			"evidence": "Erklärung, Beispiel, Merksatz, Schnellcheck, Fallwerkstatt und eigene Antwort mit Mustervergleich. Zusätzliche Durchführung erforderlich."
+		},
+		{
+			"lb": 1,
+			"section": "1.1",
+			"position": 4,
+			"competence": "Feedback nutzen",
+			"lessons": ["d8-gespraech"],
+			"support": "preparation",
+			"additional": "Rückmeldung im Gespräch geben, erhalten und zur Veränderung des eigenen Verhaltens nutzen.",
+			"evidence": "Erklärung, Beispiel, Merksatz, Schnellcheck, Fallwerkstatt und eigene Antwort mit Mustervergleich. Zusätzliche Durchführung erforderlich."
+		},
+		{
+			"lb": 1,
+			"section": "1.1",
+			"position": 5,
+			"competence": "Missverständnisse klären",
+			"lessons": ["d8-gespraech"],
+			"support": "preparation",
+			"additional": "Eine reale oder gespielte Gesprächsstörung praktisch klären und die Wirkung prüfen.",
+			"evidence": "Erklärung, Beispiel, Merksatz, Schnellcheck, Fallwerkstatt und eigene Antwort mit Mustervergleich. Zusätzliche Durchführung erforderlich."
+		},
+		{
+			"lb": 1,
+			"section": "1.2",
+			"position": 1,
+			"competence": "Vorträge gestalten",
+			"lessons": ["d8-vortrag"],
+			"support": "preparation",
+			"additional": "Einen tatsächlichen Vortrag mit eigener Visualisierung vor anderen halten.",
+			"evidence": "Erklärung, Beispiel, Merksatz, Schnellcheck, Fallwerkstatt und eigene Antwort mit Mustervergleich. Zusätzliche Durchführung erforderlich."
+		},
+		{
+			"lb": 1,
+			"section": "1.2",
+			"position": 2,
+			"competence": "Adressatengerecht appellieren",
+			"lessons": ["d8-vortrag", "d8-beschwerde"],
+			"support": "preparation",
+			"additional": "Eine begründete mündliche Bitte an ein echtes Publikum richten.",
+			"evidence": "Erklärung, Beispiel, Merksatz, Schnellcheck, Fallwerkstatt und eigene Antwort mit Mustervergleich. Zusätzliche Durchführung erforderlich."
+		},
+		{
+			"lb": 1,
+			"section": "1.2",
+			"position": 3,
+			"competence": "Sinntragend vortragen",
+			"lessons": ["d8-vortrag", "d8-lyrik", "d8-szene"],
+			"support": "preparation",
+			"additional": "Literarische und eigene Texte hörbar gestalten, auch frei oder gemeinsam; Feedback einholen.",
+			"evidence": "Erklärung, Beispiel, Merksatz, Schnellcheck, Fallwerkstatt und eigene Antwort mit Mustervergleich. Zusätzliche Durchführung erforderlich."
+		},
+		{
+			"lb": 1,
+			"section": "1.3",
+			"position": 1,
+			"competence": "Gespräche bewältigen",
+			"lessons": ["d8-gespraech", "d8-debatte", "d8-beschwerde"],
+			"support": "preparation",
+			"additional": "Beschwerde oder Debatte tatsächlich führen und die Aufnahme anderer Beiträge beobachten.",
+			"evidence": "Erklärung, Beispiel, Merksatz, Schnellcheck, Fallwerkstatt und eigene Antwort mit Mustervergleich. Zusätzliche Durchführung erforderlich."
+		},
+		{
+			"lb": 1,
+			"section": "1.3",
+			"position": 2,
+			"competence": "Positionen vertreten",
+			"lessons": ["d8-debatte"],
+			"support": "preparation",
+			"additional": "Selbst Informationen beschaffen und eine echte Diskussion in unterschiedlichen Rollen führen.",
+			"evidence": "Erklärung, Beispiel, Merksatz, Schnellcheck, Fallwerkstatt und eigene Antwort mit Mustervergleich. Zusätzliche Durchführung erforderlich."
+		},
+		{
+			"lb": 1,
+			"section": "1.3",
+			"position": 3,
+			"competence": "Befragung durchführen",
+			"lessons": ["d8-interview"],
+			"support": "preparation",
+			"additional": "Leitfaden anpassen, mit Zustimmung interviewen, Antworten sichern und auswerten.",
+			"evidence": "Erklärung, Beispiel, Merksatz, Schnellcheck, Fallwerkstatt und eigene Antwort mit Mustervergleich. Zusätzliche Durchführung erforderlich."
+		},
+		{
+			"lb": 1,
+			"section": "1.4",
+			"position": 1,
+			"competence": "Szenisch interpretieren",
+			"lessons": ["d8-szene"],
+			"support": "preparation",
+			"additional": "Eine literarische Originalvorlage zusätzlich lesen und die eigene Inszenierung tatsächlich aufführen.",
+			"evidence": "Erklärung, Beispiel, Merksatz, Schnellcheck, Fallwerkstatt und eigene Antwort mit Mustervergleich. Zusätzliche Durchführung erforderlich."
+		},
+		{
+			"lb": 1,
+			"section": "1.4",
+			"position": 2,
+			"competence": "Spiel reflektieren",
+			"lessons": ["d8-szene"],
+			"support": "preparation",
+			"additional": "Eine wirkliche Aufführung ansehen oder spielen und konkrete Änderungen nach Feedback erproben.",
+			"evidence": "Erklärung, Beispiel, Merksatz, Schnellcheck, Fallwerkstatt und eigene Antwort mit Mustervergleich. Zusätzliche Durchführung erforderlich."
+		},
+		{
+			"lb": 2,
+			"section": "2.1",
+			"position": 1,
+			"competence": "Sinnerschließend lesen",
+			"lessons": ["d8-lesestrategien", "d8-lesejournal"],
+			"support": "preparation",
+			"additional": "Längere passende Originaltexte flüssig lesen, Wortschatz erweitern und Leseinteressen erkunden.",
+			"evidence": "Erklärung, Beispiel, Merksatz, Schnellcheck, Fallwerkstatt und eigene Antwort mit Mustervergleich. Zusätzliche Durchführung erforderlich."
+		},
+		{
+			"lb": 2,
+			"section": "2.1",
+			"position": 2,
+			"competence": "Lesestrategien auswählen",
+			"lessons": ["d8-lesestrategien"],
+			"support": "guided",
+			"additional": "Strategien selbständig an umfangreicheren Texten und in einer Gruppe erproben.",
+			"evidence": "Erklärung, Beispiel, Merksatz, Schnellcheck, Fallwerkstatt und eigene Antwort mit Mustervergleich. Geführte Teilübung; Anwendung an weiteren Originalen erforderlich."
+		},
+		{
+			"lb": 2,
+			"section": "2.1",
+			"position": 3,
+			"competence": "Texte erschließen",
+			"lessons": ["d8-lesestrategien"],
+			"support": "guided",
+			"additional": "Erwartungen und tatsächliches Verstehen an längeren Originaltexten vergleichen.",
+			"evidence": "Erklärung, Beispiel, Merksatz, Schnellcheck, Fallwerkstatt und eigene Antwort mit Mustervergleich. Geführte Teilübung; Anwendung an weiteren Originalen erforderlich."
+		},
+		{
+			"lb": 2,
+			"section": "2.2",
+			"position": 1,
+			"competence": "Gestaltung deuten",
+			"lessons": ["d8-figuren", "d8-lyrik", "d8-szene"],
+			"support": "guided",
+			"additional": "Längere epische, lyrische und dramatische Originaltexte sowie pragmatische Vergleichstexte ergänzen.",
+			"evidence": "Erklärung, Beispiel, Merksatz, Schnellcheck, Fallwerkstatt und eigene Antwort mit Mustervergleich. Geführte Teilübung; Anwendung an weiteren Originalen erforderlich."
+		},
+		{
+			"lb": 2,
+			"section": "2.2",
+			"position": 2,
+			"competence": "Produktiv erschließen",
+			"lessons": ["d8-rollenbrief", "d8-lyrik"],
+			"support": "guided",
+			"additional": "Produktive Aufgaben auf eine tatsächlich gelesene Originalvorlage übertragen und vergleichen.",
+			"evidence": "Erklärung, Beispiel, Merksatz, Schnellcheck, Fallwerkstatt und eigene Antwort mit Mustervergleich. Geführte Teilübung; Anwendung an weiteren Originalen erforderlich."
+		},
+		{
+			"lb": 2,
+			"section": "2.2",
+			"position": 3,
+			"competence": "Erzähltechnik nutzen",
+			"lessons": ["d8-erzaehlzeit"],
+			"support": "guided",
+			"additional": "Monolog, Dialog und Zeitgestaltung an längeren Texten unterscheiden und in eigenen Texten erproben.",
+			"evidence": "Erklärung, Beispiel, Merksatz, Schnellcheck, Fallwerkstatt und eigene Antwort mit Mustervergleich. Geführte Teilübung; Anwendung an weiteren Originalen erforderlich."
+		},
+		{
+			"lb": 2,
+			"section": "2.2",
+			"position": 4,
+			"competence": "Literaturideale vergleichen",
+			"lessons": ["d8-aufklaerung", "d8-goethe"],
+			"support": "preparation",
+			"additional": "Ringparabel, Prometheus und Zauberlehrling im Originalzusammenhang lesen, belegen und mit weiterer Literatur vergleichen.",
+			"evidence": "Erklärung, Beispiel, Merksatz, Schnellcheck, Fallwerkstatt und eigene Antwort mit Mustervergleich. Zusätzliche Durchführung erforderlich."
+		},
+		{
+			"lb": 2,
+			"section": "2.2",
+			"position": 5,
+			"competence": "Figurenerfahrungen reflektieren",
+			"lessons": ["d8-figuren", "d8-lesejournal"],
+			"support": "preparation",
+			"additional": "Figuren aus tatsächlicher Lektüre mit eigenen oder freiwillig erfundenen Erfahrungssituationen vergleichen.",
+			"evidence": "Erklärung, Beispiel, Merksatz, Schnellcheck, Fallwerkstatt und eigene Antwort mit Mustervergleich. Zusätzliche Durchführung erforderlich."
+		},
+		{
+			"lb": 2,
+			"section": "2.2",
+			"position": 6,
+			"competence": "Ganzschrift dokumentieren",
+			"lessons": ["d8-lesejournal"],
+			"support": "preparation",
+			"additional": "Mindestens ein geeignetes Jugendbuch vollständig lesen, ein reales Journal führen und sich darüber austauschen.",
+			"evidence": "Erklärung, Beispiel, Merksatz, Schnellcheck, Fallwerkstatt und eigene Antwort mit Mustervergleich. Zusätzliche Durchführung erforderlich."
+		},
+		{
+			"lb": 2,
+			"section": "2.2",
+			"position": 7,
+			"competence": "Lektüre empfehlen",
+			"lessons": ["d8-lesejournal"],
+			"support": "preparation",
+			"additional": "Reale Empfehlungen anderer prüfen, ein Buch wählen und eine eigene begründete Empfehlung vorstellen.",
+			"evidence": "Erklärung, Beispiel, Merksatz, Schnellcheck, Fallwerkstatt und eigene Antwort mit Mustervergleich. Zusätzliche Durchführung erforderlich."
+		},
+		{
+			"lb": 2,
+			"section": "2.3",
+			"position": 1,
+			"competence": "Daten auswerten",
+			"lessons": ["d8-diagramme"],
+			"support": "guided",
+			"additional": "Weitere Schaubilder und echte Diagramme mit Achsen und Quellen auswerten.",
+			"evidence": "Erklärung, Beispiel, Merksatz, Schnellcheck, Fallwerkstatt und eigene Antwort mit Mustervergleich. Geführte Teilübung; Anwendung an weiteren Originalen erforderlich."
+		},
+		{
+			"lb": 2,
+			"section": "2.3",
+			"position": 2,
+			"competence": "Sachtexte untersuchen",
+			"lessons": ["d8-bericht-reportage"],
+			"support": "guided",
+			"additional": "Vollständige längere Berichte und Reportagen im Original untersuchen.",
+			"evidence": "Erklärung, Beispiel, Merksatz, Schnellcheck, Fallwerkstatt und eigene Antwort mit Mustervergleich. Geführte Teilübung; Anwendung an weiteren Originalen erforderlich."
+		},
+		{
+			"lb": 2,
+			"section": "2.3",
+			"position": 3,
+			"competence": "Darstellung bewerten",
+			"lessons": ["d8-bericht-reportage", "d8-zeitung"],
+			"support": "guided",
+			"additional": "Weitere Mischformen zwischen Information und Wertung in tatsächlichen Beiträgen prüfen.",
+			"evidence": "Erklärung, Beispiel, Merksatz, Schnellcheck, Fallwerkstatt und eigene Antwort mit Mustervergleich. Geführte Teilübung; Anwendung an weiteren Originalen erforderlich."
+		},
+		{
+			"lb": 2,
+			"section": "2.3",
+			"position": 4,
+			"competence": "Standpunkte austauschen",
+			"lessons": ["d8-belege", "d8-leserbrief"],
+			"support": "preparation",
+			"additional": "Eigene Positionen zu tatsächlich gelesenen Sachtexten mit anderen besprechen.",
+			"evidence": "Erklärung, Beispiel, Merksatz, Schnellcheck, Fallwerkstatt und eigene Antwort mit Mustervergleich. Zusätzliche Durchführung erforderlich."
+		},
+		{
+			"lb": 2,
+			"section": "2.3",
+			"position": 5,
+			"competence": "Leserlenkung deuten",
+			"lessons": ["d8-zeitung"],
+			"support": "guided",
+			"additional": "Tatsächliche Layouts, Bilder und Sprachmittel mit Bezug auf ihre Wirkung vergleichen.",
+			"evidence": "Erklärung, Beispiel, Merksatz, Schnellcheck, Fallwerkstatt und eigene Antwort mit Mustervergleich. Geführte Teilübung; Anwendung an weiteren Originalen erforderlich."
+		},
+		{
+			"lb": 2,
+			"section": "2.3",
+			"position": 6,
+			"competence": "Zeitungen vergleichen",
+			"lessons": ["d8-zeitung"],
+			"support": "preparation",
+			"additional": "Print- und Online-Ausgaben mit Ressorts und Rubriken tatsächlich untersuchen.",
+			"evidence": "Erklärung, Beispiel, Merksatz, Schnellcheck, Fallwerkstatt und eigene Antwort mit Mustervergleich. Zusätzliche Durchführung erforderlich."
+		},
+		{
+			"lb": 2,
+			"section": "2.4",
+			"position": 1,
+			"competence": "Medien recherchierend vergleichen",
+			"lessons": ["d8-quellen", "d8-zeitung"],
+			"support": "preparation",
+			"additional": "Selbst recherchierte Print- und Online-Beiträge zum gleichen Thema vergleichen.",
+			"evidence": "Erklärung, Beispiel, Merksatz, Schnellcheck, Fallwerkstatt und eigene Antwort mit Mustervergleich. Zusätzliche Durchführung erforderlich."
+		},
+		{
+			"lb": 2,
+			"section": "2.4",
+			"position": 2,
+			"competence": "Medienprägung erkennen",
+			"lessons": ["d8-medien"],
+			"support": "guided",
+			"additional": "Ein tatsächliches Video und ein Computerspiel hinsichtlich Gestaltung, Regeln und Abhängigkeiten analysieren.",
+			"evidence": "Erklärung, Beispiel, Merksatz, Schnellcheck, Fallwerkstatt und eigene Antwort mit Mustervergleich. Geführte Teilübung; Anwendung an weiteren Originalen erforderlich."
+		},
+		{
+			"lb": 2,
+			"section": "2.4",
+			"position": 3,
+			"competence": "Medienwahl begründen",
+			"lessons": ["d8-medien", "d8-quellen"],
+			"support": "preparation",
+			"additional": "Echte Medienvorlieben austauschen und Herkunft sowie Nutzungsbedingungen ausgewählter Materialien prüfen.",
+			"evidence": "Erklärung, Beispiel, Merksatz, Schnellcheck, Fallwerkstatt und eigene Antwort mit Mustervergleich. Zusätzliche Durchführung erforderlich."
+		},
+		{
+			"lb": 2,
+			"section": "2.4",
+			"position": 4,
+			"competence": "Verfilmungen vergleichen",
+			"lessons": ["d8-szene"],
+			"support": "preparation",
+			"additional": "Eine tatsächliche kurze Filmszene mit der entsprechenden dramatischen Originalstelle anhand eigener Kriterien vergleichen.",
+			"evidence": "Erklärung, Beispiel, Merksatz, Schnellcheck, Fallwerkstatt und eigene Antwort mit Mustervergleich. Zusätzliche Durchführung erforderlich."
+		},
+		{
+			"lb": 2,
+			"section": "2.4",
+			"position": 5,
+			"competence": "Meinungsbildung untersuchen",
+			"lessons": ["d8-medien"],
+			"support": "guided",
+			"additional": "Digitale Originalbeiträge und ihre Interaktionen untersuchen, ohne private Daten zu veröffentlichen.",
+			"evidence": "Erklärung, Beispiel, Merksatz, Schnellcheck, Fallwerkstatt und eigene Antwort mit Mustervergleich. Geführte Teilübung; Anwendung an weiteren Originalen erforderlich."
+		},
+		{
+			"lb": 2,
+			"section": "2.4",
+			"position": 6,
+			"competence": "Mediennutzung reflektieren",
+			"lessons": ["d8-medien"],
+			"support": "preparation",
+			"additional": "Die eigene Nutzungsregel tatsächlich erproben und freiwillig mit anderen über ihre Wirkung sprechen.",
+			"evidence": "Erklärung, Beispiel, Merksatz, Schnellcheck, Fallwerkstatt und eigene Antwort mit Mustervergleich. Zusätzliche Durchführung erforderlich."
+		},
+		{
+			"lb": 3,
+			"section": "3.1",
+			"position": 1,
+			"competence": "Protokolle gestalten",
+			"lessons": ["d8-protokoll", "d8-zuhoeren"],
+			"support": "guided",
+			"additional": "Protokoll auf Grundlage eigener echter Hörnotizen anfertigen, auch im Textprogramm.",
+			"evidence": "Erklärung, Beispiel, Merksatz, Schnellcheck, Fallwerkstatt und eigene Antwort mit Mustervergleich. Geführte Teilübung; Anwendung an weiteren Originalen erforderlich."
+		},
+		{
+			"lb": 3,
+			"section": "3.1",
+			"position": 2,
+			"competence": "Aussagen wiedergeben",
+			"lessons": [
+				"d8-zitieren",
+				"d8-konjunktiv1",
+				"d8-konjunktiv2",
+				"d8-infinitiv-partizip"
+			],
+			"support": "guided",
+			"additional": "Wiedergabeformen, Modalverben, Infinitivkonstruktionen und Zitate an längeren Originaltexten nutzen.",
+			"evidence": "Erklärung, Beispiel, Merksatz, Schnellcheck, Fallwerkstatt und eigene Antwort mit Mustervergleich. Geführte Teilübung; Anwendung an weiteren Originalen erforderlich."
+		},
+		{
+			"lb": 3,
+			"section": "3.1",
+			"position": 3,
+			"competence": "Darstellungen gliedern",
+			"lessons": [
+				"d8-inhaltsangabe",
+				"d8-bildimpuls",
+				"d8-bewerbung",
+				"d8-gliederung",
+				"d8-leserbrief"
+			],
+			"support": "guided",
+			"additional": "Einen längeren Text passend zu einem eigenen Schreibanlass planen und schreiben.",
+			"evidence": "Erklärung, Beispiel, Merksatz, Schnellcheck, Fallwerkstatt und eigene Antwort mit Mustervergleich. Geführte Teilübung; Anwendung an weiteren Originalen erforderlich."
+		},
+		{
+			"lb": 3,
+			"section": "3.2",
+			"position": 1,
+			"competence": "Material auswählen",
+			"lessons": ["d8-quellen", "d8-belege"],
+			"support": "guided",
+			"additional": "Für eine eigene Frage selbst Material sammeln und nach Relevanz ordnen.",
+			"evidence": "Erklärung, Beispiel, Merksatz, Schnellcheck, Fallwerkstatt und eigene Antwort mit Mustervergleich. Geführte Teilübung; Anwendung an weiteren Originalen erforderlich."
+		},
+		{
+			"lb": 3,
+			"section": "3.2",
+			"position": 2,
+			"competence": "Bildgestützt erzählen",
+			"lessons": ["d8-bildimpuls"],
+			"support": "preparation",
+			"additional": "Einen tatsächlichen Bildimpuls statt der angebotenen Beschreibung nutzen und eine vollständige Geschichte schreiben.",
+			"evidence": "Erklärung, Beispiel, Merksatz, Schnellcheck, Fallwerkstatt und eigene Antwort mit Mustervergleich. Zusätzliche Durchführung erforderlich."
+		},
+		{
+			"lb": 3,
+			"section": "3.2",
+			"position": 3,
+			"competence": "Kreativ schreiben",
+			"lessons": ["d8-rollenbrief", "d8-lyrik", "d8-bildimpuls"],
+			"support": "guided",
+			"additional": "Freie Schreibformen und Perspektivwechsel an weiteren Vorlagen erproben und die eigene Gestaltung reflektieren.",
+			"evidence": "Erklärung, Beispiel, Merksatz, Schnellcheck, Fallwerkstatt und eigene Antwort mit Mustervergleich. Geführte Teilübung; Anwendung an weiteren Originalen erforderlich."
+		},
+		{
+			"lb": 3,
+			"section": "3.2",
+			"position": 4,
+			"competence": "Inhalte zusammenfassen",
+			"lessons": ["d8-inhaltsangabe"],
+			"support": "guided",
+			"additional": "Längere literarische und pragmatische Originaltexte zusammenfassen.",
+			"evidence": "Erklärung, Beispiel, Merksatz, Schnellcheck, Fallwerkstatt und eigene Antwort mit Mustervergleich. Geführte Teilübung; Anwendung an weiteren Originalen erforderlich."
+		},
+		{
+			"lb": 3,
+			"section": "3.2",
+			"position": 5,
+			"competence": "Textbesonderheiten untersuchen",
+			"lessons": ["d8-analyse", "d8-figuren"],
+			"support": "guided",
+			"additional": "Eine vollständige Textuntersuchung mit konkreter Leitfrage und Originalbelegen schreiben.",
+			"evidence": "Erklärung, Beispiel, Merksatz, Schnellcheck, Fallwerkstatt und eigene Antwort mit Mustervergleich. Geführte Teilübung; Anwendung an weiteren Originalen erforderlich."
+		},
+		{
+			"lb": 3,
+			"section": "3.2",
+			"position": 6,
+			"competence": "Schriftlich appellieren",
+			"lessons": ["d8-bewerbung", "d8-beschwerde"],
+			"support": "guided",
+			"additional": "Auftragsspezifischen Aufruf, Beschwerde oder Kurzbewerbung mit tatsächlichem Kontext und Feedback verfassen.",
+			"evidence": "Erklärung, Beispiel, Merksatz, Schnellcheck, Fallwerkstatt und eigene Antwort mit Mustervergleich. Geführte Teilübung; Anwendung an weiteren Originalen erforderlich."
+		},
+		{
+			"lb": 3,
+			"section": "3.2",
+			"position": 7,
+			"competence": "Standpunkte begründen",
+			"lessons": [
+				"d8-argument",
+				"d8-belege",
+				"d8-gegengrund",
+				"d8-gliederung",
+				"d8-leserbrief"
+			],
+			"support": "guided",
+			"additional": "Eine längere Stellungnahme zu einem tatsächlichen altersgemäßen Thema verfassen und überarbeiten.",
+			"evidence": "Erklärung, Beispiel, Merksatz, Schnellcheck, Fallwerkstatt und eigene Antwort mit Mustervergleich. Geführte Teilübung; Anwendung an weiteren Originalen erforderlich."
+		},
+		{
+			"lb": 3,
+			"section": "3.3",
+			"position": 1,
+			"competence": "Strategisch korrigieren",
+			"lessons": ["d8-rechtschreibung", "d8-ueberarbeiten"],
+			"support": "guided",
+			"additional": "Persönliche Fehler über mehrere eigene Texte mit Wörterbuch und Korrekturwerkzeugen prüfen.",
+			"evidence": "Erklärung, Beispiel, Merksatz, Schnellcheck, Fallwerkstatt und eigene Antwort mit Mustervergleich. Geführte Teilübung; Anwendung an weiteren Originalen erforderlich."
+		},
+		{
+			"lb": 3,
+			"section": "3.3",
+			"position": 2,
+			"competence": "Gemeinsam überarbeiten",
+			"lessons": ["d8-ueberarbeiten"],
+			"support": "preparation",
+			"additional": "Ein tatsächliches stummes Schreibgespräch durchführen und einen eigenen Text anhand der Rückmeldungen überarbeiten.",
+			"evidence": "Erklärung, Beispiel, Merksatz, Schnellcheck, Fallwerkstatt und eigene Antwort mit Mustervergleich. Zusätzliche Durchführung erforderlich."
+		},
+		{
+			"lb": 4,
+			"section": "4.1",
+			"position": 1,
+			"competence": "Französische Fremdwörter beurteilen",
+			"lessons": ["d8-register"],
+			"support": "guided",
+			"additional": "Weitere Fremdwörter in tatsächlichen Kontexten prüfen und eigene Verwendungsentscheidungen begründen.",
+			"evidence": "Erklärung, Beispiel, Merksatz, Schnellcheck, Fallwerkstatt und eigene Antwort mit Mustervergleich. Geführte Teilübung; Anwendung an weiteren Originalen erforderlich."
+		},
+		{
+			"lb": 4,
+			"section": "4.1",
+			"position": 2,
+			"competence": "Spracheinflüsse bewerten",
+			"lessons": ["d8-register"],
+			"support": "preparation",
+			"additional": "Aktuelle Originalbeispiele sammeln, zeitlich vergleichen und Konsequenzen für eigene Texte ableiten.",
+			"evidence": "Erklärung, Beispiel, Merksatz, Schnellcheck, Fallwerkstatt und eigene Antwort mit Mustervergleich. Zusätzliche Durchführung erforderlich."
+		},
+		{
+			"lb": 4,
+			"section": "4.1",
+			"position": 3,
+			"competence": "Varietäten beschreiben",
+			"lessons": ["d8-register"],
+			"support": "guided",
+			"additional": "Tatsächliche Umgangs-, Fach- und Gruppensprache an unterschiedlichen Situationen vergleichen.",
+			"evidence": "Erklärung, Beispiel, Merksatz, Schnellcheck, Fallwerkstatt und eigene Antwort mit Mustervergleich. Geführte Teilübung; Anwendung an weiteren Originalen erforderlich."
+		},
+		{
+			"lb": 4,
+			"section": "4.1",
+			"position": 4,
+			"competence": "Anglizismen bewusst verwenden",
+			"lessons": ["d8-register"],
+			"support": "guided",
+			"additional": "Eigene Texte auf Wirkung und Verständlichkeit der gewählten Anglizismen prüfen.",
+			"evidence": "Erklärung, Beispiel, Merksatz, Schnellcheck, Fallwerkstatt und eigene Antwort mit Mustervergleich. Geführte Teilübung; Anwendung an weiteren Originalen erforderlich."
+		},
+		{
+			"lb": 4,
+			"section": "4.2",
+			"position": 1,
+			"competence": "Bekannte Strukturen nutzen",
+			"lessons": ["d8-satzbau"],
+			"support": "preparation",
+			"additional": "Breitere individuelle Wiederholung der Strukturen aus Klasse 7 durchführen; ein Satzbeispiel reicht dafür nicht.",
+			"evidence": "Erklärung, Beispiel, Merksatz, Schnellcheck, Fallwerkstatt und eigene Antwort mit Mustervergleich. Zusätzliche Durchführung erforderlich."
+		},
+		{
+			"lb": 4,
+			"section": "4.2",
+			"position": 2,
+			"competence": "Konjunktiv funktional bilden",
+			"lessons": ["d8-konjunktiv1", "d8-konjunktiv2"],
+			"support": "guided",
+			"additional": "Weitere Personen, Verben, Wiedergaben und Wunschsätze selbst bilden und im eigenen Text verwenden.",
+			"evidence": "Erklärung, Beispiel, Merksatz, Schnellcheck, Fallwerkstatt und eigene Antwort mit Mustervergleich. Geführte Teilübung; Anwendung an weiteren Originalen erforderlich."
+		},
+		{
+			"lb": 4,
+			"section": "4.2",
+			"position": 3,
+			"competence": "Satzfunktionen verknüpfen",
+			"lessons": ["d8-satzbau"],
+			"support": "guided",
+			"additional": "Satzglieder, Satzarten und eindeutige Bezüge an einem längeren eigenen Text prüfen.",
+			"evidence": "Erklärung, Beispiel, Merksatz, Schnellcheck, Fallwerkstatt und eigene Antwort mit Mustervergleich. Geführte Teilübung; Anwendung an weiteren Originalen erforderlich."
+		},
+		{
+			"lb": 4,
+			"section": "4.2",
+			"position": 4,
+			"competence": "Wortarthäufungen deuten",
+			"lessons": ["d8-wortarten"],
+			"support": "guided",
+			"additional": "Wirkungen unterschiedlicher Häufungen an weiteren Textsorten prüfen und selbst gestalten.",
+			"evidence": "Erklärung, Beispiel, Merksatz, Schnellcheck, Fallwerkstatt und eigene Antwort mit Mustervergleich. Geführte Teilübung; Anwendung an weiteren Originalen erforderlich."
+		},
+		{
+			"lb": 4,
+			"section": "4.2",
+			"position": 5,
+			"competence": "Sätze verdichten",
+			"lessons": ["d8-infinitiv-partizip"],
+			"support": "guided",
+			"additional": "Verschiedene Infinitiv- und Partizipkonstruktionen an neuen eigenen Texten mit Regelwerk prüfen.",
+			"evidence": "Erklärung, Beispiel, Merksatz, Schnellcheck, Fallwerkstatt und eigene Antwort mit Mustervergleich. Geführte Teilübung; Anwendung an weiteren Originalen erforderlich."
+		},
+		{
+			"lb": 4,
+			"section": "4.3",
+			"position": 1,
+			"competence": "Schreibstrategien nutzen",
+			"lessons": ["d8-rechtschreibung", "d8-ueberarbeiten"],
+			"support": "guided",
+			"additional": "Echte Zweifelsfälle mit passenden Proben, Grammatik und Nachschlagewerk klären.",
+			"evidence": "Erklärung, Beispiel, Merksatz, Schnellcheck, Fallwerkstatt und eigene Antwort mit Mustervergleich. Geführte Teilübung; Anwendung an weiteren Originalen erforderlich."
+		},
+		{
+			"lb": 4,
+			"section": "4.3",
+			"position": 2,
+			"competence": "Sonderschreibungen sichern",
+			"lessons": ["d8-rechtschreibung", "d8-register"],
+			"support": "guided",
+			"additional": "Weitere tatsächliche Namen, Eigennamenattribute und französische Fremdwörter im Wörterbuch prüfen.",
+			"evidence": "Erklärung, Beispiel, Merksatz, Schnellcheck, Fallwerkstatt und eigene Antwort mit Mustervergleich. Geführte Teilübung; Anwendung an weiteren Originalen erforderlich."
+		},
+		{
+			"lb": 4,
+			"section": "4.3",
+			"position": 3,
+			"competence": "Zeichensetzung verbessern",
+			"lessons": ["d8-kommas", "d8-infinitiv-partizip", "d8-ueberarbeiten"],
+			"support": "guided",
+			"additional": "Längere Satzfolgen sowie individuelle Kommafehler an neuen eigenen Texten prüfen und erneut üben.",
+			"evidence": "Erklärung, Beispiel, Merksatz, Schnellcheck, Fallwerkstatt und eigene Antwort mit Mustervergleich. Geführte Teilübung; Anwendung an weiteren Originalen erforderlich."
+		}
+	]
+}
