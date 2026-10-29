@@ -466,3 +466,100 @@ test("returning from list navigation fits the map only after making it visible",
   assert.equal(measured, true);
   assert.equal(nodes.outline.hidden, true);
 });
+
+function packageControls(state, location) {
+  const controls = html.slice(
+    html.indexOf("const interactive ="),
+    html.indexOf("/* ---------- drawing"),
+  );
+  const activate = html.slice(
+    html.indexOf("function activate("),
+    html.indexOf("function applyHash("),
+  );
+  return new Function(
+    "state",
+    "location",
+    `${controls}; ${activate}; return interactive;`,
+  )(state, location);
+}
+
+test("a live package is selected first and opens on its next mouse or keyboard activation in either lens", () => {
+  const trees = atlasTrees();
+  for (const lens of ["schule", "welt"]) {
+    const node = trees[lens].children
+      .flatMap((n) => n.children)
+      .flatMap((n) => n.children)
+      .find((n) => n.pkg?.app === "geschichte-realschule-8");
+    assert.ok(node);
+    for (const key of [null, "Enter", " "]) {
+      const opened = [];
+      const location = { hash: "", assign: (url) => opened.push(url) };
+      const state = { lens, sel: null };
+      const controls = packageControls(state, location)(node);
+      const activate = () => {
+        if (key === null) controls.onclick({});
+        else {
+          let prevented = false;
+          controls.onkeydown({
+            key,
+            preventDefault: () => { prevented = true; },
+          });
+          assert.equal(prevented, true);
+        }
+      };
+      activate();
+      const selectedHash = `#/${[lens, ...node.path].join("/")}`;
+      assert.equal(location.hash, selectedHash);
+      assert.deepEqual(opened, []);
+      state.sel = node;
+      activate();
+      assert.deepEqual(opened, ["geschichte-realschule-8/"]);
+      assert.equal(location.hash, selectedHash);
+    }
+  }
+});
+
+test("planned packages still show their details and never open an app", () => {
+  const node = schoolSubject(atlasTrees(), 8, "geschichte").children.find(
+    (n) => n.planned,
+  );
+  assert.ok(node);
+  const opened = [];
+  const state = { lens: "schule", sel: null };
+  const location = { hash: "", assign: (url) => opened.push(url) };
+  const controls = packageControls(state, location)(node);
+  controls.onclick({});
+  assert.equal(location.hash, `#/schule/${node.path.join("/")}`);
+  state.sel = node;
+  controls.onclick({});
+  assert.equal(location.hash, `#/schule/${node.path.slice(0, -1).join("/")}`);
+  assert.deepEqual(opened, []);
+});
+
+test("package details place the opening link after the title and reset a previous scroll position", () => {
+  const trees = atlasTrees();
+  const nodes = trees.schule.children
+    .flatMap((n) => n.children)
+    .flatMap((n) => n.children)
+    .filter((n) => n.pkg);
+  const render = html.slice(
+    html.indexOf("function renderPanel()"),
+    html.indexOf("function renderStats()"),
+  );
+  for (const node of nodes) {
+    const panel = element("aside");
+    panel.scrollTop = 200;
+    new Function("state", "$", "h", "schulName", `${render}; renderPanel();`)(
+      { sel: node },
+      () => panel,
+      element,
+      (id) => registry.schulen.find((s) => s.id === id)?.name ?? "",
+    );
+    assert.equal(panel.scrollTop, 0);
+    assert.equal(panel.children[1].tag, "h2");
+    const link = panel.children[2];
+    assert.equal(link.tag, "a");
+    assert.equal(link.attrs.href, `${node.pkg.app}/`);
+    assert.deepEqual(link.children, ["Paket öffnen →"]);
+  }
+});

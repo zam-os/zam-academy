@@ -404,6 +404,7 @@
       .hint {
         position: absolute;
         left: 1rem;
+        right: 1rem;
         bottom: 0.8rem;
         font-size: 0.8rem;
         color: var(--dim);
@@ -659,6 +660,7 @@
       }
       .cta {
         display: inline-flex;
+        flex-shrink: 0;
         justify-content: center;
         align-items: center;
         gap: 0.5rem;
@@ -1367,7 +1369,7 @@
         const g = s("g", {
           class: `node ${on ? "live" : "disabled"}${state.sel === n ? " sel" : ""}`,
           style: `--h:${n.hue};--a:${alpha(n)}`,
-          "aria-label": ariaFor(n),
+          "aria-label": ariaFor(n) + (state.sel === n && n.pkg ? ", Paket öffnen" : ""),
           ...interactive(n),
         });
         const shape = s("g", { class: "shape" });
@@ -1489,9 +1491,11 @@
         $("hint").textContent =
           node.kind === "root"
             ? "Inseln zoomen hinein · graue sind noch nicht verfügbar"
-            : node.kind === "island"
-              ? "Wähle ein Fach, auch graue zeigen, wo es unterrichtet wird · Esc geht zurück"
-              : "Wähle eine Schulart oder ein Lernpaket · Esc geht zurück";
+            : state.sel?.pkg
+              ? "Markiertes Paket erneut anklicken zum Öffnen · Esc geht zurück"
+              : node.kind === "island"
+                ? "Wähle ein Fach, auch graue zeigen, wo es unterrichtet wird · Esc geht zurück"
+                : "Wähle eine Schulart oder ein Lernpaket · Esc geht zurück";
         if (dir && !reduceMotion) {
           const o = animFrom || [50, 50];
           const m = $("map");
@@ -1524,6 +1528,10 @@
           animFrom = [((r.left + r.width / 2 - st.left) / st.width) * 100, ((r.top + r.height / 2 - st.top) / st.height) * 100];
         }
         if (n.kind === "pkg") {
+          if (state.sel === n && n.pkg) {
+            location.assign(`${n.pkg.app}/`);
+            return;
+          }
           const target = state.sel === n ? n.path.slice(0, -1) : n.path;
           const hash = "#/" + [state.lens, ...target].join("/");
           if (location.hash === hash) applyHash();
@@ -1583,6 +1591,7 @@
       function renderPanel() {
         const p = $("panel");
         p.replaceChildren();
+        p.scrollTop = 0;
         const n = state.sel ?? state.focus;
         if (n.kind === "root") {
           const schule = n.id === "schule";
@@ -1622,6 +1631,7 @@
           const k = n.pkg;
           p.append(
             h("h2", {}, k.title),
+            h("a", { class: "cta", href: `${k.app}/` }, "Paket öffnen →"),
             h("p", {}, k.desc),
             h("dl", { class: "facts" },
               h("dt", {}, "Lektionen"), h("dd", {}, String(k.lessons)),
@@ -1633,7 +1643,6 @@
             ),
             h("p", { class: "kicker" }, "Themen"),
             h("ul", { class: "tags" }, k.gebiete.map((t) => h("li", {}, t))),
-            h("a", { class: "cta", href: `${k.app}/` }, "Paket öffnen →"),
           );
           if (n.combination) p.append(h("p", { class: "schoolnote" }, n.combination.note));
           return;
