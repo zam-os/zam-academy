@@ -17,6 +17,7 @@ Hands-on training apps that build understanding before [ZAM](https://github.com/
 | Chemie 8 Realschule (LehrplanPLUS Bayern, Zweig I) | [`chemie-realschule-8/`](chemie-realschule-8/) | https://academy.zam-os.org/chemie-realschule-8/ | `zam-academy:chemie-realschule-8` |
 | Chemie 9 Realschule (LehrplanPLUS Bayern, Zweig I und II/III) | [`chemie-realschule-9/`](chemie-realschule-9/) | https://academy.zam-os.org/chemie-realschule-9/ | `zam-academy:chemie-realschule-9` |
 | Chemie 10 Realschule (LehrplanPLUS Bayern, Zweig I und II/III) | [`chemie-realschule-10/`](chemie-realschule-10/) | https://academy.zam-os.org/chemie-realschule-10/ | `zam-academy:chemie-realschule-10` |
+| History 8 Realschule (Bavaria, all tracks) | [`geschichte-realschule-8/`](geschichte-realschule-8/) | https://academy.zam-os.org/geschichte-realschule-8/ | `zam-academy:geschichte-realschule-8` |
 | Geschichte 9 Realschule (LehrplanPLUS Bayern, gemeinsamer Lernpfad) | [`geschichte-realschule-9/`](geschichte-realschule-9/) | https://academy.zam-os.org/geschichte-realschule-9/ | `zam-academy:geschichte-realschule-9` |
 | Geschichte 10 Realschule (LehrplanPLUS Bayern, gemeinsamer Lernpfad) | [`geschichte-realschule-10/`](geschichte-realschule-10/) | https://academy.zam-os.org/geschichte-realschule-10/ | `zam-academy:geschichte-realschule-10` |
 | Geographie 9 Realschule (LehrplanPLUS Bayern, gemeinsamer Lernpfad) | [`geographie-realschule-9/`](geographie-realschule-9/) | https://academy.zam-os.org/geographie-realschule-9/ | `zam-academy:geographie-realschule-9` |
@@ -87,7 +88,8 @@ cd uml                 # or: cd physik-realschule-9 (dev server on :5181), cd sq
 # Chemie 8: cd chemie-realschule-8 (dev server on :5209)
 # Informatik 8: cd informatik-realschule-8 (dev server on :5211)
 # Deutsch 8: cd deutsch-realschule-8 (dev server on :5212)
-# Englisch 8: cd englisch-realschule-8 (dev server on :5213)
+# History 8: cd geschichte-realschule-8 (dev server on :5213)
+# Englisch 8: cd englisch-realschule-8 (dev server on :5214)
 npm ci
 npm run dev      # http://localhost:5180/uml/
 npm test
@@ -126,5 +128,7 @@ Geographie 8: `cd geographie-realschule-8 && npm ci && npm run dev` (Port 5210).
 The [Informatik 8 package](informatik-realschule-8/) covers the IT Anfangsunterricht (modules 1.1–1.9, binding for all Wahlpflichtfächergruppen and completed by the end of grade 8) with 40 lessons, local workshops and 87 cards. Its [coverage matrix](informatik-realschule-8/coverage.json) maps all 35 Kompetenzerwartungen. The [legacy review](docs/informatik-8-bestandsabgleich.md) maps the 24 cards of the old Informatik 6–8 cells to 10 A, 1 B and 13 C rows; Thomas approved the mapping on 2026-10-27, so since cell 2026.10.2 it replaces the eleven A/B cards and retires the thirteen C cards. Since 2026.10.3 every atom binds its module for grades 6, 7 and 8, because LehrplanPLUS does not tie the modules to one grade.
 
 The [Deutsch 8 package](deutsch-realschule-8/) adds 40 lessons, 80 linked cards and writing tasks on two levels for Realschule Bayern. Its [coverage matrix](deutsch-realschule-8/coverage.json) maps all 59 curriculum expectations to guided exercises or preparation for additional practice. The [inventory](docs/deutsch-8-bestandsabgleich.md) documents four existing argumentation cards that remain active, with no review-history transfer.
+
+The [History 8 package](geschichte-realschule-8/) adds 35 core lessons and three optional English extensions, 38 interactive workshops, 76 writing tasks and 76 linked cards. Its [coverage matrix](geschichte-realschule-8/coverage.json) maps all 38 indexed expectations to guided practice or preparation for further source, image, map, local and current-event work. The [inventory](docs/geschichte-8-bestandsabgleich.md) retains the eight older History 8 cards and their histories without transfer. Pages publishes the app and catalog on merge to main; synchronizing the bundled ZAM fixtures is a separate step.
 
 The [Englisch 8 package](englisch-realschule-8/) adds 51 lessons and 102 cards for all Wahlpflichtfächergruppen: North American history, the USA, New York and other cities, Canada, the grade-8 grammar (pronouns, two objects, questions, passive and personal passive, if-clauses type 0–3, receptive participle constructions) and American youth literature. Its [coverage matrix](englisch-realschule-8/coverage.json) maps all 44 Kompetenzerwartungen and topic rows. The [legacy review](docs/englisch-8-bestandsabgleich.md) proposes 1 A and 3 C rows for the four old grammar cards; the cell ships without `replaces` until Thomas approves.

@@ -38,7 +38,7 @@ Die vier alten Englisch-8-Karten bleiben aktiv. `replaces-de-by.json` ist **prop
 
 ```sh
 npm ci
-npm run dev          # http://localhost:5213/englisch-realschule-8/
+npm run dev          # http://localhost:5214/englisch-realschule-8/
 npm run typecheck
 npm test
 npm run package:zip  # Build, Offline-ZIP und Artefaktprüfung
