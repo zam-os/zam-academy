@@ -32,7 +32,7 @@ Texte und Fortschritt bleiben in `localStorage` dieses Browsers (`englisch_rs8_a
 
 `cell.json` ist die einzige Kartenquelle; die App liest Schnellcheck-Frage und Antwort daraus. Die 153 einmal erzeugten ULIDs und 51 Lektionsanker stehen ohne Kartentext in `tests/fixtures/public-contract.json`. Alle 102 Karten haben die Sprache `en` (die Sprachmittlungskarte EN–DE hat eine deutsche Antwort), verlinken ihre Lektion und binden Etappe und Lernbereich für Jahrgangsstufe 8 mit `exam_relevant: false`.
 
-Die vier alten Englisch-8-Karten bleiben aktiv. `replaces-de-by.json` ist **proposal-only**, `approved: null`: 1 A (`J01` → `e8-if-type3-check`, derselbe Einzelabruf), 3 C (keep-active). Die Zelle enthält kein `replaces` und keine `retired_items`; eine Übertragung braucht Thomas' ausdrückliche Freigabe.
+**Die Zuordnung der vier alten Englisch-8-Karten ist freigegeben.** Thomas antwortete am 29. Oktober 2026 im Claude-Code-Chat zu PR #67 auf die Frage nach 1 A / 0 B / 3 C mit „Approve mapping“ (`approved: 2026-10-29`, `status: approved`). Seit Zelle `2026.10.2` deklariert `e8-if-type3-check` `replaces` für `J01` (derselbe Einzelabruf): Dieser Lernverlauf wandert unverändert zur neuen Karte. `J02`–`J04` bleiben aktiv (C, keep-active); es gibt keine `retired_items`.
 
 ## Entwickeln und prüfen
 
@@ -45,4 +45,4 @@ npm run package:zip  # Build, Offline-ZIP und Artefaktprüfung
 ZAM_CORE=<Datei-URL von zam-core@0.54.0/dist/index.js> node scripts/validate-cell.mjs
 ```
 
-Dieselben vier Entwicklungswerkzeuge wie in Englisch 9 und 10: TypeScript, Vite, Singlefile und Vitest. `scripts/validate-cell.mjs` prüft in Wegwerfbibliotheken, dass die ausgelieferte Zelle keine alte Historie verändert, probt die vorgeschlagene A-Zuordnung an einer Kopie im Speicher und zeigt, dass ein Lernender mit Karten auf beiden IDs keine automatische Zusammenführung bekommt.
+Dieselben vier Entwicklungswerkzeuge wie in Englisch 9 und 10: TypeScript, Vite, Singlefile und Vitest. `scripts/validate-cell.mjs` prüft in Wegwerfbibliotheken die frühere Fassung ohne Zuordnung, die Erstinstallation und das Upgrade auf `2026.10.2`: Nur die A-Historie wandert unverändert, die drei C-Karten bleiben aktiv, neue Karten haben keinen Lernstand, und ein Lernender mit Karten auf beiden IDs bekommt keine automatische Zusammenführung.

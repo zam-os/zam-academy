@@ -69,39 +69,40 @@ Version `2026.08.1`, SHA-256
 `cfcdd1843d21ac280b80552d6917cd5eae5f0a2d67d164909c52d69f5d0fbb5a`. Eine
 bytegleiche Kopie liegt unter `englisch-realschule-8/tests/fixtures/`.
 
-| Alte ID-Endung | Inhalt | Vorschlag | Begründung |
+| Alte ID-Endung | Inhalt | Zuordnung | Begründung |
 | --- | --- | --- | --- |
-| J01 | Hauptsatz type 3: „If you had asked me, I … [help] you“ | **A** → `e8-if-type3-check` | Derselbe Einzelabruf mit demselben Beispiel, derselben Antwort „would have helped“ und derselben Auswahl gegen „would help“; nur die Aufgabensprache wechselt. |
+| J01 | Hauptsatz type 3: „If you had asked me, I … [help] you“ | **A** → `e8-if-type3-check`, replace | Derselbe Einzelabruf mit demselben Beispiel, derselben Antwort „would have helped“ und derselben Auswahl gegen „would help“; nur die Aufgabensprache wechselt. |
 | J02 | Vergleich aller drei if-Typen, would-Regel, zwei Übersetzungen | C, keep-active | Mehrteiliger Gesamtabruf; die neuen Karten teilen ihn auf, kein Nachfolger enthält ihn ganz. |
 | J03 | Backshift in der indirekten Rede | C, keep-active | Indirekte Rede ist laut LehrplanPLUS E9-Stoff; das E8-Paket hat keinen Nachfolger. |
 | J04 | Drei Regeln der indirekten Rede mit Umformungen | C, keep-active | Mehrteilig und E9-Stoff; kein Nachfolger. |
 
-`status: proposal-only`, `approved: null`. Die ausgelieferte Zelle `2026.10.1`
-deklariert weder `replaces` noch `retired_items`; alle vier Altkarten bleiben
-aktiv. **Thomas wird gebeten, die Zuordnung 1 A / 0 B / 3 C freizugeben oder zu
-ändern.** Erst danach folgt eine Version mit `replaces` für J01. Bis dahin gilt:
-Wer in der Zwischenzeit sowohl J01 als auch `e8-if-type3-check` übt, bringt
-zam-core dazu, die Installation der späteren Version abzulehnen; die Lücke
-sollte deshalb kurz bleiben. Ob J03/J04 zu einer Englisch-9-Karte passen, wäre
-ein eigener Vorschlag im Englisch-9-Paket.
+**Freigegeben.** Thomas antwortete am 29. Oktober 2026 im Claude-Code-Chat zu
+PR #67 auf die Frage „Do you approve the card mapping 1 A / 0 B / 3 C?“ mit
+„Approve mapping“. `replaces-de-by.json` steht seitdem auf `status: approved`,
+`approved: 2026-10-29`; Wortlaut und Ort stehen in `source`. Zelle `2026.10.2`
+deklariert `replaces` für J01 an `e8-if-type3-check`; J02–J04 bleiben aktiv,
+es gibt keine `retired_items`. Version `2026.10.1` (ohne Zuordnung) wurde nicht
+veröffentlicht; `validate-cell.mjs` prüft trotzdem das Upgrade von ihr. Ob J03
+und J04 zu einer Englisch-9-Karte passen, wäre ein eigener Vorschlag im
+Englisch-9-Paket.
 
 ## Prüfnachweise
 
 Am 29. Oktober 2026 lokal ermittelt:
 
 - `npm ci && npx tsc --noEmit && npm test && npm run build && npm run package:zip`
-  in `englisch-realschule-8/`: 209 Tests in fünf Dateien grün; ZIP mit
+  in `englisch-realschule-8/`: nach dem Review 211 Tests in fünf Dateien grün; ZIP mit
   bytegleicher HTML-Datei, drei Startern und Anleitung.
 - `node --test scripts/build-catalog.test.mjs scripts/academy-registry.test.mjs`:
-  38 Tests grün; `node scripts/build-catalog.mjs` schreibt 34 Zellen.
+  38 Tests grün; `node scripts/build-catalog.mjs` schreibt nach dem Merge von main 35 Zellen und akzeptiert die freigegebene Zuordnung.
 - `ZAM_CORE=<zam-core@0.54.0> node scripts/validate-cells.mjs`: alle Zellen
   installiert, Exit 0; Englisch 8 mit 102 Items.
-- `ZAM_CORE=<zam-core@0.54.0> node englisch-realschule-8/scripts/validate-cell.mjs`:
-  ausgelieferte Zelle lässt vier Altkarten und acht Reviews unverändert und
-  aktiv, neue Karten ohne Lernstand, Installation idempotent; die Probe der
-  A-Zuordnung (Erstinstallation und Upgrade) überträgt genau eine Historie mit
-  zwei Reviews unverändert, die drei C-Karten bleiben aktiv; eine Kollision
-  wird abgewiesen, beide Historien bleiben erhalten.
+- `ZAM_CORE=<zam-core@0.54.0> node englisch-realschule-8/scripts/validate-cell.mjs`
+  (nach der Freigabe, Zelle 2026.10.2): Die Fassung ohne Zuordnung lässt alle
+  vier Altkarten und acht Reviews unverändert; Erstinstallation und Upgrade
+  übertragen genau die J01-Historie unverändert auf `e8-if-type3-check`, die
+  drei C-Karten bleiben aktiv, 101 neue Karten ohne Lernstand, Installation
+  idempotent; eine Kollision wird abgewiesen, beide Historien bleiben erhalten.
 - Browser (Vite Preview der gebauten App): 204 Lektionsansichten
   (51 × zwei Stufen × hell/dunkel) mit Titel, Material, drei Quizoptionen,
   drei Kurzantwortfeldern, Aufgabe, Entwurfsfeld und Quellen; alle 51

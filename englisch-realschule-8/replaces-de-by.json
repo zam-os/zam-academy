@@ -1,8 +1,8 @@
 {
   "schema": 1,
-  "status": "proposal-only",
-  "approved": null,
-  "source": "Autorenvorschlag vom 2026-10-29: 1 A, 0 B, 3 C. Keine Freigabe durch Thomas; die Zelle 2026.10.1 erscheint ohne replaces und retired_items, alle vier Altkarten bleiben aktiv.",
+  "status": "approved",
+  "approved": "2026-10-29",
+  "source": "Freigabe durch Thomas am 2026-10-29 im Claude-Code-Chat zu PR #67 (zam-os/zam-academy): Auf die Frage „Do you approve the card mapping 1 A / 0 B / 3 C?“ antwortete er „Approve mapping“. Umgesetzt in Zelle 2026.10.2: J01 wird durch e8-if-type3-check ersetzt; J02–J04 bleiben aktiv, keine retired_items.",
   "source_repository": "zam-os/zam",
   "source_commit": "717ba45adf1f531da0bf662393a4b5379961f21f",
   "sources": [
@@ -20,8 +20,8 @@
       "de_by_question": "Wie lautet die korrekte Verbform im Hauptsatz (Main Clause) eines Conditional Type 3 Satzes (z. B. 'If you had asked me, I ... [help] you')?",
       "category": "A",
       "academy_slug": "e8-if-type3-check",
-      "action": "propose-replace-after-approval",
-      "reason": "Derselbe Einzelabruf: Hauptsatz eines type-3-Satzes mit would have + past participle, mit demselben Beispiel („If you had asked me, I … (help) you“), derselben Antwort „would have helped“ und derselben binären Auswahl gegen „would help“. Nur die Aufgabensprache wechselt von Deutsch zu Englisch. Nur Vorschlag; die ausgelieferte Zelle deklariert keine Ersetzung."
+      "action": "replace",
+      "reason": "Derselbe Einzelabruf: Hauptsatz eines type-3-Satzes mit would have + past participle, mit demselben Beispiel („If you had asked me, I … (help) you“), derselben Antwort „would have helped“ und derselben binären Auswahl gegen „would help“. Nur die Aufgabensprache wechselt von Deutsch zu Englisch. Freigegeben am 2026-10-29; seit Zelle 2026.10.2 deklariert e8-if-type3-check replaces."
     },
     {
       "de_by_cell": "de-by:realschule-8-englisch-grammar-conditional-reported-speech",
