@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
+    <script>
+      try {
+        const theme = localStorage.getItem("geschichte_rs8_theme");
+        if (theme === "light" || theme === "dark") document.documentElement.dataset.theme = theme;
+      } catch {}
+    </script>
+    <title>Geschichte 8 Realschule · ZAM Academy</title>
+    <meta name="description" content="Geschichte 8 Realschule Bayern: 35 Kernlektionen und drei englische Vertiefungen. Quellen untersuchen, Zeitlinien ordnen und historische Urteile begründen." />
+    <link rel="stylesheet" href="/src/styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="header">
+        <a href="#" id="home" class="brand"><span class="brand-mark" aria-hidden="true">G8</span><span>Geschichte <small>ZAM Academy · Realschule Bayern</small></span></a>
+        <nav aria-label="Hauptnavigation"><button type="button" data-view="path">Lernpfad</button><button type="button" data-view="lesson">Lektion</button><button type="button" data-view="reference">Nachschlagen</button></nav>
+        <div class="header-actions"><button type="button" id="zam" class="button accent">In ZAM festigen</button><button type="button" id="theme" class="icon-button" aria-label="Farbschema umschalten">◐</button></div>
+      </header>
+      <div class="progress-strip"><span id="progress-label"></span><progress id="progress" max="100" value="0" aria-label="Fortschritt der Kernlektionen"></progress></div>
+      <main id="main" tabindex="-1"></main>
+      <footer><span>Nach <a href="https://www.lehrplanplus.bayern.de/fachlehrplan/realschule/8/geschichte" target="_blank" rel="noopener">LehrplanPLUS Bayern</a> · gemeinsamer Lernpfad für alle Zweige</span><span>Keine Konten und kein Tracking. Fortschritt und eigene Texte bleiben in diesem Browser. <a href="https://github.com/zam-os/zam-academy" target="_blank" rel="noopener">Quelltext</a></span><span id="storage-note" role="status"></span></footer>
+    </div>
+    <div id="toast-stack" aria-live="polite"></div>
+    <script type="module" src="/src/main.ts"></script>
+    <a href="https://academy.zam-os.org/" class="zam-home-link">← ZAM Academy</a>
+  </body>
+</html>
