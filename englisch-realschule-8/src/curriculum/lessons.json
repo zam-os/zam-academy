@@ -1006,7 +1006,7 @@
 				"feedback": "Step 4: five seconds until the light blinks blue."
 			},
 			{
-				"prompt": "What material gave Silicon Valley its name?",
+				"prompt": "The area south of San Francisco Bay is named after a material used in computer chips. Which material?",
 				"answers": [
 					"silicon"
 				],
@@ -2444,11 +2444,12 @@
 		},
 		"practice": [
 			{
-				"prompt": "Make a subject question: Somebody taught Mr. Brown German. → Who ___ Mr. Brown German?",
+				"prompt": "Somebody taught Mr. Brown German. Ask about that person with who. Write the whole question.",
 				"answers": [
-					"taught"
+					"Who taught Mr. Brown German?",
+					"Who taught Mr Brown German?"
 				],
-				"feedback": "Subject question: who + verb, no did."
+				"feedback": "Subject question: who + taught – no did, because who is the subject."
 			},
 			{
 				"prompt": "Make an object question: Mr. Brown lived with a family. → Who ___ Mr. Brown live with?",
@@ -2521,8 +2522,7 @@
 			{
 				"prompt": "Make a negative question: It is cold today. → ___ it cold today?",
 				"answers": [
-					"Isn't",
-					"Is not"
+					"Isn't"
 				],
 				"feedback": "Isn't it …? – you expect the answer yes."
 			},
@@ -2905,11 +2905,9 @@
 				"prompt": "Rewrite as a full clause: The man selling fish tacos … → The man who ___ fish tacos …",
 				"answers": [
 					"was selling",
-					"sold",
-					"is selling",
-					"sells"
+					"sold"
 				],
-				"feedback": "selling = who was selling (active)."
+				"feedback": "selling refers to the past here: the man who was selling (or who sold) fish tacos."
 			},
 			{
 				"prompt": "Rewrite: The photos taken that day … → The photos which ___ that day …",
@@ -3014,7 +3012,7 @@
 			},
 			"2": {
 				"prompt": "Write an e-mail (6–7 sentences) to a Canadian exchange student who will visit your school next month. Explain what he will have to do, what he won't have to do, and what he will or won't be allowed to do.",
-				"model": "Hi Ethan, I'm looking forward to your visit! At our school you will have to get up early, because lessons start at 7:55. You won't have to wear a uniform, and you won't have to write any tests. You will be allowed to join our PE lessons and our school band. However, you won't be allowed to use your phone in class. I hope you'll be able to understand some German by the end of your stay! See you soon, Jakob",
+				"model": "Hi Ethan, I'm looking forward to your visit! At our school you will have to get up early, because lessons start at 7:55. You won't have to wear a uniform, and you won't have to take any tests. You will be allowed to join our PE lessons and our school band. However, you won't be allowed to use your phone in class. I hope you'll be able to understand some German by the end of your stay! See you soon, Jakob",
 				"criteria": [
 					"Ich verwende Ersatzformen in der Zukunft (will have to, will be allowed to).",
 					"Ich unterscheide müssen, nicht müssen und nicht dürfen korrekt.",
@@ -3854,7 +3852,7 @@
 				"feedback": "Card 2: enslaved in Maryland."
 			},
 			{
-				"prompt": "Complete the polite reaction to a question: That's a good ___.",
+				"prompt": "Someone asks you something during your talk and you need a moment to think. Complete the polite reaction: That's a good ___.",
 				"answers": [
 					"question"
 				],

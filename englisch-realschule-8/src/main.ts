@@ -496,7 +496,7 @@ document
 	?.addEventListener("click", () =>
 		showDialog(
 			"Mit ZAM behalten",
-			`<p>Zum Paket gehören ${CARD_COUNT} Wiederholungsfragen für ZAM. Jede führt zurück zu ihrer Lektion.</p><p>Sobald dieses Paket in der ZAM Academy veröffentlicht ist, öffne ZAM und bitte deinen Agenten:</p><p class="material">${esc(zamEnrolRequest())}</p><p>Wenn du schon die bisherigen Englisch-8-Grammatikkarten übst, bleiben ihre Karten und Lernverläufe unverändert. Diese zusätzliche Zelle enthält neue Fragen ohne bisherigen Lernstand. Ihre Veröffentlichung und Aufnahme erfolgen getrennt von deinem App-Fortschritt.</p><p>Hier kannst du ohne Konto weiterüben.</p>`,
+			`<p>Diese App gehört zur ZAM Academy. Dazu gehören ${CARD_COUNT} Wiederholungsfragen für ZAM; jede führt zurück zu ihrer Lektion.</p><p>Die Fragen stehen in ZAM bereit, sobald ein späterer ZAM-Stand diese Zelle übernimmt. Bitte deinen Agenten erst dann:</p><p class="material">${esc(zamEnrolRequest())}</p><p>Wenn du schon die bisherigen Englisch-8-Grammatikkarten übst, bleiben ihre Karten und Lernverläufe unverändert. Diese zusätzliche Zelle enthält neue Fragen ohne bisherigen Lernstand. Ihre Veröffentlichung und Aufnahme erfolgen getrennt von deinem App-Fortschritt.</p><p>Hier kannst du ohne Konto weiterüben.</p>`,
 		),
 	);
 document.querySelector("#reset")?.addEventListener("click", () => {

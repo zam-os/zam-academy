@@ -335,6 +335,35 @@ describe("practice and honest self-assessment", () => {
 				);
 		},
 	);
+	it("never shows a short answer in its own prompt, except in explicit either/or choices", () => {
+		const escape = (text: string) =>
+			text.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+		for (const lesson of LESSONS)
+			for (const item of lesson.practice) {
+				const prompt = normalise(item.prompt);
+				const shown = item.answers.filter((answer) =>
+					new RegExp(`(?<![\\w'])${escape(normalise(answer))}(?![\\w'])`).test(
+						prompt,
+					),
+				);
+				if (shown.length === 0) continue;
+				expect(prompt, `${lesson.id}: ${item.prompt}`).toMatch(
+					/“[^”]+” or “[^”]+”|\ba noun or a verb\b/,
+				);
+			}
+	});
+	it("does not accept a changed tense or a broken negative question", () => {
+		const negative = required(
+			LESSONS.find((lesson) => lesson.id === "e8-negative-questions"),
+		).practice[0];
+		expect(checkPractice([negative], ["Is not"])).toEqual([false]);
+		expect(checkPractice([negative], ["Isn’t"])).toEqual([true]);
+		const participle = required(
+			LESSONS.find((lesson) => lesson.id === "e8-participles"),
+		).practice[0];
+		for (const changed of ["is selling", "sells"])
+			expect(checkPractice([participle], [changed])).toEqual([false]);
+	});
 	it("normalises typography without accepting different grammar", () => {
 		expect(normalise("  I’m   READY. ")).toBe("i'm ready");
 		const practice = [
