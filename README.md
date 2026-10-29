@@ -8,6 +8,7 @@ Hands-on training apps that build understanding before [ZAM](https://github.com/
 | Physik 8 Realschule (LehrplanPLUS Bayern, Zweig I und II/III) | [`physik-realschule-8/`](physik-realschule-8/) | https://academy.zam-os.org/physik-realschule-8/ | `zam-academy:physik-realschule-8` |
 | Physik 9 Realschule (LehrplanPLUS Bayern) | [`physik-realschule-9/`](physik-realschule-9/) | https://academy.zam-os.org/physik-realschule-9/ | `zam-academy:physik-realschule-9` |
 | Relationale Datenbanken und SQL (DE/EN, LehrplanPLUS IT 2.3.1/2.3.2) | [`sql/`](sql/) | https://academy.zam-os.org/sql/ | `zam-academy:sql` |
+| Englisch 8 Realschule (LehrplanPLUS Bayern, alle Wahlpflichtfächergruppen) | [`englisch-realschule-8/`](englisch-realschule-8/) | https://academy.zam-os.org/englisch-realschule-8/ | `zam-academy:englisch-realschule-8` |
 | Englisch 9 Realschule (LehrplanPLUS Bayern) | [`englisch-realschule-9/`](englisch-realschule-9/) | https://academy.zam-os.org/englisch-realschule-9/ | `zam-academy:englisch-realschule-9` |
 | Englisch 10 Realschule (LehrplanPLUS Bayern, alle Wahlpflichtfächergruppen) | [`englisch-realschule-10/`](englisch-realschule-10/) | https://academy.zam-os.org/englisch-realschule-10/ | `zam-academy:englisch-realschule-10` |
 | Mathematik 7 Realschule (LehrplanPLUS Bayern, Zweig I und II/III) | [`mathematik-realschule-7/`](mathematik-realschule-7/) | https://academy.zam-os.org/mathematik-realschule-7/ | `zam-academy:mathematik-realschule-7` |
@@ -88,6 +89,7 @@ cd uml                 # or: cd physik-realschule-9 (dev server on :5181), cd sq
 # Informatik 8: cd informatik-realschule-8 (dev server on :5211)
 # Deutsch 8: cd deutsch-realschule-8 (dev server on :5212)
 # History 8: cd geschichte-realschule-8 (dev server on :5213)
+# Englisch 8: cd englisch-realschule-8 (dev server on :5214)
 npm ci
 npm run dev      # http://localhost:5180/uml/
 npm test
@@ -128,3 +130,5 @@ The [Informatik 8 package](informatik-realschule-8/) covers the IT Anfangsunterr
 The [Deutsch 8 package](deutsch-realschule-8/) adds 40 lessons, 80 linked cards and writing tasks on two levels for Realschule Bayern. Its [coverage matrix](deutsch-realschule-8/coverage.json) maps all 59 curriculum expectations to guided exercises or preparation for additional practice. The [inventory](docs/deutsch-8-bestandsabgleich.md) documents four existing argumentation cards that remain active, with no review-history transfer.
 
 The [History 8 package](geschichte-realschule-8/) adds 35 core lessons and three optional English extensions, 38 interactive workshops, 76 writing tasks and 76 linked cards. Its [coverage matrix](geschichte-realschule-8/coverage.json) maps all 38 indexed expectations to guided practice or preparation for further source, image, map, local and current-event work. The [inventory](docs/geschichte-8-bestandsabgleich.md) retains the eight older History 8 cards and their histories without transfer. Pages publishes the app and catalog on merge to main; synchronizing the bundled ZAM fixtures is a separate step.
+
+The [Englisch 8 package](englisch-realschule-8/) adds 51 lessons and 102 cards for all Wahlpflichtfächergruppen: North American history, the USA, New York and other cities, Canada, the grade-8 grammar (pronouns, two objects, questions, passive and personal passive, if-clauses type 0–3, receptive participle constructions) and American youth literature. Its [coverage matrix](englisch-realschule-8/coverage.json) maps all 44 Kompetenzerwartungen and topic rows. The [legacy review](docs/englisch-8-bestandsabgleich.md) maps the four old grammar cards to 1 A and 3 C rows; Thomas approved the mapping on 2026-10-29, so since cell 2026.10.2 the type-3 card replaces its equivalent old card and the three C cards stay active.

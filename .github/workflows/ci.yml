@@ -15,7 +15,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        app: [uml, physik-realschule-9, sql, mathematik-realschule-7, mathematik-realschule-8, mathematik-realschule-9, chemie-realschule-8, chemie-realschule-9, geschichte-realschule-9, geographie-realschule-9, geographie-realschule-8, biologie-realschule-10, physik-realschule-10, algorithmen, datennetze, bwr-realschule-9, wirtschaft-recht-realschule-9, mathematik-realschule-10, deutsch-realschule-9, physik-realschule-8, englisch-realschule-9, franzoesisch-realschule-9, franzoesisch-realschule-10, informatik-realschule-10, chemie-realschule-10, deutsch-realschule-10, geschichte-realschule-10, englisch-realschule-10, bwr-realschule-10, politik-realschule-10, biologie-realschule-8, informatik-realschule-8, deutsch-realschule-8, geschichte-realschule-8]
+        app: [uml, physik-realschule-9, sql, mathematik-realschule-7, mathematik-realschule-8, mathematik-realschule-9, chemie-realschule-8, chemie-realschule-9, geschichte-realschule-9, geographie-realschule-9, geographie-realschule-8, biologie-realschule-10, physik-realschule-10, algorithmen, datennetze, bwr-realschule-9, wirtschaft-recht-realschule-9, mathematik-realschule-10, deutsch-realschule-9, physik-realschule-8, englisch-realschule-9, franzoesisch-realschule-9, franzoesisch-realschule-10, informatik-realschule-10, chemie-realschule-10, deutsch-realschule-10, geschichte-realschule-10, englisch-realschule-10, bwr-realschule-10, politik-realschule-10, biologie-realschule-8, informatik-realschule-8, deutsch-realschule-8, geschichte-realschule-8, englisch-realschule-8]
     defaults:
       run:
         working-directory: ${{ matrix.app }}
@@ -32,7 +32,7 @@ jobs:
       - name: Offline zip
         run: node scripts/build-release-zip.mjs
       - name: Check self-contained offline bundles
-        if: matrix.app == 'geographie-realschule-8' || matrix.app == 'chemie-realschule-8' || matrix.app == 'deutsch-realschule-10' || matrix.app == 'englisch-realschule-10' || matrix.app == 'politik-realschule-10' || matrix.app == 'biologie-realschule-8' || matrix.app == 'informatik-realschule-8' || matrix.app == 'deutsch-realschule-8' || matrix.app == 'geschichte-realschule-8'
+        if: matrix.app == 'geographie-realschule-8' || matrix.app == 'chemie-realschule-8' || matrix.app == 'deutsch-realschule-10' || matrix.app == 'englisch-realschule-10' || matrix.app == 'politik-realschule-10' || matrix.app == 'biologie-realschule-8' || matrix.app == 'informatik-realschule-8' || matrix.app == 'deutsch-realschule-8' || matrix.app == 'geschichte-realschule-8' || matrix.app == 'englisch-realschule-8'
         run: node scripts/verify-release.mjs
       - uses: actions/upload-artifact@v4
         with:
@@ -119,3 +119,5 @@ jobs:
         run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node chemie-realschule-8/scripts/validate-migration.mjs
       - name: Move approved Informatik 6–8 histories to Informatik 8 and retire the C cards in temporary libraries
         run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node informatik-realschule-8/scripts/validate-migration.mjs
+      - name: Preserve Englisch 8 histories and rehearse the proposed mapping in temporary libraries
+        run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node englisch-realschule-8/scripts/validate-cell.mjs
