@@ -225,7 +225,7 @@ describe("offline progress and links", () => {
         .drafts[key],
     ).toHaveLength(8000);
   });
-  it("survives blocked storage and escapes entered text", () => {
+  it("survives blocked storage and escapes entered text", async () => {
     vi.stubGlobal("localStorage", {
       getItem() {
         throw Error("blocked");
@@ -236,7 +236,7 @@ describe("offline progress and links", () => {
     });
     try {
       expect(loadProgress()).toEqual(freshProgress());
-      expect(saveProgress(freshProgress())).toBe(false);
+      expect(await saveProgress(freshProgress())).toBe(false);
     } finally {
       vi.unstubAllGlobals();
     }

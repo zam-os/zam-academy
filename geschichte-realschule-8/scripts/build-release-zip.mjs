@@ -65,7 +65,7 @@ writeFileSync(linuxShPath, linuxSh, "utf8");
 chmodSync(linuxShPath, 0o755);
 
 const readmeTxt = `========================================================================
-ZAM ACADEMY · GESCHICHTE 9 REALSCHULE (LehrplanPLUS Bayern)
+ZAM ACADEMY · GESCHICHTE 8 REALSCHULE (LehrplanPLUS Bayern)
 ========================================================================
 
 SOFORT-START OHNE INSTALLATION
@@ -78,9 +78,9 @@ SOFORT-START OHNE INSTALLATION
 Keine Installation, kein Server und kein Internet erforderlich.
 Dein Fortschritt bleibt im Browser gespeichert.
 
-Oben in der App wechselst du zwischen
-- 🌱 Level 1 (geführt: Leitfragen helfen) und
-- 🦅 Level 2 (Transfer: selbständig begründen).
+In einer Lektion wählst du unter „Arbeitsweise“ zwischen
+- „Level 1 · mit Leitfragen“ und
+- „Level 2 · Transfer“.
 
 Behalten mit ZAM: Die Zelle "Geschichte 8 Realschule (ZAM Academy)" hält, was du
 hier geübt hast. Jede Karte verlinkt die Lektion, in der du geübt hast.

@@ -1,6 +1,6 @@
 # History 8 · Bavarian Realschule
 
-A local ZAM Academy draft for all Realschule tracks, aligned with the [official History 8 curriculum](https://www.lehrplanplus.bayern.de/fachlehrplan/realschule/8/geschichte), checked on 29 October 2026. Learner-facing teaching material is in German, with three optional English extensions.
+A ZAM Academy package for all Realschule tracks, aligned with the [official History 8 curriculum](https://www.lehrplanplus.bayern.de/fachlehrplan/realschule/8/geschichte), checked on 29 October 2026. Learner-facing teaching material is in German, with three optional English extensions.
 
 The package contains 35 core lessons, three English lessons, 38 interactive workshops, 76 writing tasks across two levels, and 76 concise recall cards. The app teaches through reading, classification or chronology, and an independently written answer. A model answer becomes available after a draft; learners compare three criteria themselves. Writing is never automatically graded and app progress never changes FSRS mastery.
 
@@ -22,7 +22,7 @@ The package contains 35 core lessons, three English lessons, 38 interactive work
 
 The exercises are authored historical explanations and expressly fictional scenarios, not invented original testimony. Two short, attributed original excerpts supplement them: the US Declaration of Independence and the 1871 imperial constitution. Each has author, date, audience, provenance and interpretive limits. The app gives no unverified current-event facts. Present-day comparisons begin with a dated source investigation.
 
-Progress, theme and drafts stay in this browser. Blocked storage produces an in-app explanation and leaves the current session usable. No accounts, analytics, external fonts, automatic source requests or remote grading are used. External references open only on a click.
+Progress, theme and drafts stay in this browser. Blocked storage produces an in-app explanation and leaves the current session usable. No accounts, analytics, external fonts, automatic source requests or remote grading are used. External references open only on a click. Saves merge explicit local actions with the latest stored progress, using a Web Lock when available; a stale tab cannot overwrite untouched drafts or restore progress after a reset.
 
 ## Develop and verify
 
@@ -47,10 +47,10 @@ ZAM_CORE=file:///absolute/path/to/zam/dist/index.js node scripts/validate-cell.m
 
 The check creates disposable libraries, installs twice, enrols twice, verifies new-card state and source links, and compares all eight legacy cards and their reviews. It never reads or changes a personal library.
 
-## Cell contract and draft status
+## Cell contract and publication
 
-`cell.json` is the only recall-card list. Each practice item cites `https://academy.zam-os.org/geschichte-realschule-8/#lesson=<id>`. These are the intended publication URLs; this local draft is not publicly available yet. The app explains the catalog path and lets learners continue locally if the package is not listed yet.
+`cell.json` is the only recall-card list. Each practice item cites `https://academy.zam-os.org/geschichte-realschule-8/#lesson=<id>`. Pages publishes the app and its cell at these URLs on merge to main. The app explains the catalog path and lets learners continue locally if the package is not listed yet.
 
 The 114 atom/item ULIDs and lesson anchors are pinned in `tests/fixtures/public-contract.json`. Card text lives only in `cell.json`. Lessons are self-contained: chronology alone does not create a prerequisite. The existing eight History 8 items remain independent, with no `replaces`, retirements, inferred equivalence or mastery transfer. See the [inventory](../docs/geschichte-8-bestandsabgleich.md).
 
-Publication and ZAM fixture synchronization are separate steps. The legacy inventory in `replaces-de-by.json` is proposal-only and does not authorize a history transfer.
+Pages publication and ZAM fixture synchronization are separate steps. Synchronization into the bundled ZAM library is not part of this PR. The legacy inventory in `replaces-de-by.json` is proposal-only and does not authorize a history transfer.

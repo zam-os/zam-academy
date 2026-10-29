@@ -6,9 +6,15 @@ import {
   SOURCES,
   STAGES,
 } from "./curriculum";
+import { renderQuizFeedback, renderWorkshopFeedback } from "./feedback";
 import type { Lesson, Level } from "./model/types";
 import {
   completion,
+  confirmWriting,
+  invalidateWriting,
+  recordQuizAnswer,
+  recordWorkshopAnswer,
+  updateDraft,
   freshProgress,
   isComplete,
   loadProgress,
@@ -34,7 +40,7 @@ const orders = new Map<string, number[]>();
 const assignments = new Map<string, number[]>();
 const workshopFeedback = new Set<string>();
 const quizSelections = new Map<string, number>();
-const comparisons = new Set<string>();
+const comparisons = new Map<string, string>();
 const rubricChecks = new Map<string, boolean[]>();
 let storageWarningShown = false;
 
@@ -60,8 +66,11 @@ function switchView(next: typeof view): void {
   main.focus({ preventScroll: true });
 }
 
-function persist(): void {
-  if (!saveProgress(progress)) {
+async function persist(): Promise<void> {
+  const active = progress;
+  const saved = await saveProgress(active);
+  if (active !== progress) return;
+  if (!saved) {
     document.getElementById("storage-note")!.textContent =
       "Speichern ist in diesem Browser gerade nicht möglich. Dein Fortschritt bleibt nur bis zum Schließen der Seite erhalten.";
     if (!storageWarningShown)
@@ -70,6 +79,29 @@ function persist(): void {
         "warning",
       );
     storageWarningShown = true;
+  }
+  // The asynchronous merge may have adopted another tab's newer draft.
+  if (view === "path") render();
+  const draft = main.querySelector<HTMLTextAreaElement>("#draft");
+  if (view === "lesson" && draft) {
+    const key = writingKey(progress.activeLessonId, progress.level);
+    const current = progress.drafts[key] ?? "";
+    if (draft.value !== current) {
+      draft.value = current;
+      comparisons.delete(key);
+      rubricChecks.delete(key);
+      main.querySelector(".model-answer")?.remove();
+      (main.querySelector("#compare") as HTMLButtonElement).disabled =
+        !canReviewDraft(current);
+      main.querySelector("#draft-note")!.textContent =
+        "Der Entwurf wurde in einem anderen Tab geändert. Bitte erneut vergleichen.";
+    }
+    main.querySelector("#writing-done")!.textContent =
+      progress.writingDone.includes(key) ? "✓ Selbst eingeschätzt" : "";
+    main.querySelector("#aside-writing")!.textContent =
+      progress.writingDone.includes(writingKey(progress.activeLessonId, 1))
+        ? "✓ Level 1 selbst eingeschätzt"
+        : "○ Level 1 selbst eingeschätzt";
   }
   const stats = completion(progress);
   document.getElementById("progress-label")!.textContent =
@@ -85,7 +117,7 @@ function openLesson(id: string): void {
   if (lesson.optional) progress.includeEnglish = true;
   view = "lesson";
   history.pushState(null, "", `#lesson=${encodeURIComponent(id)}`);
-  persist();
+  void persist();
   render();
   window.scrollTo({ top: 0, behavior: "instant" });
   main.focus({ preventScroll: true });
@@ -133,21 +165,20 @@ function renderWorkshop(lesson: Lesson): string {
       ? order
       : (assignments.get(lesson.id) ?? work.entries.map(() => -1));
   const feedback = workshopFeedback.has(lesson.id);
-  const results = checkWorkshop(work, answer);
   return `<section class="panel workshop" aria-labelledby="workshop-heading"><div class="panel-heading"><span class="eyebrow">02 · WERKSTATT</span><span class="done-mark">${progress.workshopDone.includes(lesson.id) ? "✓ Einmal gelöst" : ""}</span></div><h2 id="workshop-heading">${esc(work.title)}</h2><p>${esc(work.instruction)}</p>
   ${work.material ? `<div class="document"><span class="small">${esc(work.materialLabel ?? "Darstellungstext für diese Übung")}</span><p>${esc(work.material)}</p></div>` : ""}
   ${work.sourceExcerpt ? `<figure class="document"><figcaption><strong>${esc(work.sourceExcerpt.title)}</strong><dl class="source-metadata"><dt>Urheber</dt><dd>${esc(work.sourceExcerpt.author)}</dd><dt>Datum</dt><dd>${esc(work.sourceExcerpt.date)}</dd><dt>Adressaten</dt><dd>${esc(work.sourceExcerpt.audience)}</dd></dl></figcaption><blockquote>${esc(work.sourceExcerpt.text)}</blockquote><p class="small">${esc(work.sourceExcerpt.context)}</p><a class="small" href="${esc(SOURCES.find((source) => source.id === work.sourceExcerpt!.sourceId)!.url)}" target="_blank" rel="noopener">Wortlaut und Kontext prüfen ↗</a></figure>` : ""}
   ${work.dataTable ? `<figure class="data-figure"><figcaption><strong>${esc(work.dataTable.title)}</strong><p class="small">${esc(work.dataTable.unit)}</p></figcaption><table><thead><tr><th scope="col">Wahl</th><th scope="col">Stimmenanteil</th></tr></thead><tbody>${work.dataTable.rows.map((row) => `<tr><th scope="row">${esc(row.label)}</th><td><span class="data-bar" aria-hidden="true" style="width:${row.value}%"></span><span>${row.value.toLocaleString("de-DE")} %</span></td></tr>`).join("")}</tbody></table><p class="small">Skala der Balken: 0 bis 100 Prozent. ${esc(work.dataTable.note)}</p><a class="small" href="${esc(SOURCES.find((source) => source.id === work.dataTable!.sourceId)!.url)}" target="_blank" rel="noopener">Herkunft und Kontext der Daten ↗</a></figure>` : ""}
   ${work.kind === "timeline" ? `<ol class="timeline">${order.map((entryIndex, position) => `<li><span class="position">${position + 1}</span><span class="event-text">${esc(work.entries[entryIndex].text)}</span><div class="move-buttons"><button type="button" data-move="${position}" data-delta="-1" aria-label="${esc(work.entries[entryIndex].text)} nach oben" ${position === 0 ? "disabled" : ""}>↑</button><button type="button" data-move="${position}" data-delta="1" aria-label="${esc(work.entries[entryIndex].text)} nach unten" ${position === order.length - 1 ? "disabled" : ""}>↓</button></div></li>`).join("")}</ol>` : `<div class="classification">${work.entries.map((entry, index) => `<label><span>${esc(entry.text)}</span><select data-assign="${index}"><option value="-1">Bitte zuordnen</option>${work.categories.map((category, value) => `<option value="${value}" ${answer[index] === value ? "selected" : ""}>${esc(category)}</option>`).join("")}</select></label>`).join("")}</div>`}
   <button type="button" id="check-workshop" class="button secondary">Zuordnung prüfen</button>
-  ${feedback ? `<div class="feedback ${results.every(Boolean) ? "success" : "hint"}" role="status"><strong>${results.every(Boolean) ? "Die Zuordnung stimmt." : `${results.filter(Boolean).length} von ${results.length} stimmen. Prüfe die übrigen noch einmal.`}</strong><ul>${(work.kind === "timeline" ? order : work.entries.map((_, i) => i)).map((entryIndex, position) => `<li>${results[position] ? "✓" : "→"} ${esc(work.entries[entryIndex].feedback)}</li>`).join("")}</ul><p>${esc(work.conclusion)}</p></div>` : ""}</section>`;
+  ${feedback ? renderWorkshopFeedback(work, answer) : ""}</section>`;
 }
 
 function renderWriting(lesson: Lesson): string {
   const key = writingKey(lesson.id, progress.level);
   const task = lesson.tasks[progress.level];
   const draft = progress.drafts[key] ?? "";
-  const comparing = comparisons.has(key);
+  const comparing = comparisons.get(key) === draft;
   const checks = rubricChecks.get(key) ?? [false, false, false];
   return `<section class="panel writing" aria-labelledby="writing-heading"><div class="panel-heading"><span class="eyebrow">03 · SELBST BEGRÜNDEN</span><span class="done-mark" id="writing-done">${progress.writingDone.includes(key) ? "✓ Selbst eingeschätzt" : ""}</span></div><h2 id="writing-heading">${progress.level === 1 ? "Mit Leitfragen arbeiten" : "Auf einen neuen Fall übertragen"}</h2><p class="task-prompt">${esc(task.prompt)}</p>
   ${progress.level === 1 ? `<details><summary>Leitfragen anzeigen</summary><ul>${task.hints.map((hint) => `<li>${esc(hint)}</li>`).join("")}</ul></details>` : `<p class="small">Formuliere erst deinen eigenen Gedankengang. Die Vergleichsantwort folgt danach.</p>`}
@@ -166,7 +197,7 @@ function renderLesson(): string {
   return `<article lang="${lesson.language ?? "de"}" data-lb="${lesson.lb}"><div class="lesson-top"><button type="button" class="text-button" data-view="path">← Zum Lernpfad</button><label class="level-select">Arbeitsweise <select id="level"><option value="1" ${progress.level === 1 ? "selected" : ""}>Level 1 · mit Leitfragen</option><option value="2" ${progress.level === 2 ? "selected" : ""}>Level 2 · Transfer</option></select></label></div>
   <header class="lesson-heading"><span class="eyebrow">${esc(stage.shortTitle)}${lesson.optional ? " · OPTIONAL · ENGLISH" : ""}</span><h1>${esc(lesson.title)}</h1><p class="period">${esc(lesson.period)}</p><p class="intro">${esc(lesson.intro)}</p></header>
   <div class="lesson-columns"><div class="lesson-content"><section class="panel reading"><span class="eyebrow">01 · VERSTEHEN</span>${lesson.paragraphs.map((paragraph) => `<p>${esc(paragraph)}</p>`).join("")}<p class="takeaway"><strong>Merke</strong>${esc(lesson.takeaway)}</p></section>
-  <section class="panel quiz"><div class="panel-heading"><h2>Schnellcheck</h2><span class="done-mark">${progress.quizDone.includes(lesson.id) ? "✓ Einmal richtig" : ""}</span></div><p>${esc(lesson.quiz.question)}</p><div class="quiz-options">${options.map((i) => `<button type="button" data-choice="${i}" class="quiz-choice ${selected === i ? "selected" : ""}" aria-pressed="${selected === i}">${esc(labels[i])}</button>`).join("")}</div>${selected !== undefined ? `<p class="feedback ${selected === 0 ? "success" : "hint"}" role="status"><strong>${selected === 0 ? "Richtig. " : "Prüfe noch einmal. "}</strong>${esc(lesson.quiz.explanation)}</p>` : ""}</section>
+  <section class="panel quiz"><div class="panel-heading"><h2>Schnellcheck</h2><span class="done-mark">${progress.quizDone.includes(lesson.id) ? "✓ Einmal richtig" : ""}</span></div><p>${esc(lesson.quiz.question)}</p><div class="quiz-options">${options.map((i) => `<button type="button" data-choice="${i}" class="quiz-choice ${selected === i ? "selected" : ""}" aria-pressed="${selected === i}">${esc(labels[i])}</button>`).join("")}</div>${renderQuizFeedback(lesson.quiz, selected)}</section>
   ${renderWorkshop(lesson)}${renderWriting(lesson)}</div><aside class="lesson-aside"><section class="aside-card"><h2>Dein Lernschritt</h2><ul class="checklist"><li>${progress.quizDone.includes(lesson.id) ? "✓" : "○"} Schnellcheck</li><li>${progress.workshopDone.includes(lesson.id) ? "✓" : "○"} Werkstatt gelöst</li><li id="aside-writing">${progress.writingDone.includes(writingKey(lesson.id, 1)) ? "✓" : "○"} Level 1 selbst eingeschätzt</li></ul><p class="small">Level 2 ist eine zusätzliche Vertiefung. Die Kernfortschritte zählen Level 1.</p></section><section class="aside-card"><h2>Belege & weiterlernen</h2><ul class="source-list">${lesson.sourceIds
     .map((id) => SOURCES.find((source) => source.id === id)!)
     .map(
@@ -230,7 +261,7 @@ function render(): void {
           CORE_LESSONS.find((lesson) => !isComplete(progress, lesson.id))?.id ??
           CORE_LESSONS[0].id;
       }
-      persist();
+      void persist();
       render();
     });
   main.querySelector("#reset")?.addEventListener("click", showReset);
@@ -238,7 +269,8 @@ function render(): void {
 }
 
 function bindLesson(lesson: Lesson): void {
-  const key = writingKey(lesson.id, progress.level);
+  const level = progress.level;
+  const key = writingKey(lesson.id, level);
   const work = lesson.workshop;
   main.querySelector("#level")?.addEventListener("change", (event) => {
     progress.level = Number((event.target as HTMLSelectElement).value) as Level;
@@ -247,7 +279,7 @@ function bindLesson(lesson: Lesson): void {
       "",
       pageUrl(`#lesson=${lesson.id}&level=${progress.level}`),
     );
-    persist();
+    void persist();
     render();
     main
       .querySelector<HTMLSelectElement>("#level")
@@ -259,9 +291,8 @@ function bindLesson(lesson: Lesson): void {
       button.addEventListener("click", () => {
         const choice = Number(button.dataset.choice);
         quizSelections.set(lesson.id, choice);
-        if (choice === 0 && !progress.quizDone.includes(lesson.id))
-          progress.quizDone.push(lesson.id);
-        persist();
+        if (choice === 0) recordQuizAnswer(progress, lesson.id, true);
+        void persist();
         render();
         main
           .querySelector<HTMLButtonElement>(`[data-choice="${choice}"]`)
@@ -298,21 +329,15 @@ function bindLesson(lesson: Lesson): void {
       work.kind === "timeline"
         ? orders.get(lesson.id)!
         : (assignments.get(lesson.id) ?? []);
-    if (
-      checkWorkshop(work, answer).every(Boolean) &&
-      !progress.workshopDone.includes(lesson.id)
-    )
-      progress.workshopDone.push(lesson.id);
+    if (checkWorkshop(work, answer).every(Boolean))
+      recordWorkshopAnswer(progress, lesson.id, true);
     workshopFeedback.add(lesson.id);
-    persist();
+    void persist();
     render();
   });
   main.querySelector("#draft")?.addEventListener("input", (event) => {
     const text = (event.target as HTMLTextAreaElement).value;
-    progress.drafts[key] = text;
-    progress.writingDone = progress.writingDone.filter(
-      (entry) => entry !== key,
-    );
+    updateDraft(progress, lesson.id, level, text);
     rubricChecks.delete(key);
     comparisons.delete(key);
     main.querySelector(".model-answer")?.remove();
@@ -325,11 +350,11 @@ function bindLesson(lesson: Lesson): void {
     if (progress.level === 1)
       main.querySelector("#aside-writing")!.textContent =
         "○ Level 1 selbst eingeschätzt";
-    persist();
+    void persist();
   });
   main.querySelector("#compare")?.addEventListener("click", () => {
     if (!canReviewDraft(progress.drafts[key] ?? "")) return;
-    comparisons.add(key);
+    comparisons.set(key, progress.drafts[key] ?? "");
     render();
     main.querySelector(".model-answer")?.scrollIntoView({
       block: "nearest",
@@ -358,8 +383,19 @@ function bindLesson(lesson: Lesson): void {
       )
     )
       return;
-    if (!progress.writingDone.includes(key)) progress.writingDone.push(key);
-    persist();
+    if (
+      !confirmWriting(progress, lesson.id, level, comparisons.get(key) ?? "")
+    ) {
+      comparisons.delete(key);
+      rubricChecks.delete(key);
+      render();
+      showToast(
+        "Der Entwurf wurde geändert. Bitte erneut vergleichen.",
+        "info",
+      );
+      return;
+    }
+    void persist();
     render();
     showToast(
       isComplete(progress, lesson.id)
@@ -371,10 +407,8 @@ function bindLesson(lesson: Lesson): void {
   main.querySelector("#revise-writing")?.addEventListener("click", () => {
     comparisons.delete(key);
     rubricChecks.delete(key);
-    progress.writingDone = progress.writingDone.filter(
-      (entry) => entry !== key,
-    );
-    persist();
+    invalidateWriting(progress, lesson.id, level);
+    void persist();
     render();
     main.querySelector<HTMLTextAreaElement>("#draft")?.focus();
   });
@@ -427,7 +461,7 @@ function showReset(): void {
     comparisons.clear();
     rubricChecks.clear();
     history.replaceState(null, "", pageUrl());
-    persist();
+    void persist();
     render();
     element.close();
   });
@@ -454,7 +488,7 @@ function applyDeepLink(): void {
       new URLSearchParams(location.hash.slice(1)).get("view") === "reference"
         ? "reference"
         : "path";
-  persist();
+  void persist();
   render();
 }
 

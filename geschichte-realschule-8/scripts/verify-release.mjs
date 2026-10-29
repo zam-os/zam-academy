@@ -27,6 +27,16 @@ for (const file of [
   "README-START.txt",
 ])
   assert.ok(entries.includes(`${name}/${file}`));
+const instructions = execFileSync(
+  "unzip",
+  ["-p", zip, `${name}/README-START.txt`],
+  { encoding: "utf8" },
+);
+assert.match(instructions, /GESCHICHTE 8 REALSCHULE/);
+assert.match(instructions, /In einer Lektion.*Arbeitsweise/);
+assert.ok(instructions.includes("Level 1 · mit Leitfragen"));
+assert.ok(instructions.includes("Level 2 · Transfer"));
+assert.doesNotMatch(instructions, /GESCHICHTE 9|🌱|🦅|Oben in der App/);
 for (const starter of ["Start-Mac.command", "start-linux.sh"])
   execFileSync("sh", ["-n", join(root, "release", name, starter)]);
 console.log(
