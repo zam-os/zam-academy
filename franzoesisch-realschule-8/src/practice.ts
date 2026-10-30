@@ -46,6 +46,20 @@ export function quizOptions(lesson: Lesson): string[] {
 	return [...options.slice(offset), ...options.slice(0, offset)];
 }
 
+/** Keep a wrong attempt useful without exposing the prepared solution. */
+export function quizFeedback(lesson: Lesson, selected: string): string {
+	return selected === lesson.quiz.answer
+		? `Richtig. ${lesson.quiz.explanation}`
+		: "Noch einmal überlegen. Prüfe die Frage und die passende Stelle im Material oder in der Regel.";
+}
+
+/** A solved field may show its explanation; unfinished fields retain the task. */
+export function practiceFeedback(item: Practice, correct: boolean): string {
+	return correct
+		? item.feedback
+		: "Noch prüfen. Vergleiche deine Ergänzung mit dem Satzbau und den Angaben im Material.";
+}
+
 export const canReview = (text: string): boolean => text.trim().length >= 20;
 export const canAccept = (text: string, checks: boolean[]): boolean =>
 	canReview(text) && checks.length === 3 && checks.every(Boolean);

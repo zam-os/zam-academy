@@ -28,7 +28,7 @@ All dialogues, notices, prices, timetables and personal details are original exe
 
 ```sh
 npm ci
-npm run dev           # http://localhost:5201/franzoesisch-realschule-8/
+npm run dev           # http://localhost:5215/franzoesisch-realschule-8/
 npm test
 npm run typecheck
 npm run build
@@ -37,9 +37,9 @@ npm run package:zip
 
 Extract `release/ZAM-Academy-Franzoesisch-8-offline.zip` and open `ZAM-Academy-Franzoesisch-8.html`. The ZIP includes Windows, macOS and Linux launchers. The app is a self-contained HTML file; external references still need internet access.
 
-Only already installed French speech voices are eligible, with fr-FR preferred. If none is available, a partner can read the transcript. Completed playback or the learner's partner-read confirmation records the listening exercise. Stopping or leaving the lesson invalidates pending playback callbacks. Computer speech does not replace natural listening and viewing.
+Only already installed French speech voices are eligible, with fr-FR preferred. The first request waits briefly for the browser to populate its voice list. Playback uses short utterances; stop, navigation, errors and a stalled engine do not award listening progress. If none is available, a partner can read the transcript. Completed playback and the learner's partner-read confirmation are independent evidence. Removing the partner check keeps an already completed playback. Stopping or leaving the lesson invalidates pending playback callbacks. Computer speech does not replace natural listening and viewing.
 
-Progress, theme and the two independent writing drafts stay in this browser. Editing a draft invalidates its previous self-assessment. Short-answer field contents last for the current page session; their checked status persists. Browser storage can be restricted for local files; the app explains when saving fails and remains usable for the current visit. No accounts, tracking, remote voices, remote grading, external fonts, automatic reference requests or recordings are used.
+Progress, theme and the two independent writing drafts stay in this browser. Editing a draft invalidates its previous self-assessment. Saves merge work from other open tabs without replacing a newer stored draft with an unchanged stale copy. Self-assessments stay attached to the exact draft text. A confirmed reset also clears progress held by older tabs; original single-mode listening saves remain readable. Short-answer field contents last for the current page session; their checked status persists. Browser storage can be restricted for local files; the app explains when saving fails and remains usable for the current visit. No accounts, tracking, remote voices, remote grading, external fonts, automatic reference requests or recordings are used.
 
 This package reuses Academy's existing TypeScript, Vite, single-file plugin and Vitest toolchain and adds no dependency to that toolchain.
 
@@ -69,6 +69,10 @@ ZAM_CORE=file:///scratch/node_modules/zam-core/dist/index.js node franzoesisch-r
 
 Use the `zam-core` version pinned in CI. The isolated-library check preserves four old cards and eight review records, starts 84 new cards unlearned and checks idempotence. Browser verification uses the built app over local HTTP because browser policy permits only HTTP(S). Direct `file://` launch and all platform launchers remain untested; the ZIP's exact HTML, offline structure and Unix shell syntax are checked by `scripts/verify-release.mjs`. A missing French voice has an accessible partner-read fallback; computer speech does not certify pronunciation or natural listening skill.
 
-On 30 October 2026, the PR checkout passed 61 package tests, TypeScript checking, a warning-free Biome source lint, production build and ZIP verification. The root command above passed 41 atlas/catalog tests; the pinned `zam-core@0.54.0` installed all 36 cells and the French-specific legacy check passed.
+On 30 October 2026, the PR checkout passed 171 package tests, TypeScript checking, a warning-free Biome source lint, production build and ZIP verification. The root command above passed 41 atlas/catalog tests; the pinned `zam-core@0.54.0` installed all 36 cells and the French-specific legacy check passed.
 
 Browser QA of the production build (`npm run preview -- --host 127.0.0.1 --port 5215 --strictPort`) inspected every one of the 42 lesson views on both task levels in light and dark themes. Each rendered its explanation, key rule, three choices, at least two short-answer fields and a distinct task at each level. A completed quiz, short-answer exercise and self-assessment persisted after reload, including the writing draft. Reference navigation and Academy enrollment guidance were checked.
+
+Review regressions are covered in `tests/feedback.test.ts`, `tests/progress.test.ts` and `tests/listening.test.ts`: wrong attempts withhold answer-bearing explanations; completed speech survives partner toggles; separate drafts and assessments merge across tabs; a reset prevents stale saves from restoring old work; delayed voices, cancellation, partial playback, failure and timeout are exercised with a simulated speech engine.
+
+The rebuilt browser app was also checked with two actual tabs: an independently saved Level 2 draft survived navigation in the other tab, same-level draft changes reached the other view, and the prior self-assessment was invalidated. Wrong quiz and short-answer attempts showed hints; correct attempts showed the prepared explanations. A pending voice request was stopped, partner evidence survived reload, and the full festival date remained visible in the key rule.

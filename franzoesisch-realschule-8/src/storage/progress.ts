@@ -3,7 +3,13 @@ import { canReview } from "../practice";
 import type { Level } from "../types";
 
 export const STORAGE_KEY = "franzoesisch_rs8_academy_progress_v1";
+export interface ListeningEvidence {
+	synthetic: boolean;
+	partner: boolean;
+}
 export interface Progress {
+	/** A confirmed reset must also replace the state held by older tabs. */
+	resetAt: number;
 	activeLessonId: string;
 	level: Level;
 	includeFoundations: boolean;
@@ -11,7 +17,7 @@ export interface Progress {
 	practiceDone: string[];
 	writingDone: string[];
 	drafts: Record<string, string>;
-	listening: Record<string, "synthetic" | "partner">;
+	listening: Record<string, ListeningEvidence>;
 }
 export const writingKey = (id: string, level: Level): string =>
 	`${id}:${level}`;
@@ -27,6 +33,7 @@ const listeningIds = new Set(
 );
 export function freshProgress(): Progress {
 	return {
+		resetAt: 0,
 		activeLessonId: CORE_LESSONS[0].id,
 		level: 1,
 		includeFoundations: false,
@@ -71,13 +78,24 @@ export function parseProgress(raw: string | null): Progress {
 			typeof data.listening === "object" &&
 			!Array.isArray(data.listening)
 		)
-			for (const [id, mode] of Object.entries(data.listening))
-				if (
-					listeningIds.has(id) &&
-					(mode === "synthetic" || mode === "partner")
-				)
-					listening[id] = mode;
+			for (const [id, mode] of Object.entries(data.listening)) {
+				if (!listeningIds.has(id)) continue;
+				// Read the original single-mode format without losing a completed exercise.
+				const evidence =
+					mode && typeof mode === "object"
+						? (mode as Record<string, unknown>)
+						: {};
+				const synthetic = mode === "synthetic" || evidence.synthetic === true;
+				const partner = mode === "partner" || evidence.partner === true;
+				if (synthetic || partner) listening[id] = { synthetic, partner };
+			}
 		return {
+			resetAt:
+				typeof data.resetAt === "number" &&
+				Number.isSafeInteger(data.resetAt) &&
+				data.resetAt >= 0
+					? data.resetAt
+					: 0,
 			activeLessonId:
 				typeof data.activeLessonId === "string" &&
 				lessonIds.has(data.activeLessonId)
@@ -104,13 +122,95 @@ export function loadProgress(): Progress {
 		return freshProgress();
 	}
 }
-export function saveProgress(progress: Progress): boolean {
+/**
+ * Finished checks grow across tabs. Only a text edited since this tab's last
+ * saved baseline may replace a newer stored draft; an assessment belongs to
+ * that exact text. Partner confirmation and completed speech are independent.
+ */
+export function mergeProgress(
+	stored: Progress,
+	own: Progress,
+	baseline: Progress,
+): Progress {
+	if (stored.resetAt > own.resetAt)
+		return { ...stored, activeLessonId: own.activeLessonId, level: own.level };
+	if (own.resetAt > stored.resetAt) return own;
+	const join = (a: string[], b: string[]) => [...new Set([...a, ...b])];
+	const drafts: Progress["drafts"] = {};
+	for (const key of new Set([
+		...Object.keys(stored.drafts),
+		...Object.keys(own.drafts),
+	])) {
+		const edited = (own.drafts[key] ?? "") !== (baseline.drafts[key] ?? "");
+		drafts[key] = edited
+			? (own.drafts[key] ?? "")
+			: (stored.drafts[key] ?? own.drafts[key] ?? "");
+	}
+	const listening: Progress["listening"] = {};
+	for (const id of listeningIds) {
+		const synthetic =
+			stored.listening[id]?.synthetic === true ||
+			own.listening[id]?.synthetic === true;
+		const ownPartner = own.listening[id]?.partner === true;
+		const changed = ownPartner !== (baseline.listening[id]?.partner === true);
+		const partner = changed
+			? ownPartner
+			: stored.listening[id]?.partner === true;
+		if (synthetic || partner) listening[id] = { synthetic, partner };
+	}
+	return {
+		...own,
+		quizDone: join(stored.quizDone, own.quizDone),
+		practiceDone: join(stored.practiceDone, own.practiceDone),
+		drafts,
+		writingDone: join(
+			stored.writingDone.filter((key) => drafts[key] === stored.drafts[key]),
+			own.writingDone.filter((key) => drafts[key] === own.drafts[key]),
+		).filter((key) => canReview(drafts[key] ?? "")),
+		listening,
+	};
+}
+
+/** Read immediately before writing: navigation in a stale tab must not erase work. */
+export function saveProgress(progress: Progress, baseline: Progress): boolean {
 	try {
+		Object.assign(
+			progress,
+			mergeProgress(
+				parseProgress(localStorage.getItem(STORAGE_KEY)),
+				progress,
+				baseline,
+			),
+		);
 		localStorage.setItem(STORAGE_KEY, JSON.stringify(progress));
 		return true;
 	} catch {
 		return false;
 	}
+}
+
+export function resetProgress(previous: Progress): Progress {
+	return {
+		...freshProgress(),
+		resetAt: Math.max(Date.now(), previous.resetAt + 1),
+	};
+}
+
+export function setPartnerListening(
+	progress: Progress,
+	id: string,
+	partner: boolean,
+): void {
+	const synthetic = progress.listening[id]?.synthetic === true;
+	if (synthetic || partner) progress.listening[id] = { synthetic, partner };
+	else delete progress.listening[id];
+}
+
+export function markSyntheticListening(progress: Progress, id: string): void {
+	progress.listening[id] = {
+		synthetic: true,
+		partner: progress.listening[id]?.partner === true,
+	};
 }
 /** Any edit invalidates the comparison and self-assessment of that exact draft. */
 export function updateDraft(
@@ -120,8 +220,9 @@ export function updateDraft(
 	text: string,
 ): void {
 	const key = writingKey(id, level);
-	if (progress.drafts[key] !== text) {
-		progress.drafts[key] = text.slice(0, 8000);
+	const trimmed = text.slice(0, 8000);
+	if (progress.drafts[key] !== trimmed) {
+		progress.drafts[key] = trimmed;
 		progress.writingDone = progress.writingDone.filter(
 			(entry) => entry !== key,
 		);
@@ -135,7 +236,9 @@ export function isComplete(progress: Progress, id: string): boolean {
 		progress.practiceDone.includes(id) &&
 		progress.writingDone.includes(writingKey(id, 1)) &&
 		canReview(progress.drafts[writingKey(id, 1)] ?? "") &&
-		(!lesson.listening || !!progress.listening[id])
+		(!lesson.listening ||
+			progress.listening[id]?.synthetic === true ||
+			progress.listening[id]?.partner === true)
 	);
 }
 export function completion(

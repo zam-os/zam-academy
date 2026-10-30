@@ -91,7 +91,7 @@ cd uml                 # or: cd physik-realschule-9 (dev server on :5181), cd sq
 # Deutsch 8: cd deutsch-realschule-8 (dev server on :5212)
 # History 8: cd geschichte-realschule-8 (dev server on :5213)
 # Englisch 8: cd englisch-realschule-8 (dev server on :5214)
-# French 8: cd franzoesisch-realschule-8 (dev server on :5201)
+# French 8: cd franzoesisch-realschule-8 (dev server on :5215)
 npm ci
 npm run dev      # http://localhost:5180/uml/
 npm test

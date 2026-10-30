@@ -6,17 +6,23 @@ import {
 	SOURCES,
 	STAGES,
 } from "./curriculum";
-import { localFrenchVoices } from "./listening";
+import { readLocalScript, waitForLocalFrenchVoice } from "./listening";
 import {
 	canAccept,
 	canReview,
 	checkPractice,
 	esc,
 	quizOptions,
+	quizFeedback,
+	practiceFeedback,
 } from "./practice";
 import {
 	completion,
-	freshProgress,
+	markSyntheticListening,
+	mergeProgress,
+	resetProgress,
+	setPartnerListening,
+	STORAGE_KEY,
 	isComplete,
 	loadProgress,
 	saveProgress,
@@ -42,15 +48,52 @@ function element<T extends Element = HTMLElement>(selector: string): T {
 const main = element<HTMLElement>("#main");
 const dialog = element<HTMLDialogElement>("#dialog");
 let progress = loadProgress();
+let baseline = structuredClone(progress);
 let view: "path" | "lesson" | "reference" = "path";
 let routeNotice = "";
 const practiceAnswers = new Map<string, string[]>();
-let speaking: SpeechSynthesisUtterance | undefined;
 let speechSession = 0;
+let voiceRequest: AbortController | undefined;
 
 function persist(): void {
-	element<HTMLElement>("#storage-warning").hidden = saveProgress(progress);
+	const saved = saveProgress(progress, baseline);
+	if (saved) baseline = structuredClone(progress);
+	element<HTMLElement>("#storage-warning").hidden = saved;
+	syncSavedState();
 	renderStats();
+}
+
+/** Update saved evidence without replacing an open form or its focus. */
+function syncSavedState(): void {
+	if (view !== "lesson") return;
+	const id = progress.activeLessonId;
+	const draft = document.querySelector<HTMLTextAreaElement>("#draft");
+	if (draft) {
+		const key = writingKey(id, progress.level);
+		const saved = progress.drafts[key] ?? "";
+		if (draft.value !== saved) {
+			draft.value = saved;
+			element<HTMLButtonElement>("#compare").disabled = !canReview(saved);
+			element("#comparison").innerHTML = "";
+		}
+		element("#writing-status").textContent = progress.writingDone.includes(key)
+			? "Eigener Mustervergleich gespeichert."
+			: canReview(saved)
+				? "Entwurf geändert · bitte mit einem Muster vergleichen."
+				: "";
+	}
+	const partner = document.querySelector<HTMLInputElement>("#partner-listened");
+	if (partner) {
+		const evidence = progress.listening[id];
+		partner.checked = evidence?.partner === true;
+		const modes = [
+			evidence?.synthetic ? "lokale Computerstimme" : "",
+			evidence?.partner ? "Partner hat vorgelesen" : "",
+		].filter(Boolean);
+		element("#listened-status").textContent = modes.length
+			? `Zuhörübung gespeichert: ${modes.join(" und ")}.`
+			: "Zuhörübung noch offen.";
+	}
 }
 function renderStats(): void {
 	const count = completion(progress);
@@ -59,8 +102,8 @@ function renderStats(): void {
 }
 function cancelSpeech(): void {
 	speechSession++;
-	if (speaking && "speechSynthesis" in window) window.speechSynthesis.cancel();
-	speaking = undefined;
+	voiceRequest?.abort();
+	voiceRequest = undefined;
 }
 function pageUrl(): string {
 	return trainingBaseUrl(location.pathname, location.search);
@@ -153,7 +196,7 @@ function renderLesson(lesson: Lesson): void {
 	main.innerHTML = `<div class="lesson-top"><button type="button" class="text-button" id="back">← Zum Lernpfad</button><label class="level-select" for="level">Aufgabenstufe <select id="level"><option value="1" ${progress.level === 1 ? "selected" : ""}>Level 1 · Anwenden</option><option value="2" ${progress.level === 2 ? "selected" : ""}>Level 2 · Transfer</option></select></label></div>
     <div class="lesson-heading" style="--stage-hue:${stage.hue}"><div class="eyebrow">${esc(stage.title)}${lesson.optional ? " · freiwillige Ergänzung" : ""}</div><h1 lang="fr">${esc(lesson.title)}</h1><p class="intro">${esc(lesson.skill)}</p></div>
     <div class="lesson-columns"><div class="lesson-content"><section class="panel"><h2>Verstehen</h2>${lesson.paragraphs.map((text) => `<p>${esc(text)}</p>`).join("")}<aside class="takeaway"><strong>Merke</strong><p>${esc(lesson.takeaway)}</p></aside></section>
-    <section class="panel" aria-labelledby="material-heading"><h2 id="material-heading">${lesson.listening ? "Zuerst hören" : "Dein Material"}</h2><p class="small">${esc(lesson.materialLabel)}</p>${lesson.listening ? `<p>Höre zuerst ohne mitzulesen. Die lokale Computerstimme spricht ein Übungsskript; natürliche Stimmen und Hörsehtexte übst du zusätzlich.</p><div class="self-actions"><button type="button" class="button accent" id="listen">Skript anhören</button><button type="button" class="button secondary" id="stop-listen">Stoppen</button></div><p class="small" id="voice-status" role="status"></p><details id="transcript"><summary>Transkript / Text zum Vorlesen</summary><p class="material" lang="${lesson.materialLanguage}">${esc(lesson.material)}</p></details><label class="toggle"><input type="checkbox" id="partner-listened" ${progress.listening[lesson.id] === "partner" ? "checked" : ""}>Ein Partner hat mir den Text vorgelesen; ich habe zuerst ohne Mitlesen zugehört.</label><p class="small" id="listened-status" role="status"></p>` : `<p class="material" lang="${lesson.materialLanguage}">${esc(lesson.material)}</p>`}</section>
+    <section class="panel" aria-labelledby="material-heading"><h2 id="material-heading">${lesson.listening ? "Zuerst hören" : "Dein Material"}</h2><p class="small">${esc(lesson.materialLabel)}</p>${lesson.listening ? `<p>Höre zuerst ohne mitzulesen. Die lokale Computerstimme spricht ein Übungsskript; natürliche Stimmen und Hörsehtexte übst du zusätzlich.</p><div class="self-actions"><button type="button" class="button accent" id="listen">Skript anhören</button><button type="button" class="button secondary" id="stop-listen">Stoppen</button></div><p class="small" id="voice-status" role="status"></p><details id="transcript"><summary>Transkript / Text zum Vorlesen</summary><p class="material" lang="${lesson.materialLanguage}">${esc(lesson.material)}</p></details><label class="toggle"><input type="checkbox" id="partner-listened" ${progress.listening[lesson.id]?.partner ? "checked" : ""}>Ein Partner hat mir den Text vorgelesen; ich habe zuerst ohne Mitlesen zugehört.</label><p class="small" id="listened-status" role="status"></p>` : `<p class="material" lang="${lesson.materialLanguage}">${esc(lesson.material)}</p>`}</section>
     <section class="panel"><h2>1 · Schnellcheck</h2><p lang="fr">${esc(lesson.quiz.question)}</p><div class="quiz-options">${quizOptions(
 			lesson,
 		)
@@ -204,7 +247,7 @@ function renderLesson(lesson: Lesson): void {
 							void entry.classList.toggle("selected", entry === button),
 					);
 				element("#quiz-feedback").innerHTML =
-					`<div class="feedback ${correct ? "success" : "hint"}">${correct ? "Richtig. " : "Noch einmal überlegen. "}${esc(lesson.quiz.explanation)}</div>`;
+					`<div class="feedback ${correct ? "success" : "hint"}">${esc(quizFeedback(lesson, button.textContent ?? ""))}</div>`;
 				persist();
 			}),
 	);
@@ -222,7 +265,7 @@ function renderLesson(lesson: Lesson): void {
 			);
 			if (results.every(Boolean)) progress.practiceDone.push(lesson.id);
 			element("#practice-feedback").innerHTML =
-				`<div class="feedback ${results.every(Boolean) ? "success" : "hint"}"><strong>${results.filter(Boolean).length} von ${results.length} richtig.</strong><ol>${results.map((correct, itemIndex) => `<li>${correct ? "✓ " : "Noch prüfen: "}${esc(lesson.practice[itemIndex].feedback)}</li>`).join("")}</ol></div>`;
+				`<div class="feedback ${results.every(Boolean) ? "success" : "hint"}"><strong>${results.filter(Boolean).length} von ${results.length} richtig.</strong><ol>${results.map((correct, itemIndex) => `<li>${correct ? "✓ " : ""}${esc(practiceFeedback(lesson.practice[itemIndex], correct))}</li>`).join("")}</ol></div>`;
 			main
 				.querySelectorAll<HTMLInputElement>(".practice-input")
 				.forEach(
@@ -288,14 +331,8 @@ function renderLesson(lesson: Lesson): void {
 }
 function bindListening(lesson: Lesson): void {
 	const status = element("#voice-status");
-	const heardStatus = element("#listened-status");
-	const refreshStatus = () => {
-		heardStatus.textContent = progress.listening[lesson.id]
-			? `Zuhörübung gespeichert: ${progress.listening[lesson.id] === "partner" ? "Partner hat vorgelesen" : "lokale Computerstimme"}.`
-			: "Zuhörübung noch offen.";
-	};
-	refreshStatus();
-	document.querySelector("#listen")?.addEventListener("click", () => {
+	syncSavedState();
+	document.querySelector("#listen")?.addEventListener("click", async () => {
 		cancelSpeech();
 		const token = speechSession;
 		if (
@@ -306,41 +343,47 @@ function bindListening(lesson: Lesson): void {
 				"Vorlesen ist hier nicht verfügbar. Ein Partner kann dir den Text vorlesen; das Transkript bleibt zugänglich.";
 			return;
 		}
-		const voice = localFrenchVoices(window.speechSynthesis.getVoices())[0];
+		const request = new AbortController();
+		voiceRequest = request;
+		status.textContent = "Installierte französische Stimmen werden geladen …";
+		const voice = await waitForLocalFrenchVoice(
+			window.speechSynthesis,
+			request.signal,
+		);
+		if (token !== speechSession || request.signal.aborted) return;
 		if (!voice) {
+			voiceRequest = undefined;
 			status.textContent =
 				"Keine lokale französische Stimme gefunden. Versuche es später noch einmal oder bitte einen Partner, den Text vorzulesen.";
 			return;
 		}
 		element<HTMLDetailsElement>("#transcript").open = false;
-		speaking = new SpeechSynthesisUtterance(lesson.material);
-		speaking.voice = voice;
-		speaking.lang = voice.lang;
-		speaking.rate = 0.95;
 		status.textContent = `Lokale Computerstimme: ${voice.name} (${voice.lang}). Zuhören läuft …`;
-		speaking.onend = () => {
-			if (token !== speechSession) return;
-			progress.listening[lesson.id] = "synthetic";
-			element<HTMLInputElement>("#partner-listened").checked = false;
-			status.textContent =
-				"Skript zu Ende vorgelesen. Natürliche Aufnahmen übst du zusätzlich.";
-			speaking = undefined;
-			refreshStatus();
-			persist();
-		};
-		speaking.onerror = () => {
-			if (token !== speechSession) return;
-			speaking = undefined;
-			status.textContent =
-				"Vorlesen wurde unterbrochen. Du kannst neu starten oder mit einem Partner üben.";
-		};
-		try {
-			window.speechSynthesis.speak(speaking);
-		} catch {
-			speaking = undefined;
-			status.textContent =
-				"Vorlesen ist nicht möglich. Du kannst mit einem Partner üben.";
-		}
+		readLocalScript(
+			window.speechSynthesis,
+			(text) => new SpeechSynthesisUtterance(text),
+			lesson.material,
+			voice,
+			request.signal,
+			{
+				complete: () => {
+					if (token !== speechSession) return;
+					voiceRequest = undefined;
+					markSyntheticListening(progress, lesson.id);
+					status.textContent =
+						"Skript zu Ende vorgelesen. Natürliche Aufnahmen übst du zusätzlich.";
+					persist();
+				},
+				failed: (reason) => {
+					if (token !== speechSession) return;
+					voiceRequest = undefined;
+					status.textContent =
+						reason === "timeout"
+							? "Die Computerstimme reagiert nicht. Starte neu oder bitte einen Partner, den Text vorzulesen. Unvollständiges Vorlesen zählt nicht."
+							: "Vorlesen wurde unterbrochen. Du kannst neu starten oder mit einem Partner üben.";
+				},
+			},
+		);
 	});
 	document.querySelector("#stop-listen")?.addEventListener("click", () => {
 		cancelSpeech();
@@ -351,10 +394,10 @@ function bindListening(lesson: Lesson): void {
 		.querySelector<HTMLInputElement>("#partner-listened")
 		?.addEventListener("change", (event) => {
 			cancelSpeech();
+			status.textContent =
+				"Computerstimme gestoppt. Die Partnerbestätigung wird getrennt gespeichert.";
 			const checked = (event.target as HTMLInputElement).checked;
-			if (checked) progress.listening[lesson.id] = "partner";
-			else delete progress.listening[lesson.id];
-			refreshStatus();
+			setPartnerListening(progress, lesson.id, checked);
 			persist();
 		});
 }
@@ -450,7 +493,7 @@ document.querySelector("#reset")?.addEventListener("click", () => {
 		'<p>Deine lokalen Antworten und Häkchen dieses Französisch-Pakets werden gelöscht. Das lässt sich nicht rückgängig machen.</p><button type="button" class="button danger" id="confirm-reset">Fortschritt löschen</button>',
 	);
 	document.querySelector("#confirm-reset")?.addEventListener("click", () => {
-		progress = freshProgress();
+		progress = resetProgress(progress);
 		practiceAnswers.clear();
 		dialog.close();
 		navigate();
@@ -458,4 +501,19 @@ document.querySelector("#reset")?.addEventListener("click", () => {
 });
 window.addEventListener("hashchange", applyRoute);
 window.addEventListener("pagehide", cancelSpeech);
+window.addEventListener("storage", (event) => {
+	if (event.key !== STORAGE_KEY) return;
+	// Read the current value: an older queued event must not undo a newer save.
+	const stored = loadProgress();
+	if (stored.resetAt > progress.resetAt) {
+		cancelSpeech();
+		practiceAnswers.clear();
+	}
+	progress = mergeProgress(stored, progress, baseline);
+	baseline = structuredClone(stored);
+	if (view === "path") renderPath();
+	else syncSavedState();
+	renderStats();
+});
+
 applyRoute();

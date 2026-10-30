@@ -195,7 +195,7 @@ describe("French answer checking and honest self-assessment", () => {
 		);
 		p.writingDone.push(writingKey(id, 1));
 		expect(isComplete(p, id)).toBe(false);
-		p.listening[id] = "partner";
+		p.listening[id] = { synthetic: false, partner: true };
 		expect(isComplete(p, id)).toBe(true);
 		expect(completion(p)).toEqual({ completed: 1, total: 40, percent: 3 });
 		expect(completion(p, true).total).toBe(42);
@@ -239,7 +239,9 @@ describe("offline state and navigation", () => {
 		expect(parsed.activeLessonId).toBe(id);
 		expect(parsed.quizDone).toEqual([id]);
 		expect(parsed.drafts[writingKey(id, 1)]).toHaveLength(8000);
-		expect(parsed.listening).toEqual({ "f8-ecouter-gare": "partner" });
+		expect(parsed.listening).toEqual({
+			"f8-ecouter-gare": { synthetic: false, partner: true },
+		});
 	});
 	it("survives denied storage and escapes arbitrary learner text", () => {
 		vi.stubGlobal("localStorage", {
@@ -252,7 +254,7 @@ describe("offline state and navigation", () => {
 		});
 		try {
 			expect(loadProgress()).toEqual(freshProgress());
-			expect(saveProgress(freshProgress())).toBe(false);
+			expect(saveProgress(freshProgress(), freshProgress())).toBe(false);
 		} finally {
 			vi.unstubAllGlobals();
 		}
