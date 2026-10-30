@@ -6,6 +6,7 @@ import { STAGE_TERME_GLEICHUNGEN } from "./stage-4-terme-gleichungen";
 import { STAGE_BRUCHTERME } from "./stage-5-bruchterme";
 import { STAGE_FUNKTIONEN } from "./stage-6-funktionen";
 import { STAGE_DATEN_ZUFALL } from "./stage-7-daten-zufall";
+import { TEACHER_VIDEOS } from "./teacher-videos";
 
 /**
  * The stages follow the Lernbereiche of LehrplanPLUS Mathematik 8
@@ -23,6 +24,10 @@ export const STAGES: Stage[] = [
 ];
 
 export const ALL_LESSONS: Lesson[] = STAGES.flatMap((stage) => stage.lessons);
+
+// Teacher videos are kept apart from the lessons: each one was checked after
+// the lesson was written, and lessons without a verified video have none.
+for (const lesson of ALL_LESSONS) lesson.teacherVideo ??= TEACHER_VIDEOS[lesson.id];
 
 export function findLessonById(
   id: string,
