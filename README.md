@@ -39,6 +39,7 @@ Hands-on training apps that build understanding before [ZAM](https://github.com/
 | Geographie 8 Realschule (LehrplanPLUS Bayern) | [`geographie-realschule-8/`](geographie-realschule-8/) | https://academy.zam-os.org/geographie-realschule-8/ | `zam-academy:geographie-realschule-8` |
 | Informatik 8 Realschule (LehrplanPLUS Bayern, IT-Anfangsunterricht 1.1–1.9, alle Wahlpflichtfächergruppen) | [`informatik-realschule-8/`](informatik-realschule-8/) | https://academy.zam-os.org/informatik-realschule-8/ | `zam-academy:informatik-realschule-8` |
 | Deutsch 8 Realschule (LehrplanPLUS Bayern, alle Wahlpflichtfächergruppen) | [`deutsch-realschule-8/`](deutsch-realschule-8/) | https://academy.zam-os.org/deutsch-realschule-8/ | `zam-academy:deutsch-realschule-8` |
+| French 8 Realschule (Bavaria, IIIa) | [`franzoesisch-realschule-8/`](franzoesisch-realschule-8/) | Published by Pages on merge | `zam-academy:franzoesisch-realschule-8` |
 
 ## How an app and its ZAM cell fit together
 
@@ -90,6 +91,7 @@ cd uml                 # or: cd physik-realschule-9 (dev server on :5181), cd sq
 # Deutsch 8: cd deutsch-realschule-8 (dev server on :5212)
 # History 8: cd geschichte-realschule-8 (dev server on :5213)
 # Englisch 8: cd englisch-realschule-8 (dev server on :5214)
+# French 8: cd franzoesisch-realschule-8 (dev server on :5201)
 npm ci
 npm run dev      # http://localhost:5180/uml/
 npm test
@@ -134,3 +136,5 @@ The [Deutsch 8 package](deutsch-realschule-8/) adds 40 lessons, 80 linked cards 
 The [History 8 package](geschichte-realschule-8/) adds 35 core lessons and three optional English extensions, 38 interactive workshops, 76 writing tasks and 76 linked cards. Its [coverage matrix](geschichte-realschule-8/coverage.json) maps all 38 indexed expectations to guided practice or preparation for further source, image, map, local and current-event work. The [inventory](docs/geschichte-8-bestandsabgleich.md) retains the eight older History 8 cards and their histories without transfer. Pages publishes the app and catalog on merge to main; synchronizing the bundled ZAM fixtures is a separate step.
 
 The [Englisch 8 package](englisch-realschule-8/) adds 51 lessons and 102 cards for all Wahlpflichtfächergruppen: North American history, the USA, New York and other cities, Canada, the grade-8 grammar (pronouns, two objects, questions, passive and personal passive, if-clauses type 0–3, receptive participle constructions) and American youth literature. Its [coverage matrix](englisch-realschule-8/coverage.json) maps all 44 Kompetenzerwartungen and topic rows. The [legacy review](docs/englisch-8-bestandsabgleich.md) maps the four old grammar cards to 1 A and 3 C rows; Thomas approved the mapping on 2026-10-29, so since cell 2026.10.2 the type-3 card replaces its equivalent old card and the three C cards stay active.
+
+The [French 8 package](franzoesisch-realschule-8/) adds 40 core lessons, two optional relative-clause extensions and 84 linked cards for Bavarian Realschule group IIIa. Its [coverage matrix](franzoesisch-realschule-8/coverage.json) indexes 56 expectations and topic entries as guided exercises or preparation. The [inventory](docs/franzoesisch-8-bestandsabgleich.md) documents four older grammar cards that remain active without history transfer. Natural audiovisual practice, spontaneous conversations, maps, research and a full vocabulary programme supplement the app. Pages publishes app and cell together on merge; ZAM fixture synchronization is separate.
