@@ -923,15 +923,15 @@ dialog::backdrop {
 	*,
 	*::before,
 	*::after {
-		/* biome-ignore lint/complexity/noImportantStyles: Respect reduced motion regardless of component specificity. */
+		/* Respect reduced motion regardless of component specificity. */
 		scroll-behavior: auto !important;
-		/* biome-ignore lint/complexity/noImportantStyles: Respect reduced motion regardless of component specificity. */
+		/* Respect reduced motion regardless of component specificity. */
 		transition: none !important;
 	}
 }
 /* Language workshop additions. */
 [hidden] {
-	/* biome-ignore lint/complexity/noImportantStyles: Hidden feedback must override the component display rule. */
+	/* Hidden feedback must override the component display rule. */
 	display: none !important;
 }
 .skip-link {
