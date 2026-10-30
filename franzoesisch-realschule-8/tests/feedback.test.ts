@@ -62,3 +62,18 @@ describe("complete dates and language-specific punctuation", () => {
 		);
 	});
 });
+
+
+describe("distinct retrieval prompts", () => {
+	it("uses different prompts within each lesson while preserving the festival date target", () => {
+		for (const atom of cell.atoms) {
+			const prompts = atom.practice_items.map((item) => item.question.trim());
+			expect(new Set(prompts).size, atom.slug).toBe(prompts.length);
+		}
+		const festival = cell.atoms.find((atom) => atom.slug === "f8-fetes")!;
+		expect(festival.practice_items[1].question).toContain("Korrigiere die Aussage");
+		expect(festival.practice_items.map((item) => item.concept)).toEqual([
+			"Am 21. Juni.", "Am 21. Juni.",
+		]);
+	});
+});
