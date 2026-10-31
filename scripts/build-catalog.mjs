@@ -23,11 +23,26 @@ const outFile = resolve(root, process.argv[2] ?? "site/catalog.json");
 const APP = /^[a-z0-9][a-z0-9-]{0,31}$/;
 const VERSION = /^\d+(\.\d+)*$/;
 
+// Absence preserves existing published packages; malformed metadata fails closed.
+export function isPublishedApp(dir) {
+  const file = join(dir, "publication.json");
+  if (!existsSync(file)) return true;
+  const publication = JSON.parse(readFileSync(file, "utf8"));
+  if (
+    publication?.schema !== 1 ||
+    !["local-only", "ready"].includes(publication.status)
+  ) {
+    throw new Error(`${file}: invalid publication status`);
+  }
+  return publication.status === "ready";
+}
+
 export function buildCatalog(dir = root) {
   const cells = [];
   for (const app of readdirSync(dir).sort()) {
     const file = join(dir, app, "cell.json");
     if (!APP.test(app) || !existsSync(file)) continue;
+    if (!isPublishedApp(join(dir, app))) continue;
     const bytes = readFileSync(file);
     const tile = JSON.parse(bytes.toString("utf8"));
     if (typeof tile.tile_id !== "string" || !tile.tile_id) {

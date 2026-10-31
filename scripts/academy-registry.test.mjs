@@ -3,6 +3,7 @@ import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { dirname, join, resolve } from "node:path";
 import { test } from "node:test";
 import { fileURLToPath } from "node:url";
+import { isPublishedApp } from "./build-catalog.mjs";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const registry = JSON.parse(readFileSync(join(root, "academy.json"), "utf8"));
@@ -24,9 +25,9 @@ function schoolSubject(trees, grade, fach) {
     ?.children.find((n) => n.id === fach);
 }
 
-test("every app with a cell is registered in academy.json, and vice versa", () => {
+test("every published app with a cell is registered in academy.json, and vice versa", () => {
   const apps = readdirSync(root).filter((d) =>
-    existsSync(join(root, d, "cell.json")),
+    existsSync(join(root, d, "cell.json")) && isPublishedApp(join(root, d)),
   );
   assert.deepEqual(pakete.map((p) => p.app).sort(), apps.sort());
 });
