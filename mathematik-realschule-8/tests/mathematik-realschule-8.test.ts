@@ -85,14 +85,14 @@ describe("Lernpfad", () => {
     for (const position of [0, 1, 2]) expect(shownAt.has(position), `right answer shown at position ${position}`).toBe(true);
   });
 
-  it("links a verified teacher video in every lesson, pinned with its author and watch URL", () => {
+  it("links a verified teacher video in every lesson, pinned with its author, title and watch URL", () => {
     // A video counts only after its YouTube oEmbed title and channel were
     // checked against the lesson's topic, so each one is pinned here.
     expect(Object.keys(EXPECTED_VIDEOS).sort()).toEqual([...LESSON_IDS].sort());
     for (const lesson of ALL_LESSONS) {
       const expected = EXPECTED_VIDEOS[lesson.id];
       expect(lesson.teacherVideo?.author, lesson.id).toBe(expected.author);
-      expect(lesson.teacherVideo?.title.length, lesson.id).toBeGreaterThan(5);
+      expect(lesson.teacherVideo?.title, lesson.id).toBe(expected.title);
       expect(lesson.teacherVideo?.url, lesson.id).toBe(`https://www.youtube.com/watch?v=${expected.id}`);
     }
   });
