@@ -228,10 +228,15 @@ Learners have review histories on them.
 
 - Branch from the current `main`, and merge `main` again before opening or
   updating the PR; a PR with conflicts gets no CI at all.
-- Register the package in `academy.json` (`pakete`: app, Fach, grade, school,
+- Register a published package in `academy.json` (`pakete`: app, Fach, grade, school,
   Zweige, lesson and card counts), add it to the CI matrix and the Pages
   list, add the README row and a dev port, keep the `zam-home-link` back to
   `https://academy.zam-os.org/`, and make `npm run package:zip` work.
+- A local draft with `publication.json` status `local-only` stays out of the
+  public catalog, atlas registry and Pages list. CI still validates its cell.
+  Changing the marker to `ready` does not replace release authority or the
+  normal registration checks. Shared publication tooling belongs in its own
+  PR rather than a new-package PR.
 - Document the curriculum check and the card mapping in `docs/` (see
   `docs/bwr-bestandsabgleich.md`, `docs/physik-10-coverage.md`).
 

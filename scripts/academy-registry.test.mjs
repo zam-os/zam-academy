@@ -2,8 +2,8 @@ import assert from "node:assert/strict";
 import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { dirname, join, resolve } from "node:path";
 import { test } from "node:test";
-import { isPublishedApp } from "./build-catalog.mjs";
 import { fileURLToPath } from "node:url";
+import { isPublishedApp } from "./build-catalog.mjs";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const registry = JSON.parse(readFileSync(join(root, "academy.json"), "utf8"));
@@ -26,9 +26,8 @@ function schoolSubject(trees, grade, fach) {
 }
 
 test("every published app with a cell is registered in academy.json, and vice versa", () => {
-  const apps = readdirSync(root).filter(
-    (d) =>
-      existsSync(join(root, d, "cell.json")) && isPublishedApp(join(root, d)),
+  const apps = readdirSync(root).filter((d) =>
+    existsSync(join(root, d, "cell.json")) && isPublishedApp(join(root, d)),
   );
   assert.deepEqual(pakete.map((p) => p.app).sort(), apps.sort());
 });
@@ -504,9 +503,7 @@ test("a live package is selected first and opens on its next mouse or keyboard a
           let prevented = false;
           controls.onkeydown({
             key,
-            preventDefault: () => {
-              prevented = true;
-            },
+            preventDefault: () => { prevented = true; },
           });
           assert.equal(prevented, true);
         }

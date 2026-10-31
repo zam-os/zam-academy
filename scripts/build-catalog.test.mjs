@@ -168,8 +168,7 @@ for (const [name, change, message] of [
   ],
   [
     "a category C row that transfers a history",
-    ({ writeMapping }) =>
-      writeMapping({ approved: APPROVED, rows: [row("C")] }),
+    ({ writeMapping }) => writeMapping({ approved: APPROVED, rows: [row("C")] }),
     /category C and must not transfer a history/,
   ],
   [
