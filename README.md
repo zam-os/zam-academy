@@ -50,8 +50,15 @@ The rules come from [ADR 2026-10-19](https://github.com/zam-os/zam/blob/main/doc
 - **Lesson ids are a public contract.** Each app's test pins its lesson ids and checks that every card cites an existing lesson.
 - **CI installs every cell** into a throw-away library with the published `zam-core` (`scripts/validate-cells.mjs`).
 - **History changes require approval.** The catalog builder refuses cells with `replaces` or `retired_items` unless their `replaces-de-by.json` records a valid approval date and documents exactly those changes: every A/B row is replaced by its one named `academy_slug`, a C row is never replaced (it may be retired), and no undocumented `replaces` or `retired_items` exist. CI tests this safeguard; Pages checks it before building or uploading the site. An unapproved proposal therefore blocks publication.
+- **Local drafts stay unpublished.** An optional `<app>/publication.json` uses schema `1` and status `local-only` or `ready`. The catalog and public registry check exclude `local-only` cells; invalid metadata fails closed, and missing metadata preserves existing behaviour. Cell validation still checks drafts. Publication also requires the Pages entry and explicit release authority.
 - **Pages publishes** each app, its `cell.json`, and `/catalog.json` (`scripts/build-catalog.mjs`), with the SHA-256 of every cell. ZAM reads the catalog only on a learner's action. ZAM releases bundle a copy of each cell.
 - **A cell is released at its first publication,** in the catalog or in a ZAM release. From then on, its item ids, slugs and cited lessons stay stable; changes use `replaces` and raise the version.
+
+## Local drafts
+
+| App | Folder | Status |
+| --- | --- | --- |
+| Grade 4 mathematics: place values with Milo (Bavaria) | [`mathematik-grundschule-4/`](mathematik-grundschule-4/) | Local Phase-1 draft; teacher recording and review pending |
 
 ## Develop
 
@@ -92,6 +99,7 @@ cd uml                 # or: cd physik-realschule-9 (dev server on :5181), cd sq
 # History 8: cd geschichte-realschule-8 (dev server on :5213)
 # Englisch 8: cd englisch-realschule-8 (dev server on :5214)
 # French 8: cd franzoesisch-realschule-8 (dev server on :5215)
+# Grade 4 mathematics draft: cd mathematik-grundschule-4 (dev server on :5216)
 npm ci
 npm run dev      # http://localhost:5180/uml/
 npm test

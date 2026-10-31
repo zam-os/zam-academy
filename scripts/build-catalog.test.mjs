@@ -114,6 +114,42 @@ test("a new cell with no history changes needs no mapping", () =>
     assert.equal(buildCatalog(root).cells.length, 1);
   }));
 
+test("a local-only cell is validated separately but never enters the public catalog", () =>
+  withCatalog(({ root, app }) => {
+    writeFileSync(
+      join(app, "publication.json"),
+      JSON.stringify({ schema: 1, status: "local-only" }),
+    );
+    assert.deepEqual(buildCatalog(root).cells, []);
+  }));
+
+test("a ready cell still passes the existing mapping approval gate", () =>
+  withCatalog(({ root, app, writeMapping }) => {
+    writeFileSync(
+      join(app, "publication.json"),
+      JSON.stringify({ schema: 1, status: "ready" }),
+    );
+    assert.throws(
+      () => buildCatalog(root),
+      /without a mapping approval record/,
+    );
+    writeMapping({ approved: APPROVED, rows: [row("A")] });
+    assert.equal(buildCatalog(root).cells.length, 1);
+  }));
+
+for (const publication of [
+  null,
+  {},
+  { schema: 2, status: "ready" },
+  { schema: 1, status: "unknown" },
+]) {
+  test(`invalid publication metadata fails closed: ${JSON.stringify(publication)}`, () =>
+    withCatalog(({ root, app }) => {
+      writeFileSync(join(app, "publication.json"), JSON.stringify(publication));
+      assert.throws(() => buildCatalog(root), /invalid publication status/);
+    }));
+}
+
 // The approval covers only the documented rows; the cell must declare exactly those.
 for (const [name, change, message] of [
   [
@@ -132,7 +168,8 @@ for (const [name, change, message] of [
   ],
   [
     "a category C row that transfers a history",
-    ({ writeMapping }) => writeMapping({ approved: APPROVED, rows: [row("C")] }),
+    ({ writeMapping }) =>
+      writeMapping({ approved: APPROVED, rows: [row("C")] }),
     /category C and must not transfer a history/,
   ],
   [

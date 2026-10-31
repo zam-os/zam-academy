@@ -1,0 +1,94 @@
+{
+	"schema": 1,
+	"phase": 1,
+	"phase_complete": false,
+	"teacher_review": {
+		"status": "pending",
+		"reviewer": null,
+		"date": null
+	},
+	"teacher_recording": {
+		"status": "awaiting-recording",
+		"confirmed_by_product": "2026-10-31"
+	},
+	"offline_video_playback": {
+		"status": "pending",
+		"reason": "No approved recording exists."
+	},
+	"browser_checks": [
+		{
+			"surface": "Codex in-app browser on macOS",
+			"check": "Complete two-mission journey through native controls",
+			"status": "passed",
+			"details": "Built 306 and 2 047; digit-value error/hint/retry; bundle; unbundle; undo; reason; explanation; fresh exit tasks; worked-solution continuation; one snack."
+		},
+		{
+			"surface": "Codex in-app browser on macOS",
+			"check": "Parent evidence from actual local attempts",
+			"status": "passed",
+			"details": "Two independently solved new tasks and two helped goals remained distinct; dated task examples reconstructed from seeds."
+		},
+		{
+			"surface": "Native IndexedDB browser harness; isolated generated test store names",
+			"check": "Concurrency, idempotency, resumption, recovery, blocked storage",
+			"status": "passed",
+			"details": "Native concurrency, repeated grants, workspace/resumption, interrupted-transaction rollback and subsequent writes, recovery and memory fallback assertions passed in isolated stores; no learner store used."
+		},
+		{
+			"surface": "320 px viewport and desktop viewport",
+			"check": "Parent view, navigation and learner layout bounds",
+			"status": "passed",
+			"details": "No horizontal body overflow or controls outside the body in inspected states. Not a physical touch-device test."
+		},
+		{
+			"surface": "Codex in-app browser on macOS",
+			"check": "Reduced-motion setting and explicit fresh start",
+			"status": "passed",
+			"details": "Setting toggled; reset required the on-screen confirm action. Only agent-created test progress was reset."
+		},
+		{
+			"surface": "Codex in-app browser on macOS",
+			"check": "Keyboard activation and question focus",
+			"status": "passed",
+			"details": "Enter activated the building mission; focus moved to the new question. Numeric inputs also support Enter submission."
+		},
+		{
+			"surface": "Isolated current-main PR checkout, built dist/index.html over localhost:5216",
+			"check": "Post-integration render and native IndexedDB harness",
+			"status": "passed",
+			"details": "Built German welcome, original Milo and explicit video-pending explanation rendered. All 11 native storage harness assertions passed after lint changes; direct file startup remains untested."
+		}
+	],
+	"remaining": [
+		"Primary-school teacher content review",
+		"Real teacher recording with captions, transcript and distribution permissions",
+		"Actual online and offline playback of the final recording",
+		"Direct offline-file startup in a normal browser",
+		"Review prepared recall cards in the existing ZAM learner UI",
+		"Physical touch-device acceptance"
+	],
+	"checked": "2026-10-31",
+	"automated_checks": {
+		"app": "Biome format/lint, typecheck and 26 Vitest tests passed in the isolated PR checkout",
+		"catalog": "47 node:test catalog and public-registry checks passed; generated catalog has 36 existing cells and excludes this draft",
+		"cell": "4 atoms, 8 items; disposable install/enrol/recall/reinstall passed against workspace core and CI-pinned zam-core 0.54.0 with workspace dependencies",
+		"all_cells": "All 37 Academy cells in the current-main PR checkout validated against CI-pinned zam-core 0.54.0 using disposable libraries",
+		"package": "Draft ZIP built and byte/asset/launcher verification passed; strict complete gate correctly refuses missing teacher recording"
+	},
+	"offline_file_start": {
+		"status": "blocked-by-test-environment",
+		"reason": "The browser tool rejects file:// navigation; direct extracted-file startup was not tested and no workaround was attempted."
+	},
+	"online_video_playback": {
+		"status": "pending",
+		"reason": "No approved recording exists."
+	},
+	"learner_ui_recall": {
+		"status": "pending",
+		"reason": "Kernel recall path is verified in disposable libraries; existing learner UI smoke test remains manual."
+	},
+	"touch_hardware": {
+		"status": "pending",
+		"reason": "Responsive layout and native controls checked; no physical touch device was tested."
+	}
+}

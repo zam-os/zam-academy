@@ -1,0 +1,24 @@
+{
+	"name": "zam-academy-mathematik-grundschule-4",
+	"version": "0.1.0",
+	"private": true,
+	"description": "Discovery Island: German place-value practice for Grade 4 in Bavaria.",
+	"type": "module",
+	"scripts": {
+		"dev": "vite",
+		"typecheck": "tsc --noEmit",
+		"test": "vitest run",
+		"build": "tsc --noEmit && vite build",
+		"preview": "vite preview",
+		"package:zip": "npm run build && node scripts/build-release-zip.mjs",
+		"verify:release": "node scripts/verify-release.mjs",
+		"validate:cell": "node scripts/validate-cell.mjs"
+	},
+	"devDependencies": {
+		"typescript": "^6.0.3",
+		"vite": "^8.1.5",
+		"vite-plugin-singlefile": "^2.3.3",
+		"vitest": "^4.1.10"
+	},
+	"license": "Apache-2.0"
+}
