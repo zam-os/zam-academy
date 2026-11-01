@@ -13,7 +13,7 @@ import {
   readFileSync,
   writeFileSync,
 } from "node:fs";
-import { dirname, join, resolve } from "node:path";
+import { basename, dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { assertMappingApproved } from "./mapping-approval.mjs";
 
@@ -35,6 +35,12 @@ export function isPublishedApp(dir) {
     throw new Error(`${file}: invalid publication status`);
   }
   return publication.status === "ready";
+}
+
+export function assertPublishedApp(dir, surface) {
+  if (!isPublishedApp(dir)) {
+    throw new Error(`${basename(dir)} is marked local-only and cannot be ${surface}`);
+  }
 }
 
 export function buildCatalog(dir = root) {
