@@ -3,7 +3,7 @@ import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { dirname, join, resolve } from "node:path";
 import { test } from "node:test";
 import { fileURLToPath } from "node:url";
-import { isPublishedApp } from "./build-catalog.mjs";
+import { isPublishedApp, assertPublishedApp } from "./build-catalog.mjs";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const registry = JSON.parse(readFileSync(join(root, "academy.json"), "utf8"));
@@ -26,6 +26,9 @@ function schoolSubject(trees, grade, fach) {
 }
 
 test("every published app with a cell is registered in academy.json, and vice versa", () => {
+  for (const p of pakete) {
+    assertPublishedApp(join(root, p.app), "registered in academy.json");
+  }
   const apps = readdirSync(root).filter((d) =>
     existsSync(join(root, d, "cell.json")) && isPublishedApp(join(root, d)),
   );
