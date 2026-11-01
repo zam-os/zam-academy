@@ -20,6 +20,23 @@ remaining manual acceptance checks are pending. No phase is marked complete.
 - [ ] Phase 6 — complete Chance Garden and mixed island expeditions
 - [ ] Phase 7 — full-course review, field pilot and curriculum release readiness
 
+### Review amendment — 2026-11-01
+
+PR #72 review exposed answer-revealing tasks and insufficient practice. Phase
+1 now includes generated six-digit place values to 999 999, mandatory T/H
+exchange and the worked transition to one million, replacing the initial
+four-place-only scope. It adds guided and transfer practice with three
+successful tasks each plus repeatable fresh rounds, targeted feedback and
+explicit answer explanations. This does not complete the later course worlds
+or all of 1.1. Coverage remains partial and unreviewed.
+
+Thomas explicitly approved retaining transactional IndexedDB and the
+first-party teacher player in response to the scoped policy question on
+2026-10-31. AGENTS.md records that exception. The review-requested extraction
+is a correction to the original single-PR plan: shared publication tooling
+belongs in its own PR #73; PR #72 depends on it. No public registration or
+publication occurs. See [review follow-up](../grade-4-review-follow-up.md).
+
 ### Implementation record — 2026-10-31
 
 Phase 1 now has a runnable `mathematik-grundschule-4/` app: two German

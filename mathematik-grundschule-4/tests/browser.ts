@@ -1,4 +1,8 @@
-import { DATABASE, ProgressStore } from "../src/storage/progress";
+import {
+	DATABASE,
+	STORAGE_VERSION,
+	ProgressStore,
+} from "../src/storage/progress";
 import { fresh, grant } from "../src/practice/evidence";
 import { ulid } from "../src/id";
 
@@ -97,7 +101,7 @@ run.addEventListener("click", async (event) => {
 			s.close();
 		});
 		const raw = await new Promise<IDBDatabase>((resolve, reject) => {
-			const r = indexedDB.open(name, 1);
+			const r = indexedDB.open(name, STORAGE_VERSION);
 			r.onsuccess = () => resolve(r.result);
 			r.onerror = () => reject(r.error);
 		});

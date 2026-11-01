@@ -2,7 +2,11 @@
 
 German learner and parent UI for the opening mathematics lesson in Bavaria.
 Two resumable missions teach place values, zero placeholders and grouping
-in both directions, with Milo as a welcoming companion.
+in both directions, with Milo as a welcoming companion. Entry support uses
+small numbers; generated tasks extend to 999 999, T/H exchanges and the
+worked boundary 10 HT = 1 000 000. Three successful tasks are required on
+each of two practice levels, and fresh optional practice remains available
+immediately after finishing.
 
 ## Status
 
@@ -36,7 +40,7 @@ The app reuses the approved Academy TypeScript/Vite/Vitest/single-file
 toolchain; it adds no runtime dependencies. `validate:cell` defaults to
 the adjacent `zam/dist/index.js`; set `ZAM_CORE` to a file URL of another
 approved build to check compatibility. It uses only a disposable database:
-installation creates no cards, explicit enrolment creates eight, retries
+installation creates no cards, explicit enrolment creates twelve, retries
 create none, and reinstall preserves a real recall-rating log.
 
 At the Academy root, run
@@ -81,17 +85,21 @@ the final approved recording respectively; no browser-policy bypass was used.
 - Lesson id: `stellenwerte-buendeln`; cell:
   `zam-academy:mathematik-grundschule-4`. Public links are future source
   addresses and do not indicate that this draft is already hosted.
-- `cell.json` is the sole recall-card source: four atoms, eight narrow German
-  items with generated, fixed ULIDs. Edit cards only in this file; there is no
+- `cell.json` is the sole recall-card source: four atoms, twelve German
+  items (eight binary fast checks and four synthesis tasks) with fixed ULIDs.
+  Edit cards only in this file; there is no
   second authored card list or card generator. Installation uses the approved
-  core's card-text validation and write path. There is no official Grade
-  4 curriculum binding until reviewed full-course coverage justifies it.
+  core's card-text validation and write path. Prerequisites form an acyclic
+  support graph. Official Grade 4 binding is deferred: the current core treats
+  a grade-specific binding as full scope coverage regardless of topic_code,
+  which would hide the generic importer for this partial starter.
 - `coverage.json` enumerates 54 official competence positions across 13
   subareas, with source anchors, checked date and explicit remaining work.
   Only partial place-value work is implemented. No teacher review or full
   coverage is claimed.
 - Evidence records first responses separately from helped retries. The
-  parent view reconstructs dated examples from the task version and seed.
+  parent view uses stable task snapshots for dated examples, with canonical
+  targets for build tasks.
   Local practice is never presented as ZAM review history or an FSRS score.
 - A versioned IndexedDB document commits mission completion and unique
   reward keys together. Concurrent tabs serialize writes. Ordinary version
@@ -105,3 +113,15 @@ the final approved recording respectively; no browser-policy bypass was used.
 
 All illustrations are original SVG/CSS. Project prose is English; the entire
 learner experience, accessible labels and teaching material are German.
+
+## Review follow-up
+
+See [the resolution record](../docs/grade-4-review-follow-up.md) for feedback,
+regression checks and remaining Phase-2 decisions. Shared publication tooling
+is isolated in PR #73; this package PR is stacked on that safeguard.
+
+Biome is an optional external development check, not an installed package
+dependency or CI requirement. The local checks use the existing ZAM workspace
+binary: `node /Users/thomas/src/zam/node_modules/@biomejs/biome/bin/biome format --write src tests scripts cell.json coverage.json`
+and the same binary with `lint src tests scripts vite.config.ts`. No npm
+package or script is implied by this optional check.

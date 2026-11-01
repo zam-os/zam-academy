@@ -1,7 +1,13 @@
-import { fresh, validProgress, type Progress } from "../practice/evidence";
+import {
+	fresh,
+	validProgress,
+	normaliseProgress,
+	type Progress,
+} from "../practice/evidence";
 
 export type StorageMode = "persistent" | "memory" | "recovery";
 export const DATABASE = "zam-entdeckerinsel-mathe4-v1";
+export const STORAGE_VERSION = 1;
 const STORE = "progress";
 
 /** A single document makes mission completion and reward grants atomic. */
@@ -24,7 +30,7 @@ export class ProgressStore {
 			const storageFactory = factory ?? globalThis.indexedDB;
 			if (!storageFactory) return;
 			this.db = await new Promise<IDBDatabase>((resolve, reject) => {
-				const req = storageFactory.open(this.name, 1);
+				const req = storageFactory.open(this.name, STORAGE_VERSION);
 				req.onupgradeneeded = () => req.result.createObjectStore(STORE);
 				req.onsuccess = () => resolve(req.result);
 				req.onerror = () => reject(req.error);
@@ -66,7 +72,8 @@ export class ProgressStore {
 		});
 		if (raw === undefined) return;
 		this.raw = raw;
-		if (validProgress(raw)) this.state = raw;
+		const restored = normaliseProgress(raw);
+		if (restored) this.state = restored;
 		else this.mode = "recovery";
 	}
 
@@ -101,7 +108,11 @@ export class ProgressStore {
 						tx.abort();
 						return;
 					}
-					const candidate: Progress = structuredClone(req.result ?? this.state);
+					const candidate = normaliseProgress(req.result ?? this.state);
+					if (!candidate) {
+						tx.abort();
+						return;
+					}
 					next = candidate;
 					try {
 						change(candidate);

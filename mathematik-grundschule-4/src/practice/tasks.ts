@@ -1,7 +1,18 @@
-import { digits, format, type Counts } from "../math/place-value";
+import {
+	digits,
+	describe,
+	format,
+	total,
+	WEIGHTS,
+	NAMES,
+	LETTERS,
+	type Counts,
+	type Column,
+} from "../math/place-value";
 
 export const LESSON_ID = "stellenwerte-buendeln";
-export const CONTENT_VERSION = 1;
+export const CONTENT_VERSION = 2;
+export const REQUIRED_CORRECT = 3;
 export const STEPS = [
 	"welcome",
 	"entry-read",
@@ -10,12 +21,14 @@ export const STEPS = [
 	"build-small",
 	"build-large",
 	"digit",
+	"practice-a",
 	"mission-a-end",
 	"learn-b",
 	"bundle",
 	"exchange",
 	"reason",
 	"explain",
+	"practice-b",
 	"exit-read",
 	"exit-zero",
 	"exit-exchange",
@@ -40,8 +53,10 @@ export interface Task {
 	explanation: string;
 	options?: { value: number; label: string }[];
 	column?: number;
+	target?: Counts;
+	numeral?: number;
+	level?: 1 | 2;
 }
-
 export function random(seed: number): () => number {
 	let state = seed >>> 0;
 	return () => {
@@ -51,149 +66,235 @@ export function random(seed: number): () => number {
 		return ((value ^ (value >>> 14)) >>> 0) / 4294967296;
 	};
 }
-
+function generator(seed: number) {
+	const rand = random(seed);
+	const int = (low: number, high: number) =>
+		low + Math.floor(rand() * (high - low + 1));
+	// Zeros rotate across all non-leading positions, rather than one learned pattern.
+	const number = (places: number, zero = false) => {
+		const d = digits(0);
+		for (let i = 0; i < places; i++) d[i] = int(i === places - 1 ? 1 : 0, 9);
+		if (zero) d[int(0, places - 2)] = 0;
+		return total(d);
+	};
+	return { int, number };
+}
+function readTask(answer: number, zero = false): Task {
+	return {
+		family: zero ? "zero" : "read",
+		goal: zero ? "G3" : "G2",
+		prompt: zero
+			? "Welche Zahl zeigen die Bündel? Achte auf die leeren Stellen."
+			: "Welche Zahl zeigen die Bündel in der Stellenwerttafel?",
+		answer,
+		model: digits(answer),
+		hint: "Zähle die Bündel in jeder Spalte. Schreibe auch für jede leere Stelle zwischen den Ziffern eine Null.",
+		explanation: `${describe(digits(answer))} ergeben ${format(answer)}. Eine leere Stelle wird mit 0 geschrieben.`,
+	};
+}
+function buildTask(answer: number): Task {
+	return {
+		family: "build",
+		goal: String(answer).includes("0") ? "G3" : "G2",
+		prompt: `Baue ${format(answer)} mit höchstens 9 Bündeln je Stelle.`,
+		answer,
+		model: digits(0),
+		hint: `Zerlege die Zahl in Stellen: ${describe(digits(answer))}.`,
+		explanation: `${format(answer)} besteht aus ${describe(digits(answer))}. Die Spalten bleiben in ihrer Reihenfolge.`,
+	};
+}
+function exchangeTask(
+	seed: number,
+	direction: "bundle" | "unbundle",
+	entry = false,
+): Task {
+	const { int } = generator(seed);
+	const column = (
+		entry ? 0 : direction === "unbundle" ? 3 : int(1, 3)
+	) as Column;
+	const model = digits(0);
+	// Two eligible places make the choice of exchange meaningful.
+	model[column] = direction === "bundle" ? int(10, 18) : int(1, 4);
+	model[direction === "bundle" ? (column + 2) % 4 : 2] +=
+		direction === "bundle" ? int(10, 15) : int(1, 8);
+	const target = [...model];
+	if (direction === "bundle") {
+		target[column] -= 10;
+		target[column + 1] += 1;
+	} else {
+		target[column] -= 1;
+		target[column - 1] += 10;
+	}
+	return {
+		family: direction === "bundle" ? "bundle" : "exchange",
+		goal: "G4",
+		prompt:
+			direction === "bundle"
+				? `Bündle genau 10 ${NAMES[column]} zur nächstgrößeren Einheit. Lass die anderen Bündel liegen.`
+				: `Entbündle genau 1 ${NAMES[column]} in die nächstkleinere Einheit. Lass die anderen Bündel liegen.`,
+		answer: total(model),
+		model,
+		target,
+		column,
+		hint:
+			direction === "bundle"
+				? `10 ${LETTERS[column]} haben denselben Wert wie 1 ${LETTERS[column + 1]}.`
+				: `1 ${LETTERS[column]} hat denselben Wert wie 10 ${LETTERS[column - 1]}.`,
+		explanation: `${describe(model)} und ${describe(target)} haben denselben Wert: ${format(total(model))}. Nur die Bündelung ändert sich.`,
+	};
+}
 export function taskFor(
 	step: Step | "later-read" | "later-zero" | "later-exchange",
 	seed: number,
 ): Task | null {
-	const rand = random(
-		seed + [...step].reduce((n, c) => n + c.charCodeAt(0), 0),
+	const code = [...step].reduce(
+		(n, c) => Math.imul(n, 31) + c.charCodeAt(0),
+		0,
 	);
-	const pick = (values: number[]) => values[Math.floor(rand() * values.length)];
-	if (step === "entry-read" || step === "exit-read" || step === "later-read") {
-		const answer =
-			step === "entry-read"
-				? pick([305, 402, 608])
-				: (1 + Math.floor(rand() * 9)) * 1000 +
-					(1 + Math.floor(rand() * 9)) * 10 +
-					(1 + Math.floor(rand() * 9));
-		return {
-			family: "read",
-			goal: "G2",
-			prompt: "Welche Zahl zeigt die Stellenwerttafel?",
-			answer,
-			model: digits(answer),
-			hint: "Lies von links nach rechts. Eine leere Stelle bleibt als Null erhalten.",
-			explanation: `Die Tafel zeigt ${format(answer)}. Jede Spalte hat ihren eigenen Wert.`,
-		};
-	}
-	if (step === "build-small" || step === "build-large") {
-		const answer = step === "build-small" ? 306 : 2047;
-		return {
-			family: "build",
-			goal: step === "build-small" ? "G3" : "G2",
-			prompt: `Baue die Zahl ${format(answer)} in der Stellenwerttafel.`,
-			answer,
-			model: [0, 0, 0, 0],
-			hint:
-				step === "build-small"
-					? "Du brauchst 3 Hunderter, keinen Zehner und 6 Einer."
-					: "Du brauchst 2 Tausender, keinen Hunderter, 4 Zehner und 7 Einer.",
-			explanation: `${format(answer)} besteht aus ${digits(answer)
-				.map(
-					(n, i) =>
-						`${n} ${["Einern", "Zehnern", "Hundertern", "Tausendern"][i]}`,
-				)
-				.reverse()
-				.join(", ")}.`,
-		};
-	}
+	const { int, number } = generator(seed + code);
+	if (
+		[
+			"entry-read",
+			"exit-read",
+			"later-read",
+			"exit-zero",
+			"later-zero",
+		].includes(step)
+	)
+		return readTask(
+			number(
+				step === "entry-read" ? 3 : int(4, 6),
+				step.includes("zero") || step === "entry-read",
+			),
+			step.includes("zero"),
+		);
+	if (step === "build-small" || step === "build-large")
+		return buildTask(number(step === "build-small" ? 3 : int(4, 6), true));
 	if (step === "digit") {
-		const value = pick([3402, 5206, 7401]);
-		const digit = digits(value)[2];
+		const numeral = number(int(4, 6));
+		const positions = digits(numeral)
+			.map((n, i) => (n ? i : -1))
+			.filter((i) => i >= 0);
+		const column = positions[int(0, positions.length - 1)];
+		const digit = digits(numeral)[column];
 		return {
 			family: "digit",
 			goal: "G1",
-			prompt: `Wie viel ist die Ziffer ${digit} an der Hunderterstelle in ${format(value)} wert?`,
-			answer: digit * 100,
-			model: digits(value),
-			column: 2,
-			hint: `Ein Hunderter ist 100 wert. Hier liegen ${digit} Hunderter.`,
-			explanation: `${digit} Hunderter haben den Wert ${digit * 100}.`,
+			prompt: "Welchen Wert hat die markierte Ziffer?",
+			answer: digit * WEIGHTS[column],
+			numeral,
+			column,
+			model: digits(numeral),
+			hint: `Zähle die Stellen von rechts: E, Z, H, T, ZT, HT. Die markierte Ziffer steht bei ${NAMES[column]}.`,
+			explanation: `${digit} ${NAMES[column]} ${digit === 1 ? "hat" : "haben"} den Wert ${format(digit * WEIGHTS[column])}.`,
 		};
 	}
-	if (step === "entry-bundle" || step === "bundle") {
+	if (step === "entry-bundle" || step === "bundle")
+		return exchangeTask(seed + code, "bundle", step === "entry-bundle");
+	if (step === "exchange") return exchangeTask(seed + code, "unbundle");
+	if (step === "reason") {
+		const h = int(1, 8);
 		return {
-			family: "bundle",
+			family: "reason",
 			goal: "G4",
-			prompt: "Bündle die zehn Einer zu einem Zehner.",
-			answer: 10,
-			model: [10, 0, 0, 0],
-			hint: "Wähle bei den Einern „10 bündeln“. Aus zehn Einern wird ein Zehner.",
-			explanation:
-				"10 Einer sind genauso viel wie 1 Zehner. Der Wert bleibt 10.",
+			prompt: `Milo tauscht ${h} T gegen ${h * 10} H. Warum bleibt der Wert gleich?`,
+			answer: 1,
+			model: [0, 0, h * 10, 0, 0, 0, 0],
+			options: [
+				{
+					value: 1,
+					label:
+						"1 T ist genauso viel wie 10 H. Beim Tauschen bleibt der Wert gleich.",
+				},
+				{
+					value: 0,
+					label: "Ein Hunderter ist genauso viel wie ein Tausender.",
+				},
+				{
+					value: 2,
+					label: "Beim Entbündeln wird der Wert zehnmal so groß wie vorher.",
+				},
+			],
+			hint: "Vergleiche den Wert eines Tausenders mit dem Wert von zehn Hundertern.",
+			explanation: `${h} T sind ${format(h * 1000)}. ${h * 10} H sind ebenfalls ${format(h * 1000)}. Auch 100 Z haben denselben Wert wie 1 T.`,
 		};
 	}
-	if (step === "exchange") {
+	if (step === "exit-exchange" || step === "later-exchange") {
+		const column = int(1, 3);
+		const model = digits(number(5));
+		model[column] = int(11, 18);
 		return {
 			family: "exchange",
 			goal: "G4",
 			prompt:
-				"Tausche einen Hunderter gegen zehn Zehner. Die Zahl bleibt gleich.",
-			answer: 142,
-			model: [2, 4, 1, 0],
-			hint: "Wähle beim Hunderter „1 entbündeln“. Die vier Zehner bleiben liegen.",
-			explanation:
-				"Aus 1 Hunderter und 4 Zehnern werden 14 Zehner. Mit den 2 Einern bleibt der Wert 142.",
-		};
-	}
-	if (step === "reason") {
-		return {
-			family: "reason",
-			goal: "G4",
-			prompt:
-				"Warum bleiben 14 Zehner und 2 Einer genauso viel wie 1 Hunderter, 4 Zehner und 2 Einer?",
-			answer: 1,
-			model: [2, 14, 0, 0],
-			options: [
-				{
-					value: 1,
-					label: "Ein Hunderter und zehn Zehner haben denselben Wert.",
-				},
-				{ value: 0, label: "Mehr Stücke bedeuten immer eine größere Zahl." },
-			],
-			hint: "Vergleiche den Wert der Stücke, nicht ihre Anzahl.",
-			explanation: "Die Bündel sehen anders aus. Ihr Gesamtwert bleibt gleich.",
-		};
-	}
-	if (step === "exit-zero" || step === "later-zero") {
-		const answer = pick([4060, 7030, 5080]);
-		const model = digits(answer);
-		return {
-			family: "zero",
-			goal: "G3",
-			prompt: `${model[3]} Tausender, 0 Hunderter, ${model[1]} Zehner und 0 Einer: Welche Zahl ist das?`,
-			answer,
+				"Milo hat mehr als 9 Bündel in einer Spalte. Welche Zahl ist dargestellt?",
+			answer: total(model),
 			model,
-			options: [
-				{ value: answer, label: format(answer) },
-				{ value: answer / 10, label: format(answer / 10) },
-				{
-					value: model[3] * 1000 + model[1],
-					label: format(model[3] * 1000 + model[1]),
-				},
-			],
-			hint: "Die Hunderter und die Einer bleiben als leere Spalten sichtbar.",
-			explanation: `Die beiden leeren Stellen werden mit Null geschrieben: ${format(answer)}.`,
-		};
-	}
-	if (step === "exit-exchange" || step === "later-exchange") {
-		const h = pick([2, 3, 4]);
-		const t = pick([11, 13, 15]);
-		const e = pick([2, 5, 7]);
-		return {
-			family: "read",
-			goal: "G4",
-			prompt: "Wie viel sind diese Bündel zusammen wert?",
-			answer: h * 100 + t * 10 + e,
-			model: [e, t, h, 0],
-			hint: `Rechne ${h} Hunderter und ${t} Zehner zusammen. Die Einer kommen dazu.`,
-			explanation: `${h} Hunderter und ${t} Zehner sind ${h * 100 + t * 10}. Mit ${e} Einern sind es ${h * 100 + t * 10 + e}.`,
+			hint: `10 ${LETTERS[column]} sind 1 ${LETTERS[column + 1]}. Bündle im Kopf und beachte die anderen Spalten.`,
+			explanation: `${describe(model)} ergeben ${format(total(model))}. Zehn gleichartige Bündel werden zu einem Bündel der nächstgrößeren Einheit.`,
 		};
 	}
 	return null;
 }
-
+/** Guided representation practice and transfer with noncanonical bundles are different generators. */
+export function practiceTask(level: 1 | 2, seed: number, index: number): Task {
+	const taskSeed = (seed + Math.imul(index + 1, 2654435761)) >>> 0;
+	let task: Task | null;
+	if (level === 1)
+		task = taskFor(
+			index % 3 === 0 ? "exit-read" : index % 3 === 1 ? "build-large" : "digit",
+			taskSeed,
+		);
+	else
+		task = taskFor(
+			index % 3 === 0
+				? "exit-exchange"
+				: index % 3 === 1
+					? "bundle"
+					: "exchange",
+			taskSeed,
+		);
+	if (!task) throw new Error("Die nächste Aufgabe fehlt.");
+	return { ...task, level };
+}
+export function correctTask(
+	task: Task,
+	input: number | null,
+	workspace: Counts,
+): boolean {
+	if (task.family === "build")
+		return digits(task.answer).every((n, i) => n === (workspace[i] ?? 0));
+	if (task.target)
+		return task.target.every((n, i) => n === (workspace[i] ?? 0));
+	return input === task.answer;
+}
+export function mistakeHint(
+	task: Task,
+	input: number | null,
+	workspace: Counts,
+): string {
+	if (task.family === "build") {
+		const expected = digits(task.answer);
+		const shifted = expected.findIndex((n, i) => n !== (workspace[i] ?? 0));
+		return `Prüfe die Spalte ${NAMES[Math.max(0, shifted)]}. Jede Ziffer gehört an ihre eigene Stelle. Leere Stellen brauchen 0 Bündel.`;
+	}
+	if (task.target)
+		return "Prüfe, welche Einheit du tauschen sollst. Der Gesamtwert allein reicht nicht: Auch die geforderte Bündelung muss stimmen.";
+	if (input === null)
+		return "Schreibe eine ganze Zahl von 0 bis 1 000 000. Tausender kannst du mit Leerzeichen gliedern, zum Beispiel 30 407.";
+	if (task.family === "digit")
+		return "Gesucht ist der Wert der Ziffer, nicht nur die Ziffer selbst. Ein Bündel links ist zehnmal so viel wert wie eines rechts daneben.";
+	if (
+		String(task.answer).includes("0") &&
+		input === Number(String(task.answer).replaceAll("0", ""))
+	)
+		return "Du hast leere Stellen übersprungen. Die Null hält ihren Platz frei: Einer bleiben rechts, Zehner daneben und Hunderter an der dritten Stelle.";
+	if (task.family === "exchange")
+		return "Schreibe Bündelzahlen wie 11 nicht einfach nebeneinander. 11 Z sind 1 H und 1 Z. Rechne erst den Wert jeder Spalte aus.";
+	if (task.family === "reason")
+		return "Die Anzahl der Stücke ändert sich, ihr Wert bleibt gleich. 1 Tausender entspricht 10 Hundertern, nicht einem Hunderter.";
+	return "Lies die Spalten von rechts: E, Z, H, T, ZT, HT. Prüfe besonders die Nullstellen und die Größe jedes Bündels.";
+}
 export function orderedOptions(
 	task: Task,
 	seed: number,
@@ -206,7 +307,6 @@ export function orderedOptions(
 	}
 	return options;
 }
-
 export function recallSeed(
 	previous: number,
 	candidate: () => number = () => crypto.getRandomValues(new Uint32Array(1))[0],

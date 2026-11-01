@@ -12,7 +12,7 @@ export function teacherPanel(): string {
     <section><h4>Der Platz zählt</h4><p>Die 6 in <strong>306</strong> bedeutet 6 Einer. Die 6 in <strong>360</strong> bedeutet 6 Zehner, also 60. Dieselbe Ziffer hat an einer anderen Stelle einen anderen Wert.</p></section>
     <section><h4>Bündeln</h4><div class="exchange-picture" aria-label="10 Einer werden zu einem Zehner"><span>10 Einer</span><b aria-hidden="true">⇄</b><span>1 Zehner</span></div><p>Zehn Einer sind genauso viel wie ein Zehner. Du kannst in beide Richtungen tauschen.</p></section>
     <section><h4>Entbündeln</h4><div class="exchange-picture" aria-label="1 Hunderter wird zu 10 Zehnern"><span>1 Hunderter</span><b aria-hidden="true">⇄</b><span>10 Zehner</span></div><p>In 142 kannst du den Hunderter gegen zehn Zehner tauschen. Dann liegen 14 Zehner und 2 Einer da. Es bleibt <strong>142</strong>.</p></section></div>
-    <p class="teacher-note">Erprobungsfassung: Die fachliche Freigabe durch eine Grundschullehrkraft und die Aufnahme stehen noch aus.</p></div></details>`;
+    <section class="example"><h4>Mit großen Bündeln weiterdenken</h4><p>1 000 = 10 H = 100 Z. In 204 070 steht die 2 bei den Hunderttausendern und ist 200 000 wert. Zehntausender-, Hunderter- und Einerstelle bleiben leer. 10 Hunderttausender sind 1 Million: 1 000 000.</p></section><p class="teacher-note">Erprobungsfassung: Die fachliche Freigabe durch eine Grundschullehrkraft und die Aufnahme stehen noch aus.</p></div></details>`;
 }
 
 /** Media bytes are attached only after the learner requests playback. */

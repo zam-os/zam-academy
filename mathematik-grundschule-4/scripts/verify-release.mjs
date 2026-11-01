@@ -33,8 +33,14 @@ for (const file of [
 	"media-register.json",
 ])
 	assert.ok(entries.includes(`${name}/${file}`), file);
-for (const file of ["Start-Mac.command", "start-linux.sh"])
-	execFileSync("sh", ["-n", join(root, "release", name, file)]);
+if (process.platform !== "win32") {
+	for (const file of ["Start-Mac.command", "start-linux.sh"])
+		execFileSync("sh", ["-n", join(root, "release", name, file)]);
+} else {
+	console.log(
+		"POSIX launcher syntax check skipped on Windows; Linux CI checks it.",
+	);
+}
 const register = JSON.parse(
 	readFileSync(join(root, "media-register.json"), "utf8"),
 );
@@ -94,25 +100,31 @@ if (register.status === "approved") {
 	);
 }
 if (process.argv.includes("--complete")) {
-	assert.equal(
-		register.status,
-		"approved",
-		"Phase 1 requires the real teacher recording and rights metadata.",
-	);
 	const acceptance = JSON.parse(
 		readFileSync(join(root, "acceptance.json"), "utf8"),
 	);
-	assert.equal(
-		acceptance.teacher_review.status,
-		"approved",
-		"Teacher content review is required.",
-	);
-	assert.equal(
-		acceptance.offline_video_playback.status,
-		"passed",
-		"Real offline playback must be observed.",
-	);
+	const missing = [
+		register.status !== "approved" &&
+			"the real teacher recording and rights metadata",
+		acceptance.teacher_review.status !== "approved" &&
+			"primary-school teacher content approval",
+		acceptance.offline_video_playback.status !== "passed" &&
+			"observed offline playback",
+		acceptance.online_video_playback.status !== "passed" &&
+			"observed online playback",
+		acceptance.offline_file_start.status !== "passed" &&
+			"direct offline-file startup",
+		acceptance.learner_ui_recall.status !== "passed" &&
+			"the ZAM learner UI recall check",
+		acceptance.touch_hardware.status !== "passed" &&
+			"physical touch-device acceptance",
+	].filter(Boolean);
+	if (missing.length) {
+		console.error(`Phase 1 remains incomplete: missing ${missing.join(", ")}.`);
+		process.exit(1);
+	}
 }
+
 console.log(
 	"Offline package verified: exact HTML, launchers, relative assets and truthful media status.",
 );

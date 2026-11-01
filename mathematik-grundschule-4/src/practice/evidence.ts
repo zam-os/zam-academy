@@ -1,6 +1,18 @@
-import { CONTENT_VERSION, STEPS, taskFor, type Step, type Task } from "./tasks";
+import {
+	CONTENT_VERSION,
+	REQUIRED_CORRECT,
+	STEPS,
+	taskFor,
+	type Step,
+	type Task,
+} from "./tasks";
 import { ulid } from "../id";
-import { validCounts, type Counts } from "../math/place-value";
+import {
+	validCounts,
+	digits,
+	MAX_NUMBER,
+	type Counts,
+} from "../math/place-value";
 
 export interface Attempt {
 	id: string;
@@ -14,6 +26,15 @@ export interface Attempt {
 	first: boolean;
 	mode: "guided" | "entry" | "exit" | "later";
 	version: number;
+	example?: { prompt: string; model: Counts; answer: number };
+}
+export interface Practice {
+	id: string;
+	level: 1 | 2;
+	seed: number;
+	index: number;
+	correct: number;
+	requiredCorrect: number | null;
 }
 export interface Progress {
 	schema: 1;
@@ -30,6 +51,7 @@ export interface Progress {
 	resting: boolean;
 	startedAt: number;
 	explained: boolean;
+	practice?: Practice | null;
 	later: { id: string; seed: number; index: number; at: number } | null;
 }
 export function fresh(now = Date.now()): Progress {
@@ -38,7 +60,7 @@ export function fresh(now = Date.now()): Progress {
 		version: CONTENT_VERSION,
 		seed: crypto.getRandomValues(new Uint32Array(1))[0],
 		step: "welcome",
-		workspace: [0, 0, 0, 0],
+		workspace: digits(0),
 		undo: [],
 		attempts: [],
 		helped: [],
@@ -48,6 +70,7 @@ export function fresh(now = Date.now()): Progress {
 		resting: false,
 		startedAt: now,
 		explained: false,
+		practice: null,
 		later: null,
 	};
 }
@@ -68,7 +91,7 @@ export function validProgress(v: unknown): v is Progress {
 	if (
 		!object(v) ||
 		v.schema !== 1 ||
-		v.version !== CONTENT_VERSION ||
+		(v.version !== 1 && v.version !== CONTENT_VERSION) ||
 		!seed(v.seed) ||
 		!STEPS.includes(v.step as Step) ||
 		!validCounts(v.workspace) ||
@@ -135,8 +158,29 @@ export function validProgress(v: unknown): v is Progress {
 				typeof a.helped === "boolean" &&
 				typeof a.first === "boolean" &&
 				["guided", "entry", "exit", "later"].includes(String(a.mode)) &&
-				a.version === CONTENT_VERSION,
+				(a.version === 1 || a.version === CONTENT_VERSION) &&
+				(a.example === undefined ||
+					(object(a.example) &&
+						typeof a.example.prompt === "string" &&
+						a.example.prompt.length <= 2000 &&
+						validCounts(a.example.model) &&
+						stamp(a.example.answer) &&
+						a.example.answer <= MAX_NUMBER)),
 		)
+	)
+		return false;
+	if (
+		v.practice !== undefined &&
+		v.practice !== null &&
+		(!object(v.practice) ||
+			typeof v.practice.id !== "string" ||
+			!ULID.test(v.practice.id) ||
+			(v.practice.level !== 1 && v.practice.level !== 2) ||
+			!seed(v.practice.seed) ||
+			!seed(v.practice.index) ||
+			!seed(v.practice.correct) ||
+			(v.practice.requiredCorrect !== null &&
+				v.practice.requiredCorrect !== REQUIRED_CORRECT))
 	)
 		return false;
 	return (
@@ -167,13 +211,21 @@ export function recordAttempt(
 		key,
 		family: task.family,
 		goal: task.goal,
-		seed: p.later?.seed ?? p.seed,
+		seed: p.practice?.seed ?? p.later?.seed ?? p.seed,
 		at: now,
 		outcome,
 		helped,
 		first,
 		mode,
 		version: CONTENT_VERSION,
+		example: {
+			prompt:
+				task.numeral === undefined
+					? task.prompt
+					: `${task.prompt} Zahl: ${task.numeral}; markierte Ziffer: ${digits(task.numeral)[task.column ?? 0]}.`,
+			model: task.family === "build" ? digits(task.answer) : [...task.model],
+			answer: task.answer,
+		},
 	});
 	// Retain recent evidence, not an unbounded local activity log.
 	p.attempts = p.attempts.slice(-2000);
@@ -190,12 +242,20 @@ export function grant(
 
 export function nextStep(p: Progress): void {
 	p.step = STEPS[Math.min(STEPS.indexOf(p.step) + 1, STEPS.length - 1)];
-	p.workspace = taskFor(p.step, p.seed)?.model ?? [0, 0, 0, 0];
+	p.workspace = taskFor(p.step, p.seed)?.model ?? digits(0);
+	if (p.step === "practice-a" || p.step === "practice-b") {
+		p.practice = newPractice(
+			p.step === "practice-a" ? 1 : 2,
+			p.seed,
+			REQUIRED_CORRECT,
+		);
+	}
 	p.undo = [];
 }
 
 export function independent(a: Attempt): boolean {
 	return (
+		a.version >= 2 &&
 		a.first &&
 		a.outcome &&
 		!a.helped &&
@@ -208,4 +268,35 @@ export function laterEligible(p: Progress, now: number): boolean {
 	return (
 		completed !== undefined && now >= completed && now - completed >= 86_400_000
 	);
+}
+
+export function newPractice(
+	level: 1 | 2,
+	seed: number,
+	requiredCorrect: number | null,
+): Practice {
+	return { id: ulid(), level, seed, index: 0, correct: 0, requiredCorrect };
+}
+/** Preserve draft rewards and logs, never promote old answer-revealing tasks to new evidence. */
+export function normaliseProgress(raw: unknown): Progress | null {
+	if (!validProgress(raw)) return null;
+	const next = structuredClone(raw);
+	if (next.version === 1) {
+		next.workspace = taskFor(next.step, next.seed)?.model ?? digits(0);
+		next.undo = [];
+	}
+	next.version = CONTENT_VERSION;
+	next.practice ??= null;
+	return next;
+}
+
+/** A build example describes the requested number, never its empty starting workspace. */
+export function attemptExample(attempt: Attempt): Attempt["example"] {
+	const example = attempt.example;
+	if (!example) return undefined;
+	return {
+		...example,
+		model:
+			attempt.family === "build" ? digits(example.answer) : [...example.model],
+	};
 }

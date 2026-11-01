@@ -11,7 +11,7 @@ slot. The teacher reviews the lesson's four goals and German script against
 the live activity before recording. No recruitment, purchase, external
 contact or recording consent has been performed by the implementing agent.
 
-Deliver a 2–3-minute German MP4, approximately 720p and initially under
+Deliver a 3–4-minute German MP4, approximately 720p and initially under
 15 MiB; clear close-ups of labelled units; German WebVTT captions; a poster;
 exact chapter timecodes; and an approved transcript. Publish attribution and
 rights metadata, while keeping personal consent documents outside the repo.
@@ -29,11 +29,13 @@ unapproved third-party worksheets. No background music is necessary.
 | 0:45–1:05 · B | Compare 306 and 360; show a thousands column. | „Wenn die Sechs zu den Zehnern wandert, ist sie sechzig wert. Dann entsteht eine andere Zahl. Jede Spalte hat ihren eigenen Wert.“ |
 | 1:05–1:35 · C | Count 10 E, bundle into 1 Z, then reverse the action. | „Zehn Einer sind genauso viel wie ein Zehner. Wir dürfen sie bündeln und auch wieder entbündeln. Die Menge bleibt gleich.“ |
 | 1:35–2:05 · D | Start with 142. Exchange 1 H for 10 Z, keeping the existing 4 Z and 2 E. | „Ein Hunderter sind zehn Zehner. Zusammen mit den vier Zehnern haben wir jetzt vierzehn Zehner und zwei Einer. Es bleibt hundertzweiundvierzig.“ |
-| 2:05–2:30 | Teacher invites exploration; do not reveal the fresh exit-task answer. | „Jetzt bist du dran. Baue eine Zahl für Milo und probiere einen Tausch aus. Prüfe: Ist die Zahl noch genauso viel wert?“ |
+| 2:05–2:45 | Move to 1 T, exchange into 10 H and then 100 Z. | „Ein Tausender sind zehn Hunderter. Jeden Hunderter können wir in zehn Zehner tauschen. Zusammen sind das hundert Zehner. Der Wert bleibt eintausend.“ |
+| 2:45–3:15 | Show 204 070 and label HT/ZT/T/H/Z/E. Then show 10 HT → 1 M. | „In zweihundertviertausendsiebzig steht die Zwei bei den Hunderttausendern: Sie ist zweihunderttausend wert. Die Zehntausender-, Hunderter- und Einerstelle bleiben leer. Zehn Hunderttausender sind eine Million.“ |
+| 3:15–3:40 | Teacher invites exploration; do not reveal the fresh exit-task answer. | „Jetzt bist du dran. Baue eine Zahl für Milo und probiere einen Tausch aus. Prüfe: Ist die Zahl noch genauso viel wert?“ |
 
 Allow natural pauses for the manipulations. The teacher can revise phrasing;
 record revisions and match the final captions/transcript to the actual clip.
-Use E/Z/H/T consistently, with columns ordered T/H/Z/E from left to right.
+Use E/Z/H/T/ZT/HT consistently, ordered HT/ZT/T/H/Z/E from left to right. Introduce M only for the million boundary. Examples must differ from subsequent generated tasks.
 Do not introduce subtraction, time pressure or claims of a Gymnasium place.
 
 ## Handoff to engineering

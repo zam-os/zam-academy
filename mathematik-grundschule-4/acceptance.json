@@ -20,43 +20,89 @@
 			"surface": "Codex in-app browser on macOS",
 			"check": "Complete two-mission journey through native controls",
 			"status": "passed",
-			"details": "Built 306 and 2 047; digit-value error/hint/retry; bundle; unbundle; undo; reason; explanation; fresh exit tasks; worked-solution continuation; one snack."
+			"details": "Built 306 and 2 047; digit-value error/hint/retry; bundle; unbundle; undo; reason; explanation; fresh exit tasks; worked-solution continuation; one snack.",
+			"content_version": 1,
+			"checked": "2026-10-31"
 		},
 		{
 			"surface": "Codex in-app browser on macOS",
 			"check": "Parent evidence from actual local attempts",
 			"status": "passed",
-			"details": "Two independently solved new tasks and two helped goals remained distinct; dated task examples reconstructed from seeds."
+			"details": "Two independently solved new tasks and two helped goals remained distinct; dated task examples reconstructed from seeds.",
+			"content_version": 1,
+			"checked": "2026-10-31"
 		},
 		{
 			"surface": "Native IndexedDB browser harness; isolated generated test store names",
 			"check": "Concurrency, idempotency, resumption, recovery, blocked storage",
 			"status": "passed",
-			"details": "Native concurrency, repeated grants, workspace/resumption, interrupted-transaction rollback and subsequent writes, recovery and memory fallback assertions passed in isolated stores; no learner store used."
+			"details": "Native concurrency, repeated grants, workspace/resumption, interrupted-transaction rollback and subsequent writes, recovery and memory fallback assertions passed in isolated stores; no learner store used.",
+			"content_version": 1,
+			"checked": "2026-10-31"
 		},
 		{
 			"surface": "320 px viewport and desktop viewport",
 			"check": "Parent view, navigation and learner layout bounds",
 			"status": "passed",
-			"details": "No horizontal body overflow or controls outside the body in inspected states. Not a physical touch-device test."
+			"details": "No horizontal body overflow or controls outside the body in inspected states. Not a physical touch-device test.",
+			"content_version": 1,
+			"checked": "2026-10-31"
 		},
 		{
 			"surface": "Codex in-app browser on macOS",
 			"check": "Reduced-motion setting and explicit fresh start",
 			"status": "passed",
-			"details": "Setting toggled; reset required the on-screen confirm action. Only agent-created test progress was reset."
+			"details": "Setting toggled; reset required the on-screen confirm action. Only agent-created test progress was reset.",
+			"content_version": 1,
+			"checked": "2026-10-31"
 		},
 		{
 			"surface": "Codex in-app browser on macOS",
 			"check": "Keyboard activation and question focus",
 			"status": "passed",
-			"details": "Enter activated the building mission; focus moved to the new question. Numeric inputs also support Enter submission."
+			"details": "Enter activated the building mission; focus moved to the new question. Numeric inputs also support Enter submission.",
+			"content_version": 1,
+			"checked": "2026-10-31"
 		},
 		{
 			"surface": "Isolated current-main PR checkout, built dist/index.html over localhost:5216",
 			"check": "Post-integration render and native IndexedDB harness",
 			"status": "passed",
-			"details": "Built German welcome, original Milo and explicit video-pending explanation rendered. All 11 native storage harness assertions passed after lint changes; direct file startup remains untested."
+			"details": "Built German welcome, original Milo and explicit video-pending explanation rendered. All 11 native storage harness assertions passed after lint changes; direct file startup remains untested.",
+			"content_version": 1,
+			"checked": "2026-10-31"
+		},
+		{
+			"surface": "Codex in-app browser, localhost:5226; content version 2",
+			"check": "Revised journey, practice gates and parent evidence",
+			"status": "passed",
+			"checked": "2026-11-01",
+			"content_version": 2,
+			"details": "Resumed guided round from the previous test session; completed its third task and the second mission, three transfer tasks and three fresh exit tasks. Wrong exchange, undo, explanatory success feedback, immediate optional practice, another fresh task and the corrected 80 808 build example were observed. Rewards remained 2 of 2."
+		},
+		{
+			"surface": "Codex in-app browser, localhost:5226; content version 2",
+			"check": "Grok reset regression",
+			"status": "passed",
+			"checked": "2026-11-01",
+			"content_version": 2,
+			"details": "After completed missions, snack consumption and a welcoming Milo, explicit reset returned to curious welcome with 0 rewards and disabled snack. Only agent-created test progress was reset."
+		},
+		{
+			"surface": "Native browser and production dist/index.html served over localhost",
+			"check": "Production startup, hidden answer row, themes and responsive bounds",
+			"status": "passed",
+			"checked": "2026-11-01",
+			"content_version": 2,
+			"details": "Production welcome and first question rendered with no numerical digit row. Dark and light modes inspected; 1280 px desktop and 375 px/320 px mobile body bounds checked without horizontal overflow. Physical touch hardware and direct file startup remain untested."
+		},
+		{
+			"surface": "Native IndexedDB browser harness on localhost:5226/tests/browser.html",
+			"check": "Storage regression checks after review changes",
+			"status": "passed",
+			"checked": "2026-11-01",
+			"content_version": 2,
+			"details": "All 11 isolated native transaction/concurrency/idempotency/abort/recovery/resumption/fallback assertions passed; harness uses the exported storage version."
 		}
 	],
 	"remaining": [
@@ -67,11 +113,11 @@
 		"Review prepared recall cards in the existing ZAM learner UI",
 		"Physical touch-device acceptance"
 	],
-	"checked": "2026-10-31",
+	"checked": "2026-11-01",
 	"automated_checks": {
-		"app": "Biome format/lint, typecheck and 26 Vitest tests passed in the isolated PR checkout",
+		"app": "Locked toolchain install, external Biome 2.5.6 format/lint, typecheck and 35 Vitest tests passed",
 		"catalog": "47 node:test catalog and public-registry checks passed; generated catalog has 36 existing cells and excludes this draft",
-		"cell": "4 atoms, 8 items; disposable install/enrol/recall/reinstall passed against workspace core and CI-pinned zam-core 0.54.0 with workspace dependencies",
+		"cell": "4 atoms, 12 items; disposable install/enrol/recall/reinstall passed against CI-pinned zam-core 0.54.0 with existing workspace native dependencies",
 		"all_cells": "All 37 Academy cells in the current-main PR checkout validated against CI-pinned zam-core 0.54.0 using disposable libraries",
 		"package": "Draft ZIP built and byte/asset/launcher verification passed; strict complete gate correctly refuses missing teacher recording"
 	},
@@ -90,5 +136,14 @@
 	"touch_hardware": {
 		"status": "pending",
 		"reason": "Responsive layout and native controls checked; no physical touch device was tested."
+	},
+	"review_decisions": {
+		"storage_and_media": {
+			"approved_by": "Thomas",
+			"date": "2026-10-31",
+			"source": "Explicit answer in this chat: Retain IndexedDB and the first-party video player; document the scoped exception"
+		},
+		"official_binding": "Deferred because current core treats a grade-specific binding as full coverage regardless of topic_code; generic import must remain available.",
+		"publication_safeguard": "Extracted into PR #73; lesson PR #72 is stacked on it."
 	}
 }

@@ -1,8 +1,12 @@
 /* biome-ignore-all lint/style/noDescendingSpecificity: Component groups are followed by deliberate responsive overrides. */
 :root {
+	--action: #7150c4;
+	--page: #f7f5ff;
+	--surface: #fff;
+	--soft: #f0ebf8;
 	font-family: ui-rounded, "Trebuchet MS", system-ui, sans-serif;
 	color: #302747;
-	background: #f7f5ff;
+	background: var(--page);
 	font-synthesis: none;
 	font-size: 16px;
 	line-height: 1.55;
@@ -36,7 +40,7 @@ button {
 	border: 1px solid var(--line);
 	border-radius: 12px;
 	padding: 10px 15px;
-	background: #fff;
+	background: var(--surface);
 	color: var(--ink);
 	font-weight: 600;
 	transition:
@@ -59,8 +63,8 @@ summary:focus-visible {
 	outline-offset: 4px;
 }
 button.primary {
-	background: var(--purple);
-	border-color: var(--purple);
+	background: var(--action);
+	border-color: var(--action);
 	color: #fff;
 	padding: 13px 21px;
 }
@@ -71,7 +75,7 @@ button.text-button {
 	border-color: transparent;
 	background: transparent;
 	padding: 8px 2px;
-	color: #6547a7;
+	color: var(--purple);
 	font-weight: 500;
 }
 h1,
@@ -204,7 +208,7 @@ main {
 	font-size: 11px;
 	letter-spacing: 1.4px;
 	font-weight: 700;
-	color: #79698f;
+	color: var(--muted);
 	margin-bottom: 7px;
 }
 .session-pill {
@@ -223,7 +227,7 @@ main {
 }
 .companion {
 	border-radius: 25px;
-	background: #fff;
+	background: var(--surface);
 	border: 1px solid var(--line);
 	overflow: hidden;
 	position: sticky;
@@ -288,7 +292,7 @@ main {
 	gap: 18px;
 }
 .lesson-card {
-	background: #fff;
+	background: var(--surface);
 	border: 1px solid var(--line);
 	border-radius: 25px;
 	padding: 29px;
@@ -300,7 +304,7 @@ main {
 .mission-label {
 	display: block;
 	text-transform: uppercase;
-	color: #8058b7;
+	color: var(--purple);
 	font-weight: 700;
 	letter-spacing: 1px;
 	font-size: 11px;
@@ -308,7 +312,7 @@ main {
 }
 .lead {
 	font-size: 17px;
-	color: #6b607e;
+	color: var(--muted);
 	max-width: 750px;
 }
 .fine-print {
@@ -321,14 +325,14 @@ main {
 }
 .place-columns {
 	display: grid;
-	grid-template-columns: repeat(4, minmax(0, 1fr));
+	grid-template-columns: repeat(var(--columns, 4), minmax(0, 1fr));
 	gap: 8px;
 	align-items: stretch;
 }
 .place-column {
 	min-width: 0;
 	border-radius: 15px;
-	background: #f8f6fc;
+	background: var(--soft);
 	padding: 10px 6px;
 	text-align: center;
 	border: 1px solid #f0eaf7;
@@ -541,7 +545,7 @@ main {
 	margin-top: 15px;
 }
 .teacher-panel {
-	background: #fff;
+	background: var(--surface);
 	border: 1px solid var(--line);
 	border-radius: 18px;
 	overflow: hidden;
@@ -649,15 +653,15 @@ main {
 }
 .island-route {
 	display: grid;
-	grid-template-columns: repeat(4, minmax(0, 1fr));
+	grid-template-columns: repeat(var(--columns, 4), minmax(0, 1fr));
 	gap: 8px;
 	text-align: center;
-	color: #83768f;
+	color: var(--muted);
 	font-size: 13px;
 	margin: 6px 0;
 }
 .island-route .current {
-	color: #4e805e;
+	color: var(--green);
 }
 .island-route small {
 	display: block;
@@ -773,7 +777,7 @@ main {
 }
 .parent-tip {
 	border-radius: 22px;
-	background: #fff;
+	background: var(--surface);
 	border: 1px solid var(--line);
 	padding: 27px;
 }
@@ -979,7 +983,7 @@ footer {
 		line-height: 1.4;
 	}
 	.island-route {
-		grid-template-columns: repeat(4, minmax(0, 1fr));
+		grid-template-columns: repeat(var(--columns, 4), minmax(0, 1fr));
 	}
 	.parent-tip {
 		padding: 23px;
@@ -1190,4 +1194,173 @@ footer {
 	margin: 0 auto 24px;
 	padding: 10px;
 	color: var(--purple);
+}
+
+:root[data-theme="dark"] {
+	color-scheme: dark;
+	--green: #94d2a6;
+	--mint: #183a28;
+	--page: #171425;
+	--surface: #242035;
+	--soft: #332b46;
+	--ink: #f2eafb;
+	--muted: #c7bcd7;
+	--line: #625571;
+	--purple: #9a76e1;
+	color: var(--ink);
+}
+@media (prefers-color-scheme: dark) {
+	:root:not([data-theme="light"]) {
+		color-scheme: dark;
+		--green: #94d2a6;
+		--mint: #183a28;
+		--page: #171425;
+		--surface: #242035;
+		--soft: #332b46;
+		--ink: #f2eafb;
+		--muted: #c7bcd7;
+		--line: #625571;
+		--purple: #9a76e1;
+		color: var(--ink);
+	}
+}
+
+body {
+	background: var(--page);
+	color: var(--ink);
+}
+.place-column,
+.explanation-callout,
+.merke,
+.example,
+.parent-tip,
+.observation,
+.teacher-content,
+.feedback {
+	background: var(--soft);
+	color: var(--ink);
+}
+.place-column h3 {
+	color: var(--ink);
+}
+.place-column.highlighted {
+	background: var(--soft);
+	outline: 2px solid var(--purple);
+}
+input {
+	background: var(--surface);
+	color: var(--ink);
+}
+.exchange-choices {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	margin-top: 12px;
+}
+.exchange-choices button {
+	min-height: 44px;
+}
+.digit-numeral {
+	font-size: 2rem;
+	font-variant-numeric: tabular-nums;
+	letter-spacing: 0.1em;
+}
+.digit-numeral mark {
+	background: #f4da72;
+	color: #332747;
+	border-radius: 5px;
+	padding: 0 4px;
+}
+.success {
+	border-left: 4px solid var(--green);
+	margin-bottom: 12px;
+}
+@media (max-width: 700px) {
+	.companion {
+		grid-template-columns: 64px minmax(0, 1fr);
+		padding: 8px;
+		gap: 8px;
+	}
+	.companion .island-art {
+		width: 64px;
+		height: 90px;
+		min-height: 0;
+		border-radius: 10px;
+	}
+	.companion-copy {
+		padding: 0;
+	}
+	.companion-title h2 {
+		font-size: 18px;
+	}
+	.companion-copy > p {
+		margin: 4px 0;
+		min-height: 0;
+		font-size: 12px;
+	}
+	.companion-copy > .care-note {
+		display: none;
+	}
+	.care-actions {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 4px;
+	}
+	.care-actions button {
+		min-height: 44px;
+		padding: 4px 8px;
+		font-size: 12px;
+	}
+	.companion-copy > .text-button {
+		min-height: 44px;
+		padding: 4px;
+	}
+	.place-column {
+		padding: 8px 0;
+	}
+	.place-column h3 span {
+		display: none;
+	}
+	.place-column h3 {
+		font-size: 16px;
+	}
+	.place-columns {
+		gap: 2px;
+	}
+	.count-controls button {
+		width: 100%;
+		min-width: 44px;
+		min-height: 44px;
+	}
+	.pieces {
+		height: auto;
+		min-height: 90px;
+		align-content: center;
+	}
+	.block {
+		max-width: 12px;
+		max-height: 12px;
+	}
+	.block-1 {
+		height: 24px;
+		max-height: 24px;
+	}
+}
+
+@media (max-width: 450px) {
+	.place-board.wide {
+		margin-left: -8px;
+		margin-right: -8px;
+	}
+}
+
+@media (max-width: 700px) {
+	.companion .care-actions {
+		flex-wrap: nowrap;
+	}
+	.companion .care-actions button {
+		width: auto;
+		min-width: 0;
+		flex: 1 1 0;
+	}
 }

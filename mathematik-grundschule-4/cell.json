@@ -3,7 +3,7 @@
 	"tile_id": "zam-academy:mathematik-grundschule-4",
 	"version": "2026.10.1",
 	"title": "Mathematik 4 Grundschule: Stellenwert-Starter",
-	"description": "Milos Stellenwert-Werkstatt: Ziffernwerte, Stellenwerttafeln, Nullstellen und Bündeln bis 9 999. Erprobungsfassung; fachliche Freigabe und Lehrervideo stehen noch aus. Kein vollständiger Jahreskurs.",
+	"description": "Milos Stellenwert-Werkstatt: Ziffernwerte, Nullstellen und Bündeln mit Aufgaben bis 999 999 und dem Übergang zur Million. Erprobungsfassung; fachliche Freigabe und Lehrervideo fehlen. Kein vollständiger Jahreskurs.",
 	"publisher": "ZAM Academy",
 	"sources": [
 		{
@@ -46,7 +46,15 @@
 					"question": "Wovon hängt der Wert einer Ziffer in einer Zahl ab?",
 					"concept": "Von ihrer Stelle in der Zahl.",
 					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=stellenwerte-buendeln",
-					"materiality": "material"
+					"materiality": "material",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Von ihrer Stelle in der Zahl.",
+							"Von der Anzahl der Ziffern allein."
+						],
+						"correct_index": 0
+					}
 				},
 				{
 					"id": "01M687PEW20404V25D97KRNPSK",
@@ -55,7 +63,24 @@
 					"tier": "tier1_fast",
 					"bloom_level": 2,
 					"question": "Welchen Wert hat die Ziffer 4 an der Hunderterstelle?",
-					"concept": "Vierhundert.",
+					"concept": "400.",
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=stellenwerte-buendeln",
+					"materiality": "material",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": ["400.", "4."],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M68BYKCACMKCRRY3TGDT3XHF",
+					"slug": "gs4-ziffernwert-transfer",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Die Ziffer 4 steht in 40 700 und in 204 070. Warum hat sie unterschiedliche Werte?",
+					"concept": "Ihre Stelle entscheidet über ihren Wert: 40 000 in 40 700 und 4 000 in 204 070.",
+					"sample_solution": "In 40 700 steht die 4 bei den Zehntausendern, in 204 070 bei den Tausendern. Eine Stelle weiter links bedeutet den zehnfachen Wert.",
 					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=stellenwerte-buendeln",
 					"materiality": "material"
 				}
@@ -71,7 +96,13 @@
 			"reduction": "axiomatic",
 			"typical_age_min": 8,
 			"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=stellenwerte-buendeln",
-			"prerequisites": [],
+			"prerequisites": [
+				{
+					"atom_id": "01M687PEW1C19H7AG6K8XMHGSS",
+					"type": "soft",
+					"rationale": "Das Verständnis des Ziffernwerts und der Stellenwerttafel unterstützt diesen Schritt."
+				}
+			],
 			"curricula": [
 				{
 					"provider": "zam-academy",
@@ -88,9 +119,14 @@
 					"tier": "tier1_fast",
 					"bloom_level": 1,
 					"question": "Welche Zahl besteht aus drei Hundertern, zwei Zehnern und vier Einern?",
-					"concept": "Dreihundertvierundzwanzig.",
+					"concept": "324.",
 					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=stellenwerte-buendeln",
-					"materiality": "material"
+					"materiality": "material",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": ["324.", "3 024."],
+						"correct_index": 0
+					}
 				},
 				{
 					"id": "01M687PEW3BKA43Z23P7TKY380",
@@ -98,8 +134,25 @@
 					"language": "de",
 					"tier": "tier1_fast",
 					"bloom_level": 2,
-					"question": "Wie viele Tausender hat die Zahl zweitausendsiebenundvierzig?",
-					"concept": "Zwei Tausender.",
+					"question": "Wie viele Tausender hat die Zahl 2 047?",
+					"concept": "2 Tausender.",
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=stellenwerte-buendeln",
+					"materiality": "material",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": ["2 Tausender.", "4 Tausender."],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M68BYKCB2DFVFZ1W2R5GAAQX",
+					"slug": "gs4-stellenwerttafel-transfer",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Welche Zahl besteht aus 3 HT, 2 ZT, 0 T, 4 H, 0 Z und 7 E?",
+					"concept": "320 407.",
+					"sample_solution": "Die Stellen werden in der Reihenfolge HT, ZT, T, H, Z, E geschrieben. Leere Stellen bekommen eine 0: 320 407.",
 					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=stellenwerte-buendeln",
 					"materiality": "material"
 				}
@@ -115,7 +168,13 @@
 			"reduction": "axiomatic",
 			"typical_age_min": 8,
 			"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=stellenwerte-buendeln",
-			"prerequisites": [],
+			"prerequisites": [
+				{
+					"atom_id": "01M687PEW348C0W3TZ3XM71ZRM",
+					"type": "soft",
+					"rationale": "Das Verständnis des Ziffernwerts und der Stellenwerttafel unterstützt diesen Schritt."
+				}
+			],
 			"curricula": [
 				{
 					"provider": "zam-academy",
@@ -131,10 +190,18 @@
 					"language": "de",
 					"tier": "tier1_fast",
 					"bloom_level": 1,
-					"question": "Warum steht in dreihundertsechs eine Null an der Zehnerstelle?",
+					"question": "Warum steht in 306 eine Null an der Zehnerstelle?",
 					"concept": "Weil die Zahl keinen Zehner enthält.",
 					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=stellenwerte-buendeln",
-					"materiality": "material"
+					"materiality": "material",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Weil die Zahl keinen Zehner enthält.",
+							"Weil die Null am Ende einer Zahl immer weggelassen wird."
+						],
+						"correct_index": 0
+					}
 				},
 				{
 					"id": "01M687PEW372M4C08HYAMZD6XN",
@@ -142,8 +209,25 @@
 					"language": "de",
 					"tier": "tier1_fast",
 					"bloom_level": 2,
-					"question": "Welche Stelle bleibt bei viertausendsechzig zwischen den Tausendern und Zehnern leer?",
+					"question": "Welche Stelle bleibt bei 4 060 zwischen den Tausendern und Zehnern leer?",
 					"concept": "Die Hunderterstelle.",
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=stellenwerte-buendeln",
+					"materiality": "material",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": ["Die Hunderterstelle.", "Die Zehnerstelle."],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M68BYKCBP3NFYYVCDVX50MRD",
+					"slug": "gs4-nullstelle-transfer",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Warum kann man in 30 407 die beiden Nullen nicht einfach weglassen?",
+					"concept": "Sie halten Tausender- und Zehnerstelle frei. Ohne sie würden andere Ziffern an falsche Stellen rutschen.",
+					"sample_solution": "30 407 hat 3 ZT, 0 T, 4 H, 0 Z und 7 E. 347 wäre eine andere Zahl mit anderen Stellenwerten.",
 					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=stellenwerte-buendeln",
 					"materiality": "material"
 				}
@@ -159,7 +243,18 @@
 			"reduction": "axiomatic",
 			"typical_age_min": 8,
 			"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=stellenwerte-buendeln",
-			"prerequisites": [],
+			"prerequisites": [
+				{
+					"atom_id": "01M687PEW1C19H7AG6K8XMHGSS",
+					"type": "soft",
+					"rationale": "Das Verständnis des Ziffernwerts und der Stellenwerttafel unterstützt diesen Schritt."
+				},
+				{
+					"atom_id": "01M687PEW348C0W3TZ3XM71ZRM",
+					"type": "soft",
+					"rationale": "Das Verständnis des Ziffernwerts und der Stellenwerttafel unterstützt diesen Schritt."
+				}
+			],
 			"curricula": [
 				{
 					"provider": "zam-academy",
@@ -176,9 +271,14 @@
 					"tier": "tier1_fast",
 					"bloom_level": 1,
 					"question": "Wie viele Einer sind genauso viel wie ein Zehner?",
-					"concept": "Zehn Einer.",
+					"concept": "10 Einer.",
 					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=stellenwerte-buendeln",
-					"materiality": "material"
+					"materiality": "material",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": ["10 Einer.", "100 Einer."],
+						"correct_index": 0
+					}
 				},
 				{
 					"id": "01M687PEW3R5NMZE46FRV96H05",
@@ -187,7 +287,24 @@
 					"tier": "tier1_fast",
 					"bloom_level": 2,
 					"question": "Wie viele Zehner erhältst du beim Entbündeln eines Hunderters?",
-					"concept": "Zehn Zehner.",
+					"concept": "10 Zehner.",
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=stellenwerte-buendeln",
+					"materiality": "material",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": ["10 Zehner.", "100 Zehner."],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M68BYKCBB92WM491SKV1YXDS",
+					"slug": "gs4-buendeln-transfer",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 2,
+					"question": "Erkläre, warum 1 000 genauso viel wie 10 H oder 100 Z ist.",
+					"concept": "1 T = 10 H = 100 Z. Der Wert bleibt 1 000.",
+					"sample_solution": "1 T wird in 10 H entbündelt. Jeder der 10 H ergibt 10 Z; zusammen sind das 100 Z. Es bleibt dieselbe Menge.",
 					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=stellenwerte-buendeln",
 					"materiality": "material"
 				}

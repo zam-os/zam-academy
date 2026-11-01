@@ -6,6 +6,15 @@ has been supplied. See the app's acceptance record for remaining checks.
 **Date:** 2026-10-31
 **Plan:** [Grade 4 mathematics implementation plan](../plans/2026-10-31-grade-4-discovery-island.md).
 
+## Review scope amendment — 2026-10-31
+
+The review follow-up expands the original four-place entry sequence to
+generated tasks through 999 999, T/H exchange and the worked million boundary.
+Read/build tasks withhold numerical readouts before an answer. Each mission
+includes three successful practice tasks on its own level; optional fresh
+rounds remain available immediately. Earlier evidence is retained as
+preview practice, without claiming it as independent success.
+
 ## Lesson contract
 
 | Field | Initial value |
