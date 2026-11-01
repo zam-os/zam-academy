@@ -30,14 +30,19 @@ import cell from "../cell.json";
 import coverage from "../coverage.json";
 import media from "../media-register.json";
 import { ulid } from "../src/id";
-import { board } from "../src/ui/board";
+import { board, markedNumeral } from "../src/ui/board";
 import {
 	practiceTask,
 	correctTask,
 	mistakeHint,
 	REQUIRED_CORRECT,
 } from "../src/practice/tasks";
-import { normaliseProgress, attemptExample } from "../src/practice/evidence";
+import {
+	normaliseProgress,
+	attemptExample,
+	parentObservation,
+	newPractice,
+} from "../src/practice/evidence";
 
 const required = <T>(value: T | null | undefined): T => {
 	if (value == null) throw new Error("Expected a generated value");
@@ -394,9 +399,14 @@ describe("review regressions", () => {
 		expect(mistakeHint(required(taskFor("digit", 4)), 2, digits(0))).toContain(
 			"Wert",
 		);
-		expect(
-			mistakeHint(required(taskFor("exit-exchange", 4)), 2112, digits(0)),
-		).toContain("nebeneinander");
+		const exchangeRead = {
+			...required(taskFor("exit-exchange", 4)),
+			model: [2, 11, 2, 0, 0, 0, 0],
+			answer: 312,
+		};
+		expect(mistakeHint(exchangeRead, 2112, digits(0))).toContain(
+			"nebeneinander",
+		);
 	});
 	it("preserves earlier evidence and rewards without upgrading answer-revealing tasks to independent success", () => {
 		const old = fresh(1000);
@@ -486,5 +496,111 @@ describe("Grok review regressions", () => {
 		};
 		expect(validProgress(p)).toBe(false);
 		expect(validProgress({ ...fresh(), version: "2" })).toBe(false);
+	});
+});
+
+describe("re-review refinements", () => {
+	it("varies both exchange directions across decimal positions with two meaningful choices", () => {
+		const bundling = new Set<number>(),
+			unbundling = new Set<number>(),
+			reasons = new Set<string>();
+		for (let seed = 0; seed < 600; seed++) {
+			for (const step of ["bundle", "exchange"] as const) {
+				const task = required(taskFor(step, seed));
+				(step === "bundle" ? bundling : unbundling).add(required(task.column));
+				expect(validCounts(task.model)).toBe(true);
+				const eligible = task.model.filter((n, i) =>
+					step === "bundle" ? i < 6 && n >= 10 : i > 0 && n > 0,
+				);
+				expect(eligible.length).toBeGreaterThanOrEqual(2);
+				expect(total(required(task.target))).toBe(task.answer);
+				expect(correctTask(task, null, task.model)).toBe(false);
+				expect(correctTask(task, null, required(task.target))).toBe(true);
+			}
+			const reason = required(taskFor("reason", seed));
+			reasons.add(reason.options?.[0].label ?? "");
+			expect(reason.options).toHaveLength(3);
+			expect(reason.options?.[1].label).toMatch(/100 [A-Z]+/);
+			expect(total(reason.model)).toBeGreaterThan(0);
+		}
+		expect([...bundling].sort()).toEqual([0, 1, 2, 3, 4]);
+		expect([...unbundling].sort()).toEqual([1, 2, 3, 4, 5]);
+		expect(reasons.size).toBe(5);
+	});
+	it("mentions concatenation only for that error and uses the actual exchange count and units", () => {
+		const task = {
+			...required(taskFor("exit-exchange", 4)),
+			model: [0, 0, 17, 2, 0, 0, 0],
+			answer: 3700,
+		};
+		expect(mistakeHint(task, 21700, digits(0))).toContain(
+			"17 H sind 1 T und 7 H",
+		);
+		expect(mistakeHint(task, 9999, digits(0))).not.toContain("nebeneinander");
+		expect(mistakeHint(task, 9999, digits(0))).toContain("Hunderter");
+		task.model = [2, 11, 2, 0, 0, 0, 0];
+		task.answer = 312;
+		expect(mistakeHint(task, 2112, digits(0))).toContain(
+			"11 Z sind 1 H und 1 Z",
+		);
+	});
+	it("keeps grouping and the highlighted position consistent and labels only visible board columns", () => {
+		expect(markedNumeral(50144, 2)).toContain("50\u202f<mark>1</mark>44");
+		expect(markedNumeral(378646, 4)).toContain("3<mark>7</mark>8\u202f646");
+		for (const width of [4, 5, 6, 7]) {
+			const html = board(digits(0), false, undefined, false, false, width);
+			const legend = required(
+				html.match(/<p class="board-legend">([^<]+)<\/p>/),
+			)[1];
+			expect(legend.includes("ZT Zehntausender")).toBe(width >= 5);
+			expect(legend.includes("HT Hunderttausender")).toBe(width >= 6);
+			expect(legend.includes("M Millionen")).toBe(width >= 7);
+		}
+	});
+	it("labels all v1 attempts as historical without inventing help or promoting mastery", () => {
+		const p = fresh(1000);
+		const task = required(taskFor("exit-read", p.seed));
+		recordAttempt(p, task, "old-independent", true, 2000, "exit");
+		const old = { ...p.attempts[0], version: 1 };
+		for (const helped of [false, true]) {
+			const observation = parentObservation([{ ...old, helped }]);
+			expect(observation.historical).toBe(true);
+			expect(observation.label).toBe("Frühere Vorschau-Übung (Version 1)");
+			expect(observation.success).toBeUndefined();
+			expect(observation.helped).toBeUndefined();
+		}
+		const actual = { ...old, version: 2, helped: false };
+		expect(parentObservation([old, actual]).success?.id).toBe(actual.id);
+		expect(old.version).toBe(1);
+	});
+	it("refreshes an in-flight v2 workspace for the changed generator while preserving evidence and rewards", () => {
+		const p = fresh(1000);
+		p.version = 2;
+		p.step = "practice-b";
+		p.practice = newPractice(2, 7, 3);
+		p.practice.index = 2;
+		p.practice.correct = 2;
+		p.helped.push(`${p.practice.id}/${p.practice.index}`);
+		p.workspace = digits(999);
+		p.undo = [digits(888)];
+		grant(p, "mission-a", 1500);
+		recordAttempt(
+			p,
+			required(taskFor("exit-read", p.seed)),
+			"previous-independent",
+			true,
+			2000,
+			"exit",
+		);
+		p.attempts[0].version = 2;
+		const restored = required(normaliseProgress(p));
+		expect(restored.workspace).toEqual(practiceTask(2, 7, 2).model);
+		expect(restored.undo).toEqual([]);
+		expect(restored.practice?.correct).toBe(2);
+		expect(restored.helped).toContain(`${p.practice.id}/v${CONTENT_VERSION}/2`);
+		expect(restored.rewards).toEqual(["mission-a"]);
+		expect(restored.attempts[0]).toEqual(p.attempts[0]);
+		expect(independent(restored.attempts[0])).toBe(true);
+		expect(restored.version).toBe(CONTENT_VERSION);
 	});
 });

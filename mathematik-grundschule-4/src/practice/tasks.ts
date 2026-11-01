@@ -11,7 +11,7 @@ import {
 } from "../math/place-value";
 
 export const LESSON_ID = "stellenwerte-buendeln";
-export const CONTENT_VERSION = 2;
+export const CONTENT_VERSION = 3;
 export const REQUIRED_CORRECT = 3;
 export const STEPS = [
 	"welcome",
@@ -110,12 +110,12 @@ function exchangeTask(
 ): Task {
 	const { int } = generator(seed);
 	const column = (
-		entry ? 0 : direction === "unbundle" ? 3 : int(1, 3)
+		entry ? 0 : direction === "unbundle" ? int(1, 5) : int(0, 4)
 	) as Column;
 	const model = digits(0);
 	// Two eligible places make the choice of exchange meaningful.
 	model[column] = direction === "bundle" ? int(10, 18) : int(1, 4);
-	model[direction === "bundle" ? (column + 2) % 4 : 2] +=
+	model[direction === "bundle" ? (column + 2) % 5 : (column % 5) + 1] +=
 		direction === "bundle" ? int(10, 15) : int(1, 8);
 	const target = [...model];
 	if (direction === "bundle") {
@@ -193,30 +193,31 @@ export function taskFor(
 		return exchangeTask(seed + code, "bundle", step === "entry-bundle");
 	if (step === "exchange") return exchangeTask(seed + code, "unbundle");
 	if (step === "reason") {
-		const h = int(1, 8);
+		const column = int(1, 5);
+		const count = int(1, 8);
+		const upper = LETTERS[column],
+			lower = LETTERS[column - 1];
+		const model = digits(0);
+		model[column - 1] = count * 10;
 		return {
 			family: "reason",
 			goal: "G4",
-			prompt: `Milo tauscht ${h} T gegen ${h * 10} H. Warum bleibt der Wert gleich?`,
+			prompt: `Milo tauscht ${count} ${upper} gegen ${count * 10} ${lower}. Warum bleibt der Wert gleich?`,
 			answer: 1,
-			model: [0, 0, h * 10, 0, 0, 0, 0],
+			model,
 			options: [
 				{
 					value: 1,
-					label:
-						"1 T ist genauso viel wie 10 H. Beim Tauschen bleibt der Wert gleich.",
+					label: `1 ${upper} ist genauso viel wie 10 ${lower}. Beim Tauschen bleibt der Wert gleich.`,
 				},
-				{
-					value: 0,
-					label: "Ein Hunderter ist genauso viel wie ein Tausender.",
-				},
+				{ value: 0, label: `1 ${upper} ist genauso viel wie 100 ${lower}.` },
 				{
 					value: 2,
 					label: "Beim Entbündeln wird der Wert zehnmal so groß wie vorher.",
 				},
 			],
-			hint: "Vergleiche den Wert eines Tausenders mit dem Wert von zehn Hundertern.",
-			explanation: `${h} T sind ${format(h * 1000)}. ${h * 10} H sind ebenfalls ${format(h * 1000)}. Auch 100 Z haben denselben Wert wie 1 T.`,
+			hint: `Vergleiche den Wert von 1 ${upper} mit dem Wert von 10 ${lower}.`,
+			explanation: `${count} ${upper} und ${count * 10} ${lower} haben denselben Wert: ${format(total(model))}. Die Anzahl der Stücke ändert sich, ihr Gesamtwert bleibt gleich.`,
 		};
 	}
 	if (step === "exit-exchange" || step === "later-exchange") {
@@ -289,10 +290,19 @@ export function mistakeHint(
 		input === Number(String(task.answer).replaceAll("0", ""))
 	)
 		return "Du hast leere Stellen übersprungen. Die Null hält ihren Platz frei: Einer bleiben rechts, Zehner daneben und Hunderter an der dritten Stelle.";
-	if (task.family === "exchange")
-		return "Schreibe Bündelzahlen wie 11 nicht einfach nebeneinander. 11 Z sind 1 H und 1 Z. Rechne erst den Wert jeder Spalte aus.";
-	if (task.family === "reason")
-		return "Die Anzahl der Stücke ändert sich, ihr Wert bleibt gleich. 1 Tausender entspricht 10 Hundertern, nicht einem Hunderter.";
+	if (task.family === "exchange") {
+		const column = task.model.findIndex((count) => count >= 10);
+		if (column >= 0) {
+			const count = task.model[column];
+			const concatenated = Number([...task.model].reverse().join(""));
+			if (input === concatenated) {
+				const remainder = count % 10;
+				return `Schreibe Bündelzahlen nicht einfach nebeneinander. ${count} ${LETTERS[column]} sind ${Math.floor(count / 10)} ${LETTERS[column + 1]}${remainder ? ` und ${remainder} ${LETTERS[column]}` : ""}. Rechne erst den Wert jeder Spalte aus.`;
+			}
+			return `Prüfe die ${NAMES[column]}: Ein Bündel dort ist ${format(WEIGHTS[column])} wert. Addiere die Werte aller Spalten.`;
+		}
+	}
+	if (task.family === "reason") return task.hint;
 	return "Lies die Spalten von rechts: E, Z, H, T, ZT, HT. Prüfe besonders die Nullstellen und die Größe jedes Bündels.";
 }
 export function orderedOptions(

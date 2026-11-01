@@ -103,6 +103,22 @@
 			"checked": "2026-11-01",
 			"content_version": 2,
 			"details": "All 11 isolated native transaction/concurrency/idempotency/abort/recovery/resumption/fallback assertions passed; harness uses the exported storage version."
+		},
+		{
+			"surface": "Production dist/index.html over localhost:5226 in the Codex in-app browser",
+			"check": "Re-review task variation, feedback and final-build resumption",
+			"status": "passed",
+			"checked": "2026-11-01",
+			"content_version": 3,
+			"details": "Built 380, 40 996 and 53 920; observed grouped digit questions 58 249 and 796 717 with correct highlighting and exact legends. Completed guided practice, E-to-Z bundling and H-to-Z unbundling; reasoning used 4 ZT = 40 T with a factor-100 distractor and task-specific feedback. Wrong 9999 received a unit-value hint; concatenated 421616 received the actual 16 H = 1 T + 6 H explanation. Corrected to 43 616 and inspected helped parent evidence. Final rebuilt page resumed this solved task with assistance preserved."
+		},
+		{
+			"surface": "Native isolated IndexedDB harness on localhost:5226/tests/browser.html",
+			"check": "Storage checks after version-3 migration changes",
+			"status": "passed",
+			"checked": "2026-11-01",
+			"content_version": 3,
+			"details": "All 11 native concurrency, idempotency, resumption, abort, recovery and fallback assertions passed using generated test stores; no learner store used."
 		}
 	],
 	"remaining": [
@@ -115,8 +131,8 @@
 	],
 	"checked": "2026-11-01",
 	"automated_checks": {
-		"app": "Locked toolchain install, external Biome 2.5.6 format/lint, typecheck and 35 Vitest tests passed",
-		"catalog": "47 node:test catalog and public-registry checks passed; generated catalog has 36 existing cells and excludes this draft",
+		"app": "Locked toolchain install, external Biome 2.5.6 format/lint, typecheck and 40 Vitest tests passed",
+		"catalog": "48 node:test catalog and public-registry checks passed; generated catalog has 36 existing cells and excludes this draft",
 		"cell": "4 atoms, 12 items; disposable install/enrol/recall/reinstall passed against CI-pinned zam-core 0.54.0 with existing workspace native dependencies",
 		"all_cells": "All 37 Academy cells in the current-main PR checkout validated against CI-pinned zam-core 0.54.0 using disposable libraries",
 		"package": "Draft ZIP built and byte/asset/launcher verification passed; strict complete gate correctly refuses missing teacher recording"
@@ -141,7 +157,8 @@
 		"storage_and_media": {
 			"approved_by": "Thomas",
 			"date": "2026-10-31",
-			"source": "Explicit answer in this chat: Retain IndexedDB and the first-party video player; document the scoped exception"
+			"source": "Recorded decision of 2026-10-31, cited at source_url: Retain IndexedDB and the first-party video player; document the scoped exception",
+			"source_url": "https://github.com/zam-os/zam-academy/pull/72#issuecomment-6564246975"
 		},
 		"official_binding": "Deferred because current core treats a grade-specific binding as full coverage regardless of topic_code; generic import must remain available.",
 		"publication_safeguard": "Extracted into PR #73; lesson PR #72 is stacked on it."

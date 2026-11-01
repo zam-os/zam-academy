@@ -38,6 +38,13 @@ record revisions and match the final captions/transcript to the actual clip.
 Use E/Z/H/T/ZT/HT consistently, ordered HT/ZT/T/H/Z/E from left to right. Introduce M only for the million boundary. Examples must differ from subsequent generated tasks.
 Do not introduce subtraction, time pressure or claims of a Gymnasium place.
 
+## Questions for the teacher review
+
+- Confirm whether grouping should precede the formal place-value sequence.
+  The cell's soft prerequisite graph currently uses digit value and the
+  table as support for exchange; it is a proposal, not a reviewed didactic order.
+- Check the space-based thousands grouping against the intended textbook.
+
 ## Handoff to engineering
 
 1. Place cleared assets in `public/media/` using the paths recorded below.

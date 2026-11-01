@@ -5,10 +5,10 @@ import {
 	describe,
 	digits,
 	exchange,
-	format,
 	parseInteger,
 	validCounts,
 	WEIGHTS,
+	total,
 	type Column,
 	type Counts,
 } from "./math/place-value";
@@ -16,7 +16,7 @@ import {
 	grant,
 	newPractice,
 	attemptExample,
-	independent,
+	parentObservation,
 	laterEligible,
 	nextStep,
 	recordAttempt,
@@ -24,6 +24,7 @@ import {
 } from "./practice/evidence";
 import {
 	LESSON_ID,
+	CONTENT_VERSION,
 	STEPS,
 	orderedOptions,
 	practiceTask,
@@ -34,7 +35,7 @@ import {
 	type Task,
 } from "./practice/tasks";
 import { ProgressStore } from "./storage/progress";
-import { board } from "./ui/board";
+import { board, markedNumeral } from "./ui/board";
 import { validLessonHash } from "./zam/zam-link";
 import { ulid } from "./id";
 
@@ -95,10 +96,10 @@ function currentTask(p = store.state): Task | null {
 }
 function taskKey(p = store.state): string {
 	return p.practice
-		? `${p.practice.id}/${p.practice.index}`
+		? `${p.practice.id}/v${CONTENT_VERSION}/${p.practice.index}`
 		: p.later
-			? `${p.later.id}/${p.later.index}`
-			: `journey/v2/${p.step}`;
+			? `${p.later.id}/v${CONTENT_VERSION}/${p.later.index}`
+			: `journey/v${CONTENT_VERSION}/${p.step}`;
 }
 function mood(): Mood {
 	return store.state.resting
@@ -190,18 +191,9 @@ function taskView(task: Task): string {
 	const numeral =
 		task.numeral === undefined
 			? ""
-			: `<p class="digit-numeral" aria-label="${format(task.numeral)}, markierte Ziffer ${digits(task.numeral)[task.column ?? 0]}">${String(
-					task.numeral,
-				)
-					.split("")
-					.map((digit, i, all) =>
-						all.length - i - 1 === task.column
-							? `<mark>${digit}</mark>`
-							: digit,
-					)
-					.join("")}</p>`;
+			: markedNumeral(task.numeral, task.column ?? 0);
 	return `<div class="mission-label">${label}</div><h2 id="lesson-heading" tabindex="-1">${escapeHtml(task.prompt)}</h2>${numeral}
-  ${board(counts, interactive && task.family === "build" && !solved, task.column, !!task.target && !solved, solved, Math.max(4, String(task.numeral ?? task.answer).length))}
+  ${board(counts, interactive && task.family === "build" && !solved, task.column, !!task.target && !solved, solved, Math.max(4, String(task.numeral ?? Math.max(task.answer, total(counts))).length))}
   ${interactive && !solved ? `<div class="workspace-tools"><span>Prüfe die Bündel in jeder Spalte.</span><button data-action="undo" ${p.undo.length ? "" : "disabled"}>Rückgängig</button><button data-action="task-reset">Aufgabe zurücksetzen</button></div>` : ""}
   ${
 		solved
@@ -249,26 +241,12 @@ function parent(): string {
 	const observations = Object.entries(GOALS)
 		.map(([key, title]) => {
 			const attempts = p.attempts.filter((a) => a.goal === key);
-			const success = [...attempts].reverse().find(independent);
-			const helped = [...attempts].reverse().find((a) => a.helped && a.outcome);
-			const last = success ?? helped ?? attempts.at(-1);
+			const { success, helped, last, historical, label } = parentObservation(
+				attempts,
+				p.completed["mission-b"],
+			);
 			const example = last ? attemptExample(last) : undefined;
-			const later =
-				success?.mode === "later" &&
-				p.completed["mission-b"] !== undefined &&
-				success.at - p.completed["mission-b"] >= 86_400_000;
-			const label = later
-				? "An einem späteren Tag geprüft"
-				: success
-					? "Neue Aufgabe selbstständig gelöst"
-					: helped
-						? "Mit Hilfe geübt"
-						: attempts.length
-							? last?.version === 1
-								? "Frühere Vorschau-Übung"
-								: "Ausprobiert"
-							: "Noch offen";
-			return `<article class="observation"><span class="observation-mark" aria-hidden="true">${success ? "✓" : helped ? "◇" : "○"}</span><div><span class="eyebrow">${label}</span><h3>${title}</h3><p>${last ? `${date(last.at)} · ${last.mode === "later" ? "Späterer Aufgabenversuch" : last.mode === "exit" ? "Neue Aufgabe" : "Übung in der Werkstatt"}${last.helped ? " · mit Tipp oder weiterem Versuch" : ""}` : "Dazu gibt es noch keinen Aufgabenversuch."}</p>${example ? `<p class="evidence-example">Beispiel: ${escapeHtml(example.prompt)} <span>${escapeHtml(describe(example.model))}</span></p>` : ""}</div></article>`;
+			return `<article class="observation"><span class="observation-mark" aria-hidden="true">${success ? "✓" : helped ? "◇" : "○"}</span><div><span class="eyebrow">${label}</span><h3>${title}</h3><p>${last ? `${date(last.at)} · ${historical ? "Frühere Vorschau-Aufgabe · ohne Bewertung nach den neuen Kriterien" : last.mode === "later" ? "Späterer Aufgabenversuch" : last.mode === "exit" ? "Neue Aufgabe" : "Übung in der Werkstatt"}${!historical && last.helped ? " · mit Tipp oder weiterem Versuch" : ""}` : "Dazu gibt es noch keinen Aufgabenversuch."}</p>${example ? `<p class="evidence-example">Beispiel: ${escapeHtml(example.prompt)} <span>${escapeHtml(describe(example.model))}</span></p>` : ""}</div></article>`;
 		})
 		.join("");
 	return `<section class="parent-view"><p class="eyebrow">Kleine Schritte werden sichtbar</p><h1>Das hat dein Kind ausprobiert.</h1><p class="lead">Diese Beobachtungen stammen aus den Aufgaben auf diesem Gerät. Eine geübte Lektion ist noch kein Nachweis, dass alles sicher beherrscht wird.</p><div class="parent-grid"><div>${observations}</div><aside class="parent-tip"><span aria-hidden="true">♡</span><h2>Eine Frage für zu Hause</h2><p>„Kannst du mir zeigen, warum ein Hunderter genauso viel ist wie zehn Zehner?“</p><p>Lass dein Kind seinen Weg zeigen. Bausteine oder eine kleine Zeichnung reichen aus.</p><hr><h3>Der nächste kleine Schritt</h3><p>${p.step === "finished" ? "Jetzt mit frischen Zahlen weiterüben oder später noch einmal nachschauen. Stellenwerte bis 999 999 und der Übergang zur Million kommen in dieser Werkstatt vor." : "Die aktuelle Mission fortsetzen. Hinweise und Pausen sind jederzeit erlaubt."}</p></aside></div><p class="fine-print">Quelle: lokale Academy-Übungen · keine Schulnote, Diagnose oder Schullaufbahnempfehlung. ZAM-Wiederholungen werden getrennt in ZAM geführt.</p></section>`;

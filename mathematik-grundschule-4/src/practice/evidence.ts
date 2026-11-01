@@ -3,6 +3,7 @@ import {
 	REQUIRED_CORRECT,
 	STEPS,
 	taskFor,
+	practiceTask,
 	type Step,
 	type Task,
 } from "./tasks";
@@ -91,7 +92,9 @@ export function validProgress(v: unknown): v is Progress {
 	if (
 		!object(v) ||
 		v.schema !== 1 ||
-		(v.version !== 1 && v.version !== CONTENT_VERSION) ||
+		!Number.isInteger(v.version) ||
+		Number(v.version) < 1 ||
+		Number(v.version) > CONTENT_VERSION ||
 		!seed(v.seed) ||
 		!STEPS.includes(v.step as Step) ||
 		!validCounts(v.workspace) ||
@@ -158,7 +161,9 @@ export function validProgress(v: unknown): v is Progress {
 				typeof a.helped === "boolean" &&
 				typeof a.first === "boolean" &&
 				["guided", "entry", "exit", "later"].includes(String(a.mode)) &&
-				(a.version === 1 || a.version === CONTENT_VERSION) &&
+				Number.isInteger(a.version) &&
+				Number(a.version) >= 1 &&
+				Number(a.version) <= CONTENT_VERSION &&
 				(a.example === undefined ||
 					(object(a.example) &&
 						typeof a.example.prompt === "string" &&
@@ -281,8 +286,32 @@ export function newPractice(
 export function normaliseProgress(raw: unknown): Progress | null {
 	if (!validProgress(raw)) return null;
 	const next = structuredClone(raw);
-	if (next.version === 1) {
-		next.workspace = taskFor(next.step, next.seed)?.model ?? digits(0);
+	if (next.version < CONTENT_VERSION) {
+		const round = next.practice ?? next.later;
+		const currentKey = round
+			? `${round.id}/v${CONTENT_VERSION}/${round.index}`
+			: `journey/v${CONTENT_VERSION}/${next.step}`;
+		const oldKeys = round
+			? [
+					`${round.id}/${round.index}`,
+					`${round.id}/v${next.version}/${round.index}`,
+				]
+			: [`journey/${next.step}`, `journey/v${next.version}/${next.step}`];
+		// A resumed attempt is not a fresh independent response after an upgrade.
+		if (
+			oldKeys.some(
+				(key) =>
+					next.helped.includes(key) || next.attempts.some((a) => a.key === key),
+			)
+		)
+			next.helped = [...new Set([...next.helped, currentKey])].slice(-1000);
+		next.workspace = next.practice
+			? practiceTask(
+					next.practice.level,
+					next.practice.seed,
+					next.practice.index,
+				).model
+			: (taskFor(next.step, next.seed)?.model ?? digits(0));
 		next.undo = [];
 	}
 	next.version = CONTENT_VERSION;
@@ -299,4 +328,28 @@ export function attemptExample(attempt: Attempt): Attempt["example"] {
 		model:
 			attempt.family === "build" ? digits(example.answer) : [...example.model],
 	};
+}
+
+export function parentObservation(attempts: Attempt[], completedAt?: number) {
+	const current = attempts.filter((a) => a.version >= 2);
+	const success = [...current].reverse().find(independent);
+	const helped = [...current].reverse().find((a) => a.helped && a.outcome);
+	const last = success ?? helped ?? current.at(-1) ?? attempts.at(-1);
+	const historical = last?.version === 1;
+	const later =
+		success?.mode === "later" &&
+		completedAt !== undefined &&
+		success.at - completedAt >= 86_400_000;
+	const label = historical
+		? "Frühere Vorschau-Übung (Version 1)"
+		: later
+			? "An einem späteren Tag geprüft"
+			: success
+				? "Neue Aufgabe selbstständig gelöst"
+				: helped
+					? "Mit Hilfe geübt"
+					: last
+						? "Ausprobiert"
+						: "Noch offen";
+	return { success, helped, last, historical, label };
 }

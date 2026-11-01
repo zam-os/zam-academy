@@ -99,7 +99,10 @@ the final approved recording respectively; no browser-policy bypass was used.
   coverage is claimed.
 - Evidence records first responses separately from helped retries. The
   parent view uses stable task snapshots for dated examples, with canonical
-  targets for build tasks.
+  targets for build tasks. Version-1 observations are labelled as historical
+  preview exercises; valid version-2 evidence remains valid. Content-version
+  upgrades refresh changed workspaces while preserving logs, rewards, practice
+  counts and assistance status on resumed work.
   Local practice is never presented as ZAM review history or an FSRS score.
 - A versioned IndexedDB document commits mission completion and unique
   reward keys together. Concurrent tabs serialize writes. Ordinary version

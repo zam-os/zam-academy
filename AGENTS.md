@@ -42,7 +42,9 @@ builds and the tests pass" is not the bar.
    `localStorage`; teacher videos are plain links, never embeds. New npm
    dependencies need Thomas's approval.
    **Discovery Island exception** (`mathematik-grundschule-4`, explicitly
-   approved by Thomas in this chat on 2026-10-31): local progress may use
+   approved by Thomas on 2026-10-31;
+   [public approval record](https://github.com/zam-os/zam-academy/pull/72#issuecomment-6564246975)):
+   local progress may use
    transactional IndexedDB, and an approved first-party teacher recording
    may use a native HTML video player and travel in the offline ZIP. This
    permits neither third-party embeds nor background requests. Recording

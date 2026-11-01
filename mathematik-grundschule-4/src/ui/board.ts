@@ -3,6 +3,8 @@ import {
 	NAMES,
 	WEIGHTS,
 	MAX_NUMBER,
+	format,
+	digits,
 	type Counts,
 } from "../math/place-value";
 
@@ -28,5 +30,19 @@ export function board(
 		})
 		.join(
 			"",
-		)}</div><p class="board-legend">E Einer · Z Zehner · H Hunderter · T Tausender${width > 4 ? " · ZT Zehntausender · HT Hunderttausender" : ""}${width > 6 ? " · M Millionen" : ""}</p>${exchanges ? `<div class="exchange-choices">${columns.flatMap((i) => [i < 6 ? `<button data-action="bundle" data-col="${i}" ${(counts[i] ?? 0) < 10 ? "disabled" : ""} aria-label="Zehn ${NAMES[i]} bündeln">10 ${LETTERS[i]} → 1 ${LETTERS[i + 1]}</button>` : "", i > 0 ? `<button data-action="unbundle" data-col="${i}" ${!counts[i] ? "disabled" : ""} aria-label="Einen ${NAMES[i]} entbündeln">1 ${LETTERS[i]} → 10 ${LETTERS[i - 1]}</button>` : ""]).join("")}</div>` : ""}</div>`;
+		)}</div><p class="board-legend">${Array.from({ length: width }, (_, i) => `${LETTERS[i]} ${NAMES[i]}`).join(" · ")}</p>${exchanges ? `<div class="exchange-choices">${columns.flatMap((i) => [i < 6 ? `<button data-action="bundle" data-col="${i}" ${(counts[i] ?? 0) < 10 ? "disabled" : ""} aria-label="Zehn ${NAMES[i]} bündeln">10 ${LETTERS[i]} → 1 ${LETTERS[i + 1]}</button>` : "", i > 0 ? `<button data-action="unbundle" data-col="${i}" ${!counts[i] ? "disabled" : ""} aria-label="Einen ${NAMES[i]} entbündeln">1 ${LETTERS[i]} → 10 ${LETTERS[i - 1]}</button>` : ""]).join("")}</div>` : ""}</div>`;
+}
+
+/** Keep thousands grouping while counting only digits to identify a decimal position. */
+export function markedNumeral(value: number, column: number): string {
+	let position = String(value).length;
+	const text = format(value)
+		.split("")
+		.map((char) => {
+			if (!/[0-9]/.test(char)) return char;
+			position -= 1;
+			return position === column ? `<mark>${char}</mark>` : char;
+		})
+		.join("");
+	return `<p class="digit-numeral" aria-label="${format(value)}, markierte Ziffer ${digits(value)[column]}">${text}</p>`;
 }

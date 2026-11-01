@@ -69,10 +69,12 @@ approval is implied.
 
 ## Decisions and remaining differences
 
-Thomas explicitly chose “Retain IndexedDB and the first-party video player;
-document the scoped exception” in this chat on 2026-10-31. AGENTS.md rule 7
-and the README record only that approved exception. It allows neither
-third-party embeds nor invented teacher approval.
+Thomas's existing approval of 2026-10-31 is cited in the
+[public approval record](https://github.com/zam-os/zam-academy/pull/72#issuecomment-6564246975), which quotes the decision already published in commit 9482d89.
+AGENTS.md and the README record that scoped exception. The reference is an
+agent-recorded pointer to the existing decision, not a fresh human approval;
+the underlying conversation remains private. It permits neither third-party
+embeds nor invented teacher approval.
 
 The chosen primary-school mission UI remains a custom adaptation, rather
 than the secondary-school HTML/JSON shell or slider labs. Integer input is
@@ -102,3 +104,28 @@ Browser checks cover the journey, both practice levels, feedback, optional
 practice, parent evidence, reset, themes, responsive bounds and native
 IndexedDB transactions in isolated test stores. Direct file startup and
 recorded-video playback remain explicitly unverified.
+
+## Follow-up re-review — 2026-11-01
+
+- Bundling now varies from E through ZT; unbundling varies from Z through HT.
+  Every generated exchange offers two eligible columns. Reasoning checks
+  vary the adjacent units too, including a plausible factor-100 distractor.
+- Concatenation feedback appears only for an actually concatenated value.
+  Its regrouping example uses the task's own count and units; other wrong
+  exchange answers receive a unit-value hint instead.
+- Numerals keep thousands grouping while highlighting the correct decimal
+  position. Board legends list exactly the displayed columns.
+- V1 attempts retain their recorded facts and receive a historical-preview
+  label, without asserting help or independent success under newer criteria.
+  Valid version-2 independent evidence remains valid.
+- Content version 3 refreshes an in-flight workspace when its generator
+  changes and uses versioned attempt keys. It preserves logs, rewards and
+  completed practice counts. Previously attempted or helped work remains
+  marked as assisted on resumption; an upgrade cannot create independent
+  evidence or mint food by replaying the same task.
+- The teacher brief explicitly asks whether the prerequisite direction
+  should be reversed so grouping precedes formal place value.
+- The shared Pages loop in #73 now refuses drafts or invalid publication
+  metadata before building/copying an app. Its regression test executes
+  that exact workflow command, with ready, absent, local-only and invalid
+  markers. Registry errors name a misregistered draft directly.
