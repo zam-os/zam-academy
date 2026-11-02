@@ -2,7 +2,7 @@
 	"schema": 1,
 	"checked": "2026-10-31",
 	"source_sha256": "d6883fa04d305d52e83aa16dfd5384eacb40e98b86ffad3dc3e05aec42cf5dd4",
-	"scope": "Shared Grades 3/4. Eight Number Forest lessons implement parts of 1.1 and 1.2; coverage is not learner mastery.",
+	"scope": "Shared Grades 3/4. Eleven Number Forest lessons implement parts of 1.1 and 1.2; coverage is not learner mastery.",
 	"full_coverage": false,
 	"review_status": "awaiting-primary-teacher",
 	"curriculum": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik",
@@ -48,6 +48,21 @@
 			"official_cell_binding": "deferred: a grade-specific binding suppresses the generic importer even when its topic_code is narrow"
 		},
 		"schriftlich-addieren": {
+			"section": "1.2",
+			"scope": "partial",
+			"official_cell_binding": "deferred: a grade-specific binding suppresses the generic importer even when its topic_code is narrow"
+		},
+		"schriftlich-subtrahieren": {
+			"section": "1.2",
+			"scope": "partial",
+			"official_cell_binding": "deferred: a grade-specific binding suppresses the generic importer even when its topic_code is narrow"
+		},
+		"schriftlich-multiplizieren": {
+			"section": "1.2",
+			"scope": "partial",
+			"official_cell_binding": "deferred: a grade-specific binding suppresses the generic importer even when its topic_code is narrow"
+		},
+		"schriftlich-dividieren": {
 			"section": "1.2",
 			"scope": "partial",
 			"official_cell_binding": "deferred: a grade-specific binding suppresses the generic importer even when its topic_code is narrow"
@@ -233,12 +248,17 @@
 				"geschickt-addieren",
 				"geschickt-subtrahieren",
 				"malnehmen-teilen",
-				"schriftlich-addieren"
+				"schriftlich-addieren",
+				"schriftlich-subtrahieren",
+				"schriftlich-multiplizieren",
+				"schriftlich-dividieren"
 			],
 			"planned_work": ["N04", "N05", "N06", "N07", "N08", "N09", "N10", "N11"],
 			"evidence": [
 				"German explanations and worked strategies; three reachable jump/group lab goals; guided and transfer generators; inverse checks and fresh exits",
-				"Written addition of two nonnegative whole-number summands: entered result digits and carries, zero positions, carry chain to one million, contextual addition, correction and error reasoning"
+				"Written addition of two nonnegative whole-number summands: entered result digits and carries, zero positions, carry chain to one million, contextual addition, correction and error reasoning",
+				"Written subtraction by value-preserving regrouping: entered result digits, explicit bundle exchanges across zero columns, contextual tasks, erroneous-result correction and addition checks; three tasks per level and fresh exits",
+				"Written multiplication with one/two-digit factors: partial product digits, carries, fixed tens shift and final addition; written division by 1–10: partial dividends, quotient digits including zeros, subtraction and remainders; context and editable correction tasks, three successes per level and fresh exits"
 			],
 			"physical_work": [],
 			"reviewer": null,
@@ -276,12 +296,17 @@
 			"lessons": [
 				"geschickt-addieren",
 				"geschickt-subtrahieren",
-				"schriftlich-addieren"
+				"schriftlich-addieren",
+				"schriftlich-subtrahieren",
+				"schriftlich-multiplizieren",
+				"schriftlich-dividieren"
 			],
 			"planned_work": ["N04", "N05", "N06", "N07", "N08", "N09", "N10", "N11"],
 			"evidence": [
 				"German explanations and worked strategies; three reachable jump/group lab goals; guided and transfer generators; inverse checks and fresh exits",
-				"Written addition of two nonnegative whole-number summands: entered result digits and carries, zero positions, carry chain to one million, contextual addition, correction and error reasoning"
+				"Written addition of two nonnegative whole-number summands: entered result digits and carries, zero positions, carry chain to one million, contextual addition, correction and error reasoning",
+				"Written subtraction by value-preserving regrouping: entered result digits, explicit bundle exchanges across zero columns, contextual tasks, erroneous-result correction and addition checks; three tasks per level and fresh exits",
+				"Written multiplication with one/two-digit factors: partial product digits, carries, fixed tens shift and final addition; written division by 1–10: partial dividends, quotient digits including zeros, subtraction and remainders; context and editable correction tasks, three successes per level and fresh exits"
 			],
 			"physical_work": [],
 			"reviewer": null,
@@ -297,14 +322,21 @@
 			"source": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik#25775",
 			"checked": "2026-11-02",
 			"status": "partial",
-			"lessons": ["schriftlich-addieren"],
+			"lessons": [
+				"schriftlich-addieren",
+				"schriftlich-subtrahieren",
+				"schriftlich-multiplizieren",
+				"schriftlich-dividieren"
+			],
 			"planned_work": ["N04", "N05", "N06", "N07", "N08", "N09", "N10", "N11"],
 			"evidence": [
-				"Written addition of two nonnegative whole-number summands: entered result digits and carries, zero positions, carry chain to one million, contextual addition, correction and error reasoning"
+				"Written addition of two nonnegative whole-number summands: entered result digits and carries, zero positions, carry chain to one million, contextual addition, correction and error reasoning",
+				"Written subtraction by value-preserving regrouping: entered result digits, explicit bundle exchanges across zero columns, contextual tasks, erroneous-result correction and addition checks; three tasks per level and fresh exits",
+				"Written multiplication with one/two-digit factors: partial product digits, carries, fixed tens shift and final addition; written division by 1–10: partial dividends, quotient digits including zeros, subtraction and remainders; context and editable correction tasks, three successes per level and fresh exits"
 			],
 			"physical_work": [],
 			"reviewer": null,
-			"remaining": "Primary-school teacher review; further addition fluency and more than two summands; written subtraction, multiplication and division (including remainders)",
+			"remaining": "Primary-school teacher review; broader fluency and more than two summands; full automatic command of the written procedures has not been assessed",
 			"lb": 1,
 			"competence": "wenden automatisiert die schriftlichen Verfahren der Addition, der Subtraktion (Abziehverfahren), der Multiplikation (ein- und zweistellige Multiplikatoren) und der Division (Divisoren bis einschließlich 10, auch mit Rest) an."
 		},
@@ -319,12 +351,17 @@
 			"lessons": [
 				"geschickt-addieren",
 				"geschickt-subtrahieren",
-				"schriftlich-addieren"
+				"schriftlich-addieren",
+				"schriftlich-subtrahieren",
+				"schriftlich-multiplizieren",
+				"schriftlich-dividieren"
 			],
 			"planned_work": ["N04", "N05", "N06", "N07", "N08", "N09", "N10", "N11"],
 			"evidence": [
 				"German explanations and worked strategies; three reachable jump/group lab goals; guided and transfer generators; inverse checks and fresh exits",
-				"Written addition of two nonnegative whole-number summands: entered result digits and carries, zero positions, carry chain to one million, contextual addition, correction and error reasoning"
+				"Written addition of two nonnegative whole-number summands: entered result digits and carries, zero positions, carry chain to one million, contextual addition, correction and error reasoning",
+				"Written subtraction by value-preserving regrouping: entered result digits, explicit bundle exchanges across zero columns, contextual tasks, erroneous-result correction and addition checks; three tasks per level and fresh exits",
+				"Written multiplication with one/two-digit factors: partial product digits, carries, fixed tens shift and final addition; written division by 1–10: partial dividends, quotient digits including zeros, subtraction and remainders; context and editable correction tasks, three successes per level and fresh exits"
 			],
 			"physical_work": [],
 			"reviewer": null,

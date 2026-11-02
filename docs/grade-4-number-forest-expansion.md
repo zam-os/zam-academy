@@ -134,3 +134,89 @@ The written-addition code/content reviews have been processed and independently
 rechecked. Primary-school teacher approval and recordings remain pending.
 The [review follow-up](grade-4-pr75-review-follow-up.md) records the changes
 and validation; this does not complete publication acceptance.
+
+
+## Written subtraction — 2026-11-02
+
+The continuation adds the ninth draft lesson, `schriftlich-subtrahieren`
+(Milos Bündeltausch). The official shared Grades 3/4 section 1.2 was read
+again on 2026-11-02, together with Grades 1/2 and both Grade-5 follow-ups
+linked in the plan. The lesson uses the Abziehverfahren with Entbündeln.
+Operands and nonnegative differences stay at most one million; written
+multiplication and division, fluency and teacher sign-off remain open.
+
+The child explicitly trades one upper bundle for ten of the adjacent
+smaller place, with both the original and current representation visible.
+Zero columns require several trades. The board checks the representation
+and every result digit, supports keyboard entry, and offers an exchange
+reset that retains the typed result. Each lesson owns a separate IndexedDB
+document; no old document or storage migration changes. Validation notices
+consume no attempt; retries and hints remain assisted evidence.
+
+Guided tasks have four/five places and zero, one or two separate exchanges.
+Transfer tasks have six/five-place operands and a guaranteed exchange
+through a zero tens column. Context, an addition-probe prompt and correcting
+Milo's erroneous result differ from guided work. The final goal-three task
+requires a corrected board rather than revealing a diagnosis. The lab also
+shows 10 000 minus one; model checks include one million minus one and equal
+operands. Three successes per level and three fresh exits remain mandatory.
+
+The cell adds one atom and four items with generated ULIDs (two binary
+checks and two synthesis tasks), version 2026.11.5, twelve atoms/thirty-eight
+items overall. All earlier eleven atoms/thirty-four items remain unchanged
+as parsed JSON. No replacement, retirement or public registration is
+added. The coverage rows stay partial and unreviewed; the recording brief
+is a production proposal. Current verification is recorded in acceptance.json.
+
+
+## Written multiplication and division — 2026-11-02
+
+The two requested lessons bring the local draft to eleven lessons. Section
+1.2 of the current official Grades 3/4 curriculum and the Grades 1/2 and
+Grade-5 follow-ups were re-read. Both lessons stay within whole numbers up
+to one million. Coverage remains partial and unreviewed; practicing these
+procedures is not evidence that a learner uses them automatically.
+
+`schriftlich-multiplizieren` uses one-digit factors in guided work and
+two-digit factors in transfer. The child enters each partial product digit,
+each nonzero carry, and the final sum with its carries. The tens row has a
+fixed ones-place zero. The addition board previews the child's own partial
+entries rather than the correct model. Transfer includes full tens, context
+and correcting a product calculated without shifting the tens row.
+
+`schriftlich-dividieren` uses divisors through 10. Each dividend digit has
+one visible step for the partial dividend, quotient digit, amount subtracted
+and remainder. A leading quotient zero is retained in this teaching board
+and omitted only when reading the whole answer; internal zeros remain.
+Transfer guarantees an internal zero and includes nonzero final remainders,
+division by 10 and correction. The worked check is quotient times divisor
+plus remainder equals dividend, with remainder smaller than divisor.
+
+Both lessons retain three lab goals, three successes per practice level,
+three fresh exit tasks, optional practice, assistance-aware evidence and
+unique rewards. Their new per-lesson documents store only the current array
+of entered fields; no earlier document or migration changes. Incomplete
+input and wholly omitted multiplication carries receive validation notices;
+mathematical errors and hints remain assisted retries. The existing
+subtraction addition-probe graphic now shows the actual missing-addend form.
+
+The cell version is 2026.11.6 with fourteen atoms/forty-six items. Each new
+lesson adds one atom and four recall items, all generated ULIDs. Earlier
+content and identifiers remain unchanged; no replacement or retirement is
+introduced. Publication remains local-only. Teacher review, real recordings,
+rights/captions/transcripts and final manual acceptance are pending. See
+acceptance.json for actual command and browser evidence, and the recording
+briefs for proposed German teacher scripts.
+
+
+Independent review rechecked the arithmetic, lesson gates, cards and saved
+work against the package standard. Findings corrected before the PR:
+keyed transient input drafts preserve edits through unrelated renders;
+subtraction over-exchanges explicitly direct an exchange reset; the division
+quiz increments the whole quotient; zero multiplication never proposes
+division by zero; single-factor boards omit tens-row instructions; and
+two-digit multiplication checks use a different additive decomposition
+instead of out-of-scope two-digit division. The reviewer reported no
+remaining actionable findings after targeted tests (29 across three files,
+then nine for the final multiplication explanation recheck). This does not
+substitute for primary-school teacher approval.

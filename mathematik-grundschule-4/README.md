@@ -1,16 +1,20 @@
 # ZAM Discovery Island: Grade 4 Number Forest
 
-German learner and parent UI for Bavarian Grade 4. Eight selectable lessons
-in the Number Forest now cover place values/bundling, comparing/ordering,
-number lines/equal jumps, decomposition/complements, addition strategies,
-subtraction strategies, multiplication/inverse division, and written addition. Each has two
-resumable missions, three successful tasks per practice level, fresh exit
-checks, optional practice and a welcoming Milo. A lesson is a draft activity,
-not a completed annual course or proof of mastery.
+German learner and parent UI for Bavarian Grade 4. Eleven selectable lessons
+in the Number Forest cover place values/bundling, comparing/ordering,
+number lines/equal jumps, decomposition/complements, addition/subtraction
+strategies, multiplication/inverse division and the four written procedures.
+Each has two resumable missions, three successful tasks per practice level,
+fresh exit checks, optional practice and a welcoming Milo. A lesson is a
+draft activity, not a completed annual course or proof of mastery.
 
-The seven added lessons have exactly three interactive goals each, using a
-number gate, a keyboard-friendly number-line marker, coupled treasure bars,
-calculation jumps, equal baskets and a column board for result digits/carries. All whole-number activities stay between 0 and one million.
+The ten lessons added after the original workshop have three interactive
+goals each. Their models include a number gate, a keyboard-friendly
+number-line marker, coupled treasure bars, calculation jumps, equal baskets,
+result/carry boards, a value-preserving regrouping board, partial-product
+boards and a step-by-step division workshop. Numbers and results stay
+between zero and one million. Written multiplication uses one/two-digit
+factors; written division uses divisors through 10, including remainders.
 
 ## Status
 
@@ -89,8 +93,8 @@ the final approved recording respectively; no browser-policy bypass was used.
 - Lesson id: `stellenwerte-buendeln`; cell:
   `zam-academy:mathematik-grundschule-4`. Public links are future source
   addresses and do not indicate that this draft is already hosted.
-- `cell.json` is the sole recall-card source: eleven atoms, thirty-four German
-  items (twenty-two binary fast checks and twelve synthesis tasks) with fixed ULIDs.
+- `cell.json` is the sole recall-card source: fourteen atoms, forty-six German
+  items (twenty-eight binary fast checks and eighteen synthesis tasks) with fixed ULIDs.
   Edit cards only in this file; there is no
   second authored card list or card generator. Installation uses the approved
   core's card-text validation and write path. Prerequisites form an acyclic
@@ -99,8 +103,8 @@ the final approved recording respectively; no browser-policy bypass was used.
   which would hide the generic importer for this partial starter.
 - `coverage.json` enumerates 54 official competence positions across 13
   subareas, with source anchors, checked date and explicit remaining work.
-  Only partial place-value work is implemented. No teacher review or full
-  coverage is claimed.
+  Parts of Number Forest sections 1.1 and 1.2 are implemented. No teacher
+  review or full coverage is claimed.
 - Evidence records first responses separately from helped retries. The
   parent view uses stable task snapshots for dated examples, with canonical
   targets for build tasks; digit examples use grouped numerals.

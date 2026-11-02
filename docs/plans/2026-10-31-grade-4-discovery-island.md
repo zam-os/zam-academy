@@ -102,6 +102,32 @@ addition of two summands with a digit/carry board. The original
 31-lesson inventory remains a planning estimate to refine before publication.
 No Phase-1/2/3 checkbox is closed by this batch, and no public release is authorised.
 
+### Continuation — 2026-11-02: written subtraction
+
+Thomas requested continuing the Grade 4 package after the eight-lesson
+Number Forest batch merged. Under the existing further-lesson exception,
+the next increment adds `schriftlich-subtrahieren`: the Abziehverfahren with
+explicit value-preserving regrouping, including chains through zeros,
+guided and transfer tasks, correction and addition checks. This brings the
+draft to nine lessons; the original N07 inventory position is now represented.
+This is independent work while Phase-1 teacher/media acceptance remains
+pending. No phase checkbox or full-curriculum claim changes. See the
+[expansion record](../grade-4-number-forest-expansion.md).
+
+### Two further lessons and PR — 2026-11-02
+
+Thomas explicitly requested two further lessons followed by a pull request.
+This continues the existing further-lesson exception with
+`schriftlich-multiplizieren` (one/two-digit multipliers, carries, shifted
+partial products and their addition) and `schriftlich-dividieren` (divisors
+1–10, zero quotient digits and remainders). Together with the uncommitted
+written-subtraction increment, the PR expands the main-branch draft from
+eight to eleven lessons. The new lessons represent the proposed N09/N10
+positions. Their records do not complete Phase 1, 2 or 3. Teacher/media
+acceptance, broader fluency and annual coverage remain open. The request
+authorises committing/pushing the feature branch and creating the PR;
+publication and a merge are not part of this continuation.
+
 ## Outcome and scope
 
 Build `mathematik-grundschule-4/` in `zam-os/zam-academy`, with its one

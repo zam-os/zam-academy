@@ -1,3 +1,9 @@
+import { algorithmModel } from "../src/course/written-algorithms";
+import {
+	subtractionColumns,
+	freshSubtractionWork,
+	bundleValue,
+} from "../src/course/written-subtraction";
 import {
 	DATABASE,
 	STORAGE_VERSION,
@@ -35,6 +41,9 @@ run.addEventListener("click", async (event) => {
 		`${name}-range`,
 		`${name}-written`,
 		`${name}-numeric`,
+		`${name}-subtraction`,
+		`${name}-multiply`,
+		`${name}-divide`,
 	];
 	try {
 		const a = new ProgressStore(name);
@@ -416,6 +425,355 @@ run.addEventListener("click", async (event) => {
 			"Completing the exit after notices still records a first independent answer with visible blank zero carries",
 		);
 		writtenHost.remove();
+		const subtractionHost = document.createElement("section");
+		document.body.append(subtractionHost);
+		const subtractionDef = FOREST_LESSONS.find(
+			(lesson) => lesson.id === "schriftlich-subtrahieren",
+		);
+		if (!subtractionDef) throw new Error("Subtraction lesson missing");
+		const subtractionSession = new ForestSession(
+			subtractionDef,
+			() => {
+				subtractionHost.innerHTML = subtractionSession.lessonView();
+				subtractionSession.bind(subtractionHost);
+			},
+			extraNames[5],
+		);
+		stores.push(subtractionSession.store);
+		await subtractionSession.open();
+		await subtractionSession.store.update((p) => {
+			p.stage = "exit";
+			p.index = 2;
+			p.seed = 54321;
+			p.labGoals = [0, 1, 2];
+			p.quiz = true;
+			p.solved = { 1: 3, 2: 3 };
+			p.rewards = ["mission-a"];
+			p.completed = { "mission-a": Date.now() };
+		});
+		const subtractTask = activeForestTask(subtractionSession.store.state);
+		if (!subtractTask?.subtraction) throw new Error("Subtraction exit missing");
+		const operands = subtractTask.subtraction,
+			subtractModel = subtractionColumns(operands.a, operands.b);
+		const subtractAct = async (action: string, col?: number) => {
+			const button = subtractionHost.querySelector<HTMLButtonElement>(
+				`[data-action="${action}"]${col === undefined ? "" : `[data-col="${col}"]`}`,
+			);
+			if (!button) throw new Error("Subtraction action missing");
+			await subtractionSession.act(button, subtractionHost);
+		};
+		await subtractAct("forest-check");
+		assert(
+			subtractionSession.store.state.attempts.length === 0,
+			"Incomplete subtraction input does not consume the exit attempt",
+		);
+		const editSubtract = (col: number, value: string) => {
+			const input = subtractionHost.querySelector<HTMLInputElement>(
+				`#subtraction-${col}`,
+			);
+			if (!input) throw new Error("Subtraction input missing");
+			input.value = value;
+			input.dispatchEvent(new Event("input"));
+		};
+		for (let col = 0; col < subtractModel.width; col++)
+			editSubtract(col, String(subtractModel.result[col]));
+		await subtractionSession.store.update(() => {});
+		const firstSubtract =
+			subtractionHost.querySelector<HTMLInputElement>("#subtraction-0");
+		if (!firstSubtract) throw new Error("Subtraction focus missing");
+		firstSubtract.focus();
+		const subtractionPriorChange = subtractionSession.store.onChange;
+		let subtractionCommitted = () => {};
+		const subtractionSaved = new Promise<void>((resolve) => {
+			subtractionCommitted = resolve;
+		});
+		subtractionSession.store.onChange = () => {
+			subtractionPriorChange?.();
+			subtractionCommitted();
+		};
+		editSubtract(0, String(subtractModel.result[0]));
+		await subtractionSaved;
+		subtractionSession.store.onChange = subtractionPriorChange;
+		await new Promise<void>((resolve) => setTimeout(resolve, 0));
+		assert(
+			document.activeElement === firstSubtract &&
+				subtractionHost.querySelector("#subtraction-0") === firstSubtract,
+			"Saving subtraction digits preserves the input node and focus",
+		);
+		const changedDigit = String((subtractModel.result[0] + 1) % 10);
+		editSubtract(0, changedDigit);
+		subtractionHost.innerHTML = subtractionSession.lessonView();
+		subtractionSession.bind(subtractionHost);
+		assert(
+			subtractionHost.querySelector<HTMLInputElement>("#subtraction-0")
+				?.value === changedDigit,
+			"A render before the subtraction commit keeps the newest digit",
+		);
+		editSubtract(0, String(subtractModel.result[0]));
+		await subtractionSession.store.update(() => {});
+		subtractionHost
+			.querySelector<HTMLInputElement>("#subtraction-0")
+			?.dispatchEvent(
+				new KeyboardEvent("keydown", {
+					key: "Tab",
+					bubbles: true,
+					cancelable: true,
+				}),
+			);
+		assert(
+			document.activeElement?.id === "subtraction-1",
+			"Subtraction Tab order follows E then Z",
+		);
+		await subtractAct("forest-check");
+		assert(
+			subtractionSession.store.state.attempts.length === 0 &&
+				subtractionSession.feedback.includes("Zeige auch das Entbündeln"),
+			"A correct rest with missing regrouping gets an unrecorded completion notice",
+		);
+		for (const col of subtractModel.exchanges)
+			await subtractAct("forest-unbundle", col);
+		assert(
+			bundleValue(
+				subtractionSession.store.state.subtractionWork?.bundles ?? [],
+			) === operands.a,
+			"Native exchanges preserve the upper number across zero columns",
+		);
+		const subtractionAgain = new DocumentStore(
+			extraNames[5],
+			() => freshForest("schriftlich-subtrahieren"),
+			validForest,
+		);
+		stores.push(subtractionAgain);
+		await subtractionAgain.open();
+		assert(
+			JSON.stringify(subtractionAgain.state.subtractionWork) ===
+				JSON.stringify(subtractionSession.store.state.subtractionWork),
+			"Regrouped bundles and result digits resume in another native storage instance",
+		);
+		const extraExchange = subtractModel.bundles.findIndex(
+			(n, col) => col > 0 && n > 0 && subtractModel.bundles[col - 1] <= 9,
+		);
+		if (extraExchange < 1) throw new Error("Extra exchange witness missing");
+		await subtractAct("forest-unbundle", extraExchange);
+		await subtractAct("forest-check");
+		assert(
+			subtractionSession.feedback.includes("Bündel zurücksetzen") &&
+				subtractionSession.store.state.attempts.length === 0,
+			"An unnecessary extra exchange directs the child to reset bundles without spending the correct exit",
+		);
+		await subtractAct("forest-reset-bundles");
+		assert(
+			JSON.stringify(
+				subtractionSession.store.state.subtractionWork?.bundles,
+			) === JSON.stringify(freshSubtractionWork(operands.a).bundles),
+			"Resetting exchanges preserves the task and the typed result",
+		);
+		for (const col of subtractModel.exchanges)
+			await subtractAct("forest-unbundle", col);
+		await subtractAct("forest-check");
+		const subtractionAttempt = subtractionSession.store.state.attempts.at(-1);
+		assert(
+			subtractionAttempt && independentForest(subtractionAttempt),
+			"A completed subtraction correction after validation notices remains an independent first answer",
+		);
+		await subtractAct("forest-next");
+		assert(
+			subtractionSession.store.state.stage === "finished" &&
+				subtractionSession.store.state.rewards.includes("mission-b") &&
+				subtractionSession.store.state.subtractionWork === null,
+			"Subtraction completion saves one mission reward and clears transient board work",
+		);
+		await subtractAct("forest-practice");
+		editSubtract(0, "1");
+		await subtractionSession.store.update(() => {});
+		await subtractAct("forest-stop");
+		assert(
+			subtractionSession.store.state.optional === null &&
+				subtractionSession.store.state.subtractionWork === null &&
+				subtractionSession.store.state.rewards.length === 2,
+			"Stopping a partly filled optional subtraction round keeps rewards and clears its board",
+		);
+		subtractionHost.remove();
+		for (const [lessonIndex, lessonId] of (
+			["schriftlich-multiplizieren", "schriftlich-dividieren"] as const
+		).entries()) {
+			const host = document.createElement("section");
+			document.body.append(host);
+			const def = FOREST_LESSONS.find((lesson) => lesson.id === lessonId);
+			if (!def) throw new Error("Algorithm lesson missing");
+			const session = new ForestSession(
+				def,
+				() => {
+					host.innerHTML = session.lessonView();
+					session.bind(host);
+				},
+				extraNames[6 + lessonIndex],
+			);
+			stores.push(session.store);
+			await session.open();
+			await session.store.update((p) => {
+				p.stage = "lab";
+				p.index = 1;
+			});
+			const task = activeForestTask(session.store.state);
+			if (!task?.algorithm) throw new Error("Algorithm lab missing");
+			const model = algorithmModel(task.algorithm);
+			const editAlgorithm = (index: number, value: string) => {
+				const input = host.querySelector<HTMLInputElement>(
+					`#algorithm-${index}`,
+				);
+				if (!input) throw new Error("Algorithm input missing");
+				input.value = value;
+				input.dispatchEvent(new Event("input"));
+			};
+			const first = host.querySelector<HTMLInputElement>("#algorithm-0");
+			if (!first) throw new Error("Algorithm focus missing");
+			first.focus();
+			let committed = () => {};
+			const saved = new Promise<void>((resolve) => {
+				committed = resolve;
+			});
+			const beforeChange = session.store.onChange;
+			session.store.onChange = () => {
+				beforeChange?.();
+				committed();
+			};
+			editAlgorithm(0, String(model.answer[0]));
+			await saved;
+			session.store.onChange = beforeChange;
+			await new Promise<void>((resolve) => setTimeout(resolve, 0));
+			assert(
+				document.activeElement === first &&
+					host.querySelector("#algorithm-0") === first,
+				`${lessonId}: saving a field keeps its input node and focus`,
+			);
+			first.dispatchEvent(
+				new KeyboardEvent("keydown", {
+					key: "Tab",
+					bubbles: true,
+					cancelable: true,
+				}),
+			);
+			assert(
+				document.activeElement?.id === "algorithm-1",
+				`${lessonId}: Tab follows the calculation order`,
+			);
+			const changed = String((model.answer[0] + 1) % (model.fields[0].max + 1));
+			editAlgorithm(0, changed);
+			host.innerHTML = session.lessonView();
+			session.bind(host);
+			assert(
+				host.querySelector<HTMLInputElement>("#algorithm-0")?.value === changed,
+				`${lessonId}: an unrelated render before commit keeps the newest field`,
+			);
+			editAlgorithm(0, String(model.answer[0]));
+			editAlgorithm(1, String(model.answer[1]));
+			editAlgorithm(2, String(model.answer[2]));
+			await session.store.update(() => {});
+			const again = new DocumentStore(
+				extraNames[6 + lessonIndex],
+				() => freshForest(lessonId),
+				validForest,
+			);
+			stores.push(again);
+			await again.open();
+			assert(
+				again.state.algorithmWork?.[0] === String(model.answer[0]) &&
+					again.state.algorithmWork?.[2] === String(model.answer[2]),
+				`${lessonId}: rapid field edits resume in a second storage instance`,
+			);
+			const actAlgorithm = async (action: string) => {
+				const button = host.querySelector<HTMLButtonElement>(
+					`[data-action="${action}"]`,
+				);
+				if (!button) throw new Error("Algorithm action missing");
+				await session.act(button, host);
+			};
+			for (let i = 0; i < model.answer.length; i++)
+				editAlgorithm(i, String(model.answer[i]));
+			const wrongValue = (model.answer[0] + 1) % (model.fields[0].max + 1);
+			editAlgorithm(0, String(wrongValue));
+			await session.store.update(() => {});
+			await actAlgorithm("forest-check");
+			assert(
+				session.store.state.attempts.at(-1)?.outcome === false &&
+					session.feedback.length > 20,
+				`${lessonId}: a wrong computed step receives targeted feedback`,
+			);
+			editAlgorithm(0, String(model.answer[0]));
+			await session.store.update(() => {});
+			await actAlgorithm("forest-check");
+			assert(
+				session.store.state.attempts.at(-1)?.outcome === true &&
+					session.store.state.attempts.at(-1)?.helped === true,
+				`${lessonId}: a corrected retry remains assisted`,
+			);
+			await session.store.update((p) => {
+				p.stage = "exit";
+				p.index = 2;
+				p.seed = 54321;
+				p.labGoals = [0, 1, 2];
+				p.quiz = true;
+				p.solved = { 1: 3, 2: 3 };
+				p.rewards = ["mission-a"];
+				p.completed = { "mission-a": Date.now() };
+				p.algorithmWork = null;
+			});
+			const exit = activeForestTask(session.store.state);
+			if (!exit?.algorithm) throw new Error("Algorithm exit missing");
+			const exitModel = algorithmModel(exit.algorithm),
+				count = session.store.state.attempts.length;
+			await actAlgorithm("forest-check");
+			assert(
+				session.store.state.attempts.length === count,
+				`${lessonId}: incomplete input does not consume an exit attempt`,
+			);
+			for (let i = 0; i < exitModel.answer.length; i++)
+				editAlgorithm(
+					i,
+					exitModel.fields[i].blankZero ? "" : String(exitModel.answer[i]),
+				);
+			await session.store.update(() => {});
+			if (lessonId === "schriftlich-multiplizieren") {
+				await actAlgorithm("forest-check");
+				assert(
+					session.store.state.attempts.length === count &&
+						session.feedback.includes("Trage auch deine Überträge"),
+					"Multiplication: a complete product with no carries gets an unrecorded completion notice",
+				);
+				for (let i = 0; i < exitModel.answer.length; i++)
+					if (exitModel.fields[i].blankZero)
+						editAlgorithm(
+							i,
+							exitModel.answer[i] === 0 ? "" : String(exitModel.answer[i]),
+						);
+				await session.store.update(() => {});
+			}
+			await actAlgorithm("forest-check");
+			const attempt = session.store.state.attempts.at(-1);
+			assert(
+				attempt && independentForest(attempt),
+				`${lessonId}: completing the corrected exit after validation stays independent`,
+			);
+			await actAlgorithm("forest-next");
+			assert(
+				session.store.state.stage === "finished" &&
+					session.store.state.rewards.length === 2 &&
+					session.store.state.algorithmWork === null,
+				`${lessonId}: completion grants one reward and clears the board`,
+			);
+			await actAlgorithm("forest-practice");
+			editAlgorithm(0, "1");
+			await session.store.update(() => {});
+			await actAlgorithm("forest-stop");
+			assert(
+				session.store.state.optional === null &&
+					session.store.state.algorithmWork === null &&
+					session.store.state.rewards.length === 2,
+				`${lessonId}: stopping partial optional work preserves rewards`,
+			);
+			host.remove();
+		}
 		const numericHost = document.createElement("section");
 		document.body.append(numericHost);
 		const numericSession = new ForestSession(

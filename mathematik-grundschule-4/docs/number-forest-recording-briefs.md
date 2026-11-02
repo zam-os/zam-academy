@@ -205,3 +205,106 @@ For each lesson, record the teacher/reviewer, reviewed script date, rights
 reference, video/captions/transcript/poster paths, matching chapter marks and
 observed online/offline playback. All of these remain pending. The app's
 written explanation is available independently of the recording.
+
+
+## Written subtraction: Milos Bündeltausch
+
+Lesson: `schriftlich-subtrahieren`. Production is pending; no teacher,
+recording, rights, captions or content approval is asserted. Apply the same
+rights, caption/transcript and offline-distribution handoff requirements as
+the preceding lessons. Teacher review must confirm the Abziehverfahren and
+the displayed bundle notation, including leading result zeros.
+
+German script proposal:
+
+> Schreibe Einer unter Einer, Zehner unter Zehner und die weiteren gleichen
+> Stellenwerte untereinander. Wir rechnen von rechts nach links. Bei
+> 5 002 minus 1 786 reichen die zwei Einer nicht für sechs Einer.
+> Wir vertauschen die Ziffern nicht. Stattdessen entbündeln wir oben.
+>
+> Bei den Zehnern und Hundertern steht null. Wir beginnen deshalb bei den
+> Tausendern: Ein Tausender wird zu zehn Hundertern. Von diesen tauschen wir
+> einen Hunderter in zehn Zehner. Ein Zehner wird dann zu zehn Einern. Oben
+> liegen jetzt vier Tausender, neun Hunderter, neun Zehner und zwölf Einer.
+> Das sind weiterhin 5 002. Die Knöpfe zeigen jeden dieser Tausche.
+>
+> Jetzt ziehen wir unten von oben ab: zwölf minus sechs ist sechs; neun
+> minus acht ist eins; neun minus sieben ist zwei; vier minus eins ist drei.
+> Der Rest ist 3 216. Wir prüfen durch Addieren: 3 216 plus 1 786 ergibt
+> wieder 5 002. Rechne diese Probe selbst. Nur das Vorlesen prüft noch nichts.
+>
+> Probiere danach 10 000 minus eins. Tausche Schritt für Schritt durch die
+> Nullstellen, bis du einen Einer wegnehmen kannst. Die obere Zahl bleibt
+> beim Tauschen gleich viel wert. Wenn du zu viel getauscht hast, kannst du
+> die Bündel zurücksetzen und neu beginnen. Du hast Zeit.
+
+Show original and current upper bundles together. Film actual button and
+keyboard actions without pre-filling a practice answer. Distinguish an
+exchange from an addition carry. Include a shorter lower number, a zero
+result place, and the common incorrect rule of subtracting the smaller digit
+from the larger in every column. Check the correction independently with
+addition. Record the teacher's changes before producing final media.
+
+
+## Written multiplication: Milos Kistenlager
+
+Lesson `schriftlich-multiplizieren`; recording and teacher approval pending.
+Apply the rights/caption/transcript and offline-distribution handoff above.
+Teacher review must check the carry notation, the deliberately fixed shift
+zero and whether the displayed partial-product convention fits the intended
+textbook. Record the actual UI; do not pre-fill practice answers.
+
+German script proposal:
+
+> Rechne jede Reihe von rechts nach links. Bei 347 mal 6 ergeben sieben
+> Einer mal sechs 42 Einer. Schreibe zwei Einer; vier Zehner gehen als
+> Übertrag zur nächsten Stelle links. Vier Zehner mal sechs und diese vier
+> Zehner ergeben 28 Zehner. Schreibe acht Zehner und übertrage zwei Hunderter.
+> Drei Hunderter mal sechs plus zwei Hunderter sind zwanzig Hunderter.
+> Insgesamt erhältst du 2 082.
+>
+> Für 204 mal 23 zerlegen wir 23 in 20 und 3. Die Einerreihe ergibt 612.
+> Für die Zehnerreihe rechnen wir zunächst 204 mal 2. Diese 408 werden beim
+> Multiplizieren mit 20 zehnmal so viel: 4 080. Deshalb steht rechts in der
+> Zehnerreihe die feste Null. Addiere 612 und 4 080: Das Produkt ist 4 692.
+> Prüfe anders: 200 mal 23 sind 4 600, vier mal 23 sind 92. Zusammen 4 692.
+>
+> Steht bei den Einern des zweiten Faktors null, ist die Einerreihe null.
+> Die Zehnerreihe bleibt nötig. Vergiss keine Ergebnisnull und rechne beim
+> abschließenden Addieren auch die Überträge mit.
+
+Show the failed unshifted result as a separate diagnosis task. Explain
+that carry values can exceed 1 in multiplication, while adding two partial
+products uses addition carries. Check all example products independently.
+
+## Written division: Milos gerechte Beete
+
+Lesson `schriftlich-dividieren`; recording and teacher approval pending.
+Teacher review must check the explicit per-digit step board (including
+leading quotient zeros) and the meaning of the remainder in each context.
+It is a scaffold for the written procedure, not a claim about automatic
+fluency. No decimal quotient is introduced.
+
+German script proposal:
+
+> Wir teilen von links nach rechts: Wie oft passt der Teiler ganz in die
+> Teilzahl? Notiere diese Ergebnisziffer, multipliziere mit dem Teiler und
+> ziehe ab. Vor der nächsten Ziffer wird der vorherige Rest zehnmal so groß.
+> Hole die nächste Ziffer dazu. Auch eine Ergebnisziffer null braucht ihren
+> Platz.
+>
+> Verteile 1 259 Samen auf sechs Beete. Eins geteilt durch sechs ergibt
+> zunächst null mit Rest eins. Daraus werden mit der nächsten Ziffer zwölf.
+> Zwölf geteilt durch sechs ist zwei, Rest null. Die nächste Teilzahl fünf
+> ergibt null, Rest fünf. Mit der letzten Ziffer neun entsteht 59. Sechs
+> passt neunmal hinein: 59 minus 54 ist fünf. Das Ergebnis ist 209 Rest 5.
+> Die führende Null lassen wir beim Lesen weg, die Null mitten in 209 bleibt.
+>
+> Prüfe: 209 mal sechs plus fünf ergibt wieder 1 259. Fünf ist kleiner als
+> sechs. Wäre der Rest noch elf, könnten wir noch einmal sechs verteilen und
+> wären nicht fertig. Bei zehn Beeten funktioniert derselbe Rechenweg.
+
+Include 1 206 divided by 3 for internal zeros, 2 417 divided by 8 for a
+new remainder example, and division by 10. Do not describe a remainder as
+a decimal digit to append. The original recording/media deliverables remain
+required for approval and final playback acceptance.

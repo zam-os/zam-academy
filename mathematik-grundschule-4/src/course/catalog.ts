@@ -6,6 +6,9 @@ export const EXTRA_LESSON_IDS = [
 	"geschickt-subtrahieren",
 	"malnehmen-teilen",
 	"schriftlich-addieren",
+	"schriftlich-subtrahieren",
+	"schriftlich-multiplizieren",
+	"schriftlich-dividieren",
 ] as const;
 export type ExtraLessonId = (typeof EXTRA_LESSON_IDS)[number];
 export interface QuizChoice {
@@ -346,6 +349,154 @@ export const FOREST_LESSONS: ForestLesson[] = [
 		},
 		parentPrompt:
 			"Rechne 3 708 + 2 596 schriftlich. Was bedeutet jeder Übertrag, und wie prüfst du die Summe?",
+	},
+	{
+		id: "schriftlich-subtrahieren",
+		title: "Milos Bündeltausch",
+		shortTitle: "Schriftlich subtrahieren",
+		icon: "−",
+		lead: "Im Vorratshaus werden Samen verteilt. Hilf Milo, den Rest zu finden und größere Bündel in kleinere zu tauschen.",
+		goals: [
+			"Gleiche Stellen untereinander schreiben und spaltenweise abziehen",
+			"Durch Entbündeln auch über Nullstellen hinweg abziehen",
+			"Fehler verbessern und mit der Additionsprobe prüfen",
+		],
+		paragraphs: [
+			"Beim schriftlichen Subtrahieren schreibst du Einer unter Einer, Zehner unter Zehner und die weiteren gleichen Stellenwerte untereinander. Die Zahl, von der du abziehst, steht oben. In dieser Lektion ist sie mindestens so groß wie die untere Zahl. Beginne rechts bei den Einern und ziehe die untere Menge von der oberen ab.",
+			"Reicht die obere Menge nicht, entbündelst du in der oberen Zahl: Aus einem Zehner werden zehn Einer. Oben bei den Zehnern ist dann einer weniger, bei den Einern sind zehn mehr. Der Wert der oberen Zahl bleibt gleich. Vertausche nicht einfach die Ziffern, um immer die kleinere von der größeren abzuziehen.",
+			"Steht links daneben 0, gehe bis zum nächsten vorhandenen größeren Bündel. Tausche von dort Schritt für Schritt nach rechts. Bei 5 002 − 1 786 wird zuerst 1 T zu 10 H, dann 1 H zu 10 Z und schließlich 1 Z zu 10 E. Oben liegen jetzt 4 T, 9 H, 9 Z und 12 E. Zusammen sind das weiterhin 5 002.",
+			"Ziehe nun spaltenweise ab. Schreibe in jede Ergebnisstelle eine Ziffer, auch wenn sie 0 ist. Die Additionsprobe prüft den Rest: Ergebnis plus abgezogene Zahl muss wieder die obere Startzahl ergeben. Rechne diese Probe selbst, zum Beispiel schriftlich mit dem Verfahren aus der vorigen Lektion.",
+		],
+		example:
+			"5 002 − 1 786: Nach dem Entbündeln rechnest du E: 12 − 6 = 6; Z: 9 − 8 = 1; H: 9 − 7 = 2; T: 4 − 1 = 3. Der Rest ist 3 216. Additionsprobe: 3 216 + 1 786 = 5 002. Die Nullstellen verschwinden nicht; die Bündel werden schrittweise getauscht.",
+		takeaway:
+			"Gleiche Stellen untereinander. Von rechts nach links abziehen. Reicht es oben nicht, entbündle ein größeres Bündel in zehn kleinere. Die obere Zahl bleibt gleich viel wert. Prüfe durch Addieren.",
+		transfer:
+			"Jetzt verteilst du Samen, bestimmst den Rest mit einer Additionsprobe und verbesserst Milos Rechnung. Bei Nullstellen helfen mehrere kleine Tauschaktionen.",
+		quiz: {
+			goal: 2,
+			prompt:
+				"Bei 4 003 − 128 reichen 3 Einer nicht. Bei den Zehnern und Hundertern steht 0. Was hilft?",
+			choices: [
+				{
+					label:
+						"1 T in 10 H, dann 1 H in 10 Z und 1 Z in 10 E tauschen; die obere Zahl bleibt gleich viel wert.",
+					correct: true,
+				},
+				{
+					label:
+						"In jeder Spalte immer die kleinere Ziffer von der größeren abziehen.",
+					correct: false,
+				},
+				{
+					label:
+						"10 Einer hinzufügen und alle größeren Bündel unverändert lassen.",
+					correct: false,
+				},
+			],
+			explanation:
+				"Nach dem Tauschen liegen oben 3 T, 9 H, 9 Z und 13 E. Das sind weiterhin 4 003. Nun kannst du in jeder Spalte unten von oben abziehen. Der Rest ist 3 875.",
+		},
+		parentPrompt:
+			"Rechne 6 004 − 2 578. Zeige, wie du über die Nullstellen entbündelst. Wie prüfst du den Rest durch Addieren?",
+	},
+	{
+		id: "schriftlich-multiplizieren",
+		title: "Milos Kistenlager",
+		shortTitle: "Schriftlich multiplizieren",
+		icon: "·",
+		lead: "Viele Kisten, gleich viele Samen. Mit Stellenwerten und zwei Rechenreihen findest du auch große Mengen.",
+		goals: [
+			"Mit einem einstelligen Faktor schriftlich multiplizieren",
+			"Überträge und die Verschiebung der Zehnerreihe beachten",
+			"Zweistellig multiplizieren und fehlerhafte Produkte verbessern",
+		],
+		paragraphs: [
+			"Beim Multiplizieren heißen die Zahlen Faktoren, das Ergebnis heißt Produkt. Beginne beim schriftlichen Multiplizieren mit den Einern der ersten Zahl. Multipliziere jede Ziffer mit dem einstelligen Faktor und rechne einen ankommenden Übertrag mit. Schreibe nur die Einerziffer dieser Spaltensumme ins Ergebnis.",
+			"Die vollen Zehner merkst du als Übertrag für die nächste Stelle links. Bei 347 · 6 gilt: 7 · 6 = 42, schreibe 2 und übertrage 4. Dann 4 · 6 + 4 = 28, schreibe 8 und übertrage 2. Zuletzt 3 · 6 + 2 = 20. Das Produkt ist 2 082. In der Tafel hat auch die neue Tausenderstelle ein eigenes Feld.",
+			"Einen zweistelligen Faktor zerlegst du in Zehner und Einer: 23 = 20 + 3. Rechne zuerst mit 3, danach mit 20. Für die Zehnerreihe rechnest du mit 2 und verschiebst alle Stellen um eine Stelle nach links. Die Einerstelle dieser Reihe ist deshalb fest 0. Aus 204 · 2 = 408 wird 204 · 20 = 4 080.",
+			"Addiere die beiden Teilergebnisse stellenrichtig und rechne auch dabei die Überträge mit. Ist die Einerziffer des Faktors 0, ist die ganze Einerreihe 0; die Zehnerreihe bleibt nötig. Leere Übertragsfelder bedeuten 0. Große Ergebnisfelder füllst du auch bei 0 aus. Prüfe durch eine andere Zerlegung, mit der Umkehraufgabe oder grob durch Überschlagen.",
+		],
+		example:
+			"204 · 23: Einerreihe 204 · 3 = 612. Zehnerreihe 204 · 20 = 4 080. Addiere 612 + 4 080 = 4 692. Eine andere Zerlegung prüft: 200 · 23 = 4 600 und 4 · 23 = 92; zusammen 4 692. Ohne Verschiebung der Zehnerreihe wäre das Produkt falsch.",
+		takeaway:
+			"Jede Reihe von rechts nach links rechnen und Überträge mitnehmen. Beim Zehnerfaktor eine Stelle nach links verschieben. Zum Schluss die Teilergebnisse stellenrichtig addieren.",
+		transfer:
+			"Packe jetzt Kisten in Geschichten, rechne auch mit vollen Zehnern und verbessere Milos Produkt. Nutze die Stellenwerte und prüfe deinen Weg.",
+		quiz: {
+			goal: 2,
+			prompt:
+				"Warum steht die Reihe zu 204 · 20 eine Stelle weiter links als die Reihe zu 204 · 2?",
+			choices: [
+				{
+					label:
+						"20 ist zehnmal so groß wie 2. Jeder Stellenwert des Teilergebnisses wird zehnmal so groß.",
+					correct: true,
+				},
+				{
+					label:
+						"Die 0 im Faktor kann man weglassen; beide Reihen sind gleich viel wert.",
+					correct: false,
+				},
+				{
+					label:
+						"Bei jeder zweiten Reihe wird immer eine 0 vorne links ergänzt.",
+					correct: false,
+				},
+			],
+			explanation:
+				"204 · 2 = 408, aber 204 · 20 = 4 080. Die feste 0 steht rechts bei den Einern; alle anderen Stellen rücken nach links.",
+		},
+		parentPrompt:
+			"Rechne 306 · 24 schriftlich. Was bedeutet die feste 0 in der Zehnerreihe? Prüfe mit einer anderen Zerlegung.",
+	},
+	{
+		id: "schriftlich-dividieren",
+		title: "Milos gerechte Beete",
+		shortTitle: "Schriftlich dividieren",
+		icon: ":",
+		lead: "Verteile Samen gerecht. Behalte beim Teilen jede Stelle und den letzten Rest im Blick.",
+		goals: [
+			"Schriftlich von links nach rechts teilen",
+			"Nullstellen im Ergebnis erhalten",
+			"Einen Rest bestimmen, prüfen und fehlerhafte Ergebnisse verbessern",
+		],
+		paragraphs: [
+			"Beim Dividieren teilst du eine Menge gleichmäßig auf. In dieser Lektion teilst du durch ganze Zahlen von 1 bis 10. Beginne links bei der ersten Ziffer. Bestimme, wie oft der Teiler ganz in diese Teilzahl passt. Notiere die Ergebnisziffer, multipliziere sie mit dem Teiler und ziehe diesen Betrag ab.",
+			"Der Rest aus einem Schritt wird vor der nächsten Ziffer zehnmal so groß: Du tauschst ihn in die nächstkleineren Bündel um und holst die nächste Ziffer dazu. Neue Teilzahl = vorheriger Rest · 10 + nächste Ziffer. Wiederhole Teilen, Multiplizieren und Abziehen bis zur letzten Ziffer.",
+			"Passt der Teiler in einem Schritt noch nicht in die Teilzahl, notiere 0 als Ergebnisziffer. In dieser Werkstatt bekommt jede Ziffer der Startzahl ihren eigenen Schritt. Eine führende Ergebnisnull lässt du beim Lesen der ganzen Antwort weg; eine 0 mitten im Ergebnis bleibt stehen. Bei 1 206 : 3 entstehen die Ergebnisziffern 0, 4, 0, 2; die Antwort ist 402.",
+			"Am Ende darf ein Rest übrig bleiben. Er muss kleiner als der Teiler sein; sonst könntest du noch einmal verteilen. Die Probe lautet: Ergebnis · Teiler + Rest = Startzahl. Beim Verteilen sagt der Rest, wie viele Dinge übrig bleiben. Teile hier keine halben Samen und rechne noch nicht mit Dezimalzahlen.",
+		],
+		example:
+			"1 259 : 6: Zuerst 1 : 6 → 0, Rest 1. Die nächste Teilzahl ist 12: 12 : 6 → 2, Rest 0. Dann 5 : 6 → 0, Rest 5. Zuletzt 59 : 6 → 9, Rest 5. Ergebnis: 209 Rest 5. Probe: 209 · 6 + 5 = 1 254 + 5 = 1 259; 5 ist kleiner als 6.",
+		takeaway:
+			"Von links nach rechts: teilen, multiplizieren, abziehen, nächste Ziffer herunterholen. Schreibe auch Ergebnisziffern 0. Der letzte Rest ist kleiner als der Teiler. Prüfe mit Malaufgabe plus Rest.",
+		transfer:
+			"Verteile größere Vorräte, teile auch durch 10 und verbessere Milos Rechnung. Der Rest gehört zur Antwort und zur Probe.",
+		quiz: {
+			goal: 3,
+			prompt: "Milo erhält beim Teilen durch 6 am Ende Rest 8. Was zeigt das?",
+			choices: [
+				{
+					label:
+						"6 passt noch einmal hinein. Der Quotient muss um 1 größer werden und der Rest wird 2.",
+					correct: true,
+				},
+				{
+					label:
+						"Der Rest darf größer als der Teiler sein; er zählt einfach nicht zur Antwort.",
+					correct: false,
+				},
+				{
+					label: "Der Rest wird an die ganze Ergebniszahl angehängt.",
+					correct: false,
+				},
+			],
+			explanation:
+				"Ein gültiger Rest ist kleiner als der Teiler. Aus Rest 8 kannst du noch einmal 6 verteilen: 8 − 6 = 2. Prüfe anschließend die ganze Rechnung mit Ergebnis · 6 + Rest.",
+		},
+		parentPrompt:
+			"Teile 2 417 durch 8 schriftlich. Wo brauchst du eine 0 im Ergebnis? Was bleibt übrig, und wie prüfst du es?",
 	},
 ];
 export const COURSE_LINKS = [
