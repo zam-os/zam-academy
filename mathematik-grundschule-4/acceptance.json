@@ -126,6 +126,76 @@
 			"status": "passed",
 			"checked": "2026-11-02",
 			"details": "Opened to welcome with zero missions and no inherited draft evidence. Built 100, reloaded with its one Hunderter preserved, completed 100 and 59 092, and answered the digit question for 8 508. Parent view displayed the grouped Zahl: 8 508 and canonical build example. All 11 isolated native IndexedDB checks passed after removing the migration layer. Earlier dated browser entries describe superseded draft revisions."
+		},
+		{
+			"surface": "Built dist/index.html over localhost:5216; Codex in-app browser",
+			"check": "Three complete new lesson journeys",
+			"status": "passed",
+			"checked": "2026-11-02",
+			"details": "Completed every new lesson through its three lab goals, quiz, three guided tasks, three transfer tasks and three fresh exit tasks. Observed comparison errors/retry, ordering, varied number-line scales, offsets and both jump directions, native keyboard placement including one million, pointer dragging of the treasure split, selected decomposition parts and constant-sum reasoning. Inspected all three parent views and the visible pending-video panels. Optional practice, worked-solution continuation and snack sharing did not mint extra rewards."
+		},
+		{
+			"surface": "Native isolated harness on localhost:5226/tests/browser.html",
+			"check": "Shared transactional store, lesson isolation and rapid range input",
+			"status": "passed",
+			"checked": "2026-11-02",
+			"details": "All 15 native assertions passed, including original transaction/recovery cases, new-lesson resumption/isolation, and a pending save not overwriting a newer slider gesture. No learner store was used by the harness."
+		},
+		{
+			"surface": "Built app at desktop, 375 px and 320 px browser viewports",
+			"check": "Lesson selection, themes, activity and parent bounds",
+			"status": "passed",
+			"checked": "2026-11-02",
+			"details": "Inspected desktop light and phone dark layouts; no horizontal body overflow or clipped visible controls in inspected activity/parent states. Verified compact native lesson picker and focus on the newly selected lesson. Temporary viewport override reset. Physical touch hardware remains untested."
+		},
+		{
+			"surface": "Separate-origin built preview on localhost:5226",
+			"check": "Active-lesson pause isolation after second-agent review",
+			"status": "passed",
+			"checked": "2026-11-02",
+			"details": "Pausing a new lesson put Milo to sleep with the matching resting message. After resuming it, pausing the original workshop and switching back left the new lesson and Milo awake. The original workshop learner state on :5216 was not touched."
+		},
+		{
+			"surface": "Built dist/index.html over isolated 127.0.0.1:5227 and localhost:5227 previews; Codex in-app browser",
+			"check": "Three complete arithmetic journeys and model rendering",
+			"status": "passed",
+			"checked": "2026-11-02",
+			"details": "Completed addition, subtraction and multiplication/inverse division through all three labs, quiz, three tasks at each level and three exits. Observed mistake encouragement, keyboard model input, basket increment buttons, save/reload resumption, visible leftward jump arcs, goal-specific parent examples and truthful pending-media panels. Original place-value route still opens its workshop. No user preview progress was reset."
+		},
+		{
+			"surface": "375 px and 320 px dark-theme browser viewports on a separate test origin",
+			"check": "Arithmetic model bounds and control contrast",
+			"status": "passed",
+			"checked": "2026-11-02",
+			"details": "Inspected equal baskets, calculation jumps, compact lesson switching, parent bounds and missing-video panel. Body width matched the viewport at inspected positions. Fixed hover background that obscured increment labels and used the theme-aware purple for model strokes/borders. Subtraction slider at its extreme showed12000 −10·1000 =2000, never a negative value. Temporary viewport override reset; physical touch remains pending."
+		},
+		{
+			"surface": "Production dist/index.html over separate 127.0.0.1:5228 and localhost:5228 test origins",
+			"check": "Written-addition journeys in light and dark themes",
+			"status": "passed",
+			"checked": "2026-11-02",
+			"details": "Completed three labs including 999 999 + 1, quiz, three tasks per level and three exits in desktop light and 320 px dark. Inspected different lengths/zero positions, carrying, contextual sum, editable correction and read-only error reasoning. Confirmed reload resumption, wrong-carry feedback, parent snapshots, visible pending-video panel, assisted worked continuation, optional practice reward stability and original workshop routing. Fixed save-time input replacement, read-only correction board and mobile grid overflow. Seven-column board scrolls inside the card; body width equals 320 px. Viewport reset. User preview progress was not reset."
+		},
+		{
+			"surface": "Native isolated harness on 127.0.0.1:5226/tests/browser.html",
+			"check": "Written digit/carry persistence and focus regression",
+			"status": "passed",
+			"checked": "2026-11-02",
+			"details": "All 20 native assertions passed, including input-node/focus preservation after commit, rapid edits, resumption in a second instance, carry validation and assisted correction. All database names generated for this test; no learner database used."
+		},
+		{
+			"surface": "Built preview over 127.0.0.1:5229 and localhost:5229 on isolated test origins",
+			"check": "PR75 review fixes in desktop light and 320px dark",
+			"status": "passed",
+			"checked": "2026-11-02",
+			"details": "Completed all labs, both revised practice levels and all three exits, including the interactive correction exit. Observed early validation, excessive-carry direction, blank-carry completion notice, actual Tab movement, swap checks, randomized error diagnosis and goal-specific parent examples. Body width matched 320px. Viewport reset; user preview untouched."
+		},
+		{
+			"surface": "Isolated native harness at 127.0.0.1:5226/tests/browser.html",
+			"check": "Review regression harness",
+			"status": "passed",
+			"checked": "2026-11-02",
+			"details": "All 27 assertions passed: focus/selection and Tab order; native resumption/concurrency/recovery; directional carry feedback; no spent attempts for incomplete columns or numeric input; correct-result/blank-carry notice; first independent corrected exit with visible zero carries left blank. Generated test stores only."
 		}
 	],
 	"remaining": [
@@ -138,9 +208,9 @@
 	],
 	"checked": "2026-11-02",
 	"automated_checks": {
-		"app": "Locked toolchain install, external Biome 2.5.6 format/lint, typecheck and 39 Vitest tests passed",
+		"app": "Locked toolchain unchanged; npm ci --offline --no-audit --no-fund, typecheck, 77 Vitest tests and production build passed under Node 26.13.0 with NODE_OPTIONS=--no-experimental-webstorage; external Biome 2.5.6 format/lint passed",
 		"catalog": "48 node:test catalog and public-registry checks passed; generated catalog has 36 existing cells and excludes this draft",
-		"cell": "4 atoms, 12 items; disposable install/enrol/recall/reinstall passed against CI-pinned zam-core 0.54.0 with existing workspace native dependencies",
+		"cell": "11 atoms, 34 items, version 2026.11.4; earlier 10 atoms/30 items and all atom/item identifiers preserved. One unpublished written-addition example revised after review. Disposable install/enrol/recall/reinstall passed against CI-pinned zam-core 0.54.0.",
 		"all_cells": "All 37 Academy cells in the current-main PR checkout validated against CI-pinned zam-core 0.54.0 using disposable libraries",
 		"package": "Draft ZIP built and byte/asset/launcher verification passed; strict complete gate correctly refuses missing teacher recording"
 	},
@@ -174,5 +244,56 @@
 		"first_release": "Fresh storage namespace; every learner starts at zero.",
 		"draft_progress": "No import, migration, version compatibility or historical-preview rendering.",
 		"current_progress": "Current-schema saves resume normally; atomic rewards and corrupt-save recovery remain."
+	},
+	"expansion": {
+		"lessons": [
+			"zahlen-vergleichen-ordnen",
+			"zahlenstrahl-zahlenspruenge",
+			"zahlen-zerlegen-ergaenzen",
+			"geschickt-addieren",
+			"geschickt-subtrahieren",
+			"malnehmen-teilen",
+			"schriftlich-addieren"
+		],
+		"status": "implemented-draft",
+		"teacher_review": "pending",
+		"teacher_recordings": "awaiting-recording",
+		"curriculum_check": "2026-11-02; sections 1.1 and 1.2 only; mapped positions remain partial",
+		"storage": "One separate transactional document per new lesson; original workshop namespace unchanged; no migrations",
+		"second_agent_review": {
+			"status": "reviewed",
+			"date": "2026-11-02",
+			"initial_findings": [
+				"Milo pause state used the original workshop instead of the active lesson",
+				"Hash routing registered after asynchronous initial loading",
+				"Arithmetic task wording allowed a repeated calculation to appear fresh, including facts displayed in labs",
+				"Arithmetic quizzes were attributed to the wrong goals",
+				"An undefined colour variable hid calculation-jump arcs"
+			],
+			"resolution": "All findings corrected and rechecked. Fact-family signatures include model, commuted and inverse operations; explicit quiz goals; theme-aware arc colour. Read-only seed88/290 regression checks and diff check passed in the reviewer. The parent ran 61 Vitest tests; reviewer could not run Vitest because its sandbox denied the temporary Vite config write. No remaining actionable review findings. This is not teacher content approval.",
+			"scope": "Earlier six-lesson expansion through 75ef4aa; excludes the written-addition increment."
+		},
+		"written_addition": {
+			"status": "implemented-draft",
+			"scope": "Two whole-number summands, sums at most one million; entered result digits and carries, correction and error reasoning",
+			"curriculum": "2026-11-02; section 1.2, rows03/05/06/07 remain partial",
+			"code_content_review": "PR reviews 5741916481, 5742098742 and 5742185360 addressed; independent recheck found no actionable findings. This is not primary-school teacher approval.",
+			"teacher_review": "pending",
+			"recording": "awaiting-recording",
+			"storage": "Thirteen digit/carry cells only in this new lesson document. No old document changes or migration.",
+			"review_fixes": [
+				"Incomplete/invalid input is validation; a correct result with all carries blank gets an unrecorded completion notice. Deliberate wrong carries remain attempts.",
+				"Level 1 guarantees 4–5digits and 0/1/2 separated carries; transfer guarantees different 6/5digit lengths, a zero and a carry chain.",
+				"Goal 3 exit requires an editable correction board; practice error positions vary and the diagnosis is not supplied.",
+				"Feedback alternates result/carry in calculation order and distinguishes missing versus excessive carries.",
+				"Logical Tab/Shift+Tab order, selection on focus/click, real hidden text and separate static/live notes.",
+				"Swap checks replace written-subtraction prerequisites; fresh recall example; metadata, quiz markers and inverse-probe hint corrected."
+			],
+			"independent_recheck": {
+				"status": "reviewed",
+				"date": "2026-11-02",
+				"evidence": "Read-only 60 boundary-seed cases, validation/evidence transitions, quiz markers and seven-column order; no actionable findings. Native UI verification belongs to parent agent."
+			}
+		}
 	}
 }

@@ -2,7 +2,7 @@
 	"schema": 1,
 	"checked": "2026-10-31",
 	"source_sha256": "d6883fa04d305d52e83aa16dfd5384eacb40e98b86ffad3dc3e05aec42cf5dd4",
-	"scope": "Shared Grades 3/4. This starter covers only part of 1.1; coverage is not learner mastery.",
+	"scope": "Shared Grades 3/4. Eight Number Forest lessons implement parts of 1.1 and 1.2; coverage is not learner mastery.",
 	"full_coverage": false,
 	"review_status": "awaiting-primary-teacher",
 	"curriculum": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik",
@@ -14,6 +14,41 @@
 	"lesson_bindings": {
 		"stellenwerte-buendeln": {
 			"section": "1.1",
+			"scope": "partial",
+			"official_cell_binding": "deferred: a grade-specific binding suppresses the generic importer even when its topic_code is narrow"
+		},
+		"zahlen-vergleichen-ordnen": {
+			"section": "1.1",
+			"scope": "partial",
+			"official_cell_binding": "deferred: a grade-specific binding suppresses the generic importer even when its topic_code is narrow"
+		},
+		"zahlenstrahl-zahlenspruenge": {
+			"section": "1.1",
+			"scope": "partial",
+			"official_cell_binding": "deferred: a grade-specific binding suppresses the generic importer even when its topic_code is narrow"
+		},
+		"zahlen-zerlegen-ergaenzen": {
+			"section": "1.1",
+			"scope": "partial",
+			"official_cell_binding": "deferred: a grade-specific binding suppresses the generic importer even when its topic_code is narrow"
+		},
+		"geschickt-addieren": {
+			"section": "1.2",
+			"scope": "partial",
+			"official_cell_binding": "deferred: a grade-specific binding suppresses the generic importer even when its topic_code is narrow"
+		},
+		"geschickt-subtrahieren": {
+			"section": "1.2",
+			"scope": "partial",
+			"official_cell_binding": "deferred: a grade-specific binding suppresses the generic importer even when its topic_code is narrow"
+		},
+		"malnehmen-teilen": {
+			"section": "1.2",
+			"scope": "partial",
+			"official_cell_binding": "deferred: a grade-specific binding suppresses the generic importer even when its topic_code is narrow"
+		},
+		"schriftlich-addieren": {
+			"section": "1.2",
 			"scope": "partial",
 			"official_cell_binding": "deferred: a grade-specific binding suppresses the generic importer even when its topic_code is narrow"
 		}
@@ -46,7 +81,7 @@
 	],
 	"neighbouring_scope": {
 		"previous": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/2/mathematik",
-		"note": "Grades 1/2 introduce decimal grouping to 100. Shared Grades 3/4 extend to one million; this lesson uses small-number entry support, then larger place values and T/H/Z exchanges. Number lines, arithmetic algorithms and remaining 1.1 work remain later lessons."
+		"note": "Grades 1/2 introduce number representations, addition/subtraction to 100, the small multiplication table and inverse division. Grade 4 extends these foundations with place-value bundles and mental/halfwritten strategies. Negative numbers, other number systems, numbers above one million and Grade 5 term rules remain outside this batch. Written algorithms and full annual coverage remain incomplete."
 	},
 	"rows": [
 		{
@@ -55,14 +90,16 @@
 			"ordinal": 1,
 			"summary": "Counting",
 			"source": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik#25773",
-			"checked": "2026-10-31",
-			"status": "planned",
-			"lessons": [],
+			"checked": "2026-11-02",
+			"status": "partial",
+			"lessons": ["zahlen-vergleichen-ordnen", "zahlenstrahl-zahlenspruenge"],
 			"planned_work": ["N01", "N02", "N03"],
-			"evidence": [],
+			"evidence": [
+				"Place-value comparison and ordered triples; scaled number-line reading/placement; equal steps in both directions; reasoning checks; three tasks per level and fresh exits"
+			],
 			"physical_work": [],
 			"reviewer": null,
-			"remaining": "Implement and review the mapped course lessons",
+			"remaining": "Primary-school teacher review; divisors, multiples and remaining flexible-counting representations",
 			"lb": 1,
 			"competence": "orientieren sich im Zahlenraum bis zur Million durch flexibles Zählen (vorwärts, rückwärts, in Schritten); sie ordnen und vergleichen Zahlen (auch anhand des Zahlenstrahls) und begründen Beziehungen zwischen Zahlen (z. B. Teiler, Vielfache)."
 		},
@@ -110,14 +147,16 @@
 			"ordinal": 4,
 			"summary": "Quantity estimates",
 			"source": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik#25773",
-			"checked": "2026-10-31",
-			"status": "planned",
-			"lessons": [],
+			"checked": "2026-11-02",
+			"status": "partial",
+			"lessons": ["zahlen-vergleichen-ordnen"],
 			"planned_work": ["N01", "N02", "N03"],
-			"evidence": [],
+			"evidence": [
+				"Compare six-digit numbers using smaller/greater/equal and justify the first different position"
+			],
 			"physical_work": [],
 			"reviewer": null,
-			"remaining": "Implement and review the mapped course lessons",
+			"remaining": "Quantity estimation, Fermi problems, strategy comparison and primary-school teacher review",
 			"lb": 1,
 			"competence": "schätzen und bestimmen Anzahlen (z. B. Reiskörner) und vergleichen Zahlen im Zahlenraum bis zur Million unter Verwendung von Fachbegriffen; sie begründen und bewerten dabei verschiedene Vorgehensweisen (z. B. bei Fermi-Aufgaben)."
 		},
@@ -127,14 +166,16 @@
 			"ordinal": 5,
 			"summary": "Number decomposition",
 			"source": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik#25773",
-			"checked": "2026-10-31",
-			"status": "planned",
-			"lessons": [],
+			"checked": "2026-11-02",
+			"status": "partial",
+			"lessons": ["zahlen-zerlegen-ergaenzen"],
 			"planned_work": ["N01", "N02", "N03"],
-			"evidence": [],
+			"evidence": [
+				"Three movable part-whole goals; missing-part tasks; choose canonical place-value parts; explain compensating changes at constant sum"
+			],
 			"physical_work": [],
 			"reviewer": null,
-			"remaining": "Implement and review the mapped course lessons",
+			"remaining": "Primary-school teacher review; further physical representations and alternative decompositions",
 			"lb": 1,
 			"competence": "zerlegen Zahlen im Zahlenraum bis zur Million (z. B. 1000 = 100 + 900; 10000 = 1000 + 9000; 100000 = 10000 + 90000; 100000 = 10 ∙ 10000) und erläutern dabei Zusammenhänge und Strukturen."
 		},
@@ -144,14 +185,16 @@
 			"ordinal": 1,
 			"summary": "Multiplication facts",
 			"source": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik#25775",
-			"checked": "2026-10-31",
-			"status": "planned",
-			"lessons": [],
+			"checked": "2026-11-02",
+			"status": "partial",
+			"lessons": ["malnehmen-teilen"],
 			"planned_work": ["N04", "N05", "N06", "N07", "N08", "N09", "N10", "N11"],
-			"evidence": [],
+			"evidence": [
+				"German explanations and worked strategies; three reachable jump/group lab goals; guided and transfer generators; inverse checks and fresh exits"
+			],
 			"physical_work": [],
 			"reviewer": null,
-			"remaining": "Implement and review the mapped course lessons",
+			"remaining": "Primary-school teacher review; complete flexible small-fact retrieval and automatisation are not demonstrated by a short session",
 			"lb": 1,
 			"competence": "wenden die Zahlensätze des kleinen Einmaleins sowie deren Umkehrungen (z. B. 42 : 7 = 6 oder 42 : 6 = 7 als Umkehrungen von 6 ∙ 7 = 42) automatisiert und flexibel an."
 		},
@@ -161,14 +204,20 @@
 			"ordinal": 2,
 			"summary": "Scaled facts",
 			"source": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik#25775",
-			"checked": "2026-10-31",
-			"status": "planned",
-			"lessons": [],
+			"checked": "2026-11-02",
+			"status": "partial",
+			"lessons": [
+				"geschickt-addieren",
+				"geschickt-subtrahieren",
+				"malnehmen-teilen"
+			],
 			"planned_work": ["N04", "N05", "N06", "N07", "N08", "N09", "N10", "N11"],
-			"evidence": [],
+			"evidence": [
+				"German explanations and worked strategies; three reachable jump/group lab goals; guided and transfer generators; inverse checks and fresh exits"
+			],
 			"physical_work": [],
 			"reviewer": null,
-			"remaining": "Implement and review the mapped course lessons",
+			"remaining": "Primary-school teacher review; further fact families and learner explanations",
 			"lb": 1,
 			"competence": "übertragen, auch beim Kopfrechnen, ihre Kenntnisse zu den Zahlensätzen des kleinen Einmaleins sowie des Einspluseins bis 20 in größere Zahlenräume (z. B. 6 ∙ 4 = 24 → 60 ∙ 4 = 240, 12 + 3 = 15 → 120 + 30 = 150) und verwenden dabei die Fachbegriffe addieren, subtrahieren, multiplizieren, dividieren, Summe und Differenz."
 		},
@@ -178,14 +227,22 @@
 			"ordinal": 3,
 			"summary": "Arithmetic operations",
 			"source": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik#25775",
-			"checked": "2026-10-31",
-			"status": "planned",
-			"lessons": [],
+			"checked": "2026-11-02",
+			"status": "partial",
+			"lessons": [
+				"geschickt-addieren",
+				"geschickt-subtrahieren",
+				"malnehmen-teilen",
+				"schriftlich-addieren"
+			],
 			"planned_work": ["N04", "N05", "N06", "N07", "N08", "N09", "N10", "N11"],
-			"evidence": [],
+			"evidence": [
+				"German explanations and worked strategies; three reachable jump/group lab goals; guided and transfer generators; inverse checks and fresh exits",
+				"Written addition of two nonnegative whole-number summands: entered result digits and carries, zero positions, carry chain to one million, contextual addition, correction and error reasoning"
+			],
 			"physical_work": [],
 			"reviewer": null,
-			"remaining": "Implement and review the mapped course lessons",
+			"remaining": "Primary-school teacher review; further ranges, mixed tasks, written algorithms and division with remainder",
 			"lb": 1,
 			"competence": "lösen Aufgaben im Zahlenraum bis zur Million zu allen vier Grundrechenarten."
 		},
@@ -195,14 +252,16 @@
 			"ordinal": 4,
 			"summary": "Strategy reasoning",
 			"source": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik#25775",
-			"checked": "2026-10-31",
-			"status": "planned",
-			"lessons": [],
+			"checked": "2026-11-02",
+			"status": "partial",
+			"lessons": ["geschickt-addieren", "geschickt-subtrahieren"],
 			"planned_work": ["N04", "N05", "N06", "N07", "N08", "N09", "N10", "N11"],
-			"evidence": [],
+			"evidence": [
+				"German explanations and worked strategies; three reachable jump/group lab goals; guided and transfer generators; inverse checks and fresh exits"
+			],
 			"physical_work": [],
 			"reviewer": null,
-			"remaining": "Implement and review the mapped course lessons",
+			"remaining": "Primary-school teacher review; learner-generated strategies and comparing their efficiency",
 			"lb": 1,
 			"competence": "nutzen und erklären Rechenstrategien und entwickeln vorteilhafte Lösungswege; sie vergleichen und bewerten Rechenwege und begründen ihre Ergebnisse."
 		},
@@ -212,14 +271,21 @@
 			"ordinal": 5,
 			"summary": "Method selection",
 			"source": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik#25775",
-			"checked": "2026-10-31",
-			"status": "planned",
-			"lessons": [],
+			"checked": "2026-11-02",
+			"status": "partial",
+			"lessons": [
+				"geschickt-addieren",
+				"geschickt-subtrahieren",
+				"schriftlich-addieren"
+			],
 			"planned_work": ["N04", "N05", "N06", "N07", "N08", "N09", "N10", "N11"],
-			"evidence": [],
+			"evidence": [
+				"German explanations and worked strategies; three reachable jump/group lab goals; guided and transfer generators; inverse checks and fresh exits",
+				"Written addition of two nonnegative whole-number summands: entered result digits and carries, zero positions, carry chain to one million, contextual addition, correction and error reasoning"
+			],
 			"physical_work": [],
 			"reviewer": null,
-			"remaining": "Implement and review the mapped course lessons",
+			"remaining": "Primary-school teacher review; explicit choice among mental, halfwritten and written methods; free learner notes",
 			"lb": 1,
 			"competence": "entscheiden passend zu einer gegebenen Aufgabe, welche Art der Berechnung zur Lösung angemessen ist (im Kopf, halbschriftlich, schriftlich) und erstellen sinnvolle und nachvollziehbare Notizen (z. B. Rechenstrich, Zwischenergebnisse, Teilrechnungen)."
 		},
@@ -229,14 +295,16 @@
 			"ordinal": 6,
 			"summary": "Written algorithms",
 			"source": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik#25775",
-			"checked": "2026-10-31",
-			"status": "planned",
-			"lessons": [],
+			"checked": "2026-11-02",
+			"status": "partial",
+			"lessons": ["schriftlich-addieren"],
 			"planned_work": ["N04", "N05", "N06", "N07", "N08", "N09", "N10", "N11"],
-			"evidence": [],
+			"evidence": [
+				"Written addition of two nonnegative whole-number summands: entered result digits and carries, zero positions, carry chain to one million, contextual addition, correction and error reasoning"
+			],
 			"physical_work": [],
 			"reviewer": null,
-			"remaining": "Implement and review the mapped course lessons",
+			"remaining": "Primary-school teacher review; further addition fluency and more than two summands; written subtraction, multiplication and division (including remainders)",
 			"lb": 1,
 			"competence": "wenden automatisiert die schriftlichen Verfahren der Addition, der Subtraktion (Abziehverfahren), der Multiplikation (ein- und zweistellige Multiplikatoren) und der Division (Divisoren bis einschließlich 10, auch mit Rest) an."
 		},
@@ -246,14 +314,21 @@
 			"ordinal": 7,
 			"summary": "Error checking",
 			"source": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik#25775",
-			"checked": "2026-10-31",
-			"status": "planned",
-			"lessons": [],
+			"checked": "2026-11-02",
+			"status": "partial",
+			"lessons": [
+				"geschickt-addieren",
+				"geschickt-subtrahieren",
+				"schriftlich-addieren"
+			],
 			"planned_work": ["N04", "N05", "N06", "N07", "N08", "N09", "N10", "N11"],
-			"evidence": [],
+			"evidence": [
+				"German explanations and worked strategies; three reachable jump/group lab goals; guided and transfer generators; inverse checks and fresh exits",
+				"Written addition of two nonnegative whole-number summands: entered result digits and carries, zero positions, carry chain to one million, contextual addition, correction and error reasoning"
+			],
 			"physical_work": [],
 			"reviewer": null,
-			"remaining": "Implement and review the mapped course lessons",
+			"remaining": "Primary-school teacher review; learner error diagnosis, estimation and broader context checks",
 			"lb": 1,
 			"competence": "begründen, ob Ergebnisse plausibel und richtig sind, indem sie Rechenfehler finden, erklären und korrigieren sowie Ergebnisse durch Überschlag oder Rückbezug auf den Sachzusammenhang überprüfen."
 		},
@@ -971,5 +1046,28 @@
 			"lb": 4,
 			"competence": "variieren die Bedingungen für einfache Zufallsexperimente systematisch (z. B. Anzahl oder Farbe der Kugeln in einem Säckchen) und vergleichen und bewerten die Ergebnisse zu den Experimenten, die bei unterschiedlichen Bedingungen durchgeführt wurden."
 		}
-	]
+	],
+	"extension_check": {
+		"date": "2026-11-02",
+		"scope": "Section 1.1 rechecked live for the three new lessons; remaining inventory retains its original check dates.",
+		"source": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik",
+		"neighbours_checked": [
+			"https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/2/mathematik",
+			"https://www.lehrplanplus.bayern.de/fachlehrplan/mittelschule/5/mathematik",
+			"https://www.lehrplanplus.bayern.de/fachlehrplan/realschule/5/mathematik",
+			"https://www.lehrplanplus.bayern.de/fachlehrplan/gymnasium/5/mathematik"
+		]
+	},
+	"arithmetic_extension_check": {
+		"checked": "2026-11-02",
+		"sections": ["1.2"],
+		"source": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik",
+		"scope": "Only mapped positions updated; no written algorithm, complete small-table automation or complete 1.2 claim."
+	},
+	"written_addition_check": {
+		"checked": "2026-11-02",
+		"source": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik",
+		"scope": "Written addition of two whole-number summands with sums at most one million; no full 1.2 or automatic fluency claim.",
+		"review_revision": "Level1:4–5digits with0/1/2 separated carries and same/different operand lengths. Level2:6/5digit operands, zero position, at least two consecutive carries. Goal3 exit requires correction; checks use swapped addends. Teacher review remains pending."
+	}
 }

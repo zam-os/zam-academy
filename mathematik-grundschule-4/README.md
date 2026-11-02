@@ -1,12 +1,16 @@
-# ZAM Discovery Island: Grade 4 place-value starter
+# ZAM Discovery Island: Grade 4 Number Forest
 
-German learner and parent UI for the opening mathematics lesson in Bavaria.
-Two resumable missions teach place values, zero placeholders and grouping
-in both directions, with Milo as a welcoming companion. Entry support uses
-small numbers; generated tasks extend to 999 999, T/H exchanges and the
-worked boundary 10 HT = 1 000 000. Three successful tasks are required on
-each of two practice levels, and fresh optional practice remains available
-immediately after finishing.
+German learner and parent UI for Bavarian Grade 4. Eight selectable lessons
+in the Number Forest now cover place values/bundling, comparing/ordering,
+number lines/equal jumps, decomposition/complements, addition strategies,
+subtraction strategies, multiplication/inverse division, and written addition. Each has two
+resumable missions, three successful tasks per practice level, fresh exit
+checks, optional practice and a welcoming Milo. A lesson is a draft activity,
+not a completed annual course or proof of mastery.
+
+The seven added lessons have exactly three interactive goals each, using a
+number gate, a keyboard-friendly number-line marker, coupled treasure bars,
+calculation jumps, equal baskets and a column board for result digits/carries. All whole-number activities stay between 0 and one million.
 
 ## Status
 
@@ -40,7 +44,7 @@ The app reuses the approved Academy TypeScript/Vite/Vitest/single-file
 toolchain; it adds no runtime dependencies. `validate:cell` defaults to
 the adjacent `zam/dist/index.js`; set `ZAM_CORE` to a file URL of another
 approved build to check compatibility. It uses only a disposable database:
-installation creates no cards, explicit enrolment creates twelve, retries
+installation creates no cards, explicit enrolment creates thirty-four, retries
 create none, and reinstall preserves a real recall-rating log.
 
 At the Academy root, run
@@ -85,8 +89,8 @@ the final approved recording respectively; no browser-policy bypass was used.
 - Lesson id: `stellenwerte-buendeln`; cell:
   `zam-academy:mathematik-grundschule-4`. Public links are future source
   addresses and do not indicate that this draft is already hosted.
-- `cell.json` is the sole recall-card source: four atoms, twelve German
-  items (eight binary fast checks and four synthesis tasks) with fixed ULIDs.
+- `cell.json` is the sole recall-card source: eleven atoms, thirty-four German
+  items (twenty-two binary fast checks and twelve synthesis tasks) with fixed ULIDs.
   Edit cards only in this file; there is no
   second authored card list or card generator. Installation uses the approved
   core's card-text validation and write path. Prerequisites form an acyclic
@@ -119,9 +123,9 @@ learner experience, accessible labels and teaching material are German.
 
 ## Review follow-up
 
-See [the resolution record](../docs/grade-4-review-follow-up.md) for feedback,
+See [the Number Forest expansion](../docs/grade-4-number-forest-expansion.md) and [the resolution record](../docs/grade-4-review-follow-up.md) for feedback,
 regression checks and remaining Phase-2 decisions. Shared publication tooling
-is isolated in PR #73; this package PR is stacked on that safeguard.
+is isolated in PR #73; that safeguard and the CI runtime fix are now on main.
 
 Biome is an optional external development check, not an installed package
 dependency or CI requirement. The local checks use the existing ZAM workspace

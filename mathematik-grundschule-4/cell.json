@@ -1,19 +1,24 @@
 {
 	"$schema": "https://zam.app/schemas/v1/kvt-tile.json",
 	"tile_id": "zam-academy:mathematik-grundschule-4",
-	"version": "2026.10.1",
-	"title": "Mathematik 4 Grundschule: Stellenwert-Starter",
-	"description": "Milos Stellenwert-Werkstatt: Ziffernwerte, Nullstellen und Bündeln mit Aufgaben bis 999 999 und dem Übergang zur Million. Erprobungsfassung; fachliche Freigabe und Lehrervideo fehlen. Kein vollständiger Jahreskurs.",
+	"version": "2026.11.4",
+	"title": "Mathematik 4 Grundschule: Milos Zahlenwald",
+	"description": "Acht deutsche Entdeckerlektionen: Stellenwerte und Bündeln, Vergleichen und Ordnen, Zahlenstrahl und Zahlensprünge, Zerlegen und Ergänzen, geschicktes Addieren und Subtrahieren, Malnehmen und Teilen sowie schriftliches Addieren bis zur Million. Erprobungsfassung; fachliche Freigabe und Lehrervideos fehlen. Kein vollständiger Jahreskurs.",
 	"publisher": "ZAM Academy",
 	"sources": [
 		{
 			"uri": "https://academy.zam-os.org/mathematik-grundschule-4/",
-			"label": "ZAM Entdeckerinsel: Milos Stellenwert-Werkstatt"
+			"label": "ZAM Entdeckerinsel: Milos Zahlenwald"
 		},
 		{
 			"uri": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik#25773",
 			"label": "LehrplanPLUS Mathematik 3/4, Teilbereich 1.1",
 			"checked": "2026-10-31"
+		},
+		{
+			"uri": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik#25775",
+			"label": "LehrplanPLUS Mathematik 3/4, Teilbereich 1.2",
+			"checked": "2026-11-02"
 		}
 	],
 	"atoms": [
@@ -307,6 +312,610 @@
 					"sample_solution": "1 T wird in 10 H entbündelt. Jeder der 10 H ergibt 10 Z; zusammen sind das 100 Z. Es bleibt dieselbe Menge.",
 					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=stellenwerte-buendeln",
 					"materiality": "material"
+				}
+			]
+		},
+		{
+			"id": "01M6DJ33QT7BKQM3M5YMV541Q2",
+			"atom_uri": "urn:zam:atom:01M6DJ33QT7BKQM3M5YMV541Q2",
+			"namespace": "zam-academy-mathematik-grundschule-4",
+			"slug": "gs4-vergleichen-ordnen",
+			"title": "Zahlen vergleichen und ordnen",
+			"domain": "mathematik/zahlenwald",
+			"reduction": "axiomatic",
+			"typical_age_min": 8,
+			"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=zahlen-vergleichen-ordnen",
+			"prerequisites": [
+				{
+					"atom_id": "01M687PEW1C19H7AG6K8XMHGSS",
+					"type": "soft",
+					"rationale": "Das Stellenwertverständnis unterstützt diesen Schritt."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "mathematik-grundschule-4",
+					"topic_code": "zahlen-vergleichen-ordnen",
+					"topic_title": "Zahlen vergleichen und ordnen"
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M6DJ33QTKB7AQSGV64EP7CMB",
+					"slug": "gs4-vergleichen-ordnen-1",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"question": "Welche Stelle entscheidet beim Vergleichen gleich langer Zahlen?",
+					"concept": "Die erste unterschiedliche Stelle von links.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Die erste unterschiedliche Stelle von links.",
+							"Immer die Einerstelle."
+						],
+						"correct_index": 0
+					},
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=zahlen-vergleichen-ordnen",
+					"materiality": "material"
+				},
+				{
+					"id": "01M6DJ33QTN94XDXJGF9662KJR",
+					"slug": "gs4-vergleichen-ordnen-2",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"question": "Was bedeutet es, Zahlen aufsteigend zu ordnen?",
+					"concept": "Von klein nach groß ordnen.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Von klein nach groß ordnen.",
+							"Von groß nach klein ordnen."
+						],
+						"correct_index": 0
+					},
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=zahlen-vergleichen-ordnen",
+					"materiality": "material"
+				},
+				{
+					"id": "01M6DJ33QTRJ24TF0TDD5T506W",
+					"slug": "gs4-vergleichen-ordnen-3",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Ordne 80 080, 8 800 und 80 008 aufsteigend. Begründe die Reihenfolge.",
+					"concept": "8 800 < 80 008 < 80 080.",
+					"sample_solution": "8 800 hat weniger Stellen und ist am kleinsten. Bei den beiden fünfstelligen Zahlen sind Zehntausender, Tausender und Hunderter gleich. An der Zehnerstelle steht bei 80 008 eine 0, bei 80 080 eine 8. Deshalb ist 80 008 kleiner.",
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=zahlen-vergleichen-ordnen",
+					"materiality": "material",
+					"concept_segments": [
+						{
+							"type": "math",
+							"tex": "8\\,800 < 80\\,008 < 80\\,080",
+							"speech": "achttausendachthundert ist kleiner als achtzigtausendacht ist kleiner als achtzigtausendachtzig"
+						},
+						{
+							"type": "text",
+							"text": "."
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": "01M6DJ33QTWTDY1874E545B9S4",
+			"atom_uri": "urn:zam:atom:01M6DJ33QTWTDY1874E545B9S4",
+			"namespace": "zam-academy-mathematik-grundschule-4",
+			"slug": "gs4-zahlenstrahl",
+			"title": "Zahlenstrahl und Zahlensprünge",
+			"domain": "mathematik/zahlenwald",
+			"reduction": "axiomatic",
+			"typical_age_min": 8,
+			"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=zahlenstrahl-zahlenspruenge",
+			"prerequisites": [
+				{
+					"atom_id": "01M687PEW1C19H7AG6K8XMHGSS",
+					"type": "soft",
+					"rationale": "Das Stellenwertverständnis unterstützt diesen Schritt."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "mathematik-grundschule-4",
+					"topic_code": "zahlenstrahl-zahlenspruenge",
+					"topic_title": "Zahlenstrahl und Zahlensprünge"
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M6DJ33QTCNX4498056DTM8GZ",
+					"slug": "gs4-zahlenstrahl-1",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"question": "Wie bestimmst du die Schrittweite zwischen zwei beschrifteten Zahlen am Zahlenstrahl?",
+					"concept": "Abstand der Zahlen durch die Anzahl gleich großer Abschnitte teilen.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Abstand der Zahlen durch die Anzahl gleich großer Abschnitte teilen.",
+							"Die beiden Zahlen addieren und durch die Anzahl der Striche teilen."
+						],
+						"correct_index": 0
+					},
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=zahlenstrahl-zahlenspruenge",
+					"materiality": "material"
+				},
+				{
+					"id": "01M6DJ33QTMJJ6ANSKTMC7J6GT",
+					"slug": "gs4-zahlenstrahl-2",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"question": "Was geschieht bei einem Schritt nach links auf dem Zahlenstrahl?",
+					"concept": "Die Zahl wird um die Schrittweite kleiner.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Die Zahl wird um die Schrittweite kleiner.",
+							"Die Zahl wird immer um 1 kleiner, unabhängig von der Schrittweite."
+						],
+						"correct_index": 0
+					},
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=zahlenstrahl-zahlenspruenge",
+					"materiality": "material"
+				},
+				{
+					"id": "01M6DJ33QT1CR2M1SRGEH3F0Z5",
+					"slug": "gs4-zahlenstrahl-3",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Zwischen 200 000 und 300 000 liegen zehn gleich große Abschnitte. Welche Zahl liegt drei Schritte rechts von 200 000? Erkläre.",
+					"concept": "230 000.",
+					"sample_solution": "Der Abstand beträgt 100 000. Zehn gleich große Abschnitte bedeuten 100 000 : 10 = 10 000 je Schritt. Drei Schritte nach rechts ergeben 200 000 + 3 · 10 000 = 230 000.",
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=zahlenstrahl-zahlenspruenge",
+					"materiality": "material"
+				}
+			]
+		},
+		{
+			"id": "01M6DJ33QT1X4ZC5GC5SENN67H",
+			"atom_uri": "urn:zam:atom:01M6DJ33QT1X4ZC5GC5SENN67H",
+			"namespace": "zam-academy-mathematik-grundschule-4",
+			"slug": "gs4-zerlegen",
+			"title": "Zahlen zerlegen und ergänzen",
+			"domain": "mathematik/zahlenwald",
+			"reduction": "axiomatic",
+			"typical_age_min": 8,
+			"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=zahlen-zerlegen-ergaenzen",
+			"prerequisites": [
+				{
+					"atom_id": "01M687PEW348C0W3TZ3XM71ZRM",
+					"type": "soft",
+					"rationale": "Das Stellenwertverständnis unterstützt diesen Schritt."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "mathematik-grundschule-4",
+					"topic_code": "zahlen-zerlegen-ergaenzen",
+					"topic_title": "Zahlen zerlegen und ergänzen"
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M6DJ33QTEQX79B5W1DMEPZJG",
+					"slug": "gs4-zerlegen-1",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"question": "Wie berechnest du einen fehlenden Teil, wenn die ganze Zahl und der andere Teil bekannt sind?",
+					"concept": "Ganze Zahl minus bekannter Teil.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Ganze Zahl minus bekannter Teil.",
+							"Ganze Zahl plus bekannter Teil."
+						],
+						"correct_index": 0
+					},
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=zahlen-zerlegen-ergaenzen",
+					"materiality": "material"
+				},
+				{
+					"id": "01M6DJ33QTJ9VMFBC80WFEHWA6",
+					"slug": "gs4-zerlegen-2",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"question": "Welche Stellenwertzerlegung passt zu 405 060?",
+					"concept": "400 000 + 5 000 + 60.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": ["400 000 + 5 000 + 60.", "400 000 + 50 000 + 6."],
+						"correct_index": 0
+					},
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=zahlen-zerlegen-ergaenzen",
+					"materiality": "material",
+					"concept_segments": [
+						{
+							"type": "math",
+							"tex": "400\\,000 + 5\\,000 + 60",
+							"speech": "vierhunderttausend plus fünftausend plus sechzig"
+						},
+						{
+							"type": "text",
+							"text": "."
+						}
+					]
+				},
+				{
+					"id": "01M6DJ33QT32JS9JJHCKEN7N6C",
+					"slug": "gs4-zerlegen-3",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "100 000 sind in 30 000 und 70 000 zerlegt. Der erste Teil wird um 1 000 größer. Wie verändert sich der zweite Teil, wenn die Summe gleich bleibt?",
+					"concept": "Er wird um 1 000 kleiner, also 69 000.",
+					"sample_solution": "Der erste Teil ist nun 31 000. Damit die Summe 100 000 bleibt, muss der zweite Teil 69 000 sein: 31 000 + 69 000 = 100 000. Ein größerer Teil erfordert bei gleicher Summe einen entsprechend kleineren anderen Teil.",
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=zahlen-zerlegen-ergaenzen",
+					"materiality": "material"
+				}
+			]
+		},
+		{
+			"namespace": "zam-academy-mathematik-grundschule-4",
+			"domain": "mathematik/zahlenwald",
+			"reduction": "axiomatic",
+			"typical_age_min": 8,
+			"prerequisites": [
+				{
+					"atom_id": "01M687PEW348C0W3TZ3XM71ZRM",
+					"type": "soft",
+					"rationale": "Das Stellenwertverständnis unterstützt diesen Schritt."
+				}
+			],
+			"id": "01M6EQYDM417KPCFPXNCFJQKZZ",
+			"atom_uri": "urn:zam:atom:01M6EQYDM417KPCFPXNCFJQKZZ",
+			"slug": "gs4-addieren",
+			"title": "Geschickt addieren",
+			"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=geschickt-addieren",
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "mathematik-grundschule-4",
+					"topic_code": "geschickt-addieren",
+					"topic_title": "Geschickt addieren"
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M6EQYDM4KVF733E4JRQJ2BPX",
+					"slug": "gs4-addieren-1",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"question": "Wie nutzt du 6 + 3 = 9 für 6 000 + 3 000?",
+					"concept": "Du rechnest mit Tausenderbündeln: 6 Tausender + 3 Tausender = 9 Tausender, also 9 000.",
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=geschickt-addieren",
+					"materiality": "material",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Du rechnest mit Tausenderbündeln: 6 Tausender + 3 Tausender = 9 Tausender, also 9 000.",
+							"Das Ergebnis bleibt 9, weil nur die beiden ersten Ziffern zählen."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M6EQYDM4G87PZB6SW6B1W2YQ",
+					"slug": "gs4-addieren-2",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"question": "Du ersetzt beim Addieren + 2 900 durch + 3 000. Wie gleichst du aus?",
+					"concept": "Du ziehst anschließend 100 ab.",
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=geschickt-addieren",
+					"materiality": "material",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Du ziehst anschließend 100 ab.",
+							"Du addierst anschließend noch 100."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M6EQYDM4X0YN1J2RAKK4N6B3",
+					"slug": "gs4-addieren-3",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Berechne 38 700 + 4 800 mit einer Hilfsaufgabe und erkläre den Ausgleich.",
+					"concept": "43 500.",
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=geschickt-addieren",
+					"materiality": "material",
+					"sample_solution": "38 700 + 5 000 = 43 700. Dabei wurden 200 zu viel addiert. Deshalb: 43 700 − 200 = 43 500."
+				}
+			]
+		},
+		{
+			"namespace": "zam-academy-mathematik-grundschule-4",
+			"domain": "mathematik/zahlenwald",
+			"reduction": "axiomatic",
+			"typical_age_min": 8,
+			"prerequisites": [
+				{
+					"atom_id": "01M687PEW348C0W3TZ3XM71ZRM",
+					"type": "soft",
+					"rationale": "Das Stellenwertverständnis unterstützt diesen Schritt."
+				}
+			],
+			"id": "01M6EQYDM4YW8W4Y14PFN2P471",
+			"atom_uri": "urn:zam:atom:01M6EQYDM4YW8W4Y14PFN2P471",
+			"slug": "gs4-subtrahieren",
+			"title": "Geschickt subtrahieren",
+			"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=geschickt-subtrahieren",
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "mathematik-grundschule-4",
+					"topic_code": "geschickt-subtrahieren",
+					"topic_title": "Geschickt subtrahieren"
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M6EQYDM4ZZTSR4EC1Y8T8PB1",
+					"slug": "gs4-subtrahieren-1",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"question": "Wie prüfst du eine Subtraktion durch Addieren?",
+					"concept": "Differenz + abgezogene Zahl = Startzahl.",
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=geschickt-subtrahieren",
+					"materiality": "material",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Differenz + abgezogene Zahl = Startzahl.",
+							"Differenz + Startzahl = abgezogene Zahl."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M6EQYDM4C4KV2QGRWWVB4KXZ",
+					"slug": "gs4-subtrahieren-2",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"question": "Du ersetzt beim Subtrahieren − 4 900 durch − 5 000. Wie gleichst du aus?",
+					"concept": "Du gibst anschließend 100 wieder dazu.",
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=geschickt-subtrahieren",
+					"materiality": "material",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Du gibst anschließend 100 wieder dazu.",
+							"Du ziehst anschließend weitere 100 ab."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M6EQYDM4JRHN5PPXQQSQT9MR",
+					"slug": "gs4-subtrahieren-3",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Berechne 63 200 − 5 800 mit einer Hilfsaufgabe und prüfe dein Ergebnis.",
+					"concept": "57 400.",
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=geschickt-subtrahieren",
+					"materiality": "material",
+					"sample_solution": "63 200 − 6 000 = 57 200. Es wurden 200 zu viel weggenommen: 57 200 + 200 = 57 400. Probe: 57 400 + 5 800 = 63 200."
+				}
+			]
+		},
+		{
+			"namespace": "zam-academy-mathematik-grundschule-4",
+			"domain": "mathematik/zahlenwald",
+			"reduction": "axiomatic",
+			"typical_age_min": 8,
+			"prerequisites": [
+				{
+					"atom_id": "01M687PEW348C0W3TZ3XM71ZRM",
+					"type": "soft",
+					"rationale": "Das Stellenwertverständnis unterstützt diesen Schritt."
+				}
+			],
+			"id": "01M6EQYDM45HP78N17YA5KGEWJ",
+			"atom_uri": "urn:zam:atom:01M6EQYDM45HP78N17YA5KGEWJ",
+			"slug": "gs4-malnehmen-teilen",
+			"title": "Malnehmen und teilen",
+			"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=malnehmen-teilen",
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "mathematik-grundschule-4",
+					"topic_code": "malnehmen-teilen",
+					"topic_title": "Malnehmen und teilen"
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M6EQYDM4QSK1115R2EX109KT",
+					"slug": "gs4-malnehmen-teilen-1",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"question": "Welche Rechnung beschreibt 6 gleich große Gruppen mit je 4 Dingen?",
+					"concept": "6·4 = 24.",
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=malnehmen-teilen",
+					"materiality": "material",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": ["6·4 = 24.", "6 + 4 = 10."],
+						"correct_index": 0
+					},
+					"concept_segments": [
+						{
+							"type": "math",
+							"tex": "6 \\cdot 4 = 24",
+							"speech": "sechs mal vier ist vierundzwanzig"
+						},
+						{
+							"type": "text",
+							"text": "."
+						}
+					]
+				},
+				{
+					"id": "01M6EQYDM4HK9CMQE75CMWX4K2",
+					"slug": "gs4-malnehmen-teilen-2",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"question": "Welche Malaufgabe prüft 42 : 7 = 6?",
+					"concept": "7·6 = 42.",
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=malnehmen-teilen",
+					"materiality": "material",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": ["7·6 = 42.", "7 + 6 = 13."],
+						"correct_index": 0
+					},
+					"concept_segments": [
+						{
+							"type": "math",
+							"tex": "7 \\cdot 6 = 42",
+							"speech": "sieben mal sechs ist zweiundvierzig"
+						},
+						{
+							"type": "text",
+							"text": "."
+						}
+					]
+				},
+				{
+					"id": "01M6EQYDM4AQZFDK9CBACV26SS",
+					"slug": "gs4-malnehmen-teilen-3",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "7 Körbe enthalten zusammen 2 100 Samen. Wie viele Samen sind in jedem Korb? Erkläre mit dem kleinen Einmaleins.",
+					"concept": "300 Samen je Korb.",
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=malnehmen-teilen",
+					"materiality": "material",
+					"sample_solution": "7 · 3 = 21. Mit Hunderterbündeln gilt 7 · 300 = 2 100. Deshalb ist 2 100 : 7 = 300. Die Malaufgabe ist zugleich die Probe."
+				}
+			]
+		},
+		{
+			"namespace": "zam-academy-mathematik-grundschule-4",
+			"domain": "mathematik/zahlenwald",
+			"reduction": "axiomatic",
+			"typical_age_min": 8,
+			"prerequisites": [
+				{
+					"atom_id": "01M687PEW348C0W3TZ3XM71ZRM",
+					"type": "soft",
+					"rationale": "Das Stellenwertverständnis unterstützt diesen Schritt."
+				}
+			],
+			"id": "01M6ESYAQNPJDABE7QGX55XY6B",
+			"atom_uri": "urn:zam:atom:01M6ESYAQNPJDABE7QGX55XY6B",
+			"slug": "gs4-schriftlich-addieren",
+			"title": "Schriftlich addieren",
+			"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=schriftlich-addieren",
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "mathematik-grundschule-4",
+					"topic_code": "schriftlich-addieren",
+					"topic_title": "Schriftlich addieren"
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M6ESYAQNW5R29BYVN40965G9",
+					"slug": "gs4-schriftlich-addieren-1",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"question": "Wie schreibst du zwei Summanden für die schriftliche Addition untereinander?",
+					"concept": "Einer unter Einer, Zehner unter Zehner und gleiche weitere Stellenwerte untereinander.",
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=schriftlich-addieren",
+					"materiality": "material",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Einer unter Einer, Zehner unter Zehner und gleiche weitere Stellenwerte untereinander.",
+							"Beide Zahlen beginnen links in derselben Spalte, auch wenn sie verschieden lang sind."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M6ESYAQNK14RQ05EX40S7CNK",
+					"slug": "gs4-schriftlich-addieren-2",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"question": "In der Einerspalte erhältst du 15. Was schreibst du ins Ergebnis und in die Übertragszeile?",
+					"concept": "5 bei den Einern im Ergebnis und 1 als Übertrag zu den Zehnern.",
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=schriftlich-addieren",
+					"materiality": "material",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"5 bei den Einern im Ergebnis und 1 als Übertrag zu den Zehnern.",
+							"1 bei den Einern im Ergebnis und 5 als Übertrag zu den Zehnern."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M6ESYAQNAXWVCNASVZHYJZ3G",
+					"slug": "gs4-schriftlich-addieren-3",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Rechne 3 748 + 2 567 schriftlich. Erkläre die Überträge.",
+					"concept": "6 315.",
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=schriftlich-addieren",
+					"materiality": "material",
+					"sample_solution": "E: 8 + 7 = 15, schreibe 5 und übertrage 1 zu Z. Z: 4 + 6 + 1 = 11, schreibe 1 und übertrage 1 zu H. H: 7 + 5 + 1 = 13, schreibe 3 und übertrage 1 zu T. T: 3 + 2 + 1 = 6. Die Summe ist 6 315. Tauschprobe: 2 567 + 3 748 = 6 315. Rechne die Tauschaufgabe neu und vergleiche beide Summen.",
+					"concept_segments": [
+						{
+							"type": "math",
+							"tex": "6\\,315",
+							"speech": "sechstausenddreihundertfünfzehn"
+						},
+						{
+							"type": "text",
+							"text": "."
+						}
+					]
+				},
+				{
+					"id": "01M6ESYAQNDKJ51HVCGYQDGMGW",
+					"slug": "gs4-schriftlich-addieren-4",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Warum ergibt 999 999 + 1 die Zahl 1 000 000? Erkläre mit den Stellenwerten.",
+					"concept": "Die Übertragskette bündelt bis zu einer Million.",
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=schriftlich-addieren",
+					"materiality": "material",
+					"sample_solution": "9 Einer + 1 Einer ergeben 10 Einer: 0 Einer bleiben, 1 Zehner wird übertragen. In jeder folgenden Stelle werden 9 vorhandene Bündel und 1 ankommendes Bündel zu 10 Bündeln. Daraus entsteht jeweils 1 Bündel der nächsten Stelle. Nach 10 Hunderttausendern entsteht 1 Million; die sechs niedrigeren Ergebnisstellen sind 0."
 				}
 			]
 		}

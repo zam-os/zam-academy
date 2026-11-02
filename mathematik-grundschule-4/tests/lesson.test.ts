@@ -18,7 +18,6 @@ import {
 	validProgress,
 } from "../src/practice/evidence";
 import {
-	LESSON_ID,
 	STEPS,
 	orderedOptions,
 	recallSeed,
@@ -37,6 +36,8 @@ import {
 	REQUIRED_CORRECT,
 } from "../src/practice/tasks";
 import { parentObservation } from "../src/practice/evidence";
+
+type RecallItem = (typeof cell.atoms)[number]["practice_items"][number];
 
 const required = <T>(value: T | null | undefined): T => {
 	if (value == null) throw new Error("Expected a generated value");
@@ -257,10 +258,10 @@ describe("tasks and evidence", () => {
 });
 
 describe("content contracts", () => {
-	it("has four atoms, twelve German items, stable lesson links and no broad official grade binding", () => {
-		expect(cell.atoms).toHaveLength(4);
-		const items = cell.atoms.flatMap((a) => a.practice_items);
-		expect(items).toHaveLength(12);
+	it("has eleven atoms, thirty-four German items, stable lesson links and no broad official grade binding", () => {
+		expect(cell.atoms).toHaveLength(11);
+		const items = cell.atoms.flatMap<RecallItem>((a) => a.practice_items);
+		expect(items).toHaveLength(34);
 		for (const atom of cell.atoms) {
 			expect(atom.curricula.every((c) => c.provider === "zam-academy")).toBe(
 				true,
@@ -269,11 +270,11 @@ describe("content contracts", () => {
 		}
 		for (const item of items) {
 			expect(item.language).toBe("de");
-			expect(item.source_link.endsWith(`#lesson=${LESSON_ID}`)).toBe(true);
+			expect(new URL(item.source_link).hash.startsWith("#lesson=")).toBe(true);
 			expect(validLessonHash(new URL(item.source_link).hash)).toBe(true);
 		}
 		expect(validLessonHash("#lesson=unbekannt")).toBe(false);
-		expect(new Set(items.map((i) => i.id)).size).toBe(12);
+		expect(new Set(items.map((i) => i.id)).size).toBe(34);
 	});
 	it("enumerates every official competence and truthfully identifies partial coverage", () => {
 		expect(coverage.rows).toHaveLength(54);
@@ -282,7 +283,8 @@ describe("content contracts", () => {
 		expect(coverage.full_coverage).toBe(false);
 		for (const c of coverage.rows) {
 			expect(c.reviewer).toBeNull();
-			for (const lesson of c.lessons) expect(lesson).toBe(LESSON_ID);
+			for (const lesson of c.lessons)
+				expect(validLessonHash(`#lesson=${lesson}`)).toBe(true);
 			expect(c.remaining.length).toBeGreaterThan(0);
 		}
 	});
