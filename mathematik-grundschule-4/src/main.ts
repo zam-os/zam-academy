@@ -117,7 +117,7 @@ function taskKey(p = store.state): string {
 			: `journey/${p.step}`;
 }
 function mood(): Mood {
-	return store.state.resting
+	return (forest?.store.state.resting ?? store.state.resting)
 		? "resting"
 		: eating
 			? "snack"
@@ -130,7 +130,7 @@ function mood(): Mood {
 						: "curious";
 }
 function message(): string {
-	return store.state.resting
+	return (forest?.store.state.resting ?? store.state.resting)
 		? "Ich mache es mir gemütlich. Deine Entdeckungen warten auf dich."
 		: eating
 			? "Mmmh, danke! Jetzt genießen wir unsere Entdeckung."
@@ -664,10 +664,10 @@ async function activateLesson(): Promise<void> {
 	render();
 	if (request > 1) app.querySelector<HTMLElement>("#lesson-heading")?.focus();
 }
-await activateLesson();
 window.addEventListener("hashchange", () => {
 	void activateLesson();
 });
+await activateLesson();
 
 // Referencing the stable sequence catches accidental missing workshop steps during authoring.
 if (!STEPS.includes(store.state.step))

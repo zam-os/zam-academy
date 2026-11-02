@@ -147,6 +147,13 @@
 			"status": "passed",
 			"checked": "2026-11-02",
 			"details": "Inspected desktop light and phone dark layouts; no horizontal body overflow or clipped visible controls in inspected activity/parent states. Verified compact native lesson picker and focus on the newly selected lesson. Temporary viewport override reset. Physical touch hardware remains untested."
+		},
+		{
+			"surface": "Separate-origin built preview on localhost:5226",
+			"check": "Active-lesson pause isolation after second-agent review",
+			"status": "passed",
+			"checked": "2026-11-02",
+			"details": "Pausing a new lesson put Milo to sleep with the matching resting message. After resuming it, pausing the original workshop and switching back left the new lesson and Milo awake. The original workshop learner state on :5216 was not touched."
 		}
 	],
 	"remaining": [
@@ -206,6 +213,15 @@
 		"teacher_review": "pending",
 		"teacher_recordings": "awaiting-recording",
 		"curriculum_check": "2026-11-02; section 1.1 only; mapped positions remain partial",
-		"storage": "One separate transactional document per new lesson; original workshop namespace unchanged; no migrations"
+		"storage": "One separate transactional document per new lesson; original workshop namespace unchanged; no migrations",
+		"second_agent_review": {
+			"status": "reviewed",
+			"date": "2026-11-02",
+			"initial_findings": [
+				"Milo pause state used the original workshop instead of the active lesson",
+				"Hash routing registered after asynchronous initial loading"
+			],
+			"resolution": "Both integration findings fixed and rechecked by the second agent; no remaining actionable findings. This is not teacher content approval."
+		}
 	}
 }

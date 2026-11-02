@@ -86,3 +86,8 @@ repeat-task detection, corrupted documents and lesson isolation. The native
 browser harness tests the shared store with isolated generated test names.
 Direct file startup, final media playback, physical touch hardware and the
 ZAM learner UI remain pending as already documented for the starter.
+
+The required second-agent review found two integration issues: shared Milo
+pause state and startup route registration order. Both were corrected and
+rechecked; the reviewer reported no remaining actionable findings. This code
+review does not substitute for the pending primary-school teacher approval.
