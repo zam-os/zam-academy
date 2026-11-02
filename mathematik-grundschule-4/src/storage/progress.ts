@@ -1,12 +1,7 @@
-import {
-	fresh,
-	validProgress,
-	normaliseProgress,
-	type Progress,
-} from "../practice/evidence";
+import { fresh, validProgress, type Progress } from "../practice/evidence";
 
 export type StorageMode = "persistent" | "memory" | "recovery";
-export const DATABASE = "zam-entdeckerinsel-mathe4-v1";
+export const DATABASE = "zam-entdeckerinsel-mathe4";
 export const STORAGE_VERSION = 1;
 const STORE = "progress";
 
@@ -72,8 +67,7 @@ export class ProgressStore {
 		});
 		if (raw === undefined) return;
 		this.raw = raw;
-		const restored = normaliseProgress(raw);
-		if (restored) this.state = restored;
+		if (validProgress(raw)) this.state = raw;
 		else this.mode = "recovery";
 	}
 
@@ -102,17 +96,14 @@ export class ProgressStore {
 				const tx = db.transaction(STORE, "readwrite");
 				const req = tx.objectStore(STORE).get("learner");
 				req.onsuccess = () => {
-					if (req.result !== undefined && !validProgress(req.result)) {
-						this.raw = req.result;
+					const saved = req.result === undefined ? this.state : req.result;
+					if (!validProgress(saved)) {
+						this.raw = saved;
 						this.mode = "recovery";
 						tx.abort();
 						return;
 					}
-					const candidate = normaliseProgress(req.result ?? this.state);
-					if (!candidate) {
-						tx.abort();
-						return;
-					}
+					const candidate = structuredClone(saved);
 					next = candidate;
 					try {
 						change(candidate);

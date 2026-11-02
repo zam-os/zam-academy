@@ -99,15 +99,15 @@ the final approved recording respectively; no browser-policy bypass was used.
   coverage is claimed.
 - Evidence records first responses separately from helped retries. The
   parent view uses stable task snapshots for dated examples, with canonical
-  targets for build tasks. Version-1 observations are labelled as historical
-  preview exercises; valid version-2 evidence remains valid. Content-version
-  upgrades refresh changed workspaces while preserving logs, rewards, practice
-  counts and assistance status on resumed work.
+  targets for build tasks; digit examples use grouped numerals.
+  The unpublished draft has no progress migration or compatibility layer.
+  The first release uses a fresh storage namespace and starts every learner
+  at zero; draft preview saves are not imported.
   Local practice is never presented as ZAM review history or an FSRS score.
 - A versioned IndexedDB document commits mission completion and unique
-  reward keys together. Concurrent tabs serialize writes. Ordinary version
-  changes do not mint rewards; absence never takes away decorations or
-  care. Corrupt saves remain available for export before an explicit reset.
+  reward keys together. Concurrent tabs serialize writes. Reopening or
+  resubmitting a mission does not mint rewards; absence never takes away
+  decorations or care. Corrupt saves remain available for export before an explicit reset.
 - Later checks use new variants at least 24 hours after completion. They
   record their actual time and assistance, with no scheduling or push alerts.
   Browser clocks are not trusted assessment instruments or proof of learning.

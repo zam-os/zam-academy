@@ -1,15 +1,14 @@
 import {
-	CONTENT_VERSION,
 	REQUIRED_CORRECT,
 	STEPS,
 	taskFor,
-	practiceTask,
 	type Step,
 	type Task,
 } from "./tasks";
 import { ulid } from "../id";
 import {
 	validCounts,
+	format,
 	digits,
 	MAX_NUMBER,
 	type Counts,
@@ -26,8 +25,7 @@ export interface Attempt {
 	helped: boolean;
 	first: boolean;
 	mode: "guided" | "entry" | "exit" | "later";
-	version: number;
-	example?: { prompt: string; model: Counts; answer: number };
+	example: { prompt: string; model: Counts; answer: number };
 }
 export interface Practice {
 	id: string;
@@ -39,7 +37,6 @@ export interface Practice {
 }
 export interface Progress {
 	schema: 1;
-	version: number;
 	seed: number;
 	step: Step;
 	workspace: Counts;
@@ -52,13 +49,12 @@ export interface Progress {
 	resting: boolean;
 	startedAt: number;
 	explained: boolean;
-	practice?: Practice | null;
+	practice: Practice | null;
 	later: { id: string; seed: number; index: number; at: number } | null;
 }
 export function fresh(now = Date.now()): Progress {
 	return {
 		schema: 1,
-		version: CONTENT_VERSION,
 		seed: crypto.getRandomValues(new Uint32Array(1))[0],
 		step: "welcome",
 		workspace: digits(0),
@@ -92,9 +88,6 @@ export function validProgress(v: unknown): v is Progress {
 	if (
 		!object(v) ||
 		v.schema !== 1 ||
-		!Number.isInteger(v.version) ||
-		Number(v.version) < 1 ||
-		Number(v.version) > CONTENT_VERSION ||
 		!seed(v.seed) ||
 		!STEPS.includes(v.step as Step) ||
 		!validCounts(v.workspace) ||
@@ -161,21 +154,16 @@ export function validProgress(v: unknown): v is Progress {
 				typeof a.helped === "boolean" &&
 				typeof a.first === "boolean" &&
 				["guided", "entry", "exit", "later"].includes(String(a.mode)) &&
-				Number.isInteger(a.version) &&
-				Number(a.version) >= 1 &&
-				Number(a.version) <= CONTENT_VERSION &&
-				(a.example === undefined ||
-					(object(a.example) &&
-						typeof a.example.prompt === "string" &&
-						a.example.prompt.length <= 2000 &&
-						validCounts(a.example.model) &&
-						stamp(a.example.answer) &&
-						a.example.answer <= MAX_NUMBER)),
+				object(a.example) &&
+				typeof a.example.prompt === "string" &&
+				a.example.prompt.length <= 2000 &&
+				validCounts(a.example.model) &&
+				stamp(a.example.answer) &&
+				a.example.answer <= MAX_NUMBER,
 		)
 	)
 		return false;
 	if (
-		v.practice !== undefined &&
 		v.practice !== null &&
 		(!object(v.practice) ||
 			typeof v.practice.id !== "string" ||
@@ -222,12 +210,11 @@ export function recordAttempt(
 		helped,
 		first,
 		mode,
-		version: CONTENT_VERSION,
 		example: {
 			prompt:
 				task.numeral === undefined
 					? task.prompt
-					: `${task.prompt} Zahl: ${task.numeral}; markierte Ziffer: ${digits(task.numeral)[task.column ?? 0]}.`,
+					: `${task.prompt} Zahl: ${format(task.numeral)}; markierte Ziffer: ${digits(task.numeral)[task.column ?? 0]}.`,
 			model: task.family === "build" ? digits(task.answer) : [...task.model],
 			answer: task.answer,
 		},
@@ -260,7 +247,6 @@ export function nextStep(p: Progress): void {
 
 export function independent(a: Attempt): boolean {
 	return (
-		a.version >= 2 &&
 		a.first &&
 		a.outcome &&
 		!a.helped &&
@@ -282,74 +268,22 @@ export function newPractice(
 ): Practice {
 	return { id: ulid(), level, seed, index: 0, correct: 0, requiredCorrect };
 }
-/** Preserve draft rewards and logs, never promote old answer-revealing tasks to new evidence. */
-export function normaliseProgress(raw: unknown): Progress | null {
-	if (!validProgress(raw)) return null;
-	const next = structuredClone(raw);
-	if (next.version < CONTENT_VERSION) {
-		const round = next.practice ?? next.later;
-		const currentKey = round
-			? `${round.id}/v${CONTENT_VERSION}/${round.index}`
-			: `journey/v${CONTENT_VERSION}/${next.step}`;
-		const oldKeys = round
-			? [
-					`${round.id}/${round.index}`,
-					`${round.id}/v${next.version}/${round.index}`,
-				]
-			: [`journey/${next.step}`, `journey/v${next.version}/${next.step}`];
-		// A resumed attempt is not a fresh independent response after an upgrade.
-		if (
-			oldKeys.some(
-				(key) =>
-					next.helped.includes(key) || next.attempts.some((a) => a.key === key),
-			)
-		)
-			next.helped = [...new Set([...next.helped, currentKey])].slice(-1000);
-		next.workspace = next.practice
-			? practiceTask(
-					next.practice.level,
-					next.practice.seed,
-					next.practice.index,
-				).model
-			: (taskFor(next.step, next.seed)?.model ?? digits(0));
-		next.undo = [];
-	}
-	next.version = CONTENT_VERSION;
-	next.practice ??= null;
-	return next;
-}
-
-/** A build example describes the requested number, never its empty starting workspace. */
-export function attemptExample(attempt: Attempt): Attempt["example"] {
-	const example = attempt.example;
-	if (!example) return undefined;
-	return {
-		...example,
-		model:
-			attempt.family === "build" ? digits(example.answer) : [...example.model],
-	};
-}
-
 export function parentObservation(attempts: Attempt[], completedAt?: number) {
-	const current = attempts.filter((a) => a.version >= 2);
-	const success = [...current].reverse().find(independent);
-	const helped = [...current].reverse().find((a) => a.helped && a.outcome);
-	const last = success ?? helped ?? current.at(-1) ?? attempts.at(-1);
-	const historical = last?.version === 1;
+	const success = [...attempts].reverse().find(independent);
+	const helped = [...attempts].reverse().find((a) => a.helped && a.outcome);
+	const last = success ?? helped ?? attempts.at(-1);
 	const later =
 		success?.mode === "later" &&
 		completedAt !== undefined &&
 		success.at - completedAt >= 86_400_000;
-	const label = historical
-		? "Frühere Vorschau-Übung (Version 1)"
-		: later
-			? "An einem späteren Tag geprüft"
-			: success
-				? "Neue Aufgabe selbstständig gelöst"
-				: helped
-					? "Mit Hilfe geübt"
-					: last
-						? "Ausprobiert"
-						: "Noch offen";
-	return { success, helped, last, historical, label };
+	const label = later
+		? "An einem späteren Tag geprüft"
+		: success
+			? "Neue Aufgabe selbstständig gelöst"
+			: helped
+				? "Mit Hilfe geübt"
+				: last
+					? "Ausprobiert"
+					: "Noch offen";
+	return { success, helped, last, label };
 }

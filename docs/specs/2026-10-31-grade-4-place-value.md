@@ -12,8 +12,8 @@ The review follow-up expands the original four-place entry sequence to
 generated tasks through 999 999, T/H exchange and the worked million boundary.
 Read/build tasks withhold numerical readouts before an answer. Each mission
 includes three successful practice tasks on its own level; optional fresh
-rounds remain available immediately. Earlier evidence is retained as
-preview practice, without claiming it as independent success.
+rounds remain available immediately. The first release starts every learner
+at zero, with a fresh storage namespace and no draft-progress migration.
 
 ## Lesson contract
 
@@ -179,14 +179,14 @@ Mission rewards are deterministic and granted once per lesson/mission
 content contract, including supported completion. Save the completion and
 its earned reward in one state update; reopening, resubmitting or a second
 browser tab cannot earn it twice. Use a stable lesson/mission reward key;
-a normal code or content-version update does not grant the reward again.
+reopening or resubmitting the mission does not grant the reward again.
 Derive available rewards from the unique grant set rather than incrementing
 a balance on every completion event. Decorative changes have an explicit
 reduced-motion equivalent. Sound starts off and never carries information
 by itself.
 
-Store only local progress needed to resume and show evidence: lesson and
-task versions, task family/seed, timestamp, first response outcome, help
+Store only local progress needed to resume and show evidence: task
+family/seed, timestamp, first response outcome, help
 used and completion/reward markers. Use ULIDs where persistent records
 need ids. No microphone recording, free-text transcripts or child name is
 required. An on-device “For parents” view is a presentation switch, not an

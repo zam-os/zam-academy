@@ -11,7 +11,6 @@ import {
 } from "../math/place-value";
 
 export const LESSON_ID = "stellenwerte-buendeln";
-export const CONTENT_VERSION = 3;
 export const REQUIRED_CORRECT = 3;
 export const STEPS = [
 	"welcome",

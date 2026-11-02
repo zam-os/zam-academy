@@ -18,7 +18,6 @@ import {
 	validProgress,
 } from "../src/practice/evidence";
 import {
-	CONTENT_VERSION,
 	LESSON_ID,
 	STEPS,
 	orderedOptions,
@@ -37,12 +36,7 @@ import {
 	mistakeHint,
 	REQUIRED_CORRECT,
 } from "../src/practice/tasks";
-import {
-	normaliseProgress,
-	attemptExample,
-	parentObservation,
-	newPractice,
-} from "../src/practice/evidence";
+import { parentObservation } from "../src/practice/evidence";
 
 const required = <T>(value: T | null | undefined): T => {
 	if (value == null) throw new Error("Expected a generated value");
@@ -207,7 +201,7 @@ describe("tasks and evidence", () => {
 				);
 		}
 	});
-	it("grants each mission only once and keeps rewards through ordinary content updates", () => {
+	it("grants each mission only once", () => {
 		const p = fresh(1000);
 		for (let i = 0; i < 10; i++) grant(p, "mission-a", 2000 + i);
 		grant(p, "mission-b", 3000);
@@ -235,9 +229,6 @@ describe("tasks and evidence", () => {
 	it("rejects corrupt and incompatible saved state instead of manufacturing mastery", () => {
 		expect(validProgress(null)).toBe(false);
 		expect(validProgress({ ...fresh(), schema: 99 })).toBe(false);
-		expect(validProgress({ ...fresh(), version: CONTENT_VERSION + 1 })).toBe(
-			false,
-		);
 		expect(
 			validProgress({ ...fresh(), workspace: [0, 0, 0, 0, 0, 0, 2] }),
 		).toBe(false);
@@ -408,26 +399,6 @@ describe("review regressions", () => {
 			"nebeneinander",
 		);
 	});
-	it("preserves earlier evidence and rewards without upgrading answer-revealing tasks to independent success", () => {
-		const old = fresh(1000);
-		grant(old, "mission-a", 2000);
-		recordAttempt(
-			old,
-			required(taskFor("exit-read", old.seed)),
-			"journey/exit-read",
-			true,
-			3000,
-			"exit",
-		);
-		old.version = 1;
-		old.attempts[0].version = 1;
-		delete old.practice;
-		const restored = required(normaliseProgress(old));
-		expect(restored.rewards).toEqual(["mission-a"]);
-		expect(restored.completed["mission-a"]).toBe(2000);
-		expect(independent(restored.attempts[0])).toBe(false);
-		expect(restored.attempts[0].id).toBe(old.attempts[0].id);
-	});
 	it("has standard fast checks, synthesis solutions, explicit partial competence text and acyclic prerequisites", () => {
 		const ids = new Set(cell.atoms.map((a) => a.id));
 		for (const atom of cell.atoms)
@@ -467,19 +438,12 @@ describe("Grok review regressions", () => {
 			};
 			recordAttempt(p, task, "build-example", false, 2000, "guided");
 			const saved = p.attempts[0];
-			expect(total(required(attemptExample(saved)).model)).toBe(answer);
+			expect(total(saved.example.model)).toBe(answer);
 			task.model[0] = 9;
-			expect(total(required(attemptExample(saved)).model)).toBe(answer);
-			// Repair an already saved version-2 empty start-state snapshot without rewriting evidence.
-			const earlier = {
-				...saved,
-				example: { prompt: task.prompt, answer, model: digits(0) },
-			};
-			expect(total(required(attemptExample(earlier)).model)).toBe(answer);
-			expect(total(required(earlier.example).model)).toBe(0);
+			expect(total(saved.example.model)).toBe(answer);
 		}
 	});
-	it("rejects impossible example numbers and coerced progress versions", () => {
+	it("rejects impossible example numbers", () => {
 		const p = fresh(1000);
 		recordAttempt(
 			p,
@@ -495,7 +459,6 @@ describe("Grok review regressions", () => {
 			answer: 1_000_001,
 		};
 		expect(validProgress(p)).toBe(false);
-		expect(validProgress({ ...fresh(), version: "2" })).toBe(false);
 	});
 });
 
@@ -557,50 +520,30 @@ describe("re-review refinements", () => {
 			expect(legend.includes("M Millionen")).toBe(width >= 7);
 		}
 	});
-	it("labels all v1 attempts as historical without inventing help or promoting mastery", () => {
+	it("keeps independent exit evidence distinct from helped or guided practice", () => {
 		const p = fresh(1000);
 		const task = required(taskFor("exit-read", p.seed));
-		recordAttempt(p, task, "old-independent", true, 2000, "exit");
-		const old = { ...p.attempts[0], version: 1 };
-		for (const helped of [false, true]) {
-			const observation = parentObservation([{ ...old, helped }]);
-			expect(observation.historical).toBe(true);
-			expect(observation.label).toBe("Frühere Vorschau-Übung (Version 1)");
-			expect(observation.success).toBeUndefined();
-			expect(observation.helped).toBeUndefined();
-		}
-		const actual = { ...old, version: 2, helped: false };
-		expect(parentObservation([old, actual]).success?.id).toBe(actual.id);
-		expect(old.version).toBe(1);
-	});
-	it("refreshes an in-flight v2 workspace for the changed generator while preserving evidence and rewards", () => {
-		const p = fresh(1000);
-		p.version = 2;
-		p.step = "practice-b";
-		p.practice = newPractice(2, 7, 3);
-		p.practice.index = 2;
-		p.practice.correct = 2;
-		p.helped.push(`${p.practice.id}/${p.practice.index}`);
-		p.workspace = digits(999);
-		p.undo = [digits(888)];
-		grant(p, "mission-a", 1500);
-		recordAttempt(
-			p,
-			required(taskFor("exit-read", p.seed)),
-			"previous-independent",
-			true,
-			2000,
-			"exit",
+		expect(parentObservation([]).label).toBe("Noch offen");
+		recordAttempt(p, task, "guided", true, 2000, "guided");
+		expect(parentObservation(p.attempts).label).toBe("Ausprobiert");
+		p.helped.push("helped");
+		recordAttempt(p, task, "helped", true, 3000, "exit");
+		expect(parentObservation(p.attempts).label).toBe("Mit Hilfe geübt");
+		recordAttempt(p, task, "independent", true, 4000, "exit");
+		expect(parentObservation(p.attempts).label).toBe(
+			"Neue Aufgabe selbstständig gelöst",
 		);
-		p.attempts[0].version = 2;
-		const restored = required(normaliseProgress(p));
-		expect(restored.workspace).toEqual(practiceTask(2, 7, 2).model);
-		expect(restored.undo).toEqual([]);
-		expect(restored.practice?.correct).toBe(2);
-		expect(restored.helped).toContain(`${p.practice.id}/v${CONTENT_VERSION}/2`);
-		expect(restored.rewards).toEqual(["mission-a"]);
-		expect(restored.attempts[0]).toEqual(p.attempts[0]);
-		expect(independent(restored.attempts[0])).toBe(true);
-		expect(restored.version).toBe(CONTENT_VERSION);
+	});
+	it("groups numerals in recorded parent examples like the learner question", () => {
+		const p = fresh(1000);
+		const task = {
+			...required(taskFor("digit", p.seed)),
+			numeral: 50144,
+			column: 2,
+		};
+		recordAttempt(p, task, "digit", true, 2000, "exit");
+		expect(p.attempts[0].example.prompt).toContain(
+			"Zahl: 50\u202f144; markierte Ziffer: 1.",
+		);
 	});
 });

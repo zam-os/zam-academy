@@ -32,7 +32,7 @@ or all of 1.1. Coverage remains partial and unreviewed.
 
 Thomas explicitly approved retaining transactional IndexedDB and the
 first-party teacher player in response to the scoped policy question on
-2026-10-31. The [public approval record](https://github.com/zam-os/zam-academy/pull/72#issuecomment-6564246975)
+2026-10-31. The [agent-recorded decision reference](https://github.com/zam-os/zam-academy/pull/72#issuecomment-6564246975)
 and AGENTS.md record that exception. The review-requested extraction
 is a correction to the original single-PR plan: shared publication tooling
 belongs in its own PR #73; PR #72 depends on it. No public registration or

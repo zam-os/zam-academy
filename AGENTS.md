@@ -43,7 +43,7 @@ builds and the tests pass" is not the bar.
    dependencies need Thomas's approval.
    **Discovery Island exception** (`mathematik-grundschule-4`, explicitly
    approved by Thomas on 2026-10-31;
-   [public approval record](https://github.com/zam-os/zam-academy/pull/72#issuecomment-6564246975)):
+   [agent-recorded decision reference](https://github.com/zam-os/zam-academy/pull/72#issuecomment-6564246975)):
    local progress may use
    transactional IndexedDB, and an approved first-party teacher recording
    may use a native HTML video player and travel in the offline ZIP. This

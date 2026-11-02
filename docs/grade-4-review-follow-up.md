@@ -24,11 +24,9 @@ approval is implied.
 - Worked explanations and the decimal-system rule occur in the journey;
   the optional explanation panel remains available for revisiting them.
 - Parent examples store a stable task snapshot. Build examples use canonical
-  target digits, including repair of earlier version-2 empty-start snapshots.
+  target digits. Digit examples use the same thousands grouping as the task.
   A digit example identifies its numeral and highlighted digit. The snapshot
   is an example of the task, not a claim to store the child's submitted answer.
-- Earlier answer-revealing version-1 practice remains in the log and retains
-  earned decorations, but is not promoted to independent version-2 evidence.
 - Explicit reset clears the saved document and all four transient Milo mood
   flags. It returns to the curious welcome state, with no flower or snack.
 
@@ -70,7 +68,7 @@ approval is implied.
 ## Decisions and remaining differences
 
 Thomas's existing approval of 2026-10-31 is cited in the
-[public approval record](https://github.com/zam-os/zam-academy/pull/72#issuecomment-6564246975), which quotes the decision already published in commit 9482d89.
+[agent-recorded decision reference](https://github.com/zam-os/zam-academy/pull/72#issuecomment-6564246975), which quotes the decision already published in commit 9482d89.
 AGENTS.md and the README record that scoped exception. The reference is an
 agent-recorded pointer to the existing decision, not a fresh human approval;
 the underlying conversation remains private. It permits neither third-party
@@ -99,7 +97,7 @@ touch-device acceptance are recorded. No later course world is implemented.
 Commands and current results are recorded in the PR body and
 mathematik-grundschule-4/acceptance.json. The lesson suite includes sampled
 arithmetic/exchange oracles, generator diversity and solvability, assistance
-and migration checks, hidden-readout checks and the parent-example regression.
+and persistence checks, hidden-readout checks and the parent-example regression.
 Browser checks cover the journey, both practice levels, feedback, optional
 practice, parent evidence, reset, themes, responsive bounds and native
 IndexedDB transactions in isolated test stores. Direct file startup and
@@ -115,17 +113,23 @@ recorded-video playback remain explicitly unverified.
   exchange answers receive a unit-value hint instead.
 - Numerals keep thousands grouping while highlighting the correct decimal
   position. Board legends list exactly the displayed columns.
-- V1 attempts retain their recorded facts and receive a historical-preview
-  label, without asserting help or independent success under newer criteria.
-  Valid version-2 independent evidence remains valid.
-- Content version 3 refreshes an in-flight workspace when its generator
-  changes and uses versioned attempt keys. It preserves logs, rewards and
-  completed practice counts. Previously attempted or helped work remains
-  marked as assisted on resumption; an upgrade cannot create independent
-  evidence or mint food by replaying the same task.
 - The teacher brief explicitly asks whether the prerequisite direction
   should be reversed so grouping precedes formal place value.
 - The shared Pages loop in #73 now refuses drafts or invalid publication
   metadata before building/copying an app. Its regression test executes
   that exact workflow command, with ready, absent, local-only and invalid
   markers. Registry errors name a misregistered draft directly.
+
+## Unpublished draft simplification — 2026-11-02
+
+Thomas requested removing progress migrations because this app has never
+been published and all learners start at zero on release. The old draft
+normalizer, content-version fields and keys, historical labels, snapshot
+repairs and compatibility tests have been removed. The first release uses
+a fresh IndexedDB namespace; draft saves are not read or imported. Current
+session resumption, atomic rewards and corrupt-save recovery remain.
+
+The latest review's ungrouped parent numeral is fixed at snapshot creation.
+The review also requests a confirmation authored by Thomas on GitHub. The
+linked decision reference is explicitly agent-recorded and cannot serve as
+that human-authored comment; no new confirmation has been invented.

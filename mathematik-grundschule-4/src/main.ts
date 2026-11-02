@@ -15,7 +15,6 @@ import {
 import {
 	grant,
 	newPractice,
-	attemptExample,
 	parentObservation,
 	laterEligible,
 	nextStep,
@@ -24,7 +23,6 @@ import {
 } from "./practice/evidence";
 import {
 	LESSON_ID,
-	CONTENT_VERSION,
 	STEPS,
 	orderedOptions,
 	practiceTask,
@@ -96,10 +94,10 @@ function currentTask(p = store.state): Task | null {
 }
 function taskKey(p = store.state): string {
 	return p.practice
-		? `${p.practice.id}/v${CONTENT_VERSION}/${p.practice.index}`
+		? `${p.practice.id}/${p.practice.index}`
 		: p.later
-			? `${p.later.id}/v${CONTENT_VERSION}/${p.later.index}`
-			: `journey/v${CONTENT_VERSION}/${p.step}`;
+			? `${p.later.id}/${p.later.index}`
+			: `journey/${p.step}`;
 }
 function mood(): Mood {
 	return store.state.resting
@@ -241,12 +239,12 @@ function parent(): string {
 	const observations = Object.entries(GOALS)
 		.map(([key, title]) => {
 			const attempts = p.attempts.filter((a) => a.goal === key);
-			const { success, helped, last, historical, label } = parentObservation(
+			const { success, helped, last, label } = parentObservation(
 				attempts,
 				p.completed["mission-b"],
 			);
-			const example = last ? attemptExample(last) : undefined;
-			return `<article class="observation"><span class="observation-mark" aria-hidden="true">${success ? "✓" : helped ? "◇" : "○"}</span><div><span class="eyebrow">${label}</span><h3>${title}</h3><p>${last ? `${date(last.at)} · ${historical ? "Frühere Vorschau-Aufgabe · ohne Bewertung nach den neuen Kriterien" : last.mode === "later" ? "Späterer Aufgabenversuch" : last.mode === "exit" ? "Neue Aufgabe" : "Übung in der Werkstatt"}${!historical && last.helped ? " · mit Tipp oder weiterem Versuch" : ""}` : "Dazu gibt es noch keinen Aufgabenversuch."}</p>${example ? `<p class="evidence-example">Beispiel: ${escapeHtml(example.prompt)} <span>${escapeHtml(describe(example.model))}</span></p>` : ""}</div></article>`;
+			const example = last?.example;
+			return `<article class="observation"><span class="observation-mark" aria-hidden="true">${success ? "✓" : helped ? "◇" : "○"}</span><div><span class="eyebrow">${label}</span><h3>${title}</h3><p>${last ? `${date(last.at)} · ${last.mode === "later" ? "Späterer Aufgabenversuch" : last.mode === "exit" ? "Neue Aufgabe" : "Übung in der Werkstatt"}${last.helped ? " · mit Tipp oder weiterem Versuch" : ""}` : "Dazu gibt es noch keinen Aufgabenversuch."}</p>${example ? `<p class="evidence-example">Beispiel: ${escapeHtml(example.prompt)} <span>${escapeHtml(describe(example.model))}</span></p>` : ""}</div></article>`;
 		})
 		.join("");
 	return `<section class="parent-view"><p class="eyebrow">Kleine Schritte werden sichtbar</p><h1>Das hat dein Kind ausprobiert.</h1><p class="lead">Diese Beobachtungen stammen aus den Aufgaben auf diesem Gerät. Eine geübte Lektion ist noch kein Nachweis, dass alles sicher beherrscht wird.</p><div class="parent-grid"><div>${observations}</div><aside class="parent-tip"><span aria-hidden="true">♡</span><h2>Eine Frage für zu Hause</h2><p>„Kannst du mir zeigen, warum ein Hunderter genauso viel ist wie zehn Zehner?“</p><p>Lass dein Kind seinen Weg zeigen. Bausteine oder eine kleine Zeichnung reichen aus.</p><hr><h3>Der nächste kleine Schritt</h3><p>${p.step === "finished" ? "Jetzt mit frischen Zahlen weiterüben oder später noch einmal nachschauen. Stellenwerte bis 999 999 und der Übergang zur Million kommen in dieser Werkstatt vor." : "Die aktuelle Mission fortsetzen. Hinweise und Pausen sind jederzeit erlaubt."}</p></aside></div><p class="fine-print">Quelle: lokale Academy-Übungen · keine Schulnote, Diagnose oder Schullaufbahnempfehlung. ZAM-Wiederholungen werden getrennt in ZAM geführt.</p></section>`;

@@ -119,6 +119,13 @@
 			"checked": "2026-11-01",
 			"content_version": 3,
 			"details": "All 11 native concurrency, idempotency, resumption, abort, recovery and fallback assertions passed using generated test stores; no learner store used."
+		},
+		{
+			"surface": "Built dist/index.html over localhost:5226; Codex in-app browser",
+			"check": "Fresh release namespace, current-save resumption and grouped parent example",
+			"status": "passed",
+			"checked": "2026-11-02",
+			"details": "Opened to welcome with zero missions and no inherited draft evidence. Built 100, reloaded with its one Hunderter preserved, completed 100 and 59 092, and answered the digit question for 8 508. Parent view displayed the grouped Zahl: 8 508 and canonical build example. All 11 isolated native IndexedDB checks passed after removing the migration layer. Earlier dated browser entries describe superseded draft revisions."
 		}
 	],
 	"remaining": [
@@ -129,9 +136,9 @@
 		"Review prepared recall cards in the existing ZAM learner UI",
 		"Physical touch-device acceptance"
 	],
-	"checked": "2026-11-01",
+	"checked": "2026-11-02",
 	"automated_checks": {
-		"app": "Locked toolchain install, external Biome 2.5.6 format/lint, typecheck and 40 Vitest tests passed",
+		"app": "Locked toolchain install, external Biome 2.5.6 format/lint, typecheck and 39 Vitest tests passed",
 		"catalog": "48 node:test catalog and public-registry checks passed; generated catalog has 36 existing cells and excludes this draft",
 		"cell": "4 atoms, 12 items; disposable install/enrol/recall/reinstall passed against CI-pinned zam-core 0.54.0 with existing workspace native dependencies",
 		"all_cells": "All 37 Academy cells in the current-main PR checkout validated against CI-pinned zam-core 0.54.0 using disposable libraries",
@@ -162,5 +169,10 @@
 		},
 		"official_binding": "Deferred because current core treats a grade-specific binding as full coverage regardless of topic_code; generic import must remain available.",
 		"publication_safeguard": "Extracted into PR #73; lesson PR #72 is stacked on it."
+	},
+	"progress_policy": {
+		"first_release": "Fresh storage namespace; every learner starts at zero.",
+		"draft_progress": "No import, migration, version compatibility or historical-preview rendering.",
+		"current_progress": "Current-schema saves resume normally; atomic rewards and corrupt-save recovery remain."
 	}
 }
