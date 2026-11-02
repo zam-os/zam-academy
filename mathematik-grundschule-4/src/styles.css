@@ -287,6 +287,7 @@ main {
 	min-height: 0;
 }
 .learning-column {
+	grid-template-columns: minmax(0, 1fr);
 	min-width: 0;
 	display: grid;
 	gap: 18px;
@@ -1749,4 +1750,84 @@ input {
 
 .calculation-model .path-marker {
 	fill: var(--green);
+}
+
+/* Written addition preserves column alignment; wide boards scroll inside the card. */
+.column-workshop {
+	margin: 1rem 0;
+	min-width: 0;
+}
+.column-direction {
+	font-weight: 650;
+	color: var(--purple);
+}
+.column-scroll {
+	max-width: 100%;
+	overflow-x: auto;
+	overscroll-behavior-x: contain;
+	border: 2px solid var(--line);
+	border-radius: 18px;
+	padding: 0.6rem;
+	background: var(--soft);
+}
+.column-board {
+	margin: 0 auto;
+	border-collapse: separate;
+	border-spacing: 3px 6px;
+	font-variant-numeric: tabular-nums;
+	text-align: center;
+}
+.column-board caption {
+	font-size: 1.3rem;
+	font-weight: 750;
+	padding: 0.5rem;
+	white-space: nowrap;
+}
+.column-board th {
+	font-size: 0.8rem;
+	font-weight: 650;
+}
+.column-board th[scope="row"] {
+	padding-right: 0.4rem;
+	min-width: 62px;
+	text-align: left;
+}
+.column-board td {
+	min-width: 44px;
+	font-size: 1.4rem;
+	font-weight: 700;
+}
+.column-board abbr {
+	text-decoration: none;
+}
+.column-board input {
+	width: 44px;
+	min-height: 44px;
+	padding: 4px;
+	border: 2px solid var(--purple);
+	border-radius: 10px;
+	background: var(--surface);
+	color: var(--ink);
+	text-align: center;
+	font-size: 1.35rem;
+}
+.column-board input[aria-invalid="true"] {
+	border-color: #b44942;
+}
+.column-board .carry-row input {
+	border-style: dashed;
+	font-size: 1rem;
+}
+.column-board .column-result td {
+	border-top: 2px solid var(--ink);
+	padding-top: 0.4rem;
+}
+.column-board output {
+	display: inline-block;
+	min-width: 35px;
+	padding: 4px;
+}
+.column-board .carry-row output {
+	color: var(--purple);
+	font-size: 1rem;
 }

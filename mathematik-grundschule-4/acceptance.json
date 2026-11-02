@@ -168,6 +168,20 @@
 			"status": "passed",
 			"checked": "2026-11-02",
 			"details": "Inspected equal baskets, calculation jumps, compact lesson switching, parent bounds and missing-video panel. Body width matched the viewport at inspected positions. Fixed hover background that obscured increment labels and used the theme-aware purple for model strokes/borders. Subtraction slider at its extreme showed12000 −10·1000 =2000, never a negative value. Temporary viewport override reset; physical touch remains pending."
+		},
+		{
+			"surface": "Production dist/index.html over separate 127.0.0.1:5228 and localhost:5228 test origins",
+			"check": "Written-addition journeys in light and dark themes",
+			"status": "passed",
+			"checked": "2026-11-02",
+			"details": "Completed three labs including 999 999 + 1, quiz, three tasks per level and three exits in desktop light and 320 px dark. Inspected different lengths/zero positions, carrying, contextual sum, editable correction and read-only error reasoning. Confirmed reload resumption, wrong-carry feedback, parent snapshots, visible pending-video panel, assisted worked continuation, optional practice reward stability and original workshop routing. Fixed save-time input replacement, read-only correction board and mobile grid overflow. Seven-column board scrolls inside the card; body width equals 320 px. Viewport reset. User preview progress was not reset."
+		},
+		{
+			"surface": "Native isolated harness on 127.0.0.1:5226/tests/browser.html",
+			"check": "Written digit/carry persistence and focus regression",
+			"status": "passed",
+			"checked": "2026-11-02",
+			"details": "All 20 native assertions passed, including input-node/focus preservation after commit, rapid edits, resumption in a second instance, carry validation and assisted correction. All database names generated for this test; no learner database used."
 		}
 	],
 	"remaining": [
@@ -180,9 +194,9 @@
 	],
 	"checked": "2026-11-02",
 	"automated_checks": {
-		"app": "Locked toolchain unchanged; npm ci --offline --no-audit --no-fund, typecheck, 61 Vitest tests and production build passed under Node 26.13.0 with NODE_OPTIONS=--no-experimental-webstorage; external Biome 2.5.6 format/lint passed",
+		"app": "Locked toolchain unchanged; npm ci --offline --no-audit --no-fund, typecheck, 68 Vitest tests and production build passed under Node 26.13.0 with NODE_OPTIONS=--no-experimental-webstorage; external Biome 2.5.6 format/lint passed",
 		"catalog": "48 node:test catalog and public-registry checks passed; generated catalog has 36 existing cells and excludes this draft",
-		"cell": "10 atoms, 30 items; previous 7 atoms/21 items unchanged (including original main 4 atoms/12 items); disposable install/enrol/recall/reinstall passed against CI-pinned zam-core 0.54.0",
+		"cell": "11 atoms, 34 items, version 2026.11.3; previous 10 atoms/30 items unchanged, including original main 4 atoms/12 items; disposable install/enrol/recall/reinstall passed against CI-pinned zam-core 0.54.0",
 		"all_cells": "All 37 Academy cells in the current-main PR checkout validated against CI-pinned zam-core 0.54.0 using disposable libraries",
 		"package": "Draft ZIP built and byte/asset/launcher verification passed; strict complete gate correctly refuses missing teacher recording"
 	},
@@ -224,7 +238,8 @@
 			"zahlen-zerlegen-ergaenzen",
 			"geschickt-addieren",
 			"geschickt-subtrahieren",
-			"malnehmen-teilen"
+			"malnehmen-teilen",
+			"schriftlich-addieren"
 		],
 		"status": "implemented-draft",
 		"teacher_review": "pending",
@@ -241,7 +256,17 @@
 				"Arithmetic quizzes were attributed to the wrong goals",
 				"An undefined colour variable hid calculation-jump arcs"
 			],
-			"resolution": "All findings corrected and rechecked. Fact-family signatures include model, commuted and inverse operations; explicit quiz goals; theme-aware arc colour. Read-only seed88/290 regression checks and diff check passed in the reviewer. The parent ran 61 Vitest tests; reviewer could not run Vitest because its sandbox denied the temporary Vite config write. No remaining actionable review findings. This is not teacher content approval."
+			"resolution": "All findings corrected and rechecked. Fact-family signatures include model, commuted and inverse operations; explicit quiz goals; theme-aware arc colour. Read-only seed88/290 regression checks and diff check passed in the reviewer. The parent ran 61 Vitest tests; reviewer could not run Vitest because its sandbox denied the temporary Vite config write. No remaining actionable review findings. This is not teacher content approval.",
+			"scope": "Earlier six-lesson expansion through 75ef4aa; excludes the written-addition increment."
+		},
+		"written_addition": {
+			"status": "implemented-draft",
+			"scope": "Two whole-number summands, sums at most one million; entered result digits and carries, correction and error reasoning",
+			"curriculum": "2026-11-02; section 1.2, rows03/05/06/07 remain partial",
+			"code_content_review": "pending: user requested implementation and push before the next review round",
+			"teacher_review": "pending",
+			"recording": "awaiting-recording",
+			"storage": "Thirteen digit/carry cells only in this new lesson document. No old document changes or migration."
 		}
 	}
 }

@@ -92,12 +92,13 @@ unrelated work already present in either checkout.
 
 The user requested more lessons while the teacher recording remains pending.
 This explicitly authorises independent Number Forest expansion before phase
-acceptance. The app now offers seven lessons; the six added keys and their
+acceptance. The app now offers eight lessons; the seven added keys and their
 partial coverage are documented in [the expansion record](../grade-4-number-forest-expansion.md).
 Comparison/order and number-line work are separate lessons rather than one
 large N03 activity; additive decomposition gets its own workshop. A further authorised batch
 adds mental/halfwritten addition and subtraction strategies and
-multiplication/inverse division. The original
+multiplication/inverse division. The next authorised lesson implements written
+addition of two summands with a digit/carry board. The original
 31-lesson inventory remains a planning estimate to refine before publication.
 No Phase-1/2/3 checkbox is closed by this batch, and no public release is authorised.
 

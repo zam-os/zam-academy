@@ -1,7 +1,7 @@
 {
 	"$schema": "https://zam.app/schemas/v1/kvt-tile.json",
 	"tile_id": "zam-academy:mathematik-grundschule-4",
-	"version": "2026.11.2",
+	"version": "2026.11.3",
 	"title": "Mathematik 4 Grundschule: Milos Zahlenwald",
 	"description": "Vier deutsche Entdeckerlektionen: Stellenwerte und Bündeln, Zahlen vergleichen und ordnen, Zahlenstrahl und Zahlensprünge sowie Zerlegen und Ergänzen bis zur Million. Erprobungsfassung; fachliche Freigabe und Lehrervideos fehlen. Kein vollständiger Jahreskurs.",
 	"publisher": "ZAM Academy",
@@ -810,6 +810,107 @@
 					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=malnehmen-teilen",
 					"materiality": "material",
 					"sample_solution": "7 · 3 = 21. Mit Hunderterbündeln gilt 7 · 300 = 2 100. Deshalb ist 2 100 : 7 = 300. Die Malaufgabe ist zugleich die Probe."
+				}
+			]
+		},
+		{
+			"namespace": "zam-academy-mathematik-grundschule-4",
+			"domain": "mathematik/zahlenwald",
+			"reduction": "axiomatic",
+			"typical_age_min": 8,
+			"prerequisites": [
+				{
+					"atom_id": "01M687PEW348C0W3TZ3XM71ZRM",
+					"type": "soft",
+					"rationale": "Das Stellenwertverständnis unterstützt diesen Schritt."
+				}
+			],
+			"id": "01M6ESYAQNPJDABE7QGX55XY6B",
+			"atom_uri": "urn:zam:atom:01M6ESYAQNPJDABE7QGX55XY6B",
+			"slug": "gs4-schriftlich-addieren",
+			"title": "Schriftlich addieren",
+			"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=schriftlich-addieren",
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "mathematik-grundschule-4",
+					"topic_code": "schriftlich-addieren",
+					"topic_title": "Schriftlich addieren"
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M6ESYAQNW5R29BYVN40965G9",
+					"slug": "gs4-schriftlich-addieren-1",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"question": "Wie schreibst du zwei Summanden für die schriftliche Addition untereinander?",
+					"concept": "Einer unter Einer, Zehner unter Zehner und gleiche weitere Stellenwerte untereinander.",
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=schriftlich-addieren",
+					"materiality": "material",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Einer unter Einer, Zehner unter Zehner und gleiche weitere Stellenwerte untereinander.",
+							"Beide Zahlen beginnen links in derselben Spalte, auch wenn sie verschieden lang sind."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M6ESYAQNK14RQ05EX40S7CNK",
+					"slug": "gs4-schriftlich-addieren-2",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"question": "In der Einerspalte erhältst du 15. Was schreibst du ins Ergebnis und in die Übertragszeile?",
+					"concept": "5 bei den Einern im Ergebnis und 1 als Übertrag zu den Zehnern.",
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=schriftlich-addieren",
+					"materiality": "material",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"5 bei den Einern im Ergebnis und 1 als Übertrag zu den Zehnern.",
+							"1 bei den Einern im Ergebnis und 5 als Übertrag zu den Zehnern."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M6ESYAQNAXWVCNASVZHYJZ3G",
+					"slug": "gs4-schriftlich-addieren-3",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Rechne 2 687 + 1 548 schriftlich. Erkläre die Überträge.",
+					"concept": "4 235.",
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=schriftlich-addieren",
+					"materiality": "material",
+					"sample_solution": "E: 7 + 8 = 15, schreibe 5 und übertrage 1 zu Z. Z: 8 + 4 + 1 = 13, schreibe 3 und übertrage 1 zu H. H: 6 + 5 + 1 = 12, schreibe 2 und übertrage 1 zu T. T: 2 + 1 + 1 = 4. Die Summe ist 4 235. Probe: 4 235 − 1 548 = 2 687.",
+					"concept_segments": [
+						{
+							"type": "math",
+							"tex": "4\\,235",
+							"speech": "viertausendzweihundertfünfunddreißig"
+						},
+						{
+							"type": "text",
+							"text": "."
+						}
+					]
+				},
+				{
+					"id": "01M6ESYAQNDKJ51HVCGYQDGMGW",
+					"slug": "gs4-schriftlich-addieren-4",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Warum ergibt 999 999 + 1 die Zahl 1 000 000? Erkläre mit den Stellenwerten.",
+					"concept": "Die Übertragskette bündelt bis zu einer Million.",
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=schriftlich-addieren",
+					"materiality": "material",
+					"sample_solution": "9 Einer + 1 Einer ergeben 10 Einer: 0 Einer bleiben, 1 Zehner wird übertragen. In jeder folgenden Stelle werden 9 vorhandene Bündel und 1 ankommendes Bündel zu 10 Bündeln. Daraus entsteht jeweils 1 Bündel der nächsten Stelle. Nach 10 Hunderttausendern entsteht 1 Million; die sechs niedrigeren Ergebnisstellen sind 0."
 				}
 			]
 		}

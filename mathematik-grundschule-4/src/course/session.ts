@@ -1,3 +1,4 @@
+import { columnAnswer, emptyColumnWork } from "./written-addition";
 import { DocumentStore, DATABASE } from "../storage/progress";
 import type { ForestLesson } from "./catalog";
 import {
@@ -28,6 +29,10 @@ export class ForestSession {
 	private opening: Promise<void> | null = null;
 	private rangeRevision = 0;
 	private editingRange = false;
+	private columnRevision = 0;
+	private columnScroll: { key: string; left: number } | null = null;
+	private editingColumns = false;
+	private columnDraft: { key: string; values: string[] } | null = null;
 	private rangeDraft: { key: string; position: number } | null = null;
 	constructor(
 		readonly lesson: ForestLesson,
@@ -41,7 +46,7 @@ export class ForestSession {
 				validForest(value) && value.lesson === lesson.id,
 		);
 		this.store.onChange = () => {
-			if (!this.editingRange) notify();
+			if (!this.editingRange && !this.editingColumns) notify();
 		};
 	}
 	open(): Promise<void> {
@@ -55,11 +60,15 @@ export class ForestSession {
 			this.feedback = "";
 			this.draft = "";
 		}
+		const current =
+			this.columnDraft?.key === key
+				? { ...this.store.state, columnWork: this.columnDraft.values }
+				: this.store.state;
 		return forestLessonView(
 			this.lesson,
 			this.rangeDraft?.key === key
-				? { ...this.store.state, position: this.rangeDraft.position }
-				: this.store.state,
+				? { ...current, position: this.rangeDraft.position }
+				: current,
 			this.feedback,
 			this.draft,
 		);
@@ -71,6 +80,67 @@ export class ForestSession {
 		return forestTeacherPanel(this.lesson);
 	}
 	bind(root: HTMLElement): void {
+		const scroller = root.querySelector<HTMLElement>(".column-scroll");
+		if (scroller) {
+			const key = forestKey(this.store.state);
+			scroller.scrollLeft =
+				this.columnScroll?.key === key
+					? this.columnScroll.left
+					: scroller.scrollWidth;
+			scroller.addEventListener("scroll", () => {
+				this.columnScroll = { key, left: scroller.scrollLeft };
+			});
+		}
+		root
+			.querySelectorAll<HTMLInputElement>('[data-action="forest-column"]')
+			.forEach((input) => {
+				input.addEventListener("input", () => {
+					const index = Number(input.dataset.col),
+						value = input.value,
+						key = forestKey(this.store.state);
+					const allowed = index < 7 ? /^[0-9]?$/ : /^[01]?$/;
+					if (!allowed.test(value)) {
+						input.setAttribute("aria-invalid", "true");
+						const note = root.querySelector("#column-input-note");
+						if (note)
+							note.textContent =
+								"Pro Ergebnisfeld nur eine Ziffer, pro Übertrag nur 0 oder 1. Bitte verbessere die markierte Zelle.";
+						return;
+					}
+					input.removeAttribute("aria-invalid");
+					const values = [
+						...(this.columnDraft?.key === key
+							? this.columnDraft.values
+							: (this.store.state.columnWork ?? emptyColumnWork())),
+					];
+					values[index] = value;
+					this.columnDraft = { key, values };
+					this.editingColumns = true;
+					const revision = ++this.columnRevision;
+					let failed = false;
+					void this.store
+						.update((p) => {
+							if (
+								forestKey(p) === key &&
+								p.lesson === "schriftlich-addieren" &&
+								p.columnWork
+							)
+								p.columnWork[index] = value;
+						})
+						.catch(() => {
+							failed = true;
+							this.feedback =
+								"Die Ziffer konnte nicht gespeichert werden. Probiere es noch einmal.";
+						})
+						.finally(() => {
+							if (revision !== this.columnRevision) return;
+							this.editingColumns = false;
+							this.columnDraft = null;
+							// A successful digit save changes no other UI. Keep the input node and focus.
+							if (failed) this.notify();
+						});
+				});
+			});
 		const input = root.querySelector<HTMLInputElement>("#forest-answer");
 		input?.addEventListener("input", () => {
 			this.draft = input.value;
@@ -122,6 +192,16 @@ export class ForestSession {
 			explanationShown = task && this.feedback === task.explanation;
 		const input = root.querySelector<HTMLInputElement>("#forest-answer");
 		if (input) this.draft = input.value;
+		const columnValues = [
+			...(this.columnDraft?.key === key
+				? this.columnDraft.values
+				: (this.store.state.columnWork ?? emptyColumnWork())),
+		];
+		root
+			.querySelectorAll<HTMLInputElement>('[data-action="forest-column"]')
+			.forEach((cell) => {
+				columnValues[Number(cell.dataset.col)] = cell.value;
+			});
 		let event: ForestEvent | undefined;
 		this.busy = true;
 		try {
@@ -216,6 +296,8 @@ export class ForestSession {
 						answer = task.answer;
 					} else if (action === "forest-choice")
 						answer = Number(button.dataset.value);
+					else if (task.kind === "columns" && task.columns)
+						answer = columnAnswer(task.columns.a, task.columns.b, columnValues);
 					else if (task.kind === "parts" || task.kind === "order")
 						answer = [...p.selection];
 					else if (
@@ -227,6 +309,8 @@ export class ForestSession {
 						answer = p.position;
 					else answer = forestInput(this.draft);
 					const right = recordForest(p, task, answer);
+					if (right && task.kind === "columns" && Array.isArray(task.answer))
+						p.columnWork = task.answer.map(String);
 					event = right ? "correct" : "encourage";
 					this.feedback = right
 						? task.explanation

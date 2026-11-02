@@ -5,6 +5,7 @@ export const EXTRA_LESSON_IDS = [
 	"geschickt-addieren",
 	"geschickt-subtrahieren",
 	"malnehmen-teilen",
+	"schriftlich-addieren",
 ] as const;
 export type ExtraLessonId = (typeof EXTRA_LESSON_IDS)[number];
 export interface ForestLesson {
@@ -252,6 +253,44 @@ export const FOREST_LESSONS: ForestLesson[] = [
 		},
 		parentPrompt:
 			"6 Körbe enthalten zusammen 4 800 Samen. Wie viele sind in jedem Korb? Welche Malaufgabe prüft deine Antwort?",
+	},
+	{
+		id: "schriftlich-addieren",
+		title: "Milos Rechenturm",
+		shortTitle: "Schriftlich addieren",
+		icon: "▤",
+		lead: "Im Rechenturm hat jede Ziffer ihren Platz. Hilf Milo beim Addieren und bringe jeden Übertrag in die richtige Etage.",
+		goals: [
+			"Stellenrichtig ohne Übertrag addieren",
+			"Überträge in der nächsten Spalte mitrechnen",
+			"Übertragsketten und Ergebnisse prüfen",
+		],
+		paragraphs: [
+			"Beim schriftlichen Addieren stehen gleiche Stellenwerte untereinander: Einer unter Einern, Zehner unter Zehnern und so weiter. Schreibe auch unterschiedlich lange Zahlen rechtsbündig. Bei 2 345 + 123 steht die 3 der 123 unter der 5, weil beide Einer sind. Eine unbesetzte Stelle zählt wie 0.",
+			"Beginne rechts bei den Einern. Addiere die beiden Ziffern einer Spalte und einen ankommenden Übertrag. Ist die Spaltensumme kleiner als 10, schreibst du sie unten in dieselbe Spalte. Danach gehst du eine Spalte nach links.",
+			"Ab 10 bündelst du: 7 Einer + 8 Einer = 15 Einer. Schreibe 5 in die Einerspalte des Ergebnisses. Die übrigen 10 Einer werden zu 1 Zehner. Schreibe diese 1 klein in die Übertragszeile der nächsten Spalte links und rechne sie dort mit. Der Übertrag ist kein zusätzlicher Einer.",
+			"Bei 2 687 + 1 548 geht es so weiter: Zehner 8 + 4 + 1 = 13, also 3 schreiben und 1 Hunderter übertragen. Hunderter 6 + 5 + 1 = 12, also 2 schreiben und 1 Tausender übertragen. Tausender 2 + 1 + 1 = 4. Die Summe ist 4 235.",
+			"Ein Übertrag kann mehrere Spalten durchlaufen. 999 999 + 1 ergibt 1 000 000: Jede volle Zehnergruppe wird links neu gebündelt. Prüfe deine Summe durch eine passende zweite Rechnung, zum Beispiel Summe minus zweiter Summand gleich erster Summand. Bei zwei Summanden ist ein Übertrag immer 0 oder 1.",
+		],
+		example:
+			"Rechne 30 407 + 2 685. Einer: 7 + 5 = 12, schreibe 2, übertrage 1 zu Z. Zehner: 0 + 8 + 1 = 9. Hunderter: 4 + 6 = 10, schreibe 0, übertrage 1 zu T. Tausender: 0 + 2 + 1 = 3. Zehntausender: 3 + 0 = 3. Ergebnis: 33 092. Probe: 33 092 − 2 685 = 30 407.",
+		takeaway:
+			"Gleiche Stellen untereinander. Von rechts nach links rechnen. Ab 10 die Einerziffer schreiben und 1 in die nächste Spalte links übertragen. Jeden Übertrag mitrechnen.",
+		transfer:
+			"Jetzt rechnest du schriftlich in einer Geschichte und überprüfst Milos Rechnung. Die Spalten und Überträge helfen dir auch bei Nullstellen und langen Zahlen.",
+		quiz: {
+			goal: 2,
+			prompt: "In der Einerspalte erhältst du 7 + 8 = 15. Was trägst du ein?",
+			choices: [
+				"5 ins Ergebnis bei E und 1 als Übertrag bei Z.",
+				"15 vollständig in die Einerspalte und keinen Übertrag.",
+				"1 ins Ergebnis bei E und 5 als Übertrag bei Z.",
+			],
+			explanation:
+				"15 Einer sind 1 Zehner und 5 Einer. Die 5 bleibt bei E. Der volle Zehner wandert als Übertrag 1 zu Z und wird dort mitgerechnet.",
+		},
+		parentPrompt:
+			"Rechne 3 708 + 2 596 schriftlich. Was bedeutet jeder Übertrag, und wie prüfst du die Summe?",
 	},
 ];
 export const COURSE_LINKS = [

@@ -1,7 +1,7 @@
-# Number Forest: six teacher recording briefs
+# Number Forest: seven teacher recording briefs
 
 Status: scripts for production, not recordings or teacher approval. Each
-clip should be in German, approximately 2–3 minutes, with reviewed captions,
+clip should be in German, approximately 2–3 minutes (3–4 for written addition), with reviewed captions,
 a transcript, a poster and explicit online/offline distribution rights.
 Use the exact app representations and terms below. Timing is a draft target.
 No learner microphone or recording is required.
@@ -158,6 +158,46 @@ proves automatic recall of the entire multiplication table.
 Check: equal groups, both inverse questions, explicit bundle sizes, correct
 result units and no division by zero. This clip has no remainders and does
 not teach written multiplication or division algorithms.
+
+## Milos Rechenturm — written addition
+
+**Learning focus:** written addition of two nonnegative whole-number
+summands, with sums at most one million. Use the exact column board from the
+app, with labelled places and a carry row. Target 3–4 minutes with pause
+points. Do not introduce written subtraction, multiplication or division.
+
+**German teaching script:**
+
+- 0:00–0:40: „Im Rechenturm hat jede Stelle ihren Platz. Schreibe bei
+  2 345 + 123 die Einer unter die Einer: die 3 unter die 5. Die kürzere
+  Zahl beginnt deshalb nicht ganz links. Rechne von rechts nach links.
+  Hier erhältst du 2 468 ohne Übertrag.“ Show all four columns and do not
+  slide a zero placeholder out of its column.
+- 0:40–1:20: „Jetzt 2 687 + 1 548: Bei den Einern sind 7 + 8 = 15.
+  15 Einer sind 1 Zehner und 5 Einer. Schreibe 5 ins Ergebnis bei E und
+  die kleine 1 als Übertrag bei Z. Der Übertrag zählt dort als Zehner.“
+  Enter each value in the same cells used by learners.
+- 1:20–2:15: „Bei den Zehnern rechne ich 8 + 4 + 1 = 13. Die 3
+  bleibt bei Z; 1 Hunderter geht zu H. Dann 6 + 5 + 1 = 12: 2 bei H
+  und 1 Tausender zu T. Zuletzt 2 + 1 + 1 = 4. Die Summe ist 4 235.“
+  Keep all previously entered carries visible, including those already used.
+- 2:15–3:00: „Was passiert bei 999 999 + 1? Die Einer werden zu einem
+  Zehner gebündelt. In jeder nächsten Spalte sind wieder 9 + 1 = 10.
+  So geht es bis zur Million. Im Ergebnis steht 1 000 000. Jede der
+  sechs kleineren Stellen braucht ihre 0.“ Show the seven-column board;
+  demonstrate sideways scrolling on a narrow display if appropriate.
+- 3:00–3:45: „Milo schreibt für 2 687 + 1 548 die Summe 4 225. Er
+  hat den Übertrag zu Z vergessen. Dadurch fehlt ein Zehner, also 10.
+  Richtig sind 4 235. Die Probe hilft: 4 235 − 1 548 = 2 687. Erkläre
+  Milo nun einen Übertrag mit deinen eigenen Worten.“ The subtraction
+  check can be explained mentally or in steps; its written method is not
+  assumed as prior learning.
+
+Check: right alignment, one digit per result cell, carries 0/1 only for the
+two-summand scope, zero positions, every incoming carry included, the
+million endpoint, the value 10 of an omitted E→Z carry and a correct inverse
+check. Confirm the progression with a primary-school teacher before recording.
+No teacher approval or recording is supplied by this brief.
 
 ## Handoff checklist
 

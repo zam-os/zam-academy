@@ -24,7 +24,12 @@ run.addEventListener("click", async (event) => {
 	output.textContent = "Isolated native IndexedDB integration tests";
 	const name = `${DATABASE}-test-${ulid()}`;
 	const stores: { close(): void }[] = [];
-	const extraNames = [`${name}-comparison`, `${name}-line`, `${name}-range`];
+	const extraNames = [
+		`${name}-comparison`,
+		`${name}-line`,
+		`${name}-range`,
+		`${name}-written`,
+	];
 	try {
 		const a = new ProgressStore(name);
 		const b = new ProgressStore(name);
@@ -231,6 +236,101 @@ run.addEventListener("click", async (event) => {
 			"The final range value is saved after the gesture",
 		);
 		rangeHost.remove();
+		const writtenHost = document.createElement("section");
+		document.body.append(writtenHost);
+		const writtenDef = FOREST_LESSONS.find(
+			(lesson) => lesson.id === "schriftlich-addieren",
+		);
+		if (!writtenDef) throw new Error("Written lesson missing");
+		const writtenSession = new ForestSession(
+			writtenDef,
+			() => {
+				writtenHost.innerHTML = writtenSession.lessonView();
+				writtenSession.bind(writtenHost);
+			},
+			extraNames[3],
+		);
+		stores.push(writtenSession.store);
+		await writtenSession.open();
+		await writtenSession.store.update((p) => {
+			p.stage = "lab";
+		});
+		const edit = (index: number, value: string) => {
+			const cell = writtenHost.querySelector<HTMLInputElement>(
+				`#column-${index}`,
+			);
+			if (!cell) throw new Error("Column missing");
+			cell.value = value;
+			cell.dispatchEvent(new Event("input"));
+		};
+		const firstCell = writtenHost.querySelector<HTMLInputElement>("#column-0");
+		if (!firstCell) throw new Error("First column missing");
+		firstCell.focus();
+		let committed = () => {};
+		const savedFirst = new Promise<void>((resolve) => {
+			committed = resolve;
+		});
+		const priorChange = writtenSession.store.onChange;
+		writtenSession.store.onChange = () => {
+			priorChange?.();
+			committed();
+		};
+		edit(0, "8");
+		await savedFirst;
+		writtenSession.store.onChange = priorChange;
+		await new Promise<void>((resolve) => setTimeout(resolve, 0));
+		assert(
+			writtenHost.querySelector("#column-0") === firstCell &&
+				document.activeElement === firstCell,
+			"Saving a digit preserves the input node and keyboard focus",
+		);
+		edit(0, "8");
+		edit(1, "6");
+		await writtenSession.store.update(() => {});
+		assert(
+			writtenSession.store.state.columnWork?.[0] === "8" &&
+				writtenSession.store.state.columnWork?.[1] === "6" &&
+				writtenHost.querySelector<HTMLInputElement>("#column-1")?.value === "6",
+			"Rapid column inputs preserve both digits and the newer visible value",
+		);
+		const writtenAgain = new DocumentStore(
+			extraNames[3],
+			() => freshForest("schriftlich-addieren"),
+			validForest,
+		);
+		stores.push(writtenAgain);
+		await writtenAgain.open();
+		assert(
+			writtenAgain.state.columnWork?.[0] === "8" &&
+				writtenAgain.state.columnWork?.[1] === "6",
+			"Written digits resume in a second native storage instance",
+		);
+		edit(2, "4");
+		edit(3, "2");
+		edit(7, "1");
+		await writtenSession.store.update(() => {});
+		const checkWritten = async () => {
+			const button = writtenHost.querySelector<HTMLButtonElement>(
+				'[data-action="forest-check"]',
+			);
+			if (!button) throw new Error("Written check missing");
+			await writtenSession.act(button, writtenHost);
+		};
+		await checkWritten();
+		assert(
+			writtenSession.store.state.attempts.at(-1)?.outcome === false &&
+				writtenSession.feedback.includes("Übertrag"),
+			"Correct sum digits with an incorrect carry do not pass the written task",
+		);
+		edit(7, "");
+		await writtenSession.store.update(() => {});
+		await checkWritten();
+		assert(
+			writtenSession.store.state.attempts.at(-1)?.outcome === true &&
+				writtenSession.store.state.attempts.at(-1)?.helped === true,
+			"Correct written work succeeds after correction and remains assisted",
+		);
+		writtenHost.remove();
 		assert(fresh().schema === 1, "Fresh state is versioned");
 		output.textContent += "\nALL BROWSER STORAGE CHECKS PASSED";
 	} catch (error) {

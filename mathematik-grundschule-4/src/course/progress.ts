@@ -1,3 +1,4 @@
+import { emptyColumnWork } from "./written-addition";
 import { ulid } from "../id";
 import { EXTRA_LESSON_IDS, forestLesson, type ExtraLessonId } from "./catalog";
 import {
@@ -42,6 +43,7 @@ export interface ForestProgress {
 	index: number;
 	position: number;
 	selection: number[];
+	columnWork?: string[];
 	labGoals: number[];
 	quiz: boolean;
 	solved: { 1: number; 2: number };
@@ -68,6 +70,9 @@ export function freshForest(
 		index: 0,
 		position: 0,
 		selection: [],
+		...(lesson === "schriftlich-addieren"
+			? { columnWork: emptyColumnWork() }
+			: {}),
 		labGoals: [],
 		quiz: false,
 		solved: { 1: 0, 2: 0 },
@@ -122,6 +127,16 @@ export function validForest(raw: unknown): raw is ForestProgress {
 		!strings(raw.rewards) ||
 		!strings(raw.consumed) ||
 		!obj(raw.completed)
+	)
+		return false;
+	if (
+		raw.lesson === "schriftlich-addieren" &&
+		(!Array.isArray(raw.columnWork) ||
+			raw.columnWork.length !== 13 ||
+			!raw.columnWork.every(
+				(n, i) =>
+					typeof n === "string" && (i < 7 ? /^[0-9]?$/ : /^[01]?$/).test(n),
+			))
 	)
 		return false;
 	const rewards = raw.rewards,
@@ -308,6 +323,7 @@ export function advanceForest(p: ForestProgress, now = Date.now()): boolean {
 		return false;
 	p.position = 0;
 	p.selection = [];
+	if (p.lesson === "schriftlich-addieren") p.columnWork = emptyColumnWork();
 	if (p.recall) {
 		if (p.recall.index === 2) p.recall = null;
 		else p.recall.index++;
@@ -356,6 +372,7 @@ export function startForestPractice(
 	p.index = 0;
 	p.position = 0;
 	p.selection = [];
+	if (p.lesson === "schriftlich-addieren") p.columnWork = emptyColumnWork();
 }
 export function forestRecallEligible(
 	p: ForestProgress,

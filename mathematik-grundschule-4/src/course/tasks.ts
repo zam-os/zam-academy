@@ -1,6 +1,12 @@
 import { format, parseInteger } from "../math/place-value";
 import { random } from "../practice/tasks";
 import { arithmeticTask, arithmeticLab, isArithmetic } from "./arithmetic";
+import {
+	writtenTask,
+	writtenLab,
+	writtenExit,
+	writtenMistake,
+} from "./written-addition";
 import type { ExtraLessonId } from "./catalog";
 export type Answer = number | number[];
 export type ForestTask = {
@@ -12,7 +18,8 @@ export type ForestTask = {
 		| "line"
 		| "split"
 		| "hops"
-		| "groups";
+		| "groups"
+		| "columns";
 	goal: 1 | 2 | 3;
 	prompt: string;
 	answer: Answer;
@@ -25,6 +32,7 @@ export type ForestTask = {
 	calculation?: { a: number; b: number; op: "+" | "−" | "·" | ":" };
 	hops?: { start: number; unit: number; direction: 1 | -1 };
 	groups?: { each: number };
+	columns?: { a: number; b: number; shown?: number };
 };
 const equal = (a: number[], b: number[]) =>
 	a.length === b.length && a.every((n, i) => n === b[i]);
@@ -120,6 +128,7 @@ export function forestTask(
 	seed: number,
 	index: number,
 ): ForestTask {
+	if (id === "schriftlich-addieren") return writtenTask(level, seed, index);
 	if (isArithmetic(id)) return arithmeticTask(id, level, seed, index);
 	const { int, shuffle } = rng(
 		(seed + Math.imul(index + 1, 2654435761) + level * 104729) >>> 0,
@@ -256,6 +265,7 @@ export function forestTask(
 	};
 }
 export function forestLab(id: ExtraLessonId, goal: number): ForestTask {
+	if (id === "schriftlich-addieren") return writtenLab(goal);
 	if (isArithmetic(id)) return arithmeticLab(id, goal);
 	if (id === "zahlen-vergleichen-ordnen")
 		return goal === 2
@@ -291,6 +301,8 @@ export function forestLab(id: ExtraLessonId, goal: number): ForestTask {
 	};
 }
 export function forestMistake(task: ForestTask, answer: Answer | null): string {
+	if (task.kind === "columns")
+		return writtenMistake(task, Array.isArray(answer) ? answer : null);
 	if (answer === null)
 		return "Gib eine ganze Zahl von 0 bis 1 000 000 ein. Tausender kannst du mit Leerzeichen gliedern.";
 	if (task.kind === "hops" || task.kind === "groups") return task.hint;
@@ -339,6 +351,7 @@ export function forestExit(
 	seed: number,
 	index: number,
 ): ForestTask {
+	if (id === "schriftlich-addieren") return writtenExit(seed, index);
 	if (id === "malnehmen-teilen" && index === 0) {
 		const task = forestTask(id, 1, seed, 0);
 		if (!task.calculation) throw new Error("Missing multiplication operands");

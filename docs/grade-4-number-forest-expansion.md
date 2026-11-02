@@ -1,9 +1,9 @@
-# Grade 4: six more Number Forest lessons
+# Grade 4: seven more Number Forest lessons
 
-The unpublished Discovery Island app now has seven selectable German lessons:
+The unpublished Discovery Island app now has eight selectable German lessons:
 the existing place-value workshop plus comparing/ordering, number lines/
 equal jumps, decomposition/complements, addition/subtraction strategies
-and multiplication/inverse division. This batch expands the draft;
+multiplication/inverse division, and written addition. This batch expands the draft;
 it does not complete the annual course, its teacher review, recordings or
 publication acceptance. Thomas requested further lessons while the original
 recording remains pending, so the earlier phase-order restriction does not
@@ -36,10 +36,11 @@ split or teacher approval.
 | `geschickt-addieren` | Movable addition/correction jumps; scaled sums, intermediate values, context and compensation | Parts of 1.2-02/03/04/05/07 |
 | `geschickt-subtrahieren` | Movable subtraction/correction jumps; differences, inverse addition checks, context and compensation | Parts of 1.2-02/03/04/05/07 |
 | `malnehmen-teilen` | Equal baskets; small and scaled facts, sharing/grouping, missing factors and inverse checks | Parts of 1.2-01/02/03 |
+| `schriftlich-addieren` | Enter result digits/carries; different lengths, zero positions, carry chain to one million, context/correction/error reasoning | Parts of 1.2-03/05/06/07 |
 
 All mapped rows remain partial and await primary-school teacher review.
 Divisors/multiples, physical estimation and Fermi work are still gaps. No
-rounding lesson, written algorithm, full multiplication-table automatisation
+rounding lesson, full written-arithmetic coverage, full multiplication-table automatisation
 or full 1.1/1.2 coverage is claimed. Number words and further
 representations also remain outside this batch.
 
@@ -68,10 +69,11 @@ local practice evidence, not a school grade or a ZAM/FSRS review history.
 
 ## Cell and media
 
-Eighteen German cards are authored only in cell.json: one atom and three items
-per added lesson, with generated ULIDs and source links to their own lesson.
+Twenty-two German cards are authored only in cell.json: one atom per added
+lesson, three items in each earlier lesson and four for written addition,
+with generated ULIDs and source links to their own lesson.
 All four original atoms and twelve original items remain unchanged. The
-cell now has ten atoms/thirty items and version 2026.11.2. It declares
+cell now has eleven atoms/thirty-four items and version 2026.11.3. It declares
 no replacements or retirements and transfers no existing learning history.
 The narrow official binding remains deferred for the previously documented
 kernel-scope reason. The initial workshop still has four atomic goals;
@@ -108,3 +110,27 @@ cover the repeated-fact cases. A sampled-model test also prevented a negative
 value at an unused extreme of the first subtraction slider. The second agent
 rechecked the fixes and reported no remaining actionable findings; teacher
 review remains pending.
+
+
+## Written addition — 2026-11-02
+
+Re-read the current official section 1.2 written-procedure expectation and
+its strategy/notation/checking context, plus the Grades 1/2 foundations and
+Grade 5 curricula linked above. This lesson covers two summands only, with
+sums at most one million. Further addition fluency/more summands and written
+subtraction, multiplication and division remain open; no automation or full
+1.2 coverage is claimed.
+
+The board validates result digits and every incoming carry independently.
+Blank carry cells mean zero. Work is saved in a thirteen-cell field only in
+the new lesson's document; older lesson documents require no changes or
+migration. Successful digit saves preserve the input node and focus. Wide
+boards scroll inside a constrained card, starting at the ones side; scroll
+position is retained while editing. Correction tasks remain editable, while
+error-reasoning displays are read-only. Browser testing caught and corrected
+focus replacement, the correction-board mode and small-screen overflow.
+
+The new lesson is pushed for the review round requested after implementation.
+The earlier second-agent review applies to the previous six-lesson expansion;
+written-addition code/content review and primary-school teacher approval are
+still pending. Recording scripts are prepared, with no invented media.
