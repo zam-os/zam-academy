@@ -1,9 +1,9 @@
 {
 	"$schema": "https://zam.app/schemas/v1/kvt-tile.json",
 	"tile_id": "zam-academy:mathematik-grundschule-4",
-	"version": "2026.10.1",
-	"title": "Mathematik 4 Grundschule: Stellenwert-Starter",
-	"description": "Milos Stellenwert-Werkstatt: Ziffernwerte, Nullstellen und Bündeln mit Aufgaben bis 999 999 und dem Übergang zur Million. Erprobungsfassung; fachliche Freigabe und Lehrervideo fehlen. Kein vollständiger Jahreskurs.",
+	"version": "2026.11.1",
+	"title": "Mathematik 4 Grundschule: Milos Zahlenwald",
+	"description": "Vier deutsche Entdeckerlektionen: Stellenwerte und Bündeln, Zahlen vergleichen und ordnen, Zahlenstrahl und Zahlensprünge sowie Zerlegen und Ergänzen bis zur Million. Erprobungsfassung; fachliche Freigabe und Lehrervideos fehlen. Kein vollständiger Jahreskurs.",
 	"publisher": "ZAM Academy",
 	"sources": [
 		{
@@ -306,6 +306,259 @@
 					"concept": "1 T = 10 H = 100 Z. Der Wert bleibt 1 000.",
 					"sample_solution": "1 T wird in 10 H entbündelt. Jeder der 10 H ergibt 10 Z; zusammen sind das 100 Z. Es bleibt dieselbe Menge.",
 					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=stellenwerte-buendeln",
+					"materiality": "material"
+				}
+			]
+		},
+		{
+			"id": "01M6DJ33QT7BKQM3M5YMV541Q2",
+			"atom_uri": "urn:zam:atom:01M6DJ33QT7BKQM3M5YMV541Q2",
+			"namespace": "zam-academy-mathematik-grundschule-4",
+			"slug": "gs4-vergleichen-ordnen",
+			"title": "Zahlen vergleichen und ordnen",
+			"domain": "mathematik/zahlenwald",
+			"reduction": "axiomatic",
+			"typical_age_min": 8,
+			"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=zahlen-vergleichen-ordnen",
+			"prerequisites": [
+				{
+					"atom_id": "01M687PEW1C19H7AG6K8XMHGSS",
+					"type": "soft",
+					"rationale": "Das Stellenwertverständnis unterstützt diesen Schritt."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "mathematik-grundschule-4",
+					"topic_code": "zahlen-vergleichen-ordnen",
+					"topic_title": "Zahlen vergleichen und ordnen"
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M6DJ33QTKB7AQSGV64EP7CMB",
+					"slug": "gs4-vergleichen-ordnen-1",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"question": "Welche Stelle entscheidet beim Vergleichen gleich langer Zahlen?",
+					"concept": "Die erste unterschiedliche Stelle von links.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Die erste unterschiedliche Stelle von links.",
+							"Immer die Einerstelle."
+						],
+						"correct_index": 0
+					},
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=zahlen-vergleichen-ordnen",
+					"materiality": "material"
+				},
+				{
+					"id": "01M6DJ33QTN94XDXJGF9662KJR",
+					"slug": "gs4-vergleichen-ordnen-2",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"question": "Was bedeutet es, Zahlen aufsteigend zu ordnen?",
+					"concept": "Von klein nach groß ordnen.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Von klein nach groß ordnen.",
+							"Von groß nach klein ordnen."
+						],
+						"correct_index": 0
+					},
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=zahlen-vergleichen-ordnen",
+					"materiality": "material"
+				},
+				{
+					"id": "01M6DJ33QTRJ24TF0TDD5T506W",
+					"slug": "gs4-vergleichen-ordnen-3",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Ordne 80 080, 8 800 und 80 008 aufsteigend. Begründe die Reihenfolge.",
+					"concept": "8 800 < 80 008 < 80 080.",
+					"sample_solution": "8 800 hat weniger Stellen und ist am kleinsten. Bei den beiden fünfstelligen Zahlen sind Zehntausender, Tausender und Hunderter gleich. An der Zehnerstelle steht bei 80 008 eine 0, bei 80 080 eine 8. Deshalb ist 80 008 kleiner.",
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=zahlen-vergleichen-ordnen",
+					"materiality": "material",
+					"concept_segments": [
+						{
+							"type": "math",
+							"tex": "8\\,800 < 80\\,008 < 80\\,080",
+							"speech": "achttausendachthundert ist kleiner als achtzigtausendacht ist kleiner als achtzigtausendachtzig"
+						},
+						{
+							"type": "text",
+							"text": "."
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": "01M6DJ33QTWTDY1874E545B9S4",
+			"atom_uri": "urn:zam:atom:01M6DJ33QTWTDY1874E545B9S4",
+			"namespace": "zam-academy-mathematik-grundschule-4",
+			"slug": "gs4-zahlenstrahl",
+			"title": "Zahlenstrahl und Zahlensprünge",
+			"domain": "mathematik/zahlenwald",
+			"reduction": "axiomatic",
+			"typical_age_min": 8,
+			"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=zahlenstrahl-zahlenspruenge",
+			"prerequisites": [
+				{
+					"atom_id": "01M687PEW1C19H7AG6K8XMHGSS",
+					"type": "soft",
+					"rationale": "Das Stellenwertverständnis unterstützt diesen Schritt."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "mathematik-grundschule-4",
+					"topic_code": "zahlenstrahl-zahlenspruenge",
+					"topic_title": "Zahlenstrahl und Zahlensprünge"
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M6DJ33QTCNX4498056DTM8GZ",
+					"slug": "gs4-zahlenstrahl-1",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"question": "Wie bestimmst du die Schrittweite zwischen zwei beschrifteten Zahlen am Zahlenstrahl?",
+					"concept": "Abstand der Zahlen durch die Anzahl gleich großer Abschnitte teilen.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Abstand der Zahlen durch die Anzahl gleich großer Abschnitte teilen.",
+							"Die beiden Zahlen addieren und durch die Anzahl der Striche teilen."
+						],
+						"correct_index": 0
+					},
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=zahlenstrahl-zahlenspruenge",
+					"materiality": "material"
+				},
+				{
+					"id": "01M6DJ33QTMJJ6ANSKTMC7J6GT",
+					"slug": "gs4-zahlenstrahl-2",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"question": "Was geschieht bei einem Schritt nach links auf dem Zahlenstrahl?",
+					"concept": "Die Zahl wird um die Schrittweite kleiner.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Die Zahl wird um die Schrittweite kleiner.",
+							"Die Zahl wird immer um 1 kleiner, unabhängig von der Schrittweite."
+						],
+						"correct_index": 0
+					},
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=zahlenstrahl-zahlenspruenge",
+					"materiality": "material"
+				},
+				{
+					"id": "01M6DJ33QT1CR2M1SRGEH3F0Z5",
+					"slug": "gs4-zahlenstrahl-3",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Zwischen 200 000 und 300 000 liegen zehn gleich große Abschnitte. Welche Zahl liegt drei Schritte rechts von 200 000? Erkläre.",
+					"concept": "230 000.",
+					"sample_solution": "Der Abstand beträgt 100 000. Zehn gleich große Abschnitte bedeuten 100 000 : 10 = 10 000 je Schritt. Drei Schritte nach rechts ergeben 200 000 + 3 · 10 000 = 230 000.",
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=zahlenstrahl-zahlenspruenge",
+					"materiality": "material"
+				}
+			]
+		},
+		{
+			"id": "01M6DJ33QT1X4ZC5GC5SENN67H",
+			"atom_uri": "urn:zam:atom:01M6DJ33QT1X4ZC5GC5SENN67H",
+			"namespace": "zam-academy-mathematik-grundschule-4",
+			"slug": "gs4-zerlegen",
+			"title": "Zahlen zerlegen und ergänzen",
+			"domain": "mathematik/zahlenwald",
+			"reduction": "axiomatic",
+			"typical_age_min": 8,
+			"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=zahlen-zerlegen-ergaenzen",
+			"prerequisites": [
+				{
+					"atom_id": "01M687PEW348C0W3TZ3XM71ZRM",
+					"type": "soft",
+					"rationale": "Das Stellenwertverständnis unterstützt diesen Schritt."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "mathematik-grundschule-4",
+					"topic_code": "zahlen-zerlegen-ergaenzen",
+					"topic_title": "Zahlen zerlegen und ergänzen"
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M6DJ33QTEQX79B5W1DMEPZJG",
+					"slug": "gs4-zerlegen-1",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"question": "Wie berechnest du einen fehlenden Teil, wenn die ganze Zahl und der andere Teil bekannt sind?",
+					"concept": "Ganze Zahl minus bekannter Teil.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Ganze Zahl minus bekannter Teil.",
+							"Ganze Zahl plus bekannter Teil."
+						],
+						"correct_index": 0
+					},
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=zahlen-zerlegen-ergaenzen",
+					"materiality": "material"
+				},
+				{
+					"id": "01M6DJ33QTJ9VMFBC80WFEHWA6",
+					"slug": "gs4-zerlegen-2",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"question": "Welche Stellenwertzerlegung passt zu 405 060?",
+					"concept": "400 000 + 5 000 + 60.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": ["400 000 + 5 000 + 60.", "400 000 + 50 000 + 6."],
+						"correct_index": 0
+					},
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=zahlen-zerlegen-ergaenzen",
+					"materiality": "material",
+					"concept_segments": [
+						{
+							"type": "math",
+							"tex": "400\\,000 + 5\\,000 + 60",
+							"speech": "vierhunderttausend plus fünftausend plus sechzig"
+						},
+						{
+							"type": "text",
+							"text": "."
+						}
+					]
+				},
+				{
+					"id": "01M6DJ33QT32JS9JJHCKEN7N6C",
+					"slug": "gs4-zerlegen-3",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "100 000 sind in 30 000 und 70 000 zerlegt. Der erste Teil wird um 1 000 größer. Wie verändert sich der zweite Teil, wenn die Summe gleich bleibt?",
+					"concept": "Er wird um 1 000 kleiner, also 69 000.",
+					"sample_solution": "Der erste Teil ist nun 31 000. Damit die Summe 100 000 bleibt, muss der zweite Teil 69 000 sein: 31 000 + 69 000 = 100 000. Ein größerer Teil erfordert bei gleicher Summe einen entsprechend kleineren anderen Teil.",
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=zahlen-zerlegen-ergaenzen",
 					"materiality": "material"
 				}
 			]

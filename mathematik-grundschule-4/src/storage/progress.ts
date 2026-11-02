@@ -6,9 +6,9 @@ export const STORAGE_VERSION = 1;
 const STORE = "progress";
 
 /** A single document makes mission completion and reward grants atomic. */
-export class ProgressStore {
+export class DocumentStore<T> {
 	readonly name: string;
-	state: Progress = fresh();
+	state: T;
 	mode: StorageMode = "memory";
 	raw: unknown = null;
 	private db: IDBDatabase | null = null;
@@ -16,8 +16,13 @@ export class ProgressStore {
 	private tail: Promise<unknown> = Promise.resolve();
 	onChange: (() => void) | null = null;
 
-	constructor(name = DATABASE) {
+	constructor(
+		name: string,
+		private create: () => T,
+		private validate: (value: unknown) => value is T,
+	) {
 		this.name = name;
+		this.state = create();
 	}
 
 	async open(factory?: IDBFactory): Promise<void> {
@@ -67,29 +72,29 @@ export class ProgressStore {
 		});
 		if (raw === undefined) return;
 		this.raw = raw;
-		if (validProgress(raw)) this.state = raw;
+		if (this.validate(raw)) this.state = raw;
 		else this.mode = "recovery";
 	}
 
-	update(change: (state: Progress) => void): Promise<void> {
+	update(change: (state: T) => void): Promise<void> {
 		const operation = this.tail.then(() => this.apply(change));
 		this.tail = operation.catch(() => {});
 		return operation;
 	}
 
-	private async apply(change: (state: Progress) => void): Promise<void> {
+	private async apply(change: (state: T) => void): Promise<void> {
 		if (this.mode === "recovery")
 			throw new Error("Bitte wähle zuerst die Speicherwiederherstellung.");
 		if (!this.db || this.mode === "memory") {
 			const next = structuredClone(this.state);
 			change(next);
-			if (!validProgress(next))
+			if (!this.validate(next))
 				throw new Error("Der Lernstand konnte nicht geprüft werden.");
 			this.state = next;
 			this.onChange?.();
 			return;
 		}
-		let next: Progress | undefined;
+		let next: T | undefined;
 		try {
 			const db = this.db;
 			await new Promise<void>((resolve, reject) => {
@@ -97,7 +102,7 @@ export class ProgressStore {
 				const req = tx.objectStore(STORE).get("learner");
 				req.onsuccess = () => {
 					const saved = req.result === undefined ? this.state : req.result;
-					if (!validProgress(saved)) {
+					if (!this.validate(saved)) {
 						this.raw = saved;
 						this.mode = "recovery";
 						tx.abort();
@@ -107,7 +112,7 @@ export class ProgressStore {
 					next = candidate;
 					try {
 						change(candidate);
-						if (!validProgress(next)) throw new Error("Ungültiger Lernstand.");
+						if (!this.validate(next)) throw new Error("Ungültiger Lernstand.");
 						tx.objectStore(STORE).put(next, "learner");
 					} catch (error) {
 						next = undefined;
@@ -136,7 +141,7 @@ export class ProgressStore {
 	}
 
 	async freshStart(): Promise<void> {
-		const next = fresh();
+		const next = this.create();
 		const db = this.db;
 		if (db) {
 			await new Promise<void>((resolve, reject) => {
@@ -157,5 +162,12 @@ export class ProgressStore {
 	close(): void {
 		this.channel?.close();
 		this.db?.close();
+	}
+}
+
+/** Original workshop keeps its existing document and storage namespace. */
+export class ProgressStore extends DocumentStore<Progress> {
+	constructor(name = DATABASE) {
+		super(name, fresh, validProgress);
 	}
 }

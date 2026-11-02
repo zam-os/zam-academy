@@ -34,7 +34,10 @@ import {
 } from "./practice/tasks";
 import { ProgressStore } from "./storage/progress";
 import { board, markedNumeral } from "./ui/board";
-import { validLessonHash } from "./zam/zam-link";
+import { validLessonHash, lessonIdFromHash } from "./zam/zam-link";
+import { COURSE_LINKS, forestLesson } from "./course/catalog";
+import { ForestSession } from "./course/session";
+import { forestKey } from "./course/progress";
 import { ulid } from "./id";
 
 const app = (() => {
@@ -43,6 +46,20 @@ const app = (() => {
 	return element;
 })();
 const store = new ProgressStore();
+let forest: ForestSession | null = null;
+const forestSessions = new Map<string, ForestSession>();
+let workshopOpening: Promise<void> | null = null;
+let loading = false;
+let routeRequest = 0;
+function activeStorage() {
+	return forest?.store ?? store;
+}
+function activeLessonId() {
+	return forest?.lesson.id ?? LESSON_ID;
+}
+function lessonNavigation(): string {
+	return `<nav class="forest-nav" aria-label="Lektionen im Zahlenwald"><label class="forest-compact" for="forest-lesson">Deine Lektion im Zahlenwald<select id="forest-lesson">${COURSE_LINKS.map((lesson) => `<option value="${lesson.id}" ${activeLessonId() === lesson.id ? "selected" : ""}>${lesson.shortTitle}</option>`).join("")}</select></label><div class="forest-links">${COURSE_LINKS.map((lesson) => `<a class="forest-link" href="#lesson=${lesson.id}" aria-current="${activeLessonId() === lesson.id ? "page" : "false"}"><span aria-hidden="true">${lesson.icon}</span><strong>${lesson.shortTitle}</strong><small>Zwei Missionen entdecken</small></a>`).join("")}</div></nav>`;
+}
 let view: "child" | "parent" | "settings" = "child";
 let feedback = "";
 let encouraging = false;
@@ -156,11 +173,11 @@ function chime(): void {
 
 function notices(): string {
 	const invalidLink = location.hash && !validLessonHash(location.hash);
-	return `${store.mode === "memory" ? '<p class="notice" role="status">Du kannst spielen. Dein Browser kann den Lernstand gerade nicht speichern. Lass diese Seite zum Weitermachen geöffnet.</p>' : ""}${invalidLink ? '<p class="notice">Dieser Lektionslink ist hier nicht bekannt. Du bist in Milos Stellenwert-Werkstatt.</p>' : ""}`;
+	return `${activeStorage().mode === "memory" ? '<p class="notice" role="status">Du kannst spielen. Dein Browser kann den Lernstand gerade nicht speichern. Lass diese Seite zum Weitermachen geöffnet.</p>' : ""}${invalidLink ? '<p class="notice">Dieser Lektionslink ist hier nicht bekannt. Du bist in Milos Stellenwert-Werkstatt.</p>' : ""}`;
 }
 
 function companion(): string {
-	const p = store.state;
+	const p = forest?.store.state ?? store.state;
 	const snack =
 		p.rewards.includes("mission-b") && !p.consumed.includes("mission-b");
 	return `<aside class="companion" aria-label="Milo und eure Insel">${island(mood(), p.rewards.includes("mission-a"), p.rewards.includes("mission-b"))}
@@ -251,11 +268,11 @@ function parent(): string {
 }
 
 function settings(): string {
-	return `<section class="settings"><p class="eyebrow">So passt die Insel zu dir</p><h1>Deine Einstellungen</h1><label class="toggle"><input id="sound-setting" type="checkbox" ${sound ? "checked" : ""}>Kurze Klänge bei Entdeckungen</label><p>Klänge starten ausgeschaltet. Das Lehrervideo hat eigene Bedienelemente.</p><label class="toggle"><input id="quiet-setting" type="checkbox" ${quiet ? "checked" : ""}>Weniger Bewegung</label><p>Auch die Bewegungseinstellung deines Geräts wird berücksichtigt.</p><label class="toggle"><input id="theme-setting" type="checkbox" ${theme === "dark" ? "checked" : ""}>Dunkle Ansicht</label><p>Ohne eigene Auswahl gilt die Farbeinstellung deines Geräts.</p><hr><h2>Dein Lernstand auf diesem Gerät</h2><p>${store.mode === "persistent" ? "Dein Lernstand wird in diesem Browser gespeichert. Das ist keine Sicherung auf einem anderen Gerät." : "Dein Lernstand kann gerade nicht dauerhaft gespeichert werden."}</p><button data-action="reset-question">Neu anfangen</button>${showReset ? '<div class="notice"><p>Deinen bisherigen Lernstand und Milos Werkstatt wirklich zurücksetzen?</p><button data-action="reset-confirm">Ja, neu anfangen</button><button data-action="reset-cancel">Lernstand behalten</button></div>' : ""}</section>`;
+	return `<section class="settings"><p class="eyebrow">So passt die Insel zu dir</p><h1>Deine Einstellungen</h1><label class="toggle"><input id="sound-setting" type="checkbox" ${sound ? "checked" : ""}>Kurze Klänge bei Entdeckungen</label><p>Klänge starten ausgeschaltet. Das Lehrervideo hat eigene Bedienelemente.</p><label class="toggle"><input id="quiet-setting" type="checkbox" ${quiet ? "checked" : ""}>Weniger Bewegung</label><p>Auch die Bewegungseinstellung deines Geräts wird berücksichtigt.</p><label class="toggle"><input id="theme-setting" type="checkbox" ${theme === "dark" ? "checked" : ""}>Dunkle Ansicht</label><p>Ohne eigene Auswahl gilt die Farbeinstellung deines Geräts.</p><hr><h2>Dein Lernstand auf diesem Gerät</h2><p>${activeStorage().mode === "persistent" ? "Dein Lernstand wird in diesem Browser gespeichert. Das ist keine Sicherung auf einem anderen Gerät." : "Dein Lernstand kann gerade nicht dauerhaft gespeichert werden."}</p><button data-action="reset-question">Diese Lektion neu anfangen</button>${showReset ? '<div class="notice"><p>Deinen Lernstand in dieser Lektion wirklich zurücksetzen? Die anderen Lektionen bleiben erhalten.</p><button data-action="reset-confirm">Ja, neu anfangen</button><button data-action="reset-cancel">Lernstand behalten</button></div>' : ""}</section>`;
 }
 
 function recovery(): string {
-	return `<main class="recovery"><h1>Dein gespeicherter Lernstand braucht Hilfe.</h1><p>Wir überschreiben ihn nicht. Du kannst ihn zur Wiederherstellung herunterladen oder bewusst neu anfangen.</p><button data-action="recover-export">Gespeicherte Daten herunterladen</button><button data-action="reset-question">Neu anfangen</button>${showReset ? '<p>Beim Neuanfang wird der bisherige Lernstand ersetzt.</p><button data-action="reset-confirm">Ja, neu anfangen</button><button data-action="reset-cancel">Abbrechen</button>' : ""}${feedback ? `<p role="status">${escapeHtml(feedback)}</p>` : ""}</main>`;
+	return `<main class="recovery"><h1>Dein gespeicherter Lernstand braucht Hilfe.</h1><p>Wir überschreiben ihn nicht. Du kannst ihn zur Wiederherstellung herunterladen oder bewusst neu anfangen.</p><button data-action="recover-export">Gespeicherte Daten herunterladen</button><button data-action="reset-question">Diese Lektion neu anfangen</button>${showReset ? '<p>Beim Neuanfang wird der bisherige Lernstand ersetzt.</p><button data-action="reset-confirm">Ja, neu anfangen</button><button data-action="reset-cancel">Abbrechen</button>' : ""}${feedback ? `<p role="status">${escapeHtml(feedback)}</p>` : ""}</main>`;
 }
 
 function render(): void {
@@ -263,17 +280,20 @@ function render(): void {
 	const focusAction = active?.dataset.action;
 	const focusCol = active?.dataset.col;
 	const focusView = active?.dataset.view;
+	const focusValue = active?.dataset.value;
 	document.documentElement.classList.toggle("quiet", quiet);
 	document.documentElement.dataset.theme = theme;
+	document.title = `${forest?.lesson.title ?? "Milos Stellenwert-Werkstatt"} · ZAM Entdeckerinsel`;
 	const p = store.state;
+	const activeProgress = forest?.store.state ?? p;
 	if (answerKey !== taskKey(p)) {
 		answerDraft = "";
 		answerKey = taskKey(p);
 	}
 	app.innerHTML = `<header class="site-header"><a class="brand" href="#lesson=${LESSON_ID}"><span class="brand-logo" aria-hidden="true">z</span><span>ZAM <strong>Entdeckerinsel</strong><small>Mathematik · 4. Klasse · Bayern</small></span></a><span class="preview-label">Werkstatt-Vorschau</span></header>
     <nav class="main-nav" aria-label="Hauptnavigation"><div>${(["child", "parent", "settings"] as const).map((v) => `<button data-action="view" data-view="${v}" aria-current="${view === v ? "page" : "false"}">${v === "child" ? "Mein Abenteuer" : v === "parent" ? "Für Eltern" : "Einstellungen"}</button>`).join("")}</div><button class="sound-toggle" data-action="sound" aria-pressed="${sound}" aria-label="Entdeckungsklänge ${sound ? "ausschalten" : "einschalten"}">${sound ? "♪ Klang an" : "♪ Klang aus"}</button></nav>
-    ${notices()}${store.mode === "recovery" ? recovery() : view === "parent" ? `<main>${parent()}</main>` : view === "settings" ? `<main>${settings()}</main>` : `<main><div class="welcome-heading"><div><p class="eyebrow">Ein kleiner Schritt. Eine neue Entdeckung.</p><h1>Willkommen im Zahlenwald.</h1></div><span class="session-pill">Du bestimmst dein Tempo</span></div><div class="adventure-layout">${companion()}<div class="learning-column"><section class="lesson-card" aria-label="Milos Stellenwert-Lektion" ${busy ? 'aria-busy="true"' : ""}>${lesson()}</section>${teacherPanel()}<div class="island-route" aria-label="Deine Lernwelt"><span class="current">♧ Zahlenwald<small>Stellenwerte entdecken</small></span><span>◇ Formenbucht<small>folgt später</small></span><span>☀ Messmarkt<small>folgt später</small></span><span>✧ Zufallsgarten<small>folgt später</small></span></div></div></div><p class="progress-note">${p.rewards.length} von 2 Missionen geübt · Pausen sind immer willkommen.</p></main>`}
-    <footer><span>Lernen. Entdecken. Gemeinsam wachsen.</span><span>Stellenwert-Starter · lokal auf deinem Gerät</span></footer>`;
+    ${lessonNavigation()}${notices()}${loading ? '<p class="notice" role="status">Deine Lektion wird geladen.</p>' : ""}${activeStorage().mode === "recovery" ? recovery() : view === "parent" ? `<main>${forest?.parentView() ?? parent()}</main>` : view === "settings" ? `<main>${settings()}</main>` : `<main><div class="welcome-heading"><div><p class="eyebrow">Ein kleiner Schritt. Eine neue Entdeckung.</p><h1>Willkommen im Zahlenwald.</h1></div><span class="session-pill">Du bestimmst dein Tempo</span></div><div class="adventure-layout">${companion()}<div class="learning-column"><section class="lesson-card" aria-label="${forest ? escapeHtml(forest.lesson.title) : "Milos Stellenwert-Lektion"}" ${busy ? 'aria-busy="true"' : ""}>${forest?.lessonView() ?? lesson()}</section>${forest?.teacherPanel() ?? teacherPanel()}<div class="island-route" aria-label="Deine Lernwelt"><span class="current">♧ Zahlenwald<small>Stellenwerte entdecken</small></span><span>◇ Formenbucht<small>folgt später</small></span><span>☀ Messmarkt<small>folgt später</small></span><span>✧ Zufallsgarten<small>folgt später</small></span></div></div></div><p class="progress-note">${activeProgress.rewards.length} von 2 Missionen dieser Lektion geübt · Pausen sind immer willkommen.</p></main>`}
+    <footer><span>Lernen. Entdecken. Gemeinsam wachsen.</span><span>Mathematik-Werkstatt · lokal auf deinem Gerät</span></footer>`;
 	app.querySelectorAll<HTMLButtonElement>("button").forEach((button) => {
 		button.addEventListener("click", () => {
 			void act(button).catch((error) => {
@@ -281,6 +301,7 @@ function render(): void {
 					error instanceof Error
 						? error.message
 						: "Das hat gerade nicht geklappt. Versuche es bitte noch einmal.";
+				if (forest) forest.feedback = feedback;
 				busy = false;
 				render();
 			});
@@ -322,10 +343,18 @@ function render(): void {
 			} catch {}
 			render();
 		});
+	app
+		.querySelector<HTMLSelectElement>("#forest-lesson")
+		?.addEventListener("change", (event) => {
+			const id = (event.target as HTMLSelectElement).value;
+			if (COURSE_LINKS.some((lesson) => lesson.id === id))
+				location.hash = `lesson=${id}`;
+		});
+	forest?.bind(app);
 	if (focusAction)
 		app
 			.querySelector<HTMLElement>(
-				`[data-action="${focusAction}"]${focusCol ? `[data-col="${focusCol}"]` : ""}${focusView ? `[data-view="${focusView}"]` : ""}`,
+				`[data-action="${focusAction}"]${focusCol ? `[data-col="${focusCol}"]` : ""}${focusView ? `[data-view="${focusView}"]` : ""}${focusValue !== undefined ? `[data-value="${focusValue}"]` : ""}`,
 			)
 			?.focus({ preventScroll: true });
 }
@@ -338,7 +367,7 @@ function move(p: Progress): void {
 
 async function act(button: HTMLButtonElement): Promise<void> {
 	const action = button.dataset.action;
-	if (!action || busy) return;
+	if (!action || busy || loading) return;
 	if (action === "view") {
 		view = button.dataset.view as typeof view;
 		feedback = "";
@@ -358,7 +387,7 @@ async function act(button: HTMLButtonElement): Promise<void> {
 	}
 	if (action === "recover-export") {
 		const url = URL.createObjectURL(
-			new Blob([JSON.stringify(store.raw, null, 2)], {
+			new Blob([JSON.stringify(activeStorage().raw, null, 2)], {
 				type: "application/json",
 			}),
 		);
@@ -370,7 +399,7 @@ async function act(button: HTMLButtonElement): Promise<void> {
 		return;
 	}
 	if (action === "reset-confirm") {
-		await store.freshStart();
+		await activeStorage().freshStart();
 		eating = false;
 		celebrating = false;
 		encouraging = false;
@@ -393,11 +422,23 @@ async function act(button: HTMLButtonElement): Promise<void> {
 		encouraging = false;
 		eating = false;
 		celebrating = false;
-		if (store.state.resting)
+		if (forest?.store.state.resting)
+			await forest.store.update((p) => {
+				p.resting = false;
+			});
+		else if (!forest && store.state.resting)
 			await store.update((p) => {
 				p.resting = false;
 			});
 		render();
+		return;
+	}
+	if (forest) {
+		const session = forest,
+			before = forestKey(session.store.state);
+		await session.act(button, app);
+		if (forest === session && before !== forestKey(session.store.state))
+			app.querySelector<HTMLElement>("#lesson-heading")?.focus();
 		return;
 	}
 	const snapshotStep = store.state.step;
@@ -574,17 +615,60 @@ async function act(button: HTMLButtonElement): Promise<void> {
 	}
 }
 
-store.onChange = render;
-render();
-await store.open();
-hello = store.state.step !== "welcome";
-render();
-// Keep a direct lesson link useful without resetting a learner's progress.
-window.addEventListener("hashchange", () => {
+store.onChange = () => {
+	if (!forest) render();
+};
+async function activateLesson(): Promise<void> {
+	const request = ++routeRequest;
+	loading = true;
+	const def = forestLesson(lessonIdFromHash(location.hash));
+	forest = null;
+	if (def) {
+		let session = forestSessions.get(def.id);
+		if (!session) {
+			session = new ForestSession(def, (event) => {
+				if (forest?.lesson.id !== def.id) return;
+				if (event) {
+					encouraging = event === "encourage";
+					celebrating = event === "reward";
+					eating = event === "snack";
+					hello = true;
+					if (event === "reward") chime();
+				}
+				render();
+			});
+			forestSessions.set(def.id, session);
+		}
+		forest = session;
+	}
 	view = "child";
+	feedback = "";
+	answerDraft = "";
+	answerKey = "";
+	showReset = false;
+	encouraging = false;
+	celebrating = false;
+	eating = false;
+	hello = false;
 	render();
+	if (forest) await forest.open();
+	else {
+		workshopOpening ??= store.open();
+		await workshopOpening;
+	}
+	if (request !== routeRequest) return;
+	loading = false;
+	hello = forest
+		? forest.store.state.stage !== "welcome"
+		: store.state.step !== "welcome";
+	render();
+	if (request > 1) app.querySelector<HTMLElement>("#lesson-heading")?.focus();
+}
+await activateLesson();
+window.addEventListener("hashchange", () => {
+	void activateLesson();
 });
 
-// Referencing the stable sequence here catches accidental missing journey steps during authoring.
+// Referencing the stable sequence catches accidental missing workshop steps during authoring.
 if (!STEPS.includes(store.state.step))
 	throw new Error("Diese Lektionsseite ist nicht verfügbar.");

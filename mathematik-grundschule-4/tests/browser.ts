@@ -2,9 +2,13 @@ import {
 	DATABASE,
 	STORAGE_VERSION,
 	ProgressStore,
+	DocumentStore,
 } from "../src/storage/progress";
 import { fresh, grant } from "../src/practice/evidence";
 import { ulid } from "../src/id";
+import { FOREST_LESSONS } from "../src/course/catalog";
+import { ForestSession } from "../src/course/session";
+import { freshForest, validForest } from "../src/course/progress";
 
 const output = document.querySelector<HTMLPreElement>("#results");
 if (!output) throw new Error("Test output missing");
@@ -19,7 +23,8 @@ run.addEventListener("click", async (event) => {
 	(event.target as HTMLButtonElement).disabled = true;
 	output.textContent = "Isolated native IndexedDB integration tests";
 	const name = `${DATABASE}-test-${ulid()}`;
-	const stores: ProgressStore[] = [];
+	const stores: { close(): void }[] = [];
+	const extraNames = [`${name}-comparison`, `${name}-line`, `${name}-range`];
 	try {
 		const a = new ProgressStore(name);
 		const b = new ProgressStore(name);
@@ -154,6 +159,78 @@ run.addEventListener("click", async (event) => {
 			memory.mode === "memory" && memory.state.step === "build-small",
 			"Blocked storage keeps an honest playable memory session",
 		);
+		const comparison = new DocumentStore(
+			extraNames[0],
+			() => freshForest("zahlen-vergleichen-ordnen"),
+			validForest,
+		);
+		const line = new DocumentStore(
+			extraNames[1],
+			() => freshForest("zahlenstrahl-zahlenspruenge"),
+			validForest,
+		);
+		stores.push(comparison, line);
+		await comparison.open();
+		await line.open();
+		await comparison.update((p) => {
+			p.stage = "lab";
+			p.position = 7;
+		});
+		const comparisonAgain = new DocumentStore(
+			extraNames[0],
+			() => freshForest("zahlen-vergleichen-ordnen"),
+			validForest,
+		);
+		stores.push(comparisonAgain);
+		await comparisonAgain.open();
+		assert(
+			comparisonAgain.state.stage === "lab" &&
+				comparisonAgain.state.position === 7,
+			"New lesson progress resumes through the shared transactional store",
+		);
+		assert(
+			line.state.stage === "welcome" &&
+				line.state.position === 0 &&
+				line.state.attempts.length === 0,
+			"Switching lessons keeps progress and evidence isolated",
+		);
+		const rangeHost = document.createElement("section");
+		document.body.append(rangeHost);
+		const rangeSession = new ForestSession(
+			FOREST_LESSONS[1],
+			() => {
+				rangeHost.innerHTML = rangeSession.lessonView();
+				rangeSession.bind(rangeHost);
+			},
+			extraNames[2],
+		);
+		stores.push(rangeSession.store);
+		await rangeSession.open();
+		await rangeSession.store.update((p) => {
+			p.stage = "lab";
+			p.index = 1;
+			p.labGoals = [0];
+		});
+		let range = rangeHost.querySelector<HTMLInputElement>("#forest-position");
+		if (!range) throw new Error("Range missing");
+		range.value = "1";
+		range.dispatchEvent(new Event("input"));
+		range.dispatchEvent(new Event("change"));
+		range.value = "2";
+		range.dispatchEvent(new Event("input"));
+		await rangeSession.store.update(() => {});
+		range = rangeHost.querySelector<HTMLInputElement>("#forest-position");
+		assert(
+			range?.value === "2",
+			"A pending save cannot overwrite a newer range gesture",
+		);
+		range?.dispatchEvent(new Event("change"));
+		await rangeSession.store.update(() => {});
+		assert(
+			rangeSession.store.state.position === 2,
+			"The final range value is saved after the gesture",
+		);
+		rangeHost.remove();
 		assert(fresh().schema === 1, "Fresh state is versioned");
 		output.textContent += "\nALL BROWSER STORAGE CHECKS PASSED";
 	} catch (error) {
@@ -163,5 +240,8 @@ run.addEventListener("click", async (event) => {
 			s.close();
 		});
 		indexedDB.deleteDatabase(name);
+		extraNames.forEach((database) => {
+			indexedDB.deleteDatabase(database);
+		});
 	}
 });

@@ -2,7 +2,7 @@
 	"schema": 1,
 	"checked": "2026-10-31",
 	"source_sha256": "d6883fa04d305d52e83aa16dfd5384eacb40e98b86ffad3dc3e05aec42cf5dd4",
-	"scope": "Shared Grades 3/4. This starter covers only part of 1.1; coverage is not learner mastery.",
+	"scope": "Shared Grades 3/4. Four Number Forest lessons implement parts of 1.1; coverage is not learner mastery.",
 	"full_coverage": false,
 	"review_status": "awaiting-primary-teacher",
 	"curriculum": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik",
@@ -13,6 +13,21 @@
 	"optional_lessons": [],
 	"lesson_bindings": {
 		"stellenwerte-buendeln": {
+			"section": "1.1",
+			"scope": "partial",
+			"official_cell_binding": "deferred: a grade-specific binding suppresses the generic importer even when its topic_code is narrow"
+		},
+		"zahlen-vergleichen-ordnen": {
+			"section": "1.1",
+			"scope": "partial",
+			"official_cell_binding": "deferred: a grade-specific binding suppresses the generic importer even when its topic_code is narrow"
+		},
+		"zahlenstrahl-zahlenspruenge": {
+			"section": "1.1",
+			"scope": "partial",
+			"official_cell_binding": "deferred: a grade-specific binding suppresses the generic importer even when its topic_code is narrow"
+		},
+		"zahlen-zerlegen-ergaenzen": {
 			"section": "1.1",
 			"scope": "partial",
 			"official_cell_binding": "deferred: a grade-specific binding suppresses the generic importer even when its topic_code is narrow"
@@ -46,7 +61,7 @@
 	],
 	"neighbouring_scope": {
 		"previous": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/2/mathematik",
-		"note": "Grades 1/2 introduce decimal grouping to 100. Shared Grades 3/4 extend to one million; this lesson uses small-number entry support, then larger place values and T/H/Z exchanges. Number lines, arithmetic algorithms and remaining 1.1 work remain later lessons."
+		"note": "Grades 1/2 introduce grouping, comparison, number lines and additive decomposition to 100. Four Grade 4 draft lessons extend these ideas to one million. Negative numbers, other number systems and numbers above one million remain outside this batch; full 1.1 and arithmetic algorithms remain incomplete."
 	},
 	"rows": [
 		{
@@ -55,14 +70,16 @@
 			"ordinal": 1,
 			"summary": "Counting",
 			"source": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik#25773",
-			"checked": "2026-10-31",
-			"status": "planned",
-			"lessons": [],
+			"checked": "2026-11-02",
+			"status": "partial",
+			"lessons": ["zahlen-vergleichen-ordnen", "zahlenstrahl-zahlenspruenge"],
 			"planned_work": ["N01", "N02", "N03"],
-			"evidence": [],
+			"evidence": [
+				"Place-value comparison and ordered triples; scaled number-line reading/placement; equal steps in both directions; reasoning checks; three tasks per level and fresh exits"
+			],
 			"physical_work": [],
 			"reviewer": null,
-			"remaining": "Implement and review the mapped course lessons",
+			"remaining": "Primary-school teacher review; divisors, multiples and remaining flexible-counting representations",
 			"lb": 1,
 			"competence": "orientieren sich im Zahlenraum bis zur Million durch flexibles Zählen (vorwärts, rückwärts, in Schritten); sie ordnen und vergleichen Zahlen (auch anhand des Zahlenstrahls) und begründen Beziehungen zwischen Zahlen (z. B. Teiler, Vielfache)."
 		},
@@ -110,14 +127,16 @@
 			"ordinal": 4,
 			"summary": "Quantity estimates",
 			"source": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik#25773",
-			"checked": "2026-10-31",
-			"status": "planned",
-			"lessons": [],
+			"checked": "2026-11-02",
+			"status": "partial",
+			"lessons": ["zahlen-vergleichen-ordnen"],
 			"planned_work": ["N01", "N02", "N03"],
-			"evidence": [],
+			"evidence": [
+				"Compare six-digit numbers using smaller/greater/equal and justify the first different position"
+			],
 			"physical_work": [],
 			"reviewer": null,
-			"remaining": "Implement and review the mapped course lessons",
+			"remaining": "Quantity estimation, Fermi problems, strategy comparison and primary-school teacher review",
 			"lb": 1,
 			"competence": "schätzen und bestimmen Anzahlen (z. B. Reiskörner) und vergleichen Zahlen im Zahlenraum bis zur Million unter Verwendung von Fachbegriffen; sie begründen und bewerten dabei verschiedene Vorgehensweisen (z. B. bei Fermi-Aufgaben)."
 		},
@@ -127,14 +146,16 @@
 			"ordinal": 5,
 			"summary": "Number decomposition",
 			"source": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik#25773",
-			"checked": "2026-10-31",
-			"status": "planned",
-			"lessons": [],
+			"checked": "2026-11-02",
+			"status": "partial",
+			"lessons": ["zahlen-zerlegen-ergaenzen"],
 			"planned_work": ["N01", "N02", "N03"],
-			"evidence": [],
+			"evidence": [
+				"Three movable part-whole goals; missing-part tasks; choose canonical place-value parts; explain compensating changes at constant sum"
+			],
 			"physical_work": [],
 			"reviewer": null,
-			"remaining": "Implement and review the mapped course lessons",
+			"remaining": "Primary-school teacher review; further physical representations and alternative decompositions",
 			"lb": 1,
 			"competence": "zerlegen Zahlen im Zahlenraum bis zur Million (z. B. 1000 = 100 + 900; 10000 = 1000 + 9000; 100000 = 10000 + 90000; 100000 = 10 ∙ 10000) und erläutern dabei Zusammenhänge und Strukturen."
 		},
@@ -971,5 +992,16 @@
 			"lb": 4,
 			"competence": "variieren die Bedingungen für einfache Zufallsexperimente systematisch (z. B. Anzahl oder Farbe der Kugeln in einem Säckchen) und vergleichen und bewerten die Ergebnisse zu den Experimenten, die bei unterschiedlichen Bedingungen durchgeführt wurden."
 		}
-	]
+	],
+	"extension_check": {
+		"date": "2026-11-02",
+		"scope": "Section 1.1 rechecked live for the three new lessons; remaining inventory retains its original check dates.",
+		"source": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik",
+		"neighbours_checked": [
+			"https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/2/mathematik",
+			"https://www.lehrplanplus.bayern.de/fachlehrplan/mittelschule/5/mathematik",
+			"https://www.lehrplanplus.bayern.de/fachlehrplan/realschule/5/mathematik",
+			"https://www.lehrplanplus.bayern.de/fachlehrplan/gymnasium/5/mathematik"
+		]
+	}
 }

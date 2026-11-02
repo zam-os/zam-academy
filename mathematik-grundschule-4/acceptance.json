@@ -126,6 +126,27 @@
 			"status": "passed",
 			"checked": "2026-11-02",
 			"details": "Opened to welcome with zero missions and no inherited draft evidence. Built 100, reloaded with its one Hunderter preserved, completed 100 and 59 092, and answered the digit question for 8 508. Parent view displayed the grouped Zahl: 8 508 and canonical build example. All 11 isolated native IndexedDB checks passed after removing the migration layer. Earlier dated browser entries describe superseded draft revisions."
+		},
+		{
+			"surface": "Built dist/index.html over localhost:5216; Codex in-app browser",
+			"check": "Three complete new lesson journeys",
+			"status": "passed",
+			"checked": "2026-11-02",
+			"details": "Completed every new lesson through its three lab goals, quiz, three guided tasks, three transfer tasks and three fresh exit tasks. Observed comparison errors/retry, ordering, varied number-line scales, offsets and both jump directions, native keyboard placement including one million, pointer dragging of the treasure split, selected decomposition parts and constant-sum reasoning. Inspected all three parent views and the visible pending-video panels. Optional practice, worked-solution continuation and snack sharing did not mint extra rewards."
+		},
+		{
+			"surface": "Native isolated harness on localhost:5226/tests/browser.html",
+			"check": "Shared transactional store, lesson isolation and rapid range input",
+			"status": "passed",
+			"checked": "2026-11-02",
+			"details": "All 15 native assertions passed, including original transaction/recovery cases, new-lesson resumption/isolation, and a pending save not overwriting a newer slider gesture. No learner store was used by the harness."
+		},
+		{
+			"surface": "Built app at desktop, 375 px and 320 px browser viewports",
+			"check": "Lesson selection, themes, activity and parent bounds",
+			"status": "passed",
+			"checked": "2026-11-02",
+			"details": "Inspected desktop light and phone dark layouts; no horizontal body overflow or clipped visible controls in inspected activity/parent states. Verified compact native lesson picker and focus on the newly selected lesson. Temporary viewport override reset. Physical touch hardware remains untested."
 		}
 	],
 	"remaining": [
@@ -138,9 +159,9 @@
 	],
 	"checked": "2026-11-02",
 	"automated_checks": {
-		"app": "Locked toolchain install, external Biome 2.5.6 format/lint, typecheck and 39 Vitest tests passed",
+		"app": "Locked toolchain unchanged; external Biome 2.5.6 format/lint, typecheck and 51 Vitest tests passed",
 		"catalog": "48 node:test catalog and public-registry checks passed; generated catalog has 36 existing cells and excludes this draft",
-		"cell": "4 atoms, 12 items; disposable install/enrol/recall/reinstall passed against CI-pinned zam-core 0.54.0 with existing workspace native dependencies",
+		"cell": "7 atoms, 21 items; original 4 atoms/12 items unchanged; disposable install/enrol/recall/reinstall passed against CI-pinned zam-core 0.54.0",
 		"all_cells": "All 37 Academy cells in the current-main PR checkout validated against CI-pinned zam-core 0.54.0 using disposable libraries",
 		"package": "Draft ZIP built and byte/asset/launcher verification passed; strict complete gate correctly refuses missing teacher recording"
 	},
@@ -174,5 +195,17 @@
 		"first_release": "Fresh storage namespace; every learner starts at zero.",
 		"draft_progress": "No import, migration, version compatibility or historical-preview rendering.",
 		"current_progress": "Current-schema saves resume normally; atomic rewards and corrupt-save recovery remain."
+	},
+	"expansion": {
+		"lessons": [
+			"zahlen-vergleichen-ordnen",
+			"zahlenstrahl-zahlenspruenge",
+			"zahlen-zerlegen-ergaenzen"
+		],
+		"status": "implemented-draft",
+		"teacher_review": "pending",
+		"teacher_recordings": "awaiting-recording",
+		"curriculum_check": "2026-11-02; section 1.1 only; mapped positions remain partial",
+		"storage": "One separate transactional document per new lesson; original workshop namespace unchanged; no migrations"
 	}
 }
