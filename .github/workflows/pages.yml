@@ -16,6 +16,10 @@ concurrency:
   group: pages
   cancel-in-progress: false
 
+env:
+  # Pages runs the same jsdom UI suites as CI before building the site.
+  NODE_OPTIONS: --no-experimental-webstorage
+
 jobs:
   build:
     runs-on: ubuntu-latest
