@@ -8,6 +8,10 @@ on:
 permissions:
   contents: read
 
+env:
+  # Browser storage in UI tests must come from jsdom, not the Node host.
+  NODE_OPTIONS: --no-experimental-webstorage
+
 jobs:
   app:
     name: ${{ matrix.app }}
