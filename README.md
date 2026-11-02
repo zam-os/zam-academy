@@ -54,6 +54,17 @@ The rules come from [ADR 2026-10-19](https://github.com/zam-os/zam/blob/main/doc
 - **Pages publishes** each app, its `cell.json`, and `/catalog.json` (`scripts/build-catalog.mjs`), with the SHA-256 of every cell. ZAM reads the catalog only on a learner's action. ZAM releases bundle a copy of each cell.
 - **A cell is released at its first publication,** in the catalog or in a ZAM release. From then on, its item ids, slugs and cited lessons stay stable; changes use `replaces` and raise the version.
 
+For the Discovery Island primary-school pilot, Thomas explicitly approved
+transactional IndexedDB and a native player for an approved first-party
+teacher recording on 2026-10-31. The exception is scoped in [AGENTS.md](AGENTS.md);
+external video embeds and automatic media requests remain excluded.
+
+## Local drafts
+
+| App | Folder | Status |
+| --- | --- | --- |
+| Grade 4 mathematics: place values with Milo (Bavaria) | [`mathematik-grundschule-4/`](mathematik-grundschule-4/) | Local Phase-1 draft; teacher recording and review pending |
+
 ## Develop
 
 New and changed packages follow the package standard in [AGENTS.md](AGENTS.md): curriculum check, lesson and card quality, verified videos, mapping approval and the definition of done.
@@ -93,6 +104,7 @@ cd uml                 # or: cd physik-realschule-9 (dev server on :5181), cd sq
 # History 8: cd geschichte-realschule-8 (dev server on :5213)
 # Englisch 8: cd englisch-realschule-8 (dev server on :5214)
 # French 8: cd franzoesisch-realschule-8 (dev server on :5215)
+# Grade 4 mathematics draft: cd mathematik-grundschule-4 (dev server on :5216)
 npm ci
 npm run dev      # http://localhost:5180/uml/
 npm test

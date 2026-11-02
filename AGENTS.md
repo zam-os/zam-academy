@@ -41,6 +41,15 @@ builds and the tests pass" is not the bar.
 7. **No third-party requests, no new dependencies.** Progress stays in
    `localStorage`; teacher videos are plain links, never embeds. New npm
    dependencies need Thomas's approval.
+   **Discovery Island exception** (`mathematik-grundschule-4`, explicitly
+   approved by Thomas on 2026-10-31;
+   [agent-recorded decision reference](https://github.com/zam-os/zam-academy/pull/72#issuecomment-6564246975)):
+   local progress may use
+   transactional IndexedDB, and an approved first-party teacher recording
+   may use a native HTML video player and travel in the offline ZIP. This
+   permits neither third-party embeds nor background requests. Recording
+   rights, captions, transcript and teacher content approval remain required.
+   No recording is currently approved.
 8. **Stay in your package.** Besides the package folder, a new package may
    touch `academy.json`, `.github/workflows/ci.yml`,
    `.github/workflows/pages.yml`, `README.md` and `docs/`. Changes to other
@@ -147,7 +156,8 @@ green. No hype, no filler.
 
 ## 4. Teacher videos
 
-Videos are plain links to German explainers (`teacherVideo` in
+Except for the explicitly approved Discovery Island first-party player
+(rule 7), videos are plain links to German explainers (`teacherVideo` in
 `mathematik-realschule-9`). Authors of a new package add none: a separate
 step adds and checks them afterwards (Thomas's decision of 2026-10-22).
 Whoever adds a video makes sure it really teaches the lesson's topic at the

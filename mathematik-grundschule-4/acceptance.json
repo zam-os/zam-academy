@@ -1,0 +1,178 @@
+{
+	"schema": 1,
+	"phase": 1,
+	"phase_complete": false,
+	"teacher_review": {
+		"status": "pending",
+		"reviewer": null,
+		"date": null
+	},
+	"teacher_recording": {
+		"status": "awaiting-recording",
+		"confirmed_by_product": "2026-10-31"
+	},
+	"offline_video_playback": {
+		"status": "pending",
+		"reason": "No approved recording exists."
+	},
+	"browser_checks": [
+		{
+			"surface": "Codex in-app browser on macOS",
+			"check": "Complete two-mission journey through native controls",
+			"status": "passed",
+			"details": "Built 306 and 2 047; digit-value error/hint/retry; bundle; unbundle; undo; reason; explanation; fresh exit tasks; worked-solution continuation; one snack.",
+			"content_version": 1,
+			"checked": "2026-10-31"
+		},
+		{
+			"surface": "Codex in-app browser on macOS",
+			"check": "Parent evidence from actual local attempts",
+			"status": "passed",
+			"details": "Two independently solved new tasks and two helped goals remained distinct; dated task examples reconstructed from seeds.",
+			"content_version": 1,
+			"checked": "2026-10-31"
+		},
+		{
+			"surface": "Native IndexedDB browser harness; isolated generated test store names",
+			"check": "Concurrency, idempotency, resumption, recovery, blocked storage",
+			"status": "passed",
+			"details": "Native concurrency, repeated grants, workspace/resumption, interrupted-transaction rollback and subsequent writes, recovery and memory fallback assertions passed in isolated stores; no learner store used.",
+			"content_version": 1,
+			"checked": "2026-10-31"
+		},
+		{
+			"surface": "320 px viewport and desktop viewport",
+			"check": "Parent view, navigation and learner layout bounds",
+			"status": "passed",
+			"details": "No horizontal body overflow or controls outside the body in inspected states. Not a physical touch-device test.",
+			"content_version": 1,
+			"checked": "2026-10-31"
+		},
+		{
+			"surface": "Codex in-app browser on macOS",
+			"check": "Reduced-motion setting and explicit fresh start",
+			"status": "passed",
+			"details": "Setting toggled; reset required the on-screen confirm action. Only agent-created test progress was reset.",
+			"content_version": 1,
+			"checked": "2026-10-31"
+		},
+		{
+			"surface": "Codex in-app browser on macOS",
+			"check": "Keyboard activation and question focus",
+			"status": "passed",
+			"details": "Enter activated the building mission; focus moved to the new question. Numeric inputs also support Enter submission.",
+			"content_version": 1,
+			"checked": "2026-10-31"
+		},
+		{
+			"surface": "Isolated current-main PR checkout, built dist/index.html over localhost:5216",
+			"check": "Post-integration render and native IndexedDB harness",
+			"status": "passed",
+			"details": "Built German welcome, original Milo and explicit video-pending explanation rendered. All 11 native storage harness assertions passed after lint changes; direct file startup remains untested.",
+			"content_version": 1,
+			"checked": "2026-10-31"
+		},
+		{
+			"surface": "Codex in-app browser, localhost:5226; content version 2",
+			"check": "Revised journey, practice gates and parent evidence",
+			"status": "passed",
+			"checked": "2026-11-01",
+			"content_version": 2,
+			"details": "Resumed guided round from the previous test session; completed its third task and the second mission, three transfer tasks and three fresh exit tasks. Wrong exchange, undo, explanatory success feedback, immediate optional practice, another fresh task and the corrected 80 808 build example were observed. Rewards remained 2 of 2."
+		},
+		{
+			"surface": "Codex in-app browser, localhost:5226; content version 2",
+			"check": "Grok reset regression",
+			"status": "passed",
+			"checked": "2026-11-01",
+			"content_version": 2,
+			"details": "After completed missions, snack consumption and a welcoming Milo, explicit reset returned to curious welcome with 0 rewards and disabled snack. Only agent-created test progress was reset."
+		},
+		{
+			"surface": "Native browser and production dist/index.html served over localhost",
+			"check": "Production startup, hidden answer row, themes and responsive bounds",
+			"status": "passed",
+			"checked": "2026-11-01",
+			"content_version": 2,
+			"details": "Production welcome and first question rendered with no numerical digit row. Dark and light modes inspected; 1280 px desktop and 375 px/320 px mobile body bounds checked without horizontal overflow. Physical touch hardware and direct file startup remain untested."
+		},
+		{
+			"surface": "Native IndexedDB browser harness on localhost:5226/tests/browser.html",
+			"check": "Storage regression checks after review changes",
+			"status": "passed",
+			"checked": "2026-11-01",
+			"content_version": 2,
+			"details": "All 11 isolated native transaction/concurrency/idempotency/abort/recovery/resumption/fallback assertions passed; harness uses the exported storage version."
+		},
+		{
+			"surface": "Production dist/index.html over localhost:5226 in the Codex in-app browser",
+			"check": "Re-review task variation, feedback and final-build resumption",
+			"status": "passed",
+			"checked": "2026-11-01",
+			"content_version": 3,
+			"details": "Built 380, 40 996 and 53 920; observed grouped digit questions 58 249 and 796 717 with correct highlighting and exact legends. Completed guided practice, E-to-Z bundling and H-to-Z unbundling; reasoning used 4 ZT = 40 T with a factor-100 distractor and task-specific feedback. Wrong 9999 received a unit-value hint; concatenated 421616 received the actual 16 H = 1 T + 6 H explanation. Corrected to 43 616 and inspected helped parent evidence. Final rebuilt page resumed this solved task with assistance preserved."
+		},
+		{
+			"surface": "Native isolated IndexedDB harness on localhost:5226/tests/browser.html",
+			"check": "Storage checks after version-3 migration changes",
+			"status": "passed",
+			"checked": "2026-11-01",
+			"content_version": 3,
+			"details": "All 11 native concurrency, idempotency, resumption, abort, recovery and fallback assertions passed using generated test stores; no learner store used."
+		},
+		{
+			"surface": "Built dist/index.html over localhost:5226; Codex in-app browser",
+			"check": "Fresh release namespace, current-save resumption and grouped parent example",
+			"status": "passed",
+			"checked": "2026-11-02",
+			"details": "Opened to welcome with zero missions and no inherited draft evidence. Built 100, reloaded with its one Hunderter preserved, completed 100 and 59 092, and answered the digit question for 8 508. Parent view displayed the grouped Zahl: 8 508 and canonical build example. All 11 isolated native IndexedDB checks passed after removing the migration layer. Earlier dated browser entries describe superseded draft revisions."
+		}
+	],
+	"remaining": [
+		"Primary-school teacher content review",
+		"Real teacher recording with captions, transcript and distribution permissions",
+		"Actual online and offline playback of the final recording",
+		"Direct offline-file startup in a normal browser",
+		"Review prepared recall cards in the existing ZAM learner UI",
+		"Physical touch-device acceptance"
+	],
+	"checked": "2026-11-02",
+	"automated_checks": {
+		"app": "Locked toolchain install, external Biome 2.5.6 format/lint, typecheck and 39 Vitest tests passed",
+		"catalog": "48 node:test catalog and public-registry checks passed; generated catalog has 36 existing cells and excludes this draft",
+		"cell": "4 atoms, 12 items; disposable install/enrol/recall/reinstall passed against CI-pinned zam-core 0.54.0 with existing workspace native dependencies",
+		"all_cells": "All 37 Academy cells in the current-main PR checkout validated against CI-pinned zam-core 0.54.0 using disposable libraries",
+		"package": "Draft ZIP built and byte/asset/launcher verification passed; strict complete gate correctly refuses missing teacher recording"
+	},
+	"offline_file_start": {
+		"status": "blocked-by-test-environment",
+		"reason": "The browser tool rejects file:// navigation; direct extracted-file startup was not tested and no workaround was attempted."
+	},
+	"online_video_playback": {
+		"status": "pending",
+		"reason": "No approved recording exists."
+	},
+	"learner_ui_recall": {
+		"status": "pending",
+		"reason": "Kernel recall path is verified in disposable libraries; existing learner UI smoke test remains manual."
+	},
+	"touch_hardware": {
+		"status": "pending",
+		"reason": "Responsive layout and native controls checked; no physical touch device was tested."
+	},
+	"review_decisions": {
+		"storage_and_media": {
+			"approved_by": "Thomas",
+			"date": "2026-10-31",
+			"source": "Recorded decision of 2026-10-31, cited at source_url: Retain IndexedDB and the first-party video player; document the scoped exception",
+			"source_url": "https://github.com/zam-os/zam-academy/pull/72#issuecomment-6564246975"
+		},
+		"official_binding": "Deferred because current core treats a grade-specific binding as full coverage regardless of topic_code; generic import must remain available.",
+		"publication_safeguard": "Extracted into PR #73; lesson PR #72 is stacked on it."
+	},
+	"progress_policy": {
+		"first_release": "Fresh storage namespace; every learner starts at zero.",
+		"draft_progress": "No import, migration, version compatibility or historical-preview rendering.",
+		"current_progress": "Current-schema saves resume normally; atomic rewards and corrupt-save recovery remain."
+	}
+}
