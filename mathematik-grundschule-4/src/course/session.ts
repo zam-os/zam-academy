@@ -1,4 +1,10 @@
-import { columnAnswer, emptyColumnWork } from "./written-addition";
+import {
+	columnAnswer,
+	columnValidation,
+	columnOrder,
+	additionColumns,
+	emptyColumnWork,
+} from "./written-addition";
 import { DocumentStore, DATABASE } from "../storage/progress";
 import type { ForestLesson } from "./catalog";
 import {
@@ -94,6 +100,36 @@ export class ForestSession {
 		root
 			.querySelectorAll<HTMLInputElement>('[data-action="forest-column"]')
 			.forEach((input) => {
+				const all = () => [
+					...root.querySelectorAll<HTMLInputElement>(
+						'[data-action="forest-column"]',
+					),
+				];
+				input.addEventListener("click", () => input.select());
+				input.addEventListener("focus", () => {
+					all().forEach((cell) => {
+						cell.tabIndex = cell === input ? 0 : -1;
+					});
+					input.select();
+				});
+				input.addEventListener("keydown", (event) => {
+					if (event.key !== "Tab") return;
+					const task = activeForestTask(this.store.state);
+					if (!task?.columns) return;
+					const order = columnOrder(
+						additionColumns(task.columns.a, task.columns.b).width,
+					);
+					const position =
+						order.indexOf(Number(input.dataset.col)) +
+						(event.shiftKey ? -1 : 1);
+					const next = all().find(
+						(cell) => Number(cell.dataset.col) === order[position],
+					);
+					if (next) {
+						event.preventDefault();
+						next.focus();
+					}
+				});
 				input.addEventListener("input", () => {
 					const index = Number(input.dataset.col),
 						value = input.value,
@@ -101,13 +137,16 @@ export class ForestSession {
 					const allowed = index < 7 ? /^[0-9]?$/ : /^[01]?$/;
 					if (!allowed.test(value)) {
 						input.setAttribute("aria-invalid", "true");
-						const note = root.querySelector("#column-input-note");
+						const note = root.querySelector("#column-input-error");
 						if (note)
 							note.textContent =
 								"Pro Ergebnisfeld nur eine Ziffer, pro Übertrag nur 0 oder 1. Bitte verbessere die markierte Zelle.";
 						return;
 					}
 					input.removeAttribute("aria-invalid");
+					const errorNote = root.querySelector("#column-input-error");
+					if (errorNote && !root.querySelector('[aria-invalid="true"]'))
+						errorNote.textContent = "";
 					const values = [
 						...(this.columnDraft?.key === key
 							? this.columnDraft.values
@@ -290,6 +329,21 @@ export class ForestSession {
 					action === "forest-choice" ||
 					action === "forest-worked"
 				) {
+					if (
+						action === "forest-check" &&
+						task.kind === "columns" &&
+						task.columns
+					) {
+						const notice = columnValidation(
+							task.columns.a,
+							task.columns.b,
+							columnValues,
+						);
+						if (notice) {
+							this.feedback = notice;
+							return;
+						}
+					}
 					let answer: Answer | null;
 					if (action === "forest-worked") {
 						if (!p.helped.includes(key) || !explanationShown) return;
@@ -308,6 +362,10 @@ export class ForestSession {
 					)
 						answer = p.position;
 					else answer = forestInput(this.draft);
+					if (answer === null) {
+						this.feedback = forestMistake(task, null);
+						return;
+					}
 					const right = recordForest(p, task, answer);
 					if (right && task.kind === "columns" && Array.isArray(task.answer))
 						p.columnWork = task.answer.map(String);

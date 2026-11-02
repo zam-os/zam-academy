@@ -8,7 +8,12 @@ import { fresh, grant } from "../src/practice/evidence";
 import { ulid } from "../src/id";
 import { FOREST_LESSONS } from "../src/course/catalog";
 import { ForestSession } from "../src/course/session";
-import { freshForest, validForest } from "../src/course/progress";
+import {
+	activeForestTask,
+	independentForest,
+	freshForest,
+	validForest,
+} from "../src/course/progress";
 
 const output = document.querySelector<HTMLPreElement>("#results");
 if (!output) throw new Error("Test output missing");
@@ -29,6 +34,7 @@ run.addEventListener("click", async (event) => {
 		`${name}-line`,
 		`${name}-range`,
 		`${name}-written`,
+		`${name}-numeric`,
 	];
 	try {
 		const a = new ProgressStore(name);
@@ -305,6 +311,32 @@ run.addEventListener("click", async (event) => {
 				writtenAgain.state.columnWork?.[1] === "6",
 			"Written digits resume in a second native storage instance",
 		);
+		const keyCell = writtenHost.querySelector<HTMLInputElement>("#column-0");
+		if (!keyCell) throw new Error("Keyboard cell missing");
+		keyCell.focus();
+		assert(
+			keyCell.selectionStart === 0 && keyCell.selectionEnd === 1,
+			"Focusing a filled digit selects its content for replacement",
+		);
+		keyCell.dispatchEvent(
+			new KeyboardEvent("keydown", {
+				key: "Tab",
+				bubbles: true,
+				cancelable: true,
+			}),
+		);
+		const carryFocus = document.activeElement?.id;
+		document.activeElement?.dispatchEvent(
+			new KeyboardEvent("keydown", {
+				key: "Tab",
+				bubbles: true,
+				cancelable: true,
+			}),
+		);
+		assert(
+			carryFocus === "column-7" && document.activeElement?.id === "column-1",
+			"Tab follows result E, carry Z, result Z",
+		);
 		edit(2, "4");
 		edit(3, "2");
 		edit(7, "1");
@@ -319,7 +351,8 @@ run.addEventListener("click", async (event) => {
 		await checkWritten();
 		assert(
 			writtenSession.store.state.attempts.at(-1)?.outcome === false &&
-				writtenSession.feedback.includes("Übertrag"),
+				writtenSession.feedback.includes("kein voller Zehner") &&
+				writtenSession.feedback.includes("leer oder schreibe 0"),
 			"Correct sum digits with an incorrect carry do not pass the written task",
 		);
 		edit(7, "");
@@ -330,7 +363,104 @@ run.addEventListener("click", async (event) => {
 				writtenSession.store.state.attempts.at(-1)?.helped === true,
 			"Correct written work succeeds after correction and remains assisted",
 		);
+		await writtenSession.store.update((p) => {
+			p.stage = "exit";
+			p.index = 2;
+			p.seed = 54321;
+			p.labGoals = [0, 1, 2];
+			p.quiz = true;
+			p.solved = { 1: 3, 2: 3 };
+			p.rewards = ["mission-a"];
+			p.completed = { "mission-a": Date.now() };
+			p.columnWork = Array<string>(13).fill("");
+		});
+		const exitTask = activeForestTask(writtenSession.store.state),
+			beforeAttempts = writtenSession.store.state.attempts.length;
+		if (!exitTask?.columns || !Array.isArray(exitTask.answer))
+			throw new Error("Missing written exit");
+		await checkWritten();
+		assert(
+			writtenSession.store.state.attempts.length === beforeAttempts,
+			"An incomplete exit board does not spend an attempt",
+		);
+		for (const cell of writtenHost.querySelectorAll<HTMLInputElement>(
+			'[data-action="forest-column"]',
+		)) {
+			const index = Number(cell.dataset.col);
+			if (index < 7) edit(index, String(exitTask.answer[index]));
+		}
+		await writtenSession.store.update(() => {});
+		await checkWritten();
+		assert(
+			writtenSession.store.state.attempts.length === beforeAttempts &&
+				writtenSession.feedback.includes("Trage auch deine Überträge"),
+			"A correct result with wholly blank carries gets an unrecorded completion notice",
+		);
+		for (const cell of writtenHost.querySelectorAll<HTMLInputElement>(
+			'[data-action="forest-column"]',
+		)) {
+			const index = Number(cell.dataset.col);
+			if (index >= 7)
+				edit(
+					index,
+					exitTask.answer[index] === 0 ? "" : String(exitTask.answer[index]),
+				);
+		}
+		await writtenSession.store.update(() => {});
+		await checkWritten();
+		const exitAttempt = writtenSession.store.state.attempts.at(-1);
+		assert(
+			exitAttempt &&
+				independentForest(exitAttempt) &&
+				writtenSession.store.state.attempts.length === beforeAttempts + 1,
+			"Completing the exit after notices still records a first independent answer with visible blank zero carries",
+		);
 		writtenHost.remove();
+		const numericHost = document.createElement("section");
+		document.body.append(numericHost);
+		const numericSession = new ForestSession(
+			FOREST_LESSONS[1],
+			() => {
+				numericHost.innerHTML = numericSession.lessonView();
+				numericSession.bind(numericHost);
+			},
+			extraNames[4],
+		);
+		stores.push(numericSession.store);
+		await numericSession.open();
+		await numericSession.store.update((p) => {
+			p.stage = "exit";
+			p.index = 0;
+			p.labGoals = [0, 1, 2];
+			p.quiz = true;
+			p.solved = { 1: 3, 2: 3 };
+			p.rewards = ["mission-a"];
+			p.completed = { "mission-a": Date.now() };
+		});
+		const numericCheck = async () => {
+			const button = numericHost.querySelector<HTMLButtonElement>(
+				'[data-action="forest-check"]',
+			);
+			if (!button) throw new Error("Numeric check missing");
+			await numericSession.act(button, numericHost);
+		};
+		await numericCheck();
+		assert(
+			numericSession.store.state.attempts.length === 0,
+			"An empty numeric exit answer is validation rather than a failed attempt",
+		);
+		const numericTask = activeForestTask(numericSession.store.state),
+			numericInput =
+				numericHost.querySelector<HTMLInputElement>("#forest-answer");
+		if (!numericTask || !numericInput) throw new Error("Numeric exit missing");
+		numericInput.value = String(numericTask.answer);
+		await numericCheck();
+		const numericAttempt = numericSession.store.state.attempts.at(-1);
+		assert(
+			numericAttempt && independentForest(numericAttempt),
+			"A correct numeric answer after validation remains independent",
+		);
+		numericHost.remove();
 		assert(fresh().schema === 1, "Fresh state is versioned");
 		output.textContent += "\nALL BROWSER STORAGE CHECKS PASSED";
 	} catch (error) {

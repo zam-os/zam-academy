@@ -7,6 +7,8 @@ import {
 	writtenLab,
 	writtenTask,
 	writtenMistake,
+	columnValidation,
+	columnOrder,
 } from "../src/course/written-addition";
 import { columnBoard } from "../src/course/column-board";
 import { correctForest } from "../src/course/tasks";
@@ -46,7 +48,12 @@ describe("written addition", () => {
 					if (level === 1 && index === 0)
 						expect(m.carries.every((n) => n === 0)).toBe(true);
 					else expect(m.carries[1]).toBe(1);
-					if (task.kind === "choice") expect(c.shown).toBe(c.a + c.b - 10);
+					if (task.kind === "choice") {
+						const place = Math.log10(c.a + c.b - Number(c.shown));
+						expect(Number.isInteger(place)).toBe(true);
+						expect(m.carries[place]).toBe(1);
+						expect(task.prompt).not.toContain("vergessen");
+					}
 				}
 	});
 	it("has three known lab witnesses including zero positions and the million boundary", () => {
@@ -78,7 +85,7 @@ describe("written addition", () => {
 			"Übertrag zur Spalte Z",
 		);
 		work[7] = "1";
-		work[10] = "";
+
 		expect(correctForest(task, columnAnswer(c.a, c.b, work))).toBe(true);
 		work[0] = "15";
 		expect(columnAnswer(c.a, c.b, work)).toBeNull();
@@ -164,5 +171,108 @@ describe("written addition", () => {
 			task.answer,
 		);
 		expect(independentForest(p.attempts[p.attempts.length - 1])).toBe(false);
+	});
+});
+
+describe("written-addition review regressions", () => {
+	it("limits guided difficulty and guarantees transfer features over 5000 seeds", () => {
+		const lengths = new Set<boolean>();
+		for (let seed = 0; seed < 5000; seed++)
+			for (let index = 0; index < 3; index++) {
+				const guided = writtenTask(1, seed, index).columns,
+					transfer = writtenTask(2, seed, index).columns;
+				if (!guided || !transfer) throw new Error("Missing board");
+				const m = additionColumns(guided.a, guided.b),
+					t = additionColumns(transfer.a, transfer.b);
+				expect(m.width).toBeGreaterThanOrEqual(4);
+				expect(m.width).toBeLessThanOrEqual(5);
+				expect(m.carries.reduce((s, n) => s + n, 0)).toBe(index);
+				expect(m.carries.every((n, i) => !n || !m.carries[i + 1])).toBe(true);
+				if (index === 0)
+					lengths.add(String(guided.a).length === String(guided.b).length);
+				expect(String(transfer.a)).toHaveLength(6);
+				expect(String(transfer.b)).toHaveLength(5);
+				expect(String(transfer.a)).toContain("0");
+				expect(t.carries[1]).toBe(1);
+				expect(t.carries[2]).toBe(1);
+				expect(transfer.a + transfer.b).toBeLessThanOrEqual(1_000_000);
+			}
+		expect(lengths.size).toBe(2);
+	});
+	it("requires a corrected board with a carry chain for the goal-three exit", () => {
+		for (let seed = 0; seed < 80; seed++) {
+			const task = writtenExit(seed, 2);
+			expect(task.kind).toBe("columns");
+			expect(task.goal).toBe(3);
+			if (!task.columns) throw new Error("Missing correction board");
+			const m = additionColumns(task.columns.a, task.columns.b);
+			expect(m.carries[1] + m.carries[2]).toBe(2);
+			expect(task.columns.shown).not.toBe(task.columns.a + task.columns.b);
+		}
+	});
+	it("accepts genuinely visible blank zero carries among nonzero carries", () => {
+		const model = additionColumns(30407, 2685),
+			work = model.answer.map(String);
+		for (const index of [8, 10]) {
+			work[index] = "";
+			expect(columnAnswer(30407, 2685, work)).toEqual(model.answer);
+			work[index] = "1";
+			expect(columnAnswer(30407, 2685, work)).not.toEqual(model.answer);
+			work[index] = "";
+		}
+	});
+	it("distinguishes incomplete input from deliberate wrong carries", () => {
+		const task = writtenLab(1),
+			model = additionColumns(2687, 1548),
+			work = model.answer.map(String);
+		expect(columnValidation(2687, 1548, emptyColumnWork())).toContain("Fülle");
+		for (let i = 7; i < 13; i++) work[i] = "";
+		expect(columnValidation(2687, 1548, work)).toContain(
+			"Trage auch deine Überträge",
+		);
+		work[7] = "0";
+		expect(columnValidation(2687, 1548, work)).toBeNull();
+		expect(correctForest(task, columnAnswer(2687, 1548, work))).toBe(false);
+	});
+	it("keeps an independent exit/later attempt after incomplete input", () => {
+		for (const mode of ["exit", "later"] as const) {
+			const p = freshForest("schriftlich-addieren", 1000),
+				task = writtenExit(876543, 1);
+			if (mode === "exit") p.stage = "exit";
+			else p.recall = { seed: 876543, index: 1, at: 2000 };
+			expect(recordForest(p, task, null)).toBe(false);
+			expect(p.attempts).toHaveLength(0);
+			recordForest(p, task, task.answer);
+			expect(p.attempts).toHaveLength(1);
+			expect(independentForest(p.attempts[0])).toBe(true);
+		}
+	});
+	it("reports the first result/carry mismatch in calculation order and gives the right direction", () => {
+		const task = writtenLab(1),
+			answer = [...(task.answer as number[])];
+		answer[0] = 4;
+		answer[9] = 0;
+		expect(writtenMistake(task, answer)).toContain("Einerspalte");
+		answer[0] = 5;
+		answer[7] = 0;
+		expect(writtenMistake(task, answer)).toContain("Übertrag zur Spalte Z");
+		answer[7] = 1;
+		answer[1] = 2;
+		expect(writtenMistake(task, answer)).toContain("Zehnerspalte");
+		const noCarry = writtenLab(0),
+			tooMuch = [...(noCarry.answer as number[])];
+		tooMuch[7] = 1;
+		expect(writtenMistake(noCarry, tooMuch)).toContain("kein voller Zehner");
+		expect(writtenMistake(noCarry, tooMuch)).toContain("leer oder schreibe 0");
+	});
+	it("uses the calculation order for keyboard navigation and a separate empty live region", () => {
+		expect(columnOrder(4)).toEqual([0, 7, 1, 8, 2, 9, 3]);
+		const html = columnBoard({ a: 2687, b: 1548 });
+		expect(html).toContain('id="column-input-note">');
+		expect(html).not.toContain('id="column-input-note" role="status"');
+		expect(html).toContain('id="column-input-error" role="status"></p>');
+		expect(html).toContain(
+			'class="visually-hidden">Kein Übertrag zu den Einern',
+		);
 	});
 });

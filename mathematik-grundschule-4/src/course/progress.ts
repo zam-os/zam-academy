@@ -1,6 +1,11 @@
 import { emptyColumnWork } from "./written-addition";
 import { ulid } from "../id";
-import { EXTRA_LESSON_IDS, forestLesson, type ExtraLessonId } from "./catalog";
+import {
+	EXTRA_LESSON_IDS,
+	forestLesson,
+	type ExtraLessonId,
+	type ForestLesson,
+} from "./catalog";
 import {
 	forestExit,
 	forestLab,
@@ -216,22 +221,32 @@ export function forestKey(p: ForestProgress): string {
 		? `later/${p.recall.at}/${p.recall.index}`
 		: `${p.stage}/${p.round}/${p.optional ?? 0}/${p.index}`;
 }
+export function forestQuizTask(quiz: ForestLesson["quiz"]): ForestTask {
+	const correct = quiz.choices.flatMap((choice, i) =>
+		choice.correct ? [i + 1] : [],
+	);
+	if (correct.length !== 1)
+		throw new Error("A lesson quiz needs exactly one correct choice");
+	return {
+		kind: "choice",
+		goal: quiz.goal,
+		prompt: quiz.prompt,
+		answer: correct[0],
+		choices: quiz.choices.map((choice, i) => ({
+			value: i + 1,
+			label: choice.label,
+		})),
+		hint: "Lies die Erklärung noch einmal und prüfe das Beispiel.",
+		explanation: quiz.explanation,
+	};
+}
 export function activeForestTask(p: ForestProgress): ForestTask | null {
 	if (p.recall) return forestExit(p.lesson, p.recall.seed, p.recall.index);
 	if (p.optional) return forestTask(p.lesson, p.optional, p.seed, p.index);
 	if (p.stage === "lab") return forestLab(p.lesson, p.index);
 	if (p.stage === "quiz") {
 		const quiz = forestLesson(p.lesson)?.quiz;
-		if (!quiz) return null;
-		return {
-			kind: "choice",
-			goal: quiz.goal,
-			prompt: quiz.prompt,
-			answer: 1,
-			choices: quiz.choices.map((label, i) => ({ value: i + 1, label })),
-			hint: "Lies die Erklärung noch einmal und prüfe das Beispiel.",
-			explanation: quiz.explanation,
-		};
+		return quiz ? forestQuizTask(quiz) : null;
 	}
 	if (p.stage === "practice-1" || p.stage === "practice-2")
 		return forestTask(
@@ -272,6 +287,7 @@ export function recordForest(
 	answer: Answer | null,
 	now = Date.now(),
 ): boolean {
+	if (answer === null) return false;
 	const key = forestKey(p),
 		signature = JSON.stringify(
 			task.calculation

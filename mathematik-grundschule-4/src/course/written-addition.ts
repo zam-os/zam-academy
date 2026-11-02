@@ -70,7 +70,7 @@ export function writtenExplanation(a: number, b: number): string {
 			(total, col) =>
 				`${COLUMN_NAMES[col]}: ${m.left[col]} + ${m.right[col]}${m.carries[col] ? " + 1 Übertrag" : ""} = ${total}; schreibe ${m.result[col]}${total >= 10 ? `, übertrage 1 zu ${COLUMN_NAMES[col + 1]}` : ""}.`,
 		);
-	return `${format(a)} + ${format(b)} = ${format(a + b)}. ${steps.join(" ")} Probe: ${format(a + b)} − ${format(b)} = ${format(a)}.`;
+	return `${format(a)} + ${format(b)} = ${format(a + b)}. ${steps.join(" ")} Tauschprobe: ${format(b)} + ${format(a)} = ${format(a + b)}. Rechne die Tauschaufgabe neu und vergleiche beide Summen.`;
 }
 function board(
 	a: number,
@@ -114,82 +114,129 @@ export function writtenTask(
 	);
 	const int = (lo: number, hi: number) =>
 		lo + Math.floor(next() * (hi - lo + 1));
-	const variant = index % 3;
-	if (level === 1 && variant === 0) {
-		const width = int(4, 6),
-			left = Array.from({ length: width }, (_, i) =>
-				int(i === width - 1 ? 1 : 0, 7),
-			);
-		const right = left.map((n, i) => (i === width - 1 ? 0 : int(0, 9 - n)));
-		right[0] = Math.max(1, right[0]); // left ones <=7, so this remains carry-free.
-		const number = (digits: number[]) =>
-			digits.reduce((s, n, i) => s + n * 10 ** i, 0);
-		const a = number(left),
-			b = number(right);
+	const variant = index % 3,
+		width = level === 1 ? int(4, 5) : 6;
+	const sameLength = level === 1 && int(0, 1) === 1;
+	const left: number[] = [],
+		right: number[] = [];
+	let incoming = 0;
+	for (let col = 0; col < width; col++) {
+		// Level 1: no carry, one carry, or two separated carries. Level 2:
+		// a guaranteed chain at E/Z, a zero at T, and a shorter second summand.
+		const outgoing =
+			level === 1
+				? variant !== 0 && (col === 0 || (variant === 2 && col === 2))
+				: col < 2 || ((col === 2 || col === 4) && int(0, 1) === 1);
+		const top = col === width - 1;
+		if (level === 2 && col === 3) {
+			left.push(0);
+			right.push(int(0, 8));
+		} else if (outgoing) {
+			const digit = int(5, 8);
+			left.push(digit);
+			right.push(int(10 - incoming - digit, 9));
+		} else {
+			const digit = int(top ? 1 : 0, 6);
+			left.push(digit);
+			const shorter = top && !sameLength;
+			const positive =
+				(top && sameLength) || (!sameLength && col === width - 2);
+			right.push(shorter ? 0 : int(positive ? 1 : 0, 9 - incoming - digit));
+		}
+		incoming = Math.floor((left[col] + right[col] + incoming) / 10);
+	}
+	const number = (digits: number[]) =>
+		digits.reduce((total, digit, col) => total + digit * 10 ** col, 0);
+	const a = number(left),
+		b = number(right),
+		model = additionColumns(a, b);
+	if (level === 1)
 		return board(
 			a,
 			b,
-			1,
-			`Addiere ${format(a)} und ${format(b)} schriftlich. Achte auch bei unterschiedlich langen Zahlen auf die Stellen.`,
+			variant === 0 ? 1 : 2,
+			variant === 0
+				? `Addiere ${format(a)} und ${format(b)} schriftlich. Stelle gleiche Stellenwerte untereinander.`
+				: `Rechne ${format(a)} + ${format(b)} schriftlich. Arbeite Spalte für Spalte und notiere jeden Übertrag.`,
 		);
-	}
-	// Different lengths and zero positions occur naturally; the ones always cause a carry.
-	const a = int(12000, 650000),
-		ones = int(5, 9),
-		b = int(100, 25000) * 10 + ones;
-	const adjusted = a - (a % 10) + int(5, 9);
-	if (level === 2 && variant === 2) {
-		const shown = adjusted + b - 10;
+	const carryPlaces = model.carries.flatMap((carry, col) =>
+		carry ? [col] : [],
+	);
+	const omitted = carryPlaces[int(0, carryPlaces.length - 1)],
+		delta = 10 ** omitted;
+	const shown = a + b - delta;
+	if (variant === 2) {
+		const others = Array.from({ length: width - 1 }, (_, i) => i + 1).filter(
+			(col) => col !== omitted,
+		);
+		const first = others.splice(int(0, others.length - 1), 1)[0],
+			second = others[int(0, others.length - 1)];
 		return {
 			kind: "choice",
 			goal: 3,
-			columns: { a: adjusted, b, shown },
-			calculation: { a: adjusted, b, op: "+" },
-			prompt: `Milo hat bei ${format(adjusted)} + ${format(b)} den Übertrag von den Einern zu den Zehnern vergessen. Er notiert ${format(shown)}. Was erklärt den Fehler?`,
+			columns: { a, b, shown },
+			calculation: { a, b, op: "+" },
+			prompt: `Milo notiert ${format(shown)} als Summe von ${format(a)} und ${format(b)}. Prüfe seine Rechnung. Welche Korrektur passt?`,
 			answer: 1,
-			choices: [
-				{
-					value: 1,
-					label:
-						"Ein Zehner fehlt. Das Ergebnis ist um 10 zu klein; der Übertrag gehört in die Zehnerspalte.",
-				},
-				{
-					value: 2,
-					label: "Ein Einer fehlt. Das Ergebnis ist nur um 1 zu klein.",
-				},
-				{
-					value: 3,
-					label:
-						"Die Übertragsziffer darf immer weggelassen werden; das Ergebnis bleibt gleich.",
-				},
-			],
-			hint: "Ein Übertrag von den Einern zählt in der nächsten Spalte als ein Zehner. Welchen Wert hat dieser Zehner?",
-			explanation: `Die Einerspalte ergibt ${(adjusted % 10) + (b % 10)}. Ein voller Zehner muss zur Zehnerspalte. ${format(shown)} + 10 = ${format(adjusted + b)}. ${writtenExplanation(adjusted, b)}`,
+			choices: [omitted, first, second].map((col, i) => ({
+				value: i + 1,
+				label: `Es fehlen ${format(10 ** col)}. Prüfe den Übertrag zur Spalte ${COLUMN_NAMES[col]}.`,
+			})),
+			hint: "Rechne die Summe selbst und vergleiche sie mit Milos Ergebnis. Welchen Wert hat der Unterschied?",
+			explanation: `Milos Summe ist um ${format(delta)} zu klein. Ein Übertrag zur Spalte ${COLUMN_NAMES[omitted]} hat den Wert ${format(delta)}. ${writtenExplanation(a, b)}`,
 		};
 	}
-	if (level === 2 && variant === 1)
-		return board(
-			adjusted,
-			b,
-			3,
-			`Milo notiert ${format(adjusted + b - 10)} als Summe von ${format(adjusted)} und ${format(b)}. Rechne selbst schriftlich und verbessere sein Ergebnis.`,
-			adjusted + b - 10,
-		);
-	return board(
-		adjusted,
-		b,
-		2,
-		level === 1
-			? `Rechne ${format(adjusted)} + ${format(b)} schriftlich. Denke in jeder Spalte an den ankommenden Übertrag.`
-			: `Im Saatgutlager liegen ${format(adjusted)} Samen. Es kommen ${format(b)} dazu. Wie viele Samen sind es jetzt? Rechne schriftlich und prüfe deine Summe.`,
-	);
+	return variant === 1
+		? board(
+				a,
+				b,
+				3,
+				`Milo notiert ${format(shown)} als Summe von ${format(a)} und ${format(b)}. Rechne selbst schriftlich und verbessere sein Ergebnis.`,
+				shown,
+			)
+		: board(
+				a,
+				b,
+				2,
+				`Im Saatgutlager liegen ${format(a)} Samen. Es kommen ${format(b)} dazu. Wie viele Samen sind es jetzt? Rechne schriftlich und prüfe deine Summe.`,
+			);
 }
 export function writtenExit(seed: number, index: number): ForestTask {
 	return index === 0
 		? writtenTask(1, seed, 0)
 		: index === 1
 			? writtenTask(2, seed, 0)
-			: writtenTask(2, seed, 2);
+			: writtenTask(2, seed, 1);
+}
+// Format/completion notices do not spend a learner's first mathematical attempt.
+export function columnValidation(
+	a: number,
+	b: number,
+	work: readonly string[],
+): string | null {
+	const answer = columnAnswer(a, b, work);
+	if (!answer)
+		return "Fülle jede sichtbare Ergebniszelle mit genau einer Ziffer. In die Übertragszeile kommt nur 0 oder 1; ohne Übertrag darf sie leer bleiben.";
+	const model = additionColumns(a, b);
+	const resultCorrect = model.result.every(
+		(digit, col) => digit === answer[col],
+	);
+	const allCarriesBlank = Array.from(
+		{ length: model.width - 1 },
+		(_, i) => work[7 + i],
+	).every((value) => value === "");
+	if (
+		resultCorrect &&
+		model.carries.some((carry) => carry === 1) &&
+		allCarriesBlank
+	)
+		return "Deine Ergebnisziffern passen. Trage auch deine Überträge in die kleinen Zellen ein, damit Milo deinen Rechenweg sehen kann.";
+	return null;
+}
+export function columnOrder(width: number): number[] {
+	return Array.from({ length: width }, (_, col) =>
+		col === 0 ? [0] : [6 + col, col],
+	).flat();
 }
 export function writtenMistake(
 	task: ForestTask,
@@ -199,11 +246,15 @@ export function writtenMistake(
 	if (!answer)
 		return "Fülle jede sichtbare Ergebniszelle mit genau einer Ziffer. In die Übertragszeile kommt nur 0 oder 1; ohne Übertrag darf sie leer bleiben.";
 	const m = additionColumns(task.columns.a, task.columns.b);
-	for (let col = 1; col < m.width; col++)
-		if (answer[6 + col] !== m.carries[col])
-			return `Prüfe den Übertrag zur Spalte ${COLUMN_NAMES[col]}. Zehn ${COLUMN_WORDS[col - 1]} werden zu ${col === 6 ? "einer Million" : `einem ${COLUMN_WORDS[col]}`}. Rechne den Übertrag dort mit.`;
-	for (let col = 0; col < m.width; col++)
+	for (let col = 0; col < m.width; col++) {
 		if (answer[col] !== m.result[col])
 			return `Prüfe die ${COLUMN_WORDS[col]}spalte (${COLUMN_NAMES[col]}). Addiere die beiden Ziffern und den ankommenden Übertrag. Schreibe nur die Einerziffer dieser Spaltensumme ins Ergebnis.`;
+		const next = col + 1;
+		if (next < m.width && answer[6 + next] !== m.carries[next]) {
+			if (answer[6 + next] > m.carries[next])
+				return `Prüfe den Übertrag zur Spalte ${COLUMN_NAMES[next]}. In der ${COLUMN_WORDS[col]}spalte entsteht kein voller Zehner. Lass die Übertragszelle leer oder schreibe 0.`;
+			return `Prüfe den Übertrag zur Spalte ${COLUMN_NAMES[next]}. Zehn ${COLUMN_WORDS[col]} werden zu ${next === 6 ? "einer Million" : `einem ${COLUMN_WORDS[next]}`}. Trage den Übertrag in der nächsten Spalte links ein und rechne ihn dort mit.`;
+		}
+	}
 	return task.hint;
 }

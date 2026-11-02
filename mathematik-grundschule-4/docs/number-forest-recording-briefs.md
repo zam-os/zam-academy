@@ -188,14 +188,14 @@ points. Do not introduce written subtraction, multiplication or division.
   demonstrate sideways scrolling on a narrow display if appropriate.
 - 3:00–3:45: „Milo schreibt für 2 687 + 1 548 die Summe 4 225. Er
   hat den Übertrag zu Z vergessen. Dadurch fehlt ein Zehner, also 10.
-  Richtig sind 4 235. Die Probe hilft: 4 235 − 1 548 = 2 687. Erkläre
-  Milo nun einen Übertrag mit deinen eigenen Worten.“ The subtraction
-  check can be explained mentally or in steps; its written method is not
-  assumed as prior learning.
+  Richtig sind 4 235. Die Tauschprobe hilft: 1 548 + 2 687 = 4 235.
+  Rechne dafür neu und vergleiche. Erkläre
+  Milo nun einen Übertrag mit deinen eigenen Worten.“ Use a new calculation of the swapped sum, rather than copying its result.
+  Written subtraction is not assumed as prior learning.
 
 Check: right alignment, one digit per result cell, carries 0/1 only for the
 two-summand scope, zero positions, every incoming carry included, the
-million endpoint, the value 10 of an omitted E→Z carry and a correct inverse
+million endpoint, the value 10 of an omitted E→Z carry and a correct swapped-addend
 check. Confirm the progression with a primary-school teacher before recording.
 No teacher approval or recording is supplied by this brief.
 

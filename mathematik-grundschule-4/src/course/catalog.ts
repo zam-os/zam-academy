@@ -8,6 +8,10 @@ export const EXTRA_LESSON_IDS = [
 	"schriftlich-addieren",
 ] as const;
 export type ExtraLessonId = (typeof EXTRA_LESSON_IDS)[number];
+export interface QuizChoice {
+	label: string;
+	correct: boolean;
+}
 export interface ForestLesson {
 	id: ExtraLessonId;
 	title: string;
@@ -22,7 +26,7 @@ export interface ForestLesson {
 	quiz: {
 		goal: 1 | 2 | 3;
 		prompt: string;
-		choices: [string, string, string];
+		choices: [QuizChoice, QuizChoice, QuizChoice];
 		explanation: string;
 	};
 	parentPrompt: string;
@@ -55,9 +59,21 @@ export const FOREST_LESSONS: ForestLesson[] = [
 			goal: 2,
 			prompt: "Warum ist 507 030 größer als 507 003?",
 			choices: [
-				"Die Zehnerstelle entscheidet: 3 Zehner sind mehr als 0 Zehner.",
-				"Die Einerstelle allein entscheidet immer über die ganze Zahl.",
-				"Beide Zahlen enthalten dieselben Ziffern, also sind sie gleich.",
+				{
+					label:
+						"Die Zehnerstelle entscheidet: 3 Zehner sind mehr als 0 Zehner.",
+					correct: true,
+				},
+				{
+					label:
+						"Die Einerstelle allein entscheidet immer über die ganze Zahl.",
+					correct: false,
+				},
+				{
+					label:
+						"Beide Zahlen enthalten dieselben Ziffern, also sind sie gleich.",
+					correct: false,
+				},
 			],
 			explanation:
 				"Bis zur Hunderterstelle sind die Ziffern gleich. An der Zehnerstelle unterscheiden sie sich zuerst: 3 ist größer als 0.",
@@ -93,9 +109,16 @@ export const FOREST_LESSONS: ForestLesson[] = [
 			prompt:
 				"Zwischen 60 000 und 80 000 liegen zehn gleich große Abschnitte. Wie groß ist ein Schritt?",
 			choices: [
-				"2 000, denn zehn Schritte ergeben zusammen 20 000.",
-				"20 000, denn das ist der Abstand der beiden beschrifteten Zahlen.",
-				"10 000, denn es gibt zehn Abschnitte.",
+				{
+					label: "2 000, denn zehn Schritte ergeben zusammen 20 000.",
+					correct: true,
+				},
+				{
+					label:
+						"20 000, denn das ist der Abstand der beiden beschrifteten Zahlen.",
+					correct: false,
+				},
+				{ label: "10 000, denn es gibt zehn Abschnitte.", correct: false },
 			],
 			explanation:
 				"Die Differenz beträgt 20 000. Du verteilst sie auf zehn Abschnitte: 20 000 : 10 = 2 000.",
@@ -130,9 +153,9 @@ export const FOREST_LESSONS: ForestLesson[] = [
 			goal: 1,
 			prompt: "Welche Zerlegung passt zu 405 060?",
 			choices: [
-				"400 000 + 5 000 + 60",
-				"400 000 + 50 000 + 6",
-				"40 000 + 5 000 + 600",
+				{ label: "400 000 + 5 000 + 60", correct: true },
+				{ label: "400 000 + 50 000 + 6", correct: false },
+				{ label: "40 000 + 5 000 + 600", correct: false },
 			],
 			explanation:
 				"Die 4 steht bei den Hunderttausendern, die 5 bei den Tausendern und die 6 bei den Zehnern. Die übrigen Stellen sind leer.",
@@ -168,9 +191,19 @@ export const FOREST_LESSONS: ForestLesson[] = [
 			prompt:
 				"Milo rechnet 24 600 + 3 900 mit 24 600 + 4 000. Wie muss er ausgleichen?",
 			choices: [
-				"100 abziehen, weil er zuerst 100 zu viel addiert hat.",
-				"100 addieren, weil die ursprüngliche Aufgabe eine Plusaufgabe ist.",
-				"Nichts ändern, weil 3 900 und 4 000 fast gleich sind.",
+				{
+					label: "100 abziehen, weil er zuerst 100 zu viel addiert hat.",
+					correct: true,
+				},
+				{
+					label:
+						"100 addieren, weil die ursprüngliche Aufgabe eine Plusaufgabe ist.",
+					correct: false,
+				},
+				{
+					label: "Nichts ändern, weil 3 900 und 4 000 fast gleich sind.",
+					correct: false,
+				},
 			],
 			explanation:
 				"24 600 + 4 000 = 28 600. Das sind 100 zu viel: 28 600 − 100 = 28 500.",
@@ -206,9 +239,19 @@ export const FOREST_LESSONS: ForestLesson[] = [
 			prompt:
 				"Für 35 200 − 2 900 rechnet Milo zuerst 35 200 − 3 000. Was folgt?",
 			choices: [
-				"100 dazugeben: Er hat zuerst 100 zu viel weggenommen.",
-				"100 weiter abziehen: Bei Minus geht es immer nur nach links.",
-				"3 000 dazugeben: Jede Minusaufgabe wird vollständig rückgängig gemacht.",
+				{
+					label: "100 dazugeben: Er hat zuerst 100 zu viel weggenommen.",
+					correct: true,
+				},
+				{
+					label: "100 weiter abziehen: Bei Minus geht es immer nur nach links.",
+					correct: false,
+				},
+				{
+					label:
+						"3 000 dazugeben: Jede Minusaufgabe wird vollständig rückgängig gemacht.",
+					correct: false,
+				},
 			],
 			explanation:
 				"35 200 − 3 000 = 32 200. Gib die zu viel abgezogenen 100 zurück: 32 200 + 100 = 32 300. Probe: 32 300 + 2 900 = 35 200.",
@@ -244,9 +287,12 @@ export const FOREST_LESSONS: ForestLesson[] = [
 			prompt:
 				"2 400 Samen werden gleichmäßig auf 6 Körbe verteilt. Welche Rechnung und Probe passen?",
 			choices: [
-				"2 400 : 6 = 400; Probe: 6 · 400 = 2 400.",
-				"2 400 − 6 = 2 394; Probe: 2 394 + 6 = 2 400.",
-				"2 400 : 6 = 40; Probe: 6 · 40 = 240.",
+				{ label: "2 400 : 6 = 400; Probe: 6 · 400 = 2 400.", correct: true },
+				{
+					label: "2 400 − 6 = 2 394; Probe: 2 394 + 6 = 2 400.",
+					correct: false,
+				},
+				{ label: "2 400 : 6 = 40; Probe: 6 · 40 = 240.", correct: false },
 			],
 			explanation:
 				"Du verteilst die ganze Menge auf 6 gleich große Gruppen. Weil 6 · 4 = 24 gilt, sind 6 · 400 = 2 400. In jeden Korb kommen 400 Samen.",
@@ -270,10 +316,10 @@ export const FOREST_LESSONS: ForestLesson[] = [
 			"Beginne rechts bei den Einern. Addiere die beiden Ziffern einer Spalte und einen ankommenden Übertrag. Ist die Spaltensumme kleiner als 10, schreibst du sie unten in dieselbe Spalte. Danach gehst du eine Spalte nach links.",
 			"Ab 10 bündelst du: 7 Einer + 8 Einer = 15 Einer. Schreibe 5 in die Einerspalte des Ergebnisses. Die übrigen 10 Einer werden zu 1 Zehner. Schreibe diese 1 klein in die Übertragszeile der nächsten Spalte links und rechne sie dort mit. Der Übertrag ist kein zusätzlicher Einer.",
 			"Bei 2 687 + 1 548 geht es so weiter: Zehner 8 + 4 + 1 = 13, also 3 schreiben und 1 Hunderter übertragen. Hunderter 6 + 5 + 1 = 12, also 2 schreiben und 1 Tausender übertragen. Tausender 2 + 1 + 1 = 4. Die Summe ist 4 235.",
-			"Ein Übertrag kann mehrere Spalten durchlaufen. 999 999 + 1 ergibt 1 000 000: Jede volle Zehnergruppe wird links neu gebündelt. Prüfe deine Summe durch eine passende zweite Rechnung, zum Beispiel Summe minus zweiter Summand gleich erster Summand. Bei zwei Summanden ist ein Übertrag immer 0 oder 1.",
+			"Ein Übertrag kann mehrere Spalten durchlaufen. 999 999 + 1 ergibt 1 000 000: Jede volle Zehnergruppe wird links neu gebündelt. Prüfe deine Summe mit einer Tauschaufgabe: Vertausche die beiden Summanden und rechne neu. Vergleiche beide Ergebnisse. Bei zwei Summanden ist ein Übertrag immer 0 oder 1.",
 		],
 		example:
-			"Rechne 30 407 + 2 685. Einer: 7 + 5 = 12, schreibe 2, übertrage 1 zu Z. Zehner: 0 + 8 + 1 = 9. Hunderter: 4 + 6 = 10, schreibe 0, übertrage 1 zu T. Tausender: 0 + 2 + 1 = 3. Zehntausender: 3 + 0 = 3. Ergebnis: 33 092. Probe: 33 092 − 2 685 = 30 407.",
+			"Rechne 30 407 + 2 685. Einer: 7 + 5 = 12, schreibe 2, übertrage 1 zu Z. Zehner: 0 + 8 + 1 = 9. Hunderter: 4 + 6 = 10, schreibe 0, übertrage 1 zu T. Tausender: 0 + 2 + 1 = 3. Zehntausender: 3 + 0 = 3. Ergebnis: 33 092. Tauschprobe: 2 685 + 30 407 = 33 092. Rechne die Tauschaufgabe neu und vergleiche.",
 		takeaway:
 			"Gleiche Stellen untereinander. Von rechts nach links rechnen. Ab 10 die Einerziffer schreiben und 1 in die nächste Spalte links übertragen. Jeden Übertrag mitrechnen.",
 		transfer:
@@ -282,9 +328,18 @@ export const FOREST_LESSONS: ForestLesson[] = [
 			goal: 2,
 			prompt: "In der Einerspalte erhältst du 7 + 8 = 15. Was trägst du ein?",
 			choices: [
-				"5 ins Ergebnis bei E und 1 als Übertrag bei Z.",
-				"15 vollständig in die Einerspalte und keinen Übertrag.",
-				"1 ins Ergebnis bei E und 5 als Übertrag bei Z.",
+				{
+					label: "5 ins Ergebnis bei E und 1 als Übertrag bei Z.",
+					correct: true,
+				},
+				{
+					label: "15 vollständig in die Einerspalte und keinen Übertrag.",
+					correct: false,
+				},
+				{
+					label: "1 ins Ergebnis bei E und 5 als Übertrag bei Z.",
+					correct: false,
+				},
 			],
 			explanation:
 				"15 Einer sind 1 Zehner und 5 Einer. Die 5 bleibt bei E. Der volle Zehner wandert als Übertrag 1 zu Z und wird dort mitgerechnet.",

@@ -121,6 +121,7 @@ export function arithmeticTask(
 		return {
 			kind: "number",
 			goal: 2,
+			inverseProbe: subtract,
 			prompt: subtract
 				? `Die Differenz von ${format(a)} und ${format(b)} ist ${format(result)}. Ergänze die Probe: ${format(result)} + □ = ${format(a)}.`
 				: `Zerlege ${format(b)} in ${format(thousands)} und ${format(rest)}. Rechne ${format(a)} + ${format(thousands)} = □. Welche Zwischenzahl fehlt vor dem letzten Sprung um ${format(rest)}?`,
@@ -164,7 +165,7 @@ export function arithmeticLab(id: ArithmeticId, goal: number): ForestTask {
 			calculation: { a: count, b: each, op: "·" },
 			answer: count,
 			prompt: [
-				"Packe 6 Körbe mit je 4 Samen. Wie viele Samen sind es zusammen?",
+				"Packe 6 Körbe mit je 4 Samen und prüfe die Malaufgabe.",
 				"Verteile 42 Samen auf Körbe mit je 6 Samen. Wie viele gleich gefüllte Körbe brauchst du?",
 				"Packe 8 Körbe mit je 400 Samen. Nutze 8 · 4 und die Hunderterbündel.",
 			][goal],

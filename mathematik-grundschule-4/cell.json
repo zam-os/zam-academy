@@ -1,19 +1,24 @@
 {
 	"$schema": "https://zam.app/schemas/v1/kvt-tile.json",
 	"tile_id": "zam-academy:mathematik-grundschule-4",
-	"version": "2026.11.3",
+	"version": "2026.11.4",
 	"title": "Mathematik 4 Grundschule: Milos Zahlenwald",
-	"description": "Vier deutsche Entdeckerlektionen: Stellenwerte und Bündeln, Zahlen vergleichen und ordnen, Zahlenstrahl und Zahlensprünge sowie Zerlegen und Ergänzen bis zur Million. Erprobungsfassung; fachliche Freigabe und Lehrervideos fehlen. Kein vollständiger Jahreskurs.",
+	"description": "Acht deutsche Entdeckerlektionen: Stellenwerte und Bündeln, Vergleichen und Ordnen, Zahlenstrahl und Zahlensprünge, Zerlegen und Ergänzen, geschicktes Addieren und Subtrahieren, Malnehmen und Teilen sowie schriftliches Addieren bis zur Million. Erprobungsfassung; fachliche Freigabe und Lehrervideos fehlen. Kein vollständiger Jahreskurs.",
 	"publisher": "ZAM Academy",
 	"sources": [
 		{
 			"uri": "https://academy.zam-os.org/mathematik-grundschule-4/",
-			"label": "ZAM Entdeckerinsel: Milos Stellenwert-Werkstatt"
+			"label": "ZAM Entdeckerinsel: Milos Zahlenwald"
 		},
 		{
 			"uri": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik#25773",
 			"label": "LehrplanPLUS Mathematik 3/4, Teilbereich 1.1",
 			"checked": "2026-10-31"
+		},
+		{
+			"uri": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik#25775",
+			"label": "LehrplanPLUS Mathematik 3/4, Teilbereich 1.2",
+			"checked": "2026-11-02"
 		}
 	],
 	"atoms": [
@@ -883,16 +888,16 @@
 					"language": "de",
 					"tier": "tier2_synthesis",
 					"bloom_level": 3,
-					"question": "Rechne 2 687 + 1 548 schriftlich. Erkläre die Überträge.",
-					"concept": "4 235.",
+					"question": "Rechne 3 748 + 2 567 schriftlich. Erkläre die Überträge.",
+					"concept": "6 315.",
 					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=schriftlich-addieren",
 					"materiality": "material",
-					"sample_solution": "E: 7 + 8 = 15, schreibe 5 und übertrage 1 zu Z. Z: 8 + 4 + 1 = 13, schreibe 3 und übertrage 1 zu H. H: 6 + 5 + 1 = 12, schreibe 2 und übertrage 1 zu T. T: 2 + 1 + 1 = 4. Die Summe ist 4 235. Probe: 4 235 − 1 548 = 2 687.",
+					"sample_solution": "E: 8 + 7 = 15, schreibe 5 und übertrage 1 zu Z. Z: 4 + 6 + 1 = 11, schreibe 1 und übertrage 1 zu H. H: 7 + 5 + 1 = 13, schreibe 3 und übertrage 1 zu T. T: 3 + 2 + 1 = 6. Die Summe ist 6 315. Tauschprobe: 2 567 + 3 748 = 6 315. Rechne die Tauschaufgabe neu und vergleiche beide Summen.",
 					"concept_segments": [
 						{
 							"type": "math",
-							"tex": "4\\,235",
-							"speech": "viertausendzweihundertfünfunddreißig"
+							"tex": "6\\,315",
+							"speech": "sechstausenddreihundertfünfzehn"
 						},
 						{
 							"type": "text",

@@ -220,3 +220,14 @@ describe("arithmetic evidence regressions", () => {
 		}
 	});
 });
+
+it("keeps inverse-probe hints about the missing addend", () => {
+	const task = arithmeticTask("geschickt-subtrahieren", 2, 42, 1),
+		c = task.calculation;
+	if (!c) throw new Error("Missing probe operands");
+	expect(task.inverseProbe).toBe(true);
+	expect(forestMistake(task, c.a + c.b)).toBe(task.hint);
+	expect(forestMistake(task, c.a + c.b)).not.toContain(
+		"Gesucht ist die Differenz",
+	);
+});

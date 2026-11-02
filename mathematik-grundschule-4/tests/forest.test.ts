@@ -17,6 +17,7 @@ import {
 	validForest,
 	startForestPractice,
 	forestRecallEligible,
+	forestQuizTask,
 } from "../src/course/progress";
 import {
 	forestGraphic,
@@ -210,7 +211,12 @@ describe("Number Forest lessons", () => {
 		expect(independentForest(need(p.attempts.at(-1)))).toBe(false);
 		p.recall = { seed: 300, at: 100000002, index: 0 };
 		const fresh = need(activeForestTask(p));
-		recordForest(p, fresh, null, 100000002);
+		recordForest(
+			p,
+			fresh,
+			Array.isArray(fresh.answer) ? [] : Number(fresh.answer) + 1,
+			100000002,
+		);
 		recordForest(p, fresh, fresh.answer, 100000003);
 		expect(independentForest(need(p.attempts.at(-1)))).toBe(false);
 	});
@@ -313,4 +319,32 @@ describe("Number Forest lessons", () => {
 			expect(variants.size).toBeGreaterThan(60);
 		}
 	});
+});
+
+it("keeps quiz grading attached to explicit correct markers when options move", () => {
+	for (const lesson of FOREST_LESSONS) {
+		const quiz = lesson.quiz;
+		expect(quiz.choices.filter((choice) => choice.correct)).toHaveLength(1);
+		const reordered = {
+			...quiz,
+			choices: [
+				quiz.choices[1],
+				quiz.choices[2],
+				quiz.choices[0],
+			] as typeof quiz.choices,
+		};
+		const task = forestQuizTask(reordered);
+		expect(
+			task.choices?.find((choice) => choice.value === task.answer)?.label,
+		).toBe(quiz.choices.find((choice) => choice.correct)?.label);
+		expect(() =>
+			forestQuizTask({
+				...quiz,
+				choices: quiz.choices.map((choice) => ({
+					...choice,
+					correct: false,
+				})) as typeof quiz.choices,
+			}),
+		).toThrow();
+	}
 });

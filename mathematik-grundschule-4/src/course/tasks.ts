@@ -33,6 +33,7 @@ export type ForestTask = {
 	hops?: { start: number; unit: number; direction: 1 | -1 };
 	groups?: { each: number };
 	columns?: { a: number; b: number; shown?: number };
+	inverseProbe?: boolean;
 };
 const equal = (a: number[], b: number[]) =>
 	a.length === b.length && a.every((n, i) => n === b[i]);
@@ -306,6 +307,7 @@ export function forestMistake(task: ForestTask, answer: Answer | null): string {
 	if (answer === null)
 		return "Gib eine ganze Zahl von 0 bis 1 000 000 ein. Tausender kannst du mit Leerzeichen gliedern.";
 	if (task.kind === "hops" || task.kind === "groups") return task.hint;
+	if (task.inverseProbe) return task.hint;
 	if (task.calculation && typeof answer === "number") {
 		const { a, b, op } = task.calculation;
 		if (op === "−" && answer === a + b)

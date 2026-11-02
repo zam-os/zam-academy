@@ -2,7 +2,7 @@
 
 The unpublished Discovery Island app now has eight selectable German lessons:
 the existing place-value workshop plus comparing/ordering, number lines/
-equal jumps, decomposition/complements, addition/subtraction strategies
+equal jumps, decomposition/complements, addition/subtraction strategies,
 multiplication/inverse division, and written addition. This batch expands the draft;
 it does not complete the annual course, its teacher review, recordings or
 publication acceptance. Thomas requested further lessons while the original
@@ -73,7 +73,7 @@ Twenty-two German cards are authored only in cell.json: one atom per added
 lesson, three items in each earlier lesson and four for written addition,
 with generated ULIDs and source links to their own lesson.
 All four original atoms and twelve original items remain unchanged. The
-cell now has eleven atoms/thirty-four items and version 2026.11.3. It declares
+cell now has eleven atoms/thirty-four items and version 2026.11.4. It declares
 no replacements or retirements and transfers no existing learning history.
 The narrow official binding remains deferred for the previously documented
 kernel-scope reason. The initial workshop still has four atomic goals;
@@ -130,7 +130,7 @@ position is retained while editing. Correction tasks remain editable, while
 error-reasoning displays are read-only. Browser testing caught and corrected
 focus replacement, the correction-board mode and small-screen overflow.
 
-The new lesson is pushed for the review round requested after implementation.
-The earlier second-agent review applies to the previous six-lesson expansion;
-written-addition code/content review and primary-school teacher approval are
-still pending. Recording scripts are prepared, with no invented media.
+The written-addition code/content reviews have been processed and independently
+rechecked. Primary-school teacher approval and recordings remain pending.
+The [review follow-up](grade-4-pr75-review-follow-up.md) records the changes
+and validation; this does not complete publication acceptance.
