@@ -39,9 +39,9 @@ const complete = (p: ReturnType<typeof freshForest>) => {
 	}
 	expect(p.stage).toBe("finished");
 };
-describe("three Number Forest lessons", () => {
+describe("Number Forest lessons", () => {
 	it("has complete explanations and stable direct links for each lesson", () => {
-		expect(FOREST_LESSONS).toHaveLength(3);
+		expect(FOREST_LESSONS).toHaveLength(6);
 		for (const lesson of FOREST_LESSONS) {
 			expect(lesson.goals).toHaveLength(3);
 			expect(lesson.paragraphs.length).toBeGreaterThanOrEqual(4);
@@ -60,7 +60,10 @@ describe("three Number Forest lessons", () => {
 			for (let goal = 0; goal < 3; goal++) {
 				const task = forestLab(id, goal);
 				const start =
-					task.kind === "line" || task.kind === "split"
+					task.kind === "line" ||
+					task.kind === "split" ||
+					task.kind === "hops" ||
+					task.kind === "groups"
 						? 0
 						: task.kind === "order"
 							? []
@@ -144,7 +147,12 @@ describe("three Number Forest lessons", () => {
 							need(task.numbers)[1],
 						);
 					}
-					if (task.kind === "choice" && task.numbers && task.goal === 1)
+					if (
+						id === "zahlen-vergleichen-ordnen" &&
+						task.kind === "choice" &&
+						task.numbers &&
+						task.goal === 1
+					)
 						expect(task.answer).toBe(
 							Math.sign(task.numbers[0] - task.numbers[1]),
 						);

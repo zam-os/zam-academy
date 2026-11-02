@@ -2,6 +2,9 @@ export const EXTRA_LESSON_IDS = [
 	"zahlen-vergleichen-ordnen",
 	"zahlenstrahl-zahlenspruenge",
 	"zahlen-zerlegen-ergaenzen",
+	"geschickt-addieren",
+	"geschickt-subtrahieren",
+	"malnehmen-teilen",
 ] as const;
 export type ExtraLessonId = (typeof EXTRA_LESSON_IDS)[number];
 export interface ForestLesson {
@@ -16,6 +19,7 @@ export interface ForestLesson {
 	takeaway: string;
 	transfer: string;
 	quiz: {
+		goal: 1 | 2 | 3;
 		prompt: string;
 		choices: [string, string, string];
 		explanation: string;
@@ -47,6 +51,7 @@ export const FOREST_LESSONS: ForestLesson[] = [
 		transfer:
 			"Jetzt vergleichst du auch Zahlen aus kurzen Geschichten und ordnest ähnliche Zahlen. Achte auf die Nullstellen. Die Geschichte ändert die Bedeutung der Zeichen nicht.",
 		quiz: {
+			goal: 2,
 			prompt: "Warum ist 507 030 größer als 507 003?",
 			choices: [
 				"Die Zehnerstelle entscheidet: 3 Zehner sind mehr als 0 Zehner.",
@@ -83,6 +88,7 @@ export const FOREST_LESSONS: ForestLesson[] = [
 		transfer:
 			"Nun fehlen manche Beschriftungen. Bestimme die Schrittweite selbst und nutze sie für mehrere Sprünge. Der ganze Pfad bleibt zwischen 0 und 1 Million.",
 		quiz: {
+			goal: 1,
 			prompt:
 				"Zwischen 60 000 und 80 000 liegen zehn gleich große Abschnitte. Wie groß ist ein Schritt?",
 			choices: [
@@ -120,6 +126,7 @@ export const FOREST_LESSONS: ForestLesson[] = [
 		transfer:
 			"Wähle nun die passenden Stellenwertteile selbst aus und ergänze in kleinen Geschichten bis zu einem Ziel. Nimm nur die Teile, die du wirklich brauchst.",
 		quiz: {
+			goal: 1,
 			prompt: "Welche Zerlegung passt zu 405 060?",
 			choices: [
 				"400 000 + 5 000 + 60",
@@ -131,6 +138,120 @@ export const FOREST_LESSONS: ForestLesson[] = [
 		},
 		parentPrompt:
 			"Wie kannst du 100 000 in zwei Teile zerlegen? Finde eine zweite Zerlegung und erkläre, was sich ändert.",
+	},
+	{
+		id: "geschickt-addieren",
+		title: "Milos Sprungbrücke",
+		shortTitle: "Geschickt addieren",
+		icon: "+",
+		lead: "Über die Sprungbrücke kommst du mit kleinen Rechenschritten. Hilf Milo, große Summen geschickt zu finden.",
+		goals: [
+			"Bekannte Plusaufgaben auf große Zahlen übertragen",
+			"Summanden zerlegen und in Schritten addieren",
+			"Eine Hilfsaufgabe nutzen und richtig ausgleichen",
+		],
+		paragraphs: [
+			"Addieren heißt zusammenzählen. Die Zahlen, die du addierst, heißen Summanden. Das Ergebnis heißt Summe. Bekannte Aufgaben helfen auch bei großen Zahlen: Aus 6 + 3 = 9 wird 6 000 + 3 000 = 9 000. Rechne mit gleich großen Bündeln.",
+			"Du darfst einen Summanden zerlegen und die Teile nacheinander addieren. Bei 26 800 + 3 500 zerlegst du 3 500 in 3 000 und 500: zuerst 29 800, dann 30 300. Notiere die Zwischenergebnisse oder zeichne einen Rechenstrich.",
+			"Manchmal hilft der nächste volle Tausender: 46 000 + 2 900 rechnest du als 46 000 + 3 000 − 100. Du hast zuerst 100 zu viel addiert und musst diese 100 wieder wegnehmen. So erhältst du 48 900.",
+			"Du kannst Summanden auch vertauschen und passend zusammenfassen: 3 600 + 1 700 + 400 = 3 600 + 400 + 1 700 = 5 700. Wähle einen Weg, den du erklären kannst. Prüfe mit einer anderen Zerlegung oder durch Rückwärtsrechnen.",
+		],
+		example:
+			"Rechne 38 700 + 4 800. In Schritten: 38 700 + 4 000 = 42 700; 42 700 + 800 = 43 500. Mit Hilfsaufgabe: 38 700 + 5 000 = 43 700; 43 700 − 200 = 43 500. Beide Wege ergeben dieselbe Summe.",
+		takeaway:
+			"Zerlege einen Summanden in passende Teile. Addierst du bei einer Hilfsaufgabe zu viel, nimmst du diesen Betrag wieder weg.",
+		transfer:
+			"Jetzt nutzt du Plusaufgaben in Geschichten, ergänzt Zwischenschritte und prüfst Milos Hilfsaufgaben. Überlege zuerst, was gesucht ist.",
+		quiz: {
+			goal: 3,
+			prompt:
+				"Milo rechnet 24 600 + 3 900 mit 24 600 + 4 000. Wie muss er ausgleichen?",
+			choices: [
+				"100 abziehen, weil er zuerst 100 zu viel addiert hat.",
+				"100 addieren, weil die ursprüngliche Aufgabe eine Plusaufgabe ist.",
+				"Nichts ändern, weil 3 900 und 4 000 fast gleich sind.",
+			],
+			explanation:
+				"24 600 + 4 000 = 28 600. Das sind 100 zu viel: 28 600 − 100 = 28 500.",
+		},
+		parentPrompt:
+			"Wie rechnest du 17 800 + 2 900? Zeige zwei Wege und erkläre den Ausgleich.",
+	},
+	{
+		id: "geschickt-subtrahieren",
+		title: "Milos Rückweg",
+		shortTitle: "Geschickt subtrahieren",
+		icon: "−",
+		lead: "Milo geht auf dem Rechenpfad zurück. Entdecke, wie Zerlegen, Ergänzen und eine passende Probe helfen.",
+		goals: [
+			"Bekannte Minusaufgaben auf große Zahlen übertragen",
+			"In Schritten subtrahieren und durch Ergänzen prüfen",
+			"Eine Minus-Hilfsaufgabe richtig ausgleichen",
+		],
+		paragraphs: [
+			"Subtrahieren heißt abziehen oder einen Unterschied bestimmen. Das Ergebnis heißt Differenz. Aus 9 − 4 = 5 wird 9 000 − 4 000 = 5 000. Ziehe gleich große Bündel voneinander ab. In dieser Lektion ist das Ergebnis immer mindestens 0.",
+			"Zerlege die Zahl, die du abziehst: 52 300 − 4 700 = 52 300 − 4 000 − 700. Die Zwischenergebnisse sind 48 300 und 47 600. Am Rechenstrich führen die Sprünge nach links.",
+			"Bei einer Hilfsaufgabe musst du genau ausgleichen: 52 300 − 4 900 = 52 300 − 5 000 + 100 = 47 400. Du hast zuerst 100 zu viel weggenommen. Deshalb gibst du die 100 wieder dazu.",
+			"Du kannst eine Differenz auch durch Ergänzen finden. Von 38 700 bis 40 000 fehlen 1 300, von dort bis 42 000 noch 2 000. Also ist 42 000 − 38 700 = 3 300. Die Additionsprobe prüft jede Minusaufgabe: Differenz + abgezogene Zahl = Startzahl.",
+		],
+		example:
+			"Rechne 63 200 − 5 800. In Schritten: 63 200 − 5 000 = 58 200; 58 200 − 800 = 57 400. Mit Hilfsaufgabe: 63 200 − 6 000 + 200 = 57 400. Probe: 57 400 + 5 800 = 63 200.",
+		takeaway:
+			"Ziehe zerlegte Teile nacheinander ab. Ziehst du bei einer Hilfsaufgabe zu viel ab, gibst du diesen Betrag wieder dazu. Prüfe durch Addieren.",
+		transfer:
+			"Finde Unterschiede in Geschichten, ergänze eine Additionsprobe und erkläre den Ausgleich einer Hilfsaufgabe. Die Reihenfolge der Zahlen beim Subtrahieren bleibt wichtig.",
+		quiz: {
+			goal: 3,
+			prompt:
+				"Für 35 200 − 2 900 rechnet Milo zuerst 35 200 − 3 000. Was folgt?",
+			choices: [
+				"100 dazugeben: Er hat zuerst 100 zu viel weggenommen.",
+				"100 weiter abziehen: Bei Minus geht es immer nur nach links.",
+				"3 000 dazugeben: Jede Minusaufgabe wird vollständig rückgängig gemacht.",
+			],
+			explanation:
+				"35 200 − 3 000 = 32 200. Gib die zu viel abgezogenen 100 zurück: 32 200 + 100 = 32 300. Probe: 32 300 + 2 900 = 35 200.",
+		},
+		parentPrompt:
+			"Warum rechnest du bei 41 500 − 3 900 mit − 4 000 + 100? Zeige anschließend die Probe.",
+	},
+	{
+		id: "malnehmen-teilen",
+		title: "Milos Körbchengarten",
+		shortTitle: "Malnehmen und teilen",
+		icon: "·",
+		lead: "Im Körbchengarten liegen gleich große Gruppen. Milo braucht deine Hilfe beim Packen und gerechten Verteilen.",
+		goals: [
+			"Gleich große Gruppen mit einer Malaufgabe beschreiben",
+			"Eine Geteiltaufgabe mit der Umkehraufgabe lösen",
+			"Einmaleinswissen auf große Bündel übertragen",
+		],
+		paragraphs: [
+			"Wiederholung aus Klasse 1/2: 6 Gruppen mit je 4 Dingen sind 6 · 4 = 24. Multiplizieren heißt malnehmen. Du kannst 4 + 4 + 4 + 4 + 4 + 4 durch 6 · 4 ersetzen. Die Faktoren darfst du vertauschen: 4 · 6 ergibt ebenfalls 24.",
+			"Dividieren heißt teilen. 24 Blätter auf 6 gleich gefüllte Körbe verteilen ergibt 24 : 6 = 4 Blätter je Korb. Anders gefragt: Wie viele Körbe mit je 4 Blättern passen zu 24 Blättern? 24 : 4 = 6 Körbe. Achte darauf, was die Antwort beschreibt.",
+			"Malnehmen und Teilen sind Umkehraufgaben. Zu 6 · 4 = 24 gehören 24 : 6 = 4 und 24 : 4 = 6. Prüfe eine Geteiltaufgabe durch Malnehmen. Durch 0 darfst du nicht teilen; hier teilst du immer ohne Rest. Bekannte Malaufgaben helfen dir auch, eine fehlende Anzahl gleich großer Gruppen zu finden.",
+			"In Klasse 3/4 nutzt du das kleine Einmaleins auch mit großen Bündeln. 6 · 400 = 2 400, denn 6 · 4 Hunderter sind 24 Hunderter. Deshalb ist 2 400 : 6 = 400. Erkläre den Stellenwert, statt nur Nullen anzuhängen.",
+		],
+		example:
+			"7 Körbe enthalten je 300 Samen. 7 · 3 = 21, also 7 · 300 = 2 100 Samen. Verteile die 2 100 Samen wieder auf 7 Körbe: 2 100 : 7 = 300 Samen je Korb. Die Malaufgabe prüft die Geteiltaufgabe.",
+		takeaway:
+			"Gleich große Gruppen passen zu einer Malaufgabe. Die Umkehraufgabe hilft beim Teilen. Bei großen Zahlen rechnest du mit den passenden Bündeln.",
+		transfer:
+			"Entscheide in kurzen Geschichten selbst zwischen Malnehmen und Teilen. Finde fehlende Faktoren und prüfe große Bündel mit dem kleinen Einmaleins.",
+		quiz: {
+			goal: 2,
+			prompt:
+				"2 400 Samen werden gleichmäßig auf 6 Körbe verteilt. Welche Rechnung und Probe passen?",
+			choices: [
+				"2 400 : 6 = 400; Probe: 6 · 400 = 2 400.",
+				"2 400 − 6 = 2 394; Probe: 2 394 + 6 = 2 400.",
+				"2 400 : 6 = 40; Probe: 6 · 40 = 240.",
+			],
+			explanation:
+				"Du verteilst die ganze Menge auf 6 gleich große Gruppen. Weil 6 · 4 = 24 gilt, sind 6 · 400 = 2 400. In jeden Korb kommen 400 Samen.",
+		},
+		parentPrompt:
+			"6 Körbe enthalten zusammen 4 800 Samen. Wie viele sind in jedem Korb? Welche Malaufgabe prüft deine Antwort?",
 	},
 ];
 export const COURSE_LINKS = [

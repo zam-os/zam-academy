@@ -1,8 +1,9 @@
-# Grade 4: three more Number Forest lessons
+# Grade 4: six more Number Forest lessons
 
-The unpublished Discovery Island app now has four selectable German lessons:
+The unpublished Discovery Island app now has seven selectable German lessons:
 the existing place-value workshop plus comparing/ordering, number lines/
-equal jumps, and decomposition/complements. This batch expands the draft;
+equal jumps, decomposition/complements, addition/subtraction strategies
+and multiplication/inverse division. This batch expands the draft;
 it does not complete the annual course, its teacher review, recordings or
 publication acceptance. Thomas requested further lessons while the original
 recording remains pending, so the earlier phase-order restriction does not
@@ -10,10 +11,11 @@ block this independent lesson work.
 
 ## Curriculum check — 2026-11-02
 
-Read the current official [Mathematik 3/4 Fachlehrplan, section 1.1](https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik),
+Read the current official [Mathematik 3/4 Fachlehrplan, sections 1.1 and 1.2](https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik),
 including comparison/order, the number line, flexible counting and additive
-number decomposition. The existing verbatim 54-position inventory remains
-in coverage.json. Only the touched 1.1 positions have a new check date;
+number decomposition, scaled arithmetic facts, strategies, notes and inverse
+checks. The existing verbatim 54-position inventory remains
+in coverage.json. Only the touched 1.1/1.2 positions have a new check date;
 other rows retain their earlier dates. There are no Zweige in this shared
 Grades 3/4 plan and no prescribed hours per learning area on this page.
 
@@ -31,10 +33,14 @@ split or teacher approval.
 | `zahlen-vergleichen-ordnen` | Sign gate; first differing position; ascending triples; guided comparisons and transfer/reasoning | 1.1-01, comparison part of 1.1-04 |
 | `zahlenstrahl-zahlenspruenge` | Native slider/keyboard leaf placement; varied scales/start offsets; read marks and jump both ways | 1.1-01 |
 | `zahlen-zerlegen-ergaenzen` | Coupled part-whole bars; choose place-value parts; missing parts and constant-sum reasoning | 1.1-05 |
+| `geschickt-addieren` | Movable addition/correction jumps; scaled sums, intermediate values, context and compensation | Parts of 1.2-02/03/04/05/07 |
+| `geschickt-subtrahieren` | Movable subtraction/correction jumps; differences, inverse addition checks, context and compensation | Parts of 1.2-02/03/04/05/07 |
+| `malnehmen-teilen` | Equal baskets; small and scaled facts, sharing/grouping, missing factors and inverse checks | Parts of 1.2-01/02/03 |
 
 All mapped rows remain partial and await primary-school teacher review.
 Divisors/multiples, physical estimation and Fermi work are still gaps. No
-rounding lesson or full 1.1 coverage is claimed. Number words and further
+rounding lesson, written algorithm, full multiplication-table automatisation
+or full 1.1/1.2 coverage is claimed. Number words and further
 representations also remain outside this batch.
 
 ## Lesson and persistence model
@@ -62,10 +68,10 @@ local practice evidence, not a school grade or a ZAM/FSRS review history.
 
 ## Cell and media
 
-Nine German cards are authored only in cell.json: one atom and three items
-per new lesson, with generated ULIDs and source links to their own lesson.
+Eighteen German cards are authored only in cell.json: one atom and three items
+per added lesson, with generated ULIDs and source links to their own lesson.
 All four original atoms and twelve original items remain unchanged. The
-cell now has seven atoms/twenty-one items and version 2026.11.1. It declares
+cell now has ten atoms/thirty items and version 2026.11.2. It declares
 no replacements or retirements and transfers no existing learning history.
 The narrow official binding remains deferred for the previously documented
 kernel-scope reason. The initial workshop still has four atomic goals;
@@ -91,3 +97,14 @@ The required second-agent review found two integration issues: shared Milo
 pause state and startup route registration order. Both were corrected and
 rechecked; the reviewer reported no remaining actionable findings. This code
 review does not substitute for the pending primary-school teacher approval.
+
+
+The arithmetic review also caught reworded calculations being treated as
+fresh evidence, quizzes attached to the wrong goals, and an undefined colour
+variable hiding jump arcs. Canonical fact-family identity now includes
+workshop models, commuted and inverse operations. Quiz goals are explicit,
+and the arcs use the existing theme-aware purple. Seeded regressions (88 and 290)
+cover the repeated-fact cases. A sampled-model test also prevented a negative
+value at an unused extreme of the first subtraction slider. The second agent
+rechecked the fixes and reported no remaining actionable findings; teacher
+review remains pending.

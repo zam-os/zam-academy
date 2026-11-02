@@ -1,4 +1,4 @@
-# Number Forest: three teacher recording briefs
+# Number Forest: six teacher recording briefs
 
 Status: scripts for production, not recordings or teacher approval. Each
 clip should be in German, approximately 2–3 minutes, with reviewed captions,
@@ -85,6 +85,79 @@ Check: meaningful bar proportions, additive rather than digit concatenation,
 zero placeholders, a worked million boundary, and the difference between a
 physical split and a place-value decomposition. Ask the teacher to confirm
 that all instructions and examples suit the intended Grade 4 progression.
+
+## Milos Sprungbrücke — addition strategies
+
+**Learning focus:** extend known facts with place-value bundles, split a
+summand, compare two paths and explain compensation. Use the app's movable
+jump model and write intermediate values. Target 2–3 minutes.
+
+**German teaching script:**
+
+- 0:00–0:30: „6 + 3 sind 9. Mit Tausenderbündeln gilt deshalb
+  6 000 + 3 000 = 9 000. Addieren heißt zusammenzählen; das Ergebnis
+  heißt Summe.“ Show equal bundles, keeping the unit visible.
+- 0:30–1:15: „38 700 + 4 800 rechne ich in Schritten: erst + 4 000,
+  dann + 800. Ich lande bei 42 700 und dann bei 43 500.“ Draw the two
+  different-sized jumps and label both intermediate and final values.
+- 1:15–2:00: „Ich kann auch erst 5 000 addieren. Dann bin ich bei
+  43 700, habe aber 200 zu viel addiert. Diese 200 nehme ich wieder weg:
+  43 500. Beide Wege ergeben dieselbe Summe.“ Contrast the correction
+  direction with the initial addition; do not teach a blind sign rule.
+- 2:00–2:30: „Welche Sprünge passen für 26 800 + 300? Verschiebe den
+  Regler und erkläre Milo deinen Weg. Du darfst Zwischenschritte notieren.“
+
+Check: the full thousand crossing, correct split of the second summand,
+visible jumps in both directions, grouped whole numbers and an exact final
+sum. Written column addition is outside this clip.
+
+## Milos Rückweg — subtraction strategies
+
+**Learning focus:** split the subtracted quantity, use complementing and
+an addition check, and explain why excess subtraction is added back.
+
+**German teaching script:**
+
+- 0:00–0:30: „12 000 − 4 000 sind 8 000. Ich ziehe vier Tausender ab.
+  Das Ergebnis einer Subtraktion heißt Differenz.“ Move four jumps left.
+- 0:30–1:15: „63 200 − 5 800: erst − 5 000 bis 58 200, dann − 800
+  bis 57 400. Ich zerlege die Zahl, die ich abziehe.“ Label the start,
+  intermediate value and final difference.
+- 1:15–2:00: „Mit der Hilfsaufgabe − 6 000 lande ich bei 57 200.
+  Ich habe 200 zu viel weggenommen. Deshalb gebe ich 200 zurück und
+  erhalte 57 400. Probe: 57 400 + 5 800 = 63 200.“ Show the correction
+  jump to the right, then the addition check as a separate calculation.
+- 2:00–2:30: „Wie viel fehlt von 38 700 bis 42 000? Bis 40 000 sind
+  es 1 300 und dann noch 2 000. Zusammen sind es 3 300. Ergänzen hilft
+  ebenfalls, einen Unterschied zu finden.“
+
+Check: no negative values, correct compensation direction, difference and
+check not confused, and no suggestion that subtraction can be commuted.
+Written subtraction with regrouping is a separate future lesson.
+
+## Milos Körbchengarten — equal groups and inverse division
+
+**Learning focus:** revisit small multiplication facts, distinguish sharing
+from grouping, then transfer a fact to hundreds. Do not imply a short clip
+proves automatic recall of the entire multiplication table.
+
+**German teaching script:**
+
+- 0:00–0:35: „6 Körbe mit je 4 Samen enthalten zusammen 24 Samen:
+  6 · 4 = 24. Jeder Korb ist gleich gefüllt.“ Pack six labelled baskets.
+- 0:35–1:15: „Verteile 24 Samen gleichmäßig auf 6 Körbe. In jeden
+  kommen 4: 24 : 6 = 4. Fragst du stattdessen nach Körben mit je
+  4 Samen, brauchst du 6 Körbe: 24 : 4 = 6.“ Always name the unit of
+  the result, avoiding an unexplained exchange of the divisor's meaning.
+- 1:15–2:00: „7 · 3 = 21. Bei 7 Körben mit je 300 Samen rechne ich
+  mit Hunderterbündeln: 7 · 300 = 2 100. Darum sind 2 100 : 7 = 300
+  Samen je Korb. Die Malaufgabe ist die Probe.“
+- 2:00–2:30: „Packe nun 8 Körbe mit je 400 Samen. Erkläre, was die
+  4 und die beiden Nullen bedeuten. Du darfst eine Skizze verwenden.“
+
+Check: equal groups, both inverse questions, explicit bundle sizes, correct
+result units and no division by zero. This clip has no remainders and does
+not teach written multiplication or division algorithms.
 
 ## Handoff checklist
 

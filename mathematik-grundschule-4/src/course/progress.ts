@@ -210,7 +210,7 @@ export function activeForestTask(p: ForestProgress): ForestTask | null {
 		if (!quiz) return null;
 		return {
 			kind: "choice",
-			goal: p.lesson === "zahlen-vergleichen-ordnen" ? 2 : 1,
+			goal: quiz.goal,
 			prompt: quiz.prompt,
 			answer: 1,
 			choices: quiz.choices.map((label, i) => ({ value: i + 1, label })),
@@ -237,6 +237,20 @@ export function independentForest(a: ForestAttempt): boolean {
 		(a.mode === "exit" || a.mode === "later")
 	);
 }
+// A displayed model or inverse operation has already exposed the same fact family.
+// Wording, commuted factors and an inverse probe must not create fresh evidence.
+function calculationFamily({
+	a,
+	b,
+	op,
+}: NonNullable<ForestTask["calculation"]>): (string | number)[] {
+	const multiplicative = op === "·" || op === ":";
+	const parts = op === ":" ? [b, a / b] : op === "−" ? [b, a - b] : [a, b];
+	return [
+		multiplicative ? "multiplicative" : "additive",
+		...parts.sort((x, y) => x - y),
+	];
+}
 export function recordForest(
 	p: ForestProgress,
 	task: ForestTask,
@@ -244,18 +258,22 @@ export function recordForest(
 	now = Date.now(),
 ): boolean {
 	const key = forestKey(p),
-		signature = JSON.stringify([
-			task.kind,
-			task.prompt,
-			task.kind === "order" || task.kind === "parts"
-				? [...(task.numbers ?? [])].sort((a, b) => a - b)
-				: task.numbers,
-			task.line,
-			task.whole,
-			task.choices
-				? [...task.choices].sort((a, b) => a.value - b.value)
-				: undefined,
-		]);
+		signature = JSON.stringify(
+			task.calculation
+				? calculationFamily(task.calculation)
+				: [
+						task.kind,
+						task.prompt,
+						task.kind === "order" || task.kind === "parts"
+							? [...(task.numbers ?? [])].sort((a, b) => a - b)
+							: task.numbers,
+						task.line,
+						task.whole,
+						task.choices
+							? [...task.choices].sort((a, b) => a.value - b.value)
+							: undefined,
+					],
+		);
 	const first = !p.attempts.some(
 		(a) => a.key === key || a.signature === signature,
 	);

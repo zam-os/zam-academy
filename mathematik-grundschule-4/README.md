@@ -1,15 +1,16 @@
 # ZAM Discovery Island: Grade 4 Number Forest
 
-German learner and parent UI for Bavarian Grade 4. Four selectable lessons
+German learner and parent UI for Bavarian Grade 4. Seven selectable lessons
 in the Number Forest now cover place values/bundling, comparing/ordering,
-number lines/equal jumps, and decomposition/complements. Each has two
+number lines/equal jumps, decomposition/complements, addition strategies,
+subtraction strategies, and multiplication/inverse division. Each has two
 resumable missions, three successful tasks per practice level, fresh exit
 checks, optional practice and a welcoming Milo. A lesson is a draft activity,
 not a completed annual course or proof of mastery.
 
-The three new lessons have exactly three interactive goals each, using a
-number gate, a keyboard-friendly number-line marker and coupled treasure
-bars. All whole-number activities stay between 0 and one million.
+The six added lessons have exactly three interactive goals each, using a
+number gate, a keyboard-friendly number-line marker, coupled treasure bars,
+calculation jumps and equal baskets. All whole-number activities stay between 0 and one million.
 
 ## Status
 
@@ -43,7 +44,7 @@ The app reuses the approved Academy TypeScript/Vite/Vitest/single-file
 toolchain; it adds no runtime dependencies. `validate:cell` defaults to
 the adjacent `zam/dist/index.js`; set `ZAM_CORE` to a file URL of another
 approved build to check compatibility. It uses only a disposable database:
-installation creates no cards, explicit enrolment creates twenty-one, retries
+installation creates no cards, explicit enrolment creates thirty, retries
 create none, and reinstall preserves a real recall-rating log.
 
 At the Academy root, run
@@ -88,8 +89,8 @@ the final approved recording respectively; no browser-policy bypass was used.
 - Lesson id: `stellenwerte-buendeln`; cell:
   `zam-academy:mathematik-grundschule-4`. Public links are future source
   addresses and do not indicate that this draft is already hosted.
-- `cell.json` is the sole recall-card source: seven atoms, twenty-one German
-  items (fourteen binary fast checks and seven synthesis tasks) with fixed ULIDs.
+- `cell.json` is the sole recall-card source: ten atoms, thirty German
+  items (twenty binary fast checks and ten synthesis tasks) with fixed ULIDs.
   Edit cards only in this file; there is no
   second authored card list or card generator. Installation uses the approved
   core's card-text validation and write path. Prerequisites form an acyclic
@@ -122,7 +123,7 @@ learner experience, accessible labels and teaching material are German.
 
 ## Review follow-up
 
-See [the three-lesson expansion](../docs/grade-4-number-forest-expansion.md) and [the resolution record](../docs/grade-4-review-follow-up.md) for feedback,
+See [the Number Forest expansion](../docs/grade-4-number-forest-expansion.md) and [the resolution record](../docs/grade-4-review-follow-up.md) for feedback,
 regression checks and remaining Phase-2 decisions. Shared publication tooling
 is isolated in PR #73; that safeguard and the CI runtime fix are now on main.
 

@@ -18,6 +18,27 @@ export const escapeHtml = (text: string): string =>
 			] ?? c,
 	);
 export function forestGraphic(task: ForestTask, position = 0): string {
+	if (task.hops) {
+		const { start, unit, direction } = task.hops;
+		const end = start + direction * position * unit;
+		return `<div class="calculation-model"><p class="jump-equation">${format(start)} ${direction === 1 ? "+" : "−"} ${position} · ${format(unit)} = <strong>${format(end)}</strong></p><svg viewBox="0 0 700 130" role="img" aria-label="${position} ${position === 1 ? "Sprung" : "Sprünge"} zu je ${format(unit)} nach ${direction === 1 ? "rechts" : "links"}. Start ${format(start)}, aktuell ${format(end)}."><path d="M40 90H660" stroke="currentColor" stroke-width="3"/>${Array.from({ length: 11 }, (_, i) => `<path d="M${40 + i * 62} 82v16" stroke="currentColor" stroke-width="2"/>`).join("")}${Array.from(
+			{ length: position },
+			(_, i) => {
+				const x = direction === 1 ? 40 + i * 62 : 660 - i * 62;
+				return `<path d="M${x} 80q${direction * 31} -65 ${direction * 62} 0l${-direction * 12} -6m${direction * 12} 6v-15" fill="none" stroke="var(--purple)" stroke-width="4"/>`;
+			},
+		).join(
+			"",
+		)}<circle cx="${direction === 1 ? 40 + position * 62 : 660 - position * 62}" cy="90" r="12" class="path-marker"/></svg><p>Ein Sprung: ${direction === 1 ? "+" : "−"} ${format(unit)} · ${position} ${position === 1 ? "Sprung" : "Sprünge"} gewählt</p></div>`;
+	}
+	if (task.groups) {
+		const { each } = task.groups;
+		return `<div class="basket-model" role="group" aria-label="${position} ${position === 1 ? "Korb" : "Körbe"} mit je ${format(each)} Samen"><div class="basket-grid">${Array.from({ length: position }, () => `<span class="seed-basket"><span aria-hidden="true">♧</span><strong>${format(each)}</strong><small>Samen</small></span>`).join("") || "<p>Noch kein Korb gepackt.</p>"}</div><p class="jump-equation">${position} · ${format(each)} = <strong>${format(position * each)}</strong></p><p>${position} ${position === 1 ? "gleich gefüllter Korb" : "gleich gefüllte Körbe"} · je ${format(each)} Samen</p></div>`;
+	}
+	if (task.calculation) {
+		const { a, b, op } = task.calculation;
+		return `<div class="sum-puzzle" aria-label="Rechenaufgabe"><span>${format(a)}</span><b>${op}</b><span>${format(b)}</span><b>=</b><span class="missing-part">?</span></div>`;
+	}
 	if (task.line) {
 		const { start, step } = task.line,
 			marker = task.kind === "line" ? position : task.line.marker;
@@ -58,7 +79,11 @@ export function forestTaskView(
 		solved = last?.outcome ?? false;
 	const assisted = p.helped.includes(key) || last?.helped;
 	const wrong = p.attempts.filter((a) => a.key === key && !a.outcome).length;
-	const controls = task.kind === "line" || task.kind === "split";
+	const controls =
+		task.kind === "line" ||
+		task.kind === "split" ||
+		task.kind === "hops" ||
+		task.kind === "groups";
 	const input =
 		task.kind === "choice"
 			? `<div class="answer-options">${choices(task, p.seed + p.round + p.index)
@@ -70,7 +95,7 @@ export function forestTaskView(
 			: task.kind === "order" || task.kind === "parts"
 				? `<div class="number-chips" role="group" aria-label="${task.kind === "order" ? "Zahlen in Reihenfolge auswählen" : "Passende Zahlenteile auswählen"}">${task.numbers?.map((n) => `<button data-action="forest-select" data-value="${n}" aria-pressed="${p.selection.includes(n)}" >${format(n)}</button>`).join("")}</div><p class="selection-readout" aria-live="polite">${p.selection.length ? `Deine Auswahl: ${p.selection.map(format).join(task.kind === "order" ? " → " : " + ")}` : "Wähle die Zahlen durch Antippen."}</p><button data-action="forest-back">Letzte Auswahl zurücknehmen</button><button data-action="forest-clear">Auswahl leeren</button><button class="primary" data-action="forest-check">Meine Auswahl prüfen</button>`
 				: controls
-					? `<div class="path-controls"><button data-action="forest-left" aria-label="Einen Schritt nach links" ${p.position === 0 ? "disabled" : ""}>←</button><label for="forest-position">${task.kind === "line" ? "Milos Standort" : "Aufteilung der Truhen"}<input type="range" id="forest-position" data-action="forest-position" min="0" max="10" step="1" value="${p.position}"></label><button data-action="forest-right" aria-label="Einen Schritt nach rechts" ${p.position === 10 ? "disabled" : ""}>→</button></div><button class="primary" data-action="forest-check">Meine Darstellung prüfen</button>`
+					? `<div class="path-controls"><button data-action="forest-left" aria-label="${task.hops ? "Einen Sprung zurücknehmen" : task.groups ? "Einen Korb zurücknehmen" : "Einen Schritt nach links"}" ${p.position === 0 ? "disabled" : ""}>${task.hops || task.groups ? "−" : "←"}</button><label for="forest-position">${task.kind === "line" ? "Milos Standort" : task.kind === "hops" ? "Anzahl der Sprünge" : task.kind === "groups" ? "Anzahl der Körbe" : "Aufteilung der Truhen"}<input type="range" id="forest-position" data-action="forest-position" min="0" max="10" step="1" value="${p.position}"></label><button data-action="forest-right" aria-label="${task.hops ? "Einen Sprung hinzufügen" : task.groups ? "Einen Korb hinzufügen" : "Einen Schritt nach rechts"}" ${p.position === 10 ? "disabled" : ""}>${task.hops || task.groups ? "+" : "→"}</button></div><button class="primary" data-action="forest-check">Meine Darstellung prüfen</button>`
 					: `<div class="numeric-answer"><label for="forest-answer">Meine Antwort<input id="forest-answer" inputmode="numeric" autocomplete="off" spellcheck="false" value="${escapeHtml(draft)}" placeholder="Zahl eingeben"></label><button class="primary" data-action="forest-check">Meine Idee prüfen</button></div>`;
 	return `<span class="mission-label">${p.recall ? "Später erinnern · neue Aufgaben" : p.optional ? `Noch eine Runde · Stufe ${p.optional}` : p.stage === "lab" ? `Entdeckerwerkstatt · Ziel ${p.index + 1} von 3` : p.stage === "practice-1" || p.stage === "practice-2" ? `Stufe ${p.stage === "practice-1" ? 1 : 2} · ${p.solved[p.stage === "practice-1" ? 1 : 2]} von 3 Aufgaben gelöst` : p.stage === "quiz" ? "Ein kurzer Denkcheck" : `Neue Aufgabe · ${p.index + 1} von 3`}</span><h2 id="lesson-heading" tabindex="-1">${escapeHtml(task.prompt)}</h2><div id="forest-graphic">${forestGraphic(task, p.position)}</div>${solved ? `<div class="feedback success" role="status">${assisted ? "Mit Hilfe geschafft. " : "Richtig! "}${escapeHtml(task.explanation)}</div><button class="primary" data-action="forest-next">${p.optional ? "Noch eine Aufgabe" : "Weiter"}</button>` : `${input}<div class="help-row"><button class="text-button" data-action="forest-hint">Ein kleiner Tipp</button>${assisted || wrong >= 2 ? '<button class="text-button" data-action="forest-solution">Lösung gemeinsam ansehen</button>' : ""}</div>${feedback ? `<p class="feedback" role="status">${escapeHtml(feedback)}</p>` : ""}${assisted && feedback === task.explanation ? '<button class="primary" data-action="forest-worked">Mit Hilfe weiter</button>' : ""}`}${p.optional ? '<button class="text-button" data-action="forest-stop">Übungsrunde beenden</button>' : ""}`;
 }

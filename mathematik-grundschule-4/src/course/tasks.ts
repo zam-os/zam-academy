@@ -1,9 +1,18 @@
 import { format, parseInteger } from "../math/place-value";
 import { random } from "../practice/tasks";
+import { arithmeticTask, arithmeticLab, isArithmetic } from "./arithmetic";
 import type { ExtraLessonId } from "./catalog";
 export type Answer = number | number[];
 export type ForestTask = {
-	kind: "number" | "choice" | "order" | "parts" | "line" | "split";
+	kind:
+		| "number"
+		| "choice"
+		| "order"
+		| "parts"
+		| "line"
+		| "split"
+		| "hops"
+		| "groups";
 	goal: 1 | 2 | 3;
 	prompt: string;
 	answer: Answer;
@@ -13,6 +22,9 @@ export type ForestTask = {
 	numbers?: number[];
 	line?: { start: number; step: number; marker: number };
 	whole?: number;
+	calculation?: { a: number; b: number; op: "+" | "−" | "·" | ":" };
+	hops?: { start: number; unit: number; direction: 1 | -1 };
+	groups?: { each: number };
 };
 const equal = (a: number[], b: number[]) =>
 	a.length === b.length && a.every((n, i) => n === b[i]);
@@ -108,6 +120,7 @@ export function forestTask(
 	seed: number,
 	index: number,
 ): ForestTask {
+	if (isArithmetic(id)) return arithmeticTask(id, level, seed, index);
 	const { int, shuffle } = rng(
 		(seed + Math.imul(index + 1, 2654435761) + level * 104729) >>> 0,
 	);
@@ -243,6 +256,7 @@ export function forestTask(
 	};
 }
 export function forestLab(id: ExtraLessonId, goal: number): ForestTask {
+	if (isArithmetic(id)) return arithmeticLab(id, goal);
 	if (id === "zahlen-vergleichen-ordnen")
 		return goal === 2
 			? ordered([80080, 8800, 80008])
@@ -279,6 +293,24 @@ export function forestLab(id: ExtraLessonId, goal: number): ForestTask {
 export function forestMistake(task: ForestTask, answer: Answer | null): string {
 	if (answer === null)
 		return "Gib eine ganze Zahl von 0 bis 1 000 000 ein. Tausender kannst du mit Leerzeichen gliedern.";
+	if (task.kind === "hops" || task.kind === "groups") return task.hint;
+	if (task.calculation && typeof answer === "number") {
+		const { a, b, op } = task.calculation;
+		if (op === "−" && answer === a + b)
+			return "Gesucht ist die Differenz. Ziehe ab oder ergänze vom kleineren zum größeren Wert. Prüfe durch Addieren.";
+		if (op === "+" && answer === Math.abs(a - b))
+			return "Gesucht ist die Summe. Zähle die beiden Mengen zusammen, statt ihren Unterschied zu bestimmen.";
+		if (op === "·" && answer === a + b)
+			return "Du hast die beiden Zahlen addiert. Hier gibt es gleich große Gruppen: Nimm die Anzahl der Gruppen mal den Inhalt einer Gruppe.";
+		if (op === ":" && answer === a - b)
+			return "Gleichmäßig teilen ist mehr als einmal abziehen. Welche Zahl ergibt mit dem Teiler multipliziert die ganze Menge?";
+		if (
+			(op === "·" || op === ":") &&
+			(answer === Number(task.answer) / 10 ||
+				answer === Number(task.answer) * 10)
+		)
+			return "Prüfe die Bündelgröße: Sind es Einer, Zehner, Hunderter oder Tausender? Nutze anschließend die Umkehraufgabe.";
+	}
 	if (task.kind === "choice") return task.hint;
 	if (task.kind === "order")
 		return "Beginne mit der kleinsten Zahl. Vergleiche von links und prüfe die Nullstellen. Du kannst die Auswahl zurücknehmen.";
@@ -307,6 +339,16 @@ export function forestExit(
 	seed: number,
 	index: number,
 ): ForestTask {
+	if (id === "malnehmen-teilen" && index === 0) {
+		const task = forestTask(id, 1, seed, 0);
+		if (!task.calculation) throw new Error("Missing multiplication operands");
+		const { a, b } = task.calculation;
+		return {
+			...task,
+			prompt: `Milo füllt ${a} Körbe mit je ${format(b)} Samen. Wie viele Samen sind es zusammen?`,
+			goal: 1,
+		};
+	}
 	if (id === "zahlenstrahl-zahlenspruenge")
 		return index === 0
 			? forestTask(id, 1, seed, 0)

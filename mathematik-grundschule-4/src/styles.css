@@ -48,7 +48,7 @@ button {
 		transform 0.15s;
 }
 button:hover:enabled {
-	background: #f1ecfc;
+	background: var(--soft);
 	transform: translateY(-1px);
 }
 button:disabled {
@@ -1694,4 +1694,59 @@ input {
 		font: inherit;
 		font-size: 0.95rem;
 	}
+}
+
+/* Arithmetic workshops: the model displays the learner's chosen steps. */
+.calculation-model,
+.basket-model {
+	padding: 1rem;
+	border-radius: 1.5rem;
+	background: var(--soft);
+	border: 2px solid var(--line);
+	margin: 1rem 0;
+	text-align: center;
+}
+.calculation-model svg {
+	width: 100%;
+	max-height: 170px;
+}
+.jump-equation {
+	font-size: clamp(1rem, 3vw, 1.6rem);
+	font-weight: 750;
+}
+.basket-grid {
+	display: grid;
+	grid-template-columns: repeat(5, minmax(0, 1fr));
+	gap: 0.65rem;
+}
+.seed-basket {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 0.5rem;
+	border: 2px solid var(--purple);
+	border-radius: 1rem 1rem 1.5rem 1.5rem;
+	background: var(--surface);
+}
+.seed-basket > span {
+	font-size: 1.7rem;
+	color: var(--purple);
+}
+.seed-basket strong {
+	font-size: 1.1rem;
+}
+.seed-basket small {
+	font-size: 0.8rem;
+}
+.basket-grid > p {
+	grid-column: 1 / -1;
+}
+@media (max-width: 600px) {
+	.basket-grid {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+}
+
+.calculation-model .path-marker {
+	fill: var(--green);
 }

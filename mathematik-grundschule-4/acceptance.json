@@ -154,6 +154,20 @@
 			"status": "passed",
 			"checked": "2026-11-02",
 			"details": "Pausing a new lesson put Milo to sleep with the matching resting message. After resuming it, pausing the original workshop and switching back left the new lesson and Milo awake. The original workshop learner state on :5216 was not touched."
+		},
+		{
+			"surface": "Built dist/index.html over isolated 127.0.0.1:5227 and localhost:5227 previews; Codex in-app browser",
+			"check": "Three complete arithmetic journeys and model rendering",
+			"status": "passed",
+			"checked": "2026-11-02",
+			"details": "Completed addition, subtraction and multiplication/inverse division through all three labs, quiz, three tasks at each level and three exits. Observed mistake encouragement, keyboard model input, basket increment buttons, save/reload resumption, visible leftward jump arcs, goal-specific parent examples and truthful pending-media panels. Original place-value route still opens its workshop. No user preview progress was reset."
+		},
+		{
+			"surface": "375 px and 320 px dark-theme browser viewports on a separate test origin",
+			"check": "Arithmetic model bounds and control contrast",
+			"status": "passed",
+			"checked": "2026-11-02",
+			"details": "Inspected equal baskets, calculation jumps, compact lesson switching, parent bounds and missing-video panel. Body width matched the viewport at inspected positions. Fixed hover background that obscured increment labels and used the theme-aware purple for model strokes/borders. Subtraction slider at its extreme showed12000 −10·1000 =2000, never a negative value. Temporary viewport override reset; physical touch remains pending."
 		}
 	],
 	"remaining": [
@@ -166,9 +180,9 @@
 	],
 	"checked": "2026-11-02",
 	"automated_checks": {
-		"app": "Locked toolchain unchanged; external Biome 2.5.6 format/lint, typecheck and 51 Vitest tests passed",
+		"app": "Locked toolchain unchanged; npm ci --offline --no-audit --no-fund, typecheck, 61 Vitest tests and production build passed under Node 26.13.0 with NODE_OPTIONS=--no-experimental-webstorage; external Biome 2.5.6 format/lint passed",
 		"catalog": "48 node:test catalog and public-registry checks passed; generated catalog has 36 existing cells and excludes this draft",
-		"cell": "7 atoms, 21 items; original 4 atoms/12 items unchanged; disposable install/enrol/recall/reinstall passed against CI-pinned zam-core 0.54.0",
+		"cell": "10 atoms, 30 items; previous 7 atoms/21 items unchanged (including original main 4 atoms/12 items); disposable install/enrol/recall/reinstall passed against CI-pinned zam-core 0.54.0",
 		"all_cells": "All 37 Academy cells in the current-main PR checkout validated against CI-pinned zam-core 0.54.0 using disposable libraries",
 		"package": "Draft ZIP built and byte/asset/launcher verification passed; strict complete gate correctly refuses missing teacher recording"
 	},
@@ -207,21 +221,27 @@
 		"lessons": [
 			"zahlen-vergleichen-ordnen",
 			"zahlenstrahl-zahlenspruenge",
-			"zahlen-zerlegen-ergaenzen"
+			"zahlen-zerlegen-ergaenzen",
+			"geschickt-addieren",
+			"geschickt-subtrahieren",
+			"malnehmen-teilen"
 		],
 		"status": "implemented-draft",
 		"teacher_review": "pending",
 		"teacher_recordings": "awaiting-recording",
-		"curriculum_check": "2026-11-02; section 1.1 only; mapped positions remain partial",
+		"curriculum_check": "2026-11-02; sections 1.1 and 1.2 only; mapped positions remain partial",
 		"storage": "One separate transactional document per new lesson; original workshop namespace unchanged; no migrations",
 		"second_agent_review": {
 			"status": "reviewed",
 			"date": "2026-11-02",
 			"initial_findings": [
 				"Milo pause state used the original workshop instead of the active lesson",
-				"Hash routing registered after asynchronous initial loading"
+				"Hash routing registered after asynchronous initial loading",
+				"Arithmetic task wording allowed a repeated calculation to appear fresh, including facts displayed in labs",
+				"Arithmetic quizzes were attributed to the wrong goals",
+				"An undefined colour variable hid calculation-jump arcs"
 			],
-			"resolution": "Both integration findings fixed and rechecked by the second agent; no remaining actionable findings. This is not teacher content approval."
+			"resolution": "All findings corrected and rechecked. Fact-family signatures include model, commuted and inverse operations; explicit quiz goals; theme-aware arc colour. Read-only seed88/290 regression checks and diff check passed in the reviewer. The parent ran 61 Vitest tests; reviewer could not run Vitest because its sandbox denied the temporary Vite config write. No remaining actionable review findings. This is not teacher content approval."
 		}
 	}
 }

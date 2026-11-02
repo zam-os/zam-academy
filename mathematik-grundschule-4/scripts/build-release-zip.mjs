@@ -43,7 +43,7 @@ chmodSync(join(destination, "Start-Mac.command"), 0o755);
 chmodSync(join(destination, "start-linux.sh"), 0o755);
 writeFileSync(
 	join(destination, "README-START.txt"),
-	`ZAM ENTDECKERINSEL · MATHEMATIK 4\n\nEntpacke das ZIP vollständig und öffne index.html per Doppelklick.\nAlternativ nutze den Starter für dein Betriebssystem.\n\nDie vier Lektionen im Zahlenwald und Milo funktionieren ohne Internet.\nDer Lernstand bleibt in diesem Browser, wenn das Speichern erlaubt ist.\nFalls Speichern nicht möglich ist, zeigt die App das deutlich an.\nKeine Konten, keine Werbung, keine Verbindung zu Modellen.\n\nStatus der Vorschau: ${media.status === "approved" ? "Lehrervideo vorhanden." : "Die echte Lehreraufnahme und fachliche Freigabe stehen noch aus. Die bebilderte Erklärung ist vollständig nutzbar."}\n\nMilo geht es in Lernpausen gut.\n`,
+	`ZAM ENTDECKERINSEL · MATHEMATIK 4\n\nEntpacke das ZIP vollständig und öffne index.html per Doppelklick.\nAlternativ nutze den Starter für dein Betriebssystem.\n\nDie sieben Lektionen im Zahlenwald und Milo funktionieren ohne Internet.\nDer Lernstand bleibt in diesem Browser, wenn das Speichern erlaubt ist.\nFalls Speichern nicht möglich ist, zeigt die App das deutlich an.\nKeine Konten, keine Werbung, keine Verbindung zu Modellen.\n\nStatus der Vorschau: ${media.status === "approved" ? "Lehrervideo vorhanden." : "Die echte Lehreraufnahme und fachliche Freigabe stehen noch aus. Die bebilderte Erklärung ist vollständig nutzbar."}\n\nMilo geht es in Lernpausen gut.\n`,
 );
 execFileSync("zip", ["-r", "-q", join(release, `${name}-offline.zip`), name], {
 	cwd: release,

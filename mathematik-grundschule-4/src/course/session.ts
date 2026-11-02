@@ -218,7 +218,12 @@ export class ForestSession {
 						answer = Number(button.dataset.value);
 					else if (task.kind === "parts" || task.kind === "order")
 						answer = [...p.selection];
-					else if (task.kind === "line" || task.kind === "split")
+					else if (
+						task.kind === "line" ||
+						task.kind === "split" ||
+						task.kind === "hops" ||
+						task.kind === "groups"
+					)
 						answer = p.position;
 					else answer = forestInput(this.draft);
 					const right = recordForest(p, task, answer);

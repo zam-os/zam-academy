@@ -1,7 +1,7 @@
 {
 	"$schema": "https://zam.app/schemas/v1/kvt-tile.json",
 	"tile_id": "zam-academy:mathematik-grundschule-4",
-	"version": "2026.11.1",
+	"version": "2026.11.2",
 	"title": "Mathematik 4 Grundschule: Milos Zahlenwald",
 	"description": "Vier deutsche Entdeckerlektionen: Stellenwerte und Bündeln, Zahlen vergleichen und ordnen, Zahlenstrahl und Zahlensprünge sowie Zerlegen und Ergänzen bis zur Million. Erprobungsfassung; fachliche Freigabe und Lehrervideos fehlen. Kein vollständiger Jahreskurs.",
 	"publisher": "ZAM Academy",
@@ -560,6 +560,256 @@
 					"sample_solution": "Der erste Teil ist nun 31 000. Damit die Summe 100 000 bleibt, muss der zweite Teil 69 000 sein: 31 000 + 69 000 = 100 000. Ein größerer Teil erfordert bei gleicher Summe einen entsprechend kleineren anderen Teil.",
 					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=zahlen-zerlegen-ergaenzen",
 					"materiality": "material"
+				}
+			]
+		},
+		{
+			"namespace": "zam-academy-mathematik-grundschule-4",
+			"domain": "mathematik/zahlenwald",
+			"reduction": "axiomatic",
+			"typical_age_min": 8,
+			"prerequisites": [
+				{
+					"atom_id": "01M687PEW348C0W3TZ3XM71ZRM",
+					"type": "soft",
+					"rationale": "Das Stellenwertverständnis unterstützt diesen Schritt."
+				}
+			],
+			"id": "01M6EQYDM417KPCFPXNCFJQKZZ",
+			"atom_uri": "urn:zam:atom:01M6EQYDM417KPCFPXNCFJQKZZ",
+			"slug": "gs4-addieren",
+			"title": "Geschickt addieren",
+			"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=geschickt-addieren",
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "mathematik-grundschule-4",
+					"topic_code": "geschickt-addieren",
+					"topic_title": "Geschickt addieren"
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M6EQYDM4KVF733E4JRQJ2BPX",
+					"slug": "gs4-addieren-1",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"question": "Wie nutzt du 6 + 3 = 9 für 6 000 + 3 000?",
+					"concept": "Du rechnest mit Tausenderbündeln: 6 Tausender + 3 Tausender = 9 Tausender, also 9 000.",
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=geschickt-addieren",
+					"materiality": "material",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Du rechnest mit Tausenderbündeln: 6 Tausender + 3 Tausender = 9 Tausender, also 9 000.",
+							"Das Ergebnis bleibt 9, weil nur die beiden ersten Ziffern zählen."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M6EQYDM4G87PZB6SW6B1W2YQ",
+					"slug": "gs4-addieren-2",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"question": "Du ersetzt beim Addieren + 2 900 durch + 3 000. Wie gleichst du aus?",
+					"concept": "Du ziehst anschließend 100 ab.",
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=geschickt-addieren",
+					"materiality": "material",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Du ziehst anschließend 100 ab.",
+							"Du addierst anschließend noch 100."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M6EQYDM4X0YN1J2RAKK4N6B3",
+					"slug": "gs4-addieren-3",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Berechne 38 700 + 4 800 mit einer Hilfsaufgabe und erkläre den Ausgleich.",
+					"concept": "43 500.",
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=geschickt-addieren",
+					"materiality": "material",
+					"sample_solution": "38 700 + 5 000 = 43 700. Dabei wurden 200 zu viel addiert. Deshalb: 43 700 − 200 = 43 500."
+				}
+			]
+		},
+		{
+			"namespace": "zam-academy-mathematik-grundschule-4",
+			"domain": "mathematik/zahlenwald",
+			"reduction": "axiomatic",
+			"typical_age_min": 8,
+			"prerequisites": [
+				{
+					"atom_id": "01M687PEW348C0W3TZ3XM71ZRM",
+					"type": "soft",
+					"rationale": "Das Stellenwertverständnis unterstützt diesen Schritt."
+				}
+			],
+			"id": "01M6EQYDM4YW8W4Y14PFN2P471",
+			"atom_uri": "urn:zam:atom:01M6EQYDM4YW8W4Y14PFN2P471",
+			"slug": "gs4-subtrahieren",
+			"title": "Geschickt subtrahieren",
+			"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=geschickt-subtrahieren",
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "mathematik-grundschule-4",
+					"topic_code": "geschickt-subtrahieren",
+					"topic_title": "Geschickt subtrahieren"
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M6EQYDM4ZZTSR4EC1Y8T8PB1",
+					"slug": "gs4-subtrahieren-1",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"question": "Wie prüfst du eine Subtraktion durch Addieren?",
+					"concept": "Differenz + abgezogene Zahl = Startzahl.",
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=geschickt-subtrahieren",
+					"materiality": "material",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Differenz + abgezogene Zahl = Startzahl.",
+							"Differenz + Startzahl = abgezogene Zahl."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M6EQYDM4C4KV2QGRWWVB4KXZ",
+					"slug": "gs4-subtrahieren-2",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"question": "Du ersetzt beim Subtrahieren − 4 900 durch − 5 000. Wie gleichst du aus?",
+					"concept": "Du gibst anschließend 100 wieder dazu.",
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=geschickt-subtrahieren",
+					"materiality": "material",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Du gibst anschließend 100 wieder dazu.",
+							"Du ziehst anschließend weitere 100 ab."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M6EQYDM4JRHN5PPXQQSQT9MR",
+					"slug": "gs4-subtrahieren-3",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Berechne 63 200 − 5 800 mit einer Hilfsaufgabe und prüfe dein Ergebnis.",
+					"concept": "57 400.",
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=geschickt-subtrahieren",
+					"materiality": "material",
+					"sample_solution": "63 200 − 6 000 = 57 200. Es wurden 200 zu viel weggenommen: 57 200 + 200 = 57 400. Probe: 57 400 + 5 800 = 63 200."
+				}
+			]
+		},
+		{
+			"namespace": "zam-academy-mathematik-grundschule-4",
+			"domain": "mathematik/zahlenwald",
+			"reduction": "axiomatic",
+			"typical_age_min": 8,
+			"prerequisites": [
+				{
+					"atom_id": "01M687PEW348C0W3TZ3XM71ZRM",
+					"type": "soft",
+					"rationale": "Das Stellenwertverständnis unterstützt diesen Schritt."
+				}
+			],
+			"id": "01M6EQYDM45HP78N17YA5KGEWJ",
+			"atom_uri": "urn:zam:atom:01M6EQYDM45HP78N17YA5KGEWJ",
+			"slug": "gs4-malnehmen-teilen",
+			"title": "Malnehmen und teilen",
+			"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=malnehmen-teilen",
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "mathematik-grundschule-4",
+					"topic_code": "malnehmen-teilen",
+					"topic_title": "Malnehmen und teilen"
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M6EQYDM4QSK1115R2EX109KT",
+					"slug": "gs4-malnehmen-teilen-1",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"question": "Welche Rechnung beschreibt 6 gleich große Gruppen mit je 4 Dingen?",
+					"concept": "6·4 = 24.",
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=malnehmen-teilen",
+					"materiality": "material",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": ["6·4 = 24.", "6 + 4 = 10."],
+						"correct_index": 0
+					},
+					"concept_segments": [
+						{
+							"type": "math",
+							"tex": "6 \\cdot 4 = 24",
+							"speech": "sechs mal vier ist vierundzwanzig"
+						},
+						{
+							"type": "text",
+							"text": "."
+						}
+					]
+				},
+				{
+					"id": "01M6EQYDM4HK9CMQE75CMWX4K2",
+					"slug": "gs4-malnehmen-teilen-2",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"question": "Welche Malaufgabe prüft 42 : 7 = 6?",
+					"concept": "7·6 = 42.",
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=malnehmen-teilen",
+					"materiality": "material",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": ["7·6 = 42.", "7 + 6 = 13."],
+						"correct_index": 0
+					},
+					"concept_segments": [
+						{
+							"type": "math",
+							"tex": "7 \\cdot 6 = 42",
+							"speech": "sieben mal sechs ist zweiundvierzig"
+						},
+						{
+							"type": "text",
+							"text": "."
+						}
+					]
+				},
+				{
+					"id": "01M6EQYDM4AQZFDK9CBACV26SS",
+					"slug": "gs4-malnehmen-teilen-3",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "7 Körbe enthalten zusammen 2 100 Samen. Wie viele Samen sind in jedem Korb? Erkläre mit dem kleinen Einmaleins.",
+					"concept": "300 Samen je Korb.",
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=malnehmen-teilen",
+					"materiality": "material",
+					"sample_solution": "7 · 3 = 21. Mit Hunderterbündeln gilt 7 · 300 = 2 100. Deshalb ist 2 100 : 7 = 300. Die Malaufgabe ist zugleich die Probe."
 				}
 			]
 		}
