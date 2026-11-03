@@ -1,20 +1,22 @@
-import { algorithmBoard } from "./algorithm-board";
-import { algorithmModel, ALGORITHM_EXAMPLES } from "./written-algorithms";
-import { subtractionBoard } from "./subtraction-board";
-import { subtractionColumns } from "./written-subtraction";
-import { columnBoard } from "./column-board";
-import { additionColumns } from "./written-addition";
 import { format } from "../math/place-value";
 import { random } from "../practice/tasks";
+import { algorithmBoard } from "./algorithm-board";
 import type { ForestLesson } from "./catalog";
+import { columnBoard } from "./column-board";
+import { combinationBoard } from "./combination-board";
+import { investigationBoard } from "./investigation-board";
 import {
 	activeForestTask,
+	type ForestProgress,
 	forestKey,
 	forestRecallEligible,
 	independentForest,
-	type ForestProgress,
 } from "./progress";
+import { subtractionBoard } from "./subtraction-board";
 import type { ForestTask } from "./tasks";
+import { additionColumns } from "./written-addition";
+import { ALGORITHM_EXAMPLES, algorithmModel } from "./written-algorithms";
+import { subtractionColumns } from "./written-subtraction";
 export const escapeHtml = (text: string): string =>
 	text.replace(
 		/[&<>"']/g,
@@ -96,10 +98,12 @@ export function forestTaskView(
 		task.kind === "split" ||
 		task.kind === "hops" ||
 		task.kind === "groups";
-	const input =
-		task.kind === "columns" ||
-		task.kind === "subtraction" ||
-		task.kind === "algorithm"
+	const input = task.combination
+		? ""
+		: task.kind === "columns" ||
+				task.kind === "subtraction" ||
+				task.kind === "algorithm" ||
+				task.kind === "investigation"
 			? '<button class="primary" data-action="forest-check">Meine Rechnung prüfen</button>'
 			: task.kind === "choice"
 				? `<div class="answer-options">${choices(
@@ -111,12 +115,14 @@ export function forestTaskView(
 								`<button data-action="forest-choice" data-value="${c.value}">${escapeHtml(c.label)}</button>`,
 						)
 						.join("")}</div>`
-				: task.kind === "order" || task.kind === "parts"
-					? `<div class="number-chips" role="group" aria-label="${task.kind === "order" ? "Zahlen in Reihenfolge auswählen" : "Passende Zahlenteile auswählen"}">${task.numbers?.map((n) => `<button data-action="forest-select" data-value="${n}" aria-pressed="${p.selection.includes(n)}" >${format(n)}</button>`).join("")}</div><p class="selection-readout" aria-live="polite">${p.selection.length ? `Deine Auswahl: ${p.selection.map(format).join(task.kind === "order" ? " → " : " + ")}` : "Wähle die Zahlen durch Antippen."}</p><button data-action="forest-back">Letzte Auswahl zurücknehmen</button><button data-action="forest-clear">Auswahl leeren</button><button class="primary" data-action="forest-check">Meine Auswahl prüfen</button>`
+				: task.kind === "order" ||
+						task.kind === "parts" ||
+						task.kind === "divisors"
+					? `<div class="number-chips" role="group" aria-label="${task.kind === "order" ? "Zahlen in Reihenfolge auswählen" : task.kind === "divisors" ? "Teiler auswählen" : "Passende Zahlenteile auswählen"}">${task.numbers?.map((n) => `<button data-action="forest-select" data-value="${n}" aria-pressed="${p.selection.includes(n)}" >${format(n)}</button>`).join("")}</div><p class="selection-readout" aria-live="polite">${p.selection.length ? `Deine Auswahl: ${p.selection.map(format).join(task.kind === "order" ? " → " : task.kind === "divisors" ? ", " : " + ")}` : "Wähle die Zahlen durch Antippen."}</p><button data-action="forest-back">Letzte Auswahl zurücknehmen</button><button data-action="forest-clear">Auswahl leeren</button><button class="primary" data-action="forest-check">Meine Auswahl prüfen</button>`
 					: controls
 						? `<div class="path-controls"><button data-action="forest-left" aria-label="${task.hops ? "Einen Sprung zurücknehmen" : task.groups ? "Einen Korb zurücknehmen" : "Einen Schritt nach links"}" ${p.position === 0 ? "disabled" : ""}>${task.hops || task.groups ? "−" : "←"}</button><label for="forest-position">${task.kind === "line" ? "Milos Standort" : task.kind === "hops" ? "Anzahl der Sprünge" : task.kind === "groups" ? "Anzahl der Körbe" : "Aufteilung der Truhen"}<input type="range" id="forest-position" data-action="forest-position" min="0" max="10" step="1" value="${p.position}"></label><button data-action="forest-right" aria-label="${task.hops ? "Einen Sprung hinzufügen" : task.groups ? "Einen Korb hinzufügen" : "Einen Schritt nach rechts"}" ${p.position === 10 ? "disabled" : ""}>${task.hops || task.groups ? "+" : "→"}</button></div><button class="primary" data-action="forest-check">Meine Darstellung prüfen</button>`
 						: `<div class="numeric-answer"><label for="forest-answer">Meine Antwort<input id="forest-answer" inputmode="numeric" autocomplete="off" spellcheck="false" value="${escapeHtml(draft)}" placeholder="Zahl eingeben"></label><button class="primary" data-action="forest-check">Meine Idee prüfen</button></div>`;
-	return `<span class="mission-label">${p.recall ? "Später erinnern · neue Aufgaben" : p.optional ? `Noch eine Runde · Stufe ${p.optional}` : p.stage === "lab" ? `Entdeckerwerkstatt · Ziel ${p.index + 1} von 3` : p.stage === "practice-1" || p.stage === "practice-2" ? `Stufe ${p.stage === "practice-1" ? 1 : 2} · ${p.solved[p.stage === "practice-1" ? 1 : 2]} von 3 Aufgaben gelöst` : p.stage === "quiz" ? "Ein kurzer Denkcheck" : `Neue Aufgabe · ${p.index + 1} von 3`}</span><h2 id="lesson-heading" tabindex="-1">${escapeHtml(task.prompt)}</h2><div id="forest-graphic">${task.algorithm ? algorithmBoard(task.algorithm, p.algorithmWork ?? [], solved) : task.subtraction ? subtractionBoard(task.subtraction, p.subtractionWork, solved) : task.kind === "columns" && task.columns ? columnBoard(task.columns, p.columnWork, solved) : forestGraphic(task, p.position)}</div>${solved ? `<div class="feedback success" role="status">${assisted ? "Mit Hilfe geschafft. " : "Richtig! "}${escapeHtml(task.explanation)}</div><button class="primary" data-action="forest-next">${p.optional ? "Noch eine Aufgabe" : "Weiter"}</button>` : `${input}<div class="help-row"><button class="text-button" data-action="forest-hint">Ein kleiner Tipp</button>${assisted || wrong >= 2 ? '<button class="text-button" data-action="forest-solution">Lösung gemeinsam ansehen</button>' : ""}</div>${feedback ? `<p class="feedback" role="status">${escapeHtml(feedback)}</p>` : ""}${assisted && feedback === task.explanation ? '<button class="primary" data-action="forest-worked">Mit Hilfe weiter</button>' : ""}`}${p.optional ? '<button class="text-button" data-action="forest-stop">Übungsrunde beenden</button>' : ""}`;
+	return `<span class="mission-label">${p.recall ? "Später erinnern · neue Aufgaben" : p.optional ? `Noch eine Runde · Stufe ${p.optional}` : p.stage === "lab" ? `Entdeckerwerkstatt · Ziel ${p.index + 1} von 3` : p.stage === "practice-1" || p.stage === "practice-2" ? `Stufe ${p.stage === "practice-1" ? 1 : 2} · ${p.solved[p.stage === "practice-1" ? 1 : 2]} von 3 Aufgaben gelöst` : p.stage === "quiz" ? "Ein kurzer Denkcheck" : `Neue Aufgabe · ${p.index + 1} von 3`}</span><h2 id="lesson-heading" tabindex="-1">${escapeHtml(task.prompt)}</h2><div id="forest-graphic">${task.combination ? combinationBoard(task.combination, p.combinationChoice ?? null, p.selection, solved) : task.investigation ? investigationBoard(task.investigation, p.investigationWork ?? [], solved) : task.algorithm ? algorithmBoard(task.algorithm, p.algorithmWork ?? [], solved) : task.subtraction ? subtractionBoard(task.subtraction, p.subtractionWork, solved) : task.kind === "columns" && task.columns ? columnBoard(task.columns, p.columnWork, solved) : forestGraphic(task, p.position)}</div>${solved ? `<div class="feedback success" role="status">${assisted ? "Mit Hilfe geschafft. " : "Richtig! "}${escapeHtml(task.explanation)}</div><button class="primary" data-action="forest-next">${p.optional ? "Noch eine Aufgabe" : "Weiter"}</button>` : `${input}<div class="help-row"><button class="text-button" data-action="forest-hint">Ein kleiner Tipp</button>${assisted || wrong >= 2 ? '<button class="text-button" data-action="forest-solution">Lösung gemeinsam ansehen</button>' : ""}</div>${feedback ? `<p class="feedback" role="status">${escapeHtml(feedback)}</p>` : ""}${assisted && feedback === task.explanation ? '<button class="primary" data-action="forest-worked">Mit Hilfe weiter</button>' : ""}`}${p.optional ? '<button class="text-button" data-action="forest-stop">Übungsrunde beenden</button>' : ""}`;
 }
 export function forestExplanation(def: ForestLesson): string {
 	const algorithm =

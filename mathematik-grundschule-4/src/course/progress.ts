@@ -1,25 +1,31 @@
-import { isWrittenAlgorithm, validAlgorithmWork } from "./written-algorithms";
-import {
-	bundleValue,
-	validSubtractionWork,
-	type SubtractionWork,
-} from "./written-subtraction";
-import { emptyColumnWork } from "./written-addition";
 import { ulid } from "../id";
 import {
 	EXTRA_LESSON_IDS,
-	forestLesson,
 	type ExtraLessonId,
 	type ForestLesson,
+	forestLesson,
 } from "./catalog";
 import {
+	combinationIdentity,
+	combinationTuple,
+	validCombinationChoice,
+} from "./combinations";
+import { isInvestigation, validInvestigationWork } from "./investigations";
+import {
+	type Answer,
+	correctForest,
+	type ForestTask,
 	forestExit,
 	forestLab,
 	forestTask,
-	type ForestTask,
-	type Answer,
-	correctForest,
 } from "./tasks";
+import { emptyColumnWork } from "./written-addition";
+import { isWrittenAlgorithm, validAlgorithmWork } from "./written-algorithms";
+import {
+	bundleValue,
+	type SubtractionWork,
+	validSubtractionWork,
+} from "./written-subtraction";
 export const FOREST_STAGES = [
 	"welcome",
 	"learn",
@@ -57,6 +63,8 @@ export interface ForestProgress {
 	columnWork?: string[];
 	subtractionWork?: SubtractionWork | null;
 	algorithmWork?: string[] | null;
+	investigationWork?: string[] | null;
+	combinationChoice?: number[] | null;
 	labGoals: number[];
 	quiz: boolean;
 	solved: { 1: number; 2: number };
@@ -88,6 +96,10 @@ export function freshForest(
 			: {}),
 		...(lesson === "schriftlich-subtrahieren" ? { subtractionWork: null } : {}),
 		...(isWrittenAlgorithm(lesson) ? { algorithmWork: null } : {}),
+		...(isInvestigation(lesson) ? { investigationWork: null } : {}),
+		...(lesson === "systematisch-kombinieren"
+			? { combinationChoice: null }
+			: {}),
 		labGoals: [],
 		quiz: false,
 		solved: { 1: 0, 2: 0 },
@@ -123,7 +135,10 @@ export function validForest(raw: unknown): raw is ForestProgress {
 		!FOREST_STAGES.includes(raw.stage as ForestStage) ||
 		!integer(raw.index, 1000000) ||
 		!integer(raw.position, 10) ||
-		!array(raw.selection, 10) ||
+		!array(
+			raw.selection,
+			raw.lesson === "systematisch-kombinieren" ? 36 : 10,
+		) ||
 		new Set(raw.selection).size !== raw.selection.length ||
 		!array(raw.labGoals, 3) ||
 		raw.labGoals.some((n) => n > 2) ||
@@ -241,6 +256,29 @@ export function validForest(raw: unknown): raw is ForestProgress {
 		)
 			return false;
 	}
+	if (isInvestigation(String(raw.lesson)) && raw.investigationWork !== null) {
+		const task = activeForestTask(raw as unknown as ForestProgress);
+		if (
+			!task?.investigation ||
+			!validInvestigationWork(raw.investigationWork, task.investigation)
+		)
+			return false;
+	}
+	if (raw.lesson === "systematisch-kombinieren") {
+		const task = activeForestTask(raw as unknown as ForestProgress);
+		if (
+			raw.combinationChoice !== null &&
+			(!task?.combination ||
+				!validCombinationChoice(raw.combinationChoice, task.combination))
+		)
+			return false;
+		const model = task?.combination;
+		if (
+			raw.selection.length &&
+			(!model || raw.selection.some((n) => !combinationTuple(model, n)))
+		)
+			return false;
+	}
 	if (raw.lesson === "schriftlich-subtrahieren" && raw.subtractionWork) {
 		const task = activeForestTask(raw as unknown as ForestProgress);
 		if (
@@ -327,20 +365,26 @@ export function recordForest(
 	if (answer === null) return false;
 	const key = forestKey(p),
 		signature = JSON.stringify(
-			task.calculation
-				? calculationFamily(task.calculation)
-				: [
-						task.kind,
-						task.prompt,
-						task.kind === "order" || task.kind === "parts"
-							? [...(task.numbers ?? [])].sort((a, b) => a - b)
-							: task.numbers,
-						task.line,
-						task.whole,
-						task.choices
-							? [...task.choices].sort((a, b) => a.value - b.value)
-							: undefined,
-					],
+			task.combination
+				? ["combinations", combinationIdentity(task.combination)]
+				: task.divisorTotal
+					? ["divisors-1-to-10", task.divisorTotal]
+					: task.investigation
+						? ["investigation", ...task.investigation.identity]
+						: task.calculation
+							? calculationFamily(task.calculation)
+							: [
+									task.kind,
+									task.prompt,
+									task.kind === "order" || task.kind === "parts"
+										? [...(task.numbers ?? [])].sort((a, b) => a - b)
+										: task.numbers,
+									task.line,
+									task.whole,
+									task.choices
+										? [...task.choices].sort((a, b) => a.value - b.value)
+										: undefined,
+								],
 		);
 	const first = !p.attempts.some(
 		(a) => a.key === key || a.signature === signature,
@@ -360,7 +404,9 @@ export function recordForest(
 				? "exit"
 				: "guided",
 		signature,
-		prompt: task.prompt,
+		prompt: task.combination
+			? `${task.prompt} Auswahlreihen: ${task.combination.axes.map((a) => `${a.label}: ${a.options.join(", ")}`).join("; ")}.`
+			: task.prompt,
 		explanation: task.explanation,
 	});
 	p.attempts = p.attempts.slice(-2000);
@@ -379,6 +425,8 @@ export function advanceForest(p: ForestProgress, now = Date.now()): boolean {
 	if (p.lesson === "schriftlich-addieren") p.columnWork = emptyColumnWork();
 	if (p.lesson === "schriftlich-subtrahieren") p.subtractionWork = null;
 	if (isWrittenAlgorithm(p.lesson)) p.algorithmWork = null;
+	if (isInvestigation(p.lesson)) p.investigationWork = null;
+	if (p.lesson === "systematisch-kombinieren") p.combinationChoice = null;
 	if (p.recall) {
 		if (p.recall.index === 2) p.recall = null;
 		else p.recall.index++;
@@ -430,6 +478,8 @@ export function startForestPractice(
 	if (p.lesson === "schriftlich-addieren") p.columnWork = emptyColumnWork();
 	if (p.lesson === "schriftlich-subtrahieren") p.subtractionWork = null;
 	if (isWrittenAlgorithm(p.lesson)) p.algorithmWork = null;
+	if (isInvestigation(p.lesson)) p.investigationWork = null;
+	if (p.lesson === "systematisch-kombinieren") p.combinationChoice = null;
 }
 export function forestRecallEligible(
 	p: ForestProgress,

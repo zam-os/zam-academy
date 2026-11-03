@@ -128,6 +128,31 @@ acceptance, broader fluency and annual coverage remain open. The request
 authorises committing/pushing the feature branch and creating the PR;
 publication and a merge are not part of this continuation.
 
+### Merge and two further lessons — 2026-11-03
+
+Thomas requested merging PR #76 and continuing with the next two lessons.
+PR #76 merged at `3577a07` after green CI, resolved review threads and the
+independent review. GitHub required formal approval; the explicitly requested
+merge used the admin option at the exact reviewed head. The next increment
+adds `muster-zahlbeziehungen` (N11) and `sachaufgaben-mehrschrittig` (N12),
+bringing the local draft to thirteen selectable lessons. Systematic
+combinations (N13) remain next in the original inventory. The existing
+further-lesson exception applies; no Phase-1/2/3 acceptance checkbox closes.
+The cell remains local-only; teacher approval and recordings remain pending.
+
+### Further Number Forest lessons — 2026-11-03
+
+Thomas requested continuing immediately with further lessons. This batch
+adds N13, `systematisch-kombinieren`, and `teiler-vielfache`, which addresses
+the relationship gap in coverage row 1.1-01. The second lesson refines the
+initial inventory (N14), within the existing Number Forest expansion
+exception. It does not start Measure Market or close Phase 1/2/3. The local
+draft reaches fifteen actual lessons because earlier inventory positions
+were also split. Number words, estimation, broader open explanations,
+physical activities, teacher review and recordings remain open. Further
+work reuses the current feature branch; publication and a new PR are not
+inferred from this continuation.
+
 ## Outcome and scope
 
 Build `mathematik-grundschule-4/` in `zam-os/zam-academy`, with its one
@@ -384,7 +409,7 @@ not coverage for unrelated lessons. Existing external videos are usable
 only after exact-link/content/age review and recorded distribution choice;
 original clips are required where the reviewed material has a gap.
 
-**Exit:** thirteen Number Forest lessons reviewed end to end; Number Forest
+**Exit:** all Number Forest lessons in the refined inventory reviewed end to end; Number Forest
 competence rows have evidence or explicitly documented remaining gaps;
 full-subject curriculum bindings still withheld. Expand Milo's environment
 through mathematical achievements using the existing reward contract.

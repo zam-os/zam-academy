@@ -1,25 +1,37 @@
-import { algorithmModel } from "../src/course/written-algorithms";
-import {
-	subtractionColumns,
-	freshSubtractionWork,
-	bundleValue,
-} from "../src/course/written-subtraction";
-import {
-	DATABASE,
-	STORAGE_VERSION,
-	ProgressStore,
-	DocumentStore,
-} from "../src/storage/progress";
-import { fresh, grant } from "../src/practice/evidence";
-import { ulid } from "../src/id";
 import { FOREST_LESSONS } from "../src/course/catalog";
-import { ForestSession } from "../src/course/session";
+import {
+	allowedCombination,
+	combinationCode,
+	combinationTuple,
+	combinationTuples,
+} from "../src/course/combinations";
+import { INVESTIGATION_IDS } from "../src/course/investigations";
 import {
 	activeForestTask,
-	independentForest,
 	freshForest,
+	independentForest,
 	validForest,
 } from "../src/course/progress";
+import { ForestSession } from "../src/course/session";
+import { algorithmModel } from "../src/course/written-algorithms";
+import {
+	bundleValue,
+	freshSubtractionWork,
+	subtractionColumns,
+} from "../src/course/written-subtraction";
+import { ulid } from "../src/id";
+import { fresh, grant } from "../src/practice/evidence";
+import {
+	DATABASE,
+	DocumentStore,
+	ProgressStore,
+	STORAGE_VERSION,
+} from "../src/storage/progress";
+
+const required = <T>(value: T | null | undefined): T => {
+	if (value == null) throw new Error("Expected test value");
+	return value;
+};
 
 const output = document.querySelector<HTMLPreElement>("#results");
 if (!output) throw new Error("Test output missing");
@@ -44,6 +56,10 @@ run.addEventListener("click", async (event) => {
 		`${name}-subtraction`,
 		`${name}-multiply`,
 		`${name}-divide`,
+		`${name}-muster-zahlbeziehungen`,
+		`${name}-sachaufgaben-mehrschrittig`,
+		`${name}-teiler-vielfache`,
+		`${name}-combinations`,
 	];
 	try {
 		const a = new ProgressStore(name);
@@ -843,6 +859,7 @@ run.addEventListener("click", async (event) => {
 		stores.push(numericSession.store);
 		await numericSession.open();
 		await numericSession.store.update((p) => {
+			p.seed = 12345;
 			p.stage = "exit";
 			p.index = 0;
 			p.labGoals = [0, 1, 2];
@@ -867,7 +884,14 @@ run.addEventListener("click", async (event) => {
 			numericInput =
 				numericHost.querySelector<HTMLInputElement>("#forest-answer");
 		if (!numericTask || !numericInput) throw new Error("Numeric exit missing");
-		numericInput.value = String(numericTask.answer);
+		numericInput.value = String(numericTask.answer).replace(
+			/(\d)(?=(\d{3})+$)/g,
+			"$1.",
+		);
+		assert(
+			numericInput.value.includes("."),
+			"Numeric exit accepts German thousands grouping in an actual answer",
+		);
 		await numericCheck();
 		const numericAttempt = numericSession.store.state.attempts.at(-1);
 		assert(
@@ -875,6 +899,410 @@ run.addEventListener("click", async (event) => {
 			"A correct numeric answer after validation remains independent",
 		);
 		numericHost.remove();
+		for (const id of INVESTIGATION_IDS) {
+			const lesson = FOREST_LESSONS.find((l) => l.id === id);
+			if (!lesson) throw new Error("Investigation lesson missing");
+			const host = document.createElement("section");
+			document.body.append(host);
+			const session = new ForestSession(
+				lesson,
+				() => {
+					host.innerHTML = session.lessonView();
+					session.bind(host);
+				},
+				`${name}-${id}`,
+			);
+			stores.push(session.store);
+			await session.open();
+			await session.store.update((p) => {
+				p.stage = "lab";
+			});
+			const act = async (action: string) => {
+				const button = host.querySelector<HTMLButtonElement>(
+					`[data-action="${action}"]`,
+				);
+				if (!button) throw new Error(`Missing ${action}`);
+				await session.act(button, host);
+			};
+			const edit = (i: number, value: string) => {
+				const candidates = [
+					...host.querySelectorAll<HTMLInputElement>(
+						`[data-action="forest-investigation"][data-col="${i}"]`,
+					),
+				];
+				const input = candidates.find(
+					(c) => c.type !== "radio" || c.value === value,
+				);
+				if (!input) throw new Error("Investigation input missing");
+				if (input.type === "radio") input.checked = true;
+				else input.value = value;
+				input.focus();
+				input.dispatchEvent(new Event("input", { bubbles: true }));
+				return input;
+			};
+			await act("forest-check");
+			assert(
+				session.store.state.attempts.length === 0,
+				`${id}: empty worksheet is validation, with no attempt`,
+			);
+			const task = required(activeForestTask(session.store.state));
+			const fields = required(task.investigation).fields;
+			const numeric = fields.findIndex((f) => !f.choices);
+			let changed = 0;
+			let committed = () => {};
+			const saved = new Promise<void>((resolve) => {
+				committed = resolve;
+			});
+			const beforeChange = session.store.onChange;
+			session.store.onChange = () => {
+				beforeChange?.();
+				if (++changed === 3) committed();
+			};
+			const first = edit(numeric, String(fields[numeric].value));
+			edit(numeric, String(fields[numeric].value + 1));
+			host.innerHTML = session.lessonView();
+			session.bind(host);
+			assert(
+				host.querySelector<HTMLInputElement>(`#investigation-${numeric}`)
+					?.value === String(fields[numeric].value + 1),
+				`${id}: pending latest edit survives an unrelated redraw`,
+			);
+			const focus = edit(numeric, String(fields[numeric].value));
+			await saved;
+			session.store.onChange = beforeChange;
+			await new Promise<void>((resolve) => setTimeout(resolve, 0));
+			assert(
+				document.activeElement === focus &&
+					focus.isConnected &&
+					!first.isConnected,
+				`${id}: successful save keeps the latest input node and focus`,
+			);
+			const again = new DocumentStore(
+				`${name}-${id}`,
+				() => freshForest(id),
+				validForest,
+			);
+			stores.push(again);
+			await again.open();
+			assert(
+				again.state.investigationWork?.[numeric] ===
+					String(fields[numeric].value),
+				`${id}: numeric work resumes in another store instance`,
+			);
+			edit(numeric, "1.5");
+			await act("forest-check");
+			assert(
+				session.store.state.attempts.length === 0 &&
+					session.store.state.investigationWork?.[numeric] ===
+						String(fields[numeric].value),
+				`${id}: malformed text is not persisted or counted`,
+			);
+			fields.forEach((f, i) => {
+				edit(i, String(f.value));
+			});
+			if (id === "muster-zahlbeziehungen") {
+				edit(
+					numeric,
+					String(fields[numeric].value).replace(/(\d)(?=(\d{3})+$)/g, "$1."),
+				);
+				await session.store.update(() => {});
+				const grouped = new DocumentStore(
+					`${name}-${id}`,
+					() => freshForest(id),
+					validForest,
+				);
+				stores.push(grouped);
+				await grouped.open();
+				assert(
+					grouped.mode === "persistent" &&
+						grouped.state.investigationWork?.[numeric] === "2.000",
+					"Worksheet dot-grouped input saves and resumes without recovery",
+				);
+			}
+
+			const choice = fields.findIndex((f) => f.choices);
+			edit(choice, "2");
+			await session.store.update(() => {});
+			await act("forest-check");
+			assert(
+				session.store.state.attempts.at(-1)?.outcome === false &&
+					session.feedback.includes(fields[choice].label),
+				`${id}: wrong reasoning receives feedback about that field`,
+			);
+			edit(choice, "1");
+			await session.store.update(() => {});
+			await act("forest-check");
+			assert(
+				session.store.state.attempts.at(-1)?.outcome === true &&
+					session.store.state.attempts.at(-1)?.helped === true,
+				`${id}: corrected worksheet remains assisted`,
+			);
+			await act("forest-next");
+			assert(
+				session.store.state.investigationWork === null,
+				`${id}: moving to another task clears work`,
+			);
+			await act("forest-hint");
+			await act("forest-solution");
+			await act("forest-worked");
+			assert(
+				session.store.state.attempts.at(-1)?.helped === true &&
+					session.store.state.investigationWork?.every((v) => v !== ""),
+				`${id}: worked continuation fills the solved board and records help`,
+			);
+			await act("forest-next");
+			if (id === "teiler-vielfache") {
+				const one = host.querySelector<HTMLButtonElement>(
+						'[data-action="forest-select"][data-value="1"]',
+					),
+					two = host.querySelector<HTMLButtonElement>(
+						'[data-action="forest-select"][data-value="2"]',
+					);
+				if (!one || !two) throw new Error("Divisor selection missing");
+				await Promise.all([session.act(one, host), session.act(two, host)]);
+				assert(
+					session.store.state.selection.join() === "1,2",
+					"Divisors: rapid different selections preserve both taps",
+				);
+				await Promise.all([session.act(one, host), session.act(one, host)]);
+				assert(
+					session.store.state.selection.join() === "2,1",
+					"Divisors: two rapid toggles are both applied",
+				);
+				await act("forest-clear");
+			}
+			// Finish the actual public session journey, including both levels and exits.
+			for (
+				let step = 0;
+				step < 40 && session.store.state.stage !== "finished";
+				step++
+			) {
+				const current = activeForestTask(session.store.state);
+				if (current?.investigation) {
+					current.investigation.fields.forEach((f, i) => {
+						edit(i, String(f.value));
+					});
+					await session.store.update(() => {});
+					await act("forest-check");
+				} else if (current?.kind === "divisors") {
+					for (const n of current.answer as number[]) {
+						const button = host.querySelector<HTMLButtonElement>(
+							`[data-action="forest-select"][data-value="${n}"]`,
+						);
+						if (!button) throw new Error("Divisor choice missing");
+						await session.act(button, host);
+					}
+					await act("forest-check");
+				} else if (current?.kind === "choice") {
+					const button = host.querySelector<HTMLButtonElement>(
+						`[data-action="forest-choice"][data-value="${current.answer}"]`,
+					);
+					if (!button) throw new Error("Quiz choice missing");
+					await session.act(button, host);
+				}
+				await act("forest-next");
+			}
+			assert(
+				session.store.state.stage === "finished" &&
+					session.store.state.rewards.length === 2,
+				`${id}: both full practice levels and exits finish with exactly two rewards`,
+			);
+			const optional = host.querySelector<HTMLButtonElement>(
+				'[data-action="forest-practice"][data-level="2"]',
+			);
+			if (!optional) throw new Error("Optional practice missing");
+			await session.act(optional, host);
+			const extra = required(activeForestTask(session.store.state));
+			required(extra.investigation).fields.forEach((f, i) => {
+				edit(i, String(f.value));
+			});
+			await session.store.update(() => {});
+			await act("forest-check");
+			await act("forest-next");
+			await act("forest-stop");
+			assert(
+				session.store.state.rewards.length === 2 &&
+					session.store.state.investigationWork === null,
+				`${id}: optional practice grants no extra reward and clears its worksheet`,
+			);
+			host.remove();
+		}
+		{
+			const lesson = FOREST_LESSONS.find(
+				(l) => l.id === "systematisch-kombinieren",
+			);
+			if (!lesson) throw new Error("Combination lesson missing");
+			const host = document.createElement("section");
+			document.body.append(host);
+			const session = new ForestSession(
+				lesson,
+				() => {
+					host.innerHTML = session.lessonView();
+					session.bind(host);
+				},
+				`${name}-combinations`,
+			);
+			stores.push(session.store);
+			await session.open();
+			await session.store.update((p) => {
+				p.stage = "lab";
+			});
+			const button = (action: string, extra = "") => {
+				const b = host.querySelector<HTMLButtonElement>(
+					`[data-action="${action}"]${extra}`,
+				);
+				if (!b) throw new Error(`Combination button missing: ${action}`);
+				return b;
+			};
+			const act = async (action: string, extra = "") =>
+				session.act(button(action, extra), host);
+			const addTuple = async (tuple: number[]) => {
+				for (let i = 0; i < tuple.length; i++)
+					await act(
+						"forest-combination-choice",
+						`[data-col="${i}"][data-value="${tuple[i]}"]`,
+					);
+				await act("forest-combination-add");
+			};
+			const solve = async () => {
+				const task = required(activeForestTask(session.store.state)),
+					model = required(task.combination);
+				for (const code of task.answer as number[])
+					await addTuple(required(combinationTuple(model, code)));
+				await act("forest-check");
+			};
+			await act("forest-check");
+			assert(
+				session.store.state.attempts.length === 0,
+				"Combinations: empty list is validation, not an attempt",
+			);
+			await act("forest-combination-add");
+			assert(
+				session.store.state.selection.length === 0 &&
+					session.store.state.attempts.length === 0,
+				"Combinations: an incomplete builder cannot add a row or spend an attempt",
+			);
+			const first = button(
+					"forest-combination-choice",
+					'[data-col="0"][data-value="0"]',
+				),
+				second = button(
+					"forest-combination-choice",
+					'[data-col="1"][data-value="0"]',
+				),
+				add = button("forest-combination-add");
+			await Promise.all([
+				session.act(first, host),
+				session.act(second, host),
+				session.act(add, host),
+			]);
+			assert(
+				session.store.state.selection.join() === "11" &&
+					session.store.state.combinationChoice?.join() === "0,0",
+				"Combinations: rapid choices and add are queued without losing a tap",
+			);
+			await Promise.all([
+				act("forest-combination-add"),
+				act("forest-combination-add"),
+			]);
+			assert(
+				session.store.state.selection.length === 1 &&
+					session.store.state.attempts.length === 0,
+				"Combinations: duplicate rows are suppressed without recording a wrong answer",
+			);
+			const again = new DocumentStore(
+				`${name}-combinations`,
+				() => freshForest("systematisch-kombinieren"),
+				validForest,
+			);
+			stores.push(again);
+			await again.open();
+			assert(
+				again.state.selection.join() === "11" &&
+					again.state.combinationChoice?.join() === "0,0",
+				"Combinations: list and builder choices resume in another native store",
+			);
+			await act("forest-combination-remove", '[data-value="11"]');
+			assert(
+				session.store.state.selection.length === 0 &&
+					session.store.state.combinationChoice?.join() === "0,0",
+				"Combinations: removing an entry preserves the current builder choices",
+			);
+			await solve();
+			assert(
+				session.store.state.attempts.at(-1)?.outcome === true,
+				"Combinations: a complete two-axis list passes",
+			);
+			const next = button("forest-next");
+			await Promise.all([session.act(next, host), session.act(next, host)]);
+			assert(
+				session.store.state.index === 1 &&
+					session.store.state.selection.length === 0 &&
+					session.store.state.combinationChoice === null,
+				"Combinations: duplicate next taps advance once and clear the builder",
+			);
+			await act("forest-hint");
+			await act("forest-solution");
+			await act("forest-worked");
+			const worked = required(activeForestTask(session.store.state));
+			assert(
+				session.store.state.selection.length ===
+					(worked.answer as number[]).length &&
+					session.store.state.attempts.at(-1)?.helped,
+				"Combinations: worked continuation fills the list and records assistance",
+			);
+			await act("forest-next");
+			const restricted = required(
+				required(activeForestTask(session.store.state)).combination,
+			);
+			for (const tuple of combinationTuples(restricted)) await addTuple(tuple);
+			await act("forest-check");
+			assert(
+				session.store.state.attempts.at(-1)?.outcome === false &&
+					session.feedback.includes("Einschränkung"),
+				"Combinations: a forbidden row receives restriction-specific feedback",
+			);
+			for (const tuple of combinationTuples(restricted).filter(
+				(t) => !allowedCombination(restricted, t),
+			))
+				await act(
+					"forest-combination-remove",
+					`[data-value="${combinationCode(tuple)}"]`,
+				);
+			await act("forest-check");
+			assert(
+				session.store.state.attempts.at(-1)?.outcome === true &&
+					session.store.state.attempts.at(-1)?.helped,
+				"Combinations: repaired restriction work remains assisted",
+			);
+			await act("forest-next");
+			for (
+				let step = 0;
+				step < 40 && session.store.state.stage !== "finished";
+				step++
+			) {
+				const current = activeForestTask(session.store.state);
+				if (current?.combination) await solve();
+				else if (current?.kind === "choice")
+					await act("forest-choice", `[data-value="${current.answer}"]`);
+				await act("forest-next");
+			}
+			assert(
+				session.store.state.stage === "finished" &&
+					session.store.state.rewards.length === 2,
+				"Combinations: both practice levels and three fresh exits complete with two rewards",
+			);
+			await act("forest-practice", '[data-level="2"]');
+			await addTuple([0, 0]);
+			await act("forest-stop");
+			assert(
+				session.store.state.rewards.length === 2 &&
+					session.store.state.selection.length === 0 &&
+					session.store.state.combinationChoice === null,
+				"Combinations: stopping an optional list clears work without extra rewards",
+			);
+			host.remove();
+		}
 		assert(fresh().schema === 1, "Fresh state is versioned");
 		output.textContent += "\nALL BROWSER STORAGE CHECKS PASSED";
 	} catch (error) {

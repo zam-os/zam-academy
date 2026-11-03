@@ -1,9 +1,9 @@
 {
 	"$schema": "https://zam.app/schemas/v1/kvt-tile.json",
 	"tile_id": "zam-academy:mathematik-grundschule-4",
-	"version": "2026.11.7",
+	"version": "2026.11.9",
 	"title": "Mathematik 4 Grundschule: Milos Zahlenwald",
-	"description": "Elf deutsche Entdeckerlektionen: Stellenwerte, Zahlbeziehungen, Rechenstrategien und die schriftlichen Verfahren der Addition, Subtraktion, Multiplikation mit ein- und zweistelligen Faktoren sowie Division durch 1 bis 10 mit Rest. Zahlen und Ergebnisse höchstens eine Million. Erprobungsfassung; fachliche Freigabe und Lehrervideos fehlen. Kein vollständiger Jahreskurs.",
+	"description": "Fünfzehn deutsche Entdeckerlektionen: Stellenwerte, Zahlbeziehungen, Rechenstrategien, schriftliche Grundrechenarten, arithmetische Muster, mehrschrittige Sachaufgaben, systematische Kombinationen sowie Teiler und Vielfache. Zahlen und Ergebnisse höchstens eine Million. Erprobungsfassung; fachliche Freigabe und Lehrervideos fehlen. Kein vollständiger Jahreskurs.",
 	"publisher": "ZAM Academy",
 	"sources": [
 		{
@@ -13,12 +13,17 @@
 		{
 			"uri": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik#25773",
 			"label": "LehrplanPLUS Mathematik 3/4, Teilbereich 1.1",
-			"checked": "2026-10-31"
+			"checked": "2026-11-03"
 		},
 		{
 			"uri": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik#25775",
 			"label": "LehrplanPLUS Mathematik 3/4, Teilbereich 1.2",
-			"checked": "2026-11-02"
+			"checked": "2026-11-03"
+		},
+		{
+			"uri": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik#25777",
+			"label": "LehrplanPLUS Mathematik 3/4, Teilbereich 1.3",
+			"checked": "2026-11-03"
 		}
 	],
 	"atoms": [
@@ -1268,6 +1273,386 @@
 					"question": "Milo teilt 1 259 durch 6 und erhält 208 Rest 11. Warum ist er noch nicht fertig?",
 					"concept": "Der Rest enthält noch einmal 6. Richtig sind 209 Rest 5.",
 					"sample_solution": "Ein gültiger Rest muss kleiner als 6 sein. Aus Rest 11 kann Milo noch einmal 6 verteilen: 11 − 6 = 5. Der Quotient wächst um 1 auf 209. Probe: 209 · 6 + 5 = 1 254 + 5 = 1 259. Der Rest 5 ist kleiner als 6."
+				}
+			]
+		},
+		{
+			"namespace": "zam-academy-mathematik-grundschule-4",
+			"domain": "mathematik/zahlenwald",
+			"reduction": "axiomatic",
+			"typical_age_min": 8,
+			"prerequisites": [
+				{
+					"atom_id": "01M6EQYDM417KPCFPXNCFJQKZZ",
+					"type": "soft",
+					"rationale": "Dieser Rechenweg hilft beim Untersuchen und Prüfen der Zusammenhänge."
+				},
+				{
+					"atom_id": "01M6EZ0V5SK9DYSAGJMSH7BVWS",
+					"type": "soft",
+					"rationale": "Dieser Rechenweg hilft beim Untersuchen und Prüfen der Zusammenhänge."
+				}
+			],
+			"id": "01M6FWJNJHBE2HJPSP2H7QZP4K",
+			"atom_uri": "urn:zam:atom:01M6FWJNJHBE2HJPSP2H7QZP4K",
+			"slug": "gs4-muster-zahlbeziehungen",
+			"title": "Muster und Zahlbeziehungen",
+			"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=muster-zahlbeziehungen",
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "mathematik-grundschule-4",
+					"topic_code": "muster-zahlbeziehungen",
+					"topic_title": "Muster und Zahlbeziehungen"
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M6FWJNJJADZXDEFJMAES6VM9",
+					"slug": "gs4-muster-zahlbeziehungen-1",
+					"language": "de",
+					"bloom_level": 2,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=muster-zahlbeziehungen",
+					"materiality": "material",
+					"tier": "tier1_fast",
+					"question": "Ein Summand wird um 20 größer, der andere um 20 kleiner. Wie verändert sich die Summe?",
+					"concept": "Sie bleibt gleich, weil sich die Veränderungen ausgleichen.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Sie bleibt gleich, weil sich die Veränderungen ausgleichen.",
+							"Sie wird um 40 größer, weil beide Summanden verändert werden."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M6FWJNJJQFY4GDYF4W1J2VQ9",
+					"slug": "gs4-muster-zahlbeziehungen-2",
+					"language": "de",
+					"bloom_level": 2,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=muster-zahlbeziehungen",
+					"materiality": "material",
+					"tier": "tier1_fast",
+					"question": "Wie sind bei einer ANNA-Zahl die äußeren und die inneren Ziffern angeordnet?",
+					"concept": "Die beiden äußeren Ziffern sind gleich, ebenso die beiden inneren.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Die beiden äußeren Ziffern sind gleich, ebenso die beiden inneren.",
+							"Alle vier Ziffern müssen verschieden sein."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M6FWJNJJKM5ZJ2DEDMAAHKDA",
+					"slug": "gs4-muster-zahlbeziehungen-3",
+					"language": "de",
+					"bloom_level": 3,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=muster-zahlbeziehungen",
+					"materiality": "material",
+					"tier": "tier2_synthesis",
+					"question": "Eine Folge beginnt bei 2 475. Bei jedem Schritt kommen 125 dazu. Nenne die nächsten vier Zahlen und prüfe die Übergänge.",
+					"concept": "2 600, 2 725, 2 850, 2 975.",
+					"sample_solution": "2 475 + 125 = 2 600; dann 2 725, 2 850 und 2 975. Jeder Abstand beträgt 125. Auch ein Hunderter- oder Tausenderübergang ändert die Regel nicht."
+				},
+				{
+					"id": "01M6FWJNJJMMD8P2ET1NHDX7KG",
+					"slug": "gs4-muster-zahlbeziehungen-4",
+					"language": "de",
+					"bloom_level": 3,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=muster-zahlbeziehungen",
+					"materiality": "material",
+					"tier": "tier2_synthesis",
+					"question": "Bei einer ANNA-Zahl und ihrer Tauschzahl wird jede der beiden verwendeten Ziffern um 1 erhöht. Alle Ziffern bleiben einstellig. Warum bleibt die Differenz gleich?",
+					"concept": "Beide Zahlen wachsen um 1 111. Gleich viel dazu verändert ihre Differenz nicht.",
+					"sample_solution": "Jede der vier Stellen wächst um eine Einheit ihres Stellenwerts: 1 000 + 100 + 10 + 1 = 1 111. Das gilt für die ANNA-Zahl und ihre Tauschzahl. Weil beide Zahlen um gleich viel wachsen, bleibt die Differenz gleich."
+				}
+			]
+		},
+		{
+			"namespace": "zam-academy-mathematik-grundschule-4",
+			"domain": "mathematik/zahlenwald",
+			"reduction": "axiomatic",
+			"typical_age_min": 8,
+			"prerequisites": [
+				{
+					"atom_id": "01M6EQYDM45HP78N17YA5KGEWJ",
+					"type": "soft",
+					"rationale": "Dieser Rechenweg hilft beim Untersuchen und Prüfen der Zusammenhänge."
+				},
+				{
+					"atom_id": "01M6F0EKRN13BXXSS137PPTS1Q",
+					"type": "soft",
+					"rationale": "Dieser Rechenweg hilft beim Untersuchen und Prüfen der Zusammenhänge."
+				}
+			],
+			"id": "01M6FWJNJJJV0GQ6RCZ87A41YA",
+			"atom_uri": "urn:zam:atom:01M6FWJNJJJV0GQ6RCZ87A41YA",
+			"slug": "gs4-sachaufgaben-mehrschrittig",
+			"title": "Sachaufgaben in Schritten",
+			"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=sachaufgaben-mehrschrittig",
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "mathematik-grundschule-4",
+					"topic_code": "sachaufgaben-mehrschrittig",
+					"topic_title": "Sachaufgaben in Schritten"
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M6FWJNJJPXRSHDH3MQB6KPFJ",
+					"slug": "gs4-sachaufgaben-mehrschrittig-1",
+					"language": "de",
+					"bloom_level": 2,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=sachaufgaben-mehrschrittig",
+					"materiality": "material",
+					"tier": "tier1_fast",
+					"question": "Woran entscheidest du bei einer Sachaufgabe, welche Zahlen aus dem Text du brauchst?",
+					"concept": "An der Frage und den Zusammenhängen der Geschichte.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"An der Frage und den Zusammenhängen der Geschichte.",
+							"Jede Zahl im Text muss in der Rechnung vorkommen."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M6FWJNJJ75ESN7YX5CY0SSQJ",
+					"slug": "gs4-sachaufgaben-mehrschrittig-2",
+					"language": "de",
+					"bloom_level": 2,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=sachaufgaben-mehrschrittig",
+					"materiality": "material",
+					"tier": "tier1_fast",
+					"question": "Beim Planen von Booten mit mehreren Plätzen bleibt nach den vollen Booten ein Rest von Kindern. Was bedeutet das für die Zahl der benötigten Boote?",
+					"concept": "Die übrigen Kinder brauchen zusammen ein weiteres Boot.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Die übrigen Kinder brauchen zusammen ein weiteres Boot.",
+							"Der Rest wird weggelassen; die vollen Boote reichen immer."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M6FWJNJJXSN0GAPGJV2HM0BD",
+					"slug": "gs4-sachaufgaben-mehrschrittig-3",
+					"language": "de",
+					"bloom_level": 3,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=sachaufgaben-mehrschrittig",
+					"materiality": "material",
+					"tier": "tier2_synthesis",
+					"question": "Sieben Beutel enthalten je 24 Samen. 35 Samen werden gesät. Wie viele Samen bleiben? Nenne auch dein Zwischenergebnis.",
+					"concept": "168 Samen vor dem Säen, 133 Samen danach.",
+					"sample_solution": "Zuerst den gesamten Vorrat berechnen: 7 · 24 = 168 Samen. Dann die gesäten Samen abziehen: 168 − 35 = 133 Samen. Es bleiben weniger als vorher; die 35 Samen werden nur einmal vom ganzen Vorrat abgezogen."
+				},
+				{
+					"id": "01M6FWJNJJPESJNJ98BB6PVNK1",
+					"slug": "gs4-sachaufgaben-mehrschrittig-4",
+					"language": "de",
+					"bloom_level": 3,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=sachaufgaben-mehrschrittig",
+					"materiality": "material",
+					"tier": "tier2_synthesis",
+					"question": "Milo verschenkt 27 Muscheln. Den Rest verteilt er auf fünf Kisten mit je 18 Muscheln. Wie viele hatte er am Anfang? Prüfe vorwärts.",
+					"concept": "117 Muscheln.",
+					"sample_solution": "Der Rest umfasst 5 · 18 = 90 Muscheln. Rückwärts kommen die verschenkten 27 wieder dazu: 90 + 27 = 117. Vorwärtsprobe: 117 − 27 = 90; 90 : 5 = 18 Muscheln je Kiste."
+				}
+			]
+		},
+		{
+			"namespace": "zam-academy-mathematik-grundschule-4",
+			"domain": "mathematik/zahlenwald",
+			"reduction": "axiomatic",
+			"typical_age_min": 8,
+			"id": "01M6FYQ7QE0B92JHPRXXA0XNQ7",
+			"atom_uri": "urn:zam:atom:01M6FYQ7QE0B92JHPRXXA0XNQ7",
+			"slug": "gs4-systematisch-kombinieren",
+			"title": "Systematisch kombinieren",
+			"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=systematisch-kombinieren",
+			"prerequisites": [
+				{
+					"atom_id": "01M6EQYDM45HP78N17YA5KGEWJ",
+					"type": "soft",
+					"rationale": "Dieser Zusammenhang unterstützt das systematische Untersuchen und Prüfen."
+				},
+				{
+					"atom_id": "01M6FWJNJJJV0GQ6RCZ87A41YA",
+					"type": "soft",
+					"rationale": "Dieser Zusammenhang unterstützt das systematische Untersuchen und Prüfen."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "mathematik-grundschule-4",
+					"topic_code": "systematisch-kombinieren",
+					"topic_title": "Systematisch kombinieren"
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M6FYQ7QEQ1SGR8N7BXJ8TV7Q",
+					"slug": "gs4-systematisch-kombinieren-1",
+					"language": "de",
+					"bloom_level": 2,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=systematisch-kombinieren",
+					"materiality": "material",
+					"tier": "tier1_fast",
+					"question": "Wie findest du alle Zusammenstellungen aus zwei Reihen, ohne eine zu vergessen?",
+					"concept": "Eine Auswahl der ersten Reihe festhalten und jede der zweiten Reihe dazu ausprobieren; dann die erste Auswahl wechseln.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Eine Auswahl der ersten Reihe festhalten und jede der zweiten Reihe dazu ausprobieren; dann die erste Auswahl wechseln.",
+							"Immer beide Auswahlen gleichzeitig wechseln und aufhören, sobald eine doppelt erscheint."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M6FYQ7QEBJ4AYGEYF2GKN1SQ",
+					"slug": "gs4-systematisch-kombinieren-2",
+					"language": "de",
+					"bloom_level": 2,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=systematisch-kombinieren",
+					"materiality": "material",
+					"tier": "tier1_fast",
+					"question": "Darfst du bei einer Einschränkung immer die Anzahl aller Auswahlen miteinander multiplizieren?",
+					"concept": "Nein. Prüfe zuerst die erlaubten Fälle und zähle sie systematisch.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Nein. Prüfe zuerst die erlaubten Fälle und zähle sie systematisch.",
+							"Ja. Eine Einschränkung ändert die Zahl der Möglichkeiten nie."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M6FYQ7QE8XKVWBWJC68GPFM4",
+					"slug": "gs4-systematisch-kombinieren-3",
+					"language": "de",
+					"bloom_level": 3,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=systematisch-kombinieren",
+					"materiality": "material",
+					"tier": "tier2_synthesis",
+					"question": "Drei Hemden, zwei Hosen und zwei Mützen passen beliebig zusammen. Wie viele Zusammenstellungen aus genau einem Stück jeder Art sind möglich? Begründe systematisch.",
+					"concept": "12 Zusammenstellungen.",
+					"sample_solution": "Zu jedem Hemd gehören 2 Hosen. Zu jeder dieser Möglichkeiten passen 2 Mützen. Also gibt es 4 Zusammenstellungen je Hemd und 3 · 4 = 12 insgesamt. Halte Hemd und Hose fest, wechsle erst die Mütze und gehe dann geordnet weiter."
+				},
+				{
+					"id": "01M6FYQ7QEMARTY6SSFB80FPNF",
+					"slug": "gs4-systematisch-kombinieren-4",
+					"language": "de",
+					"bloom_level": 3,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=systematisch-kombinieren",
+					"materiality": "material",
+					"tier": "tier2_synthesis",
+					"question": "Drei Wege können mit zwei Booten kombiniert werden. Nur der Waldweg ist auf ein bestimmtes Boot beschränkt; bei den beiden anderen Wegen gehen beide Boote. Wie viele erlaubte Zusammenstellungen gibt es?",
+					"concept": "5 Zusammenstellungen.",
+					"sample_solution": "Für den Waldweg gibt es 1 Möglichkeit, für jeden der anderen Wege 2. Insgesamt 1 + 2 + 2 = 5. Die Rechnung 3 · 2 würde die verbotene Zusammenstellung mitzählen."
+				}
+			]
+		},
+		{
+			"namespace": "zam-academy-mathematik-grundschule-4",
+			"domain": "mathematik/zahlenwald",
+			"reduction": "axiomatic",
+			"typical_age_min": 8,
+			"id": "01M6FYQ7QFWGC8TNMK0EVS3QW2",
+			"atom_uri": "urn:zam:atom:01M6FYQ7QFWGC8TNMK0EVS3QW2",
+			"slug": "gs4-teiler-vielfache",
+			"title": "Teiler und Vielfache",
+			"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=teiler-vielfache",
+			"prerequisites": [
+				{
+					"atom_id": "01M6EQYDM45HP78N17YA5KGEWJ",
+					"type": "soft",
+					"rationale": "Dieser Zusammenhang unterstützt das systematische Untersuchen und Prüfen."
+				},
+				{
+					"atom_id": "01M6F0EKRN13BXXSS137PPTS1Q",
+					"type": "soft",
+					"rationale": "Dieser Zusammenhang unterstützt das systematische Untersuchen und Prüfen."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "mathematik-grundschule-4",
+					"topic_code": "teiler-vielfache",
+					"topic_title": "Teiler und Vielfache"
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M6FYQ7QF7Z2CMJ1KA7Z1J390",
+					"slug": "gs4-teiler-vielfache-1",
+					"language": "de",
+					"bloom_level": 2,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=teiler-vielfache",
+					"materiality": "material",
+					"tier": "tier1_fast",
+					"question": "Wann ist eine positive ganze Zahl ein Teiler einer anderen positiven ganzen Zahl?",
+					"concept": "Wenn die Division ohne Rest aufgeht.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Wenn die Division ohne Rest aufgeht.",
+							"Wenn die Division mindestens einen Rest von 1 lässt."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M6FYQ7QF2C27G6VGPS0916CT",
+					"slug": "gs4-teiler-vielfache-2",
+					"language": "de",
+					"bloom_level": 2,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=teiler-vielfache",
+					"materiality": "material",
+					"tier": "tier1_fast",
+					"question": "Welche Beziehung gilt, wenn 4 ein Teiler von 28 ist?",
+					"concept": "28 ist ein Vielfaches von 4.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"28 ist ein Vielfaches von 4.",
+							"4 ist ein Vielfaches von 28."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M6FYQ7QFK30WHVGJ5XPQ8KNH",
+					"slug": "gs4-teiler-vielfache-3",
+					"language": "de",
+					"bloom_level": 3,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=teiler-vielfache",
+					"materiality": "material",
+					"tier": "tier2_synthesis",
+					"question": "Prüfe mit Division und Malaufgabe, ob 6 ein Teiler von 84 ist. Verwende auch das Wort Vielfaches.",
+					"concept": "6 ist ein Teiler von 84; 84 ist ein Vielfaches von 6.",
+					"sample_solution": "84 : 6 = 14 ohne Rest. Die Probe 6 · 14 = 84 bestätigt das. Daher ist 6 ein Teiler von 84 und 84 ein Vielfaches von 6."
+				},
+				{
+					"id": "01M6FYQ7QF8GY1CT0BJHQ3ENDM",
+					"slug": "gs4-teiler-vielfache-4",
+					"language": "de",
+					"bloom_level": 3,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=teiler-vielfache",
+					"materiality": "material",
+					"tier": "tier2_synthesis",
+					"question": "Welche Zahlen von 1 bis 10 sind Teiler von 48? Begründe auch, warum 5 nicht dazugehört.",
+					"concept": "1, 2, 3, 4, 6 und 8.",
+					"sample_solution": "1 · 48, 2 · 24, 3 · 16, 4 · 12, 6 · 8 und 8 · 6 ergeben jeweils 48. Die übrigen angebotenen Zahlen teilen 48 nicht ohne Rest. Zum Beispiel 48 : 5 = 9 Rest 3; deshalb gehört 5 nicht dazu. Gesucht sind nur die Teiler unter den Zahlen von 1 bis 10."
 				}
 			]
 		}

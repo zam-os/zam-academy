@@ -1,27 +1,45 @@
-import {
-	algorithmTask,
-	algorithmLab,
-	algorithmExit,
-	algorithmMistake,
-	isWrittenAlgorithm,
-	type Algorithm,
-} from "./written-algorithms";
 import { format, parseInteger } from "../math/place-value";
 import { random } from "../practice/tasks";
-import { arithmeticTask, arithmeticLab, isArithmetic } from "./arithmetic";
+import { arithmeticLab, arithmeticTask, isArithmetic } from "./arithmetic";
+import type { ExtraLessonId } from "./catalog";
 import {
-	writtenTask,
-	writtenLab,
+	type CombinationModel,
+	combinationExit,
+	combinationLab,
+	combinationMistake,
+	combinationTask,
+} from "./combinations";
+import { divisorLab, divisorTask } from "./divisors";
+import {
+	type Investigation,
+	investigationExit,
+	investigationMistake,
+	isInvestigation,
+	patternLab,
+	patternTask,
+	storyLab,
+	storyTask,
+} from "./investigations";
+import {
 	writtenExit,
+	writtenLab,
 	writtenMistake,
+	writtenTask,
 } from "./written-addition";
 import {
-	subtractionTask,
-	subtractionLab,
+	type Algorithm,
+	algorithmExit,
+	algorithmLab,
+	algorithmMistake,
+	algorithmTask,
+	isWrittenAlgorithm,
+} from "./written-algorithms";
+import {
 	subtractionExit,
+	subtractionLab,
 	subtractionMistake,
+	subtractionTask,
 } from "./written-subtraction";
-import type { ExtraLessonId } from "./catalog";
 export type Answer = number | number[];
 export type ForestTask = {
 	kind:
@@ -35,7 +53,10 @@ export type ForestTask = {
 		| "groups"
 		| "columns"
 		| "subtraction"
-		| "algorithm";
+		| "algorithm"
+		| "investigation"
+		| "combinations"
+		| "divisors";
 	goal: 1 | 2 | 3;
 	prompt: string;
 	answer: Answer;
@@ -51,6 +72,9 @@ export type ForestTask = {
 	columns?: { a: number; b: number; shown?: number };
 	subtraction?: { a: number; b: number; shown?: number };
 	algorithm?: Algorithm;
+	investigation?: Investigation;
+	combination?: CombinationModel;
+	divisorTotal?: number;
 	inverseProbe?: boolean;
 };
 const equal = (a: number[], b: number[]) =>
@@ -64,7 +88,9 @@ export function correctForest(
 ): boolean {
 	if (Array.isArray(task.answer)) {
 		if (!Array.isArray(answer)) return false;
-		return task.kind === "parts"
+		return task.kind === "parts" ||
+			task.kind === "divisors" ||
+			task.kind === "combinations"
 			? equal(
 					[...task.answer].sort((a, b) => a - b),
 					[...answer].sort((a, b) => a - b),
@@ -147,6 +173,11 @@ export function forestTask(
 	seed: number,
 	index: number,
 ): ForestTask {
+	if (id === "systematisch-kombinieren")
+		return combinationTask(level, seed, index);
+	if (id === "teiler-vielfache") return divisorTask(level, seed, index);
+	if (id === "muster-zahlbeziehungen") return patternTask(level, seed, index);
+	if (id === "sachaufgaben-mehrschrittig") return storyTask(level, seed, index);
 	if (isWrittenAlgorithm(id)) return algorithmTask(id, level, seed, index);
 	if (id === "schriftlich-subtrahieren")
 		return subtractionTask(level, seed, index);
@@ -287,6 +318,10 @@ export function forestTask(
 	};
 }
 export function forestLab(id: ExtraLessonId, goal: number): ForestTask {
+	if (id === "systematisch-kombinieren") return combinationLab(goal);
+	if (id === "teiler-vielfache") return divisorLab(goal);
+	if (id === "muster-zahlbeziehungen") return patternLab(goal);
+	if (id === "sachaufgaben-mehrschrittig") return storyLab(goal);
 	if (isWrittenAlgorithm(id)) return algorithmLab(id, goal);
 	if (id === "schriftlich-subtrahieren") return subtractionLab(goal);
 	if (id === "schriftlich-addieren") return writtenLab(goal);
@@ -325,6 +360,11 @@ export function forestLab(id: ExtraLessonId, goal: number): ForestTask {
 	};
 }
 export function forestMistake(task: ForestTask, answer: Answer | null): string {
+	if (task.combination) return combinationMistake(task.combination, answer);
+	if (task.divisorTotal)
+		return "Prüfe jede angebotene Zahl. Nur eine Division mit Rest 0 passt. Vergiss die 1 nicht; sie teilt jede positive ganze Zahl ohne Rest.";
+	if (task.investigation)
+		return investigationMistake(task.investigation, answer);
 	if (task.algorithm)
 		return algorithmMistake(task, Array.isArray(answer) ? answer : null);
 	if (task.kind === "subtraction")
@@ -332,7 +372,7 @@ export function forestMistake(task: ForestTask, answer: Answer | null): string {
 	if (task.kind === "columns")
 		return writtenMistake(task, Array.isArray(answer) ? answer : null);
 	if (answer === null)
-		return "Gib eine ganze Zahl von 0 bis 1 000 000 ein. Tausender kannst du mit Leerzeichen gliedern.";
+		return "Gib eine ganze Zahl von 0 bis 1 000 000 ein. Zum Beispiel: 1000, 1 000 oder 1.000.";
 	if (task.kind === "hops" || task.kind === "groups") return task.hint;
 	if (task.inverseProbe) return task.hint;
 	if (task.calculation && typeof answer === "number") {
@@ -380,6 +420,8 @@ export function forestExit(
 	seed: number,
 	index: number,
 ): ForestTask {
+	if (id === "systematisch-kombinieren") return combinationExit(seed, index);
+	if (isInvestigation(id)) return investigationExit(id, seed, index);
 	if (isWrittenAlgorithm(id)) return algorithmExit(id, seed, index);
 	if (id === "schriftlich-subtrahieren") return subtractionExit(seed, index);
 	if (id === "schriftlich-addieren") return writtenExit(seed, index);

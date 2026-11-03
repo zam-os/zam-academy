@@ -1,4 +1,4 @@
-# Number Forest: seven teacher recording briefs
+# Number Forest: teacher recording briefs
 
 Status: scripts for production, not recordings or teacher approval. Each
 clip should be in German, approximately 2–3 minutes (3–4 for written addition), with reviewed captions,
@@ -313,3 +313,120 @@ Include 2 036 divided by 4 for internal zeros, 2 417 divided by 8 for a
 new remainder example, and division by 10. Do not describe a remainder as
 a decimal digit to append. The original recording/media deliverables remain
 required for approval and final playback acceptance.
+
+
+## Milos Musterpfad — arithmetic patterns and number relationships
+
+**Learning focus:** state a rule before extending a sequence; examine both
+summands in a structured packet; vary ANNA digits systematically. Use tables
+matching the app, with all learner fields initially empty. Use the distinct
+teaching family below rather than revealing a lab row. Target: 3–4 minutes.
+
+**German teaching script:**
+
+- „Eine Folge hat eine Regel. Wir gehen jedes Mal um 150 zurück:
+  8 600, 8 450, 8 300, 8 150, 8 000. Prüfe jeden Abstand. Ohne eine
+  genannte Regel könnten wir auch andere Folgen erfinden.“
+- „Bei 260 + 140 ist die Summe 400. 20 dazu beim ersten und 20 weg beim
+  zweiten Summanden ergibt 280 + 120, wieder 400. Wenn dagegen beide
+  Summanden um 20 wachsen, wächst die Summe um 40.“
+- „ANNA bedeutet: außen dieselbe Ziffer, innen dieselbe Ziffer. Bei A = 8
+  und B = 6 entstehen 8 668 und die Tauschzahl 6 886. Die Differenz ist
+  1 782. Erhöhe beide Ziffern: 9 779 − 7 997 ist wieder 1 782. Beide Zahlen
+  wuchsen um 1 111. Darum bleibt die Differenz gleich.“
+- „Verändere jetzt nur A. Die größere Zahl wächst um 1 001, die kleinere
+  um 110. Die Differenz wächst um 891. Ziffern bleiben höchstens 9.
+  Prüfe deine Vermutung an einer weiteren Zeile und erkläre sie Milo.“
+
+**Teacher review:** confirm the language and progression, including the
+meaning of a rule, why checking a few cases alone does not prove every
+possible pattern, and the place-value explanation for the specified ANNA
+changes. No algebraic notation or negative numbers are introduced.
+
+## Milos Inselplan — multi-step story problems
+
+**Learning focus:** choose relevant information, name intermediate quantities,
+interpret a division remainder, work backwards and check forwards. Target:
+3–4 minutes. Show the same table and labelled steps as the app, with teaching
+numbers distinct from its labs.
+
+**German teaching script:**
+
+- „Lies zuerst die Frage. Was ist gesucht? Sammle nur die Angaben, die du
+  dafür brauchst. Jede Zahl hat eine Bedeutung; nicht jede muss in die
+  Rechnung. Fehlt etwas Nötiges, fragst du nach.“
+- „68 Kinder und 49 Kinder möchten gleichzeitig übersetzen. In jedes Boot
+  passen 8 Kinder. Zuerst zählst du alle Kinder: 68 + 49 = 117. Die 117 ist
+  dein Zwischenergebnis und die Angabe für den nächsten Schritt.“
+- „117 : 8 ergibt 14 Rest 5. Vierzehn volle Boote nehmen nur 112 Kinder mit.
+  Auch die übrigen fünf brauchen Plätze. Ein weiteres Boot reicht für
+  alle fünf. Also brauchst du mindestens fünfzehn Boote. 15 mal 8 sind
+  120 Plätze; ein Boot weniger hat zu wenig Plätze. Hier müssen wir genau
+  planen, damit niemand am Ufer bleibt.“
+- „Ist der Anfang gesucht, gehst du vom bekannten Ende rückwärts.
+  Liegen nach dem Verschenken noch sechs Kisten mit je 15 Muscheln da,
+  sind das 90. Wurden vorher 23 verschenkt, waren es am Anfang 113.
+  Probe vorwärts: 113 minus 23 ist 90, geteilt durch 6 ist 15.“
+
+**Teacher review:** validate age-appropriate contexts, counting units, the
+minimum-capacity argument (including the zero-remainder case), alternate
+valid approaches and the reverse/forward connection. Open problem posing,
+collecting missing information, free representations and systematic
+combinations remain outside this increment.
+
+
+## Milos Möglichkeitenbaum — systematic combinations
+
+**Learning focus:** construct all two-/three-choice arrangements in an
+ordered list, suppress duplicates and apply an explicit restriction. Target:
+3–4 minutes. Use the app's choice rows and child-built list. A paper table
+or tree is an additional representation, not a verified digital skill.
+Teaching labels differ from all workshop, generator and exit contexts.
+
+**German teaching script:**
+
+- „Du wählst genau ein T-Shirt und eine Hose. Halte zuerst das gestreifte
+  T-Shirt fest. Dazu probierst du die kurze, lange, karierte und einfarbige
+  Hose. Danach kommt das gepunktete T-Shirt mit jeder der vier Hosen.“
+- „Vier Möglichkeiten für das eine T-Shirt und vier für das andere:
+  2 mal 4 sind 8. Dieselben Kleidungsstücke anders herum aufzuschreiben
+  ergibt keine neue Zusammenstellung. Markiere jeden Fall genau einmal.“
+- „Kommt eine dritte Reihe dazu, hältst du die ersten beiden Auswahlen
+  fest und wechselst zuerst nur die dritte. Dann gehst du geordnet zur
+  nächsten Auswahl. Zeichne dazu Verzweigungen auf ein Blatt.“
+- „Mit einer Einschränkung passt nicht mehr alles zusammen. Darf das
+  gestreifte T-Shirt nur zur kurzen Hose, hat es eine Möglichkeit.
+  Für das gepunktete bleiben vier: zusammen fünf. Prüfe jeden Eintrag
+  und entferne unpassende Fälle aus deiner Liste.“
+
+**Teacher review:** verify age-appropriate load, completeness arguments,
+exactly-one-per-row assumptions and the distinction between arrangements
+and mere writing order. No permutations, factorials or probability rules.
+
+## Milos Bündelwege — divisors and multiples
+
+**Learning focus:** use exact division/remainder checks, extend multiples
+and test all offered candidates 1–10. Target: 3 minutes. No prime factors,
+formal divisibility tests, gcd/lcm or division by numbers above 10.
+
+**German teaching script:**
+
+- „12 Muscheln in 3 gleich gefüllten Schalen ergeben 4 je Schale, ohne
+  Rest. 3 ist ein Teiler von 12 und 12 ein Vielfaches von 3. Die passende
+  Malaufgabe lautet 3 mal 4 gleich 12. Prüfe die Richtung der Wörter.“
+- „20 Muscheln in 6er-Gruppen ergeben 3 volle Gruppen und Rest 2.
+  Deshalb ist 6 kein Teiler von 20. Probe: 3 mal 6 plus 2 gleich 20.“
+- „Vielfache entstehen durch Malnehmen. Bei 5er-Paketen gehören zum
+  sechsten bis zehnten Paket 30, 35, 40, 45 und 50. Immer kommt 5 dazu.
+  Wir beginnen mit den positiven Vielfachen, also mindestens einem
+  Paket. Bei 0 Paketen sind es 0 Samen: Auch 0 ist ein Vielfaches,
+  aber diesen Fall zählen wir in unseren Pakettabellen nicht mit.“
+- „Prüfe jede angebotene Zahl einzeln. 1 teilt jede positive ganze Zahl.
+  Die Zahl selbst ist auch ein Teiler. In der Auswahlwerkstatt suchen wir
+  nur unter den angebotenen Zahlen von 1 bis 10. Eine passende Division
+  muss Rest 0 haben.“
+
+**Teacher review:** confirm directionality and the explicit distinction
+between positive multiples used in the tasks and the separate zero case,
+quotient/remainder reasoning and the bounded candidate search. Physical
+regrouping with counters is suggested home work and remains unobserved.

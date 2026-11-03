@@ -1,5 +1,8 @@
 import { describe, expect, it } from "vitest";
-import { ProgressStore } from "../src/storage/progress";
+import cell from "../cell.json";
+import coverage from "../coverage.json";
+import media from "../media-register.json";
+import { ulid } from "../src/id";
 import {
 	digits,
 	exchange,
@@ -14,28 +17,23 @@ import {
 	independent,
 	laterEligible,
 	nextStep,
+	parentObservation,
 	recordAttempt,
 	validProgress,
 } from "../src/practice/evidence";
 import {
-	STEPS,
-	orderedOptions,
-	recallSeed,
-	taskFor,
-} from "../src/practice/tasks";
-import { validLessonHash } from "../src/zam/zam-link";
-import cell from "../cell.json";
-import coverage from "../coverage.json";
-import media from "../media-register.json";
-import { ulid } from "../src/id";
-import { board, markedNumeral } from "../src/ui/board";
-import {
-	practiceTask,
 	correctTask,
 	mistakeHint,
+	orderedOptions,
+	practiceTask,
 	REQUIRED_CORRECT,
+	recallSeed,
+	STEPS,
+	taskFor,
 } from "../src/practice/tasks";
-import { parentObservation } from "../src/practice/evidence";
+import { ProgressStore } from "../src/storage/progress";
+import { board, markedNumeral } from "../src/ui/board";
+import { validLessonHash } from "../src/zam/zam-link";
 
 type RecallItem = (typeof cell.atoms)[number]["practice_items"][number];
 
@@ -106,7 +104,14 @@ describe("place-value invariants", () => {
 	it.each([
 		"",
 		"1,5",
-		"1.000",
+		"1.00",
+		"1.000.00",
+		"1.000 000",
+		"1 000.000",
+		"0.001",
+		"1234.567",
+		"1..000",
+		"1.000.001",
 		"1e3",
 		"306abc",
 		"-1",
@@ -118,10 +123,14 @@ describe("place-value invariants", () => {
 	])("refuses ambiguous or noninteger input %s", (input) => {
 		expect(parseInteger(input)).toBeNull();
 	});
-	it("accepts only the documented spacing and grouping", () => {
+	it("accepts equivalent plain, spaced and German dot-grouped whole numbers", () => {
 		expect(parseInteger(" 306 ")).toBe(306);
 		expect(parseInteger("2 047")).toBe(2047);
 		expect(parseInteger("2\u202f047")).toBe(2047);
+		expect(parseInteger("1.000")).toBe(1000);
+		expect(parseInteger("2.047")).toBe(2047);
+		expect(parseInteger("204.070")).toBe(204070);
+		expect(parseInteger(" 1.000.000 ")).toBe(1_000_000);
 		expect(parseInteger("0")).toBe(0);
 		expect(format(2047)).toBe("2\u202f047");
 	});
@@ -258,10 +267,10 @@ describe("tasks and evidence", () => {
 });
 
 describe("content contracts", () => {
-	it("has fourteen atoms, forty-six German items, stable lesson links and no broad official grade binding", () => {
-		expect(cell.atoms).toHaveLength(14);
+	it("has eighteen atoms, sixty-two German items, stable lesson links and no broad official grade binding", () => {
+		expect(cell.atoms).toHaveLength(18);
 		const items = cell.atoms.flatMap<RecallItem>((a) => a.practice_items);
-		expect(items).toHaveLength(46);
+		expect(items).toHaveLength(62);
 		for (const atom of cell.atoms) {
 			expect(atom.curricula.every((c) => c.provider === "zam-academy")).toBe(
 				true,
@@ -274,7 +283,7 @@ describe("content contracts", () => {
 			expect(validLessonHash(new URL(item.source_link).hash)).toBe(true);
 		}
 		expect(validLessonHash("#lesson=unbekannt")).toBe(false);
-		expect(new Set(items.map((i) => i.id)).size).toBe(46);
+		expect(new Set(items.map((i) => i.id)).size).toBe(62);
 	});
 	it("uses a real minus sign in the subtraction card and its validated math segment", () => {
 		const card = cell.atoms

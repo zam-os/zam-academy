@@ -1,31 +1,31 @@
-import { describe, it, expect } from "vitest";
-import { FOREST_LESSONS, EXTRA_LESSON_IDS } from "../src/course/catalog";
-import {
-	forestTask,
-	forestLab,
-	forestExit,
-	correctForest,
-	comparisonExplanation,
-} from "../src/course/tasks";
+import { describe, expect, it } from "vitest";
+import { EXTRA_LESSON_IDS, FOREST_LESSONS } from "../src/course/catalog";
 import {
 	activeForestTask,
 	advanceForest,
 	forestKey,
-	freshForest,
-	recordForest,
-	independentForest,
-	validForest,
-	startForestPractice,
-	forestRecallEligible,
 	forestQuizTask,
+	forestRecallEligible,
+	freshForest,
+	independentForest,
+	recordForest,
+	startForestPractice,
+	validForest,
 } from "../src/course/progress";
+import {
+	comparisonExplanation,
+	correctForest,
+	forestExit,
+	forestLab,
+	forestTask,
+} from "../src/course/tasks";
 import {
 	forestGraphic,
 	forestParentView,
 	forestTeacherPanel,
 } from "../src/course/view";
-import { validLessonHash, lessonIdFromHash } from "../src/zam/zam-link";
 import { DocumentStore } from "../src/storage/progress";
+import { lessonIdFromHash, validLessonHash } from "../src/zam/zam-link";
 
 const need = <T>(value: T | null | undefined): T => {
 	if (value == null) throw new Error("Expected a generated value");
@@ -42,7 +42,7 @@ const complete = (p: ReturnType<typeof freshForest>) => {
 };
 describe("Number Forest lessons", () => {
 	it("has complete explanations and stable direct links for each lesson", () => {
-		expect(FOREST_LESSONS).toHaveLength(10);
+		expect(FOREST_LESSONS).toHaveLength(14);
 		for (const lesson of FOREST_LESSONS) {
 			expect(lesson.goals).toHaveLength(3);
 			expect(lesson.paragraphs.length).toBeGreaterThanOrEqual(4);
@@ -86,7 +86,13 @@ describe("Number Forest lessons", () => {
 				for (let i = 0; i < 160; i++) {
 					const task = forestTask(id, level, i * 7919, i % 12);
 					variants.add(
-						JSON.stringify([task.prompt, task.numbers, task.line, task.answer]),
+						JSON.stringify([
+							task.prompt,
+							task.numbers,
+							task.line,
+							task.answer,
+							task.combination,
+						]),
 					);
 					expect(correctForest(task, task.answer)).toBe(true);
 					if (task.kind === "order")
