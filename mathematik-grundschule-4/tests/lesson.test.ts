@@ -258,10 +258,10 @@ describe("tasks and evidence", () => {
 });
 
 describe("content contracts", () => {
-	it("has eleven atoms, thirty-four German items, stable lesson links and no broad official grade binding", () => {
-		expect(cell.atoms).toHaveLength(11);
+	it("has fourteen atoms, forty-six German items, stable lesson links and no broad official grade binding", () => {
+		expect(cell.atoms).toHaveLength(14);
 		const items = cell.atoms.flatMap<RecallItem>((a) => a.practice_items);
-		expect(items).toHaveLength(34);
+		expect(items).toHaveLength(46);
 		for (const atom of cell.atoms) {
 			expect(atom.curricula.every((c) => c.provider === "zam-academy")).toBe(
 				true,
@@ -274,7 +274,20 @@ describe("content contracts", () => {
 			expect(validLessonHash(new URL(item.source_link).hash)).toBe(true);
 		}
 		expect(validLessonHash("#lesson=unbekannt")).toBe(false);
-		expect(new Set(items.map((i) => i.id)).size).toBe(34);
+		expect(new Set(items.map((i) => i.id)).size).toBe(46);
+	});
+	it("uses a real minus sign in the subtraction card and its validated math segment", () => {
+		const card = cell.atoms
+			.flatMap<RecallItem>((a) => a.practice_items)
+			.find((item) => item.slug === "gs4-schriftlich-subtrahieren-3");
+		expect(card?.question).toContain("6 004 − 2 578");
+		if (!card || !("question_segments" in card))
+			throw new Error("Missing subtraction math segments");
+		expect(
+			card.question_segments?.some(
+				(segment) => segment.type === "math" && segment.tex?.includes("−"),
+			),
+		).toBe(true);
 	});
 	it("enumerates every official competence and truthfully identifies partial coverage", () => {
 		expect(coverage.rows).toHaveLength(54);

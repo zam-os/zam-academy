@@ -196,6 +196,41 @@
 			"status": "passed",
 			"checked": "2026-11-02",
 			"details": "All 27 assertions passed: focus/selection and Tab order; native resumption/concurrency/recovery; directional carry feedback; no spent attempts for incomplete columns or numeric input; correct-result/blank-carry notice; first independent corrected exit with visible zero carries left blank. Generated test stores only."
+		},
+		{
+			"surface": "Built dist/index.html over 127.0.0.1:5226; Codex in-app browser",
+			"check": "Complete written-subtraction journey, themes and responsive layout",
+			"status": "passed",
+			"checked": "2026-11-02",
+			"details": "Completed three labs (including 10 000 minus one), quiz, three tasks per level and three exits. Observed explicit value-preserving exchanges through zero columns, editable result correction, addition-probe missing addend, validation, actual Tab movement and parent evidence. Reload resumed saved work. Desktop 1280 px light and 320 px dark body bounds matched the viewport; boards scroll internally and begin on the ones side. Optional practice can stop after a digit is entered. Original learner preview was not reset; physical touch and direct-file startup remain pending."
+		},
+		{
+			"surface": "Native isolated harness at 127.0.0.1:5227/tests/browser.html",
+			"check": "Subtraction persistence, focus, evidence and optional-practice regression",
+			"status": "passed",
+			"checked": "2026-11-02",
+			"details": "All 37 native assertions passed, including earlier transaction/recovery checks, input-node/focus retention, Tab order, incomplete-input validation, correct-result/missing-regrouping notice, value preservation, saved bundle/digit resumption in a second instance, exchange reset, independent correction after notices and stopping a partly filled optional round without extra rewards. Generated test stores only."
+		},
+		{
+			"surface": "Built dist/index.html on 127.0.0.1:5226; Codex in-app browser",
+			"check": "Complete multiplication and division journeys",
+			"status": "passed",
+			"checked": "2026-11-02",
+			"details": "Completed both new lessons through their three labs, quiz, three tasks per practice level and three fresh exits. Multiplication included carries, two-digit/full-tens factors, shifted partial rows, their sum and editable correction. Division included internal quotient zeros, division by 10, nonzero remainders and editable correction. Parent examples, optional practice and reload resumption observed. Desktop light at 1280 px and phone dark at 320 px had no document overflow; each multiplication row scrolls internally. Teacher media remained visibly pending. Physical touch and direct extracted-file startup are not claimed."
+		},
+		{
+			"surface": "Isolated native harness on 127.0.0.1:5227/tests/browser.html",
+			"check": "Final arithmetic, persistence and evidence regressions",
+			"status": "passed",
+			"checked": "2026-11-02",
+			"details": "All 60 assertions passed in generated test stores. New checks cover multiplication/division save focus, rapid input/resumption, calculation-order Tab navigation, wrong-step feedback, assisted retries, validation preserving exit attempts, omitted-carry notices, independent corrected exits, unique rewards, optional-stop reset and forced pre-commit redraws for subtraction and both algorithms. Over-exchanged subtraction directs reset without spending the correct exit attempt. No learner database was used by the harness."
+		},
+		{
+			"surface": "Built dist/index.html at 127.0.0.1:5228; native isolated harness at 127.0.0.1:5227/tests/browser.html",
+			"check": "PR76 carry-feedback and example-separation regressions",
+			"status": "passed",
+			"checked": "2026-11-03",
+			"details": "66 native assertions passed, including false product/sum carry feedback, blank-zero correction retaining assisted evidence, success/worked-solution carry direction and prior persistence/reward checks. Built desktop light preview confirmed false carry 1 for 213 times 3, blank correction and explicit outgoing carries for 347 times 6. Teacher panel for lab 204 times 23 shows separate 305 times 24; full-tens transfer labels the Nullreihe. Division explanation uses 2138 divided by 7, while the first lab stays 848 divided by 4; static and invalid-input copy contain no carry instructions. Inspected 320px dark layout without document overflow. Original learner preview was not reset; physical touch remains pending."
 		}
 	],
 	"remaining": [
@@ -206,13 +241,13 @@
 		"Review prepared recall cards in the existing ZAM learner UI",
 		"Physical touch-device acceptance"
 	],
-	"checked": "2026-11-02",
+	"checked": "2026-11-03",
 	"automated_checks": {
-		"app": "Locked toolchain unchanged; npm ci --offline --no-audit --no-fund, typecheck, 77 Vitest tests and production build passed under Node 26.13.0 with NODE_OPTIONS=--no-experimental-webstorage; external Biome 2.5.6 format/lint passed",
-		"catalog": "48 node:test catalog and public-registry checks passed; generated catalog has 36 existing cells and excludes this draft",
-		"cell": "11 atoms, 34 items, version 2026.11.4; earlier 10 atoms/30 items and all atom/item identifiers preserved. One unpublished written-addition example revised after review. Disposable install/enrol/recall/reinstall passed against CI-pinned zam-core 0.54.0.",
-		"all_cells": "All 37 Academy cells in the current-main PR checkout validated against CI-pinned zam-core 0.54.0 using disposable libraries",
-		"package": "Draft ZIP built and byte/asset/launcher verification passed; strict complete gate correctly refuses missing teacher recording"
+		"app": "npm ci --offline --no-audit --no-fund, npm run typecheck, npm test (98 tests), npm run package:zip and existing external Biome format/lint passed under Node 22.22.3. No dependency changes.",
+		"catalog": "node --test scripts/build-catalog.test.mjs scripts/academy-registry.test.mjs: 48 checks passed. This local-only draft remains excluded.",
+		"cell": "14 atoms, 46 items, version 2026.11.7. All 60 atom/item identities preserved; only the new subtraction card typography changes. Original 11 atoms/34 items remain unchanged as parsed JSON. Disposable install/enrol/recall/reinstall and all 37 cells passed against CI-pinned zam-core 0.54.0; no broad official grade binding or history-transfer declaration.",
+		"all_cells": "ZAM_CORE=<temporary zam-core 0.54.0 file URL> node scripts/validate-cells.mjs: all 37 Academy cells validated in disposable libraries.",
+		"package": "npm run package:zip and npm run verify:release passed. npm run verify:release -- --complete returned the expected nonzero result for missing teacher review/media, final playback, direct-file startup, ZAM learner-UI recall and physical touch."
 	},
 	"offline_file_start": {
 		"status": "blocked-by-test-environment",
@@ -253,7 +288,10 @@
 			"geschickt-addieren",
 			"geschickt-subtrahieren",
 			"malnehmen-teilen",
-			"schriftlich-addieren"
+			"schriftlich-addieren",
+			"schriftlich-subtrahieren",
+			"schriftlich-multiplizieren",
+			"schriftlich-dividieren"
 		],
 		"status": "implemented-draft",
 		"teacher_review": "pending",
@@ -294,6 +332,59 @@
 				"date": "2026-11-02",
 				"evidence": "Read-only 60 boundary-seed cases, validation/evidence transitions, quiz markers and seven-column order; no actionable findings. Native UI verification belongs to parent agent."
 			}
+		},
+		"written_subtraction": {
+			"status": "implemented-draft",
+			"scope": "Abziehverfahren with Entbündeln for two nonnegative whole-number operands at most one million; explicit exchanges, result digits, zero chains, context, correction and addition checks. No fluency or full-section claim.",
+			"curriculum": "2026-11-02; section 1.2 rows03/05/06/07 stay partial and unreviewed. Re-read the official Grades 3/4, Grades 1/2 and Grade 5 Gymnasium/Realschule curricula.",
+			"teacher_review": "pending",
+			"recording": "awaiting-recording",
+			"storage": "Separate new lesson document. Null or seven current bundle counts plus seven result cells; validated upper-number value. No old documents or migrations changed.",
+			"verification": "84 Vitest tests, 37 native browser assertions, 48 catalog/registry checks, all 37 cell validations, disposable Grade 4 recall path and offline ZIP verification passed. Built journey observed in desktop light and 320 px dark.",
+			"independent_review": "Reviewed against the package standard; transient-save render race and over-exchange feedback corrected and rechecked. This is not teacher approval."
+		},
+		"written_algorithms": {
+			"status": "implemented-draft",
+			"lessons": ["schriftlich-multiplizieren", "schriftlich-dividieren"],
+			"scope": "One/two-digit multipliers with partial products, carries, fixed tens shift and final addition; division by 1–10 with explicit partial dividend/quotient/product/remainder steps, internal zeros and final remainder. Values/results at most one million.",
+			"curriculum": "2026-11-02: official Grades 3/4 section 1.2 plus Grades 1/2 and Grade 5 Gymnasium/Realschule follow-ups read. Mappings remain partial and unreviewed.",
+			"teacher_review": "pending",
+			"recordings": "awaiting-recording",
+			"storage": "Only new per-lesson documents have variable-length algorithmWork arrays. No old documents or migrations changed. Keyed transient drafts protect edits through unrelated renders.",
+			"validation": "98 Vitest tests, 66 native browser assertions, 48 root catalog/registry checks, all 37 Academy cell validations and the disposable Grade 4 install/enrol/recall/reinstall path passed. Production build and ZIP passed.",
+			"independent_review": {
+				"status": "reviewed",
+				"date": "2026-11-02",
+				"findings_resolved": [
+					"Pending edits survive unrelated redraws through keyed drafts",
+					"Over-exchanged subtraction bundles direct a reset",
+					"Division quiz increments the whole quotient",
+					"Zero multiplication does not invent division by zero",
+					"Single-factor instructions omit a nonexistent tens row",
+					"Two-digit multiplication uses a different additive decomposition for checking, keeping division within grade scope"
+				],
+				"evidence": "Reviewer reported no remaining actionable findings after a 29-test run across three relevant files, then nine tests for the final multiplication explanation change. Browser observations belong to the parent agent.",
+				"teacher_approval": false
+			}
+		},
+		"pr76_review_follow_up": {
+			"date": "2026-11-03",
+			"status": "addressed",
+			"record": "../docs/grade-4-pr76-review-follow-up.md",
+			"reviews": [
+				"https://github.com/zam-os/zam-academy/pull/76#pullrequestreview-5743660613",
+				"https://github.com/zam-os/zam-academy/pull/76#issuecomment-6588921223"
+			],
+			"changes": [
+				"Outgoing multiplication carries are explicit, including the last column with no further carry",
+				"Unnecessary, excessive and missing carries get separate feedback, for products and the sum row",
+				"Teaching boards, paragraphs, quiz and recording briefs use examples distinct from all lab tasks",
+				"Subtraction recall question and math segment use a real minus sign and validate against pinned core",
+				"Full-tens ones rows are labelled Nullreihe",
+				"Division board and validation omit carry instructions",
+				"README enrolment count is forty-six"
+			],
+			"independent_recheck": "Read-only recheck reported no actionable findings; 73 tests across four targeted files and diff check passed. This is not teacher approval."
 		}
 	}
 }

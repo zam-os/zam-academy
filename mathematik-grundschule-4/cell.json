@@ -1,9 +1,9 @@
 {
 	"$schema": "https://zam.app/schemas/v1/kvt-tile.json",
 	"tile_id": "zam-academy:mathematik-grundschule-4",
-	"version": "2026.11.4",
+	"version": "2026.11.7",
 	"title": "Mathematik 4 Grundschule: Milos Zahlenwald",
-	"description": "Acht deutsche Entdeckerlektionen: Stellenwerte und Bündeln, Vergleichen und Ordnen, Zahlenstrahl und Zahlensprünge, Zerlegen und Ergänzen, geschicktes Addieren und Subtrahieren, Malnehmen und Teilen sowie schriftliches Addieren bis zur Million. Erprobungsfassung; fachliche Freigabe und Lehrervideos fehlen. Kein vollständiger Jahreskurs.",
+	"description": "Elf deutsche Entdeckerlektionen: Stellenwerte, Zahlbeziehungen, Rechenstrategien und die schriftlichen Verfahren der Addition, Subtraktion, Multiplikation mit ein- und zweistelligen Faktoren sowie Division durch 1 bis 10 mit Rest. Zahlen und Ergebnisse höchstens eine Million. Erprobungsfassung; fachliche Freigabe und Lehrervideos fehlen. Kein vollständiger Jahreskurs.",
 	"publisher": "ZAM Academy",
 	"sources": [
 		{
@@ -916,6 +916,358 @@
 					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=schriftlich-addieren",
 					"materiality": "material",
 					"sample_solution": "9 Einer + 1 Einer ergeben 10 Einer: 0 Einer bleiben, 1 Zehner wird übertragen. In jeder folgenden Stelle werden 9 vorhandene Bündel und 1 ankommendes Bündel zu 10 Bündeln. Daraus entsteht jeweils 1 Bündel der nächsten Stelle. Nach 10 Hunderttausendern entsteht 1 Million; die sechs niedrigeren Ergebnisstellen sind 0."
+				}
+			]
+		},
+		{
+			"namespace": "zam-academy-mathematik-grundschule-4",
+			"domain": "mathematik/zahlenwald",
+			"reduction": "axiomatic",
+			"typical_age_min": 8,
+			"prerequisites": [
+				{
+					"atom_id": "01M687PEW3VTYQ0BB7XT0D591G",
+					"type": "soft",
+					"rationale": "Wertgleiches Entbündeln unterstützt das Abziehverfahren."
+				},
+				{
+					"atom_id": "01M6ESYAQNPJDABE7QGX55XY6B",
+					"type": "soft",
+					"rationale": "Die schriftliche Addition unterstützt die Additionsprobe."
+				}
+			],
+			"id": "01M6EZ0V5SK9DYSAGJMSH7BVWS",
+			"atom_uri": "urn:zam:atom:01M6EZ0V5SK9DYSAGJMSH7BVWS",
+			"slug": "gs4-schriftlich-subtrahieren",
+			"title": "Schriftlich subtrahieren",
+			"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=schriftlich-subtrahieren",
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "mathematik-grundschule-4",
+					"topic_code": "schriftlich-subtrahieren",
+					"topic_title": "Schriftlich subtrahieren"
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M6EZ0V5W1ENAE89K475AAGN5",
+					"slug": "gs4-schriftlich-subtrahieren-1",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"question": "Was ändert sich beim Entbündeln eines Zehners in der oberen Zahl?",
+					"concept": "Ein Zehner weniger und zehn Einer mehr; der Wert der Zahl bleibt gleich.",
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=schriftlich-subtrahieren",
+					"materiality": "material",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Ein Zehner weniger und zehn Einer mehr; der Wert der Zahl bleibt gleich.",
+							"Zehn Einer mehr, während alle Zehner unverändert bleiben."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M6EZ0V5WK7QBYD4XN6WX0V6W",
+					"slug": "gs4-schriftlich-subtrahieren-2",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"question": "Wie prüfst du das Ergebnis einer Subtraktion durch Addieren?",
+					"concept": "Ergebnis plus abgezogene Zahl muss die obere Startzahl ergeben.",
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=schriftlich-subtrahieren",
+					"materiality": "material",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Ergebnis plus abgezogene Zahl muss die obere Startzahl ergeben.",
+							"Ergebnis plus obere Startzahl muss die abgezogene Zahl ergeben."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M6EZ0V5WC9JWR171X7GB3C4Q",
+					"slug": "gs4-schriftlich-subtrahieren-3",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Rechne 6 004 − 2 578 schriftlich und erkläre das Entbündeln über die Nullstellen.",
+					"concept": "3 426.",
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=schriftlich-subtrahieren",
+					"materiality": "material",
+					"question_segments": [
+						{
+							"type": "text",
+							"text": "Rechne "
+						},
+						{
+							"type": "math",
+							"tex": "6\\,004\\,−\\,2\\,578",
+							"speech": "sechstausendvier minus zweitausendfünfhundertachtundsiebzig"
+						},
+						{
+							"type": "text",
+							"text": " schriftlich und erkläre das Entbündeln über die Nullstellen."
+						}
+					],
+					"sample_solution": "Tausche 1 T in 10 H, 1 H in 10 Z und 1 Z in 10 E. Oben liegen jetzt 5 T, 9 H, 9 Z und 14 E; ihr Gesamtwert bleibt 6 004. E: 14 − 8 = 6; Z: 9 − 7 = 2; H: 9 − 5 = 4; T: 5 − 2 = 3. Additionsprobe: 3 426 + 2 578 = 6 004.",
+					"concept_segments": [
+						{
+							"type": "math",
+							"tex": "3\\,426",
+							"speech": "dreitausendvierhundertsechsundzwanzig"
+						},
+						{
+							"type": "text",
+							"text": "."
+						}
+					]
+				},
+				{
+					"id": "01M6EZ0V5WPZECEVETKR1J877V",
+					"slug": "gs4-schriftlich-subtrahieren-4",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"question": "Warum ergibt eine Million minus eins die Zahl 999 999? Erkläre mit Bündeln.",
+					"concept": "Nach dem Entbündeln und Abziehen bleibt an jeder der sechs Stellen eine 9.",
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=schriftlich-subtrahieren",
+					"materiality": "material",
+					"sample_solution": "Tausche 1 M in 10 HT, dann jeweils ein Bündel weiter in zehn kleinere bis zu den Einern. So liegen oben 9 HT, 9 ZT, 9 T, 9 H, 9 Z und 10 E. Nach dem Abziehen von 1 E bleiben 9 E und damit 999 999. Additionsprobe: 999 999 + 1 = 1 000 000."
+				}
+			]
+		},
+		{
+			"namespace": "zam-academy-mathematik-grundschule-4",
+			"domain": "mathematik/zahlenwald",
+			"reduction": "axiomatic",
+			"typical_age_min": 8,
+			"prerequisites": [
+				{
+					"atom_id": "01M6EQYDM45HP78N17YA5KGEWJ",
+					"type": "soft",
+					"rationale": "Dieser Rechenweg unterstützt die schriftliche Rechnung und ihre Probe."
+				},
+				{
+					"atom_id": "01M6ESYAQNPJDABE7QGX55XY6B",
+					"type": "soft",
+					"rationale": "Dieser Rechenweg unterstützt die schriftliche Rechnung und ihre Probe."
+				}
+			],
+			"id": "01M6F0EKRM3ATJ840D5K7703Q3",
+			"atom_uri": "urn:zam:atom:01M6F0EKRM3ATJ840D5K7703Q3",
+			"slug": "gs4-schriftlich-multiplizieren",
+			"title": "Schriftlich multiplizieren",
+			"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=schriftlich-multiplizieren",
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "mathematik-grundschule-4",
+					"topic_code": "schriftlich-multiplizieren",
+					"topic_title": "Schriftlich multiplizieren"
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M6F0EKRNPG5H8VK8VFDATDC8",
+					"slug": "gs4-schriftlich-multiplizieren-1",
+					"language": "de",
+					"bloom_level": 2,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=schriftlich-multiplizieren",
+					"materiality": "material",
+					"tier": "tier1_fast",
+					"question": "Wie behandelst du beim schriftlichen Multiplizieren eine Spaltensumme von 42?",
+					"concept": "2 in die Ergebnisstelle schreiben und 4 als Übertrag zur nächsten Stelle links mitrechnen.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"2 in die Ergebnisstelle schreiben und 4 als Übertrag zur nächsten Stelle links mitrechnen.",
+							"42 in ein Ergebnisfeld schreiben und ohne Übertrag weiterrechnen."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M6F0EKRNR26AR0HBQETRQJ96",
+					"slug": "gs4-schriftlich-multiplizieren-2",
+					"language": "de",
+					"bloom_level": 2,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=schriftlich-multiplizieren",
+					"materiality": "material",
+					"tier": "tier1_fast",
+					"question": "Warum wird die Zehnerreihe beim Multiplizieren mit einem zweistelligen Faktor nach links verschoben?",
+					"concept": "Der Zehnerfaktor ist zehnmal so groß wie seine Ziffer; jeder Stellenwert wird zehnmal so groß.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Der Zehnerfaktor ist zehnmal so groß wie seine Ziffer; jeder Stellenwert wird zehnmal so groß.",
+							"Die zweite Reihe ist immer nur eine Wiederholung der Einerreihe."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M6F0EKRN0RM8XSN94VQS69F3",
+					"slug": "gs4-schriftlich-multiplizieren-3",
+					"language": "de",
+					"bloom_level": 3,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=schriftlich-multiplizieren",
+					"materiality": "material",
+					"tier": "tier2_synthesis",
+					"question": "Rechne 306·24 schriftlich und prüfe mit einer anderen Zerlegung.",
+					"concept": "7 344.",
+					"sample_solution": "Einerreihe: 306 · 4 = 1 224. Zehnerreihe: 306 · 20 = 6 120. Summe: 1 224 + 6 120 = 7 344. Andere Zerlegung: 300 · 24 = 7 200 und 6 · 24 = 144; zusammen 7 344.",
+					"question_segments": [
+						{
+							"type": "text",
+							"text": "Rechne "
+						},
+						{
+							"type": "math",
+							"tex": "306 \\cdot 24",
+							"speech": "dreihundertsechs mal vierundzwanzig"
+						},
+						{
+							"type": "text",
+							"text": " schriftlich und prüfe mit einer anderen Zerlegung."
+						}
+					],
+					"concept_segments": [
+						{
+							"type": "math",
+							"tex": "7\\,344",
+							"speech": "siebentausenddreihundertvierundvierzig"
+						},
+						{
+							"type": "text",
+							"text": "."
+						}
+					]
+				},
+				{
+					"id": "01M6F0EKRNE9997YZ501Z956XV",
+					"slug": "gs4-schriftlich-multiplizieren-4",
+					"language": "de",
+					"bloom_level": 3,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=schriftlich-multiplizieren",
+					"materiality": "material",
+					"tier": "tier2_synthesis",
+					"question": "Milo rechnet bei 204 mal 23 die Teilergebnisse 612 und 408 zusammen. Erkläre und verbessere seinen Fehler.",
+					"concept": "Die Zehnerreihe muss 4 080 sein; das Produkt ist 4 692.",
+					"sample_solution": "23 besteht aus 20 und 3. 204 · 3 = 612. 204 · 2 = 408, aber 204 · 20 ist zehnmal so groß: 4 080. Deshalb 612 + 4 080 = 4 692. Die feste 0 steht rechts in der Zehnerreihe."
+				}
+			]
+		},
+		{
+			"namespace": "zam-academy-mathematik-grundschule-4",
+			"domain": "mathematik/zahlenwald",
+			"reduction": "axiomatic",
+			"typical_age_min": 8,
+			"prerequisites": [
+				{
+					"atom_id": "01M6F0EKRM3ATJ840D5K7703Q3",
+					"type": "soft",
+					"rationale": "Dieser Rechenweg unterstützt die schriftliche Rechnung und ihre Probe."
+				},
+				{
+					"atom_id": "01M6EQYDM45HP78N17YA5KGEWJ",
+					"type": "soft",
+					"rationale": "Dieser Rechenweg unterstützt die schriftliche Rechnung und ihre Probe."
+				}
+			],
+			"id": "01M6F0EKRN13BXXSS137PPTS1Q",
+			"atom_uri": "urn:zam:atom:01M6F0EKRN13BXXSS137PPTS1Q",
+			"slug": "gs4-schriftlich-dividieren",
+			"title": "Schriftlich dividieren",
+			"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=schriftlich-dividieren",
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "mathematik-grundschule-4",
+					"topic_code": "schriftlich-dividieren",
+					"topic_title": "Schriftlich dividieren"
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M6F0EKRNQB539BVE78NQ3D52",
+					"slug": "gs4-schriftlich-dividieren-1",
+					"language": "de",
+					"bloom_level": 2,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=schriftlich-dividieren",
+					"materiality": "material",
+					"tier": "tier1_fast",
+					"question": "Darfst du beim schriftlichen Dividieren eine Ergebnisnull mitten im Quotienten weglassen?",
+					"concept": "Nein. Sie hält den Stellenwert der folgenden Ergebnisziffern fest.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Nein. Sie hält den Stellenwert der folgenden Ergebnisziffern fest.",
+							"Ja. Nullen haben keinen Wert und können an jeder Stelle verschwinden."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M6F0EKRNCE5JSWR2JCVRFPJK",
+					"slug": "gs4-schriftlich-dividieren-2",
+					"language": "de",
+					"bloom_level": 2,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=schriftlich-dividieren",
+					"materiality": "material",
+					"tier": "tier1_fast",
+					"question": "Woran erkennst du einen zulässigen Rest beim Teilen ganzer Dinge?",
+					"concept": "Der Rest ist mindestens 0 und kleiner als der Teiler.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Der Rest ist mindestens 0 und kleiner als der Teiler.",
+							"Der Rest darf gleich groß wie der Teiler sein."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M6F0EKRNKDP75MVVWDJ70EPB",
+					"slug": "gs4-schriftlich-dividieren-3",
+					"language": "de",
+					"bloom_level": 3,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=schriftlich-dividieren",
+					"materiality": "material",
+					"tier": "tier2_synthesis",
+					"question": "Teile 2 417: 8 schriftlich. Nenne den Rest und prüfe deine Antwort.",
+					"concept": "302 Rest 1.",
+					"sample_solution": "2 : 8 ergibt zunächst 0 Rest 2. Dann 24 : 8 ergibt 3 Rest 0. Die nächste Ziffer 1 ergibt 0 Rest 1; diese Ergebnisnull bleibt stehen. Zuletzt 17 : 8 ergibt 2 Rest 1. Ergebnis: 302 Rest 1. Probe: 302 · 8 + 1 = 2 416 + 1 = 2 417; 1 ist kleiner als 8.",
+					"question_segments": [
+						{
+							"type": "text",
+							"text": "Teile "
+						},
+						{
+							"type": "math",
+							"tex": "2\\,417 : 8",
+							"speech": "zweitausendvierhundertsiebzehn geteilt durch acht"
+						},
+						{
+							"type": "text",
+							"text": " schriftlich. Nenne den Rest und prüfe deine Antwort."
+						}
+					]
+				},
+				{
+					"id": "01M6F0EKRNXRZARQCEX5SWEK4C",
+					"slug": "gs4-schriftlich-dividieren-4",
+					"language": "de",
+					"bloom_level": 3,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=schriftlich-dividieren",
+					"materiality": "material",
+					"tier": "tier2_synthesis",
+					"question": "Milo teilt 1 259 durch 6 und erhält 208 Rest 11. Warum ist er noch nicht fertig?",
+					"concept": "Der Rest enthält noch einmal 6. Richtig sind 209 Rest 5.",
+					"sample_solution": "Ein gültiger Rest muss kleiner als 6 sein. Aus Rest 11 kann Milo noch einmal 6 verteilen: 11 − 6 = 5. Der Quotient wächst um 1 auf 209. Probe: 209 · 6 + 5 = 1 254 + 5 = 1 259. Der Rest 5 ist kleiner als 6."
 				}
 			]
 		}
