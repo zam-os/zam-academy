@@ -413,12 +413,12 @@ export const FOREST_LESSONS: ForestLesson[] = [
 		],
 		paragraphs: [
 			"Beim Multiplizieren heißen die Zahlen Faktoren, das Ergebnis heißt Produkt. Beginne beim schriftlichen Multiplizieren mit den Einern der ersten Zahl. Multipliziere jede Ziffer mit dem einstelligen Faktor und rechne einen ankommenden Übertrag mit. Schreibe nur die Einerziffer dieser Spaltensumme ins Ergebnis.",
-			"Die vollen Zehner merkst du als Übertrag für die nächste Stelle links. Bei 347 · 6 gilt: 7 · 6 = 42, schreibe 2 und übertrage 4. Dann 4 · 6 + 4 = 28, schreibe 8 und übertrage 2. Zuletzt 3 · 6 + 2 = 20. Das Produkt ist 2 082. In der Tafel hat auch die neue Tausenderstelle ein eigenes Feld.",
-			"Einen zweistelligen Faktor zerlegst du in Zehner und Einer: 23 = 20 + 3. Rechne zuerst mit 3, danach mit 20. Für die Zehnerreihe rechnest du mit 2 und verschiebst alle Stellen um eine Stelle nach links. Die Einerstelle dieser Reihe ist deshalb fest 0. Aus 204 · 2 = 408 wird 204 · 20 = 4 080.",
+			"Die vollen Zehner merkst du als Übertrag für die nächste Stelle links. Bei 286 · 7 gilt: 6 · 7 = 42, schreibe 2 und übertrage 4. Dann 8 · 7 + 4 = 60, schreibe 0 und übertrage 6. Zuletzt 2 · 7 + 6 = 20. Das Produkt ist 2 002. In der Tafel hat auch die neue Tausenderstelle ein eigenes Feld.",
+			"Einen zweistelligen Faktor zerlegst du in Zehner und Einer: 24 = 20 + 4. Rechne zuerst mit 4, danach mit 20. Für die Zehnerreihe rechnest du mit 2 und verschiebst alle Stellen um eine Stelle nach links. Die Einerstelle dieser Reihe ist deshalb fest 0. Aus 305 · 2 = 610 wird 305 · 20 = 6 100.",
 			"Addiere die beiden Teilergebnisse stellenrichtig und rechne auch dabei die Überträge mit. Ist die Einerziffer des Faktors 0, ist die ganze Einerreihe 0; die Zehnerreihe bleibt nötig. Leere Übertragsfelder bedeuten 0. Große Ergebnisfelder füllst du auch bei 0 aus. Prüfe durch eine andere Zerlegung, mit der Umkehraufgabe oder grob durch Überschlagen.",
 		],
 		example:
-			"204 · 23: Einerreihe 204 · 3 = 612. Zehnerreihe 204 · 20 = 4 080. Addiere 612 + 4 080 = 4 692. Eine andere Zerlegung prüft: 200 · 23 = 4 600 und 4 · 23 = 92; zusammen 4 692. Ohne Verschiebung der Zehnerreihe wäre das Produkt falsch.",
+			"305 · 24: Einerreihe 305 · 4 = 1 220. Zehnerreihe 305 · 20 = 6 100. Addiere 1 220 + 6 100 = 7 320. Eine andere Zerlegung prüft: 300 · 24 = 7 200 und 5 · 24 = 120; zusammen 7 320. Ohne Verschiebung der Zehnerreihe wäre das Produkt falsch.",
 		takeaway:
 			"Jede Reihe von rechts nach links rechnen und Überträge mitnehmen. Beim Zehnerfaktor eine Stelle nach links verschieben. Zum Schluss die Teilergebnisse stellenrichtig addieren.",
 		transfer:
@@ -426,7 +426,7 @@ export const FOREST_LESSONS: ForestLesson[] = [
 		quiz: {
 			goal: 2,
 			prompt:
-				"Warum steht die Reihe zu 204 · 20 eine Stelle weiter links als die Reihe zu 204 · 2?",
+				"Warum steht die Reihe zu 305 · 20 eine Stelle weiter links als die Reihe zu 305 · 2?",
 			choices: [
 				{
 					label:
@@ -445,7 +445,7 @@ export const FOREST_LESSONS: ForestLesson[] = [
 				},
 			],
 			explanation:
-				"204 · 2 = 408, aber 204 · 20 = 4 080. Die feste 0 steht rechts bei den Einern; alle anderen Stellen rücken nach links.",
+				"305 · 2 = 610, aber 305 · 20 = 6 100. Die feste 0 steht rechts bei den Einern; alle anderen Stellen rücken nach links.",
 		},
 		parentPrompt:
 			"Rechne 306 · 24 schriftlich. Was bedeutet die feste 0 in der Zehnerreihe? Prüfe mit einer anderen Zerlegung.",
@@ -464,11 +464,11 @@ export const FOREST_LESSONS: ForestLesson[] = [
 		paragraphs: [
 			"Beim Dividieren teilst du eine Menge gleichmäßig auf. In dieser Lektion teilst du durch ganze Zahlen von 1 bis 10. Beginne links bei der ersten Ziffer. Bestimme, wie oft der Teiler ganz in diese Teilzahl passt. Notiere die Ergebnisziffer, multipliziere sie mit dem Teiler und ziehe diesen Betrag ab.",
 			"Der Rest aus einem Schritt wird vor der nächsten Ziffer zehnmal so groß: Du tauschst ihn in die nächstkleineren Bündel um und holst die nächste Ziffer dazu. Neue Teilzahl = vorheriger Rest · 10 + nächste Ziffer. Wiederhole Teilen, Multiplizieren und Abziehen bis zur letzten Ziffer.",
-			"Passt der Teiler in einem Schritt noch nicht in die Teilzahl, notiere 0 als Ergebnisziffer. In dieser Werkstatt bekommt jede Ziffer der Startzahl ihren eigenen Schritt. Eine führende Ergebnisnull lässt du beim Lesen der ganzen Antwort weg; eine 0 mitten im Ergebnis bleibt stehen. Bei 1 206 : 3 entstehen die Ergebnisziffern 0, 4, 0, 2; die Antwort ist 402.",
+			"Passt der Teiler in einem Schritt noch nicht in die Teilzahl, notiere 0 als Ergebnisziffer. In dieser Werkstatt bekommt jede Ziffer der Startzahl ihren eigenen Schritt. Eine führende Ergebnisnull lässt du beim Lesen der ganzen Antwort weg; eine 0 mitten im Ergebnis bleibt stehen. Bei 2 036 : 4 entstehen die Ergebnisziffern 0, 5, 0, 9; die Antwort ist 509.",
 			"Am Ende darf ein Rest übrig bleiben. Er muss kleiner als der Teiler sein; sonst könntest du noch einmal verteilen. Die Probe lautet: Ergebnis · Teiler + Rest = Startzahl. Beim Verteilen sagt der Rest, wie viele Dinge übrig bleiben. Teile hier keine halben Samen und rechne noch nicht mit Dezimalzahlen.",
 		],
 		example:
-			"1 259 : 6: Zuerst 1 : 6 → 0, Rest 1. Die nächste Teilzahl ist 12: 12 : 6 → 2, Rest 0. Dann 5 : 6 → 0, Rest 5. Zuletzt 59 : 6 → 9, Rest 5. Ergebnis: 209 Rest 5. Probe: 209 · 6 + 5 = 1 254 + 5 = 1 259; 5 ist kleiner als 6.",
+			"2 138 : 7: Zuerst 2 : 7 → 0, Rest 2. Die nächste Teilzahl ist 21: 21 : 7 → 3, Rest 0. Dann 3 : 7 → 0, Rest 3. Zuletzt 38 : 7 → 5, Rest 3. Ergebnis: 305 Rest 3. Probe: 305 · 7 + 3 = 2 135 + 3 = 2 138; 3 ist kleiner als 7.",
 		takeaway:
 			"Von links nach rechts: teilen, multiplizieren, abziehen, nächste Ziffer herunterholen. Schreibe auch Ergebnisziffern 0. Der letzte Rest ist kleiner als der Teiler. Prüfe mit Malaufgabe plus Rest.",
 		transfer:

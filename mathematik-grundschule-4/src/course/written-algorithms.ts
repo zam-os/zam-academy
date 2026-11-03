@@ -11,6 +11,10 @@ export interface Algorithm {
 	b: number;
 	shown?: number;
 }
+export const ALGORITHM_EXAMPLES: Record<AlgorithmKind, Algorithm> = {
+	multiply: { kind: "multiply", a: 305, b: 24 },
+	divide: { kind: "divide", a: 2138, b: 7 },
+};
 export interface AlgorithmField {
 	label: string;
 	value: number;
@@ -212,7 +216,7 @@ export function algorithmValidation(
 	work: readonly string[],
 ): string | null {
 	if (!algorithmAnswer(algorithm, work))
-		return "Fülle alle großen Rechenfelder mit ganzen Zahlen im angegebenen Bereich. Auch bei 0 brauchst du einen Eintrag. Kleine Übertragsfelder dürfen ohne Übertrag leer bleiben.";
+		return `Fülle die Rechenfelder mit ganzen Zahlen im angegebenen Bereich. Auch bei 0 brauchst du einen Eintrag.${algorithm.kind === "multiply" ? " Kleine Übertragsfelder dürfen ohne Übertrag leer bleiben." : ""}`;
 	const model = algorithmModel(algorithm);
 	if (
 		algorithm.kind === "multiply" &&
@@ -231,9 +235,16 @@ export function algorithmMistake(
 		return "Fülle die Rechenfelder aus, auch bei 0.";
 	const { fields } = algorithmModel(task.algorithm),
 		index = fields.findIndex((f, i) => f.value !== answer[i]);
-	return index < 0
-		? task.hint
-		: `${fields[index].label}: ${fields[index].hint}`;
+	if (index < 0) return task.hint;
+	const field = fields[index];
+	if (field.blankZero && answer[index] > field.value) {
+		return `${field.label}: ${
+			field.value === 0
+				? "Hier kommt kein Übertrag an: In der vorigen Spalte entsteht kein voller Zehner. Lass dieses kleine Feld leer oder schreibe 0."
+				: `Dein Übertrag ist zu groß. ${field.hint} Notiere nur die Anzahl der vollen Zehner aus der vorigen Spaltensumme.`
+		}`;
+	}
+	return `${field.label}: ${field.blankZero ? "Dein Übertrag ist zu klein. " : ""}${field.hint}`;
 }
 export function algorithmExplanation(algorithm: Algorithm): string {
 	const { kind, a, b } = algorithm,
@@ -253,10 +264,17 @@ export function algorithmExplanation(algorithm: Algorithm): string {
 			: `Einerreihe: ${format(a)} · ${b % 10} = ${format(a * (b % 10))}. Zehnerreihe: ${format(a)} · ${Math.floor(b / 10) * 10} = ${format(a * Math.floor(b / 10) * 10)}; diese Reihe ist eine Stelle nach links verschoben. Addiere beide Teilergebnisse. `;
 	const carries = model.rows
 		.slice(0, b < 10 ? 1 : 2)
-		.map(
-			(row) =>
-				`${row.title}: ${row.result.map((index, col) => `${COLUMN_NAMES[col + row.shift]} ${model.answer[index]}${col > 0 ? ` mit Übertrag ${model.answer[row.carries[col]]}` : ""}`).join(", ")}`,
-		)
+		.map((row, shift) => {
+			const factor = Math.floor(b / 10 ** shift) % 10;
+			const steps = row.result.map((index, col) => {
+				const digit = Math.floor(a / 10 ** col) % 10;
+				const incoming = col > 0 ? model.answer[row.carries[col]] : 0;
+				const total = digit * factor + incoming;
+				const outgoing = Math.floor(total / 10);
+				return `${COLUMN_NAMES[col + row.shift]}: ${digit} · ${factor}${incoming ? ` + ${incoming} ankommender Übertrag` : ""} = ${total}; schreibe ${model.answer[index]}${outgoing ? `, übertrage ${outgoing} zu ${COLUMN_NAMES[col + row.shift + 1]}` : ", kein weiterer Übertrag"}`;
+			});
+			return `${row.title}: ${steps.join("; ")}`;
+		})
 		.join(". ");
 	const unit = 10 ** (String(a).length - 1),
 		left = Math.floor(a / unit) * unit,

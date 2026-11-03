@@ -224,6 +224,13 @@
 			"status": "passed",
 			"checked": "2026-11-02",
 			"details": "All 60 assertions passed in generated test stores. New checks cover multiplication/division save focus, rapid input/resumption, calculation-order Tab navigation, wrong-step feedback, assisted retries, validation preserving exit attempts, omitted-carry notices, independent corrected exits, unique rewards, optional-stop reset and forced pre-commit redraws for subtraction and both algorithms. Over-exchanged subtraction directs reset without spending the correct exit attempt. No learner database was used by the harness."
+		},
+		{
+			"surface": "Built dist/index.html at 127.0.0.1:5228; native isolated harness at 127.0.0.1:5227/tests/browser.html",
+			"check": "PR76 carry-feedback and example-separation regressions",
+			"status": "passed",
+			"checked": "2026-11-03",
+			"details": "66 native assertions passed, including false product/sum carry feedback, blank-zero correction retaining assisted evidence, success/worked-solution carry direction and prior persistence/reward checks. Built desktop light preview confirmed false carry 1 for 213 times 3, blank correction and explicit outgoing carries for 347 times 6. Teacher panel for lab 204 times 23 shows separate 305 times 24; full-tens transfer labels the Nullreihe. Division explanation uses 2138 divided by 7, while the first lab stays 848 divided by 4; static and invalid-input copy contain no carry instructions. Inspected 320px dark layout without document overflow. Original learner preview was not reset; physical touch remains pending."
 		}
 	],
 	"remaining": [
@@ -234,11 +241,11 @@
 		"Review prepared recall cards in the existing ZAM learner UI",
 		"Physical touch-device acceptance"
 	],
-	"checked": "2026-11-02",
+	"checked": "2026-11-03",
 	"automated_checks": {
-		"app": "npm ci --offline --no-audit --no-fund, npm run typecheck, npm test (93 tests), npm run package:zip and existing external Biome format/lint passed under Node 22.22.3. No dependency changes.",
+		"app": "npm ci --offline --no-audit --no-fund, npm run typecheck, npm test (98 tests), npm run package:zip and existing external Biome format/lint passed under Node 22.22.3. No dependency changes.",
 		"catalog": "node --test scripts/build-catalog.test.mjs scripts/academy-registry.test.mjs: 48 checks passed. This local-only draft remains excluded.",
-		"cell": "14 atoms, 46 items, version 2026.11.6. Original 11 atoms/34 items unchanged as parsed JSON; all existing identifiers preserved. Disposable install/enrol/recall/reinstall passed against CI-pinned zam-core 0.54.0, without broad official grade bindings or history-transfer declarations.",
+		"cell": "14 atoms, 46 items, version 2026.11.7. All 60 atom/item identities preserved; only the new subtraction card typography changes. Original 11 atoms/34 items remain unchanged as parsed JSON. Disposable install/enrol/recall/reinstall and all 37 cells passed against CI-pinned zam-core 0.54.0; no broad official grade binding or history-transfer declaration.",
 		"all_cells": "ZAM_CORE=<temporary zam-core 0.54.0 file URL> node scripts/validate-cells.mjs: all 37 Academy cells validated in disposable libraries.",
 		"package": "npm run package:zip and npm run verify:release passed. npm run verify:release -- --complete returned the expected nonzero result for missing teacher review/media, final playback, direct-file startup, ZAM learner-UI recall and physical touch."
 	},
@@ -344,7 +351,7 @@
 			"teacher_review": "pending",
 			"recordings": "awaiting-recording",
 			"storage": "Only new per-lesson documents have variable-length algorithmWork arrays. No old documents or migrations changed. Keyed transient drafts protect edits through unrelated renders.",
-			"validation": "93 Vitest tests, 60 native browser assertions, 48 root catalog/registry checks, all 37 Academy cell validations and the disposable Grade 4 install/enrol/recall/reinstall path passed. Production build and ZIP passed.",
+			"validation": "98 Vitest tests, 66 native browser assertions, 48 root catalog/registry checks, all 37 Academy cell validations and the disposable Grade 4 install/enrol/recall/reinstall path passed. Production build and ZIP passed.",
 			"independent_review": {
 				"status": "reviewed",
 				"date": "2026-11-02",
@@ -359,6 +366,25 @@
 				"evidence": "Reviewer reported no remaining actionable findings after a 29-test run across three relevant files, then nine tests for the final multiplication explanation change. Browser observations belong to the parent agent.",
 				"teacher_approval": false
 			}
+		},
+		"pr76_review_follow_up": {
+			"date": "2026-11-03",
+			"status": "addressed",
+			"record": "../docs/grade-4-pr76-review-follow-up.md",
+			"reviews": [
+				"https://github.com/zam-os/zam-academy/pull/76#pullrequestreview-5743660613",
+				"https://github.com/zam-os/zam-academy/pull/76#issuecomment-6588921223"
+			],
+			"changes": [
+				"Outgoing multiplication carries are explicit, including the last column with no further carry",
+				"Unnecessary, excessive and missing carries get separate feedback, for products and the sum row",
+				"Teaching boards, paragraphs, quiz and recording briefs use examples distinct from all lab tasks",
+				"Subtraction recall question and math segment use a real minus sign and validate against pinned core",
+				"Full-tens ones rows are labelled Nullreihe",
+				"Division board and validation omit carry instructions",
+				"README enrolment count is forty-six"
+			],
+			"independent_recheck": "Read-only recheck reported no actionable findings; 73 tests across four targeted files and diff check passed. This is not teacher approval."
 		}
 	}
 }

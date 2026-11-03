@@ -48,7 +48,7 @@ The app reuses the approved Academy TypeScript/Vite/Vitest/single-file
 toolchain; it adds no runtime dependencies. `validate:cell` defaults to
 the adjacent `zam/dist/index.js`; set `ZAM_CORE` to a file URL of another
 approved build to check compatibility. It uses only a disposable database:
-installation creates no cards, explicit enrolment creates thirty-four, retries
+installation creates no cards, explicit enrolment creates forty-six, retries
 create none, and reinstall preserves a real recall-rating log.
 
 At the Academy root, run
@@ -128,7 +128,8 @@ learner experience, accessible labels and teaching material are German.
 ## Review follow-up
 
 See [the Number Forest expansion](../docs/grade-4-number-forest-expansion.md) and [the resolution record](../docs/grade-4-review-follow-up.md) for feedback,
-regression checks and remaining Phase-2 decisions. Shared publication tooling
+regression checks and remaining Phase-2 decisions. The
+[PR 76 follow-up](../docs/grade-4-pr76-review-follow-up.md) records the written-arithmetic review fixes. Shared publication tooling
 is isolated in PR #73; that safeguard and the CI runtime fix are now on main.
 
 Biome is an optional external development check, not an installed package

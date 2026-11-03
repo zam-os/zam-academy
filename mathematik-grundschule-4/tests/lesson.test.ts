@@ -276,6 +276,19 @@ describe("content contracts", () => {
 		expect(validLessonHash("#lesson=unbekannt")).toBe(false);
 		expect(new Set(items.map((i) => i.id)).size).toBe(46);
 	});
+	it("uses a real minus sign in the subtraction card and its validated math segment", () => {
+		const card = cell.atoms
+			.flatMap<RecallItem>((a) => a.practice_items)
+			.find((item) => item.slug === "gs4-schriftlich-subtrahieren-3");
+		expect(card?.question).toContain("6 004 − 2 578");
+		if (!card || !("question_segments" in card))
+			throw new Error("Missing subtraction math segments");
+		expect(
+			card.question_segments?.some(
+				(segment) => segment.type === "math" && segment.tex?.includes("−"),
+			),
+		).toBe(true);
+	});
 	it("enumerates every official competence and truthfully identifies partial coverage", () => {
 		expect(coverage.rows).toHaveLength(54);
 		expect(new Set(coverage.rows.map((c) => c.section)).size).toBe(13);

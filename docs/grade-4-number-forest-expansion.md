@@ -220,3 +220,8 @@ instead of out-of-scope two-digit division. The reviewer reported no
 remaining actionable findings after targeted tests (29 across three files,
 then nine for the final multiplication explanation recheck). This does not
 substitute for primary-school teacher approval.
+
+
+The [PR 76 review follow-up](grade-4-pr76-review-follow-up.md) records the
+2026-11-03 corrections to carry feedback, separate teaching examples and
+card/board copy. The current cell is 2026.11.7; all identifiers remain stable.

@@ -8,6 +8,7 @@ import {
 	algorithmExit,
 	algorithmMistake,
 	algorithmExplanation,
+	ALGORITHM_EXAMPLES,
 	type Algorithm,
 } from "../src/course/written-algorithms";
 import { algorithmBoard } from "../src/course/algorithm-board";
@@ -19,7 +20,8 @@ import {
 	validForest,
 	independentForest,
 } from "../src/course/progress";
-import { forestTaskView } from "../src/course/view";
+import { forestTaskView, forestTeacherPanel } from "../src/course/view";
+import { forestLesson } from "../src/course/catalog";
 import { correctForest } from "../src/course/tasks";
 const ids = ["schriftlich-multiplizieren", "schriftlich-dividieren"] as const;
 const need = <T>(value: T | null | undefined): T => {
@@ -291,5 +293,76 @@ describe("written multiplication and division", () => {
 			);
 			expect(independentForest(need(p.attempts.at(-1)))).toBe(false);
 		}
+	});
+	it("explains the calculation and outgoing carry at every place without reusing the incoming carry", () => {
+		const text = algorithmExplanation({ kind: "multiply", a: 347, b: 6 });
+		expect(text).toContain("E: 7 · 6 = 42; schreibe 2, übertrage 4 zu Z");
+		expect(text).toContain(
+			"Z: 4 · 6 + 4 ankommender Übertrag = 28; schreibe 8, übertrage 2 zu H",
+		);
+		expect(text).toContain(
+			"H: 3 · 6 + 2 ankommender Übertrag = 20; schreibe 0, übertrage 2 zu T",
+		);
+		expect(text).toContain(
+			"T: 0 · 6 + 2 ankommender Übertrag = 2; schreibe 2, kein weiterer Übertrag",
+		);
+		for (const [a, b] of [
+			[10101, 99],
+			[99999, 9],
+			[1000000, 1],
+		])
+			expect(
+				algorithmExplanation({ kind: "multiply", a, b }).length,
+			).toBeLessThanOrEqual(4000);
+	});
+	it("distinguishes unnecessary, excessive and missing carries in partial products and their sum", () => {
+		for (const algorithm of [
+			{ kind: "multiply", a: 213, b: 3 },
+			{ kind: "multiply", a: 204, b: 23 },
+		] as Algorithm[]) {
+			const m = algorithmModel(algorithm),
+				row = need(m.rows.at(-1));
+			const wrong = [...m.answer];
+			wrong[row.carries[1]] = 1;
+			const task = { ...algorithmLab(ids[0], 0), algorithm, answer: m.answer };
+			expect(algorithmValidation(algorithm, wrong.map(String))).toBeNull();
+			expect(algorithmMistake(task, wrong)).toContain("kein voller Zehner");
+			expect(algorithmMistake(task, wrong)).toContain("leer oder schreibe 0");
+			const fixed = wrong.map(String);
+			fixed[row.carries[1]] = "";
+			expect(algorithmAnswer(algorithm, fixed)).toEqual(m.answer);
+		}
+		const task = algorithmLab(ids[0], 1),
+			algorithm = need(task.algorithm),
+			m = algorithmModel(algorithm);
+		const index = m.rows[0].carries[2],
+			high = [...m.answer],
+			low = [...m.answer];
+		high[index]++;
+		low[index]--;
+		expect(algorithmMistake(task, high)).toContain("Übertrag ist zu groß");
+		expect(algorithmMistake(task, high)).not.toContain("kein voller Zehner");
+		expect(algorithmMistake(task, low)).toContain("Übertrag ist zu klein");
+	});
+	it("keeps teaching examples separate from every lab calculation, including the collapsed panel", () => {
+		for (const id of ids) {
+			const lesson = need(forestLesson(id)),
+				panel = forestTeacherPanel(lesson).replace(/\s/g, "");
+			for (let goal = 0; goal < 3; goal++) {
+				const lab = need(algorithmLab(id, goal).algorithm),
+					op = lab.kind === "multiply" ? "·" : ":";
+				expect(panel).not.toContain(`${lab.a}${op}${lab.b}`);
+				const example = ALGORITHM_EXAMPLES[lab.kind];
+				expect([example.a, example.b]).not.toEqual([lab.a, lab.b]);
+			}
+		}
+	});
+	it("labels the full-tens zero row and keeps carry instructions out of division", () => {
+		const zero = algorithmBoard({ kind: "multiply", a: 123, b: 40 });
+		expect(zero).toContain("Nullreihe");
+		expect(zero).toContain("ändert die Nullreihe die Summe nicht");
+		const division: Algorithm = { kind: "divide", a: 2138, b: 7 };
+		expect(algorithmBoard(division)).not.toContain("Übertragsfelder");
+		expect(algorithmValidation(division, [])).not.toContain("Übertragsfelder");
 	});
 });

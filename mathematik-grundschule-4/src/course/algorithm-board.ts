@@ -22,7 +22,12 @@ export function algorithmBoard(
 			? ""
 			: `<p>Milos Ergebnis zum Überprüfen: <strong>${format(algorithm.shown)}</strong>${algorithm.kind === "divide" ? " ohne Rest" : ""}</p>`;
 	const product = model.rows
-		.map((row) => {
+		.map((row, rowIndex) => {
+			const zeroRow =
+				algorithm.kind === "multiply" &&
+				algorithm.b >= 10 &&
+				algorithm.b % 10 === 0 &&
+				rowIndex === 0;
 			const places = Array.from(
 				{ length: row.width + row.shift },
 				(_, i) => row.width + row.shift - 1 - i,
@@ -37,7 +42,7 @@ export function algorithmBoard(
 						`<tr><th scope="row">${i === 0 ? "Einerreihe" : "Zehnerreihe"}</th>${places.map((col) => `<td>${line[col] === -1 ? "0" : line[col] === -2 ? "" : `<span class="algorithm-preview" data-from="${line[col]}">${work[line[col]] || "?"}</span>`}</td>`).join("")}</tr>`,
 				)
 				.join("");
-			return `<section class="algorithm-row"><h3>${row.title}</h3><div class="column-scroll" tabindex="0" role="region" aria-label="Multiplikationstafel, bei Bedarf seitlich verschiebbar"><table class="column-board"><caption>${row.title}</caption><thead><tr><th scope="col">Stelle</th>${places.map((col) => `<th scope="col">${COLUMN_NAMES[col]}</th>`).join("")}</tr></thead><tbody>${previews}<tr class="carry-row"><th scope="row">Übertrag</th>${places.map((col) => `<td>${col <= row.shift ? "–" : field(row.carries[col - row.shift])}</td>`).join("")}</tr><tr class="column-result"><th scope="row">${row.previews ? "Produkt" : "Teilergebnis"}</th>${places.map((col) => `<td>${result(col)}</td>`).join("")}</tr></tbody></table></div></section>`;
+			return `<section class="algorithm-row"><h3>${row.title}${zeroRow ? " · Nullreihe" : ""}</h3>${zeroRow ? "<p>Die Einerziffer des Faktors ist 0. Trage in diese Ergebnisreihe 0 ein. Beim Addieren ändert die Nullreihe die Summe nicht.</p>" : ""}<div class="column-scroll" tabindex="0" role="region" aria-label="Multiplikationstafel, bei Bedarf seitlich verschiebbar"><table class="column-board"><caption>${row.title}</caption><thead><tr><th scope="col">Stelle</th>${places.map((col) => `<th scope="col">${COLUMN_NAMES[col]}</th>`).join("")}</tr></thead><tbody>${previews}<tr class="carry-row"><th scope="row">Übertrag</th>${places.map((col) => `<td>${col <= row.shift ? "–" : field(row.carries[col - row.shift])}</td>`).join("")}</tr><tr class="column-result"><th scope="row">${row.previews ? "Produkt" : "Teilergebnis"}</th>${places.map((col) => `<td>${result(col)}</td>`).join("")}</tr></tbody></table></div></section>`;
 		})
 		.join("");
 	const division = model.steps
@@ -49,5 +54,5 @@ export function algorithmBoard(
 	const result = solved
 		? `<p class="jump-equation">${format(algorithm.a)} ${op} ${algorithm.b} = ${format(model.result)}${algorithm.kind === "divide" ? ` Rest ${model.remainder}` : ""}</p>`
 		: "";
-	return `<div class="algorithm-workshop"><p class="jump-equation">${format(algorithm.a)} ${op} ${algorithm.b}</p>${correction}<p>${algorithm.kind === "multiply" ? (algorithm.b < 10 ? "Rechne von rechts nach links. Multipliziere jede Ziffer und rechne den ankommenden Übertrag mit. Schreibe die Einerziffer ins Ergebnis und die vollen Zehner als Übertrag zur nächsten Stelle links." : "Rechne jede Reihe von rechts nach links. Die feste 0 verschiebt die Zehnerreihe um eine Stelle. Danach addierst du die Teilergebnisse.") : "Rechne von links nach rechts. Teilzahl = vorheriger Rest · 10 + nächste Ziffer; im ersten Schritt nur die erste Ziffer. Schreibe bei jeder Ziffer einen Schritt, auch wenn die Ergebnisziffer 0 ist. Führende Ergebnisnullen lässt du erst beim Lesen der ganzen Antwort weg."}</p>${product}${division}${result}${solved ? "" : '<p class="fine-print" id="algorithm-input-note">Alle großen Felder brauchen einen Eintrag, auch bei 0. Kleine Übertragsfelder dürfen ohne Übertrag leer bleiben. Mit Tab gehst du in Rechenreihenfolge weiter.</p><p class="fine-print" id="algorithm-input-error" role="status"></p>'}</div>`;
+	return `<div class="algorithm-workshop"><p class="jump-equation">${format(algorithm.a)} ${op} ${algorithm.b}</p>${correction}<p>${algorithm.kind === "multiply" ? (algorithm.b < 10 ? "Rechne von rechts nach links. Multipliziere jede Ziffer und rechne den ankommenden Übertrag mit. Schreibe die Einerziffer ins Ergebnis und die vollen Zehner als Übertrag zur nächsten Stelle links." : "Rechne jede Reihe von rechts nach links. Die feste 0 verschiebt die Zehnerreihe um eine Stelle. Danach addierst du die Teilergebnisse.") : "Rechne von links nach rechts. Teilzahl = vorheriger Rest · 10 + nächste Ziffer; im ersten Schritt nur die erste Ziffer. Schreibe bei jeder Ziffer einen Schritt, auch wenn die Ergebnisziffer 0 ist. Führende Ergebnisnullen lässt du erst beim Lesen der ganzen Antwort weg."}</p>${product}${division}${result}${solved ? "" : `<p class="fine-print" id="algorithm-input-note">Alle ${algorithm.kind === "multiply" ? "großen " : ""}Felder brauchen einen Eintrag, auch bei 0.${algorithm.kind === "multiply" ? " Kleine Übertragsfelder dürfen ohne Übertrag leer bleiben." : ""} Mit Tab gehst du in Rechenreihenfolge weiter.</p><p class="fine-print" id="algorithm-input-error" role="status"></p>`}</div>`;
 }

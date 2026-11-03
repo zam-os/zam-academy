@@ -252,28 +252,32 @@ Lesson `schriftlich-multiplizieren`; recording and teacher approval pending.
 Apply the rights/caption/transcript and offline-distribution handoff above.
 Teacher review must check the carry notation, the deliberately fixed shift
 zero and whether the displayed partial-product convention fits the intended
-textbook. Record the actual UI; do not pre-fill practice answers.
+textbook. Record the actual UI; do not pre-fill practice answers. Teaching
+examples below deliberately differ from the three lab tasks.
 
 German script proposal:
 
-> Rechne jede Reihe von rechts nach links. Bei 347 mal 6 ergeben sieben
-> Einer mal sechs 42 Einer. Schreibe zwei Einer; vier Zehner gehen als
-> Übertrag zur nächsten Stelle links. Vier Zehner mal sechs und diese vier
-> Zehner ergeben 28 Zehner. Schreibe acht Zehner und übertrage zwei Hunderter.
-> Drei Hunderter mal sechs plus zwei Hunderter sind zwanzig Hunderter.
-> Insgesamt erhältst du 2 082.
+> Rechne jede Reihe von rechts nach links. Bei 286 mal 7 ergeben sechs
+> Einer mal sieben 42 Einer. Schreibe zwei Einer; vier Zehner gehen als
+> Übertrag zur nächsten Stelle links. Acht Zehner mal sieben und diese vier
+> Zehner ergeben 60 Zehner. Schreibe null Zehner und übertrage sechs Hunderter.
+> Zwei Hunderter mal sieben plus sechs Hunderter sind zwanzig Hunderter.
+> Insgesamt erhältst du 2 002.
 >
-> Für 204 mal 23 zerlegen wir 23 in 20 und 3. Die Einerreihe ergibt 612.
-> Für die Zehnerreihe rechnen wir zunächst 204 mal 2. Diese 408 werden beim
-> Multiplizieren mit 20 zehnmal so viel: 4 080. Deshalb steht rechts in der
-> Zehnerreihe die feste Null. Addiere 612 und 4 080: Das Produkt ist 4 692.
-> Prüfe anders: 200 mal 23 sind 4 600, vier mal 23 sind 92. Zusammen 4 692.
+> Für 305 mal 24 zerlegen wir 24 in 20 und 4. Die Einerreihe ergibt 1 220.
+> Für die Zehnerreihe rechnen wir zunächst 305 mal 2. Diese 610 werden beim
+> Multiplizieren mit 20 zehnmal so viel: 6 100. Deshalb steht rechts in der
+> Zehnerreihe die feste Null. Addiere 1 220 und 6 100: Das Produkt ist 7 320.
+> Prüfe anders: 300 mal 24 sind 7 200, fünf mal 24 sind 120. Zusammen 7 320.
 >
-> Steht bei den Einern des zweiten Faktors null, ist die Einerreihe null.
-> Die Zehnerreihe bleibt nötig. Vergiss keine Ergebnisnull und rechne beim
-> abschließenden Addieren auch die Überträge mit.
+> Steht bei den Einern des zweiten Faktors null, ist die Einerreihe eine
+> Nullreihe. Beim Addieren ändert sie die Summe nicht. Die Zehnerreihe bleibt
+> nötig. Vergiss keine Ergebnisnull und rechne beim abschließenden Addieren
+> auch die Überträge mit.
 
-Show the failed unshifted result as a separate diagnosis task. Explain
+Show the failed unshifted result as a separate diagnosis task. Distinguish
+the carry arriving in a column from the carry leaving it: name both the
+calculation and its outgoing carry, matching the on-screen feedback. Explain
 that carry values can exceed 1 in multiplication, while adding two partial
 products uses addition carries. Check all example products independently.
 
@@ -283,7 +287,8 @@ Lesson `schriftlich-dividieren`; recording and teacher approval pending.
 Teacher review must check the explicit per-digit step board (including
 leading quotient zeros) and the meaning of the remainder in each context.
 It is a scaffold for the written procedure, not a claim about automatic
-fluency. No decimal quotient is introduced.
+fluency. No decimal quotient is introduced. Use different examples from the
+lab tasks so the recording does not reveal their exact entered steps.
 
 German script proposal:
 
@@ -293,18 +298,18 @@ German script proposal:
 > Hole die nächste Ziffer dazu. Auch eine Ergebnisziffer null braucht ihren
 > Platz.
 >
-> Verteile 1 259 Samen auf sechs Beete. Eins geteilt durch sechs ergibt
-> zunächst null mit Rest eins. Daraus werden mit der nächsten Ziffer zwölf.
-> Zwölf geteilt durch sechs ist zwei, Rest null. Die nächste Teilzahl fünf
-> ergibt null, Rest fünf. Mit der letzten Ziffer neun entsteht 59. Sechs
-> passt neunmal hinein: 59 minus 54 ist fünf. Das Ergebnis ist 209 Rest 5.
-> Die führende Null lassen wir beim Lesen weg, die Null mitten in 209 bleibt.
+> Verteile 2 138 Samen auf sieben Beete. Zwei geteilt durch sieben ergibt
+> zunächst null mit Rest zwei. Daraus werden mit der nächsten Ziffer 21.
+> 21 geteilt durch sieben ist drei, Rest null. Die nächste Teilzahl drei
+> ergibt null, Rest drei. Mit der letzten Ziffer acht entsteht 38. Sieben
+> passt fünfmal hinein: 38 minus 35 ist drei. Das Ergebnis ist 305 Rest 3.
+> Die führende Null lassen wir beim Lesen weg, die Null mitten in 305 bleibt.
 >
-> Prüfe: 209 mal sechs plus fünf ergibt wieder 1 259. Fünf ist kleiner als
-> sechs. Wäre der Rest noch elf, könnten wir noch einmal sechs verteilen und
-> wären nicht fertig. Bei zehn Beeten funktioniert derselbe Rechenweg.
+> Prüfe: 305 mal sieben plus drei ergibt wieder 2 138. Drei ist kleiner als
+> sieben. Wäre der Rest noch zehn, könnten wir noch einmal sieben verteilen
+> und wären nicht fertig. Bei zehn Beeten funktioniert derselbe Rechenweg.
 
-Include 1 206 divided by 3 for internal zeros, 2 417 divided by 8 for a
+Include 2 036 divided by 4 for internal zeros, 2 417 divided by 8 for a
 new remainder example, and division by 10. Do not describe a remainder as
 a decimal digit to append. The original recording/media deliverables remain
 required for approval and final playback acceptance.

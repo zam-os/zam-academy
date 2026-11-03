@@ -708,6 +708,16 @@ run.addEventListener("click", async (event) => {
 					session.store.state.attempts.at(-1)?.helped === true,
 				`${lessonId}: a corrected retry remains assisted`,
 			);
+			if (lessonId === "schriftlich-multiplizieren")
+				assert(
+					session.feedback.includes(
+						"Z: 4 · 6 + 4 ankommender Übertrag = 28; schreibe 8, übertrage 2 zu H",
+					) &&
+						session.feedback.includes(
+							"T: 0 · 6 + 2 ankommender Übertrag = 2; schreibe 2, kein weiterer Übertrag",
+						),
+					"Multiplication success feedback distinguishes incoming and outgoing carries",
+				);
 			await session.store.update((p) => {
 				p.stage = "exit";
 				p.index = 2;
@@ -772,6 +782,52 @@ run.addEventListener("click", async (event) => {
 					session.store.state.rewards.length === 2,
 				`${lessonId}: stopping partial optional work preserves rewards`,
 			);
+			if (lessonId === "schriftlich-multiplizieren") {
+				for (const goal of [0, 2]) {
+					await session.store.update((p) => {
+						Object.assign(p, freshForest(lessonId));
+						p.stage = "lab";
+						p.index = goal;
+					});
+					const carryTask = activeForestTask(session.store.state);
+					if (!carryTask?.algorithm)
+						throw new Error("Carry review task missing");
+					const carryModel = algorithmModel(carryTask.algorithm),
+						row = goal === 0 ? carryModel.rows[0] : carryModel.rows[2],
+						carryIndex = row.carries[1];
+					for (let i = 0; i < carryModel.answer.length; i++)
+						editAlgorithm(i, String(carryModel.answer[i]));
+					editAlgorithm(carryIndex, "1");
+					await session.store.update(() => {});
+					await actAlgorithm("forest-check");
+					assert(
+						session.store.state.attempts.at(-1)?.outcome === false &&
+							session.feedback.includes("kein voller Zehner") &&
+							session.feedback.includes("leer oder schreibe 0"),
+						`Unnecessary ${goal === 0 ? "product" : "sum"} carry gets explicit zero-carry feedback`,
+					);
+					editAlgorithm(carryIndex, "");
+					await session.store.update(() => {});
+					await actAlgorithm("forest-check");
+					assert(
+						session.store.state.attempts.at(-1)?.outcome === true &&
+							session.store.state.attempts.at(-1)?.helped === true,
+						`Correcting an unnecessary ${goal === 0 ? "product" : "sum"} carry to blank succeeds as assisted`,
+					);
+				}
+				await session.store.update((p) => {
+					Object.assign(p, freshForest(lessonId));
+					p.stage = "lab";
+					p.index = 1;
+				});
+				await actAlgorithm("forest-hint");
+				await actAlgorithm("forest-solution");
+				assert(
+					session.feedback.includes("schreibe 8, übertrage 2 zu H") &&
+						session.store.state.helped.length === 1,
+					"Worked-solution feedback uses the same explicit outgoing carry and marks help",
+				);
+			}
 			host.remove();
 		}
 		const numericHost = document.createElement("section");

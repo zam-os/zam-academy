@@ -1,5 +1,5 @@
 import { algorithmBoard } from "./algorithm-board";
-import { algorithmModel } from "./written-algorithms";
+import { algorithmModel, ALGORITHM_EXAMPLES } from "./written-algorithms";
 import { subtractionBoard } from "./subtraction-board";
 import { subtractionColumns } from "./written-subtraction";
 import { columnBoard } from "./column-board";
@@ -119,7 +119,20 @@ export function forestTaskView(
 	return `<span class="mission-label">${p.recall ? "Später erinnern · neue Aufgaben" : p.optional ? `Noch eine Runde · Stufe ${p.optional}` : p.stage === "lab" ? `Entdeckerwerkstatt · Ziel ${p.index + 1} von 3` : p.stage === "practice-1" || p.stage === "practice-2" ? `Stufe ${p.stage === "practice-1" ? 1 : 2} · ${p.solved[p.stage === "practice-1" ? 1 : 2]} von 3 Aufgaben gelöst` : p.stage === "quiz" ? "Ein kurzer Denkcheck" : `Neue Aufgabe · ${p.index + 1} von 3`}</span><h2 id="lesson-heading" tabindex="-1">${escapeHtml(task.prompt)}</h2><div id="forest-graphic">${task.algorithm ? algorithmBoard(task.algorithm, p.algorithmWork ?? [], solved) : task.subtraction ? subtractionBoard(task.subtraction, p.subtractionWork, solved) : task.kind === "columns" && task.columns ? columnBoard(task.columns, p.columnWork, solved) : forestGraphic(task, p.position)}</div>${solved ? `<div class="feedback success" role="status">${assisted ? "Mit Hilfe geschafft. " : "Richtig! "}${escapeHtml(task.explanation)}</div><button class="primary" data-action="forest-next">${p.optional ? "Noch eine Aufgabe" : "Weiter"}</button>` : `${input}<div class="help-row"><button class="text-button" data-action="forest-hint">Ein kleiner Tipp</button>${assisted || wrong >= 2 ? '<button class="text-button" data-action="forest-solution">Lösung gemeinsam ansehen</button>' : ""}</div>${feedback ? `<p class="feedback" role="status">${escapeHtml(feedback)}</p>` : ""}${assisted && feedback === task.explanation ? '<button class="primary" data-action="forest-worked">Mit Hilfe weiter</button>' : ""}`}${p.optional ? '<button class="text-button" data-action="forest-stop">Übungsrunde beenden</button>' : ""}`;
 }
 export function forestExplanation(def: ForestLesson): string {
-	return `${def.paragraphs.map((p) => `<p>${escapeHtml(p)}</p>`).join("")}<div class="example"><strong>Ein Beispiel</strong><p>${escapeHtml(def.example)}</p>${def.id === "schriftlich-multiplizieren" ? algorithmBoard({ kind: "multiply", a: 204, b: 23 }, algorithmModel({ kind: "multiply", a: 204, b: 23 }).answer.map(String), true) : def.id === "schriftlich-dividieren" ? algorithmBoard({ kind: "divide", a: 1259, b: 6 }, algorithmModel({ kind: "divide", a: 1259, b: 6 }).answer.map(String), true) : ""}${def.id === "schriftlich-subtrahieren" ? subtractionBoard({ a: 5002, b: 1786 }, { bundles: subtractionColumns(5002, 1786).bundles, result: subtractionColumns(5002, 1786).result.map(String) }, true) : ""}${def.id === "schriftlich-addieren" ? columnBoard({ a: 30407, b: 2685 }, additionColumns(30407, 2685).answer.map(String), true) : ""}</div><p class="merke"><strong>Merke:</strong> ${escapeHtml(def.takeaway)}</p>`;
+	const algorithm =
+		def.id === "schriftlich-multiplizieren"
+			? ALGORITHM_EXAMPLES.multiply
+			: def.id === "schriftlich-dividieren"
+				? ALGORITHM_EXAMPLES.divide
+				: null;
+	const algorithmExample = algorithm
+		? algorithmBoard(
+				algorithm,
+				algorithmModel(algorithm).answer.map(String),
+				true,
+			)
+		: "";
+	return `${def.paragraphs.map((p) => `<p>${escapeHtml(p)}</p>`).join("")}<div class="example"><strong>Ein Beispiel</strong><p>${escapeHtml(def.example)}</p>${algorithmExample}${def.id === "schriftlich-subtrahieren" ? subtractionBoard({ a: 5002, b: 1786 }, { bundles: subtractionColumns(5002, 1786).bundles, result: subtractionColumns(5002, 1786).result.map(String) }, true) : ""}${def.id === "schriftlich-addieren" ? columnBoard({ a: 30407, b: 2685 }, additionColumns(30407, 2685).answer.map(String), true) : ""}</div><p class="merke"><strong>Merke:</strong> ${escapeHtml(def.takeaway)}</p>`;
 }
 export function forestTeacherPanel(def: ForestLesson): string {
 	return `<details class="teacher-panel"><summary>So geht’s: Erklärung und Lehrervideo</summary><div class="teacher-content"><h3>${escapeHtml(def.shortTitle)}</h3><div class="video-pending"><span aria-hidden="true">🎬</span><div><strong>Das Lehrervideo kommt noch.</strong><p>Du kannst schon mit der Erklärung und der Werkstatt lernen.</p></div></div>${forestExplanation(def)}<p class="teacher-note">Erprobungsfassung: Aufnahme und fachliche Freigabe durch eine Grundschullehrkraft stehen noch aus.</p></div></details>`;
