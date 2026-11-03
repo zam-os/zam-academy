@@ -1,5 +1,8 @@
 import { describe, expect, it } from "vitest";
-import { ProgressStore } from "../src/storage/progress";
+import cell from "../cell.json";
+import coverage from "../coverage.json";
+import media from "../media-register.json";
+import { ulid } from "../src/id";
 import {
 	digits,
 	exchange,
@@ -14,28 +17,23 @@ import {
 	independent,
 	laterEligible,
 	nextStep,
+	parentObservation,
 	recordAttempt,
 	validProgress,
 } from "../src/practice/evidence";
 import {
-	STEPS,
-	orderedOptions,
-	recallSeed,
-	taskFor,
-} from "../src/practice/tasks";
-import { validLessonHash } from "../src/zam/zam-link";
-import cell from "../cell.json";
-import coverage from "../coverage.json";
-import media from "../media-register.json";
-import { ulid } from "../src/id";
-import { board, markedNumeral } from "../src/ui/board";
-import {
-	practiceTask,
 	correctTask,
 	mistakeHint,
+	orderedOptions,
+	practiceTask,
 	REQUIRED_CORRECT,
+	recallSeed,
+	STEPS,
+	taskFor,
 } from "../src/practice/tasks";
-import { parentObservation } from "../src/practice/evidence";
+import { ProgressStore } from "../src/storage/progress";
+import { board, markedNumeral } from "../src/ui/board";
+import { validLessonHash } from "../src/zam/zam-link";
 
 type RecallItem = (typeof cell.atoms)[number]["practice_items"][number];
 
@@ -258,10 +256,10 @@ describe("tasks and evidence", () => {
 });
 
 describe("content contracts", () => {
-	it("has fourteen atoms, forty-six German items, stable lesson links and no broad official grade binding", () => {
-		expect(cell.atoms).toHaveLength(14);
+	it("has sixteen atoms, fifty-four German items, stable lesson links and no broad official grade binding", () => {
+		expect(cell.atoms).toHaveLength(16);
 		const items = cell.atoms.flatMap<RecallItem>((a) => a.practice_items);
-		expect(items).toHaveLength(46);
+		expect(items).toHaveLength(54);
 		for (const atom of cell.atoms) {
 			expect(atom.curricula.every((c) => c.provider === "zam-academy")).toBe(
 				true,
@@ -274,7 +272,7 @@ describe("content contracts", () => {
 			expect(validLessonHash(new URL(item.source_link).hash)).toBe(true);
 		}
 		expect(validLessonHash("#lesson=unbekannt")).toBe(false);
-		expect(new Set(items.map((i) => i.id)).size).toBe(46);
+		expect(new Set(items.map((i) => i.id)).size).toBe(54);
 	});
 	it("uses a real minus sign in the subtraction card and its validated math segment", () => {
 		const card = cell.atoms

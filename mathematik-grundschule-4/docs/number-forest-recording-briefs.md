@@ -1,4 +1,4 @@
-# Number Forest: seven teacher recording briefs
+# Number Forest: teacher recording briefs
 
 Status: scripts for production, not recordings or teacher approval. Each
 clip should be in German, approximately 2–3 minutes (3–4 for written addition), with reviewed captions,
@@ -313,3 +313,63 @@ Include 2 036 divided by 4 for internal zeros, 2 417 divided by 8 for a
 new remainder example, and division by 10. Do not describe a remainder as
 a decimal digit to append. The original recording/media deliverables remain
 required for approval and final playback acceptance.
+
+
+## Milos Musterpfad — arithmetic patterns and number relationships
+
+**Learning focus:** state a rule before extending a sequence; examine both
+summands in a structured packet; vary ANNA digits systematically. Use tables
+matching the app, with all learner fields initially empty. Use the distinct
+teaching family below rather than revealing a lab row. Target: 3–4 minutes.
+
+**German teaching script:**
+
+- „Eine Folge hat eine Regel. Wir gehen jedes Mal um 150 zurück:
+  8 600, 8 450, 8 300, 8 150, 8 000. Prüfe jeden Abstand. Ohne eine
+  genannte Regel könnten wir auch andere Folgen erfinden.“
+- „Bei 260 + 140 ist die Summe 400. 20 dazu beim ersten und 20 weg beim
+  zweiten Summanden ergibt 280 + 120, wieder 400. Wenn dagegen beide
+  Summanden um 20 wachsen, wächst die Summe um 40.“
+- „ANNA bedeutet: außen dieselbe Ziffer, innen dieselbe Ziffer. Bei A = 8
+  und B = 6 entstehen 8 668 und die Tauschzahl 6 886. Die Differenz ist
+  1 782. Erhöhe beide Ziffern: 9 779 − 7 997 ist wieder 1 782. Beide Zahlen
+  wuchsen um 1 111. Darum bleibt die Differenz gleich.“
+- „Verändere jetzt nur A. Die größere Zahl wächst um 1 001, die kleinere
+  um 110. Die Differenz wächst um 891. Ziffern bleiben höchstens 9.
+  Prüfe deine Vermutung an einer weiteren Zeile und erkläre sie Milo.“
+
+**Teacher review:** confirm the language and progression, including the
+meaning of a rule, why checking a few cases alone does not prove every
+possible pattern, and the place-value explanation for the specified ANNA
+changes. No algebraic notation or negative numbers are introduced.
+
+## Milos Inselplan — multi-step story problems
+
+**Learning focus:** choose relevant information, name intermediate quantities,
+interpret a division remainder, work backwards and check forwards. Target:
+3–4 minutes. Show the same table and labelled steps as the app, with teaching
+numbers distinct from its labs.
+
+**German teaching script:**
+
+- „Lies zuerst die Frage. Was ist gesucht? Sammle nur die Angaben, die du
+  dafür brauchst. Jede Zahl hat eine Bedeutung; nicht jede muss in die
+  Rechnung. Fehlt etwas Nötiges, fragst du nach.“
+- „68 Kinder und 49 Kinder möchten gleichzeitig übersetzen. In jedes Boot
+  passen 8 Kinder. Zuerst zählst du alle Kinder: 68 + 49 = 117. Die 117 ist
+  dein Zwischenergebnis und die Angabe für den nächsten Schritt.“
+- „117 : 8 ergibt 14 Rest 5. Vierzehn volle Boote nehmen nur 112 Kinder mit.
+  Auch die übrigen fünf brauchen Plätze. Ein weiteres Boot reicht für
+  alle fünf. Also brauchst du mindestens fünfzehn Boote. 15 mal 8 sind
+  120 Plätze; ein Boot weniger hat zu wenig Plätze. Hier müssen wir genau
+  planen, damit niemand am Ufer bleibt.“
+- „Ist der Anfang gesucht, gehst du vom bekannten Ende rückwärts.
+  Liegen nach dem Verschenken noch sechs Kisten mit je 15 Muscheln da,
+  sind das 90. Wurden vorher 23 verschenkt, waren es am Anfang 113.
+  Probe vorwärts: 113 minus 23 ist 90, geteilt durch 6 ist 15.“
+
+**Teacher review:** validate age-appropriate contexts, counting units, the
+minimum-capacity argument (including the zero-remainder case), alternate
+valid approaches and the reverse/forward connection. Open problem posing,
+collecting missing information, free representations and systematic
+combinations remain outside this increment.

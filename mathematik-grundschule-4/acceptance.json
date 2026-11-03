@@ -231,6 +231,13 @@
 			"status": "passed",
 			"checked": "2026-11-03",
 			"details": "66 native assertions passed, including false product/sum carry feedback, blank-zero correction retaining assisted evidence, success/worked-solution carry direction and prior persistence/reward checks. Built desktop light preview confirmed false carry 1 for 213 times 3, blank correction and explicit outgoing carries for 347 times 6. Teacher panel for lab 204 times 23 shows separate 305 times 24; full-tens transfer labels the Nullreihe. Division explanation uses 2138 divided by 7, while the first lab stays 848 divided by 4; static and invalid-input copy contain no carry instructions. Inspected 320px dark layout without document overflow. Original learner preview was not reset; physical touch remains pending."
+		},
+		{
+			"surface": "Built app on isolated 127.0.0.1:5228 and native harness on :5227 in Codex in-app browser",
+			"check": "Patterns and multi-step stories: full journeys, storage, evidence and responsive rendering",
+			"status": "passed",
+			"checked": "2026-11-03",
+			"details": "Both lessons completed through 3 labs, quiz, 3 guided and 3 transfer tasks, then 3 fresh exits. Checked an incorrect boat count and targeted correction, pattern entry/reload, dated parent examples and truthful teacher-media panels. Desktop light and 320 px dark inspected; body width matched viewport and ANNA overflow stayed inside its table region. Native harness 88 assertions passed in unique disposable stores, including both full public-session journeys, keyed pending drafts, retained input focus, validation without attempts, assisted correction/continuation and optional practice with exactly 2 rewards. No user preview was reset; physical touch and direct-file startup remain pending."
 		}
 	],
 	"remaining": [
@@ -243,9 +250,9 @@
 	],
 	"checked": "2026-11-03",
 	"automated_checks": {
-		"app": "npm ci --offline --no-audit --no-fund, npm run typecheck, npm test (98 tests), npm run package:zip and existing external Biome format/lint passed under Node 22.22.3. No dependency changes.",
+		"app": "npm ci --offline --no-audit --no-fund, npm run typecheck, npm test (107 tests), npm run package:zip and existing external Biome format/lint passed under Node 22.22.3. No dependency changes.",
 		"catalog": "node --test scripts/build-catalog.test.mjs scripts/academy-registry.test.mjs: 48 checks passed. This local-only draft remains excluded.",
-		"cell": "14 atoms, 46 items, version 2026.11.7. All 60 atom/item identities preserved; only the new subtraction card typography changes. Original 11 atoms/34 items remain unchanged as parsed JSON. Disposable install/enrol/recall/reinstall and all 37 cells passed against CI-pinned zam-core 0.54.0; no broad official grade binding or history-transfer declaration.",
+		"cell": "16 atoms, 54 items, version 2026.11.8. Parsed-JSON comparison with 3577a07 preserves all original 14 atoms/46 items and identifiers. Disposable install/enrol/recall/reinstall and all 37 cells passed against CI-pinned zam-core 0.54.0; no broad official grade binding or history transfer.",
 		"all_cells": "ZAM_CORE=<temporary zam-core 0.54.0 file URL> node scripts/validate-cells.mjs: all 37 Academy cells validated in disposable libraries.",
 		"package": "npm run package:zip and npm run verify:release passed. npm run verify:release -- --complete returned the expected nonzero result for missing teacher review/media, final playback, direct-file startup, ZAM learner-UI recall and physical touch."
 	},
@@ -291,12 +298,14 @@
 			"schriftlich-addieren",
 			"schriftlich-subtrahieren",
 			"schriftlich-multiplizieren",
-			"schriftlich-dividieren"
+			"schriftlich-dividieren",
+			"muster-zahlbeziehungen",
+			"sachaufgaben-mehrschrittig"
 		],
 		"status": "implemented-draft",
 		"teacher_review": "pending",
 		"teacher_recordings": "awaiting-recording",
-		"curriculum_check": "2026-11-02; sections 1.1 and 1.2 only; mapped positions remain partial",
+		"curriculum_check": "2026-11-03; sections 1.1, 1.2 and 1.3 mapped only in part; all 54 inventory rows retain explicit gaps and teacher review remains pending.",
 		"storage": "One separate transactional document per new lesson; original workshop namespace unchanged; no migrations",
 		"second_agent_review": {
 			"status": "reviewed",
@@ -385,6 +394,28 @@
 				"README enrolment count is forty-six"
 			],
 			"independent_recheck": "Read-only recheck reported no actionable findings; 73 tests across four targeted files and diff check passed. This is not teacher approval."
+		},
+		"patterns_and_stories": {
+			"status": "implemented-draft",
+			"lessons": ["muster-zahlbeziehungen", "sachaufgaben-mehrschrittig"],
+			"scope": "Constant-step sequences, structured addition packets and two specified ANNA changes; forward/backward two-step stories, irrelevant information, intermediate quantities, exact division and contextual remainder checks. No open-ended modelling or full-section claim.",
+			"curriculum": "Official Grades 3/4 sections1.2 and1.3 re-read on 2026-11-03 with Grades 1/2 and Grade 5 Gymnasium/Realschule boundaries. All mappings remain partial and unreviewed.",
+			"storage": "New per-lesson documents only; investigationWork is null or an array validated against the active worksheet. Keyed drafts preserve pending edits. No old documents or migrations changed.",
+			"teacher_review": "pending",
+			"recordings": "awaiting-recording",
+			"validation": "107 unit tests, 88 isolated native browser assertions, 48 root checks, 37 cell validations, disposable recall path and built app journeys passed.",
+			"independent_review": {
+				"status": "reviewed",
+				"date": "2026-11-03",
+				"resolved": [
+					"Separate ANNA lab/teaching examples",
+					"Keep teaching/quiz examples outside generated ANNA and boat targets",
+					"Normalize anonymous camp counts for evidence",
+					"Include radio option identity for existing focus restoration"
+				],
+				"evidence": "62 targeted tests across 3 files and diff check passed; no remaining actionable findings. Different ANNA change rules retain distinct identities.",
+				"teacher_approval": false
+			}
 		}
 	}
 }

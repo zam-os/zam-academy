@@ -1912,3 +1912,101 @@ input {
 		grid-template-columns: repeat(2, minmax(0, 1fr));
 	}
 }
+
+.investigation-workshop {
+	margin-block: 1.25rem;
+}
+.investigation-scroll {
+	overflow-x: auto;
+	border: 2px solid var(--line);
+	border-radius: 14px;
+	margin-bottom: 1.4rem;
+}
+.investigation-scroll table {
+	width: 100%;
+	border-collapse: collapse;
+	background: var(--surface);
+	color: var(--ink);
+}
+.investigation-scroll caption {
+	text-align: left;
+	font-weight: 700;
+	padding: 1rem;
+}
+.investigation-scroll th,
+.investigation-scroll td {
+	padding: 0.7rem 0.85rem;
+	border-top: 1px solid var(--line);
+	text-align: left;
+}
+.investigation-scroll td {
+	font-variant-numeric: tabular-nums;
+	white-space: nowrap;
+}
+.investigation-scroll thead {
+	color: var(--ink);
+}
+.investigation-fields {
+	display: grid;
+	gap: 1rem;
+}
+.investigation-field {
+	display: grid;
+	gap: 0.45rem;
+	min-width: 0;
+	font-weight: 600;
+}
+.investigation-field input,
+.investigation-field select,
+.investigation-field output {
+	width: 100%;
+	min-width: 0;
+	box-sizing: border-box;
+	padding: 0.8rem;
+	border: 2px solid var(--line);
+	border-radius: 10px;
+	background: var(--surface);
+	color: var(--ink);
+	font: inherit;
+	min-height: 48px;
+}
+.investigation-field input {
+	max-width: 17rem;
+}
+.investigation-field select {
+	font-size: 0.95rem;
+}
+.investigation-field [aria-invalid="true"] {
+	border-color: var(--purple);
+	outline: 2px dashed var(--ink);
+}
+.investigation-choice {
+	border: 0;
+	padding: 0;
+	margin: 0;
+}
+.investigation-choice legend {
+	margin-bottom: 0.5rem;
+}
+.investigation-choice label {
+	display: flex;
+	align-items: center;
+	gap: 0.65rem;
+	padding: 0.65rem 0.8rem;
+	border: 2px solid var(--line);
+	border-radius: 10px;
+	min-height: 44px;
+	cursor: pointer;
+	font-weight: 400;
+}
+.investigation-choice input[type="radio"] {
+	flex: 0 0 24px;
+	width: 24px;
+	height: 24px;
+	min-height: 24px;
+	margin: 0;
+	accent-color: var(--purple);
+}
+.investigation-choice label:has(input:checked) {
+	border-color: var(--purple);
+}

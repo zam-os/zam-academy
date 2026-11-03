@@ -63,7 +63,7 @@ external video embeds and automatic media requests remain excluded.
 
 | App | Folder | Status |
 | --- | --- | --- |
-| Grade 4 mathematics: eleven Number Forest lessons with Milo (Bavaria) | [`mathematik-grundschule-4/`](mathematik-grundschule-4/) | Local draft; eleven lessons, teacher recordings and review pending |
+| Grade 4 mathematics: thirteen Number Forest lessons with Milo (Bavaria) | [`mathematik-grundschule-4/`](mathematik-grundschule-4/) | Local draft; thirteen lessons, teacher recordings and review pending |
 
 ## Develop
 

@@ -1,27 +1,37 @@
-import {
-	algorithmTask,
-	algorithmLab,
-	algorithmExit,
-	algorithmMistake,
-	isWrittenAlgorithm,
-	type Algorithm,
-} from "./written-algorithms";
 import { format, parseInteger } from "../math/place-value";
 import { random } from "../practice/tasks";
-import { arithmeticTask, arithmeticLab, isArithmetic } from "./arithmetic";
+import { arithmeticLab, arithmeticTask, isArithmetic } from "./arithmetic";
+import type { ExtraLessonId } from "./catalog";
 import {
-	writtenTask,
-	writtenLab,
+	type Investigation,
+	investigationExit,
+	investigationMistake,
+	isInvestigation,
+	patternLab,
+	patternTask,
+	storyLab,
+	storyTask,
+} from "./investigations";
+import {
 	writtenExit,
+	writtenLab,
 	writtenMistake,
+	writtenTask,
 } from "./written-addition";
 import {
-	subtractionTask,
-	subtractionLab,
+	type Algorithm,
+	algorithmExit,
+	algorithmLab,
+	algorithmMistake,
+	algorithmTask,
+	isWrittenAlgorithm,
+} from "./written-algorithms";
+import {
 	subtractionExit,
+	subtractionLab,
 	subtractionMistake,
+	subtractionTask,
 } from "./written-subtraction";
-import type { ExtraLessonId } from "./catalog";
 export type Answer = number | number[];
 export type ForestTask = {
 	kind:
@@ -35,7 +45,8 @@ export type ForestTask = {
 		| "groups"
 		| "columns"
 		| "subtraction"
-		| "algorithm";
+		| "algorithm"
+		| "investigation";
 	goal: 1 | 2 | 3;
 	prompt: string;
 	answer: Answer;
@@ -51,6 +62,7 @@ export type ForestTask = {
 	columns?: { a: number; b: number; shown?: number };
 	subtraction?: { a: number; b: number; shown?: number };
 	algorithm?: Algorithm;
+	investigation?: Investigation;
 	inverseProbe?: boolean;
 };
 const equal = (a: number[], b: number[]) =>
@@ -147,6 +159,8 @@ export function forestTask(
 	seed: number,
 	index: number,
 ): ForestTask {
+	if (id === "muster-zahlbeziehungen") return patternTask(level, seed, index);
+	if (id === "sachaufgaben-mehrschrittig") return storyTask(level, seed, index);
 	if (isWrittenAlgorithm(id)) return algorithmTask(id, level, seed, index);
 	if (id === "schriftlich-subtrahieren")
 		return subtractionTask(level, seed, index);
@@ -287,6 +301,8 @@ export function forestTask(
 	};
 }
 export function forestLab(id: ExtraLessonId, goal: number): ForestTask {
+	if (id === "muster-zahlbeziehungen") return patternLab(goal);
+	if (id === "sachaufgaben-mehrschrittig") return storyLab(goal);
 	if (isWrittenAlgorithm(id)) return algorithmLab(id, goal);
 	if (id === "schriftlich-subtrahieren") return subtractionLab(goal);
 	if (id === "schriftlich-addieren") return writtenLab(goal);
@@ -325,6 +341,8 @@ export function forestLab(id: ExtraLessonId, goal: number): ForestTask {
 	};
 }
 export function forestMistake(task: ForestTask, answer: Answer | null): string {
+	if (task.investigation)
+		return investigationMistake(task.investigation, answer);
 	if (task.algorithm)
 		return algorithmMistake(task, Array.isArray(answer) ? answer : null);
 	if (task.kind === "subtraction")
@@ -380,6 +398,7 @@ export function forestExit(
 	seed: number,
 	index: number,
 ): ForestTask {
+	if (isInvestigation(id)) return investigationExit(id, seed, index);
 	if (isWrittenAlgorithm(id)) return algorithmExit(id, seed, index);
 	if (id === "schriftlich-subtrahieren") return subtractionExit(seed, index);
 	if (id === "schriftlich-addieren") return writtenExit(seed, index);

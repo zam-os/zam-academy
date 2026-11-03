@@ -1,9 +1,9 @@
 {
 	"$schema": "https://zam.app/schemas/v1/kvt-tile.json",
 	"tile_id": "zam-academy:mathematik-grundschule-4",
-	"version": "2026.11.7",
+	"version": "2026.11.8",
 	"title": "Mathematik 4 Grundschule: Milos Zahlenwald",
-	"description": "Elf deutsche Entdeckerlektionen: Stellenwerte, Zahlbeziehungen, Rechenstrategien und die schriftlichen Verfahren der Addition, Subtraktion, Multiplikation mit ein- und zweistelligen Faktoren sowie Division durch 1 bis 10 mit Rest. Zahlen und Ergebnisse höchstens eine Million. Erprobungsfassung; fachliche Freigabe und Lehrervideos fehlen. Kein vollständiger Jahreskurs.",
+	"description": "Dreizehn deutsche Entdeckerlektionen: Stellenwerte, Zahlbeziehungen, Rechenstrategien, schriftliche Grundrechenarten, arithmetische Muster und mehrschrittige Sachaufgaben. Zahlen und Ergebnisse höchstens eine Million. Erprobungsfassung; fachliche Freigabe und Lehrervideos fehlen. Kein vollständiger Jahreskurs.",
 	"publisher": "ZAM Academy",
 	"sources": [
 		{
@@ -18,7 +18,12 @@
 		{
 			"uri": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik#25775",
 			"label": "LehrplanPLUS Mathematik 3/4, Teilbereich 1.2",
-			"checked": "2026-11-02"
+			"checked": "2026-11-03"
+		},
+		{
+			"uri": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik#25777",
+			"label": "LehrplanPLUS Mathematik 3/4, Teilbereich 1.3",
+			"checked": "2026-11-03"
 		}
 	],
 	"atoms": [
@@ -1268,6 +1273,196 @@
 					"question": "Milo teilt 1 259 durch 6 und erhält 208 Rest 11. Warum ist er noch nicht fertig?",
 					"concept": "Der Rest enthält noch einmal 6. Richtig sind 209 Rest 5.",
 					"sample_solution": "Ein gültiger Rest muss kleiner als 6 sein. Aus Rest 11 kann Milo noch einmal 6 verteilen: 11 − 6 = 5. Der Quotient wächst um 1 auf 209. Probe: 209 · 6 + 5 = 1 254 + 5 = 1 259. Der Rest 5 ist kleiner als 6."
+				}
+			]
+		},
+		{
+			"namespace": "zam-academy-mathematik-grundschule-4",
+			"domain": "mathematik/zahlenwald",
+			"reduction": "axiomatic",
+			"typical_age_min": 8,
+			"prerequisites": [
+				{
+					"atom_id": "01M6EQYDM417KPCFPXNCFJQKZZ",
+					"type": "soft",
+					"rationale": "Dieser Rechenweg hilft beim Untersuchen und Prüfen der Zusammenhänge."
+				},
+				{
+					"atom_id": "01M6EZ0V5SK9DYSAGJMSH7BVWS",
+					"type": "soft",
+					"rationale": "Dieser Rechenweg hilft beim Untersuchen und Prüfen der Zusammenhänge."
+				}
+			],
+			"id": "01M6FWJNJHBE2HJPSP2H7QZP4K",
+			"atom_uri": "urn:zam:atom:01M6FWJNJHBE2HJPSP2H7QZP4K",
+			"slug": "gs4-muster-zahlbeziehungen",
+			"title": "Muster und Zahlbeziehungen",
+			"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=muster-zahlbeziehungen",
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "mathematik-grundschule-4",
+					"topic_code": "muster-zahlbeziehungen",
+					"topic_title": "Muster und Zahlbeziehungen"
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M6FWJNJJADZXDEFJMAES6VM9",
+					"slug": "gs4-muster-zahlbeziehungen-1",
+					"language": "de",
+					"bloom_level": 2,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=muster-zahlbeziehungen",
+					"materiality": "material",
+					"tier": "tier1_fast",
+					"question": "Ein Summand wird um 20 größer, der andere um 20 kleiner. Wie verändert sich die Summe?",
+					"concept": "Sie bleibt gleich, weil sich die Veränderungen ausgleichen.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Sie bleibt gleich, weil sich die Veränderungen ausgleichen.",
+							"Sie wird um 40 größer, weil beide Summanden verändert werden."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M6FWJNJJQFY4GDYF4W1J2VQ9",
+					"slug": "gs4-muster-zahlbeziehungen-2",
+					"language": "de",
+					"bloom_level": 2,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=muster-zahlbeziehungen",
+					"materiality": "material",
+					"tier": "tier1_fast",
+					"question": "Wie sind bei einer ANNA-Zahl die äußeren und die inneren Ziffern angeordnet?",
+					"concept": "Die beiden äußeren Ziffern sind gleich, ebenso die beiden inneren.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Die beiden äußeren Ziffern sind gleich, ebenso die beiden inneren.",
+							"Alle vier Ziffern müssen verschieden sein."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M6FWJNJJKM5ZJ2DEDMAAHKDA",
+					"slug": "gs4-muster-zahlbeziehungen-3",
+					"language": "de",
+					"bloom_level": 3,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=muster-zahlbeziehungen",
+					"materiality": "material",
+					"tier": "tier2_synthesis",
+					"question": "Eine Folge beginnt bei 2 475. Bei jedem Schritt kommen 125 dazu. Nenne die nächsten vier Zahlen und prüfe die Übergänge.",
+					"concept": "2 600, 2 725, 2 850, 2 975.",
+					"sample_solution": "2 475 + 125 = 2 600; dann 2 725, 2 850 und 2 975. Jeder Abstand beträgt 125. Auch ein Hunderter- oder Tausenderübergang ändert die Regel nicht."
+				},
+				{
+					"id": "01M6FWJNJJMMD8P2ET1NHDX7KG",
+					"slug": "gs4-muster-zahlbeziehungen-4",
+					"language": "de",
+					"bloom_level": 3,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=muster-zahlbeziehungen",
+					"materiality": "material",
+					"tier": "tier2_synthesis",
+					"question": "Bei einer ANNA-Zahl und ihrer Tauschzahl wird jede der beiden verwendeten Ziffern um 1 erhöht. Alle Ziffern bleiben einstellig. Warum bleibt die Differenz gleich?",
+					"concept": "Beide Zahlen wachsen um 1 111. Gleich viel dazu verändert ihre Differenz nicht.",
+					"sample_solution": "Jede der vier Stellen wächst um eine Einheit ihres Stellenwerts: 1 000 + 100 + 10 + 1 = 1 111. Das gilt für die ANNA-Zahl und ihre Tauschzahl. Weil beide Zahlen um gleich viel wachsen, bleibt die Differenz gleich."
+				}
+			]
+		},
+		{
+			"namespace": "zam-academy-mathematik-grundschule-4",
+			"domain": "mathematik/zahlenwald",
+			"reduction": "axiomatic",
+			"typical_age_min": 8,
+			"prerequisites": [
+				{
+					"atom_id": "01M6EQYDM45HP78N17YA5KGEWJ",
+					"type": "soft",
+					"rationale": "Dieser Rechenweg hilft beim Untersuchen und Prüfen der Zusammenhänge."
+				},
+				{
+					"atom_id": "01M6F0EKRN13BXXSS137PPTS1Q",
+					"type": "soft",
+					"rationale": "Dieser Rechenweg hilft beim Untersuchen und Prüfen der Zusammenhänge."
+				}
+			],
+			"id": "01M6FWJNJJJV0GQ6RCZ87A41YA",
+			"atom_uri": "urn:zam:atom:01M6FWJNJJJV0GQ6RCZ87A41YA",
+			"slug": "gs4-sachaufgaben-mehrschrittig",
+			"title": "Sachaufgaben in Schritten",
+			"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=sachaufgaben-mehrschrittig",
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "mathematik-grundschule-4",
+					"topic_code": "sachaufgaben-mehrschrittig",
+					"topic_title": "Sachaufgaben in Schritten"
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M6FWJNJJPXRSHDH3MQB6KPFJ",
+					"slug": "gs4-sachaufgaben-mehrschrittig-1",
+					"language": "de",
+					"bloom_level": 2,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=sachaufgaben-mehrschrittig",
+					"materiality": "material",
+					"tier": "tier1_fast",
+					"question": "Woran entscheidest du bei einer Sachaufgabe, welche Zahlen aus dem Text du brauchst?",
+					"concept": "An der Frage und den Zusammenhängen der Geschichte.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"An der Frage und den Zusammenhängen der Geschichte.",
+							"Jede Zahl im Text muss in der Rechnung vorkommen."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M6FWJNJJ75ESN7YX5CY0SSQJ",
+					"slug": "gs4-sachaufgaben-mehrschrittig-2",
+					"language": "de",
+					"bloom_level": 2,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=sachaufgaben-mehrschrittig",
+					"materiality": "material",
+					"tier": "tier1_fast",
+					"question": "Beim Planen von Booten mit mehreren Plätzen bleibt nach den vollen Booten ein Rest von Kindern. Was bedeutet das für die Zahl der benötigten Boote?",
+					"concept": "Die übrigen Kinder brauchen zusammen ein weiteres Boot.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Die übrigen Kinder brauchen zusammen ein weiteres Boot.",
+							"Der Rest wird weggelassen; die vollen Boote reichen immer."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M6FWJNJJXSN0GAPGJV2HM0BD",
+					"slug": "gs4-sachaufgaben-mehrschrittig-3",
+					"language": "de",
+					"bloom_level": 3,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=sachaufgaben-mehrschrittig",
+					"materiality": "material",
+					"tier": "tier2_synthesis",
+					"question": "Sieben Beutel enthalten je 24 Samen. 35 Samen werden gesät. Wie viele Samen bleiben? Nenne auch dein Zwischenergebnis.",
+					"concept": "168 Samen vor dem Säen, 133 Samen danach.",
+					"sample_solution": "Zuerst den gesamten Vorrat berechnen: 7 · 24 = 168 Samen. Dann die gesäten Samen abziehen: 168 − 35 = 133 Samen. Es bleiben weniger als vorher; die 35 Samen werden nur einmal vom ganzen Vorrat abgezogen."
+				},
+				{
+					"id": "01M6FWJNJJPESJNJ98BB6PVNK1",
+					"slug": "gs4-sachaufgaben-mehrschrittig-4",
+					"language": "de",
+					"bloom_level": 3,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=sachaufgaben-mehrschrittig",
+					"materiality": "material",
+					"tier": "tier2_synthesis",
+					"question": "Milo verschenkt 27 Muscheln. Den Rest verteilt er auf fünf Kisten mit je 18 Muscheln. Wie viele hatte er am Anfang? Prüfe vorwärts.",
+					"concept": "117 Muscheln.",
+					"sample_solution": "Der Rest umfasst 5 · 18 = 90 Muscheln. Rückwärts kommen die verschenkten 27 wieder dazu: 90 + 27 = 117. Vorwärtsprobe: 117 − 27 = 90; 90 : 5 = 18 Muscheln je Kiste."
 				}
 			]
 		}

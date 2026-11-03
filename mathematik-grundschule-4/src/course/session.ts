@@ -1,6 +1,38 @@
+import { DATABASE, DocumentStore } from "../storage/progress";
+import type { ForestLesson } from "./catalog";
 import {
-	algorithmModel,
+	investigationInput,
+	isInvestigation,
+	validInvestigationWork,
+} from "./investigations";
+import {
+	activeForestTask,
+	advanceForest,
+	type ForestProgress,
+	forestKey,
+	forestRecallEligible,
+	freshForest,
+	recordForest,
+	startForestPractice,
+	validForest,
+} from "./progress";
+import { type Answer, forestInput, forestMistake } from "./tasks";
+import {
+	forestGraphic,
+	forestLessonView,
+	forestParentView,
+	forestTeacherPanel,
+} from "./view";
+import {
+	additionColumns,
+	columnAnswer,
+	columnOrder,
+	columnValidation,
+	emptyColumnWork,
+} from "./written-addition";
+import {
 	algorithmAnswer,
+	algorithmModel,
 	algorithmValidation,
 	isWrittenAlgorithm,
 } from "./written-algorithms";
@@ -10,33 +42,6 @@ import {
 	subtractionValidation,
 	unbundleSubtraction,
 } from "./written-subtraction";
-import {
-	columnAnswer,
-	columnValidation,
-	columnOrder,
-	additionColumns,
-	emptyColumnWork,
-} from "./written-addition";
-import { DocumentStore, DATABASE } from "../storage/progress";
-import type { ForestLesson } from "./catalog";
-import {
-	activeForestTask,
-	advanceForest,
-	forestKey,
-	forestRecallEligible,
-	freshForest,
-	recordForest,
-	startForestPractice,
-	validForest,
-	type ForestProgress,
-} from "./progress";
-import { forestInput, forestMistake, type Answer } from "./tasks";
-import {
-	forestGraphic,
-	forestLessonView,
-	forestParentView,
-	forestTeacherPanel,
-} from "./view";
 export type ForestEvent = "correct" | "encourage" | "reward" | "snack";
 export class ForestSession {
 	readonly store: DocumentStore<ForestProgress>;
@@ -54,7 +59,7 @@ export class ForestSession {
 	private rangeDraft: { key: string; position: number } | null = null;
 	private writtenDraft: {
 		key: string;
-		kind: "subtraction" | "algorithm";
+		kind: "subtraction" | "algorithm" | "investigation";
 		values: string[];
 	} | null = null;
 	constructor(
@@ -88,7 +93,9 @@ export class ForestSession {
 				? { ...this.store.state, columnWork: this.columnDraft.values }
 				: this.store.state;
 		if (this.writtenDraft?.key === key) {
-			if (this.writtenDraft.kind === "algorithm")
+			if (this.writtenDraft.kind === "investigation")
+				current = { ...current, investigationWork: this.writtenDraft.values };
+			else if (this.writtenDraft.kind === "algorithm")
 				current = { ...current, algorithmWork: this.writtenDraft.values };
 			else {
 				const task = activeForestTask(current);
@@ -381,6 +388,72 @@ export class ForestSession {
 						});
 				});
 			});
+		root
+			.querySelectorAll<HTMLInputElement | HTMLSelectElement>(
+				'[data-action="forest-investigation"]',
+			)
+			.forEach((input) => {
+				input.addEventListener("input", () => {
+					if (
+						input instanceof HTMLInputElement &&
+						input.type === "radio" &&
+						!input.checked
+					)
+						return;
+					const currentTask = activeForestTask(this.store.state);
+					if (!currentTask?.investigation) return;
+					const board = currentTask.investigation,
+						index = Number(input.dataset.col),
+						value = input.value,
+						key = forestKey(this.store.state);
+					const error = root.querySelector("#investigation-error");
+					if (
+						!validInvestigationWork([value], {
+							...board,
+							fields: [board.fields[index]],
+						})
+					) {
+						input.setAttribute("aria-invalid", "true");
+						if (error)
+							error.textContent =
+								"Hier passt eine ganze Zahl von 0 bis 1 000 000. Bitte verbessere das markierte Feld.";
+						return;
+					}
+					input.removeAttribute("aria-invalid");
+					if (error && !root.querySelector('[aria-invalid="true"]'))
+						error.textContent = "";
+					const values = [
+						...(this.writtenDraft?.key === key &&
+						this.writtenDraft.kind === "investigation"
+							? this.writtenDraft.values
+							: (this.store.state.investigationWork ??
+								board.fields.map(() => ""))),
+					];
+					values[index] = value;
+					this.writtenDraft = { key, kind: "investigation", values };
+					this.editingColumns = true;
+					const revision = ++this.columnRevision;
+					let failed = false;
+					void this.store
+						.update((p) => {
+							const task = activeForestTask(p);
+							if (forestKey(p) !== key || !task?.investigation) return;
+							p.investigationWork ??= task.investigation.fields.map(() => "");
+							p.investigationWork[index] = value;
+						})
+						.catch(() => {
+							failed = true;
+							this.feedback =
+								"Dein Schritt konnte nicht gespeichert werden. Probiere es noch einmal.";
+						})
+						.finally(() => {
+							if (revision !== this.columnRevision) return;
+							this.editingColumns = false;
+							this.writtenDraft = null;
+							if (failed) this.notify();
+						});
+				});
+			});
 		const input = root.querySelector<HTMLInputElement>("#forest-answer");
 		input?.addEventListener("input", () => {
 			this.draft = input.value;
@@ -456,6 +529,27 @@ export class ForestSession {
 			.forEach((cell) => {
 				algorithmValues[Number(cell.dataset.col)] = cell.value;
 			});
+		const investigationValues = task?.investigation
+			? [
+					...(this.writtenDraft?.key === key &&
+					this.writtenDraft.kind === "investigation"
+						? this.writtenDraft.values
+						: (this.store.state.investigationWork ??
+							task.investigation.fields.map(() => ""))),
+				]
+			: [];
+		root
+			.querySelectorAll<HTMLInputElement | HTMLSelectElement>(
+				'[data-action="forest-investigation"]',
+			)
+			.forEach((cell) => {
+				if (
+					!(cell instanceof HTMLInputElement) ||
+					cell.type !== "radio" ||
+					cell.checked
+				)
+					investigationValues[Number(cell.dataset.col)] = cell.value;
+			});
 		let event: ForestEvent | undefined;
 		this.busy = true;
 		try {
@@ -488,6 +582,7 @@ export class ForestSession {
 					p.optional = null;
 					p.index = 0;
 					if (isWrittenAlgorithm(p.lesson)) p.algorithmWork = null;
+					if (isInvestigation(p.lesson)) p.investigationWork = null;
 					if (p.lesson === "schriftlich-subtrahieren") p.subtractionWork = null;
 					return;
 				}
@@ -631,12 +726,28 @@ export class ForestSession {
 							return;
 						}
 					}
+					if (action === "forest-check" && task.investigation) {
+						if (validInvestigationWork(investigationValues, task.investigation))
+							p.investigationWork = investigationValues;
+						if (
+							investigationInput(task.investigation, investigationValues) ===
+							null
+						) {
+							this.feedback = forestMistake(task, null);
+							return;
+						}
+					}
 					let answer: Answer | null;
 					if (action === "forest-worked") {
 						if (!p.helped.includes(key) || !explanationShown) return;
 						answer = task.answer;
 					} else if (action === "forest-choice")
 						answer = Number(button.dataset.value);
+					else if (task.investigation)
+						answer = investigationInput(
+							task.investigation,
+							investigationValues,
+						);
 					else if (task.algorithm)
 						answer = algorithmAnswer(task.algorithm, algorithmValues);
 					else if (task.subtraction)
@@ -669,6 +780,8 @@ export class ForestSession {
 							result: task.answer.slice(0, 7).map(String),
 							bundles: task.answer.slice(7),
 						};
+					if (right && task.investigation && Array.isArray(task.answer))
+						p.investigationWork = task.answer.map(String);
 					if (right && task.algorithm && Array.isArray(task.answer))
 						p.algorithmWork = task.answer.map(String);
 					event = right ? "correct" : "encourage";

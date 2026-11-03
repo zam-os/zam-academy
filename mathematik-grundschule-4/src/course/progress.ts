@@ -1,25 +1,26 @@
-import { isWrittenAlgorithm, validAlgorithmWork } from "./written-algorithms";
-import {
-	bundleValue,
-	validSubtractionWork,
-	type SubtractionWork,
-} from "./written-subtraction";
-import { emptyColumnWork } from "./written-addition";
 import { ulid } from "../id";
 import {
 	EXTRA_LESSON_IDS,
-	forestLesson,
 	type ExtraLessonId,
 	type ForestLesson,
+	forestLesson,
 } from "./catalog";
+import { isInvestigation, validInvestigationWork } from "./investigations";
 import {
+	type Answer,
+	correctForest,
+	type ForestTask,
 	forestExit,
 	forestLab,
 	forestTask,
-	type ForestTask,
-	type Answer,
-	correctForest,
 } from "./tasks";
+import { emptyColumnWork } from "./written-addition";
+import { isWrittenAlgorithm, validAlgorithmWork } from "./written-algorithms";
+import {
+	bundleValue,
+	type SubtractionWork,
+	validSubtractionWork,
+} from "./written-subtraction";
 export const FOREST_STAGES = [
 	"welcome",
 	"learn",
@@ -57,6 +58,7 @@ export interface ForestProgress {
 	columnWork?: string[];
 	subtractionWork?: SubtractionWork | null;
 	algorithmWork?: string[] | null;
+	investigationWork?: string[] | null;
 	labGoals: number[];
 	quiz: boolean;
 	solved: { 1: number; 2: number };
@@ -88,6 +90,7 @@ export function freshForest(
 			: {}),
 		...(lesson === "schriftlich-subtrahieren" ? { subtractionWork: null } : {}),
 		...(isWrittenAlgorithm(lesson) ? { algorithmWork: null } : {}),
+		...(isInvestigation(lesson) ? { investigationWork: null } : {}),
 		labGoals: [],
 		quiz: false,
 		solved: { 1: 0, 2: 0 },
@@ -241,6 +244,14 @@ export function validForest(raw: unknown): raw is ForestProgress {
 		)
 			return false;
 	}
+	if (isInvestigation(String(raw.lesson)) && raw.investigationWork !== null) {
+		const task = activeForestTask(raw as unknown as ForestProgress);
+		if (
+			!task?.investigation ||
+			!validInvestigationWork(raw.investigationWork, task.investigation)
+		)
+			return false;
+	}
 	if (raw.lesson === "schriftlich-subtrahieren" && raw.subtractionWork) {
 		const task = activeForestTask(raw as unknown as ForestProgress);
 		if (
@@ -327,20 +338,22 @@ export function recordForest(
 	if (answer === null) return false;
 	const key = forestKey(p),
 		signature = JSON.stringify(
-			task.calculation
-				? calculationFamily(task.calculation)
-				: [
-						task.kind,
-						task.prompt,
-						task.kind === "order" || task.kind === "parts"
-							? [...(task.numbers ?? [])].sort((a, b) => a - b)
-							: task.numbers,
-						task.line,
-						task.whole,
-						task.choices
-							? [...task.choices].sort((a, b) => a.value - b.value)
-							: undefined,
-					],
+			task.investigation
+				? ["investigation", ...task.investigation.identity]
+				: task.calculation
+					? calculationFamily(task.calculation)
+					: [
+							task.kind,
+							task.prompt,
+							task.kind === "order" || task.kind === "parts"
+								? [...(task.numbers ?? [])].sort((a, b) => a - b)
+								: task.numbers,
+							task.line,
+							task.whole,
+							task.choices
+								? [...task.choices].sort((a, b) => a.value - b.value)
+								: undefined,
+						],
 		);
 	const first = !p.attempts.some(
 		(a) => a.key === key || a.signature === signature,
@@ -379,6 +392,7 @@ export function advanceForest(p: ForestProgress, now = Date.now()): boolean {
 	if (p.lesson === "schriftlich-addieren") p.columnWork = emptyColumnWork();
 	if (p.lesson === "schriftlich-subtrahieren") p.subtractionWork = null;
 	if (isWrittenAlgorithm(p.lesson)) p.algorithmWork = null;
+	if (isInvestigation(p.lesson)) p.investigationWork = null;
 	if (p.recall) {
 		if (p.recall.index === 2) p.recall = null;
 		else p.recall.index++;
@@ -430,6 +444,7 @@ export function startForestPractice(
 	if (p.lesson === "schriftlich-addieren") p.columnWork = emptyColumnWork();
 	if (p.lesson === "schriftlich-subtrahieren") p.subtractionWork = null;
 	if (isWrittenAlgorithm(p.lesson)) p.algorithmWork = null;
+	if (isInvestigation(p.lesson)) p.investigationWork = null;
 }
 export function forestRecallEligible(
 	p: ForestProgress,

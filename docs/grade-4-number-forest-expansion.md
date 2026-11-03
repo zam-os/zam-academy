@@ -225,3 +225,81 @@ substitute for primary-school teacher approval.
 The [PR 76 review follow-up](grade-4-pr76-review-follow-up.md) records the
 2026-11-03 corrections to carry feedback, separate teaching examples and
 card/board copy. The current cell is 2026.11.7; all identifiers remain stable.
+
+## Patterns and multi-step stories — 2026-11-03
+
+Thomas requested merging PR #76 and continuing with the next two lessons.
+PR #76 merged at `3577a07`; this increment starts from that main commit on
+`codex/grade4-patterns-story-problems`.
+
+| Lesson | Three workshop goals | Transfer change |
+| --- | --- | --- |
+| `muster-zahlbeziehungen` · Milos Musterpfad | State/extend a constant-step sequence; explain structured addition packets; build and vary ANNA numbers | Interior gaps and decreasing sequences; opposing summand changes; vary only A instead of both digits |
+| `sachaufgaben-mehrschrittig` · Milos Inselplan | Choose relevant information and a plan; use intermediate results and interpret remainders; work backwards and check forwards | Less round quantities; an additional boat for a nonzero remainder; diagnose and correct a backward plan |
+
+Each uses three workshop goals, a three-option quick check, three successful
+worksheets per level, three fresh exits and optional practice. A worksheet
+requires entered intermediate quantities and a justification. Initially empty
+fields and wrapped radio labels keep the task usable with a keyboard or a
+narrow screen. Invalid/incomplete fields do not spend an attempt. Wrong
+complete work receives a hint for the first incorrect field; correction and
+worked continuation stay assisted. Keyed drafts preserve rapid edits and
+focus during asynchronous saving; current work resumes in its own lesson
+document. Finishing or stopping an optional round clears that work and never
+adds another mission reward.
+
+Mathematical identities ignore prose and option order. The order of the two
+anonymous camps is normalized. Different ANNA change rules remain distinct
+investigations because their preceding rows and required reasoning differ.
+The worked ANNA examples use inner digits 6/7, outside every generated row
+(inner digits at most 5). The boat example uses fourteen full boats and the
+quiz fifteen, outside generated counts 4–12. This prevents their answers
+from being reused as purported fresh evidence. An initial review found both
+a lab overlap and a generated overlap; seeds 30/25926 and sampled-domain
+regressions cover the fixes. Radio values also carry the existing app focus
+restorer's option identifier.
+
+Cell `2026.11.8` has sixteen atoms/fifty-four items: thirty-two binary fast
+checks and twenty-two synthesis items. Parsed-JSON comparison with the merged
+main commit preserves all original fourteen atoms/forty-six items, including
+ids and content. New cards live only in `cell.json`; there are no history
+transfers or broad official-grade bindings. The original multi-atom workshop
+still needs registry reconciliation before publication.
+
+The official [Grades 3/4 curriculum](https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik)
+was re-read on 2026-11-03, alongside [Grades 1/2](https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/2/mathematik)
+and Grade 5 [Realschule](https://www.lehrplanplus.bayern.de/fachlehrplan/realschule/5/mathematik)
+and [Gymnasium](https://www.lehrplanplus.bayern.de/fachlehrplan/gymnasium/5/mathematik).
+Section 1.2 rows 08/09 and section 1.3 rows 01/02/03/05/06 are partial and
+unreviewed. Numbers remain nonnegative and no larger than one million;
+divisors stay at most 10. Open problem posing, independently choosing/creating
+representations, collecting missing information, discussion, broader
+patterns/contexts, estimation choices and systematic combinations remain
+open. The supplied tables do not establish those broader competencies.
+N13 (systematic combinations) remains the next inventory topic; the app's
+actual lesson count is thirteen because earlier inventory positions were
+split. No phase checkbox is closed.
+
+Validation of this increment:
+
+- App: `npm ci --offline --no-audit --no-fund`, `npm run typecheck`,
+  `npm test` (107 tests), `npm run package:zip`, `npm run verify:release`;
+  existing external Biome format/lint and `git diff --check`.
+- Native isolated browser harness: 88 assertions, including both complete
+  public-session journeys, invalid input, assisted correction, reload,
+  rapid saves, focus, optional practice and unchanged reward counts.
+- Built app on isolated localhost:5228: both lessons through all labs,
+  quizzes, guided/transfer work and exits; an incorrect boat count and its
+  correction; dated parent evidence; pending teacher panels; desktop light
+  and 320px dark layouts, including an internally scrolling ANNA table.
+- Root `node --test scripts/build-catalog.test.mjs scripts/academy-registry.test.mjs`:
+  48 checks passed. All 37 cells and the Grade 4 disposable
+  install/enrol/recall/reinstall path passed against CI-pinned zam-core 0.54.0.
+- Independent agent review: 62 targeted tests across three files and diff
+  check passed; no remaining actionable findings after the corrections.
+  This is code/content review, not primary-school teacher approval.
+
+The updated recording briefs are production scripts, not recorded media.
+Teacher sign-off, real recordings/rights/captions/transcripts, final playback,
+direct extracted-file startup, ZAM learner-UI recall and physical touch
+acceptance remain pending. `publication.json` stays local-only.
