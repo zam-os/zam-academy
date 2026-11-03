@@ -64,6 +64,7 @@ external video embeds and automatic media requests remain excluded.
 | App | Folder | Status |
 | --- | --- | --- |
 | Grade 4 mathematics: eleven Number Forest lessons with Milo (Bavaria) | [`mathematik-grundschule-4/`](mathematik-grundschule-4/) | Local draft; eleven lessons, teacher recordings and review pending |
+| Grade 4 Heimat- und Sachunterricht: twenty discovery stations with Lotta (Bavaria) | [`hsu-grundschule-4/`](hsu-grundschule-4/) | Local draft; twenty single-pass stations across LB 1–6 and 60 ZAM cards, review pending |
 
 ## Develop
 
@@ -105,6 +106,7 @@ cd uml                 # or: cd physik-realschule-9 (dev server on :5181), cd sq
 # Englisch 8: cd englisch-realschule-8 (dev server on :5214)
 # French 8: cd franzoesisch-realschule-8 (dev server on :5215)
 # Grade 4 mathematics draft: cd mathematik-grundschule-4 (dev server on :5216)
+# Grade 4 HSU draft: cd hsu-grundschule-4 (dev server on :5218)
 npm ci
 npm run dev      # http://localhost:5180/uml/
 npm test

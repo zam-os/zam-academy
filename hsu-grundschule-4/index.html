@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark">
+    <script>
+      try {
+        const storedScheme = localStorage.getItem("hsu4-color-scheme");
+        if (storedScheme === "light" || storedScheme === "dark") {
+          document.querySelector('meta[name="color-scheme"]').content = storedScheme;
+        }
+      } catch {}
+    </script>
+    <meta name="theme-color" content="#1f8a5b">
+    <meta name="description" content="Entdecke mit Luchs Lotta alle sechs Welten im Heimat- und Sachunterricht der 4. Klasse Bayern: Mitmach-Labore, Forscherbuch und Proben-Training.">
+    <title>Lottas Bayern-Forscherbuch · HSU 4. Klasse</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <a class="zam-home-link" href="https://academy.zam-os.org/">Zur ZAM Academy</a>
+    <noscript>Für die interaktiven Forscher-Stationen brauchst du JavaScript. Aktiviere es bitte für diese Seite.</noscript>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
