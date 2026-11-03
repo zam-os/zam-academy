@@ -859,6 +859,7 @@ run.addEventListener("click", async (event) => {
 		stores.push(numericSession.store);
 		await numericSession.open();
 		await numericSession.store.update((p) => {
+			p.seed = 12345;
 			p.stage = "exit";
 			p.index = 0;
 			p.labGoals = [0, 1, 2];
@@ -883,7 +884,14 @@ run.addEventListener("click", async (event) => {
 			numericInput =
 				numericHost.querySelector<HTMLInputElement>("#forest-answer");
 		if (!numericTask || !numericInput) throw new Error("Numeric exit missing");
-		numericInput.value = String(numericTask.answer);
+		numericInput.value = String(numericTask.answer).replace(
+			/(\d)(?=(\d{3})+$)/g,
+			"$1.",
+		);
+		assert(
+			numericInput.value.includes("."),
+			"Numeric exit accepts German thousands grouping in an actual answer",
+		);
 		await numericCheck();
 		const numericAttempt = numericSession.store.state.attempts.at(-1);
 		assert(
@@ -992,6 +1000,26 @@ run.addEventListener("click", async (event) => {
 			fields.forEach((f, i) => {
 				edit(i, String(f.value));
 			});
+			if (id === "muster-zahlbeziehungen") {
+				edit(
+					numeric,
+					String(fields[numeric].value).replace(/(\d)(?=(\d{3})+$)/g, "$1."),
+				);
+				await session.store.update(() => {});
+				const grouped = new DocumentStore(
+					`${name}-${id}`,
+					() => freshForest(id),
+					validForest,
+				);
+				stores.push(grouped);
+				await grouped.open();
+				assert(
+					grouped.mode === "persistent" &&
+						grouped.state.investigationWork?.[numeric] === "2.000",
+					"Worksheet dot-grouped input saves and resumes without recovery",
+				);
+			}
+
 			const choice = fields.findIndex((f) => f.choices);
 			edit(choice, "2");
 			await session.store.update(() => {});

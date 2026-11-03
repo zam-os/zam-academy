@@ -245,6 +245,13 @@
 			"status": "passed",
 			"checked": "2026-11-03",
 			"details": "Completed both new lessons through 3 labs, quiz, 3 successful tasks per level and 3 fresh exits. Combination list construction, duplicate rejection, list/builder reload, restrictions and actual choice rows in parent evidence observed. Divisor quotient/remainder, interior multiples gaps and all offered divisors checked. Parent goals and pending-media panels inspected. Desktop light and 320 px phone/dark layouts had no document overflow; combination controls exceed 44 px. Native 114 assertions passed in disposable stores, including queued selections/toggles and duplicate Next, worked continuation, forbidden-row correction and unique rewards. Temporary viewport reset; physical touch, teacher approval and direct-file startup remain pending."
+		},
+		{
+			"surface": "Native harness on isolated 127.0.0.1:5232 and built app on :5233",
+			"check": "PR78 grouped integer input, persistence and reviewed wording",
+			"status": "passed",
+			"checked": "2026-11-03",
+			"details": "116 native assertions passed, including dot-grouped numeric exit grading and dot-grouped worksheet input resuming without recovery. In the built app, 2.000/2.250 survived reload and solved the pattern task; divisor success includes ist ein Teiler, and the positive/zero distinction and format guidance rendered. Existing user tab/progress on localhost:5231 was not touched. No teacher approval or publication claimed."
 		}
 	],
 	"remaining": [
@@ -257,10 +264,10 @@
 	],
 	"checked": "2026-11-03",
 	"automated_checks": {
-		"app": "npm ci --offline --no-audit --no-fund, npm run typecheck, npm test (116 tests), npm run package:zip, npm run verify:release and external Biome format/lint passed. No dependency changes.",
+		"app": "npm ci --offline --no-audit --no-fund, npm run typecheck, npm test (123 tests), npm run package:zip, npm run verify:release and external Biome format/lint passed. No dependency changes.",
 		"catalog": "node --test scripts/build-catalog.test.mjs scripts/academy-registry.test.mjs: 48 checks passed. This local-only draft remains excluded.",
-		"cell": "18 atoms, 62 items, version 2026.11.9. Parsed-JSON comparison with 3ae1644 preserves all original 16 atoms/54 items and identifiers. All 80 atom/item IDs are unique. Disposable install/enrol/recall/reinstall and all 37 cells passed against CI-pinned zam-core 0.54.0; no broad official grade binding or history transfer.",
-		"all_cells": "ZAM_CORE=<temporary zam-core 0.54.0 file URL> node scripts/validate-cells.mjs: all 37 Academy cells validated in disposable libraries.",
+		"cell": "18 atoms, 62 items, version 2026.11.9. Parsed-JSON comparison with 3ae1644 preserves all original 16 atoms/54 items and identifiers. All 80 atom/item IDs are unique. Disposable install/enrol/recall/reinstall and all 38 cells passed against CI-pinned zam-core 0.54.0; no broad official grade binding or history transfer.",
+		"all_cells": "ZAM_CORE=<temporary zam-core 0.54.0 file URL> node scripts/validate-cells.mjs: all 38 Academy cells, including the newly merged German Grade 4 draft, validated in disposable libraries.",
 		"package": "npm run package:zip and npm run verify:release passed. npm run verify:release -- --complete returned the expected nonzero result for missing teacher review/media, final playback, direct-file startup, ZAM learner-UI recall and physical touch."
 	},
 	"offline_file_start": {
@@ -445,6 +452,20 @@
 				"evidence": "70 tests across 4 suites; final evidence recheck 9 tests. Original 16 atoms/54 items unchanged; no remaining actionable findings.",
 				"teacher_approval": false
 			}
+		},
+		"pr78_review_follow_up": {
+			"date": "2026-11-03",
+			"status": "addressed",
+			"record": "../docs/grade-4-pr78-review-follow-up.md",
+			"changes": [
+				"Restricted success mentions third-row choices only when the model has three rows",
+				"Positive divisor success includes the article",
+				"Whole-number input accepts strict German dot grouping and documents input examples",
+				"Teaching starts with positive multiples and treats zero as a separate case for teacher review",
+				"Current main integrated with both local-draft README entries preserved"
+			],
+			"validation": "123 unit tests, 116 native browser assertions, 48 root tests, 38 cell validations and the mathematics disposable recall path passed. Built grouped-input save/reload/grading and divisor/teaching copy inspected on an isolated origin.",
+			"independent_recheck": "78 targeted tests across four suites and typecheck passed; no actionable findings. Teacher approval remains pending."
 		}
 	}
 }

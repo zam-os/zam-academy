@@ -104,7 +104,14 @@ describe("place-value invariants", () => {
 	it.each([
 		"",
 		"1,5",
-		"1.000",
+		"1.00",
+		"1.000.00",
+		"1.000 000",
+		"1 000.000",
+		"0.001",
+		"1234.567",
+		"1..000",
+		"1.000.001",
 		"1e3",
 		"306abc",
 		"-1",
@@ -116,10 +123,14 @@ describe("place-value invariants", () => {
 	])("refuses ambiguous or noninteger input %s", (input) => {
 		expect(parseInteger(input)).toBeNull();
 	});
-	it("accepts only the documented spacing and grouping", () => {
+	it("accepts equivalent plain, spaced and German dot-grouped whole numbers", () => {
 		expect(parseInteger(" 306 ")).toBe(306);
 		expect(parseInteger("2 047")).toBe(2047);
 		expect(parseInteger("2\u202f047")).toBe(2047);
+		expect(parseInteger("1.000")).toBe(1000);
+		expect(parseInteger("2.047")).toBe(2047);
+		expect(parseInteger("204.070")).toBe(204070);
+		expect(parseInteger(" 1.000.000 ")).toBe(1_000_000);
 		expect(parseInteger("0")).toBe(0);
 		expect(format(2047)).toBe("2\u202f047");
 	});

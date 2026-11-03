@@ -662,7 +662,7 @@ export const FOREST_LESSONS: ForestLesson[] = [
 		],
 		paragraphs: [
 			"Eine positive ganze Zahl ist ein Teiler einer anderen positiven ganzen Zahl, wenn das Teilen ohne Rest aufgeht. 3 ist ein Teiler von 12, weil 12 : 3 = 4 Rest 0. Die passende Malaufgabe lautet 3 · 4 = 12.",
-			"12 ist ein Vielfaches von 3. Ein Vielfaches entsteht durch Malnehmen mit 0, 1, 2 und so weiter. Für die 5er-Reihe lauten die Vielfachen zum sechsten bis zehnten Paket 30, 35, 40, 45 und 50. Bei jedem weiteren Paket kommen 5 dazu. In unseren Pakettabellen beginnt die Zahl der Pakete mindestens bei 1.",
+			"12 ist ein Vielfaches von 3. Wir beginnen mit positiven Vielfachen: Sie entstehen durch Malnehmen mit 1, 2, 3 und so weiter. Für die 5er-Reihe lauten die Vielfachen zum sechsten bis zehnten Paket 30, 35, 40, 45 und 50. Bei jedem weiteren Paket kommen 5 dazu. Auch 0 ist ein Vielfaches: Bei 0 Paketen hast du 0 Samen. In dieser Lektion betrachten wir die positiven Vielfachen und packen mindestens ein Paket.",
 			"Teiler und Vielfaches beschreiben dieselbe Beziehung aus zwei Richtungen: 3 teilt 12 ohne Rest; 12 ist ein Vielfaches von 3. Vertausche die Wörter nicht. 12 ist kein Teiler von 3, denn eine ganze Gruppe mit 12 Dingen passt nicht in 3 Dinge.",
 			"Bleibt ein Rest, ist die Zahl kein Teiler. Bei 20 Samen in 6er-Beuteln entstehen 3 volle Beutel und 2 Samen bleiben übrig. Die 6 ist deshalb kein Teiler von 20. Prüfe mit volle Beutel mal Beutelgröße plus Rest.",
 			"Jede positive ganze Zahl hat die Teiler 1 und die Zahl selbst. Die 0 ist kein Teiler einer positiven Zahl; Teilen durch 0 geht nicht. In der Auswahlwerkstatt untersuchst du nur die angebotenen Zahlen von 1 bis 10. Prüfe jede einzeln, auch wenn schon mehrere passen.",

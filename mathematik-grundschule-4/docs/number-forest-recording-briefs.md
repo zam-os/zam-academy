@@ -418,13 +418,15 @@ formal divisibility tests, gcd/lcm or division by numbers above 10.
   Deshalb ist 6 kein Teiler von 20. Probe: 3 mal 6 plus 2 gleich 20.“
 - „Vielfache entstehen durch Malnehmen. Bei 5er-Paketen gehören zum
   sechsten bis zehnten Paket 30, 35, 40, 45 und 50. Immer kommt 5 dazu.
-  Auch 0 ist ein Vielfaches, aber unsere Pakettabelle beginnt mit
-  mindestens einem Paket.“
+  Wir beginnen mit den positiven Vielfachen, also mindestens einem
+  Paket. Bei 0 Paketen sind es 0 Samen: Auch 0 ist ein Vielfaches,
+  aber diesen Fall zählen wir in unseren Pakettabellen nicht mit.“
 - „Prüfe jede angebotene Zahl einzeln. 1 teilt jede positive ganze Zahl.
   Die Zahl selbst ist auch ein Teiler. In der Auswahlwerkstatt suchen wir
   nur unter den angebotenen Zahlen von 1 bis 10. Eine passende Division
   muss Rest 0 haben.“
 
-**Teacher review:** confirm directionality, positive-number/zero language,
+**Teacher review:** confirm directionality and the explicit distinction
+between positive multiples used in the tasks and the separate zero case,
 quotient/remainder reasoning and the bounded candidate search. Physical
 regrouping with counters is suggested home work and remains unobserved.

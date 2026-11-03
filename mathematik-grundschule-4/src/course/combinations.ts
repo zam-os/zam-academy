@@ -72,6 +72,11 @@ function make(model: CombinationModel, goal: 1 | 2 | 3): ForestTask {
 		perFirst = counts.slice(1).reduce((p, n) => p * n, 1);
 	const hint =
 		"Halte die erste Auswahl fest und gehe die nächste Reihe vollständig durch. Bei drei Reihen hältst du auch die zweite Auswahl fest und wechselst zuerst nur die dritte. Dann gehst du geordnet weiter.";
+	const restrictionExplanation =
+		"Zähle die erlaubten Fälle für jede erste Auswahl getrennt und addiere sie." +
+		(model.axes.length === 3
+			? " Für jedes erlaubte Paar kannst du jede Möglichkeit der dritten Reihe wählen."
+			: "");
 	const totals = model.axes[0].options.map(
 		(label, i) => `${label}: ${allowed.filter((t) => t[0] === i).length}`,
 	);
@@ -83,7 +88,7 @@ function make(model: CombinationModel, goal: 1 | 2 | 3): ForestTask {
 		answer: allowed.map(combinationCode),
 		prompt: `Wähle genau eine Möglichkeit aus jeder Reihe. Sammle alle erlaubten Zusammenstellungen, jede nur einmal. ${restriction}`,
 		hint,
-		explanation: `Es gibt ${allowed.length} erlaubte Zusammenstellungen. ${totals.join("; ")}. ${model.restricted ? "Zähle die erlaubten Fälle für jede erste Auswahl getrennt und addiere sie. Die Einschränkung gilt auch bei einer dritten Auswahl." : `Zu jeder ersten Auswahl gehören ${perFirst} Zusammenstellungen. ${counts.join(" · ")} = ${allowed.length}.`} Eine systematische Liste zeigt, dass nichts fehlt und nichts doppelt vorkommt.`,
+		explanation: `Es gibt ${allowed.length} erlaubte Zusammenstellungen. ${totals.join("; ")}. ${model.restricted ? restrictionExplanation : `Zu jeder ersten Auswahl gehören ${perFirst} Zusammenstellungen. ${counts.join(" · ")} = ${allowed.length}.`} Eine systematische Liste zeigt, dass nichts fehlt und nichts doppelt vorkommt.`,
 	};
 }
 const contexts: CombinationAxis[][] = [

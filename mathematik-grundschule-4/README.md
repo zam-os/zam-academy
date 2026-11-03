@@ -90,6 +90,11 @@ the final approved recording respectively; no browser-policy bypass was used.
 
 ## Content and persistence
 
+Whole-number answers accept plain (`1000`), space-grouped (`1 000`) and
+German dot-grouped (`1.000`) input, through one million. Decimal commas,
+exponents and malformed or mixed dot/space groups remain invalid.
+
+
 - Lesson id: `stellenwerte-buendeln`; cell:
   `zam-academy:mathematik-grundschule-4`. Public links are future source
   addresses and do not indicate that this draft is already hosted.

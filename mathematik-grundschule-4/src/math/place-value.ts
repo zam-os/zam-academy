@@ -53,12 +53,16 @@ export function exchange(
 	return validCounts(next) && total(next) === total(counts) ? next : null;
 }
 
-/** Integer-only input: no decimal/exponent/prefix acceptance. */
+/** Whole numbers, optionally grouped by spaces or German thousands dots. */
 export function parseInteger(input: string): number | null {
 	const value = input.trim();
-	if (!/^(?:\d{1,7}|[1-9]\d{0,2}(?:[ \u00a0\u202f]\d{3}){1,2})$/.test(value))
+	if (
+		!/^(?:\d{1,7}|[1-9]\d{0,2}(?:[ \u00a0\u202f]\d{3}){1,2}|[1-9]\d{0,2}(?:\.\d{3}){1,2})$/.test(
+			value,
+		)
+	)
 		return null;
-	const n = Number(value.replace(/[ \u00a0\u202f]/g, ""));
+	const n = Number(value.replace(/[ .\u00a0\u202f]/g, ""));
 	return Number.isSafeInteger(n) && n >= 0 && n <= MAX_NUMBER ? n : null;
 }
 

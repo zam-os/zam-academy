@@ -418,7 +418,7 @@ export class ForestSession {
 						input.setAttribute("aria-invalid", "true");
 						if (error)
 							error.textContent =
-								"Hier passt eine ganze Zahl von 0 bis 1 000 000. Bitte verbessere das markierte Feld.";
+								"Hier passt eine ganze Zahl von 0 bis 1 000 000, zum Beispiel 1000, 1 000 oder 1.000. Bitte verbessere das markierte Feld.";
 						return;
 					}
 					input.removeAttribute("aria-invalid");

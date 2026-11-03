@@ -160,6 +160,10 @@ describe("Pattern and story investigations", () => {
 		expect(investigationInput(b, ["1", "2 000", "2250"])).toEqual([
 			1, 2000, 2250,
 		]);
+		expect(investigationInput(b, ["1", "2.000", "2.250"])).toEqual([
+			1, 2000, 2250,
+		]);
+		expect(validInvestigationWork(["1", "2.000", "2.250"], b)).toBe(true);
 		for (const bad of ["1.5", "−2", "1000001", "NaN", "<img>"]) {
 			expect(investigationInput(b, ["1", bad, "2250"])).toBeNull();
 			expect(validInvestigationWork(["1", bad, "2250"], b)).toBe(false);

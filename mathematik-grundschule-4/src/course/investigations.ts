@@ -524,7 +524,7 @@ export function investigationMistake(
 	answer: Answer | null,
 ): string {
 	if (!Array.isArray(answer))
-		return "Fülle bitte jedes Zahlenfeld aus und wähle bei jeder Auswahl eine Antwort. Ganze Zahlen bis 1 000 000 sind möglich.";
+		return "Fülle bitte jedes Zahlenfeld aus und wähle bei jeder Auswahl eine Antwort. Ganze Zahlen bis 1 000 000 sind möglich, zum Beispiel 1000, 1 000 oder 1.000.";
 	const index = board.fields.findIndex((f, i) => f.value !== answer[i]);
 	return index < 0
 		? "Prüfe noch einmal alle Schritte."

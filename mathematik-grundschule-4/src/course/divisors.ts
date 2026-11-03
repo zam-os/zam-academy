@@ -73,7 +73,7 @@ function divide(total: number, size: number): ForestTask {
 			],
 		},
 		hint,
-		`${format(total)} : ${size} = ${q} Rest ${r}. ${size} ${yes ? "ist" : "ist kein"} Teiler von ${format(total)}. ${yes ? `${format(total)} ist ein Vielfaches von ${size}.` : `${format(total)} ist kein Vielfaches von ${size}.`} Probe: ${q} · ${size} + ${r} = ${format(total)}.`,
+		`${format(total)} : ${size} = ${q} Rest ${r}. ${size} ${yes ? "ist ein" : "ist kein"} Teiler von ${format(total)}. ${yes ? `${format(total)} ist ein Vielfaches von ${size}.` : `${format(total)} ist kein Vielfaches von ${size}.`} Probe: ${q} · ${size} + ${r} = ${format(total)}.`,
 	);
 }
 function multiples(

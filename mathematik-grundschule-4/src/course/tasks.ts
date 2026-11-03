@@ -372,7 +372,7 @@ export function forestMistake(task: ForestTask, answer: Answer | null): string {
 	if (task.kind === "columns")
 		return writtenMistake(task, Array.isArray(answer) ? answer : null);
 	if (answer === null)
-		return "Gib eine ganze Zahl von 0 bis 1 000 000 ein. Tausender kannst du mit Leerzeichen gliedern.";
+		return "Gib eine ganze Zahl von 0 bis 1 000 000 ein. Zum Beispiel: 1000, 1 000 oder 1.000.";
 	if (task.kind === "hops" || task.kind === "groups") return task.hint;
 	if (task.inverseProbe) return task.hint;
 	if (task.calculation && typeof answer === "number") {
