@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Tintos Wörterstadt: Deutsch für die 4. Klasse in Bayern. Wortarten, Fälle, Satzglieder und Rechtschreib-Tricks spielerisch üben." />
+    <title>Tintos Wörterstadt · Deutsch 4 · ZAM Academy</title>
+    <script>try { const theme = localStorage.getItem('deutsch_gs4_theme'); if (theme === 'light' || theme === 'dark') document.documentElement.dataset.theme = theme; } catch {}</script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Zum Inhalt</a>
+    <header class="header">
+      <a class="brand" href="#" id="home"><span class="brand-mark" aria-hidden="true">🐙</span><span>Tintos Wörterstadt<small>Deutsch · 4. Klasse · Bayern</small></span></a>
+      <nav aria-label="Hauptnavigation">
+        <button type="button" data-view="path">🗺️ Stadtplan</button>
+        <button type="button" data-view="stickers">🏅 Stickerheft</button>
+        <button type="button" data-view="heft">📒 Merkheft</button>
+        <button type="button" data-view="eltern">👪 Für Eltern</button>
+      </nav>
+      <div class="header-actions"><span class="star-total" id="star-total" aria-live="polite"></span><button type="button" class="icon-button" id="theme" aria-label="Hell oder dunkel">◐</button></div>
+    </header>
+    <main id="main" tabindex="-1"></main>
+    <footer>
+      <span>LehrplanPLUS Bayern · Deutsch 3/4 · Abgleich: 3. November 2026 · Erprobungsfassung</span>
+      <span>Ohne Konto. Dein Fortschritt bleibt in diesem Browser.</span>
+      <a class="zam-home-link" href="https://academy.zam-os.org/">← ZAM Academy</a>
+    </footer>
+    <dialog id="dialog" aria-labelledby="dialog-title"></dialog>
+    <div class="toast" id="toast" role="status" hidden></div>
+    <div class="toast warning" id="storage-warning" role="status" hidden>Speichern geht hier gerade nicht. Du kannst weiterüben, aber deine Sterne gehen beim Schließen verloren.</div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
