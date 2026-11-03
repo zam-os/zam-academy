@@ -1,3 +1,6 @@
+import { isWorldLesson } from "../src/course/worlds";
+import { freshWorkshop } from "../src/course/workshop";
+import { quantityText } from "../src/course/quantity";
 import { FOREST_LESSONS } from "../src/course/catalog";
 import {
 	allowedCombination,
@@ -1303,6 +1306,109 @@ run.addEventListener("click", async (event) => {
 			);
 			host.remove();
 		}
+		for (const definition of FOREST_LESSONS.filter((l) =>
+			isWorldLesson(l.id),
+		)) {
+			const database = `${name}-world-${definition.id}`;
+			extraNames.push(database);
+			const host = document.createElement("section");
+			document.body.append(host);
+			const session = new ForestSession(
+				definition,
+				() => {
+					host.innerHTML = session.lessonView();
+					session.bind(host);
+				},
+				database,
+			);
+			stores.push(session.store);
+			await session.open();
+			const render = () => {
+				host.innerHTML = session.lessonView();
+				session.bind(host);
+			};
+			render();
+			const act = async (action: string, extra = "") => {
+				const b = required(
+					host.querySelector<HTMLButtonElement>(
+						`[data-action="${action}"]${extra}`,
+					),
+				);
+				await session.act(b, host);
+			};
+			await act("forest-next");
+			await act("forest-next");
+			const initial = required(activeForestTask(session.store.state)),
+				model = required(initial.model);
+			await act("forest-model", '[data-col="0"][data-value="1"]');
+			const saved = required(session.store.state.modelWork)[0];
+			const restored = new DocumentStore(
+				database,
+				() => freshForest(definition.id),
+				validForest,
+			);
+			stores.push(restored);
+			await restored.open();
+			assert(
+				restored.state.modelWork?.[0] === saved,
+				`${definition.id}: model action resumes in a second store`,
+			);
+			await act("forest-model-reset");
+			assert(
+				JSON.stringify(session.store.state.modelWork) ===
+					JSON.stringify(freshWorkshop(model)),
+				`${definition.id}: reset model leaves attempts unchanged`,
+			);
+			for (let n = 0; n < 40 && session.store.state.stage !== "finished"; n++) {
+				const task = activeForestTask(session.store.state);
+				if (task?.model) {
+					const m = task.model;
+					for (let col = 0; col < m.controls.length; col++) {
+						for (let step = 0; step < 100; step++) {
+							const current = (session.store.state.modelWork ??
+								freshWorkshop(m))[col];
+							if (current === m.target[col]) break;
+							await act(
+								"forest-model",
+								`[data-col="${col}"][data-value="${Math.sign(m.target[col] - current)}"]`,
+							);
+						}
+					}
+					await act("forest-check");
+				} else if (task?.investigation) {
+					task.investigation.fields.forEach((field, i) => {
+						const value = quantityText(field.value, field.format);
+						const inputs = [
+							...host.querySelectorAll<HTMLInputElement>(
+								`[data-action="forest-investigation"][data-col="${i}"]`,
+							),
+						];
+						const input = required(
+							inputs.find((c) => c.type !== "radio" || c.value === value),
+						);
+						if (input.type === "radio") input.checked = true;
+						else input.value = value;
+						input.dispatchEvent(new Event("input", { bubbles: true }));
+					});
+					await act("forest-check");
+					assert(
+						!host.textContent?.includes("NaN"),
+						`${definition.id}: solved quantities render in their labelled units`,
+					);
+				} else if (task?.kind === "choice")
+					await act("forest-choice", `[data-value="${task.answer}"]`);
+				await act("forest-next");
+			}
+			assert(
+				session.store.state.stage === "finished" &&
+					session.store.state.rewards.length === 2 &&
+					session.store.state.attempts.filter((a) => a.mode === "exit")
+						.length === 3,
+				`${definition.id}: complete native journey has two rewards and three exit records`,
+			);
+			host.remove();
+		}
+
 		assert(fresh().schema === 1, "Fresh state is versioned");
 		output.textContent += "\nALL BROWSER STORAGE CHECKS PASSED";
 	} catch (error) {

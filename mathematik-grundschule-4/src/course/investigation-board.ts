@@ -1,4 +1,4 @@
-import { format } from "../math/place-value";
+import { parseQuantity, quantityText, quantityNote } from "./quantity";
 import { random } from "../practice/tasks";
 import type { Investigation } from "./investigations";
 
@@ -25,7 +25,7 @@ export function investigationBoard(
 		.map((f, i) => {
 			const value = work[i] ?? "";
 			if (solved)
-				return `<div class="investigation-field"><strong>${html(f.label)}</strong><output>${html(f.choices?.find((c) => String(c.value) === value)?.label ?? (value === "" ? "—" : format(Number(value))))}</output></div>`;
+				return `<div class="investigation-field"><strong>${html(f.label)}</strong><output>${html(f.choices?.find((c) => String(c.value) === value)?.label ?? (value === "" ? "—" : quantityText(parseQuantity(value, f.format) ?? 0, f.format)))}</output></div>`;
 			const options = [...(f.choices ?? [])];
 			for (let j = options.length - 1; j > 0; j--) {
 				const k = Math.floor(next() * (j + 1));
@@ -34,8 +34,8 @@ export function investigationBoard(
 			const attributes = `id="investigation-${i}" data-action="forest-investigation" data-col="${i}" aria-describedby="investigation-note"`;
 			return f.choices
 				? `<fieldset class="investigation-field investigation-choice"><legend>${html(f.label)}</legend>${options.map((c) => `<label for="investigation-${i}-${c.value}"><input type="radio" id="investigation-${i}-${c.value}" name="investigation-${i}" data-value="${c.value}" data-action="forest-investigation" data-col="${i}" aria-describedby="investigation-note" value="${c.value}" ${String(c.value) === value ? "checked" : ""}><span>${html(c.label)}</span></label>`).join("")}</fieldset>`
-				: `<label class="investigation-field" for="investigation-${i}">${html(f.label)}<input ${attributes} inputmode="numeric" type="text" autocomplete="off" spellcheck="false" maxlength="12" value="${html(value)}" placeholder="Zahl eingeben"></label>`;
+				: `<label class="investigation-field" for="investigation-${i}">${html(f.label)}<input ${attributes} inputmode="${f.format && "scale" in f.format ? "decimal" : f.format ? "text" : "numeric"}" type="text" autocomplete="off" spellcheck="false" maxlength="12" value="${html(value)}" placeholder="${f.format && "clock" in f.format ? "08:05" : "Zahl eingeben"}"><small>${html(quantityNote(f.format))}</small></label>`;
 		})
 		.join("");
-	return `<div class="investigation-workshop"><div class="investigation-scroll" tabindex="0" role="region" aria-label="Aufgabentabelle, bei Bedarf seitlich verschiebbar"><table><caption>${html(board.caption)}</caption><thead><tr>${board.headers.map((h) => `<th scope="col">${html(h)}</th>`).join("")}</tr></thead><tbody>${board.rows.map((row) => `<tr>${row.map((cell, i) => (i === 0 ? `<th scope="row">${html(cell)}</th>` : `<td>${html(cell)}</td>`)).join("")}</tr>`).join("")}</tbody></table></div><div class="investigation-fields">${fields}</div>${solved ? "" : '<p id="investigation-note" class="fine-print">Trage deine Zwischenschritte ein und begründe deine Entscheidung. Du kannst alles vor dem Prüfen ändern. Zahlen kannst du zum Beispiel als 1000, 1 000 oder 1.000 schreiben.</p><p id="investigation-error" class="fine-print" role="status"></p>'}</div>`;
+	return `<div class="investigation-workshop"><div class="investigation-scroll" tabindex="0" role="region" aria-label="Aufgabentabelle, bei Bedarf seitlich verschiebbar"><table><caption>${html(board.caption)}</caption><thead><tr>${board.headers.map((h) => `<th scope="col">${html(h)}</th>`).join("")}</tr></thead><tbody>${board.rows.map((row) => `<tr>${row.map((cell, i) => (i === 0 ? `<th scope="row">${html(cell)}</th>` : `<td>${html(cell)}</td>`)).join("")}</tr>`).join("")}</tbody></table></div><div class="investigation-fields">${fields}</div>${solved ? "" : '<p id="investigation-note" class="fine-print">Trage deine Zwischenschritte ein und begründe deine Entscheidung. Du kannst alles vor dem Prüfen ändern. Beachte die Einheit und den Schreibhinweis direkt am jeweiligen Zahlenfeld.</p><p id="investigation-error" class="fine-print" role="status"></p>'}</div>`;
 }

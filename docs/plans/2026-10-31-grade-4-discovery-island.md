@@ -20,6 +20,19 @@ remaining manual acceptance checks are pending. No phase is marked complete.
 - [ ] Phase 6 — complete Chance Garden and mixed island expeditions
 - [ ] Phase 7 — full-course review, field pilot and curriculum release readiness
 
+### Remaining digital lessons amendment — 2026-11-03
+
+Thomas requested merging PR #78 and continuing with the remaining lessons in
+this chat. PR #78 merged at `312201f35fc56dd247233dd22bd6d89f2dcb2890`.
+This explicitly extends the earlier Number Forest implementation exception:
+continue the digital work of Phases 4, 5 and 6, in that order, on one branch,
+with a commit per world after verification. The next unchecked acceptance
+phase remains Phase 1. Teacher review, recordings, physical activities,
+family pilots and release authority remain pending; digital implementation
+does not check off these phase gates. The refined inventory has 36 lessons
+(15 existing Number Forest lessons plus 6 measurement, 9 geometry, 3 data
+and chance lessons, and 3 mixed expeditions).
+
 ### Review amendment — 2026-11-01
 
 PR #72 review exposed answer-revealing tasks and insufficient practice. Phase

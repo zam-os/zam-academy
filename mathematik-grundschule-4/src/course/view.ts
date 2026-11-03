@@ -1,3 +1,4 @@
+import { sceneView, workshopView } from "./workshop";
 import { format } from "../math/place-value";
 import { random } from "../practice/tasks";
 import { algorithmBoard } from "./algorithm-board";
@@ -26,6 +27,7 @@ export const escapeHtml = (text: string): string =>
 			] ?? c,
 	);
 export function forestGraphic(task: ForestTask, position = 0): string {
+	if (task.scene) return sceneView(task.scene);
 	if (task.columns)
 		return task.kind === "columns"
 			? ""
@@ -103,7 +105,8 @@ export function forestTaskView(
 		: task.kind === "columns" ||
 				task.kind === "subtraction" ||
 				task.kind === "algorithm" ||
-				task.kind === "investigation"
+				task.kind === "investigation" ||
+				task.kind === "model"
 			? '<button class="primary" data-action="forest-check">Meine Rechnung prüfen</button>'
 			: task.kind === "choice"
 				? `<div class="answer-options">${choices(
@@ -122,7 +125,7 @@ export function forestTaskView(
 					: controls
 						? `<div class="path-controls"><button data-action="forest-left" aria-label="${task.hops ? "Einen Sprung zurücknehmen" : task.groups ? "Einen Korb zurücknehmen" : "Einen Schritt nach links"}" ${p.position === 0 ? "disabled" : ""}>${task.hops || task.groups ? "−" : "←"}</button><label for="forest-position">${task.kind === "line" ? "Milos Standort" : task.kind === "hops" ? "Anzahl der Sprünge" : task.kind === "groups" ? "Anzahl der Körbe" : "Aufteilung der Truhen"}<input type="range" id="forest-position" data-action="forest-position" min="0" max="10" step="1" value="${p.position}"></label><button data-action="forest-right" aria-label="${task.hops ? "Einen Sprung hinzufügen" : task.groups ? "Einen Korb hinzufügen" : "Einen Schritt nach rechts"}" ${p.position === 10 ? "disabled" : ""}>${task.hops || task.groups ? "+" : "→"}</button></div><button class="primary" data-action="forest-check">Meine Darstellung prüfen</button>`
 						: `<div class="numeric-answer"><label for="forest-answer">Meine Antwort<input id="forest-answer" inputmode="numeric" autocomplete="off" spellcheck="false" value="${escapeHtml(draft)}" placeholder="Zahl eingeben"></label><button class="primary" data-action="forest-check">Meine Idee prüfen</button></div>`;
-	return `<span class="mission-label">${p.recall ? "Später erinnern · neue Aufgaben" : p.optional ? `Noch eine Runde · Stufe ${p.optional}` : p.stage === "lab" ? `Entdeckerwerkstatt · Ziel ${p.index + 1} von 3` : p.stage === "practice-1" || p.stage === "practice-2" ? `Stufe ${p.stage === "practice-1" ? 1 : 2} · ${p.solved[p.stage === "practice-1" ? 1 : 2]} von 3 Aufgaben gelöst` : p.stage === "quiz" ? "Ein kurzer Denkcheck" : `Neue Aufgabe · ${p.index + 1} von 3`}</span><h2 id="lesson-heading" tabindex="-1">${escapeHtml(task.prompt)}</h2><div id="forest-graphic">${task.combination ? combinationBoard(task.combination, p.combinationChoice ?? null, p.selection, solved) : task.investigation ? investigationBoard(task.investigation, p.investigationWork ?? [], solved) : task.algorithm ? algorithmBoard(task.algorithm, p.algorithmWork ?? [], solved) : task.subtraction ? subtractionBoard(task.subtraction, p.subtractionWork, solved) : task.kind === "columns" && task.columns ? columnBoard(task.columns, p.columnWork, solved) : forestGraphic(task, p.position)}</div>${solved ? `<div class="feedback success" role="status">${assisted ? "Mit Hilfe geschafft. " : "Richtig! "}${escapeHtml(task.explanation)}</div><button class="primary" data-action="forest-next">${p.optional ? "Noch eine Aufgabe" : "Weiter"}</button>` : `${input}<div class="help-row"><button class="text-button" data-action="forest-hint">Ein kleiner Tipp</button>${assisted || wrong >= 2 ? '<button class="text-button" data-action="forest-solution">Lösung gemeinsam ansehen</button>' : ""}</div>${feedback ? `<p class="feedback" role="status">${escapeHtml(feedback)}</p>` : ""}${assisted && feedback === task.explanation ? '<button class="primary" data-action="forest-worked">Mit Hilfe weiter</button>' : ""}`}${p.optional ? '<button class="text-button" data-action="forest-stop">Übungsrunde beenden</button>' : ""}`;
+	return `<span class="mission-label">${p.recall ? "Später erinnern · neue Aufgaben" : p.optional ? `Noch eine Runde · Stufe ${p.optional}` : p.stage === "lab" ? `Entdeckerwerkstatt · Ziel ${p.index + 1} von 3` : p.stage === "practice-1" || p.stage === "practice-2" ? `Stufe ${p.stage === "practice-1" ? 1 : 2} · ${p.solved[p.stage === "practice-1" ? 1 : 2]} von 3 Aufgaben gelöst` : p.stage === "quiz" ? "Ein kurzer Denkcheck" : `Neue Aufgabe · ${p.index + 1} von 3`}</span><h2 id="lesson-heading" tabindex="-1">${escapeHtml(task.prompt)}</h2><div id="forest-graphic">${task.model ? workshopView(task.model, p.modelWork, solved) : task.combination ? combinationBoard(task.combination, p.combinationChoice ?? null, p.selection, solved) : task.investigation ? `${task.scene ? sceneView(task.scene) : ""}${investigationBoard(task.investigation, p.investigationWork ?? [], solved)}` : task.algorithm ? algorithmBoard(task.algorithm, p.algorithmWork ?? [], solved) : task.subtraction ? subtractionBoard(task.subtraction, p.subtractionWork, solved) : task.kind === "columns" && task.columns ? columnBoard(task.columns, p.columnWork, solved) : forestGraphic(task, p.position)}</div>${solved ? `<div class="feedback success" role="status">${assisted ? "Mit Hilfe geschafft. " : "Richtig! "}${escapeHtml(task.explanation)}</div><button class="primary" data-action="forest-next">${p.optional ? "Noch eine Aufgabe" : "Weiter"}</button>` : `${input}<div class="help-row"><button class="text-button" data-action="forest-hint">Ein kleiner Tipp</button>${assisted || wrong >= 2 ? '<button class="text-button" data-action="forest-solution">Lösung gemeinsam ansehen</button>' : ""}</div>${feedback ? `<p class="feedback" role="status">${escapeHtml(feedback)}</p>` : ""}${assisted && feedback === task.explanation ? '<button class="primary" data-action="forest-worked">Mit Hilfe weiter</button>' : ""}`}${p.optional ? '<button class="text-button" data-action="forest-stop">Übungsrunde beenden</button>' : ""}`;
 }
 export function forestExplanation(def: ForestLesson): string {
 	const algorithm =
@@ -154,7 +157,7 @@ export function forestLessonView(
 	const task = activeForestTask(p);
 	if (task) return forestTaskView(p, task, feedback, draft);
 	if (p.stage === "welcome")
-		return `<span class="mission-label">Ein neuer Ort im Zahlenwald</span><h2 id="lesson-heading" tabindex="-1">${escapeHtml(def.title)}</h2><div class="forest-emblem" aria-hidden="true">${def.icon}</div><p class="lead">${escapeHtml(def.lead)}</p><ul class="forest-goals">${def.goals.map((g) => `<li>${escapeHtml(g)}</li>`).join("")}</ul><p>Zwei Missionen mit Erklärung, drei Werkstattzielen und frischen Aufgaben. Du bestimmst dein Tempo.</p><button class="primary" data-action="forest-next">Mit Milo entdecken</button>`;
+		return `<span class="mission-label">Ein neuer Ort auf der Entdeckerinsel</span><h2 id="lesson-heading" tabindex="-1">${escapeHtml(def.title)}</h2><div class="forest-emblem" aria-hidden="true">${def.icon}</div><p class="lead">${escapeHtml(def.lead)}</p><ul class="forest-goals">${def.goals.map((g) => `<li>${escapeHtml(g)}</li>`).join("")}</ul><p>Zwei Missionen mit Erklärung, drei Werkstattzielen und frischen Aufgaben. Du bestimmst dein Tempo.</p><button class="primary" data-action="forest-next">Mit Milo entdecken</button>`;
 	if (p.stage === "learn")
 		return `<span class="mission-label">Mission 1 · Zusammenhänge entdecken</span><h2 id="lesson-heading" tabindex="-1">${escapeHtml(def.shortTitle)}</h2>${forestExplanation(def)}<button class="primary" data-action="forest-next">Jetzt selbst ausprobieren</button>`;
 	if (p.stage === "transfer")
@@ -191,5 +194,5 @@ export function forestParentView(def: ForestLesson, p: ForestProgress): string {
 		})
 		.join(
 			"",
-		)}</div><aside class="parent-tip"><h2>Eine Frage für zu Hause</h2><p>„${escapeHtml(def.parentPrompt)}“</p><p>Lass dein Kind seinen Weg zeigen. Eine Zeichnung oder Dinge vom Tisch reichen aus.</p><hr><h3>Der nächste kleine Schritt</h3><p>${p.stage === "finished" ? "Mit frischen Aufgaben weiterüben oder beim nächsten Besuch eine andere Lektion im Zahlenwald entdecken." : "Die aktuelle Mission fortsetzen. Hinweise und Pausen sind jederzeit erlaubt."}</p></aside></div><p class="fine-print">Quelle: lokale Academy-Übungen · keine Schulnote, Diagnose oder Schullaufbahnempfehlung. ZAM-Wiederholungen werden getrennt in ZAM geführt.</p></section>`;
+		)}</div><aside class="parent-tip"><h2>Eine Frage für zu Hause</h2><p>„${escapeHtml(def.parentPrompt)}“</p><p>Lass dein Kind seinen Weg zeigen. Eine Zeichnung oder Dinge vom Tisch reichen aus.</p><hr><h3>Der nächste kleine Schritt</h3><p>${p.stage === "finished" ? "Mit frischen Aufgaben weiterüben oder beim nächsten Besuch eine andere Lektion auf der Insel entdecken." : "Die aktuelle Mission fortsetzen. Hinweise und Pausen sind jederzeit erlaubt."}</p></aside></div><p class="fine-print">Quelle: lokale Academy-Übungen · keine Schulnote, Diagnose oder Schullaufbahnempfehlung. ZAM-Wiederholungen werden getrennt in ZAM geführt.</p></section>`;
 }

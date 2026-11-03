@@ -2,13 +2,16 @@
 	"schema": 1,
 	"checked": "2026-10-31",
 	"source_sha256": "d6883fa04d305d52e83aa16dfd5384eacb40e98b86ffad3dc3e05aec42cf5dd4",
-	"scope": "Shared Grades 3/4. Fifteen Number Forest lessons implement parts of 1.1, 1.2 and 1.3; coverage is not learner mastery.",
+	"scope": "Shared Grades 3/4. Fifteen Number Forest and six Measure Market lessons implement parts of 1.1–1.3 and 3.1–3.3. Coverage is not learner mastery.",
 	"full_coverage": false,
 	"review_status": "awaiting-primary-teacher",
 	"curriculum": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik",
 	"school_type": "grundschule",
 	"grade": 4,
-	"shared_grades": [3, 4],
+	"shared_grades": [
+		3,
+		4
+	],
 	"subject": "mathematik",
 	"optional_lessons": [],
 	"lesson_bindings": {
@@ -86,6 +89,36 @@
 			"section": "1.1",
 			"scope": "partial",
 			"official_cell_binding": "deferred: a grade-specific binding suppresses the generic importer even when its topic_code is narrow"
+		},
+		"laengen-messen": {
+			"section": "3.1",
+			"scope": "partial",
+			"official_cell_binding": "deferred: teacher review, physical work and full course review remain pending"
+		},
+		"masse-fassungsvermoegen": {
+			"section": "3.1",
+			"scope": "partial",
+			"official_cell_binding": "deferred: teacher review, physical work and full course review remain pending"
+		},
+		"uhrzeit-zeitspannen": {
+			"section": "3.1",
+			"scope": "partial",
+			"official_cell_binding": "deferred: teacher review, physical work and full course review remain pending"
+		},
+		"geld-einkaufen": {
+			"section": "3.1",
+			"scope": "partial",
+			"official_cell_binding": "deferred: teacher review, physical work and full course review remain pending"
+		},
+		"einheiten-wechseln": {
+			"section": "3.1",
+			"scope": "partial",
+			"official_cell_binding": "deferred: teacher review, physical work and full course review remain pending"
+		},
+		"schaetzen-sachprobleme": {
+			"section": "3.3",
+			"scope": "partial",
+			"official_cell_binding": "deferred: teacher review, physical work and full course review remain pending"
 		}
 	},
 	"learning_areas": [
@@ -132,7 +165,11 @@
 				"zahlenstrahl-zahlenspruenge",
 				"teiler-vielfache"
 			],
-			"planned_work": ["N01", "N02", "N03"],
+			"planned_work": [
+				"N01",
+				"N02",
+				"N03"
+			],
 			"evidence": [
 				"Place-value comparison and ordered triples; scaled number-line reading/placement; equal steps in both directions; reasoning checks; three tasks per level and fresh exits",
 				"Divisor/remainder checks, multiples tables and choosing all offered divisors 1–10; src/course/divisors.ts; tests/combinations-divisors.test.ts"
@@ -151,12 +188,20 @@
 			"source": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik#25773",
 			"checked": "2026-10-31",
 			"status": "partial",
-			"lessons": ["stellenwerte-buendeln"],
-			"planned_work": ["N01", "N02", "N03"],
+			"lessons": [
+				"stellenwerte-buendeln"
+			],
+			"planned_work": [
+				"N01",
+				"N02",
+				"N03"
+			],
 			"evidence": [
 				"place-value board, bidirectional exchanges, exact task checks"
 			],
-			"physical_work": ["Explain an exchange using objects or a drawing"],
+			"physical_work": [
+				"Explain an exchange using objects or a drawing"
+			],
 			"reviewer": null,
 			"remaining": "Primary-school teacher review; additional representations, number words and practical justification across the full shared Grades 3/4 competence",
 			"lb": 1,
@@ -170,12 +215,20 @@
 			"source": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik#25773",
 			"checked": "2026-10-31",
 			"status": "partial",
-			"lessons": ["stellenwerte-buendeln"],
-			"planned_work": ["N01", "N02", "N03"],
+			"lessons": [
+				"stellenwerte-buendeln"
+			],
+			"planned_work": [
+				"N01",
+				"N02",
+				"N03"
+			],
 			"evidence": [
 				"place-value board, bidirectional exchanges, exact task checks"
 			],
-			"physical_work": ["Explain an exchange using objects or a drawing"],
+			"physical_work": [
+				"Explain an exchange using objects or a drawing"
+			],
 			"reviewer": null,
 			"remaining": "Primary-school teacher review; additional representations, number words and practical justification across the full shared Grades 3/4 competence",
 			"lb": 1,
@@ -189,8 +242,14 @@
 			"source": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik#25773",
 			"checked": "2026-11-02",
 			"status": "partial",
-			"lessons": ["zahlen-vergleichen-ordnen"],
-			"planned_work": ["N01", "N02", "N03"],
+			"lessons": [
+				"zahlen-vergleichen-ordnen"
+			],
+			"planned_work": [
+				"N01",
+				"N02",
+				"N03"
+			],
 			"evidence": [
 				"Compare six-digit numbers using smaller/greater/equal and justify the first different position"
 			],
@@ -208,8 +267,14 @@
 			"source": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik#25773",
 			"checked": "2026-11-02",
 			"status": "partial",
-			"lessons": ["zahlen-zerlegen-ergaenzen"],
-			"planned_work": ["N01", "N02", "N03"],
+			"lessons": [
+				"zahlen-zerlegen-ergaenzen"
+			],
+			"planned_work": [
+				"N01",
+				"N02",
+				"N03"
+			],
 			"evidence": [
 				"Three movable part-whole goals; missing-part tasks; choose canonical place-value parts; explain compensating changes at constant sum"
 			],
@@ -227,8 +292,19 @@
 			"source": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik#25775",
 			"checked": "2026-11-02",
 			"status": "partial",
-			"lessons": ["malnehmen-teilen"],
-			"planned_work": ["N04", "N05", "N06", "N07", "N08", "N09", "N10", "N11"],
+			"lessons": [
+				"malnehmen-teilen"
+			],
+			"planned_work": [
+				"N04",
+				"N05",
+				"N06",
+				"N07",
+				"N08",
+				"N09",
+				"N10",
+				"N11"
+			],
 			"evidence": [
 				"German explanations and worked strategies; three reachable jump/group lab goals; guided and transfer generators; inverse checks and fresh exits"
 			],
@@ -251,7 +327,16 @@
 				"geschickt-subtrahieren",
 				"malnehmen-teilen"
 			],
-			"planned_work": ["N04", "N05", "N06", "N07", "N08", "N09", "N10", "N11"],
+			"planned_work": [
+				"N04",
+				"N05",
+				"N06",
+				"N07",
+				"N08",
+				"N09",
+				"N10",
+				"N11"
+			],
 			"evidence": [
 				"German explanations and worked strategies; three reachable jump/group lab goals; guided and transfer generators; inverse checks and fresh exits"
 			],
@@ -278,7 +363,16 @@
 				"schriftlich-multiplizieren",
 				"schriftlich-dividieren"
 			],
-			"planned_work": ["N04", "N05", "N06", "N07", "N08", "N09", "N10", "N11"],
+			"planned_work": [
+				"N04",
+				"N05",
+				"N06",
+				"N07",
+				"N08",
+				"N09",
+				"N10",
+				"N11"
+			],
 			"evidence": [
 				"German explanations and worked strategies; three reachable jump/group lab goals; guided and transfer generators; inverse checks and fresh exits",
 				"Written addition of two nonnegative whole-number summands: entered result digits and carries, zero positions, carry chain to one million, contextual addition, correction and error reasoning",
@@ -299,8 +393,20 @@
 			"source": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik#25775",
 			"checked": "2026-11-02",
 			"status": "partial",
-			"lessons": ["geschickt-addieren", "geschickt-subtrahieren"],
-			"planned_work": ["N04", "N05", "N06", "N07", "N08", "N09", "N10", "N11"],
+			"lessons": [
+				"geschickt-addieren",
+				"geschickt-subtrahieren"
+			],
+			"planned_work": [
+				"N04",
+				"N05",
+				"N06",
+				"N07",
+				"N08",
+				"N09",
+				"N10",
+				"N11"
+			],
 			"evidence": [
 				"German explanations and worked strategies; three reachable jump/group lab goals; guided and transfer generators; inverse checks and fresh exits"
 			],
@@ -326,7 +432,16 @@
 				"schriftlich-multiplizieren",
 				"schriftlich-dividieren"
 			],
-			"planned_work": ["N04", "N05", "N06", "N07", "N08", "N09", "N10", "N11"],
+			"planned_work": [
+				"N04",
+				"N05",
+				"N06",
+				"N07",
+				"N08",
+				"N09",
+				"N10",
+				"N11"
+			],
 			"evidence": [
 				"German explanations and worked strategies; three reachable jump/group lab goals; guided and transfer generators; inverse checks and fresh exits",
 				"Written addition of two nonnegative whole-number summands: entered result digits and carries, zero positions, carry chain to one million, contextual addition, correction and error reasoning",
@@ -353,7 +468,16 @@
 				"schriftlich-multiplizieren",
 				"schriftlich-dividieren"
 			],
-			"planned_work": ["N04", "N05", "N06", "N07", "N08", "N09", "N10", "N11"],
+			"planned_work": [
+				"N04",
+				"N05",
+				"N06",
+				"N07",
+				"N08",
+				"N09",
+				"N10",
+				"N11"
+			],
 			"evidence": [
 				"Written addition of two nonnegative whole-number summands: entered result digits and carries, zero positions, carry chain to one million, contextual addition, correction and error reasoning",
 				"Written subtraction by value-preserving regrouping: entered result digits, explicit bundle exchanges across zero columns, contextual tasks, erroneous-result correction and addition checks; three tasks per level and fresh exits",
@@ -381,7 +505,16 @@
 				"schriftlich-multiplizieren",
 				"schriftlich-dividieren"
 			],
-			"planned_work": ["N04", "N05", "N06", "N07", "N08", "N09", "N10", "N11"],
+			"planned_work": [
+				"N04",
+				"N05",
+				"N06",
+				"N07",
+				"N08",
+				"N09",
+				"N10",
+				"N11"
+			],
 			"evidence": [
 				"German explanations and worked strategies; three reachable jump/group lab goals; guided and transfer generators; inverse checks and fresh exits",
 				"Written addition of two nonnegative whole-number summands: entered result digits and carries, zero positions, carry chain to one million, contextual addition, correction and error reasoning",
@@ -402,8 +535,19 @@
 			"source": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik#25775",
 			"checked": "2026-11-03",
 			"status": "partial",
-			"lessons": ["muster-zahlbeziehungen"],
-			"planned_work": ["N04", "N05", "N06", "N07", "N08", "N09", "N10", "N11"],
+			"lessons": [
+				"muster-zahlbeziehungen"
+			],
+			"planned_work": [
+				"N04",
+				"N05",
+				"N06",
+				"N07",
+				"N08",
+				"N09",
+				"N10",
+				"N11"
+			],
 			"evidence": [
 				"src/course/catalog.ts",
 				"src/course/investigations.ts",
@@ -424,8 +568,19 @@
 			"source": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik#25775",
 			"checked": "2026-11-03",
 			"status": "partial",
-			"lessons": ["muster-zahlbeziehungen"],
-			"planned_work": ["N04", "N05", "N06", "N07", "N08", "N09", "N10", "N11"],
+			"lessons": [
+				"muster-zahlbeziehungen"
+			],
+			"planned_work": [
+				"N04",
+				"N05",
+				"N06",
+				"N07",
+				"N08",
+				"N09",
+				"N10",
+				"N11"
+			],
 			"evidence": [
 				"src/course/catalog.ts",
 				"src/course/investigations.ts",
@@ -446,8 +601,13 @@
 			"source": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik#25777",
 			"checked": "2026-11-03",
 			"status": "partial",
-			"lessons": ["sachaufgaben-mehrschrittig"],
-			"planned_work": ["N12", "N13"],
+			"lessons": [
+				"sachaufgaben-mehrschrittig"
+			],
+			"planned_work": [
+				"N12",
+				"N13"
+			],
 			"evidence": [
 				"src/course/catalog.ts",
 				"src/course/investigations.ts",
@@ -468,8 +628,13 @@
 			"source": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik#25777",
 			"checked": "2026-11-03",
 			"status": "partial",
-			"lessons": ["sachaufgaben-mehrschrittig"],
-			"planned_work": ["N12", "N13"],
+			"lessons": [
+				"sachaufgaben-mehrschrittig"
+			],
+			"planned_work": [
+				"N12",
+				"N13"
+			],
 			"evidence": [
 				"src/course/catalog.ts",
 				"src/course/investigations.ts",
@@ -490,8 +655,13 @@
 			"source": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik#25777",
 			"checked": "2026-11-03",
 			"status": "partial",
-			"lessons": ["sachaufgaben-mehrschrittig"],
-			"planned_work": ["N12", "N13"],
+			"lessons": [
+				"sachaufgaben-mehrschrittig"
+			],
+			"planned_work": [
+				"N12",
+				"N13"
+			],
 			"evidence": [
 				"src/course/catalog.ts",
 				"src/course/investigations.ts",
@@ -513,7 +683,10 @@
 			"checked": "2026-10-31",
 			"status": "planned",
 			"lessons": [],
-			"planned_work": ["N12", "N13"],
+			"planned_work": [
+				"N12",
+				"N13"
+			],
 			"evidence": [],
 			"physical_work": [],
 			"reviewer": null,
@@ -529,8 +702,13 @@
 			"source": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik#25777",
 			"checked": "2026-11-03",
 			"status": "partial",
-			"lessons": ["sachaufgaben-mehrschrittig"],
-			"planned_work": ["N12", "N13"],
+			"lessons": [
+				"sachaufgaben-mehrschrittig"
+			],
+			"planned_work": [
+				"N12",
+				"N13"
+			],
 			"evidence": [
 				"src/course/catalog.ts",
 				"src/course/investigations.ts",
@@ -551,8 +729,13 @@
 			"source": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik#25777",
 			"checked": "2026-11-03",
 			"status": "partial",
-			"lessons": ["sachaufgaben-mehrschrittig"],
-			"planned_work": ["N12", "N13"],
+			"lessons": [
+				"sachaufgaben-mehrschrittig"
+			],
+			"planned_work": [
+				"N12",
+				"N13"
+			],
 			"evidence": [
 				"src/course/catalog.ts",
 				"src/course/investigations.ts",
@@ -573,8 +756,13 @@
 			"source": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik#25777",
 			"checked": "2026-11-03",
 			"status": "partial",
-			"lessons": ["systematisch-kombinieren"],
-			"planned_work": ["N12", "N13"],
+			"lessons": [
+				"systematisch-kombinieren"
+			],
+			"planned_work": [
+				"N12",
+				"N13"
+			],
 			"evidence": [
 				"Child-built lists for two/three choices, duplicate suppression, restriction checks and fresh context exits; src/course/combinations.ts; src/course/combination-board.ts; tests/combinations-divisors.test.ts"
 			],
@@ -595,7 +783,10 @@
 			"checked": "2026-10-31",
 			"status": "planned",
 			"lessons": [],
-			"planned_work": ["S01", "S02"],
+			"planned_work": [
+				"S01",
+				"S02"
+			],
 			"evidence": [],
 			"physical_work": [],
 			"reviewer": null,
@@ -612,7 +803,10 @@
 			"checked": "2026-10-31",
 			"status": "planned",
 			"lessons": [],
-			"planned_work": ["S01", "S02"],
+			"planned_work": [
+				"S01",
+				"S02"
+			],
 			"evidence": [],
 			"physical_work": [],
 			"reviewer": null,
@@ -629,7 +823,10 @@
 			"checked": "2026-10-31",
 			"status": "planned",
 			"lessons": [],
-			"planned_work": ["S01", "S02"],
+			"planned_work": [
+				"S01",
+				"S02"
+			],
 			"evidence": [],
 			"physical_work": [],
 			"reviewer": null,
@@ -646,7 +843,10 @@
 			"checked": "2026-10-31",
 			"status": "planned",
 			"lessons": [],
-			"planned_work": ["S01", "S02"],
+			"planned_work": [
+				"S01",
+				"S02"
+			],
 			"evidence": [],
 			"physical_work": [],
 			"reviewer": null,
@@ -663,7 +863,11 @@
 			"checked": "2026-10-31",
 			"status": "planned",
 			"lessons": [],
-			"planned_work": ["S03", "S04", "S08"],
+			"planned_work": [
+				"S03",
+				"S04",
+				"S08"
+			],
 			"evidence": [],
 			"physical_work": [],
 			"reviewer": null,
@@ -680,7 +884,11 @@
 			"checked": "2026-10-31",
 			"status": "planned",
 			"lessons": [],
-			"planned_work": ["S03", "S04", "S08"],
+			"planned_work": [
+				"S03",
+				"S04",
+				"S08"
+			],
 			"evidence": [],
 			"physical_work": [],
 			"reviewer": null,
@@ -697,7 +905,11 @@
 			"checked": "2026-10-31",
 			"status": "planned",
 			"lessons": [],
-			"planned_work": ["S03", "S04", "S08"],
+			"planned_work": [
+				"S03",
+				"S04",
+				"S08"
+			],
 			"evidence": [],
 			"physical_work": [],
 			"reviewer": null,
@@ -714,7 +926,11 @@
 			"checked": "2026-10-31",
 			"status": "planned",
 			"lessons": [],
-			"planned_work": ["S03", "S04", "S08"],
+			"planned_work": [
+				"S03",
+				"S04",
+				"S08"
+			],
 			"evidence": [],
 			"physical_work": [],
 			"reviewer": null,
@@ -731,7 +947,11 @@
 			"checked": "2026-10-31",
 			"status": "planned",
 			"lessons": [],
-			"planned_work": ["S03", "S04", "S08"],
+			"planned_work": [
+				"S03",
+				"S04",
+				"S08"
+			],
 			"evidence": [],
 			"physical_work": [],
 			"reviewer": null,
@@ -748,7 +968,10 @@
 			"checked": "2026-10-31",
 			"status": "planned",
 			"lessons": [],
-			"planned_work": ["S05", "S06"],
+			"planned_work": [
+				"S05",
+				"S06"
+			],
 			"evidence": [],
 			"physical_work": [],
 			"reviewer": null,
@@ -765,7 +988,10 @@
 			"checked": "2026-10-31",
 			"status": "planned",
 			"lessons": [],
-			"planned_work": ["S05", "S06"],
+			"planned_work": [
+				"S05",
+				"S06"
+			],
 			"evidence": [],
 			"physical_work": [],
 			"reviewer": null,
@@ -782,7 +1008,10 @@
 			"checked": "2026-10-31",
 			"status": "planned",
 			"lessons": [],
-			"planned_work": ["S05", "S06"],
+			"planned_work": [
+				"S05",
+				"S06"
+			],
 			"evidence": [],
 			"physical_work": [],
 			"reviewer": null,
@@ -799,7 +1028,9 @@
 			"checked": "2026-10-31",
 			"status": "planned",
 			"lessons": [],
-			"planned_work": ["S07"],
+			"planned_work": [
+				"S07"
+			],
 			"evidence": [],
 			"physical_work": [],
 			"reviewer": null,
@@ -816,7 +1047,9 @@
 			"checked": "2026-10-31",
 			"status": "planned",
 			"lessons": [],
-			"planned_work": ["S07"],
+			"planned_work": [
+				"S07"
+			],
 			"evidence": [],
 			"physical_work": [],
 			"reviewer": null,
@@ -833,7 +1066,9 @@
 			"checked": "2026-10-31",
 			"status": "planned",
 			"lessons": [],
-			"planned_work": ["S09"],
+			"planned_work": [
+				"S09"
+			],
 			"evidence": [],
 			"physical_work": [],
 			"reviewer": null,
@@ -847,14 +1082,29 @@
 			"ordinal": 1,
 			"summary": "Practical measurement",
 			"source": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik#25793",
-			"checked": "2026-10-31",
-			"status": "planned",
-			"lessons": [],
-			"planned_work": ["M01", "M02", "M03", "M04", "M05"],
-			"evidence": [],
-			"physical_work": [],
+			"checked": "2026-11-03",
+			"status": "partial",
+			"lessons": [
+				"laengen-messen",
+				"masse-fassungsvermoegen",
+				"uhrzeit-zeitspannen"
+			],
+			"planned_work": [
+				"M01",
+				"M02",
+				"M03",
+				"M04",
+				"M05"
+			],
+			"evidence": [
+				"src/course/measurement.ts: three model goals, guided and transfer worksheets, three fresh exit tasks; exact unit/time/money checks",
+				"src/course/measure-catalog.ts: written explanations, worked examples and real-world activities"
+			],
+			"physical_work": [
+				"Use real ruler, balance, measuring jug, clock and reference objects; instructed but not digitally observed."
+			],
 			"reviewer": null,
-			"remaining": "Implement and review the mapped course lessons",
+			"remaining": "Primary teacher review, real measuring observations, open-ended learner questions/discussion and approved recording remain pending.",
 			"lb": 3,
 			"competence": "messen Größen mit selbst gewählten und standardisierten Maßeinheiten (Kilometer und Millimeter, Sekunde, Kilogramm und Gramm, Liter und Milliliter) sowie mit geeigneten Messgeräten (z. B. Meterzähler, Messbecher, Stoppuhr)."
 		},
@@ -864,14 +1114,30 @@
 			"ordinal": 2,
 			"summary": "Unit notation",
 			"source": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik#25793",
-			"checked": "2026-10-31",
-			"status": "planned",
-			"lessons": [],
-			"planned_work": ["M01", "M02", "M03", "M04", "M05"],
-			"evidence": [],
-			"physical_work": [],
+			"checked": "2026-11-03",
+			"status": "partial",
+			"lessons": [
+				"laengen-messen",
+				"masse-fassungsvermoegen",
+				"uhrzeit-zeitspannen",
+				"geld-einkaufen"
+			],
+			"planned_work": [
+				"M01",
+				"M02",
+				"M03",
+				"M04",
+				"M05"
+			],
+			"evidence": [
+				"src/course/measurement.ts: three model goals, guided and transfer worksheets, three fresh exit tasks; exact unit/time/money checks",
+				"src/course/measure-catalog.ts: written explanations, worked examples and real-world activities"
+			],
+			"physical_work": [
+				"Use real ruler, balance, measuring jug, clock and reference objects; instructed but not digitally observed."
+			],
 			"reviewer": null,
-			"remaining": "Implement and review the mapped course lessons",
+			"remaining": "Primary teacher review, real measuring observations, open-ended learner questions/discussion and approved recording remain pending.",
 			"lb": 3,
 			"competence": "verwenden Abkürzungen zu den standardisierten Maßeinheiten (km und mm, s, kg und g, l und ml) und notieren Messergebnisse bei Meter und Zentimeter sowie bei Euro und Cent auch mit dem im Alltagsgebrauch üblichen Komma."
 		},
@@ -881,14 +1147,29 @@
 			"ordinal": 3,
 			"summary": "Unit conversion",
 			"source": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik#25793",
-			"checked": "2026-10-31",
-			"status": "planned",
-			"lessons": [],
-			"planned_work": ["M01", "M02", "M03", "M04", "M05"],
-			"evidence": [],
-			"physical_work": [],
+			"checked": "2026-11-03",
+			"status": "partial",
+			"lessons": [
+				"masse-fassungsvermoegen",
+				"geld-einkaufen",
+				"einheiten-wechseln"
+			],
+			"planned_work": [
+				"M01",
+				"M02",
+				"M03",
+				"M04",
+				"M05"
+			],
+			"evidence": [
+				"src/course/measurement.ts: three model goals, guided and transfer worksheets, three fresh exit tasks; exact unit/time/money checks",
+				"src/course/measure-catalog.ts: written explanations, worked examples and real-world activities"
+			],
+			"physical_work": [
+				"Use real ruler, balance, measuring jug, clock and reference objects; instructed but not digitally observed."
+			],
 			"reviewer": null,
-			"remaining": "Implement and review the mapped course lessons",
+			"remaining": "Primary teacher review, real measuring observations, open-ended learner questions/discussion and approved recording remain pending.",
 			"lb": 3,
 			"competence": "zerlegen Einheiten innerhalb eines Größenbereichs, wandeln Einheiten um (z. B. 1 l Wasser umfüllen in zwei 500 ml fassende Messbecher oder in vier 250 ml fassende Gefäße) und wechseln Geldbeträge."
 		},
@@ -898,14 +1179,27 @@
 			"ordinal": 4,
 			"summary": "Time calculation",
 			"source": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik#25793",
-			"checked": "2026-10-31",
-			"status": "planned",
-			"lessons": [],
-			"planned_work": ["M01", "M02", "M03", "M04", "M05"],
-			"evidence": [],
-			"physical_work": [],
+			"checked": "2026-11-03",
+			"status": "partial",
+			"lessons": [
+				"uhrzeit-zeitspannen"
+			],
+			"planned_work": [
+				"M01",
+				"M02",
+				"M03",
+				"M04",
+				"M05"
+			],
+			"evidence": [
+				"src/course/measurement.ts: three model goals, guided and transfer worksheets, three fresh exit tasks; exact unit/time/money checks",
+				"src/course/measure-catalog.ts: written explanations, worked examples and real-world activities"
+			],
+			"physical_work": [
+				"Use real ruler, balance, measuring jug, clock and reference objects; instructed but not digitally observed."
+			],
 			"reviewer": null,
-			"remaining": "Implement and review the mapped course lessons",
+			"remaining": "Primary teacher review, real measuring observations, open-ended learner questions/discussion and approved recording remain pending.",
 			"lb": 3,
 			"competence": "berechnen Zeitspannen sowie Anfangs- und Endzeitpunkte; sie berücksichtigen dabei die Besonderheit des Größenbereiches Zeitspannen (z. B 1 h hat 60 min, 1 min hat 60 s, 1 Tag hat 24 h) und notieren Ergebnisse auch in gemischter Schreibweise (z. B. 1 h 25 min)."
 		},
@@ -915,14 +1209,26 @@
 			"ordinal": 1,
 			"summary": "Reference estimates",
 			"source": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik#25760",
-			"checked": "2026-10-31",
-			"status": "planned",
-			"lessons": [],
-			"planned_work": ["M01", "M02", "M03", "M05"],
-			"evidence": [],
-			"physical_work": [],
+			"checked": "2026-11-03",
+			"status": "partial",
+			"lessons": [
+				"schaetzen-sachprobleme"
+			],
+			"planned_work": [
+				"M01",
+				"M02",
+				"M03",
+				"M05"
+			],
+			"evidence": [
+				"src/course/measurement.ts: three model goals, guided and transfer worksheets, three fresh exit tasks; exact unit/time/money checks",
+				"src/course/measure-catalog.ts: written explanations, worked examples and real-world activities"
+			],
+			"physical_work": [
+				"Use real ruler, balance, measuring jug, clock and reference objects; instructed but not digitally observed."
+			],
 			"reviewer": null,
-			"remaining": "Implement and review the mapped course lessons",
+			"remaining": "Primary teacher review, real measuring observations, open-ended learner questions/discussion and approved recording remain pending.",
 			"lb": 3,
 			"competence": "schätzen Größen mithilfe von Bezugsgrößen aus der Erfahrungswelt (z. B. Bezugsgrößen für 500 ml, 1 l, 1 kg, 1 km) und begründen die Ergebnisse ihrer jeweiligen Schätzung."
 		},
@@ -932,14 +1238,26 @@
 			"ordinal": 2,
 			"summary": "Quantity comparison",
 			"source": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik#25760",
-			"checked": "2026-10-31",
-			"status": "planned",
-			"lessons": [],
-			"planned_work": ["M01", "M02", "M03", "M05"],
-			"evidence": [],
-			"physical_work": [],
+			"checked": "2026-11-03",
+			"status": "partial",
+			"lessons": [
+				"einheiten-wechseln"
+			],
+			"planned_work": [
+				"M01",
+				"M02",
+				"M03",
+				"M05"
+			],
+			"evidence": [
+				"src/course/measurement.ts: three model goals, guided and transfer worksheets, three fresh exit tasks; exact unit/time/money checks",
+				"src/course/measure-catalog.ts: written explanations, worked examples and real-world activities"
+			],
+			"physical_work": [
+				"Use real ruler, balance, measuring jug, clock and reference objects; instructed but not digitally observed."
+			],
 			"reviewer": null,
-			"remaining": "Implement and review the mapped course lessons",
+			"remaining": "Comparison and ordering across all four quantity domains still need dedicated practice and real measurement/discussion; current evidence is unit representation only. Teacher review pending.",
 			"lb": 3,
 			"competence": "vergleichen und ordnen Längen, Zeitspannen, Massen sowie Hohlmaße; sie überprüfen ihre Ergebnisse ggf. durch Messen und diskutieren diese im Hinblick auf Plausibilität."
 		},
@@ -949,14 +1267,27 @@
 			"ordinal": 3,
 			"summary": "Everyday fractions",
 			"source": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik#25760",
-			"checked": "2026-10-31",
-			"status": "planned",
-			"lessons": [],
-			"planned_work": ["M01", "M02", "M03", "M05"],
-			"evidence": [],
-			"physical_work": [],
+			"checked": "2026-11-03",
+			"status": "partial",
+			"lessons": [
+				"masse-fassungsvermoegen",
+				"uhrzeit-zeitspannen"
+			],
+			"planned_work": [
+				"M01",
+				"M02",
+				"M03",
+				"M05"
+			],
+			"evidence": [
+				"src/course/measurement.ts: three model goals, guided and transfer worksheets, three fresh exit tasks; exact unit/time/money checks",
+				"src/course/measure-catalog.ts: written explanations, worked examples and real-world activities"
+			],
+			"physical_work": [
+				"Use real ruler, balance, measuring jug, clock and reference objects; instructed but not digitally observed."
+			],
 			"reviewer": null,
-			"remaining": "Implement and review the mapped course lessons",
+			"remaining": "Primary teacher review, real measuring observations, open-ended learner questions/discussion and approved recording remain pending.",
 			"lb": 3,
 			"competence": "nutzen im Alltag gebräuchliche einfache Bruchzahlen (;;) im Zusammenhang mit Größen und stellen derartige Größen in anderen Schreibweisen dar (z. B. l = 500 ml, eine Viertelstunde = 15 min)."
 		},
@@ -966,14 +1297,25 @@
 			"ordinal": 1,
 			"summary": "Quantity information",
 			"source": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik#25763",
-			"checked": "2026-10-31",
-			"status": "planned",
-			"lessons": [],
-			"planned_work": ["M06"],
-			"evidence": [],
-			"physical_work": [],
+			"checked": "2026-11-03",
+			"status": "partial",
+			"lessons": [
+				"geld-einkaufen",
+				"uhrzeit-zeitspannen",
+				"schaetzen-sachprobleme"
+			],
+			"planned_work": [
+				"M06"
+			],
+			"evidence": [
+				"src/course/measurement.ts: three model goals, guided and transfer worksheets, three fresh exit tasks; exact unit/time/money checks",
+				"src/course/measure-catalog.ts: written explanations, worked examples and real-world activities"
+			],
+			"physical_work": [
+				"Use real ruler, balance, measuring jug, clock and reference objects; instructed but not digitally observed."
+			],
 			"reviewer": null,
-			"remaining": "Implement and review the mapped course lessons",
+			"remaining": "Primary teacher review, real measuring observations, open-ended learner questions/discussion and approved recording remain pending.",
 			"lb": 3,
 			"competence": "entnehmen Informationen zu Größen aus verschiedenen Quellen (z. B. Texte, Tabellen, Diagramme) und beschreiben diese im Austausch mit anderen."
 		},
@@ -983,14 +1325,25 @@
 			"ordinal": 2,
 			"summary": "Practical problems",
 			"source": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik#25763",
-			"checked": "2026-10-31",
-			"status": "planned",
-			"lessons": [],
-			"planned_work": ["M06"],
-			"evidence": [],
-			"physical_work": [],
+			"checked": "2026-11-03",
+			"status": "partial",
+			"lessons": [
+				"schaetzen-sachprobleme",
+				"laengen-messen",
+				"masse-fassungsvermoegen"
+			],
+			"planned_work": [
+				"M06"
+			],
+			"evidence": [
+				"src/course/measurement.ts: three model goals, guided and transfer worksheets, three fresh exit tasks; exact unit/time/money checks",
+				"src/course/measure-catalog.ts: written explanations, worked examples and real-world activities"
+			],
+			"physical_work": [
+				"Use real ruler, balance, measuring jug, clock and reference objects; instructed but not digitally observed."
+			],
 			"reviewer": null,
-			"remaining": "Implement and review the mapped course lessons",
+			"remaining": "Primary teacher review, real measuring observations, open-ended learner questions/discussion and approved recording remain pending.",
 			"lb": 3,
 			"competence": "lösen Sachsituationen mit Größen und nutzen dabei Bezugsgrößen aus ihrer Erfahrungswelt oder angemessene Näherungswerte für darin vorkommende Zahlen oder Größen (z. B. auch bei Fermi-Aufgaben) sowie sinnvolle Bearbeitungshilfen (z. B. Skizzen, Begriffstripel, Tabellen, Diagramme)."
 		},
@@ -1000,14 +1353,24 @@
 			"ordinal": 3,
 			"summary": "Approximation choice",
 			"source": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik#25763",
-			"checked": "2026-10-31",
-			"status": "planned",
-			"lessons": [],
-			"planned_work": ["M06"],
-			"evidence": [],
-			"physical_work": [],
+			"checked": "2026-11-03",
+			"status": "partial",
+			"lessons": [
+				"schaetzen-sachprobleme",
+				"geld-einkaufen"
+			],
+			"planned_work": [
+				"M06"
+			],
+			"evidence": [
+				"src/course/measurement.ts: three model goals, guided and transfer worksheets, three fresh exit tasks; exact unit/time/money checks",
+				"src/course/measure-catalog.ts: written explanations, worked examples and real-world activities"
+			],
+			"physical_work": [
+				"Use real ruler, balance, measuring jug, clock and reference objects; instructed but not digitally observed."
+			],
 			"reviewer": null,
-			"remaining": "Implement and review the mapped course lessons",
+			"remaining": "Primary teacher review, real measuring observations, open-ended learner questions/discussion and approved recording remain pending.",
 			"lb": 3,
 			"competence": "begründen (z. B. mithilfe ihrer Größenvorstellungen), ob bei einer Sachsituation ein exaktes Ergebnis notwendig ist oder ob eine Überschlagsrechnung ausreicht, und überprüfen die Plausibilität des jeweiligen Ergebnisses."
 		},
@@ -1017,14 +1380,25 @@
 			"ordinal": 4,
 			"summary": "Functional relationships",
 			"source": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik#25763",
-			"checked": "2026-10-31",
-			"status": "planned",
-			"lessons": [],
-			"planned_work": ["M06"],
-			"evidence": [],
-			"physical_work": [],
+			"checked": "2026-11-03",
+			"status": "partial",
+			"lessons": [
+				"geld-einkaufen",
+				"laengen-messen",
+				"masse-fassungsvermoegen"
+			],
+			"planned_work": [
+				"M06"
+			],
+			"evidence": [
+				"src/course/measurement.ts: three model goals, guided and transfer worksheets, three fresh exit tasks; exact unit/time/money checks",
+				"src/course/measure-catalog.ts: written explanations, worked examples and real-world activities"
+			],
+			"physical_work": [
+				"Use real ruler, balance, measuring jug, clock and reference objects; instructed but not digitally observed."
+			],
 			"reviewer": null,
-			"remaining": "Implement and review the mapped course lessons",
+			"remaining": "Primary teacher review, real measuring observations, open-ended learner questions/discussion and approved recording remain pending.",
 			"lb": 3,
 			"competence": "erkennen funktionale Beziehungen (z. B. je mehr – desto mehr, je mehr – desto weniger) in alltagsnahen Sachsituationen und nutzen diese zur Lösung entsprechender Aufgaben (z. B. Preis im Verhältnis zur Menge setzen)."
 		},
@@ -1037,7 +1411,10 @@
 			"checked": "2026-10-31",
 			"status": "planned",
 			"lessons": [],
-			"planned_work": ["D01", "D02"],
+			"planned_work": [
+				"D01",
+				"D02"
+			],
 			"evidence": [],
 			"physical_work": [],
 			"reviewer": null,
@@ -1054,7 +1431,10 @@
 			"checked": "2026-10-31",
 			"status": "planned",
 			"lessons": [],
-			"planned_work": ["D01", "D02"],
+			"planned_work": [
+				"D01",
+				"D02"
+			],
 			"evidence": [],
 			"physical_work": [],
 			"reviewer": null,
@@ -1071,7 +1451,10 @@
 			"checked": "2026-10-31",
 			"status": "planned",
 			"lessons": [],
-			"planned_work": ["D01", "D02"],
+			"planned_work": [
+				"D01",
+				"D02"
+			],
 			"evidence": [],
 			"physical_work": [],
 			"reviewer": null,
@@ -1088,7 +1471,10 @@
 			"checked": "2026-10-31",
 			"status": "planned",
 			"lessons": [],
-			"planned_work": ["D01", "D02"],
+			"planned_work": [
+				"D01",
+				"D02"
+			],
 			"evidence": [],
 			"physical_work": [],
 			"reviewer": null,
@@ -1105,7 +1491,10 @@
 			"checked": "2026-10-31",
 			"status": "planned",
 			"lessons": [],
-			"planned_work": ["D01", "D02"],
+			"planned_work": [
+				"D01",
+				"D02"
+			],
 			"evidence": [],
 			"physical_work": [],
 			"reviewer": null,
@@ -1122,7 +1511,9 @@
 			"checked": "2026-10-31",
 			"status": "planned",
 			"lessons": [],
-			"planned_work": ["D03"],
+			"planned_work": [
+				"D03"
+			],
 			"evidence": [],
 			"physical_work": [],
 			"reviewer": null,
@@ -1139,7 +1530,9 @@
 			"checked": "2026-10-31",
 			"status": "planned",
 			"lessons": [],
-			"planned_work": ["D03"],
+			"planned_work": [
+				"D03"
+			],
 			"evidence": [],
 			"physical_work": [],
 			"reviewer": null,
@@ -1161,7 +1554,9 @@
 	},
 	"arithmetic_extension_check": {
 		"checked": "2026-11-02",
-		"sections": ["1.2"],
+		"sections": [
+			"1.2"
+		],
 		"source": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik",
 		"scope": "Only mapped positions updated; no written algorithm, complete small-table automation or complete 1.2 claim."
 	},
@@ -1170,5 +1565,15 @@
 		"source": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik",
 		"scope": "Written addition of two whole-number summands with sums at most one million; no full 1.2 or automatic fluency claim.",
 		"review_revision": "Level1:4–5digits with0/1/2 separated carries and same/different operand lengths. Level2:6/5digit operands, zero position, at least two consecutive carries. Goal3 exit requires correction; checks use swapped addends. Teacher review remains pending."
+	},
+	"measure_market_check": {
+		"checked": "2026-11-03",
+		"source": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik",
+		"neighbours": [
+			"grundschule/2/mathematik",
+			"realschule/5/mathematik",
+			"gymnasium/5/mathematik"
+		],
+		"boundaries": "Mixed units, ordinary fractions in context; decimal notation limited to everyday m/cm and euros; no general decimal arithmetic or formal secondary-school Dreisatz."
 	}
 }

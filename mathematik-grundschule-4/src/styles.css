@@ -2043,3 +2043,115 @@ input {
 	padding: 0.5rem;
 	min-height: 44px;
 }
+
+:root {
+	--world-accent: #7150c4;
+}
+:root[data-world="measure"] {
+	--world-accent: #946015;
+}
+[data-theme="dark"][data-world="measure"] {
+	--world-accent: #eac071;
+}
+.world-tabs {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+	margin-bottom: 1rem;
+}
+.world-tabs a {
+	min-height: 44px;
+	display: inline-flex;
+	align-items: center;
+	padding: 0.5rem 1rem;
+	border: 2px solid var(--line);
+	border-radius: 2rem;
+	color: var(--ink);
+	text-decoration: none;
+}
+.world-tabs a[aria-current="true"] {
+	border-color: var(--world-accent);
+	background: var(--soft);
+}
+:root[data-world="measure"] .lesson-card {
+	border-top: 5px solid var(--world-accent);
+}
+.world-scene {
+	display: block;
+	width: 100%;
+	max-height: 240px;
+	margin: 1rem auto;
+	color: var(--ink);
+	font-size: 16px;
+}
+.world-workshop {
+	border: 1px solid var(--line);
+	border-radius: 1rem;
+	padding: 1rem;
+	margin-bottom: 1rem;
+}
+.model-controls {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(min(100%, 190px), 1fr));
+	gap: 1rem;
+}
+.model-control {
+	padding: 0.75rem;
+	border-radius: 0.75rem;
+	background: var(--soft);
+}
+.model-control > div {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 0.5rem;
+	margin-top: 0.5rem;
+}
+.model-control button {
+	min-width: 44px;
+	min-height: 44px;
+	font-size: 1.4rem;
+}
+.model-control output {
+	font-variant-numeric: tabular-nums;
+	font-weight: 700;
+}
+.quantity-readout {
+	display: grid;
+	gap: 0.5rem;
+	justify-items: center;
+	padding: 1.5rem;
+}
+.quantity-readout strong {
+	font-size: 2rem;
+}
+.unit-model {
+	padding: 1rem;
+	border: 1px solid var(--line);
+	border-radius: 0.75rem;
+}
+.unit-parts,
+.estimate-parts {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.35rem;
+	margin-top: 1rem;
+}
+.unit-parts span,
+.estimate-parts span {
+	border: 1px solid var(--world-accent);
+	padding: 0.4rem;
+	border-radius: 0.3rem;
+}
+.investigation-field small {
+	font-weight: 400;
+	font-size: 0.8rem;
+}
+
+.world-scene-scroll {
+	overflow-x: auto;
+	max-width: 100%;
+}
+.world-scene {
+	min-width: 520px;
+}

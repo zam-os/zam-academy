@@ -1,5 +1,6 @@
-import { format, parseInteger } from "../math/place-value";
+import { format } from "../math/place-value";
 import { random } from "../practice/tasks";
+import { type FieldFormat, parseQuantity, quantityNote } from "./quantity";
 import { divisorExit } from "./divisors";
 import type { Answer, ForestTask } from "./tasks";
 
@@ -15,6 +16,7 @@ export interface InvestigationField {
 	label: string;
 	value: number;
 	hint: string;
+	format?: FieldFormat;
 	choices?: { value: number; label: string }[];
 }
 export interface Investigation {
@@ -492,7 +494,7 @@ export function investigationInput(
 	if (values.length !== board.fields.length) return null;
 	const result: number[] = [];
 	for (let i = 0; i < values.length; i++) {
-		const value = parseInteger(values[i]);
+		const value = parseQuantity(values[i], board.fields[i].format);
 		if (
 			value === null ||
 			(board.fields[i].choices &&
@@ -524,7 +526,7 @@ export function investigationMistake(
 	answer: Answer | null,
 ): string {
 	if (!Array.isArray(answer))
-		return "Fülle bitte jedes Zahlenfeld aus und wähle bei jeder Auswahl eine Antwort. Ganze Zahlen bis 1 000 000 sind möglich, zum Beispiel 1000, 1 000 oder 1.000.";
+		return `Fülle jedes Feld aus und wähle bei jeder Auswahl eine Antwort. ${[...new Set(board.fields.filter((f) => !f.choices).map((f) => quantityNote(f.format)))].join(" ")}`;
 	const index = board.fields.findIndex((f, i) => f.value !== answer[i]);
 	return index < 0
 		? "Prüfe noch einmal alle Schritte."

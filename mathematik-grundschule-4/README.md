@@ -1,7 +1,7 @@
-# ZAM Discovery Island: Grade 4 Number Forest
+# ZAM Discovery Island: Grade 4 mathematics
 
-German learner and parent UI for Bavarian Grade 4. Fifteen selectable lessons
-in the Number Forest cover place values/bundling, comparing/ordering,
+German learner and parent UI for Bavarian Grade 4. Twenty-one selectable lessons
+in the Number Forest and Measure Market cover place values/bundling, comparing/ordering,
 number lines/equal jumps, decomposition/complements, addition/subtraction
 strategies, multiplication/inverse division the four written procedures, arithmetic patterns, multi-step story problems, systematic combinations and divisors/multiples.
 Each has two resumable missions, three successful tasks per practice level,
@@ -98,8 +98,8 @@ exponents and malformed or mixed dot/space groups remain invalid.
 - Lesson id: `stellenwerte-buendeln`; cell:
   `zam-academy:mathematik-grundschule-4`. Public links are future source
   addresses and do not indicate that this draft is already hosted.
-- `cell.json` is the sole recall-card source: eighteen atoms, sixty-two German
-  items (thirty-six binary fast checks and twenty-six synthesis tasks) with fixed ULIDs.
+- `cell.json` is the sole recall-card source: twenty-four atoms, eighty-six German
+  items (forty-eight binary fast checks and thirty-eight synthesis tasks) with fixed ULIDs.
   Edit cards only in this file; there is no
   second authored card list or card generator. Installation uses the approved
   core's card-text validation and write path. Prerequisites form an acyclic
@@ -142,3 +142,11 @@ dependency or CI requirement. The local checks use the existing ZAM workspace
 binary: `node /Users/thomas/src/zam/node_modules/@biomejs/biome/bin/biome format --write src tests scripts cell.json coverage.json`
 and the same binary with `lint src tests scripts vite.config.ts`. No npm
 package or script is implied by this optional check.
+
+The Measure Market adds length measurement, mass/capacity, clocks/durations,
+money, unit changes and estimates/planning. Three model goals, three guided
+and three transfer tasks, and three fresh exit tasks retain the same local
+evidence and reward rules. Physical tasks are instructions, not observations.
+Quantity fields accept decimal comma/point only where labelled; whole-number
+parsing is unchanged. Time fields use HH:MM, durations use actual 60/24 relationships.
+See [recording briefs](docs/measure-market-recording-briefs.md).

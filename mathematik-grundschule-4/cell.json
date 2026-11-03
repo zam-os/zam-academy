@@ -1,9 +1,9 @@
 {
 	"$schema": "https://zam.app/schemas/v1/kvt-tile.json",
 	"tile_id": "zam-academy:mathematik-grundschule-4",
-	"version": "2026.11.9",
-	"title": "Mathematik 4 Grundschule: Milos Zahlenwald",
-	"description": "Fünfzehn deutsche Entdeckerlektionen: Stellenwerte, Zahlbeziehungen, Rechenstrategien, schriftliche Grundrechenarten, arithmetische Muster, mehrschrittige Sachaufgaben, systematische Kombinationen sowie Teiler und Vielfache. Zahlen und Ergebnisse höchstens eine Million. Erprobungsfassung; fachliche Freigabe und Lehrervideos fehlen. Kein vollständiger Jahreskurs.",
+	"version": "2026.11.10",
+	"title": "Mathematik 4 Grundschule: Milos Entdeckerinsel",
+	"description": "21 deutsche Entdeckerlektionen im Zahlenwald und auf dem Messmarkt: Zahlen und Rechnen bis zur Million, Längen, Masse, Fassungsvermögen, Uhrzeiten, Geld, Einheitenwechsel und begründetes Schätzen. Lokale Erprobungsfassung; fachliche Freigabe und Lehrervideos fehlen. Kein freigegebener Jahreskurs.",
 	"publisher": "ZAM Academy",
 	"sources": [
 		{
@@ -23,6 +23,11 @@
 		{
 			"uri": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik#25777",
 			"label": "LehrplanPLUS Mathematik 3/4, Teilbereich 1.3",
+			"checked": "2026-11-03"
+		},
+		{
+			"uri": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik",
+			"label": "LehrplanPLUS Mathematik 3/4, Lernbereich 3 Größen und Messen",
 			"checked": "2026-11-03"
 		}
 	],
@@ -1653,6 +1658,531 @@
 					"question": "Welche Zahlen von 1 bis 10 sind Teiler von 48? Begründe auch, warum 5 nicht dazugehört.",
 					"concept": "1, 2, 3, 4, 6 und 8.",
 					"sample_solution": "1 · 48, 2 · 24, 3 · 16, 4 · 12, 6 · 8 und 8 · 6 ergeben jeweils 48. Die übrigen angebotenen Zahlen teilen 48 nicht ohne Rest. Zum Beispiel 48 : 5 = 9 Rest 3; deshalb gehört 5 nicht dazu. Gesucht sind nur die Teiler unter den Zahlen von 1 bis 10."
+				}
+			]
+		},
+		{
+			"id": "01M6HGN3MBNWG2APEZG7EVE8H6",
+			"atom_uri": "urn:zam:atom:01M6HGN3MBNWG2APEZG7EVE8H6",
+			"namespace": "zam-academy-mathematik-grundschule-4",
+			"slug": "gs4-laengen-messen",
+			"title": "Längen messen",
+			"domain": "mathematik/messmarkt",
+			"reduction": "axiomatic",
+			"typical_age_min": 8,
+			"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=laengen-messen",
+			"prerequisites": [
+				{
+					"atom_id": "01M6EQYDM45HP78N17YA5KGEWJ",
+					"type": "soft",
+					"rationale": "Die Grundrechenarten unterstützen das Rechnen mit Größen."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "mathematik-grundschule-4",
+					"topic_code": "laengen-messen",
+					"topic_title": "Längen messen"
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M6HGN3MB5T29WRZAXY13A62C",
+					"slug": "gs4-laengen-messen-1",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=laengen-messen",
+					"materiality": "material",
+					"question": "Wo legst du den Anfang eines Gegenstands am Lineal an?",
+					"concept": "Am Nullstrich.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Am Nullstrich.",
+							"Immer am äußeren Rand, auch wenn dort nicht 0 steht."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M6HGN3MB6DD9XZ8QJ31J1RSJ",
+					"slug": "gs4-laengen-messen-2",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=laengen-messen",
+					"materiality": "material",
+					"question": "Wie viele Millimeter hat ein Zentimeter?",
+					"concept": "10 mm.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": ["10 mm.", "100 mm."],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M6HGN3MBBS9MDCNP3WRRAZ0S",
+					"slug": "gs4-laengen-messen-3",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=laengen-messen",
+					"materiality": "material",
+					"question": "Ein Band reicht von 12 mm bis 57 mm. Bestimme seine Länge und begründe.",
+					"concept": "45 mm = 4 cm 5 mm.",
+					"sample_solution": "Die Länge ist die Differenz der Endmarken: 57 mm − 12 mm = 45 mm. Der Endwert allein zählt die Strecke vor dem Band mit."
+				},
+				{
+					"id": "01M6HGN3MBGBJRKNSGY86NGQWP",
+					"slug": "gs4-laengen-messen-4",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=laengen-messen",
+					"materiality": "material",
+					"question": "Wie viel Band brauchst du für vier Stücke zu je 35 cm und 20 cm Reserve? Gib auch Meter an.",
+					"concept": "160 cm = 1,60 m.",
+					"sample_solution": "4 · 35 cm + 20 cm = 140 cm + 20 cm = 160 cm. 100 cm sind 1 m, daher sind 160 cm gleich 1,60 m."
+				}
+			]
+		},
+		{
+			"id": "01M6HGN3MB3C9PWBB1T2YBBE4X",
+			"atom_uri": "urn:zam:atom:01M6HGN3MB3C9PWBB1T2YBBE4X",
+			"namespace": "zam-academy-mathematik-grundschule-4",
+			"slug": "gs4-masse-fassungsvermoegen",
+			"title": "Masse und Fassungsvermögen",
+			"domain": "mathematik/messmarkt",
+			"reduction": "axiomatic",
+			"typical_age_min": 8,
+			"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=masse-fassungsvermoegen",
+			"prerequisites": [
+				{
+					"atom_id": "01M6EQYDM45HP78N17YA5KGEWJ",
+					"type": "soft",
+					"rationale": "Die Grundrechenarten unterstützen das Rechnen mit Größen."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "mathematik-grundschule-4",
+					"topic_code": "masse-fassungsvermoegen",
+					"topic_title": "Masse und Fassungsvermögen"
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M6HGN3MBFWVDF9V3ZF3V2XJY",
+					"slug": "gs4-masse-fassungsvermoegen-1",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=masse-fassungsvermoegen",
+					"materiality": "material",
+					"question": "Welche Einheiten passen zur Masse?",
+					"concept": "kg und g.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": ["kg und g.", "l und ml."],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M6HGN3MBKQCF1K03ZCBA5K81",
+					"slug": "gs4-masse-fassungsvermoegen-2",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=masse-fassungsvermoegen",
+					"materiality": "material",
+					"question": "Wie viele Milliliter hat ein Liter?",
+					"concept": "1 000 ml.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": ["1 000 ml.", "100 ml."],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M6HGN3MBMQCHTNYX20DVR40J",
+					"slug": "gs4-masse-fassungsvermoegen-3",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=masse-fassungsvermoegen",
+					"materiality": "material",
+					"question": "Eine leere Kiste wiegt 400 g, ihr Inhalt 1 kg 300 g. Wie viel wiegt alles zusammen?",
+					"concept": "1 kg 700 g.",
+					"sample_solution": "1 kg 300 g = 1 300 g. Dazu 400 g ergeben 1 700 g = 1 kg 700 g. Die Kiste muss mitgezählt werden."
+				},
+				{
+					"id": "01M6HGN3MBPFN99YBY8HP8ANKB",
+					"slug": "gs4-masse-fassungsvermoegen-4",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=masse-fassungsvermoegen",
+					"materiality": "material",
+					"question": "Wie viel sind drei Viertel von 2 l? Erkläre mit gleich großen Teilen.",
+					"concept": "1 500 ml = 1 l 500 ml.",
+					"sample_solution": "2 l = 2 000 ml. Ein Viertel sind 2 000 ml : 4 = 500 ml. Drei solche Teile sind 3 · 500 ml = 1 500 ml."
+				}
+			]
+		},
+		{
+			"id": "01M6HGN3MB2CSCQFF5AVMHTWDC",
+			"atom_uri": "urn:zam:atom:01M6HGN3MB2CSCQFF5AVMHTWDC",
+			"namespace": "zam-academy-mathematik-grundschule-4",
+			"slug": "gs4-uhrzeit-zeitspannen",
+			"title": "Uhrzeit und Zeitspannen",
+			"domain": "mathematik/messmarkt",
+			"reduction": "axiomatic",
+			"typical_age_min": 8,
+			"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=uhrzeit-zeitspannen",
+			"prerequisites": [
+				{
+					"atom_id": "01M6EQYDM45HP78N17YA5KGEWJ",
+					"type": "soft",
+					"rationale": "Die Grundrechenarten unterstützen das Rechnen mit Größen."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "mathematik-grundschule-4",
+					"topic_code": "uhrzeit-zeitspannen",
+					"topic_title": "Uhrzeit und Zeitspannen"
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M6HGN3MBBW70C1F1DR3XS9DJ",
+					"slug": "gs4-uhrzeit-zeitspannen-1",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=uhrzeit-zeitspannen",
+					"materiality": "material",
+					"question": "Wie viele Minuten hat eine Stunde?",
+					"concept": "60 min.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": ["60 min.", "100 min."],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M6HGN3MBDW3NMPZTJ2PQYE7C",
+					"slug": "gs4-uhrzeit-zeitspannen-2",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=uhrzeit-zeitspannen",
+					"materiality": "material",
+					"question": "Was unterscheidet einen Zeitpunkt von einer Zeitspanne?",
+					"concept": "Ein Zeitpunkt sagt wann, eine Zeitspanne wie lange.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Ein Zeitpunkt sagt wann, eine Zeitspanne wie lange.",
+							"Beides ist immer dieselbe Angabe."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M6HGN3MBZN2SDJK8CZR1CZ8K",
+					"slug": "gs4-uhrzeit-zeitspannen-3",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=uhrzeit-zeitspannen",
+					"materiality": "material",
+					"question": "Wie lange dauert ein Weg von 23:40 Uhr bis 00:15 Uhr am nächsten Tag?",
+					"concept": "35 min.",
+					"sample_solution": "Von 23:40 Uhr bis Mitternacht sind es 20 min, danach noch 15 min. Zusammen 35 min. Der Tageswechsel gehört zur Rechnung."
+				},
+				{
+					"id": "01M6HGN3MC4NBVQ8AFGH70M0VW",
+					"slug": "gs4-uhrzeit-zeitspannen-4",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=uhrzeit-zeitspannen",
+					"materiality": "material",
+					"question": "Du musst um 14:10 Uhr ankommen und brauchst 45 min. Wann gehst du spätestens los?",
+					"concept": "13:25 Uhr.",
+					"sample_solution": "10 min zurück führen zu 14 Uhr, weitere 35 min zu 13:25 Uhr. Probe: 13:25 Uhr + 45 min = 14:10 Uhr."
+				}
+			]
+		},
+		{
+			"id": "01M6HGN3MCRTY6T48NFKR8GS1A",
+			"atom_uri": "urn:zam:atom:01M6HGN3MCRTY6T48NFKR8GS1A",
+			"namespace": "zam-academy-mathematik-grundschule-4",
+			"slug": "gs4-geld-einkaufen",
+			"title": "Geld und Einkaufen",
+			"domain": "mathematik/messmarkt",
+			"reduction": "axiomatic",
+			"typical_age_min": 8,
+			"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=geld-einkaufen",
+			"prerequisites": [
+				{
+					"atom_id": "01M6EQYDM45HP78N17YA5KGEWJ",
+					"type": "soft",
+					"rationale": "Die Grundrechenarten unterstützen das Rechnen mit Größen."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "mathematik-grundschule-4",
+					"topic_code": "geld-einkaufen",
+					"topic_title": "Geld und Einkaufen"
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M6HGN3MC9J4TQ37XP52ZWS4A",
+					"slug": "gs4-geld-einkaufen-1",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=geld-einkaufen",
+					"materiality": "material",
+					"question": "Wie schreibst du 3 € 8 ct in Euro mit Komma?",
+					"concept": "3,08 €.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": ["3,08 €.", "3,80 €."],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M6HGN3MCG75GTW8RHX1E4MSD",
+					"slug": "gs4-geld-einkaufen-2",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=geld-einkaufen",
+					"materiality": "material",
+					"question": "Was passiert mit dem Geldwert beim richtigen Wechseln von Münzen?",
+					"concept": "Der Wert bleibt gleich.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Der Wert bleibt gleich.",
+							"Mehr Münzen bedeuten immer mehr Geld."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M6HGN3MCPGCVP6R0AXE96ERC",
+					"slug": "gs4-geld-einkaufen-3",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=geld-einkaufen",
+					"materiality": "material",
+					"question": "Ein Heft kostet 1,45 €. Du kaufst drei und bezahlst 5 €. Wie viel Rückgeld bekommst du?",
+					"concept": "65 ct.",
+					"sample_solution": "3 · 145 ct = 435 ct. 500 ct − 435 ct = 65 ct. Die Probe ist 435 ct + 65 ct = 500 ct."
+				},
+				{
+					"id": "01M6HGN3MCNNTDB680WHE4788A",
+					"slug": "gs4-geld-einkaufen-4",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=geld-einkaufen",
+					"materiality": "material",
+					"question": "Vier gleiche Hefte kosten zusammen 6 €. Reichen 8 € für sechs solche Hefte? Begründe.",
+					"concept": "Nein, sechs Hefte kosten 9 €.",
+					"sample_solution": "Ein Heft kostet 600 ct : 4 = 150 ct. Sechs Hefte kosten 6 · 150 ct = 900 ct = 9 €. Zum Budget fehlen 1 €."
+				}
+			]
+		},
+		{
+			"id": "01M6HGN3MC0HS6N0C2P6FWSS8N",
+			"atom_uri": "urn:zam:atom:01M6HGN3MC0HS6N0C2P6FWSS8N",
+			"namespace": "zam-academy-mathematik-grundschule-4",
+			"slug": "gs4-einheiten-wechseln",
+			"title": "Einheiten wechseln",
+			"domain": "mathematik/messmarkt",
+			"reduction": "axiomatic",
+			"typical_age_min": 8,
+			"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=einheiten-wechseln",
+			"prerequisites": [
+				{
+					"atom_id": "01M6EQYDM45HP78N17YA5KGEWJ",
+					"type": "soft",
+					"rationale": "Die Grundrechenarten unterstützen das Rechnen mit Größen."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "mathematik-grundschule-4",
+					"topic_code": "einheiten-wechseln",
+					"topic_title": "Einheiten wechseln"
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M6HGN3MCMBQ11F0GA2T2FA1R",
+					"slug": "gs4-einheiten-wechseln-1",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=einheiten-wechseln",
+					"materiality": "material",
+					"question": "Ändert sich eine Strecke, wenn du sie statt in km in m angibst?",
+					"concept": "Nein, nur Einheit und Maßzahl ändern sich.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Nein, nur Einheit und Maßzahl ändern sich.",
+							"Ja, die Strecke wird länger."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M6HGN3MCXG0YWTETWXTNPYYH",
+					"slug": "gs4-einheiten-wechseln-2",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=einheiten-wechseln",
+					"materiality": "material",
+					"question": "Gilt bei jedem Einheitenwechsel der Schritt 1 000?",
+					"concept": "Nein, zum Beispiel hat 1 h nur 60 min.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Nein, zum Beispiel hat 1 h nur 60 min.",
+							"Ja, jede große Einheit enthält 1 000 kleinere."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M6HGN3MCD8APPDSZ4GFY36CD",
+					"slug": "gs4-einheiten-wechseln-3",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=einheiten-wechseln",
+					"materiality": "material",
+					"question": "Zerlege 3 650 ml in ganze Liter und übrige Milliliter. Prüfe.",
+					"concept": "3 l 650 ml.",
+					"sample_solution": "3 000 ml sind 3 l, 650 ml bleiben. Probe: 3 · 1 000 ml + 650 ml = 3 650 ml."
+				},
+				{
+					"id": "01M6HGN3MCDFZ40GSN3TD9CGSR",
+					"slug": "gs4-einheiten-wechseln-4",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=einheiten-wechseln",
+					"materiality": "material",
+					"question": "Vergleiche 2 kg 400 g mit 2 350 g. Welche Masse ist größer und um wie viel?",
+					"concept": "2 kg 400 g sind um 50 g größer.",
+					"sample_solution": "2 kg 400 g = 2 400 g. In derselben Einheit lässt sich vergleichen: 2 400 g − 2 350 g = 50 g."
+				}
+			]
+		},
+		{
+			"id": "01M6HGN3MCN1J3WF67JHXXG25H",
+			"atom_uri": "urn:zam:atom:01M6HGN3MCN1J3WF67JHXXG25H",
+			"namespace": "zam-academy-mathematik-grundschule-4",
+			"slug": "gs4-schaetzen-sachprobleme",
+			"title": "Schätzen und Sachprobleme",
+			"domain": "mathematik/messmarkt",
+			"reduction": "axiomatic",
+			"typical_age_min": 8,
+			"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=schaetzen-sachprobleme",
+			"prerequisites": [
+				{
+					"atom_id": "01M6EQYDM45HP78N17YA5KGEWJ",
+					"type": "soft",
+					"rationale": "Die Grundrechenarten unterstützen das Rechnen mit Größen."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "mathematik-grundschule-4",
+					"topic_code": "schaetzen-sachprobleme",
+					"topic_title": "Schätzen und Sachprobleme"
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M6HGN3MCJZTRS9WSWGNCJKVS",
+					"slug": "gs4-schaetzen-sachprobleme-1",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=schaetzen-sachprobleme",
+					"materiality": "material",
+					"question": "Womit begründest du eine sinnvolle Größenschätzung?",
+					"concept": "Mit einer passenden bekannten Bezugsgröße.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Mit einer passenden bekannten Bezugsgröße.",
+							"Mit einer Zahl ohne Vergleich und ohne Einheit."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M6HGN3MCK8CHGEYSFAYJX9R0",
+					"slug": "gs4-schaetzen-sachprobleme-2",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=schaetzen-sachprobleme",
+					"materiality": "material",
+					"question": "Wird ein Ergebnis aus ungefähren Angaben durch Multiplizieren automatisch genau?",
+					"concept": "Nein, es bleibt ungefähr.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Nein, es bleibt ungefähr.",
+							"Ja, jede Rechnung ist eine genaue Messung."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M6HGN3MC6T57Z3RY30XKA58D",
+					"slug": "gs4-schaetzen-sachprobleme-3",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=schaetzen-sachprobleme",
+					"materiality": "material",
+					"question": "17 Kinder bekommen je 250 ml Wasser. Wie viele volle 1-l-Flaschen brauchst du mindestens?",
+					"concept": "5 Flaschen.",
+					"sample_solution": "17 · 250 ml = 4 250 ml. Vier Flaschen liefern nur 4 000 ml. Fünf Flaschen liefern 5 000 ml und reichen; 750 ml bleiben."
+				},
+				{
+					"id": "01M6HGN3MCXEN3GVHPAVGS4NDN",
+					"slug": "gs4-schaetzen-sachprobleme-4",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=schaetzen-sachprobleme",
+					"materiality": "material",
+					"question": "Drei Päckchen kosten je 2,35 €. Das Budget beträgt 7 €. Reicht ein Überschlag für die Entscheidung? Begründe genau.",
+					"concept": "Hier brauchst du die genaue Rechnung; das Budget reicht nicht.",
+					"sample_solution": "3 · 235 ct = 705 ct = 7,05 €. Es fehlen 5 ct. Ein grober Überschlag kann diese knappe Grenze übersehen."
 				}
 			]
 		}

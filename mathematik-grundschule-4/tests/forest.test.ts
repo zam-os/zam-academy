@@ -42,7 +42,7 @@ const complete = (p: ReturnType<typeof freshForest>) => {
 };
 describe("Number Forest lessons", () => {
 	it("has complete explanations and stable direct links for each lesson", () => {
-		expect(FOREST_LESSONS).toHaveLength(14);
+		expect(FOREST_LESSONS).toHaveLength(20);
 		for (const lesson of FOREST_LESSONS) {
 			expect(lesson.goals).toHaveLength(3);
 			expect(lesson.paragraphs.length).toBeGreaterThanOrEqual(4);
@@ -92,6 +92,7 @@ describe("Number Forest lessons", () => {
 							task.line,
 							task.answer,
 							task.combination,
+							task.investigation?.identity,
 						]),
 					);
 					expect(correctForest(task, task.answer)).toBe(true);
@@ -164,7 +165,7 @@ describe("Number Forest lessons", () => {
 							Math.sign(task.numbers[0] - task.numbers[1]),
 						);
 				}
-				expect(variants.size).toBeGreaterThan(80);
+				expect(variants.size, `${id} level ${level}`).toBeGreaterThan(80);
 			}
 	});
 	it("balances the three comparison signs without teaching a fixed answer sequence", () => {

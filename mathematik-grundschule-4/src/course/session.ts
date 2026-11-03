@@ -1,3 +1,6 @@
+import { isWorldLesson } from "./worlds";
+import { freshWorkshop, stepWorkshop } from "./workshop";
+import { quantityText, quantityNote } from "./quantity";
 import { DATABASE, DocumentStore } from "../storage/progress";
 import type { ForestLesson } from "./catalog";
 import { combinationCode, validCombinationChoice } from "./combinations";
@@ -417,8 +420,7 @@ export class ForestSession {
 					) {
 						input.setAttribute("aria-invalid", "true");
 						if (error)
-							error.textContent =
-								"Hier passt eine ganze Zahl von 0 bis 1 000 000, zum Beispiel 1000, 1 000 oder 1.000. Bitte verbessere das markierte Feld.";
+							error.textContent = quantityNote(board.fields[index].format);
 						return;
 					}
 					input.removeAttribute("aria-invalid");
@@ -502,7 +504,8 @@ export class ForestSession {
 	act(button: HTMLButtonElement, root: HTMLElement): Promise<void> {
 		if (
 			this.lesson.id !== "systematisch-kombinieren" &&
-			this.lesson.id !== "teiler-vielfache"
+			this.lesson.id !== "teiler-vielfache" &&
+			!isWorldLesson(this.lesson.id)
 		)
 			return this.actNow(button, root);
 		const key = forestKey(this.store.state);
@@ -601,7 +604,9 @@ export class ForestSession {
 					p.optional = null;
 					p.index = 0;
 					if (isWrittenAlgorithm(p.lesson)) p.algorithmWork = null;
-					if (isInvestigation(p.lesson)) p.investigationWork = null;
+					if (isInvestigation(p.lesson) || isWorldLesson(p.lesson))
+						p.investigationWork = null;
+					if (isWorldLesson(p.lesson)) p.modelWork = null;
 					if (p.lesson === "systematisch-kombinieren") {
 						p.combinationChoice = null;
 						p.selection = [];
@@ -653,6 +658,22 @@ export class ForestSession {
 					return;
 				}
 
+				if (
+					task.model &&
+					(action === "forest-model" || action === "forest-model-reset")
+				) {
+					p.modelWork =
+						action === "forest-model-reset"
+							? freshWorkshop(task.model)
+							: stepWorkshop(
+									task.model,
+									p.modelWork ?? freshWorkshop(task.model),
+									Number(button.dataset.col),
+									Number(button.dataset.value),
+								);
+					this.feedback = "";
+					return;
+				}
 				if (task.combination) {
 					if (action === "forest-combination-choice") {
 						const axis = Number(button.dataset.col),
@@ -819,6 +840,8 @@ export class ForestSession {
 						answer = task.answer;
 					} else if (action === "forest-choice")
 						answer = Number(button.dataset.value);
+					else if (task.model)
+						answer = p.modelWork ?? freshWorkshop(task.model);
 					else if (task.investigation)
 						answer = investigationInput(
 							task.investigation,
@@ -864,7 +887,11 @@ export class ForestSession {
 					if (right && task.combination && Array.isArray(task.answer))
 						p.selection = [...task.answer];
 					if (right && task.investigation && Array.isArray(task.answer))
-						p.investigationWork = task.answer.map(String);
+						p.investigationWork = task.answer.map((n, i) =>
+							quantityText(n, task.investigation?.fields[i].format),
+						);
+					if (right && task.model && action === "forest-worked")
+						p.modelWork = [...task.model.target];
 					if (right && task.algorithm && Array.isArray(task.answer))
 						p.algorithmWork = task.answer.map(String);
 					event = right ? "correct" : "encourage";

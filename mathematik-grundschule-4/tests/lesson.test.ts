@@ -267,10 +267,10 @@ describe("tasks and evidence", () => {
 });
 
 describe("content contracts", () => {
-	it("has eighteen atoms, sixty-two German items, stable lesson links and no broad official grade binding", () => {
-		expect(cell.atoms).toHaveLength(18);
+	it("has twenty-four atoms, eighty-six German items, stable lesson links and no broad official grade binding", () => {
+		expect(cell.atoms).toHaveLength(24);
 		const items = cell.atoms.flatMap<RecallItem>((a) => a.practice_items);
-		expect(items).toHaveLength(62);
+		expect(items).toHaveLength(86);
 		for (const atom of cell.atoms) {
 			expect(atom.curricula.every((c) => c.provider === "zam-academy")).toBe(
 				true,
@@ -283,7 +283,7 @@ describe("content contracts", () => {
 			expect(validLessonHash(new URL(item.source_link).hash)).toBe(true);
 		}
 		expect(validLessonHash("#lesson=unbekannt")).toBe(false);
-		expect(new Set(items.map((i) => i.id)).size).toBe(62);
+		expect(new Set(items.map((i) => i.id)).size).toBe(86);
 	});
 	it("uses a real minus sign in the subtraction card and its validated math segment", () => {
 		const card = cell.atoms
