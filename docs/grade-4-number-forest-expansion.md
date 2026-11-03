@@ -303,3 +303,84 @@ The updated recording briefs are production scripts, not recorded media.
 Teacher sign-off, real recordings/rights/captions/transcripts, final playback,
 direct extracted-file startup, ZAM learner-UI recall and physical touch
 acceptance remain pending. `publication.json` stays local-only.
+
+## Combinations and divisors/multiples — 2026-11-03
+
+Thomas asked to continue immediately with further lessons. This increment
+reuses `codex/grade4-patterns-story-problems`, building on local commit
+`3ae1644`, with two additional Number Forest lessons:
+
+| Lesson | Workshop and practice | Transfer |
+| --- | --- | --- |
+| `systematisch-kombinieren` · Milos Möglichkeitenbaum | Construct a list from two/three choice rows, suppress duplicate entries, remove rows and respect a restriction | More first choices, a restriction across three rows and separate fresh exit contexts |
+| `teiler-vielfache` · Milos Bündelwege | Compute quotient/remainder, complete multiples tables and find all offered divisors from 1–10 | Larger quantities, interior table gaps and contextual group-size selection |
+
+The combination list starts empty; expected tuples are not supplied as
+answer buttons. Children select one option per row and enter a tuple.
+Duplicates are rejected without a failed attempt. Invalid or incomplete
+builders and empty submissions are validation notices. Incomplete nonempty
+lists and forbidden rows are mathematical attempts; later correction stays
+assisted. A worked continuation fills a solved list explicitly as helped.
+Actual choices and restrictions are retained in dated parent snapshots.
+
+Both new lessons use a keyed action queue so rapid choices, additions and
+number toggles commit in order. Two queued Next taps cannot skip a task.
+List, builder choices, worksheet input and selection resume in separate new
+lesson documents. Finishing/stopping a round clears current work, while
+mission rewards remain unique. No previous lesson document or migration is
+changed. Selecting a divisor is evidence of checking offered numbers, not
+proof of practical grouping or complete number fluency.
+
+Combination identity is based on allowed labelled assignments, independent
+of displayed axis/option order. Changing a restriction changes the actual
+problem. Exit contexts differ from the teaching examples, labs and practice
+contexts. Divisor-selection identity is based on the quantity, independent
+of its story. Transfer divisor searches use quantities above 100; lab and
+guided searches stay at most 100. Division uses positive divisors 2–10.
+Prime factors, formal divisibility tests, gcd/lcm, negatives, factorials and
+probability rules are outside this increment.
+
+The current official Grades 3/4 section 1.1 and 1.3 curriculum and the
+Grades 1/2 and Grade 5 Realschule/Gymnasium boundaries were re-read on
+2026-11-03 using the source links above. N13's simple combination scope is
+represented. The initial inventory missed an explicit divisor/multiple
+lesson even though coverage row 1.1-01 still named that gap; the plan now
+records its refinement as N14. The actual app reaches fifteen lessons due
+to earlier inventory splits. Both competency mappings remain partial and
+unreviewed by a teacher. Number words, quantity estimation, open explanations,
+physical work and broader representation choice remain pending; this does
+not complete Number Forest or begin Measure Market.
+
+Cell `2026.11.9` has eighteen atoms/sixty-two items: thirty-six binary fast
+checks and twenty-six synthesis items. Comparison against `3ae1644` preserves
+all sixteen existing atoms/fifty-four items exactly as parsed JSON. The
+eighty atom/item identifiers are unique. New cards live only in `cell.json`;
+there are no replacements, retirements or broad official-grade bindings.
+The draft stays local-only. Teacher scripts are briefs, not approved media.
+
+Validation:
+
+- `npm ci --offline --no-audit --no-fund`, `npm run typecheck`, `npm test`
+  (116 tests), `npm run package:zip` and `npm run verify:release` passed.
+  Existing external Biome format/lint and `git diff --check` passed.
+- Isolated native browser harness: 114 assertions passed, including both
+  full new journeys, rapid taps/toggles, duplicate Next taps, duplicate and
+  forbidden tuples, reload/resumption, help, optional practice and rewards.
+- Built app on isolated localhost:5231: both complete lesson journeys,
+  actual list construction/removal/duplicate checks, reload, all parent goals,
+  teacher-pending panels, desktop light and 320px dark/phone controls.
+  Selected combination buttons use the established action color, retaining
+  white-text contrast in dark mode. No document overflow in inspected phone
+  states; temporary viewport overrides were reset.
+- Root catalog/registry: 48 tests passed. All 37 cells and the disposable
+  Grade 4 install/enrol/recall/reinstall path passed against the CI-pinned
+  zam-core 0.54.0.
+- Independent review: 70 targeted tests across four suites, then nine for
+  the final parent-evidence snapshot change, plus a clean diff check. The
+  rapid divisor-selection issue was fixed and covered natively. No remaining
+  actionable code/content findings; this is not teacher sign-off.
+
+The strict completion gate still refuses release pending teacher approval,
+real recording/rights/captions/transcript, final playback, direct-file startup,
+ZAM learner-UI recall and physical touch acceptance. No phase checkbox,
+publication marker or public registration changes.

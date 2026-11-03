@@ -2010,3 +2010,36 @@ input {
 .investigation-choice label:has(input:checked) {
 	border-color: var(--purple);
 }
+.combination-axis {
+	border: 0;
+	padding: 0;
+	margin: 1rem 0;
+}
+.combination-axis legend {
+	font-weight: 700;
+	margin-bottom: 0.5rem;
+}
+.combination-axis > div {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+}
+.combination-axis button[aria-pressed="true"] {
+	background: var(--action);
+	color: white;
+	border-color: var(--action);
+}
+.combination-list {
+	padding-left: 1.5rem;
+}
+.combination-list li {
+	padding: 0.5rem 0;
+}
+.combination-list li > span {
+	display: inline-block;
+	margin-right: 0.5rem;
+}
+.combination-list li > button {
+	padding: 0.5rem;
+	min-height: 44px;
+}

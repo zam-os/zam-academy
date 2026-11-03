@@ -2,7 +2,7 @@
 	"schema": 1,
 	"checked": "2026-10-31",
 	"source_sha256": "d6883fa04d305d52e83aa16dfd5384eacb40e98b86ffad3dc3e05aec42cf5dd4",
-	"scope": "Shared Grades 3/4. Thirteen Number Forest lessons implement parts of 1.1, 1.2 and 1.3; coverage is not learner mastery.",
+	"scope": "Shared Grades 3/4. Fifteen Number Forest lessons implement parts of 1.1, 1.2 and 1.3; coverage is not learner mastery.",
 	"full_coverage": false,
 	"review_status": "awaiting-primary-teacher",
 	"curriculum": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik",
@@ -76,6 +76,16 @@
 			"section": "1.3",
 			"scope": "partial",
 			"official_cell_binding": "deferred: a grade-specific binding suppresses the generic importer even when its topic_code is narrow"
+		},
+		"systematisch-kombinieren": {
+			"section": "1.3",
+			"scope": "partial",
+			"official_cell_binding": "deferred: a grade-specific binding suppresses the generic importer even when its topic_code is narrow"
+		},
+		"teiler-vielfache": {
+			"section": "1.1",
+			"scope": "partial",
+			"official_cell_binding": "deferred: a grade-specific binding suppresses the generic importer even when its topic_code is narrow"
 		}
 	},
 	"learning_areas": [
@@ -106,7 +116,7 @@
 	],
 	"neighbouring_scope": {
 		"previous": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/2/mathematik",
-		"note": "Grades 1/2 introduce number representations, addition/subtraction to 100, the small multiplication table and inverse division. Grade 4 extends these foundations with place-value bundles and mental/halfwritten strategies. Negative numbers, other number systems, numbers above one million and Grade 5 term rules remain outside this batch. Written algorithms and full annual coverage remain incomplete."
+		"note": "Grades 1/2 introduce number representations, arithmetic to 100, the small multiplication table, inverse division and simple two-choice combinations. This batch extends systematic enumeration to three choices and explicit restrictions, and connects divisors/multiples with rest 0. Prime factors, formal divisibility rules, gcd/lcm, negatives and Grade 5 term rules remain outside scope. Annual coverage and primary-school teacher approval remain incomplete."
 	},
 	"rows": [
 		{
@@ -115,16 +125,21 @@
 			"ordinal": 1,
 			"summary": "Counting",
 			"source": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik#25773",
-			"checked": "2026-11-02",
+			"checked": "2026-11-03",
 			"status": "partial",
-			"lessons": ["zahlen-vergleichen-ordnen", "zahlenstrahl-zahlenspruenge"],
+			"lessons": [
+				"zahlen-vergleichen-ordnen",
+				"zahlenstrahl-zahlenspruenge",
+				"teiler-vielfache"
+			],
 			"planned_work": ["N01", "N02", "N03"],
 			"evidence": [
-				"Place-value comparison and ordered triples; scaled number-line reading/placement; equal steps in both directions; reasoning checks; three tasks per level and fresh exits"
+				"Place-value comparison and ordered triples; scaled number-line reading/placement; equal steps in both directions; reasoning checks; three tasks per level and fresh exits",
+				"Divisor/remainder checks, multiples tables and choosing all offered divisors 1–10; src/course/divisors.ts; tests/combinations-divisors.test.ts"
 			],
 			"physical_work": [],
 			"reviewer": null,
-			"remaining": "Primary-school teacher review; divisors, multiples and remaining flexible-counting representations",
+			"remaining": "Primary-school teacher review, broader flexible-counting representations and open explanations of number relationships remain pending.",
 			"lb": 1,
 			"competence": "orientieren sich im Zahlenraum bis zur Million durch flexibles Zählen (vorwärts, rückwärts, in Schritten); sie ordnen und vergleichen Zahlen (auch anhand des Zahlenstrahls) und begründen Beziehungen zwischen Zahlen (z. B. Teiler, Vielfache)."
 		},
@@ -556,14 +571,18 @@
 			"ordinal": 7,
 			"summary": "Systematic combinations",
 			"source": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik#25777",
-			"checked": "2026-10-31",
-			"status": "planned",
-			"lessons": [],
+			"checked": "2026-11-03",
+			"status": "partial",
+			"lessons": ["systematisch-kombinieren"],
 			"planned_work": ["N12", "N13"],
-			"evidence": [],
-			"physical_work": [],
+			"evidence": [
+				"Child-built lists for two/three choices, duplicate suppression, restriction checks and fresh context exits; src/course/combinations.ts; src/course/combination-board.ts; tests/combinations-divisors.test.ts"
+			],
+			"physical_work": [
+				"Use paper slips to enumerate possibilities and draw a table or tree; not observed by the app"
+			],
 			"reviewer": null,
-			"remaining": "Implement and review the mapped course lessons",
+			"remaining": "Primary-school teacher review, independently drawing/evaluating representations and discussing alternate strategies remain pending.",
 			"lb": 1,
 			"competence": "bestimmen die Anzahl der verschiedenen Möglichkeiten bei einfachen kombinatorischen Aufgabenstellungen (z. B. mögliche Kombinationen von 3 T-Shirts, 3 Hosen und 2 Paar Socken) durch probierendes und systematisches Vorgehen und stellen Ergebnisse strukturiert dar (z. B. in Baumdiagrammen, in Zeichnungen oder in Tabellen)."
 		},

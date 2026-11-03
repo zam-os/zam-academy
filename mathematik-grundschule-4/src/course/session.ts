@@ -1,5 +1,6 @@
 import { DATABASE, DocumentStore } from "../storage/progress";
 import type { ForestLesson } from "./catalog";
+import { combinationCode, validCombinationChoice } from "./combinations";
 import {
 	investigationInput,
 	isInvestigation,
@@ -49,6 +50,7 @@ export class ForestSession {
 	draft = "";
 	busy = false;
 	private key = "";
+	private actionQueue: Promise<void> = Promise.resolve();
 	private opening: Promise<void> | null = null;
 	private rangeRevision = 0;
 	private editingRange = false;
@@ -497,7 +499,24 @@ export class ForestSession {
 				});
 		});
 	}
-	async act(button: HTMLButtonElement, root: HTMLElement): Promise<void> {
+	act(button: HTMLButtonElement, root: HTMLElement): Promise<void> {
+		if (
+			this.lesson.id !== "systematisch-kombinieren" &&
+			this.lesson.id !== "teiler-vielfache"
+		)
+			return this.actNow(button, root);
+		const key = forestKey(this.store.state);
+		const next = this.actionQueue.then(async () => {
+			if (forestKey(this.store.state) !== key) return;
+			await this.actNow(button, root);
+		});
+		this.actionQueue = next.catch(() => {});
+		return next;
+	}
+	private async actNow(
+		button: HTMLButtonElement,
+		root: HTMLElement,
+	): Promise<void> {
 		if (this.busy) return;
 		const action = button.dataset.action,
 			key = forestKey(this.store.state),
@@ -583,6 +602,10 @@ export class ForestSession {
 					p.index = 0;
 					if (isWrittenAlgorithm(p.lesson)) p.algorithmWork = null;
 					if (isInvestigation(p.lesson)) p.investigationWork = null;
+					if (p.lesson === "systematisch-kombinieren") {
+						p.combinationChoice = null;
+						p.selection = [];
+					}
 					if (p.lesson === "schriftlich-subtrahieren") p.subtractionWork = null;
 					return;
 				}
@@ -630,6 +653,48 @@ export class ForestSession {
 					return;
 				}
 
+				if (task.combination) {
+					if (action === "forest-combination-choice") {
+						const axis = Number(button.dataset.col),
+							value = Number(button.dataset.value);
+						const choice = [
+							...(p.combinationChoice ?? task.combination.axes.map(() => -1)),
+						];
+						if (!Number.isInteger(axis) || !task.combination.axes[axis]) return;
+						choice[axis] = value;
+						if (validCombinationChoice(choice, task.combination))
+							p.combinationChoice = choice;
+						this.feedback = "";
+						return;
+					}
+					if (action === "forest-combination-add") {
+						if (
+							!p.combinationChoice ||
+							p.combinationChoice.some((n) => n < 0)
+						) {
+							this.feedback =
+								"Wähle zuerst in jeder Reihe genau eine Möglichkeit.";
+							return;
+						}
+						const code = combinationCode(p.combinationChoice);
+						if (p.selection.includes(code))
+							this.feedback =
+								"Diese Zusammenstellung steht schon in deiner Liste. Gleiche Möglichkeiten zählen nur einmal.";
+						else {
+							p.selection.push(code);
+							this.feedback =
+								"Eingetragen. Wechsle jetzt eine Auswahl und gehe systematisch weiter.";
+						}
+						return;
+					}
+					if (action === "forest-combination-remove") {
+						p.selection = p.selection.filter(
+							(n) => n !== Number(button.dataset.value),
+						);
+						this.feedback = "";
+						return;
+					}
+				}
 				if (action === "forest-hint" || action === "forest-solution") {
 					if (!p.helped.includes(key)) p.helped.push(key);
 					p.helped = p.helped.slice(-1000);
@@ -648,7 +713,10 @@ export class ForestSession {
 				if (action === "forest-select") {
 					const value = Number(button.dataset.value);
 					if (!task.numbers?.includes(value)) return;
-					if (task.kind === "parts" && p.selection.includes(value))
+					if (
+						(task.kind === "parts" || task.kind === "divisors") &&
+						p.selection.includes(value)
+					)
 						p.selection = p.selection.filter((n) => n !== value);
 					else if (!p.selection.includes(value)) p.selection.push(value);
 					return;
@@ -737,6 +805,14 @@ export class ForestSession {
 							return;
 						}
 					}
+					if (
+						action === "forest-check" &&
+						(task.combination || task.kind === "divisors") &&
+						p.selection.length === 0
+					) {
+						this.feedback = forestMistake(task, null);
+						return;
+					}
 					let answer: Answer | null;
 					if (action === "forest-worked") {
 						if (!p.helped.includes(key) || !explanationShown) return;
@@ -758,7 +834,12 @@ export class ForestSession {
 						);
 					else if (task.kind === "columns" && task.columns)
 						answer = columnAnswer(task.columns.a, task.columns.b, columnValues);
-					else if (task.kind === "parts" || task.kind === "order")
+					else if (
+						task.kind === "parts" ||
+						task.kind === "order" ||
+						task.kind === "divisors" ||
+						task.kind === "combinations"
+					)
 						answer = [...p.selection];
 					else if (
 						task.kind === "line" ||
@@ -780,6 +861,8 @@ export class ForestSession {
 							result: task.answer.slice(0, 7).map(String),
 							bundles: task.answer.slice(7),
 						};
+					if (right && task.combination && Array.isArray(task.answer))
+						p.selection = [...task.answer];
 					if (right && task.investigation && Array.isArray(task.answer))
 						p.investigationWork = task.answer.map(String);
 					if (right && task.algorithm && Array.isArray(task.answer))

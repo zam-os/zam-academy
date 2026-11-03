@@ -29,7 +29,7 @@ try {
 		user,
 		tile.atoms.map((a) => a.id),
 	);
-	assert.equal(first.cardsCreated, 54);
+	assert.equal(first.cardsCreated, 62);
 	const again = await core.materialiseKvtCards(
 		db,
 		user,
@@ -39,7 +39,7 @@ try {
 	const cards = await db
 		.prepare("SELECT c.id, c.token_id FROM cards c ORDER BY c.id")
 		.all();
-	assert.equal(cards.length, 54);
+	assert.equal(cards.length, 62);
 	const review = await core.evaluateRating(db, {
 		cardId: cards[0].id,
 		tokenId: cards[0].token_id,
@@ -71,7 +71,7 @@ try {
 		0,
 	);
 	console.log(
-		"Cell validated in a disposable library: 16 atoms, 54 cards, idempotent enrolment, recall rating, history preservation and no broad grade binding.",
+		"Cell validated in a disposable library: 18 atoms, 62 cards, idempotent enrolment, recall rating, history preservation and no broad grade binding.",
 	);
 } finally {
 	await db.close();

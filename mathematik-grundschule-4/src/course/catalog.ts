@@ -11,6 +11,8 @@ export const EXTRA_LESSON_IDS = [
 	"schriftlich-dividieren",
 	"muster-zahlbeziehungen",
 	"sachaufgaben-mehrschrittig",
+	"systematisch-kombinieren",
+	"teiler-vielfache",
 ] as const;
 export type ExtraLessonId = (typeof EXTRA_LESSON_IDS)[number];
 export interface QuizChoice {
@@ -599,6 +601,100 @@ export const FOREST_LESSONS: ForestLesson[] = [
 		},
 		parentPrompt:
 			"Erzähle eine Geschichte mit zwei Rechenschritten. Wofür steht dein Zwischenergebnis? Wie kannst du deine Antwort an der Geschichte prüfen?",
+	},
+
+	{
+		id: "systematisch-kombinieren",
+		title: "Milos Möglichkeitenbaum",
+		shortTitle: "Systematisch kombinieren",
+		icon: "⑂",
+		lead: "Milo stellt Dinge für einen Inseltag zusammen. Sammle alle Möglichkeiten, ohne eine zu vergessen oder doppelt zu zählen.",
+		goals: [
+			"Alle Möglichkeiten aus zwei Reihen sammeln",
+			"Drei Auswahlen systematisch verbinden",
+			"Einschränkungen beachten und vollständig zählen",
+		],
+		paragraphs: [
+			"Eine Zusammenstellung enthält hier genau eine Auswahl aus jeder Reihe. Zum Beispiel gehören zu einem Anzug ein T-Shirt und eine Hose. Ein anderes T-Shirt oder eine andere Hose ergibt eine andere Zusammenstellung. Nur die Reihenfolge beim Aufschreiben zu wechseln ergibt keine neue Möglichkeit.",
+			"Gehe systematisch vor: Halte ein T-Shirt fest und verbinde es nacheinander mit jeder Hose. Erst danach wechselst du zum nächsten T-Shirt. Eine Liste oder eine Tabelle zeigt dir, was du schon gesammelt hast.",
+			"Bei drei Reihen hältst du die ersten beiden Auswahlen fest und wechselst zuerst nur die dritte. Danach änderst du die zweite Auswahl und gehst die dritte Reihe wieder ganz durch. So verläuft auch ein Baumdiagramm: eine Verzweigung für jede neue Auswahl.",
+			"Wenn alles mit allem zusammenpasst, kannst du die Anzahl der Auswahlen malnehmen. Mit einer Einschränkung musst du zuerst prüfen, welche Zusammenstellungen erlaubt sind. Zähle dann die erlaubten Fälle für jede erste Auswahl getrennt und addiere sie.",
+			"In der Werkstatt trägst du deine Zusammenstellungen selbst in eine Liste ein. Doppelte Einträge zählen nicht noch einmal. Unpassende Einträge kannst du entfernen. Prüfe zum Schluss für jede erste Auswahl, ob du wirklich alle erlaubten Wege aufgeschrieben hast.",
+		],
+		example:
+			"Zwei T-Shirts, gestreift und gepunktet, passen zu vier Hosen, kurz, lang, kariert und einfarbig. Zum gestreiften T-Shirt gehören vier Möglichkeiten, zum gepunkteten ebenfalls vier. Insgesamt sind es 2 · 4 = 8 Anzüge. Darf das gestreifte T-Shirt nur zur kurzen Hose, bleiben dafür 1 und für das gepunktete 4 Möglichkeiten: zusammen 5.",
+		takeaway:
+			"Halte eine Auswahl fest, gehe die anderen Reihen vollständig durch und wechsle erst dann weiter. Gleiche Zusammenstellungen zählen einmal; Einschränkungen gelten für jeden Eintrag.",
+		transfer:
+			"Jetzt gibt es andere Auswahlen, mehr Möglichkeiten und Einschränkungen auch bei drei Reihen. Baue deine Liste selbst und prüfe, ob jeder erlaubte Fall genau einmal vorkommt.",
+		quiz: {
+			goal: 2,
+			prompt:
+				"Es gibt 3 T-Shirts und 4 Hosen. Alles passt zusammen. Wie viele verschiedene Anzüge aus genau einem T-Shirt und einer Hose gibt es?",
+			choices: [
+				{
+					label: "12: Zu jedem der 3 T-Shirts passen alle 4 Hosen.",
+					correct: true,
+				},
+				{ label: "7: Ich zähle T-Shirts und Hosen zusammen.", correct: false },
+				{
+					label:
+						"24: Dieselben Kleidungsstücke in anderer Schreibreihenfolge zählen noch einmal.",
+					correct: false,
+				},
+			],
+			explanation:
+				"Zu jedem der 3 T-Shirts gibt es 4 Möglichkeiten. 3 · 4 = 12. Hose und T-Shirt anders herum aufzuschreiben macht keinen neuen Anzug.",
+		},
+		parentPrompt:
+			"Lege zwei Arten Brot und drei Beläge als Zettel aus. Finde alle Zusammenstellungen. Wie zeigst du, dass keine fehlt und keine doppelt ist?",
+	},
+	{
+		id: "teiler-vielfache",
+		title: "Milos Bündelwege",
+		shortTitle: "Teiler und Vielfache",
+		icon: "⋮",
+		lead: "Milo packt gleich große Beutel. Entdecke, wann etwas ohne Rest aufgeht und wie Vielfache durch gleich große Schritte entstehen.",
+		goals: [
+			"Teiler mit einer Division und dem Rest prüfen",
+			"Vielfache als gleich große Schritte ergänzen",
+			"Passende Teiler unter angebotenen Zahlen finden",
+		],
+		paragraphs: [
+			"Eine positive ganze Zahl ist ein Teiler einer anderen positiven ganzen Zahl, wenn das Teilen ohne Rest aufgeht. 3 ist ein Teiler von 12, weil 12 : 3 = 4 Rest 0. Die passende Malaufgabe lautet 3 · 4 = 12.",
+			"12 ist ein Vielfaches von 3. Ein Vielfaches entsteht durch Malnehmen mit 0, 1, 2 und so weiter. Für die 5er-Reihe lauten die Vielfachen zum sechsten bis zehnten Paket 30, 35, 40, 45 und 50. Bei jedem weiteren Paket kommen 5 dazu. In unseren Pakettabellen beginnt die Zahl der Pakete mindestens bei 1.",
+			"Teiler und Vielfaches beschreiben dieselbe Beziehung aus zwei Richtungen: 3 teilt 12 ohne Rest; 12 ist ein Vielfaches von 3. Vertausche die Wörter nicht. 12 ist kein Teiler von 3, denn eine ganze Gruppe mit 12 Dingen passt nicht in 3 Dinge.",
+			"Bleibt ein Rest, ist die Zahl kein Teiler. Bei 20 Samen in 6er-Beuteln entstehen 3 volle Beutel und 2 Samen bleiben übrig. Die 6 ist deshalb kein Teiler von 20. Prüfe mit volle Beutel mal Beutelgröße plus Rest.",
+			"Jede positive ganze Zahl hat die Teiler 1 und die Zahl selbst. Die 0 ist kein Teiler einer positiven Zahl; Teilen durch 0 geht nicht. In der Auswahlwerkstatt untersuchst du nur die angebotenen Zahlen von 1 bis 10. Prüfe jede einzeln, auch wenn schon mehrere passen.",
+		],
+		example:
+			"Milo verteilt 12 Muscheln auf 3 gleich gefüllte Schalen: 12 : 3 = 4, ohne Rest. Daher ist 3 ein Teiler von 12 und 12 ein Vielfaches von 3. Bei 20 Muscheln und 6 Muscheln je Schale passen 3 volle Schalen, aber 2 bleiben übrig: 3 · 6 + 2 = 20. Die 6 ist kein Teiler von 20.",
+		takeaway:
+			"Teiler: Die Division geht ohne Rest auf. Vielfaches: Die Zahl entsteht durch Malnehmen. Prüfe die Richtung und bei einer Division immer auch den Rest.",
+		transfer:
+			"Du prüfst größere Vorräte, ergänzt Vielfachenreihen mit Lücken im Inneren und findest alle passenden Beutelgrößen von 1 bis 10. Nutze Malaufgaben oder die schriftliche Division als Probe.",
+		quiz: {
+			goal: 1,
+			prompt: "Welche Aussage über 7 und 56 passt?",
+			choices: [
+				{
+					label: "7 ist ein Teiler von 56; 56 ist ein Vielfaches von 7.",
+					correct: true,
+				},
+				{
+					label: "56 ist ein Teiler von 7; 7 ist ein Vielfaches von 56.",
+					correct: false,
+				},
+				{
+					label: "7 ist kein Teiler von 56, weil 56 größer als 7 ist.",
+					correct: false,
+				},
+			],
+			explanation:
+				"7 · 8 = 56 und 56 : 7 = 8 ohne Rest. Deshalb ist 7 ein Teiler und 56 ein Vielfaches von 7.",
+		},
+		parentPrompt:
+			"Du hast 30 kleine Gegenstände. Welche Gruppengrößen von 1 bis 10 gehen ohne Rest auf? Zeige zwei passende Größen mit Gegenständen oder einer Zeichnung.",
 	},
 ];
 export const COURSE_LINKS = [

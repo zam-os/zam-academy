@@ -1,18 +1,18 @@
 # ZAM Discovery Island: Grade 4 Number Forest
 
-German learner and parent UI for Bavarian Grade 4. Thirteen selectable lessons
+German learner and parent UI for Bavarian Grade 4. Fifteen selectable lessons
 in the Number Forest cover place values/bundling, comparing/ordering,
 number lines/equal jumps, decomposition/complements, addition/subtraction
-strategies, multiplication/inverse division the four written procedures, arithmetic patterns and multi-step story problems.
+strategies, multiplication/inverse division the four written procedures, arithmetic patterns, multi-step story problems, systematic combinations and divisors/multiples.
 Each has two resumable missions, three successful tasks per practice level,
 fresh exit checks, optional practice and a welcoming Milo. A lesson is a
 draft activity, not a completed annual course or proof of mastery.
 
-The twelve lessons added after the original workshop have three interactive
+The fourteen lessons added after the original workshop have three interactive
 goals each. Their models include a number gate, a keyboard-friendly
 number-line marker, coupled treasure bars, calculation jumps, equal baskets,
 result/carry boards, a value-preserving regrouping board, partial-product
-boards, a step-by-step division workshop and tables with editable reasoning and intermediate results. Numbers and results stay
+boards, a step-by-step division workshop and tables with editable reasoning and intermediate results, a child-built combination list and divisor selection. Numbers and results stay
 between zero and one million. Written multiplication uses one/two-digit
 factors; written division uses divisors through 10, including remainders.
 
@@ -48,7 +48,7 @@ The app reuses the approved Academy TypeScript/Vite/Vitest/single-file
 toolchain; it adds no runtime dependencies. `validate:cell` defaults to
 the adjacent `zam/dist/index.js`; set `ZAM_CORE` to a file URL of another
 approved build to check compatibility. It uses only a disposable database:
-installation creates no cards, explicit enrolment creates fifty-four, retries
+installation creates no cards, explicit enrolment creates sixty-two, retries
 create none, and reinstall preserves a real recall-rating log.
 
 At the Academy root, run
@@ -93,8 +93,8 @@ the final approved recording respectively; no browser-policy bypass was used.
 - Lesson id: `stellenwerte-buendeln`; cell:
   `zam-academy:mathematik-grundschule-4`. Public links are future source
   addresses and do not indicate that this draft is already hosted.
-- `cell.json` is the sole recall-card source: sixteen atoms, fifty-four German
-  items (thirty-two binary fast checks and twenty-two synthesis tasks) with fixed ULIDs.
+- `cell.json` is the sole recall-card source: eighteen atoms, sixty-two German
+  items (thirty-six binary fast checks and twenty-six synthesis tasks) with fixed ULIDs.
   Edit cards only in this file; there is no
   second authored card list or card generator. Installation uses the approved
   core's card-text validation and write path. Prerequisites form an acyclic

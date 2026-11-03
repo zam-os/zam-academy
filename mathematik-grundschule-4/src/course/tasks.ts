@@ -3,6 +3,14 @@ import { random } from "../practice/tasks";
 import { arithmeticLab, arithmeticTask, isArithmetic } from "./arithmetic";
 import type { ExtraLessonId } from "./catalog";
 import {
+	type CombinationModel,
+	combinationExit,
+	combinationLab,
+	combinationMistake,
+	combinationTask,
+} from "./combinations";
+import { divisorLab, divisorTask } from "./divisors";
+import {
 	type Investigation,
 	investigationExit,
 	investigationMistake,
@@ -46,7 +54,9 @@ export type ForestTask = {
 		| "columns"
 		| "subtraction"
 		| "algorithm"
-		| "investigation";
+		| "investigation"
+		| "combinations"
+		| "divisors";
 	goal: 1 | 2 | 3;
 	prompt: string;
 	answer: Answer;
@@ -63,6 +73,8 @@ export type ForestTask = {
 	subtraction?: { a: number; b: number; shown?: number };
 	algorithm?: Algorithm;
 	investigation?: Investigation;
+	combination?: CombinationModel;
+	divisorTotal?: number;
 	inverseProbe?: boolean;
 };
 const equal = (a: number[], b: number[]) =>
@@ -76,7 +88,9 @@ export function correctForest(
 ): boolean {
 	if (Array.isArray(task.answer)) {
 		if (!Array.isArray(answer)) return false;
-		return task.kind === "parts"
+		return task.kind === "parts" ||
+			task.kind === "divisors" ||
+			task.kind === "combinations"
 			? equal(
 					[...task.answer].sort((a, b) => a - b),
 					[...answer].sort((a, b) => a - b),
@@ -159,6 +173,9 @@ export function forestTask(
 	seed: number,
 	index: number,
 ): ForestTask {
+	if (id === "systematisch-kombinieren")
+		return combinationTask(level, seed, index);
+	if (id === "teiler-vielfache") return divisorTask(level, seed, index);
 	if (id === "muster-zahlbeziehungen") return patternTask(level, seed, index);
 	if (id === "sachaufgaben-mehrschrittig") return storyTask(level, seed, index);
 	if (isWrittenAlgorithm(id)) return algorithmTask(id, level, seed, index);
@@ -301,6 +318,8 @@ export function forestTask(
 	};
 }
 export function forestLab(id: ExtraLessonId, goal: number): ForestTask {
+	if (id === "systematisch-kombinieren") return combinationLab(goal);
+	if (id === "teiler-vielfache") return divisorLab(goal);
 	if (id === "muster-zahlbeziehungen") return patternLab(goal);
 	if (id === "sachaufgaben-mehrschrittig") return storyLab(goal);
 	if (isWrittenAlgorithm(id)) return algorithmLab(id, goal);
@@ -341,6 +360,9 @@ export function forestLab(id: ExtraLessonId, goal: number): ForestTask {
 	};
 }
 export function forestMistake(task: ForestTask, answer: Answer | null): string {
+	if (task.combination) return combinationMistake(task.combination, answer);
+	if (task.divisorTotal)
+		return "Prüfe jede angebotene Zahl. Nur eine Division mit Rest 0 passt. Vergiss die 1 nicht; sie teilt jede positive ganze Zahl ohne Rest.";
 	if (task.investigation)
 		return investigationMistake(task.investigation, answer);
 	if (task.algorithm)
@@ -398,6 +420,7 @@ export function forestExit(
 	seed: number,
 	index: number,
 ): ForestTask {
+	if (id === "systematisch-kombinieren") return combinationExit(seed, index);
 	if (isInvestigation(id)) return investigationExit(id, seed, index);
 	if (isWrittenAlgorithm(id)) return algorithmExit(id, seed, index);
 	if (id === "schriftlich-subtrahieren") return subtractionExit(seed, index);

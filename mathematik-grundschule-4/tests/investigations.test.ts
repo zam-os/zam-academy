@@ -149,9 +149,7 @@ describe("Pattern and story investigations", () => {
 	it("changes structure between guided and transfer work and covers each goal on exit", () => {
 		for (const id of INVESTIGATION_IDS) {
 			for (let i = 0; i < 3; i++)
-				expect(forestTask(id, 1, 42, i).investigation).not.toEqual(
-					forestTask(id, 2, 42, i).investigation,
-				);
+				expect(forestTask(id, 1, 42, i)).not.toEqual(forestTask(id, 2, 42, i));
 			expect([0, 1, 2].map((i) => forestExit(id, 72, i).goal)).toEqual([
 				1, 2, 3,
 			]);

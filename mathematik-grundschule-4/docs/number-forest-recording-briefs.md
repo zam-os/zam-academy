@@ -373,3 +373,58 @@ minimum-capacity argument (including the zero-remainder case), alternate
 valid approaches and the reverse/forward connection. Open problem posing,
 collecting missing information, free representations and systematic
 combinations remain outside this increment.
+
+
+## Milos Möglichkeitenbaum — systematic combinations
+
+**Learning focus:** construct all two-/three-choice arrangements in an
+ordered list, suppress duplicates and apply an explicit restriction. Target:
+3–4 minutes. Use the app's choice rows and child-built list. A paper table
+or tree is an additional representation, not a verified digital skill.
+Teaching labels differ from all workshop, generator and exit contexts.
+
+**German teaching script:**
+
+- „Du wählst genau ein T-Shirt und eine Hose. Halte zuerst das gestreifte
+  T-Shirt fest. Dazu probierst du die kurze, lange, karierte und einfarbige
+  Hose. Danach kommt das gepunktete T-Shirt mit jeder der vier Hosen.“
+- „Vier Möglichkeiten für das eine T-Shirt und vier für das andere:
+  2 mal 4 sind 8. Dieselben Kleidungsstücke anders herum aufzuschreiben
+  ergibt keine neue Zusammenstellung. Markiere jeden Fall genau einmal.“
+- „Kommt eine dritte Reihe dazu, hältst du die ersten beiden Auswahlen
+  fest und wechselst zuerst nur die dritte. Dann gehst du geordnet zur
+  nächsten Auswahl. Zeichne dazu Verzweigungen auf ein Blatt.“
+- „Mit einer Einschränkung passt nicht mehr alles zusammen. Darf das
+  gestreifte T-Shirt nur zur kurzen Hose, hat es eine Möglichkeit.
+  Für das gepunktete bleiben vier: zusammen fünf. Prüfe jeden Eintrag
+  und entferne unpassende Fälle aus deiner Liste.“
+
+**Teacher review:** verify age-appropriate load, completeness arguments,
+exactly-one-per-row assumptions and the distinction between arrangements
+and mere writing order. No permutations, factorials or probability rules.
+
+## Milos Bündelwege — divisors and multiples
+
+**Learning focus:** use exact division/remainder checks, extend multiples
+and test all offered candidates 1–10. Target: 3 minutes. No prime factors,
+formal divisibility tests, gcd/lcm or division by numbers above 10.
+
+**German teaching script:**
+
+- „12 Muscheln in 3 gleich gefüllten Schalen ergeben 4 je Schale, ohne
+  Rest. 3 ist ein Teiler von 12 und 12 ein Vielfaches von 3. Die passende
+  Malaufgabe lautet 3 mal 4 gleich 12. Prüfe die Richtung der Wörter.“
+- „20 Muscheln in 6er-Gruppen ergeben 3 volle Gruppen und Rest 2.
+  Deshalb ist 6 kein Teiler von 20. Probe: 3 mal 6 plus 2 gleich 20.“
+- „Vielfache entstehen durch Malnehmen. Bei 5er-Paketen gehören zum
+  sechsten bis zehnten Paket 30, 35, 40, 45 und 50. Immer kommt 5 dazu.
+  Auch 0 ist ein Vielfaches, aber unsere Pakettabelle beginnt mit
+  mindestens einem Paket.“
+- „Prüfe jede angebotene Zahl einzeln. 1 teilt jede positive ganze Zahl.
+  Die Zahl selbst ist auch ein Teiler. In der Auswahlwerkstatt suchen wir
+  nur unter den angebotenen Zahlen von 1 bis 10. Eine passende Division
+  muss Rest 0 haben.“
+
+**Teacher review:** confirm directionality, positive-number/zero language,
+quotient/remainder reasoning and the bounded candidate search. Physical
+regrouping with counters is suggested home work and remains unobserved.

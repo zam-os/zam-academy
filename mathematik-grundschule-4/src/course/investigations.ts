@@ -1,10 +1,12 @@
 import { format, parseInteger } from "../math/place-value";
 import { random } from "../practice/tasks";
+import { divisorExit } from "./divisors";
 import type { Answer, ForestTask } from "./tasks";
 
 export const INVESTIGATION_IDS = [
 	"muster-zahlbeziehungen",
 	"sachaufgaben-mehrschrittig",
+	"teiler-vielfache",
 ] as const;
 export type InvestigationId = (typeof INVESTIGATION_IDS)[number];
 export const isInvestigation = (id: string): id is InvestigationId =>
@@ -478,6 +480,7 @@ export function investigationExit(
 	seed: number,
 	index: number,
 ): ForestTask {
+	if (id === "teiler-vielfache") return divisorExit(seed, index);
 	return id === "muster-zahlbeziehungen"
 		? patternTask(2, seed ^ 0x6a09e667, index)
 		: storyTask(2, seed ^ 0xbb67ae85, index);

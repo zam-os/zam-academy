@@ -42,7 +42,7 @@ const complete = (p: ReturnType<typeof freshForest>) => {
 };
 describe("Number Forest lessons", () => {
 	it("has complete explanations and stable direct links for each lesson", () => {
-		expect(FOREST_LESSONS).toHaveLength(12);
+		expect(FOREST_LESSONS).toHaveLength(14);
 		for (const lesson of FOREST_LESSONS) {
 			expect(lesson.goals).toHaveLength(3);
 			expect(lesson.paragraphs.length).toBeGreaterThanOrEqual(4);
@@ -86,7 +86,13 @@ describe("Number Forest lessons", () => {
 				for (let i = 0; i < 160; i++) {
 					const task = forestTask(id, level, i * 7919, i % 12);
 					variants.add(
-						JSON.stringify([task.prompt, task.numbers, task.line, task.answer]),
+						JSON.stringify([
+							task.prompt,
+							task.numbers,
+							task.line,
+							task.answer,
+							task.combination,
+						]),
 					);
 					expect(correctForest(task, task.answer)).toBe(true);
 					if (task.kind === "order")
