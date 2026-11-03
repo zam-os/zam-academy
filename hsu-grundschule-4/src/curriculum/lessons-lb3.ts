@@ -77,11 +77,11 @@ export const LESSONS_LB3: ReadonlyArray<Lesson> = [
 			question:
 				"Warum können die großen Blätter der Seerose flach auf der Teichoberfläche schwimmen, obwohl ihre Wurzeln tief im Schlamm stecken?",
 			options: [
-				"Weil Blätter und lange Stängel luftgefüllte Hohlräume (Luftkammern) besitzen, die Auftrieb geben.",
 				"Weil Fische die Blätter von unten mit den Flossen festhalten.",
 				"Weil Seerosenblätter aus festem Holz bestehen.",
+				"Weil Blätter und lange Stängel luftgefüllte Hohlräume (Luftkammern) besitzen, die Auftrieb geben.",
 			],
-			correctIndex: 0,
+			correctIndex: 2,
 			explanation:
 				"Luftgefüllte Kanäle versorgen die Wurzeln im Schlamm mit Luft und halten die Schwimmblätter oben am Sonnenlicht – perfekte Angepasstheit!",
 		},
@@ -438,11 +438,11 @@ export const LESSONS_LB3: ReadonlyArray<Lesson> = [
 			question:
 				"Wofür steht der Beginn ‚0-DE-09‘ auf einem gestempelten Hühnerei?",
 			options: [
-				"Ökologische Erzeugung (Bio) aus Deutschland, Bundesland Bayern.",
 				"Käfighaltung mit null Auslauf aus Norddeutschland.",
+				"Ökologische Erzeugung (Bio) aus Deutschland, Bundesland Bayern.",
 				"Freilandhaltung mit 9 Hühnern aus Dänemark.",
 			],
-			correctIndex: 0,
+			correctIndex: 1,
 			explanation:
 				"0 = Bio-Haltung, DE = Deutschland und 09 ist die amtliche Kennzahl für das Bundesland Bayern!",
 		},
@@ -618,11 +618,11 @@ export const LESSONS_LB3: ReadonlyArray<Lesson> = [
 			question:
 				"Welcher dieser Gegenstände bringt das Lämpchen im geschlossenen Prüfstromkreis zum Leuchten?",
 			options: [
-				"Eine Büroklammer aus Metall oder eine Bleistiftmine aus Graphit.",
 				"Ein trockener Holzspatel oder ein Gummiring.",
 				"Eine Murmel aus Glas oder ein Legostein aus Kunststoff.",
+				"Eine Büroklammer aus Metall oder eine Bleistiftmine aus Graphit.",
 			],
-			correctIndex: 0,
+			correctIndex: 2,
 			explanation:
 				"Metalle und Graphit sind elektrische Leiter. Holz, Gummi, Glas und Kunststoff sind Nichtleiter (Isolatoren).",
 		},
@@ -972,11 +972,11 @@ export const LESSONS_LB3: ReadonlyArray<Lesson> = [
 			question:
 				"Welche Bodenschicht staut das versickerte Regenwasser im Untergrund, sodass sich darüber Grundwasser sammelt?",
 			options: [
-				"Eine wasserundurchlässige Schicht aus Ton oder Lehm.",
 				"Eine lockere Schicht aus grobem Flusskies.",
+				"Eine wasserundurchlässige Schicht aus Ton oder Lehm.",
 				"Eine dünne Schicht aus trockenen Laubblättern.",
 			],
-			correctIndex: 0,
+			correctIndex: 1,
 			explanation:
 				"Durch Humus, Sand und Kies sickert das Wasser hindurch und wird gefiltert. Erst eine dichte Ton- oder Lehmschicht ist wasserundurchlässig und staut das Grundwasser!",
 		},

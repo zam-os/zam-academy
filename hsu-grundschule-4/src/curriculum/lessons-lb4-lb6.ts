@@ -77,11 +77,11 @@ export const LESSONS_LB4_LB6: ReadonlyArray<Lesson> = [
 			question:
 				"Am 7. Dezember 1835 fuhr der ‚Adler‘ als erste deutsche Eisenbahn von Nürnberg nach Fürth. In welchem Jahrhundert war das?",
 			options: [
-				"Im 19. Jahrhundert.",
 				"Im 18. Jahrhundert.",
+				"Im 19. Jahrhundert.",
 				"Im 20. Jahrhundert.",
 			],
-			correctIndex: 0,
+			correctIndex: 1,
 			explanation:
 				"Die Jahre 1801 bis 1900 bilden das 19. Jahrhundert, weil das 1. Jahrhundert bereits die Jahre 1 bis 100 umfasst.",
 		},
@@ -283,11 +283,11 @@ export const LESSONS_LB4_LB6: ReadonlyArray<Lesson> = [
 			question:
 				"Welche Neuerung machte das Sicherheitsniederrad ab 1885 viel ungefährlicher als das Hochrad?",
 			options: [
-				"Zwei gleich große, niedrigere Räder mit Kettenantrieb auf das Hinterrad.",
 				"Ein noch größeres Vorderrad aus schwerem Gusseisen.",
 				"Der Verzicht auf Lenker und Pedale wie bei der Draisine.",
+				"Zwei gleich große, niedrigere Räder mit Kettenantrieb auf das Hinterrad.",
 			],
-			correctIndex: 0,
+			correctIndex: 2,
 			explanation:
 				"Durch den Kettenantrieb musste das Vorderrad nicht mehr riesig sein – man saß tief und stürzte beim Bremsen nicht mehr kopfüber.",
 		},
@@ -479,8 +479,8 @@ export const LESSONS_LB4_LB6: ReadonlyArray<Lesson> = [
 		quickCheck: {
 			question:
 				"Auf einer Wanderkarte im Maßstab 1 : 50 000 sind zwei Dörfer 2 cm voneinander entfernt. Wie weit liegen sie in der Wirklichkeit auseinander?",
-			options: ["1 km (1 000 m).", "100 m.", "50 km."],
-			correctIndex: 0,
+			options: ["100 m.", "1 km (1 000 m).", "50 km."],
+			correctIndex: 1,
 			explanation:
 				"1 cm auf der Karte sind 50 000 cm = 500 m in echt. 2 cm entsprechen daher 2 · 500 m = 1 000 m = 1 km.",
 		},
@@ -576,7 +576,9 @@ export const LESSONS_LB4_LB6: ReadonlyArray<Lesson> = [
 					label: "Peilung zur Hütte",
 					value:
 						s.nordung === "genordet" && s.peilung === "suedost"
-							? "Treffer: Südost (SO) · 6 cm = 1,5 km"
+							? s.kartenwahl === "wanderkarte"
+								? "Treffer: Südost (SO) · 6 cm = 1,5 km"
+								: "Südost (SO) stimmt – doch bei 1 : 5 000 000 wären 6 cm 300 km!"
 							: s.peilung === "suedost"
 								? "SO gewählt, aber Karte noch verdreht!"
 								: "Falsche Richtung angepeilt",
@@ -869,11 +871,11 @@ export const LESSONS_LB4_LB6: ReadonlyArray<Lesson> = [
 			question:
 				"An einer Ampel steht vor dir ein großer Lkw, der rechts blinkt. Wo wartest du mit deinem Fahrrad am sichersten?",
 			options: [
-				"Mit gutem Abstand hinter dem Lkw, niemals rechts daneben.",
 				"Direkt rechts neben dem Führerhaus auf Höhe des Vorderrads.",
 				"Schnell noch rechts am Lkw vorbeischlüpfen, bevor es Grün wird.",
+				"Mit gutem Abstand hinter dem Lkw, niemals rechts daneben.",
 			],
-			correctIndex: 0,
+			correctIndex: 2,
 			explanation:
 				"Rechts neben dem Lkw liegt der tote Winkel – selbst mit Spiegeln kann dich die Fahrerin oder der Fahrer dort übersehen.",
 		},
@@ -1261,11 +1263,11 @@ export const LESSONS_LB4_LB6: ReadonlyArray<Lesson> = [
 			question:
 				"Warum haben Fachwerkbrücken und Baukräne fast überall schräge Streben, sodass Dreiecke entstehen?",
 			options: [
-				"Weil sich ein Dreieck im Gegensatz zum Viereck nicht seitlich verschieben lässt und mit wenig Material sehr stabil ist.",
 				"Nur zur Verzierung, damit Vögel besser darauf landen können.",
 				"Damit die Brücke schwerer wird und im Fluss nach unten sinkt.",
+				"Weil sich ein Dreieck im Gegensatz zum Viereck nicht seitlich verschieben lässt und mit wenig Material sehr stabil ist.",
 			],
-			correctIndex: 0,
+			correctIndex: 2,
 			explanation:
 				"Dreiecke sind geometrisch formstabil (Aussteifung) und ermöglichen hohe Tragkraft bei geringem Materialverbrauch.",
 		},

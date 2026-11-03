@@ -17,8 +17,13 @@ describe("HSU 4 curriculum, coverage & ZAM cell contract", () => {
 		expect(darkColors.size).toBe(6);
 	});
 
-	it("defines 20 complete stations in sequential order", () => {
+	it("defines 20 complete stations in sequential order with varied quickCheck correctIndex", () => {
 		expect(LESSONS).toHaveLength(20);
+		const correctCounts = new Map<number, number>([
+			[0, 0],
+			[1, 0],
+			[2, 0],
+		]);
 		LESSONS.forEach((lesson, idx) => {
 			expect(lesson.number).toBe(idx + 1);
 			expect(lesson.storyParagraphs.length).toBeGreaterThanOrEqual(2);
@@ -27,8 +32,17 @@ describe("HSU 4 curriculum, coverage & ZAM cell contract", () => {
 			expect(lesson.merksatz.length).toBeGreaterThan(25);
 			expect(lesson.probenWissen.length).toBeGreaterThanOrEqual(3);
 			expect(new Set(lesson.quickCheck.options).size).toBe(3);
+			expect([0, 1, 2]).toContain(lesson.quickCheck.correctIndex);
+			correctCounts.set(
+				lesson.quickCheck.correctIndex,
+				(correctCounts.get(lesson.quickCheck.correctIndex) ?? 0) + 1,
+			);
 			expect(lesson.lab.goals).toHaveLength(3);
 		});
+		for (const idx of [0, 1, 2]) {
+			expect(correctCounts.get(idx)).toBeGreaterThanOrEqual(5);
+			expect(correctCounts.get(idx)).toBeLessThanOrEqual(8);
+		}
 		expect(LEXIKON_GROUPS).toHaveLength(6);
 	});
 

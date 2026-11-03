@@ -260,11 +260,11 @@ export const LESSONS_LB1_LB2: ReadonlyArray<Lesson> = [
 			question:
 				"Welche der folgenden Aufgaben ist eine Pflichtaufgabe jeder Gemeinde?",
 			options: [
-				"Die Versorgung mit sauberem Trinkwasser und der Brandschutz (Feuerwehr).",
 				"Der Bau eines beheizten Erlebnis-Freibads mit Wasserrutsche.",
+				"Die Versorgung mit sauberem Trinkwasser und der Brandschutz (Feuerwehr).",
 				"Das Ausstellen eines Reisepasses als freiwilliges Geschenk.",
 			],
-			correctIndex: 0,
+			correctIndex: 1,
 			explanation:
 				"Trinkwasser, Abwasser, Feuerwehr und Grundschulgebäude sind lebenswichtige Pflichtaufgaben. Ein Freibad ist eine freiwillige Aufgabe, Pässe gehören zu den übertragenen Aufgaben.",
 		},
@@ -445,11 +445,11 @@ export const LESSONS_LB1_LB2: ReadonlyArray<Lesson> = [
 			question:
 				"Warum liegen große Gänge mit Obst und Gemüse sowie duftende Backwaren im Supermarkt fast immer direkt am Eingang?",
 			options: [
-				"Frische Farben und guter Duft sorgen sofort für Kauflaune und den Eindruck von Frische.",
 				"Weil Obst und Backwaren schwerer sind als Getränkekisten.",
 				"Damit Kundinnen und Kunden möglichst schnell wieder ohne Einkauf hinausgehen.",
+				"Frische Farben und guter Duft sorgen sofort für Kauflaune und den Eindruck von Frische.",
 			],
-			correctIndex: 0,
+			correctIndex: 2,
 			explanation:
 				"Frische Farben, Licht und Backduft sprechen unsere Sinne an, verlangsamen das Tempo und regen zum Einkaufen an.",
 		},
@@ -616,11 +616,11 @@ export const LESSONS_LB1_LB2: ReadonlyArray<Lesson> = [
 			question:
 				"Welche Aufgabe haben die Augenbrauen beim Schutz unseres Auges?",
 			options: [
-				"Sie leiten Schweißperlen und Regentropfen von der Stirn seitlich am Auge vorbei.",
 				"Sie bündeln die Lichtstrahlen auf die Netzhaut.",
+				"Sie leiten Schweißperlen und Regentropfen von der Stirn seitlich am Auge vorbei.",
 				"Sie leiten die Signale vom Auge zum Gehirn.",
 			],
-			correctIndex: 0,
+			correctIndex: 1,
 			explanation:
 				"Augenbrauen wirken wie eine kleine Regenrinne über dem Auge, damit salziger Schweiß nicht ins Auge brennt.",
 		},
@@ -787,11 +787,11 @@ export const LESSONS_LB1_LB2: ReadonlyArray<Lesson> = [
 			question:
 				"Wie erhält ein ungeborenes Baby im Bauch der Mutter Sauerstoff und Nährstoffe?",
 			options: [
-				"Über den Mutterkuchen (die Plazenta) und die Nabelschnur.",
 				"Indem es Luftblasen aus dem Fruchtwasser mit der Lunge einatmet.",
 				"Über feste Nahrung, die es im 3. Monat mit den Zähnen kaut.",
+				"Über den Mutterkuchen (die Plazenta) und die Nabelschnur.",
 			],
-			correctIndex: 0,
+			correctIndex: 2,
 			explanation:
 				"Vor der Geburt sind die Lungen noch nicht in Betrieb – Plazenta und Nabelschnur liefern Sauerstoff und Nährstoffe direkt ins Blut des Kindes.",
 		},
@@ -1180,11 +1180,11 @@ export const LESSONS_LB1_LB2: ReadonlyArray<Lesson> = [
 			question:
 				"Was unterscheidet ein schlechtes Geheimnis von einem guten Geheimnis?",
 			options: [
-				"Ein schlechtes Geheimnis löst Angst, Druck oder ein ungutes Gefühl aus – man darf und soll sich sofort Hilfe bei einer Vertrauensperson holen.",
 				"Ein schlechtes Geheimnis ist eine fröhliche Überraschungsparty zum Geburtstag.",
+				"Ein schlechtes Geheimnis löst Angst, Druck oder ein ungutes Gefühl aus – man darf und soll sich sofort Hilfe bei einer Vertrauensperson holen.",
 				"Ein schlechtes Geheimnis muss man für immer ganz allein behalten.",
 			],
-			correctIndex: 0,
+			correctIndex: 1,
 			explanation:
 				"Wenn jemand Druck ausübt oder dir etwas Angst macht, brichst du kein Versprechen, wenn du dir Hilfe bei Erwachsenen holst – das ist dein gutes Recht!",
 		},

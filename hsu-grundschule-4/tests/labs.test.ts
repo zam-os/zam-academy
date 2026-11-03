@@ -54,4 +54,33 @@ describe("Interactive Mitmach-Labore across all 20 stations", () => {
 			}
 		});
 	}
+
+	it("Station 16 (orientierung-und-kartenlesen): only reports 6 cm = 1,5 km when the 1 : 25 000 hiking map is active", () => {
+		const station16 = LESSONS.find(
+			(l) => l.id === "orientierung-und-kartenlesen",
+		);
+		expect(station16).toBeDefined();
+		if (!station16) return;
+
+		const onEuropeMap = evaluateLab(station16, {
+			nordung: "genordet",
+			peilung: "suedost",
+			kartenwahl: "weltkarte",
+		});
+		const peilungEurope = onEuropeMap.readouts.find(
+			(r) => r.label === "Peilung zur Hütte",
+		);
+		expect(peilungEurope?.value).not.toContain("6 cm = 1,5 km");
+		expect(peilungEurope?.value).toContain("300 km");
+
+		const onHikingMap = evaluateLab(station16, {
+			nordung: "genordet",
+			peilung: "suedost",
+			kartenwahl: "wanderkarte",
+		});
+		const peilungHiking = onHikingMap.readouts.find(
+			(r) => r.label === "Peilung zur Hütte",
+		);
+		expect(peilungHiking?.value).toContain("6 cm = 1,5 km");
+	});
 });

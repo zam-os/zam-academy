@@ -6,6 +6,10 @@ import {
 	REFERENCE_TABLES,
 } from "../src/curriculum";
 import {
+	buildQuickCheckOptions,
+	checkQuickCheckAnswer,
+} from "../src/exercises/checker";
+import {
 	ACADEMY_HOME_URL,
 	lessonSourceUrl,
 	parseLessonHash,
@@ -186,5 +190,39 @@ describe("Local progress storage, ZAM deep-links, Lotta SVG & Lexikon", () => {
 		expect(REFERENCE_TABLES.map((t) => t.title).join(" ")).toContain(
 			"Notruf 112",
 		);
+	});
+
+	it("keeps Schlaufuchs-Check grading attached to explicit optionId markers when options shuffle", () => {
+		for (const lesson of LESSONS) {
+			const correctDisplayPositions = new Set<number>();
+			for (let seed = 1; seed <= 30; seed++) {
+				const presented = buildQuickCheckOptions(
+					lesson.quickCheck,
+					seed * 2654435761,
+				);
+				expect(presented).toHaveLength(3);
+				expect(new Set(presented.map((o) => o.optionId))).toEqual(
+					new Set([0, 1, 2]),
+				);
+
+				presented.forEach((opt, displayIdx) => {
+					const graded = checkQuickCheckAnswer(
+						lesson.quickCheck,
+						opt.optionId,
+					);
+					expect(graded.correct).toBe(opt.isCorrect);
+					if (opt.isCorrect) {
+						correctDisplayPositions.add(displayIdx);
+						expect(opt.text).toBe(
+							lesson.quickCheck.options[lesson.quickCheck.correctIndex],
+						);
+						expect(graded.feedback).toContain(lesson.quickCheck.explanation);
+					} else {
+						expect(graded.feedback).toContain("Fast!");
+					}
+				});
+			}
+			expect(correctDisplayPositions.size).toBe(3);
+		}
 	});
 });

@@ -10,15 +10,69 @@ import { generateExerciseTask } from "../src/exercises/generators";
 import { fmt } from "../src/model/format";
 
 describe("Two-level HSU exercise generators & German number checker", () => {
-	it("parses German decimal commas, decimal points, spaces, U+2212 minus, and trailing units", () => {
+	it("parses German decimal commas, thousands dots, decimal points, spaces, U+2212 minus, and trailing units", () => {
 		expect(parseGermanNumber("1,5")).toBe(1.5);
 		expect(parseGermanNumber("1.5")).toBe(1.5);
+		expect(parseGermanNumber("0.125")).toBe(0.125);
 		expect(parseGermanNumber("1,5 km")).toBe(1.5);
 		expect(parseGermanNumber("1 000 m")).toBe(1000);
+		expect(parseGermanNumber("1.000")).toBe(1000);
+		expect(parseGermanNumber("1.500")).toBe(1500);
+		expect(parseGermanNumber("1.500 m")).toBe(1500);
+		expect(parseGermanNumber("4.000 m")).toBe(4000);
+		expect(parseGermanNumber("25.000")).toBe(25000);
+		expect(parseGermanNumber("1.000.000")).toBe(1000000);
+		expect(parseGermanNumber("1.250,5 km")).toBe(1250.5);
+		expect(parseGermanNumber("1.25,5")).toBeNull();
 		expect(parseGermanNumber("19.")).toBe(19);
+		expect(parseGermanNumber("19. Jh.")).toBe(19);
 		expect(parseGermanNumber("−2,5")).toBe(-2.5);
 		expect(parseGermanNumber("")).toBeNull();
 		expect(parseGermanNumber("abc")).toBeNull();
+	});
+
+	it("rejects un-converted meter answers written with German thousands dots on Station 16 scale tasks", () => {
+		const seenScales = new Set<string>();
+		for (let seed = 1; seed <= 80; seed++) {
+			const task = generateExerciseTask("orientierung-und-kartenlesen", 2, seed);
+			expect(isNumberTask(task)).toBe(true);
+			if (!isNumberTask(task)) continue;
+
+			if (task.prompt.includes("1 : 25 000") && task.prompt.includes("6 cm")) {
+				seenScales.add("25k");
+				for (const raw of ["1.500", "1.500 m", "1 500 m"]) {
+					const res = checkNumberTask(task, raw);
+					expect(res.validInput).toBe(true);
+					expect(res.correct).toBe(false);
+					expect(res.parsedValue).toBe(1500);
+					expect(res.feedback).toContain("teile noch durch 1 000 für Kilometer");
+				}
+			}
+			if (task.prompt.includes("1 : 100 000") && task.prompt.includes("4 cm")) {
+				seenScales.add("100k");
+				for (const raw of ["4.000", "4.000 m", "4 000 m"]) {
+					const res = checkNumberTask(task, raw);
+					expect(res.validInput).toBe(true);
+					expect(res.correct).toBe(false);
+					expect(res.parsedValue).toBe(4000);
+					expect(res.feedback).toContain("teile noch durch 1 000 für Kilometer");
+				}
+			}
+		}
+		expect(seenScales).toEqual(new Set(["25k", "100k"]));
+	});
+
+	it("aligns Station 8 Level 1 forest layers with all five taught layers including Wurzelschicht", () => {
+		let foundForestTask = false;
+		for (let seed = 1; seed <= 40; seed++) {
+			const task = generateExerciseTask("lebensraeume-wald-gewaesser", 1, seed);
+			if (task.kind === "choice" && task.prompt.includes("Stockwerke des Waldes")) {
+				foundForestTask = true;
+				expect(task.prompt).toContain("fünf Stockwerke");
+				expect(task.options[task.correctIndex]).toContain("Wurzelschicht");
+			}
+		}
+		expect(foundForestTask).toBe(true);
 	});
 
 	for (const lesson of LESSONS) {

@@ -18,11 +18,12 @@ repetition and AI-varied recall practice:
 2. **Schlaufuchs-Check**: three-option comprehension check with immediate
    feedback.
 3. **Mitmach-Labor**: bespoke interactive SVG experiment or exploration model
-   per station (eye pupil & retina projection, sound waves, bicycle check &
-   dead-angle mirror, circuit & conductor tester, fire triangle, water cycle,
-   topographic contour & scale workshop, Bavarian Regierungsbezirke compass,
-   lever & arch bridge lab, etc.) with three reachable discovery goals (none
-   pre-satisfied at initial slider settings).
+   per station (communal budget & election booth, supermarket shelf zones, eye
+   pupil & retina projection, bicycle check & dead-angle mirror, circuit &
+   conductor tester, fire triangle, water cycle, topographic contour & scale
+   workshop, Bavarian Regierungsbezirke compass, lever & arch bridge lab, etc.)
+   with three reachable discovery goals (none pre-satisfied at initial slider
+   settings).
 4. **Proben-Training (1× Stufe 1 + 1× Stufe 2)**:
    - *Stufe 1 – Spürnase*: guided recall/application task with targeted mistake
      hints.
@@ -38,13 +39,14 @@ Supporting views:
 - **Mein Forscherbuch (`#view=stempel`)**: collectible grid of all twenty
   station stamps.
 - **Forscher-Lexikon (`#view=lexikon`)**: searchable glossary of all station
-  terms plus six compact reference tables (*Notruf 112 – 5 W-Fragen*,
-  *Eierstempel-Code*, *Verbrennungsdreieck & Löschregeln*, *Maßstabs-Spickzettel*,
-  *Bayerns 7 Regierungsbezirke*, *4 Takte des Forschens*).
+  terms plus six compact reference tables (*Notruf 112 – Die 5 W-Fragen*,
+  *Der Eierstempel-Code*, *Verbrennungsdreieck & Löschregeln*,
+  *Bayerns 7 Regierungsbezirke & Sitze*, *Die 8 Punkte beim Linksabbiegen*,
+  *Maßstab schnell umrechnen*).
 - **Eltern-Kompass (`#view=eltern`)**: transparent overview for parents on how
   Grade 4 *HSU-Proben* combine factual knowledge with transfer tasks, how
   Academy and ZAM fit together, calm-mode (*Ruhe-Modus*) and 3-state appearance
-  controls (`Automatisch` / `Hell` / `Dunkel`), dated local attempt log, and a
+  controls (`System-Einstellung` / `Hell` / `Dunkel`), dated local attempt log, and a
   confirmed local reset (`<dialog closedby="any">`).
 
 ## Status

@@ -691,20 +691,20 @@ export function generateLb1ToLb3Task(
 					{
 						contextTag: "Spürnase · Stockwerke des Waldes",
 						prompt:
-							"Wie heißen die vier Stockwerke des Waldes von unten nach oben in der richtigen Reihenfolge?",
+							"Welche Reihenfolge ordnet alle fünf Stockwerke des Waldes (ab unter der Erde) richtig von unten nach oben?",
 						correct:
-							"Moosschicht (am Waldboden) → Krautschicht → Strauchschicht → Baumschicht.",
+							"Wurzelschicht → Moosschicht → Krautschicht → Strauchschicht → Baumschicht.",
 						wrongs: [
-							"Baumschicht → Moosschicht → Wolkenschicht → Krautschicht.",
-							"Kellerschicht → Grasschicht → Dachschicht.",
+							"Baumschicht → Moosschicht → Wurzelschicht → Wolkenschicht → Krautschicht.",
+							"Kellerschicht → Erdschicht → Grasschicht → Heckenstock → Dachschicht.",
 						],
 						wrongReasons: [
-							"Die Baumschicht bildet das oberste Kronendach; unten auf dem Boden wächst die Moosschicht.",
-							"Die Fachbegriffe im HSU lauten Moos-, Kraut-, Strauch- und Baumschicht (darunter die Wurzelschicht im Boden).",
+							"Die Wurzelschicht liegt ganz unten im Boden, die Baumschicht bildet ganz oben das Kronendach.",
+							"Die fünf Fachbegriffe im HSU heißen Wurzel-, Moos-, Kraut-, Strauch- und Baumschicht.",
 						],
-						hint: "Starte ganz unten auf dem feuchten Waldboden und klettere bis in die Baumkronen!",
+						hint: "Starte unter der Erde bei den Wurzeln, gehe über den feuchten Waldboden und klettere bis in die Baumkronen!",
 						explanation:
-							"Jedes Stockwerk hat eigene Licht-, Wind- und Feuchtigkeitsbedingungen für angepasste Pflanzen und Tiere.",
+							"Von der Wurzelschicht im Boden bis zur sonnigen Baumschicht bietet jedes der fünf Stockwerke eigene Lebensbedingungen.",
 					},
 					{
 						contextTag: "Spürnase · Angepasstheit im Gewässer",

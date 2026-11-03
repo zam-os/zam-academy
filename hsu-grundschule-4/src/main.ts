@@ -9,9 +9,12 @@ import {
 	STAGES,
 } from "./curriculum";
 import {
+	buildQuickCheckOptions,
 	checkChoiceTask,
 	checkNumberTask,
+	checkQuickCheckAnswer,
 	isNumberTask,
+	type PresentedQuickCheckOption,
 } from "./exercises/checker";
 import { generateExerciseTask } from "./exercises/generators";
 import {
@@ -106,6 +109,12 @@ export function mountApp(root: HTMLElement): { destroy: () => void } {
 
 	const labStates = new Map<string, LabState>();
 	const quizSelection = new Map<string, number>();
+	const quizOptionsByLesson = new Map<
+		string,
+		ReadonlyArray<PresentedQuickCheckOption>
+	>();
+	let quizSessionSalt =
+		Math.floor(Math.random() * 0x7fffffff) || 1;
 	const activeLevelByLesson = new Map<string, 1 | 2>();
 	const taskSeedByKey = new Map<string, number>();
 	const currentTaskByKey = new Map<string, ExerciseTask>();
@@ -189,6 +198,28 @@ export function mountApp(root: HTMLElement): { destroy: () => void } {
 		const init = defaultLabState(lesson);
 		labStates.set(lesson.id, init);
 		return init;
+	}
+
+	function hashLessonSeed(id: string, salt: number): number {
+		let h = (2166136261 ^ salt) >>> 0;
+		for (let i = 0; i < id.length; i++) {
+			h ^= id.charCodeAt(i);
+			h = Math.imul(h, 16777619) >>> 0;
+		}
+		return h || 1;
+	}
+
+	function getQuickCheckOptions(
+		lesson: Lesson,
+	): ReadonlyArray<PresentedQuickCheckOption> {
+		const existing = quizOptionsByLesson.get(lesson.id);
+		if (existing) return existing;
+		const built = buildQuickCheckOptions(
+			lesson.quickCheck,
+			hashLessonSeed(lesson.id, quizSessionSalt),
+		);
+		quizOptionsByLesson.set(lesson.id, built);
+		return built;
 	}
 
 	function getTask(lessonId: string, level: 1 | 2): ExerciseTask {
@@ -334,6 +365,11 @@ export function mountApp(root: HTMLElement): { destroy: () => void } {
 		const labState = getLabState(lesson);
 		const labEval = evaluateLab(lesson, labState);
 		const selectedQuiz = quizSelection.get(lesson.id);
+		const presentedQuizOptions = getQuickCheckOptions(lesson);
+		const quizCheck =
+			selectedQuiz !== undefined
+				? checkQuickCheckAnswer(lesson.quickCheck, selectedQuiz)
+				: null;
 		const activeLevel = activeLevelByLesson.get(lesson.id) ?? 1;
 		const task = getTask(lesson.id, activeLevel);
 		const taskKey = `${lesson.id}:${activeLevel}`;
@@ -403,10 +439,10 @@ export function mountApp(root: HTMLElement): { destroy: () => void } {
 					<h2>2. Schlaufuchs-Check ${lp.quizSolved ? "✅" : ""}</h2>
 					<p><strong>${escapeHtml(lesson.quickCheck.question)}</strong></p>
 					<div class="choice-stack">
-						${lesson.quickCheck.options
-							.map((opt, idx) => {
-								const isPicked = selectedQuiz === idx;
-								const isRight = idx === lesson.quickCheck.correctIndex;
+						${presentedQuizOptions
+							.map((opt) => {
+								const isPicked = selectedQuiz === opt.optionId;
+								const isRight = opt.isCorrect;
 								const cls =
 									isPicked && isRight
 										? "is-correct"
@@ -421,21 +457,21 @@ export function mountApp(root: HTMLElement): { destroy: () => void } {
 										class="choice-btn ${cls}"
 										data-action="quiz-pick"
 										data-lesson-id="${lesson.id}"
-										data-index="${idx}"
+										data-option-id="${opt.optionId}"
 									>
-										${escapeHtml(opt)}
+										${escapeHtml(opt.text)}
 									</button>
 								`;
 							})
 							.join("")}
 					</div>
 					${
-						selectedQuiz !== undefined || lp.quizSolved
-							? `<div class="feedback-box ${selectedQuiz === lesson.quickCheck.correctIndex || lp.quizSolved ? "ok" : "warn"}">
+						quizCheck !== null || lp.quizSolved
+							? `<div class="feedback-box ${(quizCheck?.correct ?? false) || lp.quizSolved ? "ok" : "warn"}">
 								${
-									selectedQuiz === lesson.quickCheck.correctIndex || lp.quizSolved
+									(quizCheck?.correct ?? false) || lp.quizSolved
 										? `Super! ${escapeHtml(lesson.quickCheck.explanation)}`
-										: "Fast! Überlege noch einmal mit Blick auf den Merksatz und probiere eine andere Antwort."
+										: escapeHtml(quizCheck?.feedback ?? "")
 								}
 							</div>`
 							: ""
@@ -867,6 +903,8 @@ export function mountApp(root: HTMLElement): { destroy: () => void } {
 				progress = freshProgress();
 				labStates.clear();
 				quizSelection.clear();
+				quizOptionsByLesson.clear();
+				quizSessionSalt = (quizSessionSalt + 0x9e3779b9) >>> 0 || 1;
 				taskFeedbackByKey.clear();
 				taskCountedSuccess.clear();
 				lottaMood = "curious";
@@ -941,11 +979,11 @@ export function mountApp(root: HTMLElement): { destroy: () => void } {
 		}
 		if (action === "quiz-pick") {
 			const id = target.dataset.lessonId ?? activeLessonId;
-			const idx = Number(target.dataset.index);
+			const optionId = Number(target.dataset.optionId);
 			const lesson = LESSON_BY_ID.get(id);
-			if (!lesson || Number.isNaN(idx)) return;
-			quizSelection.set(id, idx);
-			if (idx === lesson.quickCheck.correctIndex) {
+			if (!lesson || Number.isNaN(optionId)) return;
+			quizSelection.set(id, optionId);
+			if (checkQuickCheckAnswer(lesson.quickCheck, optionId).correct) {
 				const res = recordQuizSolved(progress, id);
 				progress = res.progress;
 				persistProgress();
