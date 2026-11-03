@@ -76,6 +76,31 @@ describe("Generierte Aufgaben", () => {
 	});
 });
 
+describe("Gleichwertige Antworten zählen", () => {
+	const all = (id: string, level: Level) => {
+		const l = LESSONS.find((x) => x.id === id);
+		if (!l) throw new Error(id);
+		return Array.from({ length: 200 }, (_, i) => makeTask(l.id, l.generators, level, i + 1));
+	};
+	it("accepts every word order behind the verb in the Umstellprobe", () => {
+		const t = all("satzglieder-umstellprobe", 2).find((x) => x.kind === "text" && x.accept[0] === "Im Hof spielen die Kinder nach der Schule Fußball.");
+		expect(t).toBeDefined();
+		expect(checkAnswer(t as Task, "Im Hof spielen nach der Schule die Kinder Fußball.").correct).toBe(true);
+		expect(checkAnswer(t as Task, "Im Hof die Kinder spielen nach der Schule Fußball.").correct).toBe(false);
+	});
+	it("accepts the short genitive and both perfect forms of schwimmen", () => {
+		const baum = all("vier-faelle", 2).find((x) => x.accept[0] === "des Baumes");
+		expect(checkAnswer(baum as Task, "des Baums").correct).toBe(true);
+		const swim = all("zeitformen", 2).find((x) => x.accept[0] === "ist geschwommen");
+		expect(checkAnswer(swim as Task, "hat geschwommen").correct).toBe(true);
+	});
+	it("offers no second correct article in the case gaps", () => {
+		// "___ Nachbarn" also took "den" (dative plural); such nouns are not used.
+		for (const t of all("vier-faelle", 1).filter((x) => x.key.startsWith("artikel-fall:")))
+			expect(t.material, t.key).not.toMatch(/Nachbarn/);
+	});
+});
+
 describe("Antworten prüfen", () => {
 	const t: Task = {
 		prompt: "p",

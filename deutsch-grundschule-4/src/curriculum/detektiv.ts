@@ -814,9 +814,9 @@ const gross: Lesson = {
 			],
 		},
 		[
-			"Kröne alle Wörter im Reise-Satz.",
-			"Kröne alle Wörter im Wald-Satz.",
-			"Kröne alle Wörter im Morgen-Satz.",
+			"Kröne im Reise-Satz jedes Wort, das großgeschrieben wird.",
+			"Kröne im Wald-Satz jedes Wort, das großgeschrieben wird.",
+			"Kröne im Morgen-Satz jedes Wort, das großgeschrieben wird.",
 		],
 	),
 	generators: {
@@ -856,7 +856,7 @@ const gross: Lesson = {
 				return text({
 					prompt: "Schreibe den Satz richtig ab: mit großen Anfangsbuchstaben.",
 					material: lower,
-					accept: [right],
+					accept: [right, right.replace(/\.$/, "")],
 					hint: "Satzanfang, Nomen und Namen groß. Vergiss den Punkt nicht.",
 					explanation: `Richtig: ${right}`,
 					key: `gross2:${lower}`,
@@ -1003,6 +1003,9 @@ const woerterbuch: Lesson = {
 					material: form,
 					accept: [base],
 					hint: "Verb → Grundform auf -en. Nomen → Einzahl ohne Artikel. Adjektiv → Grundform.",
+					mistakes: Object.fromEntries(
+						["der", "die", "das"].map((a) => [`${a} ${base}`, "Fast! Schreibe das Wort ohne Artikel."]),
+					),
 					explanation: `„${form}“ steht unter „${base}“.`,
 					key: `grundform2:${form}`,
 				});

@@ -4,6 +4,7 @@ import { findLesson, LESSONS, quizOptions, SOURCES, STAGES } from "./curriculum"
 import { checkAnswer, makeTask, markup } from "./exercises/tasks";
 import { esc } from "./format";
 import {
+	adoptStored,
 	completion,
 	isComplete,
 	loadProgress,
@@ -610,7 +611,8 @@ element("#theme").addEventListener("click", () => {
 });
 window.addEventListener("storage", (event) => {
 	if (event.key !== STORAGE_KEY) return;
-	persist();
+	progress = adoptStored(progress);
+	stats();
 	if (view !== "lesson") render();
 });
 

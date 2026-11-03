@@ -1,6 +1,7 @@
 import { afterEach, beforeEach, describe, expect, it } from "vitest";
 import { LESSONS } from "../src/curriculum";
 import {
+	adoptStored,
 	completion,
 	freshProgress,
 	isComplete,
@@ -124,6 +125,25 @@ describe("Fortschritt", () => {
 		expect(stale.epoch).toBe(reset.epoch);
 		expect(stale.quizDone).toEqual([]);
 		expect(JSON.parse(storage.getItem(STORAGE_KEY) ?? "{}").quizDone).toEqual([]);
+	});
+
+	it("adopts another tab's save without writing back", () => {
+		const tabA = loadProgress();
+		tabA.level = 1;
+		saveProgress(tabA);
+		const tabB = { ...loadProgress(), level: 2 as const };
+		recordQuiz(tabB, first.id);
+		saveProgress(tabB);
+		let writes = 0;
+		const set = storage.setItem.bind(storage);
+		storage.setItem = (k: string, v: string) => {
+			writes++;
+			set(k, v);
+		};
+		const adopted = adoptStored(tabA);
+		expect(writes).toBe(0);
+		expect(adopted.level).toBe(1);
+		expect(adopted.quizDone).toEqual([first.id]);
 	});
 
 	it("keeps working when storage fails", () => {

@@ -57,6 +57,15 @@ describe("ZAM-Zelle", () => {
 		}
 	});
 
+	it("never spells a tier-1 answer inside its question", () => {
+		for (const a of cell.atoms)
+			for (const i of a.practice_items.slice(0, 2))
+				// Short answers such as an article may appear as an ordinary word, and
+				// "Was ist … in „Satz“?" asks to find the answer inside the quoted sentence.
+				if (i.concept.length > 4 && !i.question.startsWith("Was ist"))
+					expect(i.question.includes(i.concept), i.slug).toBe(false);
+	});
+
 	it("keeps the extra quick-check answer apart from the card's wrong answer", () => {
 		for (const l of LESSONS) {
 			expect(l.check.wrong, l.id).not.toBe(l.quiz.answer);

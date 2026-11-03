@@ -140,6 +140,23 @@ export function saveProgress(progress: Progress): { progress: Progress; saved: b
 	}
 }
 
+/**
+ * Take over what another tab saved, without writing. Writing here would let
+ * two tabs with different levels answer each other's storage events forever.
+ */
+export function adoptStored(progress: Progress): Progress {
+	try {
+		const raw = localStorage.getItem(STORAGE_KEY);
+		if (!raw) return progress;
+		const stored = parseProgress(raw);
+		return stored.epoch === progress.epoch
+			? mergeProgress(progress, stored)
+			: { ...stored, level: progress.level };
+	} catch {
+		return progress;
+	}
+}
+
 export function recordQuiz(progress: Progress, id: string): void {
 	if (!progress.quizDone.includes(id)) progress.quizDone.push(id);
 }

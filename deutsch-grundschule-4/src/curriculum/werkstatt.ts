@@ -117,14 +117,14 @@ const nomen: Lesson = {
 			variant: "mark",
 			title: "Tintos Schreibmaschine",
 			intro:
-				"Oh nein! Tintos Schreibmaschine hat alle großen Buchstaben verschluckt. Tippe die Nomen an, damit Tinto weiß, was er groß schreiben muss.",
+				"Oh nein! Tintos Schreibmaschine hat alle großen Buchstaben verschluckt. Tippe die Nomen an, damit Tinto weiß, welche Wörter er großschreiben muss. Den Satzanfang hat er schon.",
 			pens: [{ value: "N", label: "Nomen", colour: "blue" }],
 			puzzles: [
-				marks("hund", "der kleine hund|N sucht im garten|N seinen knochen|N ."),
-				marks("angst", "meine oma|N hat große angst|N vor gewittern|N ."),
+				marks("hund", "Der kleine hund|N sucht im garten|N seinen knochen|N ."),
+				marks("angst", "Meine oma|N hat große angst|N vor gewittern|N ."),
 				marks(
 					"freude",
-					"nach der schule|N spielen die kinder|N mit viel freude|N fußball|N .",
+					"Nach der schule|N spielen die kinder|N mit viel freude|N fußball|N .",
 				),
 			],
 		},
@@ -231,17 +231,18 @@ const CASE_SENTENCES: [string, Case, string][] = [
 ];
 
 /** Fill a noun phrase in the right case: sentence frame, base form, answer. */
-const CASE_FILL: [string, string, string, Case][] = [
+/** Frame, base form, answer, case and other correct spellings. */
+const CASE_FILL: [string, string, string, Case, string[]?][] = [
 	["Tinto schenkt ___ eine Blume.", "die Lehrerin", "der Lehrerin", "3. Fall"],
-	["Wir helfen ___ beim Tragen.", "der Nachbar", "dem Nachbarn", "3. Fall"],
+	["Wir helfen ___ beim Tragen.", "der Opa", "dem Opa", "3. Fall"],
 	["Lea füttert ___.", "der Hund", "den Hund", "4. Fall"],
-	["Das Fell ___ ist weich.", "das Pferd", "des Pferdes", "2. Fall"],
+	["Das Fell ___ ist weich.", "das Pferd", "des Pferdes", "2. Fall", ["des Pferds"]],
 	["Ben gibt ___ einen Ball.", "das Kind", "dem Kind", "3. Fall"],
 	["Ich suche ___.", "der Schlüssel", "den Schlüssel", "4. Fall"],
 	["Die Farbe ___ ist blau.", "der Himmel", "des Himmels", "2. Fall"],
 	["Oma erzählt ___ ein Märchen.", "die Kinder", "den Kindern", "3. Fall"],
 	["Wir sehen ___ am Himmel.", "der Mond", "den Mond", "4. Fall"],
-	["Die Blätter ___ sind gelb.", "der Baum", "des Baumes", "2. Fall"],
+	["Die Blätter ___ sind gelb.", "der Baum", "des Baumes", "2. Fall", ["des Baums"]],
 ];
 
 const ARTICLES: Record<string, Record<Case, [string, string]>> = {
@@ -401,11 +402,11 @@ const faelle: Lesson = {
 				});
 			},
 			(rng) => {
-				const [frame, base, answer, c] = pick(rng, CASE_FILL);
+				const [frame, base, answer, c, variants = []] = pick(rng, CASE_FILL);
 				return text({
 					prompt: "Setze die Wörter in Klammern im richtigen Fall ein. Schreibe nur die beiden Wörter.",
 					material: frame.replace("___", `___ (${base})`),
-					accept: [answer],
+					accept: [answer, ...variants],
 					hint: `Frage nach der Lücke. Welcher Fall ist das?`,
 					explanation: `${QUESTION[c]} → ${c}: ${frame.replace("___", answer)}`,
 					mistakes: { [base]: "Das ist der 1. Fall. Frage nach der Lücke: Welcher Fall passt?" },
@@ -483,7 +484,7 @@ const STEIGER: Record<string, [string, string, string]> = {
 	viel: [
 		"Tinto hat viel Tinte.",
 		"Seine Tante hat mehr Tinte als Tinto.",
-		"Die Riesenkrake hat am meisten Tinte.",
+		"Der Riesenkrake hat am meisten Tinte.",
 	],
 	warm: [
 		"Die Milch ist warm.",
@@ -1018,10 +1019,11 @@ const zeitformen: Lesson = {
 			(rng) => {
 				const verb = pick(rng, Object.keys(PAST));
 				const perf = PAST[verb][1];
+				const also = ALSO_PERFECT[verb] ? [ALSO_PERFECT[verb], `er ${ALSO_PERFECT[verb]}`] : [];
 				return text({
 					prompt: "Setze ins Perfekt. Schreibe beide Teile.",
 					material: `er ${presentEr(verb)} → er …`,
-					accept: [perf, `er ${perf}`],
+					accept: [perf, `er ${perf}`, ...also],
 					hint: "Perfekt = hat oder ist + ge-Form. Bei Bewegungen wie gehen, fahren, fliegen meistens „ist“.",
 					explanation: `er ${perf}`,
 					mistakes: {
@@ -1052,6 +1054,8 @@ const PRESENT_ER: Record<string, string> = {
 	rufen: "ruft",
 	werfen: "wirft",
 };
+/** Perfect forms that are also standard (Duden: schwimmen with hat or ist). */
+const ALSO_PERFECT: Record<string, string> = { schwimmen: "hat geschwommen" };
 const presentEr = (verb: string): string => CONJ[verb]?.[2] ?? PRESENT_ER[verb];
 
 /* ---------- 6 Wortbausteine ---------- */
@@ -1622,7 +1626,7 @@ const wortfelder: Lesson = {
 			puzzles: [
 				gaps("nacht", "Mitten in der Nacht {schlich|rannte|hüpfte} Tinto in die Küche. „Psst“, {flüsterte|brüllte|jubelte} er, „Oma schläft.“", "In der Nacht"),
 				gaps("fest", "Beim Fest {futterten|knabberten|kosteten} die hungrigen Kinder zehn Brezen. „Mehr!“, {riefen|murmelten|flüsterten} sie.", "Das Fest"),
-				gaps("wald", "Im Wald {entdeckte|betrachtete|blinzelte} Mia plötzlich einen Fuchs. Sie {beobachtete|entdeckte|starrte} ihn lange durch das Fernglas.", "Im Wald"),
+				gaps("wald", "Im Wald {entdeckte|betrachtete|blinzelte} Mia plötzlich einen Fuchs. Sie {beobachtete|entdeckte|erblickte} ihn lange durch das Fernglas.", "Im Wald"),
 			],
 		},
 		[

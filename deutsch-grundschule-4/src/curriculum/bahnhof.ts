@@ -66,6 +66,13 @@ function bankSentence(rng: Rng, filter: (s: Glied[]) => boolean = () => true) {
 const written = (parts: Glied[], front: number, i: number): string =>
 	i === front ? parts[i].start : parts[i].mid;
 
+function permutations<T>(list: T[]): T[][] {
+	if (list.length <= 1) return [list];
+	return list.flatMap((x, i) =>
+		permutations([...list.slice(0, i), ...list.slice(i + 1)]).map((rest) => [x, ...rest]),
+	);
+}
+
 function markIn(sentence: string, part: string): string {
 	return sentence.replace(part, `[[${part}]]`);
 }
@@ -490,10 +497,14 @@ const satzglieder: Lesson = {
 				const others = parts.map((_, i) => i).filter((i) => parts[i].role !== "P" && i !== 0);
 				const front = pick(rng, others);
 				const target = arrange(parts, front);
+				// Any order of the remaining Satzglieder behind the verb is a correct statement.
+				const verb = parts.find((p) => p.role === "P") as Glied;
+				const rest = parts.filter((p, i) => i !== front && p.role !== "P").map((p) => p.mid);
+				const accept = permutations(rest).map((r) => `${[parts[front].start, verb.mid, ...r].join(" ")}.`);
 				return text({
 					prompt: "Stelle den Satz um: Der unterstrichene Teil soll vorne stehen.",
 					material: markIn(arrange(parts, 0), parts[front].mid),
-					accept: [target, target.replace(/\.$/, "")],
+					accept: [target, ...accept.filter((a) => a !== target), ...accept.map((a) => a.replace(/\.$/, ""))],
 					hint: "Das unterstrichene Satzglied nach vorne, dann das Prädikat. Großer Anfangsbuchstabe!",
 					explanation: `Richtig: ${target}`,
 					key: `vorne:${target}`,
@@ -915,12 +926,12 @@ const KUPPLUNG: Record<string, [string, string, string]> = {
 	weil: [
 		"Tinto geht schwimmen, weil das Wasser kalt ist.",
 		"Das Wasser ist kalt, weil Tinto schwimmen geht.",
-		"„weil“ nennt einen Grund. Das Verb wandert ans Ende! Davor steht ein Komma.",
+		"„weil“ nennt einen Grund. Das Verb wandert ans Ende! Davor steht ein Komma. Prüfe: Ergibt der Grund Sinn?",
 	],
 	obwohl: [
 		"Tinto geht schwimmen, obwohl das Wasser kalt ist.",
 		"Das Wasser ist kalt, obwohl Tinto schwimmen geht.",
-		"„obwohl“ zeigt einen Gegensatz. Das Verb wandert ans Ende. Davor steht ein Komma.",
+		"„obwohl“ zeigt einen Gegensatz. Das Verb wandert ans Ende. Davor steht ein Komma. Prüfe: Ergibt der Satz Sinn?",
 	],
 };
 const AFTER: Record<string, string> = {
