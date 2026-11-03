@@ -94,6 +94,31 @@ describe("Gleichwertige Antworten zählen", () => {
 		const swim = all("zeitformen", 2).find((x) => x.accept[0] === "ist geschwommen");
 		expect(checkAnswer(swim as Task, "hat geschwommen").correct).toBe(true);
 	});
+	it("accepts a weil or dass sentence in front, but keeps the order of aber and denn", () => {
+		const tasks = all("saetze-verbinden", 2).filter((x) => x.key.startsWith("verbinde:"));
+		const weil = tasks.find((x) => x.accept[0] === "Tim lacht, weil der Film lustig ist.");
+		expect(checkAnswer(weil as Task, "Weil der Film lustig ist, lacht Tim.").correct).toBe(true);
+		const dass = tasks.find((x) => x.accept[0] === "Ich weiß, dass Tinto Brezen mag.");
+		expect(checkAnswer(dass as Task, "Dass Tinto Brezen mag, weiß ich.").correct).toBe(true);
+		expect(checkAnswer(dass as Task, "Dass Tinto Brezen mag weiß ich.").hint).toMatch(/Komma/);
+		const aber = tasks.find((x) => x.accept[0] === "Mia ist müde, aber sie spielt weiter.");
+		expect(aber?.accept).toHaveLength(1);
+	});
+	it("counts every noun in the 'zwei Nomen' sentences", () => {
+		// A first name is a noun too; the sentences hold exactly the two asked for.
+		const names = /\b(lea|tim|mia|ben|tinto)\b/;
+		for (const t of all("nomen-artikel", 2).filter((x) => x.key.startsWith("zwei-nomen:")))
+			expect(t.material, t.key).not.toMatch(names);
+	});
+	it("fits the person-noun hint to the drawn verb", () => {
+		const person = all("wortfamilien", 2).filter((x) => x.key.startsWith("person:"));
+		expect(new Set(person.map((t) => t.key)).size).toBeGreaterThan(5);
+		for (const t of person) {
+			const verb = t.key.slice("person:".length);
+			expect(t.hint, t.key).toContain(`„${verb.replace(/en$/, "")}“`);
+			expect(t.hint.includes("Umlaut"), t.key).toBe(/[äöü]/.test(t.accept[1]));
+		}
+	});
 	it("offers no second correct article in the case gaps", () => {
 		// "___ Nachbarn" also took "den" (dative plural); such nouns are not used.
 		for (const t of all("vier-faelle", 1).filter((x) => x.key.startsWith("artikel-fall:")))

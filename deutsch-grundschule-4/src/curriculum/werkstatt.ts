@@ -73,7 +73,7 @@ const TWO_NOUNS: [string, string, string][] = [
 	["der kleine junge hat große angst.", "Junge", "Angst"],
 	["wir fahren mit dem zug nach augsburg.", "Zug", "Augsburg"],
 	["die katze schläft auf dem sofa.", "Katze", "Sofa"],
-	["mit viel mut klettert lea auf den turm.", "Mut", "Turm"],
+	["mit viel mut klettert sie auf den turm.", "Mut", "Turm"],
 	["das pferd frisst gern frische äpfel.", "Pferd", "Äpfel"],
 	["nach der schule spielen wir im garten.", "Schule", "Garten"],
 ];
@@ -1345,11 +1345,13 @@ const wortfamilien: Lesson = {
 		2: [
 			(rng) => {
 				const [verb, noun] = pick(rng, PERSON_NOUN);
+				const stem = verb.replace(/en$/, "");
+				const changes = noun.toLowerCase().slice(0, -2) !== stem;
 				return text({
 					prompt: "Bilde aus dem Verb ein Nomen für eine Person mit -er. Schreibe es mit Artikel.",
 					material: `${verb} → der …`,
 					accept: [`der ${noun}`, noun],
-					hint: "Wer singt, ist der S…. Denk an den Stamm. Manchmal wird a zu ä.",
+					hint: `Nimm den Stamm „${stem}“ und hänge -er an.${changes ? " Ein Selbstlaut im Stamm wird dabei zum Umlaut." : ""}`,
 					explanation: `${verb} → der ${noun}`,
 					mistakes: { [`der ${noun.toLowerCase()}`]: "Nomen schreibst du groß." },
 					key: `person:${verb}`,

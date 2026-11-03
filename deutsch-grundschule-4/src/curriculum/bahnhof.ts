@@ -951,13 +951,15 @@ const CONNECT: [string, string, string[], string][] = [
 	["Oma liest vor ___ wir hören zu.", "und", ["weil", "dass"], "Zwei Dinge passieren nebeneinander. Nach „und“ bleibt das Verb an zweiter Stelle."],
 	["Ben ist müde, ___ er spielt weiter.", "aber", ["weil", "dass"], "Müde sein und weiterspielen ist ein Gegensatz."],
 ];
-const JOIN: [string, string, string, string][] = [
-	["Tim lacht.", "Der Film ist lustig.", "weil", "Tim lacht, weil der Film lustig ist."],
-	["Wir bleiben zu Hause.", "Es regnet.", "weil", "Wir bleiben zu Hause, weil es regnet."],
-	["Lea ist froh.", "Sie hat Geburtstag.", "weil", "Lea ist froh, weil sie Geburtstag hat."],
-	["Ich weiß.", "Tinto mag Brezen.", "dass", "Ich weiß, dass Tinto Brezen mag."],
-	["Ben hofft.", "Die Sonne scheint morgen.", "dass", "Ben hofft, dass die Sonne morgen scheint."],
-	["Der Hund bellt.", "Es klingelt.", "weil", "Der Hund bellt, weil es klingelt."],
+/** [first, second, Bindewort, joined, the weil/dass sentence put in front]. */
+const JOIN: [string, string, string, string, string?][] = [
+	["Tim lacht.", "Der Film ist lustig.", "weil", "Tim lacht, weil der Film lustig ist.", "Weil der Film lustig ist, lacht Tim."],
+	["Wir bleiben zu Hause.", "Es regnet.", "weil", "Wir bleiben zu Hause, weil es regnet.", "Weil es regnet, bleiben wir zu Hause."],
+	["Lea ist froh.", "Sie hat Geburtstag.", "weil", "Lea ist froh, weil sie Geburtstag hat.", "Weil sie Geburtstag hat, ist Lea froh."],
+	["Ich weiß.", "Tinto mag Brezen.", "dass", "Ich weiß, dass Tinto Brezen mag.", "Dass Tinto Brezen mag, weiß ich."],
+	["Ben hofft.", "Die Sonne scheint morgen.", "dass", "Ben hofft, dass die Sonne morgen scheint.", "Dass die Sonne morgen scheint, hofft Ben."],
+	["Der Hund bellt.", "Es klingelt.", "weil", "Der Hund bellt, weil es klingelt.", "Weil es klingelt, bellt der Hund."],
+	// "aber" and "denn" keep their order: swapped, the sentence means something else.
 	["Mia ist müde.", "Sie spielt weiter.", "aber", "Mia ist müde, aber sie spielt weiter."],
 	["Ich nehme einen Schirm mit.", "Es regnet.", "denn", "Ich nehme einen Schirm mit, denn es regnet."],
 ];
@@ -973,7 +975,8 @@ const verbinden: Lesson = {
 	paragraphs: [
 		"Bindewörter verbinden Sätze wie eine Kupplung zwei Waggons: und, oder, aber, denn, weil, dass. Jedes Bindewort gibt dem Satz einen anderen Sinn.",
 		"„und“ reiht aneinander, „oder“ zeigt eine Wahl, „aber“ einen Gegensatz. „denn“ und „weil“ nennen einen Grund. Nach „weil“ und „dass“ wandert das Verb ans Ende: …, weil es regnet.",
-		"Vor aber, denn, weil und dass steht ein Komma. Vor „und“ und „oder“ brauchst du hier keins. (Weitere Kommaregeln lernst du in der 5. Klasse.)",
+		"Ein „weil“- oder „dass“-Satz darf auch vorne stehen: Weil es regnet, bleiben wir drinnen. Dann kommt das Verb des anderen Satzes gleich nach dem Komma.",
+		"Vor aber, denn, weil und dass steht ein Komma, vor „und“ und „oder“ hier keins. Diese Kommaregel lernst du genau erst in der 5. Klasse. Tinto übt sie hier schon mit dir.",
 	],
 	example: {
 		title: "Tinto kuppelt",
@@ -981,6 +984,7 @@ const verbinden: Lesson = {
 			"Es regnet. Wir bleiben drinnen.",
 			"Wir bleiben drinnen, denn es regnet.  (Verb an 2. Stelle)",
 			"Wir bleiben drinnen, weil es regnet.  (Verb am Ende)",
+			"Weil es regnet, bleiben wir drinnen.  (weil-Satz vorne)",
 			"Es regnet, aber wir gehen trotzdem raus.  (Gegensatz)",
 		],
 	},
@@ -1063,17 +1067,19 @@ const verbinden: Lesson = {
 		],
 		2: [
 			(rng) => {
-				const [a, b, word, joined] = pick(rng, JOIN);
+				const [a, b, word, joined, front] = pick(rng, JOIN);
 				return text({
 					prompt: `Verbinde die beiden Sätze mit „${word}“. Schreibe den ganzen Satz.`,
 					material: `${a} ${b}`,
-					accept: [joined],
+					accept: front ? [joined, front] : [joined],
 					hint:
 						word === "weil" || word === "dass"
 							? `Komma vor „${word}“. Nach „${word}“ wandert das Verb ans Ende.`
 							: `Komma vor „${word}“. Die Wortstellung bleibt gleich.`,
-					explanation: `Richtig: ${joined}`,
-					mistakes: { [joined.replace(",", "")]: `Vor „${word}“ fehlt das Komma.` },
+					explanation: front ? `Richtig: ${joined} Auch richtig: ${front}` : `Richtig: ${joined}`,
+					mistakes: Object.fromEntries(
+						[joined, front ?? ""].filter(Boolean).map((s) => [s.replace(",", ""), "Zwischen den beiden Sätzen fehlt das Komma."]),
+					),
 					key: `verbinde:${a}`,
 				});
 			},

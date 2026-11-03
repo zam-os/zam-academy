@@ -12,9 +12,9 @@ fehlt noch.
 [LehrplanPLUS Grundschule, Fachlehrplan Deutsch 3/4](https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/deutsch),
 direkt abgerufen am 3. November 2026 (SHA-256 der HTML-Seite in
 `deutsch-grundschule-4/tests/fixtures/official-curriculum.json`). Die Seite
-enthält 116 Kompetenzerwartungen in 17 Abschnitten, darunter vier
-Unterabschnitte von 4.4 („Phonologisches und silbisches Prinzip nutzen“,
-„Morphologisches …“, „Grammatisches …“, „Verbindung unterschiedlicher
+enthält 116 Kompetenzerwartungen in 17 nummerierten Abschnitten (1.1 bis
+4.4); Abschnitt 4.4 ist zusätzlich in vier Unterabschnitte gegliedert
+(„Phonologisches und silbisches Prinzip nutzen“, „Morphologisches …“, „Grammatisches …“, „Verbindung unterschiedlicher
 Prinzipien nutzen“). Der Plan gilt gemeinsam für die Jahrgangsstufen 3 und 4,
 nennt keine Stundenkontingente und keine Aufteilung auf die beiden Jahre.
 Die Reihenfolge der Lektionen ist unser Vorschlag, keine amtliche Vorgabe.
@@ -31,8 +31,10 @@ Zur Abgrenzung gelesen:
   Modal- und Kausaladverbiale, Haupt- und Nebensatz, Kommaregeln. Das Paket
   nennt die lateinischen Namen der vier Fälle und der Zeitformen nur als
   Zusatz zu den Grundschulbegriffen und lässt die übrigen Themen aus. Die
-  Komma-Regel vor aber, denn, weil und dass ist als Vorgriff gekennzeichnet
-  („Weitere Kommaregeln lernst du in der 5. Klasse.“).
+  Komma-Regel vor aber, denn, weil und dass ist im Lerntext als Vorgriff
+  gekennzeichnet („Diese Kommaregel lernst du genau erst in der 5. Klasse.
+  Tinto übt sie hier schon mit dir.“); LehrplanPLUS 4.3 verlangt das
+  Verknüpfen mit Bindewörtern, nicht die Kommasetzung.
 
 ## Abdeckung dieser Ausbaustufe
 
