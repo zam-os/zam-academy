@@ -1,4 +1,16 @@
 import {
+	algorithmModel,
+	algorithmAnswer,
+	algorithmValidation,
+	isWrittenAlgorithm,
+} from "./written-algorithms";
+import {
+	freshSubtractionWork,
+	subtractionAnswer,
+	subtractionValidation,
+	unbundleSubtraction,
+} from "./written-subtraction";
+import {
 	columnAnswer,
 	columnValidation,
 	columnOrder,
@@ -36,10 +48,15 @@ export class ForestSession {
 	private rangeRevision = 0;
 	private editingRange = false;
 	private columnRevision = 0;
-	private columnScroll: { key: string; left: number } | null = null;
+	private columnScroll = new Map<string, number>();
 	private editingColumns = false;
 	private columnDraft: { key: string; values: string[] } | null = null;
 	private rangeDraft: { key: string; position: number } | null = null;
+	private writtenDraft: {
+		key: string;
+		kind: "subtraction" | "algorithm";
+		values: string[];
+	} | null = null;
 	constructor(
 		readonly lesson: ForestLesson,
 		private notify: (event?: ForestEvent) => void,
@@ -66,10 +83,26 @@ export class ForestSession {
 			this.feedback = "";
 			this.draft = "";
 		}
-		const current =
+		let current =
 			this.columnDraft?.key === key
 				? { ...this.store.state, columnWork: this.columnDraft.values }
 				: this.store.state;
+		if (this.writtenDraft?.key === key) {
+			if (this.writtenDraft.kind === "algorithm")
+				current = { ...current, algorithmWork: this.writtenDraft.values };
+			else {
+				const task = activeForestTask(current);
+				if (task?.subtraction)
+					current = {
+						...current,
+						subtractionWork: {
+							...(current.subtractionWork ??
+								freshSubtractionWork(task.subtraction.a)),
+							result: this.writtenDraft.values,
+						},
+					};
+			}
+		}
 		return forestLessonView(
 			this.lesson,
 			this.rangeDraft?.key === key
@@ -86,17 +119,16 @@ export class ForestSession {
 		return forestTeacherPanel(this.lesson);
 	}
 	bind(root: HTMLElement): void {
-		const scroller = root.querySelector<HTMLElement>(".column-scroll");
-		if (scroller) {
-			const key = forestKey(this.store.state);
-			scroller.scrollLeft =
-				this.columnScroll?.key === key
-					? this.columnScroll.left
-					: scroller.scrollWidth;
-			scroller.addEventListener("scroll", () => {
-				this.columnScroll = { key, left: scroller.scrollLeft };
+		root
+			.querySelectorAll<HTMLElement>(".column-scroll")
+			.forEach((scroller, index) => {
+				const key = `${forestKey(this.store.state)}/${index}`;
+				scroller.scrollLeft =
+					this.columnScroll.get(key) ?? scroller.scrollWidth;
+				scroller.addEventListener("scroll", () => {
+					this.columnScroll.set(key, scroller.scrollLeft);
+				});
 			});
-		}
 		root
 			.querySelectorAll<HTMLInputElement>('[data-action="forest-column"]')
 			.forEach((input) => {
@@ -180,6 +212,175 @@ export class ForestSession {
 						});
 				});
 			});
+		root
+			.querySelectorAll<HTMLInputElement>(
+				'[data-action="forest-subtract-digit"]',
+			)
+			.forEach((input) => {
+				const cells = () => [
+					...root.querySelectorAll<HTMLInputElement>(
+						'[data-action="forest-subtract-digit"]',
+					),
+				];
+				input.addEventListener("click", () => input.select());
+				input.addEventListener("focus", () => {
+					cells().forEach((cell) => {
+						cell.tabIndex = cell === input ? 0 : -1;
+					});
+					input.select();
+				});
+				input.addEventListener("keydown", (event) => {
+					if (event.key !== "Tab") return;
+					const col = Number(input.dataset.col) + (event.shiftKey ? -1 : 1);
+					const next = cells().find((cell) => Number(cell.dataset.col) === col);
+					if (next) {
+						event.preventDefault();
+						next.focus();
+					}
+				});
+				input.addEventListener("input", () => {
+					const value = input.value,
+						index = Number(input.dataset.col),
+						key = forestKey(this.store.state);
+					const error = root.querySelector("#subtraction-input-error");
+					if (!/^[0-9]?$/.test(value)) {
+						input.setAttribute("aria-invalid", "true");
+						if (error)
+							error.textContent =
+								"Pro Ergebnisfeld nur eine Ziffer. Bitte verbessere die markierte Zelle.";
+						return;
+					}
+					input.removeAttribute("aria-invalid");
+					if (error && !root.querySelector('[aria-invalid="true"]'))
+						error.textContent = "";
+
+					const currentTask = activeForestTask(this.store.state);
+					if (!currentTask?.subtraction) return;
+					const values = [
+						...(this.writtenDraft?.key === key &&
+						this.writtenDraft.kind === "subtraction"
+							? this.writtenDraft.values
+							: (
+									this.store.state.subtractionWork ??
+									freshSubtractionWork(currentTask.subtraction.a)
+								).result),
+					];
+					values[index] = value;
+					this.writtenDraft = { key, kind: "subtraction", values };
+
+					this.editingColumns = true;
+					const revision = ++this.columnRevision;
+					let failed = false;
+					void this.store
+						.update((p) => {
+							const task = activeForestTask(p);
+							if (forestKey(p) !== key || !task?.subtraction) return;
+							p.subtractionWork ??= freshSubtractionWork(task.subtraction.a);
+							p.subtractionWork.result[index] = value;
+						})
+						.catch(() => {
+							failed = true;
+							this.feedback =
+								"Die Ziffer konnte nicht gespeichert werden. Probiere es noch einmal.";
+						})
+						.finally(() => {
+							if (revision !== this.columnRevision) return;
+							this.editingColumns = false;
+							this.writtenDraft = null;
+							if (failed) this.notify();
+						});
+				});
+			});
+		root
+			.querySelectorAll<HTMLInputElement>('[data-action="forest-algorithm"]')
+			.forEach((input) => {
+				const cells = () => [
+					...root.querySelectorAll<HTMLInputElement>(
+						'[data-action="forest-algorithm"]',
+					),
+				];
+				input.addEventListener("click", () => input.select());
+				input.addEventListener("focus", () => {
+					cells().forEach((cell) => {
+						cell.tabIndex = cell === input ? 0 : -1;
+					});
+					input.select();
+				});
+				input.addEventListener("keydown", (event) => {
+					if (event.key !== "Tab") return;
+					const next = cells().find(
+						(cell) =>
+							Number(cell.dataset.col) ===
+							Number(input.dataset.col) + (event.shiftKey ? -1 : 1),
+					);
+					if (next) {
+						event.preventDefault();
+						next.focus();
+					}
+				});
+				input.addEventListener("input", () => {
+					const value = input.value,
+						index = Number(input.dataset.col),
+						max = Number(input.dataset.max),
+						key = forestKey(this.store.state);
+					const error = root.querySelector("#algorithm-input-error");
+					if (
+						value !== "" &&
+						(!/^(0|[1-9][0-9]?)$/.test(value) || Number(value) > max)
+					) {
+						input.setAttribute("aria-invalid", "true");
+						if (error)
+							error.textContent = `Hier passt eine ganze Zahl von 0 bis ${max}.`;
+						return;
+					}
+					input.removeAttribute("aria-invalid");
+					if (error && !root.querySelector('[aria-invalid="true"]'))
+						error.textContent = "";
+					root
+						.querySelectorAll<HTMLElement>(
+							`.algorithm-preview[data-from="${index}"]`,
+						)
+						.forEach((span) => {
+							span.textContent = value || "?";
+						});
+
+					const currentTask = activeForestTask(this.store.state);
+					if (!currentTask?.algorithm) return;
+					const values = [
+						...(this.writtenDraft?.key === key &&
+						this.writtenDraft.kind === "algorithm"
+							? this.writtenDraft.values
+							: (this.store.state.algorithmWork ??
+								algorithmModel(currentTask.algorithm).fields.map(() => ""))),
+					];
+					values[index] = value;
+					this.writtenDraft = { key, kind: "algorithm", values };
+
+					this.editingColumns = true;
+					const revision = ++this.columnRevision;
+					let failed = false;
+					void this.store
+						.update((p) => {
+							const task = activeForestTask(p);
+							if (forestKey(p) !== key || !task?.algorithm) return;
+							p.algorithmWork ??= algorithmModel(task.algorithm).fields.map(
+								() => "",
+							);
+							p.algorithmWork[index] = value;
+						})
+						.catch(() => {
+							failed = true;
+							this.feedback =
+								"Der Rechenschritt konnte nicht gespeichert werden. Probiere es noch einmal.";
+						})
+						.finally(() => {
+							if (revision !== this.columnRevision) return;
+							this.editingColumns = false;
+							this.writtenDraft = null;
+							if (failed) this.notify();
+						});
+				});
+			});
 		const input = root.querySelector<HTMLInputElement>("#forest-answer");
 		input?.addEventListener("input", () => {
 			this.draft = input.value;
@@ -241,6 +442,20 @@ export class ForestSession {
 			.forEach((cell) => {
 				columnValues[Number(cell.dataset.col)] = cell.value;
 			});
+		const algorithmValues = task?.algorithm
+			? [
+					...(this.writtenDraft?.key === key &&
+					this.writtenDraft.kind === "algorithm"
+						? this.writtenDraft.values
+						: (this.store.state.algorithmWork ??
+							algorithmModel(task.algorithm).fields.map(() => ""))),
+				]
+			: [];
+		root
+			.querySelectorAll<HTMLInputElement>('[data-action="forest-algorithm"]')
+			.forEach((cell) => {
+				algorithmValues[Number(cell.dataset.col)] = cell.value;
+			});
 		let event: ForestEvent | undefined;
 		this.busy = true;
 		try {
@@ -272,6 +487,8 @@ export class ForestSession {
 				if (action === "forest-stop" && p.optional) {
 					p.optional = null;
 					p.index = 0;
+					if (isWrittenAlgorithm(p.lesson)) p.algorithmWork = null;
+					if (p.lesson === "schriftlich-subtrahieren") p.subtractionWork = null;
 					return;
 				}
 				if (
@@ -293,6 +510,31 @@ export class ForestSession {
 					return;
 				}
 				if (!task || p.attempts.some((a) => a.key === key && a.outcome)) return;
+				if (
+					task.subtraction &&
+					(action === "forest-unbundle" || action === "forest-reset-bundles")
+				) {
+					p.subtractionWork ??= freshSubtractionWork(task.subtraction.a);
+					root
+						.querySelectorAll<HTMLInputElement>(
+							'[data-action="forest-subtract-digit"]',
+						)
+						.forEach((cell) => {
+							if (/^[0-9]?$/.test(cell.value) && p.subtractionWork)
+								p.subtractionWork.result[Number(cell.dataset.col)] = cell.value;
+						});
+					const bundles =
+						action === "forest-reset-bundles"
+							? freshSubtractionWork(task.subtraction.a).bundles
+							: unbundleSubtraction(
+									p.subtractionWork.bundles,
+									Number(button.dataset.col),
+								);
+					if (bundles) p.subtractionWork.bundles = bundles;
+					this.feedback = "";
+					return;
+				}
+
 				if (action === "forest-hint" || action === "forest-solution") {
 					if (!p.helped.includes(key)) p.helped.push(key);
 					p.helped = p.helped.slice(-1000);
@@ -344,12 +586,65 @@ export class ForestSession {
 							return;
 						}
 					}
+					if (action === "forest-check" && task.subtraction) {
+						p.subtractionWork ??= freshSubtractionWork(task.subtraction.a);
+						root
+							.querySelectorAll<HTMLInputElement>(
+								'[data-action="forest-subtract-digit"]',
+							)
+							.forEach((cell) => {
+								if (p.subtractionWork)
+									p.subtractionWork.result[Number(cell.dataset.col)] =
+										cell.value;
+							});
+						const notice = subtractionValidation(
+							task.subtraction.a,
+							task.subtraction.b,
+							p.subtractionWork,
+						);
+						if (notice) {
+							// Malformed input is validation and is never persisted.
+							if (
+								p.subtractionWork.result.some(
+									(value) => !/^[0-9]?$/.test(value),
+								)
+							)
+								p.subtractionWork.result = p.subtractionWork.result.map(
+									(value) => (/^[0-9]?$/.test(value) ? value : ""),
+								);
+							this.feedback = notice;
+							return;
+						}
+					}
+					if (action === "forest-check" && task.algorithm) {
+						const notice = algorithmValidation(task.algorithm, algorithmValues),
+							model = algorithmModel(task.algorithm);
+						p.algorithmWork = algorithmValues.map((value, i) =>
+							value === "" ||
+							(/^(0|[1-9][0-9]?)$/.test(value) &&
+								Number(value) <= model.fields[i].max)
+								? value
+								: "",
+						);
+						if (notice) {
+							this.feedback = notice;
+							return;
+						}
+					}
 					let answer: Answer | null;
 					if (action === "forest-worked") {
 						if (!p.helped.includes(key) || !explanationShown) return;
 						answer = task.answer;
 					} else if (action === "forest-choice")
 						answer = Number(button.dataset.value);
+					else if (task.algorithm)
+						answer = algorithmAnswer(task.algorithm, algorithmValues);
+					else if (task.subtraction)
+						answer = subtractionAnswer(
+							task.subtraction.a,
+							task.subtraction.b,
+							p.subtractionWork ?? freshSubtractionWork(task.subtraction.a),
+						);
 					else if (task.kind === "columns" && task.columns)
 						answer = columnAnswer(task.columns.a, task.columns.b, columnValues);
 					else if (task.kind === "parts" || task.kind === "order")
@@ -369,6 +664,13 @@ export class ForestSession {
 					const right = recordForest(p, task, answer);
 					if (right && task.kind === "columns" && Array.isArray(task.answer))
 						p.columnWork = task.answer.map(String);
+					if (right && task.subtraction && Array.isArray(task.answer))
+						p.subtractionWork = {
+							result: task.answer.slice(0, 7).map(String),
+							bundles: task.answer.slice(7),
+						};
+					if (right && task.algorithm && Array.isArray(task.answer))
+						p.algorithmWork = task.answer.map(String);
 					event = right ? "correct" : "encourage";
 					this.feedback = right
 						? task.explanation
@@ -378,6 +680,23 @@ export class ForestSession {
 		} finally {
 			this.busy = false;
 			this.notify(event);
+			if (action === "forest-unbundle" || action === "forest-reset-bundles") {
+				const col = Number(button.dataset.col);
+				const buttons = [
+					...root.querySelectorAll<HTMLButtonElement>(
+						'[data-action="forest-unbundle"]',
+					),
+				];
+				const next =
+					buttons.find(
+						(cell) => Number(cell.dataset.col) === col && !cell.disabled,
+					) ??
+					buttons.find(
+						(cell) => Number(cell.dataset.col) < col && !cell.disabled,
+					) ??
+					root.querySelector<HTMLInputElement>("#subtraction-0");
+				next?.focus({ preventScroll: true });
+			}
 		}
 	}
 }

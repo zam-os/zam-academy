@@ -1,3 +1,9 @@
+import { isWrittenAlgorithm, validAlgorithmWork } from "./written-algorithms";
+import {
+	bundleValue,
+	validSubtractionWork,
+	type SubtractionWork,
+} from "./written-subtraction";
 import { emptyColumnWork } from "./written-addition";
 import { ulid } from "../id";
 import {
@@ -49,6 +55,8 @@ export interface ForestProgress {
 	position: number;
 	selection: number[];
 	columnWork?: string[];
+	subtractionWork?: SubtractionWork | null;
+	algorithmWork?: string[] | null;
 	labGoals: number[];
 	quiz: boolean;
 	solved: { 1: number; 2: number };
@@ -78,6 +86,8 @@ export function freshForest(
 		...(lesson === "schriftlich-addieren"
 			? { columnWork: emptyColumnWork() }
 			: {}),
+		...(lesson === "schriftlich-subtrahieren" ? { subtractionWork: null } : {}),
+		...(isWrittenAlgorithm(lesson) ? { algorithmWork: null } : {}),
 		labGoals: [],
 		quiz: false,
 		solved: { 1: 0, 2: 0 },
@@ -142,6 +152,12 @@ export function validForest(raw: unknown): raw is ForestProgress {
 				(n, i) =>
 					typeof n === "string" && (i < 7 ? /^[0-9]?$/ : /^[01]?$/).test(n),
 			))
+	)
+		return false;
+	if (
+		raw.lesson === "schriftlich-subtrahieren" &&
+		raw.subtractionWork !== null &&
+		!validSubtractionWork(raw.subtractionWork)
 	)
 		return false;
 	const rewards = raw.rewards,
@@ -214,6 +230,26 @@ export function validForest(raw: unknown): raw is ForestProgress {
 		)
 	)
 		return false;
+	if (
+		isWrittenAlgorithm(raw.lesson as ExtraLessonId) &&
+		raw.algorithmWork !== null
+	) {
+		const task = activeForestTask(raw as unknown as ForestProgress);
+		if (
+			!task?.algorithm ||
+			!validAlgorithmWork(raw.algorithmWork, task.algorithm)
+		)
+			return false;
+	}
+	if (raw.lesson === "schriftlich-subtrahieren" && raw.subtractionWork) {
+		const task = activeForestTask(raw as unknown as ForestProgress);
+		if (
+			!task?.subtraction ||
+			bundleValue((raw.subtractionWork as SubtractionWork).bundles) !==
+				task.subtraction.a
+		)
+			return false;
+	}
 	return true;
 }
 export function forestKey(p: ForestProgress): string {
@@ -274,6 +310,7 @@ function calculationFamily({
 	b,
 	op,
 }: NonNullable<ForestTask["calculation"]>): (string | number)[] {
+	if (op === ":" && a % b !== 0) return ["division-with-remainder", a, b];
 	const multiplicative = op === "·" || op === ":";
 	const parts = op === ":" ? [b, a / b] : op === "−" ? [b, a - b] : [a, b];
 	return [
@@ -340,6 +377,8 @@ export function advanceForest(p: ForestProgress, now = Date.now()): boolean {
 	p.position = 0;
 	p.selection = [];
 	if (p.lesson === "schriftlich-addieren") p.columnWork = emptyColumnWork();
+	if (p.lesson === "schriftlich-subtrahieren") p.subtractionWork = null;
+	if (isWrittenAlgorithm(p.lesson)) p.algorithmWork = null;
 	if (p.recall) {
 		if (p.recall.index === 2) p.recall = null;
 		else p.recall.index++;
@@ -389,6 +428,8 @@ export function startForestPractice(
 	p.position = 0;
 	p.selection = [];
 	if (p.lesson === "schriftlich-addieren") p.columnWork = emptyColumnWork();
+	if (p.lesson === "schriftlich-subtrahieren") p.subtractionWork = null;
+	if (isWrittenAlgorithm(p.lesson)) p.algorithmWork = null;
 }
 export function forestRecallEligible(
 	p: ForestProgress,
