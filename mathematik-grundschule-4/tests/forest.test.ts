@@ -42,7 +42,7 @@ const complete = (p: ReturnType<typeof freshForest>) => {
 };
 describe("Number Forest lessons", () => {
 	it("has complete explanations and stable direct links for each lesson", () => {
-		expect(FOREST_LESSONS).toHaveLength(20);
+		expect(FOREST_LESSONS).toHaveLength(29);
 		for (const lesson of FOREST_LESSONS) {
 			expect(lesson.goals).toHaveLength(3);
 			expect(lesson.paragraphs.length).toBeGreaterThanOrEqual(4);

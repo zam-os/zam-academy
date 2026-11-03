@@ -181,6 +181,7 @@ export function forestParentView(def: ForestLesson, p: ForestProgress): string {
 				success?.mode === "later" &&
 				p.completed["mission-b"] !== undefined &&
 				success.at - p.completed["mission-b"] >= 86400000;
+			const observedGoal = success ? (def.evidenceGoals?.[i] ?? goal) : goal;
 			const label = later
 				? "An einem späteren Tag geprüft"
 				: success
@@ -190,7 +191,7 @@ export function forestParentView(def: ForestLesson, p: ForestProgress): string {
 						: last
 							? "Ausprobiert"
 							: "Noch offen";
-			return `<article class="observation"><span class="observation-mark" aria-hidden="true">${success ? "✓" : helped ? "◇" : "○"}</span><div><span class="eyebrow">${label}</span><h3>${escapeHtml(goal)}</h3><p>${last ? `${date(last.at)} · ${last.mode === "guided" ? "Übung in der Werkstatt" : "Neue Aufgabe"}${last.helped ? " · mit Tipp oder weiterem Versuch" : ""}` : "Dazu gibt es noch keinen Aufgabenversuch."}</p>${last ? `<p class="evidence-example">Beispiel: ${escapeHtml(last.prompt)} <span>${escapeHtml(last.explanation)}</span></p>` : ""}</div></article>`;
+			return `<article class="observation"><span class="observation-mark" aria-hidden="true">${success ? "✓" : helped ? "◇" : "○"}</span><div><span class="eyebrow">${label}</span><h3>${escapeHtml(observedGoal)}</h3><p>${last ? `${date(last.at)} · ${last.mode === "guided" ? "Übung in der Werkstatt" : "Neue Aufgabe"}${last.helped ? " · mit Tipp oder weiterem Versuch" : ""}` : "Dazu gibt es noch keinen Aufgabenversuch."}</p>${last ? `<p class="evidence-example">Beispiel: ${escapeHtml(last.prompt)} <span>${escapeHtml(last.explanation)}</span></p>` : ""}</div></article>`;
 		})
 		.join(
 			"",

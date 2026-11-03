@@ -1,3 +1,6 @@
+import { geometryMistake } from "./geometry-model";
+import { shapeTask, shapeLab, shapeExit } from "./geometry";
+import { isShape } from "./worlds";
 import { measureTask, measureLab, measureExit } from "./measurement";
 import { isMeasure } from "./worlds";
 import { acceptsWorkshop, type Scene, type Workshop } from "./workshop";
@@ -62,6 +65,7 @@ export type ForestTask = {
 		| "divisors"
 		| "model";
 	model?: Workshop;
+	variantSeed?: number;
 	scene?: Scene;
 	goal: 1 | 2 | 3;
 	prompt: string;
@@ -181,6 +185,7 @@ export function forestTask(
 	seed: number,
 	index: number,
 ): ForestTask {
+	if (isShape(id)) return shapeTask(id, level, seed, index);
 	if (isMeasure(id)) return measureTask(id, level, seed, index);
 	if (id === "systematisch-kombinieren")
 		return combinationTask(level, seed, index);
@@ -327,6 +332,7 @@ export function forestTask(
 	};
 }
 export function forestLab(id: ExtraLessonId, goal: number): ForestTask {
+	if (isShape(id)) return shapeLab(id, goal);
 	if (isMeasure(id)) return measureLab(id, goal);
 	if (id === "systematisch-kombinieren") return combinationLab(goal);
 	if (id === "teiler-vielfache") return divisorLab(goal);
@@ -370,6 +376,10 @@ export function forestLab(id: ExtraLessonId, goal: number): ForestTask {
 	};
 }
 export function forestMistake(task: ForestTask, answer: Answer | null): string {
+	if (task.model?.scene.geometry)
+		return Array.isArray(answer)
+			? geometryMistake(task.model, answer)
+			: task.hint;
 	if (task.model) return task.hint;
 	if (task.combination) return combinationMistake(task.combination, answer);
 	if (task.divisorTotal)
@@ -431,6 +441,7 @@ export function forestExit(
 	seed: number,
 	index: number,
 ): ForestTask {
+	if (isShape(id)) return shapeExit(id, seed, index);
 	if (isMeasure(id)) return measureExit(id, seed, index);
 	if (id === "systematisch-kombinieren") return combinationExit(seed, index);
 	if (isInvestigation(id)) return investigationExit(id, seed, index);

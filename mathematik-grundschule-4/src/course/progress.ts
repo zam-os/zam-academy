@@ -1,3 +1,5 @@
+import { shapeFamily, expandShapeFamily } from "./geometry";
+import { isShape } from "./worlds";
 import { measureFamily } from "./measurement";
 import { isMeasure } from "./worlds";
 import { isWorldLesson } from "./worlds";
@@ -52,6 +54,7 @@ export interface ForestAttempt {
 	first: boolean;
 	mode: "guided" | "exit" | "later";
 	signature: string;
+	taskSeed?: number;
 	prompt: string;
 	explanation: string;
 }
@@ -243,6 +246,7 @@ export function validForest(raw: unknown): raw is ForestProgress {
 				typeof a.goal === "number" &&
 				[1, 2, 3].includes(a.goal) &&
 				stamp(a.at) &&
+				(a.taskSeed === undefined || integer(a.taskSeed, 4294967295)) &&
 				typeof a.outcome === "boolean" &&
 				typeof a.helped === "boolean" &&
 				typeof a.first === "boolean" &&
@@ -330,8 +334,70 @@ export function forestQuizTask(quiz: ForestLesson["quiz"]): ForestTask {
 		explanation: quiz.explanation,
 	};
 }
+
+function worldSignature(
+	id: ExtraLessonId,
+	task: ForestTask,
+	answer?: Answer | null,
+): string | null {
+	return isMeasure(id)
+		? JSON.stringify(["measure", ...measureFamily(task)])
+		: isShape(id)
+			? JSON.stringify(["shape", ...shapeFamily(task, answer)])
+			: null;
+}
+
+function seenWorldFamilies(attempts: ForestAttempt[]): Set<string> {
+	const result = new Set(attempts.map((a) => a.signature));
+	for (const a of attempts) {
+		try {
+			const value: unknown = JSON.parse(a.signature);
+			if (
+				Array.isArray(value) &&
+				value[0] === "shape" &&
+				value
+					.slice(1)
+					.every((v) => typeof v === "string" || typeof v === "number")
+			)
+				for (const f of expandShapeFamily(value.slice(1)))
+					result.add(JSON.stringify(["shape", ...f]));
+		} catch {
+			/* Old signatures need no interpretation. */
+		}
+	}
+	return result;
+}
+function freshWorldExit(
+	p: ForestProgress,
+	seed: number,
+	index: number,
+): ForestTask {
+	const pinned = p.attempts.find(
+		(a) => a.key === forestKey(p) && a.taskSeed !== undefined,
+	)?.taskSeed;
+	if (pinned !== undefined)
+		return { ...forestExit(p.lesson, pinned, index), variantSeed: pinned };
+	const original = forestExit(p.lesson, seed, index);
+	if (!isWorldLesson(p.lesson)) return original;
+	const key = forestKey(p),
+		seen = seenWorldFamilies(p.attempts.filter((a) => a.key !== key));
+	for (let n = 0; n < 1000; n++) {
+		const task =
+			n === 0
+				? original
+				: forestExit(p.lesson, (seed + Math.imul(n, 1640531527)) >>> 0, index);
+		if (!seen.has(worldSignature(p.lesson, task) ?? ""))
+			return {
+				...task,
+				variantSeed: n === 0 ? seed : (seed + Math.imul(n, 1640531527)) >>> 0,
+			};
+	}
+	// A long optional history can exhaust a finite family. Repeats remain usable
+	// and recordForest will label them as helped rather than fresh evidence.
+	return { ...original, variantSeed: seed };
+}
 export function activeForestTask(p: ForestProgress): ForestTask | null {
-	if (p.recall) return forestExit(p.lesson, p.recall.seed, p.recall.index);
+	if (p.recall) return freshWorldExit(p, p.recall.seed, p.recall.index);
 	if (p.optional) return forestTask(p.lesson, p.optional, p.seed, p.index);
 	if (p.stage === "lab") return forestLab(p.lesson, p.index);
 	if (p.stage === "quiz") {
@@ -346,7 +412,7 @@ export function activeForestTask(p: ForestProgress): ForestTask | null {
 			p.index,
 		);
 	if (p.stage === "exit")
-		return forestExit(p.lesson, (p.seed + 15485863) >>> 0, p.index);
+		return freshWorldExit(p, (p.seed + 15485863) >>> 0, p.index);
 	return null;
 }
 export function independentForest(a: ForestAttempt): boolean {
@@ -380,35 +446,37 @@ export function recordForest(
 ): boolean {
 	if (answer === null) return false;
 	const key = forestKey(p),
-		signature = JSON.stringify(
-			isMeasure(p.lesson)
-				? ["measure", ...measureFamily(task)]
-				: task.model
-					? ["model", ...task.model.identity]
-					: task.combination
-						? ["combinations", combinationIdentity(task.combination)]
-						: task.divisorTotal
-							? ["divisors-1-to-10", task.divisorTotal]
-							: task.investigation
-								? ["investigation", ...task.investigation.identity]
-								: task.calculation
-									? calculationFamily(task.calculation)
-									: [
-											task.kind,
-											task.prompt,
-											task.kind === "order" || task.kind === "parts"
-												? [...(task.numbers ?? [])].sort((a, b) => a - b)
-												: task.numbers,
-											task.line,
-											task.whole,
-											task.choices
-												? [...task.choices].sort((a, b) => a.value - b.value)
-												: undefined,
-										],
-		);
-	const first = !p.attempts.some(
-		(a) => a.key === key || a.signature === signature,
-	);
+		signature =
+			worldSignature(p.lesson, task, answer) ??
+			JSON.stringify(
+				isMeasure(p.lesson)
+					? ["measure", ...measureFamily(task)]
+					: task.model
+						? ["model", ...task.model.identity]
+						: task.combination
+							? ["combinations", combinationIdentity(task.combination)]
+							: task.divisorTotal
+								? ["divisors-1-to-10", task.divisorTotal]
+								: task.investigation
+									? ["investigation", ...task.investigation.identity]
+									: task.calculation
+										? calculationFamily(task.calculation)
+										: [
+												task.kind,
+												task.prompt,
+												task.kind === "order" || task.kind === "parts"
+													? [...(task.numbers ?? [])].sort((a, b) => a - b)
+													: task.numbers,
+												task.line,
+												task.whole,
+												task.choices
+													? [...task.choices].sort((a, b) => a.value - b.value)
+													: undefined,
+											],
+			);
+	const first =
+		!p.attempts.some((a) => a.key === key) &&
+		!seenWorldFamilies(p.attempts).has(signature);
 	const outcome = correctForest(task, answer);
 	p.attempts.push({
 		id: ulid(now),
@@ -424,11 +492,14 @@ export function recordForest(
 				? "exit"
 				: "guided",
 		signature,
+		...(task.variantSeed !== undefined ? { taskSeed: task.variantSeed } : {}),
 		prompt: task.combination
 			? `${task.prompt} Auswahlreihen: ${task.combination.axes.map((a) => `${a.label}: ${a.options.join(", ")}`).join("; ")}.`
 			: task.investigation
 				? `${task.prompt} ${task.investigation.caption}: ${task.investigation.headers.join(" / ")}; ${task.investigation.rows.map((row) => row.join(" / ")).join("; ")}.`
-				: task.prompt,
+				: task.model?.scene.geometry && Array.isArray(answer)
+					? `${task.prompt} Eingetragene Felder, zeilenweise: ${answer.join(", ")}.`
+					: task.prompt,
 		explanation: task.explanation,
 	});
 	p.attempts = p.attempts.slice(-2000);

@@ -260,6 +260,14 @@
 			"checked": "2026-11-03",
 			"content_version": 10,
 			"details": "189 native assertions including six complete measurement journeys, model persistence/reset and formatted worksheets; production workshops inspected at 320/1280 px, dark/light settings, ruler solved using actual controls. Teacher/media and physical measurements remain pending."
+		},
+		{
+			"surface": "Isolated localhost:5234 harness and built localhost:5235 app",
+			"check": "Shape Bay digital implementation",
+			"status": "passed",
+			"checked": "2026-11-03",
+			"content_version": 11,
+			"details": "312 native assertions including all 15 new measurement/geometry journeys, rapid grid cycles, model persistence and property-based constructions. Nine geometry starts inspected at 320 px without body overflow; built cube net solved with keyboard Enter and saved-cell focus retained. Cube building and cuboid diagram inspected in dark phone layout. No physical construction or teacher approval claimed."
 		}
 	],
 	"remaining": [
@@ -272,9 +280,9 @@
 	],
 	"checked": "2026-11-03",
 	"automated_checks": {
-		"app": "npm ci --offline, npm run typecheck, npm test (130 tests), npm run package:zip, npm run verify:release and external Biome format/lint passed. No dependency changes.",
+		"app": "npm ci --offline, npm run typecheck, npm test (138 tests), npm run package:zip, npm run verify:release and external Biome format/lint passed. No dependency changes.",
 		"catalog": "node --test scripts/build-catalog.test.mjs scripts/academy-registry.test.mjs: 48 checks passed. This local-only draft remains excluded.",
-		"cell": "24 atoms, 86 items, version 2026.11.10. Independent parsed-JSON check preserves the original 18 atoms/62 items and identifiers; 110 unique atom/item IDs. Disposable install/enrol/recall/reinstall and all 38 cells pass with CI-pinned zam-core 0.54.0. No broad official binding or history transfer.",
+		"cell": "33 atoms, 122 items, version 2026.11.11. Independent parsed-JSON check preserves the prior 24 atoms/86 items; 155 unique atom/item IDs. All 38 cells and disposable install/enrol/recall/reinstall passed with CI-pinned zam-core 0.54.0. No official whole-grade binding or history transfer.",
 		"all_cells": "ZAM_CORE=<temporary zam-core 0.54.0 file URL> node scripts/validate-cells.mjs: all 38 Academy cells, including the newly merged German Grade 4 draft, validated in disposable libraries.",
 		"package": "npm run package:zip and npm run verify:release passed. npm run verify:release -- --complete returned the expected nonzero result for missing teacher review/media, final playback, direct-file startup, ZAM learner-UI recall and physical touch."
 	},
@@ -489,6 +497,21 @@
 			"Teacher review and recordings pending",
 			"Physical work is instructed, not observed",
 			"Quantity ordering/discussion and open-ended questions remain curriculum gaps"
+		]
+	},
+	"shape_bay": {
+		"lessons": 9,
+		"status": "digital-implementation-verified",
+		"unit_tests": 138,
+		"native_browser_assertions": 312,
+		"root_tests": 48,
+		"core_version": "0.54.0",
+		"cell_atoms": 33,
+		"cell_items": 122,
+		"limitations": [
+			"Teacher review and recordings pending",
+			"Exact paper construction, physical nets/mirrors/cubes and discussion unobserved",
+			"Broader tessellations, symmetric ornament design and physical kipp movements remain limited"
 		]
 	}
 }

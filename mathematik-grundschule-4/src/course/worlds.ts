@@ -9,6 +9,20 @@ export const MEASURE_IDS = [
 export type MeasureId = (typeof MEASURE_IDS)[number];
 export const isMeasure = (id: string): id is MeasureId =>
 	MEASURE_IDS.some((key) => key === id);
+export const SHAPE_IDS = [
+	"wege-lageplaene",
+	"wuerfelgebaeude-ansichten",
+	"figuren-zeichnen",
+	"koerper-netze",
+	"spiegeln-symmetrie",
+	"vergroessern-verkleinern",
+	"parkette-ornamente",
+	"flaechen-vergleichen",
+	"rauminhalte-wuerfel",
+] as const;
+export type ShapeId = (typeof SHAPE_IDS)[number];
+export const isShape = (id: string): id is ShapeId =>
+	SHAPE_IDS.some((key) => key === id);
 export type World = "forest" | "measure" | "shape" | "chance" | "expedition";
 export const WORLDS: {
 	id: World;
@@ -28,6 +42,12 @@ export const WORLDS: {
 		icon: "☀",
 		lead: "Messen, wechseln und planen",
 	},
+	{
+		id: "shape",
+		label: "Formenbucht",
+		icon: "◇",
+		lead: "Bauen, zeichnen und verwandeln",
+	},
 ];
 
-export const isWorldLesson = (id: string) => isMeasure(id);
+export const isWorldLesson = (id: string) => isMeasure(id) || isShape(id);

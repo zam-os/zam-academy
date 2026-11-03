@@ -1,4 +1,5 @@
-import { MEASURE_IDS, type World } from "./worlds";
+import { SHAPE_LESSONS } from "./shape-catalog";
+import { MEASURE_IDS, SHAPE_IDS, type World } from "./worlds";
 import { MEASURE_LESSONS } from "./measure-catalog";
 export const EXTRA_LESSON_IDS = [
 	"zahlen-vergleichen-ordnen",
@@ -16,6 +17,7 @@ export const EXTRA_LESSON_IDS = [
 	"systematisch-kombinieren",
 	"teiler-vielfache",
 	...MEASURE_IDS,
+	...SHAPE_IDS,
 ] as const;
 export type ExtraLessonId = (typeof EXTRA_LESSON_IDS)[number];
 export interface QuizChoice {
@@ -30,6 +32,7 @@ export interface ForestLesson {
 	icon: string;
 	lead: string;
 	goals: [string, string, string];
+	evidenceGoals?: [string, string, string];
 	paragraphs: string[];
 	example: string;
 	takeaway: string;
@@ -701,7 +704,7 @@ export const FOREST_LESSONS: ForestLesson[] = [
 			"Du hast 30 kleine Gegenstände. Welche Gruppengrößen von 1 bis 10 gehen ohne Rest auf? Zeige zwei passende Größen mit Gegenständen oder einer Zeichnung.",
 	},
 ];
-FOREST_LESSONS.push(...MEASURE_LESSONS);
+FOREST_LESSONS.push(...MEASURE_LESSONS, ...SHAPE_LESSONS);
 export const COURSE_LINKS = [
 	{
 		id: "stellenwerte-buendeln",

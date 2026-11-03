@@ -1,9 +1,9 @@
 {
 	"$schema": "https://zam.app/schemas/v1/kvt-tile.json",
 	"tile_id": "zam-academy:mathematik-grundschule-4",
-	"version": "2026.11.10",
+	"version": "2026.11.11",
 	"title": "Mathematik 4 Grundschule: Milos Entdeckerinsel",
-	"description": "21 deutsche Entdeckerlektionen im Zahlenwald und auf dem Messmarkt: Zahlen und Rechnen bis zur Million, Längen, Masse, Fassungsvermögen, Uhrzeiten, Geld, Einheitenwechsel und begründetes Schätzen. Lokale Erprobungsfassung; fachliche Freigabe und Lehrervideos fehlen. Kein freigegebener Jahreskurs.",
+	"description": "30 deutsche Entdeckerlektionen im Zahlenwald, auf dem Messmarkt und in der Formenbucht: Zahlen und Rechnen bis zur Million, Größen sowie konkrete Geometrie mit Plänen, Zeichnen, Netzen, Spiegeln, Mustern und Einheitswürfeln. Lokale Erprobungsfassung; fachliche Freigabe und Lehrervideos fehlen. Kein freigegebener Jahreskurs.",
 	"publisher": "ZAM Academy",
 	"sources": [
 		{
@@ -28,6 +28,11 @@
 		{
 			"uri": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik",
 			"label": "LehrplanPLUS Mathematik 3/4, Lernbereich 3 Größen und Messen",
+			"checked": "2026-11-03"
+		},
+		{
+			"uri": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik",
+			"label": "LehrplanPLUS Mathematik 3/4, Lernbereich 2 Raum und Form",
 			"checked": "2026-11-03"
 		}
 	],
@@ -2183,6 +2188,816 @@
 					"question": "Drei Päckchen kosten je 2,35 €. Das Budget beträgt 7 €. Reicht ein Überschlag für die Entscheidung? Begründe genau.",
 					"concept": "Hier brauchst du die genaue Rechnung; das Budget reicht nicht.",
 					"sample_solution": "3 · 235 ct = 705 ct = 7,05 €. Es fehlen 5 ct. Ein grober Überschlag kann diese knappe Grenze übersehen."
+				}
+			]
+		},
+		{
+			"id": "01M6HJYH48WKRX7J6JPD48J22G",
+			"atom_uri": "urn:zam:atom:01M6HJYH48WKRX7J6JPD48J22G",
+			"namespace": "zam-academy-mathematik-grundschule-4",
+			"slug": "gs4-wege-lageplaene",
+			"title": "Wege und Lagepläne",
+			"domain": "mathematik/formenbucht",
+			"reduction": "axiomatic",
+			"typical_age_min": 8,
+			"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=wege-lageplaene",
+			"prerequisites": [
+				{
+					"atom_id": "01M6HGN3MBNWG2APEZG7EVE8H6",
+					"type": "soft",
+					"rationale": "Längen und gleich große Einheiten unterstützen die geometrischen Modelle."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "mathematik-grundschule-4",
+					"topic_code": "wege-lageplaene",
+					"topic_title": "Wege und Lagepläne"
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M6HJYH490MP5B3KSDZMAS8KV",
+					"slug": "gs4-wege-lageplaene-1",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=wege-lageplaene",
+					"materiality": "material",
+					"question": "Was prüfst du zuerst, bevor du einen Lageplan benutzt?",
+					"concept": "Orientierung und Bedeutung der Zeichen oder Abstände.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Orientierung und Bedeutung der Zeichen oder Abstände.",
+							"Nur die Farbe des Plans."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M6HJYH4AX75KHKC3MPBFT0DC",
+					"slug": "gs4-wege-lageplaene-2",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=wege-lageplaene",
+					"materiality": "material",
+					"question": "Wie gehst du auf demselben Weg rückwärts zurück?",
+					"concept": "In umgekehrter Reihenfolge und mit umgekehrten Richtungen.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"In umgekehrter Reihenfolge und mit umgekehrten Richtungen.",
+							"In derselben Reihenfolge mit denselben Richtungen."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M6HJYH4AY2QEZ166WWPAWJF5",
+					"slug": "gs4-wege-lageplaene-3",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=wege-lageplaene",
+					"materiality": "material",
+					"question": "Ein Planweg führt drei Abstände nach Osten und zwei nach Norden. Ein Abstand bedeutet 20 m. Wie lang ist dieser Weg?",
+					"concept": "100 m.",
+					"sample_solution": "Es sind 3 +2 =5 Wegabstände. 5 ·20 m =100 m. Die diagonale Luftlinie ist ein anderer Weg."
+				},
+				{
+					"id": "01M6HJYH4A3E9CAAPX1HP2CQDK",
+					"slug": "gs4-wege-lageplaene-4",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=wege-lageplaene",
+					"materiality": "material",
+					"question": "Milo ging erst zwei nach Westen und dann drei nach Süden. Beschreibe den Rückweg.",
+					"concept": "Erst drei nach Norden, dann zwei nach Osten.",
+					"sample_solution": "Die letzte Bewegung wird zuerst rückgängig gemacht. Süden wird Norden, danach Westen zu Osten."
+				}
+			]
+		},
+		{
+			"id": "01M6HJYH4ANKVXBJFYMDYPCEF8",
+			"atom_uri": "urn:zam:atom:01M6HJYH4ANKVXBJFYMDYPCEF8",
+			"namespace": "zam-academy-mathematik-grundschule-4",
+			"slug": "gs4-wuerfelgebaeude-ansichten",
+			"title": "Würfelgebäude und Ansichten",
+			"domain": "mathematik/formenbucht",
+			"reduction": "axiomatic",
+			"typical_age_min": 8,
+			"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=wuerfelgebaeude-ansichten",
+			"prerequisites": [
+				{
+					"atom_id": "01M6HGN3MBNWG2APEZG7EVE8H6",
+					"type": "soft",
+					"rationale": "Längen und gleich große Einheiten unterstützen die geometrischen Modelle."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "mathematik-grundschule-4",
+					"topic_code": "wuerfelgebaeude-ansichten",
+					"topic_title": "Würfelgebäude und Ansichten"
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M6HJYH4AZ0RR742CAWDWBKCG",
+					"slug": "gs4-wuerfelgebaeude-ansichten-1",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=wuerfelgebaeude-ansichten",
+					"materiality": "material",
+					"question": "Was bedeutet die Zahl 3 an einem Platz eines lückenlosen Würfelbauplans?",
+					"concept": "Dort steht ein 3 Würfel hoher Stapel.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Dort steht ein 3 Würfel hoher Stapel.",
+							"Im ganzen Gebäude gibt es insgesamt 3 Würfel."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M6HJYH4ADHAMS8Q8HAPXVY4K",
+					"slug": "gs4-wuerfelgebaeude-ansichten-2",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=wuerfelgebaeude-ansichten",
+					"materiality": "material",
+					"question": "Wie bestimmst du die Höhe einer Spalte der Vorderansicht?",
+					"concept": "Nimm die größte Stapelhöhe in dieser Spalte des Bauplans.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Nimm die größte Stapelhöhe in dieser Spalte des Bauplans.",
+							"Addiere immer alle Stapelhöhen hintereinander."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M6HJYH4AR6E1JGTAFYZ4CT8W",
+					"slug": "gs4-wuerfelgebaeude-ansichten-3",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=wuerfelgebaeude-ansichten",
+					"materiality": "material",
+					"question": "Hinten stehen Stapel mit Höhen 2 und 4, vorne mit Höhen 3 und 1. Wie viele Würfel sind es und welche Vorderansicht entsteht?",
+					"concept": "10 Würfel; vorne links Höhe 3, rechts Höhe 4.",
+					"sample_solution": "Für alle Würfel addierst du 2 +4 +3 +1 =10. In der linken Spalte bestimmt der 3er-Stapel, rechts der 4er-Stapel die Ansicht."
+				},
+				{
+					"id": "01M6HJYH4ATQZSZ4XAGV5RJ180",
+					"slug": "gs4-wuerfelgebaeude-ansichten-4",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=wuerfelgebaeude-ansichten",
+					"materiality": "material",
+					"question": "Ein Gebäude enthält 15 Würfel. Drei seiner vier Stapel sind 2, 4 und 5 Würfel hoch. Wie hoch ist der fehlende Stapel?",
+					"concept": "4 Würfel hoch.",
+					"sample_solution": "Die bekannten Stapel enthalten 2 +4 +5 =11 Würfel. 15 −11 =4. Jeder Stapel ist von unten lückenlos gefüllt."
+				}
+			]
+		},
+		{
+			"id": "01M6HJYH4AXT9WDWJHRV6AXSSS",
+			"atom_uri": "urn:zam:atom:01M6HJYH4AXT9WDWJHRV6AXSSS",
+			"namespace": "zam-academy-mathematik-grundschule-4",
+			"slug": "gs4-figuren-zeichnen",
+			"title": "Figuren zeichnen",
+			"domain": "mathematik/formenbucht",
+			"reduction": "axiomatic",
+			"typical_age_min": 8,
+			"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=figuren-zeichnen",
+			"prerequisites": [
+				{
+					"atom_id": "01M6HGN3MBNWG2APEZG7EVE8H6",
+					"type": "soft",
+					"rationale": "Längen und gleich große Einheiten unterstützen die geometrischen Modelle."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "mathematik-grundschule-4",
+					"topic_code": "figuren-zeichnen",
+					"topic_title": "Figuren zeichnen"
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M6HJYH4AYRYZMNQ0Q776RD80",
+					"slug": "gs4-figuren-zeichnen-1",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=figuren-zeichnen",
+					"materiality": "material",
+					"question": "Welche Winkel hat ein Rechteck?",
+					"concept": "Vier rechte Winkel.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Vier rechte Winkel.",
+							"Beliebige Winkel, wenn gegenüberliegende Seiten gleich lang sind."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M6HJYH4ARHD1717N6PKNMFQC",
+					"slug": "gs4-figuren-zeichnen-2",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=figuren-zeichnen",
+					"materiality": "material",
+					"question": "Was bleibt beim Zeichnen eines Kreises mit dem Zirkel gleich?",
+					"concept": "Der Abstand vom festen Mittelpunkt zum Rand.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Der Abstand vom festen Mittelpunkt zum Rand.",
+							"Nur die Farbe, die Zirkelöffnung darf ständig wechseln."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M6HJYH4A54FR96ZJAF66DQE4",
+					"slug": "gs4-figuren-zeichnen-3",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=figuren-zeichnen",
+					"materiality": "material",
+					"question": "Ein Rechteck hat oben 7 cm und rechts 4 cm. Bestimme die anderen Seiten und die Randlänge.",
+					"concept": "Unten 7 cm, links 4 cm; Randlänge 22 cm.",
+					"sample_solution": "Gegenüberliegende Seiten sind gleich lang. 7 +4 +7 +4 =22 cm. Prüfe außerdem alle vier rechten Winkel."
+				},
+				{
+					"id": "01M6HJYH4AH0RY8D6WBDAH1HD9",
+					"slug": "gs4-figuren-zeichnen-4",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=figuren-zeichnen",
+					"materiality": "material",
+					"question": "Der Zirkel ist 25 mm geöffnet. Wie groß ist der Abstand Mitte–Rand und die gerade Strecke Rand–Mitte–Rand?",
+					"concept": "25 mm und 50 mm.",
+					"sample_solution": "Jeder Randpunkt ist 25 mm von der Mitte entfernt. Durch die Mitte folgen zwei dieser Abstände: 25 mm +25 mm =50 mm."
+				}
+			]
+		},
+		{
+			"id": "01M6HJYH4AE1H1FN5JGJ6TQXM8",
+			"atom_uri": "urn:zam:atom:01M6HJYH4AE1H1FN5JGJ6TQXM8",
+			"namespace": "zam-academy-mathematik-grundschule-4",
+			"slug": "gs4-koerper-netze",
+			"title": "Körper und Netze",
+			"domain": "mathematik/formenbucht",
+			"reduction": "axiomatic",
+			"typical_age_min": 8,
+			"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=koerper-netze",
+			"prerequisites": [
+				{
+					"atom_id": "01M6HGN3MBNWG2APEZG7EVE8H6",
+					"type": "soft",
+					"rationale": "Längen und gleich große Einheiten unterstützen die geometrischen Modelle."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "mathematik-grundschule-4",
+					"topic_code": "koerper-netze",
+					"topic_title": "Körper und Netze"
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M6HJYH4A845SGH1V3VDCMH2B",
+					"slug": "gs4-koerper-netze-1",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=koerper-netze",
+					"materiality": "material",
+					"question": "Sind sechs an Kanten verbundene Quadrate immer ein Würfelnetz?",
+					"concept": "Nein, ihre Anordnung muss sechs verschiedene Seiten ohne Überlappung schließen.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Nein, ihre Anordnung muss sechs verschiedene Seiten ohne Überlappung schließen.",
+							"Ja, die Anzahl allein genügt."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M6HJYH4ADWRWHQN6F8EGKZQD",
+					"slug": "gs4-koerper-netze-2",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=koerper-netze",
+					"materiality": "material",
+					"question": "Was bedeutet deckungsgleich bei zwei Flächen?",
+					"concept": "Sie passen beim geeigneten Aufeinanderlegen genau aufeinander.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Sie passen beim geeigneten Aufeinanderlegen genau aufeinander.",
+							"Sie haben nur dieselbe Farbe."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M6HJYH4APVCTYH8Z9WCPKRMM",
+					"slug": "gs4-koerper-netze-3",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=koerper-netze",
+					"materiality": "material",
+					"question": "Erkläre, wie du ein selbst gezeichnetes Würfelnetz prüfen kannst.",
+					"concept": "Gedanklich oder mit Papier falten und alle sechs Seiten auf Überlappung und Abschluss prüfen.",
+					"sample_solution": "Eine Fläche als Boden festhalten, Nachbarn hochklappen und die restlichen Flächen verfolgen. Es müssen sechs verschiedene Seiten entstehen. Drehen des gesamten Netzes verändert seine Eignung nicht."
+				},
+				{
+					"id": "01M6HJYH4A7N6102KFFJ5GD097",
+					"slug": "gs4-koerper-netze-4",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=koerper-netze",
+					"materiality": "material",
+					"question": "Ein Quader hat die Kantenlängen 2, 4 und 5 Einheiten. Beschreibe seine drei Flächenpaare.",
+					"concept": "Je zwei Rechtecke mit Seiten 2 und 4, 2 und 5 sowie 4 und 5.",
+					"sample_solution": "Gegenüberliegende Flächen sind deckungsgleich. Drei Paare mit je zwei Flächen ergeben insgesamt sechs Flächen. Nicht alle Kanten sind gleich, daher ist dieser Quader kein Würfel."
+				}
+			]
+		},
+		{
+			"id": "01M6HJYH4AGQQ9SW4WK5Y6VTAD",
+			"atom_uri": "urn:zam:atom:01M6HJYH4AGQQ9SW4WK5Y6VTAD",
+			"namespace": "zam-academy-mathematik-grundschule-4",
+			"slug": "gs4-spiegeln-symmetrie",
+			"title": "Spiegeln und Symmetrie",
+			"domain": "mathematik/formenbucht",
+			"reduction": "axiomatic",
+			"typical_age_min": 8,
+			"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=spiegeln-symmetrie",
+			"prerequisites": [
+				{
+					"atom_id": "01M6HGN3MBNWG2APEZG7EVE8H6",
+					"type": "soft",
+					"rationale": "Längen und gleich große Einheiten unterstützen die geometrischen Modelle."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "mathematik-grundschule-4",
+					"topic_code": "spiegeln-symmetrie",
+					"topic_title": "Spiegeln und Symmetrie"
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M6HJYH4ASGHPPK8RRKR3GH13",
+					"slug": "gs4-spiegeln-symmetrie-1",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=spiegeln-symmetrie",
+					"materiality": "material",
+					"question": "Wie liegen ein Punkt und sein Spiegelpunkt zur Symmetrieachse?",
+					"concept": "Genau gegenüber und im gleichen Abstand.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Genau gegenüber und im gleichen Abstand.",
+							"Immer auf derselben Seite der Achse."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M6HJYH4AYE83N9ZYYPAVK9X8",
+					"slug": "gs4-spiegeln-symmetrie-2",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=spiegeln-symmetrie",
+					"materiality": "material",
+					"question": "Was passiert mit einem Punkt direkt auf der Spiegelachse?",
+					"concept": "Er bleibt an seinem Platz.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Er bleibt an seinem Platz.",
+							"Er wird immer zwei Felder verschoben."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M6HJYH4A6PCRCVVX9H438NBT",
+					"slug": "gs4-spiegeln-symmetrie-3",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=spiegeln-symmetrie",
+					"materiality": "material",
+					"question": "Ein Punkt liegt in Spalte 1, Zeile 2 eines Fünfergitters. Die senkrechte Achse geht durch Spalte 3. Wo liegt der Spiegelpunkt?",
+					"concept": "Spalte 5, Zeile 2.",
+					"sample_solution": "Spalte 1 liegt zwei Feldabstände links von der Achse. Zwei Abstände rechts liegt Spalte 5. Die Zeile bleibt bei einer senkrechten Achse gleich."
+				},
+				{
+					"id": "01M6HJYH4AAVP67EC3NQ91C51C",
+					"slug": "gs4-spiegeln-symmetrie-4",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=spiegeln-symmetrie",
+					"materiality": "material",
+					"question": "Woran erkennst du eine achsensymmetrische Figur? Beschreibe eine praktische Prüfung.",
+					"concept": "Beim Falten an der Symmetrieachse passen beide Teile deckungsgleich aufeinander.",
+					"sample_solution": "Jeder Punkt hat einen genau gegenüberliegenden Partner im gleichen Abstand zur Achse; Punkte auf der Achse bleiben fest. Mit Papierfalten oder einem Spiegel kannst du nachprüfen."
+				}
+			]
+		},
+		{
+			"id": "01M6HJYH4A0GQMYQBSKNRKTCQD",
+			"atom_uri": "urn:zam:atom:01M6HJYH4A0GQMYQBSKNRKTCQD",
+			"namespace": "zam-academy-mathematik-grundschule-4",
+			"slug": "gs4-vergroessern-verkleinern",
+			"title": "Vergrößern und Verkleinern",
+			"domain": "mathematik/formenbucht",
+			"reduction": "axiomatic",
+			"typical_age_min": 8,
+			"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=vergroessern-verkleinern",
+			"prerequisites": [
+				{
+					"atom_id": "01M6HGN3MBNWG2APEZG7EVE8H6",
+					"type": "soft",
+					"rationale": "Längen und gleich große Einheiten unterstützen die geometrischen Modelle."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "mathematik-grundschule-4",
+					"topic_code": "vergroessern-verkleinern",
+					"topic_title": "Vergrößern und Verkleinern"
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M6HJYH4ANS9VGX6R35E6TCV9",
+					"slug": "gs4-vergroessern-verkleinern-1",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=vergroessern-verkleinern",
+					"materiality": "material",
+					"question": "Welche Längen veränderst du beim maßstäblichen Vergrößern?",
+					"concept": "Alle entsprechenden Längen mit demselben Faktor.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Alle entsprechenden Längen mit demselben Faktor.",
+							"Nur die längste Seite."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M6HJYH4AC45XHDQV88NNBSHF",
+					"slug": "gs4-vergroessern-verkleinern-2",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=vergroessern-verkleinern",
+					"materiality": "material",
+					"question": "Was bedeutet eine Vergrößerung 2 : 1 für eine Strecke von 1 cm?",
+					"concept": "Sie wird 2 cm lang.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Sie wird 2 cm lang.",
+							"Sie wird um 2 cm auf 3 cm verlängert."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M6HJYH4AWRVQ2Q436PYFX937",
+					"slug": "gs4-vergroessern-verkleinern-3",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=vergroessern-verkleinern",
+					"materiality": "material",
+					"question": "Ein Rechteck ist 4 cm breit und 3 cm hoch. Es soll doppelte Längen erhalten. Welche Maße hat es danach?",
+					"concept": "8 cm breit und 6 cm hoch.",
+					"sample_solution": "Beide Längen werden mit 2 multipliziert. Nur die Breite zu verändern wäre keine passende Vergrößerung."
+				},
+				{
+					"id": "01M6HJYH4AV7H483C0Z7RJ3XFY",
+					"slug": "gs4-vergroessern-verkleinern-4",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=vergroessern-verkleinern",
+					"materiality": "material",
+					"question": "Eine Figur mit Seitenlängen 10 cm und 6 cm wird auf die Hälfte verkleinert. Bestimme die neuen Längen und prüfe mit der Umkehrung.",
+					"concept": "5 cm und 3 cm.",
+					"sample_solution": "10 cm : 2 =5 cm und 6 cm : 2 =3 cm. Beim Verdoppeln erhältst du wieder 10 cm und 6 cm."
+				}
+			]
+		},
+		{
+			"id": "01M6HJYH4A7A46N58720CZ0Q41",
+			"atom_uri": "urn:zam:atom:01M6HJYH4A7A46N58720CZ0Q41",
+			"namespace": "zam-academy-mathematik-grundschule-4",
+			"slug": "gs4-parkette-ornamente",
+			"title": "Parkette und Ornamente",
+			"domain": "mathematik/formenbucht",
+			"reduction": "axiomatic",
+			"typical_age_min": 8,
+			"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=parkette-ornamente",
+			"prerequisites": [
+				{
+					"atom_id": "01M6HGN3MBNWG2APEZG7EVE8H6",
+					"type": "soft",
+					"rationale": "Längen und gleich große Einheiten unterstützen die geometrischen Modelle."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "mathematik-grundschule-4",
+					"topic_code": "parkette-ornamente",
+					"topic_title": "Parkette und Ornamente"
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M6HJYH4A5D8VVEE3MFS3JZVB",
+					"slug": "gs4-parkette-ornamente-1",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=parkette-ornamente",
+					"materiality": "material",
+					"question": "Was kennzeichnet ein Parkett?",
+					"concept": "Die Fläche wird ohne Lücken und Überlappungen bedeckt.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Die Fläche wird ohne Lücken und Überlappungen bedeckt.",
+							"Die einzelnen Teile müssen sich überdecken."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M6HJYH4APTVS8GG3N9MNF0V2",
+					"slug": "gs4-parkette-ornamente-2",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=parkette-ornamente",
+					"materiality": "material",
+					"question": "Was wiederholst du bei einem ausdrücklich vorgegebenen Bandornament?",
+					"concept": "Die ganze angegebene Einheit in derselben Reihenfolge.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Die ganze angegebene Einheit in derselben Reihenfolge.",
+							"Nur das zuletzt sichtbare Zeichen."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M6HJYH4AK599CXV348K4EXE6",
+					"slug": "gs4-parkette-ornamente-3",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=parkette-ornamente",
+					"materiality": "material",
+					"question": "Das Grundmuster ist Kreis–Quadrat–Quadrat–Kreis. Schreibe zwei ganze Wiederholungen und nenne die Anzahl der Fliesen.",
+					"concept": "Kreis–Quadrat–Quadrat–Kreis–Kreis–Quadrat–Quadrat–Kreis;8 Fliesen.",
+					"sample_solution": "Eine Einheit enthält 4 Fliesen. Zwei Einheiten enthalten 8. Die beiden Kreise in der Mitte gehören zu benachbarten Einheiten."
+				},
+				{
+					"id": "01M6HJYH4A5ZEXN3B62CJ04E4S",
+					"slug": "gs4-parkette-ornamente-4",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=parkette-ornamente",
+					"materiality": "material",
+					"question": "Erfinde ein Vierermuster mit mindestens zwei Markierungen und beschreibe drei gleiche Wiederholungen.",
+					"concept": "Zum Beispiel Kreis–Dreieck–Quadrat–Dreieck, dreimal hintereinander.",
+					"sample_solution": "Die selbst gewählte Vierereinheit bleibt in jeder Wiederholung gleich. Drei Vierereinheiten ergeben 12 markierte quadratische Fliesen. Andere konsistente Muster mit mindestens zwei Markierungen sind ebenfalls richtig."
+				}
+			]
+		},
+		{
+			"id": "01M6HJYH4AGDBHV8FHK1B9F9J7",
+			"atom_uri": "urn:zam:atom:01M6HJYH4AGDBHV8FHK1B9F9J7",
+			"namespace": "zam-academy-mathematik-grundschule-4",
+			"slug": "gs4-flaechen-vergleichen",
+			"title": "Flächen mit Einheitsplättchen vergleichen",
+			"domain": "mathematik/formenbucht",
+			"reduction": "axiomatic",
+			"typical_age_min": 8,
+			"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=flaechen-vergleichen",
+			"prerequisites": [
+				{
+					"atom_id": "01M6HGN3MBNWG2APEZG7EVE8H6",
+					"type": "soft",
+					"rationale": "Längen und gleich große Einheiten unterstützen die geometrischen Modelle."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "mathematik-grundschule-4",
+					"topic_code": "flaechen-vergleichen",
+					"topic_title": "Flächen mit Einheitsplättchen vergleichen"
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M6HJYH4A0TEPEWEDMSSKRBCJ",
+					"slug": "gs4-flaechen-vergleichen-1",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=flaechen-vergleichen",
+					"materiality": "material",
+					"question": "Welche Plättchen brauchst du zum direkten Flächenvergleich über die Anzahl?",
+					"concept": "Gleich große Einheitsplättchen ohne Lücken oder Überlappungen.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Gleich große Einheitsplättchen ohne Lücken oder Überlappungen.",
+							"Beliebig unterschiedlich große Plättchen."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M6HJYH4AJ7T22EW5N3RY3F1R",
+					"slug": "gs4-flaechen-vergleichen-2",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=flaechen-vergleichen",
+					"materiality": "material",
+					"question": "Ändert sich die bedeckte Fläche, wenn du dieselben Plättchen lückenlos umlegst?",
+					"concept": "Nein, sie bleibt gleich.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Nein, sie bleibt gleich.",
+							"Ja, eine längere Form hat immer mehr Fläche."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M6HJYH4AJYA3M2RKTR0FQ8AM",
+					"slug": "gs4-flaechen-vergleichen-3",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=flaechen-vergleichen",
+					"materiality": "material",
+					"question": "Eine Figur hat in ihren Reihen 4, 2 und 5 Einheitsplättchen. Wie viele bedecken sie? Was bleibt beim Umlegen gleich?",
+					"concept": "11 Plättchen; die bedeckte Fläche bleibt beim lückenlosen Umlegen gleich.",
+					"sample_solution": "4 +2 +5 =11. Die Plättchengröße und Anzahl bleiben erhalten, wenn genau dieselben Teile ohne Überlappung verwendet werden."
+				},
+				{
+					"id": "01M6HJYH4ASG5M5VEA4DZXFGKG",
+					"slug": "gs4-flaechen-vergleichen-4",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=flaechen-vergleichen",
+					"materiality": "material",
+					"question": "Ein Rahmen hat 5 Reihen mit je 5 Plätzen. 14 Einheitsplättchen liegen schon darin. Wie viele fehlen?",
+					"concept": "11 Plättchen.",
+					"sample_solution": "5 Reihen mit je 5 Plätzen brauchen 25 Plättchen. 25 −14 =11. Gezählt wird die bedeckte Fläche, nicht der Rand."
+				}
+			]
+		},
+		{
+			"id": "01M6HJYH4AA547J6JEJ4653PMX",
+			"atom_uri": "urn:zam:atom:01M6HJYH4AA547J6JEJ4653PMX",
+			"namespace": "zam-academy-mathematik-grundschule-4",
+			"slug": "gs4-rauminhalte-wuerfel",
+			"title": "Rauminhalte mit Einheitswürfeln",
+			"domain": "mathematik/formenbucht",
+			"reduction": "axiomatic",
+			"typical_age_min": 8,
+			"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=rauminhalte-wuerfel",
+			"prerequisites": [
+				{
+					"atom_id": "01M6HGN3MBNWG2APEZG7EVE8H6",
+					"type": "soft",
+					"rationale": "Längen und gleich große Einheiten unterstützen die geometrischen Modelle."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "mathematik-grundschule-4",
+					"topic_code": "rauminhalte-wuerfel",
+					"topic_title": "Rauminhalte mit Einheitswürfeln"
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M6HJYH4ANRPSKKJRF4GNWNJ4",
+					"slug": "gs4-rauminhalte-wuerfel-1",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=rauminhalte-wuerfel",
+					"materiality": "material",
+					"question": "Welche Würfel zählen zum Rauminhalt eines lückenlos gefüllten Körpers?",
+					"concept": "Alle Einheitswürfel, auch verdeckte und innere.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Alle Einheitswürfel, auch verdeckte und innere.",
+							"Nur die Würfel, die du von vorne siehst."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M6HJYH4AM9D2KR2YME5EJMYH",
+					"slug": "gs4-rauminhalte-wuerfel-2",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=rauminhalte-wuerfel",
+					"materiality": "material",
+					"question": "Wann bedeuten gleich viele Würfel auch gleich viel Rauminhalt?",
+					"concept": "Wenn die Einheitswürfel gleich groß sind und ohne Lücken gebaut werden.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Wenn die Einheitswürfel gleich groß sind und ohne Lücken gebaut werden.",
+							"Immer, unabhängig von der Würfelgröße."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M6HJYH4A8D3PSG8AJ7GZPB72",
+					"slug": "gs4-rauminhalte-wuerfel-3",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=rauminhalte-wuerfel",
+					"materiality": "material",
+					"question": "Eine Kiste enthält drei gleiche Schichten. Jede Schicht hat zwei Reihen mit je vier Einheitswürfeln. Wie viele Würfel füllen die Kiste?",
+					"concept": "24 Würfel.",
+					"sample_solution": "Eine Schicht enthält 2 ·4 =8 Würfel. Drei Schichten enthalten 8 +8 +8 =24. Auch die inneren Würfel gehören dazu."
+				},
+				{
+					"id": "01M6HJYH4AMBFZX1YPAZS1QQZF",
+					"slug": "gs4-rauminhalte-wuerfel-4",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=rauminhalte-wuerfel",
+					"materiality": "material",
+					"question": "Eine volle Kiste enthält 24 Einheitswürfel. Fünf werden herausgenommen. Wie viele bleiben und was fehlt bis zur vollen Kiste?",
+					"concept": "19 bleiben;5 fehlen.",
+					"sample_solution": "24 −5 =19. Die Ergänzungsprobe 19 +5 =24 bestätigt das Ganze. Die Zahl sichtbarer Außenflächen ersetzt diese Zählung nicht."
 				}
 			]
 		}

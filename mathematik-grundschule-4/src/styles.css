@@ -2155,3 +2155,102 @@ input {
 .world-scene {
 	min-width: 520px;
 }
+:root[data-world="shape"] {
+	--world-accent: #236d83;
+}
+[data-theme="dark"][data-world="shape"] {
+	--world-accent: #84cedc;
+}
+:root {
+	--cube-side: #b3cdd6;
+	--cube-top: #daeceb;
+}
+[data-theme="dark"] {
+	--cube-side: #426d7b;
+	--cube-top: #85aaa6;
+}
+:root[data-world="shape"] .lesson-card {
+	border-top: 5px solid var(--world-accent);
+}
+.geometry-scroll {
+	overflow-x: auto;
+	max-width: 100%;
+	padding: 0.5rem 0;
+}
+.geometry-grid,
+.static-grid {
+	position: relative;
+	display: grid;
+	grid-template-columns: repeat(var(--grid-columns), minmax(44px, 1fr));
+	gap: 3px;
+	width: max-content;
+	min-width: min(100%, 240px);
+	margin: 0.5rem auto;
+}
+.static-grid {
+	max-width: 400px;
+}
+.static-grid span,
+.static-cell,
+.controls-grid button {
+	position: relative;
+	min-width: 44px;
+	min-height: 44px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: 1px solid var(--line);
+	border-radius: 0.25rem;
+	background: var(--surface);
+}
+.static-grid small,
+.controls-grid small {
+	position: absolute;
+	top: 0;
+	left: 3px;
+	font-size: 0.6rem;
+}
+.static-cell.filled {
+	color: var(--world-accent);
+	background: var(--soft);
+}
+.source-cell {
+	outline: 2px dashed var(--world-accent);
+	outline-offset: -4px;
+}
+.controls-grid button[aria-pressed="true"] {
+	background: var(--action);
+	color: white;
+}
+.controls-grid button:disabled {
+	opacity: 0.6;
+}
+.geometry-lines,
+.mirror-axis {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+}
+.mirror-axis.vertical {
+	left: 50%;
+	width: 0;
+	border-left: 3px dashed var(--world-accent);
+}
+.mirror-axis.horizontal {
+	top: 50%;
+	height: 0;
+	border-top: 3px dashed var(--world-accent);
+}
+.cube-building {
+	display: block;
+	max-width: 400px;
+	width: 100%;
+	max-height: 350px;
+	margin: 0 auto;
+}
+.cube-building text {
+	font-size: 18px;
+	fill: var(--ink);
+}

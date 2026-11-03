@@ -1340,8 +1340,13 @@ run.addEventListener("click", async (event) => {
 			await act("forest-next");
 			const initial = required(activeForestTask(session.store.state)),
 				model = required(initial.model);
-			await act("forest-model", '[data-col="0"][data-value="1"]');
-			const saved = required(session.store.state.modelWork)[0];
+			const firstControl = required(
+				host.querySelector<HTMLButtonElement>(
+					'button[data-action="forest-model"]:not(:disabled),button[data-action="forest-model-set"]:not(:disabled)',
+				),
+			);
+			await session.act(firstControl, host);
+			const saved = JSON.stringify(session.store.state.modelWork);
 			const restored = new DocumentStore(
 				database,
 				() => freshForest(definition.id),
@@ -1350,9 +1355,27 @@ run.addEventListener("click", async (event) => {
 			stores.push(restored);
 			await restored.open();
 			assert(
-				restored.state.modelWork?.[0] === saved,
+				JSON.stringify(restored.state.modelWork) === saved,
 				`${definition.id}: model action resumes in a second store`,
 			);
+			if (model.scene.geometry) {
+				await act("forest-model-reset");
+				const button = required(
+						host.querySelector<HTMLButtonElement>(
+							'button[data-action="forest-model-set"]:not(:disabled)',
+						),
+					),
+					col = Number(button.dataset.col);
+				await Promise.all([
+					session.act(button, host),
+					session.act(button, host),
+				]);
+				assert(
+					session.store.state.modelWork?.[col] ===
+						(model.controls[col].start + 2) % (model.controls[col].max + 1),
+					`${definition.id}: rapid repeated clicks cycle from latest transactional state`,
+				);
+			}
 			await act("forest-model-reset");
 			assert(
 				JSON.stringify(session.store.state.modelWork) ===
@@ -1369,8 +1392,8 @@ run.addEventListener("click", async (event) => {
 								freshWorkshop(m))[col];
 							if (current === m.target[col]) break;
 							await act(
-								"forest-model",
-								`[data-col="${col}"][data-value="${Math.sign(m.target[col] - current)}"]`,
+								m.scene.geometry ? "forest-model-set" : "forest-model",
+								`[data-col="${col}"][data-value="${m.scene.geometry ? (current + 1) % (m.controls[col].max + 1) : Math.sign(m.target[col] - current)}"]`,
 							);
 						}
 					}

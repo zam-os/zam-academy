@@ -1,5 +1,5 @@
 import { isWorldLesson } from "./worlds";
-import { freshWorkshop, stepWorkshop } from "./workshop";
+import { freshWorkshop, stepWorkshop, validWorkshop } from "./workshop";
 import { quantityText, quantityNote } from "./quantity";
 import { DATABASE, DocumentStore } from "../storage/progress";
 import type { ForestLesson } from "./catalog";
@@ -654,6 +654,21 @@ export class ForestSession {
 									Number(button.dataset.col),
 								);
 					if (bundles) p.subtractionWork.bundles = bundles;
+					this.feedback = "";
+					return;
+				}
+
+				if (task.model && action === "forest-model-set") {
+					const state = [...(p.modelWork ?? freshWorkshop(task.model))],
+						col = Number(button.dataset.col);
+					if (
+						!Number.isInteger(col) ||
+						!task.model.controls[col] ||
+						task.model.controls[col].locked
+					)
+						return;
+					state[col] = (state[col] + 1) % (task.model.controls[col].max + 1);
+					if (validWorkshop(state, task.model)) p.modelWork = state;
 					this.feedback = "";
 					return;
 				}

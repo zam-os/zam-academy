@@ -52,3 +52,43 @@ Teacher recordings, teacher sign-off, direct-file startup, actual playback,
 ZAM learner-UI recall and physical touch-device acceptance remain pending.
 No new dependency, publication, learner history migration or broad curriculum
 claim is part of this implementation.
+
+## Shape Bay
+
+Nine further lessons implement routes/plans, cube buildings/views, drawing,
+solids/nets, reflection, scaling, square-tile ornaments, surface comparison
+and unit-cube volumes. The cell is now 33 atoms/122 items, version 2026.11.11;
+all prior 24 atoms/86 items are unchanged. Publication remains local-only.
+
+The geometry model accepts alternate rectangles, valid cube nets and
+consistent original ornaments. Nets are checked by folding orientations;
+35 free hexominoes classify into 11 cube nets and remain invariant under
+rotation/reflection. The generated transfer/exit tasks for net and ornament
+creation require construction. Separate parent labels describe the checked
+exit task wherever a broader learning goal also includes physical building
+or drawing. Reflection evidence uses the queried point, not unqueried marks.
+
+Review corrections include transactional cycling for repeated clicks,
+keyboard focus after toggling a field, all projected cube corners in bounds,
+a readable labelled cuboid schematic, invariant net options, actual
+construction exits, and stable task seeds across the 2,000-attempt history
+cap. An exit seed is retained on its attempt, preserving its task while old
+history is trimmed. Physical paper construction, mirrors and cube packing
+remain instructed activities without digital observation.
+
+Verification on 2026-11-03: npm ci --offline, typecheck,138 Vitest tests,
+production build/ZIP verification, external Biome lint and whitespace checks
+passed. The root suite passed 48 checks; all 38 cells and the Grade 4 disposable
+recall path passed with core 0.54.0. The native browser harness passed 312
+assertions, including every new measurement and geometry journey. The
+production app's nine geometry starts were inspected at 320 px with no body
+overflow. Keyboard net construction/focus and dark phone cube/net diagrams
+were inspected. The independent reviewer rechecked 75 targeted tests and
+16,200 seeded geometry tasks, plus preservation of the old cell content.
+The final review's CMU URL whitespace correction is applied.
+
+Coverage remains partial/unreviewed. Exact drawing and physical handling,
+non-square tessellations, symmetric ornament design, varied physical views
+and tipping movements need teacher/practical review. Surface work is
+preparatory review from Grades 1/2; no formal square/cubic-unit formula is
+introduced. Media briefs stay awaiting recording and approval.

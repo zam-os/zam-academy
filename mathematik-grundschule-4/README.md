@@ -1,14 +1,14 @@
 # ZAM Discovery Island: Grade 4 mathematics
 
-German learner and parent UI for Bavarian Grade 4. Twenty-one selectable lessons
-in the Number Forest and Measure Market cover place values/bundling, comparing/ordering,
+German learner and parent UI for Bavarian Grade 4. Thirty selectable lessons
+in the Number Forest, Measure Market and Shape Bay cover place values/bundling, comparing/ordering,
 number lines/equal jumps, decomposition/complements, addition/subtraction
-strategies, multiplication/inverse division the four written procedures, arithmetic patterns, multi-step story problems, systematic combinations and divisors/multiples.
+strategies, multiplication/inverse division, the four written procedures, arithmetic patterns, multi-step story problems, systematic combinations, divisors/multiples, measurement and concrete geometry.
 Each has two resumable missions, three successful tasks per practice level,
 fresh exit checks, optional practice and a welcoming Milo. A lesson is a
 draft activity, not a completed annual course or proof of mastery.
 
-The fourteen lessons added after the original workshop have three interactive
+The twenty-nine lessons added after the original workshop have three interactive
 goals each. Their models include a number gate, a keyboard-friendly
 number-line marker, coupled treasure bars, calculation jumps, equal baskets,
 result/carry boards, a value-preserving regrouping board, partial-product
@@ -98,8 +98,8 @@ exponents and malformed or mixed dot/space groups remain invalid.
 - Lesson id: `stellenwerte-buendeln`; cell:
   `zam-academy:mathematik-grundschule-4`. Public links are future source
   addresses and do not indicate that this draft is already hosted.
-- `cell.json` is the sole recall-card source: twenty-four atoms, eighty-six German
-  items (forty-eight binary fast checks and thirty-eight synthesis tasks) with fixed ULIDs.
+- `cell.json` is the sole recall-card source: thirty-three atoms, one hundred twenty-two German
+  items (sixty-six binary fast checks and fifty-six synthesis tasks) with fixed ULIDs.
   Edit cards only in this file; there is no
   second authored card list or card generator. Installation uses the approved
   core's card-text validation and write path. Prerequisites form an acyclic
@@ -108,7 +108,7 @@ exponents and malformed or mixed dot/space groups remain invalid.
   which would hide the generic importer for this partial starter.
 - `coverage.json` enumerates 54 official competence positions across 13
   subareas, with source anchors, checked date and explicit remaining work.
-  Parts of Number Forest sections 1.1, 1.2 and 1.3 are implemented. No teacher
+  Parts of sections 1.1–1.3, 2.1–2.5 and 3.1–3.3 are implemented. No teacher
   review or full coverage is claimed.
 - Evidence records first responses separately from helped retries. The
   parent view uses stable task snapshots for dated examples, with canonical
@@ -150,3 +150,9 @@ evidence and reward rules. Physical tasks are instructions, not observations.
 Quantity fields accept decimal comma/point only where labelled; whole-number
 parsing is unchanged. Time fields use HH:MM, durations use actual 60/24 relationships.
 See [recording briefs](docs/measure-market-recording-briefs.md).
+
+Shape Bay adds nine geometry lessons with editable plans, isometric cube
+buildings, rectangle/net construction, mirror/scaling grids, repeating
+patterns, unit surfaces and unit cubes. Free constructions use geometric
+properties, including alternate valid nets and ornaments. Exit observations
+use labels for the task actually checked; physical construction is pending.

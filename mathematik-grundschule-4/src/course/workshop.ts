@@ -1,3 +1,9 @@
+import {
+	type Geometry,
+	geometryView,
+	geometryControls,
+	geometryProperty,
+} from "./geometry-model";
 import { format } from "../math/place-value";
 import { quantityText } from "./quantity";
 export interface Scene {
@@ -8,15 +14,24 @@ export interface Scene {
 		| "clock"
 		| "coins"
 		| "units"
-		| "estimate";
+		| "estimate"
+		| "geometry";
+	geometry?: Geometry;
 	values: number[];
 	labels?: string[];
 }
 export interface Workshop {
 	identity: (string | number)[];
 	scene: Scene;
-	controls: { label: string; max: number; start: number; step?: number }[];
+	controls: {
+		label: string;
+		max: number;
+		start: number;
+		step?: number;
+		locked?: boolean;
+	}[];
 	target: number[];
+	property?: "rectangle" | "cube-net" | "ornament";
 	// A quantity can be built with several equivalent arrangements.
 	weights?: number[];
 	total?: number;
@@ -39,12 +54,15 @@ export function validWorkshop(raw: unknown, m: Workshop): raw is number[] {
 				Number.isSafeInteger(n) &&
 				n >= 0 &&
 				n <= m.controls[i].max &&
-				n % (m.controls[i].step ?? 1) === 0,
+				n % (m.controls[i].step ?? 1) === 0 &&
+				(!m.controls[i].locked || n === m.controls[i].start),
 		)
 	);
 }
 export function acceptsWorkshop(m: Workshop, state: number[]): boolean {
 	if (!validWorkshop(state, m)) return false;
+	const property = geometryProperty(m, state);
+	if (property !== null) return property;
 	const weights = m.weights;
 	return weights && m.total !== undefined
 		? state.reduce((sum, n, i) => sum + n * weights[i], 0) === m.total
@@ -60,6 +78,7 @@ export function stepWorkshop(
 		!validWorkshop(state, m) ||
 		!Number.isInteger(col) ||
 		!m.controls[col] ||
+		m.controls[col].locked ||
 		![-1, 1].includes(direction)
 	)
 		return state;
@@ -74,6 +93,7 @@ export function stepWorkshop(
 const svg = (label: string, body: string, box = "0 0 600 170") =>
 	`<div class="world-scene-scroll" tabindex="0" role="region" aria-label="Modell, bei Bedarf seitlich verschiebbar"><svg class="world-scene" viewBox="${box}" role="img" aria-label="${html(label)}">${body}</svg></div>`;
 export function sceneView(scene: Scene): string {
+	if (scene.geometry) return geometryView(scene.geometry);
 	const v = scene.values;
 	if (scene.kind === "ruler") {
 		const [start, end] = v;
@@ -137,6 +157,9 @@ export function workshopView(
 	const total = weights ? state.reduce((s, n, i) => s + n * weights[i], 0) : 0;
 	const scene = {
 		...m.scene,
+		...(m.scene.geometry
+			? { geometry: { ...m.scene.geometry, cells: state } }
+			: {}),
 		values:
 			m.scene.kind === "ruler"
 				? [m.scene.values[0], m.scene.values[0] + state[0] * 10 + state[1]]
@@ -150,5 +173,5 @@ export function workshopView(
 								? [total, m.scene.values[0] ?? 2000]
 								: [total],
 	};
-	return `<div class="world-workshop">${sceneView(scene)}${m.scene.kind === "clock" ? `<p>Deine Uhr: ${quantityText(state[0] * 60 + state[1], { clock: true })}</p>` : ""}<div class="model-controls">${m.controls.map((c, i) => `<div class="model-control"><strong>${html(c.label)}</strong><div><button data-action="forest-model" data-col="${i}" data-value="-1" aria-label="${html(c.label)} verringern" ${solved || state[i] === 0 ? "disabled" : ""}>−</button><output aria-live="polite">${state[i]}</output><button data-action="forest-model" data-col="${i}" data-value="1" aria-label="${html(c.label)} erhöhen" ${solved || state[i] === c.max ? "disabled" : ""}>+</button></div></div>`).join("")}</div>${solved ? "" : '<button class="text-button" data-action="forest-model-reset">Modell zurücksetzen</button>'}<p class="fine-print">Die Werkstatt ist angeleitet. Eine Messung mit echten Gegenständen kann die App nicht beobachten.</p></div>`;
+	return `<div class="world-workshop">${sceneView(scene)}${m.scene.kind === "clock" ? `<p>Deine Uhr: ${quantityText(state[0] * 60 + state[1], { clock: true })}</p>` : ""}${m.scene.geometry ? geometryControls(m, state, solved) : `<div class="model-controls">${m.controls.map((c, i) => `<div class="model-control"><strong>${html(c.label)}</strong><div><button data-action="forest-model" data-col="${i}" data-value="-1" aria-label="${html(c.label)} verringern" ${solved || state[i] === 0 ? "disabled" : ""}>−</button><output aria-live="polite">${state[i]}</output><button data-action="forest-model" data-col="${i}" data-value="1" aria-label="${html(c.label)} erhöhen" ${solved || state[i] === c.max ? "disabled" : ""}>+</button></div></div>`).join("")}</div>`}${solved ? "" : '<button class="text-button" data-action="forest-model-reset">Modell zurücksetzen</button>'}<p class="fine-print">Die Werkstatt ist angeleitet. Eine Messung mit echten Gegenständen kann die App nicht beobachten.</p></div>`;
 }
