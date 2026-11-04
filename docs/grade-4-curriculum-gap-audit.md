@@ -57,7 +57,7 @@ The earlier generic geometry remainder conflated optional breadth and physical p
 | m34-3.1-03 | Existing: masse-fassungsvermoegen, geld-einkaufen, einheiten-wechseln | Physically pour equal portions, exchange money and explain why the quantity is unchanged. | Pending |
 | m34-3.1-04 | Existing: uhrzeit-zeitspannen | Time a real activity and compare measured durations with calculated start/end times. | Pending |
 | m34-3.2-01 | Existing: schaetzen-sachprobleme | Choose real reference objects for 500 ml, 1 l, 1 kg and 1 km and justify your own estimates. | Pending |
-| m34-3.2-02 | A: Dedicated ordering lesson covers length, duration, mass and capacity in common/mixed units, including the 60-minute step; reasoning.ts, coverage-gaps.test.ts. | Order real objects/durations, verify by measurement where appropriate and discuss plausibility. | Pending |
+| m34-3.2-02 | A: Dedicated ordering lesson keeps length, duration and separate mass/capacity sets tied to the same goals throughout. Every time task requires hour-to-minute conversion; goal 3 requires both mass and capacity. Level 2 also compares differences; reasoning.ts, coverage-gaps.test.ts, quantity-ordering.test.ts. | Order real objects/durations, verify by measurement where appropriate and discuss plausibility. | Pending |
 | m34-3.2-03 | Existing: masse-fassungsvermoegen, uhrzeit-zeitspannen | Divide real quantities into halves/quarters/three quarters and explain the equivalent notation. | Pending |
 | m34-3.3-01 | Existing: geld-einkaufen, uhrzeit-zeitspannen, schaetzen-sachprobleme, expedition-werkstatt, expedition-reise, expedition-inselfest | Read and discuss authentic local quantity sources, rather than only model sources. | Pending |
 | m34-3.3-02 | A: Fermi assumptions and source selection added; existing quantity-reference estimates remain in schaetzen-sachprobleme. | Choose your own real reference quantities and Fermi assumptions, measure where appropriate and explain your representation. | Pending |
@@ -81,7 +81,7 @@ The ZAM bundled-cell update is a separate follow-up after publication: `npm run 
 
 Results and browser checks are recorded in the PR description. The new regression suite is `tests/coverage-gaps.test.ts`; existing tests continue to check independent lab witnesses, fresh exits, two levels, resumption and assisted evidence.
 
-Final local checks on 2026-11-04:
+Initial local checks on 2026-11-04 (before the PR review follow-up):
 
 - In the package, `npm ci && npx tsc --noEmit && npm test && npm run build && npm run package:zip`: passed; 157 tests in 12 files. The ZIP contains the built HTML and launchers.
 - `npm run verify:release`: passed the offline-byte/path/status checks. Teacher recording and approval remain pending.
@@ -94,3 +94,18 @@ Final local checks on 2026-11-04:
 - `npm run preview -- --host 127.0.0.1 --port 5316 --strictPort`: opened the built app in Chrome and inspected all four new lessons plus changed addition, decomposition and data lessons in light/dark on desktop and at a confirmed 320 CSS-pixel viewport. Inspected initial interactive fields, worked explanations, both practice levels and the new multi-summand/number-word/five-category views. Wide tables/charts scroll within labelled regions. Fixed and rechecked the wide-screen dark background and a positioned hidden label that had caused narrow-page overflow. No console errors observed.
 - Compared the cell against `git show 7309c3e:mathematik-grundschule-4/cell.json`: all prior 39 atom metadata records and all 146 items are structurally identical, including their ids, slugs and card texts; all 54 competence ids/texts are preserved. Acceptance/publication file bytes are unchanged.
 - Independent agent review against `AGENTS.md`: the exit-repeat finding was corrected and rechecked. `npm test -- tests/coverage-gaps.test.ts tests/written-addition.test.ts tests/forest.test.ts && npx tsc --noEmit`: 34 targeted tests and typecheck passed; no remaining actionable findings. The committed regression checks repeated/pinned exits after labs and both levels across 240 seeds per new lesson.
+
+## PR review follow-up
+
+The [goal/evidence finding](https://github.com/zam-os/zam-academy/pull/85#discussion_r4473468726) and [workshop coverage finding](https://github.com/zam-os/zam-academy/pull/85#discussion_r4473468735) exposed different quantity domains being credited to the same goal. Goal 1 now always checks length, goal 2 duration, and goal 3 both mass and capacity in separate sets, in the lab, both practice levels, exit and later checks. A mass-only answer cannot earn goal 3. Time tasks require a numerical hour-to-minute conversion even in the guided workshop. Transfer tasks additionally calculate the difference between largest and smallest quantities. Regression tests parse displayed quantities independently and check the matching evidence in the parent view.
+
+The optional notation/range suggestions are also applied: whole quantities omit a zero subunit and generated durations are at most 4 h 15 min. The HTML metadata now names 40 lessons. The redundant written-exit goal override is removed; the task already supplies goal 3. Existing first-preview addition saves retain their original boards, as documented in the plan; fresh rounds include the new multi-summand tasks. No cell content or release/teacher gate changes in this follow-up.
+
+Follow-up verification on 2026-11-04, with `origin/main` at `8abf822` merged:
+
+- In the package, `npm ci && npx tsc --noEmit && npm test && npm run build && npm run package:zip && npm run verify:release`: passed; 160 tests in 13 files, build, ZIP and offline verification passed.
+- At the root, `node --test scripts/build-catalog.test.mjs scripts/academy-registry.test.mjs`: 51 passed. With the same scratch `ZAM_CORE` path above (confirmed installed version `0.54.0`, matching CI), `node scripts/validate-cells.mjs`: all 39 cells passed; `node mathematik-grundschule-4/scripts/validate-cell.mjs`: disposable installation/enrolment, idempotency, recall and history checks passed for 159 cards.
+- `npm run dev -- --host 127.0.0.1 --port 5327 --strictPort`, then open `/tests/browser.html` and activate **Speicherprüfungen starten**: all 452 native assertions passed.
+- `npm run preview -- --host 127.0.0.1 --port 5326 --strictPort`: inspected the built quantity lesson's three workshop goals, quick check, worked transitions and both practice levels in Chrome, in light/dark and at a confirmed 320 CSS-pixel viewport. Checked the separate mass/capacity fields and transfer differences. The page stays 320 pixels wide; tables scroll inside their labelled regions. Built metadata says 40 lessons; no console errors observed.
+- Independent second-agent review: no actionable findings. `npm test -- tests/quantity-ordering.test.ts tests/coverage-gaps.test.ts tests/forest.test.ts tests/written-addition.test.ts && npx tsc --noEmit`: 37 targeted tests and typecheck passed. A separate displayed-measurement oracle checked 12,003 lab/generated tasks across guided, transfer, exit and later contexts with no failures; mass-only work never earned goal 3.
+- Existing-workspace Biome formatting/lint and `git diff --check`: clean. Acceptance, publication and cell files are unchanged by this follow-up.

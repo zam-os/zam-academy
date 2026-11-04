@@ -310,60 +310,125 @@ export function quantityComparison(
 	seed: number,
 	index: number,
 ): ForestTask {
-	const next = random(
-		(seed + Math.imul(index + 1, 2246822519) + level * 65537) >>> 0,
-	);
-	const base = 1 + Math.floor(next() * 30),
-		domain = index % 4;
-	const units = [
-		{ large: "m", small: "cm", factor: 100 },
-		{ large: "h", small: "min", factor: 60 },
-		{ large: "kg", small: "g", factor: 1000 },
-		{ large: "l", small: "ml", factor: 1000 },
-	][domain];
-	const a = base * units.factor + units.factor / 2,
-		b = (base + 1) * units.factor,
-		c = base * units.factor + units.factor / 4;
-	const values = level === 1 ? [a, b, c] : [b, c, a];
-	const mixed = (n: number) =>
-		`${Math.floor(n / units.factor)} ${units.large} ${n % units.factor} ${units.small}`;
-	const labels = values.map((n, i) =>
-		level === 2 && i !== 1 ? mixed(n) : `${format(n)} ${units.small}`,
-	);
-	const ordered = values.map((n, i) => ({ n, i })).sort((x, y) => x.n - y.n);
-	const hint = `Wandle zuerst in ${units.small} um: 1 ${units.large} = ${units.factor} ${units.small}. Vergleiche dann die Größen, nicht bloß die verschiedenen Maßzahlen.`;
-	return worksheet(
-		((index % 3) + 1) as 1 | 2 | 3,
-		`Ordne ${["die Längen", "die Zeitspannen", "die Massen", "die Hohlmaße"][domain]} von klein nach groß. Gib die Nummern der drei Angebote an.`,
-		["quantity-order", domain, ...[...values].sort((a, b) => a - b)],
-		"Drei Größen desselben Bereichs",
-		["Angebot", "Größe"],
-		labels.map((label, i) => [String(i + 1), label]),
-		[
-			...ordered.map((v, i) =>
-				number(
+	// A goal keeps its domains in the lab, both levels, exits and later checks.
+	// Goal 3 requires both sets; mass and capacity must never be compared to each other.
+	const goal = ((index % 3) + 1) as 1 | 2 | 3;
+	const domains = goal === 1 ? [0] : goal === 2 ? [1] : [2, 3];
+	const sets = domains.map((domain) => {
+		const next = random(
+			(seed +
+				Math.imul(index + 1, 2246822519) +
+				level * 65537 +
+				Math.imul(domain + 1, 104729)) >>>
+				0,
+		);
+		const int = (lo: number, hi: number) =>
+			lo + Math.floor(next() * (hi - lo + 1));
+		const units = [
+			{
+				title: "Längen",
+				large: "m",
+				small: "cm",
+				factor: 100,
+				step: 5,
+				max: 30,
+			},
+			{
+				title: "Zeitspannen",
+				large: "h",
+				small: "min",
+				factor: 60,
+				step: 5,
+				max: 3,
+			},
+			{
+				title: "Massen",
+				large: "kg",
+				small: "g",
+				factor: 1000,
+				step: 25,
+				max: 8,
+			},
+			{
+				title: "Hohlmaße",
+				large: "l",
+				small: "ml",
+				factor: 1000,
+				step: 25,
+				max: 8,
+			},
+		][domain];
+		const base = int(1, units.max);
+		const low = base * units.factor + int(1, 4) * units.step;
+		const middle = base * units.factor + int(5, 9) * units.step;
+		const high =
+			(base + 1) * units.factor + (level === 2 ? int(0, 3) * units.step : 0);
+		const values = level === 1 ? [middle, high, low] : [high, low, middle];
+		const mixed = (n: number) =>
+			`${Math.floor(n / units.factor)} ${units.large}${n % units.factor ? ` ${format(n % units.factor)} ${units.small}` : ""}`;
+		// Even guided work contains large units: the numerical conversion is required.
+		const labels = values.map((n, i) =>
+			(level === 1 ? i !== 1 : i !== 2)
+				? mixed(n)
+				: `${format(n)} ${units.small}`,
+		);
+		const ordered = values.map((n, i) => ({ n, i })).sort((x, y) => x.n - y.n);
+		const hint = `Wandle zuerst in ${units.small} um: 1 ${units.large} = ${format(units.factor)} ${units.small}. Vergleiche dann die Größen, nicht bloß die verschiedenen Maßzahlen.`;
+		return {
+			identity: [domain, low, middle, high],
+			relationship: `1 ${units.large} = ${format(units.factor)} ${units.small}`,
+			rows: labels.map((label, i) => [units.title, String(i + 1), label]),
+			fields: [
+				...ordered.map((v, i) =>
+					number(
+						`${units.title}: ${["Kleinstes", "Mittleres", "Größtes"][i]} Angebot (Nummer)`,
+						v.i + 1,
+						hint,
+					),
+				),
+				number(`${units.title}: Kleinste Größe in ${units.small}`, low, hint),
+				...(level === 2
+					? [
+							number(
+								`${units.title}: Unterschied zwischen größter und kleinster Größe in ${units.small}`,
+								high - low,
+								hint,
+							),
+						]
+					: []),
+				reason(
+					`${units.title}: Begründung der Reihenfolge`,
 					[
-						"Kleinstes Angebot (Nummer)",
-						"Mittleres Angebot (Nummer)",
-						"Größtes Angebot (Nummer)",
-					][i],
-					v.i + 1,
+						`Nach dem Umwandeln in ${units.small} kann ich alle drei Maßzahlen vergleichen.`,
+						"Die größere Maßzahl bedeutet auch bei verschiedenen Einheiten immer die größere Größe.",
+						"Beim Wechseln der Einheit ändert sich die wirkliche Größe.",
+					],
 					hint,
 				),
-			),
-			number(`Kleinste Größe in ${units.small}`, c, hint),
-			reason(
-				"Begründung der Reihenfolge",
-				[
-					`Nach dem Umwandeln in ${units.small} kann ich alle drei Maßzahlen vergleichen.`,
-					"Die größere Maßzahl bedeutet auch bei verschiedenen Einheiten immer die größere Größe.",
-					"Beim Wechseln der Einheit ändert sich die wirkliche Größe.",
-				],
-				hint,
-			),
-		],
+			],
+			hint,
+			explanation: `${units.title}: ${ordered.map((v) => labels[v.i]).join(" < ")}. In ${units.small}: ${ordered.map((v) => format(v.n)).join(" < ")}.${level === 2 ? ` Der Unterschied zwischen größter und kleinster Größe beträgt ${format(high - low)} ${units.small}.` : ""}`,
+		};
+	});
+	const subject =
+		goal === 1
+			? "die Längen"
+			: goal === 2
+				? "die Zeitspannen"
+				: "zuerst die Massen, danach getrennt davon die Hohlmaße";
+	const hint = sets.map((set) => set.hint).join(" ");
+	return worksheet(
+		goal,
+		`Ordne ${subject} von klein nach groß. Gib je Bereich die Nummern der drei Angebote an.${level === 2 ? " Bestimme auch den Unterschied zwischen größter und kleinster Größe." : " Rechne die kleinste Größe in die angegebene kleine Einheit um."}`,
+		["quantity-order-goal", goal, ...sets.flatMap((set) => set.identity)],
+		level === 1
+			? sets.map((set) => set.relationship).join("; ")
+			: "Milos Größenvergleich: jeden Bereich getrennt ordnen",
+		["Bereich", "Angebot", "Größe"],
+		sets.flatMap((set) => set.rows),
+		sets.flatMap((set) => set.fields),
 		hint,
-		`${ordered.map((v) => labels[v.i]).join(" < ")}. In ${units.small}: ${ordered.map((v) => format(v.n)).join(" < ")}. Beim Umwandeln bleibt die Größe gleich. Prüfe echte Gegenstände bei Bedarf durch Messen; Zeitspannen haben 60 min je Stunde.`,
+		`${sets.map((set) => set.explanation).join(" ")} Beim Umwandeln bleibt die Größe gleich. Prüfe echte Gegenstände bei Bedarf durch Messen; Zeitspannen haben 60 min je Stunde.`,
 	);
 }
 
@@ -373,10 +438,4 @@ export const reasoningExit = (
 	id: ReasoningId,
 	seed: number,
 	index: number,
-): ForestTask =>
-	reasoningTask(
-		id,
-		2,
-		seed ^ 0x6a09e667,
-		index + (id === "groessen-vergleichen-ordnen" ? 3 : 0),
-	);
+): ForestTask => reasoningTask(id, 2, seed ^ 0x6a09e667, index);

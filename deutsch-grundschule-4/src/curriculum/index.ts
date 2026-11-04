@@ -3,6 +3,7 @@ import type { Lesson, ReadyLesson, Source, Stage } from "../types";
 import { BAHNHOF } from "./bahnhof";
 import { DETEKTIV } from "./detektiv";
 import { WERKSTATT } from "./werkstatt";
+import { WOERTERSCHATZ } from "./woerterschatz";
 
 export const STAGES: Stage[] = [
 	{
@@ -26,6 +27,13 @@ export const STAGES: Stage[] = [
 		icon: "🔍",
 		greeting: "Psst, Detektivin oder Detektiv! Mit unseren Tricks findest du jede richtige Schreibung.",
 	},
+	{
+		id: "woerterschatz",
+		title: "Wörterschatz",
+		subtitle: "Der Grundwortschatz: Wörter sicher schreiben und merken",
+		icon: "💎",
+		greeting: "Hier liegt mein Schatz: Wörter, die du immer wieder brauchst. Üben wir sie zusammen!",
+	},
 ];
 
 export const SOURCES: Source[] = [
@@ -38,6 +46,11 @@ export const SOURCES: Source[] = [
 		id: "regelwerk",
 		label: "Rat für deutsche Rechtschreibung · Amtliches Regelwerk",
 		url: "https://www.rechtschreibrat.com/regeln-und-woerterverzeichnis/",
+	},
+	{
+		id: "grundwortschatz",
+		label: "ISB München · Grundwortschatz für die Jahrgangsstufen 3 und 4",
+		url: "https://www.lehrplanplus.bayern.de/serviceinformation/l43316",
 	},
 ];
 
@@ -60,7 +73,7 @@ function ready(lesson: Lesson): ReadyLesson {
 	};
 }
 
-export const LESSONS: ReadyLesson[] = [...WERKSTATT, ...BAHNHOF, ...DETEKTIV].map(ready);
+export const LESSONS: ReadyLesson[] = [...WERKSTATT, ...BAHNHOF, ...DETEKTIV, ...WOERTERSCHATZ].map(ready);
 
 export const findLesson = (id: string): ReadyLesson | undefined =>
 	LESSONS.find((lesson) => lesson.id === id);

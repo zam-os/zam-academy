@@ -180,10 +180,20 @@ describe("curriculum gap closure", () => {
 								0,
 							);
 						};
-						const sizes = b.rows.map((row) => convert(row[1]));
-						expect(b.fields.slice(0, 3).map((f) => sizes[f.value - 1])).toEqual(
-							[...sizes].sort((a, b) => a - b),
-						);
+						for (let group = 0; group < b.rows.length / 3; group++) {
+							const sizes = b.rows
+								.slice(group * 3, group * 3 + 3)
+								.map((row) => convert(row[2]));
+							const fields = b.fields.slice(group * (level === 1 ? 5 : 6));
+							expect(fields.slice(0, 3).map((f) => sizes[f.value - 1])).toEqual(
+								[...sizes].sort((a, b) => a - b),
+							);
+							expect(fields[3].value).toBe(Math.min(...sizes));
+							if (level === 2)
+								expect(fields[4].value).toBe(
+									Math.max(...sizes) - Math.min(...sizes),
+								);
+						}
 					}
 				}
 	});

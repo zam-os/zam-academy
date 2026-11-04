@@ -1,6 +1,6 @@
 {
 	"schema": 1,
-	"checked": "2026-11-03",
+	"checked": "2026-11-04",
 	"curriculum": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/deutsch",
 	"school_type": "grundschule",
 	"grade": 4,
@@ -9,7 +9,7 @@
 		4
 	],
 	"subject": "deutsch",
-	"scope": "Erste Ausbaustufe: Lernbereich 4.3 und 4.4 (Sprache untersuchen, Richtig schreiben) mit Bezügen zu 3.2 und 3.3. Lesen, Texte schreiben, Sprechen sowie 4.1 und 4.2 sind geplant oder bleiben Unterrichtspraxis. Zuordnung ist kein Nachweis der Beherrschung.",
+	"scope": "Lernbereiche 4.3 und 4.4 (Sprache untersuchen, Richtig schreiben) einschließlich Grundwortschatz 3/4, mit Bezügen zu 3.2 und 3.3. Lesen, Texte schreiben, Sprechen sowie 4.1 und 4.2 sind geplant oder bleiben Unterrichtspraxis. Zuordnung ist kein Nachweis der Beherrschung.",
 	"full_coverage": false,
 	"review_status": "awaiting-primary-teacher",
 	"optional_lessons": [],
@@ -958,9 +958,13 @@
 			"section": "4.4",
 			"position": 1,
 			"competence": "üben Rechtschreibung anhand des verbindlichen Grundwortschatzes für die Jahrgangsstufen 3 und 4.",
-			"lessons": [],
-			"status": "planned",
-			"evidence": "Der verbindliche Grundwortschatz 3/4 ist noch nicht eingebunden; geplant als eigene Übungsliste."
+			"lessons": [
+				"grundwortschatz-regeln",
+				"grundwortschatz-formen",
+				"grundwortschatz-merkwoerter"
+			],
+			"status": "partial",
+			"evidence": "Alle Wörter des ISB-Grundwortschatzes 3/4 stehen in den Wortlisten der drei Lektionen, wortgetreu getestet. Die Aufgaben können jedes Wort abfragen, ziehen es aber zufällig; drei richtige Aufgaben je Stufe beenden die Lektion und decken die Liste nicht ab. Üben mit der Hand und Diktate bleiben Praxis außerhalb der App."
 		},
 		{
 			"lb": 4,

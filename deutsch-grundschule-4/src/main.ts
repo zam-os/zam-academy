@@ -200,6 +200,7 @@ function renderLesson(l: ReadyLesson): void {
 	<div class="example"><h3>${esc(l.example.title)}</h3><ul>${l.example.lines.map((x) => `<li>${esc(x)}</li>`).join("")}</ul></div>
 	<div class="merke"><strong>Merke</strong><p>${esc(l.takeaway)}</p></div>
 	<dl class="terms">${l.terms.map((t) => `<div><dt>${esc(t.term)}</dt><dd>${esc(t.meaning)}</dd></div>`).join("")}</dl>
+	${l.wordbook ? `<details class="wordbook"><summary>Alle Wörter dieser Lektion</summary>${l.wordbook.groups.map((g) => `<h3>${esc(g.title)}</h3><p>${esc(g.words)}</p>`).join("")}<p class="small">${esc(l.wordbook.note)}</p></details>` : ""}
 </section>
 <section class="card" id="quiz-card">
 	<h2><span class="step">2</span> Schnellcheck <span class="star${s.quiz ? " on" : ""}" aria-label="${s.quiz ? "Stern verdient" : "Stern offen"}">★</span></h2>
@@ -430,7 +431,7 @@ function renderParents(): void {
 	main.innerHTML = `<div class="page-head"><button type="button" class="text-button" data-action="view" data-target="path">← Zur Wörterstadt</button><h1>Für Eltern</h1></div>
 <section class="card">
 	<h2>Was Ihr Kind hier übt</h2>
-	<p>Tintos Wörterstadt übt ${LESSONS.length} Themen aus dem LehrplanPLUS Deutsch der Jahrgangsstufen 3 und 4 in Bayern: Sprache untersuchen (Wortarten, die vier Fälle, Zeitformen, Wortbildung, Satzarten, wörtliche Rede, Satzglieder, Bindewörter) und Richtig schreiben (Silben, kurze und lange Selbstlaute, Verlängern, Ableiten, Großschreibung, Wörterbuch).</p>
+	<p>Tintos Wörterstadt übt ${LESSONS.length} Themen aus dem LehrplanPLUS Deutsch der Jahrgangsstufen 3 und 4 in Bayern: Sprache untersuchen (Wortarten, die vier Fälle, Zeitformen, Wortbildung, Satzarten, wörtliche Rede, Satzglieder, Bindewörter) und Richtig schreiben (Silben, kurze und lange Selbstlaute, Verlängern, Ableiten, Großschreibung, Wörterbuch, verbindlicher Grundwortschatz).</p>
 	<p>Jede Lektion hat eine kurze Erklärung, einen Schnellcheck, eine Werkstatt zum Ausprobieren und Aufgaben auf zwei Stufen. Stufe 1 gibt einen Tipp. Stufe 2 übt ohne Tipp, ähnlich wie in einer Probe.</p>
 </section>
 <section class="card">
@@ -444,7 +445,7 @@ function renderParents(): void {
 </section>
 <section class="card">
 	<h2>Übertritt und was die App nicht abdeckt</h2>
-	<p>Für den Übertritt zählen in Bayern Deutsch, Mathematik und Heimat- und Sachunterricht zusammen. Diese App übt einen Teil von Deutsch. Noch nicht enthalten sind Lesen und Textverständnis, eigene Texte (Erzählen, Berichten, Beschreiben), Sprechen und Zuhören sowie der verbindliche Grundwortschatz. Echte Bücher, Vorlesen, Schreiben mit der Hand und Gespräche bleiben wichtig.</p>
+	<p>Für den Übertritt zählen in Bayern Deutsch, Mathematik und Heimat- und Sachunterricht zusammen. Diese App übt einen Teil von Deutsch. Noch nicht enthalten sind Lesen und Textverständnis, eigene Texte (Erzählen, Berichten, Beschreiben) sowie Sprechen und Zuhören. Den Grundwortschatz übt Ihr Kind hier am Bildschirm; die Wörter auch mit der Hand zu schreiben, bleibt wichtig. Das gilt ebenso für echte Bücher, Vorlesen und Gespräche.</p>
 	<p>Das ist eine Vorschau. Eine Grundschullehrkraft hat die Inhalte noch nicht fachlich freigegeben, und Lehrvideos fehlen noch.</p>
 	<ul class="source-list">${SOURCES.map((s) => `<li><a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.label)}</a></li>`).join("")}<li><a href="https://www.km.bayern.de/lernen/ubertritt-und-bildungswege/uebertritt" target="_blank" rel="noopener noreferrer">Bayerisches Kultusministerium · Übertritt</a></li></ul>
 	<p class="small">Links öffnen erst auf Ihren Klick.</p>

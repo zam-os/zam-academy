@@ -259,7 +259,7 @@ export function writtenExit(
 			? writtenTask(2, seed, 0)
 			: revision === 0
 				? writtenTask(2, seed, 1, 0)
-				: { ...writtenTask(2, seed, 5), goal: 3 };
+				: writtenTask(2, seed, 5);
 }
 // Format/completion notices do not spend a learner's first mathematical attempt.
 export function columnValidation(

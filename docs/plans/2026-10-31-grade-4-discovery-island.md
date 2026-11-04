@@ -19,6 +19,13 @@ published preview. It does not authorize checking off teacher, media, practical
 or phase acceptance. The earlier dated 36-lesson inventory below records the
 previous implementation.
 
+First-preview written-addition saves retain their original lab and generators,
+including the third-goal board `999 999 + 1`. The shared goal label now also
+mentions multiple summands; an old saved example is evidence only for the
+actual task displayed, not for multi-summand mastery. A fresh round uses the
+extended three/four-summand tasks. This preserves existing progress rather
+than silently replacing an unfinished board.
+
 - [ ] Phase 1 — complete place-value lesson with Milo and a real teacher video
 - [ ] Phase 2 — family usability pilot and Academy starter release readiness
 - [ ] Phase 3 — complete Number Forest

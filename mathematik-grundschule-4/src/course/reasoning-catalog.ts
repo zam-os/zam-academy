@@ -157,14 +157,14 @@ export const REASONING_LESSONS: ForestLesson[] = [
 			"Vergleiche nur Größen desselben Bereichs. Bringe sie zuerst in dieselbe Einheit. 2 m sind 200 cm und deshalb länger als 180 cm, obwohl die Zahl 2 kleiner als 180 ist.",
 			"Für Längen gilt 1 m = 100 cm, für Massen 1 kg = 1 000 g und für Hohlmaße 1 l = 1 000 ml. Beim Umwandeln ändert sich die Maßzahl, aber nicht die wirkliche Größe.",
 			"Bei Zeitspannen hat 1 h genau 60 min. 1 h 15 min sind 75 min. 90 min dauern deshalb länger. Zeitspannen werden nicht mit einem Hunderterschritt umgerechnet.",
-			"Ordne nach dem Umwandeln von klein nach groß und begründe die Reihenfolge. In der Werkstatt trägst du die Nummern der Angebote ein. Gleiche Größen wären gleichrangig; die drei Angebote hier sind verschieden. Prüfe echte Gegenstände bei Bedarf durch Messen und besprich, ob die Reihenfolge plausibel ist.",
+			"Ordne nach dem Umwandeln von klein nach groß und begründe die Reihenfolge. In der Werkstatt trägst du die Nummern der Angebote ein. Im dritten Ziel ordnest du zuerst drei Massen und danach getrennt drei Hohlmaße; Masse und Inhalt vergleichst du niemals miteinander. Gleiche Größen wären gleichrangig; die drei Angebote jedes Bereichs sind hier verschieden. Prüfe echte Gegenstände bei Bedarf durch Messen und besprich, ob die Reihenfolge plausibel ist.",
 		],
 		example:
 			"Ordne 1 kg 200 g, 950 g und 2 kg: In Gramm sind das 1 200 g, 950 g und 2 000 g. Also 950 g < 1 kg 200 g < 2 kg. Ebenso gilt 750 ml < 1 l < 1 l 250 ml.",
 		takeaway:
 			"Gleicher Größenbereich, gleiche Einheit, dann vergleichen und ordnen. Bei Stunden gilt der Sechzigerschritt.",
 		transfer:
-			"Jetzt stehen gemischte und einfache Schreibweisen nebeneinander. Entscheide erst nach dem Umwandeln und begründe deine Reihenfolge.",
+			"Jetzt planst du die Umwandlung selbst und berechnest zusätzlich den Unterschied zwischen größter und kleinster Größe. Ordne weiter jeden Größenbereich getrennt.",
 		quiz: {
 			goal: 2,
 			prompt: "Welche Zeitspanne dauert länger: 1 h 20 min oder 95 min?",
