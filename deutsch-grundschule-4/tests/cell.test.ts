@@ -9,12 +9,12 @@ const ULID = /^[0-7][0-9A-HJKMNP-TV-Z]{25}$/;
 describe("ZAM-Zelle", () => {
 	it("has one atom per lesson with three cards each", () => {
 		expect(cell.tile_id).toBe("zam-academy:deutsch-grundschule-4");
-		expect(cell.atoms).toHaveLength(23);
+		expect(cell.atoms).toHaveLength(26);
 		expect(cell.atoms.map((a) => a.slug)).toEqual(LESSONS.map((l) => `gs4d-${l.id}`));
 		for (const a of cell.atoms) expect(a.practice_items, a.slug).toHaveLength(3);
 	});
 
-	it("pins all 92 ULIDs and slugs", () => {
+	it("pins all 104 ULIDs and slugs", () => {
 		const ids: Record<string, string> = {};
 		for (const a of cell.atoms) {
 			ids[a.slug] = a.id;
@@ -22,7 +22,7 @@ describe("ZAM-Zelle", () => {
 		}
 		expect(ids).toEqual(contract.ids);
 		const all = Object.values(ids);
-		expect(new Set(all).size).toBe(92);
+		expect(new Set(all).size).toBe(104);
 		for (const id of all) expect(id).toMatch(ULID);
 		for (const a of cell.atoms) expect(a.atom_uri).toBe(`urn:zam:atom:${a.id}`);
 	});
@@ -85,7 +85,7 @@ describe("ZAM-Zelle", () => {
 	});
 
 	it("binds atoms to their station only and transfers no history", () => {
-		const codes: Record<string, string> = { werkstatt: "woerterwerkstatt", bahnhof: "satzbahnhof", detektiv: "detektivbuero" };
+		const codes: Record<string, string> = { werkstatt: "woerterwerkstatt", bahnhof: "satzbahnhof", detektiv: "detektivbuero", woerterschatz: "woerterschatz" };
 		for (const a of cell.atoms) {
 			const lesson = LESSONS.find((l) => `gs4d-${l.id}` === a.slug);
 			expect(a.curricula).toEqual([

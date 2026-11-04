@@ -1,9 +1,9 @@
 # Tintos Wörterstadt · Deutsch 4 · Grundschule Bayern
 
-**Vorschau.** 23 Lektionen, 69 ZAM-Karten. Kinder der 4. Klasse üben
+**Vorschau.** 26 Lektionen, 78 ZAM-Karten. Kinder der 4. Klasse üben
 hier „Sprache untersuchen“ und „Richtig schreiben“ aus dem
 [LehrplanPLUS Deutsch 3/4](https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/deutsch)
-(Abgleich am 3. November 2026). Begleiter ist Tinto, ein kleiner Tintenfisch,
+(Abgleich am 3. und 4. November 2026). Begleiter ist Tinto, ein kleiner Tintenfisch,
 der mit acht Armen schreibt. Eine Grundschullehrkraft hat die Inhalte noch
 nicht fachlich freigegeben; `publication.json` steht deshalb auf `preview`.
 App und Karten sind veröffentlicht, ihre IDs gelten ab jetzt als Vertrag.
@@ -13,6 +13,7 @@ App und Karten sind veröffentlicht, ihre IDs gelten ab jetzt als Vertrag.
 | 🔧 Wörterwerkstatt (4.3, Teile von 4.4) | 9 | Nomen markieren, Fall-Maschine, Steigerungs-Treppe, Verb-Rad, Zeitmaschine, Bausteinschere, Familientreffen, Wortkupplung, Zauberwörter |
 | 🚂 Satzbahnhof (4.3) | 7 | Signal-Stellwerk, Sprechblasen, Satzzug (Umstellprobe), Bahnsteig-Kontrolle, Paketstation, Fahrplan, Satz-Kupplung |
 | 🔍 Detektivbüro (4.4) | 7 | Silbenschere, Lausch-Lupe, Dehn-Werkstatt, Verlängerungs-Koffer, Kompass, Kronen-Jagd, Fehlerdetektiv |
+| 💎 Wörterschatz (4.4, Grundwortschatz 3/4 des ISB) | 3 | Schatzkarte, Gestern-Maschine, Merkwort-Sortierer |
 
 ## Aufbau einer Lektion
 
@@ -49,12 +50,16 @@ gesperrt, bleibt die Sitzung nutzbar und zeigt einen Hinweis.
 [`coverage.json`](coverage.json) führt alle 116 Kompetenzerwartungen der
 17 Abschnitte wörtlich (Quelle:
 [`tests/fixtures/official-curriculum.json`](tests/fixtures/official-curriculum.json)).
-31 sind in dieser Ausbaustufe teilweise geübt, 44 für spätere Ausbaustufen
+32 sind in dieser Ausbaustufe teilweise geübt, 43 für spätere Ausbaustufen
 geplant und 41 brauchen Praxis außerhalb der App (Sprechen, Vorlesen,
 Handschrift, Abschreiben, Bibliothek). Noch nicht enthalten: Lesen und
-Textverständnis, eigene Texte, Sprechen sowie der verbindliche
-Grundwortschatz 3/4. Siehe
+Textverständnis, eigene Texte und Sprechen. Der verbindliche Grundwortschatz
+3/4 des ISB steht vollständig in der Station „Wörterschatz“. Siehe
 [Abgleich und Planung](../docs/deutsch-grundschule-4-coverage.md).
+
+Die Wörter der Station „Wörterschatz“ stammen vom ISB München und fallen nicht
+unter die Lizenz dieses Pakets: Eine kommerzielle Nutzung ist nicht gestattet,
+das ISB ist stets als Quelle zu nennen (siehe Abgleich und Planung).
 
 Lehrervideos enthält das Paket bewusst nicht; sie folgen in einem eigenen
 geprüften Schritt.

@@ -12,15 +12,15 @@ const positions = new Set(
 );
 
 describe("Lernpfad", () => {
-	it("pins the 23 lesson ids in their order", () => {
+	it("pins the 26 lesson ids in their order", () => {
 		expect(LESSONS.map((l) => l.id)).toEqual(contract.lessons);
-		expect(new Set(LESSONS.map((l) => l.id)).size).toBe(23);
+		expect(new Set(LESSONS.map((l) => l.id)).size).toBe(26);
 		for (const l of LESSONS) expect(l.id).toMatch(/^[a-z0-9-]{1,64}$/);
 	});
 
 	it("gives every station its lessons, an own accent and a greeting", () => {
-		expect(STAGES.map((s) => s.id)).toEqual(["werkstatt", "bahnhof", "detektiv"]);
-		expect(STAGES.map((s) => LESSONS.filter((l) => l.stage === s.id).length)).toEqual([9, 7, 7]);
+		expect(STAGES.map((s) => s.id)).toEqual(["werkstatt", "bahnhof", "detektiv", "woerterschatz"]);
+		expect(STAGES.map((s) => LESSONS.filter((l) => l.stage === s.id).length)).toEqual([9, 7, 7, 3]);
 		for (const s of STAGES) expect(s.greeting.length).toBeGreaterThan(20);
 	});
 
@@ -35,7 +35,7 @@ describe("Lernpfad", () => {
 			expect(l.requiredCorrect, l.id).toBe(3);
 			for (const p of l.paragraphs) expect(p, l.id).not.toMatch(/<[a-z]/i);
 		}
-		expect(new Set(LESSONS.map((l) => l.sticker.name)).size).toBe(23);
+		expect(new Set(LESSONS.map((l) => l.sticker.name)).size).toBe(26);
 	});
 
 	it("asks every quick check with three different answers taken from its card", () => {
@@ -107,8 +107,7 @@ describe("Lehrplanabgleich", () => {
 		const row = (s: string, p: number) => coverage.rows.find((r) => r.section === s && r.position === p);
 		for (let p = 1; p <= 15; p++) expect(row("4.3", p)?.status, `4.3.${p}`).toBe("partial");
 		for (let p = 8; p <= 17; p++) expect(row("4.4", p)?.status, `4.4.${p}`).toBe("partial");
-		// The official Grundwortschatz list is not part of this batch.
-		expect(row("4.4", 1)?.status).toBe("planned");
+		expect(row("4.4", 1)?.lessons).toEqual(["grundwortschatz-regeln", "grundwortschatz-formen", "grundwortschatz-merkwoerter"]);
 	});
 
 	it("is published as a preview", () => {

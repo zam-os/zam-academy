@@ -34,6 +34,8 @@
 	--bahnhof-soft: #e6f0fd;
 	--detektiv: #8b3fd9;
 	--detektiv-soft: #f3e9fe;
+	--woerterschatz: #0b7f70;
+	--woerterschatz-soft: #dff5f1;
 	--radius: 22px;
 	--shadow: 0 6px 0 rgba(36, 48, 74, 0.08), 0 14px 30px rgba(36, 48, 74, 0.08);
 	font-family: ui-rounded, "SF Pro Rounded", "Nunito", "Segoe UI", system-ui, -apple-system, sans-serif;
@@ -73,6 +75,8 @@
 		--bahnhof-soft: #1d2d48;
 		--detektiv: #c9a2ff;
 		--detektiv-soft: #2f2448;
+		--woerterschatz: #5fd8c4;
+		--woerterschatz-soft: #173733;
 		--shadow: 0 6px 0 rgba(0, 0, 0, 0.25), 0 14px 30px rgba(0, 0, 0, 0.25);
 	}
 }
@@ -107,6 +111,8 @@
 	--bahnhof-soft: #1d2d48;
 	--detektiv: #c9a2ff;
 	--detektiv-soft: #2f2448;
+	--woerterschatz: #5fd8c4;
+	--woerterschatz-soft: #173733;
 	--shadow: 0 6px 0 rgba(0, 0, 0, 0.25), 0 14px 30px rgba(0, 0, 0, 0.25);
 }
 
@@ -122,6 +128,10 @@
 [data-stage="detektiv"] {
 	--stage: var(--detektiv);
 	--stage-soft: var(--detektiv-soft);
+}
+[data-stage="woerterschatz"] {
+	--stage: var(--woerterschatz);
+	--stage-soft: var(--woerterschatz-soft);
 }
 body {
 	--stage: var(--accent);
@@ -144,6 +154,10 @@ body[data-stage="bahnhof"] {
 body[data-stage="detektiv"] {
 	--stage: var(--detektiv);
 	--stage-soft: var(--detektiv-soft);
+}
+body[data-stage="woerterschatz"] {
+	--stage: var(--woerterschatz);
+	--stage-soft: var(--woerterschatz-soft);
 }
 * {
 	box-sizing: border-box;
@@ -1374,4 +1388,25 @@ dialog::backdrop {
 	font-size: 14px;
 	line-height: 1.4;
 	text-align: center;
+}
+
+/* The Grundwortschatz list in a lesson. */
+.wordbook {
+	margin-top: 1rem;
+}
+.wordbook summary {
+	cursor: pointer;
+	font-weight: 600;
+	color: var(--stage);
+}
+.wordbook h3 {
+	margin: 1rem 0 0.25rem;
+	font-size: 1rem;
+}
+.wordbook p {
+	margin: 0;
+	overflow-wrap: anywhere;
+}
+.wordbook .small {
+	margin-top: 1rem;
 }
