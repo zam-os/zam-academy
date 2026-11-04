@@ -1,3 +1,5 @@
+import { finalFamily } from "./data-and-expeditions";
+import { isFinalLesson } from "./worlds";
 import { shapeFamily, expandShapeFamily } from "./geometry";
 import { isShape } from "./worlds";
 import { measureFamily } from "./measurement";
@@ -342,9 +344,11 @@ function worldSignature(
 ): string | null {
 	return isMeasure(id)
 		? JSON.stringify(["measure", ...measureFamily(task)])
-		: isShape(id)
-			? JSON.stringify(["shape", ...shapeFamily(task, answer)])
-			: null;
+		: isFinalLesson(id)
+			? JSON.stringify(["final", ...finalFamily(task)])
+			: isShape(id)
+				? JSON.stringify(["shape", ...shapeFamily(task, answer)])
+				: null;
 }
 
 function seenWorldFamilies(attempts: ForestAttempt[]): Set<string> {
@@ -497,9 +501,13 @@ export function recordForest(
 			? `${task.prompt} Auswahlreihen: ${task.combination.axes.map((a) => `${a.label}: ${a.options.join(", ")}`).join("; ")}.`
 			: task.investigation
 				? `${task.prompt} ${task.investigation.caption}: ${task.investigation.headers.join(" / ")}; ${task.investigation.rows.map((row) => row.join(" / ")).join("; ")}.`
-				: task.model?.scene.geometry && Array.isArray(answer)
-					? `${task.prompt} Eingetragene Felder, zeilenweise: ${answer.join(", ")}.`
-					: task.prompt,
+				: task.model?.scene.experiment && Array.isArray(answer)
+					? `${task.prompt} Anfangsvermutung: ${["Rot größere Chance", "Blau größere Chance", "gleiche Chancen"][answer[0] - 1]}; ${answer[1]} Ziehungen; Rot angegeben: ${answer[2]} Kugeln. Schlussfolgerung: ${["Rot größere Chance", "Blau größere Chance", "gleiche Chancen"][answer[3] - 1]}.`
+					: task.model?.scene.chart && Array.isArray(answer)
+						? `${task.prompt} Eingetragene Häufigkeiten: ${task.model.scene.chart.labels.map((s, i) => `${s}: ${answer[i]}`).join("; ")}.`
+						: task.model?.scene.geometry && Array.isArray(answer)
+							? `${task.prompt} Eingetragene Felder, zeilenweise: ${answer.join(", ")}.`
+							: task.prompt,
 		explanation: task.explanation,
 	});
 	p.attempts = p.attempts.slice(-2000);

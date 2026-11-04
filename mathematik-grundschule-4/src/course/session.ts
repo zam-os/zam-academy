@@ -658,6 +658,65 @@ export class ForestSession {
 					return;
 				}
 
+				if (
+					task.model?.scene.chart?.collection &&
+					action === "forest-data-observe"
+				) {
+					const m = task.model,
+						c = task.model.scene.chart,
+						state = [...(p.modelWork ?? freshWorkshop(m))],
+						col = c.labels.length;
+					if (state[col] < (c.observations?.length ?? 0)) state[col]++;
+					if (validWorkshop(state, m)) p.modelWork = state;
+					this.feedback = "";
+					return;
+				}
+				if (
+					task.model?.scene.experiment &&
+					[
+						"forest-experiment-predict",
+						"forest-experiment-draw",
+						"forest-experiment-conclude",
+						"forest-experiment-change",
+					].includes(action ?? "")
+				) {
+					const m = task.model,
+						e = task.model.scene.experiment,
+						state = [...(p.modelWork ?? freshWorkshop(m))];
+					if (
+						action === "forest-experiment-change" &&
+						e.variable &&
+						state[1] === 0
+					) {
+						const delta = Number(button.dataset.value);
+						if ([-1, 1].includes(delta)) {
+							state[5] = Math.max(
+								1,
+								Math.min(e.variable.total - 1, state[5] + delta),
+							);
+							state[0] = 0;
+						}
+					}
+					if (action === "forest-experiment-predict" && state[1] === 0)
+						state[0] = Number(button.dataset.value);
+					if (
+						action === "forest-experiment-draw" &&
+						state[0] > 0 &&
+						state[1] < e.draws &&
+						(!e.variable || state[5] === e.red)
+					)
+						state[1]++;
+					if (
+						action === "forest-experiment-conclude" &&
+						state[1] === e.draws &&
+						[3, 4].includes(Number(button.dataset.col))
+					)
+						state[Number(button.dataset.col)] = Number(button.dataset.value);
+					if (validWorkshop(state, m)) p.modelWork = state;
+					this.feedback = "";
+					return;
+				}
+
 				if (task.model && action === "forest-model-set") {
 					const state = [...(p.modelWork ?? freshWorkshop(task.model))],
 						col = Number(button.dataset.col);
@@ -849,10 +908,49 @@ export class ForestSession {
 						this.feedback = forestMistake(task, null);
 						return;
 					}
+
+					if (action === "forest-check" && task.model?.scene.experiment) {
+						const state = p.modelWork ?? freshWorkshop(task.model),
+							e = task.model.scene.experiment;
+						if (
+							!state[0] ||
+							state[1] < e.draws ||
+							!state[3] ||
+							!state[4] ||
+							(e.variable && state[5] !== e.red)
+						) {
+							this.feedback =
+								"Wähle eine Vermutung, führe alle Ziehungen durch und beantworte danach beide Fragen zu den Chancen.";
+							return;
+						}
+					}
+					if (
+						action === "forest-check" &&
+						task.model?.scene.chart?.collection
+					) {
+						const c = task.model.scene.chart,
+							state = p.modelWork ?? freshWorkshop(task.model);
+						if (state[c.labels.length] < (c.observations?.length ?? 0)) {
+							this.feedback =
+								"Decke erst alle Beobachtungen auf und trage ihre Häufigkeiten in die Säulen ein.";
+							return;
+						}
+					}
 					let answer: Answer | null;
 					if (action === "forest-worked") {
 						if (!p.helped.includes(key) || !explanationShown) return;
-						answer = task.answer;
+
+						if (task.model?.scene.experiment) {
+							const state = p.modelWork ?? freshWorkshop(task.model),
+								e = task.model.scene.experiment;
+							if (!state[0] || state[1] < e.draws) {
+								this.feedback =
+									"Wähle zuerst deine eigene Vermutung und führe alle Ziehungen durch. Danach können wir die Auswertung gemeinsam vervollständigen.";
+								return;
+							}
+							answer = [...task.model.target];
+							answer[0] = state[0];
+						} else answer = task.answer;
 					} else if (action === "forest-choice")
 						answer = Number(button.dataset.value);
 					else if (task.model)
@@ -906,7 +1004,9 @@ export class ForestSession {
 							quantityText(n, task.investigation?.fields[i].format),
 						);
 					if (right && task.model && action === "forest-worked")
-						p.modelWork = [...task.model.target];
+						p.modelWork = Array.isArray(answer)
+							? [...answer]
+							: [...task.model.target];
 					if (right && task.algorithm && Array.isArray(task.answer))
 						p.algorithmWork = task.answer.map(String);
 					event = right ? "correct" : "encourage";

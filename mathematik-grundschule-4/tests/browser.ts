@@ -1339,65 +1339,194 @@ run.addEventListener("click", async (event) => {
 			await act("forest-next");
 			await act("forest-next");
 			const initial = required(activeForestTask(session.store.state)),
-				model = required(initial.model);
-			const firstControl = required(
-				host.querySelector<HTMLButtonElement>(
-					'button[data-action="forest-model"]:not(:disabled),button[data-action="forest-model-set"]:not(:disabled)',
-				),
-			);
-			await session.act(firstControl, host);
-			const saved = JSON.stringify(session.store.state.modelWork);
-			const restored = new DocumentStore(
-				database,
-				() => freshForest(definition.id),
-				validForest,
-			);
-			stores.push(restored);
-			await restored.open();
-			assert(
-				JSON.stringify(restored.state.modelWork) === saved,
-				`${definition.id}: model action resumes in a second store`,
-			);
-			if (model.scene.geometry) {
-				await act("forest-model-reset");
-				const button = required(
-						host.querySelector<HTMLButtonElement>(
-							'button[data-action="forest-model-set"]:not(:disabled)',
-						),
+				model = initial.model;
+			if (model) {
+				const firstControl = required(
+					host.querySelector<HTMLButtonElement>(
+						'button[data-action="forest-model"]:not(:disabled),button[data-action="forest-model-set"]:not(:disabled),button[data-action="forest-experiment-predict"]:not(:disabled)',
 					),
-					col = Number(button.dataset.col);
-				await Promise.all([
-					session.act(button, host),
-					session.act(button, host),
-				]);
+				);
+				await session.act(firstControl, host);
+				const saved = JSON.stringify(session.store.state.modelWork);
+				const restored = new DocumentStore(
+					database,
+					() => freshForest(definition.id),
+					validForest,
+				);
+				stores.push(restored);
+				await restored.open();
 				assert(
-					session.store.state.modelWork?.[col] ===
-						(model.controls[col].start + 2) % (model.controls[col].max + 1),
-					`${definition.id}: rapid repeated clicks cycle from latest transactional state`,
+					JSON.stringify(restored.state.modelWork) === saved,
+					`${definition.id}: model action resumes in a second store`,
+				);
+				if (model.scene.experiment) {
+					const draw = required(
+						host.querySelector<HTMLButtonElement>(
+							'[data-action="forest-experiment-draw"]',
+						),
+					);
+					await Promise.all([
+						session.act(draw, host),
+						session.act(draw, host),
+						session.act(draw, host),
+					]);
+					const prediction = required(session.store.state.modelWork)[0],
+						log = host.querySelector(".draw-log")?.textContent;
+					const replay = new ForestSession(definition, () => {}, database);
+					stores.push(replay.store);
+					await replay.open();
+					const replayHost = document.createElement("div");
+					replayHost.innerHTML = replay.lessonView();
+					assert(
+						replay.store.state.modelWork?.[0] === prediction &&
+							replay.store.state.modelWork?.[1] === 3 &&
+							replayHost.querySelector(".draw-log")?.textContent === log,
+						`${definition.id}: partial experiment resumes original prediction and exact draw prefix`,
+					);
+					await act(
+						"forest-experiment-predict",
+						`[data-value="${prediction === 1 ? 2 : 1}"]`,
+					);
+					assert(
+						session.store.state.modelWork?.[0] === prediction,
+						`${definition.id}: drawing locks the initial prediction`,
+					);
+				}
+
+				if (model.scene.geometry) {
+					await act("forest-model-reset");
+					const button = required(
+							host.querySelector<HTMLButtonElement>(
+								'button[data-action="forest-model-set"]:not(:disabled)',
+							),
+						),
+						col = Number(button.dataset.col);
+					await Promise.all([
+						session.act(button, host),
+						session.act(button, host),
+					]);
+					assert(
+						session.store.state.modelWork?.[col] ===
+							(model.controls[col].start + 2) % (model.controls[col].max + 1),
+						`${definition.id}: rapid repeated clicks cycle from latest transactional state`,
+					);
+				}
+				await act("forest-model-reset");
+				assert(
+					JSON.stringify(session.store.state.modelWork) ===
+						JSON.stringify(freshWorkshop(model)),
+					`${definition.id}: reset model leaves attempts unchanged`,
+				);
+			} else {
+				await act("forest-check");
+				assert(
+					session.store.state.attempts.length === 0,
+					`${definition.id}: empty planning worksheet is validation without an attempt`,
 				);
 			}
-			await act("forest-model-reset");
-			assert(
-				JSON.stringify(session.store.state.modelWork) ===
-					JSON.stringify(freshWorkshop(model)),
-				`${definition.id}: reset model leaves attempts unchanged`,
-			);
+
 			for (let n = 0; n < 40 && session.store.state.stage !== "finished"; n++) {
 				const task = activeForestTask(session.store.state);
 				if (task?.model) {
 					const m = task.model;
-					for (let col = 0; col < m.controls.length; col++) {
-						for (let step = 0; step < 100; step++) {
-							const current = (session.store.state.modelWork ??
-								freshWorkshop(m))[col];
-							if (current === m.target[col]) break;
-							await act(
-								m.scene.geometry ? "forest-model-set" : "forest-model",
-								`[data-col="${col}"][data-value="${m.scene.geometry ? (current + 1) % (m.controls[col].max + 1) : Math.sign(m.target[col] - current)}"]`,
+
+					if (m.scene.experiment) {
+						const e = m.scene.experiment,
+							predicted = m.target[0] === 1 ? 2 : 1;
+						if (e.variable) {
+							for (
+								let count = 0;
+								count < e.red - e.variable.initialRed;
+								count++
+							)
+								await act("forest-experiment-change", '[data-value="1"]');
+							assert(
+								session.store.state.modelWork?.[5] === e.red &&
+									session.store.state.modelWork?.[0] === 0,
+								`${definition.id}: changed bag is saved and asks for a new pre-draw prediction`,
 							);
 						}
+						await act(
+							"forest-experiment-predict",
+							`[data-value="${predicted}"]`,
+						);
+						await act("forest-check");
+						assert(
+							!session.store.state.attempts.some(
+								(a) =>
+									a.key ===
+									`${session.store.state.stage}/${session.store.state.round}/${session.store.state.optional ?? 0}/${session.store.state.index}`,
+							),
+							`${definition.id}: unfinished experiment is validation`,
+						);
+						if (session.store.state.index === 0) {
+							await act("forest-hint");
+							await act("forest-solution");
+							await act("forest-worked");
+							assert(
+								session.store.state.modelWork?.[0] === predicted &&
+									session.store.state.modelWork?.[1] === 0,
+								`${definition.id}: assisted continuation cannot invent initial draws`,
+							);
+						}
+
+						for (let draw = 0; draw < e.draws; draw++)
+							await act("forest-experiment-draw");
+						if (e.variable) {
+							await act("forest-experiment-change", '[data-value="-1"]');
+							assert(
+								session.store.state.modelWork?.[5] === e.red &&
+									session.store.state.modelWork?.[0] === predicted,
+								`${definition.id}: drawing locks changed bag composition and its prediction`,
+							);
+						}
+						for (let n = 0; n < m.target[2]; n++)
+							await act("forest-model", '[data-col="2"][data-value="1"]');
+						await act(
+							"forest-experiment-conclude",
+							`[data-col="3"][data-value="${m.target[3]}"]`,
+						);
+						await act(
+							"forest-experiment-conclude",
+							'[data-col="4"][data-value="1"]',
+						);
+						if (session.store.state.index === 0) {
+							await act("forest-solution");
+							await act("forest-worked");
+							assert(
+								session.store.state.modelWork?.[0] === predicted &&
+									session.store.state.attempts.at(-1)?.outcome === true &&
+									session.store.state.attempts.at(-1)?.helped === true,
+								`${definition.id}: worked analysis preserves an incorrect original prediction and records help`,
+							);
+						}
+
+						assert(
+							session.store.state.modelWork?.[0] === predicted,
+							`${definition.id}: original prediction stays recorded after observations`,
+						);
+					} else {
+						if (m.scene.chart?.collection)
+							for (
+								let n = 0;
+								n < (m.scene.chart.observations?.length ?? 0);
+								n++
+							)
+								await act("forest-data-observe");
+						for (let col = 0; col < m.controls.length; col++) {
+							for (let step = 0; step < 100; step++) {
+								const current = (session.store.state.modelWork ??
+									freshWorkshop(m))[col];
+								if (current === m.target[col]) break;
+								await act(
+									m.scene.geometry ? "forest-model-set" : "forest-model",
+									`[data-col="${col}"][data-value="${m.scene.geometry ? (current + 1) % (m.controls[col].max + 1) : Math.sign(m.target[col] - current)}"]`,
+								);
+							}
+						}
 					}
-					await act("forest-check");
+					if (host.querySelector('[data-action="forest-check"]'))
+						await act("forest-check");
 				} else if (task?.investigation) {
 					task.investigation.fields.forEach((field, i) => {
 						const value = quantityText(field.value, field.format);

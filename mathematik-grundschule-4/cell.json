@@ -1,9 +1,9 @@
 {
 	"$schema": "https://zam.app/schemas/v1/kvt-tile.json",
 	"tile_id": "zam-academy:mathematik-grundschule-4",
-	"version": "2026.11.11",
+	"version": "2026.11.12",
 	"title": "Mathematik 4 Grundschule: Milos Entdeckerinsel",
-	"description": "30 deutsche Entdeckerlektionen im Zahlenwald, auf dem Messmarkt und in der Formenbucht: Zahlen und Rechnen bis zur Million, Größen sowie konkrete Geometrie mit Plänen, Zeichnen, Netzen, Spiegeln, Mustern und Einheitswürfeln. Lokale Erprobungsfassung; fachliche Freigabe und Lehrervideos fehlen. Kein freigegebener Jahreskurs.",
+	"description": "36 deutsche Entdeckerlektionen im Zahlenwald, auf dem Messmarkt, in der Formenbucht, im Zufallsgarten und in drei gemischten Inselexpeditionen. Rechnen, Größen, Geometrie, Daten und Zufall mit lokalen Übungen und Erklärungen. Lokale Erprobungsfassung; fachliche Freigabe, praktische Abnahme und Lehrervideos fehlen. Kein freigegebener Jahreskurs.",
 	"publisher": "ZAM Academy",
 	"sources": [
 		{
@@ -34,6 +34,11 @@
 			"uri": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik",
 			"label": "LehrplanPLUS Mathematik 3/4, Lernbereich 2 Raum und Form",
 			"checked": "2026-11-03"
+		},
+		{
+			"uri": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik",
+			"label": "LehrplanPLUS Mathematik 3/4, Lernbereich 4 Daten und Zufall; vernetzende Sachaufgaben",
+			"checked": "2026-11-04"
 		}
 	],
 	"atoms": [
@@ -2998,6 +3003,546 @@
 					"question": "Eine volle Kiste enthält 24 Einheitswürfel. Fünf werden herausgenommen. Wie viele bleiben und was fehlt bis zur vollen Kiste?",
 					"concept": "19 bleiben;5 fehlen.",
 					"sample_solution": "24 −5 =19. Die Ergänzungsprobe 19 +5 =24 bestätigt das Ganze. Die Zahl sichtbarer Außenflächen ersetzt diese Zählung nicht."
+				}
+			]
+		},
+		{
+			"id": "01M6JFW47JSQVHH64VQ5B4Z7SJ",
+			"atom_uri": "urn:zam:atom:01M6JFW47JSQVHH64VQ5B4Z7SJ",
+			"namespace": "zam-academy-mathematik-grundschule-4",
+			"slug": "gs4-daten-sammeln-darstellen",
+			"title": "Daten sammeln und darstellen",
+			"domain": "mathematik/zufallsgarten",
+			"reduction": "axiomatic",
+			"typical_age_min": 8,
+			"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=daten-sammeln-darstellen",
+			"prerequisites": [
+				{
+					"atom_id": "01M6FWJNJHBE2HJPSP2H7QZP4K",
+					"type": "soft",
+					"rationale": "Geordnete Darstellungen unterstützen das Untersuchen von Daten."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "mathematik-grundschule-4",
+					"topic_code": "daten-sammeln-darstellen",
+					"topic_title": "Daten sammeln und darstellen"
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M6JFW47JAPQ5D6MWVKCPG69S",
+					"slug": "gs4-daten-sammeln-darstellen-1",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=daten-sammeln-darstellen",
+					"materiality": "material",
+					"question": "Was bedeutet die Häufigkeit einer Kategorie in einer Sammlung?",
+					"concept": "Wie oft diese Kategorie in den erfassten Beobachtungen vorkommt.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Wie oft diese Kategorie in den erfassten Beobachtungen vorkommt.",
+							"Wie groß das Bild der Kategorie gezeichnet wurde."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M6JFW47JCG271TCZ3E96YNTN",
+					"slug": "gs4-daten-sammeln-darstellen-2",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=daten-sammeln-darstellen",
+					"materiality": "material",
+					"question": "Was brauchst du, um die Höhe einer Säule als Anzahl zu lesen?",
+					"concept": "Kategorien, Einheit und Skala des Diagramms.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Kategorien, Einheit und Skala des Diagramms.",
+							"Nur die Farbe der Säule."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M6JFW47JF1YPHBEW4BEVJY4H",
+					"slug": "gs4-daten-sammeln-darstellen-3",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=daten-sammeln-darstellen",
+					"materiality": "material",
+					"question": "Eine Sammlung enthält 4 Äpfel, 6 Birnen und 3 Pflaumen. Wie kontrollierst du ihre Erfassung?",
+					"concept": "Die Häufigkeiten ergeben zusammen 13 Früchte; jede Beobachtung muss genau einmal zugeordnet sein.",
+					"sample_solution": "4 + 6 + 3 = 13. Vergleiche diese Gesamtzahl mit der Zahl der gesammelten Früchte und prüfe auf fehlende oder doppelte Einträge."
+				},
+				{
+					"id": "01M6JFW47J3RDP5NVN748M3DRS",
+					"slug": "gs4-daten-sammeln-darstellen-4",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=daten-sammeln-darstellen",
+					"materiality": "material",
+					"question": "Eine Säule ist sechs kleine Skalenstufen hoch. Eine Stufe bedeutet zwei Stück. Welche Häufigkeit zeigt sie und warum?",
+					"concept": "12 Stück.",
+					"sample_solution": "Sechs gleich große Stufen zu je zwei Stück ergeben 6 · 2 = 12. Die Stufenzahl allein wäre bei dieser Skala keine Stückzahl."
+				}
+			]
+		},
+		{
+			"id": "01M6JFW47JE45DM36Y5W69ZS06",
+			"atom_uri": "urn:zam:atom:01M6JFW47JE45DM36Y5W69ZS06",
+			"namespace": "zam-academy-mathematik-grundschule-4",
+			"slug": "gs4-tabellen-diagramme-auswerten",
+			"title": "Tabellen und Diagramme auswerten",
+			"domain": "mathematik/zufallsgarten",
+			"reduction": "axiomatic",
+			"typical_age_min": 8,
+			"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=tabellen-diagramme-auswerten",
+			"prerequisites": [
+				{
+					"atom_id": "01M6FWJNJHBE2HJPSP2H7QZP4K",
+					"type": "soft",
+					"rationale": "Geordnete Darstellungen unterstützen das Untersuchen von Daten."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "mathematik-grundschule-4",
+					"topic_code": "tabellen-diagramme-auswerten",
+					"topic_title": "Tabellen und Diagramme auswerten"
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M6JFW47JB81A0BJ56ZTG4F92",
+					"slug": "gs4-tabellen-diagramme-auswerten-1",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=tabellen-diagramme-auswerten",
+					"materiality": "material",
+					"question": "Welche Rechnung beantwortet die Frage, wie viele Besucher Stand B mehr als Stand A hat?",
+					"concept": "Besucherzahl B minus Besucherzahl A.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Besucherzahl B minus Besucherzahl A.",
+							"Die beiden Besucherzahlen addieren."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M6JFW47JZRKY8KWGVNKEPCG4",
+					"slug": "gs4-tabellen-diagramme-auswerten-2",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=tabellen-diagramme-auswerten",
+					"materiality": "material",
+					"question": "Was unterscheidet reine Fahrtzeit von der Reisezeit mit Aufenthalt?",
+					"concept": "Die Reisezeit enthält zusätzlich den Aufenthalt.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Die Reisezeit enthält zusätzlich den Aufenthalt.",
+							"Ein Aufenthalt dauert grundsätzlich keine Zeit."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M6JFW47JJ79FMM5MG0ETKPJM",
+					"slug": "gs4-tabellen-diagramme-auswerten-3",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=tabellen-diagramme-auswerten",
+					"materiality": "material",
+					"question": "Ein Fahrplan zeigt Start 08:10 Uhr, Zwischenankunft 08:35 Uhr, Weiterfahrt 08:45 Uhr und Ziel 09:15 Uhr. Bestimme Fahrtzeit, Aufenthalt und Reisezeit.",
+					"concept": "55 min Fahrt, 10 min Aufenthalt, 65 min Reisezeit.",
+					"sample_solution": "Erste Fahrt 25 min, zweite Fahrt 30 min; zusammen 55 min. Der Aufenthalt dauert 10 min. Insgesamt 55 min + 10 min = 65 min."
+				},
+				{
+					"id": "01M6JFW47JQG04JB3CNEK37BWK",
+					"slug": "gs4-tabellen-diagramme-auswerten-4",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=tabellen-diagramme-auswerten",
+					"materiality": "material",
+					"question": "Drei Kategorien haben insgesamt 30 Beobachtungen. Zwei enthalten 8 und 12. Wie viele enthält die dritte? Erkläre deinen Schluss.",
+					"concept": "10 Beobachtungen.",
+					"sample_solution": "Der fehlende Teil ergibt sich aus dem Ganzen: 30 − 8 − 12 = 10. Die Angabe ist erschlossen, auch wenn sie nicht direkt in einem Diagramm beschriftet ist."
+				}
+			]
+		},
+		{
+			"id": "01M6JFW47KR8RRC24PN5X5CNDW",
+			"atom_uri": "urn:zam:atom:01M6JFW47KR8RRC24PN5X5CNDW",
+			"namespace": "zam-academy-mathematik-grundschule-4",
+			"slug": "gs4-zufallsexperimente",
+			"title": "Zufallsexperimente und Chancen",
+			"domain": "mathematik/zufallsgarten",
+			"reduction": "axiomatic",
+			"typical_age_min": 8,
+			"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=zufallsexperimente",
+			"prerequisites": [
+				{
+					"atom_id": "01M6FWJNJHBE2HJPSP2H7QZP4K",
+					"type": "soft",
+					"rationale": "Geordnete Darstellungen unterstützen das Untersuchen von Daten."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "mathematik-grundschule-4",
+					"topic_code": "zufallsexperimente",
+					"topic_title": "Zufallsexperimente und Chancen"
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M6JFW47KWDWA7TJ5XYGPGAAV",
+					"slug": "gs4-zufallsexperimente-1",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=zufallsexperimente",
+					"materiality": "material",
+					"question": "Ein gemischter Beutel enthält mindestens eine Kugel jeder Farbe und mehr rote als blaue, gleich gut greifbare Kugeln. Was folgt für die nächste Ziehung?",
+					"concept": "Rot hat die größere Chance, ist aber nicht garantiert.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Rot hat die größere Chance, ist aber nicht garantiert.",
+							"Die nächste Kugel ist sicher rot."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M6JFW47KTRQJDB04Q1GE4053",
+					"slug": "gs4-zufallsexperimente-2",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=zufallsexperimente",
+					"materiality": "material",
+					"question": "Nach fünf roten Ziehungen mit Zurücklegen und neuem Mischen: Muss jetzt Blau kommen?",
+					"concept": "Nein. Frühere Ergebnisse erzwingen keine nächste Farbe.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Nein. Frühere Ergebnisse erzwingen keine nächste Farbe.",
+							"Ja. Blau muss sofort ausgleichen."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M6JFW47KAPZQ2797V6G7BDQH",
+					"slug": "gs4-zufallsexperimente-3",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=zufallsexperimente",
+					"materiality": "material",
+					"question": "Beutel A enthält 1 rote und 3 blaue Kugeln, Beutel B 3 rote und 1 blaue. Wo ist die Chance auf Rot größer? Begründe.",
+					"concept": "In Beutel B.",
+					"sample_solution": "Beide Beutel enthalten vier gleich gut greifbare Kugeln insgesamt. In B sind mehr davon rot. Deshalb ist Rot dort wahrscheinlicher; eine einzelne Ziehung bleibt offen."
+				},
+				{
+					"id": "01M6JFW47KXE815PQK32P9KRW5",
+					"slug": "gs4-zufallsexperimente-4",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=zufallsexperimente",
+					"materiality": "material",
+					"question": "Ein Beutel enthält gleich viele rote und blaue Kugeln. Eine kurze Reihe liefert 8 rote und 4 blaue Ziehungen mit Zurücklegen. Widerspricht das gleichen Chancen?",
+					"concept": "Nein. Beobachtete Häufigkeiten einer kurzen Reihe können verschieden sein.",
+					"sample_solution": "Gleiche Chancen garantieren nicht genau gleich viele Ergebnisse in zwölf Ziehungen. Die Beobachtung beschreibt diese Reihe. Der unveränderte Beutel bestimmt weiterhin die Chancen der nächsten Ziehung."
+				}
+			]
+		},
+		{
+			"id": "01M6JFW47K5V60M8APP9SCGSEN",
+			"atom_uri": "urn:zam:atom:01M6JFW47K5V60M8APP9SCGSEN",
+			"namespace": "zam-academy-mathematik-grundschule-4",
+			"slug": "gs4-expedition-werkstatt",
+			"title": "Eine Werkstatt ausstatten",
+			"domain": "mathematik/inselexpeditionen",
+			"reduction": "axiomatic",
+			"typical_age_min": 8,
+			"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=expedition-werkstatt",
+			"prerequisites": [
+				{
+					"atom_id": "01M6FWJNJJJV0GQ6RCZ87A41YA",
+					"type": "soft",
+					"rationale": "Mehrschrittige Sachsituationen unterstützen den begründeten Plan."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "mathematik-grundschule-4",
+					"topic_code": "expedition-werkstatt",
+					"topic_title": "Eine Werkstatt ausstatten"
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M6JFW47KK9SQ7Y65X0BRV2V4",
+					"slug": "gs4-expedition-werkstatt-1",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=expedition-werkstatt",
+					"materiality": "material",
+					"question": "Warum kann die Gesamtlänge allein bei der Planung ganzer Leisten aus Brettern nicht genügen?",
+					"concept": "Reststücke dürfen möglicherweise nicht zu einer ganzen Leiste zusammengesetzt werden.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Reststücke dürfen möglicherweise nicht zu einer ganzen Leiste zusammengesetzt werden.",
+							"Einheiten spielen beim Zuschneiden keine Rolle."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M6JFW47K6QP3MZFHFECQFM54",
+					"slug": "gs4-expedition-werkstatt-2",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=expedition-werkstatt",
+					"materiality": "material",
+					"question": "Welche Masse zählt bei einer Grenze für volle Kisten?",
+					"concept": "Inhalt plus leere Kiste.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Inhalt plus leere Kiste.",
+							"Nur der Inhalt, die Kiste wiegt immer nichts."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M6JFW47KJYMZVC5VY5PG7DE0",
+					"slug": "gs4-expedition-werkstatt-3",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=expedition-werkstatt",
+					"materiality": "material",
+					"question": "Sieben Leisten zu je 60 cm sollen aus 2-m-Brettern geschnitten werden. Ohne Schnittverlust und ohne Zusammensetzen: Wie viele Bretter brauchst du mindestens?",
+					"concept": "Drei Bretter.",
+					"sample_solution": "Auf 200 cm passen drei ganze 60-cm-Leisten. Zwei Bretter liefern nur sechs Leisten. Ein drittes ist nötig, auch wenn dort ein Rest bleibt."
+				},
+				{
+					"id": "01M6JFW47KQPFG9KQXZBRFQ9KG",
+					"slug": "gs4-expedition-werkstatt-4",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=expedition-werkstatt",
+					"materiality": "material",
+					"question": "Sechs Kisten enthalten je 800 g Material und wiegen leer je 200 g. Ein Wagen darf 3 kg je Fahrt tragen. Wie viele Fahrten sind mindestens nötig?",
+					"concept": "Zwei Fahrten.",
+					"sample_solution": "Eine volle Kiste wiegt 1 000 g. Drei passen in die Grenze von 3 000 g. Sechs Kisten lassen sich deshalb auf zwei Fahrten verteilen; eine reicht nicht."
+				}
+			]
+		},
+		{
+			"id": "01M6JFW47KVHFPJ5RK4ZQPYF20",
+			"atom_uri": "urn:zam:atom:01M6JFW47KVHFPJ5RK4ZQPYF20",
+			"namespace": "zam-academy-mathematik-grundschule-4",
+			"slug": "gs4-expedition-reise",
+			"title": "Eine Inselreise planen",
+			"domain": "mathematik/inselexpeditionen",
+			"reduction": "axiomatic",
+			"typical_age_min": 8,
+			"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=expedition-reise",
+			"prerequisites": [
+				{
+					"atom_id": "01M6FWJNJJJV0GQ6RCZ87A41YA",
+					"type": "soft",
+					"rationale": "Mehrschrittige Sachsituationen unterstützen den begründeten Plan."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "mathematik-grundschule-4",
+					"topic_code": "expedition-reise",
+					"topic_title": "Eine Inselreise planen"
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M6JFW47K02G764M8BYJ6Y187",
+					"slug": "gs4-expedition-reise-1",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=expedition-reise",
+					"materiality": "material",
+					"question": "Welche Strecke zählst du bei einem Weg mit zwei Abschnitten und einer Ecke?",
+					"concept": "Beide tatsächlich gegangenen Abschnitte zusammen.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Beide tatsächlich gegangenen Abschnitte zusammen.",
+							"Immer nur die diagonale Luftlinie."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M6JFW47KCXV48XZR9W3D2D4Z",
+					"slug": "gs4-expedition-reise-2",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=expedition-reise",
+					"materiality": "material",
+					"question": "Wie planst du Boote, wenn nach ganzen vollen Booten noch Personen ohne Platz bleiben?",
+					"concept": "Ein weiteres ganzes Boot einplanen.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Ein weiteres ganzes Boot einplanen.",
+							"Den Rest weglassen und abrunden."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M6JFW47KEKTKEFQACGVD5Y64",
+					"slug": "gs4-expedition-reise-3",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=expedition-reise",
+					"materiality": "material",
+					"question": "Ein Planweg hat drei Abstände nach Osten und zwei nach Norden. Je Abstand sind 20 m und 5 min geplant, dazu 10 min Pause. Bestimme Länge und Dauer.",
+					"concept": "100 m und 35 min.",
+					"sample_solution": "Es sind fünf Abstände: 5 · 20 m = 100 m. Die Zeit ist 5 · 5 min + 10 min = 35 min. Die Pause verändert die Dauer, nicht die Weglänge."
+				},
+				{
+					"id": "01M6JFW47KN29EQV5WPG0V41GQ",
+					"slug": "gs4-expedition-reise-4",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=expedition-reise",
+					"materiality": "material",
+					"question": "Start ist 08:20 Uhr. Fußweg 15 min, Warten 10 min, Bootsfahrt 35 min. Wann fährt das Boot ab, wann kommst du an?",
+					"concept": "Abfahrt 08:45 Uhr, Ankunft 09:20 Uhr.",
+					"sample_solution": "08:20 Uhr + 15 min + 10 min = 08:45 Uhr. Weitere 35 min führen über 09:00 Uhr zu 09:20 Uhr. Insgesamt dauert die Reise 60 min."
+				}
+			]
+		},
+		{
+			"id": "01M6JFW47KJWN73E482EDQCV0K",
+			"atom_uri": "urn:zam:atom:01M6JFW47KJWN73E482EDQCV0K",
+			"namespace": "zam-academy-mathematik-grundschule-4",
+			"slug": "gs4-expedition-inselfest",
+			"title": "Ein Inselfest organisieren",
+			"domain": "mathematik/inselexpeditionen",
+			"reduction": "axiomatic",
+			"typical_age_min": 8,
+			"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=expedition-inselfest",
+			"prerequisites": [
+				{
+					"atom_id": "01M6FWJNJJJV0GQ6RCZ87A41YA",
+					"type": "soft",
+					"rationale": "Mehrschrittige Sachsituationen unterstützen den begründeten Plan."
+				}
+			],
+			"curricula": [
+				{
+					"provider": "zam-academy",
+					"subject": "mathematik-grundschule-4",
+					"topic_code": "expedition-inselfest",
+					"topic_title": "Ein Inselfest organisieren"
+				}
+			],
+			"practice_items": [
+				{
+					"id": "01M6JFW47KA88PJBTA4Y1F1QJ4",
+					"slug": "gs4-expedition-inselfest-1",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=expedition-inselfest",
+					"materiality": "material",
+					"question": "Wer gehört zur Personenzahl, wenn für Kinder und Helfer Getränke geplant werden?",
+					"concept": "Kinder und Helfer zusammen.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Kinder und Helfer zusammen.",
+							"Nur die Kinder, auch wenn Helfer mittrinken sollen."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M6JFW47KJS82DF65DPCNEK9N",
+					"slug": "gs4-expedition-inselfest-2",
+					"language": "de",
+					"tier": "tier1_fast",
+					"bloom_level": 2,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=expedition-inselfest",
+					"materiality": "material",
+					"question": "Welche Zeitabschnitte gehören in einen vollständigen Festplan mit Aufräumen?",
+					"concept": "Alle geplanten Aktivitäten, Pausen und das Aufräumen.",
+					"fast_check": {
+						"type": "binary_choice",
+						"options": [
+							"Alle geplanten Aktivitäten, Pausen und das Aufräumen.",
+							"Nur das erste Spiel."
+						],
+						"correct_index": 0
+					}
+				},
+				{
+					"id": "01M6JFW47K25FTVMCKKETXXKG8",
+					"slug": "gs4-expedition-inselfest-3",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=expedition-inselfest",
+					"materiality": "material",
+					"question": "13 Kinder und 3 Helfer bekommen je 250 ml Wasser. Es gibt volle 1-l-Flaschen und Tische mit je sechs Plätzen. Wie viele Flaschen und Tische reichen mindestens?",
+					"concept": "Vier Flaschen und drei Tische.",
+					"sample_solution": "16 Personen brauchen 16 · 250 ml = 4 000 ml, also vier Literflaschen. Zwei Tische bieten nur zwölf Plätze; drei bieten 18 und reichen."
+				},
+				{
+					"id": "01M6JFW47KQAE2E1QK878FDZA2",
+					"slug": "gs4-expedition-inselfest-4",
+					"language": "de",
+					"tier": "tier2_synthesis",
+					"bloom_level": 3,
+					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=expedition-inselfest",
+					"materiality": "material",
+					"question": "Eine Modellabstimmung ergibt 7 Stimmen für Bauen, 12 für Malen und 9 für Spielen. Die höchste Stimmenzahl entscheidet. Welche Aktivität gewinnt, wie viele Stimmen gibt es und wie groß ist der Vorsprung?",
+					"concept": "Malen gewinnt; 28 Stimmen insgesamt; Vorsprung 3 Stimmen vor Spielen.",
+					"sample_solution": "7 + 12 + 9 = 28. Malen hat die höchste Zahl 12. Der zweite Platz hat 9; 12 − 9 = 3. Die Regel entscheidet über den ersten Platz, nicht automatisch über eine absolute Mehrheit."
 				}
 			]
 		}

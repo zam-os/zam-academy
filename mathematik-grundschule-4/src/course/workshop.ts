@@ -1,4 +1,13 @@
 import {
+	type DataChart,
+	type ChanceExperiment,
+	acceptsExperiment,
+	validExperimentState,
+	dataChartView,
+	chartWorkshopView,
+	experimentView,
+} from "./data-model";
+import {
 	type Geometry,
 	geometryView,
 	geometryControls,
@@ -15,8 +24,12 @@ export interface Scene {
 		| "coins"
 		| "units"
 		| "estimate"
-		| "geometry";
+		| "geometry"
+		| "data"
+		| "chance";
 	geometry?: Geometry;
+	chart?: DataChart;
+	experiment?: ChanceExperiment;
 	values: number[];
 	labels?: string[];
 }
@@ -48,6 +61,7 @@ export const freshWorkshop = (m: Workshop) => m.controls.map((c) => c.start);
 export function validWorkshop(raw: unknown, m: Workshop): raw is number[] {
 	return (
 		Array.isArray(raw) &&
+		(!m.scene.experiment || validExperimentState(raw, m.scene.experiment)) &&
 		raw.length === m.controls.length &&
 		raw.every(
 			(n, i) =>
@@ -61,6 +75,7 @@ export function validWorkshop(raw: unknown, m: Workshop): raw is number[] {
 }
 export function acceptsWorkshop(m: Workshop, state: number[]): boolean {
 	if (!validWorkshop(state, m)) return false;
+	if (m.scene.experiment) return acceptsExperiment(m, state);
 	const property = geometryProperty(m, state);
 	if (property !== null) return property;
 	const weights = m.weights;
@@ -93,6 +108,7 @@ export function stepWorkshop(
 const svg = (label: string, body: string, box = "0 0 600 170") =>
 	`<div class="world-scene-scroll" tabindex="0" role="region" aria-label="Modell, bei Bedarf seitlich verschiebbar"><svg class="world-scene" viewBox="${box}" role="img" aria-label="${html(label)}">${body}</svg></div>`;
 export function sceneView(scene: Scene): string {
+	if (scene.chart) return dataChartView(scene.chart);
 	if (scene.geometry) return geometryView(scene.geometry);
 	const v = scene.values;
 	if (scene.kind === "ruler") {
@@ -145,7 +161,7 @@ export function sceneView(scene: Scene): string {
 		const [large, small, factor] = v;
 		return `<div class="unit-model"><strong>${large} ${html(scene.labels?.[0] ?? "große Einheiten")} + ${small} ${html(scene.labels?.[1] ?? "kleine Einheiten")}</strong><div class="unit-parts">${Array.from({ length: Math.min(large, 10) }, () => `<span>${format(factor)}</span>`).join("")}<span>+ ${small}</span></div><p>Eine große Einheit enthält ${format(factor)} kleine Einheiten.</p></div>`;
 	}
-	return `<div class="unit-model"><p>Ein Vergleichsstück: ${format(v[1])} ${html(scene.labels?.[0] ?? "cm")}</p><div class="estimate-parts">${Array.from({ length: Math.min(v[0], 20) }, () => '<span aria-hidden="true">↔</span>').join("")}</div><p>${v[0]} gleich lange Vergleichsstücke · Modell, keine echte Messung am Bildschirm</p></div>`;
+	return `<div class="unit-model"><p>Ein Vergleichsstück: ${format(v[1])} ${html(scene.labels?.[0] ?? "cm")}</p><div class="estimate-parts">${Array.from({ length: Math.min(v[0], 20) }, () => '<span aria-hidden="true">↔</span>').join("")}</div><p>Anzahl gleich langer Vergleichsstücke: ${v[0]} · Modell, keine echte Messung am Bildschirm</p></div>`;
 }
 export function workshopView(
 	m: Workshop,
@@ -153,6 +169,8 @@ export function workshopView(
 	solved: boolean,
 ): string {
 	const state = raw && validWorkshop(raw, m) ? raw : freshWorkshop(m);
+	if (m.scene.chart) return chartWorkshopView(m, state, solved);
+	if (m.scene.experiment) return experimentView(m, state, solved);
 	const weights = m.weights;
 	const total = weights ? state.reduce((s, n, i) => s + n * weights[i], 0) : 0;
 	const scene = {

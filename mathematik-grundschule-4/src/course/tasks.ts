@@ -1,3 +1,6 @@
+import { finalTask, finalLab, finalExit } from "./data-and-expeditions";
+import { isFinalLesson } from "./worlds";
+import { experimentMistake } from "./data-model";
 import { geometryMistake } from "./geometry-model";
 import { shapeTask, shapeLab, shapeExit } from "./geometry";
 import { isShape } from "./worlds";
@@ -66,6 +69,7 @@ export type ForestTask = {
 		| "model";
 	model?: Workshop;
 	variantSeed?: number;
+	toolViews?: { label: string; scene: Scene }[];
 	scene?: Scene;
 	goal: 1 | 2 | 3;
 	prompt: string;
@@ -185,6 +189,7 @@ export function forestTask(
 	seed: number,
 	index: number,
 ): ForestTask {
+	if (isFinalLesson(id)) return finalTask(id, level, seed, index);
 	if (isShape(id)) return shapeTask(id, level, seed, index);
 	if (isMeasure(id)) return measureTask(id, level, seed, index);
 	if (id === "systematisch-kombinieren")
@@ -332,6 +337,7 @@ export function forestTask(
 	};
 }
 export function forestLab(id: ExtraLessonId, goal: number): ForestTask {
+	if (isFinalLesson(id)) return finalLab(id, goal);
 	if (isShape(id)) return shapeLab(id, goal);
 	if (isMeasure(id)) return measureLab(id, goal);
 	if (id === "systematisch-kombinieren") return combinationLab(goal);
@@ -376,6 +382,12 @@ export function forestLab(id: ExtraLessonId, goal: number): ForestTask {
 	};
 }
 export function forestMistake(task: ForestTask, answer: Answer | null): string {
+	if (task.model?.scene.experiment)
+		return Array.isArray(answer)
+			? experimentMistake(task.model, answer)
+			: task.hint;
+	if (task.model?.scene.chart)
+		return "Prüfe jede Kategorie und die Skala. Jede Beobachtung zählt genau einmal; ein größerer Skalenschritt ist nicht dasselbe wie ein Stück.";
 	if (task.model?.scene.geometry)
 		return Array.isArray(answer)
 			? geometryMistake(task.model, answer)
@@ -441,6 +453,7 @@ export function forestExit(
 	seed: number,
 	index: number,
 ): ForestTask {
+	if (isFinalLesson(id)) return finalExit(id, seed, index);
 	if (isShape(id)) return shapeExit(id, seed, index);
 	if (isMeasure(id)) return measureExit(id, seed, index);
 	if (id === "systematisch-kombinieren") return combinationExit(seed, index);

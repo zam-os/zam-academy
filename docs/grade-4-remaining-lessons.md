@@ -92,3 +92,67 @@ non-square tessellations, symmetric ornament design, varied physical views
 and tipping movements need teacher/practical review. Surface work is
 preparatory review from Grades 1/2; no formal square/cubic-unit formula is
 introduced. Media briefs stay awaiting recording and approval.
+
+
+## Chance Garden and mixed expeditions
+
+The final six lessons add model-data collection and labelled column charts,
+timetable/price/diagram interpretation, replacement experiments, and mixed
+workshop, journey and festival planning. This finishes the amended digital
+inventory: 33 core lessons and three expeditions across five worlds. The
+cell has 39 atoms/146 items, version 2026.11.12; the previous 33 atoms/122
+items remain unchanged, with 185 unique atom/item IDs and no history mapping.
+
+Collection reveals individual observations while the child enters category
+counts. Experiments preserve an initial prediction, the bag conditions and
+the exact drawn prefix. A second guided trial lets the child change the bag
+composition at a fixed total before drawing; conditions and prediction lock
+after the first draw. Any initial prediction is allowed. Assisted analysis
+requires the actual twelve draws and retains the original guess. Selected
+predictions remain visibly marked after locking in both themes. A finite
+observed frequency never becomes a guarantee for the next draw.
+
+Expeditions connect whole-piece material plans, exact budgets, packaging
+mass, travel/waiting times, seats, sufficient supplies, a fixed fictional
+vote rule and full event schedules. Optional source tools expose givens in
+another representation without supplying solutions. Exit families reserve
+authored examples and labs; chance-frequency families ignore hidden bag
+metadata. Saved exit seeds remain stable when older history is trimmed.
+
+Verification on 2026-11-04:
+
+- App: npm ci --offline, npm run typecheck, npm test (144 tests across 11
+  files), npm run package:zip and npm run verify:release passed. External
+  Biome format/lint and git diff --check passed.
+- Root: node --test scripts/build-catalog.test.mjs
+  scripts/academy-registry.test.mjs passed 48 tests. All 38 cells and the
+  146-card disposable install/enrol/recall/reinstall path passed with
+  CI-pinned zam-core 0.54.0.
+- The isolated native browser harness passed 404 assertions, including all
+  new world journeys, queued rapid draws, saved-prefix resumption, changed
+  composition locking and assisted analysis retaining an incorrect guess.
+- Built final-six starts were inspected at 320 px without body overflow;
+  manual checks covered chart construction, saved collection counts,
+  partial experiment reload, changed bag conditions, assistance and source
+  tools. Desktop light and phone dark layouts were inspected. The user’s
+  existing preview and progress at localhost:5231 were not touched.
+- Independent review passed 66 targeted tests, typecheck and diff checks.
+  Earlier sampling checked 18,000 generated worksheets and 4,500 charts;
+  review fixes addressed hidden-column scale bounds, freshness, initial
+  prediction preservation, column terminology and singular ball wording.
+  All reported findings were corrected and rechecked.
+
+The [official shared Grades 3/4 curriculum](https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik)
+was re-read with Grades 1/2 and Grade 5 Mittelschule/Realschule/Gymnasium
+boundaries. Coverage records map the implemented activities and retain
+explicit gaps for original questions, self-chosen representations, wider
+sources, Fermi assumptions, discussion and physical trials. The old
+fraction-image placeholders in one inventory row are restored as readable
+fractions; the original snapshot hash remains historical.
+
+The strict `npm run verify:release -- --complete` still fails as expected:
+primary-school teacher approval, real recordings/rights, observed playback,
+direct offline-file startup, ZAM learner-UI recall and physical touch-device
+acceptance remain pending. All phase acceptance checkboxes stay unchecked.
+The six recording briefs are production handoffs, not approved media. The
+package remains local-only and is not advertised as a complete annual course.

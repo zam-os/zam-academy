@@ -2,7 +2,8 @@
 
 **Date:** 2026-10-31
 **Plan status:** Phase 1 in progress. The German starter is implemented and
-technically verified locally; the teacher recording, content sign-off and
+technically verified locally. The amended digital inventory now has 36 drafts;
+the teacher recording, content sign-off and
 remaining manual acceptance checks are pending. No phase is marked complete.
 **Chosen direction:** Discovery Island, selected by Thomas on 2026-10-31.
 **Companion:** Milo, the working identity from the concept.
@@ -461,7 +462,7 @@ representations. Expeditions combine concepts in short practical stories
 and let the learner choose tools; they do not merely repeat a memorised
 worked example or introduce compulsory speed contests.
 
-**Exit:** all 31 core lessons and three expeditions are implemented;
+**Exit:** all 33 core lessons and three expeditions are implemented;
 curriculum/reasoning gaps are listed explicitly; every lesson has its
 reviewed video route and accessible text equivalent. Simulated rewards
 remain deterministic; chance experiments do not become random pet prizes.

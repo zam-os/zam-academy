@@ -63,7 +63,7 @@ external video embeds and automatic media requests remain excluded.
 
 | App | Folder | Status |
 | --- | --- | --- |
-| Grade 4 mathematics: 30 Number Forest, Measure Market and Shape Bay lessons with Milo (Bavaria) | [`mathematik-grundschule-4/`](mathematik-grundschule-4/) | Local draft; 30 lessons, teacher recordings and review pending |
+| Grade 4 mathematics: 36 Discovery Island lessons with Milo (Bavaria) | [`mathematik-grundschule-4/`](mathematik-grundschule-4/) | Local draft; 36 lessons, teacher recordings and review pending |
 | Grade 4 German: Tintos Wörterstadt, 23 lessons on language structures and spelling (Bavaria, LehrplanPLUS 4.3/4.4) | [`deutsch-grundschule-4/`](deutsch-grundschule-4/) | Local draft; primary-teacher review pending; reading, writing and the Grundwortschatz still open ([coverage](docs/deutsch-grundschule-4-coverage.md)) |
 
 ## Develop

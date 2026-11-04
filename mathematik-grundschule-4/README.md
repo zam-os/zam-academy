@@ -1,18 +1,19 @@
 # ZAM Discovery Island: Grade 4 mathematics
 
-German learner and parent UI for Bavarian Grade 4. Thirty selectable lessons
-in the Number Forest, Measure Market and Shape Bay cover place values/bundling, comparing/ordering,
+German learner and parent UI for Bavarian Grade 4. Thirty-six selectable lessons
+in the Number Forest, Measure Market, Shape Bay, Chance Garden and mixed expeditions cover place values/bundling, comparing/ordering,
 number lines/equal jumps, decomposition/complements, addition/subtraction
-strategies, multiplication/inverse division, the four written procedures, arithmetic patterns, multi-step story problems, systematic combinations, divisors/multiples, measurement and concrete geometry.
+strategies, multiplication/inverse division, the four written procedures, arithmetic patterns, multi-step story problems, systematic combinations, divisors/multiples, measurement, concrete geometry, data/chance and mixed practical planning.
 Each has two resumable missions, three successful tasks per practice level,
 fresh exit checks, optional practice and a welcoming Milo. A lesson is a
 draft activity, not a completed annual course or proof of mastery.
 
-The twenty-nine lessons added after the original workshop have three interactive
+The thirty-five lessons added after the original workshop have three interactive
 goals each. Their models include a number gate, a keyboard-friendly
 number-line marker, coupled treasure bars, calculation jumps, equal baskets,
 result/carry boards, a value-preserving regrouping board, partial-product
-boards, a step-by-step division workshop and tables with editable reasoning and intermediate results, a child-built combination list and divisor selection. Numbers and results stay
+boards, a step-by-step division workshop and tables with editable reasoning and intermediate results, a child-built combination list, divisor selection, quantity models, editable geometry,
+labelled column charts and saved replacement experiments. Numbers and results stay
 between zero and one million. Written multiplication uses one/two-digit
 factors; written division uses divisors through 10, including remainders.
 
@@ -48,7 +49,7 @@ The app reuses the approved Academy TypeScript/Vite/Vitest/single-file
 toolchain; it adds no runtime dependencies. `validate:cell` defaults to
 the adjacent `zam/dist/index.js`; set `ZAM_CORE` to a file URL of another
 approved build to check compatibility. It uses only a disposable database:
-installation creates no cards, explicit enrolment creates sixty-two, retries
+installation creates no cards, explicit enrolment creates 146, retries
 create none, and reinstall preserves a real recall-rating log.
 
 At the Academy root, run
@@ -98,8 +99,8 @@ exponents and malformed or mixed dot/space groups remain invalid.
 - Lesson id: `stellenwerte-buendeln`; cell:
   `zam-academy:mathematik-grundschule-4`. Public links are future source
   addresses and do not indicate that this draft is already hosted.
-- `cell.json` is the sole recall-card source: thirty-three atoms, one hundred twenty-two German
-  items (sixty-six binary fast checks and fifty-six synthesis tasks) with fixed ULIDs.
+- `cell.json` is the sole recall-card source: thirty-nine atoms, one hundred forty-six German
+  items (seventy-eight binary fast checks and sixty-eight synthesis tasks) with fixed ULIDs.
   Edit cards only in this file; there is no
   second authored card list or card generator. Installation uses the approved
   core's card-text validation and write path. Prerequisites form an acyclic
@@ -108,7 +109,7 @@ exponents and malformed or mixed dot/space groups remain invalid.
   which would hide the generic importer for this partial starter.
 - `coverage.json` enumerates 54 official competence positions across 13
   subareas, with source anchors, checked date and explicit remaining work.
-  Parts of sections 1.1–1.3, 2.1–2.5 and 3.1–3.3 are implemented. No teacher
+  Parts of sections 1.1–1.3, 2.1–2.5, 3.1–3.3 and 4.1–4.2 are implemented. No teacher
   review or full coverage is claimed.
 - Evidence records first responses separately from helped retries. The
   parent view uses stable task snapshots for dated examples, with canonical
@@ -156,3 +157,10 @@ buildings, rectangle/net construction, mirror/scaling grids, repeating
 patterns, unit surfaces and unit cubes. Free constructions use geometric
 properties, including alternate valid nets and ornaments. Exit observations
 use labels for the task actually checked; physical construction is pending.
+
+The final six lessons add model data collection, vertical column charts
+(Säulendiagramme), tables/timetables, chance experiments with replacement, and
+three mixed planning expeditions. Initial predictions stay recorded even
+when assisted analysis follows; frequencies and chance are distinct.
+Authentic outside collections and learner-generated questions remain
+practical activities without automated observation or teacher sign-off.

@@ -268,6 +268,13 @@
 			"checked": "2026-11-03",
 			"content_version": 11,
 			"details": "312 native assertions including all 15 new measurement/geometry journeys, rapid grid cycles, model persistence and property-based constructions. Nine geometry starts inspected at 320 px without body overflow; built cube net solved with keyboard Enter and saved-cell focus retained. Cube building and cuboid diagram inspected in dark phone layout. No physical construction or teacher approval claimed."
+		},
+		{
+			"surface": "Built dist/index.html over separate localhost:5235 test origin; native IndexedDB harness on 127.0.0.1:5234",
+			"check": "Final six lesson journeys, collection/experiment resumption and expedition tools",
+			"status": "passed",
+			"checked": "2026-11-04",
+			"details": "404 isolated native assertions passed, including all measurement/geometry/data/expedition journeys. Built six final lesson starts inspected at 320 px without horizontal body overflow. Manually constructed a chart; three revealed observations and entered counts resumed after reload. Chance trial resumed its original prediction and exact draw prefix; actual twelve draws preceded assisted analysis, retaining the initial wrong guess. Changing bag composition before a second trial reset its guess and locked after drawing. Saved prediction has a visible selected marker, including disabled dark-mode controls. Opened source tools and verified whole-number travel answers; desktop light and phone dark inspected. User preview/progress at localhost:5231 was untouched. Physical touch and direct file startup remain pending."
 		}
 	],
 	"remaining": [
@@ -280,9 +287,9 @@
 	],
 	"checked": "2026-11-03",
 	"automated_checks": {
-		"app": "npm ci --offline, npm run typecheck, npm test (138 tests), npm run package:zip, npm run verify:release and external Biome format/lint passed. No dependency changes.",
+		"app": "npm ci --offline, npm run typecheck, npm test (144 tests), npm run package:zip, npm run verify:release and external Biome format/lint passed. No dependency changes.",
 		"catalog": "node --test scripts/build-catalog.test.mjs scripts/academy-registry.test.mjs: 48 checks passed. This local-only draft remains excluded.",
-		"cell": "33 atoms, 122 items, version 2026.11.11. Independent parsed-JSON check preserves the prior 24 atoms/86 items; 155 unique atom/item IDs. All 38 cells and disposable install/enrol/recall/reinstall passed with CI-pinned zam-core 0.54.0. No official whole-grade binding or history transfer.",
+		"cell": "39 atoms, 146 items, version 2026.11.12. Independent parsed-JSON check preserves prior 33 atoms/122 items; 185 unique atom/item IDs. All 38 cells and disposable install/enrol/recall/reinstall passed with CI-pinned zam-core 0.54.0. No official whole-grade binding or history transfer.",
 		"all_cells": "ZAM_CORE=<temporary zam-core 0.54.0 file URL> node scripts/validate-cells.mjs: all 38 Academy cells, including the newly merged German Grade 4 draft, validated in disposable libraries.",
 		"package": "npm run package:zip and npm run verify:release passed. npm run verify:release -- --complete returned the expected nonzero result for missing teacher review/media, final playback, direct-file startup, ZAM learner-UI recall and physical touch."
 	},
@@ -512,6 +519,25 @@
 			"Teacher review and recordings pending",
 			"Exact paper construction, physical nets/mirrors/cubes and discussion unobserved",
 			"Broader tessellations, symmetric ornament design and physical kipp movements remain limited"
+		]
+	},
+	"final_worlds": {
+		"checked": "2026-11-04",
+		"lessons": 6,
+		"status": "digital-implementation-verified",
+		"unit_tests": 144,
+		"native_browser_assertions": 404,
+		"root_tests": 48,
+		"core_version": "0.54.0",
+		"cell_atoms": 39,
+		"cell_items": 146,
+		"scope": "Three data/chance lessons and three mixed expeditions finish the 36-lesson digital draft inventory.",
+		"independent_review": "66 targeted tests, typecheck and whitespace check passed. Review verified preservation of prior cell content, composition locking/resumption, assisted prediction retention and explicit partial coverage/media status; no remaining actionable findings. This is not teacher approval.",
+		"limitations": [
+			"Primary-school teacher review and recordings pending",
+			"Real data collection, physical experiments, practical measurements and peer discussion unobserved",
+			"Own mathematical questions, original representation design and Fermi assumptions remain prompted/manual curriculum gaps",
+			"Direct-file startup, actual media playback, ZAM learner-UI recall and physical touch acceptance pending"
 		]
 	}
 }

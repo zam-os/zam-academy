@@ -2254,3 +2254,90 @@ input {
 	font-size: 18px;
 	fill: var(--ink);
 }
+:root[data-world="chance"] {
+	--world-accent: #39702e;
+}
+[data-theme="dark"][data-world="chance"] {
+	--world-accent: #a4d38d;
+}
+:root[data-world="expedition"] {
+	--world-accent: #9a4569;
+}
+[data-theme="dark"][data-world="expedition"] {
+	--world-accent: #f4a4c7;
+}
+:root[data-world="chance"] .lesson-card,
+:root[data-world="expedition"] .lesson-card {
+	border-top: 5px solid var(--world-accent);
+}
+.observation-list {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.4rem;
+	margin: 1rem 0;
+}
+.observation-list span {
+	padding: 0.35rem;
+	border: 1px solid var(--line);
+	border-radius: 0.35rem;
+}
+.draw-log {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+	padding-left: 1.5rem;
+}
+.world-workshop fieldset {
+	border: 0;
+	padding: 0;
+	margin: 1.25rem 0;
+	min-width: 0;
+}
+.world-workshop legend {
+	font-weight: 700;
+	margin-bottom: 0.5rem;
+}
+.world-workshop .answer-options button[aria-pressed="true"] {
+	border: 2px solid var(--world-accent);
+	background: var(--soft);
+	color: var(--ink);
+	opacity: 1;
+}
+.world-workshop .answer-options button[aria-pressed="true"]::before {
+	content: "✓ ";
+}
+.draw-log li {
+	min-width: 60px;
+	padding: 0.5rem;
+	margin-right: 0.5rem;
+	border: 1px solid currentColor;
+	border-radius: 0.5rem;
+	font-weight: 700;
+}
+.red-draw {
+	color: #96314c;
+	background: #fff0f2;
+}
+.blue-draw {
+	color: #245e91;
+	background: #e8f4ff;
+}
+[data-theme="dark"] .red-draw {
+	color: #ffc0cd;
+	background: #442936;
+}
+[data-theme="dark"] .blue-draw {
+	color: #b9e0ff;
+	background: #1a3549;
+}
+.expedition-tools {
+	margin: 1rem 0;
+	border: 1px solid var(--line);
+	border-radius: 0.75rem;
+	padding: 0.75rem;
+}
+.expedition-tools summary {
+	min-height: 44px;
+	cursor: pointer;
+	font-weight: 700;
+}
