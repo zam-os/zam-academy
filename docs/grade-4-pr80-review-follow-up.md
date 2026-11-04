@@ -71,3 +71,22 @@ Parsed JSON preserves the original 18 atoms/62 items and all 185 current
 atom/item IDs, without history mappings. This review is not teacher approval.
 The strict complete-release gate remains intentionally blocked by the listed
 manual/teacher/media acceptance work.
+
+
+## Fourth review
+
+The [additional clock comment](https://github.com/zam-os/zam-academy/pull/80#discussion_r4464590466)
+repeats the already corrected next-full-hour solution. The
+[overnight timetable finding](https://github.com/zam-os/zam-academy/pull/80#discussion_r4464590484)
+is also addressed: every displayed event after midnight, including arrival
+and departure at the intermediate stop, names the next day in its own cell.
+The durations and semantic task identity are unchanged. A 200-seed regression
+checks all four event cells against their absolute times and verifies the
+unchanged pure-travel, waiting and total durations. The app now passes 149
+unit tests; the earlier 148-test evidence above describes the first pass.
+
+The final native rerun again passed 404 assertions. In the built app, a
+23:30 departure, 00:00 intermediate arrival, 00:15 departure and 01:00
+destination arrival displayed all three next-day labels. Entered answers
+75 min travel, 15 min waiting and 90 min total passed. The independent
+recheck passed all eight final-world tests and found no actionable issue.
