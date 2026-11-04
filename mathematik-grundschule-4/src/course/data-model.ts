@@ -63,7 +63,7 @@ export function acceptsExperiment(m: Workshop, state: number[]): boolean {
 	);
 }
 export function dataChartView(c: DataChart): string {
-	const width = 540,
+	const width = Math.max(540, 75 + c.labels.length * 145),
 		height = 220,
 		left = 50,
 		bottom = 170,
@@ -75,7 +75,7 @@ export function dataChartView(c: DataChart): string {
 		{ length: Math.floor(c.max / c.scale) + 1 },
 		(_, i) => i * c.scale,
 	);
-	return `<div class="world-scene-scroll" tabindex="0" role="region" aria-label="Säulendiagramm, bei Bedarf seitlich verschiebbar"><svg class="world-scene chart-scene" viewBox="0 0 ${width} ${height}" role="img" aria-label="Diagramm. Ein Skalenabschnitt bedeutet ${c.scale} ${html(c.unit)}. ${c.labels.map((s, i) => `${s}: ${c.hidden?.includes(i) ? "nicht angegeben" : c.values[i]}`).join("; ")}">${ticks.map((n) => `<path d="M${left} ${bottom - (n / c.max) * plotHeight}H520" stroke="var(--line)"/>${(n / c.scale) % labelEvery === 0 ? `<text x="${left - 8}" y="${bottom - (n / c.max) * plotHeight + 5}" text-anchor="end">${n}</text>` : ""}`).join("")}${c.labels
+	return `<div class="world-scene-scroll" tabindex="0" role="region" aria-label="Säulendiagramm, bei Bedarf seitlich verschiebbar"><svg class="world-scene chart-scene" viewBox="0 0 ${width} ${height}" role="img" aria-label="Diagramm. Ein Skalenabschnitt bedeutet ${c.scale} ${html(c.unit)}. ${c.labels.map((s, i) => `${s}: ${c.hidden?.includes(i) ? "nicht angegeben" : c.values[i]}`).join("; ")}">${ticks.map((n) => `<path d="M${left} ${bottom - (n / c.max) * plotHeight}H${width - 20}" stroke="var(--line)"/>${(n / c.scale) % labelEvery === 0 ? `<text x="${left - 8}" y="${bottom - (n / c.max) * plotHeight + 5}" text-anchor="end">${n}</text>` : ""}`).join("")}${c.labels
 		.map((s, i) => {
 			const x = left + 25 + i * (barWidth + gap),
 				hidden = c.hidden?.includes(i);

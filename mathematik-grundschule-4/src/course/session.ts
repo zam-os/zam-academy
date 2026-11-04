@@ -161,7 +161,8 @@ export class ForestSession {
 					const task = activeForestTask(this.store.state);
 					if (!task?.columns) return;
 					const order = columnOrder(
-						additionColumns(task.columns.a, task.columns.b).width,
+						additionColumns(task.columns.a, task.columns.b, task.columns.extra)
+							.width,
 					);
 					const position =
 						order.indexOf(Number(input.dataset.col)) +
@@ -178,7 +179,7 @@ export class ForestSession {
 					const index = Number(input.dataset.col),
 						value = input.value,
 						key = forestKey(this.store.state);
-					const allowed = index < 7 ? /^[0-9]?$/ : /^[01]?$/;
+					const allowed = index < 7 ? /^[0-9]?$/ : /^[0-3]?$/;
 					if (!allowed.test(value)) {
 						input.setAttribute("aria-invalid", "true");
 						const note = root.querySelector("#column-input-error");
@@ -847,6 +848,7 @@ export class ForestSession {
 							task.columns.a,
 							task.columns.b,
 							columnValues,
+							task.columns.extra,
 						);
 						if (notice) {
 							this.feedback = notice;
@@ -978,7 +980,12 @@ export class ForestSession {
 							p.subtractionWork ?? freshSubtractionWork(task.subtraction.a),
 						);
 					else if (task.kind === "columns" && task.columns)
-						answer = columnAnswer(task.columns.a, task.columns.b, columnValues);
+						answer = columnAnswer(
+							task.columns.a,
+							task.columns.b,
+							columnValues,
+							task.columns.extra,
+						);
 					else if (
 						task.kind === "parts" ||
 						task.kind === "order" ||

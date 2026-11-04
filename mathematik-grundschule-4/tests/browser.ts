@@ -443,6 +443,31 @@ run.addEventListener("click", async (event) => {
 				writtenSession.store.state.attempts.length === beforeAttempts + 1,
 			"Completing the exit after notices still records a first independent answer with visible blank zero carries",
 		);
+		for (const stage of ["lab", "practice-2"] as const) {
+			await writtenSession.store.update((p) => {
+				p.stage = stage;
+				p.index = 2;
+				p.columnWork = Array<string>(13).fill("");
+			});
+			const multi = required(activeForestTask(writtenSession.store.state));
+			assert(
+				multi.columns?.extra?.length === (stage === "lab" ? 1 : 2),
+				`${stage}: native board includes every added summand`,
+			);
+			for (const cell of writtenHost.querySelectorAll<HTMLInputElement>(
+				'[data-action="forest-column"]',
+			))
+				edit(
+					Number(cell.dataset.col),
+					String((multi.answer as number[])[Number(cell.dataset.col)]),
+				);
+			await writtenSession.store.update(() => {});
+			await checkWritten();
+			assert(
+				writtenSession.store.state.attempts.at(-1)?.outcome === true,
+				`${stage}: native input submits all result digits and multi-summand carries`,
+			);
+		}
 		writtenHost.remove();
 		const subtractionHost = document.createElement("section");
 		document.body.append(subtractionHost);

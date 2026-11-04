@@ -31,23 +31,25 @@ describe("written addition", () => {
 					const task = writtenTask(level, seed * 7919, index),
 						c = task.columns;
 					if (!c) throw new Error("Missing column operands");
-					const m = additionColumns(c.a, c.b);
-					expect(amount(m.answer)).toBe(c.a + c.b);
+					const m = additionColumns(c.a, c.b, c.extra);
+					const ns = [c.a, c.b, ...(c.extra ?? [])],
+						total = ns.reduce((sum, n) => sum + n, 0);
+					expect(amount(m.answer)).toBe(total);
 					expect(c.a + c.b).toBeLessThanOrEqual(1_000_000);
 					for (let col = 1; col < 7; col++) {
 						const unit = 10 ** col;
 						expect(m.carries[col]).toBe(
-							Math.floor(((c.a % unit) + (c.b % unit)) / unit),
+							Math.floor(ns.reduce((s, n) => s + (n % unit), 0) / unit),
 						);
 					}
 					expect(m.totals.every(Number.isFinite)).toBe(true);
 					if (task.kind === "columns")
-						expect(columnAnswer(c.a, c.b, m.answer.map(String))).toEqual(
-							task.answer,
-						);
+						expect(
+							columnAnswer(c.a, c.b, m.answer.map(String), c.extra),
+						).toEqual(task.answer);
 					if (level === 1 && index === 0)
 						expect(m.carries.every((n) => n === 0)).toBe(true);
-					else expect(m.carries[1]).toBe(1);
+					else if (!c.extra?.length) expect(m.carries[1]).toBe(1);
 					if (task.kind === "choice") {
 						const place = Math.log10(c.a + c.b - Number(c.shown));
 						expect(Number.isInteger(place)).toBe(true);
@@ -56,11 +58,11 @@ describe("written addition", () => {
 					}
 				}
 	});
-	it("has three known lab witnesses including zero positions and the million boundary", () => {
+	it("has three known lab witnesses including zero positions and a multi-summand carry chain", () => {
 		for (const [goal, total, carries] of [
 			[0, 2468, [0, 0, 0, 0, 0, 0]],
 			[1, 4235, [1, 1, 1, 0, 0, 0]],
-			[2, 1000000, [1, 1, 1, 1, 1, 1]],
+			[2, 999997, [2, 2, 2, 2, 2, 0]],
 		] as const) {
 			const task = writtenLab(goal);
 			expect(correctForest(task, null)).toBe(false);
@@ -147,7 +149,7 @@ describe("written addition", () => {
 			undefined,
 			[],
 			Array(13).fill("11"),
-			[...Array(12).fill(""), "2"],
+			[...Array(12).fill(""), "4"],
 		])
 			expect(validForest({ ...p, columnWork: bad })).toBe(false);
 		p.stage = "lab";
@@ -182,6 +184,11 @@ describe("written-addition review regressions", () => {
 				const guided = writtenTask(1, seed, index).columns,
 					transfer = writtenTask(2, seed, index).columns;
 				if (!guided || !transfer) throw new Error("Missing board");
+				if (index === 2) {
+					expect(guided.extra).toHaveLength(1);
+					expect(transfer.extra).toHaveLength(2);
+					continue;
+				}
 				const m = additionColumns(guided.a, guided.b),
 					t = additionColumns(transfer.a, transfer.b);
 				expect(m.width).toBeGreaterThanOrEqual(4);
@@ -199,15 +206,21 @@ describe("written-addition review regressions", () => {
 			}
 		expect(lengths.size).toBe(2);
 	});
-	it("requires a corrected board with a carry chain for the goal-three exit", () => {
+	it("requires all four summands on the goal-three exit", () => {
 		for (let seed = 0; seed < 80; seed++) {
 			const task = writtenExit(seed, 2);
 			expect(task.kind).toBe("columns");
 			expect(task.goal).toBe(3);
 			if (!task.columns) throw new Error("Missing correction board");
-			const m = additionColumns(task.columns.a, task.columns.b);
-			expect(m.carries[1] + m.carries[2]).toBe(2);
-			expect(task.columns.shown).not.toBe(task.columns.a + task.columns.b);
+			const ns = [
+				task.columns.a,
+				task.columns.b,
+				...(task.columns.extra ?? []),
+			];
+			expect(ns).toHaveLength(4);
+			expect(amount(task.answer as number[])).toBe(
+				ns.reduce((s, n) => s + n, 0),
+			);
 		}
 	});
 	it("accepts genuinely visible blank zero carries among nonzero carries", () => {

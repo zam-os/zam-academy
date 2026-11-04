@@ -66,6 +66,7 @@ export function finalTask(
 	level: 1 | 2,
 	seed: number,
 	index: number,
+	revision = 1,
 ): ForestTask {
 	const next = random(
 			(seed + Math.imul(index + 1, 2654435761) + level * 104729) >>> 0,
@@ -73,6 +74,46 @@ export function finalTask(
 		int = (lo: number, hi: number) => lo + Math.floor(next() * (hi - lo + 1));
 	const goal = ((index % 3) + 1) as 1 | 2 | 3,
 		transfer = level === 2;
+	if (
+		id === "daten-sammeln-darstellen" &&
+		transfer &&
+		goal === 1 &&
+		revision === 1
+	) {
+		const labels = ["Äpfel", "Birnen", "Pflaumen", "Kirschen", "Aprikosen"];
+		const values = labels.map(() => int(2, 12) * 2),
+			total = sum(values);
+		return worksheet(
+			1,
+			`Eine Modellsammlung hat ${total} Früchte. Übertrage die fünf Kategorien in ein Diagramm mit dem Skalenschritt 2 und erschließe die fehlende Häufigkeit.`,
+			["data-five", ...values],
+			"Fünf Kategorien derselben Sammlung",
+			["Kategorie", "Anzahl"],
+			labels.map((label, i) => [
+				label,
+				i === 4 ? "gesucht" : String(values[i]),
+			]),
+			[
+				...labels.map((label, i) =>
+					number(
+						`Anzahl ${label}`,
+						values[i],
+						i === 4
+							? "Ziehe die vier bekannten Häufigkeiten von der Gesamtzahl ab."
+							: "Lies die Tabelle sorgfältig.",
+					),
+				),
+				number(
+					"Skalenstufen der Aprikosensäule",
+					values[4] / 2,
+					"Eine Skalenstufe bedeutet zwei Früchte.",
+				),
+			],
+			"Jede Kategorie bekommt eine beschriftete Säule. Zeichne alle fünf Säulen auf Papier; die fünfte Häufigkeit musst du zuerst erschließen.",
+			`${labels.map((label, i) => `${label}: ${values[i]}`).join("; ")}. Zusammen ${total}. Die Aprikosensäule braucht ${values[4] / 2} Skalenstufen.`,
+			chart(values, 2, labels, [4]),
+		);
+	}
 	if (id === "daten-sammeln-darstellen") {
 		const scale = transfer ? 2 : 1,
 			values = Array.from({ length: 3 }, () => int(2, 12) * scale),
@@ -1046,6 +1087,7 @@ export function finalExit(
 	id: FinalId,
 	seed: number,
 	index: number,
+	revision = 1,
 ): ForestTask {
 	const reserved = new Set(
 		[
@@ -1059,6 +1101,7 @@ export function finalExit(
 			2,
 			((seed ^ 0x5be0cd19) + Math.imul(n, 1640531527)) >>> 0,
 			index,
+			revision,
 		);
 		if (!reserved.has(JSON.stringify(finalFamily(t)))) return t;
 	}

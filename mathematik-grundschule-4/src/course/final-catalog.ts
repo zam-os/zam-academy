@@ -22,6 +22,7 @@ export const FINAL_LESSONS: ForestLesson[] = [
 			"Mit einer Strichliste oder Tabelle kannst du geordnet zählen. Jeder Eintrag wird genau einmal berücksichtigt. Häufigkeit bedeutet hier: Wie oft kommt eine Kategorie vor? Addiere die Häufigkeiten als Kontrolle und vergleiche mit der Zahl aller Beobachtungen.",
 			"Ein Säulendiagramm macht Häufigkeiten vergleichbar. Die Kategorien brauchen Namen, die Zahlen eine Einheit und die Achse eine erkennbare Skala. Gleiche Häufigkeiten ergeben gleich hohe Säulen. Eine kleine Skalenstufe kann ein Stück oder auch zwei Stück bedeuten.",
 			"In der Werkstatt deckst du Beobachtungen einzeln auf und veränderst die Säulen selbst. Diese Sammlung ist ein Modell in der App. Eine echte Sammlung zu Hause oder eine Befragung planst du mit anderen; sie wird nicht automatisch beobachtet oder hochgeladen. Formuliere dazu auch eine eigene Frage.",
+			"Auch umfangreichere Tabellen brauchen klare Kategorien: Für Äpfel, Birnen, Pflaumen, Kirschen und Aprikosen zeichnest du fünf beschriftete Säulen. Prüfe die Gesamtzahl. Eine Skalenstufe kann zum Beispiel zwei Früchte bedeuten. Die größere Tabelle ändert die Zählregel nicht.",
 		],
 		example:
 			"In einer Modellsammlung liegen 4 Äpfel, 6 Birnen und 3 Pflaumen. Die Tabelle hat die Häufigkeiten 4, 6 und 3; zusammen sind es 13 Früchte. Bei einer Skalenstufe von einem Stück sind die Säulen 4, 6 und 3 Stufen hoch. Die Achse und die Kategorien bleiben beschriftet.",

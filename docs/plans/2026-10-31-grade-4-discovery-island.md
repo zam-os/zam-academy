@@ -2,7 +2,7 @@
 
 **Date:** 2026-10-31
 **Plan status:** Phase 1 in progress. The German starter is implemented and
-technically verified locally. The amended digital inventory now has 36 drafts;
+technically verified locally. The amended digital inventory now has 40 preview lessons;
 the teacher recording, content sign-off and
 remaining manual acceptance checks are pending. No phase is marked complete.
 **Chosen direction:** Discovery Island, selected by Thomas on 2026-10-31.
@@ -12,6 +12,19 @@ remaining manual acceptance checks are pending. No phase is marked complete.
 [Academy app/cell contract](../../README.md#how-an-app-and-its-zam-cell-fit-together).
 
 ## Status
+
+The 2026-11-04 user request explicitly adds the curriculum-gap audit and digital
+extensions described in [the audit](../grade-4-curriculum-gap-audit.md) to the
+published preview. It does not authorize checking off teacher, media, practical
+or phase acceptance. The earlier dated 36-lesson inventory below records the
+previous implementation.
+
+First-preview written-addition saves retain their original lab and generators,
+including the third-goal board `999 999 + 1`. The shared goal label now also
+mentions multiple summands; an old saved example is evidence only for the
+actual task displayed, not for multi-summand mastery. A fresh round uses the
+extended three/four-summand tasks. This preserves existing progress rather
+than silently replacing an unfinished board.
 
 - [ ] Phase 1 — complete place-value lesson with Milo and a real teacher video
 - [ ] Phase 2 — family usability pilot and Academy starter release readiness
