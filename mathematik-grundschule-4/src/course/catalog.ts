@@ -1,4 +1,6 @@
 import { FINAL_LESSONS } from "./final-catalog";
+import { REASONING_LESSONS } from "./reasoning-catalog";
+import { REASONING_IDS } from "./reasoning";
 import { SHAPE_LESSONS } from "./shape-catalog";
 import { MEASURE_IDS, FINAL_IDS, SHAPE_IDS, type World } from "./worlds";
 import { MEASURE_LESSONS } from "./measure-catalog";
@@ -20,6 +22,7 @@ export const EXTRA_LESSON_IDS = [
 	...MEASURE_IDS,
 	...SHAPE_IDS,
 	...FINAL_IDS,
+	...REASONING_IDS,
 ] as const;
 export type ExtraLessonId = (typeof EXTRA_LESSON_IDS)[number];
 export interface QuizChoice {
@@ -156,6 +159,7 @@ export const FOREST_LESSONS: ForestLesson[] = [
 		paragraphs: [
 			"Eine Zahl kannst du auf verschiedene Weise in Summanden zerlegen. Die Summe der Teile bleibt gleich: 10 000 = 3 000 + 7 000 und 10 000 = 4 000 + 6 000.",
 			"Bei der Stellenwertzerlegung zerlegst du nach dem Wert der Ziffern. 304 070 = 300 000 + 4 000 + 70. Eine leere Stelle trägt nichts zur Summe bei; sie darf die anderen Ziffern aber nicht verschieben.",
+			"Ziffernschreibweise, Stufenschrift und Zahlwort zeigen denselben Wert: 4 024 = 4T 2Z 4E = viertausendvierundzwanzig. Die Hunderterstelle ist leer. Materialbilder mit Tausenderwürfeln, Hunderterplatten, Zehnerstangen und Einerwürfeln erklären dieselbe Bündelung. Lies das Zahlwort von den großen Stellen zu den kleinen.",
 			"Fehlt ein Teil, ergänze vom bekannten Teil zur ganzen Zahl oder rechne die Differenz aus. In 100 000 = 36 000 + □ fehlt 64 000. Prüfe durch Addieren: 36 000 + 64 000 = 100 000.",
 			"Du kannst auch Bündel zusammenfassen: 100 000 sind zehn Zehntausender. Werden bei gleichbleibender ganzer Zahl 1 000 zum einen Teil hinzugefügt, müssen 1 000 beim anderen Teil weggenommen werden.",
 		],
@@ -325,19 +329,19 @@ export const FOREST_LESSONS: ForestLesson[] = [
 		goals: [
 			"Stellenrichtig ohne Übertrag addieren",
 			"Überträge in der nächsten Spalte mitrechnen",
-			"Übertragsketten und Ergebnisse prüfen",
+			"Mehrere Summanden und Überträge größer als 1 prüfen",
 		],
 		paragraphs: [
 			"Beim schriftlichen Addieren stehen gleiche Stellenwerte untereinander: Einer unter Einern, Zehner unter Zehnern und so weiter. Schreibe auch unterschiedlich lange Zahlen rechtsbündig. Bei 2 345 + 123 steht die 3 der 123 unter der 5, weil beide Einer sind. Eine unbesetzte Stelle zählt wie 0.",
-			"Beginne rechts bei den Einern. Addiere die beiden Ziffern einer Spalte und einen ankommenden Übertrag. Ist die Spaltensumme kleiner als 10, schreibst du sie unten in dieselbe Spalte. Danach gehst du eine Spalte nach links.",
+			"Beginne rechts bei den Einern. Addiere alle Ziffern einer Spalte und einen ankommenden Übertrag. Ist die Spaltensumme kleiner als 10, schreibst du sie unten in dieselbe Spalte. Danach gehst du eine Spalte nach links.",
 			"Ab 10 bündelst du: 7 Einer + 8 Einer = 15 Einer. Schreibe 5 in die Einerspalte des Ergebnisses. Die übrigen 10 Einer werden zu 1 Zehner. Schreibe diese 1 klein in die Übertragszeile der nächsten Spalte links und rechne sie dort mit. Der Übertrag ist kein zusätzlicher Einer.",
 			"Bei 2 687 + 1 548 geht es so weiter: Zehner 8 + 4 + 1 = 13, also 3 schreiben und 1 Hunderter übertragen. Hunderter 6 + 5 + 1 = 12, also 2 schreiben und 1 Tausender übertragen. Tausender 2 + 1 + 1 = 4. Die Summe ist 4 235.",
-			"Ein Übertrag kann mehrere Spalten durchlaufen. 999 999 + 1 ergibt 1 000 000: Jede volle Zehnergruppe wird links neu gebündelt. Prüfe deine Summe mit einer Tauschaufgabe: Vertausche die beiden Summanden und rechne neu. Vergleiche beide Ergebnisse. Bei zwei Summanden ist ein Übertrag immer 0 oder 1.",
+			"Ein Übertrag kann mehrere Spalten durchlaufen. 999 999 + 1 ergibt 1 000 000: Jede volle Zehnergruppe wird links neu gebündelt. Prüfe deine Summe mit einer Tauschaufgabe: Vertausche die beiden Summanden und rechne neu. Vergleiche beide Ergebnisse. Bei zwei Summanden ist ein Übertrag immer 0 oder 1. Bei drei oder vier Summanden kann er auch 2 oder 3 sein: 8 + 9 + 7 = 24, also 4 schreiben und 2 Zehner nach links übertragen. Alle Summanden stehen rechtsbündig.",
 		],
 		example:
 			"Rechne 30 407 + 2 685. Einer: 7 + 5 = 12, schreibe 2, übertrage 1 zu Z. Zehner: 0 + 8 + 1 = 9. Hunderter: 4 + 6 = 10, schreibe 0, übertrage 1 zu T. Tausender: 0 + 2 + 1 = 3. Zehntausender: 3 + 0 = 3. Ergebnis: 33 092. Tauschprobe: 2 685 + 30 407 = 33 092. Rechne die Tauschaufgabe neu und vergleiche.",
 		takeaway:
-			"Gleiche Stellen untereinander. Von rechts nach links rechnen. Ab 10 die Einerziffer schreiben und 1 in die nächste Spalte links übertragen. Jeden Übertrag mitrechnen.",
+			"Gleiche Stellen untereinander. Von rechts nach links rechnen. Die Einerziffer der Spaltensumme schreiben und die Anzahl voller Zehner in die nächste Spalte links übertragen. Jeden Übertrag mitrechnen.",
 		transfer:
 			"Jetzt rechnest du schriftlich in einer Geschichte und überprüfst Milos Rechnung. Die Spalten und Überträge helfen dir auch bei Nullstellen und langen Zahlen.",
 		quiz: {
@@ -706,7 +710,12 @@ export const FOREST_LESSONS: ForestLesson[] = [
 			"Du hast 30 kleine Gegenstände. Welche Gruppengrößen von 1 bis 10 gehen ohne Rest auf? Zeige zwei passende Größen mit Gegenständen oder einer Zeichnung.",
 	},
 ];
-FOREST_LESSONS.push(...MEASURE_LESSONS, ...SHAPE_LESSONS, ...FINAL_LESSONS);
+FOREST_LESSONS.push(
+	...MEASURE_LESSONS,
+	...SHAPE_LESSONS,
+	...FINAL_LESSONS,
+	...REASONING_LESSONS,
+);
 export const COURSE_LINKS = [
 	{
 		id: "stellenwerte-buendeln",

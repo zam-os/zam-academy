@@ -1,6 +1,7 @@
 import { finalFamily } from "./data-and-expeditions";
 import { shapeFamily, expandShapeFamily } from "./geometry";
 import { measureFamily } from "./measurement";
+import { isReasoning } from "./reasoning";
 import { isFinalLesson, isShape, isMeasure, isWorldLesson } from "./worlds";
 import { validWorkshop } from "./workshop";
 import { ulid } from "../id";
@@ -59,6 +60,8 @@ export interface ForestAttempt {
 }
 export interface ForestProgress {
 	schema: 1;
+	// Saves from the first public preview keep their generated boards until a new optional round.
+	contentRevision?: 1;
 	lesson: ExtraLessonId;
 	seed: number;
 	startedAt: number;
@@ -91,6 +94,7 @@ export function freshForest(
 ): ForestProgress {
 	return {
 		schema: 1,
+		contentRevision: 1,
 		lesson,
 		seed: crypto.getRandomValues(new Uint32Array(1))[0],
 		startedAt: now,
@@ -139,6 +143,7 @@ export function validForest(raw: unknown): raw is ForestProgress {
 	if (
 		!obj(raw) ||
 		raw.schema !== 1 ||
+		(raw.contentRevision !== undefined && raw.contentRevision !== 1) ||
 		!EXTRA_LESSON_IDS.includes(raw.lesson as ExtraLessonId) ||
 		!integer(raw.seed, 4294967295) ||
 		!stamp(raw.startedAt) ||
@@ -175,7 +180,7 @@ export function validForest(raw: unknown): raw is ForestProgress {
 			raw.columnWork.length !== 13 ||
 			!raw.columnWork.every(
 				(n, i) =>
-					typeof n === "string" && (i < 7 ? /^[0-9]?$/ : /^[01]?$/).test(n),
+					typeof n === "string" && (i < 7 ? /^[0-9]?$/ : /^[0-3]?$/).test(n),
 			))
 	)
 		return false;
@@ -270,7 +275,11 @@ export function validForest(raw: unknown): raw is ForestProgress {
 	if (
 		(isInvestigation(String(raw.lesson)) ||
 			isWorldLesson(String(raw.lesson))) &&
-		raw.investigationWork !== null
+		raw.investigationWork !== null &&
+		!(
+			raw.lesson === "zahlen-zerlegen-ergaenzen" &&
+			raw.investigationWork === undefined
+		)
 	) {
 		const task = activeForestTask(raw as unknown as ForestProgress);
 		if (
@@ -339,6 +348,8 @@ function worldSignature(
 	task: ForestTask,
 	answer?: Answer | null,
 ): string | null {
+	if (isReasoning(id) && task.investigation)
+		return JSON.stringify(["investigation", ...task.investigation.identity]);
 	return isMeasure(id)
 		? JSON.stringify(["measure", ...measureFamily(task)])
 		: isFinalLesson(id)
@@ -377,16 +388,24 @@ function freshWorldExit(
 		(a) => a.key === forestKey(p) && a.taskSeed !== undefined,
 	)?.taskSeed;
 	if (pinned !== undefined)
-		return { ...forestExit(p.lesson, pinned, index), variantSeed: pinned };
-	const original = forestExit(p.lesson, seed, index);
-	if (!isWorldLesson(p.lesson)) return original;
+		return {
+			...forestExit(p.lesson, pinned, index, p.contentRevision ?? 0),
+			variantSeed: pinned,
+		};
+	const original = forestExit(p.lesson, seed, index, p.contentRevision ?? 0);
+	if (!isWorldLesson(p.lesson) && !isReasoning(p.lesson)) return original;
 	const key = forestKey(p),
 		seen = seenWorldFamilies(p.attempts.filter((a) => a.key !== key));
 	for (let n = 0; n < 1000; n++) {
 		const task =
 			n === 0
 				? original
-				: forestExit(p.lesson, (seed + Math.imul(n, 1640531527)) >>> 0, index);
+				: forestExit(
+						p.lesson,
+						(seed + Math.imul(n, 1640531527)) >>> 0,
+						index,
+						p.contentRevision ?? 0,
+					);
 		if (!seen.has(worldSignature(p.lesson, task) ?? ""))
 			return {
 				...task,
@@ -399,8 +418,16 @@ function freshWorldExit(
 }
 export function activeForestTask(p: ForestProgress): ForestTask | null {
 	if (p.recall) return freshWorldExit(p, p.recall.seed, p.recall.index);
-	if (p.optional) return forestTask(p.lesson, p.optional, p.seed, p.index);
-	if (p.stage === "lab") return forestLab(p.lesson, p.index);
+	if (p.optional)
+		return forestTask(
+			p.lesson,
+			p.optional,
+			p.seed,
+			p.index,
+			p.contentRevision ?? 0,
+		);
+	if (p.stage === "lab")
+		return forestLab(p.lesson, p.index, p.contentRevision ?? 0);
 	if (p.stage === "quiz") {
 		const quiz = forestLesson(p.lesson)?.quiz;
 		return quiz ? forestQuizTask(quiz) : null;
@@ -411,6 +438,7 @@ export function activeForestTask(p: ForestProgress): ForestTask | null {
 			p.stage === "practice-1" ? 1 : 2,
 			p.seed,
 			p.index,
+			p.contentRevision ?? 0,
 		);
 	if (p.stage === "exit")
 		return freshWorldExit(p, (p.seed + 15485863) >>> 0, p.index);
@@ -450,26 +478,33 @@ export function recordForest(
 		signature =
 			worldSignature(p.lesson, task, answer) ??
 			JSON.stringify(
-				task.combination
-					? ["combinations", combinationIdentity(task.combination)]
-					: task.divisorTotal
-						? ["divisors-1-to-10", task.divisorTotal]
-						: task.investigation
-							? ["investigation", ...task.investigation.identity]
-							: task.calculation
-								? calculationFamily(task.calculation)
-								: [
-										task.kind,
-										task.prompt,
-										task.kind === "order" || task.kind === "parts"
-											? [...(task.numbers ?? [])].sort((a, b) => a - b)
-											: task.numbers,
-										task.line,
-										task.whole,
-										task.choices
-											? [...task.choices].sort((a, b) => a.value - b.value)
-											: undefined,
-									],
+				task.columns?.extra?.length
+					? [
+							"multi-addition",
+							...[task.columns.a, task.columns.b, ...task.columns.extra].sort(
+								(a, b) => a - b,
+							),
+						]
+					: task.combination
+						? ["combinations", combinationIdentity(task.combination)]
+						: task.divisorTotal
+							? ["divisors-1-to-10", task.divisorTotal]
+							: task.investigation
+								? ["investigation", ...task.investigation.identity]
+								: task.calculation
+									? calculationFamily(task.calculation)
+									: [
+											task.kind,
+											task.prompt,
+											task.kind === "order" || task.kind === "parts"
+												? [...(task.numbers ?? [])].sort((a, b) => a - b)
+												: task.numbers,
+											task.line,
+											task.whole,
+											task.choices
+												? [...task.choices].sort((a, b) => a.value - b.value)
+												: undefined,
+										],
 			);
 	const first =
 		!p.attempts.some((a) => a.key === key) &&
@@ -565,6 +600,7 @@ export function startForestPractice(
 	nextSeed: number,
 ): void {
 	if (p.stage !== "finished" || p.recall) return;
+	p.contentRevision = 1;
 	p.optional = level;
 	p.round++;
 	p.seed = nextSeed;
