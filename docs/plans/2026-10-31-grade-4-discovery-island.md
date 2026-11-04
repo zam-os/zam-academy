@@ -2,7 +2,8 @@
 
 **Date:** 2026-10-31
 **Plan status:** Phase 1 in progress. The German starter is implemented and
-technically verified locally; the teacher recording, content sign-off and
+technically verified locally. The amended digital inventory now has 36 drafts;
+the teacher recording, content sign-off and
 remaining manual acceptance checks are pending. No phase is marked complete.
 **Chosen direction:** Discovery Island, selected by Thomas on 2026-10-31.
 **Companion:** Milo, the working identity from the concept.
@@ -19,6 +20,19 @@ remaining manual acceptance checks are pending. No phase is marked complete.
 - [ ] Phase 5 — complete Shape Bay
 - [ ] Phase 6 — complete Chance Garden and mixed island expeditions
 - [ ] Phase 7 — full-course review, field pilot and curriculum release readiness
+
+### Remaining digital lessons amendment — 2026-11-03
+
+Thomas requested merging PR #78 and continuing with the remaining lessons in
+this chat. PR #78 merged at `312201f35fc56dd247233dd22bd6d89f2dcb2890`.
+This explicitly extends the earlier Number Forest implementation exception:
+continue the digital work of Phases 4, 5 and 6, in that order, on one branch,
+with a commit per world after verification. The next unchecked acceptance
+phase remains Phase 1. Teacher review, recordings, physical activities,
+family pilots and release authority remain pending; digital implementation
+does not check off these phase gates. The refined inventory has 36 lessons
+(15 existing Number Forest lessons plus 6 measurement, 9 geometry, 3 data
+and chance lessons, and 3 mixed expeditions).
 
 ### Review amendment — 2026-11-01
 
@@ -448,7 +462,7 @@ representations. Expeditions combine concepts in short practical stories
 and let the learner choose tools; they do not merely repeat a memorised
 worked example or introduce compulsory speed contests.
 
-**Exit:** all 31 core lessons and three expeditions are implemented;
+**Exit:** all 33 core lessons and three expeditions are implemented;
 curriculum/reasoning gaps are listed explicitly; every lesson has its
 reviewed video route and accessible text equivalent. Simulated rewards
 remain deterministic; chance experiments do not become random pet prizes.
@@ -476,6 +490,11 @@ similar wording. Do not automatically enrol learners in every new item.
 Verify existing held-cell update semantics and card scope before offering
 the extension; surface any need for staged enrolment as an explicit plan
 change rather than silently creating a whole-year due queue.
+
+Before publication, resolve the registry count contract: 36 selectable lessons
+currently map to 39 atoms because the original workshop has four atoms. The
+registry requires equal counts. Make an explicit contract decision while
+preserving IDs; do not relabel the learner experience to hide the mismatch.
 
 Verify that Academy cell precedence is now appropriate and that the new
 bindings cannot suppress import for another subject or grade. Prepare

@@ -1,3 +1,10 @@
+import { finalTask, finalLab, finalExit } from "./data-and-expeditions";
+import { isFinalLesson, isShape, isMeasure } from "./worlds";
+import { experimentMistake } from "./data-model";
+import { geometryMistake } from "./geometry-model";
+import { shapeTask, shapeLab, shapeExit } from "./geometry";
+import { measureTask, measureLab, measureExit } from "./measurement";
+import { acceptsWorkshop, type Scene, type Workshop } from "./workshop";
 import { format, parseInteger } from "../math/place-value";
 import { random } from "../practice/tasks";
 import { arithmeticLab, arithmeticTask, isArithmetic } from "./arithmetic";
@@ -56,7 +63,12 @@ export type ForestTask = {
 		| "algorithm"
 		| "investigation"
 		| "combinations"
-		| "divisors";
+		| "divisors"
+		| "model";
+	model?: Workshop;
+	variantSeed?: number;
+	toolViews?: { label: string; scene: Scene }[];
+	scene?: Scene;
 	goal: 1 | 2 | 3;
 	prompt: string;
 	answer: Answer;
@@ -86,6 +98,8 @@ export function correctForest(
 	task: ForestTask,
 	answer: Answer | null,
 ): boolean {
+	if (task.model)
+		return Array.isArray(answer) && acceptsWorkshop(task.model, answer);
 	if (Array.isArray(task.answer)) {
 		if (!Array.isArray(answer)) return false;
 		return task.kind === "parts" ||
@@ -173,6 +187,9 @@ export function forestTask(
 	seed: number,
 	index: number,
 ): ForestTask {
+	if (isFinalLesson(id)) return finalTask(id, level, seed, index);
+	if (isShape(id)) return shapeTask(id, level, seed, index);
+	if (isMeasure(id)) return measureTask(id, level, seed, index);
 	if (id === "systematisch-kombinieren")
 		return combinationTask(level, seed, index);
 	if (id === "teiler-vielfache") return divisorTask(level, seed, index);
@@ -318,6 +335,9 @@ export function forestTask(
 	};
 }
 export function forestLab(id: ExtraLessonId, goal: number): ForestTask {
+	if (isFinalLesson(id)) return finalLab(id, goal);
+	if (isShape(id)) return shapeLab(id, goal);
+	if (isMeasure(id)) return measureLab(id, goal);
 	if (id === "systematisch-kombinieren") return combinationLab(goal);
 	if (id === "teiler-vielfache") return divisorLab(goal);
 	if (id === "muster-zahlbeziehungen") return patternLab(goal);
@@ -360,6 +380,17 @@ export function forestLab(id: ExtraLessonId, goal: number): ForestTask {
 	};
 }
 export function forestMistake(task: ForestTask, answer: Answer | null): string {
+	if (task.model?.scene.experiment)
+		return Array.isArray(answer)
+			? experimentMistake(task.model, answer)
+			: task.hint;
+	if (task.model?.scene.chart)
+		return "Prüfe jede Kategorie und die Skala. Jede Beobachtung zählt genau einmal; ein größerer Skalenschritt ist nicht dasselbe wie ein Stück.";
+	if (task.model?.scene.geometry)
+		return Array.isArray(answer)
+			? geometryMistake(task.model, answer)
+			: task.hint;
+	if (task.model) return task.hint;
 	if (task.combination) return combinationMistake(task.combination, answer);
 	if (task.divisorTotal)
 		return "Prüfe jede angebotene Zahl. Nur eine Division mit Rest 0 passt. Vergiss die 1 nicht; sie teilt jede positive ganze Zahl ohne Rest.";
@@ -420,6 +451,9 @@ export function forestExit(
 	seed: number,
 	index: number,
 ): ForestTask {
+	if (isFinalLesson(id)) return finalExit(id, seed, index);
+	if (isShape(id)) return shapeExit(id, seed, index);
+	if (isMeasure(id)) return measureExit(id, seed, index);
 	if (id === "systematisch-kombinieren") return combinationExit(seed, index);
 	if (isInvestigation(id)) return investigationExit(id, seed, index);
 	if (isWrittenAlgorithm(id)) return algorithmExit(id, seed, index);

@@ -1,3 +1,4 @@
+import { WORLDS } from "./course/worlds";
 import "./styles.css";
 import { island, MOODS, type Mood } from "./companion/render";
 import { teacherPanel, loadTeacherPlayer } from "./media/player";
@@ -57,8 +58,29 @@ function activeStorage() {
 function activeLessonId() {
 	return forest?.lesson.id ?? LESSON_ID;
 }
+function activeWorld() {
+	return forest?.lesson.world ?? "forest";
+}
 function lessonNavigation(): string {
-	return `<nav class="forest-nav" aria-label="Lektionen im Zahlenwald"><label class="forest-compact" for="forest-lesson">Deine Lektion im Zahlenwald<select id="forest-lesson">${COURSE_LINKS.map((lesson) => `<option value="${lesson.id}" ${activeLessonId() === lesson.id ? "selected" : ""}>${lesson.shortTitle}</option>`).join("")}</select></label><div class="forest-links">${COURSE_LINKS.map((lesson) => `<a class="forest-link" href="#lesson=${lesson.id}" aria-current="${activeLessonId() === lesson.id ? "page" : "false"}"><span aria-hidden="true">${lesson.icon}</span><strong>${lesson.shortTitle}</strong><small>Zwei Missionen entdecken</small></a>`).join("")}</div></nav>`;
+	const world = activeWorld();
+	return `<nav class="forest-nav" aria-label="Lernwelten und Lektionen"><div class="world-tabs">${WORLDS.map((w) => `<a href="#lesson=${COURSE_LINKS.find((l) => (l.world ?? "forest") === w.id)?.id}" aria-current="${world === w.id ? "true" : "false"}">${w.icon} ${w.label}</a>`).join("")}</div><label class="forest-compact" for="forest-lesson">Deine Lektion<select id="forest-lesson">${WORLDS.map(
+		(w) =>
+			`<optgroup label="${w.label}">${COURSE_LINKS.filter(
+				(l) => (l.world ?? "forest") === w.id,
+			)
+				.map(
+					(l) =>
+						`<option value="${l.id}" ${activeLessonId() === l.id ? "selected" : ""}>${l.shortTitle}</option>`,
+				)
+				.join("")}</optgroup>`,
+	).join("")}</select></label><div class="forest-links">${COURSE_LINKS.filter(
+		(l) => (l.world ?? "forest") === world,
+	)
+		.map(
+			(lesson) =>
+				`<a class="forest-link" href="#lesson=${lesson.id}" aria-current="${activeLessonId() === lesson.id ? "page" : "false"}"><span aria-hidden="true">${lesson.icon}</span><strong>${lesson.shortTitle}</strong><small>Zwei Missionen entdecken</small></a>`,
+		)
+		.join("")}</div></nav>`;
 }
 let view: "child" | "parent" | "settings" = "child";
 let feedback = "";
@@ -283,6 +305,7 @@ function render(): void {
 	const focusValue = active?.dataset.value;
 	document.documentElement.classList.toggle("quiet", quiet);
 	document.documentElement.dataset.theme = theme;
+	document.documentElement.dataset.world = activeWorld();
 	document.title = `${forest?.lesson.title ?? "Milos Stellenwert-Werkstatt"} · ZAM Entdeckerinsel`;
 	const p = store.state;
 	const activeProgress = forest?.store.state ?? p;
@@ -292,7 +315,7 @@ function render(): void {
 	}
 	app.innerHTML = `<header class="site-header"><a class="brand" href="#lesson=${LESSON_ID}"><span class="brand-logo" aria-hidden="true">z</span><span>ZAM <strong>Entdeckerinsel</strong><small>Mathematik · 4. Klasse · Bayern</small></span></a><span class="preview-label">Werkstatt-Vorschau</span></header>
     <nav class="main-nav" aria-label="Hauptnavigation"><div>${(["child", "parent", "settings"] as const).map((v) => `<button data-action="view" data-view="${v}" aria-current="${view === v ? "page" : "false"}">${v === "child" ? "Mein Abenteuer" : v === "parent" ? "Für Eltern" : "Einstellungen"}</button>`).join("")}</div><button class="sound-toggle" data-action="sound" aria-pressed="${sound}" aria-label="Entdeckungsklänge ${sound ? "ausschalten" : "einschalten"}">${sound ? "♪ Klang an" : "♪ Klang aus"}</button></nav>
-    ${lessonNavigation()}${notices()}${loading ? '<p class="notice" role="status">Deine Lektion wird geladen.</p>' : ""}${activeStorage().mode === "recovery" ? recovery() : view === "parent" ? `<main>${forest?.parentView() ?? parent()}</main>` : view === "settings" ? `<main>${settings()}</main>` : `<main><div class="welcome-heading"><div><p class="eyebrow">Ein kleiner Schritt. Eine neue Entdeckung.</p><h1>Willkommen im Zahlenwald.</h1></div><span class="session-pill">Du bestimmst dein Tempo</span></div><div class="adventure-layout">${companion()}<div class="learning-column"><section class="lesson-card" aria-label="${forest ? escapeHtml(forest.lesson.title) : "Milos Stellenwert-Lektion"}" ${busy ? 'aria-busy="true"' : ""}>${forest?.lessonView() ?? lesson()}</section>${forest?.teacherPanel() ?? teacherPanel()}<div class="island-route" aria-label="Deine Lernwelt"><span class="current">♧ Zahlenwald<small>Zahlen und Rechnen entdecken</small></span><span>◇ Formenbucht<small>folgt später</small></span><span>☀ Messmarkt<small>folgt später</small></span><span>✧ Zufallsgarten<small>folgt später</small></span></div></div></div><p class="progress-note">${activeProgress.rewards.length} von 2 Missionen dieser Lektion geübt · Pausen sind immer willkommen.</p></main>`}
+    ${lessonNavigation()}${notices()}${loading ? '<p class="notice" role="status">Deine Lektion wird geladen.</p>' : ""}${activeStorage().mode === "recovery" ? recovery() : view === "parent" ? `<main>${forest?.parentView() ?? parent()}</main>` : view === "settings" ? `<main>${settings()}</main>` : `<main><div class="welcome-heading"><div><p class="eyebrow">Ein kleiner Schritt. Eine neue Entdeckung.</p><h1>Willkommen ${activeWorld() === "forest" ? "im Zahlenwald" : activeWorld() === "measure" ? "auf dem Messmarkt" : activeWorld() === "shape" ? "in der Formenbucht" : activeWorld() === "chance" ? "im Zufallsgarten" : "bei den Inselexpeditionen"}.</h1></div><span class="session-pill">Du bestimmst dein Tempo</span></div><div class="adventure-layout">${companion()}<div class="learning-column"><section class="lesson-card" aria-label="${forest ? escapeHtml(forest.lesson.title) : "Milos Stellenwert-Lektion"}" ${busy ? 'aria-busy="true"' : ""}>${forest?.lessonView() ?? lesson()}</section>${forest?.teacherPanel() ?? teacherPanel()}<div class="island-route" aria-label="Deine Lernwelt">${WORLDS.map((w) => `<span class="${w.id === activeWorld() ? "current" : ""}">${w.icon} ${w.label}<small>${w.lead}</small></span>`).join("")}</div></div></div><p class="progress-note">${activeProgress.rewards.length} von 2 Missionen dieser Lektion geübt · Pausen sind immer willkommen.</p></main>`}
     <footer><span>Lernen. Entdecken. Gemeinsam wachsen.</span><span>Mathematik-Werkstatt · lokal auf deinem Gerät</span></footer>`;
 	app.querySelectorAll<HTMLButtonElement>("button").forEach((button) => {
 		button.addEventListener("click", () => {
@@ -354,7 +377,7 @@ function render(): void {
 	if (focusAction)
 		app
 			.querySelector<HTMLElement>(
-				`[data-action="${focusAction}"]${focusCol ? `[data-col="${focusCol}"]` : ""}${focusView ? `[data-view="${focusView}"]` : ""}${focusValue !== undefined ? `[data-value="${focusValue}"]` : ""}`,
+				`[data-action="${focusAction}"]${focusCol ? `[data-col="${focusCol}"]` : ""}${focusView ? `[data-view="${focusView}"]` : ""}${focusValue !== undefined && focusAction !== "forest-model-set" ? `[data-value="${focusValue}"]` : ""}`,
 			)
 			?.focus({ preventScroll: true });
 }

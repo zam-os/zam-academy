@@ -1,18 +1,19 @@
-# ZAM Discovery Island: Grade 4 Number Forest
+# ZAM Discovery Island: Grade 4 mathematics
 
-German learner and parent UI for Bavarian Grade 4. Fifteen selectable lessons
-in the Number Forest cover place values/bundling, comparing/ordering,
+German learner and parent UI for Bavarian Grade 4. Thirty-six selectable lessons
+in the Number Forest, Measure Market, Shape Bay, Chance Garden and mixed expeditions cover place values/bundling, comparing/ordering,
 number lines/equal jumps, decomposition/complements, addition/subtraction
-strategies, multiplication/inverse division the four written procedures, arithmetic patterns, multi-step story problems, systematic combinations and divisors/multiples.
+strategies, multiplication/inverse division, the four written procedures, arithmetic patterns, multi-step story problems, systematic combinations, divisors/multiples, measurement, concrete geometry, data/chance and mixed practical planning.
 Each has two resumable missions, three successful tasks per practice level,
 fresh exit checks, optional practice and a welcoming Milo. A lesson is a
 draft activity, not a completed annual course or proof of mastery.
 
-The fourteen lessons added after the original workshop have three interactive
+The thirty-five lessons added after the original workshop have three interactive
 goals each. Their models include a number gate, a keyboard-friendly
 number-line marker, coupled treasure bars, calculation jumps, equal baskets,
 result/carry boards, a value-preserving regrouping board, partial-product
-boards, a step-by-step division workshop and tables with editable reasoning and intermediate results, a child-built combination list and divisor selection. Numbers and results stay
+boards, a step-by-step division workshop and tables with editable reasoning and intermediate results, a child-built combination list, divisor selection, quantity models, editable geometry,
+labelled column charts and saved replacement experiments. Numbers and results stay
 between zero and one million. Written multiplication uses one/two-digit
 factors; written division uses divisors through 10, including remainders.
 
@@ -29,7 +30,10 @@ is included. See [the recording brief](docs/teacher-recording-brief.md),
 
 `publication.json` keeps this cell out of the public catalog. Phase 2 must
 coordinate explicit publication approval, the Pages app entry and this
-marker. Existing public apps retain their publication behaviour. No ZAM
+marker. Existing public apps retain their publication behaviour. The future
+registry count also needs an explicit decision: this draft has 36 selectable
+lessons and 39 atoms because the first workshop uses four atoms. The public
+registry currently requires those counts to agree; existing IDs stay intact. No ZAM
 bundled fixture or personal learning library was edited.
 
 ## Run and verify
@@ -48,7 +52,7 @@ The app reuses the approved Academy TypeScript/Vite/Vitest/single-file
 toolchain; it adds no runtime dependencies. `validate:cell` defaults to
 the adjacent `zam/dist/index.js`; set `ZAM_CORE` to a file URL of another
 approved build to check compatibility. It uses only a disposable database:
-installation creates no cards, explicit enrolment creates sixty-two, retries
+installation creates no cards, explicit enrolment creates 146, retries
 create none, and reinstall preserves a real recall-rating log.
 
 At the Academy root, run
@@ -98,8 +102,8 @@ exponents and malformed or mixed dot/space groups remain invalid.
 - Lesson id: `stellenwerte-buendeln`; cell:
   `zam-academy:mathematik-grundschule-4`. Public links are future source
   addresses and do not indicate that this draft is already hosted.
-- `cell.json` is the sole recall-card source: eighteen atoms, sixty-two German
-  items (thirty-six binary fast checks and twenty-six synthesis tasks) with fixed ULIDs.
+- `cell.json` is the sole recall-card source: thirty-nine atoms, one hundred forty-six German
+  items (seventy-eight binary fast checks and sixty-eight synthesis tasks) with fixed ULIDs.
   Edit cards only in this file; there is no
   second authored card list or card generator. Installation uses the approved
   core's card-text validation and write path. Prerequisites form an acyclic
@@ -108,7 +112,7 @@ exponents and malformed or mixed dot/space groups remain invalid.
   which would hide the generic importer for this partial starter.
 - `coverage.json` enumerates 54 official competence positions across 13
   subareas, with source anchors, checked date and explicit remaining work.
-  Parts of Number Forest sections 1.1, 1.2 and 1.3 are implemented. No teacher
+  Parts of sections 1.1–1.3, 2.1–2.5, 3.1–3.3 and 4.1–4.2 are implemented. No teacher
   review or full coverage is claimed.
 - Evidence records first responses separately from helped retries. The
   parent view uses stable task snapshots for dated examples, with canonical
@@ -142,3 +146,24 @@ dependency or CI requirement. The local checks use the existing ZAM workspace
 binary: `node /Users/thomas/src/zam/node_modules/@biomejs/biome/bin/biome format --write src tests scripts cell.json coverage.json`
 and the same binary with `lint src tests scripts vite.config.ts`. No npm
 package or script is implied by this optional check.
+
+The Measure Market adds length measurement, mass/capacity, clocks/durations,
+money, unit changes and estimates/planning. Three model goals, three guided
+and three transfer tasks, and three fresh exit tasks retain the same local
+evidence and reward rules. Physical tasks are instructions, not observations.
+Quantity fields accept decimal comma/point only where labelled; whole-number
+parsing is unchanged. Time fields use HH:MM, durations use actual 60/24 relationships.
+See [recording briefs](docs/measure-market-recording-briefs.md).
+
+Shape Bay adds nine geometry lessons with editable plans, isometric cube
+buildings, rectangle/net construction, mirror/scaling grids, repeating
+patterns, unit surfaces and unit cubes. Free constructions use geometric
+properties, including alternate valid nets and ornaments. Exit observations
+use labels for the task actually checked; physical construction is pending.
+
+The final six lessons add model data collection, vertical column charts
+(Säulendiagramme), tables/timetables, chance experiments with replacement, and
+three mixed planning expeditions. Initial predictions stay recorded even
+when assisted analysis follows; frequencies and chance are distinct.
+Authentic outside collections and learner-generated questions remain
+practical activities without automated observation or teacher sign-off.

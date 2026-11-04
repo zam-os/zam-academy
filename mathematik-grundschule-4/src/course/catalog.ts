@@ -1,3 +1,7 @@
+import { FINAL_LESSONS } from "./final-catalog";
+import { SHAPE_LESSONS } from "./shape-catalog";
+import { MEASURE_IDS, FINAL_IDS, SHAPE_IDS, type World } from "./worlds";
+import { MEASURE_LESSONS } from "./measure-catalog";
 export const EXTRA_LESSON_IDS = [
 	"zahlen-vergleichen-ordnen",
 	"zahlenstrahl-zahlenspruenge",
@@ -13,6 +17,9 @@ export const EXTRA_LESSON_IDS = [
 	"sachaufgaben-mehrschrittig",
 	"systematisch-kombinieren",
 	"teiler-vielfache",
+	...MEASURE_IDS,
+	...SHAPE_IDS,
+	...FINAL_IDS,
 ] as const;
 export type ExtraLessonId = (typeof EXTRA_LESSON_IDS)[number];
 export interface QuizChoice {
@@ -21,11 +28,13 @@ export interface QuizChoice {
 }
 export interface ForestLesson {
 	id: ExtraLessonId;
+	world?: World;
 	title: string;
 	shortTitle: string;
 	icon: string;
 	lead: string;
 	goals: [string, string, string];
+	evidenceGoals?: [string, string, string];
 	paragraphs: string[];
 	example: string;
 	takeaway: string;
@@ -697,9 +706,11 @@ export const FOREST_LESSONS: ForestLesson[] = [
 			"Du hast 30 kleine Gegenstände. Welche Gruppengrößen von 1 bis 10 gehen ohne Rest auf? Zeige zwei passende Größen mit Gegenständen oder einer Zeichnung.",
 	},
 ];
+FOREST_LESSONS.push(...MEASURE_LESSONS, ...SHAPE_LESSONS, ...FINAL_LESSONS);
 export const COURSE_LINKS = [
 	{
 		id: "stellenwerte-buendeln",
+		world: "forest" as const,
 		shortTitle: "Stellenwerte und Bündel",
 		icon: "♧",
 	},

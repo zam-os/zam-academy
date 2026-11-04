@@ -1,3 +1,6 @@
+import { escapeHtml } from "../html";
+export { escapeHtml } from "../html";
+import { sceneView, workshopView } from "./workshop";
 import { format } from "../math/place-value";
 import { random } from "../practice/tasks";
 import { algorithmBoard } from "./algorithm-board";
@@ -17,15 +20,8 @@ import type { ForestTask } from "./tasks";
 import { additionColumns } from "./written-addition";
 import { ALGORITHM_EXAMPLES, algorithmModel } from "./written-algorithms";
 import { subtractionColumns } from "./written-subtraction";
-export const escapeHtml = (text: string): string =>
-	text.replace(
-		/[&<>"']/g,
-		(c) =>
-			({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[
-				c
-			] ?? c,
-	);
 export function forestGraphic(task: ForestTask, position = 0): string {
+	if (task.scene) return sceneView(task.scene);
 	if (task.columns)
 		return task.kind === "columns"
 			? ""
@@ -105,24 +101,26 @@ export function forestTaskView(
 				task.kind === "algorithm" ||
 				task.kind === "investigation"
 			? '<button class="primary" data-action="forest-check">Meine Rechnung prüfen</button>'
-			: task.kind === "choice"
-				? `<div class="answer-options">${choices(
-						task,
-						p.seed + p.round + p.index,
-					)
-						.map(
-							(c) =>
-								`<button data-action="forest-choice" data-value="${c.value}">${escapeHtml(c.label)}</button>`,
+			: task.kind === "model"
+				? '<button class="primary" data-action="forest-check">Meine Darstellung prüfen</button>'
+				: task.kind === "choice"
+					? `<div class="answer-options">${choices(
+							task,
+							p.seed + p.round + p.index,
 						)
-						.join("")}</div>`
-				: task.kind === "order" ||
-						task.kind === "parts" ||
-						task.kind === "divisors"
-					? `<div class="number-chips" role="group" aria-label="${task.kind === "order" ? "Zahlen in Reihenfolge auswählen" : task.kind === "divisors" ? "Teiler auswählen" : "Passende Zahlenteile auswählen"}">${task.numbers?.map((n) => `<button data-action="forest-select" data-value="${n}" aria-pressed="${p.selection.includes(n)}" >${format(n)}</button>`).join("")}</div><p class="selection-readout" aria-live="polite">${p.selection.length ? `Deine Auswahl: ${p.selection.map(format).join(task.kind === "order" ? " → " : task.kind === "divisors" ? ", " : " + ")}` : "Wähle die Zahlen durch Antippen."}</p><button data-action="forest-back">Letzte Auswahl zurücknehmen</button><button data-action="forest-clear">Auswahl leeren</button><button class="primary" data-action="forest-check">Meine Auswahl prüfen</button>`
-					: controls
-						? `<div class="path-controls"><button data-action="forest-left" aria-label="${task.hops ? "Einen Sprung zurücknehmen" : task.groups ? "Einen Korb zurücknehmen" : "Einen Schritt nach links"}" ${p.position === 0 ? "disabled" : ""}>${task.hops || task.groups ? "−" : "←"}</button><label for="forest-position">${task.kind === "line" ? "Milos Standort" : task.kind === "hops" ? "Anzahl der Sprünge" : task.kind === "groups" ? "Anzahl der Körbe" : "Aufteilung der Truhen"}<input type="range" id="forest-position" data-action="forest-position" min="0" max="10" step="1" value="${p.position}"></label><button data-action="forest-right" aria-label="${task.hops ? "Einen Sprung hinzufügen" : task.groups ? "Einen Korb hinzufügen" : "Einen Schritt nach rechts"}" ${p.position === 10 ? "disabled" : ""}>${task.hops || task.groups ? "+" : "→"}</button></div><button class="primary" data-action="forest-check">Meine Darstellung prüfen</button>`
-						: `<div class="numeric-answer"><label for="forest-answer">Meine Antwort<input id="forest-answer" inputmode="numeric" autocomplete="off" spellcheck="false" value="${escapeHtml(draft)}" placeholder="Zahl eingeben"></label><button class="primary" data-action="forest-check">Meine Idee prüfen</button></div>`;
-	return `<span class="mission-label">${p.recall ? "Später erinnern · neue Aufgaben" : p.optional ? `Noch eine Runde · Stufe ${p.optional}` : p.stage === "lab" ? `Entdeckerwerkstatt · Ziel ${p.index + 1} von 3` : p.stage === "practice-1" || p.stage === "practice-2" ? `Stufe ${p.stage === "practice-1" ? 1 : 2} · ${p.solved[p.stage === "practice-1" ? 1 : 2]} von 3 Aufgaben gelöst` : p.stage === "quiz" ? "Ein kurzer Denkcheck" : `Neue Aufgabe · ${p.index + 1} von 3`}</span><h2 id="lesson-heading" tabindex="-1">${escapeHtml(task.prompt)}</h2><div id="forest-graphic">${task.combination ? combinationBoard(task.combination, p.combinationChoice ?? null, p.selection, solved) : task.investigation ? investigationBoard(task.investigation, p.investigationWork ?? [], solved) : task.algorithm ? algorithmBoard(task.algorithm, p.algorithmWork ?? [], solved) : task.subtraction ? subtractionBoard(task.subtraction, p.subtractionWork, solved) : task.kind === "columns" && task.columns ? columnBoard(task.columns, p.columnWork, solved) : forestGraphic(task, p.position)}</div>${solved ? `<div class="feedback success" role="status">${assisted ? "Mit Hilfe geschafft. " : "Richtig! "}${escapeHtml(task.explanation)}</div><button class="primary" data-action="forest-next">${p.optional ? "Noch eine Aufgabe" : "Weiter"}</button>` : `${input}<div class="help-row"><button class="text-button" data-action="forest-hint">Ein kleiner Tipp</button>${assisted || wrong >= 2 ? '<button class="text-button" data-action="forest-solution">Lösung gemeinsam ansehen</button>' : ""}</div>${feedback ? `<p class="feedback" role="status">${escapeHtml(feedback)}</p>` : ""}${assisted && feedback === task.explanation ? '<button class="primary" data-action="forest-worked">Mit Hilfe weiter</button>' : ""}`}${p.optional ? '<button class="text-button" data-action="forest-stop">Übungsrunde beenden</button>' : ""}`;
+							.map(
+								(c) =>
+									`<button data-action="forest-choice" data-value="${c.value}">${escapeHtml(c.label)}</button>`,
+							)
+							.join("")}</div>`
+					: task.kind === "order" ||
+							task.kind === "parts" ||
+							task.kind === "divisors"
+						? `<div class="number-chips" role="group" aria-label="${task.kind === "order" ? "Zahlen in Reihenfolge auswählen" : task.kind === "divisors" ? "Teiler auswählen" : "Passende Zahlenteile auswählen"}">${task.numbers?.map((n) => `<button data-action="forest-select" data-value="${n}" aria-pressed="${p.selection.includes(n)}" >${format(n)}</button>`).join("")}</div><p class="selection-readout" aria-live="polite">${p.selection.length ? `Deine Auswahl: ${p.selection.map(format).join(task.kind === "order" ? " → " : task.kind === "divisors" ? ", " : " + ")}` : "Wähle die Zahlen durch Antippen."}</p><button data-action="forest-back">Letzte Auswahl zurücknehmen</button><button data-action="forest-clear">Auswahl leeren</button><button class="primary" data-action="forest-check">Meine Auswahl prüfen</button>`
+						: controls
+							? `<div class="path-controls"><button data-action="forest-left" aria-label="${task.hops ? "Einen Sprung zurücknehmen" : task.groups ? "Einen Korb zurücknehmen" : "Einen Schritt nach links"}" ${p.position === 0 ? "disabled" : ""}>${task.hops || task.groups ? "−" : "←"}</button><label for="forest-position">${task.kind === "line" ? "Milos Standort" : task.kind === "hops" ? "Anzahl der Sprünge" : task.kind === "groups" ? "Anzahl der Körbe" : "Aufteilung der Truhen"}<input type="range" id="forest-position" data-action="forest-position" min="0" max="10" step="1" value="${p.position}"></label><button data-action="forest-right" aria-label="${task.hops ? "Einen Sprung hinzufügen" : task.groups ? "Einen Korb hinzufügen" : "Einen Schritt nach rechts"}" ${p.position === 10 ? "disabled" : ""}>${task.hops || task.groups ? "+" : "→"}</button></div><button class="primary" data-action="forest-check">Meine Darstellung prüfen</button>`
+							: `<div class="numeric-answer"><label for="forest-answer">Meine Antwort<input id="forest-answer" inputmode="numeric" autocomplete="off" spellcheck="false" value="${escapeHtml(draft)}" placeholder="Zahl eingeben"></label><button class="primary" data-action="forest-check">Meine Idee prüfen</button></div>`;
+	return `<span class="mission-label">${p.recall ? "Später erinnern · neue Aufgaben" : p.optional ? `Noch eine Runde · Stufe ${p.optional}` : p.stage === "lab" ? `Entdeckerwerkstatt · Ziel ${p.index + 1} von 3` : p.stage === "practice-1" || p.stage === "practice-2" ? `Stufe ${p.stage === "practice-1" ? 1 : 2} · ${p.solved[p.stage === "practice-1" ? 1 : 2]} von 3 Aufgaben gelöst` : p.stage === "quiz" ? "Ein kurzer Denkcheck" : `Neue Aufgabe · ${p.index + 1} von 3`}</span><h2 id="lesson-heading" tabindex="-1">${escapeHtml(task.prompt)}</h2>${task.toolViews?.length ? `<aside class="expedition-tools" aria-label="Werkzeuge für deinen eigenen Lösungsweg"><strong>Wähle ein Werkzeug für deinen Plan</strong>${task.toolViews.map((tool) => `<details><summary>${escapeHtml(tool.label)}</summary>${sceneView(tool.scene)}</details>`).join("")}<p class="fine-print">Du darfst ein Werkzeug öffnen oder auf Papier planen. Die Werkzeuge zeigen die Angaben der Aufgabe.</p></aside>` : ""}<div id="forest-graphic">${task.model ? workshopView(task.model, p.modelWork, solved) : task.combination ? combinationBoard(task.combination, p.combinationChoice ?? null, p.selection, solved) : task.investigation ? `${task.scene ? sceneView(task.scene) : ""}${investigationBoard(task.investigation, p.investigationWork ?? [], solved)}` : task.algorithm ? algorithmBoard(task.algorithm, p.algorithmWork ?? [], solved) : task.subtraction ? subtractionBoard(task.subtraction, p.subtractionWork, solved) : task.kind === "columns" && task.columns ? columnBoard(task.columns, p.columnWork, solved) : forestGraphic(task, p.position)}</div>${solved ? `<div class="feedback success" role="status">${assisted ? "Mit Hilfe geschafft. " : "Richtig! "}${escapeHtml(task.explanation)}</div><button class="primary" data-action="forest-next">${p.optional ? "Noch eine Aufgabe" : "Weiter"}</button>` : `${input}<div class="help-row"><button class="text-button" data-action="forest-hint">Ein kleiner Tipp</button>${assisted || wrong >= 2 ? '<button class="text-button" data-action="forest-solution">Lösung gemeinsam ansehen</button>' : ""}</div>${feedback ? `<p class="feedback" role="status">${escapeHtml(feedback)}</p>` : ""}${assisted && feedback === task.explanation ? '<button class="primary" data-action="forest-worked">Mit Hilfe weiter</button>' : ""}`}${p.optional ? '<button class="text-button" data-action="forest-stop">Übungsrunde beenden</button>' : ""}`;
 }
 export function forestExplanation(def: ForestLesson): string {
 	const algorithm =
@@ -154,7 +152,7 @@ export function forestLessonView(
 	const task = activeForestTask(p);
 	if (task) return forestTaskView(p, task, feedback, draft);
 	if (p.stage === "welcome")
-		return `<span class="mission-label">Ein neuer Ort im Zahlenwald</span><h2 id="lesson-heading" tabindex="-1">${escapeHtml(def.title)}</h2><div class="forest-emblem" aria-hidden="true">${def.icon}</div><p class="lead">${escapeHtml(def.lead)}</p><ul class="forest-goals">${def.goals.map((g) => `<li>${escapeHtml(g)}</li>`).join("")}</ul><p>Zwei Missionen mit Erklärung, drei Werkstattzielen und frischen Aufgaben. Du bestimmst dein Tempo.</p><button class="primary" data-action="forest-next">Mit Milo entdecken</button>`;
+		return `<span class="mission-label">Ein neuer Ort auf der Entdeckerinsel</span><h2 id="lesson-heading" tabindex="-1">${escapeHtml(def.title)}</h2><div class="forest-emblem" aria-hidden="true">${def.icon}</div><p class="lead">${escapeHtml(def.lead)}</p><ul class="forest-goals">${def.goals.map((g) => `<li>${escapeHtml(g)}</li>`).join("")}</ul><p>Zwei Missionen mit Erklärung, drei Werkstattzielen und frischen Aufgaben. Du bestimmst dein Tempo.</p><button class="primary" data-action="forest-next">Mit Milo entdecken</button>`;
 	if (p.stage === "learn")
 		return `<span class="mission-label">Mission 1 · Zusammenhänge entdecken</span><h2 id="lesson-heading" tabindex="-1">${escapeHtml(def.shortTitle)}</h2>${forestExplanation(def)}<button class="primary" data-action="forest-next">Jetzt selbst ausprobieren</button>`;
 	if (p.stage === "transfer")
@@ -178,6 +176,7 @@ export function forestParentView(def: ForestLesson, p: ForestProgress): string {
 				success?.mode === "later" &&
 				p.completed["mission-b"] !== undefined &&
 				success.at - p.completed["mission-b"] >= 86400000;
+			const observedGoal = success ? (def.evidenceGoals?.[i] ?? goal) : goal;
 			const label = later
 				? "An einem späteren Tag geprüft"
 				: success
@@ -187,9 +186,9 @@ export function forestParentView(def: ForestLesson, p: ForestProgress): string {
 						: last
 							? "Ausprobiert"
 							: "Noch offen";
-			return `<article class="observation"><span class="observation-mark" aria-hidden="true">${success ? "✓" : helped ? "◇" : "○"}</span><div><span class="eyebrow">${label}</span><h3>${escapeHtml(goal)}</h3><p>${last ? `${date(last.at)} · ${last.mode === "guided" ? "Übung in der Werkstatt" : "Neue Aufgabe"}${last.helped ? " · mit Tipp oder weiterem Versuch" : ""}` : "Dazu gibt es noch keinen Aufgabenversuch."}</p>${last ? `<p class="evidence-example">Beispiel: ${escapeHtml(last.prompt)} <span>${escapeHtml(last.explanation)}</span></p>` : ""}</div></article>`;
+			return `<article class="observation"><span class="observation-mark" aria-hidden="true">${success ? "✓" : helped ? "◇" : "○"}</span><div><span class="eyebrow">${label}</span><h3>${escapeHtml(observedGoal)}</h3><p>${last ? `${date(last.at)} · ${last.mode === "guided" ? "Übung in der Werkstatt" : "Neue Aufgabe"}${last.helped ? " · mit Tipp oder weiterem Versuch" : ""}` : "Dazu gibt es noch keinen Aufgabenversuch."}</p>${last ? `<p class="evidence-example">Beispiel: ${escapeHtml(last.prompt)} <span>${escapeHtml(last.explanation)}</span></p>` : ""}</div></article>`;
 		})
 		.join(
 			"",
-		)}</div><aside class="parent-tip"><h2>Eine Frage für zu Hause</h2><p>„${escapeHtml(def.parentPrompt)}“</p><p>Lass dein Kind seinen Weg zeigen. Eine Zeichnung oder Dinge vom Tisch reichen aus.</p><hr><h3>Der nächste kleine Schritt</h3><p>${p.stage === "finished" ? "Mit frischen Aufgaben weiterüben oder beim nächsten Besuch eine andere Lektion im Zahlenwald entdecken." : "Die aktuelle Mission fortsetzen. Hinweise und Pausen sind jederzeit erlaubt."}</p></aside></div><p class="fine-print">Quelle: lokale Academy-Übungen · keine Schulnote, Diagnose oder Schullaufbahnempfehlung. ZAM-Wiederholungen werden getrennt in ZAM geführt.</p></section>`;
+		)}</div><aside class="parent-tip"><h2>Eine Frage für zu Hause</h2><p>„${escapeHtml(def.parentPrompt)}“</p><p>Lass dein Kind seinen Weg zeigen. Eine Zeichnung oder Dinge vom Tisch reichen aus.</p><hr><h3>Der nächste kleine Schritt</h3><p>${p.stage === "finished" ? "Mit frischen Aufgaben weiterüben oder beim nächsten Besuch eine andere Lektion auf der Insel entdecken." : "Die aktuelle Mission fortsetzen. Hinweise und Pausen sind jederzeit erlaubt."}</p></aside></div><p class="fine-print">Quelle: lokale Academy-Übungen · keine Schulnote, Diagnose oder Schullaufbahnempfehlung. ZAM-Wiederholungen werden getrennt in ZAM geführt.</p></section>`;
 }
