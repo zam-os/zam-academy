@@ -51,9 +51,9 @@ Supporting views:
 
 ## Status
 
-Local draft (`publication.json` status `"local-only"`). Kept out of the public
-catalog, atlas registry, and GitHub Pages build until content review and
-explicit release approval. No teacher videos are included (`AGENTS.md` Section 4:
+Public preview (`publication.json` status `"preview"`, Thomas's decision of
+2026-11-04): on GitHub Pages, in the atlas and in the catalog, with a visible
+notice while content review is open. Its ids are a contract from now on. No teacher videos are included (`AGENTS.md` Section 4:
 new packages ship without external video links). Progress uses browser
 `localStorage` (`zam-hsu-gs4-v1`) only, with zero network requests and zero
 extra runtime dependencies.

@@ -124,6 +124,18 @@ test("a local-only cell never enters the public catalog", () =>
     assert.deepEqual(buildCatalog(root).cells, []);
   }));
 
+test("a preview cell is published and marked in the catalog", () =>
+  withCatalog(({ root, app, tile, writeCell }) => {
+    tile.atoms[0].practice_items[0].replaces = [];
+    writeCell(tile);
+    writeFileSync(
+      join(app, "publication.json"),
+      JSON.stringify({ schema: 1, status: "preview" }),
+    );
+    assert.equal(buildCatalog(root).cells[0].preview, true);
+    assert.doesNotThrow(() => assertPublishedApp(app, "published by Pages"));
+  }));
+
 test("a ready cell still passes the existing mapping approval gate", () =>
   withCatalog(({ root, app, writeMapping }) => {
     writeFileSync(
@@ -265,6 +277,7 @@ test("the actual Pages loop guard refuses drafts and invalid markers before publ
     assert.equal(legacy.status, 0, "a missing marker preserves existing publication");
     for (const [marker, allowed] of [
       ['{"schema":1,"status":"local-only"}', false],
+      ['{"schema":1,"status":"preview"}', true],
       ['{"schema":1,"status":"ready"}', true],
       ['{"schema":2,"status":"ready"}', false],
       ['{malformed', false],

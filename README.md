@@ -50,7 +50,8 @@ The rules come from [ADR 2026-10-19](https://github.com/zam-os/zam/blob/main/doc
 - **Lesson ids are a public contract.** Each app's test pins its lesson ids and checks that every card cites an existing lesson.
 - **CI installs every cell** into a throw-away library with the published `zam-core` (`scripts/validate-cells.mjs`).
 - **History changes require approval.** The catalog builder refuses cells with `replaces` or `retired_items` unless their `replaces-de-by.json` records a valid approval date and documents exactly those changes: every A/B row is replaced by its one named `academy_slug`, a C row is never replaced (it may be retired), and no undocumented `replaces` or `retired_items` exist. CI tests this safeguard; Pages checks it before building or uploading the site. An unapproved proposal therefore blocks publication.
-- **Local drafts stay unpublished.** An optional `<app>/publication.json` uses schema `1` and status `local-only` or `ready`. The catalog and public registry check exclude `local-only` cells; invalid metadata fails closed, and missing metadata preserves existing behaviour. Cell validation still checks drafts. The Pages loop refuses local-only or invalid markers before building or copying any app, even if its list accidentally includes a draft. Publication also requires the Pages entry and explicit release authority.
+- **Local drafts stay unpublished.** An optional `<app>/publication.json` uses schema `1` and status `local-only`, `preview` or `ready`. The catalog and public registry check exclude `local-only` cells; invalid metadata fails closed, and missing metadata preserves existing behaviour.
+- **A preview is published.** A `preview` app is on Pages, in the atlas and in the catalog like a `ready` app, so its cell is released and its ids are a contract. It differs only in what it tells learners: `preview` in `academy.json` and the catalog entry and a visible `zam-preview-notice` in the app, because teacher review and videos are still open. To end a preview, set the marker to `ready`, remove `preview` and the notice; the registry test requires them to agree. Cell validation still checks drafts. The Pages loop refuses local-only or invalid markers before building or copying any app, even if its list accidentally includes a draft. Publication also requires the Pages entry and explicit release authority.
 - **Pages publishes** each app, its `cell.json`, and `/catalog.json` (`scripts/build-catalog.mjs`), with the SHA-256 of every cell. ZAM reads the catalog only on a learner's action. ZAM releases bundle a copy of each cell.
 - **A cell is released at its first publication,** in the catalog or in a ZAM release. From then on, its item ids, slugs and cited lessons stay stable; changes use `replaces` and raise the version.
 
@@ -59,13 +60,15 @@ transactional IndexedDB and a native player for an approved first-party
 teacher recording on 2026-10-31. The exception is scoped in [AGENTS.md](AGENTS.md);
 external video embeds and automatic media requests remain excluded.
 
-## Local drafts
+## Previews
 
-| App | Folder | Status |
-| --- | --- | --- |
-| Grade 4 mathematics: 36 Discovery Island lessons with Milo (Bavaria) | [`mathematik-grundschule-4/`](mathematik-grundschule-4/) | Local draft; 36 lessons, teacher recordings and review pending |
-| Grade 4 German: Tintos Wörterstadt, 23 lessons on language structures and spelling (Bavaria, LehrplanPLUS 4.3/4.4) | [`deutsch-grundschule-4/`](deutsch-grundschule-4/) | Local draft; primary-teacher review pending; reading, writing and the Grundwortschatz still open ([coverage](docs/deutsch-grundschule-4-coverage.md)) |
-| Grade 4 Heimat- und Sachunterricht: twenty discovery stations with Lotta (Bavaria) | [`hsu-grundschule-4/`](hsu-grundschule-4/) | Local draft; twenty single-pass stations across LB 1–6 and 60 ZAM cards, review pending |
+Published, but not yet reviewed by a primary-school teacher and without teacher videos.
+
+| App | Folder | App URL | Cell |
+| --- | --- | --- | --- |
+| Grade 4 mathematics: 36 Discovery Island lessons with Milo (Bavaria) | [`mathematik-grundschule-4/`](mathematik-grundschule-4/) | https://academy.zam-os.org/mathematik-grundschule-4/ | `zam-academy:mathematik-grundschule-4` |
+| Grade 4 German: Tintos Wörterstadt, 23 lessons on language structures and spelling (Bavaria, LehrplanPLUS 4.3/4.4); reading, writing and the Grundwortschatz still open ([coverage](docs/deutsch-grundschule-4-coverage.md)) | [`deutsch-grundschule-4/`](deutsch-grundschule-4/) | https://academy.zam-os.org/deutsch-grundschule-4/ | `zam-academy:deutsch-grundschule-4` |
+| Grade 4 Heimat- und Sachunterricht: twenty discovery stations with Lotta (Bavaria) | [`hsu-grundschule-4/`](hsu-grundschule-4/) | https://academy.zam-os.org/hsu-grundschule-4/ | `zam-academy:hsu-grundschule-4` |
 
 ## Develop
 

@@ -112,6 +112,6 @@ describe("Lehrplanabgleich", () => {
 	});
 
 	it("stays a local draft", () => {
-		expect(publication).toMatchObject({ schema: 1, status: "local-only" });
+		expect(publication).toMatchObject({ schema: 1, status: "preview" });
 	});
 });

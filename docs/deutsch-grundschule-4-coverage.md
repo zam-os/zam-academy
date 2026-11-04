@@ -1,9 +1,8 @@
 # Deutsch 4 · Grundschule · Lehrplanabgleich und Planung
 
 Stand: 3. November 2026. Das neue Paket
-[Tintos Wörterstadt](../deutsch-grundschule-4/) ist ein lokaler Entwurf
-(`publication.json`: `local-only`) und erscheint weder im Katalog noch im
-Atlas. Es ist das zweite Übertrittsfach nach
+[Tintos Wörterstadt](../deutsch-grundschule-4/) ist eine öffentliche Vorschau
+(`publication.json`: `preview`) und steht im Katalog und im Atlas. Es ist das zweite Übertrittsfach nach
 [Mathematik 4](../mathematik-grundschule-4/); Heimat- und Sachunterricht
 fehlt noch.
 

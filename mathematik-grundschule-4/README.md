@@ -28,10 +28,10 @@ is included. See [the recording brief](docs/teacher-recording-brief.md),
 [acceptance record](acceptance.json), and
 [implementation plan](../docs/plans/2026-10-31-grade-4-discovery-island.md).
 
-`publication.json` keeps this cell out of the public catalog. Phase 2 must
-coordinate explicit publication approval, the Pages app entry and this
-marker. Existing public apps retain their publication behaviour. No ZAM
-bundled fixture or personal learning library was edited.
+The app and its cell are published as a preview (`publication.json`:
+`preview`, Thomas's decision of 2026-11-04), so their ids are a contract while
+teacher review and recordings are open. No ZAM bundled fixture or personal
+learning library was edited.
 
 ## Run and verify
 

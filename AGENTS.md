@@ -247,6 +247,9 @@ Learners have review histories on them.
   Changing the marker to `ready` does not replace release authority or the
   normal registration checks. Shared publication tooling belongs in its own
   PR rather than a new-package PR.
+- A package with status `preview` is published like `ready` (Pages, atlas,
+  catalog, ids as a contract) and shows a visible notice that teacher review
+  and videos are open. Thomas decides when a preview starts and ends.
 - Document the curriculum check and the card mapping in `docs/` (see
   `docs/bwr-bestandsabgleich.md`, `docs/physik-10-coverage.md`).
 

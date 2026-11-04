@@ -265,6 +265,11 @@
         background: linear-gradient(120deg, var(--violet), #5a8cf0);
         color: #fff;
       }
+      #schulart {
+        flex-wrap: wrap;
+        max-width: 100%;
+        border-radius: 1rem;
+      }
       .seg.small button {
         padding: 0.3rem 0.8rem;
         font-size: 0.88rem;
@@ -1137,10 +1142,12 @@
           group.school === school && group.grades.includes(grade) && group.paths.includes(fach));
         if (combination) return { subject: combination.id, combination };
         const subject = D.faecher.find((f) => f.id === fach);
-        if (!subject || grade < subject.from || (D.kein_unterricht ?? []).some((entry) =>
+        if (!subject || grade < subject.from || grade > (subject.to ?? 13) || (D.kein_unterricht ?? []).some((entry) =>
           entry.fach === fach && entry.grade === grade && entry.school === school)) return null;
         return { subject: fach, combination: null };
       }
+
+      const firstSchoolGrade = () => Math.min(...D.schulen.map((x) => x.from));
 
       function buildTrees() {
         const schulBy = Object.fromEntries(D.schulen.map((x) => [x.id, x]));
@@ -1202,7 +1209,7 @@
         };
 
         const schule = [];
-        for (let g = 5; g <= 13; g++) {
+        for (let g = firstSchoolGrade(); g <= 13; g++) {
           const faecher = [];
           for (const f of D.faecher) {
             if (firstGrade(f) > g) continue;
@@ -1345,7 +1352,7 @@
           return `${n.label}, ${wo}, ${enabled(n) ? `${n.live} von ${n.total} ${noun(n.total)} verfügbar` : "noch nicht verfügbar"}`;
         }
         if (!enabled(n)) return `${n.fachName ? n.fachName + " " : ""}${n.label}, noch nicht verfügbar`;
-        if (n.kind === "pkg") return `${n.label}, Lernpaket${n.school ? ` ${n.school.wo}` : ""}, ${n.pkg.lessons} Lektionen`;
+        if (n.kind === "pkg") return `${n.label}, ${n.pkg.preview ? "Vorschau" : "Lernpaket"}${n.school ? ` ${n.school.wo}` : ""}, ${n.pkg.lessons} Lektionen`;
         return `${n.label}, ${n.live} von ${n.total} ${noun(n.total)} verfügbar`;
       };
       /* every node can be entered, also grey ones: they explain what is missing and why */
@@ -1391,7 +1398,7 @@
           lines.forEach((ln, i) =>
             shape.append(s("text", { class: "t", x: cx, y: y0 + fs * 1.5 + i * fs * 1.15, "font-size": fs, "font-weight": 600 }, ln)),
           );
-          const sub = n.planned ? (n.sub ?? (n.world ? `Klasse ${n.grade} · geplant` : "noch nicht verfügbar")) : n.pkg.grade == null ? "übergreifend" : `${n.pkg.lessons} Lektionen`;
+          const sub = n.planned ? (n.sub ?? (n.world ? `Klasse ${n.grade} · geplant` : "noch nicht verfügbar")) : n.pkg.grade == null ? "übergreifend" : `${n.pkg.preview ? "Vorschau · " : ""}${n.pkg.lessons} Lektionen`;
           shape.append(s("text", { class: "t sub", x: cx, y: cy + R * 0.62, "font-size": fs * 0.74 }, sub));
         } else {
           const lines = wrap(n.label, Math.max(8, Math.round(R / 5.2)));
@@ -1632,6 +1639,7 @@
           p.append(
             h("h2", {}, k.title),
             h("a", { class: "cta", href: `${k.app}/` }, "Paket öffnen →"),
+            k.preview ? h("p", { class: "schoolnote" }, h("b", {}, "Vorschau: "), PREVIEW_NOTE) : null,
             h("p", {}, k.desc),
             h("dl", { class: "facts" },
               h("dt", {}, "Lektionen"), h("dd", {}, String(k.lessons)),
@@ -1676,7 +1684,7 @@
         p.append(
           h("ul", { class: "tags", "aria-label": "Inhalt" },
             visible(n).map((c) => {
-              const state_ = c.planned ? " · noch nicht verfügbar" : "";
+              const state_ = c.planned ? " · noch nicht verfügbar" : c.pkg?.preview ? " · Vorschau" : "";
               const where = c.kind === "pkg" && !c.planned && c.school && n.kind === "fach" ? `${c.school.name} · ` : "";
               const txt = `${where}${c.label}${c.kind === "pkg" ? state_ : ` · ${c.live}/${c.total}`}`;
               return h("li", { class: enabled(c) ? "" : "off" },
@@ -1690,6 +1698,8 @@
               state.klasse === n.grade ? "★ Das ist mein Jahrgang" : "Als meinen Jahrgang merken"),
           );
       }
+
+      const PREVIEW_NOTE = "Noch nicht von einer Lehrkraft geprüft, Lehrvideos fehlen noch. Inhalte können sich ändern.";
 
       /* ---------- hero / start ---------- */
       function renderStats() {
@@ -1710,7 +1720,7 @@
       function renderStart() {
         const c = $("klassenchips");
         c.replaceChildren();
-        for (let g = 5; g <= 13; g++) {
+        for (let g = firstSchoolGrade(); g <= 13; g++) {
           const isl = state.trees.schule.children.find((i) => i.grade === g);
           const on = enabled(isl);
           c.append(
@@ -1813,7 +1823,7 @@
         const sch = D.schulen.find((x) => x.id === state.schulart);
         const tbl = $("matrix");
         tbl.replaceChildren();
-        const grades = [5, 6, 7, 8, 9, 10, 11, 12, 13];
+        const grades = Array.from({ length: 14 - firstSchoolGrade() }, (_, i) => firstSchoolGrade() + i);
         tbl.append(h("thead", {}, h("tr", {}, h("th", {}, h("span", { class: "sr" }, "Fach")), grades.map((g) => h("th", { scope: "col" }, `Kl. ${g}`)))));
         const body = h("tbody");
         const live = new Set(), total = new Set();
