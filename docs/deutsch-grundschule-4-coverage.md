@@ -94,7 +94,15 @@ trägt und alle 116 Texte wörtlich mit der Quelle übereinstimmen.
 
 Alle Lesetexte, Tabellen und Gedichte sind eigene Texte, keine Auszüge aus Büchern;
 die Werte der Tabellen sind erfunden. Sprichwörter und Redewendungen sind
-allgemeines Sprachgut. Die Sachangaben sollte die Lehrkraft mitprüfen.
+allgemeines Sprachgut. Die Sachangaben hat die Zweitprüfung an Quellen geprüft (zum Igel etwa
+[Braunbrustigel](https://de.wikipedia.org/wiki/Braunbrustigel)); die Lehrkraft sollte sie mitprüfen.
+
+Zur Abgrenzung: Deutsch 1/2 kennt bereits das Unterscheiden von Gedichten,
+erzählenden Texten, Sachtexten und einfachen Gebrauchstexten sowie Fragen zu
+einfachen Diagrammen und Tabellen; die Lektionen sagen das und bauen darauf auf.
+Gymnasium 5 führt literarische und pragmatische Texte, nichtlineare Texte wie
+Balkendiagramme und Tabellen sowie Form- und Gattungselemente weiter. Fachbegriffe
+aus Klasse 5 kommen nicht vor (gelesen am 4. November 2026).
 
 Die App übt das Verstehen an kurzen Texten: Antworten auswählen, Wörter
 herausschreiben, Informationen markieren, Reihenfolgen ordnen. Sie bewertet keine

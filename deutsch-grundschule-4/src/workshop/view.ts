@@ -32,6 +32,8 @@ function slotPuzzle(ws: SlotWorkshop, state: SlotState, puzzle: SlotPuzzle, open
 	// Gap puzzles keep each word together with its gap, so a line break
 	// never splits "Mu[tt]er" into pieces.
 	const BREAK = "\u0000";
+	// A line feed in a gap puzzle gives each sentence its own row.
+	const ROW = "\u0001";
 	const pieces = puzzle.parts
 		.flatMap((part) => {
 			if (!isSlot(part)) {
@@ -39,7 +41,13 @@ function slotPuzzle(ws: SlotWorkshop, state: SlotState, puzzle: SlotPuzzle, open
 					return part
 						.split(/(\s+)/)
 						.filter(Boolean)
-						.map((chunk) => (chunk.trim() ? `<span class="fixed">${esc(chunk)}</span>` : BREAK));
+						.map((chunk) =>
+							chunk.trim()
+								? `<span class="fixed">${esc(chunk)}</span>`
+								: chunk.includes("\n")
+									? `${BREAK}${ROW}${BREAK}`
+									: BREAK,
+						);
 				return ws.variant === "letters"
 					? `<span class="letter">${esc(part)}</span>`
 					: `<span class="fixed">${esc(part)}</span>`;
@@ -71,7 +79,7 @@ function slotPuzzle(ws: SlotWorkshop, state: SlotState, puzzle: SlotPuzzle, open
 					.join("")
 					.split(BREAK)
 					.filter(Boolean)
-					.map((word) => `<span class="word">${word}</span>`)
+					.map((word) => (word === ROW ? '<span class="row-end"></span>' : `<span class="word">${word}</span>`))
 					.join(" ")
 			: pieces.join(ws.variant === "letters" ? "" : " ");
 	return `<div class="puzzle${solved ? " solved" : ""}" data-variant="${ws.variant}">

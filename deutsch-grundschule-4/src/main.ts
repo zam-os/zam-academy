@@ -299,7 +299,7 @@ function renderPractice(): void {
 	element("#practice-area").innerHTML = `<p class="progress-dots" aria-label="${Math.min(solved, need)} von ${need} gelöst">${dots}<span>${Math.min(solved, need)} von ${need} gelöst${solved > need ? ` · +${solved - need} Extra` : ""}</span></p>
 <div class="task">
 	${t.passage ? `<article class="passage"><h3>${esc(t.passage.title)}</h3>${t.passage.paragraphs.map((p) => `<p>${esc(p)}</p>`).join("")}</article>` : ""}
-	${t.table ? `<div class="reading-table"><table><caption>${esc(t.table.title)}</caption><thead><tr>${t.table.head.map((h) => `<th scope="col">${esc(h)}</th>`).join("")}</tr></thead><tbody>${t.table.rows.map((r) => `<tr>${r.map((c) => `<td>${esc(c)}</td>`).join("")}</tr>`).join("")}</tbody></table></div>` : ""}
+	${t.table ? `<div class="reading-table"><table><caption>${esc(t.table.title)}</caption><thead><tr>${t.table.head.map((h) => `<th scope="col">${esc(h)}</th>`).join("")}</tr></thead><tbody>${t.table.rows.map((r) => `<tr>${r.map((c, i) => (i === 0 ? `<th scope="row">${esc(c)}</th>` : `<td${/^■+$/.test(c) ? ' aria-hidden="true"' : ""}>${esc(c)}</td>`)).join("")}</tr>`).join("")}</tbody></table></div>` : ""}
 	<p class="question">${esc(t.prompt)}</p>
 	${t.material ? `<p class="material">${markup(t.material, esc)}</p>` : ""}
 	${showHint && !finished ? `<p class="hint">💡 ${esc(t.hint)}</p>` : ""}

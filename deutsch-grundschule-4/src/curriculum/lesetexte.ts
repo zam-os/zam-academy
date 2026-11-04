@@ -12,6 +12,8 @@ export interface Question {
 export interface Extract {
 	q: string;
 	a: string;
+	/** Other natural ways to copy the answer from the text. */
+	also?: string[];
 	why: string;
 }
 
@@ -41,7 +43,7 @@ export const FACT_TEXTS: Passage[] = [
 		title: "Der Igel",
 		paragraphs: [
 			"Der Igel ist nachtaktiv. Am Tag schläft er in einem Versteck aus Laub. Erst in der Dämmerung geht er auf Nahrungssuche.",
-			"Igel fressen vor allem Käfer, Raupen, Würmer und Schnecken. Darum sehen viele Menschen sie gern im Garten.",
+			"Igel fressen vor allem Käfer, Raupen und Würmer, selten auch Schnecken. Darum sehen viele Menschen sie gern im Garten.",
 			"Droht Gefahr, rollt sich der Igel zu einer Kugel zusammen. Seine Stacheln schützen ihn dann.",
 			"Im Herbst frisst er sich ein Fettpolster an. Etwa von November bis März hält er Winterschlaf.",
 		],
@@ -51,13 +53,13 @@ export const FACT_TEXTS: Passage[] = [
 			{ q: "Wann hält der Igel Winterschlaf?", a: "etwa von November bis März", wrong: ["etwa von März bis November", "etwa von Juni bis August"], why: "Das steht im letzten Absatz." },
 		],
 		deeper: [
-			{ q: "Warum sehen viele Menschen den Igel gern im Garten?", a: "Er frisst Tiere wie Schnecken und Raupen, die an Pflanzen nagen.", wrong: ["Er schläft den ganzen Tag im Laub.", "Er rollt sich bei Gefahr zusammen."], why: "Der Text nennt seine Nahrung direkt davor. Dass Schnecken und Raupen an Pflanzen nagen, weißt du aus dem Garten." },
+			{ q: "Warum sehen viele Menschen den Igel gern im Garten?", a: "Er frisst Tiere wie Raupen, die an Pflanzen nagen.", wrong: ["Er schläft den ganzen Tag im Laub.", "Er rollt sich bei Gefahr zusammen."], why: "Der Text nennt seine Nahrung direkt davor. Dass Raupen an Pflanzen nagen, weißt du vielleicht aus dem Garten." },
 			{ q: "Warum frisst der Igel im Herbst besonders viel?", a: "Im Winterschlaf lebt er von seinem Fettpolster.", wrong: ["Im Herbst gibt es die meisten Käfer.", "Er will seine Stacheln wachsen lassen."], why: "Das Fettpolster und der Winterschlaf stehen im selben Absatz. Beides gehört zusammen." },
 			{ q: "Warum siehst du tagsüber kaum einen Igel?", a: "Er schläft dann in seinem Versteck.", wrong: ["Er sucht dann im Wald nach Futter.", "Er rollt sich dann zur Kugel zusammen."], why: "Er ist nachtaktiv und schläft am Tag." },
 		],
 		extract: [
-			{ q: "Schreibe aus dem Text heraus: Woraus ist das Versteck des Igels?", a: "Laub", why: "Im Text steht: in einem Versteck aus Laub." },
-			{ q: "Schreibe aus dem Text heraus: Was schützt den Igel, wenn er eine Kugel ist?", a: "Stacheln", why: "Im Text steht: Seine Stacheln schützen ihn dann." },
+			{ q: "Schreibe aus dem Text heraus: Woraus ist das Versteck des Igels?", a: "Laub", also: ["aus Laub"], why: "Im Text steht: in einem Versteck aus Laub." },
+			{ q: "Schreibe aus dem Text heraus: Was schützt den Igel, wenn er eine Kugel ist?", a: "Stacheln", also: ["Seine Stacheln", "seine Stacheln", "die Stacheln"], why: "Im Text steht: Seine Stacheln schützen ihn dann." },
 		],
 	},
 	{
@@ -66,12 +68,12 @@ export const FACT_TEXTS: Passage[] = [
 		paragraphs: [
 			"Die Sonne erwärmt das Wasser in Meeren, Seen und Flüssen. Dabei verdunstet ein Teil des Wassers. Es steigt als unsichtbarer Wasserdampf in die Luft.",
 			"Weiter oben ist die Luft kälter. Dort kühlt der Wasserdampf ab und bildet winzige Tröpfchen. Viele Tröpfchen zusammen sehen wir als Wolke.",
-			"Werden die Tropfen zu schwer, fallen sie als Regen oder Schnee auf die Erde. Das Wasser fließt in Bäche und Flüsse und am Ende wieder ins Meer. Dann beginnt alles von vorn.",
+			"Werden die Tropfen zu schwer, fallen sie als Regen auf die Erde. Ist es kalt genug, fällt Schnee. Das Wasser fließt in Bäche und Flüsse und am Ende wieder ins Meer. Dann beginnt alles von vorn.",
 		],
 		literal: [
 			{ q: "Was erwärmt das Wasser?", a: "die Sonne", wrong: ["der Wind", "der Regen"], why: "Das steht im ersten Satz." },
 			{ q: "Woraus besteht eine Wolke?", a: "aus vielen winzigen Tröpfchen", wrong: ["aus unsichtbarem Rauch", "aus großen Eisblöcken"], why: "Im zweiten Absatz steht: Viele Tröpfchen zusammen sehen wir als Wolke." },
-			{ q: "Wann fällt Regen oder Schnee?", a: "wenn die Tropfen zu schwer werden", wrong: ["wenn die Sonne scheint", "wenn das Wasser verdunstet"], why: "Das steht am Anfang des letzten Absatzes." },
+			{ q: "Wann fällt Regen?", a: "wenn die Tropfen zu schwer werden", wrong: ["wenn die Sonne scheint", "wenn das Wasser verdunstet"], why: "Das steht am Anfang des letzten Absatzes." },
 		],
 		deeper: [
 			{ q: "Warum nennt man diesen Weg einen Kreislauf?", a: "Am Ende beginnt alles wieder von vorn.", wrong: ["Das Wasser fließt immer im Kreis um einen See.", "Die Wolken ziehen im Kreis um die Erde."], why: "Ein Kreislauf hat kein Ende: Der letzte Schritt führt wieder zum ersten." },
@@ -79,8 +81,8 @@ export const FACT_TEXTS: Passage[] = [
 			{ q: "Warum siehst du Wasserdampf am Himmel nicht, eine Wolke aber schon?", a: "Der Dampf ist unsichtbar, die Tröpfchen der Wolke sieht man.", wrong: ["Der Dampf ist zu weit weg, die Wolke ist näher.", "Wolken gibt es nur am Tag, Dampf nur nachts."], why: "Der Text nennt den Dampf unsichtbar. Erst die Tröpfchen sehen wir als Wolke." },
 		],
 		extract: [
-			{ q: "Schreibe aus dem Text heraus: Was tut ein Teil des Wassers, wenn die Sonne es erwärmt?", a: "verdunstet", why: "Im Text steht: Dabei verdunstet ein Teil des Wassers." },
-			{ q: "Schreibe aus dem Text heraus: Wohin fließt das Wasser am Ende?", a: "Meer", why: "Im Text steht: am Ende wieder ins Meer." },
+			{ q: "Schreibe aus dem Text heraus: Was tut ein Teil des Wassers, wenn die Sonne es erwärmt?", a: "verdunstet", also: ["Es verdunstet", "es verdunstet"], why: "Im Text steht: Dabei verdunstet ein Teil des Wassers." },
+			{ q: "Schreibe aus dem Text heraus: Wohin fließt das Wasser am Ende?", a: "Meer", also: ["ins Meer", "das Meer", "in das Meer"], why: "Im Text steht: am Ende wieder ins Meer." },
 		],
 	},
 	{
@@ -99,11 +101,31 @@ export const FACT_TEXTS: Passage[] = [
 		deeper: [
 			{ q: "Warum ist der Tanz für das ganze Bienenvolk nützlich?", a: "Viele Bienen finden so schnell dieselben Blüten.", wrong: ["Die Königin kann dann mehr Eier legen.", "Im Stock wird es durch den Tanz wärmer."], why: "Der Tanz verrät den Ort des Futters. Das spart den anderen die Suche." },
 			{ q: "Welche Überschrift passt am besten zum zweiten Absatz?", a: "Die Arbeit der Arbeiterinnen", wrong: ["Der Tanz der Bienen", "Die Königin im Stock"], why: "Der Absatz erzählt, was die Arbeiterinnen tun." },
-			{ q: "Was wäre neu für jemanden, der nur weiß, dass Bienen Honig machen?", a: "Eine einzige Biene legt alle Eier des Volkes.", wrong: ["Bienen fliegen zu Blüten.", "Honig schmeckt süß."], why: "Eine neue Information ist etwas, das du vorher noch nicht wusstest." },
+			{ q: "Was wäre neu für jemanden, der nur weiß, dass Bienen Honig machen?", a: "Eine einzige Biene legt alle Eier des Volkes.", wrong: ["Bienen machen Honig.", "Honig schmeckt süß."], why: "Eine neue Information ist etwas, das du vorher noch nicht wusstest." },
 		],
 		extract: [
-			{ q: "Schreibe aus dem Text heraus: Wie heißen die Bienen, die Nektar sammeln?", a: "Arbeiterinnen", why: "Im Text steht: Die Arbeiterinnen fliegen zu den Blüten." },
+			{ q: "Schreibe aus dem Text heraus: Wie heißen die Bienen, die Nektar sammeln?", a: "Arbeiterinnen", also: ["die Arbeiterinnen", "Die Arbeiterinnen"], why: "Im Text steht: Die Arbeiterinnen fliegen zu den Blüten." },
 			{ q: "Schreibe aus dem Text heraus: Was sammeln die Bienen außer Nektar?", a: "Pollen", why: "Im Text steht: sammeln Nektar und Pollen." },
+		],
+	},
+	{
+		id: "pfannkuchen",
+		title: "Pfannkuchen für vier Personen",
+		paragraphs: [
+			"Du brauchst: 200 g Mehl, 3 Eier, 300 ml Milch, eine Prise Salz und etwas Butter.",
+			"Verrühre Mehl, Eier, Milch und Salz zu einem glatten Teig. Lass den Teig zehn Minuten ruhen.",
+			"Erhitze mit einem Erwachsenen etwas Butter in der Pfanne. Gib eine Kelle Teig hinein und backe ihn von beiden Seiten goldbraun.",
+		],
+		literal: [
+			{ q: "Wie viele Eier brauchst du für die Pfannkuchen?", a: "3", wrong: ["2", "4"], why: "Das steht in der Zutatenliste." },
+			{ q: "Wie lange soll der Teig ruhen?", a: "zehn Minuten", wrong: ["eine Minute", "eine Stunde"], why: "Das steht im zweiten Absatz." },
+		],
+		deeper: [
+			{ q: "Was musst du tun, bevor du die Butter erhitzt?", a: "den Teig verrühren und ruhen lassen", wrong: ["den Pfannkuchen wenden", "die zweite Seite backen"], why: "Das Rezept nennt die Schritte der Reihe nach." },
+			{ q: "Warum steht im Rezept „mit einem Erwachsenen“?", a: "Eine heiße Pfanne kann gefährlich sein.", wrong: ["Kinder dürfen keine Butter essen.", "Der Teig wird sonst zu dick."], why: "Beim Braten kannst du dich verbrennen." },
+		],
+		extract: [
+			{ q: "Schreibe aus dem Text heraus: Was kommt zuerst in die Pfanne?", a: "Butter", also: ["etwas Butter"], why: "Im Text steht: Erhitze etwas Butter in der Pfanne." },
 		],
 	},
 	{
@@ -111,7 +133,7 @@ export const FACT_TEXTS: Passage[] = [
 		title: "Die Zugspitze",
 		paragraphs: [
 			"Die Zugspitze ist mit 2962 Metern der höchste Berg Deutschlands. Sie liegt in Bayern, direkt an der Grenze zu Österreich.",
-			"Auf den Gipfel führen Wanderwege und Bergbahnen. Geübte Bergsteiger brauchen zu Fuß meist mehr als einen Tag.",
+			"Auf den Gipfel führen Bergwege und Bergbahnen. Auch geübte Bergsteiger brauchen zu Fuß viele Stunden.",
 			"Oben ist es viel kälter als im Tal. Darum packst du auch im Sommer eine warme Jacke ein.",
 		],
 		literal: [
@@ -119,11 +141,11 @@ export const FACT_TEXTS: Passage[] = [
 			{ q: "An welches Land grenzt die Zugspitze?", a: "an Österreich", wrong: ["an die Schweiz", "an Italien"], why: "Das steht im ersten Absatz." },
 		],
 		deeper: [
-			{ q: "Wie kommt eine Familie mit kleinen Kindern am ehesten auf den Gipfel?", a: "mit einer Bergbahn", wrong: ["zu Fuß an einem Vormittag", "mit dem Fahrrad"], why: "Zu Fuß brauchen sogar Geübte meist mehr als einen Tag." },
+			{ q: "Wie kommt eine Familie mit kleinen Kindern am ehesten auf den Gipfel?", a: "mit einer Bergbahn", wrong: ["zu Fuß an einem Vormittag", "mit dem Fahrrad"], why: "Zu Fuß brauchen sogar Geübte viele Stunden." },
 			{ q: "Warum steht im Text etwas über eine warme Jacke?", a: "Es ist oben auch im Sommer kalt.", wrong: ["Im Tal schneit es im Sommer.", "Bergbahnen sind nicht geheizt."], why: "Der Satz davor nennt den Grund: Oben ist es viel kälter als im Tal." },
 		],
 		extract: [
-			{ q: "Schreibe aus dem Text heraus: In welchem Bundesland liegt die Zugspitze?", a: "Bayern", why: "Im Text steht: Sie liegt in Bayern." },
+			{ q: "Schreibe aus dem Text heraus: In welchem Bundesland liegt die Zugspitze?", a: "Bayern", also: ["in Bayern"], why: "Im Text steht: Sie liegt in Bayern." },
 		],
 	},
 ];
@@ -134,7 +156,7 @@ export const TABLES: DataTable[] = [
 	{
 		id: "wetter",
 		title: "Wetterstation der Klasse 4b",
-		head: ["Tag", "Temperatur mittags", "Regen"],
+		head: ["Tag", "Mittags", "Regen"],
 		rows: [
 			["Montag", "12 °C", "0 mm"],
 			["Dienstag", "15 °C", "2 mm"],
@@ -143,13 +165,13 @@ export const TABLES: DataTable[] = [
 			["Freitag", "9 °C", "4 mm"],
 		],
 		literal: [
-			{ q: "Wie warm war es am Dienstag mittags?", a: "15 °C", wrong: ["12 °C", "18 °C"], why: "Suche die Zeile Dienstag und die Spalte Temperatur." },
+			{ q: "Wie warm war es am Dienstag mittags?", a: "15 °C", wrong: ["12 °C", "18 °C"], why: "Suche die Zeile Dienstag und die Spalte Mittags." },
 			{ q: "An welchem Tag fielen 6 mm Regen?", a: "am Donnerstag", wrong: ["am Dienstag", "am Freitag"], why: "Suche in der Spalte Regen die 6 mm." },
 		],
 		deeper: [
 			{ q: "An welchem Tag war es mittags am wärmsten und trocken?", a: "am Mittwoch", wrong: ["am Montag", "am Dienstag"], why: "Mittwoch hat die höchste Temperatur und 0 mm Regen." },
-			{ q: "An welchem Tag war es am kältesten?", a: "am Freitag", wrong: ["am Montag", "am Donnerstag"], why: "9 °C ist der kleinste Wert in der Spalte Temperatur." },
-			{ q: "Wie viel Regen fiel in der ganzen Woche zusammen?", a: "12 mm", wrong: ["6 mm", "10 mm"], why: "2 + 6 + 4 = 12. Montag und Mittwoch blieben trocken." },
+			{ q: "An welchem Tag war es am kältesten?", a: "am Freitag", wrong: ["am Montag", "am Donnerstag"], why: "9 °C ist der kleinste Wert in der Spalte Mittags." },
+			{ q: "Wie viel Regen fiel von Montag bis Freitag zusammen?", a: "12 mm", wrong: ["6 mm", "10 mm"], why: "2 + 6 + 4 = 12. Montag und Mittwoch blieben trocken." },
 		],
 	},
 	{
@@ -182,12 +204,12 @@ export const STORIES: Passage[] = [
 		title: "Der Schlüssel im Brunnen",
 		paragraphs: [
 			"Mia besuchte in den Ferien ihre Oma auf dem Land. Hinter dem Haus stand ein alter Brunnen, abgedeckt mit einem Gitter. Als Mia durch das Gitter schaute, blitzte tief unten etwas.",
-			"Sie holte Oma und einen langen Stock mit einem Haken. Nach vielen Versuchen hielten die beiden einen rostigen Schlüssel in der Hand.",
+			"Sie holte Oma und einen langen Stock mit einem Haken. Nach vielen Versuchen hielten die beiden einen alten Schlüssel in der Hand.",
 			"Oma staunte. „Den suche ich seit zwanzig Jahren! Er gehört zur Truhe auf dem Dachboden.“ Gemeinsam stiegen sie die Treppe hinauf. In der Truhe lagen alte Fotos von Oma als Kind. Mia lachte: „Du hattest ja die gleiche Zahnlücke wie ich!“",
 		],
 		literal: [
 			{ q: "Wo steht der Brunnen?", a: "hinter Omas Haus", wrong: ["auf dem Dachboden", "mitten im Dorf"], why: "Im ersten Absatz steht: Hinter dem Haus stand ein alter Brunnen." },
-			{ q: "Was finden die beiden im Brunnen?", a: "einen rostigen Schlüssel", wrong: ["eine alte Truhe", "ein altes Foto"], why: "Das steht im zweiten Absatz." },
+			{ q: "Was finden die beiden im Brunnen?", a: "einen alten Schlüssel", wrong: ["eine alte Truhe", "ein altes Foto"], why: "Das steht im zweiten Absatz." },
 			{ q: "Was liegt in der Truhe?", a: "alte Fotos von Oma", wrong: ["ein zweiter Schlüssel", "Mias Zahn"], why: "Das steht im letzten Absatz." },
 		],
 		deeper: [
@@ -196,7 +218,7 @@ export const STORIES: Passage[] = [
 			{ q: "Welche Bedeutung hat der Brunnen für die Geschichte?", a: "In ihm liegt das Geheimnis, das alles auslöst.", wrong: ["Mia holt dort Wasser für die Blumen.", "Er zeigt nur, dass Oma auf dem Land wohnt."], why: "Ohne den Brunnen gäbe es den Fund nicht. Orte können für die Handlung wichtig sein." },
 		],
 		extract: [
-			{ q: "Schreibe aus dem Text heraus: Wo steht die Truhe?", a: "Dachboden", why: "Im Text steht: zur Truhe auf dem Dachboden." },
+			{ q: "Schreibe aus dem Text heraus: Wo steht die Truhe?", a: "Dachboden", also: ["auf dem Dachboden", "dem Dachboden"], why: "Im Text steht: zur Truhe auf dem Dachboden." },
 			{ q: "Schreibe aus dem Text heraus: Wer besucht die Oma? Schreibe nur den Namen.", a: "Mia", why: "Der erste Satz nennt ihren Namen." },
 		],
 	},
@@ -206,7 +228,7 @@ export const STORIES: Passage[] = [
 		paragraphs: [
 			"Ben war neu in der Klasse. In den Pausen stand er allein am Zaun und sagte kaum ein Wort.",
 			"Am Freitag blieb Tims Drachen hoch in der Kastanie hängen. Die anderen riefen durcheinander, doch keiner wusste Rat. Ben band einen Tennisball an eine lange Schnur und warf ihn über den Ast. Mit einem Ruck kam der Drachen frei.",
-			"„Das hast du super gemacht!“, rief Tim. „Bauen wir am Samstag zusammen einen neuen?“ Ben wurde rot und nickte. Zum ersten Mal lächelte er.",
+			"„Das hast du super gemacht!“, rief Tim. „Bauen wir am Samstag zusammen einen zweiten?“ Ben wurde rot und nickte. Zum ersten Mal lächelte er.",
 		],
 		literal: [
 			{ q: "Wo steht Ben in den Pausen?", a: "allein am Zaun", wrong: ["unter der Kastanie", "bei Tim"], why: "Das steht im ersten Absatz." },
@@ -219,8 +241,8 @@ export const STORIES: Passage[] = [
 			{ q: "Was könnte Ben am Abend zu seiner Mutter sagen?", a: "„Heute habe ich vielleicht einen Freund gefunden.“", wrong: ["„Tim hat mir meinen Drachen weggenommen.“", "„In der Schule rede ich mit niemandem mehr.“"], why: "Du versetzt dich in Ben: Tim lädt ihn ein, und Ben freut sich." },
 		],
 		extract: [
-			{ q: "Schreibe aus dem Text heraus: In welchem Baum hängt der Drachen?", a: "Kastanie", why: "Im Text steht: hoch in der Kastanie." },
-			{ q: "Schreibe aus dem Text heraus: An welchem Tag wollen die Jungen einen neuen Drachen bauen?", a: "Samstag", why: "Tim sagt: Bauen wir am Samstag zusammen einen neuen?" },
+			{ q: "Schreibe aus dem Text heraus: In welchem Baum hängt der Drachen?", a: "Kastanie", also: ["in der Kastanie", "der Kastanie", "die Kastanie"], why: "Im Text steht: hoch in der Kastanie." },
+			{ q: "Schreibe aus dem Text heraus: An welchem Tag wollen die Jungen zusammen einen Drachen bauen?", a: "Samstag", also: ["am Samstag"], why: "Tim sagt: Bauen wir am Samstag zusammen einen zweiten?" },
 		],
 	},
 	{
@@ -236,11 +258,11 @@ export const STORIES: Passage[] = [
 			{ q: "Wo bleibt die Schnecke beim Sturm?", a: "in ihrem Haus", wrong: ["am Bach", "unter einem Blatt"], why: "Das steht im zweiten Absatz." },
 		],
 		deeper: [
-			{ q: "Welche Lehre hat diese Fabel?", a: "Niemand sollte andere auslachen, denn jeder hat eigene Stärken.", wrong: ["Wer schnell ist, gewinnt immer.", "Bei Sturm bleibt man besser am Bach."], why: "Fabeln wollen eine Lehre vermitteln. Hier sagt es die Schnecke am Schluss." },
+			{ q: "Welche Lehre hat diese Fabel?", a: "Niemand sollte andere auslachen, denn jeder hat eigene Stärken.", wrong: ["Wer schnell ist, gewinnt immer.", "Bei Sturm bleibt man besser am Bach."], why: "Fabeln wollen eine Lehre vermitteln. Die Schnecke sagt am Schluss: Jeder hat etwas, das ihm hilft." },
 			{ q: "Woran erkennst du, dass dieser Text eine Fabel ist?", a: "Tiere sprechen wie Menschen, und am Ende steht eine Lehre.", wrong: ["Er beginnt mit „Es war einmal“.", "Er erklärt, wie Schnecken leben."], why: "Sprechende Tiere und eine Lehre sind typisch für Fabeln." },
 		],
 		extract: [
-			{ q: "Schreibe aus dem Text heraus: Welches Wetter kommt am Abend auf?", a: "Sturm", why: "Im Text steht: Am Abend zog ein Sturm auf." },
+			{ q: "Schreibe aus dem Text heraus: Welches Wetter kommt am Abend auf?", a: "Sturm", also: ["ein Sturm", "Ein Sturm"], why: "Im Text steht: Am Abend zog ein Sturm auf." },
 		],
 	},
 ];

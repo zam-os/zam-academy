@@ -3,6 +3,8 @@ import { LESSONS } from "../src/curriculum";
 import { FACT_TEXTS, POEMS, STORIES, TABLES } from "../src/curriculum/lesetexte";
 import { checkAnswer, makeTask } from "../src/exercises/tasks";
 import type { Level, Task } from "../src/types";
+import { initialState } from "../src/workshop/engine";
+import { workshopHtml } from "../src/workshop/view";
 
 const IDS = ["textarten-erkennen", "lesestrategien", "sachtexte-tabellen", "geschichten-verstehen", "figuren-verstehen", "sprachbilder-gedichte", "medien-verstehen"];
 const PASSAGES = [...FACT_TEXTS, ...STORIES, ...POEMS];
@@ -43,6 +45,22 @@ describe("Lesewerkstatt: Texte", () => {
 		}
 	});
 
+	it("states the table answers the questions expect", () => {
+		const q = (id: string, text: string) => {
+			const t = TABLES.find((x) => x.id === id);
+			return [...(t?.literal ?? []), ...(t?.deeper ?? [])].find((x) => x.q.includes(text))?.a;
+		};
+		const rows = (id: string) => TABLES.find((t) => t.id === id)?.rows ?? [];
+		const num = (s: string) => Number.parseInt(s, 10);
+		const hottest = [...rows("wetter")].sort((a, b) => num(b[1]) - num(a[1]))[0][0];
+		const coldest = [...rows("wetter")].sort((a, b) => num(a[1]) - num(b[1]))[0][0];
+		expect(q("wetter", "am wärmsten")).toBe(`am ${hottest}`);
+		expect(q("wetter", "am kältesten")).toBe(`am ${coldest}`);
+		expect(q("wetter", "zusammen")).toBe(`${rows("wetter").reduce((s, r) => s + num(r[2]), 0)} mm`);
+		expect(q("lesen", "zusammen")).toBe(String(rows("lesen").reduce((s, r) => s + num(r[1]), 0)));
+		expect(q("lesen", "die meisten")).toBe([...rows("lesen")].sort((a, b) => num(b[1]) - num(a[1]))[0][0]);
+	});
+
 	it("keeps table answers true to the table", () => {
 		const cell = (id: string, row: string, col: number) => TABLES.find((t) => t.id === id)?.rows.find((r) => r[0] === row)?.[col];
 		expect(cell("wetter", "Dienstag", 1)).toBe("15 °C");
@@ -75,8 +93,47 @@ describe("Lesewerkstatt: Aufgaben", () => {
 	});
 
 	it("accepts the copied word and rejects another word from the text", () => {
-		const copy = tasks("lesestrategien", 2).find((t) => t.accept[0] === "Laub") as Task;
+		const copy = tasks("lesestrategien", 1).find((t) => t.accept[0] === "Laub") as Task;
 		expect(checkAnswer(copy, "Laub").correct).toBe(true);
+		expect(checkAnswer(copy, "aus Laub").correct).toBe(true);
 		expect(checkAnswer(copy, "Stacheln").correct).toBe(false);
+	});
+
+	it("accepts the natural ways to copy an answer from the text", () => {
+		const storyTasks = tasks("geschichten-verstehen", 1);
+		const tree = storyTasks.find((t) => t.accept[0] === "Kastanie") as Task;
+		expect(checkAnswer(tree, "in der Kastanie").correct).toBe(true);
+		const attic = storyTasks.find((t) => t.accept[0] === "Dachboden") as Task;
+		expect(checkAnswer(attic, "auf dem Dachboden").correct).toBe(true);
+		const sea = tasks("lesestrategien", 1).find((t) => t.accept[0] === "Meer") as Task;
+		expect(checkAnswer(sea, "ins Meer").correct).toBe(true);
+		for (const p of PASSAGES)
+			for (const e of p.extract)
+				for (const form of e.also ?? []) expect(form.toLowerCase(), e.q).toContain(e.a.toLowerCase());
+	});
+
+	it("keeps copying on level 1, so that level 2 really asks for more", () => {
+		for (const id of IDS)
+			for (const t of tasks(id, 2, 600)) expect(t.key.startsWith("heraus:"), `${id}: ${t.key}`).toBe(false);
+	});
+
+	it("takes every proof sentence from the text it belongs to", () => {
+		const proofs = tasks("lesestrategien", 2).filter((t) => t.key.startsWith("beleg:"));
+		expect(new Set(proofs.map((t) => t.key)).size).toBe(6);
+		for (const t of proofs) {
+			const whole = textOf(t.passage?.paragraphs ?? []);
+			for (const option of t.options ?? []) expect(whole, option).toContain(option);
+		}
+	});
+
+	it("only asks about figures in the figure lesson", () => {
+		for (const t of tasks("figuren-verstehen", 2, 600)) expect(t.passage?.title ?? "Der neue Junge", t.key).toBe("Der neue Junge");
+	});
+
+	it("gives every sentence of an ordering puzzle its own row, without leaking marks", () => {
+		const lesson = LESSONS.find((l) => l.id === "geschichten-verstehen");
+		const html = lesson ? workshopHtml(lesson.workshop, initialState(lesson.workshop)) : "";
+		expect(html).toContain('class="row-end"');
+		expect(html).not.toContain("\u0001");
 	});
 });
