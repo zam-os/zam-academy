@@ -47,7 +47,7 @@ describe("HSU 4 curriculum, coverage & ZAM cell contract", () => {
 	});
 
 	it("maps all 75 official HSU 3/4 competences to valid lessons and leaves no orphan lesson", () => {
-		expect(publication.status).toBe("local-only");
+		expect(publication.status).toBe("preview");
 		expect(coverage.rows).toHaveLength(75);
 		const referenced = new Set<string>(coverage.optional_lessons);
 		for (const row of coverage.rows) {

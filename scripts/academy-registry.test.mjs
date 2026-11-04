@@ -3,7 +3,12 @@ import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { dirname, join, resolve } from "node:path";
 import { test } from "node:test";
 import { fileURLToPath } from "node:url";
-import { isPublishedApp, assertPublishedApp } from "./build-catalog.mjs";
+import {
+  isPublishedApp,
+  assertPublishedApp,
+  buildCatalog,
+  publicationStatus,
+} from "./build-catalog.mjs";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const registry = JSON.parse(readFileSync(join(root, "academy.json"), "utf8"));
@@ -48,7 +53,7 @@ test("registry references known subjects and schools and unique ids", () => {
     assert.ok(faecher.has(p.fach), `${p.id}: unknown Fach`);
     assert.ok(p.school === null || schulen.has(p.school), `${p.id}: school`);
     assert.ok(
-      p.grade === null || (p.grade >= 5 && p.grade <= 13),
+      p.grade === null || (p.grade >= 4 && p.grade <= 13),
       `${p.id}: grade`,
     );
   }
@@ -114,7 +119,12 @@ test("lesson counts match lesson-level atoms", () => {
     const tile = JSON.parse(
       readFileSync(join(root, p.app, "cell.json"), "utf8"),
     );
-    assert.equal(p.lessons, tile.atoms.length, `${p.id}: lessons`);
+    // Mathematik 4's first lesson has four atoms, so count the cited lessons.
+    const count =
+      p.app === "mathematik-grundschule-4"
+        ? new Set(tile.atoms.map((a) => new URL(a.source_link).hash)).size
+        : tile.atoms.length;
+    assert.equal(p.lessons, count, `${p.id}: lessons`);
   }
 });
 
@@ -135,6 +145,60 @@ test("every app links back to the academy online and in an offline file", () => 
       );
     }
   }
+});
+
+test("a preview is published and marked in the registry, its app and the catalog", () => {
+  const catalog = new Map(buildCatalog(root).cells.map((c) => [c.app, c]));
+  const pagesLoop = readFileSync(
+    join(root, ".github/workflows/pages.yml"),
+    "utf8",
+  ).match(/^\s*for app in (.+); do$/m)[1];
+  const published = pagesLoop.split(" ");
+  const notice =
+    '<p class="zam-preview-notice" role="note"><strong>Vorschau:</strong> Noch nicht von einer Lehrkraft geprüft, Lehrvideos fehlen noch. Inhalte können sich ändern.</p>';
+  for (const p of pakete) {
+    const preview = publicationStatus(join(root, p.app)) === "preview";
+    assert.equal(Boolean(p.preview), preview, `${p.app}: registry and marker`);
+    assert.equal(
+      Boolean(catalog.get(`/${p.app}/`).preview),
+      preview,
+      `${p.app}: catalog`,
+    );
+    assert.equal(
+      readFileSync(join(root, p.app, "index.html"), "utf8")
+        .replace(/<!--[\s\S]*?-->/g, "")
+        .includes(notice),
+      preview,
+      `${p.app}: visible notice`,
+    );
+    if (preview) assert.ok(published.includes(p.app), `${p.app}: Pages`);
+  }
+  // Every place in the atlas that names a package says it is a preview.
+  for (const shown of [
+    "k.preview ? h(",
+    "c.pkg?.preview",
+    "k.pkg?.preview",
+    "n.pkg?.preview",
+    "p.preview ?",
+    'n.pkg.preview ? "Vorschau · "',
+  ])
+    assert.ok(html.includes(shown), shown);
+});
+
+test("Grade 4 has its own island with the Grundschule packages and HSU ends there", () => {
+  const trees = atlasTrees();
+  const four = trees.schule.children.find((n) => n.grade === 4);
+  assert.deepEqual(
+    four.children.map((n) => n.id).sort(),
+    ["deutsch", "hsu", "mathematik"],
+  );
+  for (const fach of four.children)
+    assert.deepEqual(
+      fach.children.map((n) => n.school.id),
+      ["grundschule"],
+    );
+  assert.equal(schoolSubject(trees, 5, "hsu"), undefined);
+  assert.ok(schoolSubject(trees, 5, "deutsch"));
 });
 
 test("kein_unterricht names known subjects and schools, explains itself and never contradicts a package", () => {
@@ -329,8 +393,8 @@ test("coverage distinguishes pre-start grades from explicit timetable gaps and e
     const { nodes } = matrix(registry, school.id);
     const rows = nodes.matrix.children.find((n) => n.tag === "tbody").children;
     for (const [index, subject] of registry.faecher.entries()) {
-      for (let grade = 5; grade <= 13; grade++) {
-        const mark = rows[index].children[grade - 4].children[0];
+      for (let grade = 4; grade <= 13; grade++) {
+        const mark = rows[index].children[grade - 3].children[0];
         const gap = registry.kein_unterricht.find(
           (entry) =>
             entry.fach === subject.id &&
@@ -343,7 +407,11 @@ test("coverage distinguishes pre-start grades from explicit timetable gaps and e
             group.grades.includes(grade) &&
             group.paths.includes(subject.id),
         );
-        if (grade < school.from || grade > school.to) {
+        if (
+          grade < school.from ||
+          grade > school.to ||
+          grade > (subject.to ?? 13)
+        ) {
           assert.equal(mark.attrs.class, "na");
         } else if (combination) {
           assert.equal(mark.attrs.class, "cell");

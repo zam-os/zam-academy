@@ -177,7 +177,8 @@ worth something only after this check. To find candidates:
 ## 5. The ZAM cell
 
 - One atom per lesson (the registry test compares `lessons` in
-  `academy.json` with the atoms, UML excepted), usually two to four cards per
+  `academy.json` with the atoms; UML is excepted, and Mathematik 4 counts the
+  lessons its atoms cite), usually two to four cards per
   atom; more where the lesson's competences or a B row need them
   (`mathematik-realschule-9` has atoms with up to seven).
 - Atom and item ids of a new cell are real ULIDs, generated once and then
@@ -247,6 +248,9 @@ Learners have review histories on them.
   Changing the marker to `ready` does not replace release authority or the
   normal registration checks. Shared publication tooling belongs in its own
   PR rather than a new-package PR.
+- A package with status `preview` is published like `ready` (Pages, atlas,
+  catalog, ids as a contract) and shows a visible notice that teacher review
+  and videos are open. Thomas decides when a preview starts and ends.
 - Document the curriculum check and the card mapping in `docs/` (see
   `docs/bwr-bestandsabgleich.md`, `docs/physik-10-coverage.md`).
 

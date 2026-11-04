@@ -445,13 +445,13 @@ function renderParents(): void {
 <section class="card">
 	<h2>Übertritt und was die App nicht abdeckt</h2>
 	<p>Für den Übertritt zählen in Bayern Deutsch, Mathematik und Heimat- und Sachunterricht zusammen. Diese App übt einen Teil von Deutsch. Noch nicht enthalten sind Lesen und Textverständnis, eigene Texte (Erzählen, Berichten, Beschreiben), Sprechen und Zuhören sowie der verbindliche Grundwortschatz. Echte Bücher, Vorlesen, Schreiben mit der Hand und Gespräche bleiben wichtig.</p>
-	<p>Die Inhalte sind eine Erprobungsfassung. Eine Grundschullehrkraft hat sie noch nicht fachlich freigegeben.</p>
+	<p>Das ist eine Vorschau. Eine Grundschullehrkraft hat die Inhalte noch nicht fachlich freigegeben, und Lehrvideos fehlen noch.</p>
 	<ul class="source-list">${SOURCES.map((s) => `<li><a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.label)}</a></li>`).join("")}<li><a href="https://www.km.bayern.de/lernen/ubertritt-und-bildungswege/uebertritt" target="_blank" rel="noopener noreferrer">Bayerisches Kultusministerium · Übertritt</a></li></ul>
 	<p class="small">Links öffnen erst auf Ihren Klick.</p>
 </section>
 <section class="card">
 	<h2>Mit ZAM wiederholen</h2>
-	<p>Zu jeder Lektion gibt es Wiederholungskarten (${cards} insgesamt). Mit ZAM kann Ihr Kind sie später in wachsenden Abständen wiederholen. Jede Karte führt zur passenden Lektion zurück. Das Paket ist eine lokale Erprobungsfassung und noch nicht im ZAM-Katalog.</p>
+	<p>Zu jeder Lektion gibt es Wiederholungskarten (${cards} insgesamt). Mit ZAM kann Ihr Kind sie später in wachsenden Abständen wiederholen. Jede Karte führt zur passenden Lektion zurück. Die Karten stehen im ZAM-Katalog; als Vorschau können sie sich nach der fachlichen Prüfung noch ändern.</p>
 </section>
 <section class="card">
 	<h2>Daten und Zurücksetzen</h2>

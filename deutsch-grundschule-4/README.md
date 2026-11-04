@@ -1,12 +1,12 @@
 # Tintos Wörterstadt · Deutsch 4 · Grundschule Bayern
 
-**Lokaler Entwurf.** 23 Lektionen, 69 ZAM-Karten. Kinder der 4. Klasse üben
+**Vorschau.** 23 Lektionen, 69 ZAM-Karten. Kinder der 4. Klasse üben
 hier „Sprache untersuchen“ und „Richtig schreiben“ aus dem
 [LehrplanPLUS Deutsch 3/4](https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/deutsch)
 (Abgleich am 3. November 2026). Begleiter ist Tinto, ein kleiner Tintenfisch,
 der mit acht Armen schreibt. Eine Grundschullehrkraft hat die Inhalte noch
-nicht fachlich freigegeben; `publication.json` hält das Paket deshalb aus dem
-öffentlichen Katalog.
+nicht fachlich freigegeben; `publication.json` steht deshalb auf `preview`.
+App und Karten sind veröffentlicht, ihre IDs gelten ab jetzt als Vertrag.
 
 | Ort in der Wörterstadt | Lektionen | Werkstätten |
 | --- | ---: | --- |

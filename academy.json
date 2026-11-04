@@ -2,6 +2,7 @@
   "schema": 1,
   "goal": "Bis Ende 2026: alle Themen der Klassen 5 bis 13 in Bayern",
   "schulen": [
+    { "id": "grundschule", "name": "Grundschule", "wo": "an der Grundschule", "short": "GS", "from": 4, "to": 4 },
     { "id": "realschule", "name": "Realschule", "wo": "an der Realschule", "short": "Real", "from": 5, "to": 10 },
     { "id": "gymnasium", "name": "Gymnasium", "wo": "am Gymnasium", "short": "Gym", "from": 5, "to": 13 },
     { "id": "mittelschule", "name": "Mittelschule", "wo": "an der Mittelschule", "short": "MS", "from": 5, "to": 10 },
@@ -16,16 +17,17 @@
     { "id": "wirtschaft", "name": "Wirtschaft", "glyph": "€" }
   ],
   "faecher": [
-    { "id": "deutsch", "name": "Deutsch", "bereich": "sprachen", "glyph": "Aa", "hue": 340, "from": 5 },
+    { "id": "deutsch", "name": "Deutsch", "bereich": "sprachen", "glyph": "Aa", "hue": 340, "from": 4 },
     { "id": "englisch", "name": "Englisch", "bereich": "sprachen", "glyph": "EN", "hue": 8, "from": 5 },
     { "id": "franzoesisch", "name": "Französisch", "bereich": "sprachen", "glyph": "FR", "hue": 322, "from": 5 },
-    { "id": "mathematik", "name": "Mathematik", "bereich": "mathematik", "glyph": "a²+b²=c²", "hue": 215, "from": 5 },
+    { "id": "mathematik", "name": "Mathematik", "bereich": "mathematik", "glyph": "a²+b²=c²", "hue": 215, "from": 4 },
     { "id": "physik", "name": "Physik", "bereich": "naturwissenschaften", "glyph": "F=m·a", "hue": 258, "from": 6 },
     { "id": "chemie", "name": "Chemie", "bereich": "naturwissenschaften", "glyph": "H₂O", "hue": 168, "from": 8 },
     { "id": "biologie", "name": "Biologie", "bereich": "naturwissenschaften", "glyph": "DNA", "hue": 130, "from": 5 },
     { "id": "informatik", "name": "Informatik", "bereich": "informatik", "glyph": "</>", "hue": 190, "from": 6 },
     { "id": "geschichte", "name": "Geschichte", "bereich": "gesellschaft", "glyph": "1918", "hue": 30, "from": 6 },
     { "id": "geographie", "name": "Geographie", "bereich": "gesellschaft", "glyph": "N↑", "hue": 76, "from": 5 },
+    { "id": "hsu", "name": "Heimat- und Sachunterricht", "bereich": "gesellschaft", "glyph": "HSU", "hue": 110, "from": 4, "to": 4 },
     { "id": "wirtschaft", "name": "Wirtschaft", "bereich": "wirtschaft", "glyph": "€", "hue": 296, "from": 7 },
     { "id": "pug", "name": "Politik und Gesellschaft", "bereich": "gesellschaft", "glyph": "§", "hue": 205, "from": 8 }
   ],
@@ -146,6 +148,48 @@
     }
   ],
   "pakete": [
+    {
+      "id": "mathematik-grundschule-4",
+      "app": "mathematik-grundschule-4",
+      "title": "Mathematik 4: Milos Entdeckerinsel",
+      "fach": "mathematik",
+      "grade": 4,
+      "school": "grundschule",
+      "preview": true,
+      "lessons": 36,
+      "cards": 146,
+      "lang": ["de"],
+      "gebiete": ["Zahlenwald", "Messmarkt", "Formenbucht", "Zufallsgarten", "Inselexpeditionen"],
+      "desc": "Entdeckerlektionen mit Milo: Zahlen und Rechnen, Größen, Geometrie, Daten und Zufall, dazu drei gemischte Expeditionen."
+    },
+    {
+      "id": "deutsch-grundschule-4",
+      "app": "deutsch-grundschule-4",
+      "title": "Deutsch 4: Tintos Wörterstadt",
+      "fach": "deutsch",
+      "grade": 4,
+      "school": "grundschule",
+      "preview": true,
+      "lessons": 23,
+      "cards": 69,
+      "lang": ["de"],
+      "gebiete": ["Wörterwerkstatt", "Satzbahnhof", "Detektivbüro"],
+      "desc": "Sprache untersuchen und richtig schreiben mit Tinto. Lesen, eigene Texte und der Grundwortschatz fehlen noch."
+    },
+    {
+      "id": "hsu-grundschule-4",
+      "app": "hsu-grundschule-4",
+      "title": "HSU 4: Lottas Bayern-Forscherbuch",
+      "fach": "hsu",
+      "grade": 4,
+      "school": "grundschule",
+      "preview": true,
+      "lessons": 20,
+      "cards": 60,
+      "lang": ["de"],
+      "gebiete": ["Demokratie und Gesellschaft", "Körper und Gesundheit", "Natur und Umwelt", "Zeit und Wandel", "Raum und Mobilität", "Technik und Kultur"],
+      "desc": "Entdeckerstationen mit Lotta zu allen sechs Lernbereichen des Heimat- und Sachunterrichts."
+    },
     {
       "id": "uml",
       "app": "uml",

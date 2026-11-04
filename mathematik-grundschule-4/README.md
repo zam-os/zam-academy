@@ -28,13 +28,12 @@ is included. See [the recording brief](docs/teacher-recording-brief.md),
 [acceptance record](acceptance.json), and
 [implementation plan](../docs/plans/2026-10-31-grade-4-discovery-island.md).
 
-`publication.json` keeps this cell out of the public catalog. Phase 2 must
-coordinate explicit publication approval, the Pages app entry and this
-marker. Existing public apps retain their publication behaviour. The future
-registry count also needs an explicit decision: this draft has 36 selectable
-lessons and 39 atoms because the first workshop uses four atoms. The public
-registry currently requires those counts to agree; existing IDs stay intact. No ZAM
-bundled fixture or personal learning library was edited.
+The app and its cell are published as a preview (`publication.json`:
+`preview`, Thomas's decision of 2026-11-04), so their ids are a contract while
+teacher review and recordings are open. The registry lists 36 selectable
+lessons, while the cell has 39 atoms because the first workshop uses four atoms;
+the registry test exempts this package from requiring those counts to agree. No
+ZAM bundled fixture or personal learning library was edited.
 
 ## Run and verify
 
@@ -100,8 +99,8 @@ exponents and malformed or mixed dot/space groups remain invalid.
 
 
 - Lesson id: `stellenwerte-buendeln`; cell:
-  `zam-academy:mathematik-grundschule-4`. Public links are future source
-  addresses and do not indicate that this draft is already hosted.
+  `zam-academy:mathematik-grundschule-4`. Public links point to the hosted
+  preview.
 - `cell.json` is the sole recall-card source: thirty-nine atoms, one hundred forty-six German
   items (seventy-eight binary fast checks and sixty-eight synthesis tasks) with fixed ULIDs.
   Edit cards only in this file; there is no
@@ -117,9 +116,9 @@ exponents and malformed or mixed dot/space groups remain invalid.
 - Evidence records first responses separately from helped retries. The
   parent view uses stable task snapshots for dated examples, with canonical
   targets for build tasks; digit examples use grouped numerals.
-  The unpublished draft has no progress migration or compatibility layer.
-  The first release uses a fresh storage namespace and starts every learner
-  at zero; draft preview saves are not imported.
+  The first publication has no progress migration or compatibility layer. It
+  uses a fresh storage namespace and starts every learner at zero; saves from
+  local drafts are not imported.
   Local practice is never presented as ZAM review history or an FSRS score.
 - A versioned IndexedDB document commits mission completion and unique
   reward keys together. Concurrent tabs serialize writes. Reopening or
