@@ -1470,10 +1470,16 @@ dialog::backdrop {
 	.reading-table {
 		padding: 0.6rem 0.5rem;
 	}
+	.reading-table {
+		padding-inline: 0.2rem;
+	}
 	.reading-table th,
 	.reading-table td {
-		padding: 0.25rem 0.3rem;
-		font-size: 0.95rem;
+		padding: 0.2rem 0.15rem;
+		font-size: 0.85rem;
+	}
+	.reading-table td[aria-hidden] {
+		font-size: 0.65rem;
 	}
 }
 
