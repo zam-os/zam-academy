@@ -1,8 +1,8 @@
 {
 	"schema": 1,
-	"checked": "2026-10-31",
+	"checked": "2026-11-04",
 	"source_sha256": "d6883fa04d305d52e83aa16dfd5384eacb40e98b86ffad3dc3e05aec42cf5dd4",
-	"scope": "Shared Grades 3/4: 36 digital draft lessons across five worlds, including 33 core lessons and three mixed expeditions. Coverage remains partial and unreviewed; teacher, media, physical and open-ended reasoning gates remain pending.",
+	"scope": "Public preview since 2026-11-04: 40 selectable lessons across five worlds (37 core lessons and three mixed expeditions). All 54 rows audited against the current official shared Grades 3/4 curriculum. Digital additions are distinguished from physical/social practice and pending teacher review; no full course coverage or teacher approval claimed.",
 	"full_coverage": false,
 	"review_status": "awaiting-primary-teacher",
 	"curriculum": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik",
@@ -191,6 +191,26 @@
 			"section": "1.3",
 			"scope": "partial",
 			"official_cell_binding": "deferred: teacher review, practical work and full course review remain pending"
+		},
+		"anzahlen-schaetzen-fermi": {
+			"section": "1.1",
+			"scope": "partial",
+			"official_cell_binding": "deferred: teacher review and practical work remain pending; no broad grade coverage claim"
+		},
+		"rechenweg-waehlen": {
+			"section": "1.2",
+			"scope": "partial",
+			"official_cell_binding": "deferred: teacher review and practical work remain pending; no broad grade coverage claim"
+		},
+		"sachaufgaben-veraendern": {
+			"section": "1.3",
+			"scope": "partial",
+			"official_cell_binding": "deferred: teacher review and practical work remain pending; no broad grade coverage claim"
+		},
+		"groessen-vergleichen-ordnen": {
+			"section": "3.2",
+			"scope": "partial",
+			"official_cell_binding": "deferred: teacher review and practical work remain pending; no broad grade coverage claim"
 		}
 	},
 	"learning_areas": [
@@ -230,7 +250,7 @@
 			"ordinal": 1,
 			"summary": "Counting",
 			"source": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik#25773",
-			"checked": "2026-11-03",
+			"checked": "2026-11-04",
 			"status": "partial",
 			"lessons": [
 				"zahlen-vergleichen-ordnen",
@@ -242,11 +262,24 @@
 				"Place-value comparison and ordered triples; scaled number-line reading/placement; equal steps in both directions; reasoning checks; three tasks per level and fresh exits",
 				"Divisor/remainder checks, multiples tables and choosing all offered divisors 1–10; src/course/divisors.ts; tests/combinations-divisors.test.ts"
 			],
-			"physical_work": [],
+			"physical_work": [
+				"Explain flexible forward/backward counting and divisor relationships aloud using your own examples."
+			],
 			"reviewer": null,
-			"remaining": "Primary-school teacher review, broader flexible-counting representations and open explanations of number relationships remain pending.",
+			"remaining": "(b) Explain flexible forward/backward counting and divisor relationships aloud using your own examples. (c) Primary-school teacher content, appropriateness and learning-evidence review remains pending; no teacher approval is recorded.",
 			"lb": 1,
-			"competence": "orientieren sich im Zahlenraum bis zur Million durch flexibles Zählen (vorwärts, rückwärts, in Schritten); sie ordnen und vergleichen Zahlen (auch anhand des Zahlenstrahls) und begründen Beziehungen zwischen Zahlen (z. B. Teiler, Vielfache)."
+			"competence": "orientieren sich im Zahlenraum bis zur Million durch flexibles Zählen (vorwärts, rückwärts, in Schritten); sie ordnen und vergleichen Zahlen (auch anhand des Zahlenstrahls) und begründen Beziehungen zwischen Zahlen (z. B. Teiler, Vielfache).",
+			"gap_audit": {
+				"checked": "2026-11-04",
+				"digital": "existing",
+				"resolution": [
+					"Existing mapped activities provide digital preparation; review the evidence column. Further original production, physical work and social explanation are named separately below."
+				],
+				"outside_app": [
+					"Explain flexible forward/backward counting and divisor relationships aloud using your own examples."
+				],
+				"teacher_review": "pending"
+			}
 		},
 		{
 			"id": "m34-1.1-02",
@@ -254,18 +287,32 @@
 			"ordinal": 2,
 			"summary": "Unit structures",
 			"source": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik#25773",
-			"checked": "2026-10-31",
+			"checked": "2026-11-04",
 			"status": "partial",
-			"lessons": ["stellenwerte-buendeln"],
+			"lessons": ["stellenwerte-buendeln", "zahlen-zerlegen-ergaenzen"],
 			"planned_work": ["N01", "N02", "N03"],
 			"evidence": [
-				"place-value board, bidirectional exchanges, exact task checks"
+				"place-value board, bidirectional exchanges, exact task checks",
+				"Number-word/stage/digit transfer now complements the existing exchange board; representations.ts, coverage-gaps.test.ts."
 			],
-			"physical_work": ["Explain an exchange using objects or a drawing"],
+			"physical_work": [
+				"Explain a value-preserving exchange with real objects or a drawing."
+			],
 			"reviewer": null,
-			"remaining": "Primary-school teacher review; additional representations, number words and practical justification across the full shared Grades 3/4 competence",
+			"remaining": "(b) Explain a value-preserving exchange with real objects or a drawing. (c) Primary-school teacher content, appropriateness and learning-evidence review remains pending; no teacher approval is recorded.",
 			"lb": 1,
-			"competence": "erkennen und nutzen Strukturen bei der Zahlerfassung (z. B. 1000 als 10 H oder als 100 Z) und begründen ihre Vorgehensweise."
+			"competence": "erkennen und nutzen Strukturen bei der Zahlerfassung (z. B. 1000 als 10 H oder als 100 Z) und begründen ihre Vorgehensweise.",
+			"gap_audit": {
+				"checked": "2026-11-04",
+				"digital": "closed",
+				"resolution": [
+					"Number-word/stage/digit transfer now complements the existing exchange board; representations.ts, coverage-gaps.test.ts."
+				],
+				"outside_app": [
+					"Explain a value-preserving exchange with real objects or a drawing."
+				],
+				"teacher_review": "pending"
+			}
 		},
 		{
 			"id": "m34-1.1-03",
@@ -273,18 +320,32 @@
 			"ordinal": 3,
 			"summary": "Decimal system",
 			"source": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik#25773",
-			"checked": "2026-10-31",
+			"checked": "2026-11-04",
 			"status": "partial",
-			"lessons": ["stellenwerte-buendeln"],
+			"lessons": ["stellenwerte-buendeln", "zahlen-zerlegen-ergaenzen"],
 			"planned_work": ["N01", "N02", "N03"],
 			"evidence": [
-				"place-value board, bidirectional exchanges, exact task checks"
+				"place-value board, bidirectional exchanges, exact task checks",
+				"Number-word/stage/digit transfer with zero positions in both levels; representations.ts, coverage-gaps.test.ts."
 			],
-			"physical_work": ["Explain an exchange using objects or a drawing"],
+			"physical_work": [
+				"Relate number words, stage notation and digits to real cubes, rods and plates; explain your own representation."
+			],
 			"reviewer": null,
-			"remaining": "Primary-school teacher review; additional representations, number words and practical justification across the full shared Grades 3/4 competence",
+			"remaining": "(b) Relate number words, stage notation and digits to real cubes, rods and plates; explain your own representation. (c) Primary-school teacher content, appropriateness and learning-evidence review remains pending; no teacher approval is recorded.",
 			"lb": 1,
-			"competence": "nutzen planvoll und systematisch die Struktur des Zehnersystems (Bündelung, Stellenwert) und begründen Beziehungen zwischen verschiedenen Zahldarstellungen (z. B. Stellenwertschreibweise, Stufenschrift: 734 → 7H 3Z 4E, Zahlwort, Einerwürfel/Zehnerstangen/Hunderterplatten), um sicher über das dekadische Stellenwertsystem zu verfügen."
+			"competence": "nutzen planvoll und systematisch die Struktur des Zehnersystems (Bündelung, Stellenwert) und begründen Beziehungen zwischen verschiedenen Zahldarstellungen (z. B. Stellenwertschreibweise, Stufenschrift: 734 → 7H 3Z 4E, Zahlwort, Einerwürfel/Zehnerstangen/Hunderterplatten), um sicher über das dekadische Stellenwertsystem zu verfügen.",
+			"gap_audit": {
+				"checked": "2026-11-04",
+				"digital": "closed",
+				"resolution": [
+					"Number-word/stage/digit transfer with zero positions in both levels; representations.ts, coverage-gaps.test.ts."
+				],
+				"outside_app": [
+					"Relate number words, stage notation and digits to real cubes, rods and plates; explain your own representation."
+				],
+				"teacher_review": "pending"
+			}
 		},
 		{
 			"id": "m34-1.1-04",
@@ -292,18 +353,32 @@
 			"ordinal": 4,
 			"summary": "Quantity estimates",
 			"source": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik#25773",
-			"checked": "2026-11-02",
+			"checked": "2026-11-04",
 			"status": "partial",
-			"lessons": ["zahlen-vergleichen-ordnen"],
+			"lessons": ["zahlen-vergleichen-ordnen", "anzahlen-schaetzen-fermi"],
 			"planned_work": ["N01", "N02", "N03"],
 			"evidence": [
-				"Compare six-digit numbers using smaller/greater/equal and justify the first different position"
+				"Compare six-digit numbers using smaller/greater/equal and justify the first different position",
+				"New estimation lesson: typical samples, evaluation of strategies and two explicit Fermi assumptions; reasoning.ts, coverage-gaps.test.ts."
 			],
-			"physical_work": [],
+			"physical_work": [
+				"Select and count real representative samples, compare your own Fermi assumptions and check the estimate by counting."
+			],
 			"reviewer": null,
-			"remaining": "Quantity estimation, Fermi problems, strategy comparison and primary-school teacher review",
+			"remaining": "(b) Select and count real representative samples, compare your own Fermi assumptions and check the estimate by counting. (c) Primary-school teacher content, appropriateness and learning-evidence review remains pending; no teacher approval is recorded.",
 			"lb": 1,
-			"competence": "schätzen und bestimmen Anzahlen (z. B. Reiskörner) und vergleichen Zahlen im Zahlenraum bis zur Million unter Verwendung von Fachbegriffen; sie begründen und bewerten dabei verschiedene Vorgehensweisen (z. B. bei Fermi-Aufgaben)."
+			"competence": "schätzen und bestimmen Anzahlen (z. B. Reiskörner) und vergleichen Zahlen im Zahlenraum bis zur Million unter Verwendung von Fachbegriffen; sie begründen und bewerten dabei verschiedene Vorgehensweisen (z. B. bei Fermi-Aufgaben).",
+			"gap_audit": {
+				"checked": "2026-11-04",
+				"digital": "closed",
+				"resolution": [
+					"New estimation lesson: typical samples, evaluation of strategies and two explicit Fermi assumptions; reasoning.ts, coverage-gaps.test.ts."
+				],
+				"outside_app": [
+					"Select and count real representative samples, compare your own Fermi assumptions and check the estimate by counting."
+				],
+				"teacher_review": "pending"
+			}
 		},
 		{
 			"id": "m34-1.1-05",
@@ -311,18 +386,31 @@
 			"ordinal": 5,
 			"summary": "Number decomposition",
 			"source": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik#25773",
-			"checked": "2026-11-02",
+			"checked": "2026-11-04",
 			"status": "partial",
 			"lessons": ["zahlen-zerlegen-ergaenzen"],
 			"planned_work": ["N01", "N02", "N03"],
 			"evidence": [
 				"Three movable part-whole goals; missing-part tasks; choose canonical place-value parts; explain compensating changes at constant sum"
 			],
-			"physical_work": [],
+			"physical_work": [
+				"Build and explain alternative decompositions with objects or drawings."
+			],
 			"reviewer": null,
-			"remaining": "Primary-school teacher review; further physical representations and alternative decompositions",
+			"remaining": "(b) Build and explain alternative decompositions with objects or drawings. (c) Primary-school teacher content, appropriateness and learning-evidence review remains pending; no teacher approval is recorded.",
 			"lb": 1,
-			"competence": "zerlegen Zahlen im Zahlenraum bis zur Million (z. B. 1000 = 100 + 900; 10000 = 1000 + 9000; 100000 = 10000 + 90000; 100000 = 10 ∙ 10000) und erläutern dabei Zusammenhänge und Strukturen."
+			"competence": "zerlegen Zahlen im Zahlenraum bis zur Million (z. B. 1000 = 100 + 900; 10000 = 1000 + 9000; 100000 = 10000 + 90000; 100000 = 10 ∙ 10000) und erläutern dabei Zusammenhänge und Strukturen.",
+			"gap_audit": {
+				"checked": "2026-11-04",
+				"digital": "existing",
+				"resolution": [
+					"Existing mapped activities provide digital preparation; review the evidence column. Further original production, physical work and social explanation are named separately below."
+				],
+				"outside_app": [
+					"Build and explain alternative decompositions with objects or drawings."
+				],
+				"teacher_review": "pending"
+			}
 		},
 		{
 			"id": "m34-1.2-01",
@@ -330,18 +418,31 @@
 			"ordinal": 1,
 			"summary": "Multiplication facts",
 			"source": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik#25775",
-			"checked": "2026-11-02",
+			"checked": "2026-11-04",
 			"status": "partial",
 			"lessons": ["malnehmen-teilen"],
 			"planned_work": ["N04", "N05", "N06", "N07", "N08", "N09", "N10", "N11"],
 			"evidence": [
 				"German explanations and worked strategies; three reachable jump/group lab goals; guided and transfer generators; inverse checks and fresh exits"
 			],
-			"physical_work": [],
+			"physical_work": [
+				"Practise varied multiplication facts and inverses over time; a short app session does not establish automatic retrieval."
+			],
 			"reviewer": null,
-			"remaining": "Primary-school teacher review; complete flexible small-fact retrieval and automatisation are not demonstrated by a short session",
+			"remaining": "(b) Practise varied multiplication facts and inverses over time; a short app session does not establish automatic retrieval. (c) Primary-school teacher content, appropriateness and learning-evidence review remains pending; no teacher approval is recorded.",
 			"lb": 1,
-			"competence": "wenden die Zahlensätze des kleinen Einmaleins sowie deren Umkehrungen (z. B. 42 : 7 = 6 oder 42 : 6 = 7 als Umkehrungen von 6 ∙ 7 = 42) automatisiert und flexibel an."
+			"competence": "wenden die Zahlensätze des kleinen Einmaleins sowie deren Umkehrungen (z. B. 42 : 7 = 6 oder 42 : 6 = 7 als Umkehrungen von 6 ∙ 7 = 42) automatisiert und flexibel an.",
+			"gap_audit": {
+				"checked": "2026-11-04",
+				"digital": "existing",
+				"resolution": [
+					"Existing mapped activities provide digital preparation; review the evidence column. Further original production, physical work and social explanation are named separately below."
+				],
+				"outside_app": [
+					"Practise varied multiplication facts and inverses over time; a short app session does not establish automatic retrieval."
+				],
+				"teacher_review": "pending"
+			}
 		},
 		{
 			"id": "m34-1.2-02",
@@ -349,7 +450,7 @@
 			"ordinal": 2,
 			"summary": "Scaled facts",
 			"source": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik#25775",
-			"checked": "2026-11-02",
+			"checked": "2026-11-04",
 			"status": "partial",
 			"lessons": [
 				"geschickt-addieren",
@@ -360,11 +461,24 @@
 			"evidence": [
 				"German explanations and worked strategies; three reachable jump/group lab goals; guided and transfer generators; inverse checks and fresh exits"
 			],
-			"physical_work": [],
+			"physical_work": [
+				"Explain further fact families and transfer them to your own examples with a partner."
+			],
 			"reviewer": null,
-			"remaining": "Primary-school teacher review; further fact families and learner explanations",
+			"remaining": "(b) Explain further fact families and transfer them to your own examples with a partner. (c) Primary-school teacher content, appropriateness and learning-evidence review remains pending; no teacher approval is recorded.",
 			"lb": 1,
-			"competence": "übertragen, auch beim Kopfrechnen, ihre Kenntnisse zu den Zahlensätzen des kleinen Einmaleins sowie des Einspluseins bis 20 in größere Zahlenräume (z. B. 6 ∙ 4 = 24 → 60 ∙ 4 = 240, 12 + 3 = 15 → 120 + 30 = 150) und verwenden dabei die Fachbegriffe addieren, subtrahieren, multiplizieren, dividieren, Summe und Differenz."
+			"competence": "übertragen, auch beim Kopfrechnen, ihre Kenntnisse zu den Zahlensätzen des kleinen Einmaleins sowie des Einspluseins bis 20 in größere Zahlenräume (z. B. 6 ∙ 4 = 24 → 60 ∙ 4 = 240, 12 + 3 = 15 → 120 + 30 = 150) und verwenden dabei die Fachbegriffe addieren, subtrahieren, multiplizieren, dividieren, Summe und Differenz.",
+			"gap_audit": {
+				"checked": "2026-11-04",
+				"digital": "existing",
+				"resolution": [
+					"Existing mapped activities provide digital preparation; review the evidence column. Further original production, physical work and social explanation are named separately below."
+				],
+				"outside_app": [
+					"Explain further fact families and transfer them to your own examples with a partner."
+				],
+				"teacher_review": "pending"
+			}
 		},
 		{
 			"id": "m34-1.2-03",
@@ -372,7 +486,7 @@
 			"ordinal": 3,
 			"summary": "Arithmetic operations",
 			"source": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik#25775",
-			"checked": "2026-11-02",
+			"checked": "2026-11-04",
 			"status": "partial",
 			"lessons": [
 				"geschickt-addieren",
@@ -388,13 +502,27 @@
 				"German explanations and worked strategies; three reachable jump/group lab goals; guided and transfer generators; inverse checks and fresh exits",
 				"Written addition of two nonnegative whole-number summands: entered result digits and carries, zero positions, carry chain to one million, contextual addition, correction and error reasoning",
 				"Written subtraction by value-preserving regrouping: entered result digits, explicit bundle exchanges across zero columns, contextual tasks, erroneous-result correction and addition checks; three tasks per level and fresh exits",
-				"Written multiplication with one/two-digit factors: partial product digits, carries, fixed tens shift and final addition; written division by 1–10: partial dividends, quotient digits including zeros, subtraction and remainders; context and editable correction tasks, three successes per level and fresh exits"
+				"Written multiplication with one/two-digit factors: partial product digits, carries, fixed tens shift and final addition; written division by 1–10: partial dividends, quotient digits including zeros, subtraction and remainders; context and editable correction tasks, three successes per level and fresh exits",
+				"Stale remaining text corrected: all four written procedures exist, including divisors through 10 with remainder; written-algorithms.test.ts and written-subtraction.test.ts. No fluency approval inferred."
 			],
-			"physical_work": [],
+			"physical_work": [
+				"Solve and explain your own mixed arithmetic examples on paper."
+			],
 			"reviewer": null,
-			"remaining": "Primary-school teacher review; further ranges, mixed tasks, written algorithms and division with remainder",
+			"remaining": "(b) Solve and explain your own mixed arithmetic examples on paper. (c) Primary-school teacher content, appropriateness and learning-evidence review remains pending; no teacher approval is recorded.",
 			"lb": 1,
-			"competence": "lösen Aufgaben im Zahlenraum bis zur Million zu allen vier Grundrechenarten."
+			"competence": "lösen Aufgaben im Zahlenraum bis zur Million zu allen vier Grundrechenarten.",
+			"gap_audit": {
+				"checked": "2026-11-04",
+				"digital": "existing",
+				"resolution": [
+					"Existing mapped activities provide digital preparation; review the evidence column. Further original production, physical work and social explanation are named separately below."
+				],
+				"outside_app": [
+					"Solve and explain your own mixed arithmetic examples on paper."
+				],
+				"teacher_review": "pending"
+			}
 		},
 		{
 			"id": "m34-1.2-04",
@@ -402,18 +530,36 @@
 			"ordinal": 4,
 			"summary": "Strategy reasoning",
 			"source": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik#25775",
-			"checked": "2026-11-02",
+			"checked": "2026-11-04",
 			"status": "partial",
-			"lessons": ["geschickt-addieren", "geschickt-subtrahieren"],
+			"lessons": [
+				"geschickt-addieren",
+				"geschickt-subtrahieren",
+				"rechenweg-waehlen"
+			],
 			"planned_work": ["N04", "N05", "N06", "N07", "N08", "N09", "N10", "N11"],
 			"evidence": [
-				"German explanations and worked strategies; three reachable jump/group lab goals; guided and transfer generators; inverse checks and fresh exits"
+				"German explanations and worked strategies; three reachable jump/group lab goals; guided and transfer generators; inverse checks and fresh exits",
+				"New method lesson compares efficiency for explicit numerical structures and objectives; reasoning.ts, coverage-gaps.test.ts."
 			],
-			"physical_work": [],
+			"physical_work": [
+				"Invent, compare and discuss your own strategies and their efficiency in a calculation conference."
+			],
 			"reviewer": null,
-			"remaining": "Primary-school teacher review; learner-generated strategies and comparing their efficiency",
+			"remaining": "(b) Invent, compare and discuss your own strategies and their efficiency in a calculation conference. (c) Primary-school teacher content, appropriateness and learning-evidence review remains pending; no teacher approval is recorded.",
 			"lb": 1,
-			"competence": "nutzen und erklären Rechenstrategien und entwickeln vorteilhafte Lösungswege; sie vergleichen und bewerten Rechenwege und begründen ihre Ergebnisse."
+			"competence": "nutzen und erklären Rechenstrategien und entwickeln vorteilhafte Lösungswege; sie vergleichen und bewerten Rechenwege und begründen ihre Ergebnisse.",
+			"gap_audit": {
+				"checked": "2026-11-04",
+				"digital": "closed",
+				"resolution": [
+					"New method lesson compares efficiency for explicit numerical structures and objectives; reasoning.ts, coverage-gaps.test.ts."
+				],
+				"outside_app": [
+					"Invent, compare and discuss your own strategies and their efficiency in a calculation conference."
+				],
+				"teacher_review": "pending"
+			}
 		},
 		{
 			"id": "m34-1.2-05",
@@ -421,7 +567,7 @@
 			"ordinal": 5,
 			"summary": "Method selection",
 			"source": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik#25775",
-			"checked": "2026-11-02",
+			"checked": "2026-11-04",
 			"status": "partial",
 			"lessons": [
 				"geschickt-addieren",
@@ -429,20 +575,35 @@
 				"schriftlich-addieren",
 				"schriftlich-subtrahieren",
 				"schriftlich-multiplizieren",
-				"schriftlich-dividieren"
+				"schriftlich-dividieren",
+				"rechenweg-waehlen"
 			],
 			"planned_work": ["N04", "N05", "N06", "N07", "N08", "N09", "N10", "N11"],
 			"evidence": [
 				"German explanations and worked strategies; three reachable jump/group lab goals; guided and transfer generators; inverse checks and fresh exits",
 				"Written addition of two nonnegative whole-number summands: entered result digits and carries, zero positions, carry chain to one million, contextual addition, correction and error reasoning",
 				"Written subtraction by value-preserving regrouping: entered result digits, explicit bundle exchanges across zero columns, contextual tasks, erroneous-result correction and addition checks; three tasks per level and fresh exits",
-				"Written multiplication with one/two-digit factors: partial product digits, carries, fixed tens shift and final addition; written division by 1–10: partial dividends, quotient digits including zeros, subtraction and remainders; context and editable correction tasks, three successes per level and fresh exits"
+				"Written multiplication with one/two-digit factors: partial product digits, carries, fixed tens shift and final addition; written division by 1–10: partial dividends, quotient digits including zeros, subtraction and remainders; context and editable correction tasks, three successes per level and fresh exits",
+				"Explicit mental/half-written/written selection, reason and intermediate-result notes on both levels; reasoning.ts, coverage-gaps.test.ts."
 			],
-			"physical_work": [],
+			"physical_work": [
+				"Choose and explain your own method without a prescribed objective; make your own number-line or intermediate-result notes on paper."
+			],
 			"reviewer": null,
-			"remaining": "Primary-school teacher review; explicit choice among mental, halfwritten and written methods; free learner notes",
+			"remaining": "(b) Choose and explain your own method without a prescribed objective; make your own number-line or intermediate-result notes on paper. (c) Primary-school teacher content, appropriateness and learning-evidence review remains pending; no teacher approval is recorded.",
 			"lb": 1,
-			"competence": "entscheiden passend zu einer gegebenen Aufgabe, welche Art der Berechnung zur Lösung angemessen ist (im Kopf, halbschriftlich, schriftlich) und erstellen sinnvolle und nachvollziehbare Notizen (z. B. Rechenstrich, Zwischenergebnisse, Teilrechnungen)."
+			"competence": "entscheiden passend zu einer gegebenen Aufgabe, welche Art der Berechnung zur Lösung angemessen ist (im Kopf, halbschriftlich, schriftlich) und erstellen sinnvolle und nachvollziehbare Notizen (z. B. Rechenstrich, Zwischenergebnisse, Teilrechnungen).",
+			"gap_audit": {
+				"checked": "2026-11-04",
+				"digital": "closed",
+				"resolution": [
+					"Explicit mental/half-written/written selection, reason and intermediate-result notes on both levels; reasoning.ts, coverage-gaps.test.ts."
+				],
+				"outside_app": [
+					"Choose and explain your own method without a prescribed objective; make your own number-line or intermediate-result notes on paper."
+				],
+				"teacher_review": "pending"
+			}
 		},
 		{
 			"id": "m34-1.2-06",
@@ -450,7 +611,7 @@
 			"ordinal": 6,
 			"summary": "Written algorithms",
 			"source": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik#25775",
-			"checked": "2026-11-02",
+			"checked": "2026-11-04",
 			"status": "partial",
 			"lessons": [
 				"schriftlich-addieren",
@@ -462,13 +623,27 @@
 			"evidence": [
 				"Written addition of two nonnegative whole-number summands: entered result digits and carries, zero positions, carry chain to one million, contextual addition, correction and error reasoning",
 				"Written subtraction by value-preserving regrouping: entered result digits, explicit bundle exchanges across zero columns, contextual tasks, erroneous-result correction and addition checks; three tasks per level and fresh exits",
-				"Written multiplication with one/two-digit factors: partial product digits, carries, fixed tens shift and final addition; written division by 1–10: partial dividends, quotient digits including zeros, subtraction and remainders; context and editable correction tasks, three successes per level and fresh exits"
+				"Written multiplication with one/two-digit factors: partial product digits, carries, fixed tens shift and final addition; written division by 1–10: partial dividends, quotient digits including zeros, subtraction and remainders; context and editable correction tasks, three successes per level and fresh exits",
+				"Existing addition lesson now has a three-summand lab and three/four-summand practice and exit, with carries 2/3; written-addition.ts, written-addition.test.ts, coverage-gaps.test.ts."
 			],
-			"physical_work": [],
+			"physical_work": [
+				"Practise the written procedures on paper over time; fluency is assessed by a teacher, not inferred from mission completion."
+			],
 			"reviewer": null,
-			"remaining": "Primary-school teacher review; broader fluency and more than two summands; full automatic command of the written procedures has not been assessed",
+			"remaining": "(b) Practise the written procedures on paper over time; fluency is assessed by a teacher, not inferred from mission completion. (c) Primary-school teacher content, appropriateness and learning-evidence review remains pending; no teacher approval is recorded.",
 			"lb": 1,
-			"competence": "wenden automatisiert die schriftlichen Verfahren der Addition, der Subtraktion (Abziehverfahren), der Multiplikation (ein- und zweistellige Multiplikatoren) und der Division (Divisoren bis einschließlich 10, auch mit Rest) an."
+			"competence": "wenden automatisiert die schriftlichen Verfahren der Addition, der Subtraktion (Abziehverfahren), der Multiplikation (ein- und zweistellige Multiplikatoren) und der Division (Divisoren bis einschließlich 10, auch mit Rest) an.",
+			"gap_audit": {
+				"checked": "2026-11-04",
+				"digital": "closed",
+				"resolution": [
+					"Existing addition lesson now has a three-summand lab and three/four-summand practice and exit, with carries 2/3; written-addition.ts, written-addition.test.ts, coverage-gaps.test.ts."
+				],
+				"outside_app": [
+					"Practise the written procedures on paper over time; fluency is assessed by a teacher, not inferred from mission completion."
+				],
+				"teacher_review": "pending"
+			}
 		},
 		{
 			"id": "m34-1.2-07",
@@ -476,7 +651,7 @@
 			"ordinal": 7,
 			"summary": "Error checking",
 			"source": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik#25775",
-			"checked": "2026-11-02",
+			"checked": "2026-11-04",
 			"status": "partial",
 			"lessons": [
 				"geschickt-addieren",
@@ -484,20 +659,35 @@
 				"schriftlich-addieren",
 				"schriftlich-subtrahieren",
 				"schriftlich-multiplizieren",
-				"schriftlich-dividieren"
+				"schriftlich-dividieren",
+				"rechenweg-waehlen"
 			],
 			"planned_work": ["N04", "N05", "N06", "N07", "N08", "N09", "N10", "N11"],
 			"evidence": [
 				"German explanations and worked strategies; three reachable jump/group lab goals; guided and transfer generators; inverse checks and fresh exits",
 				"Written addition of two nonnegative whole-number summands: entered result digits and carries, zero positions, carry chain to one million, contextual addition, correction and error reasoning",
 				"Written subtraction by value-preserving regrouping: entered result digits, explicit bundle exchanges across zero columns, contextual tasks, erroneous-result correction and addition checks; three tasks per level and fresh exits",
-				"Written multiplication with one/two-digit factors: partial product digits, carries, fixed tens shift and final addition; written division by 1–10: partial dividends, quotient digits including zeros, subtraction and remainders; context and editable correction tasks, three successes per level and fresh exits"
+				"Written multiplication with one/two-digit factors: partial product digits, carries, fixed tens shift and final addition; written division by 1–10: partial dividends, quotient digits including zeros, subtraction and remainders; context and editable correction tasks, three successes per level and fresh exits",
+				"Purpose-based exact/estimate decisions added; existing correction boards, arithmetic and measurement tasks already check errors and plausibility."
 			],
-			"physical_work": [],
+			"physical_work": [
+				"Explain and correct a partner's original error and discuss the plausibility of the contextual result."
+			],
 			"reviewer": null,
-			"remaining": "Primary-school teacher review; learner error diagnosis, estimation and broader context checks",
+			"remaining": "(b) Explain and correct a partner's original error and discuss the plausibility of the contextual result. (c) Primary-school teacher content, appropriateness and learning-evidence review remains pending; no teacher approval is recorded.",
 			"lb": 1,
-			"competence": "begründen, ob Ergebnisse plausibel und richtig sind, indem sie Rechenfehler finden, erklären und korrigieren sowie Ergebnisse durch Überschlag oder Rückbezug auf den Sachzusammenhang überprüfen."
+			"competence": "begründen, ob Ergebnisse plausibel und richtig sind, indem sie Rechenfehler finden, erklären und korrigieren sowie Ergebnisse durch Überschlag oder Rückbezug auf den Sachzusammenhang überprüfen.",
+			"gap_audit": {
+				"checked": "2026-11-04",
+				"digital": "closed",
+				"resolution": [
+					"Purpose-based exact/estimate decisions added; existing correction boards, arithmetic and measurement tasks already check errors and plausibility."
+				],
+				"outside_app": [
+					"Explain and correct a partner's original error and discuss the plausibility of the contextual result."
+				],
+				"teacher_review": "pending"
+			}
 		},
 		{
 			"id": "m34-1.2-08",
@@ -505,7 +695,7 @@
 			"ordinal": 8,
 			"summary": "Pattern reasoning",
 			"source": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik#25775",
-			"checked": "2026-11-03",
+			"checked": "2026-11-04",
 			"status": "partial",
 			"lessons": ["muster-zahlbeziehungen"],
 			"planned_work": ["N04", "N05", "N06", "N07", "N08", "N09", "N10", "N11"],
@@ -515,11 +705,24 @@
 				"src/course/investigation-board.ts",
 				"tests/investigations.test.ts"
 			],
-			"physical_work": [],
+			"physical_work": [
+				"Explain your own arithmetic patterns to others, beyond the model justifications."
+			],
 			"reviewer": null,
-			"remaining": "Teacher review, child explanations beyond preset justifications and broader arithmetic patterns remain pending.",
+			"remaining": "(b) Explain your own arithmetic patterns to others, beyond the model justifications. (c) Primary-school teacher content, appropriateness and learning-evidence review remains pending; no teacher approval is recorded.",
 			"lb": 1,
-			"competence": "beschreiben arithmetische Muster und deren Gesetzmäßigkeit (z. B. beim Rechnen mit ANNA-Zahlen)."
+			"competence": "beschreiben arithmetische Muster und deren Gesetzmäßigkeit (z. B. beim Rechnen mit ANNA-Zahlen).",
+			"gap_audit": {
+				"checked": "2026-11-04",
+				"digital": "existing",
+				"resolution": [
+					"Existing mapped activities provide digital preparation; review the evidence column. Further original production, physical work and social explanation are named separately below."
+				],
+				"outside_app": [
+					"Explain your own arithmetic patterns to others, beyond the model justifications."
+				],
+				"teacher_review": "pending"
+			}
 		},
 		{
 			"id": "m34-1.2-09",
@@ -527,7 +730,7 @@
 			"ordinal": 9,
 			"summary": "Pattern development",
 			"source": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik#25775",
-			"checked": "2026-11-03",
+			"checked": "2026-11-04",
 			"status": "partial",
 			"lessons": ["muster-zahlbeziehungen"],
 			"planned_work": ["N04", "N05", "N06", "N07", "N08", "N09", "N10", "N11"],
@@ -537,11 +740,24 @@
 				"src/course/investigation-board.ts",
 				"tests/investigations.test.ts"
 			],
-			"physical_work": [],
+			"physical_work": [
+				"Invent original arithmetic rules and compare continuations on paper with others."
+			],
 			"reviewer": null,
-			"remaining": "Free invention of rules, a broader pattern repertoire and teacher review remain pending.",
+			"remaining": "(b) Invent original arithmetic rules and compare continuations on paper with others. (c) Primary-school teacher content, appropriateness and learning-evidence review remains pending; no teacher approval is recorded.",
 			"lb": 1,
-			"competence": "entwickeln arithmetische Muster, setzen diese fort und verändern sie systematisch (z. B. Zahlenfolgen, Aufgabenfolgen mit strukturierten Päckchen)."
+			"competence": "entwickeln arithmetische Muster, setzen diese fort und verändern sie systematisch (z. B. Zahlenfolgen, Aufgabenfolgen mit strukturierten Päckchen).",
+			"gap_audit": {
+				"checked": "2026-11-04",
+				"digital": "existing",
+				"resolution": [
+					"Existing mapped activities provide digital preparation; review the evidence column. Further original production, physical work and social explanation are named separately below."
+				],
+				"outside_app": [
+					"Invent original arithmetic rules and compare continuations on paper with others."
+				],
+				"teacher_review": "pending"
+			}
 		},
 		{
 			"id": "m34-1.3-01",
@@ -567,11 +783,24 @@
 				"src/course/data-and-expeditions.ts: three goals, guided/transfer tasks and reserved-family fresh exits",
 				"tests/final-worlds.test.ts; tests/browser.ts"
 			],
-			"physical_work": [],
+			"physical_work": [
+				"Collect authentic local sources and formulate your own mathematical questions for discussion."
+			],
 			"reviewer": null,
-			"remaining": "Fictional prices, timetables, diagrams and routes supply relevant information. Creating original questions, wider real sources and teacher review remain pending.",
+			"remaining": "(b) Collect authentic local sources and formulate your own mathematical questions for discussion. (c) Primary-school teacher content, appropriateness and learning-evidence review remains pending; no teacher approval is recorded.",
 			"lb": 1,
-			"competence": "entnehmen relevante Informationen aus verschiedenen Quellen (z. B. aus Texten oder Tabellen) und formulieren dazu mathematische Fragestellungen."
+			"competence": "entnehmen relevante Informationen aus verschiedenen Quellen (z. B. aus Texten oder Tabellen) und formulieren dazu mathematische Fragestellungen.",
+			"gap_audit": {
+				"checked": "2026-11-04",
+				"digital": "existing",
+				"resolution": [
+					"Existing mapped activities provide digital preparation; review the evidence column. Further original production, physical work and social explanation are named separately below."
+				],
+				"outside_app": [
+					"Collect authentic local sources and formulate your own mathematical questions for discussion."
+				],
+				"teacher_review": "pending"
+			}
 		},
 		{
 			"id": "m34-1.3-02",
@@ -597,11 +826,24 @@
 				"src/course/data-and-expeditions.ts: three goals, guided/transfer tasks and reserved-family fresh exits",
 				"tests/final-worlds.test.ts; tests/browser.ts"
 			],
-			"physical_work": [],
+			"physical_work": [
+				"Explain the connections between your own solution steps and the situation to a partner."
+			],
 			"reviewer": null,
-			"remaining": "Material, budget, travel and event tasks link explicit intermediate steps to their context. Open explanations, peer discussion and teacher review remain pending.",
+			"remaining": "(b) Explain the connections between your own solution steps and the situation to a partner. (c) Primary-school teacher content, appropriateness and learning-evidence review remains pending; no teacher approval is recorded.",
 			"lb": 1,
-			"competence": "zeigen bei mehrschrittigen Sachaufgaben Zusammenhänge zwischen den einzelnen Lösungsschritten und der Sachsituation auf und begründen diese auch im Austausch mit anderen."
+			"competence": "zeigen bei mehrschrittigen Sachaufgaben Zusammenhänge zwischen den einzelnen Lösungsschritten und der Sachsituation auf und begründen diese auch im Austausch mit anderen.",
+			"gap_audit": {
+				"checked": "2026-11-04",
+				"digital": "existing",
+				"resolution": [
+					"Existing mapped activities provide digital preparation; review the evidence column. Further original production, physical work and social explanation are named separately below."
+				],
+				"outside_app": [
+					"Explain the connections between your own solution steps and the situation to a partner."
+				],
+				"teacher_review": "pending"
+			}
 		},
 		{
 			"id": "m34-1.3-03",
@@ -627,11 +869,24 @@
 				"src/course/data-and-expeditions.ts: three goals, guided/transfer tasks and reserved-family fresh exits",
 				"tests/final-worlds.test.ts; tests/browser.ts"
 			],
-			"physical_work": [],
+			"physical_work": [
+				"Construct and evaluate your own sketch, table or other representation on paper."
+			],
 			"reviewer": null,
-			"remaining": "Optional labelled source tools can be opened by the learner. Independently constructing and evaluating original representations remains unobserved; teacher review pending.",
+			"remaining": "(b) Construct and evaluate your own sketch, table or other representation on paper. (c) Primary-school teacher content, appropriateness and learning-evidence review remains pending; no teacher approval is recorded.",
 			"lb": 1,
-			"competence": "entwickeln, nutzen und bewerten geeignete Darstellungsformen (z. B. Skizzen, Begriffstripel, Texte, Tabellen, Diagramme) für das Bearbeiten mathematischer Probleme."
+			"competence": "entwickeln, nutzen und bewerten geeignete Darstellungsformen (z. B. Skizzen, Begriffstripel, Texte, Tabellen, Diagramme) für das Bearbeiten mathematischer Probleme.",
+			"gap_audit": {
+				"checked": "2026-11-04",
+				"digital": "existing",
+				"resolution": [
+					"Existing mapped activities provide digital preparation; review the evidence column. Further original production, physical work and social explanation are named separately below."
+				],
+				"outside_app": [
+					"Construct and evaluate your own sketch, table or other representation on paper."
+				],
+				"teacher_review": "pending"
+			}
 		},
 		{
 			"id": "m34-1.3-04",
@@ -639,16 +894,31 @@
 			"ordinal": 4,
 			"summary": "Problem variation",
 			"source": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik#25777",
-			"checked": "2026-10-31",
-			"status": "planned",
-			"lessons": [],
+			"checked": "2026-11-04",
+			"status": "partial",
+			"lessons": ["sachaufgaben-veraendern", "anzahlen-schaetzen-fermi"],
 			"planned_work": ["N12", "N13"],
-			"evidence": [],
-			"physical_work": [],
+			"evidence": [
+				"New variation lesson: shorten without losing needed facts, extend with delivery/consumption and retrieve the missing count from a labelled local source; explicit Fermi assumptions in the estimation lesson."
+			],
+			"physical_work": [
+				"Invent and discuss your own expanded/shortened situation; obtain authentic missing information by measurement or asking someone."
+			],
 			"reviewer": null,
-			"remaining": "Implement and review the mapped course lessons",
+			"remaining": "(b) Invent and discuss your own expanded/shortened situation; obtain authentic missing information by measurement or asking someone. (c) Primary-school teacher content, appropriateness and learning-evidence review remains pending; no teacher approval is recorded.",
 			"lb": 1,
-			"competence": "erweitern und verkürzen Sachsituationen, um Zusammenhänge zu erfassen und zu erklären, und beschaffen sich ggf. geeignete, noch fehlende Informationen (z. B. bei Fermi-Aufgaben)."
+			"competence": "erweitern und verkürzen Sachsituationen, um Zusammenhänge zu erfassen und zu erklären, und beschaffen sich ggf. geeignete, noch fehlende Informationen (z. B. bei Fermi-Aufgaben).",
+			"gap_audit": {
+				"checked": "2026-11-04",
+				"digital": "closed",
+				"resolution": [
+					"New variation lesson: shorten without losing needed facts, extend with delivery/consumption and retrieve the missing count from a labelled local source; explicit Fermi assumptions in the estimation lesson."
+				],
+				"outside_app": [
+					"Invent and discuss your own expanded/shortened situation; obtain authentic missing information by measurement or asking someone."
+				],
+				"teacher_review": "pending"
+			}
 		},
 		{
 			"id": "m34-1.3-05",
@@ -674,11 +944,24 @@
 				"src/course/data-and-expeditions.ts: three goals, guided/transfer tasks and reserved-family fresh exits",
 				"tests/final-worlds.test.ts; tests/browser.ts"
 			],
-			"physical_work": [],
+			"physical_work": [
+				"Choose and explain original forward/backward strategies in discussion."
+			],
 			"reviewer": null,
-			"remaining": "Forward/backward templates and analogous mixed contexts are implemented; open strategy choice, discussion and teacher review remain pending.",
+			"remaining": "(b) Choose and explain original forward/backward strategies in discussion. (c) Primary-school teacher content, appropriateness and learning-evidence review remains pending; no teacher approval is recorded.",
 			"lb": 1,
-			"competence": "entwickeln und nutzen Strategien zur Problemlösung (z. B. Vorwärts- oder Rückwärtsarbeiten) und übertragen diese Strategien auf analoge Aufgaben."
+			"competence": "entwickeln und nutzen Strategien zur Problemlösung (z. B. Vorwärts- oder Rückwärtsarbeiten) und übertragen diese Strategien auf analoge Aufgaben.",
+			"gap_audit": {
+				"checked": "2026-11-04",
+				"digital": "existing",
+				"resolution": [
+					"Existing mapped activities provide digital preparation; review the evidence column. Further original production, physical work and social explanation are named separately below."
+				],
+				"outside_app": [
+					"Choose and explain original forward/backward strategies in discussion."
+				],
+				"teacher_review": "pending"
+			}
 		},
 		{
 			"id": "m34-1.3-06",
@@ -692,7 +975,8 @@
 				"sachaufgaben-mehrschrittig",
 				"expedition-werkstatt",
 				"expedition-reise",
-				"expedition-inselfest"
+				"expedition-inselfest",
+				"rechenweg-waehlen"
 			],
 			"planned_work": ["N12", "N13"],
 			"evidence": [
@@ -702,13 +986,27 @@
 				"tests/investigations.test.ts",
 				"src/course/final-catalog.ts: explanations, worked examples, quizzes and real-world prompts",
 				"src/course/data-and-expeditions.ts: three goals, guided/transfer tasks and reserved-family fresh exits",
-				"tests/final-worlds.test.ts; tests/browser.ts"
+				"tests/final-worlds.test.ts; tests/browser.ts",
+				"Explicit choice of exact versus approximate calculation for a stated purpose, supplementing existing budgets and estimates."
 			],
-			"physical_work": [],
+			"physical_work": [
+				"Compare and value classmates' own solutions and justify the required precision in a calculation conference."
+			],
 			"reviewer": null,
-			"remaining": "Exact budgets, whole-piece/capacity checks and complete schedules are implemented. Comparing original learner solutions, deciding exact versus approximate methods and teacher review remain pending.",
+			"remaining": "(b) Compare and value classmates' own solutions and justify the required precision in a calculation conference. (c) Primary-school teacher content, appropriateness and learning-evidence review remains pending; no teacher approval is recorded.",
 			"lb": 1,
-			"competence": "finden mathematische Lösungen zu Sachsituationen, vergleichen und wertschätzen ihre Lösungswege und begründen auch im Austausch mit anderen, ob ein genaues Ergebnis notwendig ist oder eine Überschlagsrechnung ausreicht (z. B. in Rechenkonferenzen)."
+			"competence": "finden mathematische Lösungen zu Sachsituationen, vergleichen und wertschätzen ihre Lösungswege und begründen auch im Austausch mit anderen, ob ein genaues Ergebnis notwendig ist oder eine Überschlagsrechnung ausreicht (z. B. in Rechenkonferenzen).",
+			"gap_audit": {
+				"checked": "2026-11-04",
+				"digital": "closed",
+				"resolution": [
+					"Explicit choice of exact versus approximate calculation for a stated purpose, supplementing existing budgets and estimates."
+				],
+				"outside_app": [
+					"Compare and value classmates' own solutions and justify the required precision in a calculation conference."
+				],
+				"teacher_review": "pending"
+			}
 		},
 		{
 			"id": "m34-1.3-07",
@@ -716,7 +1014,7 @@
 			"ordinal": 7,
 			"summary": "Systematic combinations",
 			"source": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik#25777",
-			"checked": "2026-11-03",
+			"checked": "2026-11-04",
 			"status": "partial",
 			"lessons": ["systematisch-kombinieren"],
 			"planned_work": ["N12", "N13"],
@@ -724,12 +1022,23 @@
 				"Child-built lists for two/three choices, duplicate suppression, restriction checks and fresh context exits; src/course/combinations.ts; src/course/combination-board.ts; tests/combinations-divisors.test.ts"
 			],
 			"physical_work": [
-				"Use paper slips to enumerate possibilities and draw a table or tree; not observed by the app"
+				"Draw and compare your own tree, table or sketches with classmates."
 			],
 			"reviewer": null,
-			"remaining": "Primary-school teacher review, independently drawing/evaluating representations and discussing alternate strategies remain pending.",
+			"remaining": "(b) Draw and compare your own tree, table or sketches with classmates. (c) Primary-school teacher content, appropriateness and learning-evidence review remains pending; no teacher approval is recorded.",
 			"lb": 1,
-			"competence": "bestimmen die Anzahl der verschiedenen Möglichkeiten bei einfachen kombinatorischen Aufgabenstellungen (z. B. mögliche Kombinationen von 3 T-Shirts, 3 Hosen und 2 Paar Socken) durch probierendes und systematisches Vorgehen und stellen Ergebnisse strukturiert dar (z. B. in Baumdiagrammen, in Zeichnungen oder in Tabellen)."
+			"competence": "bestimmen die Anzahl der verschiedenen Möglichkeiten bei einfachen kombinatorischen Aufgabenstellungen (z. B. mögliche Kombinationen von 3 T-Shirts, 3 Hosen und 2 Paar Socken) durch probierendes und systematisches Vorgehen und stellen Ergebnisse strukturiert dar (z. B. in Baumdiagrammen, in Zeichnungen oder in Tabellen).",
+			"gap_audit": {
+				"checked": "2026-11-04",
+				"digital": "existing",
+				"resolution": [
+					"Existing mapped activities provide digital preparation; review the evidence column. Further original production, physical work and social explanation are named separately below."
+				],
+				"outside_app": [
+					"Draw and compare your own tree, table or sketches with classmates."
+				],
+				"teacher_review": "pending"
+			}
 		},
 		{
 			"id": "m34-2.1-01",
@@ -737,7 +1046,7 @@
 			"ordinal": 1,
 			"summary": "Spatial plans",
 			"source": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik#25781",
-			"checked": "2026-11-03",
+			"checked": "2026-11-04",
 			"status": "partial",
 			"lessons": ["wege-lageplaene"],
 			"planned_work": ["S01", "S02"],
@@ -746,12 +1055,23 @@
 				"src/course/shape-catalog.ts: explanations, worked examples, observed-task labels and practical activities"
 			],
 			"physical_work": [
-				"Paper plans/drawings, real ruler/Geodreieck/compass, paper nets, mirror and physical unit cubes: instructed, not digitally observed."
+				"Draw your own paper plan and physically follow it in a real room."
 			],
 			"reviewer": null,
-			"remaining": "Primary-teacher review, exact paper construction and physical handling/discussion pending. Further non-square tessellations, symmetric ornament design, varied physical views and kipp movements remain limited or unobserved.",
+			"remaining": "(b) Draw your own paper plan and physically follow it in a real room. (c) Primary-school teacher content, appropriateness and learning-evidence review remains pending; no teacher approval is recorded.",
 			"lb": 2,
-			"competence": "erstellen Skizzen und Lagepläne und nutzen diese zur Orientierung im Raum sowohl handelnd als auch in ihrer Vorstellung."
+			"competence": "erstellen Skizzen und Lagepläne und nutzen diese zur Orientierung im Raum sowohl handelnd als auch in ihrer Vorstellung.",
+			"gap_audit": {
+				"checked": "2026-11-04",
+				"digital": "existing",
+				"resolution": [
+					"Existing mapped activities provide digital preparation; review the evidence column. Further original production, physical work and social explanation are named separately below."
+				],
+				"outside_app": [
+					"Draw your own paper plan and physically follow it in a real room."
+				],
+				"teacher_review": "pending"
+			}
 		},
 		{
 			"id": "m34-2.1-02",
@@ -759,7 +1079,7 @@
 			"ordinal": 2,
 			"summary": "Plan scale",
 			"source": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik#25781",
-			"checked": "2026-11-03",
+			"checked": "2026-11-04",
 			"status": "partial",
 			"lessons": ["wege-lageplaene"],
 			"planned_work": ["S01", "S02"],
@@ -768,12 +1088,23 @@
 				"src/course/shape-catalog.ts: explanations, worked examples, observed-task labels and practical activities"
 			],
 			"physical_work": [
-				"Paper plans/drawings, real ruler/Geodreieck/compass, paper nets, mirror and physical unit cubes: instructed, not digitally observed."
+				"Measure real distances, draw a paper plan and describe how the plan relates to the room."
 			],
 			"reviewer": null,
-			"remaining": "Primary-teacher review, exact paper construction and physical handling/discussion pending. Further non-square tessellations, symmetric ornament design, varied physical views and kipp movements remain limited or unobserved.",
+			"remaining": "(b) Measure real distances, draw a paper plan and describe how the plan relates to the room. (c) Primary-school teacher content, appropriateness and learning-evidence review remains pending; no teacher approval is recorded.",
 			"lb": 2,
-			"competence": "beschreiben den Zusammenhang zwischen Längen in der Realität und entsprechenden Längen in Skizzen, Lageplänen oder Grundrisszeichnungen. Dabei nutzen sie grundlegende Vorstellungen von maßstäblichem Verkleinern, um sich in der Wirklichkeit zu orientieren."
+			"competence": "beschreiben den Zusammenhang zwischen Längen in der Realität und entsprechenden Längen in Skizzen, Lageplänen oder Grundrisszeichnungen. Dabei nutzen sie grundlegende Vorstellungen von maßstäblichem Verkleinern, um sich in der Wirklichkeit zu orientieren.",
+			"gap_audit": {
+				"checked": "2026-11-04",
+				"digital": "existing",
+				"resolution": [
+					"Existing mapped activities provide digital preparation; review the evidence column. Further original production, physical work and social explanation are named separately below."
+				],
+				"outside_app": [
+					"Measure real distances, draw a paper plan and describe how the plan relates to the room."
+				],
+				"teacher_review": "pending"
+			}
 		},
 		{
 			"id": "m34-2.1-03",
@@ -781,7 +1112,7 @@
 			"ordinal": 3,
 			"summary": "Views",
 			"source": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik#25781",
-			"checked": "2026-11-03",
+			"checked": "2026-11-04",
 			"status": "partial",
 			"lessons": ["wuerfelgebaeude-ansichten"],
 			"planned_work": ["S01", "S02"],
@@ -790,12 +1121,23 @@
 				"src/course/shape-catalog.ts: explanations, worked examples, observed-task labels and practical activities"
 			],
 			"physical_work": [
-				"Paper plans/drawings, real ruler/Geodreieck/compass, paper nets, mirror and physical unit cubes: instructed, not digitally observed."
+				"Build physical cube structures from plans and draw plans from real structures, including other viewing positions."
 			],
 			"reviewer": null,
-			"remaining": "Primary-teacher review, exact paper construction and physical handling/discussion pending. Further non-square tessellations, symmetric ornament design, varied physical views and kipp movements remain limited or unobserved.",
+			"remaining": "(b) Build physical cube structures from plans and draw plans from real structures, including other viewing positions. (c) Primary-school teacher content, appropriateness and learning-evidence review remains pending; no teacher approval is recorded.",
 			"lb": 2,
-			"competence": "stellen zwischen zwei- und dreidimensionalen Darstellungen von räumlichen Gebilden (z. B. Würfelgebäude) Beziehungen her, indem sie nach Vorlage bauen oder zu räumlichen Gebilden einfache Baupläne erstellen."
+			"competence": "stellen zwischen zwei- und dreidimensionalen Darstellungen von räumlichen Gebilden (z. B. Würfelgebäude) Beziehungen her, indem sie nach Vorlage bauen oder zu räumlichen Gebilden einfache Baupläne erstellen.",
+			"gap_audit": {
+				"checked": "2026-11-04",
+				"digital": "existing",
+				"resolution": [
+					"Existing mapped activities provide digital preparation; review the evidence column. Further original production, physical work and social explanation are named separately below."
+				],
+				"outside_app": [
+					"Build physical cube structures from plans and draw plans from real structures, including other viewing positions."
+				],
+				"teacher_review": "pending"
+			}
 		},
 		{
 			"id": "m34-2.1-04",
@@ -803,7 +1145,7 @@
 			"ordinal": 4,
 			"summary": "Mental transformations",
 			"source": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik#25781",
-			"checked": "2026-11-03",
+			"checked": "2026-11-04",
 			"status": "partial",
 			"lessons": ["koerper-netze"],
 			"planned_work": ["S01", "S02"],
@@ -812,12 +1154,23 @@
 				"src/course/shape-catalog.ts: explanations, worked examples, observed-task labels and practical activities"
 			],
 			"physical_work": [
-				"Paper plans/drawings, real ruler/Geodreieck/compass, paper nets, mirror and physical unit cubes: instructed, not digitally observed."
+				"Tip real bodies, follow edges on a physical model and fold nets; explain the movements. Digital view/rotation/net tasks already provide mental-operation practice."
 			],
 			"reviewer": null,
-			"remaining": "Primary-teacher review, exact paper construction and physical handling/discussion pending. Further non-square tessellations, symmetric ornament design, varied physical views and kipp movements remain limited or unobserved.",
+			"remaining": "(b) Tip real bodies, follow edges on a physical model and fold nets; explain the movements. Digital view/rotation/net tasks already provide mental-operation practice. (c) Primary-school teacher content, appropriateness and learning-evidence review remains pending; no teacher approval is recorded.",
 			"lb": 2,
-			"competence": "operieren mit ebenen Figuren und Körpern handelnd und in der Vorstellung (z. B. Kippbewegungen, Wege am Kantenmodell, gedankliches Falten von Netzen) und beschreiben dabei Vorgehensweisen und Ergebnisse."
+			"competence": "operieren mit ebenen Figuren und Körpern handelnd und in der Vorstellung (z. B. Kippbewegungen, Wege am Kantenmodell, gedankliches Falten von Netzen) und beschreiben dabei Vorgehensweisen und Ergebnisse.",
+			"gap_audit": {
+				"checked": "2026-11-04",
+				"digital": "existing",
+				"resolution": [
+					"Existing mapped activities provide digital preparation; review the evidence column. Further original production, physical work and social explanation are named separately below."
+				],
+				"outside_app": [
+					"Tip real bodies, follow edges on a physical model and fold nets; explain the movements. Digital view/rotation/net tasks already provide mental-operation practice."
+				],
+				"teacher_review": "pending"
+			}
 		},
 		{
 			"id": "m34-2.2-01",
@@ -825,7 +1178,7 @@
 			"ordinal": 1,
 			"summary": "Right angles",
 			"source": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik#25783",
-			"checked": "2026-11-03",
+			"checked": "2026-11-04",
 			"status": "partial",
 			"lessons": ["figuren-zeichnen", "koerper-netze"],
 			"planned_work": ["S03", "S04", "S08"],
@@ -834,12 +1187,23 @@
 				"src/course/shape-catalog.ts: explanations, worked examples, observed-task labels and practical activities"
 			],
 			"physical_work": [
-				"Paper plans/drawings, real ruler/Geodreieck/compass, paper nets, mirror and physical unit cubes: instructed, not digitally observed."
+				"Identify and check right angles on real surfaces and bodies with a set square."
 			],
 			"reviewer": null,
-			"remaining": "Primary-teacher review, exact paper construction and physical handling/discussion pending. Further non-square tessellations, symmetric ornament design, varied physical views and kipp movements remain limited or unobserved.",
+			"remaining": "(b) Identify and check right angles on real surfaces and bodies with a set square. (c) Primary-school teacher content, appropriateness and learning-evidence review remains pending; no teacher approval is recorded.",
 			"lb": 2,
-			"competence": "verwenden zutreffend den Begriff rechter Winkel bei der Beschreibung bestimmter Flächen- und Körperformen (z. B. bei Rechteck und Quader)."
+			"competence": "verwenden zutreffend den Begriff rechter Winkel bei der Beschreibung bestimmter Flächen- und Körperformen (z. B. bei Rechteck und Quader).",
+			"gap_audit": {
+				"checked": "2026-11-04",
+				"digital": "existing",
+				"resolution": [
+					"Existing mapped activities provide digital preparation; review the evidence column. Further original production, physical work and social explanation are named separately below."
+				],
+				"outside_app": [
+					"Identify and check right angles on real surfaces and bodies with a set square."
+				],
+				"teacher_review": "pending"
+			}
 		},
 		{
 			"id": "m34-2.2-02",
@@ -847,7 +1211,7 @@
 			"ordinal": 2,
 			"summary": "Solid properties",
 			"source": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik#25783",
-			"checked": "2026-11-03",
+			"checked": "2026-11-04",
 			"status": "partial",
 			"lessons": ["koerper-netze"],
 			"planned_work": ["S03", "S04", "S08"],
@@ -856,12 +1220,23 @@
 				"src/course/shape-catalog.ts: explanations, worked examples, observed-task labels and practical activities"
 			],
 			"physical_work": [
-				"Paper plans/drawings, real ruler/Geodreieck/compass, paper nets, mirror and physical unit cubes: instructed, not digitally observed."
+				"Build and compare real edge and surface models of cubes and other cuboids."
 			],
 			"reviewer": null,
-			"remaining": "Primary-teacher review, exact paper construction and physical handling/discussion pending. Further non-square tessellations, symmetric ornament design, varied physical views and kipp movements remain limited or unobserved.",
+			"remaining": "(b) Build and compare real edge and surface models of cubes and other cuboids. (c) Primary-school teacher content, appropriateness and learning-evidence review remains pending; no teacher approval is recorded.",
 			"lb": 2,
-			"competence": "beschreiben Gemeinsamkeiten und Unterschiede von Würfeln und anderen Quadern und vergleichen deren Kanten- und Flächenmodelle."
+			"competence": "beschreiben Gemeinsamkeiten und Unterschiede von Würfeln und anderen Quadern und vergleichen deren Kanten- und Flächenmodelle.",
+			"gap_audit": {
+				"checked": "2026-11-04",
+				"digital": "existing",
+				"resolution": [
+					"Existing mapped activities provide digital preparation; review the evidence column. Further original production, physical work and social explanation are named separately below."
+				],
+				"outside_app": [
+					"Build and compare real edge and surface models of cubes and other cuboids."
+				],
+				"teacher_review": "pending"
+			}
 		},
 		{
 			"id": "m34-2.2-03",
@@ -869,7 +1244,7 @@
 			"ordinal": 3,
 			"summary": "Solid nets",
 			"source": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik#25783",
-			"checked": "2026-11-03",
+			"checked": "2026-11-04",
 			"status": "partial",
 			"lessons": ["koerper-netze"],
 			"planned_work": ["S03", "S04", "S08"],
@@ -878,12 +1253,23 @@
 				"src/course/shape-catalog.ts: explanations, worked examples, observed-task labels and practical activities"
 			],
 			"physical_work": [
-				"Paper plans/drawings, real ruler/Geodreieck/compass, paper nets, mirror and physical unit cubes: instructed, not digitally observed."
+				"Cut out, fold and classify paper cube/cuboid nets and compare congruent nets."
 			],
 			"reviewer": null,
-			"remaining": "Primary-teacher review, exact paper construction and physical handling/discussion pending. Further non-square tessellations, symmetric ornament design, varied physical views and kipp movements remain limited or unobserved.",
+			"remaining": "(b) Cut out, fold and classify paper cube/cuboid nets and compare congruent nets. (c) Primary-school teacher content, appropriateness and learning-evidence review remains pending; no teacher approval is recorded.",
 			"lb": 2,
-			"competence": "erstellen und strukturieren verschiedene Netze von Würfeln und Netze von Quadern, die keine Würfel sind; sie verwenden den Fachbegriff deckungsgleich bei der Beschreibung von Netzen (z. B. bei der Suche nach deckungsgleichen Würfelnetzen)."
+			"competence": "erstellen und strukturieren verschiedene Netze von Würfeln und Netze von Quadern, die keine Würfel sind; sie verwenden den Fachbegriff deckungsgleich bei der Beschreibung von Netzen (z. B. bei der Suche nach deckungsgleichen Würfelnetzen).",
+			"gap_audit": {
+				"checked": "2026-11-04",
+				"digital": "existing",
+				"resolution": [
+					"Existing mapped activities provide digital preparation; review the evidence column. Further original production, physical work and social explanation are named separately below."
+				],
+				"outside_app": [
+					"Cut out, fold and classify paper cube/cuboid nets and compare congruent nets."
+				],
+				"teacher_review": "pending"
+			}
 		},
 		{
 			"id": "m34-2.2-04",
@@ -891,7 +1277,7 @@
 			"ordinal": 4,
 			"summary": "Net relationships",
 			"source": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik#25783",
-			"checked": "2026-11-03",
+			"checked": "2026-11-04",
 			"status": "partial",
 			"lessons": ["koerper-netze"],
 			"planned_work": ["S03", "S04", "S08"],
@@ -900,12 +1286,23 @@
 				"src/course/shape-catalog.ts: explanations, worked examples, observed-task labels and practical activities"
 			],
 			"physical_work": [
-				"Paper plans/drawings, real ruler/Geodreieck/compass, paper nets, mirror and physical unit cubes: instructed, not digitally observed."
+				"Fold physical nets and explain why they close or overlap."
 			],
 			"reviewer": null,
-			"remaining": "Primary-teacher review, exact paper construction and physical handling/discussion pending. Further non-square tessellations, symmetric ornament design, varied physical views and kipp movements remain limited or unobserved.",
+			"remaining": "(b) Fold physical nets and explain why they close or overlap. (c) Primary-school teacher content, appropriateness and learning-evidence review remains pending; no teacher approval is recorded.",
 			"lb": 2,
-			"competence": "überprüfen und beschreiben begründet den Zusammenhang zwischen Netzen und Körpern."
+			"competence": "überprüfen und beschreiben begründet den Zusammenhang zwischen Netzen und Körpern.",
+			"gap_audit": {
+				"checked": "2026-11-04",
+				"digital": "existing",
+				"resolution": [
+					"Existing mapped activities provide digital preparation; review the evidence column. Further original production, physical work and social explanation are named separately below."
+				],
+				"outside_app": [
+					"Fold physical nets and explain why they close or overlap."
+				],
+				"teacher_review": "pending"
+			}
 		},
 		{
 			"id": "m34-2.2-05",
@@ -913,7 +1310,7 @@
 			"ordinal": 5,
 			"summary": "Geometric drawing",
 			"source": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik#25783",
-			"checked": "2026-11-03",
+			"checked": "2026-11-04",
 			"status": "partial",
 			"lessons": ["figuren-zeichnen"],
 			"planned_work": ["S03", "S04", "S08"],
@@ -922,12 +1319,23 @@
 				"src/course/shape-catalog.ts: explanations, worked examples, observed-task labels and practical activities"
 			],
 			"physical_work": [
-				"Paper plans/drawings, real ruler/Geodreieck/compass, paper nets, mirror and physical unit cubes: instructed, not digitally observed."
+				"Draw freely and construct on paper with ruler, set square and compass; a screen cannot assess tool handling."
 			],
 			"reviewer": null,
-			"remaining": "Primary-teacher review, exact paper construction and physical handling/discussion pending. Further non-square tessellations, symmetric ornament design, varied physical views and kipp movements remain limited or unobserved.",
+			"remaining": "(b) Draw freely and construct on paper with ruler, set square and compass; a screen cannot assess tool handling. (c) Primary-school teacher content, appropriateness and learning-evidence review remains pending; no teacher approval is recorded.",
 			"lb": 2,
-			"competence": "zeichnen Strecken und Flächenformen frei sowie mit Hilfsmitteln (Lineal, Geodreieck, Zirkel) und berücksichtigen dabei die Eigenschaften der Flächenformen."
+			"competence": "zeichnen Strecken und Flächenformen frei sowie mit Hilfsmitteln (Lineal, Geodreieck, Zirkel) und berücksichtigen dabei die Eigenschaften der Flächenformen.",
+			"gap_audit": {
+				"checked": "2026-11-04",
+				"digital": "existing",
+				"resolution": [
+					"Existing mapped activities provide digital preparation; review the evidence column. Further original production, physical work and social explanation are named separately below."
+				],
+				"outside_app": [
+					"Draw freely and construct on paper with ruler, set square and compass; a screen cannot assess tool handling."
+				],
+				"teacher_review": "pending"
+			}
 		},
 		{
 			"id": "m34-2.3-01",
@@ -935,7 +1343,7 @@
 			"ordinal": 1,
 			"summary": "Scaling",
 			"source": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik#25785",
-			"checked": "2026-11-03",
+			"checked": "2026-11-04",
 			"status": "partial",
 			"lessons": ["vergroessern-verkleinern"],
 			"planned_work": ["S05", "S06"],
@@ -944,12 +1352,23 @@
 				"src/course/shape-catalog.ts: explanations, worked examples, observed-task labels and practical activities"
 			],
 			"physical_work": [
-				"Paper plans/drawings, real ruler/Geodreieck/compass, paper nets, mirror and physical unit cubes: instructed, not digitally observed."
+				"Construct enlarged/reduced figures on paper or a physical geoboard and check the lengths."
 			],
 			"reviewer": null,
-			"remaining": "Primary-teacher review, exact paper construction and physical handling/discussion pending. Further non-square tessellations, symmetric ornament design, varied physical views and kipp movements remain limited or unobserved.",
+			"remaining": "(b) Construct enlarged/reduced figures on paper or a physical geoboard and check the lengths. (c) Primary-school teacher content, appropriateness and learning-evidence review remains pending; no teacher approval is recorded.",
 			"lb": 2,
-			"competence": "verkleinern und vergrößern ebene Figuren (z. B. mithilfe des Geobretts oder in Gitternetzen) und nutzen dabei grundlegende Vorstellungen zum Maßstab (z. B. 2 : 1 bedeutet: Die Länge 1 cm ist in der Vergrößerung 2 cm / doppelt so lang.)."
+			"competence": "verkleinern und vergrößern ebene Figuren (z. B. mithilfe des Geobretts oder in Gitternetzen) und nutzen dabei grundlegende Vorstellungen zum Maßstab (z. B. 2 : 1 bedeutet: Die Länge 1 cm ist in der Vergrößerung 2 cm / doppelt so lang.).",
+			"gap_audit": {
+				"checked": "2026-11-04",
+				"digital": "existing",
+				"resolution": [
+					"Existing mapped activities provide digital preparation; review the evidence column. Further original production, physical work and social explanation are named separately below."
+				],
+				"outside_app": [
+					"Construct enlarged/reduced figures on paper or a physical geoboard and check the lengths."
+				],
+				"teacher_review": "pending"
+			}
 		},
 		{
 			"id": "m34-2.3-02",
@@ -957,7 +1376,7 @@
 			"ordinal": 2,
 			"summary": "Reflection properties",
 			"source": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik#25785",
-			"checked": "2026-11-03",
+			"checked": "2026-11-04",
 			"status": "partial",
 			"lessons": ["spiegeln-symmetrie"],
 			"planned_work": ["S05", "S06"],
@@ -966,12 +1385,23 @@
 				"src/course/shape-catalog.ts: explanations, worked examples, observed-task labels and practical activities"
 			],
 			"physical_work": [
-				"Paper plans/drawings, real ruler/Geodreieck/compass, paper nets, mirror and physical unit cubes: instructed, not digitally observed."
+				"Draw and check symmetry axes on paper and with a real mirror; explain congruence."
 			],
 			"reviewer": null,
-			"remaining": "Primary-teacher review, exact paper construction and physical handling/discussion pending. Further non-square tessellations, symmetric ornament design, varied physical views and kipp movements remain limited or unobserved.",
+			"remaining": "(b) Draw and check symmetry axes on paper and with a real mirror; explain congruence. (c) Primary-school teacher content, appropriateness and learning-evidence review remains pending; no teacher approval is recorded.",
 			"lb": 2,
-			"competence": "beschreiben Merkmale achsensymmetrischer Figuren mit den Fachbegriffen Symmetrieachse, deckungsgleich und achsensymmetrisch sowie die Beziehung zwischen einer Figur und deren Spiegelbild; sie zeichnen Symmetrieachsen ein und prüfen nach."
+			"competence": "beschreiben Merkmale achsensymmetrischer Figuren mit den Fachbegriffen Symmetrieachse, deckungsgleich und achsensymmetrisch sowie die Beziehung zwischen einer Figur und deren Spiegelbild; sie zeichnen Symmetrieachsen ein und prüfen nach.",
+			"gap_audit": {
+				"checked": "2026-11-04",
+				"digital": "existing",
+				"resolution": [
+					"Existing mapped activities provide digital preparation; review the evidence column. Further original production, physical work and social explanation are named separately below."
+				],
+				"outside_app": [
+					"Draw and check symmetry axes on paper and with a real mirror; explain congruence."
+				],
+				"teacher_review": "pending"
+			}
 		},
 		{
 			"id": "m34-2.3-03",
@@ -979,7 +1409,7 @@
 			"ordinal": 3,
 			"summary": "Mirror construction",
 			"source": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik#25785",
-			"checked": "2026-11-03",
+			"checked": "2026-11-04",
 			"status": "partial",
 			"lessons": ["spiegeln-symmetrie"],
 			"planned_work": ["S05", "S06"],
@@ -988,12 +1418,23 @@
 				"src/course/shape-catalog.ts: explanations, worked examples, observed-task labels and practical activities"
 			],
 			"physical_work": [
-				"Paper plans/drawings, real ruler/Geodreieck/compass, paper nets, mirror and physical unit cubes: instructed, not digitally observed."
+				"Create your own reflected figures on paper or with a real mirror and describe the procedure."
 			],
 			"reviewer": null,
-			"remaining": "Primary-teacher review, exact paper construction and physical handling/discussion pending. Further non-square tessellations, symmetric ornament design, varied physical views and kipp movements remain limited or unobserved.",
+			"remaining": "(b) Create your own reflected figures on paper or with a real mirror and describe the procedure. (c) Primary-school teacher content, appropriateness and learning-evidence review remains pending; no teacher approval is recorded.",
 			"lb": 2,
-			"competence": "erzeugen achsensymmetrische Figuren sowie Figuren und deren Spiegelbilder (z. B. durch Zeichnen oder mithilfe eines Spiegels) und beschreiben ihre Vorgehensweise."
+			"competence": "erzeugen achsensymmetrische Figuren sowie Figuren und deren Spiegelbilder (z. B. durch Zeichnen oder mithilfe eines Spiegels) und beschreiben ihre Vorgehensweise.",
+			"gap_audit": {
+				"checked": "2026-11-04",
+				"digital": "existing",
+				"resolution": [
+					"Existing mapped activities provide digital preparation; review the evidence column. Further original production, physical work and social explanation are named separately below."
+				],
+				"outside_app": [
+					"Create your own reflected figures on paper or with a real mirror and describe the procedure."
+				],
+				"teacher_review": "pending"
+			}
 		},
 		{
 			"id": "m34-2.4-01",
@@ -1001,7 +1442,7 @@
 			"ordinal": 1,
 			"summary": "Tiling",
 			"source": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik#25787",
-			"checked": "2026-11-03",
+			"checked": "2026-11-04",
 			"status": "partial",
 			"lessons": ["parkette-ornamente"],
 			"planned_work": ["S07"],
@@ -1010,12 +1451,23 @@
 				"src/course/shape-catalog.ts: explanations, worked examples, observed-task labels and practical activities"
 			],
 			"physical_work": [
-				"Paper plans/drawings, real ruler/Geodreieck/compass, paper nets, mirror and physical unit cubes: instructed, not digitally observed."
+				"Lay and explain physical tilings, including other tile shapes. Digital square tiling already practices gap-free repetition; the curriculum does not mandate every tile shape."
 			],
 			"reviewer": null,
-			"remaining": "Primary-teacher review, exact paper construction and physical handling/discussion pending. Further non-square tessellations, symmetric ornament design, varied physical views and kipp movements remain limited or unobserved.",
+			"remaining": "(b) Lay and explain physical tilings, including other tile shapes. Digital square tiling already practices gap-free repetition; the curriculum does not mandate every tile shape. (c) Primary-school teacher content, appropriateness and learning-evidence review remains pending; no teacher approval is recorded.",
 			"lb": 2,
-			"competence": "erstellen Parkettierungen und beschreiben deren Gesetzmäßigkeiten."
+			"competence": "erstellen Parkettierungen und beschreiben deren Gesetzmäßigkeiten.",
+			"gap_audit": {
+				"checked": "2026-11-04",
+				"digital": "existing",
+				"resolution": [
+					"Existing mapped activities provide digital preparation; review the evidence column. Further original production, physical work and social explanation are named separately below."
+				],
+				"outside_app": [
+					"Lay and explain physical tilings, including other tile shapes. Digital square tiling already practices gap-free repetition; the curriculum does not mandate every tile shape."
+				],
+				"teacher_review": "pending"
+			}
 		},
 		{
 			"id": "m34-2.4-02",
@@ -1023,7 +1475,7 @@
 			"ordinal": 2,
 			"summary": "Pattern rules",
 			"source": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik#25787",
-			"checked": "2026-11-03",
+			"checked": "2026-11-04",
 			"status": "partial",
 			"lessons": ["parkette-ornamente"],
 			"planned_work": ["S07"],
@@ -1032,12 +1484,23 @@
 				"src/course/shape-catalog.ts: explanations, worked examples, observed-task labels and practical activities"
 			],
 			"physical_work": [
-				"Paper plans/drawings, real ruler/Geodreieck/compass, paper nets, mirror and physical unit cubes: instructed, not digitally observed."
+				"Design your own paper ornaments, including symmetric elements, and explain their rule. Digital repeating and self-created units and the mirror workshop provide preparation."
 			],
 			"reviewer": null,
-			"remaining": "Primary-teacher review, exact paper construction and physical handling/discussion pending. Further non-square tessellations, symmetric ornament design, varied physical views and kipp movements remain limited or unobserved.",
+			"remaining": "(b) Design your own paper ornaments, including symmetric elements, and explain their rule. Digital repeating and self-created units and the mirror workshop provide preparation. (c) Primary-school teacher content, appropriateness and learning-evidence review remains pending; no teacher approval is recorded.",
 			"lb": 2,
-			"competence": "bestimmen und erklären Gesetzmäßigkeiten (z. B. achsensymmetrische Teilelemente) in Bandornamenten, verändern diese oder setzen sie fort."
+			"competence": "bestimmen und erklären Gesetzmäßigkeiten (z. B. achsensymmetrische Teilelemente) in Bandornamenten, verändern diese oder setzen sie fort.",
+			"gap_audit": {
+				"checked": "2026-11-04",
+				"digital": "existing",
+				"resolution": [
+					"Existing mapped activities provide digital preparation; review the evidence column. Further original production, physical work and social explanation are named separately below."
+				],
+				"outside_app": [
+					"Design your own paper ornaments, including symmetric elements, and explain their rule. Digital repeating and self-created units and the mirror workshop provide preparation."
+				],
+				"teacher_review": "pending"
+			}
 		},
 		{
 			"id": "m34-2.5-01",
@@ -1045,7 +1508,7 @@
 			"ordinal": 1,
 			"summary": "Volume comparison",
 			"source": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik#25789",
-			"checked": "2026-11-03",
+			"checked": "2026-11-04",
 			"status": "partial",
 			"lessons": ["flaechen-vergleichen", "rauminhalte-wuerfel"],
 			"planned_work": ["S09"],
@@ -1054,12 +1517,23 @@
 				"src/course/shape-catalog.ts: explanations, worked examples, observed-task labels and practical activities"
 			],
 			"physical_work": [
-				"Paper plans/drawings, real ruler/Geodreieck/compass, paper nets, mirror and physical unit cubes: instructed, not digitally observed."
+				"Build and compare real unit-cube bodies, relating the layers to unit surfaces."
 			],
 			"reviewer": null,
-			"remaining": "Primary-teacher review, exact paper construction and physical handling/discussion pending. Further non-square tessellations, symmetric ornament design, varied physical views and kipp movements remain limited or unobserved.",
+			"remaining": "(b) Build and compare real unit-cube bodies, relating the layers to unit surfaces. (c) Primary-school teacher content, appropriateness and learning-evidence review remains pending; no teacher approval is recorded.",
 			"lb": 2,
-			"competence": "vergleichen Rauminhalte einfacher Körper durch Bauen mit Einheitswürfeln und durch Auszählen von Einheitswürfeln. Dabei greifen sie auf ihre Kenntnisse zur Messung von Flächeninhalten zurück."
+			"competence": "vergleichen Rauminhalte einfacher Körper durch Bauen mit Einheitswürfeln und durch Auszählen von Einheitswürfeln. Dabei greifen sie auf ihre Kenntnisse zur Messung von Flächeninhalten zurück.",
+			"gap_audit": {
+				"checked": "2026-11-04",
+				"digital": "existing",
+				"resolution": [
+					"Existing mapped activities provide digital preparation; review the evidence column. Further original production, physical work and social explanation are named separately below."
+				],
+				"outside_app": [
+					"Build and compare real unit-cube bodies, relating the layers to unit surfaces."
+				],
+				"teacher_review": "pending"
+			}
 		},
 		{
 			"id": "m34-3.1-01",
@@ -1067,7 +1541,7 @@
 			"ordinal": 1,
 			"summary": "Practical measurement",
 			"source": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik#25793",
-			"checked": "2026-11-03",
+			"checked": "2026-11-04",
 			"status": "partial",
 			"lessons": [
 				"laengen-messen",
@@ -1080,12 +1554,23 @@
 				"src/course/measure-catalog.ts: written explanations, worked examples and real-world activities"
 			],
 			"physical_work": [
-				"Use real ruler, balance, measuring jug, clock and reference objects; instructed but not digitally observed."
+				"Measure with real ruler/meter counter, balance, jug and stopwatch, including self-chosen reference units."
 			],
 			"reviewer": null,
-			"remaining": "Primary teacher review, real measuring observations, open-ended learner questions/discussion and approved recording remain pending.",
+			"remaining": "(b) Measure with real ruler/meter counter, balance, jug and stopwatch, including self-chosen reference units. (c) Primary-school teacher content, appropriateness and learning-evidence review remains pending; no teacher approval is recorded.",
 			"lb": 3,
-			"competence": "messen Größen mit selbst gewählten und standardisierten Maßeinheiten (Kilometer und Millimeter, Sekunde, Kilogramm und Gramm, Liter und Milliliter) sowie mit geeigneten Messgeräten (z. B. Meterzähler, Messbecher, Stoppuhr)."
+			"competence": "messen Größen mit selbst gewählten und standardisierten Maßeinheiten (Kilometer und Millimeter, Sekunde, Kilogramm und Gramm, Liter und Milliliter) sowie mit geeigneten Messgeräten (z. B. Meterzähler, Messbecher, Stoppuhr).",
+			"gap_audit": {
+				"checked": "2026-11-04",
+				"digital": "existing",
+				"resolution": [
+					"Existing mapped activities provide digital preparation; review the evidence column. Further original production, physical work and social explanation are named separately below."
+				],
+				"outside_app": [
+					"Measure with real ruler/meter counter, balance, jug and stopwatch, including self-chosen reference units."
+				],
+				"teacher_review": "pending"
+			}
 		},
 		{
 			"id": "m34-3.1-02",
@@ -1093,7 +1578,7 @@
 			"ordinal": 2,
 			"summary": "Unit notation",
 			"source": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik#25793",
-			"checked": "2026-11-03",
+			"checked": "2026-11-04",
 			"status": "partial",
 			"lessons": [
 				"laengen-messen",
@@ -1107,12 +1592,23 @@
 				"src/course/measure-catalog.ts: written explanations, worked examples and real-world activities"
 			],
 			"physical_work": [
-				"Use real ruler, balance, measuring jug, clock and reference objects; instructed but not digitally observed."
+				"Write and explain actual measurement results with units, including everyday m/cm and euro/cent notation."
 			],
 			"reviewer": null,
-			"remaining": "Primary teacher review, real measuring observations, open-ended learner questions/discussion and approved recording remain pending.",
+			"remaining": "(b) Write and explain actual measurement results with units, including everyday m/cm and euro/cent notation. (c) Primary-school teacher content, appropriateness and learning-evidence review remains pending; no teacher approval is recorded.",
 			"lb": 3,
-			"competence": "verwenden Abkürzungen zu den standardisierten Maßeinheiten (km und mm, s, kg und g, l und ml) und notieren Messergebnisse bei Meter und Zentimeter sowie bei Euro und Cent auch mit dem im Alltagsgebrauch üblichen Komma."
+			"competence": "verwenden Abkürzungen zu den standardisierten Maßeinheiten (km und mm, s, kg und g, l und ml) und notieren Messergebnisse bei Meter und Zentimeter sowie bei Euro und Cent auch mit dem im Alltagsgebrauch üblichen Komma.",
+			"gap_audit": {
+				"checked": "2026-11-04",
+				"digital": "existing",
+				"resolution": [
+					"Existing mapped activities provide digital preparation; review the evidence column. Further original production, physical work and social explanation are named separately below."
+				],
+				"outside_app": [
+					"Write and explain actual measurement results with units, including everyday m/cm and euro/cent notation."
+				],
+				"teacher_review": "pending"
+			}
 		},
 		{
 			"id": "m34-3.1-03",
@@ -1120,7 +1616,7 @@
 			"ordinal": 3,
 			"summary": "Unit conversion",
 			"source": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik#25793",
-			"checked": "2026-11-03",
+			"checked": "2026-11-04",
 			"status": "partial",
 			"lessons": [
 				"masse-fassungsvermoegen",
@@ -1133,12 +1629,23 @@
 				"src/course/measure-catalog.ts: written explanations, worked examples and real-world activities"
 			],
 			"physical_work": [
-				"Use real ruler, balance, measuring jug, clock and reference objects; instructed but not digitally observed."
+				"Physically pour equal portions, exchange money and explain why the quantity is unchanged."
 			],
 			"reviewer": null,
-			"remaining": "Primary teacher review, real measuring observations, open-ended learner questions/discussion and approved recording remain pending.",
+			"remaining": "(b) Physically pour equal portions, exchange money and explain why the quantity is unchanged. (c) Primary-school teacher content, appropriateness and learning-evidence review remains pending; no teacher approval is recorded.",
 			"lb": 3,
-			"competence": "zerlegen Einheiten innerhalb eines Größenbereichs, wandeln Einheiten um (z. B. 1 l Wasser umfüllen in zwei 500 ml fassende Messbecher oder in vier 250 ml fassende Gefäße) und wechseln Geldbeträge."
+			"competence": "zerlegen Einheiten innerhalb eines Größenbereichs, wandeln Einheiten um (z. B. 1 l Wasser umfüllen in zwei 500 ml fassende Messbecher oder in vier 250 ml fassende Gefäße) und wechseln Geldbeträge.",
+			"gap_audit": {
+				"checked": "2026-11-04",
+				"digital": "existing",
+				"resolution": [
+					"Existing mapped activities provide digital preparation; review the evidence column. Further original production, physical work and social explanation are named separately below."
+				],
+				"outside_app": [
+					"Physically pour equal portions, exchange money and explain why the quantity is unchanged."
+				],
+				"teacher_review": "pending"
+			}
 		},
 		{
 			"id": "m34-3.1-04",
@@ -1146,7 +1653,7 @@
 			"ordinal": 4,
 			"summary": "Time calculation",
 			"source": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik#25793",
-			"checked": "2026-11-03",
+			"checked": "2026-11-04",
 			"status": "partial",
 			"lessons": ["uhrzeit-zeitspannen"],
 			"planned_work": ["M01", "M02", "M03", "M04", "M05"],
@@ -1155,12 +1662,23 @@
 				"src/course/measure-catalog.ts: written explanations, worked examples and real-world activities"
 			],
 			"physical_work": [
-				"Use real ruler, balance, measuring jug, clock and reference objects; instructed but not digitally observed."
+				"Time a real activity and compare measured durations with calculated start/end times."
 			],
 			"reviewer": null,
-			"remaining": "Primary teacher review, real measuring observations, open-ended learner questions/discussion and approved recording remain pending.",
+			"remaining": "(b) Time a real activity and compare measured durations with calculated start/end times. (c) Primary-school teacher content, appropriateness and learning-evidence review remains pending; no teacher approval is recorded.",
 			"lb": 3,
-			"competence": "berechnen Zeitspannen sowie Anfangs- und Endzeitpunkte; sie berücksichtigen dabei die Besonderheit des Größenbereiches Zeitspannen (z. B 1 h hat 60 min, 1 min hat 60 s, 1 Tag hat 24 h) und notieren Ergebnisse auch in gemischter Schreibweise (z. B. 1 h 25 min)."
+			"competence": "berechnen Zeitspannen sowie Anfangs- und Endzeitpunkte; sie berücksichtigen dabei die Besonderheit des Größenbereiches Zeitspannen (z. B 1 h hat 60 min, 1 min hat 60 s, 1 Tag hat 24 h) und notieren Ergebnisse auch in gemischter Schreibweise (z. B. 1 h 25 min).",
+			"gap_audit": {
+				"checked": "2026-11-04",
+				"digital": "existing",
+				"resolution": [
+					"Existing mapped activities provide digital preparation; review the evidence column. Further original production, physical work and social explanation are named separately below."
+				],
+				"outside_app": [
+					"Time a real activity and compare measured durations with calculated start/end times."
+				],
+				"teacher_review": "pending"
+			}
 		},
 		{
 			"id": "m34-3.2-01",
@@ -1168,7 +1686,7 @@
 			"ordinal": 1,
 			"summary": "Reference estimates",
 			"source": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik#25760",
-			"checked": "2026-11-03",
+			"checked": "2026-11-04",
 			"status": "partial",
 			"lessons": ["schaetzen-sachprobleme"],
 			"planned_work": ["M01", "M02", "M03", "M05"],
@@ -1177,12 +1695,23 @@
 				"src/course/measure-catalog.ts: written explanations, worked examples and real-world activities"
 			],
 			"physical_work": [
-				"Use real ruler, balance, measuring jug, clock and reference objects; instructed but not digitally observed."
+				"Choose real reference objects for 500 ml, 1 l, 1 kg and 1 km and justify your own estimates."
 			],
 			"reviewer": null,
-			"remaining": "Primary teacher review, real measuring observations, open-ended learner questions/discussion and approved recording remain pending.",
+			"remaining": "(b) Choose real reference objects for 500 ml, 1 l, 1 kg and 1 km and justify your own estimates. (c) Primary-school teacher content, appropriateness and learning-evidence review remains pending; no teacher approval is recorded.",
 			"lb": 3,
-			"competence": "schätzen Größen mithilfe von Bezugsgrößen aus der Erfahrungswelt (z. B. Bezugsgrößen für 500 ml, 1 l, 1 kg, 1 km) und begründen die Ergebnisse ihrer jeweiligen Schätzung."
+			"competence": "schätzen Größen mithilfe von Bezugsgrößen aus der Erfahrungswelt (z. B. Bezugsgrößen für 500 ml, 1 l, 1 kg, 1 km) und begründen die Ergebnisse ihrer jeweiligen Schätzung.",
+			"gap_audit": {
+				"checked": "2026-11-04",
+				"digital": "existing",
+				"resolution": [
+					"Existing mapped activities provide digital preparation; review the evidence column. Further original production, physical work and social explanation are named separately below."
+				],
+				"outside_app": [
+					"Choose real reference objects for 500 ml, 1 l, 1 kg and 1 km and justify your own estimates."
+				],
+				"teacher_review": "pending"
+			}
 		},
 		{
 			"id": "m34-3.2-02",
@@ -1190,21 +1719,33 @@
 			"ordinal": 2,
 			"summary": "Quantity comparison",
 			"source": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik#25760",
-			"checked": "2026-11-03",
+			"checked": "2026-11-04",
 			"status": "partial",
-			"lessons": ["einheiten-wechseln"],
+			"lessons": ["einheiten-wechseln", "groessen-vergleichen-ordnen"],
 			"planned_work": ["M01", "M02", "M03", "M05"],
 			"evidence": [
 				"src/course/measurement.ts: three model goals, guided and transfer worksheets, three fresh exit tasks; exact unit/time/money checks",
-				"src/course/measure-catalog.ts: written explanations, worked examples and real-world activities"
+				"src/course/measure-catalog.ts: written explanations, worked examples and real-world activities",
+				"Dedicated ordering lesson covers length, duration, mass and capacity in common/mixed units, including the 60-minute step; reasoning.ts, coverage-gaps.test.ts."
 			],
 			"physical_work": [
-				"Use real ruler, balance, measuring jug, clock and reference objects; instructed but not digitally observed."
+				"Order real objects/durations, verify by measurement where appropriate and discuss plausibility."
 			],
 			"reviewer": null,
-			"remaining": "Comparison and ordering across all four quantity domains still need dedicated practice and real measurement/discussion; current evidence is unit representation only. Teacher review pending.",
+			"remaining": "(b) Order real objects/durations, verify by measurement where appropriate and discuss plausibility. (c) Primary-school teacher content, appropriateness and learning-evidence review remains pending; no teacher approval is recorded.",
 			"lb": 3,
-			"competence": "vergleichen und ordnen Längen, Zeitspannen, Massen sowie Hohlmaße; sie überprüfen ihre Ergebnisse ggf. durch Messen und diskutieren diese im Hinblick auf Plausibilität."
+			"competence": "vergleichen und ordnen Längen, Zeitspannen, Massen sowie Hohlmaße; sie überprüfen ihre Ergebnisse ggf. durch Messen und diskutieren diese im Hinblick auf Plausibilität.",
+			"gap_audit": {
+				"checked": "2026-11-04",
+				"digital": "closed",
+				"resolution": [
+					"Dedicated ordering lesson covers length, duration, mass and capacity in common/mixed units, including the 60-minute step; reasoning.ts, coverage-gaps.test.ts."
+				],
+				"outside_app": [
+					"Order real objects/durations, verify by measurement where appropriate and discuss plausibility."
+				],
+				"teacher_review": "pending"
+			}
 		},
 		{
 			"id": "m34-3.2-03",
@@ -1212,7 +1753,7 @@
 			"ordinal": 3,
 			"summary": "Everyday fractions",
 			"source": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik#25760",
-			"checked": "2026-11-03",
+			"checked": "2026-11-04",
 			"status": "partial",
 			"lessons": ["masse-fassungsvermoegen", "uhrzeit-zeitspannen"],
 			"planned_work": ["M01", "M02", "M03", "M05"],
@@ -1221,13 +1762,24 @@
 				"src/course/measure-catalog.ts: written explanations, worked examples and real-world activities"
 			],
 			"physical_work": [
-				"Use real ruler, balance, measuring jug, clock and reference objects; instructed but not digitally observed."
+				"Divide real quantities into halves/quarters/three quarters and explain the equivalent notation."
 			],
 			"reviewer": null,
-			"remaining": "Primary teacher review, real measuring observations, open-ended learner questions/discussion and approved recording remain pending.",
+			"remaining": "(b) Divide real quantities into halves/quarters/three quarters and explain the equivalent notation. (c) Primary-school teacher content, appropriateness and learning-evidence review remains pending; no teacher approval is recorded.",
 			"lb": 3,
 			"competence": "nutzen im Alltag gebräuchliche einfache Bruchzahlen (½;¼;¾) im Zusammenhang mit Größen und stellen derartige Größen in anderen Schreibweisen dar (z. B. ½ l = 500 ml, eine Viertelstunde = 15 min).",
-			"source_text_correction": "2026-11-04: restored readable fractions from official inline image alt labels (Einhalb, Einviertel, Dreiviertel); initial source_sha256 remains the historical snapshot hash."
+			"source_text_correction": "2026-11-04: restored readable fractions from official inline image alt labels (Einhalb, Einviertel, Dreiviertel); initial source_sha256 remains the historical snapshot hash.",
+			"gap_audit": {
+				"checked": "2026-11-04",
+				"digital": "existing",
+				"resolution": [
+					"Existing mapped activities provide digital preparation; review the evidence column. Further original production, physical work and social explanation are named separately below."
+				],
+				"outside_app": [
+					"Divide real quantities into halves/quarters/three quarters and explain the equivalent notation."
+				],
+				"teacher_review": "pending"
+			}
 		},
 		{
 			"id": "m34-3.3-01",
@@ -1254,12 +1806,23 @@
 				"tests/final-worlds.test.ts; tests/browser.ts"
 			],
 			"physical_work": [
-				"Use real ruler, balance, measuring jug, clock and reference objects; instructed but not digitally observed."
+				"Read and discuss authentic local quantity sources, rather than only model sources."
 			],
 			"reviewer": null,
-			"remaining": "Fictional model sources and explicit whole-unit plans extend practice. Real measurements, self-generated Fermi assumptions, open questions/discussion and teacher review remain pending.",
+			"remaining": "(b) Read and discuss authentic local quantity sources, rather than only model sources. (c) Primary-school teacher content, appropriateness and learning-evidence review remains pending; no teacher approval is recorded.",
 			"lb": 3,
-			"competence": "entnehmen Informationen zu Größen aus verschiedenen Quellen (z. B. Texte, Tabellen, Diagramme) und beschreiben diese im Austausch mit anderen."
+			"competence": "entnehmen Informationen zu Größen aus verschiedenen Quellen (z. B. Texte, Tabellen, Diagramme) und beschreiben diese im Austausch mit anderen.",
+			"gap_audit": {
+				"checked": "2026-11-04",
+				"digital": "existing",
+				"resolution": [
+					"Existing mapped activities provide digital preparation; review the evidence column. Further original production, physical work and social explanation are named separately below."
+				],
+				"outside_app": [
+					"Read and discuss authentic local quantity sources, rather than only model sources."
+				],
+				"teacher_review": "pending"
+			}
 		},
 		{
 			"id": "m34-3.3-02",
@@ -1275,7 +1838,9 @@
 				"masse-fassungsvermoegen",
 				"expedition-werkstatt",
 				"expedition-reise",
-				"expedition-inselfest"
+				"expedition-inselfest",
+				"anzahlen-schaetzen-fermi",
+				"sachaufgaben-veraendern"
 			],
 			"planned_work": ["M06"],
 			"evidence": [
@@ -1283,15 +1848,27 @@
 				"src/course/measure-catalog.ts: written explanations, worked examples and real-world activities",
 				"src/course/final-catalog.ts: explanations, worked examples, quizzes and real-world prompts",
 				"src/course/data-and-expeditions.ts: three goals, guided/transfer tasks and reserved-family fresh exits",
-				"tests/final-worlds.test.ts; tests/browser.ts"
+				"tests/final-worlds.test.ts; tests/browser.ts",
+				"Fermi assumptions and source selection added; existing quantity-reference estimates remain in schaetzen-sachprobleme."
 			],
 			"physical_work": [
-				"Use real ruler, balance, measuring jug, clock and reference objects; instructed but not digitally observed."
+				"Choose your own real reference quantities and Fermi assumptions, measure where appropriate and explain your representation."
 			],
 			"reviewer": null,
-			"remaining": "Fictional model sources and explicit whole-unit plans extend practice. Real measurements, self-generated Fermi assumptions, open questions/discussion and teacher review remain pending.",
+			"remaining": "(b) Choose your own real reference quantities and Fermi assumptions, measure where appropriate and explain your representation. (c) Primary-school teacher content, appropriateness and learning-evidence review remains pending; no teacher approval is recorded.",
 			"lb": 3,
-			"competence": "lösen Sachsituationen mit Größen und nutzen dabei Bezugsgrößen aus ihrer Erfahrungswelt oder angemessene Näherungswerte für darin vorkommende Zahlen oder Größen (z. B. auch bei Fermi-Aufgaben) sowie sinnvolle Bearbeitungshilfen (z. B. Skizzen, Begriffstripel, Tabellen, Diagramme)."
+			"competence": "lösen Sachsituationen mit Größen und nutzen dabei Bezugsgrößen aus ihrer Erfahrungswelt oder angemessene Näherungswerte für darin vorkommende Zahlen oder Größen (z. B. auch bei Fermi-Aufgaben) sowie sinnvolle Bearbeitungshilfen (z. B. Skizzen, Begriffstripel, Tabellen, Diagramme).",
+			"gap_audit": {
+				"checked": "2026-11-04",
+				"digital": "closed",
+				"resolution": [
+					"Fermi assumptions and source selection added; existing quantity-reference estimates remain in schaetzen-sachprobleme."
+				],
+				"outside_app": [
+					"Choose your own real reference quantities and Fermi assumptions, measure where appropriate and explain your representation."
+				],
+				"teacher_review": "pending"
+			}
 		},
 		{
 			"id": "m34-3.3-03",
@@ -1299,21 +1876,37 @@
 			"ordinal": 3,
 			"summary": "Approximation choice",
 			"source": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik#25763",
-			"checked": "2026-11-03",
+			"checked": "2026-11-04",
 			"status": "partial",
-			"lessons": ["schaetzen-sachprobleme", "geld-einkaufen"],
+			"lessons": [
+				"schaetzen-sachprobleme",
+				"geld-einkaufen",
+				"rechenweg-waehlen"
+			],
 			"planned_work": ["M06"],
 			"evidence": [
 				"src/course/measurement.ts: three model goals, guided and transfer worksheets, three fresh exit tasks; exact unit/time/money checks",
-				"src/course/measure-catalog.ts: written explanations, worked examples and real-world activities"
+				"src/course/measure-catalog.ts: written explanations, worked examples and real-world activities",
+				"Purpose-based exact/approximate choice added, complementing reference estimates and exact budget checks."
 			],
 			"physical_work": [
-				"Use real ruler, balance, measuring jug, clock and reference objects; instructed but not digitally observed."
+				"Justify the precision needed for your own practical situation and discuss the estimate with others."
 			],
 			"reviewer": null,
-			"remaining": "Primary teacher review, real measuring observations, open-ended learner questions/discussion and approved recording remain pending.",
+			"remaining": "(b) Justify the precision needed for your own practical situation and discuss the estimate with others. (c) Primary-school teacher content, appropriateness and learning-evidence review remains pending; no teacher approval is recorded.",
 			"lb": 3,
-			"competence": "begründen (z. B. mithilfe ihrer Größenvorstellungen), ob bei einer Sachsituation ein exaktes Ergebnis notwendig ist oder ob eine Überschlagsrechnung ausreicht, und überprüfen die Plausibilität des jeweiligen Ergebnisses."
+			"competence": "begründen (z. B. mithilfe ihrer Größenvorstellungen), ob bei einer Sachsituation ein exaktes Ergebnis notwendig ist oder ob eine Überschlagsrechnung ausreicht, und überprüfen die Plausibilität des jeweiligen Ergebnisses.",
+			"gap_audit": {
+				"checked": "2026-11-04",
+				"digital": "closed",
+				"resolution": [
+					"Purpose-based exact/approximate choice added, complementing reference estimates and exact budget checks."
+				],
+				"outside_app": [
+					"Justify the precision needed for your own practical situation and discuss the estimate with others."
+				],
+				"teacher_review": "pending"
+			}
 		},
 		{
 			"id": "m34-3.3-04",
@@ -1340,12 +1933,23 @@
 				"tests/final-worlds.test.ts; tests/browser.ts"
 			],
 			"physical_work": [
-				"Use real ruler, balance, measuring jug, clock and reference objects; instructed but not digitally observed."
+				"Describe and test more/less relationships in your own shopping or measurement situation."
 			],
 			"reviewer": null,
-			"remaining": "Fictional model sources and explicit whole-unit plans extend practice. Real measurements, self-generated Fermi assumptions, open questions/discussion and teacher review remain pending.",
+			"remaining": "(b) Describe and test more/less relationships in your own shopping or measurement situation. (c) Primary-school teacher content, appropriateness and learning-evidence review remains pending; no teacher approval is recorded.",
 			"lb": 3,
-			"competence": "erkennen funktionale Beziehungen (z. B. je mehr – desto mehr, je mehr – desto weniger) in alltagsnahen Sachsituationen und nutzen diese zur Lösung entsprechender Aufgaben (z. B. Preis im Verhältnis zur Menge setzen)."
+			"competence": "erkennen funktionale Beziehungen (z. B. je mehr – desto mehr, je mehr – desto weniger) in alltagsnahen Sachsituationen und nutzen diese zur Lösung entsprechender Aufgaben (z. B. Preis im Verhältnis zur Menge setzen).",
+			"gap_audit": {
+				"checked": "2026-11-04",
+				"digital": "existing",
+				"resolution": [
+					"Existing mapped activities provide digital preparation; review the evidence column. Further original production, physical work and social explanation are named separately below."
+				],
+				"outside_app": [
+					"Describe and test more/less relationships in your own shopping or measurement situation."
+				],
+				"teacher_review": "pending"
+			}
 		},
 		{
 			"id": "m34-4.1-01",
@@ -1361,15 +1965,27 @@
 				"src/course/final-catalog.ts: explanations, worked examples, quizzes and real-world prompts",
 				"src/course/data-and-expeditions.ts: three goals, guided/transfer tasks and reserved-family fresh exits",
 				"src/course/data-model.ts: labelled charts, saved observations and reproducible replacement experiments",
-				"tests/final-worlds.test.ts; tests/browser.ts"
+				"tests/final-worlds.test.ts; tests/browser.ts",
+				"Five-category table, missing-frequency inference and scaled labelled chart added at Level 2; data-and-expeditions.ts, data-model.ts, coverage-gaps.test.ts."
 			],
 			"physical_work": [
-				"Plan a real collection/question or a safe bag/dice trial with others; record and discuss it on paper. Prompted, not observed or uploaded by the app."
+				"Plan and carry out a real collection using local or newspaper sources; choose and draw your own larger table/diagram."
 			],
 			"reviewer": null,
-			"remaining": "Collects individual model observations and manually builds three-category labelled columns; real-world collection, broader sources, larger tables, original representation choice and teacher review remain pending.",
+			"remaining": "(b) Plan and carry out a real collection using local or newspaper sources; choose and draw your own larger table/diagram. (c) Primary-school teacher content, appropriateness and learning-evidence review remains pending; no teacher approval is recorded.",
 			"lb": 4,
-			"competence": "sammeln und vergleichen Daten (z. B. Zuschauerzahlen bei Fußballvereinen) aus ihrer unmittelbaren Lebenswirklichkeit und anderen Quellen (z. B. Zeitungen, Schaubilder, Untersuchungen) und stellen sie auch in umfangreicheren Tabellen und Diagrammen (z. B. Balkendiagramm) strukturiert dar."
+			"competence": "sammeln und vergleichen Daten (z. B. Zuschauerzahlen bei Fußballvereinen) aus ihrer unmittelbaren Lebenswirklichkeit und anderen Quellen (z. B. Zeitungen, Schaubilder, Untersuchungen) und stellen sie auch in umfangreicheren Tabellen und Diagrammen (z. B. Balkendiagramm) strukturiert dar.",
+			"gap_audit": {
+				"checked": "2026-11-04",
+				"digital": "closed",
+				"resolution": [
+					"Five-category table, missing-frequency inference and scaled labelled chart added at Level 2; data-and-expeditions.ts, data-model.ts, coverage-gaps.test.ts."
+				],
+				"outside_app": [
+					"Plan and carry out a real collection using local or newspaper sources; choose and draw your own larger table/diagram."
+				],
+				"teacher_review": "pending"
+			}
 		},
 		{
 			"id": "m34-4.1-02",
@@ -1392,12 +2008,23 @@
 				"tests/final-worlds.test.ts; tests/browser.ts"
 			],
 			"physical_work": [
-				"Plan a real collection/question or a safe bag/dice trial with others; record and discuss it on paper. Prompted, not observed or uploaded by the app."
+				"Describe relationships in authentic timetables and price lists in your own words."
 			],
 			"reviewer": null,
-			"remaining": "Reads model timetables and prices, computes durations and doubles a price for double quantity. Independently describing wider relationships, discussion and teacher review remain pending.",
+			"remaining": "(b) Describe relationships in authentic timetables and price lists in your own words. (c) Primary-school teacher content, appropriateness and learning-evidence review remains pending; no teacher approval is recorded.",
 			"lb": 4,
-			"competence": "entnehmen relevante Daten und Informationen aus verschiedenen Quellen (z. B. Fahrpläne oder Preislisten) und beschreiben mathematische Zusammenhänge (z. B. … ist die Hälfte von …, funktionale Beziehungen wie … bei doppelter Menge ist der Preis doppelt so hoch …)."
+			"competence": "entnehmen relevante Daten und Informationen aus verschiedenen Quellen (z. B. Fahrpläne oder Preislisten) und beschreiben mathematische Zusammenhänge (z. B. … ist die Hälfte von …, funktionale Beziehungen wie … bei doppelter Menge ist der Preis doppelt so hoch …).",
+			"gap_audit": {
+				"checked": "2026-11-04",
+				"digital": "existing",
+				"resolution": [
+					"Existing mapped activities provide digital preparation; review the evidence column. Further original production, physical work and social explanation are named separately below."
+				],
+				"outside_app": [
+					"Describe relationships in authentic timetables and price lists in your own words."
+				],
+				"teacher_review": "pending"
+			}
 		},
 		{
 			"id": "m34-4.1-03",
@@ -1416,12 +2043,23 @@
 				"tests/final-worlds.test.ts; tests/browser.ts"
 			],
 			"physical_work": [
-				"Plan a real collection/question or a safe bag/dice trial with others; record and discuss it on paper. Prompted, not observed or uploaded by the app."
+				"Formulate original mathematical questions about a table/chart and justify the answers with classmates."
 			],
 			"reviewer": null,
-			"remaining": "Answers supplied mathematical questions about columns and a fictional vote. Creating and discussing original questions is prompted outside the checked tasks; teacher review remains pending.",
+			"remaining": "(b) Formulate original mathematical questions about a table/chart and justify the answers with classmates. (c) Primary-school teacher content, appropriateness and learning-evidence review remains pending; no teacher approval is recorded.",
 			"lb": 4,
-			"competence": "formulieren zu Tabellen und Diagrammen, auch im Austausch mit anderen, mathematisch sinnvolle Fragen und begründen ihre Antworten (z. B. In welchen Zeitabständen kommt der Bus zwischen 14 Uhr und 19 Uhr? – Insgesamt hat Emil 31 Schulstunden in der Woche, weil …)."
+			"competence": "formulieren zu Tabellen und Diagrammen, auch im Austausch mit anderen, mathematisch sinnvolle Fragen und begründen ihre Antworten (z. B. In welchen Zeitabständen kommt der Bus zwischen 14 Uhr und 19 Uhr? – Insgesamt hat Emil 31 Schulstunden in der Woche, weil …).",
+			"gap_audit": {
+				"checked": "2026-11-04",
+				"digital": "existing",
+				"resolution": [
+					"Existing mapped activities provide digital preparation; review the evidence column. Further original production, physical work and social explanation are named separately below."
+				],
+				"outside_app": [
+					"Formulate original mathematical questions about a table/chart and justify the answers with classmates."
+				],
+				"teacher_review": "pending"
+			}
 		},
 		{
 			"id": "m34-4.1-04",
@@ -1444,12 +2082,23 @@
 				"tests/final-worlds.test.ts; tests/browser.ts"
 			],
 			"physical_work": [
-				"Plan a real collection/question or a safe bag/dice trial with others; record and discuss it on paper. Prompted, not observed or uploaded by the app."
+				"Use further authentic charts/timetables and explain how you inferred non-visible data."
 			],
 			"reviewer": null,
-			"remaining": "Computes missing frequencies, differences, totals and travel times, including overnight and waiting intervals. Broader real sources, learner explanations and teacher review remain pending.",
+			"remaining": "(b) Use further authentic charts/timetables and explain how you inferred non-visible data. (c) Primary-school teacher content, appropriateness and learning-evidence review remains pending; no teacher approval is recorded.",
 			"lb": 4,
-			"competence": "erschließen und berechnen aus verschiedenen Quellen (z. B. Diagramme, Fahrpläne, Tabellen) auch Daten, die nicht direkt ablesbar sind (z. B. Fahrtzeiten von Bussen oder Zügen)."
+			"competence": "erschließen und berechnen aus verschiedenen Quellen (z. B. Diagramme, Fahrpläne, Tabellen) auch Daten, die nicht direkt ablesbar sind (z. B. Fahrtzeiten von Bussen oder Zügen).",
+			"gap_audit": {
+				"checked": "2026-11-04",
+				"digital": "existing",
+				"resolution": [
+					"Existing mapped activities provide digital preparation; review the evidence column. Further original production, physical work and social explanation are named separately below."
+				],
+				"outside_app": [
+					"Use further authentic charts/timetables and explain how you inferred non-visible data."
+				],
+				"teacher_review": "pending"
+			}
 		},
 		{
 			"id": "m34-4.1-05",
@@ -1465,15 +2114,27 @@
 				"src/course/final-catalog.ts: explanations, worked examples, quizzes and real-world prompts",
 				"src/course/data-and-expeditions.ts: three goals, guided/transfer tasks and reserved-family fresh exits",
 				"src/course/data-model.ts: labelled charts, saved observations and reproducible replacement experiments",
-				"tests/final-worlds.test.ts; tests/browser.ts"
+				"tests/final-worlds.test.ts; tests/browser.ts",
+				"Five-category table/chart practice extends the existing observation-list/table-to-editable-chart models."
 			],
 			"physical_work": [
-				"Plan a real collection/question or a safe bag/dice trial with others; record and discuss it on paper. Prompted, not observed or uploaded by the app."
+				"Choose and draw your own suitable representations from authentic data and discuss the transfer."
 			],
 			"reviewer": null,
-			"remaining": "Transfers a supplied observation list/table into a manually edited labelled column chart. Independently choosing and drawing broader representations, discussion and teacher review remain pending.",
+			"remaining": "(b) Choose and draw your own suitable representations from authentic data and discuss the transfer. (c) Primary-school teacher content, appropriateness and learning-evidence review remains pending; no teacher approval is recorded.",
 			"lb": 4,
-			"competence": "entnehmen relevante Daten aus verschiedenen Darstellungsformen (z. B. Schaubilder, Tabellen, Texte) und übertragen die Daten in geeignete andere Darstellungsformen."
+			"competence": "entnehmen relevante Daten aus verschiedenen Darstellungsformen (z. B. Schaubilder, Tabellen, Texte) und übertragen die Daten in geeignete andere Darstellungsformen.",
+			"gap_audit": {
+				"checked": "2026-11-04",
+				"digital": "closed",
+				"resolution": [
+					"Five-category table/chart practice extends the existing observation-list/table-to-editable-chart models."
+				],
+				"outside_app": [
+					"Choose and draw your own suitable representations from authentic data and discuss the transfer."
+				],
+				"teacher_review": "pending"
+			}
 		},
 		{
 			"id": "m34-4.2-01",
@@ -1492,12 +2153,23 @@
 				"tests/final-worlds.test.ts; tests/browser.ts"
 			],
 			"physical_work": [
-				"Plan a real collection/question or a safe bag/dice trial with others; record and discuss it on paper. Prompted, not observed or uploaded by the app."
+				"Predict, perform and compare physical bag/dice/wheel experiments with others; discuss chance versus observed frequency."
 			],
 			"reviewer": null,
-			"remaining": "Saves a prediction before twelve individual simulated replacement draws, counts observations and separates chance from certainty. Physical experiments, broader devices and teacher review remain pending.",
+			"remaining": "(b) Predict, perform and compare physical bag/dice/wheel experiments with others; discuss chance versus observed frequency. (c) Primary-school teacher content, appropriateness and learning-evidence review remains pending; no teacher approval is recorded.",
 			"lb": 4,
-			"competence": "schätzen zu einfachen Zufallsexperimenten Gewinnchancen ein (z. B. Drehen eines Glücksrads, Würfelexperimente), vergleichen ihre Ergebnisse und überprüfen handelnd ihre Vorhersagen."
+			"competence": "schätzen zu einfachen Zufallsexperimenten Gewinnchancen ein (z. B. Drehen eines Glücksrads, Würfelexperimente), vergleichen ihre Ergebnisse und überprüfen handelnd ihre Vorhersagen.",
+			"gap_audit": {
+				"checked": "2026-11-04",
+				"digital": "existing",
+				"resolution": [
+					"Existing mapped activities provide digital preparation; review the evidence column. Further original production, physical work and social explanation are named separately below."
+				],
+				"outside_app": [
+					"Predict, perform and compare physical bag/dice/wheel experiments with others; discuss chance versus observed frequency."
+				],
+				"teacher_review": "pending"
+			}
 		},
 		{
 			"id": "m34-4.2-02",
@@ -1516,12 +2188,23 @@
 				"tests/final-worlds.test.ts; tests/browser.ts"
 			],
 			"physical_work": [
-				"Plan a real collection/question or a safe bag/dice trial with others; record and discuss it on paper. Prompted, not observed or uploaded by the app."
+				"Design systematic changes to a physical experiment, perform trials and discuss their results."
 			],
 			"reviewer": null,
-			"remaining": "Learner changes the red/blue composition at fixed total before a second saved model trial and compares it with the first. Broader self-designed variations, physical trials, discussion and teacher review remain pending.",
+			"remaining": "(b) Design systematic changes to a physical experiment, perform trials and discuss their results. (c) Primary-school teacher content, appropriateness and learning-evidence review remains pending; no teacher approval is recorded.",
 			"lb": 4,
-			"competence": "variieren die Bedingungen für einfache Zufallsexperimente systematisch (z. B. Anzahl oder Farbe der Kugeln in einem Säckchen) und vergleichen und bewerten die Ergebnisse zu den Experimenten, die bei unterschiedlichen Bedingungen durchgeführt wurden."
+			"competence": "variieren die Bedingungen für einfache Zufallsexperimente systematisch (z. B. Anzahl oder Farbe der Kugeln in einem Säckchen) und vergleichen und bewerten die Ergebnisse zu den Experimenten, die bei unterschiedlichen Bedingungen durchgeführt wurden.",
+			"gap_audit": {
+				"checked": "2026-11-04",
+				"digital": "existing",
+				"resolution": [
+					"Existing mapped activities provide digital preparation; review the evidence column. Further original production, physical work and social explanation are named separately below."
+				],
+				"outside_app": [
+					"Design systematic changes to a physical experiment, perform trials and discuss their results."
+				],
+				"teacher_review": "pending"
+			}
 		}
 	],
 	"extension_check": {
@@ -1588,5 +2271,12 @@
 			"expedition-inselfest"
 		],
 		"teacher_review": null
+	},
+	"gap_audit_check": {
+		"checked": "2026-11-04",
+		"source": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/mathematik",
+		"report": "../docs/grade-4-curriculum-gap-audit.md",
+		"rows": 54,
+		"note": "source_sha256 retains the original curriculum snapshot hash; this audit re-read the live official page. No fixed teaching hours specified. Existing competence text and identifiers preserved. acceptance.json unchanged; preview and review gates unchanged."
 	}
 }

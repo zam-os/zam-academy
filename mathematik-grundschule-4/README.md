@@ -1,6 +1,6 @@
 # ZAM Discovery Island: Grade 4 mathematics
 
-German learner and parent UI for Bavarian Grade 4. Thirty-six selectable lessons
+German learner and parent UI for Bavarian Grade 4. Forty selectable lessons
 in the Number Forest, Measure Market, Shape Bay, Chance Garden and mixed expeditions cover place values/bundling, comparing/ordering,
 number lines/equal jumps, decomposition/complements, addition/subtraction
 strategies, multiplication/inverse division, the four written procedures, arithmetic patterns, multi-step story problems, systematic combinations, divisors/multiples, measurement, concrete geometry, data/chance and mixed practical planning.
@@ -8,7 +8,7 @@ Each has two resumable missions, three successful tasks per practice level,
 fresh exit checks, optional practice and a welcoming Milo. A lesson is a
 draft activity, not a completed annual course or proof of mastery.
 
-The thirty-five lessons added after the original workshop have three interactive
+The thirty-nine lessons added after the original workshop have three interactive
 goals each. Their models include a number gate, a keyboard-friendly
 number-line marker, coupled treasure bars, calculation jumps, equal baskets,
 result/carry boards, a value-preserving regrouping board, partial-product
@@ -19,7 +19,7 @@ factors; written division uses divisors through 10, including remainders.
 
 ## Status
 
-Local Phase-1 implementation, **not a completed or published course**.
+Public preview since 2026-11-04, with teacher review still pending.
 Thomas confirmed that no recording is available. The real teacher video,
 primary-school teacher content review and final video playback acceptance
 remain pending. The app truthfully shows this and supplies the illustrated
@@ -30,10 +30,19 @@ is included. See [the recording brief](docs/teacher-recording-brief.md),
 
 The app and its cell are published as a preview (`publication.json`:
 `preview`, Thomas's decision of 2026-11-04), so their ids are a contract while
-teacher review and recordings are open. The registry lists 36 selectable
-lessons, while the cell has 39 atoms because the first workshop uses four atoms;
+teacher review and recordings are open. The registry lists 40 selectable
+lessons, while the cell has 43 atoms because the first workshop uses four atoms;
 the registry test exempts this package from requiring those counts to agree. No
 ZAM bundled fixture or personal learning library was edited.
+
+The [2026-11-04 audit](../docs/grade-4-curriculum-gap-audit.md) separates digital
+work, outside practice and teacher review for all 54 coverage rows. Four focused
+lessons add quantity estimates/Fermi assumptions, calculation-method choice,
+story variation/source lookup and quantity ordering. The existing addition,
+decomposition and data lessons gain multiple summands, number words/stage notation
+and five-category tables respectively. Unfinished saves from the first preview
+retain their original task boards and evidence; new optional rounds use the added
+content. Content, physical practice and teacher assessment remain separate gates.
 
 ## Run and verify
 
@@ -51,7 +60,7 @@ The app reuses the approved Academy TypeScript/Vite/Vitest/single-file
 toolchain; it adds no runtime dependencies. `validate:cell` defaults to
 the adjacent `zam/dist/index.js`; set `ZAM_CORE` to a file URL of another
 approved build to check compatibility. It uses only a disposable database:
-installation creates no cards, explicit enrolment creates 146, retries
+installation creates no cards, explicit enrolment creates 159, retries
 create none, and reinstall preserves a real recall-rating log.
 
 At the Academy root, run
@@ -101,8 +110,8 @@ exponents and malformed or mixed dot/space groups remain invalid.
 - Lesson id: `stellenwerte-buendeln`; cell:
   `zam-academy:mathematik-grundschule-4`. Public links point to the hosted
   preview.
-- `cell.json` is the sole recall-card source: thirty-nine atoms, one hundred forty-six German
-  items (seventy-eight binary fast checks and sixty-eight synthesis tasks) with fixed ULIDs.
+- `cell.json` is the sole recall-card source: forty-three atoms, one hundred fifty-nine German
+  items (eighty-seven binary fast checks and seventy-two synthesis tasks) with fixed ULIDs.
   Edit cards only in this file; there is no
   second authored card list or card generator. Installation uses the approved
   core's card-text validation and write path. Prerequisites form an acyclic

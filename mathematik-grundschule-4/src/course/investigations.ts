@@ -2,16 +2,21 @@ import { format } from "../math/place-value";
 import { random } from "../practice/tasks";
 import { type FieldFormat, parseQuantity, quantityNote } from "./quantity";
 import { divisorExit } from "./divisors";
+import { REASONING_IDS } from "./reasoning";
 import type { Answer, ForestTask } from "./tasks";
 
 export const INVESTIGATION_IDS = [
 	"muster-zahlbeziehungen",
 	"sachaufgaben-mehrschrittig",
 	"teiler-vielfache",
+	...REASONING_IDS,
 ] as const;
 export type InvestigationId = (typeof INVESTIGATION_IDS)[number];
-export const isInvestigation = (id: string): id is InvestigationId =>
-	INVESTIGATION_IDS.some((key) => key === id);
+export const isInvestigation = (
+	id: string,
+): id is InvestigationId | "zahlen-zerlegen-ergaenzen" =>
+	INVESTIGATION_IDS.some((key) => key === id) ||
+	id === "zahlen-zerlegen-ergaenzen";
 export interface InvestigationField {
 	label: string;
 	value: number;

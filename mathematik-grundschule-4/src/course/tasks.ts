@@ -7,6 +7,13 @@ import { measureTask, measureLab, measureExit } from "./measurement";
 import { acceptsWorkshop, type Scene, type Workshop } from "./workshop";
 import { format, parseInteger } from "../math/place-value";
 import { random } from "../practice/tasks";
+import {
+	isReasoning,
+	reasoningTask,
+	reasoningLab,
+	reasoningExit,
+} from "./reasoning";
+import { representationTask } from "./representations";
 import { arithmeticLab, arithmeticTask, isArithmetic } from "./arithmetic";
 import type { ExtraLessonId } from "./catalog";
 import {
@@ -81,7 +88,7 @@ export type ForestTask = {
 	calculation?: { a: number; b: number; op: "+" | "−" | "·" | ":" };
 	hops?: { start: number; unit: number; direction: 1 | -1 };
 	groups?: { each: number };
-	columns?: { a: number; b: number; shown?: number };
+	columns?: { a: number; b: number; shown?: number; extra?: number[] };
 	subtraction?: { a: number; b: number; shown?: number };
 	algorithm?: Algorithm;
 	investigation?: Investigation;
@@ -186,8 +193,12 @@ export function forestTask(
 	level: 1 | 2,
 	seed: number,
 	index: number,
+	revision = 1,
 ): ForestTask {
-	if (isFinalLesson(id)) return finalTask(id, level, seed, index);
+	if (isReasoning(id)) return reasoningTask(id, level, seed, index);
+	if (id === "zahlen-zerlegen-ergaenzen" && index % 3 === 2 && revision === 1)
+		return representationTask(level, seed, index);
+	if (isFinalLesson(id)) return finalTask(id, level, seed, index, revision);
 	if (isShape(id)) return shapeTask(id, level, seed, index);
 	if (isMeasure(id)) return measureTask(id, level, seed, index);
 	if (id === "systematisch-kombinieren")
@@ -198,7 +209,8 @@ export function forestTask(
 	if (isWrittenAlgorithm(id)) return algorithmTask(id, level, seed, index);
 	if (id === "schriftlich-subtrahieren")
 		return subtractionTask(level, seed, index);
-	if (id === "schriftlich-addieren") return writtenTask(level, seed, index);
+	if (id === "schriftlich-addieren")
+		return writtenTask(level, seed, index, revision);
 	if (isArithmetic(id)) return arithmeticTask(id, level, seed, index);
 	const { int, shuffle } = rng(
 		(seed + Math.imul(index + 1, 2654435761) + level * 104729) >>> 0,
@@ -334,7 +346,12 @@ export function forestTask(
 		explanation: `${format(whole)} − ${format(part)} = ${format(answer)}. Die Probe: ${format(part)} + ${format(answer)} = ${format(whole)}.`,
 	};
 }
-export function forestLab(id: ExtraLessonId, goal: number): ForestTask {
+export function forestLab(
+	id: ExtraLessonId,
+	goal: number,
+	revision = 1,
+): ForestTask {
+	if (isReasoning(id)) return reasoningLab(id, goal);
 	if (isFinalLesson(id)) return finalLab(id, goal);
 	if (isShape(id)) return shapeLab(id, goal);
 	if (isMeasure(id)) return measureLab(id, goal);
@@ -344,7 +361,7 @@ export function forestLab(id: ExtraLessonId, goal: number): ForestTask {
 	if (id === "sachaufgaben-mehrschrittig") return storyLab(goal);
 	if (isWrittenAlgorithm(id)) return algorithmLab(id, goal);
 	if (id === "schriftlich-subtrahieren") return subtractionLab(goal);
-	if (id === "schriftlich-addieren") return writtenLab(goal);
+	if (id === "schriftlich-addieren") return writtenLab(goal, revision);
 	if (isArithmetic(id)) return arithmeticLab(id, goal);
 	if (id === "zahlen-vergleichen-ordnen")
 		return goal === 2
@@ -450,15 +467,18 @@ export function forestExit(
 	id: ExtraLessonId,
 	seed: number,
 	index: number,
+	revision = 1,
 ): ForestTask {
-	if (isFinalLesson(id)) return finalExit(id, seed, index);
+	if (isReasoning(id)) return reasoningExit(id, seed, index);
+	if (isFinalLesson(id)) return finalExit(id, seed, index, revision);
 	if (isShape(id)) return shapeExit(id, seed, index);
 	if (isMeasure(id)) return measureExit(id, seed, index);
 	if (id === "systematisch-kombinieren") return combinationExit(seed, index);
-	if (isInvestigation(id)) return investigationExit(id, seed, index);
+	if (isInvestigation(id) && id !== "zahlen-zerlegen-ergaenzen")
+		return investigationExit(id, seed, index);
 	if (isWrittenAlgorithm(id)) return algorithmExit(id, seed, index);
 	if (id === "schriftlich-subtrahieren") return subtractionExit(seed, index);
-	if (id === "schriftlich-addieren") return writtenExit(seed, index);
+	if (id === "schriftlich-addieren") return writtenExit(seed, index, revision);
 	if (id === "malnehmen-teilen" && index === 0) {
 		const task = forestTask(id, 1, seed, 0);
 		if (!task.calculation) throw new Error("Missing multiplication operands");

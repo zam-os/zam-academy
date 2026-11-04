@@ -882,7 +882,7 @@ footer {
 		margin: 20px auto;
 		border: 1px solid var(--line);
 		border-radius: 26px;
-		background: #f9f7ff;
+		background: var(--page);
 		overflow: hidden;
 	}
 }
@@ -1762,6 +1762,7 @@ input {
 	color: var(--purple);
 }
 .column-scroll {
+	position: relative;
 	max-width: 100%;
 	overflow-x: auto;
 	overscroll-behavior-x: contain;
