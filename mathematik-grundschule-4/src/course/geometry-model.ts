@@ -1,3 +1,4 @@
+import { escapeHtml as html } from "../html";
 import type { Workshop } from "./workshop";
 export interface Geometry {
 	kind:
@@ -148,14 +149,6 @@ export function geometryProperty(m: Workshop, state: number[]): boolean | null {
 	}
 	return false;
 }
-const html = (s: string) =>
-	s.replace(
-		/[&<>"']/g,
-		(c) =>
-			({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[
-				c
-			] ?? c,
-	);
 export function geometryView(g: Geometry, state = g.cells): string {
 	const { columns, rows } = g;
 	if (g.kind === "rectangle" || g.kind === "circle") {
@@ -224,7 +217,7 @@ export function geometryView(g: Geometry, state = g.cells): string {
 	const cells = Array.from(
 		{ length: columns * rows },
 		(_, i) =>
-			`<span class="static-cell ${state[i] ? "filled" : ""} ${source[i] ? "source-cell" : ""}" aria-label="Spalte ${(i % columns) + 1}, Zeile ${Math.floor(i / columns) + 1}: ${state[i] || source[i] ? "markiert" : "leer"}">${g.kind === "tiles" ? symbols[state[i] || source[i] || 0] : state[i] || source[i] ? "●" : "·"}</span>`,
+			`<span class="static-cell ${state[i] ? "filled" : ""} ${source[i] ? "source-cell" : ""}" aria-label="Spalte ${(i % columns) + 1}, Zeile ${Math.floor(i / columns) + 1}: ${g.kind === "tiles" ? ["leer", "Kreis", "Dreieck", "Quadrat"][state[i] || source[i] || 0] : state[i] || source[i] ? "markiert" : "leer"}">${g.kind === "tiles" ? symbols[state[i] || source[i] || 0] : state[i] || source[i] ? "●" : "·"}</span>`,
 	).join("");
 	const axis =
 		g.kind === "mirror"

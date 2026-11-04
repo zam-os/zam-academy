@@ -1347,6 +1347,11 @@ run.addEventListener("click", async (event) => {
 					),
 				);
 				await session.act(firstControl, host);
+				if (model.scene.experiment)
+					await act(
+						"forest-experiment-predict",
+						`[data-value="${model.target[0] === 1 ? 2 : 1}"]`,
+					);
 				const saved = JSON.stringify(session.store.state.modelWork);
 				const restored = new DocumentStore(
 					database,
@@ -1360,6 +1365,11 @@ run.addEventListener("click", async (event) => {
 					`${definition.id}: model action resumes in a second store`,
 				);
 				if (model.scene.experiment) {
+					const reset = required(
+						host.querySelector<HTMLButtonElement>(
+							'[data-action="forest-model-reset"]',
+						),
+					);
 					const draw = required(
 						host.querySelector<HTMLButtonElement>(
 							'[data-action="forest-experiment-draw"]',
@@ -1391,6 +1401,13 @@ run.addEventListener("click", async (event) => {
 						session.store.state.modelWork?.[0] === prediction,
 						`${definition.id}: drawing locks the initial prediction`,
 					);
+					const held = JSON.stringify(session.store.state.modelWork);
+					await session.act(reset, host);
+					assert(
+						JSON.stringify(session.store.state.modelWork) === held &&
+							!host.querySelector('[data-action="forest-model-reset"]'),
+						`${definition.id}: a stale reset cannot erase a started experiment or its original prediction`,
+					);
 				}
 
 				if (model.scene.geometry) {
@@ -1411,12 +1428,14 @@ run.addEventListener("click", async (event) => {
 						`${definition.id}: rapid repeated clicks cycle from latest transactional state`,
 					);
 				}
-				await act("forest-model-reset");
-				assert(
-					JSON.stringify(session.store.state.modelWork) ===
-						JSON.stringify(freshWorkshop(model)),
-					`${definition.id}: reset model leaves attempts unchanged`,
-				);
+				if (!model.scene.experiment) {
+					await act("forest-model-reset");
+					assert(
+						JSON.stringify(session.store.state.modelWork) ===
+							JSON.stringify(freshWorkshop(model)),
+						`${definition.id}: reset model leaves attempts unchanged`,
+					);
+				}
 			} else {
 				await act("forest-check");
 				assert(
@@ -1432,6 +1451,7 @@ run.addEventListener("click", async (event) => {
 
 					if (m.scene.experiment) {
 						const e = m.scene.experiment,
+							drawStart = session.store.state.modelWork?.[1] ?? 0,
 							predicted = m.target[0] === 1 ? 2 : 1;
 						if (e.variable) {
 							for (
@@ -1465,12 +1485,12 @@ run.addEventListener("click", async (event) => {
 							await act("forest-worked");
 							assert(
 								session.store.state.modelWork?.[0] === predicted &&
-									session.store.state.modelWork?.[1] === 0,
+									session.store.state.modelWork?.[1] === drawStart,
 								`${definition.id}: assisted continuation cannot invent initial draws`,
 							);
 						}
 
-						for (let draw = 0; draw < e.draws; draw++)
+						for (let draw = drawStart; draw < e.draws; draw++)
 							await act("forest-experiment-draw");
 						if (e.variable) {
 							await act("forest-experiment-change", '[data-value="-1"]');

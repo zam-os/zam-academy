@@ -1,3 +1,4 @@
+import { escapeHtml as html } from "../html";
 import { random } from "../practice/tasks";
 import type { Workshop } from "./workshop";
 export interface DataChart {
@@ -18,14 +19,6 @@ export interface ChanceExperiment {
 	previous?: { red: number; blue: number; seed: number };
 	variable?: { total: number; initialRed: number };
 }
-const html = (s: string) =>
-	s.replace(
-		/[&<>"']/g,
-		(c) =>
-			({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[
-				c
-			] ?? c,
-	);
 export const colouredBalls = (red: number, blue: number) =>
 	`${red} rote Kugel${red === 1 ? "" : "n"} und ${blue} blaue Kugel${blue === 1 ? "" : "n"}`;
 export function drawsFor(e: ChanceExperiment, count = e.draws): number[] {
@@ -127,9 +120,20 @@ export function experimentView(
 		col: number,
 		labels: string[],
 		disabled: boolean,
-	) =>
-		`<div class="answer-options">${labels.map((label, i) => `<button data-action="${action}" data-col="${col}" data-value="${i + 1}" aria-pressed="${state[col] === i + 1}" ${disabled ? "disabled" : ""}>${html(label)}</button>`).join("")}</div>`;
-	return `<div class="world-workshop"><p>Im Beutel: <strong>${colouredBalls(current.red, current.blue)}</strong>. Alle Kugeln sind gleich groß und gleich gut zu greifen. Nach jeder Ziehung kommt die Kugel zurück; dann wird neu gemischt.</p>${e.previous ? `<p>Vergleich mit dem vorigen Versuch: ${colouredBalls(e.previous.red, e.previous.blue)}. Dort beobachtet: ${drawsFor({ ...e, ...e.previous }).reduce((s, n) => s + n, 0)}-mal Rot in ${e.draws} Ziehungen. ${current.red === e.previous.red && current.blue === e.previous.blue ? "Die Bedingungen sind noch gleich; stelle den neuen Beutelinhalt ein." : "Die Beutelbedingungen unterscheiden sich."}</p>` : ""}${e.variable ? `<div class="model-control"><strong>Beutel für diesen Vergleich einstellen: ${e.red} rote Kugeln, insgesamt ${e.variable.total}.</strong><div><button data-action="forest-experiment-change" data-value="-1" aria-label="Rote Kugeln im Beutel verringern" ${solved || state[1] > 0 || state[5] === 1 ? "disabled" : ""}>−</button><output>${state[5]} rot / ${e.variable.total - state[5]} blau</output><button data-action="forest-experiment-change" data-value="1" aria-label="Rote Kugeln im Beutel erhöhen" ${solved || state[1] > 0 || state[5] === e.variable.total - 1 ? "disabled" : ""}>+</button></div></div>` : ""}<fieldset><legend>Deine Vermutung vor dem Versuch</legend>${options("forest-experiment-predict", 0, chances, solved || state[1] > 0)}</fieldset><p>${state[1] > 0 ? "Deine anfängliche Vermutung bleibt für diesen Versuch festgehalten. Eine andere Beobachtung ist möglich; du darfst daraus lernen." : "Wähle eine Vermutung und starte dann den Versuch."}</p><button data-action="forest-experiment-draw" ${solved || state[0] === 0 || done || (e.variable && state[5] !== e.red) ? "disabled" : ""}>Eine Kugel ziehen und zurücklegen</button><p>Gezogen: ${state[1]} von ${e.draws}</p><ol class="draw-log" aria-live="polite">${log.map((n) => `<li class="${n ? "red-draw" : "blue-draw"}">${n ? "Rot" : "Blau"}</li>`).join("")}</ol>${done ? `<div class="model-control"><strong>Wie oft hast du Rot beobachtet?</strong><div><button data-action="forest-model" data-col="2" data-value="-1" aria-label="Rote Beobachtungen verringern" ${solved || state[2] === 0 ? "disabled" : ""}>−</button><output>${state[2]}</output><button data-action="forest-model" data-col="2" data-value="1" aria-label="Rote Beobachtungen erhöhen" ${solved || state[2] === e.draws ? "disabled" : ""}>+</button></div></div><fieldset><legend>Was folgt aus dem Beutelinhalt für die Chancen?</legend>${options("forest-experiment-conclude", 3, chances, solved)}</fieldset><fieldset><legend>Was weißt du über die nächste einzelne Ziehung?</legend>${options("forest-experiment-conclude", 4, ["Sie ist nicht sicher vorhersagbar; eine größere Chance ist keine Garantie.", "Nach diesen Versuchen muss jetzt Rot kommen.", "Die häufigere Farbe kommt ab jetzt bei jeder Ziehung."], solved)}</fieldset>` : ""}${solved ? "" : '<button data-action="forest-model-reset">Diesen Versuch von vorne beginnen</button>'}<p class="fine-print">Dein Modellversuch wird mit deinem Lernstand gespeichert. Du kannst später weiterzählen.</p></div>`;
+	) => {
+		const choices = labels.map((label, i) => ({ label, value: i + 1 }));
+		// Mix nearby authored seeds; semantic option values do not depend on position.
+		const next = random(
+			(Math.imul(e.seed, 0x85ebca6b) ^ Math.imul(col + 1, 0x9e3779b9) ^ 1) >>>
+				0,
+		);
+		for (let i = choices.length - 1; i > 0; i--) {
+			const j = Math.floor(next() * (i + 1));
+			[choices[i], choices[j]] = [choices[j], choices[i]];
+		}
+		return `<div class="answer-options">${choices.map(({ label, value }) => `<button data-action="${action}" data-col="${col}" data-value="${value}" aria-pressed="${state[col] === value}" ${disabled ? "disabled" : ""}>${html(label)}</button>`).join("")}</div>`;
+	};
+	return `<div class="world-workshop"><p>Im Beutel: <strong>${colouredBalls(current.red, current.blue)}</strong>. Alle Kugeln sind gleich groß und gleich gut zu greifen. Nach jeder Ziehung kommt die Kugel zurück; dann wird neu gemischt.</p>${e.previous ? `<p>Vergleich mit dem vorigen Versuch: ${colouredBalls(e.previous.red, e.previous.blue)}. Dort beobachtet: ${drawsFor({ ...e, ...e.previous }).reduce((s, n) => s + n, 0)}-mal Rot in ${e.draws} Ziehungen. ${current.red === e.previous.red && current.blue === e.previous.blue ? "Die Bedingungen sind noch gleich; stelle den neuen Beutelinhalt ein." : "Die Beutelbedingungen unterscheiden sich."}</p>` : ""}${e.variable ? `<div class="model-control"><strong>Beutel für diesen Vergleich einstellen: ${e.red} rote Kugeln, insgesamt ${e.variable.total}.</strong><div><button data-action="forest-experiment-change" data-value="-1" aria-label="Rote Kugeln im Beutel verringern" ${solved || state[1] > 0 || state[5] === 1 ? "disabled" : ""}>−</button><output>${state[5]} rot / ${e.variable.total - state[5]} blau</output><button data-action="forest-experiment-change" data-value="1" aria-label="Rote Kugeln im Beutel erhöhen" ${solved || state[1] > 0 || state[5] === e.variable.total - 1 ? "disabled" : ""}>+</button></div></div>` : ""}<fieldset><legend>Deine Vermutung vor dem Versuch</legend>${options("forest-experiment-predict", 0, chances, solved || state[1] > 0)}</fieldset><p>${state[1] > 0 ? "Deine anfängliche Vermutung bleibt für diesen Versuch festgehalten. Eine andere Beobachtung ist möglich; du darfst daraus lernen." : "Wähle eine Vermutung und starte dann den Versuch."}</p><button data-action="forest-experiment-draw" ${solved || state[0] === 0 || done || (e.variable && state[5] !== e.red) ? "disabled" : ""}>Eine Kugel ziehen und zurücklegen</button><p>Gezogen: ${state[1]} von ${e.draws}</p><ol class="draw-log" aria-live="polite">${log.map((n) => `<li class="${n ? "red-draw" : "blue-draw"}">${n ? "Rot" : "Blau"}</li>`).join("")}</ol>${done ? `<div class="model-control"><strong>Wie oft hast du Rot beobachtet?</strong><div><button data-action="forest-model" data-col="2" data-value="-1" aria-label="Rote Beobachtungen verringern" ${solved || state[2] === 0 ? "disabled" : ""}>−</button><output>${state[2]}</output><button data-action="forest-model" data-col="2" data-value="1" aria-label="Rote Beobachtungen erhöhen" ${solved || state[2] === e.draws ? "disabled" : ""}>+</button></div></div><fieldset><legend>Was folgt aus dem Beutelinhalt für die Chancen?</legend>${options("forest-experiment-conclude", 3, chances, solved)}</fieldset><fieldset><legend>Was weißt du über die nächste einzelne Ziehung?</legend>${options("forest-experiment-conclude", 4, ["Sie ist nicht sicher vorhersagbar; eine größere Chance ist keine Garantie.", "Nach diesen Versuchen muss jetzt Rot kommen.", "Die häufigere Farbe kommt ab jetzt bei jeder Ziehung."], solved)}</fieldset>` : ""}${solved || state[1] > 0 ? "" : '<button data-action="forest-model-reset">Diesen Versuch von vorne beginnen</button>'}<p class="fine-print">Dein Modellversuch wird mit deinem Lernstand gespeichert. Du kannst später weiterzählen.</p></div>`;
 }
 export function experimentMistake(m: Workshop, state: number[]): string {
 	const e = m.scene.experiment;

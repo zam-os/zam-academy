@@ -1,17 +1,10 @@
+import { escapeHtml as html } from "../html";
 import {
 	type CombinationModel,
 	combinationLabel,
 	combinationTuple,
 } from "./combinations";
 
-const html = (s: string) =>
-	s.replace(
-		/[&<>"']/g,
-		(c) =>
-			({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[
-				c
-			] ?? c,
-	);
 export function combinationBoard(
 	model: CombinationModel,
 	choice: readonly number[] | null,

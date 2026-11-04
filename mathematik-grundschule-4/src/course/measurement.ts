@@ -1,4 +1,5 @@
 import { random } from "../practice/tasks";
+import { format } from "../math/place-value";
 import type { InvestigationField } from "./investigations";
 import { quantityText } from "./quantity";
 import type { ForestTask } from "./tasks";
@@ -73,8 +74,8 @@ export function measureTask(
 				["Anfang", "Ende"],
 				[
 					[
-						transfer ? `${start} mm` : "0 mm",
-						transfer ? `${end} mm` : "am Lineal ablesen",
+						transfer ? `${format(start)} mm` : "0 mm",
+						transfer ? `${format(end)} mm` : "am Lineal ablesen",
 					],
 				],
 				[
@@ -109,7 +110,7 @@ export function measureTask(
 							]),
 				],
 				"Zwischen zwei cm-Strichen liegen zehn mm-Abschnitte. Bei verschobenem Anfang rechnest du Ende − Anfang.",
-				`${end} mm − ${start} mm = ${length} mm = ${Math.floor(length / 10)} cm ${length % 10} mm.`,
+				`${format(end)} mm − ${format(start)} mm = ${format(length)} mm = ${format(Math.floor(length / 10))} cm ${length % 10} mm.`,
 				{ kind: "ruler", values: [start, end] },
 			);
 		const pieces = int(3, 8),
@@ -118,11 +119,11 @@ export function measureTask(
 			total = pieces * each + spare;
 		return worksheet(
 			3,
-			`Milo braucht ${pieces} Bänder von je ${each} cm${transfer ? ` und ${spare} cm Reserve` : ""}. Plane die Gesamtlänge.`,
+			`Milo braucht ${pieces} Bänder von je ${format(each)} cm${transfer ? ` und ${format(spare)} cm Reserve` : ""}. Plane die Gesamtlänge.`,
 			["ribbon", pieces, each, spare],
 			"Bänder zuschneiden",
 			["Anzahl", "Länge je Band", "Reserve"],
-			[[String(pieces), `${each} cm`, `${spare} cm`]],
+			[[String(pieces), `${format(each)} cm`, `${format(spare)} cm`]],
 			[
 				num(
 					"Benötigte cm",
@@ -137,7 +138,7 @@ export function measureTask(
 				),
 			],
 			"Bringe alle Längen in dieselbe Einheit. Prüfe, ob das Ergebnis für mehrere Bänder größer als eine Einzellänge ist.",
-			`${pieces} · ${each} cm + ${spare} cm = ${total} cm = ${quantityText(total, { scale: 100 })} m.`,
+			`${pieces} · ${format(each)} cm + ${format(spare)} cm = ${format(total)} cm = ${quantityText(total, { scale: 100 })} m.`,
 		);
 	}
 	if (id === "masse-fassungsvermoegen") {
@@ -154,7 +155,7 @@ export function measureTask(
 				["mass", kg, g, extra],
 				"Massen zusammenfassen",
 				["Inhalt", "Kiste"],
-				[[`${kg} kg ${g} g`, `${extra} g`]],
+				[[`${kg} kg ${format(g)} g`, `${format(extra)} g`]],
 				[
 					num(
 						"Zusammen in g",
@@ -169,7 +170,7 @@ export function measureTask(
 					),
 				],
 				"Masse und Fassungsvermögen sind verschiedene Größen. Hier passt die Waage.",
-				`${kg * 1000} g + ${g} g + ${extra} g = ${total} g = ${Math.floor(total / 1000)} kg ${total % 1000} g.`,
+				`${format(kg * 1000)} g + ${format(g)} g + ${format(extra)} g = ${format(total)} g = ${Math.floor(total / 1000)} kg ${total % 1000} g.`,
 			);
 		}
 		if (goal === 2) {
@@ -180,16 +181,16 @@ export function measureTask(
 			return worksheet(
 				2,
 				transfer
-					? `Aus ${available} ml Saft werden ${count} Becher gefüllt. Jeder fasst ${cup} ml. Was bleibt?`
-					: `Fülle ${count} Becher mit je ${cup} ml. Wie viel Saft brauchst du?`,
+					? `Aus ${format(available)} ml Saft werden ${count} Becher gefüllt. Jeder fasst ${format(cup)} ml. Was bleibt?`
+					: `Fülle ${count} Becher mit je ${format(cup)} ml. Wie viel Saft brauchst du?`,
 				["capacity", cup, count, available],
 				"Ausschank",
 				["Becher", "Je Becher", "Vorrat"],
 				[
 					[
 						String(count),
-						`${cup} ml`,
-						transfer ? `${available} ml` : "gesucht",
+						`${format(cup)} ml`,
+						transfer ? `${format(available)} ml` : "gesucht",
 					],
 				],
 				[
@@ -216,7 +217,7 @@ export function measureTask(
 							]),
 				],
 				"Lies den Messbecher auf Augenhöhe. Die Einheit ml beschreibt den Inhalt, nicht die Masse.",
-				`${count} · ${cup} ml = ${total} ml.${transfer ? ` ${available} ml − ${total} ml = ${available - total} ml bleiben.` : ` Das sind ${Math.floor(total / 1000)} l ${total % 1000} ml.`}`,
+				`${count} · ${format(cup)} ml = ${format(total)} ml.${transfer ? ` ${format(available)} ml − ${format(total)} ml = ${format(available - total)} ml bleiben.` : ` Das sind ${Math.floor(total / 1000)} l ${total % 1000} ml.`}`,
 			);
 		}
 		const denominator = [2, 4][int(0, 1)],
@@ -253,7 +254,7 @@ export function measureTask(
 					: []),
 			],
 			"Ein Viertel heißt: in vier gleich große Teile teilen. Drei Viertel sind drei davon.",
-			`${liters} l = ${liters * 1000} ml; ein Teil hat ${(liters * 1000) / denominator} ml. ${parts} Teil(e) ergeben ${ml} ml.`,
+			`${liters} l = ${format(liters * 1000)} ml; ein Teil hat ${format((liters * 1000) / denominator)} ml. ${parts} Teil(e) ergeben ${format(ml)} ml.`,
 		);
 	}
 	if (id === "uhrzeit-zeitspannen") {
@@ -289,7 +290,7 @@ export function measureTask(
 					),
 				],
 				"Die Analoguhr zeigt 12 Stunden. Der Tagesabschnitt entscheidet zwischen zum Beispiel 3 und 15 Uhr.",
-				`Es ist ${clock(start)} Uhr. Seit ${Math.floor(start / 60)} Uhr sind ${start % 60} min vergangen.`,
+				`Es ist ${clock(start)} Uhr. Seit ${Math.floor(start / 60)} Uhr sind ${start % 60} min vergangen.${transfer ? ` Bis zur nächsten vollen Stunde: 60 min − ${start % 60} min = ${60 - (start % 60)} min.` : ""}`,
 				{ kind: "clock", values: [start] },
 			);
 		if (goal === 2) {
@@ -368,7 +369,7 @@ export function measureTask(
 				["money", euros, cents],
 				"Gleicher Wert, andere Schreibweise",
 				["Euro", "Cent"],
-				[[`${euros} €`, `${cents} ct`]],
+				[[`${euros} €`, `${format(cents)} ct`]],
 				[
 					num("Zusammen in ct", price, "1 € enthält 100 ct."),
 					num(
@@ -393,7 +394,7 @@ export function measureTask(
 						: []),
 				],
 				"Beim Wechseln ändert sich die Anzahl der Münzen, aber nicht der Geldwert.",
-				`${euros} € ${cents} ct = ${price} ct = ${quantityText(price, { scale: 100 })} €.`,
+				`${euros} € ${format(cents)} ct = ${format(price)} ct = ${quantityText(price, { scale: 100 })} €.`,
 			);
 		if (goal === 2)
 			return worksheet(
@@ -424,15 +425,15 @@ export function measureTask(
 					),
 				],
 				"Berechne erst den ganzen Einkauf. Vergleiche erst danach mit dem bezahlten Betrag.",
-				`${count} · ${price} ct = ${total} ct. ${pay} ct − ${total} ct = ${pay - total} ct = ${quantityText(pay - total, { scale: 100 })} €.`,
+				`${count} · ${format(price)} ct = ${format(total)} ct. ${format(pay)} ct − ${format(total)} ct = ${format(pay - total)} ct = ${quantityText(pay - total, { scale: 100 })} €.`,
 			);
 		const base = int(2, 8),
 			unit = int(15, 95) * 5,
-			budget = (base + 1) * unit - (transfer ? 5 : 0),
-			needed = (base + 1) * unit;
+			needed = (base + 1) * unit,
+			budget = needed + (int(0, 1) ? 1 : -1) * (transfer ? 5 : 50);
 		return worksheet(
 			3,
-			`${base} gleiche Hefte kosten ${quantityText(base * unit, { scale: 100 })} €. Reicht ein Budget von ${quantityText(budget, { scale: 100 })} € für ${base + 1} Hefte?`,
+			`${base} gleiche Hefte kosten ${quantityText(base * unit, { scale: 100 })} €. Reicht ein Budget von ${quantityText(budget, { scale: 100 })} € für ${base + 1} Hefte?${transfer ? " Bestimme außerdem, wie viele ganze Hefte du höchstens bezahlen kannst." : ""}`,
 			["unit-price", base, unit, budget],
 			"Gleiche Hefte, gleicher Stückpreis",
 			["Anzahl", "Preis"],
@@ -457,9 +458,18 @@ export function measureTask(
 					],
 					"Vergleiche genaue Centbeträge, wenn das Budget knapp ist.",
 				),
+				...(transfer
+					? [
+							num(
+								"Höchstens bezahlbare ganze Hefte",
+								Math.floor(budget / unit),
+								"Teile das Budget durch den Stückpreis. Ein nicht vollständig bezahlbares Heft zählt nicht mit.",
+							),
+						]
+					: []),
 			],
 			"Bei gleichem Stückpreis kosten mehr Hefte entsprechend mehr. Für die Budgetentscheidung brauchst du den genauen Preis.",
-			`Ein Heft kostet ${unit} ct, ${base + 1} Hefte kosten ${needed} ct. Das Budget beträgt ${budget} ct; ${budget >= needed ? "es reicht" : "es fehlen 5 ct"}.`,
+			`Ein Heft kostet ${format(unit)} ct, ${base + 1} Hefte kosten ${format(needed)} ct. Das Budget beträgt ${format(budget)} ct; ${budget >= needed ? "es reicht" : `es fehlen ${format(needed - budget)} ct`}.${transfer ? ` Höchstens ${Math.floor(budget / unit)} ganze Hefte sind bezahlbar.` : ""}`,
 		);
 	}
 	if (id === "einheiten-wechseln") {
@@ -476,7 +486,7 @@ export function measureTask(
 		return worksheet(
 			goal,
 			transfer
-				? `Ein Vorrat von ${total} ${pair.small} wird in ${portions} gleich große Portionen aufgeteilt. Zuerst soll er in großen und kleinen Einheiten notiert werden.`
+				? `Ein Vorrat von ${format(total)} ${pair.small} wird in ${portions} gleich große Portionen aufgeteilt. Zuerst soll er in großen und kleinen Einheiten notiert werden.`
 				: `Schreibe ${large} ${pair.large} ${small} ${pair.small} in der kleineren Einheit.`,
 			["unit-conversion", pair.large, total],
 			"Einheiten gehören zum Größenbereich",
@@ -484,7 +494,7 @@ export function measureTask(
 			[
 				[
 					transfer
-						? `${total} ${pair.small}`
+						? `${format(total)} ${pair.small}`
 						: `${large} ${pair.large} ${small} ${pair.small}`,
 					`1 ${pair.large} = ${pair.factor} ${pair.small}`,
 				],
@@ -525,20 +535,21 @@ export function measureTask(
 					: []),
 			],
 			"Länge, Masse und Inhalt nicht mischen. Hier gilt jeweils der angegebene Tausenderschritt; Zeit und Geld haben andere Schritte.",
-			`${total} ${pair.small} = ${large} ${pair.large} ${small} ${pair.small}. Die Größe bleibt beim Einheitenwechsel gleich.`,
+			`${format(total)} ${pair.small} = ${large} ${pair.large} ${small} ${pair.small}. Die Größe bleibt beim Einheitenwechsel gleich.`,
 		);
 	}
 	const count = int(4, 12),
 		reference = int(12, 28),
-		estimate = count * reference;
+		estimate = count * reference,
+		gap = transfer ? int(10, 40) : 0;
 	if (goal === 1)
 		return worksheet(
 			1,
-			`Eine Bank ist ungefähr ${count} Vergleichsstücke lang. Ein Stück ist ungefähr ${reference} cm lang. Berechne den Rechenwert aus diesen ungefähren Angaben, ohne weiter zu runden. Das Ergebnis bleibt eine Schätzung.`,
+			`Eine Bank ist ungefähr ${count} Vergleichsstücke lang. Ein Stück ist ungefähr ${format(reference)} cm lang. Berechne den Rechenwert aus diesen ungefähren Angaben, ohne weiter zu runden. Das Ergebnis bleibt eine Schätzung.${transfer ? ` Zwei solche Bänke stehen hintereinander mit ungefähr ${format(gap)} cm Abstand. Plane auch ihre gesamte Länge mit Zwischenraum.` : ""}`,
 			["estimate-reference", count, reference],
 			"Schätzen mit einer Bezugsgröße",
 			["Anzahl ungefähr", "Länge je Stück ungefähr"],
-			[[String(count), `${reference} cm`]],
+			[[String(count), `${format(reference)} cm`]],
 			[
 				num(
 					"Rechenwert in cm (noch nicht runden)",
@@ -554,9 +565,18 @@ export function measureTask(
 					],
 					"Ein Ergebnis aus ungefähren Angaben bleibt ungefähr.",
 				),
+				...(transfer
+					? [
+							num(
+								"Zwei Bänke mit Zwischenraum in cm (Rechenwert)",
+								2 * estimate + gap,
+								"Zweimal die geschätzte Banklänge plus Zwischenraum. Runde den Rechenwert hier nicht weiter.",
+							),
+						]
+					: []),
 			],
 			"Eine passende Bezugsgröße macht eine Schätzung nachvollziehbar. Für genaues Zuschneiden müsstest du messen.",
-			`Ungefähr ${count} · ${reference} cm = ungefähr ${estimate} cm. Das ist keine gemessene Länge.`,
+			`Ungefähr ${count} · ${format(reference)} cm = ungefähr ${format(estimate)} cm. Das ist keine gemessene Länge.${transfer ? ` Zwei Bänke mit Zwischenraum: 2 · ${format(estimate)} cm + ${format(gap)} cm = ungefähr ${format(2 * estimate + gap)} cm.` : ""}`,
 			{ kind: "estimate", values: [count, reference], labels: ["cm"] },
 		);
 	if (goal === 2) {
@@ -566,11 +586,11 @@ export function measureTask(
 			bottles = Math.ceil(total / 1000);
 		return worksheet(
 			2,
-			`${people} Kinder bekommen je ${per} ml Wasser. Wasser gibt es in vollen 1-l-Flaschen. Wie viele Flaschen reichen mindestens?`,
+			`${people} Kinder bekommen je ${format(per)} ml Wasser. Wasser gibt es in vollen 1-l-Flaschen. Wie viele Flaschen reichen mindestens?`,
 			["water-plan", people, per],
 			"Trinkpause planen",
 			["Kinder", "Je Kind", "Je Flasche"],
-			[[String(people), `${per} ml`, "1 000 ml"]],
+			[[String(people), `${format(per)} ml`, "1 000 ml"]],
 			[
 				num("Benötigte ml", total, "Anzahl mal Menge je Kind."),
 				num(
@@ -585,15 +605,15 @@ export function measureTask(
 				),
 			],
 			"Eine Planung darf Reserven enthalten. Runde hier nach oben, damit niemand zu wenig bekommt.",
-			`${people} · ${per} ml = ${total} ml. ${bottles} Flaschen enthalten ${bottles * 1000} ml; ${bottles * 1000 - total} ml bleiben.`,
+			`${people} · ${format(per)} ml = ${format(total)} ml. ${bottles} Flaschen enthalten ${format(bottles * 1000)} ml; ${format(bottles * 1000 - total)} ml bleiben.`,
 		);
 	}
 	const n = int(3, 8),
 		price = int(11, 99) * 5,
-		budget = transfer ? n * price - 5 : n * price + 50;
+		budget = n * price + (int(0, 1) ? 1 : -1) * (transfer ? 5 : 50);
 	return worksheet(
 		3,
-		`${n} Päckchen kosten je ${quantityText(price, { scale: 100 })} €. Das Budget beträgt ${quantityText(budget, { scale: 100 })} €. Entscheide mit einer passenden Rechnung.`,
+		`${n} Päckchen kosten je ${quantityText(price, { scale: 100 })} €. Das Budget beträgt ${quantityText(budget, { scale: 100 })} €. Entscheide mit einer passenden Rechnung.${transfer ? " Plane auch die höchstens bezahlbare Anzahl ganzer Päckchen." : ""}`,
 		["estimate-exact", n, price, budget],
 		"Knappes Budget",
 		["Anzahl", "Einzelpreis", "Budget"],
@@ -629,9 +649,18 @@ export function measureTask(
 				],
 				"Vergleiche den Gesamtpreis mit dem Budget.",
 			),
+			...(transfer
+				? [
+						num(
+							"Höchstens bezahlbare ganze Päckchen",
+							Math.floor(budget / price),
+							"Nimm nur vollständig bezahlbare Päckchen mit. Prüfe ihre Kosten gegen das Budget.",
+						),
+					]
+				: []),
 		],
 		"Überschlagen ist gut für die Größenordnung. Eine knappe Kaufentscheidung braucht genaue Beträge.",
-		`${n} · ${price} ct = ${n * price} ct. Das Budget ${budget} ct ${budget >= n * price ? "reicht" : "reicht nicht"}.`,
+		`${n} · ${format(price)} ct = ${format(n * price)} ct. Das Budget ${format(budget)} ct ${budget >= n * price ? "reicht" : "reicht nicht"}.${transfer ? ` Höchstens ${Math.floor(budget / price)} ganze Päckchen sind bezahlbar.` : ""}`,
 	);
 }
 function model(
@@ -663,7 +692,7 @@ export function measureLab(id: MeasureId, index: number): ForestTask {
 			length = target[0] * 10 + target[1];
 		return model(
 			goal,
-			`Baue ein Band von ${target[0]} cm ${target[1]} mm. Sein Anfang liegt bei ${start} mm.`,
+			`Baue ein Band von ${format(target[0])} cm ${format(target[1])} mm. Sein Anfang liegt bei ${format(start)} mm.`,
 			{
 				identity: ["ruler-build", start, length],
 				scene: { kind: "ruler", values: [start] },
@@ -674,7 +703,7 @@ export function measureLab(id: MeasureId, index: number): ForestTask {
 				target,
 			},
 			"Ein cm enthält 10 mm. Der Anfangswert zählt nicht zur Länge.",
-			`Das Band ist ${length} mm lang. Anfang ${start} mm, Ende ${start + length} mm: ${start + length} − ${start} = ${length}.`,
+			`Das Band ist ${format(length)} mm lang. Anfang ${format(start)} mm, Ende ${format(start + length)} mm: ${start + length} − ${start} = ${length}.`,
 		);
 	}
 	if (id === "uhrzeit-zeitspannen") {
@@ -727,7 +756,7 @@ export function measureLab(id: MeasureId, index: number): ForestTask {
 				target,
 			},
 			"Zähle zuerst Euro, dann Cent. 100 ct kannst du gegen 1 € wechseln.",
-			`${total} ct = ${quantityText(total, { scale: 100 })} €. Verschiedene Münzlisten können denselben Wert haben.`,
+			`${format(total)} ct = ${quantityText(total, { scale: 100 })} €. Verschiedene Münzlisten können denselben Wert haben.`,
 		);
 	}
 	if (id === "masse-fassungsvermoegen") {
@@ -738,7 +767,7 @@ export function measureLab(id: MeasureId, index: number): ForestTask {
 			goal,
 			index === 0
 				? "Lege Gewichte mit insgesamt 1 kg 300 g auf die Modellwaage."
-				: `Fülle den Modellbecher mit genau ${total} ml.`,
+				: `Fülle den Modellbecher mit genau ${format(total)} ml.`,
 			{
 				identity: ["measure-build", index, total],
 				scene: { kind: index === 0 ? "mass" : "capacity", values: [] },
@@ -754,7 +783,7 @@ export function measureLab(id: MeasureId, index: number): ForestTask {
 			"Die großen und kleinen Portionen zählen zusammen. 1 kg = 1 000 g; 1 l = 1 000 ml.",
 			index === 0
 				? "1 300 g = 1 kg 300 g. Eine echte Masse prüfst du mit einer Waage."
-				: `${total} ml wurden aus gleich großen Portionen zusammengesetzt. Ein Viertelliter sind 250 ml.`,
+				: `${format(total)} ml wurden aus gleich großen Portionen zusammengesetzt. Ein Viertelliter sind 250 ml.`,
 		);
 	}
 	if (id === "einheiten-wechseln") {
@@ -770,7 +799,7 @@ export function measureLab(id: MeasureId, index: number): ForestTask {
 			][index];
 		return model(
 			goal,
-			`Baue ${target[0] * 1000 + target[1]} ${labels[1]} aus ${labels[0]} und ${labels[1]}.`,
+			`Baue ${format(target[0] * 1000 + target[1])} ${labels[1]} aus ${labels[0]} und ${labels[1]}.`,
 			{
 				identity: ["units-build", ...labels, ...target],
 				scene: { kind: "units", values: [1000], labels },
@@ -781,7 +810,7 @@ export function measureLab(id: MeasureId, index: number): ForestTask {
 				target,
 			},
 			"Bündle zuerst volle Tausender. Der Rest ist kleiner als 1 000.",
-			`${target[0]} ${labels[0]} und ${target[1]} ${labels[1]} sind zusammen ${target[0] * 1000 + target[1]} ${labels[1]}.`,
+			`${target[0]} ${labels[0]} und ${target[1]} ${labels[1]} sind zusammen ${format(target[0] * 1000 + target[1])} ${labels[1]}.`,
 		);
 	}
 	if (index === 1)
@@ -804,7 +833,7 @@ export function measureLab(id: MeasureId, index: number): ForestTask {
 		count = [6, 4, 9][index];
 	return model(
 		goal,
-		`Eine Strecke wurde grob mit ${count * size} cm angegeben. Ein Vergleichsstück ist ungefähr ${size} cm lang. Lege die Anzahl, die zu diesen Rechenwerten passt, ohne weiter zu runden.`,
+		`Eine Strecke wurde grob mit ${format(count * size)} cm angegeben. Ein Vergleichsstück ist ungefähr ${format(size)} cm lang. Lege die Anzahl, die zu diesen Rechenwerten passt, ohne weiter zu runden.`,
 		{
 			identity: ["estimate-build", size, count],
 			scene: { kind: "estimate", values: [size], labels: ["cm"] },
@@ -812,7 +841,7 @@ export function measureLab(id: MeasureId, index: number): ForestTask {
 			target: [count],
 		},
 		"Lege gleich lange Stücke ohne Lücken und Überschneidungen aneinander. Es bleibt eine Schätzung.",
-		`${count} · ungefähr ${size} cm = ungefähr ${count * size} cm. Für ein genaues Ergebnis misst du mit einem echten Messgerät.`,
+		`${count} · ungefähr ${format(size)} cm = ungefähr ${format(count * size)} cm. Für ein genaues Ergebnis misst du mit einem echten Messgerät.`,
 	);
 }
 export function measureExit(

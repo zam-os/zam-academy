@@ -294,3 +294,41 @@ it("keeps every projected cube polygon inside the SVG including5-row buildings",
 			expect(y).toBeLessThanOrEqual(b[1] + b[3]);
 		}
 });
+it("transfers net repair, surface removal and an extra cube layer to new contexts", () => {
+	for (let seed = 0; seed < 100; seed++) {
+		for (const [id, goal] of [
+			["koerper-netze", 2],
+			["flaechen-vergleichen", 0],
+			["rauminhalte-wuerfel", 0],
+		] as const) {
+			const guided = need(shapeTask(id, 1, seed, goal).investigation),
+				task = shapeTask(id, 2, seed, goal),
+				board = need(task.investigation);
+			expect(board.fields.map((f) => f.label)).not.toEqual(
+				guided.fields.map((f) => f.label),
+			);
+			if (id === "koerper-netze") {
+				const sides = need(
+						task.prompt.match(/Rechteck mit Seiten (\d+) und (\d+)/),
+					)
+						.slice(1)
+						.map(Number),
+					chosen = board.fields[3].choices?.find(
+						(c) => c.value === board.fields[3].value,
+					);
+				expect(chosen?.label).toBe(
+					`${sides[0]} und ${sides[1]} Längeneinheiten.`,
+				);
+			} else if (id === "flaechen-vergleichen") {
+				const removed = Number(
+					need(task.prompt.match(/werden (\d+) Plättchen/))[1],
+				);
+				expect(board.fields[1].value + removed).toBe(board.fields[0].value);
+			} else {
+				expect(board.fields[2].value - board.fields[1].value).toBe(
+					board.fields[0].value,
+				);
+			}
+		}
+	}
+});

@@ -491,6 +491,11 @@ Verify existing held-cell update semantics and card scope before offering
 the extension; surface any need for staged enrolment as an explicit plan
 change rather than silently creating a whole-year due queue.
 
+Before publication, resolve the registry count contract: 36 selectable lessons
+currently map to 39 atoms because the original workshop has four atoms. The
+registry requires equal counts. Make an explicit contract decision while
+preserving IDs; do not relabel the learner experience to hide the mismatch.
+
 Verify that Academy cell precedence is now appropriate and that the new
 bindings cannot suppress import for another subject or grade. Prepare
 release diffs and a narrow ZAM sync after authorised Academy publication.

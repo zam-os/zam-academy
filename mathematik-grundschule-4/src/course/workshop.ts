@@ -1,3 +1,4 @@
+import { escapeHtml as html } from "../html";
 import {
 	type DataChart,
 	type ChanceExperiment,
@@ -49,14 +50,6 @@ export interface Workshop {
 	weights?: number[];
 	total?: number;
 }
-const html = (s: string) =>
-	s.replace(
-		/[&<>"']/g,
-		(c) =>
-			({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[
-				c
-			] ?? c,
-	);
 export const freshWorkshop = (m: Workshop) => m.controls.map((c) => c.start);
 export function validWorkshop(raw: unknown, m: Workshop): raw is number[] {
 	return (
@@ -191,5 +184,5 @@ export function workshopView(
 								? [total, m.scene.values[0] ?? 2000]
 								: [total],
 	};
-	return `<div class="world-workshop">${sceneView(scene)}${m.scene.kind === "clock" ? `<p>Deine Uhr: ${quantityText(state[0] * 60 + state[1], { clock: true })}</p>` : ""}${m.scene.geometry ? geometryControls(m, state, solved) : `<div class="model-controls">${m.controls.map((c, i) => `<div class="model-control"><strong>${html(c.label)}</strong><div><button data-action="forest-model" data-col="${i}" data-value="-1" aria-label="${html(c.label)} verringern" ${solved || state[i] === 0 ? "disabled" : ""}>−</button><output aria-live="polite">${state[i]}</output><button data-action="forest-model" data-col="${i}" data-value="1" aria-label="${html(c.label)} erhöhen" ${solved || state[i] === c.max ? "disabled" : ""}>+</button></div></div>`).join("")}</div>`}${solved ? "" : '<button class="text-button" data-action="forest-model-reset">Modell zurücksetzen</button>'}<p class="fine-print">Die Werkstatt ist angeleitet. Eine Messung mit echten Gegenständen kann die App nicht beobachten.</p></div>`;
+	return `<div class="world-workshop">${m.scene.geometry ? "<p><strong>Vorschau deiner Darstellung</strong> · Dieses Bild änderst du im Arbeitsgitter darunter.</p>" : ""}${sceneView(scene)}${m.scene.kind === "clock" ? `<p>Deine Uhr: ${quantityText(state[0] * 60 + state[1], { clock: true })}</p>` : ""}${m.scene.geometry ? `<p><strong>Hier bearbeiten: dein Arbeitsgitter</strong></p>${geometryControls(m, state, solved)}` : `<div class="model-controls">${m.controls.map((c, i) => `<div class="model-control"><strong>${html(c.label)}</strong><div><button data-action="forest-model" data-col="${i}" data-value="-1" aria-label="${html(c.label)} verringern" ${solved || state[i] === 0 ? "disabled" : ""}>−</button><output aria-live="polite">${state[i]}</output><button data-action="forest-model" data-col="${i}" data-value="1" aria-label="${html(c.label)} erhöhen" ${solved || state[i] === c.max ? "disabled" : ""}>+</button></div></div>`).join("")}</div>`}${solved ? "" : '<button class="text-button" data-action="forest-model-reset">Modell zurücksetzen</button>'}<p class="fine-print">Die Werkstatt ist angeleitet. Eine Messung mit echten Gegenständen kann die App nicht beobachten.</p></div>`;
 }

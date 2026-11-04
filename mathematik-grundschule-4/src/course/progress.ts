@@ -1,10 +1,7 @@
 import { finalFamily } from "./data-and-expeditions";
-import { isFinalLesson } from "./worlds";
 import { shapeFamily, expandShapeFamily } from "./geometry";
-import { isShape } from "./worlds";
 import { measureFamily } from "./measurement";
-import { isMeasure } from "./worlds";
-import { isWorldLesson } from "./worlds";
+import { isFinalLesson, isShape, isMeasure, isWorldLesson } from "./worlds";
 import { validWorkshop } from "./workshop";
 import { ulid } from "../id";
 import {
@@ -453,30 +450,26 @@ export function recordForest(
 		signature =
 			worldSignature(p.lesson, task, answer) ??
 			JSON.stringify(
-				isMeasure(p.lesson)
-					? ["measure", ...measureFamily(task)]
-					: task.model
-						? ["model", ...task.model.identity]
-						: task.combination
-							? ["combinations", combinationIdentity(task.combination)]
-							: task.divisorTotal
-								? ["divisors-1-to-10", task.divisorTotal]
-								: task.investigation
-									? ["investigation", ...task.investigation.identity]
-									: task.calculation
-										? calculationFamily(task.calculation)
-										: [
-												task.kind,
-												task.prompt,
-												task.kind === "order" || task.kind === "parts"
-													? [...(task.numbers ?? [])].sort((a, b) => a - b)
-													: task.numbers,
-												task.line,
-												task.whole,
-												task.choices
-													? [...task.choices].sort((a, b) => a.value - b.value)
-													: undefined,
-											],
+				task.combination
+					? ["combinations", combinationIdentity(task.combination)]
+					: task.divisorTotal
+						? ["divisors-1-to-10", task.divisorTotal]
+						: task.investigation
+							? ["investigation", ...task.investigation.identity]
+							: task.calculation
+								? calculationFamily(task.calculation)
+								: [
+										task.kind,
+										task.prompt,
+										task.kind === "order" || task.kind === "parts"
+											? [...(task.numbers ?? [])].sort((a, b) => a - b)
+											: task.numbers,
+										task.line,
+										task.whole,
+										task.choices
+											? [...task.choices].sort((a, b) => a.value - b.value)
+											: undefined,
+									],
 			);
 	const first =
 		!p.attempts.some((a) => a.key === key) &&

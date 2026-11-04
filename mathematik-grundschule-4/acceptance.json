@@ -275,6 +275,13 @@
 			"status": "passed",
 			"checked": "2026-11-04",
 			"details": "404 isolated native assertions passed, including all measurement/geometry/data/expedition journeys. Built six final lesson starts inspected at 320 px without horizontal body overflow. Manually constructed a chart; three revealed observations and entered counts resumed after reload. Chance trial resumed its original prediction and exact draw prefix; actual twelve draws preceded assisted analysis, retaining the initial wrong guess. Changing bag composition before a second trial reset its guess and locked after drawing. Saved prediction has a visible selected marker, including disabled dark-mode controls. Opened source tools and verified whole-number travel answers; desktop light and phone dark inspected. User preview/progress at localhost:5231 was untouched. Physical touch and direct file startup remain pending."
+		},
+		{
+			"surface": "Built app at separate 127.0.0.1:5235; native harness on 127.0.0.1:5234",
+			"check": "PR #80 contrast, experiment reset, option semantics and geometry editing",
+			"status": "passed",
+			"checked": "2026-11-04",
+			"details": "404 native assertions passed with a captured stale-reset action unable to erase the prediction or drawn prefix. Production chart labels were visibly readable in dark theme; computed SVG text fill equals ink rgb(242,234,251) for chart/ruler/clock/mass/capacity. At 320 px inspected charts, models, trial logs and net controls had no body overflow. Trial reload retained four draws and the initial guess, with no reset offered; draw markers stayed inside their boxes. Enter completed the missing net square, and static ornament aria labels named a selected circle. Preview/editable grids were labelled. User preview/progress at localhost:5231 was untouched."
 		}
 	],
 	"remaining": [
@@ -287,10 +294,10 @@
 	],
 	"checked": "2026-11-03",
 	"automated_checks": {
-		"app": "npm ci --offline, npm run typecheck, npm test (144 tests), npm run package:zip, npm run verify:release and external Biome format/lint passed. No dependency changes.",
+		"app": "npm ci --offline, npm run typecheck, npm test (148 tests), npm run package:zip, npm run verify:release and external Biome format/lint passed. No dependency changes.",
 		"catalog": "node --test scripts/build-catalog.test.mjs scripts/academy-registry.test.mjs: 48 checks passed. This local-only draft remains excluded.",
-		"cell": "39 atoms, 146 items, version 2026.11.12. Independent parsed-JSON check preserves prior 33 atoms/122 items; 185 unique atom/item IDs. All 38 cells and disposable install/enrol/recall/reinstall passed with CI-pinned zam-core 0.54.0. No official whole-grade binding or history transfer.",
-		"all_cells": "ZAM_CORE=<temporary zam-core 0.54.0 file URL> node scripts/validate-cells.mjs: all 38 Academy cells, including the newly merged German Grade 4 draft, validated in disposable libraries.",
+		"cell": "39 atoms, 146 items, version 2026.11.12. Independent parsed-JSON check preserves prior 33 atoms/122 items; 185 unique atom/item IDs. All 39 cells and disposable install/enrol/recall/reinstall passed with CI-pinned zam-core 0.54.0. No official whole-grade binding or history transfer.",
+		"all_cells": "ZAM_CORE=<temporary zam-core 0.54.0 file URL> node scripts/validate-cells.mjs: all 39 Academy cells validated after integration of PR #79. Earlier dated world records correctly describe the then-current 38 cells.",
 		"package": "npm run package:zip and npm run verify:release passed. npm run verify:release -- --complete returned the expected nonzero result for missing teacher review/media, final playback, direct-file startup, ZAM learner-UI recall and physical touch."
 	},
 	"offline_file_start": {
@@ -539,5 +546,28 @@
 			"Own mathematical questions, original representation design and Fermi assumptions remain prompted/manual curriculum gaps",
 			"Direct-file startup, actual media playback, ZAM learner-UI recall and physical touch acceptance pending"
 		]
+	},
+	"publication_registry_count": {
+		"status": "pending-before-publication",
+		"selectable_lessons": 36,
+		"atoms": 39,
+		"reason": "The original place-value workshop has four atoms; every other lesson has one. academy-registry currently requires published lesson counts to equal atom counts. Resolve this contract explicitly before local-only becomes ready; preserve existing IDs and do not disguise 36 selectable lessons as 39."
+	},
+	"pr80_review_follow_up": {
+		"checked": "2026-11-04",
+		"status": "verified",
+		"record": "../docs/grade-4-pr80-review-follow-up.md",
+		"reviews": [
+			"https://github.com/zam-os/zam-academy/pull/80#pullrequestreview-5764391409",
+			"https://github.com/zam-os/zam-academy/pull/80#issuecomment-6624653453",
+			"https://github.com/zam-os/zam-academy/pull/80#issuecomment-6624691002"
+		],
+		"unit_tests": 148,
+		"native_browser_assertions": 404,
+		"root_tests": 48,
+		"all_cells": 39,
+		"core_version": "0.54.0",
+		"independent_review": "No remaining implementation findings; 85 targeted tests, typecheck, diff checks and 4,000 independent arithmetic cases passed. All origin/main 18 atoms/62 cards are unchanged, with 185 unique IDs in the current 39/146 cell.",
+		"pending": "Remaining expected reviews have a one-time follow-up scheduled. Teacher/media, physical, field and publication-count acceptance remain pending."
 	}
 }

@@ -195,3 +195,51 @@ it("shows distinct3-l and4-l supply states on the configured8-l scale", () => {
 	expect(acceptsWorkshop(m, [3])).toBe(false);
 	expect(acceptsWorkshop(m, [4])).toBe(true);
 });
+it("requires both sufficient and insufficient budgets at each level and plans only affordable whole items", () => {
+	for (const id of ["geld-einkaufen", "schaetzen-sachprobleme"] as const)
+		for (const level of [1, 2] as const) {
+			const decisions = new Set<boolean>();
+			for (let seed = 0; seed < 200; seed++) {
+				const task = measureTask(id, level, seed, 2),
+					board = need(task.investigation),
+					data = board.identity.map(Number),
+					price = data[2],
+					budget = data[3],
+					needed = (id === "geld-einkaufen" ? data[1] + 1 : data[1]) * price;
+				decisions.add(budget >= needed);
+				expect(
+					board.fields[2].choices
+						?.find((c) => c.value === board.fields[2].value)
+						?.label.startsWith("Ja"),
+				).toBe(budget >= needed);
+				if (level === 2) {
+					const count = board.fields[3].value;
+					expect(count * price).toBeLessThanOrEqual(budget);
+					expect((count + 1) * price).toBeGreaterThan(budget);
+				}
+			}
+			expect([...decisions].sort()).toEqual([false, true]);
+		}
+});
+it("adds a real transfer step to reference estimates and explains the time remaining to the next full hour", () => {
+	for (let seed = 0; seed < 100; seed++) {
+		const guided = need(
+				measureTask("schaetzen-sachprobleme", 1, seed, 0).investigation,
+			),
+			transfer = measureTask("schaetzen-sachprobleme", 2, seed, 0),
+			board = need(transfer.investigation);
+		expect(board.fields.map((f) => f.label)).not.toEqual(
+			guided.fields.map((f) => f.label),
+		);
+		const gap = Number(
+			need(transfer.prompt.match(/ungefähr (\d+) cm Abstand/))[1],
+		);
+		expect(board.fields[2].value - 2 * board.fields[0].value).toBe(gap);
+		const clock = measureTask("uhrzeit-zeitspannen", 2, seed, 0),
+			time = need(clock.investigation).fields[0].value,
+			remaining = need(clock.investigation).fields[1].value;
+		expect((time + remaining) % 60).toBe(0);
+		expect(remaining).toBeGreaterThan(0);
+		expect(clock.explanation).toContain(`= ${remaining} min`);
+	}
+});

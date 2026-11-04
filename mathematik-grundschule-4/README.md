@@ -30,7 +30,10 @@ is included. See [the recording brief](docs/teacher-recording-brief.md),
 
 `publication.json` keeps this cell out of the public catalog. Phase 2 must
 coordinate explicit publication approval, the Pages app entry and this
-marker. Existing public apps retain their publication behaviour. No ZAM
+marker. Existing public apps retain their publication behaviour. The future
+registry count also needs an explicit decision: this draft has 36 selectable
+lessons and 39 atoms because the first workshop uses four atoms. The public
+registry currently requires those counts to agree; existing IDs stay intact. No ZAM
 bundled fixture or personal learning library was edited.
 
 ## Run and verify
