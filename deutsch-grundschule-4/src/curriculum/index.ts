@@ -32,7 +32,7 @@ export const STAGES: Stage[] = [
 		title: "Wörterschatz",
 		subtitle: "Der Grundwortschatz: Wörter sicher schreiben und merken",
 		icon: "💎",
-		greeting: "Hier liegt mein Schatz: Wörter, die du immer wieder brauchst. Jedes einzelne gehört bald dir!",
+		greeting: "Hier liegt mein Schatz: Wörter, die du immer wieder brauchst. Üben wir sie zusammen!",
 	},
 ];
 

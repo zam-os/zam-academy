@@ -4,8 +4,13 @@
 // Jahrgangsstufen 3 und 4“. tests/grundwortschatz.test.ts vergleicht jede Gruppe
 // wortgetreu mit tests/fixtures/official-grundwortschatz.json.
 //
+// Die Wortliste gehört dem ISB und fällt nicht unter die Apache-2.0-Lizenz des
+// Repositorys. Laut Nutzungsbedingungen des ISB ist eine kommerzielle Nutzung
+// nicht gestattet; das ISB ist stets als Quelle zu nennen. Die Falschschreibungen
+// und Übungssätze sind eigene Ergänzungen, nicht Teil des ISB-Materials.
+//
 // Schreibweise in `source`:
-//   Br{ie|i}f   richtig „Brief“, typischer Fehler „Brif“, Lückenwort „Br__f“
+//   Br{ie|i}f   richtig „Brief“, typischer Fehler „Brif“, Lückenwort „Br…f“
 //   Bo·den      Trennstelle am Zeilenende
 //   „, “ trennt Einträge, „ – “ die Formen eines Eintrags.
 
@@ -38,7 +43,7 @@ export type GroupId =
 
 export interface WordGroup {
 	id: GroupId;
-	/** Überschrift des ISB, kindgerecht nur dort gekürzt, wo sie es verlangt. */
+	/** Kindgerechte Überschrift nach der Gliederung des ISB. */
 	title: string;
 	/** Tipp, wie das Kind die Schreibung findet. */
 	rule: string;
@@ -50,7 +55,7 @@ export interface Word {
 	group: GroupId;
 	/** Typischer Fehler; fehlt bei Wörtern, die hier nur als Bezugsform stehen. */
 	wrong?: string;
-	/** Das Wort mit Unterstrichen an der schwierigen Stelle. */
+	/** Das Wort mit „…“ an der schwierigen Stelle; verrät die Buchstabenzahl nicht. */
 	masked?: string;
 	/** Trennstellen, z. B. Ge-schich-te; nur bei der Gruppe „silben“. */
 	hyphenated?: string;
@@ -103,14 +108,14 @@ export const WORD_GROUPS: WordGroup[] = [
 	{
 		id: "h",
 		title: "Wörter mit einem h zwischen den Silben",
-		rule: "Sprich das Wort in zwei Silben: blü-hen. Das h trennt die Silben, auch in der kurzen Form: Kuh, Kü-he.",
+		rule: "Sprich die lange Form in zwei Silben: blü-hen, Kü-he. Das h beginnt die zweite Silbe und bleibt auch in der kurzen Form: Kuh.",
 		source:
 			"blü{h|}en, dre{h|}en, ge{h|}en, Ku{h|} – Kü{h|}e, Schu{h|} – Schu{h|}e, se{h|}en, ste{h|}en, Ze{h|} – Ze{h|}en",
 	},
 	{
 		id: "verhaertung",
 		title: "Wörter, die du verlängerst",
-		rule: "Am Wortende klingt d wie t, g wie k und b wie p. Verlängere das Wort, dann hörst du den richtigen Laut.",
+		rule: "Am Wortende und vor t oder s klingt d wie t, g wie k und b wie p. Verlängere das Wort, dann hörst du den richtigen Laut.",
 		source:
 			"Aben{d|t} – Abende – aben{d|t}s, Ber{g|k} – Berge, erlauben – erlau{b|p}t, frem{d|t} – fremder, Gel{d|t} – Gelder, lieben – lie{b|p}t, liegen – lie{g|k}t, run{d|t} – runder, steigen – stei{g|k}t, werden – wir{d|t}",
 	},
@@ -124,7 +129,7 @@ export const WORD_GROUPS: WordGroup[] = [
 	{
 		id: "flexion",
 		title: "Gebeugte Wörter im Satz",
-		rule: "Lies den ganzen Satz. Frage nach: wem oder was? Die Endung hängt vom Satz ab.",
+		rule: "Lies den ganzen Satz. Oft hilft die Frage: Wem? Oder: Wen oder was? Die Form hängt vom Satz ab.",
 		source:
 			"am – an, dein – deinem – deinen, dem – den, dies – diesem – diesen, ein – einem – einen, euer – eurem – euren, ganz – ganzem – ganzen, ihm – ihn – ihnen, ihr – ihre – ihrem – ihren, im – in, jede – jedem – jeden, kein – keinem – keinen, mein – meinem – meinen, mich – mir, sein – seinem – seinen, seit, uns – unserem – unseren, vom – von, welche – welchem – welchen, wem – wen, zu – zum – zur",
 	},
@@ -137,7 +142,7 @@ export const WORD_GROUPS: WordGroup[] = [
 	},
 	{
 		id: "praeteritum",
-		title: "Verben in der Vergangenheit",
+		title: "Verben, die ihre Form ändern",
 		rule: "Diese Verben ändern im Präteritum ihren Selbstlaut. Achte darauf, ob er kurz oder lang klingt.",
 		source:
 			"bleiben – bl{ie|i}ben, essen – a{ß|ss}en, fallen – f{ie|i}len, geben – g{a|ah}ben, gehen – g{i|a}ngen, halten – h{ie|i}lten, heißen – hie{ß|ss}en, kommen – ka{m|mm}en, können – ko{nn|n}ten, lassen – lie{ß|s}en, laufen – l{ie|i}fen, lesen – liest – l{a|ah}sen, liegen – l{a|ah}gen, müssen – mu{ss|s}ten, rufen – r{ie|i}fen, scheinen – sch{ie|i}nen, schieben – sch{o|oh}ben, singen – s{a|u}ngen, sitzen – sa{ß|ss}en, schlafen – schl{ie|i}fen, schneiden – schni{tt|t}en, schreiben – schr{ie|i}ben, steigen – st{ie|i}gen, schwimmen – schwa{mm|m}en, tragen – tr{u|uh}gen, trinken – tr{a|u}nken, vergessen – verga{ß|ss}en, ziehen – z{o|oh}gen",
@@ -170,14 +175,14 @@ export const WORD_GROUPS: WordGroup[] = [
 	{
 		id: "y",
 		title: "Wort mit y",
-		rule: "Dieses Wort kommt aus dem Englischen. Du hörst ein i, schreibst aber y.",
+		rule: "Dieses Wort klingt englisch. Du hörst ein i, schreibst aber y.",
 		source: "Hand{y|i}",
 	},
 	{
 		id: "ks",
 		title: "Wörter mit dem Laut ks",
 		rule: "Der Laut ks hat verschiedene Schreibungen: chs, ks oder x. Merke dir jedes Wort.",
-		source: "Fu{chs|ks}, lin{ks|x}, Ta{x|ks}i, Te{x|ks}t, se{chs|ks}",
+		source: "Fu{chs|ks}, lin{ks|x}, Ta{x|ks}i, Te{x|ks}t, se{chs|gs}",
 	},
 	{
 		id: "zz",
@@ -212,7 +217,7 @@ export const WORD_GROUPS: WordGroup[] = [
 	{
 		id: "i",
 		title: "Wörter mit i statt ie",
-		rule: "Das i klingt lang, trotzdem steht kein ie. Merke dir diese Wörter.",
+		rule: "Das i klingt lang, an dieser Stelle steht aber nur i. Merke dir diese Wörter.",
 		source: "T{i|ie}ger, Masch{i|ie}ne, Fam{i|ie}lie",
 	},
 	{
@@ -236,9 +241,7 @@ function parseWord(raw: string, group: GroupId): Word {
 	if (raw.includes("·")) parsed.hyphenated = raw.replaceAll("·", "-");
 	if (raw.includes("{")) {
 		parsed.wrong = raw.replace(NOTATION, "$2");
-		parsed.masked = raw.replace(NOTATION, (_, right: string) =>
-			"_".repeat([...right].length),
-		);
+		parsed.masked = raw.replace(NOTATION, "…");
 	}
 	return parsed;
 }
@@ -274,7 +277,7 @@ export const groupOf = (id: GroupId): WordGroup => {
 	return group;
 };
 
-/** Für die Wortliste in der Lektion: Überschrift und Wörter wie beim ISB. */
+/** Für die Wortliste in der Lektion: Überschrift und Wörter im Wortlaut des ISB. */
 export const wordbook = (ids: readonly GroupId[]) =>
 	ids.map((id) => {
 		const group = groupOf(id);

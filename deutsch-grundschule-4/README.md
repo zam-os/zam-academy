@@ -57,6 +57,10 @@ Textverständnis, eigene Texte und Sprechen. Der verbindliche Grundwortschatz
 3/4 des ISB steht vollständig in der Station „Wörterschatz“. Siehe
 [Abgleich und Planung](../docs/deutsch-grundschule-4-coverage.md).
 
+Die Wörter der Station „Wörterschatz“ stammen vom ISB München und fallen nicht
+unter die Lizenz dieses Pakets: Eine kommerzielle Nutzung ist nicht gestattet,
+das ISB ist stets als Quelle zu nennen (siehe Abgleich und Planung).
+
 Lehrervideos enthält das Paket bewusst nicht; sie folgen in einem eigenen
 geprüften Schritt.
 

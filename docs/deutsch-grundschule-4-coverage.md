@@ -91,14 +91,25 @@ des ISB München, gelesen am 4. November 2026 (SHA-256 des PDF in
 `deutsch-grundschule-4/tests/fixtures/official-grundwortschatz.json`). Laut
 [Nutzungsbedingungen](https://www.lehrplanplus.bayern.de/seite/nutzungsbedingungen)
 sind nicht-kommerzielle Vervielfältigung und Bearbeitung für schulische Zwecke
-erlaubt, das ISB ist stets als Quelle zu nennen. Die App nennt es in jeder
-Wortliste und in der Quellenliste für Eltern.
+erlaubt, eine kommerzielle Nutzung ist nicht gestattet und das ISB ist stets als
+Quelle zu nennen. Die Bedingungen nennen als Beispiel Auszüge in eigenen
+Arbeitsblättern und äußern sich nicht ausdrücklich dazu, eine ganze Liste in einem
+öffentlichen digitalen Angebot bereitzustellen. Das Angebot richtet sich laut
+einer Fußnote an Lehrkräfte; vor einer Nutzung durch Schülerinnen und Schüler ist
+zu prüfen, ob sie zulässig ist. Die App nennt das ISB in jeder Wortliste und in
+der Quellenliste für Eltern. Die Liste fällt nicht unter die Apache-2.0-Lizenz des
+Repositorys. Thomas entscheidet, ob die Academy und ZAM als nicht-kommerziell
+gelten und ob das ISB schriftlich gefragt wird.
 
 Die Station „Wörterschatz“ folgt der Ordnung des ISB nach
 Rechtschreibprinzipien: Regeln (phonologisch und silbisch), Formen
 (morphologisch und grammatisch) und Merkwörter. Ein Test vergleicht jede Gruppe
-wortgetreu mit der Fixture; weitere Tests belegen, dass jedes Wort mit einer
-schwierigen Stelle auf Stufe 1 vorkommt und auf Stufe 2 getippt werden muss.
+wortgetreu mit der Fixture. Weitere Tests belegen, dass die Aufgaben jedes Wort
+mit einer schwierigen Stelle abfragen können. Das heißt nicht, dass jedes Kind
+jedes Wort übt: Die Aufgaben folgen einer festen Zufallsreihe, und nach drei
+richtigen Aufgaben je Stufe gilt eine Lektion als abgeschlossen. Einen Fortschritt
+je Wort gibt es nicht. Die vollständige Liste steht in den Lektionen zum Üben mit
+der Hand bereit.
 
 Die Falschschreibungen und Übungssätze sind eigene Vorschläge, nicht Teil des
 ISB-Materials; die Lehrkraft sollte sie mitprüfen. Geübt wird am Bildschirm. Das

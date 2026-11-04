@@ -26,9 +26,9 @@ function allTasks(lessonId: string, level: Level, runs = 4000): Task[] {
 	return Array.from({ length: runs }, (_, i) => makeTask(lesson.id, lesson.generators, level, i + 1));
 }
 
-/** The letters a masked word such as "Br__f" stands for. */
+/** Whether a word fits its gap, as in "Br…f". */
 const maskMatches = (masked: string, word: string): boolean =>
-	new RegExp(`^${masked.replaceAll("_", ".")}$`, "u").test(word);
+	new RegExp(`^${masked.replaceAll("…", ".+")}$`, "u").test(word);
 
 describe("Grundwortschatz: Abgleich mit dem ISB", () => {
 	it("keeps every group word for word", () => {
@@ -53,12 +53,13 @@ describe("Grundwortschatz: Abgleich mit dem ISB", () => {
 });
 
 describe("Grundwortschatz: Wortdaten", () => {
-	it("gives every marked word a real misspelling and a fitting gap", () => {
+	it("gives every marked word a different misspelling and a gap that hides the letter count", () => {
 		for (const g of WORD_GROUPS)
 			for (const w of wordsOfGroup(g)) {
 				if (!w.wrong || !w.masked) continue;
 				expect(w.wrong, w.word).not.toBe(w.word);
-				expect(w.masked, w.word).toContain("_");
+				expect(w.masked, w.word).toContain("…");
+				expect(w.masked, w.word).not.toContain("_");
 				expect(maskMatches(w.masked, w.word), `${w.masked} / ${w.word}`).toBe(true);
 			}
 	});
@@ -117,17 +118,57 @@ describe("Grundwortschatz: Aufgaben", () => {
 		expect(missing(["verhaertung", "umlaut", "kombination", "praeteritum"], LESSON_IDS[1])).toEqual([]);
 	});
 
-	it("uses every inflected form of the list in a sentence task", () => {
-		const shown = new Set(allTasks(LESSON_IDS[1], 1).flatMap((t) => (t.options ?? []).map((o) => o.toLowerCase())));
-		const missing = wordsIn(["flexion"]).filter((w) => !shown.has(w.word)).map((w) => w.word);
+	it("makes every inflected form of the list the right answer at least once", () => {
+		const right = new Set(allTasks(LESSON_IDS[1], 1).filter((t) => t.key.startsWith("satzwort:")).map((t) => t.accept[0].toLowerCase()));
+		const missing = wordsIn(["flexion"]).filter((w) => !right.has(w.word)).map((w) => w.word);
 		expect(missing).toEqual([]);
+	});
+
+	it("also makes the child type inflected forms and one-syllable words", () => {
+		const typed = allTasks(LESSON_IDS[1], 2).filter((t) => t.key.startsWith("satzform:"));
+		expect(new Set(typed.map((t) => t.accept[0])).size).toBeGreaterThan(15);
+		// The base form in brackets decides between meinem, seinem and deinem.
+		for (const t of typed) expect(t.material, t.key).toMatch(/\(\p{L}+\)$/u);
+		const written = new Set(allTasks(LESSON_IDS[0], 2).flatMap((t) => t.accept));
+		const whole = wordsIn(["silben"]).filter((w) => !w.hyphenated && !written.has(w.word)).map((w) => w.word);
+		expect(whole).toEqual([]);
+	});
+
+	it("always gives a typed gap a sentence, so that it has one meaning", () => {
+		for (const id of LESSON_IDS)
+			for (const t of allTasks(id, 2, 800)) {
+				if (!t.material?.includes("…")) continue;
+				expect(t.material.split(" ").length, t.key).toBeGreaterThan(2);
+				expect(t.material, t.key).not.toContain("_");
+			}
+	});
+
+	it("accepts the article, the feminine form and leaves the kaufen task unambiguous", () => {
+		const tasks = allTasks(LESSON_IDS[1], 2);
+		const wald = tasks.find((t) => t.accept[0] === "Wälder") as Task;
+		expect(checkAnswer(wald, "die Wälder").correct).toBe(true);
+		const sale = tasks.find((t) => t.accept[0] === "Verkäufer") as Task;
+		expect(sale.prompt).toContain("verkauft");
+		expect(checkAnswer(sale, "Verkäuferin").correct).toBe(true);
+		expect(checkAnswer(tasks.find((t) => t.accept[0] === "Bäcker") as Task, "Bäckerin").correct).toBe(true);
+	});
+
+	it("does not repeat the app's own prefix in a mistake hint", () => {
+		for (const id of LESSON_IDS)
+			for (const t of allTasks(id, 2, 800))
+				for (const hint of Object.values(t.mistakes ?? {})) expect(hint, t.key).not.toMatch(/^Noch nicht/);
+	});
+
+	it("gives every past form a sentence of its own", () => {
+		const past = allTasks(LESSON_IDS[1], 2).filter((t) => t.key.startsWith("praeteritum:"));
+		expect(new Set(past.map((t) => t.material)).size).toBe(wordsIn(["praeteritum"]).filter((w) => w.wrong).length);
 	});
 
 	it("keeps every gap in a sentence true to its answer", () => {
 		for (const id of LESSON_IDS)
 			for (const t of allTasks(id, 2, 800)) {
-				const gap = plain(t.material ?? "").match(/[\p{L}]*_[\p{L}_]*/u)?.[0];
-				if (!gap || t.key.startsWith("praeteritum")) continue;
+				const gap = plain(t.material ?? "").match(/[\p{L}]*…[\p{L}…]*/u)?.[0];
+				if (!gap) continue;
 				expect(maskMatches(gap, t.accept[0]), `${gap} / ${t.accept[0]}`).toBe(true);
 			}
 	});
@@ -135,7 +176,7 @@ describe("Grundwortschatz: Aufgaben", () => {
 	it("gives a targeted hint for the typical misspelling", () => {
 		for (const id of LESSON_IDS)
 			for (const t of allTasks(id, 2, 800)) {
-				if (t.key.startsWith("striche")) continue;
+				if (/^(striche|satzform|satzwort)/.test(t.key)) continue;
 				const word = WORD_GROUPS.flatMap(wordsOfGroup).find((w) => w.word === t.accept[0] && w.wrong);
 				if (word?.wrong) expect(checkAnswer(t, word.wrong).hint, `${t.key}: ${word.wrong}`).toBeTruthy();
 			}
