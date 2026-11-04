@@ -1,6 +1,6 @@
 # Deutsch 4 · Grundschule · Lehrplanabgleich und Planung
 
-Stand: 3. November 2026. Das neue Paket
+Stand: 4. November 2026. Das neue Paket
 [Tintos Wörterstadt](../deutsch-grundschule-4/) ist eine öffentliche Vorschau
 (`publication.json`: `preview`) und steht im Katalog und im Atlas. Die anderen Übertrittsfächer sind
 [Mathematik 4](../mathematik-grundschule-4/) und
@@ -44,8 +44,8 @@ Zur Abgrenzung gelesen:
 | 3 Schreiben (3.1–3.3) | 19 | 2 | 13 | 4 |
 | 4.1, 4.2 Verständigung, Sprachen | 4 | 0 | 4 | 0 |
 | 4.3 Sprachliche Strukturen | 15 | 15 | 0 | 0 |
-| 4.4 Richtig schreiben | 17 | 14 | 1 | 2 |
-| **Summe** | **116** | **31** | **44** | **41** |
+| 4.4 Richtig schreiben | 17 | 15 | 0 | 2 |
+| **Summe** | **116** | **32** | **43** | **41** |
 
 „In der App geübt“ heißt teilweise abgedeckt: geübt an vorgegebenen Wörtern
 und Sätzen, nicht in eigenen Texten. Die Zeilen in
@@ -79,24 +79,44 @@ trägt und alle 116 Texte wörtlich mit der Quelle übereinstimmen.
 | `ableiten` | 4.4.10, 4.4.16 |
 | `grossschreibung` | 4.4.11, 4.4.12, 4.4.14 |
 | `woerterbuch-fehlerdetektiv` | 3.2.11, 3.3.3, 4.4.3, 4.4.6, 4.4.14 |
+| `grundwortschatz-regeln` | 4.4.1 |
+| `grundwortschatz-formen` | 4.4.1 |
+| `grundwortschatz-merkwoerter` | 4.4.1 |
+
+## Grundwortschatz 3/4
+
+Quelle ist das Servicematerial
+[Grundwortschatz für die Jahrgangsstufen 3 und 4](https://www.lehrplanplus.bayern.de/serviceinformation/l43316)
+des ISB München, gelesen am 4. November 2026 (SHA-256 des PDF in
+`deutsch-grundschule-4/tests/fixtures/official-grundwortschatz.json`). Laut
+[Nutzungsbedingungen](https://www.lehrplanplus.bayern.de/seite/nutzungsbedingungen)
+sind nicht-kommerzielle Vervielfältigung und Bearbeitung für schulische Zwecke
+erlaubt, das ISB ist stets als Quelle zu nennen. Die App nennt es in jeder
+Wortliste und in der Quellenliste für Eltern.
+
+Die Station „Wörterschatz“ folgt der Ordnung des ISB nach
+Rechtschreibprinzipien: Regeln (phonologisch und silbisch), Formen
+(morphologisch und grammatisch) und Merkwörter. Ein Test vergleicht jede Gruppe
+wortgetreu mit der Fixture; weitere Tests belegen, dass jedes Wort mit einer
+schwierigen Stelle auf Stufe 1 vorkommt und auf Stufe 2 getippt werden muss.
+
+Die Falschschreibungen und Übungssätze sind eigene Vorschläge, nicht Teil des
+ISB-Materials; die Lehrkraft sollte sie mitprüfen. Geübt wird am Bildschirm. Das
+Schreiben mit der Hand, das Abschreiben und Diktate bleiben außerhalb der App.
 
 ## Offene Lücken und nächste Ausbaustufen
 
-1. **Grundwortschatz 3/4 (4.4.1).** Der verbindliche Wortschatz ist nicht
-   eingebunden. Er wäre die naheliegende nächste Übung, etwa als
-   Lernwörter-Training mit ZAM-Wiederholung.
-2. **Lesewerkstatt (2.1, 2.3, 2.4).** Sachtexte und Geschichten erschließen,
+1. **Lesewerkstatt (2.1, 2.3, 2.4).** Sachtexte und Geschichten erschließen,
    Informationen aus Tabellen entnehmen, Figuren und Handlung beschreiben.
    Braucht eigene, kindgerechte Texte.
-3. **Schreibwerkstatt (3.2, 3.3, 4.3.14).** Erzählen (Einleitung, Höhepunkt,
+2. **Schreibwerkstatt (3.2, 3.3, 4.3.14).** Erzählen (Einleitung, Höhepunkt,
    Schluss), Berichten (W-Fragen, Präteritum), Beschreiben und Begründen,
    jeweils mit Mustervergleich und Kriterien. Eigene Texte bewertet die App
    nicht automatisch.
-4. **4.1 und 4.2:** Wirkung sprachlicher Mittel, Mündlichkeit und
+3. **4.1 und 4.2:** Wirkung sprachlicher Mittel, Mündlichkeit und
    Schriftlichkeit, Sprachen im Umfeld.
-5. **Fachliche Freigabe** durch eine Grundschullehrkraft vor jeder
-   Veröffentlichung, danach die Registrierung der Grundschule im Atlas
-   gemeinsam mit Mathematik 4.
+4. **Fachliche Freigabe** durch eine Grundschullehrkraft und Lehrvideos. Bis
+   dahin bleibt das Paket eine Vorschau.
 
 Sprechen und Zuhören, Vorlesen, Handschrift, Abschreiben und
 Bibliotheksbesuche bleiben bewusst Praxis außerhalb der App.
