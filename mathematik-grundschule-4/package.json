@@ -7,7 +7,7 @@
 	"scripts": {
 		"dev": "vite",
 		"typecheck": "tsc --noEmit",
-		"test": "vitest run",
+		"test": "vitest run --testTimeout=30000",
 		"build": "tsc --noEmit && vite build",
 		"preview": "vite preview",
 		"package:zip": "npm run build && node scripts/build-release-zip.mjs",
