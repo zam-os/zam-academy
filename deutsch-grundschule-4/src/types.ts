@@ -2,7 +2,7 @@ export type Level = 1 | 2;
 
 /** One place in the Wörterstadt; each has its own accent colour. */
 export interface Stage {
-	id: "werkstatt" | "bahnhof" | "detektiv" | "woerterschatz";
+	id: "werkstatt" | "bahnhof" | "detektiv" | "woerterschatz" | "lesewerkstatt";
 	title: string;
 	subtitle: string;
 	icon: string;
@@ -23,6 +23,10 @@ export interface Source {
 export interface Task {
 	prompt: string;
 	material?: string;
+	/** A text to read; shown as plain paragraphs above the question. */
+	passage?: { title: string; paragraphs: string[] };
+	/** A table or simple bar chart to read. */
+	table?: { title: string; head: string[]; rows: string[][] };
 	kind: "choice" | "text";
 	/** Choice tasks: every option as shown. */
 	options?: string[];
