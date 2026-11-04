@@ -99,8 +99,8 @@ exponents and malformed or mixed dot/space groups remain invalid.
 
 
 - Lesson id: `stellenwerte-buendeln`; cell:
-  `zam-academy:mathematik-grundschule-4`. Public links are future source
-  addresses and do not indicate that this draft is already hosted.
+  `zam-academy:mathematik-grundschule-4`. Public links point to the hosted
+  preview.
 - `cell.json` is the sole recall-card source: thirty-nine atoms, one hundred forty-six German
   items (seventy-eight binary fast checks and sixty-eight synthesis tasks) with fixed ULIDs.
   Edit cards only in this file; there is no
@@ -116,9 +116,9 @@ exponents and malformed or mixed dot/space groups remain invalid.
 - Evidence records first responses separately from helped retries. The
   parent view uses stable task snapshots for dated examples, with canonical
   targets for build tasks; digit examples use grouped numerals.
-  The unpublished draft has no progress migration or compatibility layer.
-  The first release uses a fresh storage namespace and starts every learner
-  at zero; draft preview saves are not imported.
+  The first publication has no progress migration or compatibility layer. It
+  uses a fresh storage namespace and starts every learner at zero; saves from
+  local drafts are not imported.
   Local practice is never presented as ZAM review history or an FSRS score.
 - A versioned IndexedDB document commits mission completion and unique
   reward keys together. Concurrent tabs serialize writes. Reopening or

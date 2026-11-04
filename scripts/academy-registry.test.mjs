@@ -114,15 +114,17 @@ test("card counts match the cell", () => {
 });
 
 test("lesson counts match lesson-level atoms", () => {
-  // UML groups several lessons per atom, Mathematik 4 keeps several atoms in its
-  // first lesson; their own tests check these counts.
-  for (const p of pakete.filter(
-    (p) => !["uml", "mathematik-grundschule-4"].includes(p.app),
-  )) {
+  // UML groups several lessons per atom; its curriculum test checks this count.
+  for (const p of pakete.filter((p) => p.app !== "uml")) {
     const tile = JSON.parse(
       readFileSync(join(root, p.app, "cell.json"), "utf8"),
     );
-    assert.equal(p.lessons, tile.atoms.length, `${p.id}: lessons`);
+    // Mathematik 4's first lesson has four atoms, so count the cited lessons.
+    const count =
+      p.app === "mathematik-grundschule-4"
+        ? new Set(tile.atoms.map((a) => new URL(a.source_link).hash)).size
+        : tile.atoms.length;
+    assert.equal(p.lessons, count, `${p.id}: lessons`);
   }
 });
 
@@ -147,7 +149,13 @@ test("every app links back to the academy online and in an offline file", () => 
 
 test("a preview is published and marked in the registry, its app and the catalog", () => {
   const catalog = new Map(buildCatalog(root).cells.map((c) => [c.app, c]));
-  const pages = readFileSync(join(root, ".github/workflows/pages.yml"), "utf8");
+  const pagesLoop = readFileSync(
+    join(root, ".github/workflows/pages.yml"),
+    "utf8",
+  ).match(/^\s*for app in (.+); do$/m)[1];
+  const published = pagesLoop.split(" ");
+  const notice =
+    '<p class="zam-preview-notice" role="note"><strong>Vorschau:</strong> Noch nicht von einer Lehrkraft geprüft, Lehrvideos fehlen noch. Inhalte können sich ändern.</p>';
   for (const p of pakete) {
     const preview = publicationStatus(join(root, p.app)) === "preview";
     assert.equal(Boolean(p.preview), preview, `${p.app}: registry and marker`);
@@ -157,15 +165,24 @@ test("a preview is published and marked in the registry, its app and the catalog
       `${p.app}: catalog`,
     );
     assert.equal(
-      readFileSync(join(root, p.app, "index.html"), "utf8").includes(
-        'class="zam-preview-notice"',
-      ),
+      readFileSync(join(root, p.app, "index.html"), "utf8")
+        .replace(/<!--[\s\S]*?-->/g, "")
+        .includes(notice),
       preview,
       `${p.app}: visible notice`,
     );
-    if (preview) assert.match(pages, new RegExp(`\\b${p.app}\\b`));
+    if (preview) assert.ok(published.includes(p.app), `${p.app}: Pages`);
   }
-  assert.ok(html.includes("n.pkg.preview"));
+  // Every place in the atlas that names a package says it is a preview.
+  for (const shown of [
+    "k.preview ? h(",
+    "c.pkg?.preview",
+    "k.pkg?.preview",
+    "n.pkg?.preview",
+    "p.preview ?",
+    'n.pkg.preview ? "Vorschau · "',
+  ])
+    assert.ok(html.includes(shown), shown);
 });
 
 test("Grade 4 has its own island with the Grundschule packages and HSU ends there", () => {

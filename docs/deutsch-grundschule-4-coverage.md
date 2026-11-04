@@ -2,9 +2,9 @@
 
 Stand: 3. November 2026. Das neue Paket
 [Tintos Wörterstadt](../deutsch-grundschule-4/) ist eine öffentliche Vorschau
-(`publication.json`: `preview`) und steht im Katalog und im Atlas. Es ist das zweite Übertrittsfach nach
-[Mathematik 4](../mathematik-grundschule-4/); Heimat- und Sachunterricht
-fehlt noch.
+(`publication.json`: `preview`) und steht im Katalog und im Atlas. Die anderen Übertrittsfächer sind
+[Mathematik 4](../mathematik-grundschule-4/) und
+[Heimat- und Sachunterricht 4](../hsu-grundschule-4/).
 
 ## Quelle
 

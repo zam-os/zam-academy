@@ -177,7 +177,8 @@ worth something only after this check. To find candidates:
 ## 5. The ZAM cell
 
 - One atom per lesson (the registry test compares `lessons` in
-  `academy.json` with the atoms, UML excepted), usually two to four cards per
+  `academy.json` with the atoms; UML is excepted, and Mathematik 4 counts the
+  lessons its atoms cite), usually two to four cards per
   atom; more where the lesson's competences or a B row need them
   (`mathematik-realschule-9` has atoms with up to seven).
 - Atom and item ids of a new cell are real ULIDs, generated once and then

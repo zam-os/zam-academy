@@ -1758,7 +1758,7 @@
           for (const f of visible(isl)) {
             ul.append(h("li", { class: `fach${enabled(f) ? "" : " off"}`, style: `--h:${f.hue}`, ...currentAttrs(f) }, f.label, h("small", { style: "font-weight:400" }, `${f.live}/${f.total}`)));
             for (const k of visible(f)) {
-              const label = k.combination ? `${k.label} · ${k.school.name} · Klasse ${k.grade}` : k.label;
+              const label = k.combination ? `${k.label} · ${k.school.name} · Klasse ${k.grade}` : k.pkg?.preview ? `${k.label} · Vorschau` : k.label;
               ul.append(h("li", { class: k.planned ? "planned" : "" }, k.planned ? `${label} (noch nicht verfügbar)` : [h("a", { href: `${k.pkg.app}/`, ...currentAttrs(k) }, label), k.school && !k.combination ? h("small", { style: "color:var(--muted);font-weight:400" }, ` · ${k.school.name}`) : null]));
             }
           }
@@ -1806,7 +1806,7 @@
           const where = [];
           for (let a = n.parent; a && a.kind !== "root"; a = a.parent) where.unshift(a.label);
           res.append(
-            h("li", {}, h("button", { type: "button", onclick: () => { go(n.path); res.hidden = true; $("q").value = ""; } }, n.label, " ", h("small", {}, where.join(" › ")))),
+            h("li", {}, h("button", { type: "button", onclick: () => { go(n.path); res.hidden = true; $("q").value = ""; } }, n.label, " ", h("small", {}, `${n.pkg?.preview ? "Vorschau · " : ""}${where.join(" › ")}`))),
           );
         });
         if (!res.children.length) res.append(h("li", {}, h("small", { style: "padding:.5rem .7rem;display:block" }, "Keine Treffer in verfügbaren Paketen")));
@@ -1848,7 +1848,7 @@
             total.add(key);
             if (p) live.add(key);
             const name = slot.combination?.name ?? f.name;
-            const label = `${name} Klasse ${g}, ${sch.name}${slot.combination ? `, Zugang über ${f.name}` : ""}: ${p ? "verfügbar" : "noch nicht verfügbar"}`;
+            const label = `${name} Klasse ${g}, ${sch.name}${slot.combination ? `, Zugang über ${f.name}` : ""}: ${p ? (p.preview ? "verfügbar als Vorschau" : "verfügbar") : "noch nicht verfügbar"}`;
             tr.append(
               h("td", {}, p
                 ? h("button", { class: "cell", type: "button", style: `--h:${f.hue}`, title: label, "aria-label": label, onclick: () => { go([`k${g}`, f.id, p.id], "schule"); if (state.mode === "map") $("atlas").scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth" }); } }, "●")

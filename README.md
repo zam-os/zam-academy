@@ -109,9 +109,9 @@ cd uml                 # or: cd physik-realschule-9 (dev server on :5181), cd sq
 # History 8: cd geschichte-realschule-8 (dev server on :5213)
 # Englisch 8: cd englisch-realschule-8 (dev server on :5214)
 # French 8: cd franzoesisch-realschule-8 (dev server on :5215)
-# Grade 4 mathematics draft: cd mathematik-grundschule-4 (dev server on :5216)
-# Grade 4 German draft: cd deutsch-grundschule-4 (dev server on :5217)
-# Grade 4 HSU draft: cd hsu-grundschule-4 (dev server on :5218)
+# Grade 4 mathematics preview: cd mathematik-grundschule-4 (dev server on :5216)
+# Grade 4 German preview: cd deutsch-grundschule-4 (dev server on :5217)
+# Grade 4 HSU preview: cd hsu-grundschule-4 (dev server on :5218)
 npm ci
 npm run dev      # http://localhost:5180/uml/
 npm test
