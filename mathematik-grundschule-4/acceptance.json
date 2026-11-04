@@ -294,7 +294,7 @@
 	],
 	"checked": "2026-11-03",
 	"automated_checks": {
-		"app": "npm ci --offline, npm run typecheck, npm test (148 tests), npm run package:zip, npm run verify:release and external Biome format/lint passed. No dependency changes.",
+		"app": "npm ci --offline, npm run typecheck, npm test (149 tests), npm run package:zip, npm run verify:release and external Biome format/lint passed. No dependency changes.",
 		"catalog": "node --test scripts/build-catalog.test.mjs scripts/academy-registry.test.mjs: 48 checks passed. This local-only draft remains excluded.",
 		"cell": "39 atoms, 146 items, version 2026.11.12. Independent parsed-JSON check preserves prior 33 atoms/122 items; 185 unique atom/item IDs. All 39 cells and disposable install/enrol/recall/reinstall passed with CI-pinned zam-core 0.54.0. No official whole-grade binding or history transfer.",
 		"all_cells": "ZAM_CORE=<temporary zam-core 0.54.0 file URL> node scripts/validate-cells.mjs: all 39 Academy cells validated after integration of PR #79. Earlier dated world records correctly describe the then-current 38 cells.",
@@ -560,14 +560,17 @@
 		"reviews": [
 			"https://github.com/zam-os/zam-academy/pull/80#pullrequestreview-5764391409",
 			"https://github.com/zam-os/zam-academy/pull/80#issuecomment-6624653453",
-			"https://github.com/zam-os/zam-academy/pull/80#issuecomment-6624691002"
+			"https://github.com/zam-os/zam-academy/pull/80#issuecomment-6624691002",
+			"https://github.com/zam-os/zam-academy/pull/80#discussion_r4464590466",
+			"https://github.com/zam-os/zam-academy/pull/80#discussion_r4464590484"
 		],
-		"unit_tests": 148,
+		"unit_tests": 149,
 		"native_browser_assertions": 404,
 		"root_tests": 48,
 		"all_cells": 39,
 		"core_version": "0.54.0",
 		"independent_review": "No remaining implementation findings; 85 targeted tests, typecheck, diff checks and 4,000 independent arithmetic cases passed. All origin/main 18 atoms/62 cards are unchanged, with 185 unique IDs in the current 39/146 cell.",
-		"pending": "Remaining expected reviews have a one-time follow-up scheduled. Teacher/media, physical, field and publication-count acceptance remain pending."
+		"pending": "All four initial reviews are addressed. The requested one-time follow-up remains scheduled to catch any further comments. Teacher/media, physical, field and publication-count acceptance remain pending.",
+		"fourth_review": "Next-full-hour solution already corrected; individual timetable cells now mark next-day intermediate arrival/departure and destination. 200-seed event-label and duration regression added. Independent recheck: eight final-world tests passed with no actionable findings. Native rerun: 404 assertions passed; built 23:30–01:00 journey displayed next-day labels at 00:00/00:15/01:00 and accepted 75+15=90 min."
 	}
 }

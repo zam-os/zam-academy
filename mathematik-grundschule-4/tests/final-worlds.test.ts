@@ -128,6 +128,31 @@ describe("data and chance models", () => {
 	});
 });
 describe("final-world mathematical checks", () => {
+	it("marks every timetable event after midnight, including arrivals and departures at the stop", () => {
+		const encountered = new Set<string>();
+		for (let seed = 0; seed < 200; seed++) {
+			const board = need(
+					finalTask("tabellen-diagramme-auswerten", 2, seed, 1).investigation,
+				),
+				[, start, first, pause, second] = board.identity.map(Number),
+				events = [
+					[board.rows[0][2], start],
+					[board.rows[1][1], start + first],
+					[board.rows[1][2], start + first + pause],
+					[board.rows[2][1], start + first + pause + second],
+				] as const;
+			for (const [shown, minutes] of events) {
+				expect(shown.includes("nächster Tag")).toBe(minutes >= 1440);
+				encountered.add(minutes >= 1440 ? "next" : "same");
+			}
+			expect(board.fields.map((f) => f.value)).toEqual([
+				first + second,
+				pause,
+				first + pause + second,
+			]);
+		}
+		expect([...encountered].sort()).toEqual(["next", "same"]);
+	});
 	it("roundtrips quantity inputs and checks whole pieces, loads, seats and exact budgets independently", () => {
 		for (const id of FINAL_IDS)
 			for (const level of [1, 2] as const)

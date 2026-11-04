@@ -220,6 +220,8 @@ export function finalTask(
 				pause = transfer ? int(1, 3) * 5 : 0,
 				second = int(3, 12) * 5,
 				end = start + first + pause + second;
+			const timetableTime = (minutes: number) =>
+				`${clock(minutes)}${minutes >= 1440 ? " (nächster Tag)" : ""}`;
 			return worksheet(
 				2,
 				`Berechne aus dem Modellfahrplan die Reisezeit.${end >= 1440 ? " Die Ankunft am Ziel ist am nächsten Tag." : " Alle Angaben gelten am selben Tag."}`,
@@ -227,9 +229,13 @@ export function finalTask(
 				"Fahrplan mit Zwischenhalt",
 				["Ort", "Ankunft", "Abfahrt"],
 				[
-					["Start", "—", clock(start)],
-					["Zwischenhalt", clock(start + first), clock(start + first + pause)],
-					["Ziel", clock(end), "—"],
+					["Start", "—", timetableTime(start)],
+					[
+						"Zwischenhalt",
+						timetableTime(start + first),
+						timetableTime(start + first + pause),
+					],
+					["Ziel", timetableTime(end), "—"],
 				],
 				transfer
 					? [
