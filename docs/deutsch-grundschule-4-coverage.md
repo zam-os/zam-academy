@@ -98,8 +98,8 @@ Arbeitsblättern und äußern sich nicht ausdrücklich dazu, eine ganze Liste in
 einer Fußnote an Lehrkräfte; vor einer Nutzung durch Schülerinnen und Schüler ist
 zu prüfen, ob sie zulässig ist. Die App nennt das ISB in jeder Wortliste und in
 der Quellenliste für Eltern. Die Liste fällt nicht unter die Apache-2.0-Lizenz des
-Repositorys. Thomas entscheidet, ob die Academy und ZAM als nicht-kommerziell
-gelten und ob das ISB schriftlich gefragt wird.
+Repositorys. Thomas stuft die Academy und ZAM als nicht-kommerziell ein
+(Entscheidung vom 4. November 2026). Das ISB wurde nicht schriftlich gefragt.
 
 Die Station „Wörterschatz“ folgt der Ordnung des ISB nach
 Rechtschreibprinzipien: Regeln (phonologisch und silbisch), Formen
