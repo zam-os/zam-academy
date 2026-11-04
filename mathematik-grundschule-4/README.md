@@ -30,8 +30,10 @@ is included. See [the recording brief](docs/teacher-recording-brief.md),
 
 The app and its cell are published as a preview (`publication.json`:
 `preview`, Thomas's decision of 2026-11-04), so their ids are a contract while
-teacher review and recordings are open. No ZAM bundled fixture or personal
-learning library was edited.
+teacher review and recordings are open. The registry lists 36 selectable
+lessons, while the cell has 39 atoms because the first workshop uses four atoms;
+the registry test exempts this package from requiring those counts to agree. No
+ZAM bundled fixture or personal learning library was edited.
 
 ## Run and verify
 

@@ -379,10 +379,16 @@ export function shapeTask(
 		if (goal === 3) {
 			const l = int(2, 9),
 				w = l + int(1, 5),
-				h = w + int(1, 5);
+				h = w + int(1, 5),
+				pairs = [
+					[l, w],
+					[l, h],
+					[w, h],
+				],
+				missing = transfer ? int(0, 2) : 0;
 			return worksheet(
 				3,
-				`Untersuche das Netz eines Quaders mit Kantenlängen ${l}, ${w} und ${h} Längeneinheiten.`,
+				`Untersuche das Netz eines Quaders mit Kantenlängen ${l}, ${w} und ${h} Längeneinheiten.${transfer ? ` Die Skizze zeigt das vollständige Netz. Bei einem zweiten Papiernetz fehlt die Gegenfläche zu einem Rechteck mit Seiten ${pairs[missing].join(" und ")}. Wähle die passenden Seitenlängen des Ersatzstücks.` : ""}`,
 				["cuboid-net", l, w, h],
 				"Je zwei gegenüberliegende Flächen sind deckungsgleich",
 				["Flächenform", "Seitenlängen"],
@@ -411,9 +417,22 @@ export function shapeTask(
 						],
 						"Beim Würfel sind alle Kanten gleich lang; er ist ein besonderer Quader.",
 					),
+					...(transfer
+						? [
+								{
+									label: "Seitenlängen der fehlenden Gegenfläche",
+									value: missing + 1,
+									hint: "Gegenüberliegende Flächen müssen deckungsgleich sein: Beide Seitenlängen stimmen überein.",
+									choices: pairs.map((p, i) => ({
+										value: i + 1,
+										label: `${p[0]} und ${p[1]} Längeneinheiten.`,
+									})),
+								},
+							]
+						: []),
 				],
 				"Beim gedanklichen Falten treffen passende Kanten aufeinander. Ein Quader hat drei Paare deckungsgleicher Rechtecke.",
-				`Der Quader hat 6 Flächen, je 2 mit Seiten ${l}/${w}, ${l}/${h} und ${w}/${h}. Seine Kantenlängen sind verschieden.`,
+				`Der Quader hat 6 Flächen, je 2 mit Seiten ${l}/${w}, ${l}/${h} und ${w}/${h}. Seine Kantenlängen sind verschieden.${transfer ? ` Das Ersatzstück braucht die Seitenlängen ${pairs[missing].join(" und ")}, wie die gegenüberliegende Fläche.` : ""}`,
 				scene({
 					kind: "cuboid-net",
 					columns: 1,
@@ -715,7 +734,7 @@ export function shapeTask(
 		return worksheet(
 			goal,
 			goal === 1
-				? "Zähle die gleich großen Einheitsflächen der ausgelegten Figur."
+				? `Zähle die gleich großen Einheitsflächen der ausgelegten Figur.${transfer ? ` Für ein Fenster werden ${extra} Plättchen herausgenommen. Bestimme auch die verbleibende Fläche.` : ""}`
 				: goal === 2
 					? "Die zweite Figur entsteht, indem du genau dieselben Plättchen anders anordnest, ohne Lücken oder Überlappung. Vergleiche die Flächen."
 					: `Ein Rahmen hat 25 Plätze für dieselben Einheitsplättchen. Die gezeigte Figur füllt einen Teil davon. Plane das vollständige Auslegen.${transfer ? ` Danach kommen ${extra} weitere Plättchen außerhalb hinzu.` : ""}`,
@@ -737,6 +756,15 @@ export function shapeTask(
 					count,
 					"Zähle die ausgelegten Felder je Reihe und addiere; Randstriche sind keine Flächenteile.",
 				),
+				...(goal === 1 && transfer
+					? [
+							field(
+								"Einheitsflächen nach dem Herausnehmen",
+								count - extra,
+								"Ziehe die herausgenommenen Plättchen ab. Ein Loch gehört nicht mehr zur bedeckten Fläche.",
+							),
+						]
+					: []),
 				...(goal === 2
 					? [
 							rule(
@@ -769,7 +797,7 @@ export function shapeTask(
 						: []),
 			],
 			"Eine Einheitsfläche bedeckt ein Stück Fläche. Vergleiche mit derselben Einheit; eine andere Anordnung macht dieselben Plättchen nicht größer.",
-			`Die Figur hat ${count} Einheitsflächen. Umgelegt bleiben es ${count}. Im 25er-Rahmen fehlen ${25 - count} Plättchen.`,
+			`Die Figur hat ${count} Einheitsflächen.${goal === 1 && transfer ? ` Nach dem Herausnehmen: ${count} − ${extra} = ${count - extra} Einheitsflächen.` : ` Umgelegt bleiben es ${count}. Im 25er-Rahmen fehlen ${25 - count} Plättchen.`}`,
 			scene(grid(5, 5, goal === 2 && transfer ? b : a, "surface")),
 		);
 	}
@@ -783,7 +811,7 @@ export function shapeTask(
 	return worksheet(
 		goal,
 		goal === 1
-			? "Die Kiste wird lückenlos mit gleich großen Einheitswürfeln gefüllt. Zähle schichtweise."
+			? `Die Kiste wird lückenlos mit gleich großen Einheitswürfeln gefüllt. Zähle schichtweise.${transfer ? " Für eine höhere Kiste kommt eine vollständige gleich große Schicht hinzu. Plane auch die neue Gesamtzahl." : ""}`
 			: goal === 2
 				? `Ein anderes Gebäude enthält ${transfer ? remaining : total} genau gleich große Einheitswürfel. Vergleiche seine Raummenge mit der gezeigten Kiste.`
 				: `Die Kiste ist voll. ${removed} Würfel werden herausgenommen. Wie viele bleiben und wie viele fehlen bis zur vollen Kiste?`,
@@ -806,6 +834,15 @@ export function shapeTask(
 				total,
 				"Jede vollständige Schicht enthält dieselbe Anzahl; zähle alle Schichten mit.",
 			),
+			...(goal === 1 && transfer
+				? [
+						field(
+							"Würfel nach einer zusätzlichen ganzen Schicht",
+							total + columns * rows,
+							"Die neue Kiste enthält eine Schicht mehr, jede Schicht enthält gleich viele Würfel.",
+						),
+					]
+				: []),
 			...(goal === 2
 				? [
 						rule(
@@ -838,7 +875,7 @@ export function shapeTask(
 					: []),
 		],
 		"Zähle Würfel im Inneren und hinten mit. Vergleiche nur mit gleich großen Einheitswürfeln; Außenflächen sind kein Maß für den Rauminhalt.",
-		`Eine Schicht hat ${columns * rows} Würfel. ${height} Schichten enthalten ${total} Würfel. Nach dem Herausnehmen von ${removed} bleiben ${remaining}.`,
+		`Eine Schicht hat ${columns * rows} Würfel. ${height} Schichten enthalten ${total} Würfel.${goal === 1 && transfer ? ` Mit einer weiteren Schicht sind es ${total} + ${columns * rows} = ${total + columns * rows} Würfel.` : goal === 3 ? ` Nach dem Herausnehmen von ${removed} bleiben ${remaining}.` : ""}`,
 		scene(grid(columns, rows, cells, "volume")),
 	);
 }
@@ -846,16 +883,8 @@ export function shapeLab(id: ShapeId, index: number): ForestTask {
 	const goal = (index + 1) as 1 | 2 | 3;
 	if (id === "wege-lageplaene") {
 		if (index > 0) return shapeTask(id, 1, 613, index);
-		const start = [
-				[0, 0],
-				[3, 3],
-				[1, 4],
-			][index],
-			end = [
-				[2, 1],
-				[1, 2],
-				[4, 1],
-			][index],
+		const start = [0, 0],
+			end = [2, 1],
 			cells = Array(25).fill(0),
 			target = Array(25).fill(0);
 		cells[start[1] * 5 + start[0]] = 1;
@@ -870,19 +899,9 @@ export function shapeLab(id: ShapeId, index: number): ForestTask {
 		);
 	}
 	if (id === "wuerfelgebaeude-ansichten" || id === "rauminhalte-wuerfel") {
-		const target =
-			id === "wuerfelgebaeude-ansichten"
-				? [
-						[1, 2, 3, 1],
-						[3, 1, 1, 2],
-						[2, 2, 1, 3],
-					][index]
-				: [
-						[2, 2, 2, 2],
-						[1, 1, 2, 2],
-						[3, 3, 3, 3],
-					][index];
 		if (index > 0) return shapeTask(id, index === 2 ? 2 : 1, 887, index);
+		const target =
+			id === "wuerfelgebaeude-ansichten" ? [1, 2, 3, 1] : [2, 2, 2, 2];
 		return model(
 			goal,
 			`Baue lückenlose Stapel nach diesem Plan, hintere Reihe zuerst: ${target.slice(0, 2).join(", ")}; vordere Reihe: ${target.slice(2).join(", ")}.${id === "rauminhalte-wuerfel" ? " Jeder Würfel hat dieselbe Größe." : ""}`,
@@ -1145,7 +1164,6 @@ const SHAPE_TEACHING_FAMILIES: (string | number)[][] = [
 	["scale", 2, 4, 4, 8],
 	["ornament", 1, 2, 2, 1],
 	["ornament", 1, 2, 2],
-	["surface", 3, 4, 2, 3],
 	["volume", 3, 2, 3],
 ];
 export function shapeExit(

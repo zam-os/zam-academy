@@ -736,6 +736,15 @@ export class ForestSession {
 					task.model &&
 					(action === "forest-model" || action === "forest-model-reset")
 				) {
+					if (
+						action === "forest-model-reset" &&
+						task.model.scene.experiment &&
+						(p.modelWork?.[1] ?? 0) > 0
+					) {
+						this.feedback =
+							"Der Versuch hat begonnen. Vermutung, Bedingungen und bisherige Ziehungen bleiben erhalten; du kannst weiterziehen und danach auswerten.";
+						return;
+					}
 					p.modelWork =
 						action === "forest-model-reset"
 							? freshWorkshop(task.model)

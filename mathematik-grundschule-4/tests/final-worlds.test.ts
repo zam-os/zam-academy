@@ -11,6 +11,7 @@ import {
 	compositionChoice,
 	validExperimentState,
 	dataChartView,
+	experimentView,
 } from "../src/course/data-model";
 import { freshWorkshop, validWorkshop } from "../src/course/workshop";
 import { correctForest } from "../src/course/tasks";
@@ -29,6 +30,32 @@ const need = <T>(v: T | null | undefined): T => {
 	return v;
 };
 describe("data and chance models", () => {
+	it("varies stable experiment option order without changing the selected answer's meaning", () => {
+		const correctPositions: number[] = [];
+		for (let i = 0; i < 3; i++) {
+			const model = need(finalLab("zufallsexperimente", i).model),
+				state = [...model.target],
+				render = () => experimentView(model, state, false),
+				buttons = (markup: string) => [
+					...markup.matchAll(
+						/<button data-action="forest-experiment-conclude" data-col="4" data-value="(\d)"[^>]*>(.*?)<\/button>/g,
+					),
+				];
+			const first = buttons(render());
+			correctPositions.push(first.findIndex((m) => m[1] === "1"));
+			expect(buttons(render()).map((m) => m[1])).toEqual(
+				first.map((m) => m[1]),
+			);
+			expect(first.find((m) => m[1] === "1")?.[2]).toContain(
+				"nicht sicher vorhersagbar",
+			);
+			expect(first.find((m) => m[1] === "1")?.[0]).toContain(
+				'aria-pressed="true"',
+			);
+			expect(render()).not.toContain('data-action="forest-model-reset"');
+		}
+		expect(correctPositions).toEqual([0, 1, 2]);
+	});
 	it("counts category observations exactly and keeps every model initially unsolved", () => {
 		for (let i = 0; i < 3; i++) {
 			const t = finalLab("daten-sammeln-darstellen", i),

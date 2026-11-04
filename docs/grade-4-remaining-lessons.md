@@ -7,6 +7,10 @@ plan amendment; teacher/media/physical acceptance gates remain unchecked.
 The package remains local-only, with no Academy registration or official
 whole-grade binding.
 
+The dated world records below describe 38-cell checks before PR #79 was
+merged. The integrated PR #80 repository has 39 cells; its latest validation
+is recorded in the [PR #80 follow-up](grade-4-pr80-review-follow-up.md).
+
 ## Measure Market
 
 Six lessons add length measurement, mass/capacity, clocks/durations,
@@ -14,7 +18,7 @@ play-money shopping, unit conversions, and estimates/practical planning.
 Each uses three relevant guided goals, a quick check, three successful tasks
 per level, new exit tasks and the existing local assistance/reward rules.
 Equivalent coin arrangements and decimal comma/point quantity answers are
-accepted in their labelled fields. Time uses 60 minutes/hour,60 seconds/minute
+accepted in their labelled fields. Time uses 60 minutes/hour, 60 seconds/minute
 and 24 hours/day. The old whole-number parser and existing lesson stores are
 unchanged.
 
@@ -44,8 +48,8 @@ Verification on 2026-11-03:
 - The isolated native IndexedDB harness passed 189 assertions, including all
   six journeys. Production ruler controls, six workshop starts, phone
   layout at 320 px and desktop at 1280 px, light/dark settings were inspected.
-  The existing learner preview/progress atlocalhost:5231 was not touched.
-- Independent second-agent recheck:76 targeted tests, typecheck and diff
+  The existing learner preview/progress at localhost:5231 was not touched.
+- Independent second-agent recheck: 76 targeted tests, typecheck and diff
   whitespace check passed, with no remaining actionable findings.
 
 Teacher recordings, teacher sign-off, direct-file startup, actual playback,
@@ -76,7 +80,7 @@ cap. An exit seed is retained on its attempt, preserving its task while old
 history is trimmed. Physical paper construction, mirrors and cube packing
 remain instructed activities without digital observation.
 
-Verification on 2026-11-03: npm ci --offline, typecheck,138 Vitest tests,
+Verification on 2026-11-03: npm ci --offline, typecheck, 138 Vitest tests,
 production build/ZIP verification, external Biome lint and whitespace checks
 passed. The root suite passed 48 checks; all 38 cells and the Grade 4 disposable
 recall path passed with core 0.54.0. The native browser harness passed 312

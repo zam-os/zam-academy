@@ -52,7 +52,7 @@ export const MEASURE_LESSONS: ForestLesson[] = [
 		],
 		paragraphs: [
 			"Eine Waage misst Masse. Für einen Apfel passen Gramm (g), für einen gefüllten Rucksack Kilogramm (kg). 1 kg = 1 000 g. Eine schwere Sache braucht nicht besonders groß zu sein: Vergleiche mit bekannten Gegenständen und wiege nach.",
-			"Ein Messbecher misst den Inhalt einer Flüssigkeit. Liter (l) und Milliliter (ml) beschreiben Fassungsvermögen; 1 l = 1 000 ml. Masse und Inhalt sind verschiedene Größen. Aus einer Literangabe allein kennst du nicht die Masse jeder beliebigen Flüssigkeit.",
+			"Ein Messbecher misst den Inhalt einer Flüssigkeit. Liter (l) und Milliliter (ml) sind Hohlmaße und beschreiben Fassungsvermögen; 1 l = 1 000 ml. Masse und Inhalt sind verschiedene Größen. Aus einer Literangabe allein kennst du nicht die Masse jeder beliebigen Flüssigkeit.",
 			"Stelle einen echten Messbecher eben hin und lies die Skala auf Augenhöhe. Gleich große Abstände der Skala bedeuten gleich große Inhaltsunterschiede. Beim Wiegen muss eine leere Schüssel vorher berücksichtigt werden: Ihr Gewicht gehört nicht zum Inhalt.",
 			"Zwei Portionen mit je 500 ml ergeben 1 l. Vier Portionen mit je 250 ml ergeben ebenfalls 1 l. Ein halber Liter sind 500 ml, ein Viertelliter sind 250 ml und drei Viertelliter sind 750 ml. Für gleich große Teile teilst du zuerst das Ganze, dann nimmst du die nötigen Teile.",
 		],

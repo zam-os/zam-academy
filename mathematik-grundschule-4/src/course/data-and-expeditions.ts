@@ -1,3 +1,4 @@
+import { format } from "../math/place-value";
 import { random } from "../practice/tasks";
 import {
 	type DataChart,
@@ -127,7 +128,7 @@ export function finalTask(
 				),
 				number(
 					goal === 2
-						? "Skalenstufen des Birnensäule"
+						? "Skalenstufen der Birnensäule"
 						: "Äpfel und Birnen zusammen",
 					goal === 2 ? values[1] / scale : values[0] + values[1],
 					goal === 2
@@ -345,7 +346,7 @@ export function finalTask(
 				),
 			],
 			"Informationen aus zwei Quellen gehören zusammen: Anzahl und Stückpreis bestimmen den Gesamtpreis.",
-			`${a + b} Hefte kosten ${(a + b) * price} ct = ${fmtEuro((a + b) * price)}. Doppelte Menge: ${fmtEuro(2 * (a + b) * price)}.`,
+			`${a + b} Hefte kosten ${format((a + b) * price)} ct = ${fmtEuro((a + b) * price)}. Doppelte Menge: ${fmtEuro(2 * (a + b) * price)}.`,
 		);
 	}
 	if (id === "zufallsexperimente") {
@@ -413,7 +414,9 @@ export function finalTask(
 				],
 				[
 					number(
-						"Rote Kugeln in A nach der Änderung",
+						transfer
+							? "Rote Kugeln in A nach der Änderung"
+							: "Rote Kugeln in A",
 						after,
 						"Getauschte blaue Kugeln werden rot; die Gesamtzahl bleibt gleich.",
 					),
@@ -424,7 +427,7 @@ export function finalTask(
 						"Bei gleicher Gesamtzahl entscheidet die größere Anzahl roter Kugeln.",
 					),
 					number(
-						"Blaue Kugeln in A danach",
+						transfer ? "Blaue Kugeln in A danach" : "Blaue Kugeln in A",
 						total - after,
 						"Gesamtzahl minus rote Kugeln.",
 					),
@@ -486,14 +489,14 @@ export function finalTask(
 				price = int(12, 49) * 10;
 			const t = worksheet(
 				1,
-				`Die Werkstatt braucht ${pieces} ganze Leisten zu je ${length} cm. Ein Brett ist 2 m lang. Stücke dürfen nicht zusammengesetzt werden; der Schnitt ist im Modell ohne Breitenverlust. Plane die kleinste Brettanzahl.`,
+				`Die Werkstatt braucht ${pieces} ganze Leisten zu je ${format(length)} cm. Ein Brett ist 2 m lang. Stücke dürfen nicht zusammengesetzt werden; der Schnitt ist im Modell ohne Breitenverlust. Plane die kleinste Brettanzahl.`,
 				["workshop-boards", pieces, length, board, price],
 				"Materialliste und Preisliste",
 				["Angabe", "Wert"],
 				[
 					["Leisten", String(pieces)],
-					["Länge je Leiste", `${length} cm`],
-					["Brett", `${board} cm`],
+					["Länge je Leiste", `${format(length)} cm`],
+					["Brett", `${format(board)} cm`],
 					["Preis je Brett", fmtEuro(price)],
 				],
 				[
@@ -519,7 +522,7 @@ export function finalTask(
 					),
 				],
 				"Wähle Materialliste, Skizze oder Preisliste als Hilfe. Die reine Gesamtlänge genügt nicht immer, weil die Leisten ganz bleiben müssen.",
-				`Je Brett passen ${perBoard} Leisten. Für ${pieces} Leisten brauchst du ${boards} Bretter. Die Leistenlänge insgesamt ist ${pieces * length} cm; die Bretter kosten ${fmtEuro(boards * price)}.`,
+				`Je Brett passen ${perBoard} Leisten. Für ${pieces} Leisten brauchst du ${boards} Bretter. Die Leistenlänge insgesamt ist ${format(pieces * length)} cm; die Bretter kosten ${fmtEuro(boards * price)}.`,
 			);
 			t.toolViews = [
 				{
@@ -573,7 +576,7 @@ export function finalTask(
 					),
 				],
 				"Die Tabelle ist ein Werkzeug. Du kannst auch zwei Teilrechnungen auf Papier notieren und anschließend addieren.",
-				`Sets: ${sets * price} ct; Pinsel: ${brushes * each} ct; insgesamt ${fmtEuro(total)}. Das Budget ${fmtEuro(budget)} ${budget >= total ? "reicht" : "reicht nicht"}.`,
+				`Sets: ${format(sets * price)} ct; Pinsel: ${format(brushes * each)} ct; insgesamt ${fmtEuro(total)}. Das Budget ${fmtEuro(budget)} ${budget >= total ? "reicht" : "reicht nicht"}.`,
 			);
 		}
 		const crates = int(5, 17),
@@ -590,9 +593,9 @@ export function finalTask(
 			"Kisten packen",
 			["Angabe", "Wert"],
 			[
-				["Inhalt je Kiste", `${content} g`],
-				["Leere Kiste", `${empty} g`],
-				["Grenze pro Fahrt", `${limit} g`],
+				["Inhalt je Kiste", `${format(content)} g`],
+				["Leere Kiste", `${format(empty)} g`],
+				["Grenze pro Fahrt", `${format(limit)} g`],
 			],
 			[
 				number(
@@ -612,7 +615,7 @@ export function finalTask(
 				),
 			],
 			"Arbeite mit g, bevor du vergleichst. Die Gewichtsgrenze darf nicht überschritten werden.",
-			`Eine Kiste wiegt ${each} g. Höchstens ${perTrip} passen pro Fahrt; für ${crates} Kisten brauchst du mindestens ${trips} Fahrten.`,
+			`Eine Kiste wiegt ${format(each)} g. Höchstens ${perTrip} passen pro Fahrt; für ${crates} Kisten brauchst du mindestens ${trips} Fahrten.`,
 		);
 	}
 	if (id === "expedition-reise") {
@@ -626,13 +629,13 @@ export function finalTask(
 				totalTime = steps * minutes + pause;
 			const t = worksheet(
 				1,
-				`Der Weg führt ${east} Planabstände nach Osten und ${north} nach Norden. Ein Abstand bedeutet ${scale} m; dafür werden ${minutes} min geplant.${transfer ? ` Eine Pause dauert ${pause} min.` : ""}`,
+				`Der Weg führt ${east} Planabstände nach Osten und ${north} nach Norden. Ein Abstand bedeutet ${format(scale)} m; dafür werden ${minutes} min geplant.${transfer ? ` Eine Pause dauert ${pause} min.` : ""}`,
 				["journey-route", east, north, scale, minutes, pause],
 				"Weg und Zeitplan",
 				["Angabe", "Wert"],
 				[
 					["Wegabschnitte", `${east} und ${north}`],
-					["Ein Abstand", `${scale} m / ${minutes} min`],
+					["Ein Abstand", `${format(scale)} m / ${minutes} min`],
 					["Pause", `${pause} min`],
 				],
 				[
@@ -653,7 +656,7 @@ export function finalTask(
 					),
 				],
 				"Ein Lageplan hilft bei der Strecke, eine Zeitleiste bei der Dauer. Für die Ecke addierst du beide Abschnitte.",
-				`${steps} Abstände ergeben ${steps * scale} m. Die Zeit ist ${steps * minutes} min + ${pause} min = ${totalTime} min.`,
+				`${steps} Abstände ergeben ${format(steps * scale)} m. Die Zeit ist ${steps * minutes} min + ${pause} min = ${totalTime} min.`,
 			);
 			t.toolViews = [
 				{
@@ -761,14 +764,14 @@ export function finalTask(
 			tables = Math.ceil(people / seats);
 		return worksheet(
 			1,
-			`${children} Kinder und ${helpers} Helfer planen ein Inselfest. Für jede Person sind ${per} ml Wasser und ein Sitzplatz vorgesehen.`,
+			`${children} Kinder und ${helpers} Helfer planen ein Inselfest. Für jede Person sind ${format(per)} ml Wasser und ein Sitzplatz vorgesehen.`,
 			["festival-supply", children, helpers, per, seats],
 			"Getränke und Tische",
 			["Angabe", "Wert"],
 			[
 				["Je Flasche", "1 l"],
 				["Plätze je Tisch", String(seats)],
-				["Je Person", `${per} ml`],
+				["Je Person", `${format(per)} ml`],
 			],
 			[
 				number(
@@ -788,7 +791,7 @@ export function finalTask(
 				),
 			],
 			"Eine Tabelle hilft dir, Personen, Portionen und ganze Vorratspackungen auseinanderzuhalten.",
-			`${people} Personen brauchen ${total} ml Wasser: ${bottles} volle Literflaschen. Bei ${seats} Plätzen je Tisch brauchst du ${tables} Tische.`,
+			`${people} Personen brauchen ${format(total)} ml Wasser: ${bottles} volle Literflaschen. Bei ${seats} Plätzen je Tisch brauchst du ${tables} Tische.`,
 		);
 	}
 	if (goal === 2) {

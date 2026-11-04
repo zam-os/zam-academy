@@ -1,11 +1,9 @@
 import { finalTask, finalLab, finalExit } from "./data-and-expeditions";
-import { isFinalLesson } from "./worlds";
+import { isFinalLesson, isShape, isMeasure } from "./worlds";
 import { experimentMistake } from "./data-model";
 import { geometryMistake } from "./geometry-model";
 import { shapeTask, shapeLab, shapeExit } from "./geometry";
-import { isShape } from "./worlds";
 import { measureTask, measureLab, measureExit } from "./measurement";
-import { isMeasure } from "./worlds";
 import { acceptsWorkshop, type Scene, type Workshop } from "./workshop";
 import { format, parseInteger } from "../math/place-value";
 import { random } from "../practice/tasks";

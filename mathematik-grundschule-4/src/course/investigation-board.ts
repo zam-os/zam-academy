@@ -1,15 +1,8 @@
+import { escapeHtml as html } from "../html";
 import { parseQuantity, quantityText, quantityNote } from "./quantity";
 import { random } from "../practice/tasks";
 import type { Investigation } from "./investigations";
 
-const html = (text: string) =>
-	text.replace(
-		/[&<>"']/g,
-		(c) =>
-			({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[
-				c
-			] ?? c,
-	);
 export function investigationBoard(
 	board: Investigation,
 	work: readonly string[] = [],
