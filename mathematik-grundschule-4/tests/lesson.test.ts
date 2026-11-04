@@ -289,7 +289,6 @@ describe("content contracts", () => {
 		const card = cell.atoms
 			.flatMap<RecallItem>((a) => a.practice_items)
 			.find((item) => item.slug === "gs4-schriftlich-subtrahieren-3");
-		expect(card?.question).toContain("6 004 − 2 578");
 		if (!card || !("question_segments" in card))
 			throw new Error("Missing subtraction math segments");
 		expect(
@@ -297,6 +296,14 @@ describe("content contracts", () => {
 				(segment) => segment.type === "math" && segment.tex?.includes("−"),
 			),
 		).toBe(true);
+	});
+	it("keeps a card text either plain or in segments, as ZAM requires", () => {
+		for (const item of cell.atoms.flatMap<RecallItem>((a) => a.practice_items))
+			for (const field of ["question", "concept"])
+				expect(
+					[field in item, `${field}_segments` in item].filter(Boolean),
+					`${item.slug} ${field}`,
+				).toHaveLength(1);
 	});
 	it("enumerates every official competence and truthfully identifies partial coverage", () => {
 		expect(coverage.rows).toHaveLength(54);

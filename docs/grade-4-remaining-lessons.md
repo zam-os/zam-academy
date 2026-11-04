@@ -104,7 +104,7 @@ The final six lessons add model-data collection and labelled column charts,
 timetable/price/diagram interpretation, replacement experiments, and mixed
 workshop, journey and festival planning. This finishes the amended digital
 inventory: 33 core lessons and three expeditions across five worlds. The
-cell has 39 atoms/146 items, version 2026.11.12; the previous 33 atoms/122
+cell has 39 atoms/146 items, version 2026.11.12 (2026.11.13 removes the duplicate plain text of ten fields that have segments; ids and wording are unchanged); the previous 33 atoms/122
 items remain unchanged, with 185 unique atom/item IDs and no history mapping.
 
 Collection reveals individual observations while the child enters category

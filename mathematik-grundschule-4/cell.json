@@ -1,7 +1,7 @@
 {
 	"$schema": "https://zam.app/schemas/v1/kvt-tile.json",
 	"tile_id": "zam-academy:mathematik-grundschule-4",
-	"version": "2026.11.12",
+	"version": "2026.11.13",
 	"title": "Mathematik 4 Grundschule: Milos Entdeckerinsel",
 	"description": "36 deutsche Entdeckerlektionen im Zahlenwald, auf dem Messmarkt, in der Formenbucht, im Zufallsgarten und in drei gemischten Inselexpeditionen. Rechnen, Größen, Geometrie, Daten und Zufall mit lokalen Übungen und Erklärungen. Vorschau; fachliche Freigabe, praktische Abnahme und Lehrervideos fehlen. Kein freigegebener Jahreskurs.",
 	"publisher": "ZAM Academy",
@@ -406,7 +406,6 @@
 					"tier": "tier2_synthesis",
 					"bloom_level": 3,
 					"question": "Ordne 80 080, 8 800 und 80 008 aufsteigend. Begründe die Reihenfolge.",
-					"concept": "8 800 < 80 008 < 80 080.",
 					"sample_solution": "8 800 hat weniger Stellen und ist am kleinsten. Bei den beiden fünfstelligen Zahlen sind Zehntausender, Tausender und Hunderter gleich. An der Zehnerstelle steht bei 80 008 eine 0, bei 80 080 eine 8. Deshalb ist 80 008 kleiner.",
 					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=zahlen-vergleichen-ordnen",
 					"materiality": "material",
@@ -554,7 +553,6 @@
 					"tier": "tier1_fast",
 					"bloom_level": 2,
 					"question": "Welche Stellenwertzerlegung passt zu 405 060?",
-					"concept": "400 000 + 5 000 + 60.",
 					"fast_check": {
 						"type": "binary_choice",
 						"options": ["400 000 + 5 000 + 60.", "400 000 + 50 000 + 6."],
@@ -777,7 +775,6 @@
 					"tier": "tier1_fast",
 					"bloom_level": 2,
 					"question": "Welche Rechnung beschreibt 6 gleich große Gruppen mit je 4 Dingen?",
-					"concept": "6·4 = 24.",
 					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=malnehmen-teilen",
 					"materiality": "material",
 					"fast_check": {
@@ -804,7 +801,6 @@
 					"tier": "tier1_fast",
 					"bloom_level": 2,
 					"question": "Welche Malaufgabe prüft 42 : 7 = 6?",
-					"concept": "7·6 = 42.",
 					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=malnehmen-teilen",
 					"materiality": "material",
 					"fast_check": {
@@ -909,7 +905,6 @@
 					"tier": "tier2_synthesis",
 					"bloom_level": 3,
 					"question": "Rechne 3 748 + 2 567 schriftlich. Erkläre die Überträge.",
-					"concept": "6 315.",
 					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=schriftlich-addieren",
 					"materiality": "material",
 					"sample_solution": "E: 8 + 7 = 15, schreibe 5 und übertrage 1 zu Z. Z: 4 + 6 + 1 = 11, schreibe 1 und übertrage 1 zu H. H: 7 + 5 + 1 = 13, schreibe 3 und übertrage 1 zu T. T: 3 + 2 + 1 = 6. Die Summe ist 6 315. Tauschprobe: 2 567 + 3 748 = 6 315. Rechne die Tauschaufgabe neu und vergleiche beide Summen.",
@@ -1014,8 +1009,6 @@
 					"language": "de",
 					"tier": "tier2_synthesis",
 					"bloom_level": 3,
-					"question": "Rechne 6 004 − 2 578 schriftlich und erkläre das Entbündeln über die Nullstellen.",
-					"concept": "3 426.",
 					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=schriftlich-subtrahieren",
 					"materiality": "material",
 					"question_segments": [
@@ -1137,8 +1130,6 @@
 					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=schriftlich-multiplizieren",
 					"materiality": "material",
 					"tier": "tier2_synthesis",
-					"question": "Rechne 306·24 schriftlich und prüfe mit einer anderen Zerlegung.",
-					"concept": "7 344.",
 					"sample_solution": "Einerreihe: 306 · 4 = 1 224. Zehnerreihe: 306 · 20 = 6 120. Summe: 1 224 + 6 120 = 7 344. Andere Zerlegung: 300 · 24 = 7 200 und 6 · 24 = 144; zusammen 7 344.",
 					"question_segments": [
 						{
@@ -1258,7 +1249,6 @@
 					"source_link": "https://academy.zam-os.org/mathematik-grundschule-4/#lesson=schriftlich-dividieren",
 					"materiality": "material",
 					"tier": "tier2_synthesis",
-					"question": "Teile 2 417: 8 schriftlich. Nenne den Rest und prüfe deine Antwort.",
 					"concept": "302 Rest 1.",
 					"sample_solution": "2 : 8 ergibt zunächst 0 Rest 2. Dann 24 : 8 ergibt 3 Rest 0. Die nächste Ziffer 1 ergibt 0 Rest 1; diese Ergebnisnull bleibt stehen. Zuletzt 17 : 8 ergibt 2 Rest 1. Ergebnis: 302 Rest 1. Probe: 302 · 8 + 1 = 2 416 + 1 = 2 417; 1 ist kleiner als 8.",
 					"question_segments": [
