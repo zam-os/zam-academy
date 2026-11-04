@@ -36,6 +36,8 @@
 	--detektiv-soft: #f3e9fe;
 	--woerterschatz: #0b7f70;
 	--woerterschatz-soft: #dff5f1;
+	--lesewerkstatt: #b5307f;
+	--lesewerkstatt-soft: #fde7f4;
 	--radius: 22px;
 	--shadow: 0 6px 0 rgba(36, 48, 74, 0.08), 0 14px 30px rgba(36, 48, 74, 0.08);
 	font-family: ui-rounded, "SF Pro Rounded", "Nunito", "Segoe UI", system-ui, -apple-system, sans-serif;
@@ -77,6 +79,8 @@
 		--detektiv-soft: #2f2448;
 		--woerterschatz: #5fd8c4;
 		--woerterschatz-soft: #173733;
+		--lesewerkstatt: #ff9fd6;
+		--lesewerkstatt-soft: #3d1f33;
 		--shadow: 0 6px 0 rgba(0, 0, 0, 0.25), 0 14px 30px rgba(0, 0, 0, 0.25);
 	}
 }
@@ -113,6 +117,8 @@
 	--detektiv-soft: #2f2448;
 	--woerterschatz: #5fd8c4;
 	--woerterschatz-soft: #173733;
+	--lesewerkstatt: #ff9fd6;
+	--lesewerkstatt-soft: #3d1f33;
 	--shadow: 0 6px 0 rgba(0, 0, 0, 0.25), 0 14px 30px rgba(0, 0, 0, 0.25);
 }
 
@@ -132,6 +138,10 @@
 [data-stage="woerterschatz"] {
 	--stage: var(--woerterschatz);
 	--stage-soft: var(--woerterschatz-soft);
+}
+[data-stage="lesewerkstatt"] {
+	--stage: var(--lesewerkstatt);
+	--stage-soft: var(--lesewerkstatt-soft);
 }
 body {
 	--stage: var(--accent);
@@ -158,6 +168,10 @@ body[data-stage="detektiv"] {
 body[data-stage="woerterschatz"] {
 	--stage: var(--woerterschatz);
 	--stage-soft: var(--woerterschatz-soft);
+}
+body[data-stage="lesewerkstatt"] {
+	--stage: var(--lesewerkstatt);
+	--stage-soft: var(--lesewerkstatt-soft);
 }
 * {
 	box-sizing: border-box;
@@ -1409,4 +1423,70 @@ dialog::backdrop {
 }
 .wordbook .small {
 	margin-top: 1rem;
+}
+
+/* Reading material in a task. */
+.passage,
+.reading-table {
+	background: var(--surface);
+	border-radius: 14px;
+	padding: 0.8rem 1rem;
+	margin-bottom: 0.8rem;
+}
+.passage h3 {
+	margin: 0 0 0.4rem;
+	font-size: 1.05rem;
+}
+.passage p {
+	margin: 0 0 0.5rem;
+	line-height: 1.55;
+}
+.passage p:last-child {
+	margin-bottom: 0;
+}
+.reading-table {
+	overflow-x: auto;
+}
+.reading-table table {
+	border-collapse: collapse;
+	width: 100%;
+}
+.reading-table caption {
+	font-weight: 700;
+	text-align: left;
+	margin-bottom: 0.4rem;
+}
+.reading-table tbody th {
+	font-weight: 600;
+}
+.reading-table th,
+.reading-table td {
+	padding: 0.3rem 0.6rem;
+	border-bottom: 1px solid var(--line);
+	text-align: left;
+}
+@media (max-width: 480px) {
+	.passage,
+	.reading-table {
+		padding: 0.6rem 0.5rem;
+	}
+	.reading-table {
+		padding-inline: 0.2rem;
+	}
+	.reading-table th,
+	.reading-table td {
+		padding: 0.2rem 0.15rem;
+		font-size: 0.85rem;
+	}
+	.reading-table td[aria-hidden] {
+		font-size: 0.65rem;
+	}
+}
+
+/* A sentence of its own in an ordering puzzle. */
+.row-end {
+	display: block;
+	flex-basis: 100%;
+	width: 100%;
+	height: 0.3rem;
 }

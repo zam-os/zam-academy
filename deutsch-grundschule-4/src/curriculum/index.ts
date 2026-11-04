@@ -2,6 +2,7 @@ import cell from "../../cell.json";
 import type { Lesson, ReadyLesson, Source, Stage } from "../types";
 import { BAHNHOF } from "./bahnhof";
 import { DETEKTIV } from "./detektiv";
+import { LESEWERKSTATT } from "./lesewerkstatt";
 import { WERKSTATT } from "./werkstatt";
 import { WOERTERSCHATZ } from "./woerterschatz";
 
@@ -33,6 +34,13 @@ export const STAGES: Stage[] = [
 		subtitle: "Der Grundwortschatz: Wörter sicher schreiben und merken",
 		icon: "💎",
 		greeting: "Hier liegt mein Schatz: Wörter, die du immer wieder brauchst. Üben wir sie zusammen!",
+	},
+	{
+		id: "lesewerkstatt",
+		title: "Lesewerkstatt",
+		subtitle: "Texte, Tabellen, Geschichten, Gedichte und Medien verstehen",
+		icon: "📖",
+		greeting: "Komm rein und nimm dir einen Text! Gemeinsam finden wir heraus, was in ihm steckt.",
 	},
 ];
 
@@ -73,7 +81,7 @@ function ready(lesson: Lesson): ReadyLesson {
 	};
 }
 
-export const LESSONS: ReadyLesson[] = [...WERKSTATT, ...BAHNHOF, ...DETEKTIV, ...WOERTERSCHATZ].map(ready);
+export const LESSONS: ReadyLesson[] = [...WERKSTATT, ...BAHNHOF, ...DETEKTIV, ...WOERTERSCHATZ, ...LESEWERKSTATT].map(ready);
 
 export const findLesson = (id: string): ReadyLesson | undefined =>
 	LESSONS.find((lesson) => lesson.id === id);

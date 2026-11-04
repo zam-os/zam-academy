@@ -298,6 +298,8 @@ function renderPractice(): void {
 			: `<form class="answer-form" data-action="text-answer"><label for="answer" class="small">Deine Antwort</label><div class="answer-row"><input id="answer" name="answer" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" ${finished ? "disabled" : ""}><button type="submit" class="button" ${finished ? "disabled" : ""}>Prüfen</button></div></form>`;
 	element("#practice-area").innerHTML = `<p class="progress-dots" aria-label="${Math.min(solved, need)} von ${need} gelöst">${dots}<span>${Math.min(solved, need)} von ${need} gelöst${solved > need ? ` · +${solved - need} Extra` : ""}</span></p>
 <div class="task">
+	${t.passage ? `<article class="passage"><h3>${esc(t.passage.title)}</h3>${t.passage.paragraphs.map((p) => `<p>${esc(p)}</p>`).join("")}</article>` : ""}
+	${t.table ? `<div class="reading-table"><table><caption>${esc(t.table.title)}</caption><thead><tr>${t.table.head.map((h) => `<th scope="col">${esc(h)}</th>`).join("")}</tr></thead><tbody>${t.table.rows.map((r) => `<tr>${r.map((c, i) => (i === 0 ? `<th scope="row">${esc(c)}</th>` : `<td${/^■+$/.test(c) ? ' aria-hidden="true"' : ""}>${esc(c)}</td>`)).join("")}</tr>`).join("")}</tbody></table></div>` : ""}
 	<p class="question">${esc(t.prompt)}</p>
 	${t.material ? `<p class="material">${markup(t.material, esc)}</p>` : ""}
 	${showHint && !finished ? `<p class="hint">💡 ${esc(t.hint)}</p>` : ""}
@@ -431,7 +433,7 @@ function renderParents(): void {
 	main.innerHTML = `<div class="page-head"><button type="button" class="text-button" data-action="view" data-target="path">← Zur Wörterstadt</button><h1>Für Eltern</h1></div>
 <section class="card">
 	<h2>Was Ihr Kind hier übt</h2>
-	<p>Tintos Wörterstadt übt ${LESSONS.length} Themen aus dem LehrplanPLUS Deutsch der Jahrgangsstufen 3 und 4 in Bayern: Sprache untersuchen (Wortarten, die vier Fälle, Zeitformen, Wortbildung, Satzarten, wörtliche Rede, Satzglieder, Bindewörter) und Richtig schreiben (Silben, kurze und lange Selbstlaute, Verlängern, Ableiten, Großschreibung, Wörterbuch, verbindlicher Grundwortschatz).</p>
+	<p>Tintos Wörterstadt übt ${LESSONS.length} Themen aus dem LehrplanPLUS Deutsch der Jahrgangsstufen 3 und 4 in Bayern: Sprache untersuchen (Wortarten, die vier Fälle, Zeitformen, Wortbildung, Satzarten, wörtliche Rede, Satzglieder, Bindewörter) und Richtig schreiben (Silben, kurze und lange Selbstlaute, Verlängern, Ableiten, Großschreibung, Wörterbuch, verbindlicher Grundwortschatz) sowie Lesen (Textarten, Lesestrategien, Sachtexte und Tabellen, Geschichten, Figuren, Sprachbilder, Gedichte, Medien).</p>
 	<p>Jede Lektion hat eine kurze Erklärung, einen Schnellcheck, eine Werkstatt zum Ausprobieren und Aufgaben auf zwei Stufen. Stufe 1 gibt einen Tipp. Stufe 2 übt ohne Tipp, ähnlich wie in einer Probe.</p>
 </section>
 <section class="card">
@@ -445,7 +447,7 @@ function renderParents(): void {
 </section>
 <section class="card">
 	<h2>Übertritt und was die App nicht abdeckt</h2>
-	<p>Für den Übertritt zählen in Bayern Deutsch, Mathematik und Heimat- und Sachunterricht zusammen. Diese App übt einen Teil von Deutsch. Noch nicht enthalten sind Lesen und Textverständnis, eigene Texte (Erzählen, Berichten, Beschreiben) sowie Sprechen und Zuhören. Den Grundwortschatz übt Ihr Kind hier am Bildschirm; die Wörter auch mit der Hand zu schreiben, bleibt wichtig. Das gilt ebenso für echte Bücher, Vorlesen und Gespräche.</p>
+	<p>Für den Übertritt zählen in Bayern Deutsch, Mathematik und Heimat- und Sachunterricht zusammen. Diese App übt einen Teil von Deutsch. Noch nicht enthalten sind eigene Texte (Erzählen, Berichten, Beschreiben) sowie Sprechen und Zuhören. Lautes Lesen, Lesetempo, Gespräche über Bücher und die Bibliothek brauchen echte Praxis; die Lesewerkstatt übt das Verstehen. Den Grundwortschatz übt Ihr Kind hier am Bildschirm; die Wörter auch mit der Hand zu schreiben, bleibt wichtig. Das gilt ebenso für echte Bücher, Vorlesen und Gespräche.</p>
 	<p>Das ist eine Vorschau. Eine Grundschullehrkraft hat die Inhalte noch nicht fachlich freigegeben, und Lehrvideos fehlen noch.</p>
 	<ul class="source-list">${SOURCES.map((s) => `<li><a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.label)}</a></li>`).join("")}<li><a href="https://www.km.bayern.de/lernen/ubertritt-und-bildungswege/uebertritt" target="_blank" rel="noopener noreferrer">Bayerisches Kultusministerium · Übertritt</a></li></ul>
 	<p class="small">Links öffnen erst auf Ihren Klick.</p>

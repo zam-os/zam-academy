@@ -40,12 +40,12 @@ Zur Abgrenzung gelesen:
 | Abschnitt | Erwartungen | in der App geübt | geplant | Praxis außerhalb |
 | --- | ---: | ---: | ---: | ---: |
 | 1 Sprechen und Zuhören (1.1–1.5) | 26 | 0 | 0 | 26 |
-| 2 Lesen (2.1–2.5) | 35 | 0 | 26 | 9 |
+| 2 Lesen (2.1–2.5) | 35 | 20 | 0 | 15 |
 | 3 Schreiben (3.1–3.3) | 19 | 2 | 13 | 4 |
 | 4.1, 4.2 Verständigung, Sprachen | 4 | 0 | 4 | 0 |
 | 4.3 Sprachliche Strukturen | 15 | 15 | 0 | 0 |
 | 4.4 Richtig schreiben | 17 | 15 | 0 | 2 |
-| **Summe** | **116** | **32** | **43** | **41** |
+| **Summe** | **116** | **52** | **17** | **47** |
 
 „In der App geübt“ heißt teilweise abgedeckt: geübt an vorgegebenen Wörtern
 und Sätzen, nicht in eigenen Texten. Die Zeilen in
@@ -82,6 +82,34 @@ trägt und alle 116 Texte wörtlich mit der Quelle übereinstimmen.
 | `grundwortschatz-regeln` | 4.4.1 |
 | `grundwortschatz-formen` | 4.4.1 |
 | `grundwortschatz-merkwoerter` | 4.4.1 |
+| `textarten-erkennen` | 2.1.5, 2.3.2 |
+| `lesestrategien` | 2.3.1, 2.3.3, 2.3.4, 2.3.8 |
+| `sachtexte-tabellen` | 2.3.5, 2.3.6, 2.3.9, 2.4.1 |
+| `geschichten-verstehen` | 2.3.7, 2.4.1, 2.4.2, 2.4.4 |
+| `figuren-verstehen` | 2.3.7, 2.4.3 |
+| `sprachbilder-gedichte` | 2.4.5, 2.4.7 |
+| `medien-verstehen` | 2.1.6, 2.1.7, 2.1.9, 2.4.6 |
+
+## Lesewerkstatt
+
+Alle Lesetexte, Tabellen und Gedichte sind eigene Texte, keine Auszüge aus Büchern;
+die Werte der Tabellen sind erfunden. Sprichwörter und Redewendungen sind
+allgemeines Sprachgut. Die Sachangaben hat die Zweitprüfung an Quellen geprüft (zum Igel etwa
+[Braunbrustigel](https://de.wikipedia.org/wiki/Braunbrustigel)); die Lehrkraft sollte sie mitprüfen.
+
+Zur Abgrenzung: Deutsch 1/2 kennt bereits das Unterscheiden von Gedichten,
+erzählenden Texten, Sachtexten und einfachen Gebrauchstexten sowie Fragen zu
+einfachen Diagrammen und Tabellen; die Lektionen sagen das und bauen darauf auf.
+Gymnasium 5 führt literarische und pragmatische Texte, nichtlineare Texte wie
+Balkendiagramme und Tabellen sowie Form- und Gattungselemente weiter. Fachbegriffe
+aus Klasse 5 kommen nicht vor (gelesen am 4. November 2026).
+
+Die App übt das Verstehen an kurzen Texten: Antworten auswählen, Wörter
+herausschreiben, Informationen markieren, Reihenfolgen ordnen. Sie bewertet keine
+freien Zusammenfassungen. Sechs bisher geplante Erwartungen stehen jetzt bei
+„Praxis außerhalb“, weil sie Gespräche oder echtes Tun verlangen: 2.1.1 bis 2.1.4,
+2.1.8 und 2.4.8. Offen bleiben dort auch Symbole aus 2.4.5 und die Umsetzung in
+andere Medien aus 2.4.6.
 
 ## Grundwortschatz 3/4
 
@@ -117,16 +145,13 @@ Schreiben mit der Hand, das Abschreiben und Diktate bleiben außerhalb der App.
 
 ## Offene Lücken und nächste Ausbaustufen
 
-1. **Lesewerkstatt (2.1, 2.3, 2.4).** Sachtexte und Geschichten erschließen,
-   Informationen aus Tabellen entnehmen, Figuren und Handlung beschreiben.
-   Braucht eigene, kindgerechte Texte.
-2. **Schreibwerkstatt (3.2, 3.3, 4.3.14).** Erzählen (Einleitung, Höhepunkt,
+1. **Schreibwerkstatt (3.2, 3.3, 4.3.14).** Erzählen (Einleitung, Höhepunkt,
    Schluss), Berichten (W-Fragen, Präteritum), Beschreiben und Begründen,
    jeweils mit Mustervergleich und Kriterien. Eigene Texte bewertet die App
    nicht automatisch.
-3. **4.1 und 4.2:** Wirkung sprachlicher Mittel, Mündlichkeit und
+2. **4.1 und 4.2:** Wirkung sprachlicher Mittel, Mündlichkeit und
    Schriftlichkeit, Sprachen im Umfeld.
-4. **Fachliche Freigabe** durch eine Grundschullehrkraft und Lehrvideos. Bis
+3. **Fachliche Freigabe** durch eine Grundschullehrkraft und Lehrvideos. Bis
    dahin bleibt das Paket eine Vorschau.
 
 Sprechen und Zuhören, Vorlesen, Handschrift, Abschreiben und

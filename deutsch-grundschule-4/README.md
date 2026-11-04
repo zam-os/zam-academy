@@ -1,7 +1,7 @@
 # Tintos Wörterstadt · Deutsch 4 · Grundschule Bayern
 
-**Vorschau.** 26 Lektionen, 78 ZAM-Karten. Kinder der 4. Klasse üben
-hier „Sprache untersuchen“ und „Richtig schreiben“ aus dem
+**Vorschau.** 33 Lektionen, 99 ZAM-Karten. Kinder der 4. Klasse üben
+hier „Sprache untersuchen“, „Richtig schreiben“ und Lesen aus dem
 [LehrplanPLUS Deutsch 3/4](https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/deutsch)
 (Abgleich am 3. und 4. November 2026). Begleiter ist Tinto, ein kleiner Tintenfisch,
 der mit acht Armen schreibt. Eine Grundschullehrkraft hat die Inhalte noch
@@ -14,6 +14,7 @@ App und Karten sind veröffentlicht, ihre IDs gelten ab jetzt als Vertrag.
 | 🚂 Satzbahnhof (4.3) | 7 | Signal-Stellwerk, Sprechblasen, Satzzug (Umstellprobe), Bahnsteig-Kontrolle, Paketstation, Fahrplan, Satz-Kupplung |
 | 🔍 Detektivbüro (4.4) | 7 | Silbenschere, Lausch-Lupe, Dehn-Werkstatt, Verlängerungs-Koffer, Kompass, Kronen-Jagd, Fehlerdetektiv |
 | 💎 Wörterschatz (4.4, Grundwortschatz 3/4 des ISB) | 3 | Schatzkarte, Gestern-Maschine, Merkwort-Sortierer |
+| 📖 Lesewerkstatt (2.1, 2.3, 2.4) | 7 | Text-Sortierer, Textmarker, Tabellen-Lupe, Pfeil-Plan, Figuren-Karte, Reim-Werkstatt, Programm-Heft |
 
 ## Aufbau einer Lektion
 
@@ -50,10 +51,10 @@ gesperrt, bleibt die Sitzung nutzbar und zeigt einen Hinweis.
 [`coverage.json`](coverage.json) führt alle 116 Kompetenzerwartungen der
 17 Abschnitte wörtlich (Quelle:
 [`tests/fixtures/official-curriculum.json`](tests/fixtures/official-curriculum.json)).
-32 sind in dieser Ausbaustufe teilweise geübt, 43 für spätere Ausbaustufen
-geplant und 41 brauchen Praxis außerhalb der App (Sprechen, Vorlesen,
-Handschrift, Abschreiben, Bibliothek). Noch nicht enthalten: Lesen und
-Textverständnis, eigene Texte und Sprechen. Der verbindliche Grundwortschatz
+52 sind in dieser Ausbaustufe teilweise geübt, 17 für spätere Ausbaustufen
+geplant und 47 brauchen Praxis außerhalb der App (Sprechen, Vorlesen,
+Handschrift, Abschreiben, Bibliothek, Gespräche über Bücher). Noch nicht
+enthalten: eigene Texte und Sprechen. Alle Lesetexte sind eigene Texte. Der verbindliche Grundwortschatz
 3/4 des ISB steht vollständig in der Station „Wörterschatz“. Siehe
 [Abgleich und Planung](../docs/deutsch-grundschule-4-coverage.md).
 

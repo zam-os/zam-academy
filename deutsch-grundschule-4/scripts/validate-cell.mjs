@@ -11,7 +11,7 @@ import { join } from "node:path";
 
 const core = await import(process.env.ZAM_CORE ?? "zam-core");
 const tile = JSON.parse(readFileSync(new URL("../cell.json", import.meta.url), "utf8"));
-const CARDS = 78;
+const CARDS = 99;
 
 function ulid() {
 	const alphabet = "0123456789ABCDEFGHJKMNPQRSTVWXYZ";
