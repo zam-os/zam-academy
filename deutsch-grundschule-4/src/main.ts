@@ -2,6 +2,7 @@ import "./styles.css";
 import cell from "../cell.json";
 import { findLesson, LESSONS, quizOptions, SOURCES, STAGES } from "./curriculum";
 import { checkAnswer, makeTask, markup } from "./exercises/tasks";
+import { deskHtml } from "./desk";
 import { esc } from "./format";
 import {
 	adoptStored,
@@ -19,6 +20,7 @@ import {
 	starCount,
 	stars,
 } from "./storage/progress";
+import { clearTexts, loadText, saveText, TEXTS_KEY } from "./storage/texts";
 import { tinto } from "./tinto";
 import type { Level, ReadyLesson, SlotWorkshop, Task, TrainWorkshop, MachineWorkshop } from "./types";
 import {
@@ -178,7 +180,7 @@ function renderPath(): void {
 			)
 			.join("")}</ol></section>`;
 	}).join("")}</div>
-<aside class="notice">Tinto sammelt keine Daten. Deine Sterne bleiben nur in diesem Browser. Eltern finden Hinweise unter <button type="button" class="text-button" data-action="view" data-target="eltern">Für Eltern</button>.</aside>`;
+<aside class="notice">Tinto sammelt keine Daten. Deine Sterne und Texte bleiben nur in diesem Browser. Eltern finden Hinweise unter <button type="button" class="text-button" data-action="view" data-target="eltern">Für Eltern</button>.</aside>`;
 }
 
 /* ---------- Lektion ---------- */
@@ -225,6 +227,7 @@ function renderLesson(l: ReadyLesson): void {
 	</div>
 	<div id="practice-area"></div>
 </section>
+${l.desk ? deskHtml(l.id, l.desk, loadText(l.id)) : ""}
 <nav class="lesson-nav" aria-label="Lektionen">
 	<button type="button" class="button secondary" data-action="open" data-lesson="${LESSONS[index - 1]?.id ?? ""}" ${index === 0 ? "disabled" : ""}>← Vorige Lektion</button>
 	<button type="button" class="button" data-action="open" data-lesson="${LESSONS[index + 1]?.id ?? ""}" ${index === LESSONS.length - 1 ? "disabled" : ""}>Nächste Lektion →</button>
@@ -447,7 +450,7 @@ function renderParents(): void {
 </section>
 <section class="card">
 	<h2>Übertritt und was die App nicht abdeckt</h2>
-	<p>Für den Übertritt zählen in Bayern Deutsch, Mathematik und Heimat- und Sachunterricht zusammen. Diese App übt einen Teil von Deutsch. Noch nicht enthalten sind eigene Texte (Erzählen, Berichten, Beschreiben) sowie Sprechen und Zuhören. Lautes Lesen, Lesetempo, Gespräche über Bücher und die Bibliothek brauchen echte Praxis; die Lesewerkstatt übt das Verstehen. Den Grundwortschatz übt Ihr Kind hier am Bildschirm; die Wörter auch mit der Hand zu schreiben, bleibt wichtig. Das gilt ebenso für echte Bücher, Vorlesen und Gespräche.</p>
+	<p>Für den Übertritt zählen in Bayern Deutsch, Mathematik und Heimat- und Sachunterricht zusammen. Diese App übt einen Teil von Deutsch. Die Schreibwerkstatt übt Teilschritte des Schreibens, und am Schreibtisch kann Ihr Kind frei schreiben. Die App liest und bewertet diese Texte nicht; dafür braucht es Sie oder die Lehrkraft. Sprechen und Zuhören sind nicht enthalten, und auch das Sprachlabor ersetzt keine echten Gespräche. Lautes Lesen, Lesetempo, Gespräche über Bücher und die Bibliothek brauchen echte Praxis; die Lesewerkstatt übt das Verstehen. Den Grundwortschatz übt Ihr Kind hier am Bildschirm; die Wörter auch mit der Hand zu schreiben, bleibt wichtig. Das gilt ebenso für echte Bücher, Vorlesen und Gespräche.</p>
 	<p>Das ist eine Vorschau. Eine Grundschullehrkraft hat die Inhalte noch nicht fachlich freigegeben, und Lehrvideos fehlen noch.</p>
 	<ul class="source-list">${SOURCES.map((s) => `<li><a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.label)}</a></li>`).join("")}<li><a href="https://www.km.bayern.de/lernen/ubertritt-und-bildungswege/uebertritt" target="_blank" rel="noopener noreferrer">Bayerisches Kultusministerium · Übertritt</a></li></ul>
 	<p class="small">Links öffnen erst auf Ihren Klick.</p>
@@ -458,7 +461,7 @@ function renderParents(): void {
 </section>
 <section class="card">
 	<h2>Daten und Zurücksetzen</h2>
-	<p>Es gibt kein Konto, keine Werbung und keine Verbindung zu fremden Servern. Der Fortschritt liegt nur im Speicher dieses Browsers.</p>
+	<p>Es gibt kein Konto, keine Werbung und keine Verbindung zu fremden Servern. Der Fortschritt und die Texte vom Schreibtisch liegen nur im Speicher dieses Browsers. Auf einem gemeinsam genutzten Gerät können andere diese Texte lesen.</p>
 	<button type="button" class="button danger" data-action="reset">Fortschritt zurücksetzen</button>
 </section>`;
 }
@@ -571,19 +574,41 @@ main.addEventListener("click", (event) => {
 			renderPractice();
 			main.querySelector<HTMLElement>("#answer, #practice-area .choice")?.focus();
 			return;
+		case "desk-clear":
+			showDialog(
+				"Text löschen?",
+				'<p>Dein Text in dieser Lektion wird gelöscht. Das lässt sich nicht rückgängig machen.</p><div class="dialog-actions"><button type="button" class="button danger" id="confirm-desk-clear">Ja, löschen</button></div>',
+			);
+			element("#confirm-desk-clear").addEventListener("click", () => {
+				const saved = saveText(lessonId, "");
+				dialog.close();
+				render();
+				const area = main.querySelector<HTMLTextAreaElement>("#desk-text");
+				area?.focus();
+				if (!saved) element("#desk-status").textContent = "Dein Browser speichert gerade nicht. Der Text konnte nicht gelöscht werden.";
+			});
+			return;
 		case "reset":
 			showDialog(
 				"Alles zurücksetzen?",
-				'<p>Alle Sterne, Sticker und gelösten Aufgaben in diesem Browser werden gelöscht.</p><div class="dialog-actions"><button type="button" class="button danger" id="confirm-reset">Ja, löschen</button></div>',
+				'<p>Alle Sterne, Sticker, gelösten Aufgaben und Texte vom Schreibtisch in diesem Browser werden gelöscht.</p><div class="dialog-actions"><button type="button" class="button danger" id="confirm-reset">Ja, löschen</button></div>',
 			);
 			element("#confirm-reset").addEventListener("click", () => {
 				progress = resetProgress();
+				clearTexts();
 				persist();
 				dialog.close();
 				navigate();
 			});
 			return;
 	}
+});
+
+main.addEventListener("input", (event) => {
+	const area = event.target;
+	if (!(area instanceof HTMLTextAreaElement) || area.id !== "desk-text") return;
+	const saved = saveText(area.dataset.lesson ?? "", area.value);
+	element("#desk-status").textContent = saved ? "" : "Dein Browser speichert gerade nicht. Schreibe deinen Text auch ins Heft.";
 });
 
 main.addEventListener("submit", (event) => {
@@ -613,6 +638,12 @@ element("#theme").addEventListener("click", () => {
 	}
 });
 window.addEventListener("storage", (event) => {
+	// Another tab changed or reset the texts: show what is stored now, so that the
+	// next keystroke here cannot bring a deleted text back.
+	if (event.key === TEXTS_KEY || event.key === null) {
+		const area = main.querySelector<HTMLTextAreaElement>("#desk-text");
+		if (area) area.value = loadText(area.dataset.lesson ?? "");
+	}
 	if (event.key !== STORAGE_KEY) return;
 	progress = adoptStored(progress);
 	stats();

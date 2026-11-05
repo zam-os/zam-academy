@@ -71,9 +71,9 @@ function tableTask(rng: Rng, list: "literal" | "deeper"): Task {
 }
 
 /** Einfache Zuordnung: Ausschnitt, richtige Antwort, falsche Antworten, Begründung. */
-type Item = [string, string, string[], string];
+export type Item = [string, string, string[], string];
 
-function sort(rng: Rng, prompt: string, items: Item[], hint: string, key: string): Task {
+export function sort(rng: Rng, prompt: string, items: Item[], hint: string, key: string): Task {
 	const [material, answer, wrong, why] = pick(rng, items);
 	return choice(rng, {
 		prompt,
@@ -84,6 +84,14 @@ function sort(rng: Rng, prompt: string, items: Item[], hint: string, key: string
 		explanation: why,
 		key: `${key}:${material}`,
 	});
+}
+
+/** Getippte Antwort: Material, akzeptierte Antworten, Begründung. */
+export type TypedItem = [string, string[], string];
+
+export function typed(rng: Rng, prompt: string, items: TypedItem[], hint: string, key: string, mistakes?: Task["mistakes"]): Task {
+	const [material, accept, why] = pick(rng, items);
+	return text({ prompt, material, accept, hint, explanation: why, key: `${key}:${material}`, mistakes });
 }
 
 /* ---------- 1 Textarten ---------- */

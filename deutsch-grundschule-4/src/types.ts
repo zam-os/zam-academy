@@ -2,7 +2,7 @@ export type Level = 1 | 2;
 
 /** One place in the Wörterstadt; each has its own accent colour. */
 export interface Stage {
-	id: "werkstatt" | "bahnhof" | "detektiv" | "woerterschatz" | "lesewerkstatt";
+	id: "werkstatt" | "bahnhof" | "detektiv" | "woerterschatz" | "lesewerkstatt" | "schreibwerkstatt" | "sprachlabor";
 	title: string;
 	subtitle: string;
 	icon: string;
@@ -181,6 +181,8 @@ export interface Lesson {
 	terms: Term[];
 	/** Optional word list shown in the lesson, with its source. */
 	wordbook?: { groups: { title: string; words: string }[]; note: string };
+	/** Free writing for the child alone: no check, no star; stays in this browser. */
+	desk?: { task: string; checklist: string[] };
 	/** The quick check reuses the lesson's first tier-1 card from cell.json. */
 	check: { wrong: string; explanation: string };
 	workshop: Workshop;

@@ -38,6 +38,11 @@
 	--woerterschatz-soft: #dff5f1;
 	--lesewerkstatt: #b5307f;
 	--lesewerkstatt-soft: #fde7f4;
+	--on-stage: #fff;
+	--schreibwerkstatt: #3f7d20;
+	--schreibwerkstatt-soft: #ebf7e1;
+	--sprachlabor: #0a7ea4;
+	--sprachlabor-soft: #e0f4fb;
 	--radius: 22px;
 	--shadow: 0 6px 0 rgba(36, 48, 74, 0.08), 0 14px 30px rgba(36, 48, 74, 0.08);
 	font-family: ui-rounded, "SF Pro Rounded", "Nunito", "Segoe UI", system-ui, -apple-system, sans-serif;
@@ -81,6 +86,11 @@
 		--woerterschatz-soft: #173733;
 		--lesewerkstatt: #ff9fd6;
 		--lesewerkstatt-soft: #3d1f33;
+		--on-stage: #10151f;
+		--schreibwerkstatt: #a7df7f;
+		--schreibwerkstatt-soft: #22331a;
+		--sprachlabor: #7fd3ee;
+		--sprachlabor-soft: #15303b;
 		--shadow: 0 6px 0 rgba(0, 0, 0, 0.25), 0 14px 30px rgba(0, 0, 0, 0.25);
 	}
 }
@@ -119,6 +129,11 @@
 	--woerterschatz-soft: #173733;
 	--lesewerkstatt: #ff9fd6;
 	--lesewerkstatt-soft: #3d1f33;
+	--on-stage: #10151f;
+	--schreibwerkstatt: #a7df7f;
+	--schreibwerkstatt-soft: #22331a;
+	--sprachlabor: #7fd3ee;
+	--sprachlabor-soft: #15303b;
 	--shadow: 0 6px 0 rgba(0, 0, 0, 0.25), 0 14px 30px rgba(0, 0, 0, 0.25);
 }
 
@@ -142,6 +157,14 @@
 [data-stage="lesewerkstatt"] {
 	--stage: var(--lesewerkstatt);
 	--stage-soft: var(--lesewerkstatt-soft);
+}
+[data-stage="schreibwerkstatt"] {
+	--stage: var(--schreibwerkstatt);
+	--stage-soft: var(--schreibwerkstatt-soft);
+}
+[data-stage="sprachlabor"] {
+	--stage: var(--sprachlabor);
+	--stage-soft: var(--sprachlabor-soft);
 }
 body {
 	--stage: var(--accent);
@@ -172,6 +195,14 @@ body[data-stage="woerterschatz"] {
 body[data-stage="lesewerkstatt"] {
 	--stage: var(--lesewerkstatt);
 	--stage-soft: var(--lesewerkstatt-soft);
+}
+body[data-stage="schreibwerkstatt"] {
+	--stage: var(--schreibwerkstatt);
+	--stage-soft: var(--schreibwerkstatt-soft);
+}
+body[data-stage="sprachlabor"] {
+	--stage: var(--sprachlabor);
+	--stage-soft: var(--sprachlabor-soft);
 }
 * {
 	box-sizing: border-box;
@@ -336,7 +367,7 @@ footer {
 	border-radius: 999px;
 	padding: 0.7rem 1.3rem;
 	background: var(--stage);
-	color: #fff;
+	color: var(--on-stage);
 	font-weight: 800;
 	box-shadow: 0 4px 0 color-mix(in srgb, var(--stage) 60%, #000);
 	transition: transform 0.08s;
@@ -453,6 +484,8 @@ footer {
 }
 .bubble {
 	position: relative;
+	min-width: 0;
+	overflow-wrap: anywhere;
 	margin: 0;
 	background: var(--surface);
 	border: 3px solid var(--line);
@@ -560,7 +593,7 @@ footer {
 	height: 3rem;
 	border-radius: 50%;
 	background: var(--stage);
-	color: #fff;
+	color: var(--on-stage);
 	font-size: 1.3rem;
 	font-weight: 900;
 }
@@ -644,7 +677,7 @@ footer {
 	height: 2rem;
 	border-radius: 50%;
 	background: var(--stage);
-	color: #fff;
+	color: var(--on-stage);
 	font-size: 1rem;
 	flex: none;
 }
@@ -935,12 +968,16 @@ p.feedback.hint {
 }
 .word {
 	display: inline-flex;
+	flex-wrap: wrap;
 	align-items: center;
 	gap: 0.1rem;
+	max-width: 100%;
 	white-space: nowrap;
 }
 .gap-group {
 	display: inline-flex;
+	flex-wrap: wrap;
+	max-width: 100%;
 	gap: 0.2rem;
 	background: var(--soft);
 	border-radius: 12px;
@@ -959,7 +996,7 @@ p.feedback.hint {
 .gap-option.chosen {
 	background: var(--stage);
 	border-color: var(--stage);
-	color: #fff;
+	color: var(--on-stage);
 }
 
 /* train */
@@ -1024,7 +1061,7 @@ p.feedback.hint {
 }
 .wagon-buttons button[aria-pressed="true"] {
 	background: var(--bahnhof);
-	color: #fff;
+	color: var(--on-stage);
 }
 .wheels {
 	position: absolute;
@@ -1085,7 +1122,7 @@ p.feedback.hint {
 .dial-option.chosen {
 	background: var(--stage);
 	border-color: var(--stage);
-	color: #fff;
+	color: var(--on-stage);
 }
 .machine-out {
 	margin-top: 1rem;
@@ -1125,7 +1162,7 @@ p.feedback.hint {
 .level-tabs button[aria-selected="true"] {
 	background: var(--stage);
 	border-color: var(--stage);
-	color: #fff;
+	color: var(--on-stage);
 }
 .progress-dots {
 	display: flex;
@@ -1489,4 +1526,35 @@ dialog::backdrop {
 	flex-basis: 100%;
 	width: 100%;
 	height: 0.3rem;
+}
+
+.desk textarea {
+	display: block;
+	width: 100%;
+	min-height: 11em;
+	padding: 12px;
+	font: inherit;
+	line-height: 1.5;
+	color: inherit;
+	background: var(--stage-soft);
+	border: 2px solid var(--stage);
+	border-radius: 14px;
+	resize: vertical;
+}
+.desk h3 {
+	margin: 18px 0 6px;
+}
+.desk-check {
+	margin-top: 0;
+	padding-left: 1.2em;
+}
+#desk-status:empty {
+	display: none;
+}
+
+/* Long German words must not push the page wider than a small phone. */
+h1,
+h2 {
+	overflow-wrap: anywhere;
+	hyphens: auto;
 }

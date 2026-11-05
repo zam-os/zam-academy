@@ -1,3 +1,4 @@
+/// <reference types="vitest/config" />
 import { defineConfig } from "vite";
 import { viteSingleFile } from "vite-plugin-singlefile";
 
@@ -6,6 +7,8 @@ import { viteSingleFile } from "vite-plugin-singlefile";
 export default defineConfig({
 	base: "/deutsch-grundschule-4/",
 	plugins: [viteSingleFile()],
+	// Tests read the stylesheet to check the contrast of the station colours.
+	test: { css: true },
 	server: {
 		port: 5217,
 		open: false,

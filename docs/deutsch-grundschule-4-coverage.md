@@ -1,6 +1,6 @@
 # Deutsch 4 · Grundschule · Lehrplanabgleich und Planung
 
-Stand: 4. November 2026. Das neue Paket
+Stand: 5. November 2026. Das neue Paket
 [Tintos Wörterstadt](../deutsch-grundschule-4/) ist eine öffentliche Vorschau
 (`publication.json`: `preview`) und steht im Katalog und im Atlas. Die anderen Übertrittsfächer sind
 [Mathematik 4](../mathematik-grundschule-4/) und
@@ -41,11 +41,11 @@ Zur Abgrenzung gelesen:
 | --- | ---: | ---: | ---: | ---: |
 | 1 Sprechen und Zuhören (1.1–1.5) | 26 | 0 | 0 | 26 |
 | 2 Lesen (2.1–2.5) | 35 | 20 | 0 | 15 |
-| 3 Schreiben (3.1–3.3) | 19 | 2 | 13 | 4 |
-| 4.1, 4.2 Verständigung, Sprachen | 4 | 0 | 4 | 0 |
+| 3 Schreiben (3.1–3.3) | 19 | 15 | 0 | 4 |
+| 4.1, 4.2 Verständigung, Sprachen | 4 | 4 | 0 | 0 |
 | 4.3 Sprachliche Strukturen | 15 | 15 | 0 | 0 |
 | 4.4 Richtig schreiben | 17 | 15 | 0 | 2 |
-| **Summe** | **116** | **52** | **17** | **47** |
+| **Summe** | **116** | **69** | **0** | **47** |
 
 „In der App geübt“ heißt teilweise abgedeckt: geübt an vorgegebenen Wörtern
 und Sätzen, nicht in eigenen Texten. Die Zeilen in
@@ -89,6 +89,18 @@ trägt und alle 116 Texte wörtlich mit der Quelle übereinstimmen.
 | `figuren-verstehen` | 2.3.7, 2.4.3 |
 | `sprachbilder-gedichte` | 2.4.5, 2.4.7 |
 | `medien-verstehen` | 2.1.6, 2.1.7, 2.1.9, 2.4.6 |
+| `ideen-sammeln` | 3.2.1, 3.2.2 |
+| `erzaehlen-aufbauen` | 3.2.3 |
+| `erzaehlen-lebendig` | 3.2.4 |
+| `genau-beschreiben` | 3.2.5 |
+| `berichten` | 3.2.6 |
+| `standpunkt-begruenden` | 3.2.7, 3.2.8 |
+| `schreiben-und-verstehen` | 3.2.9, 3.2.10 |
+| `texte-ueberarbeiten` | 3.3.1, 3.3.2, 3.3.3, 3.3.4 |
+| `sprache-wirkt` | 4.1.1 |
+| `verstaendigung` | 4.1.2 |
+| `muendlich-schriftlich` | 4.2.1 |
+| `sprachen-im-umfeld` | 4.2.2 |
 
 ## Lesewerkstatt
 
@@ -110,6 +122,32 @@ freien Zusammenfassungen. Sechs bisher geplante Erwartungen stehen jetzt bei
 „Praxis außerhalb“, weil sie Gespräche oder echtes Tun verlangen: 2.1.1 bis 2.1.4,
 2.1.8 und 2.4.8. Offen bleiben dort auch Symbole aus 2.4.5 und die Umsetzung in
 andere Medien aus 2.4.6.
+
+## Schreibwerkstatt und Sprachlabor
+
+Die App bewertet keine freien Texte. Die Aufgaben üben Teilschritte: sammeln,
+ordnen, auswählen, vergleichen. Am Schreibtisch jeder Schreibwerkstatt-Lektion
+schreibt das Kind frei und prüft sich selbst mit einer Liste. Das bringt keinen
+Stern, die Texte bleiben im Browser (`deutsch_gs4_texts_v1`), und auf einem
+gemeinsam genutzten Gerät können andere sie lesen; die App sagt das dort und auf
+der Elternseite. Wie gut ein Kind selbst schreibt, zeigt die App deshalb nicht.
+Das bleibt Sache von Lehrkraft und Eltern.
+
+Zur Abgrenzung: Deutsch 1/2 kennt bereits das Schreiben zu eigenen Themen, das
+Benennen von Gelungenem und einen konkreten Überarbeitungshinweis, Absichten
+sprachlicher Beiträge, wertschätzende Ausdrucksweise sowie den Vergleich von
+Dialekten und anderen Sprachen; die Lektionen führen das weiter. Gymnasium 5 nennt
+Cluster, Schreibplan, Textlupe und Schreibkonferenz, unterscheidet konzeptionellen
+und medialen Sprachgebrauch und beurteilt Texte zunehmend selbständig. Diese
+Begriffe kommen hier nicht vor, „konzeptionelle Mündlichkeit“ heißt in der App „wie
+gesprochen“. Ein Test prüft das (gelesen am 5. November 2026).
+
+Beispielwörter aus Bairisch und Türkisch sind Einzelbeispiele; Schreibweisen von
+Dialekten schwanken. Die türkischen Wörter und `Schui` und `Milli` hat die
+Zweitprüfung an Wörterbüchern und der bairischen Wikipedia geprüft, `Muatta` und
+`Wossa` nicht. Die Lehrkraft sollte sie mitprüfen, ebenso, ob der Vergleich
+mit Türkisch im eigenen Umfeld passt. Texte, Werbesprüche und Spendenaufrufe sind
+eigene Beispiele; die Witze sind allgemein bekannt.
 
 ## Grundwortschatz 3/4
 
@@ -145,12 +183,13 @@ Schreiben mit der Hand, das Abschreiben und Diktate bleiben außerhalb der App.
 
 ## Offene Lücken und nächste Ausbaustufen
 
-1. **Schreibwerkstatt (3.2, 3.3, 4.3.14).** Erzählen (Einleitung, Höhepunkt,
-   Schluss), Berichten (W-Fragen, Präteritum), Beschreiben und Begründen,
-   jeweils mit Mustervergleich und Kriterien. Eigene Texte bewertet die App
-   nicht automatisch.
-2. **4.1 und 4.2:** Wirkung sprachlicher Mittel, Mündlichkeit und
-   Schriftlichkeit, Sprachen im Umfeld.
+Keine Erwartung ist mehr offen geplant, alle 69 geübten sind aber nur teilweise
+abgedeckt. Es fehlen:
+
+1. **Rückmeldung zu freien Texten.** Die App liest sie nicht. Das bleibt
+   Lehrkraft und Eltern überlassen.
+2. **Die Erwartungen unter „Praxis außerhalb“.** Das sind vor allem Sprechen,
+   Vorlesen und Handschrift. 2.1.2, 2.1.4 und 2.1.8 wären teilweise abbildbar.
 3. **Fachliche Freigabe** durch eine Grundschullehrkraft und Lehrvideos. Bis
    dahin bleibt das Paket eine Vorschau.
 
@@ -167,7 +206,7 @@ Zuordnungsfreigabe.
 ## Prüfung
 
 Befehle und Ergebnisse stehen im Pull Request. Kurz: `npm test` im Paket
-(80 Tests, darunter je Lektion 80 generierte Aufgaben pro Stufe und ein
+(darunter je Lektion 80 generierte Aufgaben pro Stufe und ein
 Zeugenpfad für jedes Werkstattziel), `npm run package:zip` mit
 Offline-Prüfung, `scripts/validate-cells.mjs` und
 `deutsch-grundschule-4/scripts/validate-cell.mjs` mit zam-core 0.54.0 sowie

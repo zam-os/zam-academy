@@ -67,7 +67,7 @@ Published, but not yet reviewed by a primary-school teacher and without teacher 
 | App | Folder | App URL | Cell |
 | --- | --- | --- | --- |
 | Grade 4 mathematics: 40 Discovery Island lessons with Milo (Bavaria) | [`mathematik-grundschule-4/`](mathematik-grundschule-4/) | https://academy.zam-os.org/mathematik-grundschule-4/ | `zam-academy:mathematik-grundschule-4` |
-| Grade 4 German: Tintos Wörterstadt, 33 lessons on language structures, spelling, the Grundwortschatz and reading (Bavaria, LehrplanPLUS 2, 4.3/4.4); text writing still open ([coverage](docs/deutsch-grundschule-4-coverage.md)) | [`deutsch-grundschule-4/`](deutsch-grundschule-4/) | https://academy.zam-os.org/deutsch-grundschule-4/ | `zam-academy:deutsch-grundschule-4` |
+| Grade 4 German: Tintos Wörterstadt, 45 lessons on language, spelling, the Grundwortschatz, reading and writing (Bavaria, LehrplanPLUS 2, 3.2/3.3, 4); the app does not rate free texts ([coverage](docs/deutsch-grundschule-4-coverage.md)) | [`deutsch-grundschule-4/`](deutsch-grundschule-4/) | https://academy.zam-os.org/deutsch-grundschule-4/ | `zam-academy:deutsch-grundschule-4` |
 | Grade 4 Heimat- und Sachunterricht: twenty discovery stations with Lotta (Bavaria) | [`hsu-grundschule-4/`](hsu-grundschule-4/) | https://academy.zam-os.org/hsu-grundschule-4/ | `zam-academy:hsu-grundschule-4` |
 
 ## Develop

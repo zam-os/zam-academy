@@ -12,15 +12,15 @@ const positions = new Set(
 );
 
 describe("Lernpfad", () => {
-	it("pins the 33 lesson ids in their order", () => {
+	it("pins the 45 lesson ids in their order", () => {
 		expect(LESSONS.map((l) => l.id)).toEqual(contract.lessons);
-		expect(new Set(LESSONS.map((l) => l.id)).size).toBe(33);
+		expect(new Set(LESSONS.map((l) => l.id)).size).toBe(45);
 		for (const l of LESSONS) expect(l.id).toMatch(/^[a-z0-9-]{1,64}$/);
 	});
 
 	it("gives every station its lessons, an own accent and a greeting", () => {
-		expect(STAGES.map((s) => s.id)).toEqual(["werkstatt", "bahnhof", "detektiv", "woerterschatz", "lesewerkstatt"]);
-		expect(STAGES.map((s) => LESSONS.filter((l) => l.stage === s.id).length)).toEqual([9, 7, 7, 3, 7]);
+		expect(STAGES.map((s) => s.id)).toEqual(["werkstatt", "bahnhof", "detektiv", "woerterschatz", "lesewerkstatt", "schreibwerkstatt", "sprachlabor"]);
+		expect(STAGES.map((s) => LESSONS.filter((l) => l.stage === s.id).length)).toEqual([9, 7, 7, 3, 7, 8, 4]);
 		for (const s of STAGES) expect(s.greeting.length).toBeGreaterThan(20);
 	});
 
@@ -35,7 +35,7 @@ describe("Lernpfad", () => {
 			expect(l.requiredCorrect, l.id).toBe(3);
 			for (const p of l.paragraphs) expect(p, l.id).not.toMatch(/<[a-z]/i);
 		}
-		expect(new Set(LESSONS.map((l) => l.sticker.name)).size).toBe(33);
+		expect(new Set(LESSONS.map((l) => l.sticker.name)).size).toBe(45);
 	});
 
 	it("asks every quick check with three different answers taken from its card", () => {
