@@ -330,7 +330,7 @@ function renderSceneBody(lessonId: string, s: LabState): string {
 				<rect x="444" y="50" width="162" height="106" rx="10" fill="${saison ? "#dcfce7" : "#fee2e2"}" stroke="${saison ? "#16a34a" : "#dc2626"}" stroke-width="2"/>
 				<text x="525" y="92" text-anchor="middle" font-size="26">${saison ? "🍓 ☀️ 🚲" : "🍓 ✈️ ❄️"}</text>
 				<text x="525" y="124" text-anchor="middle" font-size="11" font-weight="700" fill="#1e293b">${saison ? "Saisonal im Juni vom Feld" : "Flugware im Januar"}</text>
-				${badge(445, 186, 160, saison ? "Klima geschont ✓" : "Hoher CO2-Ausstoß", saison)}
+				${badge(445, 186, 160, saison ? "Klima geschont ✓" : "Hoher CO₂-Ausstoß", saison)}
 			`;
 		}
 
@@ -356,7 +356,7 @@ function renderSceneBody(lessonId: string, s: LabState): string {
 
 				${panelCard(430, 14, 196, 212, "Stromerzeugung & Status")}
 				<text x="528" y="84" text-anchor="middle" font-size="30">${solar ? "☀️ 🔋" : "🏭 💨"}</text>
-				<text x="528" y="116" text-anchor="middle" font-size="11" font-weight="700" fill="var(--lab-ink, #1e293b)">${solar ? "Erneuerbar + Schaltplan" : "Kohlekraftwerk (viel CO2)"}</text>
+				<text x="528" y="116" text-anchor="middle" font-size="11" font-weight="700" fill="var(--lab-ink, #1e293b)">${solar ? "Erneuerbar + Schaltplan" : "Kohlekraftwerk (viel CO₂)"}</text>
 				${badge(448, 144, 160, lit ? "Lampe leuchtet! 💡" : "Stromkreis unterbrochen", lit)}
 				${badge(448, 182, 160, solar ? "Schaltsymbole + Solar ✓" : "Aufbau-Ansicht", solar)}
 			`;
