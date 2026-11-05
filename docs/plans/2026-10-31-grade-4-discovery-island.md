@@ -410,9 +410,12 @@ remains available. Add a regression check before any starter bundling.
 
 Update of 2026-11-05: atoms also bind their school place under the provider
 `zam-academy` (`grundschule`, grade 4, plain subject), so ZAM's Schule lens
-shows "4. Klasse" instead of "Außerhalb des Lehrplans". This claims no
-coverage and leaves the generic import alone, because ZAM matches a curriculum
-scope by provider. The `lehrplanplus-bayern` rule above still holds.
+shows "4. Klasse" instead of "Außerhalb des Lehrplans". This does not touch
+the official curriculum path, because ZAM matches a curriculum scope by provider
+there: `lehrplanplus-bayern`, `grundschule`, grade 4 still offers no cell and
+keeps the generic import. ZAM does read it as a school place: within its own
+`zam-academy` scope a grade counts as fully covered, and its material import
+matches cells by subject alone. The `lehrplanplus-bayern` rule above still holds.
 
 After authorised publication, the ZAM release step uses
 `npm run academy:sync -- --app mathematik-grundschule-4`. Verify fixture/lock
@@ -508,7 +511,9 @@ the cell version. Do not infer identity mappings or transfer mastery from
 similar wording. Do not automatically enrol learners in every new item.
 Verify existing held-cell update semantics and card scope before offering
 the extension; surface any need for staged enrolment as an explicit plan
-change rather than silently creating a whole-year due queue.
+change rather than silently creating a whole-year due queue. Installed
+libraries keep the `zam-academy` school-place bindings until `retired_curricula`
+removes them, so retire them in the same version that adds the official ones.
 
 Before publication, resolve the registry count contract: 36 selectable lessons
 currently map to 39 atoms because the original workshop has four atoms. The

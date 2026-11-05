@@ -117,7 +117,9 @@ exponents and malformed or mixed dot/space groups remain invalid.
   core's card-text validation and write path. Prerequisites form an acyclic
   support graph. Official Grade 4 binding is deferred: the current core treats
   a grade-specific binding as full scope coverage regardless of topic_code,
-  which would hide the generic importer for this partial starter.
+  which would hide the generic importer for this partial starter. Atoms name
+  their school place under the provider `zam-academy` instead, which leaves the
+  official curriculum path alone.
 - `coverage.json` enumerates 54 official competence positions across 13
   subareas, with source anchors, checked date and explicit remaining work.
   Parts of sections 1.1–1.3, 2.1–2.5, 3.1–3.3 and 4.1–4.2 are implemented. No teacher
