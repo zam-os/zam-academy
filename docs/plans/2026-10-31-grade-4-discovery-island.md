@@ -408,6 +408,12 @@ this as a grade-less official binding either. The starter remains available
 through the existing Academy list while generic Grade 4 mathematics import
 remains available. Add a regression check before any starter bundling.
 
+Update of 2026-11-05: atoms also bind their school place under the provider
+`zam-academy` (`grundschule`, grade 4, plain subject), so ZAM's Schule lens
+shows "4. Klasse" instead of "Außerhalb des Lehrplans". This claims no
+coverage and leaves the generic import alone, because ZAM matches a curriculum
+scope by provider. The `lehrplanplus-bayern` rule above still holds.
+
 After authorised publication, the ZAM release step uses
 `npm run academy:sync -- --app mathematik-grundschule-4`. Verify fixture/lock
 identity, Studio enrolment, click-to-open lesson links and no network fetch
