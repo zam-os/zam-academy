@@ -152,4 +152,11 @@ describe("HSU 4 curriculum, coverage & ZAM cell contract", () => {
 		expect(gaps.filter((gap) => gap > 0).length).toBeLessThanOrEqual(21);
 		expect(gaps.filter((gap) => gap < 0).length).toBeLessThanOrEqual(21);
 	});
+
+	it("never words a wrong option on a fat fire as advice to use water", () => {
+		const item = cell.atoms
+			.flatMap((atom) => atom.practice_items)
+			.find((i) => i.slug === "hsu4-feuer-und-brandschutz-2");
+		expect(item?.fast_check?.options[1]).not.toMatch(/lösch|gieß|nehmen/i);
+	});
 });
