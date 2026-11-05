@@ -96,7 +96,7 @@ trägt und alle 116 Texte wörtlich mit der Quelle übereinstimmen.
 | `berichten` | 3.2.6 |
 | `standpunkt-begruenden` | 3.2.7, 3.2.8 |
 | `schreiben-und-verstehen` | 3.2.9, 3.2.10 |
-| `texte-ueberarbeiten` | 3.3.1, 3.3.2, 3.3.4 |
+| `texte-ueberarbeiten` | 3.3.1, 3.3.2, 3.3.3, 3.3.4 |
 | `sprache-wirkt` | 4.1.1 |
 | `verstaendigung` | 4.1.2 |
 | `muendlich-schriftlich` | 4.2.1 |
@@ -143,7 +143,9 @@ Begriffe kommen hier nicht vor, „konzeptionelle Mündlichkeit“ heißt in der
 gesprochen“. Ein Test prüft das (gelesen am 5. November 2026).
 
 Beispielwörter aus Bairisch und Türkisch sind Einzelbeispiele; Schreibweisen von
-Dialekten schwanken. Die Lehrkraft sollte sie mitprüfen, ebenso, ob der Vergleich
+Dialekten schwanken. Die türkischen Wörter und `Schui` und `Milli` hat die
+Zweitprüfung an Wörterbüchern und der bairischen Wikipedia geprüft, `Muatta` und
+`Wossa` nicht. Die Lehrkraft sollte sie mitprüfen, ebenso, ob der Vergleich
 mit Türkisch im eigenen Umfeld passt. Texte, Werbesprüche und Spendenaufrufe sind
 eigene Beispiele; die Witze sind allgemein bekannt.
 

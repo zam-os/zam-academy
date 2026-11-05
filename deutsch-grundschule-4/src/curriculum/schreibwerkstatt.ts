@@ -6,7 +6,7 @@ import { choice, pick, text } from "../exercises/tasks";
 import type { Lesson, MachineView, MachineWorkshop, Rng, Task } from "../types";
 import { gaps, marks, slotWorkshop } from "./helpers";
 import { FACT_TEXTS, type Passage, STORIES } from "./lesetexte";
-import { type Item, sort } from "./lesewerkstatt";
+import { type Item, sort, type TypedItem, typed } from "./lesewerkstatt";
 
 /* ---------- 1 Ideen sammeln ---------- */
 
@@ -36,11 +36,20 @@ const MINDMAP_BRANCHES: Item[] = [
 ];
 
 const BUILDING_BLOCKS: Item[] = [
-	["Du schreibst eine Abenteuererzählung.", "Plötzlich hörte ich hinter mir ein Knacken.", ["Der Wald besteht aus vielen Bäumen.", "Verrühre das Mehl mit den Eiern."], "Das Knacken macht neugierig. Das passt zu einem Abenteuer."],
-	["Du schreibst einen Sachtext über Igel.", "Igel fressen vor allem Käfer und Würmer.", ["Es war einmal ein kleiner Igel.", "Falte das Papier in der Mitte."], "Ein Sachtext nennt Tatsachen."],
-	["Du schreibst ein Märchen.", "Es war einmal eine Königin, die einen Zauberspiegel besaß.", ["Am Montag besuchte unsere Klasse das Rathaus.", "Der Spiegel kostet zehn Euro."], "„Es war einmal“ und der Zauberspiegel sind typisch für Märchen."],
-	["Du schreibst einen Bericht über einen Ausflug.", "Um 8 Uhr fuhr unsere Klasse mit dem Bus los.", ["Der Bus war ein feuerspeiender Drache.", "Sonne, Wind und Wellen reimen sich nicht."], "Ein Bericht nennt sachlich, was wann geschah."],
-	["Du schreibst eine Fantasiegeschichte.", "Hinter dem Schrank öffnete sich eine winzige Tür.", ["Im Schrank liegen drei Hosen.", "Ein Schrank kostet oft viel Geld."], "Die geheime Tür führt in eine Fantasiewelt."],
+	["Du schreibst eine Abenteuererzählung.", "Plötzlich hörte ich hinter mir ein Knacken.", ["Der Wald besteht vor allem aus Fichten und Buchen.", "Verrühre das Mehl langsam mit den beiden Eiern."], "Das Knacken macht neugierig. Das passt zu einem Abenteuer."],
+	["Du schreibst einen Sachtext über Igel.", "Igel fressen vor allem Käfer und Würmer.", ["Es war einmal ein kleiner, neugieriger Igel im Wald.", "„Hilfe!“, rief der Igel und rollte sich schnell zusammen."], "Ein Sachtext nennt Tatsachen."],
+	["Du schreibst ein Märchen.", "Es war einmal eine Königin mit einem Zauberspiegel.", ["Am Montag besuchte unsere Klasse das Rathaus in Landshut.", "Ein großer Spiegel kostet im Möbelhaus etwa fünfzig Euro."], "„Es war einmal“ und der Zauberspiegel sind typisch für Märchen."],
+	["Du schreibst einen Bericht über einen Ausflug.", "Um 8 Uhr fuhr unsere Klasse mit dem Bus los.", ["Der Bus verwandelte sich plötzlich in einen Drachen!", "Ich finde Busfahren einfach schöner als jede Zugfahrt."], "Ein Bericht nennt sachlich, was wann geschah."],
+	["Du schreibst eine Fantasiegeschichte.", "Hinter dem Schrank öffnete sich eine winzige Tür.", ["In unserem Schrank liegen die Hosen im untersten Fach.", "Ein Schrank aus Holz kostet im Möbelhaus oft viel Geld."], "Die geheime Tür führt in eine Fantasiewelt."],
+];
+
+const ODD_WORDS: TypedItem[] = [
+	["Thema Bauernhof: Traktor, Stall, Rakete, Heu", ["Rakete"], "Eine Rakete gehört nicht auf den Bauernhof."],
+	["Thema Winter: Schnee, Schlitten, Badehose, Eis", ["Badehose"], "Die Badehose gehört zum Sommer."],
+	["Thema Fußball: Tor, Schiedsrichter, Angelrute, Abseits", ["Angelrute"], "Eine Angelrute braucht man beim Fußball nicht."],
+	["Thema Märchen: Fee, Zauberstab, Fahrkarte, Schloss", ["Fahrkarte"], "Die Fahrkarte passt nicht in die Märchenwelt."],
+	["Thema Wald: Moos, Reh, Ampel, Fichte", ["Ampel"], "Eine Ampel steht nicht im Wald."],
+	["Thema Schule: Tafel, Heft, Anker, Pause", ["Anker"], "Ein Anker gehört zu einem Schiff."],
 ];
 
 const ideen: Lesson = {
@@ -105,6 +114,7 @@ const ideen: Lesson = {
 		2: [
 			(rng) => sort(rng, "An welchen Ast der Mindmap gehört diese Notiz?", MINDMAP_BRANCHES, "Worum geht es in der Notiz? Suche den passenden Oberbegriff.", "ast"),
 			(rng) => sort(rng, "Welchen Satz nimmst du in deine Sammlung für diesen Text auf?", BUILDING_BLOCKS, "Was will diese Textart: spannend erzählen oder sachlich informieren?", "baustein"),
+			(rng) => typed(rng, "Ein Wort passt nicht zu diesem Thema. Schreibe es heraus.", ODD_WORDS, "Streiche beim Sammeln, was nicht zum Thema gehört.", "streichen"),
 		],
 	},
 	requiredCorrect: 3,
@@ -122,27 +132,36 @@ const STORY_PARTS: Item[] = [
 ];
 
 const PART_CONTENTS: Item[] = [
-	["die Erzählsituation", "wer dabei ist, wo und wann es spielt", ["wie alles am Ende ausgeht", "das größte Problem der Geschichte"], "Am Anfang führst du deine Leser an Ort und Zeit."],
-	["das Ereignis", "etwas Besonderes, das alles verändert", ["was du zum Frühstück gegessen hast", "das Datum von heute"], "Das Ereignis ist der Grund, warum du die Geschichte erzählst."],
-	["den Ausgang", "wie das Problem gelöst wird oder was daraus folgt", ["neue Figuren, die erst jetzt kommen", "wie die Figuren heißen"], "Am Schluss erfahren die Leser, wie es ausgeht."],
-	["den Anfang einer Geschichte über einen Campingurlaub", "Wir zelteten im Sommer an einem kleinen See.", ["Da stand der Bär direkt vor unserem Zelt!", "Seitdem zelten wir nur noch mit einer Trillerpfeife."], "Das nennt Ort und Zeit, bevor etwas geschieht."],
-	["die Mitte einer Geschichte über einen Campingurlaub", "Da stand der Bär direkt vor unserem Zelt!", ["Wir zelteten im Sommer an einem kleinen See.", "Seitdem zelten wir nur noch mit einer Trillerpfeife."], "Der Bär ist das erzählenswerte Ereignis."],
-	["den Schluss einer Geschichte über einen Campingurlaub", "Seitdem zelten wir nur noch mit einer Trillerpfeife.", ["Wir zelteten im Sommer an einem kleinen See.", "Da stand der Bär direkt vor unserem Zelt!"], "„Seitdem“ zeigt, was aus dem Erlebnis folgt."],
+	["in die Erzählsituation", "wer dabei ist, wo und wann es spielt", ["wie alles am Ende ausgeht", "das größte Problem der Geschichte"], "Am Anfang führst du deine Leser an Ort und Zeit."],
+	["in das Ereignis", "etwas Besonderes, das alles verändert", ["was du zum Frühstück gegessen hast", "das Datum von heute"], "Das Ereignis ist der Grund, warum du die Geschichte erzählst."],
+	["in den Ausgang", "wie das Problem gelöst wird oder was daraus folgt", ["neue Figuren, die erst jetzt kommen", "wie die Figuren heißen"], "Am Schluss erfahren die Leser, wie es ausgeht."],
+	["in den Anfang einer Geschichte über einen Campingurlaub", "Wir zelteten im Sommer an einem kleinen See.", ["Da stand der Bär direkt vor unserem Zelt!", "Seitdem zelten wir nur noch mit einer Trillerpfeife."], "Das nennt Ort und Zeit, bevor etwas geschieht."],
+	["in die Mitte einer Geschichte über einen Campingurlaub", "Da stand der Bär direkt vor unserem Zelt!", ["Wir zelteten im Sommer an einem kleinen See.", "Seitdem zelten wir nur noch mit einer Trillerpfeife."], "Der Bär ist das erzählenswerte Ereignis."],
+	["in den Schluss einer Geschichte über einen Campingurlaub", "Seitdem zelten wir nur noch mit einer Trillerpfeife.", ["Wir zelteten im Sommer an einem kleinen See.", "Da stand der Bär direkt vor unserem Zelt!"], "„Seitdem“ zeigt, was aus dem Erlebnis folgt."],
 ];
 
 const WORTHWHILE: Item[] = [
-	["Du erzählst von deinem Ausflug in den Tierpark.", "Ein Affe stahl mir die Mütze vom Kopf.", ["Wir kauften zwei Eintrittskarten.", "Wir gingen an vielen Gehegen vorbei."], "Der Mützendieb ist das Besondere. Der Rest passiert fast bei jedem Ausflug."],
-	["Du erzählst von einem Tag am See.", "Mitten im See ging plötzlich unser Ruderboot unter.", ["Wir packten unsere Handtücher ein.", "Das Wasser war ziemlich kalt."], "Ein sinkendes Boot ist spannend. Handtücher nicht."],
-	["Du erzählst von deinem Schultag.", "Im Klassenzimmer saß auf einmal ein fremdes Huhn.", ["In der ersten Stunde hatten wir Mathe.", "Um eins war die Schule aus."], "Ein Huhn im Klassenzimmer ist erzählenswert."],
-	["Du erzählst von deinem Geburtstag.", "Beim Auspacken sprang ein kleiner Hund aus dem Karton.", ["Ich wurde zehn Jahre alt.", "Es gab Kuchen und Limonade."], "Das Überraschende steht im Mittelpunkt."],
-	["Du erzählst von einer Bahnfahrt.", "In Nürnberg fuhr der Zug ohne meinen Koffer weiter.", ["Der Zug hatte acht Wagen.", "Ich saß am Fenster."], "Der verlorene Koffer ist das Problem, das die Geschichte in Gang bringt."],
+	["Du erzählst von deinem Ausflug in den Tierpark.", "Ein Affe stahl mir die Mütze vom Kopf.", ["Wir kauften am Eingang zwei Eintrittskarten für den Tierpark.", "Wir gingen nacheinander an vielen großen Gehegen vorbei."], "Der Mützendieb ist das Besondere. Der Rest passiert fast bei jedem Ausflug."],
+	["Du erzählst von einem Tag am See.", "Mitten im See ging unser Ruderboot unter.", ["Wir packten zu Hause zuerst unsere Handtücher in die Tasche.", "Das Wasser im See war an diesem Tag ziemlich kalt."], "Ein sinkendes Boot ist spannend. Handtücher nicht."],
+	["Du erzählst von deinem Schultag.", "Im Klassenzimmer saß ein fremdes Huhn.", ["In der ersten Stunde hatten wir wie jeden Montag Mathematik.", "Um eins war die Schule aus, und ich ging nach Hause."], "Ein Huhn im Klassenzimmer ist erzählenswert."],
+	["Du erzählst von deinem Geburtstag.", "Aus dem Karton sprang ein kleiner Hund.", ["Ich wurde an diesem Tag zehn Jahre alt und bekam Geschenke.", "Es gab wie jedes Jahr Schokoladenkuchen und Limonade."], "Das Überraschende steht im Mittelpunkt."],
+	["Du erzählst von einer Bahnfahrt.", "In Nürnberg fuhr der Zug ohne meinen Koffer weiter.", ["Der Zug hatte acht Wagen und hielt an jedem großen Bahnhof.", "Ich saß die ganze Zeit am Fenster und schaute nach draußen."], "Der verlorene Koffer ist das Problem, das die Geschichte in Gang bringt."],
 ];
 
 const ENDINGS: Item[] = [
-	["Ereignis: Beim Wandern verlieren Pia und Noah im Nebel den Weg.", "Mit Noahs Kompass finden sie am Abend zur Hütte zurück.", ["Am nächsten Tag ist Montag.", "Der Nebel besteht aus Wassertröpfchen."], "Der Ausgang löst das Problem aus dem Ereignis."],
-	["Ereignis: Mira versteckt das Zeugnis, weil sie Angst vor dem Gespräch hat.", "Am Abend gibt sie es ihrer Mutter, und beide reden lange darüber.", ["Mira hat einen roten Pullover.", "Zeugnisse gibt es zweimal im Jahr."], "Der Ausgang zeigt, was aus Miras Angst wird."],
-	["Ereignis: Ein fremder Kater läuft Tom jeden Tag bis zur Schule nach.", "Tom findet die Besitzerin, und der Kater darf ihn nun oft besuchen.", ["Katzen schlafen sehr viel.", "Die Schule hat zwei Stockwerke."], "Der Ausgang gehört zu Tom und dem Kater."],
-	["Ereignis: Beim Backen verwechselt Ben Zucker und Salz.", "Alle verziehen das Gesicht, und Ben backt lachend einen zweiten Kuchen.", ["Salz kommt aus dem Meer oder aus dem Berg.", "Der Ofen steht in der Küche."], "Der Ausgang erzählt, wie das Missgeschick endet."],
+	["Ereignis: Beim Wandern verlieren Pia und Noah im Nebel den Weg.", "Mit Noahs Kompass finden sie zur Hütte zurück.", ["Am nächsten Tag ist Montag, und beide müssen wieder zur Schule.", "Nebel besteht aus vielen winzigen Wassertröpfchen in der Luft."], "Der Ausgang löst das Problem aus dem Ereignis."],
+	["Ereignis: Mira versteckt das Zeugnis, weil sie Angst vor dem Gespräch hat.", "Am Abend gibt sie es ihrer Mutter, und beide reden.", ["Mira hat einen roten Pullover und eine neue Schultasche.", "Zeugnisse gibt es in der Grundschule zweimal im Schuljahr."], "Der Ausgang zeigt, was aus Miras Angst wird."],
+	["Ereignis: Ein fremder Kater läuft Tom jeden Tag bis zur Schule nach.", "Tom findet die Besitzerin, und der Kater darf ihn besuchen.", ["Katzen schlafen sehr viel und jagen gern in der Dämmerung.", "Die Schule von Tom hat zwei Stockwerke und eine große Turnhalle."], "Der Ausgang gehört zu Tom und dem Kater."],
+	["Ereignis: Beim Backen verwechselt Ben Zucker und Salz.", "Alle verziehen das Gesicht, und Ben backt lachend neu.", ["Salz kommt aus dem Meer oder tief aus den Bergen.", "Der große Backofen steht in der Küche neben dem Kühlschrank."], "Der Ausgang erzählt, wie das Missgeschick endet."],
+];
+
+const MISSING_PARTS: TypedItem[] = [
+	["Am Samstag gingen wir in den Wald. Plötzlich stand ein Hirsch vor uns.", ["Ausgang", "Schluss", "Ende"], "Wie die Begegnung ausgeht, fehlt noch."],
+	["Emma spielte im Garten. Auf einmal rollte ihr Ball in ein Loch im Zaun.", ["Ausgang", "Schluss", "Ende"], "Ob Emma den Ball wiederbekommt, erfährst du nicht."],
+	["Plötzlich fiel der Strom aus. Am Ende lachten alle im Kerzenschein.", ["Erzählsituation", "Situation", "Anfang"], "Wer ist dabei, wo und wann? Das fehlt am Anfang."],
+	["Da krachte es laut im Keller. Seitdem schließen wir die Tür immer ab.", ["Erzählsituation", "Situation", "Anfang"], "Wer dabei war und wo es geschah, steht nirgends."],
+	["Im Sommer waren wir am Badesee. Am Abend fuhren wir müde nach Hause.", ["Ereignis"], "Es passiert nichts Besonderes. Dann gibt es nichts zu erzählen."],
+	["An einem Regentag saß Tim in der Küche. Danach aß er zufrieden sein Brot.", ["Ereignis"], "Zwischen den Sätzen geschieht nichts Erzählenswertes."],
 ];
 
 const aufbauen: Lesson = {
@@ -197,11 +216,12 @@ const aufbauen: Lesson = {
 	generators: {
 		1: [
 			(rng) => sort(rng, "Welcher Teil einer Erzählung ist dieser Satz?", STORY_PARTS, "Noch nichts Besonderes? Dann ist es die Situation. Geht es zu Ende? Dann ist es der Ausgang.", "teil"),
-			(rng) => sort(rng, "Was gehört hierher?", PART_CONTENTS, "Am Anfang: wer, wo, wann. In der Mitte: das Besondere. Am Schluss: wie es endet.", "inhalt"),
+			(rng) => sort(rng, "Was gehört dort hinein?", PART_CONTENTS, "Am Anfang: wer, wo, wann. In der Mitte: das Besondere. Am Schluss: wie es endet.", "inhalt"),
 		],
 		2: [
 			(rng) => sort(rng, "Welches Ereignis stellst du in den Mittelpunkt deiner Erzählung?", WORTHWHILE, "Worüber würden deine Freunde sagen: Das musst du genau erzählen?", "erzaehlenswert"),
 			(rng) => sort(rng, "Welcher Ausgang passt zu diesem Ereignis?", ENDINGS, "Der Ausgang gehört zur Geschichte und löst das Problem oder zeigt die Folge.", "ausgang"),
+			(rng) => typed(rng, "Ein Teil fehlt in dieser Geschichte. Schreibe seinen Namen auf.", MISSING_PARTS, "Die drei Teile heißen Erzählsituation, Ereignis und Ausgang. Welcher fehlt hier?", "fehlend"),
 		],
 	},
 	requiredCorrect: 3,
@@ -210,8 +230,8 @@ const aufbauen: Lesson = {
 /* ---------- 3 Lebendig erzählen ---------- */
 
 const MEANS: Item[] = [
-	["„Lauf!“, schrie Ali. „Der Stier kommt!“", "wörtliche Rede", ["treffendes Verb", "Gefühl zeigen"], "Du hörst die Figur selbst sprechen."],
-	["„Das schaffen wir nie“, flüsterte Lea.", "wörtliche Rede", ["Gefühl zeigen", "treffendes Verb"], "Die Anführungszeichen zeigen, dass Lea spricht."],
+	["„Da kommt der Stier“, sagte Ali.", "wörtliche Rede", ["treffendes Verb", "Gefühl zeigen"], "Du hörst die Figur selbst sprechen."],
+	["„Das schaffen wir nie“, sagte Lea.", "wörtliche Rede", ["Gefühl zeigen", "treffendes Verb"], "Die Anführungszeichen zeigen, dass Lea spricht."],
 	["Der Dieb huschte um die Ecke.", "treffendes Verb", ["wörtliche Rede", "Gefühl zeigen"], "„Huschte“ sagt viel genauer als „ging“, wie er sich bewegt."],
 	["Das Pferd galoppierte über die Wiese.", "treffendes Verb", ["wörtliche Rede", "Gefühl zeigen"], "„Galoppierte“ zeigt die Bewegung genau."],
 	["Mein Herz klopfte bis zum Hals.", "Gefühl zeigen", ["wörtliche Rede", "treffendes Verb"], "So spürst du die Angst, ohne dass das Wort dasteht."],
@@ -228,11 +248,11 @@ const VERBS: Item[] = [
 ];
 
 const LIVELY: Item[] = [
-	["Es war spannend.", "Mein Atem stockte. Wer stand da hinter der Tür?", ["Es war sehr spannend und auch sehr gut.", "Danach war es dann auch noch spannend."], "Zeige die Spannung, statt sie nur zu nennen."],
-	["Der Mann war böse.", "Der Mann ballte die Fäuste. „Raus hier!“, brüllte er.", ["Der Mann war sehr, sehr böse.", "Der Mann war böse und auch nicht nett."], "Fäuste und wörtliche Rede zeigen die Wut."],
-	["Ich hatte Angst.", "Meine Knie zitterten, und ich brachte kein Wort heraus.", ["Ich hatte große Angst, wirklich.", "Dann hatte ich und dann hatte ich Angst."], "Zitternde Knie lassen dich die Angst spüren."],
-	["Der Hund freute sich.", "Der Hund wedelte wild und sprang an mir hoch.", ["Der Hund war ein Hund, der sich freute.", "Der Hund hat sich dann gefreut."], "Du siehst die Freude des Hundes."],
-	["Dann kam ein Gewitter.", "Ein Blitz zuckte, und gleich darauf krachte der Donner.", ["Dann kam ein Gewitter, und dann war es da.", "Dann war Gewitter."], "Treffende Verben machen das Gewitter lebendig."],
+	["Es war spannend.", "Mein Atem stockte. Wer stand hinter der Tür?", ["Es war wirklich sehr, sehr spannend und auch ziemlich aufregend.", "Danach war es dann auch noch spannend, und dann war es vorbei."], "Zeige die Spannung, statt sie nur zu nennen."],
+	["Der Mann war böse.", "Der Mann ballte die Fäuste. „Raus hier!“, brüllte er.", ["Der Mann war sehr böse, und er war auch wirklich gar nicht nett.", "Der Mann war böse, und dann war er noch viel böser als vorher."], "Fäuste und wörtliche Rede zeigen die Wut."],
+	["Ich hatte Angst.", "Meine Knie zitterten, und ich brachte kein Wort heraus.", ["Ich hatte große Angst, wirklich sehr große Angst an diesem Tag.", "Dann hatte ich Angst, und dann hatte ich noch mehr Angst davor."], "Zitternde Knie lassen dich die Angst spüren."],
+	["Der Hund freute sich.", "Der Hund wedelte wild und sprang an mir hoch.", ["Der Hund war ein Hund, der sich an diesem Tag sehr gefreut hat.", "Der Hund hat sich dann gefreut, und dann hat er sich noch gefreut."], "Du siehst die Freude des Hundes."],
+	["Dann kam ein Gewitter.", "Ein Blitz zuckte, und gleich darauf krachte der Donner.", ["Dann kam ein Gewitter, und dann war das Gewitter endlich da.", "Dann war Gewitter, und es war ein ziemlich großes Gewitter da."], "Treffende Verben machen das Gewitter lebendig."],
 ];
 
 const SPLIT_UP: Item[] = [
@@ -261,8 +281,10 @@ function benView(values: Record<string, string>): MachineView {
 		display: sentence,
 		note: found
 			? "Verb und Zusatz zeigen dasselbe. So siehst du Ben richtig vor dir."
-			: values.verb === "ging" || how === "ohne Zusatz"
-				? "Das sagt noch wenig. Wähle ein treffendes Verb und einen passenden Zusatz."
+			: values.verb === "ging"
+				? "„Ging“ sagt noch wenig. Wähle ein treffendes Verb."
+				: how === "ohne Zusatz"
+					? "Schon lebendig! Mit einem passenden Zusatz siehst du es noch genauer."
 				: "Beides ist lebendig, passt aber nicht ganz zusammen. Probiere etwas anderes.",
 		found,
 		tone: found ? "ok" : undefined,
@@ -285,6 +307,15 @@ const benMachine: MachineWorkshop = {
 		{ id: "wuetend", label: "Zeige: Ben ist wütend.", reached: (state) => state.found.includes("wuetend") },
 	],
 };
+
+const VERB_GAPS: TypedItem[] = [
+	["Der Dieb will nicht gehört werden. Er schl… um die Ecke.", ["schlich"], "„Schlich“ zeigt: leise und vorsichtig."],
+	["Der Hund ist wütend. Er kn… den Fremden an.", ["knurrte"], "„Knurrte“ lässt dich die Wut hören."],
+	["Alle schlafen schon. Nina fl… ihrer Schwester etwas zu.", ["flüsterte"], "„Flüsterte“ passt zur Stille."],
+	["Draußen tobt der Sturm. Der Wind h… um das Haus.", ["heulte"], "„Heulte“ lässt dich den Sturm hören."],
+	["Das Pferd ist schnell. Es gal… über die Wiese.", ["galoppierte"], "„Galoppierte“ zeigt die Bewegung genau."],
+	["Ben hat große Eile. Er r… zum Bus.", ["rannte"], "„Rannte“ zeigt die Eile."],
+];
 
 const lebendig: Lesson = {
 	id: "erzaehlen-lebendig",
@@ -330,6 +361,7 @@ const lebendig: Lesson = {
 		2: [
 			(rng) => sort(rng, "Wie erzählst du diesen Satz am lebendigsten?", LIVELY, "Suche die Fassung, bei der du alles vor dir siehst.", "lebendig"),
 			(rng) => sort(rng, "Wie erzählst du diesen spannenden Moment?", SPLIT_UP, "Welche Fassung lässt dich den Atem anhalten?", "kurz"),
+			(rng) => typed(rng, "Ergänze das treffende Verb. Die ersten Buchstaben stehen schon da.", VERB_GAPS, "Schreibe das ganze Verb in der Vergangenheit.", "verbluecke"),
 		],
 	},
 	requiredCorrect: 3,
@@ -354,17 +386,26 @@ const DESCRIPTION_STYLE: Item[] = [
 ];
 
 const PERSON_ORDER: Item[] = [
-	["Du hast schon die Haare und das Gesicht beschrieben.", "Sie trägt ein grünes Hemd und eine Jeans.", ["Sie ist etwa zehn Jahre alt.", "Sie hat kurze braune Haare."], "Von oben nach unten: Nach dem Kopf kommt die Kleidung."],
-	["Du beginnst deine Beschreibung einer Person.", "Tom ist etwa zehn Jahre alt und ziemlich groß.", ["Er trägt weiße Turnschuhe.", "Seine Jacke hat einen Reißverschluss."], "Zuerst der Gesamteindruck, danach die Einzelheiten."],
-	["Du hast Alter, Haare und Oberteil schon beschrieben.", "Dazu trägt sie blaue Stiefel.", ["Sie ist ungefähr zehn Jahre alt.", "Ihre Haare sind lockig."], "Die Schuhe kommen am Schluss."],
-	["Du beschreibst einen Menschen auf einem Foto. Du hast schon sein Alter genannt.", "Er hat graue Haare und einen Bart.", ["Er trägt schwarze Schuhe.", "Seine Hose ist braun."], "Nach dem Gesamteindruck kommt der Kopf, dann die Kleidung von oben nach unten."],
+	["Du hast schon die Haare und das Gesicht beschrieben.", "Sie trägt ein grünes Hemd und eine Jeans.", ["Sie ist etwa zehn Jahre alt und für ihr Alter ziemlich groß.", "Sie hat kurze braune Haare und eine kleine Brille auf der Nase."], "Von oben nach unten: Nach dem Kopf kommt die Kleidung."],
+	["Du beginnst deine Beschreibung einer Person.", "Tom ist etwa zehn Jahre alt und ziemlich groß.", ["Er trägt an den Füßen weiße Turnschuhe mit roten Streifen.", "Seine blaue Jacke hat vorn einen langen Reißverschluss."], "Zuerst der Gesamteindruck, danach die Einzelheiten."],
+	["Du hast Alter, Haare und Oberteil schon beschrieben.", "Dazu trägt sie blaue Stiefel.", ["Sie ist ungefähr zehn Jahre alt und etwas kleiner als Tom.", "Ihre Haare sind lockig und reichen bis auf die Schultern."], "Die Schuhe kommen am Schluss."],
+	["Du beschreibst einen Menschen auf einem Foto. Du hast schon sein Alter genannt.", "Er hat graue Haare und einen Bart.", ["Er trägt an den Füßen schwarze Schuhe mit dicken Sohlen.", "Seine Hose ist braun und hat an der Seite zwei Taschen."], "Nach dem Gesamteindruck kommt der Kopf, dann die Kleidung von oben nach unten."],
 ];
 
 const FINDER: Item[] = [
-	["Suchmeldung: Unsere Katze ist weg. Welche Angabe fehlt am dringendsten?", "Fellfarbe und besondere Merkmale", ["was sie am liebsten frisst", "wie sehr wir sie lieben"], "Ohne Aussehen kann niemand sie erkennen."],
-	["Versuchsanleitung: Fülle Wasser ins Glas. Beobachte den Eiswürfel. Welcher Schritt fehlt?", "Lege den Eiswürfel in das Glas.", ["Freue dich über den Versuch.", "Lies ein Buch über Eis."], "Ohne diesen Schritt gibt es nichts zu beobachten."],
-	["Weg-Beschreibung: Geh aus der Schule und dann zum Bäcker. Was hilft am meisten?", "Geh nach links und an der Ampel über die Straße.", ["Der Weg ist nicht schwierig.", "Der Bäcker hat gute Brezen."], "Genaue Richtungen führen ans Ziel."],
-	["Beschreibung eines Pullovers. Welche Angabe hilft beim Fundbüro?", "rot, Größe 140, mit einem Stern auf der Brust", ["sehr schön und ziemlich teuer", "von meiner Oma zum Geburtstag"], "Farbe, Größe und Stern kann man prüfen."],
+	["Suchmeldung: Unsere Katze ist weg. Welche Angabe fehlt am dringendsten?", "Fellfarbe und besondere Merkmale", ["was sie am liebsten frisst und wo sie gern schläft", "wie sehr wir sie lieben und wie lange wir sie schon haben"], "Ohne Aussehen kann niemand sie erkennen."],
+	["Versuchsanleitung: Fülle Wasser ins Glas. Beobachte den Eiswürfel. Welcher Schritt fehlt?", "Lege den Eiswürfel in das Glas.", ["Freue dich darauf, was gleich passieren wird.", "Lies vorher ein spannendes Buch über das Eis."], "Ohne diesen Schritt gibt es nichts zu beobachten."],
+	["Weg-Beschreibung: Geh aus der Schule und dann zum Bäcker. Was hilft am meisten?", "Geh nach links und an der Ampel über die Straße.", ["Der Weg ist wirklich nicht schwierig, du findest ihn schon.", "Der Bäcker hat sehr gute Brezen und frische Semmeln."], "Genaue Richtungen führen ans Ziel."],
+	["Beschreibung eines Pullovers. Welche Angabe hilft beim Fundbüro?", "rot, Größe 140, mit einem Stern auf der Brust", ["sehr schön und ziemlich teuer, mein absoluter Lieblingspullover", "von meiner Oma zum Geburtstag, letztes Jahr im Frühling"], "Farbe, Größe und Stern kann man prüfen."],
+];
+
+const PRESENT_FORMS: TypedItem[] = [
+	["Zuerst [[…]] du das Glas mit Wasser. (füllen)", ["füllst"], "Du füllst: Gegenwart."],
+	["Dann [[…]] du den Eiswürfel hinein. (legen)", ["legst"], "Du legst: Gegenwart."],
+	["Danach [[…]] du, ob er schwimmt. (beobachten)", ["beobachtest"], "Du beobachtest: Gegenwart."],
+	["Das Mädchen [[…]] eine gelbe Jacke. (tragen)", ["trägt"], "Sie trägt: Gegenwart, mit ä."],
+	["Er [[…]] kurze braune Haare. (haben)", ["hat"], "Er hat: Gegenwart."],
+	["Zum Schluss [[…]] du alles auf. (schreiben)", ["schreibst"], "Du schreibst: Gegenwart."],
 ];
 
 const beschreiben: Lesson = {
@@ -376,7 +417,7 @@ const beschreiben: Lesson = {
 	bindings: ["3.2-05"],
 	sticker: { emoji: "🔬", name: "Genauschreiber" },
 	paragraphs: [
-		"Eine Beschreibung informiert. Nach ihr soll jemand etwas nachmachen oder wiedererkennen können. Deshalb schreibst du genau und sachlich, meist im Präsens. Deine Gefühle gehören nicht hinein.",
+		"Eine Beschreibung informiert. Nach ihr soll jemand etwas nachmachen oder wiedererkennen können. Deshalb schreibst du genau und sachlich, meist in der Gegenwart (Präsens). Deine Gefühle gehören nicht hinein.",
 		"Bei einem Versuch oder einer Anleitung reihst du die Schritte genau so, wie sie nacheinander geschehen. Wörter wie „zuerst“, „dann“ und „zum Schluss“ helfen dir.",
 		"Bei einer Person gehst du logisch vor: erst der Gesamteindruck wie Alter und Größe, dann von oben nach unten: Haare, Gesicht, Kleidung, Schuhe. Nenne Merkmale, an denen man sie erkennt.",
 	],
@@ -389,14 +430,14 @@ const beschreiben: Lesson = {
 			"Zum Schluss schreibst du auf: Der Eiswürfel schwimmt.",
 		],
 	},
-	takeaway: "Beschreiben heißt: genau, sachlich und meist im Präsens. Abläufe reihst du Schritt für Schritt, Personen beschreibst du von oben nach unten.",
+	takeaway: "Beschreiben heißt: genau, sachlich und meist in der Gegenwart (Präsens). Abläufe reihst du Schritt für Schritt, Personen beschreibst du von oben nach unten.",
 	terms: [
-		{ term: "Präsens", meaning: "die Gegenwartsform: Ich lege, du beobachtest." },
+		{ term: "Gegenwart (Präsens)", meaning: "die Zeitform für das, was jetzt oder immer wieder geschieht: Ich lege, du beobachtest." },
 		{ term: "sachlich", meaning: "ohne Gefühle und Wertungen, nur das, was wirklich so ist" },
 	],
 	check: {
-		wrong: "im Futur",
-		explanation: "Beschreibungen gelten immer wieder neu. Deshalb stehen sie meist im Präsens.",
+		wrong: "im Futur (Zukunft)",
+		explanation: "Beschreibungen gelten immer wieder neu. Deshalb stehen sie meist in der Gegenwart.",
 	},
 	workshop: slotWorkshop(
 		{
@@ -414,7 +455,7 @@ const beschreiben: Lesson = {
 	),
 	desk: {
 		task: "Beschreibe einen einfachen Versuch oder eine Bastelarbeit Schritt für Schritt. Oder beschreibe eine Figur aus deinem Lieblingsbuch so, dass man sie erkennt.",
-		checklist: ["Ich schreibe sachlich und nenne keine Gefühle.", "Ich schreibe im Präsens.", "Die Schritte stehen in der richtigen Reihenfolge, oder ich gehe von oben nach unten.", "Jemand könnte es nach meinem Text nachmachen oder erkennen."],
+		checklist: ["Ich schreibe sachlich und nenne keine Gefühle.", "Ich schreibe in der Gegenwart (Präsens).", "Die Schritte stehen in der richtigen Reihenfolge, oder ich gehe von oben nach unten.", "Jemand könnte es nach meinem Text nachmachen oder erkennen."],
 	},
 	generators: {
 		1: [
@@ -424,6 +465,7 @@ const beschreiben: Lesson = {
 		2: [
 			(rng) => sort(rng, "Welcher Satz kommt in dieser Personenbeschreibung als Nächstes?", PERSON_ORDER, "Erst der Gesamteindruck, dann von oben nach unten.", "person"),
 			(rng) => sort(rng, "Was brauchen deine Leser hier?", FINDER, "Hilft die Angabe wirklich, etwas zu finden oder nachzumachen?", "brauchen"),
+			(rng) => typed(rng, "Schreibe das Verb in der Klammer in der Gegenwart (Präsens).", PRESENT_FORMS, "Beschreibungen stehen meist in der Gegenwart. Wer tut etwas: du, sie oder er?", "praesens"),
 		],
 	},
 	requiredCorrect: 3,
@@ -439,6 +481,8 @@ const OPEN_QUESTION: [string, string][] = [
 	["Am Dienstag war Jonas im Schulgarten.", "Was"],
 ];
 
+const OTHER_QUESTION = "Auch das ist offen, aber hier fehlt eine der vier Grundfragen: Wer, Wann, Wo oder Was.";
+
 function openQuestion(rng: Rng): Task {
 	const [material, answer] = pick(rng, OPEN_QUESTION);
 	return text({
@@ -448,8 +492,10 @@ function openQuestion(rng: Rng): Task {
 		hint: "Prüfe der Reihe nach: Wer? Wann? Wo? Was?",
 		explanation: `Das bleibt hier offen: ${answer}?`,
 		mistakes: {
-			Warum: "Auch das ist offen, aber hier fehlt eine der vier Grundfragen: Wer, Wann, Wo oder Was.",
-			Wie: "Auch das ist offen, aber hier fehlt eine der vier Grundfragen: Wer, Wann, Wo oder Was.",
+			Warum: OTHER_QUESTION,
+			"Warum?": OTHER_QUESTION,
+			Wie: OTHER_QUESTION,
+			"Wie?": OTHER_QUESTION,
 		},
 		key: `offen:${material}`,
 	});
@@ -465,18 +511,27 @@ const REPORT_BELONGS: Item[] = [
 ];
 
 const TIME_ORDER: Item[] = [
-	["Bericht vom Ausflug. Bisher: Um 8 Uhr fuhren wir los. Um 9 Uhr kamen wir an der Burg an.", "Dann führte uns eine Frau durch die Burg.", ["Um 12 Uhr aßen wir unsere Brotzeit.", "Um 7 Uhr packten wir unsere Rucksäcke."], "Die Führung schließt direkt an. Die Brotzeit kommt erst danach, das Packen war vorher."],
-	["Bericht vom Vorfall. Bisher: In der Pause spielten Lea und Finn Fangen. Lea stolperte über eine Tasche.", "Sie fiel hin und schlug sich das Knie auf.", ["Am Nachmittag ging es ihr schon besser.", "Die Pause begann um 10 Uhr."], "Erst der Sturz, dann die Folgen. Die Zeit der Pause gehört an den Anfang."],
-	["Bericht vom Sportfest. Bisher: Um 9 Uhr begrüßte uns die Schulleiterin.", "Danach starteten die ersten Läufe.", ["Am Ende bekam jede Klasse eine Urkunde.", "Vorher hatten wir uns umgezogen."], "Nach der Begrüßung geht das Fest los."],
-	["Bericht vom Feueralarm. Bisher: Um 11 Uhr heulte die Sirene. Alle Klassen gingen auf den Schulhof.", "Dort zählten die Lehrkräfte die Kinder.", ["Um 11.30 Uhr durften wir zurück ins Schulhaus.", "Am Morgen hatten wir Mathematik."], "Erst zählen, dann zurückgehen."],
+	["Bericht vom Ausflug. Bisher: Um 8 Uhr fuhren wir los. Um 9 Uhr kamen wir an der Burg an.", "Dann führte uns eine Frau durch die Burg.", ["Um 12 Uhr aßen wir auf der Wiese unsere Brotzeit.", "Um 7 Uhr packten wir zu Hause unsere Rucksäcke."], "Die Führung schließt direkt an. Die Brotzeit kommt erst danach, das Packen war vorher."],
+	["Bericht vom Vorfall. Bisher: In der Pause spielten Lea und Finn Fangen. Lea stolperte über eine Tasche.", "Sie fiel hin und schlug sich das Knie auf.", ["Am Nachmittag ging es ihr schon wieder viel besser.", "Die große Pause hatte an diesem Tag um 10 Uhr begonnen."], "Erst der Sturz, dann die Folgen. Die Zeit der Pause gehört an den Anfang."],
+	["Bericht vom Sportfest. Bisher: Um 9 Uhr begrüßte uns die Schulleiterin.", "Danach starteten die ersten Läufe.", ["Am Ende bekam jede Klasse vor dem Schulhaus eine Urkunde.", "Vorher hatten wir uns in der Turnhalle schnell umgezogen."], "Nach der Begrüßung geht das Fest los."],
+	["Bericht vom Feueralarm. Bisher: Um 11 Uhr heulte die Sirene. Alle Klassen gingen auf den Schulhof.", "Dort zählten die Lehrkräfte die Kinder.", ["Um 11.30 Uhr durften wir zurück in unser Schulhaus.", "Am Morgen hatten wir noch ganz normal Mathematik."], "Erst zählen, dann zurückgehen."],
 ];
 
 const FACTUAL: Item[] = [
-	["Etwas Spannendes passierte auf dem Schulhof.", "Am Mittwoch um 10 Uhr fiel auf dem Schulhof ein Ast von der Kastanie.", ["Am Mittwoch krachte es furchtbar, und alle bekamen einen Riesenschreck!", "Ein Riesending stürzte auf uns herab, und wir rannten um unser Leben."], "Der sachliche Satz nennt Zeit, Ort und Geschehen."],
-	["Der Ball flog total heftig gegen das Fenster.", "Der Ball traf das Fenster, und die Scheibe bekam einen Riss.", ["Peng! Der Ball sauste wie eine Rakete los.", "Der arme Ball und das arme Fenster!"], "Ein Bericht nennt nur, was geschah."],
-	["Unser Ausflug war mega toll.", "Am Freitag besuchte die Klasse 4a das Römermuseum in Regensburg.", ["Es war das Beste, was wir je erlebt haben!", "Wow, das Römermuseum ist einfach super!"], "Der Bericht nennt, wer wann wo war."],
-	["Der fiese Hund erschreckte uns alle.", "Vor dem Schultor bellte ein großer Hund die Kinder an.", ["Der Hund war ein gemeines Monster.", "Wir waren starr vor Angst, und unser Herz raste!"], "„Fies“ und „Monster“ sind Wertungen."],
-	["Es regnete wie verrückt, und alles war schrecklich.", "Wegen des starken Regens fiel das Sportfest aus.", ["Der Himmel weinte den ganzen Tag lang.", "Das Wetter hat uns den Tag total verdorben!"], "Der sachliche Satz nennt das Wetter und die Folge."],
+	["Etwas Spannendes passierte auf dem Schulhof.", "Am Mittwoch fiel auf dem Schulhof ein Ast von der Kastanie.", ["Am Mittwoch krachte es furchtbar, und alle bekamen einen Riesenschreck!", "Ein Riesending stürzte auf uns herab, und wir rannten um unser Leben!"], "Der sachliche Satz nennt Zeit, Ort und Geschehen."],
+	["Der Ball flog total heftig gegen das Fenster.", "Der Ball traf das Fenster, und die Scheibe bekam einen Riss.", ["Peng! Der Ball sauste wie eine Rakete los und zerschmetterte alles!", "Der arme Ball und das arme Fenster, das war wirklich schrecklich!"], "Ein Bericht nennt nur, was geschah."],
+	["Unser Ausflug war mega toll.", "Am Freitag besuchte die Klasse 4a das Römermuseum.", ["Es war das Allerbeste, was wir in unserem ganzen Leben erlebt haben!", "Wow, das Römermuseum ist einfach super, da müsst ihr alle hin!"], "Der Bericht nennt, wer wann wo war."],
+	["Der fiese Hund erschreckte uns alle.", "Vor dem Schultor bellte ein großer Hund die Kinder an.", ["Der Hund war ein gemeines Monster, und wir hassen ihn alle sehr!", "Wir waren starr vor Angst, und unsere Herzen rasten wie verrückt!"], "„Fies“ und „Monster“ sind Wertungen."],
+	["Es regnete wie verrückt, und alles war schrecklich.", "Wegen des starken Regens fiel das Sportfest aus.", ["Der Himmel weinte den ganzen Tag lang, und wir weinten alle mit!", "Das Wetter hat uns den schönen Tag total verdorben, so ein Mist!"], "Der sachliche Satz nennt das Wetter und die Folge."],
+];
+
+const PAST_FORMS: TypedItem[] = [
+	["Am Montag [[…]] Lena auf dem Pausenhof. (stürzen)", ["stürzte"], "Lena stürzte: 1. Vergangenheit."],
+	["Um 8 Uhr [[…]] die Klasse mit dem Bus los. (fahren)", ["fuhr"], "Die Klasse fuhr: 1. Vergangenheit."],
+	["Frau Maier [[…]] sofort die Sanitäter. (rufen)", ["rief"], "Sie rief: 1. Vergangenheit."],
+	["Tom [[…]] in der Turnhalle eine Geldbörse. (finden)", ["fand"], "Tom fand: 1. Vergangenheit."],
+	["Ein Ast [[…]] von der Kastanie. (fallen)", ["fiel"], "Der Ast fiel: 1. Vergangenheit."],
+	["Am Freitag [[…]] wir das Museum. (besuchen)", ["besuchten"], "Wir besuchten: 1. Vergangenheit."],
 ];
 
 const berichten: Lesson = {
@@ -490,7 +545,7 @@ const berichten: Lesson = {
 	paragraphs: [
 		"Ein Bericht sagt anderen, was wirklich geschehen ist, zum Beispiel bei einem Ausflug oder bei einem Vorfall in der Pause. Er soll vollständig sein. Prüfe die W-Fragen: Wer? Was? Wann? Wo? Oft auch: Wie? und Warum?",
 		"Du schreibst in der Reihenfolge, in der alles geschah. Spannung brauchst du hier nicht. Ein Bericht beginnt also nicht mit dem Aufregendsten, sondern am Anfang.",
-		"Du berichtest sachlich und meist im Präteritum: Das, was vergangen ist, steht in der Erzählzeit. Deine Meinung und erfundene Dinge gehören nicht hinein. Auch Ausrufe wie „Wow!“ lässt du weg.",
+		"Du berichtest sachlich und meist in der 1. Vergangenheit (Präteritum). Deine Meinung und erfundene Dinge gehören nicht hinein. Auch Ausrufe wie „Wow!“ lässt du weg.",
 	],
 	example: {
 		title: "Tinto berichtet vom Pausenhof",
@@ -504,7 +559,7 @@ const berichten: Lesson = {
 	takeaway: "Ein Bericht ist vollständig, sachlich und zeitlich geordnet: Wer? Was? Wann? Wo? Meinung und Erfundenes gehören nicht hinein.",
 	terms: [
 		{ term: "W-Fragen", meaning: "Wer? Was? Wann? Wo? Wie? Warum? Sie prüfen, ob etwas fehlt." },
-		{ term: "Präteritum", meaning: "die Erzählzeit für Vergangenes: Er stürzte, sie rief." },
+		{ term: "1. Vergangenheit (Präteritum)", meaning: "die Zeitform für Vergangenes in Berichten: Er stürzte, sie rief." },
 	],
 	check: {
 		wrong: "Nur: Wer war am lustigsten?",
@@ -514,7 +569,7 @@ const berichten: Lesson = {
 		{
 			variant: "mark",
 			title: "Die Reporter-Stifte",
-			intro: "Jeder Bericht antwortet auf die W-Fragen. Wähle einen Stift und markiere in jedem Satz, wer, wann, wo und was geschah. Kleine Wörter dürfen frei bleiben.",
+			intro: "Jeder Bericht antwortet auf die W-Fragen. Wähle einen Stift und markiere in jedem Satz, wer, wann, wo und was geschah.",
 			pens: [
 				{ value: "P", label: "Wer?", colour: "blue" },
 				{ value: "T", label: "Wann?", colour: "orange" },
@@ -524,20 +579,21 @@ const berichten: Lesson = {
 			puzzles: [
 				marks("sturz", "Am_Montag|T stürzte|E Jonas|P auf_dem_Pausenhof|O .", "Satz aus einem Unfallbericht", "Das Verb sagt dir, was geschah."),
 				marks("museum", "Am_Freitag|T besuchte|E die_Klasse_4b|P das_Römermuseum|O .", "Satz aus einem Ausflugsbericht", "Wo war die Klasse?"),
-				marks("sportfest", "In_der_Turnhalle|O eröffnete|E Frau_Maier|P um_zehn_Uhr|T das Sportfest .", "Satz über das Sportfest", "Hier steht der Ort am Anfang. Lass „das Sportfest“ frei."),
+				marks("sportfest", "In_der_Turnhalle|O eröffnete_das_Sportfest|E Frau_Maier|P um_zehn_Uhr|T .", "Satz über das Sportfest", "Hier steht der Ort am Anfang."),
 			],
 		},
 		["Markiere den Satz über den Sturz.", "Markiere den Satz über den Ausflug.", "Markiere den Satz über das Sportfest."],
 	),
 	desk: {
-		task: "Schreibe einen kurzen Bericht über einen Ausflug oder über etwas, das in der Pause geschehen ist. Schreibe die Namen anderer Kinder nicht hinein.",
-		checklist: ["Mein Bericht antwortet auf Wer? Was? Wann? Wo?", "Alles steht in der richtigen zeitlichen Reihenfolge.", "Ich habe meine Meinung und Erfundenes weggelassen.", "Ich schreibe im Präteritum."],
+		task: "Schreibe einen kurzen Bericht über einen Ausflug oder über etwas, das in der Pause geschehen ist.",
+		checklist: ["Mein Bericht antwortet auf Wer? Was? Wann? Wo?", "Alles steht in der richtigen zeitlichen Reihenfolge.", "Ich habe meine Meinung und Erfundenes weggelassen.", "Ich schreibe in der 1. Vergangenheit (Präteritum)."],
 	},
 	generators: {
 		1: [openQuestion, (rng) => sort(rng, "Gehört dieser Satz in einen Bericht?", REPORT_BELONGS, "Ist es eine Tatsache? Oder ist es eine Meinung oder erfunden?", "gehoert")],
 		2: [
 			(rng) => sort(rng, "Welcher Satz kommt in diesem Bericht als Nächstes?", TIME_ORDER, "Stelle dir den Ablauf wie einen Film vor. Was geschieht direkt danach?", "zeit"),
 			(rng) => sort(rng, "Wie schreibst du das sachlich für einen Bericht?", FACTUAL, "Welcher Satz nennt nur, was geschah, ohne Wertung und Übertreibung?", "sachlich"),
+			(rng) => typed(rng, "Schreibe das Verb in der Klammer in der 1. Vergangenheit (Präteritum).", PAST_FORMS, "Berichte stehen meist in der 1. Vergangenheit: gestern stürzte, fuhr, rief.", "praeteritum"),
 		],
 	},
 	requiredCorrect: 3,
@@ -551,7 +607,7 @@ const ARGUMENT_PARTS: Item[] = [
 	["Dort können alle Kinder baden, auch wenn sie noch nicht gut schwimmen.", "Grund", ["Standpunkt", "Beispiel"], "Der Satz sagt, warum der Vorschlag gut ist."],
 	["Viele Kinder lesen in der Pause gern, weil es dort ruhig ist.", "Grund", ["Standpunkt", "Beispiel"], "„Weil“ zeigt dir den Grund."],
 	["Zum Beispiel gibt es dort einen flachen Strand für Anfänger.", "Beispiel", ["Standpunkt", "Grund"], "„Zum Beispiel“ macht den Grund anschaulich."],
-	["So hat Mia in den Ferien drei Bücher aus der Bücherei gelesen.", "Beispiel", ["Standpunkt", "Grund"], "Mia zeigt an einem Fall, dass der Grund stimmt."],
+	["Zum Beispiel liest Mia in jeder Pause in ihrem Buch.", "Beispiel", ["Standpunkt", "Grund"], "Mia zeigt an einem Fall, dass der Grund stimmt. „Zum Beispiel“ kündigt das an."],
 ];
 
 const FITTING_REASON: Item[] = [
@@ -563,17 +619,26 @@ const FITTING_REASON: Item[] = [
 ];
 
 const STRONG_REASONS: Item[] = [
-	["Lea möchte die Klasse von einem Ausflug zum Bauernhof überzeugen.", "Dort sehen wir, woher unsere Lebensmittel kommen.", ["Ich will da einfach unbedingt hin.", "Wer nicht mitkommt, ist doof."], "Der Grund betrifft alle. Die anderen Sätze überzeugen niemanden."],
-	["Tom möchte eine Regel für den Fußballplatz.", "Dann streiten wir weniger, und jede Klasse kann spielen.", ["Wir sind einfach die Besten.", "Weil ich das gesagt habe."], "Weniger Streit und gerechte Zeiten überzeugen alle."],
-	["Mia möchte weniger Hausaufgaben am Wochenende.", "Dann bleibt mehr Zeit für Sport, Familie und Freunde.", ["Hausaufgaben sind voll blöd.", "Alle anderen finden das auch, glaube ich."], "Der Grund erklärt, was dadurch besser wird."],
-	["Ben möchte, dass die Klasse Müll trennt.", "So kann mehr Papier und Plastik wiederverwertet werden.", ["Müll stinkt, und das nervt.", "Das macht man jetzt halt so."], "Der Grund nennt den Nutzen für die Umwelt."],
+	["Lea möchte die Klasse von einem Ausflug zum Bauernhof überzeugen.", "Dort sehen wir, woher unsere Lebensmittel kommen.", ["Ich will da einfach unbedingt hin, weil ich es mir so wünsche.", "Wer nicht mitkommen will, ist doof, und das sage ich auch allen."], "Der Grund betrifft alle. Die anderen Sätze überzeugen niemanden."],
+	["Tom möchte eine Regel für den Fußballplatz.", "Dann streiten wir weniger, und jede Klasse kann spielen.", ["Wir sind einfach die Besten und sollten deshalb immer spielen dürfen.", "Weil ich das gesagt habe, und das muss jetzt einfach genügen."], "Weniger Streit und gerechte Zeiten überzeugen alle."],
+	["Mia möchte weniger Hausaufgaben am Wochenende.", "Dann bleibt mehr Zeit für Sport, Familie und Freunde.", ["Hausaufgaben sind voll blöd, und das finde ich schon seit Langem.", "Alle anderen finden das bestimmt auch, glaube ich zumindest."], "Der Grund erklärt, was dadurch besser wird."],
+	["Ben möchte, dass die Klasse Müll trennt.", "So kann mehr Papier und Plastik wiederverwertet werden.", ["Müll stinkt, und das nervt mich jeden Tag im Klassenzimmer.", "Das macht man jetzt halt so, auch wenn keiner weiß, warum."], "Der Grund nennt den Nutzen für die Umwelt."],
 ];
 
 const SUPPORTING_EXAMPLES: Item[] = [
-	["Grund: Beim Baumwipfelpfad lernen wir viel über den Wald.", "Zum Beispiel erklären dort Schautafeln, welche Tiere in den Baumkronen leben.", ["Zum Beispiel fuhr mein Onkel einmal nach Italien.", "Zum Beispiel ist heute Dienstag."], "Das Beispiel gehört zum Grund und zeigt, was man dort lernt."],
-	["Grund: Längere Pausen helfen beim Lernen.", "Zum Beispiel rechnen wir nach dem Sport oft viel konzentrierter.", ["Zum Beispiel esse ich gern Äpfel.", "Zum Beispiel hat die Schule zwei Türen."], "Das Beispiel zeigt die Wirkung einer Bewegungspause."],
-	["Grund: Mit einer Klassenregel kommt jeder an den Computer.", "Zum Beispiel könnten in jeder Woche zwei andere Kinder dran sein.", ["Zum Beispiel haben manche Computer eine Maus.", "Zum Beispiel lese ich lieber Comics."], "Das Beispiel zeigt, wie die Regel funktioniert."],
-	["Grund: Beim Bauernhof sehen wir, woher unser Essen kommt.", "Zum Beispiel können wir beim Melken zusehen und frische Milch probieren.", ["Zum Beispiel fuhr unser Bus letztes Jahr nach Passau.", "Zum Beispiel bin ich gern draußen."], "Melken und Milch gehören direkt zum Grund."],
+	["Grund: Beim Baumwipfelpfad lernen wir viel über den Wald.", "Zum Beispiel zeigen Schautafeln, welche Tiere dort leben.", ["Zum Beispiel fuhr mein Onkel im letzten Sommer nach Italien ans Meer.", "Zum Beispiel ist heute Dienstag, und morgen ist dann schon Mittwoch."], "Das Beispiel gehört zum Grund und zeigt, was man dort lernt."],
+	["Grund: Längere Pausen helfen beim Lernen.", "Zum Beispiel rechnen wir nach dem Sport viel konzentrierter.", ["Zum Beispiel esse ich in der Pause besonders gern einen Apfel.", "Zum Beispiel hat unsere Schule zwei große Türen zum Pausenhof."], "Das Beispiel zeigt die Wirkung einer Bewegungspause."],
+	["Grund: Mit einer Klassenregel kommt jeder an den Computer.", "Zum Beispiel kommen jede Woche zwei andere Kinder dran.", ["Zum Beispiel haben manche Computer eine Maus und eine große Tastatur.", "Zum Beispiel lese ich viel lieber Comics als lange Geschichten."], "Das Beispiel zeigt, wie die Regel funktioniert."],
+	["Grund: Auf dem Bauernhof sehen wir, woher unser Essen kommt.", "Zum Beispiel können wir beim Melken zusehen.", ["Zum Beispiel fuhr unser Bus letztes Jahr bis nach Passau an die Donau.", "Zum Beispiel bin ich am Wochenende sehr gern draußen im Garten."], "Das Melken gehört direkt zum Grund."],
+];
+
+const ARGUMENT_WORDS: TypedItem[] = [
+	["Wir sollten ein Beet anlegen, [[…]] wir so lernen, wie Pflanzen wachsen.", ["weil", "da"], "„Weil“ leitet einen Grund ein."],
+	["Der Computerplatz sollte wechseln, [[…]] jedes Kind gleich oft drankommen soll.", ["weil", "da"], "„Weil“ leitet einen Grund ein."],
+	["Zum [[…]] gibt es dort einen flachen Strand.", ["Beispiel"], "„Zum Beispiel“ kündigt einen einzelnen Fall an."],
+	["Ich bin [[…]], dass wir an den See fahren.", ["dafür"], "„Ich bin dafür, dass …“ nennt deinen Standpunkt."],
+	["[[…]] Meinung nach sollten wir längere Pausen machen.", ["Meiner"], "„Meiner Meinung nach“ kündigt deinen Standpunkt an."],
+	["Du hast alle Gründe gehört. [[…]] stimmt bitte für den Bauernhof!", ["Deshalb", "Darum", "Daher"], "„Deshalb“ zieht am Schluss die Folgerung."],
 ];
 
 const begruenden: Lesson = {
@@ -581,7 +646,7 @@ const begruenden: Lesson = {
 	stage: "schreibwerkstatt",
 	title: "Meinung begründen",
 	skill: "Du vertrittst einen Standpunkt und stützt ihn mit Gründen und Beispielen.",
-	lehrplan: "D3/4 3.2: Gründe und Beispiele sammeln und ordnen, argumentierende Texte nach Textvorbildern",
+	lehrplan: "D3/4 3.2: Gründe und Beispiele zu einer Position, argumentierende Texte nach Textvorbildern",
 	bindings: ["3.2-07", "3.2-08"],
 	sticker: { emoji: "🗣️", name: "Überzeuger" },
 	paragraphs: [
@@ -638,6 +703,7 @@ const begruenden: Lesson = {
 		2: [
 			(rng) => sort(rng, "Welcher Grund überzeugt die anderen am ehesten?", STRONG_REASONS, "Würde auch jemand zustimmen, der zuerst anderer Meinung war?", "stark"),
 			(rng) => sort(rng, "Welches Beispiel stützt diesen Grund?", SUPPORTING_EXAMPLES, "Das Beispiel muss genau zu diesem Grund gehören.", "beispiel"),
+			(rng) => typed(rng, "Ergänze das Wort, das hier fehlt.", ARGUMENT_WORDS, "Soll hier ein Grund, ein Beispiel, dein Standpunkt oder der Schluss stehen?", "signalwort"),
 		],
 	},
 	requiredCorrect: 3,
@@ -685,18 +751,18 @@ const LEARNING_LOG: Item[] = [
 ];
 
 const LEARNING_PROGRESS: Item[] = [
-	["Wie beschreibst du deinen Fortschritt beim Grundwortschatz?", "Vor zwei Wochen konnte ich fünf der Wörter. Heute schreibe ich neun richtig.", ["Ich bin gut in Deutsch.", "Wörter üben ist doof."], "Dieser Eintrag sagt genau, was sich verändert hat."],
-	["Wie beschreibst du, was dir beim Gedicht geholfen hat?", "Ich habe die Reimwörter markiert. Danach konnte ich mir die Verse leichter merken.", ["Das Gedicht war irgendwie gut.", "Gedichte sind in Büchern."], "Du nennst, was du getan hast und wie es dir half."],
-	["Wie planst du den nächsten Schritt?", "Morgen übe ich die Wörter mit „ie“, weil ich dort noch viele Fehler mache.", ["Morgen ist wieder Schule.", "Hoffentlich wird es irgendwie besser."], "Ein guter Plan nennt, was du genau üben willst."],
-	["Wie beschreibst du eine Schwierigkeit beim Lesen?", "Beim Sachtext habe ich das Wort „nachtaktiv“ nicht verstanden. Der nächste Satz hat es erklärt.", ["Der Text war zu lang.", "Lesen mag ich nicht so."], "Du sagst genau, wo es schwierig war und was half."],
+	["Wie beschreibst du deinen Fortschritt beim Grundwortschatz?", "Vor zwei Wochen schrieb ich fünf Wörter richtig, heute neun.", ["Ich bin eigentlich schon immer ziemlich gut in Deutsch gewesen, finde ich.", "Wörter üben ist doof, aber es muss halt leider irgendwie sein."], "Dieser Eintrag sagt genau, was sich verändert hat."],
+	["Wie beschreibst du, was dir beim Gedicht geholfen hat?", "Ich habe die Reimwörter markiert, dann ging das Merken leichter.", ["Das Gedicht war irgendwie gut, und ich habe es auch irgendwie gekonnt.", "Gedichte stehen oft in Büchern und haben meistens mehrere Strophen."], "Du nennst, was du getan hast und wie es dir half."],
+	["Wie planst du den nächsten Schritt?", "Morgen übe ich Wörter mit „ie“, denn dort mache ich noch Fehler.", ["Morgen ist wieder Schule, und dann sehen wir einfach, wie es so läuft.", "Hoffentlich wird es irgendwann besser, das wäre wirklich sehr schön."], "Ein guter Plan nennt, was du genau üben willst."],
+	["Wie beschreibst du eine Schwierigkeit beim Lesen?", "Ich verstand „nachtaktiv“ nicht. Der nächste Satz hat es erklärt.", ["Der Text war mir heute einfach zu lang und auch ziemlich langweilig.", "Lesen mag ich nicht so gern, lieber spiele ich draußen Fußball."], "Du sagst genau, wo es schwierig war und was half."],
 ];
 
 const SUMMARIES: [string, "fact" | "story", string, [string, string], string][] = [
-	["igel", "fact", "Igel sind nachts unterwegs, fressen vor allem Käfer, Raupen und Würmer, schützen sich mit Stacheln und halten Winterschlaf.", ["Igel fressen Käfer.", "Der Igel ist nachtaktiv. Am Tag schläft er in einem Versteck aus Laub."], "Die Zusammenfassung nennt das Wichtigste aus allen Absätzen, mit eigenen Worten."],
-	["bienen", "fact", "In einem Bienenstock legt die Königin die Eier. Arbeiterinnen sammeln Nektar für den Honig und zeigen einander mit einem Tanz das Futter.", ["Bienen tanzen gern.", "In einem Bienenstock leben viele tausend Bienen. Die meisten sind Arbeiterinnen."], "Hier kommt jeder Absatz vor."],
-	["wasser", "fact", "Wasser verdunstet, bildet in der kalten Luft Wolken, fällt als Regen oder Schnee und fließt zurück ins Meer.", ["Die Sonne ist heiß, und Wasser ist nass.", "Viele Tröpfchen zusammen sehen wir als Wolke."], "Die Zusammenfassung nennt den ganzen Weg, nicht nur ein Stück."],
-	["brunnen", "story", "Mia und ihre Oma angeln einen alten Schlüssel aus dem Brunnen und finden damit in einer Truhe Fotos von Oma als Kind.", ["Mia fährt in den Ferien zu ihrer Oma.", "Oma hat einen Dachboden."], "Das fasst die ganze Handlung zusammen."],
-	["drachen", "story", "Der neue Junge Ben holt Tims Drachen aus dem Baum und findet so einen Freund.", ["Tims Drachen hängt im Baum.", "Ben steht in den Pausen am Zaun."], "Der Satz nennt Anfang, Ereignis und Ausgang in Kürze."],
+	["igel", "fact", "Igel sind nachts unterwegs, fressen vor allem Käfer, Raupen und Würmer, schützen sich mit Stacheln und halten Winterschlaf.", ["Igel fressen Käfer.", "Der Igel ist nachtaktiv. Am Tag schläft er in einem Versteck aus Laub. Erst in der Dämmerung geht er auf Nahrungssuche."], "Die Zusammenfassung nennt das Wichtigste aus allen Absätzen, mit eigenen Worten. Das Abschreiben eines Absatzes reicht nicht."],
+	["bienen", "fact", "In einem Bienenstock legt die Königin die Eier. Arbeiterinnen sammeln Nektar für den Honig und zeigen einander mit einem Tanz das Futter.", ["Bienen tanzen gern.", "In einem Bienenstock leben viele tausend Bienen. Die meisten sind Arbeiterinnen. Nur eine Biene legt die Eier: die Königin. Die Arbeiterinnen fliegen zu den Blüten."], "Hier kommt jeder Absatz vor. Abgeschriebene Sätze aus dem Anfang reichen nicht."],
+	["wasser", "fact", "Wasser verdunstet, bildet in der kalten Luft Wolken, fällt als Regen oder Schnee und fließt zurück ins Meer.", ["Die Sonne ist heiß, und Wasser ist nass.", "Die Sonne erwärmt das Wasser in Meeren, Seen und Flüssen. Dabei verdunstet ein Teil des Wassers. Es steigt als unsichtbarer Wasserdampf in die Luft."], "Die Zusammenfassung nennt den ganzen Weg, nicht nur ein Stück."],
+	["brunnen", "story", "Mia und ihre Oma angeln einen alten Schlüssel aus dem Brunnen und finden damit in einer Truhe Fotos von Oma als Kind.", ["Oma hat einen Dachboden.", "Mia besuchte in den Ferien ihre Oma auf dem Land. Hinter dem Haus stand ein alter Brunnen, abgedeckt mit einem Gitter. Als Mia durch das Gitter schaute, blitzte etwas."], "Das fasst die ganze Handlung zusammen."],
+	["drachen", "story", "Der neue Junge Ben holt Tims Drachen aus dem Baum und findet so einen Freund.", ["Tims Drachen hängt im Baum.", "Ben war neu in der Klasse. In den Pausen stand er allein am Zaun und sagte kaum ein Wort."], "Der Satz nennt Anfang, Ereignis und Ausgang in Kürze."],
 ];
 
 function summary(rng: Rng): Task {
@@ -713,8 +779,8 @@ function summary(rng: Rng): Task {
 }
 
 const DIARIES: [string, string, [string, string], string][] = [
-	["Was schreibt Ben am Abend in sein Tagebuch?", "Heute habe ich mich zum ersten Mal getraut, etwas zu tun. Vielleicht habe ich jetzt einen Freund.", ["Ich habe mich geärgert, weil mein Drachen im Baum hing.", "Ich war heute gar nicht in der Schule."], "Ben hat den Drachen gerettet, und Tim lädt ihn ein. Das macht ihm Mut."],
-	["Was schreibt Tim am Abend in sein Tagebuch?", "Ben sagt fast nie etwas, aber er hatte als Einziger eine Idee. Morgen frage ich ihn, wie er darauf kam.", ["Heute war Ben ganz laut und hat allen Befehle gegeben.", "Mein Drachen ist für immer verloren."], "Tim hat gerade gemerkt, wie klug der stille Ben ist."],
+	["Was schreibt Ben am Abend in sein Tagebuch?", "Heute habe ich mich zum ersten Mal getraut. Vielleicht habe ich jetzt einen Freund.", ["Ich habe mich sehr geärgert, weil mein schöner Drachen hoch im Baum hängen blieb.", "Heute war ich gar nicht in der Schule, denn ich war den ganzen Tag krank zu Hause."], "Ben hat den Drachen gerettet, und Tim lädt ihn ein. Das macht ihm Mut."],
+	["Was schreibt Tim am Abend in sein Tagebuch?", "Ben sagt fast nie etwas, aber er hatte als Einziger eine Idee.", ["Heute war Ben ganz laut und hat allen anderen gesagt, was sie tun sollen.", "Mein Drachen ist für immer verloren, und niemand konnte mir helfen."], "Tim hat gerade gemerkt, wie klug der stille Ben ist."],
 ];
 
 function diary(rng: Rng): Task {
@@ -729,6 +795,15 @@ function diary(rng: Rng): Task {
 		key: `tagebuch:${prompt}`,
 	});
 }
+
+const I_FORMS: TypedItem[] = [
+	["Ben geht nach Hause. → Ich [[…]] nach Hause.", ["gehe"], "Aus „Ben geht“ wird „ich gehe“."],
+	["Mia sieht etwas im Brunnen. → Ich [[…]] etwas im Brunnen.", ["sehe"], "Aus „Mia sieht“ wird „ich sehe“."],
+	["Oma sucht den Schlüssel. → Ich [[…]] den Schlüssel.", ["suche"], "Aus „Oma sucht“ wird „ich suche“."],
+	["Ben freut sich. → Ich [[…]] mich.", ["freue"], "Aus „Ben freut sich“ wird „ich freue mich“."],
+	["Tim hat eine Idee. → Ich [[…]] eine Idee.", ["habe"], "Aus „Tim hat“ wird „ich habe“."],
+	["Ben wirft den Ball. → Ich [[…]] den Ball.", ["werfe"], "Aus „Ben wirft“ wird „ich werfe“."],
+];
 
 const verstehen: Lesson = {
 	id: "schreiben-und-verstehen",
@@ -770,18 +845,18 @@ const verstehen: Lesson = {
 			puzzles: [
 				gaps("ben", "{Ich|Er|Tim} stand allein am Zaun.\nAm Freitag hing Tims Drachen im Baum, und {ich|er|Tim} warf einen Tennisball über den Ast.\nZum ersten Mal lächelte {ich|er|Tim}.", "Aus der Sicht von Ben", "Du bist Ben. Du erzählst selbst."),
 				gaps("kurz", "Der Igel ist {nachts|morgens|mittags} unterwegs.\nEr frisst vor allem {Käfer|Nüsse|Fische}.\nIm Winter hält er {Winterschlaf|Abstand|Mittagsruhe}.", "Zusammenfassung „Der Igel“", "Du kennst den Text aus der Lesewerkstatt. Der Igel ist nachtaktiv."),
-				gaps("tagebuch", "{Neu|Alt|Egal} war für mich, wie der Wasserkreislauf funktioniert.\n{Schwer|Lecker|Rund} fiel mir das Wort „verdunsten“.\nAls {Nächstes|Letztes|Gestern} übe ich, den Weg des Wassers zu erklären.", "Eintrag im Lerntagebuch", "Was war neu, was war schwer, was kommt jetzt?"),
+				gaps("tagebuch", "Das wusste ich noch nicht: {Neu|Alt|Bekannt} war für mich, wie das Wasser in die Wolken kommt.\nDas konnte ich zuerst nicht erklären: {Schwer|Leicht|Lustig} fiel mir das Wort „verdunsten“.\nDas kommt jetzt: Als {Nächstes|Letztes|Gestern} übe ich, den Weg des Wassers zu erklären.", "Eintrag im Lerntagebuch", "Was war neu, was war schwer, was kommt jetzt?"),
 			],
 		},
 		["Schreibe die Sätze aus Bens Sicht.", "Fülle die Zusammenfassung aus.", "Fülle den Eintrag im Lerntagebuch aus."],
 	),
 	desk: {
-		task: "Schreibe in dein Lerntagebuch: Was hast du diese Woche in Deutsch gelernt? Was war schwer? Was übst du als Nächstes? Oder schreibe aus der Sicht einer Figur aus deinem Lieblingsbuch.",
-		checklist: ["Ich nenne genau, was ich gelernt habe.", "Ich nenne etwas, das schwer war.", "Ich weiß, was ich als Nächstes übe.", "Aus Figurensicht schreibe ich in der Ich-Form."],
+		task: "Schreibe in dein Lerntagebuch: Was hast du diese Woche in Deutsch gelernt? Was war schwer? Was übst du als Nächstes? Oder schreibe aus der Sicht einer Figur aus deinem Lieblingsbuch. Oder fasse einen Sachtext in zwei Sätzen zusammen.",
+		checklist: ["Ich nenne genau, was ich gelernt habe.", "Ich nenne etwas, das schwer war.", "Ich weiß, was ich als Nächstes übe.", "Aus Figurensicht schreibe ich in der Ich-Form.", "In einer Zusammenfassung steht nur das Wichtigste."],
 	},
 	generators: {
-		1: [voice, (rng) => sort(rng, "Was gehört in dieses Tagebuch?", LEARNING_LOG, "Steht in dem Satz, was du gelernt hast oder was schwer war?", "lerntagebuch")],
-		2: [summary, diary, (rng) => sort(rng, "Welcher Eintrag ist am genauesten?", LEARNING_PROGRESS, "Sagt der Eintrag genau, was sich verändert hat oder was hilft?", "fortschritt")],
+		1: [voice, (rng) => sort(rng, "Welcher Eintrag zeigt, was gelernt wurde?", LEARNING_LOG, "Steht in dem Satz, was du gelernt hast oder was schwer war?", "lerntagebuch")],
+		2: [summary, diary, (rng) => sort(rng, "Welcher Eintrag ist am genauesten?", LEARNING_PROGRESS, "Sagt der Eintrag genau, was sich verändert hat oder was hilft?", "fortschritt"), (rng) => typed(rng, "Schreibe den Satz aus der Sicht der Figur. Ergänze das Verb in der Ich-Form.", I_FORMS, "Du bist jetzt die Figur. Was sagst du: ich …?", "ichform")],
 	},
 	requiredCorrect: 3,
 };
@@ -797,7 +872,7 @@ const FEEDBACK: Item[] = [
 ];
 
 const GOALS_FOR_HINT: Item[] = [
-	["Anregung: Deine Geschichte plätschert in der Mitte so dahin.", "mehr Spannung beim Ereignis", ["mehr Fragewörter in der Überschrift", "schönere Schrift am Rand"], "Ziel und Anregung gehören zusammen."],
+	["Anregung: Die Mitte deiner Geschichte ist etwas langweilig.", "mehr Spannung beim Ereignis", ["mehr Fragewörter in der Überschrift", "schönere Schrift am Rand"], "Ziel und Anregung gehören zusammen."],
 	["Anregung: Ich weiß nicht, wann das passiert ist.", "die W-Frage „Wann?“ beantworten", ["mehr wörtliche Rede einbauen", "lustigere Wörter benutzen"], "Es fehlt die Zeitangabe."],
 	["Anregung: Fünf Sätze hintereinander beginnen mit „Dann“.", "abwechslungsreiche Satzanfänge", ["einen längeren Titel", "mehr Zahlen"], "Die Umstellprobe hilft dir dabei."],
 	["Anregung: In deinem Bericht steht viel über dein Gefühl.", "sachlicher schreiben", ["noch mehr Ausrufezeichen", "einen spannenderen Schluss"], "Ein Bericht braucht Tatsachen."],
@@ -805,19 +880,28 @@ const GOALS_FOR_HINT: Item[] = [
 ];
 
 const GOAL_CHECK: Item[] = [
-	["Dein Ziel: mehr Spannung.", "Ich schreibe die Stelle mit kurzen Sätzen und zeige die Angst.", ["Ich schreibe die Überschrift größer.", "Ich zähle meine Wörter."], "Diese Änderung passt genau zum Ziel."],
-	["Dein Ziel: ein vollständiger Bericht.", "Ich prüfe die W-Fragen und ergänze, was fehlt.", ["Ich füge einen erfundenen Drachen hinzu.", "Ich male ein Bild an den Rand."], "Die W-Fragen zeigen, ob etwas fehlt."],
-	["Dein Ziel: eine genaue Beschreibung.", "Ich ergänze, welche Farbe und Größe der Rucksack hat.", ["Ich schreibe, wie sehr ich ihn mag.", "Ich schreibe den Text ganz klein."], "Farbe und Größe machen die Beschreibung genauer."],
-	["Dein Ziel: abwechslungsreiche Satzanfänge.", "Ich stelle Satzglieder um: Statt „Dann rannte ich“ schreibe ich „Ich rannte sofort los“.", ["Ich setze überall „und dann“ ein.", "Ich streiche alle Verben."], "Die Umstellprobe bringt Abwechslung."],
-	["Dein Ziel: dass dein Text überzeugt.", "Ich ergänze einen weiteren Grund mit einem Beispiel.", ["Ich schreibe alles in Großbuchstaben.", "Ich drohe, nicht mehr mitzukommen."], "Gründe und Beispiele überzeugen."],
+	["Dein Ziel: mehr Spannung.", "Ich zeige die Angst und schreibe kurze Sätze.", ["Ich schreibe die Überschrift größer und male ein buntes Bild dazu.", "Ich zähle meine Wörter und schreibe noch zehn weitere Sätze dazu."], "Diese Änderung passt genau zum Ziel."],
+	["Dein Ziel: ein vollständiger Bericht.", "Ich prüfe die W-Fragen und ergänze, was fehlt.", ["Ich füge einen erfundenen Drachen hinzu, damit es spannender wird.", "Ich male ein Bild an den Rand und schreibe meine Meinung dazu."], "Die W-Fragen zeigen, ob etwas fehlt."],
+	["Dein Ziel: eine genaue Beschreibung.", "Ich ergänze Farbe und Größe des Rucksacks.", ["Ich schreibe, wie sehr ich den Rucksack mag und wie toll er ist.", "Ich schreibe den ganzen Text noch einmal ordentlich und klein ab."], "Farbe und Größe machen die Beschreibung genauer."],
+	["Dein Ziel: abwechslungsreiche Satzanfänge.", "Ich stelle Satzglieder um: Sofort rannte ich los.", ["Ich setze am Anfang von jedem Satz noch ein „und dann“ ein.", "Ich streiche alle Verben, damit die Sätze schön kurz werden."], "Die Umstellprobe bringt Abwechslung."],
+	["Dein Ziel: dass dein Text überzeugt.", "Ich ergänze einen Grund und ein Beispiel.", ["Ich schreibe den ganzen Text in großen Buchstaben mit Ausrufezeichen.", "Ich drohe den anderen, dass ich sonst nicht mehr mitkomme."], "Gründe und Beispiele überzeugen."],
 ];
 
 const LAYOUTS: Item[] = [
-	["ein Sachtext über Igel für die Klassenzeitung", "Überschrift, kurze Absätze und ein Bild vom Igel", ["nur Großbuchstaben ohne Absätze", "bunte Sterne über jedem Wort"], "Überschrift, Absätze und ein passendes Bild helfen beim Lesen."],
-	["eine Einladung zum Klassenfest", "große Überschrift, darunter klar Tag, Uhrzeit und Ort", ["ein langer Text ohne Absätze", "Tag und Ort klein auf der Rückseite"], "Die wichtigen Angaben sollen sofort auffallen."],
-	["eine Anleitung für einen Versuch", "Liste mit nummerierten Schritten", ["alle Schritte in einem langen Satz", "ein Gedicht über den Versuch"], "Nummern zeigen die Reihenfolge."],
-	["eine Geschichte für das Klassenbuch", "Absätze für Anfang, Ereignis und Schluss und ein passendes Bild", ["eine Tabelle mit allen Figuren statt des Textes", "keine Überschrift und keine Absätze"], "Absätze zeigen, wo ein neuer Teil beginnt."],
-	["ein Plakat über deinen Vorschlag für den Wandertag", "große, kurze Sätze und ein Foto vom Ziel", ["sehr kleine Schrift bis an den Rand", "der ganze Text ohne Überschrift"], "Ein Plakat liest man im Vorbeigehen. Es muss von Weitem wirken."],
+	["ein Sachtext über Igel für die Klassenzeitung", "Überschrift, Absätze und ein Bild vom Igel", ["nur Großbuchstaben, ohne Absätze und ohne Überschrift", "bunte Sterne über jedem einzelnen Wort und keine Absätze"], "Überschrift, Absätze und ein passendes Bild helfen beim Lesen."],
+	["eine Einladung zum Klassenfest", "große Überschrift, darunter Tag, Uhrzeit und Ort", ["ein langer Text ohne Absätze, die Uhrzeit irgendwo mittendrin", "Tag und Ort in ganz kleiner Schrift auf der Rückseite"], "Die wichtigen Angaben sollen sofort auffallen."],
+	["eine Anleitung für einen Versuch", "Liste mit nummerierten Schritten", ["alle Schritte in einem einzigen langen Satz hintereinander", "ein langes Gedicht über den Versuch, schön verziert"], "Nummern zeigen die Reihenfolge."],
+	["eine Geschichte für das Klassenbuch", "Absätze für Anfang, Ereignis und Schluss", ["eine Tabelle mit allen Figuren anstelle des ganzen Textes", "keine Überschrift, keine Absätze, alles in einem Block"], "Absätze zeigen, wo ein neuer Teil beginnt."],
+	["ein Plakat über deinen Vorschlag für den Wandertag", "große, kurze Sätze und ein Foto vom Ziel", ["sehr kleine Schrift bis ganz an den Rand des großen Plakats", "der ganze lange Text aus deinem Heft, ohne Überschrift"], "Ein Plakat liest man im Vorbeigehen. Es muss von Weitem wirken."],
+];
+
+const GOAL_WORDS: TypedItem[] = [
+	["Mach die Mitte spannender.", ["spannender"], "Das Ziel ist: mehr Spannung."],
+	["Beschreibe den Rucksack genauer.", ["genauer"], "Das Ziel ist: mehr Genauigkeit."],
+	["Schreibe den Bericht sachlicher.", ["sachlicher"], "Das Ziel ist: weniger Meinung."],
+	["Erzähle den Schluss kürzer.", ["kürzer"], "Das Ziel ist: ein kürzerer Schluss."],
+	["Gestalte die Überschrift größer.", ["größer"], "Das Ziel ist: Die Überschrift soll auffallen."],
+	["Schreibe den Anfang lebendiger.", ["lebendiger"], "Das Ziel ist: ein lebendiger Anfang."],
 ];
 
 const ueberarbeiten: Lesson = {
@@ -825,8 +909,8 @@ const ueberarbeiten: Lesson = {
 	stage: "schreibwerkstatt",
 	title: "Texte überarbeiten und gestalten",
 	skill: "Du gibst hilfreiche Rückmeldungen, setzt dir ein Überarbeitungsziel und gestaltest deinen fertigen Text passend.",
-	lehrplan: "D3/4 3.3: Rückmeldungen geben und aufnehmen, Überarbeitungsziel, Text gestalten",
-	bindings: ["3.3-01", "3.3-02", "3.3-04"],
+	lehrplan: "D3/4 3.3: Rückmeldungen geben und aufnehmen, Überarbeitungsziel, eigener Rechtschreibdurchgang, Text gestalten",
+	bindings: ["3.3-01", "3.3-02", "3.3-03", "3.3-04"],
 	sticker: { emoji: "🪄", name: "Textverbesserer" },
 	paragraphs: [
 		"Kein guter Text ist beim ersten Mal fertig. Eine Rückmeldung hilft dir weiter. Wenn du selbst eine gibst, beginne mit etwas, das gelungen ist. Danach nennst du einen konkreten Hinweis: nicht „Das ist schlecht“, sondern „In der Mitte kannst du mehr von Finns Angst zeigen“.",
@@ -881,6 +965,7 @@ const ueberarbeiten: Lesson = {
 		2: [
 			(rng) => sort(rng, "Welche Änderung bringt dich deinem Ziel näher?", GOAL_CHECK, "Prüfe: Verändert das wirklich das, was du verbessern willst?", "aenderung"),
 			(rng) => sort(rng, "Wie gestaltest du diesen Text passend?", LAYOUTS, "Wozu ist der Text da? Wer liest ihn und wie?", "gestalten"),
+			(rng) => typed(rng, "Diese Anregung nennt dein Überarbeitungsziel. Schreibe das Wort heraus, das sagt, was besser werden soll.", GOAL_WORDS, "Das gesuchte Wort sagt, wie der Text werden soll.", "zielwort"),
 		],
 	},
 	requiredCorrect: 3,

@@ -86,6 +86,14 @@ export function sort(rng: Rng, prompt: string, items: Item[], hint: string, key:
 	});
 }
 
+/** Getippte Antwort: Material, akzeptierte Antworten, Begründung. */
+export type TypedItem = [string, string[], string];
+
+export function typed(rng: Rng, prompt: string, items: TypedItem[], hint: string, key: string, mistakes?: Task["mistakes"]): Task {
+	const [material, accept, why] = pick(rng, items);
+	return text({ prompt, material, accept, hint, explanation: why, key: `${key}:${material}`, mistakes });
+}
+
 /* ---------- 1 Textarten ---------- */
 
 const KINDS = ["Märchen", "Fabel", "Sage", "Gedicht", "Sachtext", "Rezept", "Anleitung"];

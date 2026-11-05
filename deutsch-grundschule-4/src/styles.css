@@ -484,6 +484,8 @@ footer {
 }
 .bubble {
 	position: relative;
+	min-width: 0;
+	overflow-wrap: anywhere;
 	margin: 0;
 	background: var(--surface);
 	border: 3px solid var(--line);
@@ -1548,4 +1550,11 @@ dialog::backdrop {
 }
 #desk-status:empty {
 	display: none;
+}
+
+/* Long German words must not push the page wider than a small phone. */
+h1,
+h2 {
+	overflow-wrap: anywhere;
+	hyphens: auto;
 }

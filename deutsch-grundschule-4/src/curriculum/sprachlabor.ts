@@ -3,7 +3,7 @@
 // mit Menschen, die diese Sprachen sprechen, bleiben Praxis außerhalb der App.
 import type { Lesson, MachineView, MachineWorkshop } from "../types";
 import { marks, slotWorkshop } from "./helpers";
-import { type Item, sort } from "./lesewerkstatt";
+import { type Item, sort, type TypedItem, typed } from "./lesewerkstatt";
 
 /* ---------- 1 Sprache wirkt ---------- */
 
@@ -11,40 +11,49 @@ const DEVICES: Item[] = [
 	["Probier ihn heute noch!", "direkte Anrede", ["Übertreibung", "Reim"], "Der Satz spricht dich direkt an."],
 	["Hol dir jetzt dein neues Rad!", "direkte Anrede", ["Reim", "Übertreibung"], "„Hol dir“ meint dich persönlich."],
 	["Die beste Schokolade der ganzen Welt!", "Übertreibung", ["direkte Anrede", "Reim"], "Das behauptet die Werbung. Beweisen kann sie es nicht."],
-	["Mit diesem Schuh fliegst du schneller als der Wind!", "Übertreibung", ["Reim", "direkte Anrede"], "Kein Schuh macht schneller als der Wind."],
+	["Dieser Schuh ist schneller als der Wind!", "Übertreibung", ["Reim", "direkte Anrede"], "Kein Schuh macht schneller als der Wind."],
 	["Saft mit Kraft!", "Reim", ["Übertreibung", "direkte Anrede"], "Saft und Kraft klingen ähnlich. Das merkt man sich leicht."],
-	["Bleibt froh mit Haferstroh!", "Reim", ["direkte Anrede", "Übertreibung"], "Froh und Stroh reimen sich. So bleibt der Spruch im Kopf."],
+	["Alle froh mit Haferstroh!", "Reim", ["direkte Anrede", "Übertreibung"], "Froh und Stroh reimen sich. So bleibt der Spruch im Kopf."],
 ];
 
 const INTENTIONS: Item[] = [
 	["Nur heute: Zwei Spiele zum Preis von einem!", "dass du etwas kaufst", ["dass du lachst", "dass du spendest"], "Das ist Werbung. Der Preis soll dich locken."],
 	["Dieser neue Roller macht dich zum Star auf dem Schulhof!", "dass du etwas kaufst", ["dass du dich informierst, wie Roller gebaut sind", "dass du spendest"], "Die Werbung verspricht dir etwas Schönes."],
-	["Mika ist sieben und hat bei der Flut sein Zuhause verloren. Hilf ihm mit deiner Spende!", "dass du spendest", ["dass du etwas kaufst", "dass du lachst"], "Der Aufruf erzählt von einem Kind und bittet um Hilfe."],
-	["Jeder Euro hilft, dass die Tiere im Tierheim satt werden.", "dass du spendest", ["dass du ein Tier kaufst", "dass du lachst"], "Das ist ein Aufruf zum Helfen."],
+	["Das Hochwasser hat Mikas Schule beschädigt. Hilf mit deiner Spende, damit er bald wieder lernen kann!", "dass du spendest", ["dass du etwas kaufst", "dass du lachst"], "Der Aufruf erzählt von einem Kind und bittet um Hilfe."],
+	["Jeder Euro hilft, die Tiere im Tierheim satt zu machen.", "dass du spendest", ["dass du ein Tier kaufst", "dass du lachst"], "Das ist ein Aufruf zum Helfen."],
 	["Treffen sich zwei Kerzen. Fragt die eine: „Ist Wasser gefährlich?“ Sagt die andere: „Davon kannst du ausgehen!“", "dass du lachst", ["dass du etwas kaufst", "dass du spendest"], "Das ist ein Witz: Ausgehen hat hier zwei Bedeutungen."],
 	["Hoch oben im Turm flackerte ein Licht. Dann ging die Tür knarrend auf.", "dass du gespannt weiterliest", ["dass du etwas kaufst", "dass du spendest"], "Eine Geschichte will dich fesseln."],
 ];
 
 const WHY_WORDS: Item[] = [
-	["Eine Werbung sagt: „Du hast es dir verdient!“ Warum?", "Du sollst dich persönlich angesprochen und wichtig fühlen.", ["Die Werbung kennt dich genau.", "Der Satz nennt den genauen Preis."], "Die Werbung kennt dich nicht. Das „Du“ soll nur Nähe schaffen."],
-	["Ein Spendenaufruf erzählt von einem einzelnen Kind statt von vielen tausend Menschen. Warum?", "Bei einer einzelnen Geschichte fühlst du eher mit.", ["Es gibt nur dieses eine Kind.", "Zahlen sind verboten."], "Ein einzelnes Schicksal berührt uns oft stärker als eine Zahl."],
-	["Eine Geschichte schreibt: „Etwas Kaltes berührte meine Hand.“ Warum sagt sie nicht gleich, was es war?", "Du sollst gespannt sein und selbst rätseln.", ["Die Figur kennt keine Wörter.", "Es gibt dafür kein Wort."], "Was noch unklar ist, macht neugierig."],
-	["Warum steht in Werbung oft „Nur noch heute!“?", "Du sollst schnell kaufen, ohne lange nachzudenken.", ["Der Laden schließt für immer.", "Morgen gibt es das Ding auf keinen Fall mehr."], "Eile soll dich drängen. Oft gibt es das Angebot später wieder."],
-	["Warum klingt „Saft mit Kraft“ besser als „Saft mit Vitaminen“?", "Der Reim bleibt im Kopf und klingt fröhlich.", ["Der Satz ist genauer.", "Das Wort Kraft ist kürzer als Saft."], "Reime kann man sich leicht merken."],
+	["Eine Werbung sagt: „Du hast es dir verdient!“ Warum?", "Du sollst dich persönlich angesprochen fühlen.", ["Die Werbung kennt dich genau und weiß, was du dir verdient hast.", "Der Satz nennt dir den genauen Preis und alle wichtigen Angaben."], "Die Werbung kennt dich nicht. Das „Du“ soll nur Nähe schaffen."],
+	["Ein Spendenaufruf erzählt von einem einzelnen Kind statt von vielen tausend Menschen. Warum?", "Bei einer einzelnen Geschichte fühlst du eher mit.", ["Es gibt auf der ganzen Welt nur dieses eine Kind, das Hilfe braucht.", "Zahlen dürfen in einem Spendenaufruf grundsätzlich nicht vorkommen."], "Die Geschichte eines einzelnen Menschen berührt uns oft stärker als eine Zahl."],
+	["In einer Geschichte steht: „Etwas Kaltes berührte meine Hand.“ Warum steht dort nicht gleich, was es war?", "Du sollst gespannt sein und selbst rätseln.", ["Die Figur kennt das richtige Wort für dieses Ding leider nicht.", "Für dieses kalte Ding gibt es im Deutschen gar kein eigenes Wort."], "Was noch unklar ist, macht neugierig."],
+	["Warum steht in Werbung oft „Nur noch heute!“?", "Du sollst schnell kaufen, ohne lange nachzudenken.", ["Der Laden schließt heute Abend für immer und kommt nie wieder.", "Morgen gibt es dieses Ding auf der ganzen Welt sicher nicht mehr."], "Eile soll dich drängen. Oft gibt es das Angebot später wieder."],
+	["Warum klingt „Saft mit Kraft“ besser als „Saft mit Vitaminen“?", "Der Reim bleibt im Kopf und klingt fröhlich.", ["Der Satz sagt viel genauer, was alles in dem Saft enthalten ist.", "Das Wort Kraft ist viel kürzer als alle anderen Wörter im Satz."], "Reime kann man sich leicht merken."],
 ];
 
 const JOKES: Item[] = [
-	["„Wie heißt ein Bumerang, der nicht zurückkommt?“ – „Stock.“", "Es ist ein Spiel mit dem Unerwarteten: Ein solcher Bumerang ist einfach nur ein Stück Holz.", ["Bumerangs kommen wirklich nie zurück.", "Das Wort Stock reimt sich auf Bumerang."], "Der Witz nimmt die Frage wörtlich und überrascht dich."],
-	["Treffen sich zwei Kerzen. „Ist Wasser gefährlich?“ – „Davon kannst du ausgehen!“", "„Ausgehen“ hat zwei Bedeutungen: annehmen und erlöschen.", ["Kerzen können wirklich sprechen.", "Wasser ist immer gefährlich."], "Der Witz spielt mit den zwei Bedeutungen."],
-	["„Warum ist das Mathebuch traurig?“ – „Es hat so viele Probleme.“", "„Probleme“ meint hier zwei Dinge: Sorgen und Rechenaufgaben.", ["Mathebücher sind wirklich traurig.", "Das Buch ist zu dick."], "Der Witz spielt mit der doppelten Bedeutung."],
-	["„Herr Doktor, ich fühle mich wie eine Brücke!“ – „Was ist denn über Sie gekommen?“ – „Drei Lkw und ein Bus.“", "„Über Sie gekommen“ meint eigentlich: was mit Ihnen los ist. Hier ist es wörtlich gemeint.", ["Über Menschen fahren oft Lkw.", "Der Arzt macht einen Fehler."], "Eine Redewendung wird wörtlich genommen."],
+	["„Wie heißt ein Bumerang, der nicht zurückkommt?“ – „Stock.“", "Ohne Rückkehr ist er einfach nur ein Stück Holz.", ["Bumerangs kommen wirklich nie zurück und sind deshalb ganz nutzlos.", "Das Wort Stock reimt sich auf Bumerang, und das klingt einfach lustig."], "Der Witz nimmt die Frage wörtlich und überrascht dich."],
+	["Treffen sich zwei Kerzen. „Ist Wasser gefährlich?“ – „Davon kannst du ausgehen!“", "„Ausgehen“ heißt hier annehmen und auch erlöschen.", ["Kerzen können wirklich sprechen und sind deshalb besonders schlau.", "Wasser ist für alle Dinge auf der Welt immer sehr gefährlich."], "Der Witz spielt mit den zwei Bedeutungen."],
+	["„Welche Bank hat kein Geld?“ – „Die Parkbank.“", "„Bank“ meint zwei Dinge: Geldhaus und Sitzplatz.", ["Banken stehen oft im Park, und das weiß fast kein Mensch.", "Auf einer Parkbank darf man sein Geld nicht liegen lassen."], "Der Witz spielt mit den zwei Bedeutungen von „Bank“."],
+	["„Welcher Hahn kräht nie?“ – „Der Wasserhahn.“", "„Hahn“ meint zwei Dinge: das Tier und den Wasserhahn.", ["Wasserhähne krähen jeden Morgen, nur ganz leise und sehr früh.", "Im Bad gibt es nie einen Hahn, und das weiß fast kein Mensch."], "Der Witz spielt mit den zwei Bedeutungen von „Hahn“."],
 ];
 
 const TRUE_OR_TRICK: Item[] = [
-	["Ein Müsli wirbt: „Macht dich zum Superhelden!“", "Das ist übertrieben. Müsli macht niemanden zum Superhelden.", ["Das stimmt, sonst dürfte es nicht auf der Packung stehen.", "Das ist ein Beweis für die gute Qualität."], "Werbung darf übertreiben. Prüfe, was wirklich dahintersteckt."],
-	["Ein Handyspiel wirbt: „Alle spielen es!“", "Das soll dich mitreißen. „Alle“ stimmt fast nie.", ["Dann musst du es auch spielen.", "Das ist eine genaue Zahl."], "„Alle“ ist kein Grund. Du darfst selbst entscheiden."],
-	["Ein Spendenaufruf zeigt ein trauriges Kind.", "Das soll dich berühren. Du kannst trotzdem prüfen, wer dahintersteht.", ["Dann kann alles nur wahr sein.", "Traurige Bilder gibt es nur in Märchen."], "Gefühle sind nicht falsch. Frage aber Erwachsene, wenn du dir nicht sicher bist."],
-	["Ein Saft wirbt: „Jetzt mit neuem Rezept!“", "Das soll neugierig machen. Besser ist der Saft dadurch nicht unbedingt.", ["Neu heißt immer besser.", "Das sagt genau, was anders ist."], "Neu ist nicht automatisch besser."],
+	["Ein Müsli wirbt: „Macht dich zum Superhelden!“", "Das ist übertrieben. Müsli macht niemanden zum Superhelden.", ["Das stimmt bestimmt, sonst dürfte es gar nicht auf der Packung stehen.", "Das ist ein sicherer Beweis dafür, dass dieses Müsli das beste ist."], "Werbung darf übertreiben. Prüfe, was wirklich dahintersteckt."],
+	["Ein Handyspiel wirbt: „Alle spielen es!“", "Das soll dich mitreißen. „Alle“ stimmt fast nie.", ["Dann musst du es auch spielen, denn sonst gehörst du nicht mehr dazu.", "Das ist eine genaue Zahl, denn jemand hat vorher alle Menschen gefragt."], "„Alle“ ist kein Grund. Du darfst selbst entscheiden."],
+	["Ein Spendenaufruf zeigt ein trauriges Kind.", "Das soll dich berühren. Frag nach, wer dahintersteht.", ["Wenn ein Bild traurig ist, muss der ganze Text automatisch wahr sein.", "Traurige Bilder gibt es nur in Märchen und nie in der echten Welt."], "Gefühle sind nicht falsch. Frage aber Erwachsene, wenn du dir nicht sicher bist."],
+	["Ein Saft wirbt: „Jetzt mit neuem Rezept!“", "Das soll neugierig machen. Neu heißt nicht besser.", ["Neu heißt in der Werbung jedes Mal, dass etwas auch besser geworden ist.", "Der Satz sagt ganz genau, was an dem neuen Rezept anders ist."], "Neu ist nicht automatisch besser."],
+];
+
+const RHYME_WORDS: TypedItem[] = [
+	["[[Saft]] mit Kraft!", ["Kraft"], "Saft und Kraft reimen sich."],
+	["Flitzer-[[Schuh]]: schnell im Nu!", ["Nu"], "Schuh und Nu reimen sich."],
+	["Alle [[froh]] mit Haferstroh!", ["Haferstroh"], "Froh und Haferstroh reimen sich."],
+	["Spaß und [[Spiel]], und davon viel!", ["viel"], "Spiel und viel reimen sich."],
+	["Bleib [[fit]], mach mit!", ["mit"], "Fit und mit reimen sich."],
+	["Ein [[Eis]] zum kleinen Preis!", ["Preis"], "Eis und Preis reimen sich."],
 ];
 
 const wirkt: Lesson = {
@@ -69,7 +78,7 @@ const wirkt: Lesson = {
 			"Direkte Anrede: Probier ihn heute!",
 		],
 	},
-	takeaway: "Frage immer: Was will dieser Text von mir? Anrede, Übertreibung und Reim wollen dich locken, Einzelschicksale berühren dich, Witze spielen mit Bedeutungen.",
+	takeaway: "Frage immer: Was will dieser Text von mir? Anrede, Übertreibung und Reim wollen dich locken, Geschichten einzelner Menschen berühren dich, Witze spielen mit Bedeutungen.",
 	terms: [
 		{ term: "Übertreibung", meaning: "etwas wird größer oder besser dargestellt, als es ist" },
 		{ term: "direkte Anrede", meaning: "der Text spricht dich an: du, dir, dein" },
@@ -85,14 +94,14 @@ const wirkt: Lesson = {
 			title: "Das Werbe-Labor",
 			intro: "Tinto untersucht drei Texte. Wähle einen Stift und markiere jedes Mittel. Was nur informiert, bleibt ohne Farbe.",
 			pens: [
-				{ value: "A", label: "direkte Anrede", colour: "blue" },
+				{ value: "A", label: "Anrede", colour: "blue" },
 				{ value: "U", label: "Übertreibung", colour: "red" },
 				{ value: "R", label: "Reim", colour: "purple" },
 			],
 			puzzles: [
 				marks("saft", "Saft_mit_Kraft!|R Der_beste_Saft_der_Welt.|U Probier_ihn_heute!|A Eine_Flasche_enthält_einen_Liter.", "Werbung für Saft", "Welcher Satz sagt nur eine Tatsache?"),
-				marks("schuh", "Hol_dir_die_neuen_Flitzer!|A Schneller_als_jede_Rakete!|U Flitzer_für_Sieger!|R Es_gibt_sie_in_drei_Farben.", "Werbung für Turnschuhe", "Kein Schuh ist schneller als eine Rakete. Flitzer und Sieger klingen ähnlich."),
-				marks("fest", "Komm_zu_unserem_Fest!|A Das_größte_Fest_aller_Zeiten!|U Alle_mal_herhören_und_mitfeiern_beim_Bären!|R Es_beginnt_um_15_Uhr.", "Plakat für ein Schulfest", "Herhören und Bären klingen ähnlich. Die Uhrzeit informiert nur."),
+				marks("schuh", "Hol_dir_die_neuen_Flitzer!|A Schneller_als_jede_Rakete!|U Flitzer-Schuh:_schnell_im_Nu!|R Es_gibt_sie_in_drei_Farben.", "Werbung für Turnschuhe", "Kein Schuh ist schneller als eine Rakete. Schuh und Nu reimen sich."),
+				marks("fest", "Komm_zu_unserem_Fest!|A Das_größte_Fest_aller_Zeiten!|U Spaß_und_Spiel,_und_davon_viel!|R Es_beginnt_um_15_Uhr.", "Plakat für ein Schulfest", "Spiel und viel reimen sich. Die Uhrzeit informiert nur."),
 			],
 		},
 		["Untersuche die Werbung für Saft.", "Untersuche die Werbung für Turnschuhe.", "Untersuche das Plakat für das Fest."],
@@ -105,7 +114,8 @@ const wirkt: Lesson = {
 		2: [
 			(rng) => sort(rng, "Warum ist das so geschrieben?", WHY_WORDS, "Was soll der Text bei dir bewirken?", "warum"),
 			(rng) => sort(rng, "Warum ist dieser Witz lustig?", JOKES, "Hat ein Wort hier zwei Bedeutungen? Oder wird etwas wörtlich genommen?", "witz"),
-			(rng) => sort(rng, "Was denkst du am besten über diesen Satz?", TRUE_OR_TRICK, "Glaube nicht alles sofort. Was soll der Satz bewirken? Stimmt er wirklich?", "pruefen"),
+			(rng) => typed(rng, "Schreibe das Wort heraus, das sich auf das unterstrichene Wort reimt.", RHYME_WORDS, "Sprich den Spruch laut. Welche zwei Wörter klingen am Ende gleich?", "reimwort"),
+			(rng) => sort(rng, "Was stimmt hier am ehesten?", TRUE_OR_TRICK, "Glaube nicht alles sofort. Was soll der Satz bewirken? Stimmt er wirklich?", "pruefen"),
 		],
 	},
 	requiredCorrect: 3,
@@ -125,24 +135,32 @@ const CAUSE_EFFECT: Item[] = [
 	["Ali schaut beim Vortrag die Klasse an und spricht deutlich.", "Die anderen hören aufmerksam zu.", ["Keiner weiß, worum es geht.", "Alle ärgern sich."], "Blick und Deutlichkeit wecken Aufmerksamkeit."],
 	["Mia stellt ihrem Vortrag eine spannende Frage voran.", "Die anderen werden neugierig.", ["Die anderen schlafen ein.", "Die anderen fühlen sich beleidigt."], "Eine Frage weckt Interesse."],
 	["Finn sagt: „Dein Bild ist schön. Die Farben mag ich besonders.“", "Lena freut sich und zeigt gern mehr.", ["Lena ist gekränkt.", "Lena versteht nichts."], "Wertschätzung macht Mut."],
-	["Tom sagt: „Du bist zu blöd dafür!“", "Die andere Person zieht sich zurück oder wird wütend.", ["Die andere Person fühlt sich ermutigt.", "Die andere Person lernt schneller."], "Beleidigungen beenden das gute Gespräch."],
+	["Lena sagt: „Du bist zu blöd dafür!“", "Die andere Person zieht sich zurück oder wird wütend.", ["Die andere Person fühlt sich ermutigt.", "Die andere Person lernt schneller."], "Beleidigungen beenden das gute Gespräch."],
 	["Lea sagt nur: „Wir treffen uns morgen.“", "Ihre Freundin weiß nicht, wo und wann.", ["Ihre Freundin kommt pünktlich an den richtigen Ort.", "Ihre Freundin ist beleidigt."], "Unvollständige Angaben führen zu Missverständnissen."],
 ];
 
 const WHY_FAILS: Item[] = [
-	["„Bring das Ding mit!“, sagt Ali. Paul bringt das falsche Buch mit.", "Ali hat nicht genau gesagt, was er meint.", ["Paul kann nicht lesen.", "Bücher sind zu schwer."], "„Das Ding“ ist nicht genau."],
-	["Mia spricht beim Vortrag leise und schaut nur auf ihren Zettel. Die Klasse wird unruhig.", "Sie erreicht die anderen weder mit Stimme noch mit Blick.", ["Die Klasse mag keine Vorträge.", "Ihr Zettel ist zu klein."], "Stimme und Blick fehlen."],
-	["Tom ruft: „Deine Idee ist Mist!“ Lena sagt danach gar nichts mehr.", "Tom ist nicht wertschätzend, und Lena fühlt sich verletzt.", ["Lena hat keine Ideen mehr.", "Tom hat zu leise gesprochen."], "Herabsetzung beendet das Gespräch."],
-	["Finn erzählt erst das Ende, dann den Anfang und dann die Mitte. Keiner versteht ihn.", "Seine Informationen sind nicht geordnet.", ["Seine Geschichte ist zu kurz.", "Die anderen hören nicht gut."], "Eine klare Reihenfolge hilft beim Verstehen."],
-	["„Treffen wir uns dort?“, schreibt Lea. Nina wartet am falschen Ort.", "Lea hat den Ort nicht genannt.", ["Nina hat kein Handy.", "Lea schreibt zu schnell."], "Mit „dort“ weiß Nina nicht genug."],
+	["„Bring das Ding mit!“, sagt Ali. Paul bringt das falsche Buch mit.", "Ali hat nicht genau gesagt, was er meint.", ["Paul kann noch nicht lesen und hat deshalb irgendein Buch genommen.", "Bücher sind für Kinder zu schwer, und darum ging es hier schief."], "„Das Ding“ ist nicht genau."],
+	["Mia spricht beim Vortrag leise und schaut nur auf ihren Zettel. Die Klasse wird unruhig.", "Sie erreicht die anderen weder mit Stimme noch mit Blick.", ["Die ganze Klasse mag grundsätzlich keine Vorträge, egal von welchem Kind.", "Ihr Zettel ist zu klein, und deshalb hört ihr niemand richtig zu."], "Stimme und Blick fehlen."],
+	["Lena ruft: „Deine Idee ist Mist!“ Tom sagt danach gar nichts mehr.", "Lena war verletzend, und Tom zieht sich zurück.", ["Tom hat plötzlich keine einzige Idee mehr und mag nie wieder reden.", "Lena hat zu leise gesprochen, und Tom hat sie deshalb nicht verstanden."], "Wer andere abwertet, beendet das Gespräch."],
+	["Finn erzählt erst das Ende, dann den Anfang und dann die Mitte. Keiner versteht ihn.", "Seine Informationen sind nicht geordnet.", ["Seine Geschichte ist viel zu kurz, und deshalb versteht sie niemand.", "Die anderen Kinder hören einfach nicht gut, und das macht ihn traurig."], "Eine klare Reihenfolge hilft beim Verstehen."],
+	["„Treffen wir uns dort?“, schreibt Lea. Nina wartet am falschen Ort.", "Lea hat den Ort nicht genannt.", ["Nina hat ihr Handy verloren und konnte die Nachricht nicht ganz lesen.", "Lea schreibt immer viel zu schnell, und Nina kommt da nicht mit."], "Mit „dort“ weiß Nina nicht genug."],
 ];
 
 const REPHRASE: Item[] = [
-	["„Dein Plan ist Quatsch!“", "„Ich habe Bedenken. Könnten wir auch einen anderen Plan überlegen?“", ["„Dein Plan ist wirklich totaler Quatsch!“", "„Du hast nie gute Pläne.“"], "Du sagst deine Meinung, ohne den anderen abzuwerten."],
-	["„Du spielst schlecht!“", "„Wenn du den Ball früher abgibst, klappt es bestimmt besser.“", ["„Du wirst es nie lernen.“", "„Geh einfach vom Platz.“"], "Ein konkreter Tipp hilft mehr."],
-	["„Sei endlich still!“", "„Bitte lass mich kurz ausreden.“", ["„Du redest nur Unsinn.“", "„Immer musst du stören!“"], "Eine Bitte kommt besser an als ein Befehl."],
-	["„Das verstehst du eh nicht.“", "„Soll ich es dir noch einmal anders erklären?“", ["„Das ist doch ganz einfach, du Trottel.“", "„Frag mich nicht mehr.“"], "Hilfe anbieten zeigt Respekt."],
-	["„Deine Schrift ist ein Chaos.“", "„Ich kann das Wort hier nicht lesen. Schreibst du es noch einmal deutlich?“", ["„So schreibt nur ein Baby.“", "„Du schreibst immer am schlechtesten.“"], "Du sagst genau, was du brauchst."],
+	["„Dein Plan ist Quatsch!“", "„Ich sehe das anders. Können wir noch etwas überlegen?“", ["„Dein Plan ist wirklich totaler Quatsch, das sage ich dir ganz ehrlich!“", "„Du hast sowieso nie gute Pläne, und das wissen hier auch alle.“"], "Du sagst deine Meinung, ohne den anderen abzuwerten."],
+	["„Du spielst schlecht!“", "„Gib den Ball früher ab, dann klappt es bestimmt.“", ["„Du wirst es nie lernen, egal wie lange du noch weiterübst.“", "„Geh am besten gleich vom Platz, dann stört uns keiner mehr.“"], "Ein konkreter Tipp hilft mehr."],
+	["„Sei endlich still!“", "„Bitte lass mich kurz ausreden.“", ["„Du redest schon wieder nur Unsinn, und das nervt uns alle.“", "„Immer musst du stören, wenn ich gerade etwas sagen möchte!“"], "Eine Bitte kommt besser an als ein Befehl."],
+	["„Das verstehst du eh nicht.“", "„Soll ich es dir noch einmal anders erklären?“", ["„Das ist doch ganz einfach, das müsste sogar ein Baby verstehen.“", "„Frag mich am besten nicht mehr, ich habe keine Lust mehr dazu.“"], "Hilfe anbieten zeigt Respekt."],
+	["„Deine Schrift ist ein Chaos.“", "„Ich kann das Wort hier nicht lesen. Schreibst du es deutlicher?“", ["„So schreibt doch höchstens ein Baby, und das weißt du auch ganz genau.“", "„Du schreibst von allen Kindern in der Klasse am allerschlechtesten.“"], "Du sagst genau, was du brauchst."],
+];
+
+const OPEN_INFO: TypedItem[] = [
+	["Wir treffen uns morgen um vier.", ["Wo", "Wo?"], "Der Ort fehlt noch."],
+	["Das Training ist morgen um vier.", ["Wo", "Wo?"], "Der Ort fehlt noch."],
+	["Wir treffen uns am Spielplatz.", ["Wann", "Wann?"], "Die Zeit fehlt noch."],
+	["Bring es bitte morgen mit!", ["Was", "Was?"], "Es steht nicht da, was jemand mitbringen soll."],
+	["Morgen um acht soll jemand den Ball mitbringen.", ["Wer", "Wer?"], "Es steht nicht da, wer das tun soll."],
 ];
 
 const verstaendigung: Lesson = {
@@ -180,10 +198,10 @@ const verstaendigung: Lesson = {
 		{
 			variant: "mark",
 			title: "Die Gesprächs-Lupe",
-			intro: "Wähle einen Stift. Was tut die Person? Was bewirkt es? Was gar nicht zum Gespräch gehört, bleibt ohne Farbe.",
+			intro: "Wähle einen Stift. Die Ursache ist das, was jemand tut. Die Wirkung ist das, was daraus folgt. Was gar nicht zum Gespräch gehört, bleibt ohne Farbe.",
 			pens: [
-				{ value: "U", label: "Das tut jemand (Ursache)", colour: "blue" },
-				{ value: "W", label: "Das bewirkt es (Wirkung)", colour: "green" },
+				{ value: "U", label: "Ursache", colour: "blue" },
+				{ value: "W", label: "Wirkung", colour: "green" },
 			],
 			puzzles: [
 				marks("vortrag", "Mia_schaut_die_Klasse_an.|U Alle_hören_aufmerksam_zu.|W Der_Raum_hat_drei_Fenster.", "Beim Vortrag", "Die Fenster gehören nicht zum Gespräch."),
@@ -201,6 +219,7 @@ const verstaendigung: Lesson = {
 		2: [
 			(rng) => sort(rng, "Warum klappt die Verständigung hier nicht?", WHY_FAILS, "Ist etwas unvollständig, ungeordnet oder verletzend?", "klappt"),
 			(rng) => sort(rng, "Wie sagst du das wertschätzend?", REPHRASE, "Sage deine Meinung oder Bitte, ohne die andere Person abzuwerten.", "wertschaetzen"),
+			(rng) => typed(rng, "Diese Nachricht ist nicht vollständig. Schreibe das Fragewort auf, das noch offen ist.", OPEN_INFO, "Prüfe der Reihe nach: Wer? Was? Wann? Wo?", "fragewort"),
 		],
 	},
 	requiredCorrect: 3,
@@ -219,26 +238,35 @@ const SPOKEN_OR_WRITTEN: Item[] = [
 ];
 
 const FEATURES: Item[] = [
-	["Eine Chat-Nachricht", "Sie hat oft kurze Sätze, Abkürzungen und Emojis.", ["Sie hat immer lange Sätze und Fachwörter.", "Sie hat immer eine Überschrift und Absätze."], "Im Chat schreibt man fast so, wie man spricht."],
-	["Ein Zeitungsartikel", "Er hat eine Überschrift, vollständige Sätze und genaue Angaben.", ["Er hat viele Emojis und „hey“.", "Er besteht nur aus Ausrufen."], "In der Zeitung soll alles für alle klar sein."],
-	["Ein Sachtext", "Er nennt genaue Fachwörter und Tatsachen.", ["Er sagt: „Na, wie geht’s?“", "Er kürzt fast alle Wörter ab."], "Sachtexte informieren genau."],
-	["Eine Werbung", "Sie spricht dich oft locker und direkt an, fast wie im Gespräch.", ["Sie ist immer lang und sehr genau.", "Sie nennt nie einen Namen."], "Werbung tut oft so, als rede sie mit dir."],
-	["Eine E-Mail an einen Freund", "Sie darf locker sein, oft mit kurzer Anrede.", ["Sie braucht immer viele Fachwörter.", "Sie steht immer in einer Zeitung."], "Eine E-Mail an Freunde klingt oft wie ein Gespräch."],
+	["Eine Chat-Nachricht", "Sie hat oft kurze Sätze, Abkürzungen und Emojis.", ["Sie hat lange Sätze und viele genaue Fachwörter.", "Sie hat eine Überschrift und mehrere Absätze."], "Im Chat schreibt man fast so, wie man spricht."],
+	["Ein Zeitungsartikel", "Er hat eine Überschrift und genaue Angaben.", ["Er hat viele Emojis und beginnt oft mit „hey“.", "Er besteht fast nur aus kurzen Ausrufen."], "In der Zeitung soll alles für alle klar sein."],
+	["Ein Sachtext", "Er nennt genaue Fachwörter und Tatsachen.", ["Er fragt dich zuerst: „Na, wie geht’s?“", "Er kürzt fast alle Wörter ab und reimt sich."], "Sachtexte informieren genau."],
+	["Eine Werbung", "Sie spricht dich oft locker und direkt an.", ["Sie ist lang und erklärt jedes Detail sehr genau.", "Sie nennt nie einen Namen und nie ein Produkt."], "Werbung tut oft so, als rede sie mit dir."],
+	["Eine E-Mail an einen Freund", "Sie darf locker sein, mit kurzer Anrede.", ["Sie braucht viele Fachwörter und lange Sätze.", "Sie steht in der Zeitung und ist für alle gedacht."], "Eine E-Mail an Freunde klingt oft wie ein Gespräch."],
 ];
 
 const REWRITE: Item[] = [
-	["hey leute, morgen kein sport, halle kaputt 😢", "Morgen fällt der Sportunterricht aus, weil die Turnhalle beschädigt ist.", ["Morgen ist voll blöd, kein Sport!!", "morgen kein sport"], "Vollständiger Satz, sachlich, ohne Emoji."],
-	["boah, der hund war mega schnell weg", "Der Hund lief sehr schnell davon.", ["Boah, mega schnell!", "hund weg"], "Ohne „boah“ und „mega“ und als ganzer Satz."],
-	["fest war super, waren voll viele da", "Zum Fest kamen sehr viele Gäste.", ["Fest super!!!", "voll viele da"], "Im Zeitungsbericht stehen genaue, ganze Sätze."],
-	["bus kam nicht, mussten 20 min warten", "Der Bus kam nicht, deshalb mussten wir 20 Minuten warten.", ["bus nicht da, doof", "20 min"], "Hier stehen alle Wörter und ganze Sätze."],
+	["hey leute, morgen kein sport, halle kaputt 😢", "Morgen fällt der Sportunterricht aus, weil die Turnhalle beschädigt ist.", ["hey leute, morgen fällt sport aus, weil die halle kaputt ist, echt schade 😢", "Morgen ist voll blöd, denn es gibt keinen Sport, und die Halle ist hin, ey!"], "Vollständiger Satz, sachlich, ohne Emoji."],
+	["boah, der hund war mega schnell weg", "Der Hund lief sehr schnell davon.", ["Boah, der Hund war echt mega schnell weg, das war vielleicht krass!", "hund total schnell weg, keiner hat was gemacht, echt jetzt"], "Ohne „boah“ und „mega“ und als ganzer Satz."],
+	["fest war super, waren voll viele da", "Zum Fest kamen sehr viele Gäste.", ["Das Fest war super, und es waren voll viele Leute da, echt cool!", "fest super, voll viele da, hat sich total gelohnt, bis bald 😀"], "Im Zeitungsbericht stehen genaue, ganze Sätze."],
+	["bus kam nicht, mussten 20 min warten", "Der Bus kam nicht, deshalb mussten wir 20 Minuten warten.", ["bus kam nicht, mussten 20 min warten, voll doof, oder was meinst du?", "Der Bus kam echt nicht, und wir so: 20 min warten, ey, wie blöd!"], "Hier stehen alle Wörter und ganze Sätze."],
 ];
 
 const WHICH_STYLE: Item[] = [
-	["Du schreibst der Schulleiterin, dass du krank bist.", "Sehr geehrte Frau Maier, ich kann heute leider nicht kommen, weil ich krank bin.", ["hey, bin krank, bis dann 😷", "Yo, heute nix Schule!"], "Einer Schulleiterin schreibst du höflich und in ganzen Sätzen."],
-	["Du schreibst deinem besten Freund, dass du später kommst.", "Komme 10 min später, bis gleich!", ["Sehr geehrter Herr, ich teile Ihnen mit, dass ich mich verspäte.", "Die Verspätung beträgt zehn Minuten laut Plan."], "Unter Freunden darf es kurz und locker sein."],
-	["Du schreibst für die Klassenzeitung über den Ausflug.", "Am Freitag fuhr die Klasse 4b ins Römermuseum.", ["war cool im museum, ey!", "Yo Leute, was geht?"], "Die Zeitung lesen viele. Schreibe sachlich und vollständig."],
-	["Du schreibst einen Zettel für deine Mutter.", "Bin bei Lea, um sechs zurück. Kuss!", ["Sehr geehrte Mutter, hiermit teile ich Ihnen meinen Aufenthaltsort mit.", "Lea wohnt in einem Haus mit drei Stockwerken."], "Kurz und persönlich passt zu einem Zettel."],
-	["Du bittest die Bücherei um ein Buch für deinen Vortrag.", "Guten Tag, ich suche für einen Vortrag ein Buch über Igel. Können Sie mir helfen?", ["hey, igel-buch da?", "Gib mal Buch!"], "Fremde Erwachsene sprichst du höflich und vollständig an."],
+	["Du schreibst der Schulleiterin, dass du krank bist.", "Sehr geehrte Frau Maier, ich bin heute leider krank.", ["hey frau maier, bin krank, komm heute nich, bis dann, tschüss 😷", "Yo, heute nix Schule für mich, bin krank, schöne Grüße an alle!"], "Einer Schulleiterin schreibst du höflich und in ganzen Sätzen."],
+	["Du schreibst deinem besten Freund, dass du später kommst.", "Komme 10 min später, bis gleich!", ["Sehr geehrter Herr, ich teile Ihnen mit, dass ich mich verspäte.", "Die Verspätung beträgt laut Plan insgesamt zehn Minuten."], "Unter Freunden darf es kurz und locker sein."],
+	["Du schreibst für die Klassenzeitung über den Ausflug.", "Am Freitag fuhr die Klasse 4b ins Römermuseum.", ["war richtig cool im museum, ey, nächstes mal komm ich wieder mit!", "Yo Leute, was geht? Wir waren im Museum, voll der krasse Tag!"], "Die Zeitung lesen viele. Schreibe sachlich und vollständig."],
+	["Du schreibst einen Zettel für deine Mutter.", "Bin bei Lea, um sechs zurück. Kuss!", ["Sehr geehrte Mutter, hiermit teile ich Ihnen meinen Aufenthaltsort mit.", "Lea wohnt in einem Haus mit drei Stockwerken und einem Garten."], "Kurz und persönlich passt zu einem Zettel."],
+	["Du bittest die Bücherei um ein Buch für deinen Vortrag.", "Guten Tag, ich suche ein Buch über Igel. Können Sie mir helfen?", ["hey, habt ihr so n igel-buch da? brauch das echt schnell für morgen", "Gib mir mal ganz schnell das Buch über Igel, ich hab wenig Zeit!"], "Fremde Erwachsene sprichst du höflich und vollständig an."],
+];
+
+const SPOKEN_WORDS: TypedItem[] = [
+	["Ich komme in 5 [[min]].", ["Minuten"], "In der Zeitung steht das ganze Wort."],
+	["Sorry, [[hab]] heute keine Zeit.", ["habe"], "Im Chat fällt das e oft weg, in der Zeitung nicht."],
+	["Das ist [[nix]] für mich.", ["nichts"], "„Nix“ sagt man, geschrieben heißt es „nichts“."],
+	["Das [[is]] echt toll.", ["ist"], "„Is“ sagt man nur so. Geschrieben heißt es „ist“."],
+	["[[Kommste]] heute auch?", ["Kommst du"], "Beim Sprechen verschmelzen die Wörter, geschrieben sind es zwei."],
+	["Wir [[ham]] das Spiel gewonnen.", ["haben"], "„Ham“ sagt man nur so. Geschrieben heißt es „haben“."],
 ];
 
 const muendlich: Lesson = {
@@ -276,10 +304,10 @@ const muendlich: Lesson = {
 		{
 			variant: "mark",
 			title: "Der Stil-Scanner",
-			intro: "Wähle einen Stift. Klingt das Stück wie gesprochen oder wie sorgfältig geschrieben? Was keinen Satz bildet, bleibt frei.",
+			intro: "Wähle einen Stift. Klingt das Stück wie gesprochen oder wie sorgfältig geschrieben? Ein einzelnes Wort bleibt frei.",
 			pens: [
-				{ value: "M", label: "wie gesprochen", colour: "orange" },
-				{ value: "S", label: "wie geschrieben", colour: "blue" },
+				{ value: "M", label: "gesprochen", colour: "orange" },
+				{ value: "S", label: "geschrieben", colour: "blue" },
 			],
 			puzzles: [
 				marks("sport", "hey,_kein_sport_morgen|M Der_Sportunterricht_entfällt_am_Dienstag.|S bis_dann_😀|M Turnhalle", "Zwei Nachrichten zum Sport", "Das einzelne Wort „Turnhalle“ ist kein Satz."),
@@ -292,11 +320,12 @@ const muendlich: Lesson = {
 	generators: {
 		1: [
 			(rng) => sort(rng, "Wie klingt dieser Text?", SPOKEN_OR_WRITTEN, "Stelle dir vor, jemand sagt das zu dir. Klingt es wie ein Gespräch?", "klang"),
-			(rng) => sort(rng, "Was ist typisch für diese Textform?", FEATURES, "Wer liest diesen Text, und wie gut kennt ihn der Schreiber?", "typisch"),
+			(rng) => sort(rng, "Was ist typisch für diese Textform?", FEATURES, "Wer liest das, und wie gut kennen sich die beiden?", "typisch"),
 		],
 		2: [
 			(rng) => sort(rng, "Wie schreibst du das für die Schulzeitung?", REWRITE, "Für die Zeitung brauchst du ganze Sätze und genaue Wörter, ohne „boah“ und Emojis.", "umschreiben"),
 			(rng) => sort(rng, "Welche Nachricht passt hier?", WHICH_STYLE, "Wem schreibst du? Wie gut kennst du die Person?", "passt"),
+			(rng) => typed(rng, "Schreibe das unterstrichene Wort so, wie es in einem Zeitungsartikel stehen würde.", SPOKEN_WORDS, "Sprich es langsam und deutlich. Wie heißt das ganze Wort?", "ganzeswort"),
 		],
 	},
 	requiredCorrect: 3,
@@ -314,51 +343,55 @@ const KINDS_OF_LANGUAGE: Item[] = [
 ];
 
 const TRUE_FACTS: Item[] = [
-	["Dialekt", "Er gehört zu einer Region und ist eine vollwertige Form zu sprechen.", ["Er ist falsches Deutsch.", "Er ist eine Schrift aus Punkten."], "Dialekte sind nicht falsch. Sie haben eigene Wörter und Regeln."],
-	["Blindenschrift", "Jeder Buchstabe besteht aus bis zu sechs erhabenen Punkten.", ["Man liest sie mit einer Lupe.", "Sie besteht aus Handzeichen."], "Die Punkte ertastet man mit den Fingerspitzen."],
-	["Gebärdensprache", "Sie ist eine eigene Sprache mit eigener Grammatik.", ["Sie ist nur Pantomime ohne Regeln.", "Sie besteht aus Punkten auf Papier."], "Gehörlose Menschen unterhalten sich mit ihr genauso genau wie andere mit Lautsprache."],
-	["Arabische Schrift", "Sie wird von rechts nach links geschrieben.", ["Sie hat genau dieselben Buchstaben wie Deutsch.", "Sie wird nur mit Großbuchstaben geschrieben."], "Viele Schriften laufen anders als unsere."],
-	["Englisch", "Es ist mit Deutsch verwandt. Darum ähneln sich manche Wörter.", ["Es hat kein einziges ähnliches Wort.", "Es wird nur in England gesprochen."], "Haus und house, Milch und milk sind verwandt."],
-	["Herkunftssprache", "Das ist eine Sprache, die jemand oft von zu Hause mitbringt.", ["Das ist eine Sprache, die nur Erwachsene sprechen.", "Das ist immer dieselbe Sprache wie Englisch."], "Mehrere Sprachen zu können, ist eine Stärke."],
+	["Dialekt", "Er gehört zu einer Region und hat eigene Wörter.", ["Er ist falsches Deutsch, das man korrigieren muss.", "Er ist eine Schrift aus Punkten zum Ertasten."], "Dialekte sind nicht falsch. Sie haben eigene Wörter und Regeln."],
+	["Blindenschrift", "Jeder Buchstabe besteht aus bis zu sechs Punkten.", ["Man liest sie am besten mit einer starken Lupe.", "Sie besteht aus Handzeichen und Gesichtsausdrücken."], "Die Punkte ertastet man mit den Fingerspitzen."],
+	["Gebärdensprache", "Sie ist eine eigene Sprache mit eigenen Regeln.", ["Sie ist nur Pantomime und hat gar keine Regeln.", "Sie besteht aus kleinen Punkten auf dem Papier."], "Gehörlose Menschen können damit über alles sprechen."],
+	["Arabische Schrift", "Sie läuft von rechts nach links.", ["Sie hat genau dieselben Buchstaben wie das Deutsche.", "Sie besteht nur aus großen Buchstaben ohne Abstände."], "Viele Schriften laufen anders als unsere."],
+	["Englisch", "Es ist verwandt, darum ähneln sich manche Wörter.", ["Es hat mit dem Deutschen kein einziges ähnliches Wort.", "Es wird auf der ganzen Welt nur in England gesprochen."], "Haus und house, Milch und milk sind verwandt."],
+	["Herkunftssprache", "Das ist eine Sprache von zu Hause.", ["Das ist eine Sprache, die nur Erwachsene sprechen.", "Das ist immer dieselbe Sprache wie das Englische."], "Mehrere Sprachen zu können, ist eine Stärke."],
 ];
 
 const COMPARE: Item[] = [
-	["Haus und house, Milch und milk, Schule und school", "Die Wörter ähneln sich, weil Deutsch und Englisch verwandt sind.", ["Sie sind zufällig gleich, das hat keinen Grund.", "Das Englische hat sie aus dem Bairischen."], "Verwandte Sprachen haben ähnliche Wörter."],
-	["Milch und süt, Schule und okul", "Deutsch und Türkisch sind nicht verwandt, darum klingen die Wörter ganz anders.", ["Türkische Wörter sind immer kürzer als deutsche.", "Eines der beiden Wörter ist falsch geschrieben."], "Nicht alle Sprachen sind miteinander verwandt."],
-	["Schule und Schui, Milch und Milli", "Bairisch und Standardsprache sind sich nah, klingen aber anders.", ["Bairisch ist eine ganz fremde Sprache ohne Verwandtschaft.", "Schui ist ein Rechtschreibfehler."], "Dialekt und Standardsprache gehören eng zusammen."],
-	["„Das ist krass!“ und „Das ist erstaunlich.“", "Beide sagen etwas Ähnliches, passen aber zu anderen Situationen.", ["Nur der zweite Satz ist richtiges Deutsch.", "Beide Sätze gehören nur in die Zeitung."], "Jugendsprache passt zu Freunden, Standardsprache zu fremden Lesern."],
-	["Blindenschrift und unsere Buchstaben", "Beide stehen für Laute, die eine ertastet man, die andere sieht man.", ["Blindenschrift hat mit Buchstaben nichts zu tun.", "Unsere Buchstaben kann man nur ertasten."], "Schriften können ganz verschieden aussehen und doch dasselbe leisten."],
+	["Haus und house, Milch und milk, Vater und father", "Die Wörter ähneln sich, weil beide Sprachen verwandt sind.", ["Die Wörter sind rein zufällig gleich, und das hat gar keinen Grund.", "Das Englische hat alle diese Wörter aus dem Bairischen übernommen."], "Verwandte Sprachen haben ähnliche Wörter."],
+	["Milch und süt, Haus und ev", "Deutsch und Türkisch sind nicht verwandt.", ["Türkische Wörter sind grundsätzlich kürzer und leichter als deutsche.", "Eines der beiden Wörter ist bestimmt falsch geschrieben worden."], "Nicht alle Sprachen sind miteinander verwandt."],
+	["Schule und Schui, Milch und Milli", "Bairisch und Standardsprache sind eng verwandt.", ["Bairisch ist eine ganz fremde Sprache und gar nicht mit Deutsch verwandt.", "Schui und Milli sind einfach Fehler, die man korrigieren muss."], "Dialekt und Standardsprache gehören eng zusammen."],
+	["„Das ist krass!“ und „Das ist erstaunlich.“", "Beide passen, aber zu verschiedenen Situationen.", ["Nur der zweite Satz ist richtiges Deutsch, der erste ist ganz falsch.", "Beide Sätze gehören immer und überall nur in eine Zeitung."], "Jugendsprache passt zu Freunden, Standardsprache zu fremden Lesern."],
+	["Blindenschrift und unsere Buchstaben", "Die eine ertastet man, die andere sieht man.", ["Blindenschrift hat mit Buchstaben und Lauten überhaupt nichts zu tun.", "Unsere Buchstaben kann man ausschließlich mit den Fingern ertasten."], "Schriften können ganz verschieden aussehen und doch dasselbe leisten."],
 ];
 
 const AWARENESS: Item[] = [
-	["Ein Kind in deiner Klasse spricht zu Hause Arabisch.", "Du kannst es fragen, wie man dort schreibt und grüßt.", ["Du sagst ihm, dass es nur Deutsch sprechen darf.", "Du lachst über die fremde Schrift."], "Andere Sprachen sind eine Chance, etwas zu entdecken."],
-	["Dein Opa spricht nur Bairisch.", "Du freust dich über die besonderen Wörter und fragst nach, was du nicht verstehst.", ["Du verbesserst ihn, weil das falsches Deutsch ist.", "Du antwortest ihm gar nicht."], "Dialekte sind ein Schatz. Falsch sind sie nicht."],
-	["Du triffst ein gehörloses Kind.", "Du schaust es beim Sprechen an und probierst Zeichen oder Aufschreiben.", ["Du rufst besonders laut.", "Du redest nur mit den anderen über es."], "Gehörlose können oft von den Lippen ablesen, wenn sie dein Gesicht sehen. Zeichen helfen auch."],
-	["In einem Buch über Japan siehst du Schriftzeichen.", "Du überlegst, was anders ist als bei unserer Schrift, und schlägst nach.", ["Du sagst, das sei gar keine richtige Schrift.", "Du blätterst lachend weiter."], "Vergleichen hilft dir auch, die eigene Sprache besser zu verstehen."],
-	["Dein Bruder sagt ständig „krass“.", "Du weißt, dass das unter Freunden passt, in einem Brief an die Schule aber nicht.", ["Du denkst, dass er kein Deutsch kann.", "Du schreibst selbst überall „krass“ in deine Aufsätze."], "Du wählst die Sprache je nach Situation."],
+	["Ein Kind in deiner Klasse spricht zu Hause Arabisch.", "Du fragst, wie man auf Arabisch schreibt und grüßt.", ["Du sagst ihm, dass es in der Schule nur Deutsch sprechen darf.", "Du lachst über die fremde Schrift und zeigst sie allen anderen."], "Andere Sprachen sind eine Chance, etwas zu entdecken."],
+	["Dein Opa spricht nur Bairisch.", "Du freust dich über die Wörter und fragst nach.", ["Du verbesserst ihn jedes Mal, weil das ja falsches Deutsch ist.", "Du antwortest ihm gar nicht mehr, bis er anders spricht."], "Dialekte sind ein Schatz. Falsch sind sie nicht."],
+	["Du triffst ein gehörloses Kind.", "Du schaust es an und probierst Zeichen oder Aufschreiben.", ["Du rufst besonders laut und deutlich, damit es dich sicher hört.", "Du redest nur mit den anderen Kindern über das gehörlose Kind."], "Manche Gehörlose lesen ein wenig von den Lippen ab, das ist aber schwer. Zeichen und Aufschreiben helfen."],
+	["In einem Buch über Japan siehst du Schriftzeichen.", "Du überlegst, was anders ist, und schlägst nach.", ["Du sagst, dass das gar keine richtige Schrift sein kann.", "Du blätterst lachend weiter und zeigst es nie jemandem."], "Vergleichen hilft dir auch, die eigene Sprache besser zu verstehen."],
+	["Dein Bruder sagt ständig „krass“.", "Unter Freunden passt das, im Brief an die Schule nicht.", ["Du denkst, dass dein Bruder einfach kein richtiges Deutsch kann.", "Du schreibst selbst überall „krass“ in deine Aufsätze."], "Du wählst die Sprache je nach Situation."],
 ];
 
 const TABLE: Record<string, Record<string, string>> = {
-	Mutter: { Standarddeutsch: "Mutter", Bairisch: "Muatta", Englisch: "mother", Türkisch: "anne" },
-	Schule: { Standarddeutsch: "Schule", Bairisch: "Schui", Englisch: "school", Türkisch: "okul" },
-	Milch: { Standarddeutsch: "Milch", Bairisch: "Milli", Englisch: "milk", Türkisch: "süt" },
-	Haus: { Standarddeutsch: "Haus", Bairisch: "Haus", Englisch: "house", Türkisch: "ev" },
+	Mutter: { Standardsprache: "Mutter", Bairisch: "Muatta", Englisch: "mother", Türkisch: "anne" },
+	Wasser: { Standardsprache: "Wasser", Bairisch: "Wossa", Englisch: "water", Türkisch: "su" },
+	Milch: { Standardsprache: "Milch", Bairisch: "Milli", Englisch: "milk", Türkisch: "süt" },
+	Haus: { Standardsprache: "Haus", Bairisch: "Haus", Englisch: "house", Türkisch: "ev" },
 };
 
 const LANGUAGE_NOTES: Record<string, { note: string; found?: string }> = {
-	Standarddeutsch: { note: "So steht das Wort im Wörterbuch und in der Zeitung. Stelle eine andere Sprache ein." },
-	Bairisch: { note: "Bairisch ist ein Dialekt aus unserer Region. Die Schreibung schwankt, denn Dialekt wird meist gesprochen.", found: "dialekt" },
+	Standardsprache: { note: "So steht das Wort im Wörterbuch und in der Zeitung. Stelle eine andere Sprache ein." },
+	Bairisch: { note: "Bairisch spricht man in großen Teilen Bayerns. In Franken und Schwaben klingt es wieder anders. Die Schreibung schwankt, denn Dialekt wird meist gesprochen.", found: "dialekt" },
 	Englisch: { note: "Englisch und Deutsch sind verwandt. Viele Wörter sehen deshalb ähnlich aus.", found: "aehnlich" },
 	Türkisch: { note: "Türkisch ist mit Deutsch nicht verwandt. Die Wörter klingen deshalb ganz anders.", found: "anders" },
 };
 
 function bridgeView(values: Record<string, string>): MachineView {
 	const language = LANGUAGE_NOTES[values.sprache];
+	const form = TABLE[values.wort][values.sprache];
+	// Ein gleich geschriebenes Wort zeigt keinen Unterschied und zählt deshalb nicht.
+	const same = form === values.wort && values.sprache !== "Standardsprache";
+	const found = same ? undefined : language.found;
 	return {
-		display: `${values.wort} → ${TABLE[values.wort][values.sprache]}`,
-		note: language.note,
-		found: language.found,
-		tone: language.found ? "ok" : undefined,
+		display: `${values.wort} → ${form}`,
+		note: same ? "Dieses Wort schreibt man hier gleich. Probiere ein anderes Wort." : language.note,
+		found,
+		tone: found ? "ok" : undefined,
 	};
 }
 
@@ -370,14 +403,23 @@ const bridgeMachine: MachineWorkshop = {
 		{ id: "wort", label: "Wort", options: Object.keys(TABLE) },
 		{ id: "sprache", label: "Sprache", options: Object.keys(LANGUAGE_NOTES) },
 	],
-	initial: { wort: "Mutter", sprache: "Standarddeutsch" },
+	initial: { wort: "Mutter", sprache: "Standardsprache" },
 	view: bridgeView,
 	goals: [
-		{ id: "dialekt", label: "Finde ein Wort im Dialekt.", reached: (state) => state.found.includes("dialekt") },
+		{ id: "dialekt", label: "Finde ein Wort, das im Dialekt anders aussieht.", reached: (state) => state.found.includes("dialekt") },
 		{ id: "aehnlich", label: "Finde ein ähnliches Wort aus einer verwandten Sprache.", reached: (state) => state.found.includes("aehnlich") },
 		{ id: "anders", label: "Finde ein Wort aus einer nicht verwandten Sprache.", reached: (state) => state.found.includes("anders") },
 	],
 };
+
+const RELATED_WORDS: TypedItem[] = [
+	["Schui (Bairisch)", ["Schule"], "Schui ist das bairische Wort für Schule."],
+	["Milli (Bairisch)", ["Milch"], "Milli ist ein bairisches Wort für Milch."],
+	["house (Englisch)", ["Haus"], "House und Haus sind verwandt."],
+	["water (Englisch)", ["Wasser"], "Water und Wasser sind verwandt."],
+	["father (Englisch)", ["Vater"], "Father und Vater sind verwandt."],
+	["milk (Englisch)", ["Milch"], "Milk und Milch sind verwandt."],
+];
 
 const sprachen: Lesson = {
 	id: "sprachen-im-umfeld",
@@ -388,23 +430,24 @@ const sprachen: Lesson = {
 	bindings: ["4.2-02"],
 	sticker: { emoji: "🌍", name: "Sprachenforscher" },
 	paragraphs: [
-		"Um dich herum gibt es viele Sprachen. Standardsprache steht in der Zeitung und im Wörterbuch. Bairisch und andere Dialekte gehören zu einer Region. Jugendliche haben ihre eigenen Wörter. Viele Kinder sprechen zu Hause eine andere Sprache, etwa Türkisch, Arabisch oder Polnisch, und in der Schule lernst du Englisch.",
+		"Um dich herum gibt es viele Sprachen. Standardsprache steht in der Zeitung und im Wörterbuch. Bairisch und andere Dialekte gehören zu einer Region. Jugendliche haben ihre eigenen Wörter. Viele Kinder bringen von zu Hause eine andere Sprache mit, ihre Herkunftssprache, etwa Türkisch, Arabisch oder Polnisch, und in der Schule lernst du Englisch.",
 		"Vergleichst du Sprachen, entdeckst du viel. Englisch und Deutsch sind verwandt: Haus und house, Milch und milk. Türkisch ist nicht verwandt: Milch heißt süt.",
-		"Auch Schriften sind verschieden. Arabisch läuft von rechts nach links. Blindenschrift besteht aus Punkten, die man ertastet. Gebärdensprache ist eine eigene Sprache mit Händen, Gesicht und Körper. Keine Sprache ist besser als eine andere. Wer mehrere kann, hat etwas Besonderes.",
+		"Auch Schriften sind verschieden. Arabisch läuft von rechts nach links. Blindenschrift besteht aus Punkten, die man ertastet. Gebärdensprache ist keine Schrift, sondern eine eigene Sprache mit Händen, Gesicht und Körper. Keine Sprache ist besser als eine andere. Wer mehrere kann, hat etwas Besonderes.",
 	],
 	example: {
-		title: "Tinto vergleicht das Wort „Schule“",
+		title: "Tinto vergleicht das Wort „Wasser“",
 		lines: [
-			"Standardsprache: Schule",
-			"Bairisch: Schui",
-			"Englisch: school (ähnlich, die Sprachen sind verwandt)",
-			"Türkisch: okul (ganz anders, nicht verwandt)",
+			"Standardsprache: Wasser",
+			"Bairisch: Wossa",
+			"Englisch: water (ähnlich, die Sprachen sind verwandt)",
+			"Türkisch: su (ganz anders, nicht verwandt)",
 		],
 	},
 	takeaway: "Sprachen und Schriften sind verschieden und alle wertvoll. Vergleichen zeigt dir, was ähnlich ist, was anders ist und wie deine eigene Sprache funktioniert.",
 	terms: [
 		{ term: "Standardsprache", meaning: "die Form des Deutschen, die alle verstehen und die in Büchern steht" },
 		{ term: "Dialekt", meaning: "regionale Form einer Sprache, zum Beispiel Bairisch" },
+		{ term: "Herkunftssprache", meaning: "eine Sprache, die jemand von zu Hause mitbringt" },
 		{ term: "Blindenschrift", meaning: "Schrift aus erhabenen Punkten zum Ertasten" },
 		{ term: "Gebärdensprache", meaning: "eigene Sprache mit Händen, Gesicht und Körper" },
 	],
@@ -421,6 +464,7 @@ const sprachen: Lesson = {
 		2: [
 			(rng) => sort(rng, "Was kannst du aus diesem Vergleich schließen?", COMPARE, "Was ist gleich, was ist anders? Warum könnte das so sein?", "vergleich"),
 			(rng) => sort(rng, "Wie gehst du damit am besten um?", AWARENESS, "Keine Sprache ist schlechter. Was hilft dir beim Entdecken und Verstehen?", "umgang"),
+			(rng) => typed(rng, "Zu welchem Wort der Standardsprache gehört dieses Wort? Schreibe es auf.", RELATED_WORDS, "Sprich das Wort laut. Woran erinnert es dich?", "verwandt"),
 		],
 	},
 	requiredCorrect: 3,

@@ -2,6 +2,7 @@ import "./styles.css";
 import cell from "../cell.json";
 import { findLesson, LESSONS, quizOptions, SOURCES, STAGES } from "./curriculum";
 import { checkAnswer, makeTask, markup } from "./exercises/tasks";
+import { deskHtml } from "./desk";
 import { esc } from "./format";
 import {
 	adoptStored,
@@ -19,7 +20,7 @@ import {
 	starCount,
 	stars,
 } from "./storage/progress";
-import { clearTexts, loadText, MAX_TEXT, saveText } from "./storage/texts";
+import { clearTexts, loadText, saveText, TEXTS_KEY } from "./storage/texts";
 import { tinto } from "./tinto";
 import type { Level, ReadyLesson, SlotWorkshop, Task, TrainWorkshop, MachineWorkshop } from "./types";
 import {
@@ -226,7 +227,7 @@ function renderLesson(l: ReadyLesson): void {
 	</div>
 	<div id="practice-area"></div>
 </section>
-${l.desk ? deskHtml(l) : ""}
+${l.desk ? deskHtml(l.id, l.desk, loadText(l.id)) : ""}
 <nav class="lesson-nav" aria-label="Lektionen">
 	<button type="button" class="button secondary" data-action="open" data-lesson="${LESSONS[index - 1]?.id ?? ""}" ${index === 0 ? "disabled" : ""}>← Vorige Lektion</button>
 	<button type="button" class="button" data-action="open" data-lesson="${LESSONS[index + 1]?.id ?? ""}" ${index === LESSONS.length - 1 ? "disabled" : ""}>Nächste Lektion →</button>
@@ -234,23 +235,6 @@ ${l.desk ? deskHtml(l) : ""}
 	if (!workshop) workshop = initialState(l.workshop);
 	renderWorkshop();
 	renderPractice();
-}
-
-function deskHtml(l: ReadyLesson): string {
-	const desk = l.desk;
-	if (!desk) return "";
-	return `<section class="card desk" id="desk-card">
-	<h2>✍️ Dein Schreibtisch</h2>
-	<p class="small">Freiwillig und ohne Stern. Tinto liest nicht mit und gibt keine Noten. Dein Text bleibt in diesem Browser. Auf einem gemeinsamen Gerät können andere ihn lesen.</p>
-	<p>${esc(desk.task)}</p>
-	<label for="desk-text" class="small">Dein Text</label>
-	<textarea id="desk-text" data-lesson="${l.id}" rows="8" maxlength="${MAX_TEXT}" autocomplete="off" spellcheck="false">${esc(loadText(l.id))}</textarea>
-	<p id="desk-status" class="small" role="status"></p>
-	<h3>Prüfe selbst</h3>
-	<ul class="desk-check">${desk.checklist.map((c) => `<li>${esc(c)}</li>`).join("")}</ul>
-	<p class="small">Zeige deinen Text auch jemandem: Was ist gelungen? Was könntest du noch ändern?</p>
-	<button type="button" class="text-button" data-action="desk-clear">Text löschen</button>
-</section>`;
 }
 
 function renderWorkshop(): void {
@@ -596,9 +580,12 @@ main.addEventListener("click", (event) => {
 				'<p>Dein Text in dieser Lektion wird gelöscht. Das lässt sich nicht rückgängig machen.</p><div class="dialog-actions"><button type="button" class="button danger" id="confirm-desk-clear">Ja, löschen</button></div>',
 			);
 			element("#confirm-desk-clear").addEventListener("click", () => {
-				saveText(lessonId, "");
+				const saved = saveText(lessonId, "");
 				dialog.close();
 				render();
+				const area = main.querySelector<HTMLTextAreaElement>("#desk-text");
+				area?.focus();
+				if (!saved) element("#desk-status").textContent = "Dein Browser speichert gerade nicht. Der Text konnte nicht gelöscht werden.";
 			});
 			return;
 		case "reset":
@@ -651,6 +638,12 @@ element("#theme").addEventListener("click", () => {
 	}
 });
 window.addEventListener("storage", (event) => {
+	// Another tab changed or reset the texts: show what is stored now, so that the
+	// next keystroke here cannot bring a deleted text back.
+	if (event.key === TEXTS_KEY || event.key === null) {
+		const area = main.querySelector<HTMLTextAreaElement>("#desk-text");
+		if (area) area.value = loadText(area.dataset.lesson ?? "");
+	}
 	if (event.key !== STORAGE_KEY) return;
 	progress = adoptStored(progress);
 	stats();
