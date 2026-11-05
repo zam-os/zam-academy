@@ -986,7 +986,7 @@ export function generateLb1ToLb3Task(
 					prompt:
 						"Vergleiche ein Kohlekraftwerk mit Windkraft- und Solaranlagen: Wo liegen jeweils Vor- und Nachteile?",
 					correct:
-						"Wind und Sonne sind erneuerbar und stoßen im Betrieb kein CO2 aus, hängen aber vom Wetter ab; Kohle liefert unabhängig vom Wetter Strom, ist aber endlich und belastet das Klima stark.",
+						"Wind und Sonne sind erneuerbar und stoßen im Betrieb kein CO₂ aus, hängen aber vom Wetter ab; Kohle liefert unabhängig vom Wetter Strom, ist aber endlich und belastet das Klima stark.",
 					wrongs: [
 						"Kohle wächst jedes Jahr auf Wiesen nach, während Sonnenlicht nach einer Woche aufgebraucht ist.",
 						"Solaranlagen funktionieren nur nachts bei Neumond.",
@@ -995,7 +995,7 @@ export function generateLb1ToLb3Task(
 						"Kohle entstand über Millionen Jahre und ist ein endlicher fossiler Energieträger!",
 						"Photovoltaikanlagen wandeln tagsüber Sonnenlicht in Strom um – für die Nacht helfen Speicher und Stromnetze.",
 					],
-					hint: "Prüfe zwei Fragen: 1. Entsteht beim Betrieb klimaschädliches CO2? 2. Scheint immer die Sonne / weht immer Wind?",
+					hint: "Prüfe zwei Fragen: 1. Entsteht beim Betrieb klimaschädliches CO₂? 2. Scheint immer die Sonne / weht immer Wind?",
 					explanation:
 						"Die Energiewende kombiniert erneuerbare Quellen (Sonne, Wind, Wasserkraft, Biomasse) mit Speichern und konsequentem Stromsparen.",
 				},
