@@ -89,7 +89,7 @@ ZAM_CORE=file:///path/to/zam-core/dist/index.js node scripts/validate-cells.mjs
 ## ZAM cell and curriculum coverage
 
 - Cell id: `zam-academy:hsu-grundschule-4` (`cell.json` is the sole source of
-  card text: 20 atoms, 60 German cards — 40 Tier-1 binary fast-check cards and
+  card text: 20 atoms, 61 German cards — 41 Tier-1 binary fast-check cards and
   20 Tier-2 open synthesis cards with sample solutions and two curated choice
   distractors per card).
 - Official `lehrplanplus-bayern` grade curriculum bindings are intentionally

@@ -216,6 +216,10 @@ describe("Farben und Breite", () => {
 		const rule = (selector: string) => css.match(new RegExp(`(^|\\n)${selector.replace(".", "\\.")} \\{[^}]*\\}`))?.[0] ?? "";
 		expect(rule(".word")).toContain("flex-wrap: wrap");
 		expect(rule(".gap-group")).toContain("flex-wrap: wrap");
+		// Otherwise a full stop right after a gap drops to a row of its own at 320 px.
+		expect(rule(".gap-group")).toContain("flex: 1 1 0");
 		expect(rule(".bubble")).toContain("overflow-wrap: anywhere");
+		// "✓ geschafft" and the Lupe widen the head of a solved puzzle: 389 px at a 320 px width.
+		expect(rule(".puzzle-head")).toContain("flex-wrap: wrap");
 	});
 });
