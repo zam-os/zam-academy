@@ -71,9 +71,9 @@ function tableTask(rng: Rng, list: "literal" | "deeper"): Task {
 }
 
 /** Einfache Zuordnung: Ausschnitt, richtige Antwort, falsche Antworten, Begründung. */
-type Item = [string, string, string[], string];
+export type Item = [string, string, string[], string];
 
-function sort(rng: Rng, prompt: string, items: Item[], hint: string, key: string): Task {
+export function sort(rng: Rng, prompt: string, items: Item[], hint: string, key: string): Task {
 	const [material, answer, wrong, why] = pick(rng, items);
 	return choice(rng, {
 		prompt,

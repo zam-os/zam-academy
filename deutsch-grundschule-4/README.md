@@ -1,9 +1,9 @@
 # Tintos Wörterstadt · Deutsch 4 · Grundschule Bayern
 
-**Vorschau.** 33 Lektionen, 99 ZAM-Karten. Kinder der 4. Klasse üben
-hier „Sprache untersuchen“, „Richtig schreiben“ und Lesen aus dem
+**Vorschau.** 45 Lektionen, 135 ZAM-Karten. Kinder der 4. Klasse üben
+hier Lesen, Schreiben, „Sprache untersuchen“ und „Richtig schreiben“ aus dem
 [LehrplanPLUS Deutsch 3/4](https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/deutsch)
-(Abgleich am 3. und 4. November 2026). Begleiter ist Tinto, ein kleiner Tintenfisch,
+(Abgleich am 3. bis 5. November 2026). Begleiter ist Tinto, ein kleiner Tintenfisch,
 der mit acht Armen schreibt. Eine Grundschullehrkraft hat die Inhalte noch
 nicht fachlich freigegeben; `publication.json` steht deshalb auf `preview`.
 App und Karten sind veröffentlicht, ihre IDs gelten ab jetzt als Vertrag.
@@ -15,6 +15,8 @@ App und Karten sind veröffentlicht, ihre IDs gelten ab jetzt als Vertrag.
 | 🔍 Detektivbüro (4.4) | 7 | Silbenschere, Lausch-Lupe, Dehn-Werkstatt, Verlängerungs-Koffer, Kompass, Kronen-Jagd, Fehlerdetektiv |
 | 💎 Wörterschatz (4.4, Grundwortschatz 3/4 des ISB) | 3 | Schatzkarte, Gestern-Maschine, Merkwort-Sortierer |
 | 📖 Lesewerkstatt (2.1, 2.3, 2.4) | 7 | Text-Sortierer, Textmarker, Tabellen-Lupe, Pfeil-Plan, Figuren-Karte, Reim-Werkstatt, Programm-Heft |
+| ✏️ Schreibwerkstatt (3.2, 3.3) | 8 | Tintos Mindmap, Geschichten-Baukasten, Satz-Bühne, Schritt-für-Schritt-Karte, Reporter-Stifte, Überzeugungs-Plan, Sichtwechsel-Brille, Rückmeldungs-Check |
+| 🧪 Sprachlabor (4.1, 4.2) | 4 | Werbe-Labor, Gesprächs-Lupe, Stil-Scanner, Wörter-Brücke |
 
 ## Aufbau einer Lektion
 
@@ -41,7 +43,9 @@ Anführungszeichen spielen keine Rolle.
 
 Kein Konto, keine Anfragen an fremde Server. Sterne, Werkstattziele und
 gelöste Aufgaben liegen nur im `localStorage` dieses Browsers
-(`deutsch_gs4_progress_v1`). Alle Werte wachsen nur; mehrere Tabs werden durch
+(`deutsch_gs4_progress_v1`), die Texte vom Schreibtisch unter
+`deutsch_gs4_texts_v1`. Die App liest und bewertet diese Texte nicht, und das
+Zurücksetzen löscht sie mit. Alle Werte wachsen nur; mehrere Tabs werden durch
 Vereinigung und Maximum zusammengeführt. Ein Zurücksetzen beginnt eine neue
 Epoche, die auch ein älterer offener Tab übernimmt. Ist der Speicher
 gesperrt, bleibt die Sitzung nutzbar und zeigt einen Hinweis.
@@ -51,10 +55,9 @@ gesperrt, bleibt die Sitzung nutzbar und zeigt einen Hinweis.
 [`coverage.json`](coverage.json) führt alle 116 Kompetenzerwartungen der
 17 Abschnitte wörtlich (Quelle:
 [`tests/fixtures/official-curriculum.json`](tests/fixtures/official-curriculum.json)).
-52 sind in dieser Ausbaustufe teilweise geübt, 17 für spätere Ausbaustufen
-geplant und 47 brauchen Praxis außerhalb der App (Sprechen, Vorlesen,
-Handschrift, Abschreiben, Bibliothek, Gespräche über Bücher). Noch nicht
-enthalten: eigene Texte und Sprechen. Alle Lesetexte sind eigene Texte. Der verbindliche Grundwortschatz
+69 sind in dieser Ausbaustufe teilweise geübt, und 47 brauchen Praxis außerhalb der App
+(Sprechen, Vorlesen, Handschrift, Abschreiben, Bibliothek, Gespräche über Bücher).
+Freie Texte schreibt das Kind am Schreibtisch; die App bewertet sie nicht. Alle Lesetexte sind eigene Texte. Der verbindliche Grundwortschatz
 3/4 des ISB steht vollständig in der Station „Wörterschatz“. Siehe
 [Abgleich und Planung](../docs/deutsch-grundschule-4-coverage.md).
 

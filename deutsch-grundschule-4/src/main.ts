@@ -19,6 +19,7 @@ import {
 	starCount,
 	stars,
 } from "./storage/progress";
+import { clearTexts, loadText, MAX_TEXT, saveText } from "./storage/texts";
 import { tinto } from "./tinto";
 import type { Level, ReadyLesson, SlotWorkshop, Task, TrainWorkshop, MachineWorkshop } from "./types";
 import {
@@ -178,7 +179,7 @@ function renderPath(): void {
 			)
 			.join("")}</ol></section>`;
 	}).join("")}</div>
-<aside class="notice">Tinto sammelt keine Daten. Deine Sterne bleiben nur in diesem Browser. Eltern finden Hinweise unter <button type="button" class="text-button" data-action="view" data-target="eltern">Für Eltern</button>.</aside>`;
+<aside class="notice">Tinto sammelt keine Daten. Deine Sterne und Texte bleiben nur in diesem Browser. Eltern finden Hinweise unter <button type="button" class="text-button" data-action="view" data-target="eltern">Für Eltern</button>.</aside>`;
 }
 
 /* ---------- Lektion ---------- */
@@ -225,6 +226,7 @@ function renderLesson(l: ReadyLesson): void {
 	</div>
 	<div id="practice-area"></div>
 </section>
+${l.desk ? deskHtml(l) : ""}
 <nav class="lesson-nav" aria-label="Lektionen">
 	<button type="button" class="button secondary" data-action="open" data-lesson="${LESSONS[index - 1]?.id ?? ""}" ${index === 0 ? "disabled" : ""}>← Vorige Lektion</button>
 	<button type="button" class="button" data-action="open" data-lesson="${LESSONS[index + 1]?.id ?? ""}" ${index === LESSONS.length - 1 ? "disabled" : ""}>Nächste Lektion →</button>
@@ -232,6 +234,23 @@ function renderLesson(l: ReadyLesson): void {
 	if (!workshop) workshop = initialState(l.workshop);
 	renderWorkshop();
 	renderPractice();
+}
+
+function deskHtml(l: ReadyLesson): string {
+	const desk = l.desk;
+	if (!desk) return "";
+	return `<section class="card desk" id="desk-card">
+	<h2>✍️ Dein Schreibtisch</h2>
+	<p class="small">Freiwillig und ohne Stern. Tinto liest nicht mit und gibt keine Noten. Dein Text bleibt in diesem Browser. Auf einem gemeinsamen Gerät können andere ihn lesen.</p>
+	<p>${esc(desk.task)}</p>
+	<label for="desk-text" class="small">Dein Text</label>
+	<textarea id="desk-text" data-lesson="${l.id}" rows="8" maxlength="${MAX_TEXT}" autocomplete="off" spellcheck="false">${esc(loadText(l.id))}</textarea>
+	<p id="desk-status" class="small" role="status"></p>
+	<h3>Prüfe selbst</h3>
+	<ul class="desk-check">${desk.checklist.map((c) => `<li>${esc(c)}</li>`).join("")}</ul>
+	<p class="small">Zeige deinen Text auch jemandem: Was ist gelungen? Was könntest du noch ändern?</p>
+	<button type="button" class="text-button" data-action="desk-clear">Text löschen</button>
+</section>`;
 }
 
 function renderWorkshop(): void {
@@ -447,7 +466,7 @@ function renderParents(): void {
 </section>
 <section class="card">
 	<h2>Übertritt und was die App nicht abdeckt</h2>
-	<p>Für den Übertritt zählen in Bayern Deutsch, Mathematik und Heimat- und Sachunterricht zusammen. Diese App übt einen Teil von Deutsch. Noch nicht enthalten sind eigene Texte (Erzählen, Berichten, Beschreiben) sowie Sprechen und Zuhören. Lautes Lesen, Lesetempo, Gespräche über Bücher und die Bibliothek brauchen echte Praxis; die Lesewerkstatt übt das Verstehen. Den Grundwortschatz übt Ihr Kind hier am Bildschirm; die Wörter auch mit der Hand zu schreiben, bleibt wichtig. Das gilt ebenso für echte Bücher, Vorlesen und Gespräche.</p>
+	<p>Für den Übertritt zählen in Bayern Deutsch, Mathematik und Heimat- und Sachunterricht zusammen. Diese App übt einen Teil von Deutsch. Die Schreibwerkstatt übt Teilschritte des Schreibens, und am Schreibtisch kann Ihr Kind frei schreiben. Die App liest und bewertet diese Texte nicht; dafür braucht es Sie oder die Lehrkraft. Sprechen und Zuhören sind nicht enthalten, und auch das Sprachlabor ersetzt keine echten Gespräche. Lautes Lesen, Lesetempo, Gespräche über Bücher und die Bibliothek brauchen echte Praxis; die Lesewerkstatt übt das Verstehen. Den Grundwortschatz übt Ihr Kind hier am Bildschirm; die Wörter auch mit der Hand zu schreiben, bleibt wichtig. Das gilt ebenso für echte Bücher, Vorlesen und Gespräche.</p>
 	<p>Das ist eine Vorschau. Eine Grundschullehrkraft hat die Inhalte noch nicht fachlich freigegeben, und Lehrvideos fehlen noch.</p>
 	<ul class="source-list">${SOURCES.map((s) => `<li><a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.label)}</a></li>`).join("")}<li><a href="https://www.km.bayern.de/lernen/ubertritt-und-bildungswege/uebertritt" target="_blank" rel="noopener noreferrer">Bayerisches Kultusministerium · Übertritt</a></li></ul>
 	<p class="small">Links öffnen erst auf Ihren Klick.</p>
@@ -458,7 +477,7 @@ function renderParents(): void {
 </section>
 <section class="card">
 	<h2>Daten und Zurücksetzen</h2>
-	<p>Es gibt kein Konto, keine Werbung und keine Verbindung zu fremden Servern. Der Fortschritt liegt nur im Speicher dieses Browsers.</p>
+	<p>Es gibt kein Konto, keine Werbung und keine Verbindung zu fremden Servern. Der Fortschritt und die Texte vom Schreibtisch liegen nur im Speicher dieses Browsers. Auf einem gemeinsam genutzten Gerät können andere diese Texte lesen.</p>
 	<button type="button" class="button danger" data-action="reset">Fortschritt zurücksetzen</button>
 </section>`;
 }
@@ -571,19 +590,38 @@ main.addEventListener("click", (event) => {
 			renderPractice();
 			main.querySelector<HTMLElement>("#answer, #practice-area .choice")?.focus();
 			return;
+		case "desk-clear":
+			showDialog(
+				"Text löschen?",
+				'<p>Dein Text in dieser Lektion wird gelöscht. Das lässt sich nicht rückgängig machen.</p><div class="dialog-actions"><button type="button" class="button danger" id="confirm-desk-clear">Ja, löschen</button></div>',
+			);
+			element("#confirm-desk-clear").addEventListener("click", () => {
+				saveText(lessonId, "");
+				dialog.close();
+				render();
+			});
+			return;
 		case "reset":
 			showDialog(
 				"Alles zurücksetzen?",
-				'<p>Alle Sterne, Sticker und gelösten Aufgaben in diesem Browser werden gelöscht.</p><div class="dialog-actions"><button type="button" class="button danger" id="confirm-reset">Ja, löschen</button></div>',
+				'<p>Alle Sterne, Sticker, gelösten Aufgaben und Texte vom Schreibtisch in diesem Browser werden gelöscht.</p><div class="dialog-actions"><button type="button" class="button danger" id="confirm-reset">Ja, löschen</button></div>',
 			);
 			element("#confirm-reset").addEventListener("click", () => {
 				progress = resetProgress();
+				clearTexts();
 				persist();
 				dialog.close();
 				navigate();
 			});
 			return;
 	}
+});
+
+main.addEventListener("input", (event) => {
+	const area = event.target;
+	if (!(area instanceof HTMLTextAreaElement) || area.id !== "desk-text") return;
+	const saved = saveText(area.dataset.lesson ?? "", area.value);
+	element("#desk-status").textContent = saved ? "" : "Dein Browser speichert gerade nicht. Schreibe deinen Text auch ins Heft.";
 });
 
 main.addEventListener("submit", (event) => {

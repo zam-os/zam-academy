@@ -3,6 +3,8 @@ import type { Lesson, ReadyLesson, Source, Stage } from "../types";
 import { BAHNHOF } from "./bahnhof";
 import { DETEKTIV } from "./detektiv";
 import { LESEWERKSTATT } from "./lesewerkstatt";
+import { SCHREIBWERKSTATT } from "./schreibwerkstatt";
+import { SPRACHLABOR } from "./sprachlabor";
 import { WERKSTATT } from "./werkstatt";
 import { WOERTERSCHATZ } from "./woerterschatz";
 
@@ -41,6 +43,20 @@ export const STAGES: Stage[] = [
 		subtitle: "Texte, Tabellen, Geschichten, Gedichte und Medien verstehen",
 		icon: "📖",
 		greeting: "Komm rein und nimm dir einen Text! Gemeinsam finden wir heraus, was in ihm steckt.",
+	},
+	{
+		id: "schreibwerkstatt",
+		title: "Schreibwerkstatt",
+		subtitle: "Eigene Texte planen, schreiben und überarbeiten",
+		icon: "✏️",
+		greeting: "Mit acht Armen schreibe ich am liebsten! Hier wird aus deinen Ideen ein richtiger Text.",
+	},
+	{
+		id: "sprachlabor",
+		title: "Sprachlabor",
+		subtitle: "Wie Sprache wirkt, wie Gespräche gelingen, welche Sprachen es gibt",
+		icon: "🧪",
+		greeting: "Kittel an! Hier untersuchen wir, was Sprache mit uns macht und wie verschieden sie sein kann.",
 	},
 ];
 
@@ -81,7 +97,7 @@ function ready(lesson: Lesson): ReadyLesson {
 	};
 }
 
-export const LESSONS: ReadyLesson[] = [...WERKSTATT, ...BAHNHOF, ...DETEKTIV, ...WOERTERSCHATZ, ...LESEWERKSTATT].map(ready);
+export const LESSONS: ReadyLesson[] = [...WERKSTATT, ...BAHNHOF, ...DETEKTIV, ...WOERTERSCHATZ, ...LESEWERKSTATT, ...SCHREIBWERKSTATT, ...SPRACHLABOR].map(ready);
 
 export const findLesson = (id: string): ReadyLesson | undefined =>
 	LESSONS.find((lesson) => lesson.id === id);

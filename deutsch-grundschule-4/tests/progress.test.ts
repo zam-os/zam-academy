@@ -88,7 +88,7 @@ describe("Fortschritt", () => {
 		expect(isComplete(p, first.id)).toBe(false);
 		for (let i = 0; i < 3; i++) recordSolved(p, first.id, 2);
 		expect(isComplete(p, first.id)).toBe(true);
-		expect(completion(p)).toEqual({ completed: 1, stars: 4, total: 33 });
+		expect(completion(p)).toEqual({ completed: 1, stars: 4, total: 45 });
 	});
 
 	it("merges two tabs by union and maximum", () => {

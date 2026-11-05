@@ -1,6 +1,6 @@
 {
 	"schema": 1,
-	"checked": "2026-11-04",
+	"checked": "2026-11-05",
 	"curriculum": "https://www.lehrplanplus.bayern.de/fachlehrplan/grundschule/4/deutsch",
 	"school_type": "grundschule",
 	"grade": 4,
@@ -9,7 +9,7 @@
 		4
 	],
 	"subject": "deutsch",
-	"scope": "Lernbereiche 4.3 und 4.4 (Sprache untersuchen, Richtig schreiben) einschließlich Grundwortschatz 3/4, mit Bezügen zu 3.2 und 3.3, sowie Lesen (2.1, 2.3, 2.4). Texte schreiben, Sprechen sowie 4.1 und 4.2 sind geplant oder bleiben Unterrichtspraxis. Zuordnung ist kein Nachweis der Beherrschung.",
+	"scope": "Lernbereiche 2 (Lesen, ohne die Praxisteile), 3.2 und 3.3 (Texte planen, schreiben, überarbeiten) und 4 (Sprachgebrauch untersuchen, einschließlich Grundwortschatz 3/4). Sprechen, Vorlesen und Handschrift bleiben Unterrichtspraxis. Freie Texte schreibt das Kind am Schreibtisch; die App bewertet sie nicht. Zuordnung ist kein Nachweis der Beherrschung.",
 	"full_coverage": false,
 	"review_status": "awaiting-primary-teacher",
 	"optional_lessons": [],
@@ -651,90 +651,110 @@
 			"section": "3.2",
 			"position": 1,
 			"competence": "nutzen vor dem Schreiben Methoden zur Sammlung und Ordnung von Wortmaterial, Informationen, Begründungen und Schreibideen (z. B. Stichwortzettel, Mindmap).",
-			"lessons": [],
-			"status": "planned",
-			"evidence": "Geplant für eine Schreibwerkstatt (nächste Ausbaustufe)."
+			"lessons": [
+				"ideen-sammeln"
+			],
+			"status": "partial",
+			"evidence": "Stichwortzettel und Mindmap: passende Notizen auswählen, Wörter Ästen zuordnen, am Schreibtisch frei sammeln. Die App prüft freie Sammlungen nicht; das Sammeln von Begründungen übt standpunkt-begruenden unter 3.2.7."
 		},
 		{
 			"lb": 3,
 			"section": "3.2",
 			"position": 2,
 			"competence": "ziehen, auch im Austausch mit anderen, typische Elemente aus erzählenden und informierenden Texten heran (z. B. Wortmaterial, typische Formulierungen oder Textbausteine) und erstellen für eigene Texte Sammlungen (z. B. thematischen Wortschatz für Fantasiegeschichten oder Abenteuererzählungen, Informationen aus Kindersachbüchern).",
-			"lessons": [],
-			"status": "planned",
-			"evidence": "Geplant für eine Schreibwerkstatt (nächste Ausbaustufe)."
+			"lessons": [
+				"ideen-sammeln"
+			],
+			"status": "partial",
+			"evidence": "Typische Wörter und Sätze nach Textart auswählen und eine Sammlung prüfen. Der Austausch mit anderen und das Heranziehen echter Kindersachbücher bleiben außerhalb der App."
 		},
 		{
 			"lb": 3,
 			"section": "3.2",
 			"position": 3,
 			"competence": "bauen ihre eigenen erzählenden Texte sinnvoll auf (z. B. Erzählsituation – Ereignis – Ausgang) und stellen ein erzählenswertes Ereignis ins Zentrum.",
-			"lessons": [],
-			"status": "planned",
-			"evidence": "Geplant für eine Schreibwerkstatt (nächste Ausbaustufe)."
+			"lessons": [
+				"erzaehlen-aufbauen"
+			],
+			"status": "partial",
+			"evidence": "Sätze den Teilen Erzählsituation, Ereignis und Ausgang zuordnen, ein erzählenswertes Ereignis und einen passenden Ausgang wählen. Den eigenen Text schreibt das Kind am Schreibtisch; die App bewertet ihn nicht."
 		},
 		{
 			"lb": 3,
 			"section": "3.2",
 			"position": 4,
 			"competence": "gestalten erzählende Texte lebendig, wirkungsvoll und anschaulich durch den gezielten Einsatz passender sprachlicher Mittel.",
-			"lessons": [],
-			"status": "planned",
-			"evidence": "Geplant für eine Schreibwerkstatt (nächste Ausbaustufe)."
+			"lessons": [
+				"erzaehlen-lebendig"
+			],
+			"status": "partial",
+			"evidence": "Treffende Verben, wörtliche Rede, gezeigte Gefühle und kurze Sätze erkennen und auswählen, Wirkung an der Satz-Bühne vergleichen. Ob ein eigener Text lebendig ist, beurteilt die App nicht."
 		},
 		{
 			"lb": 3,
 			"section": "3.2",
 			"position": 5,
 			"competence": "verfassen eigene informierende, beschreibende Texte und achten dabei auf eine reihende Darstellung (z. B. bei der Abfolge von Arbeitsschritten in einem Versuch) sowie eine logische Anordnung der Informationen (z. B. bei der Beschreibung von Personen).",
-			"lessons": [],
-			"status": "planned",
-			"evidence": "Geplant für eine Schreibwerkstatt (nächste Ausbaustufe)."
+			"lessons": [
+				"genau-beschreiben"
+			],
+			"status": "partial",
+			"evidence": "Schritte eines Versuchs reihen, eine Personenbeschreibung von oben nach unten ordnen, sachliche Angaben auswählen. Eigene Beschreibungen entstehen am Schreibtisch ohne Bewertung."
 		},
 		{
 			"lb": 3,
 			"section": "3.2",
 			"position": 6,
 			"competence": "schreiben eigene informierende, berichtende Texte und achten auf die Vollständigkeit und zeitliche Ordnung der Informationen (z. B. in Berichten über einen Ausflug der Klasse oder einen Vorfall in der Pause).",
-			"lessons": [],
-			"status": "planned",
-			"evidence": "Geplant für eine Schreibwerkstatt (nächste Ausbaustufe)."
+			"lessons": [
+				"berichten"
+			],
+			"status": "partial",
+			"evidence": "W-Fragen an Sätzen markieren, die offene Frage benennen, Tatsachen von Meinung trennen, zeitliche Reihenfolge wählen. Eigene Berichte entstehen am Schreibtisch ohne Bewertung."
 		},
 		{
 			"lb": 3,
 			"section": "3.2",
 			"position": 7,
 			"competence": "sammeln und ordnen Gründe und Beispiele zu einer Position, die sie vertreten (z. B. bezüglich der Regelung zur Belegung der Computerarbeitsplätze im Klassenzimmer oder eines Ziels für den Wandertag).",
-			"lessons": [],
-			"status": "planned",
-			"evidence": "Geplant für eine Schreibwerkstatt (nächste Ausbaustufe)."
+			"lessons": [
+				"standpunkt-begruenden"
+			],
+			"status": "partial",
+			"evidence": "Standpunkt, Grund und Beispiel unterscheiden und zu einer Position passende Gründe wählen. Das eigene Sammeln zu einer echten Klassenfrage bleibt Praxis außerhalb der App."
 		},
 		{
 			"lb": 3,
 			"section": "3.2",
 			"position": 8,
 			"competence": "nutzen beim Schreiben eigener argumentierender Texte entsprechende Textvorbilder: Darlegung des eigenen Standpunktes mit Informationen, Gründen und Beispielen (z. B. Ziel eines gemeinsamen Ausflugs).",
-			"lessons": [],
-			"status": "planned",
-			"evidence": "Geplant für eine Schreibwerkstatt (nächste Ausbaustufe)."
+			"lessons": [
+				"standpunkt-begruenden"
+			],
+			"status": "partial",
+			"evidence": "Ein Textvorbild aus Standpunkt, Gründen und Beispielen zerlegen, überzeugende Gründe und passende Beispiele wählen. Eigene argumentierende Texte entstehen am Schreibtisch ohne Bewertung."
 		},
 		{
 			"lb": 3,
 			"section": "3.2",
 			"position": 9,
 			"competence": "nutzen Schreiben zum Erschließen von Texten (z. B. Schreiben aus der Perspektive einer Figur in der Kinderliteratur oder Zusammenfassung wesentlicher Informationen in Sachtexten).",
-			"lessons": [],
-			"status": "planned",
-			"evidence": "Geplant für eine Schreibwerkstatt (nächste Ausbaustufe)."
+			"lessons": [
+				"schreiben-und-verstehen"
+			],
+			"status": "partial",
+			"evidence": "Sätze einer Figur zuordnen, Sätze in die Ich-Form bringen, Zusammenfassungen vergleichen. Eigene Zusammenfassungen und Figurentexte bewertet die App nicht."
 		},
 		{
 			"lb": 3,
 			"section": "3.2",
 			"position": 10,
 			"competence": "beschreiben Lernerfahrungen und Lernfortschritte (z. B. in einem Lern- oder Lesetagebuch).",
-			"lessons": [],
-			"status": "planned",
-			"evidence": "Geplant für eine Schreibwerkstatt (nächste Ausbaustufe)."
+			"lessons": [
+				"schreiben-und-verstehen"
+			],
+			"status": "partial",
+			"evidence": "Genaue Einträge im Lern- oder Lesetagebuch erkennen und am Schreibtisch selbst schreiben. Ein fortlaufendes Tagebuch führt die App nicht."
 		},
 		{
 			"lb": 3,
@@ -752,18 +772,22 @@
 			"section": "3.3",
 			"position": 1,
 			"competence": "geben zentrale, konkrete Anregungen und Hilfestellungen für Texte und heben dabei die Stärken und gelungenen Elemente hervor.",
-			"lessons": [],
-			"status": "planned",
-			"evidence": "Geplant für eine Schreibwerkstatt (nächste Ausbaustufe)."
+			"lessons": [
+				"texte-ueberarbeiten"
+			],
+			"status": "partial",
+			"evidence": "Stärke und konkrete Anregung erkennen und hilfreiche Rückmeldungen auswählen. Echte Rückmeldungen an andere Kinder bleiben Praxis außerhalb der App."
 		},
 		{
 			"lb": 3,
 			"section": "3.3",
 			"position": 2,
 			"competence": "nehmen zentrale Anregungen für die Überarbeitung auf und setzen sich dazu jeweils ein konkretes Überarbeitungsziel (z. B. Erhöhung der Lebendigkeit und Spannung).",
-			"lessons": [],
-			"status": "planned",
-			"evidence": "Geplant für eine Schreibwerkstatt (nächste Ausbaustufe)."
+			"lessons": [
+				"texte-ueberarbeiten"
+			],
+			"status": "partial",
+			"evidence": "Zu einer Anregung ein Überarbeitungsziel wählen und prüfen, welche Änderung dazu passt. Das eigene Überarbeiten am Schreibtisch bewertet die App nicht."
 		},
 		{
 			"lb": 3,
@@ -781,45 +805,55 @@
 			"section": "3.3",
 			"position": 4,
 			"competence": "gestalten ihren fertigen Text ansprechend und passend zur Textfunktion (z. B. indem sie Absätze schaffen oder Bilder hinzufügen, ggf. auch mithilfe des Computers).",
-			"lessons": [],
-			"status": "planned",
-			"evidence": "Geplant für eine Schreibwerkstatt (nächste Ausbaustufe)."
+			"lessons": [
+				"texte-ueberarbeiten"
+			],
+			"status": "partial",
+			"evidence": "Eine zur Textfunktion passende Gestaltung auswählen. Absätze und Bilder wirklich anlegen, auch am Computer, bleibt Praxis außerhalb der App."
 		},
 		{
 			"lb": 4,
 			"section": "4.1",
 			"position": 1,
 			"competence": "untersuchen, welche sprachlichen Mittel genutzt werden, um bestimmte Wirkungen zu erreichen (z. B. Werbung, Spendenappelle, Geschichten, Witze).",
-			"lessons": [],
-			"status": "planned",
-			"evidence": "Geplant für eine weitere Ausbaustufe."
+			"lessons": [
+				"sprache-wirkt"
+			],
+			"status": "partial",
+			"evidence": "Anrede, Übertreibung und Reim markieren, Absichten von Werbung, Spendenaufrufen, Geschichten und Witzen benennen und Aussagen prüfen. Geübt an kurzen eigenen Beispielen, nicht an echter Werbung."
 		},
 		{
 			"lb": 4,
 			"section": "4.1",
 			"position": 2,
 			"competence": "beschreiben und bewerten Ursachen (z. B. vollständige, geordnete Informationen, Gestik und Mimik, wertschätzende Haltung) und Wirkungen (z. B. Aufmerksamkeit, Interesse) von gelingender Verständigung.",
-			"lessons": [],
-			"status": "planned",
-			"evidence": "Geplant für eine weitere Ausbaustufe."
+			"lessons": [
+				"verstaendigung"
+			],
+			"status": "partial",
+			"evidence": "Ursachen und Wirkungen in beschriebenen Gesprächen zuordnen, Missverständnisse erklären, wertschätzende Formulierungen wählen. Gestik und Mimik kommen nur beschrieben vor; echte Gespräche bleiben außerhalb der App."
 		},
 		{
 			"lb": 4,
 			"section": "4.2",
 			"position": 1,
 			"competence": "beschreiben und vergleichen Aspekte konzeptioneller Mündlichkeit (z. B. in Werbetexten, SMS, Chat, Mail) und konzeptioneller Schriftlichkeit (z. B. in Zeitungsartikeln, Sachtexten).",
-			"lessons": [],
-			"status": "planned",
-			"evidence": "Geplant für eine weitere Ausbaustufe."
+			"lessons": [
+				"muendlich-schriftlich"
+			],
+			"status": "partial",
+			"evidence": "Kurze Texte aus Chat, SMS, Mail und Werbung mit Zeitungs- und Sachtexten vergleichen und die passende Form wählen, in Kindersprache als „wie gesprochen“ und „wie geschrieben“. Der Fachbegriff „konzeptionell“ kommt nicht vor."
 		},
 		{
 			"lb": 4,
 			"section": "4.2",
 			"position": 2,
 			"competence": "beschreiben anhand von Beispielen Gemeinsamkeiten und Unterschiede von Sprachen und Schriftsystemen im eigenen Umfeld (z. B. von Standardsprache, Dialekten, Jugendsprache, unterschiedlichen Herkunftssprachen, Englisch, Blindenschrift, Gebärdensprache) und nutzen ihre Einsichten zur Erweiterung ihrer Sprachbewusstheit.",
-			"lessons": [],
-			"status": "planned",
-			"evidence": "Geplant für eine weitere Ausbaustufe."
+			"lessons": [
+				"sprachen-im-umfeld"
+			],
+			"status": "partial",
+			"evidence": "Einzelbeispiele aus Standardsprache, Bairisch, Jugendsprache, Englisch und Türkisch vergleichen, Blindenschrift und Gebärdensprache beschreiben. Andere Herkunftssprachen des Umfelds und der Austausch mit Menschen, die sie sprechen, bleiben außerhalb der App."
 		},
 		{
 			"lb": 4,
