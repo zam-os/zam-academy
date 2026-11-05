@@ -55,7 +55,7 @@ try {
 		0,
 	);
 	console.log(
-		`Cell validated in a disposable library: ${tile.atoms.length} atoms, ${CARDS} cards, idempotent enrolment, recall rating, history kept on reinstall, no broad grade binding.`,
+		`Cell validated in a disposable library: ${tile.atoms.length} atoms, ${CARDS} cards, idempotent enrolment, recall rating, history kept on reinstall, no official grade binding.`,
 	);
 } finally {
 	await db.close();

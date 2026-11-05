@@ -93,9 +93,10 @@ ZAM_CORE=file:///path/to/zam-core/dist/index.js node scripts/validate-cells.mjs
   20 Tier-2 open synthesis cards with sample solutions and two curated choice
   distractors per card).
 - Official `lehrplanplus-bayern` grade curriculum bindings are intentionally
-  deferred on the draft cell (`curricula` binds only `zam-academy-stage` `lb1`
-  through `lb6`), matching `mathematik-grundschule-4` so Grade 4 scope handling
-  in ZAM is coordinated deliberately at publication time.
+  deferred (`curricula` binds its `zam-academy` station and, also under
+  `zam-academy`, its school place: `grundschule`, grade 4, subject `hsu`),
+  matching `mathematik-grundschule-4`. The school place puts the atoms under
+  "4. Klasse" in ZAM's Schule lens and claims no curriculum coverage.
 - No legacy `de-by` HSU Grade 4 cells exist in ZAM, so `replaces` and
   `retired_items` are not needed.
 - `coverage.json` maps all 75 verbatim *Kompetenzerwartungen* across the 15

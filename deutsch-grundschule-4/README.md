@@ -76,8 +76,9 @@ ULIDs, Slugs und Lektions-IDs sind in
 `tests/fixtures/public-contract.json` festgehalten. ZAM enthält bisher keine
 `de-by`-Karten für Deutsch in der Grundschule (geprüft in zam-os/zam,
 Commit `88c5de2`), es gibt also keine Kartenübernahme und kein
-`replaces-de-by.json`. Wie bei Mathematik 4 bindet die Zelle nur an die
-eigenen Stationen, nicht breit an LehrplanPLUS.
+`replaces-de-by.json`. Wie bei Mathematik 4 bindet die Zelle an die eigenen
+Stationen und nennt unter `zam-academy` ihren Platz in der Schule
+(`grundschule`, Klasse 4, `deutsch`). An LehrplanPLUS bindet sie nicht.
 
 ## Entwickeln und prüfen
 
