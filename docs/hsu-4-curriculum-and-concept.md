@@ -53,7 +53,7 @@ Unlike secondary-school drill apps, `hsu-grundschule-4` follows a **single-pass 
 
 ## 5. Legacy ZAM Card Inventory & `curricula` Binding
 
-- **Legacy `de-by` check**: Checked all existing `replaces-de-by.json` files, bundled fixtures, and `zam-core@0.54.0` validation rules. ZAM currently holds **zero** legacy `de-by` cells for Grundschule *Heimat- und Sachunterricht* (`HSU`). Consequently, `cell.json` introduces 20 fresh atoms and 60 fresh ULID items with no `replaces` or `retired_items`, and no history-transfer migration is required.
+- **Legacy `de-by` check**: Checked all existing `replaces-de-by.json` files, bundled fixtures, and `zam-core@0.54.0` validation rules. ZAM currently holds **zero** legacy `de-by` cells for Grundschule *Heimat- und Sachunterricht* (`HSU`). Consequently, `cell.json` introduces 20 fresh atoms and 61 fresh ULID items with no `replaces` or `retired_items`, and no history-transfer migration is required.
 - **`publication.json` & `curricula` binding** (draft stage; since 2026-11-04 the status is `preview`, see the root README):
   - `hsu-grundschule-4/publication.json` sets `"status": "local-only"`, keeping the draft out of the public `catalog.json`, `academy.json`, and GitHub Pages deployment until reviewed and approved for publication.
   - Matching `mathematik-grundschule-4`, atoms in `cell.json` bind `zam-academy-stage` (`lb1`–`lb6`) and defer official `lehrplanplus-bayern` grade bindings until public release coordination (`scripts/validate-cell.mjs` enforces this invariant).

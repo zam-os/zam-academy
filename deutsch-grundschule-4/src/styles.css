@@ -976,6 +976,9 @@ p.feedback.hint {
 }
 .gap-group {
 	display: inline-flex;
+	/* Basis 0: a narrow row wraps the options inside the group first, so the
+	   full stop after a gap keeps its row instead of standing on its own. */
+	flex: 1 1 0;
 	flex-wrap: wrap;
 	max-width: 100%;
 	gap: 0.2rem;

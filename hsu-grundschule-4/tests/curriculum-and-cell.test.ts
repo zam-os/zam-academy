@@ -63,7 +63,7 @@ describe("HSU 4 curriculum, coverage & ZAM cell contract", () => {
 		}
 	});
 
-	it("matches the pinned ZAM cell contract (20 atoms, 60 items, valid ULIDs, acyclic prerequisites)", () => {
+	it("matches the pinned ZAM cell contract (20 atoms, 61 items, valid ULIDs, acyclic prerequisites)", () => {
 		expect(cell.tile_id).toBe(contract.tile_id);
 		expect(cell.atoms).toHaveLength(LESSONS.length);
 
@@ -86,7 +86,7 @@ describe("HSU 4 curriculum, coverage & ZAM cell contract", () => {
 				true,
 			);
 
-			expect(atom.practice_items).toHaveLength(3);
+			expect(atom.practice_items).toHaveLength(pinnedAtom.items.length);
 			atom.practice_items.forEach((item, itemIdx) => {
 				const pinnedItem = pinnedAtom.items[itemIdx];
 				expect(item.id).toBe(pinnedItem.id);
@@ -110,5 +110,36 @@ describe("HSU 4 curriculum, coverage & ZAM cell contract", () => {
 				expect(prereq.atom_id).not.toBe(atom.id);
 			}
 		}
+
+		const items = cell.atoms.flatMap((atom) => atom.practice_items);
+		expect(items).toHaveLength(61);
+		expect(items.filter((item) => item.tier === "tier1_fast")).toHaveLength(41);
+		expect(items.filter((item) => item.tier === "tier2_synthesis")).toHaveLength(20);
+	});
+
+	it("asks about the Fliehkraft the lesson teaches", () => {
+		const atom = cell.atoms.find(
+			(a) => a.slug === "hsu4-werkzeuge-maschinen-produktion",
+		);
+		expect(atom?.practice_items).toHaveLength(4);
+		const taught = LESSON_BY_ID.get("werkzeuge-maschinen-produktion");
+		expect(taught?.merksatz).toContain("Fliehkraft");
+		expect(atom?.practice_items[3].concept).toContain("Fliehkraft");
+	});
+
+	it("gives nothing away by the length of a fast_check option", () => {
+		const gaps = cell.atoms
+			.flatMap((atom) => atom.practice_items)
+			.flatMap((item) => (item.fast_check ? [item.fast_check] : []))
+			.map((check) => {
+				const right = check.options[check.correct_index];
+				const wrong = check.options[1 - check.correct_index];
+				return [...right].length - [...wrong].length;
+			});
+		expect(gaps).toHaveLength(41);
+		for (const gap of gaps) expect(Math.abs(gap)).toBeLessThanOrEqual(10);
+		// Neither the right nor the wrong option is the longer one in most cards.
+		expect(gaps.filter((gap) => gap > 0).length).toBeLessThanOrEqual(21);
+		expect(gaps.filter((gap) => gap < 0).length).toBeLessThanOrEqual(21);
 	});
 });
