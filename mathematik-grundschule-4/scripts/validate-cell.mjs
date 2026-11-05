@@ -71,7 +71,7 @@ try {
 		0,
 	);
 	console.log(
-		"Cell validated in a disposable library: 43 atoms, 159 cards, idempotent enrolment, recall rating, history preservation and no broad grade binding.",
+		"Cell validated in a disposable library: 43 atoms, 159 cards, idempotent enrolment, recall rating, history preservation and no official grade binding.",
 	);
 } finally {
 	await db.close();

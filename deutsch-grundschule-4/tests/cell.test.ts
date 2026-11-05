@@ -84,12 +84,13 @@ describe("ZAM-Zelle", () => {
 		});
 	});
 
-	it("binds atoms to their station only and transfers no history", () => {
+	it("binds atoms to their station and their school place, not to the official curriculum, and transfers no history", () => {
 		const codes: Record<string, string> = { werkstatt: "woerterwerkstatt", bahnhof: "satzbahnhof", detektiv: "detektivbuero", woerterschatz: "woerterschatz", lesewerkstatt: "lesewerkstatt", schreibwerkstatt: "schreibwerkstatt", sprachlabor: "sprachlabor" };
 		for (const a of cell.atoms) {
 			const lesson = LESSONS.find((l) => `gs4d-${l.id}` === a.slug);
 			expect(a.curricula).toEqual([
 				expect.objectContaining({ provider: "zam-academy", subject: "deutsch-grundschule-4", topic_code: codes[lesson?.stage ?? ""] }),
+				expect.objectContaining({ provider: "zam-academy", school_type: "grundschule", grade: 4, subject: "deutsch", topic_code: codes[lesson?.stage ?? ""], topic_title: a.curricula[0].topic_title }),
 			]);
 		}
 		expect("retired_items" in cell).toBe(false);

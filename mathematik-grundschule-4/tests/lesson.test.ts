@@ -275,6 +275,16 @@ describe("content contracts", () => {
 			expect(atom.curricula.every((c) => c.provider === "zam-academy")).toBe(
 				true,
 			);
+			// The stage, and the school place ZAM's Schule lens reads.
+			expect(atom.curricula[1]).toEqual({
+				provider: "zam-academy",
+				school_type: "grundschule",
+				grade: 4,
+				subject: "mathematik",
+				topic_code: atom.curricula[0].topic_code,
+				topic_title: atom.curricula[0].topic_title,
+			});
+			expect(atom.curricula).toHaveLength(2);
 			expect(atom.id).toMatch(/^[0-7][0-9A-HJKMNP-TV-Z]{25}$/);
 		}
 		for (const item of items) {
