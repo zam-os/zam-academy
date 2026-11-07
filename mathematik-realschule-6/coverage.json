@@ -1,0 +1,322 @@
+{
+  "schema": 1,
+  "checked": "2026-11-06",
+  "curriculum": "https://www.lehrplanplus.bayern.de/fachlehrplan/realschule/6/mathematik",
+  "school_type": "realschule",
+  "grade": 6,
+  "subject": "mathematik",
+  "scope": "all-official-learning-areas",
+  "optional_lessons": [],
+  "scope_note": "Sechs Lernbereiche im gemeinsamen Lernpfad; Klasse 6 hat keine Zweige. Fachpraktische Konstruktionen mit Zirkel und Lineal werden auf Papier ausgeführt und von der App nicht bewertet. Videos folgen als separater Schritt.",
+  "rows": [
+    {
+      "lb": 1,
+      "competence": "beschreiben Situationen, in denen Brüche von Bedeutung sind und erläutern damit die Notwendigkeit der Erweiterung des Zahlenbereichs auf die Menge der rationalen Zahlen.",
+      "lessons": [
+        "rz-1-warum-brueche"
+      ],
+      "status": "implemented",
+      "evidence": "rz-1-warum-brueche: Die Erklärung nennt Teilen, Messen, Anteile und Preise und führt ℚ über die unlösbare Division in ℤ ein; Generatoren teilen und welche-menge prüfen die Lage des Ergebnisses in ℤ und ℚ."
+    },
+    {
+      "lb": 1,
+      "competence": "interpretieren einen Bruch je nach Situation mithilfe verschiedener Grundvorstellungen und verwenden dabei die Fachbegriffe (Zähler, Nenner, gemischter Bruch, echter/unechter Bruch).",
+      "lessons": [
+        "rz-2-grundvorstellungen",
+        "rz-3-bruchformen"
+      ],
+      "status": "implemented",
+      "evidence": "rz-2-grundvorstellungen: Anteil, Division und Rechenbefehl mit Zähler und Nenner. rz-3-bruchformen: echte, unechte und gemischte Brüche im Labor mixed sowie in den Generatoren umwandeln und erkennen."
+    },
+    {
+      "lb": 1,
+      "competence": "berechnen Bruchteile von Größen und bestimmen das Ganze.",
+      "lessons": [
+        "rz-4-bruchteile"
+      ],
+      "status": "implemented",
+      "evidence": "rz-4-bruchteile: Das Labor part-whole wechselt zwischen bekanntem Ganzen und bekanntem Teil; die Generatoren bruchteil und ganzes rechnen beide Richtungen, auf Level 2 auch über den Rest."
+    },
+    {
+      "lb": 1,
+      "competence": "erzeugen durch Erweitern und Kürzen wertgleiche Brüche.",
+      "lessons": [
+        "rz-5-erweitern-kuerzen"
+      ],
+      "status": "implemented",
+      "evidence": "rz-5-erweitern-kuerzen: Das Labor expand zeigt gleiche Fläche bei feinerer Einteilung; die Generatoren erweitern und kuerzen verlangen den vollständig gekürzten Bruch."
+    },
+    {
+      "lb": 1,
+      "competence": "stellen Brüche in dezimaler Schreibweise dar, benennen die Stellenwerte nach dem Komma und runden sie der Situation angemessen. Dabei unterscheiden sie zwischen endlichen und nicht endlichen periodischen Dezimalzahlen.",
+      "lessons": [
+        "rz-6-stellenwerte",
+        "rz-7-bruch-dezimal",
+        "rz-8-runden"
+      ],
+      "status": "implemented",
+      "evidence": "rz-6-stellenwerte: Stellenwerttafel und Umwandlung. rz-7-bruch-dezimal: schriftliche Division mit Resten, endlich oder periodisch. rz-8-runden: Rundungsregel und der Situation angemessenes Aufrunden im Generator situation."
+    },
+    {
+      "lb": 1,
+      "competence": "wechseln situationsgerecht zwischen den Darstellungsformen für positive rationale Zahlen: Bruch, Dezimalzahl, Prozent sowie grafischer Darstellung (z. B. als Kreissektor oder Rechtecksanteil).",
+      "lessons": [
+        "rz-9-darstellungen"
+      ],
+      "status": "implemented",
+      "evidence": "rz-9-darstellungen: Das Labor representations koppelt Hundertstelgitter, Kreissektor, Bruch, Dezimalzahl und Prozent; die Generatoren wechsel und kreissektor wechseln die Darstellung in beide Richtungen."
+    },
+    {
+      "lb": 1,
+      "competence": "vergleichen die Größe von rationalen Zahlen sowohl in Bruch- als auch in Dezimalzahldarstellung.",
+      "lessons": [
+        "rz-10-vergleichen"
+      ],
+      "status": "implemented",
+      "evidence": "rz-10-vergleichen: Das Labor compare stellt positive und negative Brüche auf der Zahlengeraden gegenüber; die Generatoren brueche und bruch-und-dezimal vergleichen auch gemischte Darstellungen."
+    },
+    {
+      "lb": 1,
+      "competence": "lesen rationale Zahlen an der Zahlengeraden ab und tragen zur Visualisierung rationale Zahlen an der Zahlengeraden unter Verwendung einer geeigneten Skalierung an.",
+      "lessons": [
+        "rz-11-zahlengerade"
+      ],
+      "status": "implemented",
+      "evidence": "rz-11-zahlengerade: Im Labor number-line wird der Punkt P bei gewählter Einteilung gezogen; die Generatoren ablesen und skalierung prüfen Ablesen, Mitte und Wahl der Skalierung."
+    },
+    {
+      "lb": 1,
+      "competence": "rechnen mit rationalen Zahlen (sowohl in Bruch- als auch in Dezimalzahldarstellung) in den vier Grundrechenarten auch im Kopf und wenden hierbei die Vorzeichen-, Rechenregeln und zum vorteilhaften Rechnen die Rechengesetze an.",
+      "lessons": [
+        "rz-12-brueche-addieren",
+        "rz-13-brueche-multiplizieren",
+        "rz-14-brueche-dividieren",
+        "rz-15-dezimal-addieren",
+        "rz-16-dezimal-multiplizieren",
+        "rz-17-vorzeichen",
+        "rz-18-rechengesetze"
+      ],
+      "status": "implemented",
+      "evidence": "rz-12 bis rz-14: Brüche in allen vier Grundrechenarten mit Flächen- und Messmodell. rz-15 und rz-16: Dezimalzahlen mit Kommaregeln. rz-17-vorzeichen: Vorzeichenregeln. rz-18-rechengesetze: Rechenregeln und vorteilhaftes Rechnen."
+    },
+    {
+      "lb": 1,
+      "competence": "rechnen mit Größen und lösen Sachaufgaben.",
+      "lessons": [
+        "rz-19-sachaufgaben"
+      ],
+      "status": "implemented",
+      "evidence": "rz-19-sachaufgaben: Das Labor recipe rechnet Rezept und Kosten mit Einheiten um; die Generatoren einkauf und zeit-weg verlangen Umrechnen von g in kg und von Stundenbrüchen in Minuten."
+    },
+    {
+      "lb": 2,
+      "competence": "identifizieren die Achsenspiegelung als Kongruenzabbildung und beschreiben ihre Eigenschaften (Längen-, Geraden-, Winkel-, Parallelen- und Kreistreue, Umkehrbarkeit, Umlaufsinn, Lage von Ur- und Bildgeraden, Fixelemente).",
+      "lessons": [
+        "as-1-eigenschaften"
+      ],
+      "status": "implemented",
+      "evidence": "as-1-eigenschaften: Die Erklärung nennt alle Eigenschaften; das Labor mirror-triangle zeigt Umlaufsinn, Fixpunkt, Fixgerade und die Lage von Ur- und Bildgerade; die Generatoren laenge-winkel und abstand fragen sie ab."
+    },
+    {
+      "lb": 2,
+      "competence": "bilden mithilfe der Abbildungsvorschrift der Achsenspiegelung Punkte und ebene Figuren ab, um geometrische Problemstellungen auch mit Unterstützung geeigneter Geometriesoftware zu lösen.",
+      "lessons": [
+        "as-2-abbilden"
+      ],
+      "status": "implemented",
+      "evidence": "as-2-abbilden: Das Labor mirror-coords arbeitet wie eine Geometriesoftware mit ziehbarem Urpunkt; die Generatoren bildpunkt und achse-finden bilden Punkte ab und bestimmen Achsen. Freie Arbeit in GeoGebra regt die Lektion nur an."
+    },
+    {
+      "lb": 2,
+      "competence": "wenden historische mathematische Arbeitsweisen an, indem sie Fundamentalkonstruktionen (Senkrechte, Mittelsenkrechte, Lot, Winkelhalbierende) mit Zirkel und Lineal durchführen.",
+      "lessons": [
+        "as-3-senkrechte-lot",
+        "as-4-winkelhalbierende"
+      ],
+      "status": "implemented",
+      "evidence": "as-3-senkrechte-lot und as-4-winkelhalbierende: Die Labore zeigen jede Konstruktion Schritt für Schritt, die Lektion verweist auf Euklid. Das Ausführen mit Zirkel und Lineal geschieht auf Papier; die App bewertet es nicht."
+    },
+    {
+      "lb": 2,
+      "competence": "identifizieren achsensymmetrische Figuren und bestimmen deren Symmetrieachsen.",
+      "lessons": [
+        "as-5-symmetrieachsen"
+      ],
+      "status": "implemented",
+      "evidence": "as-5-symmetrieachsen: Im Labor symmetry-axes wird die Achse gedreht und numerisch geprüft, ob das Bild die Figur deckt; die Generatoren anzahl und ergaenzen bestimmen Achsen und Partnerpunkte."
+    },
+    {
+      "lb": 2,
+      "competence": "identifizieren besondere Dreiecke (gleichschenklig und gleichseitig) und Vierecke (Drachenviereck, Raute, gleichschenkliges Trapez, Rechteck, Quadrat) als achsensymmetrische Figuren.",
+      "lessons": [
+        "as-5-symmetrieachsen",
+        "as-6-besondere-figuren"
+      ],
+      "status": "implemented",
+      "evidence": "as-6-besondere-figuren: Das Labor special-figures verwandelt Viereck- und Dreiecksfamilien und benennt die Achsen; das gleichseitige Dreieck steht in as-5-symmetrieachsen. Die Generatoren welche-figur und partnerpunkte nutzen die Symmetrie."
+    },
+    {
+      "lb": 3,
+      "competence": "vergleichen die Flächeninhalte von Figuren durch Zerlegung in paarweise kongruente Teilflächen, um damit den Flächeninhalt von Dreieck, Parallelogramm, Trapez, Drachenviereck und Raute auf bekannte Flächeninhalte zurückzuführen.",
+      "lessons": [
+        "fl-1-parallelogramm",
+        "fl-2-dreieck",
+        "fl-3-trapez",
+        "fl-4-drachen-raute"
+      ],
+      "status": "implemented",
+      "evidence": "fl-1-parallelogramm zerlegt zum Rechteck, fl-2-dreieck und fl-3-trapez verdoppeln zum Parallelogramm, fl-4-drachen-raute halbiert das umgebende Rechteck. Die Labore zeigen jeweils die Zerlegung beim Ziehen."
+    },
+    {
+      "lb": 3,
+      "competence": "berechnen den Flächeninhalt von Dreieck, Parallelogramm, Trapez, Drachenviereck und Raute auch mithilfe der Formeln und bestimmen bei Dreieck, Parallelogramm und Trapez jeweils geeignete Höhen.",
+      "lessons": [
+        "fl-1-parallelogramm",
+        "fl-2-dreieck",
+        "fl-3-trapez",
+        "fl-4-drachen-raute"
+      ],
+      "status": "implemented",
+      "evidence": "Die Generatoren flaeche, hoehen und rueckwaerts rechnen mit den Formeln und Umstellungen; die schräge Seite ist in fl-1 ein Fehlangebot mit Hinweis, und zu verschiedenen Seiten gehören verschiedene Höhen. fl-2 zeigt Höhen außerhalb des Dreiecks."
+    },
+    {
+      "lb": 3,
+      "competence": "berechnen den Flächeninhalt von Vielecken, indem sie diese in geeignete Teilfiguren zerlegen, und lösen dazu auch Sachaufgaben.",
+      "lessons": [
+        "fl-5-vielecke"
+      ],
+      "status": "implemented",
+      "evidence": "fl-5-vielecke: Das Labor area-polygon zeigt Zerlegen und Ergänzen an derselben L-Form; die Generatoren l-form und haus sind Sachaufgaben zu Boden, Hausfront und Farbe."
+    },
+    {
+      "lb": 3,
+      "competence": "berechnen den Oberflächeninhalt von Quadern und Würfeln.",
+      "lessons": [
+        "fl-6-oberflaeche"
+      ],
+      "status": "implemented",
+      "evidence": "fl-6-oberflaeche: Das Labor surface-net zeigt die drei Flächenpaare im Netz; die Generatoren quader und wuerfel rechnen die Oberfläche, auch für einen Karton ohne Deckel und rückwärts bis zur Kante."
+    },
+    {
+      "lb": 4,
+      "competence": "ermitteln Rauminhalte von Körpern mit ungenormten und genormten Einheiten und geben Rauminhalte in den passenden Maßeinheiten an. Ferner rechnen sie genormte Raumeinheiten in kleinere und größere Einheiten um und verknüpfen sie mit den bereits bekannten Hohlmaßen.",
+      "lessons": [
+        "rg-1-rauminhalt",
+        "rg-2-raumeinheiten"
+      ],
+      "status": "implemented",
+      "evidence": "rg-1-rauminhalt: Einheitswürfel in Schichten, ungenormt und genormt, Wahl der passenden Einheit. rg-2-raumeinheiten: Einheitenleiter, Umrechnungszahl 1000 und die Verbindung zu l, ml und hl."
+    },
+    {
+      "lb": 4,
+      "competence": "berechnen das Volumen von Quadern, Würfeln und Körpern, die sich in Quader und Würfel zerlegen lassen, zur Lösung von Sachaufgaben unter Verwendung geeigneter Lösungsstrategien und durch mathematisches Modellieren.",
+      "lessons": [
+        "rg-3-quader-volumen",
+        "rg-4-zusammengesetzte-koerper"
+      ],
+      "status": "implemented",
+      "evidence": "rg-3-quader-volumen: Formel, Aquarium und fehlende Kante. rg-4-zusammengesetzte-koerper: Zerlegen und Ergänzen im Labor composite-solid; die Generatoren pool und ausgehoehlt modellieren Schwimmbecken und Holzkasten."
+    },
+    {
+      "lb": 5,
+      "competence": "verwenden Terme mit Variablen, um Sachzusammenhänge zu strukturieren und zu abstrahieren.",
+      "lessons": [
+        "tg-1-terme-aufstellen"
+      ],
+      "status": "implemented",
+      "evidence": "tg-1-terme-aufstellen: Das Labor term-build lässt Hölzchenmuster und Kosten wachsen; die Generatoren term-lesen und muster stellen Terme aus Sachzusammenhängen auf."
+    },
+    {
+      "lb": 5,
+      "competence": "nutzen verschiedene Darstellungsformen (numerische und grafische Wertetabellen, Skizzen, Texte) zum Beschreiben, Aufstellen und Interpretieren von Termen.",
+      "lessons": [
+        "tg-2-darstellungen"
+      ],
+      "status": "implemented",
+      "evidence": "tg-2-darstellungen: Das Labor term-table koppelt Wertetabelle und Punkte; die Generatoren tabelle und skizze gehen von Tabelle und Skizze zum Term und zurück, der Text steht in der Erklärung und in tg-5."
+    },
+    {
+      "lb": 5,
+      "competence": "berechnen Termwerte durch Belegung der Variablen unter Berücksichtigung der Grundmenge.",
+      "lessons": [
+        "tg-3-termwerte"
+      ],
+      "status": "implemented",
+      "evidence": "tg-3-termwerte: Das Labor term-value lässt nur Belegungen aus der gewählten Grundmenge zu; die Generatoren belegen und grundmenge rechnen auch mit negativen und gebrochenen Zahlen und mit G = {1; 2; 3}."
+    },
+    {
+      "lb": 5,
+      "competence": "zeigen die Äquivalenz von Termen durch geeignete Termwertberechnungen und einfache Umformungen mithilfe der Rechengesetze.",
+      "lessons": [
+        "tg-4-aequivalenz"
+      ],
+      "status": "implemented",
+      "evidence": "tg-4-aequivalenz: Das Labor term-equiv zeigt, dass ein gleicher Wert nichts beweist; die Generatoren vereinfachen und pruefen formen um und nutzen Gegenbeispiele."
+    },
+    {
+      "lb": 5,
+      "competence": "verbalisieren Gleichungen, stellen Gleichungen auf und lösen diese durch Anwendung geeigneter Lösungsstrategien (z. B. Probieren, Rückwärtsrechnen, Skizzieren, Zerlegen von Texten).",
+      "lessons": [
+        "tg-5-gleichungen-strategien"
+      ],
+      "status": "implemented",
+      "evidence": "tg-5-gleichungen-strategien: Das Labor equation-try zeigt Probieren mit Balken und die Rückwärtsrechnung; die Generatoren uebersetzen und probe gehen vom Text zur Gleichung, auch mit Zerlegen eines Textes zum Alter."
+    },
+    {
+      "lb": 5,
+      "competence": "bestimmen die Lösungsmengen von Gleichungen der Form a ⋅ x = c und x + b = c durch Äquivalenzumformungen unter Berücksichtigung verschiedener Grundmengen.",
+      "lessons": [
+        "tg-6-aequivalenzumformungen"
+      ],
+      "status": "implemented",
+      "evidence": "tg-6-aequivalenzumformungen: Das Labor balance formt auf beiden Seiten um und zeigt L für ℕ, ℤ und ℚ, auch die leere Menge; die Generatoren plus und mal verlangen die Lösungsmenge."
+    },
+    {
+      "lb": 5,
+      "competence": "lösen Sachaufgaben mithilfe von Gleichungen und bewerten dabei gewonnene Ergebnisse.",
+      "lessons": [
+        "tg-7-sachaufgaben"
+      ],
+      "status": "implemented",
+      "evidence": "tg-7-sachaufgaben: Das Labor word-equation bewertet, ob x zur Sache passt; die Generatoren aufstellen und bewerten verlangen Gleichung, Lösung und das Urteil über nicht ganzzahlige Ergebnisse."
+    },
+    {
+      "lb": 6,
+      "competence": "beschreiben Zuordnungen in der Mathematik und im Alltag (z. B. Füllgraphen) auch mithilfe verschiedener Darstellungsformen (grafisch und tabellarisch).",
+      "lessons": [
+        "dp-1-zuordnungen"
+      ],
+      "status": "implemented",
+      "evidence": "dp-1-zuordnungen: Das Labor fill-graph zeigt Gefäß und Füllgraph zugleich; die Generatoren tabelle-lesen und fuellgraph lesen Tabellen und ordnen Graph und Gefäß einander zu."
+    },
+    {
+      "lb": 6,
+      "competence": "erkennen direkt proportionale Zuordnungen aus grafischen und tabellarischen Darstellungen sowie in mathematischen Aussagen und Sachsituationen, begründen die direkte Proportionalität und verwenden dabei die Begriffe verhältnis- bzw. quotientengleich, direkt proportional, Proportionalitätsfaktor und Ursprungshalbgerade.",
+      "lessons": [
+        "dp-2-erkennen"
+      ],
+      "status": "implemented",
+      "evidence": "dp-2-erkennen: Das Labor proportion-check zeigt die Spalte y : x und den Startpunkt des Graphen; die Generatoren pruefen und faktor nutzen alle genannten Begriffe, das Taxi ist das Gegenbeispiel."
+    },
+    {
+      "lb": 6,
+      "competence": "stellen die direkte Proportionalität grafisch, tabellarisch und sprachlich dar und nutzen den Dreisatz und Verhältnisgleichungen zur Berechnung fehlender Größen auch in Sachverhalten.",
+      "lessons": [
+        "dp-2-erkennen",
+        "dp-3-dreisatz"
+      ],
+      "status": "implemented",
+      "evidence": "dp-2-erkennen stellt Tabelle und Graph dar. dp-3-dreisatz: Das Labor rule-of-three zeigt die drei Zeilen; die Generatoren dreisatz und verhaeltnis rechnen Sachaufgaben zu Verbrauch und Rezept."
+    },
+    {
+      "lb": 6,
+      "competence": "identifizieren den Prozentsatz, Grundwert und Prozentwert in Sachverhalten und nutzen den Dreisatz und Verhältnisgleichungen bei der rechnerischen Ermittlung von Prozentwert, Grundwert und Prozentsatz.",
+      "lessons": [
+        "dp-4-prozent-begriffe",
+        "dp-5-prozent-rechnen"
+      ],
+      "status": "implemented",
+      "evidence": "dp-4-prozent-begriffe ordnet die drei Größen in Sachtexten zu. dp-5-prozent-rechnen: Das Labor percent-calc zeigt den Dreisatz für alle drei Typen; die Generatoren prozentwert, grundwert und prozentsatz rechnen sie auf zwei Stufen."
+    }
+  ]
+}
