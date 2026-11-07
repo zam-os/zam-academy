@@ -118,24 +118,60 @@ describe("curriculum, cards and public lesson links", () => {
 			"grammar-3",
 		]);
 		const listed = structured.flatMap((row) =>
-			(row as { structures: { structure: string; lessons: string[] }[] })
-				.structures,
+			(
+				row as {
+					structures: { structure: string; use?: string; lessons: string[] }[];
+				}
+			).structures,
 		);
-		expect(listed).toHaveLength(33);
+		expect(listed).toHaveLength(35);
 		for (const row of structured)
 			for (const entry of (
-				row as { structures: { structure: string; lessons: string[] }[] }
+				row as {
+					structures: { structure: string; use?: string; lessons: string[] }[];
+				}
 			).structures) {
 				expect(row.curriculum_text).toContain(entry.structure);
+				if (entry.use !== undefined)
+					expect(["productive", "receptive"]).toContain(entry.use);
 				expect(entry.lessons.length).toBeGreaterThan(0);
 				for (const id of entry.lessons)
 					expect(row.lessons).toContain(id);
 			}
-		expect(
-			coverage.rows.find((row) => row.code === "grammar-2")?.curriculum_text,
-		).toContain(
+		const grammar2 = coverage.rows.find((row) => row.code === "grammar-2") as
+			| {
+					curriculum_text: string;
+					structures: { structure: string; use: string; lessons: string[] }[];
+			  }
+			| undefined;
+		expect(grammar2?.curriculum_text).toContain(
 			"receptive: future meaning in combination with expressions of time",
 		);
+		expect(
+			grammar2?.structures.filter((entry) => entry.use === "productive"),
+		).toHaveLength(7);
+		expect(
+			grammar2?.structures.filter((entry) => entry.use === "receptive"),
+		).toEqual([
+			{
+				structure:
+					"receptive: future meaning in combination with expressions of time",
+				scope: "simple present (timetables and schedules)",
+				use: "receptive",
+				lessons: ["e5-simple-present", "e5-present-contrast"],
+			},
+			{
+				structure:
+					"receptive: future meaning in combination with expressions of time",
+				scope: "present progressive (fixed arrangements)",
+				use: "receptive",
+				lessons: [
+					"e5-present-progressive",
+					"e5-present-contrast",
+					"e5-holiday-listening",
+				],
+			},
+		]);
 	});
 	it.each(LESSONS)(
 		"contains usable material and distinct production tasks: $id",
@@ -574,7 +610,7 @@ describe("proposal-only legacy mapping", () => {
 	});
 	it("proposes A only where the successor asks the same single retrieval", () => {
 		const checks: [string, string, string][] = [
-			["01K4E5B0000000000000000J01", "e5-to-be-check", "isn't"],
+			["01K4E5B0000000000000000J01", "e5-to-be-check", "isn’t"],
 			[
 				"01K4E5B0000000000000000J03",
 				"e5-have-got-check",
@@ -588,7 +624,7 @@ describe("proposal-only legacy mapping", () => {
 			[
 				"01K4E5B0000000000000000J07",
 				"e5-imperatives-check",
-				"Don't + base form (Don't run!)",
+				"Don’t + base form (Don’t run!)",
 			],
 		];
 		for (const [oldId, slug, expectedConcept] of checks) {

@@ -1188,11 +1188,11 @@
 			"gov-school"
 		],
 		"paragraphs": [
-			"Mit elf Jahren wechseln Kinder in England und Wales von der Primary School an die Secondary School (dort beginnt man in Year 7). Viele Dinge unterscheiden sich vom bayerischen Realschulalltag: Fast alle Schülerinnen und Schüler tragen eine Schuluniform (school uniform), zum Beispiel einen Blazer mit Schullogo, ein weißes Hemd mit Krawatte (tie) oder ein Poloshirt sowie dunkle Hosen oder einen Rock. Der Schultag beginnt meist um 8.45 Uhr mit „registration“ oder „assembly“ (Schulversammlung) und dauert mit einer einstündigen Mittagspause (lunch break in der canteen) bis etwa 15.15 Uhr.",
+			"Mit elf Jahren wechseln Kinder in England und Wales von der Primary School an die Secondary School (dort beginnt man in Year 7). Viele Dinge unterscheiden sich vom bayerischen Realschulalltag: Fast alle Schülerinnen und Schüler tragen eine Schuluniform (school uniform), zum Beispiel einen Blazer mit Schullogo, ein weißes Hemd mit Krawatte (tie) oder ein Poloshirt sowie dunkle Hosen oder einen Rock. Der Schultag beginnt meist um 8.45 Uhr mit „registration“ oder „assembly“ (Schulversammlung) und dauert mit einer langen Mittagspause (lunch break in der canteen) bis zum Nachmittag (an der Oakfield School bis 14.45 Uhr, danach folgen freiwillige Clubs).",
 			"Am Nachmittag besuchen viele Jugendliche „after-school clubs“ wie Drama Club, Choir, Coding oder Football. Wenn du dich für einen solchen Club anmeldest, füllst du ein einfaches englisches Formular (form) aus: „First name“ ist dein Vorname, „Surname“ oder „Last name“ dein Familienname, „Form / Class“ deine Klasse (z. B. 5b oder 7G) und „Emergency contact“ die Notfallnummer deiner Eltern."
 		],
 		"takeaway": "An britischen Secondary Schools gehören Schuluniform, Registration, Lunch in der Canteen und After-School Clubs zum festen Tagesablauf.",
-		"material": "Welcome sheet & Club Sign-Up Form at Oakfield Secondary School (kein amtliches Formular – Übungsmuster):\nDaily routine at Oakfield:\n• 08.45: Morning registration in your form room with your form tutor.\n• 09.00 – 12.15: Morning lessons (with a 20-minute morning break at 10.40).\n• 12.15 – 13.15: Lunch break in the school canteen or on the playground.\n• 13.15 – 15.15: Afternoon lessons.\n• 15.20 – 16.20: Optional after-school clubs (Drama Club on Mondays, Robotics Club on Wednesdays, Football Club on Fridays).\nSample Club Registration Card:\nFirst name: Oliver | Surname: Bennett | Age: 11 | Form: 7B | Chosen club: Robotics Club (Wednesday) | Allergies / Notes: None.",
+		"material": "Welcome sheet & Club Sign-Up Form at Oakfield Secondary School (kein amtliches Formular – Übungsmuster):\nDaily routine at Oakfield:\n• 08.45 – 09.00: Morning registration in your form room with your form tutor.\n• 09.00 – 12.20: Morning lessons (1st to 4th lesson, with a 20-minute morning break from 10.30 to 10.50).\n• 12.20 – 13.15: Lunch break in the school canteen or on the playground (55 minutes).\n• 13.15 – 14.45: Afternoon lessons (5th and 6th lesson).\n• 14.50 – 15.50: Optional after-school clubs (Drama Club on Mondays, Robotics Club on Wednesdays, Football Club on Fridays).\nSample Club Registration Card:\nFirst name: Oliver | Surname: Bennett | Age: 11 | Form: 7B | Chosen club: Robotics Club (Wednesday) | Allergies / Notes: None.",
 		"materialLabel": "Erfundenes Schulblatt und Musterformular (kein amtliches Formular); Schulsystem nach der verlinkten Quelle auf GOV.UK.",
 		"materialLanguage": "en",
 		"quiz": {
@@ -1208,15 +1208,11 @@
 		},
 		"practice": [
 			{
-				"prompt": "Look at the Oakfield routine: At what time does morning registration start? Write the time.",
+				"prompt": "Look at Oliver’s Club Registration Card: What is Oliver’s surname (family name)?",
 				"answers": [
-					"08.45",
-					"8.45",
-					"8:45",
-					"08:45",
-					"8.45 a.m."
+					"Bennett"
 				],
-				"feedback": "Morning registration starts at 08.45 in the form room."
+				"feedback": "On the registration card, “Surname: Bennett” is Oliver’s family name."
 			},
 			{
 				"prompt": "Where do pupils eat their hot meal during the lunch break? In the school ___.",
@@ -1233,7 +1229,7 @@
 					"on Wednesdays",
 					"on Wednesday"
 				],
-				"feedback": "Robotics Club takes place on Wednesdays from 15.20 to 16.20."
+				"feedback": "Robotics Club takes place on Wednesdays from 14.50 to 15.50."
 			}
 		],
 		"tasks": {
@@ -1248,7 +1244,7 @@
 			},
 			"2": {
 				"prompt": "Compare a school day at Oakfield Secondary School with a typical day at your Bavarian Realschule in four sentences (mention school uniform, end of lessons and lunch).",
-				"model": "At Oakfield Secondary School pupils wear a school uniform with a blazer or tie, but at my Bavarian Realschule we wear our own everyday clothes. Oakfield starts at 8.45 a.m. and finishes at 3.15 p.m., while our lessons start at 8.00 a.m. and usually end at 1.00 p.m. British pupils eat lunch in the school canteen every day, whereas I often eat lunch at home.",
+				"model": "At Oakfield Secondary School pupils wear a school uniform with a blazer or tie, but at my Bavarian Realschule we wear our own everyday clothes. Oakfield starts at 8.45 a.m. and afternoon lessons finish at 2.45 p.m. (with clubs until 3.50 p.m.), while our lessons start at 8.00 a.m. and usually end at 1.00 p.m. British pupils eat lunch in the school canteen every day, whereas I often eat lunch at home.",
 				"criteria": [
 					"Ich vergleiche die Kleidung (school uniform vs. everyday clothes).",
 					"Ich vergleiche die Unterrichtszeiten.",
@@ -1261,7 +1257,7 @@
 		"id": "e5-classroom-places",
 		"stage": "school",
 		"title": "Around the school: prepositions of place",
-		"skill": "Ortspräpositionen (in, on, under, next to, in front of, behind, between) und feste Wendungen (at school, in time) sicher verwenden.",
+		"skill": "Ortspräpositionen (in, on, under, next to, in front of, behind, between) und feste Wendungen (at school, on time, in time for…) sicher verwenden.",
 		"bindings": [
 			"1.1-lesen",
 			"1.2-wortschatz",
@@ -1276,7 +1272,7 @@
 			"Um neue Mitschülerinnen und Mitschüler durch das Schulhaus zu führen oder Gegenstände im Klassenzimmer zu finden, brauchst du Ortspräpositionen (common prepositions of place): „in“ (in), „on“ (auf/an einer Fläche), „under“ (unter), „next to“ (neben), „in front of“ (vor), „behind“ (hinter) und „between“ (zwischen zwei Dingen). Beispiel: „The science lab is between the art room and the library, and my school bag is under the desk.“",
 			"Zusätzlich lernst du in der 5. Klasse wichtige feste Präpositionalverbindungen (prepositional phrases), die man als ganze Wortgruppe (chunk) merkt: Man sagt „at school“ (in der Schule) und „at home“ (zu Hause), „on the bus“ (im Bus), „on the first floor“ (im ersten Stock) sowie „on time“ (pünktlich laut Fahrplan/Stundenplan) und „in time“ (rechtzeitig, bevor es zu spät ist, z. B. „We arrived in time for the school bell“)."
 		],
-		"takeaway": "Nutze Ortspräpositionen wie next to, between, in front of, behind und merke dir feste Chunks wie at school, at home und in time.",
+		"takeaway": "Nutze Ortspräpositionen wie next to, between, in front of, behind und unterscheide feste Chunks wie at school, on time (pünktlich nach Plan) und in time for… (rechtzeitig vor etwas).",
 		"material": "Welcome map for new Year 7 pupils at Oakfield School:\n• Ground floor: When you walk through the main entrance, the school office is right in front of you. The big assembly hall is on the left, and the canteen is behind the assembly hall. Look at the noticeboard on the wall next to the office door!\n• First floor: Go upstairs for your form rooms. Form Room 7B is between the computer room and the music room. Inside Form Room 7B, the teacher’s desk is in front of the whiteboard, and the dictionaries are on the shelf under the window. Please be at school in time for registration at 8.45!",
 		"materialLabel": "Eigener Wegweiser durch ein britisches Schulgebäude zur Einübung von Präpositionen und prepositional phrases (erfundenes Übungsmaterial).",
 		"materialLanguage": "en",
@@ -1326,12 +1322,12 @@
 				]
 			},
 			"2": {
-				"prompt": "Write a short welcome note (four sentences) for an exchange pupil: explain how to find your classroom, the school office and the gym, and remind them to arrive at school in time.",
-				"model": "Welcome to our Realschule! When you come through the main door, the school office is on the right next to the staff room. Our classroom 5b is upstairs on the first floor between Room 5a and the computer room, and the gym is behind the schoolyard. Please be at school in time for the first bell at 7.55 a.m.!",
+				"prompt": "Write a short welcome note (four sentences) for an exchange pupil: explain how to find your classroom, the school office and the gym, and use “at school” as well as “on time” or “in time for…”.",
+				"model": "Welcome to our Realschule! When you come through the main door, the school office is on the right next to the staff room. Our classroom 5b is upstairs on the first floor between Room 5a and the computer room, and the gym is behind the schoolyard. The school bus is usually on time, so you will be at school in time for the first bell at 7.55 a.m.!",
 				"criteria": [
 					"Ich erkläre den Weg zu mindestens drei Orten im Schulhaus.",
 					"Ich nutze Ortspräpositionen wie „next to“, „between“ und „behind“ treffend.",
-					"Ich baue die feste Wendung „at school in time“ ein."
+					"Ich verwende feste Präpositionalverbindungen wie „at school“, „on time“ oder „in time for …“ getrennt und passend."
 				]
 			}
 		}
@@ -1541,12 +1537,12 @@
 			"fachprofil"
 		],
 		"paragraphs": [
-			"Bis zum Ende der 5. Klasse lernst du rund 750 englische Wörter und Wendungen. Unser Gehirn merkt sich Wörter viel besser, wenn sie vernetzt sind, statt einzeln untereinander zu stehen. Deshalb ordnest du neuen Wortschatz in Wortfeldern (word webs / mind maps) nach Themen (z. B. „School“ -> subjects, classroom, transport), nach Oberbegriffen (umbrella terms: „furniture“ -> desk, chair, shelf) oder als Gegensatzpaare (opposites: „noisy – quiet“, „early – late“, „cheap – expensive“).",
-			"Ebenso wichtig sind feste Wortpartnerschaften (basic collocations): Auf Deutsch sagt man „Hausaufgaben machen“ und „einen Fehler machen“, auf Englisch heißt es aber „to do your homework“ und „to make a mistake“. Schreibe solche Kollokationen und Phrasal Verbs („to get up, to put on, to look for“) auf deine Karteikarten (flashcards) immer als ganzen Ausdruck zusammen mit einem kurzen Beispielsatz!"
+			"Bis zum Ende der 5. Klasse lernst du ca. 700 englische Wörter und Wendungen. Unser Gehirn merkt sich Wörter viel besser, wenn sie vernetzt sind, statt einzeln untereinander zu stehen. Deshalb ordnest du neuen Wortschatz in Wortfeldern (word webs / mind maps) nach Themen (z. B. „School“ -> subjects, classroom, transport), nach Oberbegriffen (umbrella terms: „furniture“ -> desk, chair, shelf) oder als Gegensatzpaare (opposites: „noisy – quiet“, „early – late“, „cheap – expensive“).",
+			"Ebenso wichtig sind feste Wortpartnerschaften (basic collocations) und zweiteilige Verben (phrasal verbs): Auf Deutsch sagt man „Hausaufgaben machen“ und „einen Fehler machen“, auf Englisch heißt es aber „to do your homework“ und „to make a mistake“. Bei Phrasal Verbs verändert das kleine Begleitwort (particle) die Bedeutung des Verbs: „to get up“ (aufstehen), „to put on“ (anziehen/aufsetzen) und „to look for“ (suchen). Schreibe Kollokationen und Phrasal Verbs auf deine Karteikarten (flashcards) immer als ganzen Ausdruck zusammen mit einem kurzen Beispielsatz!"
 		],
-		"takeaway": "Lerne Vokabeln nie als isolierte Einzelwörter, sondern in Themen-Mindmaps, mit Gegensätzen und als feste Kollokationen wie „do your homework“.",
-		"material": "Mia’s study corner – How I learn English vocabulary:\n1. Word web “School”: subjects (English, Maths, History, Art) · people (headteacher, form tutor, classmate) · places (classroom, canteen, gym, library).\n2. Collocation flashcards (Verb + Noun partners):\n   • to do your homework (NOT make!) -> I always do my homework after lunch.\n   • to make a mistake -> Don’t worry if you make a mistake.\n   • to take the bus / to ride a bike -> We take the bus on rainy days.\n   • to have breakfast / lunch / dinner -> We have lunch at 12.30.\n3. Opposites card: noisy ≠ quiet · early ≠ late · light ≠ heavy.",
-		"materialLabel": "Eigenes Lernmethoden-Blatt zu Mindmaps, Kollokationen und Karteikarten nach LehrplanPLUS LB 1.2 und LB 4 (Grundwissen mit erfundenen Beispielsätzen).",
+		"takeaway": "Lerne Vokabeln nie als isolierte Einzelwörter, sondern in Themen-Mindmaps, mit Gegensätzen, als feste Kollokationen („do your homework“) und als Phrasal Verbs („get up“).",
+		"material": "Mia’s study corner – How I learn English vocabulary:\n1. Word web “School”: subjects (English, Maths, History, Art) · people (headteacher, form tutor, classmate) · places (classroom, canteen, gym, library).\n2. Collocation flashcards (Verb + Noun partners):\n   • to do your homework (NOT make!) -> I always do my homework after lunch.\n   • to make a mistake -> Don’t worry if you make a mistake.\n   • to take the bus / to ride a bike -> We take the bus on rainy days.\n   • to have breakfast / lunch / dinner -> We have lunch at 12.30.\n3. Phrasal verb flashcards (Verb + Particle):\n   • to get up (aufstehen) -> I get up at half past six on school days.\n   • to put on (anziehen) -> Put on your warm jacket!\n   • to look for (suchen) -> Liam is looking for his ruler.\n4. Opposites card: noisy ≠ quiet · early ≠ late · light ≠ heavy.",
+		"materialLabel": "Eigenes Lernmethoden-Blatt zu Mindmaps, Kollokationen, Phrasal Verbs und Karteikarten nach LehrplanPLUS LB 1.2 und LB 4 (Grundwissen mit erfundenen Beispielsätzen).",
 		"materialLanguage": "en",
 		"quiz": {
 			"wrong": [
@@ -1575,21 +1571,22 @@
 				"feedback": "noisy ≠ quiet."
 			},
 			{
-				"prompt": "Which umbrella term on Mia’s word web groups “classroom, canteen, gym, library” together?",
+				"prompt": "Look at Mia’s phrasal verb flashcards: Complete the sentence “I ___ up at half past six on school days.”",
 				"answers": [
-					"places"
+					"get",
+					"get up"
 				],
-				"feedback": "Classroom, canteen, gym and library are grouped under “places”."
+				"feedback": "“To get up” („aufstehen“) is an important phrasal verb for daily routines."
 			}
 		],
 		"tasks": {
 			"1": {
-				"prompt": "Create a mini word web in text form for the topic “Free time & Hobbies”: write three groups (for example Sports, Music/Indoor, Places) with at least three English words in each group, plus two sentences using collocations.",
-				"model": "Word web “Free time”: Sports (football, swimming, cycling) · Indoor hobbies (reading comics, playing the guitar, drawing) · Places (park, sports centre, youth club). After school I always do my homework first, and then I ride my bike to the park.",
+				"prompt": "Create a mini word web in text form for the topic “Free time & Hobbies”: write three groups (for example Sports, Music/Indoor, Places) with at least three English words in each group, plus two sentences using one collocation and one phrasal verb (for example get up, put on, look for).",
+				"model": "Word web “Free time”: Sports (football, swimming, cycling) · Indoor hobbies (reading comics, playing the guitar, drawing) · Places (park, sports centre, youth club). On Saturdays I get up at eight o’clock, put on my trainers and ride my bike to the park. Before dinner I always do my homework.",
 				"criteria": [
 					"Ich gliedere meinen Wortschatz in mindestens drei sinnvolle Untergruppen.",
 					"Ich nenne insgesamt mindestens neun passende englische Wörter.",
-					"Ich bilde mindestens einen vollständigen Beispielsatz mit einer festen Kollokation (z. B. do my homework, ride my bike)."
+					"Ich bilde Beispielsätze mit mindestens einer festen Kollokation (z. B. do my homework) und einem Phrasal Verb (z. B. get up, put on)."
 				]
 			},
 			"2": {
@@ -2010,9 +2007,7 @@
 				"prompt": "At what time does Holly’s coach leave Bristol bus station next Saturday? At half past ___.",
 				"answers": [
 					"seven",
-					"7",
-					"7.30",
-					"07.30"
+					"7"
 				],
 				"feedback": "Holly says: “Our coach leaves Bristol bus station at half past seven in the morning.”"
 			}
@@ -2028,12 +2023,12 @@
 				]
 			},
 			"2": {
-				"prompt": "Compare Liam’s Easter holiday in Cornwall and Holly’s holiday in Bristol in four English sentences, and mention where Holly is going next Saturday.",
-				"model": "In the Easter holidays Liam went to the seaside in Cornwall by train and stayed in a cottage near the beach. He visited an old tin mine and built a sandcastle with his sister. Holly stayed at home in Bristol and enjoyed a three-day football camp in the park. Next Saturday she is travelling to Brighton by coach to visit her cousins.",
+				"prompt": "Compare Liam’s Easter holiday in Cornwall and Holly’s holiday in Bristol in four English sentences, and state what you understood from the dialogue about Holly’s Saturday trip (destination and departure time).",
+				"model": "In the Easter holidays Liam went to the seaside in Cornwall by train and stayed in a cottage near the beach. He visited an old tin mine and built a sandcastle with his sister. Holly stayed at home in Bristol and enjoyed a three-day football camp in the park. From the end of the dialogue we learn that Holly’s Saturday trip goes to Brighton by coach at half past seven in the morning.",
 				"criteria": [
 					"Ich stelle Liams Ferien in Cornwall korrekt dar.",
 					"Ich beschreibe Hollys Ferienprogramm in Bristol.",
-					"Ich nenne Hollys Plan für den nächsten Samstag in Brighton."
+					"Ich gebe wieder, was im Hördialog über Hollys Samstagsausflug nach Brighton (Ziel und Abfahrtszeit) gesagt wird."
 				]
 			}
 		}
@@ -2145,7 +2140,7 @@
 		"materialLanguage": "en",
 		"quiz": {
 			"wrong": [
-				"aren't",
+				"aren’t",
 				"am not"
 			],
 			"wrongFeedback": [
@@ -2522,7 +2517,7 @@
 			"bc-grammar"
 		],
 		"paragraphs": [
-			"Das Simple Present verwendest du für Zustände, Fakten und Dinge, die regelmäßig oder jeden Tag passieren (routines and habits). Bei I, you, we und they steht die Grundform des Verbs („I get up at six; we play tennis on Fridays“). Bei der 3. Person Singular (he, she, it) gilt der berühmte Merksatz „He, she, it – das -s muss mit!“: „He gets up at seven; she plays the flute.“ Achte auf die Schreibweise: Nach Zischlauten steht „-es“ („watches, washes, goes, does“), nach Konsonant + y wird daraus „-ies“ („flies, carries, tidies“), und aus „have“ wird „has“.",
+			"Das Simple Present verwendest du für Zustände, Fakten und Dinge, die regelmäßig oder jeden Tag passieren (routines and habits). Bei I, you, we und they steht die Grundform des Verbs („I get up at six; we play tennis on Fridays“). Bei der 3. Person Singular (he, she, it) gilt der berühmte Merksatz „He, she, it – das -s muss mit!“: „He gets up at seven; she plays the flute.“ Achte auf die Schreibweise: Nach Zischlauten (-s, -sh, -ch, -x) hängt man „-es“ an („watches, washes, fixes“). Auch die Verben auf „-o“ bilden die 3. Person mit „-es“ („go → goes, do → does“). Nach Konsonant + y wird aus dem y ein „-ies“ („flies, carries, tidies“), und aus „have“ wird „has“.",
 			"Für Verneinungen und Fragen brauchst du im Simple Present das Hilfsverb „do“ bzw. bei he/she/it „does“. Sobald „doesn’t“ oder „does“ im Satz steht, kehrt das Vollverb in die Grundform ohne -s zurück: „He doesn’t like cheese“ und „Does she walk to school? – Yes, she does. / No, she doesn’t.“ Häufigkeitsadverbien („always, usually, often, sometimes, never“) stehen vor dem Vollverb („I usually walk“), aber hinter einer Form von „to be“ („He is always punctual“). Rezeptiv erkennst du das Simple Present außerdem mit Zeitangaben für feste Fahr- und Stundenpläne in der Zukunft („Tomorrow the train leaves at 8.10“)."
 		],
 		"takeaway": "Im Simple Present trägt he/she/it ein -s (plays, goes, watches, has); bei doesn’t und Does…? steht das Vollverb wieder ohne -s!",
@@ -2574,12 +2569,12 @@
 				]
 			},
 			"2": {
-				"prompt": "Write a four-line interview about weekend habits using “Do you…?” and “Does your friend/sister/brother…?”, short answers, and one sentence about a train or bus timetable tomorrow.",
-				"model": "Me: Do you get up early on Saturdays, Jonas?\nJonas: No, I don’t. I usually sleep until half past eight.\nMe: Does your sister play tennis at the weekend?\nJonas: Yes, she does. Tomorrow her bus to the tennis club leaves at nine o’clock.",
+				"prompt": "Write a four-line interview about weekend habits using “Do you…?” and “Does your friend/sister/brother…?” with matching short answers, and explain in one sentence whether the timetable note “Tomorrow the sports train to Cardiff leaves at 9.15 a.m.” talks about the past, every day or a fixed schedule in the future.",
+				"model": "Me: Do you get up early on Saturdays, Jonas?\nJonas: No, I don’t. I usually sleep until half past eight.\nMe: Does your sister play tennis at the weekend?\nJonas: Yes, she does. She always plays on Saturday morning.\nTimetable check: The sentence “Tomorrow the sports train to Cardiff leaves at 9.15 a.m.” uses the simple present with “tomorrow” to express a fixed timetable in the future.",
 				"criteria": [
 					"Ich stelle je eine Frage mit „Do you…?“ und „Does …?“ (Vollverb in der Grundform).",
 					"Ich antworte mit passenden Kurzantworten („Yes, she does“ / „No, I don’t“).",
-					"Ich baue einen Satz mit Fahrplan-Zukunftsbedeutung („Tomorrow the bus/train leaves at…“) ein."
+					"Ich erkenne und erkläre am gegebenen Fahrplansatz („Tomorrow the sports train… leaves…“), dass das Simple Present mit Zeitangabe hier einen festen Zeitplan in der Zukunft ausdrückt."
 				]
 			}
 		}
@@ -2651,12 +2646,12 @@
 				]
 			},
 			"2": {
-				"prompt": "Write a short phone dialogue (four lines) between two friends: ask what the other person is doing right now, what a brother or sister is doing, and mention one plan for this afternoon (“We are meeting…”).",
-				"model": "Leo: Hi Mia! What are you doing right now?\nMia: Hi Leo! I’m making a birthday card for Grandma, and my brother is baking muffins in the kitchen.\nLeo: Sounds delicious! Is your mum helping him?\nMia: No, she isn’t – and at four o’clock this afternoon we are visiting Grandma together!",
+				"prompt": "Write a short phone dialogue (four lines) between two friends: ask what the other person is doing right now, describe two actions happening at the moment (including one verb with -ing spelling change such as writing, sitting or swimming), and include one yes-no question with a short answer.",
+				"model": "Leo: Hi Mia! What are you doing right now?\nMia: Hi Leo! I’m sitting in the garden and writing a birthday card for Grandma, and my brother is baking muffins in the kitchen.\nLeo: Sounds delicious! Is your mum helping him at the moment?\nMia: No, she isn’t – she is talking to our neighbour at the garden gate.",
 				"criteria": [
-					"Ich stelle eine korrekte Frage im Present Progressive („What are you doing…?“ / „Is your…?“).",
-					"Ich beschreibe mindestens zwei gerade ablaufende Handlungen mit „am/is/are + -ing“.",
-					"Ich nenne am Ende eine feste Verabredung für heute Nachmittag."
+					"Ich stelle mindestens eine korrekte Frage im Present Progressive („What are you doing…?“ / „Is your…?“).",
+					"Ich beschreibe gerade ablaufende Handlungen („right now / at the moment“) mit „am/is/are + -ing“ und beachte die Schreibregeln (z. B. sitting, writing).",
+					"Ich baue eine passende Kurzantwort („Yes, he/she is“ oder „No, he/she isn’t“) in den Dialog ein."
 				]
 			}
 		}
@@ -3069,7 +3064,7 @@
 		"quiz": {
 			"wrong": [
 				"Not + base form (Not run!)",
-				"Doesn't + base form (Doesn't run!)"
+				"Doesn’t + base form (Doesn’t run!)"
 			],
 			"wrongFeedback": [
 				"Mit bloßem „Not“ vor dem Verb kann man im Englischen keinen verneinten Befehl bilden – es braucht zwingend das Hilfsverb „Don’t“.",
@@ -3387,7 +3382,7 @@
 			"Um Figuren zu beschreiben, sammelst du Adjektive für ihre Eigenschaften: z. B. „brave“ (mutig), „curious“ (neugierig), „friendly“ (freundlich), „helpful“ (hilfsbereit), „clever“ (klug), „shy“ (schüchtern) oder „careful“ (vorsichtig). So behältst du auch bei einem Buch mit fünf oder sechs Kapiteln jederzeit den Überblick und kannst am Ende begründen, welche Figur oder welches Kapitel dir am besten gefallen hat."
 		],
 		"takeaway": "Halte beim Lesen einer Ganzschrift nach jedem Kapitel Setting, Characters (mit passenden Adjektiven wie brave, curious, helpful) und 2–3 Hauptereignisse im Reading Log fest.",
-		"material": "Sample Reading Log for the graded class reader “The Secret of Lighthouse Island”:\n• Title & Author: The Secret of Lighthouse Island (graded A1+ adventure reader, 5 chapters).\n• Setting: A small windy island off the coast of Cornwall during the autumn holidays.\n• Main characters:\n  – Nora (11): curious, brave and good at reading maps.\n  – Finn (10, Nora’s cousin): funny, a bit shy at first, loves animals and carries a notebook.\n  – Mrs Trevelyan: the kind old lighthouse keeper who knows old Cornish sea stories.\n• Chapter 1 summary: Nora arrives on the island by ferry. During a storm the electricity goes out, and Nora and Finn see a strange green light flashing from the old boat shed on the cliffs.",
+		"material": "Sample Reading Log for the graded class reader “The Secret of Lighthouse Island”:\n• Title & Author: The Secret of Lighthouse Island (graded Year 5 adventure reader, 5 chapters).\n• Setting: A small windy island off the coast of Cornwall during the autumn holidays.\n• Main characters:\n  – Nora (11): curious, brave and good at reading maps.\n  – Finn (10, Nora’s cousin): funny, a bit shy at first, loves animals and carries a notebook.\n  – Mrs Trevelyan: the kind old lighthouse keeper who knows old Cornish sea stories.\n• Chapter 1 summary: Nora arrives on the island by ferry. During a storm the electricity goes out, and Nora and Finn see a strange green light flashing from the old boat shed on the cliffs.",
 		"materialLabel": "Eigenes Muster-Lesetagebuch (Reading Log) zur Vorbereitung und Begleitung einer Ganzschrift (LB 1.1 Lesen, LB 3, LB 5) (erfundenes Übungsmaterial).",
 		"materialLanguage": "en",
 		"quiz": {
@@ -3466,9 +3461,9 @@
 		"speaking": true,
 		"paragraphs": [
 			"Englische Reime, Lieder und kurze Gedichte (poems and rhymes) machen nicht nur Spaß, sondern trainieren auch deine Aussprache, deinen Satzrhythmus (intonation and rhythm) und dein Sprachgefühl. Der schottische Schriftsteller Robert Louis Stevenson (1850–1894), der auch die Schatzinsel („Treasure Island“) schrieb, veröffentlichte 1885 die berühmte Kindergedichtsammlung „A Child’s Garden of Verses“.",
-			"In seinen kurzen Gedichten „Time to Rise“ und „Rain“ entdeckst du den Paarreim (AABB): „bill“ (Schnabel) reimt sich auf „sill“ (Fensterbank), „eye“ auf „I“, „around“ auf „ground“ und „trees“ auf „seas“. Beim lauten Vorlesen betonst du die hervorgehobenen Taktschläge (beats) gleichmäßig. Achte auch darauf, dass sich Wörter im Englischen nach dem Klang reimen, selbst wenn sie unterschiedlich geschrieben werden (wie „eye“ /aɪ/ und „I“ /aɪ/, oder „trees“ /triːz/ und „seas“ /siːz/)."
+			"Vergleiche den Bau der beiden Gedichte: „Time to Rise“ nutzt den Paarreim (AABB), bei dem sich jeweils zwei aufeinanderfolgende Zeilenenden reimen – „bill“ (/bɪl/, Schnabel) auf „sill“ (/sɪl/, Fensterbank) und „said“ (/sed/) auf „sleepy-head“ (/hed/). Das Gedicht „Rain“ hat dagegen das Reimschema ABCB: Hier reimen sich die zweite und die vierte Zeile („tree“ /triː/ und „sea“ /siː/), während Zeile 1 („around“) und Zeile 3 („here“) ungereimt bleiben. Achte beim lauten Vorlesen auf den gleichmäßigen Rhythmus (beats) und darauf, dass im Englischen immer der gesprochene Klang über den Reim entscheidet – deshalb reimen sich „said“ (/sed/) und „head“ (/hed/) sowie „tree“ (/triː/) und „sea“ (/siː/), obwohl sie unterschiedlich geschrieben werden!"
 		],
-		"takeaway": "Überprüfe englische Reime immer mit dem Ohr (eye /aɪ/ – I /aɪ/; trees /triːz/ – seas /siːz/) und lies Gedichte im gleichmäßigen Rhythmus laut vor.",
+		"takeaway": "Prüfe englische Reime immer mit dem Ohr am Zeilenende: „Time to Rise“ reimt im Paarreim AABB (bill – sill, said – head), „Rain“ reimt in Zeile 2 und 4 nach dem Schema ABCB (tree – sea).",
 		"material": "Two original poems by Robert Louis Stevenson (from A Child’s Garden of Verses, 1885):\n\nPoem 1 – Time to Rise:\nA birdie with a yellow bill\nHopped upon the window sill,\nCocked his shining eye and said:\n‘Ain’t you ’shamed, you sleepy-head!’\n\nPoem 2 – Rain:\nThe rain is raining all around,\nIt falls on field and tree,\nIt rains on the umbrellas here,\nAnd on the ships at sea.\n\nVocabulary & own summary help:\n• bill = bird’s beak (Schnabel) · window sill = Fensterbank · sleepy-head = Schlafmütze.\n• For your own summary: In “Time to Rise”, a little bird with a yellow bill hops onto the window sill in the morning and wakes up a sleepy child. In “Rain”, the speaker watches the rain falling everywhere – on fields, trees, umbrellas and ships at sea.",
 		"materialLabel": "Originaltext (gemeinfrei) von Robert Louis Stevenson aus A Child’s Garden of Verses (1885), verlinkt über Project Gutenberg, mit Vokabelhilfe.",
 		"materialLanguage": "en",

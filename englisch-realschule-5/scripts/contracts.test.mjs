@@ -39,3 +39,15 @@ it("keeps authored card questions and answers only in cell.json", () => {
 	}
 	expect(existsSync(new URL("scripts/generate-cell.mjs", root))).toBe(false);
 });
+
+it("pins the verbatim LehrplanPLUS curriculum_text rows in coverage.json", () => {
+	const coverage = JSON.parse(
+		readFileSync(new URL("coverage.json", root), "utf8"),
+	);
+	const verbatim = coverage.rows
+		.map((row) => `${row.code}:${row.curriculum_text}`)
+		.join("\n");
+	expect(createHash("sha256").update(verbatim).digest("hex")).toBe(
+		"7e54445f4a58016a1adfd940a388c8adadb431a463dbc0e613c6f2d71117e813",
+	);
+});

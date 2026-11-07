@@ -1,6 +1,6 @@
 # Englisch 5 Realschule Bayern · ZAM Academy
 
-**43 Kernlektionen, 129 Kurzaufgaben und 86 ZAM-Karten**. Gemeinsamer Lernpfad für I, II, IIIa und IIIb nach dem [LehrplanPLUS Englisch 5](https://www.lehrplanplus.bayern.de/fachlehrplan/realschule/5/englisch), geprüft am 7. November 2026. Die App baut auf der Englisch-8/10-Shell mit eigenem Fortschrittsspeicher auf.
+**43 Kernlektionen, je drei Kurzaufgaben pro Lektion und 86 ZAM-Karten**. Gemeinsamer Lernpfad für alle Schülerinnen und Schüler der 5. Jahrgangsstufe nach dem [LehrplanPLUS Englisch 5](https://www.lehrplanplus.bayern.de/fachlehrplan/realschule/5/englisch), geprüft am 7. November 2026. Die App baut auf der Englisch-8/10-Shell mit eigenem Fortschrittsspeicher auf.
 
 | Etappe | Lektionen | Schwerpunkt |
 | --- | ---: | --- |
@@ -23,7 +23,7 @@ Der Jahreswortschatz von ca. 700 Wörtern und Wendungen, eine vollständige Ganz
 
 ## Material und Quellen
 
-Personen, Dialoge, Umfragewerte und Geschichten sind als erfunden gekennzeichnet; der Dialog im Schulsanitätsraum ist ausdrücklich keine medizinische Beratung. Die Gartenszene ist ein selbst gezeichnetes SVG-Bild mit Beschriftungen, die auch im Text stehen. Landeskundliche und sprachliche Angaben stützen sich auf verlinkte Quellen (LehrplanPLUS Bayern, Office for National Statistics, Ordnance Survey, GOV.UK, NHS, Department for Education, VisitBritain, Royal Museums Greenwich, Tower of London, British Council, Cambridge Dictionary). Die beiden Gedichte „Time to Rise“ und „Rain“ aus Robert Louis Stevensons „A Child’s Garden of Verses“ (1885) sind gemeinfrei und wörtlich aus Project Gutenberg übernommen. Quellen öffnen erst auf Klick. Lehrervideos sind nach dem Academy-Standard nicht enthalten.
+Personen, Dialoge, Umfragewerte und Geschichten sind als erfunden gekennzeichnet; der Dialog im Schulsanitätsraum ist ausdrücklich keine medizinische Beratung. Die Gartenszene ist ein selbst gezeichnetes SVG-Bild mit Beschriftungen, die auch im Text stehen. Landeskundliche und sprachliche Angaben stützen sich auf die in `src/curriculum/outline.json` verlinkten Quellen (LehrplanPLUS Bayern, Fachprofil Moderne Fremdsprachen, UK Office for National Statistics, Government of Ireland – `gov.ie`, GOV.UK, NHS, Charity Commission, Historic Royal Palaces – Tower of London, Cadw Wales, Cambridge Learner’s Dictionary, British Council LearnEnglish). Die beiden Gedichte „Time to Rise“ und „Rain“ aus Robert Louis Stevensons „A Child’s Garden of Verses“ (1885) sind gemeinfrei und wörtlich aus Project Gutenberg (eBook #19722) übernommen. Quellen öffnen erst auf Klick. Lehrervideos sind nach dem Academy-Standard nicht enthalten.
 
 ## Lokale Daten und ZAM
 
@@ -37,7 +37,7 @@ Texte und Fortschritt bleiben in `localStorage` dieses Browsers (`englisch_rs5_a
 
 ```sh
 npm ci
-npm run dev          # http://localhost:5221/englisch-realschule-5/
+npm run dev          # http://localhost:5222/englisch-realschule-5/
 npm run typecheck
 npm test
 npm run package:zip  # Build, Offline-ZIP und Artefaktprüfung
