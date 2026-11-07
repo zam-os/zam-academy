@@ -78,6 +78,40 @@ describe("Zahlenprüfung und Hinweise", () => {
     expect(checkTask(task([field(1500, 0)]), ["1.500"]).status).toBe("correct");
   });
 
+  it("reads a point in a whole-number field as thousands only", () => {
+    for (const [answer, typed] of [[16, "16.000"], [36, "36.000"], [206, "206.000"], [3, "3.000"], [8, "0.008"], [500, "0.500"]] as const)
+      expect(checkTask(task([field(answer, 0)]), [typed]).status, typed).toBe("wrong");
+    for (const [answer, typed] of [[1500, "1.500"], [5000, "5.000"], [16, "16,000"], [16, "16"]] as const)
+      expect(checkTask(task([field(answer, 0)]), [typed]).status, typed).toBe("correct");
+    // A field with decimals keeps both readings.
+    expect(checkTask(task([field(1.5, 1)]), ["1.500"]).status).toBe("correct");
+    expect(checkTask(task([field(1.5, 1)]), ["1.5"]).status).toBe("correct");
+    const slip = task([field(16, 0)]);
+    expect(wrongAnswerHint(slip, checkTask(slip, ["16.000"]))).toContain("Faktor 1000");
+  });
+
+  it("names a general slip only when it was typed exactly", () => {
+    const hint = (answer: number, typed: string) => {
+      const exercise = task([field(answer, 0)]);
+      return wrongAnswerHint(exercise, checkTask(exercise, [typed]));
+    };
+    for (const [answer, typed] of [[3, "2"], [3, "1"], [9, "5"], [9, "4"], [6001, "3001"], [50, "1"], [50, "0"]] as const) {
+      expect(hint(answer, typed), typed).not.toContain("doppelt oder halb");
+      expect(hint(answer, typed), typed).not.toContain("Faktor");
+    }
+    expect(hint(6, "3")).toContain("doppelt oder halb");
+    expect(hint(6, "12")).toContain("doppelt oder halb");
+    expect(hint(3, "1,5")).toContain("doppelt oder halb");
+    expect(hint(50, "5000")).toContain("Faktor 100");
+    expect(hint(50, "0,5")).toContain("Faktor 100");
+  });
+
+  it("reads a euro sign as a unit", () => {
+    const exercise = task([{ ...field(12, 0), unit: "€" }]);
+    expect(checkTask(exercise, ["12 €"]).status).toBe("correct");
+    expect(checkTask(exercise, ["13 €"]).status).toBe("wrong");
+  });
+
   it("does not let a rounded readout decide a lab goal", () => {
     const lab = findLessonById("nz-4-runden")!.lesson.lab;
     const direction = lab.readouts.find((readout) => readout.key === "richtung")!;

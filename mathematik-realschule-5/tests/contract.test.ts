@@ -279,6 +279,38 @@ describe("Befunde aus dem Review von PR 91", () => {
       }
   });
 
+  it("writes no empty step and the fitting hint for a time span", () => {
+    let sameHour = 0;
+    for (const task of tasks("gr-3-geld-zeit-hohlmass", "zeitspanne")) {
+      expect(task.steps[0]).not.toMatch(/\b0 min/);
+      const same = /derselben Stunde/.test(task.steps[0]);
+      if (same) sameHour++;
+      expect(task.feedbackHint!.includes("derselben Stunde"), task.steps[0]).toBe(same);
+    }
+    expect(sameHour).toBeGreaterThan(0);
+  });
+
+  it("asks for whole centimetres when drawing to scale", () => {
+    for (const task of tasks("gr-5-massstab", "massstab-zeichnen"))
+      for (const field of task.fields)
+        if (field.kind === "number") expect(Number.isInteger(field.answer), task.prompt).toBe(true);
+    expect(answers("gr-5-massstab", "massstab-zeichnen", 2).size).toBeGreaterThan(5);
+  });
+
+  it("keeps counters and cupboards plausible", () => {
+    for (const task of tasks("nz-1-zahlenmenge", "nachbarn", 2))
+      expect(task.prompt).toContain("Videozähler");
+    for (const task of tasks("gr-5-massstab", "massstab-bestimmen", 1)) {
+      const height = Number(task.prompt.match(/Schrank ist (\d+) cm/)![1]);
+      expect(height).toBeGreaterThanOrEqual(150);
+      expect(height).toBeLessThanOrEqual(250);
+      const inPlan = Number(task.prompt.match(/Im Plan ist er (\d+) cm/)![1]);
+      const field = task.fields[0];
+      if (field.kind === "number") expect(inPlan * field.answer).toBe(height);
+    }
+    expect(answers("gr-5-massstab", "massstab-bestimmen", 1).size).toBeGreaterThan(2);
+  });
+
   it("derives the accepted time span in the worked solution", () => {
     for (const task of tasks("gr-3-geld-zeit-hohlmass", "zeitspanne")) {
       const field = task.fields[0];
@@ -333,14 +365,22 @@ describe("Befunde aus dem Review von PR 91", () => {
     expect(firstValues.size).toBe(2);
   });
 
-  it("keeps singular and plural apart in tasks and drawings", () => {
-    const wrong = /\b1 (?:Striche|volle Fünferbündel|einzelne Striche|Erwachsene|Schritten|Möglichkeiten|Kanten|Ecken|Flächen|Nullen|Packungen|Kinder|Stunden|Tische)\b/;
+  it("keeps singular and plural apart in tasks, solutions, hints and drawings", () => {
+    const wrong = /(?<![\d.,])1 (?:Striche|volle Fünferbündel|einzelne Striche|Erwachsene|Schritten|Möglichkeiten|Kanten|Ecken|Flächen|Nullen|Packungen|Kinder|Stunden|Tische|Einheiten|Felder|Augen|Personen|negative Faktoren|Busse)\b/;
+    const texts = (value: unknown): string[] =>
+      typeof value === "string"
+        ? [value]
+        : Array.isArray(value)
+          ? value.flatMap(texts)
+          : value && typeof value === "object"
+            ? Object.values(value).flatMap(texts)
+            : [];
     for (const lesson of ALL_LESSONS) {
       for (const generator of lesson.exercises)
         for (const lv of [1, 2] as const)
           for (let seed = 1; seed <= 120; seed++) {
             const task = generator.make(createRng(seedFrom(`${lesson.id}:${generator.id}:${seed}`)), lv);
-            expect(task.prompt, `${lesson.id}/${generator.id}`).not.toMatch(wrong);
+            for (const text of texts(task)) expect(text, `${lesson.id}/${generator.id}`).not.toMatch(wrong);
           }
       const view = labView(lesson.lab.kind);
       for (const values of enumerateLabGrid(lesson.lab, 3)) {

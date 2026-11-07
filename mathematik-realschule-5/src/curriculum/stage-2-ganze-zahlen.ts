@@ -421,7 +421,7 @@ const multDiv = L(5, {
           `Berechne: ${p0(a)} · ${p0(b)} · ${p0(d)}. Überlege zuerst, welches Vorzeichen das Ergebnis hat.`,
           [num("Ergebnis:", value, "", 0, { slips: [{ value: -value, hint: "Der Betrag stimmt. Prüfe die Vorzeichen: Gleiche ergeben Plus, verschiedene Minus." }] })],
           "Gleiche Vorzeichen: plus. Verschiedene Vorzeichen: minus.",
-          level === 1 ? `${Math.abs(a)} · ${Math.abs(b)} = ${Math.abs(value)}.` : `Beträge: ${Math.abs(a)} · ${Math.abs(b)} · ${Math.abs(d)} = ${Math.abs(value)}. ${[a, b, d].filter((x) => x < 0).length} negative Faktoren.`,
+          level === 1 ? `${Math.abs(a)} · ${Math.abs(b)} = ${Math.abs(value)}.` : `Beträge: ${Math.abs(a)} · ${Math.abs(b)} · ${Math.abs(d)} = ${Math.abs(value)}. ${[a, b, d].filter((x) => x < 0).length === 1 ? "1 negativer Faktor" : `${[a, b, d].filter((x) => x < 0).length} negative Faktoren`}.`,
           `Das Ergebnis ist ${n0(value)}.`,
           { a, b, d },
         );

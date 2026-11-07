@@ -6,9 +6,11 @@ import { round } from "./format";
  * "1 500", "1.234,5", "-3,2". A comma is always the decimal separator;
  * several points group thousands. A single point followed by exactly three
  * digits is ambiguous ("1.500" is 1,5 or the German thousands 1500), so both
- * readings are returned, the decimal one first.
+ * readings are returned, the decimal one first. In a field for whole numbers
+ * only the thousands reading counts: there "16.000" is sixteen thousand, never 16.
+ * A leading zero never starts a thousands group: "0.500" is no 500.
  */
-function plainCandidates(text: string): number[] {
+function plainCandidates(text: string, whole = false): number[] {
   if (!/^[+-]?[0-9.,]+$/.test(text)) return [];
   const hasComma = text.includes(",");
   const hasPoint = text.includes(".");
@@ -25,8 +27,8 @@ function plainCandidates(text: string): number[] {
     candidates.push(text.replace(",", "."));
   } else if (hasPoint) {
     const single = text.indexOf(".") === text.lastIndexOf(".");
-    const grouped = /^[+-]?\d{1,3}(\.\d{3})+$/.test(text);
-    if (single) candidates.push(text);
+    const grouped = /^[+-]?[1-9]\d{0,2}(\.\d{3})+$/.test(text);
+    if (single && !(whole && grouped)) candidates.push(text);
     if (grouped) candidates.push(text.split(".").join(""));
     if (candidates.length === 0) return [];
   } else {
@@ -36,14 +38,14 @@ function plainCandidates(text: string): number[] {
 }
 
 /** A plain number or a multiple of π: "4π", "-π", "2,5π". */
-function simpleCandidates(text: string): number[] {
+function simpleCandidates(text: string, whole = false): number[] {
   const at = text.indexOf("π");
-  if (at < 0) return plainCandidates(text);
+  if (at < 0) return plainCandidates(text, whole);
   if (text.indexOf("π", at + 1) >= 0 || at !== text.length - 1) return [];
   const before = text.slice(0, at);
   if (before === "" || before === "+") return [Math.PI];
   if (before === "-") return [-Math.PI];
-  return plainCandidates(before).map((value) => value * Math.PI);
+  return plainCandidates(before, whole).map((value) => value * Math.PI);
 }
 
 /**
@@ -51,8 +53,13 @@ function simpleCandidates(text: string): number[] {
  * number, a fraction ("3/5", "-7/2"), a multiple of π ("12π", "π/2"), or a
  * percentage ("60 %", read as 0,6 unless the field's unit is %). A leading
  * "x =" and a trailing unit are ignored. Empty when there is no number.
+ * `whole` says that the field holds a whole number (see plainCandidates).
  */
-export function parseNumberCandidates(raw: string, unit = ""): number[] {
+export function parseNumberCandidates(
+  raw: string,
+  unit = "",
+  whole = false,
+): number[] {
   let text = raw
     .trim()
     .replace(/[−–]/g, "-")
@@ -67,8 +74,8 @@ export function parseNumberCandidates(raw: string, unit = ""): number[] {
     percent = unit !== "%";
     text = text.slice(0, -1);
   }
-  // Drop a trailing unit such as "cm²" or "m³", but keep digits, signs, π and "/".
-  text = text.replace(/[a-zA-Zµμ°]+[²³]?$/u, "");
+  // Drop a trailing unit such as "cm²", "m³" or "€", but keep digits, signs, π and "/".
+  text = text.replace(/[a-zA-Zµμ°€]+[²³]?$/u, "");
   if (!text) return [];
 
   let values: number[];
@@ -82,13 +89,13 @@ export function parseNumberCandidates(raw: string, unit = ""): number[] {
       top = `${top}π`;
       bottom = bottom.slice(0, -1);
     }
-    const numerators = simpleCandidates(top);
-    const denominators = simpleCandidates(bottom);
+    const numerators = simpleCandidates(top, whole);
+    const denominators = simpleCandidates(bottom, whole);
     values = numerators.flatMap((n) =>
       denominators.filter((d) => d !== 0).map((d) => n / d),
     );
   } else {
-    values = simpleCandidates(text);
+    values = simpleCandidates(text, whole);
   }
   if (percent) values = values.map((value) => value / 100);
   return [...new Set(values.filter((value) => Number.isFinite(value)))];
@@ -140,7 +147,7 @@ function checkNumber(
   answer: number,
   raw: string,
 ): FieldResult {
-  const candidates = parseNumberCandidates(raw, field.unit);
+  const candidates = parseNumberCandidates(raw, field.unit, field.digits === 0);
   if (candidates.length === 0) return { status: "invalid", parsed: null };
   const tolerance = toleranceOf({ ...field, answer });
   const hit = candidates.find((value) => Math.abs(value - answer) <= tolerance);
@@ -210,10 +217,12 @@ const plain = (html: string) =>
     .replace(/\s*=\s*$/, "")
     .trim();
 
-function near(value: number, target: number, field: NumberField): boolean {
+// Grade 5 answers are exact: a hint names a slip only when it was typed exactly.
+// With a rounding margin, 2 would count as "half of 3" and 1 as "50 : 100".
+function near(value: number, target: number): boolean {
   if (!Number.isFinite(target)) return false;
-  // Grade 5 answers are exact: a hint names a slip only when it was typed exactly.
-  return Math.abs(value - target) <= Math.max(0.51 * 10 ** -field.digits, 1e-9);
+  // Absolute on purpose: a relative margin would span whole numbers from 1e9 up.
+  return Math.abs(value - target) <= 1e-9;
 }
 
 /**
@@ -242,7 +251,7 @@ export function wrongAnswerHint(
   for (const { field, index } of wrongNumbers) {
     const parsed = result.fields[index].parsed ?? Number.NaN;
     for (const slip of field.slips ?? []) {
-      if (near(parsed, slip.value, field)) return slip.hint;
+      if (near(parsed, slip.value)) return slip.hint;
     }
   }
 
@@ -253,8 +262,8 @@ export function wrongAnswerHint(
     if (
       result.fields[first.index].status === "wrong" &&
       result.fields[second.index].status === "wrong" &&
-      near(a, second.field.answer, second.field) &&
-      near(b, first.field.answer, first.field)
+      near(a, second.field.answer) &&
+      near(b, first.field.answer)
     ) {
       return `Die Werte stimmen, stehen aber vertauscht: Was gehört zu ${plain(first.field.label)}, was zu ${plain(second.field.label)}?`;
     }
@@ -267,17 +276,23 @@ export function wrongAnswerHint(
     const answer = field.answer;
     const name = plain(field.label) || "Der Wert";
     const where = numbers.length > 1 ? ` bei ${name}` : "";
-    if (answer !== 0 && near(parsed, -answer, field))
+    if (answer !== 0 && near(parsed, -answer))
       return `Prüfe das Vorzeichen${where}.`;
     if (
       answer !== 0 &&
-      (near(parsed, answer * 100, field) || near(parsed, answer / 100, field))
+      (near(parsed, answer * 100) || near(parsed, answer / 100))
     ) {
       return `Um den Faktor 100 daneben${where}: Prüfe die Einheit und die Umrechnung.`;
     }
     if (
       answer !== 0 &&
-      (near(parsed, answer * 2, field) || near(parsed, answer / 2, field))
+      (near(parsed, answer * 1000) || near(parsed, answer / 1000))
+    ) {
+      return `Um den Faktor 1000 daneben${where}: Prüfe die Einheit und die Umrechnung. Ein Punkt in der Zahl trennt die Tausender.`;
+    }
+    if (
+      answer !== 0 &&
+      (near(parsed, answer * 2) || near(parsed, answer / 2))
     ) {
       return `Genau doppelt oder halb so groß wie gesucht${where}: Prüfe, ob du etwas verdoppelt oder halbiert hast.`;
     }

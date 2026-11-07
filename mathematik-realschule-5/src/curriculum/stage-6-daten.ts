@@ -62,7 +62,7 @@ const diagramme = L(1, {
         if (level === 1)
           return task(
             level,
-            `In einer Strichliste stehen ${bundles} ${bundles === 1 ? "volles Fünferbündel" : "volle Fünferbündel"} und ${rest === 0 ? "keine einzelnen Striche" : `${rest} ${rest === 1 ? "einzelner Strich" : "einzelne Striche"}`}. Wie viele Stimmen sind das?`,
+            `Eine Strichliste zeigt ${bundles} ${bundles === 1 ? "volles Fünferbündel" : "volle Fünferbündel"} und ${rest === 0 ? "keine einzelnen Striche" : `${rest} ${rest === 1 ? "einzelner Strich" : "einzelne Striche"}`}. Wie viele Stimmen sind das?`,
             "",
             [num("Stimmen:", a, "", 0)],
             "Ein Bündel sind 5 Striche.",
@@ -208,7 +208,7 @@ const vierfelder = L(2, {
                   "Begründbare Aussage:",
                   bus === rad
                     ? ["Beide Gruppen sind gleich groß.", "Bus ist beliebter, weil er bequem ist.", "Mit dem Fahrrad ist man schneller."]
-                    : [`Es kommen ${Math.abs(bus - rad)} Kinder mehr mit ${bus > rad ? "dem Bus" : "dem Fahrrad"}.`, "Der Schulweg ist für alle gleich lang.", "Mit dem Fahrrad ist man schneller."],
+                    : [`${Math.abs(bus - rad) === 1 ? "Es kommt 1 Kind" : `Es kommen ${Math.abs(bus - rad)} Kinder`} mehr mit ${bus > rad ? "dem Bus" : "dem Fahrrad"}.`, "Der Schulweg ist für alle gleich lang.", "Mit dem Fahrrad ist man schneller."],
                   0,
                 ),
               ],

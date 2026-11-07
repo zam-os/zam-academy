@@ -77,7 +77,7 @@ const zahlenmenge = makeLesson(1, 1, 1, {
         return task(
           level,
           `Wie heißt der ${word} der Zahl ${n0(n)}? Gib ihn an.`,
-          `Eine Anzeigetafel zählt Besucher und zeigt gerade ${n0(n)}. Welche Zahl stand dort direkt ${askNext ? "danach, wenn noch eine Person dazukommt" : "davor, bevor die letzte Person kam"}?`,
+          `Ein Videozähler zeigt gerade ${n0(n)} Aufrufe. ${askNext ? "Welche Zahl zeigt er nach dem nächsten Aufruf?" : "Welche Zahl zeigte er direkt vor dem letzten Aufruf?"}`,
           [num(`${word}:`, answer, "", 0, { slips: [{ value: askNext ? n - 1 : n + 1, hint: askNext ? "Das ist der Vorgänger. Der Nachfolger ist um 1 größer." : "Das ist der Nachfolger. Der Vorgänger ist um 1 kleiner." }] })],
           askNext ? "Nachfolger = Zahl + 1" : "Vorgänger = Zahl − 1",
           `${n0(n)} ${askNext ? "+" : "−"} 1 = ${n0(answer)}.`,
@@ -347,9 +347,9 @@ const runden = makeLesson(1, 4, 1, {
           `Zu einem Fest kommen ${persons} Personen. An einen Tisch passen ${seats} Personen. Wie viele Tische braucht ihr? Normales Runden liefert hier nicht immer die richtige Antwort.`,
           level === 1
             ? [pick("Runden ist hier …", ["sinnvoll", "nicht sinnvoll"], sensible ? 0 : 1)]
-            : [num("Tische:", tables, "", 0, { slips: persons % 10 > 0 && persons % 10 < 5 ? [{ value: tables - 1, hint: `Dann hätten ${persons % 10} Personen keinen Platz. Hier musst du aufrunden.` }] : [] })],
+            : [num("Tische:", tables, "", 0, { slips: persons % 10 > 0 && persons % 10 < 5 ? [{ value: tables - 1, hint: `${persons % 10 === 1 ? "Dann hätte 1 Person" : `Dann hätten ${persons % 10} Personen`} keinen Platz. Hier musst du aufrunden.` }] : [] })],
           "Frage dich: Schadet ein ungenauer Wert hier?",
-          level === 1 ? (sensible ? "Hier kommt es nur auf die ungefähre Größe an." : "Hier muss der Wert genau stimmen.") : `${persons} : ${seats} ergibt ${Math.floor(persons / seats)} Rest ${persons % seats}. Auch die restlichen Personen brauchen einen Platz.`,
+          level === 1 ? (sensible ? "Hier kommt es nur auf die ungefähre Größe an." : "Hier muss der Wert genau stimmen.") : `${persons} : ${seats} ergibt ${Math.floor(persons / seats)} Rest ${persons % seats}. ${persons % seats === 0 ? "Alle finden genau Platz." : persons % seats === 1 ? "Auch die letzte Person braucht einen Platz." : "Auch die restlichen Personen brauchen einen Platz."}`,
           level === 1 ? (sensible ? "Runden ist sinnvoll." : "Runden ist nicht sinnvoll.") : `Ihr braucht ${tables} Tische.`,
           { persons },
         );
@@ -680,7 +680,7 @@ const multDiv = makeLesson(1, 8, 3, {
           [num(level === 1 ? "Wert des Quotienten:" : "Volle Busse:", q, "", 0), ...(level === 2 ? [num("Übrig:", rest, "", 0)] : [])],
           "Von links Stelle für Stelle teilen und zurückmultiplizieren.",
           `Probe: ${n0(q)} · ${b}${rest ? ` + ${rest}` : ""} = ${n0(a)}.`,
-          level === 1 ? `${n0(a)} : ${b} = ${n0(q)}` : `${n0(q)} volle Busse, ${rest} Kinder übrig.`,
+          level === 1 ? `${n0(a)} : ${b} = ${n0(q)}` : `${n0(q)} volle Busse, ${rest === 1 ? "1 Kind" : `${rest} Kinder`} übrig.`,
           { a, b },
         );
       },

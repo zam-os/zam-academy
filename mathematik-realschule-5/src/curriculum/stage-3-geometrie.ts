@@ -515,10 +515,11 @@ const koordinaten = L(6, {
         const y = level === 1 ? rng.int(1, 9) : rng.sign() * rng.int(1, 9);
         const sideX = x < 0 ? "links" : "rechts";
         const sideY = y < 0 ? "unten" : "oben";
+        const steps = (count: number) => `${count} ${count === 1 ? "Feld" : "Felder"}`;
         return task(
           level,
-          `Vom Ursprung gehst du ${Math.abs(x)} Einheiten nach ${sideX} und ${Math.abs(y)} nach ${sideY}. Gib die Koordinaten an.`,
-          `Ein Schatz liegt ${Math.abs(y)} Felder ${sideY === "oben" ? "nördlich" : "südlich"} und ${Math.abs(x)} Felder ${sideX === "rechts" ? "östlich" : "westlich"} vom Ursprung. Rechts ist Osten, oben Norden. Gib die Koordinaten an.`,
+          `Vom Ursprung gehst du ${Math.abs(x)} ${Math.abs(x) === 1 ? "Einheit" : "Einheiten"} nach ${sideX} und ${Math.abs(y)} nach ${sideY}. Gib die Koordinaten an.`,
+          `Ein Schatz liegt ${steps(Math.abs(y))} ${sideY === "oben" ? "nördlich" : "südlich"} und ${steps(Math.abs(x))} ${sideX === "rechts" ? "östlich" : "westlich"} vom Ursprung. Rechts ist Osten, oben Norden. Gib die Koordinaten an.`,
           [
             num("x =", x, "", 0, { slips: Math.abs(x) !== Math.abs(y) ? [{ value: y, hint: "Du hast x und y vertauscht. Erst rechts oder links, dann hoch oder runter." }] : [] }),
             num("y =", y, "", 0),
@@ -1042,22 +1043,23 @@ const kopfgeometrie = L(12, {
       make: (rng, level) => {
         const top = rng.int(1, 6);
         const tosses = rng.int(2, 5);
+        const shown = `${top} ${top === 1 ? "Auge" : "Augen"}`;
         if (level === 1)
           return task(
             level,
-            `Ein Spielwürfel zeigt oben ${top} Augen. Wie viele Augen sind unten?`,
+            `Ein Spielwürfel zeigt oben ${shown}. Wie viele Augen sind unten?`,
             "",
             [num("Augen:", 7 - top, "", 0)],
             "Gegenüberliegende Seiten ergeben 7.",
             `7 − ${top} = ${7 - top}.`,
-            `Unten sind ${7 - top} Augen.`,
+            7 - top === 1 ? "Unten ist 1 Auge." : `Unten sind ${7 - top} Augen.`,
             { top },
           );
         const hidden = 21 - top;
         return task(
           level,
           "",
-          `Du kippst einen Spielwürfel ${tosses}-mal und er zeigt am Ende oben ${top} Augen. Wie viele Augen zeigen dann alle anderen fünf Seiten zusammen? Alle Seiten zusammen haben 21 Augen.`,
+          `Du kippst einen Spielwürfel ${tosses}-mal und er zeigt am Ende oben ${shown}. Wie viele Augen zeigen dann alle anderen fünf Seiten zusammen? Alle Seiten zusammen haben 21 Augen.`,
           [num("Augen:", hidden, "", 0)],
           "1 + 2 + 3 + 4 + 5 + 6 = 21",
           `21 − ${top} = ${hidden}. Das Kippen ändert daran nichts.`,

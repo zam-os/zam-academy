@@ -257,10 +257,10 @@ const geldZeit = L(3, {
           `Ein Film beginnt um ${startH}:${pad(startM)} Uhr und endet um ${endH}:${pad(endM)} Uhr. Wie viele Minuten dauert er?`,
           `Der Bus fährt um ${startH}:${pad(startM)} Uhr ab und kommt um ${endH}:${pad(endM)} Uhr an. Wie lange dauert die Fahrt in Minuten?`,
           [num("Dauer:", len, "min", 0, { slips: [{ value: (endH - startH) * 100 + endM - startM, hint: "Eine Stunde hat 60 Minuten, nicht 100." }] })],
-          "Rechne in Schritten über die volle Stunde.",
+          endH === startH ? "Beide Zeiten liegen in derselben Stunde: Ziehe die Minuten ab." : "Rechne in Schritten über die volle Stunde.",
           endH === startH
             ? `${endM} − ${startM} = ${len}, denn beide Zeiten liegen in derselben Stunde.`
-            : `Von ${startH}:${pad(startM)} bis ${startH + 1}:00 sind es ${60 - startM} min.${endH > startH + 1 ? ` Bis ${endH}:00 kommen ${(endH - startH - 1) * 60} min dazu.` : ""} Bis ${endH}:${pad(endM)} kommen ${endM} min dazu.`,
+            : `Von ${startH}:${pad(startM)} bis ${startH + 1}:00 sind es ${60 - startM} min.${endH > startH + 1 ? ` Bis ${endH}:00 kommen ${(endH - startH - 1) * 60} min dazu.` : ""}${endM > 0 ? ` Bis ${endH}:${pad(endM)} kommen ${endM} min dazu.` : ""}`,
           `Die Dauer ist ${len} min.`,
           { len },
         );
@@ -461,8 +461,9 @@ const massstab = L(5, {
       id: "massstab-zeichnen",
       make: (rng, level) => {
         const factor = level === 1 ? rng.pick([50, 100, 200]) : rng.pick([100, 200, 500]);
-        const lengthM = (level === 1 ? rng.int(2, 6) : rng.int(5, 15)) * 2;
-        const widthM = rng.int(3, 8) * 2;
+        // Whole centimetres: dividing by decimals comes in grade 6.
+        const lengthM = factor === 500 ? rng.int(2, 6) * 5 : (level === 1 ? rng.int(2, 6) : rng.int(5, 15)) * 2;
+        const widthM = factor === 500 ? rng.int(1, 4) * 5 : rng.int(3, 8) * 2;
         const lengthCm = (lengthM * 100) / factor;
         const widthCm = (widthM * 100) / factor;
         return task(
@@ -470,12 +471,12 @@ const massstab = L(5, {
           `Ein Zimmer ist ${lengthM} m lang. Du zeichnest es im Maßstab 1 : ${factor}. Wie lang wird die Linie im Heft?`,
           `Ein Grundstück ist ${lengthM} m lang und ${widthM} m breit. Du zeichnest es im Maßstab 1 : ${factor}. Wie groß werden die beiden Seiten im Heft?`,
           [
-            num(level === 1 ? "Linie:" : "Länge:", lengthCm, "cm", 1, { slips: [{ value: lengthM, hint: "Das ist die Länge in Metern. Rechne erst in Zentimeter um und teile durch die Maßstabszahl." }] }),
-            ...(level === 2 ? [num("Breite:", widthCm, "cm", 1)] : []),
+            num(level === 1 ? "Linie:" : "Länge:", lengthCm, "cm", 0, { slips: [{ value: lengthM, hint: "Das ist die Länge in Metern. Rechne erst in Zentimeter um und teile durch die Maßstabszahl." }] }),
+            ...(level === 2 ? [num("Breite:", widthCm, "cm", 0)] : []),
           ],
           "In Zentimeter umrechnen, dann durch die Maßstabszahl teilen.",
-          `${lengthM} m = ${n0(lengthM * 100)} cm. ${n0(lengthM * 100)} cm : ${factor} = ${fmt(lengthCm, 1)} cm.`,
-          level === 1 ? `${fmt(lengthCm, 1)} cm` : `${fmt(lengthCm, 1)} cm und ${fmt(widthCm, 1)} cm`,
+          `${lengthM} m = ${n0(lengthM * 100)} cm. ${n0(lengthM * 100)} cm : ${factor} = ${n0(lengthCm)} cm.`,
+          level === 1 ? `${n0(lengthCm)} cm` : `${n0(lengthCm)} cm und ${n0(widthCm)} cm`,
           { lengthM, widthM, factor },
         );
       },
@@ -483,16 +484,17 @@ const massstab = L(5, {
     {
       id: "massstab-bestimmen",
       make: (rng, level) => {
-        const factor = rng.pick([10, 20, 50, 100, 200]);
-        const b = rng.int(2, 9);
+        // A cupboard stands 1,50 m to 2,50 m tall and its height fits the scale.
+        const [height, factor] = rng.pick([[160, 10], [180, 10], [200, 10], [160, 20], [180, 20], [200, 20], [220, 20], [150, 50], [200, 50], [250, 50], [200, 100]] as const);
+        const b = height / factor;
         if (level === 1)
           return task(
             level,
-            `Ein Schrank ist ${b * factor} cm hoch. Im Plan ist er ${b} cm hoch. Welcher Maßstab ist das? Gib die Zahl n von 1 : n an.`,
+            `Ein Schrank ist ${height} cm hoch. Im Plan ist er ${b} cm hoch. Welcher Maßstab ist das? Gib die Zahl n von 1 : n an.`,
             "",
             [num("n =", factor, "", 0)],
             "Wirklichkeit : Bild",
-            `${b * factor} : ${b} = ${factor}.`,
+            `${height} : ${b} = ${factor}.`,
             `Maßstab 1 : ${factor}`,
             { b, factor },
           );
