@@ -113,14 +113,15 @@ export function parseNumber(raw: string, unit = ""): number | null {
  */
 export function toleranceOf(field: NumberField): number {
   const scale = Math.abs(field.answer);
-  const exact = Math.abs(field.answer - round(field.answer, field.digits)) < 1e-9;
+  const decimalStep = 10 ** -field.digits;
+  // Keep the noise allowance below the last digit, even for large answers.
+  const exactTolerance = Math.min(1e-9 * Math.max(1, scale), 0.1 * decimalStep);
+  // Only treat an answer as exact if its rounded display fits that allowance.
+  const exact =
+    Math.abs(field.answer - round(field.answer, field.digits)) < Math.min(1e-9, exactTolerance);
   const relative =
     field.tolerance !== undefined ? field.tolerance * scale : exact ? 0 : 0.01 * scale;
-  // An exact answer allows only floating-point noise, far below its last digit.
-  // A relative epsilon alone would accept a neighbouring whole number from 1e9 up.
-  const rounding = exact
-    ? Math.min(1e-9 * Math.max(1, scale), 0.1 * 10 ** -field.digits)
-    : 0.51 * 10 ** -field.digits;
+  const rounding = exact ? exactTolerance : 0.51 * decimalStep;
   return Math.max(relative, rounding, field.absTolerance ?? 0);
 }
 
