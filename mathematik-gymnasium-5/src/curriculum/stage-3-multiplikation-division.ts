@@ -172,7 +172,13 @@ const dividieren = L1(2, {
             "",
             [num("Quotient:", quotient, "", 0)],
             "Wie oft passt der Divisor? Mal, minus, herunterholen.",
-            `${steps[0].part} : ${divisor} = ${steps[0].digit}, Rest ${steps[0].rest}. Dann ${steps[steps.length - 1].part} : ${divisor} = ${steps[steps.length - 1].digit}.`,
+            steps
+              .map((s, i) =>
+                s.part === 0
+                  ? "Die heruntergeholte 0 ergibt im Quotienten eine 0."
+                  : `${i === 0 ? "" : "Dann "}${n0(s.part)} : ${divisor} = ${s.digit}, Rest ${s.rest}.`,
+              )
+              .join(" "),
             `Der Quotient ist ${quotient}.`,
             { divisor, quotient },
           );
@@ -484,6 +490,38 @@ const zaehlprinzip = L1(5, {
       },
     },
     {
+      id: "zaehlprinzip-erkennen",
+      make: (rng, level) => {
+        const a = rng.int(2, 5), b = rng.int(2, 5), d = rng.int(2, 5);
+        if (level === 1) {
+          const fits = rng.int(0, 1) === 0;
+          return task(
+            level,
+            fits
+              ? `In der Mensa gibt es ${a} Vorspeisen und ${b} Hauptspeisen. Jede Vorspeise lässt sich mit jeder Hauptspeise kombinieren. Darfst du die Anzahl der Menüs mit dem Zählprinzip berechnen?`
+              : `Zum Fisch gibt es ${a} Beilagen, zum Fleisch ${a + 1} Beilagen. Darfst du die Anzahl der Teller einfach mit dem Zählprinzip als Produkt berechnen?`,
+            "",
+            [pick("Das Zählprinzip passt:", ["ja", "nein"], fits ? 0 : 1)],
+            "Prüfe: Bleibt die Anzahl der Möglichkeiten auf der zweiten Stufe gleich, egal was vorher gewählt wurde?",
+            fits ? "Zu jeder Vorspeise gibt es gleich viele Hauptspeisen." : "Die Anzahl der Beilagen hängt davon ab, was zuerst gewählt wurde.",
+            fits ? `Ja: ${a} · ${b} Menüs.` : `Nein: Im Baumdiagramm zählst du ${a} + ${a + 1} Wege.`,
+            { a, b, fits: fits ? 1 : 0 },
+          );
+        }
+        const total = a + (a + b) + d;
+        return task(
+          level,
+          "",
+          `Ein Imbiss bietet Fisch, Fleisch und Gemüse an. Zum Fisch passen ${a} Soßen, zum Fleisch ${a + b} Soßen und zum Gemüse ${d} Soßen. Wie viele Kombinationen aus Gericht und Soße gibt es? Zeichne ein Baumdiagramm.`,
+          [num("Kombinationen:", total, "", 0, { slips: [{ value: 3 * (a + b), hint: "Die Äste haben verschieden viele Zweige. Darum passt das Zählprinzip hier nicht, zähle jeden Ast." }] })],
+          "Die Anzahl der Soßen hängt vom Gericht ab. Zähle die Wege im Baumdiagramm.",
+          `${a} + ${a + b} + ${d} = ${total} Wege.`,
+          `Es gibt ${total} Kombinationen.`,
+          { a, b, d },
+        );
+      },
+    },
+    {
       id: "ohne-wiederholung",
       make: (rng, level) => {
         const n = rng.int(3, 6);
@@ -536,15 +574,15 @@ const vorzeichen = L1(6, {
     "int-mult",
     "Vorzeichentabelle",
     "Wähle die Rechenart und stelle a und b ein. Die passende Zeile der Tabelle leuchtet.",
-    [c("op", "Rechenart", ["mal", "geteilt"]), r("a", "a", -12, 12, 3), r("b", "b", -12, 12, 2)],
+    [c("op", "Rechenart", ["mal", "geteilt"]), r("a", "a (bei „geteilt“ der Quotient)", -12, 12, 3), r("b", "b (bei „geteilt“ der Divisor)", -12, 12, 2)],
     [
       o("ergebnis", "Ergebnis", (v) => (v.op === 0 ? n0(v.a * v.b) : v.b === 0 ? "nicht erlaubt" : n0(v.a))),
-      o("vorzeichen", "Vorzeichen des Ergebnisses", (v) => { const value = v.op === 0 ? v.a * v.b : v.a; return value > 0 ? "plus" : value < 0 ? "minus" : "keines"; }),
+      o("vorzeichen", "Vorzeichen des Ergebnisses", (v) => { if (v.op === 1 && v.b === 0) return "nicht erlaubt"; const value = v.op === 0 ? v.a * v.b : v.a; return value > 0 ? "plus" : value < 0 ? "minus" : "keines"; }),
     ],
     [
       { id: "minus-minus", text: "Stelle (−4) · (−5) ein.", check: (v) => v.op === 0 && v.a === -4 && v.b === -5 },
       { id: "plus-minus", text: "Stelle 6 · (−7) ein.", check: (v) => v.op === 0 && v.a === 6 && v.b === -7 },
-      { id: "geteilt", text: "Wähle „geteilt“ und zeige 12 : (−3) = −4.", check: (v) => v.op === 1 && v.a === -4 && v.b === -3 },
+      { id: "geteilt", text: "Wähle „geteilt“ und zeige 12 : (−3) = −4: Stelle dazu den Quotienten a und den Divisor b ein.", check: (v) => v.op === 1 && v.a === -4 && v.b === -3 },
     ],
   ),
   exercises: [
@@ -746,7 +784,7 @@ const potenzen = L1(8, {
     ],
     [
       { id: "minus-acht", text: "Stelle (−2)³ ein.", check: (v) => v.base === -2 && v.exp === 3 },
-      { id: "plus-sechzehn", text: "Finde eine negative Basis mit dem Wert 16.", check: (v) => v.base === -2 && v.exp === 4 },
+      { id: "plus-sechzehn", text: "Finde eine negative Basis mit dem Wert 16.", check: (v) => v.base < 0 && v.base ** v.exp === 16 },
       { id: "million", text: "Finde mit Basis 10 den Wert 1 Million.", check: (v) => v.base === 10 && v.exp === 6 },
     ],
   ),
@@ -833,7 +871,7 @@ const quadratzahlen = L1(9, {
   lab: lab(
     "power",
     "Quadrate aus Kästchen",
-    "Lass den Exponenten auf 2 und ziehe die Basis. Präge dir die Werte ein.",
+    "Stelle den Exponenten auf 2 und ziehe die Basis. Präge dir die Werte ein.",
     [r("base", "Basis", -10, 20, 5), r("exp", "Exponent", 1, 6, 1)],
     [o("wert", "Wert", (v) => n0(v.base ** v.exp)), o("quadrat", "Quadratzahl dieser Basis", (v) => n0(v.base * v.base))],
     [
@@ -1200,7 +1238,7 @@ const gliedern = L2(12, {
             level,
             `Wie heißt der Term ${termText(term)} nach seiner letzten Rechnung?`,
             "",
-            [pick("Der Term ist eine …", ["Differenz", "Produkt"], inner ? 0 : 1)],
+            [pick("Art des Terms:", ["Differenz", "Produkt"], inner ? 0 : 1)],
             "Klammern zuerst. Was kommt danach zuletzt?",
             inner ? "Punkt vor Strich: Zuletzt wird subtrahiert." : "Die Klammer steht zuerst, zuletzt wird multipliziert.",
             inner ? "Der Term ist eine Differenz." : "Der Term ist ein Produkt.",
@@ -1250,7 +1288,7 @@ const punktVorStrich = L2(13, {
     ],
     [
       { id: "beispiel", text: "Stelle (a + b) · d mit a = 6, b = 3 und d = −4 ein.", check: (v) => v.term === 1 && v.a === 6 && v.b === 3 && v.d === -4 },
-      { id: "gleich", text: "Finde a, b und d, bei denen a + b · d und (a + b) · d denselben Wert haben, mit d = 1 und a = 5.", check: (v) => v.d === 1 && v.a === 5 && v.b !== 1 },
+      { id: "gleich", text: "Finde a, b und d, bei denen a + b · d und (a + b) · d denselben Wert haben, mit d = 1 und a = 5.", check: (v) => v.d === 1 && v.a === 5 },
       { id: "null", text: "Finde bei a − b · d mit a = 12 Werte für b und d, sodass das Ergebnis 0 ist.", check: (v) => v.term === 2 && v.a === 12 && v.b * v.d === 12 },
     ],
   ),

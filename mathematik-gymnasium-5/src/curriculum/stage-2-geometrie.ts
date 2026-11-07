@@ -434,7 +434,7 @@ const CIRCLE_PLACES = [
   "berühren sich von außen",
   "schneiden sich",
   "berühren sich von innen",
-  "einer liegt im anderen",
+  "liegen ineinander",
 ] as const;
 const zweiKreise = L(5, {
   id: "ge-5-zwei-kreise",
@@ -568,7 +568,7 @@ const orte = L(6, {
       id: "wo-liegen-sie",
       make: (rng, level) => {
         const d = rng.int(2, 9);
-        const options = ["Auf einer Kreislinie", "Auf zwei Parallelen", "Auf einer Parallelen genau in der Mitte"];
+        const options = ["auf einer Kreislinie", "auf zwei Parallelen", "auf einer Parallelen genau in der Mitte"];
         if (level === 1) {
           const cases: Array<[string, number]> = [
             [`alle Punkte, die vom Punkt M genau ${d} cm entfernt sind`, 0],
@@ -583,7 +583,7 @@ const orte = L(6, {
             [pick("Sie liegen …", options, answer)],
             "Punkt: Kreis. Gerade: Parallelen.",
             ["Das ist die Eigenschaft der Kreislinie.", "Auf jeder Seite von g liegt eine Parallele.", "Sie liegen auf der Parallelen genau zwischen g und h."][answer],
-            `${options[answer]}.`,
+            `Sie liegen ${options[answer]}.`,
             { d, answer },
           );
         }
@@ -717,7 +717,7 @@ const winkel = L(7, {
             `Der überstumpfe Winkel hat ${360 - a}°.`,
             { a },
           );
-        const hour = rng.int(1, 11);
+        const hour = rng.pick([1, 2, 3, 4, 5, 7, 8, 9, 10, 11]);
         const smaller = Math.min(30 * hour, 360 - 30 * hour);
         return task(
           level,
@@ -725,7 +725,7 @@ const winkel = L(7, {
           `Es ist genau ${hour} Uhr. Wie groß ist der kleinere Winkel zwischen den beiden Uhrzeigern?`,
           [num("Winkel:", smaller, "°", 0, { slips: [{ value: 360 - smaller, hint: "Das ist der größere Winkel. Gefragt ist der kleinere." }] })],
           "Zwischen zwei Stundenzahlen liegen 360° : 12 = 30°.",
-          `${Math.min(hour, 12 - hour)} Stundenabschnitte zu je 30°.`,
+          `${Math.min(hour, 12 - hour) === 1 ? "1 Stundenabschnitt" : `${Math.min(hour, 12 - hour)} Stundenabschnitte`} zu je 30°.`,
           `Der Winkel ist ${smaller}°.`,
           { hour },
         );
@@ -734,6 +734,12 @@ const winkel = L(7, {
   ],
 });
 
+const QUAD_WHY: Record<string, string> = {
+  Rechteck: "Gegenüberliegende Seiten sind parallel, alle Winkel sind rechte Winkel, und benachbarte Seiten sind verschieden lang.",
+  Parallelogramm: "Gegenüberliegende Seiten sind parallel und gleich lang, benachbarte verschieden lang, und es gibt keinen rechten Winkel.",
+  Raute: "Gegenüberliegende Seiten sind parallel, alle vier Seiten sind gleich lang, und es gibt keinen rechten Winkel.",
+  Trapez: "Nur die untere und die obere Seite sind parallel.",
+};
 const QUAD_NAMES = ["Quadrat", "Rechteck", "Raute", "Parallelogramm", "Drachenviereck", "Trapez"];
 const QUAD_FACTS = [
   ["Alle vier Seiten sind gleich lang, und alle Winkel sind rechte Winkel.", 0],
@@ -831,7 +837,7 @@ const vierecke = L(8, {
             "",
             [pick("Genauester Name:", QUAD_NAMES, QUAD_NAMES.indexOf(name))],
             "Zeichne die Punkte ins Koordinatensystem und prüfe die Seiten.",
-            `Die Skizze zeigt die Eigenschaften: ${name}.`,
+            QUAD_WHY[name] ?? `Die Eigenschaften passen zum Namen ${name}.`,
             `Genauester Name: ${name}`,
             { w, h, s },
           );
@@ -862,6 +868,16 @@ const VIERECK_TRUE = [
   ["Jedes Parallelogramm ist ein Rechteck.", false, "Ein Parallelogramm muss keinen rechten Winkel haben."],
   ["Jedes Trapez ist ein Parallelogramm.", false, "Ein Trapez braucht nur ein Paar paralleler Seiten."],
   ["Jedes Drachenviereck ist eine Raute.", false, "Die beiden Paare gleich langer Seiten dürfen verschieden lang sein."],
+] as const;
+const VIERECK_TRANSFER = [
+  ["Ein Parallelogramm mit einem rechten Winkel ist ein Rechteck.", true, "Gegenüberliegende Seiten sind parallel, darum werden dann alle vier Winkel rechte Winkel."],
+  ["Eine Raute mit einem rechten Winkel ist ein Quadrat.", true, "Sie hat vier gleich lange Seiten und dann auch vier rechte Winkel."],
+  ["Ein Rechteck mit zwei gleich langen Nachbarseiten ist ein Quadrat.", true, "Gegenüberliegende Seiten sind gleich lang, also sind dann alle vier gleich lang."],
+  ["Ein Viereck mit zwei Paaren paralleler Seiten ist ein Parallelogramm.", true, "Genau das kennzeichnet das Parallelogramm."],
+  ["Ein Viereck mit vier gleich langen Seiten ist immer ein Quadrat.", false, "Gegenbeispiel: eine Raute ohne rechten Winkel."],
+  ["Ein Viereck mit genau einem Paar paralleler Seiten ist ein Parallelogramm.", false, "Das Parallelogramm braucht zwei Paare; das Viereck ist ein Trapez."],
+  ["Ein Viereck mit zwei gleich langen Seiten ist immer ein Drachenviereck.", false, "Gegenbeispiel: ein Trapez mit gleich langen Schenkeln, dort liegen die gleichen Seiten einander gegenüber."],
+  ["Ein Viereck mit vier rechten Winkeln ist immer ein Quadrat.", false, "Gegenbeispiel: ein Rechteck mit den Seiten 3 cm und 5 cm."],
 ] as const;
 const eigenschaften = L(9, {
   id: "ge-9-viereck-eigenschaften",
@@ -896,7 +912,8 @@ const eigenschaften = L(9, {
     {
       id: "jedes-ist",
       make: (rng, level) => {
-        const [claim, truth, why] = rng.pick(VIERECK_TRUE);
+        const pool: ReadonlyArray<readonly [string, boolean, string]> = level === 1 ? VIERECK_TRUE : VIERECK_TRANSFER;
+        const [claim, truth, why] = rng.pick(pool);
         return task(
           level,
           `Stimmt die Aussage? ${claim}`,

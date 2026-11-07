@@ -300,8 +300,18 @@ export function isConvexQuad(points: GridPoint[]): boolean {
   return turns.every((turn) => turn > 0) || turns.every((turn) => turn < 0);
 }
 
+/** True when no three corners lie on a line and the sides do not cross. */
+export function isSimpleQuad(points: GridPoint[]): boolean {
+  const [a, b, c, d] = points;
+  const turns = [cross(a, b, c), cross(b, c, d), cross(c, d, a), cross(d, a, b)];
+  if (turns.some((turn) => turn === 0)) return false;
+  const crossing = (p: GridPoint, q: GridPoint, r: GridPoint, s: GridPoint) =>
+    cross(p, q, r) * cross(p, q, s) < 0 && cross(r, s, p) * cross(r, s, q) < 0;
+  return !crossing(a, b, c, d) && !crossing(b, c, d, a);
+}
+
 export function quadName(points: GridPoint[]): QuadName {
-  if (!isConvexQuad(points)) return "kein einfaches Viereck";
+  if (!isSimpleQuad(points)) return "kein einfaches Viereck";
   const [a, b, c, d] = points;
   const sides = [dist2(a, b), dist2(b, c), dist2(c, d), dist2(d, a)];
   const allEqual = sides.every((side) => side === sides[0]);
@@ -334,7 +344,7 @@ export type TwoCirclesPlace =
   | "berühren sich von außen"
   | "schneiden sich"
   | "berühren sich von innen"
-  | "einer liegt im anderen"
+  | "liegen ineinander"
   | "haben denselben Mittelpunkt";
 
 /** Two circles with radii r and s whose centres are d apart. */
@@ -344,7 +354,7 @@ export function twoCircles(d: number, r: number, s: number): TwoCirclesPlace {
   if (d === r + s) return "berühren sich von außen";
   const inner = Math.abs(r - s);
   if (d > inner) return "schneiden sich";
-  return d === inner ? "berühren sich von innen" : "einer liegt im anderen";
+  return d === inner ? "berühren sich von innen" : "liegen ineinander";
 }
 
 export const twoCirclesPoints = (d: number, r: number, s: number): number => {
@@ -410,20 +420,24 @@ export function multiplicativeEquation(form: number, a: number, b: number): Equa
       text: (x) => `${plain(a)} : ${x} = ${plain(b)}`,
       left: (x) => (x === 0 ? Number.NaN : a / x),
       inverse:
-        solution === null
-          ? "Keine ganze Zahl löst diese Gleichung."
-          : `x = ${plain(a)} : ${signed(b)} = ${plain(solution)}`,
+        a === 0 && b === 0
+          ? "Mit a = 0 und b = 0 gibt es keine Umkehraufgabe."
+          : solution === null
+            ? "Keine ganze Zahl löst diese Gleichung."
+            : `x = ${plain(a)} : ${signed(b)} = ${plain(solution)}`,
       solution,
     };
   }
-  const solution = whole(b / a);
+  const solution = a === 0 ? null : whole(b / a);
   return {
     text: (x) => `${plain(a)} · ${x} = ${plain(b)}`,
     left: (x) => a * x,
     inverse:
-      solution === null
-        ? "Keine ganze Zahl löst diese Gleichung."
-        : `x = ${plain(b)} : ${signed(a)} = ${plain(solution)}`,
+      a === 0
+        ? "Mit a = 0 gibt es keine Umkehraufgabe."
+        : solution === null
+          ? "Keine ganze Zahl löst diese Gleichung."
+          : `x = ${plain(b)} : ${signed(a)} = ${plain(solution)}`,
     solution,
   };
 }
@@ -482,6 +496,12 @@ export function termText(node: TermNode, rank = 0, isRight = false): string {
   const needs = own < rank || (own === rank && isRight && node.op !== "^");
   return needs ? `(${body})` : body;
 }
+
+/** "eine Summe", "ein Produkt": the kind with its article. */
+export const termKindPhrase = (node: TermNode): string => {
+  const kind = termKind(node);
+  return kind === "Produkt" || kind === "Quotient" ? `ein ${kind}` : `eine ${kind}`;
+};
 
 /** The kind of a term: the calculation that comes last. */
 export const termKind = (node: TermNode): string =>

@@ -68,7 +68,7 @@ const intAdd: LabView = {
       (change !== 0 ? arrow(x(v.a), y - 34, x(end), y - 34, change > 0 ? "lab-curve" : "lab-curve-2", 3) : "") +
       circle(x(v.a), y, 6, "lab-point-a") +
       circle(x(end), y, 6, "lab-point-ok") +
-      text(260, 70, v.op === 1 && v.b < 0 ? `Minus (${fmt(v.b, 0)}) wirkt wie plus ${fmt(-v.b, 0)}.` : v.op === 0 && v.b < 0 ? `Plus (${fmt(v.b, 0)}) wirkt wie minus ${fmt(-v.b, 0)}.` : `Der Pfeil zeigt nach ${change >= 0 ? "rechts" : "links"}.`, "lab-text", "middle") +
+      text(260, 70, v.op === 1 && v.b < 0 ? `Minus (${fmt(v.b, 0)}) wirkt wie plus ${fmt(-v.b, 0)}.` : v.op === 0 && v.b < 0 ? `Plus (${fmt(v.b, 0)}) wirkt wie minus ${fmt(-v.b, 0)}.` : change === 0 ? "Die Zahl bleibt gleich." : `Der Pfeil zeigt nach ${change > 0 ? "rechts" : "links"}.`, "lab-text", "middle") +
       rail("a", "Startzahl", v.a, -15, 15, 290) +
       "</svg>"
     );

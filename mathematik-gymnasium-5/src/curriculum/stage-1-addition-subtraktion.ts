@@ -1,5 +1,5 @@
 import { fmt, paren } from "../exercises/format";
-import { additiveEquation, fromRoman, roman, roundTo, termText, termValue, type TermNode } from "../models";
+import { additiveEquation, fromRoman, roman, romanParts, roundTo, termSolve, termText, termValue, type TermNode } from "../models";
 import { ADD_TERMS, numberName, regroupSteps, REGROUP_TERMS } from "../lab/views-gym";
 import { bigNumber } from "../lab/views-natuerlich";
 import { numberField as num, choiceField as pick } from "./helpers";
@@ -355,7 +355,9 @@ const ROMAN_SLIPS: Array<[number, string, string]> = [
   [400, "CCCC", "DC"],
   [900, "DCCCC", "MC"],
 ];
-const YEARS = [1492, 1789, 1806, 1871, 1919, 1949, 1989, 2000, 2024, 1648, 1517, 1776];
+const YEARS = [1492, 1517, 1648, 1776, 1789, 1806, 1871, 1919];
+/** "M = 1.000, CM = 900, XC = 90": the signs of a number with their values. */
+const romanWay = (n: number) => romanParts(n).map(([value, sign]) => `${sign} = ${n0(value)}`).join(", ");
 const roemisch = L1(4, {
   id: "nz-4-roemisch",
   title: "1.4 Römische Zahlen",
@@ -405,7 +407,7 @@ const roemisch = L1(4, {
             "",
             [num("Zahl:", n, "", 0)],
             "Addiere die Werte. Steht ein kleineres Zeichen vor einem größeren, ziehe es ab.",
-            `${text} ergibt ${n}.`,
+            `${romanWay(n)}.`,
             `${text} = ${n}`,
             { n },
           );
@@ -418,7 +420,7 @@ const roemisch = L1(4, {
           `An einem alten Gebäude steht die Jahreszahl ${text}. In welchem Jahr wurde es gebaut?`,
           [num("Jahr:", fromRoman(text), "", 0)],
           "Zerlege in Tausender, Hunderter, Zehner und Einer.",
-          `${text} ergibt ${year}.`,
+          `${romanWay(year)}.`,
           `Es wurde im Jahr ${year} gebaut.`,
           { year },
         );
@@ -436,7 +438,7 @@ const roemisch = L1(4, {
             "",
             [pick("Schreibweise:", [right, wrong, third], 0)],
             "Dasselbe Zeichen steht höchstens dreimal nebeneinander. Zerlege die Zahl in ihre Stellen.",
-            `${n} zerlegst du nach Stellen und setzt die Zeichen zusammen.`,
+            `${romanWay(n)}.`,
             `${n} = ${right}`,
             { n },
           );
@@ -648,7 +650,7 @@ const runden = L1(6, {
           `${kids} Kinder fahren ins Schullandheim. In einen Bus passen ${seats} Kinder. Wie viele Busse braucht die Schule?`,
           [num("Busse:", buses, "", 0, { slips: [{ value: buses - 1, hint: "Dann bleiben Kinder zurück. Hier musst du aufrunden, auch wenn der Rest klein ist." }] })],
           "Alle müssen mitfahren. Überlege, was die Rechnung für den Rest bedeutet.",
-          `${kids} : ${seats} = ${buses - 1} Rest ${kids - (buses - 1) * seats}. Für die übrigen Kinder braucht es noch einen Bus.`,
+          `${kids} : ${seats} = ${buses - 1} Rest ${kids - (buses - 1) * seats}. Für ${kids - (buses - 1) * seats === 1 ? "das übrige Kind" : "die übrigen Kinder"} braucht es noch einen Bus.`,
           `Die Schule braucht ${buses} Busse.`,
           { kids, seats },
         );
@@ -1270,19 +1272,21 @@ const differenzen = L2(12, {
             `Das Ergebnis ist ${high - low}.`,
             { low, high },
           );
-        const askColder = rng.int(0, 1) === 0;
-        const change = rng.int(3, 20);
+        const morning = -rng.int(1, 12);
+        const warmer = rng.int(0, 1) === 0;
+        const change = warmer ? rng.int(3, 15) : rng.int(2, 8);
+        const later = warmer ? morning + change : morning - change;
         return task(
           level,
           "",
-          askColder
-            ? `Am Morgen hat es ${n0(low)} °C. Am Nachmittag ist es ${high - low} Grad wärmer. Welche Temperatur hat es am Nachmittag?`
-            : `Am Morgen hat es ${n0(low)} °C. Bis zum Abend wird es noch ${change} Grad kälter. Welche Temperatur hat es am Abend?`,
-          [num("Temperatur:", askColder ? high : low - change, "°C", 0)],
+          warmer
+            ? `Am Morgen hat es ${n0(morning)} °C. Am Nachmittag ist es ${change} Grad wärmer. Welche Temperatur hat es am Nachmittag?`
+            : `Am Morgen hat es ${n0(morning)} °C. Bis zum Abend wird es noch ${change} Grad kälter. Welche Temperatur hat es am Abend?`,
+          [num("Temperatur:", later, "°C", 0)],
           "Wärmer: addieren. Kälter: subtrahieren.",
-          askColder ? `${p0(low)} + ${high - low} = ${high}.` : `${n0(low)} − ${change} = ${n0(low - change)}.`,
-          `Es hat ${n0(askColder ? high : low - change)} °C.`,
-          { low, high, change },
+          warmer ? `${p0(morning)} + ${change} = ${n0(later)}.` : `${n0(morning)} − ${change} = ${n0(later)}.`,
+          `Es hat ${n0(later)} °C.`,
+          { morning, change },
         );
       },
     },
@@ -1586,7 +1590,7 @@ const termeAdd = L2(15, {
             "",
             [num("Wert:", value, "", 0)],
             "Klammern zuerst, sonst von links nach rechts.",
-            `Rechne die Klammer und danach von links nach rechts.`,
+            `${termText(term)} = ${termSolve(term).join(" = ")}.`,
             `Der Wert ist ${n0(value)}.`,
             { a, b, c1, d },
           );

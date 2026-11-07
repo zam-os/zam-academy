@@ -8,7 +8,7 @@ import {
   partNames,
   quadName,
   stackSurface,
-  termKind,
+  termKindPhrase,
   termSolve,
   termText,
   twoCircles,
@@ -161,7 +161,7 @@ function termTreeView(terms: TermNode[]): LabView {
       const shown = Math.min(v.step, steps.length);
       return (
         open("Gliederung eines Terms als Baum") +
-        title(`${termText(term)}: eine ${termKind(term)}`) +
+        title(`${termText(term)}: ${termKindPhrase(term)}`) +
         treeNodes(term, TREE_X0, TREE_X0 + TREE_W, 54) +
         (shown === 0
           ? text(260, 256, "Ziehe den Regler: So rechnest du Schritt für Schritt.", "lab-text-small", "middle")
@@ -550,7 +550,7 @@ const sizeTimesView: LabView = {
     const { big, small, base } = SIZE_KINDS[v.kind];
     const value = v.whole * base + v.part;
     const rows = [
-      `${v.whole} ${big} ${v.part} ${small}`,
+      (v.part === 0 ? `${v.whole} ${big}` : `${v.whole} ${big} ${v.part} ${small}`),
       `= ${n0(value)} ${small}`,
       `${n0(value)} ${small} · ${v.k} = ${n0(value * v.k)} ${small}`,
       `= ${sizeTimes(v.kind, v.whole, v.part, v.k)}`,

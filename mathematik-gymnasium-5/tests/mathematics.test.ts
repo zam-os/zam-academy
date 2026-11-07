@@ -117,6 +117,8 @@ describe("Rechenregeln und Rechengesetze", () => {
       }
     expect(multiplicativeEquation(0, 5, 7).solution).toBeNull();
     expect(multiplicativeEquation(2, 5, 0).solution).toBeNull();
+    expect(multiplicativeEquation(0, 0, 0).inverse).toContain("keine Umkehraufgabe");
+    expect(multiplicativeEquation(2, 0, 0).inverse).toContain("keine Umkehraufgabe");
   });
 
   it("gliedert Terme und rechnet sie in Schritten", () => {
@@ -206,10 +208,12 @@ describe("Geometrie", () => {
     expect(name(1, 1, 5, 1, 4, 4, 1, 5)).toBe("Drachenviereck");
     expect(name(1, 1, 7, 1, 5, 4, 2, 4)).toBe("Trapez");
     expect(name(1, 1, 7, 2, 6, 5, 2, 3)).toBe("allgemeines Viereck");
-    // Crossed, dented and flat corners have no standard name.
+    // Crossed sides and flat corners have no standard name.
     expect(name(1, 1, 5, 1, 1, 5, 5, 5)).toBe("kein einfaches Viereck");
-    expect(name(1, 1, 5, 1, 2, 2, 1, 5)).toBe("kein einfaches Viereck");
     expect(name(1, 1, 3, 1, 5, 1, 1, 5)).toBe("kein einfaches Viereck");
+    // A dented Drachenviereck keeps its name; a dented figure without equal neighbours is general.
+    expect(name(1, 1, 5, 1, 2, 2, 1, 5)).toBe("Drachenviereck");
+    expect(name(1, 1, 6, 1, 2, 2, 1, 5)).toBe("allgemeines Viereck");
   });
 
   it("entscheidet die Lage von Kreis und Gerade und von zwei Kreisen", () => {
@@ -221,7 +225,7 @@ describe("Geometrie", () => {
     expect(twoCircles(5, 3, 2)).toBe("berühren sich von außen");
     expect(twoCircles(3, 3, 2)).toBe("schneiden sich");
     expect(twoCircles(1, 3, 2)).toBe("berühren sich von innen");
-    expect(twoCircles(1, 5, 2)).toBe("einer liegt im anderen");
+    expect(twoCircles(1, 5, 2)).toBe("liegen ineinander");
     expect(twoCircles(0, 3, 2)).toBe("haben denselben Mittelpunkt");
     expect([twoCirclesPoints(7, 3, 2), twoCirclesPoints(5, 3, 2), twoCirclesPoints(3, 3, 2), twoCirclesPoints(1, 3, 2)]).toEqual([0, 1, 2, 1]);
     expect(twoCirclesPoints(0, 3, 3)).toBe(Infinity);

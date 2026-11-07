@@ -128,7 +128,7 @@ const notation: LabView = {
     }
     return (
       out +
-      text(260, 160, `${v.whole} ${kind.big} ${fmt(part, 0)} ${kind.small}`, "lab-text-big", "middle") +
+      text(260, 160, (part === 0 ? `${v.whole} ${kind.big}` : `${v.whole} ${kind.big} ${fmt(part, 0)} ${kind.small}`), "lab-text-big", "middle") +
       text(260, 190, `${fmt(v.whole * kind.base + part, 0)} ${kind.small}`, "lab-text", "middle") +
       rail("pct", "Anteil der nächsten Einheit (von 100)", v.pct, 0, 95, 295) +
       "</svg>"

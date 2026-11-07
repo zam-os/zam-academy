@@ -321,7 +321,7 @@
             },
             {
               "text": "2-mal so viel.",
-              "reason": "Das gilt im Dualsystem, nicht im Zehnersystem."
+              "reason": "Bei jeder Stelle ist der Faktor 10, nicht 2."
             }
           ],
           "question": "Wievielmal so viel ist eine Stelle im Zehnersystem wert wie die Stelle rechts daneben?",
@@ -5240,7 +5240,7 @@
         },
         {
           "id": "01M6V440GSEN3DF4R0RQWN5PE8",
-          "slug": "g5-komma-kg",
+          "slug": "g5-komma-meter",
           "language": "de",
           "tier": "tier2_transfer",
           "bloom_level": 3,
@@ -5663,8 +5663,8 @@
           "materiality": "material",
           "choice_distractors": [
             {
-              "text": "1 km auf der Karte sind 25.000 km in Wirklichkeit.",
-              "reason": "Die Einheit ist auf beiden Seiten gleich, aber die Karte misst nur Zentimeter."
+              "text": "1 cm auf der Karte sind 25.000 m in Wirklichkeit.",
+              "reason": "Beide Zahlen haben dieselbe Einheit; 25.000 cm sind nur 250 m."
             },
             {
               "text": "1 cm auf der Karte sind 25.000 km in Wirklichkeit.",
@@ -5677,7 +5677,7 @@
             "type": "binary_choice",
             "options": [
               "1 cm auf der Karte sind 25.000 cm in Wirklichkeit.",
-              "1 km auf der Karte sind 25.000 km in Wirklichkeit."
+              "1 cm auf der Karte sind 25.000 m in Wirklichkeit."
             ],
             "correct_index": 0
           }

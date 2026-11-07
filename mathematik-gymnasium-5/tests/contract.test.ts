@@ -274,6 +274,8 @@ describe("Plausible Werte und Texte", () => {
           }
     for (const task of tasks("gr-4-rechnen", "gemischte-einheiten", 2))
       expect(task.prompt).toMatch(/kostet \d+,\d\d €/);
+    for (const task of tasks("gr-4-rechnen", "gemischte-einheiten", 1))
+      expect(task.prompt).toMatch(/\d+,\d\d m \+|\d+,\d{3} kg [+−]/);
   });
 
   it("uses no comma from the following grade outside sizes", () => {
@@ -323,6 +325,57 @@ describe("Plausible Werte und Texte", () => {
     for (const task of tasks("fl-6-oberflaeche", "waende-streichen", 2)) {
       const field = task.fields[0];
       if (field.kind === "number") expect(field.answer).toBeGreaterThan(0);
+    }
+  });
+
+  it("answers the review findings of PR 102", () => {
+    for (const task of tasks("ge-7-winkel", "ueberstumpf-rechnen", 2)) {
+      expect(task.prompt).not.toContain("genau 6 Uhr");
+      expect(task.steps[0]).not.toMatch(/\b1 Stundenabschnitte/);
+    }
+    for (const task of tasks("nz-6-runden", "runden-sinnvoll", 2))
+      expect(task.steps[0]).not.toMatch(/Rest 1\. Für die übrigen/);
+    for (const task of tasks("nz-12-differenzen", "temperaturunterschied", 2)) {
+      const field = task.fields[0];
+      if (field.kind !== "number") throw new Error("number field expected");
+      expect(field.answer, task.prompt).toBeGreaterThanOrEqual(-20);
+      expect(field.answer, task.prompt).toBeLessThanOrEqual(15);
+      expect(Number(task.prompt.match(/(\d+) Grad/)![1]), task.prompt).toBeLessThanOrEqual(15);
+    }
+    for (const task of tasks("nz-15-terme", "term-wert", 1)) expect(task.steps[0]).toContain(" = ");
+    for (const task of tasks("mu-2-dividieren", "quotient", 1)) expect(task.steps[0]).not.toMatch(/\b0 : \d/);
+    for (const task of tasks("nz-4-roemisch", "roemisch-lesen")) expect(task.steps[0]).not.toContain("ergibt");
+    for (const task of tasks("nz-4-roemisch", "roemisch-lesen", 2))
+      expect(Number(String(task.fields[0].kind === "number" && task.fields[0].answer))).toBeLessThan(2000);
+    // Level 2 of the Viereck statements is its own pool.
+    const prompts = (level: 1 | 2) => new Set([...tasks("ge-9-viereck-eigenschaften", "jedes-ist", level)].map((t) => t.prompt.split(": ").pop()!.replace("Stimmt die Aussage? ", "")));
+    for (const claim of prompts(2)) expect(prompts(1).has(claim), claim).toBe(false);
+    const power = findLessonById("mu-8-potenzen")!.lesson.lab.goals.find((g) => g.id === "plus-sechzehn")!;
+    expect(power.check({ base: -4, exp: 2 }, {})).toBe(true);
+    expect(power.check({ base: -2, exp: 4 }, {})).toBe(true);
+    const same = findLessonById("te-2-punkt-vor-strich")!.lesson.lab.goals.find((g) => g.id === "gleich")!;
+    expect(same.check({ term: 0, a: 5, b: 1, d: 1 }, {})).toBe(true);
+  });
+
+  it("asks whether the Zählprinzip fits and when it does not", () => {
+    expect(answers("mu-5-zaehlprinzip", "zaehlprinzip-erkennen", 1).size).toBe(2);
+    for (const task of tasks("mu-5-zaehlprinzip", "zaehlprinzip-erkennen", 2)) {
+      const sauces = [...task.prompt.matchAll(/(\d+) Soßen/g)].map((m) => Number(m[1]));
+      const field = task.fields[0];
+      if (field.kind === "number") expect(field.answer).toBe(sauces.reduce((a, b) => a + b, 0));
+    }
+  });
+
+  it("practises mass with a comma and a size divided by a number", () => {
+    const prompts = [...tasks("gr-4-rechnen", "gemischte-einheiten", 1)].map((t) => t.prompt);
+    expect(prompts.some((p) => p.includes(" kg "))).toBe(true);
+    expect(prompts.some((p) => p.includes(" m "))).toBe(true);
+    for (const task of tasks("gr-4-rechnen", "groesse-teilen")) {
+      const field = task.fields[0];
+      if (field.kind === "number") {
+        expect(Number.isInteger(field.answer), task.prompt).toBe(true);
+        expect(field.unit).toMatch(/^(g|m)$/);
+      }
     }
   });
 

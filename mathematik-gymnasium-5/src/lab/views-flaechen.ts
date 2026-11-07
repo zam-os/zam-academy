@@ -51,8 +51,6 @@ const notchPoints = (w: number, h: number, cw: number, ch: number): Pt[] => [
   { x: LX, y: LY - h * LS },
 ];
 
-/** The units the two figures of the area comparison are counted in. */
-
 const composite: LabView = {
   render(v) {
     const pts = notchPoints(v.w, v.h, v.cw, v.ch);

@@ -11,11 +11,11 @@ export interface QuizQuestion {
 }
 
 export interface FormulaEntry {
-  /** What the formula is called, e.g. "Satz des Pythagoras". */
+  /** What the formula is called, e.g. "Distributivgesetz". */
   name: string;
   /** The formula as HTML (<sup>, <sub>, the helpers in math-html.ts), never LaTeX. */
   html: string;
-  /** What the letters mean, e.g. "a, b Katheten, c Hypotenuse". */
+  /** What the letters mean, e.g. "a Länge, b Breite". */
   quantities: string;
 }
 
@@ -112,7 +112,7 @@ export interface NumberField {
   absTolerance?: number;
   /**
    * Typical wrong results and what to say about them, e.g. the value a
-   * calculator in RAD mode gives, or c² instead of c.
+   * doubled number instead of the square, or the Vorzeichen left out.
    */
   slips?: Array<{ value: number; hint: string }>;
 }
@@ -137,7 +137,7 @@ export interface ExerciseTask {
   /** Topic-specific guidance after a wrong attempt, including on Level 2. */
   feedbackHint?: string;
   fields: AnswerField[];
-  /** Indices of number fields that may be filled in any order (the two solutions x₁ and x₂). */
+  /** Indices of number fields that may be filled in any order (two results of the same kind). */
   anyOrder?: number[];
   /**
    * The worked solution as HTML steps. "Tipp" shows them one by one; the
@@ -168,7 +168,7 @@ export interface Lesson {
   stepNumber: number;
   title: string;
   subtitle: string;
-  /** Where LehrplanPLUS places it, e.g. "M5 LB 1.2: Andere Zahlensysteme". */
+  /** Where LehrplanPLUS places it, e.g. "M5 LB 1.2: Addition und Subtraktion ganzer Zahlen". */
   lehrplan: string;
   whyItMatters: string;
   explanationHtml: string;

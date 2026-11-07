@@ -284,7 +284,7 @@ const kommaschreibweise = L1(3, {
   subtitle: "Die Einheitentafel für Geld, Länge und Masse",
   whyItMatters:
     "Auf jedem Preisschild steht 3,75 €, auf der Waage 1,250 kg. Das Komma trennt die Einheiten, und die Einheitentafel zeigt dir, wo jede Ziffer hingehört.",
-  explanationHtml: `<p>Die <strong>Kommaschreibweise</strong> ist eine kurze Schreibweise für zwei Einheiten. Das Komma steht direkt hinter der größeren Einheit. In der <strong>Einheitentafel</strong> steht jede Ziffer an ihrem Platz: Bei € und ct sind es nach dem Komma zwei Stellen, bei m und cm zwei, bei kg und g drei, bei km und m drei.</p><p>3,75 € sind 3 € 75 ct. 2,05 m sind 2 m 5 cm, denn die 5 steht auf dem Platz der Zentimeter. 1,250 kg sind 1 kg 250 g. Eine Null am Ende darf fehlen: 1,25 kg und 1,250 kg sind gleich.</p><div class="example">1,5 m = 150 cm. 3,04 € = 304 ct. 0,75 kg = 750 g. Umgekehrt: 4.300 m = 4,3 km.</div><div class="merke"><strong>Merke:</strong> Trage die Größe in die Einheitentafel ein. Das Komma steht hinter der größeren Einheit. Bei der Zeit gibt es keine solche Schreibweise.</div>`,
+  explanationHtml: `<p>Die <strong>Kommaschreibweise</strong> ist eine kurze Schreibweise für zwei Einheiten. Das Komma steht direkt hinter der größeren Einheit. In der <strong>Einheitentafel</strong> steht jede Ziffer an ihrem Platz: Bei € und ct sind es nach dem Komma zwei Stellen, bei m und cm zwei, bei kg und g drei, bei km und m drei.</p><p>3,75 € sind 3 € 75 ct. 2,05 m sind 2 m 5 cm, denn die 5 steht auf dem Platz der Zentimeter. 1,250 kg sind 1 kg 250 g. Eine Null am Ende darf fehlen: 1,25 kg und 1,250 kg sind gleich.</p><div class="example">1,5 m = 150 cm. 3,04 € = 304 ct. 0,75 kg = 750 g. Umgekehrt: 4.300 m = 4,3 km.</div><div class="merke"><strong>Merke:</strong> Trage die Größe in die Einheitentafel ein. Das Komma steht hinter der größeren Einheit. Bei der Zeit verwendest du diese Schreibweise nicht.</div>`,
   formulas: [
     { name: "Geld", html: "3,75 € = 3 € 75 ct = 375 ct", quantities: "Zwei Stellen nach dem Komma bis ct" },
     { name: "Länge", html: "2,05 m = 205 cm; 1,5 km = 1.500 m", quantities: "m und cm: zwei Stellen; km und m: drei Stellen" },
@@ -417,6 +417,22 @@ const rechnenMitGroessen = L1(4, {
     {
       id: "gemischte-einheiten",
       make: (rng, level) => {
+        if (level === 1 && rng.int(0, 1) === 0) {
+          const kg = rng.int(1, 9), g1 = rng.int(1, 19) * 50, g2 = rng.int(1, 19) * 50;
+          const plus = rng.int(0, 1) === 0 || kg * 1000 + g1 <= g2;
+          const startKg = (kg * 1000 + g1) / 1000;
+          const value = (kg * 1000 + g1 + (plus ? g2 : -g2)) / 1000;
+          return task(
+            level,
+            `Berechne ${comma(startKg, 3)} kg ${plus ? "+" : "−"} ${g2} g. Gib das Ergebnis mit Komma in Kilogramm an.`,
+            "",
+            [num("Ergebnis:", value, "kg", 3)],
+            "Rechne zuerst auf dieselbe Einheit um: 1 kg = 1.000 g.",
+            `${g2} g = ${comma(g2 / 1000, 3)} kg. ${comma(startKg, 3)} kg ${plus ? "+" : "−"} ${comma(g2 / 1000, 3)} kg.`,
+            `Das Ergebnis ist ${comma(value, 3)} kg.`,
+            { kg, g1, g2 },
+          );
+        }
         if (level === 1) {
           const m = rng.int(1, 9), cm1 = rng.int(1, 19) * 5, cm2 = rng.int(1, 19) * 5;
           const total = (m * 100 + cm1 + cm2) / 100;
@@ -444,6 +460,38 @@ const rechnenMitGroessen = L1(4, {
           `${comma(paid, 2)} € − ${comma(cents / 100, 2)} €.`,
           `Du bekommst ${comma(change / 100, 2)} € zurück.`,
           { paid, cents },
+        );
+      },
+    },
+    {
+      id: "groesse-teilen",
+      make: (rng, level) => {
+        const parts = rng.int(2, 9);
+        if (level === 1) {
+          const each = rng.int(2, 9) * 100 + rng.pick([0, 50]);
+          const total = each * parts;
+          return task(
+            level,
+            `Dividiere die Größe: ${n0(total)} g : ${parts}.`,
+            "",
+            [num("Ergebnis:", each, "g", 0)],
+            "Größe durch Zahl: Nur die Maßzahl wird geteilt, die Einheit bleibt.",
+            `${n0(total)} : ${parts} = ${each}, die Einheit bleibt g.`,
+            `Das Ergebnis ist ${each} g.`,
+            { total, parts },
+          );
+        }
+        const each = rng.int(2, 9);
+        const metres = each * parts;
+        return task(
+          level,
+          "",
+          `Eine Leine von ${metres} m Länge wird in ${parts} gleich lange Stücke geschnitten. Wie lang ist ein Stück?`,
+          [num("Ein Stück:", each, "m", 0)],
+          "Größe durch Zahl: Das Ergebnis hat wieder eine Einheit.",
+          `${metres} m : ${parts} = ${each} m.`,
+          `Ein Stück ist ${each} m lang.`,
+          { metres, parts },
         );
       },
     },
@@ -795,7 +843,7 @@ const rechteckFlaeche = L2(8, {
   subtitle: "Mit Einheitsquadraten messen",
   whyItMatters:
     "Wie groß ist die Fläche des Klassenzimmers? Du zählst nicht jedes Kästchen, sondern nutzt eine Formel, die du dir selbst erklären kannst.",
-  explanationHtml: `<p>Den <strong>Flächeninhalt</strong> misst du mit <strong>Einheitsquadraten</strong>: Du zählst, wie viele davon in die Fläche passen. Bei einem Rechteck musst du nicht einzeln zählen. In eine Reihe passen a Quadrate, und es gibt b Reihen. Das sind a · b Quadrate.</p><p>Das ist die Formel <strong>A = a · b</strong>. Beim Quadrat sind beide Seiten gleich: <strong>A = a²</strong>. Seiten in cm ergeben cm², Seiten in m ergeben m².</p><div class="example">Rechteck 5 cm lang und 3 cm breit: 3 Reihen zu je 5 cm²-Quadraten, also A = 5 cm · 3 cm = 15 cm².</div><div class="merke"><strong>Merke:</strong> A = a · b. Beide Seiten brauchen dieselbe Einheit. Das Ergebnis trägt die quadratische Einheit.</div>`,
+  explanationHtml: `<p>Den <strong>Flächeninhalt</strong> misst du mit <strong>Einheitsquadraten</strong>: Du zählst, wie viele davon in die Fläche passen. Bei einem Rechteck musst du nicht einzeln zählen. In eine Reihe passen a Quadrate, und es gibt b Reihen. Das sind a · b Quadrate.</p><p>Das ist die Formel <strong>A = a · b</strong>. Beim Quadrat sind beide Seiten gleich: <strong>A = a²</strong>. Seiten in cm ergeben cm², Seiten in m ergeben m².</p><div class="example">Rechteck 5 cm lang und 3 cm breit: 3 Reihen zu je 5 Quadraten mit 1 cm Seitenlänge, also A = 5 cm · 3 cm = 15 cm².</div><div class="merke"><strong>Merke:</strong> A = a · b. Beide Seiten brauchen dieselbe Einheit. Das Ergebnis trägt die quadratische Einheit.</div>`,
   formulas: [
     { name: "Rechteck", html: "A = a · b", quantities: "a Länge, b Breite" },
     { name: "Quadrat", html: "A = a²", quantities: "a Seitenlänge" },
@@ -1008,7 +1056,7 @@ const umfangFlaeche = L2(10, {
     [r("a", "Seite a", 1, 12, 6, 1, "cm"), r("b", "Seite b", 1, 12, 3, 1, "cm")],
     [o("umfang", "Umfang", (v) => 2 * (v.a + v.b), "cm", 0), o("flaeche", "Flächeninhalt", (v) => v.a * v.b, "cm²", 0)],
     [
-      { id: "gleich-u", text: "Forme ein anderes Rechteck mit dem Umfang 24 cm, und zwar ein Quadrat.", check: (v) => v.a === 6 && v.b === 6 },
+      { id: "gleich-u", text: "Forme ein Quadrat mit dem Umfang 24 cm.", check: (v) => v.a === 6 && v.b === 6 },
       { id: "gleich-a", text: "Finde ein Rechteck mit 24 cm² und dem Umfang 28 cm.", check: (v) => (v.a === 12 && v.b === 2) || (v.a === 2 && v.b === 12) },
       { id: "kleinste", text: "Forme bei einem Umfang von 26 cm das Rechteck mit dem kleinsten Flächeninhalt.", check: (v) => (v.a === 12 && v.b === 1) || (v.a === 1 && v.b === 12) },
     ],
@@ -1085,7 +1133,7 @@ const LAKES: Array<[string, number, number]> = [
   ["Der Bodensee ist etwa 60 km lang und im Mittel etwa 9 km breit", 60, 9],
   ["Der Chiemsee ist etwa 15 km lang und im Mittel etwa 5 km breit", 15, 5],
   ["Der Starnberger See ist etwa 20 km lang und im Mittel etwa 3 km breit", 20, 3],
-  ["Bayern passt in ein Rechteck von etwa 350 km Länge und 200 km Breite", 350, 200],
+  ["Bayern lässt sich grob durch ein Rechteck von 350 km Länge und 200 km Breite beschreiben", 350, 200],
   ["Deutschland lässt sich grob durch ein Rechteck von 800 km Länge und 450 km Breite beschreiben", 800, 450],
 ];
 const naeherung = L2(11, {
@@ -1125,15 +1173,15 @@ const naeherung = L2(11, {
       make: (rng, level) => {
         const [sentence, a, b] = rng.pick(LAKES);
         if (level === 1) {
-          const w = rng.int(4, 18), h = rng.int(2, 9);
+          const w = rng.int(3, 12) * 10, h = rng.int(2, 6) * 10;
           return task(
             level,
             `Eine Lichtung im Wald sieht auf dem Luftbild ungefähr aus wie ein Rechteck von ${w} m Länge und ${h} m Breite. Bestimme einen Näherungswert für ihren Flächeninhalt.`,
             "",
             [num("A ≈", w * h, "m²", 0)],
             "Modelliere mit dem Rechteck: A ≈ a · b.",
-            `${w} m · ${h} m = ${w * h} m².`,
-            `A ≈ ${w * h} m²`,
+            `${w} m · ${h} m = ${n0(w * h)} m².`,
+            `A ≈ ${n0(w * h)} m²`,
             { w, h },
           );
         }
@@ -1172,7 +1220,7 @@ const naeherung = L2(11, {
         return task(
           level,
           "",
-          `Ein Teich liegt ganz in einem Rechteck von ${a + 2} m und ${b + 2} m und enthält ganz ein Rechteck von ${a} m und ${b} m. Wie groß ist der Unterschied zwischen dieser oberen und unteren Schranke?`,
+          `Ein Teich liegt ganz in einem Rechteck von ${a + 2} m und ${b + 2} m und enthält ganz ein Rechteck von ${a} m und ${b} m. Um wie viel Quadratmeter unterscheiden sich die beiden Rechtecke?`,
           [num("Unterschied:", upper - lower, "m²", 0)],
           "Berechne beide Flächeninhalte und subtrahiere.",
           `${upper} m² − ${lower} m² = ${upper - lower} m².`,
@@ -1270,8 +1318,8 @@ const zerlegen = L2(12, {
           [pick("Kürzer ist …", ["Ergänzen", "Zerlegen"], ergaenzenBetter ? 0 : 1)],
           "Zähle die Rechenschritte für beide Wege.",
           ergaenzenBetter
-            ? `Ergänzen: ${w} · ${h} − ${cw} · ${ch}, nur zwei Produkte.`
-            : `Zerlegen: 2 · ${w} · ${h}, ohne Ergänzung.`,
+            ? `Ergänzen: ${w} · ${h} − ${cw} · ${ch} nutzt die gegebenen Maße. Beim Zerlegen müsstest du zuerst Restlängen wie ${w - cw} m berechnen.`
+            : `Die Figur besteht schon aus zwei Rechtecken: 2 · ${w} · ${h}. Beim Ergänzen müsstest du erst ein größeres Rechteck suchen.`,
           ergaenzenBetter ? "Ergänzen ist kürzer." : "Zerlegen ist kürzer.",
           { w, h, cw, ch },
         );
