@@ -11,6 +11,7 @@ Hands-on training apps that build understanding before [ZAM](https://github.com/
 | Englisch 8 Realschule (LehrplanPLUS Bayern, alle Wahlpflichtfächergruppen) | [`englisch-realschule-8/`](englisch-realschule-8/) | https://academy.zam-os.org/englisch-realschule-8/ | `zam-academy:englisch-realschule-8` |
 | Englisch 9 Realschule (LehrplanPLUS Bayern) | [`englisch-realschule-9/`](englisch-realschule-9/) | https://academy.zam-os.org/englisch-realschule-9/ | `zam-academy:englisch-realschule-9` |
 | Englisch 10 Realschule (LehrplanPLUS Bayern, alle Wahlpflichtfächergruppen) | [`englisch-realschule-10/`](englisch-realschule-10/) | https://academy.zam-os.org/englisch-realschule-10/ | `zam-academy:englisch-realschule-10` |
+| Mathematik 5 Realschule (LehrplanPLUS Bayern, für alle Schülerinnen und Schüler) | [`mathematik-realschule-5/`](mathematik-realschule-5/) | https://academy.zam-os.org/mathematik-realschule-5/ | `zam-academy:mathematik-realschule-5` |
 | Mathematik 6 Realschule (LehrplanPLUS Bayern, alle Wahlpflichtfächergruppen) | [`mathematik-realschule-6/`](mathematik-realschule-6/) | https://academy.zam-os.org/mathematik-realschule-6/ | `zam-academy:mathematik-realschule-6` |
 | Mathematik 7 Realschule (LehrplanPLUS Bayern, Zweig I und II/III) | [`mathematik-realschule-7/`](mathematik-realschule-7/) | https://academy.zam-os.org/mathematik-realschule-7/ | `zam-academy:mathematik-realschule-7` |
 | Mathematik 8 Realschule (LehrplanPLUS Bayern, Zweig I und II/III) | [`mathematik-realschule-8/`](mathematik-realschule-8/) | https://academy.zam-os.org/mathematik-realschule-8/ | `zam-academy:mathematik-realschule-8` |
@@ -114,6 +115,7 @@ cd uml                 # or: cd physik-realschule-9 (dev server on :5181), cd sq
 # Grade 4 mathematics preview: cd mathematik-grundschule-4 (dev server on :5216)
 # Grade 4 German preview: cd deutsch-grundschule-4 (dev server on :5217)
 # Grade 4 HSU preview: cd hsu-grundschule-4 (dev server on :5218)
+# Mathematik 5: cd mathematik-realschule-5 (dev server on :5220)
 npm ci
 npm run dev      # http://localhost:5180/uml/
 npm test
