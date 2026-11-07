@@ -119,7 +119,7 @@ cd uml                 # or: cd physik-realschule-9 (dev server on :5181), cd sq
 # Grade 4 HSU preview: cd hsu-grundschule-4 (dev server on :5218)
 # Mathematik 5: cd mathematik-realschule-5 (dev server on :5220)
 # Mathematik 5 Gymnasium: cd mathematik-gymnasium-5 (dev server on :5221)
-# Englisch 5: cd englisch-realschule-5 (dev server on :5222)
+# Englisch 5: cd englisch-realschule-5 (dev server on :5223)
 npm ci
 npm run dev      # http://localhost:5180/uml/
 npm test
@@ -166,5 +166,11 @@ The [History 8 package](geschichte-realschule-8/) adds 35 core lessons and three
 The [Englisch 8 package](englisch-realschule-8/) adds 51 lessons and 102 cards for all Wahlpflichtfächergruppen: North American history, the USA, New York and other cities, Canada, the grade-8 grammar (pronouns, two objects, questions, passive and personal passive, if-clauses type 0–3, receptive participle constructions) and American youth literature. Its [coverage matrix](englisch-realschule-8/coverage.json) maps all 44 Kompetenzerwartungen and topic rows. The [legacy review](docs/englisch-8-bestandsabgleich.md) maps the four old grammar cards to 1 A and 3 C rows; Thomas approved the mapping on 2026-10-29, so since cell 2026.10.2 the type-3 card replaces its equivalent old card and the three C cards stay active.
 
 The [French 8 package](franzoesisch-realschule-8/) adds 40 core lessons, two optional relative-clause extensions and 84 linked cards for Bavarian Realschule group IIIa. Its [coverage matrix](franzoesisch-realschule-8/coverage.json) indexes 56 expectations and topic entries as guided exercises or preparation. The [inventory](docs/franzoesisch-8-bestandsabgleich.md) documents four older grammar cards that remain active without history transfer. Natural audiovisual practice, spontaneous conversations, maps, research and a full vocabulary programme supplement the app. Pages publishes app and cell together on merge; ZAM fixture synchronization is separate.
+
+[Grade 5 German for Bavarian Realschule](deutsch-realschule-5/) is available
+for local evaluation with 37 lessons and 77 ZAM cards. Run
+`npm ci && npm run dev` from the package folder (port 5222), or use
+`npm run package:zip` for a self-contained offline build.
+[Curriculum coverage and legacy card inventory](docs/deutsch-5-coverage.md)
 
 The [Englisch 5 package](englisch-realschule-5/) adds 43 lessons and 86 cards for all grade-5 pupils: English as a world language and the British Isles, everyday life and school in Great Britain, leisure and travel, the grade-5 vocabulary and grammar workshop (from `to be` and `have got` to the simple present, present progressive, simple past, modals, questions, imperatives, word order and IPA) and stories, reading logs and public-domain poems by Robert Louis Stevenson. Its [coverage matrix](englisch-realschule-5/coverage.json) maps all 36 Kompetenzerwartungen and topic rows plus all 33 listed vocabulary and grammar structures (with the two receptive future-meaning structures separated into their own `receptive` entries). The [legacy review](docs/englisch-5-bestandsabgleich.md) records a proposal (`proposal-only`, `approved: null`) for the eight old grade-5 grammar cards (4 A, 4 C); until approved, `cell.json` ships without `replaces` or `retired_items` so all eight old cards stay active.

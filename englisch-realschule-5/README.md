@@ -37,7 +37,7 @@ Texte und Fortschritt bleiben in `localStorage` dieses Browsers (`englisch_rs5_a
 
 ```sh
 npm ci
-npm run dev          # http://localhost:5222/englisch-realschule-5/
+npm run dev          # http://localhost:5223/englisch-realschule-5/
 npm run typecheck
 npm test
 npm run package:zip  # Build, Offline-ZIP und Artefaktprüfung
