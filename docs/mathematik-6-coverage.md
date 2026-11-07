@@ -29,7 +29,7 @@ Das Labor zu besonderen Figuren benennt gleichseitige Dreiecke nicht, weil Grund
 
 ## Grenzen
 
-Die App kann Konstruktionen mit Zirkel und Lineal nur zeigen. Ausführen müssen Lernende sie auf Papier oder in einer Geometriesoftware, bewertet wird das nicht. Dasselbe gilt für das eigene Arbeiten in GeoGebra und für freie Begründungen; die Transferkarten in ZAM fragen sie als Abruf ab. Erklärvideos sind ein eigener späterer Schritt (Entscheidung vom 22.10.2026). Eine Lehrkraft hat die Inhalte noch nicht geprüft.
+Die App kann Konstruktionen mit Zirkel und Lineal nur zeigen. Ausführen müssen Lernende sie auf Papier oder in einer Geometriesoftware, bewertet wird das nicht. Dasselbe gilt für das eigene Arbeiten in GeoGebra und für freie Begründungen; die Transferkarten in ZAM fragen sie als Abruf ab. Die Erklärvideos kamen als eigener Schritt hinzu (Entscheidung vom 22.10.2026), Nachweis und Prüfumfang stehen in [mathematik-6-lehrervideos.md](mathematik-6-lehrervideos.md). Eine Lehrkraft hat die Inhalte noch nicht geprüft.
 
 ## Kartenabgleich
 
