@@ -6,6 +6,7 @@ import {
   nextLesson,
   previousLesson,
 } from "../src/curriculum";
+import { checkTask } from "../src/exercises/checker";
 import { createRng, seedFrom } from "../src/exercises/rng";
 import { computeReadouts, enumerateLabGrid } from "../src/lab/engine";
 import { labView } from "../src/lab/visuals";
@@ -290,6 +291,19 @@ describe("Befunde aus dem Review von PR 91", () => {
     expect(sameHour).toBeGreaterThan(0);
   });
 
+  it("does not read metres as whole kilometres on a map", () => {
+    let whole = 0;
+    for (const task of tasks("gr-5-massstab", "karte-wirklichkeit", 2)) {
+      const field = task.fields[0];
+      if (field.kind !== "number") throw new Error("number field expected");
+      expect(checkTask(task, [String(field.answer).replace(".", ",")]).status, task.prompt).toBe("correct");
+      if (!Number.isInteger(field.answer)) continue;
+      whole++;
+      expect(checkTask(task, [`${field.answer}.000`]).status, task.prompt).toBe("wrong");
+    }
+    expect(whole).toBeGreaterThan(0);
+  });
+
   it("asks for whole centimetres when drawing to scale", () => {
     for (const task of tasks("gr-5-massstab", "massstab-zeichnen"))
       for (const field of task.fields)
@@ -366,7 +380,7 @@ describe("Befunde aus dem Review von PR 91", () => {
   });
 
   it("keeps singular and plural apart in tasks, solutions, hints and drawings", () => {
-    const wrong = /(?<![\d.,])1 (?:Striche|volle Fünferbündel|einzelne Striche|Erwachsene|Schritten|Möglichkeiten|Kanten|Ecken|Flächen|Nullen|Packungen|Kinder|Stunden|Tische|Einheiten|Felder|Augen|Personen|negative Faktoren|Busse)\b/;
+    const wrong = /(?<![\d.,])1 (?:Striche|volle Fünferbündel|einzelne Striche|Erwachsene|Schritten|Möglichkeiten|Kanten|Ecken|Flächen|Nullen|Packungen|Kinder|Stunden|Tische|Einheiten|Felder|Augen|Personen|negative Faktoren|Busse)\b|\b(?:sind es|fehlen noch|kommen) 1 (?:Grad|m|min|cm)\b/;
     const texts = (value: unknown): string[] =>
       typeof value === "string"
         ? [value]

@@ -68,7 +68,7 @@ const negativeZahlen = L(1, {
             "",
             [num("Temperatur:", end, "°C", 0, { slips: [{ value: -end, hint: "Das Ergebnis liegt unter null. Vergiss das Minuszeichen nicht." }] })],
             `Rechne ${start} − ${drop}.`,
-            `Bis 0 °C sind es ${start} Grad. Dann fehlen noch ${drop - start} Grad.`,
+            `Bis 0 °C ${start === 1 ? "ist es" : "sind es"} ${start} Grad. Dann ${drop - start === 1 ? "fehlt" : "fehlen"} noch ${drop - start} Grad.`,
             `Es sind ${n0(end)} °C.`,
             { start, drop },
           );

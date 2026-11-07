@@ -449,7 +449,8 @@ const massstab = L(5, {
           level,
           "",
           `Auf einer Wanderkarte im Maßstab 1 : ${n0(scaleValue)} ist der Weg ${b} cm lang. Wie viele Kilometer sind das?`,
-          [num("Länge:", km, "km", 2, { slips: [{ value: b * scaleValue, hint: "Das sind Zentimeter. 1 km = 100.000 cm." }] })],
+          [// A whole number of kilometres takes a whole-number field: "8.000" is no 8 km.
+          num("Länge:", km, "km", Number.isInteger(km) ? 0 : 2, { slips: [{ value: b * scaleValue, hint: "Das sind Zentimeter. 1 km = 100.000 cm." }] })],
           "Länge im Bild · Maßstabszahl, dann in km umrechnen",
           `${b} cm · ${n0(scaleValue)} = ${n0(b * scaleValue)} cm. 100.000 cm = 1 km.`,
           `${fmt(km, 2)} km`,
