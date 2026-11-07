@@ -225,3 +225,59 @@ describe("Aufgaben", () => {
     }
   });
 });
+
+describe("Exact answers of any size", () => {
+  const numberTask = (
+    answer: number,
+    digits: number,
+    tolerances: { tolerance?: number; absTolerance?: number } = {},
+  ): ExerciseTask => ({
+    prompt: "",
+    given: [],
+    steps: [],
+    fields: [{ kind: "number", label: "x =", answer, unit: "", digits, ...tolerances }],
+  });
+  const statusOf = (task: ExerciseTask, typed: string) => checkTask(task, [typed]).status;
+
+  it("rejects a neighbouring whole number at any size", () => {
+    for (const answer of [999999999, 2999999999, 4000000001, 990000000000]) {
+      const task = numberTask(answer, 0);
+      expect(statusOf(task, String(answer))).toBe("correct");
+      for (const off of [answer - 1, answer + 1, answer - 2, answer + 3])
+        expect(statusOf(task, String(off)), String(off)).toBe("wrong");
+    }
+  });
+
+  it("rejects a neighbouring last digit but accepts floating-point noise", () => {
+    expect(statusOf(numberTask(9000000, 6), "9000000,000001")).toBe("wrong");
+    expect(statusOf(numberTask(16, 8), "16,00000001")).toBe("wrong");
+    const noisy = (0.1 + 0.2) * 1e7;
+    expect(noisy).not.toBe(3000000);
+    expect(statusOf(numberTask(noisy, 0), "3000000")).toBe("correct");
+    expect(statusOf(numberTask(noisy, 0), "3000001")).toBe("wrong");
+  });
+
+  it("accepts one third rounded to nine decimal places", () => {
+    const task = numberTask(1 / 3, 9);
+    expect(statusOf(task, "0,333333333")).toBe("correct");
+    expect(statusOf(task, "0.333333333")).toBe("correct");
+    expect(statusOf(task, "1/3")).toBe("correct");
+    expect(statusOf(task, "0,34")).toBe("wrong");
+  });
+
+  it("leaves deliberately tolerant and rounded answers as they are", () => {
+    const relative = numberTask(2000000000, 0, { tolerance: 0.01 });
+    expect(statusOf(relative, "2020000000")).toBe("correct");
+    expect(statusOf(relative, "2030000000")).toBe("wrong");
+    const absolute = numberTask(2000000000, 0, { absTolerance: 5 });
+    expect(statusOf(absolute, "2000000005")).toBe("correct");
+    expect(statusOf(absolute, "2000000006")).toBe("wrong");
+    const rounded = numberTask(Math.sqrt(52), 1);
+    expect(statusOf(rounded, "7,2")).toBe("correct");
+    expect(statusOf(rounded, "7,3")).toBe("wrong");
+    const largeRounded = numberTask(1234567.5678, 2);
+    expect(statusOf(largeRounded, "1234567,57")).toBe("correct");
+    expect(statusOf(largeRounded, "1240000")).toBe("correct");
+    expect(statusOf(largeRounded, "1300000")).toBe("wrong");
+  });
+});
