@@ -891,7 +891,7 @@ const quadratzahlen = L1(9, {
             `Wie viel ist ${n}²? Rufe den Wert aus dem Gedächtnis ab oder rechne ${n} · ${n}.`,
             "",
             [num("Wert:", n * n, "", 0, { slips: [{ value: 2 * n, hint: "n² bedeutet n · n, nicht 2 · n." }] })],
-            "n² = n · n",
+            "n² = n · n: Multipliziere die Zahl mit sich selbst.",
             `${n} · ${n} = ${n * n}.`,
             `${n}² = ${n * n}`,
             { n },
@@ -1310,20 +1310,25 @@ const punktVorStrich = L2(13, {
             { a, b, d },
           );
         }
+        const start = rng.int(20, 60), won = rng.int(4, 12);
+        const lost = rng.pick([2, 3, 4, 5, 6, 7, 8, 9, 13, 14, 15].filter((x) => x !== won));
         const term: TermNode = {
           op: "−",
-          left: { op: "·", left: b, right: { op: "−", left: a, right: d } },
+          left: { op: "+", left: start, right: { op: "·", left: b, right: { op: "−", left: won, right: lost } } },
           right: { op: "^", left: e, right: 2 },
         };
         return task(
           level,
           "",
-          `Berechne in fortlaufender Rechnung: ${termText(term)}.`,
-          [num("Wert:", termValue(term), "", 0)],
-          "Klammer, Potenz, Punkt, Strich.",
+          `Mia beginnt ein Spiel mit ${start} Punkten. In jeder der ${b} Runden gewinnt sie ${won} Punkte und verliert ${lost} Punkte. Zum Schluss zieht ihr die Strafkarte ${e}² Punkte ab. Berechne ihren Punktestand mit dem Term ${termText(term)} in fortlaufender Rechnung.`,
+          [num("Punktestand:", termValue(term), "", 0, { slips: [
+            { value: (start + b) * (won - lost) - e * e, hint: "Du hast von links nach rechts gerechnet. Punkt kommt vor Strich." },
+            { value: start + b * (won - lost) - 2 * e, hint: `${e}² bedeutet ${e} · ${e}, nicht 2 · ${e}.` },
+          ] })],
+          "Rechne zuerst die Klammer aus, dann die Potenz, dann den Punkt und zuletzt den Strich.",
           `= ${termSolve(term).join(" = ")}`,
-          `Der Wert ist ${n0(termValue(term))}.`,
-          { a, b, d, e },
+          `Ihr Punktestand ist am Ende ${n0(termValue(term))}.`,
+          { start, b, won, lost, e },
         );
       },
     },

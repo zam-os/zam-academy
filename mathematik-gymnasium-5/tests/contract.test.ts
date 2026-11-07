@@ -7,6 +7,7 @@ import {
   previousLesson,
 } from "../src/curriculum";
 import { checkTask } from "../src/exercises/checker";
+import { quizOrder } from "../src/exercises/quiz-order";
 import { createRng, seedFrom } from "../src/exercises/rng";
 import { computeReadouts, enumerateLabGrid } from "../src/lab/engine";
 import { labView } from "../src/lab/visuals";
@@ -30,11 +31,13 @@ interface Item {
   source_link: string;
   tier: string;
   choice_distractors: { text: string; reason: string }[];
-  fast_check?: { options: unknown[]; correct_index: number };
+  fast_check?: { options: string[]; correct_index: number };
   sample_solution?: string;
   question?: string;
-  question_segments?: { type: string; speech?: string }[];
-  concept_segments?: { type: string; speech?: string }[];
+  concept?: string;
+  replaces?: string[];
+  question_segments?: { type: string; text?: string; speech?: string }[];
+  concept_segments?: { type: string; text?: string; speech?: string }[];
 }
 interface Atom {
   id: string;
@@ -58,6 +61,8 @@ const cell = rawCell as unknown as {
   sources: { uri: string }[];
 };
 const IDS = ALL_LESSONS.map((l) => l.id);
+/** A hyphen used as a minus sign: before a digit, a bracket or a variable, or as an operator. */
+const HYPHEN_MINUS = /(^|[\s(|=])-(?=[\s\d(a-zα-ω])/;
 const LESSONS = 55;
 const CARDS = 165;
 const blank = (): LearnerProgress => ({
@@ -357,6 +362,65 @@ describe("Plausible Werte und Texte", () => {
     expect(same.check({ term: 0, a: 5, b: 1, d: 1 }, {})).toBe(true);
   });
 
+  it("answers the second review of PR 102", () => {
+    const naeherung = ALL_LESSONS.find((l) => l.id === "fl-4-naeherung")!;
+    expect(naeherung.explanationHtml).toContain("Liegt die Fläche ganz im Rechteck, ist die Näherung zu groß.");
+    expect(naeherung.quiz.question).toContain("Ein Teil des Rechtecks bleibt frei.");
+    // The answer a learner gets for a wrong value says what to do, not only the formula.
+    for (const [lesson, generator, level] of [
+      ["mu-9-quadratzahlen", "quadrat-abrufen", 1],
+      ["fl-1-rechteck", "flaeche-berechnen", 1],
+      ["fl-4-naeherung", "see-modellieren", 2],
+      ["fl-6-oberflaeche", "oberflaeche-berechnen", 1],
+      ["fl-6-oberflaeche", "waende-streichen", 1],
+    ] as const)
+      for (const t of tasks(lesson, generator, level)) {
+        expect(t.feedbackHint, `${lesson}/${generator}`).toMatch(/: [A-ZÄÖÜ][a-zäöüß]+ .+\.$/);
+        const field = t.fields[0];
+        expect(field.kind === "number" && (field.slips?.length ?? 0) > 0 || generator === "quadrat-abrufen").toBe(true);
+      }
+    for (const t of tasks("te-2-punkt-vor-strich", "reihenfolge", 2)) {
+      expect(t.prompt).toMatch(/^Mia beginnt ein Spiel mit \d+ Punkten\./);
+      expect(t.fields[0].kind === "number" && Number.isInteger(t.fields[0].answer)).toBe(true);
+      expect(t.steps[0]).toMatch(/^= /);
+    }
+  });
+
+  it("shows the right quick-check answer at different positions across lessons", () => {
+    const shownAt = new Set<number>();
+    for (const lesson of ALL_LESSONS) {
+      expect(lesson.quiz.options.length).toBeGreaterThanOrEqual(3);
+      expect(new Set(lesson.quiz.options).size).toBe(lesson.quiz.options.length);
+      const order = quizOrder(lesson);
+      expect([...order].sort()).toEqual(lesson.quiz.options.map((_, i) => i));
+      shownAt.add(order.indexOf(lesson.quiz.correctIndex));
+    }
+    expect([...shownAt].sort()).toEqual([0, 1, 2]);
+  });
+
+  it("writes minus signs as − in every fixed text of a lesson and every generated task", () => {
+    for (const lesson of ALL_LESSONS) {
+      const texts = [
+        lesson.title,
+        lesson.subtitle,
+        lesson.whyItMatters,
+        lesson.explanationHtml.replace(/<[^>]*>/g, " "),
+        lesson.quiz.question,
+        lesson.quiz.explanation,
+        ...lesson.quiz.options,
+        lesson.lab.intro,
+        ...lesson.lab.goals.map((g) => g.text),
+        ...(lesson.formulas ?? []).map((f) => f.html.replace(/<[^>]*>/g, " ")),
+        ...lesson.exercises.flatMap((g) =>
+          ([1, 2] as const).flatMap((level) =>
+            [...tasks(lesson.id, g.id, level)].slice(0, 12).flatMap((t) => [t.prompt, t.feedbackHint, ...t.steps]),
+          ),
+        ),
+      ];
+      for (const text of texts) expect(text, lesson.id).not.toMatch(HYPHEN_MINUS);
+    }
+  });
+
   it("asks whether the Zählprinzip fits and when it does not", () => {
     expect(answers("mu-5-zaehlprinzip", "zaehlprinzip-erkennen", 1).size).toBe(2);
     for (const task of tasks("mu-5-zaehlprinzip", "zaehlprinzip-erkennen", 2)) {
@@ -516,7 +580,6 @@ describe("ZAM-Karten", () => {
       earlier.add(a.id);
       for (const i of a.practice_items) {
         expect(i.source_link).toBe(a.source_link);
-        expect("replaces" in i).toBe(false);
       }
     }
     expect("retired_items" in cell).toBe(false);
@@ -544,9 +607,36 @@ describe("ZAM-Karten", () => {
     expect(JSON.stringify(cell)).toContain('"type":"math"');
   });
 
-  it("accounts for 16 old items with five transfer proposals and no applied migration", () => {
-    expect(mapping.approved).toBeNull();
-    expect(mapping.status).toBe("proposal-only");
+  it("writes minus signs as − in every text of a card", () => {
+    for (const a of cell.atoms)
+      for (const i of a.practice_items) {
+        const texts = [
+          i.question,
+          i.concept,
+          i.sample_solution,
+          ...(i.question_segments ?? []).map((s) => s.text),
+          ...(i.concept_segments ?? []).map((s) => s.text),
+          ...(i.fast_check?.options ?? []),
+          ...i.choice_distractors.flatMap((d) => [d.text, d.reason]),
+        ];
+        for (const text of texts) if (text) expect(text, i.slug).not.toMatch(HYPHEN_MINUS);
+      }
+  });
+
+  it("records Thomas's approval and declares exactly the five approved transfers", () => {
+    expect(mapping.approved).toBe("2026-11-07");
+    expect(mapping.status).toBe("approved");
+    expect(mapping.source).toContain("Die Kartenzuordnung gebe ich frei.");
+    const replaced = cell.atoms
+      .flatMap((a) => a.practice_items)
+      .filter((i) => "replaces" in i)
+      .map((i) => [i.slug, i.replaces]);
+    expect(Object.fromEntries(replaced)).toEqual(
+      Object.fromEntries(
+        mapping.rows.filter((r) => r.category === "A").map((r) => [r.academy_slug, [r.de_by_id]]),
+      ),
+    );
+    expect(replaced).toHaveLength(5);
     expect(mapping.rows).toHaveLength(16);
     expect(new Set(mapping.rows.map((r) => r.de_by_id)).size).toBe(16);
     expect(mapping.sources).toHaveLength(2);
@@ -562,7 +652,7 @@ describe("ZAM-Karten", () => {
           .find((i) => i.slug === r.academy_slug);
         expect(item, r.academy_slug ?? "").toBeDefined();
         expect(item?.tier).toBe("tier1_fast");
-        expect(r.action).toBe("propose-replace-after-approval");
+        expect(r.action).toBe("replace");
       } else {
         expect(r.academy_slug).toBeNull();
         expect(r.action).toBe("keep-active");

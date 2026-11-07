@@ -1,8 +1,8 @@
 {
   "schema": 1,
-  "approved": null,
-  "status": "proposal-only",
-  "source": "Stand 07.11.2026: fünf A-Vorschläge für gleiche Einzelabrufe, keine B-Übernahme, elf C-Zeilen bleiben keep-active. Keine Freigabe und keine Änderung persönlicher Historien. Veröffentlichung zunächst ohne replaces und retired_items gemäß Paketstandard.",
+  "approved": "2026-11-07",
+  "status": "approved",
+  "source": "Thomas in dieser Claude-Code-Sitzung am 2026-11-07, nach den Reviews zu zam-os/zam-academy#102: „Es gibt Reviews! Die Kartenzuordnung gebe ich frei.“ Die Freigabe gilt der Zuordnung der 16 de-by-Karten in dieser Datei (5 A, 0 B, 11 C; alle C-Karten bleiben aktiv). Die Korrekturen nach diesen Reviews ändern weder Zeilen noch die fünf Nachfolger.",
   "source_repository": "zam-os/zam",
   "source_commit": "f57e6740854a2f91f985b59b9e101b388186d3bc",
   "sources": [
@@ -24,7 +24,7 @@
       "de_by_question": "Wie lautet die mathematische Schreibweise für die Aussage, dass die Gerade g senkrecht (orthogonal) auf der Geraden h steht?",
       "category": "A",
       "academy_slug": "g5-senkrecht-zeichen",
-      "action": "propose-replace-after-approval",
+      "action": "replace",
       "reason": "Gleicher Einzelabruf: die Schreibweise g ⊥ h für senkrechte Geraden."
     },
     {
@@ -96,7 +96,7 @@
       "de_by_question": "Was versteht man unter dem Betrag |a| einer ganzen Zahl a auf der Zahlengeraden?",
       "category": "A",
       "academy_slug": "g5-betrag",
-      "action": "propose-replace-after-approval",
+      "action": "replace",
       "reason": "Gleicher Einzelabruf: Der Betrag ist der Abstand der Zahl von der Null."
     },
     {
@@ -114,7 +114,7 @@
       "de_by_question": "Welches Vorzeichen ergibt das Produkt zweier ganzer Zahlen mit ungleichen Vorzeichen (z. B. (+a) · (-b))?",
       "category": "A",
       "academy_slug": "g5-plus-mal-minus",
-      "action": "propose-replace-after-approval",
+      "action": "replace",
       "reason": "Gleicher Einzelabruf: Verschiedene Vorzeichen ergeben ein negatives Produkt."
     },
     {
@@ -132,7 +132,7 @@
       "de_by_question": "Welchen Wert hat die Potenz (-3)² im Vergleich zu -3²?",
       "category": "A",
       "academy_slug": "g5-klammer-basis",
-      "action": "propose-replace-after-approval",
+      "action": "replace",
       "reason": "Gleicher Einzelabruf mit denselben Zahlen: (−3)² = 9 und −3² = −9."
     },
     {
@@ -150,7 +150,7 @@
       "de_by_question": "Wie viele verschiedene Outfits lassen sich aus 4 Hosen, 5 T-Shirts und 3 Paar Schuhen nach dem grundlegenden Zählprinzip kombinieren?",
       "category": "A",
       "academy_slug": "g5-outfits",
-      "action": "propose-replace-after-approval",
+      "action": "replace",
       "reason": "Gleiche Aufgabe mit denselben Zahlen: 4 · 5 · 3 = 60 Outfits nach dem Zählprinzip."
     },
     {

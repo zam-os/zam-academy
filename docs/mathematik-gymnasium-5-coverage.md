@@ -36,7 +36,7 @@ Zwei `de-by`-Zellen in zam-os/zam (Commit `f57e6740854a2f91f985b59b9e101b388186d
 | B | 0 | Keine mehrteilige Karte wird ganz übernommen |
 | C | 11 | Mehrteilig, außerhalb des Plans M5 oder unsicher; bleiben aktiv und bekommen keinen Nachfolger |
 
-Die alten Zellen enthalten auch Inhalte, die der aktuelle Fachlehrplan M5 nicht nennt, zum Beispiel Achsenspiegelung, Mittelsenkrechte, die Dreiecksfläche, das Volumen und die Fakultät. Die Zuordnung ist ein Vorschlag: `approved` ist `null`, die Zelle erscheint ohne `replaces` und `retired_items`, und `mathematik-gymnasium-5/scripts/validate-migration.mjs` prüft das in einer Wegwerf-Datenbank.
+Die alten Zellen enthalten auch Inhalte, die der aktuelle Fachlehrplan M5 nicht nennt, zum Beispiel Achsenspiegelung, Mittelsenkrechte, die Dreiecksfläche, das Volumen und die Fakultät. Thomas hat die Zuordnung am 2026-11-07 freigegeben. Die fünf A-Nachfolger tragen `replaces`, die Zelle hat keine `retired_items`, und `mathematik-gymnasium-5/scripts/validate-migration.mjs` prüft das in Wegwerf-Datenbanken.
 
 ## Registrierung
 

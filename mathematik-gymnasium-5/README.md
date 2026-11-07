@@ -23,7 +23,7 @@ Aus der Grundschule 3/4 kommen die schriftlichen Verfahren bis zur Million, Grö
 
 Eine Lektion hat ein Atom mit drei Karten in [cell.json](cell.json): zwei kurze Abrufe und eine Transferfrage mit Musterlösung. Alle Kennungen sind einmal erzeugte ULIDs und in [public-contract.json](tests/fixtures/public-contract.json) festgehalten.
 
-Zwei alte Zellen enthalten 16 Karten. Bytegleiche Schnappschüsse, Herkunftscommit und SHA-256 stehen in [replaces-de-by.json](replaces-de-by.json). Fünf A-Zeilen schlagen denselben Einzelabruf als Nachfolger vor, elf C-Zeilen bleiben aktiv. Die Zuordnung ist nur ein Vorschlag: `approved` bleibt `null`, und die Zelle erscheint ohne `replaces` und `retired_items`.
+Zwei alte Zellen enthalten 16 Karten. Bytegleiche Schnappschüsse, Herkunftscommit und SHA-256 stehen in [replaces-de-by.json](replaces-de-by.json). Thomas hat die Zuordnung am 2026-11-07 freigegeben: Fünf Karten übernehmen mit `replaces` die Historie desselben Einzelabrufs (A), elf C-Karten bleiben aktiv, die Zelle hat keine `retired_items`.
 
 ## Lokal starten und prüfen
 
@@ -36,4 +36,4 @@ npm run build      # eine Datei in dist/index.html
 npm run package:zip
 ```
 
-Vom Wurzelordner aus prüft `node mathematik-gymnasium-5/scripts/validate-migration.mjs` die Historien in einer Wegwerf-Datenbank; `ZAM_CORE` zeigt dabei auf das in CI festgelegte `zam-core`.
+Vom Wurzelordner aus prüft `node mathematik-gymnasium-5/scripts/validate-migration.mjs` die Historien in Wegwerf-Datenbanken; `ZAM_CORE` zeigt dabei auf das in CI festgelegte `zam-core`.
