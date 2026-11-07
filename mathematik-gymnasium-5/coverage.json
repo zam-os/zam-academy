@@ -1,0 +1,414 @@
+{
+  "schema": 1,
+  "checked": "2026-11-07",
+  "curriculum": "https://www.lehrplanplus.bayern.de/fachlehrplan/gymnasium/5/mathematik",
+  "school_type": "gymnasium",
+  "grade": 5,
+  "subject": "mathematik",
+  "scope": "all-official-learning-areas",
+  "optional_lessons": [],
+  "scope_note": "Vier Lernbereiche; das Gymnasium hat in Jahrgangsstufe 5 keine Zweige. Zeichnen und Messen mit dem Geodreieck, Skizzen, Recherche und mündliches Präsentieren geschehen auf Papier oder im Unterricht; die App erläutert und überprüft die zugehörigen Begriffe und Rechnungen. Videos folgen als separater Schritt.",
+  "rows": [
+    {
+      "lb": 1,
+      "section": "1.1",
+      "competence": "erläutern, warum die Menge der natürlichen Zahlen kein größtes Element besitzt, und benennen auch Zahlen über eine Million sicher.",
+      "lessons": [
+        "nz-1-unendlich",
+        "nz-2-grosse-zahlen"
+      ],
+      "status": "implemented",
+      "evidence": "Das Labor successor zeigt Nachfolger bis in die Billionen, number-names liest Dreiergruppen; nachfolger-vorgaenger und in-ziffern üben Begründung und Schreibweise."
+    },
+    {
+      "lb": 1,
+      "section": "1.1",
+      "competence": "verstehen das Zehnersystem als Stellenwertsystem und beschreiben (z. B. auch in Abgrenzung zum römischen Zahlensystem), was ein Stellenwertsystem ausmacht.",
+      "lessons": [
+        "nz-3-stellenwert",
+        "nz-4-roemisch"
+      ],
+      "status": "implemented",
+      "evidence": "Das Labor place-value baut Zahlen in der Stellenwerttafel, roman zerlegt römische Zeichen; wert-der-ziffer und roemisch-lesen zeigen den Unterschied."
+    },
+    {
+      "lb": 1,
+      "section": "1.1",
+      "competence": "lesen natürliche Zahlen am Zahlenstrahl ab und stellen sie unter Wahl einer geeigneten Skalierung am Zahlenstrahl dar.",
+      "lessons": [
+        "nz-5-zahlenstrahl"
+      ],
+      "status": "implemented",
+      "evidence": "Das Labor number-ray wechselt die Skalierung, ablesen und einteilung-waehlen üben Ablesen und Wahl der Einteilung."
+    },
+    {
+      "lb": 1,
+      "section": "1.1",
+      "competence": "runden natürliche Zahlen und wenden dies in Sachzusammenhängen sinnvoll an.",
+      "lessons": [
+        "nz-6-runden"
+      ],
+      "status": "implemented",
+      "evidence": "Das Labor rounding zeigt die Rundungsstelle; runden-stelle rundet große Zahlen, runden-sinnvoll entscheidet im Sachzusammenhang."
+    },
+    {
+      "lb": 1,
+      "section": "1.1",
+      "competence": "verstehen die Notwendigkeit, die Menge der natürlichen Zahlen zur Menge der ganzen Zahlen zu erweitern, und beschreiben Sachsituationen, in denen negative ganze Zahlen von Bedeutung sind.",
+      "lessons": [
+        "nz-7-negative-zahlen"
+      ],
+      "status": "implemented",
+      "evidence": "Erklärung über 3 − 5, das Labor thermometer zeigt Temperatur, Konto und Stockwerk; temperatur und situation übersetzen Sachsituationen."
+    },
+    {
+      "lb": 1,
+      "section": "1.1",
+      "competence": "ordnen ganze Zahlen der Größe nach, stellen sie an einer Zahlengeraden dar und veranschaulichen dort ihre Beträge.",
+      "lessons": [
+        "nz-8-zahlengerade"
+      ],
+      "status": "implemented",
+      "evidence": "Das Labor opposite zeigt Betrag und Gegenzahl auf der Zahlengeraden; ordnen und betrag-abstand üben Ordnung und Abstand."
+    },
+    {
+      "lb": 1,
+      "section": "1.1",
+      "competence": "überprüfen Aussagen (z. B.: Von zwei ganzen Zahlen ist diejenige größer, die den größeren Betrag hat.) auf ihre Richtigkeit hin und verwenden Gegenbeispiele, um Aussagen zu widerlegen.",
+      "lessons": [
+        "nz-9-aussagen"
+      ],
+      "status": "implemented",
+      "evidence": "Das Labor compare-abs sucht Gegenbeispiele zur Musteraussage des Lehrplans; gegenbeispiel-waehlen und wahr-falsch prüfen weitere Aussagen."
+    },
+    {
+      "lb": 1,
+      "section": "1.2",
+      "competence": "wenden die bereits in der Grundschule erlernten schriftlichen Rechenverfahren der Addition und der Subtraktion natürlicher Zahlen auch auf natürliche Zahlen größer als eine Million automatisiert an. Ihre Ergebnisse überprüfen sie durch Abschätzen der Größenordnung kritisch.",
+      "lessons": [
+        "nz-10-schriftlich"
+      ],
+      "status": "implemented",
+      "evidence": "Das Labor written-calc rechnet in Spalten über einer Million; spalten rechnet schriftlich, ueberschlag prüft die Größenordnung."
+    },
+    {
+      "lb": 1,
+      "section": "1.2",
+      "competence": "bestimmen die Werte von Summen und Differenzen ganzer Zahlen, veranschaulichen ihre Strategien (z. B. mithilfe von Guthaben und Schulden) und erläutern diese; bei angemessen gewählten Zahlen berechnen sie die Werte von Summen und Differenzen auch im Kopf. Sie unterscheiden dabei klar zwischen Vor- und Rechenzeichen.",
+      "lessons": [
+        "nz-11-summen",
+        "nz-12-differenzen"
+      ],
+      "status": "implemented",
+      "evidence": "Das Labor account nutzt Guthaben und Schulden, int-add den Pfeil; summe und differenz üben das Rechnen, vor-rechenzeichen trennt Vor- und Rechenzeichen."
+    },
+    {
+      "lb": 1,
+      "section": "1.2",
+      "competence": "lösen Gleichungen der Form a + x = b, x − a = b und a − x = b, wie in der Grundschule angebahnt, durch systematisches Probieren oder durch Bildung der jeweiligen Umkehraufgabe.",
+      "lessons": [
+        "nz-13-gleichungen"
+      ],
+      "status": "implemented",
+      "evidence": "Das Labor equation-add probiert alle drei Formen durch; umkehraufgabe und probieren üben beide Wege."
+    },
+    {
+      "lb": 1,
+      "section": "1.2",
+      "competence": "erkennen und nutzen Rechenvorteile, die sich durch Anwenden von Kommutativ- und Assoziativgesetz ergeben; sie verwenden dabei auch, dass jede Differenz als Summe aufgefasst werden kann.",
+      "lessons": [
+        "nz-14-rechenvorteile"
+      ],
+      "status": "implemented",
+      "evidence": "Das Labor regroup ordnet Summen um; geschickt-rechnen nutzt die Gesetze, differenz-als-summe schreibt Differenzen um."
+    },
+    {
+      "lb": 1,
+      "section": "1.2",
+      "competence": "erkennen die Struktur von Termen, die durch Addition und Subtraktion ganzer Zahlen sowie durch Klammersetzung entstehen, gliedern solche Terme unter Verwendung der entsprechenden Fachbegriffe und ermitteln deren Wert in fortlaufender, klar strukturierter Rechnung.",
+      "lessons": [
+        "nz-15-terme"
+      ],
+      "status": "implemented",
+      "evidence": "Das Labor term-tree-add zeigt den Termbaum und die Rechenschritte; term-art gliedert, term-wert berechnet."
+    },
+    {
+      "lb": 2,
+      "competence": "stellen Punkte, Strecken, Geraden und Kreise sorgfältig im kartesischen Koordinatensystem dar. Sie nutzen die Koordinatendarstellung von Punkten sowie die abkürzenden Schreibweisen für Strecken, Geraden und Kreise als Hilfsmittel zur leichteren Kommunikation über geometrische Objekte.",
+      "lessons": [
+        "ge-1-koordinaten",
+        "ge-2-schreibweisen"
+      ],
+      "status": "implemented",
+      "evidence": "Die Labore coords und line-kinds stellen Punkte und Linien dar; punkt-verschieben und schreibweise üben Koordinaten und Schreibweisen, kreis-lesen den Kreis k(M; r). Sorgfältiges Zeichnen geschieht auf Papier."
+    },
+    {
+      "lb": 2,
+      "competence": "beschreiben die möglichen Lagebeziehungen zwischen Punkt und Gerade, zwischen zwei Geraden, zwischen Kreis und Gerade sowie zwischen zwei Kreisen; dabei verwenden sie die Begriffe Abstand, parallel, senkrecht, Lot und Tangente fachsprachlich korrekt.",
+      "lessons": [
+        "ge-3-lot-abstand",
+        "ge-4-kreis-gerade",
+        "ge-5-zwei-kreise"
+      ],
+      "status": "implemented",
+      "evidence": "Die Labore line-relations, circle-line und two-circles zeigen alle Lagen; abstand-ablesen, lage-geraden, gerade-benennen und kreise-lage nutzen die Fachbegriffe."
+    },
+    {
+      "lb": 2,
+      "competence": "kennzeichnen die Lage von Punkten, die bestimmten Bedingungen genügen (insbesondere: Abstand von anderen Punkten oder von Geraden), und verwenden dies, um auch in Sachsituationen eine begründete Entscheidung treffen zu können; sie greifen dabei auch auf ihr Verständnis der grundlegenden Eigenschaft der Kreislinie zurück.",
+      "lessons": [
+        "ge-6-punkte-bedingungen"
+      ],
+      "status": "implemented",
+      "evidence": "Das Labor locus sucht Punkte auf Kreis und Parallelen; wo-liegen-sie und entscheidung begründen Entscheidungen im Sachzusammenhang."
+    },
+    {
+      "lb": 2,
+      "competence": "messen und zeichnen mit dem Geodreieck Winkel bis zu einer Größe von 360° und beschreiben diese mit Fachbegriffen.",
+      "lessons": [
+        "ge-7-winkel"
+      ],
+      "status": "implemented",
+      "evidence": "Das Labor angle benennt jeden Winkel bis 360°; winkelart und ueberstumpf-rechnen üben Namen und das Messen überstumpfer Winkel. Messen und Zeichnen mit dem Geodreieck geschieht auf Papier."
+    },
+    {
+      "lb": 2,
+      "competence": "erkennen und erzeugen (z. B. durch Zeichnen, Einsatz einer dynamischen Geometriesoftware) die Vierecke Quadrat, Rechteck, Parallelogramm, Raute, Drachenviereck und Trapez und ordnen Gegenstände aus ihrem Umfeld diesen mathematischen Grundfiguren zu. Sie beschreiben die charakteristischen Eigenschaften dieser Vierecke (insbesondere bezüglich deren Seiten) und verwenden diese bei Argumentationen, auch im Zusammenhang mit kopfgeometrischen Betrachtungen.",
+      "lessons": [
+        "ge-8-vierecke",
+        "ge-9-viereck-eigenschaften"
+      ],
+      "status": "implemented",
+      "evidence": "Das Labor quad-lab erzeugt die Vierecke durch Ziehen und nennt den genauesten Namen; name-finden, jedes-ist und kopfgeometrie ordnen zu und argumentieren."
+    },
+    {
+      "lb": 3,
+      "section": "3.1",
+      "competence": "multiplizieren und dividieren natürliche Zahlen automatisiert schriftlich, auch wenn Faktoren mehr als zwei Stellen haben bzw. Divisoren größer als zehn sind. Ihre Ergebnisse überprüfen sie durch Abschätzen der Größenordnung kritisch.",
+      "lessons": [
+        "mu-1-multiplizieren",
+        "mu-2-dividieren"
+      ],
+      "status": "implemented",
+      "evidence": "Das Labor written-mult zeigt Teilergebnisse; produkt und quotient rechnen schriftlich mit großen Faktoren und Divisoren, ueberschlag-produkt prüft die Größenordnung."
+    },
+    {
+      "lb": 3,
+      "section": "3.1",
+      "competence": "faktorisieren natürliche Zahlen und ermitteln deren Primfaktorzerlegung, wobei sie sich der Eindeutigkeit dieser Zerlegung bewusst sind; beim Faktorisieren wenden sie auch Regeln für die Teilbarkeit durch 2, 3, 5 und 10 zielgerichtet an und argumentieren mit ihnen.",
+      "lessons": [
+        "mu-3-teilbarkeit",
+        "mu-4-primfaktoren"
+      ],
+      "status": "implemented",
+      "evidence": "Die Labore divisibility und factor-tree zeigen Regeln und Zerlegung; teilbar-pruefen und zerlegung-finden üben sie."
+    },
+    {
+      "lb": 3,
+      "section": "3.1",
+      "competence": "erkennen, ob in einem realitätsnahen Kontext das Zählprinzip angewendet werden kann, und nutzen dieses sowie Baumdiagramme zur systematischen Bestimmung von Anzahlen.",
+      "lessons": [
+        "mu-5-zaehlprinzip"
+      ],
+      "status": "implemented",
+      "evidence": "Das Labor combi-tree zeichnet das Baumdiagramm; kombinationen und ohne-wiederholung bestimmen Anzahlen und prüfen, ob sich die Stufen ändern."
+    },
+    {
+      "lb": 3,
+      "section": "3.1",
+      "competence": "machen die Vorzeichenregeln für die Multiplikation und Division ganzer Zahlen altersgemäß plausibel und berechnen die Werte von Produkten und Quotienten ganzer Zahlen, bei angemessen gewählten Zahlen auch im Kopf.",
+      "lessons": [
+        "mu-6-vorzeichen"
+      ],
+      "status": "implemented",
+      "evidence": "Die Erklärung macht die Regel am Muster plausibel, das Labor int-mult zeigt die Vorzeichentabelle; produkt-quotient und vorzeichen-zaehlen üben sie."
+    },
+    {
+      "lb": 3,
+      "section": "3.1",
+      "competence": "erkennen und nutzen Rechenvorteile, die sich durch Anwenden von Kommutativ- und Assoziativgesetz ergeben.",
+      "lessons": [
+        "mu-7-rechenvorteile"
+      ],
+      "status": "implemented",
+      "evidence": "Das Labor laws zeigt beide Gesetze; geschickt-multiplizieren nutzt runde Paare, gesetz-erkennen benennt die Gesetze."
+    },
+    {
+      "lb": 3,
+      "section": "3.1",
+      "competence": "berechnen die Werte von Potenzen mit natürlichen Exponenten und ganzzahligen Basen, verwenden Zehnerpotenzen, um große natürliche Zahlen situationsangemessen darzustellen, und nutzen Potenzen auch in Sachzusammenhängen (z. B. zur Beschreibung von Phänomenen, denen ein wiederholtes Verdoppeln zugrunde liegt); sie verfügen über ein automatisiertes Wissen der Quadratzahlen bis 400.",
+      "lessons": [
+        "mu-8-potenzen",
+        "mu-9-quadratzahlen",
+        "mu-10-zehnerpotenzen"
+      ],
+      "status": "implemented",
+      "evidence": "Die Labore power und powers-of-ten bauen Potenzen und Zehnerpotenzen; potenzwert, quadrat-abrufen, zehnerpotenz und verdoppeln üben alle Teile."
+    },
+    {
+      "lb": 3,
+      "section": "3.1",
+      "competence": "lösen Gleichungen der Form a ⋅ x = b, x : a = b und a : x = b, wie in der Grundschule angebahnt, durch systematisches Probieren oder durch Bildung der jeweiligen Umkehraufgabe.",
+      "lessons": [
+        "mu-11-gleichungen"
+      ],
+      "status": "implemented",
+      "evidence": "Das Labor equation-mul probiert alle drei Formen durch; umkehraufgabe und gedachte-zahl üben beide Wege."
+    },
+    {
+      "lb": 3,
+      "section": "3.2",
+      "competence": "erfassen Termstrukturen, die durch die Verbindung der Grundrechenarten bei ganzen Zahlen und durch Klammersetzung entstehen, und gliedern auf dieser Grundlage Terme unter Verwendung der entsprechenden Fachbegriffe.",
+      "lessons": [
+        "te-1-gliedern"
+      ],
+      "status": "implemented",
+      "evidence": "Das Labor term-tree-mixed zeigt die letzte Rechnung oben im Baum; termart und teil-benennen gliedern mit Fachbegriffen."
+    },
+    {
+      "lb": 3,
+      "section": "3.2",
+      "competence": "ermitteln in fortlaufender, klar strukturierter Rechnung die Werte von Termen, die durch die Verbindung der Grundrechenarten bei ganzen Zahlen und durch Klammersetzung entstehen; dabei wenden sie auch Regeln für die Reihenfolge der Rechenschritte (insbesondere „Punkt vor Strich“) an.",
+      "lessons": [
+        "te-2-punkt-vor-strich"
+      ],
+      "status": "implemented",
+      "evidence": "Das Labor int-mixed zeigt die fortlaufende Rechnung; reihenfolge und klammer-setzen üben die Regeln."
+    },
+    {
+      "lb": 3,
+      "section": "3.2",
+      "competence": "erkennen und nutzen Rechenvorteile, die sich durch Anwenden von Kommutativ-, Assoziativ- und Distributivgesetz ergeben. Insbesondere stellen sie auf der Grundlage eines gewachsenen Abstraktionsvermögens anhand einfacher Beispiele dar, dass es sich bei einigen aus der Grundschule bekannten Kopfrechenstrategien um Anwendungen des Distributivgesetzes handelt.",
+      "lessons": [
+        "te-3-distributivgesetz"
+      ],
+      "status": "implemented",
+      "evidence": "Das Labor distributive zeigt das Gesetz am Rechteck; kopfrechnen und ausklammern erklären Kopfrechenstrategien."
+    },
+    {
+      "lb": 3,
+      "section": "3.2",
+      "competence": "setzen bei der Lösung von Problemstellungen zu ganzen Zahlen insbesondere die Strategien Vorwärts- und Rückwärtsarbeiten bewusst ein und reflektieren diese altersangemessen.",
+      "lessons": [
+        "te-4-vorwaerts-rueckwaerts"
+      ],
+      "status": "implemented",
+      "evidence": "Das Labor chain zeigt beide Richtungen; zahl-zurueck und vorwaerts-rechnen setzen sie ein."
+    },
+    {
+      "lb": 3,
+      "section": "3.2",
+      "competence": "lösen anwendungsbezogene Aufgaben unter Verwendung von ganzen Zahlen. Dabei dokumentieren sie den von ihnen gewählten Lösungsweg nachvollziehbar, präsentieren ihn in angemessener Form sowie unter Verwendung von Fachsprache und erläutern ihre Gedankengänge. Ihre Ergebnisse überprüfen sie kritisch im Sachzusammenhang und durch eine Überschlagsrechnung.",
+      "lessons": [
+        "te-5-sachaufgaben"
+      ],
+      "status": "implemented",
+      "evidence": "Das Vorgehen steht in der Erklärung; das Labor shopping plant einen Einkauf, klassenfahrt und kontostand sind Sachaufgaben. Mündliches Präsentieren bleibt dem Unterricht vorbehalten."
+    },
+    {
+      "lb": 4,
+      "section": "4.1",
+      "competence": "verstehen das Prinzip des Messens und rechnen Größenangaben bei Geld (€, ct), Länge (km, m, dm, cm, mm), Masse (t, kg, g, mg) und Zeit (h, min, s) jeweils in andere Einheiten um; dabei verwenden sie bei den Größen Geld, Länge und Masse – unter Rückgriff auf Einheitentafeln – auch Angaben in Kommaschreibweise.",
+      "lessons": [
+        "gr-1-laenge-masse",
+        "gr-2-geld-zeit",
+        "gr-3-kommaschreibweise"
+      ],
+      "status": "implemented",
+      "evidence": "Die Labore ladder-length-mass, ladder-money-time und notation zeigen die Umrechnung; umrechnen, umrechnen-geld-zeit und komma-in-klein üben sie."
+    },
+    {
+      "lb": 4,
+      "section": "4.1",
+      "competence": "rechnen sicher mit Größen (addieren, subtrahieren, vervielfachen, dividieren); die zugehörigen Regeln, die sich aus der Zusammensetzung einer Größe aus Maßzahl und Maßeinheit ergeben, erklären sie an Beispielen. Beim Addieren und Subtrahieren gehen sie bei den Größen Geld, Länge und Masse auch mit Größenangaben in Kommaschreibweise um.",
+      "lessons": [
+        "gr-4-rechnen"
+      ],
+      "status": "implemented",
+      "evidence": "Das Labor size-times rechnet über die kleinere Einheit; gemischte-einheiten addiert in Kommaschreibweise, vervielfachen-teilen vervielfacht und dividiert."
+    },
+    {
+      "lb": 4,
+      "section": "4.1",
+      "competence": "schätzen in Sachsituationen Größen unter Verwendung von Bezugsgrößen aus ihrer Erfahrungswelt (z. B. Körpergröße eines Menschen) ab und nutzen dies bei Sachaufgaben auch zur Kontrolle von Ergebnissen; deren Plausibilität überprüfen sie bei Bedarf auch durch eine gezielte Recherche (z. B. im Internet). Ihre Lösungswege dokumentieren sie nachvollziehbar und präsentieren sie in angemessener Form.",
+      "lessons": [
+        "gr-5-schaetzen"
+      ],
+      "status": "implemented",
+      "evidence": "Das Labor measure-sense bewertet Schätzungen; was-passt und kontrolle nutzen Bezugsgrößen. Recherchieren und Präsentieren werden erklärt, geschehen aber außerhalb der App."
+    },
+    {
+      "lb": 4,
+      "section": "4.1",
+      "competence": "setzen die in der Grundschule noch intuitiv verwendete Schlussrechnung bewusst zur Lösung von Sachaufgaben ein und stellen die einzelnen Rechenschritte – auch in Form eines Dreisatzes – strukturiert dar.",
+      "lessons": [
+        "gr-6-dreisatz"
+      ],
+      "status": "implemented",
+      "evidence": "Das Labor dreisatz zeigt die drei Zeilen; preis und passt-dreisatz rechnen und prüfen, ob der Dreisatz passt."
+    },
+    {
+      "lb": 4,
+      "section": "4.1",
+      "competence": "lösen insbesondere zum Maßstab realitätsnahe Sachaufgaben und verwenden dabei geeignete Einheiten.",
+      "lessons": [
+        "gr-7-massstab"
+      ],
+      "status": "implemented",
+      "evidence": "Das Labor scale verbindet Bild und Wirklichkeit; karte-wirklichkeit und massstab-bestimmen rechnen mit geeigneten Einheiten."
+    },
+    {
+      "lb": 4,
+      "section": "4.2",
+      "competence": "nutzen in Erweiterung der in der Grundschule erworbenen Kenntnisse das Prinzip des Messens auch dazu, die Formel zur Bestimmung des Flächeninhalts eines Rechtecks plausibel zu machen.",
+      "lessons": [
+        "fl-1-rechteck"
+      ],
+      "status": "implemented",
+      "evidence": "Das Labor area-rect legt Einheitsquadrate aus; flaeche-berechnen und fliesen nutzen die Formel."
+    },
+    {
+      "lb": 4,
+      "section": "4.2",
+      "competence": "haben eine Vorstellung von der Größe der Einheitsquadrate, die zur Definition der Flächeneinheiten verwendet werden. Sie rechnen Flächeninhalte in verschiedene Einheiten (km², ha, a, m², dm², cm², mm²) um und begründen ihr Vorgehen z. B. anhand des Auslegens mit Einheitsquadraten; beim Umrechnen verwenden sie – unter Rückgriff auf Einheitentafeln – auch Angaben in Kommaschreibweise.",
+      "lessons": [
+        "fl-2-einheiten"
+      ],
+      "status": "implemented",
+      "evidence": "Das Labor area-ladder zeigt die Stufen mit Faktor 100; flaeche-umrechnen und flaeche-mit-komma nutzen auch Kommaschreibweise."
+    },
+    {
+      "lb": 4,
+      "section": "4.2",
+      "competence": "unterscheiden sicher zwischen den Begriffen Umfang und Flächeninhalt und nutzen die Formeln für Umfang bzw. Flächeninhalt von Quadraten und Rechtecken auch bei der Lösung realitätsnaher Problemstellungen; dabei verwenden sie gezielt auch veranschaulichende Skizzen und bestimmen Näherungswerte für Flächeninhalte, indem sie eine Modellierung mithilfe geeigneter Rechtecke durchführen.",
+      "lessons": [
+        "fl-3-umfang-flaeche",
+        "fl-4-naeherung"
+      ],
+      "status": "implemented",
+      "evidence": "Die Labore perimeter und approx-rect zeigen beide Größen und die Näherung; u-und-a, gleicher-umfang und see-modellieren üben sie. Skizzen entstehen auf Papier."
+    },
+    {
+      "lb": 4,
+      "section": "4.2",
+      "competence": "führen Flächeninhaltsbestimmungen durch gezieltes Zerlegen und Ergänzen von Flächen unter Verwendung der Flächeninhaltsformel für Rechtecke durch; bei Aufgaben, die verschiedene Lösungswege zulassen, erläutern und beurteilen sie vergleichend diese Lösungswege.",
+      "lessons": [
+        "fl-5-zerlegen"
+      ],
+      "status": "implemented",
+      "evidence": "Das Labor composite wechselt zwischen beiden Wegen; l-form rechnet, zerlegen-teile vergleicht und beurteilt die Wege."
+    },
+    {
+      "lb": 4,
+      "section": "4.2",
+      "competence": "bestimmen – auch unter Verwendung von Netzen und Schrägbildern – Oberflächeninhalte von Quadern und einfachen zusammengesetzten Körpern. Sie lösen geeignete ebene und räumliche Problemstellungen im Kopf.",
+      "lessons": [
+        "fl-6-oberflaeche",
+        "fl-7-zusammengesetzt",
+        "fl-8-kopfgeometrie"
+      ],
+      "status": "implemented",
+      "evidence": "Die Labore box-net, box-stack und cube-net zeigen Netz, Schrägbild und Faltung; oberflaeche-berechnen, wuerfel-aufgesetzt und gegenflaeche rechnen und falten im Kopf."
+    }
+  ]
+}
