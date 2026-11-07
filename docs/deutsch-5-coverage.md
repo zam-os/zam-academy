@@ -43,11 +43,14 @@ snapshots and the ZAM commit and explains each proposed decision.
 - B · 0 older multi-part prompts are carried forward in full.
 - C · 5 incorrect multi-part prompts are proposed for retirement after approval. The other 3 stay active.
 
-The proposal has no approval date. The new cell can be installed alongside
-both legacy cells. Its validation script checks the pinned snapshots, installs
-the legacy cells in a disposable library, adds 32 review records, and verifies
-that installing and enrolling the new cell preserves every existing card
-and review. Repeating installation and enrollment yields the same state.
+The proposal has no approval date. The migration validator checks the pinned
+snapshots and seeds 32 review records in temporary libraries. It verifies
+that the package preserves all 16 legacy cards and their reviews through
+installation, enrollment and repetition. A separate rehearsal applies the
+proposed transfers and retirements to a clone of the cell in memory. It checks
+the review queue, evidence preservation, repeat installation and rollback if a
+learner already holds both cards. With zam-core 0.54.0, repeated retirement
+refreshes the retired token's update timestamp.
 
 The local evaluation build includes exercises, the offline ZIP and the
 validated cell. Teacher review and videos remain open.

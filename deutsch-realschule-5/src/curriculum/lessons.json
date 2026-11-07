@@ -18,7 +18,7 @@
     ],
     "check": {
       "wrong": "Warum ist das Treffen abgesagt?",
-      "explanation": "Die erste Frage nennt genau die fehlende Information."
+      "explanation": "Die Frage nach der Uhrzeit klärt genau die Angabe, die du verpasst hast."
     },
     "takeaway": "Halte die Hauptaussage fest. Frag genau nach, wenn dir eine Angabe fehlt.",
     "lehrplan": "D5 · 1.1",
@@ -207,7 +207,7 @@
       "4.1"
     ],
     "paragraphs": [
-      "Lass die andere Person ausreden. Wiederhole ihre Sicht in eigenen Worten. Nenne deinen Wunsch als Ich-Satz und füge einen Grund an. Sucht dann eine Lösung für beide.",
+      "Lass die andere Person ausreden. Wiederhole ihre Sicht in eigenen Worten. Nenne deinen Wunsch als Ich-Satz und füge einen Grund an. Suche dann eine Lösung, die für beide passt.",
       "Beispiel: „Du brauchst den Stift fürs Plakat. Ich brauche ihn für meine Überschrift. Darf ich ihn zwei Minuten nutzen?“ Unter Freunden klingt „Leihst du ihn mir kurz?“ passend. Eine neue Lehrkraft fragst du höflich in Standardsprache."
     ],
     "materialLabel": "Streit im Klassenraum",
@@ -283,7 +283,7 @@
     ],
     "check": {
       "wrong": "Ist mein Heft schön?",
-      "explanation": "Die erste Frage verlangt eine genaue Ortsangabe."
+      "explanation": "„Wo genau steht das Fundregal?“ bittet um eine genaue Ortsangabe, damit du das Regal finden kannst."
     },
     "takeaway": "Frage nach fehlenden Angaben. Zeige gesicherte Antworten in einer klaren Ordnung.",
     "lehrplan": "D5 · 1.3, 1.2",
@@ -940,7 +940,7 @@
     ],
     "check": {
       "wrong": "Eine Nahaufnahme des Gesichts.",
-      "explanation": "Im nahen Bildausschnitt sind kleine Bewegungen der Finger erkennbar."
+      "explanation": "Die Detailaufnahme zeigt nur die Hand. Dadurch siehst du auch kleine Bewegungen der Finger."
     },
     "takeaway": "Nenne das filmische Mittel und erkläre seine Wirkung an einer konkreten Stelle.",
     "lehrplan": "D5 · 2.4, 2.2",
@@ -1259,7 +1259,7 @@
     ],
     "paragraphs": [
       "Ein persönlicher Brief hat meist Ort und Datum, Anrede, Text, Gruß und Namen. In einer persönlichen E-Mail übernehmen ein aussagekräftiger Betreff und eine passende Anrede die Orientierung. Gehe auf eine erhaltene Nachricht ein und nenne dann dein Anliegen.",
-      "Beispiel: „Liebe Mina,“ endet mit Komma. Der Text danach beginnt klein, sofern kein anderer Grund zur Großschreibung vorliegt: „vielen Dank für deine Karte.“ Nach der Grußformel „Viele Grüße“ steht hier kein Komma."
+      "Beispiel: „Liebe Mina,“ endet mit Komma. Der Text danach beginnt klein, sofern kein anderer Grund zur Großschreibung vorliegt: „vielen Dank für deine Karte.“ In deutschen Briefen steht die Grußformel „Viele Grüße“ üblicherweise ohne Satzzeichen. Der Name folgt in der nächsten Zeile."
     ],
     "materialLabel": "Nachricht einer Freundin",
     "material": "Hallo Lea,\nich kann am Donnerstag nicht zum Büchertausch. Kannst du mir erzählen, wie es war?\n\nLiebe Grüße\nMina",
@@ -1284,13 +1284,13 @@
         "feedback": "Der Satz greift Minas Nachricht und die genannte Zeit auf."
       },
       {
-        "prompt": "Welcher Abschluss ist richtig geschrieben?",
+        "prompt": "Welcher Abschluss ist in einem persönlichen Brief in Deutschland üblich?",
         "options": [
           "Viele Grüße\nLea",
           "Viele Grüße,\nLea"
         ],
         "answer": "Viele Grüße\nLea",
-        "feedback": "Gruß und Name stehen hier in eigenen Zeilen. Nach der Grußformel steht kein Komma."
+        "feedback": "Üblich sind die Grußformel ohne Satzzeichen und der Name in der nächsten Zeile."
       }
     ],
     "tasks": {
@@ -1530,7 +1530,7 @@
     ],
     "check": {
       "wrong": "Wessen?",
-      "explanation": "„Wem folgt der Hund?“ führt hier zur Antwort „der Trainerin“."
+      "explanation": "„Wem folgt der Hund?“ führt zu „der Trainerin“. Ersetze die Wortgruppe durch „dem Trainer“. Am Artikel „dem“ erkennst du den Dativ."
     },
     "takeaway": "Frag im ganzen Satz. Setze bei gleicher Form eine passende Nomengruppe mit eindeutigem Artikel ein.",
     "lehrplan": "D5 · 4.2",
@@ -1584,7 +1584,7 @@
       "4.2"
     ],
     "paragraphs": [
-      "Personalpronomen vertreten Personen oder Dinge: „Mira kommt. Sie winkt.“ Possessive Formen zeigen Zugehörigkeit: „ihr Heft“. Demonstrativpronomen weisen gezielt auf etwas hin: „Dieser hier passt.“ Ein Relativpronomen leitet einen Relativsatz ein: „Das Heft, das hier liegt, ist blau.“",
+      "Personalpronomen vertreten Personen oder Dinge: „Mira kommt. Sie winkt.“ Possessivpronomen zeigen Zugehörigkeit: „ihr Heft“. Demonstrativpronomen weisen gezielt auf etwas hin: „Dieser hier passt.“ Ein Relativpronomen leitet einen Relativsatz ein: „Das Heft, das hier liegt, ist blau.“",
       "Achte bei mehreren Figuren auf einen klaren Bezug. „Mira winkt Lina, weil sie das Heft gefunden hat“ lässt offen, wer es fand. Nenne den Namen, wenn der Zusammenhang die Frage nicht klärt."
     ],
     "materialLabel": "Vier Bezüge",
@@ -1629,8 +1629,8 @@
         ]
       },
       "2": {
-        "prompt": "Verbinde „Toni findet ein Heft. Das Heft hat eine rote Ecke“ mit einem Relativsatz. Ergänze einen Satz mit einer Besitzform.",
-        "model": "Toni findet ein Heft, das eine rote Ecke hat. Es ist ihr Heft.",
+        "prompt": "Mira ist die Besitzerin des Hefts. Verbinde „Mira findet ein Heft. Das Heft hat eine rote Ecke“ mit einem Relativsatz. Ergänze einen Satz mit einer Besitzform.",
+        "model": "Mira findet ein Heft, das eine rote Ecke hat. Es ist ihr Heft.",
         "criteria": [
           "Ich verknüpfe die Sätze korrekt.",
           "Das Relativpronomen bezieht sich auf das Heft.",
@@ -2174,7 +2174,7 @@
       "Sprich den s-Laut in einer verlängerten Form: In „Häuser“ klingt das s bei deutlicher Standardaussprache weich. Darum bleibt auch am Ende von „Haus“ ein einfaches s. In „Füße“ bleibt der Laut scharf. Folgt im Wortstamm kein weiterer Mitlaut auf das scharfe s, hilft die Vokallänge: Nach einem kurzen betonten Vokal steht oft ss („muss“), nach einem langen Vokal oder Doppellaut ß („Fuß“, „draußen“). „Aus“ ist ein Merkwort mit einfachem s.",
       "Bei „das/dass“ prüfst du die Funktion: Artikel oder Pronomen „das“ lässt sich oft durch „dieses“, „jenes“ oder „welches“ ersetzen. Die Konjunktion „dass“ leitet einen Nebensatz ein. Schreibweisen wie „Team“ und „Interview“ kannst du nachschlagen."
     ],
-    "materialLabel": "Sätze zum Prüfen",
+    "materialLabel": "Sätze mit Lücken und Fehlern",
     "material": "Wir wissen, da? das Treffen draußen ist.\nDas Bild, da? am Tor hängt, ist neu.\nKönnen sie uns helfen, Frau Kaya?\nDas team muss warten.",
     "sourceIds": [
       "lehrplan",
@@ -2197,13 +2197,13 @@
         "feedback": "„Sie“ bezeichnet hier die direkt angesprochene Person in der höflichen Form."
       },
       {
-        "prompt": "Welche Schreibung passt in „Das Team wartet vor dem Hau? und mu? gleich los“?",
+        "prompt": "Welche Fassung korrigiert alle drei Stellen in „Das team wartet vor dem Hau? und mu? gleich los“?",
         "options": [
-          "Haus und muss",
-          "Hauß und muß"
+          "Das Team wartet vor dem Haus und muss gleich los.",
+          "Das team wartet vor dem Hauß und muß gleich los."
         ],
-        "answer": "Haus und muss",
-        "feedback": "„Häuser“ zeigt das einfache s von „Haus“. „Muss“ hat einen kurzen betonten Vokal und deshalb ss."
+        "answer": "Das Team wartet vor dem Haus und muss gleich los.",
+        "feedback": "„Team“ ist ein Nomen und beginnt groß. „Häuser“ zeigt das einfache s von „Haus“. In „muss“ steht nach dem kurzen u ein ss."
       }
     ],
     "tasks": {

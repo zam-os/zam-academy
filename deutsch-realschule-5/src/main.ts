@@ -334,7 +334,7 @@ element("#theme").addEventListener("click", () => {
 element("#zam").addEventListener("click", () =>
 	showDialog(
 		"Mit ZAM behalten",
-		"<p>Zu den Lektionen gehören 74 Wiederholungsfragen für ZAM. Diese Fassung ist für die lokale Erprobung. Die Fragen sind nach der Veröffentlichung im Academy-Katalog verfügbar.</p>",
+		"<p>Zu den Lektionen gehören 77 Wiederholungsfragen für ZAM. Diese Fassung ist für die lokale Erprobung. Die Fragen sind nach der Veröffentlichung im Academy-Katalog verfügbar.</p>",
 	),
 );
 element("#reset").addEventListener("click", () => {

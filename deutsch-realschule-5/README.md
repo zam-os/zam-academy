@@ -23,7 +23,7 @@ npm run package:zip   # release/ZAM-Academy-Deutsch-5-offline.zip
 The [coverage matrix](coverage.json) maps all 55 curriculum expectations to
 practice or preparation. The [curriculum and card inventory](../docs/deutsch-5-coverage.md)
 explains the role of classroom practice and how the 16 legacy cards were
-compared. The 74 ZAM cards live in [the cell](cell.json).
+compared. The 77 ZAM cards live in [the cell](cell.json).
 
 This package is ready for local evaluation. The publication marker keeps it
 out of the public catalog until release is authorised.

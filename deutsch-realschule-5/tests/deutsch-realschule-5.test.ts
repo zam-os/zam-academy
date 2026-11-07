@@ -34,7 +34,7 @@ const oldItems = legacyTiles.flatMap((legacy) =>
 );
 
 describe("Lernpfad und veröffentlichbarer Vertrag", () => {
-	it("pins 37 unique lesson anchors and all 111 ULIDs independently", () => {
+	it("pins 37 unique lesson anchors and all 114 ULIDs independently", () => {
 		expect(LESSONS.map((l) => l.id)).toEqual(contract.lessons);
 		expect(LESSONS).toHaveLength(37);
 		expect(new Set(LESSONS.map((l) => l.id)).size).toBe(37);
@@ -50,7 +50,7 @@ describe("Lernpfad und veröffentlichbarer Vertrag", () => {
 				]),
 			),
 		).toEqual(contract.ids);
-		expect(new Set(ids).size).toBe(111);
+		expect(new Set(ids).size).toBe(114);
 		for (const id of ids) expect(id).toMatch(/^[0-7][0-9A-HJKMNP-TV-Z]{25}$/);
 	});
 	it("keeps the additional cell separate from all 16 old retrievals", () => {
@@ -127,6 +127,23 @@ describe("Lernpfad und veröffentlichbarer Vertrag", () => {
 			"4.3": 4,
 		});
 	});
+	it("pins the captured curriculum wording and the original page checksum", async () => {
+		const snapshot = new TextEncoder().encode(
+			JSON.stringify({
+				areas: official.areas,
+				expectations: official.expectations,
+			}),
+		);
+		const digest = await crypto.subtle.digest("SHA-256", snapshot);
+		expect(
+			Array.from(new Uint8Array(digest), (byte) =>
+				byte.toString(16).padStart(2, "0"),
+			).join(""),
+		).toBe("a8736d21eecc9f90bf5c582b3790c31f4bc4446e95cbbfbe2940fecc36084a72");
+		expect(official.html_sha256).toBe(
+			"132ab1ce3603681abce16ba355ad857167a7d9a32aa63f35e9e7a702909b6a51",
+		);
+	});
 	it.each(LESSONS.map((l) => [l.id, l] as const))(
 		"%s has reachable checks, distinct tasks and a consistent cell",
 		(_, lesson) => {
@@ -169,15 +186,19 @@ describe("Lernpfad und veröffentlichbarer Vertrag", () => {
 			}
 			const atom = tile.atoms.find((a) => a.slug === lesson.id);
 			if (!atom) throw new Error("Missing atom");
-			const [fast, recall] = atom.practice_items;
+			const [fast, ...recallItems] = atom.practice_items;
 			const fastCheck = fast.fast_check;
 			if (!fastCheck) throw new Error("Missing fast check");
 			expect(fast.question).toBe(lesson.quiz.question);
 			expect(fast.concept).toBe(lesson.quiz.answer);
 			expect(fastCheck.options[fastCheck.correct_index]).toBe(fast.concept);
 			expect(fastCheck.correct_index).toBe(0);
-			expect(recall.question.length).toBeGreaterThan(20);
-			expect(recall.sample_solution?.length).toBeGreaterThan(20);
+			expect(recallItems.length).toBeGreaterThan(0);
+			for (const recall of recallItems) {
+				expect(recall.tier).toBe("tier2_synthesis");
+				expect(recall.question.length).toBeGreaterThan(20);
+				expect(recall.sample_solution?.length).toBeGreaterThan(20);
+			}
 			for (const item of atom.practice_items)
 				expect(item.source_link).toBe(
 					`https://academy.zam-os.org/deutsch-realschule-5/#lesson=${lesson.id}`,
@@ -188,6 +209,16 @@ describe("Lernpfad und veröffentlichbarer Vertrag", () => {
 			const bindings = atom.curricula.filter(
 				(c) => c.provider === "lehrplanplus-bayern",
 			);
+			expect(
+				atom.curricula.filter((c) => c.provider === "zam-academy"),
+			).toEqual([
+				{
+					provider: "zam-academy",
+					subject: "deutsch-realschule-5",
+					topic_code: lesson.stage,
+					topic_title: STAGES.find((stage) => stage.id === lesson.stage)?.title,
+				},
+			]);
 			expect(bindings.map((c) => c.topic_code)).toEqual(expectedAreas);
 			for (const binding of bindings)
 				expect(binding).toMatchObject({

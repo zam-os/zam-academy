@@ -119,8 +119,8 @@ jobs:
         run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node geographie-realschule-8/scripts/validate-cell.mjs
       - name: Preserve Deutsch 8 histories when adding the new practice package
         run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node deutsch-realschule-8/scripts/validate-cell.mjs
-      - name: Verify Grade 5 German cell preserves existing review histories
-        run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node deutsch-realschule-5/scripts/validate-cell.mjs
+      - name: Verify Grade 5 German histories and rehearse the mapping in temporary libraries
+        run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node deutsch-realschule-5/scripts/validate-migration.mjs
       - name: Preserve existing histories when adding History 8
         run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node geschichte-realschule-8/scripts/validate-cell.mjs
       - name: Preserve existing histories when adding French 8
