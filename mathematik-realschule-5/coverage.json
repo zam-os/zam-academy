@@ -1,0 +1,383 @@
+{
+  "schema": 1,
+  "checked": "2026-11-06",
+  "curriculum": "https://www.lehrplanplus.bayern.de/fachlehrplan/realschule/5/mathematik",
+  "school_type": "realschule",
+  "grade": 5,
+  "subject": "mathematik",
+  "scope": "all-official-learning-areas",
+  "optional_lessons": [],
+  "scope_note": "Sechs Lernbereiche für alle Schülerinnen und Schüler; Wahlpflichtfächergruppen gibt es erst ab Jahrgangsstufe 7. Zeichnen, Messen, Falten und Spannen am Geobrett geschieht auf Papier oder handelnd; die App erläutert und überprüft die zugehörigen Begriffe und Rechnungen. Videos folgen als separater Schritt.",
+  "rows": [
+    {
+      "lb": 1,
+      "section": "1.1",
+      "competence": "beschreiben die Menge der natürlichen Zahlen als Zahlenmenge ohne größtes Element und erweitern so ihren eingeschränkten Zahlenbereich.",
+      "lessons": [
+        "nz-1-zahlenmenge"
+      ],
+      "status": "implemented",
+      "evidence": "Erklärung und Merksatz begründen über den Nachfolger, warum ℕ kein größtes Element hat; das Labor successor zeigt Vorgänger und Nachfolger bis in die Billionen, groesste-zahl übt die größte Zahl mit fester Stellenzahl."
+    },
+    {
+      "lb": 1,
+      "section": "1.1",
+      "competence": "stellen natürliche Zahlen mithilfe von Stufenzahlen dar und erklären damit den Aufbau des Dezimalsystems als Stellenwertsystem.",
+      "lessons": [
+        "nz-2-stufenzahlen"
+      ],
+      "status": "implemented",
+      "evidence": "Das Labor place-value baut Zahlen in der Stellenwerttafel und zerlegt sie in Ziffer mal Stufenzahl; stelle-wert und zerlegung-zahl erklären den Wert einer Stelle."
+    },
+    {
+      "lb": 1,
+      "section": "1.1",
+      "competence": "lesen natürliche Zahlen am Zahlenstrahl ab, verknüpfen sie mit den Beziehungen kleiner als bzw. größer als und tragen zur Visualisierung natürliche Zahlen am Zahlenstrahl unter Verwendung einer geeigneten Skalierung an.",
+      "lessons": [
+        "nz-3-zahlenstrahl"
+      ],
+      "status": "implemented",
+      "evidence": "Das Labor number-ray trägt Zahlen mit wählbarer Skalierung an und vergleicht mit 1.000; ablesen bestimmt den Wert eines Teilstrichs, vergleichen nutzt die Zeichen kleiner und größer."
+    },
+    {
+      "lb": 1,
+      "section": "1.1",
+      "competence": "runden natürliche Zahlen und begründen, in welchen Sachzusammenhängen dies sinnvoll ist.",
+      "lessons": [
+        "nz-4-runden"
+      ],
+      "status": "implemented",
+      "evidence": "Das Labor rounding zeigt die Mitte zwischen den runden Nachbarn; runden-stelle rundet auf Stellen, runden-sinnvoll begründet, wann Runden sinnvoll ist und wann die Sache Aufrunden verlangt."
+    },
+    {
+      "lb": 1,
+      "section": "1.2",
+      "competence": "wandeln Zahlen aus einem anderen Zahlensystem (z. B. Dualsystem, römisches Zahlensystem) ins Dezimalsystem und umgekehrt um und begründen Vor- und Nachteile der verschiedenen Zahlensysteme.",
+      "lessons": [
+        "nz-5-dualsystem",
+        "nz-6-roemisch"
+      ],
+      "status": "implemented",
+      "evidence": "binary und roman wandeln in beide Richtungen um; dual-zu-dezimal, dezimal-zu-dual, roemisch-zu-dezimal und dezimal-zu-roemisch üben das. vor-nachteile begründet Vor- und Nachteile der Systeme."
+    },
+    {
+      "lb": 1,
+      "section": "1.3",
+      "competence": "wenden automatisiert die in der Grundschule erlernten schriftlichen Verfahren der Addition, Subtraktion (Abziehverfahren mit Entbündeln), Multiplikation und Division unter Verwendung der Fachbegriffe für die entsprechenden Terme an.",
+      "lessons": [
+        "nz-7-addieren-subtrahieren",
+        "nz-8-multiplizieren-dividieren"
+      ],
+      "status": "implemented",
+      "evidence": "written-calc zeigt Überträge und Entbündeln, written-mult die Teilergebnisse; die Generatoren üben alle vier Verfahren, fachbegriffe und die Formelzeilen nutzen Summe, Differenz, Produkt und Quotient."
+    },
+    {
+      "lb": 1,
+      "section": "1.3",
+      "competence": "lösen Sachaufgaben, vergleichen und bewerten unterschiedliche Rechenwege und begründen, ob Ergebnisse plausibel sind.",
+      "lessons": [
+        "nz-9-sachaufgaben"
+      ],
+      "status": "implemented",
+      "evidence": "mehrschritt löst Sachaufgaben in zwei Schritten, plausibel prüft Ergebnisse mit dem Überschlag; das Labor estimate vergleicht genaues Produkt und gerundetes Rechteck, die Erklärung vergleicht Rechenwege."
+    },
+    {
+      "lb": 1,
+      "section": "1.3",
+      "competence": "führen Berechnungen, bei denen die vier Grundrechenarten miteinander verbunden sind, sicher durch, beachten dabei die Rechenregeln und wenden die Rechengesetze zum vorteilhaften Rechnen an.",
+      "lessons": [
+        "nz-10-rechenregeln",
+        "nz-11-rechengesetze"
+      ],
+      "status": "implemented",
+      "evidence": "order-of-ops zeigt die Reihenfolge Schritt für Schritt gegen stur von links; laws zeigt die drei Gesetze; terme, term-aufstellen, vorteilhaft und gesetz-erkennen üben verbundene Rechnungen und Rechenvorteile."
+    },
+    {
+      "lb": 1,
+      "section": "1.3",
+      "competence": "stellen insbesondere große Zahlen in Zehnerpotenzschreibweise dar, um so eine der jeweiligen Situation angemessene Darstellung zu erhalten.",
+      "lessons": [
+        "nz-13-zehnerpotenzen"
+      ],
+      "status": "implemented",
+      "evidence": "Das Labor powers-of-ten verbindet Kurzform und ausgeschriebene Zahl; ausschreiben und exponent-finden wechseln in beide Richtungen, die Erklärung nennt, wann die Schreibweise angemessen ist."
+    },
+    {
+      "lb": 1,
+      "section": "1.3",
+      "competence": "verwenden die Fachbegriffe von Potenzen, lösen – auch mithilfe ihres automatisierten Wissens über Quadratzahlen bis 400 – Aufgaben zu Potenzen und beschreiben so Phänomene mit exponentiellem Wachstum (z. B. Kettenmails, Zellteilung, Bakterienwachstum).",
+      "lessons": [
+        "nz-12-potenzen",
+        "nz-14-wachstum"
+      ],
+      "status": "implemented",
+      "evidence": "power nennt Basis, Exponent und Potenzwert, quadratzahlen übt die Quadratzahlen bis 400; doubling und die Generatoren in nz-14 beschreiben Zellteilung, Kettenmails und Bakterien mit Potenzen."
+    },
+    {
+      "lb": 1,
+      "section": "1.3",
+      "competence": "wenden Teilbarkeitsregeln an und ermitteln damit Teiler und Teilermengen, zerlegen Zahlen in ihre Primfaktoren und bestimmen bei einfachen Zahlenbeispielen den größten gemeinsamen Teiler (ggT) sowie das kleinste gemeinsame Vielfache (kgV).",
+      "lessons": [
+        "nz-15-teilbarkeit",
+        "nz-16-primfaktoren",
+        "nz-17-ggt-kgv"
+      ],
+      "status": "implemented",
+      "evidence": "divisibility zeigt die Regeln und die Teilermenge, factor-tree die Zerlegung, ggt-kgv die gemeinsamen Teiler und Vielfachen; regel-anwenden, teilermenge, zerlegen, ggt und kgv üben das mit einfachen Zahlen."
+    },
+    {
+      "lb": 1,
+      "section": "1.4",
+      "competence": "bestimmen die Anzahl der verschiedenen Möglichkeiten bei kombinatorischen Aufgabenstellungen (z. B. mögliche Kleidungskombinationen) durch systematisches Vorgehen (auch durch Anwenden des Zählprinzips) und stellen ihre Ergebnisse strukturiert dar (z. B. Baumdiagramm, Zeichnung, Tabelle).",
+      "lessons": [
+        "nz-18-kombinatorik"
+      ],
+      "status": "implemented",
+      "evidence": "Das Labor combi-tree zeichnet das Baumdiagramm zu Kleidungskombinationen; zaehlprinzip und ohne-wiederholung nutzen das Zählprinzip, die Erklärung nennt Tabelle, Zeichnung und Baum."
+    },
+    {
+      "lb": 2,
+      "competence": "erläutern anhand geeigneter Beispiele die Notwendigkeit der Erweiterung des Zahlenbereichs auf die Menge der ganzen Zahlen und beschreiben Situationen, in denen negative Zahlen von Bedeutung sind.",
+      "lessons": [
+        "gz-1-negative-zahlen"
+      ],
+      "status": "implemented",
+      "evidence": "Die Erklärung leitet die Erweiterung aus 3 − 5 her; thermometer zeigt Temperatur, Kontostand und Stockwerke, temperatur und situation übersetzen Sachlagen in negative Zahlen."
+    },
+    {
+      "lb": 2,
+      "competence": "verwenden zutreffend die Begriffe positive ganze Zahl, negative ganze Zahl, Gegenzahl, Vorzeichen und Betrag.",
+      "lessons": [
+        "gz-2-begriffe"
+      ],
+      "status": "implemented",
+      "evidence": "opposite zeigt Vorzeichen, Gegenzahl und Betrag an der Zahlengeraden; gegenzahl-betrag und wahr-falsch prüfen die Begriffe positive und negative ganze Zahl."
+    },
+    {
+      "lb": 2,
+      "competence": "lesen ganze Zahlen an der Zahlengeraden ab, verknüpfen sie mit den Beziehungen kleiner als bzw. größer als und tragen zur Visualisierung ganze Zahlen an der Zahlengeraden unter Verwendung einer geeigneten Skalierung an.",
+      "lessons": [
+        "gz-3-zahlengerade"
+      ],
+      "status": "implemented",
+      "evidence": "integer-line setzt zwei Punkte auf eine Gerade mit wählbarer Skalierung und nennt das Vergleichszeichen; ablesen und vergleichen üben Ablesen und Anordnen."
+    },
+    {
+      "lb": 2,
+      "competence": "addieren, subtrahieren, multiplizieren und dividieren ganze Zahlen sowohl schriftlich als auch im Kopf. Dabei wenden sie die Vorzeichenregeln an und setzen die Rechengesetze zum vorteilhaften Rechnen ein.",
+      "lessons": [
+        "gz-4-addieren-subtrahieren",
+        "gz-5-multiplizieren-dividieren",
+        "gz-6-verbindungen"
+      ],
+      "status": "implemented",
+      "evidence": "int-add und int-mult zeigen Pfeile und Vorzeichenregeln; plus-minus, konto, produkt und quotient üben die vier Rechenarten, vorteilhaft-alltag setzt die Rechengesetze ein."
+    },
+    {
+      "lb": 2,
+      "competence": "führen Berechnungen, bei denen die vier Grundrechenarten miteinander verbunden sind, sicher durch, beachten dabei die Rechenregeln und lösen einfache alltagsbezogene Aufgaben.",
+      "lessons": [
+        "gz-6-verbindungen"
+      ],
+      "status": "implemented",
+      "evidence": "int-mixed zeigt die Schritte verbundener Rechnungen mit ganzen Zahlen; gemischt übt die Rechenregeln, vorteilhaft-alltag einfache alltagsbezogene Aufgaben."
+    },
+    {
+      "lb": 3,
+      "competence": "nutzen geometrische Begriffe (Punkt, Strecke, Gerade, Halbgerade (Strahl), Kreislinie, Kreisfläche, Kreissektor), deren Eigenschaften (Länge einer Strecke, Entfernung, Abstand, Radius und Durchmesser des Kreises) und Schreibweisen zum Zeichnen und Beschreiben der Lagebeziehungen von Punkt zu Gerade und Gerade zu Gerade (sich schneidend, parallel, senkrecht).",
+      "lessons": [
+        "ge-1-grundbegriffe",
+        "ge-2-lagebeziehungen",
+        "ge-3-kreis"
+      ],
+      "status": "implemented",
+      "evidence": "line-kinds zeigt Strecke, Halbgerade und Gerade mit Schreibweisen, line-relations parallel, senkrecht, schneidend und Abstand, circle-parts Radius, Durchmesser und Kreissektor; die Generatoren dazu nutzen die Begriffe."
+    },
+    {
+      "lb": 3,
+      "competence": "erzeugen (z. B. durch Zeichnen, Einsatz dynamischer Geometriesoftware, Falten, Spannen am Geobrett etc.) und beschreiben ebene Figuren (insbesondere Dreiecke und Vierecke) auf Grundlage ihrer charakteristischen Eigenschaften.",
+      "lessons": [
+        "ge-4-dreiecke",
+        "ge-5-vierecke"
+      ],
+      "status": "implemented",
+      "evidence": "triangle-types und quad-types erzeugen Figuren und benennen sie anhand ihrer Eigenschaften; nach-seiten, nach-winkeln und eigenschaft-name üben das. Zeichnen, Falten und Geobrett auf Papier nennt die Erklärung; im Labor geschieht das Erzeugen digital."
+    },
+    {
+      "lb": 3,
+      "competence": "verwenden das Koordinatensystem zur Orientierung in der Ebene und stellen geometrische Figuren darin dar.",
+      "lessons": [
+        "ge-6-koordinatensystem"
+      ],
+      "status": "implemented",
+      "evidence": "coords stellt Punkte und ein Rechteck im Koordinatensystem dar; koordinaten-lesen orientiert sich in der Ebene, vierter-punkt ergänzt eine Figur."
+    },
+    {
+      "lb": 3,
+      "competence": "messen, zeichnen und beschreiben Winkel von 0° bis 360° mit Fachbegriffen und nutzen die Winkelbeziehungen an sich schneidenden Geraden zum Bestimmen von Winkelmaßen (Scheitel- und Nebenwinkel).",
+      "lessons": [
+        "ge-7-winkel",
+        "ge-8-winkelpaare"
+      ],
+      "status": "implemented",
+      "evidence": "angle dreht Winkel von 0° bis 360° und nennt die Art, angle-pairs zeigt Scheitel- und Nebenwinkel; winkelart, uhr, nebenwinkel-scheitelwinkel und alle-vier üben das. Das Messen mit dem Geodreieck beschreibt die Erklärung und geschieht auf Papier."
+    },
+    {
+      "lb": 3,
+      "competence": "identifizieren und beschreiben Würfel, Quader, Prisma, Pyramide, Zylinder, Kegel sowie Kugel anhand der Anzahl der Ecken, Kanten sowie der Lage und Form ihrer Begrenzungsflächen.",
+      "lessons": [
+        "ge-9-koerper"
+      ],
+      "status": "implemented",
+      "evidence": "solids zeigt alle sieben Körper mit Ecken, Kanten und Begrenzungsflächen; zaehlen und erkennen üben das an Modellen und Alltagsgegenständen."
+    },
+    {
+      "lb": 3,
+      "competence": "zeichnen Netze und Schrägbilder von Würfeln und Quadern und wenden Kopfgeometrie zur Lösung geometrischer Aufgaben in der Ebene und im Raum an.",
+      "lessons": [
+        "ge-10-netze",
+        "ge-11-schraegbild",
+        "ge-12-kopfgeometrie"
+      ],
+      "status": "implemented",
+      "evidence": "box-net zeichnet Quadernetze, oblique Schrägbilder mit verdeckten Kanten, cube-net lässt Würfelnetze im Kopf falten; kantenlaenge, netzmasse, tiefe, spielwuerfel und netz-oder-nicht üben das. Freihandzeichnen geschieht auf Papier."
+    },
+    {
+      "lb": 4,
+      "competence": "unterscheiden bei Größen die Begriffe Maßzahl und Maßeinheit, verwenden je nach Alltagssituation passende Maßeinheiten und nutzen Größenvorstellungen zum Schätzen von Größen.",
+      "lessons": [
+        "gr-1-masszahl-schaetzen"
+      ],
+      "status": "implemented",
+      "evidence": "measure-sense verbindet Maßzahl, Einheit und Plausibilität an Alltagsgegenständen; einheit-waehlen und schaetzen nutzen Größenvorstellungen und Vergleichsgrößen."
+    },
+    {
+      "lb": 4,
+      "competence": "rechnen die Einheiten der Größen Geld, Masse, Länge, Zeit und Hohlmaß in größere und kleinere Einheiten situationsgerecht um und lösen damit Aufgaben aus dem Lebensalltag.",
+      "lessons": [
+        "gr-2-laenge-masse",
+        "gr-3-geld-zeit-hohlmass"
+      ],
+      "status": "implemented",
+      "evidence": "Die Einheitenleitern zeigen alle Umrechnungszahlen für Länge, Masse, Geld, Zeit und Hohlmaß; umrechnen, gemischt, zeitspanne und geld-hohlmass lösen Aufgaben aus dem Alltag."
+    },
+    {
+      "lb": 4,
+      "competence": "nutzen verschiedene Schreibweisen, wie die Kommaschreibweise und Alltagsbrüche, um Größenangaben darzustellen.",
+      "lessons": [
+        "gr-4-schreibweisen"
+      ],
+      "status": "implemented",
+      "evidence": "notation zeigt Kommaschreibweise, zwei Einheiten und Alltagsbruch nebeneinander; komma-kleine-einheit und alltagsbruch üben den Wechsel, Rechnen mit Brüchen bleibt M6 vorbehalten."
+    },
+    {
+      "lb": 4,
+      "competence": "ermitteln bei Vergrößerungen und Verkleinerungen den zugrunde liegenden Maßstab, berechnen Längen mithilfe des Maßstabs und führen umgekehrt Zeichnungen maßstabsgetreu aus.",
+      "lessons": [
+        "gr-5-massstab"
+      ],
+      "status": "implemented",
+      "evidence": "scale vergleicht Bild und Wirklichkeit bei Verkleinerung und Vergrößerung; karte-wirklichkeit berechnet Längen, massstab-bestimmen ermittelt den Maßstab. massstab-zeichnen berechnet die Längen für eine maßstabsgetreue Zeichnung; das Zeichnen selbst geschieht auf Papier."
+    },
+    {
+      "lb": 4,
+      "competence": "wenden den Dreisatz bei sachbezogenen Aufgaben zur Berechnung fehlender Größen an.",
+      "lessons": [
+        "gr-6-dreisatz"
+      ],
+      "status": "implemented",
+      "evidence": "dreisatz zeigt die drei Zeilen über die Einheit; preis und strecke üben sachbezogene Aufgaben, die Erklärung klärt, wann der Dreisatz passt. Der Begriff direkt proportional bleibt M6 vorbehalten."
+    },
+    {
+      "lb": 4,
+      "competence": "entnehmen relevante Größenangaben aus verschiedenen Quellen (z. B. aus Texten, Bildern und Tabellen) zur Lösung von Sachaufgaben aus dem Alltag unter der Verwendung geeigneter Lösungsstrategien (z. B. Dreisatz) und durch mathematisches Modellieren.",
+      "lessons": [
+        "gr-7-sachaufgaben"
+      ],
+      "status": "implemented",
+      "evidence": "shopping modelliert einen Einkauf mit sinnvollem Aufrunden; packungen und tabelle entnehmen Angaben aus Text und Preisliste, einschließlich überflüssiger Angaben."
+    },
+    {
+      "lb": 5,
+      "competence": "berechnen den Umfang von Rechtecken und Quadraten aus ihren Seitenlängen (und umgekehrt) unter Zuhilfenahme der Formeln.",
+      "lessons": [
+        "uf-1-umfang"
+      ],
+      "status": "implemented",
+      "evidence": "perimeter zeigt den Rand mit der Formel; umfang-berechnen wendet die Formeln an, seite-rueckwaerts rechnet aus dem Umfang auf die Seite zurück."
+    },
+    {
+      "lb": 5,
+      "competence": "berechnen den Umfang geeigneter Vielecke und lösen damit alltagsbezogene Sachaufgaben (z. B. zur Umzäunung eines Grundstücks).",
+      "lessons": [
+        "uf-2-umfang-vielecke"
+      ],
+      "status": "implemented",
+      "evidence": "polygon-perimeter plant Zaun und Tor; vieleck und l-form berechnen Umfänge und Kosten in Sachaufgaben zur Umzäunung."
+    },
+    {
+      "lb": 5,
+      "competence": "vergleichen die Flächeninhalte von Figuren mit ungenormten und genormten Einheiten, indem sie sie in geeignete Teilfiguren zerlegen.",
+      "lessons": [
+        "uf-3-flaechen-vergleichen"
+      ],
+      "status": "implemented",
+      "evidence": "tile-compare vergleicht zwei Figuren mit Kästchen und Fliesen als ungenormte und genormte Einheiten; kaestchen-zaehlen und fliesen legen Flächen aus und zerlegen sie."
+    },
+    {
+      "lb": 5,
+      "competence": "geben Flächeninhalte in passenden Maßeinheiten an, rechnen mithilfe der Umrechnungszahlen in größere und kleinere Einheiten sinnvoll um und lösen Alltagsaufgaben mit Flächeninhalten unter Beachtung der Einheiten.",
+      "lessons": [
+        "uf-4-flaecheneinheiten"
+      ],
+      "status": "implemented",
+      "evidence": "area-ladder zeigt alle Einheiten von mm² bis km² mit der Umrechnungszahl 100; umrechnen und vergleichen-addieren lösen Aufgaben unter Beachtung der Einheiten."
+    },
+    {
+      "lb": 5,
+      "competence": "messen und berechnen den Flächeninhalt von Rechtecken und Quadraten aus ihren Seitenlängen und umgekehrt unter Zuhilfenahme der Formeln.",
+      "lessons": [
+        "uf-5-flaeche-rechteck"
+      ],
+      "status": "implemented",
+      "evidence": "area-rect legt Rechtecke mit Einheitsquadraten aus und nennt die Formel; flaeche-berechnen und seite-aus-flaeche rechnen in beide Richtungen. Messen geschieht auf Papier."
+    },
+    {
+      "lb": 5,
+      "competence": "berechnen den Flächeninhalt geeigneter Vielecke z. B. durch Zerlegung in geeignete Teilfiguren und lösen damit alltagsbezogene Sachaufgaben (z. B. zur Größe einer Wohnung).",
+      "lessons": [
+        "uf-6-zusammengesetzt"
+      ],
+      "status": "implemented",
+      "evidence": "composite zeigt Zerlegen und Ergänzen an derselben Figur; l-form und wohnung berechnen Flächen von Vielecken in Sachaufgaben zur Größe einer Wohnung."
+    },
+    {
+      "lb": 6,
+      "competence": "entnehmen Informationen aus verschiedenen gängigen Darstellungsformen (z. B. Strichlisten, Diagrammen, Tabellen, Vierfeldertafeln, Texten) und übertragen Daten in geeignete andere Darstellungsformen.",
+      "lessons": [
+        "da-1-diagramme",
+        "da-2-vierfeldertafel"
+      ],
+      "status": "implemented",
+      "evidence": "chart wechselt zwischen Strichliste, Säulen und Balken, four-field füllt eine Vierfeldertafel; strichliste-lesen, saeule-einteilung und fehlender-wert entnehmen und übertragen Daten."
+    },
+    {
+      "lb": 6,
+      "competence": "formulieren zu Tabellen und Diagrammen mathematisch sinnvolle Fragestellungen und begründen ihre Antworten.",
+      "lessons": [
+        "da-2-vierfeldertafel"
+      ],
+      "status": "implemented",
+      "evidence": "Die Erklärung unterscheidet sinnvolle Fragen von anderen; fragen wählt beantwortbare Fragen aus und begründet Aussagen mit den Daten."
+    },
+    {
+      "lb": 6,
+      "competence": "analysieren Daten kritisch, um Fehler bzw. Verzerrungen in Diagrammen zu erkennen und zu korrigieren.",
+      "lessons": [
+        "da-3-verzerrungen"
+      ],
+      "status": "implemented",
+      "evidence": "truncated-axis zeigt, wie ein abgeschnittener Achsenbeginn täuscht; wirkung und fehler-finden erkennen Verzerrungen und korrigieren sie durch eine Achse ab 0."
+    }
+  ]
+}
