@@ -355,6 +355,14 @@ describe("Exact answers of any size", () => {
     expect(statusOf(numberTask(noisy, 0), "3000001")).toBe("wrong");
   });
 
+  it("accepts one third rounded to nine decimal places", () => {
+    const task = numberTask(1 / 3, 9);
+    expect(statusOf(task, "0,333333333")).toBe("correct");
+    expect(statusOf(task, "0.333333333")).toBe("correct");
+    expect(statusOf(task, "1/3")).toBe("correct");
+    expect(statusOf(task, "0,34")).toBe("wrong");
+  });
+
   it("leaves deliberately tolerant and rounded answers as they are", () => {
     const relative = numberTask(2000000000, 0, { tolerance: 0.01 });
     expect(statusOf(relative, "2020000000")).toBe("correct");
