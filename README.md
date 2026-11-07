@@ -115,7 +115,7 @@ cd uml                 # or: cd physik-realschule-9 (dev server on :5181), cd sq
 # Grade 4 mathematics preview: cd mathematik-grundschule-4 (dev server on :5216)
 # Grade 4 German preview: cd deutsch-grundschule-4 (dev server on :5217)
 # Grade 4 HSU preview: cd hsu-grundschule-4 (dev server on :5218)
-# Mathematik 5: cd mathematik-realschule-5 (dev server on :5219)
+# Mathematik 5: cd mathematik-realschule-5 (dev server on :5220)
 npm ci
 npm run dev      # http://localhost:5180/uml/
 npm test

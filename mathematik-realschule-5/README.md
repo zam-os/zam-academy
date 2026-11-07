@@ -33,7 +33,7 @@ Es werden die vorhandenen TypeScript-, Vite- und Vitest-Werkzeuge der Mathematik
 
 ```bash
 npm ci
-npm run dev          # http://localhost:5219/mathematik-realschule-5/
+npm run dev          # http://localhost:5220/mathematik-realschule-5/
 npm run typecheck
 npm test
 npm run build
