@@ -164,3 +164,9 @@ The [History 8 package](geschichte-realschule-8/) adds 35 core lessons and three
 The [Englisch 8 package](englisch-realschule-8/) adds 51 lessons and 102 cards for all Wahlpflichtfächergruppen: North American history, the USA, New York and other cities, Canada, the grade-8 grammar (pronouns, two objects, questions, passive and personal passive, if-clauses type 0–3, receptive participle constructions) and American youth literature. Its [coverage matrix](englisch-realschule-8/coverage.json) maps all 44 Kompetenzerwartungen and topic rows. The [legacy review](docs/englisch-8-bestandsabgleich.md) maps the four old grammar cards to 1 A and 3 C rows; Thomas approved the mapping on 2026-10-29, so since cell 2026.10.2 the type-3 card replaces its equivalent old card and the three C cards stay active.
 
 The [French 8 package](franzoesisch-realschule-8/) adds 40 core lessons, two optional relative-clause extensions and 84 linked cards for Bavarian Realschule group IIIa. Its [coverage matrix](franzoesisch-realschule-8/coverage.json) indexes 56 expectations and topic entries as guided exercises or preparation. The [inventory](docs/franzoesisch-8-bestandsabgleich.md) documents four older grammar cards that remain active without history transfer. Natural audiovisual practice, spontaneous conversations, maps, research and a full vocabulary programme supplement the app. Pages publishes app and cell together on merge; ZAM fixture synchronization is separate.
+
+[Grade 5 German for Bavarian Realschule](deutsch-realschule-5/) is available
+for local evaluation with 37 lessons and 77 ZAM cards. Run
+`npm ci && npm run dev` from the package folder (port 5222), or use
+`npm run package:zip` for a self-contained offline build.
+[Curriculum coverage and legacy card inventory](docs/deutsch-5-coverage.md)
