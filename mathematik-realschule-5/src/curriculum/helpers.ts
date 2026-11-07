@@ -29,12 +29,13 @@ export function numberField(
   digits = 2,
   extra: Partial<NumberField> = {},
 ): NumberField {
-  // A slip that happens to equal the answer (sin 45° = cos 45°) is no slip.
+  // A slip that happens to equal the answer is no slip. Grade 5 answers are exact,
+  // so a neighbouring whole number of a large answer stays a slip with its hint.
   const slips = extra.slips?.filter(
     (slip) =>
       Number.isFinite(slip.value) &&
       Math.abs(slip.value - answer) >
-        Math.max(1e-9, 0.02 * Math.abs(answer), 0.51 * 10 ** -digits),
+        Math.max(1e-9, 0.51 * 10 ** -digits),
   );
   return {
     kind: "number",

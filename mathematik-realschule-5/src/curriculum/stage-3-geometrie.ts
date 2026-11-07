@@ -288,7 +288,7 @@ const dreiecke = L(4, {
   subtitle: "Arten nach Seiten und Winkeln",
   whyItMatters:
     "Dreiecke halten Brücken und Dächer stabil. Du lernst, sie an ihren Eigenschaften zu erkennen.",
-  explanationHtml: `<p>Ein <strong>Dreieck</strong> hat drei Ecken und drei Seiten. Du erzeugst es durch Zeichnen, Falten, Spannen am Geobrett oder mit Geometriesoftware.</p><p><strong>Nach den Seiten:</strong> Ein <strong>gleichseitiges</strong> Dreieck hat drei gleich lange Seiten, ein <strong>gleichschenkliges</strong> mindestens zwei, ein <strong>unregelmäßiges</strong> keine gleichen Seiten.</p><p><strong>Nach den Winkeln:</strong> Ein <strong>spitzwinkliges</strong> Dreieck hat nur spitze Winkel, ein <strong>rechtwinkliges</strong> einen rechten Winkel, ein <strong>stumpfwinkliges</strong> einen stumpfen Winkel.</p><div class="example">Seiten 5 cm, 5 cm und 5 cm: gleichseitig. Seiten 3 cm, 4 cm und 5 cm: unregelmäßig und rechtwinklig. Seiten 3 cm, 3 cm und 5 cm: gleichschenklig und stumpfwinklig.</div><div class="merke"><strong>Merke:</strong> Ein Dreieck bekommt zwei Namen: einen nach den Seiten und einen nach den Winkeln.</div>`,
+  explanationHtml: `<p>Ein <strong>Dreieck</strong> hat drei Ecken und drei Seiten. Du erzeugst es durch Zeichnen, Falten, Spannen am Geobrett oder mit Geometriesoftware.</p><p><strong>Nach den Seiten:</strong> Ein <strong>gleichseitiges</strong> Dreieck hat drei gleich lange Seiten, ein <strong>gleichschenkliges</strong> mindestens zwei, ein <strong>unregelmäßiges</strong> keine gleichen Seiten. Jedes gleichseitige Dreieck ist also auch gleichschenklig. Du nennst immer den genauesten Namen, das ist der, der am meisten über die Figur sagt.</p><p><strong>Nach den Winkeln:</strong> Ein <strong>spitzwinkliges</strong> Dreieck hat nur spitze Winkel, ein <strong>rechtwinkliges</strong> einen rechten Winkel, ein <strong>stumpfwinkliges</strong> einen stumpfen Winkel.</p><div class="example">Seiten 5 cm, 5 cm und 5 cm: gleichseitig. Seiten 3 cm, 4 cm und 5 cm: unregelmäßig und rechtwinklig. Seiten 3 cm, 3 cm und 5 cm: gleichschenklig und stumpfwinklig.</div><div class="merke"><strong>Merke:</strong> Ein Dreieck bekommt zwei Namen: einen nach den Seiten und einen nach den Winkeln.</div>`,
   formulas: [
     { name: "Nach Seiten", html: "gleichseitig, gleichschenklig, unregelmäßig", quantities: "Zähle die gleich langen Seiten." },
     { name: "Nach Winkeln", html: "spitzwinklig, rechtwinklig, stumpfwinklig", quantities: "Der größte Winkel entscheidet." },
@@ -327,8 +327,8 @@ const dreiecke = L(4, {
         const u = shown[0] + shown[1] + shown[2];
         return task(
           level,
-          `Ein Dreieck hat die Seiten ${shown.join(" cm, ")} cm. Wie heißt es nach seinen Seiten?`,
-          `Ein Draht wird zu einem Dreieck mit den Seiten ${shown.join(" cm, ")} cm gebogen. Wie heißt das Dreieck, und wie lang ist der Draht?`,
+          `Ein Dreieck hat die Seiten ${shown.join(" cm, ")} cm. Wie heißt es nach seinen Seiten am genauesten?`,
+          `Ein Draht wird zu einem Dreieck mit den Seiten ${shown.join(" cm, ")} cm gebogen. Wie heißt das Dreieck am genauesten, und wie lang ist der Draht?`,
           [pick("Art:", names, names.indexOf(name)), ...(level === 2 ? [num("Drahtlänge:", u, "cm", 0)] : [])],
           "Zähle die gleich langen Seiten.",
           `Gleich lange Seiten: ${form === 0 ? "drei" : form === 1 ? "zwei" : "keine"}.`,
@@ -343,7 +343,13 @@ const dreiecke = L(4, {
         const angle = rng.pick([65, 70, 75, 80, 85, 90, 90, 100, 110, 120, 130]);
         const names = ["spitzwinklig", "rechtwinklig", "stumpfwinklig"];
         const index = angle === 90 ? 1 : angle > 90 ? 2 : 0;
-        const claim = rng.int(0, 1) === 0;
+        const claims = [
+          ["Sina sagt: „Ein Dreieck kann zwei rechte Winkel haben.“ Stimmt das?", false, "Zwei rechte Winkel an einer Seite: Die anderen Seiten wären parallel und träfen sich nie."],
+          ["Tom sagt: „Ein gleichseitiges Dreieck kann auch rechtwinklig sein.“ Stimmt das?", false, "In einem gleichseitigen Dreieck sind alle Winkel gleich groß, und zwar 60°."],
+          ["Mia sagt: „Ein rechtwinkliges Dreieck kann zugleich gleichschenklig sein.“ Stimmt das?", true, "Falte ein Quadrat entlang der Diagonale: Das Dreieck hat einen rechten Winkel und zwei gleich lange Seiten."],
+          ["Ben sagt: „Ein stumpfwinkliges Dreieck kann zugleich gleichschenklig sein.“ Stimmt das?", true, "Die Seiten 3 cm, 3 cm und 5 cm ergeben ein solches Dreieck."],
+        ] as const;
+        const [claim, truth, reason] = rng.pick(claims);
         if (level === 1)
           return task(
             level,
@@ -358,13 +364,11 @@ const dreiecke = L(4, {
         return task(
           level,
           "",
-          claim
-            ? "Sina sagt: „Ein Dreieck kann zwei rechte Winkel haben.“ Stimmt das?"
-            : "Tom sagt: „Ein gleichseitiges Dreieck kann auch rechtwinklig sein.“ Stimmt das?",
-          [pick("Antwort:", ["ja", "nein"], 1)],
+          claim,
+          [pick("Antwort:", ["ja", "nein"], truth ? 0 : 1)],
           "Versuche, das Dreieck zu zeichnen.",
-          claim ? "Zwei rechte Winkel an einer Seite: Die anderen Seiten wären parallel und träfen sich nie." : "In einem gleichseitigen Dreieck sind alle Winkel gleich groß, und zwar 60°.",
-          "Nein, das stimmt nicht.",
+          reason,
+          truth ? "Ja, das stimmt." : "Nein, das stimmt nicht.",
           {},
         );
       },
@@ -378,9 +382,9 @@ const vierecke = L(5, {
   subtitle: "Quadrat, Rechteck, Parallelogramm, Raute, Trapez, Drachenviereck",
   whyItMatters:
     "Jedes Viereck hat einen Namen, der genau sagt, was an ihm besonders ist. Damit beschreibst du Figuren kurz und eindeutig.",
-  explanationHtml: `<p>Ein <strong>Viereck</strong> hat vier Ecken und vier Seiten. Du erkennst besondere Vierecke an ihren Eigenschaften:</p><p><strong>Quadrat:</strong> vier gleich lange Seiten, vier rechte Winkel. <strong>Rechteck:</strong> vier rechte Winkel, gegenüberliegende Seiten gleich lang. <strong>Parallelogramm:</strong> gegenüberliegende Seiten parallel und gleich lang. <strong>Raute:</strong> vier gleich lange Seiten. <strong>Trapez:</strong> mindestens ein Paar paralleler Seiten. <strong>Drachenviereck:</strong> zwei Paare gleich langer Nachbarseiten.</p><p>Jedes Quadrat ist auch ein Rechteck und eine Raute. Jedes Rechteck ist auch ein Parallelogramm. Umgekehrt gilt das nicht. Figuren kannst du zeichnen, falten oder am Geobrett spannen.</p><div class="example">Figur mit vier gleich langen Seiten, aber ohne rechte Winkel: eine Raute. Figur mit genau einem Paar paralleler Seiten: ein Trapez.</div><div class="merke"><strong>Merke:</strong> Prüfe der Reihe nach: gleich lange Seiten, parallele Seiten, rechte Winkel.</div>`,
+  explanationHtml: `<p>Ein <strong>Viereck</strong> hat vier Ecken und vier Seiten. Du erkennst besondere Vierecke an ihren Eigenschaften:</p><p><strong>Quadrat:</strong> vier gleich lange Seiten, vier rechte Winkel. <strong>Rechteck:</strong> vier rechte Winkel, gegenüberliegende Seiten gleich lang. <strong>Parallelogramm:</strong> gegenüberliegende Seiten parallel und gleich lang. <strong>Raute:</strong> vier gleich lange Seiten. <strong>Trapez:</strong> mindestens ein Paar paralleler Seiten. <strong>Drachenviereck:</strong> zwei Paare gleich langer Nachbarseiten.</p><p>Jedes Quadrat ist auch ein Rechteck und eine Raute. Jedes Rechteck ist auch ein Parallelogramm, und jedes Parallelogramm ist auch ein Trapez. Umgekehrt gilt das nicht. Eine Figur kann also mehrere Namen tragen. Du nennst immer den genauesten, das ist der, der am meisten über sie sagt: Ein Viereck mit genau einem Paar paralleler Seiten heißt Trapez, eines mit zwei Paaren mindestens Parallelogramm. Figuren kannst du zeichnen, falten oder am Geobrett spannen.</p><div class="example">Figur mit vier gleich langen Seiten, aber ohne rechte Winkel: eine Raute. Genauester Name einer Figur mit genau einem Paar paralleler Seiten: Trapez.</div><div class="merke"><strong>Merke:</strong> Prüfe der Reihe nach: gleich lange Seiten, parallele Seiten, rechte Winkel. Dann nenne den genauesten Namen.</div>`,
   formulas: [
-    { name: "Besondere Vierecke", html: "Quadrat → Rechteck → Parallelogramm → Trapez", quantities: "Jede Figur ist auch die nächste: Jedes Quadrat ist ein Rechteck, aber nicht umgekehrt." },
+    { name: "Besondere Vierecke", html: "Quadrat → Rechteck → Parallelogramm → Trapez", quantities: "Jede Figur ist auch die nächste, aber nicht umgekehrt. Du nennst den genauesten Namen." },
   ],
   quiz: {
     question: "Welche Aussage stimmt?",
@@ -419,8 +423,8 @@ const vierecke = L(5, {
         const others = rng.shuffle(items.map(([, n]) => n).filter((n) => n !== name)).slice(0, 2);
         return task(
           level,
-          `Welches Viereck hat ${text}?`,
-          `Du spannst am Geobrett ein Viereck mit dieser Eigenschaft: ${text}. Wie heißt die Figur genau?`,
+          `Wie heißt ein Viereck am genauesten, das ${text} hat?`,
+          `Du spannst am Geobrett ein Viereck mit dieser Eigenschaft: ${text}. Welcher Name passt am genauesten?`,
           [pick("Name:", [name, ...others], 0)],
           "Prüfe Seiten, Parallelen und Winkel.",
           `Das beschreibt genau die Eigenschaften dieser Figur.`,
@@ -436,6 +440,7 @@ const vierecke = L(5, {
           ["Jedes Quadrat ist ein Rechteck.", true],
           ["Jedes Rechteck ist ein Parallelogramm.", true],
           ["Jedes Quadrat ist eine Raute.", true],
+          ["Jedes Parallelogramm ist ein Trapez.", true],
           ["Jedes Rechteck ist ein Quadrat.", false],
           ["Jede Raute ist ein Quadrat.", false],
           ["Jedes Parallelogramm ist ein Rechteck.", false],
@@ -457,7 +462,7 @@ const vierecke = L(5, {
         return task(
           level,
           "",
-          `Du faltest ein Papier zu einer Figur mit vier rechten Winkeln. Sie ist ${w} cm breit und ${h} cm hoch. Wie heißt sie, und wie viele rechte Winkel hat sie?`,
+          `Du faltest ein Papier zu einer Figur mit vier rechten Winkeln. Sie ist ${w} cm breit und ${h} cm hoch. Wie heißt sie am genauesten, und wie viele rechte Winkel hat sie?`,
           [pick("Name:", ["Quadrat", "Rechteck", "Raute"], name === "Quadrat" ? 0 : 1), num("Rechte Winkel:", 4, "", 0)],
           "Sind alle Seiten gleich lang?",
           w === h ? "Beide Seiten sind gleich lang." : "Die Seiten sind verschieden lang.",
@@ -564,9 +569,9 @@ const winkel = L(7, {
   subtitle: "Winkel von 0° bis 360° mit Fachbegriffen",
   whyItMatters:
     "Vom Schnittmuster bis zum Dachbalken: Mit dem Geodreieck bestimmst du, wie stark zwei Richtungen voneinander abweichen.",
-  explanationHtml: `<p>Ein <strong>Winkel</strong> besteht aus einem <strong>Scheitel</strong> S und zwei <strong>Schenkeln</strong> (Halbgeraden). Du benennst ihn mit griechischen Buchstaben α, β, γ. Gemessen wird in Grad, ein voller Kreis hat 360°.</p><p><strong>Winkelarten:</strong> spitz (0° bis 90°), recht (genau 90°), stumpf (90° bis 180°), gestreckt (genau 180°), überstumpf (180° bis 360°), Vollwinkel (genau 360°).</p><p><strong>Messen mit dem Geodreieck:</strong> Lege den Nullpunkt auf den Scheitel und die lange Kante auf einen Schenkel. Lies an der richtigen Skala ab, wo der andere Schenkel liegt. Ein überstumpfer Winkel: Miss den Rest bis 360° und ziehe ab.</p><div class="example">Der kleine Winkel zwischen zwei Schenkeln misst 70°. Der überstumpfe Winkel dazu ist 360° − 70° = 290°.</div><div class="merke"><strong>Merke:</strong> Spitz &lt; 90° &lt; stumpf &lt; 180° &lt; überstumpf &lt; 360°.</div>`,
+  explanationHtml: `<p>Ein <strong>Winkel</strong> besteht aus einem <strong>Scheitel</strong> S und zwei <strong>Schenkeln</strong> (Halbgeraden). Du benennst ihn mit griechischen Buchstaben α, β, γ. Gemessen wird in Grad, ein voller Kreis hat 360°.</p><p><strong>Winkelarten:</strong> Nullwinkel (genau 0°), spitz (über 0° und unter 90°), recht (genau 90°), stumpf (über 90° und unter 180°), gestreckt (genau 180°), überstumpf (über 180° und unter 360°), Vollwinkel (genau 360°).</p><p><strong>Messen mit dem Geodreieck:</strong> Lege den Nullpunkt auf den Scheitel und die lange Kante auf einen Schenkel. Lies an der richtigen Skala ab, wo der andere Schenkel liegt. Ein überstumpfer Winkel: Miss den Rest bis 360° und ziehe ab.</p><div class="example">Der kleine Winkel zwischen zwei Schenkeln misst 70°. Der überstumpfe Winkel dazu ist 360° − 70° = 290°.</div><div class="merke"><strong>Merke:</strong> 0° &lt; spitz &lt; 90° &lt; stumpf &lt; 180° &lt; überstumpf &lt; 360°. Genau auf den Grenzen liegen Nullwinkel, rechter Winkel, gestreckter Winkel und Vollwinkel.</div>`,
   formulas: [
-    { name: "Winkelarten", html: "spitz, recht (90°), stumpf, gestreckt (180°), überstumpf, Vollwinkel (360°)", quantities: "α, β, γ benennen Winkel." },
+    { name: "Winkelarten", html: "Nullwinkel (0°), spitz, recht (90°), stumpf, gestreckt (180°), überstumpf, Vollwinkel (360°)", quantities: "α, β, γ benennen Winkel." },
     { name: "Überstumpfer Winkel", html: "α = 360° − kleiner Winkel", quantities: "Beide zusammen ergeben einen Vollwinkel." },
   ],
   quiz: {
@@ -821,7 +826,7 @@ const koerper = L(9, {
         return task(
           level,
           `Welcher Körper hat ${body.ecken} ${body.ecken === 1 ? "Ecke" : "Ecken"}, ${body.kanten} ${body.kanten === 1 ? "Kante" : "Kanten"} und ${body.flaechen} ${body.flaechen === 1 ? "Fläche" : "Flächen"}? Seine Begrenzung: ${body.form}.`,
-          `Welche Körperform hat ${thing}?`,
+          `Welche Körperform passt am genauesten zu diesem Gegenstand: ${thing}?`,
           [level === 1 ? pick("Körper:", [body.name, ...others.map((s) => s.name)], 0) : pick("Körper:", options, 0)],
           "Schau auf die Form der Flächen.",
           level === 1 ? body.form : `${thing} hat die Form: ${shape}.`,

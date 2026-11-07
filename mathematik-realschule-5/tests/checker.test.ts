@@ -85,4 +85,31 @@ describe("Zahlenprüfung und Hinweise", () => {
     expect(direction.compute({ n: 2649, place: 1 })).toBe("abrunden");
     expect(direction.compute({ n: 2700, place: 1 })).toBe("schon rund");
   });
+
+  it("rejects a neighbouring whole number at any size", () => {
+    for (const answer of [999999999, 2999999999, 4000000001, 990000000000]) {
+      const exact = task([field(answer, 0)]);
+      expect(checkTask(exact, [String(answer)]).status).toBe("correct");
+      for (const off of [answer - 1, answer + 1, answer - 2, answer + 3])
+        expect(checkTask(exact, [String(off)]).status, String(off)).toBe("wrong");
+    }
+  });
+
+  it("names the opposite neighbour of a large number instead of dropping the hint", () => {
+    const generator = findLessonById("nz-1-zahlenmenge")!.lesson.exercises.find(
+      (g) => g.id === "nachbarn",
+    )!;
+    for (let seed = 1; seed <= 40; seed++) {
+      const generated = generator.make(createRng(seed), 2);
+      const first = generated.fields[0];
+      if (first.kind !== "number") throw new Error("missing number field");
+      expect(first.slips, first.label).toHaveLength(1);
+      const number = first.slips![0].value + first.answer;
+      const unchanged = checkTask(generated, [String(number / 2)]);
+      expect(unchanged.status, `the unchanged ${number / 2} is no neighbour`).toBe("wrong");
+      expect(wrongAnswerHint(generated, unchanged), "no slip hint for another number").not.toBe(first.slips![0].hint);
+      const result = checkTask(generated, [String(first.slips![0].value)]);
+      expect(wrongAnswerHint(generated, result)).toBe(first.slips![0].hint);
+    }
+  });
 });

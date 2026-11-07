@@ -7,6 +7,8 @@ import {
   previousLesson,
 } from "../src/curriculum";
 import { createRng, seedFrom } from "../src/exercises/rng";
+import { computeReadouts, enumerateLabGrid } from "../src/lab/engine";
+import { labView } from "../src/lab/visuals";
 import { validTriangle } from "../src/models";
 import {
   isLessonComplete,
@@ -248,6 +250,103 @@ describe("Plausible Werte", () => {
     for (const task of tasks("gr-5-massstab", "massstab-bestimmen")) {
       const field = task.fields.find((f) => f.kind === "number");
       if (field?.kind === "number") expect(field.answer).toBeGreaterThan(1);
+    }
+  });
+});
+
+describe("Befunde aus dem Review von PR 91", () => {
+  function* tasks(lessonId: string, generatorId: string, level?: 1 | 2) {
+    const generator = findLessonById(lessonId)!.lesson.exercises.find((g) => g.id === generatorId)!;
+    for (const lv of level ? [level] : ([1, 2] as const))
+      for (let seed = 1; seed <= 300; seed++)
+        yield generator.make(createRng(seedFrom(`${lessonId}:${generatorId}:${seed}`)), lv);
+  }
+  const answers = (lessonId: string, generatorId: string, level: 1 | 2, index = 0) => {
+    const out = new Set<string | number>();
+    for (const task of tasks(lessonId, generatorId, level)) {
+      const field = task.fields[index];
+      out.add(field.kind === "number" ? field.answer : field.options[field.correctIndex]);
+    }
+    return out;
+  };
+  const number = (text: string) => Number(text.replace(/\./g, ""));
+
+  it("keeps populations at a size a real country can have", () => {
+    for (const [lesson, generator] of [["nz-13-zehnerpotenzen", "exponent-finden"], ["nz-4-runden", "runden-stelle"]])
+      for (const task of tasks(lesson, generator, 2)) {
+        const match = task.prompt.match(/Ein Land hat ([\d.]+) Einwohner/);
+        if (match) expect(number(match[1]), task.prompt).toBeLessThanOrEqual(1_500_000_000);
+      }
+  });
+
+  it("derives the accepted time span in the worked solution", () => {
+    for (const task of tasks("gr-3-geld-zeit-hohlmass", "zeitspanne")) {
+      const field = task.fields[0];
+      if (field.kind !== "number") throw new Error("number field expected");
+      const minutes = [...task.steps[0].matchAll(/(\d+) min/g)].map((m) => Number(m[1]));
+      const same = task.steps[0].match(/^(\d+) − (\d+) = (\d+)/);
+      if (same) {
+        expect(Number(same[1]) - Number(same[2]), task.steps[0]).toBe(field.answer);
+        expect(Number(same[3])).toBe(field.answer);
+      } else {
+        expect(minutes.reduce((a, b) => a + b, 0), task.steps[0]).toBe(field.answer);
+      }
+    }
+  });
+
+  it("asks for the most exact name wherever several names are true", () => {
+    for (const [lesson, generator] of [
+      ["ge-4-dreiecke", "nach-seiten"],
+      ["ge-5-vierecke", "eigenschaft-name"],
+    ])
+      for (const task of tasks(lesson, generator)) expect(task.prompt).toMatch(/genauesten/);
+    for (const task of tasks("ge-5-vierecke", "wahr-falsch", 2)) expect(task.prompt).toMatch(/genauesten/);
+    for (const task of tasks("ge-9-koerper", "erkennen", 2)) expect(task.prompt).toMatch(/genauesten/);
+    const item = cell.atoms.flatMap((a) => a.practice_items).find((i) => i.slug === "m5-name-finden")!;
+    expect(item.choice_distractors.map((d) => d.text).join(" ")).not.toMatch(/Trapez|Parallelogramm|Drachen/);
+  });
+
+  it("gives every angle exactly one name in the explanation", () => {
+    const text = findLessonById("ge-7-winkel")!.lesson.explanationHtml;
+    expect(text).toContain("Nullwinkel (genau 0°)");
+    expect(text).toContain("spitz (über 0° und unter 90°)");
+    expect(text).not.toMatch(/\d° bis \d/);
+  });
+
+  it("no longer claims a fixed number of decimals for a unit", () => {
+    const lesson = findLessonById("gr-4-schreibweisen")!.lesson;
+    expect(lesson.explanationHtml).toContain("1,5 kg, 1,25 kg und 1,250 kg");
+    const item = cell.atoms.flatMap((a) => a.practice_items).find((i) => i.slug === "m5-komma-kg") as unknown as { question: string };
+    expect(item.question).toContain("ganze Gramm");
+  });
+
+  it("does not let a generator always have the same answer", () => {
+    expect(answers("gz-3-zahlengerade", "vergleichen", 1).size).toBe(2);
+    expect(answers("ge-4-dreiecke", "nach-winkeln", 2).size).toBe(2);
+    expect(answers("da-3-verzerrungen", "wirkung", 2).size).toBe(2);
+    expect(answers("da-1-diagramme", "saeule-einteilung", 2).size).toBe(4);
+    expect(answers("nz-1-zahlenmenge", "groesste-zahl", 1).size).toBe(3);
+    expect(answers("nz-18-kombinatorik", "ohne-wiederholung", 2).size).toBe(3);
+    const firstValues = new Set<string>();
+    for (const task of tasks("gz-3-zahlengerade", "vergleichen", 2))
+      firstValues.add(task.prompt.match(/Höhen (\S+) m/)![1].startsWith("−") ? "negativ" : "positiv");
+    expect(firstValues.size).toBe(2);
+  });
+
+  it("keeps singular and plural apart in tasks and drawings", () => {
+    const wrong = /\b1 (?:Striche|volle Fünferbündel|einzelne Striche|Erwachsene|Schritten|Möglichkeiten|Kanten|Ecken|Flächen|Nullen|Packungen|Kinder|Stunden|Tische)\b/;
+    for (const lesson of ALL_LESSONS) {
+      for (const generator of lesson.exercises)
+        for (const lv of [1, 2] as const)
+          for (let seed = 1; seed <= 120; seed++) {
+            const task = generator.make(createRng(seedFrom(`${lesson.id}:${generator.id}:${seed}`)), lv);
+            expect(task.prompt, `${lesson.id}/${generator.id}`).not.toMatch(wrong);
+          }
+      const view = labView(lesson.lab.kind);
+      for (const values of enumerateLabGrid(lesson.lab, 3)) {
+        const svg = view.render(values, computeReadouts(lesson.lab, values));
+        expect(svg, lesson.id).not.toMatch(wrong);
+      }
     }
   });
 });

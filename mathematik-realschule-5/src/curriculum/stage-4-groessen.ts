@@ -258,7 +258,9 @@ const geldZeit = L(3, {
           `Der Bus fährt um ${startH}:${pad(startM)} Uhr ab und kommt um ${endH}:${pad(endM)} Uhr an. Wie lange dauert die Fahrt in Minuten?`,
           [num("Dauer:", len, "min", 0, { slips: [{ value: (endH - startH) * 100 + endM - startM, hint: "Eine Stunde hat 60 Minuten, nicht 100." }] })],
           "Rechne in Schritten über die volle Stunde.",
-          `Von ${startH}:${pad(startM)} bis ${startH + 1}:00 sind es ${60 - startM} min, den Rest zählst du dazu.`,
+          endH === startH
+            ? `${endM} − ${startM} = ${len}, denn beide Zeiten liegen in derselben Stunde.`
+            : `Von ${startH}:${pad(startM)} bis ${startH + 1}:00 sind es ${60 - startM} min.${endH > startH + 1 ? ` Bis ${endH}:00 kommen ${(endH - startH - 1) * 60} min dazu.` : ""} Bis ${endH}:${pad(endM)} kommen ${endM} min dazu.`,
           `Die Dauer ist ${len} min.`,
           { len },
         );
@@ -306,16 +308,16 @@ const schreibweisen = L(4, {
   subtitle: "1,25 m, 2 ½ kg und ¾ h",
   whyItMatters:
     "Auf Preisschildern steht 2,49 €, im Rezept ½ l. Du lernst, dass das nur andere Schreibweisen für dieselbe Größe sind.",
-  explanationHtml: `<p>Größenangaben kannst du verschieden schreiben. In der <strong>Kommaschreibweise</strong> trennt das Komma die große Einheit von der kleineren: 2,49 € = 2 € 49 ct. Bei € und m stehen <strong>zwei</strong> Stellen hinter dem Komma (100 ct, 100 cm), bei kg und km <strong>drei</strong> (1.000 g, 1.000 m). Fülle bei Bedarf mit Nullen auf: 1,05 m = 1 m 5 cm, nicht 1 m 50 cm.</p><p><strong>Alltagsbrüche</strong> sind ½, ¼ und ¾. ½ kg = 500 g, ¼ l = 250 ml, ¾ h = 45 min. Gerechnet wird mit Brüchen erst in der 6. Klasse, hier geht es nur um diese festen Schreibweisen.</p><div class="example">3,75 m = 3 m 75 cm = 375 cm = 3 ¾ m. Und 1,250 kg = 1 kg 250 g = 1 ¼ kg.</div><div class="merke"><strong>Merke:</strong> Die Stellen hinter dem Komma gehören zur kleineren Einheit: zwei Stellen bei 100, drei Stellen bei 1.000.</div>`,
+  explanationHtml: `<p>Größenangaben kannst du verschieden schreiben. In der <strong>Kommaschreibweise</strong> steht vor dem Komma die große Einheit: 2,49 € = 2 € 49 ct. Hinter dem Komma können verschieden viele Stellen stehen: 1,5 kg, 1,25 kg und 1,250 kg sind alle richtig. Willst du aber die <strong>kleinere Einheit ablesen</strong>, brauchst du die passende Zahl von Stellen: <strong>zwei</strong> für ganze Cent und Zentimeter (1 € = 100 ct, 1 m = 100 cm), <strong>drei</strong> für ganze Gramm und Meter (1 kg = 1.000 g, 1 km = 1.000 m). Fülle dazu mit Nullen auf: 1,05 m = 1 m 5 cm, aber 1,5 m = 1,50 m = 1 m 50 cm.</p><p><strong>Alltagsbrüche</strong> sind ½, ¼ und ¾. ½ kg = 500 g, ¼ l = 250 ml, ¾ h = 45 min. Gerechnet wird mit Brüchen erst in der 6. Klasse, hier geht es nur um diese festen Schreibweisen.</p><div class="example">3,75 m = 3 m 75 cm = 375 cm = 3 ¾ m. Und 1,250 kg = 1 kg 250 g = 1 ¼ kg.</div><div class="merke"><strong>Merke:</strong> Ganze kleinere Einheiten liest du mit zwei Stellen ab, wenn die Umrechnungszahl 100 ist, und mit drei Stellen bei 1.000.</div>`,
   formulas: [
-    { name: "Kommaschreibweise", html: "2,49 € = 2 € 49 ct, 1,250 kg = 1 kg 250 g", quantities: "Zwei Stellen bei 100, drei Stellen bei 1.000" },
+    { name: "Kommaschreibweise", html: "2,49 € = 2 € 49 ct, 1,250 kg = 1 kg 250 g", quantities: "Zum Ablesen der kleineren Einheit: zwei Stellen bei 100, drei Stellen bei 1.000" },
     { name: "Alltagsbrüche", html: "½ = die Hälfte, ¼ = ein Viertel, ¾ = drei Viertel", quantities: "½ h = 30 min, ¼ h = 15 min, ¾ h = 45 min" },
   ],
   quiz: {
     question: "Wie schreibst du 1 m 5 cm in Kommaschreibweise?",
     options: ["1,05 m", "1,5 m", "1,50 m"],
     correctIndex: 0,
-    explanation: "1 m hat 100 cm, also zwei Stellen hinter dem Komma: 05. 1,5 m wären 1 m 50 cm.",
+    explanation: "1 m hat 100 cm. Für 5 cm stehen also zwei Stellen hinter dem Komma: 05. 1,5 m wären 1 m 50 cm.",
   },
   lab: lab(
     "notation",
@@ -651,11 +653,12 @@ const sachaufgaben = L(7, {
       make: (rng, level) => {
         const adult = rng.int(6, 14), child = rng.int(2, 5), adults = rng.int(1, 3), kids = rng.int(2, 5);
         const cost = adults * adult + kids * child;
+        const grownUps = `${adults} ${adults === 1 ? "Erwachsener" : "Erwachsene"}`;
         const paid = (Math.floor(cost / 10) + 1) * 10;
         return task(
           level,
-          `Preise im Schwimmbad: Erwachsene ${adult} €, Kinder ${child} €, Parken 2 €. Wie viel zahlen ${adults} Erwachsene und ${kids} Kinder für den Eintritt? Parken zählt nicht.`,
-          `Preise im Schwimmbad: Erwachsene ${adult} €, Kinder ${child} €, Bademantel 8 €. ${adults} Erwachsene und ${kids} Kinder gehen hinein und geben an der Kasse ${paid} €. Wie viel Geld bekommen sie zurück?`,
+          `Preise im Schwimmbad: Erwachsene ${adult} €, Kinder ${child} €, Parken 2 €. Wie viel zahlen ${grownUps} und ${kids} Kinder für den Eintritt? Parken zählt nicht.`,
+          `Preise im Schwimmbad: Erwachsene ${adult} €, Kinder ${child} €, Bademantel 8 €. ${grownUps} und ${kids} Kinder gehen hinein und geben an der Kasse ${paid} €. Wie viel Geld bekommen sie zurück?`,
           [num(level === 1 ? "Eintritt:" : "Rückgeld:", level === 1 ? cost : paid - cost, "€", 0)],
           "Nimm nur die Angaben, die du wirklich brauchst.",
           `${adults} · ${adult} + ${kids} · ${child} = ${cost}.${level === 2 ? ` ${paid} − ${cost} = ${paid - cost}.` : ""}`,

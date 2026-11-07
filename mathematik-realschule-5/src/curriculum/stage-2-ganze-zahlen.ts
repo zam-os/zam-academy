@@ -252,10 +252,11 @@ const zahlengerade = L(3, {
         const step = level === 1 ? rng.pick([1, 2, 5]) : rng.pick([25, 50, 100]);
         const k = rng.sign() * rng.int(1, 9);
         const value = k * step;
+        const strokes = `${Math.abs(k)} ${Math.abs(k) === 1 ? "Strich" : "Striche"}`;
         return task(
           level,
-          `Auf einer Zahlengeraden bedeutet ein Teilstrich ${step}. Ein Punkt liegt ${Math.abs(k)} Striche ${k < 0 ? "links" : "rechts"} von der Null. Welche Zahl ist das?`,
-          `Eine Skala für Höhen zeigt 0 m auf Meereshöhe, ein Strich bedeutet ${step} m. ${k < 0 ? "Ein U-Boot" : "Ein Berggipfel"} liegt ${Math.abs(k)} Striche ${k < 0 ? "unter" : "über"} der Null. Welche Höhe ist das?`,
+          `Auf einer Zahlengeraden bedeutet ein Teilstrich ${step}. Ein Punkt liegt ${strokes} ${k < 0 ? "links" : "rechts"} von der Null. Welche Zahl ist das?`,
+          `Eine Skala für Höhen zeigt 0 m auf Meereshöhe, ein Strich bedeutet ${step} m. ${k < 0 ? "Ein U-Boot" : "Ein Berggipfel"} liegt ${strokes} ${k < 0 ? "unter" : "über"} der Null. Welche Höhe ist das?`,
           [num("Zahl:", value, level === 1 ? "" : "m", 0, { slips: [{ value: -value, hint: "Prüfe die Seite: Liegt der Punkt links oder rechts der Null?" }, { value: k, hint: "Du hast nur die Striche gezählt. Multipliziere noch mit dem Wert eines Strichs." }] })],
           "Anzahl der Striche · Wert eines Strichs, Vorzeichen nach der Seite.",
           `${Math.abs(k)} · ${step} = ${Math.abs(value)}, ${k < 0 ? "negativ" : "positiv"}.`,
@@ -270,25 +271,29 @@ const zahlengerade = L(3, {
         const scale = level === 1 ? 1 : 100;
         const a = -rng.int(2, 12) * scale, b = -rng.int(13, 30) * scale, d = rng.int(1, 9) * scale;
         const smallest = Math.min(a, b, d);
-        if (level === 1)
+        if (level === 1) {
+          const [x, y] = rng.shuffle([a, b]);
+          const sign = x < y ? 0 : 1;
           return task(
             level,
-            `Welches Zeichen gehört zwischen ${n0(a)} und ${n0(b)}?`,
+            `Welches Zeichen gehört zwischen ${n0(x)} und ${n0(y)}?`,
             "",
-            [pick(`${n0(a)} … ${n0(b)}`, ["<", ">", "="], 1)],
+            [pick(`${n0(x)} … ${n0(y)}`, ["<", ">", "="], sign)],
             "Die weiter rechts liegende Zahl ist größer.",
-            `${n0(b)} liegt weiter links als ${n0(a)}.`,
-            `${n0(a)} > ${n0(b)}`,
-            { a, b },
+            `${n0(Math.min(x, y))} liegt weiter links als ${n0(Math.max(x, y))}.`,
+            `${n0(x)} ${sign === 0 ? "<" : ">"} ${n0(y)}`,
+            { x, y },
           );
+        }
+        const heights = rng.shuffle([a, b, d]);
         return task(
           level,
           "",
-          `An drei Orten werden die Höhen ${n0(a)} m, ${n0(b)} m und ${n0(d)} m gemessen. Welcher Ort liegt am tiefsten, und wie groß ist der Abstand zum höchsten Ort?`,
-          [num("Tiefster Ort:", smallest, "m", 0, { slips: [{ value: a, hint: "Bei negativen Zahlen ist die mit dem größeren Betrag die kleinere." }] }), num("Abstand:", d - b, "m", 0)],
-          "Am weitesten links liegt der tiefste Ort.",
+          `An drei Messpunkten im Meer und an Land werden die Höhen ${heights.map(n0).join(" m, ")} m gemessen. Welcher Messpunkt liegt am tiefsten, und wie groß ist der Abstand zum höchsten?`,
+          [num("Tiefster Punkt:", smallest, "m", 0, { slips: [{ value: a, hint: "Bei negativen Zahlen ist die mit dem größeren Betrag die kleinere." }] }), num("Abstand:", d - b, "m", 0)],
+          "Am weitesten links liegt der tiefste Punkt.",
           `Von ${n0(b)} bis 0 sind es ${n0(-b)} m, dann noch ${n0(d)} m.`,
-          `Tiefster Ort ${n0(b)} m, Abstand ${n0(d - b)} m`,
+          `Tiefster Punkt ${n0(b)} m, Abstand ${n0(d - b)} m`,
           { a, b, d },
         );
       },

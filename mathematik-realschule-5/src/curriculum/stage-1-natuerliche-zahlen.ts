@@ -89,7 +89,7 @@ const zahlenmenge = makeLesson(1, 1, 1, {
     {
       id: "groesste-zahl",
       make: (rng, level) => {
-        const digits = level === 1 ? 4 : rng.int(5, 7);
+        const digits = level === 1 ? rng.int(3, 5) : rng.int(5, 7);
         const largest = 10 ** digits - 1;
         return task(
           level,
@@ -1102,12 +1102,12 @@ const zehnerpotenzen = makeLesson(1, 13, 3, {
     {
       id: "ausschreiben",
       make: (rng, level) => {
-        const a = rng.int(2, 99), n = level === 1 ? rng.int(2, 5) : rng.int(6, 11);
+        const a = rng.int(2, 99), n = level === 1 ? rng.int(2, 5) : rng.int(6, 10);
         const value = a * 10 ** n;
         return task(
           level,
           `Schreibe ohne Zehnerpotenz: ${a} · 10${sup(n)}.`,
-          `Ein Lexikon gibt die Zahl der Sterne einer Sterngruppe mit ${a} · 10${sup(n)} an. Schreibe die Zahl aus.`,
+          `Ein Lexikon gibt die Zahl der Sterne einer Galaxie mit ${a} · 10${sup(n)} an. Schreibe die Zahl aus.`,
           [num("Zahl:", value, "", 0, { slips: [{ value: a * 10 * n, hint: `10${sup(n)} ist nicht 10 · ${n}. Der Exponent zählt die Nullen.` }] })],
           "Hänge so viele Nullen an, wie der Exponent sagt.",
           `10${sup(n)} hat ${n} Nullen.`,
@@ -1119,7 +1119,8 @@ const zehnerpotenzen = makeLesson(1, 13, 3, {
     {
       id: "exponent-finden",
       make: (rng, level) => {
-        const a = rng.int(2, 9) * (rng.int(0, 1) ? 1 : 11), n = level === 1 ? rng.int(3, 5) : rng.int(6, 10);
+        // At most 99 · 10⁷ on level 2: a population that a real country can have.
+        const a = rng.int(2, 9) * (rng.int(0, 1) ? 1 : 11), n = level === 1 ? rng.int(3, 5) : rng.int(5, 7);
         const value = a * 10 ** n;
         return task(
           level,
@@ -1493,8 +1494,13 @@ const kombinatorik = makeLesson(1, 18, 4, {
           value *= i;
           factors.push(i);
         }
-        const digits = rng.shuffle([1, 2, 3, 4, 5, 6, 7, 8, 9]).slice(0, 3);
+        const count = rng.int(3, 5);
+        const digits = rng.shuffle([1, 2, 3, 4, 5, 6, 7, 8, 9]).slice(0, count);
         const shown = digits.join(", ");
+        const countWord = ["", "", "", "dreistellige", "vierstellige", "fünfstellige"][count];
+        const places = Array.from({ length: count }, (_, i) => count - i);
+        const once = places.reduce((product, p) => product * p, 1);
+        const repeated = count ** count;
         if (level === 1)
           return task(
             level,
@@ -1509,15 +1515,15 @@ const kombinatorik = makeLesson(1, 18, 4, {
         return task(
           level,
           "",
-          `Aus den Ziffern ${shown} sollen dreistellige Zahlen entstehen, in denen jede Ziffer genau einmal vorkommt. Wie viele sind das? Wie viele wären es, wenn Ziffern mehrfach vorkommen dürften?`,
+          `Aus den Ziffern ${shown} sollen ${countWord} Zahlen entstehen, in denen jede Ziffer genau einmal vorkommt. Wie viele sind das? Wie viele wären es, wenn Ziffern mehrfach vorkommen dürften?`,
           [
-            num("Jede Ziffer einmal:", 6, "", 0),
-            num("Ziffern mehrfach erlaubt:", 27, "", 0),
+            num("Jede Ziffer einmal:", once, "", 0),
+            num("Ziffern mehrfach erlaubt:", repeated, "", 0),
           ],
           "Überlege für jede Stelle, wie viele Ziffern noch möglich sind.",
-          "Einmal: 3 · 2 · 1 = 6. Mehrfach: 3 · 3 · 3 = 27.",
-          "6 Zahlen ohne Wiederholung, 27 mit Wiederholung.",
-          { n },
+          `Einmal: ${places.join(" · ")} = ${n0(once)}. Mehrfach: ${places.map(() => count).join(" · ")} = ${n0(repeated)}.`,
+          `${n0(once)} Zahlen ohne Wiederholung, ${n0(repeated)} mit Wiederholung.`,
+          { n, count },
         );
       },
     },

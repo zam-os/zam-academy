@@ -369,7 +369,7 @@ const doubling: LabView = {
   render(v) {
     const f = FACTORS[v.f];
     const top = f ** v.n;
-    let out = open("Säulen wachsen mit jedem Schritt") + title(`Nach ${v.n} Schritten: ${fmt(top, 0)}`);
+    let out = open("Säulen wachsen mit jedem Schritt") + title(`Nach ${v.n} ${v.n === 1 ? "Schritt" : "Schritten"}: ${fmt(top, 0)}`);
     const barWidth = 400 / (v.n + 1);
     for (let i = 0; i <= v.n; i++) {
       const height = Math.max(1, (f ** i / top) * 190);
@@ -477,7 +477,7 @@ const combiTree: LabView = {
     const total = v.t * v.h * v.s;
     const top = 52;
     const height = 215;
-    let out = open("Baumdiagramm der Möglichkeiten") + title(`${v.t} · ${v.h} · ${v.s} = ${total} Möglichkeiten`);
+    let out = open("Baumdiagramm der Möglichkeiten") + title(`${v.t} · ${v.h} · ${v.s} = ${total} ${total === 1 ? "Möglichkeit" : "Möglichkeiten"}`);
     const y = (index: number, count: number) => top + ((index + 0.5) * height) / count;
     for (let i = 0; i < v.t; i++) {
       const y1 = y(i, v.t);

@@ -114,8 +114,10 @@ export function toleranceOf(field: NumberField): number {
       : exact
         ? 0
         : 0.01 * scale;
+  // An exact answer allows only floating-point noise, far below its last digit.
+  // A relative epsilon alone would accept a neighbouring whole number from 1e9 up.
   const rounding = exact
-    ? 1e-9 * Math.max(1, scale)
+    ? Math.min(1e-9 * Math.max(1, scale), 0.1 * 10 ** -field.digits)
     : 0.51 * 10 ** -field.digits;
   return Math.max(relative, rounding, field.absTolerance ?? 0);
 }
@@ -210,12 +212,8 @@ const plain = (html: string) =>
 
 function near(value: number, target: number, field: NumberField): boolean {
   if (!Number.isFinite(target)) return false;
-  const tolerance = Math.max(
-    0.01 * Math.abs(target),
-    0.51 * 10 ** -field.digits,
-    1e-9,
-  );
-  return Math.abs(value - target) <= tolerance;
+  // Grade 5 answers are exact: a hint names a slip only when it was typed exactly.
+  return Math.abs(value - target) <= Math.max(0.51 * 10 ** -field.digits, 1e-9);
 }
 
 /**
@@ -228,7 +226,7 @@ export function wrongAnswerHint(
   result: TaskResult,
 ): string {
   if (result.status === "invalid") {
-    return "Fülle jedes Feld aus: Zahlen mit Komma oder Punkt, Brüche wie 3/5 und bei jeder Auswahl eine Antwort.";
+    return "Fülle jedes Feld aus: eine Zahl in jedes Eingabefeld und bei jeder Auswahl eine Antwort.";
   }
   if (result.status !== "wrong") return "";
   const numbers = task.fields
@@ -275,13 +273,13 @@ export function wrongAnswerHint(
       answer !== 0 &&
       (near(parsed, answer * 100, field) || near(parsed, answer / 100, field))
     ) {
-      return `Um den Faktor 100 daneben${where}: Prozent oder Dezimalzahl?`;
+      return `Um den Faktor 100 daneben${where}: Prüfe die Einheit und die Umrechnung.`;
     }
     if (
       answer !== 0 &&
       (near(parsed, answer * 2, field) || near(parsed, answer / 2, field))
     ) {
-      return `Genau doppelt oder halb so groß wie gesucht${where}: Radius oder Durchmesser? Die Hälfte vergessen?`;
+      return `Genau doppelt oder halb so groß wie gesucht${where}: Prüfe, ob du etwas verdoppelt oder halbiert hast.`;
     }
   }
 

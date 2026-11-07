@@ -1,3 +1,4 @@
+import { fmt } from "../exercises/format";
 import { CHART_KEYS, CHART_NAMES, seemingRatio } from "../lab/views-daten";
 import { numberField as num, choiceField as pick } from "./helpers";
 import {
@@ -10,6 +11,7 @@ import {
   task,
 } from "./builders";
 
+const n0 = (value: number) => fmt(value, 0);
 const L = (step: number, content: Parameters<typeof makeLesson>[3]) =>
   makeLesson(6, step, null, content);
 const values = (v: Record<string, number>) => CHART_KEYS.map((key) => v[key]);
@@ -60,7 +62,7 @@ const diagramme = L(1, {
         if (level === 1)
           return task(
             level,
-            `In einer Strichliste stehen ${bundles} volle Fünferbündel und ${rest} einzelne Striche. Wie viele Stimmen sind das?`,
+            `In einer Strichliste stehen ${bundles} ${bundles === 1 ? "volles Fünferbündel" : "volle Fünferbündel"} und ${rest === 0 ? "keine einzelnen Striche" : `${rest} ${rest === 1 ? "einzelner Strich" : "einzelne Striche"}`}. Wie viele Stimmen sind das?`,
             "",
             [num("Stimmen:", a, "", 0)],
             "Ein Bündel sind 5 Striche.",
@@ -99,17 +101,19 @@ const diagramme = L(1, {
             `${value} Kinder`,
             { step, lines },
           );
-        const data = [rng.int(12, 40), rng.int(41, 80), rng.int(81, 140)];
-        const options = ["20 pro Strich", "1 pro Strich", "1.000 pro Strich"];
+        const fitting = rng.pick([5, 10, 20, 50]);
+        const top = fitting * rng.int(8, 10);
+        const data = rng.shuffle([rng.int(2, 3) * fitting, rng.int(4, 6) * fitting, top]);
+        const options = [`${fitting} pro Strich`, "1 pro Strich", `${n0(fitting * 50)} pro Strich`];
         return task(
           level,
           "",
           `Du sollst ${data.join(", ")} als Säulen auf ein Blatt zeichnen, mit etwa 10 Teilstrichen. Welche Einteilung passt?`,
           [pick("Einteilung:", options, 0)],
           "Der größte Wert muss noch auf das Blatt passen.",
-          `Bei 20 pro Strich passt ${data[2]} in etwa ${Math.ceil(data[2] / 20)} Striche.`,
-          "20 pro Strich",
-          { top: data[2] },
+          `Bei ${fitting} pro Strich passt ${top} auf ${top / fitting} Striche. Mit 1 pro Strich wären es viel zu viele, mit ${n0(fitting * 50)} pro Strich wären alle Säulen winzig.`,
+          `${fitting} pro Strich`,
+          { top },
         );
       },
     },
@@ -253,8 +257,9 @@ const verzerrungen = L(3, {
     {
       id: "wirkung",
       make: (rng, level) => {
-        const start = rng.pick([40, 50, 60]);
-        const b = start + rng.int(1, 3) * 10;
+        const honest = level === 2 && rng.int(0, 2) === 0;
+        const start = honest ? 0 : rng.pick([40, 50, 60]);
+        const b = honest ? rng.int(2, 6) * 10 : start + rng.int(1, 3) * 10;
         const a = start + (b - start) * 2;
         return task(
           level,
@@ -262,10 +267,10 @@ const verzerrungen = L(3, {
           `Eine Werbung zeigt Säulen für ${a} und ${b} Punkte auf einer Achse ab ${start}. Die Säule von A wirkt doppelt so hoch. Ist A wirklich doppelt so gut wie B?`,
           level === 1
             ? [num("Höhe A:", a - start, "", 0), num("Höhe B:", b - start, "", 0)]
-            : [pick("Wirklich doppelt so gut?", ["nein", "ja"], 0), num("Doppelter Wert von B wäre:", 2 * b, "", 0)],
+            : [pick("Wirklich doppelt so gut?", ["nein", "ja"], honest ? 1 : 0), num("Doppelter Wert von B wäre:", 2 * b, "", 0)],
           "Im Bild zählt nur der Teil ab dem Achsenbeginn.",
           `${a} − ${start} = ${a - start} und ${b} − ${start} = ${b - start}.${level === 2 ? ` Das Doppelte von ${b} wäre ${2 * b}.` : ""}`,
-          level === 1 ? `A: ${a - start}, B: ${b - start}` : `Nein, ${a} ist nicht das Doppelte von ${b}.`,
+          level === 1 ? `A: ${a - start}, B: ${b - start}` : honest ? `Ja, die Achse beginnt bei 0, und ${a} ist das Doppelte von ${b}.` : `Nein, ${a} ist nicht das Doppelte von ${b}.`,
           { start, a, b },
         );
       },
