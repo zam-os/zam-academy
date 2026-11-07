@@ -112,6 +112,39 @@ function circlesMeet(A: Pt, B: Pt, radius: number): [Pt, Pt] | null {
   ];
 }
 
+/** The line g of the Lot and the Senkrechte; the lab's plot ends at y = −5. */
+const LINE_Y = -1.5;
+
+/**
+ * The points of the Lot (mode 1) and the Senkrechte (mode 2) at radius r: the
+ * circle around P meets g in A and B, and two circles around them meet in Q.
+ * Null while the first circle does not reach g in two points.
+ */
+export function perpendicularFigure(
+  mode: number,
+  r: number,
+): { P: Pt; A: Pt; B: Pt; second: number; Q: Pt[] } | null {
+  const P = { x: 0, y: mode === 1 ? 1.5 : LINE_Y };
+  const drop = P.y - LINE_Y;
+  if (r <= drop) return null;
+  const half = Math.sqrt(r * r - drop * drop);
+  const height = 3;
+  return {
+    P,
+    A: { x: -half, y: LINE_Y },
+    B: { x: half, y: LINE_Y },
+    // At the Lot the same radius leads back to P; on the line it would only touch in P.
+    second: mode === 1 ? r : Math.sqrt(r * r + height * height),
+    Q:
+      mode === 1
+        ? [{ x: 0, y: LINE_Y - drop }]
+        : [
+            { x: 0, y: LINE_Y + height },
+            { x: 0, y: LINE_Y - height },
+          ],
+  };
+}
+
 const constructPerp: LabView = {
   render(v, r) {
     const p = constructPlot;
@@ -137,19 +170,19 @@ const constructPerp: LabView = {
           mark(meet[1], "S₂");
     } else {
       // The line g is horizontal; the point lies above it (Lot) or on it (Senkrechte).
-      const yLine = -2;
-      const P = v.mode === 1 ? { x: 0, y: 2 } : { x: 0, y: yLine };
-      out += line(p.X(-7.5), p.Y(yLine), p.X(7.5), p.Y(yLine), "lab-axis") + text(p.X(6.3), p.Y(yLine) - 8, "g", "lab-text") + mark(P, "P");
-      const drop = Math.abs(P.y - yLine);
+      const P = { x: 0, y: v.mode === 1 ? 1.5 : LINE_Y };
+      out += line(p.X(-7.5), p.Y(LINE_Y), p.X(7.5), p.Y(LINE_Y), "lab-axis") + text(p.X(-7.2), p.Y(LINE_Y) - 8, "g", "lab-text") + mark(P, "P");
       if (v.step >= 1) out += C(P, v.r, "lab-thin");
-      if (v.r > drop) {
-        const half = Math.sqrt(v.r * v.r - drop * drop);
-        const A = { x: -half, y: yLine };
-        const B = { x: half, y: yLine };
-        if (v.step >= 1) out += mark(A, "A") + mark(B, "B");
-        // On the line, circles of the same radius would only touch in P.
-        const second = v.mode === 2 ? v.r * 1.5 : v.r;
-        if (v.step >= 2) out += C(A, second, "lab-thin") + C(B, second, "lab-thin");
+      const figure = perpendicularFigure(v.mode, v.r);
+      if (figure) {
+        if (v.step >= 1) out += mark(figure.A, "A") + mark(figure.B, "B");
+        if (v.step >= 2)
+          out +=
+            C(figure.A, figure.second, "lab-thin") +
+            C(figure.B, figure.second, "lab-thin") +
+            figure.Q.map((q, i) =>
+              mark(q, figure.Q.length === 1 ? "Q" : `Q${i === 0 ? "₁" : "₂"}`),
+            ).join("");
         if (v.step >= 3) out += line(p.X(0), p.Y(-5), p.X(0), p.Y(4.2), "lab-curve");
       }
     }
@@ -300,7 +333,7 @@ const special: LabView = {
       out += line(p.X(0), p.Y(-4.3), p.X(0), p.Y(4.1), "lab-curve-2");
     if (axes.includes("waagerecht"))
       out += line(p.X(-7.5), p.Y(0), p.X(7.5), p.Y(0), "lab-curve-2");
-    if (axes.includes("schräg")) {
+    if (v.family === 2 && axes.includes("schräg")) {
       // The axis runs from the corner between the equal sides to the opposite midpoint.
       const [A, B, C] = points;
       const corner = (C.x - A.x) ** 2 + (C.y - A.y) ** 2 === v.a * v.a ? A : B;
@@ -310,7 +343,8 @@ const special: LabView = {
       const dy = mid.y - corner.y;
       out += line(p.X(corner.x - dx), p.Y(corner.y - dy), p.X(corner.x + 3 * dx), p.Y(corner.y + 3 * dy), "lab-curve-2");
     }
-    if (axes.includes("Diagonalen")) {
+    if (r.axes === 4) {
+      // Both kinds of square have two slanted axes through the centre.
       out += line(p.X(-4.1), p.Y(-4.1), p.X(4.1), p.Y(4.1), "lab-curve-2");
       out += line(p.X(-4.1), p.Y(4.1), p.X(4.1), p.Y(-4.1), "lab-curve-2");
     }

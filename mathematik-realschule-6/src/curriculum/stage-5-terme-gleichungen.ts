@@ -1,5 +1,5 @@
 import { fmt, paren } from "../exercises/format";
-import { clean, reduce } from "../models";
+import { clean, reduce, roundSchool } from "../models";
 import { choiceField as pick, numberField as num, yesNo } from "./helpers";
 import {
   choice as c,
@@ -854,7 +854,7 @@ const umformungen = L(6, {
           `Löse ${a} · x = ${fmt(c0)} mit G = ℤ. Gib die Lösungsmenge an und notiere die Lösung über ℚ als Zahl.`,
           [
             pick("Lösungsmenge über ℤ", [...new Set(options)], 0),
-            num("Lösung über ℚ =", exact, "", 2),
+            num("Lösung über ℚ =", exact, "", 3),
           ],
           "Teile durch den Faktor. In ℤ zählt die Lösung nur, wenn sie ganz ist.",
           `x = ${fmt(c0)} : ${a} = ${value}.`,
@@ -963,14 +963,15 @@ const sachaufgaben = L(7, {
         const off = rng.int(0, 1);
         const total = p * x + off;
         const fits = off === 0;
+        const quotient = roundSchool(total / p, 2);
         if (level === 1)
           return task(
             level,
             `Eintrittskarten kosten ${p} € pro Stück. Eine Gruppe bezahlt angeblich ${total} €. Löse ${p} · x = ${total}. Runde auf zwei Stellen. Passt das Ergebnis zur Sache?`,
             "",
-            [num("x =", clean(total / p), "", 2), yesNo("Passt es zur Sache?", fits)],
+            [num("x =", quotient, "", 2), yesNo("Passt es zur Sache?", fits)],
             "Karten gibt es nur als ganze Anzahl.",
-            `${total} : ${p} = ${fmt(total / p)}.`,
+            `${total} : ${p} ≈ ${fmt(quotient)}.`,
             fits ? `${x} Karten, das passt.` : "Das passt nicht: Die Anzahl ist nicht ganz.",
             { p, total },
           );

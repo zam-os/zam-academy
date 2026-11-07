@@ -2032,7 +2032,10 @@ const vorzeichen = L(17, {
       o("rule", "Regel", (v) => {
         if (v.op === 3 && v.b === 0) return "Durch 0 darfst du nicht teilen.";
         if (v.op < 2) return v.op === 1 ? "Minus b heißt: Gegenzahl von b addieren." : "Plus: bei positivem b nach rechts, bei negativem b nach links.";
-        return v.a * v.b >= 0 ? "Gleiche Vorzeichen ergeben Plus." : "Verschiedene Vorzeichen ergeben Minus.";
+        // 0 has no sign, so the sign rule says nothing about it.
+        if (v.a === 0 || v.b === 0)
+          return v.op === 2 ? "Ist ein Faktor 0, ist das Produkt 0." : "0 geteilt durch eine andere Zahl ergibt 0.";
+        return v.a * v.b > 0 ? "Gleiche Vorzeichen ergeben Plus." : "Verschiedene Vorzeichen ergeben Minus.";
       }),
     ],
     [

@@ -2,8 +2,15 @@ import { describe, expect, it } from "vitest";
 import { ALL_LESSONS, findLessonById } from "../src/curriculum";
 import { createRng } from "../src/exercises/rng";
 import { fillHeight } from "../src/lab/views-proportion";
-import { FIGURES, familyPoints } from "../src/lab/views-spiegelung";
+import { computeReadouts, defaultLabValues, enumerateLabGrid } from "../src/lab/engine";
+import { labView } from "../src/lab/visuals";
+import {
+  FIGURES,
+  familyPoints,
+  perpendicularFigure,
+} from "../src/lab/views-spiegelung";
 import { classifyFamilyFigure } from "../src/curriculum/stage-2-achsenspiegelung";
+import { fmt } from "../src/exercises/format";
 import type { ExerciseTask, NumberField } from "../src/model/types";
 import {
   addFractions,
@@ -169,6 +176,25 @@ describe("Aufgaben: Rechnung der Generatoren gegengerechnet", () => {
     }
   });
 
+  it("never lets a loose tolerance pass for a result that has an exact value", () => {
+    // A field whose answer has more decimals than the field shows accepts 1 % around it.
+    const found = new Set<string>();
+    for (const lesson of ALL_LESSONS)
+      for (const g of lesson.exercises)
+        for (const level of [1, 2] as const)
+          for (let seed = 1; seed <= 400; seed++)
+            for (const f of numbers(g.make(createRng(seed), level))) {
+              const atDigits = Number(f.answer.toFixed(f.digits));
+              const longer = Number(f.answer.toFixed(f.digits + 3));
+              if (
+                Math.abs(f.answer - atDigits) > 1e-9 &&
+                Math.abs(f.answer - longer) < 1e-9
+              )
+                found.add(`${lesson.id}/${g.id} L${level} ${f.label} ${f.answer}`);
+            }
+    expect([...found]).toEqual([]);
+  });
+
   it("keeps the shares of a survey at no more than 100 %", () => {
     for (const seed of seeds) {
       const survey = generator("dp-4-prozent-begriffe", "anteil").make(createRng(seed), 2);
@@ -256,6 +282,105 @@ describe("Spiegelung und Symmetrie", () => {
             expect(degs.length, where).toBe(axes);
             expect(list.includes("senkrecht"), where).toBe(degs.includes(90));
             expect(list.includes("waagerecht"), where).toBe(degs.includes(0));
+          }
+  });
+});
+
+describe("Befunde aus dem Review von PR 92", () => {
+  it("shows the pool's filling time rounded as the field expects it", () => {
+    // 2,55 h: toFixed would show 2,5, the field and school rounding say 2,6.
+    expect(fmt(roundSchool(25.5 / 10, 1), 1)).toBe("2,6");
+    const pool = generator("rg-4-zusammengesetzte-koerper", "pool");
+    let halves = 0;
+    for (let seed = 1; seed <= 3000; seed++) {
+      const task = pool.make(createRng(seed), 2);
+      const { width, l1, l2, d1, d2, rate } = task.meta!;
+      const exact = (width * l1 * d1 + width * l2 * d2) / rate;
+      const time = numbers(task)[1];
+      expect(time.answer).toBe(roundSchool(exact, 1));
+      expect(task.steps[task.steps.length - 1]).toContain(`≈ ${fmt(time.answer, 1)} h`);
+      if (Number((exact * 10).toFixed(6)) % 1 === 0.5) halves++;
+    }
+    expect(halves).toBeGreaterThan(0);
+  });
+
+  it("applies the sign rule only where both numbers have a sign", () => {
+    const lab = findLessonById("rz-17-vorzeichen")!.lesson.lab;
+    const rule = lab.readouts.find((readout) => readout.key === "rule")!;
+    for (const op of [2, 3])
+      for (let a = -6; a <= 6; a += 0.5)
+        for (let b = -6; b <= 6; b += 0.5) {
+          if (op === 3 && b === 0) continue;
+          const text = String(rule.compute({ a, b, op }));
+          const value = op === 2 ? a * b : a / b;
+          const where = `${a}, ${b}, op ${op}: ${text}`;
+          if (value === 0) expect(text, where).toMatch(/\b0\b/);
+          if (text.startsWith("Gleiche")) expect(value, where).toBeGreaterThan(0);
+          if (text.startsWith("Verschiedene")) expect(value, where).toBeLessThan(0);
+        }
+  });
+
+  it("keeps the second intersection of the Lot and the Senkrechte inside the plot", () => {
+    const lab = findLessonById("as-3-senkrechte-lot")!.lesson.lab;
+    const view = labView(lab.kind);
+    for (const mode of [1, 2])
+      for (let r = 2; r <= 6; r += 0.5) {
+        const figure = perpendicularFigure(mode, r);
+        if (mode === 1 && r <= 3) {
+          expect(figure, `r = ${r}`).toBeNull();
+          continue;
+        }
+        expect(figure, `r = ${r}`).not.toBeNull();
+        const { P, A, B, second, Q } = figure!;
+        close(Math.hypot(A.x - P.x, A.y - P.y), r);
+        close(Math.hypot(B.x - P.x, B.y - P.y), r);
+        for (const q of Q) {
+          close(Math.hypot(q.x - A.x, q.y - A.y), second);
+          close(Math.hypot(q.x - B.x, q.y - B.y), second);
+          // The perpendicular runs at x = 0, through P and Q, and Q is drawn inside.
+          close(q.x, P.x);
+          expect(q.y).toBeGreaterThan(-5);
+          expect(q.y).toBeLessThan(5);
+          expect(q.y === P.y).toBe(false);
+        }
+        const values = { ...defaultLabValues(lab), mode, step: 3, r };
+        const svg = view.render(values, computeReadouts(lab, values));
+        expect(svg).toContain(">Q");
+      }
+    // The goal asks for what the drawing can show.
+    const goal = lab.goals.find((g) => g.id === "lot")!;
+    const at = (r: number) => ({ mode: 1, step: 3, r });
+    expect(goal.check(at(3), {})).toBe(false);
+    expect(goal.check(at(3.5), {})).toBe(true);
+    expect(enumerateLabGrid(lab, 3).length).toBeGreaterThan(0);
+  });
+
+  it("names slanted and upright axes by what they connect", () => {
+    const direction: Record<number, string> = {
+      90: "senkrecht",
+      0: "waagerecht",
+      45: "schräg",
+      135: "schräg",
+    };
+    for (const family of [0, 1])
+      for (let a = 1; a <= 7; a++)
+        for (let b = 1; b <= 7; b++)
+          for (let s = -2; s <= 2; s++) {
+            const { axes, list, name } = classifyFamilyFigure({ family, a, b, s });
+            if (axes < 2) continue;
+            const points = familyPoints(family, a, b, s);
+            for (const deg of [90, 0, 45, 135]) {
+              if (!isSymmetryAxis(points, deg)) continue;
+              // Independently: a diagonal runs through two corners, a Mittellinie through none.
+              const corners = points.filter((q) => {
+                const image = mirrorPoint(q.x, q.y, deg);
+                return Math.abs(image.x - q.x) < 1e-9 && Math.abs(image.y - q.y) < 1e-9;
+              }).length;
+              const kind = corners === 2 ? "Diagonalen" : "Mittellinien";
+              expect(corners === 2 || corners === 0, name).toBe(true);
+              const part = list.split(", ").find((entry) => entry.startsWith(kind));
+              expect(part, `${name} ${family}, ${a}, ${b}, ${s}: ${deg}° in "${list}"`).toContain(direction[deg]);
+            }
           }
   });
 });

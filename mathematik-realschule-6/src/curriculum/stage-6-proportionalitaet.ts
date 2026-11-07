@@ -220,14 +220,16 @@ const erkennen = L(2, {
         return task(
           level,
           "",
-          `Ein Taxi kostet ${b} € Grundgebühr und ${fmt(k)} € pro Kilometer. Berechne den Preis für ${xs[0]} km und ${2 * xs[0]} km. Ist der Preis direkt proportional zur Strecke?`,
+          `Ein Taxi kostet ${b === 0 ? "keine Grundgebühr" : `${b} € Grundgebühr`} und ${fmt(k)} € pro Kilometer. Berechne den Preis für ${xs[0]} km und ${2 * xs[0]} km. Ist der Preis direkt proportional zur Strecke?`,
           [
             num(`Preis für ${xs[0]} km =`, clean(k * xs[0] + b), "€", 2),
             num(`Preis für ${2 * xs[0]} km =`, clean(2 * k * xs[0] + b), "€", 2),
             yesNo("Direkt proportional?", b === 0),
           ],
           "Vergleiche: Führt die doppelte Strecke zum doppelten Preis?",
-          `${fmt(k)} · ${xs[0]} + ${b} und ${fmt(k)} · ${2 * xs[0]} + ${b}.`,
+          b === 0
+            ? `${fmt(k)} · ${xs[0]} = ${fmt(k * xs[0])} und ${fmt(k)} · ${2 * xs[0]} = ${fmt(2 * k * xs[0])}.`
+            : `${fmt(k)} · ${xs[0]} + ${b} = ${fmt(k * xs[0] + b)} und ${fmt(k)} · ${2 * xs[0]} + ${b} = ${fmt(2 * k * xs[0] + b)}.`,
           b === 0 ? "Ohne Grundgebühr ist der Preis direkt proportional." : "Nicht direkt proportional, wegen der Grundgebühr.",
           { k, b },
         );

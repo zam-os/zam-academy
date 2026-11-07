@@ -1,5 +1,5 @@
 import { fmt } from "../exercises/format";
-import { clean } from "../models";
+import { clean, roundSchool } from "../models";
 import { numberField as num, choiceField as pick } from "./helpers";
 import {
   choice as c,
@@ -513,17 +513,18 @@ const zusammengesetzt = L(4, {
             { width, l1, l2, d1, d2 },
           );
         const rate = rng.pick([10, 12, 15, 20]);
+        const hours = roundSchool(V / rate, 1);
         return task(
           level,
           "",
           `Ein Schwimmbecken ist ${width} m breit. Auf ${l1} m Länge ist es ${fmt(d1)} m tief, auf den nächsten ${l2} m ist es ${fmt(d2)} m tief. Wie viele Kubikmeter Wasser fasst es? Wie viele Stunden dauert das Füllen bei ${rate} m³ pro Stunde? Runde auf eine Stelle.`,
           [
             num("V =", V, "m³", 2),
-            num("Zeit =", Math.round((V / rate) * 10) / 10, "h", 1),
+            num("Zeit =", hours, "h", 1),
           ],
           "Becken in zwei Quader zerlegen. Zeit = Volumen : Füllmenge pro Stunde.",
           `${fmt(width * l1 * d1)} + ${fmt(width * l2 * d2)} = ${fmt(V)}; ${fmt(V)} : ${rate}.`,
-          `${fmt(V)} m³ und ≈ ${fmt(V / rate, 1)} h.`,
+          `${fmt(V)} m³ und ≈ ${fmt(hours, 1)} h.`,
           { width, l1, l2, d1, d2, rate },
         );
       },

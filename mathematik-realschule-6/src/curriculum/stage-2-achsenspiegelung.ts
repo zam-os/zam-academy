@@ -325,8 +325,8 @@ const abbilden = L(2, {
 
 const STEP_TEXT = [
   ["Gegeben: Strecke [AB]", "Kreis um A", "Kreis um B mit gleichem Radius", "Schnittpunkte verbinden: die Mittelsenkrechte"],
-  ["Gegeben: Gerade g und Punkt P außerhalb", "Kreis um P schneidet g in A und B", "Kreise um A und B mit gleichem Radius", "Durch P und den Schnittpunkt: das Lot von P auf g"],
-  ["Gegeben: Gerade g und Punkt P auf g", "Kreis um P schneidet g in A und B", "Kreise um A und B mit größerem Radius", "Schnittpunkt und P verbinden: die Senkrechte in P"],
+  ["Gegeben: Gerade g und Punkt P außerhalb", "Kreis um P schneidet g in A und B", "Kreise um A und B mit gleichem Radius", "Durch P und den zweiten Schnittpunkt Q: das Lot von P auf g"],
+  ["Gegeben: Gerade g und Punkt P auf g", "Kreis um P schneidet g in A und B", "Kreise um A und B mit größerem Radius", "Schnittpunkte und P verbinden: die Senkrechte in P"],
 ];
 
 const senkrechte = L(3, {
@@ -366,7 +366,7 @@ const senkrechte = L(3, {
     [
       o("stepText", "Aktueller Schritt", (v) => STEP_TEXT[v.mode][v.step]),
       o("ok", "Gelingt die Konstruktion?", (v) => {
-        const need = v.mode === 0 ? 3 : v.mode === 1 ? 4 : 0;
+        const need = v.mode === 0 ? 3 : v.mode === 1 ? 3 : 0;
         return v.r > need ? "ja" : "nein, der Radius ist zu klein";
       }),
     ],
@@ -379,7 +379,7 @@ const senkrechte = L(3, {
       {
         id: "lot",
         text: "Fälle das Lot von P auf g bis zum letzten Schritt.",
-        check: (v) => v.mode === 1 && v.step === 3 && v.r > 4,
+        check: (v) => v.mode === 1 && v.step === 3 && v.r > 3,
       },
       {
         id: "senkrechte",
@@ -714,16 +714,19 @@ function classify(v: Record<string, number>): { name: string; axes: number; list
   if (v.family === 0) {
     if (Math.abs(v.s) >= v.a / 2)
       return { name: "kein Drachenviereck: Der Versatz ist zu groß", axes: 1, list: "senkrecht" };
-    if (v.s !== 0) return { name: "Drachenviereck", axes: 1, list: "senkrecht" };
-    if (v.a === v.b) return { name: "Quadrat", axes: 4, list: "senkrecht, waagerecht, Diagonalen" };
-    return { name: "Raute", axes: 2, list: "senkrecht, waagerecht" };
+    if (v.s !== 0) return { name: "Drachenviereck", axes: 1, list: "Diagonale senkrecht" };
+    // This square stands on a corner: its diagonals are the upright axes.
+    if (v.a === v.b)
+      return { name: "Quadrat", axes: 4, list: "Diagonalen senkrecht und waagerecht, Mittellinien schräg" };
+    return { name: "Raute", axes: 2, list: "Diagonalen senkrecht und waagerecht" };
   }
   if (v.family === 1) {
     if (v.s === 0 && v.a === v.b)
       return v.a === 3
-        ? { name: "Quadrat", axes: 4, list: "senkrecht, waagerecht, Diagonalen" }
-        : { name: "Rechteck", axes: 2, list: "senkrecht, waagerecht" };
-    if (v.s === 0) return { name: "gleichschenkliges Trapez", axes: 1, list: "senkrecht" };
+        ? { name: "Quadrat", axes: 4, list: "Mittellinien senkrecht und waagerecht, Diagonalen schräg" }
+        : { name: "Rechteck", axes: 2, list: "Mittellinien senkrecht und waagerecht" };
+    if (v.s === 0)
+      return { name: "gleichschenkliges Trapez", axes: 1, list: "senkrecht durch die Seitenmitten" };
     if (v.a === v.b) return { name: "Parallelogramm", axes: 0, list: "keine" };
     return { name: "allgemeines Trapez", axes: 0, list: "keine" };
   }
