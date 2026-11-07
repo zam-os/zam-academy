@@ -1,10 +1,16 @@
-import type { Lesson, Stage } from "../model/types";
+import type { Lesson, Stage, TeacherVideo } from "../model/types";
+import teacherVideoData from "./teacher-videos.json";
 import { STAGE_RATIONALE_ZAHLEN } from "./stage-1-rationale-zahlen";
 import { STAGE_ACHSENSPIEGELUNG } from "./stage-2-achsenspiegelung";
 import { STAGE_FLAECHENINHALT } from "./stage-3-flaecheninhalt";
 import { STAGE_RAUMGEOMETRIE } from "./stage-4-raumgeometrie";
 import { STAGE_TERME_GLEICHUNGEN } from "./stage-5-terme-gleichungen";
 import { STAGE_PROPORTIONALITAET } from "./stage-6-proportionalitaet";
+
+const teacherVideos: Record<
+  string,
+  TeacherVideo & { additional?: TeacherVideo[] }
+> = teacherVideoData;
 
 /** One stage per Lernbereich; grade 6 has one Fachlehrplan for all Zweige. */
 export const STAGES: Stage[] = [
@@ -14,7 +20,13 @@ export const STAGES: Stage[] = [
   STAGE_RAUMGEOMETRIE,
   STAGE_TERME_GLEICHUNGEN,
   STAGE_PROPORTIONALITAET,
-];
+].map((stage) => ({
+  ...stage,
+  lessons: stage.lessons.map((lesson) => {
+    const { additional = [], ...teacherVideo } = teacherVideos[lesson.id];
+    return { ...lesson, teacherVideo, additionalTeacherVideos: additional };
+  }),
+}));
 export const ALL_LESSONS: Lesson[] = STAGES.flatMap((stage) => stage.lessons);
 
 export function findLessonById(

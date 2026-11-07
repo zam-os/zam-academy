@@ -11,7 +11,7 @@ LehrplanPLUS Bayern, ein Fachlehrplan für alle Wahlpflichtfächergruppen: **47 
 | 5 Terme und Gleichungen | ca. 15 | 7 | 7 |
 | 6 Direkte Proportionalität | ca. 12 | 4 | 5 |
 
-Ein Abschluss verlangt Schnellcheck, alle drei Laboraufträge und je drei richtige Aufgaben auf **beiden** Stufen. Der Fortschritt bleibt lokal im Browser. Die Konstruktionen mit Zirkel und Lineal zeigt die App Schritt für Schritt; ausgeführt werden sie auf Papier, und die App bewertet sie nicht. Erklärvideos enthält das Paket noch nicht, sie folgen in einem eigenen Schritt.
+Ein Abschluss verlangt Schnellcheck, alle drei Laboraufträge und je drei richtige Aufgaben auf **beiden** Stufen. Der Fortschritt bleibt lokal im Browser. Die Konstruktionen mit Zirkel und Lineal zeigt die App Schritt für Schritt; ausgeführt werden sie auf Papier, und die App bewertet sie nicht. Jede Lektion verlinkt mindestens ein ergänzendes deutschsprachiges Erklärvideo (61 Links insgesamt). Direkt am Link steht, welchen Teil das Video erklärt und was du in der Lektion ergänzt. Originaltitel, Kanäle und Prüfumfang stehen im [Videonachweis](../docs/mathematik-6-lehrervideos.md); die App lädt keine Videos oder Vorschaubilder nach.
 
 ## Lehrplan und Nachbarjahrgänge
 
@@ -47,5 +47,7 @@ ZAM_CORE=<Datei-URL von zam-core/dist/index.js> node mathematik-realschule-6/scr
 ```
 
 Geprüft am 07.11.2026 nach dem Review von PR 92: 47 Pakettests, 51 Katalog- und Registrytests, Typprüfung, Build, Offline-Zip, Installation der 141 Karten und alle kuratierten Distraktoren mit zam-core 0.54.0. Die Labortests prüfen Reglergitter, alle 141 Zielzeugen, keinen freien Start und Zeigerpositionen. Je Lektion und Stufe werden 80 erzeugte Aufgaben mit Dezimalkomma und Dezimalpunkt geprüft, also 7520 Aufgaben. Dazu kommen unabhängige Gegenproben für Bruchrechnung, Dezimalentwicklung, Runden, Flächen, Volumen, Gleichungen, Prozent, Spiegelung und Symmetrieachsen.
+
+Videoschritt am 07.11.2026: 54 Pakettests, Build und Offline-Zip grün; `node scripts/verify-teacher-videos.mjs` bestätigte für alle 61 Links Titel und Kanal über oEmbed sowie Video-ID und Abspielstatus der Originalseite. Die Liveprüfung benötigt Internet und läuft nicht in der App oder in CI. Im Browser geprüft: alle 47 Lektionen zeigen ihre Links, 14 davon zwei, ohne Einbettung oder Fremdanfrage und ohne Überlauf bei 375 px im dunklen Design. Die Videos wurden nicht vollständig angesehen, den Prüfumfang je Link nennt der [Videonachweis](../docs/mathematik-6-lehrervideos.md).
 
 Im Browser geprüft wurden alle 47 Lektionen auf beiden Stufen (Labor, Aufgabe, Hilfe, kein freier Auftrag, kein Überlauf), die Zeichnungen aller Labore in Start- und Auftragsstellung, Schnellcheck, Laboraufträge, Aufgabenprüfung mit Hinweisen und Speicherung, Ziehen eines Griffs, die Formelsammlung und das dunkle Farbschema. Die App stellt keine Anfrage an Dritte.
