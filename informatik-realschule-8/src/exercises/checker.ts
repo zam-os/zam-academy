@@ -116,7 +116,11 @@ export function toleranceOf(field: NumberField): number {
   const exact = Math.abs(field.answer - round(field.answer, field.digits)) < 1e-9;
   const relative =
     field.tolerance !== undefined ? field.tolerance * scale : exact ? 0 : 0.01 * scale;
-  const rounding = exact ? 1e-9 * Math.max(1, scale) : 0.51 * 10 ** -field.digits;
+  // An exact answer allows only floating-point noise, far below its last digit.
+  // A relative epsilon alone would accept a neighbouring whole number from 1e9 up.
+  const rounding = exact
+    ? Math.min(1e-9 * Math.max(1, scale), 0.1 * 10 ** -field.digits)
+    : 0.51 * 10 ** -field.digits;
   return Math.max(relative, rounding, field.absTolerance ?? 0);
 }
 
