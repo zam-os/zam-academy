@@ -8,6 +8,7 @@ Hands-on training apps that build understanding before [ZAM](https://github.com/
 | Physik 8 Realschule (LehrplanPLUS Bayern, Zweig I und II/III) | [`physik-realschule-8/`](physik-realschule-8/) | https://academy.zam-os.org/physik-realschule-8/ | `zam-academy:physik-realschule-8` |
 | Physik 9 Realschule (LehrplanPLUS Bayern) | [`physik-realschule-9/`](physik-realschule-9/) | https://academy.zam-os.org/physik-realschule-9/ | `zam-academy:physik-realschule-9` |
 | Relationale Datenbanken und SQL (DE/EN, LehrplanPLUS IT 2.3.1/2.3.2) | [`sql/`](sql/) | https://academy.zam-os.org/sql/ | `zam-academy:sql` |
+| Englisch 5 Realschule (LehrplanPLUS Bayern, alle Wahlpflichtfächergruppen) | [`englisch-realschule-5/`](englisch-realschule-5/) | https://academy.zam-os.org/englisch-realschule-5/ | `zam-academy:englisch-realschule-5` |
 | Englisch 8 Realschule (LehrplanPLUS Bayern, alle Wahlpflichtfächergruppen) | [`englisch-realschule-8/`](englisch-realschule-8/) | https://academy.zam-os.org/englisch-realschule-8/ | `zam-academy:englisch-realschule-8` |
 | Englisch 9 Realschule (LehrplanPLUS Bayern) | [`englisch-realschule-9/`](englisch-realschule-9/) | https://academy.zam-os.org/englisch-realschule-9/ | `zam-academy:englisch-realschule-9` |
 | Englisch 10 Realschule (LehrplanPLUS Bayern, alle Wahlpflichtfächergruppen) | [`englisch-realschule-10/`](englisch-realschule-10/) | https://academy.zam-os.org/englisch-realschule-10/ | `zam-academy:englisch-realschule-10` |
@@ -116,6 +117,7 @@ cd uml                 # or: cd physik-realschule-9 (dev server on :5181), cd sq
 # Grade 4 German preview: cd deutsch-grundschule-4 (dev server on :5217)
 # Grade 4 HSU preview: cd hsu-grundschule-4 (dev server on :5218)
 # Mathematik 5: cd mathematik-realschule-5 (dev server on :5220)
+# Englisch 5: cd englisch-realschule-5 (dev server on :5221)
 npm ci
 npm run dev      # http://localhost:5180/uml/
 npm test
@@ -162,3 +164,5 @@ The [History 8 package](geschichte-realschule-8/) adds 35 core lessons and three
 The [Englisch 8 package](englisch-realschule-8/) adds 51 lessons and 102 cards for all Wahlpflichtfächergruppen: North American history, the USA, New York and other cities, Canada, the grade-8 grammar (pronouns, two objects, questions, passive and personal passive, if-clauses type 0–3, receptive participle constructions) and American youth literature. Its [coverage matrix](englisch-realschule-8/coverage.json) maps all 44 Kompetenzerwartungen and topic rows. The [legacy review](docs/englisch-8-bestandsabgleich.md) maps the four old grammar cards to 1 A and 3 C rows; Thomas approved the mapping on 2026-10-29, so since cell 2026.10.2 the type-3 card replaces its equivalent old card and the three C cards stay active.
 
 The [French 8 package](franzoesisch-realschule-8/) adds 40 core lessons, two optional relative-clause extensions and 84 linked cards for Bavarian Realschule group IIIa. Its [coverage matrix](franzoesisch-realschule-8/coverage.json) indexes 56 expectations and topic entries as guided exercises or preparation. The [inventory](docs/franzoesisch-8-bestandsabgleich.md) documents four older grammar cards that remain active without history transfer. Natural audiovisual practice, spontaneous conversations, maps, research and a full vocabulary programme supplement the app. Pages publishes app and cell together on merge; ZAM fixture synchronization is separate.
+
+The [Englisch 5 package](englisch-realschule-5/) adds 43 lessons and 86 cards for all Wahlpflichtfächergruppen: English as a world language and the British Isles, everyday life and school in Great Britain, leisure and travel, the grade-5 vocabulary and grammar workshop (from `to be` and `have got` to the simple present, present progressive, simple past, modals, questions, imperatives, word order and IPA) and stories, reading logs and public-domain poems by Robert Louis Stevenson. Its [coverage matrix](englisch-realschule-5/coverage.json) maps all 36 Kompetenzerwartungen and topic rows plus all 33 listed vocabulary and grammar structures. The [legacy review](docs/englisch-5-bestandsabgleich.md) records a proposal (`proposal-only`, `approved: null`) for the eight old grade-5 grammar cards (4 A, 4 C); until approved, `cell.json` ships without `replaces` or `retired_items` so all eight old cards stay active.
