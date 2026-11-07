@@ -8,6 +8,7 @@ Hands-on training apps that build understanding before [ZAM](https://github.com/
 | Physik 8 Realschule (LehrplanPLUS Bayern, Zweig I und II/III) | [`physik-realschule-8/`](physik-realschule-8/) | https://academy.zam-os.org/physik-realschule-8/ | `zam-academy:physik-realschule-8` |
 | Physik 9 Realschule (LehrplanPLUS Bayern) | [`physik-realschule-9/`](physik-realschule-9/) | https://academy.zam-os.org/physik-realschule-9/ | `zam-academy:physik-realschule-9` |
 | Relationale Datenbanken und SQL (DE/EN, LehrplanPLUS IT 2.3.1/2.3.2) | [`sql/`](sql/) | https://academy.zam-os.org/sql/ | `zam-academy:sql` |
+| Englisch 5 Realschule (LehrplanPLUS Bayern, für alle Schülerinnen und Schüler) | [`englisch-realschule-5/`](englisch-realschule-5/) | https://academy.zam-os.org/englisch-realschule-5/ | `zam-academy:englisch-realschule-5` |
 | Englisch 8 Realschule (LehrplanPLUS Bayern, alle Wahlpflichtfächergruppen) | [`englisch-realschule-8/`](englisch-realschule-8/) | https://academy.zam-os.org/englisch-realschule-8/ | `zam-academy:englisch-realschule-8` |
 | Englisch 9 Realschule (LehrplanPLUS Bayern) | [`englisch-realschule-9/`](englisch-realschule-9/) | https://academy.zam-os.org/englisch-realschule-9/ | `zam-academy:englisch-realschule-9` |
 | Englisch 10 Realschule (LehrplanPLUS Bayern, alle Wahlpflichtfächergruppen) | [`englisch-realschule-10/`](englisch-realschule-10/) | https://academy.zam-os.org/englisch-realschule-10/ | `zam-academy:englisch-realschule-10` |
@@ -118,6 +119,7 @@ cd uml                 # or: cd physik-realschule-9 (dev server on :5181), cd sq
 # Grade 4 HSU preview: cd hsu-grundschule-4 (dev server on :5218)
 # Mathematik 5: cd mathematik-realschule-5 (dev server on :5220)
 # Mathematik 5 Gymnasium: cd mathematik-gymnasium-5 (dev server on :5221)
+# Englisch 5: cd englisch-realschule-5 (dev server on :5223)
 npm ci
 npm run dev      # http://localhost:5180/uml/
 npm test
@@ -170,3 +172,5 @@ for local evaluation with 37 lessons and 77 ZAM cards. Run
 `npm ci && npm run dev` from the package folder (port 5222), or use
 `npm run package:zip` for a self-contained offline build.
 [Curriculum coverage and legacy card inventory](docs/deutsch-5-coverage.md)
+
+The [Englisch 5 package](englisch-realschule-5/) adds 43 lessons and 86 cards for all grade-5 pupils: English as a world language and the British Isles, everyday life and school in Great Britain, leisure and travel, the grade-5 vocabulary and grammar workshop (from `to be` and `have got` to the simple present, present progressive, simple past, modals, questions, imperatives, word order and IPA) and stories, reading logs and public-domain poems by Robert Louis Stevenson. Its [coverage matrix](englisch-realschule-5/coverage.json) maps all 36 Kompetenzerwartungen and topic rows plus all 33 listed vocabulary and grammar structures (with the two receptive future-meaning structures separated into their own `receptive` entries). The [legacy review](docs/englisch-5-bestandsabgleich.md) records a proposal (`proposal-only`, `approved: null`) for the eight old grade-5 grammar cards (4 A, 4 C); until approved, `cell.json` ships without `replaces` or `retired_items` so all eight old cards stay active.
