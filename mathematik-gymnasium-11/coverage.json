@@ -1,0 +1,261 @@
+{
+  "schema": 1,
+  "checked": "2026-11-08",
+  "curriculum": "https://www.lehrplanplus.bayern.de/fachlehrplan/gymnasium/11/mathematik",
+  "school_type": "gymnasium",
+  "grade": 11,
+  "subject": "mathematik",
+  "scope": "all-official-learning-areas",
+  "optional_lessons": [],
+  "scope_note": "Vier Lernbereiche, LB 4 in den Teilen 4.1 und 4.2; das Gymnasium hat in Mathematik keine Zweige. Skizzen auf Papier, Recherche und die Arbeit mit Mathematiksoftware und Tabellenkalkulation werden erklärt; die Labore übernehmen die Rolle der dynamischen Software. Die Wissenschaftswoche ist kein Lernbereich. Videos folgen als separater Schritt.",
+  "rows": [
+    {
+      "lb": 1,
+      "competence": "geben für alle bisher bekannten Funktionstypen charakteristische Beispiele an. Sie bringen durch geeignete Skizzen der zugehörigen Graphen wesentliche Eigenschaften der jeweiligen Funktion deutlich zum Ausdruck und beschreiben diese.",
+      "lessons": [
+        "fk-1-funktionstypen"
+      ],
+      "status": "implemented",
+      "evidence": "Das Labor function-types stellt sieben Funktionstypen mit Faktor a nebeneinander und nennt Definitions- und Wertemenge, Symmetrie, Monotonie und Randverhalten; die Aufgaben steckbrief und punkt-parameter üben die Zuordnung von Eigenschaften. Das Skizzieren auf Papier wird erklärt."
+    },
+    {
+      "lb": 1,
+      "competence": "erläutern anhand des Graphen sowie anhand des Funktionsterms das Grenzverhalten von Funktionen für x → +∞ und für x → −∞; sie unterscheiden Konvergenz und Divergenz und veranschaulichen die Konvergenz mithilfe der Vorstellung eines beliebig schmalen Streifens, den ein gegebener Funktionsgraph jeweils ab einem bestimmten x‑Wert nicht mehr verlässt. Zur Angabe des Grenzverhaltens verwenden sie die Grenzwertschreibweise.",
+      "lessons": [
+        "fk-2-grenzverhalten"
+      ],
+      "status": "implemented",
+      "evidence": "Das Labor limit-strip zeigt den Streifen der Breite 2ε und das kleinste x₀; die Aufgaben grenzwert-ablesen und streifen unterscheiden Konvergenz und Divergenz und nutzen die Grenzwertschreibweise."
+    },
+    {
+      "lb": 1,
+      "competence": "überprüfen rechnerisch, ob die Graphen von Funktionen achsensymmetrisch bezüglich der y‑Achse bzw. punktsymmetrisch bezüglich des Koordinatenursprungs sind.",
+      "lessons": [
+        "fk-3-symmetrie"
+      ],
+      "status": "implemented",
+      "evidence": "Das Labor symmetry-check vergleicht f(p) mit f(−p) und zeigt, dass ein Punktepaar keine Symmetrie beweist; die Aufgaben prüfen f(−x) auch für Funktionen, die keine Polynome sind."
+    },
+    {
+      "lb": 1,
+      "competence": "beschreiben, welche Änderungen an einem Funktionsterm dazu führen, dass der zum geänderten Funktionsterm gehörige Graph gegenüber dem ursprünglichen Graphen in x‑ oder y‑Richtung verschoben, in x‑ oder y‑Richtung gestreckt bzw. an einer Koordinatenachse gespiegelt ist. Sie sind sich bewusst, dass bei der Kombination mehrerer solcher Transformationen die Reihenfolge der Ausführung von Bedeutung sein kann. Sie demonstrieren und erläutern diese Zusammenhänge – auch unter Verwendung einer geeigneten Mathematiksoftware – und argumentieren mit ihnen, z. B. bei der Zuordnung von Funktionstermen zu Funktionsgraphen und umgekehrt.",
+      "lessons": [
+        "fk-4-transformationen",
+        "fk-5-reihenfolge"
+      ],
+      "status": "implemented",
+      "evidence": "graph-transform verändert a, b, c, d in a · f(b · (x + c)) + d; transform-order zeigt, wann die Reihenfolge zählt; die Aufgaben ordnen Terme und Graphen einander zu. Das Labor ersetzt die geforderte Mathematiksoftware."
+    },
+    {
+      "lb": 1,
+      "competence": "unterscheiden auf der Grundlage einer anschaulichen Vorstellung von Stetigkeit anhand von Beispielen für abschnittsweise definierte Funktionen Graphen stetiger Funktionen von Graphen nicht stetiger Funktionen.",
+      "lessons": [
+        "fk-6-stetigkeit"
+      ],
+      "status": "implemented",
+      "evidence": "Das Labor piecewise-continuity schließt die Lücke an der Nahtstelle und zeigt Sprung und Knick; die Aufgaben nutzen Tarife und Paketpreise."
+    },
+    {
+      "lb": 2,
+      "competence": "ermitteln die maximal mögliche Definitionsmenge sowie ggf. die Nullstellen einer einfachen gebrochen-rationalen Funktion (d. h. einer Funktion, bei der sowohl Zähler- als auch Nennerpolynom höchstens den Grad 2 aufweisen und deren Funktionsterm in vollständig gekürzter Form vorliegt). Sie geben ggf. das Zähler- bzw. Nennerpolynom als Produkt von Linearfaktoren an und verwenden situationsgerecht unterschiedliche Darstellungen des Funktionsterms.",
+      "lessons": [
+        "gr-1-definitionsmenge"
+      ],
+      "status": "implemented",
+      "evidence": "Das Labor rational-zeros-poles baut Zähler und Nenner aus Linearfaktoren; die Aufgaben bestimmen Definitionslücken und Nullstellen in faktorisierter und ausmultiplizierter Darstellung."
+    },
+    {
+      "lb": 2,
+      "competence": "ermitteln anhand des Funktionsterms – auch mithilfe zielgerichteter Termumformungen – das Grenzverhalten einer einfachen gebrochen-rationalen Funktion für x → +∞ und für x → −∞ und geben ggf. die Gleichung der waagrechten Asymptote an. Besitzt der Graph eine schräge Asymptote, geben sie deren Gleichung an, sofern diese unmittelbar aus dem zugehörigen Funktionsterm ersichtlich ist.",
+      "lessons": [
+        "gr-2-asymptoten"
+      ],
+      "status": "implemented",
+      "evidence": "Das Labor asymptote-infinity legt eine Gerade auf waagrechte und schräge Asymptoten; die Aufgaben nutzen Gradvergleich, Termumformung und die direkt ablesbare schräge Asymptote."
+    },
+    {
+      "lb": 2,
+      "competence": "ermitteln mithilfe des Funktionsterms das links- und rechtsseitige Grenzverhalten einer einfachen gebrochen-rationalen Funktion für x → x₀, um den Verlauf des Graphen in der Umgebung einer Polstelle x₀ zu beschreiben. Zur Angabe des Grenzverhaltens verwenden sie die Grenzwertschreibweise und geben die Gleichung der zugehörigen senkrechten Asymptote des Graphen an.",
+      "lessons": [
+        "gr-3-polstellen"
+      ],
+      "status": "implemented",
+      "evidence": "Das Labor pole-approach nähert sich der Polstelle von links und rechts; die Aufgaben bestimmen einseitige Grenzwerte, Pole mit und ohne Vorzeichenwechsel und senkrechte Asymptoten."
+    },
+    {
+      "lb": 2,
+      "competence": "analysieren einfache gebrochen-rationale Funktionen hinsichtlich ihrer wesentlichen Eigenschaften, schließen damit auf den Verlauf des jeweiligen Graphen und zeichnen diesen. Umgekehrt schließen sie aus gegebenen Eigenschaften auf einen dazu passenden Funktionsterm. In beiden Fällen überprüfen sie ihre Ergebnisse mithilfe einer geeigneten Mathematiksoftware.",
+      "lessons": [
+        "gr-4-graph-term"
+      ],
+      "status": "implemented",
+      "evidence": "Das Labor rational-build baut aus Nullstelle, Polstelle und Asymptote einen Term; die Aufgaben gehen vom Term zu den Eigenschaften und umgekehrt. Das Zeichnen geschieht auf Papier."
+    },
+    {
+      "lb": 2,
+      "competence": "ermitteln die Koordinaten von Schnittpunkten der Graphen zweier einfacher gebrochen-rationaler Funktionen bzw. des Graphen einer einfachen gebrochen-rationalen Funktion mit dem Graphen einer linearen Funktion rechnerisch, sofern sich das Lösen der dabei auftretenden Bruchgleichung auf das Lösen einer linearen oder quadratischen Gleichung zurückführen lässt. Die Lösung kontrollieren sie durch reflektierte Verwendung einer geeigneten Software.",
+      "lessons": [
+        "gr-5-schnittpunkte"
+      ],
+      "status": "implemented",
+      "evidence": "Das Labor rational-intersections zeigt die quadratische Gleichung nach dem Multiplizieren; die Aufgaben lösen Bruchgleichungen mit Geraden und mit zweiten gebrochen-rationalen Funktionen."
+    },
+    {
+      "lb": 3,
+      "competence": "erkennen bedingte Wahrscheinlichkeiten als solche und bestimmen bedingte Wahrscheinlichkeiten auch unter flexibler Verwendung von Baumdiagrammen und Vierfeldertafeln.",
+      "lessons": [
+        "bw-1-bedingte-wahrscheinlichkeit"
+      ],
+      "status": "implemented",
+      "evidence": "Das Labor area-diagram verbindet Einheitsquadrat und Vierfeldertafel; die Aufgaben bestimmen bedingte Wahrscheinlichkeiten aus Tafeln mit absoluten Häufigkeiten und aus Baumdiagrammen."
+    },
+    {
+      "lb": 3,
+      "competence": "erläutern, dass in Sachzusammenhängen (z. B. in der medizinischen Diagnostik) klar zwischen P_B(A), P_A(B) und P(A∩B) unterschieden werden muss. Sie sind in der Lage, mithilfe von Vierfeldertafeln oder Baumdiagrammen – auch solchen, in denen sie Wahrscheinlichkeiten mithilfe von absoluten Häufigkeiten in den Feldern bzw. Knoten illustrieren – von der einen auf die andere bedingte Wahrscheinlichkeit zu schließen.",
+      "lessons": [
+        "bw-2-diagnostik"
+      ],
+      "status": "implemented",
+      "evidence": "Das Labor diagnostic-test verteilt 10 000 Personen im Baum mit natürlichen Häufigkeiten; die Aufgaben unterscheiden P_K(T), P_T(K) und P(K ∩ T) und schließen von einer bedingten Wahrscheinlichkeit auf die andere."
+    },
+    {
+      "lb": 3,
+      "competence": "erläutern die stochastische Unabhängigkeit zweier Ereignisse an konkreten Beispielen. Sie erkennen die stochastische Unabhängigkeit bzw. Abhängigkeit von Ereignissen an Baumdiagrammen und Vierfeldertafeln und prüfen rechnerisch, ob zwei Ereignisse stochastisch unabhängig sind.",
+      "lessons": [
+        "bw-3-unabhaengigkeit"
+      ],
+      "status": "implemented",
+      "evidence": "Das Labor independence zeigt gleich hohe B-Flächen im Einheitsquadrat; die Aufgaben prüfen P(A ∩ B) = P(A) · P(B) und ergänzen Vierfeldertafeln zur Unabhängigkeit."
+    },
+    {
+      "lb": 3,
+      "competence": "berücksichtigen verschiedene Aspekte, um aus Daten abgeleitete Aussagen (z. B. zu politischen oder gesellschaftlichen Sachverhalten) kritisch zu hinterfragen (z. B. Umfang und Zusammensetzung der Stichprobe, Änderung bedingter Wahrscheinlichkeiten je nach betrachteter Teilmenge der Daten, Art der Datenerhebung und der zugrunde liegenden Fragestellung) und unterscheiden dabei auch die Begriffe Korrelation und Kausalität. Sie sind sich bewusst, dass bei der Analyse und Darstellung von Daten Interpretationen vorgenommen werden, die zu falschen Schlussfolgerungen führen können.",
+      "lessons": [
+        "bw-4-daten-hinterfragen"
+      ],
+      "status": "implemented",
+      "evidence": "Das Labor simpson erzeugt das Simpson-Paradoxon; die Aufgaben berechnen Gesamtquoten, prüfen Schlagzeilen und unterscheiden Korrelation und Kausalität sowie verzerrte Stichproben."
+    },
+    {
+      "lb": 4,
+      "section": "4.1",
+      "competence": "berechnen Werte von Differenzenquotienten und deuten diese geometrisch als Sekantensteigungen. Sie interpretieren den Wert des Differenzenquotienten als mittlere Änderungsrate und nutzen diese Interpretation auch im Sachkontext (u. a. durchschnittliche Steigung einer Straße, Durchschnittsgeschwindigkeit).",
+      "lessons": [
+        "df-1-differenzenquotient"
+      ],
+      "status": "implemented",
+      "evidence": "Das Labor secant-slope zieht Sekanten mit Steigungsdreieck, auch für einen Weg-Zeit-Verlauf; die Aufgaben berechnen mittlere Änderungsraten, Durchschnittsgeschwindigkeiten und durchschnittliche Steigungen einer Straße."
+    },
+    {
+      "lb": 4,
+      "section": "4.1",
+      "competence": "erläutern die Definition des Differentialquotienten mithilfe von Mathematiksoftware, deuten dessen Wert geometrisch als Tangentensteigung und interpretieren diese Steigung als Steigung des Graphen im zugehörigen Punkt. Für einfache Beispiele ganzrationaler Funktionen berechnen sie Werte von Differentialquotienten.",
+      "lessons": [
+        "df-2-differentialquotient"
+      ],
+      "status": "implemented",
+      "evidence": "Das Labor secant-to-tangent lässt h von beiden Seiten gegen 0 gehen; die Aufgaben berechnen Differentialquotienten einfacher ganzrationaler Funktionen mit der h-Methode."
+    },
+    {
+      "lb": 4,
+      "section": "4.1",
+      "competence": "erläutern an Graphen von Funktionen die Bedeutung des Begriffs der lokalen Differenzierbarkeit; dabei skizzieren sie insbesondere Graphen von Funktionen (u. a. der Betragsfunktion), die an einzelnen Stellen nicht differenzierbar sind.",
+      "lessons": [
+        "df-3-differenzierbarkeit"
+      ],
+      "status": "implemented",
+      "evidence": "Das Labor kink-zoom vergrößert Knick und glatten Übergang; die Aufgaben untersuchen abschnittsweise definierte Funktionen und Betragsfunktionen."
+    },
+    {
+      "lb": 4,
+      "section": "4.1",
+      "competence": "erläutern – auch mithilfe von Mathematiksoftware – die Definition der Ableitungsfunktion, schließen aus dem Graphen einer Funktion auf den Verlauf des Graphen der zugehörigen Ableitungsfunktion und begründen ihre Vorgehensweise.",
+      "lessons": [
+        "df-4-ableitungsfunktion"
+      ],
+      "status": "implemented",
+      "evidence": "Im Labor derivative-sketch skizziert man f′ als Parabel zum gegebenen Graphen von f; die Aufgaben schließen aus Extremstellen und einem gezeichneten Graphen auf f′ und begründen."
+    },
+    {
+      "lb": 4,
+      "section": "4.1",
+      "competence": "leiten ganzrationale Funktionen ab und nutzen dabei auch die Faktor- und die Summenregel.",
+      "lessons": [
+        "df-5-ableitungsregeln"
+      ],
+      "status": "implemented",
+      "evidence": "Das Labor derivative-rules zeigt f und f′ nebeneinander; die Aufgaben leiten mit Potenz-, Faktor- und Summenregel ab."
+    },
+    {
+      "lb": 4,
+      "section": "4.1",
+      "competence": "interpretieren Werte von Ableitungsfunktionen als lokale Änderungsraten und nutzen diese Interpretation auch im Sachkontext (u. a. lokale Steigung einer Straße, Momentangeschwindigkeit).",
+      "lessons": [
+        "df-6-aenderungsrate"
+      ],
+      "status": "implemented",
+      "evidence": "Das Labor local-rate zeigt Momentangeschwindigkeit und Straßensteigung in Prozent; die Aufgaben deuten Ableitungswerte mit Einheiten (Geschwindigkeit, Wachstum, Wasserstand)."
+    },
+    {
+      "lb": 4,
+      "section": "4.1",
+      "competence": "nutzen die Ableitung, um die Gleichung einer Tangente an einen Graphen aufzustellen und die Größe des Steigungswinkels der Tangente zu berechnen.",
+      "lessons": [
+        "df-7-tangente"
+      ],
+      "status": "implemented",
+      "evidence": "Das Labor tangent-line legt Tangenten mit Steigungswinkel an; die Aufgaben stellen Tangentengleichungen auf und berechnen Steigungswinkel."
+    },
+    {
+      "lb": 4,
+      "section": "4.2",
+      "competence": "veranschaulichen die formale Definition der strengen Monotonie anhand geeigneter Skizzen und begründen damit z. B. die strenge Monotonie der Funktion x ↦ x³ (x ∈ ℝ). Sie erläutern, wie man aus der ersten Ableitung einer Funktion Rückschlüsse auf deren Monotonieverhalten sowie auf deren Extremstellen ziehen kann, und nutzen diese Zusammenhänge bei der Untersuchung ganzrationaler Funktionen.",
+      "lessons": [
+        "ku-1-monotonie",
+        "ku-2-extremstellen"
+      ],
+      "status": "implemented",
+      "evidence": "monotony vergleicht f(x₁) und f(x₂), auch für x³; extrema-sign zeigt den Vorzeichenwechsel von f′ an Extrem- und Terrassenpunkten; die Aufgaben bestimmen Monotonieintervalle und Extrempunkte."
+    },
+    {
+      "lb": 4,
+      "section": "4.2",
+      "competence": "interpretieren das Krümmungsverhalten des Funktionsgraphen als Monotonieverhalten der ersten Ableitung einer Funktion; sie erläutern, dass an einer Wendestelle die Steigung des Funktionsgraphen bzw. die lokale Änderungsrate der Funktion extremal ist, und interpretieren dies im Sachkontext (z. B. Zeitpunkt größten Wachstums). Sie untersuchen das Krümmungsverhalten ganzrationaler Funktionen mithilfe der zweiten Ableitung und ermitteln rechnerisch Wendestellen dieser Funktionen.",
+      "lessons": [
+        "ku-3-kruemmung"
+      ],
+      "status": "implemented",
+      "evidence": "Das Labor curvature zeigt Krümmung, f′ und Wendepunkt; die Aufgaben bestimmen Wendestellen mit f″ und den Zeitpunkt größten Wachstums."
+    },
+    {
+      "lb": 4,
+      "section": "4.2",
+      "competence": "unterscheiden bei Extremstellen und Wendestellen zwischen notwendigen und hinreichenden Bedingungen. Sie begründen u. a., dass die Bedingung f ′(x₀) = 0 notwendig, aber nicht hinreichend für die Existenz einer Extremstelle einer differenzierbaren Funktion f an der Stelle x₀ ist.",
+      "lessons": [
+        "ku-4-bedingungen"
+      ],
+      "status": "implemented",
+      "evidence": "Das Labor conditions zeigt an ax⁴ + bx³ + cx², wann f′(0) = 0 und f″(0) = 0 entscheiden; die Aufgaben begründen mit den Gegenbeispielen x³ und x⁴."
+    },
+    {
+      "lb": 4,
+      "section": "4.2",
+      "competence": "analysieren ganzrationale Funktionen hinsichtlich ihrer Eigenschaften durch flexible und reflektierte Nutzung der Methoden der Differentialrechnung. Zur Kontrolle ihrer Ergebnisse verwenden sie auch eine geeignete Mathematiksoftware.",
+      "lessons": [
+        "ku-5-untersuchung"
+      ],
+      "status": "implemented",
+      "evidence": "Das Labor cubic-analysis zeigt Extrem- und Wendepunkte einer Funktion dritten Grades; die Aufgaben untersuchen ganzrationale Funktionen vollständig, auch mit Parameter und Substitution, und verweisen auf die Kontrolle mit Software."
+    },
+    {
+      "lb": 4,
+      "section": "4.2",
+      "competence": "erläutern das Newton-Verfahren als Beispiel eines iterativen Näherungsverfahrens und bestimmen mithilfe dieses Algorithmus, auch unter Verwendung eines Tabellenkalkulationsprogramms, Näherungswerte für Nullstellen, die sich mit den bisherigen Kenntnissen nicht berechnen lassen. Sie sind sich bewusst, dass solche, auf Algorithmen beruhende Näherungsverfahren in unterschiedlichsten Bereichen verwendet werden (z. B. Klimaforschung, Flugzeugentwicklung, Börse), was ihnen erneut verdeutlicht, dass mathematische Kenntnisse für viele Berufsfelder eine wesentliche Grundlage darstellen.",
+      "lessons": [
+        "ku-6-newton"
+      ],
+      "status": "implemented",
+      "evidence": "Das Labor newton zeichnet die Tangentenfolge; die Aufgaben rechnen Newton-Schritte wie in einer Tabellenkalkulation und zeigen den Abbruch bei f′(xₙ) = 0."
+    }
+  ]
+}
