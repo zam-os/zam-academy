@@ -78,8 +78,8 @@ export const STAGE_5_LESSONS: Lesson[] = [
         },
         {
           id: "symmetrisch",
-          text: "Erzeuge den Punkt P(4|4|2) mit Ursprungsabstand d = 6.",
-          check: (v) => v.x1 === 4 && v.x2 === 4 && v.x3 === 2,
+          text: "Finde einen Punkt, dessen drei Koordinaten alle von null verschieden sind und der genau 6 vom Ursprung entfernt ist.",
+          check: (v) => v.x1 > 0 && v.x2 > 0 && v.x3 > 0 && v.x1 ** 2 + v.x2 ** 2 + v.x3 ** 2 === 36,
         },
       ],
     ),
@@ -228,8 +228,8 @@ export const STAGE_5_LESSONS: Lesson[] = [
       [
         {
           id: "kollinear",
-          text: "Stelle kollineare Vektoren ein (z. B. a = (2|2) und b = (2|2)).",
-          check: (v) => v.a1 === 2 && v.a2 === 2 && v.b1 === 2 && v.b2 === 2,
+          text: "Stelle zwei vom Nullvektor verschiedene, kollineare Vektoren a und b ein.",
+          check: (v) => v.a1 * v.b2 === v.a2 * v.b1 && v.a1 + v.a2 > 0 && v.b1 + v.b2 > 0,
         },
         {
           id: "null-b",
@@ -238,8 +238,8 @@ export const STAGE_5_LESSONS: Lesson[] = [
         },
         {
           id: "groesser",
-          text: "Erzeuge die Vektorsumme (4|6) mit a = (3|4) und b = (1|2).",
-          check: (v) => v.a1 === 3 && v.a2 === 4 && v.b1 === 1 && v.b2 === 2,
+          text: "Erzeuge die Summe a + b = (4|6), ohne dass a oder b der Nullvektor ist.",
+          check: (v) => v.a1 + v.b1 === 4 && v.a2 + v.b2 === 6 && v.a1 + v.a2 > 0 && v.b1 + v.b2 > 0,
         },
       ],
     ),
@@ -381,18 +381,18 @@ export const STAGE_5_LESSONS: Lesson[] = [
       [
         {
           id: "orthogonal",
-          text: "Bringe die Vektoren auf dieselbe Achse (Winkel φ = 0°).",
+          text: "Stelle b so ein, dass a und b in dieselbe Richtung zeigen (φ = 0°).",
           check: (v) => v.b2 === 0,
         },
         {
           id: "laenge-vier",
-          text: "Verlängere a auf die Länge |a| = 4.",
-          check: (v) => v.a1 === 4,
+          text: "Stelle a so ein, dass das Skalarprodukt a · b genau 8 beträgt.",
+          check: (v) => v.a1 * 2 === 8,
         },
         {
           id: "winkel-vierzig",
-          text: "Erzeuge einen Schnittwinkel von ca. 45° (b2 = 2 bei a1 = 3).",
-          check: (v) => v.a1 === 3 && v.b2 === 2,
+          text: "Stelle zwischen a und b einen Winkel von 45° ein. Hängt der Winkel von der Länge von a ab?",
+          check: (v) => Math.abs((Math.acos(2 / Math.sqrt(4 + v.b2 ** 2)) * 180) / Math.PI - 45) < 0.5,
         },
       ],
     ),
@@ -551,18 +551,18 @@ export const STAGE_5_LESSONS: Lesson[] = [
       [
         {
           id: "quadrat",
-          text: "Spann ein Quadrat der Fläche 16 auf (a1 = 4, b2 = 4).",
-          check: (v) => v.a1 === 4 && v.b2 === 4,
+          text: "Spanne ein Quadrat mit dem Flächeninhalt 16 auf.",
+          check: (v) => v.a1 === v.b2 && v.a1 * v.b2 === 16,
         },
         {
           id: "dreieck-sechs",
-          text: "Erzeuge ein Dreieck mit Flächeninhalt A = 6,0.",
-          check: (v) => v.a1 === 3 && v.b2 === 4,
+          text: "Spanne ein Dreieck mit dem Flächeninhalt 6 auf.",
+          check: (v) => 0.5 * v.a1 * v.b2 === 6,
         },
         {
           id: "standard-drei",
-          text: "Spann eine quadratische Grundfläche von 9 FE auf.",
-          check: (v) => v.a1 === 3 && v.b2 === 3,
+          text: "Spanne ein Parallelogramm mit dem Flächeninhalt 10 auf.",
+          check: (v) => v.a1 * v.b2 === 10,
         },
       ],
     ),
@@ -706,18 +706,18 @@ export const STAGE_5_LESSONS: Lesson[] = [
       [
         {
           id: "groesse-vier-sechs",
-          text: "Erzeuge eine Pyramide mit exakt V = 32,00 Raumeinheiten.",
-          check: (v) => v.a === 4 && v.h === 6,
+          text: "Erzeuge eine Pyramide mit dem Volumen V = 32.",
+          check: (v) => Math.abs((v.a * v.a * v.h) / 3 - 32) < 1e-9,
         },
         {
           id: "hoch",
-          text: "Erzeuge eine schlanke Pyramide der Höhe h = 9 (Grundkante a = 3).",
-          check: (v) => v.a === 3 && v.h === 9,
+          text: "Erzeuge eine Pyramide, die mehr als doppelt so hoch wie breit ist und deren Volumen unter 30 liegt.",
+          check: (v) => v.h > 2 * v.a && (v.a * v.a * v.h) / 3 < 30,
         },
         {
           id: "standard-pyramide",
-          text: "Konfiguriere eine Pyramide mit Grundkante a = 4 und Höhe h = 5.",
-          check: (v) => v.a === 4 && v.h === 5,
+          text: "Erzeuge eine Pyramide mit einem Volumen zwischen 26 und 28.",
+          check: (v) => (v.a * v.a * v.h) / 3 > 26 && (v.a * v.a * v.h) / 3 < 28,
         },
       ],
     ),

@@ -61,7 +61,21 @@
               "reason": "Als konstanter Faktor bleibt a bei a·x erhalten."
             }
           ],
-          "question": "Wie wird der Scharparameter a beim Differenzieren einer Funktionenschar f_a(x) behandelt?",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Wie wird der Scharparameter a beim Differenzieren einer Funktionenschar "
+            },
+            {
+              "type": "math",
+              "tex": "f_a(x)",
+              "speech": "f a von x"
+            },
+            {
+              "type": "text",
+              "text": " behandelt?"
+            }
+          ],
           "concept": "Wie eine feste reelle Zahl (Konstante).",
           "fast_check": {
             "type": "binary_choice",
@@ -90,7 +104,21 @@
               "reason": "f'' = 0 liefert Wendestellen, keine Extremstellen."
             }
           ],
-          "question": "Welche Gleichung bestimmt die Lage möglicher Extremstellen einer Schar f_a(x)?",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Welche Gleichung bestimmt die Lage möglicher Extremstellen einer Schar "
+            },
+            {
+              "type": "math",
+              "tex": "f_a(x)",
+              "speech": "f a von x"
+            },
+            {
+              "type": "text",
+              "text": "?"
+            }
+          ],
           "fast_check": {
             "type": "binary_choice",
             "options": [
@@ -129,8 +157,28 @@
               "reason": "Hat den Koeffizienten 12 direkt als Extremstelle übernommen."
             }
           ],
-          "question": "Bestimme die positive Extremstelle der Schar f_a(x) = x³ − 12x.",
-          "concept": "x = 2",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Bestimme die positive Extremstelle der Schar "
+            },
+            {
+              "type": "math",
+              "tex": "f_a(x) = x^3 - 12x",
+              "speech": "f a von x gleich x hoch 3 minus 12 x"
+            },
+            {
+              "type": "text",
+              "text": "."
+            }
+          ],
+          "concept_segments": [
+            {
+              "type": "math",
+              "tex": "x = 2",
+              "speech": "x gleich 2"
+            }
+          ],
           "sample_solution": "f'(x) = 3x² − 12 = 0 ⇔ 3x² = 12 ⇔ x² = 4 ⇔ x = 2 (da x > 0)."
         }
       ]
@@ -245,8 +293,37 @@
               "reason": "Hat beim Integrieren von 4x den Faktor 1/2 vergessen."
             }
           ],
-          "question": "Gegeben ist f(x) = 3x² − 4x. Bestimme diejenige Stammfunktion F mit F(0) = 5.",
-          "concept": "F(x) = x³ − 2x² + 5",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Gegeben ist "
+            },
+            {
+              "type": "math",
+              "tex": "f(x) = 3x^2 - 4x",
+              "speech": "f von x gleich 3 x Quadrat minus 4 x"
+            },
+            {
+              "type": "text",
+              "text": ". Bestimme diejenige Stammfunktion F mit "
+            },
+            {
+              "type": "math",
+              "tex": "F(0) = 5",
+              "speech": "F von 0 gleich 5"
+            },
+            {
+              "type": "text",
+              "text": "."
+            }
+          ],
+          "concept_segments": [
+            {
+              "type": "math",
+              "tex": "F(x) = x^3 - 2x^2 + 5",
+              "speech": "F von x gleich x hoch 3 minus 2 x Quadrat plus 5"
+            }
+          ],
           "sample_solution": "Die allgemeine Stammfunktion lautet F(x) = x³ − 2x² + C. Aus F(0) = 5 folgt C = 5, also F(x) = x³ − 2x² + 5."
         }
       ]
@@ -303,7 +380,21 @@
               "reason": "f'(0) = e⁰ = 1 ≠ 0."
             }
           ],
-          "question": "Was zeichnet die natürliche Exponentialfunktion f(x) = e^x beim Differenzieren aus?",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Was zeichnet die natürliche Exponentialfunktion "
+            },
+            {
+              "type": "math",
+              "tex": "f(x) = e^x",
+              "speech": "f von x gleich e hoch x"
+            },
+            {
+              "type": "text",
+              "text": " beim Differenzieren aus?"
+            }
+          ],
           "concept": "Ihre Ableitungsfunktion f' stimmt exakt mit der Funktion f überein.",
           "fast_check": {
             "type": "binary_choice",
@@ -361,6 +452,9 @@
               "tex": "f'(x) = (5 − 2x) \\cdot e^{-x}",
               "speech": "f Strich von x gleich Klammer auf 5 minus 2 x Klammer zu mal e hoch minus x"
             }
+          ],
+          "replaces": [
+            "01K8GC00000000000000000J01"
           ]
         },
         {
@@ -381,8 +475,28 @@
               "reason": "Hat beim Auflösen von 5 − 2x = 0 das Teilen durch 2 vergessen."
             }
           ],
-          "question": "Bestimme die Extremstelle der Funktion f(x) = (2x − 3) · e^(−x).",
-          "concept": "x = 2,5",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Bestimme die Extremstelle der Funktion "
+            },
+            {
+              "type": "math",
+              "tex": "f(x) = (2x - 3) \\cdot e^{-x}",
+              "speech": "f von x gleich Klammer auf 2 x minus 3 Klammer zu mal e hoch minus x"
+            },
+            {
+              "type": "text",
+              "text": "."
+            }
+          ],
+          "concept_segments": [
+            {
+              "type": "math",
+              "tex": "x = 2{,}5",
+              "speech": "x gleich 2 Komma 5"
+            }
+          ],
           "sample_solution": "f'(x) = 2·e^(−x) + (2x − 3)·(−e^(−x)) = (5 − 2x)·e^(−x). Da e^(−x) > 0, folgt 5 − 2x = 0 ⇔ x = 2,5."
         }
       ]
@@ -439,7 +553,30 @@
               "reason": "Der Quotient x^n / e^x strebt gegen 0, nicht gegen eine Konstante."
             }
           ],
-          "question": "Welche Wachstumsbeziehung gilt für x gegen plus unendlich zwischen e^x und jeder Potenz x^n?",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Welche Wachstumsbeziehung gilt für x gegen plus unendlich zwischen "
+            },
+            {
+              "type": "math",
+              "tex": "e^x",
+              "speech": "e hoch x"
+            },
+            {
+              "type": "text",
+              "text": " und jeder Potenz "
+            },
+            {
+              "type": "math",
+              "tex": "x^n",
+              "speech": "x hoch n"
+            },
+            {
+              "type": "text",
+              "text": "?"
+            }
+          ],
           "concept": "Die e-Funktion wächst wesentlich schneller als jede Potenzfunktion.",
           "fast_check": {
             "type": "binary_choice",
@@ -468,7 +605,21 @@
               "reason": "Die e-Funktion dominiert und zieht das Produkt gegen 0."
             }
           ],
-          "question": "Welchen Grenzwert hat das Produkt x^n · e^x für x gegen minus unendlich?",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Welchen Grenzwert hat das Produkt "
+            },
+            {
+              "type": "math",
+              "tex": "x^n \\cdot e^x",
+              "speech": "x hoch n mal e hoch x"
+            },
+            {
+              "type": "text",
+              "text": " für x gegen minus unendlich?"
+            }
+          ],
           "concept": "Der Grenzwert des Produkts ist gleich null.",
           "fast_check": {
             "type": "binary_choice",
@@ -497,8 +648,28 @@
               "reason": "Der Grenzwert ist 0, da der Nenner über alle Schranken schneller wächst."
             }
           ],
-          "question": "Bestimme den Grenzwert lim (x → +∞) (3x² + 1) / e^(2x).",
-          "concept": "0",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Bestimme den Grenzwert "
+            },
+            {
+              "type": "math",
+              "tex": "\\lim_{x \\to +\\infty} \\frac{3x^2 + 1}{e^{2x}}",
+              "speech": "Limes für x gegen plus unendlich von 3 x Quadrat plus 1 durch e hoch 2 x"
+            },
+            {
+              "type": "text",
+              "text": "."
+            }
+          ],
+          "concept_segments": [
+            {
+              "type": "math",
+              "tex": "0",
+              "speech": "null"
+            }
+          ],
           "sample_solution": "Wegen der Dominanz der Exponentialfunktion e^(2x) gegenüber jedem Polynom im Nenner gilt lim = 0."
         }
       ]
@@ -555,7 +726,21 @@
               "reason": "Nullstellen erfordern das Lösen des Polynomteils p(x) = 0 nach dem Satz vom Nullprodukt."
             }
           ],
-          "question": "Warum vereinfacht sich das Suchen von Nullstellen bei f(x) = p(x) · e^(g(x))?",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Warum vereinfacht sich das Suchen von Nullstellen bei "
+            },
+            {
+              "type": "math",
+              "tex": "f(x) = p(x) \\cdot e^{g(x)}",
+              "speech": "f von x gleich p von x mal e hoch g von x"
+            },
+            {
+              "type": "text",
+              "text": "?"
+            }
+          ],
           "concept": "Weil e hoch g(x) für alle reellen x stets echt größer als null ist.",
           "fast_check": {
             "type": "binary_choice",
@@ -584,8 +769,36 @@
               "reason": "Extremstellen verlangen das Verschwinden der ersten Ableitung."
             }
           ],
-          "question": "Wie bestimmt man die Extremstellen von f(x) = (x² − 3) · e^x?",
-          "concept": "Durch Nullsetzen des Terms (x² + 2x − 3) in der Ableitung.",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Wie bestimmt man die Extremstellen von "
+            },
+            {
+              "type": "math",
+              "tex": "f(x) = (x^2 - 3) \\cdot e^x",
+              "speech": "f von x gleich Klammer auf x Quadrat minus 3 Klammer zu mal e hoch x"
+            },
+            {
+              "type": "text",
+              "text": "?"
+            }
+          ],
+          "concept_segments": [
+            {
+              "type": "text",
+              "text": "Durch Nullsetzen des Terms "
+            },
+            {
+              "type": "math",
+              "tex": "x^2 + 2x - 3",
+              "speech": "x Quadrat plus 2 x minus 3"
+            },
+            {
+              "type": "text",
+              "text": " in der Ableitung."
+            }
+          ],
           "fast_check": {
             "type": "binary_choice",
             "options": [
@@ -613,8 +826,37 @@
               "reason": "Rechenfehler bei der 2. Ableitung."
             }
           ],
-          "question": "An welcher Stelle x > 0 besitzt f(x) = x · e^(−x) ihren Wendepunkt?",
-          "concept": "x = 2",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "An welcher Stelle "
+            },
+            {
+              "type": "math",
+              "tex": "x > 0",
+              "speech": "x größer als 0"
+            },
+            {
+              "type": "text",
+              "text": " besitzt "
+            },
+            {
+              "type": "math",
+              "tex": "f(x) = x \\cdot e^{-x}",
+              "speech": "f von x gleich x mal e hoch minus x"
+            },
+            {
+              "type": "text",
+              "text": " ihren Wendepunkt?"
+            }
+          ],
+          "concept_segments": [
+            {
+              "type": "math",
+              "tex": "x = 2",
+              "speech": "x gleich 2"
+            }
+          ],
           "sample_solution": "f'(x) = (1 − x)·e^(−x), f''(x) = −1·e^(−x) + (1 − x)·(−e^(−x)) = (x − 2)·e^(−x). f''(x) = 0 ⇔ x = 2."
         }
       ]
@@ -729,7 +971,30 @@
               "reason": "Die Zerfallsrate ist zu Beginn am größten und nimmt stetig ab."
             }
           ],
-          "question": "Was versteht man unter der Halbwertszeit T_H eines radioaktiven Zerfalls N(t) = N_0 · e^(−k·t)?",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Was versteht man unter der Halbwertszeit "
+            },
+            {
+              "type": "math",
+              "tex": "T_H",
+              "speech": "T H"
+            },
+            {
+              "type": "text",
+              "text": " eines radioaktiven Zerfalls "
+            },
+            {
+              "type": "math",
+              "tex": "N(t) = N_0 \\cdot e^{-k t}",
+              "speech": "N von t gleich N null mal e hoch minus k t"
+            },
+            {
+              "type": "text",
+              "text": "?"
+            }
+          ],
           "concept": "Die Zeitspanne, nach der die Hälfte der Ausgangsmenge zerfallen ist.",
           "fast_check": {
             "type": "binary_choice",
@@ -758,8 +1023,37 @@
               "reason": "Rechenfehler beim Logarithmieren."
             }
           ],
-          "question": "Ein Bestand folgt B(t) = 80 · e^(−0,5·t). Zu welchem Zeitpunkt t ist B(t) = 40?",
-          "concept": "t = 2 · ln(2)",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Ein Bestand folgt "
+            },
+            {
+              "type": "math",
+              "tex": "B(t) = 80 \\cdot e^{-0{,}5 t}",
+              "speech": "B von t gleich 80 mal e hoch minus 0 Komma 5 t"
+            },
+            {
+              "type": "text",
+              "text": ". Zu welchem Zeitpunkt t ist "
+            },
+            {
+              "type": "math",
+              "tex": "B(t) = 40",
+              "speech": "B von t gleich 40"
+            },
+            {
+              "type": "text",
+              "text": "?"
+            }
+          ],
+          "concept_segments": [
+            {
+              "type": "math",
+              "tex": "t = 2 \\ln(2)",
+              "speech": "t gleich 2 mal natürlicher Logarithmus von 2"
+            }
+          ],
           "sample_solution": "80·e^(−0,5t) = 40 ⇔ e^(−0,5t) = 0,5 ⇔ −0,5t = ln(1/2) = −ln(2) ⇔ t = 2·ln(2) ≈ 1,386."
         }
       ]
@@ -902,8 +1196,45 @@
               "reason": "Hat den Winkel π statt des Funktionswerts von cos(π) eingesetzt."
             }
           ],
-          "question": "Berechne die Steigung der Tangente an f(x) = sin(x) an der Stelle x = π.",
-          "concept": "Die Steigung beträgt −1.",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Berechne die Steigung der Tangente an "
+            },
+            {
+              "type": "math",
+              "tex": "f(x) = \\sin(x)",
+              "speech": "f von x gleich Sinus von x"
+            },
+            {
+              "type": "text",
+              "text": " an der Stelle "
+            },
+            {
+              "type": "math",
+              "tex": "x = \\pi",
+              "speech": "x gleich Pi"
+            },
+            {
+              "type": "text",
+              "text": "."
+            }
+          ],
+          "concept_segments": [
+            {
+              "type": "text",
+              "text": "Die Steigung beträgt "
+            },
+            {
+              "type": "math",
+              "tex": "-1",
+              "speech": "minus 1"
+            },
+            {
+              "type": "text",
+              "text": "."
+            }
+          ],
           "sample_solution": "f'(x) = cos(x). An der Stelle x = π gilt: f'(π) = cos(π) = −1."
         }
       ]
@@ -960,8 +1291,37 @@
               "reason": "Die Grundperiode von Sinus ist 2π, nicht π."
             }
           ],
-          "question": "Wie lautet die Periode p der Funktion f(x) = sin(b · x) für b > 0?",
-          "concept": "p = 2π / b",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Wie lautet die Periode p der Funktion "
+            },
+            {
+              "type": "math",
+              "tex": "f(x) = \\sin(b \\cdot x)",
+              "speech": "f von x gleich Sinus von b mal x"
+            },
+            {
+              "type": "text",
+              "text": " für "
+            },
+            {
+              "type": "math",
+              "tex": "b > 0",
+              "speech": "b größer als 0"
+            },
+            {
+              "type": "text",
+              "text": "?"
+            }
+          ],
+          "concept_segments": [
+            {
+              "type": "math",
+              "tex": "p = \\frac{2\\pi}{b}",
+              "speech": "p gleich 2 Pi durch b"
+            }
+          ],
           "fast_check": {
             "type": "binary_choice",
             "options": [
@@ -989,8 +1349,28 @@
               "reason": "Beim Ableiten wird mit der inneren Ableitung multipliziert, nicht dividiert."
             }
           ],
-          "question": "Wie leitet man f(x) = sin(3x + 1) nach der Kettenregel ab?",
-          "concept": "f'(x) = 3 · cos(3x + 1)",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Wie leitet man "
+            },
+            {
+              "type": "math",
+              "tex": "f(x) = \\sin(3x + 1)",
+              "speech": "f von x gleich Sinus von 3 x plus 1"
+            },
+            {
+              "type": "text",
+              "text": " nach der Kettenregel ab?"
+            }
+          ],
+          "concept_segments": [
+            {
+              "type": "math",
+              "tex": "f'(x) = 3 \\cos(3x + 1)",
+              "speech": "f Strich von x gleich 3 mal Kosinus von 3 x plus 1"
+            }
+          ],
           "fast_check": {
             "type": "binary_choice",
             "options": [
@@ -1018,8 +1398,28 @@
               "reason": "Bei x = π/4 ist cos(π/2) = 0 (Nullstelle, kein Extremum)."
             }
           ],
-          "question": "Bestimme das kleinste positive x, an dem f(x) = cos(2x) ein lokales Minimum besitzt.",
-          "concept": "x = π/2",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Bestimme das kleinste positive x, an dem "
+            },
+            {
+              "type": "math",
+              "tex": "f(x) = \\cos(2x)",
+              "speech": "f von x gleich Kosinus von 2 x"
+            },
+            {
+              "type": "text",
+              "text": " ein lokales Minimum besitzt."
+            }
+          ],
+          "concept_segments": [
+            {
+              "type": "math",
+              "tex": "x = \\frac{\\pi}{2}",
+              "speech": "x gleich Pi halbe"
+            }
+          ],
           "sample_solution": "f'(x) = −2·sin(2x) = 0 ⇔ 2x = π ⇔ x = π/2. Dort ist cos(2·π/2) = cos(π) = −1 (Minimum)."
         }
       ]
@@ -1836,7 +2236,10 @@
               "Die Nullhypothese H0 wird fälschlicherweise beibehalten, obwohl sie in Wahrheit falsch ist."
             ],
             "correct_index": 0
-          }
+          },
+          "replaces": [
+            "01K8GC20000000000000000J03"
+          ]
         },
         {
           "id": "01M6Y39BAC8JG640VA69QFTDXH",
@@ -2170,7 +2573,21 @@
               "reason": "Im Zähler der Quotientenregel steht ein Minuszeichen, kein Pluszeichen."
             }
           ],
-          "question": "Wie leitet man einen Quotienten u(x) / v(x) differenzierbarer Funktionen ab?",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Wie leitet man einen Quotienten "
+            },
+            {
+              "type": "math",
+              "tex": "\\frac{u(x)}{v(x)}",
+              "speech": "u von x durch v von x"
+            },
+            {
+              "type": "text",
+              "text": " differenzierbarer Funktionen ab?"
+            }
+          ],
           "concept": "Zählerableitung mal Nenner minus Zähler mal Nennerableitung, geteilt durch Nennerquadrat.",
           "fast_check": {
             "type": "binary_choice",
@@ -2373,8 +2790,28 @@
               "reason": "Das ist der y-Achsenabschnitt f(0), nicht die Asymptote für x gegen unendlich."
             }
           ],
-          "question": "Bestimme die waagrechte Asymptote von f(x) = (6x² − 5) / (2x² + 7).",
-          "concept": "y = 3",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Bestimme die waagrechte Asymptote von "
+            },
+            {
+              "type": "math",
+              "tex": "f(x) = \\frac{6x^2 - 5}{2x^2 + 7}",
+              "speech": "f von x gleich 6 x Quadrat minus 5 durch 2 x Quadrat plus 7"
+            },
+            {
+              "type": "text",
+              "text": "."
+            }
+          ],
+          "concept_segments": [
+            {
+              "type": "math",
+              "tex": "y = 3",
+              "speech": "y gleich 3"
+            }
+          ],
           "sample_solution": "Zählergrad = Nennergrad = 2. Für x → ±∞ dominiert der Quotient der Leitkoeffizienten: lim (6x²)/(2x²) = 6/2 = 3. Also waagrechte Asymptote y = 3."
         }
       ]
@@ -2489,8 +2926,37 @@
               "reason": "Rechenfehler bei der Ableitung."
             }
           ],
-          "question": "An welcher Stelle x > 0 besitzt die Funktion f(x) = e^x / x eine waagrechte Tangente?",
-          "concept": "x = 1",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "An welcher Stelle "
+            },
+            {
+              "type": "math",
+              "tex": "x > 0",
+              "speech": "x größer als 0"
+            },
+            {
+              "type": "text",
+              "text": " besitzt die Funktion "
+            },
+            {
+              "type": "math",
+              "tex": "f(x) = \\frac{e^x}{x}",
+              "speech": "f von x gleich e hoch x durch x"
+            },
+            {
+              "type": "text",
+              "text": " eine waagrechte Tangente?"
+            }
+          ],
+          "concept_segments": [
+            {
+              "type": "math",
+              "tex": "x = 1",
+              "speech": "x gleich 1"
+            }
+          ],
           "fast_check": {
             "type": "binary_choice",
             "options": [
@@ -2518,8 +2984,37 @@
               "reason": "Rechenfehler bei der Auswertung im Zähler."
             }
           ],
-          "question": "Berechne die Steigung f'(0) für f(x) = sin(x) / (x + 1).",
-          "concept": "1",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Berechne die Steigung "
+            },
+            {
+              "type": "math",
+              "tex": "f'(0)",
+              "speech": "f Strich von 0"
+            },
+            {
+              "type": "text",
+              "text": " für "
+            },
+            {
+              "type": "math",
+              "tex": "f(x) = \\frac{\\sin(x)}{x + 1}",
+              "speech": "f von x gleich Sinus von x durch x plus 1"
+            },
+            {
+              "type": "text",
+              "text": "."
+            }
+          ],
+          "concept_segments": [
+            {
+              "type": "math",
+              "tex": "1",
+              "speech": "1"
+            }
+          ],
           "sample_solution": "Quotientenregel: f'(x) = [cos(x)·(x + 1) − sin(x)·1] / (x + 1)². Bei x = 0 ergibt sich [1·1 − 0] / 1² = 1."
         }
       ]
@@ -2605,7 +3100,21 @@
               "reason": "Eine 90°-Drehung ist keine Achsenspiegelung an der Geraden y = x."
             }
           ],
-          "question": "Wie entsteht der Graph der Umkehrfunktion f^(−1) geometrisch aus dem Graphen von f?",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Wie entsteht der Graph der Umkehrfunktion "
+            },
+            {
+              "type": "math",
+              "tex": "f^{-1}",
+              "speech": "f hoch minus 1"
+            },
+            {
+              "type": "text",
+              "text": " geometrisch aus dem Graphen von f?"
+            }
+          ],
           "concept": "Durch Spiegelung an der ersten Winkelhalbierenden y = x.",
           "fast_check": {
             "type": "binary_choice",
@@ -2634,8 +3143,37 @@
               "reason": "Hat nach x aufgelöst, aber das Teilen durch die Steigung 3 vergessen."
             }
           ],
-          "question": "Bestimme den Funktionsterm der Umkehrfunktion f^(−1)(x) für f(x) = 3x − 6.",
-          "concept": "f^(−1)(x) = 1/3 · x + 2",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Bestimme den Funktionsterm der Umkehrfunktion "
+            },
+            {
+              "type": "math",
+              "tex": "f^{-1}(x)",
+              "speech": "f hoch minus 1 von x"
+            },
+            {
+              "type": "text",
+              "text": " für "
+            },
+            {
+              "type": "math",
+              "tex": "f(x) = 3x - 6",
+              "speech": "f von x gleich 3 x minus 6"
+            },
+            {
+              "type": "text",
+              "text": "."
+            }
+          ],
+          "concept_segments": [
+            {
+              "type": "math",
+              "tex": "f^{-1}(x) = \\frac{1}{3} x + 2",
+              "speech": "f hoch minus 1 von x gleich ein Drittel x plus 2"
+            }
+          ],
           "sample_solution": "Auflösen: y = 3x − 6 ⇔ y + 6 = 3x ⇔ x = (1/3)y + 2. Variablentausch: f^(−1)(x) = 1/3·x + 2."
         }
       ]
@@ -2750,8 +3288,28 @@
               "reason": "Hat den inneren Exponenten 2 des Radikanden übersehen."
             }
           ],
-          "question": "Wie schreibt man den Wurzelausdruck ³√(x²) als Potenz mit rationalem Exponenten?",
-          "concept": "x^(2/3)",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Wie schreibt man den Wurzelausdruck "
+            },
+            {
+              "type": "math",
+              "tex": "\\sqrt[3]{x^2}",
+              "speech": "dritte Wurzel aus x Quadrat"
+            },
+            {
+              "type": "text",
+              "text": " als Potenz mit rationalem Exponenten?"
+            }
+          ],
+          "concept_segments": [
+            {
+              "type": "math",
+              "tex": "x^{2/3}",
+              "speech": "x hoch zwei Drittel"
+            }
+          ],
           "fast_check": {
             "type": "binary_choice",
             "options": [
@@ -2779,8 +3337,37 @@
               "reason": "Hat die Ableitung fälschlicherweise als √x / 2 interpretiert."
             }
           ],
-          "question": "Berechne den Wert der 1. Ableitung von f(x) = √x an der Stelle x = 9.",
-          "concept": "1/6",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Berechne den Wert der 1. Ableitung von "
+            },
+            {
+              "type": "math",
+              "tex": "f(x) = \\sqrt{x}",
+              "speech": "f von x gleich Wurzel aus x"
+            },
+            {
+              "type": "text",
+              "text": " an der Stelle "
+            },
+            {
+              "type": "math",
+              "tex": "x = 9",
+              "speech": "x gleich 9"
+            },
+            {
+              "type": "text",
+              "text": "."
+            }
+          ],
+          "concept_segments": [
+            {
+              "type": "math",
+              "tex": "1/6",
+              "speech": "ein Sechstel"
+            }
+          ],
           "sample_solution": "f'(x) = 1 / (2√x). Für x = 9: f'(9) = 1 / (2·√9) = 1 / (2·3) = 1/6."
         }
       ]
@@ -2837,8 +3424,36 @@
               "reason": "Das betrifft waagrechte Tangenten, nicht den Definitionsbereich."
             }
           ],
-          "question": "Welche Bedingung schränkt die Definitionsmenge von f(x) = √(g(x)) im Reellen ein?",
-          "concept": "Der Radikand g(x) muss größer oder gleich null sein (g(x) ≥ 0).",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Welche Bedingung schränkt die Definitionsmenge von "
+            },
+            {
+              "type": "math",
+              "tex": "f(x) = \\sqrt{g(x)}",
+              "speech": "f von x gleich Wurzel aus g von x"
+            },
+            {
+              "type": "text",
+              "text": " im Reellen ein?"
+            }
+          ],
+          "concept_segments": [
+            {
+              "type": "text",
+              "text": "Der Radikand muss größer oder gleich null sein: "
+            },
+            {
+              "type": "math",
+              "tex": "g(x) \\ge 0",
+              "speech": "g von x größer gleich 0"
+            },
+            {
+              "type": "text",
+              "text": "."
+            }
+          ],
           "fast_check": {
             "type": "binary_choice",
             "options": [
@@ -2866,8 +3481,36 @@
               "reason": "Die Wurzelfunktion ist gekrümmt; ihre Steigung variiert stark."
             }
           ],
-          "question": "Was geschieht mit der Tangentensteigung von f(x) = √x für x gegen 0 von rechts?",
-          "concept": "Die Steigung strebt gegen +∞ (senkrechte Randtangente).",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Was geschieht mit der Tangentensteigung von "
+            },
+            {
+              "type": "math",
+              "tex": "f(x) = \\sqrt{x}",
+              "speech": "f von x gleich Wurzel aus x"
+            },
+            {
+              "type": "text",
+              "text": " für x gegen 0 von rechts?"
+            }
+          ],
+          "concept_segments": [
+            {
+              "type": "text",
+              "text": "Die Steigung strebt gegen "
+            },
+            {
+              "type": "math",
+              "tex": "+\\infty",
+              "speech": "plus unendlich"
+            },
+            {
+              "type": "text",
+              "text": " (senkrechte Randtangente)."
+            }
+          ],
           "fast_check": {
             "type": "binary_choice",
             "options": [
@@ -2895,8 +3538,37 @@
               "reason": "Hat vergessen, aus der Schranke 16 die Quadratwurzel 4 zu ziehen."
             }
           ],
-          "question": "Bestimme die maximale Definitionsmenge in ℝ für f(x) = √(16 − x²).",
-          "concept": "D = [−4; +4]",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Bestimme die maximale Definitionsmenge in "
+            },
+            {
+              "type": "math",
+              "tex": "\\mathbb{R}",
+              "speech": "R"
+            },
+            {
+              "type": "text",
+              "text": " für "
+            },
+            {
+              "type": "math",
+              "tex": "f(x) = \\sqrt{16 - x^2}",
+              "speech": "f von x gleich Wurzel aus 16 minus x Quadrat"
+            },
+            {
+              "type": "text",
+              "text": "."
+            }
+          ],
+          "concept_segments": [
+            {
+              "type": "math",
+              "tex": "D = [-4;\\, 4]",
+              "speech": "D gleich das Intervall von minus 4 bis 4"
+            }
+          ],
           "sample_solution": "Bedingung: 16 − x² ≥ 0 ⇔ x² ≤ 16 ⇔ |x| ≤ 4 ⇔ −4 ≤ x ≤ 4. Also D = [−4; 4]."
         }
       ]
@@ -3060,8 +3732,37 @@
               "reason": "Hat die Division durch die innere Funktion u(1) = 5 vergessen."
             }
           ],
-          "question": "Berechne die 1. Ableitung von f(x) = ln(3x² + 2) an der Stelle x = 1.",
-          "concept": "6/5",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Berechne die 1. Ableitung von "
+            },
+            {
+              "type": "math",
+              "tex": "f(x) = \\ln(3x^2 + 2)",
+              "speech": "f von x gleich natürlicher Logarithmus von 3 x Quadrat plus 2"
+            },
+            {
+              "type": "text",
+              "text": " an der Stelle "
+            },
+            {
+              "type": "math",
+              "tex": "x = 1",
+              "speech": "x gleich 1"
+            },
+            {
+              "type": "text",
+              "text": "."
+            }
+          ],
+          "concept_segments": [
+            {
+              "type": "math",
+              "tex": "6/5",
+              "speech": "sechs Fünftel"
+            }
+          ],
           "sample_solution": "u(x) = 3x² + 2, u'(x) = 6x. Logarithmische Ableitung: f'(x) = 6x / (3x² + 2). Für x = 1: f'(1) = 6 / 5 = 1,2."
         }
       ]
@@ -3118,7 +3819,21 @@
               "reason": "Der Grenzwert ist 0; der lineare Faktor x erzwingt den Nullwert im Ursprung."
             }
           ],
-          "question": "Welchen Grenzwert hat der Term x · ln(x) für x gegen 0 von rechts?",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Welchen Grenzwert hat der Term "
+            },
+            {
+              "type": "math",
+              "tex": "x \\cdot \\ln(x)",
+              "speech": "x mal natürlicher Logarithmus von x"
+            },
+            {
+              "type": "text",
+              "text": " für x gegen 0 von rechts?"
+            }
+          ],
           "concept": "Der Grenzwert ist gleich 0.",
           "fast_check": {
             "type": "binary_choice",
@@ -3147,7 +3862,21 @@
               "reason": "Der Nenner wächst ungleich schneller als der Logarithmus, der Bruch geht gegen 0."
             }
           ],
-          "question": "Welchen Grenzwert hat der Quotient ln(x) / x für x gegen unendlich?",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Welchen Grenzwert hat der Quotient "
+            },
+            {
+              "type": "math",
+              "tex": "\\frac{\\ln(x)}{x}",
+              "speech": "natürlicher Logarithmus von x durch x"
+            },
+            {
+              "type": "text",
+              "text": " für x gegen unendlich?"
+            }
+          ],
           "concept": "Der Grenzwert ist gleich 0.",
           "fast_check": {
             "type": "binary_choice",
@@ -3176,8 +3905,28 @@
               "reason": "Rechenfehler bei der Ableitung."
             }
           ],
-          "question": "An welcher positiven Stelle besitzt die Funktion f(x) = x · ln(x) ihren Tiefpunkt?",
-          "concept": "x = 1/e",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "An welcher positiven Stelle besitzt die Funktion "
+            },
+            {
+              "type": "math",
+              "tex": "f(x) = x \\cdot \\ln(x)",
+              "speech": "f von x gleich x mal natürlicher Logarithmus von x"
+            },
+            {
+              "type": "text",
+              "text": " ihren Tiefpunkt?"
+            }
+          ],
+          "concept_segments": [
+            {
+              "type": "math",
+              "tex": "x = \\frac{1}{e}",
+              "speech": "x gleich 1 durch e"
+            }
+          ],
           "sample_solution": "Produktregel: f'(x) = 1·ln(x) + x·(1/x) = ln(x) + 1 = 0 ⇔ ln(x) = −1 ⇔ x = e^(−1) = 1/e."
         }
       ]
@@ -3403,8 +4152,46 @@
               "reason": "Rechenfehler bei der Vektorberechnung."
             }
           ],
-          "question": "Gegeben: a = (1 | 2 | 3)^T und b = (4 | −1 | 0)^T. Berechne die 1. Komponente von c = 2a + b.",
-          "concept": "6",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Gegeben sind "
+            },
+            {
+              "type": "math",
+              "tex": "\\vec{a} = \\begin{pmatrix} 1 \\\\ 2 \\\\ 3 \\end{pmatrix}",
+              "speech": "Vektor a mit den Komponenten 1, 2, 3"
+            },
+            {
+              "type": "text",
+              "text": " und "
+            },
+            {
+              "type": "math",
+              "tex": "\\vec{b} = \\begin{pmatrix} 4 \\\\ -1 \\\\ 0 \\end{pmatrix}",
+              "speech": "Vektor b mit den Komponenten 4, minus 1, 0"
+            },
+            {
+              "type": "text",
+              "text": ". Berechne die 1. Komponente von "
+            },
+            {
+              "type": "math",
+              "tex": "\\vec{c} = 2\\vec{a} + \\vec{b}",
+              "speech": "Vektor c gleich 2 mal Vektor a plus Vektor b"
+            },
+            {
+              "type": "text",
+              "text": "."
+            }
+          ],
+          "concept_segments": [
+            {
+              "type": "math",
+              "tex": "6",
+              "speech": "6"
+            }
+          ],
           "sample_solution": "c1 = 2·a1 + b1 = 2·1 + 4 = 6."
         }
       ]
@@ -3518,8 +4305,36 @@
               "reason": "Der Schnittwinkel zwischen zwei Vektoren ist per Definition auf [0°; 180°] beschränkt."
             }
           ],
-          "question": "Welcher Winkelbereich ergibt sich, wenn das Skalarprodukt a · b < 0 negativ ist?",
-          "concept": "Ein stumpfer Winkel zwischen 90° und 180° (90° < φ ≤ 180°).",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Welcher Winkelbereich ergibt sich, wenn das Skalarprodukt negativ ist, also "
+            },
+            {
+              "type": "math",
+              "tex": "\\vec{a} \\cdot \\vec{b} < 0",
+              "speech": "Vektor a mal Vektor b kleiner als 0"
+            },
+            {
+              "type": "text",
+              "text": "?"
+            }
+          ],
+          "concept_segments": [
+            {
+              "type": "text",
+              "text": "Ein stumpfer Winkel: "
+            },
+            {
+              "type": "math",
+              "tex": "90^\\circ < \\varphi \\le 180^\\circ",
+              "speech": "90 Grad kleiner phi kleiner gleich 180 Grad"
+            },
+            {
+              "type": "text",
+              "text": "."
+            }
+          ],
           "fast_check": {
             "type": "binary_choice",
             "options": [
@@ -3547,8 +4362,37 @@
               "reason": "Rechenfehler bei der Summe."
             }
           ],
-          "question": "Für welche reelle Zahl k stehen a = (2 | k | 4)^T und b = (4 | −2 | −1)^T senkrecht aufeinander?",
-          "concept": "2",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Für welche reelle Zahl k stehen "
+            },
+            {
+              "type": "math",
+              "tex": "\\vec{a} = \\begin{pmatrix} 2 \\\\ k \\\\ 4 \\end{pmatrix}",
+              "speech": "Vektor a mit den Komponenten 2, k, 4"
+            },
+            {
+              "type": "text",
+              "text": " und "
+            },
+            {
+              "type": "math",
+              "tex": "\\vec{b} = \\begin{pmatrix} 4 \\\\ -2 \\\\ -1 \\end{pmatrix}",
+              "speech": "Vektor b mit den Komponenten 4, minus 2, minus 1"
+            },
+            {
+              "type": "text",
+              "text": " senkrecht aufeinander?"
+            }
+          ],
+          "concept_segments": [
+            {
+              "type": "math",
+              "tex": "2",
+              "speech": "2"
+            }
+          ],
           "sample_solution": "a · b = 2·4 + k·(−2) + 4·(−1) = 8 − 2k − 4 = 4 − 2k = 0 ⇔ 2k = 4 ⇔ k = 2."
         }
       ]
@@ -3605,7 +4449,21 @@
               "reason": "Das Spatvolumen erfordert drei Vektoren und das Spatprodukt |(a × b) · c|."
             }
           ],
-          "question": "Welche geometrische Bedeutung hat der Betrag des Kreuzprodukts |a × b|?",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Welche geometrische Bedeutung hat der Betrag des Kreuzprodukts "
+            },
+            {
+              "type": "math",
+              "tex": "|\\vec{a} \\times \\vec{b}|",
+              "speech": "Betrag von Vektor a kreuz Vektor b"
+            },
+            {
+              "type": "text",
+              "text": "?"
+            }
+          ],
           "concept": "Er entspricht dem Flächeninhalt des aufgespannten Parallelogramms.",
           "fast_check": {
             "type": "binary_choice",
@@ -3634,7 +4492,21 @@
               "reason": "Die Richtung hängt von der Orientierung von a und b ab, nicht vom Koordinatensystem."
             }
           ],
-          "question": "In welche Richtung zeigt der Ergebnisvektor des Vektorprodukts a × b?",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "In welche Richtung zeigt der Ergebnisvektor des Vektorprodukts "
+            },
+            {
+              "type": "math",
+              "tex": "\\vec{a} \\times \\vec{b}",
+              "speech": "Vektor a kreuz Vektor b"
+            },
+            {
+              "type": "text",
+              "text": "?"
+            }
+          ],
           "concept": "Er steht senkrecht auf beiden Ausgangsvektoren a und b.",
           "fast_check": {
             "type": "binary_choice",
@@ -3663,8 +4535,37 @@
               "reason": "Hat die Vektorlängen addiert (4 + 3 = 7) statt die Fläche zu berechnen."
             }
           ],
-          "question": "Berechne den Flächeninhalt des Dreiecks aufgespannt von a = (4 | 0 | 0)^T und b = (0 | 3 | 0)^T.",
-          "concept": "6",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Berechne den Flächeninhalt des Dreiecks, das von "
+            },
+            {
+              "type": "math",
+              "tex": "\\vec{a} = \\begin{pmatrix} 4 \\\\ 0 \\\\ 0 \\end{pmatrix}",
+              "speech": "Vektor a mit den Komponenten 4, 0, 0"
+            },
+            {
+              "type": "text",
+              "text": " und "
+            },
+            {
+              "type": "math",
+              "tex": "\\vec{b} = \\begin{pmatrix} 0 \\\\ 3 \\\\ 0 \\end{pmatrix}",
+              "speech": "Vektor b mit den Komponenten 0, 3, 0"
+            },
+            {
+              "type": "text",
+              "text": " aufgespannt wird."
+            }
+          ],
+          "concept_segments": [
+            {
+              "type": "math",
+              "tex": "6",
+              "speech": "6"
+            }
+          ],
           "sample_solution": "|a × b| = |(0 | 0 | 12)^T| = 12. Dreiecksfläche: A = 0,5 · |a × b| = 0,5 · 12 = 6."
         }
       ]

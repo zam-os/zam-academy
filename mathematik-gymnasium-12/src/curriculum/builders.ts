@@ -5,6 +5,31 @@ import type {
   Lesson,
   Stage,
 } from "../model/types";
+import { mathMarkup } from "../ui/math-text";
+
+/**
+ * Every task text the learner reads: the real minus sign, superscripts and
+ * subscripts set from `^`/`_`, and no coefficient 1 in front of a variable
+ * ("1x" is written "x").
+ */
+const tidy = (html: string) =>
+  mathMarkup(
+    html
+      .replace(/(^|[\s(=:|,{±|])-(?=\d)/g, "$1−")
+      .replace(/(^|[\s(=+−·])1([a-z])(?![a-zA-Z])/g, "$1$2"),
+  );
+
+/** Applies `tidy` to whatever a generator returns, however it was built. */
+function tidyTask(task: ExerciseTask): ExerciseTask {
+  return {
+    ...task,
+    prompt: tidy(task.prompt),
+    given: task.given.map(tidy),
+    steps: task.steps.map(tidy),
+    ...(task.feedbackHint ? { feedbackHint: tidy(task.feedbackHint) } : {}),
+    ...(task.formulaHint ? { formulaHint: tidy(task.formulaHint) } : {}),
+  };
+}
 
 /** Die fünf Lernbereiche des Fachlehrplans M12 (Gymnasium) wortgleich. */
 export const TOPICS = [
@@ -81,6 +106,10 @@ export function makeLesson(
 ): Lesson {
   return {
     ...content,
+    exercises: content.exercises.map((generator) => ({
+      ...generator,
+      make: (rng, level) => tidyTask(generator.make(rng, level)),
+    })),
     title: content.title.startsWith(`${stage}.${step} `)
       ? content.title
       : `${stage}.${step} ${content.title}`,
@@ -142,14 +171,14 @@ export function levelTask(
   l2: TaskLevelSpec,
 ): ExerciseTask {
   const spec = level === 1 ? l1 : l2;
-  const cleanResult = spec.result.replace(/(^|[\s(=:|,{±|])-(?=\d)/g, "$1−");
-  const cleanReasoning = spec.reasoning.replace(/(^|[\s(=:|,{±|])-(?=\d)/g, "$1−");
-  const cleanHint = (spec.hint ?? (level === 1 ? "Wende die passende mathematische Rechenregel an." : spec.reasoning)).replace(/(^|[\s(=:|,{±|])-(?=\d)/g, "$1−");
-  const cleanPrompt = spec.prompt.replace(/(^|[\s(=:|,{±|])-(?=\d)/g, "$1−");
+  const cleanResult = tidy(spec.result);
+  const cleanReasoning = tidy(spec.reasoning);
+  const cleanHint = tidy(spec.hint ?? (level === 1 ? "Wende die passende mathematische Rechenregel an." : spec.reasoning));
+  const cleanPrompt = tidy(spec.prompt);
 
   return {
     prompt: cleanPrompt,
-    given: spec.given ?? [],
+    given: (spec.given ?? []).map(tidy),
     fields: spec.fields,
     feedbackHint: cleanHint,
     ...(level === 1 ? { formulaHint: cleanHint } : {}),
@@ -190,11 +219,11 @@ export function task(
     meta = {};
   }
 
-  const cleanResult = result.replace(/(^|[\s(=:|,{±|])-(?=\d)/g, "$1−");
-  const cleanReasoning = reasoning.replace(/(^|[\s(=:|,{±|])-(?=\d)/g, "$1−");
-  const cleanHint = hint.replace(/(^|[\s(=:|,{±|])-(?=\d)/g, "$1−");
-  const cleanGuided = guided.replace(/(^|[\s(=:|,{±|])-(?=\d)/g, "$1−");
-  const cleanTransfer = transfer.replace(/(^|[\s(=:|,{±|])-(?=\d)/g, "$1−");
+  const cleanResult = tidy(result);
+  const cleanReasoning = tidy(reasoning);
+  const cleanHint = tidy(hint);
+  const cleanGuided = tidy(guided);
+  const cleanTransfer = tidy(transfer);
 
   return {
     prompt: level === 1 ? cleanGuided : cleanTransfer,

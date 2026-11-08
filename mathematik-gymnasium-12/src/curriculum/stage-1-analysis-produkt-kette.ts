@@ -32,7 +32,7 @@ export const STAGE_1_LESSONS: Lesson[] = [
     formulas: [
       {
         name: "Kurvenschar-Ableitung",
-        html: "f'<sub>a</sub>(x) = &part;/&part;x [f<sub>a</sub>(x)]",
+        html: "f<sub>a</sub>(x) = x³ − ax &rArr; f<sub>a</sub>'(x) = 3x² − a",
         quantities: "a Scharparameter (als Konstante behandelt), x unabhängige Variable",
       },
     ],
@@ -208,17 +208,17 @@ export const STAGE_1_LESSONS: Lesson[] = [
       [
         {
           id: "konstante-positiv",
-          text: "Setze die Integrationskonstante auf C = 2.",
-          check: (v) => v.C === 2,
+          text: "Wähle C so, dass der Hochpunkt von F bei x = −2 höher als y = 4 liegt.",
+          check: (v) => 8 / 3 + v.C > 4,
         },
         {
           id: "negativ",
-          text: "Verschiebe F nach unten auf C = −3.",
-          check: (v) => v.C === -3,
+          text: "Wähle C so, dass der Tiefpunkt von F bei x = 2 unterhalb von y = −5 liegt.",
+          check: (v) => -8 / 3 + v.C < -5,
         },
         {
           id: "ursprung",
-          text: "Bringe F(x) auf C = 0 zurück.",
+          text: "Wähle die Stammfunktion, deren Graph durch den Ursprung (0|0) verläuft.",
           check: (v) => v.C === 0,
         },
       ],
@@ -360,17 +360,17 @@ export const STAGE_1_LESSONS: Lesson[] = [
         {
           id: "tiefpunkt-ursprung",
           text: "Stelle a und k so ein, dass die Extremstelle bei x = 0 liegt.",
-          check: (v) => v.a - 1 / v.k === 0,
+          check: (v) => Math.abs(v.a - 1 / v.k) < 1e-9,
         },
         {
           id: "waagrecht-zwei",
-          text: "Wähle a = 1 und k = −1, sodass die Extremstelle bei x = 2 liegt.",
-          check: (v) => v.a === 1 && v.k === -1,
+          text: "Stelle a und k so ein, dass die Extremstelle bei x = 2 liegt.",
+          check: (v) => Math.abs(v.a - 1 / v.k - 2) < 1e-9,
         },
         {
           id: "extrem-drei",
-          text: "Wähle a = 2 und k = −1, sodass die Extremstelle bei x = 3 liegt.",
-          check: (v) => v.a === 2 && v.k === -1,
+          text: "Stelle a und k so ein, dass die Extremstelle bei x = 2,5 liegt.",
+          check: (v) => Math.abs(v.a - 1 / v.k - 2.5) < 1e-9,
         },
       ],
     ),
@@ -497,18 +497,18 @@ export const STAGE_1_LESSONS: Lesson[] = [
       [
         {
           id: "linear",
-          text: "Wähle n = 1 für den Grenzwert x / e^x.",
-          check: (v) => v.n === 1,
+          text: "Finde den Exponenten n, für den xⁿ / eˣ schon bei x = 5 unter 0,05 liegt.",
+          check: (v) => Math.pow(5, v.n) / Math.exp(5) < 0.05,
         },
         {
           id: "kubisch",
-          text: "Wähle n = 3 für den kubischen Vergleich x³ / e^x.",
-          check: (v) => v.n === 3,
+          text: "Finde ein n, für das xⁿ / eˣ bei x = 5 über 0,5 liegt und bei x = 10 trotzdem kleiner ist als bei x = 5.",
+          check: (v) => Math.pow(5, v.n) / Math.exp(5) > 0.5 && Math.pow(10, v.n) / Math.exp(10) < Math.pow(5, v.n) / Math.exp(5),
         },
         {
           id: "vier",
-          text: "Wähle n = 4 für x⁴ / e^x.",
-          check: (v) => v.n === 4,
+          text: "Finde das n, für das xⁿ / eˣ bei x = 10 noch über 0,1 liegt. Auch hier gewinnt eˣ für x → +∞.",
+          check: (v) => Math.pow(10, v.n) / Math.exp(10) > 0.1,
         },
       ],
     ),
@@ -636,18 +636,18 @@ export const STAGE_1_LESSONS: Lesson[] = [
       [
         {
           id: "null-eins",
-          text: "Setze a = 1, sodass die Nullstellen bei x = ±1 liegen.",
-          check: (v) => v.a === 1,
+          text: "Stelle a so ein, dass die Nullstellen bei x = ±1 liegen.",
+          check: (v) => Math.abs(Math.sqrt(v.a) - 1) < 1e-9,
         },
         {
           id: "null-drei",
-          text: "Wähle a = 9 für Nullstellen bei x = ±3.",
-          check: (v) => v.a === 9,
+          text: "Stelle a so ein, dass die beiden Nullstellen 6 Einheiten voneinander entfernt sind.",
+          check: (v) => Math.abs(2 * Math.sqrt(v.a) - 6) < 1e-9,
         },
         {
           id: "standard",
-          text: "Stelle a = 4 ein.",
-          check: (v) => v.a === 4,
+          text: "Stelle a so ein, dass die positive Nullstelle eine ganze Zahl größer als 1 ist.",
+          check: (v) => v.a > 1 && Number.isInteger(Math.sqrt(v.a)),
         },
       ],
     ),
@@ -784,18 +784,18 @@ export const STAGE_1_LESSONS: Lesson[] = [
       [
         {
           id: "zerfall-stark",
-          text: "Stelle einen steilen Zerfall mit Halbwertszeit unter 1,5 Stunden ein.",
-          check: (v) => v.k === -5,
+          text: "Stelle einen Zerfall mit einer Halbwertszeit unter 1,5 Stunden ein.",
+          check: (v) => v.k < 0 && Math.log(2) / Math.abs(v.k * 0.1) < 1.5,
         },
         {
           id: "wachstum-moderat",
-          text: "Wähle eine positive Wachstumsrate k für ein exponentielles Anwachsen.",
-          check: (v) => v.k === 2,
+          text: "Stelle ein Wachstum mit einer Verdopplungszeit zwischen 2 und 4 Stunden ein.",
+          check: (v) => v.k > 0 && Math.log(2) / (v.k * 0.1) > 2 && Math.log(2) / (v.k * 0.1) < 4,
         },
         {
           id: "basis",
-          text: "Stelle einen Anfangsbestand von 100 bei moderatem Zerfall k = −0,3 ein.",
-          check: (v) => v.N0 === 100 && v.k === -3,
+          text: "Stelle einen Anfangsbestand von 100 und einen Zerfall mit einer Halbwertszeit von rund 2,3 Stunden ein.",
+          check: (v) => v.N0 === 100 && v.k < 0 && Math.abs(Math.log(2) / Math.abs(v.k * 0.1) - 2.31) < 0.05,
         },
       ],
     ),
@@ -923,18 +923,18 @@ export const STAGE_1_LESSONS: Lesson[] = [
       [
         {
           id: "ursprung-steigung",
-          text: "Wähle x_0 = 0 für maximale Steigung m = 1.",
-          check: (v) => v.x0 === 0,
+          text: "Finde die Stelle, an der die Tangente an den Sinus die größte Steigung hat.",
+          check: (v) => Math.abs(Math.cos((v.x0 * Math.PI) / 4) - 1) < 1e-9,
         },
         {
           id: "hochpunkt",
-          text: "Wähle x_0 = 2 (entspricht π/2) für waagrechte Tangente m = 0.",
-          check: (v) => v.x0 === 2,
+          text: "Finde eine Stelle mit waagrechter Tangente. Was liegt dort beim Sinus vor?",
+          check: (v) => Math.abs(Math.cos((v.x0 * Math.PI) / 4)) < 1e-9,
         },
         {
           id: "abfall",
-          text: "Stelle x_0 = 4 (entspricht π) für die steilste Abnahme m = −1 ein.",
-          check: (v) => v.x0 === 4,
+          text: "Finde eine Stelle, an der der Sinus am stärksten fällt.",
+          check: (v) => Math.cos((v.x0 * Math.PI) / 4) < -0.999,
         },
       ],
     ),
@@ -1070,18 +1070,18 @@ export const STAGE_1_LESSONS: Lesson[] = [
       [
         {
           id: "schnell",
-          text: "Wähle Frequenz ω = 3 für schnelle Schwingung.",
+          text: "Stelle die kürzeste Periode ein, die das Labor erlaubt.",
           check: (v) => v.omega === 3,
         },
         {
           id: "amplitude-drei",
-          text: "Stelle Amplitude a = 3 und ω = 2 ein.",
-          check: (v) => v.a === 3 && v.omega === 2,
+          text: "Stelle eine Schwingung mit der maximalen Steigung 6 ein.",
+          check: (v) => v.a * v.omega === 6,
         },
         {
           id: "standard-schwingung",
-          text: "Bringe a = 2 und ω = 1 zurück.",
-          check: (v) => v.a === 2 && v.omega === 1,
+          text: "Stelle eine Schwingung mit der Periode 2π und der Amplitude 2 ein.",
+          check: (v) => v.omega === 1 && v.a === 2,
         },
       ],
     ),

@@ -366,18 +366,12 @@ describe("ZAM-Karten und öffentliche Identitäten", () => {
     }
   });
 
-  it("strictly enforces proposal-only status with approved null and zero cell replaces (Hard Rules 1 & 6)", () => {
-    expect(mapping.approved).toBeNull();
-    expect(mapping.status).toBe("proposal-only");
-    expect(mapping.source).toContain("noch nicht von Thomas freigegeben");
+  it("ships exactly the mapping Thomas approved: two A transfers, ten C cards stay active (Hard Rules 1 & 6)", () => {
+    expect(mapping.approved).toBe("2026-11-08");
+    expect(mapping.status).toBe("approved");
+    expect(mapping.source).toContain("Freigabe der Zuordnung erteilt.");
+    expect((rawCell as { retired_items?: unknown }).retired_items).toBeUndefined();
 
-    // No item in cell.json may declare replaces while approved is null
-    const replacedInCell = cell.atoms
-      .flatMap((a) => a.practice_items)
-      .filter((i) => "replaces" in i);
-    expect(replacedInCell).toHaveLength(0);
-
-    // Mapping rows structure
     expect(mapping.rows).toHaveLength(12);
     expect(mapping.sources).toHaveLength(3);
     const catA = mapping.rows.filter((r) => r.category === "A");
@@ -385,14 +379,19 @@ describe("ZAM-Karten und öffentliche Identitäten", () => {
     expect(catA).toHaveLength(2);
     expect(catC).toHaveLength(10);
 
-    for (const r of catA) {
-      expect(r.action).toBe("propose-replace-after-approval");
-      expect(r.academy_slug).toBeTruthy();
-      const targetItem = cell.atoms
-        .flatMap((a) => a.practice_items)
-        .find((i) => i.slug === r.academy_slug);
-      expect(targetItem, `target item for ${r.de_by_id}`).toBeDefined();
-    }
+    const items = cell.atoms.flatMap((a) => a.practice_items) as (Item & {
+      replaces?: string[];
+    })[];
+    const declared = items
+      .filter((i) => i.replaces)
+      .map((i) => [i.slug, i.replaces] as const)
+      .sort();
+    expect(declared).toEqual(
+      catA
+        .map((r) => [r.academy_slug, [r.de_by_id]] as const)
+        .sort(),
+    );
+    for (const r of catA) expect(r.action).toBe("replace");
     for (const r of catC) {
       expect(r.action).toBe("keep-active");
       expect(r.academy_slug).toBeNull();

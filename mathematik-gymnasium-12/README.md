@@ -24,7 +24,7 @@ Aus der Jahrgangsstufe 11 kommen Differentialrechnung ganzrationaler Funktionen,
 
 Jede Lektion hat ein Atom mit drei Karten in [cell.json](cell.json): zwei kurze Abrufe (`tier1_fast` mit `fast_check`) und eine Transferfrage mit Musterlösung (`tier2_transfer`). Alle Kennungen sind einmalig erzeugte Crockford-Base32-ULIDs und in [public-contract.json](tests/fixtures/public-contract.json) festgehalten.
 
-Drei alte `de-by`-Zellen enthalten 12 Karten. Bytegleiche Schnappschüsse, Herkunfts-Repository und SHA-256 stehen in [replaces-de-by.json](replaces-de-by.json). Gemäß Paketstandard (Hard Rule 1 & 6) steht die Zuordnung auf `"status": "proposal-only"` mit `"approved": null`: Drei Karten werden für die Historienübernahme vorgeschlagen (Kategorie A), neun Karten bleiben aktiv (Kategorie C). Die öffentliche `cell.json` erscheint zunächst ohne `replaces` und ohne `retired_items`.
+Drei alte `de-by`-Zellen enthalten 12 Karten. Bytegleiche Schnappschüsse, Herkunfts-Repository und SHA-256 stehen in [replaces-de-by.json](replaces-de-by.json). Thomas hat die Zuordnung am 08.11.2026 freigegeben (`"approved": "2026-11-08"`): Zwei Karten geben ihre Historie an genau einen Nachfolger weiter (Kategorie A, `replaces` in der ersten Veröffentlichung), zehn Karten bleiben ohne Nachfolger aktiv (Kategorie C). Die Zelle hat kein `retired_items`.
 
 ## Lokal starten und prüfen
 
@@ -37,4 +37,4 @@ npm run build      # eine Datei in dist/index.html
 npm run package:zip
 ```
 
-Vom Wurzelordner aus prüft `ZAM_CORE=<file URL> node mathematik-gymnasium-12/scripts/validate-migration.mjs` die Historienübernahme in temporären SQLite-Datenbanken; `ZAM_CORE` verweist auf das in CI festgelegte `zam-core`.
+Vom Wurzelordner aus prüft `ZAM_CORE=<file URL> node mathematik-gymnasium-12/scripts/validate-migration.mjs` die freigegebene Historienübernahme in temporären SQLite-Datenbanken; `ZAM_CORE` verweist auf das in CI festgelegte `zam-core`.

@@ -53,6 +53,7 @@ import {
   showZamDialog,
 } from "./ui/dialogs";
 import { showToast } from "./ui/toast";
+import { mathMarkup, plainMath, richText } from "./ui/math-text";
 import { lessonLink, parseTrainingDeepLink } from "./zam/zam-link";
 
 type ActiveView = "path" | "lesson" | "formulas";
@@ -281,7 +282,7 @@ class MatheApp {
             <h2>Mathematik 12 für das Gymnasium</h2>
             <p>Übe die fünf Lernbereiche der 12. Klasse mit Erklärungen, Labor und Aufgaben auf zwei Stufen: ${ALL_LESSONS.length} Lektionen, von Kurvenscharen und e-Funktion bis zur Raumgeometrie.</p>
             <div class="hero-row">
-              <button type="button" class="btn btn-primary" id="continue-btn">▶ Weiter mit ${esc(active.lesson.title)}</button>
+              <button type="button" class="btn btn-primary" id="continue-btn">▶ Weiter mit ${richText(active.lesson.title)}</button>
             </div>
           </div>
           <div class="hero-stats">
@@ -354,8 +355,8 @@ class MatheApp {
                 <button type="button" class="lesson-link" data-open-lesson="${lesson.id}">
                   <span class="lesson-state" aria-hidden="true">${complete ? "✅" : "○"}</span>
                   <span class="lesson-text">
-                    <strong>${esc(lesson.title)}</strong>
-                    <small>${esc(lesson.subtitle)}</small>
+                    <strong>${richText(lesson.title)}</strong>
+                    <small>${richText(lesson.subtitle)}</small>
                   </span>
                   <span class="lesson-meta">
                     <span class="chip ${quiz ? "is-done" : ""}" title="Schnellcheck">❓</span>
@@ -388,8 +389,8 @@ class MatheApp {
       <div class="lesson-grid" style="--accent:${stage.accent}">
         <section class="guide">
           <div class="stage-pill">${stage.icon} Etappe ${stage.stageNumber} · Lektion ${lesson.stepNumber} von ${stage.lessons.length}</div>
-          <h2 class="lesson-title">${esc(lesson.title)}</h2>
-          <p class="lesson-subtitle">${esc(lesson.subtitle)}</p>
+          <h2 class="lesson-title">${richText(lesson.title)}</h2>
+          <p class="lesson-subtitle">${richText(lesson.subtitle)}</p>
           <select id="lesson-select" class="lesson-select" aria-label="Lektion wählen">
             ${STAGES.map(
               (st) =>
@@ -403,7 +404,7 @@ class MatheApp {
           </select>
           <p class="lehrplan-tag"><span class="muted">${esc(lesson.lehrplan)}</span></p>
 
-          <div class="why-box"><strong>Warum das wichtig ist:</strong> ${esc(lesson.whyItMatters)}</div>
+          <div class="why-box"><strong>Warum das wichtig ist:</strong> ${richText(lesson.whyItMatters)}</div>
           ${[lesson.teacherVideo, ...(lesson.additionalTeacherVideos ?? [])]
             .filter((video): video is TeacherVideo => !!video)
             .map(
@@ -424,22 +425,22 @@ class MatheApp {
           <div class="formula-box">
             <h4>Formeln und Begriffe dieser Lektion</h4>
             <dl>
-              ${lesson.formulas.map((f) => `<div><dt>${esc(f.name)}</dt><dd><span class="formula">${f.html}</span>${f.quantities ? `<small>${esc(f.quantities)}</small>` : ""}</dd></div>`).join("")}
+              ${lesson.formulas.map((f) => `<div><dt>${richText(f.name)}</dt><dd><span class="formula">${f.html}</span>${f.quantities ? `<small>${richText(f.quantities)}</small>` : ""}</dd></div>`).join("")}
             </dl>
           </div>
 
           <div class="card quiz-card">
             <h4>❓ Schnellcheck ${quizDone ? "✅" : ""}</h4>
-            <p class="quiz-question">${esc(lesson.quiz.question)}</p>
+            <p class="quiz-question">${richText(lesson.quiz.question)}</p>
             <div class="quiz-options" id="quiz-options">
               ${quizOrder(lesson)
                 .map(
                   (optionIndex, shown) =>
-                    `<button type="button" class="quiz-option ${quizDone && optionIndex === lesson.quiz.correctIndex ? "is-correct" : ""}" data-quiz="${shown}" ${quizDone ? "disabled" : ""}>${esc(lesson.quiz.options[optionIndex])}</button>`,
+                    `<button type="button" class="quiz-option ${quizDone && optionIndex === lesson.quiz.correctIndex ? "is-correct" : ""}" data-quiz="${shown}" ${quizDone ? "disabled" : ""}>${richText(lesson.quiz.options[optionIndex])}</button>`,
                 )
                 .join("")}
             </div>
-            <p class="quiz-feedback" id="quiz-feedback">${quizDone ? `✅ ${esc(lesson.quiz.explanation)}` : "Wähle eine Antwort. Erst denken, dann klicken."}</p>
+            <p class="quiz-feedback" id="quiz-feedback">${quizDone ? `✅ ${richText(lesson.quiz.explanation)}` : "Wähle eine Antwort. Erst denken, dann klicken."}</p>
           </div>
 
           <div class="card exercise-card" id="exercise-card"></div>
@@ -514,7 +515,7 @@ class MatheApp {
           Number(button.dataset.quiz) === shown,
         );
       });
-      if (feedback) feedback.textContent = `✅ ${lesson.quiz.explanation}`;
+      if (feedback) feedback.innerHTML = `✅ ${richText(lesson.quiz.explanation)}`;
       showToast("Schnellcheck richtig!", "success", 2200);
     } else {
       buttons[shown]?.classList.add("is-wrong");
@@ -536,10 +537,10 @@ class MatheApp {
 
     container.innerHTML = `
       <div class="lab-head">
-        <h4>🔬 ${esc(lab.title)}</h4>
+        <h4>🔬 ${richText(lab.title)}</h4>
         <button type="button" class="btn btn-ghost btn-sm" id="lab-reset-btn" title="Alle Regler auf den Anfang">↺ Neu</button>
       </div>
-      <p class="lab-intro">${esc(lab.intro)}</p>
+      <p class="lab-intro">${richText(lab.intro)}</p>
       ${hasHandles ? `<p class="lab-drag-hint">✋ Die runden Punkte in der Zeichnung kannst du ziehen.</p>` : ""}
       <div class="lab-visual" id="lab-visual"></div>
       ${lab.actions?.length ? `<div class="lab-actions">${lab.actions.map((action) => `<button type="button" class="btn btn-secondary btn-sm" data-action="${action.id}">${esc(action.label)}</button>`).join("")}</div>` : ""}
@@ -550,7 +551,7 @@ class MatheApp {
       <div class="goals">
         <h5>Laboraufträge</h5>
         <ul id="lab-goals">
-          ${lab.goals.map((goal) => `<li data-goal="${goal.id}"><span class="goal-state">○</span> ${esc(goal.text)}</li>`).join("")}
+          ${lab.goals.map((goal) => `<li data-goal="${goal.id}"><span class="goal-state">○</span> ${richText(goal.text)}</li>`).join("")}
         </ul>
       </div>
     `;
@@ -709,7 +710,7 @@ class MatheApp {
             typeof value === "number"
               ? fmtUnit(value, readout.unit ?? "", readout.digits ?? 2)
               : String(value);
-          return `<div class="${readout.emphasis ? "is-emphasis" : ""}"><dt>${esc(readout.label)}</dt><dd>${esc(text)}</dd></div>`;
+          return `<div class="${readout.emphasis ? "is-emphasis" : ""}"><dt>${richText(readout.label)}</dt><dd>${esc(text)}</dd></div>`;
         })
         .join("");
     }
@@ -722,7 +723,7 @@ class MatheApp {
       for (const id of newlyReached) {
         const goal = lab.goals.find((g) => g.id === id);
         if (goal)
-          showToast(`Laborauftrag erfüllt: ${goal.text}`, "success", 3200);
+          showToast(`Laborauftrag erfüllt: ${plainMath(goal.text)}`, "success", 3200);
       }
       this.afterProgressChange(lesson);
     }
@@ -778,12 +779,12 @@ class MatheApp {
             .map((field, index) => {
               if (field.kind === "choice") {
                 return `<fieldset class="task-choice" data-choice-field="${index}">
-                  <legend>${field.label}</legend>
-                  ${field.options.map((option, optionIndex) => `<button type="button" class="choice-btn ${this.taskInputs[index] === String(optionIndex) ? "is-selected" : ""}" data-option="${optionIndex}" ${locked ? "disabled" : ""}>${esc(option)}</button>`).join("")}
+                  <legend>${mathMarkup(field.label)}</legend>
+                  ${field.options.map((option, optionIndex) => `<button type="button" class="choice-btn ${this.taskInputs[index] === String(optionIndex) ? "is-selected" : ""}" data-option="${optionIndex}" ${locked ? "disabled" : ""}>${richText(option)}</button>`).join("")}
                 </fieldset>`;
               }
               return `<label class="task-input">
-                <span class="task-label">${field.label}</span>
+                <span class="task-label">${mathMarkup(field.label)}</span>
                 <input type="text" inputmode="decimal" autocomplete="off" data-field="${index}" value="${esc(this.taskInputs[index] ?? "")}" placeholder="z. B. 250" ${locked ? "disabled" : ""} />
                 ${field.unit ? `<span class="task-unit">${esc(field.unit)}</span>` : ""}
               </label>`;
@@ -989,8 +990,8 @@ class MatheApp {
                   .flatMap((lesson) =>
                     lesson.formulas.map(
                       (formula) => `<tr>
-                        <td><strong>${esc(formula.name)}</strong><br><span class="formula">${formula.html}</span></td>
-                        <td>${esc(formula.quantities)}</td>
+                        <td><strong>${richText(formula.name)}</strong><br><span class="formula">${formula.html}</span></td>
+                        <td>${richText(formula.quantities)}</td>
                         <td><button type="button" class="btn btn-ghost btn-sm" data-open-lesson="${lesson.id}">${esc(lesson.title)}</button></td>
                       </tr>`,
                     ),
@@ -1017,14 +1018,14 @@ function controlHtml(param: LabParam, values: LabValues): string {
   if (param.type === "state") return "";
   if (param.type === "choice") {
     return `<label class="lab-control" data-wrap="${param.key}">
-      <span class="lab-label">${esc(param.label)}</span>
+      <span class="lab-label">${richText(param.label)}</span>
       <select data-param="${param.key}">
         ${param.options.map((option) => `<option value="${option.value}" ${option.value === values[param.key] ? "selected" : ""}>${esc(option.label)}</option>`).join("")}
       </select>
     </label>`;
   }
   return `<label class="lab-control" data-wrap="${param.key}">
-    <span class="lab-label">${esc(param.label)} <output data-output="${param.key}">${fmtUnit(values[param.key], param.unit, param.digits ?? 0)}</output></span>
+    <span class="lab-label"><span>${richText(param.label)}</span> <output data-output="${param.key}">${fmtUnit(values[param.key], param.unit, param.digits ?? 0)}</output></span>
     <input type="range" data-param="${param.key}" min="${param.min}" max="${param.max}" step="${param.step}" value="${values[param.key]}" />
   </label>`;
 }

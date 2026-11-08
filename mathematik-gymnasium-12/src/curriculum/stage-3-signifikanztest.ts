@@ -4,7 +4,7 @@
  */
 
 import type { DifficultyLevel, ExerciseTask, Lesson } from "../model/types";
-import { lab, makeLesson, output, range } from "./builders";
+import { choice, lab, makeLesson, output, range } from "./builders";
 import { numberField, choiceField } from "./helpers";
 import type { Rng } from "../exercises/rng";
 import { fmt } from "../exercises/format";
@@ -65,7 +65,7 @@ export const STAGE_3_LESSONS: Lesson[] = [
       "Wähle Testrichtung (rechts- oder linksseitig) und Basiseigenschaft p_0.",
       [
         range("p0", "Basiswahrscheinlichkeit p_0 in %", 20, 95, 60, 5),
-        range("isRight", "Richtung: 0=links, 1=rechts", 0, 1, 1, 1),
+        choice("isRight", "Testrichtung", ["linksseitig", "rechtsseitig"], 1),
       ],
       [
         output("testtyp", "Testtyp", (v) => (v.isRight === 1 ? "Rechtsseitig" : "Linksseitig")),
@@ -73,17 +73,17 @@ export const STAGE_3_LESSONS: Lesson[] = [
       [
         {
           id: "rechtsseitig",
-          text: "Wähle einen rechtsseitigen Test (isRight = 1) mit p_0 = 50 %.",
+          text: "Ein Hersteller will zeigen, dass ein neues Verfahren die bisherige Erfolgsquote von 50 % steigert. Stelle den passenden Test ein.",
           check: (v) => v.isRight === 1 && v.p0 === 50,
         },
         {
           id: "linksseitig",
-          text: "Schalte auf linksseitigen Test um (isRight = 0) mit p_0 = 80 %.",
+          text: "Ein Verbraucherverband vermutet, dass weniger als die zugesagten 80 % der Geräte fehlerfrei sind. Stelle den passenden Test ein.",
           check: (v) => v.isRight === 0 && v.p0 === 80,
         },
         {
           id: "qualitaetskontrolle",
-          text: "Stelle einen linksseitigen Test mit p_0 = 90 % ein.",
+          text: "Ein Händler prüft, ob der Anteil pünktlicher Lieferungen unter die zugesagten 90 % gefallen ist. Stelle den passenden Test ein.",
           check: (v) => v.isRight === 0 && v.p0 === 90,
         },
       ],
@@ -296,18 +296,18 @@ export const STAGE_3_LESSONS: Lesson[] = [
       [
         {
           id: "alpha-streng",
-          text: "Wähle c = 15, um den Alpha-Fehler unter 3 % zu drücken.",
-          check: (v) => v.c === 15,
+          text: "Wähle das kleinste c, bei dem der Fehler 1. Art unter 3 % liegt.",
+          check: (v) => 1 - binomCdf(20, 0.5, v.c - 1) < 0.03 && 1 - binomCdf(20, 0.5, v.c - 2) >= 0.03,
         },
         {
           id: "alpha-fuenf",
-          text: "Stelle c = 14 ein (Alpha ≈ 5,8 %).",
-          check: (v) => v.c === 14,
+          text: "Wähle das kleinste c, bei dem der Fehler 1. Art höchstens 10 % beträgt.",
+          check: (v) => 1 - binomCdf(20, 0.5, v.c - 1) <= 0.1 && 1 - binomCdf(20, 0.5, v.c - 2) > 0.1,
         },
         {
           id: "beta-klein",
-          text: "Wähle c = 12 für einen kleinen Beta-Fehler (auf Kosten eines größeren Alpha-Fehlers).",
-          check: (v) => v.c === 12,
+          text: "Wähle c so, dass der Fehler 2. Art unter 5 % liegt. Was passiert dabei mit dem Fehler 1. Art?",
+          check: (v) => binomCdf(20, 0.75, v.c - 1) < 0.05,
         },
       ],
     ),
@@ -505,18 +505,18 @@ export const STAGE_3_LESSONS: Lesson[] = [
       [
         {
           id: "standard-fuenf",
-          text: "Wähle das Standard-Signifikanzniveau α = 5 %.",
+          text: "Finde das größte Niveau α, bei dem der Ablehnungsbereich noch bei c = 15 beginnt.",
           check: (v) => v.alpha === 5,
         },
         {
           id: "streng-ein-prozent",
-          text: "Verschärfe auf das strenge Niveau α = 1 %.",
-          check: (v) => v.alpha === 1,
+          text: "Stelle ein Niveau ein, bei dem der Ablehnungsbereich erst bei c = 16 beginnt.",
+          check: (v) => rightSidedCriticalValue(20, 0.5, v.alpha / 100).c === 16,
         },
         {
           id: "zehn-prozent",
-          text: "Wähle das tolerantere Niveau α = 10 %.",
-          check: (v) => v.alpha === 10,
+          text: "Stelle ein Niveau ein, bei dem schon 14 Treffer zur Ablehnung von H₀ führen.",
+          check: (v) => rightSidedCriticalValue(20, 0.5, v.alpha / 100).c === 14,
         },
       ],
     ),
@@ -663,18 +663,18 @@ export const STAGE_3_LESSONS: Lesson[] = [
       [
         {
           id: "nicht-signifikant",
-          text: "Wähle k = 12 (Ergebnis liegt im Annahmebereich, kein statistischer Nachweis).",
-          check: (v) => v.k === 12,
+          text: "Stelle das größte Ergebnis ein, das noch nicht signifikant ist.",
+          check: (v) => v.k === 13,
         },
         {
           id: "grenzwertig-signifikant",
-          text: "Wähle k = 14 (knapp signifikant).",
+          text: "Stelle das kleinste signifikante Ergebnis ein.",
           check: (v) => v.k === 14,
         },
         {
           id: "hochsignifikant",
-          text: "Stelle k = 17 für ein hochsignifikantes Ergebnis ein.",
-          check: (v) => v.k === 17,
+          text: "Stelle ein Ergebnis ein, das sogar auf dem 1-%-Niveau signifikant wäre.",
+          check: (v) => 1 - binomCdf(20, 0.5, v.k - 1) <= 0.01,
         },
       ],
     ),

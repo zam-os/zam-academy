@@ -1,6 +1,9 @@
 #!/usr/bin/env node
-// Public cell: preserve every old history. Proposal: rehearse in disposable DBs only.
-// Reads only snapshots and opens only a disposable database, never a learner library.
+// Approved mapping: the published cell moves the two A histories, keeps the ten
+// C cards active and changes no other evidence. Uses disposable libraries only;
+// no learner library or configuration is opened.
+//
+//   ZAM_CORE=<file URL of zam-core's dist/index.js> node mathematik-gymnasium-12/scripts/validate-migration.mjs
 import assert from "node:assert/strict";
 import { createHash } from "node:crypto";
 import { mkdtempSync, readFileSync, rmSync } from "node:fs";
@@ -14,13 +17,20 @@ const cell = JSON.parse(readFileSync(join(root, "cell.json"), "utf8"));
 const mapping = JSON.parse(
   readFileSync(join(root, "replaces-de-by.json"), "utf8"),
 );
-assert.equal(mapping.approved, null);
-assert.equal(mapping.status, "proposal-only");
-assert.equal(cell.retired_items, undefined);
-assert.ok(
-  cell.atoms.every((atom) =>
-    atom.practice_items.every((item) => !item.replaces),
-  ),
+assert.match(mapping.approved, /^\d{4}-\d{2}-\d{2}$/);
+assert.equal(mapping.status, "approved");
+assert.equal(cell.retired_items, undefined, "C cards stay active");
+assert.deepEqual(
+  cell.atoms
+    .flatMap((atom) => atom.practice_items)
+    .filter((item) => item.replaces)
+    .map((item) => [item.slug, item.replaces])
+    .sort(),
+  mapping.rows
+    .filter((row) => row.category === "A" || row.category === "B")
+    .map((row) => [row.academy_slug, [row.de_by_id]])
+    .sort(),
+  "the cell declares exactly the approved A/B transfers",
 );
 const itemCount = cell.atoms.reduce(
   (n, atom) => n + atom.practice_items.length,
@@ -89,123 +99,25 @@ function assertRepeatedProposal(before, after, retired) {
 }
 
 try {
-  for (const tile of oldCells) await zam.installKvtTile(db, tile);
-  const userId = cell.atoms[0].id;
-  for (const [index, tokenId] of oldIds.entries()) {
-    const card = await zam.ensureCard(db, tokenId, userId);
-    for (const [pass, rating] of [
-      index % 3 === 0 ? 1 : 3,
-      index % 2 === 0 ? 3 : 4,
-    ].entries()) {
-      await zam.evaluateRating(db, {
-        cardId: card.id,
-        tokenId,
-        userId,
-        rating,
-        answerFormat: "recall",
-        responseTimeMs: 1200 + index * 100,
-        now: new Date(Date.UTC(2026, 8, 1 + pass * 10)),
-      });
-    }
-  }
-  const before = await snapshot();
-  assert.equal(before.cards.length, oldIds.length);
-  assert.equal(before.reviews.length, oldIds.length * 2);
-  await zam.installKvtTile(db, cell);
-  const installed = await snapshot();
-  assert.deepEqual(
-    installed.cards,
-    before.cards,
-    "install invents no enrolment or mastery",
-  );
-  assert.deepEqual(
-    installed.reviews,
-    before.reviews,
-    "every review stays unchanged",
-  );
-  assert.deepEqual(
-    installed.replacements,
-    before.replacements,
-    "no transfer declared",
-  );
-  for (const token of before.tokens)
-    assert.deepEqual(
-      installed.tokens.find((candidate) => candidate.id === token.id),
-      token,
-    );
-  for (const id of oldIds)
-    assert.equal((await zam.getTokenById(db, id)).deprecated_at, null);
-  const queue = await zam.buildReviewQueue(db, {
-    userId,
-    tokenIds: oldIds,
-    now: new Date("2030-01-01T00:00:00Z"),
-    buryNewSiblings: false,
-    buryReviewSiblings: false,
-  });
-  assert.equal(queue.items.length, oldIds.length, "every old card remains active");
-  const atoms = cell.atoms.map((atom) => atom.id);
-  assert.deepEqual(await zam.materialiseKvtCards(db, userId, atoms), {
-    cardsCreated: itemCount,
-    cardsReused: 0,
-  });
-  const complete = await snapshot();
-  assert.equal(complete.cards.length, oldIds.length + itemCount);
-  assert.deepEqual(complete.reviews, before.reviews);
-  for (const card of before.cards)
-    assert.deepEqual(
-      complete.cards.find((candidate) => candidate.id === card.id),
-      card,
-    );
-  for (const card of complete.cards.filter(
-    (card) => !oldIds.includes(card.token_id),
-  )) {
-    assert.equal(card.state, "new");
-    assert.equal(card.stability, 0);
-    assert.equal(card.reps, 0);
-    assert.equal(card.last_review_at, null);
-  }
-  await zam.installKvtTile(db, cell);
-  assert.deepEqual(await zam.materialiseKvtCards(db, userId, atoms), {
-    cardsCreated: 0,
-    cardsReused: itemCount,
-  });
-  assert.deepEqual(
-    await snapshot(),
-    complete,
-    "repeated install and enrolment change nothing",
-  );
-  console.log(
-    `ok   Mathematik 12 public cell: ${oldIds.length} old cards active; all FSRS fields and ${oldIds.length * 2} reviews unchanged; ${itemCount} fresh unlearned cards; repeat install/enrolment idempotent`,
-  );
-  await rehearseProposal();
+  await validateTransfer();
 } finally {
   await db.close();
   rmSync(dir, { recursive: true, force: true });
 }
 
-/** Explicit proposal data is exercised without changing the cell or its approval. */
-async function rehearseProposal() {
+/** The published cell itself: approved histories move, everything else stays as it was. */
+async function validateTransfer() {
   const rows = mapping.rows.filter(
     (row) => row.category === "A" || row.category === "B",
   );
-  const proposed = structuredClone(cell);
-  proposed.version = "2026.11.2";
-  const retirements = mapping.rows.filter(
-    (row) => row.action === "propose-retire-after-approval",
-  );
-  const retired = new Set(retirements.map((row) => row.de_by_id));
-  if (retirements.length > 0) {
-    proposed.retired_items = retirements.map((row) => ({
-      id: row.de_by_id,
-      reason: row.reason,
-    }));
-  }
+  const proposed = cell;
+  const retired = new Set();
   const items = proposed.atoms.flatMap((atom) => atom.practice_items);
   const expected = new Map();
   for (const row of rows) {
     const successor = items.find((item) => item.slug === row.academy_slug);
-    assert.ok(successor, `missing proposed successor ${row.academy_slug}`);
-    successor.replaces = [row.de_by_id];
+    assert.ok(successor, `missing successor ${row.academy_slug}`);
+    assert.deepEqual(successor.replaces, [row.de_by_id]);
     expected.set(row.de_by_id, successor.id);
   }
   assert.equal(
@@ -213,6 +125,11 @@ async function rehearseProposal() {
     rows.length,
     "one history per successor",
   );
+  // A pre-release without the declarations, for the collision case below.
+  const prerelease = structuredClone(cell);
+  prerelease.version = "2026.11.0";
+  for (const atom of prerelease.atoms)
+    for (const item of atom.practice_items) delete item.replaces;
   const withoutToken = ({ token_id, ...fields }) => fields;
   const reviewed = async (database, tokenId, userId, rating) => {
     const card = await zam.ensureCard(database, tokenId, userId);
@@ -227,7 +144,7 @@ async function rehearseProposal() {
     });
   };
   const trial = await zam.openDatabase({
-    dbPath: join(dir, "proposal.db"),
+    dbPath: join(dir, "transfer.db"),
     initialize: true,
     useConfiguredCloud: false,
   });
@@ -269,7 +186,7 @@ async function rehearseProposal() {
         new_item_id,
       ]),
       [...expected.entries()].sort(([a], [b]) => a.localeCompare(b)),
-      "only the three proposed A transfers, never a replacement for a C card",
+      "exactly the approved A transfers, never a replacement for a C card",
     );
     const queue = await zam.buildReviewQueue(trial, {
       userId,
@@ -313,7 +230,7 @@ async function rehearseProposal() {
     });
     assert.deepEqual(await snapshot(trial), complete);
     console.log(
-      `ok   proposal simulation only: ${rows.length} histories moved; ${retired.size} C cards retired; ${oldIds.length - rows.length - retired.size} C cards active; repeated install idempotent`,
+      `ok   Mathematik 12 approved transfer: ${rows.length} histories moved with all FSRS fields and reviews; ${oldIds.length - rows.length} C cards active; ${itemCount} cards after enrolment, new ones unlearned; repeated install idempotent`,
     );
   } finally {
     await trial.close();
@@ -325,7 +242,7 @@ async function rehearseProposal() {
   });
   try {
     for (const tile of oldCells) await zam.installKvtTile(collision, tile);
-    await zam.installKvtTile(collision, cell);
+    await zam.installKvtTile(collision, prerelease);
     const userId = cell.atoms[0].id,
       row = rows[0];
     await reviewed(collision, row.de_by_id, userId, 1);
@@ -343,7 +260,7 @@ async function rehearseProposal() {
     );
     assert.deepEqual(await snapshot(collision), before);
     console.log(
-      "ok   proposal collision: exact old/new/user error; tokens, replacement declarations and all evidence rolled back",
+      "ok   collision after a pre-release: exact old/new/user error; tokens, replacement declarations and all evidence rolled back",
     );
   } finally {
     await collision.close();

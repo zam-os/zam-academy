@@ -4,7 +4,7 @@
  */
 
 import type { DifficultyLevel, ExerciseTask, Lesson } from "../model/types";
-import { lab, makeLesson, output, range } from "./builders";
+import { choice, lab, makeLesson, output, range } from "./builders";
 import { numberField } from "./helpers";
 import type { Rng } from "../exercises/rng";
 import { fmt } from "../exercises/format";
@@ -92,8 +92,8 @@ export const STAGE_2_LESSONS: Lesson[] = [
         },
         {
           id: "symmetrisch",
-          text: "Untersuche zwei gleich wahrscheinliche Ereignisse P(A) = P(B) = 50 % mit 20 % Schnittmenge.",
-          check: (v) => v.pA === 50 && v.pB === 50 && v.pSchnitt === 20,
+          text: "Stelle zwei gleich wahrscheinliche Ereignisse ein, deren Vereinigung genau die Wahrscheinlichkeit 0,80 hat.",
+          check: (v) => v.pA === v.pB && v.pSchnitt <= v.pA && v.pA + v.pB - v.pSchnitt === 80,
         },
       ],
     ),
@@ -228,18 +228,18 @@ export const STAGE_2_LESSONS: Lesson[] = [
       [
         {
           id: "gleichverteilt",
-          text: "Stelle eine annähernde Gleichverteilung mit P(X=1) = P(X=2) = 35 % ein.",
-          check: (v) => v.p1 === 35 && v.p2 === 35,
+          text: "Stelle eine Verteilung ein, die einer Gleichverteilung so nahe wie möglich kommt.",
+          check: (v) => Math.max(v.p1, v.p2, 100 - v.p1 - v.p2) - Math.min(v.p1, v.p2, 100 - v.p1 - v.p2) === 5,
         },
         {
           id: "mittelwert-zwei",
           text: "Stelle die Wahrscheinlichkeiten so ein, dass E(X) genau 2,00 beträgt.",
-          check: (v) => v.p1 === 30 && v.p2 === 40,
+          check: (v) => Math.abs(v.p1 + 2 * v.p2 + 3 * (100 - v.p1 - v.p2) - 200) < 1e-9,
         },
         {
           id: "hoher-erwartungswert",
-          text: "Verschiebe das Gewicht auf den höchsten Wert x = 3 durch Wahl von p1 = 10 % und p2 = 20 %.",
-          check: (v) => v.p1 === 10 && v.p2 === 20,
+          text: "Verlagere so viel Gewicht auf x = 3, dass E(X) über 2,50 liegt.",
+          check: (v) => v.p1 + 2 * v.p2 + 3 * (100 - v.p1 - v.p2) > 250,
         },
       ],
     ),
@@ -368,7 +368,7 @@ export const STAGE_2_LESSONS: Lesson[] = [
       [
         range("n", "Kugeln gesamt n", 5, 12, 8, 1),
         range("k", "Gezogene Kugeln k", 1, 4, 2, 1),
-        range("withRep", "Modus (0=Ohne, 1=Mit Zurücklegen)", 0, 1, 0, 1),
+        choice("withRep", "Modus", ["ohne Zurücklegen", "mit Zurücklegen"], 0),
       ],
       [
         output("kombinationen", "Mögliche Ergebnisse", (v) => (v.withRep === 1 ? Math.pow(v.n, v.k) : binom(v.n, v.k)), "", 0),
@@ -381,8 +381,8 @@ export const STAGE_2_LESSONS: Lesson[] = [
         },
         {
           id: "mit-zuruecklegen",
-          text: "Stelle Ziehen mit Zurücklegen bei n = 10 Kugeln und Stichprobengröße k = 2 ein.",
-          check: (v) => v.n === 10 && v.k === 2 && v.withRep === 1,
+          text: "Finde eine Einstellung mit Zurücklegen, die genau 100 mögliche Ergebnisse liefert.",
+          check: (v) => v.withRep === 1 && Math.pow(v.n, v.k) === 100,
         },
         {
           id: "lotto-auswahl",
@@ -527,18 +527,18 @@ export const STAGE_2_LESSONS: Lesson[] = [
       [
         {
           id: "halbe-treffer",
-          text: "Wähle n = 10, p = 50 % und k_max = 5 (kumulierte Wahrscheinlichkeit ca. 0,623).",
+          text: "Stelle n = 10 und p = 50 % ein und finde das kleinste k_max, für das P(X ≤ k_max) über 0,6 liegt.",
           check: (v) => v.n === 10 && v.p === 50 && v.kMax === 5,
         },
         {
           id: "hohe-trefferquote",
-          text: "Stelle n = 10, p = 80 % und k_max = 8 ein.",
+          text: "Finde bei n = 10 und p = 80 % die Trefferzahl k_max mit der größten Einzelwahrscheinlichkeit P(X = k_max).",
           check: (v) => v.n === 10 && v.p === 80 && v.kMax === 8,
         },
         {
           id: "standard-kette",
-          text: "Setze n = 10, p = 40 % und k_max = 4 zurück.",
-          check: (v) => v.n === 10 && v.p === 40 && v.kMax === 4,
+          text: "Stelle eine Kette ein, bei der P(X ≤ k_max) unter 0,05 liegt, obwohl k_max mindestens 2 ist.",
+          check: (v) => v.kMax >= 2 && binomCdf(v.n, v.p / 100, v.kMax) < 0.05,
         },
       ],
     ),
@@ -690,18 +690,18 @@ export const STAGE_2_LESSONS: Lesson[] = [
       [
         {
           id: "mu-zehn",
-          text: "Wähle n = 20 und p = 50 % (μ = 10).",
-          check: (v) => v.n === 20 && v.p === 50,
+          text: "Stelle eine symmetrische Binomialverteilung mit dem Erwartungswert μ = 10 ein.",
+          check: (v) => v.p === 50 && v.n * 0.5 === 10,
         },
         {
           id: "grosse-kette",
-          text: "Erhöhe auf n = 40 bei p = 50 % (μ = 20, σ ≈ 3,16).",
-          check: (v) => v.n === 40 && v.p === 50,
+          text: "Stelle eine Verteilung mit μ = 20 und σ ≈ 3,16 ein.",
+          check: (v) => Math.abs(v.n * (v.p / 100) - 20) < 1e-9 && Math.abs(Math.sqrt(v.n * (v.p / 100) * (1 - v.p / 100)) - Math.sqrt(10)) < 0.01,
         },
         {
           id: "asymmetrisch",
-          text: "Stelle eine schiefe Verteilung mit p = 20 % und n = 30 ein.",
-          check: (v) => v.n === 30 && v.p === 20,
+          text: "Stelle eine Verteilung mit μ = 6 ein, deren Standardabweichung unter 2,2 liegt.",
+          check: (v) => Math.abs(v.n * (v.p / 100) - 6) < 1e-9 && Math.sqrt(v.n * (v.p / 100) * (1 - v.p / 100)) < 2.2,
         },
       ],
     ),

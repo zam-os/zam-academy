@@ -41,6 +41,35 @@ export function open(label: string): string {
   return `<svg class="lab-svg" viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(label)}" preserveAspectRatio="xMidYMid meet">`;
 }
 
+const SUP = '<tspan baseline-shift="super" font-size="70%">$1</tspan>';
+const SUB = '<tspan baseline-shift="sub" font-size="70%">$1</tspan>';
+
+/**
+ * Escapes a label and sets the short math notation the drawings use:
+ * `^{…}` or `^x` as superscript, `_{…}` or `_0` as subscript, and a
+ * hyphen before a digit as the real minus sign "−".
+ */
+export function mathText(content: string): string {
+  return esc(content.replace(/(^|[\s([{|=:;,/])-(?=\d)/g, "$1−"))
+    .replace(/\^\{([^{}]*)\}/g, SUP)
+    .replace(/\^([A-Za-z0-9−]+)/g, SUP)
+    .replace(/_\{([^{}]*)\}/g, SUB)
+    .replace(/_([A-Za-z0-9]+)/g, SUB);
+}
+
+/** A signed summand for a term: `signed(3)` is " + 3", `signed(-3)` is " − 3". */
+export function signed(value: number, digits = 1): string {
+  if (value === 0) return "";
+  return value < 0 ? ` − ${fmtDez(-value, digits)}` : ` + ${fmtDez(value, digits)}`;
+}
+
+/** A coefficient before a variable: 1 → "", −1 → "−", 2,5 → "2,5". */
+export function coef(value: number, digits = 1): string {
+  if (value === 1) return "";
+  if (value === -1) return "−";
+  return fmtDez(value, digits);
+}
+
 export function text(
   x: number,
   y: number,
@@ -48,7 +77,7 @@ export function text(
   cls = "lab-text",
   anchor: "start" | "middle" | "end" = "start",
 ): string {
-  return `<text x="${r1(x)}" y="${r1(y)}" class="${cls}" text-anchor="${anchor}">${esc(content)}</text>`;
+  return `<text x="${r1(x)}" y="${r1(y)}" class="${cls}" text-anchor="${anchor}">${mathText(content)}</text>`;
 }
 
 export function line(

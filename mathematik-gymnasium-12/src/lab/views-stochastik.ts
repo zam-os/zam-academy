@@ -56,7 +56,7 @@ export function randomVariableView(v: LabValues, _r: ReadoutValues): string {
   s += line(originX, originY, originX, 60, "lab-axis");
 
   const barW = 60;
-  const scaleY = 250;
+  const scaleY = 220;
   for (let i = 0; i < 3; i++) {
     const x = originX + 50 + i * 110;
     const h = probs[i] * scaleY;
@@ -66,8 +66,9 @@ export function randomVariableView(v: LabValues, _r: ReadoutValues): string {
   }
   // Erwartungswert-Linie
   const muX = originX + 50 + (mu - 1) * 110 + barW / 2;
-  s += line(muX, 70, muX, originY, "lab-line-thick lab-accent");
-  s += text(muX, 60, `E(X) = ${fmtDez(mu, 2)}`, "lab-text-accent", "middle");
+  s += line(muX, 75, muX, originY + 26, "lab-line-thick lab-accent");
+  // below the axis, so it never meets the legend or a bar label
+  s += text(muX, originY + 44, `E(X) = ${fmtDez(mu, 2)}`, "lab-text-accent", "middle");
 
   s += text(20, 30, "Wahrscheinlichkeitsverteilung P(X = x)", "lab-title");
   s += text(20, 52, `Erwartungswert μ = E(X) = ∑ x_i · P(X = x_i) = ${fmtDez(mu, 2)}`, "lab-legend");
@@ -177,11 +178,13 @@ export function hypothesisSetupView(v: LabValues, _r: ReadoutValues): string {
     s += rect(70, 140, 240, 60, "lab-bar lab-primary");
     s += text(190, 175, "Annahmebereich A̅", "lab-text", "middle");
     s += rect(310, 140, 140, 60, "lab-bar lab-accent");
-    s += text(380, 175, "Ablehnungsbereich A", "lab-text-bold", "middle");
+    s += text(380, 167, "Ablehnungs-", "lab-text-bold", "middle");
+    s += text(380, 187, "bereich A", "lab-text-bold", "middle");
     s += text(20, 30, `Rechtsseitiger Test: H₀: p ≤ ${fmtDez(p0, 2)} vs. H₁: p > ${fmtDez(p0, 2)}`, "lab-title");
   } else {
     s += rect(70, 140, 140, 60, "lab-bar lab-accent");
-    s += text(140, 175, "Ablehnungsbereich A", "lab-text-bold", "middle");
+    s += text(140, 167, "Ablehnungs-", "lab-text-bold", "middle");
+    s += text(140, 187, "bereich A", "lab-text-bold", "middle");
     s += rect(210, 140, 240, 60, "lab-bar lab-primary");
     s += text(330, 175, "Annahmebereich A̅", "lab-text", "middle");
     s += text(20, 30, `Linksseitiger Test: H₀: p ≥ ${fmtDez(p0, 2)} vs. H₁: p < ${fmtDez(p0, 2)}`, "lab-title");

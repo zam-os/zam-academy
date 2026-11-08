@@ -40,11 +40,11 @@ Bytegleiche LF-Schnappschüsse liegen unter `mathematik-gymnasium-12/tests/fixtu
 
 | Kategorie | Anzahl | Bedeutung |
 | --- | --- | --- |
-| A (vorgeschlagen) | 2 | Gleicher Einzelabruf: `g12-exp-ableitung-regeln-check`, `g12-hypo-fehlerarten-check` |
+| A (freigegeben) | 2 | Gleicher Einzelabruf: `01K8GC00000000000000000J01` → `g12-exp-ableitung-regeln-check`, `01K8GC20000000000000000J03` → `g12-hypo-fehlerarten-check` |
 | B | 0 | Keine mehrteilige Karte wird unverändert übernommen |
 | C (bleiben aktiv) | 10 | Verbleibende Einzelkarten oder mehrteilige Prompts (inkl. `01K8GC20000000000000000J01`); bleiben ohne Nachfolger aktiv |
 
-Gemäß Hard Rule 1 und Hard Rule 6 gilt:
-- In `replaces-de-by.json`: `"approved": null`, `"status": "proposal-only"`.
-- In `cell.json`: Veröffentlichung zunächst **ohne** `replaces` und **ohne** `retired_items`.
-- Die Übernahme der zwei A-Historien ist vorbereitet und in `scripts/validate-migration.mjs` gegen temporäre SQLite-Datenbanken nachgewiesen. Erst nach Thomas' ausdrücklicher Freigabe wird `approved` datiert und `replaces` in die Zelle eingetragen.
+Freigabe (Hard Rule 1): Thomas hat die Zuordnung am 08.11.2026 in der Claude-Code-Review-Session zu zam-os/zam-academy#106 mit „Freigabe der Zuordnung erteilt.“ freigegeben. Seitdem gilt:
+- In `replaces-de-by.json`: `"approved": "2026-11-08"`, `"status": "approved"`, Wortlaut und Ort der Freigabe in `source`.
+- In `cell.json`: Die zwei Nachfolger der A-Zeilen erklären `replaces` schon in der ersten Veröffentlichung; es gibt kein `retired_items`, die zehn C-Karten bleiben aktiv.
+- `scripts/validate-migration.mjs` installiert die echte Zelle in temporären SQLite-Datenbanken: Die zwei Historien wandern mit allen FSRS-Feldern und Reviews, die C-Karten bleiben in der Wiederholung, wiederholtes Installieren ändert nichts, und wer nach einer Vorabversion Karten auf alter und neuer ID hält, bekommt einen Abbruch ohne Teiländerung.

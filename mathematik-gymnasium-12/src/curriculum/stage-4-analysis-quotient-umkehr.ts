@@ -77,8 +77,8 @@ export const STAGE_4_LESSONS: Lesson[] = [
         },
         {
           id: "zaehler-null",
-          text: "Erzeuge eine hebbare Lücke bei x = 2 (Zähler 1·2 + (−2) = 0).",
-          check: (v) => v.a === 1 && v.b === -2 && v.pole === 2,
+          text: "Erzeuge eine hebbare Lücke bei x = 2: Zähler und Nenner werden dort beide null.",
+          check: (v) => v.pole === 2 && v.a * 2 + v.b === 0,
         },
       ],
     ),
@@ -1081,24 +1081,25 @@ export const STAGE_4_LESSONS: Lesson[] = [
       "Untersuche den Kurvenverlauf und den Grenzwert für x → 0+.",
       [range("zoom", "Zoomfaktor", 1, 4, 1, 1)],
       [
+        output("sichtbar", "Sichtbarer Bereich bis x =", (v) => 6 / v.zoom, "", 2),
         output("tiefpunkt", "Tiefpunktstelle x = 1/e", () => 1 / Math.E, "", 3),
         output("tiefpunkt_y", "Minimalwert f(1/e) = −1/e", () => -1 / Math.E, "", 3),
       ],
       [
         {
           id: "detail",
-          text: "Vergrößere auf Detailstufe (Zoom = 2) am Tiefpunkt.",
-          check: (v) => v.zoom === 2,
+          text: "Vergrößere so weit, dass rechts nur noch der Bereich bis x = 3 zu sehen ist.",
+          check: (v) => 6 / v.zoom === 3,
         },
         {
           id: "nah",
-          text: "Wähle Nahansicht (Zoom = 3) für das Randverhalten bei x → 0+.",
-          check: (v) => v.zoom === 3,
+          text: "Vergrößere, bis höchstens der Bereich bis x = 2 sichtbar ist, und beobachte f(x) für x → 0+.",
+          check: (v) => 6 / v.zoom <= 2,
         },
         {
           id: "maximal",
-          text: "Aktiviere die maximale Vergrößerung (Zoom = 4).",
-          check: (v) => v.zoom === 4,
+          text: "Vergrößere so stark, dass nur noch der Bereich bis x = 1,5 sichtbar ist. Liegt der Tiefpunkt noch im Bild?",
+          check: (v) => 6 / v.zoom === 1.5,
         },
       ],
     ),

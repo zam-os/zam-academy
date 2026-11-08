@@ -16,7 +16,7 @@ export const GOAL_WITNESSES: Record<string, Record<string, LabValues>> = {
   "g12-exp-ableitung-regeln": {
     "tiefpunkt-ursprung": { a: -1, k: -1 },
     "waagrecht-zwei": { a: 1, k: -1 },
-    "extrem-drei": { a: 2, k: -1 },
+    "extrem-drei": { a: 2, k: -2 },
   },
   "g12-exp-grenzwerte": {
     linear: { n: 1 },
@@ -63,7 +63,7 @@ export const GOAL_WITNESSES: Record<string, Record<string, LabValues>> = {
   "g12-stoch-bernoulli-binomial": {
     "halbe-treffer": { n: 10, p: 50, kMax: 5 },
     "hohe-trefferquote": { n: 10, p: 80, kMax: 8 },
-    "standard-kette": { n: 10, p: 40, kMax: 4 },
+    "standard-kette": { n: 20, p: 50, kMax: 4 },
   },
   "g12-stoch-binomial-parameter": {
     "mu-zehn": { n: 20, p: 50 },
@@ -88,7 +88,7 @@ export const GOAL_WITNESSES: Record<string, Record<string, LabValues>> = {
     "zehn-prozent": { alpha: 10 },
   },
   "g12-hypo-interpretation": {
-    "nicht-signifikant": { k: 12 },
+    "nicht-signifikant": { k: 13 },
     "grenzwertig-signifikant": { k: 14 },
     hochsignifikant: { k: 17 },
   },
@@ -154,7 +154,7 @@ export const GOAL_WITNESSES: Record<string, Record<string, LabValues>> = {
   "g12-vektorprodukt-spatprodukt": {
     quadrat: { a1: 4, b2: 4 },
     "dreieck-sechs": { a1: 3, b2: 4 },
-    "standard-drei": { a1: 3, b2: 3 },
+    "standard-drei": { a1: 2, b2: 5 },
   },
   "g12-koerper-sachkontexte": {
     "groesse-vier-sechs": { a: 4, h: 6 },

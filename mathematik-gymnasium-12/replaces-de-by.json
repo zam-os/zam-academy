@@ -1,8 +1,9 @@
 {
   "schema": 1,
-  "approved": null,
-  "status": "proposal-only",
-  "source": "Stand 08.11.2026: Vorschlag (2× A, 0× B, 10× C) für de-by-gymnasium-12-Zellen; noch nicht von Thomas freigegeben. Gemäß Paketstandard erscheint cell.json zunächst ohne replaces und retired_items.",
+  "approved": "2026-11-08",
+  "status": "approved",
+  "source": "Thomas in der Claude-Code-Review-Session zu zam-os/zam-academy#106 am 2026-11-08, nach der dritten Prüfung (Kommentar https://github.com/zam-os/zam-academy/pull/106#issuecomment-6725605725, Stand d9cf0f7): „Freigabe der Zuordnung erteilt.“ Die Freigabe gilt der Zuordnung der 12 de-by-Karten in dieser Datei (2 A / 0 B / 10 C); die beiden Nachfolgekarten der A-Zeilen sind seit d9cf0f7 unverändert.",
+  "authorization": "Thomas hat am 8. November 2026 die hier dokumentierten 12 Zuordnungen ausdrücklich freigegeben. Die zwei A-Zeilen dürfen mit der ersten Veröffentlichung der Zelle als replaces erscheinen; die 10 C-Karten bleiben ohne Nachfolger aktiv und werden nicht zurückgezogen. Persönliche Karten und Reviewhistorien bleiben erhalten.",
   "source_repository": "zam-os/zam",
   "source_commit": "e6a235f75fe87b9d57af38bd61011027b891492c",
   "sources": [
@@ -46,7 +47,7 @@
       ],
       "category": "A",
       "academy_slug": "g12-exp-ableitung-regeln-check",
-      "action": "propose-replace-after-approval",
+      "action": "replace",
       "reason": "Gleicher Einzelabruf: Ableitung einer verknüpften Exponentialfunktion nach Produkt- und Kettenregel."
     },
     {
@@ -492,7 +493,7 @@
       ],
       "category": "A",
       "academy_slug": "g12-hypo-fehlerarten-check",
-      "action": "propose-replace-after-approval",
+      "action": "replace",
       "reason": "Gleicher Einzelabruf: Definition des Fehlers 1. Art (Alpha-Fehler) als Ablehnung einer wahren Nullhypothese."
     },
     {

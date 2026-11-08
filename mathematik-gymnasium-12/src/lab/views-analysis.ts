@@ -3,7 +3,7 @@
  */
 
 import type { LabValues, ReadoutValues } from "../model/types";
-import { open, text, line, path, circle, handle, r1, fmtDez, W, H } from "./svg";
+import { open, text, line, path, circle, handle, r1, fmtDez, signed, coef, W, H } from "./svg";
 
 /** Zeichnet ein 2D-Koordinatensystem für Funktionsgraphen. */
 export function drawAxes(
@@ -28,14 +28,14 @@ export function drawAxes(
     const sx = cx + x * scaleX;
     s += line(sx, cy - yMax * scaleY, sx, cy - yMin * scaleY, "lab-grid-line");
     if (x !== 0) {
-      s += text(sx, cy + 14, String(x), "lab-axis-tick", "middle");
+      s += text(sx, cy + 14, fmtDez(x, 2), "lab-axis-tick", "middle");
     }
   }
   for (let y = Math.ceil(yMin / syStep) * syStep; y <= Math.floor(yMax); y += syStep) {
     const sy = cy - y * scaleY;
     s += line(cx + xMin * scaleX, sy, cx + xMax * scaleX, sy, "lab-grid-line");
     if (y !== 0) {
-      s += text(cx - 8, sy + 4, String(y), "lab-axis-tick", "end");
+      s += text(cx - 8, sy + 4, fmtDez(y, 2), "lab-axis-tick", "end");
     }
   }
   // Achsen
@@ -115,7 +115,7 @@ export function antiderivativeGraphView(v: LabValues, _r: ReadoutValues): string
   // F(x) = 0.5 * (x³/3 - 4x) + C (rot/accent)
   s += plotFunction((x) => 0.5 * ((x * x * x) / 3 - 4 * x) + c, -5, 5, 100, cx, cy, scale, scale, "lab-line-thick lab-accent");
   s += text(20, 30, "f(x) = 0,5(x² − 4)  [blau]", "lab-title");
-  s += text(20, 52, `F_${c}(x) = 0,5(x³/3 − 4x) + ${c}  [orange]`, "lab-legend");
+  s += text(20, 52, `F_{${fmtDez(c, 0)}}(x) = 0,5(x³/3 − 4x)${signed(c, 0)}  [orange]`, "lab-legend");
   s += "</svg>";
   return s;
 }
@@ -131,7 +131,7 @@ export function expDerivativesView(v: LabValues, _r: ReadoutValues): string {
   s += drawAxes(cx, cy, -6, 6, -4, 5, scale, scale);
   // f(x) = (x - a) * e^(k*x)
   s += plotFunction((x) => (x - a) * Math.exp(k * x), -4, 5, 120, cx, cy, scale, scale, "lab-line-thick lab-accent");
-  s += text(20, 30, `f(x) = (x − ${a}) · e^{${k}x}`, "lab-title");
+  s += text(20, 30, `f(x) = ${a === 0 ? "x" : `(x${signed(-a)})`} · e^{${coef(k)}x}`, "lab-title");
   s += text(20, 52, "Produkt- & Kettenregel: f'(x) = [1 + k(x − a)] · e^{kx}", "lab-legend");
   s += "</svg>";
   return s;
@@ -226,8 +226,8 @@ export function trigCompositionView(v: LabValues, _r: ReadoutValues): string {
   let s = open("Trigonometrische Schwingungen");
   s += drawAxes(cx, cy, -6, 6, -4, 4, scaleX, scaleY);
   s += plotFunction((x) => a * Math.sin(omega * x), -5, 5, 120, cx, cy, scaleX, scaleY, "lab-line-thick lab-accent");
-  s += text(20, 30, `f(x) = ${a} · sin(${omega}x)`, "lab-title");
-  s += text(20, 52, `Ableitung nach Kettenregel: f'(x) = ${a * omega} · cos(${omega}x)`, "lab-legend");
+  s += text(20, 30, `f(x) = ${a === 1 ? "" : `${a} · `}sin(${coef(omega)}x)`, "lab-title");
+  s += text(20, 52, `Ableitung nach Kettenregel: f'(x) = ${a * omega === 1 ? "" : `${a * omega} · `}cos(${coef(omega)}x)`, "lab-legend");
   s += "</svg>";
   return s;
 }
@@ -250,7 +250,7 @@ export function quotientRuleView(v: LabValues, _r: ReadoutValues): string {
   // Waagrechte Asymptote bei y = a
   const syAsymp = cy - a * scale;
   s += line(30, syAsymp, W - 30, syAsymp, "lab-line-dashed");
-  s += text(20, 30, `f(x) = (${a}x + ${b}) / (x − ${pole})`, "lab-title");
+  s += text(20, 30, `f(x) = (${coef(a)}x${signed(b)}) / (x − ${pole})`, "lab-title");
   s += text(20, 52, `Senkrechte Asymptote x = ${pole}, waagrechte Asymptote y = ${a}`, "lab-legend");
   s += "</svg>";
   return s;
@@ -302,7 +302,7 @@ export function inverseFunctionView(v: LabValues, _r: ReadoutValues): string {
   s += plotFunction((x) => a * x * x, 0, 3, 60, cx, cy, scale, scale, "lab-line lab-primary");
   // f^-1(x) = sqrt(x / a)
   s += plotFunction((x) => Math.sqrt(x / a), 0, 7, 80, cx, cy, scale, scale, "lab-line-thick lab-accent");
-  s += text(20, 30, `f(x) = ${a}x² [blau] und f^{−1}(x) = √(x/${a}) [orange]`, "lab-title");
+  s += text(20, 30, `f(x) = ${coef(a)}x² [blau] und f^{−1}(x) = ${a === 1 ? "√x" : `√(x/${a})`} [orange]`, "lab-title");
   s += text(20, 52, "Spiegelung an der ersten Winkelhalbierenden y = x", "lab-legend");
   s += "</svg>";
   return s;
@@ -319,7 +319,7 @@ export function rationalPowersView(v: LabValues, _r: ReadoutValues): string {
   let s = open("Rationale Exponenten");
   s += drawAxes(cx, cy, -1, 8, -1, 6, scale, scale);
   s += plotFunction((x) => Math.pow(Math.max(0, x), exp), 0, 7, 80, cx, cy, scale, scale, "lab-line-thick lab-accent");
-  const rootSymbol = q === 2 ? "√" : `${q}√`;
+  const rootSymbol = q === 2 ? "√" : `${({ 3: "³", 4: "⁴" } as Record<number, string>)[q] ?? q}√`;
   const radicand = p === 1 ? "x" : `x^${p}`;
   s += text(20, 30, `f(x) = x^{${p}/${q}} = ${rootSymbol}${radicand}`, "lab-title");
   s += text(20, 52, `Ableitung: f'(x) = (${p}/${q}) · x^{${p - q}/${q}}`, "lab-legend");

@@ -211,9 +211,38 @@ export function checkTask(task: ExerciseTask, inputs: string[]): TaskResult {
   return { status, fields };
 }
 
+/** The named entities the lesson texts use; hints are shown as plain text. */
+const ENTITIES: Record<string, string> = {
+  amp: "&", lt: "<", gt: ">", minus: "−", middot: "·", times: "×",
+  rArr: "⇒", hArr: "⇔", rarr: "→", harr: "↔", mapsto: "↦",
+  le: "≤", ge: "≥", ne: "≠", approx: "≈", sim: "∼", plusmn: "±",
+  radic: "√", infin: "∞", sum: "∑", int: "∫", part: "∂",
+  isin: "∈", notin: "∉", cup: "∪", cap: "∩", empty: "∅", forall: "∀",
+  reals: "ℝ", naturals: "ℕ", rationals: "ℚ",
+  alpha: "α", beta: "β", lambda: "λ", mu: "μ", sigma: "σ", phi: "φ",
+  pi: "π", eta: "η", omega: "ω", Omega: "Ω",
+  bull: "•", ndash: "–", emsp: " ", nbsp: " ",
+};
+
+const SUPS: Record<string, string> = {
+  "0": "⁰", "1": "¹", "2": "²", "3": "³", "4": "⁴", "5": "⁵", "6": "⁶",
+  "7": "⁷", "8": "⁸", "9": "⁹", "−": "⁻", "-": "⁻", "+": "⁺", n: "ⁿ",
+  x: "ˣ", t: "ᵗ", k: "ᵏ", "(": "⁽", ")": "⁾",
+};
+const SUBS: Record<string, string> = {
+  "0": "₀", "1": "₁", "2": "₂", "3": "₃", "4": "₄", "5": "₅", "6": "₆",
+  "7": "₇", "8": "₈", "9": "₉", a: "ₐ", i: "ᵢ", n: "ₙ", x: "ₓ",
+};
+const mapChars = (text: string, table: Record<string, string>) =>
+  [...text].map((char) => table[char] ?? char).join("");
+
+/** Hints are shown as plain text: tags become characters, entities are decoded. */
 const plain = (html: string) =>
   html
+    .replace(/<sup>([^<]*)<\/sup>/g, (_, inner: string) => mapChars(inner, SUPS))
+    .replace(/<sub>([^<]*)<\/sub>/g, (_, inner: string) => mapChars(inner, SUBS))
     .replace(/<[^>]+>/g, "")
+    .replace(/&([a-zA-Z]+);/g, (entity, name: string) => ENTITIES[name] ?? entity)
     .replace(/\s*=\s*$/, "")
     .trim();
 
