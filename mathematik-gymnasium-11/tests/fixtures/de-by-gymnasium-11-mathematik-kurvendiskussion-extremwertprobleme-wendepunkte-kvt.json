@@ -1,0 +1,889 @@
+{
+  "$schema": "https://zam.app/schemas/v1/kvt-tile.json",
+  "tile_id": "de-by:gymnasium-11-mathematik-kurvendiskussion-extremwertprobleme-wendepunkte",
+  "version": "2026.08.1",
+  "title": "Mathematik 11: Differentialrechnung – Vollständige Kurvendiskussion, Extremwertprobleme und Krümmungsverhalten (Gymnasium 11 Bayern)",
+  "description": "Geerdetes KVT-Paket für Gymnasium Bayern Mathematik 11 (Oberstufe): Vollständige Kurvendiskussion ganzrationaler Funktionen (Definitions- und Wertebereich, Symmetrie, Achsenschnittpunkte/Nullstellen, Globalverhalten x -> +-inf, Monotonieverhalten und Extremstellen mit f'(x)=0 und VZW bzw. 2. Ableitung f''(x)<0 Maximum / f''(x)>0 Minimum, Krümmungsverhalten mit f''(x)=0 und Wendepunkten/Terrassenpunkten, Tangenten- und Normalengleichungen) sowie angewandte Extremwertprobleme mit Nebenbedingungen und Zielfunktion.",
+  "publisher": "ZAM Curriculum Working Group",
+  "published_at": "2026-08-16T07:30:00Z",
+  "sources": [
+    {
+      "uri": "https://www.lehrplanplus.bayern.de/fachlehrplan/gymnasium/11/mathematik",
+      "checked": "2026-08-16",
+      "label": "Gymnasium Mathematik 11, Lernbereich Differentialrechnung und Kurvendiskussion"
+    }
+  ],
+  "atoms": [
+    {
+      "id": "01K8GB00000000000000000A01",
+      "atom_uri": "urn:zam:atom:01K8GB00000000000000000A01",
+      "namespace": "gymnasium-mathematik-kurvendiskussion",
+      "slug": "kurvendiskussion-monotonie-extremstellen-kruemmung-wendepunkte",
+      "title": "Kurvendiskussion: Monotonie, Extremstellen, Krümmungsverhalten und Wendepunkte",
+      "domain": "mathematik/analysis",
+      "reduction": "formal",
+      "typical_age_min": 16.5,
+      "prerequisites": [],
+      "alignments": [
+        {
+          "target_uri": "http://www.wikidata.org/entity/Q11518",
+          "target_label": "Curve sketching",
+          "alignment_type": "skos:broadMatch",
+          "provenance": "manual_curation_v1"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 11,
+          "subject": "mathematik",
+          "topic_code": "lb1",
+          "topic_title": "Differentialrechnung und Kurvendiskussion",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01K8GB00000000000000000J01",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Welche hinreichende Bedingung garantiert die Existenz eines relativen Hochpunkts (lokales Maximum) an einer Stelle "
+            },
+            {
+              "type": "math",
+              "tex": "x_0",
+              "speech": "x null"
+            },
+            {
+              "type": "text",
+              "text": " mit waagrechter Tangente "
+            },
+            {
+              "type": "math",
+              "tex": "f'(x_0) = 0",
+              "speech": "f Strich von x null gleich 0"
+            },
+            {
+              "type": "text",
+              "text": "?"
+            }
+          ],
+          "concept": "f''(x_0) < 0 (Rechtskrümmung der Kurve im Extrempunkt)",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "f''(x_0) < 0 (Graph ist rechtsgekrümmt -> Maximum)",
+              "f''(x_0) > 0"
+            ],
+            "correct_index": 0
+          },
+          "materiality": "cosmetic"
+        },
+        {
+          "id": "01K8GB00000000000000000J02",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Führe eine vollständige mathematische Kurvendiskussion für die ganzrationale Funktion "
+            },
+            {
+              "type": "math",
+              "tex": "f(x) = x^3 - 3x^2 + 4",
+              "speech": "f von x gleich x hoch drei minus 3 x Quadrat plus 4"
+            },
+            {
+              "type": "text",
+              "text": " durch: 1. Ableitungen: Bestimme "
+            },
+            {
+              "type": "math",
+              "tex": "f'(x)",
+              "speech": "f Strich von x"
+            },
+            {
+              "type": "text",
+              "text": ", "
+            },
+            {
+              "type": "math",
+              "tex": "f''(x)",
+              "speech": "f Strich Strich von x"
+            },
+            {
+              "type": "text",
+              "text": " und "
+            },
+            {
+              "type": "math",
+              "tex": "f'''(x)",
+              "speech": "f Strich Strich Strich von x"
+            },
+            {
+              "type": "text",
+              "text": ", 2. Achsenschnittpunkte & Nullstellen:   * Schnittpunkt mit der "
+            },
+            {
+              "type": "math",
+              "tex": "y",
+              "speech": "y"
+            },
+            {
+              "type": "text",
+              "text": "-Achse: "
+            },
+            {
+              "type": "math",
+              "tex": "S_y(0|f(0))",
+              "speech": "S y mit den Koordinaten 0 und f von 0"
+            },
+            {
+              "type": "text",
+              "text": ".   * Nullstellen: Bestimme die Nullstellen von "
+            },
+            {
+              "type": "math",
+              "tex": "f(x)",
+              "speech": "f von x"
+            },
+            {
+              "type": "text",
+              "text": " (Tipp: "
+            },
+            {
+              "type": "math",
+              "tex": "x_1 = -1",
+              "speech": "x eins gleich minus 1"
+            },
+            {
+              "type": "text",
+              "text": " durch Erraten und Polynomdivision/Linearfaktorzerlegung), 3. Extrempunkte & Monotonie:   * Notwendige Bedingung: "
+            },
+            {
+              "type": "math",
+              "tex": "f'(x) = 0",
+              "speech": "f Strich von x gleich 0"
+            },
+            {
+              "type": "text",
+              "text": ".   * Hinreichende Bedingung: "
+            },
+            {
+              "type": "math",
+              "tex": "f''(x_E) \\neq 0",
+              "speech": "f Strich Strich von x E ungleich 0"
+            },
+            {
+              "type": "text",
+              "text": " (Klassifikation in Tiefpunkt / Hochpunkt mit Koordinaten), 4. Wendepunkte & Krümmungsverhalten:   * Notwendige Bedingung: "
+            },
+            {
+              "type": "math",
+              "tex": "f''(x) = 0",
+              "speech": "f Strich Strich von x gleich 0"
+            },
+            {
+              "type": "text",
+              "text": ".   * Hinreichende Bedingung: "
+            },
+            {
+              "type": "math",
+              "tex": "f'''(x_W) \\neq 0",
+              "speech": "f Strich Strich Strich von x W ungleich 0"
+            },
+            {
+              "type": "text",
+              "text": " (Bestimmung des Wendepunkts "
+            },
+            {
+              "type": "math",
+              "tex": "W",
+              "speech": "W"
+            },
+            {
+              "type": "text",
+              "text": ")."
+            }
+          ],
+          "concept": "Kurvendiskussion: Ableitungen f', f'', f'''; Nullstellen (x=-1, x=2 doppelt); Extrempunkte: f'=0 -> x=0 (HP(0|4) da f''=-6<0), x=2 (TP(2|0) da f''=6>0); Wendepunkt: f''=0 -> x=1 (WP(1|2) da f'''=6!=0).",
+          "sample_solution": [
+            {
+              "type": "text",
+              "text": "1. Bestimmung der Ableitungsfunktionen: - Ausgangsfunktion: "
+            },
+            {
+              "type": "math",
+              "tex": "f(x) = x^3 - 3x^2 + 4"
+            },
+            {
+              "type": "text",
+              "text": " - 1. Ableitung: "
+            },
+            {
+              "type": "math",
+              "tex": "\\mathbf{f'(x) = 3x^2 - 6x}"
+            },
+            {
+              "type": "text",
+              "text": " - 2. Ableitung: "
+            },
+            {
+              "type": "math",
+              "tex": "\\mathbf{f''(x) = 6x - 6}"
+            },
+            {
+              "type": "text",
+              "text": " - 3. Ableitung: "
+            },
+            {
+              "type": "math",
+              "tex": "\\mathbf{f'''(x) = 6}"
+            },
+            {
+              "type": "text",
+              "text": " 2. Schnittpunkte mit den Koordinatenachsen: - "
+            },
+            {
+              "type": "math",
+              "tex": "y"
+            },
+            {
+              "type": "text",
+              "text": "-Achsenschnittpunkt: "
+            },
+            {
+              "type": "math",
+              "tex": "f(0) = 0 - 0 + 4 = 4 \\implies \\mathbf{S_y(0 \\mid 4)}"
+            },
+            {
+              "type": "text",
+              "text": " - Nullstellen ("
+            },
+            {
+              "type": "math",
+              "tex": "f(x) = 0"
+            },
+            {
+              "type": "text",
+              "text": "):   * Erraten einer ganzzahligen Nullstelle aus den Teilern von "
+            },
+            {
+              "type": "math",
+              "tex": "4"
+            },
+            {
+              "type": "text",
+              "text": ": "
+            },
+            {
+              "type": "math",
+              "tex": "f(-1) = (-1)^3 - 3(-1)^2 + 4 = -1 - 3 + 4 = 0 \\implies \\mathbf{x_1 = -1}"
+            },
+            {
+              "type": "text",
+              "text": ".   * Polynomdivision: "
+            },
+            {
+              "type": "math",
+              "tex": "(x^3 - 3x^2 + 4) : (x + 1) = x^2 - 4x + 4 = (x - 2)^2"
+            },
+            {
+              "type": "text",
+              "text": ".   * Weitere Nullstellen: "
+            },
+            {
+              "type": "math",
+              "tex": "(x - 2)^2 = 0 \\implies \\mathbf{x_{2/3} = 2}"
+            },
+            {
+              "type": "text",
+              "text": " (doppelte Nullstelle / Berührpunkt!).   * Nullstellen: "
+            },
+            {
+              "type": "math",
+              "tex": "N_1(-1 \\mid 0)"
+            },
+            {
+              "type": "text",
+              "text": " und "
+            },
+            {
+              "type": "math",
+              "tex": "N_2(2 \\mid 0)"
+            },
+            {
+              "type": "text",
+              "text": ". 3. Extrempunkte und Monotonie: - Notwendige Bedingung: "
+            },
+            {
+              "type": "math",
+              "tex": "f'(x) = 0"
+            },
+            {
+              "type": "text",
+              "text": "   "
+            },
+            {
+              "type": "math",
+              "tex": "3x^2 - 6x = 0 \\iff 3x(x - 2) = 0 \\implies \\mathbf{x_{E1} = 0}, \\quad \\mathbf{x_{E2} = 2}",
+              "block": true
+            },
+            {
+              "type": "text",
+              "text": " - Hinreichende Bedingung ("
+            },
+            {
+              "type": "math",
+              "tex": "f''(x)"
+            },
+            {
+              "type": "text",
+              "text": "):   * Für "
+            },
+            {
+              "type": "math",
+              "tex": "x_{E1} = 0"
+            },
+            {
+              "type": "text",
+              "text": ":     "
+            },
+            {
+              "type": "math",
+              "tex": "f''(0) = 6(0) - 6 = -6 < 0 \\implies \\mathbf{\\text{relatives Maximum (Hochpunkt)}}",
+              "block": true
+            },
+            {
+              "type": "text",
+              "text": "     "
+            },
+            {
+              "type": "math",
+              "tex": "y = f(0) = 4 \\implies \\mathbf{HP(0 \\mid 4)}",
+              "block": true
+            },
+            {
+              "type": "text",
+              "text": "   * Für "
+            },
+            {
+              "type": "math",
+              "tex": "x_{E2} = 2"
+            },
+            {
+              "type": "text",
+              "text": ":     "
+            },
+            {
+              "type": "math",
+              "tex": "f''(2) = 6(2) - 6 = +6 > 0 \\implies \\mathbf{\\text{relatives Minimum (Tiefpunkt)}}",
+              "block": true
+            },
+            {
+              "type": "text",
+              "text": "     "
+            },
+            {
+              "type": "math",
+              "tex": "y = f(2) = 2^3 - 3(2)^2 + 4 = 8 - 12 + 4 = 0 \\implies \\mathbf{TP(2 \\mid 0)}",
+              "block": true
+            },
+            {
+              "type": "text",
+              "text": " 4. Wendepunkte und Krümmungsverhalten: - Notwendige Bedingung: "
+            },
+            {
+              "type": "math",
+              "tex": "f''(x) = 0"
+            },
+            {
+              "type": "text",
+              "text": "   "
+            },
+            {
+              "type": "math",
+              "tex": "6x - 6 = 0 \\implies 6x = 6 \\implies \\mathbf{x_W = 1}",
+              "block": true
+            },
+            {
+              "type": "text",
+              "text": " - Hinreichende Bedingung:   "
+            },
+            {
+              "type": "math",
+              "tex": "f'''(1) = 6 \\neq 0 \\implies \\mathbf{\\text{echter Wendepunkt mit Krümmungswechsel}}",
+              "block": true
+            },
+            {
+              "type": "text",
+              "text": " - "
+            },
+            {
+              "type": "math",
+              "tex": "y"
+            },
+            {
+              "type": "text",
+              "text": "-Koordinate des Wendepunkts:   "
+            },
+            {
+              "type": "math",
+              "tex": "f(1) = 1^3 - 3(1)^2 + 4 = 1 - 3 + 4 = 2 \\implies \\mathbf{W(1 \\mid 2)}",
+              "block": true
+            },
+            {
+              "type": "text",
+              "text": " - Krümmung: Für "
+            },
+            {
+              "type": "math",
+              "tex": "x < 1"
+            },
+            {
+              "type": "text",
+              "text": " ist "
+            },
+            {
+              "type": "math",
+              "tex": "f''(x) < 0"
+            },
+            {
+              "type": "text",
+              "text": " (rechtsgekrümmt/konkav); für "
+            },
+            {
+              "type": "math",
+              "tex": "x > 1"
+            },
+            {
+              "type": "text",
+              "text": " ist "
+            },
+            {
+              "type": "math",
+              "tex": "f''(x) > 0"
+            },
+            {
+              "type": "text",
+              "text": " (linksgekrümmt/konvex)."
+            }
+          ],
+          "materiality": "cosmetic"
+        }
+      ]
+    },
+    {
+      "id": "01K8GB00000000000000000A02",
+      "atom_uri": "urn:zam:atom:01K8GB00000000000000000A02",
+      "namespace": "gymnasium-mathematik-extremwertprobleme",
+      "slug": "extremwertprobleme-nebenbedingungen-zielfunktion-optimierung",
+      "title": "Extremwertprobleme mit Nebenbedingungen: Zielfunktion, Definitionsbereich und Randextrema",
+      "domain": "mathematik/analysis",
+      "reduction": "formal",
+      "typical_age_min": 16.5,
+      "prerequisites": [
+        {
+          "atom_id": "01K8GB00000000000000000A01",
+          "type": "hard",
+          "rationale": "Optimierungsprobleme nutzen die Differentialrechnung zur Extremwertbestimmung."
+        }
+      ],
+      "alignments": [
+        {
+          "target_uri": "http://www.wikidata.org/entity/Q11518",
+          "target_label": "Optimization problem",
+          "alignment_type": "skos:broadMatch",
+          "provenance": "manual_curation_v1"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 11,
+          "subject": "mathematik",
+          "topic_code": "lb1",
+          "topic_title": "Extremwertprobleme mit Nebenbedingungen",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01K8GB00000000000000000J03",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Was ist der entscheidende mathematische Schritt bei einem Extremwertproblem, um die Zielfunktion "
+            },
+            {
+              "type": "math",
+              "tex": "Z(x, y)",
+              "speech": "Z von x und y"
+            },
+            {
+              "type": "text",
+              "text": " mit zwei Variablen in eine ableitbare Funktion "
+            },
+            {
+              "type": "math",
+              "tex": "Z(x)",
+              "speech": "Z von x"
+            },
+            {
+              "type": "text",
+              "text": " mit nur einer Variablen umzuwandeln?"
+            }
+          ],
+          "concept": "Das Auflösen der Nebenbedingung nach einer Variablen und das Einsetzen dieses Terms in die Hauptbedingung / Zielfunktion",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Nebenbedingung nach einer Variablen auflösen und in die Zielfunktion einsetzen",
+              "Beide Variablen einfach gleich Null setzen"
+            ],
+            "correct_index": 0
+          },
+          "materiality": "cosmetic"
+        },
+        {
+          "id": "01K8GB00000000000000000J04",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Löse ein klassisches geometrisches Optimierungsproblem: Ein Landwirt möchte mit einem "
+            },
+            {
+              "type": "math",
+              "tex": "U = 40\\,\\text{m}",
+              "speech": "U gleich 40 Meter"
+            },
+            {
+              "type": "text",
+              "text": " langen Zaun ein rechteckiges Weidegrundstück an einer geraden Flussmauer einzäunen. Die Seite an der Flussmauer benötigt keinen Zaun. 1. Hauptbedingung (Zielfunktion): Formuliere den Flächeninhalt "
+            },
+            {
+              "type": "math",
+              "tex": "A(a, b)",
+              "speech": "A von a und b"
+            },
+            {
+              "type": "text",
+              "text": " des Rechtecks, 2. Nebenbedingung: Stelle die Gleichung für die gegebene Zaunlänge auf, 3. Zielfunktion in einer Variablen "
+            },
+            {
+              "type": "math",
+              "tex": "A(a)",
+              "speech": "A von a"
+            },
+            {
+              "type": "text",
+              "text": ": Drücke die Fläche nur in Abhängigkeit von der senkrecht zur Mauer stehenden Seitenlänge "
+            },
+            {
+              "type": "math",
+              "tex": "a",
+              "speech": "a"
+            },
+            {
+              "type": "text",
+              "text": " aus und bestimme den ökonomisch sinnvollen Definitionsbereich "
+            },
+            {
+              "type": "math",
+              "tex": "\\mathbb{D}_A",
+              "speech": "D A"
+            },
+            {
+              "type": "text",
+              "text": ", 4. Extremwertbestimmung & Randwertvergleich: Berechne die optimalen Seitenlängen "
+            },
+            {
+              "type": "math",
+              "tex": "a",
+              "speech": "a"
+            },
+            {
+              "type": "text",
+              "text": " und "
+            },
+            {
+              "type": "math",
+              "tex": "b",
+              "speech": "b"
+            },
+            {
+              "type": "text",
+              "text": " sowie den maximalen Flächeninhalt "
+            },
+            {
+              "type": "math",
+              "tex": "A_{\\text{max}}",
+              "speech": "A max"
+            },
+            {
+              "type": "text",
+              "text": "."
+            }
+          ],
+          "concept_segments": [
+            {
+              "type": "text",
+              "text": "Extremwertproblem: Hauptbedingung "
+            },
+            {
+              "type": "math",
+              "tex": "A = a \\cdot b",
+              "speech": "A gleich a mal b"
+            },
+            {
+              "type": "text",
+              "text": "; Nebenbedingung "
+            },
+            {
+              "type": "math",
+              "tex": "2a + b = 40 \\Rightarrow b = 40 - 2a",
+              "speech": "2 a plus b gleich 40, daraus folgt b gleich 40 minus 2 a"
+            },
+            {
+              "type": "text",
+              "text": "; Zielfunktion "
+            },
+            {
+              "type": "math",
+              "tex": "A(a) = a \\cdot (40 - 2a) = 40a - 2a^2",
+              "speech": "A von a gleich a mal Klammer auf 40 minus 2 a Klammer zu gleich 40 a minus 2 a Quadrat"
+            },
+            {
+              "type": "text",
+              "text": "; Ableitung "
+            },
+            {
+              "type": "math",
+              "tex": "A'(a) = 40 - 4a = 0 \\Rightarrow a = 10\\,\\text{m}",
+              "speech": "A Strich von a gleich 40 minus 4 a gleich 0, daraus folgt a gleich 10 Meter"
+            },
+            {
+              "type": "text",
+              "text": "; "
+            },
+            {
+              "type": "math",
+              "tex": "b = 20\\,\\text{m}",
+              "speech": "b gleich 20 Meter"
+            },
+            {
+              "type": "text",
+              "text": "; "
+            },
+            {
+              "type": "math",
+              "tex": "A_{\\text{max}} = 200\\,\\text{m}^2",
+              "speech": "A max gleich 200 Quadratmeter"
+            },
+            {
+              "type": "text",
+              "text": "; Randwerte "
+            },
+            {
+              "type": "math",
+              "tex": "A(0) = A(20) = 0",
+              "speech": "A von 0 gleich A von 20 gleich 0"
+            },
+            {
+              "type": "text",
+              "text": "."
+            }
+          ],
+          "sample_solution": [
+            {
+              "type": "text",
+              "text": "1. Systematischer 4-Schritte-Lösungsplan für Extremwertprobleme: - 1. Schritt: Hauptbedingung (Was soll maximal werden?):   * Der Flächeninhalt des rechteckigen Geheges mit den Seitenlängen "
+            },
+            {
+              "type": "math",
+              "tex": "a"
+            },
+            {
+              "type": "text",
+              "text": " (Breite senkrecht zur Mauer) und "
+            },
+            {
+              "type": "math",
+              "tex": "b"
+            },
+            {
+              "type": "text",
+              "text": " (Länge parallel zur Mauer):     "
+            },
+            {
+              "type": "math",
+              "tex": "\\mathbf{A(a, b) = a \\cdot b} \\longrightarrow \\text{maximal!}",
+              "block": true
+            },
+            {
+              "type": "text",
+              "text": " - 2. Schritt: Nebenbedingung (Welche Restriktion liegt vor?):   * Da die Flussmauer keinen Zaun benötigt, besteht die Zaunlänge aus zwei Breiten "
+            },
+            {
+              "type": "math",
+              "tex": "a"
+            },
+            {
+              "type": "text",
+              "text": " und einer Länge "
+            },
+            {
+              "type": "math",
+              "tex": "b"
+            },
+            {
+              "type": "text",
+              "text": ":     "
+            },
+            {
+              "type": "math",
+              "tex": "\\mathbf{2a + b = 40\\,\\text{m}} \\implies \\mathbf{b = 40 - 2a}",
+              "block": true
+            },
+            {
+              "type": "text",
+              "text": " - 3. Schritt: Zielfunktion "
+            },
+            {
+              "type": "math",
+              "tex": "A(a)"
+            },
+            {
+              "type": "text",
+              "text": " in einer Variablen:   * Einsetzen der Nebenbedingung in die Hauptbedingung:     "
+            },
+            {
+              "type": "math",
+              "tex": "\\mathbf{A(a) = a \\cdot (40 - 2a) = 40a - 2a^2}",
+              "block": true
+            },
+            {
+              "type": "text",
+              "text": "   * Definitionsbereich: Seitenlängen müssen positiv sein "
+            },
+            {
+              "type": "math",
+              "tex": "\\implies a > 0"
+            },
+            {
+              "type": "text",
+              "text": " und "
+            },
+            {
+              "type": "math",
+              "tex": "b = 40 - 2a > 0 \\implies a < 20"
+            },
+            {
+              "type": "text",
+              "text": ":     "
+            },
+            {
+              "type": "math",
+              "tex": "\\mathbf{\\mathbb{D}_A = [0; 20]}",
+              "block": true
+            },
+            {
+              "type": "text",
+              "text": " 2. Extremwertbestimmung mittels Differentialrechnung: - 1. Ableitung bilden und Null setzen:   "
+            },
+            {
+              "type": "math",
+              "tex": "A'(a) = 40 - 4a",
+              "block": true
+            },
+            {
+              "type": "text",
+              "text": "   "
+            },
+            {
+              "type": "math",
+              "tex": "A'(a) = 0 \\iff 40 - 4a = 0 \\implies 4a = 40 \\implies \\mathbf{a = 10\\,\\text{m}}",
+              "block": true
+            },
+            {
+              "type": "text",
+              "text": " - 2. Ableitung zur Überprüfung auf Maximum:   "
+            },
+            {
+              "type": "math",
+              "tex": "A''(a) = -4 < 0 \\quad \\forall a \\implies \\mathbf{\\text{globales Maximum}}",
+              "block": true
+            },
+            {
+              "type": "text",
+              "text": " 3. Seitenlängen, Maximalfläche und Randwertvergleich: - Optimale Abmessungen:   * Breite: "
+            },
+            {
+              "type": "math",
+              "tex": "\\mathbf{a = 10\\,\\text{m}}"
+            },
+            {
+              "type": "text",
+              "text": "   * Länge: "
+            },
+            {
+              "type": "math",
+              "tex": "b = 40 - 2(10) = \\mathbf{20\\,\\text{m}}"
+            },
+            {
+              "type": "text",
+              "text": " - Maximaler Flächeninhalt:   "
+            },
+            {
+              "type": "math",
+              "tex": "A_{\\text{max}} = A(10) = 10\\,\\text{m} \\cdot 20\\,\\text{m} = \\mathbf{200\\,\\text{m}^2}",
+              "block": true
+            },
+            {
+              "type": "text",
+              "text": " - Randwertvergleich (Randextrema):   * "
+            },
+            {
+              "type": "math",
+              "tex": "A(0) = 0\\,\\text{m}^2"
+            },
+            {
+              "type": "text",
+              "text": ", "
+            },
+            {
+              "type": "math",
+              "tex": "A(20) = 0\\,\\text{m}^2"
+            },
+            {
+              "type": "text",
+              "text": ".   * Das innere Maximum "
+            },
+            {
+              "type": "math",
+              "tex": "A(10) = 200\\,\\text{m}^2"
+            },
+            {
+              "type": "text",
+              "text": " ist somit das absolute globale Maximum."
+            }
+          ],
+          "materiality": "cosmetic"
+        }
+      ]
+    }
+  ]
+}
