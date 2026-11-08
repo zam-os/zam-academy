@@ -291,4 +291,58 @@ describe("Aufgaben (Gymnasium 12)", () => {
       }
     }
   });
+
+  it("provides variety across seeds for every generator on both levels", () => {
+    for (const lesson of ALL_LESSONS) {
+      for (const generator of lesson.exercises) {
+        for (const level of [1, 2] as const) {
+          const prompts = new Set<string>();
+          for (let counter = 1; counter <= 30; counter++) {
+            const rng = createRng(
+              seedFrom(`${lesson.id}:${generator.id}:${level}:${counter}`),
+            );
+            const task = generator.make(rng, level);
+            prompts.add(task.prompt);
+          }
+          expect(
+            prompts.size,
+            `${lesson.id}/${generator.id} L${level}: variety across 30 seeds`,
+          ).toBeGreaterThanOrEqual(3);
+        }
+      }
+    }
+  });
+
+  it("formats visible task texts without raw decimal dots, raw LaTeX carets, or raw underscores", () => {
+    for (const lesson of ALL_LESSONS) {
+      for (const generator of lesson.exercises) {
+        for (const level of [1, 2] as const) {
+          for (let counter = 1; counter <= 20; counter++) {
+            const rng = createRng(
+              seedFrom(`${lesson.id}:${generator.id}:${level}:${counter}`),
+            );
+            const task = generator.make(rng, level);
+            const where = `${lesson.id}/${generator.id} L${level} #${counter}`;
+            const text = [
+              task.prompt,
+              ...task.given,
+              ...task.steps,
+              task.formulaHint ?? "",
+              task.feedbackHint ?? "",
+            ].join(" ");
+            const stripped = text.replace(/<[^>]+>/g, " ");
+
+            expect(stripped, `${where}: no raw carets`).not.toContain("^");
+            expect(stripped, `${where}: no raw LaTeX subscripts`).not.toContain(
+              "_{",
+            );
+            expect(
+              stripped,
+              `${where}: no decimal dots in numbers`,
+            ).not.toMatch(/(^|[\s(])\d+\.\d+([\s),;]|$)/);
+          }
+        }
+      }
+    }
+  });
 });

@@ -3,7 +3,7 @@
  */
 
 import type { LabValues, ReadoutValues } from "../model/types";
-import { open, text, line, path, circle, handle, r1, W, H } from "./svg";
+import { open, text, line, path, circle, handle, r1, fmtDez, W, H } from "./svg";
 
 /** Zeichnet ein 2D-Koordinatensystem für Funktionsgraphen. */
 export function drawAxes(
@@ -17,20 +17,24 @@ export function drawAxes(
   scaleY: number,
   xLabel = "x",
   yLabel = "y",
+  stepX?: number,
+  stepY?: number,
 ): string {
+  const sxStep = stepX ?? (xMax - xMin > 40 ? 10 : xMax - xMin > 20 ? 5 : 2);
+  const syStep = stepY ?? (yMax - yMin > 60 ? 20 : yMax - yMin > 20 ? 5 : 2);
   let s = "";
   // Gitter
-  for (let x = Math.ceil(xMin); x <= Math.floor(xMax); x++) {
+  for (let x = Math.ceil(xMin / sxStep) * sxStep; x <= Math.floor(xMax); x += sxStep) {
     const sx = cx + x * scaleX;
     s += line(sx, cy - yMax * scaleY, sx, cy - yMin * scaleY, "lab-grid-line");
-    if (x !== 0 && x % 2 === 0) {
+    if (x !== 0) {
       s += text(sx, cy + 14, String(x), "lab-axis-tick", "middle");
     }
   }
-  for (let y = Math.ceil(yMin); y <= Math.floor(yMax); y++) {
+  for (let y = Math.ceil(yMin / syStep) * syStep; y <= Math.floor(yMax); y += syStep) {
     const sy = cy - y * scaleY;
     s += line(cx + xMin * scaleX, sy, cx + xMax * scaleX, sy, "lab-grid-line");
-    if (y !== 0 && y % 2 === 0) {
+    if (y !== 0) {
       s += text(cx - 8, sy + 4, String(y), "lab-axis-tick", "end");
     }
   }
@@ -170,15 +174,15 @@ export function expGrowthView(v: LabValues, _r: ReadoutValues): string {
   const n0 = v.N0 ?? 100;
   const k = (v.k ?? -3) * 0.1;
   const cx = 80;
-  const cy = 260;
+  const cy = 270;
   const scaleX = 35;
-  const scaleY = 1.8;
+  const scaleY = 1.4;
   let s = open("Wachstums- und Abklingmodelle");
-  s += drawAxes(cx, cy, 0, 11, 0, 120, scaleX, scaleY, "t", "N(t)");
+  s += drawAxes(cx, cy, 0, 11, 0, 120, scaleX, scaleY, "t", "N(t)", 2, 20);
   s += plotFunction((t) => n0 * Math.exp(k * t), 0, 10, 100, cx, cy, scaleX, scaleY, "lab-line-thick lab-accent");
-  s += text(20, 30, `N(t) = ${n0} · e^{${r1(k)}t}`, "lab-title");
-  const charTime = k !== 0 ? r1(Math.log(2) / Math.abs(k)) : "—";
-  const charLabel = k < 0 ? `Halbwertszeit T_H = ${charTime} Std` : k > 0 ? `Verdopplungszeit T_V = ${charTime} Std` : "Bestand konstant";
+  s += text(20, 30, `N(t) = ${n0} · e^{${fmtDez(k, 1)}t}`, "lab-title");
+  const charTime = Math.abs(k) > 1e-4 ? `${fmtDez(Math.log(2) / Math.abs(k), 1)} Std` : "—";
+  const charLabel = k < -1e-4 ? `Halbwertszeit T_H = ${charTime}` : k > 1e-4 ? `Verdopplungszeit T_V = ${charTime}` : "Bestand konstant";
   s += text(20, 52, `${charLabel} (Basiswechsel: a^t = e^{(ln a) · t})`, "lab-legend");
   s += "</svg>";
   return s;
@@ -206,7 +210,7 @@ export function trigTangentView(v: LabValues, _r: ReadoutValues): string {
   const slopeScreen = m * (scaleY / scaleX);
   s += line(sx0 - 40, sy0 + 40 * slopeScreen, sx0 + 40, sy0 - 40 * slopeScreen, "lab-line-dashed");
   s += text(20, 30, "f(x) = sin(x) [blau] und f'(x) = cos(x) [orange]", "lab-title");
-  s += text(20, 52, `Tangentensteigung bei x = ${r1(x0 / Math.PI)}π: m = ${r1(m)}`, "lab-legend");
+  s += text(20, 52, `Tangentensteigung bei x = ${fmtDez(x0 / Math.PI, 2)}π: m = ${fmtDez(m, 2)}`, "lab-legend");
   s += "</svg>";
   return s;
 }
@@ -358,7 +362,7 @@ export function lnDerivativeView(v: LabValues, _r: ReadoutValues): string {
   s += handle("x0", sx0, sy0, "Stelle x0");
   s += line(sx0 - 40, sy0 + 40 * m, sx0 + 40, sy0 - 40 * m, "lab-line-dashed");
   s += text(20, 30, "f(x) = ln(x) [orange], f'(x) = 1/x [blau]", "lab-title");
-  s += text(20, 52, `Steigung bei x = ${x0}: m = 1/${x0} = ${r1(m)}`, "lab-legend");
+  s += text(20, 52, `Steigung bei x = ${x0}: m = 1/${x0} = ${fmtDez(m, 2)}`, "lab-legend");
   s += "</svg>";
   return s;
 }

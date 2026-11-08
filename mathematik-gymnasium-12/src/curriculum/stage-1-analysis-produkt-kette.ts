@@ -779,22 +779,22 @@ export const STAGE_1_LESSONS: Lesson[] = [
         range("k", "Rate k (x0,1)", -6, 4, -2, 1),
       ],
       [
-        output("char_zeit", "Halb- / Verdopplungszeit", (v) => (v.k !== 0 ? Math.log(2) / Math.abs(v.k * 0.1) : 0), "Std", 2),
+        output("char_zeit", "Halb- / Verdopplungszeit", (v) => (v.k !== 0 ? Math.log(2) / Math.abs(v.k * 0.1) : "Bestand konstant"), "Std", 2),
       ],
       [
         {
           id: "zerfall-stark",
-          text: "Wähle k = −5 für einen raschen Zerfall.",
+          text: "Stelle einen steilen Zerfall mit Halbwertszeit unter 1,5 Stunden ein.",
           check: (v) => v.k === -5,
         },
         {
           id: "wachstum-moderat",
-          text: "Stelle k = 2 für exponentielles Wachstum ein.",
+          text: "Wähle eine positive Wachstumsrate k für ein exponentielles Anwachsen.",
           check: (v) => v.k === 2,
         },
         {
           id: "basis",
-          text: "Wähle N_0 = 100 und k = −3.",
+          text: "Stelle einen Anfangsbestand von 100 bei moderatem Zerfall k = −0,3 ein.",
           check: (v) => v.N0 === 100 && v.k === -3,
         },
       ],
@@ -807,25 +807,25 @@ export const STAGE_1_LESSONS: Lesson[] = [
           const th = Math.log(2) / lambda;
           if (level === 1) {
             return {
-              prompt: `Berechne die Halbwertszeit T<sub>H</sub> für einen Zerfallsprozess N(t) = N<sub>0</sub> · e<sup>−${lambda}t</sup> (t in Tagen, auf eine Dezimale gerundet).`,
-              given: [`N(t) = N<sub>0</sub> · e<sup>−${lambda}t</sup>`, "t in Tagen"],
+              prompt: `Berechne die Halbwertszeit T<sub>H</sub> für einen Zerfallsprozess N(t) = N<sub>0</sub> · e<sup>−${fmt(lambda)}t</sup> (t in Tagen, auf eine Dezimale gerundet).`,
+              given: [`N(t) = N<sub>0</sub> · e<sup>−${fmt(lambda)}t</sup>`, "t in Tagen"],
               fields: [numberField("T_H =", th, "Tage", 1)],
               formulaHint: "Nutze den Zusammenhang T<sub>H</sub> = ln(2) / &lambda; mit ln(2) &approx; 0,6931.",
               feedbackHint: "Teile ln(2) durch die Zerfallskonstante &lambda;.",
               steps: [
-                `T<sub>H</sub> = ln(2) / ${lambda} &approx; 0,6931 / ${lambda} = ${fmt(th, 1)} Tage.`,
+                `T<sub>H</sub> = ln(2) / ${fmt(lambda)} &approx; 0,6931 / ${fmt(lambda)} = ${fmt(th, 1)} Tage.`,
                 `<strong>T<sub>H</sub> = ${fmt(th, 1)} Tage</strong>`,
               ],
               meta: { lambda, th },
             };
           }
           return {
-            prompt: `Ein Medikament wird im Blutkreislauf gemäß c(t) = c<sub>0</sub> · e<sup>−${lambda}t</sup> abgebaut (t in Stunden). Nach wie vielen Stunden ist die Hälfte der Dosis abgebaut (auf eine Dezimale gerundet)?`,
-            given: [`c(t) = c<sub>0</sub> · e<sup>−${lambda}t</sup>`, "t in Stunden"],
+            prompt: `Ein Medikament wird im Blutkreislauf gemäß c(t) = c<sub>0</sub> · e<sup>−${fmt(lambda)}t</sup> abgebaut (t in Stunden). Nach wie vielen Stunden ist die Hälfte der Dosis abgebaut (auf eine Dezimale gerundet)?`,
+            given: [`c(t) = c<sub>0</sub> · e<sup>−${fmt(lambda)}t</sup>`, "t in Stunden"],
             fields: [numberField("T_H =", th, "h", 1)],
             feedbackHint: "Setze c(t) = 0,5 · c₀ und löse nach t auf: t = ln(2) / &lambda;.",
             steps: [
-              `c(t) = 0,5 · c₀ &rArr; e<sup>−${lambda}t</sup> = 0,5 &rArr; t = ln(2) / ${lambda} &approx; ${fmt(th, 1)} h.`,
+              `c(t) = 0,5 · c₀ &rArr; e<sup>−${fmt(lambda)}t</sup> = 0,5 &rArr; t = ln(2) / ${fmt(lambda)} &approx; ${fmt(th, 1)} h.`,
               `<strong>T<sub>H</sub> = ${fmt(th, 1)} h</strong>`,
             ],
             meta: { lambda, th },
@@ -839,13 +839,13 @@ export const STAGE_1_LESSONS: Lesson[] = [
             const a = rng.pick([1.04, 1.05, 1.08, 1.1, 1.15, 1.25, 1.5]);
             const k = Math.log(a);
             return {
-              prompt: `Bestimme die kontinuierliche Wachstumskonstante k zur Basis e für B(t) = B<sub>0</sub> · ${a}<sup>t</sup> (auf drei Dezimalen gerundet).`,
-              given: [`B(t) = B<sub>0</sub> · ${a}<sup>t</sup>`],
+              prompt: `Bestimme die kontinuierliche Wachstumskonstante k zur Basis e für B(t) = B<sub>0</sub> · ${fmt(a)}<sup>t</sup> (auf drei Dezimalen gerundet).`,
+              given: [`B(t) = B<sub>0</sub> · ${fmt(a)}<sup>t</sup>`],
               fields: [numberField("k =", k, "", 3)],
               formulaHint: "Wende den Basiswechsel an: a<sup>t</sup> = (e<sup>ln a</sup>)<sup>t</sup> = e<sup>(ln a) · t</sup> &rArr; k = ln(a).",
               feedbackHint: "Berechne den natürlichen Logarithmus der Basis a.",
               steps: [
-                `k = ln(${a}) &approx; ${fmt(k, 3)}.`,
+                `k = ln(${fmt(a)}) &approx; ${fmt(k, 3)}.`,
                 `<strong>k = ${fmt(k, 3)}</strong>`,
               ],
               meta: { a, k },

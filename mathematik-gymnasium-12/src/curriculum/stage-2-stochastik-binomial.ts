@@ -74,7 +74,9 @@ export const STAGE_2_LESSONS: Lesson[] = [
         output("vereinigung", "P(A ∪ B)", (v) => {
           const maxSchnitt = Math.min(v.pA, v.pB);
           const actSchnitt = Math.min(v.pSchnitt, maxSchnitt);
-          return Math.min(1, Math.max(0, (v.pA + v.pB - actSchnitt) / 100));
+          const sum = (v.pA + v.pB - actSchnitt) / 100;
+          if (sum > 1.0001) return "unmöglich (> 1)";
+          return sum;
         }, "", 2),
       ],
       [
@@ -85,12 +87,12 @@ export const STAGE_2_LESSONS: Lesson[] = [
         },
         {
           id: "vollstaendig",
-          text: "Stelle die Parameter so ein, dass P(A ∪ B) = 1,00 ergibt.",
+          text: "Finde eine Belegung der Ereignisse mit sicherer Vereinigung P(A ∪ B) = 1,00.",
           check: (v) => (v.pA + v.pB - v.pSchnitt) === 100,
         },
         {
           id: "symmetrisch",
-          text: "Wähle P(A) = 50 %, P(B) = 50 % und Schnitt 20 %.",
+          text: "Untersuche zwei gleich wahrscheinliche Ereignisse P(A) = P(B) = 50 % mit 20 % Schnittmenge.",
           check: (v) => v.pA === 50 && v.pB === 50 && v.pSchnitt === 20,
         },
       ],
@@ -217,16 +219,16 @@ export const STAGE_2_LESSONS: Lesson[] = [
       "Wahrscheinlichkeitsverteilung & Erwartungswert",
       "Verändere die Wahrscheinlichkeiten p_1 und p_2 der Werte x = 1, 2, 3.",
       [
-        range("p1", "P(X = 1) in %", 10, 60, 30, 5),
-        range("p2", "P(X = 2) in %", 10, 60, 50, 5),
+        range("p1", "P(X = 1) in %", 10, 45, 20, 5),
+        range("p2", "P(X = 2) in %", 10, 45, 30, 5),
       ],
       [
-        output("erwartungswert", "E(X)", (v) => 1 * (v.p1 / 100) + 2 * (v.p2 / 100) + 3 * (Math.max(0, 100 - v.p1 - v.p2) / 100), "", 2),
+        output("erwartungswert", "E(X)", (v) => 1 * (v.p1 / 100) + 2 * (v.p2 / 100) + 3 * ((100 - v.p1 - v.p2) / 100), "", 2),
       ],
       [
         {
           id: "gleichverteilt",
-          text: "Wähle P(X=1) = 35 % und P(X=2) = 35 % (annähernde Gleichverteilung).",
+          text: "Stelle eine annähernde Gleichverteilung mit P(X=1) = P(X=2) = 35 % ein.",
           check: (v) => v.p1 === 35 && v.p2 === 35,
         },
         {
@@ -236,7 +238,7 @@ export const STAGE_2_LESSONS: Lesson[] = [
         },
         {
           id: "hoher-erwartungswert",
-          text: "Erhöhe P(X=3) durch Wahl von p1 = 10 % und p2 = 20 %.",
+          text: "Verschiebe das Gewicht auf den höchsten Wert x = 3 durch Wahl von p1 = 10 % und p2 = 20 %.",
           check: (v) => v.p1 === 10 && v.p2 === 20,
         },
       ],
@@ -366,25 +368,25 @@ export const STAGE_2_LESSONS: Lesson[] = [
       [
         range("n", "Kugeln gesamt n", 5, 12, 8, 1),
         range("k", "Gezogene Kugeln k", 1, 4, 2, 1),
-        range("withRep", "Modus: 0=Ohne, 1=Mit", 0, 1, 0, 1),
+        range("withRep", "Modus (0=Ohne, 1=Mit Zurücklegen)", 0, 1, 0, 1),
       ],
       [
-        output("kombinationen", "Möglichkeiten", (v) => (v.withRep === 1 ? Math.pow(v.n, v.k) : binom(v.n, v.k)), "", 0),
+        output("kombinationen", "Mögliche Ergebnisse", (v) => (v.withRep === 1 ? Math.pow(v.n, v.k) : binom(v.n, v.k)), "", 0),
       ],
       [
         {
           id: "ohne-fuenf-zwei",
-          text: "Wähle n = 5 und k = 2 ohne Zurücklegen ((5 über 2) = 10).",
+          text: "Bestimme die Anzahl von 2er-Teilmengen aus 5 Kugeln ohne Zurücklegen.",
           check: (v) => v.n === 5 && v.k === 2 && v.withRep === 0,
         },
         {
           id: "mit-zuruecklegen",
-          text: "Schalte auf Ziehen mit Zurücklegen (withRep = 1) bei n = 10 und k = 2.",
+          text: "Stelle Ziehen mit Zurücklegen bei n = 10 Kugeln und Stichprobengröße k = 2 ein.",
           check: (v) => v.n === 10 && v.k === 2 && v.withRep === 1,
         },
         {
           id: "lotto-auswahl",
-          text: "Wähle k = 3 aus n = 10 ohne Zurücklegen ((10 über 3) = 120).",
+          text: "Ermittle die 120 ungeordneten Stichproben beim Ziehen von 3 Kugeln aus 10 ohne Zurücklegen.",
           check: (v) => v.n === 10 && v.k === 3 && v.withRep === 0,
         },
       ],
@@ -553,10 +555,10 @@ export const STAGE_2_LESSONS: Lesson[] = [
               prompt: `Ein Bernoulli-Experiment mit Trefferwahrscheinlichkeit p = ${fmt(p, 1)} wird n = ${n} Mal wiederholt. Berechne die Wahrscheinlichkeit für genau k = ${k} Treffer gerundet auf drei Dezimalen.`,
               given: [`n = ${n}`, `p = ${fmt(p, 1)}`, `k = ${k}`],
               fields: [numberField(`P(X = ${k}) =`, prob, "", 3)],
-              formulaHint: `Bernoulli-Formel: P(X = ${k}) = (${n} über ${k}) · ${fmt(p, 1)}^${k} · ${fmt(1 - p, 1)}^${n - k}.`,
-              feedbackHint: `Berechne den Binomialkoeffizienten (${n} über ${k}) und multipliziere mit ${fmt(p, 1)}^${k} · ${fmt(1 - p, 1)}^${n - k}.`,
+              formulaHint: `Bernoulli-Formel: P(X = ${k}) = (${n} über ${k}) · ${fmt(p, 1)}<sup>${k}</sup> · ${fmt(1 - p, 1)}<sup>${n - k}</sup>.`,
+              feedbackHint: `Berechne den Binomialkoeffizienten (${n} über ${k}) und multipliziere mit ${fmt(p, 1)}<sup>${k}</sup> · ${fmt(1 - p, 1)}<sup>${n - k}</sup>.`,
               steps: [
-                `P(X = ${k}) = (${n} über ${k}) · (${fmt(p, 1)})^${k} · (${fmt(1 - p, 1)})^${n - k} = ${binom(n, k)} · ${fmt(Math.pow(p, k), 4)} · ${fmt(Math.pow(1 - p, n - k), 4)} &approx; ${fmt(prob, 3)}.`,
+                `P(X = ${k}) = (${n} über ${k}) · (${fmt(p, 1)})<sup>${k}</sup> · (${fmt(1 - p, 1)})<sup>${n - k}</sup> = ${binom(n, k)} · ${fmt(Math.pow(p, k), 4)} · ${fmt(Math.pow(1 - p, n - k), 4)} &approx; ${fmt(prob, 3)}.`,
                 `<strong>P(X = ${k}) = ${fmt(prob, 3)}</strong>`,
               ],
               meta: { n, k, p, prob },
@@ -570,9 +572,9 @@ export const STAGE_2_LESSONS: Lesson[] = [
             prompt: `Ein Prüfling rät bei einem Multiple-Choice-Test mit ${n} Fragen (jeweils 4 Antwortoptionen, genau eine ist richtig, also p = 0,25) völlig zufällig. Wie groß ist die Wahrscheinlichkeit für genau ${k} richtige Antworten (auf drei Dezimalen gerundet)?`,
             given: [`n = ${n} Fragen`, `p = 0,25 (Raten bei 4 Optionen)`, `k = ${k} Treffer`],
             fields: [numberField(`P(X = ${k}) =`, prob, "", 3)],
-            feedbackHint: `Modelliere als Bernoulli-Kette B(${n}; 0,25): P(X = ${k}) = (${n} über ${k}) · 0,25^${k} · 0,75^${n - k}.`,
+            feedbackHint: `Modelliere als Bernoulli-Kette B(${n}; 0,25): P(X = ${k}) = (${n} über ${k}) · 0,25<sup>${k}</sup> · 0,75<sup>${n - k}</sup>.`,
             steps: [
-              `P(X = ${k}) = (${n} über ${k}) · 0,25^${k} · 0,75^${n - k} = ${binom(n, k)} · ${fmt(Math.pow(0.25, k), 5)} · ${fmt(Math.pow(0.75, n - k), 5)} &approx; ${fmt(prob, 3)}.`,
+              `P(X = ${k}) = (${n} über ${k}) · 0,25<sup>${k}</sup> · 0,75<sup>${n - k}</sup> = ${binom(n, k)} · ${fmt(Math.pow(0.25, k), 5)} · ${fmt(Math.pow(0.75, n - k), 5)} &approx; ${fmt(prob, 3)}.`,
               `<strong>P(X = ${k}) = ${fmt(prob, 3)}</strong>`,
             ],
             meta: { n, k, p, prob },
@@ -591,10 +593,10 @@ export const STAGE_2_LESSONS: Lesson[] = [
               prompt: `Die Trefferwahrscheinlichkeit beträgt p = ${fmt(p, 1)}. Berechne bei n = ${n} unabhängigen Versuchen die Wahrscheinlichkeit P(mindestens 1 Treffer) gerundet auf drei Dezimalen.`,
               given: [`n = ${n}`, `p = ${fmt(p, 1)}`],
               fields: [numberField("P(X ≥ 1) =", res, "", 3)],
-              formulaHint: `Gegenereignis: P(X ≥ 1) = 1 − P(X = 0) = 1 − (1 − p)^n.`,
-              feedbackHint: `Berechne zuerst P(kein Treffer) = (1 − ${fmt(p, 1)})^${n} = ${fmt(q, 1)}^${n} und ziehe dies von 1 ab.`,
+              formulaHint: `Gegenereignis: P(X ≥ 1) = 1 − P(X = 0) = 1 − (1 − p)<sup>n</sup>.`,
+              feedbackHint: `Berechne zuerst P(kein Treffer) = (1 − ${fmt(p, 1)})<sup>${n}</sup> = ${fmt(q, 1)}<sup>${n}</sup> und ziehe dies von 1 ab.`,
               steps: [
-                `P(X ≥ 1) = 1 − (${fmt(q, 1)})^${n} = 1 − ${fmt(Math.pow(q, n), 4)} &approx; ${fmt(res, 3)}.`,
+                `P(X ≥ 1) = 1 − (${fmt(q, 1)})<sup>${n}</sup> = 1 − ${fmt(Math.pow(q, n), 4)} &approx; ${fmt(res, 3)}.`,
                 `<strong>P(X ≥ 1) = ${fmt(res, 3)}</strong>`,
               ],
               meta: { n, p, res },
@@ -608,9 +610,9 @@ export const STAGE_2_LESSONS: Lesson[] = [
             prompt: `Ein Frühwarnsystem überwacht eine Anlage mit n = ${n} unabhängig voneinander arbeitenden Detektoren. Jeder Sensor erkennt eine Anomalie mit Wahrscheinlichkeit p = ${fmt(p, 1)}. Mit welcher Wahrscheinlichkeit schlägt bei einer Anomalie mindestens ein Sensor Alarm (auf 3 Dezimalen)?`,
             given: [`n = ${n} Sensoren`, `Zuverlässigkeit p = ${fmt(p, 1)} pro Sensor`],
             fields: [numberField("P(Alarm) =", res, "", 3)],
-            feedbackHint: "Das Ereignis 'mindestens ein Sensor schlägt Alarm' ist das Gegenereignis zu 'alle Sensoren versagen': P = 1 − (1 − p)^n.",
+            feedbackHint: "Das Ereignis 'mindestens ein Sensor schlägt Alarm' ist das Gegenereignis zu 'alle Sensoren versagen': P = 1 − (1 − p)<sup>n</sup>.",
             steps: [
-              `P(Alarm) = 1 − P(alle versagen) = 1 − (${fmt(q, 1)})^${n} = 1 − ${fmt(Math.pow(q, n), 4)} &approx; ${fmt(res, 3)}.`,
+              `P(Alarm) = 1 − P(alle versagen) = 1 − (${fmt(q, 1)})<sup>${n}</sup> = 1 − ${fmt(Math.pow(q, n), 4)} &approx; ${fmt(res, 3)}.`,
               `<strong>P(Alarm) = ${fmt(res, 3)}</strong>`,
             ],
             meta: { n, p, res },
@@ -754,7 +756,7 @@ export const STAGE_2_LESSONS: Lesson[] = [
         id: "sigma-intervall",
         make: (rng: Rng, level: DifficultyLevel): ExerciseTask => {
           if (level === 1) {
-            const n = rng.pick([100, 400]);
+            const n = rng.pick([100, 400, 900]);
             const p = 0.2;
             const mu = n * p;
             const sigma = Math.sqrt(n * p * 0.8);
@@ -777,7 +779,7 @@ export const STAGE_2_LESSONS: Lesson[] = [
               meta: { n, p, mu, sigma, lower, upper },
             };
           }
-          const n = rng.pick([100, 400]);
+          const n = rng.pick([100, 200, 400]);
           const p = 0.25;
           const mu = n * p;
           const sigma = Math.sqrt(n * p * 0.75);

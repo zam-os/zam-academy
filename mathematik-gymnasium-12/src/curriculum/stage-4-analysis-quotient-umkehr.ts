@@ -24,6 +24,7 @@ export const STAGE_4_LESSONS: Lesson[] = [
         <p style="text-align:center;"><i>f'(x) = [u'(x) · v(x) − u(x) · v'(x)] / [v(x)]²</i></p>
         <p>Merkspruch: <em>„Unten mal Ableitung oben minus oben mal Ableitung unten, alles durch unten zum Quadrat.“</em></p>
         <strong>Kürzungsregel:</strong> Enthält der Zähler nach dem Ausdifferenzieren Faktoren des Nenners, kürzt man <strong>vor</strong> dem Ausmultiplizieren!
+        <p><strong>Hinweis zu digitalen Hilfsmitteln:</strong> Bei höheren Polynomgraden führen Quotientenableitungen oft zu umfangreichen Zählertermen. Im Abitur und Unterricht werden solche Ableitungen und deren Nullstellen häufig mithilfe des CAS oder grafikfähigen Taschenrechners (GTR) kontrolliert und gelöst.</p>
       </div>
       <div class="example">
         <strong>Beispiel:</strong> Leite <i>f(x) = (2x + 1) / (x − 3)</i> ab.<br>
@@ -66,17 +67,17 @@ export const STAGE_4_LESSONS: Lesson[] = [
       [
         {
           id: "pol-drei",
-          text: "Verschiebe die Polstelle auf x = 3.",
+          text: "Stelle eine senkrechte Asymptote bei x = 3 ein.",
           check: (v) => v.pole === 3,
         },
         {
           id: "waagrecht-eins",
-          text: "Stelle a = 1 ein (waagrechte Asymptote y = 1).",
+          text: "Erzeuge eine waagrechte Asymptote bei y = 1.",
           check: (v) => v.a === 1,
         },
         {
           id: "zaehler-null",
-          text: "Wähle b = −2 bei a = 1 und pole = 2.",
+          text: "Erzeuge eine hebbare Lücke bei x = 2 (Zähler 1·2 + (−2) = 0).",
           check: (v) => v.a === 1 && v.b === -2 && v.pole === 2,
         },
       ],
@@ -85,7 +86,7 @@ export const STAGE_4_LESSONS: Lesson[] = [
       {
         id: "quotientenregel-linear",
         make: (rng: Rng, level: DifficultyLevel): ExerciseTask => {
-          const a = rng.pick([1, 2, 3, 4]);
+          const a = rng.pick([2, 3, 4, 5]);
           const d = rng.pick([1, 2, 4, 5]);
           const slope0 = a / d;
           if (level === 1) {
@@ -103,17 +104,18 @@ export const STAGE_4_LESSONS: Lesson[] = [
               meta: { a, d, slope0 },
             };
           }
+          const slope1 = (a * d) / ((1 + d) ** 2);
           return {
-            prompt: `Der Wirkungsgrad einer Turbine in Abhängigkeit von der Drehzahl x wird modelliert durch &eta;(x) = ${a}x / (x + ${d}). Bestimme die anfängliche Steigerungsrate &eta;'(0) gerundet auf 2 Dezimalstellen.`,
-            given: [`&eta;(x) = ${a}x / (x + ${d})`, `Drehzahl x = 0`],
-            fields: [numberField("&eta;'(0) =", slope0, "", 2)],
-            feedbackHint: `Wende die Quotientenregel an und setze x = 0 ein.`,
+            prompt: `Die Wirkungsgradfunktion einer Wärmekraftmaschine lautet &eta;(x) = ${a}x / (x + ${d}). Berechne die Änderungsrate &eta;'(1) an der Betriebsstelle x = 1 (gerundet auf 2 Dezimalstellen).`,
+            given: [`&eta;(x) = ${a}x / (x + ${d})`, `Betriebsstelle x = 1`],
+            fields: [numberField("&eta;'(1) =", slope1, "", 2)],
+            feedbackHint: `Wende die Quotientenregel an: &eta;'(x) = ${a * d} / (x + ${d})². Setze anschließend x = 1 ein.`,
             steps: [
               `&eta;'(x) = [${a}(x + ${d}) − ${a}x] / (x + ${d})² = ${a * d} / (x + ${d})².`,
-              `&eta;'(0) = ${a * d} / ${d}² = ${fmt(slope0, 2)}.`,
-              `<strong>&eta;'(0) = ${fmt(slope0, 2)}</strong>`,
+              `&eta;'(1) = ${a * d} / (1 + ${d})² = ${a * d} / ${(1 + d) ** 2} = ${fmt(slope1, 2)}.`,
+              `<strong>&eta;'(1) = ${fmt(slope1, 2)}</strong>`,
             ],
-            meta: { a, d, slope0 },
+            meta: { a, d, slope1 },
           };
         },
       },
@@ -222,17 +224,17 @@ export const STAGE_4_LESSONS: Lesson[] = [
       [
         {
           id: "null-ursprung",
-          text: "Wähle a = 0, sodass f(x) den Ursprung berührt (Tiefpunkt bei (0|0)).",
+          text: "Bringe den Tiefpunkt auf den Ursprung (0|0).",
           check: (v) => v.a === 0,
         },
         {
           id: "null-drei",
-          text: "Stelle a = 9 für Nullstellen bei x = ±3 ein (Tiefpunkt bei (0|−9)).",
+          text: "Erzeuge symmetrische Nullstellen bei x = ±3.",
           check: (v) => v.a === 9,
         },
         {
           id: "standard-vier",
-          text: "Stelle a = 4 ein (Tiefpunkt bei (0|−4)).",
+          text: "Stelle den Tiefpunkt auf T(0 | −4) ein.",
           check: (v) => v.a === 4,
         },
       ],
@@ -241,33 +243,39 @@ export const STAGE_4_LESSONS: Lesson[] = [
       {
         id: "asymptote-bestimmen",
         make: (rng: Rng, level: DifficultyLevel): ExerciseTask => {
-          const a = rng.pick([4, 6, 8, 10, 12]);
-          const b = rng.pick([2, 4]);
-          const asympY = a / b;
           if (level === 1) {
+            const a = rng.pick([4, 6, 8, 10, 12]);
+            const b = rng.pick([2, 4]);
+            const asympY = a / b;
             return {
               prompt: `Bestimme die waagrechte Asymptote y der rationalen Funktion f(x) = (${a}x² − 3) / (${b}x² + 5) für x &rarr; &plusmn;&infin;.`,
               given: [`f(x) = (${a}x² − 3) / (${b}x² + 5)`],
               fields: [numberField("y =", asympY, "", 1)],
-              formulaHint: `Vergleiche die Leitkoeffizienten bei gleichem Zähler- und Nennergrad: y = a_n / b_n.`,
+              formulaHint: `Vergleiche die Leitkoeffizienten bei gleichem Zähler- und Nennergrad: y = a<sub>n</sub> / b<sub>n</sub>.`,
               feedbackHint: `Teile den Koeffizienten ${a} vor x² durch den Nennerkoeffizienten ${b}.`,
               steps: [
-                `Da Grad(Zähler) = Grad(Nenner) = 2, gilt lim_{x→±∞} f(x) = ${a} / ${b} = ${fmt(asympY, 1)}.`,
+                `Da Grad(Zähler) = Grad(Nenner) = 2, gilt lim<sub>x&rarr;&plusmn;&infin;</sub> f(x) = ${a} / ${b} = ${fmt(asympY, 1)}.`,
                 `<strong>Waagrechte Asymptote: y = ${fmt(asympY, 1)}</strong>`,
               ],
               meta: { a, b, asympY },
             };
           }
+          const a = rng.pick([2, 3, 4, 5]);
+          const d = rng.pick([2, 3, 4, 5]);
+          const c = rng.pick([1, 3, 7]);
+          const sum = a + d;
           return {
-            prompt: `Für eine Fertigungsstraße verhalten sich die Stückkosten nach K(x) = (${a}x² − 3) / (${b}x² + 5) (in € pro Stück). Welche Grenzkosten y stellen sich bei extrem hohen Produktionszahlen x ein?`,
-            given: [`K(x) = (${a}x² − 3) / (${b}x² + 5)`, `x &rarr; +&infin;`],
-            fields: [numberField("y =", asympY, "€", 1)],
-            feedbackHint: "Berechne den Grenzwert für x → ∞.",
+            prompt: `Die rationale Funktion f(x) = (${a}x − ${c}) / (x − ${d}) besitzt eine senkrechte Asymptote x = x<sub>0</sub> und eine waagrechte Asymptote y = y<sub>0</sub>. Bestimme die Summe der Koordinaten ihres Asymptotenschnittpunkts x<sub>0</sub> + y<sub>0</sub>.`,
+            given: [`f(x) = (${a}x − ${c}) / (x − ${d})`],
+            fields: [numberField("x_0 + y_0 =", sum, "", 0)],
+            feedbackHint: `Senkrechte Asymptote: x₀ = ${d}. Waagrechte Asymptote: y₀ = ${a} / 1 = ${a}. Addiere beide Werte.`,
             steps: [
-              `lim_{x→∞} K(x) = ${a} / ${b} = ${fmt(asympY, 1)} €.`,
-              `<strong>Grenzkosten = ${fmt(asympY, 1)} €</strong>`,
+              `Senkrechte Asymptote (Polstelle): x − ${d} = 0 &rArr; x₀ = ${d}.`,
+              `Waagrechte Asymptote: lim<sub>x&rarr;&infin;</sub> f(x) = ${a} / 1 = ${a} &rArr; y₀ = ${a}.`,
+              `Asymptotenschnittpunkt S(${d} | ${a}) &rArr; x₀ + y₀ = ${d} + ${a} = ${sum}.`,
+              `<strong>x₀ + y₀ = ${sum}</strong>`,
             ],
-            meta: { a, b, asympY },
+            meta: { a, c, d, sum },
           };
         },
       },
@@ -361,17 +369,17 @@ export const STAGE_4_LESSONS: Lesson[] = [
       [
         {
           id: "extrem-ursprung",
-          text: "Wähle a = 2, sodass das Minimum genau bei x = 0 liegt.",
+          text: "Verschiebe das Minimum genau auf die y-Achse (x_min = 0).",
           check: (v) => v.a === 2,
         },
         {
           id: "extrem-eins",
-          text: "Wähle a = 1 für ein Minimum bei x = 1.",
+          text: "Stelle ein relatives Minimum an der Stelle x = 1 ein.",
           check: (v) => v.a === 1,
         },
         {
           id: "extrem-zwei",
-          text: "Stelle a = 0 ein.",
+          text: "Bringe die Polstelle direkt auf die y-Achse (x_pol = 0).",
           check: (v) => v.a === 0,
         },
       ],
@@ -380,33 +388,36 @@ export const STAGE_4_LESSONS: Lesson[] = [
       {
         id: "exp-durch-x-extremum",
         make: (rng: Rng, level: DifficultyLevel): ExerciseTask => {
-          const a = rng.pick([2, 3, 4, 5]);
-          const xMin = 1 - a;
           if (level === 1) {
+            const a = rng.pick([2, 3, 4, 5]);
+            const xMin = 1 - a;
             return {
               prompt: `Berechne die Extremstelle x der Funktion f(x) = e<sup>x</sup> / (x + ${a}).`,
               given: [`f(x) = e<sup>x</sup> / (x + ${a})`, `Definitionsbereich x > −${a}`],
               fields: [numberField("x =", xMin, "", 0)],
-              formulaHint: `Klammere e^x im Zähler von f'(x) aus: e^x · (x + ${a} − 1) = 0.`,
-              feedbackHint: `Da e^x > 0 immer gilt, muss x + ${a} − 1 = 0 sein.`,
+              formulaHint: `Klammere e<sup>x</sup> im Zähler von f'(x) aus: e<sup>x</sup> · (x + ${a} − 1) = 0.`,
+              feedbackHint: `Da e<sup>x</sup> > 0 immer gilt, muss x + ${a} − 1 = 0 sein.`,
               steps: [
-                `f'(x) = [e^x(x + ${a}) − e^x·1] / (x + ${a})² = e^x(x + ${a} − 1) / (x + ${a})².`,
+                `f'(x) = [e<sup>x</sup>(x + ${a}) − e<sup>x</sup>·1] / (x + ${a})² = e<sup>x</sup>(x + ${a} − 1) / (x + ${a})².`,
                 `f'(x) = 0 &rArr; x + ${a} − 1 = 0 &rArr; x = 1 − ${a} = ${fmt(xMin, 0)}.`,
                 `<strong>x = ${fmt(xMin, 0)}</strong>`,
               ],
               meta: { a, xMin },
             };
           }
+          const c = rng.pick([2, 4, 6]);
+          const xMin2 = 1 - c / 2;
           return {
-            prompt: `Die potentielle Energie eines Schwingungssystems folgt E(x) = e<sup>x</sup> / (x + ${a}) für x > −${a}. Bestimme die Ruhelage (Stelle des Energieminimums x).`,
-            given: [`E(x) = e<sup>x</sup> / (x + ${a})`],
-            fields: [numberField("x =", xMin, "", 0)],
-            feedbackHint: "Setze die 1. Ableitung gleich null.",
+            prompt: `Die potentielle Energie eines Schwingungssystems folgt E(x) = e<sup>x</sup> / (2x + ${c}) für x > −${c / 2}. Bestimme die Ruhelage (Stelle des Energieminimums x).`,
+            given: [`E(x) = e<sup>x</sup> / (2x + ${c})`, `x > −${c / 2}`],
+            fields: [numberField("x =", xMin2, "", 0)],
+            feedbackHint: "Bilde E'(x) mit Quotientenregel (Nennerableitung v'(x) = 2 beachten) und setze den Zähler null.",
             steps: [
-              `E'(x) = e^x(x + ${a} − 1) / (x + ${a})² = 0 &rArr; x = 1 − ${a} = ${fmt(xMin, 0)}.`,
-              `<strong>x = ${fmt(xMin, 0)}</strong>`,
+              `E'(x) = [e<sup>x</sup>(2x + ${c}) − e<sup>x</sup>·2] / (2x + ${c})² = e<sup>x</sup>(2x + ${c} − 2) / (2x + ${c})².`,
+              `E'(x) = 0 &rArr; 2x + ${c} − 2 = 0 &rArr; 2x = ${fmt(2 - c, 0)} &rArr; x = ${fmt(xMin2, 0)}.`,
+              `<strong>x = ${fmt(xMin2, 0)}</strong>`,
             ],
-            meta: { a, xMin },
+            meta: { c, xMin2 },
           };
         },
       },
@@ -505,17 +516,17 @@ export const STAGE_4_LESSONS: Lesson[] = [
       [
         {
           id: "normal",
-          text: "Wähle a = 1 für f(x) = x² und f^{-1}(x) = √x.",
+          text: "Stelle die Normalparabel f(x) = x² mit Standardumkehrung f⁻¹(x) = √x ein.",
           check: (v) => v.a === 1,
         },
         {
           id: "zwei",
-          text: "Stelle a = 2 ein (f(x) = 2x², f^{-1}(x) = √(x/2)).",
+          text: "Verdopple die Parabelkrümmung auf f(x) = 2x².",
           check: (v) => v.a === 2,
         },
         {
           id: "vier",
-          text: "Wähle a = 4.",
+          text: "Erzeuge die Umkehrfunktion f⁻¹(x) = √(x/4) = 0,5√x.",
           check: (v) => v.a === 4,
         },
       ],
@@ -524,10 +535,10 @@ export const STAGE_4_LESSONS: Lesson[] = [
       {
         id: "umkehrterm-linear",
         make: (rng: Rng, level: DifficultyLevel): ExerciseTask => {
-          const m = rng.pick([2, 4, 5]);
-          const t = rng.pick([6, 10, 15, 20]);
-          const invT = -t / m;
           if (level === 1) {
+            const m = rng.pick([2, 4, 5]);
+            const t = rng.pick([6, 10, 15, 20]);
+            const invT = -t / m;
             return {
               prompt: `Die Umkehrfunktion von f(x) = ${m}x + ${t} hat die Form f<sup>−1</sup>(x) = m* · x + t*. Bestimme den Achsenabschnitt t*.`,
               given: [`f(x) = ${m}x + ${t}`],
@@ -542,16 +553,21 @@ export const STAGE_4_LESSONS: Lesson[] = [
               meta: { m, t, invT },
             };
           }
+          const a = rng.pick([2, 3]);
+          const c = rng.pick([1, 2, 5]);
+          const k = rng.pick([2, 3, 4]);
+          const y0 = a * k * k + c;
           return {
-            prompt: `Ein Temperatursensor liefert Spannungssignale nach U(T) = ${m}·T + ${t} (in mV). Zur automatischen Temperaturanzeige T(U) = m*·U + t* wird die Umkehrfunktion programmiert. Welcher Offset t* muss hinterlegt werden?`,
-            given: [`U(T) = ${m}·T + ${t}`],
-            fields: [numberField("t* =", invT, "°C", 2)],
-            feedbackHint: "Löse die Sensorspannung nach der Temperatur T auf.",
+            prompt: `Gegeben ist die auf [0; &infin;[ definierte quadratische Funktion f(x) = ${a}x² + ${c}. Bestimme den Funktionswert der Umkehrfunktion f<sup>−1</sup>(${y0}).`,
+            given: [`f(x) = ${a}x² + ${c}`, `x &ge; 0`, `f<sup>−1</sup>(${y0}) = ?`],
+            fields: [numberField("f⁻¹(" + y0 + ") =", k, "", 0)],
+            feedbackHint: `Löse y = ${a}x² + ${c} nach x auf: x = &radic;((y − ${c}) / ${a}). Setze y = ${y0} ein.`,
             steps: [
-              `T = (U − ${t}) / ${m} = (1/${m})U − ${t / m}. Also t* = ${fmt(invT, 2)} °C.`,
-              `<strong>t* = ${fmt(invT, 2)} °C</strong>`,
+              `y = ${a}x² + ${c} &rArr; ${a}x² = y − ${c} &rArr; x = &radic;((y − ${c}) / ${a}) (da x &ge; 0).`,
+              `f⁻¹(${y0}) = &radic;((${y0} − ${c}) / ${a}) = &radic;(${k * k}) = ${k}.`,
+              `<strong>f⁻¹(${y0}) = ${k}</strong>`,
             ],
-            meta: { m, t, invT },
+            meta: { a, c, k, y0 },
           };
         },
       },
@@ -649,17 +665,17 @@ export const STAGE_4_LESSONS: Lesson[] = [
       [
         {
           id: "quadratwurzel",
-          text: "Wähle p = 1 und q = 2 für die Quadratwurzel √x.",
+          text: "Erzeuge die klassische Quadratwurzel √x (Exponent 0,5).",
           check: (v) => v.p === 1 && v.q === 2,
         },
         {
           id: "kubikwurzel",
-          text: "Wähle p = 1 und q = 3 für die dritte Wurzel ³√x.",
+          text: "Erzeuge die dritte Wurzel ³√x.",
           check: (v) => v.p === 1 && v.q === 3,
         },
         {
           id: "drei-viertel",
-          text: "Stelle p = 3 und q = 4 ein.",
+          text: "Stelle den Exponenten r = 0,75 (Wurzel ⁴√x³) ein.",
           check: (v) => v.p === 3 && v.q === 4,
         },
       ],
@@ -787,17 +803,17 @@ export const STAGE_4_LESSONS: Lesson[] = [
       [
         {
           id: "ursprung-start",
-          text: "Wähle c = 0 für die Standard-Wurzel D = [0; ∞[.",
+          text: "Bringe den Startpunkt der Wurzelkurve auf den Ursprung (0|0).",
           check: (v) => v.c === 0,
         },
         {
           id: "start-minus-vier",
-          text: "Wähle c = 4 (Definitionsbereich [−4; ∞[).",
+          text: "Erweitere den Definitionsbereich nach links bis x_min = −4.",
           check: (v) => v.c === 4,
         },
         {
           id: "start-minus-zwei",
-          text: "Stelle c = 2 ein.",
+          text: "Stelle den Rand des Definitionsbereichs auf x_min = −2 ein.",
           check: (v) => v.c === 2,
         },
       ],
@@ -927,17 +943,17 @@ export const STAGE_4_LESSONS: Lesson[] = [
       [
         {
           id: "steigung-eins",
-          text: "Wähle x_0 = 1 für Steigung m = 1,00.",
+          text: "Finde die Berührstelle mit Tangentensteigung m = 1,00.",
           check: (v) => v.x0 === 1,
         },
         {
           id: "steigung-halb",
-          text: "Wähle x_0 = 2 für Steigung m = 0,50.",
+          text: "Halbiere die Tangentensteigung auf m = 0,50.",
           check: (v) => v.x0 === 2,
         },
         {
           id: "steigung-viertel",
-          text: "Stelle x_0 = 4 (m = 0,25) ein.",
+          text: "Stelle eine flache Tangente mit Steigung m = 0,25 ein.",
           check: (v) => v.x0 === 4,
         },
       ],
@@ -1057,7 +1073,7 @@ export const STAGE_4_LESSONS: Lesson[] = [
       ],
       correctIndex: 0,
       explanation:
-        "Die Ableitung lautet f'(x) = ln(x) + 1. Setzt man f'(x) = 0, folgt ln(x) = −1 und somit x = e^{−1} = 1/e.",
+        "Die Ableitung lautet f'(x) = ln(x) + 1. Setzt man f'(x) = 0, folgt ln(x) = −1 und somit x = e<sup>−1</sup> = 1/e.",
     },
     lab: lab(
       "ln-limits",
@@ -1071,17 +1087,17 @@ export const STAGE_4_LESSONS: Lesson[] = [
       [
         {
           id: "detail",
-          text: "Vergrößere auf Zoom = 2 für Details am Tiefpunkt.",
+          text: "Vergrößere auf Detailstufe (Zoom = 2) am Tiefpunkt.",
           check: (v) => v.zoom === 2,
         },
         {
           id: "nah",
-          text: "Stelle Zoom = 3 für den Ursprungsübergang ein.",
+          text: "Wähle Nahansicht (Zoom = 3) für das Randverhalten bei x → 0+.",
           check: (v) => v.zoom === 3,
         },
         {
           id: "maximal",
-          text: "Wähle Maximalzoom = 4.",
+          text: "Aktiviere die maximale Vergrößerung (Zoom = 4).",
           check: (v) => v.zoom === 4,
         },
       ],
@@ -1090,8 +1106,8 @@ export const STAGE_4_LESSONS: Lesson[] = [
       {
         id: "ln-grenzwert-rechnen",
         make: (rng: Rng, level: DifficultyLevel): ExerciseTask => {
-          const a = rng.pick([2, 5, 10, 20]);
           if (level === 1) {
+            const a = rng.pick([2, 5, 10, 20]);
             return {
               prompt: `Bestimme den Grenzwert von f(x) = (${a} + ln(x)) / x für x &rarr; +&infin;.`,
               given: [`f(x) = (${a} + ln(x)) / x`, `x &rarr; +&infin;`],
@@ -1099,22 +1115,25 @@ export const STAGE_4_LESSONS: Lesson[] = [
               formulaHint: `Zerlege den Bruch in ${a}/x + ln(x)/x und bilde für beide Summanden den Limes.`,
               feedbackHint: `Beide Terme streben gegen 0.`,
               steps: [
-                `lim_{x→∞} [${a}/x + ln(x)/x] = 0 + 0 = 0.`,
+                `lim<sub>x&rarr;&infin;</sub> [${a}/x + ln(x)/x] = 0 + 0 = 0.`,
                 `<strong>Limes = 0</strong>`,
               ],
               meta: { a },
             };
           }
+          const a = rng.pick([2, 4, 6]);
+          const b = rng.pick([2, 3, 5, 8]);
           return {
-            prompt: `Untersuche das Grenzverhalten der relativen Kostenfunktion K(x) = (${a} + ln(x)) / x für x &rarr; +&infin;. Welcher Wert wird asymptotisch erreicht?`,
-            given: [`K(x) = (${a} + ln(x)) / x`, `x &rarr; +&infin;`],
-            fields: [numberField("Limes =", 0, "", 0)],
-            feedbackHint: "Der Nenner x wächst viel schneller als der Zähler ln(x).",
+            prompt: `Ein Datenübertragungsmodell berechnet den Durchsatz nach R(x) = (${a}·ln(x) + ${b}x) / x (in MBit/s). Welcher maximale Sättigungswert lim<sub>x&rarr;&infin;</sub> R(x) wird für sehr große Bandbreiten x erreicht?`,
+            given: [`R(x) = (${a}·ln(x) + ${b}x) / x`, `x &rarr; +&infin;`],
+            fields: [numberField("Sättigungswert =", b, "MBit/s", 0)],
+            feedbackHint: `Spalte den Bruch in ${a}·ln(x)/x + ${b} auf. Da ln(x)/x für x → ∞ gegen 0 strebt, bleibt nur der konstante Summand ${b} übrig.`,
             steps: [
-              `lim_{x→∞} K(x) = 0.`,
-              `<strong>Limes = 0</strong>`,
+              `R(x) = ${a} · (ln(x) / x) + ${b}.`,
+              `Da lim<sub>x&rarr;&infin;</sub> (ln(x) / x) = 0 gilt, folgt lim<sub>x&rarr;&infin;</sub> R(x) = ${a} · 0 + ${b} = ${b} MBit/s.`,
+              `<strong>Sättigungswert = ${b} MBit/s</strong>`,
             ],
-            meta: { a },
+            meta: { a, b },
           };
         },
       },

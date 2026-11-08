@@ -78,7 +78,7 @@ export const STAGE_5_LESSONS: Lesson[] = [
         },
         {
           id: "symmetrisch",
-          text: "Wähle x1 = 4, x2 = 4, x3 = 2.",
+          text: "Erzeuge den Punkt P(4|4|2) mit Ursprungsabstand d = 6.",
           check: (v) => v.x1 === 4 && v.x2 === 4 && v.x3 === 2,
         },
       ],
@@ -228,17 +228,17 @@ export const STAGE_5_LESSONS: Lesson[] = [
       [
         {
           id: "kollinear",
-          text: "Mache a und b parallel (z. B. a = (2|2), b = (2|2)).",
+          text: "Stelle kollineare Vektoren ein (z. B. a = (2|2) und b = (2|2)).",
           check: (v) => v.a1 === 2 && v.a2 === 2 && v.b1 === 2 && v.b2 === 2,
         },
         {
           id: "null-b",
-          text: "Setze b = (0|0).",
+          text: "Mache b zum Nullvektor (0|0).",
           check: (v) => v.b1 === 0 && v.b2 === 0,
         },
         {
           id: "groesser",
-          text: "Stelle a = (3|4) und b = (1|2) ein.",
+          text: "Erzeuge die Vektorsumme (4|6) mit a = (3|4) und b = (1|2).",
           check: (v) => v.a1 === 3 && v.a2 === 4 && v.b1 === 1 && v.b2 === 2,
         },
       ],
@@ -381,17 +381,17 @@ export const STAGE_5_LESSONS: Lesson[] = [
       [
         {
           id: "orthogonal",
-          text: "Wähle b2 = 0 (b liegt auf derselben Achse, Winkel 0°).",
+          text: "Bringe die Vektoren auf dieselbe Achse (Winkel φ = 0°).",
           check: (v) => v.b2 === 0,
         },
         {
           id: "laenge-vier",
-          text: "Stelle a1 = 4 ein.",
+          text: "Verlängere a auf die Länge |a| = 4.",
           check: (v) => v.a1 === 4,
         },
         {
           id: "winkel-vierzig",
-          text: "Wähle b2 = 2 bei a1 = 3 (Winkel ca. 45°).",
+          text: "Erzeuge einen Schnittwinkel von ca. 45° (b2 = 2 bei a1 = 3).",
           check: (v) => v.a1 === 3 && v.b2 === 2,
         },
       ],
@@ -400,14 +400,14 @@ export const STAGE_5_LESSONS: Lesson[] = [
       {
         id: "skalarprodukt-ausrechnen",
         make: (rng: Rng, level: DifficultyLevel): ExerciseTask => {
-          const a1 = rng.pick([2, 3, 4]);
-          const a2 = rng.pick([1, 2]);
-          const a3 = rng.pick([1, 2]);
-          const b1 = 3;
-          const b2 = 4;
-          const b3 = rng.pick([1, 2]);
-          const dot = a1 * b1 + a2 * b2 + a3 * b3;
           if (level === 1) {
+            const a1 = rng.pick([2, 3, 4]);
+            const a2 = rng.pick([1, 2]);
+            const a3 = rng.pick([1, 2]);
+            const b1 = 3;
+            const b2 = 4;
+            const b3 = rng.pick([1, 2]);
+            const dot = a1 * b1 + a2 * b2 + a3 * b3;
             return {
               prompt: `Berechne das Skalarprodukt a · b für a = (${a1}|${a2}|${a3})<sup>T</sup> und b = (${b1}|${b2}|${b3})<sup>T</sup>.`,
               given: [`a = (${a1}|${a2}|${a3})ᵀ`, `b = (${b1}|${b2}|${b3})ᵀ`],
@@ -421,16 +421,27 @@ export const STAGE_5_LESSONS: Lesson[] = [
               meta: { a1, a2, a3, b1, b2, b3, dot },
             };
           }
+          const angleItem = rng.pick([
+            { a: [1, 1, 0], b: [0, 1, 1], dot: 1, lenA: "&radic;2", lenB: "&radic;2", cosVal: 0.5, stepCos: "1 / (&radic;2 · &radic;2) = 1/2 = 0,5" },
+            { a: [1, 2, 2], b: [0, 3, 4], dot: 14, lenA: "3", lenB: "5", cosVal: 14 / 15, stepCos: "14 / (3 · 5) = 14/15 &approx; 0,933" },
+            { a: [2, 2, 1], b: [1, 0, 0], dot: 2, lenA: "3", lenB: "1", cosVal: 2 / 3, stepCos: "2 / (3 · 1) = 2/3 &approx; 0,667" },
+            { a: [3, 0, 4], b: [0, 5, 0], dot: 0, lenA: "5", lenB: "5", cosVal: 0, stepCos: "0 / 25 = 0" },
+            { a: [2, 1, 2], b: [2, -2, 1], dot: 4, lenA: "3", lenB: "3", cosVal: 4 / 9, stepCos: "4 / (3 · 3) = 4/9 &approx; 0,444" },
+          ]);
+          const deg = (Math.acos(angleItem.cosVal) * 180) / Math.PI;
+          const fmtVec = (v: number[]) => `(${fmt(v[0], 0)}|${fmt(v[1], 0)}|${fmt(v[2], 0)})`;
           return {
-            prompt: `Eine konstante Zugkraft F = (${a1}|${a2}|${a3})<sup>T</sup> N verschiebt eine Lore um den Vektor s = (${b1}|${b2}|${b3})<sup>T</sup> m. Berechne die verrichtete mechanische Arbeit W = F · s in Joule (J).`,
-            given: [`Kraftvektor F = (${a1}|${a2}|${a3})ᵀ N`, `Wegvektor s = (${b1}|${b2}|${b3})ᵀ m`],
-            fields: [numberField("W =", dot, "J", 0)],
-            feedbackHint: "Die mechanische Arbeit entspricht dem Skalarprodukt aus Kraft und Weg: W = F · s.",
+            prompt: `Zwei Kraftvektoren greifen an einem Knotenpunkt an: F₁ = ${fmtVec(angleItem.a)}<sup>T</sup> kN und F₂ = ${fmtVec(angleItem.b)}<sup>T</sup> kN. Berechne den von den beiden Kräften eingeschlossenen Winkel &phi; in Grad (auf eine Dezimale gerundet).`,
+            given: [`F₁ = ${fmtVec(angleItem.a)}ᵀ kN`, `F₂ = ${fmtVec(angleItem.b)}ᵀ kN`],
+            fields: [numberField("φ =", deg, "°", 1)],
+            feedbackHint: `Berechne zuerst das Skalarprodukt (${angleItem.dot}) und die Beträge der Vektoren, anschließend arccos(cos(φ)).`,
             steps: [
-              `W = F · s = ${a1}·${b1} + ${a2}·${b2} + ${a3}·${b3} = ${fmt(dot, 0)} J.`,
-              `<strong>W = ${fmt(dot, 0)} J</strong>`,
+              `F₁ · F₂ = ${angleItem.dot}.`,
+              `|F₁| = ${angleItem.lenA}, |F₂| = ${angleItem.lenB}.`,
+              `cos(φ) = ${angleItem.stepCos} &rArr; φ &approx; ${fmt(deg, 1)}°.`,
+              `<strong>φ = ${fmt(deg, 1)}°</strong>`,
             ],
-            meta: { a1, dot },
+            meta: { dot: angleItem.dot, deg },
           };
         },
       },
@@ -517,7 +528,7 @@ export const STAGE_5_LESSONS: Lesson[] = [
     quiz: {
       question: "Was ergibt das Kreuzprodukt zweier paralleler Vektoren a und b (mit a = k · b)?",
       options: [
-        "Den Nullvektor (0 | 0 | 0)^T, da die aufgespannte Parallelogrammfläche null ist.",
+        "Den Nullvektor (0 | 0 | 0)ᵀ, da die aufgespannte Parallelogrammfläche null ist.",
         "Ein Skalar vom Wert 1.",
         "Einen Einheitsvektor.",
       ],
@@ -540,17 +551,17 @@ export const STAGE_5_LESSONS: Lesson[] = [
       [
         {
           id: "quadrat",
-          text: "Wähle a1 = 4 und b2 = 4 (Fläche = 16).",
+          text: "Spann ein Quadrat der Fläche 16 auf (a1 = 4, b2 = 4).",
           check: (v) => v.a1 === 4 && v.b2 === 4,
         },
         {
           id: "dreieck-sechs",
-          text: "Wähle a1 = 3 und b2 = 4 für Dreiecksfläche 6,0.",
+          text: "Erzeuge ein Dreieck mit Flächeninhalt A = 6,0.",
           check: (v) => v.a1 === 3 && v.b2 === 4,
         },
         {
           id: "standard-drei",
-          text: "Bringe a1 = 3 und b2 = 3 zurück.",
+          text: "Spann eine quadratische Grundfläche von 9 FE auf.",
           check: (v) => v.a1 === 3 && v.b2 === 3,
         },
       ],
@@ -597,10 +608,10 @@ export const STAGE_5_LESSONS: Lesson[] = [
       {
         id: "dreiecksflaeche-vektor",
         make: (rng: Rng, level: DifficultyLevel): ExerciseTask => {
-          const a = rng.pick([4, 6, 8, 10]);
-          const b = rng.pick([3, 5, 7]);
-          const area = 0.5 * a * b;
           if (level === 1) {
+            const a = rng.pick([4, 6, 8, 10]);
+            const b = rng.pick([3, 5, 7]);
+            const area = 0.5 * a * b;
             return {
               prompt: `Berechne den Flächeninhalt des Dreiecks aufgespannt von a = (${a}|0|0)<sup>T</sup> und b = (0|${b}|0)<sup>T</sup>.`,
               given: [`a = (${a}|0|0)ᵀ`, `b = (0|${b}|0)ᵀ`],
@@ -615,16 +626,22 @@ export const STAGE_5_LESSONS: Lesson[] = [
               meta: { a, b, area },
             };
           }
+          const a = rng.pick([2, 4, 6]);
+          const [b, c] = rng.pick([[3, 4], [4, 3], [6, 8]]);
+          const lenCross = a * Math.hypot(b, c);
+          const area = 0.5 * lenCross;
           return {
-            prompt: `Ein dreieckiges Sonnensegel wird zwischen den Befestigungspunkten aufgespannt durch u = (${a}|0|0)<sup>T</sup> m und v = (0|${b}|0)<sup>T</sup> m. Bestimme den Materialbedarf (Flächeninhalt A) in m².`,
-            given: [`Kantenvektoren u = (${a}|0|0)ᵀ m und v = (0|${b}|0)ᵀ m`],
+            prompt: `Ein dreieckiges Sonnensegel im Raum wird zwischen den Verankerungspunkten aufgespannt durch die Vektoren u = (${a}|0|0)<sup>T</sup> m und v = (0|${b}|${c})<sup>T</sup> m. Berechne den Flächeninhalt A des Segels in m².`,
+            given: [`u = (${a}|0|0)ᵀ m`, `v = (0|${b}|${c})ᵀ m`],
             fields: [numberField("A =", area, "m²", 1)],
-            feedbackHint: "Fläche eines Dreiecks im Raum: A = 1/2 · |u × v|.",
+            feedbackHint: `u × v = (0 | −${a * c} | ${a * b})ᵀ. Betrag: &radic;((-(${a * c}))² + (${a * b})²). Dann A = 0,5 · |u × v|.`,
             steps: [
-              `A = 0,5 · |u × v| = 0,5 · (${a} · ${b}) = ${fmt(area, 1)} m².`,
+              `u × v = (0·${c} − 0·${b} | 0·0 − ${a}·${c} | ${a}·${b} − 0·0)ᵀ = (0 | −${a * c} | ${a * b})ᵀ.`,
+              `|u × v| = &radic;(0² + (−${a * c})² + ${a * b}²) = &radic;(${(a * c) ** 2 + (a * b) ** 2}) = ${lenCross}.`,
+              `A = 0,5 · ${lenCross} = ${fmt(area, 1)} m².`,
               `<strong>A = ${fmt(area, 1)} m²</strong>`,
             ],
-            meta: { a, b, area },
+            meta: { a, b, c, area },
           };
         },
       },
@@ -667,13 +684,13 @@ export const STAGE_5_LESSONS: Lesson[] = [
     quiz: {
       question: "Wie berechnet man den Neigungswinkel einer Dachfläche gegenüber der horizontalen Ebene am schnellsten?",
       options: [
-        "Über den Schnittwinkel zwischen dem Normalenvektor der Dachfläche und dem Normalenvektor der horizontalen Grundebene (0 | 0 | 1)^T.",
+        "Über den Schnittwinkel zwischen dem Normalenvektor der Dachfläche und dem Normalenvektor der horizontalen Grundebene (0 | 0 | 1)ᵀ.",
         "Durch Ausmessen aller Dachkanten mit dem Satz des Pythagoras.",
         "Über das Dreifache des Skalarprodukts.",
       ],
       correctIndex: 0,
       explanation:
-        "Der Neigungswinkel einer Ebene gegen die Horizontale entspricht exakt dem Winkel zwischen ihren Normalenvektoren. Der Normalenvektor der Horizontalebene ist schlicht (0|0|1)^T.",
+        "Der Neigungswinkel einer Ebene gegen die Horizontale entspricht exakt dem Winkel zwischen ihren Normalenvektoren. Der Normalenvektor der Horizontalebene ist schlicht (0|0|1)ᵀ.",
     },
     lab: lab(
       "3d-solids",
@@ -689,17 +706,17 @@ export const STAGE_5_LESSONS: Lesson[] = [
       [
         {
           id: "groesse-vier-sechs",
-          text: "Wähle a = 4 und h = 6 für Volumen V = 32,00.",
+          text: "Erzeuge eine Pyramide mit exakt V = 32,00 Raumeinheiten.",
           check: (v) => v.a === 4 && v.h === 6,
         },
         {
           id: "hoch",
-          text: "Erhöhe die Höhe auf h = 9 bei a = 3.",
+          text: "Erzeuge eine schlanke Pyramide der Höhe h = 9 (Grundkante a = 3).",
           check: (v) => v.a === 3 && v.h === 9,
         },
         {
           id: "standard-pyramide",
-          text: "Stelle a = 4 und h = 5 ein.",
+          text: "Konfiguriere eine Pyramide mit Grundkante a = 4 und Höhe h = 5.",
           check: (v) => v.a === 4 && v.h === 5,
         },
       ],
@@ -708,10 +725,10 @@ export const STAGE_5_LESSONS: Lesson[] = [
       {
         id: "pyramidenvolumen-sachkontext",
         make: (rng: Rng, level: DifficultyLevel): ExerciseTask => {
-          const a = rng.pick([6, 9, 12, 15]);
-          const h = rng.pick([4, 6, 8, 10]);
-          const vol = (1 / 3) * a * a * h;
           if (level === 1) {
+            const a = rng.pick([6, 9, 12, 15]);
+            const h = rng.pick([4, 6, 8, 10]);
+            const vol = (1 / 3) * a * a * h;
             return {
               prompt: `Berechne das Volumen V einer Pyramide mit quadratischer Grundfläche (Kantenlänge a = ${a}) und Höhe h = ${h}.`,
               given: [`Quadratische Grundkante a = ${a}`, `Körperhöhe h = ${h}`],
@@ -725,29 +742,34 @@ export const STAGE_5_LESSONS: Lesson[] = [
               meta: { a, h, vol },
             };
           }
+          const a = rng.pick([6, 9, 12]);
+          const b = rng.pick([4, 5, 8]);
+          const h = rng.pick([3, 6, 9]);
+          const vol = (1 / 3) * a * b * h;
           return {
-            prompt: `Ein Pavillondach hat die Form einer regelmäßigen Pyramide mit quadratischer Basis (Kantenlänge a = ${a} m) und Dachhöhe h = ${h} m. Wie groß ist der umbaute Raum (Volumen V) in m³?`,
-            given: [`Basis a = ${a} m`, `Dachhöhe h = ${h} m`],
+            prompt: `Ein Pavillondach hat die Form einer Pyramide mit rechteckiger Grundfläche (Länge a = ${a} m, Breite b = ${b} m) und Dachhöhe h = ${h} m. Wie groß ist das Volumen V des Dachraums in m³?`,
+            given: [`Länge a = ${a} m`, `Breite b = ${b} m`, `Dachhöhe h = ${h} m`],
             fields: [numberField("V =", vol, "m³", 0)],
-            feedbackHint: "V = 1/3 · G · h mit G = a².",
+            feedbackHint: `Rechteckige Grundfläche G = ${a} · ${b} = ${a * b} m². V = 1/3 · G · h.`,
             steps: [
-              `V = (1/3) · ${a}² · ${h} = ${vol} m³.`,
+              `G = ${a} · ${b} = ${a * b} m².`,
+              `V = (1/3) · ${a * b} · ${h} = ${vol} m³.`,
               `<strong>V = ${vol} m³</strong>`,
             ],
-            meta: { a, h, vol },
+            meta: { a, b, h, vol },
           };
         },
       },
       {
         id: "neigungswinkel-dach",
         make: (rng: Rng, level: DifficultyLevel): ExerciseTask => {
-          const roof = rng.pick([
-            { y: 3, z: 4, len: 5, deg: (Math.acos(4 / 5) * 180) / Math.PI },
-            { y: 4, z: 3, len: 5, deg: (Math.acos(3 / 5) * 180) / Math.PI },
-            { y: 5, z: 12, len: 13, deg: (Math.acos(12 / 13) * 180) / Math.PI },
-            { y: 12, z: 5, len: 13, deg: (Math.acos(5 / 13) * 180) / Math.PI },
-          ]);
           if (level === 1) {
+            const roof = rng.pick([
+              { y: 3, z: 4, len: 5, deg: (Math.acos(4 / 5) * 180) / Math.PI },
+              { y: 4, z: 3, len: 5, deg: (Math.acos(3 / 5) * 180) / Math.PI },
+              { y: 5, z: 12, len: 13, deg: (Math.acos(12 / 13) * 180) / Math.PI },
+              { y: 12, z: 5, len: 13, deg: (Math.acos(5 / 13) * 180) / Math.PI },
+            ]);
             return {
               prompt: `Eine Dachfläche hat den Normalenvektor n = (0 | ${roof.y} | ${roof.z})<sup>T</sup>. Berechne den Neigungswinkel α gegenüber der horizontalen Ebene (in Grad, auf eine Dezimale gerundet).`,
               given: [`Normalenvektor n = (0 | ${roof.y} | ${roof.z})ᵀ`, `Horizontalvektor n₀ = (0|0|1)ᵀ`],
@@ -762,16 +784,23 @@ export const STAGE_5_LESSONS: Lesson[] = [
               meta: { y: roof.y, z: roof.z, len: roof.len, deg: roof.deg },
             };
           }
+          const roof3D = rng.pick([
+            { x: 2, y: 3, z: 6, len: 7, deg: (Math.acos(6 / 7) * 180) / Math.PI },
+            { x: 1, y: 4, z: 8, len: 9, deg: (Math.acos(8 / 9) * 180) / Math.PI },
+            { x: 4, y: 4, z: 7, len: 9, deg: (Math.acos(7 / 9) * 180) / Math.PI },
+            { x: 2, y: 6, z: 9, len: 11, deg: (Math.acos(9 / 11) * 180) / Math.PI },
+          ]);
           return {
-            prompt: `Für die Montage von Photovoltaikmodulen muss die Dachneigung α ermittelt werden. Die Dachfläche wird durch den Normalenvektor n = (0 | ${roof.y} | ${roof.z})<sup>T</sup> beschrieben. Bestimme den Neigungswinkel α in Grad (auf eine Dezimalstelle gerundet).`,
-            given: [`Normalenvektor n = (0 | ${roof.y} | ${roof.z})ᵀ`],
-            fields: [numberField("α =", roof.deg, "°", 1)],
-            feedbackHint: "Der Neigungswinkel gegenüber der Horizontale entspricht dem Winkel des Normalenvektors zur z-Achse.",
+            prompt: `Für die Montage von Solarmodulen auf einer schrägen Dachfläche wird die Neigung α benötigt. Die Ebene besitzt den Normalenvektor n = (${roof3D.x} | ${roof3D.y} | ${roof3D.z})<sup>T</sup>. Bestimme den Neigungswinkel α gegenüber der horizontalen Grundebene in Grad (auf eine Dezimale gerundet).`,
+            given: [`Normalenvektor n = (${roof3D.x} | ${roof3D.y} | ${roof3D.z})ᵀ`, `Horizontalvektor n₀ = (0|0|1)ᵀ`],
+            fields: [numberField("α =", roof3D.deg, "°", 1)],
+            feedbackHint: `cos(α) = |n · (0|0|1)| / |n| = ${roof3D.z} / ${roof3D.len}. Bilde arccos(${fmt(roof3D.z / roof3D.len, 3)}).`,
             steps: [
-              `cos(α) = |n · (0|0|1)| / |n| = ${roof.z} / ${roof.len} &rArr; α &approx; ${fmt(roof.deg, 1)}°.`,
-              `<strong>α = ${fmt(roof.deg, 1)}°</strong>`,
+              `|n| = &radic;(${roof3D.x}² + ${roof3D.y}² + ${roof3D.z}²) = &radic;(${roof3D.len ** 2}) = ${roof3D.len}.`,
+              `cos(α) = ${roof3D.z} / ${roof3D.len} = ${fmt(roof3D.z / roof3D.len, 3)} &rArr; α = arccos(${fmt(roof3D.z / roof3D.len, 3)}) &approx; ${fmt(roof3D.deg, 1)}°.`,
+              `<strong>α = ${fmt(roof3D.deg, 1)}°</strong>`,
             ],
-            meta: { y: roof.y, z: roof.z, len: roof.len, deg: roof.deg },
+            meta: { x: roof3D.x, y: roof3D.y, z: roof3D.z, len: roof3D.len, deg: roof3D.deg },
           };
         },
       },

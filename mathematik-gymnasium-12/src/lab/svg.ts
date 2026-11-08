@@ -26,6 +26,13 @@ export function r1(value: number): string {
   return (Math.round(value * 10) / 10).toString();
 }
 
+/** Formatiert eine Zahl für menschenlesbaren Text im SVG mit Dezimalkomma und Unicode-Minus. */
+export function fmtDez(value: number, digits = 1): string {
+  const factor = Math.pow(10, digits);
+  const rounded = Math.round(value * factor) / factor;
+  return String(rounded).replace(".", ",").replace("-", "−");
+}
+
 export function clamp(value: number, min: number, max: number): number {
   return Math.min(max, Math.max(min, value));
 }

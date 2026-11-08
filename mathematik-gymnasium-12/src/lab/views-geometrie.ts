@@ -3,7 +3,7 @@
  */
 
 import type { LabValues, ReadoutValues } from "../model/types";
-import { open, text, line, polygon, circle, r1 } from "./svg";
+import { open, text, line, polygon, circle, fmtDez } from "./svg";
 import { project3D, add3, cross3, dot3, len3, type Vec3 } from "../math/vectors";
 
 // 26. 3D-Koordinatensystem und Raumpunkte
@@ -97,8 +97,8 @@ export function dotProductView(v: LabValues, _r: ReadoutValues): string {
   s += text(pA.x + 8, pA.y + 4, "a", "lab-axis-label");
   s += text(pB.x + 8, pB.y - 4, "b", "lab-axis-label");
 
-  s += text(20, 30, `Skalarprodukt: a · b = ${r1(dot)}`, "lab-title");
-  s += text(20, 52, `Schnittwinkel: φ = ${r1(angle)}° (Orthogonal wenn a · b = 0)`, "lab-legend");
+  s += text(20, 30, `Skalarprodukt: a · b = ${fmtDez(dot, 1)}`, "lab-title");
+  s += text(20, 52, `Schnittwinkel: φ = ${fmtDez(angle, 1)}° (Orthogonal wenn a · b = 0)`, "lab-legend");
   s += "</svg>";
   return s;
 }
@@ -130,7 +130,7 @@ export function crossProductView(v: LabValues, _r: ReadoutValues): string {
   s += text(pN.x + 8, pN.y - 8, "n = a × b", "lab-text-accent");
 
   s += text(20, 30, `Vektorprodukt: n = a × b = (${n[0]}|${n[1]}|${n[2]})`, "lab-title");
-  s += text(20, 52, `Flächeninhalt Parallelogramm: A = |a × b| = ${r1(area)}`, "lab-legend");
+  s += text(20, 52, `Flächeninhalt Parallelogramm: A = |a × b| = ${fmtDez(area, 2)}`, "lab-legend");
   s += "</svg>";
   return s;
 }
@@ -169,7 +169,7 @@ export function solids3dView(v: LabValues, _r: ReadoutValues): string {
   s += text(S.x + 8, S.y - 6, `Spitze S(0|0|${h})`, "lab-text-bold");
 
   s += text(20, 30, `Pyramide mit quadratischer Grundfläche (${a} × ${a}) und Höhe h = ${h}`, "lab-title");
-  s += text(20, 52, `Volumen V = 1/3 · G · h = ${r1(vol)}`, "lab-legend");
+  s += text(20, 52, `Volumen V = ⅓ · G · h = ${fmtDez(vol, 2)}`, "lab-legend");
   s += "</svg>";
   return s;
 }

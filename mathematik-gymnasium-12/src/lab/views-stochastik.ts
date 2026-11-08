@@ -3,7 +3,7 @@
  */
 
 import type { LabValues, ReadoutValues } from "../model/types";
-import { open, text, line, rect, circle, r1 } from "./svg";
+import { open, text, line, rect, circle, fmtDez } from "./svg";
 import { binom, bernoulliProb, binomCdf } from "../math/stochastics";
 
 // 9. Kolmogorow-Axiome (Venn-Diagramm)
@@ -12,7 +12,9 @@ export function kolmogorovAxiomsView(v: LabValues, _r: ReadoutValues): string {
   const pB = (v.pB ?? 40) / 100;
   const maxSchnitt = Math.min(pA, pB);
   const pSchnitt = Math.min((v.pSchnitt ?? 20) / 100, maxSchnitt);
-  const pVereinigung = Math.min(1, Math.max(0, pA + pB - pSchnitt));
+  const sumRaw = pA + pB - pSchnitt;
+  const isImpossible = sumRaw > 1.0001;
+  const pVereinigung = Math.min(1, Math.max(0, sumRaw));
 
   let s = open("Kolmogorow-Axiome und Mengendiagramm");
   // Rahmen Grundmenge Omega
@@ -20,14 +22,18 @@ export function kolmogorovAxiomsView(v: LabValues, _r: ReadoutValues): string {
   s += text(70, 95, "Ω (P(Ω) = 1)", "lab-axis-label");
   // Kreis A
   s += circle(210, 170, 70, "lab-circle-a");
-  s += text(180, 175, `A: ${r1(pA)}`, "lab-text-bold");
+  s += text(180, 175, `A: ${fmtDez(pA, 2)}`, "lab-text-bold");
   // Kreis B
   s += circle(310, 170, 70, "lab-circle-b");
-  s += text(330, 175, `B: ${r1(pB)}`, "lab-text-bold");
+  s += text(330, 175, `B: ${fmtDez(pB, 2)}`, "lab-text-bold");
   // Schnittmenge
-  s += text(260, 175, `${r1(pSchnitt)}`, "lab-text-accent", "middle");
+  s += text(260, 175, `${fmtDez(pSchnitt, 2)}`, "lab-text-accent", "middle");
   s += text(20, 30, "Axiome von Kolmogorow", "lab-title");
-  s += text(20, 52, `Additionssatz: P(A ∪ B) = P(A) + P(B) − P(A ∩ B) = ${r1(pVereinigung)}`, "lab-legend");
+  if (isImpossible) {
+    s += text(20, 52, `Widerspruch (Axiom 2): P(A ∪ B) = ${fmtDez(sumRaw, 2)} > 1 (Schnitt P(A ∩ B) zu klein)`, "lab-legend");
+  } else {
+    s += text(20, 52, `Additionssatz: P(A ∪ B) = P(A) + P(B) − P(A ∩ B) = ${fmtDez(pVereinigung, 2)}`, "lab-legend");
+  }
   s += "</svg>";
   return s;
 }
@@ -35,9 +41,9 @@ export function kolmogorovAxiomsView(v: LabValues, _r: ReadoutValues): string {
 // 10. Zufallsgröße & Wahrscheinlichkeitsverteilung
 export function randomVariableView(v: LabValues, _r: ReadoutValues): string {
   const rawP1 = (v.p1 ?? 30) / 100;
-  const rawP2 = (v.p2 ?? 50) / 100;
-  const p1 = Math.min(rawP1, 0.9);
-  const p2 = Math.min(rawP2, Math.max(0, 1 - p1));
+  const rawP2 = (v.p2 ?? 40) / 100;
+  const p1 = Math.min(rawP1, 0.45);
+  const p2 = Math.min(rawP2, 0.45);
   const p3 = Math.max(0, 1 - p1 - p2);
   const probs = [p1, p2, p3];
   const vals = [1, 2, 3];
@@ -56,15 +62,15 @@ export function randomVariableView(v: LabValues, _r: ReadoutValues): string {
     const h = probs[i] * scaleY;
     s += rect(x, originY - h, barW, h, "lab-bar lab-primary");
     s += text(x + barW / 2, originY + 20, `x = ${vals[i]}`, "lab-axis-tick", "middle");
-    s += text(x + barW / 2, originY - h - 8, `${r1(probs[i])}`, "lab-text", "middle");
+    s += text(x + barW / 2, originY - h - 8, `${fmtDez(probs[i], 2)}`, "lab-text", "middle");
   }
   // Erwartungswert-Linie
   const muX = originX + 50 + (mu - 1) * 110 + barW / 2;
   s += line(muX, 70, muX, originY, "lab-line-thick lab-accent");
-  s += text(muX, 60, `E(X) = ${r1(mu)}`, "lab-text-accent", "middle");
+  s += text(muX, 60, `E(X) = ${fmtDez(mu, 2)}`, "lab-text-accent", "middle");
 
   s += text(20, 30, "Wahrscheinlichkeitsverteilung P(X = x)", "lab-title");
-  s += text(20, 52, `Erwartungswert μ = E(X) = ∑ x_i · P(X = x_i) = ${r1(mu)}`, "lab-legend");
+  s += text(20, 52, `Erwartungswert μ = E(X) = ∑ x_i · P(X = x_i) = ${fmtDez(mu, 2)}`, "lab-legend");
   s += "</svg>";
   return s;
 }
@@ -87,10 +93,10 @@ export function urnModelsView(v: LabValues, _r: ReadoutValues): string {
   }
   s += text(280, 110, `Gesamtzahl Kugeln: n = ${n}`, "lab-axis-label");
   s += text(280, 140, `Gezogene Kugeln: k = ${k}`, "lab-axis-label");
-  s += text(280, 170, withRep ? "Mit Zurücklegen (geordnet: n^k)" : "Ohne Zurücklegen (ungeordnet: (n über k))", "lab-axis-label");
-  s += text(280, 210, `Ergebnis: ${ways}`, "lab-title");
+  s += text(280, 170, withRep ? "Mit Zurücklegen (geordnet)" : "Ohne Zurücklegen (ungeordnet)", "lab-axis-label");
+  s += text(280, 210, `Mögliche Ergebnisse: ${ways}`, "lab-title");
   s += text(20, 30, "Urnenmodell: Ziehen mit / ohne Zurücklegen", "lab-title");
-  s += text(20, 52, withRep ? `Geordnet mit Zurücklegen: ${n}^${k} = ${ways}` : `Ungeordnete Teilmengen: (${n} über ${k}) = ${ways}`, "lab-legend");
+  s += text(20, 52, withRep ? `Geordnet mit Zurücklegen: ${n} hoch ${k} = ${ways}` : `Ungeordnete Teilmengen: (${n} über ${k}) = ${ways}`, "lab-legend");
   s += "</svg>";
   return s;
 }
@@ -122,8 +128,8 @@ export function bernoulliChainView(v: LabValues, _r: ReadoutValues): string {
     }
   }
 
-  s += text(20, 30, `B(${n}; ${r1(p)}; k) mit Summe k ≤ ${kMax}`, "lab-title");
-  s += text(20, 52, `P(X ≤ ${kMax}) = ∑_{k=0}^{${kMax}} B(${n}; ${r1(p)}; k) = ${r1(sumP)}`, "lab-legend");
+  s += text(20, 30, `B(${n}; ${fmtDez(p, 2)}; k) mit Summe k ≤ ${kMax}`, "lab-title");
+  s += text(20, 52, `P(X ≤ ${kMax}) = ∑ B(${n}; ${fmtDez(p, 2)}; k) = ${fmtDez(sumP, 3)}`, "lab-legend");
   s += "</svg>";
   return s;
 }
@@ -152,8 +158,8 @@ export function binomialParamsView(v: LabValues, _r: ReadoutValues): string {
     s += rect(x, originY - h, barW, h, in1Sigma ? "lab-bar lab-accent" : "lab-bar lab-primary");
   }
 
-  s += text(20, 30, `Kenngrößen: μ = ${r1(mu)}, σ = ${r1(sigma)}`, "lab-title");
-  s += text(20, 52, `1-Sigma-Intervall [${r1(mu - sigma)}; ${r1(mu + sigma)}] (orange gefärbt)`, "lab-legend");
+  s += text(20, 30, `Kenngrößen: μ = ${fmtDez(mu, 2)}, σ = ${fmtDez(sigma, 2)}`, "lab-title");
+  s += text(20, 52, `1-Sigma-Intervall [${fmtDez(mu - sigma, 2)}; ${fmtDez(mu + sigma, 2)}] (orange gefärbt)`, "lab-legend");
   s += "</svg>";
   return s;
 }
@@ -169,18 +175,18 @@ export function hypothesisSetupView(v: LabValues, _r: ReadoutValues): string {
 
   if (isRight) {
     s += rect(70, 140, 240, 60, "lab-bar lab-primary");
-    s += text(190, 175, "Annahmebereich A_quer", "lab-text", "middle");
+    s += text(190, 175, "Annahmebereich A̅", "lab-text", "middle");
     s += rect(310, 140, 140, 60, "lab-bar lab-accent");
     s += text(380, 175, "Ablehnungsbereich A", "lab-text-bold", "middle");
-    s += text(20, 30, `Rechtsseitiger Test: H_0: p ≤ ${r1(p0)} vs. H_1: p > ${r1(p0)}`, "lab-title");
+    s += text(20, 30, `Rechtsseitiger Test: H₀: p ≤ ${fmtDez(p0, 2)} vs. H₁: p > ${fmtDez(p0, 2)}`, "lab-title");
   } else {
     s += rect(70, 140, 140, 60, "lab-bar lab-accent");
     s += text(140, 175, "Ablehnungsbereich A", "lab-text-bold", "middle");
     s += rect(210, 140, 240, 60, "lab-bar lab-primary");
-    s += text(330, 175, "Annahmebereich A_quer", "lab-text", "middle");
-    s += text(20, 30, `Linksseitiger Test: H_0: p ≥ ${r1(p0)} vs. H_1: p < ${r1(p0)}`, "lab-title");
+    s += text(330, 175, "Annahmebereich A̅", "lab-text", "middle");
+    s += text(20, 30, `Linksseitiger Test: H₀: p ≥ ${fmtDez(p0, 2)} vs. H₁: p < ${fmtDez(p0, 2)}`, "lab-title");
   }
-  s += text(20, 52, "Die Nullhypothese H_0 wird abgelehnt, wenn das Ergebnis im Ablehnungsbereich liegt", "lab-legend");
+  s += text(20, 52, "Die Nullhypothese H₀ wird abgelehnt, wenn das Ergebnis im Ablehnungsbereich liegt", "lab-legend");
   s += "</svg>";
   return s;
 }
@@ -214,7 +220,7 @@ export function errorVisualizerView(v: LabValues, _r: ReadoutValues): string {
   s += text(cX, 65, `c = ${c}`, "lab-text-accent", "middle");
 
   s += text(20, 30, `Fehler 1. Art (Alpha) und Fehler 2. Art (Beta) bei n = ${n}`, "lab-title");
-  s += text(20, 52, `P(Fehler 1. Art) = α = ${r1(alphaReal)}  |  P(Fehler 2. Art bei p=0,75) = β = ${r1(betaReal)}`, "lab-legend");
+  s += text(20, 52, `P(Fehler 1. Art) = α = ${fmtDez(alphaReal, 3)}  |  P(Fehler 2. Art bei p=0,75) = β = ${fmtDez(betaReal, 3)}`, "lab-legend");
   s += "</svg>";
   return s;
 }
@@ -248,8 +254,8 @@ export function rejectionRegionView(v: LabValues, _r: ReadoutValues): string {
     s += rect(x, originY - prob * scaleY, barW, prob * scaleY, inA ? "lab-bar lab-accent" : "lab-bar lab-primary");
   }
 
-  s += text(20, 30, `Vorgegebenes Niveau α = ${r1(alphaSoll * 100)} %`, "lab-title");
-  s += text(20, 52, `Ablehnungsbereich A = {${bestC}, ..., ${n}} mit tatsächlicher Irrtumswahrscheinlichkeit ${r1(alphaIst * 100)} %`, "lab-legend");
+  s += text(20, 30, `Vorgegebenes Niveau α = ${fmtDez(alphaSoll * 100, 1)} %`, "lab-title");
+  s += text(20, 52, `Ablehnungsbereich A = {${bestC}, ..., ${n}} mit tatsächlicher Irrtumswahrscheinlichkeit ${fmtDez(alphaIst * 100, 2)} %`, "lab-legend");
   s += "</svg>";
   return s;
 }

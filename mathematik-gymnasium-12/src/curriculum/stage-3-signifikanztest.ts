@@ -164,6 +164,12 @@ export const STAGE_3_LESSONS: Lesson[] = [
                 idx: 1,
                 reason: "Da eine Steigerung (p > p₀) belegt werden soll, führen große Trefferzahlen zur Ablehnung von H₀.",
               },
+              {
+                text: "Ein Abfüllbetrieb überprüft, ob das durchschnittliche Füllgewicht von Kaffeepaketen von der deklarierten Nennmenge 500 g abweicht (weder Unter- noch Überfüllung erlaubt).",
+                direction: "Zweiseitiger Test",
+                idx: 2,
+                reason: "Da Abweichungen in beide Richtungen (zu viel oder zu wenig) beanstandet werden, liegt ein zweiseitiger Test vor.",
+              },
             ]);
             return {
               prompt: `${item.text} Welcher Testtyp (Testrichtung) liegt vor?`,
@@ -196,6 +202,12 @@ export const STAGE_3_LESSONS: Lesson[] = [
               direction: "Rechtsseitiger Test",
               idx: 1,
               reason: "Übertreffen des Standards erfordert Ablehnung bei vielen geheilten Patienten (rechtsseitiger Test).",
+            },
+            {
+              text: "Eine Schraubenfabrik überwacht den Gewindedurchmesser. Sowohl zu dicke als auch zu dünne Schrauben führen zu fehlerhaftem Ausschuss.",
+              direction: "Zweiseitiger Test",
+              idx: 2,
+              reason: "Ausschuss entsteht bei Abweichungen nach oben wie nach unten, daher muss zweiseitig getestet werden.",
             },
           ]);
           return {
@@ -315,7 +327,7 @@ export const STAGE_3_LESSONS: Lesson[] = [
               formulaHint: `α = P(X ≥ ${c}) = 1 − P(X ≤ ${c - 1}).`,
               feedbackHint: `Nutze die kumulierte Wahrscheinlichkeit: α = 1 − F(${c - 1}).`,
               steps: [
-                `α = P_{0,5}(X ≥ ${c}) = 1 − P_{0,5}(X ≤ ${c - 1}) = 1 − ${fmt(binomCdf(n, p, c - 1), 4)} &approx; ${fmt(alpha, 3)}.`,
+                `α = P<sub>0,5</sub>(X ≥ ${c}) = 1 − P<sub>0,5</sub>(X ≤ ${c - 1}) = 1 − ${fmt(binomCdf(n, p, c - 1), 4)} &approx; ${fmt(alpha, 3)}.`,
                 `<strong>α = ${fmt(alpha, 3)}</strong>`,
               ],
               meta: { c, n, p, alpha },
@@ -327,9 +339,9 @@ export const STAGE_3_LESSONS: Lesson[] = [
             prompt: `Gegeben ist der gleiche rechtsseitige Test (n = ${n}, A = {${c}, ..., ${n}}). Gilt in Wahrheit die Trefferquote p₁ = 0,75, so wird H₀ fälschlicherweise beibehalten (Fehler 2. Art). Berechne β auf drei Dezimalen gerundet.`,
             given: [`n = ${n}`, `p₁ = 0,75`, `Annahmebereich Ā = {0, ..., ${c - 1}}`],
             fields: [numberField("β =", beta, "", 3)],
-            feedbackHint: `Fehler 2. Art: β = P_{p₁}(X ∉ A) = P_{0,75}(X ≤ ${c - 1}).`,
+            feedbackHint: `Fehler 2. Art: β = P<sub>p₁</sub>(X ∉ A) = P<sub>0,75</sub>(X ≤ ${c - 1}).`,
             steps: [
-              `β = P_{0,75}(X ≤ ${c - 1}) &approx; ${fmt(beta, 3)}.`,
+              `β = P<sub>0,75</sub>(X ≤ ${c - 1}) &approx; ${fmt(beta, 3)}.`,
               `<strong>β = ${fmt(beta, 3)}</strong>`,
             ],
             meta: { c, n, pAlt, beta },
@@ -354,6 +366,17 @@ export const STAGE_3_LESSONS: Lesson[] = [
                 idx: 0,
                 options: ["Der Beta-Fehler wird kleiner.", "Der Beta-Fehler wird größer.", "Der Beta-Fehler bleibt unverändert."],
                 reason: "Mit wachsendem Stichprobenumfang sinkt die Streuung der Teststatistik, wodurch Abweichungen zuverlässiger erkannt werden (β sinkt).",
+              },
+              {
+                question: "Wie kann man die Wahrscheinlichkeit beider Fehlerarten (sowohl α als auch β) gleichzeitig verringern?",
+                ans: "Durch Vergrößern des Stichprobenumfangs n.",
+                idx: 0,
+                options: [
+                  "Durch Vergrößern des Stichprobenumfangs n.",
+                  "Durch einfaches Halbieren des Signifikanzniveaus α.",
+                  "Das ist prinzipiell mathematisch unmöglich.",
+                ],
+                reason: "Nur eine größere Datenbasis (höheres n) liefert mehr Trennschärfe und erlaubt es, beide Fehlerrisiken zugleich zu senken.",
               },
             ]);
             return {
@@ -391,6 +414,17 @@ export const STAGE_3_LESSONS: Lesson[] = [
                 "Der Alpha-Fehler sinkt gleichzeitig.",
               ],
               reason: "Ein vergrößerter Ablehnungsbereich senkt β, vergrößert aber zwangsläufig die Quote falscher Alarme (α).",
+            },
+            {
+              question: "Ein Gerichtsverfahren folgt dem Grundsatz 'Im Zweifel für den Angeklagten' (H₀: 'Angeklagter ist unschuldig'). Was entspricht hier dem Fehler 1. Art?",
+              ans: "Eine unschuldige Person wird fälschlicherweise verurteilt.",
+              idx: 0,
+              options: [
+                "Eine unschuldige Person wird fälschlicherweise verurteilt.",
+                "Ein Schuldiger wird aus Mangel an Beweisen freigesprochen.",
+                "Das Verfahren wird wegen Formfehlern vorzeitig eingestellt.",
+              ],
+              reason: "Fehler 1. Art bedeutet die irrtümliche Verwerfung von H₀, also die Verurteilung eines tatsächlich Unschuldigen.",
             },
           ]);
           return {
@@ -490,7 +524,7 @@ export const STAGE_3_LESSONS: Lesson[] = [
       {
         id: "ablehnungsbereich-rechts",
         make: (rng: Rng, level: DifficultyLevel): ExerciseTask => {
-          const alphaPercent = rng.pick([5, 1]);
+          const alphaPercent = rng.pick([1, 5, 10]);
           const alphaVal = alphaPercent / 100;
           const crit = rightSidedCriticalValue(20, 0.5, alphaVal);
           const c = crit.c;
@@ -499,7 +533,7 @@ export const STAGE_3_LESSONS: Lesson[] = [
               prompt: `Gegeben ist ein rechtsseitiger Test mit n = 20, p₀ = 0,5 und α = ${alphaPercent} %. Die Tabelle kumulierter Wahrscheinlichkeiten liefert P(X ≤ ${c - 2}) = ${fmt(binomCdf(20, 0.5, c - 2), 3)} und P(X ≤ ${c - 1}) = ${fmt(binomCdf(20, 0.5, c - 1), 3)}. Bestimme den kritischen Wert c des Ablehnungsbereichs A = {c, ..., 20}.`,
               given: [`n = 20`, `p₀ = 0,5`, `α = ${alphaPercent} %`],
               fields: [numberField("c =", c, "", 0)],
-              formulaHint: `Bedingung: P(X ≥ c) ≤ ${alphaVal} ⇔ P(X ≤ c−1) ≥ ${fmt(1 - alphaVal, 2)}.`,
+              formulaHint: `Bedingung: P(X ≥ c) ≤ ${fmt(alphaVal, 2)} ⇔ P(X ≤ c−1) ≥ ${fmt(1 - alphaVal, 2)}.`,
               feedbackHint: `Suche den kleinsten Wert, für den P(X ≤ c−1) ≥ ${fmt(1 - alphaVal, 2)} erfüllt ist.`,
               steps: [
                 `P(X ≤ ${c - 1}) = ${fmt(binomCdf(20, 0.5, c - 1), 3)} ≥ ${fmt(1 - alphaVal, 2)} &rArr; c − 1 = ${c - 1} &rArr; c = ${c}.`,
@@ -515,7 +549,7 @@ export const STAGE_3_LESSONS: Lesson[] = [
             fields: [numberField("c =", c, "", 0)],
             feedbackHint: `Finde c so, dass unter H₀ höchstens mit Wahrscheinlichkeit ${alphaPercent} % mindestens c Treffer erzielt werden.`,
             steps: [
-              `P_{0,5}(X ≥ c) ≤ ${alphaVal} liefert c = ${c}.`,
+              `P<sub>0,5</sub>(X ≥ c) ≤ ${fmt(alphaVal, 2)} liefert c = ${c}.`,
               `<strong>Mindestens ${c} Käufe erforderlich</strong>`,
             ],
             meta: { alphaPercent, c },
@@ -672,6 +706,17 @@ export const STAGE_3_LESSONS: Lesson[] = [
                 ],
                 explanation: "Beibehalten von H₀ bedeutet 'Freispruch aus Mangel an Beweisen', kein Beweis für die Richtigkeit.",
               },
+              {
+                statement: "Eine Pressemitteilung berichtet: 'Weil der Signifikanztest bei α = 5 % nicht anschlug, ist der untersuchte Unterschied zu 95 % zufällig.'",
+                flaw: "Das Signifikanzniveau α macht keine Aussage über die Wahrscheinlichkeit von Zufall.",
+                idx: 0,
+                options: [
+                  "Das Signifikanzniveau α macht keine Aussage über die Wahrscheinlichkeit von Zufall.",
+                  "Der Unterschied muss exakt 5 % betragen.",
+                  "Bei Nicht-Signifikanz beträgt die Zufallswahrscheinlichkeit immer 100 %.",
+                ],
+                explanation: "Nicht-Signifikanz bedeutet lediglich, dass die beobachteten Daten mit H₀ verträglich sind, nicht dass ein Effekt zu 95 % zufällig sei.",
+              },
             ]);
             return {
               prompt: `${item.statement} Warum ist diese Schlussfolgerung mathematisch bzw. methodisch fehlerhaft?`,
@@ -708,6 +753,17 @@ export const STAGE_3_LESSONS: Lesson[] = [
                 "Die Stichprobe war zwingend unvollständig.",
               ],
               explanation: "Das Signifikanzniveau ist eine bedingte Wahrscheinlichkeit für Daten unter H₀ und darf nicht als Wahrscheinlichkeit von Hypothesen invertiert werden.",
+            },
+            {
+              statement: "Ein Forscherteam testet 20 voneinander unabhängige Eigenschaften eines neuen Werkstoffs mit je α = 0,05. Ein Test wird signifikant. Das Team schließt: 'Die Wirkung dieses Werkstoffs ist zweifelsfrei nachgewiesen.'",
+              flaw: "Bei multiplem Testen steigt die kumulierte Wahrscheinlichkeit für mindestens einen Zufallsbefund drastisch an.",
+              idx: 0,
+              options: [
+                "Bei multiplem Testen steigt die kumulierte Wahrscheinlichkeit für mindestens einen Zufallsbefund drastisch an.",
+                "Man darf niemals mehr als 5 Tests durchführen.",
+                "Signifikanz bei α = 0,05 gilt nur für physikalische, nicht für werkstoffliche Eigenschaften.",
+              ],
+              explanation: "Führt man 20 Tests bei α = 5 % durch, beträgt die Wahrscheinlichkeit für mindestens einen falsch-positiven Zufallsbefund bereits 1 − 0,95²⁰ ≈ 64 % (Problem des multiplen Testens).",
             },
           ]);
           return {
