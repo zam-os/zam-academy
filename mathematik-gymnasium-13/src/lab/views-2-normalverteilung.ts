@@ -367,7 +367,7 @@ function normalverteilungView(v: LabValues, r: ReadoutValues): string {
   );
   out += title("Glocke und S-Kurve: f und F gehören zusammen");
   // Dichte f
-  out += d.grid(1, 4, "x", "f(x)");
+  out += d.grid(2, 4, "x", "f(x)");
   const area: Pt[] = [];
   const steps = 48;
   for (let i = 0; i <= steps; i++) {
@@ -394,7 +394,7 @@ function normalverteilungView(v: LabValues, r: ReadoutValues): string {
     "lab-text-small",
   );
   // Verteilungsfunktion F
-  out += F.grid(1, 4, "x", "F(x)");
+  out += F.grid(2, 4, "x", "F(x)");
   out += F.graph((x) => Phi(standardize(x, v.mu, v.sigma)), "lab-curve-2");
   out += F.lineThrough(0, 0.5, "lab-dashed");
   out += text(F.box.x + F.box.w - 4, F.Y(0.5) - 5, "F(μ) = 0,5", "lab-text-tick", "end");

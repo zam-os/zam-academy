@@ -20,10 +20,14 @@ hat keinen eigenen Fachlehrplan. Eine Zweig- oder Kursauswahl gibt es nicht.
 | M13 4 Anwendungen der Differential- und Integralrechnung | ca. 20 | 4 | 4: `aw-1` bis `aw-5` |
 
 27 Lektionen, 84 Karten. Alle 22 Kompetenzerwartungen stehen wortgleich mit
-ihren Lektionen und Belegen in [`coverage.json`](../mathematik-gymnasium-13/coverage.json);
+ihren Lektionen und Belegen in [`coverage.json`](../mathematik-gymnasium-13/coverage.json)
+– bis auf die drei als Formelbilder hinterlegten Integrationsregeln von M13 1,
+die `source.json` aus ihren Alt-Texten transkribiert und im `note` vermerkt –;
 der Vertragstest prüft die Zuordnung in beide Richtungen gegen `source.json`
-(26 + 14 + 24 + 20 = 84 Stunden, 8 + 4 + 6 + 4 Erwartungen). Zwei
-Kompetenzerwartungen teilen sich Lektionen, weil ihr Inhalt zwei zusammenhängende
+(26 + 14 + 24 + 20 = 84 Stunden, 8 + 4 + 6 + 4 Erwartungen). Fünf
+Kompetenzerwartungen liegen in mehreren Lektionen (rg-1 bis rg-3, rg-5 bis
+rg-7, int-6/7, aw-3/4, aw-4/5); in zwei Sonderfällen erfüllt eine Lektion je
+zwei Erwartungen, weil ihr Inhalt zwei zusammenhängende
 Verfahren umfasst: Die Flächen-KE inklusive der uneigentlichen Integrale liegt in
 `int-6` und `int-7`, die Kugel-KE und die Anwendungs-KE in `rg-9`. `aw-4`
 erfüllt die Extremwert-KE und die Anwendungs-KE zugleich.
