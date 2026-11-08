@@ -3,7 +3,7 @@
  */
 
 import type { LabValues, ReadoutValues } from "../model/types";
-import { open, text, line, path, circle, r1, W, H } from "./svg";
+import { open, text, line, path, circle, handle, r1, W, H } from "./svg";
 
 /** Zeichnet ein 2D-Koordinatensystem für Funktionsgraphen. */
 export function drawAxes(
@@ -62,12 +62,16 @@ export function plotFunction(
   for (let i = 0; i <= steps; i++) {
     const x = xMin + i * dx;
     const y = fn(x);
-    if (!Number.isFinite(y) || Math.abs(y) > 50) {
+    if (!Number.isFinite(y)) {
       inPath = false;
       continue;
     }
     const sx = cx + x * scaleX;
     const sy = cy - y * scaleY;
+    if (sy < -80 || sy > 420 || sx < -80 || sx > 600) {
+      inPath = false;
+      continue;
+    }
     if (!inPath) {
       d += `M ${r1(sx)} ${r1(sy)} `;
       inPath = true;
@@ -105,7 +109,7 @@ export function antiderivativeGraphView(v: LabValues, _r: ReadoutValues): string
   // f(x) = x² - 4 (blau)
   s += plotFunction((x) => 0.5 * (x * x - 4), -5, 5, 80, cx, cy, scale, scale, "lab-line lab-primary");
   // F(x) = 0.5 * (x³/3 - 4x) + C (rot/accent)
-  s += plotFunction((x) => 0.5 * ((x * x * x) / 3 - 4 * x) + c * 0.5, -5, 5, 100, cx, cy, scale, scale, "lab-line-thick lab-accent");
+  s += plotFunction((x) => 0.5 * ((x * x * x) / 3 - 4 * x) + c, -5, 5, 100, cx, cy, scale, scale, "lab-line-thick lab-accent");
   s += text(20, 30, "f(x) = 0,5(x² − 4)  [blau]", "lab-title");
   s += text(20, 52, `F_${c}(x) = 0,5(x³/3 − 4x) + ${c}  [orange]`, "lab-legend");
   s += "</svg>";
@@ -173,7 +177,9 @@ export function expGrowthView(v: LabValues, _r: ReadoutValues): string {
   s += drawAxes(cx, cy, 0, 11, 0, 120, scaleX, scaleY, "t", "N(t)");
   s += plotFunction((t) => n0 * Math.exp(k * t), 0, 10, 100, cx, cy, scaleX, scaleY, "lab-line-thick lab-accent");
   s += text(20, 30, `N(t) = ${n0} · e^{${r1(k)}t}`, "lab-title");
-  s += text(20, 52, `Basiswechsel: a^t = e^{(ln a) · t}`, "lab-legend");
+  const charTime = k !== 0 ? r1(Math.log(2) / Math.abs(k)) : "—";
+  const charLabel = k < 0 ? `Halbwertszeit T_H = ${charTime} Std` : k > 0 ? `Verdopplungszeit T_V = ${charTime} Std` : "Bestand konstant";
+  s += text(20, 52, `${charLabel} (Basiswechsel: a^t = e^{(ln a) · t})`, "lab-legend");
   s += "</svg>";
   return s;
 }
@@ -196,8 +202,9 @@ export function trigTangentView(v: LabValues, _r: ReadoutValues): string {
   const m = Math.cos(x0);
   const sx0 = cx + x0 * scaleX;
   const sy0 = cy - y0 * scaleY;
-  s += circle(sx0, sy0, 5, "lab-handle");
-  s += line(sx0 - 40, sy0 + 40 * m, sx0 + 40, sy0 - 40 * m, "lab-line-dashed");
+  s += handle("x0", sx0, sy0, "Berührstelle x0");
+  const slopeScreen = m * (scaleY / scaleX);
+  s += line(sx0 - 40, sy0 + 40 * slopeScreen, sx0 + 40, sy0 - 40 * slopeScreen, "lab-line-dashed");
   s += text(20, 30, "f(x) = sin(x) [blau] und f'(x) = cos(x) [orange]", "lab-title");
   s += text(20, 52, `Tangentensteigung bei x = ${r1(x0 / Math.PI)}π: m = ${r1(m)}`, "lab-legend");
   s += "</svg>";
@@ -308,7 +315,9 @@ export function rationalPowersView(v: LabValues, _r: ReadoutValues): string {
   let s = open("Rationale Exponenten");
   s += drawAxes(cx, cy, -1, 8, -1, 6, scale, scale);
   s += plotFunction((x) => Math.pow(Math.max(0, x), exp), 0, 7, 80, cx, cy, scale, scale, "lab-line-thick lab-accent");
-  s += text(20, 30, `f(x) = x^{${p}/${q}} = ³√x^${p}`, "lab-title");
+  const rootSymbol = q === 2 ? "√" : `${q}√`;
+  const radicand = p === 1 ? "x" : `x^${p}`;
+  s += text(20, 30, `f(x) = x^{${p}/${q}} = ${rootSymbol}${radicand}`, "lab-title");
   s += text(20, 52, `Ableitung: f'(x) = (${p}/${q}) · x^{${p - q}/${q}}`, "lab-legend");
   s += "</svg>";
   return s;
@@ -346,7 +355,7 @@ export function lnDerivativeView(v: LabValues, _r: ReadoutValues): string {
   const m = 1 / x0;
   const sx0 = cx + x0 * scale;
   const sy0 = cy - y0 * scale;
-  s += circle(sx0, sy0, 5, "lab-handle");
+  s += handle("x0", sx0, sy0, "Stelle x0");
   s += line(sx0 - 40, sy0 + 40 * m, sx0 + 40, sy0 - 40 * m, "lab-line-dashed");
   s += text(20, 30, "f(x) = ln(x) [orange], f'(x) = 1/x [blau]", "lab-title");
   s += text(20, 52, `Steigung bei x = ${x0}: m = 1/${x0} = ${r1(m)}`, "lab-legend");
@@ -355,15 +364,23 @@ export function lnDerivativeView(v: LabValues, _r: ReadoutValues): string {
 }
 
 // 16. Grenzwerte mit ln-Funktion
-export function lnLimitsView(_v: LabValues, _r: ReadoutValues): string {
-  const cx = 140;
-  const cy = 180;
-  const scale = 35;
+export function lnLimitsView(v: LabValues, _r: ReadoutValues): string {
+  const zoom = Math.max(1, Math.min(4, v.zoom ?? 1));
+  const cx = 100;
+  const cy = 200;
+  const scaleX = 40 * zoom;
+  const scaleY = 50 * zoom;
   let s = open("Grenzwerte mit ln");
-  s += drawAxes(cx, cy, -1, 8, -3, 3, scale, scale);
+  s += drawAxes(cx, cy, -0.5, 6 / zoom, -2 / zoom, 2 / zoom, scaleX, scaleY);
   // f(x) = x * ln(x)
-  s += plotFunction((x) => (x > 0.01 ? x * Math.log(x) : NaN), 0.01, 5, 80, cx, cy, scale, scale * 1.5, "lab-line-thick lab-accent");
-  s += text(20, 30, "f(x) = x · ln(x)", "lab-title");
+  s += plotFunction((x) => (x > 0.005 ? x * Math.log(x) : NaN), 0.005, 5 / zoom, 100, cx, cy, scaleX, scaleY, "lab-line-thick lab-accent");
+  const minX = 1 / Math.E;
+  const minY = -1 / Math.E;
+  const sMinX = cx + minX * scaleX;
+  const sMinY = cy - minY * scaleY;
+  s += circle(sMinX, sMinY, 4, "lab-primary");
+  s += text(sMinX + 8, sMinY + 4, "T(1/e | −1/e)", "lab-axis-label");
+  s += text(20, 30, `f(x) = x · ln(x) (Zoom ${zoom}×)`, "lab-title");
   s += text(20, 52, "Grenzwerte: lim_{x→0+} x·ln(x) = 0 und lim_{x→+∞} ln(x)/x = 0", "lab-legend");
   s += "</svg>";
   return s;

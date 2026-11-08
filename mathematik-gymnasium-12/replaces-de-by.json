@@ -2,7 +2,7 @@
   "schema": 1,
   "approved": null,
   "status": "proposal-only",
-  "source": "Stand 08.11.2026: Vorschlag (3× A, 0× B, 9× C) für de-by-gymnasium-12-Zellen; noch nicht von Thomas freigegeben. Gemäß Paketstandard erscheint cell.json zunächst ohne replaces und retired_items.",
+  "source": "Stand 08.11.2026: Vorschlag (2× A, 0× B, 10× C) für de-by-gymnasium-12-Zellen; noch nicht von Thomas freigegeben. Gemäß Paketstandard erscheint cell.json zunächst ohne replaces und retired_items.",
   "source_repository": "zam-os/zam",
   "source_commit": "e6a235f75fe87b9d57af38bd61011027b891492c",
   "sources": [
@@ -336,10 +336,10 @@
           "text": "). Welcher Testtyp liegt vor und wo liegt der Ablehnungsbereich der Nullhypothese?"
         }
       ],
-      "category": "A",
-      "academy_slug": "g12-hypo-grundprinzip-check",
-      "action": "propose-replace-after-approval",
-      "reason": "Gleicher Einzelabruf: Wahl der Nullhypothese H0 bei einer Mindestangabe in einem Signifikanztest."
+      "category": "C",
+      "academy_slug": null,
+      "action": "keep-active",
+      "reason": "Alte Multi-Part-Frage (Testtyp und Ablehnungsbereich kombiniert) wird in der Akademie auf separate atomare Kärtchen aufgeteilt; bleibt vorerst eigenständig aktiv."
     },
     {
       "de_by_cell": "de-by:gymnasium-12-mathematik-hypothesentests-signifikanzniveau-fehler-1-und-2-art",

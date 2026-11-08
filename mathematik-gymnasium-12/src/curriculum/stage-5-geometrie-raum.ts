@@ -4,7 +4,7 @@
  */
 
 import type { DifficultyLevel, ExerciseTask, Lesson } from "../model/types";
-import { lab, makeLesson, output, range, task } from "./builders";
+import { lab, makeLesson, output, range } from "./builders";
 import { numberField } from "./helpers";
 import type { Rng } from "../exercises/rng";
 import { fmt } from "../exercises/format";
@@ -87,36 +87,84 @@ export const STAGE_5_LESSONS: Lesson[] = [
       {
         id: "punktabstand-raum",
         make: (rng: Rng, level: DifficultyLevel): ExerciseTask => {
-          // Pyth Tripel im Raum: 1^2 + 2^2 + 2^2 = 9 -> d = 3 oder 2^2 + 3^2 + 6^2 = 49 -> d = 7
           const tripel = rng.pick([
             { dx: 1, dy: 2, dz: 2, d: 3 },
             { dx: 2, dy: 3, dz: 6, d: 7 },
             { dx: 4, dy: 4, dz: 7, d: 9 },
+            { dx: 1, dy: 4, dz: 8, d: 9 },
+            { dx: 2, dy: 6, dz: 9, d: 11 },
+            { dx: 6, dy: 6, dz: 7, d: 11 },
           ]);
-          return task(
-            level,
-            `Berechne den Abstand d der Punkte P(0|0|0) und Q(${tripel.dx}|${tripel.dy}|${tripel.dz}).`,
-            `Ein Kranhaken wird vom Ursprung zum Punkt Q(${tripel.dx}|${tripel.dy}|${tripel.dz}) verfahren. Welche Gesamtlänge d legt das Seil zurück?`,
-            [numberField("d =", tripel.d, "", 0)],
-            `d = √(${tripel.dx}² + ${tripel.dy}² + ${tripel.dz}²) = √(${tripel.d * tripel.d}) = ${tripel.d}.`,
-            `d = ${tripel.d}`,
-            { d: tripel.d },
-          );
+          if (level === 1) {
+            return {
+              prompt: `Berechne den Abstand d des Punktes Q(${tripel.dx}|${tripel.dy}|${tripel.dz}) vom Koordinatenursprung P(0|0|0).`,
+              given: [`P(0|0|0)`, `Q(${tripel.dx}|${tripel.dy}|${tripel.dz})`],
+              fields: [numberField("d =", tripel.d, "", 0)],
+              formulaHint: `Raumabstand: d = √(x² + y² + z²).`,
+              feedbackHint: `Berechne √(${tripel.dx}² + ${tripel.dy}² + ${tripel.dz}²).`,
+              steps: [
+                `d = &radic;(${tripel.dx}² + ${tripel.dy}² + ${tripel.dz}²) = &radic;(${tripel.dx * tripel.dx + tripel.dy * tripel.dy + tripel.dz * tripel.dz}) = ${tripel.d}.`,
+                `<strong>d = ${tripel.d}</strong>`,
+              ],
+              meta: { dx: tripel.dx, dy: tripel.dy, dz: tripel.dz, d: tripel.d },
+            };
+          }
+          const px = rng.pick([1, 2, 3]);
+          const py = rng.pick([1, 2]);
+          const pz = rng.pick([2, 4]);
+          const qx = px + tripel.dx;
+          const qy = py + tripel.dy;
+          const qz = pz + tripel.dz;
+          return {
+            prompt: `Ein Industrieroboter bewegt sein Werkzeug geradlinig vom Startpunkt P(${px}|${py}|${pz}) zum Zielpunkt Q(${qx}|${qy}|${qz}) (Koordinaten in dm). Welche Wegstrecke d legt der Greifarm zurück?`,
+            given: [`P(${px}|${py}|${pz})`, `Q(${qx}|${qy}|${qz})`],
+            fields: [numberField("d =", tripel.d, "dm", 0)],
+            feedbackHint: `Differenzen der Koordinaten bilden: Δx = ${tripel.dx}, Δy = ${tripel.dy}, Δz = ${tripel.dz}. Dann Pythagoras im Raum.`,
+            steps: [
+              `Δx = ${qx} − ${px} = ${tripel.dx}, Δy = ${qy} − ${py} = ${tripel.dy}, Δz = ${qz} − ${pz} = ${tripel.dz}.`,
+              `d = &radic;(${tripel.dx}² + ${tripel.dy}² + ${tripel.dz}²) = &radic;${tripel.d * tripel.d} = ${tripel.d} dm.`,
+              `<strong>d = ${tripel.d} dm</strong>`,
+            ],
+            meta: { px, py, pz, qx, qy, qz, d: tripel.d },
+          };
         },
       },
       {
         id: "spiegelung-ebene",
         make: (rng: Rng, level: DifficultyLevel): ExerciseTask => {
-          const z = rng.pick([3, 5, 8]);
-          return task(
-            level,
-            `Der Punkt P(2|4|${z}) wird an der x1-x2-Ebene gespiegelt. Welche x3-Koordinate hat der Bildpunkt P'?`,
-            `Bestimme die x3-Koordinate des an der Grundebene reflektierten Signals für Quelle P(2|4|${z}).`,
-            [numberField("x3 =", -z, "", 0)],
-            `Spiegelung an der x1-x2-Ebene kehrt das Vorzeichen von x3 um: x3' = −${z}.`,
-            `x3' = −${z}`,
-            { z },
-          );
+          const px = rng.pick([2, 3, 5]);
+          const py = rng.pick([1, 4, 6]);
+          const pz = rng.pick([3, 5, 8]);
+          if (level === 1) {
+            return {
+              prompt: `Der Punkt P(${px}|${py}|${pz}) wird an der x₁x₂-Ebene gespiegelt. Welche x₃-Koordinate hat der Bildpunkt P'?`,
+              given: [`P(${px}|${py}|${pz})`, `Spiegelebene: x₁x₂-Ebene (x₃ = 0)`],
+              fields: [numberField("x₃' =", -pz, "", 0)],
+              formulaHint: "Spiegelung an der x₁x₂-Ebene wechselt nur das Vorzeichen von x₃.",
+              feedbackHint: `x₃' = −(${pz}) = ${fmt(-pz, 0)}.`,
+              steps: [
+                `Spiegelung an x₁x₂-Ebene: (x₁|x₂|x₃) &rarr; (x₁|x₂|−x₃).`,
+                `<strong>x₃' = ${fmt(-pz, 0)}</strong>`,
+              ],
+              meta: { px, py, pz, res: -pz },
+            };
+          }
+          const mode = rng.pick(["x1x3", "x2x3"]);
+          const isX1X3 = mode === "x1x3";
+          const res = isX1X3 ? -py : -px;
+          const plane = isX1X3 ? "x₁x₃-Ebene" : "x₂x₃-Ebene";
+          const coordName = isX1X3 ? "x₂'" : "x₁'";
+          return {
+            prompt: `Ein Lasersignal von Quelle S(${px}|${py}|${pz}) wird an der ${plane} reflektiert. Bestimme die ${coordName}-Koordinate des virtuellen Spiegelpunkts S'.`,
+            given: [`S(${px}|${py}|${pz})`, `Reflexion an ${plane}`],
+            fields: [numberField(`${coordName} =`, res, "", 0)],
+            feedbackHint: isX1X3 ? "Bei der x₁x₃-Ebene wechselt nur x₂ das Vorzeichen." : "Bei der x₂x₃-Ebene wechselt nur x₁ das Vorzeichen.",
+            steps: [
+              `Bei der Spiegelung an der ${plane} kehrt genau die Senkrechtenkoordinate ihr Vorzeichen um: ${coordName} = ${fmt(res, 0)}.`,
+              `<strong>${coordName} = ${fmt(res, 0)}</strong>`,
+            ],
+            meta: { px, py, pz, res },
+          };
         },
       },
     ],
@@ -199,36 +247,73 @@ export const STAGE_5_LESSONS: Lesson[] = [
       {
         id: "linearkombination-rechnen",
         make: (rng: Rng, level: DifficultyLevel): ExerciseTask => {
-          const r = rng.pick([2, 3]);
-          const a1 = 1;
-          const b1 = 4;
+          const r = rng.pick([2, 3, 4]);
+          const a1 = rng.pick([1, 2, 3]);
+          const b1 = rng.pick([2, 4, 5]);
           const res1 = r * a1 + b1;
-          return task(
-            level,
-            `Berechne die 1. Komponente des Vektors c = ${r}·a + b für a = (1|2|3)<sup>T</sup> und b = (4|0|−1)<sup>T</sup>.`,
-            `Zwei Seilkräfte überlagern sich zu F = ${r}·F_1 + F_2. Bestimme die x-Komponente der Gesamtkraft.`,
-            [numberField("c1 =", res1, "", 0)],
-            `c1 = ${r} · 1 + 4 = ${res1}.`,
-            `c1 = ${res1}`,
-            { r },
-          );
+          if (level === 1) {
+            return {
+              prompt: `Berechne die 1. Komponente des Vektors c = ${r}·a + b für a = (${a1}|2|3)<sup>T</sup> und b = (${b1}|0|−1)<sup>T</sup>.`,
+              given: [`a = (${a1}|2|3)ᵀ`, `b = (${b1}|0|−1)ᵀ`, `c = ${r}·a + b`],
+              fields: [numberField("c₁ =", res1, "", 0)],
+              formulaHint: `Rechne komponentenweise: c₁ = ${r} · a₁ + b₁.`,
+              feedbackHint: `c₁ = ${r} · ${a1} + ${b1} = ${res1}.`,
+              steps: [
+                `c₁ = ${r} · ${a1} + ${b1} = ${r * a1} + ${b1} = ${res1}.`,
+                `<strong>c₁ = ${res1}</strong>`,
+              ],
+              meta: { r, a1, b1, res1 },
+            };
+          }
+          const s = rng.pick([2, 3]);
+          const res2 = r * a1 - s * b1;
+          return {
+            prompt: `Zwei Zugkräfte überlagern sich zu F = ${r}·F₁ − ${s}·F₂ mit F₁ = (${a1}|5|2)<sup>T</sup> kN und F₂ = (${b1}|1|−2)<sup>T</sup> kN. Wie groß ist die x₁-Komponente der Gesamtkraft in kN?`,
+            given: [`F₁ = (${a1}|5|2)ᵀ kN`, `F₂ = (${b1}|1|−2)ᵀ kN`, `F = ${r}·F₁ − ${s}·F₂`],
+            fields: [numberField("F₁ =", res2, "kN", 0)],
+            feedbackHint: `Berechne ${r}·(${a1}) − ${s}·(${b1}).`,
+            steps: [
+              `F₁ = ${r} · ${a1} − ${s} · ${b1} = ${r * a1} − ${s * b1} = ${fmt(res2, 0)} kN.`,
+              `<strong>F₁ = ${fmt(res2, 0)} kN</strong>`,
+            ],
+            meta: { r, s, a1, b1, res2 },
+          };
         },
       },
       {
         id: "verbindungsvektor",
         make: (rng: Rng, level: DifficultyLevel): ExerciseTask => {
           const xA = rng.pick([1, 2, 3]);
+          const yA = rng.pick([2, 4]);
           const xB = rng.pick([6, 7, 9]);
+          const yB = rng.pick([7, 8]);
           const dx = xB - xA;
-          return task(
-            level,
-            `Bestimme die 1. Komponente des Verbindungsvektors AB von A(${xA}|2|1) nach B(${xB}|5|4).`,
-            `Ein Flugzeug fliegt von Wegpunkt A(${xA}|2|1) zu Wegpunkt B(${xB}|5|4). Wie lautet die Verschiebung in x1-Richtung?`,
-            [numberField("Δx =", dx, "", 0)],
-            `AB = B − A &rArr; Δx = ${xB} − ${xA} = ${dx}.`,
-            `Δx = ${dx}`,
-            { xA, xB },
-          );
+          const dy = yB - yA;
+          if (level === 1) {
+            return {
+              prompt: `Bestimme die 1. Komponente des Verbindungsvektors AB von A(${xA}|${yA}|1) nach B(${xB}|${yB}|4).`,
+              given: [`A(${xA}|${yA}|1)`, `B(${xB}|${yB}|4)`],
+              fields: [numberField("Δx₁ =", dx, "", 0)],
+              formulaHint: `Spitze minus Fuß: AB = B − A.`,
+              feedbackHint: `Subtrahiere die x₁-Koordinate von A von der von B: ${xB} − ${xA}.`,
+              steps: [
+                `AB = B − A &rArr; Δx₁ = ${xB} − ${xA} = ${dx}.`,
+                `<strong>Δx₁ = ${dx}</strong>`,
+              ],
+              meta: { xA, xB, dx },
+            };
+          }
+          return {
+            prompt: `Ein Vermessungsdrohnenflug startet bei A(${xA}|${yA}|10) m und landet bei B(${xB}|${yB}|40) m. Wie lautet die Verschiebung in x₂-Richtung (Δx₂)?`,
+            given: [`Start A(${xA}|${yA}|10) m`, `Ziel B(${xB}|${yB}|40) m`],
+            fields: [numberField("Δx₂ =", dy, "m", 0)],
+            feedbackHint: `Berechne y_B − y_A = ${yB} − ${yA}.`,
+            steps: [
+              `Δx₂ = ${yB} − ${yA} = ${dy} m.`,
+              `<strong>Δx₂ = ${dy} m</strong>`,
+            ],
+            meta: { yA, yB, dy },
+          };
         },
       },
     ],
@@ -316,35 +401,74 @@ export const STAGE_5_LESSONS: Lesson[] = [
         id: "skalarprodukt-ausrechnen",
         make: (rng: Rng, level: DifficultyLevel): ExerciseTask => {
           const a1 = rng.pick([2, 3, 4]);
-          const a2 = 1;
-          const a3 = -2;
+          const a2 = rng.pick([1, 2]);
+          const a3 = rng.pick([1, 2]);
           const b1 = 3;
           const b2 = 4;
-          const b3 = 2;
+          const b3 = rng.pick([1, 2]);
           const dot = a1 * b1 + a2 * b2 + a3 * b3;
-          return task(
-            level,
-            `Berechne das Skalarprodukt a · b für a = (${a1}|${a2}|${a3})<sup>T</sup> und b = (${b1}|${b2}|${b3})<sup>T</sup>.`,
-            `Eine Kraft F = (${a1}|${a2}|${a3})<sup>T</sup> N verschiebt einen Körper um s = (${b1}|${b2}|${b3})<sup>T</sup> m. Berechne die verrichtete Arbeit W = F · s in Joule.`,
-            [numberField("a · b =", dot, "", 0)],
-            `a · b = ${a1}·${b1} + ${a2}·${b2} + (${a3})·${b3} = ${a1 * b1} + ${a2 * b2} + (${a3 * b3}) = ${dot}.`,
-            `a · b = ${dot}`,
-            { a1, dot },
-          );
+          if (level === 1) {
+            return {
+              prompt: `Berechne das Skalarprodukt a · b für a = (${a1}|${a2}|${a3})<sup>T</sup> und b = (${b1}|${b2}|${b3})<sup>T</sup>.`,
+              given: [`a = (${a1}|${a2}|${a3})ᵀ`, `b = (${b1}|${b2}|${b3})ᵀ`],
+              fields: [numberField("a · b =", dot, "", 0)],
+              formulaHint: `a · b = a₁b₁ + a₂b₂ + a₃b₃.`,
+              feedbackHint: `Multipliziere die Komponenten paarweise: ${a1}·${b1} + ${a2}·${b2} + ${a3}·${b3}.`,
+              steps: [
+                `a · b = ${a1}·${b1} + ${a2}·${b2} + ${a3}·${b3} = ${a1 * b1} + ${a2 * b2} + ${a3 * b3} = ${fmt(dot, 0)}.`,
+                `<strong>a · b = ${fmt(dot, 0)}</strong>`,
+              ],
+              meta: { a1, a2, a3, b1, b2, b3, dot },
+            };
+          }
+          return {
+            prompt: `Eine konstante Zugkraft F = (${a1}|${a2}|${a3})<sup>T</sup> N verschiebt eine Lore um den Vektor s = (${b1}|${b2}|${b3})<sup>T</sup> m. Berechne die verrichtete mechanische Arbeit W = F · s in Joule (J).`,
+            given: [`Kraftvektor F = (${a1}|${a2}|${a3})ᵀ N`, `Wegvektor s = (${b1}|${b2}|${b3})ᵀ m`],
+            fields: [numberField("W =", dot, "J", 0)],
+            feedbackHint: "Die mechanische Arbeit entspricht dem Skalarprodukt aus Kraft und Weg: W = F · s.",
+            steps: [
+              `W = F · s = ${a1}·${b1} + ${a2}·${b2} + ${a3}·${b3} = ${fmt(dot, 0)} J.`,
+              `<strong>W = ${fmt(dot, 0)} J</strong>`,
+            ],
+            meta: { a1, dot },
+          };
         },
       },
       {
         id: "orthogonal-parameter",
-        make: (_rng: Rng, level: DifficultyLevel): ExerciseTask => {
-          // a = (2, k, 4), b = (4, -2, -1) -> a*b = 8 - 2k - 4 = 4 - 2k = 0 -> k = 2
-          return task(
-            level,
-            "Für welchen Wert von k stehen die Vektoren a = (2|k|4)<sup>T</sup> und b = (4|−2|−1)<sup>T</sup> orthogonal aufeinander?",
-            "Zwei Firstbalken sollen rechtwinklig aufeinanderstoßen: a = (2|k|4)<sup>T</sup> und b = (4|−2|−1)<sup>T</sup>. Bestimme k.",
-            [numberField("k =", 2, "", 0)],
-            "Bedingung a · b = 0 &rArr; 2·4 + k·(−2) + 4·(−1) = 8 − 2k − 4 = 4 − 2k = 0 &rArr; 2k = 4 &rArr; k = 2.",
-            "k = 2",
-          );
+        make: (rng: Rng, level: DifficultyLevel): ExerciseTask => {
+          const item = rng.pick([
+            { a: ["2", "k", "4"], b: ["4", "−2", "−1"], k: 2, eq: "8 − 2k − 4 = 0 &rArr; 2k = 4" },
+            { a: ["3", "k", "2"], b: ["2", "−1", "−4"], k: -2, eq: "6 − k − 8 = 0 &rArr; −k − 2 = 0" },
+            { a: ["1", "k", "3"], b: ["5", "−2", "1"], k: 4, eq: "5 − 2k + 3 = 0 &rArr; 2k = 8" },
+            { a: ["4", "k", "1"], b: ["2", "−3", "1"], k: 3, eq: "8 − 3k + 1 = 0 &rArr; 3k = 9" },
+          ]);
+          if (level === 1) {
+            return {
+              prompt: `Für welchen Wert von k stehen die Vektoren a = (${item.a[0]}|k|${item.a[2]})<sup>T</sup> und b = (${item.b[0]}|${item.b[1]}|${item.b[2]})<sup>T</sup> orthogonal aufeinander?`,
+              given: [`a = (${item.a[0]}|k|${item.a[2]})ᵀ`, `b = (${item.b[0]}|${item.b[1]}|${item.b[2]})ᵀ`, `Bedingung: a ⊥ b`],
+              fields: [numberField("k =", item.k, "", 0)],
+              formulaHint: "Orthogonalitätsbedingung: a · b = 0.",
+              feedbackHint: `Setze das Skalarprodukt gleich 0 und löse nach k auf.`,
+              steps: [
+                `a · b = ${item.a[0]}·${item.b[0]} + k·(${item.b[1]}) + ${item.a[2]}·(${item.b[2]}) = 0.`,
+                `${item.eq} &rArr; k = ${fmt(item.k, 0)}.`,
+                `<strong>k = ${fmt(item.k, 0)}</strong>`,
+              ],
+              meta: { k: item.k },
+            };
+          }
+          return {
+            prompt: `Zwei Trägerbalken einer Dachkonstruktion sollen exakt im rechten Winkel aufeinandertreffen. Die Richtungsvektoren lauten v₁ = (${item.a[0]}|k|${item.a[2]})<sup>T</sup> und v₂ = (${item.b[0]}|${item.b[1]}|${item.b[2]})<sup>T</sup>. Bestimme den Konstruktionsparameter k.`,
+            given: [`v₁ = (${item.a[0]}|k|${item.a[2]})ᵀ`, `v₂ = (${item.b[0]}|${item.b[1]}|${item.b[2]})ᵀ`, `Rechter Winkel: v₁ · v₂ = 0`],
+            fields: [numberField("k =", item.k, "", 0)],
+            feedbackHint: "Rechter Winkel erfordert ein verschwindendes Skalarprodukt v₁ · v₂ = 0.",
+            steps: [
+              `v₁ · v₂ = 0 liefert ${item.eq} &rArr; k = ${fmt(item.k, 0)}.`,
+              `<strong>k = ${fmt(item.k, 0)}</strong>`,
+            ],
+            meta: { k: item.k },
+          };
         },
       },
     ],
@@ -434,35 +558,74 @@ export const STAGE_5_LESSONS: Lesson[] = [
     exercises: [
       {
         id: "kreuzprodukt-komponente",
-        make: (_rng: Rng, level: DifficultyLevel): ExerciseTask => {
-          // a = (1, 2, 0), b = (0, 3, 4)
-          // a x b = (2*4 - 0*3 | 0*0 - 1*4 | 1*3 - 2*0) = (8 | -4 | 3)
-          return task(
-            level,
-            "Berechne das Kreuzprodukt n = a × b für a = (1|2|0)<sup>T</sup> und b = (0|3|4)<sup>T</sup>. Wie lautet die 1. Komponente n1?",
-            "Bestimme den Normalenvektor der Ebene E aufgespannt durch a = (1|2|0)<sup>T</sup> und b = (0|3|4)<sup>T</sup>.",
-            [numberField("n1 =", 8, "", 0)],
-            "n1 = a2·b3 − a3·b2 = 2·4 − 0·3 = 8.",
-            "n1 = 8",
-          );
+        make: (rng: Rng, level: DifficultyLevel): ExerciseTask => {
+          const u = rng.pick([1, 2]);
+          const v = rng.pick([2, 3]);
+          const y = rng.pick([1, 3]);
+          const z = rng.pick([2, 4]);
+          // a = (u, v, 0), b = (0, y, z)
+          // a x b = (v*z - 0*y | 0*0 - u*z | u*y - v*0) = (v*z | -u*z | u*y)
+          const n1 = v * z;
+          if (level === 1) {
+            return {
+              prompt: `Berechne das Kreuzprodukt n = a × b für a = (${u}|${v}|0)<sup>T</sup> und b = (0|${y}|${z})<sup>T</sup>. Wie lautet die 1. Komponente n₁?`,
+              given: [`a = (${u}|${v}|0)ᵀ`, `b = (0|${y}|${z})ᵀ`],
+              fields: [numberField("n₁ =", n1, "", 0)],
+              formulaHint: `Kreuzprodukt: n₁ = a₂·b₃ − a₃·b₂.`,
+              feedbackHint: `n₁ = ${v}·${z} − 0·${y} = ${n1}.`,
+              steps: [
+                `n₁ = a₂b₃ − a₃b₂ = ${v} · ${z} − 0 · ${y} = ${n1}.`,
+                `<strong>n₁ = ${n1}</strong>`,
+              ],
+              meta: { u, v, y, z, n1 },
+            };
+          }
+          const n3 = u * y;
+          return {
+            prompt: `Zwei Richtungsvektoren einer PV-Aufständerung lauten v₁ = (${u}|${v}|0)<sup>T</sup> und v₂ = (0|${y}|${z})<sup>T</sup>. Bestimme die 3. Komponente n₃ des Normalenvektors n = v₁ × v₂.`,
+            given: [`v₁ = (${u}|${v}|0)ᵀ`, `v₂ = (0|${y}|${z})ᵀ`],
+            fields: [numberField("n₃ =", n3, "", 0)],
+            feedbackHint: `n₃ = a₁·b₂ − a₂·b₁ = ${u}·${y} − ${v}·0.`,
+            steps: [
+              `n₃ = ${u} · ${y} − ${v} · 0 = ${n3}.`,
+              `<strong>n₃ = ${n3}</strong>`,
+            ],
+            meta: { u, v, y, z, n3 },
+          };
         },
       },
       {
         id: "dreiecksflaeche-vektor",
         make: (rng: Rng, level: DifficultyLevel): ExerciseTask => {
-          const a = rng.pick([4, 6, 8]);
-          const b = rng.pick([3, 5]);
-          // a = (a, 0, 0), b = (0, b, 0) -> Area = 0.5 * a * b
+          const a = rng.pick([4, 6, 8, 10]);
+          const b = rng.pick([3, 5, 7]);
           const area = 0.5 * a * b;
-          return task(
-            level,
-            `Berechne den Flächeninhalt des Dreiecks aufgespannt von a = (${a}|0|0)<sup>T</sup> und b = (0|${b}|0)<sup>T</sup>.`,
-            `Eine dreieckige Glasfassade wird durch a = (${a}|0|0)<sup>T</sup> m und b = (0|${b}|0)<sup>T</sup> m beschrieben. Bestimme die Glasfläche in m².`,
-            [numberField("A =", area, "", 1)],
-            `A = 0,5 · |a × b| = 0,5 · (${a} · ${b}) = ${area}.`,
-            `A = ${fmt(area, 1)}`,
-            { a, b },
-          );
+          if (level === 1) {
+            return {
+              prompt: `Berechne den Flächeninhalt des Dreiecks aufgespannt von a = (${a}|0|0)<sup>T</sup> und b = (0|${b}|0)<sup>T</sup>.`,
+              given: [`a = (${a}|0|0)ᵀ`, `b = (0|${b}|0)ᵀ`],
+              fields: [numberField("A =", area, "", 1)],
+              formulaHint: `A = 0,5 · |a × b|.`,
+              feedbackHint: `Da die Vektoren orthogonal aufeinander stehen, ist |a × b| = ${a} · ${b}.`,
+              steps: [
+                `a × b = (0 | 0 | ${a * b})ᵀ &rArr; |a × b| = ${a * b}.`,
+                `A = 0,5 · ${a * b} = ${fmt(area, 1)}.`,
+                `<strong>A = ${fmt(area, 1)}</strong>`,
+              ],
+              meta: { a, b, area },
+            };
+          }
+          return {
+            prompt: `Ein dreieckiges Sonnensegel wird zwischen den Befestigungspunkten aufgespannt durch u = (${a}|0|0)<sup>T</sup> m und v = (0|${b}|0)<sup>T</sup> m. Bestimme den Materialbedarf (Flächeninhalt A) in m².`,
+            given: [`Kantenvektoren u = (${a}|0|0)ᵀ m und v = (0|${b}|0)ᵀ m`],
+            fields: [numberField("A =", area, "m²", 1)],
+            feedbackHint: "Fläche eines Dreiecks im Raum: A = 1/2 · |u × v|.",
+            steps: [
+              `A = 0,5 · |u × v| = 0,5 · (${a} · ${b}) = ${fmt(area, 1)} m².`,
+              `<strong>A = ${fmt(area, 1)} m²</strong>`,
+            ],
+            meta: { a, b, area },
+          };
         },
       },
     ],
@@ -545,36 +708,71 @@ export const STAGE_5_LESSONS: Lesson[] = [
       {
         id: "pyramidenvolumen-sachkontext",
         make: (rng: Rng, level: DifficultyLevel): ExerciseTask => {
-          const a = rng.pick([6, 9, 12]);
-          const h = rng.pick([4, 6, 8]);
-          // V = (1/3) * a^2 * h
+          const a = rng.pick([6, 9, 12, 15]);
+          const h = rng.pick([4, 6, 8, 10]);
           const vol = (1 / 3) * a * a * h;
-          return task(
-            level,
-            `Berechne das Volumen einer Pyramide mit quadratischer Grundfläche (Kantenlänge a = ${a}) und Höhe h = ${h}.`,
-            `Ein Pavillondach hat die Form einer regelmäßigen Pyramide mit quadratischer Basis a = ${a} m und Dachhöhe h = ${h} m. Wie groß ist der umbaute Raum V in m³?`,
-            [numberField("V =", vol, "m³", 0)],
-            `V = (1/3) · a² · h = (1/3) · ${a * a} · ${h} = ${vol}.`,
-            `V = ${vol} m³`,
-            { a, h },
-          );
+          if (level === 1) {
+            return {
+              prompt: `Berechne das Volumen V einer Pyramide mit quadratischer Grundfläche (Kantenlänge a = ${a}) und Höhe h = ${h}.`,
+              given: [`Quadratische Grundkante a = ${a}`, `Körperhöhe h = ${h}`],
+              fields: [numberField("V =", vol, "", 0)],
+              formulaHint: `Pyramidenvolumen: V = 1/3 · a² · h.`,
+              feedbackHint: `Grundfläche G = ${a}² = ${a * a}. V = 1/3 · ${a * a} · ${h}.`,
+              steps: [
+                `V = (1/3) · ${a}² · ${h} = (1/3) · ${a * a} · ${h} = ${vol}.`,
+                `<strong>V = ${vol}</strong>`,
+              ],
+              meta: { a, h, vol },
+            };
+          }
+          return {
+            prompt: `Ein Pavillondach hat die Form einer regelmäßigen Pyramide mit quadratischer Basis (Kantenlänge a = ${a} m) und Dachhöhe h = ${h} m. Wie groß ist der umbaute Raum (Volumen V) in m³?`,
+            given: [`Basis a = ${a} m`, `Dachhöhe h = ${h} m`],
+            fields: [numberField("V =", vol, "m³", 0)],
+            feedbackHint: "V = 1/3 · G · h mit G = a².",
+            steps: [
+              `V = (1/3) · ${a}² · ${h} = ${vol} m³.`,
+              `<strong>V = ${vol} m³</strong>`,
+            ],
+            meta: { a, h, vol },
+          };
         },
       },
       {
         id: "neigungswinkel-dach",
-        make: (_rng: Rng, level: DifficultyLevel): ExerciseTask => {
-          // Normalenvektor n = (0, 3, 4) -> cos(alpha) = 4 / sqrt(9+16) = 4/5 = 0.8 -> alpha approx 36.87°
-          const nZ = 4;
-          const lenN = 5;
-          const deg = (Math.acos(nZ / lenN) * 180) / Math.PI;
-          return task(
-            level,
-            "Eine Dachfläche hat den Normalenvektor n = (0 | 3 | 4)<sup>T</sup>. Berechne den Neigungswinkel α gegenüber der Horizontale (in Grad, auf eine Dezimale gerundet).",
-            "Zur Installation einer Photovoltaikanlage wird der Neigungswinkel der Dachfläche mit Normalenvektor n = (0 | 3 | 4)<sup>T</sup> benötigt. Bestimme α in Grad.",
-            [numberField("α =", deg, "°", 1)],
-            "cos(α) = |n · (0|0|1)| / |n| = 4 / 5 = 0,8 &rArr; α = arccos(0,8) &approx; 36,9°.",
-            `α &approx; ${fmt(deg, 1)}°`,
-          );
+        make: (rng: Rng, level: DifficultyLevel): ExerciseTask => {
+          const roof = rng.pick([
+            { y: 3, z: 4, len: 5, deg: (Math.acos(4 / 5) * 180) / Math.PI },
+            { y: 4, z: 3, len: 5, deg: (Math.acos(3 / 5) * 180) / Math.PI },
+            { y: 5, z: 12, len: 13, deg: (Math.acos(12 / 13) * 180) / Math.PI },
+            { y: 12, z: 5, len: 13, deg: (Math.acos(5 / 13) * 180) / Math.PI },
+          ]);
+          if (level === 1) {
+            return {
+              prompt: `Eine Dachfläche hat den Normalenvektor n = (0 | ${roof.y} | ${roof.z})<sup>T</sup>. Berechne den Neigungswinkel α gegenüber der horizontalen Ebene (in Grad, auf eine Dezimale gerundet).`,
+              given: [`Normalenvektor n = (0 | ${roof.y} | ${roof.z})ᵀ`, `Horizontalvektor n₀ = (0|0|1)ᵀ`],
+              fields: [numberField("α =", roof.deg, "°", 1)],
+              formulaHint: `cos(α) = |n · (0|0|1)| / |n| = ${roof.z} / ${roof.len}.`,
+              feedbackHint: `cos(α) = ${roof.z} / ${roof.len}. Bilde arccos(${fmt(roof.z / roof.len, 3)}).`,
+              steps: [
+                `|n| = &radic;(0² + ${roof.y}² + ${roof.z}²) = ${roof.len}.`,
+                `cos(α) = ${roof.z} / ${roof.len} = ${fmt(roof.z / roof.len, 3)} &rArr; α = arccos(${fmt(roof.z / roof.len, 3)}) &approx; ${fmt(roof.deg, 1)}°.`,
+                `<strong>α = ${fmt(roof.deg, 1)}°</strong>`,
+              ],
+              meta: { y: roof.y, z: roof.z, len: roof.len, deg: roof.deg },
+            };
+          }
+          return {
+            prompt: `Für die Montage von Photovoltaikmodulen muss die Dachneigung α ermittelt werden. Die Dachfläche wird durch den Normalenvektor n = (0 | ${roof.y} | ${roof.z})<sup>T</sup> beschrieben. Bestimme den Neigungswinkel α in Grad (auf eine Dezimalstelle gerundet).`,
+            given: [`Normalenvektor n = (0 | ${roof.y} | ${roof.z})ᵀ`],
+            fields: [numberField("α =", roof.deg, "°", 1)],
+            feedbackHint: "Der Neigungswinkel gegenüber der Horizontale entspricht dem Winkel des Normalenvektors zur z-Achse.",
+            steps: [
+              `cos(α) = |n · (0|0|1)| / |n| = ${roof.z} / ${roof.len} &rArr; α &approx; ${fmt(roof.deg, 1)}°.`,
+              `<strong>α = ${fmt(roof.deg, 1)}°</strong>`,
+            ],
+            meta: { y: roof.y, z: roof.z, len: roof.len, deg: roof.deg },
+          };
         },
       },
     ],

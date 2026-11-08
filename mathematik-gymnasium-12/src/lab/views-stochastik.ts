@@ -10,8 +10,9 @@ import { binom, bernoulliProb, binomCdf } from "../math/stochastics";
 export function kolmogorovAxiomsView(v: LabValues, _r: ReadoutValues): string {
   const pA = (v.pA ?? 50) / 100;
   const pB = (v.pB ?? 40) / 100;
-  const pSchnitt = (v.pSchnitt ?? 20) / 100;
-  const pVereinigung = pA + pB - pSchnitt;
+  const maxSchnitt = Math.min(pA, pB);
+  const pSchnitt = Math.min((v.pSchnitt ?? 20) / 100, maxSchnitt);
+  const pVereinigung = Math.min(1, Math.max(0, pA + pB - pSchnitt));
 
   let s = open("Kolmogorow-Axiome und Mengendiagramm");
   // Rahmen Grundmenge Omega
@@ -33,8 +34,10 @@ export function kolmogorovAxiomsView(v: LabValues, _r: ReadoutValues): string {
 
 // 10. Zufallsgröße & Wahrscheinlichkeitsverteilung
 export function randomVariableView(v: LabValues, _r: ReadoutValues): string {
-  const p1 = (v.p1 ?? 30) / 100;
-  const p2 = (v.p2 ?? 50) / 100;
+  const rawP1 = (v.p1 ?? 30) / 100;
+  const rawP2 = (v.p2 ?? 50) / 100;
+  const p1 = Math.min(rawP1, 0.9);
+  const p2 = Math.min(rawP2, Math.max(0, 1 - p1));
   const p3 = Math.max(0, 1 - p1 - p2);
   const probs = [p1, p2, p3];
   const vals = [1, 2, 3];
@@ -84,10 +87,10 @@ export function urnModelsView(v: LabValues, _r: ReadoutValues): string {
   }
   s += text(280, 110, `Gesamtzahl Kugeln: n = ${n}`, "lab-axis-label");
   s += text(280, 140, `Gezogene Kugeln: k = ${k}`, "lab-axis-label");
-  s += text(280, 170, withRep ? "Mit Zurücklegen (n^k)" : "Ohne Zurücklegen ((n über k))", "lab-axis-label");
-  s += text(280, 210, `Möglichkeiten: ${ways}`, "lab-title");
+  s += text(280, 170, withRep ? "Mit Zurücklegen (geordnet: n^k)" : "Ohne Zurücklegen (ungeordnet: (n über k))", "lab-axis-label");
+  s += text(280, 210, `Ergebnis: ${ways}`, "lab-title");
   s += text(20, 30, "Urnenmodell: Ziehen mit / ohne Zurücklegen", "lab-title");
-  s += text(20, 52, withRep ? `${n}^${k} = ${ways} Möglichkeiten` : `(${n} über ${k}) = ${ways} Kombinationen`, "lab-legend");
+  s += text(20, 52, withRep ? `Geordnet mit Zurücklegen: ${n}^${k} = ${ways}` : `Ungeordnete Teilmengen: (${n} über ${k}) = ${ways}`, "lab-legend");
   s += "</svg>";
   return s;
 }

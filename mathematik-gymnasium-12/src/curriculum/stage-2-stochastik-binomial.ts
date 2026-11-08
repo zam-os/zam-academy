@@ -4,7 +4,7 @@
  */
 
 import type { DifficultyLevel, ExerciseTask, Lesson } from "../model/types";
-import { lab, makeLesson, output, range, task } from "./builders";
+import { lab, makeLesson, output, range } from "./builders";
 import { numberField } from "./helpers";
 import type { Rng } from "../exercises/rng";
 import { fmt } from "../exercises/format";
@@ -27,7 +27,7 @@ export const STAGE_2_LESSONS: Lesson[] = [
           <li><strong>Normiertheit:</strong> Für das sichere Ereignis <i>&Omega;</i> gilt: <i>P(&Omega;) = 1</i>.</li>
           <li><strong>Additivität:</strong> Sind <i>A</i> und <i>B</i> unvereinbar (disjunkt, <i>A &cap; B = &empty;</i>), so gilt: <i>P(A &cup; B) = P(A) + P(B)</i>.</li>
         </ol>
-        Daraus folgt der allgemeine <strong>Additionssatz</strong>: <i>P(A &cup; B) = P(A) + P(B) − P(A &cap; B)</i> sowie für das Gegenereignis: <i>P(A) = 1 − P(A)</i>.
+        Daraus folgt der allgemeine <strong>Additionssatz</strong>: <i>P(A &cup; B) = P(A) + P(B) − P(A &cap; B)</i> sowie für das Gegenereignis: <i>P(Ā) = 1 − P(A)</i>.
       </div>
       <div class="example">
         <strong>Vergleich der Wahrscheinlichkeitsbegriffe:</strong>
@@ -46,8 +46,8 @@ export const STAGE_2_LESSONS: Lesson[] = [
       },
       {
         name: "Gegenereignis",
-        html: "P(A) = 1 − P(A)",
-        quantities: "A Komplementärereignis",
+        html: "P(Ā) = 1 − P(A)",
+        quantities: "Ā Gegenereignis zu A",
       },
     ],
     quiz: {
@@ -71,13 +71,17 @@ export const STAGE_2_LESSONS: Lesson[] = [
         range("pSchnitt", "P(A ∩ B) in %", 0, 40, 20, 5),
       ],
       [
-        output("vereinigung", "P(A ∪ B)", (v) => (v.pA + v.pB - v.pSchnitt) / 100, "", 2),
+        output("vereinigung", "P(A ∪ B)", (v) => {
+          const maxSchnitt = Math.min(v.pA, v.pB);
+          const actSchnitt = Math.min(v.pSchnitt, maxSchnitt);
+          return Math.min(1, Math.max(0, (v.pA + v.pB - actSchnitt) / 100));
+        }, "", 2),
       ],
       [
         {
           id: "disjunkt",
-          text: "Mache A und B disjunkt (P(A ∩ B) = 0 %).",
-          check: (v) => v.pSchnitt === 0,
+          text: "Mache A und B disjunkt (P(A ∩ B) = 0 % bei P(A) + P(B) ≤ 100 %).",
+          check: (v) => v.pSchnitt === 0 && (v.pA + v.pB) <= 100,
         },
         {
           id: "vollstaendig",
@@ -95,37 +99,67 @@ export const STAGE_2_LESSONS: Lesson[] = [
       {
         id: "additionssatz-rechnen",
         make: (rng: Rng, level: DifficultyLevel): ExerciseTask => {
-          const pA = rng.pick([0.4, 0.5, 0.6]);
-          const pB = rng.pick([0.3, 0.4]);
-          const pSchnitt = rng.pick([0.1, 0.2]);
+          const pA = rng.pick([0.35, 0.4, 0.45, 0.5, 0.55, 0.6]);
+          const pB = rng.pick([0.25, 0.3, 0.35, 0.4]);
+          const pSchnitt = rng.pick([0.1, 0.15, 0.2]);
           const pUnion = pA + pB - pSchnitt;
-          return task(
-            level,
-            `Gegeben sind P(A) = ${fmt(pA, 2)}, P(B) = ${fmt(pB, 2)} und P(A &cap; B) = ${fmt(pSchnitt, 2)}. Berechne P(A &cup; B).`,
-            `Zwei Alarmsysteme arbeiten unabhängig voneinander: System A schlägt mit Wahrscheinlichkeit ${fmt(pA, 2)} an, System B mit ${fmt(pB, 2)}, beide gemeinsam mit ${fmt(pSchnitt, 2)}. Wie groß ist die Wahrscheinlichkeit, dass mindestens ein System anschlägt?`,
-            [numberField("P(A ∪ B) =", pUnion, "", 2)],
-            "Nutze den Additionssatz: P(A ∪ B) = P(A) + P(B) − P(A ∩ B).",
-            `P(A &cup; B) = ${fmt(pA, 2)} + ${fmt(pB, 2)} − ${fmt(pSchnitt, 2)} = ${fmt(pUnion, 2)}.`,
-            `P(A ∪ B) = ${fmt(pUnion, 2)}`,
-            { pA, pB, pSchnitt },
-          );
+          if (level === 1) {
+            return {
+              prompt: `Gegeben sind P(A) = ${fmt(pA, 2)}, P(B) = ${fmt(pB, 2)} und P(A &cap; B) = ${fmt(pSchnitt, 2)}. Berechne P(A &cup; B).`,
+              given: [`P(A) = ${fmt(pA, 2)}`, `P(B) = ${fmt(pB, 2)}`, `P(A ∩ B) = ${fmt(pSchnitt, 2)}`],
+              fields: [numberField("P(A ∪ B) =", pUnion, "", 2)],
+              formulaHint: "Nutze den allgemeinen Additionssatz: P(A ∪ B) = P(A) + P(B) − P(A ∩ B).",
+              feedbackHint: "Addiere P(A) und P(B) und ziehe die Schnittwahrscheinlichkeit ab.",
+              steps: [
+                `P(A &cup; B) = ${fmt(pA, 2)} + ${fmt(pB, 2)} − ${fmt(pSchnitt, 2)} = ${fmt(pUnion, 2)}.`,
+                `<strong>P(A ∪ B) = ${fmt(pUnion, 2)}</strong>`,
+              ],
+              meta: { pA, pB, pSchnitt },
+            };
+          }
+          return {
+            prompt: `Zwei Alarmsysteme sichern ein Firmengebäude: System A schlägt mit Wahrscheinlichkeit ${fmt(pA, 2)} an, System B mit ${fmt(pB, 2)}, beide gemeinsam mit ${fmt(pSchnitt, 2)}. Wie groß ist die Wahrscheinlichkeit, dass mindestens ein System anschlägt?`,
+            given: [`P(A) = ${fmt(pA, 2)}`, `P(B) = ${fmt(pB, 2)}`, `P(A ∩ B) = ${fmt(pSchnitt, 2)}`],
+            fields: [numberField("P(mindestens eins) =", pUnion, "", 2)],
+            feedbackHint: "Das Ereignis 'mindestens ein System schlägt an' entspricht der Vereinigungsmenge A ∪ B.",
+            steps: [
+              `P(A &cup; B) = ${fmt(pA, 2)} + ${fmt(pB, 2)} − ${fmt(pSchnitt, 2)} = ${fmt(pUnion, 2)}.`,
+              `<strong>P(mindestens ein Alarm) = ${fmt(pUnion, 2)}</strong>`,
+            ],
+            meta: { pA, pB, pSchnitt },
+          };
         },
       },
       {
         id: "gegenereignis-rechnen",
         make: (rng: Rng, level: DifficultyLevel): ExerciseTask => {
-          const p = rng.pick([0.05, 0.12, 0.25, 0.35]);
+          const p = rng.pick([0.05, 0.08, 0.12, 0.15, 0.2, 0.25, 0.35, 0.4]);
           const pGegen = 1 - p;
-          return task(
-            level,
-            `Die Wahrscheinlichkeit für das Eintreten eines Ereignisses E beträgt ${fmt(p, 2)}. Bestimme P(E).`,
-            `Die Ausfallwahrscheinlichkeit einer Komponente im ersten Betriebsjahr liegt bei ${fmt(p, 2)}. Wie groß ist die Wahrscheinlichkeit, dass sie das Jahr übersteht?`,
-            [numberField("P(E) =", pGegen, "", 2)],
-            "Gegenereignis: P(nicht E) = 1 − P(E).",
-            `P(E) = 1 − ${fmt(p, 2)} = ${fmt(pGegen, 2)}.`,
-            `P(E) = ${fmt(pGegen, 2)}`,
-            { p },
-          );
+          if (level === 1) {
+            return {
+              prompt: `Die Wahrscheinlichkeit für das Eintreten eines Ereignisses E beträgt P(E) = ${fmt(p, 2)}. Bestimme die Wahrscheinlichkeit des Gegenereignisses P(Ē).`,
+              given: [`P(E) = ${fmt(p, 2)}`],
+              fields: [numberField("P(Ē) =", pGegen, "", 2)],
+              formulaHint: "Nutze die Gegenereignis-Regel: P(Ē) = 1 − P(E).",
+              feedbackHint: "Subtrahiere die gegebene Wahrscheinlichkeit von 1.",
+              steps: [
+                `P(Ē) = 1 − ${fmt(p, 2)} = ${fmt(pGegen, 2)}.`,
+                `<strong>P(Ē) = ${fmt(pGegen, 2)}</strong>`,
+              ],
+              meta: { p, pGegen },
+            };
+          }
+          return {
+            prompt: `Die Ausfallwahrscheinlichkeit einer Komponente im ersten Betriebsjahr liegt bei ${fmt(p, 2)}. Wie groß ist die Wahrscheinlichkeit, dass sie das Jahr ohne Ausfall übersteht?`,
+            given: [`P(Ausfall) = ${fmt(p, 2)}`],
+            fields: [numberField("P(kein Ausfall) =", pGegen, "", 2)],
+            feedbackHint: "Das fehlerfreie Überstehen ist das Gegenereignis zum Ausfall: P(kein Ausfall) = 1 − P(Ausfall).",
+            steps: [
+              `P(kein Ausfall) = 1 − ${fmt(p, 2)} = ${fmt(pGegen, 2)}.`,
+              `<strong>P(Überstehen) = ${fmt(pGegen, 2)}</strong>`,
+            ],
+            meta: { p, pGegen },
+          };
         },
       },
     ],
@@ -192,7 +226,7 @@ export const STAGE_2_LESSONS: Lesson[] = [
       [
         {
           id: "gleichverteilt",
-          text: "Wähle P(X=1) = 33 % und P(X=2) = 33 % für annähernde Gleichverteilung.",
+          text: "Wähle P(X=1) = 35 % und P(X=2) = 35 % (annähernde Gleichverteilung).",
           check: (v) => v.p1 === 35 && v.p2 === 35,
         },
         {
@@ -211,39 +245,74 @@ export const STAGE_2_LESSONS: Lesson[] = [
       {
         id: "erwartungswert-berechnen",
         make: (rng: Rng, level: DifficultyLevel): ExerciseTask => {
-          const g1 = rng.pick([5, 10, 20]);
-          const p1 = 0.1;
-          const einsatz = 2;
-          const eAuszahlung = g1 * p1;
-          const eReingewinn = eAuszahlung - einsatz;
-          return task(
-            level,
-            `Ein Los kostet ${einsatz} €. Mit 10 % Wahrscheinlichkeit gewinnt man ${g1} €, sonst 0 €. Berechne den erwarteten Reingewinn E(X).`,
-            `Eine Versicherung bietet einen Schutzvertrag für ${einsatz} k€ Jahresprämie an. Mit Wahrscheinlichkeit 10 % entsteht ein Schadenfall von ${g1} k€. Berechne den erwarteten Deckungsbeitrag der Versicherung pro Vertrag.`,
-            [numberField("E(X) =", eReingewinn, "€", 2)],
-            "E(Reingewinn) = Gewinn · P(Gewinn) − Einsatz.",
-            `E(X) = ${g1} · 0,10 − ${einsatz} = ${eAuszahlung} − ${einsatz} = ${fmt(eReingewinn, 2)} €.`,
-            `E(X) = ${fmt(eReingewinn, 2)} €`,
-            { g1, einsatz },
-          );
+          if (level === 1) {
+            const g1 = rng.pick([5, 10, 15, 20, 25]);
+            const einsatz = rng.pick([2, 3]);
+            const p1 = 0.1;
+            const eAuszahlung = g1 * p1;
+            const eReingewinn = eAuszahlung - einsatz;
+            return {
+              prompt: `Ein Los kostet ${einsatz} €. Mit 10 % Wahrscheinlichkeit gewinnt man ${g1} €, sonst 0 €. Berechne den erwarteten Reingewinn E(X).`,
+              given: [`Einsatz = ${einsatz} €`, `Gewinn = ${g1} € bei p = 0,10`],
+              fields: [numberField("E(X) =", eReingewinn, "€", 2)],
+              formulaHint: "Erwarteter Reingewinn: E(X) = Auszahlung · P(Gewinn) − Einsatz.",
+              feedbackHint: "Ziehe vom Erwartungswert der Auszahlung den Einsatz ab.",
+              steps: [
+                `E(X) = ${g1} · 0,10 − ${einsatz} = ${fmt(eAuszahlung, 2)} − ${einsatz} = ${fmt(eReingewinn, 2)} €.`,
+                `<strong>E(X) = ${fmt(eReingewinn, 2)} €</strong>`,
+              ],
+              meta: { g1, einsatz, eReingewinn },
+            };
+          }
+          const praemie = rng.pick([2, 3, 4]);
+          const schaden = rng.pick([5, 8, 10, 12, 15]);
+          const pSchaden = 0.1;
+          const deckungsbeitrag = praemie - pSchaden * schaden;
+          return {
+            prompt: `Eine Versicherung verlangt für eine Police ${praemie} k€ Jahresprämie (Einnahme). Ein Schadensfall von ${schaden} k€ tritt mit Wahrscheinlichkeit 10 % ein (Ausgabe). Berechne den erwarteten Deckungsbeitrag der Versicherung pro Vertrag in k€.`,
+            given: [`Prämie = ${praemie} k€`, `Schaden = ${schaden} k€ bei p = 0,10`],
+            fields: [numberField("Deckungsbeitrag =", deckungsbeitrag, "k€", 2)],
+            feedbackHint: "Aus Sicht der Versicherung: Deckungsbeitrag = Prämie − P(Schaden) · Schadenshöhe.",
+            steps: [
+              `Erwarteter Deckungsbeitrag = ${praemie} − 0,10 · ${schaden} = ${praemie} − ${fmt(pSchaden * schaden, 2)} = ${fmt(deckungsbeitrag, 2)} k€.`,
+              `<strong>Deckungsbeitrag = ${fmt(deckungsbeitrag, 2)} k€</strong>`,
+            ],
+            meta: { praemie, schaden, deckungsbeitrag },
+          };
         },
       },
       {
         id: "varianz-berechnen",
         make: (rng: Rng, level: DifficultyLevel): ExerciseTask => {
-          // X nimmt Werte 0 und 10 an mit je 0.5 -> mu = 5, Var = 0.5*(0-5)^2 + 0.5*(10-5)^2 = 25
-          const w = rng.pick([4, 6, 8, 10]);
-          const variance = (w * w) / 4;
-          return task(
-            level,
-            `Die Zufallsgröße X nimmt die Werte 0 und ${w} jeweils mit Wahrscheinlichkeit 0,5 an. Berechne die Varianz Var(X).`,
-            `Die Rendite einer Aktie schwankt zwischen 0 % und ${w} % mit gleicher Wahrscheinlichkeit. Berechne das Risikomaß Var(X).`,
-            [numberField("Var(X) =", variance, "", 2)],
-            `Erwartungswert ist ${w}/2 = ${w / 2}. Varianz = 0,5·(0 − μ)² + 0,5·(${w} − μ)².`,
-            `μ = ${w / 2} &rArr; Var(X) = 0,5 · (${w / 2})² + 0,5 · (${w / 2})² = ${variance}.`,
-            `Var(X) = ${fmt(variance, 2)}`,
-            { w },
-          );
+          if (level === 1) {
+            const w = rng.pick([4, 6, 8, 10, 12]);
+            const variance = (w * w) / 4;
+            return {
+              prompt: `Die Zufallsgröße X nimmt die Werte 0 und ${w} jeweils mit Wahrscheinlichkeit 0,5 an. Berechne die Varianz Var(X).`,
+              given: [`P(X=0) = 0,5`, `P(X=${w}) = 0,5`],
+              fields: [numberField("Var(X) =", variance, "", 2)],
+              formulaHint: "Bestimme zuerst den Erwartungswert μ = E(X) und berechne dann Var(X) = ∑ (x_i − μ)² · P(X = x_i).",
+              feedbackHint: "Wegen Symmetrie ist μ = w/2. Var(X) = 0,5 · (0 − μ)² + 0,5 · (w − μ)².",
+              steps: [
+                `μ = 0,5 · 0 + 0,5 · ${w} = ${w / 2}. Var(X) = 0,5 · (−${w / 2})² + 0,5 · (${w / 2})² = ${variance}.`,
+                `<strong>Var(X) = ${fmt(variance, 2)}</strong>`,
+              ],
+              meta: { w, variance },
+            };
+          }
+          const d = rng.pick([2, 4, 6, 8]);
+          const variance = 0.5 * d * d;
+          return {
+            prompt: `Eine symmetrische Zufallsvariable Y nimmt die drei Werte −${d}, 0 und +${d} mit den Wahrscheinlichkeiten 0,25, 0,50 und 0,25 an. Berechne die Varianz Var(Y).`,
+            given: [`Werte: −${d} (25 %), 0 (50 %), +${d} (25 %)`],
+            fields: [numberField("Var(Y) =", variance, "", 2)],
+            feedbackHint: "Da die Verteilung symmetrisch um 0 liegt, ist E(Y) = 0. Dann ist Var(Y) = E(Y²).",
+            steps: [
+              `E(Y) = 0 &rArr; Var(Y) = 0,25 · (−${d})² + 0,50 · 0² + 0,25 · ${d}² = 0,5 · ${d * d} = ${variance}.`,
+              `<strong>Var(Y) = ${fmt(variance, 2)}</strong>`,
+            ],
+            meta: { d, variance },
+          };
         },
       },
     ],
@@ -324,35 +393,69 @@ export const STAGE_2_LESSONS: Lesson[] = [
       {
         id: "lotto-kombinationen",
         make: (rng: Rng, level: DifficultyLevel): ExerciseTask => {
-          const n = rng.pick([6, 7, 8]);
-          const k = rng.pick([2, 3]);
-          const res = binom(n, k);
-          return task(
-            level,
-            `Berechne den Binomialkoeffizienten (${n} über ${k}).`,
-            `In einer Seminargruppe von ${n} Personen sollen ${k} Delegierte ausgewählt werden. Wie viele verschiedene Delegationen sind möglich?`,
-            [numberField("Möglichkeiten =", res, "", 0)],
-            `Berechne (${n} über ${k}) = ${n}! / (${k}! · (${n - k})!).`,
-            `(${n} über ${k}) = ${res}.`,
-            `Ergebnis = ${res}`,
-            { n, k },
-          );
+          if (level === 1) {
+            const n = rng.pick([6, 7, 8, 9, 10]);
+            const k = rng.pick([2, 3]);
+            const res = binom(n, k);
+            return {
+              prompt: `Berechne den Binomialkoeffizienten (${n} über ${k}).`,
+              given: [`n = ${n}`, `k = ${k}`],
+              fields: [numberField("Ergebnis =", res, "", 0)],
+              formulaHint: `Berechne (${n} über ${k}) = ${n}! / (${k}! · (${n} − ${k})!).`,
+              feedbackHint: `Kürze ${n}! gegen (${n - k})!: (${n} über ${k}) = (${Array.from({ length: k }, (_, i) => n - i).join(" · ")}) / (${Array.from({ length: k }, (_, i) => k - i).join(" · ")}).`,
+              steps: [
+                `(${n} über ${k}) = ${n}! / (${k}! · ${n - k}!) = ${res}.`,
+                `<strong>(${n} über ${k}) = ${res}</strong>`,
+              ],
+              meta: { n, k, res },
+            };
+          }
+          const n = rng.pick([8, 10, 12, 15]);
+          const res = binom(n, 2);
+          return {
+            prompt: `In einer Seminargruppe von n = ${n} Abiturienten begrüßt jeder jeden genau einmal mit einem Händedruck. Wie viele Händedrücke werden insgesamt ausgetauscht?`,
+            given: [`n = ${n} Personen`, `Jedes Paar (k = 2) schüttelt sich einmal die Hand`],
+            fields: [numberField("Händedrücke =", res, "", 0)],
+            feedbackHint: "Jeder Händedruck entspricht der Auswahl einer 2-elementigen Teilmenge aus n Personen: (n über 2) = n · (n − 1) / 2.",
+            steps: [
+              `Anzahl Händedrücke = (${n} über 2) = (${n} · ${n - 1}) / 2 = ${n * (n - 1)} / 2 = ${res}.`,
+              `<strong>Insgesamt ${res} Händedrücke</strong>`,
+            ],
+            meta: { n, res },
+          };
         },
       },
       {
         id: "urne-ohne-zuruecklegen",
-        make: (_rng: Rng, level: DifficultyLevel): ExerciseTask => {
-          // Urne mit 5 roten und 5 schwarzen = 10 gesamt. Ziehe 2. P(beide rot) = (5/10)*(4/9) = 20/90 = 2/9
-          const res = 20 / 90;
-          return task(
-            level,
-            `In einer Urne liegen 5 rote und 5 weiße Kugeln. Es werden 2 Kugeln ohne Zurücklegen gezogen. Berechne P(beide rot) auf zwei Dezimalen gerundet.`,
-            `Aus einer Sendung von 10 Bauteilen, von denen 5 defekt sind, werden 2 als Stichprobe gezogen. Wie groß ist die Wahrscheinlichkeit, dass beide defekt sind?`,
-            [numberField("P =", res, "", 2)],
-            "Pfadregel: (5/10) · (4/9) = 20/90.",
-            `P = (5/10) · (4/9) = 20/90 &approx; ${fmt(res, 2)}.`,
-            `P = ${fmt(res, 2)}`,
-          );
+        make: (rng: Rng, level: DifficultyLevel): ExerciseTask => {
+          const total = rng.pick([10, 12, 15]);
+          const rot = rng.pick([4, 5, 6]);
+          const res = (rot / total) * ((rot - 1) / (total - 1));
+          if (level === 1) {
+            return {
+              prompt: `In einer Urne liegen ${rot} rote und ${total - rot} weiße Kugeln (${total} Kugeln gesamt). Es werden 2 Kugeln ohne Zurücklegen gezogen. Berechne P(beide rot) gerundet auf drei Dezimalen.`,
+              given: [`${rot} rote von ${total} Kugeln`, `2 Züge ohne Zurücklegen`],
+              fields: [numberField("P =", res, "", 3)],
+              formulaHint: `1. Pfadregel: P(rot, rot) = (${rot}/${total}) · (${rot - 1}/${total - 1}).`,
+              feedbackHint: `Nach dem ersten roten Zug bleiben nur noch ${rot - 1} rote Kugeln unter den ${total - 1} verbleibenden Kugeln.`,
+              steps: [
+                `P(beide rot) = (${rot}/${total}) · (${rot - 1}/${total - 1}) = ${rot * (rot - 1)} / ${total * (total - 1)} &approx; ${fmt(res, 3)}.`,
+                `<strong>P = ${fmt(res, 3)}</strong>`,
+              ],
+              meta: { total, rot, res },
+            };
+          }
+          return {
+            prompt: `Ein Prüfer entnimmt einer Lieferung von ${total} Sensoren, von denen erfahrungsgemäß genau ${rot} defekt sind, eine Stichprobe von 2 Stück ohne Zurücklegen. Mit welcher Wahrscheinlichkeit sind beide geprüften Sensoren defekt (auf 3 Dezimalen)?`,
+            given: [`Gesamtmenge N = ${total}`, `Defekte M = ${rot}`, `Stichprobe n = 2`],
+            fields: [numberField("P(beide defekt) =", res, "", 3)],
+            feedbackHint: "Hypergeometrische Verteilung bzw. Pfadregel ohne Zurücklegen: P = (M/N) · ((M−1)/(N−1)).",
+            steps: [
+              `P = (${rot}/${total}) · (${rot - 1}/${total - 1}) = ${rot * (rot - 1)} / ${total * (total - 1)} &approx; ${fmt(res, 3)}.`,
+              `<strong>P = ${fmt(res, 3)}</strong>`,
+            ],
+            meta: { total, rot, res },
+          };
         },
       },
     ],
@@ -440,37 +543,78 @@ export const STAGE_2_LESSONS: Lesson[] = [
     exercises: [
       {
         id: "bernoulli-einzel",
-        make: (_rng: Rng, level: DifficultyLevel): ExerciseTask => {
-          const n = 4;
-          const k = 2;
-          const p = 0.5;
-          const prob = bernoulliProb(n, p, k); // (4 über 2)*0.5^4 = 6/16 = 0.375
-          return task(
-            level,
-            `Eine ideale Münze wird ${n} Mal geworfen. Berechne die Wahrscheinlichkeit für genau ${k} Treffer Kopf (auf drei Dezimalen gerundet).`,
-            `Ein System besteht aus ${n} redundanten Servern mit Ausfallwahrscheinlichkeit 50 %. Wie groß ist die Wahrscheinlichkeit, dass genau ${k} Server ausfallen?`,
-            [numberField("P(X = 2) =", prob, "", 3)],
-            "Bernoulli-Formel: B(4; 0,5; 2) = (4 über 2) · 0,5² · 0,5².",
-            `B(4; 0,5; 2) = 6 · 0,25 · 0,25 = 6 / 16 = ${prob}.`,
-            `P = ${fmt(prob, 3)}`,
-          );
+        make: (rng: Rng, level: DifficultyLevel): ExerciseTask => {
+          if (level === 1) {
+            const n = rng.pick([4, 5, 6]);
+            const k = rng.pick([1, 2]);
+            const p = rng.pick([0.2, 0.4, 0.5]);
+            const prob = bernoulliProb(n, p, k);
+            return {
+              prompt: `Ein Bernoulli-Experiment mit Trefferwahrscheinlichkeit p = ${fmt(p, 1)} wird n = ${n} Mal wiederholt. Berechne die Wahrscheinlichkeit für genau k = ${k} Treffer gerundet auf drei Dezimalen.`,
+              given: [`n = ${n}`, `p = ${fmt(p, 1)}`, `k = ${k}`],
+              fields: [numberField(`P(X = ${k}) =`, prob, "", 3)],
+              formulaHint: `Bernoulli-Formel: P(X = ${k}) = (${n} über ${k}) · ${fmt(p, 1)}^${k} · ${fmt(1 - p, 1)}^${n - k}.`,
+              feedbackHint: `Berechne den Binomialkoeffizienten (${n} über ${k}) und multipliziere mit ${fmt(p, 1)}^${k} · ${fmt(1 - p, 1)}^${n - k}.`,
+              steps: [
+                `P(X = ${k}) = (${n} über ${k}) · (${fmt(p, 1)})^${k} · (${fmt(1 - p, 1)})^${n - k} = ${binom(n, k)} · ${fmt(Math.pow(p, k), 4)} · ${fmt(Math.pow(1 - p, n - k), 4)} &approx; ${fmt(prob, 3)}.`,
+                `<strong>P(X = ${k}) = ${fmt(prob, 3)}</strong>`,
+              ],
+              meta: { n, k, p, prob },
+            };
+          }
+          const n = rng.pick([4, 5, 6]);
+          const k = rng.pick([2, 3]);
+          const p = 0.25;
+          const prob = bernoulliProb(n, p, k);
+          return {
+            prompt: `Ein Prüfling rät bei einem Multiple-Choice-Test mit ${n} Fragen (jeweils 4 Antwortoptionen, genau eine ist richtig, also p = 0,25) völlig zufällig. Wie groß ist die Wahrscheinlichkeit für genau ${k} richtige Antworten (auf drei Dezimalen gerundet)?`,
+            given: [`n = ${n} Fragen`, `p = 0,25 (Raten bei 4 Optionen)`, `k = ${k} Treffer`],
+            fields: [numberField(`P(X = ${k}) =`, prob, "", 3)],
+            feedbackHint: `Modelliere als Bernoulli-Kette B(${n}; 0,25): P(X = ${k}) = (${n} über ${k}) · 0,25^${k} · 0,75^${n - k}.`,
+            steps: [
+              `P(X = ${k}) = (${n} über ${k}) · 0,25^${k} · 0,75^${n - k} = ${binom(n, k)} · ${fmt(Math.pow(0.25, k), 5)} · ${fmt(Math.pow(0.75, n - k), 5)} &approx; ${fmt(prob, 3)}.`,
+              `<strong>P(X = ${k}) = ${fmt(prob, 3)}</strong>`,
+            ],
+            meta: { n, k, p, prob },
+          };
         },
       },
       {
         id: "bernoulli-gegenereignis",
-        make: (_rng: Rng, level: DifficultyLevel): ExerciseTask => {
-          // n=3, p=0.2. P(mindestens 1) = 1 - (1-p)^3 = 1 - 0.8^3 = 1 - 0.512 = 0.488
-          const p = 0.2;
-          const res = 1 - Math.pow(1 - p, 3);
-          return task(
-            level,
-            `Die Trefferwahrscheinlichkeit beträgt p = 0,2. Berechne bei n = 3 Versuchen P(mindestens 1 Treffer) (auf drei Dezimalen).`,
-            `Ein Radarsystem hat eine Entdeckungswahrscheinlichkeit von 20 % pro Scan. Mit welcher Wahrscheinlichkeit wird ein Objekt in mindestens einem von 3 Scans erfasst?`,
-            [numberField("P(X ≥ 1) =", res, "", 3)],
-            "Gegenereignis zu 'mindestens 1' ist 'genau 0 Treffer': P(X ≥ 1) = 1 − P(X = 0) = 1 − 0,8³.",
-            `P(X &ge; 1) = 1 − (0,8)³ = 1 − 0,512 = ${res}.`,
-            `P = ${fmt(res, 3)}`,
-          );
+        make: (rng: Rng, level: DifficultyLevel): ExerciseTask => {
+          if (level === 1) {
+            const n = rng.pick([3, 4, 5]);
+            const p = rng.pick([0.1, 0.2, 0.3]);
+            const q = 1 - p;
+            const res = 1 - Math.pow(q, n);
+            return {
+              prompt: `Die Trefferwahrscheinlichkeit beträgt p = ${fmt(p, 1)}. Berechne bei n = ${n} unabhängigen Versuchen die Wahrscheinlichkeit P(mindestens 1 Treffer) gerundet auf drei Dezimalen.`,
+              given: [`n = ${n}`, `p = ${fmt(p, 1)}`],
+              fields: [numberField("P(X ≥ 1) =", res, "", 3)],
+              formulaHint: `Gegenereignis: P(X ≥ 1) = 1 − P(X = 0) = 1 − (1 − p)^n.`,
+              feedbackHint: `Berechne zuerst P(kein Treffer) = (1 − ${fmt(p, 1)})^${n} = ${fmt(q, 1)}^${n} und ziehe dies von 1 ab.`,
+              steps: [
+                `P(X ≥ 1) = 1 − (${fmt(q, 1)})^${n} = 1 − ${fmt(Math.pow(q, n), 4)} &approx; ${fmt(res, 3)}.`,
+                `<strong>P(X ≥ 1) = ${fmt(res, 3)}</strong>`,
+              ],
+              meta: { n, p, res },
+            };
+          }
+          const n = rng.pick([3, 4, 5]);
+          const p = rng.pick([0.2, 0.3, 0.4]);
+          const q = 1 - p;
+          const res = 1 - Math.pow(q, n);
+          return {
+            prompt: `Ein Frühwarnsystem überwacht eine Anlage mit n = ${n} unabhängig voneinander arbeitenden Detektoren. Jeder Sensor erkennt eine Anomalie mit Wahrscheinlichkeit p = ${fmt(p, 1)}. Mit welcher Wahrscheinlichkeit schlägt bei einer Anomalie mindestens ein Sensor Alarm (auf 3 Dezimalen)?`,
+            given: [`n = ${n} Sensoren`, `Zuverlässigkeit p = ${fmt(p, 1)} pro Sensor`],
+            fields: [numberField("P(Alarm) =", res, "", 3)],
+            feedbackHint: "Das Ereignis 'mindestens ein Sensor schlägt Alarm' ist das Gegenereignis zu 'alle Sensoren versagen': P = 1 − (1 − p)^n.",
+            steps: [
+              `P(Alarm) = 1 − P(alle versagen) = 1 − (${fmt(q, 1)})^${n} = 1 − ${fmt(Math.pow(q, n), 4)} &approx; ${fmt(res, 3)}.`,
+              `<strong>P(Alarm) = ${fmt(res, 3)}</strong>`,
+            ],
+            meta: { n, p, res },
+          };
         },
       },
     ],
@@ -503,7 +647,7 @@ export const STAGE_2_LESSONS: Lesson[] = [
         <strong>Beispiel:</strong> Bei <i>n = 100</i> Münzwürfen (<i>p = 0,5</i>):<br>
         <i>&mu; = 100 · 0,5 = 50</i> Treffer.<br>
         <i>&sigma; = &radic;(100 · 0,5 · 0,5) = &radic;25 = 5</i>.<br>
-        Im 1-Sigma-Intervall <i>[&mu; − &sigma;; &mu; + &sigma;] = [45; 55]</i> liegen rund 68 % aller Versuchsergebnisse.
+        Im 1-Sigma-Intervall <i>[&mu; − &sigma;; &mu; + &sigma;] = [45; 55]</i> liegen rund 68 % aller Versuchsergebnisse (exakte diskrete Binomialsumme ca. 72,9 %; die 68,3 % stammen aus der Normalverteilungs-Näherung).
       </div>
     `,
     formulas: [
@@ -563,42 +707,98 @@ export const STAGE_2_LESSONS: Lesson[] = [
       {
         id: "mu-sigma-ausrechnen",
         make: (rng: Rng, level: DifficultyLevel): ExerciseTask => {
-          const n = rng.pick([64, 100, 400]);
-          const p = 0.5;
+          if (level === 1) {
+            const n = rng.pick([64, 100, 400]);
+            const p = 0.5;
+            const mu = n * p;
+            const sigma = Math.sqrt(n * p * (1 - p));
+            return {
+              prompt: `Berechne den Erwartungswert μ und die Standardabweichung σ für eine binomialverteilte Zufallsgröße X ~ B(${n}; 0,5).`,
+              given: [`n = ${n}`, `p = 0,5`],
+              fields: [
+                numberField("μ =", mu, "", 0),
+                numberField("σ =", sigma, "", 1),
+              ],
+              formulaHint: "Erwartungswert μ = n · p, Standardabweichung σ = √(n · p · (1 − p)).",
+              feedbackHint: `Multipliziere ${n} mit 0,5 für μ. Für σ ziehe die Wurzel aus ${n} · 0,5 · 0,5 = ${n / 4}.`,
+              steps: [
+                `μ = ${n} · 0,5 = ${mu}.`,
+                `σ = &radic;(${n} · 0,5 · 0,5) = &radic;${n / 4} = ${sigma}.`,
+                `<strong>μ = ${mu}, σ = ${fmt(sigma, 1)}</strong>`,
+              ],
+              meta: { n, p, mu, sigma },
+            };
+          }
+          const n = rng.pick([36, 144, 225, 400]);
+          const p = rng.pick([0.2, 0.25]);
           const mu = n * p;
           const sigma = Math.sqrt(n * p * (1 - p));
-          return task(
-            level,
-            `Berechne den Erwartungswert μ und die Standardabweichung σ für B(${n}; 0,5).`,
-            `Bei einer Meinungsumfrage werden n = ${n} zufällige Wähler befragt. Der tatsächliche Wähleranteil liegt bei p = 50 %. Bestimme μ und σ.`,
-            [
-              numberField("μ =", mu, "", 0),
-              numberField("σ =", sigma, "", 1),
+          return {
+            prompt: `Ein Pharmahersteller testet ein neues Prüfverfahren an n = ${n} Proben. Die Fehlerquote beträgt p = ${fmt(p, 2)}. Bestimme den Erwartungswert μ und die Standardabweichung σ für die Anzahl der fehlerhaften Proben (gerundet auf 2 Dezimalen).`,
+            given: [`Stichprobenumfang n = ${n}`, `Fehlerquote p = ${fmt(p, 2)}`],
+            fields: [
+              numberField("μ =", mu, "", 1),
+              numberField("σ =", sigma, "", 2),
             ],
-            "μ = n·p, σ = √(n·p·(1−p)).",
-            `μ = ${n} · 0,5 = ${mu}. σ = &radic;(${n} · 0,25) = &radic;${n / 4} = ${sigma}.`,
-            `μ = ${mu}, σ = ${fmt(sigma, 1)}`,
-            { n },
-          );
+            feedbackHint: "Setze in die Kenngrößen-Formeln der Binomialverteilung ein: μ = n · p und σ = √(n · p · (1 − p)).",
+            steps: [
+              `μ = ${n} · ${fmt(p, 2)} = ${fmt(mu, 1)}.`,
+              `σ = &radic;(${n} · ${fmt(p, 2)} · ${fmt(1 - p, 2)}) = &radic;${fmt(n * p * (1 - p), 2)} &approx; ${fmt(sigma, 2)}.`,
+              `<strong>μ = ${fmt(mu, 1)}, σ = ${fmt(sigma, 2)}</strong>`,
+            ],
+            meta: { n, p, mu, sigma },
+          };
         },
       },
       {
         id: "sigma-intervall",
-        make: (_rng: Rng, level: DifficultyLevel): ExerciseTask => {
-          const mu = 20;
-          const sigma = 4;
-          return task(
-            level,
-            `Für X ~ B(100; 0,2) gilt μ = 20 und σ = 4. Gib die Grenzen des 2-Sigma-Intervalls [μ − 2σ; μ + 2σ] an.`,
-            `In einer Produktionskontrolle mit n = 100 und Fehlerquote p = 0,2 soll das 2-Sigma-Toleranzintervall bestimmt werden.`,
-            [
-              numberField("untere Grenze =", mu - 2 * sigma, "", 0),
-              numberField("obere Grenze =", mu + 2 * sigma, "", 0),
+        make: (rng: Rng, level: DifficultyLevel): ExerciseTask => {
+          if (level === 1) {
+            const n = rng.pick([100, 400]);
+            const p = 0.2;
+            const mu = n * p;
+            const sigma = Math.sqrt(n * p * 0.8);
+            const lower = mu - 2 * sigma;
+            const upper = mu + 2 * sigma;
+            return {
+              prompt: `Für eine Zufallsgröße X ~ B(${n}; 0,2) gilt μ = ${mu} und σ = ${fmt(sigma, 1)}. Berechne die Grenzen des 2-Sigma-Intervalls [μ − 2σ; μ + 2σ].`,
+              given: [`μ = ${mu}`, `σ = ${fmt(sigma, 1)}`],
+              fields: [
+                numberField("untere Grenze =", lower, "", 1),
+                numberField("obere Grenze =", upper, "", 1),
+              ],
+              formulaHint: "2-Sigma-Intervall: Untere Grenze = μ − 2σ, Obere Grenze = μ + 2σ.",
+              feedbackHint: `Ziehe 2 · ${fmt(sigma, 1)} von ${mu} ab und addiere 2 · ${fmt(sigma, 1)} zu ${mu}.`,
+              steps: [
+                `Untere Grenze: ${mu} − 2 · ${fmt(sigma, 1)} = ${mu} − ${fmt(2 * sigma, 1)} = ${fmt(lower, 1)}.`,
+                `Obere Grenze: ${mu} + 2 · ${fmt(sigma, 1)} = ${mu} + ${fmt(2 * sigma, 1)} = ${fmt(upper, 1)}.`,
+                `<strong>[${fmt(lower, 1)}; ${fmt(upper, 1)}]</strong>`,
+              ],
+              meta: { n, p, mu, sigma, lower, upper },
+            };
+          }
+          const n = rng.pick([100, 400]);
+          const p = 0.25;
+          const mu = n * p;
+          const sigma = Math.sqrt(n * p * 0.75);
+          const kSigma = rng.pick([1, 2]);
+          const lower = mu - kSigma * sigma;
+          const upper = mu + kSigma * sigma;
+          return {
+            prompt: `In einer Fertigungshalle werden n = ${n} Werkstücke produziert mit einer Ausschussquote von p = 0,25 (μ = ${mu}, σ &approx; ${fmt(sigma, 2)}). Gib das ${kSigma}-Sigma-Intervall [μ − ${kSigma}σ; μ + ${kSigma}σ] an (auf zwei Dezimalen gerundet).`,
+            given: [`n = ${n}`, `p = 0,25`, `μ = ${mu}`, `σ = ${fmt(sigma, 2)}`],
+            fields: [
+              numberField("untere Grenze =", lower, "", 2),
+              numberField("obere Grenze =", upper, "", 2),
             ],
-            "Untere Grenze: μ − 2σ = 20 − 8 = 12. Obere Grenze: μ + 2σ = 20 + 8 = 28.",
-            `[20 − 8; 20 + 8] = [12; 28].`,
-            `[12; 28]`,
-          );
+            feedbackHint: `Berechne ${mu} − ${kSigma} · ${fmt(sigma, 2)} und ${mu} + ${kSigma} · ${fmt(sigma, 2)}.`,
+            steps: [
+              `Untere Grenze: ${mu} − ${kSigma} · ${fmt(sigma, 2)} &approx; ${fmt(lower, 2)}.`,
+              `Obere Grenze: ${mu} + ${kSigma} · ${fmt(sigma, 2)} &approx; ${fmt(upper, 2)}.`,
+              `<strong>[${fmt(lower, 2)}; ${fmt(upper, 2)}]</strong>`,
+            ],
+            meta: { n, p, mu, sigma, kSigma, lower, upper },
+          };
         },
       },
     ],

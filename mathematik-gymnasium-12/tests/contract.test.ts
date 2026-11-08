@@ -382,8 +382,8 @@ describe("ZAM-Karten und öffentliche Identitäten", () => {
     expect(mapping.sources).toHaveLength(3);
     const catA = mapping.rows.filter((r) => r.category === "A");
     const catC = mapping.rows.filter((r) => r.category === "C");
-    expect(catA).toHaveLength(3);
-    expect(catC).toHaveLength(9);
+    expect(catA).toHaveLength(2);
+    expect(catC).toHaveLength(10);
 
     for (const r of catA) {
       expect(r.action).toBe("propose-replace-after-approval");

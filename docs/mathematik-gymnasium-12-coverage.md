@@ -13,8 +13,8 @@ Der aktuelle [Fachlehrplan M12 (regulär)](https://www.lehrplanplus.bayern.de/fa
 | 1.3 Sinus- und Kosinusfunktion | 1 | 5 | 2 | 2 |
 | Zufallsgrößen und Binomialverteilung | 2 | 22 | 5 | 5 |
 | Einseitiger Signifikanztest (bei als binomialverteilt angenommenen Merkmalen) | 3 | 8 | 4 | 4 |
-| 4.1 Gebrochen-rationale Funktionen | 4 | 14 | 3 | 3 |
-| 4.2 Wurzelfunktion | 4 | 7 | 3 | 3 |
+| 4.1 Gebrochen-rationale Funktionen | 4 | 12 | 3 | 3 |
+| 4.2 Wurzelfunktion | 4 | 9 | 3 | 3 |
 | 4.3 Natürliche Logarithmusfunktion | 4 | 8 | 2 | 2 |
 | Grundlagen der Koordinatengeometrie im Raum | 5 | 20 | 5 | 5 |
 | **Gesamt** | **1–5** | **112** | **30** | **30** |
@@ -23,7 +23,7 @@ Die Vertragstests prüfen alle 30 Erwartungen wortgleich, mindestens eine Lektio
 
 ## Fachliche Entscheidungen
 
-**Umfang und Jahrgangsstufe.** Die Querverweise des Fachlehrplans knüpfen an die Jahrgangsstufe 11 an (Ganzrationale Funktionen, Ableitungsbegriff, Integral als Flächeninhalt, Baumdiagramme und Pfadregeln). In der 12. Klasse werden Kurvenscharen mit Parametern, Kettenregel, Produktregel, Stammfunktionen, Exponential- und trigonometrische Funktionen sowie Verknüpfungen vertieft. Die Stochastik umfasst Kolmogorow-Axiomatik, Erwartungswert und Varianz diskreter Zufallsgrößen, Urnenmodelle mit und ohne Zurücklegen, Bernoulli-Ketten, Parameter der Binomialverteilung sowie einseitige Hypothesentests mit Fehlern 1. und 2. Art. Die Raumgeometrie führt das 3D-Koordinatensystem, Vektoralgebra, Skalarprodukt, Vektorprodukt und Spatprodukt an Raumkörpern ein.
+**Umfang und Jahrgangsstufe.** Die Querverweise des Fachlehrplans knüpfen an die Jahrgangsstufe 11 an (Ganzrationale Funktionen, Ableitungsbegriff, Integral als Flächeninhalt, Baumdiagramme und Pfadregeln). In der 12. Klasse werden Kurvenscharen mit Parametern, Kettenregel, Produktregel, Stammfunktionen, Exponential- und trigonometrische Funktionen sowie Verknüpfungen vertieft. Gebrochen-rationale Funktionen werden nicht nur hinsichtlich Definitionslücken, Polstellen und Asymptoten untersucht, sondern gemäß Lehrplan auch gezielt mit den Methoden der Differentialrechnung (Quotientenregel, Extrema, Monotonie). Die Stochastik umfasst Kolmogorow-Axiomatik, Erwartungswert und Varianz diskreter Zufallsgrößen, Urnenmodelle mit und ohne Zurücklegen, Bernoulli-Ketten, Parameter der Binomialverteilung sowie einseitige Hypothesentests mit Fehlern 1. und 2. Art. Die Raumgeometrie führt das 3D-Koordinatensystem, Vektoralgebra, Skalarprodukt, Vektorprodukt und Spatprodukt an Raumkörpern ein.
 
 **Was auf Papier oder Rechner bleibt.** Das Zeichnen mit dynamischer Geometriesoftware (DGS), 3D-Visualisierern oder CAS-Einsatz steht im Plan und wird in den Lektionen methodisch erklärt; die App visualisiert die dynamischen Zusammenhänge in interaktiven SVG-Laboren und überprüft das Begriffs- und Rechenverständnis im Schnellcheck sowie in zweistufigen Generatoren.
 
@@ -40,11 +40,11 @@ Bytegleiche LF-Schnappschüsse liegen unter `mathematik-gymnasium-12/tests/fixtu
 
 | Kategorie | Anzahl | Bedeutung |
 | --- | --- | --- |
-| A (vorgeschlagen) | 3 | Gleicher Einzelabruf: `g12-exp-ableitung-regeln-check`, `g12-hypo-grundprinzip-check`, `g12-hypo-fehlerarten-check` |
+| A (vorgeschlagen) | 2 | Gleicher Einzelabruf: `g12-exp-ableitung-regeln-check`, `g12-hypo-fehlerarten-check` |
 | B | 0 | Keine mehrteilige Karte wird unverändert übernommen |
-| C (bleiben aktiv) | 9 | Verbleibende Einzelkarten oder veränderte Prompts; bleiben ohne Nachfolger aktiv |
+| C (bleiben aktiv) | 10 | Verbleibende Einzelkarten oder mehrteilige Prompts (inkl. `01K8GC20000000000000000J01`); bleiben ohne Nachfolger aktiv |
 
 Gemäß Hard Rule 1 und Hard Rule 6 gilt:
 - In `replaces-de-by.json`: `"approved": null`, `"status": "proposal-only"`.
 - In `cell.json`: Veröffentlichung zunächst **ohne** `replaces` und **ohne** `retired_items`.
-- Die Übernahme der drei A-Historien ist vorbereitet und in `scripts/validate-migration.mjs` gegen temporäre SQLite-Datenbanken nachgewiesen. Erst nach Thomas' ausdrücklicher Freigabe wird `approved` datiert und `replaces` in die Zelle eingetragen.
+- Die Übernahme der zwei A-Historien ist vorbereitet und in `scripts/validate-migration.mjs` gegen temporäre SQLite-Datenbanken nachgewiesen. Erst nach Thomas' ausdrücklicher Freigabe wird `approved` datiert und `replaces` in die Zelle eingetragen.

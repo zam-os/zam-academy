@@ -47,7 +47,19 @@ const VIEWS: Record<string, LabView> = {
   "exp-limits": { render: expLimitsView },
   "exp-curve": { render: expCurveView },
   "exp-growth": { render: expGrowthView },
-  "trig-tangent": { render: trigTangentView },
+  "trig-tangent": {
+    render: trigTangentView,
+    handles: {
+      x0: {
+        x: "x0",
+        drag: (p) => {
+          const cx = 260;
+          const scaleX = 35;
+          return { x0: (4 * (p.x - cx)) / (Math.PI * scaleX) };
+        },
+      },
+    },
+  },
   "trig-composition": { render: trigCompositionView },
 
   // Stufe 2: Stochastik I
@@ -70,7 +82,19 @@ const VIEWS: Record<string, LabView> = {
   "inverse-function": { render: inverseFunctionView },
   "rational-powers": { render: rationalPowersView },
   "root-curve": { render: rootCurveView },
-  "ln-derivative": { render: lnDerivativeView },
+  "ln-derivative": {
+    render: lnDerivativeView,
+    handles: {
+      x0: {
+        x: "x0",
+        drag: (p) => {
+          const cx = 160;
+          const scale = 35;
+          return { x0: (p.x - cx) / scale };
+        },
+      },
+    },
+  },
   "ln-limits": { render: lnLimitsView },
 
   // Stufe 5: Geometrie im Raum

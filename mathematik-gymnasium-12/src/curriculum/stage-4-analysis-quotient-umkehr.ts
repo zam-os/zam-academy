@@ -4,7 +4,7 @@
  */
 
 import type { DifficultyLevel, ExerciseTask, Lesson } from "../model/types";
-import { lab, makeLesson, output, range, task } from "./builders";
+import { lab, makeLesson, output, range } from "./builders";
 import { numberField } from "./helpers";
 import type { Rng } from "../exercises/rng";
 import { fmt } from "../exercises/format";
@@ -85,38 +85,69 @@ export const STAGE_4_LESSONS: Lesson[] = [
       {
         id: "quotientenregel-linear",
         make: (rng: Rng, level: DifficultyLevel): ExerciseTask => {
-          const a = rng.pick([1, 2, 3]);
-          const d = rng.pick([1, 2, 4]);
-          // f(x) = a*x / (x + d) -> f'(0) = (a*d - 0) / d^2 = a / d
+          const a = rng.pick([1, 2, 3, 4]);
+          const d = rng.pick([1, 2, 4, 5]);
           const slope0 = a / d;
-          return task(
-            level,
-            `Berechne die Steigung f'(0) der Funktion f(x) = ${a}x / (x + ${d}) (auf zwei Dezimalen gerundet).`,
-            `Der Wirkungsgrad einer Turbine in Abhängigkeit von der Drehzahl x wird modelliert durch &eta;(x) = ${a}x / (x + ${d}). Bestimme die Anfangssteigerung &eta;'(0).`,
-            [numberField("f'(0) =", slope0, "", 2)],
-            `Quotientenregel: f'(x) = [${a}·(x+${d}) − ${a}x·1] / (x+${d})² = ${a * d} / (x+${d})². Für x=0 ist f'(0) = ${a * d} / ${d * d} = ${a} / ${d}.`,
-            `f'(0) = ${a} / ${d} = ${fmt(slope0, 2)}.`,
-            `f'(0) = ${fmt(slope0, 2)}`,
-            { a, d },
-          );
+          if (level === 1) {
+            return {
+              prompt: `Berechne die Steigung f'(0) der Funktion f(x) = ${a}x / (x + ${d}) (auf zwei Dezimalen gerundet).`,
+              given: [`f(x) = ${a}x / (x + ${d})`, `Stelle x = 0`],
+              fields: [numberField("f'(0) =", slope0, "", 2)],
+              formulaHint: `Quotientenregel: f'(x) = [u'(x)·v(x) − u(x)·v'(x)] / [v(x)]².`,
+              feedbackHint: `Zähler: ${a}·(0 + ${d}) − (${a}·0)·1 = ${a * d}. Nenner: (0 + ${d})² = ${d * d}.`,
+              steps: [
+                `f'(x) = [${a}·(x+${d}) − ${a}x·1] / (x+${d})² = ${a * d} / (x+${d})².`,
+                `f'(0) = ${a * d} / ${d * d} = ${a} / ${d} = ${fmt(slope0, 2)}.`,
+                `<strong>f'(0) = ${fmt(slope0, 2)}</strong>`,
+              ],
+              meta: { a, d, slope0 },
+            };
+          }
+          return {
+            prompt: `Der Wirkungsgrad einer Turbine in Abhängigkeit von der Drehzahl x wird modelliert durch &eta;(x) = ${a}x / (x + ${d}). Bestimme die anfängliche Steigerungsrate &eta;'(0) gerundet auf 2 Dezimalstellen.`,
+            given: [`&eta;(x) = ${a}x / (x + ${d})`, `Drehzahl x = 0`],
+            fields: [numberField("&eta;'(0) =", slope0, "", 2)],
+            feedbackHint: `Wende die Quotientenregel an und setze x = 0 ein.`,
+            steps: [
+              `&eta;'(x) = [${a}(x + ${d}) − ${a}x] / (x + ${d})² = ${a * d} / (x + ${d})².`,
+              `&eta;'(0) = ${a * d} / ${d}² = ${fmt(slope0, 2)}.`,
+              `<strong>&eta;'(0) = ${fmt(slope0, 2)}</strong>`,
+            ],
+            meta: { a, d, slope0 },
+          };
         },
       },
       {
         id: "ableitungszaehler",
         make: (rng: Rng, level: DifficultyLevel): ExerciseTask => {
-          const c = rng.pick([2, 3, 5]);
-          // f(x) = (x + c) / (x - 1) -> u'v - uv' = 1*(x-1) - (x+c)*1 = -1 - c
+          const c = rng.pick([2, 3, 4, 5, 6]);
           const num = -1 - c;
-          return task(
-            level,
-            `Welchen konstanten Wert nimmt der Zähler der 1. Ableitung von f(x) = (x + ${c}) / (x − 1) an?`,
-            `Bestimme den Zählerterm von f'(x) nach Anwendung der Quotientenregel auf f(x) = (x + ${c}) / (x − 1).`,
-            [numberField("Zähler =", num, "", 0)],
-            "Quotientenregel: Zähler = u'·v − u·v'.",
-            `u'v − uv' = 1·(x − 1) − (x + ${c})·1 = x − 1 − x − ${c} = ${fmt(num, 0)}.`,
-            `Zähler = ${fmt(num, 0)}`,
-            { c },
-          );
+          if (level === 1) {
+            return {
+              prompt: `Welchen konstanten Wert nimmt der Zähler der 1. Ableitung von f(x) = (x + ${c}) / (x − 1) nach dem Zusammenfassen an?`,
+              given: [`f(x) = (x + ${c}) / (x − 1)`],
+              fields: [numberField("Zähler =", num, "", 0)],
+              formulaHint: "Quotientenregel: Zähler von f' ist u'·v − u·v'.",
+              feedbackHint: `Berechne 1·(x − 1) − (x + ${c})·1.`,
+              steps: [
+                `u'v − uv' = 1·(x − 1) − (x + ${c})·1 = x − 1 − x − ${c} = ${fmt(num, 0)}.`,
+                `<strong>Zähler = ${fmt(num, 0)}</strong>`,
+              ],
+              meta: { c, num },
+            };
+          }
+          const k = rng.pick([2, 3]);
+          return {
+            prompt: `Bestimme den konstanten Zählerterm der 1. Ableitung von g(x) = (${k}x) / (x + ${c}) nach Zusammenfassen.`,
+            given: [`g(x) = (${k}x) / (x + ${c})`],
+            fields: [numberField("Zähler =", k * c, "", 0)],
+            feedbackHint: `Zähler = ${k}·(x + ${c}) − ${k}x·1 = ${k}x + ${k * c} − ${k}x = ${k * c}.`,
+            steps: [
+              `u'v − uv' = ${k}·(x + ${c}) − (${k}x)·1 = ${k * c}.`,
+              `<strong>Zähler = ${k * c}</strong>`,
+            ],
+            meta: { k, c, res: k * c },
+          };
         },
       },
     ],
@@ -126,28 +157,33 @@ export const STAGE_4_LESSONS: Lesson[] = [
   makeLesson(4, 2, 1, {
     id: "g12-gebrochen-rational-diskussion",
     title: "Kurvendiskussion gebrochen-rationaler Funktionen",
-    subtitle: "Definitionsbereich, hebbare Lücken, Polstellen und Asymptoten",
+    subtitle: "Definitionsbereich, Asymptoten und Differentialrechnung (Extrema/Monotonie)",
     whyItMatters:
-      "Grenzwerte und Polstellen bestimmen die Stabilität von Regelkreisen und Resonanzkatastrophen in Schwingungssystemen.",
+      "Grenzwerte, Polstellen und Extremwerte bestimmen die Stabilität von Regelkreisen und Resonanzkatastrophen in Schwingungssystemen.",
     explanationHtml: `
-      <p>Bei gebrochen-rationalen Funktionen <i>f(x) = Z(x) / N(x)</i> liefert der Nenner <i>N(x) = 0</i> die <strong>Definitionslücken</strong>:</p>
+      <p>Bei gebrochen-rationalen Funktionen <i>f(x) = Z(x) / N(x)</i> liefert der Nenner <i>N(x) = 0</i> die <strong>Definitionslücken</strong> und die Ableitung <i>f'(x)</i> die <strong>Extrema</strong>:</p>
       <div class="merke">
-        <strong>Klassifikation der Definitionslücken:</strong>
+        <strong>Systematik der Kurvendiskussion gebrochen-rationaler Funktionen:</strong>
         <ul>
-          <li><strong>Hebbare Definitionslücke:</strong> Ist <i>x<sub>0</sub></i> eine Nullstelle von Nenner <i>und</i> Zähler mit gleicher oder höherer Vielfachheit im Zähler, lässt sich der Faktor <i>(x − x<sub>0</sub>)</i> herauskürzen. Der Graph hat dort ein „Loch“.</li>
-          <li><strong>Polstelle (senkrechte Asymptote):</strong> Ist die Vielfachheit im Nenner größer als im Zähler, strebt <i>f(x) &rarr; &plusmn;&infin;</i>.</li>
-          <li><strong>Verhalten im Unendlichen:</strong>
+          <li><strong>Definitionslücken:</strong>
+            <br>&bull; Hebbare Lücke: Zähler- und Nennernullstelle gleicher oder höherer Vielfachheit (Graph hat ein Loch).
+            <br>&bull; Polstelle: Nennernullstelle höherer Vielfachheit (senkrechte Asymptote).
+          </li>
+          <li><strong>Asymptoten für x &rarr; &plusmn;&infin;:</strong>
             <br>&bull; Grad Zähler &lt; Grad Nenner &rArr; waagrechte Asymptote <i>y = 0</i>.
             <br>&bull; Grad Zähler = Grad Nenner &rArr; waagrechte Asymptote <i>y = a<sub>n</sub> / b<sub>n</sub></i>.
             <br>&bull; Grad Zähler = Grad Nenner + 1 &rArr; schräge Asymptote (Polynomdivision!).
           </li>
+          <li><strong>Differentialrechnung (Extrema):</strong>
+            <br>Ableitung <i>f'(x)</i> mit der Quotientenregel bilden: <i>f'(x) = 0 &hArr; Zähler von f'(x) = 0</i> (bei <i>N(x) &ne; 0</i>).
+          </li>
         </ul>
       </div>
       <div class="example">
-        <strong>Beispiel:</strong> <i>f(x) = (3x² − 12) / (x² − 1)</i>.<br>
-        Definitionsbereich: <i>&reals; \ {−1; 1}</i>.<br>
-        Da <i>Grad Zähler = Grad Nenner = 2</i>, lautet die waagrechte Asymptote: <i>y = 3/1 = 3</i>.<br>
-        Polstellen mit Vorzeichenwechsel bei <i>x = −1</i> und <i>x = 1</i>.
+        <strong>Beispiel:</strong> <i>f(x) = (x² − 4) / (x² + 1)</i> mit <i>D = &reals;</i>.<br>
+        Waagrechte Asymptote: <i>y = 1 / 1 = 1</i>.<br>
+        Ableitung: <i>f'(x) = [2x(x² + 1) − (x² − 4)·2x] / (x² + 1)² = [2x³ + 2x − 2x³ + 8x] / (x² + 1)² = 10x / (x² + 1)²</i>.<br>
+        Extremum: <i>f'(x) = 0 &hArr; 10x = 0 &rArr; x = 0</i>. Da <i>f'(x)</i> von − nach + wechselt, liegt bei <i>T(0 | −4)</i> ein lokaler Tiefpunkt.
       </div>
     `,
     formulas: [
@@ -155,6 +191,11 @@ export const STAGE_4_LESSONS: Lesson[] = [
         name: "Waagrechte Asymptote (gleicher Grad)",
         html: "lim<sub>x&rarr;&infin;</sub> <sup>a<sub>n</sub>x<sup>n</sup> + ...</sup>/<sub>b<sub>n</sub>x<sup>n</sup> + ...</sub> = <sup>a<sub>n</sub></sup>/<sub>b<sub>n</sub></sub>",
         quantities: "a_n, b_n Leitkoeffizienten",
+      },
+      {
+        name: "Extremstellenbedingung",
+        html: "f'(x) = 0 &emsp; mit &emsp; [u'v &minus; uv'] = 0",
+        quantities: "Zähler der Ableitung muss null sein",
       },
     ],
     quiz: {
@@ -170,27 +211,28 @@ export const STAGE_4_LESSONS: Lesson[] = [
     },
     lab: lab(
       "rational-curve",
-      "Kurvendiskussion rationaler Funktionen",
-      "Stelle den Zählerparameter a in f(x) = (x² − a) / (x² + 1) ein.",
-      [range("a", "Parameter a", 0, 9, 1, 1)],
+      "Kurvendiskussion rationaler Funktionen: f(x) = (x² − a) / (x² + 1)",
+      "Stelle den Zählerparameter a ein und untersuche Asymptote, Nullstellen und Tiefpunkt.",
+      [range("a", "Parameter a", 0, 9, 2, 1)],
       [
         output("nullstellen", "Positive Nullstelle", (v) => Math.sqrt(v.a), "", 2),
-        output("achsenabschnitt", "y-Achsenabschnitt f(0)", (v) => -v.a, "", 0),
+        output("tiefpunkt", "Tiefpunkt T(0 | −a)", (v) => -v.a, "", 0),
+        output("asymptote", "Waagrechte Asymptote y =", () => 1, "", 0),
       ],
       [
         {
           id: "null-ursprung",
-          text: "Wähle a = 0, sodass f(x) den Ursprung berührt.",
+          text: "Wähle a = 0, sodass f(x) den Ursprung berührt (Tiefpunkt bei (0|0)).",
           check: (v) => v.a === 0,
         },
         {
           id: "null-drei",
-          text: "Stelle a = 9 für Nullstellen bei x = ±3 ein.",
+          text: "Stelle a = 9 für Nullstellen bei x = ±3 ein (Tiefpunkt bei (0|−9)).",
           check: (v) => v.a === 9,
         },
         {
           id: "standard-vier",
-          text: "Bringe a = 4 zurück.",
+          text: "Stelle a = 4 ein (Tiefpunkt bei (0|−4)).",
           check: (v) => v.a === 4,
         },
       ],
@@ -199,33 +241,68 @@ export const STAGE_4_LESSONS: Lesson[] = [
       {
         id: "asymptote-bestimmen",
         make: (rng: Rng, level: DifficultyLevel): ExerciseTask => {
-          const a = rng.pick([6, 8, 10]);
-          const b = 2;
+          const a = rng.pick([4, 6, 8, 10, 12]);
+          const b = rng.pick([2, 4]);
           const asympY = a / b;
-          return task(
-            level,
-            `Bestimme die waagrechte Asymptote y der Funktion f(x) = (${a}x² − 3) / (${b}x² + 5).`,
-            `Für eine Fertigungsstraße verhalten sich die Stückkosten nach K(x) = (${a}x² − 3) / (${b}x² + 5). Welche Grenzkosten y stellen sich bei extrem hohen Stückzahlen x ein?`,
-            [numberField("y =", asympY, "", 0)],
-            `Quotient der Leitkoeffizienten: y = ${a} / ${b} = ${asympY}.`,
-            `y = ${asympY}`,
-            { a, b },
-          );
+          if (level === 1) {
+            return {
+              prompt: `Bestimme die waagrechte Asymptote y der rationalen Funktion f(x) = (${a}x² − 3) / (${b}x² + 5) für x &rarr; &plusmn;&infin;.`,
+              given: [`f(x) = (${a}x² − 3) / (${b}x² + 5)`],
+              fields: [numberField("y =", asympY, "", 1)],
+              formulaHint: `Vergleiche die Leitkoeffizienten bei gleichem Zähler- und Nennergrad: y = a_n / b_n.`,
+              feedbackHint: `Teile den Koeffizienten ${a} vor x² durch den Nennerkoeffizienten ${b}.`,
+              steps: [
+                `Da Grad(Zähler) = Grad(Nenner) = 2, gilt lim_{x→±∞} f(x) = ${a} / ${b} = ${fmt(asympY, 1)}.`,
+                `<strong>Waagrechte Asymptote: y = ${fmt(asympY, 1)}</strong>`,
+              ],
+              meta: { a, b, asympY },
+            };
+          }
+          return {
+            prompt: `Für eine Fertigungsstraße verhalten sich die Stückkosten nach K(x) = (${a}x² − 3) / (${b}x² + 5) (in € pro Stück). Welche Grenzkosten y stellen sich bei extrem hohen Produktionszahlen x ein?`,
+            given: [`K(x) = (${a}x² − 3) / (${b}x² + 5)`, `x &rarr; +&infin;`],
+            fields: [numberField("y =", asympY, "€", 1)],
+            feedbackHint: "Berechne den Grenzwert für x → ∞.",
+            steps: [
+              `lim_{x→∞} K(x) = ${a} / ${b} = ${fmt(asympY, 1)} €.`,
+              `<strong>Grenzkosten = ${fmt(asympY, 1)} €</strong>`,
+            ],
+            meta: { a, b, asympY },
+          };
         },
       },
       {
         id: "polstelle-bestimmen",
         make: (rng: Rng, level: DifficultyLevel): ExerciseTask => {
-          const p = rng.pick([2, 3, 5]);
-          return task(
-            level,
-            `Bestimme die positive Polstelle der Funktion f(x) = 1 / (x² − ${p * p}).`,
-            `In einem akustischen Filter tritt eine Resonanzüberhöhung bei x² − ${p * p} = 0 auf. Bestimme die positive Resonanzstelle x.`,
-            [numberField("x =", p, "", 0)],
-            `Nennernullstellen: x² − ${p * p} = 0 &rArr; x = ${p}.`,
-            `x = ${p}`,
-            { p },
-          );
+          if (level === 1) {
+            const p = rng.pick([2, 3, 4, 5]);
+            return {
+              prompt: `Bestimme die positive Polstelle x der Funktion f(x) = 1 / (x² − ${p * p}).`,
+              given: [`f(x) = 1 / (x² − ${p * p})`],
+              fields: [numberField("x =", p, "", 0)],
+              formulaHint: `Setze den Nenner gleich null: x² − ${p * p} = 0.`,
+              feedbackHint: `Löse x² = ${p * p} für x > 0.`,
+              steps: [
+                `Nennernullstellen: x² − ${p * p} = 0 &rArr; x² = ${p * p} &rArr; x = ${p} (da x > 0).`,
+                `<strong>x = ${p}</strong>`,
+              ],
+              meta: { p },
+            };
+          }
+          const d = rng.pick([1, 4, 9]);
+          const xExtrem = Math.sqrt(d);
+          return {
+            prompt: `Gegeben ist die rationale Funktion f(x) = x / (x² + ${d}). Bestimme mit der Quotientenregel die positive Extremstelle x (Hochpunktstelle).`,
+            given: [`f(x) = x / (x² + ${d})`, `x > 0`],
+            fields: [numberField("x =", xExtrem, "", 1)],
+            feedbackHint: `f'(x) = [1·(x² + ${d}) − x·2x] / (x² + ${d})² = (${d} − x²) / (x² + ${d})². Setze den Zähler gleich null.`,
+            steps: [
+              `f'(x) = (${d} − x²) / (x² + ${d})² = 0.`,
+              `${d} − x² = 0 &rArr; x² = ${d} &rArr; x = ${fmt(xExtrem, 1)} (da x > 0).`,
+              `<strong>Extremstelle bei x = ${fmt(xExtrem, 1)}</strong>`,
+            ],
+            meta: { d, xExtrem },
+          };
         },
       },
     ],
@@ -303,32 +380,68 @@ export const STAGE_4_LESSONS: Lesson[] = [
       {
         id: "exp-durch-x-extremum",
         make: (rng: Rng, level: DifficultyLevel): ExerciseTask => {
-          const a = rng.pick([2, 3, 4]);
-          // f(x) = e^x / (x + a) -> f'(x) = e^x * (x + a - 1) / (x + a)^2 = 0 -> x = 1 - a
+          const a = rng.pick([2, 3, 4, 5]);
           const xMin = 1 - a;
-          return task(
-            level,
-            `Berechne die Extremstelle der Funktion f(x) = e<sup>x</sup> / (x + ${a}).`,
-            `Die Energieaufnahme eines Partikels folgt E(x) = e<sup>x</sup> / (x + ${a}) für x &gt; −${a}. Bestimme die Stelle minimaler Energie.`,
-            [numberField("x =", xMin, "", 0)],
-            `Zähler der Ableitung: e^x · (x + ${a} − 1) = 0 &rArr; x = 1 − ${a} = ${xMin}.`,
-            `x = ${xMin}`,
-            { a },
-          );
+          if (level === 1) {
+            return {
+              prompt: `Berechne die Extremstelle x der Funktion f(x) = e<sup>x</sup> / (x + ${a}).`,
+              given: [`f(x) = e<sup>x</sup> / (x + ${a})`, `Definitionsbereich x > −${a}`],
+              fields: [numberField("x =", xMin, "", 0)],
+              formulaHint: `Klammere e^x im Zähler von f'(x) aus: e^x · (x + ${a} − 1) = 0.`,
+              feedbackHint: `Da e^x > 0 immer gilt, muss x + ${a} − 1 = 0 sein.`,
+              steps: [
+                `f'(x) = [e^x(x + ${a}) − e^x·1] / (x + ${a})² = e^x(x + ${a} − 1) / (x + ${a})².`,
+                `f'(x) = 0 &rArr; x + ${a} − 1 = 0 &rArr; x = 1 − ${a} = ${fmt(xMin, 0)}.`,
+                `<strong>x = ${fmt(xMin, 0)}</strong>`,
+              ],
+              meta: { a, xMin },
+            };
+          }
+          return {
+            prompt: `Die potentielle Energie eines Schwingungssystems folgt E(x) = e<sup>x</sup> / (x + ${a}) für x > −${a}. Bestimme die Ruhelage (Stelle des Energieminimums x).`,
+            given: [`E(x) = e<sup>x</sup> / (x + ${a})`],
+            fields: [numberField("x =", xMin, "", 0)],
+            feedbackHint: "Setze die 1. Ableitung gleich null.",
+            steps: [
+              `E'(x) = e^x(x + ${a} − 1) / (x + ${a})² = 0 &rArr; x = 1 − ${a} = ${fmt(xMin, 0)}.`,
+              `<strong>x = ${fmt(xMin, 0)}</strong>`,
+            ],
+            meta: { a, xMin },
+          };
         },
       },
       {
         id: "quotient-sin-ableitung",
-        make: (_rng: Rng, level: DifficultyLevel): ExerciseTask => {
-          // f(x) = x / (x^2 + 1) -> f'(0) = (1*(0+1) - 0*2x) / 1^2 = 1
-          return task(
-            level,
-            "Berechne die Steigung f'(0) für f(x) = x / (x² + 1).",
-            "Bestimme die Momentansteigung der Resonanzkurve f(x) = x / (x² + 1) im Ursprung.",
-            [numberField("f'(0) =", 1, "", 0)],
-            "Quotientenregel: f'(x) = [1·(x²+1) − x·2x] / (x²+1)² = (1 − x²) / (x²+1)². Bei x=0 ergibt sich 1 / 1 = 1.",
-            "f'(0) = 1",
-          );
+        make: (rng: Rng, level: DifficultyLevel): ExerciseTask => {
+          const k = rng.pick([1, 2, 3, 4]);
+          const d = rng.pick([1, 2, 4]);
+          const slope0 = k / d;
+          if (level === 1) {
+            return {
+              prompt: `Berechne die Steigung f'(0) für die Funktion f(x) = ${k}x / (x² + ${d}).`,
+              given: [`f(x) = ${k}x / (x² + ${d})`, `Stelle x = 0`],
+              fields: [numberField("f'(0) =", slope0, "", 2)],
+              formulaHint: `Quotientenregel: f'(x) = [u'v − uv'] / v².`,
+              feedbackHint: `Für x = 0 ist u(0) = 0 und u'(0) = ${k}, also f'(0) = (${k}·${d} − 0) / ${d}² = ${k} / ${d}.`,
+              steps: [
+                `f'(x) = [${k}(x² + ${d}) − (${k}x)(2x)] / (x² + ${d})² = [${k * d} − ${k}x²] / (x² + ${d})².`,
+                `f'(0) = (${k * d}) / ${d * d} = ${k} / ${d} = ${fmt(slope0, 2)}.`,
+                `<strong>f'(0) = ${fmt(slope0, 2)}</strong>`,
+              ],
+              meta: { k, d, slope0 },
+            };
+          }
+          return {
+            prompt: `Ein akustischer Signalfilter überträgt Frequenzen nach A(x) = ${k}x / (x² + ${d}). Bestimme die Momentansteigung der Resonanzkurve im Ursprung A'(0).`,
+            given: [`A(x) = ${k}x / (x² + ${d})`, `x = 0`],
+            fields: [numberField("A'(0) =", slope0, "", 2)],
+            feedbackHint: "Wende die Quotientenregel an und beachte x = 0.",
+            steps: [
+              `A'(0) = [${k}·${d} − 0] / ${d}² = ${k} / ${d} = ${fmt(slope0, 2)}.`,
+              `<strong>A'(0) = ${fmt(slope0, 2)}</strong>`,
+            ],
+            meta: { k, d, slope0 },
+          };
         },
       },
     ],
@@ -412,34 +525,66 @@ export const STAGE_4_LESSONS: Lesson[] = [
         id: "umkehrterm-linear",
         make: (rng: Rng, level: DifficultyLevel): ExerciseTask => {
           const m = rng.pick([2, 4, 5]);
-          const t = rng.pick([6, 10, 15]);
-          // y = m*x + t -> x = (y - t)/m = (1/m)*y - t/m
+          const t = rng.pick([6, 10, 15, 20]);
           const invT = -t / m;
-          return task(
-            level,
-            `Die Umkehrfunktion von f(x) = ${m}x + ${t} hat die Form f<sup>−1</sup>(x) = m* · x + t*. Bestimme den Achsenabschnitt t*.`,
-            `Ein Kalibrierungssensor liefert Spannung U = ${m}·T + ${t}. Bestimme die Konstante t* zur Rückrechnung der Temperatur T(U) = m*·U + t*.`,
-            [numberField("t* =", invT, "", 2)],
-            `y = ${m}x + ${t} &rArr; x = (y − ${t}) / ${m} = (1/${m})y − ${t}/${m}. Also t* = −${t}/${m} = ${invT}.`,
-            `t* = ${fmt(invT, 2)}`,
-            { m, t },
-          );
+          if (level === 1) {
+            return {
+              prompt: `Die Umkehrfunktion von f(x) = ${m}x + ${t} hat die Form f<sup>−1</sup>(x) = m* · x + t*. Bestimme den Achsenabschnitt t*.`,
+              given: [`f(x) = ${m}x + ${t}`],
+              fields: [numberField("t* =", invT, "", 2)],
+              formulaHint: `Löse y = ${m}x + ${t} nach x auf: x = (y − ${t}) / ${m}.`,
+              feedbackHint: `Der konstante Term lautet −${t}/${m}.`,
+              steps: [
+                `y = ${m}x + ${t} &rArr; ${m}x = y − ${t} &rArr; x = (1/${m})y − ${t}/${m}.`,
+                `Variablentausch: f⁻¹(x) = (1/${m})x − ${fmt(t / m, 2)} &rArr; t* = ${fmt(invT, 2)}.`,
+                `<strong>t* = ${fmt(invT, 2)}</strong>`,
+              ],
+              meta: { m, t, invT },
+            };
+          }
+          return {
+            prompt: `Ein Temperatursensor liefert Spannungssignale nach U(T) = ${m}·T + ${t} (in mV). Zur automatischen Temperaturanzeige T(U) = m*·U + t* wird die Umkehrfunktion programmiert. Welcher Offset t* muss hinterlegt werden?`,
+            given: [`U(T) = ${m}·T + ${t}`],
+            fields: [numberField("t* =", invT, "°C", 2)],
+            feedbackHint: "Löse die Sensorspannung nach der Temperatur T auf.",
+            steps: [
+              `T = (U − ${t}) / ${m} = (1/${m})U − ${t / m}. Also t* = ${fmt(invT, 2)} °C.`,
+              `<strong>t* = ${fmt(invT, 2)} °C</strong>`,
+            ],
+            meta: { m, t, invT },
+          };
         },
       },
       {
         id: "umkehr-quadrat",
         make: (rng: Rng, level: DifficultyLevel): ExerciseTask => {
-          const c = rng.pick([4, 9, 16]);
-          // f(x) = sqrt(x + c) -> y = sqrt(x+c) -> y^2 = x + c -> x = y^2 - c
-          return task(
-            level,
-            `Bestimme die Konstante d der Umkehrfunktion f<sup>−1</sup>(x) = x² + d für f(x) = &radic;(x + ${c}) (für x &ge; 0).`,
-            `Die Bremsverzögerung führt auf die Umkehrfunktion s(v) = v² + d. Bestimme d für v(s) = &radic;(s + ${c}).`,
-            [numberField("d =", -c, "", 0)],
-            `y = &radic;(x + ${c}) &rArr; y² = x + ${c} &rArr; x = y² − ${c}. Also d = −${c}.`,
-            `d = −${c}`,
-            { c },
-          );
+          const c = rng.pick([4, 9, 16, 25]);
+          if (level === 1) {
+            return {
+              prompt: `Bestimme die Konstante d der Umkehrfunktion f<sup>−1</sup>(x) = x² + d für f(x) = &radic;(x + ${c}) (für x &ge; 0).`,
+              given: [`f(x) = &radic;(x + ${c})`],
+              fields: [numberField("d =", -c, "", 0)],
+              formulaHint: `Quadriere beide Seiten von y = √(x + ${c}): y² = x + ${c}.`,
+              feedbackHint: `x = y² − ${c}. Also ist d = −${c}.`,
+              steps: [
+                `y = &radic;(x + ${c}) &rArr; y² = x + ${c} &rArr; x = y² − ${c}.`,
+                `f⁻¹(x) = x² − ${c} &rArr; d = −${c}.`,
+                `<strong>d = −${c}</strong>`,
+              ],
+              meta: { c, d: -c },
+            };
+          }
+          return {
+            prompt: `Die Bremsverzögerung eines Fahrzeugs verknüpft Geschwindigkeit v und Bremsweg s über v(s) = &radic;(s + ${c}). Zur Rekonstruktion des Bremswegs s(v) = v² + d soll die Umkehrfunktion bestimmt werden. Bestimme d.`,
+            given: [`v(s) = &radic;(s + ${c})`],
+            fields: [numberField("d =", -c, "m", 0)],
+            feedbackHint: "Löse v = √(s + c) nach s auf.",
+            steps: [
+              `v² = s + ${c} &rArr; s(v) = v² − ${c}. Konstante d = −${c}.`,
+              `<strong>d = −${c}</strong>`,
+            ],
+            meta: { c, d: -c },
+          };
         },
       },
     ],
@@ -523,34 +668,66 @@ export const STAGE_4_LESSONS: Lesson[] = [
       {
         id: "wurzel-ableitungswert",
         make: (rng: Rng, level: DifficultyLevel): ExerciseTask => {
-          const x0 = rng.pick([1, 4, 9, 16]);
+          const x0 = rng.pick([1, 4, 9, 16, 25]);
           const slope = 1 / (2 * Math.sqrt(x0));
-          return task(
-            level,
-            `Berechne den Wert der 1. Ableitung von f(x) = &radic;x an der Stelle x = ${x0}.`,
-            `Die Ausbreitungsgeschwindigkeit einer Tsunamiwelle im flachen Wasser folgt v(h) = &radic;h. Bestimme die Änderungsrate v'(${x0}).`,
-            [numberField("f' =", slope, "", 3)],
-            `f'(x) = 1 / (2&radic;x) &rArr; f'(${x0}) = 1 / (2·${Math.sqrt(x0)}) = ${slope}.`,
-            `f'(${x0}) = ${fmt(slope, 3)}`,
-            { x0 },
-          );
+          if (level === 1) {
+            return {
+              prompt: `Berechne den Wert der 1. Ableitung von f(x) = &radic;x an der Stelle x = ${x0} (auf drei Dezimalen gerundet).`,
+              given: [`f(x) = &radic;x`, `x = ${x0}`],
+              fields: [numberField("f' =", slope, "", 3)],
+              formulaHint: `Ableitungsformel: f'(x) = 1 / (2√x).`,
+              feedbackHint: `Setze x = ${x0} ein: 1 / (2 · ${Math.sqrt(x0)}).`,
+              steps: [
+                `f'(x) = 1 / (2&radic;x) &rArr; f'(${x0}) = 1 / (2·${Math.sqrt(x0)}) = ${fmt(slope, 3)}.`,
+                `<strong>f'(${x0}) = ${fmt(slope, 3)}</strong>`,
+              ],
+              meta: { x0, slope },
+            };
+          }
+          return {
+            prompt: `Die Ausbreitungsgeschwindigkeit einer Tsunamiwelle im flachen Wasser folgt v(h) = &radic;h (h = Wassertiefe in m). Bestimme die Änderungsrate v'(${x0}) der Geschwindigkeit bei Tiefe h = ${x0} m.`,
+            given: [`v(h) = &radic;h`, `h = ${x0} m`],
+            fields: [numberField("v' =", slope, "s⁻¹", 3)],
+            feedbackHint: `Differenziere v(h) nach der Potenzregel und setze h = ${x0} ein.`,
+            steps: [
+              `v'(h) = 1 / (2&radic;h) &rArr; v'(${x0}) = 1 / (2·${Math.sqrt(x0)}) = ${fmt(slope, 3)}.`,
+              `<strong>v'(${x0}) = ${fmt(slope, 3)}</strong>`,
+            ],
+            meta: { x0, slope },
+          };
         },
       },
       {
         id: "kettenregel-wurzel",
         make: (rng: Rng, level: DifficultyLevel): ExerciseTask => {
-          const a = rng.pick([2, 4, 6]);
-          // f(x) = sqrt(a*x + 1) -> f'(0) = a / (2*sqrt(1)) = a / 2
+          const a = rng.pick([2, 4, 6, 8]);
           const slope0 = a / 2;
-          return task(
-            level,
-            `Berechne die Steigung im Ursprung f'(0) für f(x) = &radic;(${a}x + 1).`,
-            `Bestimme die Randsteigung f'(0) der Funktion f(x) = &radic;(${a}x + 1).`,
-            [numberField("f'(0) =", slope0, "", 1)],
-            `Kettenregel: f'(x) = ${a} / (2&radic;(${a}x + 1)). Für x = 0 ist f'(0) = ${a} / 2 = ${slope0}.`,
-            `f'(0) = ${slope0}`,
-            { a },
-          );
+          if (level === 1) {
+            return {
+              prompt: `Berechne die Steigung f'(0) für die Wurzelfunktion f(x) = &radic;(${a}x + 1).`,
+              given: [`f(x) = &radic;(${a}x + 1)`, `x = 0`],
+              fields: [numberField("f'(0) =", slope0, "", 1)],
+              formulaHint: `Kettenregel: (√u(x))' = u'(x) / (2√u(x)).`,
+              feedbackHint: `Innere Ableitung u'(0) = ${a}, Nenner 2·√1 = 2.`,
+              steps: [
+                `f'(x) = ${a} / (2&radic;(${a}x + 1)).`,
+                `f'(0) = ${a} / (2&radic;1) = ${a} / 2 = ${slope0}.`,
+                `<strong>f'(0) = ${slope0}</strong>`,
+              ],
+              meta: { a, slope0 },
+            };
+          }
+          return {
+            prompt: `Die elektrische Stromstärke beim Einschalten einer Spule verhält sich nach I(t) = &radic;(${a}t + 1) (in A). Bestimme die anfängliche Stromänderungsgeschwindigkeit I'(0) in A/s.`,
+            given: [`I(t) = &radic;(${a}t + 1)`, `t = 0 s`],
+            fields: [numberField("I'(0) =", slope0, "A/s", 1)],
+            feedbackHint: "Kettenregel für die Wurzel: u'/ (2√u).",
+            steps: [
+              `I'(t) = ${a} / (2&radic;(${a}t + 1)) &rArr; I'(0) = ${a} / 2 = ${slope0} A/s.`,
+              `<strong>I'(0) = ${slope0} A/s</strong>`,
+            ],
+            meta: { a, slope0 },
+          };
         },
       },
     ],
@@ -629,30 +806,66 @@ export const STAGE_4_LESSONS: Lesson[] = [
       {
         id: "wurzel-definitionsbereich",
         make: (rng: Rng, level: DifficultyLevel): ExerciseTask => {
-          const a = rng.pick([3, 5, 7, 9]);
-          return task(
-            level,
-            `Bestimme den kleinstmöglichen Wert x<sub>min</sub> des Definitionsbereichs D = [x<sub>min</sub>; +&infin;[ für f(x) = &radic;(x − ${a}).`,
-            `Für die Lebensdauerfunktion eines Akkus L(t) = &radic;(t − ${a}) ist der physikalische Startzeitpunkt t<sub>min</sub> gesucht.`,
-            [numberField("x_min =", a, "", 0)],
-            `Radikand nichtnegativ: x − ${a} ≥ 0 &rArr; x ≥ ${a}.`,
-            `x_min = ${a}`,
-            { a },
-          );
+          const a = rng.pick([3, 5, 7, 9, 11]);
+          if (level === 1) {
+            return {
+              prompt: `Bestimme den kleinstmöglichen Wert x<sub>min</sub> des Definitionsbereichs D = [x<sub>min</sub>; +&infin;[ für f(x) = &radic;(x − ${a}).`,
+              given: [`f(x) = &radic;(x − ${a})`],
+              fields: [numberField("x_min =", a, "", 0)],
+              formulaHint: `Radikand nichtnegativ: x − ${a} ≥ 0.`,
+              feedbackHint: `Addiere ${a} auf beiden Seiten.`,
+              steps: [
+                `x − ${a} &ge; 0 &rArr; x &ge; ${a}.`,
+                `<strong>x_min = ${a}</strong>`,
+              ],
+              meta: { a },
+            };
+          }
+          const b = rng.pick([2, 3, 4]);
+          const xMax = a / b;
+          return {
+            prompt: `Bestimme die rechte Intervallgrenze x<sub>max</sub> des maximalen Definitionsbereichs D = ]−&infin;; x<sub>max</sub>] für g(x) = &radic;(${a} − ${b}x).`,
+            given: [`g(x) = &radic;(${a} − ${b}x)`],
+            fields: [numberField("x_max =", xMax, "", 2)],
+            feedbackHint: `Löse die Ungleichung ${a} − ${b}x ≥ 0.`,
+            steps: [
+              `${a} − ${b}x &ge; 0 &rArr; ${b}x &le; ${a} &rArr; x &le; ${a}/${b} = ${fmt(xMax, 2)}.`,
+              `<strong>x_max = ${fmt(xMax, 2)}</strong>`,
+            ],
+            meta: { a, b, xMax },
+          };
         },
       },
       {
         id: "wurzel-extrempunkt",
-        make: (_rng: Rng, level: DifficultyLevel): ExerciseTask => {
-          // f(x) = x - sqrt(x) -> f'(x) = 1 - 1/(2*sqrt(x)) = 0 -> 2*sqrt(x) = 1 -> sqrt(x) = 0.5 -> x = 0.25
-          return task(
-            level,
-            "Bestimme die Extremstelle der Funktion f(x) = x − &radic;x für x > 0.",
-            "Ein Gewinnmodell führt auf G(x) = x − &radic;x. Bestimme die Stelle minimalen Gewinns.",
-            [numberField("x =", 0.25, "", 2)],
-            "f'(x) = 1 − 1/(2&radic;x) = 0 &rArr; 2&radic;x = 1 &rArr; &radic;x = 0,5 &rArr; x = 0,25.",
-            "x = 0,25",
-          );
+        make: (rng: Rng, level: DifficultyLevel): ExerciseTask => {
+          const a = rng.pick([2, 4, 6]);
+          const xMin = (a * a) / 4;
+          if (level === 1) {
+            return {
+              prompt: `Bestimme die Extremstelle der Funktion f(x) = x − ${a}&radic;x für x > 0.`,
+              given: [`f(x) = x − ${a}&radic;x`, `x > 0`],
+              fields: [numberField("x =", xMin, "", 2)],
+              formulaHint: `f'(x) = 1 − ${a} / (2√x) = 0.`,
+              feedbackHint: `2√x = ${a} ⇒ √x = ${a / 2} ⇒ x = (${a / 2})².`,
+              steps: [
+                `f'(x) = 1 − ${a}/(2&radic;x) = 0 &rArr; &radic;x = ${a / 2} &rArr; x = ${xMin}.`,
+                `<strong>x = ${xMin}</strong>`,
+              ],
+              meta: { a, xMin },
+            };
+          }
+          return {
+            prompt: `Ein betriebswirtschaftliches Modell beschreibt Stückkosten durch K(x) = x − ${a}&radic;x + 10 (für x > 0). Bestimme die Produktionsmenge x, bei der die Kosten minimal sind.`,
+            given: [`K(x) = x − ${a}&radic;x + 10`, `x > 0`],
+            fields: [numberField("x =", xMin, "", 2)],
+            feedbackHint: "Bilde die 1. Ableitung K'(x) und setze sie gleich null.",
+            steps: [
+              `K'(x) = 1 − ${a}/(2&radic;x) = 0 &rArr; &radic;x = ${a / 2} &rArr; x = ${xMin}.`,
+              `<strong>x = ${xMin}</strong>`,
+            ],
+            meta: { a, xMin },
+          };
         },
       },
     ],
@@ -733,35 +946,67 @@ export const STAGE_4_LESSONS: Lesson[] = [
       {
         id: "ln-kettenregel-ausrechnen",
         make: (rng: Rng, level: DifficultyLevel): ExerciseTask => {
-          const a = rng.pick([2, 3, 4]);
+          const a = rng.pick([2, 3, 4, 5]);
           const x0 = 1;
-          // f(x) = ln(a*x^2 + 1) -> f'(x) = 2ax / (a*x^2 + 1) -> f'(1) = 2a / (a + 1)
           const slope = (2 * a * x0) / (a * x0 * x0 + 1);
-          return task(
-            level,
-            `Berechne die Steigung f'(1) der Funktion f(x) = ln(${a}x² + 1) (auf zwei Dezimalen gerundet).`,
-            `Die Lautstärkeempfindung folgt L(I) = ln(${a}I² + 1). Bestimme die Empfindlichkeitsänderung L'(1).`,
-            [numberField("f'(1) =", slope, "", 2)],
-            `f'(x) = ${2 * a}x / (${a}x² + 1) &rArr; f'(1) = ${2 * a} / (${a + 1}) = ${fmt(slope, 2)}.`,
-            `f'(1) = ${fmt(slope, 2)}`,
-            { a },
-          );
+          if (level === 1) {
+            return {
+              prompt: `Berechne die Steigung f'(1) der Funktion f(x) = ln(${a}x² + 1) (auf zwei Dezimalen gerundet).`,
+              given: [`f(x) = ln(${a}x² + 1)`, `x = 1`],
+              fields: [numberField("f'(1) =", slope, "", 2)],
+              formulaHint: `(ln(u(x)))' = u'(x) / u(x).`,
+              feedbackHint: `Innere Funktion u(x) = ${a}x² + 1 ⇒ u'(x) = ${2 * a}x. Setze x = 1 ein.`,
+              steps: [
+                `f'(x) = ${2 * a}x / (${a}x² + 1).`,
+                `f'(1) = ${2 * a} / (${a + 1}) = ${fmt(slope, 2)}.`,
+                `<strong>f'(1) = ${fmt(slope, 2)}</strong>`,
+              ],
+              meta: { a, slope },
+            };
+          }
+          return {
+            prompt: `Die menschliche Lautstärkeempfindung folgt L(I) = ln(${a}I² + 1) (I = Schallintensität). Bestimme die Empfindlichkeitsänderung L'(1) gerundet auf zwei Dezimalstellen.`,
+            given: [`L(I) = ln(${a}I² + 1)`, `I = 1`],
+            fields: [numberField("L'(1) =", slope, "", 2)],
+            feedbackHint: "Wende die logarithmische Ableitungsregel u'/u an.",
+            steps: [
+              `L'(I) = ${2 * a}I / (${a}I² + 1) &rArr; L'(1) = ${2 * a} / (${a + 1}) = ${fmt(slope, 2)}.`,
+              `<strong>L'(1) = ${fmt(slope, 2)}</strong>`,
+            ],
+            meta: { a, slope },
+          };
         },
       },
       {
         id: "ln-tangente-ursprung",
         make: (rng: Rng, level: DifficultyLevel): ExerciseTask => {
-          const xVal = rng.pick([2, 5, 10]);
+          const xVal = rng.pick([2, 4, 5, 8, 10]);
           const m = 1 / xVal;
-          return task(
-            level,
-            `Bestimme die Tangentensteigung m von f(x) = ln(x) an der Stelle x = ${xVal}.`,
-            `Berechne die Steigung der Logarithmuskurve bei x = ${xVal}.`,
-            [numberField("m =", m, "", 2)],
-            `f'(x) = 1 / x &rArr; f'(${xVal}) = 1 / ${xVal} = ${fmt(m, 2)}.`,
-            `m = ${fmt(m, 2)}`,
-            { xVal },
-          );
+          if (level === 1) {
+            return {
+              prompt: `Bestimme die Tangentensteigung m von f(x) = ln(x) an der Stelle x = ${xVal} (auf zwei Dezimalen).`,
+              given: [`f(x) = ln(x)`, `x = ${xVal}`],
+              fields: [numberField("m =", m, "", 2)],
+              formulaHint: `(ln x)' = 1 / x.`,
+              feedbackHint: `Setze ${xVal} in 1/x ein.`,
+              steps: [
+                `f'(x) = 1 / x &rArr; f'(${xVal}) = 1 / ${xVal} = ${fmt(m, 2)}.`,
+                `<strong>m = ${fmt(m, 2)}</strong>`,
+              ],
+              meta: { xVal, m },
+            };
+          }
+          return {
+            prompt: `Ermittle die Steigung der Tangente an den Graphen von g(x) = 3·ln(x) an der Stelle x = ${xVal}.`,
+            given: [`g(x) = 3·ln(x)`, `x = ${xVal}`],
+            fields: [numberField("m =", 3 / xVal, "", 2)],
+            feedbackHint: "Konstanter Faktor 3 bleibt beim Ableiten erhalten: g'(x) = 3/x.",
+            steps: [
+              `g'(x) = 3 / x &rArr; g'(${xVal}) = 3 / ${xVal} = ${fmt(3 / xVal, 2)}.`,
+              `<strong>m = ${fmt(3 / xVal, 2)}</strong>`,
+            ],
+            meta: { xVal, m: 3 / xVal },
+          };
         },
       },
     ],
@@ -845,34 +1090,66 @@ export const STAGE_4_LESSONS: Lesson[] = [
       {
         id: "ln-grenzwert-rechnen",
         make: (rng: Rng, level: DifficultyLevel): ExerciseTask => {
-          const a = rng.pick([2, 5, 10]);
-          return task(
-            level,
-            `Bestimme den Grenzwert von f(x) = (${a} + ln(x)) / x für x &rarr; +&infin;.`,
-            `Untersuche das Grenzverhalten der relativen Kostenfunktion K(x) = (${a} + ln(x)) / x für x &rarr; +&infin;.`,
-            [numberField("Limes =", 0, "", 0)],
-            "Zerlege: a/x + ln(x)/x. Beide Summanden gehen für x->unendlich gegen 0.",
-            `lim [${a}/x + ln(x)/x] = 0 + 0 = 0.`,
-            "Limes = 0",
-            { a },
-          );
+          const a = rng.pick([2, 5, 10, 20]);
+          if (level === 1) {
+            return {
+              prompt: `Bestimme den Grenzwert von f(x) = (${a} + ln(x)) / x für x &rarr; +&infin;.`,
+              given: [`f(x) = (${a} + ln(x)) / x`, `x &rarr; +&infin;`],
+              fields: [numberField("Limes =", 0, "", 0)],
+              formulaHint: `Zerlege den Bruch in ${a}/x + ln(x)/x und bilde für beide Summanden den Limes.`,
+              feedbackHint: `Beide Terme streben gegen 0.`,
+              steps: [
+                `lim_{x→∞} [${a}/x + ln(x)/x] = 0 + 0 = 0.`,
+                `<strong>Limes = 0</strong>`,
+              ],
+              meta: { a },
+            };
+          }
+          return {
+            prompt: `Untersuche das Grenzverhalten der relativen Kostenfunktion K(x) = (${a} + ln(x)) / x für x &rarr; +&infin;. Welcher Wert wird asymptotisch erreicht?`,
+            given: [`K(x) = (${a} + ln(x)) / x`, `x &rarr; +&infin;`],
+            fields: [numberField("Limes =", 0, "", 0)],
+            feedbackHint: "Der Nenner x wächst viel schneller als der Zähler ln(x).",
+            steps: [
+              `lim_{x→∞} K(x) = 0.`,
+              `<strong>Limes = 0</strong>`,
+            ],
+            meta: { a },
+          };
         },
       },
       {
         id: "ln-nullstelle-suchen",
         make: (rng: Rng, level: DifficultyLevel): ExerciseTask => {
-          const c = rng.pick([2, 3, 4]);
-          // ln(x - c) = 0 -> x - c = 1 -> x = c + 1
+          const c = rng.pick([2, 3, 4, 5, 6]);
           const x0 = c + 1;
-          return task(
-            level,
-            `Bestimme die Nullstelle der Funktion f(x) = ln(x − ${c}).`,
-            `An welcher Stelle x schneidet der Graph von f(x) = ln(x − ${c}) die x-Achse?`,
-            [numberField("x =", x0, "", 0)],
-            `ln(x − ${c}) = 0 &rArr; x − ${c} = 1 &rArr; x = ${x0}.`,
-            `x = ${x0}`,
-            { c },
-          );
+          if (level === 1) {
+            return {
+              prompt: `Bestimme die Nullstelle der Funktion f(x) = ln(x − ${c}).`,
+              given: [`f(x) = ln(x − ${c})`],
+              fields: [numberField("x =", x0, "", 0)],
+              formulaHint: `ln(Term) = 0 genau dann, wenn Term = 1.`,
+              feedbackHint: `Setze x − ${c} = 1.`,
+              steps: [
+                `ln(x − ${c}) = 0 &rArr; x − ${c} = 1 &rArr; x = ${x0}.`,
+                `<strong>x = ${x0}</strong>`,
+              ],
+              meta: { c, x0 },
+            };
+          }
+          const k = rng.pick([2, 3]);
+          const x02 = (1 + c) / k;
+          return {
+            prompt: `Bestimme die Schnittstelle mit der x-Achse für die Funktion g(x) = ln(${k}x − ${c}) (auf zwei Dezimalen gerundet).`,
+            given: [`g(x) = ln(${k}x − ${c})`],
+            fields: [numberField("x =", x02, "", 2)],
+            feedbackHint: `Setze ${k}x − ${c} = 1 und löse nach x auf.`,
+            steps: [
+              `${k}x − ${c} = 1 &rArr; ${k}x = ${1 + c} &rArr; x = ${1 + c} / ${k} = ${fmt(x02, 2)}.`,
+              `<strong>x = ${fmt(x02, 2)}</strong>`,
+            ],
+            meta: { k, c, x02 },
+          };
         },
       },
     ],

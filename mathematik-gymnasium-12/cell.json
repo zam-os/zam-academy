@@ -15,8 +15,8 @@
   ],
   "atoms": [
     {
-      "id": "01M6X2QR00WBENGF2S4KPXRQA1",
-      "atom_uri": "urn:zam:atom:01M6X2QR00WBENGF2S4KPXRQA1",
+      "id": "01M6Y39BAC0XKZW0P1WTJP357K",
+      "atom_uri": "urn:zam:atom:01M6Y39BAC0XKZW0P1WTJP357K",
       "namespace": "zam-academy-mathematik-gymnasium-12",
       "slug": "g12-schar-ganzrational",
       "title": "Kurvenscharen ganzrationaler Funktionen",
@@ -44,7 +44,7 @@
       ],
       "practice_items": [
         {
-          "id": "01M6X2QRZ8S4KPXRQA1CVY50ZJ",
+          "id": "01M6Y39BACPRPDX9S3J1WZEJST",
           "slug": "g12-schar-parameter-behandlung",
           "language": "de",
           "tier": "tier1_fast",
@@ -73,7 +73,7 @@
           }
         },
         {
-          "id": "01M6X2QSYGPXRQA1CVY50ZJ9M3",
+          "id": "01M6Y39BACDZGN8VYRB5JAVQFW",
           "slug": "g12-schar-waagrechte-tangenten",
           "language": "de",
           "tier": "tier1_fast",
@@ -91,7 +91,6 @@
             }
           ],
           "question": "Welche Gleichung bestimmt die Lage möglicher Extremstellen einer Schar f_a(x)?",
-          "concept": "f'_a(x) = 0 nach der Variablen x auflösen.",
           "fast_check": {
             "type": "binary_choice",
             "options": [
@@ -99,10 +98,21 @@
               "f_a(0) = 0 nach dem Parameter a auflösen."
             ],
             "correct_index": 0
-          }
+          },
+          "concept_segments": [
+            {
+              "type": "math",
+              "tex": "f'_a(x) = 0",
+              "speech": "f Strich a von x gleich 0"
+            },
+            {
+              "type": "text",
+              "text": " nach der Variablen x auflösen."
+            }
+          ]
         },
         {
-          "id": "01M6X2QTXRKPXRQA1CVY50ZJ9M",
+          "id": "01M6Y39BACHDAF2G78C1Z7ZE0Q",
           "slug": "g12-schar-extremstelle-berechnen",
           "language": "de",
           "tier": "tier2_transfer",
@@ -126,8 +136,8 @@
       ]
     },
     {
-      "id": "01M6X2QVX0GF2S4KPXRQA1CVY5",
-      "atom_uri": "urn:zam:atom:01M6X2QVX0GF2S4KPXRQA1CVY5",
+      "id": "01M6Y39BAC49GG2Q2GV7973MGT",
+      "atom_uri": "urn:zam:atom:01M6Y39BAC49GG2Q2GV7973MGT",
       "namespace": "zam-academy-mathematik-gymnasium-12",
       "slug": "g12-stammfunktion-ganzrational",
       "title": "Stammfunktionen und graphisches Integrieren",
@@ -137,7 +147,7 @@
       "source_link": "https://academy.zam-os.org/mathematik-gymnasium-12/#lesson=g12-stammfunktion-ganzrational",
       "prerequisites": [
         {
-          "atom_id": "01M6X2QR00WBENGF2S4KPXRQA1",
+          "atom_id": "01M6Y39BAC0XKZW0P1WTJP357K",
           "relationship": "requires"
         }
       ],
@@ -160,7 +170,7 @@
       ],
       "practice_items": [
         {
-          "id": "01M6X2QWW8D87THWBENGF2S4KP",
+          "id": "01M6Y39BACWK95J1CCD5X7VS1G",
           "slug": "g12-stammfunktion-definition",
           "language": "de",
           "tier": "tier1_fast",
@@ -189,7 +199,7 @@
           }
         },
         {
-          "id": "01M6X2QXVGA1CVY50ZJ9M36D87",
+          "id": "01M6Y39BACNPAPSKDQS689W2GP",
           "slug": "g12-stammfunktion-konstante",
           "language": "de",
           "tier": "tier1_fast",
@@ -218,7 +228,7 @@
           }
         },
         {
-          "id": "01M6X2QYTR7THWBENGF2S4KPXR",
+          "id": "01M6Y39BACF2116CS80AGJVTEK",
           "slug": "g12-stammfunktion-anfangsbedingung",
           "language": "de",
           "tier": "tier2_transfer",
@@ -242,8 +252,8 @@
       ]
     },
     {
-      "id": "01M6X2QZT04KPXRQA1CVY50ZJ9",
-      "atom_uri": "urn:zam:atom:01M6X2QZT04KPXRQA1CVY50ZJ9",
+      "id": "01M6Y39BACRMQBREW73TMVVYP5",
+      "atom_uri": "urn:zam:atom:01M6Y39BACRMQBREW73TMVVYP5",
       "namespace": "zam-academy-mathematik-gymnasium-12",
       "slug": "g12-exp-ableitung-regeln",
       "title": "Natürliche Exponentialfunktion – Produkt- und Kettenregel",
@@ -253,7 +263,7 @@
       "source_link": "https://academy.zam-os.org/mathematik-gymnasium-12/#lesson=g12-exp-ableitung-regeln",
       "prerequisites": [
         {
-          "atom_id": "01M6X2QVX0GF2S4KPXRQA1CVY5",
+          "atom_id": "01M6Y39BAC49GG2Q2GV7973MGT",
           "relationship": "requires"
         }
       ],
@@ -276,7 +286,7 @@
       ],
       "practice_items": [
         {
-          "id": "01M6X2R0S81CVY50ZJ9M36D87T",
+          "id": "01M6Y39BAC64M1PGD72J2SV5ZV",
           "slug": "g12-exp-ableitung-basis",
           "language": "de",
           "tier": "tier1_fast",
@@ -305,7 +315,7 @@
           }
         },
         {
-          "id": "01M6X2R1RGY50ZJ9M36D87THWB",
+          "id": "01M6Y39BAC8XFZ6HJ3SGDRZNE2",
           "slug": "g12-exp-ableitung-regeln-check",
           "language": "de",
           "tier": "tier1_fast",
@@ -322,8 +332,6 @@
               "reason": "Vorzeichenfehler beim Ausklammern: 2·e^(−x) − (2x − 3)·e^(−x) = (5 − 2x)·e^(−x)."
             }
           ],
-          "question": "Wie lautet die 1. Ableitung von f(x) = (2x − 3) · e^(−x) nach Produkt- und Kettenregel?",
-          "concept": "f'(x) = (5 − 2x) · e^(−x)",
           "fast_check": {
             "type": "binary_choice",
             "options": [
@@ -331,10 +339,32 @@
               "f'(x) = 2 · e^(−x)"
             ],
             "correct_index": 0
-          }
+          },
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Wie lautet die 1. Ableitung von "
+            },
+            {
+              "type": "math",
+              "tex": "f(x) = (2x − 3) \\cdot e^{-x}",
+              "speech": "f von x gleich Klammer auf 2 x minus 3 Klammer zu mal e hoch minus x"
+            },
+            {
+              "type": "text",
+              "text": " nach Produkt- und Kettenregel?"
+            }
+          ],
+          "concept_segments": [
+            {
+              "type": "math",
+              "tex": "f'(x) = (5 − 2x) \\cdot e^{-x}",
+              "speech": "f Strich von x gleich Klammer auf 5 minus 2 x Klammer zu mal e hoch minus x"
+            }
+          ]
         },
         {
-          "id": "01M6X2R2QRVY50ZJ9M36D87THW",
+          "id": "01M6Y39BACSJPBB24NHE54JF73",
           "slug": "g12-exp-ableitung-produkt-kette",
           "language": "de",
           "tier": "tier2_transfer",
@@ -358,8 +388,8 @@
       ]
     },
     {
-      "id": "01M6X2R3Q0RQA1CVY50ZJ9M36D",
-      "atom_uri": "urn:zam:atom:01M6X2R3Q0RQA1CVY50ZJ9M36D",
+      "id": "01M6Y39BACM91RK6EN99AYTFJ4",
+      "atom_uri": "urn:zam:atom:01M6Y39BACM91RK6EN99AYTFJ4",
       "namespace": "zam-academy-mathematik-gymnasium-12",
       "slug": "g12-exp-grenzwerte",
       "title": "Grenzwerte und Dominanz der Exponentialfunktion",
@@ -369,7 +399,7 @@
       "source_link": "https://academy.zam-os.org/mathematik-gymnasium-12/#lesson=g12-exp-grenzwerte",
       "prerequisites": [
         {
-          "atom_id": "01M6X2QZT04KPXRQA1CVY50ZJ9",
+          "atom_id": "01M6Y39BACRMQBREW73TMVVYP5",
           "relationship": "requires"
         }
       ],
@@ -392,7 +422,7 @@
       ],
       "practice_items": [
         {
-          "id": "01M6X2R4P8NGF2S4KPXRQA1CVY",
+          "id": "01M6Y39BAC323C5X9NHS6MJJYT",
           "slug": "g12-exp-dominanz-potenz",
           "language": "de",
           "tier": "tier1_fast",
@@ -421,7 +451,7 @@
           }
         },
         {
-          "id": "01M6X2R5NGJ9M36D87THWBENGF",
+          "id": "01M6Y39BACJXNGF5WJF1MAQX4E",
           "slug": "g12-exp-limes-minus-unendlich",
           "language": "de",
           "tier": "tier1_fast",
@@ -450,7 +480,7 @@
           }
         },
         {
-          "id": "01M6X2R6MRF2S4KPXRQA1CVY50",
+          "id": "01M6Y39BAC7TY2D15W5M0G2M7Y",
           "slug": "g12-exp-grenzwert-berechnen",
           "language": "de",
           "tier": "tier2_transfer",
@@ -474,8 +504,8 @@
       ]
     },
     {
-      "id": "01M6X2R7M0CVY50ZJ9M36D87TH",
-      "atom_uri": "urn:zam:atom:01M6X2R7M0CVY50ZJ9M36D87TH",
+      "id": "01M6Y39BACKGYYS41VJ4HPFKMG",
+      "atom_uri": "urn:zam:atom:01M6Y39BACKGYYS41VJ4HPFKMG",
       "namespace": "zam-academy-mathematik-gymnasium-12",
       "slug": "g12-exp-kurvendiskussion",
       "title": "Kurvendiskussion verknüpfter Exponentialfunktionen",
@@ -485,7 +515,7 @@
       "source_link": "https://academy.zam-os.org/mathematik-gymnasium-12/#lesson=g12-exp-kurvendiskussion",
       "prerequisites": [
         {
-          "atom_id": "01M6X2R3Q0RQA1CVY50ZJ9M36D",
+          "atom_id": "01M6Y39BACM91RK6EN99AYTFJ4",
           "relationship": "requires"
         }
       ],
@@ -508,7 +538,7 @@
       ],
       "practice_items": [
         {
-          "id": "01M6X2R8K89M36D87THWBENGF2",
+          "id": "01M6Y39BAC7C9T6GSGCNBBHJDN",
           "slug": "g12-exp-nullstellen-satz-nullprodukt",
           "language": "de",
           "tier": "tier1_fast",
@@ -537,7 +567,7 @@
           }
         },
         {
-          "id": "01M6X2R9JG6D87THWBENGF2S4K",
+          "id": "01M6Y39BACM2CHR5V4Y9A7WX0J",
           "slug": "g12-exp-extremstellen-ableitung",
           "language": "de",
           "tier": "tier1_fast",
@@ -566,7 +596,7 @@
           }
         },
         {
-          "id": "01M6X2RAHR36D87THWBENGF2S4",
+          "id": "01M6Y39BACFSFNATT5V43R6JYM",
           "slug": "g12-exp-wendepunkt-rechnen",
           "language": "de",
           "tier": "tier2_transfer",
@@ -590,8 +620,8 @@
       ]
     },
     {
-      "id": "01M6X2RBH00ZJ9M36D87THWBEN",
-      "atom_uri": "urn:zam:atom:01M6X2RBH00ZJ9M36D87THWBEN",
+      "id": "01M6Y39BACSA87KK7M2W126EVQ",
+      "atom_uri": "urn:zam:atom:01M6Y39BACSA87KK7M2W126EVQ",
       "namespace": "zam-academy-mathematik-gymnasium-12",
       "slug": "g12-exp-wachstum-modelle",
       "title": "Modellierung von Wachstums- und Abklingprozessen",
@@ -601,7 +631,7 @@
       "source_link": "https://academy.zam-os.org/mathematik-gymnasium-12/#lesson=g12-exp-wachstum-modelle",
       "prerequisites": [
         {
-          "atom_id": "01M6X2R7M0CVY50ZJ9M36D87TH",
+          "atom_id": "01M6Y39BACKGYYS41VJ4HPFKMG",
           "relationship": "requires"
         }
       ],
@@ -624,7 +654,7 @@
       ],
       "practice_items": [
         {
-          "id": "01M6X2RCG8XRQA1CVY50ZJ9M36",
+          "id": "01M6Y39BACDQFKXBKB6YTS6TRX",
           "slug": "g12-exp-basiswechsel-formel",
           "language": "de",
           "tier": "tier1_fast",
@@ -641,8 +671,6 @@
               "reason": "ln(a) gehört in den Exponenten als Wachstumskonstante k = ln(a)."
             }
           ],
-          "question": "Wie schreibt man eine Exponentialfunktion f(t) = B_0 · a^t mit a > 0 zur Basis e um?",
-          "concept": "f(t) = B_0 · e^(ln(a) · t)",
           "fast_check": {
             "type": "binary_choice",
             "options": [
@@ -650,10 +678,41 @@
               "f(t) = B_0 · e^(a · t)"
             ],
             "correct_index": 0
-          }
+          },
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Wie schreibt man eine Exponentialfunktion "
+            },
+            {
+              "type": "math",
+              "tex": "f(t) = B_0 \\cdot a^t",
+              "speech": "f von t gleich B null mal a hoch t"
+            },
+            {
+              "type": "text",
+              "text": " mit "
+            },
+            {
+              "type": "math",
+              "tex": "a > 0",
+              "speech": "a größer als null"
+            },
+            {
+              "type": "text",
+              "text": " zur Basis e um?"
+            }
+          ],
+          "concept_segments": [
+            {
+              "type": "math",
+              "tex": "f(t) = B_0 \\cdot e^{\\ln(a) \\cdot t}",
+              "speech": "f von t gleich B null mal e hoch l n von a mal t"
+            }
+          ]
         },
         {
-          "id": "01M6X2RDFGTHWBENGF2S4KPXRQ",
+          "id": "01M6Y39BACMCYYQJC24H827Y0D",
           "slug": "g12-exp-halbwertszeit-begriff",
           "language": "de",
           "tier": "tier1_fast",
@@ -682,7 +741,7 @@
           }
         },
         {
-          "id": "01M6X2REERQA1CVY50ZJ9M36D8",
+          "id": "01M6Y39BACXE17NK2DN71YW1AN",
           "slug": "g12-exp-zerfall-berechnen",
           "language": "de",
           "tier": "tier2_transfer",
@@ -706,8 +765,8 @@
       ]
     },
     {
-      "id": "01M6X2RFE0M36D87THWBENGF2S",
-      "atom_uri": "urn:zam:atom:01M6X2RFE0M36D87THWBENGF2S",
+      "id": "01M6Y39BAC3KTED095R2MQCC5K",
+      "atom_uri": "urn:zam:atom:01M6Y39BAC3KTED095R2MQCC5K",
       "namespace": "zam-academy-mathematik-gymnasium-12",
       "slug": "g12-trig-ableitung-graph",
       "title": "Graphische Herleitung der Ableitungen von Sinus und Kosinus",
@@ -717,7 +776,7 @@
       "source_link": "https://academy.zam-os.org/mathematik-gymnasium-12/#lesson=g12-trig-ableitung-graph",
       "prerequisites": [
         {
-          "atom_id": "01M6X2RBH00ZJ9M36D87THWBEN",
+          "atom_id": "01M6Y39BACSA87KK7M2W126EVQ",
           "relationship": "requires"
         }
       ],
@@ -740,7 +799,7 @@
       ],
       "practice_items": [
         {
-          "id": "01M6X2RGD8HWBENGF2S4KPXRQA",
+          "id": "01M6Y39BACFQB12498G42J9JEV",
           "slug": "g12-sinus-ableitung-kosinus",
           "language": "de",
           "tier": "tier1_fast",
@@ -758,7 +817,6 @@
             }
           ],
           "question": "Wie lautet die 1. Ableitung der Standard-Sinusfunktion?",
-          "concept": "Die Kosinusfunktion: f'(x) = cos(x).",
           "fast_check": {
             "type": "binary_choice",
             "options": [
@@ -766,10 +824,25 @@
               "Die negative Kosinusfunktion: f'(x) = −cos(x)."
             ],
             "correct_index": 0
-          }
+          },
+          "concept_segments": [
+            {
+              "type": "text",
+              "text": "Die Kosinusfunktion: "
+            },
+            {
+              "type": "math",
+              "tex": "f'(x) = \\cos(x)",
+              "speech": "f Strich von x gleich Kosinus von x"
+            },
+            {
+              "type": "text",
+              "text": "."
+            }
+          ]
         },
         {
-          "id": "01M6X2RHCGENGF2S4KPXRQA1CV",
+          "id": "01M6Y39BACQ36686G4YSJAZKCN",
           "slug": "g12-kosinus-ableitung-minus-sinus",
           "language": "de",
           "tier": "tier1_fast",
@@ -787,7 +860,6 @@
             }
           ],
           "question": "Wie lautet die 1. Ableitung der Standard-Kosinusfunktion?",
-          "concept": "Der negative Sinus: g'(x) = −sin(x).",
           "fast_check": {
             "type": "binary_choice",
             "options": [
@@ -795,10 +867,25 @@
               "Der positive Sinus: g'(x) = sin(x)."
             ],
             "correct_index": 0
-          }
+          },
+          "concept_segments": [
+            {
+              "type": "text",
+              "text": "Der negative Sinus: "
+            },
+            {
+              "type": "math",
+              "tex": "g'(x) = −\\sin(x)",
+              "speech": "g Strich von x gleich minus Sinus von x"
+            },
+            {
+              "type": "text",
+              "text": "."
+            }
+          ]
         },
         {
-          "id": "01M6X2RJBRBENGF2S4KPXRQA1C",
+          "id": "01M6Y39BACM73KH85JZ1SEP3WY",
           "slug": "g12-trig-steigung-ausrechnen",
           "language": "de",
           "tier": "tier2_transfer",
@@ -822,8 +909,8 @@
       ]
     },
     {
-      "id": "01M6X2RKB087THWBENGF2S4KPX",
-      "atom_uri": "urn:zam:atom:01M6X2RKB087THWBENGF2S4KPX",
+      "id": "01M6Y39BACTT1RE3S8V8GF02NH",
+      "atom_uri": "urn:zam:atom:01M6Y39BACTT1RE3S8V8GF02NH",
       "namespace": "zam-academy-mathematik-gymnasium-12",
       "slug": "g12-trig-kurvendiskussion",
       "title": "Kurvendiskussion trigonometrischer Verknüpfungen",
@@ -833,7 +920,7 @@
       "source_link": "https://academy.zam-os.org/mathematik-gymnasium-12/#lesson=g12-trig-kurvendiskussion",
       "prerequisites": [
         {
-          "atom_id": "01M6X2RFE0M36D87THWBENGF2S",
+          "atom_id": "01M6Y39BAC3KTED095R2MQCC5K",
           "relationship": "requires"
         }
       ],
@@ -856,7 +943,7 @@
       ],
       "practice_items": [
         {
-          "id": "01M6X2RMA850ZJ9M36D87THWBE",
+          "id": "01M6Y39BACTW6YVMCPFREYM68W",
           "slug": "g12-trig-amplitude-periode",
           "language": "de",
           "tier": "tier1_fast",
@@ -885,7 +972,7 @@
           }
         },
         {
-          "id": "01M6X2RN9G2S4KPXRQA1CVY50Z",
+          "id": "01M6Y39BAC5ZGEKJMB4QSS2TED",
           "slug": "g12-trig-kettenregel-linear",
           "language": "de",
           "tier": "tier1_fast",
@@ -914,7 +1001,7 @@
           }
         },
         {
-          "id": "01M6X2RP8RZJ9M36D87THWBENG",
+          "id": "01M6Y39BACBFSTS1485B0AX8G8",
           "slug": "g12-trig-extremum-bestimmen",
           "language": "de",
           "tier": "tier2_transfer",
@@ -938,8 +1025,8 @@
       ]
     },
     {
-      "id": "01M6X2RQ80WBENGF2S4KPXRQA1",
-      "atom_uri": "urn:zam:atom:01M6X2RQ80WBENGF2S4KPXRQA1",
+      "id": "01M6Y39BAC2CK1CBDCB0VMYA9B",
+      "atom_uri": "urn:zam:atom:01M6Y39BAC2CK1CBDCB0VMYA9B",
       "namespace": "zam-academy-mathematik-gymnasium-12",
       "slug": "g12-stoch-axiomatik",
       "title": "Axiomatische Definition der Wahrscheinlichkeit nach Kolmogorow",
@@ -967,7 +1054,7 @@
       ],
       "practice_items": [
         {
-          "id": "01M6X2RR78S4KPXRQA1CVY50ZJ",
+          "id": "01M6Y39BACPQB4DHNT4S2887EF",
           "slug": "g12-kolmogorow-nichtnegativitaet",
           "language": "de",
           "tier": "tier1_fast",
@@ -996,7 +1083,7 @@
           }
         },
         {
-          "id": "01M6X2RS6GPXRQA1CVY50ZJ9M3",
+          "id": "01M6Y39BAC035NXH6MBEZJ798G",
           "slug": "g12-kolmogorow-normiertheit",
           "language": "de",
           "tier": "tier1_fast",
@@ -1025,7 +1112,7 @@
           }
         },
         {
-          "id": "01M6X2RT5RKPXRQA1CVY50ZJ9M",
+          "id": "01M6Y39BACQY9GCVV5FK96VTK5",
           "slug": "g12-kolmogorow-additionssatz",
           "language": "de",
           "tier": "tier2_transfer",
@@ -1042,15 +1129,47 @@
               "reason": "Hat fälschlicherweise P(A)·P(B) abgezogen, obwohl die Ereignisse unvereinbar sind."
             }
           ],
-          "question": "Zwei unvereinbare Ereignisse haben P(A) = 0,3 und P(B) = 0,4. Berechne P(A ∪ B).",
           "concept": "0,7",
-          "sample_solution": "Nach dem 3. Axiom von Kolmogorow gilt für unvereinbare Ereignisse: P(A ∪ B) = P(A) + P(B) = 0,3 + 0,4 = 0,7."
+          "sample_solution": "Nach dem 3. Axiom von Kolmogorow gilt für unvereinbare Ereignisse: P(A ∪ B) = P(A) + P(B) = 0,3 + 0,4 = 0,7.",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Zwei unvereinbare Ereignisse haben "
+            },
+            {
+              "type": "math",
+              "tex": "P(A) = 0{,}3",
+              "speech": "P von A gleich 0,3"
+            },
+            {
+              "type": "text",
+              "text": " und "
+            },
+            {
+              "type": "math",
+              "tex": "P(B) = 0{,}4",
+              "speech": "P von B gleich 0,4"
+            },
+            {
+              "type": "text",
+              "text": ". Berechne "
+            },
+            {
+              "type": "math",
+              "tex": "P(A \\cup B)",
+              "speech": "P von A vereinigt mit B"
+            },
+            {
+              "type": "text",
+              "text": "."
+            }
+          ]
         }
       ]
     },
     {
-      "id": "01M6X2RV50GF2S4KPXRQA1CVY5",
-      "atom_uri": "urn:zam:atom:01M6X2RV50GF2S4KPXRQA1CVY5",
+      "id": "01M6Y39BAC29BF8T08CEPBXWSQ",
+      "atom_uri": "urn:zam:atom:01M6Y39BAC29BF8T08CEPBXWSQ",
       "namespace": "zam-academy-mathematik-gymnasium-12",
       "slug": "g12-stoch-zufallsgroesse-parameter",
       "title": "Zufallsgrößen und Wahrscheinlichkeitsverteilungen",
@@ -1060,7 +1179,7 @@
       "source_link": "https://academy.zam-os.org/mathematik-gymnasium-12/#lesson=g12-stoch-zufallsgroesse-parameter",
       "prerequisites": [
         {
-          "atom_id": "01M6X2RQ80WBENGF2S4KPXRQA1",
+          "atom_id": "01M6Y39BAC2CK1CBDCB0VMYA9B",
           "relationship": "requires"
         }
       ],
@@ -1083,7 +1202,7 @@
       ],
       "practice_items": [
         {
-          "id": "01M6X2RW48D87THWBENGF2S4KP",
+          "id": "01M6Y39BACJGWK8C4NMNF5ETFK",
           "slug": "g12-zufallsgroesse-definition",
           "language": "de",
           "tier": "tier1_fast",
@@ -1112,7 +1231,7 @@
           }
         },
         {
-          "id": "01M6X2RX3GA1CVY50ZJ9M36D87",
+          "id": "01M6Y39BAC0ATM9YXC1VX5VS4C",
           "slug": "g12-erwartungswert-formel",
           "language": "de",
           "tier": "tier1_fast",
@@ -1130,7 +1249,6 @@
             }
           ],
           "question": "Wie berechnet man den Erwartungswert E(X) einer diskreten Zufallsgröße?",
-          "concept": "Als Summe der Produkte aus Ausprägung und Wahrscheinlichkeit: ∑ x_i · p_i.",
           "fast_check": {
             "type": "binary_choice",
             "options": [
@@ -1138,10 +1256,25 @@
               "Als Summe aus Ausprägung und Wahrscheinlichkeit: ∑ (x_i + p_i)."
             ],
             "correct_index": 0
-          }
+          },
+          "concept_segments": [
+            {
+              "type": "text",
+              "text": "Als Summe der Produkte aus Ausprägung und Wahrscheinlichkeit: "
+            },
+            {
+              "type": "math",
+              "tex": "E(X) = \\sum x_i \\cdot p_i",
+              "speech": "E von X gleich Summe über x i mal p i"
+            },
+            {
+              "type": "text",
+              "text": "."
+            }
+          ]
         },
         {
-          "id": "01M6X2RY2R7THWBENGF2S4KPXR",
+          "id": "01M6Y39BAC7PNAHSSHM2WBNTSH",
           "slug": "g12-standardabweichung-ausrechnen",
           "language": "de",
           "tier": "tier2_transfer",
@@ -1165,8 +1298,8 @@
       ]
     },
     {
-      "id": "01M6X2RZ204KPXRQA1CVY50ZJ9",
-      "atom_uri": "urn:zam:atom:01M6X2RZ204KPXRQA1CVY50ZJ9",
+      "id": "01M6Y39BACS8RS9ABFH8D9VCMZ",
+      "atom_uri": "urn:zam:atom:01M6Y39BACS8RS9ABFH8D9VCMZ",
       "namespace": "zam-academy-mathematik-gymnasium-12",
       "slug": "g12-stoch-urnenmodelle",
       "title": "Urnenmodelle und Kombinatorik",
@@ -1176,7 +1309,7 @@
       "source_link": "https://academy.zam-os.org/mathematik-gymnasium-12/#lesson=g12-stoch-urnenmodelle",
       "prerequisites": [
         {
-          "atom_id": "01M6X2RV50GF2S4KPXRQA1CVY5",
+          "atom_id": "01M6Y39BAC29BF8T08CEPBXWSQ",
           "relationship": "requires"
         }
       ],
@@ -1199,7 +1332,7 @@
       ],
       "practice_items": [
         {
-          "id": "01M6X2S0181CVY50ZJ9M36D87T",
+          "id": "01M6Y39BACVMDHTDJS3CHCZQTW",
           "slug": "g12-urne-mit-ohne-zuruecklegen",
           "language": "de",
           "tier": "tier1_fast",
@@ -1228,7 +1361,7 @@
           }
         },
         {
-          "id": "01M6X2S10GY50ZJ9M36D87THWB",
+          "id": "01M6Y39BACGEABPJXYY8G64Y3N",
           "slug": "g12-binomialkoeffizient-bedeutung",
           "language": "de",
           "tier": "tier1_fast",
@@ -1257,7 +1390,7 @@
           }
         },
         {
-          "id": "01M6X2S1ZRVY50ZJ9M36D87THW",
+          "id": "01M6Y39BACCN5NCX4Y073ED8YB",
           "slug": "g12-lotto-kombinatorik-anzahl",
           "language": "de",
           "tier": "tier2_transfer",
@@ -1281,8 +1414,8 @@
       ]
     },
     {
-      "id": "01M6X2S2Z0RQA1CVY50ZJ9M36D",
-      "atom_uri": "urn:zam:atom:01M6X2S2Z0RQA1CVY50ZJ9M36D",
+      "id": "01M6Y39BACTS9XMRA7YF98CZC8",
+      "atom_uri": "urn:zam:atom:01M6Y39BACTS9XMRA7YF98CZC8",
       "namespace": "zam-academy-mathematik-gymnasium-12",
       "slug": "g12-stoch-bernoulli-binomial",
       "title": "Bernoulli-Ketten und Binomialverteilung",
@@ -1292,7 +1425,7 @@
       "source_link": "https://academy.zam-os.org/mathematik-gymnasium-12/#lesson=g12-stoch-bernoulli-binomial",
       "prerequisites": [
         {
-          "atom_id": "01M6X2RZ204KPXRQA1CVY50ZJ9",
+          "atom_id": "01M6Y39BACS8RS9ABFH8D9VCMZ",
           "relationship": "requires"
         }
       ],
@@ -1315,7 +1448,7 @@
       ],
       "practice_items": [
         {
-          "id": "01M6X2S3Y8NGF2S4KPXRQA1CVY",
+          "id": "01M6Y39BACQN93M1ZXYAM7D0X4",
           "slug": "g12-bernoulli-kette-eigenschaften",
           "language": "de",
           "tier": "tier1_fast",
@@ -1344,7 +1477,7 @@
           }
         },
         {
-          "id": "01M6X2S4XGJ9M36D87THWBENGF",
+          "id": "01M6Y39BACETP1DWGKXRMB9HDE",
           "slug": "g12-bernoulli-formel-struktur",
           "language": "de",
           "tier": "tier1_fast",
@@ -1373,7 +1506,7 @@
           }
         },
         {
-          "id": "01M6X2S5WRF2S4KPXRQA1CVY50",
+          "id": "01M6Y39BACFKHN47TX44BR4A02",
           "slug": "g12-bernoulli-null-treffer",
           "language": "de",
           "tier": "tier2_transfer",
@@ -1397,8 +1530,8 @@
       ]
     },
     {
-      "id": "01M6X2S6W0CVY50ZJ9M36D87TH",
-      "atom_uri": "urn:zam:atom:01M6X2S6W0CVY50ZJ9M36D87TH",
+      "id": "01M6Y39BACNE5C6MHHFFG4YC0P",
+      "atom_uri": "urn:zam:atom:01M6Y39BACNE5C6MHHFFG4YC0P",
       "namespace": "zam-academy-mathematik-gymnasium-12",
       "slug": "g12-stoch-binomial-parameter",
       "title": "Parameter und Glockenkurvenform der Binomialverteilung",
@@ -1408,7 +1541,7 @@
       "source_link": "https://academy.zam-os.org/mathematik-gymnasium-12/#lesson=g12-stoch-binomial-parameter",
       "prerequisites": [
         {
-          "atom_id": "01M6X2S2Z0RQA1CVY50ZJ9M36D",
+          "atom_id": "01M6Y39BACTS9XMRA7YF98CZC8",
           "relationship": "requires"
         }
       ],
@@ -1431,7 +1564,7 @@
       ],
       "practice_items": [
         {
-          "id": "01M6X2S7V89M36D87THWBENGF2",
+          "id": "01M6Y39BACDPC7VDW3VNTQEMHH",
           "slug": "g12-binomial-parameter-formeln",
           "language": "de",
           "tier": "tier1_fast",
@@ -1440,27 +1573,46 @@
           "materiality": "material",
           "choice_distractors": [
             {
-              "text": "μ = n/p und die Streuung σ entspricht dem Produkt n·p·(1 − p).",
-              "reason": "Erwartungswert ist das Produkt n·p; σ ist die Wurzel aus der Varianz."
+              "text": "μ = n·(1 − p) und σ = √(n·p·(1 − p))",
+              "reason": "Erwartungswert fälschlich mit Gegenwahrscheinlichkeit berechnet."
             },
             {
-              "text": "μ = n·p und die Streuung σ entspricht exakt dem Erwartungswert n·p.",
-              "reason": "Hat die Standardabweichung mit dem Erwartungswert verwechselt."
+              "text": "μ = p/n und σ = n·p·(1 − p)",
+              "reason": "Quotient beim Erwartungswert und Varianz statt Standardabweichung."
             }
           ],
           "question": "Wie lauten Erwartungswert μ und Standardabweichung σ einer Binomialverteilung B(n; p)?",
-          "concept": "μ = n·p und die Streuung σ entspricht der Wurzel aus n·p·(1 − p).",
           "fast_check": {
             "type": "binary_choice",
             "options": [
-              "μ = n·p und die Streuung σ entspricht der Wurzel aus n·p·(1 − p).",
-              "μ = n/p und die Streuung σ entspricht dem Produkt n·p·(1 − p)."
+              "μ = n·p und σ = √(n·p·(1 − p))",
+              "μ = n·(1 − p) und σ = √(n·p·(1 − p))"
             ],
             "correct_index": 0
-          }
+          },
+          "concept_segments": [
+            {
+              "type": "math",
+              "tex": "\\mu = n \\cdot p",
+              "speech": "mü gleich n mal p"
+            },
+            {
+              "type": "text",
+              "text": " und "
+            },
+            {
+              "type": "math",
+              "tex": "\\sigma = \\sqrt{n \\cdot p \\cdot (1 − p)}",
+              "speech": "sigma gleich Wurzel aus n mal p mal Klammer auf 1 minus p Klammer zu"
+            },
+            {
+              "type": "text",
+              "text": "."
+            }
+          ]
         },
         {
-          "id": "01M6X2S8TG6D87THWBENGF2S4K",
+          "id": "01M6Y39BACXYJBZN12N8QMSFNP",
           "slug": "g12-eins-sigma-anteil",
           "language": "de",
           "tier": "tier1_fast",
@@ -1489,7 +1641,7 @@
           }
         },
         {
-          "id": "01M6X2S9SR36D87THWBENGF2S4",
+          "id": "01M6Y39BACB50GEZVKF64YEA4X",
           "slug": "g12-sigma-werte-ausrechnen",
           "language": "de",
           "tier": "tier2_transfer",
@@ -1513,8 +1665,8 @@
       ]
     },
     {
-      "id": "01M6X2SAS00ZJ9M36D87THWBEN",
-      "atom_uri": "urn:zam:atom:01M6X2SAS00ZJ9M36D87THWBEN",
+      "id": "01M6Y39BAC52YNG7GEZRKC14MV",
+      "atom_uri": "urn:zam:atom:01M6Y39BAC52YNG7GEZRKC14MV",
       "namespace": "zam-academy-mathematik-gymnasium-12",
       "slug": "g12-hypo-grundprinzip",
       "title": "Grundprinzip des einseitigen Signifikanztests",
@@ -1542,7 +1694,7 @@
       ],
       "practice_items": [
         {
-          "id": "01M6X2SBR8XRQA1CVY50ZJ9M36",
+          "id": "01M6Y39BACTMS56C5N8GERVBEV",
           "slug": "g12-hypothesentest-ziel",
           "language": "de",
           "tier": "tier1_fast",
@@ -1571,7 +1723,7 @@
           }
         },
         {
-          "id": "01M6X2SCQGTHWBENGF2S4KPXRQ",
+          "id": "01M6Y39BAC2KEVRH5GPJGYJFVV",
           "slug": "g12-hypo-grundprinzip-check",
           "language": "de",
           "tier": "tier1_fast",
@@ -1600,7 +1752,7 @@
           }
         },
         {
-          "id": "01M6X2SDPRQA1CVY50ZJ9M36D8",
+          "id": "01M6Y39BACXZ53NCMXY9YG9S28",
           "slug": "g12-signifikanzniveau-bedeutung",
           "language": "de",
           "tier": "tier2_transfer",
@@ -1624,8 +1776,8 @@
       ]
     },
     {
-      "id": "01M6X2SEP0M36D87THWBENGF2S",
-      "atom_uri": "urn:zam:atom:01M6X2SEP0M36D87THWBENGF2S",
+      "id": "01M6Y39BACP7VA7ZV6MNG2RAZ6",
+      "atom_uri": "urn:zam:atom:01M6Y39BACP7VA7ZV6MNG2RAZ6",
       "namespace": "zam-academy-mathematik-gymnasium-12",
       "slug": "g12-hypo-fehlerarten",
       "title": "Fehler 1. Art und Fehler 2. Art",
@@ -1635,7 +1787,7 @@
       "source_link": "https://academy.zam-os.org/mathematik-gymnasium-12/#lesson=g12-hypo-fehlerarten",
       "prerequisites": [
         {
-          "atom_id": "01M6X2SAS00ZJ9M36D87THWBEN",
+          "atom_id": "01M6Y39BAC52YNG7GEZRKC14MV",
           "relationship": "requires"
         }
       ],
@@ -1658,7 +1810,7 @@
       ],
       "practice_items": [
         {
-          "id": "01M6X2SFN8HWBENGF2S4KPXRQA",
+          "id": "01M6Y39BACSQ770XWH8QB3AFJT",
           "slug": "g12-hypo-fehlerarten-check",
           "language": "de",
           "tier": "tier1_fast",
@@ -1687,7 +1839,7 @@
           }
         },
         {
-          "id": "01M6X2SGMGENGF2S4KPXRQA1CV",
+          "id": "01M6Y39BAC8JG640VA69QFTDXH",
           "slug": "g12-beta-fehler-abhaengigkeit",
           "language": "de",
           "tier": "tier1_fast",
@@ -1716,7 +1868,7 @@
           }
         },
         {
-          "id": "01M6X2SHKRBENGF2S4KPXRQA1C",
+          "id": "01M6Y39BACY4MH3RPCRKHX6KXR",
           "slug": "g12-beta-fehler-berechnen",
           "language": "de",
           "tier": "tier2_transfer",
@@ -1740,8 +1892,8 @@
       ]
     },
     {
-      "id": "01M6X2SJK087THWBENGF2S4KPX",
-      "atom_uri": "urn:zam:atom:01M6X2SJK087THWBENGF2S4KPX",
+      "id": "01M6Y39BACJWHBMFV7V6DB2XGF",
+      "atom_uri": "urn:zam:atom:01M6Y39BACJWHBMFV7V6DB2XGF",
       "namespace": "zam-academy-mathematik-gymnasium-12",
       "slug": "g12-hypo-ablehnungsbereich",
       "title": "Bestimmung des Ablehnungsbereichs",
@@ -1751,7 +1903,7 @@
       "source_link": "https://academy.zam-os.org/mathematik-gymnasium-12/#lesson=g12-hypo-ablehnungsbereich",
       "prerequisites": [
         {
-          "atom_id": "01M6X2SEP0M36D87THWBENGF2S",
+          "atom_id": "01M6Y39BACP7VA7ZV6MNG2RAZ6",
           "relationship": "requires"
         }
       ],
@@ -1774,7 +1926,7 @@
       ],
       "practice_items": [
         {
-          "id": "01M6X2SKJ850ZJ9M36D87THWBE",
+          "id": "01M6Y39BACK4SSQPSCZJW429CD",
           "slug": "g12-rechtsseitig-ablehnungsbereich-form",
           "language": "de",
           "tier": "tier1_fast",
@@ -1803,7 +1955,7 @@
           }
         },
         {
-          "id": "01M6X2SMHG2S4KPXRQA1CVY50Z",
+          "id": "01M6Y39BACK2TE1QQNFMD9T3HP",
           "slug": "g12-rechtsseitig-bedingung-alpha",
           "language": "de",
           "tier": "tier1_fast",
@@ -1832,7 +1984,7 @@
           }
         },
         {
-          "id": "01M6X2SNGRZJ9M36D87THWBENG",
+          "id": "01M6Y39BACSXMJ0ST7JWY9GDF3",
           "slug": "g12-entscheidungsregel-auswerten",
           "language": "de",
           "tier": "tier2_transfer",
@@ -1856,8 +2008,8 @@
       ]
     },
     {
-      "id": "01M6X2SPG0WBENGF2S4KPXRQA1",
-      "atom_uri": "urn:zam:atom:01M6X2SPG0WBENGF2S4KPXRQA1",
+      "id": "01M6Y39BAC4BYMZGQKCC2H9BVN",
+      "atom_uri": "urn:zam:atom:01M6Y39BAC4BYMZGQKCC2H9BVN",
       "namespace": "zam-academy-mathematik-gymnasium-12",
       "slug": "g12-hypo-interpretation",
       "title": "Interpretation von Testergebnissen im Sachkontext",
@@ -1867,7 +2019,7 @@
       "source_link": "https://academy.zam-os.org/mathematik-gymnasium-12/#lesson=g12-hypo-interpretation",
       "prerequisites": [
         {
-          "atom_id": "01M6X2SJK087THWBENGF2S4KPX",
+          "atom_id": "01M6Y39BACJWHBMFV7V6DB2XGF",
           "relationship": "requires"
         }
       ],
@@ -1890,7 +2042,7 @@
       ],
       "practice_items": [
         {
-          "id": "01M6X2SQF8S4KPXRQA1CVY50ZJ",
+          "id": "01M6Y39BACWCKNKDBP15T45NXM",
           "slug": "g12-signifikantes-ergebnis-bedeutung",
           "language": "de",
           "tier": "tier1_fast",
@@ -1907,19 +2059,19 @@
               "reason": "Das Signifikanzniveau ist eine stochastische Irrtumsgrenze, kein Messfehleranteil."
             }
           ],
-          "question": "Was bedeutet die Aussage „Das Testergebnis ist auf dem 5%-Niveau signifikant“?",
-          "concept": "Die Abweichung von H0 ist so groß, dass sie rein zufällig mit höchstens 5 % Wahrscheinlichkeit auftritt.",
+          "question": "Was bedeutet die Aussage „Das Testergebnis ist auf dem 5 %-Niveau signifikant“?",
+          "concept": "Unter der Annahme, dass H₀ wahr ist, tritt ein mindestens so extremes Ergebnis mit höchstens 5 % Wahrscheinlichkeit auf.",
           "fast_check": {
             "type": "binary_choice",
             "options": [
-              "Die Abweichung von H0 ist so groß, dass sie rein zufällig mit höchstens 5 % Wahrscheinlichkeit auftritt.",
+              "Unter der Annahme, dass H₀ wahr ist, tritt ein mindestens so extremes Ergebnis mit höchstens 5 % Wahrscheinlichkeit auf.",
               "Die Nullhypothese H0 trifft mit einer berechneten Wahrscheinlichkeit von mindestens 95 % im Test zu."
             ],
             "correct_index": 0
           }
         },
         {
-          "id": "01M6X2SREGPXRQA1CVY50ZJ9M3",
+          "id": "01M6Y39BACVZQNXAZ03FVNS67Y",
           "slug": "g12-nullhypothese-keine-wahrscheinlichkeit",
           "language": "de",
           "tier": "tier1_fast",
@@ -1948,7 +2100,7 @@
           }
         },
         {
-          "id": "01M6X2SSDRKPXRQA1CVY50ZJ9M",
+          "id": "01M6Y39BAC86345Z3W0TZH4PQE",
           "slug": "g12-umfrage-stichproben-irrtum",
           "language": "de",
           "tier": "tier2_transfer",
@@ -1972,8 +2124,8 @@
       ]
     },
     {
-      "id": "01M6X2STD0GF2S4KPXRQA1CVY5",
-      "atom_uri": "urn:zam:atom:01M6X2STD0GF2S4KPXRQA1CVY5",
+      "id": "01M6Y39BAC4KZYQDWC7TV0A8NX",
+      "atom_uri": "urn:zam:atom:01M6Y39BAC4KZYQDWC7TV0A8NX",
       "namespace": "zam-academy-mathematik-gymnasium-12",
       "slug": "g12-quotientenregel-basis",
       "title": "Die Quotientenregel zur Differenzierung",
@@ -2001,7 +2153,7 @@
       ],
       "practice_items": [
         {
-          "id": "01M6X2SVC8D87THWBENGF2S4KP",
+          "id": "01M6Y39BAC9X70P3JZ9TGJP0R5",
           "slug": "g12-quotientenregel-formel",
           "language": "de",
           "tier": "tier1_fast",
@@ -2030,7 +2182,7 @@
           }
         },
         {
-          "id": "01M6X2SWBGA1CVY50ZJ9M36D87",
+          "id": "01M6Y39BACHQA9GPW1K3QKGFNY",
           "slug": "g12-quotientenregel-nenner",
           "language": "de",
           "tier": "tier1_fast",
@@ -2059,7 +2211,7 @@
           }
         },
         {
-          "id": "01M6X2SXAR7THWBENGF2S4KPXR",
+          "id": "01M6Y39BACJ7MMMWWWBQX0FT84",
           "slug": "g12-quotientenregel-rational-ableitung",
           "language": "de",
           "tier": "tier2_transfer",
@@ -2076,15 +2228,44 @@
               "reason": "Hat im Zähler addiert statt subtrahiert: 2(x+3) + (2x+1) statt 2(x+3) − (2x+1)."
             }
           ],
-          "question": "Leite f(x) = (2x + 1) / (x + 3) für x ≠ −3 ab.",
-          "concept": "f'(x) = 5 / (x + 3)²",
-          "sample_solution": "u = 2x + 1, u' = 2; v = x + 3, v' = 1. f'(x) = [2·(x + 3) − (2x + 1)·1] / (x + 3)² = [2x + 6 − 2x − 1] / (x + 3)² = 5 / (x + 3)²."
+          "sample_solution": "u = 2x + 1, u' = 2; v = x + 3, v' = 1. f'(x) = [2·(x + 3) − (2x + 1)·1] / (x + 3)² = [2x + 6 − 2x − 1] / (x + 3)² = 5 / (x + 3)².",
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Leite "
+            },
+            {
+              "type": "math",
+              "tex": "f(x) = \\frac{2x + 1}{x + 3}",
+              "speech": "f von x gleich Bruch mit Zähler 2 x plus 1 und Nenner x plus 3"
+            },
+            {
+              "type": "text",
+              "text": " für "
+            },
+            {
+              "type": "math",
+              "tex": "x \\neq −3",
+              "speech": "x ungleich minus 3"
+            },
+            {
+              "type": "text",
+              "text": " ab."
+            }
+          ],
+          "concept_segments": [
+            {
+              "type": "math",
+              "tex": "f'(x) = \\frac{5}{(x + 3)^2}",
+              "speech": "f Strich von x gleich 5 geteilt durch Klammer auf x plus 3 Klammer zu zum Quadrat"
+            }
+          ]
         }
       ]
     },
     {
-      "id": "01M6X2SYA04KPXRQA1CVY50ZJ9",
-      "atom_uri": "urn:zam:atom:01M6X2SYA04KPXRQA1CVY50ZJ9",
+      "id": "01M6Y39BACVBWKB1ZNKHG91DP2",
+      "atom_uri": "urn:zam:atom:01M6Y39BACVBWKB1ZNKHG91DP2",
       "namespace": "zam-academy-mathematik-gymnasium-12",
       "slug": "g12-gebrochen-rational-diskussion",
       "title": "Kurvendiskussion gebrochen-rationaler Funktionen",
@@ -2094,7 +2275,7 @@
       "source_link": "https://academy.zam-os.org/mathematik-gymnasium-12/#lesson=g12-gebrochen-rational-diskussion",
       "prerequisites": [
         {
-          "atom_id": "01M6X2STD0GF2S4KPXRQA1CVY5",
+          "atom_id": "01M6Y39BAC4KZYQDWC7TV0A8NX",
           "relationship": "requires"
         }
       ],
@@ -2117,7 +2298,7 @@
       ],
       "practice_items": [
         {
-          "id": "01M6X2SZ981CVY50ZJ9M36D87T",
+          "id": "01M6Y39BAC18SB7SS8KE7DGWFK",
           "slug": "g12-asymptote-grad-bedingung",
           "language": "de",
           "tier": "tier1_fast",
@@ -2146,7 +2327,7 @@
           }
         },
         {
-          "id": "01M6X2T08GY50ZJ9M36D87THWB",
+          "id": "01M6Y39BACX6MJVR5XZ96CEDT7",
           "slug": "g12-polstelle-vs-luecke",
           "language": "de",
           "tier": "tier1_fast",
@@ -2175,7 +2356,7 @@
           }
         },
         {
-          "id": "01M6X2T17RVY50ZJ9M36D87THW",
+          "id": "01M6Y39BACG6JSV7ANK3JKXKWB",
           "slug": "g12-waagrechte-asymptote-berechnen",
           "language": "de",
           "tier": "tier2_transfer",
@@ -2199,8 +2380,8 @@
       ]
     },
     {
-      "id": "01M6X2T270RQA1CVY50ZJ9M36D",
-      "atom_uri": "urn:zam:atom:01M6X2T270RQA1CVY50ZJ9M36D",
+      "id": "01M6Y39BAC589HGDQ7G7Q2S1TC",
+      "atom_uri": "urn:zam:atom:01M6Y39BAC589HGDQ7G7Q2S1TC",
       "namespace": "zam-academy-mathematik-gymnasium-12",
       "slug": "g12-quotientenregel-verknuepfung",
       "title": "Verknüpfungen mit der Quotientenregel",
@@ -2210,7 +2391,7 @@
       "source_link": "https://academy.zam-os.org/mathematik-gymnasium-12/#lesson=g12-quotientenregel-verknuepfung",
       "prerequisites": [
         {
-          "atom_id": "01M6X2SYA04KPXRQA1CVY50ZJ9",
+          "atom_id": "01M6Y39BACVBWKB1ZNKHG91DP2",
           "relationship": "requires"
         }
       ],
@@ -2233,7 +2414,7 @@
       ],
       "practice_items": [
         {
-          "id": "01M6X2T368NGF2S4KPXRQA1CVY",
+          "id": "01M6Y39BAC6M472ZEEWRTEMXAP",
           "slug": "g12-quotient-e-funktion-ableitung",
           "language": "de",
           "tier": "tier1_fast",
@@ -2250,8 +2431,6 @@
               "reason": "Hat das Quadrat der Nennerfunktion im Nenner vergessen."
             }
           ],
-          "question": "Wie lautet die 1. Ableitung von f(x) = e^x / x für x ≠ 0?",
-          "concept": "f'(x) = [e^x · (x − 1)] / x²",
           "fast_check": {
             "type": "binary_choice",
             "options": [
@@ -2259,10 +2438,41 @@
               "f'(x) = [e^x · (x + 2)] / x²"
             ],
             "correct_index": 0
-          }
+          },
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Wie lautet die 1. Ableitung von "
+            },
+            {
+              "type": "math",
+              "tex": "f(x) = \\frac{e^x}{x}",
+              "speech": "f von x gleich e hoch x geteilt durch x"
+            },
+            {
+              "type": "text",
+              "text": " für "
+            },
+            {
+              "type": "math",
+              "tex": "x \\neq 0",
+              "speech": "x ungleich 0"
+            },
+            {
+              "type": "text",
+              "text": "?"
+            }
+          ],
+          "concept_segments": [
+            {
+              "type": "math",
+              "tex": "f'(x) = \\frac{e^x \\cdot (x − 1)}{x^2}",
+              "speech": "f Strich von x gleich Bruch mit Zähler e hoch x mal Klammer auf x minus 1 Klammer zu und Nenner x Quadrat"
+            }
+          ]
         },
         {
-          "id": "01M6X2T45GJ9M36D87THWBENGF",
+          "id": "01M6Y39BACWXQV0T4Q3T25N2CQ",
           "slug": "g12-quotient-waagrechte-tangente",
           "language": "de",
           "tier": "tier1_fast",
@@ -2291,7 +2501,7 @@
           }
         },
         {
-          "id": "01M6X2T54RF2S4KPXRQA1CVY50",
+          "id": "01M6Y39BACASZVJNVE55XA882Y",
           "slug": "g12-trigonometrischer-quotient-steigung",
           "language": "de",
           "tier": "tier2_transfer",
@@ -2315,8 +2525,8 @@
       ]
     },
     {
-      "id": "01M6X2T640CVY50ZJ9M36D87TH",
-      "atom_uri": "urn:zam:atom:01M6X2T640CVY50ZJ9M36D87TH",
+      "id": "01M6Y39BACS9HFVTSVZGD0ZAKJ",
+      "atom_uri": "urn:zam:atom:01M6Y39BACS9HFVTSVZGD0ZAKJ",
       "namespace": "zam-academy-mathematik-gymnasium-12",
       "slug": "g12-umkehrfunktion-wurzel",
       "title": "Umkehrbarkeit und Umkehrfunktionen",
@@ -2326,7 +2536,7 @@
       "source_link": "https://academy.zam-os.org/mathematik-gymnasium-12/#lesson=g12-umkehrfunktion-wurzel",
       "prerequisites": [
         {
-          "atom_id": "01M6X2T270RQA1CVY50ZJ9M36D",
+          "atom_id": "01M6Y39BAC589HGDQ7G7Q2S1TC",
           "relationship": "requires"
         }
       ],
@@ -2349,7 +2559,7 @@
       ],
       "practice_items": [
         {
-          "id": "01M6X2T7389M36D87THWBENGF2",
+          "id": "01M6Y39BACR7T9PCJP15G24JXX",
           "slug": "g12-umkehrbarkeit-monotonie-kriterium",
           "language": "de",
           "tier": "tier1_fast",
@@ -2378,7 +2588,7 @@
           }
         },
         {
-          "id": "01M6X2T82G6D87THWBENGF2S4K",
+          "id": "01M6Y39BACJ5WZCFX5ZQDZP9RR",
           "slug": "g12-umkehrfunktion-spiegelung",
           "language": "de",
           "tier": "tier1_fast",
@@ -2407,7 +2617,7 @@
           }
         },
         {
-          "id": "01M6X2T91R36D87THWBENGF2S4",
+          "id": "01M6Y39BACBZBR0K9VKKC0JMMM",
           "slug": "g12-lineare-umkehrfunktion-term",
           "language": "de",
           "tier": "tier2_transfer",
@@ -2431,8 +2641,8 @@
       ]
     },
     {
-      "id": "01M6X2TA100ZJ9M36D87THWBEN",
-      "atom_uri": "urn:zam:atom:01M6X2TA100ZJ9M36D87THWBEN",
+      "id": "01M6Y39BAC7JJFGWY2E7TNFYYA",
+      "atom_uri": "urn:zam:atom:01M6Y39BAC7JJFGWY2E7TNFYYA",
       "namespace": "zam-academy-mathematik-gymnasium-12",
       "slug": "g12-potenz-rationale-exponenten",
       "title": "Ableitung von Potenzen mit rationalen Exponenten",
@@ -2442,7 +2652,7 @@
       "source_link": "https://academy.zam-os.org/mathematik-gymnasium-12/#lesson=g12-potenz-rationale-exponenten",
       "prerequisites": [
         {
-          "atom_id": "01M6X2T640CVY50ZJ9M36D87TH",
+          "atom_id": "01M6Y39BACS9HFVTSVZGD0ZAKJ",
           "relationship": "requires"
         }
       ],
@@ -2465,7 +2675,7 @@
       ],
       "practice_items": [
         {
-          "id": "01M6X2TB08XRQA1CVY50ZJ9M36",
+          "id": "01M6Y39BAC4WATZFWT6NCEHHJW",
           "slug": "g12-ableitung-quadratwurzel-formel",
           "language": "de",
           "tier": "tier1_fast",
@@ -2482,8 +2692,6 @@
               "reason": "Hat den Vorfaktor 1/2 aus der Potenzregel vergessen."
             }
           ],
-          "question": "Wie lautet die 1. Ableitung der Quadratwurzelfunktion f(x) = √x für x > 0?",
-          "concept": "f'(x) = 1 / (2√x)",
           "fast_check": {
             "type": "binary_choice",
             "options": [
@@ -2491,10 +2699,41 @@
               "f'(x) = 2 · √x"
             ],
             "correct_index": 0
-          }
+          },
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Wie lautet die 1. Ableitung der Quadratwurzelfunktion "
+            },
+            {
+              "type": "math",
+              "tex": "f(x) = \\sqrt{x}",
+              "speech": "f von x gleich Wurzel aus x"
+            },
+            {
+              "type": "text",
+              "text": " für "
+            },
+            {
+              "type": "math",
+              "tex": "x > 0",
+              "speech": "x größer null"
+            },
+            {
+              "type": "text",
+              "text": "?"
+            }
+          ],
+          "concept_segments": [
+            {
+              "type": "math",
+              "tex": "f'(x) = \\frac{1}{2\\sqrt{x}}",
+              "speech": "f Strich von x gleich 1 geteilt durch 2 mal Wurzel aus x"
+            }
+          ]
         },
         {
-          "id": "01M6X2TBZGTHWBENGF2S4KPXRQ",
+          "id": "01M6Y39BAC85J5PRJRYPSK7TV9",
           "slug": "g12-wurzel-in-potenz-umschreiben",
           "language": "de",
           "tier": "tier1_fast",
@@ -2523,7 +2762,7 @@
           }
         },
         {
-          "id": "01M6X2TCYRQA1CVY50ZJ9M36D8",
+          "id": "01M6Y39BACQ94BZ9X1CJWZ218W",
           "slug": "g12-wurzel-steigung-ausrechnen",
           "language": "de",
           "tier": "tier2_transfer",
@@ -2547,8 +2786,8 @@
       ]
     },
     {
-      "id": "01M6X2TDY0M36D87THWBENGF2S",
-      "atom_uri": "urn:zam:atom:01M6X2TDY0M36D87THWBENGF2S",
+      "id": "01M6Y39BACZ89YS4YRJ50H4NQV",
+      "atom_uri": "urn:zam:atom:01M6Y39BACZ89YS4YRJ50H4NQV",
       "namespace": "zam-academy-mathematik-gymnasium-12",
       "slug": "g12-wurzel-kurvendiskussion",
       "title": "Kurvendiskussion von Wurzelfunktionen",
@@ -2558,7 +2797,7 @@
       "source_link": "https://academy.zam-os.org/mathematik-gymnasium-12/#lesson=g12-wurzel-kurvendiskussion",
       "prerequisites": [
         {
-          "atom_id": "01M6X2TA100ZJ9M36D87THWBEN",
+          "atom_id": "01M6Y39BAC7JJFGWY2E7TNFYYA",
           "relationship": "requires"
         }
       ],
@@ -2581,7 +2820,7 @@
       ],
       "practice_items": [
         {
-          "id": "01M6X2TEX8HWBENGF2S4KPXRQA",
+          "id": "01M6Y39BACZQH23TBTR09VNWRC",
           "slug": "g12-radikand-nichtnegativ-regel",
           "language": "de",
           "tier": "tier1_fast",
@@ -2610,7 +2849,7 @@
           }
         },
         {
-          "id": "01M6X2TFWGENGF2S4KPXRQA1CV",
+          "id": "01M6Y39BACBM3ZX67ZT5JZWFWY",
           "slug": "g12-wurzel-randsteigung-tangente",
           "language": "de",
           "tier": "tier1_fast",
@@ -2639,7 +2878,7 @@
           }
         },
         {
-          "id": "01M6X2TGVRBENGF2S4KPXRQA1C",
+          "id": "01M6Y39BAC1N3PC6P8D8R24XA5",
           "slug": "g12-wurzel-definitionsmenge-intervall",
           "language": "de",
           "tier": "tier2_transfer",
@@ -2663,8 +2902,8 @@
       ]
     },
     {
-      "id": "01M6X2THV087THWBENGF2S4KPX",
-      "atom_uri": "urn:zam:atom:01M6X2THV087THWBENGF2S4KPX",
+      "id": "01M6Y39BACW8HWNSFAMSSFG8RB",
+      "atom_uri": "urn:zam:atom:01M6Y39BACW8HWNSFAMSSFG8RB",
       "namespace": "zam-academy-mathematik-gymnasium-12",
       "slug": "g12-ln-ableitung",
       "title": "Die natürliche Logarithmusfunktion und ihre Ableitung",
@@ -2674,7 +2913,7 @@
       "source_link": "https://academy.zam-os.org/mathematik-gymnasium-12/#lesson=g12-ln-ableitung",
       "prerequisites": [
         {
-          "atom_id": "01M6X2TDY0M36D87THWBENGF2S",
+          "atom_id": "01M6Y39BACZ89YS4YRJ50H4NQV",
           "relationship": "requires"
         }
       ],
@@ -2697,7 +2936,7 @@
       ],
       "practice_items": [
         {
-          "id": "01M6X2TJT850ZJ9M36D87THWBE",
+          "id": "01M6Y39BACAC5MZDNNAJ435FA6",
           "slug": "g12-ln-ableitung-basis",
           "language": "de",
           "tier": "tier1_fast",
@@ -2714,8 +2953,6 @@
               "reason": "Die Steigung fällt antiproportional mit 1/x und wächst nicht linear."
             }
           ],
-          "question": "Wie lautet die 1. Ableitung der natürlichen Logarithmusfunktion f(x) = ln(x) für x > 0?",
-          "concept": "f'(x) = 1 / x",
           "fast_check": {
             "type": "binary_choice",
             "options": [
@@ -2723,10 +2960,41 @@
               "f'(x) = e^x"
             ],
             "correct_index": 0
-          }
+          },
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Wie lautet die 1. Ableitung der natürlichen Logarithmusfunktion "
+            },
+            {
+              "type": "math",
+              "tex": "f(x) = \\ln(x)",
+              "speech": "f von x gleich l n von x"
+            },
+            {
+              "type": "text",
+              "text": " für "
+            },
+            {
+              "type": "math",
+              "tex": "x > 0",
+              "speech": "x größer null"
+            },
+            {
+              "type": "text",
+              "text": "?"
+            }
+          ],
+          "concept_segments": [
+            {
+              "type": "math",
+              "tex": "f'(x) = \\frac{1}{x}",
+              "speech": "f Strich von x gleich 1 geteilt durch x"
+            }
+          ]
         },
         {
-          "id": "01M6X2TKSG2S4KPXRQA1CVY50Z",
+          "id": "01M6Y39BACW0J4K1MKZ38GGSAY",
           "slug": "g12-logarithmische-ableitung-regel",
           "language": "de",
           "tier": "tier1_fast",
@@ -2743,8 +3011,6 @@
               "reason": "Das verwechselt die Kettenregel mit einer Produktregel."
             }
           ],
-          "question": "Wie lautet die logarithmische Ableitung von f(x) = ln(u(x)) nach der Kettenregel?",
-          "concept": "f'(x) = u'(x) / u(x)",
           "fast_check": {
             "type": "binary_choice",
             "options": [
@@ -2752,10 +3018,32 @@
               "f'(x) = 1 / u'(x)"
             ],
             "correct_index": 0
-          }
+          },
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Wie lautet die logarithmische Ableitung von "
+            },
+            {
+              "type": "math",
+              "tex": "f(x) = \\ln(u(x))",
+              "speech": "f von x gleich l n von u von x"
+            },
+            {
+              "type": "text",
+              "text": " nach der Kettenregel?"
+            }
+          ],
+          "concept_segments": [
+            {
+              "type": "math",
+              "tex": "f'(x) = \\frac{u'(x)}{u(x)}",
+              "speech": "f Strich von x gleich u Strich von x geteilt durch u von x"
+            }
+          ]
         },
         {
-          "id": "01M6X2TMRRZJ9M36D87THWBENG",
+          "id": "01M6Y39BAC6YZAZ0P6KYRQASWT",
           "slug": "g12-ln-ableitung-wert-berechnen",
           "language": "de",
           "tier": "tier2_transfer",
@@ -2779,8 +3067,8 @@
       ]
     },
     {
-      "id": "01M6X2TNR0WBENGF2S4KPXRQA1",
-      "atom_uri": "urn:zam:atom:01M6X2TNR0WBENGF2S4KPXRQA1",
+      "id": "01M6Y39BAC5NPAA59Y7H7QCN1J",
+      "atom_uri": "urn:zam:atom:01M6Y39BAC5NPAA59Y7H7QCN1J",
       "namespace": "zam-academy-mathematik-gymnasium-12",
       "slug": "g12-ln-kurvendiskussion-grenzwerte",
       "title": "Kurvendiskussion und Grenzwerte mit der ln-Funktion",
@@ -2790,7 +3078,7 @@
       "source_link": "https://academy.zam-os.org/mathematik-gymnasium-12/#lesson=g12-ln-kurvendiskussion-grenzwerte",
       "prerequisites": [
         {
-          "atom_id": "01M6X2THV087THWBENGF2S4KPX",
+          "atom_id": "01M6Y39BACW8HWNSFAMSSFG8RB",
           "relationship": "requires"
         }
       ],
@@ -2813,7 +3101,7 @@
       ],
       "practice_items": [
         {
-          "id": "01M6X2TPQ8S4KPXRQA1CVY50ZJ",
+          "id": "01M6Y39BAC8ZB1TVNA8VF8P6WB",
           "slug": "g12-limes-x-ln-x-null",
           "language": "de",
           "tier": "tier1_fast",
@@ -2842,7 +3130,7 @@
           }
         },
         {
-          "id": "01M6X2TQPGPXRQA1CVY50ZJ9M3",
+          "id": "01M6Y39BACQQA1Z21D4TFJ9Y25",
           "slug": "g12-limes-ln-x-durch-x",
           "language": "de",
           "tier": "tier1_fast",
@@ -2871,7 +3159,7 @@
           }
         },
         {
-          "id": "01M6X2TRNRKPXRQA1CVY50ZJ9M",
+          "id": "01M6Y39BAC4P3PJ0JN2R6FG9TH",
           "slug": "g12-tiefpunkt-x-ln-x",
           "language": "de",
           "tier": "tier2_transfer",
@@ -2895,8 +3183,8 @@
       ]
     },
     {
-      "id": "01M6X2TSN0GF2S4KPXRQA1CVY5",
-      "atom_uri": "urn:zam:atom:01M6X2TSN0GF2S4KPXRQA1CVY5",
+      "id": "01M6Y39BACR5YVMPCBPARKRS6B",
+      "atom_uri": "urn:zam:atom:01M6Y39BACR5YVMPCBPARKRS6B",
       "namespace": "zam-academy-mathematik-gymnasium-12",
       "slug": "g12-raum-koordinatensystem",
       "title": "Das dreidimensionale Koordinatensystem",
@@ -2924,7 +3212,7 @@
       ],
       "practice_items": [
         {
-          "id": "01M6X2TTM8D87THWBENGF2S4KP",
+          "id": "01M6Y39BACN7J39QPZ98XA5KAK",
           "slug": "g12-grundebene-koordinate-null",
           "language": "de",
           "tier": "tier1_fast",
@@ -2953,7 +3241,7 @@
           }
         },
         {
-          "id": "01M6X2TVKGA1CVY50ZJ9M36D87",
+          "id": "01M6Y39BACH5Y40BMFBZFJVM0E",
           "slug": "g12-spiegelung-ebene-koordinaten",
           "language": "de",
           "tier": "tier1_fast",
@@ -2982,7 +3270,7 @@
           }
         },
         {
-          "id": "01M6X2TWJR7THWBENGF2S4KPXR",
+          "id": "01M6Y39BAC6K82P5C9DBQFYDZ3",
           "slug": "g12-punktabstand-ursprung-raum",
           "language": "de",
           "tier": "tier2_transfer",
@@ -3006,8 +3294,8 @@
       ]
     },
     {
-      "id": "01M6X2TXJ04KPXRQA1CVY50ZJ9",
-      "atom_uri": "urn:zam:atom:01M6X2TXJ04KPXRQA1CVY50ZJ9",
+      "id": "01M6Y39BAC6AHY1QF265TA5FNQ",
+      "atom_uri": "urn:zam:atom:01M6Y39BAC6AHY1QF265TA5FNQ",
       "namespace": "zam-academy-mathematik-gymnasium-12",
       "slug": "g12-vektoralgebra-raum",
       "title": "Vektoralgebra im dreidimensionalen Raum",
@@ -3017,7 +3305,7 @@
       "source_link": "https://academy.zam-os.org/mathematik-gymnasium-12/#lesson=g12-vektoralgebra-raum",
       "prerequisites": [
         {
-          "atom_id": "01M6X2TSN0GF2S4KPXRQA1CVY5",
+          "atom_id": "01M6Y39BACR5YVMPCBPARKRS6B",
           "relationship": "requires"
         }
       ],
@@ -3040,7 +3328,7 @@
       ],
       "practice_items": [
         {
-          "id": "01M6X2TYH81CVY50ZJ9M36D87T",
+          "id": "01M6Y39BACTD1VKBNG2RFKF8DZ",
           "slug": "g12-kollinearitaet-kriterium",
           "language": "de",
           "tier": "tier1_fast",
@@ -3069,7 +3357,7 @@
           }
         },
         {
-          "id": "01M6X2TZGGY50ZJ9M36D87THWB",
+          "id": "01M6Y39BAC3RR3GXRHM78NHHMA",
           "slug": "g12-verbindungsvektor-spitze-fuss",
           "language": "de",
           "tier": "tier1_fast",
@@ -3098,7 +3386,7 @@
           }
         },
         {
-          "id": "01M6X2V0FRVY50ZJ9M36D87THW",
+          "id": "01M6Y39BACBNV1CQBC6KCWT081",
           "slug": "g12-linearkombination-komponente",
           "language": "de",
           "tier": "tier2_transfer",
@@ -3122,8 +3410,8 @@
       ]
     },
     {
-      "id": "01M6X2V1F0RQA1CVY50ZJ9M36D",
-      "atom_uri": "urn:zam:atom:01M6X2V1F0RQA1CVY50ZJ9M36D",
+      "id": "01M6Y39BACKNVTZ2K45MTFNSDS",
+      "atom_uri": "urn:zam:atom:01M6Y39BACKNVTZ2K45MTFNSDS",
       "namespace": "zam-academy-mathematik-gymnasium-12",
       "slug": "g12-skalarprodukt-winkel",
       "title": "Skalarprodukt und Orthogonalität",
@@ -3133,7 +3421,7 @@
       "source_link": "https://academy.zam-os.org/mathematik-gymnasium-12/#lesson=g12-skalarprodukt-winkel",
       "prerequisites": [
         {
-          "atom_id": "01M6X2TXJ04KPXRQA1CVY50ZJ9",
+          "atom_id": "01M6Y39BAC6AHY1QF265TA5FNQ",
           "relationship": "requires"
         }
       ],
@@ -3156,7 +3444,7 @@
       ],
       "practice_items": [
         {
-          "id": "01M6X2V2E8NGF2S4KPXRQA1CVY",
+          "id": "01M6Y39BACERY8HEPBQA2VB3FF",
           "slug": "g12-orthogonalitaet-skalarprodukt-null",
           "language": "de",
           "tier": "tier1_fast",
@@ -3173,8 +3461,6 @@
               "reason": "Orthogonale Vektoren müssen keineswegs gleich lang sein."
             }
           ],
-          "question": "Welche Bedingung kennzeichnet zwei zueinander orthogonale Vektoren a, b ≠ 0?",
-          "concept": "Ihr Skalarprodukt ist gleich null: a · b = 0.",
           "fast_check": {
             "type": "binary_choice",
             "options": [
@@ -3182,10 +3468,40 @@
               "Ihr Skalarprodukt ist gleich eins: a · b = 1."
             ],
             "correct_index": 0
-          }
+          },
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Welche Bedingung kennzeichnet zwei zueinander orthogonale Vektoren "
+            },
+            {
+              "type": "math",
+              "tex": "\\vec{a}, \\vec{b} \\neq \\vec{0}",
+              "speech": "Vektor a und Vektor b ungleich Nullvektor"
+            },
+            {
+              "type": "text",
+              "text": "?"
+            }
+          ],
+          "concept_segments": [
+            {
+              "type": "text",
+              "text": "Ihr Skalarprodukt ist gleich null: "
+            },
+            {
+              "type": "math",
+              "tex": "\\vec{a} \\cdot \\vec{b} = 0",
+              "speech": "Vektor a Skalarprodukt Vektor b gleich null"
+            },
+            {
+              "type": "text",
+              "text": "."
+            }
+          ]
         },
         {
-          "id": "01M6X2V3DGJ9M36D87THWBENGF",
+          "id": "01M6Y39BACN27HTGE93ZWCQF7P",
           "slug": "g12-skalarprodukt-negativ-stumpfer-winkel",
           "language": "de",
           "tier": "tier1_fast",
@@ -3214,7 +3530,7 @@
           }
         },
         {
-          "id": "01M6X2V4CRF2S4KPXRQA1CVY50",
+          "id": "01M6Y39BACQHYHQXV8PF99JFR2",
           "slug": "g12-orthogonal-parameter-ausrechnen",
           "language": "de",
           "tier": "tier2_transfer",
@@ -3238,8 +3554,8 @@
       ]
     },
     {
-      "id": "01M6X2V5C0CVY50ZJ9M36D87TH",
-      "atom_uri": "urn:zam:atom:01M6X2V5C0CVY50ZJ9M36D87TH",
+      "id": "01M6Y39BAC208WV46GST66502G",
+      "atom_uri": "urn:zam:atom:01M6Y39BAC208WV46GST66502G",
       "namespace": "zam-academy-mathematik-gymnasium-12",
       "slug": "g12-vektorprodukt-spatprodukt",
       "title": "Vektorprodukt und Spatprodukt",
@@ -3249,7 +3565,7 @@
       "source_link": "https://academy.zam-os.org/mathematik-gymnasium-12/#lesson=g12-vektorprodukt-spatprodukt",
       "prerequisites": [
         {
-          "atom_id": "01M6X2V1F0RQA1CVY50ZJ9M36D",
+          "atom_id": "01M6Y39BACKNVTZ2K45MTFNSDS",
           "relationship": "requires"
         }
       ],
@@ -3272,7 +3588,7 @@
       ],
       "practice_items": [
         {
-          "id": "01M6X2V6B89M36D87THWBENGF2",
+          "id": "01M6Y39BACGTY1KX6Q803S5HBD",
           "slug": "g12-kreuzprodukt-flaeche-bedeutung",
           "language": "de",
           "tier": "tier1_fast",
@@ -3301,7 +3617,7 @@
           }
         },
         {
-          "id": "01M6X2V7AG6D87THWBENGF2S4K",
+          "id": "01M6Y39BACWZFX4J20B9R5XZ7V",
           "slug": "g12-kreuzprodukt-richtung-orthogonal",
           "language": "de",
           "tier": "tier1_fast",
@@ -3330,7 +3646,7 @@
           }
         },
         {
-          "id": "01M6X2V89R36D87THWBENGF2S4",
+          "id": "01M6Y39BACR5SY6ZEM2RWHSXZG",
           "slug": "g12-dreiecksflaeche-vektor-berechnen",
           "language": "de",
           "tier": "tier2_transfer",
@@ -3354,8 +3670,8 @@
       ]
     },
     {
-      "id": "01M6X2V9900ZJ9M36D87THWBEN",
-      "atom_uri": "urn:zam:atom:01M6X2V9900ZJ9M36D87THWBEN",
+      "id": "01M6Y39BACC2HB9X13ZQZMC6TK",
+      "atom_uri": "urn:zam:atom:01M6Y39BACC2HB9X13ZQZMC6TK",
       "namespace": "zam-academy-mathematik-gymnasium-12",
       "slug": "g12-koerper-sachkontexte",
       "title": "Berechnungen an Raumkörpern in Sachkontexten",
@@ -3365,7 +3681,7 @@
       "source_link": "https://academy.zam-os.org/mathematik-gymnasium-12/#lesson=g12-koerper-sachkontexte",
       "prerequisites": [
         {
-          "atom_id": "01M6X2V5C0CVY50ZJ9M36D87TH",
+          "atom_id": "01M6Y39BAC208WV46GST66502G",
           "relationship": "requires"
         }
       ],
@@ -3388,7 +3704,7 @@
       ],
       "practice_items": [
         {
-          "id": "01M6X2VA88XRQA1CVY50ZJ9M36",
+          "id": "01M6Y39BACNT6C522XV0X434V3",
           "slug": "g12-pyramidenvolumen-formel",
           "language": "de",
           "tier": "tier1_fast",
@@ -3405,8 +3721,6 @@
               "reason": "G · h ist das Volumen eines Prismas oder Zylinders, nicht einer Pyramide."
             }
           ],
-          "question": "Wie berechnet man das Volumen einer Pyramide mit Grundfläche G und Höhe h?",
-          "concept": "V = 1/3 · G · h",
           "fast_check": {
             "type": "binary_choice",
             "options": [
@@ -3414,10 +3728,41 @@
               "V = 1/2 · G · h"
             ],
             "correct_index": 0
-          }
+          },
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Wie berechnet man das Volumen einer Pyramide mit Grundfläche "
+            },
+            {
+              "type": "math",
+              "tex": "G",
+              "speech": "G"
+            },
+            {
+              "type": "text",
+              "text": " und Höhe "
+            },
+            {
+              "type": "math",
+              "tex": "h",
+              "speech": "h"
+            },
+            {
+              "type": "text",
+              "text": "?"
+            }
+          ],
+          "concept_segments": [
+            {
+              "type": "math",
+              "tex": "V = \\frac{1}{3} \\cdot G \\cdot h",
+              "speech": "V gleich ein Drittel mal G mal h"
+            }
+          ]
         },
         {
-          "id": "01M6X2VB7GTHWBENGF2S4KPXRQ",
+          "id": "01M6Y39BACCNWHXGM52VV2HWZE",
           "slug": "g12-dach-neigungswinkel-vektor",
           "language": "de",
           "tier": "tier1_fast",
@@ -3446,7 +3791,7 @@
           }
         },
         {
-          "id": "01M6X2VC6RQA1CVY50ZJ9M36D8",
+          "id": "01M6Y39BACVG1320R327RD3K04",
           "slug": "g12-pyramidenvolumen-sachaufgabe",
           "language": "de",
           "tier": "tier2_transfer",

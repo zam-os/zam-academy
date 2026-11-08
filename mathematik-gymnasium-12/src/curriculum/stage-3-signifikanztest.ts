@@ -4,7 +4,7 @@
  */
 
 import type { DifficultyLevel, ExerciseTask, Lesson } from "../model/types";
-import { lab, makeLesson, output, range, task } from "./builders";
+import { lab, makeLesson, output, range } from "./builders";
 import { numberField, choiceField } from "./helpers";
 import type { Rng } from "../exercises/rng";
 import { fmt } from "../exercises/format";
@@ -92,43 +92,129 @@ export const STAGE_3_LESSONS: Lesson[] = [
       {
         id: "nullhypothese-aufstellen",
         make: (rng: Rng, level: DifficultyLevel): ExerciseTask => {
-          const pPercent = rng.pick([20, 30, 40]);
-          return task(
-            level,
-            `Ein Werbemanager vermutet, dass die Klickrate durch ein neues Design von bisher ${pPercent} % gestiegen ist. Welche Nullhypothese H<sub>0</sub> muss getestet werden?`,
-            `Eine Fluggesellschaft möchte belegen, dass die Pünktlichkeitsquote durch neue Abläufe über den bisherigen Wert von ${pPercent} % gestiegen ist. Formuliere H<sub>0</sub>.`,
-            [
+          const pPercent = rng.pick([15, 20, 25, 30, 40, 50, 60]);
+          const pVal = pPercent / 100;
+          if (level === 1) {
+            return {
+              prompt: `Ein Marketingteam vermutet, dass die Klickrate einer Webseite durch ein Redesign über den bisherigen Wert von ${pPercent} % gestiegen ist. Welche Nullhypothese H₀ muss formuliert werden?`,
+              given: [`Bisherige Klickrate: ${pPercent} %`, `Vermutung: Klickrate ist gestiegen`],
+              fields: [
+                choiceField(
+                  "H₀ lautet:",
+                  [`p ≤ ${fmt(pVal, 2)}`, `p > ${fmt(pVal, 2)}`, `p = 0,50`],
+                  0,
+                ),
+              ],
+              formulaHint: "Die zu belegende Neuerung 'gestiegen' gehört in H₁: p > p₀. Folglich ist H₀: p ≤ p₀.",
+              feedbackHint: "H₀ sichert den Status quo ab: p ≤ p₀.",
+              steps: [
+                `Gegenhypothese H₁ (Vermutung): p > ${fmt(pVal, 2)}.`,
+                `Nullhypothese H₀ (Status quo): p ≤ ${fmt(pVal, 2)}.`,
+                `<strong>H₀: p ≤ ${fmt(pVal, 2)}</strong>`,
+              ],
+              meta: { pPercent, pVal },
+            };
+          }
+          const scenario = rng.pick([
+            {
+              text: `Ein Hersteller garantiert, dass höchstens ${pPercent} % der Batterien fehlerhaft sind. Ein Verbraucherschutzverein vermutet, dass die Ausfallquote in Wahrheit höher ist.`,
+              h0: `p ≤ ${fmt(pVal, 2)}`,
+              h1: `p > ${fmt(pVal, 2)}`,
+            },
+            {
+              text: `Ein Automobilzulieferer will belegen, dass ein neues Verfahren die Ausschussquote unter das bisherige Niveau von ${pPercent} % gesenkt hat.`,
+              h0: `p ≥ ${fmt(pVal, 2)}`,
+              h1: `p < ${fmt(pVal, 2)}`,
+            },
+          ]);
+          return {
+            prompt: `${scenario.text} Welche Nullhypothese H₀ ist für den statistischen Test anzusetzen?`,
+            given: [scenario.text],
+            fields: [
               choiceField(
-                "H_0 lautet:",
-                [`p ≤ ${pPercent / 100}`, `p > ${pPercent / 100}`, `p = 0,5`],
+                "H₀ lautet:",
+                [scenario.h0, scenario.h1, `p = ${fmt(pVal, 2)}`],
                 0,
               ),
             ],
-            "Die Vermutung 'gestiegen' ist H_1: p > p_0. Folglich ist H_0: p ≤ p_0.",
-            `H_0: p &le; ${pPercent / 100} (Gegenhypothese H_1: p &gt; ${pPercent / 100}, rechtsseitiger Test).`,
-            `H_0: p ≤ ${pPercent / 100}`,
-            { pPercent },
-          );
+            feedbackHint: "Formuliere zuerst die Behauptung als H₁. Die Gegenbehauptung ist dann H₀.",
+            steps: [
+              `Zu belegende Behauptung H₁: ${scenario.h1}.`,
+              `Nullhypothese H₀: ${scenario.h0}.`,
+              `<strong>H₀: ${scenario.h0}</strong>`,
+            ],
+            meta: { pPercent },
+          };
         },
       },
       {
         id: "testrichtung-bestimmen",
-        make: (_rng: Rng, level: DifficultyLevel): ExerciseTask => {
-          return task(
-            level,
-            "Eine Maschinenfabrik will prüfen, ob die Fehlerquote (bisher 5 %) durch eine Justierung gesunken ist. Welcher Testtyp liegt vor?",
-            "In einer stichprobenartigen Umweltmessung soll nachgewiesen werden, dass der Schadstoffgrenzwert unterschritten wird. Welcher Testtyp ist zu wählen?",
-            [
+        make: (rng: Rng, level: DifficultyLevel): ExerciseTask => {
+          if (level === 1) {
+            const item = rng.pick([
+              {
+                text: "Ein Softwareentwickler will nachweisen, dass die Absturzquote einer App durch ein Update gesunken ist.",
+                direction: "Linksseitiger Test",
+                idx: 0,
+                reason: "Da eine Verringerung (p < p₀) nachgewiesen werden soll, führen kleine Trefferzahlen zur Ablehnung von H₀.",
+              },
+              {
+                text: "Ein Schokoladenhersteller möchte werben, dass die Kundenzufriedenheit durch eine Rezepturänderung über 80 % gestiegen ist.",
+                direction: "Rechtsseitiger Test",
+                idx: 1,
+                reason: "Da eine Steigerung (p > p₀) belegt werden soll, führen große Trefferzahlen zur Ablehnung von H₀.",
+              },
+            ]);
+            return {
+              prompt: `${item.text} Welcher Testtyp (Testrichtung) liegt vor?`,
+              given: [item.text],
+              fields: [
+                choiceField(
+                  "Testrichtung:",
+                  ["Linksseitiger Test", "Rechtsseitiger Test", "Zweiseitiger Test"],
+                  item.idx,
+                ),
+              ],
+              formulaHint: "Prüfe, ob eine Verringerung (links) oder Erhöhung (rechts) nachgewiesen werden soll.",
+              feedbackHint: item.reason,
+              steps: [
+                item.reason,
+                `<strong>${item.direction}</strong>`,
+              ],
+              meta: { idx: item.idx },
+            };
+          }
+          const item = rng.pick([
+            {
+              text: "Eine Umweltbehörde prüft stichprobenartig, ob die Feinstaubüberschreitungen durch einen neuen Filter unter den Grenzwert gedrückt wurden.",
+              direction: "Linksseitiger Test",
+              idx: 0,
+              reason: "Senkung unter Grenzwert erfordert Ablehnung bei besonders wenigen Überschreitungen (linksseitiger Test).",
+            },
+            {
+              text: "Ein Pharmahersteller will im Zulassungsverfahren statistisch absichern, dass die Heilungsquote über dem bisherigen Standard liegt.",
+              direction: "Rechtsseitiger Test",
+              idx: 1,
+              reason: "Übertreffen des Standards erfordert Ablehnung bei vielen geheilten Patienten (rechtsseitiger Test).",
+            },
+          ]);
+          return {
+            prompt: `Praxisproblem: ${item.text} Bestimme die notwendige Testrichtung für die statistische Entscheidungsfindung.`,
+            given: [item.text],
+            fields: [
               choiceField(
                 "Testrichtung:",
                 ["Linksseitiger Test", "Rechtsseitiger Test", "Zweiseitiger Test"],
-                0,
+                item.idx,
               ),
             ],
-            "Da eine Senkung (p < p_0) nachgewiesen werden soll, führt eine zu kleine Trefferzahl zur Ablehnung von H_0.",
-            "Da eine Verringerung (p < 0,05) belegt werden soll, liegt ein linksseitiger Test vor.",
-            "Linksseitiger Test",
-          );
+            feedbackHint: item.reason,
+            steps: [
+              item.reason,
+              `<strong>${item.direction}</strong>`,
+            ],
+            meta: { idx: item.idx },
+          };
         },
       },
     ],
@@ -216,38 +302,108 @@ export const STAGE_3_LESSONS: Lesson[] = [
     exercises: [
       {
         id: "alpha-fehler-rechnen",
-        make: (_rng: Rng, level: DifficultyLevel): ExerciseTask => {
-          // n=20, p=0.5, c=15 -> P(X>=15) = 1 - binomCdf(20, 0.5, 14) approx 0.021
-          const alpha = 1 - binomCdf(20, 0.5, 14);
-          return task(
-            level,
-            "Bei einem rechtsseitigen Test mit n = 20 und H_0: p ≤ 0,5 lautet der Ablehnungsbereich A = {15, ..., 20}. Berechne die tatsächliche Wahrscheinlichkeit für den Fehler 1. Art (auf drei Dezimalen gerundet).",
-            "Ein Münzprüfer schlägt Alarm bei mindestens 15 Zahl-Würfen aus 20. Wie groß ist die Wahrscheinlichkeit für einen Fehlalarm bei einer fairen Münze (p = 0,5)?",
-            [numberField("α =", alpha, "", 3)],
-            "α = P_0,5(X ≥ 15) = 1 − P_0,5(X ≤ 14).",
-            `P(X &ge; 15) = 1 − binomCdf(20; 0,5; 14) &approx; ${fmt(alpha, 3)}.`,
-            `α = ${fmt(alpha, 3)}`,
-          );
+        make: (rng: Rng, level: DifficultyLevel): ExerciseTask => {
+          const c = rng.pick([14, 15, 16]);
+          const n = 20;
+          const p = 0.5;
+          const alpha = 1 - binomCdf(n, p, c - 1);
+          if (level === 1) {
+            return {
+              prompt: `Bei einem rechtsseitigen Test mit n = ${n} und H₀: p ≤ 0,5 lautet der Ablehnungsbereich A = {${c}, ..., ${n}}. Berechne die tatsächliche Wahrscheinlichkeit für den Fehler 1. Art (auf drei Dezimalen gerundet).`,
+              given: [`n = ${n}`, `p₀ = 0,5`, `Ablehnungsbereich A = {${c}, ..., ${n}}`],
+              fields: [numberField("α =", alpha, "", 3)],
+              formulaHint: `α = P(X ≥ ${c}) = 1 − P(X ≤ ${c - 1}).`,
+              feedbackHint: `Nutze die kumulierte Wahrscheinlichkeit: α = 1 − F(${c - 1}).`,
+              steps: [
+                `α = P_{0,5}(X ≥ ${c}) = 1 − P_{0,5}(X ≤ ${c - 1}) = 1 − ${fmt(binomCdf(n, p, c - 1), 4)} &approx; ${fmt(alpha, 3)}.`,
+                `<strong>α = ${fmt(alpha, 3)}</strong>`,
+              ],
+              meta: { c, n, p, alpha },
+            };
+          }
+          const pAlt = 0.75;
+          const beta = binomCdf(n, pAlt, c - 1);
+          return {
+            prompt: `Gegeben ist der gleiche rechtsseitige Test (n = ${n}, A = {${c}, ..., ${n}}). Gilt in Wahrheit die Trefferquote p₁ = 0,75, so wird H₀ fälschlicherweise beibehalten (Fehler 2. Art). Berechne β auf drei Dezimalen gerundet.`,
+            given: [`n = ${n}`, `p₁ = 0,75`, `Annahmebereich Ā = {0, ..., ${c - 1}}`],
+            fields: [numberField("β =", beta, "", 3)],
+            feedbackHint: `Fehler 2. Art: β = P_{p₁}(X ∉ A) = P_{0,75}(X ≤ ${c - 1}).`,
+            steps: [
+              `β = P_{0,75}(X ≤ ${c - 1}) &approx; ${fmt(beta, 3)}.`,
+              `<strong>β = ${fmt(beta, 3)}</strong>`,
+            ],
+            meta: { c, n, pAlt, beta },
+          };
         },
       },
       {
         id: "fehler-tradeoff",
-        make: (_rng: Rng, level: DifficultyLevel): ExerciseTask => {
-          return task(
-            level,
-            "Wie verändert sich die Wahrscheinlichkeit für den Fehler 2. Art (β), wenn man das Signifikanzniveau α von 5 % auf 1 % verschärft (bei unverändertem Stichprobenumfang n)?",
-            "In einer medizinischen Diagnostik wird die Alarmschwelle angehoben, um Fehlalarme (Alpha) zu reduzieren. Welche Auswirkung hat das auf das Übersehen echter Erkrankungen (Beta)?",
-            [
-              choiceField(
-                "Der Beta-Fehler ...",
-                ["wird größer.", "wird kleiner.", "bleibt unverändert."],
-                0,
-              ),
+        make: (rng: Rng, level: DifficultyLevel): ExerciseTask => {
+          if (level === 1) {
+            const q = rng.pick([
+              {
+                question: "Wie verändert sich die Wahrscheinlichkeit für den Fehler 2. Art (β), wenn man das Signifikanzniveau α von 5 % auf 1 % verschärft (bei unverändertem Stichprobenumfang n)?",
+                ans: "wird größer.",
+                idx: 0,
+                options: ["wird größer.", "wird kleiner.", "bleibt unverändert."],
+                reason: "Ein kleineres α verkleinert den Ablehnungsbereich A. Dadurch wird der Annahmebereich größer und der Beta-Fehler steigt.",
+              },
+              {
+                question: "Welche Auswirkung hat eine Erhöhung der Stichprobengröße n bei festem Signifikanzniveau α auf den Fehler 2. Art (β)?",
+                ans: "Der Beta-Fehler wird kleiner.",
+                idx: 0,
+                options: ["Der Beta-Fehler wird kleiner.", "Der Beta-Fehler wird größer.", "Der Beta-Fehler bleibt unverändert."],
+                reason: "Mit wachsendem Stichprobenumfang sinkt die Streuung der Teststatistik, wodurch Abweichungen zuverlässiger erkannt werden (β sinkt).",
+              },
+            ]);
+            return {
+              prompt: q.question,
+              given: [q.question],
+              fields: [choiceField("Antwort:", q.options, q.idx)],
+              formulaHint: "Überlege, wie sich die Schwellenwerte für A und Ā verschieben.",
+              feedbackHint: q.reason,
+              steps: [
+                q.reason,
+                `<strong>${q.ans}</strong>`,
+              ],
+              meta: { idx: q.idx },
+            };
+          }
+          const q = rng.pick([
+            {
+              question: "In der medizinischen Diagnostik (H₀: 'Patient ist gesund') wird ein Test so justiert, dass Fehlalarme (Fehler 1. Art) nahezu ausgeschlossen sind. Welche Konsequenz hat das für unerkannte Erkrankungen (Fehler 2. Art)?",
+              ans: "Das Risiko für unerkannte Erkrankungen (Beta-Fehler) steigt deutlich an.",
+              idx: 0,
+              options: [
+                "Das Risiko für unerkannte Erkrankungen (Beta-Fehler) steigt deutlich an.",
+                "Das Risiko für unerkannte Erkrankungen sinkt ebenfalls.",
+                "Die Diagnosesicherheit bei Kranken bleibt unberührt.",
+              ],
+              reason: "Wird der Schwellenwert für Alarm sehr hoch gelegt (α klein), verbleiben mehr Kranke im Annahmebereich von H₀ (β steigt).",
+            },
+            {
+              question: "Eine Qualitätskontrolle (H₀: 'Bauteil fehlerfrei') soll so gestaltet werden, dass defekte Teile fast nie übersehen werden (β minimal). Welche betriebliche Folge entsteht bei unverändertem n?",
+              ans: "Es werden vermehrt intakte Teile irrtümlich aussortiert (Alpha-Fehler steigt).",
+              idx: 0,
+              options: [
+                "Es werden vermehrt intakte Teile irrtümlich aussortiert (Alpha-Fehler steigt).",
+                "Es werden überhaupt keine Fehlentscheidungen mehr getroffen.",
+                "Der Alpha-Fehler sinkt gleichzeitig.",
+              ],
+              reason: "Ein vergrößerter Ablehnungsbereich senkt β, vergrößert aber zwangsläufig die Quote falscher Alarme (α).",
+            },
+          ]);
+          return {
+            prompt: `Praxistransfer: ${q.question}`,
+            given: [q.question],
+            fields: [choiceField("Folge:", q.options, q.idx)],
+            feedbackHint: q.reason,
+            steps: [
+              q.reason,
+              `<strong>${q.ans}</strong>`,
             ],
-            "Ein strengeres Alpha verkleinert den Ablehnungsbereich A und vergrößert den Annahmebereich, wodurch Beta steigt.",
-            "Wird der Ablehnungsbereich verkleinert, steigt die Wahrscheinlichkeit, eine Abweichung nicht zu entdecken: β wird größer.",
-            "wird größer.",
-          );
+            meta: { idx: q.idx },
+          };
         },
       },
     ],
@@ -333,42 +489,90 @@ export const STAGE_3_LESSONS: Lesson[] = [
     exercises: [
       {
         id: "ablehnungsbereich-rechts",
-        make: (_rng: Rng, level: DifficultyLevel): ExerciseTask => {
-          // n=20, p0=0.5, alpha=0.05 -> c=15
-          return task(
-            level,
-            "Gegeben ist ein rechtsseitiger Test mit n = 20, p_0 = 0,5 und α = 0,05. Die Tabelle liefert P(X ≤ 13) = 0,942 und P(X ≤ 14) = 0,979. Bestimme den kleinsten Wert c des Ablehnungsbereichs A = {c, ..., 20}.",
-            "Ein Onlinehändler testet, ob ein neues Empfehlungssystem die Kaufrate über 50 % hebt (n = 20, α = 5 %). Ab welcher Trefferzahl c gilt die Steigerung als signifikant?",
-            [numberField("c =", 15, "", 0)],
-            "Bedingung 1 − P(X ≤ c−1) ≤ 0,05 &rArr; P(X ≤ c−1) ≥ 0,95. Mit P(X ≤ 14) = 0,979 ist c−1 = 14 &rArr; c = 15.",
-            "c = 15 &rArr; A = {15, ..., 20}.",
-            "c = 15",
-          );
+        make: (rng: Rng, level: DifficultyLevel): ExerciseTask => {
+          const alphaPercent = rng.pick([5, 1]);
+          const alphaVal = alphaPercent / 100;
+          const crit = rightSidedCriticalValue(20, 0.5, alphaVal);
+          const c = crit.c;
+          if (level === 1) {
+            return {
+              prompt: `Gegeben ist ein rechtsseitiger Test mit n = 20, p₀ = 0,5 und α = ${alphaPercent} %. Die Tabelle kumulierter Wahrscheinlichkeiten liefert P(X ≤ ${c - 2}) = ${fmt(binomCdf(20, 0.5, c - 2), 3)} und P(X ≤ ${c - 1}) = ${fmt(binomCdf(20, 0.5, c - 1), 3)}. Bestimme den kritischen Wert c des Ablehnungsbereichs A = {c, ..., 20}.`,
+              given: [`n = 20`, `p₀ = 0,5`, `α = ${alphaPercent} %`],
+              fields: [numberField("c =", c, "", 0)],
+              formulaHint: `Bedingung: P(X ≥ c) ≤ ${alphaVal} ⇔ P(X ≤ c−1) ≥ ${fmt(1 - alphaVal, 2)}.`,
+              feedbackHint: `Suche den kleinsten Wert, für den P(X ≤ c−1) ≥ ${fmt(1 - alphaVal, 2)} erfüllt ist.`,
+              steps: [
+                `P(X ≤ ${c - 1}) = ${fmt(binomCdf(20, 0.5, c - 1), 3)} ≥ ${fmt(1 - alphaVal, 2)} &rArr; c − 1 = ${c - 1} &rArr; c = ${c}.`,
+                `Ablehnungsbereich A = {${c}, ..., 20}.`,
+                `<strong>c = ${c}</strong>`,
+              ],
+              meta: { alphaPercent, c },
+            };
+          }
+          return {
+            prompt: `Ein Online-Shop möchte prüfen, ob eine Werbekampagne die Conversion-Rate über 50 % hebt (n = 20, α = ${alphaPercent} %). Ab welcher Mindestanzahl c von Käufen gilt der Effekt als signifikant?`,
+            given: [`n = 20`, `H₀: p ≤ 0,50`, `Signifikanzniveau α = ${alphaPercent} %`],
+            fields: [numberField("c =", c, "", 0)],
+            feedbackHint: `Finde c so, dass unter H₀ höchstens mit Wahrscheinlichkeit ${alphaPercent} % mindestens c Treffer erzielt werden.`,
+            steps: [
+              `P_{0,5}(X ≥ c) ≤ ${alphaVal} liefert c = ${c}.`,
+              `<strong>Mindestens ${c} Käufe erforderlich</strong>`,
+            ],
+            meta: { alphaPercent, c },
+          };
         },
       },
       {
         id: "entscheidungsregel-anwenden",
         make: (rng: Rng, level: DifficultyLevel): ExerciseTask => {
-          const kTreffer = rng.pick([14, 16]);
-          const decision = kTreffer >= 15 ? 0 : 1;
-          return task(
-            level,
-            `Der Ablehnungsbereich eines rechtsseitigen Tests lautet A = {15, ..., 20}. Die Stichprobe ergibt k = ${kTreffer} Treffer. Wie lautet die Testentscheidung?`,
-            `In einer Stichprobe von 20 Kunden kaufen k = ${kTreffer} das Produkt. Entscheide bei A = {15, ..., 20}, ob H_0 verworfen wird.`,
-            [
+          const c = 15;
+          const kTreffer = rng.pick([13, 14, 15, 16, 17]);
+          const inRejection = kTreffer >= c;
+          const decision = inRejection ? 0 : 1;
+          if (level === 1) {
+            return {
+              prompt: `Der Ablehnungsbereich eines rechtsseitigen Signifikanztests lautet A = {${c}, ..., 20}. In der Stichprobe werden k = ${kTreffer} Treffer beobachtet. Wie lautet die statistische Testentscheidung?`,
+              given: [`A = {${c}, ..., 20}`, `Beobachtet: k = ${kTreffer}`],
+              fields: [
+                choiceField(
+                  "Entscheidung:",
+                  ["H₀ ablehnen (signifikant)", "H₀ beibehalten (nicht signifikant)"],
+                  decision,
+                ),
+              ],
+              formulaHint: `Prüfe, ob ${kTreffer} im Ablehnungsbereich A liegt.`,
+              feedbackHint: inRejection ? `Da ${kTreffer} ≥ ${c}, liegt das Ergebnis im Ablehnungsbereich.` : `Da ${kTreffer} < ${c}, liegt das Ergebnis im Annahmebereich.`,
+              steps: [
+                inRejection
+                  ? `Da k = ${kTreffer} &isin; A = {${c}, ..., 20}, wird H₀ auf dem gewählten Niveau abgelehnt (signifikant).`
+                  : `Da k = ${kTreffer} &notin; A, wird H₀ beibehalten (nicht signifikant).`,
+                `<strong>${decision === 0 ? "H₀ ablehnen" : "H₀ beibehalten"}</strong>`,
+              ],
+              meta: { kTreffer, c, decision },
+            };
+          }
+          return {
+            prompt: `Ein Qualitätsprüfer testet bei n = 20 Bauteilen mit H₀: p ≤ 0,5 auf dem 5 %-Niveau (A = {${c}, ..., 20}). Bei k = ${kTreffer} Treffern soll der Kunde informiert werden, ob eine statistisch gesicherte Qualitätssteigerung vorliegt.`,
+            given: [`n = 20`, `k = ${kTreffer}`, `A = {${c}, ..., 20}`],
+            fields: [
               choiceField(
-                "Entscheidung:",
-                ["H_0 ablehnen (signifikant)", "H_0 beibehalten (nicht signifikant)"],
+                "Mitteilung an Kunden:",
+                [
+                  "Qualitätssteigerung ist statistisch signifikant belegt (H₀ ablehnen)",
+                  "Kein statistisch signifikanter Nachweis für Steigerung (H₀ beibehalten)",
+                ],
                 decision,
               ),
             ],
-            `Prüfe, ob k = ${kTreffer} im Ablehnungsbereich A = {15, ..., 20} liegt.`,
-            kTreffer >= 15
-              ? `Da ${kTreffer} &isin; A, wird H_0 abgelehnt.`
-              : `Da ${kTreffer} &notin; A, wird H_0 beibehalten.`,
-            decision === 0 ? "H_0 ablehnen" : "H_0 beibehalten",
-            { kTreffer },
-          );
+            feedbackHint: inRejection ? "Trefferzahl liegt im kritischen Bereich." : "Trefferzahl reicht nicht aus für Signifikanz.",
+            steps: [
+              inRejection
+                ? `Mit k = ${kTreffer} ≥ ${c} ist die Steigerung signifikant nachgewiesen.`
+                : `Mit k = ${kTreffer} < ${c} reicht die Evidenz nicht aus.`,
+              `<strong>${decision === 0 ? "Qualitätssteigerung signifikant belegt" : "Kein signifikanter Nachweis"}</strong>`,
+            ],
+            meta: { kTreffer, c, decision },
+          };
         },
       },
     ],
@@ -388,18 +592,18 @@ export const STAGE_3_LESSONS: Lesson[] = [
         <ul>
           <li><strong>Irrtum 1:</strong> <em>„P(H<sub>0</sub> ist wahr) = 5 %“</em> &ndash; Falsch! Ein Hypothesentest trifft <strong>keine</strong> Wahrscheinlichkeitsaussage über die Nullhypothese. <i>H<sub>0</sub></i> ist wahr oder falsch, nicht zufällig!</li>
           <li><strong>Irrtum 2:</strong> <em>„Das Beibehalten von H<sub>0</sub> beweist, dass H<sub>0</sub> wahr ist.“</em> &ndash; Falsch! Man hat lediglich keine ausreichenden statistischen Belege gefunden, um sie abzulehnen (Freispruch aus Mangel an Beweisen).</li>
-          <li><strong>Wahlumfragen:</strong> Die Schwankungsbreite (Fehlermarge) hängt von <i>n</i> ab. Bei <i>n = 1000</i> beträgt die typische Fehlerspanne rund &plusmn;3 Prozentpunkte.</li>
+          <li><strong>Wahlumfragen:</strong> Die Schwankungsbreite (Fehlermarge) hängt von <i>n</i> ab. Bei <i>n = 1000</i> beträgt die typische Fehlerspanne rund &plusmn;3,2 Prozentpunkte (Faustformel <i>1/&radic;n &approx; 3,2 %</i>).</li>
         </ul>
       </div>
       <div class="example">
-        <strong>Beispiel:</strong> Bei einer Wahlumfrage vor einer Landtagswahl mit <i>n = 1000</i> erreicht Partei A 34 %. Die Fehlermarge bei 95 % Konfidenzniveau beträgt rund <i>&plusmn;3 %</i>.<br>
-        Der tatsächliche Wähleranteil liegt mit hoher Sicherheit im Intervall <i>[31 %; 37 %]</i>. Ein Vorsprung von 1 Prozentpunkt vor einer anderen Partei ist daher <strong>nicht signifikant</strong>!
+        <strong>Beispiel:</strong> Bei einer Wahlumfrage vor einer Landtagswahl mit <i>n = 1000</i> erreicht Partei A 34 %. Die Fehlermarge bei 95 % Konfidenzniveau beträgt rund <i>&plusmn;3,2 %</i>.<br>
+        Der tatsächliche Wähleranteil liegt mit hoher Sicherheit im Intervall <i>[30,8 %; 37,2 %]</i>. Ein Vorsprung von 1 Prozentpunkt vor einer anderen Partei ist daher <strong>nicht signifikant</strong>!
       </div>
     `,
     formulas: [
       {
         name: "Statistische Fehlermarge (Faustformel bei n=1000)",
-        html: "Fehlermarge &approx; <sup>1</sup>/<sub>&radic;n</sub> &approx; &plusmn;3,1 %",
+        html: "Fehlermarge &approx; <sup>1</sup>/<sub>&radic;n</sub> &approx; &plusmn;3,2 %",
         quantities: "n Stichprobenumfang",
       },
     ],
@@ -443,43 +647,118 @@ export const STAGE_3_LESSONS: Lesson[] = [
     exercises: [
       {
         id: "fehlinterpretation-erkennen",
-        make: (_rng: Rng, level: DifficultyLevel): ExerciseTask => {
-          return task(
-            level,
-            "Eine Zeitung titelt nach einer Befragung: 'Die Wahrscheinlichkeit, dass die Behauptung des Ministers stimmt, liegt bei nur noch 3 %.' Warum ist diese Formulierung mathematisch fehlerhaft?",
-            "Nach einem Signifikanztest (α = 5 %) behauptet ein Gutachter: 'Die Nullhypothese ist mit 95 % Wahrscheinlichkeit widerlegt.' Beurteile diese Aussage.",
-            [
-              choiceField(
-                "Kritik:",
-                [
+        make: (rng: Rng, level: DifficultyLevel): ExerciseTask => {
+          if (level === 1) {
+            const item = rng.pick([
+              {
+                statement: "Eine Zeitung titelt nach einer Umfrage: 'Die Wahrscheinlichkeit, dass die Behauptung des Ministers stimmt, liegt bei nur noch 3 %.'",
+                flaw: "Ein Hypothesentest berechnet keine Wahrscheinlichkeit für die Gültigkeit von Hypothesen.",
+                idx: 0,
+                options: [
                   "Ein Hypothesentest berechnet keine Wahrscheinlichkeit für die Gültigkeit von Hypothesen.",
-                  "Das Niveau hätte 1 % betragen müssen.",
-                  "Der Fehler 2. Art wurde vergessen.",
+                  "Das Signifikanzniveau hätte 1 % betragen müssen.",
+                  "Der Beta-Fehler wurde nicht angegeben.",
                 ],
-                0,
-              ),
+                explanation: "Hypothesen sind fixe Sachverhalte und besitzen in der klassischen Inferenzstatistik keine Wahrscheinlichkeitsverteilung.",
+              },
+              {
+                statement: "Nach einem Test mit Beibehaltung von H₀ verkündet der Studienleiter: 'Damit ist endgültig bewiesen, dass H₀ die absolute Wahrheit ist.'",
+                flaw: "Das Beibehalten von H₀ beweist nicht deren Richtigkeit, sondern bedeutet nur fehlende Signifikanz.",
+                idx: 0,
+                options: [
+                  "Das Beibehalten von H₀ beweist nicht deren Richtigkeit, sondern bedeutet nur fehlende Signifikanz.",
+                  "H₀ kann niemals beibehalten werden.",
+                  "Es wurde vergessen, α mit β zu multiplizieren.",
+                ],
+                explanation: "Beibehalten von H₀ bedeutet 'Freispruch aus Mangel an Beweisen', kein Beweis für die Richtigkeit.",
+              },
+            ]);
+            return {
+              prompt: `${item.statement} Warum ist diese Schlussfolgerung mathematisch bzw. methodisch fehlerhaft?`,
+              given: [item.statement],
+              fields: [choiceField("Kritik:", item.options, item.idx)],
+              formulaHint: "Denke an den Unterschied zwischen Daten-Wahrscheinlichkeit und Hypothesen-Wahrscheinlichkeit.",
+              feedbackHint: item.explanation,
+              steps: [
+                item.explanation,
+                `<strong>${item.flaw}</strong>`,
+              ],
+              meta: { idx: item.idx },
+            };
+          }
+          const item = rng.pick([
+            {
+              statement: "Ein Hersteller wirbt nach einer Großstudie: 'Unser Produkt führt zu einer statistisch hochsignifikanten Verbesserung (p < 0,001), daher ist der praktische Nutzen riesig.'",
+              flaw: "Statistische Signifikanz darf nicht mit praktischer Relevanz verwechselt werden.",
+              idx: 0,
+              options: [
+                "Statistische Signifikanz darf nicht mit praktischer Relevanz verwechselt werden.",
+                "Ein p-Wert unter 0,001 ist rechnerisch unmöglich.",
+                "Bei p < 0,001 ist der Fehler 1. Art zu groß.",
+              ],
+              explanation: "Bei sehr großen Stichproben werden selbst winzige, praktisch unbedeutende Effekte statistisch signifikant.",
+            },
+            {
+              statement: "Ein Forscher behauptet: 'Weil unser Signifikanzniveau α = 0,05 betrug, beträgt die Wahrscheinlichkeit, dass unsere Forschungshypothese H₁ zutrifft, genau 95 %.'",
+              flaw: "1 − α ist nicht die Wahrscheinlichkeit für das Eintreffen der Hypothese H₁.",
+              idx: 0,
+              options: [
+                "1 − α ist nicht die Wahrscheinlichkeit für das Eintreffen der Hypothese H₁.",
+                "H₁ muss immer mit α = 0,01 abgesichert werden.",
+                "Die Stichprobe war zwingend unvollständig.",
+              ],
+              explanation: "Das Signifikanzniveau ist eine bedingte Wahrscheinlichkeit für Daten unter H₀ und darf nicht als Wahrscheinlichkeit von Hypothesen invertiert werden.",
+            },
+          ]);
+          return {
+            prompt: `Wissenschaftliche Kritik: ${item.statement} Welche methodische Fehleinschätzung liegt hier vor?`,
+            given: [item.statement],
+            fields: [choiceField("Kritikpunkt:", item.options, item.idx)],
+            feedbackHint: item.explanation,
+            steps: [
+              item.explanation,
+              `<strong>${item.flaw}</strong>`,
             ],
-            "Die Nullhypothese ist eine feste Tatsache (wahr oder falsch) und keine Zufallsvariable mit einer Wahrscheinlichkeitsverteilung.",
-            "Ein Test trifft keine Aussage über die Wahrscheinlichkeit von Hypothesen, sondern bewertet die Wahrscheinlichkeit von Daten unter einer Hypothese.",
-            "Ein Hypothesentest berechnet keine Wahrscheinlichkeit für die Gültigkeit von Hypothesen.",
-          );
+            meta: { idx: item.idx },
+          };
         },
       },
       {
         id: "fehlermarge-umfrage",
-        make: (_rng: Rng, level: DifficultyLevel): ExerciseTask => {
-          // n=1000 -> 1/sqrt(1000) approx 0.0316 = 3.2%
-          const n = 1000;
-          const marge = 1 / Math.sqrt(n);
-          return task(
-            level,
-            `Berechne die statistische Fehlermarge 1 / &radic;n für eine repräsentative Stichprobe von n = ${n} Personen (in Prozent, auf eine Dezimale).`,
-            `Vor einer Wahl werden ${n} wahlberechtigte Personen befragt. Gib die maximale Schwankungsbreite (Fehlermarge) in Prozent an.`,
-            [numberField("Marge =", marge * 100, "%", 1)],
-            "Fehlermarge = 1 / √(1000) ≈ 0,0316 = 3,2 %.",
-            `1 / &radic;1000 &approx; 0,0316 = ${fmt(marge * 100, 1)} %.`,
-            `Marge = ${fmt(marge * 100, 1)} %`,
-          );
+        make: (rng: Rng, level: DifficultyLevel): ExerciseTask => {
+          if (level === 1) {
+            const n = rng.pick([400, 625, 1000, 1600, 2500]);
+            const marge = 1 / Math.sqrt(n);
+            const margePct = marge * 100;
+            return {
+              prompt: `Berechne die statistische Fehlermarge 1 / &radic;n für eine repräsentative Stichprobe von n = ${n} Personen (in Prozent, gerundet auf eine Dezimale).`,
+              given: [`Stichprobenumfang n = ${n}`, `Faustformel: Fehlermarge = 1 / &radic;n`],
+              fields: [numberField("Fehlermarge =", margePct, "%", 1)],
+              formulaHint: `Fehlermarge in % = (1 / √${n}) · 100 %.`,
+              feedbackHint: `Berechne zuerst die Wurzel aus ${n} und teile 100 durch dieses Ergebnis.`,
+              steps: [
+                `&radic;${n} = ${fmt(Math.sqrt(n), 1)}.`,
+                `Fehlermarge = 1 / &radic;${n} = 1 / ${fmt(Math.sqrt(n), 1)} &approx; ${fmt(marge, 4)} = ${fmt(margePct, 1)} %.`,
+                `<strong>Fehlermarge = ${fmt(margePct, 1)} %</strong>`,
+              ],
+              meta: { n, margePct },
+            };
+          }
+          const targetPct = rng.pick([2, 4, 5]);
+          const targetFrac = targetPct / 100;
+          const requiredN = Math.round(1 / (targetFrac * targetFrac));
+          return {
+            prompt: `Ein Meinungsforschungsinstitut plant eine repräsentative Wählerbefragung. Die Fehlerspanne (Fehlermarge) soll nach der Faustformel 1 / &radic;n höchstens &plusmn;${targetPct} % betragen. Wie viele Personen müssen dafür mindestens befragt werden?`,
+            given: [`Maximale Fehlermarge = ${targetPct} % = ${fmt(targetFrac, 2)}`, `Faustformel: 1 / &radic;n ≤ ${fmt(targetFrac, 2)}`],
+            fields: [numberField("Mindestanzahl n =", requiredN, "", 0)],
+            feedbackHint: `Löse die Ungleichung 1 / √n ≤ ${targetPct}/100 nach n auf: √n ≥ 100/${targetPct} ⇒ n ≥ (100/${targetPct})².`,
+            steps: [
+              `1 / &radic;n &le; ${fmt(targetFrac, 2)} &hArr; &radic;n &ge; 1 / ${fmt(targetFrac, 2)} = ${100 / targetPct}.`,
+              `n &ge; (${100 / targetPct})² = ${requiredN}.`,
+              `<strong>Mindestens n = ${requiredN} Personen</strong>`,
+            ],
+            meta: { targetPct, requiredN },
+          };
         },
       },
     ],

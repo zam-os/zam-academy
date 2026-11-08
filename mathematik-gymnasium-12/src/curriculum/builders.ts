@@ -126,6 +126,38 @@ export function lab(
   return { kind, title: `Labor: ${title}`, intro, params, readouts, goals };
 }
 
+export interface TaskLevelSpec {
+  prompt: string;
+  given?: string[];
+  fields: ExerciseTask["fields"];
+  hint?: string;
+  reasoning: string;
+  result: string;
+  meta?: ExerciseTask["meta"];
+}
+
+export function levelTask(
+  level: DifficultyLevel,
+  l1: TaskLevelSpec,
+  l2: TaskLevelSpec,
+): ExerciseTask {
+  const spec = level === 1 ? l1 : l2;
+  const cleanResult = spec.result.replace(/(^|[\s(=:|,{±|])-(?=\d)/g, "$1−");
+  const cleanReasoning = spec.reasoning.replace(/(^|[\s(=:|,{±|])-(?=\d)/g, "$1−");
+  const cleanHint = (spec.hint ?? (level === 1 ? "Wende die passende mathematische Rechenregel an." : spec.reasoning)).replace(/(^|[\s(=:|,{±|])-(?=\d)/g, "$1−");
+  const cleanPrompt = spec.prompt.replace(/(^|[\s(=:|,{±|])-(?=\d)/g, "$1−");
+
+  return {
+    prompt: cleanPrompt,
+    given: spec.given ?? [],
+    fields: spec.fields,
+    feedbackHint: cleanHint,
+    ...(level === 1 ? { formulaHint: cleanHint } : {}),
+    steps: [cleanReasoning, `<strong>${cleanResult}</strong>`],
+    meta: spec.meta ?? {},
+  };
+}
+
 export function task(
   level: DifficultyLevel,
   guided: string,
@@ -142,9 +174,9 @@ export function task(
   let meta: ExerciseTask["meta"];
 
   if (typeof arg7 === "object" && arg7 !== null) {
+    hint = "Wende die passende mathematische Rechenregel an.";
     reasoning = arg5;
     result = arg6;
-    hint = reasoning;
     meta = arg7;
   } else if (typeof arg7 === "string") {
     hint = arg5;
@@ -152,9 +184,9 @@ export function task(
     result = arg7;
     meta = arg8 ?? {};
   } else {
+    hint = "Wende die passende mathematische Rechenregel an.";
     reasoning = arg5;
     result = arg6;
-    hint = reasoning;
     meta = {};
   }
 
