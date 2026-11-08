@@ -1,8 +1,8 @@
 {
   "schema": 1,
-  "approved": null,
-  "status": "proposal-only",
-  "source": "Stand 06.11.2026: acht A-Vorschläge für die Einzelabrufe, keine B-Übernahme, acht C-Zeilen für die mehrteiligen Karten bleiben keep-active. Keine Freigabe und keine Änderung persönlicher Historien. Veröffentlichung zunächst ohne replaces und retired_items gemäß Paketstandard.",
+  "approved": "2026-11-08",
+  "status": "approved",
+  "source": "Thomas in der Claude-Code-Sitzung zur ZAM-Integration am 2026-11-08: „Ich stimme den Mappings zu. Die Gefahr ist auch sehr gering. ZAM ist quasi noch ein Geheimprojekt. Also bitte gleich alle 9 bündeln.“ Die Freigabe gilt der Zuordnung der 16 de-by-Karten in dieser Datei (8 A, 0 B, 8 C; keine Stilllegung, alle C-Karten bleiben aktiv). Die 8 Nachfolger tragen ab Zellversion 2026.11.2 je ein replaces auf ihre alte Karte.",
   "source_repository": "zam-os/zam",
   "source_commit": "f57e6740854a2f91f985b59b9e101b388186d3bc",
   "sources": [
@@ -24,7 +24,7 @@
       "de_by_question": "Wie nennt man eine gerade Linie, die zwei definierte Endpunkte A und B besitzt und eine messbare endliche Länge hat?",
       "category": "A",
       "academy_slug": "m5-strecke",
-      "action": "propose-replace-after-approval",
+      "action": "replace",
       "reason": "Gleicher Einzelabruf: gerade Linie mit zwei Endpunkten und Länge heißt Strecke [AB]."
     },
     {
@@ -42,7 +42,7 @@
       "de_by_question": "Welche Winkelart liegt vor, wenn das Winkelmaß alpha genau zwischen 90° und 180° liegt (90° < alpha < 180°)?",
       "category": "A",
       "academy_slug": "m5-stumpf",
-      "action": "propose-replace-after-approval",
+      "action": "replace",
       "reason": "Gleicher Einzelabruf: Winkel zwischen 90° und 180° heißt stumpfer Winkel."
     },
     {
@@ -60,7 +60,7 @@
       "de_by_question": "Wie viele Millimeter (mm) sind genau 1 Meter (m)?",
       "category": "A",
       "academy_slug": "m5-meter-millimeter",
-      "action": "propose-replace-after-approval",
+      "action": "replace",
       "reason": "Gleicher Einzelabruf: 1 m = 1.000 mm."
     },
     {
@@ -78,7 +78,7 @@
       "de_by_question": "Welche Stufenzahl (Umrechnungszahl) gilt zwischen den metrischen Flächeneinheiten (mm², cm², dm², m², a, ha, km²)?",
       "category": "A",
       "academy_slug": "m5-umrechnungszahl",
-      "action": "propose-replace-after-approval",
+      "action": "replace",
       "reason": "Gleicher Einzelabruf: Die Umrechnungszahl benachbarter Flächeneinheiten ist 100."
     },
     {
@@ -96,7 +96,7 @@
       "de_by_question": "Bei welchen Ziffern an der Rundungsstelle wird nach den mathematischen Rundungsregeln ABGERUNDET?",
       "category": "A",
       "academy_slug": "m5-abrunden",
-      "action": "propose-replace-after-approval",
+      "action": "replace",
       "reason": "Gleicher Einzelabruf zu den Ziffern 0 bis 4; die neue Karte nennt die Ziffer genauer als rechts neben der Rundungsstelle."
     },
     {
@@ -114,7 +114,7 @@
       "de_by_question": "Wie lautet das Kommutativgesetz (Vertauschungsgesetz) für die Addition und Multiplikation zweier Zahlen a und b?",
       "category": "A",
       "academy_slug": "m5-kommutativ",
-      "action": "propose-replace-after-approval",
+      "action": "replace",
       "reason": "Gleicher Einzelabruf: das Kommutativgesetz für Addition und Multiplikation."
     },
     {
@@ -132,7 +132,7 @@
       "de_by_question": "Wie nennt man bei der Potenzschreibweise a^n die Zahl a (die multipliziert wird) und wie die Hochzahl n (die angibt, wie oft der Faktor auftritt)?",
       "category": "A",
       "academy_slug": "m5-basis-exponent",
-      "action": "propose-replace-after-approval",
+      "action": "replace",
       "reason": "Gleicher Einzelabruf: In a hoch n heißen a Basis und n Exponent."
     },
     {
@@ -150,7 +150,7 @@
       "de_by_question": "In welcher hierarchischen Reihenfolge müssen mathematische Rechenoperationen nach der Merkregel 'Kla-Po-Pu-Stri' ausgeführt werden?",
       "category": "A",
       "academy_slug": "m5-reihenfolge",
-      "action": "propose-replace-after-approval",
+      "action": "replace",
       "reason": "Gleicher Einzelabruf: Klammern, Potenzen, Punkt, Strich."
     },
     {

@@ -11,7 +11,7 @@
 | Sprachwerkstatt: Wortschatz & Grammatik | 15 | to be, have got, Artikel und Plural, ’s/of-Genitiv und Possessivbegleiter, Personal- und Fragepronomen, Simple Present, Present Progressive, Kontrast der Gegenwartszeiten, Simple Past (was/were & -ed), Simple Past (unregelmäßig & did/didn’t), Modalverben (can/could/may/must), Fragen und Kurzantworten, Imperativ und Let’s, Satzbau und Linking Words, Aussprache und IPA |
 | Geschichten, Gedichte & Lesetagebuch | 4 | Detektivgeschichte und Kontext-Erschließung, Lesetagebuch zur Ganzschrift, zwei gemeinfreie Originalgedichte von Robert Louis Stevenson, Schreibwerkstatt |
 
-Die Etappen sind der didaktische Lernpfad, keine neue Nummerierung des Lehrplans. [coverage.json](coverage.json) ordnet 36 Kompetenz- und Themenzeilen mit dem Originalwortlaut des ISB den fünf Lernbereichen zu, ordnet jede der 33 genannten Wortschatz- und Grammatikstrukturen einzeln einer Lektion zu und führt die Themenstunden 20/45/25/35/15 auf. Der [Bestandsabgleich](../docs/englisch-5-bestandsabgleich.md) erläutert die Abgrenzung zur Grundschule (Jgst. 3/4) und zu Englisch 6 sowie den Vorschlag für die acht vorhandenen ZAM-Karten.
+Die Etappen sind der didaktische Lernpfad, keine neue Nummerierung des Lehrplans. [coverage.json](coverage.json) ordnet 36 Kompetenz- und Themenzeilen mit dem Originalwortlaut des ISB den fünf Lernbereichen zu, ordnet jede der 33 genannten Wortschatz- und Grammatikstrukturen einzeln einer Lektion zu und führt die Themenstunden 20/45/25/35/15 auf. Der [Bestandsabgleich](../docs/englisch-5-bestandsabgleich.md) erläutert die Abgrenzung zur Grundschule (Jgst. 3/4) und zu Englisch 6 sowie die Zuordnung der acht vorhandenen ZAM-Karten.
 
 Jede Lektion enthält zwei erklärende Absätze mit Beispielen, einen Merksatz, Material, Schnellcheck, drei Kurzantworten und eigene Sprachaufgaben auf zwei Stufen. Level 1 zeigt die Kriterien als Hilfe, Level 2 verlangt Übertragung. Die Lernenden schreiben oder sprechen selbst und vergleichen anschließend mit einem möglichen Muster; freie Texte werden nicht automatisch bewertet. Eine Lektion zählt als geübt nach richtigem Schnellcheck, drei richtigen Kurzantworten und gespeichertem Mustervergleich auf Level 1, bei den Hörlektionen zusätzlich nach einer Zuhörübung.
 
@@ -31,7 +31,7 @@ Texte und Fortschritt bleiben in `localStorage` dieses Browsers (`englisch_rs5_a
 
 `cell.json` ist die einzige Kartenquelle; die App liest Schnellcheck-Frage und Antwort daraus. Die 129 einmal erzeugten ULIDs und 43 Lektionsanker stehen ohne Kartentext in `tests/fixtures/public-contract.json`. Alle 86 Karten haben die Sprache `en`, verlinken ihre Lektion und binden Etappe und Lernbereich für Jahrgangsstufe 5 mit `exam_relevant: false`.
 
-**Die Zuordnung der acht alten Englisch-5-Karten ist ein unbestätigter Vorschlag (`proposal-only`, `approved: null`).** `cell.json` enthält in `2026.11.1` weder `replaces` noch `retired_items`, sodass alle acht bisherigen Karten aus `de-by:realschule-5-englisch-grundlagen-to-be-have-got` samt Lernverlauf unangetastet aktiv bleiben, bis Thomas über den Vorschlag (4 A / 0 B / 4 C) in `replaces-de-by.json` entscheidet.
+**Thomas hat die Zuordnung der acht alten Englisch-5-Karten am 8. November 2026 freigegeben (4 A / 0 B / 4 C, `replaces-de-by.json`).** Ab `2026.11.2` trägt jeder der vier A-Nachfolger ein `replaces` auf seine alte Karte aus `de-by:realschule-5-englisch-grundlagen-to-be-have-got`, sodass deren Lernverlauf unverändert übergeht. Die vier C-Karten bleiben aktiv; `retired_items` gibt es nicht.
 
 ## Entwickeln und prüfen
 
@@ -44,4 +44,4 @@ npm run package:zip  # Build, Offline-ZIP und Artefaktprüfung
 ZAM_CORE=<Datei-URL von zam-core@0.54.0/dist/index.js> node scripts/validate-migration.mjs
 ```
 
-Dieselben vier Entwicklungswerkzeuge wie in Englisch 8, 9 und 10: TypeScript, Vite, Singlefile und Vitest. `scripts/validate-migration.mjs` prüft in Wegwerfbibliotheken sowohl die veröffentlichte Zelle ohne `replaces` (alle 8 Altkarten und 16 Reviews unverändert) als auch die Vorschlagssimulation für die vier A-Karten und die Kollisionssicherung.
+Dieselben vier Entwicklungswerkzeuge wie in Englisch 8, 9 und 10: TypeScript, Vite, Singlefile und Vitest. `scripts/validate-migration.mjs` prüft in Wegwerfbibliotheken die veröffentlichte Zelle mit den vier freigegebenen `replaces` (Historien gehen unverändert über, die vier C-Karten bleiben aktiv, wiederholte Installation ändert nichts) und die Kollisionssicherung.

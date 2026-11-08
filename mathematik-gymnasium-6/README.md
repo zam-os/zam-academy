@@ -22,7 +22,7 @@ Aus der Grundschule und aus Mathematik 5 am Gymnasium kommen das Rechteck, die P
 
 Eine Lektion hat ein Atom mit drei Karten in [cell.json](cell.json): zwei kurze Abrufe und eine Transferfrage mit Musterlösung. Alle Kennungen sind einmal erzeugte ULIDs und in [public-contract.json](tests/fixtures/public-contract.json) festgehalten.
 
-Zwei alte Zellen enthalten 16 Karten. Bytegleiche Schnappschüsse, Herkunftscommit und SHA-256 stehen in [replaces-de-by.json](replaces-de-by.json). Die Zuordnung ist ein Vorschlag: sieben A-Karten, keine B-Karte, neun C-Karten bleiben aktiv. Sie ist nicht freigegeben. Die veröffentlichte Zelle trägt weder `replaces` noch `retired_items`.
+Zwei alte Zellen enthalten 16 Karten. Bytegleiche Schnappschüsse, Herkunftscommit und SHA-256 stehen in [replaces-de-by.json](replaces-de-by.json). Die Zuordnung hat sieben A-Karten, keine B-Karte und neun C-Karten, die aktiv bleiben. Thomas hat sie am 8. November 2026 freigegeben. Ab `2026.11.2` trägt jeder A-Nachfolger ein `replaces` auf seine alte Karte; `retired_items` gibt es nicht.
 
 ## Lokal starten und prüfen
 

@@ -33,7 +33,7 @@ Die App kann Konstruktionen mit Zirkel und Lineal nur zeigen. Ausführen müssen
 
 ## Kartenabgleich
 
-Quelle sind die zwei `de-by`-Zellen in zam-os/zam (Commit `f57e6740854a2f91f985b59b9e101b388186d3bc`), bytegleich unter `mathematik-realschule-6/tests/fixtures/` mit SHA-256 in [replaces-de-by.json](../mathematik-realschule-6/replaces-de-by.json). Die Zuordnung ist ein Vorschlag (`approved: null`, `status: proposal-only`). Die Zelle deklariert weder `replaces` noch `retired_items`.
+Quelle sind die zwei `de-by`-Zellen in zam-os/zam (Commit `f57e6740854a2f91f985b59b9e101b388186d3bc`), bytegleich unter `mathematik-realschule-6/tests/fixtures/` mit SHA-256 in [replaces-de-by.json](../mathematik-realschule-6/replaces-de-by.json). Thomas hat die Zuordnung am 8. November 2026 freigegeben (`status: approved`). Ab `2026.11.2` deklariert jeder A-Nachfolger ein `replaces` auf seine alte Karte; `retired_items` gibt es nicht.
 
 | Kategorie | Anzahl | Bedeutung |
 | --- | --- | --- |
@@ -54,4 +54,4 @@ A-Zeilen:
 
 Von den C-Zeilen sind sechs mehrteilige Karten, die zu keinem einzelnen Nachfolger passen. Die Quader-Karte zu Ecken und Kanten und der Schrägbildteil gehören zu M5. Die zwei Karten zu relativer Häufigkeit und Laplace stehen nicht im Fachlehrplan M6 der Realschule, sie bleiben aktiv und sollten in `zam-os/zam` eigens geprüft werden.
 
-`scripts/validate-migration.mjs` prüft in Wegwerf-Bibliotheken: Die ausgelieferte Zelle lässt alle 16 Karten aktiv und ändert keine FSRS-Felder oder Reviews. Die Vorschlagsfassung nur im Arbeitsspeicher überträgt sechs Historien unverändert. Wiederholte Installationen ändern nichts, und wer beide Karten besitzt, bekommt eine Ablehnung statt einer automatischen Zusammenführung.
+`scripts/validate-migration.mjs` prüft in Wegwerf-Bibliotheken: Die ausgelieferte Zelle überträgt sechs Historien mit allen FSRS-Feldern und Reviews unverändert und lässt die zehn C-Karten aktiv. Wiederholte Installationen ändern nichts, und wer beide Karten besitzt, bekommt eine Ablehnung statt einer automatischen Zusammenführung.

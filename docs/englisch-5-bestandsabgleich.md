@@ -73,7 +73,7 @@ Cambridge Learner’s Dictionary, British Council LearnEnglish). Die beiden
 Gedichte „Time to Rise“ und „Rain“ von Robert Louis Stevenson (1885) sind
 gemeinfrei und wörtlich aus Project Gutenberg (eBook #19722) übernommen.
 
-## Die acht bisherigen Englisch-5-Karten (`proposal-only`)
+## Die acht bisherigen Englisch-5-Karten (freigegeben am 8. November 2026)
 
 Quelle: `zam-os/zam`, Commit `e6a235f75fe87b9d57af38bd61011027b891492c`,
 Zelle `de-by:realschule-5-englisch-grundlagen-to-be-have-got`,
@@ -93,8 +93,8 @@ bytegleiche Kopie liegt unter
 | `01K4E5B0000000000000000J07` | `de-by-rs5-eng-imperative-lets-1` | Verneinter Imperativ im Englischen (`Don’t + base form (Don’t run!)`) | **A** → `e5-imperatives-check` (`01M6TY2HAE5SA7P9XQG2ZH2CE3`), `propose-replace-after-approval` | Derselbe atomare Einzelabruf mit demselben Beispiel „Don’t run!“ und denselben Auswahloptionen. |
 | `01K4E5B0000000000000000J08` | `de-by-rs5-eng-imperative-lets-2` | Bildung des Imperativs und Übersetzung dreier konkreter Sätze | **C**, `keep-active` | Mehrteilige Übersetzungsaufgabe; `e5-imperatives-recall` fragt stattdessen systematisch nach positivem/negativem Imperativ und `Let’s`. |
 
-Gemäß `AGENTS.md` (Hard Rule 1 und Abschnitt 6) steht `replaces-de-by.json`
-auf `"approved": null` und `"status": "proposal-only"`. Die veröffentlichte
-Zelle `cell.json` (`2026.11.1`) enthält weder `replaces` noch `retired_items`,
-sodass alle acht Altkarten und ihre Lernverläufe unverändert aktiv bleiben, bis
-Thomas die Zuordnung ausdrücklich freigibt.
+Thomas hat die Zuordnung am 8. November 2026 freigegeben
+(`"status": "approved"`). Ab `cell.json` `2026.11.2` trägt jeder der vier
+A-Nachfolger ein `replaces` auf seine alte Karte, deren Lernverlauf damit
+unverändert übergeht. Die vier C-Karten bleiben aktiv; `retired_items` gibt es
+nicht. Die erste Fassung `2026.11.1` erschien ohne `replaces`.

@@ -25,7 +25,7 @@ Aus M3/4 kommen die schriftlichen Verfahren, das Rechnen bis zur Million, Größ
 
 Eine Lektion hat ein Atom mit drei Karten in [cell.json](cell.json): zwei kurze Abrufe und eine Transferfrage mit Musterlösung. Alle Kennungen sind einmal erzeugte ULIDs und in [public-contract.json](tests/fixtures/public-contract.json) fixiert.
 
-Zwei alte Zellen enthalten 16 Karten. Bytegleiche Schnappschüsse, Herkunftscommit und SHA-256 stehen in [replaces-de-by.json](replaces-de-by.json). Acht A-Zeilen schlagen denselben Einzelabruf als Nachfolger vor, acht C-Zeilen für mehrteilige Karten bleiben `keep-active`. Die Zuordnung ist **unfreigegeben** (`approved: null`). Die ausgelieferte Zelle enthält weder `replaces` noch `retired_items`, deshalb bleiben alle 16 alten Karten und ihre Historien aktiv.
+Zwei alte Zellen enthalten 16 Karten. Bytegleiche Schnappschüsse, Herkunftscommit und SHA-256 stehen in [replaces-de-by.json](replaces-de-by.json). Acht A-Zeilen übertragen denselben Einzelabruf auf einen Nachfolger, acht C-Zeilen für mehrteilige Karten bleiben `keep-active`. Thomas hat die Zuordnung am 8. November 2026 **freigegeben**. Ab `2026.11.2` trägt jeder A-Nachfolger ein `replaces` auf seine alte Karte, deren Historie damit unverändert übergeht; `retired_items` gibt es nicht.
 
 ## Lokal starten und prüfen
 

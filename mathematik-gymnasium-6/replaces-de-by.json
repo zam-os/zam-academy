@@ -1,8 +1,8 @@
 {
   "schema": 1,
-  "approved": null,
-  "status": "proposal-only",
-  "source": "Stand 08.11.2026: sieben A-Vorschläge, keine B-Übernahme, neun C-Zeilen bleiben aktiv. Keine Freigabe und keine Änderung persönlicher Historien. Veröffentlichung zunächst ohne replaces und retired_items gemäß Paketstandard.",
+  "approved": "2026-11-08",
+  "status": "approved",
+  "source": "Thomas in der Claude-Code-Sitzung zur ZAM-Integration am 2026-11-08: „Ich stimme den Mappings zu. Die Gefahr ist auch sehr gering. ZAM ist quasi noch ein Geheimprojekt. Also bitte gleich alle 9 bündeln.“ Die Freigabe gilt der Zuordnung der 16 de-by-Karten in dieser Datei (7 A, 0 B, 9 C; keine Stilllegung, alle C-Karten bleiben aktiv). Die 7 Nachfolger tragen ab Zellversion 2026.11.2 je ein replaces auf ihre alte Karte.",
   "source_repository": "zam-os/zam",
   "source_commit": "0dd65c8f58b7ece3edcf6aff1d5eced099b74e6c",
   "sources": [
@@ -24,7 +24,7 @@
       "de_by_question": "Was geschieht mit dem realen Wert eines Bruchs, wenn Zähler und Nenner mit derselben natürlichen Zahl k ungleich 0 multipliziert werden (Erweitern)?",
       "category": "A",
       "academy_slug": "m6-erweitern-wert",
-      "action": "propose-replace-after-approval",
+      "action": "replace",
       "reason": "Gleicher Einzelabruf: Der Wert eines Bruchs bleibt beim Erweitern gleich."
     },
     {
@@ -42,7 +42,7 @@
       "de_by_question": "Wie lautet die Rechenregel für die Division zweier Brüche (a/b : c/d)?",
       "category": "A",
       "academy_slug": "m6-bruch-division",
-      "action": "propose-replace-after-approval",
+      "action": "replace",
       "reason": "Gleicher Einzelabruf: Division durch einen Bruch als Multiplikation mit dem Kehrbruch."
     },
     {
@@ -60,7 +60,7 @@
       "de_by_question": "Wann ist die Dezimalbruch-Darstellung eines vollständig gekürzten Bruchs a/b garantiert ENDLICH (bricht ab)?",
       "category": "A",
       "academy_slug": "m6-endlich-nenner",
-      "action": "propose-replace-after-approval",
+      "action": "replace",
       "reason": "Gleicher Einzelabruf: Der Dezimalbruch bricht ab, wenn der Nenner nur die Primfaktoren 2 und 5 hat."
     },
     {
@@ -78,7 +78,7 @@
       "de_by_question": "Wie lautet die Grundgleichung der Prozentrechnung zur Berechnung des Prozentwerts W aus Grundwert G und Prozentsatz p% = p/100?",
       "category": "A",
       "academy_slug": "m6-prozentwert",
-      "action": "propose-replace-after-approval",
+      "action": "replace",
       "reason": "Gleicher Einzelabruf: Prozentwert gleich Grundwert mal Prozentsatz durch 100."
     },
     {
@@ -96,7 +96,7 @@
       "de_by_question": "Wie berechnet man den Flächeninhalt A eines Parallelogramms mit Grundlinie g und zugehöriger senkrechter Höhe h_g?",
       "category": "A",
       "academy_slug": "m6-parallelogramm",
-      "action": "propose-replace-after-approval",
+      "action": "replace",
       "reason": "Gleicher Einzelabruf: Flächeninhalt des Parallelogramms ist Grundlinie mal Höhe."
     },
     {
@@ -114,7 +114,7 @@
       "de_by_question": "Wie lautet die Flächeninhaltsformel für ein Trapez mit den parallelen Seiten a und c sowie der Höhe h?",
       "category": "A",
       "academy_slug": "m6-trapez",
-      "action": "propose-replace-after-approval",
+      "action": "replace",
       "reason": "Gleicher Einzelabruf: Trapezfläche ist der Mittelwert der parallelen Seiten mal der Höhe."
     },
     {
@@ -132,7 +132,7 @@
       "de_by_question": "Wie viel Grad misst der Mittelpunktswinkel alpha im Kreisdiagramm für einen Anteil von genau 25 % (1/4 des Vollkreises)?",
       "category": "A",
       "academy_slug": "m6-kreisdiagramm-25",
-      "action": "propose-replace-after-approval",
+      "action": "replace",
       "reason": "Gleicher Einzelabruf: 25 Prozent sind ein Viertel des Vollkreises, also 90 Grad."
     },
     {

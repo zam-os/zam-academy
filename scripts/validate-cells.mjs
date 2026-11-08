@@ -47,6 +47,25 @@ function distractorProblems(tile) {
   return problems;
 }
 
+/**
+ * A question or concept is plain text or segments, never both: ZAM's bundle
+ * check (`tests/kernel/bundled-tiles-card-text.test.ts` in zam-os/zam) refuses
+ * a cell that carries both, so it would fail only when ZAM bundles it.
+ */
+function cardTextProblems(tile) {
+  const problems = [];
+  for (const atom of tile.atoms) {
+    for (const item of atom.practice_items) {
+      for (const field of ["question", "concept"]) {
+        if ((item[field] === undefined) === (item[`${field}_segments`] === undefined)) {
+          problems.push(`${item.id} (${item.slug}): ${field} needs exactly one of ${field} or ${field}_segments`);
+        }
+      }
+    }
+  }
+  return problems;
+}
+
 const dir = mkdtempSync(join(tmpdir(), "zam-academy-cells-"));
 let failures = 0;
 try {
@@ -68,6 +87,13 @@ try {
       console.error(`FAIL ${app}/cell.json: ${error instanceof Error ? error.message : error}`);
     } finally {
       await db.close();
+    }
+
+    const textProblems = cardTextProblems(tile);
+    if (textProblems.length > 0) {
+      console.error(`FAIL ${app}/cell.json: ${textProblems.length} card text field(s) ZAM refuses`);
+      for (const problem of textProblems) console.error(`     ${problem}`);
+      failures += 1;
     }
 
     const problems = distractorProblems(tile);

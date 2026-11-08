@@ -35,7 +35,7 @@ Zwei `de-by`-Zellen in zam-os/zam (Commit `0dd65c8f58b7ece3edcf6aff1d5eced099b74
 | B | 0 | Keine mehrteilige Karte wird ganz übernommen |
 | C | 9 | Mehrteilig oder außerhalb von M6, darunter die allgemeine Prismenformel; bleiben aktiv und bekommen keinen Nachfolger |
 
-Die Zuordnung ist ein Vorschlag und nicht freigegeben. Die veröffentlichte Zelle hat weder `replaces` noch `retired_items`. `mathematik-gymnasium-6/scripts/validate-migration.mjs` prüft die öffentlichen Karten und probt den Vorschlag nur in Wegwerf-Datenbanken.
+Thomas hat die Zuordnung am 8. November 2026 freigegeben. Ab `2026.11.2` trägt jeder der sieben A-Nachfolger ein `replaces` auf seine alte Karte; `retired_items` gibt es nicht. `mathematik-gymnasium-6/scripts/validate-migration.mjs` prüft in Wegwerf-Datenbanken, dass die sieben Historien unverändert übergehen, die neun C-Karten aktiv bleiben und eine Doppelbelegung abgelehnt wird.
 
 ## Lehrervideos
 
