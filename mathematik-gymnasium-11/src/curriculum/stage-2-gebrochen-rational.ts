@@ -1,4 +1,4 @@
-import { fmt, linear, paren, shifted } from "../exercises/format";
+import { fmt, fracText, linear, paren, shifted } from "../exercises/format";
 import type { Rng } from "../exercises/rng";
 import {
   ASYMPTOTE_FUNCTIONS,
@@ -506,12 +506,16 @@ function termFinden(rng: Rng, level: 1 | 2): ExerciseTask {
   }
   const a = rng.pick([-2, -1, 0.5, 1, 2, 3]);
   const x1 = twoInts(rng, -4, 4, [z, p])[0];
-  const y1 = (a * (x1 - z)) / (x1 - p) ** 2;
+  const d = (x1 - p) ** 2;
+  // The point's y-coordinate is shown as an exact fraction: a rounded decimal
+  // (0,010 for 0,5 · 1/49) would lead to a different a (0,49).
+  const y1 = fracText(2 * a * (x1 - z), 2 * d);
   return {
-    prompt: `Der Graph einer Funktion f(x) = a(x − z)/(x − p)² hat die Nullstelle ${fmt(z)}, einen Pol ohne Vorzeichenwechsel bei x = ${fmt(p)} und verläuft durch den Punkt (${fmt(x1)} | ${fmt(y1, 3)}). Bestimme a. Welche waagrechte Asymptote hat er?`,
-    given: [`Nullstelle ${fmt(z)}`, `Pol ohne Vorzeichenwechsel bei ${fmt(p)}`, `Punkt (${fmt(x1)} | ${fmt(y1, 3)})`],
+    prompt: `Der Graph einer Funktion f(x) = a(x − z)/(x − p)² hat die Nullstelle ${fmt(z)}, einen Pol ohne Vorzeichenwechsel bei x = ${fmt(p)} und verläuft durch den Punkt (${fmt(x1)} | ${y1}). Bestimme a. Welche waagrechte Asymptote hat er?`,
+    given: [`Nullstelle ${fmt(z)}`, `Pol ohne Vorzeichenwechsel bei ${fmt(p)}`, `Punkt (${fmt(x1)} | ${y1})`],
     fields: [numberField("a =", a, "", 2), numberField("Asymptote y =", 0, "", 2)],
-    steps: [`Einsetzen: ${fmt(y1, 3)} = a · ${paren(x1 - z)} / ${fmt((x1 - p) ** 2)}`, `a = ${fmt(y1, 3)} · ${fmt((x1 - p) ** 2)} : ${paren(x1 - z)} = ${fmt(a)}`, `<strong>a = ${fmt(a)}; Asymptote y = 0</strong>`],
+    steps: [`Einsetzen: ${y1} = a · ${paren(x1 - z)} / ${fmt(d)}`, `a = ${y1} · ${fmt(d)} : ${paren(x1 - z)} = ${fmt(a)}`, `<strong>a = ${fmt(a)}; Asymptote y = 0</strong>`],
+    meta: { a, z, p, x1 },
   };
 }
 

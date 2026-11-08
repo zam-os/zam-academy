@@ -368,4 +368,18 @@ describe("Review findings on PR #105", () => {
     expect(merke("ku-4-bedingungen")).toContain("f′(x₀) = 0 mit f″(x₀) ≠ 0");
     expect(merke("bw-2-diagnostik")).not.toMatch(/P<sub>K<\/sub>\(T\) ≠/);
   });
+
+  it("term finding on Level 2: the point as shown leads to the expected a", () => {
+    for (const task of tasksOf("gr-4-graph-term", "term-finden", 2)) {
+      const { z, x1 } = task.meta!;
+      const p = task.meta!.p;
+      const point = task.given[2].match(/\(([−\d]+) \| ([−\d]+)(?:\/(\d+))?\)/);
+      expect(point, task.given[2]).not.toBeNull();
+      const num = (t: string) => Number(t.replace("−", "-"));
+      expect(num(point![1])).toBe(x1);
+      const y = num(point![2]) / (point![3] ? Number(point![3]) : 1);
+      const a = (y * (x1 - p) ** 2) / (x1 - z);
+      expect(checkTask(task, [fmt(a), "0"]).status, task.prompt).toBe("correct");
+    }
+  });
 });
