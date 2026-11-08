@@ -7,7 +7,7 @@ export default defineConfig({
   base: "/mathematik-gymnasium-6/",
   plugins: [viteSingleFile()],
   server: {
-    port: 5224,
+    port: 5225,
     open: false,
   },
   build: {

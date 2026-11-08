@@ -1,5 +1,5 @@
 import type { ExerciseGenerator } from "../model/types";
-import { fmt, fracText, paren } from "../exercises/format";
+import { fmt, fracText, paren, rawFrac } from "../exercises/format";
 import { choiceField as pick, numberField as num } from "./helpers";
 import { task } from "./builders";
 import {
@@ -22,7 +22,7 @@ const count = (value: number, one: string, many: string) =>
   `${fmt(value, 0)} ${Math.abs(value) === 1 ? one : many}`;
 
 /** Anteil von einer Menge. */
-export function partOf(id: string, thing: string, one: string): ExerciseGenerator {
+export function partOf(id: string, thing: string, _one: string, dat = thing): ExerciseGenerator {
   return {
     id,
     make: (rng, level) => {
@@ -30,15 +30,17 @@ export function partOf(id: string, thing: string, one: string): ExerciseGenerato
       const n = rng.int(1, d - 1);
       const groups = rng.int(3, 12);
       const whole = d * groups;
-      const answer = n * groups;
+      const part = n * groups;
+      const rest = whole - part;
       const hint = "Teile die Menge durch den Nenner und nimm dann so viele Teile, wie der Zähler sagt.";
+      const answer = level === 1 ? part : rest;
       return task(
         level,
-        `Berechne den Anteil ${fracText(n, d)} von ${count(whole, one, thing)}.`,
-        `Von ${count(whole, one, thing)} gehört der Anteil ${fracText(n, d)} zu einer Gruppe. Wie viele ${thing} sind das?`,
-        [num("Anzahl", answer, "", 0, { slips: [{ value: groups, hint: "Das ist ein einzelner Bruchteil. Multipliziere noch mit dem Zähler." }, { value: n / d, hint: "Das ist nur der Anteil, noch nicht die Anzahl." }] })],
+        `Berechne den Anteil ${rawFrac(n, d)} von ${fmt(whole, 0)} ${dat}.`,
+        `Es sind ${fmt(whole, 0)} ${thing} da. ${rawFrac(n, d)} davon gehören zu einer Gruppe. Wie viele ${thing} bleiben außerhalb der Gruppe?`,
+        [num("Anzahl", answer, "", 0, { slips: [{ value: level === 1 ? groups : part, hint: level === 1 ? "Das ist ein einzelner Bruchteil. Multipliziere noch mit dem Zähler." : "Das ist die Gruppe selbst. Gefragt ist der Rest." }] })],
         hint,
-        `${fmt(whole, 0)} : ${fmt(d, 0)} = ${fmt(groups, 0)}. ${fmt(groups, 0)} · ${fmt(n, 0)} = ${fmt(answer, 0)}.`,
+        `${fmt(whole, 0)} : ${fmt(d, 0)} = ${fmt(groups, 0)}. ${fmt(groups, 0)} · ${fmt(n, 0)} = ${fmt(part, 0)}.`,
         `${fmt(answer, 0)} ${thing}.`,
         { n, d, whole },
       );
@@ -59,12 +61,12 @@ export function findWhole(id: string, thing: string, one: string): ExerciseGener
       const hint = "Ein Bruchteil ist bekannt. Teile ihn durch den Zähler und vervielfache mit dem Nenner.";
       return task(
         level,
-        `${fracText(n, d)} einer Menge ${thing} sind ${fmt(part, 0)}. Wie groß ist die ganze Menge?`,
-        `${count(part, one, thing)} sind genau ${fracText(n, d)} des Vorrats. Wie viele ${thing} gehören zum ganzen Vorrat?`,
+        `${fmt(part, 0)} ${thing} sind ${rawFrac(n, d)} der Menge. Wie viele ${thing} sind es insgesamt?`,
+        `${fmt(part, 0)} ${thing} sind genau ${rawFrac(n, d)} des Vorrats. Wie viele ${thing} gehören zum ganzen Vorrat?`,
         [num("Ganzes", whole, "", 0, { slips: [{ value: part * d, hint: "Teile zuerst durch den Zähler. Der Bruchteil besteht aus mehreren Stücken." }] })],
         hint,
         `${fmt(part, 0)} : ${fmt(n, 0)} = ${fmt(groups, 0)}. ${fmt(groups, 0)} · ${fmt(d, 0)} = ${fmt(whole, 0)}.`,
-        `Das Ganze sind ${fmt(whole, 0)} ${thing}.`,
+        `Das Ganze sind ${count(whole, one, thing)}.`,
         { n, d, part },
       );
     },
@@ -104,8 +106,8 @@ export function reduceFrac(id: string): ExerciseGenerator {
       const hint = "Teile Zähler und Nenner durch denselben Teiler, bis nur noch 1 übrig ist.";
       return task(
         level,
-        `Kürze ${fracText(n * k, d * k)} vollständig. Gib den Nenner des gekürzten Bruchs an.`,
-        `In einem Bericht steht der Anteil ${fracText(n * k, d * k)}. Wie heißt derselbe Anteil vollständig gekürzt im Nenner?`,
+        `Kürze ${rawFrac(n * k, d * k)} vollständig. Gib den Nenner des gekürzten Bruchs an.`,
+        `In einem Bericht steht der Anteil ${rawFrac(n * k, d * k)}. Wie heißt derselbe Anteil vollständig gekürzt im Nenner?`,
         [num("Nenner", rd, "", 0, { slips: [{ value: d * k, hint: "Der Bruch ist noch nicht gekürzt." }] })],
         hint,
         `Gemeinsamer Teiler ${fmt(k * (n / rn), 0)}. Gekürzt: ${fracText(rn, rd)}.`,
@@ -121,10 +123,12 @@ export function compareFrac(id: string): ExerciseGenerator {
     id,
     make: (rng, level) => {
       const d1 = rng.int(2, 8);
-      const n1 = rng.int(1, d1 - 1);
+      let n1 = rng.int(1, d1 - 1);
       const same = rng.int(0, 4) === 0;
-      const d2 = same ? d1 * rng.int(2, 3) : rng.int(2, 9);
-      const n2 = same ? n1 * (d2 / d1) : rng.int(1, d2 - 1);
+      let d2 = same ? d1 * rng.int(2, 3) : rng.int(2, 9);
+      let n2 = same ? n1 * (d2 / d1) : rng.int(1, Math.max(1, d2 - 1));
+      if (!same && n1 * d2 === n2 * d1) n2 = n2 < d2 - 1 ? n2 + 1 : Math.max(1, n2 - 1);
+      if (!same && rawFrac(n1, d1) === rawFrac(n2, d2)) n1 = n1 < d1 - 1 ? n1 + 1 : 1;
       const left = n1 / d1;
       const right = n2 / d2;
       const names = ["der linke Bruch", "der rechte Bruch", "beide sind gleich groß"];
@@ -132,8 +136,8 @@ export function compareFrac(id: string): ExerciseGenerator {
       const hint = "Ein gemeinsamer Nenner oder das Kürzen auf denselben Bruch zeigt die Ordnung.";
       return task(
         level,
-        `Welcher Bruch ist größer: ${fracText(n1, d1)} oder ${fracText(n2, d2)}?`,
-        `Lia vergleicht die Anteile ${fracText(n1, d1)} und ${fracText(n2, d2)} an zwei gleichen Vorräten. Welcher Anteil ist größer?`,
+        `Welcher Bruch ist größer: ${rawFrac(n1, d1)} oder ${rawFrac(n2, d2)}?`,
+        `Lia vergleicht die Anteile ${rawFrac(n1, d1)} und ${rawFrac(n2, d2)} an zwei gleichen Vorräten. Welcher Anteil ist größer?`,
         [pick("Größer ist …", names, index)],
         hint,
         `${fracText(n1, d1)} = ${fmt(left, 3)} und ${fracText(n2, d2)} = ${fmt(right, 3)}.`,
@@ -172,6 +176,7 @@ export function orderRational(id: string): ExerciseGenerator {
       let a = rng.int(-8, 8);
       let b = rng.int(-8, 8);
       if (a === b) b = a + (a < 8 ? 1 : -1);
+      if (a % 2 === 0 && b % 2 === 0) a = a < 8 ? a + 1 : a - 1;
       const larger = Math.max(a, b);
       const hint = "Auf der Zahlengeraden liegt die größere Zahl weiter rechts. Bei negativen Zahlen ist die näher an null die größere.";
       return task(
@@ -225,7 +230,7 @@ export function roundDecimal(id: string): ExerciseGenerator {
       return task(
         level,
         `Runde die Dezimalzahl ${fmt(value, 1)} auf ${place}.`,
-        `Ein Wiegeergebnis von ${fmt(value, 1)} kg soll auf ${place} gerundet in eine Liste. Welcher Wert kommt in die Liste?`,
+        `Ein Messwert von ${fmt(value, 1)} soll auf ${place} gerundet in eine Liste. Welcher Wert kommt in die Liste?`,
         [num("gerundet", answer, "", digits)],
         hint,
         toOnes
@@ -308,17 +313,20 @@ export function addSame(id: string): ExerciseGenerator {
     id,
     make: (rng, level) => {
       const d = rng.int(2, 12);
-      const n1 = rng.int(0, d);
-      const n2 = rng.int(0, d - Math.min(d, n1));
-      const { n, d: rd } = reduce(n1 + n2, d);
-      const hint = "Gleichnamige Brüche: Zähler addieren, Nenner behalten, danach kürzen.";
+      const n1 = rng.int(1, d - 1);
+      const n2 = rng.int(1, d - 1);
+      const s1 = rng.int(0, 1) === 0 ? 1 : -1;
+      const s2 = rng.int(0, 1) === 0 ? 1 : -1;
+      const { n, d: rd } = reduce(s1 * n1 + s2 * n2, d);
+      const shown = s2 < 0 ? `${rawFrac(s1 * n1, d)} − ${rawFrac(n2, d)}` : `${rawFrac(s1 * n1, d)} + ${rawFrac(n2, d)}`;
+      const hint = "Gleichnamige Brüche: Zähler addieren oder subtrahieren, Nenner behalten, danach kürzen.";
       return task(
         level,
-        `Berechne ${fracText(n1, d)} + ${fracText(n2, d)} und gib den Nenner des gekürzten Ergebnisses an.`,
-        `Zwei gleichnamige Anteile ${fracText(n1, d)} und ${fracText(n2, d)} werden zusammengelegt. Welcher Nenner bleibt nach dem Kürzen?`,
+        `Berechne ${shown} und gib den Nenner des gekürzten Ergebnisses an.`,
+        `Zwei gleichnamige Anteile, ${shown}, werden verrechnet. Welcher Nenner bleibt nach dem Kürzen?`,
         [num("Nenner", rd, "", 0)],
         hint,
-        `Zähler ${fmt(n1 + n2, 0)}, Nenner ${fmt(d, 0)}. Gekürzt ${fracText(n, rd)}.`,
+        `Zähler ${fmt(s1 * n1 + s2 * n2, 0)}, Nenner ${fmt(d, 0)}. Gekürzt ${fracText(n, rd)}.`,
         `Der Nenner ist ${fmt(rd, 0)}.`,
         { n1, n2, d },
       );
@@ -332,14 +340,15 @@ export function addDifferent(id: string): ExerciseGenerator {
     make: (rng, level) => {
       const d1 = rng.int(2, 6);
       const d2 = rng.int(2, 6);
-      const n1 = rng.int(1, d1 - 1);
-      const n2 = rng.int(1, d2 - 1);
+      const n1 = rng.int(1, d1 - 1) * (rng.int(0, 1) === 0 ? 1 : -1);
+      const n2 = rng.int(1, d2 - 1) * (rng.int(0, 1) === 0 ? 1 : -1);
       const { n, d } = reduce(n1 * d2 + n2 * d1, d1 * d2);
+      const shown = n2 < 0 ? `${rawFrac(n1, d1)} − ${rawFrac(-n2, d2)}` : `${rawFrac(n1, d1)} + ${rawFrac(n2, d2)}`;
       const hint = "Mache die Brüche gleichnamig. Der Hauptnenner ist ein gemeinsames Vielfaches der Nenner.";
       return task(
         level,
-        `Berechne ${fracText(n1, d1)} + ${fracText(n2, d2)}. Gib den Zähler des vollständig gekürzten Ergebnisses an.`,
-        `Ein Rezept braucht ${fracText(n1, d1)} L und danach noch ${fracText(n2, d2)} L. Welcher Zähler beschreibt die Summe vollständig gekürzt?`,
+        `Berechne ${shown}. Gib den Zähler des vollständig gekürzten Ergebnisses an.`,
+        `Ein Rezept braucht ${rawFrac(n1, d1)} l und danach noch ${rawFrac(n2, d2)} l. Welcher Zähler beschreibt die Summe vollständig gekürzt?`,
         [num("Zähler", n, "", 0, { slips: [{ value: n1 + n2, hint: "Zähler darf man nur addieren, wenn die Nenner gleich sind." }] })],
         hint,
         `Hauptnenner ${fmt(lcm(d1, d2), 0)}. Gekürzt ${fracText(n, d)}.`,
@@ -357,17 +366,19 @@ export function addMixed(id: string): ExerciseGenerator {
       const w = rng.int(1, 4);
       const d = rng.int(2, 6);
       const n = rng.int(1, d - 1);
-      const answer = w * d + n;
+      const w2 = rng.int(1, 3);
+      const alone = w * d + n;
+      const answer = level === 1 ? alone : alone + w2 * d;
       const hint = "Wandle die gemischte Zahl in einen unechten Bruch: Ganze mal Nenner plus Zähler.";
       return task(
         level,
-        `Schreibe ${fmt(w, 0)} und ${fracText(n, d)} als unechten Bruch. Welchen Zähler erhältst du?`,
-        `Eine Strecke ist ${fmt(w, 0)} m und noch ${fracText(n, d)} m lang. Welcher Zähler beschreibt dieselbe Länge als unechten Bruch mit Nenner ${fmt(d, 0)}?`,
+        `Schreibe ${fmt(w, 0)} und ${rawFrac(n, d)} als unechten Bruch. Welchen Zähler erhältst du?`,
+        `Addiere ${fmt(w, 0)} und ${rawFrac(n, d)} zu ${fmt(w2, 0)} weiteren Ganzen. Welchen Zähler hat die Summe als unechter Bruch mit dem Nenner ${fmt(d, 0)}?`,
         [num("Zähler", answer, "", 0, { slips: [{ value: w + n, hint: "Die Ganzen müssen zuerst in Bruchteile verwandelt werden." }] })],
         hint,
-        `${fmt(w, 0)} · ${fmt(d, 0)} + ${fmt(n, 0)} = ${fmt(answer, 0)}.`,
+        `${fmt(w, 0)} · ${fmt(d, 0)} + ${fmt(n, 0)} = ${fmt(alone, 0)}.`,
         `Der Zähler ist ${fmt(answer, 0)}.`,
-        { w, n, d },
+        { w, n, d, w2 },
       );
     },
   };
@@ -482,8 +493,8 @@ export function mulFrac(id: string): ExerciseGenerator {
       const hint = "Von einem Bruch einen Anteil nehmen: Zähler mal Zähler, Nenner mal Nenner, danach kürzen.";
       return task(
         level,
-        `Berechne ${fracText(n1, d1)} · ${fracText(n2, d2)} und gib den Zähler des gekürzten Produkts an.`,
-        `Von einem Vorrat ist noch ${fracText(n2, d2)} da, und davon wird der Anteil ${fracText(n1, d1)} gebraucht. Welcher Zähler beschreibt das Produkt vollständig gekürzt?`,
+        `Berechne ${rawFrac(n1, d1)} · ${rawFrac(n2, d2)} und gib den Zähler des gekürzten Produkts an.`,
+        `Von einem Vorrat ist noch ${rawFrac(n2, d2)} da, und davon wird der Anteil ${rawFrac(n1, d1)} gebraucht. Welcher Zähler beschreibt das Produkt vollständig gekürzt?`,
         [num("Zähler", n, "", 0)],
         hint,
         `${fmt(n1, 0)} · ${fmt(n2, 0)} im Zähler, ${fmt(d1, 0)} · ${fmt(d2, 0)} im Nenner. Gekürzt ${fracText(n, d)}.`,
@@ -506,8 +517,8 @@ export function divFrac(id: string): ExerciseGenerator {
       const hint = "Durch einen Bruch teilen heißt mit dem Kehrbruch malnehmen.";
       return task(
         level,
-        `Berechne ${fracText(n1, d1)} : ${fracText(n2, d2)} und gib den Nenner des gekürzten Quotienten an.`,
-        `${fracText(n1, d1)} L Saft werden in Becher zu je ${fracText(n2, d2)} L gefüllt. Welcher Nenner beschreibt den Quotienten vollständig gekürzt?`,
+        `Berechne ${rawFrac(n1, d1)} : ${rawFrac(n2, d2)} und gib den Nenner des gekürzten Quotienten an.`,
+        `${rawFrac(n1, d1)} l Saft werden in Becher zu je ${rawFrac(n2, d2)} l gefüllt. Welcher Nenner beschreibt den Quotienten vollständig gekürzt?`,
         [num("Nenner", d, "", 0, { slips: [{ value: reduce(n1 * n2, d1 * d2).d, hint: "Der zweite Bruch wird nicht malgenommen, sondern umgekehrt." }] })],
         hint,
         `Kehrbruch ${fracText(d2, n2)}. Ergebnis ${fracText(n, d)}.`,
@@ -529,7 +540,7 @@ export function mulDec(id: string): ExerciseGenerator {
       return task(
         level,
         `Berechne das Produkt der Zahlen ${fmt(a, 0)} · ${fmt(b / 10, 1)}.`,
-        `${count(a, "Band", "Bänder")} kostet jedes ${fmt(b / 10, 1)} €. Welchen Preis haben sie zusammen?`,
+        `Jedes der ${fmt(a, 0)} Bänder kostet ${fmt(b / 10, 1)} €. Welchen Preis haben sie zusammen?`,
         [num("Produkt", answer, "€", 1, { slips: [{ value: a * b, hint: "Im Produkt bleibt eine Nachkommastelle." }] })],
         hint,
         `${fmt(a, 0)} · ${fmt(b, 0)} = ${fmt(a * b, 0)}, eine Stelle nach dem Komma: ${fmt(answer, 1)}.`,
@@ -686,7 +697,7 @@ export function distributive(id: string): ExerciseGenerator {
       return task(
         level,
         `Berechne das Produkt ${fmt(a, 0)} · (${fmt(b, 0)} + ${fmt(c, 0)}).`,
-        `${count(a, "Person", "Personen")} kauft je ein Heft zu ${fmt(b, 0)} € und einen Stift zu ${fmt(c, 0)} €. Welchen Betrag zahlen sie zusammen?`,
+        `${count(a, "Person", "Personen")} ${a === 1 ? "kauft" : "kaufen"} je ein Heft zu ${fmt(b, 0)} € und einen Stift zu ${fmt(c, 0)} €. Welchen Betrag zahlen sie zusammen?`,
         [num("Wert", answer, "€", 0, { slips: [{ value: a * b + c, hint: "Der Faktor gilt für beide Summanden." }] })],
         hint,
         `${fmt(a, 0)} · ${fmt(b, 0)} + ${fmt(a, 0)} · ${fmt(c, 0)} = ${fmt(a * b, 0)} + ${fmt(a * c, 0)} = ${fmt(answer, 0)}.`,
@@ -815,7 +826,52 @@ export function trapTask(id: string): ExerciseGenerator {
   };
 }
 
-export function whichLength(id: string): ExerciseGenerator {
+export function factorOut(id: string): ExerciseGenerator {
+  return {
+    id,
+    make: (rng, level) => {
+      const a = rng.int(2, 9);
+      const b = rng.int(2, 8);
+      const c = rng.int(2, 8);
+      const hint = "Ein Faktor, der in beiden Produkten steht, lässt sich ausklammern.";
+      return task(
+        level,
+        `Welcher gemeinsame Faktor steckt in ${fmt(a, 0)} · ${fmt(b, 0)} + ${fmt(a, 0)} · ${fmt(c, 0)}?`,
+        `Zwei Posten kosten je ${fmt(a, 0)} € mal ${fmt(b, 0)} und ${fmt(a, 0)} € mal ${fmt(c, 0)}. Welche Zahl kannst du aus beiden Produkten ausklammern?`,
+        [num("Faktor", a, "", 0, { slips: [{ value: b + c, hint: "Das ist die Summe in der Klammer, nicht der ausgeklammerte Faktor." }] })],
+        hint,
+        `${fmt(a, 0)} · (${fmt(b, 0)} + ${fmt(c, 0)}).`,
+        `Der Faktor ist ${fmt(a, 0)}.`,
+        { a, b, c },
+      );
+    },
+  };
+}
+
+export function faceTask(id: string): ExerciseGenerator {
+  return {
+    id,
+    make: (rng, level) => {
+      const a = rng.int(3, 12);
+      const b = rng.int(2, 9);
+      const c = rng.int(2, 8);
+      const answer = a * b;
+      const hint = "Eine Begrenzungsfläche des Quaders ist ein Rechteck aus zwei Kanten. Die dritte Kante gehört zu einer anderen Fläche.";
+      return task(
+        level,
+        `Ein Quader misst ${fmt(a, 0)} cm, ${fmt(b, 0)} cm und ${fmt(c, 0)} cm. Wie groß ist die Rechteckfläche aus den ersten beiden Kanten?`,
+        `Im Netz eines Quaders mit den Kanten ${fmt(a, 0)} cm, ${fmt(b, 0)} cm und ${fmt(c, 0)} cm liegt ein Rechteck aus ${fmt(a, 0)} cm und ${fmt(b, 0)} cm. Wie groß ist diese eine Fläche?`,
+        [num("Fläche", answer, "cm²", 0, { slips: [{ value: a * b * c, hint: "Das Produkt aller drei Kanten ist das Volumen, nicht eine Fläche." }] })],
+        hint,
+        `${fmt(a, 0)} · ${fmt(b, 0)} = ${fmt(answer, 0)}.`,
+        `${fmt(answer, 0)} cm².`,
+        { a, b, c },
+      );
+    },
+  };
+}
+
+export function whichLength(id: string, shape = "Parallelogramms"): ExerciseGenerator {
   return {
     id,
     make: (rng, level) => {
@@ -827,7 +883,7 @@ export function whichLength(id: string): ExerciseGenerator {
       const hint = "Die Höhe steht senkrecht auf der Grundlinie. Eine schräge Seite ist meist länger als die Höhe.";
       return task(
         level,
-        `Zum Flächeninhalt eines Parallelogramms mit Grundlinie ${fmt(base, 0)} cm gehört welche Strecke als Höhe, wenn die schräge Seite ${fmt(slant, 0)} cm misst und der senkrechte Abstand ${fmt(height, 0)} cm beträgt?`,
+        `Zum Flächeninhalt eines ${shape} mit Grundlinie ${fmt(base, 0)} cm gehört welche Strecke als Höhe, wenn die schräge Seite ${fmt(slant, 0)} cm misst und der senkrechte Abstand ${fmt(height, 0)} cm beträgt?`,
         `In einer Skizze sind drei Längen beschriftet: die Grundlinie ${fmt(base, 0)} cm, eine Schräge ${fmt(slant, 0)} cm und der senkrechte Abstand der Gegenseite ${fmt(height, 0)} cm. Welche Länge ist die Höhe zur Grundlinie?`,
         [pick("Die Höhe ist …", options, 1)],
         hint,
@@ -1159,7 +1215,7 @@ export function everyKth(id: string): ExerciseGenerator {
       const hint = "„Jeder k-te“ bedeutet den Anteil 1/k. Teile die Anzahl durch k.";
       return task(
         level,
-        `Jeder ${fmt(k, 0)}. von ${count(total, "Person", "Personen")} wird ausgelost. Wie viele Personen sind das?`,
+        `Von ${fmt(total, 0)} Personen wird jede ${fmt(k, 0)}. ausgelost. Wie viele Personen sind das?`,
         `Eine Meldung sagt: „Jede ${fmt(k, 0)}. Person von ${fmt(total, 0)} hat zugestimmt.“ Wie viele Personen sind das?`,
         [num("Anzahl", groups, "", 0, { slips: [{ value: total - groups, hint: "Gefragt ist der Anteil 1/k, nicht der Rest." }] })],
         hint,

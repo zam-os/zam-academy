@@ -28,7 +28,7 @@ Zwei alte Zellen enthalten 16 Karten. Bytegleiche Schnappschüsse, Herkunftscomm
 
 ```bash
 npm ci
-npm run dev        # http://localhost:5224/mathematik-gymnasium-6/
+npm run dev        # http://localhost:5225/mathematik-gymnasium-6/
 npx tsc --noEmit
 npm test
 npm run build      # eine Datei in dist/index.html

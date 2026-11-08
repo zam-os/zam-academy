@@ -61,6 +61,14 @@ export function gcd(a: number, b: number): number {
   return x || 1;
 }
 
+/** The fraction as written, without cancelling: `rawFrac(6, 8)` → "6/8". */
+export function rawFrac(numerator: number, denominator: number): string {
+  const sign = numerator * denominator < 0 ? MINUS : "";
+  const n = Math.abs(Math.round(numerator));
+  const d = Math.abs(Math.round(denominator));
+  return d === 1 ? `${sign}${n}` : `${sign}${n}/${d}`;
+}
+
 /** A reduced fraction as text: `fracText(6, 20)` → "3/10", `fracText(4, 2)` → "2". */
 export function fracText(numerator: number, denominator: number): string {
   const g = gcd(numerator, denominator);

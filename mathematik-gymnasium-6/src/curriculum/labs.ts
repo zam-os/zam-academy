@@ -1,6 +1,6 @@
 import type { LabDefinition, LabValues } from "../model/types";
 import { clampParam } from "../lab/engine";
-import { fracText, fmt } from "../exercises/format";
+import { fmt, fracText, rawFrac } from "../exercises/format";
 import { isTerminating, reduce, roundTo } from "./math";
 import { lab, output as o, range } from "./builders";
 
@@ -248,21 +248,21 @@ function readoutsOf(family: Family): LabDefinition["readouts"] {
   switch (family) {
     case "share":
       return [
-        o("bruch", "Bruch", (v) => fracText(v.num, v.den)),
+        o("bruch", "Bruch", (v) => rawFrac(v.num, v.den)),
         o("wert", "Wert", (v) => v.num / v.den, "", 3),
         o("endlich", "Dezimalbruch", (v) => (isTerminating(v.num, v.den) ? "endlich" : "periodisch")),
       ];
     case "compare":
       return [
-        o("links", "links", (v) => fracText(v.n1, v.d1)),
-        o("rechts", "rechts", (v) => fracText(v.n2, v.d2)),
+        o("links", "links", (v) => rawFrac(v.n1, v.d1)),
+        o("rechts", "rechts", (v) => rawFrac(v.n2, v.d2)),
         o("produkt", "Produkt", (v) => (v.n1 / v.d1) * (v.n2 / v.d2), "", 4),
         o("quotient", "Quotient", (v) => (v.n2 === 0 ? "nicht definiert" : (v.n1 / v.d1) / (v.n2 / v.d2)), "", 4),
       ];
     case "unlike":
       return [
-        o("links", "erster Bruch", (v) => fracText(v.n1, v.d1)),
-        o("rechts", "zweiter Bruch", (v) => fracText(v.n2, v.d2)),
+        o("links", "erster Bruch", (v) => rawFrac(v.n1, v.d1)),
+        o("rechts", "zweiter Bruch", (v) => rawFrac(v.n2, v.d2)),
         o("summe", "Summe", (v) => fracText(v.n1 * v.d2 + v.n2 * v.d1, v.d1 * v.d2)),
         o("wert", "Wert", (v) => v.n1 / v.d1 + v.n2 / v.d2, "", 3),
       ];
