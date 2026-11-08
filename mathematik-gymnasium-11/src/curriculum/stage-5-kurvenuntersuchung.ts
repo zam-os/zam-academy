@@ -479,7 +479,7 @@ const bedingungen: Lesson = {
     </ul>
     <p>Ist f′(x₀) = 0 und f″(x₀) = 0, liefert das f″-Kriterium keine Aussage; dann hilft der Vorzeichenwechsel von f′.</p>
     <div class="example">f(x) = x⁴ − 2x³: f′(x) = 2x²(2x − 3), f″(x) = 12x² − 12x. Bei 0: f′(0) = 0 und f″(0) = 0, f″ entscheidet nichts. f′ ist links und rechts von 0 negativ: kein VZW, Terrassenpunkt. Bei 1,5: f″(1,5) = 9 &gt; 0, also Tiefpunkt.</div>
-    <div class="merke"><strong>Merke:</strong> f′(x₀) = 0 ist notwendig, nicht hinreichend für ein Extremum (x³). Hinreichend: VZW von f′ oder f″(x₀) ≠ 0. f″(x₀) = 0 ist notwendig, nicht hinreichend für eine Wendestelle (x⁴).</div>
+    <div class="merke"><strong>Merke:</strong> f′(x₀) = 0 ist notwendig, nicht hinreichend für ein Extremum (x³). Hinreichend: f′(x₀) = 0 mit VZW von f′ oder f′(x₀) = 0 mit f″(x₀) ≠ 0. f″(x₀) = 0 ist notwendig, nicht hinreichend für eine Wendestelle (x⁴).</div>
   `,
   formulas: [
     { name: "Hinreichend für ein Extremum", html: "f′(x₀) = 0 und f″(x₀) ≠ 0 (oder VZW von f′)", quantities: "f″(x₀) < 0: Hochpunkt, f″(x₀) > 0: Tiefpunkt" },
@@ -596,7 +596,7 @@ const untersuchung: Lesson = {
     <div class="merke"><strong>Merke:</strong> Untersuchen heißt: Symmetrie, Randverhalten, Nullstellen, Extrem- und Wendepunkte bestimmen und zu einer Skizze zusammenfügen. Doppelte Nullstelle ⇒ Extrempunkt auf der x-Achse.</div>
   `,
   formulas: [
-    { name: "Extrempunkte", html: "f′(x₀) = 0 und VZW von f′ (oder f″(x₀) ≠ 0)", quantities: "Art über das Vorzeichen" },
+    { name: "Extrempunkte", html: "f′(x₀) = 0 und VZW von f′ (oder f′(x₀) = 0 und f″(x₀) ≠ 0)", quantities: "Art über das Vorzeichen" },
     { name: "Wendepunkte", html: "f″(x<sub>W</sub>) = 0 und VZW von f″", quantities: "Grad 3: genau ein Wendepunkt, Symmetriezentrum" },
   ],
   quiz: {
@@ -653,7 +653,8 @@ function schritt(rng: Rng, level: 1 | 2): ExerciseTask {
       prompt: `Führe für f(x) = ${t.term} einen Schritt des Newton-Verfahrens mit dem Startwert x₀ = ${fmt(x0)} aus. Runde auf drei Nachkommastellen.`,
       given: [`f(x) = ${t.term}`, `x₀ = ${fmt(x0)}`],
       formulaHint: "x₁ = x₀ − f(x₀) : f′(x₀)",
-      fields: [numberField("x₁ ≈", x1, "", 3, { slips: [{ value: x0 + t.f(x0) / t.d(x0), hint: "Im Newton-Verfahren wird f(x₀) : f′(x₀) abgezogen, nicht addiert." }] })],
+      // The prompt asks for three decimals, so only rounding is tolerated (no 1 % margin).
+      fields: [numberField("x₁ ≈", x1, "", 3, { tolerance: 0, slips: [{ value: x0 + t.f(x0) / t.d(x0), hint: "Im Newton-Verfahren wird f(x₀) : f′(x₀) abgezogen, nicht addiert." }] })],
       steps: [`f(${fmt(x0)}) = ${fmt(t.f(x0), 4)}, f′(${fmt(x0)}) = ${fmt(t.d(x0), 4)}`, `x₁ = ${fmt(x0)} − ${paren(t.f(x0), 4)} : ${fmt(t.d(x0), 4)} ${rel(x1, 3)} ${fmt(x1, 3)}`, `<strong>x₁ ≈ ${fmt(x1, 3)}</strong>`],
     };
   }
@@ -661,7 +662,11 @@ function schritt(rng: Rng, level: 1 | 2): ExerciseTask {
   return {
     prompt: `Bestimme mit dem Newton-Verfahren eine Näherung für die Nullstelle von f(x) = ${t.term}, die sich nicht mit einer Formel berechnen lässt. Starte bei x₀ = ${fmt(x0)} und rechne zwei Schritte, wie in einer Tabellenkalkulation (Spalten x, f(x), f′(x)). Gib x₂ auf vier Nachkommastellen an und f(x₂) auf drei.`,
     given: [`f(x) = ${t.term}`, `x₀ = ${fmt(x0)}`],
-    fields: [numberField("x₂ ≈", x2, "", 4), numberField("f(x₂) ≈", t.f(x2), "", 3)],
+    // Only rounding is tolerated; f(x₂) may also carry the error of an x₂ rounded to four decimals.
+    fields: [
+      numberField("x₂ ≈", x2, "", 4, { tolerance: 0 }),
+      numberField("f(x₂) ≈", t.f(x2), "", 3, { tolerance: 0, absTolerance: 0.51e-3 + 0.5e-4 * Math.abs(t.d(x2)) }),
+    ],
     steps: [`x₁ = ${fmt(x0)} − ${paren(t.f(x0), 4)} : ${fmt(t.d(x0), 4)} ≈ ${fmt(x1, 4)}`, `x₂ = x₁ − f(x₁) : f′(x₁) ≈ ${fmt(x2, 4)}`, `<strong>x₂ ≈ ${fmt(x2, 4)}; f(x₂) ≈ ${fmt(t.f(x2), 3)}</strong>`],
   };
 }
@@ -675,7 +680,7 @@ function wurzel(rng: Rng, level: 1 | 2): ExerciseTask {
       prompt: `Mit dem Newton-Verfahren für f(x) = x² − ${a} kann man √${a} annähern. Zeige, dass die Iterationsvorschrift x<sub>n+1</sub> = (xₙ + ${a} : xₙ) : 2 lautet, und berechne x₁ für x₀ = ${x0}.`,
       given: [`f(x) = x² − ${a}`, `x₀ = ${x0}`],
       formulaHint: `xₙ − (xₙ² − ${a}) : (2xₙ) = (xₙ + ${a} : xₙ) : 2`,
-      fields: [numberField("x₁ ≈", x1, "", 4)],
+      fields: [numberField("x₁ ≈", x1, "", 4, { tolerance: 0 })],
       steps: [`x₁ = ${x0} − (${x0 * x0} − ${a}) : ${2 * x0} = ${fmt(x1, 4)}`, `<strong>x₁ ≈ ${fmt(x1, 4)} (√${a} ≈ ${fmt(Math.sqrt(a), 4)})</strong>`],
     };
   }

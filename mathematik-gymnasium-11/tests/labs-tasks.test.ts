@@ -282,3 +282,90 @@ describe("Exact answers of any size", () => {
     expect(statusOf(largeRounded, "1300000")).toBe("wrong");
   });
 });
+
+/** Tasks of one generator along the streams learners get (both levels, 80 each). */
+function tasksOf(lessonId: string, generatorId: string, level: 1 | 2): ExerciseTask[] {
+  const lesson = ALL_LESSONS.find((l) => l.id === lessonId)!;
+  const index = lesson.exercises.findIndex((g) => g.id === generatorId);
+  expect(index, `${lessonId}/${generatorId}`).toBeGreaterThanOrEqual(0);
+  const tasks: ExerciseTask[] = [];
+  for (let counter = 1; counter <= 80; counter++) {
+    if ((counter - 1) % lesson.exercises.length !== index) continue;
+    tasks.push(lesson.exercises[index].make(createRng(seedFrom(`${lessonId}:${level}:${counter}`)), level));
+  }
+  for (let seed = 0; seed < 200; seed++) tasks.push(lesson.exercises[index].make(createRng(seedFrom(`extra:${seed}`)), level));
+  return tasks;
+}
+
+describe("Review findings on PR #105", () => {
+  it("Newton tasks accept only the precision they ask for", () => {
+    for (const level of [1, 2] as const) {
+      for (const task of [...tasksOf("ku-6-newton", "schritt", level), ...tasksOf("ku-6-newton", "wurzel", level)]) {
+        task.fields.forEach((field, i) => {
+          if (field.kind !== "number") return;
+          const typed = answerText(task, "comma");
+          for (const off of [-2, 2]) {
+            typed[i] = fmt(field.answer + off * 10 ** -field.digits, field.digits + 1);
+            expect(checkTask(task, typed).fields[i].status, `${task.prompt} ${field.label} ${typed[i]}`).toBe("wrong");
+          }
+        });
+      }
+    }
+    // The reported case: f(x) = x³ − 2x − 5 from x₀ = 2,5 gives x₁ ≈ 2,164, not 2,174.
+    const reported = tasksOf("ku-6-newton", "schritt", 1).find((t) => t.prompt.includes("x³ − 2x − 5") && t.prompt.includes("x₀ = 2,5"));
+    expect(reported).toBeDefined();
+    expect(checkTask(reported!, ["2,164"]).status).toBe("correct");
+    expect(checkTask(reported!, ["2,174"]).status).toBe("wrong");
+  });
+
+  it("the difference quotient asks for the precision it checks and does not accept the derivative", () => {
+    for (const task of tasksOf("df-2-differentialquotient", "momentan", 2)) {
+      const [quotient, derivative] = task.fields;
+      if (quotient.kind !== "number" || derivative.kind !== "number") throw new Error("number fields expected");
+      // The prompt names the precision the checker demands (it once said three decimals but wanted four).
+      expect(task.prompt, task.prompt).toContain("auf vier Nachkommastellen genau");
+      expect(quotient.digits).toBe(4);
+      expect(checkTask(task, [fmt(derivative.answer), fmt(derivative.answer)]).fields[0].status, task.prompt).toBe("wrong");
+    }
+  });
+
+  it("limit tasks ask for x → +∞ and x → −∞, and some differ at the two ends", () => {
+    for (const level of [1, 2] as const) {
+      const tasks = tasksOf("fk-2-grenzverhalten", "grenzwert-ablesen", level);
+      let differ = 0;
+      for (const task of tasks) {
+        const choices = task.fields.filter((f) => f.kind === "choice");
+        expect(choices.map((f) => f.label), task.prompt).toEqual(["Verhalten für x → +∞", "Verhalten für x → −∞"]);
+        if (choices[0].kind === "choice" && choices[1].kind === "choice" && choices[0].correctIndex !== choices[1].correctIndex) differ++;
+      }
+      expect(differ, `level ${level}`).toBeGreaterThan(0);
+    }
+  });
+
+  it("the symmetry transfer task names the origin as centre", () => {
+    for (const task of tasksOf("fk-3-symmetrie", "sym-parameter", 2)) {
+      expect(task.prompt.match(/punktsymmetrisch zum Ursprung/g)?.length, task.prompt).toBe(2);
+    }
+  });
+
+  it("the term-building lab reports no pole when a = 0", () => {
+    const lesson = ALL_LESSONS.find((l) => l.id === "gr-4-graph-term")!;
+    const lab = lesson.lab!;
+    for (const p of [-2, 0, 3]) {
+      for (const n of [1, 2]) {
+        const values = { ...defaultLabValues(lab), a: 0, p, n };
+        const readouts = computeReadouts(lab, values);
+        expect(String(readouts.props)).not.toMatch(/Pol (mit|ohne)/);
+        expect(String(readouts.term)).toContain(`x ≠ ${fmt(p)}`);
+        expect(labView(lab.kind).render(values, readouts)).not.toMatch(/NaN/);
+      }
+    }
+  });
+
+  it("key rules state no false equivalences", () => {
+    const merke = (id: string) => ALL_LESSONS.find((l) => l.id === id)!.explanationHtml.match(/<div class="merke">[\s\S]*?<\/div>/)![0];
+    expect(merke("df-4-ableitungsfunktion")).not.toContain("steigt ⇔");
+    expect(merke("ku-4-bedingungen")).toContain("f′(x₀) = 0 mit f″(x₀) ≠ 0");
+    expect(merke("bw-2-diagnostik")).not.toMatch(/P<sub>K<\/sub>\(T\) ≠/);
+  });
+});

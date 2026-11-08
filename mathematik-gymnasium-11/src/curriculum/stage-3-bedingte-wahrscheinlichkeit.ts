@@ -252,7 +252,7 @@ const diagnostik: Lesson = {
     <p class="formula-line">P<sub>T</sub>(K) = (krank und positiv) : (alle positiv)</p>
     <p>Ein „umgekehrter“ Baum oder eine Vierfeldertafel mit absoluten Zahlen leisten dasselbe. Die Spezifität P<sub>K̄</sub>(T̄) ist der Anteil der Gesunden mit negativem Test.</p>
     <div class="example">Prävalenz 1 %, Sensitivität 99 %, Spezifität 99 %. Von 10 000 Personen sind 100 krank, davon 99 positiv; von 9 900 Gesunden sind 1 % = 99 positiv. P<sub>T</sub>(K) = 99 : (99 + 99) = 0,5. Trotz guter Testwerte ist nur jede zweite positiv getestete Person krank.</div>
-    <div class="merke"><strong>Merke:</strong> P<sub>K</sub>(T) ≠ P<sub>T</sub>(K). Den Schluss von der einen auf die andere bedingte Wahrscheinlichkeit machst du mit natürlichen Häufigkeiten: P<sub>T</sub>(K) = |K ∩ T| : |T|.</div>
+    <div class="merke"><strong>Merke:</strong> P<sub>K</sub>(T) und P<sub>T</sub>(K) beziehen sich auf verschiedene Gruppen (die Kranken bzw. die positiv Getesteten) und sind im Allgemeinen verschieden; gleich sind sie nur zufällig. Den Schluss von der einen auf die andere bedingte Wahrscheinlichkeit machst du mit natürlichen Häufigkeiten: P<sub>T</sub>(K) = |K ∩ T| : |T|.</div>
   `,
   formulas: [
     { name: "Positiver Vorhersagewert", html: "P<sub>T</sub>(K) = P(K ∩ T) : P(T)", quantities: "T positiver Test, K krank" },

@@ -260,12 +260,22 @@ const funktionstypen: Lesson = {
 
 const BEHAVIOUR = ["konvergent", "divergent, f(x) → +∞", "divergent, f(x) → −∞", "divergent, f(x) hat keinen Grenzwert"];
 
-interface LimitCase {
-  term: string;
+interface LimitSide {
   kind: number;
   limit?: number;
   why: string;
 }
+
+interface LimitCase {
+  term: string;
+  /** Behaviour for x → +∞. */
+  plus: LimitSide;
+  /** Behaviour for x → −∞. */
+  minus: LimitSide;
+}
+
+const converges = (limit: number, why: string): LimitSide => ({ kind: 0, limit, why });
+const towards = (sign: number, why: string): LimitSide => ({ kind: sign > 0 ? 1 : 2, why });
 
 function limitCase(rng: Rng, level: 1 | 2): LimitCase {
   const a = nonZero(rng, 4);
@@ -274,53 +284,88 @@ function limitCase(rng: Rng, level: 1 | 2): LimitCase {
   const k = rng.pick(kinds);
   switch (k) {
     case 0:
-      return { term: `${fmt(a)}${b > 0 ? " + " : " − "}${Math.abs(b)}/x`, kind: 0, limit: a, why: `${Math.abs(b)}/x → 0, also f(x) → ${fmt(a)}.` };
+      return {
+        term: `${fmt(a)}${b > 0 ? " + " : " − "}${Math.abs(b)}/x`,
+        plus: converges(a, `x → +∞: ${Math.abs(b)}/x → 0, also f(x) → ${fmt(a)}.`),
+        minus: converges(a, `x → −∞: ${Math.abs(b)}/x → 0 ebenso, also f(x) → ${fmt(a)}.`),
+      };
     case 1:
-      return { term: `${fmt(a)}${b > 0 ? " + " : " − "}${Math.abs(b)} · 0,5ˣ`, kind: 0, limit: a, why: `0,5ˣ → 0 für x → +∞, also f(x) → ${fmt(a)}.` };
+      return {
+        term: `${fmt(a)}${b > 0 ? " + " : " − "}${Math.abs(b)} · 0,5ˣ`,
+        plus: converges(a, `x → +∞: 0,5ˣ → 0, also f(x) → ${fmt(a)}.`),
+        minus: towards(b, `x → −∞: 0,5ˣ = 2⁻ˣ → +∞, der Faktor ${b > 0 ? "" : "−"}${Math.abs(b)} gibt f(x) → ${b > 0 ? "+" : "−"}∞.`),
+      };
     case 2: {
       const s = rng.sign();
-      return { term: `${s > 0 ? "" : "−"}x³${plus(b)}x`, kind: s > 0 ? 1 : 2, why: `Der Summand ${s > 0 ? "" : "−"}x³ bestimmt das Verhalten.` };
+      const lead = `${s > 0 ? "" : "−"}x³`;
+      return {
+        term: `${lead}${plus(b)}x`,
+        plus: towards(s, `x → +∞: Der Summand ${lead} bestimmt das Verhalten, f(x) → ${s > 0 ? "+" : "−"}∞.`),
+        minus: towards(-s, `x → −∞: x³ → −∞, also ${lead} → ${s > 0 ? "−" : "+"}∞ und f(x) ebenso.`),
+      };
     }
     case 3:
-      return { term: `${fmt(a)} · 2ˣ`, kind: a > 0 ? 1 : 2, why: `2ˣ → +∞, das Vorzeichen von ${fmt(a)} entscheidet.` };
-    case 4:
-      return { term: `${fmt(Math.abs(a))} · sin x`, kind: 3, why: "sin x pendelt immer wieder zwischen −1 und 1." };
+      return {
+        term: `${fmt(a)} · 2ˣ`,
+        plus: towards(a, `x → +∞: 2ˣ → +∞, das Vorzeichen von ${fmt(a)} entscheidet.`),
+        minus: converges(0, `x → −∞: 2ˣ → 0, also f(x) → 0.`),
+      };
+    case 4: {
+      const both: LimitSide = { kind: 3, why: "sin x pendelt für x → +∞ wie für x → −∞ immer wieder zwischen −1 und 1." };
+      return { term: `${fmt(Math.abs(a))} · sin x`, plus: both, minus: both };
+    }
     case 5: {
       // (p x + q) / x = p + q/x after dividing by x.
       const p = nonZero(rng, 5);
       const q = nonZero(rng, 9);
-      return { term: `(${fmt(p)}x${plus(q)}) / x`, kind: 0, limit: p, why: `Termumformung: (${fmt(p)}x${plus(q)}) / x = ${fmt(p)}${plus(q)}/x → ${fmt(p)}.` };
+      const why = `Termumformung: (${fmt(p)}x${plus(q)}) / x = ${fmt(p)}${plus(q)}/x, und ${Math.abs(q)}/x → 0 für x → ±∞.`;
+      return { term: `(${fmt(p)}x${plus(q)}) / x`, plus: converges(p, why), minus: converges(p, `Für x → −∞ ebenso: f(x) → ${fmt(p)}.`) };
     }
     case 6: {
       const p = nonZero(rng, 4);
       const q = rng.int(2, 9);
-      return { term: `(${fmt(p)}x² + ${q}) / x²`, kind: 0, limit: p, why: `Termumformung: = ${fmt(p)} + ${q}/x² → ${fmt(p)}.` };
+      const why = `Termumformung: = ${fmt(p)} + ${q}/x², und ${q}/x² → 0 für x → ±∞.`;
+      return { term: `(${fmt(p)}x² + ${q}) / x²`, plus: converges(p, why), minus: converges(p, `Für x → −∞ ebenso: f(x) → ${fmt(p)}.`) };
     }
     case 7: {
       const c = rng.int(2, 6);
-      return { term: `${c} − 2⁻ˣ`, kind: 0, limit: c, why: `2⁻ˣ = 0,5ˣ → 0, also f(x) → ${c}.` };
+      return {
+        term: `${c} − 2⁻ˣ`,
+        plus: converges(c, `x → +∞: 2⁻ˣ = 0,5ˣ → 0, also f(x) → ${c}.`),
+        minus: towards(-1, "x → −∞: 2⁻ˣ → +∞, also f(x) → −∞."),
+      };
     }
     case 8: {
       const c = nonZero(rng, 5);
-      return { term: `0,1x²${plus(c * 10)}x`, kind: 1, why: "Der Summand 0,1x² mit positivem Faktor bestimmt das Verhalten: f(x) → +∞." };
+      const why = "Der Summand 0,1x² mit positivem Faktor bestimmt das Verhalten; x² ist auch für negative x positiv.";
+      return { term: `0,1x²${plus(c * 10)}x`, plus: towards(1, `x → +∞: ${why} f(x) → +∞.`), minus: towards(1, "x → −∞: ebenso f(x) → +∞.") };
     }
-    default:
-      return { term: "x · sin x", kind: 3, why: "Die Ausschläge von x · sin x werden immer größer, abwechselnd positiv und negativ." };
+    default: {
+      const both: LimitSide = { kind: 3, why: "Die Ausschläge von x · sin x werden in beide Richtungen immer größer, abwechselnd positiv und negativ." };
+      return { term: "x · sin x", plus: both, minus: both };
+    }
   }
+}
+
+function limitResult(side: LimitSide, arrow: string): string {
+  return `${BEHAVIOUR[side.kind]}${side.kind === 0 ? `: lim<sub>x→${arrow}</sub> f(x) = ${fmt(side.limit!)}` : ""}`;
 }
 
 function grenzwertAblesen(rng: Rng, level: 1 | 2): ExerciseTask {
   const c = limitCase(rng, level);
-  const fields: AnswerField[] = [choiceField("Verhalten für x → +∞", BEHAVIOUR, c.kind)];
-  if (c.kind === 0) fields.push(numberField("Grenzwert lim f(x) =", c.limit!, "", 2));
+  const fields: AnswerField[] = [choiceField("Verhalten für x → +∞", BEHAVIOUR, c.plus.kind)];
+  if (c.plus.kind === 0) fields.push(numberField("lim<sub>x→+∞</sub> f(x) =", c.plus.limit!, "", 2));
+  fields.push(choiceField("Verhalten für x → −∞", BEHAVIOUR, c.minus.kind));
+  if (c.minus.kind === 0) fields.push(numberField("lim<sub>x→−∞</sub> f(x) =", c.minus.limit!, "", 2));
   return {
-    prompt: `Untersuche das Verhalten von <strong>f(x) = ${c.term}</strong> für x → +∞. ${c.kind === 0 || level === 2 ? "Gib den Grenzwert an, falls er existiert." : ""}`,
+    prompt: `Untersuche das Verhalten von <strong>f(x) = ${c.term}</strong> für x → +∞ und für x → −∞. Gib die Grenzwerte an, falls sie existieren.`,
     given: [`f(x) = ${c.term}`],
-    formulaHint: level === 1 ? "1/x → 0 und 0,5ˣ → 0 für x → +∞; bei Polynomen entscheidet die höchste Potenz." : undefined,
+    formulaHint: level === 1 ? "1/x → 0 für x → ±∞; 0,5ˣ → 0 für x → +∞, aber 0,5ˣ → +∞ für x → −∞; 2ˣ → 0 für x → −∞; bei Polynomen entscheidet die höchste Potenz." : undefined,
     fields,
     steps: [
-      c.why,
-      `<strong>${BEHAVIOUR[c.kind]}${c.kind === 0 ? `: lim<sub>x→+∞</sub> f(x) = ${fmt(c.limit!)}` : ""}</strong>`,
+      c.plus.why,
+      c.minus.why,
+      `<strong>x → +∞: ${limitResult(c.plus, "+∞")}; x → −∞: ${limitResult(c.minus, "−∞")}</strong>`,
     ],
   };
 }
@@ -373,7 +418,7 @@ const grenzverhalten: Lesson = {
     <p>Anschaulich: Lege um die Gerade y = a einen <strong>Streifen</strong> der Breite 2ε, also zwischen y = a − ε und y = a + ε. Ist f konvergent gegen a, so gibt es zu <strong>jedem noch so schmalen</strong> Streifen eine Stelle x₀, ab der der Graph den Streifen nicht mehr verlässt. Je schmaler der Streifen, desto weiter rechts liegt x₀ in der Regel.</p>
     <p>Gibt es keinen solchen Grenzwert, heißt f <strong>divergent</strong>. Das kann zwei Gründe haben: f(x) wächst über alle Grenzen (lim<sub>x→+∞</sub> f(x) = +∞, ebenso −∞), oder f(x) schwankt immer weiter, wie sin x. Für x → −∞ gilt alles entsprechend.</p>
     <p>Wichtige Bausteine: 1/x → 0, 1/x² → 0 und 0,5ˣ → 0 für x → +∞; 2ˣ → 0 für x → −∞. Bei Polynomen bestimmt der Summand mit der höchsten Potenz das Verhalten (Wiederholung aus M10). Oft hilft eine <strong>Termumformung</strong>: (2x + 3)/x = 2 + 3/x → 2.</p>
-    <div class="example">f(x) = 2 + 3/x für x → +∞: 3/x → 0, also lim<sub>x→+∞</sub> f(x) = 2. Zum Streifen mit ε = 0,5: 3/x ≤ 0,5 ⇔ x ≥ 6. Ab x₀ = 6 bleibt der Graph zwischen y = 1,5 und y = 2,5. Für ε = 0,25 braucht man x₀ = 12.</div>
+    <div class="example">f(x) = 2 + 3/x für x → +∞: 3/x → 0, also lim<sub>x→+∞</sub> f(x) = 2. Zum Streifen mit ε = 0,5: 3/x ≤ 0,5 ⇔ x ≥ 6. Ab x₀ = 6 bleibt der Graph zwischen y = 1,5 und y = 2,5. Für ε = 0,25 braucht man x₀ = 12. Für x → −∞ gilt ebenso 3/x → 0, also auch lim<sub>x→−∞</sub> f(x) = 2.<br>Die beiden Richtungen können sich unterscheiden: g(x) = 2ˣ ist für x → +∞ divergent (g(x) → +∞), aber lim<sub>x→−∞</sub> 2ˣ = 0.</div>
     <div class="merke"><strong>Merke:</strong> lim<sub>x→±∞</sub> f(x) = a bedeutet: Zu jedem ε &gt; 0 gibt es eine Stelle, ab der der Graph im Streifen a ± ε bleibt. Sonst ist f divergent: f(x) → ±∞ oder f(x) hat gar keinen Grenzwert.</div>
   `,
   formulas: [
@@ -403,6 +448,7 @@ const grenzverhalten: Lesson = {
     ],
     readouts: [
       { key: "lim", label: "Verhalten für x → +∞", emphasis: true, compute: (v) => { const l = LIMIT_FUNCTIONS[v.fn].limit; return l === null ? (v.fn === 2 ? "divergent, f(x) → +∞" : "divergent, kein Grenzwert") : `lim f(x) = ${fmt(l)}`; } },
+      { key: "limMinus", label: "Verhalten für x → −∞", compute: (v) => LIMIT_FUNCTIONS[v.fn].minus },
       { key: "strip", label: "Streifen", compute: (v) => `${fmt(v.c - v.eps)} ≤ y ≤ ${fmt(v.c + v.eps)}` },
       { key: "stays", label: "Graph bleibt ab x₀ im Streifen", compute: (v) => (staysInStrip(v.fn, v.c, v.eps, v.x0) ? "ja" : "nein") },
       { key: "min", label: "kleinstes passendes x₀", compute: (v) => { const m = smallestX0(v.fn, v.c, v.eps); return m === null ? "keines: der Graph verlässt jeden solchen Streifen" : `x₀ ${rel(m)} ${fmt(m)}`; } },
@@ -498,14 +544,14 @@ function symParameter(rng: Rng, level: 1 | 2): ExerciseTask {
   const p = rng.pick([0.5, 1.5, 2, 2.5]);
   const fp = rng.pick([1.2, 2.4, 3.6, -1.8, -0.6]);
   return {
-    prompt: `Die Funktion f(x) = x³ + (2t ${t > 0 ? "−" : "+"} ${Math.abs(2 * t)})x² − 5x hat für einen Wert von t einen punktsymmetrischen Graphen. Bestimme t. Für eine andere punktsymmetrische Funktion g ist g(${fmt(p)}) = ${fmt(fp)} bekannt. Gib g(${fmt(-p)}) an.`,
+    prompt: `Die Funktion f(x) = x³ + (2t ${t > 0 ? "−" : "+"} ${Math.abs(2 * t)})x² − 5x hat für genau einen Wert von t einen Graphen, der punktsymmetrisch zum Ursprung ist. Bestimme t. Für eine andere Funktion g, deren Graph punktsymmetrisch zum Ursprung ist, ist g(${fmt(p)}) = ${fmt(fp)} bekannt. Gib g(${fmt(-p)}) an.`,
     given: [`f(x) = x³ + (2t ${t > 0 ? "−" : "+"} ${Math.abs(2 * t)})x² − 5x`, `g(${fmt(p)}) = ${fmt(fp)}`],
     fields: [
       numberField("t =", t, "", 2),
-      numberField(`g(${fmt(-p)}) =`, -fp, "", 2, { slips: [{ value: fp, hint: "Punktsymmetrie: g(−x) = −g(x), das Vorzeichen dreht sich um." }] }),
+      numberField(`g(${fmt(-p)}) =`, -fp, "", 2, { slips: [{ value: fp, hint: "Punktsymmetrie zum Ursprung: g(−x) = −g(x), das Vorzeichen dreht sich um." }] }),
     ],
     steps: [
-      `Punktsymmetrie: nur ungerade Potenzen, also 2t ${t > 0 ? "−" : "+"} ${Math.abs(2 * t)} = 0 ⇒ t = ${fmt(t)}.`,
+      `Punktsymmetrie zum Ursprung: nur ungerade Potenzen, also 2t ${t > 0 ? "−" : "+"} ${Math.abs(2 * t)} = 0 ⇒ t = ${fmt(t)}.`,
       `g(${fmt(-p)}) = −g(${fmt(p)}) = ${fmt(-fp)}`,
       `<strong>t = ${fmt(t)}; g(${fmt(-p)}) = ${fmt(-fp)}</strong>`,
     ],

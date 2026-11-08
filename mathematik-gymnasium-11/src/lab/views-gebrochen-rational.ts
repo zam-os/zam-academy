@@ -200,11 +200,19 @@ export function buildValue(v: LabValues, x: number): number {
 }
 
 export function buildTerm(v: LabValues): string {
-  if (v.a === 0) return "0";
+  // a = 0 leaves the zero function on D_f: no single zero, no pole, a gap at p.
+  if (v.a === 0) return `0 für x ≠ ${fmt(v.p)}`;
   const factorText = v.a === 1 ? "" : v.a === -1 ? "−" : fmt(v.a);
   const top = factor(v.z) === "x" ? "x" : factor(v.z);
   const bottom = v.n === 1 ? factor(v.p) : factor(v.p) === "x" ? "x²" : `${factor(v.p)}²`;
   return `${factorText}${top} / ${bottom}`;
+}
+
+/** Zeros and the kind of gap at p, as the lab reports them. */
+export function buildProps(v: LabValues): string {
+  if (v.a === 0) return `a = 0: f ist überall 0, jedes x ≠ ${fmt(v.p)} ist Nullstelle; bei ${fmt(v.p)} nur eine Definitionslücke, kein Pol`;
+  if (v.z === v.p) return "gemeinsamer Faktor: Term erst kürzen";
+  return `Nullstelle ${fmt(v.z)}; Pol ${v.n === 1 ? "mit" : "ohne"} Vorzeichenwechsel bei ${fmt(v.p)}`;
 }
 
 const buildPlot = () => new Plot(-6, 6, -6, 6);
@@ -214,9 +222,11 @@ function rationalBuild(v: LabValues): string {
   const f = (x: number) => buildValue(v, x);
   let out = open("Gebrochen-rationale Funktion mit ziehbarer Nullstelle, Polstelle und Asymptote");
   out += plot.clip("clip-build") + plot.grid(1, 1);
-  out += line(plot.X(v.p), plot.box.y, plot.X(v.p), plot.box.y + plot.box.h, "lab-dashed");
+  // a = 0: no pole, only a gap in the x-axis at p.
+  if (v.a !== 0) out += line(plot.X(v.p), plot.box.y, plot.X(v.p), plot.box.y + plot.box.h, "lab-dashed");
   const asym = v.n === 1 ? v.a : 0;
   out += clipped("clip-build", plot.lineThrough(0, asym, "lab-dashed") + plot.graph(f, "lab-curve", 600));
+  if (v.a === 0) out += circle(plot.X(v.p), plot.Y(0), 5.5, "lab-plot-bg lab-ink");
   const Z = plot.P(v.z, 0);
   const P = plot.P(v.p, 5.3);
   const avoid = [Z, P];
@@ -228,7 +238,11 @@ function rationalBuild(v: LabValues): string {
   }
   const lines: Line[] = [
     [`f(x) = ${buildTerm(v)}`, "lab-text lab-text-big"],
-    v.z === v.p ? ["gemeinsamer Faktor: erst kürzen!", "lab-text lab-text-bad"] : [`Asymptote y = ${fmt(asym)}`, "lab-text-muted"],
+    v.a === 0
+      ? [`a = 0: kein Pol, nur Lücke bei ${fmt(v.p)}`, "lab-text lab-text-bad"]
+      : v.z === v.p
+        ? ["gemeinsamer Faktor: erst kürzen!", "lab-text lab-text-bad"]
+        : [`Asymptote y = ${fmt(asym)}`, "lab-text-muted"],
   ];
   out += placeInfo(plot, lines, avoid, [f]);
   out += handle("Z", Z.x, Z.y, "Nullstelle");

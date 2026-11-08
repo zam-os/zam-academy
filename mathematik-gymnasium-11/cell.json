@@ -2475,25 +2475,25 @@
           "tier": "tier1_fast",
           "bloom_level": 1,
           "source_link": "https://academy.zam-os.org/mathematik-gymnasium-11/#lesson=df-4-ableitungsfunktion",
-          "question": "Wo liegt der Graph von f′ in einem Bereich, in dem der Graph von f steigt?",
-          "concept": "oberhalb der x-Achse, denn f′(x) > 0",
+          "question": "In einem Intervall liegt der Graph von f′ ganz oberhalb der x-Achse. Was folgt für f?",
+          "concept": "f steigt dort streng monoton",
           "materiality": "material",
           "fast_check": {
             "type": "binary_choice",
             "options": [
-              "oberhalb der x-Achse, denn f′(x) > 0",
-              "unterhalb der x-Achse"
+              "f steigt dort streng monoton",
+              "f fällt dort streng monoton"
             ],
             "correct_index": 0
           },
           "choice_distractors": [
             {
-              "text": "auf der x-Achse, denn f′(x) = 0",
-              "reason": "f′ = 0 gilt nur an Stellen mit waagrechter Tangente."
+              "text": "f hat dort einen Hochpunkt",
+              "reason": "Ein Hochpunkt braucht f′(x₀) = 0; bei f′ > 0 gibt es keine waagrechte Tangente."
             },
             {
-              "text": "oberhalb des Graphen von f",
-              "reason": "Der Vergleich ist mit der x-Achse, nicht mit dem Graphen von f."
+              "text": "f ist dort linksgekrümmt",
+              "reason": "Die Krümmung zeigt das Vorzeichen von f″, nicht das von f′."
             }
           ]
         },

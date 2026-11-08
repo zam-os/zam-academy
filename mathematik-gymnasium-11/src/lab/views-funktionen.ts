@@ -123,10 +123,10 @@ function functionTypes(v: LabValues): string {
 // ─── 1.2 Grenzverhalten für x → +∞ ─────────────────────────────────────────
 
 export const LIMIT_FUNCTIONS = [
-  { term: "2 + 3/x", f: (x: number) => (x === 0 ? Number.NaN : 2 + 3 / x), limit: 2 as number | null },
-  { term: "1 − 2 · 0,5ˣ", f: (x: number) => 1 - 2 * 0.5 ** x, limit: 1 as number | null },
-  { term: "0,5x", f: (x: number) => 0.5 * x, limit: null },
-  { term: "sin x", f: (x: number) => Math.sin(x), limit: null },
+  { term: "2 + 3/x", f: (x: number) => (x === 0 ? Number.NaN : 2 + 3 / x), limit: 2 as number | null, minus: "lim f(x) = 2" },
+  { term: "1 − 2 · 0,5ˣ", f: (x: number) => 1 - 2 * 0.5 ** x, limit: 1 as number | null, minus: "divergent, f(x) → −∞, denn 0,5ˣ → +∞" },
+  { term: "0,5x", f: (x: number) => 0.5 * x, limit: null, minus: "divergent, f(x) → −∞" },
+  { term: "sin x", f: (x: number) => Math.sin(x), limit: null, minus: "divergent, kein Grenzwert" },
 ] as const;
 
 /** True when the graph of function `fn` never leaves the strip c ± ε for x ≥ x₀ (exact, from the monotone shape). */

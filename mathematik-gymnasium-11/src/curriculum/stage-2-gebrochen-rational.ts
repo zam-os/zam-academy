@@ -2,6 +2,7 @@ import { fmt, linear, paren, shifted } from "../exercises/format";
 import type { Rng } from "../exercises/rng";
 import {
   ASYMPTOTE_FUNCTIONS,
+  buildProps,
   buildTerm,
   buildValue,
   CUT_FUNCTIONS,
@@ -559,7 +560,7 @@ const graphTerm: Lesson = {
     ],
     readouts: [
       { key: "term", label: "f(x)", emphasis: true, compute: (v) => `f(x) = ${buildTerm(v)}` },
-      { key: "props", label: "Nullstelle, Pol", compute: (v) => (v.z === v.p ? "gemeinsamer Faktor: Term erst kürzen" : `Nullstelle ${fmt(v.z)}; Pol ${v.n === 1 ? "mit" : "ohne"} Vorzeichenwechsel bei ${fmt(v.p)}`) },
+      { key: "props", label: "Nullstelle, Pol", compute: buildProps },
       { key: "asym", label: "waagrechte Asymptote", compute: (v) => `y = ${fmt(v.n === 1 ? v.a : 0)}` },
       { key: "y0", label: "Schnitt mit der y-Achse", compute: (v) => (v.p === 0 ? "keiner: 0 ∉ D_f" : `(0 | ${fmt(buildValue(v, 0))})`) },
     ],

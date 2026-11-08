@@ -203,9 +203,10 @@ function momentan(rng: Rng, level: 1 | 2): ExerciseTask {
   const h = 0.01;
   const value = ((x0 + h) ** 3 - x0 ** 3) / h;
   return {
-    prompt: `Für f(x) = x³ gilt (f(x₀ + h) − f(x₀)) / h = 3x₀² + 3x₀h + h². Berechne den Differenzenquotienten an der Stelle ${fmt(x0)} für h = 0,01 auf drei Nachkommastellen und die Steigung des Graphen im Punkt (${fmt(x0)} | ${fmt(x0 ** 3)}).`,
+    prompt: `Für f(x) = x³ gilt (f(x₀ + h) − f(x₀)) / h = 3x₀² + 3x₀h + h². Berechne den Differenzenquotienten an der Stelle ${fmt(x0)} für h = 0,01 (auf vier Nachkommastellen genau) und die Steigung des Graphen im Punkt (${fmt(x0)} | ${fmt(x0 ** 3)}).`,
     given: ["f(x) = x³", `x₀ = ${fmt(x0)}`],
-    fields: [numberField("für h = 0,01:", value, "", 4), numberField(`f′(${fmt(x0)}) =`, 3 * x0 * x0, "", 2)],
+    // No 1 % margin: it would accept f′(x₀) itself as the difference quotient.
+    fields: [numberField("für h = 0,01:", value, "", 4, { tolerance: 0 }), numberField(`f′(${fmt(x0)}) =`, 3 * x0 * x0, "", 2)],
     steps: [`3 · ${fmt(x0 * x0)} + 3 · ${paren(x0)} · 0,01 + 0,0001 = ${fmt(value, 4)}`, `h → 0: f′(${fmt(x0)}) = 3 · ${fmt(x0 * x0)} = ${fmt(3 * x0 * x0)}`, `<strong>${fmt(value, 4)}; f′(${fmt(x0)}) = ${fmt(3 * x0 * x0)}</strong>`],
   };
 }
@@ -466,13 +467,13 @@ const ableitungsfunktion: Lesson = {
     <p>Den Graphen von f′ skizzierst du aus dem Graphen von f so:</p>
     <ul>
       <li>Wo f eine <strong>waagrechte Tangente</strong> hat (Hoch-, Tief- oder Terrassenpunkt), hat f′ eine <strong>Nullstelle</strong>.</li>
-      <li>Wo f <strong>steigt</strong>, liegt der Graph von f′ <strong>oberhalb</strong> der x-Achse; wo f fällt, unterhalb.</li>
+      <li>Wo der Graph von f′ <strong>oberhalb</strong> der x-Achse liegt (f′ &gt; 0), <strong>steigt</strong> f; wo er unterhalb liegt, fällt f. Umgekehrt kann f′ an einzelnen Stellen 0 sein, obwohl f überall steigt: f(x) = x³ steigt auf ganz ℝ, hat aber f′(0) = 0 (Lektion 5.1).</li>
       <li>Wo f <strong>am steilsten</strong> ist, hat f′ einen Hoch- oder Tiefpunkt.</li>
       <li>Je steiler f, desto weiter ist f′(x) von 0 entfernt.</li>
     </ul>
     <p>Begründe jeden Schritt mit der Steigung: „Bei x = 1 hat f einen Tiefpunkt, also ist dort die Tangente waagrecht und f′(1) = 0.“</p>
     <div class="example">f(x) = x³ − 3x hat einen Hochpunkt bei −1 und einen Tiefpunkt bei 1. Also hat f′ die Nullstellen −1 und 1, ist für x &lt; −1 und x &gt; 1 positiv und dazwischen negativ. Am steilsten fällt f bei x = 0; dort hat f′ seinen Tiefpunkt: f′(x) = 3x² − 3 ist eine nach oben geöffnete Parabel.</div>
-    <div class="merke"><strong>Merke:</strong> Waagrechte Tangente von f ⇔ Nullstelle von f′. f steigt ⇔ f′ &gt; 0. Steilste Stelle von f ⇔ Extremstelle von f′.</div>
+    <div class="merke"><strong>Merke:</strong> Waagrechte Tangente von f ⇔ Nullstelle von f′. f′ &gt; 0 auf einem Intervall ⇒ f steigt dort (die Umkehrung gilt nicht, siehe x³). Steilste Stelle von f ⇔ Extremstelle von f′.</div>
   `,
   formulas: [
     { name: "Ableitungsfunktion", html: "f′: x ↦ f′(x) = lim<sub>h→0</sub> (f(x + h) − f(x)) / h", quantities: "ordnet jeder Stelle die Steigung des Graphen von f zu" },
