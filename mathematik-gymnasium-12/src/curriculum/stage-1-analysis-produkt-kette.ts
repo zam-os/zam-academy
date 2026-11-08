@@ -1,0 +1,1156 @@
+/**
+ * Lernbereich 1: Untersuchung von Funktionen – Stammfunktion, Produkt- und Kettenregel (33 Std.)
+ * 8 Lektionen zu ganzrationalen Scharen, Stammfunktionen, e-Funktionen und Trigonometrie.
+ */
+
+import type { DifficultyLevel, ExerciseTask, Lesson } from "../model/types";
+import { lab, makeLesson, output, range } from "./builders";
+import { numberField } from "./helpers";
+import type { Rng } from "../exercises/rng";
+import { fmt } from "../exercises/format";
+
+export const STAGE_1_LESSONS: Lesson[] = [
+  // 1.1 Ganzrationale Funktionen mit Parametern
+  makeLesson(1, 1, 1, {
+    id: "g12-schar-ganzrational",
+    title: "Kurvenscharen ganzrationaler Funktionen",
+    subtitle: "Einfluss von Parametern auf Nullstellen, Extrema und Wendepunkte",
+    whyItMatters:
+      "In technischen und ökonomischen Modellen hängen Kosten- oder Tragwerkfunktionen oft von Stellparametern wie Materialstärke oder Produktionskapazität ab.",
+    explanationHtml: `
+      <p>Eine <strong>Funktionenschar</strong> ordnet jedem Parameterwert <i>a</i> eine eigene Kurve <i>f<sub>a</sub></i> zu. Bei der Kurvendiskussion wird der Parameter <i>a</i> wie eine feste Zahl behandelt.</p>
+      <div class="merke">
+        <strong>Merke:</strong> Zur Bestimmung von Nullstellen, Extrem- und Wendepunkten setzt du <i>f<sub>a</sub>(x) = 0</i>, <i>f'<sub>a</sub>(x) = 0</i> bzw. <i>f''<sub>a</sub>(x) = 0</i> und löst nach <i>x</i> in Abhängigkeit von <i>a</i> auf. Achte auf Fallunterscheidungen, falls <i>a</i> im Nenner oder unter einer Wurzel auftritt.
+      </div>
+      <div class="example">
+        <strong>Beispiel:</strong> Gegeben ist <i>f<sub>a</sub>(x) = x³ − a·x</i>.<br>
+        1. Ableitung: <i>f'<sub>a</sub>(x) = 3x² − a</i>.<br>
+        Extremstellen: <i>3x² − a = 0 &rArr; x² = a/3 &rArr; x<sub>1,2</sub> = &plusmn;&radic;(a/3)</i>.<br>
+        Für jedes <i>a &gt; 0</i> existieren genau ein lokales Maximum bei <i>−&radic;(a/3)</i> und ein Minimum bei <i>+&radic;(a/3)</i>. Für <i>a &le; 0</i> gibt es keine Extremstellen (für <i>a = 0</i> liegt bei <i>x = 0</i> ein Sattelpunkt vor).
+      </div>
+    `,
+    formulas: [
+      {
+        name: "Kurvenschar-Ableitung",
+        html: "f<sub>a</sub>(x) = x³ − ax &rArr; f<sub>a</sub>'(x) = 3x² − a",
+        quantities: "a Scharparameter (als Konstante behandelt), x unabhängige Variable",
+      },
+    ],
+    quiz: {
+      question: "Für welche Werte des Parameters a besitzt f_a(x) = x³ + a·x keine lokalen Extrema?",
+      options: [
+        "Für a ≥ 0, da f'_a(x) = 3x² + a für a > 0 keine reelle Nullstelle und für a = 0 nur einen Sattelpunkt hat.",
+        "Nur für a < 0, da die Diskriminante positiv ist.",
+        "Für alle a ∈ ℝ, da Polynome 3. Grades nie Extrema besitzen.",
+      ],
+      correctIndex: 0,
+      explanation:
+        "Für a > 0 ist f'_a(x) = 3x² + a > 0 überall positiv (streng monoton steigend). Für a = 0 hat f_0(x) = x³ bei x = 0 einen Sattelpunkt mit waagrechter Tangente, aber kein Extremum. Erst für a < 0 existieren zwei reelle Extremstellen.",
+    },
+    lab: lab(
+      "polynomial-family",
+      "Kurvenschar f_a(x) = 0,25 · (x³ − ax)",
+      "Verändere den Parameter a und beobachte, wie sich Nullstellen und Extrempunkte verschieben.",
+      [range("a", "Parameter a", 0, 8, 3, 1)],
+      [
+        output("extrema", "Extremstelle x_min", (v) => (v.a > 0 ? Math.sqrt(v.a / 3) : 0), "", 2),
+        output("nullstellen", "Positive Nullstelle", (v) => Math.sqrt(v.a), "", 2),
+      ],
+      [
+        {
+          id: "monoton",
+          text: "Stelle a so ein, dass die Funktion im Ursprung einen Sattelpunkt hat.",
+          check: (v) => v.a === 0,
+        },
+        {
+          id: "nullstelle-zwei",
+          text: "Stelle a so ein, dass die positive Nullstelle bei x = 2 liegt.",
+          check: (v) => v.a === 4,
+        },
+        {
+          id: "abstand",
+          text: "Wähle a so, dass die Extremstellen mehr als 1,5 Einheiten vom Ursprung entfernt sind.",
+          check: (v) => Math.sqrt(v.a / 3) > 1.5,
+        },
+      ],
+    ),
+    exercises: [
+      {
+        id: "parameter-einfluss",
+        make: (rng: Rng, level: DifficultyLevel): ExerciseTask => {
+          if (level === 1) {
+            const m = rng.pick([1, 2, 3, 4, 5, 6]);
+            const a = 3 * m * m;
+            const xExtr = m;
+            return {
+              prompt: `Berechne die positive Extremstelle der Funktionenschar f<sub>${a}</sub>(x) = x³ − ${a}x.`,
+              given: [`f(x) = x³ − ${a}x`, "x > 0"],
+              fields: [
+                numberField("x =", xExtr, "", 2, {
+                  slips: [
+                    { value: a / 3, hint: "Ziehe noch die Wurzel aus x² = a/3." },
+                    { value: Math.round(Math.sqrt(a) * 100) / 100, hint: "Achte auf den Faktor 3 beim Ableiten: f'(x) = 3x² − a." },
+                  ],
+                }),
+              ],
+              formulaHint: "Leite f(x) nach x ab und setze die Ableitung f'(x) = 0.",
+              feedbackHint: "Bedingung für Extremstellen: f'(x) = 3x² − a = 0.",
+              steps: [
+                `f'(x) = 3x² − ${a} = 0 &rArr; x² = ${a}/3 = ${m * m} &rArr; x = ${m}.`,
+                `<strong>x = ${fmt(xExtr, 2)}</strong>`,
+              ],
+              meta: { a, xExtr },
+            };
+          }
+          const targetX = rng.pick([1.5, 2, 2.5, 3, 3.5, 4]);
+          const aReq = 3 * targetX * targetX;
+          return {
+            prompt: `Ein Bauteilprofil folgt f<sub>a</sub>(x) = x³ − ax. Für welchen Scharparameter a besitzt der Graph an der Stelle x = ${fmt(targetX, 1)} einen lokalen Tiefpunkt?`,
+            given: [`Tiefpunkt bei x = ${fmt(targetX, 1)}`],
+            fields: [numberField("a =", aReq, "", 2)],
+            feedbackHint: "Setze die gegebene Extremstelle in die notwendige Bedingung f'(x) = 3x² − a = 0 ein.",
+            steps: [
+              `Notwendige Bedingung: f'_a(${fmt(targetX, 1)}) = 3 · (${fmt(targetX, 1)})² − a = 0 &rArr; a = 3 · ${fmt(targetX * targetX, 2)} = ${fmt(aReq, 2)}.`,
+              `<strong>a = ${fmt(aReq, 2)}</strong>`,
+            ],
+            meta: { targetX, aReq },
+          };
+        },
+      },
+      {
+        id: "kurvenschar-nullstellen",
+        make: (rng: Rng, level: DifficultyLevel): ExerciseTask => {
+          if (level === 1) {
+            const m = rng.pick([1, 2, 3, 4, 5, 6, 7, 8]);
+            const k = m * m;
+            return {
+              prompt: `Bestimme die positive Nullstelle der Funktion f(x) = x³ − ${k}x.`,
+              given: [`f(x) = x³ − ${k}x`, "x > 0"],
+              fields: [numberField("x =", m, "", 2)],
+              formulaHint: "Klammere x aus: f(x) = x · (x² − k) = 0.",
+              feedbackHint: "Ein Produkt wird null, wenn einer der Faktoren null ist.",
+              steps: [
+                `x(x² − ${k}) = 0 &rArr; x² = ${k} &rArr; x = ${m}.`,
+                `<strong>x = ${fmt(m, 2)}</strong>`,
+              ],
+              meta: { k, m },
+            };
+          }
+          const m = rng.pick([2, 3, 4, 5, 6, 7]);
+          const k = m * m;
+          return {
+            prompt: `Eine Modellierungsfunktion für eine Düsenströmung lautet f(x) = x · (x² − k). Die Strömung tritt an der Stelle x = ${m} m aus. Bestimme den zugehörigen Parameter k.`,
+            given: [`Austrittsstelle bei x = ${m}`],
+            fields: [numberField("k =", k, "", 0)],
+            feedbackHint: "Setze f(x) = 0 bei gegebener Austrittsstelle ein: x² − k = 0.",
+            steps: [
+              `f(${m}) = ${m} · (${m}² − k) = 0 &rArr; k = ${m}² = ${k}.`,
+              `<strong>k = ${k}</strong>`,
+            ],
+            meta: { k, m },
+          };
+        },
+      },
+    ],
+  }),
+
+  // 1.2 Stammfunktionen ganzrationaler Funktionen & Graphisches Integrieren
+  makeLesson(1, 2, 1, {
+    id: "g12-stammfunktion-ganzrational",
+    title: "Stammfunktionen und graphisches Integrieren",
+    subtitle: "Zusammenhang zwischen f(x) und F(x) sowie Integrationsregeln",
+    whyItMatters:
+      "Aus dem Geschwindigkeitsgraphen den zurückgelegten Weg rekonstruieren oder aus Durchflussraten das Gesamtvolumen ermitteln erfordert Stammfunktionen.",
+    explanationHtml: `
+      <p>Eine differenzierbare Funktion <i>F</i> heißt <strong>Stammfunktion</strong> von <i>f</i> auf einem Intervall, wenn für alle <i>x</i> gilt: <i>F'(x) = f(x)</i>.</p>
+      <div class="merke">
+        <strong>Graphischer Zusammenhang (NEW-Regel):</strong>
+        <ul>
+          <li>Nullstelle von <i>f</i> &rArr; Waagrechte Tangente (Extremstelle oder Terrassenstelle) von <i>F</i>.</li>
+          <li>Extremstelle von <i>f</i> &rArr; Wendestelle von <i>F</i>.</li>
+          <li>Positives <i>f(x) &gt; 0</i> &rArr; <i>F</i> ist streng monoton steigend.</li>
+        </ul>
+        Potenzregel der Integration: &int; x<sup>n</sup> dx = 1/(n+1) · x<sup>n+1</sup> + C für <i>n &ne; −1</i>.
+      </div>
+      <div class="example">
+        <strong>Beispiel:</strong> Sei <i>f(x) = 3x² − 6x</i>.<br>
+        Eine Stammfunktion lautet: <i>F(x) = 3 · (x³/3) − 6 · (x²/2) + C = x³ − 3x² + C</i>.<br>
+        Da <i>f(2) = 0</i> und <i>f</i> bei <i>x = 2</i> das Vorzeichen von − nach + wechselt, besitzt <i>F</i> bei <i>x = 2</i> ein lokales Minimum.
+      </div>
+    `,
+    formulas: [
+      {
+        name: "Potenzregel der Stammfunktion",
+        html: "&int; x<sup>n</sup> dx = <sup>1</sup>/<sub>n+1</sub> x<sup>n+1</sup> + C",
+        quantities: "n Exponent (n ≠ −1), C Integrationskonstante",
+      },
+    ],
+    quiz: {
+      question: "Was lässt sich über den Graphen von F an einer Stelle x_0 sagen, an der f(x_0) = 0 mit Vorzeichenwechsel von + nach − gilt?",
+      options: [
+        "F besitzt bei x_0 ein lokales Maximum (Hochpunkt).",
+        "F besitzt bei x_0 ein lokales Minimum (Tiefpunkt).",
+        "F schneidet an dieser Stelle die x-Achse.",
+      ],
+      correctIndex: 0,
+      explanation:
+        "Da F'(x) = f(x) gilt, wechselt die Steigung von F bei x_0 von positiv nach negativ. Folglich liegt ein lokales Maximum vor.",
+    },
+    lab: lab(
+      "antiderivative-graph",
+      "Stammfunktion und Ableitungsgraph",
+      "Verschiebe die Integrationskonstante C und vergleiche f(x) mit F(x).",
+      [range("C", "Konstante C", -4, 4, 1, 1)],
+      [
+        output("f_nullstelle", "Nullstelle von f", () => 2, "", 0),
+        output("F_extremwert", "Wert F(2) bei Tiefpunkt", (v) => -8 / 3 + v.C, "", 2),
+      ],
+      [
+        {
+          id: "konstante-positiv",
+          text: "Wähle C so, dass der Hochpunkt von F bei x = −2 höher als y = 4 liegt.",
+          check: (v) => 8 / 3 + v.C > 4,
+        },
+        {
+          id: "negativ",
+          text: "Wähle C so, dass der Tiefpunkt von F bei x = 2 unterhalb von y = −5 liegt.",
+          check: (v) => -8 / 3 + v.C < -5,
+        },
+        {
+          id: "ursprung",
+          text: "Wähle die Stammfunktion, deren Graph durch den Ursprung (0|0) verläuft.",
+          check: (v) => v.C === 0,
+        },
+      ],
+    ),
+    exercises: [
+      {
+        id: "stammfunktion-term",
+        make: (rng: Rng, level: DifficultyLevel): ExerciseTask => {
+          const a = rng.pick([3, 6, 9, 12]);
+          const b = rng.pick([2, 4, 6, 8]);
+          const c3 = a / 3;
+          const c2 = b / 2;
+          if (level === 1) {
+            const xVal = rng.pick([2, 3]);
+            const res = c3 * Math.pow(xVal, 3) - c2 * Math.pow(xVal, 2);
+            return {
+              prompt: `Für f(x) = ${a}x² − ${b}x sei F(x) die Stammfunktion mit F(0) = 0. Berechne F(${xVal}).`,
+              given: [`f(x) = ${a}x² − ${b}x`, `F(0) = 0`, `x = ${xVal}`],
+              fields: [numberField("F =", res, "", 2)],
+              formulaHint: "Integriere gliedweise mit der Potenzregel: F(x) = (a/3)x³ − (b/2)x².",
+              feedbackHint: "Setze x nach dem Integrieren in die Stammfunktion ein.",
+              steps: [
+                `F(x) = ${c3}x³ − ${c2}x² &rArr; F(${xVal}) = ${c3}·${xVal}³ − ${c2}·${xVal}² = ${fmt(res, 2)}.`,
+                `<strong>F(${xVal}) = ${fmt(res, 2)}</strong>`,
+              ],
+              meta: { a, b, xVal },
+            };
+          }
+          const vol = (c3 * 27 - c2 * 9) - (c3 * 1 - c2 * 1);
+          return {
+            prompt: `Eine Pumpe fördert Wasser mit Zuflussrate f(t) = ${a}t² − ${b}t Liter pro Stunde. Berechne das im Zeitintervall von t = 1 bis t = 3 Stunden geförderte Gesamtvolumen.`,
+            given: [`f(t) = ${a}t² − ${b}t`, "Intervall [1; 3]"],
+            fields: [numberField("V =", vol, "Liter", 2)],
+            feedbackHint: "Das Gesamtvolumen ist das bestimmte Integral: V = F(3) − F(1).",
+            steps: [
+              `F(t) = ${c3}t³ − ${c2}t² &rArr; F(3) = ${fmt(c3 * 27 - c2 * 9)}, F(1) = ${fmt(c3 - c2)} &rArr; V = ${fmt(c3 * 27 - c2 * 9)} − (${fmt(c3 - c2)}) = ${fmt(vol, 2)}.`,
+              `<strong>V = ${fmt(vol, 2)} Liter</strong>`,
+            ],
+            meta: { a, b, vol },
+          };
+        },
+      },
+      {
+        id: "stammfunktion-ableitung",
+        make: (rng: Rng, level: DifficultyLevel): ExerciseTask => {
+          const m = rng.pick([2, 3, 4, 5, 6]);
+          if (level === 1) {
+            const x0 = rng.pick([1, 2, 3, 4]);
+            const res = m * x0;
+            return {
+              prompt: `Sei F eine beliebige Stammfunktion von f(x) = ${m}x. Welchen Wert hat die Ableitung F'(${x0})?`,
+              given: [`f(x) = ${m}x`, `x = ${x0}`],
+              fields: [numberField("F' =", res, "", 2)],
+              formulaHint: "Nutze den Hauptsatz der Differential- und Integralrechnung: F'(x) = f(x).",
+              feedbackHint: "Nach Definition der Stammfunktion ist F'(x) exakt gleich f(x).",
+              steps: [
+                `F'(${x0}) = f(${x0}) = ${m} · ${x0} = ${fmt(res, 2)}.`,
+                `<strong>F'(${x0}) = ${fmt(res, 2)}</strong>`,
+              ],
+              meta: { m, x0 },
+            };
+          }
+          const tTarget = rng.pick([2, 3, 4, 5]);
+          const slopeGiven = m * tTarget;
+          return {
+            prompt: `Die Stammfunktion F(t) einer linearen Wachstumsrate f(t) = ${m}t beschreibt den Gesamtbestand. Zu welchem Zeitpunkt t beträgt die momentane Zuwachsrate F'(t) = ${slopeGiven}?`,
+            given: [`f(t) = ${m}t`, `F'(t) = ${slopeGiven}`],
+            fields: [numberField("t =", tTarget, "", 2)],
+            feedbackHint: "Setze f(t) = F'(t) und löse nach t auf.",
+            steps: [
+              `F'(t) = f(t) = ${m}t = ${slopeGiven} &rArr; t = ${slopeGiven} / ${m} = ${tTarget}.`,
+              `<strong>t = ${fmt(tTarget, 2)}</strong>`,
+            ],
+            meta: { m, tTarget },
+          };
+        },
+      },
+    ],
+  }),
+
+  // 1.3 Natürliche Exponentialfunktion: Produkt- und Kettenregel
+  makeLesson(1, 3, 2, {
+    id: "g12-exp-ableitung-regeln",
+    title: "Natürliche Exponentialfunktion und Ableitungsregeln",
+    subtitle: "Produktregel und Kettenregel bei Verknüpfungen mit e^x",
+    whyItMatters:
+      "Die e-Funktion ist die einzige Funktion, deren Ableitung mit sich selbst übereinstimmt. Sie beschreibt fundamentale Naturprozesse wie radioaktiven Zerfall und Kondensatorentladung.",
+    explanationHtml: `
+      <p>Für die <strong>natürliche Exponentialfunktion</strong> <i>f(x) = e<sup>x</sup></i> gilt die bemerkenswerte Eigenschaft: <i>(e<sup>x</sup>)' = e<sup>x</sup></i>.</p>
+      <div class="merke">
+        <strong>Ableitungsregeln:</strong>
+        <ul>
+          <li><strong>Kettenregel:</strong> <i>(e<sup>u(x)</sup>)' = u'(x) · e<sup>u(x)</sup></i> (äußere mal innere Ableitung).</li>
+          <li><strong>Produktregel:</strong> <i>(u(x) · v(x))' = u'(x) · v(x) + u(x) · v'(x)</i>.</li>
+          <li>Beim Differenzieren von <i>(ax + b) · e<sup>kx</sup></i> klammert man stets den Term <i>e<sup>kx</sup></i> aus!</li>
+        </ul>
+      </div>
+      <div class="example">
+        <strong>Beispiel:</strong> Leite <i>f(x) = (2x − 3) · e<sup>−x</sup></i> ab.<br>
+        Setze <i>u(x) = 2x − 3 &rArr; u'(x) = 2</i> und <i>v(x) = e<sup>−x</sup> &rArr; v'(x) = −e<sup>−x</sup></i>.<br>
+        <i>f'(x) = 2 · e<sup>−x</sup> + (2x − 3) · (−e<sup>−x</sup>) = e<sup>−x</sup> · [2 − (2x − 3)] = (5 − 2x) · e<sup>−x</sup></i>.
+      </div>
+    `,
+    formulas: [
+      {
+        name: "Produktregel",
+        html: "(u · v)' = u' · v + u · v'",
+        quantities: "u, v differenzierbare Funktionen",
+      },
+      {
+        name: "Kettenregel für e-Funktion",
+        html: "(e<sup>u(x)</sup>)' = u'(x) · e<sup>u(x)</sup>",
+        quantities: "u innere Funktion, u' innere Ableitung",
+      },
+    ],
+    quiz: {
+      question: "Wie lautet die Ableitung von f(x) = e^{−2x}?",
+      options: [
+        "f'(x) = −2 · e^{−2x}",
+        "f'(x) = 2 · e^{−2x}",
+        "f'(x) = −e^{−2x}",
+      ],
+      correctIndex: 0,
+      explanation:
+        "Nach der Kettenregel ist die innere Ableitung von u(x) = −2x gleich −2. Also f'(x) = −2 · e^{−2x}.",
+    },
+    lab: lab(
+      "exp-derivatives",
+      "Ableitung von (x − a) · e^{kx}",
+      "Stelle Scharparameter a und Steigung k ein und beobachte den Kurvenverlauf.",
+      [
+        range("a", "Parameter a", -2, 4, 0, 1),
+        range("k", "Exponent k", -2, -1, -2, 1),
+      ],
+      [
+        output("extremstelle", "Extremstelle x_E", (v) => v.a - 1 / v.k, "", 2),
+      ],
+      [
+        {
+          id: "tiefpunkt-ursprung",
+          text: "Stelle a und k so ein, dass die Extremstelle bei x = 0 liegt.",
+          check: (v) => Math.abs(v.a - 1 / v.k) < 1e-9,
+        },
+        {
+          id: "waagrecht-zwei",
+          text: "Stelle a und k so ein, dass die Extremstelle bei x = 2 liegt.",
+          check: (v) => Math.abs(v.a - 1 / v.k - 2) < 1e-9,
+        },
+        {
+          id: "extrem-drei",
+          text: "Stelle a und k so ein, dass die Extremstelle bei x = 2,5 liegt.",
+          check: (v) => Math.abs(v.a - 1 / v.k - 2.5) < 1e-9,
+        },
+      ],
+    ),
+    exercises: [
+      {
+        id: "produktregel-exp",
+        make: (rng: Rng, level: DifficultyLevel): ExerciseTask => {
+          const a = rng.pick([2, 3, 4, 5]);
+          const b = rng.pick([1, 2, 3, 4, 6]);
+          const xExtr = (a + b) / a;
+          if (level === 1) {
+            return {
+              prompt: `Berechne die Extremstelle der Funktion f(x) = (${a}x − ${b}) · e<sup>−x</sup>.`,
+              given: [`f(x) = (${a}x − ${b}) · e<sup>−x</sup>`],
+              fields: [numberField("x =", xExtr, "", 2)],
+              formulaHint: "Wende die Produktregel (u·v)' = u'·v + u·v' an und setze f'(x) = 0.",
+              feedbackHint: "Klammere nach dem Ableiten e<sup>−x</sup> aus und setze den Klammerterm null.",
+              steps: [
+                `f'(x) = [${a} − (${a}x − ${b})] · e<sup>−x</sup> = (${a + b} − ${a}x) · e<sup>−x</sup> = 0 &rArr; x = ${a + b}/${a} = ${fmt(xExtr, 2)}.`,
+                `<strong>x = ${fmt(xExtr, 2)}</strong>`,
+              ],
+              meta: { a, b, xExtr },
+            };
+          }
+          return {
+            prompt: `Der Wirkstoffspiegel im Blut verläuft nach c(t) = (${a}t − ${b}) · e<sup>−t</sup> (für t &gt; ${fmt(b / a, 2)} h). Zu welchem Zeitpunkt t erreicht die Konzentration ihr Maximum?`,
+            given: [`c(t) = (${a}t − ${b}) · e<sup>−t</sup>`],
+            fields: [numberField("t =", xExtr, "h", 2)],
+            feedbackHint: "Bestimme c'(t) mit der Produktregel und löse c'(t) = 0 nach t auf.",
+            steps: [
+              `c'(t) = (${a + b} − ${a}t) · e<sup>−t</sup> = 0 &rArr; t = ${a + b}/${a} = ${fmt(xExtr, 2)} h.`,
+              `<strong>t = ${fmt(xExtr, 2)} h</strong>`,
+            ],
+            meta: { a, b, xExtr },
+          };
+        },
+      },
+      {
+        id: "kettenregel-exp",
+        make: (rng: Rng, level: DifficultyLevel): ExerciseTask => {
+          const k = rng.pick([2, 3, 4, 5, 6]);
+          if (level === 1) {
+            return {
+              prompt: `Berechne den Steigungswert f'(0) für f(x) = e<sup>${k}x</sup>.`,
+              given: [`f(x) = e<sup>${k}x</sup>`, "x = 0"],
+              fields: [numberField("f'(0) =", k, "", 0)],
+              formulaHint: "Wende die Kettenregel an: (e<sup>kx</sup>)' = k · e<sup>kx</sup>.",
+              feedbackHint: "Beachte e<sup>0</sup> = 1.",
+              steps: [
+                `f'(x) = ${k} · e<sup>${k}x</sup> &rArr; f'(0) = ${k} · e<sup>0</sup> = ${k} · 1 = ${k}.`,
+                `<strong>f'(0) = ${k}</strong>`,
+              ],
+              meta: { k },
+            };
+          }
+          const amp = rng.pick([5, 10, 15, 20]);
+          const derivMagnitude = amp * k;
+          return {
+            prompt: `Die Stromstärke beim Ausschaltvorgang folgt I(t) = ${amp} · e<sup>−${k}t</sup> (in Ampere, t in Sekunden). Bestimme den Betrag der anfänglichen Änderungsrate |I'(0)|.`,
+            given: [`I(t) = ${amp} · e<sup>−${k}t</sup>`, "t = 0"],
+            fields: [numberField("|I'(0)| =", derivMagnitude, "A/s", 0)],
+            feedbackHint: "Leite I(t) mit der Kettenregel ab: I'(t) = −amp · k · e<sup>−kt</sup>.",
+            steps: [
+              `I'(t) = ${amp} · (−${k}) · e<sup>−${k}t</sup> = −${derivMagnitude} · e<sup>−${k}t</sup> &rArr; |I'(0)| = |−${derivMagnitude} · 1| = ${derivMagnitude}.`,
+              `<strong>|I'(0)| = ${derivMagnitude} A/s</strong>`,
+            ],
+            meta: { amp, k, derivMagnitude },
+          };
+        },
+      },
+    ],
+  }),
+
+  // 1.4 Asymptotik und Grenzwerte: e^x vs. x^n
+  makeLesson(1, 4, 2, {
+    id: "g12-exp-grenzwerte",
+    title: "Grenzwerte und Dominanz der e-Funktion",
+    subtitle: "Wachstumsvergleich zwischen Exponential- und Potenzfunktionen",
+    whyItMatters:
+      "Die Dominanz der e-Funktion über Polynome erklärt, warum exponentielle Prozesse letztlich jedes polynomiale Wachstum überholen oder dämpfen.",
+    explanationHtml: `
+      <p>Im Unendlichen wächst die natürliche Exponentialfunktion schneller als jede Potenzfunktion <i>x<sup>n</sup></i> mit <i>n &gt; 0</i>.</p>
+      <div class="merke">
+        <strong>Zentrale Grenzwerte:</strong>
+        <ul>
+          <li><i>lim<sub>x &rarr; +&infin;</sub> (x<sup>n</sup> / e<sup>x</sup>) = 0</i> für alle <i>n &isin; &naturals;</i>.</li>
+          <li><i>lim<sub>x &rarr; −&infin;</sub> (x<sup>n</sup> · e<sup>x</sup>) = 0</i> für alle <i>n &isin; &naturals;</i>.</li>
+          <li>Man sagt: <em>„Die e-Funktion dominiert jede Potenzfunktion.“</em></li>
+        </ul>
+      </div>
+      <div class="example">
+        <strong>Beispiel:</strong> Untersuche <i>f(x) = (x² − 3x) · e<sup>−x</sup></i> für <i>x &rarr; +&infin;</i> und <i>x &rarr; −&infin;</i>.<br>
+        Für <i>x &rarr; +&infin;</i>: <i>f(x) = (x² − 3x)/e<sup>x</sup> &rarr; 0</i> (waagrechte Asymptote <i>y = 0</i>).<br>
+        Für <i>x &rarr; −&infin;</i>: <i>x² − 3x &rarr; +&infin;</i> und <i>e<sup>−x</sup> &rarr; +&infin;</i>, also <i>f(x) &rarr; +&infin;</i>.
+      </div>
+    `,
+    formulas: [
+      {
+        name: "Dominanz der e-Funktion",
+        html: "lim<sub>x&rarr;&infin;</sub> <sup>x<sup>n</sup></sup>/<sub>e<sup>x</sup></sub> = 0",
+        quantities: "n beliebige positive Zahl",
+      },
+    ],
+    quiz: {
+      question: "Welchen Grenzwert hat f(x) = x⁵ · e^{−x} für x → +∞?",
+      options: [
+        "0, weil die e-Funktion im Nenner schneller wächst als x⁵.",
+        "+∞, weil x⁵ unendlich groß wird.",
+        "1, da sich Zähler und Nenner ausgleichen.",
+      ],
+      correctIndex: 0,
+      explanation:
+        "Da x⁵ · e^{−x} = x⁵ / e^x geschrieben werden kann, setzt sich die exponentielle Dämpfung gegen die Potenzfunktion durch. Der Grenzwert ist 0.",
+    },
+    lab: lab(
+      "exp-limits",
+      "Grenzwerte x^n / e^x",
+      "Verändere den Exponenten n und beobachte, wie rasch der Quotient für wachsende x gegen 0 strebt.",
+      [range("n", "Exponent n", 1, 4, 2, 1)],
+      [
+        output("wert_bei_5", "Wert bei x = 5", (v) => Math.pow(5, v.n) / Math.exp(5), "", 3),
+        output("wert_bei_10", "Wert bei x = 10", (v) => Math.pow(10, v.n) / Math.exp(10), "", 5),
+      ],
+      [
+        {
+          id: "linear",
+          text: "Finde den Exponenten n, für den xⁿ / eˣ schon bei x = 5 unter 0,05 liegt.",
+          check: (v) => Math.pow(5, v.n) / Math.exp(5) < 0.05,
+        },
+        {
+          id: "kubisch",
+          text: "Finde ein n, für das xⁿ / eˣ bei x = 5 über 0,5 liegt und bei x = 10 trotzdem kleiner ist als bei x = 5.",
+          check: (v) => Math.pow(5, v.n) / Math.exp(5) > 0.5 && Math.pow(10, v.n) / Math.exp(10) < Math.pow(5, v.n) / Math.exp(5),
+        },
+        {
+          id: "vier",
+          text: "Finde das n, für das xⁿ / eˣ bei x = 10 noch über 0,1 liegt. Auch hier gewinnt eˣ für x → +∞.",
+          check: (v) => Math.pow(10, v.n) / Math.exp(10) > 0.1,
+        },
+      ],
+    ),
+    exercises: [
+      {
+        id: "limes-exp-asymptote",
+        make: (rng: Rng, level: DifficultyLevel): ExerciseTask => {
+          const a = rng.pick([2, 3, 5, 7, 8]);
+          const c = rng.pick([1, 2, 3, 4, 5, 6]);
+          if (level === 1) {
+            return {
+              prompt: `Bestimme den Grenzwert von f(x) = (x + ${a}) · e<sup>−x</sup> + ${c} für x &rarr; +&infin;.`,
+              given: [`f(x) = (x + ${a}) · e<sup>−x</sup> + ${c}`, "x &rarr; +&infin;"],
+              fields: [numberField("Limes =", c, "", 0)],
+              formulaHint: "Wende die Dominanzregel an: (x + a) · e<sup>−x</sup> &rarr; 0 für x &rarr; +&infin;.",
+              feedbackHint: "Da der Exponentialanteil gegen 0 konvergiert, bleibt die additive Konstante übrig.",
+              steps: [
+                `lim<sub>x&rarr;&infin;</sub> [(x + ${a}) · e<sup>−x</sup> + ${c}] = 0 + ${c} = ${c}.`,
+                `<strong>Limes = ${c}</strong>`,
+              ],
+              meta: { a, c },
+            };
+          }
+          const tUmg = rng.pick([18, 20, 22, 25]);
+          return {
+            prompt: `Die Temperatur eines Werkstücks kühlt ab nach T(t) = (${a}t + 40) · e<sup>−0,2t</sup> + ${tUmg} (in °C, t in Minuten). Welche Grenztemperatur stellt sich langfristig ein?`,
+            given: [`T(t) = (${a}t + 40) · e<sup>−0,2t</sup> + ${tUmg}`, "t &rarr; +&infin;"],
+            fields: [numberField("T =", tUmg, "°C", 0)],
+            feedbackHint: "Für t &rarr; &infin; strebt der Term (${a}t + 40) · e<sup>−0,2t</sup> gegen 0.",
+            steps: [
+              `lim<sub>t&rarr;&infin;</sub> T(t) = 0 + ${tUmg} = ${tUmg} °C.`,
+              `<strong>T = ${tUmg} °C</strong>`,
+            ],
+            meta: { a, tUmg },
+          };
+        },
+      },
+      {
+        id: "dominanz-exp-rechnung",
+        make: (rng: Rng, level: DifficultyLevel): ExerciseTask => {
+          if (level === 1) {
+            const deg = rng.pick([1, 2, 3, 4, 5]);
+            return {
+              prompt: `Welchen Grenzwert besitzt f(x) = x<sup>${deg}</sup> · e<sup>x</sup> für x &rarr; −&infin;?`,
+              given: [`f(x) = x<sup>${deg}</sup> · e<sup>x</sup>`, "x &rarr; −&infin;"],
+              fields: [numberField("Limes =", 0, "", 0)],
+              formulaHint: "Wende die Dominanzregel der e-Funktion an: lim<sub>x&rarr;−&infin;</sub> x<sup>n</sup> · e<sup>x</sup> = 0.",
+              feedbackHint: "Die exponentielle Dämpfung dominiert jedes Polynom.",
+              steps: [
+                `Aufgrund der Dominanz der Exponentialfunktion über Potenzen gilt lim<sub>x&rarr;−&infin;</sub> x<sup>${deg}</sup> · e<sup>x</sup> = 0.`,
+                "<strong>Limes = 0</strong>",
+              ],
+              meta: { deg },
+            };
+          }
+          const deg = rng.pick([1, 2, 3]);
+          const a = rng.pick([2, 3, 4]);
+          const c = rng.pick([2, 5, 7, 9]);
+          return {
+            prompt: `Bestimme den Grenzwert der rational-exponentiellen Funktion g(x) = (${a}x<sup>${deg}</sup> + ${c} · e<sup>x</sup>) / e<sup>x</sup> für x &rarr; +&infin;.`,
+            given: [`g(x) = (${a}x<sup>${deg}</sup> + ${c}e<sup>x</sup>) / e<sup>x</sup>`, "x &rarr; +&infin;"],
+            fields: [numberField("Limes =", c, "", 0)],
+            feedbackHint: "Spalte den Bruch auf: g(x) = a · x<sup>n</sup> · e<sup>−x</sup> + c.",
+            steps: [
+              `g(x) = ${a} · x<sup>${deg}</sup> · e<sup>−x</sup> + ${c} &rArr; lim<sub>x&rarr;&infin;</sub> g(x) = 0 + ${c} = ${c}.`,
+              `<strong>Limes = ${c}</strong>`,
+            ],
+            meta: { deg, a, c },
+          };
+        },
+      },
+    ],
+  }),
+
+  // 1.5 Kurvendiskussion von e-Funktionen mit Parametern
+  makeLesson(1, 5, 2, {
+    id: "g12-exp-kurvendiskussion",
+    title: "Kurvendiskussion verknüpfter e-Funktionen",
+    subtitle: "Extrempunkte, Wendepunkte und Gleichungen mit dem natürlichen Logarithmus",
+    whyItMatters:
+      "Vollständige Funktionsuntersuchungen verknüpfter e-Funktionen sind ein Kernbestandteil bayerischer Abiturprüfungen.",
+    explanationHtml: `
+      <p>Bei der Kurvendiskussion von <i>f(x) = p(x) · e<sup>kx</sup></i> nutzt du die Eigenschaft <i>e<sup>kx</sup> &gt; 0</i> für alle reellen <i>x</i>. Eine Exponentialfunktion kann niemals den Wert 0 annehmen!</p>
+      <div class="merke">
+        <strong>Vorgehensweise:</strong>
+        <ul>
+          <li><strong>Nullstellen:</strong> Da <i>e<sup>kx</sup> &ne; 0</i>, muss das Polynom <i>p(x) = 0</i> werden.</li>
+          <li><strong>Gleichungen lösen:</strong> Aus <i>e<sup>kx</sup> = c</i> folgt durch Logarithmieren <i>kx = ln(c) &rArr; x = ln(c)/k</i> (nur für <i>c &gt; 0</i> lösbar!).</li>
+          <li><strong>Extrema:</strong> Ausklammern von <i>e<sup>kx</sup></i> bei <i>f'(x) = 0</i>.</li>
+        </ul>
+      </div>
+      <div class="example">
+        <strong>Beispiel:</strong> <i>f(x) = (x² − 4) · e<sup>−x</sup></i>.<br>
+        Nullstellen: <i>x² − 4 = 0 &rArr; x<sub>1</sub> = 2, x<sub>2</sub> = −2</i>.<br>
+        Ableitung: <i>f'(x) = (−x² + 2x + 4) · e<sup>−x</sup></i>.<br>
+        Notwendige Bedingung: <i>−x² + 2x + 4 = 0 &rArr; x<sub>1,2</sub> = 1 &plusmn; &radic;5</i>.
+      </div>
+    `,
+    formulas: [
+      {
+        name: "Lösen von Exponentialgleichungen",
+        html: "e<sup>kx</sup> = c &hArr; x = <sup>ln(c)</sup>/<sub>k</sub>",
+        quantities: "c > 0, k ≠ 0",
+      },
+    ],
+    quiz: {
+      question: "Warum kann die Gleichung (x − 3) · e^{2x} = 0 nur die Nullstelle x = 3 besitzen?",
+      options: [
+        "Weil e^{2x} > 0 für alle reellen Zahlen x gilt und nie null wird.",
+        "Weil e^{2x} nur für x = 0 null wird.",
+        "Weil die Kettenregel keine weiteren Nullstellen zulässt.",
+      ],
+      correctIndex: 0,
+      explanation:
+        "Ein Produkt wird null, wenn mindestens ein Faktor null ist. Da der Exponentialausdruck e^{2x} echt positiv ist, kann nur x − 3 = 0 werden.",
+    },
+    lab: lab(
+      "exp-curve",
+      "Kurvendiskussion f_a(x) = (x² − a) · e^{−0,5x}",
+      "Stelle a ein und beobachte Nullstellen und Extremstellen.",
+      [range("a", "Parameter a", 1, 9, 2, 1)],
+      [
+        output("nullstelle", "Positive Nullstelle", (v) => Math.sqrt(v.a), "", 2),
+      ],
+      [
+        {
+          id: "null-eins",
+          text: "Stelle a so ein, dass die Nullstellen bei x = ±1 liegen.",
+          check: (v) => Math.abs(Math.sqrt(v.a) - 1) < 1e-9,
+        },
+        {
+          id: "null-drei",
+          text: "Stelle a so ein, dass die beiden Nullstellen 6 Einheiten voneinander entfernt sind.",
+          check: (v) => Math.abs(2 * Math.sqrt(v.a) - 6) < 1e-9,
+        },
+        {
+          id: "standard",
+          text: "Stelle a so ein, dass die positive Nullstelle eine ganze Zahl größer als 1 ist.",
+          check: (v) => v.a > 1 && Number.isInteger(Math.sqrt(v.a)),
+        },
+      ],
+    ),
+    exercises: [
+      {
+        id: "exp-nullstellen",
+        make: (rng: Rng, level: DifficultyLevel): ExerciseTask => {
+          const a = rng.pick([4, 9, 16, 25, 36, 49]);
+          const xPos = Math.sqrt(a);
+          if (level === 1) {
+            return {
+              prompt: `Bestimme die positive Nullstelle von f(x) = (x² − ${a}) · e<sup>−2x</sup>.`,
+              given: [`f(x) = (x² − ${a}) · e<sup>−2x</sup>`, "x > 0"],
+              fields: [numberField("x =", xPos, "", 2)],
+              formulaHint: "Wende den Satz vom Nullprodukt an: Da e<sup>−2x</sup> > 0 für alle x, muss x² − a = 0 sein.",
+              feedbackHint: "Löse x² − a = 0 nach x auf.",
+              steps: [
+                `x² − ${a} = 0 &rArr; x = &radic;${a} = ${xPos}.`,
+                `<strong>x = ${fmt(xPos, 2)}</strong>`,
+              ],
+              meta: { a, xPos },
+            };
+          }
+          const dist = 2 * xPos;
+          return {
+            prompt: `Ein Laserimpuls besitzt das Profil I(x) = (x² − ${a}) · e<sup>−x</sup>. Welchen Abstand d haben die beiden Stellen, an denen der Impuls erlischt (I(x) = 0)?`,
+            given: [`I(x) = (x² − ${a}) · e<sup>−x</sup>`],
+            fields: [numberField("d =", dist, "", 2)],
+            feedbackHint: "Berechne den Abstand zwischen den beiden Nullstellen: d = x₂ − x₁ = 2 · √a.",
+            steps: [
+              `x² − ${a} = 0 &rArr; x₁ = −${xPos}, x₂ = +${xPos} &rArr; d = ${xPos} − (−${xPos}) = ${dist}.`,
+              `<strong>d = ${fmt(dist, 2)}</strong>`,
+            ],
+            meta: { a, dist },
+          };
+        },
+      },
+      {
+        id: "exp-gleichung-ln",
+        make: (rng: Rng, level: DifficultyLevel): ExerciseTask => {
+          const k = rng.pick([2, 3, 4, 5]);
+          const c = rng.pick([3, 5, 7, 8, 10]);
+          if (level === 1) {
+            const res = Math.log(c) / k;
+            return {
+              prompt: `Löse die Exponentialgleichung e<sup>${k}x</sup> = ${c} (auf zwei Dezimalen gerundet).`,
+              given: [`e<sup>${k}x</sup> = ${c}`],
+              fields: [numberField("x =", res, "", 2)],
+              formulaHint: "Wende auf beiden Seiten den natürlichen Logarithmus an: ln(e<sup>kx</sup>) = k·x = ln(c).",
+              feedbackHint: "Teile nach dem Logarithmieren durch k.",
+              steps: [
+                `${k}x = ln(${c}) &rArr; x = ln(${c})/${k} &approx; ${fmt(res, 2)}.`,
+                `<strong>x = ${fmt(res, 2)}</strong>`,
+              ],
+              meta: { k, c, res },
+            };
+          }
+          const n0 = rng.pick([100, 200, 500]);
+          const n1 = n0 * c;
+          const tRes = Math.log(c) / (k * 0.1);
+          return {
+            prompt: `Eine Bakterienkultur wächst nach N(t) = ${n0} · e<sup>${fmt(k * 0.1, 1)}t</sup> (t in Stunden). Nach wie vielen Stunden hat die Population N = ${n1} erreicht?`,
+            given: [`N(t) = ${n0} · e<sup>${fmt(k * 0.1, 1)}t</sup>`, `N = ${n1}`],
+            fields: [numberField("t =", tRes, "h", 2)],
+            feedbackHint: "Dividiere zuerst durch den Anfangsbestand N₀ und logarithmiere anschließend.",
+            steps: [
+              `e<sup>${fmt(k * 0.1, 1)}t</sup> = ${n1} / ${n0} = ${c} &rArr; ${fmt(k * 0.1, 1)}t = ln(${c}) &rArr; t = ln(${c}) / ${fmt(k * 0.1, 1)} &approx; ${fmt(tRes, 2)} h.`,
+              `<strong>t = ${fmt(tRes, 2)} h</strong>`,
+            ],
+            meta: { n0, n1, k, tRes },
+          };
+        },
+      },
+    ],
+  }),
+
+  // 1.6 Modellierung von Wachstum und Zerfall & Basiswechsel
+  makeLesson(1, 6, 2, {
+    id: "g12-exp-wachstum-modelle",
+    title: "Modellierung von Wachstums- und Abklingvorgängen",
+    subtitle: "Basiswechsel auf die Basis e, Halbwertszeit und Verdopplungszeit",
+    whyItMatters:
+      "Ob Pharmakokinetik beim Abbau von Medikamenten oder Zinseszins in der Finanzmathematik: Reale Daten werden standardisiert auf die Basis e zurückgeführt.",
+    explanationHtml: `
+      <p>Jede Exponentialfunktion mit beliebiger Basis <i>a &gt; 0</i> lässt sich durch die Identität <i>a = e<sup>ln(a)</sup></i> auf die natürliche Basis <i>e</i> zurückführen: <i>B(t) = B<sub>0</sub> · a<sup>t</sup> = B<sub>0</sub> · e<sup>(ln a) · t</sup> = B<sub>0</sub> · e<sup>k·t</sup></i> mit <i>k = ln(a)</i>.</p>
+      <div class="merke">
+        <strong>Wichtige Kenngrößen:</strong>
+        <ul>
+          <li><strong>Wachstumskonstante:</strong> <i>k &gt; 0</i> für Wachstum, <i>k &lt; 0</i> für Abklingen/Zerfall.</li>
+          <li><strong>Halbwertszeit <i>T<sub>H</sub></i>:</strong> Zeitspanne, nach der sich der Anfangsbestand halbiert hat: <i>T<sub>H</sub> = ln(2) / |k|</i>.</li>
+          <li><strong>Verdopplungszeit <i>T<sub>V</sub></i>:</strong> <i>T<sub>V</sub> = ln(2) / k</i>.</li>
+        </ul>
+      </div>
+      <div class="example">
+        <strong>Beispiel:</strong> Ein radioaktives Isotop zerfällt nach <i>N(t) = 100 · e<sup>−0,05·t</sup></i> (Zeit in Tagen).<br>
+        Halbwertszeit: <i>T<sub>H</sub> = ln(2) / 0,05 &approx; 0,6931 / 0,05 &approx; 13,86</i> Tage.<br>
+        Nach ca. 13,9 Tagen ist noch die Hälfte des Ausgangsmaterials vorhanden.
+      </div>
+    `,
+    formulas: [
+      {
+        name: "Basiswechsel auf Basis e",
+        html: "a<sup>t</sup> = e<sup>(ln a) · t</sup>",
+        quantities: "a > 0 Basis, ln natürlicher Logarithmus",
+      },
+      {
+        name: "Halbwertszeit",
+        html: "T<sub>H</sub> = <sup>ln(2)</sup>/<sub>|k|</sub>",
+        quantities: "k Zerfallskonstante (k < 0)",
+      },
+    ],
+    quiz: {
+      question: "Wie lautet die Wachstumskonstante k für den Prozess N(t) = N_0 · 2^t umgeschrieben zur Basis e?",
+      options: [
+        "k = ln(2) ≈ 0,693",
+        "k = 2",
+        "k = e² ≈ 7,389",
+      ],
+      correctIndex: 0,
+      explanation:
+        "Da 2 = e^{ln(2)} gilt, ist 2^t = e^{(ln 2)·t}. Die Wachstumskonstante ist somit k = ln(2).",
+    },
+    lab: lab(
+      "exp-growth",
+      "Wachstum und Zerfall N(t) = N_0 · e^{kt}",
+      "Stelle Anfangswert N_0 und Exponent k ein.",
+      [
+        range("N0", "Anfangsbestand N_0", 50, 150, 80, 10),
+        range("k", "Rate k (x0,1)", -6, 4, -2, 1),
+      ],
+      [
+        output("char_zeit", "Halb- / Verdopplungszeit", (v) => (v.k !== 0 ? Math.log(2) / Math.abs(v.k * 0.1) : "Bestand konstant"), "Std", 2),
+      ],
+      [
+        {
+          id: "zerfall-stark",
+          text: "Stelle einen Zerfall mit einer Halbwertszeit unter 1,5 Stunden ein.",
+          check: (v) => v.k < 0 && Math.log(2) / Math.abs(v.k * 0.1) < 1.5,
+        },
+        {
+          id: "wachstum-moderat",
+          text: "Stelle ein Wachstum mit einer Verdopplungszeit zwischen 2 und 4 Stunden ein.",
+          check: (v) => v.k > 0 && Math.log(2) / (v.k * 0.1) > 2 && Math.log(2) / (v.k * 0.1) < 4,
+        },
+        {
+          id: "basis",
+          text: "Stelle einen Anfangsbestand von 100 und einen Zerfall mit einer Halbwertszeit von rund 2,3 Stunden ein.",
+          check: (v) => v.N0 === 100 && v.k < 0 && Math.abs(Math.log(2) / Math.abs(v.k * 0.1) - 2.31) < 0.05,
+        },
+      ],
+    ),
+    exercises: [
+      {
+        id: "halbwertszeit-berechnen",
+        make: (rng: Rng, level: DifficultyLevel): ExerciseTask => {
+          const lambda = rng.pick([0.02, 0.04, 0.05, 0.08, 0.1, 0.15, 0.2]);
+          const th = Math.log(2) / lambda;
+          if (level === 1) {
+            return {
+              prompt: `Berechne die Halbwertszeit T<sub>H</sub> für einen Zerfallsprozess N(t) = N<sub>0</sub> · e<sup>−${fmt(lambda)}t</sup> (t in Tagen, auf eine Dezimale gerundet).`,
+              given: [`N(t) = N<sub>0</sub> · e<sup>−${fmt(lambda)}t</sup>`, "t in Tagen"],
+              fields: [numberField("T_H =", th, "Tage", 1)],
+              formulaHint: "Nutze den Zusammenhang T<sub>H</sub> = ln(2) / &lambda; mit ln(2) &approx; 0,6931.",
+              feedbackHint: "Teile ln(2) durch die Zerfallskonstante &lambda;.",
+              steps: [
+                `T<sub>H</sub> = ln(2) / ${fmt(lambda)} &approx; 0,6931 / ${fmt(lambda)} = ${fmt(th, 1)} Tage.`,
+                `<strong>T<sub>H</sub> = ${fmt(th, 1)} Tage</strong>`,
+              ],
+              meta: { lambda, th },
+            };
+          }
+          return {
+            prompt: `Ein Medikament wird im Blutkreislauf gemäß c(t) = c<sub>0</sub> · e<sup>−${fmt(lambda)}t</sup> abgebaut (t in Stunden). Nach wie vielen Stunden ist die Hälfte der Dosis abgebaut (auf eine Dezimale gerundet)?`,
+            given: [`c(t) = c<sub>0</sub> · e<sup>−${fmt(lambda)}t</sup>`, "t in Stunden"],
+            fields: [numberField("T_H =", th, "h", 1)],
+            feedbackHint: "Setze c(t) = 0,5 · c₀ und löse nach t auf: t = ln(2) / &lambda;.",
+            steps: [
+              `c(t) = 0,5 · c₀ &rArr; e<sup>−${fmt(lambda)}t</sup> = 0,5 &rArr; t = ln(2) / ${fmt(lambda)} &approx; ${fmt(th, 1)} h.`,
+              `<strong>T<sub>H</sub> = ${fmt(th, 1)} h</strong>`,
+            ],
+            meta: { lambda, th },
+          };
+        },
+      },
+      {
+        id: "basiswechsel-k",
+        make: (rng: Rng, level: DifficultyLevel): ExerciseTask => {
+          if (level === 1) {
+            const a = rng.pick([1.04, 1.05, 1.08, 1.1, 1.15, 1.25, 1.5]);
+            const k = Math.log(a);
+            return {
+              prompt: `Bestimme die kontinuierliche Wachstumskonstante k zur Basis e für B(t) = B<sub>0</sub> · ${fmt(a)}<sup>t</sup> (auf drei Dezimalen gerundet).`,
+              given: [`B(t) = B<sub>0</sub> · ${fmt(a)}<sup>t</sup>`],
+              fields: [numberField("k =", k, "", 3)],
+              formulaHint: "Wende den Basiswechsel an: a<sup>t</sup> = (e<sup>ln a</sup>)<sup>t</sup> = e<sup>(ln a) · t</sup> &rArr; k = ln(a).",
+              feedbackHint: "Berechne den natürlichen Logarithmus der Basis a.",
+              steps: [
+                `k = ln(${fmt(a)}) &approx; ${fmt(k, 3)}.`,
+                `<strong>k = ${fmt(k, 3)}</strong>`,
+              ],
+              meta: { a, k },
+            };
+          }
+          const p = rng.pick([3, 4, 5, 6, 8, 10]);
+          const a = 1 + p / 100;
+          const k = Math.log(a);
+          return {
+            prompt: `Ein Baumbestand wächst jährlich um ${p} %. Wie lautet die kontinuierliche Wachstumsrate k im Exponentialmodell N(t) = N<sub>0</sub> · e<sup>kt</sup> (auf drei Dezimalen)?`,
+            given: [`Wachstum ${p} % pro Jahr`],
+            fields: [numberField("k =", k, "", 3)],
+            feedbackHint: "Der Wachstumsfaktor ist a = 1 + p/100. Bestimme k = ln(a).",
+            steps: [
+              `Wachstumsfaktor a = 1 + ${p}/100 = ${fmt(a, 2)} &rArr; k = ln(${fmt(a, 2)}) &approx; ${fmt(k, 3)}.`,
+              `<strong>k = ${fmt(k, 3)}</strong>`,
+            ],
+            meta: { p, a, k },
+          };
+        },
+      },
+    ],
+  }),
+
+  // 1.7 Ableitung der Sinus- und Kosinusfunktion (Graphische Plausibilisierung)
+  makeLesson(1, 7, 3, {
+    id: "g12-trig-ableitung-graph",
+    title: "Ableitung der Sinus- und Kosinusfunktion",
+    subtitle: "Graphische Herleitung der Steigungen an markanten Punkten",
+    whyItMatters:
+      "Trigonometrische Funktionen modellieren harmonische Schwingungen in Physik, Akustik und Elektrotechnik. Die Ableitung beschreibt die Phasengeschwindigkeit.",
+    explanationHtml: `
+      <p>Betrachtet man den Graphen der Sinusfunktion <i>f(x) = sin(x)</i> im Bogenmaß, erkennt man an den Extremstellen waagrechte Tangenten (Steigung 0) und an den Nullstellen maximale Steigung.</p>
+      <div class="merke">
+        <strong>Graphische Ableitungsregeln:</strong>
+        <ul>
+          <li><i>(sin x)' = cos x</i></li>
+          <li><i>(cos x)' = −sin x</i></li>
+          <li><i>(sin x)'' = −sin x</i> (zweite Ableitung ist die gespiegelte Ausgangsfunktion!).</li>
+          <li><strong>Achtung:</strong> Diese Ableitungsregeln gelten nur im <strong>Bogenmaß (rad)</strong>!</li>
+        </ul>
+      </div>
+      <div class="example">
+        <strong>Beispiel:</strong> Bei <i>x = 0</i> hat <i>sin(x)</i> die Steigung <i>f'(0) = cos(0) = 1</i>.<br>
+        Bei <i>x = &pi;/2</i> ist der Hochpunkt von <i>sin(x)</i>, folglich <i>f'(&pi;/2) = cos(&pi;/2) = 0</i>.<br>
+        Bei <i>x = &pi;</i> fällt <i>sin(x)</i> am steilsten: <i>f'(&pi;) = cos(&pi;) = −1</i>.
+      </div>
+    `,
+    formulas: [
+      {
+        name: "Ableitung trigonometrischer Grundfunktionen",
+        html: "(sin x)' = cos x &emsp; und &emsp; (cos x)' = −sin x",
+        quantities: "x im Bogenmaß",
+      },
+    ],
+    quiz: {
+      question: "Welchen Wert hat die Steigung des Kosinusgraphen an der Stelle x = π/2?",
+      options: [
+        "−1, da (cos x)' = −sin(π/2) = −1.",
+        "0, da cos(π/2) = 0.",
+        "+1, da sin(π/2) = 1.",
+      ],
+      correctIndex: 0,
+      explanation:
+        "Die Ableitung von cos(x) lautet −sin(x). Für x = π/2 ergibt sich −sin(π/2) = −1.",
+    },
+    lab: lab(
+      "trig-tangent",
+      "Graphische Ableitung des Sinus",
+      "Verschiebe den Berührpunkt x_0 und vergleiche die Tangentensteigung mit dem Kosinuswert.",
+      [range("x0", "Stelle x_0 (in π/4)", -4, 4, 1, 1)],
+      [
+        output("steigung", "Steigung m = cos(x_0)", (v) => Math.cos((v.x0 * Math.PI) / 4), "", 2),
+      ],
+      [
+        {
+          id: "ursprung-steigung",
+          text: "Finde die Stelle, an der die Tangente an den Sinus die größte Steigung hat.",
+          check: (v) => Math.abs(Math.cos((v.x0 * Math.PI) / 4) - 1) < 1e-9,
+        },
+        {
+          id: "hochpunkt",
+          text: "Finde eine Stelle mit waagrechter Tangente. Was liegt dort beim Sinus vor?",
+          check: (v) => Math.abs(Math.cos((v.x0 * Math.PI) / 4)) < 1e-9,
+        },
+        {
+          id: "abfall",
+          text: "Finde eine Stelle, an der der Sinus am stärksten fällt.",
+          check: (v) => Math.cos((v.x0 * Math.PI) / 4) < -0.999,
+        },
+      ],
+    ),
+    exercises: [
+      {
+        id: "trig-ableitungswert",
+        make: (rng: Rng, level: DifficultyLevel): ExerciseTask => {
+          const choice = rng.pick([
+            { fn: "sin", x: 0, xName: "0", val: 1, text: "cos(0)" },
+            { fn: "cos", x: 0, xName: "0", val: 0, text: "−sin(0)" },
+            { fn: "sin", x: Math.PI / 2, xName: "π/2", val: 0, text: "cos(π/2)" },
+            { fn: "cos", x: Math.PI / 2, xName: "π/2", val: -1, text: "−sin(π/2)" },
+            { fn: "sin", x: Math.PI, xName: "π", val: -1, text: "cos(π)" },
+            { fn: "cos", x: Math.PI, xName: "π", val: 0, text: "−sin(π)" },
+          ]);
+          if (level === 1) {
+            return {
+              prompt: `Bestimme den Wert der Ableitung von f(x) = ${choice.fn}(x) an der Stelle x = ${choice.xName}.`,
+              given: [`f(x) = ${choice.fn}(x)`, `x = ${choice.xName}`],
+              fields: [numberField("f' =", choice.val, "", 0)],
+              formulaHint: `Nutze die Ableitungsregel (${choice.fn} x)' und werte an der Stelle x = ${choice.xName} aus.`,
+              feedbackHint: `Beachte (${choice.fn} x)' = ${choice.text}.`,
+              steps: [
+                `f'(${choice.xName}) = ${choice.text} = ${fmt(choice.val, 0)}.`,
+                `<strong>f' = ${fmt(choice.val, 0)}</strong>`,
+              ],
+              meta: { val: choice.val },
+            };
+          }
+          return {
+            prompt: `Die Auslenkung eines Schwingers folgt s(t) = 4 · ${choice.fn}(t) (in cm, t in s). Welche Momentangeschwindigkeit v(t) = s'(t) hat der Schwinger zum Zeitpunkt t = ${choice.xName}?`,
+            given: [`s(t) = 4 · ${choice.fn}(t)`, `t = ${choice.xName}`],
+            fields: [numberField("v =", 4 * choice.val, "cm/s", 0)],
+            feedbackHint: "Leite s(t) ab: s'(t) = 4 · (fn t)'.",
+            steps: [
+              `s'(t) = 4 · ${choice.text} = 4 · (${fmt(choice.val, 0)}) = ${fmt(4 * choice.val, 0)} cm/s.`,
+              `<strong>v = ${fmt(4 * choice.val, 0)} cm/s</strong>`,
+            ],
+            meta: { val: choice.val, v: 4 * choice.val },
+          };
+        },
+      },
+      {
+        id: "trig-wendetangente",
+        make: (rng: Rng, level: DifficultyLevel): ExerciseTask => {
+          const a = rng.pick([2, 3, 4, 5, 6]);
+          if (level === 1) {
+            return {
+              prompt: `Berechne die Steigung der Tangente an den Graphen von f(x) = ${a} · sin(x) im Ursprung x = 0.`,
+              given: [`f(x) = ${a} · sin(x)`, "x = 0"],
+              fields: [numberField("m =", a, "", 0)],
+              formulaHint: "Die Tangentensteigung im Ursprung entspricht dem Ableitungswert f'(0). Nutze (sin x)' = cos x.",
+              feedbackHint: "Berechne f'(x) = a · cos(x) und setze x = 0 ein.",
+              steps: [
+                `f'(x) = ${a} · cos(x) &rArr; f'(0) = ${a} · cos(0) = ${a} · 1 = ${a}.`,
+                `<strong>m = ${a}</strong>`,
+              ],
+              meta: { a },
+            };
+          }
+          const omega = rng.pick([2, 3, 4]);
+          const vMax = a * omega;
+          return {
+            prompt: `Ein Federpendel schwingt mit Auslenkung y(t) = ${a} · sin(${omega}t) (in cm, t in s). Bestimme die Maximalgeschwindigkeit v<sub>max</sub> beim Nulldurchgang t = 0.`,
+            given: [`y(t) = ${a} · sin(${omega}t)`],
+            fields: [numberField("v_max =", vMax, "cm/s", 0)],
+            feedbackHint: "Wende die Kettenregel an: v(t) = y'(t) = a · &omega; · cos(&omega;t).",
+            steps: [
+              `v(t) = y'(t) = ${a} · ${omega} · cos(${omega}t) = ${vMax} · cos(${omega}t) &rArr; v(0) = ${vMax} · 1 = ${vMax} cm/s.`,
+              `<strong>v_max = ${vMax} cm/s</strong>`,
+            ],
+            meta: { a, omega, vMax },
+          };
+        },
+      },
+    ],
+  }),
+
+  // 1.8 Verknüpfungen trigonometrischer Funktionen (Kettenregel)
+  makeLesson(1, 8, 3, {
+    id: "g12-trig-kurvendiskussion",
+    title: "Verknüpfungen trigonometrischer Funktionen",
+    subtitle: "Kettenregel bei Sinus und Kosinus, Frequenz und Amplitude",
+    whyItMatters:
+      "Wechselstromkreise und mechanische Schwingungsdämpfer erfordern die Differenzierung zusammengesetzter Sinusfunktionen mit inneren linearen Funktionen.",
+    explanationHtml: `
+      <p>Wird das Argument der Sinusfunktion durch eine lineare Funktion <i>u(x) = k·x + d</i> ersetzt, greift die <strong>Kettenregel</strong>: <i>(sin(k·x + d))' = k · cos(k·x + d)</i>.</p>
+      <div class="merke">
+        <strong>Regeln für f(x) = a · sin(k·x + d):</strong>
+        <ul>
+          <li><strong>Amplitude:</strong> <i>|a|</i> (maximale Auslenkung).</li>
+          <li><strong>Periode:</strong> <i>p = 2&pi; / |k|</i>.</li>
+          <li><strong>1. Ableitung:</strong> <i>f'(x) = a·k · cos(k·x + d)</i>.</li>
+          <li><strong>2. Ableitung:</strong> <i>f''(x) = −a·k² · sin(k·x + d) = −k² · f(x)</i> (Schwingungsdifferentialgleichung!).</li>
+        </ul>
+      </div>
+      <div class="example">
+        <strong>Beispiel:</strong> Gegeben ist <i>f(x) = 3 · sin(2x)</i>.<br>
+        1. Ableitung: <i>f'(x) = 3 · 2 · cos(2x) = 6 · cos(2x)</i>.<br>
+        Die maximale Steigung beträgt <i>6</i> und wird bei allen Nullstellen mit <i>cos(2x) = 1</i> erreicht.
+      </div>
+    `,
+    formulas: [
+      {
+        name: "Kettenregel für Sinus",
+        html: "(sin(k·x))' = k · cos(k·x)",
+        quantities: "k Kreisfrequenz / Stauchungsfaktor",
+      },
+    ],
+    quiz: {
+      question: "Wie lautet die 1. Ableitung von f(x) = 4 · cos(3x)?",
+      options: [
+        "f'(x) = −12 · sin(3x)",
+        "f'(x) = 12 · sin(3x)",
+        "f'(x) = −4 · sin(3x)",
+      ],
+      correctIndex: 0,
+      explanation:
+        "Nach der Kettenregel ist die innere Ableitung 3 und (cos u)' = −sin u. Also f'(x) = 4 · (−sin(3x)) · 3 = −12 · sin(3x).",
+    },
+    lab: lab(
+      "trig-composition",
+      "Schwingungen f(x) = a · sin(ωx)",
+      "Verändere Amplitude a und Frequenz ω.",
+      [
+        range("a", "Amplitude a", 1, 4, 1, 1),
+        range("omega", "Kreisfrequenz ω", 1, 3, 2, 1),
+      ],
+      [
+        output("max_steigung", "Max. Steigung a · ω", (v) => v.a * v.omega, "", 0),
+        output("periode", "Periode 2π/ω", (v) => (2 * Math.PI) / v.omega, "", 2),
+      ],
+      [
+        {
+          id: "schnell",
+          text: "Stelle die kürzeste Periode ein, die das Labor erlaubt.",
+          check: (v) => v.omega === 3,
+        },
+        {
+          id: "amplitude-drei",
+          text: "Stelle eine Schwingung mit der maximalen Steigung 6 ein.",
+          check: (v) => v.a * v.omega === 6,
+        },
+        {
+          id: "standard-schwingung",
+          text: "Stelle eine Schwingung mit der Periode 2π und der Amplitude 2 ein.",
+          check: (v) => v.omega === 1 && v.a === 2,
+        },
+      ],
+    ),
+    exercises: [
+      {
+        id: "trig-kettenregel-rechnen",
+        make: (rng: Rng, level: DifficultyLevel): ExerciseTask => {
+          const a = rng.pick([2, 3, 4, 5, 6]);
+          const k = rng.pick([2, 3, 4, 5]);
+          const maxSlope = a * k;
+          if (level === 1) {
+            return {
+              prompt: `Bestimme die maximale Steigung des Graphen von f(x) = ${a} · sin(${k}x).`,
+              given: [`f(x) = ${a} · sin(${k}x)`],
+              fields: [numberField("m_max =", maxSlope, "", 0)],
+              formulaHint: "Wende die Kettenregel an: f'(x) = a · k · cos(k·x). Der Maximalwert des Kosinus ist 1.",
+              feedbackHint: "Die maximale Steigung ergibt sich aus Amplitude mal Kreisfrequenz: a · k.",
+              steps: [
+                `f'(x) = ${a} · ${k} · cos(${k}x) = ${maxSlope} · cos(${k}x) &rArr; Maximum = ${maxSlope}.`,
+                `<strong>m_max = ${maxSlope}</strong>`,
+              ],
+              meta: { a, k, maxSlope },
+            };
+          }
+          return {
+            prompt: `Die Wechselspannung in einem Netz folgt U(t) = ${a} · sin(${k}t) (in Volt, t in Sekunden). Bestimme den Maximalwert der Spannungsänderungsrate |U'(t)| in V/s.`,
+            given: [`U(t) = ${a} · sin(${k}t)`],
+            fields: [numberField("|U'|_max =", maxSlope, "V/s", 0)],
+            feedbackHint: "Differenziere mit der Kettenregel: U'(t) = a · k · cos(kt).",
+            steps: [
+              `U'(t) = ${a} · ${k} · cos(${k}t) = ${maxSlope} · cos(${k}t) &rArr; |U'|<sub>max</sub> = ${maxSlope} V/s.`,
+              `<strong>|U'|<sub>max</sub> = ${maxSlope} V/s</strong>`,
+            ],
+            meta: { a, k, maxSlope },
+          };
+        },
+      },
+      {
+        id: "trig-extremwert-stelle",
+        make: (rng: Rng, level: DifficultyLevel): ExerciseTask => {
+          const k = rng.pick([2, 3, 4, 5, 6]);
+          const xHp = Math.PI / (2 * k);
+          if (level === 1) {
+            return {
+              prompt: `Berechne die kleinste positive Extremstelle von f(x) = sin(${k}x) (auf zwei Dezimalen).`,
+              given: [`f(x) = sin(${k}x)`, "x > 0"],
+              fields: [numberField("x =", xHp, "", 2)],
+              formulaHint: "Der erste Hochpunkt des Sinus liegt bei Argument π/2: k·x = π/2.",
+              feedbackHint: "Löse k·x = π/2 nach x auf: x = π / (2k).",
+              steps: [
+                `${k}x = &pi;/2 &rArr; x = &pi;/${2 * k} &approx; ${fmt(xHp, 2)}.`,
+                `<strong>x = ${fmt(xHp, 2)}</strong>`,
+              ],
+              meta: { k, xHp },
+            };
+          }
+          return {
+            prompt: `Ein Hubkolben schwingt mit Auslenkung s(t) = sin(${k}t) (in cm, t in s). Zu welchem ersten Zeitpunkt t &gt; 0 kehrt der Kolben um (Momentangeschwindigkeit v(t) = s'(t) = 0)?`,
+            given: [`s(t) = sin(${k}t)`, "t > 0"],
+            fields: [numberField("t =", xHp, "s", 2)],
+            feedbackHint: "Der Umkehrpunkt entspricht dem ersten Extremum: k·t = π/2.",
+            steps: [
+              `v(t) = ${k} · cos(${k}t) = 0 &rArr; ${k}t = &pi;/2 &rArr; t = &pi;/${2 * k} &approx; ${fmt(xHp, 2)} s.`,
+              `<strong>t = ${fmt(xHp, 2)} s</strong>`,
+            ],
+            meta: { k, xHp },
+          };
+        },
+      },
+    ],
+  }),
+];

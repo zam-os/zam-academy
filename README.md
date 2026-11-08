@@ -16,6 +16,7 @@ Hands-on training apps that build understanding before [ZAM](https://github.com/
 | Mathematik 5 Gymnasium (LehrplanPLUS Bayern) | [`mathematik-gymnasium-5/`](mathematik-gymnasium-5/) | https://academy.zam-os.org/mathematik-gymnasium-5/ | `zam-academy:mathematik-gymnasium-5` |
 | Mathematik 6 Gymnasium (LehrplanPLUS Bayern) | [`mathematik-gymnasium-6/`](mathematik-gymnasium-6/) | https://academy.zam-os.org/mathematik-gymnasium-6/ | `zam-academy:mathematik-gymnasium-6` |
 | Mathematik 11 Gymnasium (LehrplanPLUS Bayern) | [`mathematik-gymnasium-11/`](mathematik-gymnasium-11/) | https://academy.zam-os.org/mathematik-gymnasium-11/ | `zam-academy:mathematik-gymnasium-11` |
+| Mathematik 12 Gymnasium (LehrplanPLUS Bayern) | [`mathematik-gymnasium-12/`](mathematik-gymnasium-12/) | https://academy.zam-os.org/mathematik-gymnasium-12/ | `zam-academy:mathematik-gymnasium-12` |
 | Mathematik 6 Realschule (LehrplanPLUS Bayern, alle Wahlpflichtfächergruppen) | [`mathematik-realschule-6/`](mathematik-realschule-6/) | https://academy.zam-os.org/mathematik-realschule-6/ | `zam-academy:mathematik-realschule-6` |
 | Mathematik 7 Realschule (LehrplanPLUS Bayern, Zweig I und II/III) | [`mathematik-realschule-7/`](mathematik-realschule-7/) | https://academy.zam-os.org/mathematik-realschule-7/ | `zam-academy:mathematik-realschule-7` |
 | Mathematik 8 Realschule (LehrplanPLUS Bayern, Zweig I und II/III) | [`mathematik-realschule-8/`](mathematik-realschule-8/) | https://academy.zam-os.org/mathematik-realschule-8/ | `zam-academy:mathematik-realschule-8` |
@@ -124,6 +125,7 @@ cd uml                 # or: cd physik-realschule-9 (dev server on :5181), cd sq
 # Mathematik 5 Gymnasium: cd mathematik-gymnasium-5 (dev server on :5221)
 # Mathematik 6 Gymnasium: cd mathematik-gymnasium-6 (dev server on :5225)
 # Mathematik 11 Gymnasium: cd mathematik-gymnasium-11 (dev server on :5224)
+# Mathematik 12 Gymnasium: cd mathematik-gymnasium-12 (dev server on :5222)
 # Englisch 5: cd englisch-realschule-5 (dev server on :5223)
 # Mathematik 13 Gymnasium (Vorschau): cd mathematik-gymnasium-13 (dev server on :5225)
 npm ci
