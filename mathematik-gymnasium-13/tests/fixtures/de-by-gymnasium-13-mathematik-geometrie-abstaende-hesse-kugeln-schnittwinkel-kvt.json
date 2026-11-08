@@ -1,0 +1,1098 @@
+{
+  "$schema": "https://zam.app/schemas/v1/kvt-tile.json",
+  "tile_id": "de-by:gymnasium-13-mathematik-geometrie-abstaende-hesse-kugeln-schnittwinkel",
+  "version": "2026.08.1",
+  "title": "Mathematik 13: Analytische Geometrie – Abstandsverfahren (HNF), Schnittwinkel und Kugelgeometrie (Gymnasium 13 Bayern)",
+  "description": "Geerdetes KVT-Paket für Gymnasium Bayern Mathematik 13 (Oberstufe Q13 / Abitur): Metrische Vektorgeometrie und Abstände (Hessesche Normalenform HNF von Ebenen E: (x - a) * n_0 = 0 mit normiertem Einheitsnormalenvektor n_0 = n/|n|, Punkt-Ebene-Abstand d(P, E) = |(p - a) * n_0|, Abstand zweier windschiefer Geraden g und h über gemeinsamen Normalenvektor n = u_g x u_h, Punkt-Gerade-Abstand über Hilfsebene oder Kreuzprodukt), Schnittwinkel im dreidimensionalen Raum (Winkel zwischen zwei Vektoren, Schnittwinkel zweier Geraden cos(alpha) = |u_1 * u_2| / (|u_1|*|u_2|), Schnittwinkel Gerade-Ebene sin(beta) = |u * n| / (|u|*|n|), Schnittwinkel zweier Ebenen cos(gamma) = |n_1 * n_2| / (|n_1|*|n_2|)) sowie Kugelgeometrie im R^3 (Kugelgleichung (x - m)^2 = r^2, Schnittlage Kugel-Ebene: Passierende Ebene [d > r], Tangentialebene [d = r] mit Berührpunkt B, Schnittkreis [d < r] mit Mittelpunkt M_k und Kreisradius r_k = sqrt(r^2 - d^2), Schnittlage Kugel-Gerade).",
+  "publisher": "ZAM Curriculum Working Group",
+  "published_at": "2026-08-16T08:00:00Z",
+  "sources": [
+    {
+      "uri": "https://www.lehrplanplus.bayern.de/fachlehrplan/gymnasium/13/mathematik",
+      "checked": "2026-08-16",
+      "label": "Gymnasium Mathematik 13, Lernbereich Analytische Geometrie – Metrische Probleme und Kugeln"
+    }
+  ],
+  "atoms": [
+    {
+      "id": "01K8GD10000000000000000A01",
+      "atom_uri": "urn:zam:atom:01K8GD10000000000000000A01",
+      "namespace": "gymnasium-mathematik-hesse-abstaende",
+      "slug": "hesse-normalform-abstand-windschiefe-geraden-schnittwinkel",
+      "title": "Hesse-Normalenform, Abstände im Raum und Schnittwinkel (Gerade, Ebene)",
+      "domain": "mathematik/geometrie",
+      "reduction": "formal",
+      "typical_age_min": 18.0,
+      "prerequisites": [],
+      "alignments": [
+        {
+          "target_uri": "http://www.wikidata.org/entity/Q11224",
+          "target_label": "Hesse normal form",
+          "alignment_type": "skos:broadMatch",
+          "provenance": "manual_curation_v1"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 13,
+          "subject": "mathematik",
+          "topic_code": "lb2",
+          "topic_title": "Metrische Vektorgeometrie – Abstände und Winkel",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01K8GD10000000000000000J01",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Mit welcher trigonometrischen Funktion berechnet man den Schnittwinkel "
+            },
+            {
+              "type": "math",
+              "tex": "\\beta",
+              "speech": "Beta"
+            },
+            {
+              "type": "text",
+              "text": " zwischen einer Geraden mit Richtungsvektor "
+            },
+            {
+              "type": "math",
+              "tex": "\\vec{u}",
+              "speech": "Vektor u"
+            },
+            {
+              "type": "text",
+              "text": " und einer Ebene mit Normalenvektor "
+            },
+            {
+              "type": "math",
+              "tex": "\\vec{n}",
+              "speech": "Vektor n"
+            },
+            {
+              "type": "text",
+              "text": "?"
+            }
+          ],
+          "concept_segments": [
+            {
+              "type": "math",
+              "tex": "\\sin(\\beta) = \\frac{|\\vec{u} \\cdot \\vec{n}|}{|\\vec{u}| \\cdot |\\vec{n}|}",
+              "speech": "Sinus von Beta gleich Betrag von Vektor u mal Vektor n durch Betrag von Vektor u mal Betrag von Vektor n"
+            },
+            {
+              "type": "text",
+              "text": " (weil der Normalenvektor senkrecht auf der Ebene steht und daher das Komplement "
+            },
+            {
+              "type": "math",
+              "tex": "90^\\circ - \\beta",
+              "speech": "90 Grad minus Beta"
+            },
+            {
+              "type": "text",
+              "text": " erfasst)"
+            }
+          ],
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              [
+                {
+                  "type": "math",
+                  "tex": "\\sin(\\beta) = \\frac{|\\vec{u} \\cdot \\vec{n}|}{|\\vec{u}| \\cdot |\\vec{n}|}",
+                  "speech": "Sinus von Beta gleich Betrag von Vektor u mal Vektor n durch Betrag von Vektor u mal Betrag von Vektor n"
+                }
+              ],
+              [
+                {
+                  "type": "math",
+                  "tex": "\\cos(\\beta) = \\frac{|\\vec{u} \\cdot \\vec{n}|}{|\\vec{u}| \\cdot |\\vec{n}|}",
+                  "speech": "Kosinus von Beta gleich Betrag von Vektor u mal Vektor n, durch Betrag von Vektor u, mal Betrag von Vektor n"
+                }
+              ]
+            ],
+            "correct_index": 0
+          },
+          "materiality": "cosmetic"
+        },
+        {
+          "id": "01K8GD10000000000000000J02",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Analysiere metrische Abstands- und Winkelprobleme im "
+            },
+            {
+              "type": "math",
+              "tex": "\\mathbb{R}^3",
+              "speech": "R drei"
+            },
+            {
+              "type": "text",
+              "text": ": 1. Die Hessesche Normalenform (HNF):   * Gegeben Ebene "
+            },
+            {
+              "type": "math",
+              "tex": "E: n_1 x_1 + n_2 x_2 + n_3 x_3 - d = 0",
+              "speech": "Ebene E: n eins x eins plus n zwei x zwei plus n drei x drei minus d gleich 0"
+            },
+            {
+              "type": "text",
+              "text": ".   * Normierung durch Division durch den Betrag "
+            },
+            {
+              "type": "math",
+              "tex": "|\\vec{n}| = \\sqrt{n_1^2 + n_2^2 + n_3^2}",
+              "speech": "Betrag von Vektor n gleich Wurzel aus n eins Quadrat plus n zwei Quadrat plus n drei Quadrat"
+            },
+            {
+              "type": "text",
+              "text": ":     "
+            },
+            {
+              "type": "math",
+              "tex": "\\mathbf{\\text{HNF: } \\frac{n_1 x_1 + n_2 x_2 + n_3 x_3 - d}{\\sqrt{n_1^2 + n_2^2 + n_3^2}} = 0}",
+              "block": true,
+              "speech": "Hessesche Normalform: n eins x eins plus n zwei x zwei plus n drei x drei minus d, geteilt durch Wurzel aus n eins Quadrat plus n zwei Quadrat plus n drei Quadrat, gleich 0"
+            },
+            {
+              "type": "text",
+              "text": "   * Der Abstand eines beliebigen Punktes "
+            },
+            {
+              "type": "math",
+              "tex": "P(p_1, p_2, p_3)",
+              "speech": "Punkt P mit den Koordinaten p eins, p zwei und p drei"
+            },
+            {
+              "type": "text",
+              "text": " zur Ebene "
+            },
+            {
+              "type": "math",
+              "tex": "E",
+              "speech": "E"
+            },
+            {
+              "type": "text",
+              "text": " ergibt sich durch direktes Einsetzen in die linke Seite der HNF:     "
+            },
+            {
+              "type": "math",
+              "tex": "\\mathbf{d(P, E) = \\left| \\frac{n_1 p_1 + n_2 p_2 + n_3 p_3 - d}{|\\vec{n}|} \\right|}",
+              "block": true,
+              "speech": "d von P und E gleich Betrag von, n eins p eins plus n zwei p zwei plus n drei p drei minus d, geteilt durch Betrag von Vektor n"
+            },
+            {
+              "type": "text",
+              "text": ", 2. Abstand zweier windschiefer Geraden "
+            },
+            {
+              "type": "math",
+              "tex": "g",
+              "speech": "g"
+            },
+            {
+              "type": "text",
+              "text": " und "
+            },
+            {
+              "type": "math",
+              "tex": "h",
+              "speech": "h"
+            },
+            {
+              "type": "text",
+              "text": ":   * "
+            },
+            {
+              "type": "math",
+              "tex": "g: \\vec{x} = \\vec{a} + r \\vec{u}_g",
+              "speech": "g: Vektor x gleich Vektor a plus r Vektor u g"
+            },
+            {
+              "type": "text",
+              "text": ", "
+            },
+            {
+              "type": "math",
+              "tex": "h: \\vec{x} = \\vec{b} + s \\vec{u}_h",
+              "speech": "h: Vektor x gleich Vektor b plus s Vektor u h"
+            },
+            {
+              "type": "text",
+              "text": ".   * Gemeinsamer Normalenvektor: "
+            },
+            {
+              "type": "math",
+              "tex": "\\vec{n}_0 = \\frac{\\vec{u}_g \\times \\vec{u}_h}{|\\vec{u}_g \\times \\vec{u}_h|}",
+              "speech": "Vektor n null gleich Vektor u g kreuz Vektor u h, geteilt durch den Betrag von Vektor u g kreuz Vektor u h"
+            },
+            {
+              "type": "text",
+              "text": ".   * Abstand: "
+            },
+            {
+              "type": "math",
+              "tex": "\\mathbf{d(g, h) = |(\\vec{b} - \\vec{a}) \\cdot \\vec{n}_0|}",
+              "speech": "d von g und h gleich Betrag von, Vektor b minus Vektor a, mal Vektor n null"
+            },
+            {
+              "type": "text",
+              "text": ", 3. Konkrete Aufgabe:   * Gegeben Ebene "
+            },
+            {
+              "type": "math",
+              "tex": "E: 2x_1 - x_2 + 2x_3 - 9 = 0",
+              "speech": "Ebene E: 2 x eins minus x zwei plus 2 x drei minus 9 gleich 0"
+            },
+            {
+              "type": "text",
+              "text": " und Punkt "
+            },
+            {
+              "type": "math",
+              "tex": "P(5 \\mid 4 \\mid 8)",
+              "speech": "Punkt P mit den Koordinaten 5, 4 und 8"
+            },
+            {
+              "type": "text",
+              "text": ".   * a) Bestimme den Abstand "
+            },
+            {
+              "type": "math",
+              "tex": "d(P, E)",
+              "speech": "d von P und E"
+            },
+            {
+              "type": "text",
+              "text": ".   * b) Berechne den Lotfußpunkt "
+            },
+            {
+              "type": "math",
+              "tex": "F",
+              "speech": "F"
+            },
+            {
+              "type": "text",
+              "text": " des Punktes "
+            },
+            {
+              "type": "math",
+              "tex": "P",
+              "speech": "P"
+            },
+            {
+              "type": "text",
+              "text": " auf der Ebene "
+            },
+            {
+              "type": "math",
+              "tex": "E",
+              "speech": "E"
+            },
+            {
+              "type": "text",
+              "text": "."
+            }
+          ],
+          "concept": "HNF & Abstände 13: |n| = sqrt(4+1+4) = 3; HNF (2x1 - x2 + 2x3 - 9)/3 = 0; d(P, E) = |2(5) - 4 + 2(8) - 9|/3 = |10 - 4 + 16 - 9|/3 = |13|/3 = 13/3 LE; Lotfußpunkt F = P - d * n_0 = (5, 4, 8) - 13/3 * 1/3(2, -1, 2) = (19/9, 49/9, 46/9).",
+          "sample_solution": [
+            {
+              "type": "text",
+              "text": "1. Metrische Beziehungen im "
+            },
+            {
+              "type": "math",
+              "tex": "\\mathbb{R}^3"
+            },
+            {
+              "type": "text",
+              "text": ": - Winkelformeln:   * Gerade-Gerade: "
+            },
+            {
+              "type": "math",
+              "tex": "\\cos(\\alpha) = \\frac{|\\vec{u}_1 \\cdot \\vec{u}_2|}{|\\vec{u}_1| \\cdot |\\vec{u}_2|}"
+            },
+            {
+              "type": "text",
+              "text": " ("
+            },
+            {
+              "type": "math",
+              "tex": "0^\\circ \\le \\alpha \\le 90^\\circ"
+            },
+            {
+              "type": "text",
+              "text": ").   * Ebene-Ebene: "
+            },
+            {
+              "type": "math",
+              "tex": "\\cos(\\gamma) = \\frac{|\\vec{n}_1 \\cdot \\vec{n}_2|}{|\\vec{n}_1| \\cdot |\\vec{n}_2|}"
+            },
+            {
+              "type": "text",
+              "text": ".   * Gerade-Ebene: "
+            },
+            {
+              "type": "math",
+              "tex": "\\sin(\\beta) = \\frac{|\\vec{u} \\cdot \\vec{n}|}{|\\vec{u}| \\cdot |\\vec{n}|}"
+            },
+            {
+              "type": "text",
+              "text": ". 2. Vollständige Berechnung der Aufgabe: - a) HNF und Abstand des Punktes "
+            },
+            {
+              "type": "math",
+              "tex": "P(5 \\mid 4 \\mid 8)"
+            },
+            {
+              "type": "text",
+              "text": ":   * Ebenengleichung: "
+            },
+            {
+              "type": "math",
+              "tex": "2x_1 - x_2 + 2x_3 - 9 = 0"
+            },
+            {
+              "type": "text",
+              "text": ".   * Normalenvektor: "
+            },
+            {
+              "type": "math",
+              "tex": "\\vec{n} = \\begin{pmatrix} 2 \\\\ -1 \\\\ 2 \\end{pmatrix}"
+            },
+            {
+              "type": "text",
+              "text": ".   * Betrag: "
+            },
+            {
+              "type": "math",
+              "tex": "|\\vec{n}| = \\sqrt{2^2 + (-1)^2 + 2^2} = \\sqrt{4 + 1 + 4} = \\sqrt{9} = \\mathbf{3}"
+            },
+            {
+              "type": "text",
+              "text": ".   * HNF der Ebene "
+            },
+            {
+              "type": "math",
+              "tex": "E"
+            },
+            {
+              "type": "text",
+              "text": ":     "
+            },
+            {
+              "type": "math",
+              "tex": "\\frac{2x_1 - x_2 + 2x_3 - 9}{3} = 0",
+              "block": true
+            },
+            {
+              "type": "text",
+              "text": "   * Abstand "
+            },
+            {
+              "type": "math",
+              "tex": "d(P, E)"
+            },
+            {
+              "type": "text",
+              "text": ":     "
+            },
+            {
+              "type": "math",
+              "tex": "d(P, E) = \\left| \\frac{2(5) - (4) + 2(8) - 9}{3} \\right| = \\left| \\frac{10 - 4 + 16 - 9}{3} \\right| = \\left| \\frac{13}{3} \\right| = \\mathbf{\\frac{13}{3}\\,\\text{Längeneinheiten (LE)} \\approx 4{,}33\\,\\text{LE}}",
+              "block": true
+            },
+            {
+              "type": "text",
+              "text": " - b) Bestimmung des Lotfußpunktes "
+            },
+            {
+              "type": "math",
+              "tex": "F"
+            },
+            {
+              "type": "text",
+              "text": ":   * Die Lotgerade "
+            },
+            {
+              "type": "math",
+              "tex": "\\ell"
+            },
+            {
+              "type": "text",
+              "text": " geht durch "
+            },
+            {
+              "type": "math",
+              "tex": "P"
+            },
+            {
+              "type": "text",
+              "text": " mit Richtungsvektor "
+            },
+            {
+              "type": "math",
+              "tex": "\\vec{n}"
+            },
+            {
+              "type": "text",
+              "text": ":     "
+            },
+            {
+              "type": "math",
+              "tex": "\\ell: \\vec{x} = \\begin{pmatrix} 5 \\\\ 4 \\\\ 8 \\end{pmatrix} + t \\begin{pmatrix} 2 \\\\ -1 \\\\ 2 \\end{pmatrix}",
+              "block": true
+            },
+            {
+              "type": "text",
+              "text": "   * Schneiden von "
+            },
+            {
+              "type": "math",
+              "tex": "\\ell"
+            },
+            {
+              "type": "text",
+              "text": " mit "
+            },
+            {
+              "type": "math",
+              "tex": "E"
+            },
+            {
+              "type": "text",
+              "text": ":     "
+            },
+            {
+              "type": "math",
+              "tex": "2(5 + 2t) - (4 - t) + 2(8 + 2t) - 9 = 0",
+              "block": true
+            },
+            {
+              "type": "text",
+              "text": "     "
+            },
+            {
+              "type": "math",
+              "tex": "10 + 4t - 4 + t + 16 + 4t - 9 = 0",
+              "block": true
+            },
+            {
+              "type": "text",
+              "text": "     "
+            },
+            {
+              "type": "math",
+              "tex": "9t + 13 = 0 \\implies \\mathbf{t = -\\frac{13}{9}}",
+              "block": true
+            },
+            {
+              "type": "text",
+              "text": "   * Einsetzen von "
+            },
+            {
+              "type": "math",
+              "tex": "t"
+            },
+            {
+              "type": "text",
+              "text": " in die Geradengleichung:     "
+            },
+            {
+              "type": "math",
+              "tex": "\\vec{f} = \\begin{pmatrix} 5 \\\\ 4 \\\\ 8 \\end{pmatrix} - \\frac{13}{9} \\begin{pmatrix} 2 \\\\ -1 \\\\ 2 \\end{pmatrix} = \\begin{pmatrix} 5 - \\frac{26}{9} \\\\[4pt] 4 + \\frac{13}{9} \\\\[4pt] 8 - \\frac{26}{9} \\end{pmatrix} = \\begin{pmatrix} \\frac{19}{9} \\\\[4pt] \\frac{49}{9} \\\\[4pt] \\frac{46}{9} \\end{pmatrix}",
+              "block": true
+            },
+            {
+              "type": "text",
+              "text": "   * "
+            },
+            {
+              "type": "math",
+              "tex": "\\mathbf{F\\left( \\frac{19}{9} \\;\\middle|\\; \\frac{49}{9} \\;\\middle|\\; \\frac{46}{9} \\right)}",
+              "block": true
+            }
+          ],
+          "materiality": "cosmetic"
+        }
+      ]
+    },
+    {
+      "id": "01K8GD10000000000000000A02",
+      "atom_uri": "urn:zam:atom:01K8GD10000000000000000A02",
+      "namespace": "gymnasium-mathematik-kugelgeometrie",
+      "slug": "kugelgleichung-schnittlage-kugel-ebene-schnittkreis",
+      "title": "Kugelgeometrie im Raum: Lagebeziehung Kugel-Ebene, Tangentialebenen und Schnittkreise",
+      "domain": "mathematik/analytische-geometrie",
+      "reduction": "formal",
+      "typical_age_min": 18.0,
+      "prerequisites": [
+        {
+          "atom_id": "01K8GD10000000000000000A01",
+          "type": "hard",
+          "rationale": "Kugel-Ebene-Schnittlagen nutzen den HNF-Abstand zwischen Mittelpunkt und Ebene."
+        }
+      ],
+      "alignments": [
+        {
+          "target_uri": "http://www.wikidata.org/entity/Q11224",
+          "target_label": "Sphere",
+          "alignment_type": "skos:broadMatch",
+          "provenance": "manual_curation_v1"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 13,
+          "subject": "mathematik",
+          "topic_code": "lb2",
+          "topic_title": "Kugelgeometrie und Schnittgebilde im Raum",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01K8GD10000000000000000J03",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Wie berechnet man den Radius r_k des Schnittkreises, der entsteht, wenn eine Ebene im Abstand d < r eine Kugel mit Mittelpunkt M und Kugelradius r schneidet?",
+          "concept_segments": [
+            {
+              "type": "math",
+              "tex": "r_k = \\sqrt{r^2 - d^2}",
+              "speech": "r k gleich Wurzel aus r Quadrat minus d Quadrat"
+            },
+            {
+              "type": "text",
+              "text": " (nach dem Satz des Pythagoras am rechtwinkligen Dreieck aus Kugelmittelpunkt, Kreismittelpunkt und Kreisrand)"
+            }
+          ],
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              [
+                {
+                  "type": "math",
+                  "tex": "r_k = \\sqrt{r^2 - d^2}",
+                  "speech": "r k gleich Wurzel aus r Quadrat minus d Quadrat"
+                }
+              ],
+              "r_k = r - d"
+            ],
+            "correct_index": 0
+          },
+          "materiality": "cosmetic"
+        },
+        {
+          "id": "01K8GD10000000000000000J04",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Analysiere Kugelgleichungen und Schnittbeziehungen zwischen Kugel und Ebene: 1. Kugelgleichung im "
+            },
+            {
+              "type": "math",
+              "tex": "\\mathbb{R}^3",
+              "speech": "R drei"
+            },
+            {
+              "type": "text",
+              "text": ":   * Vektorielle Form: "
+            },
+            {
+              "type": "math",
+              "tex": "(\\vec{x} - \\vec{m})^2 = r^2",
+              "speech": "Klammer auf Vektor x minus Vektor m Klammer zu Quadrat gleich r Quadrat"
+            },
+            {
+              "type": "text",
+              "text": ".   * Koordinatenform: "
+            },
+            {
+              "type": "math",
+              "tex": "(x_1 - m_1)^2 + (x_2 - m_2)^2 + (x_3 - m_3)^2 = r^2",
+              "speech": "Klammer auf x eins minus m eins Klammer zu Quadrat plus Klammer auf x zwei minus m zwei Klammer zu Quadrat plus Klammer auf x drei minus m drei Klammer zu Quadrat gleich r Quadrat"
+            },
+            {
+              "type": "text",
+              "text": ", 2. Lagebeziehung Kugel "
+            },
+            {
+              "type": "math",
+              "tex": "K(M; r)",
+              "speech": "K von M und r"
+            },
+            {
+              "type": "text",
+              "text": " und Ebene "
+            },
+            {
+              "type": "math",
+              "tex": "E",
+              "speech": "E"
+            },
+            {
+              "type": "text",
+              "text": ":   * Bestimme den Abstand "
+            },
+            {
+              "type": "math",
+              "tex": "d = d(M, E)",
+              "speech": "d gleich d von M und E"
+            },
+            {
+              "type": "text",
+              "text": " des Kugelmittelpunkts "
+            },
+            {
+              "type": "math",
+              "tex": "M",
+              "speech": "M"
+            },
+            {
+              "type": "text",
+              "text": " zur Ebene "
+            },
+            {
+              "type": "math",
+              "tex": "E",
+              "speech": "E"
+            },
+            {
+              "type": "text",
+              "text": ":     - "
+            },
+            {
+              "type": "math",
+              "tex": "d > r",
+              "speech": "d größer als r"
+            },
+            {
+              "type": "text",
+              "text": " (Passantenebene): Kein Schnittpunkt ("
+            },
+            {
+              "type": "math",
+              "tex": "K \\cap E = \\emptyset",
+              "speech": "K geschnitten mit E gleich leere Menge"
+            },
+            {
+              "type": "text",
+              "text": ").     - "
+            },
+            {
+              "type": "math",
+              "tex": "d = r",
+              "speech": "d gleich r"
+            },
+            {
+              "type": "text",
+              "text": " (Tangentialebene): Genau ein Berührpunkt "
+            },
+            {
+              "type": "math",
+              "tex": "B",
+              "speech": "B"
+            },
+            {
+              "type": "text",
+              "text": " ("
+            },
+            {
+              "type": "math",
+              "tex": "K \\cap E = \\{B\\}",
+              "speech": "K geschnitten mit E gleich die Menge aus B"
+            },
+            {
+              "type": "text",
+              "text": ").     - "
+            },
+            {
+              "type": "math",
+              "tex": "d < r",
+              "speech": "d kleiner als r"
+            },
+            {
+              "type": "text",
+              "text": " (Sekantenebene / Schnittebene): Schnittgebilde ist ein Kreis mit:       * Kreismittelpunkt "
+            },
+            {
+              "type": "math",
+              "tex": "M_k =",
+              "speech": "M k gleich"
+            },
+            {
+              "type": "text",
+              "text": " Lotfußpunkt von "
+            },
+            {
+              "type": "math",
+              "tex": "M",
+              "speech": "M"
+            },
+            {
+              "type": "text",
+              "text": " auf "
+            },
+            {
+              "type": "math",
+              "tex": "E",
+              "speech": "E"
+            },
+            {
+              "type": "text",
+              "text": ".       * Kreisradius "
+            },
+            {
+              "type": "math",
+              "tex": "\\mathbf{r_k = \\sqrt{r^2 - d^2}}",
+              "speech": "r k gleich Wurzel aus r Quadrat minus d Quadrat"
+            },
+            {
+              "type": "text",
+              "text": ", 3. Konkrete Aufgabe:   * Gegeben ist die Kugel "
+            },
+            {
+              "type": "math",
+              "tex": "K: (x_1 - 1)^2 + (x_2 + 2)^2 + (x_3 - 3)^2 = 25",
+              "speech": "Kugel K: Klammer auf x eins minus 1 Klammer zu Quadrat plus Klammer auf x zwei plus 2 Klammer zu Quadrat plus Klammer auf x drei minus 3 Klammer zu Quadrat gleich 25"
+            },
+            {
+              "type": "text",
+              "text": " und die Ebene "
+            },
+            {
+              "type": "math",
+              "tex": "E: 2x_1 - 2x_2 + x_3 - 18 = 0",
+              "speech": "Ebene E: 2 x eins minus 2 x zwei plus x drei minus 18 gleich 0"
+            },
+            {
+              "type": "text",
+              "text": ".   * a) Zeige, dass die Ebene "
+            },
+            {
+              "type": "math",
+              "tex": "E",
+              "speech": "E"
+            },
+            {
+              "type": "text",
+              "text": " die Kugel "
+            },
+            {
+              "type": "math",
+              "tex": "K",
+              "speech": "K"
+            },
+            {
+              "type": "text",
+              "text": " in einem Kreis schneidet.   * b) Bestimme den Mittelpunkt "
+            },
+            {
+              "type": "math",
+              "tex": "M_k",
+              "speech": "M k"
+            },
+            {
+              "type": "text",
+              "text": " und den Radius "
+            },
+            {
+              "type": "math",
+              "tex": "r_k",
+              "speech": "r k"
+            },
+            {
+              "type": "text",
+              "text": " des Schnittkreises."
+            }
+          ],
+          "concept": "Kugelgeometrie 13: M(1|-2|3), r = 5; d(M, E) = |2(1) - 2(-2) + 3 - 18| / sqrt(4+4+1) = |2 + 4 + 3 - 18|/3 = |-9|/3 = 3 LE; Da d = 3 < r = 5 liegt ein Schnittkreis vor; r_k = sqrt(25 - 9) = sqrt(16) = 4 LE; M_k = M + t*n = (1|-2|3) + 1*(2|-2|1) = (3|-4|4).",
+          "sample_solution": [
+            {
+              "type": "text",
+              "text": "1. Kugel-Ebene-Theorie: - Eine Kugel "
+            },
+            {
+              "type": "math",
+              "tex": "K(M; r)"
+            },
+            {
+              "type": "text",
+              "text": " ist die Menge aller Punkte im "
+            },
+            {
+              "type": "math",
+              "tex": "\\mathbb{R}^3"
+            },
+            {
+              "type": "text",
+              "text": ", die vom Mittelpunkt "
+            },
+            {
+              "type": "math",
+              "tex": "M"
+            },
+            {
+              "type": "text",
+              "text": " den festen Abstand "
+            },
+            {
+              "type": "math",
+              "tex": "r"
+            },
+            {
+              "type": "text",
+              "text": " haben. - Die Schnittfigur einer Kugel mit einer Sekantenebene ist stets ein Kreis. Aus dem rechtwinkligen Dreieck mit Hypotenuse "
+            },
+            {
+              "type": "math",
+              "tex": "r"
+            },
+            {
+              "type": "text",
+              "text": " (Kugelradius), Ankathete "
+            },
+            {
+              "type": "math",
+              "tex": "d"
+            },
+            {
+              "type": "text",
+              "text": " (Abstand "
+            },
+            {
+              "type": "math",
+              "tex": "M"
+            },
+            {
+              "type": "text",
+              "text": " zur Ebene) und Gegenkathete "
+            },
+            {
+              "type": "math",
+              "tex": "r_k"
+            },
+            {
+              "type": "text",
+              "text": " (Kreisradius) folgt direkt:   "
+            },
+            {
+              "type": "math",
+              "tex": "r_k^2 + d^2 = r^2 \\implies \\mathbf{r_k = \\sqrt{r^2 - d^2}}",
+              "block": true
+            },
+            {
+              "type": "text",
+              "text": " 2. Vollständige Berechnung der Aufgabe: - Parameter der Kugel "
+            },
+            {
+              "type": "math",
+              "tex": "K"
+            },
+            {
+              "type": "text",
+              "text": ":   * Mittelpunkt: "
+            },
+            {
+              "type": "math",
+              "tex": "\\mathbf{M(1 \\mid -2 \\mid 3)}"
+            },
+            {
+              "type": "text",
+              "text": ".   * Kugelradius: "
+            },
+            {
+              "type": "math",
+              "tex": "\\mathbf{r = \\sqrt{25} = 5}"
+            },
+            {
+              "type": "text",
+              "text": ". - a) Nachweis der Schnittlage:   * Ebenengleichung: "
+            },
+            {
+              "type": "math",
+              "tex": "2x_1 - 2x_2 + x_3 - 18 = 0"
+            },
+            {
+              "type": "text",
+              "text": ".   * Normalenvektor: "
+            },
+            {
+              "type": "math",
+              "tex": "\\vec{n} = \\begin{pmatrix} 2 \\\\ -2 \\\\ 1 \\end{pmatrix} \\implies |\\vec{n}| = \\sqrt{2^2 + (-2)^2 + 1^2} = \\sqrt{9} = \\mathbf{3}"
+            },
+            {
+              "type": "text",
+              "text": ".   * Abstand "
+            },
+            {
+              "type": "math",
+              "tex": "d(M, E)"
+            },
+            {
+              "type": "text",
+              "text": " mittels HNF:     "
+            },
+            {
+              "type": "math",
+              "tex": "d = \\left| \\frac{2(1) - 2(-2) + (3) - 18}{3} \\right| = \\left| \\frac{2 + 4 + 3 - 18}{3} \\right| = \\left| \\frac{-9}{3} \\right| = \\mathbf{3\\,\\text{LE}}",
+              "block": true
+            },
+            {
+              "type": "text",
+              "text": "   * Vergleich: Da "
+            },
+            {
+              "type": "math",
+              "tex": "\\mathbf{d = 3 < r = 5}"
+            },
+            {
+              "type": "text",
+              "text": ", ist die Ebene "
+            },
+            {
+              "type": "math",
+              "tex": "E"
+            },
+            {
+              "type": "text",
+              "text": " eine Sekantenebene; sie schneidet die Kugel in einem Kreis. - b) Radius und Mittelpunkt des Schnittkreises:   * Kreisradius "
+            },
+            {
+              "type": "math",
+              "tex": "r_k"
+            },
+            {
+              "type": "text",
+              "text": ":     "
+            },
+            {
+              "type": "math",
+              "tex": "\\mathbf{r_k = \\sqrt{r^2 - d^2} = \\sqrt{5^2 - 3^2} = \\sqrt{25 - 9} = \\sqrt{16} = \\mathbf{4\\,\\text{LE}}}",
+              "block": true
+            },
+            {
+              "type": "text",
+              "text": "   * Kreismittelpunkt "
+            },
+            {
+              "type": "math",
+              "tex": "M_k"
+            },
+            {
+              "type": "text",
+              "text": " (Lotfußpunkt):     * Lotgerade von "
+            },
+            {
+              "type": "math",
+              "tex": "M"
+            },
+            {
+              "type": "text",
+              "text": " auf "
+            },
+            {
+              "type": "math",
+              "tex": "E"
+            },
+            {
+              "type": "text",
+              "text": ":       "
+            },
+            {
+              "type": "math",
+              "tex": "\\vec{x} = \\begin{pmatrix} 1 \\\\ -2 \\\\ 3 \\end{pmatrix} + t \\begin{pmatrix} 2 \\\\ -2 \\\\ 1 \\end{pmatrix}",
+              "block": true
+            },
+            {
+              "type": "text",
+              "text": "     * Einsetzen in die Ebenengleichung:       "
+            },
+            {
+              "type": "math",
+              "tex": "2(1 + 2t) - 2(-2 - 2t) + (3 + t) - 18 = 0",
+              "block": true
+            },
+            {
+              "type": "text",
+              "text": "       "
+            },
+            {
+              "type": "math",
+              "tex": "2 + 4t + 4 + 4t + 3 + t - 18 = 0",
+              "block": true
+            },
+            {
+              "type": "text",
+              "text": "       "
+            },
+            {
+              "type": "math",
+              "tex": "9t - 9 = 0 \\implies \\mathbf{t = 1}",
+              "block": true
+            },
+            {
+              "type": "text",
+              "text": "     * Einsetzen von "
+            },
+            {
+              "type": "math",
+              "tex": "t = 1"
+            },
+            {
+              "type": "text",
+              "text": ":       "
+            },
+            {
+              "type": "math",
+              "tex": "\\vec{m}_k = \\begin{pmatrix} 1 \\\\ -2 \\\\ 3 \\end{pmatrix} + 1 \\begin{pmatrix} 2 \\\\ -2 \\\\ 1 \\end{pmatrix} = \\begin{pmatrix} 3 \\\\ -4 \\\\ 4 \\end{pmatrix}",
+              "block": true
+            },
+            {
+              "type": "text",
+              "text": "   * Ergebnis: Der Schnittkreis hat den Mittelpunkt "
+            },
+            {
+              "type": "math",
+              "tex": "\\mathbf{M_k(3 \\mid -4 \\mid 4)}"
+            },
+            {
+              "type": "text",
+              "text": " und den Radius "
+            },
+            {
+              "type": "math",
+              "tex": "\\mathbf{r_k = 4\\,\\text{LE}}"
+            },
+            {
+              "type": "text",
+              "text": "."
+            }
+          ],
+          "materiality": "cosmetic"
+        }
+      ]
+    }
+  ]
+}

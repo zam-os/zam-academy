@@ -1,0 +1,218 @@
+{
+  "schema": 1,
+  "checked": "2026-11-08",
+  "curriculum": "https://www.lehrplanplus.bayern.de/fachlehrplan/gymnasium/13/mathematik",
+  "school_type": "gymnasium",
+  "grade": 13,
+  "subject": "mathematik",
+  "scope": "all-official-learning-areas",
+  "optional_lessons": [],
+  "scope_note": "Vier Lernbereiche des Fachlehrplans Mathematik 13 mit erhöhtem Anforderungsniveau (26 + 14 + 24 + 20 = 84 Std.); das Gymnasium führt Mathematik 13 nur auf diesem Niveau, die einstündige Differenzierungsstunde hat keinen eigenen Fachlehrplan. Jede der 22 Kompetenzerwartungen hat eigene Lektionen; int-6 und int-7 teilen die Flächen-KE inklusive der uneigentlichen Integrale, rg-9 erfüllt die Kugel-KE und die Anwendungs-KE, aw-4 liegt in zwei KE. Ableitungs- und Integralregeln aus M12 werden benutzt und in int-5 sowie aw-1 aufgefrischt. Zeichnen mit Dynamischer Geometriesoftware, schriftliche Ausarbeitung und Präsentation geschehen auf Papier oder im Unterricht; die App erläutert und überprüft die zugehörigen Begriffe und Rechnungen. Lehrervideos folgen als separater Schritt.",
+  "rows": [
+    {
+      "lb": 1,
+      "competence": "deuten das bestimmte Integral als Flächenbilanz und nutzen dies für Argumentationen.",
+      "lessons": [
+        "int-1-flaechenbilanz"
+      ],
+      "status": "implemented",
+      "evidence": "Das Labor area-bilanz zeigt A⁺, A⁻ und die Bilanz zu einer beweglichen Geraden; flaechenwert und bilanz-interpretieren rechnen Flächenbilanzen und ihre Vorzeichen."
+    },
+    {
+      "lb": 1,
+      "competence": "definieren den Begriff Integralfunktion und beschreiben seine Bedeutung; sie verwenden eine dynamische Mathematiksoftware, um den Zusammenhang zwischen den Graphen von Integranden- und Integralfunktion anhand von Flächenbetrachtungen zu erläutern.",
+      "lessons": [
+        "int-2-integralfunktion"
+      ],
+      "status": "implemented",
+      "evidence": "integralfunktion zeichnet f und F(x) = ∫ₐˣ f nebeneinander und misst F an der Ziehmarke; integralwert und zuordnen bilden Flächenfunktionen zu konstanten und linearen Raten."
+    },
+    {
+      "lb": 1,
+      "competence": "begründen den Hauptsatz der Differential- und Integralrechnung mithilfe anschaulicher Überlegungen und berechnen Werte bestimmter Integrale mithilfe von Stammfunktionen. Sie grenzen die Begriffe Integralfunktion und Stammfunktion voneinander ab.",
+      "lessons": [
+        "int-3-hauptsatz"
+      ],
+      "status": "implemented",
+      "evidence": "hauptsatz vergleicht die Flächenbilanz mit F(b) − F(a) für ein bewegliches Polynom; bestimmtes-integral und stammfunktion-pruefen rechnen Werte mit Stammfunktionen."
+    },
+    {
+      "lb": 1,
+      "competence": "schließen vom Graphen einer Funktion auf den Verlauf des Graphen einer zugehörigen Integralfunktion und vom Graphen einer Integralfunktion auf den Graphen der zugehörigen Integrandenfunktion.",
+      "lessons": [
+        "int-4-graphen"
+      ],
+      "status": "implemented",
+      "evidence": "graph-schluss zeichnet f und die zugehörige Integralfunktion und markiert Extremstellen; graph-schluss und extremstelle schließen in beide Richtungen."
+    },
+    {
+      "lb": 1,
+      "competence": "ermitteln Terme von Stammfunktionen, auch unter Verwendung der Integrationsregeln für x ↦ f′(x)/f(x), x ↦ f′(x)·e^{f(x)} und x ↦ f(ax+b).",
+      "lessons": [
+        "int-5-stammfunktionen"
+      ],
+      "status": "implemented",
+      "evidence": "stammfunktion bildet Terme zu Potenz, Kehrwert und e-Funktion und prüft sie per Differenzenquotient; stammterm und regel-anwenden üben die drei verketteten Regeln."
+    },
+    {
+      "lb": 1,
+      "competence": "berechnen mithilfe der Integralrechnung Inhalte von Flächen, die durch Funktionsgraphen begrenzt sind, und erläutern ihr Vorgehen. Dabei interpretieren sie auch uneigentliche Integrale und ermitteln deren Werte.",
+      "lessons": [
+        "int-6-flaechen",
+        "int-7-uneigentlich"
+      ],
+      "status": "implemented",
+      "evidence": "zwei-graphen berechnet die Fläche zwischen f und g zwischen ihren Schnittpunkten, uneigentlich lässt die obere Grenze wachsen; flaeche-zwischen, schnittpunkte, uneigentlich-wert und konvergenz trainieren beides."
+    },
+    {
+      "lb": 1,
+      "competence": "interpretieren das bestimmte Integral als Gesamtänderung einer Größe, wenn die Integrandenfunktion die lokale bzw. momentane Änderungsrate dieser Größe beschreibt, und wenden dies in Sachzusammenhängen an (u. a. Zusammenhang zwischen Geschwindigkeit und zurückgelegter Strecke).",
+      "lessons": [
+        "int-8-gesaendteraenderung"
+      ],
+      "status": "implemented",
+      "evidence": "gesamt-aenderung integriert ein Geschwindigkeitsprofil zu Verschiebung und Strecke; strecke-geschwindigkeit und gesamt-aenderung üben die Gesamtänderung aus einer Rate."
+    },
+    {
+      "lb": 1,
+      "competence": "bestimmen mithilfe der Integralrechnung das Volumen eines Körpers, der durch Rotation eines Funktionsgraphen um die x‑Achse entsteht.",
+      "lessons": [
+        "int-9-rotationskoerper"
+      ],
+      "status": "implemented",
+      "evidence": "rotationskoerper dreht einen Geradenabschnitt um die x-Achse und vergleicht π ∫ f² mit Kegel und Zylinder; rotationsvolumen und volumen-vergleich rechnen Rotationsvolumen."
+    },
+    {
+      "lb": 2,
+      "competence": "unterscheiden diskrete und stetige Zufallsgrößen anhand von Beispielen und nutzen zur Darstellung von Wahrscheinlichkeitsverteilungen Histogramme sowie die Graphen von Dichtefunktionen und kumulativen Verteilungsfunktionen.",
+      "lessons": [
+        "nv-1-zufallsgroessen"
+      ],
+      "status": "implemented",
+      "evidence": "zufallsgroesse stellt Histogramm und Dichte nebeneinander und summiert Balken beziehungsweise Flächen; diskret-stetig und verteilung-ablesen ordnen Größen ein und lesen Wahrscheinlichkeiten ab."
+    },
+    {
+      "lb": 2,
+      "competence": "machen die Bedeutung der Normalverteilung damit plausibel, dass die Erhebung von Messwerten (z. B. Körpergröße, Länge von Werkstücken) häufig zu glockenförmigen Histogrammen führt.",
+      "lessons": [
+        "nv-2-glockenkurve"
+      ],
+      "status": "implemented",
+      "evidence": "glockenkurve zieht Messreihen mit einstellbarer Streuung und zeigt die Glockenform; messwerte und glockenform bewerten Kennwerte und die Form von Histogrammen."
+    },
+    {
+      "lb": 2,
+      "competence": "erläutern die grundlegenden Eigenschaften der Dichtefunktion und der kumulativen Verteilungsfunktion einer normalverteilten Zufallsgröße sowie den Verlauf der zugehörigen Graphen, z. B. mithilfe einer dynamischen Mathematiksoftware. Sie entnehmen dem Term der Dichtefunktion den Erwartungswert und die Standardabweichung.",
+      "lessons": [
+        "nv-3-dichte-verteilung"
+      ],
+      "status": "implemented",
+      "evidence": "normalverteilung zeichnet Dichte und Verteilungsfunktion zu μ und σ und liest beide aus dem Term; dichte-parameter und eigenschaften fragen F(μ) = 0,5 und die Wendepunkte ab."
+    },
+    {
+      "lb": 2,
+      "competence": "bestimmen die Wahrscheinlichkeit dafür, dass die Werte einer normalverteilten Zufallsgröße in einem bestimmten Intervall liegen. Sie ermitteln außerdem zu vorgegebenen Wahrscheinlichkeiten passende, insbesondere um den Erwartungswert symmetrische Intervalle, wo möglich auch unter Verwendung der Sigma-Regeln.",
+      "lessons": [
+        "nv-4-sigma-regeln"
+      ],
+      "status": "implemented",
+      "evidence": "sigma-regeln schraffiert Intervalle unter der Dichte und rechnet P(a < X ≤ b) über Φ; wahrscheinlichkeit und intervall-suchen üben Sigma-Regeln und symmetrische Intervalle."
+    },
+    {
+      "lb": 3,
+      "competence": "stellen die Gleichungen von Geraden und Ebenen in Parameterform auf und deuten die lineare Abhängigkeit bzw. lineare Unabhängigkeit von Vektoren anschaulich. Sie stellen, falls möglich, einen Vektor als Linearkombination anderer Vektoren dar.",
+      "lessons": [
+        "rg-1-geraden",
+        "rg-2-linearkombination",
+        "rg-3-ebene-parameterform"
+      ],
+      "status": "implemented",
+      "evidence": "gerade-3d, linearkombination und ebene-parameter zeichnen Geraden, Vektorkombinationen und Ebenen in schräger Parallelprojektion; geraden-gleichung, punkt-auf-gerade, linearkombination, abhaengigkeit, ebene-parameter und punkt-in-ebene rechnen die Gleichungen aus."
+    },
+    {
+      "lb": 3,
+      "competence": "stellen die Gleichungen von Ebenen in Normalen- und Koordinatenform auf und ziehen ggf. aus der Ebenengleichung Rückschlüsse auf die besondere Lage der Ebene im Koordinatensystem.",
+      "lessons": [
+        "rg-4-ebene-koordinatenform"
+      ],
+      "status": "implemented",
+      "evidence": "ebene-normal liest n und d aus der Gleichung und zeigt Achsenabschnitte und Abstand zum Ursprung; koordinatenform und besondere-lage üben Normalenform und Sonderlagen."
+    },
+    {
+      "lb": 3,
+      "competence": "ermitteln systematisch und begründet die gegenseitige Lage von Geraden, von Ebenen sowie von Geraden und Ebenen zueinander und berechnen ggf. Koordinaten von Schnittpunkten bzw. Gleichungen von Schnittgeraden sowie die Größe von Schnittwinkeln. Zur Veranschaulichung und zur Kontrolle von Ergebnissen verwenden sie eine dynamische Geometriesoftware.",
+      "lessons": [
+        "rg-5-lage-geraden",
+        "rg-6-gerade-ebene",
+        "rg-7-lage-ebenen"
+      ],
+      "status": "implemented",
+      "evidence": "geraden-lage, gerade-ebene und ebenen-lage entscheiden die Lagefälle und zeigen Schnittpunkte; lagerelation, schnittwinkel, schnittpunkt-gerade-ebene, winkel-gerade-ebene, ebenen-lage und schnittgerade rechnen Schnitte und Winkel."
+    },
+    {
+      "lb": 3,
+      "competence": "bestimmen den Abstand zweier Punkte, eines Punkts von einer Geraden oder einer Ebene, zweier windschiefer oder paralleler Geraden, zweier Ebenen sowie einer Geraden von einer Ebene, ggf. auch unter Verwendung der Hesse’schen Normalform.",
+      "lessons": [
+        "rg-8-abstaende"
+      ],
+      "status": "implemented",
+      "evidence": "abstand rechnet Abstände von Punkt, Gerade und Ebene über Kreuzprodukt und Hesse Normalform; abstand-punkt-gerade und abstand-punkt-ebene üben beide Wege."
+    },
+    {
+      "lb": 3,
+      "competence": "stellen Gleichungen von Kugeln in Koordinatenform auf und interpretieren diese. Auf der Grundlage von Abstandsberechnungen bestimmen sie die gegenseitige Lage von Kugeln und Geraden sowie von Kugeln und Ebenen.",
+      "lessons": [
+        "rg-9-kugeln"
+      ],
+      "status": "implemented",
+      "evidence": "kugel stellt Kugel, Ebene und Gerade dar und vergleicht Radius und Abstand; kugel-gleichung und lage-kugel-ebene üben quadratische Ergänzung und die Lagenfrage."
+    },
+    {
+      "lb": 3,
+      "competence": "wenden bei Berechnungen an geometrischen Objekten – in Sachzusammenhängen auf der Grundlage einer geeigneten Modellierung – Methoden aus der analytischen Geometrie sowie grundlegende Konzepte und Strategien aus der Unter- und Mittelstufe flexibel und situationsgerecht an. Sie dokumentieren ihre Lösungswege klar strukturiert, präsentieren sie fachsprachlich korrekt in ansprechender und überzeugender Form und beurteilen unterschiedliche Vorgehensweisen vergleichend.",
+      "lessons": [
+        "rg-9-kugeln"
+      ],
+      "status": "implemented",
+      "evidence": "Sachnahe Konstellationen in kugel und lage-kugel-ebene verlangen Modellierung, dokumentierte Lösungswege und den Vergleich zweier Vorgehensweisen."
+    },
+    {
+      "lb": 4,
+      "competence": "wenden ihre bisherigen Kenntnisse der Differential- und Integralrechnung bei der Untersuchung verknüpfter Funktionen, auch mit Parametern, an; dabei nutzen sie auch eine dynamische Mathematiksoftware.",
+      "lessons": [
+        "aw-1-verknuepfte-funktionen"
+      ],
+      "status": "implemented",
+      "evidence": "verkettet zeichnet f(g(x)) mit Parametern und bildet Kettenregelprodukte; verkettet-wert und verkettet-ableitung rechnen Werte und Ableitungen."
+    },
+    {
+      "lb": 4,
+      "competence": "bestimmen aus gegebenen Bedingungen die Werte von Parametern eines Funktionsterms.",
+      "lessons": [
+        "aw-2-parameter"
+      ],
+      "status": "implemented",
+      "evidence": "parameter stellt Bedingungen wie Punkt, Steigung und Extremstelle als Gleichungen auf; parameter-punkt und parameter-tangente lösen die zugehörigen Systeme."
+    },
+    {
+      "lb": 4,
+      "competence": "lösen Extremwertprobleme zu inner- und außermathematischen Fragestellungen.",
+      "lessons": [
+        "aw-3-extremwerte",
+        "aw-4-sachzusammenhaenge"
+      ],
+      "status": "implemented",
+      "evidence": "extremwert und sachextremum sammeln Kandidaten aus Ableitung und Rand; extremwert, parameter-extremum, sachextremum und modell-pruefen lösen und validieren Extremwertprobleme."
+    },
+    {
+      "lb": 4,
+      "competence": "wenden die Methoden der Differential- und Integralrechnung in Sachzusammenhängen flexibel und reflektiert an; sie interpretieren und validieren ihre Ergebnisse. Es wird ihnen bewusst, dass die Differential- und Integralrechnung in unterschiedlichsten Bereichen Verwendung findet (z. B. Wirtschaftsmathematik, Statistik, Klimaforschung, Ingenieurwesen), was ihnen erneut verdeutlicht, dass mathematische Kenntnisse für viele Berufsfelder eine wesentliche Grundlage darstellen.",
+      "lessons": [
+        "aw-4-sachzusammenhaenge",
+        "aw-5-anwendungen"
+      ],
+      "status": "implemented",
+      "evidence": "sachextremum und anwendung modellieren Optimierung und Gesamtmenge in Wirtschaft, Klima und Technik; anwendung-integral und rate-vergleich interpretieren und validieren die Ergebnisse."
+    }
+  ]
+}
