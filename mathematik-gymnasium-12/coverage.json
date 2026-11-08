@@ -1,0 +1,299 @@
+{
+  "schema": 1,
+  "checked": "2026-11-08",
+  "curriculum": "https://www.lehrplanplus.bayern.de/fachlehrplan/gymnasium/12/mathematik/regulaer",
+  "school_type": "gymnasium",
+  "grade": 12,
+  "subject": "mathematik",
+  "scope": "all-official-learning-areas",
+  "optional_lessons": [],
+  "scope_note": "Fünf Lernbereiche des aktuellen LehrplanPLUS-Fachlehrplans für Mathematik 12 am Gymnasium (erhöhtes Anforderungsniveau). Am Gymnasium gibt es in der Oberstufe keine Zweige. Zeichnungen mit dynamischer Geometriesoftware und CAS-Einsatz geschehen im Unterricht oder am Rechner; die App erläutert und überprüft die mathematischen Konzepte, Formeln und Rechnungen. Videos folgen als separater Schritt.",
+  "rows": [
+    {
+      "lb": 1,
+      "competence": "analysieren ganzrationale Funktionen, insbesondere solche mit Parametern, hinsichtlich ihrer Eigenschaften durch flexible und reflektierte Nutzung der Methoden der Differentialrechnung. Bei der Untersuchung von Funktionenscharen verwenden sie auch eine dynamische Mathematiksoftware.",
+      "lessons": [
+        "g12-schar-ganzrational"
+      ],
+      "status": "implemented",
+      "evidence": "Das Labor polynomial-family variiert Scharparameter a; parameter-einfluss und kurvenschar-nullstellen üben Schardiskussion.",
+      "section": "1.1"
+    },
+    {
+      "lb": 1,
+      "competence": "schließen aus dem Graphen einer Funktion auf den Graphen einer zugehörigen Stammfunktion und begründen ihre Vorgehensweise. Bei ganzrationalen Funktionen ermitteln sie zusätzlich aus dem Funktionsterm die Terme zugehöriger Stammfunktionen.",
+      "lessons": [
+        "g12-stammfunktion-ganzrational"
+      ],
+      "status": "implemented",
+      "evidence": "Das Labor antiderivative-graph visualisiert f(x) und F(x); stammfunktion-term und stammfunktion-ableitung üben Stammfunktionen.",
+      "section": "1.1"
+    },
+    {
+      "lb": 1,
+      "competence": "verstehen die natürliche Exponentialfunktion als eine Funktion, bei der der Funktionsterm und der Term der Ableitungsfunktion übereinstimmen. Auf der Grundlage eines gefestigten Verständnisses von Termstrukturen differenzieren sie damit unter Nutzung von Produkt- und Kettenregel auch geeignete Verknüpfungen der Exponentialfunktion mit ganzrationalen Funktionen.",
+      "lessons": [
+        "g12-exp-ableitung-regeln"
+      ],
+      "status": "implemented",
+      "evidence": "Das Labor exp-derivatives visualisiert Produkt- und Kettenregel; produktregel-exp und kettenregel-exp üben Ableitungen.",
+      "section": "1.2"
+    },
+    {
+      "lb": 1,
+      "competence": "machen durch einen Vergleich des Wachstums von Exponential- und Potenzfunktion die Grenzwerte Limes von x^n/e^x für x gegen +∞ und Limes von x^n*e^x für x gegen −∞ plausibel.",
+      "lessons": [
+        "g12-exp-grenzwerte"
+      ],
+      "status": "implemented",
+      "evidence": "Das Labor exp-limits vergleicht e^x und Potenzen; limes-exp-asymptote und dominanz-exp-rechnung üben Grenzwerte.",
+      "section": "1.2"
+    },
+    {
+      "lb": 1,
+      "competence": "untersuchen gezielt auch mit den Methoden der Differentialrechnung geeignete Verknüpfungen der natürlichen Exponentialfunktion mit ganzrationalen Funktionen hinsichtlich deren Eigenschaften. Sie lösen dabei auftretende Exponentialgleichungen unter Rückgriff auf ihre in der Jahrgangsstufe 10 erworbenen Kenntnisse und verwenden dabei den natürlichen Logarithmus. Insbesondere im Fall vorliegender Parameter nutzen sie zur Untersuchung und Veranschaulichung auch eine dynamische Mathematiksoftware.",
+      "lessons": [
+        "g12-exp-kurvendiskussion"
+      ],
+      "status": "implemented",
+      "evidence": "Das Labor exp-curve untersucht Hoch-, Tief- und Wendepunkte; exp-nullstellen und exp-gleichung-ln üben Kurvendiskussion.",
+      "section": "1.2"
+    },
+    {
+      "lb": 1,
+      "competence": "lösen Problemstellungen in Sachkontexten, insbesondere im Rahmen der Modellierung von Wachstums- und Abklingvorgängen, und führen dabei auch beliebige Exponentialfunktionen auf die natürliche Exponentialfunktion zurück. Sie nutzen ihre Ergebnisse für eine fundierte Bewertung von Sachverhalten.",
+      "lessons": [
+        "g12-exp-wachstum-modelle"
+      ],
+      "status": "implemented",
+      "evidence": "Das Labor exp-growth simuliert Wachstums- und Abklingvorgänge; halbwertszeit-berechnen und basiswechsel-k modellieren Kontexte.",
+      "section": "1.2"
+    },
+    {
+      "lb": 1,
+      "competence": "machen die Ableitungsfunktion der Sinusfunktion und die der Kosinusfunktion anhand graphischer Überlegungen plausibel.",
+      "lessons": [
+        "g12-trig-ableitung-graph"
+      ],
+      "status": "implemented",
+      "evidence": "Das Labor trig-tangent plausibilisiert Steigungen an Sinuskurven; trig-ableitungswert und trig-wendetangente üben Ableitungen.",
+      "section": "1.3"
+    },
+    {
+      "lb": 1,
+      "competence": "untersuchen einfache Verknüpfungen der Sinus- bzw. Kosinusfunktion insbesondere mit linearen Funktionen nun auch mit den Methoden der Differentialrechnung.",
+      "lessons": [
+        "g12-trig-kurvendiskussion"
+      ],
+      "status": "implemented",
+      "evidence": "Das Labor trig-composition untersucht Schwingungen; trig-kettenregel-rechnen und trig-extremwert-stelle üben Ableitungsregeln.",
+      "section": "1.3"
+    },
+    {
+      "lb": 2,
+      "competence": "formulieren eine axiomatische Definition von Wahrscheinlichkeit und folgern aus den Axiomen weitere Aussagen über Wahrscheinlichkeiten. Sie vergleichen diesen Wahrscheinlichkeitsbegriff mit anderen Ansätzen zur Begriffsdefinition , z. B. Laplace'scher, frequentistischer oder subjektiver Wahrscheinlichkeitsbegriff .",
+      "lessons": [
+        "g12-stoch-axiomatik"
+      ],
+      "status": "implemented",
+      "evidence": "Das Labor kolmogorov-axioms illustriert Axiome von Kolmogorow; additionssatz-rechnen und gegenereignis-rechnen üben Wahrscheinlichkeiten."
+    },
+    {
+      "lb": 2,
+      "competence": "erläutern die Begriffe Zufallsgröße, Wahrscheinlichkeitsverteilung sowie kumulative Wahrscheinlichkeitsverteilung und veranschaulichen die Wahrscheinlichkeitsverteilungen von Zufallsgrößen, z. B. durch Säulendiagramme oder Histogramme mit Rechtecksbreite 1. Sie bestimmen Erwartungswerte, Varianzen und Standardabweichungen und interpretieren diese.",
+      "lessons": [
+        "g12-stoch-zufallsgroesse-parameter"
+      ],
+      "status": "implemented",
+      "evidence": "Das Labor random-variable berechnet Kenngrößen; erwartungswert-berechnen und varianz-berechnen üben Parameter diskreter Verteilungen."
+    },
+    {
+      "lb": 2,
+      "competence": "führen Sachsituationen durch Analogiebildung auf die Urnenmodelle „Ziehen mit Zurücklegen“ bzw. „Ziehen ohne Zurücklegen“ zurück, um die Anzahl möglicher Ergebnisse auch unter Zuhilfenahme von Binomialkoeffizienten zu bestimmen. In diesen Fällen berechnen sie damit verbundene Wahrscheinlichkeiten.",
+      "lessons": [
+        "g12-stoch-urnenmodelle"
+      ],
+      "status": "implemented",
+      "evidence": "Das Labor urn-models unterscheidet Ziehen mit und ohne Zurücklegen; lotto-kombinationen und urne-ohne-zuruecklegen üben Zählprinzipien."
+    },
+    {
+      "lb": 2,
+      "competence": "modellieren Sachzusammenhänge mit Bernoulli-Ketten und verwenden die Binomialverteilung bei der Berechnung von Wahrscheinlichkeiten. Dabei nutzen sie auch die Summenschreibweise unter Verwendung des Symbols ∑.",
+      "lessons": [
+        "g12-stoch-bernoulli-binomial"
+      ],
+      "status": "implemented",
+      "evidence": "Das Labor bernoulli-chain visualisiert Pfadwahrscheinlichkeiten; bernoulli-einzel und bernoulli-gegenereignis üben die Bernoulli-Formel."
+    },
+    {
+      "lb": 2,
+      "competence": "berechnen mithilfe der Parameter der Binomialverteilung den Erwartungswert und die Standardabweichung einer binomialverteilten Zufallsgröße und beschreiben – auch unter Nutzung einer dynamischen Mathematiksoftware – den Einfluss der Parameter auf die grafische Darstellung der Binomialverteilung.",
+      "lessons": [
+        "g12-stoch-binomial-parameter"
+      ],
+      "status": "implemented",
+      "evidence": "Das Labor binomial-params zeigt Glockenform und Streuung; mu-sigma-ausrechnen und sigma-intervall bestimmen Kenngrößen und Umgebungen."
+    },
+    {
+      "lb": 3,
+      "competence": "beschreiben anhand eines Beispiels das grundsätzliche Vorgehen bei einem einseitigen Signifikanztest und grenzen dabei auch die Statistik von der Wahrscheinlichkeitsrechnung ab. Sie erläutern, inwiefern die Zielsetzung des Tests die Wahl der Nullhypothese beeinflusst.",
+      "lessons": [
+        "g12-hypo-grundprinzip"
+      ],
+      "status": "implemented",
+      "evidence": "Das Labor hypothesis-setup führt in Nullhypothese und Gegenhypothese ein; nullhypothese-aufstellen und testrichtung-bestimmen üben Testaufbau."
+    },
+    {
+      "lb": 3,
+      "competence": "berechnen für einseitige Signifikanztests die Wahrscheinlichkeit für den Fehler erster Art sowie unter Annahme der Gültigkeit einer konkreten alternativen Hypothese die Wahrscheinlichkeit für den Fehler zweiter Art. Zur Veranschaulichung der beiden Fehlerwahrscheinlichkeiten nutzen sie eine geeignete Software.",
+      "lessons": [
+        "g12-hypo-fehlerarten"
+      ],
+      "status": "implemented",
+      "evidence": "Das Labor error-visualizer trennt Fehler 1. und 2. Art; alpha-fehler-rechnen und fehler-tradeoff bestimmen Irrtumswahrscheinlichkeiten."
+    },
+    {
+      "lb": 3,
+      "competence": "bestimmen bei gegebenem Signifikanzniveau den Ablehnungsbereich eines einseitigen Signifikanztests.",
+      "lessons": [
+        "g12-hypo-ablehnungsbereich"
+      ],
+      "status": "implemented",
+      "evidence": "Das Labor rejection-region ermittelt kritische Werte; ablehnungsbereich-rechts und entscheidungsregel-anwenden formulieren Testentscheidungen."
+    },
+    {
+      "lb": 3,
+      "competence": "interpretieren Ergebnisse einseitiger Signifikanztests im Sachzusammenhang (u. a. Umfragen vor Wahlen) und widerlegen Fehlinterpretationen. Sie erläutern insbesondere, dass ein Signifikanztest keine Aussage über die Wahrscheinlichkeit der Gültigkeit der Nullhypothese zulässt und was unter einem „signifikanten Ergebnis“ verstanden wird.",
+      "lessons": [
+        "g12-hypo-interpretation"
+      ],
+      "status": "implemented",
+      "evidence": "Das Labor test-interpretation bewertet Signifikanzaussagen; fehlinterpretation-erkennen und fehlermarge-umfrage hinterfragen statistische Schlüsse."
+    },
+    {
+      "lb": 4,
+      "competence": "leiten einfache gebrochen-rationale Funktionen (d. h. Funktionen, bei denen sowohl Zähler- als auch Nennerpolynom höchstens den Grad 2 aufweisen und deren Funktionsterm in vollständig gekürzter Form vorliegt) ab; hierfür nutzen sie insbesondere die Quotientenregel.",
+      "lessons": [
+        "g12-quotientenregel-basis"
+      ],
+      "status": "implemented",
+      "evidence": "Das Labor quotient-rule leitet Brüche her; quotientenregel-linear und ableitungszaehler üben die Quotientenregel.",
+      "section": "4.1"
+    },
+    {
+      "lb": 4,
+      "competence": "wenden bei der Untersuchung einfacher gebrochen-rationaler Funktionen nun auch die Methoden der Differentialrechnung reflektiert an und nutzen dabei insbesondere in Fällen, in denen die Nullstellen der Ableitungsfunktionen nicht unmittelbar bestimmt werden können, eine dynamische Mathematiksoftware.",
+      "lessons": [
+        "g12-gebrochen-rational-diskussion"
+      ],
+      "status": "implemented",
+      "evidence": "Das Labor rational-curve untersucht Polstellen und Lücken; asymptote-bestimmen und polstelle-bestimmen analysieren Graphenverläufe.",
+      "section": "4.1"
+    },
+    {
+      "lb": 4,
+      "competence": "untersuchen u. a. mithilfe der Quotientenregel einfache Verknüpfungen von Funktionen bisher bekannter Funktionstypen.",
+      "lessons": [
+        "g12-quotientenregel-verknuepfung"
+      ],
+      "status": "implemented",
+      "evidence": "Das Labor quotient-compositions verknüpft e-Funktion und Trigonometrie; exp-durch-x-extremum und quotient-sin-ableitung üben Kurvendiskussion.",
+      "section": "4.1"
+    },
+    {
+      "lb": 4,
+      "competence": "schließen mithilfe der strengen Monotonie auf die Umkehrbarkeit einer Funktion und erläutern insbesondere bei Quadrat- und Wurzelfunktion, wie die Graphen von Funktion und zugehöriger Umkehrfunktion auseinander hervorgehen. In einfachen Fällen bestimmen sie rechnerisch den Term der Umkehrfunktion.",
+      "lessons": [
+        "g12-umkehrfunktion-wurzel"
+      ],
+      "status": "implemented",
+      "evidence": "Das Labor inverse-function spiegelt Graphen an der ersten Winkelhalbierenden; umkehrterm-linear und umkehr-quadrat üben Umkehrbarkeit.",
+      "section": "4.2"
+    },
+    {
+      "lb": 4,
+      "competence": "leiten Potenzfunktionen mit rationalen Exponenten sowie Verknüpfungen dieser Potenzfunktionen mit Funktionen bisher bekannter Funktionstypen ab; hierfür nutzen sie flexibel die Produkt-, die Quotienten- und die Kettenregel.",
+      "lessons": [
+        "g12-potenz-rationale-exponenten"
+      ],
+      "status": "implemented",
+      "evidence": "Das Labor rational-powers visualisiert Potenzen mit rationalen Exponenten; wurzel-ableitungswert und kettenregel-wurzel üben Ableitungen.",
+      "section": "4.2"
+    },
+    {
+      "lb": 4,
+      "competence": "untersuchen einfache Verknüpfungen der Wurzelfunktion mit Funktionen bisher bekannter Funktionstypen auch mit den Methoden der Differentialrechnung.",
+      "lessons": [
+        "g12-wurzel-kurvendiskussion"
+      ],
+      "status": "implemented",
+      "evidence": "Das Labor root-curve untersucht Wurzelfunktionen; wurzel-definitionsbereich und wurzel-extrempunkt bestimmen Rand- und Extremwerte.",
+      "section": "4.2"
+    },
+    {
+      "lb": 4,
+      "competence": "verstehen die natürliche Logarithmusfunktion als Umkehrfunktion der natürlichen Exponentialfunktion und nutzen diesen Zusammenhang, um den Funktionsterm der Ableitungsfunktion der natürlichen Logarithmusfunktion herzuleiten.",
+      "lessons": [
+        "g12-ln-ableitung"
+      ],
+      "status": "implemented",
+      "evidence": "Das Labor ln-derivative zeigt Steigungen der Logarithmuskurve; ln-kettenregel-ausrechnen und ln-tangente-ursprung üben Ableitung und Tangenten.",
+      "section": "4.3"
+    },
+    {
+      "lb": 4,
+      "competence": "untersuchen in einfachen Fällen Verknüpfungen der natürlichen Logarithmusfunktion mit Funktionen bisher bekannter Funktionstypen auch mit den Methoden der Differentialrechnung und nutzen dabei auch die Rechenregeln für Logarithmen sowie die Grenzwerte Limes von ln(x)/x^n für x gegen +∞ und Limes von x^n*ln(x) für x gegen 0 .",
+      "lessons": [
+        "g12-ln-kurvendiskussion-grenzwerte"
+      ],
+      "status": "implemented",
+      "evidence": "Das Labor ln-limits untersucht Verhalten nahe null und im Unendlichen; ln-grenzwert-rechnen und ln-nullstelle-suchen bestimmen Eigenschaften.",
+      "section": "4.3"
+    },
+    {
+      "lb": 5,
+      "competence": "stellen im dreidimensionalen kartesischen Koordinatensystem Punkte, Figuren sowie Körper dar. Sie begründen anhand der Koordinaten von Punkten die besondere Lage von Figuren im Koordinatensystem und beschreiben den Zusammenhang der Koordinaten von Punkten, die bezüglich der Koordinatenebenen, der Koordinatenachsen bzw. des Koordinatenursprungs symmetrisch liegen. Zur Weiterentwicklung ihrer räumlichen Vorstellung verwenden sie auch eine 3D-Geometriesoftware.",
+      "lessons": [
+        "g12-raum-koordinatensystem"
+      ],
+      "status": "implemented",
+      "evidence": "Das Labor 3d-coordinates zeigt Punkte im Schrägbild; punktabstand-raum und spiegelung-ebene üben Raumkoordinaten."
+    },
+    {
+      "lb": 5,
+      "competence": "bestimmen rechnerisch und grafisch Summen, Differenzen sowie skalare Vielfache von Vektoren im dreidimensionalen Raum. Dabei nutzen sie auch die Rechengesetze für Vektoren.",
+      "lessons": [
+        "g12-vektoralgebra-raum"
+      ],
+      "status": "implemented",
+      "evidence": "Das Labor vector-algebra addiert Pfeile im Raum; linearkombination-rechnen und verbindungsvektor üben Vektorrechnung."
+    },
+    {
+      "lb": 5,
+      "competence": "bestimmen mithilfe des Skalarprodukts Längen von Vektoren sowie Größen von Winkeln zwischen Vektoren und nutzen dies für Argumentationen an Figuren.",
+      "lessons": [
+        "g12-skalarprodukt-winkel"
+      ],
+      "status": "implemented",
+      "evidence": "Das Labor dot-product prüft Orthogonalität; skalarprodukt-ausrechnen und orthogonal-parameter berechnen Skalarprodukte und Winkel."
+    },
+    {
+      "lb": 5,
+      "competence": "nutzen das Vektorprodukt, um einen zu zwei Vektoren orthogonalen Vektor zu bestimmen sowie um Flächeninhalte von Parallelogrammen und Dreiecken und – in Verbindung mit dem Skalarprodukt – Volumina geeigneter Körper zu berechnen.",
+      "lessons": [
+        "g12-vektorprodukt-spatprodukt"
+      ],
+      "status": "implemented",
+      "evidence": "Das Labor cross-product spannt Normalenvektoren auf; kreuzprodukt-komponente und dreiecksflaeche-vektor bestimmen Flächeninhalte."
+    },
+    {
+      "lb": 5,
+      "competence": "wenden bei Berechnungen an geometrischen Körpern und Figuren – auch in Sachzusammenhängen – sowohl die grundlegenden Konzepte und Strategien aus der Unter- und Mittelstufe als auch die Vektorrechnung flexibel an und reflektieren unterschiedliche Lösungswege.",
+      "lessons": [
+        "g12-koerper-sachkontexte"
+      ],
+      "status": "implemented",
+      "evidence": "Das Labor 3d-solids modelliert Pyramiden und Dachstrukturen; pyramidenvolumen-sachkontext und neigungswinkel-dach lösen Sachaufgaben."
+    }
+  ]
+}

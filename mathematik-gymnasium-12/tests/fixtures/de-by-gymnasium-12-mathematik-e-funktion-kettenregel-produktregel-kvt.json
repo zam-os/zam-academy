@@ -1,0 +1,886 @@
+{
+  "$schema": "https://zam.app/schemas/v1/kvt-tile.json",
+  "tile_id": "de-by:gymnasium-12-mathematik-e-funktion-kettenregel-produktregel",
+  "version": "2026.08.1",
+  "title": "Mathematik 12: Analysis – Natürliche Exponentialfunktion, Logarithmusfunktion, Ketten- und Produktregel (Gymnasium 12 Bayern)",
+  "description": "Geerdetes KVT-Paket für Gymnasium Bayern Mathematik 12 (Oberstufe Q12): Die natürliche Exponentialfunktion f(x) = e^x (Eulersche Zahl e ca. 2.71828, charakteristische Eigenschaft (e^x)' = e^x, Monotonie, Grenzwerte im Unendlichen) und die natürliche Logarithmusfunktion f(x) = ln(x) als Umkehrfunktion (Ableitung (ln x)' = 1/x, Logarithmengesetze), Fortgeschrittene Differentiationsregeln (Produktregel (u * v)' = u' * v + u * v', Quotientenregel (u / v)' = (u' * v - u * v') / v^2, Kettenregel (f(g(x)))' = f'(g(x)) * g'(x) mit innerer und äußerer Ableitung), Kurvendiskussion von Exponentialfunktionen (Extrema, Wendepunkte, Asymptoten, Verhalten an Definitionsrändern) sowie Integralrechnung mit e-Funktionen (Stammfunktion von e^(a*x+b), lineare Substitution und uneigentliche Integrale bis ins Unendliche).",
+  "publisher": "ZAM Curriculum Working Group",
+  "published_at": "2026-08-16T08:00:00Z",
+  "sources": [
+    {
+      "uri": "https://www.lehrplanplus.bayern.de/fachlehrplan/gymnasium/12/mathematik",
+      "checked": "2026-08-16",
+      "label": "Gymnasium Mathematik 12, Lernbereich Analysis – Exponential- und Logarithmusfunktionen"
+    }
+  ],
+  "atoms": [
+    {
+      "id": "01K8GC00000000000000000A01",
+      "atom_uri": "urn:zam:atom:01K8GC00000000000000000A01",
+      "namespace": "gymnasium-mathematik-e-funktion",
+      "slug": "e-funktion-ln-funktion-kettenregel-produktregel",
+      "title": "Analysis 12: Natürliche Exponential- & Logarithmusfunktion, Ketten- und Produktregel",
+      "domain": "mathematik/analysis",
+      "reduction": "formal",
+      "typical_age_min": 17.5,
+      "prerequisites": [],
+      "alignments": [
+        {
+          "target_uri": "http://www.wikidata.org/entity/Q12483",
+          "target_label": "Exponential function",
+          "alignment_type": "skos:broadMatch",
+          "provenance": "manual_curation_v1"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 12,
+          "subject": "mathematik",
+          "topic_code": "lb1",
+          "topic_title": "Analysis – Exponentialfunktionen und Ableitungsregeln",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01K8GC00000000000000000J01",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Wie lautet die 1. Ableitung der Funktion "
+            },
+            {
+              "type": "math",
+              "tex": "f(x) = (2x - 3) \\cdot e^{-x}",
+              "speech": "f von x gleich Klammer auf 2 x minus 3 Klammer zu mal e hoch minus x"
+            },
+            {
+              "type": "text",
+              "text": " nach Produkt- und Kettenregel?"
+            }
+          ],
+          "concept_segments": [
+            {
+              "type": "math",
+              "tex": "f'(x) = 2 \\cdot e^{-x} + (2x - 3) \\cdot (-e^{-x}) = e^{-x} \\cdot (2 - 2x + 3) = (5 - 2x) \\cdot e^{-x}",
+              "speech": "f Strich von x gleich 2 mal e hoch minus x plus Klammer auf 2 x minus 3 Klammer zu mal Klammer auf minus e hoch minus x Klammer zu gleich e hoch minus x mal Klammer auf 2 minus 2 x plus 3 Klammer zu gleich Klammer auf 5 minus 2 x Klammer zu mal e hoch minus x"
+            }
+          ],
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              [
+                {
+                  "type": "math",
+                  "tex": "f'(x) = (5 - 2x) \\cdot e^{-x}",
+                  "speech": "f Strich von x gleich Klammer auf 5 minus 2 x Klammer zu mal e hoch minus x"
+                }
+              ],
+              [
+                {
+                  "type": "math",
+                  "tex": "f'(x) = 2 \\cdot e^{-x}",
+                  "speech": "f Strich von x gleich 2 mal e hoch minus x"
+                }
+              ]
+            ],
+            "correct_index": 0
+          },
+          "materiality": "cosmetic"
+        },
+        {
+          "id": "01K8GC00000000000000000J02",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Untersuche die Funktion "
+            },
+            {
+              "type": "math",
+              "tex": "f(x) = (x^2 - 4) \\cdot e^{-x}",
+              "speech": "f von x gleich Klammer auf x Quadrat minus 4 Klammer zu mal e hoch minus x"
+            },
+            {
+              "type": "text",
+              "text": " auf ihrem maximalen Definitionsbereich "
+            },
+            {
+              "type": "math",
+              "tex": "\\mathbb{D} = \\mathbb{R}",
+              "speech": "D gleich R"
+            },
+            {
+              "type": "text",
+              "text": ": 1. Bestimme alle Nullstellen von "
+            },
+            {
+              "type": "math",
+              "tex": "f(x)",
+              "speech": "f von x"
+            },
+            {
+              "type": "text",
+              "text": ", 2. Berechne die 1. und 2. Ableitung "
+            },
+            {
+              "type": "math",
+              "tex": "f'(x)",
+              "speech": "f Strich von x"
+            },
+            {
+              "type": "text",
+              "text": " und "
+            },
+            {
+              "type": "math",
+              "tex": "f''(x)",
+              "speech": "f Strich Strich von x"
+            },
+            {
+              "type": "text",
+              "text": " unter Ausklammern von "
+            },
+            {
+              "type": "math",
+              "tex": "e^{-x}",
+              "speech": "e hoch minus x"
+            },
+            {
+              "type": "text",
+              "text": ", 3. Ermittle alle lokalen Extrempunkte (Hoch-/Tiefpunkte mit "
+            },
+            {
+              "type": "math",
+              "tex": "x",
+              "speech": "x"
+            },
+            {
+              "type": "text",
+              "text": "- und "
+            },
+            {
+              "type": "math",
+              "tex": "y",
+              "speech": "y"
+            },
+            {
+              "type": "text",
+              "text": "-Koordinaten sowie Nachweis über "
+            },
+            {
+              "type": "math",
+              "tex": "f''",
+              "speech": "f Strich Strich"
+            },
+            {
+              "type": "text",
+              "text": "), 4. Untersuche das Grenzverhalten für "
+            },
+            {
+              "type": "math",
+              "tex": "x \\to +\\infty",
+              "speech": "x gegen plus unendlich"
+            },
+            {
+              "type": "text",
+              "text": " und "
+            },
+            {
+              "type": "math",
+              "tex": "x \\to -\\infty",
+              "speech": "x gegen minus unendlich"
+            },
+            {
+              "type": "text",
+              "text": "."
+            }
+          ],
+          "concept_segments": [
+            {
+              "type": "text",
+              "text": "Kurvendiskussion e-Funktion: Nullstellen "
+            },
+            {
+              "type": "math",
+              "tex": "x_1 = 2",
+              "speech": "x eins gleich 2"
+            },
+            {
+              "type": "text",
+              "text": ", "
+            },
+            {
+              "type": "math",
+              "tex": "x_2 = -2",
+              "speech": "x zwei gleich minus 2"
+            },
+            {
+              "type": "text",
+              "text": "; "
+            },
+            {
+              "type": "math",
+              "tex": "f'(x) = (-x^2 + 2x + 4) \\cdot e^{-x}",
+              "speech": "f Strich von x gleich Klammer auf minus x Quadrat plus 2 x plus 4 Klammer zu mal e hoch minus x"
+            },
+            {
+              "type": "text",
+              "text": "; "
+            },
+            {
+              "type": "math",
+              "tex": "f''(x) = (x^2 - 4x + 2) \\cdot e^{-x}",
+              "speech": "f Strich Strich von x gleich Klammer auf x Quadrat minus 4 x plus 2 Klammer zu mal e hoch minus x"
+            },
+            {
+              "type": "text",
+              "text": "; Extremstellen "
+            },
+            {
+              "type": "math",
+              "tex": "x = 1 \\pm \\sqrt{5}",
+              "speech": "x gleich 1 plus minus Wurzel aus 5"
+            },
+            {
+              "type": "text",
+              "text": "; Grenzwerte: "
+            },
+            {
+              "type": "math",
+              "tex": "\\lim_{x \\to +\\infty} f(x) = 0",
+              "speech": "Limes für x gegen plus unendlich f von x gleich 0"
+            },
+            {
+              "type": "text",
+              "text": " (Dominanz der e-Funktion), "
+            },
+            {
+              "type": "math",
+              "tex": "\\lim_{x \\to -\\infty} f(x) = +\\infty",
+              "speech": "Limes für x gegen minus unendlich f von x gleich plus unendlich"
+            },
+            {
+              "type": "text",
+              "text": "."
+            }
+          ],
+          "sample_solution": [
+            {
+              "type": "text",
+              "text": "1. Nullstellen von "
+            },
+            {
+              "type": "math",
+              "tex": "f(x)"
+            },
+            {
+              "type": "text",
+              "text": ": - Ansatz: "
+            },
+            {
+              "type": "math",
+              "tex": "f(x) = 0 \\iff (x^2 - 4) \\cdot e^{-x} = 0"
+            },
+            {
+              "type": "text",
+              "text": ". - Da "
+            },
+            {
+              "type": "math",
+              "tex": "e^{-x} > 0"
+            },
+            {
+              "type": "text",
+              "text": " für alle "
+            },
+            {
+              "type": "math",
+              "tex": "x \\in \\mathbb{R}"
+            },
+            {
+              "type": "text",
+              "text": ", kann nur der Klammerausdruck Null werden:   "
+            },
+            {
+              "type": "math",
+              "tex": "x^2 - 4 = 0 \\implies x^2 = 4 \\implies \\mathbf{x_1 = 2, \\quad x_2 = -2}",
+              "block": true
+            },
+            {
+              "type": "text",
+              "text": " - Die Schnittpunkte mit der "
+            },
+            {
+              "type": "math",
+              "tex": "x"
+            },
+            {
+              "type": "text",
+              "text": "-Achse lauten "
+            },
+            {
+              "type": "math",
+              "tex": "N_1(2|0)"
+            },
+            {
+              "type": "text",
+              "text": " und "
+            },
+            {
+              "type": "math",
+              "tex": "N_2(-2|0)"
+            },
+            {
+              "type": "text",
+              "text": ". 2. Ableitungen mit Produkt- und Kettenregel: - Für "
+            },
+            {
+              "type": "math",
+              "tex": "f(x) = u(x) \\cdot v(x)"
+            },
+            {
+              "type": "text",
+              "text": " mit "
+            },
+            {
+              "type": "math",
+              "tex": "u(x) = x^2 - 4 \\implies u'(x) = 2x"
+            },
+            {
+              "type": "text",
+              "text": " und "
+            },
+            {
+              "type": "math",
+              "tex": "v(x) = e^{-x} \\implies v'(x) = -e^{-x}"
+            },
+            {
+              "type": "text",
+              "text": ": - 1. Ableitung "
+            },
+            {
+              "type": "math",
+              "tex": "f'(x)"
+            },
+            {
+              "type": "text",
+              "text": ":   "
+            },
+            {
+              "type": "math",
+              "tex": "\\begin{aligned}     f'(x) &= u'(x) \\cdot v(x) + u(x) \\cdot v'(x) \\\\           &= 2x \\cdot e^{-x} + (x^2 - 4) \\cdot (-e^{-x}) \\\\           &= e^{-x} \\cdot \\left[ 2x - (x^2 - 4) \\right] = \\mathbf{(-x^2 + 2x + 4) \\cdot e^{-x}}   \\end{aligned}",
+              "block": true
+            },
+            {
+              "type": "text",
+              "text": " - 2. Ableitung "
+            },
+            {
+              "type": "math",
+              "tex": "f''(x)"
+            },
+            {
+              "type": "text",
+              "text": ":   * Mit "
+            },
+            {
+              "type": "math",
+              "tex": "u_1(x) = -x^2 + 2x + 4 \\implies u_1'(x) = -2x + 2"
+            },
+            {
+              "type": "text",
+              "text": " und "
+            },
+            {
+              "type": "math",
+              "tex": "v_1(x) = e^{-x} \\implies v_1'(x) = -e^{-x}"
+            },
+            {
+              "type": "text",
+              "text": ":   "
+            },
+            {
+              "type": "math",
+              "tex": "\\begin{aligned}     f''(x) &= (-2x + 2) \\cdot e^{-x} + (-x^2 + 2x + 4) \\cdot (-e^{-x}) \\\\           &= e^{-x} \\cdot \\left[ -2x + 2 + x^2 - 2x - 4 \\right] = \\mathbf{(x^2 - 4x - 2) \\cdot e^{-x}}   \\end{aligned}",
+              "block": true
+            },
+            {
+              "type": "text",
+              "text": " 3. Lokale Extrempunkte: - Notwendige Bedingung: "
+            },
+            {
+              "type": "math",
+              "tex": "f'(x) = 0 \\iff -x^2 + 2x + 4 = 0 \\iff x^2 - 2x - 4 = 0"
+            },
+            {
+              "type": "text",
+              "text": ". - Mit Mitternachtsformel:   "
+            },
+            {
+              "type": "math",
+              "tex": "\\mathbf{x_{1,2} = \\frac{2 \\pm \\sqrt{4 - 4(1)(-4)}}{2} = \\frac{2 \\pm \\sqrt{20}}{2} = 1 \\pm \\sqrt{5}} \\quad (x_1 \\approx 3{,}236; \\; x_2 \\approx -1{,}236)",
+              "block": true
+            },
+            {
+              "type": "text",
+              "text": " - Hinreichende Bedingung über "
+            },
+            {
+              "type": "math",
+              "tex": "f''(x)"
+            },
+            {
+              "type": "text",
+              "text": ":   * Für "
+            },
+            {
+              "type": "math",
+              "tex": "x_1 = 1 + \\sqrt{5}"
+            },
+            {
+              "type": "text",
+              "text": ":     "
+            },
+            {
+              "type": "math",
+              "tex": "f''(1+\\sqrt{5}) = ((1+\\sqrt{5})^2 - 4(1+\\sqrt{5}) - 2) \\cdot e^{-(1+\\sqrt{5})} = (6 + 2\\sqrt{5} - 4 - 4\\sqrt{5} - 2) \\cdot e^{-(1+\\sqrt{5})} = -2\\sqrt{5} \\cdot e^{-(1+\\sqrt{5})} < 0",
+              "block": true
+            },
+            {
+              "type": "text",
+              "text": "     "
+            },
+            {
+              "type": "math",
+              "tex": "\\implies"
+            },
+            {
+              "type": "text",
+              "text": " Lokales Maximum (Hochpunkt) bei "
+            },
+            {
+              "type": "math",
+              "tex": "x_1 = 1 + \\sqrt{5}"
+            },
+            {
+              "type": "text",
+              "text": ".   * Für "
+            },
+            {
+              "type": "math",
+              "tex": "x_2 = 1 - \\sqrt{5}"
+            },
+            {
+              "type": "text",
+              "text": ":     "
+            },
+            {
+              "type": "math",
+              "tex": "f''(1-\\sqrt{5}) = +2\\sqrt{5} \\cdot e^{-(1-\\sqrt{5})} > 0 \\implies \\mathbf{\\text{Lokales Minimum (Tiefpunkt)}} \\text{ bei } x_2 = 1 - \\sqrt{5}.",
+              "block": true
+            },
+            {
+              "type": "text",
+              "text": " 4. Grenzverhalten an den Rändern: - Für "
+            },
+            {
+              "type": "math",
+              "tex": "x \\to +\\infty"
+            },
+            {
+              "type": "text",
+              "text": ":   "
+            },
+            {
+              "type": "math",
+              "tex": "\\lim_{x \\to +\\infty} (x^2 - 4) \\cdot e^{-x} = \\lim_{x \\to +\\infty} \\frac{x^2 - 4}{e^x} = \\mathbf{0}",
+              "block": true
+            },
+            {
+              "type": "text",
+              "text": "   (Die e-Funktion wächst im Nenner asymptotisch viel schneller als jedes Polynom "
+            },
+            {
+              "type": "math",
+              "tex": "\\implies"
+            },
+            {
+              "type": "text",
+              "text": " Die "
+            },
+            {
+              "type": "math",
+              "tex": "x"
+            },
+            {
+              "type": "text",
+              "text": "-Achse "
+            },
+            {
+              "type": "math",
+              "tex": "y = 0"
+            },
+            {
+              "type": "text",
+              "text": " ist waagrechte Asymptote für "
+            },
+            {
+              "type": "math",
+              "tex": "x \\to +\\infty"
+            },
+            {
+              "type": "text",
+              "text": "). - Für "
+            },
+            {
+              "type": "math",
+              "tex": "x \\to -\\infty"
+            },
+            {
+              "type": "text",
+              "text": ":   "
+            },
+            {
+              "type": "math",
+              "tex": "\\lim_{x \\to -\\infty} (x^2 - 4) \\cdot e^{-x} = (+\\infty) \\cdot (+\\infty) = \\mathbf{+\\infty}",
+              "block": true
+            }
+          ],
+          "materiality": "cosmetic"
+        }
+      ]
+    },
+    {
+      "id": "01K8GC00000000000000000A02",
+      "atom_uri": "urn:zam:atom:01K8GC00000000000000000A02",
+      "namespace": "gymnasium-mathematik-rotationskoerper",
+      "slug": "uneigentliche-integrale-rotationskoerper-volumen",
+      "title": "Integralrechnung 12: Uneigentliche Integrale und Rotationskörper um die x-Achse",
+      "domain": "mathematik/integralrechnung",
+      "reduction": "formal",
+      "typical_age_min": 17.5,
+      "prerequisites": [
+        {
+          "atom_id": "01K8GC00000000000000000A01",
+          "type": "hard",
+          "rationale": "Rotationsvolumina und uneigentliche Integrale basieren auf e-Funktionen und Stammfunktionsregeln."
+        }
+      ],
+      "alignments": [
+        {
+          "target_uri": "http://www.wikidata.org/entity/Q12483",
+          "target_label": "Solid of revolution",
+          "alignment_type": "skos:broadMatch",
+          "provenance": "manual_curation_v1"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 12,
+          "subject": "mathematik",
+          "topic_code": "lb1",
+          "topic_title": "Analysis – Uneigentliche Integrale und Rotationskörper",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01K8GC00000000000000000J03",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Wie lautet die exakte Integralformel zur Berechnung des Volumens "
+            },
+            {
+              "type": "math",
+              "tex": "V_x",
+              "speech": "V x"
+            },
+            {
+              "type": "text",
+              "text": " eines Rotationskörpers, der durch Rotation des Graphen einer stetigen Funktion "
+            },
+            {
+              "type": "math",
+              "tex": "f(x)",
+              "speech": "f von x"
+            },
+            {
+              "type": "text",
+              "text": " im Intervall "
+            },
+            {
+              "type": "math",
+              "tex": "[a; b]",
+              "speech": "Intervall von a bis b"
+            },
+            {
+              "type": "text",
+              "text": " um die "
+            },
+            {
+              "type": "math",
+              "tex": "x",
+              "speech": "x"
+            },
+            {
+              "type": "text",
+              "text": "-Achse entsteht?"
+            }
+          ],
+          "concept_segments": [
+            {
+              "type": "math",
+              "tex": "V_x = \\pi \\cdot \\int_a^b [f(x)]^2\\,dx",
+              "speech": "V x gleich Pi mal Integral von a bis b über f von x zum Quadrat d x"
+            }
+          ],
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              [
+                {
+                  "type": "math",
+                  "tex": "V_x = \\pi \\cdot \\int_a^b [f(x)]^2\\,dx",
+                  "speech": "V x gleich Pi mal Integral von a bis b über f von x zum Quadrat d x"
+                }
+              ],
+              "V_x = 2 * pi * Integral von a bis b über f(x) dx"
+            ],
+            "correct_index": 0
+          },
+          "materiality": "cosmetic"
+        },
+        {
+          "id": "01K8GC00000000000000000J04",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Analysiere uneigentliche Integrale und Rotationskörper: 1. Das uneigentliche Integral ins Unendliche:   * Definiert als Grenzwert einer Integralfunktion:     "
+            },
+            {
+              "type": "math",
+              "tex": "\\mathbf{\\int_a^\\infty f(x)\\,\\mathrm{d}x = \\lim_{z \\to \\infty} \\int_a^z f(x)\\,\\mathrm{d}x}",
+              "block": true,
+              "speech": "Integral von a bis unendlich über f von x d x gleich Limes für z gegen unendlich Integral von a bis z über f von x d x"
+            },
+            {
+              "type": "text",
+              "text": "   * Existiert der endliche Grenzwert, so konvergiert das uneigentliche Integral; andernfalls divergiert es, 2. Der Rotationskörper um die "
+            },
+            {
+              "type": "math",
+              "tex": "x",
+              "speech": "x"
+            },
+            {
+              "type": "text",
+              "text": "-Achse:   * Rotation der Kreisquerschnittsflächen mit Radius "
+            },
+            {
+              "type": "math",
+              "tex": "r = f(x) \\implies A(x) = \\pi \\cdot [f(x)]^2",
+              "speech": "r gleich f von x, daraus folgt A von x gleich Pi mal f von x zum Quadrat"
+            },
+            {
+              "type": "text",
+              "text": ":     "
+            },
+            {
+              "type": "math",
+              "tex": "\\mathbf{V_x = \\pi \\int_a^b [f(x)]^2\\,\\mathrm{d}x}",
+              "block": true,
+              "speech": "V x gleich Pi mal Integral von a bis b über f von x Quadrat d x"
+            },
+            {
+              "type": "text",
+              "text": " 3. Konkrete Durchrechnung:   * Gegeben ist "
+            },
+            {
+              "type": "math",
+              "tex": "f(x) = 2 \\cdot e^{-0{,}5 x}",
+              "speech": "f von x gleich 2 mal e hoch minus 0,5 x"
+            },
+            {
+              "type": "text",
+              "text": " über dem unbeschränkten Intervall "
+            },
+            {
+              "type": "math",
+              "tex": "[0; +\\infty[",
+              "speech": "Intervall von 0 bis plus unendlich, rechts offen"
+            },
+            {
+              "type": "text",
+              "text": ".   * a) Berechne die vom Graphen und den Koordinatenachsen vollständig eingeschlossene unendliche Fläche "
+            },
+            {
+              "type": "math",
+              "tex": "A = \\int_0^\\infty f(x)\\,\\mathrm{d}x",
+              "speech": "A gleich Integral von 0 bis unendlich über f von x d x"
+            },
+            {
+              "type": "text",
+              "text": ".   * b) Berechne das Volumen "
+            },
+            {
+              "type": "math",
+              "tex": "V_x",
+              "speech": "V x"
+            },
+            {
+              "type": "text",
+              "text": " des unendlich langen Rotationskörpers, der bei Rotation dieser Fläche um die "
+            },
+            {
+              "type": "math",
+              "tex": "x",
+              "speech": "x"
+            },
+            {
+              "type": "text",
+              "text": "-Achse entsteht."
+            }
+          ],
+          "concept_segments": [
+            {
+              "type": "text",
+              "text": "Uneigentliche Integrale: Grenzwert "
+            },
+            {
+              "type": "math",
+              "tex": "\\lim_{z \\to \\infty} \\int_a^z f(x)\\,dx",
+              "speech": "Limes für z gegen unendlich Integral von a bis z über f von x d x"
+            },
+            {
+              "type": "text",
+              "text": "; Rotationsvolumen "
+            },
+            {
+              "type": "math",
+              "tex": "V_x = \\pi \\cdot \\int [f(x)]^2\\,dx",
+              "speech": "V x gleich Pi mal Integral über f von x zum Quadrat d x"
+            },
+            {
+              "type": "text",
+              "text": "; Rechnung: a) Fläche "
+            },
+            {
+              "type": "math",
+              "tex": "A = \\lim_{z \\to \\infty} \\left[-4 \\cdot e^{-0{,}5x}\\right]_0^z = 4",
+              "speech": "A gleich Limes für z gegen unendlich von, minus 4 mal e hoch minus 0,5 x, in den Grenzen 0 bis z, gleich 4"
+            },
+            {
+              "type": "text",
+              "text": " FE; b) Volumen "
+            },
+            {
+              "type": "math",
+              "tex": "V = \\pi \\cdot \\int_0^\\infty 4 \\cdot e^{-x}\\,dx = 4\\pi",
+              "speech": "V gleich Pi mal Integral von 0 bis unendlich über 4 mal e hoch minus x d x gleich 4 Pi"
+            },
+            {
+              "type": "text",
+              "text": " VE."
+            }
+          ],
+          "sample_solution": [
+            {
+              "type": "text",
+              "text": "1. Uneigentliche Integrale und Konvergenz: - Ein Integral heißt uneigentlich, wenn mindestens eine Integrationsgrenze unendlich ist ("
+            },
+            {
+              "type": "math",
+              "tex": "\\pm\\infty"
+            },
+            {
+              "type": "text",
+              "text": ") oder der Integrand an einer Stelle im Intervall eine Polstelle/Definitionslücke besitzt. - Berechnung über Limesbildung:   "
+            },
+            {
+              "type": "math",
+              "tex": "\\mathbf{\\int_0^\\infty f(x)\\,\\mathrm{d}x = \\lim_{z \\to \\infty} \\left[ F(x) \\right]_0^z = \\lim_{z \\to \\infty} (F(z) - F(0))}",
+              "block": true
+            },
+            {
+              "type": "text",
+              "text": " 2. Berechnung der Fläche für "
+            },
+            {
+              "type": "math",
+              "tex": "f(x) = 2 \\cdot e^{-0{,}5 x}"
+            },
+            {
+              "type": "text",
+              "text": ": - Stammfunktion: "
+            },
+            {
+              "type": "math",
+              "tex": "F(x) = \\int 2 \\cdot e^{-0{,}5 x}\\,\\mathrm{d}x = 2 \\cdot \\frac{1}{-0{,}5} e^{-0{,}5 x} = \\mathbf{-4 \\cdot e^{-0{,}5 x}}"
+            },
+            {
+              "type": "text",
+              "text": ". - Flächenberechnung:   "
+            },
+            {
+              "type": "math",
+              "tex": "\\begin{aligned}     A &= \\int_0^\\infty 2\\cdot e^{-0{,}5 x}\\,\\mathrm{d}x = \\lim_{z \\to \\infty} \\left[ -4 e^{-0{,}5 x} \\right]_0^z \\\\       &= \\lim_{z \\to \\infty} \\left( -4 e^{-0{,}5 z} - (-4 e^0) \\right) \\\\       &= \\lim_{z \\to \\infty} \\left( -\\frac{4}{e^{0{,}5 z}} + 4 \\right) = 0 + 4 = \\mathbf{4\\,\\text{Flächeneinheiten (FE)}}   \\end{aligned}",
+              "block": true
+            },
+            {
+              "type": "text",
+              "text": " 3. Berechnung des Rotationsvolumens "
+            },
+            {
+              "type": "math",
+              "tex": "V_x"
+            },
+            {
+              "type": "text",
+              "text": ": - Für die Rotation um die "
+            },
+            {
+              "type": "math",
+              "tex": "x"
+            },
+            {
+              "type": "text",
+              "text": "-Achse quadrieren wir die Funktion:   "
+            },
+            {
+              "type": "math",
+              "tex": "[f(x)]^2 = (2 \\cdot e^{-0{,}5 x})^2 = 4 \\cdot (e^{-0{,}5 x})^2 = \\mathbf{4 \\cdot e^{-x}}",
+              "block": true
+            },
+            {
+              "type": "text",
+              "text": " - Berechnung des uneigentlichen Rotationsvolumens:   "
+            },
+            {
+              "type": "math",
+              "tex": "\\begin{aligned}     V_x &= \\pi \\int_0^\\infty [f(x)]^2\\,\\mathrm{d}x = \\pi \\lim_{z \\to \\infty} \\int_0^z 4 e^{-x}\\,\\mathrm{d}x \\\\         &= 4\\pi \\lim_{z \\to \\infty} \\left[ -e^{-x} \\right]_0^z \\\\         &= 4\\pi \\lim_{z \\to \\infty} \\left( -e^{-z} - (-e^0) \\right) \\\\         &= 4\\pi \\lim_{z \\to \\infty} \\left( -\\frac{1}{e^z} + 1 \\right) = 4\\pi \\cdot (0 + 1) = \\mathbf{4\\pi \\approx 12{,}566\\,\\text{Volumeneinheiten (VE)}}   \\end{aligned}",
+              "block": true
+            }
+          ],
+          "materiality": "cosmetic"
+        }
+      ]
+    }
+  ]
+}
