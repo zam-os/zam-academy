@@ -992,7 +992,10 @@
        "Konvergenz genau für p größer als 0."
       ],
       "correct_index": 0
-     }
+     },
+     "replaces": [
+      "01K8GD00000000000000000J03"
+     ]
     },
     {
      "id": "01M6XAHTTCTZC3NGK01A8H9XY5",
@@ -1399,7 +1402,10 @@
       "correct_index": 0
      },
      "concept": "P(X = x) = 0, denn ein Einzelwert hat keine Breite und damit keine Fläche.",
-     "sample_solution": "Bei stetigen Größen ist P(X = x) = 0: Ein Einzelwert hat keine Breite und damit keine Fläche unter der Dichte. Nur Intervalle haben Wahrscheinlichkeit."
+     "sample_solution": "Bei stetigen Größen ist P(X = x) = 0: Ein Einzelwert hat keine Breite und damit keine Fläche unter der Dichte. Nur Intervalle haben Wahrscheinlichkeit.",
+     "replaces": [
+      "01K8GD20000000000000000J01"
+     ]
     },
     {
      "id": "01M6XAHTTFNA07NABQT6WRKVR4",
@@ -1882,7 +1888,10 @@
        "z = (x − μ) : σ²"
       ],
       "correct_index": 0
-     }
+     },
+     "replaces": [
+      "01K8GD20000000000000000J03"
+     ]
     }
    ]
   },
@@ -2449,8 +2458,8 @@
      "materiality": "material",
      "choice_distractors": [
       {
-       "text": "sin φ = |u⃗ × v⃗| : (|u⃗| · |v⃗|) über das Kreuzprodukt der Richtungen.",
-       "reason": "Das Kreuzprodukt liefert den Sinus des Winkels zwischen den Richtungen; den spitzen Schnittwinkel bestimmt man über das Skalarprodukt."
+       "text": "cos φ = u⃗ ⊙ v⃗ : (|u⃗| · |v⃗|) ohne Betrag – das liefert auch stumpfe Winkel.",
+       "reason": "Ohne Betrag kann der Quotient negativ werden und liefert stumpfe Winkel; für den spitzen Schnittwinkel nimmt man den Betrag des Skalarprodukts."
       },
       {
        "text": "cos φ = |u⃗| : |v⃗|, das Verhältnis der beiden Längen.",
@@ -2641,7 +2650,10 @@
        "cos φ = |n⃗ ⊙ u⃗| : (|n⃗| · |u⃗|)"
       ],
       "correct_index": 0
-     }
+     },
+     "replaces": [
+      "01K8GD10000000000000000J01"
+     ]
     }
    ]
   },
@@ -3055,7 +3067,10 @@
       ],
       "correct_index": 0
      },
-     "sample_solution": "In dem rechtwinkligen Dreieck aus Mittelpunkt, Fußpunkt des Lotes und Schnittpunkt ist r die Hypotenuse, d und ρ sind die Katheten: ρ² = r² − d², also ρ = √(r² − d²)."
+     "sample_solution": "In dem rechtwinkligen Dreieck aus Mittelpunkt, Fußpunkt des Lotes und Schnittpunkt ist r die Hypotenuse, d und ρ sind die Katheten: ρ² = r² − d², also ρ = √(r² − d²).",
+     "replaces": [
+      "01K8GD10000000000000000J03"
+     ]
     }
    ]
   },

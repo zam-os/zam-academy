@@ -199,10 +199,11 @@ const verketteteFunktionen = L(1, {
         const t = rng.int(1, 9);
         const v = t + 2; // m/s
         const E = 2 * v * v; // J bei m = 4 kg
+        const dE = 4 * v; // W: E′(t) = m · v(t) · v′(t) mit v′ = 1
         return task(
           2,
           "",
-          `Ein Radfahrer fährt mit v(t) = (t + 2) m/s. Seine kinetische Energie ist E = ½ · m · v(t)² mit m = 4 kg. Wie schnell ist er nach ${t} s, und wie groß ist dann seine Energie?`,
+          `Ein Medizinball der Masse m = 4 kg bewegt sich mit v(t) = (t + 2) m/s. Seine kinetische Energie ist E(t) = ½ · m · v(t)². Wie schnell ist er nach ${t} s, wie groß ist dann seine Energie, und wie schnell ändert sich die Energie in diesem Moment?`,
           [
             numberField("v:", v, "m/s", 0),
             numberField("E:", E, "J", 0, {
@@ -217,14 +218,23 @@ const verketteteFunktionen = L(1, {
                 },
               ],
             }),
+            numberField("E′:", dE, "W", 0, {
+              slips: [
+                {
+                  value: 2 * v,
+                  hint: "E′(t) = m · v(t) · v′(t) = 4 · v · 1: Es zählt die ganze Masse m = 4 kg, nicht ½ · m.",
+                },
+              ],
+            }),
           ],
-          "Zuerst v(t) auswerten, dann quadrieren und mit ½ · m = 2 multiplizieren.",
+          "E′(t) = m · v(t) · v′(t) mit der Kettenregel: äußere Ableitung 2 · ½ · m · v(t), innere Ableitung v′(t) = 1.",
           [
             `v(${t}) = ${t} + 2 = ${v} m/s.`,
             `E = ½ · 4 kg · (${v} m/s)² = 2 · ${v * v} = ${E} J.`,
+            `E′ = m · v · v′ = 4 · ${v} · 1 = ${dE} W.`,
           ],
-          `Nach ${t} s fährt er ${v} m/s, seine Energie beträgt ${E} J.`,
-          { t, v, E },
+          `Nach ${t} s fährt der Ball ${v} m/s, seine Energie beträgt ${E} J und wächst um ${dE} W.`,
+          { t, v, E, dE },
         );
       },
     },

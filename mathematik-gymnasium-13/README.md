@@ -55,13 +55,13 @@ und in [public-contract.json](tests/fixtures/public-contract.json) festgehalten.
 
 Drei alte Zellen (`de-by:gymnasium-13-mathematik-…`) enthalten 12 Karten.
 Bytegleiche Schnappschüsse, Herkunftscommit und SHA-256 stehen in
-[replaces-de-by.json](replaces-de-by.json). Der Bestandsabgleich ist ein
-**Vorschlag ohne Freigabe** (`"approved": null`, `"status": "proposal-only"`):
-fünf A-Zeilen zu je einem Einzelabruf mit passendem Nachfolger, sieben C-Zeilen,
-die aktiv bleiben, keine B-Übernahme und keine Stilllegung. Die Zelle erscheint
-ohne `replaces` und ohne `retired_items`; erst Thomas' ausdrückliche Freigabe
-(setzt `approved` auf das Datum und dokumentiert seine Worte in `source`) darf
-die Übernahmen aktivieren.
+[replaces-de-by.json](replaces-de-by.json). Thomas hat die Zuordnung am
+8. November 2026 im OpenCode-Chat freigegeben („Freigabe für den
+Bestandsabgleich erteilt"): **fünf A-Karten** übernehmen mit `replaces` die
+Historie desselben Einzelabrufs, **sieben C-Karten** bleiben aktiv, eine
+B-Übernahme gibt es nicht und keine Karte wird stillgelegt. Persönliche
+Karten und Reviewhistorien bleiben erhalten; wer Karten auf Alt- und
+Nachfolger-ID hält, weist den automatischen Merge zurück.
 
 ## Lokal starten und prüfen
 

@@ -311,11 +311,12 @@ describe("4.1 Verknüpfte Funktionen", () => {
       2,
       SEEDS,
     )) {
-      const { t, v, E } = task.meta as Record<string, number>;
+      const { t, v, E, dE } = task.meta as Record<string, number>;
       expectClose(v, t + 2, task.prompt);
       expectClose(E, 2 * v * v, task.prompt);
-      expect(numbers(task)).toEqual([v, E]);
-      expect(v > 0 && E > 0, "plausible speed and energy").toBe(true);
+      expectClose(dE, 4 * v, task.prompt);
+      expect(numbers(task)).toEqual([v, E, dE]);
+      expect(v > 0 && E > 0 && dE > 0, "plausible speed, energy and rate").toBe(true);
     }
   });
 

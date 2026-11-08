@@ -391,14 +391,24 @@ describe("ZAM-Karten", () => {
 });
 
 describe("Bestandsabgleich", () => {
-  it("ships without history transfers until Thomas approves the proposal", () => {
-    expect(mapping.approved).toBeNull();
-    expect(mapping.status).toBe("proposal-only");
+  it("records Thomas's approval and declares exactly the five approved transfers", () => {
+    expect(mapping.approved).toBe("2026-11-08");
+    expect(mapping.status).toBe("approved");
+    expect(mapping.source).toContain("Freigabe für den Bestandsabgleich erteilt");
+    expect(mapping.source).toContain("OpenCode-Chat");
     expect(mapping.source_repository).toBe("zam-os/zam");
     expect(mapping.source_commit).toMatch(/^[0-9a-f]{40}$/);
     expect(mapping.sources).toHaveLength(3);
-    for (const replaced of cell.atoms.flatMap((a) => a.practice_items))
-      expect("replaces" in replaced, replaced.slug).toBe(false);
+    const replaced = cell.atoms
+      .flatMap((a) => a.practice_items)
+      .filter((i) => "replaces" in i)
+      .map((i) => [i.slug, i.replaces]);
+    expect(Object.fromEntries(replaced)).toEqual(
+      Object.fromEntries(
+        mapping.rows.filter((r) => r.category === "A").map((r) => [r.academy_slug, [r.de_by_id]]),
+      ),
+    );
+    expect(replaced).toHaveLength(5);
   });
 
   it("maps every old item exactly once with a category and a reason", () => {
@@ -407,13 +417,14 @@ describe("Bestandsabgleich", () => {
     expect(mapping.rows.filter((r) => r.category === "A")).toHaveLength(5);
     expect(mapping.rows.filter((r) => r.category === "B")).toHaveLength(0);
     expect(mapping.rows.filter((r) => r.category === "C")).toHaveLength(7);
+    expect("retired_items" in cell).toBe(false);
     const slugs = new Set(cell.atoms.flatMap((a) => a.practice_items.map((i) => i.slug)));
     const successors: string[] = [];
     for (const row of mapping.rows) {
       expect(row.reason.length, row.de_by_id).toBeGreaterThan(30);
       expect(row.de_by_question, row.de_by_id).toBeTruthy();
       if (row.category === "A") {
-        expect(row.action).toBe("propose-replace-after-approval");
+        expect(row.action).toBe("replace");
         const successor = row.academy_slug;
         expect(successor, row.de_by_id).toBeTruthy();
         expect(slugs.has(successor!), successor ?? "").toBe(true);

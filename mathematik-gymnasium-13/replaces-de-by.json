@@ -1,8 +1,8 @@
 {
  "schema": 1,
- "approved": null,
- "status": "proposal-only",
- "source": "Stand 08.11.2026 ohne Freigabe: fünf A-Vorschläge zu je einem Einzelabruf mit passendem Nachfolger, sieben C-Zeilen, die aktiv bleiben, keine B-Übernahme und keine Stilllegung. Veröffentlichung ohne replaces und retired_items gemäß Paketstandard (Entscheidung vom 22.10.2026). Die Freigabe durch Thomas fehlt und wird hier mit Datum, seinen Worten und Ort nachgetragen; erst dann dürfen replaces in die Zelle.",
+ "approved": "2026-11-08",
+ "status": "approved",
+ "source": "Thomas im OpenCode-Chat am 8. November 2026: „Freigabe für den Bestandsabgleich erteilt - Du darfst nach den Fixes als admin mergen“. Die Freigabe gilt der Zuordnung der 12 de-by-Karten in dieser Datei (5 A / 0 B / 7 C, keine Stilllegung): Die fünf genannten Nachfolger tragen ab dieser Freigabe jeweils ein replaces auf ihre alte Karte; alle persönlichen Karten und Reviewhistorien bleiben erhalten, die sieben C-Karten bleiben aktiv. Vorheriger Stand war der Vorschlag ohne Freigabe gemäß Paketstandard vom 22.10.2026.",
  "source_repository": "zam-os/zam",
  "source_commit": "e6a235f75fe87b9d57af38bd61011027b891492c",
  "sources": [
@@ -25,7 +25,7 @@
    "sha256": "12972fab828cc885a6654226575e944c7c159cee0fe0081c09e00328cfe14ce9"
   }
  ],
- "policy": "A: sicher gleicher Einzelabruf, genau ein Nachfolger, der nach der Freigabe replaces erklärt. B: vollständiger alter Gesamtabruf auf genau einem eigenen Nachfolger – hier keine Zeile, keine der alten Gesamtaufgaben passt vollständig in eine Lektion von M13. C: keine Übertragung aus M12-Stoff, aus mehrteiligen Altfragen oder aus Inhalten jenseits des Fachlehrplans; alle persönlichen Karten und Reviewhistorien bleiben erhalten und aktiv.",
+ "policy": "A: sicher gleicher Einzelabruf, genau ein Nachfolger mit replaces. B: vollständiger alter Gesamtabruf auf genau einem eigenen Nachfolger – hier keine Zeile, keine der alten Gesamtaufgaben passt vollständig in eine Lektion von M13. C: keine Übertragung aus M11-/M12-Stoff, aus mehrteiligen Altfragen oder aus Inhalten jenseits des Fachlehrplans; alle persönlichen Karten und Reviewhistorien bleiben erhalten und aktiv.",
  "rows": [
   {
    "de_by_cell": "de-by:gymnasium-13-mathematik-gebrochen-rationale-funktionen-asymptoten-uneigentliche-integrale",
@@ -241,7 +241,7 @@
    ],
    "category": "A",
    "academy_slug": "g13-konvergenz-1-hoch-p",
-   "action": "propose-replace-after-approval",
+   "action": "replace",
    "reason": "Gleicher Einzelabruf: Für welche Exponenten p das uneigentliche Integral von 1 über x hoch p gegen einen endlichen Flächeninhalt konvergiert. Der Nachfolger nennt zusätzlich den Grenzwert 1 : (p − 1)."
   },
   {
@@ -467,7 +467,7 @@
    ],
    "category": "A",
    "academy_slug": "g13-schnittwinkel-gerade-ebene",
-   "action": "propose-replace-after-approval",
+   "action": "replace",
    "reason": "Gleicher Einzelabruf: der Schnittwinkel zwischen Gerade und Ebene über sin φ = |n⃗ · u⃗| : (|n⃗| · |u⃗|), gefordert in M13 LB 3 (Schnittwinkel berechnen)."
   },
   {
@@ -663,7 +663,7 @@
    "de_by_question": "Wie berechnet man den Radius r_k des Schnittkreises, der entsteht, wenn eine Ebene im Abstand d < r eine Kugel mit Mittelpunkt M und Kugelradius r schneidet?",
    "category": "A",
    "academy_slug": "g13-schnittkreisradius",
-   "action": "propose-replace-after-approval",
+   "action": "replace",
    "reason": "Gleicher Einzelabruf: der Radius ρ = √(r² − d²) des Schnittkreises aus Kugel und schneidender Ebene, gefordert in M13 LB 3 (Lage von Kugeln und Ebenen)."
   },
   {
@@ -902,7 +902,7 @@
    "de_by_question": "Wie groß ist die Wahrscheinlichkeit P(X = x_0), dass eine stetige Zufallsgröße X exakt einen einzelnen reellen Punktwert x_0 annimmt?",
    "category": "A",
    "academy_slug": "g13-stetig-punkt-null",
-   "action": "propose-replace-after-approval",
+   "action": "replace",
    "reason": "Gleicher Einzelabruf: Bei einer stetigen Zufallsgröße hat ein Einzelwert die Wahrscheinlichkeit 0, nur Intervalle haben Fläche unter der Dichte."
   },
   {
@@ -1042,7 +1042,7 @@
    "de_by_question": "Wie lautet die Standardisierungsformel (z-Transformation), um eine normalverteilte Zufallsgröße X ~ N(mu, sigma^2) in eine standardnormalverteilte Zufallsgröße Z ~ N(0, 1) zu transformieren?",
    "category": "A",
    "academy_slug": "g13-standardisierung",
-   "action": "propose-replace-after-approval",
+   "action": "replace",
    "reason": "Gleicher Einzelabruf: die Standardisierung einer normalverteilten Zufallsgröße mit z = (x − μ) : σ."
   },
   {
