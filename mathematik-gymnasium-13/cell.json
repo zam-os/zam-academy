@@ -1925,48 +1925,24 @@
      "materiality": "material",
      "choice_distractors": [
       {
-       "text": "Nur Geraden durch den Ursprung: X = t · u⃗ ohne Stützpunkt",
-       "reason": "Ohne Stützvektor A beschreibt die Gleichung nur Geraden durch den Ursprung; allgemeine Geraden brauchen A."
+       "text": "X⃗ = A⃗ + t² · u⃗; die Parameter laufen durch ℝ.",
+       "reason": "Mit t² erreicht man nur nichtnegative Vielfache der Richtung; die Gerade braucht alle reellen t, auch rückwärts."
       },
       {
-       "text": "Ein fester Punkt: X = A + u⃗ ohne Parameter t",
-       "reason": "Ohne Parameter entsteht nur ein einziger Punkt; erst t ∈ ℝ macht aus der Gleichung eine Gerade."
-      }
-     ],
-     "question_segments": [
-      {
-       "type": "text",
-       "text": "Parameterform einer Geraden: "
-      },
-      {
-       "type": "math",
-       "tex": "\\mathrm{g}\\colon \\vec{X} = \\vec{A} + t \\cdot \\vec{u}",
-       "speech": "g Doppelpunkt X gleich A plus t mal u"
-      }
-     ],
-     "concept_segments": [
-      {
-       "type": "text",
-       "text": "Stützpunkt A, Richtungsvektor "
-      },
-      {
-       "type": "math",
-       "tex": "\\vec{u} \\neq \\vec{0}",
-       "speech": "u ungleich null"
-      },
-      {
-       "type": "text",
-       "text": ", Parameter t ∈ ℝ."
+       "text": "X⃗ = u⃗ + t · A⃗; Stütz- und Richtungsvektor sind vertauscht.",
+       "reason": "A⃗ ist der Stützpunkt, u⃗ die Richtung. Vertauscht läuft die Gerade durch u⃗ in Richtung A⃗."
       }
      ],
      "fast_check": {
       "type": "binary_choice",
       "options": [
-       "Auch 2 · u⃗ beschreibt dieselbe Gerade.",
-       "2 · u⃗ beschreibt eine andere Gerade als u⃗."
+       "g: X⃗ = A⃗ + t · u⃗ mit Stützpunkt A⃗ und Richtungsvektor u⃗ ≠ 0⃗",
+       "g: X⃗ = A⃗ · u⃗ + t mit Stützpunkt u⃗ und Richtungsvektor A⃗"
       ],
       "correct_index": 0
-     }
+     },
+     "question": "Wie lautet die Parameterform einer Geraden im Raum, und welche Bedeutung hat t?",
+     "concept": "g: X⃗ = A⃗ + t · u⃗ mit Stützpunkt A⃗, Richtungsvektor u⃗ ≠ 0⃗; t läuft durch ℝ."
     },
     {
      "id": "01M6XAHTTKEKCMJY5V9ZHMJ153",
@@ -2085,44 +2061,24 @@
      "materiality": "material",
      "choice_distractors": [
       {
-       "text": "mit ganzen Zahlen r, s ∈ ℤ",
-       "reason": "Linearkombinationen erlauben jede reelle Zahl als Faktor, nicht nur ganze Zahlen."
+       "text": "w⃗ = u⃗ : v⃗ + r · s mit reellen Zahlen r und s.",
+       "reason": "Vektoren werden nicht durcheinander geteilt; eine Linearkombination vervielfacht die Vektoren und addiert sie."
       },
       {
-       "text": "mit positiven Zahlen r, s ≥ 0",
-       "reason": "Auch negative Faktoren sind erlaubt: r und s dürfen jedes Vorzeichen haben."
-      }
-     ],
-     "question_segments": [
-      {
-       "type": "text",
-       "text": "Linearkombination: "
-      },
-      {
-       "type": "math",
-       "tex": "\\vec{w} = r \\cdot \\vec{u} + s \\cdot \\vec{v}",
-       "speech": "w gleich r mal u plus s mal v"
-      }
-     ],
-     "concept_segments": [
-      {
-       "type": "text",
-       "text": "mit reellen Zahlen "
-      },
-      {
-       "type": "math",
-       "tex": "r, s \\in \\mathbb{R}",
-       "speech": "r und s aus den reellen Zahlen"
+       "text": "w⃗ = r · u⃗ + s · v⃗ mit natürlichen Zahlen r und s.",
+       "reason": "Auch negative und gebrochene Koeffizienten sind erlaubt: r und s laufen durch alle reellen Zahlen."
       }
      ],
      "fast_check": {
       "type": "binary_choice",
       "options": [
-       "Auch r = 0 oder s = 0 sind erlaubt.",
-       "Beide Zahlen müssen echt von 0 verschieden sein."
+       "w⃗ = r · u⃗ + s · v⃗ mit reellen Zahlen r, s",
+       "w⃗ = r · u⃗ + s · v⃗ mit ganzen Zahlen r, s"
       ],
       "correct_index": 0
-     }
+     },
+     "question": "Wie schreibst du eine Linearkombination der Vektoren u⃗ und v⃗ allgemein?",
+     "concept": "w⃗ = r · u⃗ + s · v⃗ mit reellen Zahlen r und s."
     },
     {
      "id": "01M6XAHTTMX3RJTZ2C50V74MRA",
@@ -2228,34 +2184,24 @@
      "materiality": "material",
      "choice_distractors": [
       {
-       "text": "X = P + r · u⃗, also nur mit einem Spannvektor u⃗ statt zwei.",
-       "reason": "Mit nur einer Richtung entsteht eine Gerade; eine Ebene braucht zwei nicht kollineare Spannvektoren."
+       "text": "E: X⃗ = P⃗ + r · u⃗; für die zweite Richtung genügt ein Vielfaches von u⃗.",
+       "reason": "Eine Richtung spannt nur eine Gerade auf; die Ebene braucht zwei nicht kollineare Spannvektoren."
       },
       {
-       "text": "X = r · u⃗ + s · v⃗ ohne Stützpunkt P, also nur durch den Ursprung.",
-       "reason": "Ohne Stützpunkt verläuft die Ebene immer durch den Ursprung – das gilt nicht für jede Ebene."
+       "text": "E: X⃗ = r · u⃗ + s · v⃗ ohne Stützpunkt; jede Ebene geht durch den Ursprung.",
+       "reason": "Ohne Stützpunkt P⃗ geht die Ebene durch den Ursprung; andere Ebenen brauchen den Ortsvektor P⃗."
       }
      ],
-     "question_segments": [
-      {
-       "type": "text",
-       "text": "Parameterform der Ebene: "
-      },
-      {
-       "type": "math",
-       "tex": "E\\colon \\vec{X} = \\vec{P} + r \\cdot \\vec{u} + s \\cdot \\vec{v}",
-       "speech": "E Doppelpunkt X gleich P plus r mal u plus s mal v"
-      }
-     ],
-     "concept": "X = P + r · u⃗ + s · v⃗, wobei u⃗ und v⃗ nicht kollinear sein dürfen.",
+     "concept": "E: X⃗ = P⃗ + r · u⃗ + s · v⃗ mit r, s ∈ ℝ; u⃗ und v⃗ dürfen nicht kollinear sein.",
      "fast_check": {
       "type": "binary_choice",
       "options": [
-       "Sind u⃗ und v⃗ kollinear, beschreibt die Gleichung nur eine Gerade.",
-       "Kollineare Spannvektoren ergeben trotzdem eine Ebene."
+       "E: X⃗ = P⃗ + r · u⃗ + s · v⃗; u⃗ und v⃗ sind nicht kollinear",
+       "E: X⃗ = P⃗ + r · u⃗ + s · v⃗; u⃗ und v⃗ sind kollinear"
       ],
       "correct_index": 0
-     }
+     },
+     "question": "Wie lautet die Parameterform einer Ebene im Raum, und welche Bedingung müssen u⃗ und v⃗ erfüllen?"
     },
     {
      "id": "01M6XAHTTNAR5Y84JQPNFYC9SX",
@@ -2355,44 +2301,24 @@
      "materiality": "material",
      "choice_distractors": [
       {
-       "text": "n⃗ ⊙ X = 0 für jede Ebene",
-       "reason": "d = 0 gilt nur für Ebenen durch den Ursprung; allgemein steht rechts d = n⃗ ⊙ P."
+       "text": "n⃗ × X⃗ = d, also das Kreuzprodukt mit dem Ortsvektor.",
+       "reason": "Das Kreuzprodukt zweier Vektoren ist wieder ein Vektor; die Koordinatenform nutzt das Skalarprodukt mit dem Normalenvektor."
       },
       {
-       "text": "n⃗ ist ein Richtungsvektor der Ebene",
-       "reason": "Der Normalenvektor steht senkrecht auf der Ebene; Richtungsvektoren liegen dagegen in der Ebene."
-      }
-     ],
-     "question_segments": [
-      {
-       "type": "text",
-       "text": "Koordinatenform: "
-      },
-      {
-       "type": "math",
-       "tex": "\\vec{n} \\cdot \\vec{X} = d",
-       "speech": "n mal X gleich d"
-      }
-     ],
-     "concept_segments": [
-      {
-       "type": "text",
-       "text": "ausgeschrieben: "
-      },
-      {
-       "type": "math",
-       "tex": "n_1 x + n_2 y + n_3 z = d",
-       "speech": "n eins mal x plus n zwei mal y plus n drei mal z gleich d"
+       "text": "n₁ · x · n₂ · y · n₃ · z = d, die Koordinaten werden multipliziert.",
+       "reason": "Die Koordinatenform ist eine Summe der Produkte nᵢ · xᵢ, keine Kette von Multiplikationen."
       }
      ],
      "fast_check": {
       "type": "binary_choice",
       "options": [
-       "Ein Vielfaches von n⃗ und d beschreibt dieselbe Ebene.",
-       "2 · n⃗ ⊙ X = d beschreibt eine andere Ebene."
+       "n₁ · x + n₂ · y + n₃ · z = d",
+       "x : n₁ + y : n₂ + z : n₃ = d"
       ],
       "correct_index": 0
-     }
+     },
+     "question": "Wie lautet die Koordinatenform einer Ebene mit dem Normalenvektor n⃗ = (n₁ | n₂ | n₃)?",
+     "concept": "n⃗ ⊙ X⃗ = d, also n₁ · x + n₂ · y + n₃ · z = d."
     },
     {
      "id": "01M6XAHTTPBV15CTJSZ8EEPWZK",
@@ -2417,8 +2343,8 @@
      "fast_check": {
       "type": "binary_choice",
       "options": [
-       "Der Abstand misst sich senkrecht zur Ebene.",
-       "Der Abstand ist die kleinste x-Koordinate aller Punkte der Ebene."
+       "8 : 3 ≈ 2,67 LE",
+       "8 : 5 = 1,6 LE"
       ],
       "correct_index": 0
      },
@@ -2506,8 +2432,8 @@
      "fast_check": {
       "type": "binary_choice",
       "options": [
-       "Windschiefe Geraden haben keinen gemeinsamen Punkt, obwohl sie nicht parallel sind.",
-       "Windschiefe Geraden sind eine Form der Parallelität."
+       "sich schneidend, parallel oder windschief",
+       "sich schneidend, parallel oder senkrecht"
       ],
       "correct_index": 0
      },
@@ -2523,35 +2449,25 @@
      "materiality": "material",
      "choice_distractors": [
       {
-       "text": "φ ist der Winkel zwischen u⃗ und dem Ortsvektor des Stützpunkts A.",
-       "reason": "Der Schnittwinkel hängt nur von den Richtungsvektoren ab und nicht vom gewählten Stützpunkt."
+       "text": "sin φ = |u⃗ × v⃗| : (|u⃗| · |v⃗|) über das Kreuzprodukt der Richtungen.",
+       "reason": "Das Kreuzprodukt liefert den Sinus des Winkels zwischen den Richtungen; den spitzen Schnittwinkel bestimmt man über das Skalarprodukt."
       },
       {
-       "text": "φ ist 180° abzüglich des berechneten Winkels (der stumpfe Restwinkel).",
-       "reason": "Für den Schnittwinkel nimmt man den spitzen Winkel; der Betrag im Zähler liefert ihn ohne Umweg."
+       "text": "cos φ = |u⃗| : |v⃗|, das Verhältnis der beiden Längen.",
+       "reason": "Die Längen allein kennen die Richtung nicht: Im Zähler steht das Skalarprodukt, im Nenner das Produkt der Längen."
       }
      ],
-     "question_segments": [
-      {
-       "type": "text",
-       "text": "Schnittwinkel: "
-      },
-      {
-       "type": "math",
-       "tex": "\\cos \\varphi = \\frac{|\\vec{u} \\odot \\vec{v}|}{|\\vec{u}| \\cdot |\\vec{v}|}",
-       "speech": "Kosinus phi gleich Betrag von u skalar v geteilt durch Betrag von u mal Betrag von v"
-      }
-     ],
-     "concept": "cos φ = |u⃗ ⊙ v⃗| : (|u⃗| · |v⃗|); gemeint ist der spitze Winkel bis 90°.",
+     "concept": "cos φ = |u⃗ ⊙ v⃗| : (|u⃗| · |v⃗|); φ ist der spitze Winkel bis 90°.",
      "fast_check": {
       "type": "binary_choice",
       "options": [
-       "Der Betrag im Zähler sorgt dafür, dass der Schnittwinkel spitz bleibt.",
-       "Ohne Betrag erhält man immer einen stumpfen Winkel."
+       "cos φ = |u⃗ ⊙ v⃗| : (|u⃗| · |v⃗|)",
+       "sin φ = |u⃗ ⊙ v⃗| : (|u⃗| · |v⃗|)"
       ],
       "correct_index": 0
      },
-     "sample_solution": "cos φ = |u⃗ ⊙ v⃗| : (|u⃗| · |v⃗|); der Schnittwinkel ist der spitze Winkel zwischen 0° und 90°."
+     "sample_solution": "cos φ = |u⃗ ⊙ v⃗| : (|u⃗| · |v⃗|); der Schnittwinkel ist der spitze Winkel zwischen 0° und 90°.",
+     "question": "Wie berechnest du den spitzen Schnittwinkel φ zweier Geraden mit den Richtungsvektoren u⃗ und v⃗?"
     },
     {
      "id": "01M6XAHTTQNT9P1M6RWGFBQ3Y9",
@@ -2572,7 +2488,7 @@
       }
      ],
      "concept": "Nicht parallel und ohne Schnittpunkt: windschief mit dem Abstand 1 LE.",
-     "sample_solution": "Richtungen vergleichen: (1 | 0 | 0) und (0 | 1 | 0) sind keine Vielfachen, also nicht parallel. Gleichungssystem aufstellen: x: t = 0; y: 0 = 1 + s; z: 0 = 1. Die z-Gleichung ist ein Widerspruch, das System hat keine Lösung – die Geraden sind windschief. Abstand: u⃗ × v⃗ = (0 | 0 | 1), AP = (0 | 1 | 1), also d = |AP · (u⃗ × v⃗)| : |u⃗ × v⃗| = 1 : 1 = 1 LE.",
+     "sample_solution": "Richtungen vergleichen: (1 | 0 | 0) und (0 | 1 | 0) sind keine Vielfachen, also nicht parallel. Gleichungssystem aufstellen: x: t = 0; y: 0 = 1 + s; z: 0 = 1. Die z-Gleichung ist ein Widerspruch, das System hat keine Lösung – die Geraden sind windschief. Abstand: u⃗ × v⃗ = (0 | 0 | 1), AB⃗ = (0 | 1 | 1), also d = |AB⃗ ⊙ (u⃗ × v⃗)| : |u⃗ × v⃗| = 1 : 1 = 1 LE.",
      "question": "g: X⃗ = (0 | 0 | 0) + t · (1 | 0 | 0) und h: X⃗ = (0 | 1 | 1) + s · (0 | 1 | 0). Bestimme die Lage der beiden Geraden zueinander und ihren Abstand."
     }
    ]
@@ -2657,34 +2573,24 @@
      "materiality": "material",
      "choice_distractors": [
       {
-       "text": "t = d : (n⃗ ⊙ A), dann setzt man S = A + t · u⃗ ein.",
-       "reason": "Im Zähler fehlt n⃗ ⊙ A: Der Parameter ist t = (d − n⃗ ⊙ A) : (n⃗ ⊙ u⃗)."
+       "text": "S⃗ ist der Lotfußpunkt des Lots aus A⃗ auf die Ebene, ohne t zu berechnen.",
+       "reason": "Der Lotfußpunkt liegt senkrecht unter A⃗; der Schnittpunkt der schiefen Geraden entsteht erst durch t in der Geradengleichung."
       },
       {
-       "text": "S = n⃗ : |n⃗|, der Fußpunkt des Lots aus dem Ursprung.",
-       "reason": "Das ist ein Punkt auf der Ebene vom Ursprung aus und nicht der Schnittpunkt mit der Geraden."
+       "text": "t = (d − n⃗ ⊙ u⃗) : (n⃗ ⊙ A⃗), Zähler und Nenner sind vertauscht belegt.",
+       "reason": "Im Zähler steht d − n⃗ ⊙ A⃗, im Nenner das Skalarprodukt des Normalenvektors mit der Richtung n⃗ ⊙ u⃗."
       }
      ],
-     "question_segments": [
-      {
-       "type": "text",
-       "text": "Schnittpunkt Gerade und Ebene: "
-      },
-      {
-       "type": "math",
-       "tex": "t = \\frac{d − \\vec{n} \\cdot \\vec{A}}{\\vec{n} \\cdot \\vec{u}}",
-       "speech": "t gleich d minus n mal A geteilt durch n mal u"
-      }
-     ],
-     "concept": "t = (d − n⃗ ⊙ A) : (n⃗ ⊙ u⃗), dann S = A + t · u⃗ einsetzen.",
+     "concept": "t = (d − n⃗ ⊙ A⃗) : (n⃗ ⊙ u⃗) bestimmen, dann S⃗ = A⃗ + t · u⃗ einsetzen.",
      "fast_check": {
       "type": "binary_choice",
       "options": [
-       "Der Schnittpunkt entsteht, indem man t in die Geradengleichung einsetzt.",
-       "Der Schnittpunkt ist der Fußpunkt des Lots aus A auf E."
+       "t = (d − n⃗ ⊙ A⃗) : (n⃗ ⊙ u⃗), dann S⃗ = A⃗ + t · u⃗ einsetzen",
+       "t = (n⃗ ⊙ A⃗ − d) : (n⃗ ⊙ u⃗), ohne Einsetzen in die Geraden"
       ],
       "correct_index": 0
-     }
+     },
+     "question": "Wie findest du den Schnittpunkt der Geraden X⃗ = A⃗ + t · u⃗ mit der Ebene n⃗ ⊙ X⃗ = d?"
     },
     {
      "id": "01M6XAHTTR31N5AK8E6J0XJSR8",
@@ -2797,8 +2703,8 @@
      "fast_check": {
       "type": "binary_choice",
       "options": [
-       "Zwei Ebenen schneiden sich fast immer in einer Geraden.",
-       "Zwei Ebenen schneiden sich höchstens in einem Punkt."
+       "Schnittgerade, parallel oder identisch",
+       "Schnittgerade, windschief oder identisch"
       ],
       "correct_index": 0
      },
@@ -2814,34 +2720,24 @@
      "materiality": "material",
      "choice_distractors": [
       {
-       "text": "u⃗ = n₁⃗ + n₂⃗, die Summe der Normalenvektoren",
-       "reason": "Die Summe steht nicht senkrecht auf beiden Ebenen; genau das leistet nur das Kreuzprodukt."
+       "text": "u⃗ = n₁⃗ + n₂⃗, die Summe der beiden Normalenvektoren.",
+       "reason": "Die Summe ist im Allgemeinen nicht zu beiden Normalen senkrecht – die Schnittgerade muss es aber sein."
       },
       {
-       "text": "u⃗ = n₁⃗ ⊙ n₂⃗, das Skalarprodukt",
-       "reason": "Das Skalarprodukt ist eine Zahl und keine Richtung; die Schnittgerade braucht einen Vektor."
-      }
-     ],
-     "question_segments": [
-      {
-       "type": "text",
-       "text": "Richtung der Schnittgeraden: "
-      },
-      {
-       "type": "math",
-       "tex": "\\vec{u} = \\vec{n}_1 \\times \\vec{n}_2",
-       "speech": "u gleich n eins Kreuz n zwei"
+       "text": "u⃗ = d₁ · n₁⃗ − d₂ · n₂⃗ aus den Abstandsparametern der Ebenen.",
+       "reason": "Die Richtung hängt nur von den Normalenvektoren ab; die d-Werte verschieben die Ebenen, ohne die Richtung der Schnittgeraden zu ändern."
       }
      ],
      "concept": "u⃗ = n₁⃗ × n₂⃗, das Kreuzprodukt der beiden Normalenvektoren.",
      "fast_check": {
       "type": "binary_choice",
       "options": [
-       "Die Schnittgerade verläuft senkrecht zu beiden Normalenvektoren.",
-       "Die Schnittgerade verläuft parallel zu beiden Normalenvektoren."
+       "u⃗ = n₁⃗ × n₂⃗",
+       "u⃗ = n₁⃗ ⊙ n₂⃗"
       ],
       "correct_index": 0
-     }
+     },
+     "question": "Wie heißt die Richtung der Schnittgeraden zweier Ebenen mit den Normalenvektoren n₁⃗ und n₂⃗?"
     },
     {
      "id": "01M6XAHTTS8F046XSQNFN0YC8W",
@@ -2927,34 +2823,24 @@
      "materiality": "material",
      "choice_distractors": [
       {
-       "text": "d(P; E) = |n⃗ ⊙ P| ohne Abzug von d",
-       "reason": "Der Wert d verschiebt die Ebene vom Ursprung weg; ohne Abzug misst man gegen die Ursprungsebene."
+       "text": "d(P; E) = |n⃗ ⊙ P⃗ − d| ohne die Division.",
+       "reason": "Nur bei einem Einheitsnormalenvektor misst der Zähler den Abstand; allgemein teilt man durch |n⃗|."
       },
       {
-       "text": "d(P; E) = |P|, der Abstand von P zum Ursprung",
-       "reason": "Das ist die Länge des Ortsvektors; gemeint ist das senkrechte Lot von P auf die Ebene."
+       "text": "d(P; E) = |d| : |n⃗|, ganz ohne den Punkt P⃗.",
+       "reason": "Das ist der Abstand der Ebene zum Ursprung; für einen fremden Punkt zählt die Differenz n⃗ ⊙ P⃗ − d."
       }
      ],
-     "question_segments": [
-      {
-       "type": "text",
-       "text": "Hesse'sche Normalform: "
-      },
-      {
-       "type": "math",
-       "tex": "d(P; E) = \\frac{|\\vec{n} \\cdot \\vec{P} − d|}{|\\vec{n}|}",
-       "speech": "Abstand von P zu E gleich Betrag von n mal P minus d geteilt durch Betrag von n"
-      }
-     ],
-     "concept": "d(P; E) = |n⃗ ⊙ P − d| : |n⃗|.",
+     "concept": "d(P; E) = |n⃗ ⊙ P⃗ − d| : |n⃗|.",
      "fast_check": {
       "type": "binary_choice",
       "options": [
-       "Mit dem Einheitsnormalenvektor misst die linke Seite der Gleichung direkt den Abstand.",
-       "Der Abstand ist immer der Betrag von d."
+       "d(P; E) = |n⃗ ⊙ P⃗ − d| : |n⃗|",
+       "d(P; E) = |n⃗ ⊙ P⃗| : |n⃗| − d"
       ],
       "correct_index": 0
-     }
+     },
+     "question": "Wie groß ist der Abstand eines Punktes P⃗ von der Ebene n⃗ ⊙ X⃗ = d?"
     },
     {
      "id": "01M6XAHTTTRA9GTMS2G27MT6PV",
@@ -2979,8 +2865,8 @@
      "fast_check": {
       "type": "binary_choice",
       "options": [
-       "Bei sich schneidenden Geraden ist der Abstand 0.",
-       "Auch schneidende Geraden haben einen Abstand größer als 0."
+       "d = |AB⃗ ⊙ (u⃗ × v⃗)| : |u⃗ × v⃗|",
+       "d = |AB⃗ ⊙ (u⃗ × v⃗)| : (|u⃗| · |v⃗|)"
       ],
       "correct_index": 0
      },
@@ -3006,7 +2892,7 @@
      ],
      "concept": "Lösungsskizze: n⃗ = (0 | 0 | 1), d = 2; Abstand = |5 − 2| : 1 = 3 LE = 30 m.",
      "sample_solution": "Gleichung in Koordinatenform schreiben: 0x + 0y + 1z = 2, also n⃗ = (0 | 0 | 1) und d = 2, dazu |n⃗| = 1. Hesse'sche Normalform: |n⃗ ⊙ P − d| : |n⃗| = |(0 · 0 + 0 · 0 + 1 · 5) − 2| : 1 = |5 − 2| = 3 LE. In Meter umgerechnet: 3 · 10 = 30 m.",
-     "question": "Ein Messpunkt P liegt in der Höhe z = 5 m über einer Grundfläche in z = 2 m (Ebene E: z = 2). Wie weit ist P von E entfernt? Rechne in Längeneinheiten (LE) und gib das Ergebnis bei 1 LE = 10 m in Metern an."
+     "question": "Der Messpunkt P(0 | 0 | 5) liegt über einer Grundfläche in der Ebene E: z = 2 (Koordinaten in LE, 1 LE = 10 m). Wie weit ist P von E entfernt – in LE und in Metern?"
     }
    ]
   },
@@ -3060,34 +2946,24 @@
      "materiality": "material",
      "choice_distractors": [
       {
-       "text": "Rechts steht r statt r², also ohne Quadrat.",
-       "reason": "Rechts steht r²: Erst die Wurzel aus der rechten Seite liefert den Radius der Kugel."
+       "text": "x² + y² + z² = r² ohne die Koordinaten von M.",
+       "reason": "Nur bei M im Ursprung gilt diese Form; allgemein stehen die Koordinaten von M mit umgekehrtem Vorzeichen in den Klammern."
       },
       {
-       "text": "x² + y² + z² = r² (Kugel um den Ursprung).",
-       "reason": "Diese Gleichung gilt nur für M = (0 | 0 | 0); bei verschobenem Mittelpunkt gehören die Klammern dazu."
-      }
-     ],
-     "question_segments": [
-      {
-       "type": "text",
-       "text": "Kugelgleichung: "
-      },
-      {
-       "type": "math",
-       "tex": "(x − m_1)^2 + (y − m_2)^2 + (z − m_3)^2 = r^2",
-       "speech": "Klammer auf x minus m eins Klammer zu Quadrat plus Klammer auf y minus m zwei Klammer zu Quadrat plus Klammer auf z minus m drei Klammer zu Quadrat gleich r Quadrat"
+       "text": "r = (x − m₁)² + (y − m₂)² + (z − m₃)², also ohne Quadrat rechts.",
+       "reason": "Rechts steht r², nicht r: Verglichen wird die Summe der Quadrate mit dem Quadrat des Radius."
       }
      ],
      "concept": "(x − m₁)² + (y − m₂)² + (z − m₃)² = r².",
      "fast_check": {
       "type": "binary_choice",
       "options": [
-       "In den Klammern stehen die Koordinaten von M mit umgekehrtem Vorzeichen.",
-       "Rechts steht der Radius r und nicht r²."
+       "(x − m₁)² + (y − m₂)² + (z − m₃)² = r²",
+       "(x − m₁)² + (y − m₂)² + (z − m₃)² = r"
       ],
       "correct_index": 0
-     }
+     },
+     "question": "Wie lautet die Koordinatenform einer Kugel mit Mittelpunkt M(m₁ | m₂ | m₃) und Radius r?"
     },
     {
      "id": "01M6XAHTTVYD23FSZWR0R5DH7S",
@@ -3112,8 +2988,8 @@
      "fast_check": {
       "type": "binary_choice",
       "options": [
-       "Bei d kleiner als r hat der Schnittkreis den Radius ρ = √(r² − d²).",
-       "Die Ebene schneidet die Kugel nur, wenn sie durch den Mittelpunkt geht."
+       "d(M; E) = r tangent, d < r schneidend, d > r verfehlt",
+       "d(M; E) = r schneidend, d < r tangent, d > r verfehlt"
       ],
       "correct_index": 0
      },

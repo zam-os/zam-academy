@@ -36,7 +36,7 @@ erfüllt die Extremwert-KE und die Anwendungs-KE zugleich.
 
 - **Nicht enthalten, weil nicht im Fachlehrplan M13:** der Vertiefungskurs M12
   (Komplexe Zahlen, Folgen und Reihen, Matrizen, Zahlentheorie und Kryptologie,
-  Statistik), gebrochen-rationale Funktionen und ihre Asymptoten (M11 LB 2, siehe `mathematik-gymnasium-11/coverage.json`), der Satz
+  Statistik), gebrochen-rationale Funktionen und ihre Asymptoten (M11 LB 2, die zugehörige Kurvendiskussion bis M12 LB 4; siehe `mathematik-gymnasium-11/coverage.json` und `mathematik-gymnasium-12/coverage.json`), der Satz
   von Moivre-Laplace, Hypothesentests und Binomialverteilung (M12).
 - **Wiederholung aus M12, ausdrücklich als Auffrischung behandelt:** Stamm- und
   Integralfunktionen, Potenz-, Produkt- und Kettenregel (`int-5`, `aw-1`).

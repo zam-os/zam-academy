@@ -196,32 +196,35 @@ const verketteteFunktionen = L(1, {
             { x: x0, b, g, h },
           );
         }
-        const x = rng.int(2, 5);
-        const k = rng.int(2, 5);
-        const s = x * x + k * x;
-        const flaeche = s * s;
+        const t = rng.int(1, 9);
+        const v = t + 2; // m/s
+        const E = 2 * v * v; // J bei m = 4 kg
         return task(
           2,
           "",
-          `Die Seitenlänge eines quadratischen Metallschilds hängt von der Zahl x der Farbschichten ab: s(x) = x² + ${k}x cm. Für x = ${x} soll die Fläche A(x) = s(x)² berechnet werden. Wie lang ist dann die Seite, und wie groß ist die Fläche des Schilds?`,
+          `Ein Radfahrer fährt mit v(t) = (t + 2) m/s. Seine kinetische Energie ist E = ½ · m · v(t)² mit m = 4 kg. Wie schnell ist er nach ${t} s, und wie groß ist dann seine Energie?`,
           [
-            numberField("Seitenlänge:", s, "cm", 0),
-            numberField("Fläche:", flaeche, "cm²", 0, {
+            numberField("v:", v, "m/s", 0),
+            numberField("E:", E, "J", 0, {
               slips: [
                 {
-                  value: s + s,
-                  hint: "Die Fläche eines Quadrats ist Seite mal Seite, nicht doppelt die Seitenlänge.",
+                  value: 2 * v,
+                  hint: "Die Energie hängt am Quadrat der Geschwindigkeit: E = ½ · m · v², nicht ½ · m · v.",
+                },
+                {
+                  value: v * v,
+                  hint: "Der Faktor ½ · m = 2 fehlt: Bei m = 4 kg ist E = 2 · v².",
                 },
               ],
             }),
           ],
-          "Zuerst s(x) = x² + kx auswerten, dann quadrieren: A = s².",
+          "Zuerst v(t) auswerten, dann quadrieren und mit ½ · m = 2 multiplizieren.",
           [
-            `Seitenlänge: s(${x}) = ${x}² + ${k} · ${x} = ${x * x} + ${k * x} = ${s} cm.`,
-            `Fläche des Quadrats: A = (${s} cm)² = ${flaeche} cm².`,
+            `v(${t}) = ${t} + 2 = ${v} m/s.`,
+            `E = ½ · 4 kg · (${v} m/s)² = 2 · ${v * v} = ${E} J.`,
           ],
-          `Die Seite ist ${s} cm lang und die Fläche beträgt ${flaeche} cm².`,
-          { x, k, s, A: flaeche },
+          `Nach ${t} s fährt er ${v} m/s, seine Energie beträgt ${E} J.`,
+          { t, v, E },
         );
       },
     },
