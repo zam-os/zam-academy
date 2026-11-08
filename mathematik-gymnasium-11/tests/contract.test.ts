@@ -425,12 +425,14 @@ describe("ZAM-Zelle (cell.json)", () => {
     };
     const legacy = table.sources.map((entry) => ({ entry, tile: SNAPSHOTS[entry.file] }));
 
-    it("is a proposal only: no approval, no replaces, no retired items", () => {
-      expect(table.status).toBe("proposal-only");
-      expect(table.approved).toBeNull();
-      expect(table.source).not.toMatch(/Freigabe durch Thomas am|gebe ich frei/);
+    it("is approved by Thomas, with his words; only the A successor declares replaces, nothing is retired", () => {
+      expect(table.status).toBe("approved");
+      expect(table.approved).toBe("2026-11-08");
+      expect(table.source).toContain("„Freigabe erteilt");
       expect(cell.retired_items ?? []).toEqual([]);
-      for (const item of items) expect(item.replaces, item.slug).toBeUndefined();
+      const declared = items.filter((item) => item.replaces).map((item) => [item.slug, item.replaces]);
+      const approved = table.rows.filter((row) => row.category !== "C").map((row) => [row.academy_slug, [row.de_by_id]]);
+      expect(declared).toEqual(approved);
     });
 
     it("keeps snapshots of all four old cells at the named commit", () => {
@@ -471,7 +473,7 @@ describe("ZAM-Zelle (cell.json)", () => {
           expect(row.action).toBe("keep-active");
         } else {
           expect(slugs.has(row.academy_slug ?? ""), `${row.de_by_id} → ${row.academy_slug}`).toBe(true);
-          expect(row.action).toBe("propose-replace-after-approval");
+          expect(row.action).toBe("replace");
         }
       }
       const successors = table.rows.filter((row) => row.academy_slug).map((row) => row.academy_slug);

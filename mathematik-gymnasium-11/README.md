@@ -20,7 +20,7 @@ Every lesson has the shape of Mathematik 9 and 10: an explanation with worked ex
 
 The ZAM cell `zam-academy:mathematik-gymnasium-11` is `cell.json` in this folder: 84 review cards, one atom per lesson, ids generated as ULIDs. Each card links to its lesson as `https://academy.zam-os.org/mathematik-gymnasium-11/#lesson=<lesson id>`. Formulas are math segments with spoken text, and every card has two curated distractors with reasons that pass zam-core's `checkCandidate` and `checkShownSet`.
 
-zam-os/zam bundles four older cells `de-by:gymnasium-11-mathematik-*` (16 items). `replaces-de-by.json` maps them as a proposal only (`"status": "proposal-only"`, `"approved": null`): 1 A (the sufficient condition f″(x₀) < 0 for a Hochpunkt), 0 B and 15 C that stay active, because Integralrechnung, Ebenen und Abstände and the Binomialverteilung are not part of M11. The cell declares no `replaces` and no `retired_items`. `tests/fixtures/` holds byte-exact snapshots of the four cells, and `scripts/validate-migration.mjs` shows with the pinned zam-core that installing the cell leaves every old history unchanged, rehearses the proposed transfer in a throw-away database and checks that a learner holding cards on both ids makes the install refuse an automatic merge.
+zam-os/zam bundles four older cells `de-by:gymnasium-11-mathematik-*` (16 items). `replaces-de-by.json` maps them; Thomas approved the mapping on 2026-11-08 (`"status": "approved"`): 1 A (the sufficient condition f″(x₀) < 0 for a Hochpunkt, whose history moves to `m11-hochpunkt-f2` via `replaces`), 0 B and 15 C that stay active without a successor, because Integralrechnung, Ebenen und Abstände and the Binomialverteilung are not part of M11. The cell declares no `retired_items`. `tests/fixtures/` holds byte-exact snapshots of the four cells, and `scripts/validate-migration.mjs` shows with the pinned zam-core that installing the cell moves exactly the A history with all its reviews, keeps every C card active, is idempotent, and that a learner holding cards on both ids makes the install refuse an automatic merge.
 
 ## Develop
 
@@ -32,7 +32,7 @@ npm run build        # single-file build in dist/index.html
 npm run package:zip  # offline zip in release/ (needs the zip command)
 ```
 
-Lesson content lives in `src/curriculum/stage-*.ts`, the lab drawings in `src/lab/views-*.ts` (one per stage), the goal witnesses in `tests/witnesses-stage-*.ts`. `tests/labs-tasks.test.ts` walks every lab grid and 80 generated tasks per level and lesson; `tests/contract.test.ts` checks the path, the curriculum mapping, the cell and the mapping proposal.
+Lesson content lives in `src/curriculum/stage-*.ts`, the lab drawings in `src/lab/views-*.ts` (one per stage), the goal witnesses in `tests/witnesses-stage-*.ts`. `tests/labs-tasks.test.ts` walks every lab grid and 80 generated tasks per level and lesson; `tests/contract.test.ts` checks the path, the curriculum mapping, the cell and the approved mapping.
 
 ## Sources
 

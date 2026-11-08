@@ -34,7 +34,7 @@ Vier `de-by`-Zellen in zam-os/zam (Commit `f57e6740854a2f91f985b59b9e101b388186d
 | B | 0 | Keine mehrteilige Karte wird ganz übernommen |
 | C | 15 | Mehrteilig oder außerhalb des Plans M11 (Extremwertprobleme, Integralrechnung, Ebenen und Abstände, Binomialverteilung); bleiben aktiv und bekommen keinen Nachfolger |
 
-Die Zuordnung ist ein Vorschlag (`"status": "proposal-only"`, `"approved": null`). Die Zelle erscheint deshalb ohne `replaces` und ohne `retired_items`; `scripts/validate-migration.mjs` probt die vorgeschlagene Übertragung nur in Wegwerf-Datenbanken. Nach Thomas' Freigabe folgt eine Version mit `replaces` am Nachfolger.
+Thomas hat die Zuordnung am 2026-11-08 freigegeben („Freigabe erteilt“, im Claude-Code-Chat nach den Reviews in zam-os/zam-academy#105). Die Zelle erscheint deshalb schon mit der ersten Veröffentlichung mit `replaces` am Nachfolger `m11-hochpunkt-f2`, ohne `retired_items`. `scripts/validate-migration.mjs` zeigt mit dem in CI gepinnten zam-core: Die A-Historie wandert mit allen Reviews, die 15 C-Karten bleiben aktiv, wiederholte Installationen ändern nichts, und wer Karten auf alter und neuer ID hält, bekommt eine verweigerte Installation statt einer stillen Zusammenführung.
 
 Nicht abgebildet ist die Zelle `de-by:gymnasium-10-mathematik-ganzrationale-funktionen-ableitung-differentialrechnung`. Ihr zweites Atom (Differenzenquotient, Ableitungsregeln) behandelt Stoff, der im neunjährigen Gymnasium in M11 liegt; die Zelle gehört aber zu Jahrgangsstufe 10 und wird mit dem Paket Mathematik 10 Gymnasium abgeglichen, damit keine Karte zweimal zugeordnet wird.
 

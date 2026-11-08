@@ -1,8 +1,9 @@
 {
   "schema": 1,
-  "status": "proposal-only",
-  "approved": null,
-  "source": "Autorenvorschlag vom 2026-11-08: 1 A, 0 B, 15 C; alle C-Karten bleiben aktiv, keine Stilllegung. Keine Freigabe durch Thomas und keine Änderung persönlicher Historien. Veröffentlichung zunächst ohne replaces und retired_items gemäß Paketstandard.",
+  "status": "approved",
+  "approved": "2026-11-08",
+  "source": "Thomas in diesem Claude-Code-Chat am 2026-11-08, nach den Reviews in zam-os/zam-academy#105 und deren Korrekturen (Stand 01dcc2f): „Freigabe erteilt - Du darfst als Admin mergen - danke“. Die Freigabe gilt der Zuordnung der 16 de-by-Karten in dieser Datei (1 A, 0 B, 15 C; keine Stilllegung).",
+  "authorization": "Thomas hat am 8. November 2026 die hier dokumentierten 16 Zuordnungen ausdrücklich freigegeben. Die eine A-Ersetzung (01K8GB00000000000000000J01 → m11-hochpunkt-f2) erscheint mit der ersten Veröffentlichung der Zelle; die 15 C-Karten bleiben ohne Nachfolger aktiv. Persönliche Karten und Reviewhistorien bleiben erhalten.",
   "source_repository": "zam-os/zam",
   "source_commit": "f57e6740854a2f91f985b59b9e101b388186d3bc",
   "sources": [
@@ -693,8 +694,8 @@
       ],
       "category": "A",
       "academy_slug": "m11-hochpunkt-f2",
-      "action": "propose-replace-after-approval",
-      "reason": "Derselbe Einzelabruf: Bei f′(x₀) = 0 ist f″(x₀) < 0 hinreichend für einen Hochpunkt (M11 LB 4.2, notwendige und hinreichende Bedingungen). Nur Vorschlag; die ausgelieferte Zelle deklariert keine Ersetzung."
+      "action": "replace",
+      "reason": "Derselbe Einzelabruf: Bei f′(x₀) = 0 ist f″(x₀) < 0 hinreichend für einen Hochpunkt (M11 LB 4.2, notwendige und hinreichende Bedingungen)."
     },
     {
       "de_by_cell": "de-by:gymnasium-11-mathematik-kurvendiskussion-extremwertprobleme-wendepunkte",
