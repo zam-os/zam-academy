@@ -20,7 +20,7 @@ const IDS = [
   "int-5-stammfunktionen",
   "int-6-flaechen",
   "int-7-uneigentlich",
-  "int-8-gesaendteraenderung",
+  "int-8-gesamtaenderung",
   "int-9-rotationskoerper",
 ];
 const SEEDS = Array.from({ length: 200 }, (_, i) => seedFrom(`stage-1:${i}`));
@@ -112,7 +112,7 @@ describe("Etappe 1: Flächeninhalt und bestimmtes Integral", () => {
       "int-5-stammfunktionen",
       "int-6-flaechen",
       "int-7-uneigentlich",
-      "int-8-gesaendteraenderung",
+      "int-8-gesamtaenderung",
       "int-9-rotationskoerper",
     ];
     expect(coverage).toEqual(IDS);
@@ -169,7 +169,7 @@ describe("Etappe 1: Flächeninhalt und bestimmtes Integral", () => {
     const l7 = lesson("int-7-uneigentlich");
     expect(l7.quiz.options[l7.quiz.correctIndex]).toContain("x²");
     // p = 2 > 1: ∫₁^∞ 1 : x² dx = 1 konvergiert.
-    const l8 = lesson("int-8-gesaendteraenderung");
+    const l8 = lesson("int-8-gesamtaenderung");
     expect(l8.quiz.options[l8.quiz.correctIndex]).toContain("−6 m");
     // ∫₀³ (−2) dt = −6 m Verschiebung.
     const l9 = lesson("int-9-rotationskoerper");
@@ -467,7 +467,7 @@ describe("Aufgaben der Etappe 1 rechnen richtig", () => {
 
   it("1.8 Strecke addiert Beträge, Verschiebung die Flächen", () => {
     for (const level of [1, 2] as const) {
-      for (const task of tasks("int-8-gesaendteraenderung", "strecke-geschwindigkeit", level)) {
+      for (const task of tasks("int-8-gesamtaenderung", "strecke-geschwindigkeit", level)) {
         const { v1, v2, v3, w1, w2, w3 } = meta(task);
         const v = [v1, v2, v3];
         const w = [w1, w2, w3];
@@ -479,24 +479,24 @@ describe("Aufgaben der Etappe 1 rechnen richtig", () => {
         }
       }
     }
-    varied("int-8-gesaendteraenderung", "strecke-geschwindigkeit", 1);
-    varied("int-8-gesaendteraenderung", "strecke-geschwindigkeit", 2);
+    varied("int-8-gesamtaenderung", "strecke-geschwindigkeit", 1);
+    varied("int-8-gesamtaenderung", "strecke-geschwindigkeit", 2);
   });
 
   it("1.8 Gesamtänderung: Dauer = Gesamtänderung : Rate", () => {
-    for (const task of tasks("int-8-gesaendteraenderung", "gesamt-aenderung", 1)) {
+    for (const task of tasks("int-8-gesamtaenderung", "gesamt-aenderung", 1)) {
       const { r, B, t } = meta(task);
       near(num(task, 0), t);
       near(r * t, B);
       expect(choice(task, 1)).toBe(r > 0 ? 0 : 1);
     }
-    for (const task of tasks("int-8-gesaendteraenderung", "gesamt-aenderung", 2)) {
+    for (const task of tasks("int-8-gesamtaenderung", "gesamt-aenderung", 2)) {
       const { r1, t1, r2, t2, B } = meta(task);
       near(num(task, 0), t2);
       near(r1 * t1 + r2 * t2, B);
     }
-    varied("int-8-gesaendteraenderung", "gesamt-aenderung", 1);
-    varied("int-8-gesaendteraenderung", "gesamt-aenderung", 2);
+    varied("int-8-gesamtaenderung", "gesamt-aenderung", 1);
+    varied("int-8-gesamtaenderung", "gesamt-aenderung", 2);
   });
 
   it("1.9 Rotationsvolumina: π ∫ f² exakt", () => {
@@ -579,12 +579,11 @@ describe("Labore der Etappe 1 rechnen richtig", () => {
     const lab = lesson("int-3-hauptsatz").lab;
     for (const values of enumerateLabGrid(lab, 3)) {
       const r = computeReadouts(lab, values);
-      const p = Math.min(values.u, values.v);
-      const q = Math.max(values.u, values.v);
       const F = (x: number) =>
         (values.a * x ** 3) / 3 + (values.b * x * x) / 2 + values.c * x;
-      near(Number(r.fbfa), F(q) - F(p), 1e-9);
-      near(Number(r.bilanz), F(q) - F(p), 1e-9);
+      // Both ways keep the orientation: swapping u and v flips the sign.
+      near(Number(r.fbfa), F(values.v) - F(values.u), 1e-9);
+      near(Number(r.bilanz), F(values.v) - F(values.u), 1e-9);
       near(Number(r.diff), 0, 1e-9);
     }
   });
@@ -675,7 +674,7 @@ describe("Labore der Etappe 1 rechnen richtig", () => {
   });
 
   it("Gesamtänderung: Verschiebung mit Zeichen, Strecke als Betrag", () => {
-    const lab = lesson("int-8-gesaendteraenderung").lab;
+    const lab = lesson("int-8-gesamtaenderung").lab;
     for (const values of enumerateLabGrid(lab, 4)) {
       const r = computeReadouts(lab, values);
       const t1 = Math.min(values.t1, values.T);

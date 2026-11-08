@@ -1521,7 +1521,7 @@ const hauptsatzLesson: Lesson = makeLesson(1, 3, {
   lab: lab(
     "hauptsatz",
     "Hauptsatz am Polynom",
-    "Stelle f(x) = a x² + b x + c ein und schiebe die Intervallgrenzen u und v. Das Labor rechnet die Bilanz zweimal: einmal über die Stammfunktion (F(b) − F(a)), einmal über die Teilflächen A⁺ und A⁻. Die Differenz muss 0 sein.",
+    "Stelle f(x) = a x² + b x + c ein und schiebe die Intervallgrenzen u und v. Das Labor rechnet die Bilanz zweimal: einmal über die Stammfunktion (F(v) − F(u)), einmal über die Teilflächen A⁺ und A⁻. Die Differenz muss 0 sein. Tausch die Grenzen: Beide Wege ändern gemeinsam das Vorzeichen, denn ∫ von v nach u ist −∫ von u nach v.",
     [
       range("a", "Koeffizient a", -2, 2, 1, 0.5),
       range("b", "Koeffizient b", -4, 4, 0, 1),
@@ -1532,13 +1532,25 @@ const hauptsatzLesson: Lesson = makeLesson(1, 3, {
     [
       readout("fbfa", "F(v) − F(u) über die Stammfunktion", (v) => {
         const F = (x: number) => (v.a * x ** 3) / 3 + (v.b * x * x) / 2 + v.c * x;
-        return F(Math.max(v.u, v.v)) - F(Math.min(v.u, v.v));
+        return F(v.v) - F(v.u);
       }),
-      readout("bilanz", "Bilanz aus A⁺ − A⁻", (v) => polyBilanz(v.a, v.b, v.c, v.u, v.v).bilanz, "", 2, true),
+      readout(
+        "bilanz",
+        "Bilanz von u nach v",
+        (v) => {
+          const { ap, am } = polyBilanz(v.a, v.b, v.c, v.u, v.v);
+          return v.u <= v.v ? ap - am : am - ap;
+        },
+        "",
+        2,
+        true,
+      ),
       readout("diff", "Differenz der beiden Wege", (v) => {
         const F = (x: number) => (v.a * x ** 3) / 3 + (v.b * x * x) / 2 + v.c * x;
-        const fbfa = F(Math.max(v.u, v.v)) - F(Math.min(v.u, v.v));
-        return polyBilanz(v.a, v.b, v.c, v.u, v.v).bilanz - fbfa;
+        const fbfa = F(v.v) - F(v.u);
+        const { ap, am } = polyBilanz(v.a, v.b, v.c, v.u, v.v);
+        const bilanz = v.u <= v.v ? ap - am : am - ap;
+        return bilanz - fbfa;
       }),
       readout("am", "A⁻ (Fläche unter der Achse)", (v) => polyBilanz(v.a, v.b, v.c, v.u, v.v).am),
     ],
@@ -1555,7 +1567,7 @@ const hauptsatzLesson: Lesson = makeLesson(1, 3, {
       },
       {
         id: "unter-der-achse",
-        text: "Sorge dafür, dass A⁻ größer als 0 ist: Dann ist die Bilanz kleiner als die Fläche über der Achse.",
+        text: "Sorge dafür, dass A⁻ größer als 0 ist: Dann unterscheidet sich die Bilanz von der Fläche über der Achse.",
         check: (_v, r) => Number(r.am) > 1e-9,
       },
     ],
@@ -1945,7 +1957,7 @@ const uneigentlichLesson: Lesson = makeLesson(1, 7, {
 });
 
 const gesamtAenderungLesson: Lesson = makeLesson(1, 8, {
-  id: "int-8-gesaendteraenderung",
+  id: "int-8-gesamtaenderung",
   title: "1.8 Das bestimmte Integral als Gesamtänderung",
   subtitle: "Von der Momentanrate zur Gesamtmenge",
   whyItMatters:

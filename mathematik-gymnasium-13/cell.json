@@ -494,7 +494,7 @@
       },
       {
        "type": "text",
-       "text": " die Flächenbilanz wächst."
+       "text": ": Die Flächenbilanz wächst."
       }
      ],
      "fast_check": {
@@ -1022,12 +1022,12 @@
    "id": "01M6XAHTTDF5MFAGX4ZEF2F9FZ",
    "atom_uri": "urn:zam:atom:01M6XAHTTDF5MFAGX4ZEF2F9FZ",
    "namespace": "zam-academy-mathematik-gymnasium-13",
-   "slug": "int-8-gesaendteraenderung",
+   "slug": "int-8-gesamtaenderung",
    "title": "Das bestimmte Integral als Gesamtänderung",
    "domain": "mathematik/analysis",
    "reduction": "axiomatic",
    "typical_age_min": 18,
-   "source_link": "https://academy.zam-os.org/mathematik-gymnasium-13/#lesson=int-8-gesaendteraenderung",
+   "source_link": "https://academy.zam-os.org/mathematik-gymnasium-13/#lesson=int-8-gesamtaenderung",
    "prerequisites": [
     {
      "atom_id": "01M6XAHTT8XFCWMZ7TMSR9JDER",
@@ -1059,7 +1059,7 @@
      "language": "de",
      "tier": "tier1_fast",
      "bloom_level": 1,
-     "source_link": "https://academy.zam-os.org/mathematik-gymnasium-13/#lesson=int-8-gesaendteraenderung",
+     "source_link": "https://academy.zam-os.org/mathematik-gymnasium-13/#lesson=int-8-gesamtaenderung",
      "materiality": "material",
      "choice_distractors": [
       {
@@ -1112,7 +1112,7 @@
      "language": "de",
      "tier": "tier1_fast",
      "bloom_level": 1,
-     "source_link": "https://academy.zam-os.org/mathematik-gymnasium-13/#lesson=int-8-gesaendteraenderung",
+     "source_link": "https://academy.zam-os.org/mathematik-gymnasium-13/#lesson=int-8-gesamtaenderung",
      "materiality": "material",
      "choice_distractors": [
       {
@@ -1141,7 +1141,7 @@
      "language": "de",
      "tier": "tier2_transfer",
      "bloom_level": 3,
-     "source_link": "https://academy.zam-os.org/mathematik-gymnasium-13/#lesson=int-8-gesaendteraenderung",
+     "source_link": "https://academy.zam-os.org/mathematik-gymnasium-13/#lesson=int-8-gesamtaenderung",
      "materiality": "material",
      "choice_distractors": [
       {
@@ -1873,7 +1873,7 @@
        "reason": "Verwechselt die Standardabweichung σ mit der Breite 2σ des Intervalls μ ± 2σ: Standardisiert wird durch σ."
       }
      ],
-     "question": "Wie standardisierst du eine normalverteilte Zufallsgröße X ~ N(μ; σ²) zu Z ~ N(0; 1)?",
+     "question": "Wie standardisierst du eine normalverteilte Zufallsgröße X ~ N(μ; σ) zu Z ~ N(0; 1)?",
      "concept": "z = (x − μ) : σ",
      "fast_check": {
       "type": "binary_choice",
@@ -2138,8 +2138,8 @@
        "reason": "Die Länge sagt nichts über die Richtung aus; abhängig sind nur Vektoren im Vielfaches-Verhältnis."
       },
       {
-       "text": "Wenn ihr Skalarprodukt verschwindet, also u⃗ ⊙ v⃗ = 0⃗.",
-       "reason": "Ein Skalarprodukt von 0 bedeutet senkrecht, also gerade Unabhängigkeit, nicht Abhängigkeit."
+       "text": "Wenn ihr Skalarprodukt verschwindet, also u⃗ ⊙ v⃗ = 0.",
+       "reason": "Ein verschwindendes Skalarprodukt heißt senkrecht – senkrechte Vektoren sind gerade unabhängig, nicht abhängig."
       }
      ],
      "question": "Wann sind zwei Vektoren im ℝ³ linear abhängig?",
@@ -2147,8 +2147,8 @@
      "fast_check": {
       "type": "binary_choice",
       "options": [
-       "Drei Vektoren im ℝ³ sind immer linear abhängig.",
-       "Drei Vektoren im ℝ³ sind immer linear unabhängig."
+       "Genau dann, wenn einer ein Vielfaches des anderen ist.",
+       "Genau dann, wenn sie senkrecht zueinander stehen."
       ],
       "correct_index": 0
      },
@@ -2172,19 +2172,9 @@
        "reason": "Jeder Koeffizient hängt an seinem Vektor: r zählt zu u⃗ und s zu v⃗ – vertauscht stimmt die Probe nicht."
       }
      ],
-     "question_segments": [
-      {
-       "type": "text",
-       "text": "Darstellen und begründen: "
-      },
-      {
-       "type": "math",
-       "tex": "\\vec{w} = r \\cdot \\vec{u} + s \\cdot \\vec{v}",
-       "speech": "w gleich r mal u plus s mal v"
-      }
-     ],
      "concept": "Lösungsskizze: w = 2 · u⃗ + 3 · v⃗; bei w′ verhindert die z-Koordinate 1 jede Darstellung.",
-     "sample_solution": "Gleichungssystem aus den Koordinaten: r · 1 + s · 0 = 2 liefert r = 2, und r · 0 + s · 1 = 3 liefert s = 3. Probe in der z-Koordinate: 2 · 0 + 3 · 0 = 0, das passt zu w. Also w = 2 · u⃗ + 3 · v⃗. Für w′ = (2 | 3 | 1) müsste in der z-Koordinate r · 0 + s · 0 = 1 gelten, also 0 = 1 – ein Widerspruch. Da u⃗ und v⃗ in der xy-Ebene liegen, kann keine Linearkombination eine z-Koordinate ungleich 0 erzeugen."
+     "sample_solution": "Gleichungssystem aus den Koordinaten: r · 1 + s · 0 = 2 liefert r = 2, und r · 0 + s · 1 = 3 liefert s = 3. Probe in der z-Koordinate: 2 · 0 + 3 · 0 = 0, das passt zu w. Also w = 2 · u⃗ + 3 · v⃗. Für w′ = (2 | 3 | 1) müsste in der z-Koordinate r · 0 + s · 0 = 1 gelten, also 0 = 1 – ein Widerspruch. Da u⃗ und v⃗ in der xy-Ebene liegen, kann keine Linearkombination eine z-Koordinate ungleich 0 erzeugen.",
+     "question": "Gegeben sind u⃗ = (1 | 0 | 0) und v⃗ = (0 | 1 | 0). Stelle w⃗ = (2 | 3 | 0) als Linearkombination w⃗ = r · u⃗ + s · v⃗ dar und begründe, warum w⃗′ = (2 | 3 | 1) keine Linearkombination von u⃗ und v⃗ ist."
     }
    ]
   },
@@ -2314,19 +2304,9 @@
        "reason": "Vorzeichenfehler bei s = −1: Der Anteil von v⃗ muss abgezogen werden, richtig ist (2 | 3 | 3)."
       }
      ],
-     "question_segments": [
-      {
-       "type": "text",
-       "text": "Punktprobe und Rechnen mit den Parametern: "
-      },
-      {
-       "type": "math",
-       "tex": "\\vec{X}(r\\mid s) = \\vec{P} + r \\cdot \\vec{u} + s \\cdot \\vec{v}",
-       "speech": "X von r und s gleich P plus r mal u plus s mal v"
-      }
-     ],
      "concept": "Lösungsskizze: X(1 | 1) = (3 | 3 | 0) stimmt; X(2 | −1) = (2 | 3 | 3).",
-     "sample_solution": "Probe: X(1 | 1) = (1 | 0 | 0) + 1 · (1 | 2 | 1) + 1 · (1 | 1 | −1) = (1 + 1 + 1 | 0 + 2 + 1 | 0 + 1 − 1) = (3 | 3 | 0). Die Angabe stimmt. X(2 | −1) = (1 | 0 | 0) + 2 · (1 | 2 | 1) + (−1) · (1 | 1 | −1) = (1 + 2 − 1 | 0 + 4 − 1 | 0 + 2 + 1) = (2 | 3 | 3)."
+     "sample_solution": "Probe: X(1 | 1) = (1 | 0 | 0) + 1 · (1 | 2 | 1) + 1 · (1 | 1 | −1) = (1 + 1 + 1 | 0 + 2 + 1 | 0 + 1 − 1) = (3 | 3 | 0). Die Angabe stimmt. X(2 | −1) = (1 | 0 | 0) + 2 · (1 | 2 | 1) + (−1) · (1 | 1 | −1) = (1 + 2 − 1 | 0 + 4 − 1 | 0 + 2 + 1) = (2 | 3 | 3).",
+     "question": "In der Ebene E: X⃗(r | s) = P⃗ + r · u⃗ + s · v⃗ mit P⃗ = (1 | 0 | 0), u⃗ = (1 | 2 | 1) und v⃗ = (1 | 1 | −1) soll X(1 | 1) = (3 | 3 | 0) liegen. Prüfe die Punktprobe und berechne X(2 | −1)."
     }
    ]
   },
@@ -2375,8 +2355,8 @@
      "materiality": "material",
      "choice_distractors": [
       {
-       "text": "n⃗ · X = 0 für jede Ebene",
-       "reason": "d = 0 gilt nur für Ebenen durch den Ursprung; allgemein steht rechts d = n⃗ · P."
+       "text": "n⃗ ⊙ X = 0 für jede Ebene",
+       "reason": "d = 0 gilt nur für Ebenen durch den Ursprung; allgemein steht rechts d = n⃗ ⊙ P."
       },
       {
        "text": "n⃗ ist ein Richtungsvektor der Ebene",
@@ -2409,7 +2389,7 @@
       "type": "binary_choice",
       "options": [
        "Ein Vielfaches von n⃗ und d beschreibt dieselbe Ebene.",
-       "2 · n⃗ · X = d beschreibt eine andere Ebene."
+       "2 · n⃗ ⊙ X = d beschreibt eine andere Ebene."
       ],
       "correct_index": 0
      }
@@ -2433,7 +2413,7 @@
       }
      ],
      "question": "Wie groß ist der Abstand der Ebene 2x + 2y − z = 8 zum Ursprung?",
-     "concept": "8 : 3 = 2,67 LE mit |n⃗| = 3 als Länge des Normalenvektors.",
+     "concept": "8 : 3 ≈ 2,67 LE mit |n⃗| = 3 als Länge des Normalenvektors.",
      "fast_check": {
       "type": "binary_choice",
       "options": [
@@ -2442,7 +2422,7 @@
       ],
       "correct_index": 0
      },
-     "sample_solution": "Der Abstand der Ebene n⃗ · X = d zum Ursprung ist d : |n⃗| = 8 : 3 = 2,67 LE, denn |n⃗| = √(2² + 2² + (−1)²) = 3."
+     "sample_solution": "Der Abstand der Ebene n⃗ ⊙ X = d zum Ursprung ist d : |n⃗| = 8 : 3 ≈ 2,67 LE, denn |n⃗| = √(2² + 2² + (−1)²) = 3."
     },
     {
      "id": "01M6XAHTTP0ZWS3A530VV7N4XX",
@@ -2462,19 +2442,9 @@
        "reason": "In 0x + 3y + 4z = 10 fehlt die x-Komponente: Das heißt parallel zur x-Achse, nicht n₃ = 0 zur z-Achse."
       }
      ],
-     "question_segments": [
-      {
-       "type": "text",
-       "text": "Gleichung lesen: "
-      },
-      {
-       "type": "math",
-       "tex": "0x + 3y + 4z = 10",
-       "speech": "null mal x plus drei mal y plus vier mal z gleich zehn"
-      }
-     ],
      "concept": "Lösungsskizze: n₁ = 0 heißt parallel zur x-Achse; der Abstand beträgt 10 : 5 = 2 LE.",
-     "sample_solution": "Aus der Gleichung liest man n⃗ = (0 | 3 | 4) und d = 10. Die x-Komponente von n⃗ ist 0: Der Normalenvektor steht senkrecht auf der x-Achse, also verläuft die Ebene parallel zu ihr. Es ist |n⃗| = √(0 + 9 + 16) = 5. Der Abstand zum Ursprung ist |d| : |n⃗| = 10 : 5 = 2 LE. Die Ebene geht nicht durch den Ursprung, denn d = 10 ist nicht 0."
+     "sample_solution": "Aus der Gleichung liest man n⃗ = (0 | 3 | 4) und d = 10. Die x-Komponente von n⃗ ist 0: Der Normalenvektor steht senkrecht auf der x-Achse, also verläuft die Ebene parallel zu ihr. Es ist |n⃗| = √(0 + 9 + 16) = 5. Der Abstand zum Ursprung ist |d| : |n⃗| = 10 : 5 = 2 LE. Die Ebene geht nicht durch den Ursprung, denn d = 10 ist nicht 0.",
+     "question": "Gleichung lesen: 0x + 3y + 4z = 10. Lies Normalenvektor, Lage zur x-Achse und Abstand zum Ursprung ab und begründe die Lage."
     }
    ]
   },
@@ -2601,19 +2571,9 @@
        "reason": "Parallel wären nur Vielfache derselben Richtung; hier sind die Richtungen verschieden, die Geraden windschief."
       }
      ],
-     "question_segments": [
-      {
-       "type": "text",
-       "text": "Lage zweier Geraden berechnen: "
-      },
-      {
-       "type": "math",
-       "tex": "\\vec{A} + t \\cdot \\vec{u} = \\vec{B} + s \\cdot \\vec{v}",
-       "speech": "A plus t mal u gleich B plus s mal v"
-      }
-     ],
      "concept": "Nicht parallel und ohne Schnittpunkt: windschief mit dem Abstand 1 LE.",
-     "sample_solution": "Richtungen vergleichen: (1 | 0 | 0) und (0 | 1 | 0) sind keine Vielfachen, also nicht parallel. Gleichungssystem aufstellen: x: t = 0; y: 0 = 1 + s; z: 0 = 1. Die z-Gleichung ist ein Widerspruch, das System hat keine Lösung – die Geraden sind windschief. Abstand: u⃗ × v⃗ = (0 | 0 | 1), AP = (0 | 1 | 1), also d = |AP · (u⃗ × v⃗)| : |u⃗ × v⃗| = 1 : 1 = 1 LE."
+     "sample_solution": "Richtungen vergleichen: (1 | 0 | 0) und (0 | 1 | 0) sind keine Vielfachen, also nicht parallel. Gleichungssystem aufstellen: x: t = 0; y: 0 = 1 + s; z: 0 = 1. Die z-Gleichung ist ein Widerspruch, das System hat keine Lösung – die Geraden sind windschief. Abstand: u⃗ × v⃗ = (0 | 0 | 1), AP = (0 | 1 | 1), also d = |AP · (u⃗ × v⃗)| : |u⃗ × v⃗| = 1 : 1 = 1 LE.",
+     "question": "g: X⃗ = (0 | 0 | 0) + t · (1 | 0 | 0) und h: X⃗ = (0 | 1 | 1) + s · (0 | 1 | 0). Bestimme die Lage der beiden Geraden zueinander und ihren Abstand."
     }
    ]
   },
@@ -2676,16 +2636,16 @@
       }
      ],
      "question": "Welche drei Fälle gibt es zwischen einer Geraden g und einer Ebene E?",
-     "concept": "Schnittpunkt, Gerade in der Ebene oder parallel; entscheidend sind n⃗ · u⃗ und n⃗ · A − d.",
+     "concept": "Schnittpunkt, Gerade in der Ebene oder parallel; entscheidend sind n⃗ ⊙ u⃗ und n⃗ ⊙ A − d.",
      "fast_check": {
       "type": "binary_choice",
       "options": [
-       "n⃗ · u⃗ = 0 heißt: Die Gerade verläuft parallel zur Ebene oder liegt in ihr.",
-       "n⃗ · u⃗ = 0 bedeutet immer Parallelität."
+       "n⃗ ⊙ u⃗ = 0 heißt: Die Gerade verläuft parallel zur Ebene oder liegt in ihr.",
+       "n⃗ ⊙ u⃗ = 0 bedeutet immer Parallelität."
       ],
       "correct_index": 0
      },
-     "sample_solution": "Eindeutiger Schnittpunkt (n⃗ · u⃗ ≠ 0); Gerade in der Ebene (n⃗ · u⃗ = 0 und n⃗ · A = d); parallel (n⃗ · u⃗ = 0 und n⃗ · A ≠ d)."
+     "sample_solution": "Eindeutiger Schnittpunkt (n⃗ ⊙ u⃗ ≠ 0); Gerade in der Ebene (n⃗ ⊙ u⃗ = 0 und n⃗ ⊙ A = d); parallel (n⃗ ⊙ u⃗ = 0 und n⃗ ⊙ A ≠ d)."
     },
     {
      "id": "01M6XAHTTRKX6WJEKJC956758F",
@@ -2697,8 +2657,8 @@
      "materiality": "material",
      "choice_distractors": [
       {
-       "text": "t = d : (n⃗ · A), dann setzt man S = A + t · u⃗ ein.",
-       "reason": "Im Zähler fehlt n⃗ · A: Der Parameter ist t = (d − n⃗ · A) : (n⃗ · u⃗)."
+       "text": "t = d : (n⃗ ⊙ A), dann setzt man S = A + t · u⃗ ein.",
+       "reason": "Im Zähler fehlt n⃗ ⊙ A: Der Parameter ist t = (d − n⃗ ⊙ A) : (n⃗ ⊙ u⃗)."
       },
       {
        "text": "S = n⃗ : |n⃗|, der Fußpunkt des Lots aus dem Ursprung.",
@@ -2716,7 +2676,7 @@
        "speech": "t gleich d minus n mal A geteilt durch n mal u"
       }
      ],
-     "concept": "t = (d − n⃗ · A) : (n⃗ · u⃗), dann S = A + t · u⃗ einsetzen.",
+     "concept": "t = (d − n⃗ ⊙ A) : (n⃗ ⊙ u⃗), dann S = A + t · u⃗ einsetzen.",
      "fast_check": {
       "type": "binary_choice",
       "options": [
@@ -2744,19 +2704,9 @@
        "reason": "Der Schnittpunkt sagt nichts über den Winkel; φ = 0° hieße, die Gerade läuft in der Ebene mit."
       }
      ],
-     "question_segments": [
-      {
-       "type": "text",
-       "text": "Winkel zwischen Gerade und Ebene: "
-      },
-      {
-       "type": "math",
-       "tex": "\\sin \\varphi = \\frac{|\\vec{n} \\cdot \\vec{u}|}{|\\vec{n}| \\cdot |\\vec{u}|}",
-       "speech": "Sinus phi gleich Betrag von n mal u geteilt durch Betrag von n mal Betrag von u"
-      }
-     ],
      "concept": "Lösungsskizze: sin φ = 1 : 3, also φ = sin⁻¹(1/3) ≈ 19,5°.",
-     "sample_solution": "Normalenvektor ablesen: n⃗ = (1 | 2 | 2), Richtung u⃗ = (1 | 0 | 0). n⃗ · u⃗ = 1 · 1 + 2 · 0 + 2 · 0 = 1. |n⃗| = √(1 + 4 + 4) = 3, |u⃗| = 1. Also sin φ = 1 : (3 · 1) = 1/3 ≈ 0,33 und mit sin⁻¹ (DEG) folgt φ ≈ 19,47°, also rund 19,5°. Gemessen wird zur Ebene: Wäre u⃗ ein Vielfaches von n⃗, stünde die Gerade senkrecht auf E (φ = 90°)."
+     "sample_solution": "Normalenvektor ablesen: n⃗ = (1 | 2 | 2), Richtung u⃗ = (1 | 0 | 0). n⃗ ⊙ u⃗ = 1 · 1 + 2 · 0 + 2 · 0 = 1. |n⃗| = √(1 + 4 + 4) = 3, |u⃗| = 1. Also sin φ = 1 : (3 · 1) = 1/3 ≈ 0,33 und mit sin⁻¹ (DEG) folgt φ ≈ 19,47°, also rund 19,5°. Gemessen wird zur Ebene: Wäre u⃗ ein Vielfaches von n⃗, stünde die Gerade senkrecht auf E (φ = 90°).",
+     "question": "Die Ebene E: x + 2y + 2z = 5 und die Gerade g: X⃗ = (0 | 0 | 1) + t · (1 | 0 | 0). Wie groß ist der Schnittwinkel φ zwischen g und E?"
     },
     {
      "id": "01M6XH4TAW10X30JS1NF380ZE4",
@@ -2773,16 +2723,16 @@
       },
       {
        "text": "sin φ = |n⃗| : |u⃗|, der Quotient der Längen.",
-       "reason": "Nicht die Längen werden dividiert: Der Sinus entsteht aus dem Skalarprodukt sin φ = |n⃗ · u⃗| : (|n⃗| · |u⃗|)."
+       "reason": "Nicht die Längen werden dividiert: Der Sinus entsteht aus dem Skalarprodukt sin φ = |n⃗ ⊙ u⃗| : (|n⃗| · |u⃗|)."
       }
      ],
      "question": "Wie berechnest du den Schnittwinkel φ zwischen einer Geraden g mit Richtungsvektor u⃗ und einer Ebene E mit Normalenvektor n⃗?",
-     "concept": "sin φ = |n⃗ · u⃗| : (|n⃗| · |u⃗|)",
+     "concept": "sin φ = |n⃗ ⊙ u⃗| : (|n⃗| · |u⃗|)",
      "fast_check": {
       "type": "binary_choice",
       "options": [
-       "sin φ = |n⃗ · u⃗| : (|n⃗| · |u⃗|)",
-       "cos φ = |n⃗ · u⃗| : (|n⃗| · |u⃗|)"
+       "sin φ = |n⃗ ⊙ u⃗| : (|n⃗| · |u⃗|)",
+       "cos φ = |n⃗ ⊙ u⃗| : (|n⃗| · |u⃗|)"
       ],
       "correct_index": 0
      }
@@ -2977,7 +2927,7 @@
      "materiality": "material",
      "choice_distractors": [
       {
-       "text": "d(P; E) = |n⃗ · P| ohne Abzug von d",
+       "text": "d(P; E) = |n⃗ ⊙ P| ohne Abzug von d",
        "reason": "Der Wert d verschiebt die Ebene vom Ursprung weg; ohne Abzug misst man gegen die Ursprungsebene."
       },
       {
@@ -2996,7 +2946,7 @@
        "speech": "Abstand von P zu E gleich Betrag von n mal P minus d geteilt durch Betrag von n"
       }
      ],
-     "concept": "d(P; E) = |n⃗ · P − d| : |n⃗|.",
+     "concept": "d(P; E) = |n⃗ ⊙ P − d| : |n⃗|.",
      "fast_check": {
       "type": "binary_choice",
       "options": [
@@ -3016,7 +2966,7 @@
      "materiality": "material",
      "choice_distractors": [
       {
-       "text": "d = |AP⃗|, also die Länge des Verbindungsvektors der Stützpunkte.",
+       "text": "d = |AB⃗|, also die Länge des Verbindungsvektors der Stützpunkte.",
        "reason": "Die Stützpunkte sind beliebig gewählt; gemessen wird der kürzeste Verbindungsweg zwischen den Geraden."
       },
       {
@@ -3025,7 +2975,7 @@
       }
      ],
      "question": "Wonach berechnet sich der Abstand zweier windschiefer Geraden mit den Richtungen u⃗ und v⃗?",
-     "concept": "d = |AP⃗ · (u⃗ × v⃗)| : |u⃗ × v⃗|, gemessen am gemeinsamen Senkrechten.",
+     "concept": "d = |AB⃗ ⊙ (u⃗ × v⃗)| : |u⃗ × v⃗|, gemessen am gemeinsamen Senkrechten.",
      "fast_check": {
       "type": "binary_choice",
       "options": [
@@ -3034,7 +2984,7 @@
       ],
       "correct_index": 0
      },
-     "sample_solution": "d = |AP⃗ · (u⃗ × v⃗)| : |u⃗ × v⃗| – gemessen am gemeinsamen senkrechten Verbindungsweg."
+     "sample_solution": "d = |AB⃗ ⊙ (u⃗ × v⃗)| : |u⃗ × v⃗| – gemessen am gemeinsamen senkrechten Verbindungsweg."
     },
     {
      "id": "01M6XAHTTTA37ZHC3CRHDWYFB2",
@@ -3054,19 +3004,9 @@
        "reason": "d ist der Achsenabschnitt der Ebene, nicht der Abstand von P: Gesucht ist |5 − 2| = 3 LE."
       }
      ],
-     "question_segments": [
-      {
-       "type": "text",
-       "text": "Abstand im Sachkontext: "
-      },
-      {
-       "type": "math",
-       "tex": "d(P; E) = \\frac{|\\vec{n} \\cdot \\vec{P} − d|}{|\\vec{n}|}",
-       "speech": "Abstand von P zu E gleich Betrag von n mal P minus d geteilt durch Betrag von n"
-      }
-     ],
      "concept": "Lösungsskizze: n⃗ = (0 | 0 | 1), d = 2; Abstand = |5 − 2| : 1 = 3 LE = 30 m.",
-     "sample_solution": "Gleichung in Koordinatenform schreiben: 0x + 0y + 1z = 2, also n⃗ = (0 | 0 | 1) und d = 2, dazu |n⃗| = 1. Hesse'sche Normalform: |n⃗ · P − d| : |n⃗| = |(0 · 0 + 0 · 0 + 1 · 5) − 2| : 1 = |5 − 2| = 3 LE. In Meter umgerechnet: 3 · 10 = 30 m."
+     "sample_solution": "Gleichung in Koordinatenform schreiben: 0x + 0y + 1z = 2, also n⃗ = (0 | 0 | 1) und d = 2, dazu |n⃗| = 1. Hesse'sche Normalform: |n⃗ ⊙ P − d| : |n⃗| = |(0 · 0 + 0 · 0 + 1 · 5) − 2| : 1 = |5 − 2| = 3 LE. In Meter umgerechnet: 3 · 10 = 30 m.",
+     "question": "Ein Messpunkt P liegt in der Höhe z = 5 m über einer Grundfläche in z = 2 m (Ebene E: z = 2). Wie weit ist P von E entfernt? Rechne in Längeneinheiten (LE) und gib das Ergebnis bei 1 LE = 10 m in Metern an."
     }
    ]
   },
@@ -3356,17 +3296,17 @@
      "materiality": "material",
      "choice_distractors": [
       {
-       "text": "Die äußere Ableitung genügt: h′(x) = 3(x² + 2)², also h′(1) = 27.",
-       "reason": "Die innere Ableitung 2x muss mitmultipliziert werden; ohne sie ist die Ableitung der Verkettung falsch."
+       "text": "Die Nullstellen sind x = 0 und x = 4; bei P(−4 | 0) liegt der Tiefpunkt von h.",
+       "reason": "Extremstelle und Nullstellen werden verwechselt: x = 0 ist die Extremstelle, x = −4 und x = 4 sind die Nullstellen auf der x-Achse."
       },
       {
-       "text": "Es handelt sich um ein Produkt: h′(x) = 9x²(x + 2)², also h′(1) = 81.",
-       "reason": "h ist keine Produktfunktion, sondern eine Verkettung; die Produktregel führt hier in die Irre."
+       "text": "Die Nullstellen sind x = −4 und x = 4; bei P(0 | −64) liegt der Tiefpunkt von h.",
+       "reason": "Der Funktionswert am Extrempunkt wird nicht sauber ausgewertet: (0² − 16)³ ist (−16)³ = −4096, nicht −64."
       }
      ],
-     "question": "Bestimme die Ableitung von h(x) = (x² + 2)³ mit der Kettenregel und berechne h′(1).",
-     "concept": "Mit f(u) = u³ und g(x) = x² + 2 folgt h′(x) = 3(x² + 2)² · 2x = 6x(x² + 2)², also h′(1) = 54.",
-     "sample_solution": "Innere Funktion: g(x) = x² + 2 mit g′(x) = 2x. Äußere Funktion: f(u) = u³ mit f′(u) = 3u². Kettenregel: h′(x) = f′(g(x)) · g′(x) = 3(x² + 2)² · 2x = 6x(x² + 2)². Einsetzen von x = 1: h′(1) = 6 · 1 · (1 + 2)² = 6 · 9 = 54. Zur Kontrolle: h(1) = 27, und der Differenzenquotient um x = 1 herum bestätigt die Steigung 54."
+     "question": "Der Graph von h(x) = (x² − 16)³ wird untersucht. Wo liegen die Nullstellen und der Tiefpunkt von h?",
+     "concept": "Die Nullstellen sind x = −4 und x = 4; bei P(0 | −4096) liegt der Tiefpunkt von h.",
+     "sample_solution": "Definitionsbereich: h ist eine Verkettung von Polynomen, also ist 𝔻 = ℝ. Nullstellen: (x² − 16)³ = 0, also x² = 16 und x = −4 oder x = 4. Kettenregel: h′(x) = 3(x² − 16)² · 2x = 6x(x² − 16)², also h′(x) = 0 für x = 0 und x = ±4. Da (x² − 16)³ mit wachsendem Betrag von x wächst, ist h(0) = (−16)³ = −4096 der tiefste Wert; bei x = −4 und x = 4 berührt der Graph die x-Achse. Also liegen die Nullstellen bei x = −4 und x = 4 und der Tiefpunkt bei P(0 | −4096)."
     }
    ]
   },

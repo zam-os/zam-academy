@@ -98,6 +98,11 @@ describe("Lehrplan und Umfang", () => {
           ...lesson.formulas.map((f) => f.quantities),
         ].join(" "),
       ).not.toMatch(/&(?:lt|gt|amp);/);
+      // `quantities` is plain text in the formula table; HTML would show as tags.
+      for (const formula of lesson.formulas) {
+        expect(formula.quantities ?? "", `${lesson.id}: ${formula.name}`).not.toMatch(/<[a-z/]/i);
+        expect(formula.name, lesson.id).not.toMatch(/<[a-z/]/i);
+      }
       expect(new Set(lesson.quiz.options).size).toBe(lesson.quiz.options.length);
       expect(lesson.quiz.options.length).toBeGreaterThanOrEqual(3);
       expect(lesson.quiz.correctIndex).toBeGreaterThanOrEqual(0);

@@ -174,8 +174,10 @@ function hauptsatz(v: LabValues): string {
   const F = (x: number) => (v.a * x * x * x) / 3 + (v.b * x * x) / 2 + v.c * x;
   const p = Math.min(v.u, v.v);
   const q = Math.max(v.u, v.v);
-  const { ap, am, bilanz } = polyBilanz(v.a, v.b, v.c, v.u, v.v);
-  const fbfa = F(q) - F(p);
+  const raw = polyBilanz(v.a, v.b, v.c, v.u, v.v);
+  const { ap, am } = raw;
+  const bilanz = v.u <= v.v ? raw.bilanz : -raw.bilanz;
+  const fbfa = F(v.v) - F(v.u);
   let out = open("Parabelstück mit markiertem Intervall: Flächen über und unter der Achse");
   out += plot.clip("clip-hs") + plot.grid(1, 2);
   const zeros: number[] = [];
@@ -200,9 +202,9 @@ function hauptsatz(v: LabValues): string {
   out += line(plot.X(q), plot.box.y, plot.X(q), plot.box.y + plot.box.h, "lab-dashed");
   const lines: Line[] = [
     [`f(x) = ${quadratic(v.a, v.b, v.c)}`, "lab-text lab-text-big"],
-    [`F(b) − F(a) = ${fmt(fbfa)}`, "lab-text"],
-    [`Bilanz = A⁺ − A⁻ = ${fmt(bilanz)}`, "lab-text lab-text-c"],
-    [`A⁺ = ${fmt(ap)}, A⁻ = ${fmt(am)}`, "lab-text-muted"],
+    [`F(v) − F(u) = ${fmt(fbfa)}`, "lab-text"],
+    [`Bilanz von u nach v = ${fmt(bilanz)}${v.u > v.v ? " = −(A⁺ − A⁻)" : " = A⁺ − A⁻"}`, "lab-text lab-text-c"],
+    [`A⁺ = ${fmt(ap)}, A⁻ = ${fmt(am)} zwischen den Grenzen`, "lab-text-muted"],
   ];
   out += infoBox(plot.box.x + 12, plot.box.y + 26, lines);
   out += handle("hu", plot.X(v.u), y0, "Intervallgrenze u");

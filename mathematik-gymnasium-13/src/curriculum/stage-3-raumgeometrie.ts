@@ -485,7 +485,7 @@ const l2 = makeLesson(3, 2, {
     <ul>
       <li><strong>Linear abhängig:</strong> ${vn("u")} und ${vn("v")} sind linear abhängig, wenn es Zahlen λ und μ gibt (nicht beide 0), mit λ · ${vn("u")} + μ · ${vn("v")} = ${vn("0")}. Bei zwei Vektoren heißt das: Einer ist ein Vielfaches des anderen (kollinear).</li>
       <li><strong>Linear unabhängig:</strong> Keiner ist ein Vielfache des anderen; im ℝ³ gilt das genau dann, wenn ${vn("u")} × ${vn("v")} nicht der Nullvektor ist.</li>
-      <li><strong>Drei Vektoren im ℝ³:</strong> Drei Vektoren sind im Raum immer linear abhängig – es gibt nur drei Koordinaten für drei Vektoren.</li>
+      <li><strong>Vier und mehr Vektoren im ℝ³:</strong> Vier oder mehr Vektoren sind im Raum immer linear abhängig; drei können eine Basis bilden, etwa die Einheitsvektoren.</li>
       <li><strong>Darstellen:</strong> w = r · ${vn("u")} + s · ${vn("v")} aufstellen heißt, ein Gleichungssystem zu lösen. Geht das nicht (z. B. weil w aus der Ebene herausragt), ist w keine Linearkombination.</li>
     </ul>
     <div class="example">Beispiel: ${vn("u")} = (1 | 0 | 0), ${vn("v")} = (0 | 1 | 0), w = (2 | 3 | 0). Dann ist w = 2 · ${vn("u")} + 3 · ${vn("v")}, also eine Linearkombination mit r = 2 und s = 3. Der Vektor w′ = (2 | 3 | 1) ist keine Linearkombination von ${vn("u")} und ${vn("v")}: Die z-Koordinate ließe sich nicht erzeugen. Und (2 | 0 | 0) mit (4 | 0 | 0) sind abhängig, denn (4 | 0 | 0) = 2 · (2 | 0 | 0).</div>
@@ -891,14 +891,14 @@ const koordinatenform = {
     return task(
       level,
       "",
-      `Eine geneigte Glaswand wird durch E: n · X = d mit n = ${pv(n, 0)} beschrieben. Der Messpunkt P = ${caseWord(p)} liegt auf der Wand. Bestimme d und den Abstand der Wand zum Ursprung.`,
+      `Eine geneigte Glaswand wird durch E: n ⊙ X = d mit n = ${pv(n, 0)} beschrieben. Der Messpunkt P = ${caseWord(p)} liegt auf der Wand. Bestimme d und den Abstand der Wand zum Ursprung.`,
       [
         numberField("d =", d, "", 0),
         numberField("Abstand zum Ursprung:", distance, "LE", 0),
       ],
-      "d bekommst du aus der Punktprobe d = n · P. Der Abstand zum Ursprung ist |d| : |n|.",
+      "d bekommst du aus der Punktprobe d = n ⊙ P. Der Abstand zum Ursprung ist |d| : |n|.",
       [
-        `Punktprobe: d = n · P = ${paren(n.x, 0)} · ${paren(p.x, 0)} + ${paren(n.y, 0)} · 0 + ${paren(n.z, 0)} · 0 = ${fmt(d, 0)}`,
+        `Punktprobe: d = n ⊙ P = ${paren(n.x, 0)} · ${paren(p.x, 0)} + ${paren(n.y, 0)} · 0 + ${paren(n.z, 0)} · 0 = ${fmt(d, 0)}`,
         `|n| = ${fmt(norm3(n), 0)}, also Abstand = ${fmt(Math.abs(d), 0)} : ${fmt(norm3(n), 0)} = ${fmt(distance, 0)} LE`,
       ],
       `d = ${fmt(d, 0)} und der Abstand zum Ursprung beträgt ${fmt(distance, 0)} LE.`,
@@ -976,9 +976,9 @@ const besondereLage = {
         numberField("Abstand zum Ursprung:", distance, "LE", 0),
         choiceField("Die Fläche verläuft parallel zur …", ["x-Achse", "y-Achse", "z-Achse"], zeroAt),
       ],
-      "d = n · P aus der Punktprobe; die Nullstelle in n verrät, zu welcher Achse die Fläche parallel läuft.",
+      "d = n ⊙ P aus der Punktprobe; die Nullstelle in n verrät, zu welcher Achse die Fläche parallel läuft.",
       [
-        `d = n · P = ${fmt(d, 0)}`,
+        `d = n ⊙ P = ${fmt(d, 0)}`,
         `In n = ${pv(n, 0)} ist die ${["x", "y", "z"][zeroAt]}-Komponente 0: parallel zur ${["x", "y", "z"][zeroAt]}-Achse. Abstand = ${fmt(Math.abs(d), 0)} : ${fmt(norm3(n), 0)} = ${fmt(distance, 0)} LE`,
       ],
       `d = ${fmt(d, 0)}, Abstand ${fmt(distance, 0)} LE, parallel zur ${["x", "y", "z"][zeroAt]}-Achse.`,
@@ -994,12 +994,12 @@ const l4 = makeLesson(3, 4, {
   whyItMatters:
     "Die Koordinatenform ist die kompakteste Ebenengleichung: Eine Zeile verrät Normalenvektor und Lage. In der Physik stehen Ebenen so als Grenzflächen, in der Technik als schiefe Ebenen – und Abstandsfragen löst du am elegantesten mit der Hesse'schen Normalform.",
   explanationHtml: `
-    <p>Zur Ebene E gehört ein <strong>Normalenvektor</strong> ${vn("n")} (ungleich dem Nullvektor), der senkrecht auf ihr steht. Jeder Punkt X der Ebene erfüllt dann die <strong>Normalenform</strong> ${vn("n")} · (X − P) = 0. Ausmultipliziert entsteht die <strong>Koordinatenform</strong>:</p>
-    <p class="formula-line">${vn("n")} · X = d mit d = ${vn("n")} · P, also n₁ · x + n₂ · y + n₃ · z = d</p>
+    <p>Zur Ebene E gehört ein <strong>Normalenvektor</strong> ${vn("n")} (ungleich dem Nullvektor), der senkrecht auf ihr steht. Jeder Punkt X der Ebene erfüllt dann die <strong>Normalenform</strong> ${vn("n")} ⊙ (X − P) = 0. Ausmultipliziert entsteht die <strong>Koordinatenform</strong>:</p>
+    <p class="formula-line">${vn("n")} ⊙ X = d mit d = ${vn("n")} ⊙ P, also n₁ · x + n₂ · y + n₃ · z = d</p>
     <ul>
       <li><strong>Lesen:</strong> Die Koeffizienten sind die Koordinaten des Normalenvektors, rechts steht d.</li>
-      <li><strong>Einsetzen:</strong> d berechnest du mit einem bekannten Punkt der Ebene: d = ${vn("n")} · P.</li>
-      <li><strong>Vielfaches:</strong> ${vn("n")} · X = d und (2 · ${vn("n")}) · X = 2d beschreiben dieselbe Ebene – beim Vergleichen also immer mitziehen.</li>
+      <li><strong>Einsetzen:</strong> d berechnest du mit einem bekannten Punkt der Ebene: d = ${vn("n")} ⊙ P.</li>
+      <li><strong>Vielfaches:</strong> ${vn("n")} ⊙ X = d und (2 · ${vn("n")}) ⊙ X = 2d beschreiben dieselbe Ebene – beim Vergleichen also immer mitziehen.</li>
       <li><strong>Besondere Lage:</strong> d = 0: E geht durch den Ursprung. Eine Komponente von ${vn("n")} ist 0: E verläuft parallel zu dieser Achse (z. B. n₃ = 0: parallel zur z-Achse).</li>
       <li><strong>Achsenabschnitte:</strong> x = d : n₁ (für y = z = 0), entsprechend y = d : n₂ und z = d : n₃ – wo eine Komponente 0 ist, gibt es den Abschnitt nicht.</li>
       <li><strong>Abstand zum Ursprung:</strong> Mit dem Einheitsnormalenvektor n₀ = ${vn("n")} : |${vn("n")}| wird d₀ = d : |${vn("n")}| – der Betrag von d₀ ist der Abstand der Ebene zum Ursprung.</li>
@@ -1010,13 +1010,13 @@ const l4 = makeLesson(3, 4, {
   formulas: [
     {
       name: "Normalenform",
-      html: `${vn("n")} · (X − P) = 0`,
+      html: `${vn("n")} ⊙ (X − P) = 0`,
       quantities: "n Normalenvektor, P ein Punkt der Ebene",
     },
     {
       name: "Koordinatenform",
-      html: `${vn("n")} · X = d, also n₁x + n₂y + n₃z = d`,
-      quantities: "d = n · P; ein Vielfaches von n und d beschreibt dieselbe Ebene",
+      html: `${vn("n")} ⊙ X = d, also n₁x + n₂y + n₃z = d`,
+      quantities: "d = n ⊙ P; ein Vielfaches von n und d beschreibt dieselbe Ebene",
     },
     {
       name: "Abstand zum Ursprung",
@@ -2062,7 +2062,7 @@ const l7 = makeLesson(3, 7, {
   whyItMatters:
     "Wo zwei Flächen sich schneiden, entsteht eine Kante – Dächer, Rampen, Spiegelungen. Wer die Schnittgerade berechnen kann, löst Aufgaben zu Körpern, Winkeln und Abständen im Raum.",
   explanationHtml: `
-    <p>Zwei Ebenen E₁: ${vn("n₁")} · X = d₁ und E₂: ${vn("n₂")} · X = d₂ verhalten sich zueinander über ihre <strong>Normalenvektoren</strong>:</p>
+    <p>Zwei Ebenen E₁: ${vn("n₁")} ⊙ X = d₁ und E₂: ${vn("n₂")} ⊙ X = d₂ verhalten sich zueinander über ihre <strong>Normalenvektoren</strong>:</p>
     <ul>
       <li><strong>Schnittgerade:</strong> ${vn("n₁")} und ${vn("n₂")} sind nicht parallel – die Ebenen schneiden sich in einer Geraden mit der Richtung ${vn("u")} = ${vn("n₁")} × ${vn("n₂")}.</li>
       <li><strong>Parallel:</strong> ${vn("n₂")} = λ · ${vn("n₁")}, aber d₂ ≠ λ · d₁ – die Ebenen liegen übereinander, ohne sich zu berühren.</li>
@@ -2082,7 +2082,7 @@ const l7 = makeLesson(3, 7, {
     {
       name: "Parallelität und Deckung",
       html: `${vn("n₂")} = λ · ${vn("n₁")}; identisch, wenn zusätzlich d₂ = λ · d₁`,
-      quantities: `sonst echt parallel mit Abstand |d₂ : λ − d₁| : |${vn("n₁")}|`,
+      quantities: "sonst echt parallel mit Abstand |d₂ : λ − d₁| : |n₁⃗|",
     },
     {
       name: "Winkel zweier Ebenen",
@@ -2255,41 +2255,41 @@ const abstandPunktEbene = {
     if (level === 1) {
       return task(
         level,
-        `Berechne den Abstand des Punkts P = ${caseWord(p)} von der Ebene E: ${planeText(n, d, 0)} mit Hilfe der Hesse'schen Normalform. Kontrolliere zuerst den Wert von n · P.`,
+        `Berechne den Abstand des Punkts P = ${caseWord(p)} von der Ebene E: ${planeText(n, d, 0)} mit Hilfe der Hesse'schen Normalform. Kontrolliere zuerst den Wert von n ⊙ P.`,
         "",
         [
           numberField("Abstand:", distance, "LE", 0),
-          numberField("n · P =", product, "", 0),
+          numberField("n ⊙ P =", product, "", 0),
         ],
-        "Hesse'sche Normalform: Abstand = |n · P − d| : |n|, mit |n| = √(n₁² + n₂² + n₃²).",
+        "Hesse'sche Normalform: Abstand = |n ⊙ P − d| : |n|, mit |n| = √(n₁² + n₂² + n₃²).",
         [
-          `n · P = ${paren(n.x, 0)} · ${paren(p.x, 0)} + ${paren(n.y, 0)} · ${paren(p.y, 0)} + ${paren(n.z, 0)} · ${paren(p.z, 0)} = ${fmt(product, 0)}`,
+          `n ⊙ P = ${paren(n.x, 0)} · ${paren(p.x, 0)} + ${paren(n.y, 0)} · ${paren(p.y, 0)} + ${paren(n.z, 0)} · ${paren(p.z, 0)} = ${fmt(product, 0)}`,
           `Abstand = |${fmt(product, 0)} − ${paren(d, 0)}| : ${fmt(len, 0)} = ${fmt(distance, 0)} LE`,
         ],
-        `n · P = ${fmt(product, 0)}, der Abstand von P zu E beträgt ${fmt(distance, 0)} LE.`,
+        `n ⊙ P = ${fmt(product, 0)}, der Abstand von P zu E beträgt ${fmt(distance, 0)} LE.`,
         { nx: n.x, ny: n.y, nz: n.z, d, px: p.x, py: p.y, pz: p.z, distance, product },
       );
     }
     return task(
       level,
       "",
-      `Eine Fläche E: ${planeText(n, d, 0)} wird parallel verschoben, bis der Abstand zum Punkt P = ${caseWord(p)} genau ${fmt(distance, 0)} LE beträgt. Auf welcher Seite von E liegt P gemessen in Richtung des Normalenvektors, und wie groß ist n · P?`,
+      `Eine Fläche E: ${planeText(n, d, 0)} wird parallel verschoben, bis der Abstand zum Punkt P = ${caseWord(p)} genau ${fmt(distance, 0)} LE beträgt. Auf welcher Seite von E liegt P gemessen in Richtung des Normalenvektors, und wie groß ist n ⊙ P?`,
       [
-        numberField("n · P =", product, "", 0),
+        numberField("n ⊙ P =", product, "", 0),
         choiceField(
           "P liegt …",
           ["in Richtung des Normalenvektors", "entgegengesetzt zum Normalenvektor"],
           side > 0 ? 0 : 1,
         ),
       ],
-      "Der Abstand ist |n · P − d| : |n|; das Vorzeichen von n · P − d verrät die Seite.",
+      "Der Abstand ist |n ⊙ P − d| : |n|; das Vorzeichen von n ⊙ P − d verrät die Seite.",
       [
-        `|n · P − d| = ${fmt(distance * len, 0)} = Abstand · |n|`,
+        `|n ⊙ P − d| = ${fmt(distance * len, 0)} = Abstand · |n|`,
         side > 0
-          ? `n · P − d = ${fmt(product - d, 0)} ist positiv: P liegt in Richtung des Normalenvektors, n · P = ${fmt(product, 0)}`
-          : `n · P − d = ${fmt(product - d, 0)} ist negativ: P liegt entgegengesetzt, n · P = ${fmt(product, 0)}`,
+          ? `n ⊙ P − d = ${fmt(product - d, 0)} ist positiv: P liegt in Richtung des Normalenvektors, n ⊙ P = ${fmt(product, 0)}`
+          : `n ⊙ P − d = ${fmt(product - d, 0)} ist negativ: P liegt entgegengesetzt, n ⊙ P = ${fmt(product, 0)}`,
       ],
-      `n · P = ${fmt(product, 0)}, P liegt ${side > 0 ? "in Richtung" : "entgegengesetzt"} zum Normalenvektor.`,
+      `n ⊙ P = ${fmt(product, 0)}, P liegt ${side > 0 ? "in Richtung" : "entgegengesetzt"} zum Normalenvektor.`,
       { nx: n.x, ny: n.y, nz: n.z, d, px: p.x, py: p.y, pz: p.z, distance, product, side },
     );
   },
@@ -2304,30 +2304,30 @@ const l8 = makeLesson(3, 8, {
   explanationHtml: `
     <p>Im Raum misst man Abstände <strong>senkrecht</strong> – als kurzen Verbindungsweg zwischen den Objekten. Die wichtigsten Formeln:</p>
     <ul>
-      <li><strong>Punkt–Gerade:</strong> d(P; g) = |${vn("AP")} × ${vn("u")}| : |${vn("u")}| mit A auf g. Alternativ Pythagoras über den Lotfußpunkt.</li>
-      <li><strong>Punkt–Ebene (Hesse'sche Normalform):</strong> d(P; E) = |n · P − d| : |n|. Mit dem Einheitsnormalenvektor n₀ wird daraus |n₀ · P − d₀| – die linke Seite misst dann direkt den Abstand.</li>
+      <li><strong>Punkt–Gerade:</strong> d(P; g) = |${vn("AB")} × ${vn("u")}| : |${vn("u")}| mit A auf g. Alternativ Pythagoras über den Lotfußpunkt.</li>
+      <li><strong>Punkt–Ebene (Hesse'sche Normalform):</strong> d(P; E) = |n ⊙ P − d| : |n|. Mit dem Einheitsnormalenvektor n₀ wird daraus |n₀ ⊙ P − d₀| – die linke Seite misst dann direkt den Abstand.</li>
       <li><strong>Parallele Geraden:</strong> Wie Punkt–Gerade: einen Punkt der einen Geraden gegen die andere messen.</li>
-      <li><strong>Windschiefe Geraden:</strong> d = |${vn("AP")} · (${vn("u")} × ${vn("v")})| : |${vn("u")} × ${vn("v")}| – der gemeinsame senkrechte Verbindungsweg.</li>
+      <li><strong>Windschiefe Geraden:</strong> d = |${vn("AB")} ⊙ (${vn("u")} × ${vn("v")})| : |${vn("u")} × ${vn("v")}| – der gemeinsame senkrechte Verbindungsweg.</li>
       <li><strong>Parallele Ebenen:</strong> d = |d₂ : λ − d₁| : |n₁|, wenn n₂ = λ · n₁ ist.</li>
       <li><strong>Gerade–Ebene (parallel):</strong> Wie Punkt–Ebene: einen Punkt der Geraden gegen die Ebene messen.</li>
     </ul>
-    <div class="example">Beispiel (Punkt–Ebene): E: 2x + 2y − z = 8, P = (1 | 2 | 3). Dann ist n · P = 2 + 4 − 3 = 3, |n| = ${sqrtHtml("4 + 4 + 1")} = 3. Der Abstand: |3 − 8| : 3 = 5 : 3 = ${fmt(5 / 3)} LE.<br>Beispiel (windschiefe Geraden): g = x-Achse, h: X = (0 | 1 | 1) + s · (0 | 1 | 0). Dann ist u × v = (0 | 0 | 1) und AP = (0 | 1 | 1): d = |1| : 1 = 1 LE.</div>
-    <div class="merke"><strong>Merke:</strong> Jede Abstandsformel misst senkrecht. Die Hesse'sche Normalform macht aus n · X = d eine Gleichung, deren linke Seite den Abstand zum Ursprung angibt.</div>
+    <div class="example">Beispiel (Punkt–Ebene): E: 2x + 2y − z = 8, P = (1 | 2 | 3). Dann ist n ⊙ P = 2 + 4 − 3 = 3, |n| = ${sqrtHtml("4 + 4 + 1")} = 3. Der Abstand: |3 − 8| : 3 = 5 : 3 = ${fmt(5 / 3)} LE.<br>Beispiel (windschiefe Geraden): g = x-Achse, h: X = (0 | 1 | 1) + s · (0 | 1 | 0). Dann ist u × v = (0 | 0 | 1) und AB = (0 | 1 | 1): d = |1| : 1 = 1 LE.</div>
+    <div class="merke"><strong>Merke:</strong> Jede Abstandsformel misst senkrecht. Die Hesse'sche Normalform macht aus n ⊙ X = d eine Gleichung, deren linke Seite den Abstand zum Ursprung angibt.</div>
   `,
   formulas: [
     {
       name: "Abstand Punkt–Gerade",
-      html: `d(P; g) = |${vn("AP")} × ${vn("u")}| : |${vn("u")}|`,
+      html: `d(P; g) = |${vn("AB")} × ${vn("u")}| : |${vn("u")}|`,
       quantities: "A ein Punkt der Geraden, u ihr Richtungsvektor",
     },
     {
       name: "Abstand Punkt–Ebene (Hesse)",
-      html: `d(P; E) = |n · P − d| : |n|`,
+      html: `d(P; E) = |n ⊙ P − d| : |n|`,
       quantities: "n Normalenvektor, d aus der Koordinatenform",
     },
     {
       name: "Abstand windschiefer Geraden",
-      html: `d = |${vn("AP")} · (${vn("u")} × ${vn("v")})| : |${vn("u")} × ${vn("v")}|`,
+      html: `d = |${vn("AB")} ⊙ (${vn("u")} × ${vn("v")})| : |${vn("u")} × ${vn("v")}|`,
       quantities: "AP verbindet Stützpunkte beider Geraden",
     },
     {
@@ -2341,7 +2341,7 @@ const l8 = makeLesson(3, 8, {
     options: ["3 LE", "2 LE", "5 LE"],
     correctIndex: 0,
     explanation:
-      "E: 0x + 0y + 1z = 2, also n = (0 | 0 | 1), d = 2. Der Abstand ist |n · P − d| : |n| = |5 − 2| : 1 = 3 LE. Es zählt nur die Entfernung senkrecht zur Ebene, hier entlang der z-Achse.",
+      "E: 0x + 0y + 1z = 2, also n = (0 | 0 | 1), d = 2. Der Abstand ist |n ⊙ P − d| : |n| = |5 − 2| : 1 = 3 LE. Es zählt nur die Entfernung senkrecht zur Ebene, hier entlang der z-Achse.",
   },
   lab: lab(
     "abstand",
@@ -2374,7 +2374,7 @@ const l8 = makeLesson(3, 8, {
       output("hilfe", "Hilfsgrößen", (v) => {
         if (v.mode === 0) return `Lotfußpunkt F = (${fmt(v.px)} | ${fmt(v.ay)} | ${fmt(v.az)})`;
         if (v.mode === 1)
-          return `Zähler |n · P − d| = ${fmt(Math.abs(v.nx * v.px + 2 * v.py + 2 * v.pz - v.d))}, |n| = ${fmt(Math.sqrt(v.nx * v.nx + 8))}`;
+          return `Zähler |n ⊙ P − d| = ${fmt(Math.abs(v.nx * v.px + 2 * v.py + 2 * v.pz - v.d))}, |n| = ${fmt(Math.sqrt(v.nx * v.nx + 8))}`;
         return `g = x-Achse, h verläuft in y-Richtung bei z = ${fmt(v.b)}`;
       }),
     ],
@@ -2636,8 +2636,8 @@ const l9 = makeLesson(3, 9, {
       <li><strong>Lesen:</strong> In den Klammern stehen die Koordinaten von M (mit umgekehrtem Vorzeichen), rechts das Quadrat des Radius.</li>
       <li><strong>Aufstellen:</strong> Aus M und r direkt einsetzen; umgekehrt hilft die quadratische Ergänzung, um aus einer Gleichung wie x² + y² + z² − 2x + 4y = 12 wieder die Kugel abzulesen.</li>
       <li><strong>Lage Kugel–Ebene:</strong> Den Abstand d(M; E) mit der Hesse'schen Normalform berechnen und mit r vergleichen: d = r tangent, d kleiner als r schneidend (Schnittkreis), d größer als r kein Kontakt.</li>
-      <li><strong>Lage Kugel–Gerade:</strong> Genauso mit d(M; g): tangent, schneidend (Schnittkreis) oder kein Kontakt.</li>
-      <li><strong>Schnittkreis:</strong> Wenn d kleiner als r ist, hat der Schnittkreis den Radius ρ = ${sqrtHtml("r² − d²")}.</li>
+      <li><strong>Lage Kugel–Gerade:</strong> Genauso mit d(M; g): d = r tangent (ein Punkt), d kleiner als r schneidend – dann hat die Gerade <strong>zwei Schnittpunkte</strong> –, d größer als r kein Kontakt.</li>
+      <li><strong>Sehne und Schnittkreis:</strong> Liegt d unter r, ist ρ = ${sqrtHtml("r² − d²")} die halbe Sehne zwischen den Schnittpunkten; bei einer schneidenden Ebene ist zugleich der Radius des Schnittkreises.</li>
     </ul>
     <div class="example">Beispiel: k: (x − 1)² + (y + 2)² + (z − 3)² = 25 hat M = (1 | −2 | 3) und r = 5. Die Ebene E: z = 8 hat den Abstand zu M: |3 − 8| = 5 = r – sie ist tangent. Für E: z = 6 ist d = 3 kleiner als 5: die Ebene schneidet die Kugel, der Schnittkreis hat ρ = ${sqrtHtml("25 − 9")} = 4.</div>
     <div class="merke"><strong>Merke:</strong> Alle Lagenfragen sind Abstandsfragen: d(M; Objekt) gegen r halten. tangent bei Gleichheit, schneidend bei kleinerem Abstand, sonst kein Kontakt.</div>
@@ -2711,15 +2711,19 @@ const l9 = makeLesson(3, 9, {
             ? "tangent"
             : "kein Kontakt";
       }),
-      output("schnitt", "Schnittkreis", (v) => {
+      output("schnitt", "Schnitt", (v) => {
         const dist =
           v.mode === 0
             ? Math.hypot(v.nx, v.ny, v.nz) < 1e-9
               ? Infinity
               : Math.abs(v.nx * v.mx + v.ny * v.my + v.nz * v.mz - v.d) / Math.hypot(v.nx, v.ny, v.nz)
             : Math.hypot(v.my - v.ay, v.mz - v.az);
-        if (dist > v.r + 1e-9) return "kein Schnittkreis";
-        return `ρ = ${fmt(Math.sqrt(Math.max(0, v.r * v.r - dist * dist)))}`;
+        if (dist > v.r + 1e-9) return "kein Schnitt";
+        if (Math.abs(dist - v.r) < 1e-9) return "tangent, ein Punkt";
+        const rho = Math.sqrt(Math.max(0, v.r * v.r - dist * dist));
+        return v.mode === 0
+          ? `Schnittkreis ρ = ${fmt(rho)}`
+          : `zwei Punkte, halbe Sehne ρ = ${fmt(rho)}`;
       }),
     ],
     [

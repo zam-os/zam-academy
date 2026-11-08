@@ -33,8 +33,8 @@ A-Zeilen zeigen auf Nachfolger der neuen Zelle, die C-Zeilen bleiben aktiv.
 
 | Alte Karte | Bisheriger Abruf | Vorschlag | Nachfolger und Begründung |
 | --- | --- | --- | --- |
-| `…J01` (gebrochen-rational) | Wann schiefe Asymptote bei f = Z/N? | **C: bleibt aktiv** | Asymptoten gebrochen-rationaler Funktionen sind M12-Stoff; M13 LB 1 rechnet uneigentliche Integrale ohne diese Klassifikation. Kein Einzelnachfolger. |
-| `…J02` (gebrochen-rational) | Gesamtanalyse: Definitionslücken, Asymptoten, Kurvendiskussion | **C: bleibt aktiv** | Mehrteilig und M12; eine Historie wird nie auf Teilkarten verteilt. |
+| `…J01` (gebrochen-rational) | Wann schiefe Asymptote bei f = Z/N? | **C: bleibt aktiv** | Asymptoten gebrochen-rationaler Funktionen sind Stoff von M11 (LB 2); M13 LB 1 rechnet uneigentliche Integrale ohne diese Klassifikation. Kein Einzelnachfolger. |
+| `…J02` (gebrochen-rational) | Gesamtanalyse: Definitionslücken, Asymptoten, Kurvendiskussion | **C: bleibt aktiv** | Mehrteilig und M11-Stoff; eine Historie wird nie auf Teilkarten verteilt. |
 | `…J03` (gebrochen-rational) | Für welche p konvergiert ∫₁^∞ 1/xᵖ? | **A: übernehmen** | `g13-konvergenz-1-hoch-p`: gleicher Einzelabruf (p > 1), der Nachfolger nennt zusätzlich den Grenzwert 1 : (p − 1). |
 | `…J04` (gebrochen-rational) | Ortskurven, Kurvenscharen, partielle Integration, uneigentliche Integrale | **C: bleibt aktiv** | Mehrteilig und zu großen Teilen jenseits des Fachlehrplans; nur die Konvergenzfrage steckt in `int-7`. |
 | `…J01` (Geometrie) | Schnittwinkel Gerade/Ebene: sin β = \|u⃗·n⃗\| / (\|u⃗\|·\|n⃗\|) | **A: übernehmen** | `g13-schnittwinkel-gerade-ebene`: gleicher Einzelabruf, gefordert in M13 LB 3 (Schnittwinkel berechnen). |

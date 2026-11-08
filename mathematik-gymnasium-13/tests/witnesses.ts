@@ -17,7 +17,7 @@ export const LESSON_IDS = [
   "int-5-stammfunktionen",
   "int-6-flaechen",
   "int-7-uneigentlich",
-  "int-8-gesaendteraenderung",
+  "int-8-gesamtaenderung",
   "int-9-rotationskoerper",
   "nv-1-zufallsgroessen",
   "nv-2-glockenkurve",

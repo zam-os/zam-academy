@@ -44,7 +44,11 @@ const IDS = [
   "aw-5-anwendungen",
 ];
 const GENERATORS: Record<string, string[]> = {
-  "aw-1-verknuepfte-funktionen": ["verkettet-wert", "verkettet-ableitung"],
+  "aw-1-verknuepfte-funktionen": [
+    "verkettet-wert",
+    "verkettet-ableitung",
+    "untersuchen",
+  ],
   "aw-2-parameter": ["parameter-punkt", "parameter-tangente"],
   "aw-3-extremwerte": ["extremwert", "parameter-extremum"],
   "aw-4-sachzusammenhaenge": ["sachextremum", "modell-pruefen"],
@@ -337,13 +341,85 @@ describe("4.1 Verknüpfte Funktionen", () => {
       2,
       SEEDS,
     )) {
-      const { a, x, g, h, hp } = task.meta as Record<string, number>;
-      expectClose(g, a * x * x + 1, task.prompt);
-      expectClose(h, g * g, task.prompt);
-      expectClose(hp, 4 * a * x * g, task.prompt);
-      expect(numbers(task)).toEqual([h, hp]);
-      const fn = (t: number) => (a * t * t + 1) ** 2;
-      expectClose(diff(fn, x), hp, `${task.prompt}: Kettenregel`, 1e-3);
+      const { k, rate, konz, tmin } = task.meta as Record<string, number>;
+      expectClose(rate, k, task.prompt);
+      expectClose(konz, 1, task.prompt);
+      expectClose(tmin, k / 2, task.prompt);
+      expect(numbers(task)).toEqual([rate, konz]);
+      expect(choices(task)[0].correctIndex, task.prompt).toBe(0);
+      // c(t) = e^(t² − k·t): Differenzenquotient gegen die Kettenregel
+      const c = (t: number) => Math.exp(t * t - k * t);
+      expectClose(diff(c, k), rate, `${task.prompt}: Kettenregel`, 1e-3);
+      expectClose(c(k), konz, `${task.prompt}: Funktionswert`, 1e-9);
+      // das Minimum liegt bei t = k : 2
+      const best = extremum(c, 0, k, "min");
+      expectClose(best.x, tmin, `${task.prompt}: Minimum`, 1e-3);
+    }
+  });
+
+  it("investigates the composition: roots and extrema checked by probe", () => {
+    for (const task of tasksFor(
+      "aw-1-verknuepfte-funktionen",
+      "untersuchen",
+      1,
+      SEEDS,
+    )) {
+      const { k, a, x1, x2, xt, yt } = task.meta as Record<string, number>;
+      expectClose(a, k * k, task.prompt);
+      expectClose(x1, -k, task.prompt);
+      expectClose(x2, k, task.prompt);
+      expect(xt, task.prompt).toBe(0);
+      expect(numbers(task)).toEqual([x1, x2, xt, yt]);
+      const h = (x: number) => (x * x - a) ** 3;
+      // Nullstellen gegen Probe
+      expectClose(h(x1), 0, `${task.prompt}: Nullstelle`, 1e-9);
+      expectClose(h(x2), 0, `${task.prompt}: Nullstelle`, 1e-9);
+      // Differenzenquotient gegen Kettenregel und gegen die Extremstelle
+      expectClose(diff(h, 1), 6 * (1 - a) ** 2, `${task.prompt}: Kettenregel`, 1e-3);
+      expectClose(diff(h, xt), 0, `${task.prompt}: h′ = 0`, 1e-3);
+      expectClose(diff(h, x2), 0, `${task.prompt}: Terrassenpunkt`, 1e-3);
+      // Extremwerte gegen Probe
+      expectClose(h(xt), yt, `${task.prompt}: Extremwert`, 1e-6);
+      const best = extremum(h, -2 * k, 2 * k, "min");
+      expectClose(best.x, xt, `${task.prompt}: Tiefpunkt`, 1e-3);
+      expectClose(best.y, yt, `${task.prompt}: Tiefpunkt`, 1e-6);
+      // 𝔻 = ℝ, und die Ablenkoption nennen die Nullstellen als Ausnahmen
+      const domain = choices(task)[0];
+      expect(domain.correctIndex, task.prompt).toBe(0);
+      expect(domain.options[0]).toBe("𝔻 = ℝ");
+      expect(domain.options[1]).toContain(fmt(-k));
+    }
+    for (const task of tasksFor(
+      "aw-1-verknuepfte-funktionen",
+      "untersuchen",
+      2,
+      SEEDS,
+    )) {
+      const { k, a, xt, yt, ns } = task.meta as Record<string, number>;
+      expectClose(a, 3 * k, task.prompt);
+      expectClose(xt, k, task.prompt);
+      expectClose(ns, a, task.prompt);
+      expect(numbers(task)).toEqual([xt, yt, ns]);
+      const h = (x: number) => (x + a) ** 2 * (x - a);
+      // Nullstellen gegen Probe
+      expectClose(h(-a), 0, `${task.prompt}: Nullstelle`, 1e-9);
+      expectClose(h(ns), 0, `${task.prompt}: Nullstelle`, 1e-9);
+      // Differenzenquotient gegen die Produkt- und Kettenregel
+      expectClose(diff(h, 0), -a * a, `${task.prompt}: Produktregel`, 1e-3);
+      expectClose(diff(h, xt), 0, `${task.prompt}: h′ = 0`, 1e-3);
+      // Extremwerte gegen Probe
+      expectClose(h(xt), yt, `${task.prompt}: Extremwert`, 1e-6);
+      const best = extremum(h, -a, a, "min");
+      expectClose(best.x, xt, `${task.prompt}: Tiefpunkt`, 1e-3);
+      expectClose(best.y, yt, `${task.prompt}: Tiefpunkt`, 1e-6);
+      // bei x = −a liegt ein Hochpunkt auf der x-Achse
+      expect(h(-a - 0.5), task.prompt).toBeLessThan(0);
+      expect(h(-a + 0.5), task.prompt).toBeLessThan(0);
+      // Grenzverhalten für x → −∞
+      expect(h(-10 * a), task.prompt).toBeLessThan(0);
+      const chosen = choices(task);
+      expect(chosen[0].correctIndex, task.prompt).toBe(0);
+      expect(chosen[1].correctIndex, task.prompt).toBe(0);
     }
   });
 });

@@ -36,7 +36,7 @@ erfüllt die Extremwert-KE und die Anwendungs-KE zugleich.
 
 - **Nicht enthalten, weil nicht im Fachlehrplan M13:** der Vertiefungskurs M12
   (Komplexe Zahlen, Folgen und Reihen, Matrizen, Zahlentheorie und Kryptologie,
-  Statistik), gebrochen-rationale Funktionen und ihre Asymptoten (M12), der Satz
+  Statistik), gebrochen-rationale Funktionen und ihre Asymptoten (M11 LB 2, siehe `mathematik-gymnasium-11/coverage.json`), der Satz
   von Moivre-Laplace, Hypothesentests und Binomialverteilung (M12).
 - **Wiederholung aus M12, ausdrücklich als Auffrischung behandelt:** Stamm- und
   Integralfunktionen, Potenz-, Produkt- und Kettenregel (`int-5`, `aw-1`).
@@ -52,6 +52,10 @@ erfüllt die Extremwert-KE und die Anwendungs-KE zugleich.
 - **Hesse'sche Normalform und Abstände** (M13 3) rechnet `rg-8` über
   Kreuzprodukt und normierte Ebenengleichung; die Sonderlagen von Ebenen
   (`rg-4`) kommen vor den Lagebeziehungen, damit die Abstände darauf aufbauen.
+- **Modellieren, dokumentieren, vergleichen** (M13 3, letzte KE) bleibt
+  Leistung im Unterricht: `rg-9` übt Rechnen und Begründen im Sachkontext,
+  verlangt aber keine eigene schriftliche Ausarbeitung oder Präsentation
+  (siehe `scope_note` in `coverage.json`).
 - **Notation:** Parameterform g: X = A + t·u und E: X = P + r·u + s·v,
   Koordinatenform n⃗·X = d, Kugel in Koordinatenform, Winkel stets der spitze
   Schnittwinkel. Negative Zahlen mit echtem Minus „−", Dezimalzahlen mit Komma.

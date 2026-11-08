@@ -62,7 +62,7 @@ export const GOAL_WITNESSES_STAGE_1: Record<string, Record<string, LabValues>> =
     // p = 0,5: ∫₁^50 − ∫₁^10 = 2(√50 − √10) ≈ 7,82 ≥ 2.
     schwanz: { p: 0.5, b: 10 },
   },
-  "int-8-gesaendteraenderung": {
+  "int-8-gesamtaenderung": {
     // Hin- und Rückweg mit je 3 m/s über je 3 s: Verschiebung 0, Strecke 18 m.
     "hin-rueck": { vmax: 3, t1: 3, vback: 3, T: 6 },
     // 3 m/s · 2 s + 2 m/s · 2 s = 10 m.

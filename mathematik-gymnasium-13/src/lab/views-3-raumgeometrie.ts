@@ -584,7 +584,7 @@ function abstandLab(v: LabValues, r: ReadoutValues): string {
   } else if (v.mode === 1) {
     const n = v3(v.nx, 2, 2);
     const len = norm3(n);
-    const foot = mul3(v.d / (len * len), n);
+    const foot = sub3(p, mul3((dot3(n, p) - v.d) / (len * len), n));
     const e1 = norm3(cross3(n, v3(1, 0, 0))) > 1e-9 ? cross3(n, v3(1, 0, 0)) : cross3(n, v3(0, 1, 0));
     const e2 = cross3(n, e1);
     const s1 = mul3(4 / (norm3(e1) || 1), e1);
@@ -623,7 +623,7 @@ function kugelLab(v: LabValues, r: ReadoutValues): string {
   drawing += circle(pm.x, pm.y, radius, "lab-fill-b");
   drawing += circle(pm.x, pm.y, radius, "lab-ink");
   if (v.mode === 0 && norm3(n) > 1e-9) {
-    const foot = mul3(v.d / (norm3(n) * norm3(n)), n);
+    const foot = sub3(m, mul3((dot3(n, m) - v.d) / (norm3(n) * norm3(n)), n));
     const e1 = norm3(cross3(n, v3(1, 0, 0))) > 1e-9 ? cross3(n, v3(1, 0, 0)) : cross3(n, v3(0, 1, 0));
     const e2 = cross3(n, e1);
     const s1 = mul3(4 / (norm3(e1) || 1), e1);

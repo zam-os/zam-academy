@@ -45,7 +45,17 @@ const verketteteFunktionen = L(1, {
     <p>Zur Untersuchung brauchst du die <strong>Kettenregel</strong> (Wiederholung aus M12): Die Ableitung einer Verkettung ist das Produkt aus äußerer Ableitung (ausgewertet an der Stelle g(x)) und innerer Ableitung:</p>
     <p>(f ∘ g)′(x) = f′(g(x)) · g′(x)</p>
     <p>Das gilt auch mit <strong>Parametern</strong>: In f(x) = (x² + a)³ steckt a im inneren Term. Die Ableitung ändert sich mit a, und Bedingungen wie „f′(1) = 6“ werden zu Gleichungen für a. Extrema findest du wie gewohnt mit f′ = 0; bei einer Verkettung entscheidet das Produkt, ob eine Stelle Extremstelle ist.</p>
+    <p>Eine verkettete Funktion <strong>untersuchst du Schritt für Schritt</strong> – mit denselben Fragen wie jede andere Funktion:</p>
+    <ol class="steps">
+      <li><strong>Definitionsbereich:</strong> Bei Polynomen ist 𝔻 = ℝ. Bei einer Wurzel muss der innere Term nicht negativ sein, bei ln(g(x)) muss g(x) positiv sein, und bei g(x) : h(x) darf der Nenner nicht 0 werden.</li>
+      <li><strong>Nullstellen:</strong> h(x) = 0 lösen; bei f(g(x)) rechnest du zuerst die Nullstellen der inneren Funktion aus und prüfst sie in der äußeren.</li>
+      <li><strong>Extremstellen:</strong> Mit der Kettenregel h′(x) = 0 lösen; die Art des Extrempunkts zeigt h″, der Vorzeichenwechsel von h′ oder eine Probe mit benachbarten Stellen.</li>
+      <li><strong>Grenzverhalten:</strong> Für sehr große und sehr kleine x entscheidet die äußere Funktion, ob h(x) gegen ∞, gegen −∞ oder gegen einen festen Wert strebt.</li>
+    </ol>
+    <p>Auch <strong>Produkte und Quotienten</strong> stecken in Verkettungen, etwa h(x) = g(x) · f(g(x)). Dann kombinierst du die Regeln aus M12: (g · h)′(x) = g′(x) · h(x) + g(x) · h′(x) und (g : h)′(x) = (g′(x) · h(x) − g(x) · h′(x)) : h(x)².</p>
+    <p>Bei <strong>e-Funktion und ln-Funktion</strong> liefert die äußere Ableitung die e-Regel bzw. die ln-Regel: (e<sup>g(x)</sup>)′ = g′(x) · e<sup>g(x)</sup> und (ln(g(x)))′ = g′(x) : g(x). Besonders sauber wird es, wenn der innere Term an der Stelle 0 ist (dann ist e<sup>0</sup> = 1) oder 1 (dann ist ln(1) = 0).</p>
     <div class="example">h(x) = (x² + 2)³: g(x) = x² + 2, f(u) = u³. Die äußere Ableitung ist f′(g(x)) = 3(x² + 2)², die innere g′(x) = 2x. Also h′(x) = 3(x² + 2)² · 2x = 6x(x² + 2)². Für x = 1: h(1) = 27 und h′(1) = 6 · 1 · 9 = 54.</div>
+    <div class="example">c(t) = e<sup>t² − 4t</sup>: innere Funktion g(t) = t² − 4t, äußere Funktion f(u) = e<sup>u</sup>. Nach der Kettenregel ist c′(t) = (2t − 4) · e<sup>t² − 4t</sup>. Für t = 4 ist der Exponent 0, also c(4) = 1 und c′(4) = 4 · 1 = 4. Untersuchung: 𝔻 = ℝ, c(t) ist nie 0, das Minimum liegt bei t = 2 (dort ist der Exponent am kleinsten), und für x → ±∞ strebt c(t) gegen ∞.</div>
     <div class="merke"><strong>Merke:</strong> Bei f(g(x)) zuerst die äußere, dann die innere Ableitung bilden und beide multiplizieren. Die äußere Ableitung wird immer an der Stelle g(x) ausgewertet.</div>
   `,
   formulas: [
@@ -63,6 +73,21 @@ const verketteteFunktionen = L(1, {
       name: "Beispiel mit Parameter",
       html: "h(x) = (x² + a)³ ⇒ h′(x) = 6x(x² + a)²",
       quantities: "a Parameter im inneren Term",
+    },
+    {
+      name: "Produkt- und Quotientenregel",
+      html: "(g · h)′(x) = g′(x) · h(x) + g(x) · h′(x), (g : h)′(x) = (g′(x) · h(x) − g(x) · h′(x)) : h(x)²",
+      quantities: "Regeln aus M12, kombiniert mit der Kettenregel in Verkettungen",
+    },
+    {
+      name: "e-Funktion und ln-Funktion",
+      html: "(e<sup>g(x)</sup>)′ = g′(x) · e<sup>g(x)</sup>, (ln(g(x)))′ = g′(x) : g(x)",
+      quantities: "äußere Ableitung von e hoch u ist e hoch u, von ln u ist 1 : u",
+    },
+    {
+      name: "Untersuchung einer Verkettung",
+      html: "𝔻 bestimmen, Nullstellen aus h(x) = 0, Extremstellen aus h′(x) = 0, Grenzverhalten",
+      quantities: "Reihenfolge der Untersuchung, auch mit Parametern",
     },
   ],
   quiz: {
@@ -250,40 +275,160 @@ const verketteteFunktionen = L(1, {
             { a, x: x0, g, aussen, innen, hp },
           );
         }
-        const a = rng.int(1, 4);
-        const x0 = rng.int(2, 3);
-        const innen = a * x0 * x0 + 1;
-        const h = innen * innen;
-        const hp = 4 * a * x0 * innen;
+        const k = rng.int(2, 9);
         return task(
           2,
           "",
-          `Die Funktion h(x) = (a·x² + 1)² hängt vom Parameter a ab. Für a = ${fmt(a)} berechne h(${fmt(x0)}) und die Ableitung h′(${fmt(x0)}); benutze die Kettenregel mit g(x) = a·x² + 1 und f(u) = u².`,
+          `Die Konzentration c eines Farbstoffs (in mg/l) hängt in einem Experiment von der Zeit t (in min) ab: c(t) = e<sup>t² − ${k}·t</sup>. Wie schnell ändert sich die Konzentration nach ${fmt(k)} min, und wie groß ist sie dann?`,
           [
-            numberField("h(x) =", h, "", 0, {
+            numberField("Änderungsgeschwindigkeit:", k, "mg/l pro min", 0, {
               slips: [
                 {
-                  value: innen,
-                  hint: "h(x) = g(x)²: Der Wert der inneren Funktion muss noch quadriert werden.",
+                  value: 2 * k,
+                  hint: `Die innere Ableitung von t² − ${k}·t ist 2t − ${k}: Auch der zweite Summand zählt.`,
                 },
               ],
             }),
-            numberField("h′(x) =", hp, "", 0, {
+            numberField("Konzentration:", 1, "mg/l", 0, {
               slips: [
                 {
-                  value: 2 * a * x0,
-                  hint: "h′(x) = 2 · g(x) · g′(x): Nicht nur g′(x) eintragen, auch g(x) mitmultiplizieren.",
+                  value: 0,
+                  hint: "Der Exponent ist an der Stelle 0, und e⁰ ist 1, nicht 0.",
                 },
               ],
             }),
+            choiceField(
+              "c(t) ist am kleinsten …",
+              [
+                `bei t = ${fmt(k / 2)} min`,
+                `bei t = ${fmt(k)} min`,
+                "bei t = 0 min",
+              ],
+              0,
+            ),
           ],
-          "Kettenregel: h′(x) = 2 · g(x) · g′(x) mit g′(x) = 2a·x.",
+          `Kettenregel mit e-Regel: c′(t) = g′(t) · e<sup>g(t)</sup> für g(t) = t² − ${k}·t und g′(t) = 2t − ${k}.`,
           [
-            `g(${fmt(x0)}) = ${fmt(a)} · ${x0}² + 1 = ${fmt(a * x0 * x0)} + 1 = ${fmt(innen)}, also h(${fmt(x0)}) = ${fmt(innen)}² = ${fmt(h)}.`,
-            `g′(x) = 2 · ${fmt(a)} · x, also g′(${fmt(x0)}) = ${fmt(2 * a * x0)}; h′(${fmt(x0)}) = 2 · ${fmt(innen)} · ${fmt(2 * a * x0)} = ${fmt(hp)}.`,
+            `Innere Funktion g(t) = t² − ${k}·t, äußere Funktion f(u) = e<sup>u</sup>; Kettenregel: c′(t) = (2t − ${k}) · e<sup>t² − ${k}·t</sup>.`,
+            `Bei t = ${fmt(k)} ist der Exponent ${k}² − ${k} · ${k} = 0, also c(${fmt(k)}) = e<sup>0</sup> = 1 mg/l.`,
+            `Ableitungswert: c′(${fmt(k)}) = (2 · ${k} − ${k}) · e<sup>0</sup> = ${fmt(k)} · 1 = ${fmt(k)} mg/l pro min.`,
           ],
-          `h(${fmt(x0)}) = ${fmt(h)} und h′(${fmt(x0)}) = ${fmt(hp)}.`,
-          { a, x: x0, g: innen, h, hp },
+          `Nach ${fmt(k)} min ist die Konzentration 1 mg/l und ändert sich um ${fmt(k)} mg/l pro min; am kleinsten ist c bei t = ${fmt(k / 2)} min.`,
+          { k, rate: k, konz: 1, tmin: k / 2 },
+        );
+      },
+    },
+    {
+      id: "untersuchen",
+      make: (rng, level): ExerciseTask => {
+        if (level === 1) {
+          const k = rng.int(2, 8);
+          const a = k * k;
+          const y = -(a * a * a);
+          return task(
+            1,
+            `Untersuche die verkettete Funktion h(x) = (x² − a)³ mit dem Parameter a = ${fmt(a)}: innere Funktion g(x) = x² − ${fmt(a)}, äußere Funktion f(u) = u³. Bestimme den Definitionsbereich, die Nullstellen und den Extrempunkt von h.`,
+            "",
+            [
+              choiceField(
+                "Definitionsbereich von h",
+                [
+                  "𝔻 = ℝ",
+                  `𝔻 = ℝ ohne x = ${fmt(-k)} und x = ${fmt(k)}`,
+                  "𝔻 = {x | x ≥ 0}",
+                ],
+                0,
+              ),
+              numberField("kleinere Nullstelle x₁ =", -k, "", 0, {
+                slips: [
+                  {
+                    value: k,
+                    hint: `Aus x² = ${fmt(a)} folgt x = ±${k}: Die kleinere Nullstelle ist negativ.`,
+                  },
+                ],
+              }),
+              numberField("größere Nullstelle x₂ =", k, "", 0),
+              numberField("x-Wert des Extrempunkts:", 0, "", 0),
+              numberField("y-Wert des Extrempunkts:", y, "", 0, {
+                slips: [
+                  {
+                    value: a * a * a,
+                    hint: `Für x = 0 ist (0² − ${fmt(a)})³ = ${paren(-a)}³ = ${fmt(y)}: Der Wert ist negativ.`,
+                  },
+                  {
+                    value: -(a * a),
+                    hint: `Die dritte Potenz von ${fmt(-a)} ist ${fmt(y)}, nicht ${fmt(-(a * a))}.`,
+                  },
+                ],
+              }),
+            ],
+            `Kettenregel: h′(x) = 6x(x² − ${fmt(a)})². Nullstellen aus h(x) = 0, Extremstelle aus h′(x) = 0; die Art zeigt eine Probe mit benachbarten Stellen.`,
+            [
+              `Definitionsbereich: h ist eine Verkettung von Polynomen, also ist 𝔻 = ℝ.`,
+              `Nullstellen: h(x) = 0 genau dann, wenn x² − ${fmt(a)} = 0 ist, also x = ${fmt(-k)} oder x = ${fmt(k)}.`,
+              `Kettenregel: h′(x) = 3(x² − ${fmt(a)})² · 2x = 6x(x² − ${fmt(a)})²; h′(x) = 0 für x = 0 und x = ±${k}.`,
+              `Probe: h(0) = ${paren(-a)}³ = ${fmt(y)}; da (x² − ${fmt(a)})³ mit wachsendem Betrag von x wächst, ist P(0 | ${fmt(y)}) der Tiefpunkt. Bei x = ${fmt(-k)} und x = ${fmt(k)} berührt der Graph die x-Achse.`,
+            ],
+            `h hat die Nullstellen x = ${fmt(-k)} und x = ${fmt(k)}; der Tiefpunkt liegt bei P(0 | ${fmt(y)}) und für x → ±∞ strebt h(x) gegen ∞.`,
+            { k, a, x1: -k, x2: k, xt: 0, yt: y },
+          );
+        }
+        const k = rng.int(2, 9);
+        const a = 3 * k;
+        const y = -32 * k * k * k;
+        return task(
+          2,
+          "",
+          `Ein Kurvenzug wird durch h(x) = (x + a)² · (x − a) mit dem Parameter a = ${fmt(a)} beschrieben. Untersuche den Verlauf vollständig: Nullstellen, Extremstellen und das Verhalten für sehr große Beträge von x.`,
+          [
+            numberField("x-Wert des Tiefpunkts:", k, "", 0, {
+              slips: [
+                {
+                  value: a,
+                  hint: `x = ${fmt(a)} ist die größere Nullstelle, nicht der Tiefpunkt. Leite h nach der Produktregel ab und löse h′(x) = 0.`,
+                },
+              ],
+            }),
+            numberField("y-Wert des Tiefpunkts:", y, "", 0, {
+              slips: [
+                {
+                  value: -y,
+                  hint: `Bei x = ${fmt(k)} ist der Faktor (x − ${fmt(a)}) = ${fmt(k - a)} negativ, also ist h(${fmt(k)}) negativ.`,
+                },
+              ],
+            }),
+            numberField("größere Nullstelle x =", a, "", 0, {
+              slips: [
+                {
+                  value: k,
+                  hint: `Die Nullstellen liest du aus den Faktoren ab: x = ${fmt(-a)} und x = ${fmt(a)}.`,
+                },
+              ],
+            }),
+            choiceField(
+              "Bei der kleineren Nullstelle …",
+              [
+                `… liegt bei x = ${fmt(-a)} ein Hochpunkt auf der x-Achse.`,
+                `… geht der Graph bei x = ${fmt(-a)} durch die x-Achse.`,
+                `… liegt bei x = ${fmt(-a)} ein Tiefpunkt auf der x-Achse.`,
+              ],
+              0,
+            ),
+            choiceField(
+              "Für x → −∞ strebt h(x) …",
+              ["… gegen −∞.", "… gegen ∞.", "… gegen 0."],
+              0,
+            ),
+          ],
+          "Ableiten mit Produkt- und Kettenregel, h′(x) = 0 lösen, die Art durch Vorzeichenwechsel bestimmen und die Nullstellen aus den Faktoren ablesen.",
+          [
+            `Nullstellen: (x + ${fmt(a)})² · (x − ${fmt(a)}) = 0 für x = ${fmt(-a)} (doppelte Nullstelle) und x = ${fmt(a)}.`,
+            `Produkt- und Kettenregel: h′(x) = 2(x + ${fmt(a)}) · (x − ${fmt(a)}) + (x + ${fmt(a)})² = (x + ${fmt(a)}) · (3x − ${fmt(a)}).`,
+            `h′(x) = 0 für x = ${fmt(-a)} und x = ${fmt(k)}; bei x = ${fmt(-a)} liegt ein Hochpunkt mit h = 0, bei x = ${fmt(k)} ein Tiefpunkt.`,
+            `Tiefpunkt: h(${fmt(k)}) = ${fmt(k + a)}² · ${paren(k - a)} = ${fmt(y)}; für x → −∞ strebt h(x) gegen −∞ und für x → ∞ gegen ∞.`,
+          ],
+          `Der Tiefpunkt liegt bei P(${fmt(k)} | ${fmt(y)}), die größere Nullstelle ist x = ${fmt(a)}; bei x = ${fmt(-a)} liegt ein Hochpunkt auf der x-Achse und für x → −∞ strebt h(x) gegen −∞.`,
+          { k, a, xt: k, yt: y, ns: a },
         );
       },
     },
