@@ -21,6 +21,14 @@ import contract from "./fixtures/public-contract.json";
 import teacherVideos from "../src/curriculum/teacher-videos.json";
 import teacherVideoIds from "./fixtures/teacher-video-ids.json";
 
+// Thomas approved the mapping on 2026-11-08 (cell 2026.11.2): each A successor
+// declares `replaces` on exactly its one old card, and no other card does.
+const approvedReplaces = new Map(
+  mapping.rows.filter((row) => row.category === "A").map((row) => [row.academy_slug, [row.de_by_id]]),
+);
+const replacesOf = (item: object): string[] =>
+  (item as { replaces?: string[] }).replaces ?? [];
+
 interface Item {
   id: string;
   slug: string;
@@ -286,7 +294,7 @@ describe("ZAM-Karten", () => {
       seen.add(a.id);
       for (const i of a.practice_items) {
         expect(i.source_link).toBe(a.source_link);
-        expect("replaces" in i).toBe(false);
+        expect(replacesOf(i), i.slug).toEqual(approvedReplaces.get(i.slug) ?? []);
       }
     }
     expect("retired_items" in cell).toBe(false);
@@ -310,9 +318,9 @@ describe("ZAM-Karten", () => {
       }
     }
   });
-  it("accounts for 16 old items with six transfer proposals and no applied migration", () => {
-    expect(mapping.approved).toBeNull();
-    expect(mapping.status).toBe("proposal-only");
+  it("accounts for 16 old items with six approved transfers", () => {
+    expect(mapping.approved).toBe("2026-11-08");
+    expect(mapping.status).toBe("approved");
     expect(mapping.rows).toHaveLength(16);
     expect(new Set(mapping.rows.map((r) => r.de_by_id)).size).toBe(16);
     expect(mapping.sources).toHaveLength(2);
@@ -326,7 +334,8 @@ describe("ZAM-Karten", () => {
       expect(r.reason.length).toBeGreaterThan(15);
       if (r.category === "A") {
         expect(items.some((i) => i.slug === r.academy_slug)).toBe(true);
-        expect(r.action).toBe("propose-replace-after-approval");
+        expect(r.action).toBe("replace");
+        expect(replacesOf(items.find((i) => i.slug === r.academy_slug)!)).toEqual([r.de_by_id]);
       } else {
         expect(r.category).toBe("C");
         expect(r.academy_slug).toBeNull();

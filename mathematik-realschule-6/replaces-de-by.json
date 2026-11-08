@@ -1,8 +1,8 @@
 {
   "schema": 1,
-  "approved": null,
-  "status": "proposal-only",
-  "source": "Stand 06.11.2026: sechs A-Vorschläge, keine B-Übernahme, zehn C-Zeilen bleiben aktiv. Keine Freigabe und keine Änderung persönlicher Historien. Veröffentlichung zunächst ohne replaces und retired_items gemäß Paketstandard.",
+  "approved": "2026-11-08",
+  "status": "approved",
+  "source": "Thomas in der Claude-Code-Sitzung zur ZAM-Integration am 2026-11-08: „Ich stimme den Mappings zu. Die Gefahr ist auch sehr gering. ZAM ist quasi noch ein Geheimprojekt. Also bitte gleich alle 9 bündeln.“ Die Freigabe gilt der Zuordnung der 16 de-by-Karten in dieser Datei (6 A, 0 B, 10 C; keine Stilllegung, alle C-Karten bleiben aktiv). Die 6 Nachfolger tragen ab Zellversion 2026.11.2 je ein replaces auf ihre alte Karte.",
   "source_repository": "zam-os/zam",
   "source_commit": "f57e6740854a2f91f985b59b9e101b388186d3bc",
   "sources": [
@@ -24,7 +24,7 @@
       "de_by_question": "Was geschieht mit dem mathematischen Wert eines Bruchs, wenn man Zähler und Nenner mit derselben Zahl multipliziert (Erweitern)?",
       "category": "A",
       "academy_slug": "m6-erweitern-wert",
-      "action": "propose-replace-after-approval",
+      "action": "replace",
       "reason": "Gleicher Einzelabruf: Der Wert eines Bruchs bleibt beim Erweitern gleich."
     },
     {
@@ -42,7 +42,7 @@
       "de_by_question": "Wie lautet die Grundregel zur Addition zweier gleichnamiger Brüche a/n + b/n?",
       "category": "A",
       "academy_slug": "m6-gleichnamig-addieren",
-      "action": "propose-replace-after-approval",
+      "action": "replace",
       "reason": "Gleicher Einzelabruf: gleichnamige Brüche durch Addieren der Zähler bei gleichem Nenner."
     },
     {
@@ -60,7 +60,7 @@
       "de_by_question": "Wie dividiert man einen Bruch durch einen anderen Bruch (z. B. 2/3 : 4/5)?",
       "category": "A",
       "academy_slug": "m6-durch-bruch",
-      "action": "propose-replace-after-approval",
+      "action": "replace",
       "reason": "Gleicher Einzelabruf: Division durch einen Bruch als Multiplikation mit dem Kehrwert des zweiten Bruchs."
     },
     {
@@ -78,7 +78,7 @@
       "de_by_question": "Wann ergibt ein vollständig gekürzter Bruch a/b einen ENDLICHEN (abbrechenden) Dezimalbruch?",
       "category": "A",
       "academy_slug": "m6-endlich-nenner",
-      "action": "propose-replace-after-approval",
+      "action": "replace",
       "reason": "Gleicher Einzelabruf: endliche Dezimalzahl genau bei den Primfaktoren 2 und 5 im Nenner des gekürzten Bruchs."
     },
     {
@@ -96,7 +96,7 @@
       "de_by_question": "Wie lautet die allgemeine Formel zur Berechnung des Flächeninhalts A eines Dreiecks mit Grundseite g und zugehöriger Höhe h?",
       "category": "A",
       "academy_slug": "m6-dreieck-formel",
-      "action": "propose-replace-after-approval",
+      "action": "replace",
       "reason": "Gleicher Einzelabruf: Formel für den Flächeninhalt eines Dreiecks aus Grundseite und zugehöriger Höhe."
     },
     {
@@ -132,7 +132,7 @@
       "de_by_question": "Wie viele Kubikzentimeter (cm³) passen exakt in einen Liter (1 l = 1 dm³)?",
       "category": "A",
       "academy_slug": "m6-liter-cm3",
-      "action": "propose-replace-after-approval",
+      "action": "replace",
       "reason": "Gleicher Einzelabruf: 1 l = 1000 cm³."
     },
     {

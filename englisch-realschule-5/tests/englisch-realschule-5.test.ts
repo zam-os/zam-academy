@@ -43,6 +43,14 @@ const oldItems = legacy.atoms.flatMap((atom) =>
 		fast_check: "fast_check" in item ? item.fast_check : undefined,
 	})),
 );
+// Thomas approved the mapping on 2026-11-08: each A successor carries the
+// history of exactly one old card from 2026.11.2 on.
+const APPROVED_REPLACES: Record<string, string> = {
+	"e5-to-be-check": "01K4E5B0000000000000000J01",
+	"e5-have-got-check": "01K4E5B0000000000000000J03",
+	"e5-articles-nouns-check": "01K4E5B0000000000000000J05",
+	"e5-imperatives-check": "01K4E5B0000000000000000J07",
+};
 const replacesOf = (item: object): string[] =>
 	"replaces" in item ? (item as { replaces: string[] }).replaces : [];
 const lesson = (id: string) =>
@@ -196,7 +204,7 @@ describe("curriculum, cards and public lesson links", () => {
 	);
 	it("pins 129 distinct ULIDs and all 43 lesson anchors independently", () => {
 		expect(cell.tile_id).toBe(ZAM_CELL_ID);
-		expect(cell.version).toBe("2026.11.1");
+		expect(cell.version).toBe("2026.11.2");
 		expect(cell.published_at).toMatch(/^2026-11-07T/);
 		expect(cell.atoms).toHaveLength(43);
 		expect(items).toHaveLength(86);
@@ -269,7 +277,9 @@ describe("curriculum, cards and public lesson links", () => {
 				expect(item.source_link).toBe(lessonLink(lesson.id));
 				expect(item.materiality).toBe("material");
 				expect(item.language).toBe("en");
-				expect(replacesOf(item)).toEqual([]);
+				expect(replacesOf(item)).toEqual(
+					APPROVED_REPLACES[item.slug] ? [APPROVED_REPLACES[item.slug]] : [],
+				);
 			}
 			for (const edge of atom.prerequisites)
 				expect(
@@ -575,10 +585,10 @@ describe("local progress and routes", () => {
 	});
 });
 
-describe("proposal-only legacy mapping", () => {
-	it("leaves approved at null and ships cell.json without replaces or retired_items", () => {
-		expect(mapping.approved).toBeNull();
-		expect(mapping.status).toBe("proposal-only");
+describe("approved legacy mapping", () => {
+	it("is approved and ships exactly the four A transfers, without retired_items", () => {
+		expect(mapping.approved).toBe("2026-11-08");
+		expect(mapping.status).toBe("approved");
 		expect(mapping.rows.map((row) => row.de_by_id).sort()).toEqual(
 			oldItems.map((item) => item.id).sort(),
 		);
@@ -593,20 +603,24 @@ describe("proposal-only legacy mapping", () => {
 		expect(
 			mapping.rows.map((row) => [row.category, row.action, row.academy_slug]),
 		).toEqual([
-			["A", "propose-replace-after-approval", "e5-to-be-check"],
+			["A", "replace", "e5-to-be-check"],
 			["C", "keep-active", null],
-			["A", "propose-replace-after-approval", "e5-have-got-check"],
+			["A", "replace", "e5-have-got-check"],
 			["C", "keep-active", null],
-			["A", "propose-replace-after-approval", "e5-articles-nouns-check"],
+			["A", "replace", "e5-articles-nouns-check"],
 			["C", "keep-active", null],
-			["A", "propose-replace-after-approval", "e5-imperatives-check"],
+			["A", "replace", "e5-imperatives-check"],
 			["C", "keep-active", null],
 		]);
 		const oldIds = new Set(oldItems.map((item) => item.id));
 		for (const item of items) {
 			expect(oldIds.has(item.id)).toBe(false);
-			expect(replacesOf(item)).toEqual([]);
+			expect(replacesOf(item)).toEqual(
+				APPROVED_REPLACES[item.slug] ? [APPROVED_REPLACES[item.slug]] : [],
+			);
 		}
+		for (const row of mapping.rows.filter((entry) => entry.category === "A"))
+			expect(APPROVED_REPLACES[row.academy_slug as string]).toBe(row.de_by_id);
 	});
 	it("proposes A only where the successor asks the same single retrieval", () => {
 		const checks: [string, string, string][] = [

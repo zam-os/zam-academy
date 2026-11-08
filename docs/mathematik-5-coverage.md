@@ -35,7 +35,7 @@ Die Vertragstests prüfen die wortgleichen 38 Erwartungen, mindestens eine Lekti
 
 ## Alte Karten und Historien
 
-Zwei bytegleich gesicherte Zellen aus ZAM `f57e6740854a2f91f985b59b9e101b388186d3bc` enthalten 16 alte Items. [replaces-de-by.json](../mathematik-realschule-5/replaces-de-by.json) dokumentiert jedes Item mit Grund. Die Zuordnung ist ein Vorschlag (`approved: null`, `status: proposal-only`). Die Zelle erscheint zunächst ohne `replaces` und `retired_items`.
+Zwei bytegleich gesicherte Zellen aus ZAM `f57e6740854a2f91f985b59b9e101b388186d3bc` enthalten 16 alte Items. [replaces-de-by.json](../mathematik-realschule-5/replaces-de-by.json) dokumentiert jedes Item mit Grund. Thomas hat die Zuordnung am 8. November 2026 freigegeben (`status: approved`). Ab `2026.11.2` trägt jeder A-Nachfolger ein `replaces` auf seine alte Karte; `retired_items` gibt es nicht.
 
 | Kategorie | Anzahl | Bedeutung dieses Entwurfs |
 | --- | --- | --- |
@@ -45,9 +45,9 @@ Zwei bytegleich gesicherte Zellen aus ZAM `f57e6740854a2f91f985b59b9e101b388186d
 
 Die A-Vorschläge betreffen Strecke, stumpfer Winkel, 1 m = 1.000 mm, Umrechnungszahl 100 bei Flächen, Abrunden, Kommutativgesetz, Basis und Exponent sowie die Reihenfolge der Rechenarten. Die Karte zum Abrunden fragt nun genauer nach der Ziffer rechts neben der Rundungsstelle; die alte Karte sprach von der Ziffer an der Rundungsstelle, meinte aber dieselbe Regel.
 
-`validate-migration.mjs` verwendet nur Wegwerfdatenbanken. Die tatsächliche Zelle bewahrt 16 vollständige FSRS-Stände und 32 Reviewereignisse, lässt alle alten Karten aktiv und legt 156 neue Karten unberührt an. Eine nur im Arbeitsspeicher erzeugte spätere Fassung verschiebt die acht vorgeschlagenen Historien unverändert, lässt die acht C-Karten aktiv und bricht ab, wenn eine lernende Person Karten auf altem und neuem Eintrag zugleich hält.
+`validate-migration.mjs` verwendet nur Wegwerfdatenbanken. Die Zelle `2026.11.2` verschiebt die acht freigegebenen Historien mit allen FSRS-Feldern und 32 Reviewereignissen unverändert, lässt die acht C-Karten aktiv und bricht ab, wenn eine lernende Person Karten auf altem und neuem Eintrag zugleich hält.
 
-**Vor dem Bündeln in ZAM schließen:** Solange die Zuordnung offen ist, kann eine lernende Person Karten auf einer alten Kennung und ihrem Nachfolger halten. Dann lehnt zam-core die Installation der späteren Fassung ab. Die Freigabe der Zuordnung sollte deshalb vor `npm run academy:sync` in zam-os/zam erfolgen.
+**Geschlossen am 8. November 2026:** Die Freigabe kam vor dem Bündeln in ZAM; `npm run academy:sync` übernimmt `2026.11.2` mit `replaces`.
 
 ## Verifikation
 

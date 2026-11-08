@@ -1,8 +1,8 @@
 {
   "schema": 1,
-  "approved": null,
-  "status": "proposal-only",
-  "source": "Stand 07.11.2026: Vorschlag (4× A, 0× B, 4× C) für de-by:realschule-5-englisch-grundlagen-to-be-have-got; noch nicht von Thomas freigegeben. Gemäß Paketstandard erscheint cell.json zunächst ohne replaces und retired_items.",
+  "approved": "2026-11-08",
+  "status": "approved",
+  "source": "Thomas in der Claude-Code-Sitzung zur ZAM-Integration am 2026-11-08: „Ich stimme den Mappings zu. Die Gefahr ist auch sehr gering. ZAM ist quasi noch ein Geheimprojekt. Also bitte gleich alle 9 bündeln.“ Die Freigabe gilt der Zuordnung der 8 de-by-Karten in dieser Datei (4 A, 0 B, 4 C; keine Stilllegung, alle C-Karten bleiben aktiv). Die 4 Nachfolger tragen ab Zellversion 2026.11.2 je ein replaces auf ihre alte Karte.",
   "source_repository": "zam-os/zam",
   "source_commit": "e6a235f75fe87b9d57af38bd61011027b891492c",
   "sources": [
@@ -20,7 +20,7 @@
       "de_by_question": "Wie lautet die korrekte verneinte Kurzform von 'is not' im Englischen (z. B. 'He ... at home')?",
       "category": "A",
       "academy_slug": "e5-to-be-check",
-      "action": "propose-replace-after-approval",
+      "action": "replace",
       "reason": "Derselbe Einzelabruf: verneinte Kurzform von 'is not' im Beispielsatz 'He ... at home' mit der Antwort 'isn't' und derselben binären Abgrenzung gegen 'aren't'. Nur die Aufgabensprache wechselt von Deutsch zu Englisch."
     },
     {
@@ -38,7 +38,7 @@
       "de_by_question": "Welche Form von 'have got' (haben/besitzen) muss bei der 3. Person Einzahl (he, she, it) verwendet werden?",
       "category": "A",
       "academy_slug": "e5-have-got-check",
-      "action": "propose-replace-after-approval",
+      "action": "replace",
       "reason": "Derselbe Einzelabruf: Form von 'have got' in der 3. Person Singular (he, she, it) mit der Antwort 'has got (he/she/it has got)' und derselben binären Auswahl gegen 'have got'."
     },
     {
@@ -56,7 +56,7 @@
       "de_by_question": "Wann wird im Englischen der unbestimmte Artikel 'an' statt 'a' verwendet (z. B. '... apple' vs. '... book')?",
       "category": "A",
       "academy_slug": "e5-articles-nouns-check",
-      "action": "propose-replace-after-approval",
+      "action": "replace",
       "reason": "Derselbe Einzelabruf: Regel für den unbestimmten Artikel 'an' statt 'a' vor gesprochenem Vokallaut (an apple, an hour) im Kontrast zu Pluralnomen."
     },
     {
@@ -74,7 +74,7 @@
       "de_by_question": "Wie wird ein verneinter Befehl bzw. ein Verbot im englischen Imperativ eingeleitet (z. B. '... run in the corridor!')?",
       "category": "A",
       "academy_slug": "e5-imperatives-check",
-      "action": "propose-replace-after-approval",
+      "action": "replace",
       "reason": "Derselbe Einzelabruf: Bildung des verneinten Imperativs im Beispielsatz '... run in the corridor!' mit 'Don't + base form (Don't run!)' gegenüber dem typischen Lernendenfehler 'Not + base form (Not run!)'."
     },
     {

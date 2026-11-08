@@ -10,6 +10,14 @@ import rawCell from "../cell.json";
 import mapping from "../replaces-de-by.json";
 import contract from "./fixtures/public-contract.json";
 
+// Thomas approved the mapping on 2026-11-08 (cell 2026.11.2): each A successor
+// declares `replaces` on exactly its one old card, and no other card does.
+const approvedReplaces = new Map(
+  mapping.rows.filter((row) => row.category === "A").map((row) => [row.academy_slug, [row.de_by_id]]),
+);
+const replacesOf = (item: object): string[] =>
+  (item as { replaces?: string[] }).replaces ?? [];
+
 interface Item {
   id: string;
   slug: string;
@@ -267,7 +275,8 @@ describe("ZAM-Karten", () => {
       earlier.add(atom.id);
     }
     expect("retired_items" in cell).toBe(false);
-    expect(cell.atoms.every((atom) => atom.practice_items.every((item) => !item.replaces))).toBe(true);
+    for (const item of cell.atoms.flatMap((atom) => atom.practice_items))
+      expect(replacesOf(item), item.slug).toEqual(approvedReplaces.get(item.slug) ?? []);
   });
 
   it("has binary checks, curated reasons, transfer solutions and a spoken formula", () => {
@@ -279,10 +288,14 @@ describe("ZAM-Karten", () => {
         if (item.tier === "tier1_fast") {
           expect(item.fast_check?.options).toHaveLength(2);
           expect(item.fast_check?.correct_index).toBe(0);
-          expect(item.fast_check?.options[0]).toBe(item.concept);
+          // A formula answer lives in concept_segments alone (ZAM accepts
+          // exactly one of the two), so its plain option is written out.
+          if (item.concept !== undefined) expect(item.fast_check?.options[0]).toBe(item.concept);
+          else expect(item.fast_check?.options[0].length).toBeGreaterThan(3);
         } else {
           expect(item.sample_solution?.length).toBeGreaterThan(3);
         }
+        expect(item.concept === undefined, item.slug).not.toBe(item.concept_segments === undefined);
         for (const key of ["question_segments", "concept_segments"] as const)
           for (const segment of item[key] ?? [])
             if (segment.type === "math") expect(segment.speech?.length).toBeGreaterThan(0);
@@ -291,9 +304,9 @@ describe("ZAM-Karten", () => {
     expect(JSON.stringify(cell)).toContain('"type":"math"');
   });
 
-  it("keeps the mapping a proposal until Thomas approves it", () => {
-    expect(mapping.approved).toBeNull();
-    expect(mapping.status).toBe("proposal-only");
+  it("ships exactly the seven transfers Thomas approved", () => {
+    expect(mapping.approved).toBe("2026-11-08");
+    expect(mapping.status).toBe("approved");
     expect(mapping.rows).toHaveLength(16);
     expect(mapping.rows.filter((row) => row.category === "A")).toHaveLength(7);
     expect(mapping.rows.filter((row) => row.category === "B")).toHaveLength(0);
@@ -303,7 +316,8 @@ describe("ZAM-Karten", () => {
       if (row.category === "A") {
         const item = cell.atoms.flatMap((atom) => atom.practice_items).find((entry) => entry.slug === row.academy_slug);
         expect(item?.tier).toBe("tier1_fast");
-        expect(row.action).toBe("propose-replace-after-approval");
+        expect(row.action).toBe("replace");
+        expect(replacesOf(item!)).toEqual([row.de_by_id]);
       } else {
         expect(row.academy_slug).toBeNull();
         expect(row.action).toBe("keep-active");
