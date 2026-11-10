@@ -1,0 +1,255 @@
+[
+  {
+    "id": "reiz-reaktion-und-synapse",
+    "lb": 6,
+    "title": "Vom Reiz zur Reaktion",
+    "period": "Einführungsklasse · Lernbereich 6",
+    "intro": "Du verfolgst ein Signal vom Sinnesorgan zum Muskel und über eine chemische Synapse.",
+    "paragraphs": [
+      "Sinneszellen reagieren auf Reize: Licht im Auge, Schwingungen im Ohr, Duftstoffe in der Nase, gelöste Stoffe auf der Zunge und zum Beispiel Berührung oder Wärme in der Haut. Ein Reiz kann in elektrische Signale umgesetzt werden. Afferente Bahnen leiten Information zum Zentralnervensystem, wo sie verarbeitet wird. Efferente Bahnen führen Signale zu einem Erfolgsorgan, etwa einem Muskel oder einer Drüse.",
+      "Eine typische Nervenzelle nimmt Signale unter anderem über Dendriten auf. Der Zellkörper mit Zellkern verarbeitet eingehende Signale zusammen mit anderen Zellbereichen; das Axon leitet elektrische Erregung zu Endknöpfchen. An einer chemischen Synapse führt ein elektrisches Signal am Endknöpfchen zur Freisetzung eines Botenstoffs. Dieser bindet an passende Rezeptoren der Zielzelle und verändert ihre Aktivität.",
+      "Beispiel: Bei plötzlicher Hitze an der Hand melden Sinneszellen den Reiz über eine afferente Bahn. Im Rückenmark werden Signale auf eine motorische Bahn übertragen. Ein efferentes Signal aktiviert Muskeln zum Zurückziehen. Das Signal läuft auf Nervenfasern elektrisch und wird an chemischen Synapsen über Botenstoffe übertragen."
+    ],
+    "takeaway": "Afferent führt zum Zentralnervensystem, efferent zum Erfolgsorgan. An einer chemischen Synapse überbrückt ein Botenstoff den Spalt.",
+    "keyTerms": ["Reiz", "Sinneszelle", "afferent", "efferent", "Axon", "Synapse", "Erfolgsorgan"],
+    "sourceIds": ["isb"],
+    "quiz": {
+      "question": "Was überträgt die Information direkt über den Spalt einer chemischen Synapse?",
+      "answer": "Ein freigesetzter Botenstoff, der an Rezeptoren bindet.",
+      "wrong": [
+        "Ein Stück des Axons, das in die Zielzelle wandert.",
+        "Ein elektrischer Impuls, der ohne Zwischenschritt durch den Spalt läuft."
+      ],
+      "explanation": "Die chemische Übertragung liegt zwischen elektrischen Vorgängen in den beteiligten Zellen."
+    },
+    "workshop": {
+      "kind": "timeline",
+      "title": "Der Weg beim Zurückziehen der Hand",
+      "instruction": "Ordne die Stationen eines vereinfachten Reiz-Reaktions-Schemas.",
+      "categories": [],
+      "entries": [
+        {
+          "text": "Sinneszellen in der Haut reagieren auf starke Wärme.",
+          "target": 0,
+          "feedback": "Der Außenreiz wird in ein Signal umgesetzt."
+        },
+        {
+          "text": "Die afferente Bahn leitet das Signal zum Rückenmark.",
+          "target": 1,
+          "feedback": "Afferent bezeichnet die Richtung zum Zentralnervensystem."
+        },
+        {
+          "text": "Das Rückenmark verarbeitet das Signal und schaltet auf motorische Bahnen um.",
+          "target": 2,
+          "feedback": "An chemischen Synapsen sind Botenstoffe beteiligt."
+        },
+        {
+          "text": "Die efferente Bahn aktiviert Muskeln; die Hand bewegt sich weg.",
+          "target": 3,
+          "feedback": "Der Muskel setzt als Erfolgsorgan das Signal in eine Bewegung um."
+        }
+      ],
+      "conclusion": "Im Schema unterscheiden sich Reiz, Informationstransport, Verarbeitung und Reaktion."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre das Zurückziehen der Hand mit Rezeptor, afferenter Bahn, Verarbeitung, efferenter Bahn und Erfolgsorgan.",
+        "hints": ["Wo entsteht das erste Signal?", "Wo wird aus dem Signal eine Bewegung?"],
+        "model": "Rezeptoren in der Haut reagieren auf den Reiz. Die afferente Bahn leitet das Signal zum Rückenmark. Dort wird es verarbeitet und an eine motorische Bahn weitergegeben. Die efferente Bahn aktiviert einen Muskel als Erfolgsorgan, sodass die Hand weggezogen wird.",
+        "criteria": [
+          "Ich nenne den Rezeptor.",
+          "Ich ordne beide Bahnen nach Richtung zu.",
+          "Ich verknüpfe Verarbeitung, Muskel und Reaktion."
+        ]
+      },
+      "2": {
+        "prompt": "Im vereinfachten Modell bindet der freigesetzte Botenstoff nicht mehr an den Rezeptor der Muskelzelle. Am Endknöpfchen kommt weiterhin ein elektrisches Signal an. Erkläre die Folge für das Reiz-Reaktions-Schema.",
+        "hints": [
+          "Welcher Teil des Signalwegs funktioniert laut Aufgabe noch?",
+          "An welcher Stelle bleibt die Aktivierung aus?"
+        ],
+        "model": "Das elektrische Signal erreicht weiterhin das Endknöpfchen. Wenn der Botenstoff die Rezeptoren des Muskels nicht aktiviert, wird die Information dort nicht erfolgreich übertragen. Die Muskelreaktion fällt im Modell aus oder ist schwächer, obwohl der vorgelagerte elektrische Transport noch funktioniert.",
+        "criteria": [
+          "Ich trenne Axonleitung und Synapse.",
+          "Ich erkläre die Rezeptorabhängigkeit.",
+          "Ich leite die Folge für das Erfolgsorgan ab."
+        ]
+      }
+    },
+    "model": "synapse"
+  },
+  {
+    "id": "attrappenversuch",
+    "lb": 6,
+    "title": "Verhalten mit Attrappen untersuchen",
+    "period": "Einführungsklasse · Lernbereich 6",
+    "intro": "Du trennst äußere Reize und innere Faktoren in einem Modellversuch.",
+    "paragraphs": [
+      "Eine Verhaltensbeschreibung nennt zuerst Sichtbares: Ein Fisch nähert sich einer bewegten Attrappe und schnappt danach. Die Aussage „er ist hungrig“ ist eine mögliche Erklärung. Farbe, Form und Bewegung einer Attrappe sind äußere Reize; der Fütterungszustand ist ein innerer Faktor. Beides kann zusammen beeinflussen, ob eine Reaktion auftritt.",
+      "Im Attrappenversuch lässt sich ein Merkmal kontrolliert verändern. Vergleiche bewegte und unbewegte Attrappen gleicher Form und Farbe. Halte Beleuchtung und Entfernung gleich, wechsle die Reihenfolge und vergleiche mehrere Beobachtungen. Für eine Frage zum Fütterungszustand brauchst du einen getrennten Vergleich derselben Attrappe.",
+      "Beispiel aus Übungsdaten: Kurz vor der Fütterung reagierten 8 von 10 Beobachtungen auf die bewegte, 2 von 10 auf die unbewegte Attrappe. Nach der Fütterung waren es 3 bzw. 1 von 10. In diesen Daten spielen beide Faktoren eine Rolle. Mehrfachmessungen desselben Tiers sind dabei keine zehn unabhängigen Tiere."
+    ],
+    "takeaway": "Ein Attrappenversuch prüft einzelne Reizmerkmale. Innere Faktoren wie der Fütterungszustand können dieselbe Reaktion verändern.",
+    "keyTerms": ["Attrappe", "äußerer Reiz", "innerer Faktor", "Kontrollvergleich", "Beobachtung"],
+    "sourceIds": ["isb"],
+    "quiz": {
+      "question": "Welcher Vergleich prüft im Modell gezielt die Wirkung von Bewegung?",
+      "answer": "Gleiche Attrappe bewegt und unbewegt, jeweils im gleichen Fütterungszustand.",
+      "wrong": [
+        "Bewegte rote und unbewegte blaue Attrappe bei verschiedenen Fütterungszuständen.",
+        "Nur bewegte Attrappen vor und nach der Fütterung."
+      ],
+      "explanation": "Nur im ersten Vergleich änderst du Bewegung, ohne zugleich einen anderen Faktor zu ändern."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Beobachtung oder Erklärung?",
+      "instruction": "Ordne Elemente des Modellversuchs nach ihrer Rolle.",
+      "categories": ["Äußerer Reiz", "Innerer Faktor", "Beobachtete Reaktion", "Störfaktor"],
+      "entries": [
+        {
+          "text": "Die Attrappe bewegt sich im Wasser.",
+          "target": 0,
+          "feedback": "Bewegung ist eine messbare Eigenschaft des Reizes."
+        },
+        {
+          "text": "Der Fisch wurde gerade gefüttert.",
+          "target": 1,
+          "feedback": "Der Fütterungszustand kann die Reaktion beeinflussen."
+        },
+        {
+          "text": "Der Fisch schnappt nach der Attrappe.",
+          "target": 2,
+          "feedback": "Das ist als Verhalten direkt beobachtbar."
+        },
+        {
+          "text": "Nur die bewegte Attrappe wird aus kürzerer Distanz gezeigt.",
+          "target": 3,
+          "feedback": "Die Entfernung ändert sich gleichzeitig; damit ist der Bewegungsvergleich verzerrt."
+        }
+      ],
+      "conclusion": "Ändere nur das Reizmerkmal, das deine Fragestellung prüft."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Lies die Übungsdaten. Nenne einen Vergleich, der Bewegung prüft, und einen, der den Fütterungszustand prüft.",
+        "hints": [
+          "Welche zwei Werte ändern nur eine Bedingung?",
+          "Welche Aussage erlauben nur die erhobenen Werte?"
+        ],
+        "model": "Vor der Fütterung prüfe ich Bewegung mit 8 gegenüber 2 Reaktionen bei je zehn Beobachtungen. Für den Fütterungszustand vergleiche ich dieselbe bewegte Attrappe mit 8 vor und 3 nach der Fütterung. Das stützt beide Einflüsse in diesen Übungsdaten, aber keine Aussage für alle Fische.",
+        "criteria": [
+          "Ich verwende zwei passende Zahlenpaare.",
+          "Ich halte die jeweils andere Bedingung konstant.",
+          "Ich beschränke die Folgerung auf die Daten."
+        ]
+      },
+      "2": {
+        "prompt": "Entwirf mit Videos oder Modelldaten eine Untersuchung zur Frage, ob die Form einer Attrappe das Zuschnappen beeinflusst. Gib an, wie du Beobachtungen zählst und eine Verzerrung begrenzt.",
+        "hints": [
+          "Was muss an den Vorlagen gleich bleiben?",
+          "Welche Regel definiert vorab eine gezählte Reaktion?"
+        ],
+        "model": "Ich vergleiche gleich große Attrappenformen bei gleicher Farbe, Bewegung und Entfernung und verwende Beobachtungen bei ähnlichem Fütterungszustand. Ich zähle vorab definiert ein Zuschnappen innerhalb von fünf Sekunden. Mehrere Tiere und wechselnde Reihenfolgen helfen, individuelle Unterschiede und Gewöhnung zu begrenzen.",
+        "criteria": [
+          "Ich isoliere Form als Prüfgröße.",
+          "Ich lege eine zählbare Reaktion fest.",
+          "Ich begrenze eine plausible Verzerrung."
+        ]
+      }
+    },
+    "model": "attrappe"
+  },
+  {
+    "id": "genetisch-oder-erworben",
+    "lb": 6,
+    "title": "Genetische und erworbene Verhaltensanteile",
+    "period": "Einführungsklasse · Lernbereich 6",
+    "intro": "Du wertest Beobachtungen aus, ohne Anlage und Lernen künstlich zu trennen.",
+    "paragraphs": [
+      "Manche Verhaltensmuster zeigen Tiere schon ohne eine bestimmte Vorerfahrung. Das spricht für genetisch bedingte Anteile. Andere Muster verändern sich mit Übung, Vorbildern oder Konsequenzen. Beide Einflüsse können gemeinsam auftreten: Eine Bewegung kann früh vorhanden sein, aber durch Erfahrung genauer werden.",
+      "In historischen Kaspar-Hauser-Versuchen wurden Tiere ohne bestimmte Lerngelegenheiten aufgezogen. Wenn das untersuchte Verhalten trotzdem auftrat, war diese Lerngelegenheit dafür offenbar nicht notwendig. Das beweist keine vollständige Unabhängigkeit von jeder Erfahrung. Fehlende Sozialkontakte verändern außerdem weitere Faktoren; Isolation ist ethisch problematisch. Hier wertest du nur bereitgestellte Beobachtungen aus.",
+      "Beispiel aus Übungsdaten: Vögel ohne älteres Vorbild zeigen eine einfache Folge von Rufen. Tiere mit Vorbild zeigen dieselbe Grundfolge, ergänzen aber häufiger einen bestimmten Übergang. Das stützt einen genetisch mitbedingten Grundablauf und einen erfahrungsabhängigen Zusatz. Prüfe vorher Alter, Aufzuchtbedingungen, Stichprobengröße und die Möglichkeit eigener Übung."
+    ],
+    "takeaway": "Beurteile einzelne Teile eines Verhaltens. Ein Muster ohne Vorbild und eine Veränderung durch Erfahrung können beide im selben Datensatz vorkommen.",
+    "keyTerms": [
+      "genetisch bedingter Anteil",
+      "erworbener Anteil",
+      "Kaspar-Hauser-Versuch",
+      "Kontrollgruppe",
+      "Ethik"
+    ],
+    "sourceIds": ["isb"],
+    "quiz": {
+      "question": "Was folgt, wenn Tiere ein Muster ohne das untersuchte Vorbild zeigen?",
+      "answer": "Dieses Vorbild ist für das Muster unter den untersuchten Bedingungen nicht nötig.",
+      "wrong": [
+        "Jede Form von Erfahrung hat für das Muster sicher keine Bedeutung.",
+        "Das Muster kann keine genetisch bedingten Anteile haben."
+      ],
+      "explanation": "Die Untersuchung schließt nur die konkrete Lerngelegenheit aus, die sie geprüft hat."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Was stützen die Beobachtungen?",
+      "instruction": "Ordne jede Aussage nach ihrem Beitrag zur Beurteilung.",
+      "categories": [
+        "Hinweis auf Anlage",
+        "Hinweis auf Lernen",
+        "Grenze der Aussage",
+        "Ethische Abwägung"
+      ],
+      "entries": [
+        {
+          "text": "Eine Grundfolge erscheint auch ohne erwachsenes Vorbild.",
+          "target": 0,
+          "feedback": "Das stützt einen mitbedingten Grundablauf, beweist ihn aber nicht allein."
+        },
+        {
+          "text": "Ein Übergang wird nach Hören des Vorbilds häufiger übernommen.",
+          "target": 1,
+          "feedback": "Die Änderung passt zu einem erworbenen Anteil."
+        },
+        {
+          "text": "Die Gruppen waren unterschiedlich alt.",
+          "target": 2,
+          "feedback": "Alter könnte einen Teil des Unterschieds erklären."
+        },
+        {
+          "text": "Vorhandene Aufnahmen ersparen neue soziale Isolation.",
+          "target": 3,
+          "feedback": "Die Auswahl der Methode kann Belastung vermeiden."
+        }
+      ],
+      "conclusion": "Formuliere, was der Vergleich stützt, und nenne eine alternative Erklärung."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Beurteile anhand des Vogelbeispiels die Grundfolge und den zusätzlichen Übergang getrennt. Nenne eine Grenze der Daten.",
+        "hints": [
+          "Welches Muster teilen die Gruppen?",
+          "Welche Unterschiede außer dem Vorbild wären möglich?"
+        ],
+        "model": "Die Grundfolge in beiden Gruppen spricht für einen genetisch mitbedingten Anteil; das konkrete Vorbild ist dafür nicht notwendig. Der häufigere Übergang mit Vorbild spricht für Lernen. Unterschiedliches Alter oder eigene Übung könnten die Befunde mit beeinflussen; vollständige Angeborenheit ist nicht belegt.",
+        "criteria": [
+          "Ich beurteile beide Teile getrennt.",
+          "Ich beziehe mich auf den Vergleich.",
+          "Ich nenne eine alternative Erklärung."
+        ]
+      },
+      "2": {
+        "prompt": "Zwei Gruppen junger Tiere fangen eine Beuteattrappe anfangs gleich selten. Nach Beobachtung älterer Tiere verbessert sich nur eine Gruppe. Welche Erklärung liegt nahe, und welche zusätzliche Vergleichsgruppe wäre hilfreich?",
+        "hints": [
+          "Was änderte sich außer der Beobachtung möglicherweise?",
+          "Was könnte eine Gruppe mit gleicher Übungszeit ohne Vorbild zeigen?"
+        ],
+        "model": "Die Verbesserung passt zu Lernen durch Beobachtung, ist aber ohne gleiche Übungsbedingungen nicht eindeutig. Ich vergleiche eine Gruppe mit gleicher eigener Übungszeit und ohne Vorbild und verwende vorhandene Aufnahmen, wenn möglich. Verbessert sich vor allem die Vorbildgruppe, stützt das einen zusätzlichen Beobachtungseffekt.",
+        "criteria": [
+          "Ich nenne Lernen als Hypothese.",
+          "Ich kontrolliere eigene Übung.",
+          "Ich formuliere eine bedingte Folgerung."
+        ]
+      }
+    }
+  }
+]

@@ -1,0 +1,431 @@
+[
+  {
+    "id": "proteine-struktur-und-funktion",
+    "lb": 5,
+    "title": "Proteine: Struktur und Funktion",
+    "period": "Einführungsklasse · Lernbereich 5",
+    "intro": "Du erklärst, warum unterschiedliche Aminosäureketten ganz verschiedene Aufgaben übernehmen.",
+    "paragraphs": [
+      "Proteine bestehen aus Aminosäuren in einer bestimmten Reihenfolge. Länge, Reihenfolge und Eigenschaften der Seitenketten beeinflussen, wie sich eine Kette im Wasser faltet und wie sie sich mit anderen Ketten zusammenlagert. Die räumliche Form und die Eigenschaften der Oberfläche bestimmen, was das Protein binden kann oder wie stabil es ist.",
+      "Enzyme besitzen ein aktives Zentrum, Transportproteine eine passende Bindungsstelle, und manche Strukturproteine bilden feste Fasern. Diese Aufgaben verlangen unterschiedliche Strukturen. Hämoglobin enthält außerdem Hämgruppen, an denen Sauerstoff reversibel bindet. Kollagenketten bilden eine stabilisierende Dreifachhelix und können zugfeste Fasern aufbauen.",
+      "Beispiel: Beim Erhitzen wird Eiklar weiß und fest. Proteine verlieren dabei einen Teil ihrer ursprünglichen Faltung und lagern sich zusammen. Die Aminosäureketten werden durch bloße Denaturierung nicht in einzelne Aminosäuren gespalten. Eine veränderte Form kann also die Funktion ändern, obwohl die Reihenfolge gleich bleibt."
+    ],
+    "takeaway": "Die Aminosäuresequenz beeinflusst die Faltung; die räumliche Struktur ermöglicht die spezifische Funktion.",
+    "keyTerms": [
+      "Aminosäuresequenz",
+      "Faltung",
+      "Bindungsstelle",
+      "Kollagen",
+      "Hämoglobin",
+      "Denaturierung"
+    ],
+    "sourceIds": ["isb"],
+    "quiz": {
+      "question": "Warum kann ein denaturiertes Enzym trotz gleicher Aminosäurereihenfolge weniger aktiv sein?",
+      "answer": "Das aktive Zentrum hat seine passende räumliche Form verloren.",
+      "wrong": [
+        "Durch Denaturierung entstehen automatisch neue Aminosäuren.",
+        "Die Proteinfunktion ist von der Form unabhängig."
+      ],
+      "explanation": "Bei der Denaturierung ändern sich Faltung und Bindungseigenschaften, oft ohne Spaltung der Kette."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Welche Struktur erfüllt diese Aufgabe?",
+      "instruction": "Ordne jede Beschreibung der passenden Rolle zu.",
+      "categories": ["Strukturprotein", "Transportprotein", "Enzym", "Denaturiertes Protein"],
+      "entries": [
+        {
+          "text": "Ketten bilden zugfeste Fasern im Bindegewebe.",
+          "target": 0,
+          "feedback": "Kollagen trägt zur mechanischen Stabilität bei."
+        },
+        {
+          "text": "Eine Bindungsstelle hält Sauerstoff vorübergehend fest.",
+          "target": 1,
+          "feedback": "Hämoglobin bindet und gibt Sauerstoff wieder ab."
+        },
+        {
+          "text": "Ein aktives Zentrum erleichtert eine bestimmte chemische Umsetzung.",
+          "target": 2,
+          "feedback": "Die Bindung und Reaktionsbedingungen machen die Katalyse möglich."
+        },
+        {
+          "text": "Die Kette bleibt erhalten, ihre gewohnte Faltung geht verloren.",
+          "target": 3,
+          "feedback": "Das unterscheidet Denaturierung von vollständiger Spaltung der Kette."
+        }
+      ],
+      "conclusion": "Verknüpfe bei jeder Zuordnung eine konkrete Struktur mit einer konkreten Aufgabe."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Vergleiche Kollagen und ein Verdauungsenzym. Erkläre, warum sich ihre unterschiedlichen Aufgaben nicht aus der Stoffklasse allein ergeben.",
+        "hints": [
+          "Was macht ein faserförmiger Aufbau möglich?",
+          "Was muss an einem Enzym zum Substrat passen?"
+        ],
+        "model": "Beides sind Proteine, aber Kollagen bildet zugfeste Fasern und stützt Gewebe. Beim Enzym schafft die Faltung ein aktives Zentrum, das passende Teilchen bindet und die Reaktion erleichtert. Unterschiedliche Sequenzen und Faltungen ermöglichen so verschiedene Funktionen.",
+        "criteria": [
+          "Ich verknüpfe Kollagenstruktur und Stabilität.",
+          "Ich erkläre die Rolle des aktiven Zentrums.",
+          "Ich verknüpfe Strukturvielfalt und Sequenz."
+        ]
+      },
+      "2": {
+        "prompt": "Ein ausgetauschter Aminosäurebaustein liegt einmal an einer Bindungsstelle und einmal weit entfernt. Warum kann man aus einem einzelnen Austausch allein keine sichere Aussage über die Wirkung ableiten?",
+        "hints": [
+          "Welche Eigenschaften können sich an der Bindungsstelle ändern?",
+          "Kann ein entfernter Austausch die Faltung beeinflussen?"
+        ],
+        "model": "Ein Austausch an der Bindungsstelle kann Form oder Ladung ändern und die Bindung stören. Auch ein entfernter Austausch kann die Faltung beeinflussen; manche Änderungen haben kaum Wirkung. Entscheidend sind Position und Eigenschaften der Aminosäuren. Bindung oder Aktivität lassen sich experimentell vergleichen.",
+        "criteria": [
+          "Ich beschreibe eine direkte Wirkung.",
+          "Ich beschreibe eine mögliche indirekte Wirkung.",
+          "Ich vermeide einen Automatismus und nenne einen Test."
+        ]
+      }
+    }
+  },
+  {
+    "id": "dna-und-chromosomen",
+    "lb": 5,
+    "title": "DNA und Organisation der Erbinformation",
+    "period": "Einführungsklasse · Lernbereich 5",
+    "intro": "Du liest ein DNA-Modell und vergleichst die Verpackung der Erbinformation in Bakterien und menschlichen Zellen.",
+    "paragraphs": [
+      "Ein DNA-Nukleotid enthält Zucker, Phosphat und eine Base. Zwei gegenläufige Stränge bilden die Doppelhelix. Das Zucker-Phosphat-Gerüst liegt außen, innen paaren sich A mit T und G mit C. Die Reihenfolge der Basen speichert Information. Weil jede Base einen passenden Partner hat, lässt sich die Folge eines Gegenstrangs ableiten.",
+      "Die DNA eukaryotischer Zellen liegt überwiegend in linearen Chromosomen im Zellkern. In typischen Körperzellen liegen viele Chromosomen als homologe Paare vor: Die Partner tragen die gleichen Genorte, können aber unterschiedliche Varianten tragen. Beim menschlichen Karyogramm sind üblicherweise 22 Paare Autosomen und ein Paar Gonosomen (Geschlechtschromosomen) geordnet. X und Y sind nur teilweise homolog.",
+      "Beispiel: Unter die Folge 5′–A G T C–3′ passt 3′–T C A G–5′. Ein typisches Bakterium hat statt eines Zellkerns einen Bereich mit meist ringförmigem Chromosom und eventuell Plasmide. Ein Karyogramm kann Chromosomenzahl und grobe Struktur zeigen; einzelne Basen sieht man darin nicht."
+    ],
+    "takeaway": "Basenfolge speichert Information, Basenpaarung ermöglicht ihre zuverlässige Kopie. Chromosomen organisieren lange DNA.",
+    "keyTerms": [
+      "Nukleotid",
+      "Doppelhelix",
+      "komplementär",
+      "homolog",
+      "Autosom",
+      "Gonosom",
+      "Karyogramm",
+      "Plasmid"
+    ],
+    "sourceIds": ["isb"],
+    "quiz": {
+      "question": "Welcher Strang passt direkt unter 5′–A G T C–3′?",
+      "answer": "3′–T C A G–5′",
+      "wrong": ["3′–A G T C–5′", "3′–T G A C–5′"],
+      "explanation": "A paart mit T, G mit C. Die beiden Stränge verlaufen in entgegengesetzter Richtung."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Welche Darstellung hilft?",
+      "instruction": "Ordne die Befunde den passenden Begriffen zu.",
+      "categories": ["Basensequenz", "Karyogramm", "Bakterienchromosom", "Plasmid"],
+      "entries": [
+        {
+          "text": "Du suchst die Veränderung eines einzelnen Basenpaars.",
+          "target": 0,
+          "feedback": "Dafür brauchst du Information auf Basenebene."
+        },
+        {
+          "text": "Du vergleichst Anzahl und Form menschlicher Chromosomen.",
+          "target": 1,
+          "feedback": "Ein Karyogramm ordnet die sichtbaren Chromosomen."
+        },
+        {
+          "text": "Der größte Erbinformationsträger liegt ohne Kernhülle als großer DNA-Ring vor.",
+          "target": 2,
+          "feedback": "Das passt zum Hauptchromosom vieler Bakterien."
+        },
+        {
+          "text": "Ein kleiner zusätzlicher DNA-Ring liegt getrennt vom Hauptchromosom vor.",
+          "target": 3,
+          "feedback": "Ein Plasmid kann zusätzliche Gene tragen."
+        }
+      ],
+      "conclusion": "Eine Darstellung zeigt nur die Merkmale ihrer Ebene. Das Karyogramm ersetzt keine Sequenzanalyse."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Ergänze 5′–C A G T–3′ durch den direkt darunterliegenden DNA-Strang und erkläre, wie die Struktur Information speichert.",
+        "hints": [
+          "Welche Base passt zu C, welche zu A?",
+          "Was kann sich ändern, obwohl das Gerüst ähnlich bleibt?"
+        ],
+        "model": "Der Gegenstrang lautet 3′–G T C A–5′. Das Zucker-Phosphat-Gerüst folgt demselben Bauprinzip, während die Reihenfolge der Basen variieren kann. Diese Folge trägt die Information, und die Paarungsregel macht den passenden Gegenstrang vorhersagbar.",
+        "criteria": [
+          "Ich gebe alle vier passenden Basen an.",
+          "Ich kennzeichne die Gegenrichtung.",
+          "Ich benenne die Reihenfolge als Informationsträger."
+        ]
+      },
+      "2": {
+        "prompt": "Ein Karyogramm zeigt 46 Chromosomen. Jemand sagt, damit sei eine Veränderung einer einzelnen DNA-Base ausgeschlossen. Prüfe die Aussage und vergleiche mit der Organisation bakterieller DNA.",
+        "hints": [
+          "Welche Ebene ist im Karyogramm erkennbar?",
+          "Was unterscheidet Kernchromosomen und typische bakterielle DNA?"
+        ],
+        "model": "Ein Karyogramm zeigt Anzahl und gröbere Merkmale, aber keine Basenfolge. Eine Änderung einzelner Basen bleibt daher möglich und braucht eine Untersuchung auf Sequenzebene. Menschliche Kernchromosomen sind linear; bei vielen Bakterien liegt ein großes Ringchromosom ohne Kernhülle vor, eventuell neben kleineren Plasmiden.",
+        "criteria": [
+          "Ich erkläre die Auflösungsgrenze.",
+          "Ich nenne eine geeignete Untersuchungsebene.",
+          "Ich vergleiche die DNA-Organisation."
+        ]
+      }
+    },
+    "model": "dna"
+  },
+  {
+    "id": "vom-gen-zum-merkmal",
+    "lb": 5,
+    "title": "Vom Gen über das Protein zum Merkmal",
+    "period": "Einführungsklasse · Lernbereich 5",
+    "intro": "Du erklärst, wie eine Basenfolge die Bildung eines Proteins beeinflussen kann.",
+    "paragraphs": [
+      "Bei der Transkription wird Information eines DNA-Abschnitts in eine RNA-Abschrift übertragen. Für proteincodierende Gene dient die reife Boten-RNA (mRNA) als Vorlage für Ribosomen. Bei der Translation liest das Ribosom Basentripletts. Passende Transport-RNAs bringen Aminosäuren, die zu einer Kette verbunden werden. Die Faltung macht aus der Kette ein funktionsfähiges Protein.",
+      "Ein Protein kann zum Merkmal beitragen, indem es beispielsweise einen Farbstoff herstellt oder ein Signal empfängt. Die Wirkung hängt auch davon ab, in welchen Zellen und wann ein Gen genutzt wird. Häufig tragen mehrere Gene und Umwelteinflüsse zu einem Merkmal bei.",
+      "Beispiel: In einer Modellpflanze stellt ein Enzym einen violetten Farbstoff her. Wenn sich eine Basenänderung in einer anderen Aminosäure und einem nicht mehr passenden aktiven Zentrum auswirkt, kann weniger Farbstoff entstehen. Andere Basenänderungen können dieselbe Aminosäure codieren oder die Funktion kaum verändern. Die Basenfolge allein bestimmt nicht jede beobachtete Eigenschaft."
+    ],
+    "takeaway": "DNA → mRNA → Aminosäurekette → Proteinwirkung. Erkläre ein Merkmal über die Wirkung, nicht nur über die Anwesenheit eines Gens.",
+    "keyTerms": ["Transkription", "mRNA", "Translation", "Ribosom", "Codon", "Merkmal"],
+    "sourceIds": ["isb"],
+    "quiz": {
+      "question": "Was dient dem Ribosom unmittelbar als Vorlage für die Aminosäurereihenfolge?",
+      "answer": "Die Basenfolge der Boten-RNA.",
+      "wrong": [
+        "Die Reihenfolge der fertigen Proteine im Zellkern.",
+        "Die Abfolge der Zucker im DNA-Gerüst."
+      ],
+      "explanation": "Das Ribosom liest Basentripletts auf der mRNA; die DNA wird zuvor in RNA umgeschrieben."
+    },
+    "workshop": {
+      "kind": "timeline",
+      "title": "Verfolge die Information",
+      "instruction": "Ordne die Schritte von der DNA bis zum Farbstoff im Beispiel.",
+      "categories": [],
+      "entries": [
+        {
+          "text": "Die Basenfolge eines Gens wird in mRNA umgeschrieben.",
+          "target": 0,
+          "feedback": "Das ist die Transkription."
+        },
+        {
+          "text": "Das Ribosom verbindet Aminosäuren nach der mRNA-Vorlage.",
+          "target": 1,
+          "feedback": "Das ist die Translation."
+        },
+        {
+          "text": "Die Aminosäurekette faltet sich zum Enzym.",
+          "target": 2,
+          "feedback": "Erst die passende Struktur ermöglicht die Funktion."
+        },
+        {
+          "text": "Das Enzym trägt zur Bildung eines Farbstoffs bei.",
+          "target": 3,
+          "feedback": "Die Proteinwirkung kann das sichtbare Merkmal beeinflussen."
+        }
+      ],
+      "conclusion": "Ein Gen ist eine Informationsquelle. Sichtbar wird eine Wirkung erst über Zellprozesse."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Beschreibe am Beispiel des violetten Farbstoffs, wie Erbinformation zur Ausprägung eines Merkmals beiträgt.",
+        "hints": ["Welche Zwischenvorlage entsteht?", "Was bewirkt das Protein im Beispiel?"],
+        "model": "Das Farbstoffenzym wird nach der mRNA gebildet, die von der DNA abgeschrieben wurde. Das Ribosom setzt Aminosäuren in der passenden Reihenfolge zusammen. Nach der Faltung kann das Enzym an der Farbstoffbildung mitwirken. Der Farbstoff führt zur violetten Farbe.",
+        "criteria": [
+          "Ich nenne Transkription oder RNA-Abschrift.",
+          "Ich erkläre die Rolle des Ribosoms.",
+          "Ich verknüpfe die Funktion mit der Farbe."
+        ]
+      },
+      "2": {
+        "prompt": "Zwei Pflanzen haben dieselbe Basenfolge eines Farbstoffgens. Eine bleibt im Dunkeln deutlich heller. Warum widerlegt das die Wirkung des Gens nicht? Schlage einen Vergleich vor.",
+        "hints": [
+          "Kann dieselbe Information unterschiedlich stark genutzt werden?",
+          "Was könntest du zusätzlich zur Farbe vergleichen?"
+        ],
+        "model": "Licht kann beeinflussen, wie viel mRNA oder Enzym gebildet wird; auch andere Schritte der Farbstoffbildung können sich ändern. Ich vergleiche Pflanzen mit gleicher Ausgangslage unter Licht und Dunkelheit und messe neben der Farbe die mRNA-Menge oder Enzymaktivität. Gleiche Sequenz garantiert keine gleich starke Ausprägung.",
+        "criteria": [
+          "Ich nenne eine mögliche Wirkung der Umwelt.",
+          "Ich schlage einen kontrollierten Vergleich vor.",
+          "Ich nenne eine zweite messbare Größe."
+        ]
+      }
+    }
+  },
+  {
+    "id": "replikation-und-mitose",
+    "lb": 5,
+    "title": "DNA-Replikation und Mitose",
+    "period": "Einführungsklasse · Lernbereich 5",
+    "intro": "Du hältst DNA-Menge, Chromosomenzahl und Zellzahl auseinander.",
+    "paragraphs": [
+      "Der Zellzyklus umfasst die Interphase und die Teilungsphase. In der Interphase wächst die Zelle; in der S-Phase wird ihre DNA kopiert. Die Stränge trennen sich, und jeder alte Strang dient als Vorlage für einen neuen Gegenstrang. Jede neue Doppelhelix enthält damit einen alten und einen neuen Strang (semikonservative Replikation).",
+      "Nach der Replikation bestehen Chromosomen aus zwei Schwesterchromatiden, die am Centromer zusammenhängen. Die Chromosomenzahl hat sich zu diesem Zeitpunkt noch nicht verdoppelt. Bei der Mitose ordnen sich die Chromosomen an, Schwesterchromatiden trennen sich und werden auf zwei neue Kerne verteilt. Die Teilung des Zellplasmas (Cytokinese) macht daraus zwei Zellen.",
+      "Beispiel: Bei einem Modell mit vier Chromosomen zählt man vor der S-Phase vier Chromatiden, danach acht Chromatiden in vier Zwei-Chromatid-Chromosomen. Nach Mitose und Cytokinese hat jede Tochterzelle wieder vier Ein-Chromatid-Chromosomen. So können Wachstum, Regeneration und ungeschlechtliche Vermehrung stattfinden."
+    ],
+    "takeaway": "Die Replikation verdoppelt DNA, die Mitose verteilt die Kopien. Die Chromosomenzahl pro Tochterkern bleibt dabei erhalten.",
+    "keyTerms": [
+      "Interphase",
+      "S-Phase",
+      "semikonservativ",
+      "Schwesterchromatid",
+      "Centromer",
+      "Mitose",
+      "Cytokinese"
+    ],
+    "sourceIds": ["isb"],
+    "quiz": {
+      "question": "Was liegt direkt nach der S-Phase in der Modellzelle vor, wenn sie vorher vier Chromosomen hatte?",
+      "answer": "Vier Chromosomen mit zusammen acht Chromatiden.",
+      "wrong": [
+        "Acht Chromosomen mit je einem Chromatid in zwei Zellen.",
+        "Vier Chromosomen mit unveränderter DNA-Menge."
+      ],
+      "explanation": "Die DNA wurde kopiert, die Schwesterchromatiden bleiben zunächst verbunden."
+    },
+    "workshop": {
+      "kind": "timeline",
+      "title": "Der Zellzyklus in vier Schritten",
+      "instruction": "Ordne vom Wachstum bis zu zwei Tochterzellen.",
+      "categories": [],
+      "entries": [
+        {
+          "text": "Die Zelle wächst in der Interphase.",
+          "target": 0,
+          "feedback": "Dabei bereitet sie weitere Schritte vor."
+        },
+        {
+          "text": "DNA wird kopiert; die Chromosomen bestehen danach aus zwei Chromatiden.",
+          "target": 1,
+          "feedback": "Die Kopie entsteht vor der Mitose."
+        },
+        {
+          "text": "Die Schwesterchromatiden werden auf zwei neue Kerne verteilt.",
+          "target": 2,
+          "feedback": "Die Mitose erhält den Chromosomensatz je Tochterkern."
+        },
+        {
+          "text": "Das Zellplasma wird getrennt.",
+          "target": 3,
+          "feedback": "Die Cytokinese schafft zwei Tochterzellen."
+        }
+      ],
+      "conclusion": "DNA-Kopie, Kernteilung und Teilung des Zellplasmas sind verschiedene Vorgänge."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Eine Modellzelle hat sechs Chromosomen. Nenne für den Start und das Ende der S-Phase und für eine fertige Tochterzelle jeweils Chromosomen- und Chromatidenzahl.",
+        "hints": [
+          "Was verdoppelt die S-Phase?",
+          "Was liegt nach der Teilung pro Tochterzelle vor?"
+        ],
+        "model": "Am Start liegen sechs Chromosomen mit sechs Chromatiden vor. Danach sind es weiterhin sechs Chromosomen, jetzt mit zwölf Chromatiden. Eine Tochterzelle besitzt nach Mitose und Cytokinese sechs Chromosomen mit sechs Chromatiden.",
+        "criteria": [
+          "Ich unterscheide Chromosomen und Chromatiden.",
+          "Ich verdopple in der S-Phase nur die Chromatidenzahl.",
+          "Ich rechne pro Tochterzelle."
+        ]
+      },
+      "2": {
+        "prompt": "In einem Modell erhält nach der DNA-Kopie ein Tochterkern nur Kopien der einen Hälfte der Chromosomen und der andere Kern die restlichen Kopien. Warum reicht die richtige DNA-Gesamtmenge nicht für Regeneration?",
+        "hints": [
+          "Woran scheitert die Information pro Tochterkern?",
+          "Wie verteilt eine normale Mitose die Schwesterchromatiden?"
+        ],
+        "model": "Beide Kerne brauchen einen vollständigen Chromosomensatz, nicht bloß dieselbe Masse an DNA. Im Modell fehlen jedem Kern andere Chromosomen. Bei regulärer Mitose werden die beiden Schwesterchromatiden jedes Chromosoms auf verschiedene Kerne verteilt, sodass jeder Tochterkern von jedem Chromosom eine Kopie erhält.",
+        "criteria": [
+          "Ich unterscheide Informationsumfang und DNA-Menge.",
+          "Ich erkläre die fehlenden Chromosomen.",
+          "Ich beschreibe die richtige Verteilung."
+        ]
+      }
+    }
+  },
+  {
+    "id": "meiose-und-vielfalt",
+    "lb": 5,
+    "title": "Meiose, Befruchtung und genetische Vielfalt",
+    "period": "Einführungsklasse · Lernbereich 5",
+    "intro": "Du verfolgst homologe Chromosomen und Schwesterchromatiden durch zwei Teilungen.",
+    "paragraphs": [
+      "Vor der Meiose wird die DNA einmal kopiert. In der ersten Reifeteilung werden homologe Chromosomen getrennt. Jede Zelle erhält nur einen Chromosomensatz, ihre Chromosomen haben aber noch zwei Chromatiden. Bei der zweiten Reifeteilung trennen sich Schwesterchromatiden. Die entstehenden Kerne haben einen einfachen, haploiden Satz. Bei der Eizellbildung sind nicht alle Teilungsprodukte funktionelle Keimzellen.",
+      "Die homologen Paare ordnen sich unabhängig voneinander an. Dadurch kann eine Keimzelle verschiedene Kombinationen mütterlicher und väterlicher Chromosomen erhalten. Zusätzlich können homologe Chromosomen Abschnitte austauschen. Bei der Befruchtung verschmelzen haploide Keimzellen und stellen den diploiden Satz wieder her.",
+      "Beispiel: In einem Modell mit zwei homologen Paaren (2n = 4) gibt es ohne Abschnittsaustausch vier Kombinationen ganzer Chromosomen, wenn man viele Meiosen betrachtet. Eine einzelne Meiose erzeugt nicht zwingend alle vier. Zwei Keimzellen mit je zwei Chromosomen ergeben nach der Befruchtung eine Zelle mit vier Chromosomen."
+    ],
+    "takeaway": "Meiose halbiert den Chromosomensatz und kombiniert Erbinformation neu. Befruchtung vereinigt zwei haploide Sätze.",
+    "keyTerms": [
+      "homologes Paar",
+      "Schwesterchromatiden",
+      "haploid",
+      "diploid",
+      "Reifeteilung",
+      "Befruchtung"
+    ],
+    "sourceIds": ["isb"],
+    "quiz": {
+      "question": "Was trennt sich in der ersten Reifeteilung?",
+      "answer": "Die homologen Chromosomen eines Paars.",
+      "wrong": [
+        "Die Schwesterchromatiden jedes Chromosoms.",
+        "Die einzelnen Basen eines DNA-Strangs."
+      ],
+      "explanation": "Die erste Teilung trennt die Paare; die Schwesterchromatiden folgen in der zweiten Teilung."
+    },
+    "workshop": {
+      "kind": "timeline",
+      "title": "Vom doppelten Satz zur nächsten Generation",
+      "instruction": "Ordne die Schritte der geschlechtlichen Fortpflanzung.",
+      "categories": [],
+      "entries": [
+        {
+          "text": "DNA wird vor der Meiose einmal verdoppelt.",
+          "target": 0,
+          "feedback": "Aus Ein-Chromatid-Chromosomen werden Zwei-Chromatid-Chromosomen."
+        },
+        {
+          "text": "Homologe Chromosomen werden auf verschiedene Zellen verteilt.",
+          "target": 1,
+          "feedback": "Die erste Reifeteilung halbiert den Satz."
+        },
+        {
+          "text": "Schwesterchromatiden trennen sich.",
+          "target": 2,
+          "feedback": "Es entstehen haploide Kerne mit Ein-Chromatid-Chromosomen."
+        },
+        {
+          "text": "Zwei haploide Keimzellen verschmelzen.",
+          "target": 3,
+          "feedback": "Die Befruchtung stellt einen diploiden Satz her."
+        }
+      ],
+      "conclusion": "Zwischen den beiden Reifeteilungen wird die DNA nicht erneut verdoppelt."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Verfolge 2n = 4 im Modell: Wie viele Chromosomen und Chromatiden enthält ein Kern nach der ersten bzw. der zweiten Reifeteilung?",
+        "hints": ["Was bleibt nach Teilung I noch zusammen?", "Zählst du pro Kern oder insgesamt?"],
+        "model": "Nach Teilung I enthält jeder Kern zwei Zwei-Chromatid-Chromosomen, also vier Chromatiden. Nach Teilung II enthält jeder Kern zwei Ein-Chromatid-Chromosomen, also zwei Chromatiden. Der Satz ist nach beiden Schritten haploid.",
+        "criteria": [
+          "Ich zähle pro Kern.",
+          "Ich gebe für Teilung I zwei Chromosomen und vier Chromatiden an.",
+          "Ich gebe für Teilung II zwei Chromosomen und zwei Chromatiden an."
+        ]
+      },
+      "2": {
+        "prompt": "Eine Modellart hat drei homologe Chromosomenpaare. Wie viele mögliche Kombinationen ganzer Chromosomen gibt es bei vielen Meiosen ohne Abschnittsaustausch? Was trägt die Befruchtung zusätzlich bei?",
+        "hints": [
+          "Welche zwei Möglichkeiten hat jedes Paar?",
+          "Was wird beim Zusammentreffen zweier Keimzellen neu kombiniert?"
+        ],
+        "model": "Bei drei unabhängig verteilten Paaren sind 2 · 2 · 2 = 8 Kombinationen möglich. Diese Zahl beschreibt viele mögliche Keimzellen, nicht acht Produkte aus einer Teilung. Bei der Befruchtung treffen zwei unabhängig entstandene Sätze zusammen; das erzeugt weitere Kombinationen im diploiden Nachwuchs.",
+        "criteria": [
+          "Ich begründe die acht Kombinationen.",
+          "Ich trenne Möglichkeiten und Produkte einer einzelnen Meiose.",
+          "Ich erkläre den zusätzlichen Beitrag der Befruchtung."
+        ]
+      }
+    },
+    "model": "teilung"
+  }
+]

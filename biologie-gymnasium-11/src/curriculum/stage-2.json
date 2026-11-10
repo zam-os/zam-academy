@@ -1,0 +1,254 @@
+[
+  {
+    "id": "mikroskop-und-gewebe",
+    "lb": 2,
+    "title": "Gewebe mikroskopieren",
+    "period": "Einführungsklasse · Lernbereich 2",
+    "intro": "Du untersuchst ein Präparat Schritt für Schritt und trennst Bild, Zeichnung und Deutung.",
+    "paragraphs": [
+      "Ein Gewebe besteht aus Zellen, die zusammen eine Aufgabe erfüllen. Ein dünnes Präparat lässt Licht durch. Im Unterricht kann Zwiebelhaut Pflanzenzellen zeigen; ein vorbereitetes tierisches Epithelpräparat zeigt flache, eher unregelmäßige Zellen. Benutze die vorgesehenen Präparate, fasse Objektträger am Rand und befolge die Laborregeln. Ein Binokular eignet sich eher für größere Oberflächen als für dünne Zellpräparate.",
+      "Beginne mit der kleinsten Objektivvergrößerung, lege und zentriere das Präparat, stelle Beleuchtung und Schärfe ein. Mit einem stärkeren Objektiv wird das sichtbare Feld kleiner; stelle dann mit dem Feintrieb scharf. Ein Okular mit 10-facher Vergrößerung und ein 40-fach vergrößerndes Objektiv ergeben zusammen 400-fache Vergrößerung. Mehr Vergrößerung verbessert die Auflösung nicht automatisch.",
+      "Beispiel: Bei Zwiebelhaut erkennst du bei kleiner Vergrößerung die flächige Anordnung. Bei höherer Vergrößerung siehst du einzelne Zellgrenzen deutlicher. Zeichne nur Erkennbares und beschrifte Präparat, Vergrößerung und sichtbare Strukturen. Ein Maßstabsbalken braucht eine Kalibrierung."
+    ],
+    "takeaway": "Erst orientieren, dann vergrößern. Eine biologische Zeichnung dokumentiert Beobachtetes.",
+    "keyTerms": ["Präparat", "Okular", "Objektiv", "Gesamtvergrößerung", "Gewebe"],
+    "sourceIds": ["isb"],
+    "quiz": {
+      "question": "Wie gehst du vor, wenn du ein neues Präparat einlegst?",
+      "answer": "Mit dem kleinsten Objektiv beginnen und den Ausschnitt zentrieren.",
+      "wrong": [
+        "Mit dem größten Objektiv beginnen und grob nachstellen.",
+        "Die Vergrößerung aus Okular und Objektiv addieren."
+      ],
+      "explanation": "Bei kleiner Vergrößerung ist das Bildfeld größer. Ein zentrierter Ausschnitt bleibt beim Wechsel im Blick."
+    },
+    "workshop": {
+      "kind": "timeline",
+      "title": "Vom Präparat zur Skizze",
+      "instruction": "Bringe die Arbeitsschritte in die Reihenfolge, wenn du einen kleinen Ausschnitt zeichnen willst.",
+      "categories": [],
+      "entries": [
+        {
+          "text": "Dünnes Präparat auflegen und kleines Objektiv wählen.",
+          "target": 0,
+          "feedback": "So kannst du das Gewebe zuerst überblicken."
+        },
+        {
+          "text": "Beleuchten, scharf stellen und den gewünschten Bereich zentrieren.",
+          "target": 1,
+          "feedback": "Zentriere vor dem Objektivwechsel."
+        },
+        {
+          "text": "Stärkeres Objektiv einrasten und den Feintrieb benutzen.",
+          "target": 2,
+          "feedback": "Bei hoher Vergrößerung ist der Arbeitsabstand kleiner."
+        },
+        {
+          "text": "Sichtbare Grenzen zeichnen und Vergrößerung notieren.",
+          "target": 3,
+          "feedback": "Der Vermerk macht die Beobachtung nachvollziehbar."
+        }
+      ],
+      "conclusion": "Eine nicht aufgelöste Struktur solltest du nicht aus dem Gedächtnis einzeichnen."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Ein Okular vergrößert 10-fach, das Objektiv 4-fach oder 40-fach. Berechne beide Gesamtvergrößerungen und begründe die Reihenfolge.",
+        "hints": [
+          "Werden die Faktoren addiert oder multipliziert?",
+          "Bei welcher Einstellung siehst du mehr Nachbarzellen?"
+        ],
+        "model": "Das Okular ergibt zusammen mit dem kleinen Objektiv 10 · 4 = 40-fach und mit dem großen 10 · 40 = 400-fach. Ich beginne bei 40-fach, damit ich das Gewebe finde und den Ausschnitt zentriere. Erst dann wechsle ich zum stärkeren Objektiv.",
+        "criteria": [
+          "Ich multipliziere beide Faktoren korrekt.",
+          "Ich erkläre den Vorteil des großen Bildfelds.",
+          "Ich nenne das Zentrieren vor dem Wechsel."
+        ]
+      },
+      "2": {
+        "prompt": "In einer Zeichnung von ungefärbter Zwiebelhaut sind Chloroplasten und Zellkerne eingezeichnet, im Präparat waren nur Zellgrenzen klar. Überarbeite die Dokumentation.",
+        "hints": [
+          "Welche Aussage beruht auf Beobachtung?",
+          "Wie könntest du einen Zellkern sichtbar machen?"
+        ],
+        "model": "Ich zeichne die sichtbaren Zellgrenzen, gebe Präparat und Vergrößerung an und vermerke, dass kein Kern sicher sichtbar war. Eine unterirdische Speicherzwiebel ist kein grünes Blatt. Eine geeignete Färbung nach der Laboranleitung kann Kerne deutlicher machen.",
+        "criteria": [
+          "Ich halte Beobachtung und Erwartung getrennt.",
+          "Ich kennzeichne die Zeichnung nachvollziehbar.",
+          "Ich schlage eine überprüfbare Verbesserung vor."
+        ]
+      }
+    },
+    "model": "mikroskop"
+  },
+  {
+    "id": "tier-und-pflanzenzelle",
+    "lb": 2,
+    "title": "Tierische und pflanzliche Zellen erkennen",
+    "period": "Einführungsklasse · Lernbereich 2",
+    "intro": "Du ordnest Zellstrukturen ihrer Aufgabe zu und nutzt sichtbare Merkmale zur Identifikation.",
+    "paragraphs": [
+      "Pflanzen- und Tierzellen sind eukaryotisch. Beide besitzen Zellmembran und Zellplasma; typische Zellen beider Gruppen enthalten einen Zellkern mit DNA und Mitochondrien für die Zellatmung. Die Membran reguliert den Stoffaustausch. Im Zellplasma laufen zahlreiche Reaktionen ab.",
+      "Pflanzenzellen haben zusätzlich eine feste Zellwand. Eine große Zentralvakuole speichert unter anderem Wasser; der Innendruck gegen die Wand stützt das Gewebe. In grünen Geweben tragen Chloroplasten die Photosynthese. Tierzellen besitzen weder diese Wand noch Chloroplasten oder eine große Zentralvakuole.",
+      "Beispiel: Eine Blattzelle mit fester Begrenzung, großer heller Innenzone und grünen Körperchen spricht für eine Pflanzenzelle. Auch eine farblose Zwiebelhautzelle ist pflanzlich, wenn ihre Zellwände erkennbar sind. In einer Zeichnung kann der Kern am Rand liegen, weil die Vakuole viel Raum beansprucht."
+    ],
+    "takeaway": "Erkenne Zelltypen an einer Kombination von Merkmalen. Grüne Pflanzen betreiben Photosynthese und Zellatmung.",
+    "keyTerms": [
+      "Zellmembran",
+      "Zellplasma",
+      "Zellkern",
+      "Chloroplast",
+      "Mitochondrium",
+      "Zellwand",
+      "Zentralvakuole"
+    ],
+    "sourceIds": ["isb"],
+    "quiz": {
+      "question": "Welche Beobachtung belegt in diesem Vergleich eine grüne Pflanzenzelle am besten?",
+      "answer": "Feste Zellwand und mehrere grüne Chloroplasten.",
+      "wrong": ["Ein Zellkern und eine Zellmembran.", "Mitochondrien im Zellplasma."],
+      "explanation": "Zellkern, Membran und Mitochondrien gibt es bei beiden Zelltypen."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Ein Bauteil, eine Aufgabe",
+      "instruction": "Ordne jeder Aufgabe die passende Zellstruktur zu.",
+      "categories": ["Zellkern", "Mitochondrium", "Chloroplast", "Zellwand", "Zentralvakuole"],
+      "entries": [
+        {
+          "text": "Schließt bei Eukaryoten den größten Teil der Erbinformation ein.",
+          "target": 0,
+          "feedback": "Im Zellkern liegt die chromosomale DNA."
+        },
+        {
+          "text": "Ist bei Eukaryoten ein Hauptort des aeroben Energiestoffwechsels.",
+          "target": 1,
+          "feedback": "Auch Pflanzenzellen nutzen Mitochondrien."
+        },
+        {
+          "text": "Ermöglicht die Photosynthese in einer grünen Blattzelle.",
+          "target": 2,
+          "feedback": "In Chloroplasten wird Lichtenergie für Stoffaufbau genutzt."
+        },
+        {
+          "text": "Gibt der Pflanzenzelle eine feste äußere Form.",
+          "target": 3,
+          "feedback": "Die Zellwand liegt außerhalb der Zellmembran."
+        },
+        {
+          "text": "Nimmt viel Raum ein und trägt zur Wasserspeicherung und Stütze bei.",
+          "target": 4,
+          "feedback": "Der Druck der Vakuole stützt die Zelle gegen die Wand."
+        }
+      ],
+      "conclusion": "Was du erkennen kannst, hängt auch von Präparat, Färbung und Auflösung ab."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Ein Zellbild zeigt eine feste äußere Wand, einen randständigen Kern und eine große helle Zone. Ordne den Zelltyp zu und erkläre die helle Zone.",
+        "hints": [
+          "Welche Struktur erklärt die stabile Begrenzung?",
+          "Warum kann der Kern am Rand liegen?"
+        ],
+        "model": "Die Wand und die große Innenzone sprechen für eine Pflanzenzelle. Die helle Zone passt zur Zentralvakuole, die viel Wasser enthält und einen großen Teil des Zellraums beansprucht. Dadurch liegt der Kern oft am Rand.",
+        "criteria": [
+          "Ich stütze die Bestimmung auf zwei Merkmale.",
+          "Ich deute die Innenzone als Vakuole.",
+          "Ich erkläre die Lage des Kerns."
+        ]
+      },
+      "2": {
+        "prompt": "Jemand behauptet, Zwiebelhaut müsse tierisch sein, da sie keine grünen Körperchen zeigt. Wie überprüfst du die Behauptung?",
+        "hints": [
+          "Welche Pflanzenteile sind nicht grün?",
+          "Welche Merkmale wären auch ohne Grün sichtbar?"
+        ],
+        "model": "Eine Speicherzwiebel ist kein grünes Photosynthesegewebe. Ich suche nach Zellwänden und der großen Zentralvakuole und vergleiche das Muster mit einem tierischen Epithelpräparat. Fehlende sichtbare Chloroplasten widerlegen eine pflanzliche Herkunft nicht.",
+        "criteria": [
+          "Ich erkläre das fehlende Grün.",
+          "Ich schlage mindestens zwei Merkmale vor.",
+          "Ich nenne einen geeigneten Vergleich."
+        ]
+      }
+    },
+    "model": "zellen"
+  },
+  {
+    "id": "prokaryoten-und-reiche",
+    "lb": 2,
+    "title": "Prokaryoten und Eukaryoten vergleichen",
+    "period": "Einführungsklasse · Lernbereich 2",
+    "intro": "Du verwendest Zellmerkmale, um Lebewesen einzuordnen.",
+    "paragraphs": [
+      "Bakterien sind prokaryotisch. Ihre DNA liegt meist als ringförmiges Chromosom in einem Bereich ohne Kernmembran. Kleine zusätzliche DNA-Ringe heißen Plasmide. Bakterien haben Zellmembran, Zellplasma und Ribosomen, meist auch eine Zellwand. Ohne Mitochondrien betreiben sie trotzdem Stoffwechsel, stellen Proteine her und vermehren sich durch Zellteilung. Auch Archaeen sind prokaryotisch.",
+      "Tier-, Pflanzen- und Pilzzellen gehören zu den Eukaryoten: Ihre Chromosomen liegen überwiegend im Zellkern. Pflanzen haben eine Zellwand aus Cellulose und in grünen Geweben Chloroplasten. Pilze haben eine Wand, die typischerweise Chitin enthält, aber keine Chloroplasten. Tierzellen besitzen keine Zellwand.",
+      "Beispiel: Hefe hat Zellkern und Zellwand, aber keine Chloroplasten. Diese Merkmale zusammen mit einer chitinhaltigen Wand sprechen für einen Pilz. Eine Zellwand allein macht eine Zelle weder zu einer Pflanzenzelle noch zu einem Bakterium. In schwierigen Fällen helfen molekulare Verwandtschaftsdaten."
+    ],
+    "takeaway": "Eine Kernmembran kennzeichnet eukaryotischen Zellbau. Weitere Merkmale helfen bei der genaueren Zuordnung.",
+    "keyTerms": ["Prokaryot", "Eukaryot", "Ribosom", "Plasmid", "Chitin", "Cellulose"],
+    "sourceIds": ["isb"],
+    "quiz": {
+      "question": "Welches Merkmal unterscheidet ein typisches Bakterium von einer Hefezelle?",
+      "answer": "Dem Bakterium fehlt ein membranumhüllter Zellkern.",
+      "wrong": [
+        "Nur Bakterien besitzen Erbinformation.",
+        "Nur Hefezellen können Proteine herstellen."
+      ],
+      "explanation": "Beide besitzen DNA und Ribosomen. Bei Hefe liegt der größte Teil der DNA im Zellkern."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Vier unbekannte Präparate",
+      "instruction": "Bestimme die naheliegende Gruppe anhand der angegebenen Kombination.",
+      "categories": ["Bakterium", "Pflanze", "Pilz", "Tier"],
+      "entries": [
+        {
+          "text": "Kern und Cellulosewand; grüne Chloroplasten.",
+          "target": 1,
+          "feedback": "Chloroplasten und Cellulosewand kennzeichnen hier die Pflanze."
+        },
+        {
+          "text": "Kern vorhanden; chitinhaltige Zellwand, keine Chloroplasten.",
+          "target": 2,
+          "feedback": "Diese Kombination passt zu einem Pilz."
+        },
+        {
+          "text": "Kern und Membran; im Epithel keine Zellwand.",
+          "target": 3,
+          "feedback": "Ein Epithel aus wandlosen Zellen passt zu einem Tier."
+        },
+        {
+          "text": "Ringchromosom ohne Kernmembran und Mureinwand.",
+          "target": 0,
+          "feedback": "Der prokaryotische Bau und die Mureinwand passen zu einem Bakterium."
+        }
+      ],
+      "conclusion": "„Prokaryotisch“ allein unterscheidet Bakterien nicht von Archaeen."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Vergleiche Bakterium und Blattzelle in drei Punkten: DNA, Proteinsynthese und Zellatmung.",
+        "hints": ["Wo liegt die DNA?", "Welche Struktur besitzen beide zur Proteinbildung?"],
+        "model": "Beim Bakterium liegt das meist ringförmige Chromosom ohne Kernhülle vor, bei der Blattzelle liegt die meiste DNA im Zellkern. Beide haben Ribosomen. Viele Bakterien können aerob atmen, ohne Mitochondrien zu besitzen; bei der Blattzelle spielen Mitochondrien eine zentrale Rolle.",
+        "criteria": [
+          "Ich vergleiche die Lage der DNA.",
+          "Ich nenne Ribosomen in beiden Zellen.",
+          "Ich trenne Zellatmung von der Anwesenheit eines Mitochondriums."
+        ]
+      },
+      "2": {
+        "prompt": "Eine unbekannte Probe hat eine feste Wand und keine sichtbaren Chloroplasten. Welche Befunde helfen, zwischen Bakterium, Pilz und farblosem Pflanzengewebe zu unterscheiden?",
+        "hints": [
+          "Was entscheidet zwischen prokaryotisch und eukaryotisch?",
+          "Wie unterscheiden sich die Wände?"
+        ],
+        "model": "Ich prüfe, ob ein membranumhüllter Zellkern nachweisbar ist. Bei einer eukaryotischen Zelle liefern die Wandbestandteile Hinweise: Cellulose passt zu pflanzlichem Gewebe, Chitin zu einem Pilz. Wenn sich die Merkmale nicht sicher erkennen lassen, bleibt die Zuordnung offen.",
+        "criteria": [
+          "Ich nenne den Zellkern als Kriterium.",
+          "Ich vergleiche passende Wandbestandteile.",
+          "Ich nenne die Grenze des Bildbefunds."
+        ]
+      }
+    }
+  }
+]

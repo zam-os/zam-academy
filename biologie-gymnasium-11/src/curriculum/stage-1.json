@@ -1,0 +1,253 @@
+[
+  {
+    "id": "hypothesen-und-kontrolle",
+    "lb": 1,
+    "title": "Fragestellung, Hypothese und Kontrolle",
+    "period": "Einführungsklasse · Lernbereich 1",
+    "intro": "Du planst einen Versuch, der zwei mögliche Erklärungen auseinanderhält.",
+    "paragraphs": [
+      "Eine Beobachtung wirft Fragen auf: In einem warmen Ansatz entstehen mit Hefe schneller Bläschen als in einem kühlen. Frag genauer: Wie beeinflusst die Temperatur das Gasvolumen pro Minute? Eine Hypothese ist eine begründete, prüfbare Vermutung. Sage vorher, welches Ergebnis du erwartest und warum.",
+      "Ändere möglichst nur den untersuchten Faktor. Verwende gleiche Mengen Hefe, Zucker und Flüssigkeit und dieselbe Messdauer. Wiederhole jede Bedingung mit neuen Ansätzen. Ein Ansatz ohne Hefe prüft, ob Gas auch ohne Hefe auftritt. Werte in Millilitern pro Minute lassen sich quantitativ vergleichen; „keine, wenige oder viele Bläschen“ ist zunächst eine qualitative Beobachtung.",
+      "Beispiel: Drei Ansätze bei 20 °C und drei bei 30 °C stehen je fünf Minuten im Wasserbad. Lies das gesammelte Gas in mL ab und notiere auch ungewöhnliche Beobachtungen wie eine undichte Verbindung. Im Unterricht benutzt du die zugelassenen Geräte und befolgst die Sicherheitsregeln."
+    ],
+    "takeaway": "Eine kontrollierte Untersuchung variiert einen Faktor, hält andere konstant und misst ein vorher festgelegtes Ergebnis.",
+    "keyTerms": [
+      "Hypothese",
+      "unabhängige Variable",
+      "Messgröße",
+      "Kontrollansatz",
+      "Wiederholung"
+    ],
+    "sourceIds": ["isb"],
+    "quiz": {
+      "question": "Welcher Vergleich prüft den Einfluss der Temperatur auf die Gasbildung?",
+      "answer": "Gleiche Hefe- und Zuckermengen bei zwei Temperaturen.",
+      "wrong": [
+        "Bei höherer Temperatur zugleich mehr Zucker einsetzen.",
+        "Nur einen Ansatz ohne Hefe bei 30 °C messen."
+      ],
+      "explanation": "Wenn Zucker und Temperatur gleichzeitig variieren, bleibt offen, welcher Faktor den Unterschied verursacht."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Baue den Versuchsplan",
+      "instruction": "Ordne jedem Satz seine Funktion im Versuchsplan zu.",
+      "categories": ["Fragestellung", "Hypothese", "Messung", "Kontrolle"],
+      "entries": [
+        {
+          "text": "Wie ändert die Temperatur das Gasvolumen pro Minute?",
+          "target": 0,
+          "feedback": "Die Frage nennt Einflussgröße und Messgröße."
+        },
+        {
+          "text": "Bei 30 °C entsteht zunächst mehr Gas, weil die Reaktionen der Hefe schneller ablaufen.",
+          "target": 1,
+          "feedback": "Hier stehen Vorhersage und Begründung."
+        },
+        {
+          "text": "Lies nach fünf Minuten das Gasvolumen in mL ab.",
+          "target": 2,
+          "feedback": "Die Messung legt Größe, Einheit und Zeitpunkt fest."
+        },
+        {
+          "text": "Wiederhole beide Bedingungen zusätzlich ohne Hefe.",
+          "target": 3,
+          "feedback": "Ohne Hefe prüfst du, ob der Aufbau selbst Gas anzeigt."
+        }
+      ],
+      "conclusion": "Eine Kontrolle beantwortet eine andere Frage als die Wiederholung: Die Wiederholung zeigt, wie stark ein Ergebnis streut."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Plane einen Vergleich der Gasbildung von Hefe bei 20 °C und 30 °C. Nenne eine Hypothese, zwei konstante Bedingungen und die Messgröße.",
+        "hints": ["Was änderst du absichtlich?", "Was liest du wann und in welcher Einheit ab?"],
+        "model": "Ich vermute mehr Gas pro Minute bei 30 °C, weil enzymatische Reaktionen der Hefe in diesem Bereich schneller ablaufen können. Hefemenge, Zucker und Flüssigkeitsvolumen bleiben gleich. Nach fünf Minuten messe ich das Gasvolumen in mL und teile es durch die Messdauer.",
+        "criteria": [
+          "Ich mache eine gerichtete, begründete Vorhersage.",
+          "Ich halte mindestens zwei Bedingungen konstant.",
+          "Ich nenne Messgröße, Zeit und Einheit."
+        ]
+      },
+      "2": {
+        "prompt": "Eine Gruppe findet mit mehr Zucker auch mehr Gas. Ihre zuckerreichen Ansätze standen aber näher an der Heizung. Entwirf eine Untersuchung, die die Zuckerwirkung prüft.",
+        "hints": [
+          "Welche zweite Variable hat sich geändert?",
+          "Wie prüfst du, ob Gas auch ohne zugesetzten Zucker entsteht?"
+        ],
+        "model": "Ich setze verschiedene Zuckermengen bei derselben Temperatur ein und halte Hefemenge und Messzeit konstant. Ich wiederhole jede Bedingung und nehme einen Ansatz ohne zugesetzten Zucker dazu. So trenne ich die Wirkung des Zuckerangebots von Temperatur und natürlicher Streuung.",
+        "criteria": [
+          "Ich erkenne Temperatur als Störfaktor.",
+          "Ich variiere nur die Zuckermenge.",
+          "Ich begründe Kontrolle und Wiederholungen."
+        ]
+      }
+    }
+  },
+  {
+    "id": "messdaten-und-modelle",
+    "lb": 1,
+    "title": "Messdaten und Modelle prüfen",
+    "period": "Einführungsklasse · Lernbereich 1",
+    "intro": "Du beschreibst einen Trend und entscheidest, wie weit ihn ein Modell erklärt.",
+    "paragraphs": [
+      "Eine Messreihe braucht eine Tabelle mit Messgröße und Einheit. Im Diagramm steht der veränderte Faktor auf der x-Achse, die gemessene Größe auf der y-Achse. Einzelwerte zeigen die Streuung; Mittelwerte helfen beim Vergleich. Ein Achsendiagramm zeigt Änderungen, ein Flussdiagramm dagegen die Reihenfolge von Schritten.",
+      "Beispiel: Ein Enzymversuch ergibt bei 20 °C die Werte 2, 3 und 2 mL Gas pro Minute, bei 40 °C 6, 5 und 7 und bei 60 °C 1, 0 und 1. Die Mittelwerte sind ungefähr 2,3, 6,0 und 0,7 mL/min. Das spricht für einen Anstieg und anschließenden Abfall. Drei Temperaturen verraten aber nicht das genaue Optimum.",
+      "Ein Modell beantwortet eine bestimmte Frage. Eine Zeichnung des aktiven Zentrums erklärt die Bindung; eine Kurve fasst den Temperaturverlauf zusammen. Eine Form aus Knete könnte die Veränderung bei Hitze zeigen, verdeckt aber Teilchenbewegung und Wechselwirkungen. Vergleiche Vorhersagen alternativer Modelle mit Daten und überarbeite Modelle, die wiederholt nicht passen. Eine naturwissenschaftliche Theorie stützt sich auf viele geprüfte Befunde und bleibt überprüfbar."
+    ],
+    "takeaway": "Trenne Messwerte, beschriebene Muster und modellgestützte Erklärungen. Die Daten bestimmen, wie weit deine Aussage trägt.",
+    "keyTerms": ["Streuung", "Achsendiagramm", "Mittelwert", "Modellgrenze", "Theorie"],
+    "sourceIds": ["isb"],
+    "quiz": {
+      "question": "Was lässt sich aus Messungen bei 20, 40 und 60 °C begründet folgern?",
+      "answer": "Von den geprüften Temperaturen war 40 °C am günstigsten.",
+      "wrong": [
+        "Das Optimum liegt exakt bei 40 °C.",
+        "Jedes Enzym hat denselben Temperaturverlauf."
+      ],
+      "explanation": "Zwischenwerte und andere Enzyme wurden in dieser Reihe nicht gemessen."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Befund oder Erklärung?",
+      "instruction": "Unterscheide direkt Abgelesenes, Auswertung und Aussagen darüber hinaus.",
+      "categories": ["Messwert", "Auswertung", "Modell-Erklärung", "Nicht belegt"],
+      "entries": [
+        {
+          "text": "Der zweite Ansatz bei 40 °C ergab 5 mL/min.",
+          "target": 0,
+          "feedback": "Das ist ein protokollierter Einzelwert."
+        },
+        {
+          "text": "Der Mittelwert bei 60 °C liegt unter dem bei 40 °C.",
+          "target": 1,
+          "feedback": "Du vergleichst berechnete Mittelwerte."
+        },
+        {
+          "text": "Bei starker Erwärmung könnte sich das aktive Zentrum verändert haben.",
+          "target": 2,
+          "feedback": "Das Modell liefert eine überprüfbare Erklärung."
+        },
+        {
+          "text": "Das Optimum liegt auf ein Zehntelgrad genau bei 40 °C.",
+          "target": 3,
+          "feedback": "Dafür wären feinere Messschritte und Wiederholungen nötig."
+        }
+      ],
+      "conclusion": "Ein unerwarteter Wert kann ein Messfehler sein. Prüfe Aufbau und Wiederholungen, bevor du ihn ausschließt."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Beschrifte ein gedachtes Diagramm für das Enzymbeispiel, beschreibe den Trend und formuliere eine Grenze.",
+        "hints": ["Was wurde eingestellt und was gemessen?", "Welche Zwischenwerte fehlen?"],
+        "model": "Die x-Achse zeigt Temperatur in °C, die y-Achse die Gasbildungsrate in mL/min. Der Mittelwert steigt von 20 auf 40 °C und fällt bis 60 °C. Weil dazwischen nicht gemessen wurde, lässt sich die Temperatur mit maximaler Rate nicht genau bestimmen.",
+        "criteria": [
+          "Ich benenne Achsen und Einheiten.",
+          "Ich beschreibe Anstieg und Abfall.",
+          "Ich begrenze die Aussage auf die Daten."
+        ]
+      },
+      "2": {
+        "prompt": "Zwei Modelle erklären den Abfall bei 60 °C: Das Enzym wurde dauerhaft verändert, oder der Ansatz hatte bei 60 °C eine undichte Verbindung. Wie unterscheidest du beides?",
+        "hints": [
+          "Welche Bedingungen brauchen einen neuen dichten Aufbau?",
+          "Welche Probe wurde erhitzt, aber wieder abgekühlt?"
+        ],
+        "model": "Ich kontrolliere den Aufbau auf Dichtheit und wiederhole die 60-°C-Messung. Zusätzlich vergleiche ich bei 40 °C frisches Enzym mit auf 60 °C vorerhitztem und anschließend abgekühltem Enzym. Bleibt nur die vorerhitzte Probe schwach, spricht das für eine anhaltende Strukturänderung.",
+        "criteria": [
+          "Ich prüfe beide Erklärungen gezielt.",
+          "Ich vergleiche bei gleicher Messtemperatur.",
+          "Ich erkläre, welcher Befund wofür spricht."
+        ]
+      }
+    },
+    "model": "messdaten"
+  },
+  {
+    "id": "quellen-und-urteile",
+    "lb": 1,
+    "title": "Quellen prüfen und Entscheidungen begründen",
+    "period": "Einführungsklasse · Lernbereich 1",
+    "intro": "Du trennst Belege und Werte, wenn du eine Handlung empfiehlst.",
+    "paragraphs": [
+      "Eine Schlagzeile wie „Das macht alle fit“ nennt weder Gruppe noch Messgröße. Eine fachsprachliche Aussage beschreibt, wer untersucht wurde, was sich geändert hat und wie sicher das Ergebnis ist. Frage bei einer Quelle nach Urheber, Datum, Methode, Interessen und Geltungsbereich. Eine Empfehlung für Erwachsene beantwortet nicht automatisch eine Frage zu Jugendlichen.",
+      "Für ein Urteil brauchst du mehrere Optionen und Kriterien. Bei der Pausenverpflegung könntest du Trinkwasser und eine wechselnde Auswahl anbieten oder beim bisherigen Verkauf bleiben. Vergleiche Nährstoffangebot, Preis und Zugänglichkeit. Faire Teilnahme kann stärker wiegen als Bequemlichkeit. Begründe die Gewichtung und lege offen, welche Informationen fehlen.",
+      "Beispiel: Ein Versuch mit zwei Klassen zeigt, dass mehr Wasser getrunken wurde, nachdem Wasser gut sichtbar bereitstand. Das spricht für bessere Zugänglichkeit. Langfristige Gesundheitseffekte wurden nicht untersucht. Erkläre den Unterschied in Alltagssprache; für die Wissenschaftswoche kannst du die Befunde mit Messgröße, Vergleich und Quelle als Kurzposter darstellen.",
+      "Solche Auswertungen nutzen zum Beispiel Laborberufe bei der Untersuchung von Proben, die Epidemiologie beim Vergleich von Erkrankungszahlen und die Ernährungswissenschaft bei der Bewertung von Studien. Der Zweck entscheidet, welche Daten und welche Darstellung du brauchst."
+    ],
+    "takeaway": "Ein nachvollziehbares Urteil nennt Quelle, Belege, Optionen, Kriterien und Grenzen.",
+    "keyTerms": [
+      "Quellenkritik",
+      "Fachsprache",
+      "Bewertungskriterium",
+      "Handlungsoption",
+      "Geltungsbereich"
+    ],
+    "sourceIds": ["isb"],
+    "quiz": {
+      "question": "Was gehört zu einem begründeten Urteil?",
+      "answer": "Zwei Optionen anhand offengelegter Kriterien und Belege vergleichen.",
+      "wrong": [
+        "Den ersten Suchtreffer ohne Prüfung übernehmen.",
+        "Eine Stichprobe als sicheren Beweis für alle Menschen behandeln."
+      ],
+      "explanation": "Ein Urteil bleibt nachvollziehbar, wenn du Quelle, Kriterien und Grenzen nennst."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Sortiere das Argument",
+      "instruction": "Ordne die Teile einer Empfehlung für die Pausenverpflegung.",
+      "categories": ["Beobachtung", "Kriterium", "Handlungsoption", "Grenze"],
+      "entries": [
+        {
+          "text": "In zwei Klassen wurden am neuen Standort mehr Becher gefüllt.",
+          "target": 0,
+          "feedback": "Das ist der erfasste Befund aus dem Beispiel."
+        },
+        {
+          "text": "Auch Jugendliche mit wenig Geld sollen trinken können.",
+          "target": 1,
+          "feedback": "Kosten und Zugang sind begründbare Maßstäbe."
+        },
+        {
+          "text": "Ein frei zugänglicher Wasserspender kann näher an den Pausenhof rücken.",
+          "target": 2,
+          "feedback": "Das ist eine mögliche Handlung."
+        },
+        {
+          "text": "Die Untersuchung hat keine Gesundheitsfolgen gemessen.",
+          "target": 3,
+          "feedback": "Diese Aussage grenzt die Folgerung ein."
+        }
+      ],
+      "conclusion": "Vergleiche mindestens eine Alternative und erläutere, warum du ein Kriterium höher gewichtest."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Ein Händler behauptet, sein Getränk steigere Konzentration. Eine Schule beobachtet mehr Getränkekäufe. Formuliere eine fachlich vorsichtige Aussage und zwei Fragen an die Quelle.",
+        "hints": [
+          "Was wurde tatsächlich gemessen?",
+          "Wer veröffentlicht die Behauptung und mit welcher Methode?"
+        ],
+        "model": "Die Schule hat mehr Käufe beobachtet; über die Konzentration sagt das nichts aus. Ich frage, ob der Händler eine unabhängige Untersuchung verlinkt und wie Konzentration dort im Vergleich zu einer Kontrollgruppe gemessen wurde.",
+        "criteria": [
+          "Ich unterscheide Kaufzahl und Konzentration.",
+          "Ich frage nach Urheber oder Interessen.",
+          "Ich frage nach einer überprüfbaren Methode."
+        ]
+      },
+      "2": {
+        "prompt": "Der Schulrat kann einen Wasserspender kaufen oder das Geld für günstigere Mahlzeiten einsetzen. Begründe eine Empfehlung und sage, wann du sie revidieren würdest.",
+        "hints": [
+          "Wer profitiert von welcher Option?",
+          "Welche Information fehlt für eine faire Entscheidung?"
+        ],
+        "model": "Wenn Trinkwasser in der Pause für viele schlecht erreichbar ist, priorisiere ich einen kostenlosen Spender. Günstigere Mahlzeiten können mehr helfen, wenn vor allem der Preis ausgewogene Mahlzeiten verhindert. Ich vergleiche Kosten und Zugang, frage die Klassen und ändere meine Empfehlung, wenn bereits genug Trinkwasser verfügbar ist.",
+        "criteria": [
+          "Ich vergleiche beide Optionen.",
+          "Ich gewichte Kriterien und nenne Betroffene.",
+          "Ich beschreibe einen Grund zur Revision."
+        ]
+      }
+    }
+  }
+]

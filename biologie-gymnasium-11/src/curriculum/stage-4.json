@@ -1,0 +1,859 @@
+[
+  {
+    "id": "mensch-als-offenes-system",
+    "lb": 4,
+    "title": "Der Mensch als offenes System",
+    "period": "Einführungsklasse · Lernbereich 4",
+    "intro": "Du verfolgst Stoffe und Energie über die Körpergrenze und zwischen Organen.",
+    "paragraphs": [
+      "Ein offenes System tauscht Stoffe und Energie mit seiner Umgebung aus. Der Mensch nimmt Nahrung, Wasser und Sauerstoff auf. Er gibt unter anderem Kohlenstoffdioxid über die Lunge, Wasser und gelöste Abfallstoffe über die Nieren und Wärme an die Umgebung ab. Stoffwechsel umfasst Aufnahme, Umwandlung und Abgabe.",
+      "Der Verdauungstrakt zerlegt viele Nahrungsstoffe. Blut und Lymphe transportieren aufgenommene Stoffe, der Kreislauf verteilt auch Atemgase. Zellen nutzen Energieträger etwa für Bewegung und Wärmehaushalt. Sie verwenden Stoffe aus der Nahrung auch als Bausteine: Aminosäuren können in körpereigene Proteine eingebaut werden, etwa beim Wachstum oder bei der Regeneration.",
+      "Beispiel: Beim Treppensteigen steigt der Energiebedarf arbeitender Muskeln. Der Körper nimmt weiterhin Sauerstoff auf; das Blut bringt ihn zu den Zellen. Kohlenstoff aus Glucose kann als Kohlenstoffdioxid ausgeatmet werden. Ein Teil der umgewandelten chemischen Energie wird als Wärme an die Umgebung abgegeben."
+    ],
+    "takeaway": "Verfolge getrennt, welche Stoffe aufgenommen, umgebaut und abgegeben werden und in welche Formen Energie übergeht.",
+    "keyTerms": ["offenes System", "Stoffwechsel", "Baustoff", "Energieträger", "Wärmeabgabe"],
+    "sourceIds": ["isb"],
+    "quiz": {
+      "question": "Was ist beim Treppensteigen ein Beispiel für Energieabgabe an die Umgebung?",
+      "answer": "Wärme geht vom Körper an die Umgebung über.",
+      "wrong": ["Glucose gelangt aus dem Darm ins Blut.", "Sauerstoff bindet an Hämoglobin."],
+      "explanation": "Der Übergang von Wärme über die Körpergrenze ist Energieabgabe; die anderen Beispiele beschreiben Stofftransport im Körper."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Über die Körpergrenze",
+      "instruction": "Ordne zu, was mit dem genannten Stoff oder der Energie geschieht.",
+      "categories": ["Stoffaufnahme", "Umwandlung im Körper", "Stoffabgabe", "Energieabgabe"],
+      "entries": [
+        {
+          "text": "Sauerstoff gelangt mit der eingeatmeten Luft in den Körper.",
+          "target": 0,
+          "feedback": "Ein Stoff überschreitet die Körpergrenze nach innen."
+        },
+        {
+          "text": "Die Zelle baut Aminosäuren zu einem körpereigenen Protein zusammen.",
+          "target": 1,
+          "feedback": "Aufgenommene Bausteine werden neu kombiniert."
+        },
+        {
+          "text": "Kohlenstoffdioxid wird ausgeatmet.",
+          "target": 2,
+          "feedback": "Ein Stoff überschreitet die Körpergrenze nach außen."
+        },
+        {
+          "text": "Die Haut gibt Wärme an kühlere Umgebungsluft ab.",
+          "target": 3,
+          "feedback": "Dabei gelangt Energie an die Umgebung."
+        }
+      ],
+      "conclusion": "Ein Energieträger wie Glucose ist selbst ein Stoff. Bei seinem Umbau wird Energie übertragen."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Nenne bei einem kurzen Lauf je ein Beispiel für Stoffaufnahme, Stoffumwandlung und Stoffabgabe und verknüpfe zwei beteiligte Organsysteme.",
+        "hints": [
+          "Was liefern Lunge und Kreislauf den Muskeln?",
+          "Was gelangt von der Muskelzelle wieder nach außen?"
+        ],
+        "model": "Die Lunge nimmt Sauerstoff auf; das Blut bringt ihn zu Muskelzellen. Dort wird Glucose mit Sauerstoff abgebaut. Das gebildete Kohlenstoffdioxid gelangt über den Kreislauf zurück zur Lunge und wird ausgeatmet.",
+        "criteria": [
+          "Ich benenne Aufnahme, Umwandlung und Abgabe.",
+          "Ich verknüpfe Lunge und Kreislauf.",
+          "Ich unterscheide Stoffe und Energie."
+        ]
+      },
+      "2": {
+        "prompt": "Zwei Lernende essen dieselbe Proteinportion. Eine Person baut einen Teil der Aminosäuren in körpereigene Proteine ein, die andere nutzt einen Teil nach Umbau zur Energiegewinnung. Erkläre, warum beides möglich ist.",
+        "hints": [
+          "In welche Bausteine werden Proteine zerlegt?",
+          "Worin unterscheiden sich Aufbau und Abbau?"
+        ],
+        "model": "Die Verdauung zerlegt Proteine in resorbierbare Bausteine. Zellen können daraus ihre eigenen Proteine aufbauen. Aminosäuren können auch abgebaut werden; nach Abtrennung des stickstoffhaltigen Teils kann ihr Kohlenstoffgerüst zur Energiebereitstellung beitragen. Die Nahrungsgruppe legt die spätere Nutzung nicht vollständig fest.",
+        "criteria": [
+          "Ich nenne Aminosäuren als Bausteine.",
+          "Ich erkläre den Aufbau körpereigener Proteine.",
+          "Ich beschreibe eine andere Nutzung derselben Bausteine."
+        ]
+      }
+    }
+  },
+  {
+    "id": "makro-und-mikronaehrstoffe",
+    "lb": 4,
+    "title": "Nährstoffe und ausgewogene Ernährung",
+    "period": "Einführungsklasse · Lernbereich 4",
+    "intro": "Du erkennst Nährstoffe am Bau und prüfst, was zu einer konkreten Situation passt.",
+    "paragraphs": [
+      "Kohlenhydrate bestehen aus Zuckerbausteinen. Glucose und Fructose sind Monosaccharide. Saccharose und Lactose sind Disaccharide aus zwei Bausteinen. Stärke und Glykogen sind Polysaccharide aus vielen Glucosebausteinen: Pflanzen speichern vor allem Stärke, Menschen unter anderem Glykogen in Leber und Muskeln.",
+      "Ein typisches Nahrungsfett enthält Glycerin und drei Fettsäuren und speichert viel Energie. Proteine sind Ketten aus Aminosäuren und dienen zum Beispiel als Baustoffe und Enzyme. Vitamine und Mineralsalze braucht der Körper in kleineren Mengen. Vitamin C ist unter anderem für die Bildung von funktionsfähigem Kollagen wichtig; Calcium trägt zur Stabilität der Knochen bei. Essenzielle Nährstoffe, etwa bestimmte Aminosäuren, müssen mit der Nahrung aufgenommen werden.",
+      "Beispiel: Für einen langen Schultag kann eine Kombination aus Vollkornbrot, Hummus, Gemüse und Wasser Kohlenhydrate, Proteine, Fette, Ballaststoffe und verschiedene Mikronährstoffe liefern. Ein einzelner Riegel mit ähnlich viel Energie hat nicht automatisch dieselbe Nährstoffzusammensetzung. Beziehe Lebensumstände, Zugang, Vorlieben und Unverträglichkeiten in ein Konzept ein."
+    ],
+    "takeaway": "Vergleiche Lebensmittel nach ihren Bausteinen und ihrer Zusammensetzung. Gleicher Energiegehalt bedeutet keine gleiche Nährstoffversorgung.",
+    "keyTerms": [
+      "Monosaccharid",
+      "Disaccharid",
+      "Polysaccharid",
+      "Fettsäure",
+      "Aminosäure",
+      "essenziell"
+    ],
+    "sourceIds": ["isb", "dge", "b10"],
+    "quiz": {
+      "question": "Welcher molekulare Bau passt zu einem typischen Nahrungsfett?",
+      "answer": "Ein Glycerin und drei daran gebundene Fettsäuren.",
+      "wrong": [
+        "Viele Glucosebausteine in einer verzweigten Kette.",
+        "Viele Aminosäuren in einer gefalteten Kette."
+      ],
+      "explanation": "Glucoseketten sind Kohlenhydrate; Aminosäureketten bilden Proteine."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Bausteine und Aufgaben",
+      "instruction": "Ordne die Stoffbeispiele ihrer Gruppe zu.",
+      "categories": ["Kohlenhydrat", "Fett", "Protein", "Mikronährstoff"],
+      "entries": [
+        {
+          "text": "Lactose aus zwei Zuckerbausteinen.",
+          "target": 0,
+          "feedback": "Lactose ist ein Disaccharid."
+        },
+        {
+          "text": "Öl mit Molekülen aus Glycerin und Fettsäuren.",
+          "target": 1,
+          "feedback": "Der Bau passt zu einem typischen Speicherfett."
+        },
+        {
+          "text": "Kollagen aus Aminosäureketten.",
+          "target": 2,
+          "feedback": "Aminosäureketten bilden Proteine."
+        },
+        {
+          "text": "Calcium in Nahrung; wichtig für Knochen.",
+          "target": 3,
+          "feedback": "Calcium wird als Mineralstoff benötigt."
+        },
+        {
+          "text": "Glykogen aus vielen Glucosebausteinen.",
+          "target": 0,
+          "feedback": "Glykogen ist ein Polysaccharid."
+        }
+      ],
+      "conclusion": "Ein Lebensmittel enthält meistens mehrere Nährstoffgruppen. Die Zuordnung hier gilt den einzelnen Stoffen."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre, welcher Bausteintyp Stärke, Pflanzenöl und Linsenprotein kennzeichnet. Nenne für jeden Stoff eine Funktion im Körper oder Organismus.",
+        "hints": [
+          "Wie viele Glucosebausteine stecken in Stärke?",
+          "Welche Gruppen dienen als Speicher oder Baustoff?"
+        ],
+        "model": "Stärke ist aus vielen Glucosebausteinen aufgebaut und dient Pflanzen als Speicher. Typische Moleküle in Pflanzenöl bestehen aus Glycerin und Fettsäuren und speichern Energie. Linsenproteine bestehen aus Aminosäuren, die der Mensch unter anderem zum Aufbau eigener Proteine nutzen kann.",
+        "criteria": [
+          "Ich ordne die drei Bausteintypen richtig zu.",
+          "Ich nenne eine passende Funktion je Gruppe.",
+          "Ich unterscheide gespeicherte Stoffe und Baustoffe."
+        ]
+      },
+      "2": {
+        "prompt": "Eine Schülerin verträgt keine Lactose und kann an langen Schultagen nichts kühlen. Schlage eine geeignete Pausenverpflegung vor und begründe drei Bestandteile anhand der Nährstoffe und der Alltagssituation.",
+        "hints": [
+          "Welche Getränke und haltbaren Lebensmittel sind möglich?",
+          "Wie bringst du Abwechslung hinein, ohne eine einzige Lösung vorzuschreiben?"
+        ],
+        "model": "Wasser ist leicht mitzunehmen und liefert Flüssigkeit. Vollkornbrot bietet Kohlenhydrate und Ballaststoffe; geröstete Kichererbsen liefern unter anderem Protein. Ein Apfel ergänzt Ballaststoffe und Mikronährstoffe. Die gewählten haltbaren Bestandteile passen zur fehlenden Kühlung und enthalten hier keine Lactose.",
+        "criteria": [
+          "Ich berücksichtige beide Rahmenbedingungen.",
+          "Ich begründe drei Bestandteile fachlich.",
+          "Ich vergleiche mehr als nur den Energiegehalt."
+        ]
+      }
+    }
+  },
+  {
+    "id": "enzyme-und-aktivierungsenergie",
+    "lb": 4,
+    "title": "Enzyme und Aktivierungsenergie",
+    "period": "Einführungsklasse · Lernbereich 4",
+    "intro": "Du erklärst eine schnellere Verdauungsreaktion auf Stoff- und Teilchenebene.",
+    "paragraphs": [
+      "Enzyme sind Biokatalysatoren. In dieser Lektion geht es um Enzyme aus Proteinen. Eine räumlich gefaltete Kette bildet ein aktives Zentrum. Das passende Substrat bindet vorübergehend; der Enzym-Substrat-Komplex erleichtert die Umsetzung. Danach werden Produkte frei und das Enzym steht erneut zur Verfügung.",
+      "Auf der Stoffebene verschwindet Substrat schneller oder Produkt tritt schneller auf. Auf der Teilchenebene senkt das Enzym die Aktivierungsenergie, also die Energiebarriere zum Start der Reaktion. Es liefert dabei keine zusätzliche Reaktionsenergie und ändert nicht die Energiedifferenz zwischen Ausgangs- und Endstoffen.",
+      "Beispiel: Speichelamylase spaltet Bindungen in Stärke. Beim längeren Kauen von Brot können dadurch kleinere, teilweise süß schmeckende Zucker entstehen. Dasselbe Enzym spaltet nicht beliebig jede Bindung. Das Schlüssel-Schloss-Modell veranschaulicht die passende Bindung, zeigt aber nicht, dass Enzym und Substrat ihre Form bei der Bindung etwas ändern können."
+    ],
+    "takeaway": "Das Enzym bindet passende Substrate, erleichtert eine bestimmte Reaktion und wird dabei nicht verbraucht.",
+    "keyTerms": [
+      "Biokatalysator",
+      "Aktivierungsenergie",
+      "aktives Zentrum",
+      "Enzym-Substrat-Komplex",
+      "Substrat- und Wirkungsspezifität"
+    ],
+    "sourceIds": ["isb"],
+    "quiz": {
+      "question": "Welche Größe verändert ein Enzym im Energieprofil unmittelbar?",
+      "answer": "Die Höhe der Aktivierungsbarriere.",
+      "wrong": [
+        "Die Energie der Ausgangsstoffe im Vergleich zu den Endstoffen.",
+        "Die Energie, die dem Enzym als Brennstoff entzogen wird."
+      ],
+      "explanation": "Das Enzym ermöglicht einen Reaktionsweg mit geringerer Aktivierungsenergie."
+    },
+    "workshop": {
+      "kind": "timeline",
+      "title": "Ein Enzym arbeitet",
+      "instruction": "Ordne die Modellschritte vom freien Enzym bis zur nächsten Runde.",
+      "categories": [],
+      "entries": [
+        {
+          "text": "Das freie Enzym besitzt ein aktives Zentrum.",
+          "target": 0,
+          "feedback": "Die Faltung bestimmt die Form und Eigenschaften des Zentrums."
+        },
+        {
+          "text": "Ein passendes Substrat bindet.",
+          "target": 1,
+          "feedback": "Es entsteht der Enzym-Substrat-Komplex."
+        },
+        {
+          "text": "Die Umsetzung wird erleichtert.",
+          "target": 2,
+          "feedback": "Der enzymatische Reaktionsweg hat eine niedrigere Aktivierungsbarriere."
+        },
+        {
+          "text": "Produkte lösen sich; das Enzym ist erneut verfügbar.",
+          "target": 3,
+          "feedback": "Das Enzym kann weitere passende Teilchen umsetzen."
+        }
+      ],
+      "conclusion": "Enzyme sind nicht auf Abbau beschränkt: Andere Enzyme erleichtern Aufbau oder Umbau."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre, warum in einem Ansatz mit Amylase die Stärke schneller verschwindet. Beschreibe die Stoff- und die Teilchenebene.",
+        "hints": ["Was lässt sich beobachten?", "Was ändert sich am Reaktionsweg?"],
+        "model": "Auf der Stoffebene nimmt die nachweisbare Stärke schneller ab. Auf Teilchenebene bindet Stärke passend am aktiven Zentrum der Amylase; das Enzym ermöglicht die Spaltung bestimmter Bindungen mit geringerer Aktivierungsenergie. Produkte lösen sich und das Enzym kann erneut reagieren.",
+        "criteria": [
+          "Ich trenne Beobachtung und Teilchenmodell.",
+          "Ich nenne das aktive Zentrum.",
+          "Ich erkläre die niedrigere Aktivierungsenergie."
+        ]
+      },
+      "2": {
+        "prompt": "Ein Modell zeigt, dass nach dem Ansetzen mit Enzym die Produkte deutlich energieärmer sind als ohne Enzym. Was ist daran falsch? Beschreibe ein besseres Energieprofil.",
+        "hints": [
+          "Welche Stoffe werden in beiden Fällen verglichen?",
+          "Was ändert sich zwischen Anfang und Ende?"
+        ],
+        "model": "Bei derselben Reaktion haben Ausgangsstoffe und Produkte in beiden Profilen dieselben Energien. Das Enzym ändert den Weg dorthin. Das Profil mit Enzym hat einen niedrigeren Gipfel, weil die Aktivierungsenergie geringer ist. Die Differenz zwischen Anfangs- und Endniveau bleibt gleich.",
+        "criteria": [
+          "Ich lasse Ausgangs- und Endniveau gleich.",
+          "Ich ändere die Gipfelhöhe.",
+          "Ich erkläre die Bedeutung des Gipfels."
+        ]
+      }
+    }
+  },
+  {
+    "id": "enzymaktivitaet",
+    "lb": 4,
+    "title": "Enzymaktivität messen",
+    "period": "Einführungsklasse · Lernbereich 4",
+    "intro": "Du testest Temperatur, pH-Wert und Substratmenge einzeln.",
+    "paragraphs": [
+      "Du kannst Enzymaktivität als anfängliche Produktmenge pro Zeit messen. Bei vielen Enzymen steigt die Rate in einem begrenzten Temperaturbereich mit der Temperatur (RGT-Regel). Bei zu hoher Temperatur kann die Proteinstruktur denaturieren; dann passt das aktive Zentrum nicht mehr gut. Die RGT-Regel gilt dort nicht.",
+      "Auch der pH-Wert beeinflusst Ladungen und räumliche Struktur. Magenpepsin ist an ein saures Milieu angepasst, andere Enzyme arbeiten näher am neutralen pH-Wert. Bei gleichbleibender Enzymmenge steigt mit mehr Substrat zunächst die Rate, nähert sich aber einer Grenze, wenn die aktiven Zentren fast durchgehend besetzt sind.",
+      "Beispiel: Du misst für dasselbe Enzym bei 20 °C etwa 2 mL Gas/min, bei 40 °C 6 mL/min und bei 60 °C weniger als 1 mL/min. Halte pH-Wert und Stoffmengen konstant, wiederhole die Messungen und prüfe einen Ansatz ohne Enzym. Der Modellversuch in der App veranschaulicht Zusammenhänge; im Schulversuch gelten die Laboranleitung und die vorgesehenen Schutzmaßnahmen."
+    ],
+    "takeaway": "Vergleiche jeweils einen Einflussfaktor. Wärme, pH-Wert und Substratmenge verändern die Rate aus unterschiedlichen Gründen.",
+    "keyTerms": ["Enzymaktivität", "RGT-Regel", "Denaturierung", "pH-Optimum", "Sättigung"],
+    "sourceIds": ["isb"],
+    "quiz": {
+      "question": "Warum steigt bei sehr viel Substrat die Rate kaum noch, wenn die Enzymmenge gleich bleibt?",
+      "answer": "Die vorhandenen aktiven Zentren sind fast ständig besetzt.",
+      "wrong": [
+        "Mehr Substrat zerstört grundsätzlich die Enzymstruktur.",
+        "Jedes Produkt bindet dann dauerhaft an das Enzym."
+      ],
+      "explanation": "Bei Sättigung limitiert vor allem, wie viele Enzyme in der Zeit umsetzen können."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Welcher Faktor erklärt die Rate?",
+      "instruction": "Ordne vier Beobachtungen dem passenden Prinzip zu.",
+      "categories": ["RGT-Bereich", "Denaturierung", "pH-Abhängigkeit", "Sättigung"],
+      "entries": [
+        {
+          "text": "Ein wenig Wärme beschleunigt die Umsetzung; die Struktur bleibt erhalten.",
+          "target": 0,
+          "feedback": "In diesem Bereich treffen Teilchen häufiger wirksam zusammen."
+        },
+        {
+          "text": "Nach starker Hitze bleibt die Probe auch abgekühlt kaum aktiv.",
+          "target": 1,
+          "feedback": "Das spricht für eine bleibende Veränderung der Proteinstruktur."
+        },
+        {
+          "text": "Pepsin ist in saurer Umgebung besonders aktiv.",
+          "target": 2,
+          "feedback": "Der geeignete pH-Bereich hängt vom Enzym ab."
+        },
+        {
+          "text": "Doppelt so viel Substrat bringt kaum mehr Produkt pro Minute.",
+          "target": 3,
+          "feedback": "Die Enzymmenge begrenzt bei hoher Belegung die Rate."
+        }
+      ],
+      "conclusion": "Im Versuch müssen die anderen Bedingungen gleich bleiben, damit du die Ursache vergleichen kannst."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Plane einen Versuch zur pH-Abhängigkeit eines Enzyms. Beschreibe mindestens drei pH-Werte, eine Messgröße und zwei konstante Bedingungen.",
+        "hints": [
+          "Welche Größe wird absichtlich geändert?",
+          "Was muss bei jedem Ansatz gleich sein?"
+        ],
+        "model": "Ich prüfe pH 3, 5 und 7 mit demselben Enzym. Ich halte Enzymmenge, Substratmenge und Temperatur gleich und messe die anfängliche Produktmenge pro Minute. Für jeden pH-Wert wiederhole ich den Ansatz und prüfe einen Vergleich ohne Enzym.",
+        "criteria": [
+          "Ich variiere mindestens drei pH-Werte.",
+          "Ich nenne Messgröße und konstante Bedingungen.",
+          "Ich nenne Kontrolle oder Wiederholung mit Zweck."
+        ]
+      },
+      "2": {
+        "prompt": "Probe A war eine Minute bei hoher Temperatur, Probe B blieb kühl. Beide werden nun bei derselben mittleren Temperatur gemessen. A bleibt inaktiv. Was stützt der Befund? Wie schließt du eine zweite Erklärung aus?",
+        "hints": [
+          "Was würde bei einem rein vorübergehenden Temperatureffekt erwartet?",
+          "Welche zusätzliche Probe prüft, ob sich nur das Substrat verändert hat?"
+        ],
+        "model": "Die gemeinsame Messtemperatur schließt eine bloß momentan langsamere Reaktion als Erklärung weitgehend aus. Das Ergebnis passt zu Denaturierung. Um einen Substratschaden zu prüfen, erhitze ich Enzym und Substrat getrennt und gebe beiden Enzymproben anschließend dieselbe frische Substratlösung.",
+        "criteria": [
+          "Ich beziehe mich auf gleiche Messtemperatur.",
+          "Ich erkläre die mögliche Strukturänderung.",
+          "Ich nenne eine überprüfbare alternative Erklärung."
+        ]
+      }
+    },
+    "model": "enzyme"
+  },
+  {
+    "id": "verdauung",
+    "lb": 4,
+    "title": "Verdauung: Nahrung wird zerlegt",
+    "period": "Einführungsklasse · Lernbereich 4",
+    "intro": "Du verfolgst Kohlenhydrate, Proteine und Fette durch Mund, Magen und Dünndarm.",
+    "paragraphs": [
+      "Zähne zerkleinern Nahrung; Speichel macht sie gleitfähig. Speichelamylase beginnt den Stärkeabbau. Wellenförmige Muskelbewegungen (Peristaltik) transportieren den Bissen durch die Speiseröhre. Im sauren Magen beginnt Pepsin, Proteine in kleinere Peptide zu spalten. Die Muskulatur mischt den Brei.",
+      "Im Dünndarm neutralisiert unter anderem Hydrogencarbonat aus der Bauchspeicheldrüse den sauren Brei. Verdauungssäfte liefern Enzyme. Kohlenhydrate werden zu Einfachzuckern, Proteine vor allem zu Aminosäuren und kleinen Peptiden, Fette zu Fettsäuren und Monoacylglycerinen zerlegt. Galle emulgiert Fett: Viele kleine Tröpfchen bieten Lipasen mehr Oberfläche. Galle spaltet Fett nicht enzymatisch.",
+      "Beispiel: Ein belegtes Vollkornbrot liefert Stärke, Proteine und je nach Belag Fett. Die Stärke wird vom Mund an verarbeitet, der Proteinabbau setzt im Magen ein, und viele Spaltungen laufen im Dünndarm weiter. Ballaststoffe wie Cellulose spalten menschliche Verdauungsenzyme nicht; sie beeinflussen den Darminhalt und können teilweise von Darmbakterien verwertet werden."
+    ],
+    "takeaway": "Verdauung zerlegt Stoffe schrittweise. Peristaltik bewegt den Brei und Galle macht Fetttröpfchen für Enzyme besser zugänglich.",
+    "keyTerms": ["Peristaltik", "Amylase", "Pepsin", "Lipase", "Galle", "Ballaststoffe"],
+    "sourceIds": ["isb"],
+    "quiz": {
+      "question": "Warum erleichtert Galle den Fettabbau?",
+      "answer": "Kleine Fetttröpfchen vergrößern die Oberfläche für Lipasen.",
+      "wrong": [
+        "Galle spaltet Fettmoleküle selbst zu Aminosäuren.",
+        "Galle transportiert große Fetttröpfchen unverändert ins Blut."
+      ],
+      "explanation": "Emulgieren verändert die Verteilung der Tröpfchen; Lipasen spalten Bindungen."
+    },
+    "workshop": {
+      "kind": "timeline",
+      "title": "Der Weg des Nahrungsbreis",
+      "instruction": "Ordne die Stationen einer Mahlzeit von der Aufnahme bis zum weiteren Abbau im Dünndarm.",
+      "categories": [],
+      "entries": [
+        {
+          "text": "Im Mund wird zerkleinert; Speichelamylase beginnt den Stärkeabbau.",
+          "target": 0,
+          "feedback": "Zerkleinern vergrößert die Kontaktfläche."
+        },
+        {
+          "text": "Die Speiseröhre transportiert durch Peristaltik.",
+          "target": 1,
+          "feedback": "Muskelwellen bewegen den Bissen auch unabhängig von der Schwerkraft."
+        },
+        {
+          "text": "Im Magen wirkt Pepsin im sauren Brei.",
+          "target": 2,
+          "feedback": "Dort beginnt der enzymatische Proteinabbau."
+        },
+        {
+          "text": "Im Dünndarm wirken weitere Enzyme und Galle erleichtert den Fettabbau.",
+          "target": 3,
+          "feedback": "Die Produkte stehen danach für die Resorption zur Verfügung."
+        }
+      ],
+      "conclusion": "Der Nahrungsbrei fließt nicht durch Leber oder Bauchspeicheldrüse. Ihre Sekrete gelangen in den Dünndarm."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Verfolge die Stärke und das Protein eines belegten Brots vom Mund bis zum Dünndarm. Nenne jeweils ein beteiligtes Enzym und aufnehmbare Endprodukte.",
+        "hints": ["Wo beginnt jeweils der Abbau?", "Welche kleineren Teilchen bleiben übrig?"],
+        "model": "Amylase beginnt im Mund, Stärke zu kleineren Zuckern zu spalten. Weitere Enzyme im Dünndarm liefern Einfachzucker. Protein wird im Magen von Pepsin zu Peptiden gespalten. Im Dünndarm entstehen daraus Aminosäuren und kleine Peptide, die aufgenommen werden können.",
+        "criteria": [
+          "Ich ordne beide Startorte richtig zu.",
+          "Ich nenne geeignete Enzyme.",
+          "Ich nenne resorbierbare Produkte."
+        ]
+      },
+      "2": {
+        "prompt": "In zwei Modellansätzen liegen gleich viel Fett und Lipase vor, aber nur ein Ansatz enthält eine Emulsion aus kleinen Tröpfchen. Was erwartest du bei sonst gleichen Bedingungen? Entwirf eine zusätzliche Kontrolle.",
+        "hints": [
+          "Wo kommt Lipase mit Fett in Kontakt?",
+          "Was würde ein Ansatz ohne Lipase zeigen?"
+        ],
+        "model": "Die vielen kleinen Tropfen bieten eine größere Gesamtoberfläche. Deshalb erwarte ich zu Beginn schnellere Spaltung im emulgierten Ansatz. Ein emulgierter Ansatz ohne Lipase zeigt, ob Emulgieren allein messbare Spaltprodukte erzeugt; eine solche Wirkung wird bei bloßer Emulgierung nicht erwartet.",
+        "criteria": [
+          "Ich begründe die Vorhersage mit Oberfläche.",
+          "Ich trenne Emulgieren und chemisches Spalten.",
+          "Ich entwerfe eine passende Kontrolle."
+        ]
+      }
+    }
+  },
+  {
+    "id": "resorption",
+    "lb": 4,
+    "title": "Resorption im Dünndarm",
+    "period": "Einführungsklasse · Lernbereich 4",
+    "intro": "Du erklärst, warum Darmzotten die Aufnahme erleichtern und wohin die Nährstoffe gelangen.",
+    "paragraphs": [
+      "Resorption heißt Aufnahme aus dem Darminneren durch die Darmwand. Falten und Darmzotten vergrößern die Fläche; Mikrovilli sind winzige Ausstülpungen einzelner Darmzellen und vergrößern sie weiter. Das dünne Epithel und nahe Blutkapillaren halten die Wege kurz. Der Abtransport hilft, Konzentrationsunterschiede aufrechtzuerhalten.",
+      "Passiver Transport folgt einem Gefälle, teils mithilfe eines Transportproteins. Aktiver Transport kann einen Stoff gegen sein Gefälle bewegen und benötigt direkt oder indirekt Energie. Glucose kann zum Beispiel vom Natriumgefälle mit in die Darmzelle genommen werden. Eine energieabhängige Pumpe erhält das Natriumgefälle. Glucose und Aminosäuren gelangen überwiegend in Blutkapillaren.",
+      "Beispiel: Viele langkettige Fettspaltprodukte werden in Darmzellen wieder zu Fetten zusammengesetzt und verpackt. Diese Pakete gelangen zunächst in die Lymphgefäße der Zotten und erst später ins Blut. Wenn Zotten abgeflacht sind, sinkt die verfügbare Aufnahmefläche auch dann, wenn die Verdauungsenzyme weiterhin arbeiten."
+    ],
+    "takeaway": "Verdauung macht Teilchen aufnehmbar. Oberfläche, kurze Wege, Transportproteine und Abtransport ermöglichen die Resorption.",
+    "keyTerms": [
+      "Resorption",
+      "Darmzotte",
+      "Mikrovillus",
+      "Kapillare",
+      "Diffusion",
+      "Carrier",
+      "Lymphgefäß"
+    ],
+    "sourceIds": ["isb"],
+    "quiz": {
+      "question": "Wohin gelangen viele Pakete aus wieder zusammengesetzten langkettigen Fetten zuerst?",
+      "answer": "In die Lymphgefäße der Darmzotten.",
+      "wrong": [
+        "Direkt in den Magen zurück.",
+        "Wie Glucose überwiegend in die Blutkapillaren der Zotte."
+      ],
+      "explanation": "Große Fettpakete treten vor allem in die Lymphe ein. Wasserlösliche Stoffe wie Glucose nehmen meist den Blutweg."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Was trägt zur Aufnahme bei?",
+      "instruction": "Ordne jede Beobachtung dem passenden Begriff zu.",
+      "categories": [
+        "Oberflächenvergrößerung",
+        "Passiver Transport",
+        "Aktiver Transport",
+        "Lymphweg"
+      ],
+      "entries": [
+        {
+          "text": "Viele Mikrovilli ragen in den Darminhalt.",
+          "target": 0,
+          "feedback": "Sie vergrößern die Kontaktfläche."
+        },
+        {
+          "text": "Ein Stoff bewegt sich ohne zusätzlichen Energieaufwand mit seinem Gefälle.",
+          "target": 1,
+          "feedback": "Das ist passiver Transport."
+        },
+        {
+          "text": "Glucose kann mithilfe des Natriumgefälles gegen ihr eigenes Gefälle aufgenommen werden.",
+          "target": 2,
+          "feedback": "Die Energie stammt indirekt aus dem aufrechterhaltenen Natriumgefälle."
+        },
+        {
+          "text": "Große Fettpakete verlassen die Zotten zunächst in einem anderen Gefäß als Glucose.",
+          "target": 3,
+          "feedback": "Viele solcher Fettpakete gelangen zuerst in die Lymphe."
+        }
+      ],
+      "conclusion": "Im Blut und in der Lymphe treffen die Wege später wieder zusammen."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre anhand der Struktur einer Darmzotte, warum kleine Zucker gut aufgenommen und abtransportiert werden können.",
+        "hints": [
+          "Welche Strukturen vergrößern die Kontaktfläche?",
+          "Wie weit muss ein Zucker nach dem Epithel bis zum Blut gelangen?"
+        ],
+        "model": "Zotten und Mikrovilli vergrößern die Fläche zum Darminhalt. Das dünne Epithel hält den Weg zu den nahen Kapillaren kurz. Transportproteine können Zucker über Zellmembranen bewegen; das Blut trägt den aufgenommenen Zucker ab.",
+        "criteria": [
+          "Ich nenne Zotten und Mikrovilli.",
+          "Ich erkläre kurze Wege.",
+          "Ich nenne Transport und Abtransport."
+        ]
+      },
+      "2": {
+        "prompt": "In einem Modell werden Darmzotten flach, während die Menge an Verdauungsenzymen gleich bleibt. Welche Messwerte für Spaltprodukte im Darminneren und im Blut erwartest du bei sonst gleichen Bedingungen?",
+        "hints": ["Was bleibt an der Zerlegung gleich?", "Was ändert sich an der Aufnahmefläche?"],
+        "model": "Der enzymatische Abbau kann zunächst ähnlich viele Spaltprodukte erzeugen. Wegen der kleineren Oberfläche können im gleichen Zeitraum weniger Produkte ins Blut gelangen; im Darminneren können dadurch mehr verbleiben. Eine Messung auf beiden Seiten trennt Abbau und Aufnahme.",
+        "criteria": [
+          "Ich trenne Verdauung und Resorption.",
+          "Ich leite die Änderung aus der Oberfläche ab.",
+          "Ich sage für beide Messorte eine Richtung voraus."
+        ]
+      }
+    }
+  },
+  {
+    "id": "gasaustausch",
+    "lb": 4,
+    "title": "Gasaustausch durch Diffusion",
+    "period": "Einführungsklasse · Lernbereich 4",
+    "intro": "Du erklärst, wie Bau und Durchblutung den Gasaustausch in der Lunge ermöglichen.",
+    "paragraphs": [
+      "Diffusion entsteht aus der ungeordneten Bewegung von Teilchen. Insgesamt bewegt sich mehr von der Seite mit höherer zur Seite mit niedrigerer Konzentration. Bei Gasen beschreibt ein Unterschied im Partialdruck die treibende Kraft genauer. In der Lunge gelangt Sauerstoff aus der Luft der Lungenbläschen ins Blut; Kohlenstoffdioxid gelangt in Gegenrichtung.",
+      "Viele Lungenbläschen schaffen eine große Oberfläche. Die dünne Trennschicht zwischen Luft und Kapillarblut verkürzt die Diffusionsstrecke. Belüftung und Blutstrom erhalten die Unterschiede. In Geweben wird Sauerstoff verbraucht; dort geht er aus dem Blut zu den Zellen. Bei der Zellatmung gebildetes Kohlenstoffdioxid bewegt sich in Gegenrichtung.",
+      "Beispiel: Verdoppelt sich in einem einfachen Modell nur die Diffusionsstrecke, sinkt der Nettofluss. Mehr Austauschfläche kann ihn bei gleichem Gefälle erhöhen. Eine Flüssigkeitsschicht zwischen Luft und Blut behindert deshalb den Austausch, obwohl sich die Atembewegungen zunächst nicht geändert haben."
+    ],
+    "takeaway": "Große Fläche, kurze Strecke und ein aufrechterhaltenes Gefälle begünstigen Diffusion.",
+    "keyTerms": ["Diffusion", "Partialdruck", "Lungenbläschen", "Diffusionsstrecke", "Kapillare"],
+    "sourceIds": ["isb", "b10"],
+    "quiz": {
+      "question": "Welche Veränderung fördert den Austausch bei gleicher Diffusionsstrecke und gleichem Gefälle?",
+      "answer": "Eine größere verfügbare Austauschfläche.",
+      "wrong": [
+        "Eine kleinere verfügbare Austauschfläche.",
+        "Weniger Kontakt der Alveolen mit Kapillaren."
+      ],
+      "explanation": "Über eine größere Fläche können mehr Teilchen gleichzeitig diffundieren."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Was wird am Austausch verändert?",
+      "instruction": "Ordne jede Veränderung dem wichtigsten betroffenen Faktor zu.",
+      "categories": ["Austauschfläche", "Diffusionsstrecke", "Gefälle", "Richtung im Gewebe"],
+      "entries": [
+        {
+          "text": "Mehr Lungenbläschen stehen für den Austausch zur Verfügung.",
+          "target": 0,
+          "feedback": "Viele Bläschen bieten in Summe eine große Oberfläche."
+        },
+        {
+          "text": "Eine Flüssigkeitsschicht macht den Weg zwischen Luft und Blut länger.",
+          "target": 1,
+          "feedback": "Der längere Weg erschwert die Diffusion."
+        },
+        {
+          "text": "Frischluft und sauerstoffärmeres Blut werden ständig nachgeliefert.",
+          "target": 2,
+          "feedback": "Belüftung und Durchblutung halten den Unterschied aufrecht."
+        },
+        {
+          "text": "Arbeitende Muskelzellen verbrauchen Sauerstoff; dieser gelangt aus dem Blut in das Gewebe.",
+          "target": 3,
+          "feedback": "Das Verbrauchsgefälle zeigt vom Blut zur Zelle."
+        }
+      ],
+      "conclusion": "Für Sauerstoff und Kohlenstoffdioxid wirken jeweils eigene Gefälle."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre die Richtung von Sauerstoff und Kohlenstoffdioxid an einem Lungenbläschen und nenne zwei bauliche Vorteile.",
+        "hints": [
+          "Wo ist jeweils der Partialdruck höher?",
+          "Welche Strukturen verkürzen den Weg oder schaffen mehr Fläche?"
+        ],
+        "model": "Sauerstoff diffundiert aus der Alveolenluft ins sauerstoffärmere Blut; Kohlenstoffdioxid aus dem Blut in die Alveole. Viele Lungenbläschen vergrößern die Fläche, und dünne Wände von Alveole und Kapillare halten den Weg kurz.",
+        "criteria": [
+          "Ich gebe beide Richtungen richtig an.",
+          "Ich erkläre sie durch Unterschiede.",
+          "Ich nenne große Fläche und kurze Strecke."
+        ]
+      },
+      "2": {
+        "prompt": "Zwei gleich stark belüftete Modelle unterscheiden sich: In A steht nur die halbe Austauschfläche zur Verfügung, in B verdoppelt sich die Diffusionsstrecke. Erkläre die Wirkung und nenne eine Grenze der Vorhersage für einen Menschen.",
+        "hints": [
+          "Was ändert sich jeweils am Weg der Teilchen?",
+          "Welche weiteren Einflüsse vernachlässigt das Modell?"
+        ],
+        "model": "Beide Änderungen senken bei unverändertem Gefälle den Austausch: In A steht weniger Fläche zur Verfügung, in B müssen Teilchen einen längeren Weg überwinden. Beim Menschen ändern sich auch Belüftung, Durchblutung und Gefälle, daher folgt aus dem einfachen Modell keine genaue Vorhersage der Sauerstoffversorgung.",
+        "criteria": [
+          "Ich begründe A über die Fläche.",
+          "Ich begründe B über die Strecke.",
+          "Ich nenne mindestens eine Modellgrenze."
+        ]
+      }
+    },
+    "model": "diffusion"
+  },
+  {
+    "id": "herz-und-kreislauf",
+    "lb": 4,
+    "title": "Lungen- und Körperkreislauf",
+    "period": "Einführungsklasse · Lernbereich 4",
+    "intro": "Du verfolgst Blut und Atemgase durch die beiden Kreisläufe.",
+    "paragraphs": [
+      "Die rechte Herzhälfte pumpt Blut über die Lungenarterien zur Lunge; über die Lungenvenen kehrt es zur linken Herzhälfte zurück. Die linke Herzhälfte pumpt über die Aorta in den Körper. Von den Körpergeweben fließt das Blut über Venen zum rechten Herzen. Herzklappen begrenzen den Rückfluss. Arterien führen vom Herzen weg, Venen zu ihm hin.",
+      "In den Lungenkapillaren nimmt Blut Sauerstoff auf. Der größte Teil bindet an Hämoglobin in roten Blutkörperchen. In den Geweben kann Hämoglobin Sauerstoff wieder abgeben. Ein großer Teil des Kohlenstoffdioxids wird in Form von Hydrogencarbonat transportiert; in der Lunge wird daraus wieder Kohlenstoffdioxid, das abgeatmet wird.",
+      "Beispiel: Von einem Beinmuskel aus gelangt sauerstoffärmeres Blut über Körpervenen zum rechten Herzen und von dort durch eine Arterie zur Lunge. Diese Arterie ist trotz sauerstoffärmeren Blutes eine Arterie. Im Lungenkreislauf unterscheidet sich der Sauerstoffgehalt in Arterie und Vene also umgekehrt zum Körperkreislauf."
+    ],
+    "takeaway": "Arterie und Vene bezeichnen die Flussrichtung relativ zum Herzen. Kapillaren sind die wichtigsten Orte des Austauschs.",
+    "keyTerms": [
+      "rechter Ventrikel",
+      "linker Ventrikel",
+      "Herzklappe",
+      "Lungenkreislauf",
+      "Körperkreislauf",
+      "Hämoglobin"
+    ],
+    "sourceIds": ["isb", "b10"],
+    "quiz": {
+      "question": "Warum heißt ein sauerstoffärmeres Gefäß vom rechten Herzen zur Lunge Lungenarterie?",
+      "answer": "Es führt Blut vom Herzen weg.",
+      "wrong": [
+        "Es muss immer sauerstoffreiches Blut führen.",
+        "Es bringt Blut von der Lunge zurück zum Herzen."
+      ],
+      "explanation": "Arterien heißen nach der Flussrichtung. Die Lungenarterie führt Blut aus der rechten Herzkammer."
+    },
+    "workshop": {
+      "kind": "timeline",
+      "title": "Einmal durch beide Kreisläufe",
+      "instruction": "Ordne die Stationen ab der rechten Herzkammer.",
+      "categories": [],
+      "entries": [
+        {
+          "text": "Rechte Herzkammer → Lungenarterie.",
+          "target": 0,
+          "feedback": "Die rechte Herzkammer pumpt zur Lunge."
+        },
+        {
+          "text": "Lungenkapillaren → Lungenvene.",
+          "target": 1,
+          "feedback": "Blut nimmt Sauerstoff auf und fließt zum linken Herzen."
+        },
+        {
+          "text": "Linke Herzkammer → Aorta → Körperkapillaren.",
+          "target": 2,
+          "feedback": "Die linke Kammer pumpt Blut zu den Geweben."
+        },
+        {
+          "text": "Körpervenen → rechter Vorhof.",
+          "target": 3,
+          "feedback": "Das Blut kehrt zur rechten Herzhälfte zurück."
+        }
+      ],
+      "conclusion": "Die beiden Kreisläufe sind hintereinandergeschaltet. Durch die Kapillaren tauschen sie Stoffe mit Lunge und Gewebe aus."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Verfolge ein Sauerstoffteilchen von der Lunge bis zur Muskelzelle. Nenne den Weg durch das Herz und das Transportprotein.",
+        "hints": [
+          "In welches Gefäß fließt sauerstoffreiches Blut aus der Lunge?",
+          "Wie gelangt der Sauerstoff vom Blut zur Muskelzelle?"
+        ],
+        "model": "Sauerstoff diffundiert in die Lungenkapillare und bindet überwiegend an Hämoglobin. Das Blut fließt über Lungenvenen zum linken Herzen, dann durch Aorta und Körperarterien zu den Muskelkapillaren. Dort wird Sauerstoff abgegeben und diffundiert zu den Zellen.",
+        "criteria": [
+          "Ich nenne Lungenvene und linkes Herz.",
+          "Ich nenne Hämoglobin.",
+          "Ich erkläre Abgabe in den Körperkapillaren."
+        ]
+      },
+      "2": {
+        "prompt": "Eine Skizze färbt alle Arterien rot und alle Venen blau und erklärt die Farben mit viel oder wenig Sauerstoff. Korrigiere die Skizze und begründe deine Korrektur.",
+        "hints": [
+          "Welche Blutseite verlässt die rechte Herzkammer?",
+          "Was ändert sich in den Lungenkapillaren?"
+        ],
+        "model": "Im Körperkreislauf passt die Einfärbung häufig; im Lungenkreislauf muss die Lungenarterie als sauerstoffärmer und die Lungenvene als sauerstoffreicher dargestellt werden. Dazwischen nimmt das Blut in der Lunge Sauerstoff auf. Gefäßnamen richten sich nach Flussrichtung, die Farben der Skizze nach Sauerstoffgehalt.",
+        "criteria": [
+          "Ich korrigiere beide Lungengefäße.",
+          "Ich begründe den Wechsel durch Gasaustausch.",
+          "Ich trenne Gefäßname und Farbcode."
+        ]
+      }
+    },
+    "model": "kreislauf"
+  },
+  {
+    "id": "zellatmung-und-atp",
+    "lb": 4,
+    "title": "Zellatmung und der ATP–ADP-Kreislauf",
+    "period": "Einführungsklasse · Lernbereich 4",
+    "intro": "Du unterscheidest den Abbau eines Energieträgers vom Übertragen von Energie auf Zellarbeit.",
+    "paragraphs": [
+      "Bei der aeroben Zellatmung wird Glucose oxidiert, Sauerstoff reduziert. Die Gesamtbilanz lautet: Glucose + Sauerstoff → Kohlenstoffdioxid + Wasser. Die exotherme Redoxreaktion gibt Energie frei. Ein Teil steht für den Aufbau von ATP zur Verfügung; ein Teil wird als Wärme abgegeben. Mitochondrien sind bei Eukaryoten der Hauptort der aeroben ATP-Bereitstellung.",
+      "ATP (Adenosintriphosphat) ist ein mobiler und universeller Energieträger in der Zelle. Die gekoppelte Umsetzung von ATP mit Wasser zu ADP und anorganischem Phosphat kann Zellarbeit antreiben, zum Beispiel Bewegung oder aktiven Stofftransport. Unter Energieaufwand baut die Zelle aus ADP und Phosphat wieder ATP auf. Die beiden Richtungen sind an unterschiedliche Vorgänge gekoppelt.",
+      "Beispiel: Ein arbeitender Muskel setzt fortlaufend ATP um. Ein ständig erneuerter kleiner ATP-Vorrat überträgt Energie von abbauenden Reaktionen auf die Bewegung. ATP ersetzt weder die Aufnahme von Glucose und Sauerstoff noch speichert es Energie dauerhaft wie ein Vorratsstoff."
+    ],
+    "takeaway": "Zellatmung liefert Energie für die ATP-Bildung. ATP überträgt sie bei seiner Umsetzung auf energiebedürftige Zellvorgänge.",
+    "keyTerms": [
+      "aerobe Zellatmung",
+      "Redoxreaktion",
+      "exotherm",
+      "ATP",
+      "ADP",
+      "energetische Kopplung"
+    ],
+    "sourceIds": ["isb", "b10"],
+    "quiz": {
+      "question": "Welche Umwandlung kann die Energie für eine Bewegung bereitstellen?",
+      "answer": "ATP wird unter Wasserverbrauch zu ADP und Phosphat umgesetzt.",
+      "wrong": [
+        "ADP wird ohne Energieaufwand zu ATP aufgebaut.",
+        "ATP entsteht aus Kohlenstoffdioxid als Produkt der Bewegung."
+      ],
+      "explanation": "ATP-Hydrolyse kann an Zellarbeit gekoppelt werden. ATP-Neubildung braucht ihrerseits Energie."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Stoff oder Energieübertragung?",
+      "instruction": "Ordne die Vorgänge ihrem Platz in der Bilanz zu.",
+      "categories": [
+        "Ausgangsstoffe der Zellatmung",
+        "Produkte der Zellatmung",
+        "ATP-Neubildung",
+        "ATP-Nutzung"
+      ],
+      "entries": [
+        {
+          "text": "Glucose wird oxidiert; Sauerstoff nimmt Elektronen auf.",
+          "target": 0,
+          "feedback": "Glucose und Sauerstoff gehen in die Gesamtreaktion ein."
+        },
+        {
+          "text": "Kohlenstoffdioxid und Wasser entstehen.",
+          "target": 1,
+          "feedback": "Das sind die Stoffprodukte der Gesamtbilanz."
+        },
+        {
+          "text": "ADP und Phosphat werden unter Energieaufwand verbunden.",
+          "target": 2,
+          "feedback": "Das baut einen kurzfristigen Energieträger wieder auf."
+        },
+        {
+          "text": "Eine Muskelzelle koppelt ATP-Hydrolyse an Bewegung.",
+          "target": 3,
+          "feedback": "Die Umsetzung von ATP treibt Zellarbeit an."
+        }
+      ],
+      "conclusion": "Das ATP–ADP-System ist ein Kreislauf. Energie muss dafür fortlaufend bereitgestellt werden."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre, was mit Glucose und Sauerstoff bei aerober Zellatmung geschieht und warum die Muskelzelle zusätzlich ATP benötigt.",
+        "hints": ["Welche Stoffe entstehen?", "Wie wird Energie an Zellarbeit weitergegeben?"],
+        "model": "Glucose wird oxidiert und Sauerstoff reduziert; es entstehen Kohlenstoffdioxid und Wasser. Ein Teil der frei werdenden Energie ermöglicht ATP-Bildung aus ADP und Phosphat. Die Zelle koppelt die Umsetzung des ATP an Muskelarbeit und kann ADP wiederverwenden.",
+        "criteria": [
+          "Ich nenne Ausgangs- und Endstoffe.",
+          "Ich erkläre den Aufbau von ATP.",
+          "Ich erkläre die Nutzung und Erneuerung."
+        ]
+      },
+      "2": {
+        "prompt": "Eine Modellzelle besitzt acht ATP-Einheiten. In jedem Zeitschritt werden fünf für Arbeit umgesetzt, aber nur drei neu gebildet. Wie viele ATP-Einheiten bleiben nach zwei Schritten? Deute, was für dauerhafte Leistung nötig wäre.",
+        "hints": [
+          "Wie groß ist die Nettoänderung pro Schritt?",
+          "Welche Rate muss im Mittel steigen oder sinken?"
+        ],
+        "model": "Pro Schritt fehlen zwei Einheiten: Nach zwei Schritten bleiben vier. Auf Dauer muss die ATP-Neubildung im Mittel mindestens der Nutzung entsprechen oder die Nutzung sinken. Die Zahlen zeigen eine Bilanz des Modells, keine tatsächliche ATP-Ausbeute der Zellatmung.",
+        "criteria": [
+          "Ich berechne netto −2 je Schritt.",
+          "Ich komme auf vier ATP-Einheiten.",
+          "Ich erkläre die notwendige Ratenbilanz."
+        ]
+      }
+    },
+    "model": "atp"
+  },
+  {
+    "id": "photosynthese-vergleichen",
+    "lb": 4,
+    "title": "Photosynthese und Zellatmung vergleichen",
+    "period": "Einführungsklasse · Lernbereich 4",
+    "intro": "Du stellst die Gesamtbilanzen gegenüber und verfolgst Stoffe und Energie getrennt.",
+    "paragraphs": [
+      "Bei der Photosynthese nutzen grüne Pflanzen Lichtenergie in Chloroplasten. Aus Kohlenstoffdioxid und Wasser entstehen in der vereinfachten Gesamtbilanz Glucose und Sauerstoff. Die Lichtenergie wird in chemische Energie organischer Stoffe überführt. Der freigesetzte Sauerstoff stammt aus Wasser. Das lässt sich mit einer Markierung zeigen: Wird nur das Wasser mit schwerem Sauerstoff markiert, erscheint die Markierung im freigesetzten Sauerstoff.",
+      "Bei der aeroben Zellatmung reagiert Glucose mit Sauerstoff. Es entstehen Kohlenstoffdioxid und Wasser. Frei werdende Energie steht teilweise für ATP-Bildung zur Verfügung und wird teilweise als Wärme abgegeben. Die Gesamtgleichungen lassen sich auf der Stoffebene gegenüberstellen; die Vorgänge laufen über unterschiedliche Wege und sind keine bloße Umkehr desselben Ablaufs.",
+      "Vereinfachte Nettogleichung der Photosynthese: 6 CO₂ + 6 H₂O → C₆H₁₂O₆ + 6 O₂. Die Gesamtgleichung der aeroben Zellatmung lautet: C₆H₁₂O₆ + 6 O₂ → 6 CO₂ + 6 H₂O. In der Nettogleichung der Photosynthese wird auf beiden Seiten anfallendes Wasser verrechnet; der Sauerstoff-Ursprung lässt sich aus der Gleichung allein nicht ablesen.",
+      "Beispiel: Eine grüne Pflanze atmet auch im Dunkeln. Im Licht laufen Photosynthese und Zellatmung gleichzeitig. Gibt das Blatt netto Sauerstoff ab, erzeugt die Photosynthese mehr Sauerstoff, als durch Zellatmung verbraucht wird. Netto null bedeutet deshalb nicht automatisch, dass keiner der Prozesse läuft."
+    ],
+    "takeaway": "Photosynthese baut mit Lichtenergie organische Stoffe auf. Zellatmung baut Glucose ab und stellt Energie für ATP-Bildung bereit.",
+    "keyTerms": [
+      "Photosynthese",
+      "Chloroplast",
+      "Zellatmung",
+      "Stoffbilanz",
+      "Energiebilanz",
+      "Netto-Gasaustausch"
+    ],
+    "sourceIds": ["isb"],
+    "quiz": {
+      "question": "Was folgt aus einer Netto-Sauerstoffabgabe eines beleuchteten Blatts im vereinfachten Modell?",
+      "answer": "Es entsteht durch Photosynthese mehr Sauerstoff, als durch Zellatmung verbraucht wird.",
+      "wrong": [
+        "Im Licht stellt das Blatt seine Zellatmung grundsätzlich ein.",
+        "Das Blatt betreibt nur Zellatmung und keine Photosynthese."
+      ],
+      "explanation": "Netto ist die Differenz der beiden Raten. Zellatmung kann gleichzeitig weiterlaufen."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Zwei Bilanzen",
+      "instruction": "Ordne die Aussagen dem richtigen Prozess oder der Deutung zu.",
+      "categories": ["Photosynthese", "Zellatmung", "Netto-Deutung", "Falsche Folgerung"],
+      "entries": [
+        {
+          "text": "Lichtenergie ermöglicht den Aufbau von Glucose.",
+          "target": 0,
+          "feedback": "Dabei entsteht chemisch gebundene Energie in organischen Stoffen."
+        },
+        {
+          "text": "Glucose und Sauerstoff werden verbraucht; ATP kann erneuert werden.",
+          "target": 1,
+          "feedback": "Aerobe Zellatmung setzt Energie für ATP-Bildung frei."
+        },
+        {
+          "text": "Die Sauerstoffabgabe des Blatts ist die Differenz von Bildung und Verbrauch.",
+          "target": 2,
+          "feedback": "Beide Prozesse können gleichzeitig laufen."
+        },
+        {
+          "text": "Die Prozesse verwenden genau dieselben Reaktionsschritte rückwärts.",
+          "target": 3,
+          "feedback": "Die Gesamtbilanzen ähneln einer Umkehr; die Reaktionswege unterscheiden sich."
+        }
+      ],
+      "conclusion": "Eine Stoffbilanz verrät weder den Reaktionsweg noch allein die Herkunft einzelner Atome."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Nenne Ausgangs- und Endstoffe beider Prozesse und erläutere je eine Energieumwandlung.",
+        "hints": [
+          "Welche Stoffe sind auf der jeweils anderen Seite der Bilanz?",
+          "Woher kommt die Energie beim Aufbau?"
+        ],
+        "model": "Photosynthese bildet aus Kohlenstoffdioxid und Wasser mithilfe von Licht Glucose und Sauerstoff. Dabei geht Lichtenergie in chemische Energie über. Bei der Zellatmung werden Glucose und Sauerstoff zu Kohlenstoffdioxid und Wasser umgesetzt; ein Teil der freigesetzten Energie ermöglicht ATP-Bildung.",
+        "criteria": [
+          "Ich ordne die Stoffe beider Bilanzen richtig zu.",
+          "Ich erkläre den Energieeintrag durch Licht.",
+          "Ich erkläre die ATP-Bildung als Nutzung freigesetzter Energie."
+        ]
+      },
+      "2": {
+        "prompt": "Ein Modellblatt gibt im Dunkeln Kohlenstoffdioxid ab. Bei schwacher Beleuchtung ist netto keine Änderung messbar. Was kann daraus über Photosynthese und Zellatmung gefolgert werden?",
+        "hints": [
+          "Welcher Vorgang läuft ohne Licht weiter?",
+          "Welche beiden Raten können sich ausgleichen?"
+        ],
+        "model": "Im Dunkeln setzt die Zellatmung Kohlenstoffdioxid frei. Bei schwachem Licht kann Photosynthese ebenso viel Kohlenstoffdioxid aufnehmen, wie Zellatmung freisetzt. Netto null ist dann ein Gleichgewicht der Raten und kein Beleg dafür, dass beide Vorgänge ruhen.",
+        "criteria": [
+          "Ich deute die Dunkelmessung.",
+          "Ich erkläre den möglichen Ausgleich im Licht.",
+          "Ich unterscheide Netto-Bilanz und Einzelprozesse."
+        ]
+      }
+    }
+  }
+]
