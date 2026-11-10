@@ -849,7 +849,9 @@ describe("Labore der Etappe 4", () => {
     });
     expect(violated.erfuellt).toBe(false);
     expect(SACH_START_X).toBe(2);
-  });
+    // The grid search takes about 2 s locally and exceeded vitest's 5 s
+    // default on CI runners (Pages run 42868479537), which blocked the deploy.
+  }, 30_000);
 
   it("integrate the linear rate as the trapezoid the readout claims", () => {
     for (const values of enumerateLabGrid(labOf("aw-5-anwendungen"), 6)) {
