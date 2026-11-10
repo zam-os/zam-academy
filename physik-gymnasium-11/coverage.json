@@ -1,0 +1,324 @@
+{
+  "schema": 1,
+  "checked": "2026-11-10",
+  "curriculum": "https://www.lehrplanplus.bayern.de/fachlehrplan/gymnasium/11/physik",
+  "curriculum_sha256": "8865c7fbcb22958178a6bbef3f070e636163be498b821805271234714a8863d4",
+  "school_type": "gymnasium",
+  "grade": 11,
+  "subject": "physik",
+  "tracks": {
+    "alle": "alle Ausbildungsrichtungen (Lernbereiche 1 bis 3)",
+    "NTG": "Naturwissenschaftlich-technologisches Gymnasium (zusätzlich Lernbereich 4, Profilbereich)"
+  },
+  "core_lessons": 34,
+  "optional_lessons": [],
+  "scope_note": "Ein Fachlehrplan für alle Ausbildungsrichtungen; Lernbereich 4 gilt nur für das NTG. Die Kompetenzerwartungen stehen wortgleich wie auf der direkt abgerufenen Seite (kein Archiv). Echte Schülerexperimente, Recherche, arbeitsteilige Gruppenarbeit, Präsentationen, Planspiele und die außerunterrichtliche Aktivität finden im Unterricht statt; das Paket erklärt sie, liefert Modelle und übt das Auswerten und Begründen. Solche Zeilen tragen den Status „supported“. Lernbereich 4.4 ist eine Vorschlagsliste; umgesetzt sind Jahrmarkt und Computermodellierung, Akustik und Datenübertragung mit Licht nicht. Videos folgen als separater Schritt.",
+  "rows": [
+    {
+      "lb": 1,
+      "section": "1",
+      "track": "alle",
+      "competence": "übertragen durch Analogiebetrachtungen Größen zur Beschreibung geradliniger Bewegungen auf die Kreisbewegung. Sie erklären das Zustandekommen von Kreisbewegungen und grenzen die Zentripetalkraft von der Zentrifugalkraft ab.",
+      "lessons": ["kb-groessen", "kb-zentripetalkraft"],
+      "status": "implemented",
+      "evidence": "kb-groessen: Werkstatt ordnet φ, ω, T und f den Größen der geradlinigen Bewegung zu, Modell circular stellt beide nebeneinander. kb-zentripetalkraft: Trägheitssatz und Kraft zur Mitte, Werkstatt und Level-2-Aufgabe trennen Zentripetalkraft und Scheinkraft nach Bezugssystem."
+    },
+    {
+      "lb": 1,
+      "section": "1",
+      "track": "alle",
+      "competence": "formulieren ausgehend von Alltagserfahrungen und physikalischen Vorkenntnissen Hypothesen zur Abhängigkeit der Zentripetalkraft von verschiedenen Größen. Sie leiten mithilfe geometrischer Überlegungen zur Kreisbewegung einen Term für die Berechnung der Zentripetalkraft her. Zur Überprüfung dieses Ausdrucks planen sie selbständig geeignete Experimente, führen sie vorzugsweise unter Zuhilfenahme von elektronischen Sensoren durch und werten die erhaltenen Daten selbständig aus. Sie reflektieren den Erkenntnisweg, insbesondere die Relevanz des Experiments für das Überprüfen von Hypothesen, sowie das grundlegende Funktionsprinzip des verwendeten Sensors und die Genauigkeit der Ergebnisse.",
+      "lessons": ["kb-zentripetalkraft", "kb-experiment"],
+      "status": "supported",
+      "evidence": "Herleitung über Δv ≈ v · Δφ in kb-zentripetalkraft. kb-experiment: Hypothesen, Planung mit einer variierten Größe, Kraftsensor (Dehnungsmessstreifen), Auswertung F über ω², Reflexion; Modell centriexp liefert nachgebildete Messreihen. Das echte Experiment gehört in den Unterricht; das Versuchsnotizbuch hält es fest."
+    },
+    {
+      "lb": 1,
+      "section": "1",
+      "track": "alle",
+      "competence": "führen quantitative Betrachtungen zu Kreisbewegungen in Alltag und Technik durch, wobei sie jeweils die Kraft identifizieren, die als Zentripetalkraft wirkt. Auf der Grundlage recherchierter, abgeschätzter und berechneter Werte bewerten sie u. a. kritische Situationen im Straßenverkehr und diskutieren mögliche Sicherheitsvorkehrungen. Sie stellen ihre Ergebnisse in Form einer adressatenbezogenen Stellungnahme dar.",
+      "lessons": ["kb-verkehr"],
+      "status": "implemented",
+      "evidence": "Werkstatt identifiziert die Zentripetalkraft in fünf Situationen; Modell curve und beide Aufgabenstufen rechnen Kurvenfahrten; die Level-2-Schreibaufgabe verlangt eine Stellungnahme für eine Elternversammlung. Eigene Recherche bleibt Aufgabe des Unterrichts."
+    },
+    {
+      "lb": 1,
+      "section": "1",
+      "track": "alle",
+      "competence": "modellieren mithilfe des Gravitationsgesetzes die Bewegung von Himmelskörpern und Satelliten als Kreisbewegung.",
+      "lessons": ["kb-gravitation", "kb-satelliten"],
+      "status": "implemented",
+      "evidence": "kb-gravitation: Gravitationsgesetz, 1/r²-Abhängigkeit, Ortsfaktor. kb-satelliten: Ansatz Gravitation als Zentripetalkraft, Bahngeschwindigkeit, Umlaufdauer, Massenbestimmung; Modell orbit, Modellgrenzen genannt."
+    },
+    {
+      "lb": 2,
+      "section": "2",
+      "track": "alle",
+      "competence": "beschreiben und interpretieren Diagramme zu verschiedenen schwingungsfähigen Systemen, u. a. zum Federpendel, anhand ihrer charakteristischen Größen.",
+      "lessons": ["sw-schwingung", "sw-federpendel"],
+      "status": "implemented",
+      "evidence": "sw-schwingung: Amplitude, Periodendauer, Frequenz, Dämpfung am Zeit-Auslenkung-Diagramm (Modell oscillation, Werkstatt, beide Schreibaufgaben). sw-federpendel: Zeit-Auslenkung- und Zeit-Geschwindigkeit-Diagramm, Energie, T = 2π · √(m / D)."
+    },
+    {
+      "lb": 2,
+      "section": "2",
+      "track": "alle",
+      "competence": "formulieren für die Schwingung eines Fadenpendels Hypothesen über die Abhängigkeit der Schwingungsdauer von anderen Größen. Zur Überprüfung dieser Hypothesen führen sie ein selbständig geplantes Experiment durch und verifizieren insbesondere den näherungsweise quadratischen Zusammenhang zwischen Periodendauer und Pendellänge mithilfe einer graphischen Auswertung. Sie benennen Ursachen für Messunsicherheiten sowie Möglichkeiten der Minimierung dieser Unsicherheiten und quantifizieren die Messunsicherheit einer mehrfach gemessenen Größe unter Verwendung geeigneter statistischer Kenngrößen.",
+      "lessons": ["sw-fadenpendel", "sw-messunsicherheit"],
+      "status": "supported",
+      "evidence": "sw-fadenpendel: Hypothesen zu l, m und Amplitude, T²-l-Auswertung (Modell pendulum mit T²/l-Tabelle, Level-1-Schreibaufgabe). sw-messunsicherheit: zufällige und systematische Abweichungen, Mittelwert, halbe Spannweite, Standardabweichung, Zehn-Schwingungen-Methode (Modell uncertainty). Das echte Experiment gehört in den Unterricht."
+    },
+    {
+      "lb": 2,
+      "section": "2",
+      "track": "alle",
+      "competence": "identifizieren Longitudinal- und Transversalwellen in Alltagsbeispielen. Sie beschreiben die Ausbreitung mechanischer Wellen mithilfe eines geeigneten Modells und nutzen digitale Medien zur Veranschaulichung.",
+      "lessons": ["sw-wellen"],
+      "status": "implemented",
+      "evidence": "Werkstatt ordnet fünf Alltagsbeispiele; Modell gekoppelter Oszillatoren im Text; Modell wave zeigt Momentbild und c = λ · f für gleichen und anderen Träger."
+    },
+    {
+      "lb": 2,
+      "section": "2",
+      "track": "alle",
+      "competence": "erkennen Beugung und Interferenz als typische Wellenphänomene. Sie argumentieren zur Erklärung von Alltagsphänomenen und experimentellen Beobachtungen zur Interferenz mechanischer Wellen mit dem Superpositionsprinzip. Insbesondere begründen sie das Zustandekommen von konstruktiver und destruktiver Interferenz bei zwei Wellenzentren mit dem Gangunterschied.",
+      "lessons": ["sw-superposition", "sw-interferenz", "sw-stehende-wellen"],
+      "status": "implemented",
+      "evidence": "sw-superposition: Beugung, Huygens, Superposition (Modell superposition). sw-interferenz: Gangunterschied und beide Bedingungen (Modell interference, Aufgaben). sw-stehende-wellen: stehende Wellen aus den Inhalten zu den Kompetenzen (Modell standing)."
+    },
+    {
+      "lb": 2,
+      "section": "2",
+      "track": "alle",
+      "competence": "untersuchen monochromatisches Licht am Doppelspalt, interpretieren das Schirmbild qualitativ mithilfe des Wellenmodells und formulieren einen Zusammenhang zwischen Farbe und Wellenlänge des Lichts.",
+      "lessons": ["sw-doppelspalt"],
+      "status": "implemented",
+      "evidence": "Schirmbild und seine Deutung über Gangunterschiede; Modell doubleslit vergleicht Rot, Grün und Blau; Rechenaufgaben nur zu c = λ · f, keine Doppelspaltformel (qualitativ laut Lehrplan)."
+    },
+    {
+      "lb": 2,
+      "section": "2",
+      "track": "alle",
+      "competence": "vergleichen das Photonen- und das Wellenmodell des Lichts, insbesondere unter dem Aspekt ihrer jeweiligen Anwendbarkeit.",
+      "lessons": ["sw-lichtmodelle"],
+      "status": "implemented",
+      "evidence": "Werkstatt ordnet fünf Beobachtungen den Modellen zu; beide Schreibaufgaben vergleichen Anwendungsbereiche und Grenzen; Photonenmodell als Wiederholung aus Ph9."
+    },
+    {
+      "lb": 3,
+      "section": "3.1",
+      "track": "alle",
+      "competence": "reflektieren Auswirkungen bedeutsamer Beobachtungen und physikalischer Theorien auf die Entwicklung des astronomischen Weltbilds in historischen und gesellschaftlichen Zusammenhängen. Hierfür verwenden sie physikalische und historische Kenntnisse, die sie sich selbständig aus verschiedenen Quellen erschließen.",
+      "lessons": ["ew-weltbilder", "ew-kepler"],
+      "status": "supported",
+      "evidence": "ew-weltbilder: Zeitleiste von Ptolemäus bis Bessel, Reflexionsaufgabe zu Galilei. ew-kepler: die drei Gesetze mit Modell kepler. Das selbständige Erschließen aus Quellen findet im Unterricht statt; die Lektionen verlinken Quellen."
+    },
+    {
+      "lb": 3,
+      "section": "3.1",
+      "track": "alle",
+      "competence": "vergleichen zu ausgewählten Aspekten des modernen astronomischen Weltbildes jeweils die Inhalte einer vorgegebenen Quelle mit Rechercheergebnissen im Internet. Sie bereiten ihre Ergebnisse unter Verwendung geeigneter Darstellungen zu einer adressatengerechten Präsentation auf.",
+      "lessons": ["ew-universum"],
+      "status": "supported",
+      "evidence": "Expansion, Urknall, Struktur und Objekte des Universums; Modell hubble; Level-2-Schreibaufgabe vergleicht drei Quellen mit unterschiedlichen Werten für H₀ nach Prüfkriterien. Recherche und Präsentation bleiben Aufgabe des Unterrichts."
+    },
+    {
+      "lb": 3,
+      "section": "3.2",
+      "track": "alle",
+      "competence": "stellen wesentliche Aussagen der speziellen Relativitätstheorie auch quantitativ dar, indem sie anhand vorgegebener Fachtexte und digitaler Lernumgebungen Gedankenexperimente nachvollziehen und sachgerecht wiedergeben. Dabei identifizieren sie in Schlussfolgerungen aus den Einstein’schen Postulaten eine Struktur physikalischer Argumentationsketten und erkennen die Verifizierung von Vorhersagen einer Theorie als eine Funktion von Experimenten.",
+      "lessons": ["ew-postulate", "ew-zeitdilatation", "ew-laengenkontraktion"],
+      "status": "implemented",
+      "evidence": "ew-postulate: Postulate, Bezugssysteme, Gleichzeitigkeit; Werkstatt ordnet die Argumentationskette. ew-zeitdilatation: Lichtuhr, γ, Rechenaufgaben. ew-laengenkontraktion: Längenkontraktion und Myonenexperiment als Verifizierung einer Vorhersage (Modell muon, Level-2-Schreibaufgabe)."
+    },
+    {
+      "lb": 3,
+      "section": "3.2",
+      "track": "alle",
+      "competence": "erläutern den begrenzten Gültigkeitsbereich der klassischen Mechanik exemplarisch anhand der veränderten Vorstellung von Raum und Zeit.",
+      "lessons": ["ew-zeitdilatation", "ew-laengenkontraktion"],
+      "status": "implemented",
+      "evidence": "Level-2-Schreibaufgabe in ew-zeitdilatation schätzt die 1-%-Grenze ab; Werkstatt in ew-laengenkontraktion ordnet fünf Situationen klassisch oder relativistisch; Modell lorentz zeigt γ ≈ 1 bei kleinen Geschwindigkeiten."
+    },
+    {
+      "lb": 3,
+      "section": "3.2",
+      "track": "alle",
+      "competence": "diskutieren u. a. am Beispiel der „Deutschen Physik“, wie sich gesellschaftliche und politische Entwicklungen auf die Wahrnehmung und Akzeptanz physikalischer Erkenntnisse auswirken.",
+      "lessons": ["ew-deutsche-physik"],
+      "status": "implemented",
+      "evidence": "Darstellung der Bewegung um Lenard und Stark, Werkstatt trennt Sachargumente von anderen, Level-2-Schreibaufgabe diskutiert Akzeptanz und Prüffragen für heute."
+    },
+    {
+      "lb": 3,
+      "section": "3.3",
+      "track": "alle",
+      "competence": "erläutern den Unterschied zwischen reversiblen und irreversiblen Vorgängen anhand eines selbst gewählten Beispiels und verdeutlichen, dass irreversible Vorgänge mit einer Energieentwertung verbunden sind. Sie ziehen daraus qualitative Schlussfolgerungen über Beschränkungen des Wirkungsgrades.",
+      "lessons": ["ew-energieentwertung"],
+      "status": "implemented",
+      "evidence": "Level-1-Schreibaufgabe verlangt ein selbst gewähltes Beispiel; Werkstatt ordnet fünf Vorgänge; Modell chain und Level-2-Aufgabe zeigen die Beschränkung des Wirkungsgrades."
+    },
+    {
+      "lb": 3,
+      "section": "3.3",
+      "track": "alle",
+      "competence": "nehmen zu gesellschaftlich relevanten Fragen der Energieversorgung Stellung. Hierfür nutzen sie naturwissenschaftliche Daten, die sie nach vorgegebener Problemstellung berechnen oder aus unterschiedlichen Quellen selbständig recherchieren, und wägen im Rahmen einer Nutzwertanalyse Kriterien wie Wirkungsgrad, Ressourcenknappheit oder Auswirkungen auf die Umwelt gegeneinander ab. Sie entwickeln, z. B. im Rahmen eines Planspiels, eigene Positionen und begründen diese sachlich gegenüber Diskussionspartnern. Sie sind sich der Bedeutung der naturwissenschaftlichen Arbeitsweise für die Objektivierung der Energiedebatte bewusst.",
+      "lessons": ["ew-energieversorgung", "ew-energiesparen"],
+      "status": "supported",
+      "evidence": "ew-energieversorgung: Energiequellen, zentrale Fragen, Nutzwertanalyse (Modell utility, Level-1-Schreibaufgabe rechnet eine durch, Level 2 entwickelt eine eigene Position), Daten und Wertung getrennt. ew-energiesparen: Einsparpotentiale und Effizienz im eigenen Alltag. Recherche aktueller Daten und Planspiel gehören in den Unterricht; amtliche Quellen sind verlinkt."
+    },
+    {
+      "lb": 4,
+      "section": "4.1",
+      "track": "NTG",
+      "competence": "erklären, dass Bewegungen unter dem Einfluss nichtkonstanter Kräfte näherungsweise beschrieben werden können, indem eine Zerlegung in kurze Zeitabschnitte betrachtet wird, in denen die jeweilige Kraft als konstant angenommen wird.",
+      "lessons": ["nt-kleine-schritte"],
+      "status": "implemented",
+      "evidence": "Erklärung, Werkstatt ordnet die Teilschritte, Modell euler zeigt die Tabelle Schritt für Schritt, Level-1-Schreibaufgabe verlangt die Erklärung."
+    },
+    {
+      "lb": 4,
+      "section": "4.1",
+      "track": "NTG",
+      "competence": "führen die Methode der kleinen Schritte unter Zuhilfenahme einer geeigneten Software für verschiedene Bewegungsabläufe selbständig durch. Sie interpretieren die hierbei gewonnenen Zeit‑Weg‑, Zeit‑Geschwindigkeit‑ und Zeit‑Beschleunigung-Diagramme, diskutieren die Güte dieser Methode und vergleichen Ergebnisse einer Simulation mit dem entsprechenden Realexperiment.",
+      "lessons": ["nt-kleine-schritte", "nt-luftwiderstand", "nt-schwingung-simulieren"],
+      "status": "supported",
+      "evidence": "Modelle airfall und eulerosc rechnen freien Fall mit Luftwiderstand und harmonische Schwingung mit wählbarem Zeitschritt; Werkstatt deutet die drei Diagramme; Level-2-Schreibaufgabe diskutiert Güte und Vergleich mit Videoanalyse. Das eigene Rechnen in einer Tabellenkalkulation und das Realexperiment gehören in den Unterricht."
+    },
+    {
+      "lb": 4,
+      "section": "4.1",
+      "track": "NTG",
+      "competence": "gewinnen Erkenntnisse über das Verhalten eines physikalischen Systems durch Untersuchung der Abhängigkeit der Ergebnisse seiner Simulation von den gewählten Parametern, z. B. Abhängigkeiten der Schwingungsdauer einer Federschwingung.",
+      "lessons": ["nt-schwingung-simulieren"],
+      "status": "implemented",
+      "evidence": "Modell eulerosc mit Vergleichen für vierfache Masse und Viertel der Federhärte; Werkstatt und Level-1-Schreibaufgabe zur Parameteruntersuchung."
+    },
+    {
+      "lb": 4,
+      "section": "4.1",
+      "track": "NTG",
+      "competence": "erläutern die Relevanz der Methode der kleinen Schritte in unterschiedlichen aktuellen Forschungsgebieten oder im Ingenieurwesen und erkennen dabei die Bedeutung der Physik für andere Wissenschaften.",
+      "lessons": ["nt-schwingung-simulieren"],
+      "status": "implemented",
+      "evidence": "Dritter Absatz nennt Wetter- und Klimamodelle, Crashtests, Raumsonden, Medizin und Astronomie; Level-2-Schreibaufgabe erläutert ein Beispiel mit Grenzen."
+    },
+    {
+      "lb": 4,
+      "section": "4.2",
+      "track": "NTG",
+      "competence": "untersuchen experimentell die U‑I‑Kennlinie einer Solarzelle in Abhängigkeit von der Bestrahlungsstärke und ermitteln den Maximum‑Power‑Point. Sie erkennen die Untersuchung der physikalischen Eigenschaften eines Objekts als eine Funktion physikalischer Experimente.",
+      "lessons": ["nt-kennlinie"],
+      "status": "supported",
+      "evidence": "Kennlinie, Leerlauf, Kurzschluss, MPP; Modell solar mit Lastwiderstand und Bestrahlungsstärke; Level-1-Schreibaufgabe wertet eine Messreihe aus, Level 2 plant das Experiment. Das echte Experiment gehört in den Unterricht."
+    },
+    {
+      "lb": 4,
+      "section": "4.2",
+      "track": "NTG",
+      "competence": "erläutern die grundlegende Funktionsweise und die Bedeutung technischer Komponenten in Photovoltaikanlagen.",
+      "lessons": ["nt-pv-anlage"],
+      "status": "implemented",
+      "evidence": "Modul, Wechselrichter, MPP-Tracker, Speicher; Werkstatt ordnet Aufgaben den Komponenten zu; Level-1-Schreibaufgabe erläutert den Energieweg."
+    },
+    {
+      "lb": 4,
+      "section": "4.2",
+      "track": "NTG",
+      "competence": "bewerten den Nutzen photovoltaischer Anlagen, indem sie eigene experimentelle Ergebnisse sowie Informationen aus Sachtexten, Tabellen und Diagrammen verwenden. Sie führen hierbei Abschätzungen und Berechnungen durch und beziehen außerfachliche Aspekte (z. B. ökologische, ökonomische, gesellschaftliche) ein.",
+      "lessons": ["nt-pv-anlage"],
+      "status": "supported",
+      "evidence": "Modell pvplant und beide Aufgabenstufen schätzen Ertrag und Amortisation ab; Level-2-Schreibaufgabe bewertet mit ökologischem und ökonomischem Aspekt. Eigene experimentelle Ergebnisse bringt der Unterricht ein."
+    },
+    {
+      "lb": 4,
+      "section": "4.3",
+      "track": "NTG",
+      "competence": "entnehmen einer Diskussion oder einem Vortrag bzw. einer Veröffentlichung wesentliche fachliche Inhalte, Argumentationsmuster und Interessenlagen des Sprechers bzw. Autors.",
+      "lessons": ["nt-aktivitaet"],
+      "status": "supported",
+      "evidence": "Werkstatt zerlegt Notizen aus einem Vortrag in Inhalt, Argumentationsmuster und Interessenlage; Level-1-Schreibaufgabe wendet das auf einen eigenen Vortrag oder Artikel an. Die außerunterrichtliche Aktivität selbst ersetzt das Paket nicht."
+    },
+    {
+      "lb": 4,
+      "section": "4.3",
+      "track": "NTG",
+      "competence": "reflektieren im Rahmen eines gesellschaftlich kontrovers diskutierten Themas Bewertungen, die sie Veröffentlichungen oder Diskussionen entnehmen, hinsichtlich der Güte des durchgeführten Bewertungsprozesses und der Korrektheit verwendeter physikalischer Belege.",
+      "lessons": ["nt-aktivitaet"],
+      "status": "supported",
+      "evidence": "Zweiter Absatz nennt die Prüffragen zur Güte einer Bewertung; Schnellcheck prüft ein Einzelbeispiel als Argument. An die Aktivität im Unterricht gebunden."
+    },
+    {
+      "lb": 4,
+      "section": "4.3",
+      "track": "NTG",
+      "competence": "reflektieren die Verantwortung der naturwissenschaftlichen Forschungsgemeinschaft und des einzelnen Naturwissenschaftlers für Gesellschaft und Politik.",
+      "lessons": ["nt-aktivitaet"],
+      "status": "supported",
+      "evidence": "Dritter Absatz benennt die Verantwortung (Grenzen ehrlich darstellen, Interessenkonflikte offenlegen, auf Risiken hinweisen). Die Reflexion selbst geschieht an der Aktivität im Unterricht; ew-deutsche-physik liefert ein historisches Beispiel."
+    },
+    {
+      "lb": 4,
+      "section": "4.3",
+      "track": "NTG",
+      "competence": "formulieren in Bezug auf ein gesellschaftlich kontrovers diskutiertes Thema eine physikalisch fundierte Stellungnahme zu einer Diskussion, Präsentation oder Veröffentlichung.",
+      "lessons": ["nt-aktivitaet"],
+      "status": "implemented",
+      "evidence": "Aufbau einer Stellungnahme im Text; Level-2-Schreibaufgabe verlangt eine Stellungnahme zum Tempolimit mit Abschätzung über den Luftwiderstand."
+    },
+    {
+      "lb": 4,
+      "section": "4.3",
+      "track": "NTG",
+      "competence": "präsentieren fachliche Informationen oder Forschungsergebnisse sach- und adressatengerecht unter Verwendung geeignet gewählter Darstellungsformen und Medien.",
+      "lessons": ["nt-aktivitaet"],
+      "status": "supported",
+      "evidence": "Der Text nennt passende Darstellungsformen (Diagramm, Tabelle, Skizze). Das Präsentieren selbst findet im Unterricht statt."
+    },
+    {
+      "lb": 4,
+      "section": "4.3",
+      "track": "NTG",
+      "competence": "extrahieren z. B. aus Ausstellungen, Veröffentlichungen oder Vorträgen unterschiedliche Wege naturwissenschaftlicher Erkenntnisgewinnung und stellen Vergleiche an.",
+      "lessons": ["nt-aktivitaet"],
+      "status": "supported",
+      "evidence": "Der Text nennt Experiment, systematische Beobachtung, Modellbildung und Simulation als Erkenntniswege. Der Vergleich an einer Ausstellung oder einem Vortrag gehört zur Aktivität im Unterricht."
+    },
+    {
+      "lb": 4,
+      "section": "4.3",
+      "track": "NTG",
+      "competence": "führen einen Prozess der physikalischen Erkenntnisgewinnung an einem Beispiel selbst durch und interpretieren die Relevanz ihrer Ergebnisse z. B. für ihren Alltag oder die Wissenschaft.",
+      "lessons": ["nt-aktivitaet", "nt-jahrmarkt"],
+      "status": "supported",
+      "evidence": "nt-jahrmarkt plant eine hypothesengeleitete Untersuchung am Fahrgeschäft (Level-1-Schreibaufgabe). Die Durchführung, etwa als Forschungsprojekt, liegt außerhalb des Pakets."
+    },
+    {
+      "lb": 4,
+      "section": "4.4",
+      "track": "NTG",
+      "competence": "führen selbständig hypothesengeleitet experimentelle Untersuchungen zu Alltagssituationen durch. Bei der Messwerterfassung, zur Auswertung und zur Darstellung ihrer Ergebnisse verwenden sie zielgerichtet auch digitale Werkzeuge. Sie ziehen Schlussfolgerungen aus den Resultaten ihrer Untersuchungen.",
+      "lessons": ["nt-jahrmarkt"],
+      "status": "supported",
+      "evidence": "Auswahlthema Physik auf dem Jahrmarkt: Hypothese, Messung mit Smartphone-Sensor und Stoppuhr, Auswertung; Modell ride und Rechenaufgaben. Die Untersuchung selbst findet vor Ort statt."
+    },
+    {
+      "lb": 4,
+      "section": "4.4",
+      "track": "NTG",
+      "competence": "vertiefen physikalische Modellvorstellungen unter Einbeziehung moderner Forschungsergebnisse. Sie nutzen Modellierungen insbesondere in technischen Kontexten und reflektieren sowohl die Leistungsfähigkeit als auch die Gültigkeitsgrenzen dieser Modelle.",
+      "lessons": ["nt-chaos"],
+      "status": "implemented",
+      "evidence": "Auswahlthema Computermodellierung: schwache und starke Kausalität, chaotische Systeme, Ensemblevorhersage; Modell chaos; Level-2-Schreibaufgabe reflektiert Leistungsfähigkeit und Grenzen der Wettersimulation."
+    },
+    {
+      "lb": 4,
+      "section": "4.4",
+      "track": "NTG",
+      "competence": "erörtern Gesundheitsrisiken und Sicherheitsfragen in Alltagskontexten sowie bei der Nutzung digitaler Technologien (z. B. digitale Kommunikation) und entwickeln auf Grundlage ihrer physikalischen Kenntnisse und außerphysikalischer Gesichtspunkte Handlungsoptionen für ihre eigene Lebensgestaltung.",
+      "lessons": ["nt-jahrmarkt"],
+      "status": "implemented",
+      "evidence": "Beschleunigungen als Vielfache von g, Wirkung auf den Körper, Bauform von Loopings und Sicherheitsbestimmungen; Level-2-Schreibaufgabe erörtert sie. Risiken digitaler Technologien sind nicht Gegenstand einer Lektion (offene Lücke)."
+    }
+  ]
+}
