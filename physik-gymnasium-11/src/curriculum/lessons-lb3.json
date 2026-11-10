@@ -1,0 +1,542 @@
+[
+  {
+    "id": "ew-weltbilder",
+    "lb": 3,
+    "title": "Vom geozentrischen zum heliozentrischen Weltbild",
+    "period": "Ph11 · Lernbereich 3.1 · alle Ausbildungsrichtungen",
+    "intro": "Fast 1500 Jahre stand die Erde im Mittelpunkt. Beobachtungen haben das geändert.",
+    "tracks": ["NTG", "ANDERE"],
+    "paragraphs": [
+      "Im geozentrischen Weltbild ruht die Erde im Mittelpunkt; Sonne, Mond, Planeten und Sterne umkreisen sie. Aristoteles begründete es philosophisch, Ptolemäus machte daraus um 150 n. Chr. ein Rechenmodell. Um die zeitweise rückläufige Bewegung der Planeten am Himmel zu beschreiben, brauchte es Hilfskreise (Epizykel). Das Modell passte zur Alltagserfahrung, sagte Planetenpositionen brauchbar voraus und wurde von der Kirche gestützt.",
+      "1543 veröffentlichte Nikolaus Kopernikus ein heliozentrisches Modell: Die Sonne steht im Mittelpunkt, die Erde ist ein Planet und dreht sich täglich um ihre Achse. Beispiel: Die Schleife, die Mars am Himmel zieht, erklärt sich nun einfach als Überholvorgang der schnelleren Erde. Genauer als Ptolemäus war das Modell zunächst nicht, weil Kopernikus an Kreisbahnen festhielt. Erst Johannes Kepler fand ab 1609 mit den präzisen Messungen Tycho Brahes, dass die Bahnen Ellipsen sind.",
+      "Galileo Galilei richtete ab 1609 ein Fernrohr an den Himmel. Er sah vier Monde, die Jupiter umkreisen, und die Phasen der Venus: Nicht alles kreist um die Erde. 1633 zwang ihn die Inquisition zum Widerruf. Isaac Newton zeigte 1687, dass ein einziges Gravitationsgesetz den Fall eines Apfels und die Planetenbahnen erklärt. Den letzten fehlenden Beleg, die winzige jährliche Verschiebung der Sternpositionen (Parallaxe), maß Friedrich Wilhelm Bessel erst 1838. Ein Weltbild ändert sich also nicht an einem Tag: Beobachtungen, bessere Instrumente, Theorien und die Gesellschaft wirken zusammen."
+    ],
+    "takeaway": "Beobachtungen (Brahe, Galilei) und Theorien (Kopernikus, Kepler, Newton) lösten das geozentrische durch das heliozentrische Weltbild ab.",
+    "formulas": ["geozentrisch: Erde im Mittelpunkt (Ptolemäus)", "heliozentrisch: Sonne im Mittelpunkt (Kopernikus 1543)", "Belege: Jupitermonde, Venusphasen, Parallaxe"],
+    "sourceIds": ["lp", "astro-history"],
+    "quiz": {
+      "question": "Welche Beobachtung Galileis widersprach der Vorstellung, dass alle Himmelskörper die Erde umkreisen?",
+      "answer": "Vier Monde umkreisen den Jupiter.",
+      "wrong": [
+        "Die Sonne geht im Osten auf und im Westen unter.",
+        "Die Sterne stehen jede Nacht in denselben Sternbildern."
+      ],
+      "explanation": "Die Jupitermonde zeigen ein zweites Zentrum von Umlaufbewegungen. Sonnenlauf und Sternbilder erklären beide Weltbilder."
+    },
+    "workshop": {
+      "kind": "timeline",
+      "title": "Der Wandel des Weltbilds",
+      "instruction": "Bringe die Stationen in die zeitliche Reihenfolge.",
+      "categories": [],
+      "entries": [
+        { "text": "Ptolemäus beschreibt die Planetenbewegung geozentrisch mit Epizykeln", "target": 0, "feedback": "Um 150 n. Chr.; das Modell galt rund 1400 Jahre." },
+        { "text": "Kopernikus veröffentlicht sein heliozentrisches Modell", "target": 1, "feedback": "1543, im Jahr seines Todes." },
+        { "text": "Tycho Brahe misst Planetenpositionen mit bis dahin unerreichter Genauigkeit", "target": 2, "feedback": "Zweite Hälfte des 16. Jahrhunderts, noch ohne Fernrohr." },
+        { "text": "Kepler veröffentlicht die Ellipsenbahnen, Galilei beobachtet die Jupitermonde", "target": 3, "feedback": "1609 und 1610." },
+        { "text": "Newton erklärt die Bahnen mit dem Gravitationsgesetz", "target": 4, "feedback": "1687 in den „Principia“." },
+        { "text": "Bessel misst erstmals eine Fixsternparallaxe", "target": 5, "feedback": "1838: der direkte Nachweis der Erdbewegung." }
+      ],
+      "conclusion": "Zwischen der Idee und dem letzten Beleg lagen fast 300 Jahre."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erläutere, warum das geozentrische Weltbild so lange Bestand hatte, und nenne zwei Beobachtungen, die schließlich für das heliozentrische Weltbild sprachen.",
+        "hints": ["Alltagserfahrung, Vorhersagen und Autoritäten bedenken", "Galileis Fernrohrbeobachtungen"],
+        "model": "Das geozentrische Weltbild passte zur Alltagserfahrung, denn die Erde scheint zu ruhen. Es sagte Planetenpositionen brauchbar voraus und wurde von Kirche und Gelehrten gestützt. Für das heliozentrische Weltbild sprachen die Jupitermonde, die nicht um die Erde kreisen, und die Phasen der Venus, die nur bei einem Umlauf um die Sonne so zu sehen sind.",
+        "criteria": ["Mindestens zwei Gründe für den Bestand", "Zwei passende Beobachtungen", "Beobachtung und Deutung getrennt"]
+      },
+      "2": {
+        "prompt": "Reflektiere am Beispiel Galileis, wie gesellschaftliche Bedingungen die Durchsetzung einer physikalischen Erkenntnis beeinflussen. Stelle dabei heraus, was eine Beobachtung leisten kann und was nicht.",
+        "hints": ["Rolle der Kirche und des Buchdrucks", "Die Parallaxe fehlte damals noch"],
+        "model": "Galileis Beobachtungen widersprachen dem geozentrischen Weltbild, das eng mit der kirchlichen Lehre verbunden war. Die Inquisition erzwang 1633 seinen Widerruf; die Erkenntnis ließ sich dadurch aber nicht aufhalten, auch weil gedruckte Schriften sie verbreiteten. Zugleich waren Zweifel damals nicht nur Glaubenssache: Die erwartete Sternparallaxe war noch nicht messbar. Beobachtungen können ein Modell stützen oder erschüttern; durchsetzen muss es sich in der Diskussion der Fachleute und der Gesellschaft.",
+        "criteria": ["Gesellschaftlicher Einfluss benannt", "Fehlenden Beleg berücksichtigt", "Rolle von Beobachtungen reflektiert"]
+      }
+    }
+  },
+  {
+    "id": "ew-kepler",
+    "lb": 3,
+    "title": "Die Kepler’schen Gesetze",
+    "period": "Ph11 · Lernbereich 3.1 · alle Ausbildungsrichtungen",
+    "intro": "Drei Gesetze ordnen die Bewegung aller Planeten.",
+    "tracks": ["NTG", "ANDERE"],
+    "paragraphs": [
+      "Johannes Kepler fand aus Tycho Brahes Messungen drei Gesetze. Erstes Gesetz: Die Planeten bewegen sich auf Ellipsen, in deren einem Brennpunkt die Sonne steht. Der sonnennächste Punkt heißt Perihel, der sonnenfernste Aphel. Die große Halbachse a ist der halbe längste Durchmesser der Ellipse; für die Erde beträgt sie eine Astronomische Einheit (1 AE ≈ 149,6 Millionen km).",
+      "Zweites Gesetz: Die Verbindungslinie Sonne–Planet überstreicht in gleichen Zeiten gleiche Flächen. Daraus folgt: In Sonnennähe ist der Planet schneller als in Sonnenferne. Drittes Gesetz: Die Quadrate der Umlaufdauern zweier Planeten verhalten sich wie die dritten Potenzen ihrer großen Halbachsen, T₁² / T₂² = a₁³ / a₂³. Für alle Körper, die dieselbe Sonne umlaufen, hat T² / a³ also denselben Wert.",
+      "Rechnest du in Jahren und Astronomischen Einheiten, ist dieser Wert 1 a²/AE³. Beispiel: Mars hat a = 1,52 AE. T = √(1,52³) a ≈ 1,87 a. Für Kreisbahnen folgt das dritte Gesetz aus dem Gravitationsgesetz: T² / r³ = 4π² / (G · M). Kepler beschrieb, wie sich die Planeten bewegen; Newton erklärte, warum."
+    ],
+    "takeaway": "Ellipsenbahnen mit der Sonne im Brennpunkt, gleiche Flächen in gleichen Zeiten und T² / a³ = konstant.",
+    "formulas": ["1. Gesetz: Ellipse, Sonne im Brennpunkt", "2. Gesetz: gleiche Zeiten, gleiche Flächen", "3. Gesetz: T₁² / T₂² = a₁³ / a₂³"],
+    "sourceIds": ["lp", "kepler", "satellites"],
+    "quiz": {
+      "question": "Wo auf seiner Bahn ist ein Planet nach dem zweiten Kepler’schen Gesetz am schnellsten?",
+      "answer": "Im Perihel, dem sonnennächsten Punkt.",
+      "wrong": ["Im Aphel, dem sonnenfernsten Punkt.", "Überall gleich schnell."],
+      "explanation": "Damit die überstrichene Fläche gleich bleibt, muss der Planet bei kleinem Abstand einen längeren Bahnbogen zurücklegen."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Welches Gesetz?",
+      "instruction": "Ordne jede Aussage dem Kepler’schen Gesetz zu, aus dem sie folgt.",
+      "categories": ["1. Gesetz", "2. Gesetz", "3. Gesetz"],
+      "entries": [
+        { "text": "Der Abstand eines Planeten von der Sonne ändert sich im Lauf eines Umlaufs.", "target": 0, "feedback": "Auf einer Ellipse ist der Abstand zum Brennpunkt nicht konstant." },
+        { "text": "Die Erde ist Anfang Januar etwas schneller als Anfang Juli.", "target": 1, "feedback": "Im Januar steht sie der Sonne am nächsten." },
+        { "text": "Jupiter braucht für einen Umlauf fast zwölf Jahre.", "target": 2, "feedback": "Große Halbachse 5,2 AE ergibt T ≈ 11,9 a." },
+        { "text": "Ein Komet verbringt die meiste Zeit weit draußen im Sonnensystem.", "target": 1, "feedback": "Fern der Sonne bewegt er sich langsam." },
+        { "text": "Aus der Umlaufdauer eines Asteroiden lässt sich seine große Halbachse berechnen.", "target": 2, "feedback": "T² / a³ hat für alle Körper um die Sonne denselben Wert." }
+      ],
+      "conclusion": "Form der Bahn, Tempo auf der Bahn, Vergleich verschiedener Bahnen."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Saturn hat die große Halbachse 9,58 AE. Berechne seine Umlaufdauer mit dem dritten Kepler’schen Gesetz und erkläre, warum du dazu die Sonnenmasse nicht brauchst.",
+        "hints": ["In Jahren und AE gilt T² = a³", "Die Erde dient als Vergleich"],
+        "model": "T = √(9,58³) a = √879 a ≈ 29,7 a. Das dritte Gesetz vergleicht zwei Körper, die dieselbe Sonne umlaufen. Nimmt man die Erde mit T = 1 a und a = 1 AE als Vergleich, steckt die Sonnenmasse bereits in diesem Wertepaar.",
+        "criteria": ["Rechnung in a und AE", "Umlaufdauer etwa 29,7 Jahre", "Vergleichsprinzip erklärt"]
+      },
+      "2": {
+        "prompt": "Der Halley’sche Komet hat die Umlaufdauer 76 Jahre; im Perihel ist er nur 0,59 AE von der Sonne entfernt. Bestimme die große Halbachse und den Abstand im Aphel und beschreibe seine Geschwindigkeit entlang der Bahn.",
+        "hints": ["a = ∛(T²)", "Perihel + Aphel = 2a"],
+        "model": "a = ∛(76²) AE = ∛5776 AE ≈ 17,9 AE. Die gesamte Länge der Ellipse ist 2a ≈ 35,9 AE, der Aphelabstand also 35,9 AE − 0,59 AE ≈ 35,3 AE, weiter draußen als Neptun. Nach dem zweiten Gesetz ist der Komet in Sonnennähe sehr schnell und weit draußen sehr langsam; deshalb ist er nur wenige Monate gut zu sehen.",
+        "criteria": ["Große Halbachse richtig", "Aphel über 2a bestimmt", "Zweites Gesetz angewendet"]
+      }
+    },
+    "model": "kepler",
+    "calculation": "kepler"
+  },
+  {
+    "id": "ew-universum",
+    "lb": 3,
+    "title": "Das moderne astronomische Weltbild",
+    "period": "Ph11 · Lernbereich 3.1 · alle Ausbildungsrichtungen",
+    "intro": "Auch die Sonne ist nicht der Mittelpunkt. Es gibt keinen.",
+    "tracks": ["NTG", "ANDERE"],
+    "paragraphs": [
+      "Die Sonne ist einer von einigen hundert Milliarden Sternen der Milchstraße, einer Spiralgalaxie mit etwa 100 000 Lichtjahren Durchmesser. Die Milchstraße gehört mit der Andromedagalaxie zur Lokalen Gruppe; Galaxien bilden Haufen und Superhaufen, die wie ein Netz aus Filamenten um große Leerräume angeordnet sind. Zu den Objekten im Universum zählen Planeten, Sterne, Sternhaufen, Gasnebel, Weiße Zwerge, Neutronensterne und Schwarze Löcher.",
+      "1929 stellte Edwin Hubble fest: Das Licht ferner Galaxien ist zu größeren Wellenlängen verschoben (Rotverschiebung), und zwar umso stärker, je weiter sie entfernt sind. Gedeutet wird das als Expansion des Universums: Der Raum selbst dehnt sich, die Abstände zwischen den Galaxien wachsen. Näherungsweise gilt v = H₀ · d mit der Hubble-Konstante H₀ ≈ 70 km/(s·Mpc); 1 Megaparsec (Mpc) sind etwa 3,26 Millionen Lichtjahre. Beispiel: Eine Galaxie in 100 Mpc Entfernung entfernt sich mit etwa 7000 km/s.",
+      "Rechnet man die Expansion zurück, war das Universum früher dichter und heißer. Nach dem Urknallmodell begann diese Entwicklung vor etwa 13,8 Milliarden Jahren. Eine wichtige Stütze ist die 1964 entdeckte kosmische Hintergrundstrahlung, die aus allen Richtungen nahezu gleich eintrifft. Beim Recherchieren vergleichst du Quellen: Wer schreibt, für wen, mit welchen Belegen und von wann? Zahlenwerte wie H₀ unterscheiden sich je nach Messmethode leicht; das ist offene Forschung, kein Fehler der Quelle."
+    ],
+    "takeaway": "Das Universum expandiert (v = H₀ · d) und hat sich nach dem Urknallmodell in etwa 13,8 Milliarden Jahren entwickelt; Quellen prüfst du nach Urheber, Belegen und Datum.",
+    "formulas": ["v = H₀ · d mit H₀ ≈ 70 km/(s·Mpc)", "1 Mpc ≈ 3,26 Millionen Lichtjahre", "Alter des Universums ≈ 13,8 Milliarden Jahre"],
+    "sourceIds": ["lp", "expansion"],
+    "quiz": {
+      "question": "Was bedeutet die Hubble-Beziehung v = H₀ · d?",
+      "answer": "Je weiter eine Galaxie entfernt ist, desto schneller wächst ihr Abstand zu uns.",
+      "wrong": [
+        "Alle Galaxien entfernen sich gleich schnell von der Milchstraße.",
+        "Die Milchstraße ruht im Mittelpunkt, von dem alle Galaxien wegfliegen."
+      ],
+      "explanation": "Fluchtgeschwindigkeit und Entfernung sind proportional. Weil sich der Raum überall dehnt, sähe man dasselbe von jeder anderen Galaxie aus; es gibt keinen Mittelpunkt."
+    },
+    "workshop": {
+      "kind": "timeline",
+      "title": "Größenordnungen im Universum",
+      "instruction": "Ordne die Strukturen von der kleinsten zur größten.",
+      "categories": [],
+      "entries": [
+        { "text": "Erde", "target": 0, "feedback": "Durchmesser rund 12 700 km." },
+        { "text": "Sonnensystem", "target": 1, "feedback": "Licht braucht von der Sonne bis Neptun etwa vier Stunden." },
+        { "text": "Milchstraße", "target": 2, "feedback": "Etwa 100 000 Lichtjahre Durchmesser." },
+        { "text": "Lokale Gruppe", "target": 3, "feedback": "Einige Millionen Lichtjahre, mit der Andromedagalaxie." },
+        { "text": "Superhaufen und Filamente", "target": 4, "feedback": "Hunderte Millionen Lichtjahre." },
+        { "text": "Beobachtbares Universum", "target": 5, "feedback": "Der Teil, aus dem uns bisher Licht erreichen konnte." }
+      ],
+      "conclusion": "Jede Stufe ist um viele Größenordnungen größer als die vorige."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Nenne zwei Beobachtungen, die das Urknallmodell stützen, und erkläre jeweils kurz den Zusammenhang.",
+        "hints": ["Was beobachtet man am Licht ferner Galaxien?", "Welche Strahlung kommt aus allen Richtungen?"],
+        "model": "Erstens ist das Licht ferner Galaxien umso stärker rotverschoben, je weiter sie entfernt sind. Das wird als Expansion gedeutet; zurückgerechnet war das Universum früher dichter und heißer. Zweitens trifft aus allen Richtungen nahezu gleichmäßig die kosmische Hintergrundstrahlung ein. Sie gilt als abgekühlte Strahlung aus der heißen Frühzeit des Universums.",
+        "criteria": ["Rotverschiebung und Expansion verknüpft", "Hintergrundstrahlung genannt", "Beobachtung und Deutung getrennt"]
+      },
+      "2": {
+        "prompt": "Ein Schulbuch nennt für die Hubble-Konstante 70 km/(s·Mpc), ein Blogbeitrag 67 und eine Pressemitteilung 73. Vergleiche die Quellen: Nach welchen Kriterien prüfst du sie, und wie gehst du in deiner Präsentation mit den unterschiedlichen Werten um?",
+        "hints": ["Urheber, Belege, Datum, Zielgruppe", "Unterschiedliche Messmethoden liefern leicht verschiedene Werte"],
+        "model": "Ich prüfe, wer die Quelle verfasst hat, ob sie ihre Daten belegt, wie aktuell sie ist und an wen sie sich richtet. Das Schulbuch rundet, die anderen Werte können auf verschiedenen Messmethoden beruhen. Ich suche die Originalquellen, nenne in der Präsentation den Bereich von etwa 67 bis 73 km/(s·Mpc) und gebe an, dass die Abweichung Gegenstand aktueller Forschung ist. Alle Quellen belege ich.",
+        "criteria": ["Mindestens drei Prüfkriterien", "Abweichung sachlich eingeordnet", "Quellenangabe vorgesehen"]
+      }
+    },
+    "model": "hubble",
+    "calculation": "hubble"
+  },
+  {
+    "id": "ew-postulate",
+    "lb": 3,
+    "title": "Einsteins Postulate und die Relativität der Gleichzeitigkeit",
+    "period": "Ph11 · Lernbereich 3.2 · alle Ausbildungsrichtungen",
+    "intro": "Zwei Annahmen genügen, um Raum und Zeit neu zu denken.",
+    "tracks": ["NTG", "ANDERE"],
+    "paragraphs": [
+      "Ein Bezugssystem ist ein Beobachtungsstandpunkt mit Maßstäben und Uhren. In einem Inertialsystem gilt der Trägheitssatz: Ein kräftefreier Körper ruht oder bewegt sich geradlinig gleichförmig. Ein gleichmäßig fahrender Zug und der Bahnsteig sind beide Inertialsysteme. Albert Einstein stellte 1905 zwei Postulate an den Anfang der speziellen Relativitätstheorie.",
+      "Erstes Postulat (Relativitätsprinzip): In allen Inertialsystemen gelten dieselben physikalischen Gesetze; keines ist ausgezeichnet. Zweites Postulat (Konstanz der Lichtgeschwindigkeit): Licht breitet sich im Vakuum in jedem Inertialsystem mit derselben Geschwindigkeit c ≈ 3,00 · 10⁸ m/s aus, unabhängig von der Bewegung der Quelle oder des Beobachters. Beispiel: Für einen Ball gilt bei Alltagsgeschwindigkeiten die klassische Addition. Wirft man ihn im Zug mit 10 m/s nach vorn und fährt der Zug 30 m/s, misst der Bahnsteig 40 m/s. Für Licht gilt das nicht: Beide messen c.",
+      "Daraus folgt eine Kette von Schlüssen. Gedankenexperiment: In der Mitte eines fahrenden Waggons blitzt eine Lampe auf. Für die Reisende erreicht das Licht beide Waggonenden gleichzeitig. Vom Bahnsteig aus fährt das hintere Ende dem Licht entgegen und das vordere läuft ihm davon; da das Licht in beide Richtungen mit c läuft, trifft es hinten früher ein. Ob zwei Ereignisse an verschiedenen Orten gleichzeitig sind, hängt also vom Bezugssystem ab: die Relativität der Gleichzeitigkeit."
+    ],
+    "takeaway": "Relativitätsprinzip und konstante Lichtgeschwindigkeit: Gleichzeitigkeit hängt vom Bezugssystem ab.",
+    "formulas": ["1. Postulat: gleiche Gesetze in allen Inertialsystemen", "2. Postulat: c ist in allen Inertialsystemen gleich", "c ≈ 3,00 · 10⁸ m/s"],
+    "sourceIds": ["lp", "postulates", "dilation"],
+    "quiz": {
+      "question": "Ein Raumschiff fliegt mit halber Lichtgeschwindigkeit auf dich zu und schaltet seine Scheinwerfer ein. Mit welcher Geschwindigkeit erreicht dich das Licht?",
+      "answer": "Mit c, unabhängig von der Bewegung des Raumschiffs.",
+      "wrong": [
+        "Mit 1,5 c, weil sich die Geschwindigkeiten addieren.",
+        "Mit 0,5 c, weil das Raumschiff das Licht mitnimmt."
+      ],
+      "explanation": "Nach dem zweiten Postulat hat Licht im Vakuum in jedem Inertialsystem die Geschwindigkeit c."
+    },
+    "workshop": {
+      "kind": "timeline",
+      "title": "Die Argumentationskette ordnen",
+      "instruction": "Bringe die Schritte des Gedankenexperiments in eine schlüssige Reihenfolge.",
+      "categories": [],
+      "entries": [
+        { "text": "Annahme: Licht hat in jedem Inertialsystem dieselbe Geschwindigkeit c.", "target": 0, "feedback": "Das Postulat steht am Anfang." },
+        { "text": "In der Mitte eines fahrenden Waggons blitzt eine Lampe auf.", "target": 1, "feedback": "Die Situation des Gedankenexperiments." },
+        { "text": "Im Waggon sind beide Wege gleich lang: Das Licht erreicht beide Enden gleichzeitig.", "target": 2, "feedback": "Schluss im Ruhesystem des Waggons." },
+        { "text": "Vom Bahnsteig aus fährt das hintere Ende dem Licht entgegen: Dort kommt es früher an.", "target": 3, "feedback": "Schluss im Bahnsteigsystem, wieder mit c in beide Richtungen." },
+        { "text": "Folgerung: Gleichzeitigkeit hängt vom Bezugssystem ab.", "target": 4, "feedback": "Die Aussage folgt aus Postulat und Überlegung." }
+      ],
+      "conclusion": "Postulat, Situation, Schlüsse in beiden Systemen, Folgerung: So ist eine physikalische Argumentationskette gebaut."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Gib die beiden Einstein’schen Postulate in eigenen Worten wieder und erläutere an einem Beispiel, worin das zweite der Alltagserfahrung widerspricht.",
+        "hints": ["Was gilt in allen Inertialsystemen?", "Vergleiche einen geworfenen Ball mit einem Lichtblitz"],
+        "model": "Erstens gelten in allen gleichförmig bewegten Bezugssystemen dieselben Naturgesetze; man kann durch kein Experiment feststellen, welches „wirklich“ ruht. Zweitens misst jeder Beobachter in einem solchen System für Licht im Vakuum dieselbe Geschwindigkeit c. Im Alltag addieren sich Geschwindigkeiten: Ein im Zug nach vorn geworfener Ball ist vom Bahnsteig aus schneller. Ein Lichtblitz aus dem Zug ist dagegen für beide gleich schnell.",
+        "criteria": ["Beide Postulate richtig", "Alltagsbeispiel zur Addition", "Widerspruch klar benannt"]
+      },
+      "2": {
+        "prompt": "Zwei Blitze schlagen in die Enden eines fahrenden Zuges ein. Ein Beobachter am Bahndamm, genau in der Mitte, sieht sie gleichzeitig. Begründe mit den Postulaten, was eine Reisende in der Zugmitte feststellt.",
+        "hints": ["Die Reisende bewegt sich auf einen der Einschlagorte zu", "In ihrem System läuft das Licht aus beiden Richtungen mit c"],
+        "model": "Vom Bahndamm aus fährt die Reisende dem vorderen Blitzlicht entgegen; es erreicht sie früher als das hintere. In ihrem eigenen Inertialsystem ruht sie in der Zugmitte, und das Licht kommt aus beiden Richtungen mit c über gleich lange Wege. Sie muss also schließen, dass der vordere Blitz früher eingeschlagen hat. Die Ereignisse sind für den Beobachter am Damm gleichzeitig, für die Reisende nicht.",
+        "criteria": ["Beide Bezugssysteme getrennt betrachtet", "Zweites Postulat ausdrücklich genutzt", "Relativität der Gleichzeitigkeit gefolgert"]
+      }
+    },
+    "model": "frames"
+  },
+  {
+    "id": "ew-zeitdilatation",
+    "lb": 3,
+    "title": "Zeitdilatation: Bewegte Uhren gehen langsamer",
+    "period": "Ph11 · Lernbereich 3.2 · alle Ausbildungsrichtungen",
+    "intro": "Eine Uhr aus Licht zeigt, warum die Zeit nicht für alle gleich läuft.",
+    "tracks": ["NTG", "ANDERE"],
+    "paragraphs": [
+      "Gedankenexperiment Lichtuhr: Zwischen zwei Spiegeln im Abstand l läuft ein Lichtblitz hin und her. In ihrem Ruhesystem braucht das Licht für einen Weg die Zeit Δt₀ = l / c. Bewegt sich die Uhr mit der Geschwindigkeit v quer zur Lichtrichtung an dir vorbei, legt das Licht aus deiner Sicht einen längeren, schrägen Weg zurück. Da es auch für dich mit c läuft, dauert der Weg länger: Δt > Δt₀.",
+      "Der Satz des Pythagoras liefert (c · Δt)² = l² + (v · Δt)² und daraus Δt = Δt₀ / √(1 − v² / c²) = γ · Δt₀. Der Lorentzfaktor γ ist stets mindestens 1. Δt₀ heißt Eigenzeit; sie wird von einer Uhr gemessen, die bei beiden Ereignissen am selben Ort ist. Weil nach dem Relativitätsprinzip alle Uhren gleich reagieren müssen, gilt das für jeden Vorgang: Bewegte Uhren gehen aus Sicht des Beobachters langsamer.",
+      "Beispiel: Bei v = 0,6 c ist γ = 1 / √(1 − 0,36) = 1,25. Vergehen im Raumschiff 4,0 s, misst die Erde 5,0 s. Bei einem Flugzeug mit 900 km/h weicht γ erst in der dreizehnten Stelle hinter dem Komma von 1 ab; im Alltag merkst du nichts. Experimente bestätigen die Vorhersage: Schnelle Myonen leben im Erdsystem messbar länger als ruhende. Bei den Atomuhren der Navigationssatelliten kommt ein zweiter Effekt hinzu: Die Bewegung allein lässt sie um etwa 7 µs je Tag nachgehen, die schwächere Gravitation in der Höhe lässt sie um etwa 45 µs je Tag vorgehen (allgemeine Relativitätstheorie, kein Stoff dieser Lektion). Beide Anteile werden berücksichtigt. Hier zeigt sich eine Funktion von Experimenten: Sie prüfen Vorhersagen einer Theorie."
+    ],
+    "takeaway": "Δt = γ · Δt₀ mit γ = 1 / √(1 − v² / c²): Die bewegte Uhr geht aus Sicht des Beobachters langsamer.",
+    "formulas": ["γ = 1 / √(1 − v² / c²)", "Δt = γ · Δt₀"],
+    "sourceIds": ["lp", "dilation"],
+    "quiz": {
+      "question": "Ein Raumschiff fliegt mit 0,8 c an der Erde vorbei (γ ≈ 1,67). An Bord vergeht 1 Stunde. Wie viel Zeit vergeht auf der Erde?",
+      "answer": "Etwa 1,67 Stunden.",
+      "wrong": ["Etwa 0,6 Stunden.", "Genau 1 Stunde, weil Zeit absolut ist."],
+      "explanation": "Die Borduhr misst die Eigenzeit. Die Erde misst die um den Faktor γ längere Zeit."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Eigenzeit erkennen",
+      "instruction": "Ordne zu, wer in der jeweiligen Situation die Eigenzeit Δt₀ misst.",
+      "categories": ["Beobachter im bewegten System (reist mit)", "Beobachter im Ruhesystem der Erde"],
+      "entries": [
+        { "text": "Die Astronautin misst die Zeit zwischen zwei Herzschlägen an Bord.", "target": 0, "feedback": "Beide Ereignisse finden für sie am selben Ort statt." },
+        { "text": "Die Lebensdauer eines schnellen Myons in seinem eigenen Ruhesystem.", "target": 0, "feedback": "Im Ruhesystem des Myons vergeht die Eigenzeit 2,2 µs." },
+        { "text": "Die Zeit zwischen zwei Ticks einer Uhr im Klassenzimmer, gemessen im Klassenzimmer.", "target": 1, "feedback": "Diese Uhr ruht im Erdsystem." },
+        { "text": "Die Borduhr eines Navigationssatelliten zählt ihre eigenen Sekunden.", "target": 0, "feedback": "Beide Ticks finden am Ort der Borduhr statt; sie misst ihre Eigenzeit." }
+      ],
+      "conclusion": "Die Eigenzeit misst die Uhr, die bei beiden Ereignissen dabei ist. Sie ist immer die kürzeste Zeit."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Vollziehe das Gedankenexperiment der Lichtuhr nach: Erkläre in Worten, warum eine bewegte Lichtuhr aus Sicht eines ruhenden Beobachters langsamer tickt, und berechne γ für v = 0,8 c.",
+        "hints": ["Vergleiche die Lichtwege in beiden Bezugssystemen", "γ = 1 / √(1 − 0,8²)"],
+        "model": "Im Ruhesystem der Uhr läuft das Licht senkrecht zwischen den Spiegeln. Für den Beobachter bewegt sich die Uhr seitlich, das Licht läuft schräg und damit einen längeren Weg. Weil die Lichtgeschwindigkeit für ihn dieselbe ist, braucht das Licht länger: Die Uhr tickt langsamer. γ = 1 / √(1 − 0,64) = 1 / 0,6 ≈ 1,67.",
+        "criteria": ["Längerer Lichtweg erkannt", "Konstanz von c als Begründung", "γ richtig berechnet"]
+      },
+      "2": {
+        "prompt": "Erläutere am Beispiel der Zeit, warum die klassische Mechanik nur einen begrenzten Gültigkeitsbereich hat. Schätze ab, ab welcher Geschwindigkeit die Zeitdilatation 1 % ausmacht.",
+        "hints": ["Klassisch ist Zeit absolut", "γ = 1,01 nach v auflösen: v = c · √(1 − 1 / γ²)"],
+        "model": "In der klassischen Mechanik vergeht die Zeit für alle Beobachter gleich. Die Relativitätstheorie zeigt, dass das nur näherungsweise stimmt, nämlich für v viel kleiner als c. Für γ = 1,01 ergibt sich v = c · √(1 − 1 / 1,01²) ≈ 0,14 c, also rund 42 000 km/s. Bei Alltagsgeschwindigkeiten ist die Abweichung unmessbar klein; die klassische Mechanik ist dort ein hervorragender Grenzfall und wird durch die neue Theorie nicht falsch.",
+        "criteria": ["Absolute Zeit als klassische Annahme", "Abschätzung um 0,14 c", "Klassische Mechanik als Grenzfall eingeordnet"]
+      }
+    },
+    "model": "lorentz",
+    "calculation": "lorentz"
+  },
+  {
+    "id": "ew-laengenkontraktion",
+    "lb": 3,
+    "title": "Längenkontraktion und Myonen",
+    "period": "Ph11 · Lernbereich 3.2 · alle Ausbildungsrichtungen",
+    "intro": "Teilchen aus der Höhenstrahlung dürften den Boden eigentlich nie erreichen.",
+    "tracks": ["NTG", "ANDERE"],
+    "paragraphs": [
+      "Wenn die Zeit vom Bezugssystem abhängt, dann auch die Länge. Ein Körper, der sich mit der Geschwindigkeit v relativ zu dir bewegt, ist in Bewegungsrichtung verkürzt: l = l₀ / γ = l₀ · √(1 − v² / c²). Die Eigenlänge l₀ misst ein Beobachter, für den der Körper ruht. Quer zur Bewegungsrichtung ändert sich nichts. Der Körper wird dabei nicht gestaucht; Längenmessung bedeutet, beide Enden gleichzeitig zu markieren, und Gleichzeitigkeit ist relativ.",
+      "Ein Experiment prüft beide Vorhersagen: Myonen entstehen in etwa 10 bis 15 km Höhe, wenn kosmische Strahlung auf die Atmosphäre trifft. Ruhende Myonen zerfallen im Mittel nach 2,2 µs. Selbst mit fast Lichtgeschwindigkeit kämen sie klassisch gerechnet im Mittel nur 2,2 · 10⁻⁶ s · 3,0 · 10⁸ m/s ≈ 660 m weit; am Boden dürften kaum welche ankommen. Gemessen werden aber sehr viele.",
+      "Beispielrechnung im Erdsystem: Die Myonen sind bewegte Uhren. Bei v = 0,995 c ist γ ≈ 10; ihre Lebensdauer beträgt aus unserer Sicht 22 µs, die mittlere Flugstrecke etwa 6,6 km. Erklärung im Ruhesystem des Myons: Seine Lebensdauer ist 2,2 µs, aber die Atmosphäre rast ihm entgegen und ist auf ein Zehntel verkürzt: Aus 10 km werden 1 km. Beide Beschreibungen liefern dasselbe Ergebnis. Für Geschwindigkeiten weit unter c ist γ ≈ 1: Dort bleibt die klassische Mechanik gültig."
+    ],
+    "takeaway": "l = l₀ / γ: Bewegte Körper sind in Bewegungsrichtung verkürzt; die Myonen am Erdboden bestätigen Zeitdilatation und Längenkontraktion.",
+    "formulas": ["l = l₀ · √(1 − v² / c²) = l₀ / γ", "Myon: mittlere Lebensdauer in Ruhe 2,2 µs"],
+    "sourceIds": ["lp", "contraction", "dilation"],
+    "quiz": {
+      "question": "Wie erklärt ein Beobachter im Ruhesystem des Myons, dass es den Erdboden erreicht?",
+      "answer": "Die Atmosphäre ist in seinem System stark verkürzt.",
+      "wrong": [
+        "Das Myon lebt in seinem eigenen System länger als 2,2 µs.",
+        "Das Myon ist in seinem eigenen System schneller als das Licht."
+      ],
+      "explanation": "Im eigenen Ruhesystem gilt die Eigenlebensdauer 2,2 µs. Dafür ist die Strecke, die an ihm vorbeizieht, um den Faktor γ kürzer."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Klassisch oder relativistisch?",
+      "instruction": "Ordne zu, ob die klassische Mechanik ausreicht oder die Relativitätstheorie nötig ist.",
+      "categories": ["Klassische Mechanik genügt", "Relativitätstheorie nötig"],
+      "entries": [
+        { "text": "Bremsweg eines Autos bei 130 km/h", "target": 0, "feedback": "v ist winzig gegenüber c; γ weicht unmessbar wenig von 1 ab." },
+        { "text": "Myonen der Höhenstrahlung mit 0,995 c", "target": 1, "feedback": "γ ≈ 10: Ohne Zeitdilatation ist die Messung nicht erklärbar." },
+        { "text": "Protonen in einem großen Teilchenbeschleuniger", "target": 1, "feedback": "Sie erreichen mehr als 99,9 % der Lichtgeschwindigkeit." },
+        { "text": "Umlaufbahn des Mondes um die Erde", "target": 0, "feedback": "Rund 1 km/s; Newtons Mechanik beschreibt sie sehr genau." },
+        { "text": "Zeitvergleich zwischen Navigationssatellit und Bodenstation auf Milliardstelsekunden", "target": 1, "feedback": "Bei dieser Genauigkeit zählen relativistische Effekte." }
+      ],
+      "conclusion": "Entscheidend sind die Geschwindigkeit im Vergleich zu c und die geforderte Genauigkeit."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Myonen entstehen in 10 km Höhe und fliegen mit 0,98 c (γ ≈ 5,0). Berechne die mittlere Flugstrecke klassisch und relativistisch und gib die Höhe der Atmosphäre im Myonensystem an.",
+        "hints": ["Klassisch: s = v · 2,2 µs", "Relativistisch mit γ multiplizieren; Länge durch γ teilen"],
+        "model": "Klassisch: s = 0,98 · 3,0 · 10⁸ m/s · 2,2 · 10⁻⁶ s ≈ 650 m. Relativistisch im Erdsystem: Die Lebensdauer ist 5,0 · 2,2 µs = 11 µs, die Strecke etwa 3,2 km. Im Myonensystem ist die Atmosphäre auf 10 km / 5,0 = 2,0 km verkürzt. In beiden Beschreibungen erreicht ein merklicher Teil der Myonen den Boden.",
+        "criteria": ["Klassische Strecke berechnet", "Zeitdilatation angewendet", "Kontrahierte Höhe angegeben"]
+      },
+      "2": {
+        "prompt": "Erläutere, warum der Nachweis von Myonen am Erdboden als Bestätigung der speziellen Relativitätstheorie gilt und welche Rolle Experimente damit für eine Theorie spielen.",
+        "hints": ["Was sagt die klassische Rechnung voraus, was die relativistische?", "Vorhersage und Messung vergleichen"],
+        "model": "Die klassische Physik sagt voraus, dass praktisch kein Myon die rund 10 km bis zum Boden übersteht. Die Relativitätstheorie sagt wegen der Zeitdilatation eine deutlich größere Anzahl voraus. Gemessen wird die größere Anzahl; die Messung passt quantitativ zu γ. Das Experiment verifiziert so eine Vorhersage der Theorie und widerspricht der klassischen Erwartung. Eine Theorie gilt als bewährt, wenn viele solche unabhängigen Tests sie bestätigen.",
+        "criteria": ["Beide Vorhersagen gegenübergestellt", "Messergebnis zugeordnet", "Funktion des Experiments benannt"]
+      }
+    },
+    "model": "muon",
+    "calculation": "contraction"
+  },
+  {
+    "id": "ew-deutsche-physik",
+    "lb": 3,
+    "title": "Wissenschaft im Spannungsfeld: die „Deutsche Physik“",
+    "period": "Ph11 · Lernbereich 3.2 · alle Ausbildungsrichtungen",
+    "intro": "Ob eine Theorie stimmt, entscheidet das Experiment. Ob sie akzeptiert wird, entscheiden manchmal andere.",
+    "tracks": ["NTG", "ANDERE"],
+    "paragraphs": [
+      "Die Relativitätstheorie stieß nach 1919 nicht nur auf fachliche Fragen, sondern auch auf politisch und antisemitisch motivierte Ablehnung. Die Physik-Nobelpreisträger Philipp Lenard und Johannes Stark wurden zu Wortführern einer Bewegung, die sich „Deutsche Physik“ nannte. Sie behauptete, es gebe eine „arische“, anschauliche und experimentelle Physik und eine „jüdische“, abstrakte und theoretische. Relativitätstheorie und Quantenphysik wurden deshalb abgelehnt, ihre Vertreter angegriffen.",
+      "Nach 1933 erhielt die Bewegung politische Unterstützung. Jüdische und politisch missliebige Wissenschaftlerinnen und Wissenschaftler wurden aus den Hochschulen entlassen; viele mussten emigrieren, darunter Albert Einstein. Beispiel: Lenard veröffentlichte 1936 ein Lehrbuch mit dem Titel „Deutsche Physik“. Auch nichtjüdische Physiker wie Werner Heisenberg wurden öffentlich angegriffen, weil sie die moderne Physik lehrten. Im Krieg verlor die Bewegung an Einfluss, weil ihre Positionen fachlich unhaltbar waren und die moderne Physik gebraucht wurde.",
+      "Daran lässt sich lernen, wie Wissenschaft arbeitet und wo sie verletzlich ist. Physikalische Aussagen werden an Experimenten und an ihrer inneren Schlüssigkeit gemessen, nicht an Herkunft, Religion oder politischer Haltung der Menschen, die sie aufstellen. Gesellschaft und Politik können die Wahrnehmung und Akzeptanz von Erkenntnissen aber fördern oder behindern: durch Geld, Stellen, Medien und Druck. Prüffragen für heute: Wird mit Belegen argumentiert oder mit der Person? Wer profitiert von der Behauptung? Was sagen unabhängige Fachleute?"
+    ],
+    "takeaway": "Die „Deutsche Physik“ lehnte Relativitäts- und Quantentheorie aus ideologischen Gründen ab; über physikalische Aussagen entscheiden Belege, nicht die Herkunft der Forschenden.",
+    "formulas": ["Maßstab der Physik: Experiment und schlüssige Argumentation", "Angriff auf die Person ist kein Sachargument"],
+    "sourceIds": ["lp", "lemo"],
+    "quiz": {
+      "question": "Mit welcher Begründung lehnte die „Deutsche Physik“ die Relativitätstheorie ab?",
+      "answer": "Mit ideologischen und antisemitischen Zuschreibungen, nicht mit widerlegenden Experimenten.",
+      "wrong": [
+        "Mit neuen Messungen, die der Theorie widersprachen.",
+        "Mit dem Hinweis, dass die Theorie in der Technik keinen Nutzen habe."
+      ],
+      "explanation": "Die Bewegung bewertete Physik nach der Herkunft der Forschenden. Experimente wie die Lichtablenkung 1919 hatten die Theorie gestützt."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Sachargument oder nicht?",
+      "instruction": "Ordne jede Aussage zu: Ist sie ein physikalisches Argument oder nicht?",
+      "categories": ["Physikalisches Argument", "Kein physikalisches Argument"],
+      "entries": [
+        { "text": "Die gemessene Zahl der Myonen am Boden passt zur vorhergesagten Zeitdilatation.", "target": 0, "feedback": "Vorhersage und Messung werden verglichen." },
+        { "text": "Die Theorie stammt von einem Forscher, dessen Herkunft mir nicht passt.", "target": 1, "feedback": "Ein Angriff auf die Person sagt nichts über die Richtigkeit." },
+        { "text": "Die Theorie ist unanschaulich, also muss sie falsch sein.", "target": 1, "feedback": "Anschaulichkeit ist kein Prüfkriterium; die Natur richtet sich nicht nach unserer Vorstellung." },
+        { "text": "Die Vorhersage weicht in einem wiederholbaren Experiment von der Messung ab.", "target": 0, "feedback": "Ein reproduzierbarer Widerspruch ist ein ernstes Sachargument." },
+        { "text": "Viele Menschen in meinem Umfeld lehnen die Theorie ab.", "target": 1, "feedback": "Mehrheiten ersetzen keine Belege." }
+      ],
+      "conclusion": "In der Physik zählen überprüfbare Belege und schlüssige Argumentation."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Beschreibe, was die Vertreter der „Deutschen Physik“ behaupteten, und erkläre, warum ihre Ablehnung der Relativitätstheorie kein physikalisches Argument war.",
+        "hints": ["Wonach wurde Physik eingeteilt?", "Woran misst die Physik eine Theorie?"],
+        "model": "Lenard, Stark und ihre Anhänger teilten Physik nach der Herkunft der Forschenden ein und lehnten Relativitätstheorie und Quantenphysik als „jüdisch“ ab. Das ist kein physikalisches Argument, weil es nichts über Vorhersagen und Messungen aussagt. Die Theorie war durch Experimente gestützt; ihre Gegner legten keine reproduzierbaren Widerlegungen vor, sondern griffen Personen an.",
+        "criteria": ["Position der Bewegung richtig dargestellt", "Maßstab der Physik benannt", "Sach- und Personenebene getrennt"]
+      },
+      "2": {
+        "prompt": "Diskutiere, wie gesellschaftliche und politische Entwicklungen die Akzeptanz physikalischer Erkenntnisse beeinflussen können. Gehe von der „Deutschen Physik“ aus und nenne Prüffragen, mit denen du heute Aussagen über Forschung beurteilst.",
+        "hints": ["Welche Mittel hat Politik gegenüber Wissenschaft?", "Belege, Interessen, unabhängige Bestätigung"],
+        "model": "In der NS-Zeit entschieden Ideologie und Macht darüber, wer forschen und lehren durfte; Entlassungen und öffentliche Angriffe drängten die moderne Physik zurück und trieben viele Forschende ins Exil. Akzeptanz hängt also auch von Politik, Medien und Geld ab, die Richtigkeit einer Theorie dagegen nicht. Heute frage ich: Welche Belege werden genannt und sind sie überprüfbar? Wird die Sache kritisiert oder die Person? Welche Interessen hat die Quelle? Bestätigen unabhängige Fachleute die Aussage?",
+        "criteria": ["Historisches Beispiel korrekt genutzt", "Akzeptanz von Richtigkeit unterschieden", "Mindestens drei Prüffragen"]
+      }
+    }
+  },
+  {
+    "id": "ew-energieentwertung",
+    "lb": 3,
+    "title": "Reversibel, irreversibel und der Wirkungsgrad",
+    "period": "Ph11 · Lernbereich 3.3 · alle Ausbildungsrichtungen",
+    "intro": "Energie geht nie verloren. Ihr Wert schon.",
+    "tracks": ["NTG", "ANDERE"],
+    "paragraphs": [
+      "Ein Vorgang heißt reversibel, wenn er von selbst auch rückwärts ablaufen könnte, ohne dass in der Umgebung eine Änderung zurückbleibt. Ein reibungsfreies Pendel wäre ein Beispiel; ein Film davon sähe rückwärts abgespielt genauso plausibel aus. Reale Vorgänge sind irreversibel: Heißer Tee kühlt ab, ein hüpfender Ball kommt zur Ruhe, ein Auto bremst. Von selbst läuft keiner dieser Vorgänge rückwärts, obwohl der Energieerhaltungssatz es erlauben würde.",
+      "Bei irreversiblen Vorgängen verteilt sich Energie als innere Energie auf viele Teilchen der Umgebung; die Temperatur gleicht sich aus. Die Energie ist noch da, lässt sich aber nicht mehr vollständig nutzen. Das nennt man Energieentwertung. Hochwertig ist Energie, die sich fast vollständig in andere Formen umwandeln lässt, etwa elektrische oder mechanische Energie. Innere Energie bei Umgebungstemperatur ist praktisch wertlos.",
+      "Der Wirkungsgrad η = E_nutz / E_zu gibt an, welcher Anteil der zugeführten Energie genutzt wird. Weil jeder reale Vorgang Energie entwertet, ist η stets kleiner als 100 %. Besonders begrenzt sind Wärmekraftmaschinen: Sie können innere Energie nur teilweise in mechanische Energie umwandeln und müssen den Rest als Abwärme abgeben; daran ändert auch die beste Technik nichts. Beispiel: Ein Kraftwerk gewinnt aus 100 MJ Brennstoffenergie 40 MJ elektrische Energie: η = 40 %. In einer Kette multiplizieren sich die Wirkungsgrade: 0,40 · 0,95 (Netz) · 0,40 (LED) ≈ 0,15."
+    ],
+    "takeaway": "Irreversible Vorgänge entwerten Energie; deshalb ist jeder Wirkungsgrad η = E_nutz / E_zu kleiner als 100 %.",
+    "formulas": ["η = E_nutz / E_zu", "η_gesamt = η₁ · η₂ · η₃", "Energieentwertung: Energie bleibt erhalten, ist aber weniger nutzbar"],
+    "sourceIds": ["lp", "heat-engines"],
+    "quiz": {
+      "question": "Ein hüpfender Ball kommt nach einigen Sprüngen zur Ruhe. Was ist mit seiner Energie geschehen?",
+      "answer": "Sie ist als innere Energie in Ball, Boden und Luft verteilt und damit entwertet.",
+      "wrong": [
+        "Sie ist verbraucht worden und nicht mehr vorhanden.",
+        "Sie ist vollständig als Höhenenergie im Boden gespeichert."
+      ],
+      "explanation": "Die Energie bleibt erhalten, verteilt sich aber auf sehr viele Teilchen. Von selbst sammelt sie sich nicht wieder im Ball."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Reversibel oder irreversibel?",
+      "instruction": "Ordne jeden Vorgang zu.",
+      "categories": ["Näherungsweise reversibel (idealisiert)", "Irreversibel"],
+      "entries": [
+        { "text": "Schwingung eines Pendels, wenn Reibung vernachlässigbar ist", "target": 0, "feedback": "Höhenenergie und kinetische Energie wandeln sich hin und zurück um." },
+        { "text": "Heißer Kaffee kühlt in der Tasse ab", "target": 1, "feedback": "Von selbst wird er nicht wieder heiß." },
+        { "text": "Ein Auto bremst bis zum Stillstand", "target": 1, "feedback": "Die erwärmten Bremsscheiben treiben das Auto nicht wieder an." },
+        { "text": "Umlauf eines Planeten um die Sonne", "target": 0, "feedback": "Im luftleeren Raum gibt es praktisch keine Reibung." },
+        { "text": "Ein Tropfen Tinte verteilt sich im Wasser", "target": 1, "feedback": "Die Entmischung geschieht nicht von selbst." }
+      ],
+      "conclusion": "Frage dich: Sähe der Film rückwärts abgespielt glaubwürdig aus?"
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Wähle selbst ein Beispiel für einen irreversiblen Vorgang aus deinem Alltag. Erläutere daran den Unterschied zu einem reversiblen Vorgang und erkläre, was Energieentwertung bedeutet.",
+        "hints": ["Was passiert mit der Energie am Ende?", "Könnte der Vorgang von selbst rückwärts ablaufen?"],
+        "model": "Beim Bremsen eines Fahrrads wird kinetische Energie durch Reibung zu innerer Energie von Bremsbelägen, Felge und Luft. Von selbst kühlen die Bremsen nicht ab und beschleunigen das Rad; der Vorgang ist irreversibel. Ein reibungsfreies Pendel dagegen könnte genauso gut rückwärts laufen. Die Energie ist beim Bremsen erhalten geblieben, aber auf viele Teilchen verteilt und nicht mehr nutzbar: Sie ist entwertet.",
+        "criteria": ["Eigenes passendes Beispiel", "Umkehrbarkeit als Kriterium", "Erhaltung und Entwertung unterschieden"]
+      },
+      "2": {
+        "prompt": "Ein Hersteller wirbt für ein Kohlekraftwerk mit „bald 100 % Wirkungsgrad durch bessere Technik“. Nimm qualitativ Stellung und nenne eine Möglichkeit, die Abwärme sinnvoll zu verwenden.",
+        "hints": ["Was muss jede Wärmekraftmaschine abgeben?", "Fernwärme"],
+        "model": "Die Aussage ist nicht haltbar. Ein Wärmekraftwerk wandelt innere Energie in mechanische und dann elektrische Energie um; dabei muss es grundsätzlich einen Teil als Abwärme bei niedrigerer Temperatur abgeben. Bessere Technik verringert zusätzliche Verluste durch Reibung oder Wärmeleitung, hebt diese Grenze aber nicht auf. Sinnvoll ist Kraft-Wärme-Kopplung: Die Abwärme heizt Gebäude über ein Fernwärmenetz, sodass ein größerer Teil der Brennstoffenergie genutzt wird.",
+        "criteria": ["Grundsätzliche Grenze benannt", "Technische Verluste davon unterschieden", "Abwärmenutzung vorgeschlagen"]
+      }
+    },
+    "model": "chain",
+    "calculation": "efficiency"
+  },
+  {
+    "id": "ew-energieversorgung",
+    "lb": 3,
+    "title": "Energieversorgung beurteilen: Daten und Nutzwertanalyse",
+    "period": "Ph11 · Lernbereich 3.3 · alle Ausbildungsrichtungen",
+    "intro": "Eine gute Entscheidung legt offen, was sie gewichtet.",
+    "tracks": ["NTG", "ANDERE"],
+    "paragraphs": [
+      "Energiequellen lassen sich ordnen: fossile Energieträger (Kohle, Erdöl, Erdgas), Kernenergie und erneuerbare Quellen (Sonne, Wind, Wasser, Biomasse, Erdwärme). Unterschieden werden Primärenergie (wie sie in der Natur vorkommt), Endenergie (wie sie beim Verbraucher ankommt, etwa Strom, Benzin, Fernwärme) und Nutzenergie (was tatsächlich gebraucht wird, etwa Licht oder Bewegung). Strom ist nur ein Teil des Energiebedarfs; Wärme und Verkehr machen zusammen den größeren Teil aus. Aktuelle Anteile recherchierst du bei amtlichen Stellen, denn sie ändern sich von Jahr zu Jahr.",
+      "Zentrale Fragen sind: zentral in wenigen Großkraftwerken oder dezentral in vielen kleinen Anlagen? Regional oder im europäischen Verbund? Wie groß sind Wirkungsgrad, Verfügbarkeit der Ressourcen und Auswirkungen auf Umwelt und Klima? Wind und Sonne liefern schwankend; deshalb gehören Energietransport über ausgebaute Netze und Energiespeicher (Pumpspeicher, Batterien, Wasserstoff) zur Beurteilung. Eine Kennzahl für Kraftwerke sind die Volllaststunden: Jahresenergie = Nennleistung · Volllaststunden.",
+      "Eine Nutzwertanalyse macht eine Entscheidung nachvollziehbar. Du legst Kriterien fest, gewichtest sie, bewertest jede Option je Kriterium mit Punkten und berechnest den gewichteten Mittelwert. Beispiel: Gewichte 5 (Sicherheit), 5 (Klima), 5 (Kosten); Option A erhält 3, 5 und 3 Punkte, also den Nutzwert (15 + 25 + 15) / 15 ≈ 3,7. Die Punkte sollen auf naturwissenschaftlichen Daten beruhen, die Gewichte sind eine Wertentscheidung. Wer beides offenlegt, macht die Energiedebatte sachlicher: Man kann über Daten und über Werte getrennt streiten."
+    ],
+    "takeaway": "Nutzwert = gewichteter Mittelwert der Punkte: Daten liefern die Punkte, Werte die Gewichte; Jahresenergie = Nennleistung · Volllaststunden.",
+    "formulas": ["Nutzwert = Σ(Gewicht · Punkte) / Σ Gewichte", "E_Jahr = P_Nenn · Volllaststunden", "Primärenergie → Endenergie → Nutzenergie"],
+    "sourceIds": ["lp", "uba-energy", "uba-renewable", "energy-charts"],
+    "quiz": {
+      "question": "Was legt in einer Nutzwertanalyse die Gewichtung der Kriterien fest?",
+      "answer": "Eine Wertentscheidung der Bewertenden, die offen genannt werden muss.",
+      "wrong": [
+        "Eine physikalische Messung, die für alle gleich ausfällt.",
+        "Der Wirkungsgrad der jeweiligen Anlage."
+      ],
+      "explanation": "Messbar sind die Daten hinter den Punkten. Wie wichtig Klima, Kosten oder Sicherheit sind, ist eine Abwägung."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Daten oder Wertung?",
+      "instruction": "Ordne jede Aussage zu: naturwissenschaftliche Angabe oder Wertentscheidung.",
+      "categories": ["Naturwissenschaftliche Angabe", "Wertentscheidung"],
+      "entries": [
+        { "text": "Ein Gas-und-Dampf-Kraftwerk erreicht einen Wirkungsgrad von etwa 60 %.", "target": 0, "feedback": "Das lässt sich messen und nachprüfen." },
+        { "text": "Der Klimaschutz ist wichtiger als niedrige Strompreise.", "target": 1, "feedback": "Das ist eine Gewichtung von Kriterien." },
+        { "text": "Eine Windenergieanlage liefert an diesem Standort 2500 Volllaststunden im Jahr.", "target": 0, "feedback": "Eine messbare Kenngröße." },
+        { "text": "Windräder sollten mindestens 1000 m von Wohnhäusern entfernt stehen.", "target": 1, "feedback": "Eine Abwägung, in die Messdaten zu Schall einfließen können." },
+        { "text": "Bei der Verbrennung von Erdgas entsteht je Kilowattstunde weniger Kohlenstoffdioxid als bei Braunkohle.", "target": 0, "feedback": "Eine überprüfbare Aussage über die Brennstoffe." }
+      ],
+      "conclusion": "Eine sachliche Debatte trennt: Was wissen wir, und was wollen wir?"
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Führe eine kleine Nutzwertanalyse durch: Kriterien Wirkungsgrad (Gewicht 2), Umweltwirkung (Gewicht 5), Verfügbarkeit (Gewicht 3). Photovoltaik erhält 2, 5, 3 Punkte; ein Kohlekraftwerk 3, 1, 5 Punkte. Berechne beide Nutzwerte und formuliere das Ergebnis.",
+        "hints": ["Je Kriterium Gewicht mal Punkte", "Durch die Summe der Gewichte teilen"],
+        "model": "Photovoltaik: (2 · 2 + 5 · 5 + 3 · 3) / 10 = 38 / 10 = 3,8. Kohlekraftwerk: (2 · 3 + 5 · 1 + 3 · 5) / 10 = 26 / 10 = 2,6. Mit dieser Gewichtung liegt die Photovoltaik vorn. Das Ergebnis hängt von den Gewichten ab: Wer die Verfügbarkeit viel höher gewichtet, kann zu einem anderen Ergebnis kommen.",
+        "criteria": ["Beide Nutzwerte richtig", "Ergebnis klar formuliert", "Abhängigkeit von den Gewichten genannt"]
+      },
+      "2": {
+        "prompt": "In deiner Gemeinde soll ein Windpark gebaut werden. Entwickle eine eigene Position: Nenne zwei naturwissenschaftliche Daten, die du recherchieren würdest, zwei Kriterien, die du abwägst, und formuliere ein begründetes Urteil für eine Diskussion.",
+        "hints": ["Volllaststunden, Schallpegel, Flächenbedarf, vermiedene Emissionen", "Daten und Wertung trennen"],
+        "model": "Ich würde die erwarteten Volllaststunden am Standort und die Schallpegel an den nächsten Wohnhäusern recherchieren, jeweils mit Quelle. Ich wäge Klimaschutz gegen Belastungen für Anwohner und Landschaft ab. Mein Urteil: Ich befürworte den Windpark, wenn die Messwerte die Grenzwerte sicher einhalten, weil er jedes Jahr viel fossil erzeugten Strom ersetzen kann. Wer den Landschaftsschutz höher gewichtet, kann bei denselben Daten anders urteilen; das benenne ich in der Diskussion offen.",
+        "criteria": ["Zwei recherchierbare Daten genannt", "Kriterien abgewogen", "Urteil begründet und Gegenposition respektiert"]
+      }
+    },
+    "model": "utility",
+    "calculation": "fullload"
+  },
+  {
+    "id": "ew-energiesparen",
+    "lb": 3,
+    "title": "Energie einsparen und effizient nutzen",
+    "period": "Ph11 · Lernbereich 3.3 · alle Ausbildungsrichtungen",
+    "intro": "Die sauberste Kilowattstunde ist die, die du nicht brauchst.",
+    "tracks": ["NTG", "ANDERE"],
+    "paragraphs": [
+      "Zwei Wege senken den Energiebedarf. Energieeffizienz bedeutet: derselbe Nutzen mit weniger Energie, etwa eine LED statt einer Glühlampe, eine Wärmepumpe statt einer Elektroheizung oder eine bessere Wärmedämmung. Energiesparen durch Verhalten bedeutet: weniger Nutzen in Anspruch nehmen oder ihn klüger wählen, etwa die Raumtemperatur um ein Grad senken, kürzer duschen oder das Fahrrad nehmen.",
+      "Vergleichen kannst du mit E = P · t. Die Einheit im Haushalt ist die Kilowattstunde: 1 kWh = 3,6 MJ. Beispiel: Eine 60-W-Glühlampe, die täglich 3 Stunden leuchtet, braucht im Jahr 0,060 kW · 3 h · 365 ≈ 66 kWh. Eine gleich helle LED mit 8 W braucht etwa 9 kWh. Die Ersparnis von 57 kWh entspricht bei 35 ct/kWh rund 20 € im Jahr.",
+      "Wo sich Einsparen besonders lohnt, zeigt der Blick auf die Größenordnungen: In privaten Haushalten entfällt der größte Teil des Energiebedarfs auf Raumwärme und Warmwasser, dazu kommt der Verkehr; Beleuchtung macht nur einen kleinen Teil aus. Geräte im Bereitschaftsbetrieb fallen einzeln kaum auf, laufen aber 8760 Stunden im Jahr. Zu einer ehrlichen Bilanz gehört auch der Rebound-Effekt: Wird ein Gerät sparsamer und deshalb häufiger oder größer genutzt, fällt die Ersparnis kleiner aus als berechnet."
+    ],
+    "takeaway": "E = P · t in kWh: Effizienz senkt die Leistung bei gleichem Nutzen, Verhalten senkt die Nutzung; die größten Posten im Haushalt sind Wärme und Verkehr.",
+    "formulas": ["E = P · t", "1 kWh = 3,6 MJ", "Kosten = E · Preis je kWh"],
+    "sourceIds": ["lp", "uba-saving", "uba-energy"],
+    "quiz": {
+      "question": "Welche Maßnahme ist ein Beispiel für Energieeffizienz und nicht für Einsparen durch Verhalten?",
+      "answer": "Eine Glühlampe durch eine gleich helle LED ersetzen.",
+      "wrong": [
+        "Das Licht ausschalten, wenn niemand im Raum ist.",
+        "Die Raumtemperatur um ein Grad absenken."
+      ],
+      "explanation": "Die LED liefert denselben Nutzen mit weniger Energie. Die beiden anderen Maßnahmen verringern die Nutzung."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Effizienz oder Verhalten?",
+      "instruction": "Ordne jede Maßnahme zu.",
+      "categories": ["Energieeffizienz (gleicher Nutzen, weniger Energie)", "Einsparen durch Verhalten"],
+      "entries": [
+        { "text": "Altbau mit Wärmedämmung versehen", "target": 0, "feedback": "Dieselbe Raumtemperatur braucht weniger Heizenergie." },
+        { "text": "Kurze Strecken zu Fuß gehen statt mit dem Auto fahren", "target": 1, "feedback": "Eine andere Entscheidung im Alltag." },
+        { "text": "Alten Kühlschrank durch ein sparsames Gerät ersetzen", "target": 0, "feedback": "Gleiche Kühlleistung bei kleinerer elektrischer Leistung." },
+        { "text": "Geräte ganz ausschalten statt im Bereitschaftsbetrieb zu lassen", "target": 1, "feedback": "Die Betriebsdauer sinkt." },
+        { "text": "Heizung mit einer Wärmepumpe statt mit einem Heizstab betreiben", "target": 0, "feedback": "Aus einer Kilowattstunde Strom werden mehrere Kilowattstunden Wärme." }
+      ],
+      "conclusion": "Beide Wege ergänzen sich; am meisten bringen sie bei den großen Posten."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Ein Router (10 W) und ein Fernseher im Bereitschaftsbetrieb (2 W) laufen das ganze Jahr. Berechne die Jahresenergie beider Geräte und die Kosten bei 35 ct/kWh. Beurteile, wo sich Abschalten lohnt.",
+        "hints": ["Ein Jahr hat 8760 Stunden", "E = P · t in kWh"],
+        "model": "Router: 0,010 kW · 8760 h = 87,6 kWh, das sind etwa 31 €. Fernseher: 0,002 kW · 8760 h = 17,5 kWh, etwa 6 €. Zusammen rund 105 kWh und 37 € im Jahr. Den Fernseher ganz auszuschalten kostet nichts und spart wenig; beim Router lohnt eine Zeitschaltung für die Nacht mehr, sofern kein Gerät dann Netz braucht.",
+        "criteria": ["Beide Energien richtig", "Kosten berechnet", "Maßnahmen nach Wirkung beurteilt"]
+      },
+      "2": {
+        "prompt": "Eine Familie will Energie sparen und überlegt: alle Lampen auf LED umstellen oder die Raumtemperatur um 1 °C senken (Faustwert: etwa 6 % weniger Heizenergie bei 15 000 kWh Heizenergie im Jahr). Vergleiche die Größenordnungen und gib eine Empfehlung.",
+        "hints": ["Beleuchtung eines Haushalts: grob 300 kWh im Jahr mit alten Lampen", "6 % von 15 000 kWh"],
+        "model": "Bei etwa 300 kWh für Beleuchtung spart die Umstellung auf LED höchstens rund 250 kWh im Jahr. Ein Grad weniger Raumtemperatur spart etwa 6 % von 15 000 kWh, also rund 900 kWh. Die Heizung ist der größere Hebel. Ich empfehle beides, zuerst aber die Heizung: Sie spart mehr als das Dreifache. Die Zahlen sind Abschätzungen und hängen vom Haus ab.",
+        "criteria": ["Beide Ersparnisse abgeschätzt", "Größenordnungen verglichen", "Empfehlung mit Vorbehalt der Schätzung"]
+      }
+    },
+    "model": "saving",
+    "calculation": "saving"
+  }
+]

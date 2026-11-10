@@ -1,0 +1,324 @@
+[
+  {
+    "id": "kb-groessen",
+    "lb": 1,
+    "title": "Kreisbewegungen beschreiben",
+    "period": "Ph11 · Lernbereich 1 · alle Ausbildungsrichtungen",
+    "intro": "Was bei der geraden Strecke der Weg ist, ist auf dem Kreis der Winkel.",
+    "tracks": ["NTG", "ANDERE"],
+    "paragraphs": [
+      "Aus Jahrgangsstufe 10 kennst du die geradlinige Bewegung: Weg s, Geschwindigkeit v = Δs / Δt. Bei einer Kreisbewegung mit konstanter Winkelgeschwindigkeit überstreicht der Radius in gleichen Zeiten gleiche Winkel. Der Drehwinkel φ wird im Bogenmaß gemessen; ein voller Umlauf entspricht 2π. Analog zur Geschwindigkeit ist die Winkelgeschwindigkeit ω = Δφ / Δt mit der Einheit 1/s.",
+      "Die Umlaufdauer T ist die Zeit für einen Umlauf, die Frequenz f = 1 / T die Zahl der Umläufe pro Sekunde. Daraus folgt ω = 2π / T = 2π · f. Die Bahngeschwindigkeit ist der Umfang geteilt durch die Umlaufdauer: v = 2π · r / T = ω · r. Alle Punkte einer drehenden Scheibe haben dieselbe Winkelgeschwindigkeit, aber weiter außen eine größere Bahngeschwindigkeit.",
+      "Beispiel: Ein Karussellsitz läuft auf einem Kreis mit r = 4 m und braucht für einen Umlauf 8 s. Dann ist f = 0,125 Hz, ω = 2π / 8 s ≈ 0,785 1/s und v = 0,785 1/s · 4 m ≈ 3,14 m/s. Der Betrag der Bahngeschwindigkeit bleibt gleich, ihre Richtung ändert sich aber ständig: Sie zeigt immer tangential zur Bahn. Deshalb ist auch die gleichförmige Kreisbewegung eine beschleunigte Bewegung."
+    ],
+    "takeaway": "ω = 2π / T und v = ω · r: gleiche Winkelgeschwindigkeit, außen größere Bahngeschwindigkeit.",
+    "formulas": ["f = 1 / T", "ω = Δφ / Δt = 2π / T = 2π · f", "v = 2π · r / T = ω · r"],
+    "sourceIds": ["lp", "rotation"],
+    "quiz": {
+      "question": "Zwei Kinder sitzen auf demselben Karussell, eines innen und eines außen. Was haben beide gemeinsam?",
+      "answer": "Die Winkelgeschwindigkeit; die Bahngeschwindigkeit ist außen größer.",
+      "wrong": [
+        "Die Bahngeschwindigkeit; die Winkelgeschwindigkeit ist außen größer.",
+        "Weder Winkel- noch Bahngeschwindigkeit; beide sind außen größer."
+      ],
+      "explanation": "Beide überstreichen in gleicher Zeit denselben Winkel. Wegen v = ω · r legt das äußere Kind aber den längeren Weg zurück."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Analogien zuordnen",
+      "instruction": "Ordne jede Größe der Kreisbewegung der Größe zu, der sie bei der geradlinigen Bewegung entspricht.",
+      "categories": ["entspricht dem Weg s", "entspricht der Geschwindigkeit v", "gibt es nur bei periodischen Bewegungen"],
+      "entries": [
+        { "text": "Drehwinkel φ im Bogenmaß", "target": 0, "feedback": "Der Winkel beschreibt, wie weit die Drehung fortgeschritten ist." },
+        { "text": "Winkelgeschwindigkeit ω = Δφ / Δt", "target": 1, "feedback": "Winkeländerung pro Zeit, wie Wegänderung pro Zeit." },
+        { "text": "Umlaufdauer T", "target": 2, "feedback": "Eine Umlaufdauer hat nur eine Bewegung, die sich wiederholt." },
+        { "text": "Frequenz f", "target": 2, "feedback": "Die Frequenz zählt die Wiederholungen pro Sekunde." }
+      ],
+      "conclusion": "Mit φ statt s und ω statt v überträgst du die bekannten Beschreibungen auf den Kreis."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Ein Windrad dreht sich in 4 s einmal. Seine Flügel sind 40 m lang. Berechne Winkelgeschwindigkeit und Bahngeschwindigkeit der Flügelspitze und erkläre, warum ein Punkt in Flügelmitte langsamer ist.",
+        "hints": ["ω = 2π / T benutzen", "v = ω · r mit dem jeweiligen Radius"],
+        "model": "ω = 2π / 4 s ≈ 1,57 1/s. Die Flügelspitze hat v = 1,57 1/s · 40 m ≈ 62,8 m/s, das sind etwa 226 km/h. Ein Punkt in der Mitte hat dieselbe Winkelgeschwindigkeit, aber nur den halben Radius und damit die halbe Bahngeschwindigkeit.",
+        "criteria": ["ω mit Einheit 1/s berechnet", "v = ω · r angewendet", "Unterschied zwischen ω und v erklärt"]
+      },
+      "2": {
+        "prompt": "Die Erde dreht sich in rund 24 h einmal um ihre Achse (Radius am Äquator 6371 km). Schätze die Bahngeschwindigkeit eines Punktes am Äquator ab und begründe, warum sie in Bayern kleiner ist.",
+        "hints": ["Umfang durch Umlaufdauer teilen", "In Bayern ist der Abstand zur Drehachse kleiner als der Erdradius"],
+        "model": "Am Äquator ist v = 2π · 6371 km / 24 h ≈ 1670 km/h, also etwa 460 m/s. In Bayern kreist ein Punkt auf einem kleineren Breitenkreis; sein Abstand zur Drehachse ist kleiner als der Erdradius. Bei gleicher Winkelgeschwindigkeit ist v = ω · r deshalb kleiner.",
+        "criteria": ["Umfang und Umlaufdauer richtig verknüpft", "Ergebnis mit Einheit angegeben", "Abstand zur Drehachse als Radius erkannt"]
+      }
+    },
+    "model": "circular",
+    "calculation": "circular"
+  },
+  {
+    "id": "kb-zentripetalkraft",
+    "lb": 1,
+    "title": "Zentripetalkraft und Zentripetalbeschleunigung",
+    "period": "Ph11 · Lernbereich 1 · alle Ausbildungsrichtungen",
+    "intro": "Ohne eine Kraft zur Mitte gäbe es keine Kreisbahn.",
+    "tracks": ["NTG", "ANDERE"],
+    "paragraphs": [
+      "Ohne resultierende Kraft bewegt sich ein Körper geradlinig gleichförmig weiter (Trägheitssatz). Auf einer Kreisbahn ändert sich die Richtung der Geschwindigkeit ständig. Dafür ist eine Kraft nötig, die in jedem Moment zum Mittelpunkt der Bahn zeigt: die Zentripetalkraft F_Z. Sie steht senkrecht zur Geschwindigkeit, ändert also nur deren Richtung und nicht deren Betrag.",
+      "Den Term erhält man aus einer geometrischen Überlegung: In der kurzen Zeit Δt dreht sich der Geschwindigkeitspfeil um denselben kleinen Winkel wie der Radius. Die Geschwindigkeitsänderung hat dann den Betrag Δv ≈ v · Δφ und zeigt zur Mitte. Mit Δφ = ω · Δt folgt die Zentripetalbeschleunigung a_Z = Δv / Δt = v · ω = v² / r = ω² · r. Nach Newton ist F_Z = m · a_Z = m · v² / r = m · ω² · r.",
+      "Beispiel: Ein Ball (m = 0,2 kg) kreist an einer Schnur mit r = 0,5 m und v = 3 m/s. Dann ist F_Z = 0,2 kg · (3 m/s)² / 0,5 m = 3,6 N; diese Kraft bringt die Schnur auf. Die Zentripetalkraft ist keine neue Kraftart: Fadenkraft, Haftreibung oder Gravitation übernehmen ihre Rolle. Die Zentrifugalkraft dagegen ist eine Scheinkraft. Nur wer sich mitdreht, braucht sie zur Beschreibung; von außen betrachtet gibt es sie nicht. Reißt die Schnur, fliegt der Ball tangential weiter und nicht radial nach außen."
+    ],
+    "takeaway": "F_Z = m · v² / r zeigt zum Kreismittelpunkt; die Zentrifugalkraft ist eine Scheinkraft im mitbewegten Bezugssystem.",
+    "formulas": ["a_Z = v² / r = ω² · r", "F_Z = m · v² / r = m · ω² · r"],
+    "sourceIds": ["lp", "centripetal", "fictitious"],
+    "quiz": {
+      "question": "Ein Ball kreist an einer Schnur. In welche Richtung fliegt er, wenn die Schnur reißt?",
+      "answer": "Tangential zur Kreisbahn, geradlinig weiter.",
+      "wrong": [
+        "Radial nach außen, vom Mittelpunkt weg.",
+        "Auf einer Spirale langsam nach außen."
+      ],
+      "explanation": "Ohne Zentripetalkraft wirkt keine Kraft mehr, die die Richtung ändert. Der Ball behält die momentane Geschwindigkeit, und die zeigt tangential."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Zentripetalkraft oder Scheinkraft",
+      "instruction": "Ordne jede Aussage dem Bezugssystem zu, in dem sie gilt.",
+      "categories": ["Beobachter von außen (ruhend)", "Mitbewegter Beobachter", "Falsche Vorstellung"],
+      "entries": [
+        { "text": "Die Haftreibung der Reifen wirkt als Zentripetalkraft zur Kurvenmitte.", "target": 0, "feedback": "Von außen gesehen erzwingt eine reale Kraft die Kreisbahn." },
+        { "text": "Mich drückt eine Kraft nach außen gegen die Autotür.", "target": 1, "feedback": "Im mitbewegten System beschreibt man das mit der Zentrifugalkraft, einer Scheinkraft." },
+        { "text": "Zentripetalkraft und Zentrifugalkraft heben sich auf, deshalb bleibt der Körper auf der Bahn.", "target": 2, "feedback": "Dann wäre die resultierende Kraft null und der Körper liefe geradeaus." },
+        { "text": "Die Tür übt auf mich eine Kraft zur Kurvenmitte aus.", "target": 0, "feedback": "Diese reale Kraft zwingt dich mit auf die Kreisbahn." }
+      ],
+      "conclusion": "Lege zuerst das Bezugssystem fest. Von außen betrachtet genügt die Zentripetalkraft."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Ein Hammerwerfer dreht eine Kugel (m = 4 kg) auf einer Bahn mit r = 1,5 m mit v = 20 m/s. Berechne die Zentripetalkraft und erkläre, wer sie aufbringt.",
+        "hints": ["F_Z = m · v² / r einsetzen", "Eine reale Kraft muss zur Mitte ziehen"],
+        "model": "F_Z = 4 kg · (20 m/s)² / 1,5 m ≈ 1067 N. Diese Kraft bringt der Werfer über das Seil auf; sie zeigt zu ihm hin. Lässt er los, fehlt die Zentripetalkraft und die Kugel fliegt tangential davon.",
+        "criteria": ["Term richtig eingesetzt", "Ergebnis mit Einheit N", "Seilkraft als Zentripetalkraft benannt"]
+      },
+      "2": {
+        "prompt": "Jemand behauptet: „In der Kurve wirkt auf den Beifahrer die Zentrifugalkraft, und deshalb muss das Auto mit einer Zentripetalkraft dagegenhalten.“ Nimm aus Sicht eines Beobachters am Straßenrand Stellung.",
+        "hints": ["Welche Kräfte gibt es von außen betrachtet?", "Was wäre bei Kräftegleichgewicht?"],
+        "model": "Vom Straßenrand aus wirkt auf den Beifahrer nur eine reale Kraft zur Kurvenmitte, etwa von Sitz und Tür. Sie ist die Zentripetalkraft und ändert die Richtung seiner Geschwindigkeit. Eine Zentrifugalkraft kommt in dieser Beschreibung nicht vor. Wären beide Kräfte im Gleichgewicht, würde er geradeaus weiterfahren.",
+        "criteria": ["Bezugssystem benannt", "Zentripetalkraft als reale Kraft identifiziert", "Gleichgewichtsvorstellung widerlegt"]
+      }
+    },
+    "model": "centripetal",
+    "calculation": "centripetal"
+  },
+  {
+    "id": "kb-experiment",
+    "lb": 1,
+    "title": "Schülerexperiment: Wovon hängt die Zentripetalkraft ab?",
+    "period": "Ph11 · Lernbereich 1 · alle Ausbildungsrichtungen",
+    "intro": "Eine Hypothese ist erst etwas wert, wenn ein Experiment sie prüfen kann.",
+    "tracks": ["NTG", "ANDERE"],
+    "paragraphs": [
+      "Aus der Alltagserfahrung lassen sich Hypothesen bilden: Je schwerer der Körper, je schneller die Drehung und je größer der Radius bei gleicher Drehzahl, desto größer die nötige Kraft. Die Herleitung liefert den Term F_Z = m · ω² · r. Das Experiment prüft ihn: Ein Körper kreist an einem Faden oder auf einem Drehteller, ein Kraftsensor misst die Kraft zur Mitte, eine Lichtschranke oder Videoanalyse liefert die Umlaufdauer.",
+      "Damit eine Aussage möglich ist, variierst du immer nur eine Größe und hältst die anderen fest. Trägst du F über m auf (ω und r fest), erwartest du eine Ursprungsgerade; ebenso bei F über r. Bei F über ω ergibt sich eine Parabel; erst F über ω² liefert eine Ursprungsgerade. Ein elektronischer Kraftsensor misst meist die winzige Verformung eines Bauteils, die den elektrischen Widerstand eines Dehnungsmessstreifens ändert. Diese Änderung wird in eine Kraft umgerechnet.",
+      "Beispiel: Bei m = 0,2 kg, r = 0,4 m und T = 1,26 s ist ω = 2π / T ≈ 5,0 1/s und der Term sagt F_Z = 0,2 · 5,0² · 0,4 N = 2,0 N voraus. Zeigt der Sensor 2,1 N, weicht die Messung um 5 % ab. Ursachen können ein ungenau gemessener Radius, Reibung oder ein nicht waagrechter Faden sein. Ein Experiment kann eine Hypothese stützen oder widerlegen; beweisen kann es sie nicht."
+    ],
+    "takeaway": "Nur eine Größe variieren: F_Z ist proportional zu m, zu r (bei festem ω) und zu ω².",
+    "formulas": ["F_Z = m · ω² · r", "ω = 2π / T"],
+    "sourceIds": ["lp", "centripetal", "uncertainty"],
+    "quiz": {
+      "question": "Du willst prüfen, ob die Zentripetalkraft proportional zum Quadrat der Winkelgeschwindigkeit ist. Wie gehst du vor?",
+      "answer": "ω ändern, m und r festhalten und F über ω² auftragen.",
+      "wrong": [
+        "ω und r zugleich ändern und F über ω auftragen.",
+        "Bei festem ω die Masse ändern und F über m auftragen."
+      ],
+      "explanation": "Nur wenn m und r fest bleiben, zeigt die Messreihe die Abhängigkeit von ω. Eine Ursprungsgerade im F-ω²-Diagramm belegt die Proportionalität."
+    },
+    "workshop": {
+      "kind": "timeline",
+      "title": "Den Erkenntnisweg ordnen",
+      "instruction": "Bringe die Schritte in die Reihenfolge, in der du im Experiment vorgehst.",
+      "categories": [],
+      "entries": [
+        { "text": "Hypothese aus Alltagserfahrung und Vorwissen formulieren", "target": 0, "feedback": "Am Anfang steht eine prüfbare Vermutung." },
+        { "text": "Term für die Zentripetalkraft herleiten", "target": 1, "feedback": "Der Term macht die Vermutung quantitativ." },
+        { "text": "Experiment planen: eine Größe variieren, die anderen festhalten", "target": 2, "feedback": "Die Planung legt fest, was gemessen wird." },
+        { "text": "Messreihe mit Kraftsensor aufnehmen", "target": 3, "feedback": "Erst jetzt entstehen Daten." },
+        { "text": "Diagramm zeichnen und mit der Vorhersage vergleichen", "target": 4, "feedback": "Die Auswertung prüft die Hypothese." },
+        { "text": "Genauigkeit und Grenzen des Ergebnisses beurteilen", "target": 5, "feedback": "Die Reflexion gehört zum Ergebnis." }
+      ],
+      "conclusion": "Hypothese, Vorhersage, Messung, Vergleich, Reflexion: So prüft ein Experiment eine Hypothese."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Plane eine Messreihe zur Abhängigkeit der Zentripetalkraft vom Radius. Nenne die Größen, die du festhältst, die Messgeräte und das Diagramm, das du erwartest.",
+        "hints": ["Welche Größen stehen im Term?", "Wie sieht eine Proportionalität im Diagramm aus?"],
+        "model": "Ich halte die Masse und die Winkelgeschwindigkeit fest, zum Beispiel mit einem Motor mit konstanter Drehzahl. Den Radius ändere ich in gleichen Schritten und messe ihn bis zum Schwerpunkt des Körpers. Ein Kraftsensor misst die Kraft zur Mitte. Im F-r-Diagramm erwarte ich eine Ursprungsgerade.",
+        "criteria": ["Feste und variierte Größe getrennt", "Messgerät für jede Größe genannt", "Erwartetes Diagramm begründet"]
+      },
+      "2": {
+        "prompt": "In einer Messreihe liegt der letzte Messpunkt deutlich unter der erwarteten Geraden. Beurteile, ob damit der Term F_Z = m · ω² · r widerlegt ist, und schlage das weitere Vorgehen vor.",
+        "hints": ["Ein einzelner Punkt und eine ganze Reihe sind zu unterscheiden", "Was könnte bei großen Kräften anders sein?"],
+        "model": "Ein einzelner abweichender Punkt widerlegt den Term noch nicht. Ich prüfe zuerst den Aufbau: Rutscht der Körper, verlässt der Sensor seinen Messbereich, hängt der Faden durch? Dann wiederhole ich die Messung mehrfach. Weicht der Punkt reproduzierbar ab, muss ich klären, ob das Modell dort noch gilt oder ein systematischer Fehler vorliegt.",
+        "criteria": ["Einzelmessung von Messreihe unterschieden", "Konkrete Fehlerquellen genannt", "Wiederholung und Prüfung vorgeschlagen"]
+      }
+    },
+    "model": "centriexp",
+    "calculation": "centriexp"
+  },
+  {
+    "id": "kb-verkehr",
+    "lb": 1,
+    "title": "Kurvenfahrt: Kreisbewegungen in Alltag und Technik",
+    "period": "Ph11 · Lernbereich 1 · alle Ausbildungsrichtungen",
+    "intro": "In der Kurve entscheidet die Haftreibung, ob das Auto auf der Straße bleibt.",
+    "tracks": ["NTG", "ANDERE"],
+    "paragraphs": [
+      "Bei jeder Kreisbewegung fragst du zuerst: Welche Kraft wirkt als Zentripetalkraft? Beim Auto in einer ebenen Kurve ist es die Haftreibungskraft zwischen Reifen und Fahrbahn. Sie kann höchstens F_H,max = μ_H · m · g betragen. Die Haftreibungszahl μ_H liegt auf trockenem Asphalt etwa bei 0,8, auf nasser Fahrbahn etwa bei 0,5 und auf Eis nur bei etwa 0,1.",
+      "Das Auto bleibt in der Spur, solange die nötige Zentripetalkraft nicht größer ist als die größtmögliche Haftreibungskraft: m · v² / r ≤ μ_H · m · g. Die Masse kürzt sich heraus. Die Höchstgeschwindigkeit ist v_max = √(μ_H · g · r). Weil v im Quadrat eingeht, verlangt die doppelte Geschwindigkeit die vierfache Kraft.",
+      "Beispiel: Kurve mit r = 80 m auf nasser Fahrbahn (μ_H = 0,5). v_max = √(0,5 · 9,81 m/s² · 80 m) ≈ 19,8 m/s ≈ 71 km/h. Bei Glatteis (μ_H = 0,1) sind es nur noch etwa 32 km/h. Sicherheitsvorkehrungen folgen daraus: Tempolimits vor engen Kurven, überhöhte Fahrbahnen, griffige Beläge und Reifen mit genügend Profil. Auch beim Kettenkarussell, bei der Wäscheschleuder oder der Zentrifuge suchst du die Kraft, die zur Mitte zeigt."
+    ],
+    "takeaway": "In der ebenen Kurve gilt m · v² / r ≤ μ_H · m · g; doppelte Geschwindigkeit braucht die vierfache Zentripetalkraft.",
+    "formulas": ["F_H,max = μ_H · m · g", "v_max = √(μ_H · g · r)"],
+    "sourceIds": ["lp", "centripetal"],
+    "quiz": {
+      "question": "Ein Auto fährt dieselbe Kurve mit doppelter Geschwindigkeit. Wie ändert sich die nötige Zentripetalkraft?",
+      "answer": "Sie vervierfacht sich.",
+      "wrong": ["Sie verdoppelt sich.", "Sie bleibt gleich, weil der Radius gleich ist."],
+      "explanation": "In F_Z = m · v² / r steht die Geschwindigkeit im Quadrat."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Welche Kraft wirkt als Zentripetalkraft?",
+      "instruction": "Ordne jeder Situation die Kraft zu, die den Körper auf der Kreisbahn hält.",
+      "categories": ["Haftreibung", "Kraft einer Wand, Schiene oder eines Seils", "Gravitation"],
+      "entries": [
+        { "text": "Auto in einer ebenen Kurve", "target": 0, "feedback": "Die Reifen haften auf der Fahrbahn." },
+        { "text": "Wäsche in der Schleudertrommel", "target": 1, "feedback": "Die Trommelwand drückt die Wäsche zur Mitte; das Wasser entweicht durch die Löcher tangential." },
+        { "text": "Mond auf seiner Bahn um die Erde", "target": 2, "feedback": "Die Gravitationskraft der Erde zeigt zum Bahnmittelpunkt." },
+        { "text": "Sitz am Kettenkarussell", "target": 1, "feedback": "Die waagrechte Komponente der Kettenkraft zeigt zur Drehachse." },
+        { "text": "Radfahrerin in der Kurve auf Asphalt", "target": 0, "feedback": "Auch hier liefert die Haftreibung die Kraft zur Mitte." }
+      ],
+      "conclusion": "Die Zentripetalkraft ist eine Rolle, die verschiedene reale Kräfte übernehmen."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Eine Landstraßenkurve hat r = 60 m. Berechne die Höchstgeschwindigkeit bei trockener (μ_H = 0,8) und bei nasser Fahrbahn (μ_H = 0,5) in km/h und vergleiche.",
+        "hints": ["v_max = √(μ_H · g · r)", "Mit 3,6 von m/s in km/h umrechnen"],
+        "model": "Trocken: √(0,8 · 9,81 · 60) ≈ 21,7 m/s ≈ 78 km/h. Nass: √(0,5 · 9,81 · 60) ≈ 17,2 m/s ≈ 62 km/h. Bei Nässe sinkt die sichere Geschwindigkeit um etwa ein Fünftel, obwohl die Reibungszahl um mehr als ein Drittel sinkt, weil μ_H unter der Wurzel steht.",
+        "criteria": ["Beide Werte richtig berechnet", "In km/h umgerechnet", "Vergleich physikalisch begründet"]
+      },
+      "2": {
+        "prompt": "Verfasse für eine Elternversammlung eine kurze Stellungnahme: Soll vor der engen Kurve (r = 40 m) an der Schule Tempo 30 statt 50 gelten? Stütze dich auf berechnete und abgeschätzte Werte.",
+        "hints": ["Nötige Haftreibungszahl für beide Geschwindigkeiten abschätzen: μ = v² / (g · r)", "Auch Nässe und Sicherheitsreserve bedenken"],
+        "model": "Bei 50 km/h (13,9 m/s) verlangt die Kurve μ = 13,9² / (9,81 · 40) ≈ 0,49. Das entspricht gerade dem Wert einer nassen Fahrbahn; es bleibt keine Reserve für Laub, Glätte oder ein Ausweichmanöver. Bei 30 km/h (8,3 m/s) genügt μ ≈ 0,18. Ich empfehle Tempo 30: Die nötige Haftreibung sinkt auf gut ein Drittel, und der Zeitverlust auf dem kurzen Abschnitt beträgt nur wenige Sekunden.",
+        "criteria": ["Werte berechnet und genannt", "Adressatengerecht formuliert", "Klare, begründete Empfehlung"]
+      }
+    },
+    "model": "curve",
+    "calculation": "curve"
+  },
+  {
+    "id": "kb-gravitation",
+    "lb": 1,
+    "title": "Newtons Gravitationsgesetz",
+    "period": "Ph11 · Lernbereich 1 · alle Ausbildungsrichtungen",
+    "intro": "Dieselbe Kraft lässt den Apfel fallen und hält den Mond auf seiner Bahn.",
+    "tracks": ["NTG", "ANDERE"],
+    "paragraphs": [
+      "Zwei Körper mit den Massen m₁ und m₂ ziehen sich gegenseitig an. Für kugelförmige Körper, deren Mittelpunkte den Abstand r haben, gilt das Newton’sche Gravitationsgesetz: F_G = G · m₁ · m₂ / r². Die Gravitationskonstante ist G = 6,674 · 10⁻¹¹ m³/(kg·s²). Beide Körper erfahren gleich große, entgegengesetzt gerichtete Kräfte (Wechselwirkungsgesetz).",
+      "Die Kraft nimmt mit dem Quadrat des Abstands ab: Im doppelten Abstand beträgt sie ein Viertel, im dreifachen ein Neuntel. Der Abstand zählt zwischen den Mittelpunkten. An der Erdoberfläche ist r der Erdradius; aus m · g = G · M · m / r² folgt der Ortsfaktor g = G · M / r².",
+      "Beispiel: Mit der Erdmasse M = 5,972 · 10²⁴ kg und r = 6,371 · 10⁶ m ergibt sich g = 6,674 · 10⁻¹¹ · 5,972 · 10²⁴ / (6,371 · 10⁶)² m/s² ≈ 9,82 m/s². Zwischen zwei Menschen von je 70 kg im Abstand 1 m wirken dagegen nur etwa 3 · 10⁻⁷ N. Die Gravitation ist im Alltag nur spürbar, wenn mindestens einer der Körper sehr massereich ist."
+    ],
+    "takeaway": "F_G = G · m₁ · m₂ / r²: Im doppelten Abstand der Mittelpunkte bleibt ein Viertel der Kraft.",
+    "formulas": ["F_G = G · m₁ · m₂ / r²", "G = 6,674 · 10⁻¹¹ m³/(kg·s²)", "g = G · M / r²"],
+    "sourceIds": ["lp", "gravitation"],
+    "quiz": {
+      "question": "Ein Satellit entfernt sich auf den doppelten Abstand vom Erdmittelpunkt. Wie groß ist die Gravitationskraft dort?",
+      "answer": "Ein Viertel der ursprünglichen Kraft.",
+      "wrong": ["Die Hälfte der ursprünglichen Kraft.", "Null, weil er die Erdanziehung verlassen hat."],
+      "explanation": "Die Kraft ist proportional zu 1 / r². Sie wird mit wachsendem Abstand kleiner, aber nie null."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Wie ändert sich die Kraft?",
+      "instruction": "Ordne jede Änderung ihrer Wirkung auf die Gravitationskraft zu.",
+      "categories": ["Kraft wird kleiner", "Kraft bleibt gleich", "Kraft wird größer"],
+      "entries": [
+        { "text": "Der Abstand der Mittelpunkte wird verdreifacht.", "target": 0, "feedback": "Es bleibt ein Neuntel." },
+        { "text": "Eine der beiden Massen wird verdoppelt.", "target": 2, "feedback": "Die Kraft ist proportional zu jeder der beiden Massen." },
+        { "text": "Beide Massen werden verdoppelt und der Abstand wird verdoppelt.", "target": 1, "feedback": "Faktor 4 im Zähler und Faktor 4 im Nenner heben sich auf." },
+        { "text": "Der Körper wird vom Äquator auf einen hohen Berg gebracht.", "target": 0, "feedback": "Der Abstand zum Erdmittelpunkt wächst etwas." }
+      ],
+      "conclusion": "Zähle die Faktoren: Massen im Zähler, Abstand im Quadrat im Nenner."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Berechne die Gravitationskraft zwischen Erde (5,97 · 10²⁴ kg) und Mond (7,35 · 10²² kg) im Abstand 3,84 · 10⁸ m und erkläre, warum der Mond trotzdem nicht auf die Erde fällt.",
+        "hints": ["Alle Werte in den Term einsetzen und die Zehnerpotenzen getrennt rechnen", "Die Kraft wirkt als Zentripetalkraft"],
+        "model": "F = 6,674 · 10⁻¹¹ · 5,97 · 10²⁴ · 7,35 · 10²² / (3,84 · 10⁸)² N ≈ 1,99 · 10²⁰ N. Der Mond bewegt sich quer zu dieser Kraft. Sie wirkt als Zentripetalkraft und krümmt seine Bahn zum Kreis um die Erde; er „fällt“ ständig um die Erde herum.",
+        "criteria": ["Term richtig eingesetzt", "Zehnerpotenzen korrekt behandelt", "Zentripetalkraft als Erklärung genutzt"]
+      },
+      "2": {
+        "prompt": "Auf dem Mars (M = 6,42 · 10²³ kg, r = 3390 km) soll eine Sonde landen. Bestimme den Ortsfaktor an der Oberfläche und beurteile, ob eine für die Erde gebaute Landestütze dort ausreicht.",
+        "hints": ["g = G · M / r² mit r in Metern", "Gewichtskraft auf Mars und Erde vergleichen"],
+        "model": "g = 6,674 · 10⁻¹¹ · 6,42 · 10²³ / (3,39 · 10⁶)² m/s² ≈ 3,73 m/s². Die Gewichtskraft der Sonde ist auf dem Mars nur etwa 38 % so groß wie auf der Erde. Für das ruhende Stehen reicht die Stütze deshalb aus. Beim Aufsetzen zählt aber zusätzlich die Kraft zum Abbremsen; dazu braucht man die Sinkgeschwindigkeit.",
+        "criteria": ["Radius in Meter umgerechnet", "Ortsfaktor richtig berechnet", "Grenze der Aussage benannt"]
+      }
+    },
+    "model": "gravity",
+    "calculation": "gravity"
+  },
+  {
+    "id": "kb-satelliten",
+    "lb": 1,
+    "title": "Satelliten und Himmelskörper auf Kreisbahnen",
+    "period": "Ph11 · Lernbereich 1 · alle Ausbildungsrichtungen",
+    "intro": "Wer die Bahn kennt, kann die Masse des Zentralkörpers bestimmen.",
+    "tracks": ["NTG", "ANDERE"],
+    "paragraphs": [
+      "Viele Bahnen von Satelliten, Monden und Planeten sind fast kreisförmig. Im Modell wirkt dann die Gravitationskraft des Zentralkörpers als Zentripetalkraft: G · M · m / r² = m · v² / r. Die Masse m des umlaufenden Körpers kürzt sich. Für die Bahngeschwindigkeit folgt v = √(G · M / r). Je größer der Bahnradius, desto langsamer der Umlauf.",
+      "Setzt du v = 2π · r / T ein, erhältst du T² = 4π² · r³ / (G · M). Daraus lässt sich die Masse des Zentralkörpers bestimmen, wenn Bahnradius und Umlaufdauer eines Begleiters bekannt sind: M = 4π² · r³ / (G · T²). So „wiegt“ man die Erde mit dem Mond und die Sonne mit der Erde.",
+      "Beispiel: Die Raumstation ISS kreist etwa 400 km über der Erdoberfläche, also bei r = 6771 km. v = √(6,674 · 10⁻¹¹ · 5,972 · 10²⁴ / (6,771 · 10⁶)) m/s ≈ 7670 m/s ≈ 7,67 km/s und T = 2π · r / v ≈ 92 min. Ein geostationärer Satellit braucht T = 23 h 56 min wie die Erddrehung; das gelingt nur über dem Äquator beim Bahnradius r ≈ 42 160 km, also etwa 35 800 km über der Erdoberfläche. Das Modell hat Grenzen: Wirkliche Bahnen sind Ellipsen, und weitere Körper stören sie."
+    ],
+    "takeaway": "Gravitation als Zentripetalkraft: v = √(G · M / r) und T² = 4π² · r³ / (G · M), unabhängig von der Satellitenmasse.",
+    "formulas": ["G · M · m / r² = m · v² / r", "v = √(G · M / r)", "T² = 4π² · r³ / (G · M)"],
+    "sourceIds": ["lp", "satellites", "gravitation"],
+    "quiz": {
+      "question": "Zwei Satelliten kreisen auf derselben Bahn um die Erde; einer hat die doppelte Masse. Wie verhalten sich ihre Umlaufdauern?",
+      "answer": "Sie sind gleich, weil sich die Satellitenmasse herauskürzt.",
+      "wrong": [
+        "Der schwerere braucht doppelt so lange.",
+        "Der schwerere ist schneller, weil ihn die Erde stärker anzieht."
+      ],
+      "explanation": "Die Gravitationskraft und die nötige Zentripetalkraft sind beide proportional zu m. In v = √(G · M / r) kommt m nicht mehr vor."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Bahnen vergleichen",
+      "instruction": "Ordne jede Aussage dem passenden Satelliten zu.",
+      "categories": ["Niedrige Bahn (etwa 400 km)", "Geostationäre Bahn (etwa 35 800 km)", "Gilt für beide"],
+      "entries": [
+        { "text": "Umlaufdauer rund 92 Minuten", "target": 0, "feedback": "Nahe der Erde ist die Bahn kurz und die Geschwindigkeit groß." },
+        { "text": "Steht von der Erde aus gesehen immer an derselben Stelle am Himmel", "target": 1, "feedback": "Die Umlaufdauer gleicht der Erddrehung." },
+        { "text": "Die Gravitationskraft wirkt als Zentripetalkraft", "target": 2, "feedback": "Das ist das gemeinsame Modell." },
+        { "text": "Bahngeschwindigkeit etwa 7,7 km/s", "target": 0, "feedback": "Auf der geostationären Bahn sind es nur etwa 3,1 km/s." },
+        { "text": "Die Umlaufdauer hängt nicht von der Masse des Satelliten ab", "target": 2, "feedback": "Die Masse kürzt sich aus der Gleichung." }
+      ],
+      "conclusion": "Größerer Bahnradius bedeutet kleinere Geschwindigkeit und längere Umlaufdauer."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Ein Erdbeobachtungssatellit kreist 800 km über der Erdoberfläche (Erdradius 6371 km, G · M = 3,986 · 10¹⁴ m³/s²). Berechne Bahngeschwindigkeit und Umlaufdauer.",
+        "hints": ["Der Bahnradius zählt vom Erdmittelpunkt", "T = 2π · r / v"],
+        "model": "r = 7171 km = 7,171 · 10⁶ m. v = √(3,986 · 10¹⁴ / (7,171 · 10⁶)) m/s ≈ 7456 m/s ≈ 7,46 km/s. T = 2π · 7,171 · 10⁶ m / 7456 m/s ≈ 6043 s ≈ 101 min. Der Satellit umrundet die Erde etwa 14-mal am Tag.",
+        "criteria": ["Bahnradius aus Höhe und Erdradius gebildet", "v richtig berechnet", "T mit sinnvoller Einheit angegeben"]
+      },
+      "2": {
+        "prompt": "Der Jupitermond Io umläuft Jupiter in 1,77 Tagen auf einer Bahn mit r = 4,22 · 10⁸ m. Bestimme daraus die Masse des Jupiter und nenne zwei Annahmen des Modells.",
+        "hints": ["M = 4π² · r³ / (G · T²)", "T in Sekunden umrechnen"],
+        "model": "T = 1,77 · 86 400 s ≈ 1,53 · 10⁵ s. M = 4π² · (4,22 · 10⁸)³ / (6,674 · 10⁻¹¹ · (1,53 · 10⁵)²) kg ≈ 1,9 · 10²⁷ kg. Angenommen ist eine Kreisbahn und dass nur Jupiter auf Io wirkt; die anderen Monde und die Sonne werden vernachlässigt.",
+        "criteria": ["Umlaufdauer in Sekunden", "Masse in richtiger Größenordnung", "Zwei Modellannahmen benannt"]
+      }
+    },
+    "model": "orbit",
+    "calculation": "orbit"
+  }
+]

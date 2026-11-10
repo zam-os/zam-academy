@@ -1,0 +1,434 @@
+[
+  {
+    "id": "nt-kleine-schritte",
+    "lb": 4,
+    "title": "Die Methode der kleinen Schritte",
+    "period": "Ph11 · Lernbereich 4.1 · NTG",
+    "intro": "Wenn sich die Kraft ständig ändert, rechnest du eben in kleinen Stücken.",
+    "tracks": ["NTG"],
+    "paragraphs": [
+      "Die Bewegungsfunktionen aus Jahrgangsstufe 10 gelten nur für konstante Beschleunigung. Bei vielen Bewegungen ändert sich die Kraft aber laufend: Der Luftwiderstand wächst mit der Geschwindigkeit, die Federkraft mit der Auslenkung. Die Methode der kleinen Schritte hilft weiter: Du zerlegst die Bewegung in kurze Zeitabschnitte Δt und nimmst an, dass die Kraft innerhalb eines Abschnitts konstant bleibt.",
+      "In jedem Schritt rechnest du nacheinander: erstens die Kraft aus dem momentanen Zustand, zweitens die Beschleunigung a = F / m, drittens die neue Geschwindigkeit v_neu = v + a · Δt, viertens den neuen Ort x_neu = x + v · Δt, fünftens die neue Zeit t_neu = t + Δt. Dann beginnt der nächste Schritt mit den neuen Werten. Diese Wiederholung überlässt man einer Tabellenkalkulation oder einem Programm.",
+      "Beispiel: Ein Körper (m = 1 kg) fällt aus der Ruhe mit Luftwiderstand F_L = k · v², k = 0,2 kg/m, Δt = 0,5 s. Schritt 1: v = 0, also a = 9,81 m/s² und v_neu = 4,9 m/s. Schritt 2: a = 9,81 − 0,2 · 4,9² ≈ 5,0 m/s², v_neu ≈ 7,4 m/s. Die Beschleunigung nimmt ab. Die Rechnung ist eine Näherung: Je kleiner Δt, desto besser folgt sie der wirklichen Bewegung, desto mehr Schritte sind aber nötig."
+    ],
+    "takeaway": "In jedem kleinen Zeitschritt gilt die Kraft als konstant: a = F / m, v_neu = v + a · Δt, x_neu = x + v · Δt.",
+    "formulas": ["a = F / m", "v_neu = v + a · Δt", "x_neu = x + v · Δt", "t_neu = t + Δt"],
+    "sourceIds": ["lp", "drag"],
+    "quiz": {
+      "question": "Welche Annahme macht die Methode der kleinen Schritte innerhalb eines Zeitschritts?",
+      "answer": "Die Kraft und damit die Beschleunigung bleiben konstant.",
+      "wrong": [
+        "Die Geschwindigkeit bleibt während der ganzen Bewegung konstant.",
+        "Die Kraft ist während des Schritts null."
+      ],
+      "explanation": "Nur innerhalb des kurzen Abschnitts wird die Kraft festgehalten; von Schritt zu Schritt wird sie neu berechnet."
+    },
+    "workshop": {
+      "kind": "timeline",
+      "title": "Einen Rechenschritt ordnen",
+      "instruction": "Bringe die Teilschritte eines Zeitschritts in die richtige Reihenfolge.",
+      "categories": [],
+      "entries": [
+        { "text": "Kraft aus dem momentanen Zustand (Ort, Geschwindigkeit) berechnen", "target": 0, "feedback": "Der Zustand am Anfang des Schritts legt die Kraft fest." },
+        { "text": "Beschleunigung a = F / m berechnen", "target": 1, "feedback": "Newtons Grundgleichung." },
+        { "text": "Neue Geschwindigkeit v_neu = v + a · Δt berechnen", "target": 2, "feedback": "Im Schritt gilt a als konstant." },
+        { "text": "Neuen Ort berechnen", "target": 3, "feedback": "Der Körper rückt um ein kleines Stück weiter." },
+        { "text": "Zeit um Δt erhöhen und den nächsten Schritt beginnen", "target": 4, "feedback": "Dieselben Schritte wiederholen sich mit neuen Werten." }
+      ],
+      "conclusion": "Kraft, Beschleunigung, Geschwindigkeit, Ort, Zeit: Diese Schleife läuft so oft wie nötig."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre, warum die Bewegungsfunktionen für konstante Beschleunigung beim Fall mit Luftwiderstand versagen und wie die Methode der kleinen Schritte das Problem umgeht.",
+        "hints": ["Wovon hängt der Luftwiderstand ab?", "Was wird in jedem Schritt angenommen?"],
+        "model": "Beim Fall mit Luftwiderstand wächst die bremsende Kraft mit der Geschwindigkeit. Die resultierende Kraft und damit die Beschleunigung ändern sich ständig; v = a · t gilt nicht mehr. Die Methode der kleinen Schritte zerlegt die Bewegung in kurze Abschnitte, in denen die Kraft näherungsweise konstant ist. Für jeden Abschnitt gelten dann wieder die einfachen Gleichungen, und die Kraft wird danach neu berechnet.",
+        "criteria": ["Nichtkonstante Kraft als Ursache", "Zerlegung in Zeitabschnitte erklärt", "Näherungscharakter benannt"]
+      },
+      "2": {
+        "prompt": "Rechne zwei Schritte von Hand: Ein Körper (m = 2 kg) startet aus der Ruhe, auf ihn wirkt F = 10 N − 2 N·s/m · v. Verwende Δt = 0,5 s und gib v nach jedem Schritt an. Beurteile, wie sich ein kleinerer Zeitschritt auswirken würde.",
+        "hints": ["Schritt 1 mit v = 0 beginnen", "Für Schritt 2 die neue Geschwindigkeit in die Kraft einsetzen"],
+        "model": "Schritt 1: F = 10 N, a = 5 m/s², v = 0 + 5 · 0,5 = 2,5 m/s. Schritt 2: F = 10 N − 2 · 2,5 N = 5 N, a = 2,5 m/s², v = 2,5 + 2,5 · 0,5 = 3,75 m/s. Mit kleinerem Δt würde die Kraft häufiger angepasst; die Geschwindigkeit nach 1 s fiele etwas kleiner aus und läge näher am wahren Verlauf, bei doppelt so vielen Rechenschritten.",
+        "criteria": ["Beide Schritte richtig", "Kraft im zweiten Schritt neu berechnet", "Einfluss von Δt beurteilt"]
+      }
+    },
+    "model": "euler",
+    "calculation": "euler"
+  },
+  {
+    "id": "nt-luftwiderstand",
+    "lb": 4,
+    "title": "Simulation: Freier Fall mit Luftwiderstand",
+    "period": "Ph11 · Lernbereich 4.1 · NTG",
+    "intro": "Fallschirmspringer werden nicht immer schneller. Die Simulation zeigt, warum.",
+    "tracks": ["NTG"],
+    "paragraphs": [
+      "Auf einen fallenden Körper wirken die Gewichtskraft m · g nach unten und der Luftwiderstand nach oben. Für nicht zu kleine Geschwindigkeiten gilt näherungsweise F_L = k · v²; der Beiwert k fasst Form, Querschnittsfläche und Luftdichte zusammen. Die Beschleunigung ist a = g − k · v² / m. Mit der Methode der kleinen Schritte berechnet eine Tabellenkalkulation daraus Zeile für Zeile Zeit, Beschleunigung, Geschwindigkeit und Weg.",
+      "Die Diagramme lassen sich so deuten: Im Zeit-Geschwindigkeit-Diagramm steigt die Kurve zuerst steil wie beim freien Fall und wird dann flacher, bis sie waagrecht verläuft. Im Zeit-Beschleunigung-Diagramm fällt a von g auf null. Im Zeit-Weg-Diagramm geht die Kurve von einer Parabel in eine Gerade über. Die Endgeschwindigkeit ist erreicht, wenn Gewichtskraft und Luftwiderstand gleich groß sind: m · g = k · v_E², also v_E = √(m · g / k).",
+      "Beispiel: m = 80 kg, k = 0,3 kg/m ergibt v_E = √(80 · 9,81 / 0,3) m/s ≈ 51 m/s ≈ 184 km/h. Die Güte der Simulation prüfst du auf drei Wegen: Zeitschritt halbieren und vergleichen, mit einem bekannten Grenzfall vergleichen (k = 0 muss v = g · t liefern) und mit einem Realexperiment vergleichen, etwa der Videoanalyse fallender Papierkegel. Weicht die Messung ab, kann der Zeitschritt zu grob oder das Modell F_L = k · v² unpassend sein."
+    ],
+    "takeaway": "Mit Luftwiderstand F_L = k · v² nähert sich v der Endgeschwindigkeit v_E = √(m · g / k); die Güte prüfst du über Zeitschritt, Grenzfall und Experiment.",
+    "formulas": ["F_L = k · v²", "a = g − k · v² / m", "v_E = √(m · g / k)"],
+    "sourceIds": ["lp", "drag"],
+    "quiz": {
+      "question": "Woran erkennst du im Zeit-Geschwindigkeit-Diagramm, dass die Endgeschwindigkeit erreicht ist?",
+      "answer": "Die Kurve verläuft waagrecht; die Beschleunigung ist null.",
+      "wrong": [
+        "Die Kurve steigt als Gerade mit der Steigung g weiter an.",
+        "Die Kurve fällt wieder auf null ab."
+      ],
+      "explanation": "Die Steigung im Zeit-Geschwindigkeit-Diagramm ist die Beschleunigung. Im Kräftegleichgewicht ist sie null."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Diagramme deuten",
+      "instruction": "Ordne jede Beobachtung im Diagramm der Phase des Falls zu.",
+      "categories": ["Kurz nach dem Start", "Kurz vor dem Gleichgewicht", "Endgeschwindigkeit erreicht"],
+      "entries": [
+        { "text": "Die Beschleunigung ist fast g.", "target": 0, "feedback": "Bei kleiner Geschwindigkeit ist der Luftwiderstand noch klein." },
+        { "text": "Das Zeit-Geschwindigkeit-Diagramm verläuft waagrecht.", "target": 2, "feedback": "v ändert sich nicht mehr." },
+        { "text": "Die Geschwindigkeit wächst noch, aber nur noch langsam.", "target": 1, "feedback": "Der Luftwiderstand ist fast so groß wie die Gewichtskraft." },
+        { "text": "Das Zeit-Weg-Diagramm ist eine Gerade.", "target": 2, "feedback": "Konstante Geschwindigkeit bedeutet gleichmäßigen Wegzuwachs." },
+        { "text": "Das Zeit-Weg-Diagramm ist wie beim freien Fall parabelförmig.", "target": 0, "feedback": "Anfangs gleicht die Bewegung dem freien Fall." }
+      ],
+      "conclusion": "Steigung im t-v-Diagramm ist die Beschleunigung, Steigung im t-x-Diagramm die Geschwindigkeit."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Beschreibe den Verlauf von Beschleunigung und Geschwindigkeit eines Fallschirmspringers vor dem Öffnen des Schirms und erkläre ihn mit den wirkenden Kräften. Berechne v_E für m = 90 kg und k = 0,25 kg/m.",
+        "hints": ["Zwei Kräfte vergleichen", "v_E = √(m · g / k)"],
+        "model": "Am Anfang wirkt fast nur die Gewichtskraft; die Beschleunigung ist etwa g. Mit wachsender Geschwindigkeit nimmt der Luftwiderstand quadratisch zu, die resultierende Kraft und die Beschleunigung nehmen ab. Sind beide Kräfte gleich groß, ist a = 0 und die Geschwindigkeit bleibt konstant. v_E = √(90 · 9,81 / 0,25) m/s ≈ 59 m/s, etwa 214 km/h.",
+        "criteria": ["Kräfte und ihre Änderung beschrieben", "Gleichgewicht als Bedingung", "v_E richtig berechnet"]
+      },
+      "2": {
+        "prompt": "Eine Simulation mit Δt = 1 s liefert nach 3 s eine höhere Geschwindigkeit als die Endgeschwindigkeit. Mit Δt = 0,1 s passiert das nicht. Diskutiere die Güte der Methode und beschreibe, wie du das Ergebnis mit einem Realexperiment vergleichen würdest.",
+        "hints": ["Was wird innerhalb eines Schritts angenommen?", "Videoanalyse eines fallenden Papierkegels"],
+        "model": "Innerhalb eines Schritts gilt die Beschleunigung als konstant. Bei Δt = 1 s ist das eine grobe Annahme: Die Beschleunigung vom Schrittanfang wird zu lange verwendet, die Geschwindigkeit schießt über das Ziel hinaus. Ein kleinerer Schritt passt die Kraft häufiger an. Die Güte prüfe ich, indem ich Δt verkleinere, bis sich das Ergebnis nicht mehr merklich ändert. Zum Vergleich filme ich einen fallenden Papierkegel, bestimme per Videoanalyse v(t) und passe k so an, dass Simulation und Messung übereinstimmen.",
+        "criteria": ["Ursache des Überschießens erklärt", "Kriterium für geeignetes Δt", "Vergleich mit Experiment konkret beschrieben"]
+      }
+    },
+    "model": "airfall",
+    "calculation": "airfall"
+  },
+  {
+    "id": "nt-schwingung-simulieren",
+    "lb": 4,
+    "title": "Schwingungen simulieren und Parameter untersuchen",
+    "period": "Ph11 · Lernbereich 4.1 · NTG",
+    "intro": "Eine Simulation ist ein Experiment am Modell.",
+    "tracks": ["NTG"],
+    "paragraphs": [
+      "Auch die harmonische Schwingung eines Federpendels lässt sich mit der Methode der kleinen Schritte berechnen. Die Kraft hängt hier vom Ort ab: F = −D · x. Ein Schritt lautet: a = −D · x / m, v_neu = v + a · Δt, x_neu = x + v_neu · Δt. Aus einem einfachen Kraftgesetz entsteht so Schritt für Schritt die Sinuskurve, ohne dass sie vorgegeben wurde.",
+      "Mit der Simulation gewinnst du Erkenntnisse über das System, indem du Parameter gezielt änderst und jeweils nur einen variierst. Vervierfachst du die Masse, verdoppelt sich die Periodendauer; vervierfachst du die Federhärte, halbiert sie sich; die Startauslenkung ändert sie nicht. Das passt zu T = 2π · √(m / D). Beispiel: m = 0,2 kg, D = 20 N/m liefert in der Simulation mit Δt = 0,01 s eine Periodendauer von etwa 0,63 s, wie die Formel.",
+      "Die Methode ist weit über die Schule hinaus wichtig, weil sich die meisten realen Systeme nicht mit einer fertigen Formel lösen lassen. Wettervorhersage und Klimamodelle teilen die Atmosphäre in Gitterzellen und rechnen in Zeitschritten. Ingenieurinnen und Ingenieure simulieren Crashtests, Brücken unter Wind und die Bahnen von Raumsonden; in der Medizin werden Blutströmungen berechnet, in der Astronomie die Entstehung von Galaxien. Immer gilt: Ein Simulationsergebnis ist nur so gut wie das Modell, die Anfangswerte und die Schrittweite."
+    ],
+    "takeaway": "Simulation als Experiment am Modell: einen Parameter variieren, Wirkung beobachten, mit Formel oder Messung vergleichen.",
+    "formulas": ["a = −D · x / m", "v_neu = v + a · Δt", "x_neu = x + v_neu · Δt"],
+    "sourceIds": ["lp", "harmonic", "dwd"],
+    "quiz": {
+      "question": "Du vervierfachst in der Simulation eines Federpendels die Masse. Was zeigt das Zeit-Ort-Diagramm?",
+      "answer": "Die Periodendauer verdoppelt sich.",
+      "wrong": ["Die Periodendauer vervierfacht sich.", "Die Amplitude verdoppelt sich bei gleicher Periodendauer."],
+      "explanation": "T ist proportional zu √m: Die Wurzel aus 4 ist 2. Die Amplitude legt die Startauslenkung fest."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Parameter und ihre Wirkung",
+      "instruction": "Ordne jede Änderung ihrer Wirkung auf die simulierte Periodendauer zu.",
+      "categories": ["Periodendauer wird größer", "Periodendauer bleibt gleich", "Periodendauer wird kleiner"],
+      "entries": [
+        { "text": "Größere Masse", "target": 0, "feedback": "Ein trägerer Körper wird langsamer beschleunigt." },
+        { "text": "Größere Federhärte", "target": 2, "feedback": "Eine härtere Feder zieht stärker zurück." },
+        { "text": "Größere Startauslenkung", "target": 1, "feedback": "Der Weg wird länger, die Kraft aber im selben Maß größer." },
+        { "text": "Kleinere Masse und zugleich kleinere Federhärte im selben Verhältnis", "target": 1, "feedback": "Es kommt nur auf m / D an." }
+      ],
+      "conclusion": "Nur das Verhältnis m / D bestimmt die Periodendauer."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Beschreibe, wie du mit einer Simulation untersuchst, wie die Schwingungsdauer eines Federpendels von der Masse abhängt. Nenne die festen Parameter, die Messgröße und das erwartete Ergebnis.",
+        "hints": ["Nur einen Parameter ändern", "Periodendauer am Diagramm ablesen"],
+        "model": "Ich halte Federhärte, Startauslenkung und Zeitschritt fest und ändere nur die Masse, zum Beispiel 0,1 kg, 0,2 kg, 0,4 kg und 0,8 kg. Für jeden Lauf lese ich im Zeit-Ort-Diagramm die Periodendauer als Abstand zweier Hochpunkte ab. Ich erwarte, dass sich T bei vierfacher Masse verdoppelt; im T²-m-Diagramm sollte eine Ursprungsgerade entstehen.",
+        "criteria": ["Feste und variierte Parameter getrennt", "Ablesen der Periodendauer beschrieben", "Erwartung mit T² ~ m oder Faktor 2"]
+      },
+      "2": {
+        "prompt": "Erläutere an einem Beispiel aus Forschung oder Ingenieurwesen, warum dort in kleinen Schritten gerechnet wird, und nenne zwei Gründe, weshalb man den Ergebnissen nicht blind vertrauen darf.",
+        "hints": ["Wettervorhersage, Crashtest, Raumsonde", "Modell, Anfangswerte, Schrittweite"],
+        "model": "Bei der Wettervorhersage wird die Atmosphäre in Gitterzellen geteilt; für jede Zelle berechnet der Computer in Zeitschritten, wie sich Druck, Temperatur und Wind ändern. Eine geschlossene Formel gibt es dafür nicht. Vertrauen muss begrenzt bleiben, weil erstens das Modell vereinfacht und die Gitterzellen kleine Vorgänge nicht auflösen und weil zweitens die Anfangswerte nur ungenau gemessen sind. Deshalb vergleicht man Vorhersagen laufend mit Messungen und rechnet mehrere Läufe.",
+        "criteria": ["Passendes Anwendungsbeispiel", "Schrittweises Rechnen erklärt", "Zwei Grenzen der Aussagekraft"]
+      }
+    },
+    "model": "eulerosc"
+  },
+  {
+    "id": "nt-kennlinie",
+    "lb": 4,
+    "title": "Schülerexperiment: Kennlinie und Maximum-Power-Point einer Solarzelle",
+    "period": "Ph11 · Lernbereich 4.2 · NTG",
+    "intro": "Eine Solarzelle liefert nur an einem Punkt ihre größte Leistung.",
+    "tracks": ["NTG"],
+    "paragraphs": [
+      "Im Experiment beleuchtest du eine Solarzelle gleichmäßig und schließt einen veränderbaren Widerstand an. Für jede Einstellung misst du die Spannung U an der Zelle und die Stromstärke I. Ohne Verbraucher (offene Klemmen) misst du die Leerlaufspannung U_L bei I = 0; bei kurzgeschlossenen Klemmen die Kurzschlussstromstärke I_K bei U = 0. Dazwischen liegt die U-I-Kennlinie: Die Stromstärke bleibt über einen weiten Bereich fast konstant und fällt nahe der Leerlaufspannung steil ab.",
+      "Die abgegebene Leistung ist P = U · I. Im Leerlauf und im Kurzschluss ist sie null. Dazwischen gibt es einen Arbeitspunkt mit größter Leistung, den Maximum-Power-Point (MPP). Du findest ihn, indem du für jeden Messpunkt P berechnest und das P-U-Diagramm zeichnest. Im U-I-Diagramm ist P der Flächeninhalt des Rechtecks unter dem Arbeitspunkt.",
+      "Wiederholst du die Messung bei anderer Bestrahlungsstärke, zeigt sich: Die Kurzschlussstromstärke ist etwa proportional zur Bestrahlungsstärke, die Leerlaufspannung ändert sich nur wenig. Der MPP verschiebt sich also. Beispiel: Bei U = 0,48 V und I = 0,45 A gibt eine Zelle 0,216 W ab; bei U = 0,55 V und I = 0,20 A nur 0,11 W. Das Experiment dient hier nicht dem Prüfen einer Hypothese, sondern dem Untersuchen der Eigenschaften eines Objekts; auch das ist eine Funktion von Experimenten."
+    ],
+    "takeaway": "P = U · I ist im Maximum-Power-Point am größten; I_K wächst mit der Bestrahlungsstärke, U_L kaum.",
+    "formulas": ["P = U · I", "MPP: Arbeitspunkt größter Leistung", "I_K ~ Bestrahlungsstärke"],
+    "sourceIds": ["lp", "pv-facts"],
+    "quiz": {
+      "question": "Wie groß ist die abgegebene Leistung einer Solarzelle im Kurzschluss?",
+      "answer": "Null, weil die Spannung null ist.",
+      "wrong": [
+        "Maximal, weil die Stromstärke am größten ist.",
+        "Halb so groß wie im Maximum-Power-Point."
+      ],
+      "explanation": "P = U · I. Im Kurzschluss ist U = 0, im Leerlauf I = 0; in beiden Fällen ist P = 0."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Punkte der Kennlinie",
+      "instruction": "Ordne jede Aussage dem Punkt der Kennlinie zu.",
+      "categories": ["Kurzschluss", "Maximum-Power-Point", "Leerlauf"],
+      "entries": [
+        { "text": "Die Spannung ist null, die Stromstärke am größten.", "target": 0, "feedback": "Die Klemmen sind direkt verbunden." },
+        { "text": "Die Stromstärke ist null, die Spannung am größten.", "target": 2, "feedback": "Es ist kein Verbraucher angeschlossen." },
+        { "text": "Das Produkt U · I ist am größten.", "target": 1, "feedback": "Hier gibt die Zelle die größte Leistung ab." },
+        { "text": "Das Rechteck unter dem Arbeitspunkt im U-I-Diagramm hat den größten Flächeninhalt.", "target": 1, "feedback": "Der Flächeninhalt entspricht der Leistung." },
+        { "text": "Der Messwert an dieser Stelle ist etwa proportional zur Bestrahlungsstärke.", "target": 0, "feedback": "Die Kurzschlussstromstärke wächst mit dem Licht." }
+      ],
+      "conclusion": "Zwischen den beiden leistungslosen Endpunkten liegt der MPP im Knick der Kennlinie."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Messwerte einer Solarzelle: (0 V; 0,50 A), (0,30 V; 0,49 A), (0,45 V; 0,46 A), (0,52 V; 0,35 A), (0,58 V; 0,10 A), (0,60 V; 0 A). Berechne die Leistung für jeden Punkt und bestimme den Maximum-Power-Point.",
+        "hints": ["P = U · I für jede Zeile", "Größten Wert suchen"],
+        "model": "Die Leistungen sind 0 W; 0,147 W; 0,207 W; 0,182 W; 0,058 W; 0 W. Die größte Leistung liegt beim Messpunkt 0,45 V und 0,46 A mit etwa 0,21 W; dort liegt näherungsweise der MPP. Für eine genauere Bestimmung würde ich zwischen 0,40 V und 0,52 V weitere Punkte messen.",
+        "criteria": ["Alle Leistungen berechnet", "MPP richtig bestimmt", "Verfeinerung der Messung vorgeschlagen"]
+      },
+      "2": {
+        "prompt": "Plane das Experiment so, dass du die Abhängigkeit des MPP von der Bestrahlungsstärke untersuchen kannst. Gehe auf den Aufbau, das Ändern der Bestrahlungsstärke und zwei Störgrößen ein.",
+        "hints": ["Abstand der Lampe oder Graufilter", "Temperatur der Zelle, Fremdlicht"],
+        "model": "Ich schalte ein Amperemeter in Reihe und ein Voltmeter parallel zur Zelle und ändere den Lastwiderstand in kleinen Schritten. Die Bestrahlungsstärke ändere ich über den Abstand der Lampe oder mit Graufiltern und halte sie während einer Messreihe fest. Für jede Stufe nehme ich die Kennlinie auf und bestimme den MPP. Störgrößen sind die Erwärmung der Zelle durch die Lampe, die die Spannung senkt, und Fremdlicht; ich messe zügig und dunkle den Raum ab.",
+        "criteria": ["Schaltung richtig beschrieben", "Bestrahlungsstärke kontrolliert variiert", "Zwei Störgrößen mit Gegenmaßnahme"]
+      }
+    },
+    "model": "solar",
+    "calculation": "solar"
+  },
+  {
+    "id": "nt-pv-anlage",
+    "lb": 4,
+    "title": "Photovoltaikanlagen: Technik und Nutzen bewerten",
+    "period": "Ph11 · Lernbereich 4.2 · NTG",
+    "intro": "Vom Modul auf dem Dach bis zur Steckdose braucht es mehr als Solarzellen.",
+    "tracks": ["NTG"],
+    "paragraphs": [
+      "Eine einzelne Solarzelle liefert nur etwa 0,6 V. In einem Modul sind viele Zellen in Reihe geschaltet, damit sich die Spannungen addieren; mehrere Module bilden den Solargenerator. Er liefert Gleichstrom. Der Wechselrichter wandelt ihn in Wechselstrom mit 230 V und 50 Hz um, der zum Hausnetz passt. Im Wechselrichter sitzt der MPP-Tracker: eine Regelung, die die Belastung der Module laufend so einstellt, dass sie trotz wechselnder Einstrahlung und Temperatur im Maximum-Power-Point arbeiten. Ein Speicher kann Überschüsse vom Mittag für den Abend bereithalten.",
+      "Die Nennleistung einer Anlage wird in Kilowatt-Peak (kWp) angegeben: die Leistung bei einer festgelegten Bestrahlungsstärke von 1000 W/m². Der Jahresertrag lässt sich abschätzen mit E = P_peak · spezifischer Ertrag; in Deutschland liegt der spezifische Ertrag grob bei 900 bis 1100 kWh je kWp und Jahr. Beispiel: Eine Dachanlage mit 8 kWp liefert etwa 8 · 1000 kWh = 8000 kWh im Jahr; ein Haushalt mit vier Personen braucht grob 4000 kWh Strom.",
+      "Für eine Bewertung reichen solche Zahlen nicht allein. Erzeugung und Bedarf fallen zeitlich nicht zusammen: mittags und im Sommer gibt es Überschuss, abends und im Winter Mangel. Ökonomisch zählen Anschaffungskosten, Eigenverbrauchsanteil und Vergütung; ökologisch die Energie für die Herstellung, die eine Anlage in wenigen Jahren wieder liefert, sowie Flächenbedarf und Recycling; gesellschaftlich Netzausbau und Versorgungssicherheit. Eine gute Bewertung nennt ihre Datenquellen und trennt Rechnung und Wertung."
+    ],
+    "takeaway": "Wechselrichter wandelt Gleich- in Wechselstrom, der MPP-Tracker hält die Module im Punkt größter Leistung; Jahresertrag ≈ kWp · spezifischer Ertrag.",
+    "formulas": ["E_Jahr = P_peak · spezifischer Ertrag", "spezifischer Ertrag in Deutschland ≈ 900 bis 1100 kWh/kWp", "Reihenschaltung: Spannungen addieren sich"],
+    "sourceIds": ["lp", "pv-facts", "energy-charts"],
+    "quiz": {
+      "question": "Welche Aufgabe hat der MPP-Tracker in einer Photovoltaikanlage?",
+      "answer": "Er stellt die Belastung der Module laufend so ein, dass sie die größtmögliche Leistung abgeben.",
+      "wrong": [
+        "Er dreht die Module mechanisch der Sonne nach.",
+        "Er speichert überschüssige Energie für die Nacht."
+      ],
+      "explanation": "Der MPP wandert mit Einstrahlung und Temperatur. Der Tracker ist eine elektronische Regelung im Wechselrichter; das Nachführen der Module wäre eine andere Technik."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Komponenten und Aufgaben",
+      "instruction": "Ordne jede Aufgabe der Komponente zu.",
+      "categories": ["Solarmodul", "Wechselrichter mit MPP-Tracker", "Batteriespeicher"],
+      "entries": [
+        { "text": "Wandelt Strahlungsenergie in elektrische Energie um", "target": 0, "feedback": "Viele Zellen in Reihe liefern eine brauchbare Spannung." },
+        { "text": "Wandelt Gleichstrom in netzgerechten Wechselstrom um", "target": 1, "feedback": "230 V und 50 Hz passen zum Hausnetz." },
+        { "text": "Hält den Arbeitspunkt im Punkt größter Leistung", "target": 1, "feedback": "Die Regelung passt die Belastung laufend an." },
+        { "text": "Verschiebt Überschüsse vom Mittag in den Abend", "target": 2, "feedback": "So steigt der Eigenverbrauchsanteil." },
+        { "text": "Liefert Gleichstrom, dessen Stärke mit der Einstrahlung schwankt", "target": 0, "feedback": "Die Stromstärke ist etwa proportional zur Bestrahlungsstärke." }
+      ],
+      "conclusion": "Erst das Zusammenspiel der Komponenten macht aus Solarzellen eine nutzbare Anlage."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erläutere den Weg der Energie vom Sonnenlicht bis zur Steckdose in einer Dachanlage und erkläre, warum ein Wechselrichter und ein MPP-Tracker nötig sind.",
+        "hints": ["Gleichstrom und Wechselstrom unterscheiden", "Der MPP ändert sich mit Einstrahlung und Temperatur"],
+        "model": "Die Solarzellen wandeln Strahlungsenergie in elektrische Energie um; in Reihe geschaltet liefern sie Gleichstrom bei höherer Spannung. Das Hausnetz arbeitet mit Wechselstrom, deshalb wandelt der Wechselrichter um. Weil sich Einstrahlung und Temperatur ständig ändern, verschiebt sich der Punkt größter Leistung. Der MPP-Tracker regelt die Belastung so nach, dass die Module immer nahe an diesem Punkt arbeiten.",
+        "criteria": ["Energieweg vollständig", "Aufgabe des Wechselrichters", "Aufgabe des MPP-Trackers begründet"]
+      },
+      "2": {
+        "prompt": "Bewerte, ob sich für ein Einfamilienhaus (Jahresbedarf 4000 kWh) eine 8-kWp-Anlage ohne Speicher eignet, um den eigenen Strombedarf zu decken. Führe eine Abschätzung durch und beziehe mindestens einen ökologischen und einen ökonomischen Aspekt ein.",
+        "hints": ["Jahresertrag abschätzen und mit dem Bedarf vergleichen", "Erzeugung und Bedarf fallen zeitlich nicht zusammen"],
+        "model": "Bei etwa 1000 kWh je kWp liefert die Anlage rund 8000 kWh im Jahr, rechnerisch das Doppelte des Bedarfs. Ohne Speicher lassen sich aber typischerweise nur etwa 30 % direkt selbst nutzen, weil mittags mehr erzeugt als gebraucht wird; abends und im Winter kommt Strom aus dem Netz. Ökologisch ersetzt die Anlage dennoch fossil erzeugten Strom und liefert die Energie für ihre Herstellung in wenigen Jahren zurück. Ökonomisch hängt der Nutzen vom Eigenverbrauch, der Vergütung und den Anschaffungskosten ab. Mein Urteil: Die Anlage lohnt sich für Klima und Netz; autark macht sie das Haus nicht.",
+        "criteria": ["Ertrag abgeschätzt und verglichen", "Zeitliche Verteilung berücksichtigt", "Ökologischer und ökonomischer Aspekt mit Urteil"]
+      }
+    },
+    "model": "pvplant",
+    "calculation": "pvplant"
+  },
+  {
+    "id": "nt-aktivitaet",
+    "lb": 4,
+    "title": "Vorträge und Veröffentlichungen auswerten, Stellung nehmen",
+    "period": "Ph11 · Lernbereich 4.3 · NTG",
+    "intro": "Im Schülerlabor, im Museum oder bei einer Podiumsdiskussion: Wer spricht, mit welchen Belegen, mit welchem Interesse?",
+    "tracks": ["NTG"],
+    "paragraphs": [
+      "Zum Profilbereich gehört mindestens eine außerunterrichtliche Aktivität, etwa der Besuch eines Schülerlabors, eines Museums, eines Unternehmens oder einer politischen Veranstaltung zu einem naturwissenschaftlichen Thema; auch ein eigenes Forschungsprojekt ist möglich. Diese Lektion ersetzt die Aktivität nicht. Sie gibt dir Werkzeuge, um sie auszuwerten. Einem Vortrag oder Text entnimmst du drei Dinge: die fachlichen Inhalte (Was wird behauptet, mit welchen Daten?), die Argumentationsmuster (Wie wird begründet?) und die Interessenlage (Wer spricht, und was will er erreichen?).",
+      "Typische Argumentationsmuster sind das Argument mit Messdaten, mit einer Autorität, mit einem Einzelbeispiel, mit einem Vergleich oder mit Folgen. Nicht alle sind gleich belastbar: Ein Einzelbeispiel belegt keinen allgemeinen Zusammenhang, und eine Autorität ersetzt keine Daten. Beispiel: Ein einzelner kalter Winter widerlegt keinen langjährigen Temperaturtrend. Eine Bewertung prüfst du auf ihre Güte: Sind die Kriterien genannt? Sind die physikalischen Belege richtig und vollständig, mit Einheiten und Größenordnungen? Werden Daten und Wertung getrennt? Werden Unsicherheiten genannt?",
+      "Eine physikalisch fundierte Stellungnahme hat einen klaren Aufbau: Sachverhalt in eigenen Worten, Prüfung der Belege, eigene Abwägung mit genannten Kriterien, begründetes Urteil. Beim Präsentieren wählst du Darstellungsformen passend zu Inhalt und Publikum: Diagramme für Zusammenhänge, Tabellen für genaue Werte, Skizzen für Aufbauten. Forschung trägt Verantwortung: Ergebnisse ehrlich mit ihren Grenzen darstellen, Interessenkonflikte offenlegen und auf Risiken hinweisen. Erkenntnisse gewinnt die Naturwissenschaft auf verschiedenen Wegen, etwa durch Experiment, systematische Beobachtung, Modellbildung oder Simulation."
+    ],
+    "takeaway": "Fachinhalt, Argumentationsmuster und Interessenlage trennen; eine Stellungnahme prüft Belege, nennt Kriterien und kommt zu einem begründeten Urteil.",
+    "formulas": ["Auswerten: Inhalt · Argumentationsmuster · Interessenlage", "Stellungnahme: Sachverhalt → Belege prüfen → abwägen → urteilen"],
+    "sourceIds": ["lp"],
+    "quiz": {
+      "question": "Ein Redner sagt: „Mein Nachbar hat seit dem Mobilfunkmast Kopfschmerzen, also ist die Strahlung schädlich.“ Welches Argumentationsmuster ist das?",
+      "answer": "Ein Einzelbeispiel, das keinen allgemeinen Zusammenhang belegt.",
+      "wrong": [
+        "Ein Argument mit Messdaten, das den Zusammenhang belegt.",
+        "Ein Autoritätsargument, das durch die Erfahrung des Nachbarn gedeckt ist."
+      ],
+      "explanation": "Ein einzelner Fall kann viele Ursachen haben. Einen Zusammenhang belegen erst systematische Untersuchungen mit vielen Personen und Vergleichsgruppen."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Einen Vortrag zerlegen",
+      "instruction": "Ordne jede Notiz aus einem Vortrag über einen geplanten Windpark zu.",
+      "categories": ["Fachlicher Inhalt", "Argumentationsmuster", "Interessenlage"],
+      "entries": [
+        { "text": "„Die Anlagen liefern am Standort etwa 2400 Volllaststunden.“", "target": 0, "feedback": "Eine überprüfbare Angabe mit Einheit." },
+        { "text": "Die Rednerin arbeitet für das Unternehmen, das den Windpark bauen will.", "target": 2, "feedback": "Das sagt nichts über die Richtigkeit, erklärt aber die Auswahl der Argumente." },
+        { "text": "„Führende Fachleute sind sich einig, dass …“", "target": 1, "feedback": "Ein Autoritätsargument; die Belege fehlen noch." },
+        { "text": "„Der Schallpegel am nächsten Wohnhaus beträgt nach Gutachten 38 dB(A).“", "target": 0, "feedback": "Eine Angabe, deren Quelle du prüfen kannst." },
+        { "text": "„In der Nachbargemeinde hat sich nach dem Bau niemand beschwert.“", "target": 1, "feedback": "Ein Einzelbeispiel als Argument." }
+      ],
+      "conclusion": "Erst trennen, dann bewerten: Was ist belegt, wie wird argumentiert, wer spricht?"
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Du hast einen Vortrag oder einen Artikel zu einem physikalischen Thema verfolgt (oder wähle einen aktuellen Zeitungsartikel). Entnimm ihm zwei fachliche Aussagen, ein Argumentationsmuster und die Interessenlage des Autors und notiere, was du noch nachprüfen würdest.",
+        "hints": ["Aussagen mit Zahlen und Einheiten suchen", "Wer hat den Text verfasst oder bezahlt?"],
+        "model": "Beispiel Artikel über Wärmepumpen: Fachliche Aussagen sind, dass eine Wärmepumpe aus 1 kWh Strom etwa 3 bis 4 kWh Wärme bereitstellt und dass dieser Wert bei tiefer Außentemperatur sinkt. Der Autor argumentiert mit Messdaten aus einem Feldtest und mit einem Einzelbeispiel. Er schreibt für einen Verband der Heizungsbranche, der am Verkauf interessiert ist. Ich würde die Originalstudie suchen und prüfen, wie viele Anlagen gemessen wurden.",
+        "criteria": ["Zwei fachliche Aussagen benannt", "Argumentationsmuster und Interesse erkannt", "Offene Prüffrage formuliert"]
+      },
+      "2": {
+        "prompt": "Verfasse eine kurze, physikalisch fundierte Stellungnahme zu der Aussage aus einer Diskussion: „Ein Tempolimit von 130 km/h auf Autobahnen bringt für den Energiebedarf nichts.“ Nutze dein Wissen über Luftwiderstand.",
+        "hints": ["F_L ist proportional zu v²", "Energie je Strecke ist Kraft mal Weg"],
+        "model": "Die Aussage ist physikalisch nicht haltbar. Bei hohen Geschwindigkeiten dominiert der Luftwiderstand, der mit dem Quadrat der Geschwindigkeit wächst. Die Energie je Kilometer ist Kraft mal Weg; bei 160 km/h ist der Anteil für den Luftwiderstand etwa (160 / 130)² ≈ 1,5-mal so groß wie bei 130 km/h. Wie groß die Einsparung insgesamt ist, hängt davon ab, wie viele Fahrzeuge tatsächlich schneller fahren; das ist eine Frage an Verkehrsdaten. Ob das Tempolimit eingeführt werden soll, ist danach eine politische Abwägung. Mein Urteil: Es spart Energie, über das Ausmaß entscheiden die Daten.",
+        "criteria": ["Physikalischer Beleg mit Abschätzung", "Daten und Wertung getrennt", "Begründetes Urteil formuliert"]
+      }
+    }
+  },
+  {
+    "id": "nt-jahrmarkt",
+    "lb": 4,
+    "title": "Auswahlthema: Physik auf dem Jahrmarkt",
+    "period": "Ph11 · Lernbereich 4.4 · NTG · Auswahlthema",
+    "intro": "Im Karussell misst dein Handy, was dein Bauch längst spürt.",
+    "tracks": ["NTG"],
+    "paragraphs": [
+      "Fahrgeschäfte sind Experimente zur Kreisbewegung. Mit dem Beschleunigungssensor eines Smartphones, einer Stoppuhr und abgeschätzten Längen bestimmst du Geschwindigkeiten und Beschleunigungen. Eine Hypothese könnte lauten: Im Kettenkarussell hängt der Auslenkwinkel der Ketten nicht von der Masse der Fahrgäste ab. Geprüft wird sie an Fotos besetzter und leerer Sitze. Die Zentripetalbeschleunigung folgt aus a_Z = (2π / T)² · r und wird oft als Vielfaches von g angegeben.",
+      "Im mitbewegten Sitz beschreibst du dein Erleben mit Scheinkräften: Die Zentrifugalkraft scheint dich nach außen zu drücken. Von außen betrachtet gibt es nur reale Kräfte, deren Resultierende zur Mitte zeigt. Beides beschreibt dieselbe Bewegung in verschiedenen Bezugssystemen. Im Looping drückt dich der Sitz im tiefsten Punkt mit einem Mehrfachen deiner Gewichtskraft nach oben. Im höchsten Punkt bleibt der Wagen auch ohne Halterung auf der Bahn, wenn die Gewichtskraft höchstens so groß ist wie die nötige Zentripetalkraft: v ≥ √(g · r).",
+      "Beispiel: Ein Karussell mit r = 8 m und T = 4 s ergibt a_Z = (2π / 4 s)² · 8 m ≈ 19,7 m/s² ≈ 2,0 g. Der Körper verträgt hohe Beschleunigungen nur kurz und je nach Richtung verschieden gut; bei einigen g Richtung Kopf–Fuß sackt das Blut ab, es drohen Sehstörungen und Bewusstlosigkeit. Deshalb begrenzen Normen und Prüfungen Betrag und Dauer der Beschleunigungen, und Loopings sind nicht kreisförmig, sondern oben enger als unten gebaut. Größen- und Gesundheitshinweise an Fahrgeschäften haben also einen physikalischen Grund."
+    ],
+    "takeaway": "a_Z = (2π / T)² · r in Vielfachen von g; im Looping gilt oben v ≥ √(g · r). Scheinkräfte beschreiben dasselbe im mitbewegten System.",
+    "formulas": ["a_Z = (2π / T)² · r", "Looping oben: v_min = √(g · r)", "g = 9,81 m/s²"],
+    "sourceIds": ["lp", "centripetal", "fictitious"],
+    "quiz": {
+      "question": "Warum fällt ein Wagen im höchsten Punkt eines Loopings nicht herunter, wenn er schnell genug ist?",
+      "answer": "Die Gewichtskraft wird vollständig als Zentripetalkraft für die Kreisbahn gebraucht.",
+      "wrong": [
+        "Die Zentrifugalkraft ist eine reale Kraft, die ihn nach oben zieht.",
+        "Im höchsten Punkt wirkt auf den Wagen keine Gewichtskraft."
+      ],
+      "explanation": "Von außen betrachtet wirken nur Gewichtskraft und Schienenkraft, beide zur Mitte. Ist v ≥ √(g · r), reicht die Gewichtskraft allein nicht aus, um die Bahn stärker zu krümmen; der Wagen bleibt an der Schiene."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Belastung einschätzen",
+      "instruction": "Ordne jede Situation der ungefähren Beschleunigung zu, die der Körper spürt.",
+      "categories": ["Etwa 1 g oder weniger", "Etwa 2 g bis 5 g", "Kurzzeitig nahe 0 g"],
+      "entries": [
+        { "text": "Langsames Riesenrad", "target": 0, "feedback": "Die Zentripetalbeschleunigung ist winzig; du spürst fast nur deine Gewichtskraft." },
+        { "text": "Tiefster Punkt eines Loopings", "target": 1, "feedback": "Der Sitz muss Gewichtskraft und Zentripetalkraft aufbringen." },
+        { "text": "Freifallturm während des Falls", "target": 2, "feedback": "Sitz und Körper fallen gemeinsam; du spürst kaum eine Stützkraft." },
+        { "text": "Schnelles Rundfahrgeschäft mit r = 8 m und T = 4 s", "target": 1, "feedback": "Etwa 2 g zur Mitte." },
+        { "text": "Höchster Punkt eines Loopings bei Mindestgeschwindigkeit", "target": 2, "feedback": "Die Schiene übt gerade keine Kraft mehr aus." }
+      ],
+      "conclusion": "Was du spürst, ist die Kraft, mit der Sitz oder Bügel auf dich wirken."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Plane eine hypothesengeleitete Untersuchung an einem Kettenkarussell: Formuliere eine Hypothese, nenne die Messgrößen und Messmittel (auch digitale) und beschreibe die Auswertung.",
+        "hints": ["Umlaufdauer stoppen, Radius abschätzen, Sensor im Handy", "Vorhersage und Messung vergleichen"],
+        "model": "Hypothese: Die Zentripetalbeschleunigung beträgt a_Z = (2π / T)² · r. Ich stoppe die Zeit für fünf Umläufe, schätze den Bahnradius aus einem Foto mit bekanntem Maßstab und zeichne mit dem Beschleunigungssensor des Smartphones die Beschleunigung auf. In der Auswertung vergleiche ich den berechneten Wert mit dem Mittelwert der Sensordaten und diskutiere Abweichungen, zum Beispiel durch den ungenau geschätzten Radius oder die Ausrichtung des Handys.",
+        "criteria": ["Prüfbare Hypothese", "Messgrößen und digitale Werkzeuge", "Vergleich mit Unsicherheiten"]
+      },
+      "2": {
+        "prompt": "Ein kreisförmiger Looping hat den Radius 10 m. Berechne die Mindestgeschwindigkeit im höchsten Punkt und erörtere, warum echte Loopings oben enger gebaut sind und welche Sicherheitsfragen dahinterstehen.",
+        "hints": ["v_min = √(g · r)", "Im tiefsten Punkt ist der Wagen viel schneller"],
+        "model": "v_min = √(9,81 · 10) m/s ≈ 9,9 m/s ≈ 36 km/h. Im tiefsten Punkt ist der Wagen wegen der Energieerhaltung viel schneller; auf einem Kreis mit demselben Radius wäre die Belastung dort etwa 6 g. Baut man den Looping unten weit und oben eng, bleibt unten die Beschleunigung erträglich und oben reicht eine kleinere Geschwindigkeit. So werden Gesundheitsrisiken wie Sehstörungen oder Bewusstlosigkeit vermieden; Bügel und Rückhaltesysteme sichern zusätzlich für den Fall, dass der Zug zu langsam ist.",
+        "criteria": ["Mindestgeschwindigkeit richtig", "Form des Loopings physikalisch begründet", "Gesundheits- und Sicherheitsaspekt"]
+      }
+    },
+    "model": "ride",
+    "calculation": "ride"
+  },
+  {
+    "id": "nt-chaos",
+    "lb": 4,
+    "title": "Auswahlthema: Modelle, Kausalität und Chaos",
+    "period": "Ph11 · Lernbereich 4.4 · NTG · Auswahlthema",
+    "intro": "Manche Systeme sind berechenbar und trotzdem nicht vorhersagbar.",
+    "tracks": ["NTG"],
+    "paragraphs": [
+      "Mit Modellbildungssystemen lassen sich auch Bewegungen in zwei Dimensionen berechnen, etwa der schräge Wurf mit Luftwiderstand oder eine Planetenbahn: In jedem Zeitschritt werden die Kraftkomponenten und daraus Geschwindigkeit und Ort in x- und y-Richtung neu bestimmt. Die Rechenregeln sind eindeutig; gleiche Anfangsbedingungen liefern immer dasselbe Ergebnis. Diese Eigenschaft heißt schwache Kausalität: Gleiche Ursachen haben gleiche Wirkungen.",
+      "Für Vorhersagen braucht man mehr, nämlich starke Kausalität: Ähnliche Ursachen haben ähnliche Wirkungen. Dann schadet eine kleine Messunsicherheit der Anfangswerte kaum. Bei chaotischen Systemen ist die starke Kausalität verletzt: Winzige Unterschiede der Anfangsbedingungen wachsen sehr schnell an. Beispiele sind das Doppelpendel, das Wetter oder drei Himmelskörper, die sich gegenseitig anziehen. Chaos bedeutet hier nicht Regellosigkeit; jeder Schritt folgt exakt den Gesetzen.",
+      "Beispiel: Die Rechenregel x_neu = r · x · (1 − x) liefert für r = 2,8 unabhängig vom Startwert nach einigen Schritten denselben festen Wert. Für r = 3,9 führen die Startwerte 0,200 und 0,201 nach etwa 20 Schritten zu völlig verschiedenen Zahlen. Daraus folgt die Grenze von Simulationen: Das Wetter lässt sich für einige Tage gut vorhersagen, für Wochen nicht. Man rechnet deshalb viele Läufe mit leicht veränderten Anfangswerten (Ensemble) und gibt Wahrscheinlichkeiten an. Modelle sind leistungsfähig, aber nur innerhalb ihrer Gültigkeitsgrenzen."
+    ],
+    "takeaway": "Schwache Kausalität: gleiche Ursachen, gleiche Wirkungen. Chaotische Systeme verletzen die starke Kausalität: Kleine Unterschiede am Anfang wachsen stark an.",
+    "formulas": ["schwache Kausalität: gleiche Ursachen → gleiche Wirkungen", "starke Kausalität: ähnliche Ursachen → ähnliche Wirkungen", "chaotisch: empfindlich gegenüber Anfangsbedingungen"],
+    "sourceIds": ["lp", "dwd"],
+    "quiz": {
+      "question": "Was kennzeichnet ein chaotisches System im physikalischen Sinn?",
+      "answer": "Winzige Unterschiede der Anfangsbedingungen führen nach kurzer Zeit zu völlig verschiedenen Verläufen.",
+      "wrong": [
+        "Es folgt keinen Naturgesetzen und verhält sich rein zufällig.",
+        "Es liefert bei exakt gleichen Anfangsbedingungen jedes Mal ein anderes Ergebnis."
+      ],
+      "explanation": "Auch chaotische Systeme folgen eindeutigen Gesetzen (schwache Kausalität). Unvorhersagbar werden sie, weil Anfangswerte nie beliebig genau bekannt sind."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Vorhersagbar oder chaotisch?",
+      "instruction": "Ordne jedes System zu.",
+      "categories": ["Starke Kausalität: gut vorhersagbar", "Chaotisch: langfristig nicht vorhersagbar"],
+      "entries": [
+        { "text": "Fadenpendel mit kleiner Auslenkung", "target": 0, "feedback": "Ein etwas anderer Startwinkel ändert die Bewegung nur wenig." },
+        { "text": "Doppelpendel mit großer Auslenkung", "target": 1, "feedback": "Minimal verschiedene Starts führen schnell zu ganz anderen Bewegungen." },
+        { "text": "Wetter in drei Wochen", "target": 1, "feedback": "Die Atmosphäre reagiert empfindlich auf kleine Störungen." },
+        { "text": "Sonnenfinsternis in zwanzig Jahren", "target": 0, "feedback": "Die Bahnen von Erde und Mond sind über solche Zeiten sehr genau berechenbar." },
+        { "text": "Kugel im Flipperautomaten nach mehreren Stößen", "target": 1, "feedback": "Jeder Stoß vergrößert kleine Abweichungen." }
+      ],
+      "conclusion": "Berechenbar heißt nicht vorhersagbar: Es kommt auf die Empfindlichkeit gegenüber den Anfangswerten an."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre den Unterschied zwischen schwacher und starker Kausalität und ordne ein Fadenpendel und ein Doppelpendel begründet ein.",
+        "hints": ["Gleiche Ursachen gegenüber ähnlichen Ursachen", "Was passiert bei leicht verändertem Start?"],
+        "model": "Schwache Kausalität bedeutet: Exakt gleiche Ursachen haben gleiche Wirkungen. Starke Kausalität bedeutet zusätzlich: Ähnliche Ursachen haben ähnliche Wirkungen. Beim Fadenpendel ändert ein leicht anderer Startwinkel die Bewegung nur leicht; es erfüllt beide. Das Doppelpendel folgt denselben Gesetzen und erfüllt die schwache Kausalität, aber winzige Startunterschiede führen schnell zu völlig anderen Bewegungen: Die starke Kausalität ist verletzt.",
+        "criteria": ["Beide Begriffe richtig", "Fadenpendel eingeordnet", "Doppelpendel eingeordnet"]
+      },
+      "2": {
+        "prompt": "Reflektiere Leistungsfähigkeit und Gültigkeitsgrenzen von Simulationen am Beispiel der Wettervorhersage. Erkläre, warum Wetterdienste mit Ensembles rechnen und was eine Angabe wie „70 % Regenwahrscheinlichkeit“ bedeutet.",
+        "hints": ["Anfangswerte sind nur ungenau bekannt", "Viele Läufe mit leicht veränderten Startwerten"],
+        "model": "Wettermodelle berechnen die Atmosphäre in Zeitschritten und liefern für einige Tage zuverlässige Vorhersagen; das ist ihre Stärke. Die Atmosphäre ist aber chaotisch, und die Anfangswerte sind nur an Messstationen und mit Unsicherheit bekannt. Kleine Abweichungen wachsen an, sodass die Vorhersage nach ein bis zwei Wochen unbrauchbar wird. Deshalb rechnet man viele Läufe mit leicht veränderten Anfangswerten. Regnet es in 70 % dieser Läufe am Ort, heißt die Vorhersage 70 % Regenwahrscheinlichkeit.",
+        "criteria": ["Stärke der Simulation benannt", "Grenze durch Anfangswerte und Chaos", "Ensemble und Wahrscheinlichkeit erklärt"]
+      }
+    },
+    "model": "chaos"
+  }
+]

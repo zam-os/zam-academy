@@ -1,0 +1,536 @@
+[
+  {
+    "id": "sw-schwingung",
+    "lb": 2,
+    "title": "Schwingungen beschreiben und Diagramme lesen",
+    "period": "Ph11 · Lernbereich 2 · alle Ausbildungsrichtungen",
+    "intro": "Schaukel, Saite, Stimmgabel: Hin und her um eine Ruhelage.",
+    "tracks": ["NTG", "ANDERE"],
+    "paragraphs": [
+      "Eine mechanische Schwingung ist eine zeitlich periodische Bewegung um eine Ruhelage. Sie entsteht, wenn auf den ausgelenkten Körper eine rücktreibende Kraft zur Ruhelage wirkt und seine Trägheit ihn über die Ruhelage hinaus weiterbewegt. Die charakteristischen Größen sind die Auslenkung y (momentaner Abstand von der Ruhelage), die Amplitude A (größte Auslenkung), die Periodendauer T (Zeit für eine vollständige Schwingung) und die Frequenz f = 1 / T in Hertz.",
+      "Im Zeit-Auslenkung-Diagramm liest du die Amplitude als höchsten Ausschlag und die Periodendauer als Abstand zweier gleicher Zustände ab, zum Beispiel von Maximum zu Maximum. Ist die rücktreibende Kraft proportional zur Auslenkung, heißt die Schwingung harmonisch; ihr Diagramm ist eine Sinuskurve: y(t) = A · sin(2π · t / T) beim Start in der Ruhelage. Werden die Ausschläge durch Reibung kleiner, ist die Schwingung gedämpft; die Periodendauer bleibt dabei nahezu gleich.",
+      "Beispiel: Ein Pendel braucht für 10 vollständige Schwingungen 14 s. Dann ist T = 1,4 s und f = 1 / 1,4 s ≈ 0,71 Hz. Liest du im Diagramm die Hochpunkte bei +5 cm und die Tiefpunkte bei −5 cm ab, ist die Amplitude 5 cm und nicht 10 cm."
+    ],
+    "takeaway": "Amplitude A, Periodendauer T und Frequenz f = 1 / T beschreiben eine Schwingung; harmonisch heißt sinusförmig.",
+    "formulas": ["f = 1 / T", "y(t) = A · sin(2π · t / T)", "harmonisch: rücktreibende Kraft ~ Auslenkung"],
+    "sourceIds": ["lp", "harmonic"],
+    "quiz": {
+      "question": "Im Zeit-Auslenkung-Diagramm liegen zwei benachbarte Hochpunkte 0,5 s auseinander. Wie groß ist die Frequenz?",
+      "answer": "2 Hz",
+      "wrong": ["0,5 Hz", "4 Hz"],
+      "explanation": "Der Abstand benachbarter Hochpunkte ist die Periodendauer T = 0,5 s; f = 1 / T = 2 Hz."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Diagramm lesen",
+      "instruction": "Ordne zu, welche Größe du im Zeit-Auslenkung-Diagramm jeweils abliest.",
+      "categories": ["Amplitude", "Periodendauer", "Hinweis auf Dämpfung"],
+      "entries": [
+        { "text": "Abstand der Ruhelage vom höchsten Punkt der Kurve", "target": 0, "feedback": "Die Amplitude zählt von der Ruhelage, nicht von Tal zu Berg." },
+        { "text": "Zeitlicher Abstand zweier aufeinanderfolgender Hochpunkte", "target": 1, "feedback": "Nach einer Periodendauer wiederholt sich der Zustand." },
+        { "text": "Die Hochpunkte werden von Schwingung zu Schwingung niedriger", "target": 2, "feedback": "Reibung entzieht dem System Energie." },
+        { "text": "Zeit zwischen zwei Nulldurchgängen in derselben Richtung", "target": 1, "feedback": "Auch das ist eine volle Periode." }
+      ],
+      "conclusion": "Senkrecht liest du Auslenkungen ab, waagrecht Zeiten."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Ein Diagramm zeigt eine Schwingung mit Hochpunkten bei +3 cm zu den Zeiten 0,2 s und 1,0 s. Bestimme Amplitude, Periodendauer und Frequenz und beschreibe, wo sich der Körper bei 0,6 s befindet.",
+        "hints": ["Abstand der Hochpunkte ist T", "Nach einer halben Periode ist der Körper im Tiefpunkt"],
+        "model": "Die Amplitude beträgt 3 cm. Die Periodendauer ist 1,0 s − 0,2 s = 0,8 s, die Frequenz 1 / 0,8 s = 1,25 Hz. Bei 0,6 s ist seit dem Hochpunkt eine halbe Periode vergangen: Der Körper ist im Tiefpunkt bei −3 cm.",
+        "criteria": ["Amplitude von der Ruhelage aus", "T und f richtig bestimmt", "Zustand bei 0,6 s begründet"]
+      },
+      "2": {
+        "prompt": "Zwei Diagramme zeigen Schwingungen mit gleicher Periodendauer. Bei der einen bleiben die Hochpunkte gleich, bei der anderen werden sie kleiner. Interpretiere beide Diagramme mit Blick auf Kräfte und Energie.",
+        "hints": ["Was bedeutet eine gleichbleibende Amplitude für die Energie?", "Welche Kraft kommt bei der zweiten Schwingung hinzu?"],
+        "model": "Bei gleichbleibender Amplitude bleibt die Schwingungsenergie erhalten; es wirkt nur die rücktreibende Kraft. Bei abnehmender Amplitude wirkt zusätzlich Reibung. Sie wandelt Schwingungsenergie in innere Energie um, die Schwingung ist gedämpft. Die gleiche Periodendauer zeigt, dass Masse und rücktreibende Kraft übereinstimmen.",
+        "criteria": ["Ungedämpft und gedämpft unterschieden", "Energieumwandlung genannt", "Gleiche Periodendauer gedeutet"]
+      }
+    },
+    "model": "oscillation",
+    "calculation": "oscillation"
+  },
+  {
+    "id": "sw-federpendel",
+    "lb": 2,
+    "title": "Das Federpendel: Kraft, Energie und Periodendauer",
+    "period": "Ph11 · Lernbereich 2 · alle Ausbildungsrichtungen",
+    "intro": "Eine Feder zieht umso stärker zurück, je weiter du sie auslenkst.",
+    "tracks": ["NTG", "ANDERE"],
+    "paragraphs": [
+      "Beim Federpendel schwingt ein Körper der Masse m an einer Feder mit der Federhärte D. Nach dem Hooke’schen Gesetz ist die rücktreibende Kraft proportional zur Auslenkung aus der Ruhelage: F = −D · y. Das Minuszeichen sagt: Die Kraft zeigt stets zur Ruhelage. Deshalb schwingt das Federpendel harmonisch, sein Zeit-Auslenkung-Diagramm ist eine Sinuskurve.",
+      "Im Zeit-Geschwindigkeit-Diagramm ist die Kurve um eine Viertelperiode verschoben: In den Umkehrpunkten ist v = 0, beim Durchgang durch die Ruhelage ist der Betrag der Geschwindigkeit am größten. Dabei wandelt sich Spannenergie E_Sp = ½ · D · y² in kinetische Energie E_kin = ½ · m · v² um und zurück. Ohne Reibung bleibt die Summe gleich: ½ · D · A² = ½ · m · v_max².",
+      "Für die Periodendauer gilt T = 2π · √(m / D). Sie wächst mit der Masse und sinkt mit der Federhärte; von der Amplitude hängt sie nicht ab. Beispiel: m = 0,2 kg und D = 20 N/m ergeben T = 2π · √(0,2 / 20) s ≈ 0,63 s. Mit der vierfachen Masse 0,8 kg verdoppelt sich die Periodendauer auf etwa 1,26 s."
+    ],
+    "takeaway": "Federpendel: F = −D · y, T = 2π · √(m / D), unabhängig von der Amplitude.",
+    "formulas": ["F = −D · y", "T = 2π · √(m / D)", "½ · D · A² = ½ · m · v_max²"],
+    "sourceIds": ["lp", "harmonic"],
+    "quiz": {
+      "question": "Wo ist beim Federpendel die Geschwindigkeit des Körpers am größten?",
+      "answer": "Beim Durchgang durch die Ruhelage.",
+      "wrong": ["In den Umkehrpunkten.", "Überall gleich, weil die Schwingung harmonisch ist."],
+      "explanation": "In der Ruhelage ist die gesamte Schwingungsenergie kinetische Energie; in den Umkehrpunkten ist v = 0."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Wo ist was am größten?",
+      "instruction": "Ordne jede Größe dem Ort zu, an dem ihr Betrag am größten ist.",
+      "categories": ["In der Ruhelage", "In den Umkehrpunkten"],
+      "entries": [
+        { "text": "Geschwindigkeit", "target": 0, "feedback": "Dort ist die kinetische Energie maximal." },
+        { "text": "Rücktreibende Kraft", "target": 1, "feedback": "Die Kraft ist proportional zur Auslenkung." },
+        { "text": "Spannenergie der Schwingung", "target": 1, "feedback": "E_Sp = ½ · D · y² ist bei größter Auslenkung maximal." },
+        { "text": "Beschleunigung", "target": 1, "feedback": "Wo die Kraft am größten ist, ist auch die Beschleunigung am größten." },
+        { "text": "Kinetische Energie", "target": 0, "feedback": "Sie hängt vom Quadrat der Geschwindigkeit ab." }
+      ],
+      "conclusion": "Kraft und Geschwindigkeit haben ihre Höchstwerte an verschiedenen Orten."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Ein Federpendel (D = 50 N/m, m = 0,5 kg) wird 4 cm ausgelenkt und losgelassen. Berechne Periodendauer und Schwingungsenergie und beschreibe die Energieumwandlungen während einer Periode.",
+        "hints": ["T = 2π · √(m / D)", "E = ½ · D · A² mit A in Metern"],
+        "model": "T = 2π · √(0,5 / 50) s ≈ 0,63 s. E = ½ · 50 N/m · (0,04 m)² = 0,04 J. Im Umkehrpunkt liegt die Energie als Spannenergie vor, in der Ruhelage vollständig als kinetische Energie, im anderen Umkehrpunkt wieder als Spannenergie. In einer Periode geschieht das zweimal.",
+        "criteria": ["T richtig berechnet", "Energie mit A in Metern", "Umwandlung an den richtigen Orten beschrieben"]
+      },
+      "2": {
+        "prompt": "Ein Auto (Aufbau 1200 kg) schwingt nach einer Bodenwelle mit T = 1,0 s auf seinen Federn. Schätze die gesamte Federhärte ab und erkläre, wie sich die Schwingung mit vier Mitfahrenden (zusammen 300 kg) ändert.",
+        "hints": ["T = 2π · √(m / D) nach D auflösen", "Was ändert eine größere Masse?"],
+        "model": "D = 4π² · m / T² = 4π² · 1200 kg / (1,0 s)² ≈ 47 000 N/m. Mit 1500 kg wird T = 2π · √(1500 / 47 000) s ≈ 1,12 s: Das Auto schwingt etwas langsamer. In Wirklichkeit dämpfen die Stoßdämpfer die Schwingung nach wenigen Perioden; das einfache Modell enthält sie nicht.",
+        "criteria": ["Formel richtig umgestellt", "Neue Periodendauer berechnet", "Dämpfung als Modellgrenze genannt"]
+      }
+    },
+    "model": "spring",
+    "calculation": "spring"
+  },
+  {
+    "id": "sw-fadenpendel",
+    "lb": 2,
+    "title": "Schülerexperiment: Die Schwingungsdauer des Fadenpendels",
+    "period": "Ph11 · Lernbereich 2 · alle Ausbildungsrichtungen",
+    "intro": "Hängt die Schwingungsdauer von der Masse ab? Miss nach.",
+    "tracks": ["NTG", "ANDERE"],
+    "paragraphs": [
+      "Ein Fadenpendel besteht aus einem kleinen Körper an einem leichten Faden. Naheliegende Hypothesen: Die Periodendauer T könnte von der Pendellänge l, von der Masse m und von der Amplitude abhängen. Im Experiment änderst du jeweils nur eine Größe. Das Ergebnis: Die Masse hat keinen Einfluss, die Amplitude bei kleinen Auslenkungen (unter etwa 10°) praktisch keinen. Die Länge dagegen schon: Ein längeres Pendel schwingt langsamer.",
+      "Trägst du T über l auf, entsteht eine gekrümmte Kurve. Eine grafische Auswertung macht den Zusammenhang sichtbar: Im T²-l-Diagramm liegen die Punkte auf einer Ursprungsgeraden, also ist T² proportional zu l. Für kleine Auslenkungen gilt T = 2π · √(l / g). Aus der Steigung 4π² / g der Geraden lässt sich die Fallbeschleunigung bestimmen. Die Länge l zählt vom Aufhängepunkt bis zum Schwerpunkt des Pendelkörpers.",
+      "Beispiel: Für l = 0,50 m misst du T = 1,42 s, für l = 2,00 m T = 2,84 s. Die vierfache Länge verdoppelt die Periodendauer. T² / l ist in beiden Fällen etwa 4,03 s²/m; daraus folgt g = 4π² / 4,03 m/s² ≈ 9,8 m/s². Um genauer zu messen, stoppst du nicht eine, sondern zehn Schwingungen und teilst durch zehn."
+    ],
+    "takeaway": "Fadenpendel bei kleinen Auslenkungen: T = 2π · √(l / g); T² ist proportional zu l, die Masse spielt keine Rolle.",
+    "formulas": ["T = 2π · √(l / g)", "T² ~ l", "g = 4π² · l / T²"],
+    "sourceIds": ["lp", "pendulum"],
+    "quiz": {
+      "question": "Wie ändert sich die Periodendauer eines Fadenpendels, wenn du die Pendellänge vervierfachst?",
+      "answer": "Sie verdoppelt sich.",
+      "wrong": ["Sie vervierfacht sich.", "Sie bleibt gleich."],
+      "explanation": "T ist proportional zu √l: Die Wurzel aus 4 ist 2."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Hypothesen prüfen",
+      "instruction": "Ordne jede Hypothese dem Ergebnis des Experiments zu.",
+      "categories": ["Vom Experiment gestützt", "Vom Experiment widerlegt"],
+      "entries": [
+        { "text": "Ein längeres Pendel hat eine größere Periodendauer.", "target": 0, "feedback": "T wächst mit der Wurzel aus der Länge." },
+        { "text": "Ein schwererer Pendelkörper schwingt langsamer.", "target": 1, "feedback": "Die Masse kommt in T = 2π · √(l / g) nicht vor." },
+        { "text": "T² ist proportional zur Pendellänge.", "target": 0, "feedback": "Im T²-l-Diagramm entsteht eine Ursprungsgerade." },
+        { "text": "Doppelte Länge bedeutet doppelte Periodendauer.", "target": 1, "feedback": "Die doppelte Länge liefert nur das √2-fache, etwa das 1,41-fache." },
+        { "text": "Bei kleinen Auslenkungen hängt T kaum von der Amplitude ab.", "target": 0, "feedback": "Erst bei großen Winkeln wird die Abweichung merklich." }
+      ],
+      "conclusion": "Widerlegte Hypothesen sind genauso ein Ergebnis wie gestützte."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Messwerte: l = 0,25 m: T = 1,00 s; l = 0,50 m: T = 1,42 s; l = 1,00 m: T = 2,01 s. Zeige mit den Quotienten T² / l, dass T² proportional zu l ist, und bestimme daraus g.",
+        "hints": ["T² für jede Zeile berechnen", "g = 4π² / (T² / l)"],
+        "model": "T² / l beträgt 1,00 / 0,25 = 4,00 s²/m, 2,02 / 0,50 = 4,03 s²/m und 4,04 / 1,00 = 4,04 s²/m. Die Quotienten stimmen im Rahmen der Messgenauigkeit überein, also ist T² proportional zu l. Mit dem Mittelwert 4,02 s²/m folgt g = 4π² / 4,02 m/s² ≈ 9,82 m/s².",
+        "criteria": ["Quotienten richtig gebildet", "Proportionalität begründet", "g mit Einheit bestimmt"]
+      },
+      "2": {
+        "prompt": "Eine Standuhr mit Pendel geht im Sommer nach. Erkläre das mit T = 2π · √(l / g) und schlage eine Korrektur vor. Diskutiere, ob die Uhr auf einem hohen Berg anders ginge.",
+        "hints": ["Was passiert mit der Pendelstange bei Wärme?", "Auf dem Berg ist g etwas kleiner"],
+        "model": "Bei Wärme dehnt sich die Pendelstange aus. Die größere Länge vergrößert die Periodendauer, jede Schwingung dauert länger und die Uhr geht nach. Zur Korrektur schraubt man den Pendelkörper etwas nach oben. Auf einem Berg ist g geringfügig kleiner; auch das vergrößert T, die Uhr ginge ebenfalls leicht nach.",
+        "criteria": ["Längenänderung als Ursache", "Korrektur physikalisch passend", "Einfluss von g richtig beurteilt"]
+      }
+    },
+    "model": "pendulum",
+    "calculation": "pendulum"
+  },
+  {
+    "id": "sw-messunsicherheit",
+    "lb": 2,
+    "title": "Messunsicherheiten erkennen und angeben",
+    "period": "Ph11 · Lernbereich 2 · alle Ausbildungsrichtungen",
+    "intro": "Kein Messwert ist exakt. Gute Messungen sagen, wie genau sie sind.",
+    "tracks": ["NTG", "ANDERE"],
+    "paragraphs": [
+      "Wiederholst du eine Messung, erhältst du leicht verschiedene Werte. Zufällige Abweichungen streuen in beide Richtungen, etwa durch deine Reaktionszeit beim Stoppen. Systematische Abweichungen verschieben alle Werte in dieselbe Richtung, zum Beispiel ein zu kurz gemessener Faden oder eine falsch gehende Uhr. Mehrfaches Messen verringert nur den Einfluss zufälliger Abweichungen.",
+      "Für eine mehrfach gemessene Größe gibst du den Mittelwert als besten Schätzwert an. Die Streuung beschreibst du mit statistischen Kenngrößen: der Spannweite (größter minus kleinster Wert), die du aus Mathematik kennst, oder feiner mit der Standardabweichung, die größere Abweichungen stärker gewichtet. Als einfache Angabe der Messunsicherheit dient die halbe Spannweite. Das Ergebnis schreibst du als T = (1,42 ± 0,03) s; die Unsicherheit wird auf eine geltende Ziffer gerundet, der Messwert auf dieselbe Stelle.",
+      "Unsicherheiten lassen sich verkleinern: Stoppst du zehn Schwingungen statt einer, verteilt sich der Stoppfehler von etwa 0,2 s auf zehn Perioden, also 0,02 s je Periode. Weitere Möglichkeiten sind Lichtschranken statt Handstoppung, das Starten im Nulldurchgang und mehr Wiederholungen. Beispiel: Die Werte 1,40 s; 1,44 s; 1,41 s; 1,45 s; 1,40 s haben den Mittelwert 1,42 s und die Spannweite 0,05 s; angegeben wird T = (1,42 ± 0,03) s."
+    ],
+    "takeaway": "Mittelwert als Schätzwert, halbe Spannweite oder Standardabweichung als Unsicherheit; zehn Schwingungen stoppen statt einer.",
+    "formulas": ["Mittelwert = Summe der Werte / Anzahl", "Spannweite = größter Wert − kleinster Wert", "Angabe: T = (Mittelwert ± Unsicherheit)"],
+    "sourceIds": ["lp", "uncertainty"],
+    "quiz": {
+      "question": "Warum stoppt man beim Fadenpendel besser zehn Schwingungen als eine einzige?",
+      "answer": "Der Stoppfehler verteilt sich auf zehn Perioden und wird je Periode zehnmal kleiner.",
+      "wrong": [
+        "Das Pendel schwingt nach zehn Perioden gleichmäßiger.",
+        "Systematische Fehler wie ein falsch gemessener Faden heben sich dann auf."
+      ],
+      "explanation": "Die Reaktionszeit fällt nur beim Starten und Stoppen an. Systematische Abweichungen bleiben dagegen bestehen."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Zufällig oder systematisch?",
+      "instruction": "Ordne jede Ursache der Art der Messabweichung zu.",
+      "categories": ["Zufällige Abweichung", "Systematische Abweichung"],
+      "entries": [
+        { "text": "Reaktionszeit beim Drücken der Stoppuhr", "target": 0, "feedback": "Mal zu früh, mal zu spät: Die Werte streuen." },
+        { "text": "Pendellänge nur bis zum Haken statt bis zum Schwerpunkt gemessen", "target": 1, "feedback": "Alle Längen sind um denselben Betrag zu klein." },
+        { "text": "Die Stoppuhr läuft um 2 % zu schnell", "target": 1, "feedback": "Jede Zeit wird um denselben Faktor zu groß." },
+        { "text": "Leichte Luftbewegung im Raum", "target": 0, "feedback": "Sie wirkt mal so, mal so." },
+        { "text": "Ablesen des Maßbands aus wechselndem Blickwinkel", "target": 0, "feedback": "Der Ablesefehler schwankt von Mal zu Mal." }
+      ],
+      "conclusion": "Zufällige Abweichungen bekämpfst du durch Wiederholen, systematische nur durch einen besseren Aufbau."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Vier Messungen für zehn Schwingungen ergeben 14,1 s; 14,4 s; 14,2 s; 14,3 s. Bestimme die Periodendauer mit Unsicherheit (halbe Spannweite) und gib das Ergebnis korrekt gerundet an.",
+        "hints": ["Erst jede Zeit durch 10 teilen oder am Ende", "Unsicherheit auf eine geltende Ziffer runden"],
+        "model": "Der Mittelwert der Zeiten ist 14,25 s, also T = 1,425 s. Die Spannweite beträgt 0,3 s, die halbe Spannweite 0,15 s für zehn Schwingungen und 0,015 s je Periode, gerundet 0,02 s. Ergebnis: T = (1,43 ± 0,02) s.",
+        "criteria": ["Mittelwert richtig", "Unsicherheit durch 10 geteilt", "Ergebnis passend gerundet"]
+      },
+      "2": {
+        "prompt": "Zwei Gruppen bestimmen g mit dem Fadenpendel: Gruppe A erhält (9,7 ± 0,2) m/s², Gruppe B (9,2 ± 0,1) m/s². Beurteile beide Ergebnisse im Vergleich zum Literaturwert 9,81 m/s² und nenne mögliche Ursachen.",
+        "hints": ["Liegt der Literaturwert im angegebenen Intervall?", "Kleine Streuung heißt nicht richtiges Ergebnis"],
+        "model": "Bei Gruppe A liegt 9,81 m/s² im Intervall von 9,5 bis 9,9 m/s²: Das Ergebnis ist mit dem Literaturwert verträglich. Gruppe B hat kleiner streuende Werte, das Intervall 9,1 bis 9,3 m/s² enthält den Literaturwert aber nicht. Das spricht für eine systematische Abweichung, etwa eine zu kurz gemessene Pendellänge oder zu große Auslenkungen.",
+        "criteria": ["Intervalle richtig gebildet", "Präzise und richtig unterschieden", "Systematische Ursache vorgeschlagen"]
+      }
+    },
+    "model": "uncertainty",
+    "calculation": "uncertainty"
+  },
+  {
+    "id": "sw-wellen",
+    "lb": 2,
+    "title": "Mechanische Wellen: längs, quer und c = λ · f",
+    "period": "Ph11 · Lernbereich 2 · alle Ausbildungsrichtungen",
+    "intro": "Eine Welle transportiert Energie, aber keinen Stoff.",
+    "tracks": ["NTG", "ANDERE"],
+    "paragraphs": [
+      "Eine mechanische Welle entsteht, wenn sich eine Schwingung in einem Träger ausbreitet. Als Modell dient eine Kette gekoppelter Oszillatoren: Jeder schwingt um seine Ruhelage und regt über die Kopplung seinen Nachbarn an, der etwas später dieselbe Schwingung ausführt. So wandern Energie und Schwingungszustand weiter, die Oszillatoren selbst bleiben an ihrem Ort.",
+      "Schwingen die Oszillatoren quer zur Ausbreitungsrichtung, ist es eine Transversalwelle, etwa eine Seilwelle. Schwingen sie längs der Ausbreitungsrichtung, ist es eine Longitudinalwelle mit Verdichtungen und Verdünnungen, etwa Schall in Luft. Erdbeben erzeugen beide Arten. Wasserwellen sind eine Mischform.",
+      "Die Wellenlänge λ ist der Abstand zweier benachbarter Oszillatoren im gleichen Schwingungszustand, zum Beispiel von Wellenberg zu Wellenberg. Während einer Periodendauer T rückt die Welle um eine Wellenlänge vor. Daraus folgt die Phasengeschwindigkeit c = λ / T = λ · f. Sie wird vom Träger bestimmt; die Frequenz legt der Erreger fest. Beispiel: Ein Ton mit f = 440 Hz hat in Luft (c = 340 m/s) die Wellenlänge λ = 340 m/s / 440 Hz ≈ 0,77 m."
+    ],
+    "takeaway": "c = λ · f: Der Träger bestimmt c, der Erreger f. Transversal schwingt quer, longitudinal längs zur Ausbreitung.",
+    "formulas": ["c = λ · f = λ / T", "λ: Abstand benachbarter Oszillatoren im gleichen Schwingungszustand"],
+    "sourceIds": ["lp", "waves"],
+    "quiz": {
+      "question": "Was bewegt sich mit einer mechanischen Welle über große Strecken fort?",
+      "answer": "Energie und der Schwingungszustand, nicht der Stoff des Trägers.",
+      "wrong": [
+        "Die Teilchen des Trägers wandern mit der Welle mit.",
+        "Nichts; eine Welle ist nur eine optische Erscheinung."
+      ],
+      "explanation": "Jeder Oszillator schwingt um seine feste Ruhelage. Weitergegeben werden Energie und Schwingungszustand."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Longitudinal oder transversal?",
+      "instruction": "Ordne jedes Alltagsbeispiel der Wellenart zu.",
+      "categories": ["Transversalwelle", "Longitudinalwelle"],
+      "entries": [
+        { "text": "Welle auf einem gespannten Seil, das du auf und ab bewegst", "target": 0, "feedback": "Die Seilstücke schwingen quer zur Ausbreitung." },
+        { "text": "Schall in Luft", "target": 1, "feedback": "Die Luft wird in Ausbreitungsrichtung verdichtet und verdünnt." },
+        { "text": "La-Ola-Welle im Stadion", "target": 0, "feedback": "Die Zuschauer bewegen sich auf und ab, die Welle läuft seitwärts." },
+        { "text": "Stoß entlang einer langen Schraubenfeder, deren Ende du vor und zurück schiebst", "target": 1, "feedback": "Die Windungen schwingen längs der Feder." },
+        { "text": "Schwingende Gitarrensaite", "target": 0, "feedback": "Die Saite wird quer ausgelenkt." }
+      ],
+      "conclusion": "Entscheidend ist die Schwingungsrichtung im Vergleich zur Ausbreitungsrichtung."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Auf einem See folgen die Wellenberge im Abstand von 1,5 m; ein Schwimmer am Steg hebt sich 30-mal pro Minute. Berechne die Ausbreitungsgeschwindigkeit und erkläre, warum der Schwimmer nicht mit der Welle davontreibt.",
+        "hints": ["Frequenz in Hertz umrechnen", "Modell der gekoppelten Oszillatoren nutzen"],
+        "model": "f = 30 / 60 s = 0,5 Hz, λ = 1,5 m, also c = 1,5 m · 0,5 Hz = 0,75 m/s. Der Schwimmer ist wie ein Oszillator des Trägers: Er schwingt um seine Ruhelage auf und ab. Die Welle gibt Energie und Schwingungszustand weiter, das Wasser selbst wandert nicht mit.",
+        "criteria": ["Frequenz richtig umgerechnet", "c = λ · f angewendet", "Kein Stofftransport erklärt"]
+      },
+      "2": {
+        "prompt": "Ein Schallsignal läuft von Luft (c = 340 m/s) in Wasser (c = 1480 m/s). Der Ton hat 1000 Hz. Vergleiche Frequenz und Wellenlänge in beiden Stoffen und begründe.",
+        "hints": ["Wer legt die Frequenz fest?", "λ = c / f in beiden Stoffen"],
+        "model": "Die Frequenz legt der Erreger fest; sie bleibt beim Übergang 1000 Hz. In Luft ist λ = 340 / 1000 m = 0,34 m, in Wasser λ = 1480 / 1000 m = 1,48 m. Weil die Welle im Wasser schneller läuft, kommt sie in einer Periode weiter: Die Wellenlänge ist etwa 4,4-mal so groß.",
+        "criteria": ["Frequenz als unverändert erkannt", "Beide Wellenlängen berechnet", "Begründung über den Träger"]
+      }
+    },
+    "model": "wave",
+    "calculation": "wave"
+  },
+  {
+    "id": "sw-superposition",
+    "lb": 2,
+    "title": "Beugung und Superposition",
+    "period": "Ph11 · Lernbereich 2 · alle Ausbildungsrichtungen",
+    "intro": "Wellen laufen um Ecken und durcheinander hindurch.",
+    "tracks": ["NTG", "ANDERE"],
+    "paragraphs": [
+      "Trifft eine Welle auf eine Öffnung oder ein Hindernis, breitet sie sich auch in den Bereich dahinter aus, der bei geradliniger Ausbreitung im Schatten läge. Das heißt Beugung. Sie ist deutlich, wenn die Öffnung etwa so groß ist wie die Wellenlänge oder kleiner. Deshalb hörst du jemanden hinter einer Hausecke (Schallwellenlängen im Dezimeter- bis Meterbereich), siehst ihn aber nicht. Erklären lässt sich das mit dem Huygens’schen Prinzip: Jeder Punkt einer Wellenfront ist Ausgangspunkt einer kreisförmigen Elementarwelle.",
+      "Treffen zwei Wellen aufeinander, gilt das Superpositionsprinzip: An jedem Ort addieren sich die Auslenkungen der einzelnen Wellen mit ihrem Vorzeichen. Danach laufen die Wellen unverändert weiter. Treffen Berg auf Berg und Tal auf Tal, verstärken sie sich; trifft Berg auf Tal, schwächen sie sich ab, bei gleichen Amplituden bis zur Auslöschung. Die Überlagerung von Wellen heißt Interferenz.",
+      "Beispiel: Zwei Wellen mit den Amplituden 3 cm und 1 cm treffen gleichphasig zusammen: Die Auslenkung erreicht 4 cm. Treffen sie gegenphasig zusammen, bleiben 2 cm. Nur bei gleichen Amplituden ergibt Gegenphase vollständige Auslöschung. Beugung und Interferenz sind die Kennzeichen von Wellen: Wo du sie beobachtest, ist ein Wellenmodell angebracht."
+    ],
+    "takeaway": "Superposition: Auslenkungen addieren sich mit Vorzeichen. Beugung und Interferenz kennzeichnen Wellen.",
+    "formulas": ["Superposition: y = y₁ + y₂", "Beugung deutlich, wenn Öffnung ≲ λ"],
+    "sourceIds": ["lp", "superposition", "huygens"],
+    "quiz": {
+      "question": "Zwei Wellenberge von je 2 cm Höhe laufen auf einem Seil aufeinander zu. Was beobachtest du im Moment der Begegnung und danach?",
+      "answer": "Kurz 4 cm Auslenkung, danach laufen beide unverändert weiter.",
+      "wrong": [
+        "Sie prallen aneinander ab und laufen zurück.",
+        "Sie löschen sich aus und das Seil bleibt danach in Ruhe."
+      ],
+      "explanation": "Die Auslenkungen addieren sich nur dort, wo sich die Wellen gerade überlagern. Wellen durchdringen einander ungestört."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Wellenphänomene erkennen",
+      "instruction": "Ordne jede Beobachtung dem passenden Phänomen zu.",
+      "categories": ["Beugung", "Interferenz (Superposition)", "Kein typisches Wellenphänomen"],
+      "entries": [
+        { "text": "Du hörst Musik aus einem Zimmer, obwohl du seitlich neben der offenen Tür stehst.", "target": 0, "feedback": "Der Schall breitet sich hinter der Öffnung in alle Richtungen aus." },
+        { "text": "Zwischen zwei Lautsprechern mit demselben Ton gibt es laute und leise Stellen.", "target": 1, "feedback": "Die Schallwellen verstärken oder schwächen sich je nach Ort." },
+        { "text": "Wasserwellen laufen hinter einer schmalen Hafeneinfahrt halbkreisförmig weiter.", "target": 0, "feedback": "Die Öffnung wirkt wie ein neues Wellenzentrum." },
+        { "text": "Ein Ball prallt von einer Wand zurück.", "target": 2, "feedback": "Reflexion zeigen auch Teilchen; sie belegt keine Welle." },
+        { "text": "Kopfhörer mit Geräuschunterdrückung senden ein gegenphasiges Signal.", "target": 1, "feedback": "Schall und Gegenschall löschen sich weitgehend aus." }
+      ],
+      "conclusion": "Beugung und Interferenz treten nur bei Wellen auf."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Zeichne in Gedanken zwei Sinuswellen gleicher Wellenlänge mit den Amplituden 2 cm und 3 cm. Beschreibe die Überlagerung, wenn sie (a) gleichphasig und (b) um eine halbe Wellenlänge verschoben sind.",
+        "hints": ["Auslenkungen punktweise addieren", "Halbe Wellenlänge: Berg trifft Tal"],
+        "model": "(a) Gleichphasig addieren sich Berg und Berg: Es entsteht eine Sinuswelle gleicher Wellenlänge mit der Amplitude 5 cm. (b) Bei einer halben Wellenlänge Verschiebung trifft Berg auf Tal: Die Auslenkungen haben entgegengesetzte Vorzeichen, es bleibt eine Welle mit der Amplitude 1 cm. Vollständige Auslöschung gäbe es nur bei gleichen Amplituden.",
+        "criteria": ["Addition mit Vorzeichen", "Beide Amplituden richtig", "Bedingung für Auslöschung genannt"]
+      },
+      "2": {
+        "prompt": "Erkläre mit Beugung, warum WLAN (Wellenlänge etwa 12 cm) durch eine offene Tür ins Nachbarzimmer gelangt, Licht (Wellenlänge etwa 0,0005 mm) aber einen scharfen Schatten des Türrahmens wirft.",
+        "hints": ["Öffnungsbreite mit der Wellenlänge vergleichen", "Bei WLAN spielen auch Reflexion und Durchdringung von Wänden mit"],
+        "model": "Beugung ist deutlich, wenn die Öffnung nicht viel größer als die Wellenlänge ist. Die Tür ist nur rund achtmal so breit wie die WLAN-Wellenlänge; die Wellen laufen merklich in den Schattenraum. Für Licht ist die Tür etwa zwei Millionen Wellenlängen breit, die Beugung ist unmerklich klein und der Schatten scharf. Bei WLAN tragen zusätzlich Reflexionen und das Durchdringen dünner Wände bei.",
+        "criteria": ["Verhältnis Öffnung zu Wellenlänge genutzt", "Beide Fälle verglichen", "Weitere Einflüsse eingeräumt"]
+      }
+    },
+    "model": "superposition"
+  },
+  {
+    "id": "sw-interferenz",
+    "lb": 2,
+    "title": "Zweistrahlinterferenz und Gangunterschied",
+    "period": "Ph11 · Lernbereich 2 · alle Ausbildungsrichtungen",
+    "intro": "Ob es laut oder leise wird, entscheidet der Wegunterschied.",
+    "tracks": ["NTG", "ANDERE"],
+    "paragraphs": [
+      "Zwei Wellenzentren schwingen gleichphasig mit derselben Frequenz, zum Beispiel zwei Stifte in der Wellenwanne oder zwei Lautsprecher am selben Verstärker. An einem Punkt P kommen die Wellen nach den Wegen s₁ und s₂ an. Ihr Unterschied Δs = |s₂ − s₁| heißt Gangunterschied. Er legt fest, in welchem Schwingungszustand sich die beiden Wellen in P treffen.",
+      "Ist der Gangunterschied ein ganzzahliges Vielfaches der Wellenlänge, Δs = k · λ mit k = 0, 1, 2, …, treffen Berg auf Berg und Tal auf Tal: konstruktive Interferenz, ein Maximum. Ist er ein ungeradzahliges Vielfaches der halben Wellenlänge, Δs = (2k + 1) · λ / 2, trifft Berg auf Tal: destruktive Interferenz, ein Minimum. Auf der Mittelsenkrechten zwischen den Zentren ist Δs = 0; dort liegt immer ein Maximum.",
+      "Beispiel: Zwei Lautsprecher senden einen Ton mit λ = 0,68 m (500 Hz). Ein Hörer ist 3,00 m vom einen und 3,34 m vom anderen entfernt. Δs = 0,34 m = λ / 2: An dieser Stelle ist der Ton besonders leise. Geht er zu einer Stelle mit Δs = 0,68 m, ist der Ton wieder laut. Das Muster aus Maxima und Minima steht fest im Raum, solange die Zentren im Gleichtakt schwingen."
+    ],
+    "takeaway": "Maximum bei Δs = k · λ, Minimum bei Δs = (2k + 1) · λ / 2.",
+    "formulas": ["Δs = |s₂ − s₁|", "konstruktiv: Δs = k · λ", "destruktiv: Δs = (2k + 1) · λ / 2"],
+    "sourceIds": ["lp", "superposition"],
+    "quiz": {
+      "question": "Zwei gleichphasige Wellenzentren senden Wellen mit λ = 4 cm. An einem Punkt beträgt der Gangunterschied 6 cm. Was beobachtest du dort?",
+      "answer": "Ein Minimum, denn 6 cm sind 1,5 Wellenlängen.",
+      "wrong": [
+        "Ein Maximum, denn 6 cm sind größer als die Wellenlänge.",
+        "Weder noch; Interferenz gibt es nur bei Δs = 0."
+      ],
+      "explanation": "1,5 · λ = 3 · λ / 2 ist ein ungeradzahliges Vielfaches der halben Wellenlänge: Berg trifft auf Tal."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Maximum oder Minimum?",
+      "instruction": "Die Wellenlänge beträgt 2 cm. Ordne jeden Gangunterschied zu.",
+      "categories": ["Konstruktive Interferenz", "Destruktive Interferenz", "Dazwischen"],
+      "entries": [
+        { "text": "Δs = 0 cm", "target": 0, "feedback": "k = 0: Die Wellen kommen im Gleichtakt an." },
+        { "text": "Δs = 1 cm", "target": 1, "feedback": "Eine halbe Wellenlänge: Berg trifft Tal." },
+        { "text": "Δs = 4 cm", "target": 0, "feedback": "Zwei ganze Wellenlängen." },
+        { "text": "Δs = 3 cm", "target": 1, "feedback": "Drei halbe Wellenlängen." },
+        { "text": "Δs = 2,5 cm", "target": 2, "feedback": "1,25 Wellenlängen: weder volle Verstärkung noch Auslöschung." }
+      ],
+      "conclusion": "Teile den Gangunterschied durch die Wellenlänge: ganzzahlig heißt Maximum, halbzahlig Minimum."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "In einer Wellenwanne schwingen zwei Stifte gleichphasig; die Wellenlänge ist 1,2 cm. Punkt P ist 7,2 cm vom ersten und 9,0 cm vom zweiten Stift entfernt. Entscheide begründet, ob in P ein Maximum oder ein Minimum liegt.",
+        "hints": ["Gangunterschied berechnen", "Durch die Wellenlänge teilen"],
+        "model": "Δs = 9,0 cm − 7,2 cm = 1,8 cm. Das sind 1,8 / 1,2 = 1,5 Wellenlängen, also 3 · λ / 2. Der Gangunterschied ist ein ungeradzahliges Vielfaches der halben Wellenlänge. In P treffen Berg und Tal zusammen: destruktive Interferenz, das Wasser bleibt dort nahezu in Ruhe.",
+        "criteria": ["Gangunterschied richtig", "Vielfaches von λ bestimmt", "Bedingung benannt und angewendet"]
+      },
+      "2": {
+        "prompt": "Bei einem Open-Air-Konzert stehen zwei Bassboxen 4 m auseinander und spielen denselben Ton mit 85 Hz (c = 340 m/s). Erkläre, warum es im Publikum Stellen mit schwachem Bass gibt und warum diese Stellen für andere Töne woanders liegen.",
+        "hints": ["Wellenlänge berechnen", "Die Bedingung für Minima enthält λ"],
+        "model": "Die Wellenlänge ist λ = 340 / 85 m = 4 m. Wo der Gangunterschied zu den beiden Boxen 2 m, also λ / 2 beträgt, löschen sich die Wellen weitgehend aus: Der Bass ist dort schwach. Für einen anderen Ton ist λ anders, die Bedingung Δs = λ / 2 wird an anderen Orten erfüllt. Reflexionen am Boden und ungleiche Amplituden verhindern meist die völlige Auslöschung.",
+        "criteria": ["Wellenlänge berechnet", "Bedingung für Minima angewendet", "Frequenzabhängigkeit erklärt"]
+      }
+    },
+    "model": "interference",
+    "calculation": "interference"
+  },
+  {
+    "id": "sw-stehende-wellen",
+    "lb": 2,
+    "title": "Stehende Wellen",
+    "period": "Ph11 · Lernbereich 2 · alle Ausbildungsrichtungen",
+    "intro": "Zwei Wellen laufen gegeneinander, und das Muster bleibt stehen.",
+    "tracks": ["NTG", "ANDERE"],
+    "paragraphs": [
+      "Überlagern sich zwei Wellen gleicher Frequenz und Amplitude, die in entgegengesetzte Richtungen laufen, entsteht eine stehende Welle. Das geschieht zum Beispiel, wenn eine Seilwelle am festen Ende reflektiert wird und der einlaufenden Welle entgegenläuft. An manchen Stellen ist der Gangunterschied stets so, dass sich die Wellen auslöschen: Dort liegen Schwingungsknoten, das Seil bleibt in Ruhe. Dazwischen liegen Schwingungsbäuche mit größter Amplitude.",
+      "Benachbarte Knoten haben den Abstand λ / 2, ebenso benachbarte Bäuche. Eine stehende Welle transportiert keine Energie; alle Punkte zwischen zwei Knoten schwingen im Gleichtakt. Auf einem Träger der Länge L mit zwei festen Enden passt nur eine ganze Zahl halber Wellenlängen: L = n · λ / 2. Daraus folgen die Eigenfrequenzen f_n = n · c / (2 · L). n = 1 ist die Grundschwingung, n = 2, 3, … sind die Oberschwingungen.",
+      "Beispiel: Eine Gitarrensaite ist 0,65 m lang; Wellen laufen auf ihr mit 143 m/s. Die Grundschwingung hat λ = 2 · 0,65 m = 1,30 m und f₁ = 143 / 1,30 Hz = 110 Hz. Verkürzt du die Saite mit dem Finger auf die Hälfte, verdoppelt sich die Frequenz auf 220 Hz: Der Ton klingt eine Oktave höher."
+    ],
+    "takeaway": "Stehende Welle: Knoten im Abstand λ / 2, kein Energietransport; mit zwei festen Enden gilt L = n · λ / 2.",
+    "formulas": ["Knotenabstand = λ / 2", "L = n · λ / 2", "f_n = n · c / (2 · L)"],
+    "sourceIds": ["lp", "superposition"],
+    "quiz": {
+      "question": "Wie groß ist bei einer stehenden Welle der Abstand zweier benachbarter Knoten?",
+      "answer": "Eine halbe Wellenlänge.",
+      "wrong": ["Eine ganze Wellenlänge.", "Eine Viertel Wellenlänge."],
+      "explanation": "Von Knoten zu Knoten reicht ein Schwingungsbauch; das ist die halbe Wellenlänge. Eine Viertel Wellenlänge liegt zwischen Knoten und Bauch."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Fortschreitend oder stehend?",
+      "instruction": "Ordne jede Eigenschaft der passenden Wellenform zu.",
+      "categories": ["Fortschreitende Welle", "Stehende Welle"],
+      "entries": [
+        { "text": "Es gibt Stellen, die dauernd in Ruhe bleiben.", "target": 1, "feedback": "Das sind die Schwingungsknoten." },
+        { "text": "Energie wird in Ausbreitungsrichtung transportiert.", "target": 0, "feedback": "Bei der stehenden Welle pendelt die Energie nur zwischen Knoten." },
+        { "text": "Alle Oszillatoren erreichen nacheinander dieselbe Amplitude.", "target": 0, "feedback": "Jeder Oszillator wiederholt die Schwingung des Erregers." },
+        { "text": "Die Amplitude hängt vom Ort ab: null im Knoten, maximal im Bauch.", "target": 1, "feedback": "Das Muster steht fest im Raum." },
+        { "text": "Entsteht durch Überlagerung zweier gegenläufiger Wellen.", "target": 1, "feedback": "Zum Beispiel durch Reflexion am Ende des Trägers." }
+      ],
+      "conclusion": "Eine stehende Welle ist ein ortsfestes Interferenzmuster."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Auf einem 1,2 m langen, beidseitig befestigten Gummiseil bildet sich bei 15 Hz eine stehende Welle mit drei Bäuchen. Bestimme Wellenlänge und Ausbreitungsgeschwindigkeit sowie die Frequenz der Grundschwingung.",
+        "hints": ["L = n · λ / 2 mit n = 3", "f₁ = f₃ / 3"],
+        "model": "Aus 1,2 m = 3 · λ / 2 folgt λ = 0,8 m. Die Ausbreitungsgeschwindigkeit ist c = λ · f = 0,8 m · 15 Hz = 12 m/s. Die Grundschwingung hat einen Bauch, also λ = 2,4 m und f₁ = 12 / 2,4 Hz = 5 Hz; das ist ein Drittel von 15 Hz.",
+        "criteria": ["Wellenlänge aus der Bäuchezahl", "c = λ · f angewendet", "Grundfrequenz richtig"]
+      },
+      "2": {
+        "prompt": "In einer Mikrowelle ohne Drehteller schmilzt Schokolade nur an Stellen im Abstand von etwa 6 cm. Erkläre das mit stehenden Wellen und schätze die Frequenz der Mikrowellen ab (c = 3,0 · 10⁸ m/s).",
+        "hints": ["Abstand benachbarter Bäuche ist λ / 2", "f = c / λ"],
+        "model": "Die Mikrowellen werden an den Wänden reflektiert; es entsteht eine stehende Welle. In den Bäuchen wird viel Energie auf die Schokolade übertragen, in den Knoten kaum. Benachbarte Bäuche liegen λ / 2 auseinander, also ist λ ≈ 12 cm. f = 3,0 · 10⁸ m/s / 0,12 m = 2,5 · 10⁹ Hz = 2,5 GHz. Der Drehteller sorgt dafür, dass das Essen durch Bäuche und Knoten wandert.",
+        "criteria": ["Stehende Welle als Ursache", "Wellenlänge aus dem Abstand", "Frequenz in richtiger Größenordnung"]
+      }
+    },
+    "model": "standing",
+    "calculation": "standing"
+  },
+  {
+    "id": "sw-doppelspalt",
+    "lb": 2,
+    "title": "Licht am Doppelspalt: Farbe und Wellenlänge",
+    "period": "Ph11 · Lernbereich 2 · alle Ausbildungsrichtungen",
+    "intro": "Licht plus Licht kann Dunkelheit ergeben.",
+    "tracks": ["NTG", "ANDERE"],
+    "paragraphs": [
+      "Schickst du einfarbiges (monochromatisches) Laserlicht durch zwei sehr schmale, eng benachbarte Spalte, zeigt der Schirm nicht zwei helle Striche, sondern viele helle und dunkle Streifen in regelmäßigem Abstand. Das Wellenmodell erklärt das Schirmbild: Beide Spalte wirken als gleichphasig schwingende Wellenzentren. Hinter den Spalten wird das Licht gebeugt, die Wellen überlagern sich.",
+      "In der Mitte des Schirms ist der Gangunterschied null: Dort liegt ein heller Streifen. Wo der Gangunterschied λ, 2λ, … beträgt, verstärken sich die Wellen ebenfalls (helle Streifen). Wo er λ / 2, 3λ / 2, … beträgt, löschen sie sich aus (dunkle Streifen). Das Schirmbild ist ein Interferenzmuster und damit ein Beleg für die Wellennatur des Lichts.",
+      "Wiederholst du den Versuch mit anderen Farben, ändert sich der Streifenabstand: Bei rotem Licht liegen die Streifen weiter auseinander als bei grünem, bei blauem am engsten. Daraus folgt: Die Farbe hängt mit der Wellenlänge zusammen. Rotes Licht hat die größte Wellenlänge (etwa 650 bis 750 nm), violettes die kleinste (etwa 400 nm). Auch für Licht gilt c = λ · f mit c ≈ 3,00 · 10⁸ m/s im Vakuum. Beispiel: Grünes Licht mit λ = 550 nm hat f = 3,00 · 10⁸ / (550 · 10⁻⁹) Hz ≈ 5,5 · 10¹⁴ Hz."
+    ],
+    "takeaway": "Das Streifenmuster am Doppelspalt ist Interferenz: Licht verhält sich wie eine Welle; Rot hat eine größere Wellenlänge als Blau.",
+    "formulas": ["sichtbares Licht: λ ≈ 400 nm (Violett) bis 750 nm (Rot)", "c = λ · f mit c ≈ 3,00 · 10⁸ m/s"],
+    "sourceIds": ["lp", "doubleslit"],
+    "quiz": {
+      "question": "Du ersetzt am Doppelspalt den roten Laser durch einen grünen. Wie ändert sich das Schirmbild?",
+      "answer": "Die Streifen rücken enger zusammen, weil grünes Licht eine kleinere Wellenlänge hat.",
+      "wrong": [
+        "Die Streifen rücken weiter auseinander, weil grünes Licht energiereicher ist.",
+        "Das Muster bleibt gleich; nur die Farbe der Streifen ändert sich."
+      ],
+      "explanation": "Mit kleinerer Wellenlänge wird der Gangunterschied λ schon bei kleineren Winkeln erreicht: Die Maxima liegen dichter."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Das Schirmbild deuten",
+      "instruction": "Ordne jede Stelle des Schirmbilds ihrer Erklärung zu.",
+      "categories": ["Heller Streifen", "Dunkler Streifen"],
+      "entries": [
+        { "text": "Mitte des Schirms, Gangunterschied null", "target": 0, "feedback": "Beide Wellen kommen im Gleichtakt an." },
+        { "text": "Gangunterschied eine halbe Wellenlänge", "target": 1, "feedback": "Berg trifft Tal: Auslöschung." },
+        { "text": "Gangunterschied genau eine Wellenlänge", "target": 0, "feedback": "Konstruktive Interferenz, Maximum 1. Ordnung." },
+        { "text": "Gangunterschied anderthalb Wellenlängen", "target": 1, "feedback": "Ein ungeradzahliges Vielfaches von λ / 2." },
+        { "text": "Gangunterschied zwei Wellenlängen", "target": 0, "feedback": "Maximum 2. Ordnung." }
+      ],
+      "conclusion": "Das Streifenmuster folgt denselben Bedingungen wie bei Wasser- und Schallwellen."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Beschreibe das Schirmbild beim Doppelspaltversuch mit rotem Laserlicht und erkläre mit dem Wellenmodell, wie die hellen und dunklen Streifen entstehen.",
+        "hints": ["Die Spalte als zwei Wellenzentren", "Gangunterschied an verschiedenen Stellen des Schirms"],
+        "model": "Auf dem Schirm erscheinen viele rote Streifen in gleichem Abstand, getrennt durch dunkle Stellen; der mittlere Streifen liegt auf der Symmetrieachse. Beide Spalte senden gleichphasige Lichtwellen aus, die sich überlagern. Wo der Gangunterschied ein ganzzahliges Vielfaches der Wellenlänge ist, verstärken sie sich; bei ungeradzahligen Vielfachen der halben Wellenlänge löschen sie sich aus.",
+        "criteria": ["Schirmbild richtig beschrieben", "Spalte als Wellenzentren", "Beide Interferenzbedingungen genannt"]
+      },
+      "2": {
+        "prompt": "Was erwartest du am Doppelspalt, wenn statt eines Lasers weißes Licht verwendet wird? Begründe mit dem Zusammenhang zwischen Farbe und Wellenlänge.",
+        "hints": ["Weißes Licht enthält alle Farben", "Wo liegen die Maxima der einzelnen Farben?"],
+        "model": "In der Mitte ist der Gangunterschied für alle Farben null: Dort entsteht ein weißer Streifen. Die Maxima erster Ordnung liegen für jede Farbe an einer anderen Stelle, für Blau näher an der Mitte, für Rot weiter außen. Seitlich der Mitte erscheinen deshalb farbige Säume mit Blau innen und Rot außen. Weiter außen überlappen sich die Ordnungen und das Muster verwischt.",
+        "criteria": ["Weißes Maximum in der Mitte", "Farbreihenfolge richtig begründet", "Überlappung erwähnt"]
+      }
+    },
+    "model": "doubleslit",
+    "calculation": "light"
+  },
+  {
+    "id": "sw-lichtmodelle",
+    "lb": 2,
+    "title": "Photonenmodell und Wellenmodell des Lichts",
+    "period": "Ph11 · Lernbereich 2 · alle Ausbildungsrichtungen",
+    "intro": "Kein Modell ist das Licht. Jedes beschreibt einen Teil seines Verhaltens.",
+    "tracks": ["NTG", "ANDERE"],
+    "paragraphs": [
+      "Aus Jahrgangsstufe 9 kennst du das Photonenmodell: Licht gibt seine Energie in einzelnen Portionen ab, den Photonen. Die Energie eines Photons hängt von der Farbe ab; blaues Licht hat energiereichere Photonen als rotes. Damit erklärst du, dass Atome Licht nur bestimmter Farben aussenden und aufnehmen (Linienspektren) und dass ein empfindlicher Detektor bei sehr schwachem Licht einzelne, zufällig verteilte Treffer registriert.",
+      "Das Wellenmodell beschreibt Licht als Welle mit Wellenlänge und Frequenz. Es erklärt Beugung und Interferenz, also das Streifenmuster am Doppelspalt. Beide Modelle hängen zusammen: Kleine Wellenlänge (Blau) bedeutet große Photonenenergie, große Wellenlänge (Rot) kleine Photonenenergie.",
+      "Welches Modell passt, hängt von der Frage ab. Geht es um die Ausbreitung und Überlagerung von Licht, verwendest du das Wellenmodell. Geht es um Emission, Absorption und den Nachweis einzelner Energieportionen, verwendest du das Photonenmodell. Beispiel: Schickt man einzelne Photonen nacheinander durch einen Doppelspalt, erzeugt jedes einen einzelnen Punkt an einem nicht vorhersagbaren Ort (Photonenmodell). Nach sehr vielen Photonen bilden die Punkte aber das Streifenmuster (Wellenmodell). Keines der beiden Modelle beschreibt allein alle Beobachtungen; in der Qualifikationsphase führt die Quantenphysik beide zusammen."
+    ],
+    "takeaway": "Wellenmodell für Ausbreitung und Interferenz, Photonenmodell für Emission, Absorption und Nachweis: Die Frage entscheidet über das Modell.",
+    "formulas": ["Wellenmodell: Beugung, Interferenz", "Photonenmodell: Energieportionen, Linienspektren", "kleines λ ↔ große Photonenenergie"],
+    "sourceIds": ["lp", "photon", "doubleslit"],
+    "quiz": {
+      "question": "Welche Beobachtung lässt sich nur mit dem Wellenmodell des Lichts erklären?",
+      "answer": "Das Streifenmuster hinter einem Doppelspalt.",
+      "wrong": [
+        "Das Linienspektrum eines leuchtenden Gases.",
+        "Einzelne Treffer auf einem Detektor bei sehr schwachem Licht."
+      ],
+      "explanation": "Streifen entstehen durch Interferenz, ein typisches Wellenphänomen. Linienspektren und einzelne Treffer erklärt das Photonenmodell."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Welches Modell passt?",
+      "instruction": "Ordne jede Beobachtung dem Modell zu, das sie erklärt.",
+      "categories": ["Wellenmodell", "Photonenmodell"],
+      "entries": [
+        { "text": "Helle und dunkle Streifen hinter einem Doppelspalt", "target": 0, "feedback": "Interferenz ist ein Wellenphänomen." },
+        { "text": "Ein Gas sendet nur Licht ganz bestimmter Farben aus", "target": 1, "feedback": "Atome geben Energie nur in bestimmten Portionen ab." },
+        { "text": "Licht wird an einer sehr schmalen Öffnung gebeugt", "target": 0, "feedback": "Beugung kennzeichnet Wellen." },
+        { "text": "Ein Detektor zählt bei schwachem Licht einzelne Ereignisse", "target": 1, "feedback": "Licht gibt seine Energie portionsweise ab." },
+        { "text": "Ultraviolette Strahlung schädigt die Haut, rotes Licht gleicher Helligkeit nicht", "target": 1, "feedback": "Entscheidend ist die Energie des einzelnen Photons." }
+      ],
+      "conclusion": "Modelle haben Anwendungsbereiche. Die Fragestellung entscheidet, welches du wählst."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Vergleiche Photonen- und Wellenmodell des Lichts in drei Punkten: Was beschreibt das Modell, welche Beobachtung erklärt es, wo liegt seine Grenze?",
+        "hints": ["Je ein Experiment pro Modell nennen", "Was erklärt das jeweils andere Modell nicht?"],
+        "model": "Das Wellenmodell beschreibt Licht mit Wellenlänge und Frequenz; es erklärt Beugung und das Interferenzmuster am Doppelspalt, aber nicht die Linienspektren. Das Photonenmodell beschreibt Licht als Strom von Energieportionen; es erklärt Linienspektren und einzelne Detektortreffer, aber nicht das Streifenmuster. Je nach Fragestellung wähle ich das passende Modell.",
+        "criteria": ["Beide Modelle beschrieben", "Je eine passende Beobachtung", "Grenze jedes Modells genannt"]
+      },
+      "2": {
+        "prompt": "In einem Experiment treffen einzelne Photonen nacheinander auf einen Doppelspalt. Zuerst sieht man verstreute Punkte, nach Stunden ein Streifenmuster. Erläutere, was das über die Anwendbarkeit der beiden Modelle aussagt.",
+        "hints": ["Was zeigt der einzelne Punkt?", "Was zeigt die Verteilung vieler Punkte?"],
+        "model": "Jeder einzelne Punkt zeigt, dass Licht seine Energie portionsweise an einem Ort abgibt; das beschreibt das Photonenmodell. Wo der nächste Punkt landet, lässt sich nicht vorhersagen. Die Verteilung sehr vieler Punkte folgt aber dem Interferenzmuster, das nur das Wellenmodell liefert. Keines der Modelle reicht allein aus: Das Wellenmodell sagt, wo Treffer häufig sind, das Photonenmodell beschreibt den einzelnen Treffer.",
+        "criteria": ["Einzelereignis dem Photonenmodell zugeordnet", "Verteilung dem Wellenmodell zugeordnet", "Zufall beim Einzelereignis benannt"]
+      }
+    }
+  }
+]
