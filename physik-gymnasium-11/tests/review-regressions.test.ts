@@ -212,3 +212,26 @@ describe("German numbers and targeted hints", () => {
     );
   });
 });
+
+describe("worked solutions keep units and brackets (review of #111)", () => {
+  it("brackets the denominator and converts m/s to km/s for the orbit speed", () => {
+    for (let seed = 1; seed <= 40; seed++) {
+      const html = makeExercise("orbit", createRng(seed), 1).solutionHtml;
+      expect(html).toMatch(/\/ \(\d+ · 10⁶\)\) m\/s = [\d.]+ m\/s = [\d,]+ km\/s/);
+    }
+  });
+  it("states the flight distance in metres before kilometres", () => {
+    for (let seed = 1; seed <= 40; seed++) {
+      const html = makeExercise("contraction", createRng(seed), 2).solutionHtml;
+      expect(html).toMatch(/10⁻⁶ s = [\d.]+ m = [\d,]+ km\./);
+    }
+  });
+  it("does not claim that satellite clocks simply run slow", () => {
+    const text = JSON.stringify(findLesson("ew-zeitdilatation"));
+    expect(text).not.toContain("gehen diese Sekunden langsamer");
+    expect(text).toContain("vorgehen");
+    const orbit = JSON.stringify(findLesson("kb-satelliten"));
+    expect(orbit).toContain("35 800 km über der Erdoberfläche");
+    expect(orbit).not.toMatch(/\/ \d,\d+ · 10⁶\)/);
+  });
+});

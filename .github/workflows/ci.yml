@@ -95,6 +95,8 @@ jobs:
         run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node mathematik-gymnasium-11/scripts/validate-migration.mjs
       - name: Move the approved Mathematik 12 Gymnasium histories in temporary libraries
         run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node mathematik-gymnasium-12/scripts/validate-migration.mjs
+      - name: Move the approved Physik 11 Gymnasium histories in temporary libraries
+        run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node physik-gymnasium-11/scripts/validate-migration.mjs
       - name: Preserve Mathematik 6 histories while adding fresh cards
         run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node mathematik-realschule-6/scripts/validate-migration.mjs
       - name: Preserve Mathematik 7 histories while adding fresh cards

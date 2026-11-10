@@ -354,9 +354,11 @@ describe("published lesson and cell contract", () => {
     for (const row of mapping.rows) {
       expect(row.reason.length).toBeGreaterThan(40);
       if (row.category === "A") {
-        expect(row.action).toBe("propose-replace-after-approval");
-        // The proposed successor exists; one history never spreads over two cards.
-        expect(items.filter((i) => i.slug === row.academy_slug)).toHaveLength(1);
+        expect(row.action).toBe("replace");
+        // Exactly one successor declares the transfer; one history never spreads over two cards.
+        const successor = items.filter((i) => i.slug === row.academy_slug);
+        expect(successor).toHaveLength(1);
+        expect(successor[0].replaces).toEqual([row.de_by_id]);
       } else {
         expect(row.academy_slug).toBeNull();
         expect(row.action).toBe("keep-active");
@@ -366,10 +368,10 @@ describe("published lesson and cell contract", () => {
       .filter((r) => r.category === "A")
       .map((r) => r.academy_slug);
     expect(new Set(successors).size).toBe(successors.length);
-    // Proposal only: the shipped cell changes no review history.
-    expect(mapping.status).toBe("proposal-only");
-    expect(mapping.approved).toBeNull();
-    expect(items.some((i) => (i.replaces?.length ?? 0) > 0)).toBe(false);
+    // Approved by Thomas on 2026-11-10: three A transfers, nothing else moves.
+    expect(mapping.status).toBe("approved");
+    expect(mapping.approved).toBe("2026-11-10");
+    expect(items.filter((i) => (i.replaces?.length ?? 0) > 0)).toHaveLength(3);
     expect(cell.retired_items ?? []).toEqual([]);
   });
 });

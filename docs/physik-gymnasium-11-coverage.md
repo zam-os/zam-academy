@@ -60,10 +60,11 @@ Abgeglichen wurden fünf `de-by`-Zellen in zam-os/zam (Commit `ea825d1c1147fcc5f
 | B | 0 | Keine mehrteilige Karte wird ganz übernommen |
 | C | 17 | 12 Karten außerhalb von Ph11, 4 mehrteilige Synthesekarten, 1 Karte zum Doppler-Effekt; alle bleiben aktiv |
 
-**Das ist ein Vorschlag ohne Freigabe.** `replaces-de-by.json` hat `"status": "proposal-only"` und `"approved": null`; die Zelle enthält weder `replaces` noch `retired_items`, und ein Migrationstest ist deshalb nicht nötig. Zwei Fragen an Thomas:
+**Freigegeben am 10.11.2026.** Thomas hat die Zuordnung im Claude-Code-Chat zu zam-os/zam-academy#111 ausdrücklich freigegeben („Freigabe für die Zellen erteile ich“, auf Rückfrage: „3 A, alle fünf Zellen“). `replaces-de-by.json` hat `"status": "approved"` und `"approved": "2026-11-10"`. Die Zelle deklariert mit ihrer ersten Veröffentlichung genau die drei `replaces` der A-Zeilen und kein `retired_items`; die 17 C-Karten bleiben aktiv.
 
-1. Sollen die drei A-Zuordnungen gelten?
-2. Mathematik 11 Gymnasium hat Jahrgangsstufe-10-Zellen bewusst dem künftigen Paket der Jahrgangsstufe 10 überlassen. Hier sind die beiden Physik-10-Zellen aufgenommen, weil ein Paket Physik 10 Gymnasium nach LehrplanPLUS zu Kreisbewegung und Wellen keine Lektion haben wird. Falls sie dort abgeglichen werden sollen, entfallen diese acht Zeilen hier.
+Die beiden Physik-10-Zellen bleiben nach Thomas’ Entscheidung in diesem Abgleich, weil ein Paket Physik 10 Gymnasium nach LehrplanPLUS zu Kreisbewegung und Wellen keine Lektion haben wird.
+
+`physik-gymnasium-11/scripts/validate-migration.mjs` probt die Übertragung in wegwerfbaren Bibliotheken und läuft in CI: Die drei Historien wandern mit allen FSRS-Feldern und Reviews, die 17 C-Karten bleiben in der aktiven Wiederholung, eine wiederholte Installation ändert nichts, und wer nach einer Vorabversion Karten auf alter und neuer Kennung hält, bekommt die Installation mit Fehlermeldung verweigert.
 
 ## Nachweise
 
@@ -78,6 +79,7 @@ Am Repository-Stamm mit zam-core 0.54.0 in einem Ordner außerhalb des Repositor
 ```bash
 node --test scripts/build-catalog.test.mjs scripts/academy-registry.test.mjs
 ZAM_CORE=<file URL> node scripts/validate-cells.mjs
+ZAM_CORE=<file URL> node physik-gymnasium-11/scripts/validate-migration.mjs
 ```
 
 Die gebaute `dist/index.html` wurde mit Chrome im Headless-Modus geöffnet: Lernpfad, Formelsammlung und einzelne Lektionen als Bildschirmfoto im hellen und dunklen Schema; alle 34 Lektionen auf beiden Stufen über das gerenderte DOM (Titel, Schnellcheck, Modell, Werkstatt, Aufgabentext, keine `NaN`). Die Ergebnisse stehen in der Beschreibung des Pull Requests.
@@ -86,5 +88,4 @@ Die gebaute `dist/index.html` wurde mit Chrome im Headless-Modus geöffnet: Lern
 
 - Kein Lehrer und keine Lehrerin hat die Inhalte geprüft.
 - Lehrervideos fehlen (eigener Schritt).
-- Freigabe der Kartenzuordnung.
 - Lernbereich 4.4: Akustik, Licht in der Datenübertragung und Risiken digitaler Technologien ohne Lektion.

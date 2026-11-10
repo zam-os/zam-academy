@@ -276,7 +276,7 @@
     "paragraphs": [
       "Viele Bahnen von Satelliten, Monden und Planeten sind fast kreisförmig. Im Modell wirkt dann die Gravitationskraft des Zentralkörpers als Zentripetalkraft: G · M · m / r² = m · v² / r. Die Masse m des umlaufenden Körpers kürzt sich. Für die Bahngeschwindigkeit folgt v = √(G · M / r). Je größer der Bahnradius, desto langsamer der Umlauf.",
       "Setzt du v = 2π · r / T ein, erhältst du T² = 4π² · r³ / (G · M). Daraus lässt sich die Masse des Zentralkörpers bestimmen, wenn Bahnradius und Umlaufdauer eines Begleiters bekannt sind: M = 4π² · r³ / (G · T²). So „wiegt“ man die Erde mit dem Mond und die Sonne mit der Erde.",
-      "Beispiel: Die Raumstation ISS kreist etwa 400 km über der Erdoberfläche, also bei r = 6771 km. v = √(6,674 · 10⁻¹¹ · 5,972 · 10²⁴ / 6,771 · 10⁶) m/s ≈ 7,67 km/s und T = 2π · r / v ≈ 92 min. Ein geostationärer Satellit braucht T = 23 h 56 min wie die Erddrehung; das gelingt nur bei r ≈ 42 160 km über dem Äquator. Das Modell hat Grenzen: Wirkliche Bahnen sind Ellipsen, und weitere Körper stören sie."
+      "Beispiel: Die Raumstation ISS kreist etwa 400 km über der Erdoberfläche, also bei r = 6771 km. v = √(6,674 · 10⁻¹¹ · 5,972 · 10²⁴ / (6,771 · 10⁶)) m/s ≈ 7670 m/s ≈ 7,67 km/s und T = 2π · r / v ≈ 92 min. Ein geostationärer Satellit braucht T = 23 h 56 min wie die Erddrehung; das gelingt nur über dem Äquator beim Bahnradius r ≈ 42 160 km, also etwa 35 800 km über der Erdoberfläche. Das Modell hat Grenzen: Wirkliche Bahnen sind Ellipsen, und weitere Körper stören sie."
     ],
     "takeaway": "Gravitation als Zentripetalkraft: v = √(G · M / r) und T² = 4π² · r³ / (G · M), unabhängig von der Satellitenmasse.",
     "formulas": ["G · M · m / r² = m · v² / r", "v = √(G · M / r)", "T² = 4π² · r³ / (G · M)"],
@@ -308,7 +308,7 @@
       "1": {
         "prompt": "Ein Erdbeobachtungssatellit kreist 800 km über der Erdoberfläche (Erdradius 6371 km, G · M = 3,986 · 10¹⁴ m³/s²). Berechne Bahngeschwindigkeit und Umlaufdauer.",
         "hints": ["Der Bahnradius zählt vom Erdmittelpunkt", "T = 2π · r / v"],
-        "model": "r = 7171 km = 7,171 · 10⁶ m. v = √(3,986 · 10¹⁴ / 7,171 · 10⁶) m/s ≈ 7456 m/s ≈ 7,46 km/s. T = 2π · 7,171 · 10⁶ m / 7456 m/s ≈ 6043 s ≈ 101 min. Der Satellit umrundet die Erde etwa 14-mal am Tag.",
+        "model": "r = 7171 km = 7,171 · 10⁶ m. v = √(3,986 · 10¹⁴ / (7,171 · 10⁶)) m/s ≈ 7456 m/s ≈ 7,46 km/s. T = 2π · 7,171 · 10⁶ m / 7456 m/s ≈ 6043 s ≈ 101 min. Der Satellit umrundet die Erde etwa 14-mal am Tag.",
         "criteria": ["Bahnradius aus Höhe und Erdradius gebildet", "v richtig berechnet", "T mit sinnvoller Einheit angegeben"]
       },
       "2": {

@@ -1,9 +1,10 @@
 {
   "schema": 1,
-  "status": "proposal-only",
-  "approved": null,
-  "source": "Autorenabgleich am 2026-11-10 beim Bau des Pakets (Auftrag von Thomas im Claude-Code-Chat: „Baue bitte das Paket Physik 11. Klasse Gymnasium“). Das ist keine Freigabe einer Lernstandsübertragung. Vorschlag: 3 A, 0 B, 17 C; keine Stilllegung. Die Zelle erscheint gemäß Paketstandard zunächst ohne replaces und retired_items.",
-  "note": "Abgeglichen wurden die drei bisherigen Physik-11-Zellen (Themen der früheren Jahrgangsstufe 11, im LehrplanPLUS in der Qualifikationsphase) und die zwei Physik-10-Zellen zu Kreisbewegung und Wellen, deren Themen im LehrplanPLUS in Jahrgangsstufe 11 liegen. Alle 20 Altkarten bleiben bis zu einer ausdrücklichen Entscheidung von Thomas unverändert aktiv.",
+  "status": "approved",
+  "approved": "2026-11-10",
+  "source": "Thomas im Claude-Code-Chat zu zam-os/zam-academy#111 am 2026-11-10, nach den drei Reviews (Stand 0928a39): „Freigabe für die Zellen erteile ich.“ Auf die Rückfrage, was genau freigegeben ist, wählte er „3 A, alle fünf Zellen“. Die Freigabe gilt der Zuordnung der 20 de-by-Karten in dieser Datei (3 A, 0 B, 17 C; keine Stilllegung).",
+  "authorization": "Thomas hat am 10. November 2026 die hier dokumentierten 20 Zuordnungen ausdrücklich freigegeben. Die drei A-Ersetzungen (Kreisbewegung J01 → ph11-zentripetalkraft-richtung, Kreisbewegung J03 → ph11-kepler-3, Wellenlehre J01 → ph11-destruktive-interferenz) erscheinen mit der ersten Veröffentlichung der Zelle; die 17 C-Karten bleiben ohne Nachfolger aktiv. Persönliche Karten und Reviewhistorien bleiben erhalten.",
+  "note": "Abgeglichen wurden die drei bisherigen Physik-11-Zellen (Themen der früheren Jahrgangsstufe 11, im LehrplanPLUS in der Qualifikationsphase) und die zwei Physik-10-Zellen zu Kreisbewegung und Wellen, deren Themen im LehrplanPLUS in Jahrgangsstufe 11 liegen. Thomas hat entschieden, dass beide Physik-10-Zellen in diesem Abgleich bleiben.",
   "source_repository": "zam-os/zam",
   "source_commit": "ea825d1c1147fcc5f37de5817c2d6a7c05e2f7ed",
   "sources": [
@@ -59,8 +60,8 @@
       ],
       "category": "A",
       "academy_slug": "ph11-zentripetalkraft-richtung",
-      "action": "propose-replace-after-approval",
-      "reason": "Derselbe Einzelabruf: Die Zentripetalkraft zeigt zum Kreismittelpunkt, senkrecht zur Geschwindigkeit. Auch der Schnellcheck stellt dieselbe Gegenantwort (tangential) daneben. Nur Vorschlag; die ausgelieferte Zelle deklariert keine Ersetzung."
+      "action": "replace",
+      "reason": "Derselbe Einzelabruf: Die Zentripetalkraft zeigt zum Kreismittelpunkt, senkrecht zur Geschwindigkeit. Auch der Schnellcheck stellt dieselbe Gegenantwort (tangential) daneben."
     },
     {
       "de_by_cell": "de-by:gymnasium-10-physik-kreisbewegung-gravitation-kepler-gesetze",
@@ -296,8 +297,8 @@
       ],
       "category": "A",
       "academy_slug": "ph11-kepler-3",
-      "action": "propose-replace-after-approval",
-      "reason": "Derselbe Einzelabruf: drittes Kepler’sches Gesetz T₁² / T₂² = a₁³ / a₂³ für zwei Planeten derselben Sonne. Nur Vorschlag; die ausgelieferte Zelle deklariert keine Ersetzung."
+      "action": "replace",
+      "reason": "Derselbe Einzelabruf: drittes Kepler’sches Gesetz T₁² / T₂² = a₁³ / a₂³ für zwei Planeten derselben Sonne."
     },
     {
       "de_by_cell": "de-by:gymnasium-10-physik-kreisbewegung-gravitation-kepler-gesetze",
@@ -407,8 +408,8 @@
       ],
       "category": "A",
       "academy_slug": "ph11-destruktive-interferenz",
-      "action": "propose-replace-after-approval",
-      "reason": "Derselbe Einzelabruf: Bedingung Δs = (2k + 1) · λ / 2 für destruktive Interferenz zweier gleichphasiger Wellenzentren. Nur Vorschlag; die ausgelieferte Zelle deklariert keine Ersetzung."
+      "action": "replace",
+      "reason": "Derselbe Einzelabruf: Bedingung Δs = (2k + 1) · λ / 2 für destruktive Interferenz zweier gleichphasiger Wellenzentren."
     },
     {
       "de_by_cell": "de-by:gymnasium-10-physik-wellenlehre-akustik-doppler-effekt",

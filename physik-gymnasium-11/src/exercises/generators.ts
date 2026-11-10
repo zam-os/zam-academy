@@ -158,7 +158,7 @@ export function makeExercise(
             v1,
             "km/s",
             "v = √(G · M / r)",
-            `√(3,986 · 10¹⁴ / ${a + 5} · 10⁶) m/s = ${fmt(v1, 3)} km/s.`,
+            `√(3,986 · 10¹⁴ / (${a + 5} · 10⁶)) m/s = ${fmt(v1 * 1000, 0)} m/s = ${fmt(v1, 3)} km/s.`,
           )
         : task(
             `Ein Mond umrundet einen Planeten auf einer Kreisbahn mit r = ${a * 10000} km in ${b * 2} h. Bestimme die Masse des Planeten als Vielfaches von 10²⁴ kg. G = 6,674 · 10⁻¹¹ m³/(kg·s²).`,
@@ -414,7 +414,7 @@ export function makeExercise(
             km,
             "km",
             "s = v · γ · Δt₀",
-            `γ = ${fmt(g2, 3)}. Lebensdauer im Erdsystem ${fmt(g2 * a, 3)} µs. ${fmt(beta2, 3)} · 3,00 · 10⁸ m/s · ${fmt(g2 * a, 3)} · 10⁻⁶ s = ${fmt(km, 3)} km.`,
+            `γ = ${fmt(g2, 3)}. Lebensdauer im Erdsystem ${fmt(g2 * a, 3)} µs. ${fmt(beta2, 3)} · 3,00 · 10⁸ m/s · ${fmt(g2 * a, 3)} · 10⁻⁶ s = ${fmt(km * 1000, 0)} m = ${fmt(km, 3)} km.`,
           );
     }
     case "efficiency": {

@@ -25,7 +25,7 @@ Es gibt keine Konten, keine Telemetrie und keine externen Laufzeitanfragen. Fort
 
 `cell.json` ist der einzige Ort der **102 Karten**: ein Atom je Lektion mit zwei schnellen Karten und einer Synthesekarte (bei den Kepler’schen Gesetzen drei schnelle). Jede Karte verweist auf `#lesson=<id>`; die Tests pinnen alle 34 Anker. Die Atome der Lernbereiche 1 bis 3 sind ohne Track an Physik 11 Gymnasium gebunden, die des Lernbereichs 4 mit `track: "NTG"`.
 
-`replaces-de-by.json` ist ein **Vorschlag ohne Freigabe** (`"approved": null`): 20 Altkarten aus fünf `de-by`-Zellen, davon 3 A, 0 B, 17 C. Die Zelle enthält weder `replaces` noch `retired_items`; alle Altkarten bleiben aktiv, bis Thomas ausdrücklich entscheidet. Die Schnappschüsse der Altzellen liegen bytegenau in `tests/fixtures/`.
+`replaces-de-by.json` ist die von Thomas am 10.11.2026 **freigegebene Zuordnung** von 20 Altkarten aus fünf `de-by`-Zellen: 3 A, 0 B, 17 C. Die Zelle deklariert genau die drei `replaces` der A-Zeilen und kein `retired_items`; die 17 C-Karten bleiben aktiv. `scripts/validate-migration.mjs` probt die Übertragung in wegwerfbaren Bibliotheken. Die Schnappschüsse der Altzellen liegen bytegenau in `tests/fixtures/`.
 
 Näheres: [docs/physik-gymnasium-11-coverage.md](../docs/physik-gymnasium-11-coverage.md).
 
