@@ -6,6 +6,7 @@ Hands-on training apps that build understanding before [ZAM](https://github.com/
 | --- | --- | --- | --- |
 | UML 2.5.1 | [`uml/`](uml/) | https://academy.zam-os.org/uml/ | `zam-academy:uml` |
 | Physik 8 Realschule (LehrplanPLUS Bayern, Zweig I und II/III) | [`physik-realschule-8/`](physik-realschule-8/) | https://academy.zam-os.org/physik-realschule-8/ | `zam-academy:physik-realschule-8` |
+| Physik 11 Gymnasium (LehrplanPLUS Bayern, alle Ausbildungsrichtungen, Profilbereich NTG) | [`physik-gymnasium-11/`](physik-gymnasium-11/) | https://academy.zam-os.org/physik-gymnasium-11/ | `zam-academy:physik-gymnasium-11` |
 | Physik 9 Realschule (LehrplanPLUS Bayern) | [`physik-realschule-9/`](physik-realschule-9/) | https://academy.zam-os.org/physik-realschule-9/ | `zam-academy:physik-realschule-9` |
 | Relationale Datenbanken und SQL (DE/EN, LehrplanPLUS IT 2.3.1/2.3.2) | [`sql/`](sql/) | https://academy.zam-os.org/sql/ | `zam-academy:sql` |
 | Englisch 5 Realschule (LehrplanPLUS Bayern, für alle Schülerinnen und Schüler) | [`englisch-realschule-5/`](englisch-realschule-5/) | https://academy.zam-os.org/englisch-realschule-5/ | `zam-academy:englisch-realschule-5` |
@@ -130,6 +131,7 @@ cd uml                 # or: cd physik-realschule-9 (dev server on :5181), cd sq
 # Mathematik 12 Gymnasium: cd mathematik-gymnasium-12 (dev server on :5222)
 # Englisch 5: cd englisch-realschule-5 (dev server on :5223)
 # Mathematik 13 Gymnasium (Vorschau): cd mathematik-gymnasium-13 (dev server on :5225)
+# Physik 11 Gymnasium: cd physik-gymnasium-11 (dev server on :5226)
 npm ci
 npm run dev      # http://localhost:5180/uml/
 npm test
@@ -137,7 +139,7 @@ npm run build    # single-file build in dist/index.html
 npm run package:zip   # offline zip in release/
 ```
 
-CI (`.github/workflows/ci.yml`) tests and builds every app on each pull request and uploads the offline zip as an artifact. Pages (`.github/workflows/pages.yml`) publishes `index.html` plus every app's build on each push to `main`.
+CI (`.github/workflows/ci.yml`) tests and builds the apps a pull request or push changed and uploads their offline zips as artifacts: an app is tested when a file in its folder changed, every app when the package jobs of the CI workflow changed or the base commit is unknown (`scripts/changed-apps.mjs`). The `cells` job validates every cell on each run. Pages runs no test suites. Pages (`.github/workflows/pages.yml`) publishes `index.html` plus every app's build on each push to `main`.
 
 The [grade-9 coverage inventory](docs/realschule-9-coverage.md) distinguishes migrated packages, partial legacy material and still-open curriculum work.
 
