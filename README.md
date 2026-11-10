@@ -130,6 +130,7 @@ cd uml                 # or: cd physik-realschule-9 (dev server on :5181), cd sq
 # Englisch 5: cd englisch-realschule-5 (dev server on :5223)
 # Mathematik 13 Gymnasium (Vorschau): cd mathematik-gymnasium-13 (dev server on :5225)
 # Physik 11 Gymnasium: cd physik-gymnasium-11 (dev server on :5226)
+# Grade 11 introductory biology draft: cd biologie-gymnasium-11 (dev server on :5227)
 npm ci
 npm run dev      # http://localhost:5180/uml/
 npm test
@@ -138,6 +139,8 @@ npm run package:zip   # offline zip in release/
 ```
 
 CI (`.github/workflows/ci.yml`) tests and builds the apps a pull request or push changed and uploads their offline zips as artifacts: an app is tested when a file in its folder changed, every app when the package jobs of the CI workflow changed or the base commit is unknown (`scripts/changed-apps.mjs`). The `cells` job validates every cell on each run. Pages runs no test suites. Pages (`.github/workflows/pages.yml`) publishes `index.html` plus every app's build on each push to `main`.
+
+The local draft for Bavarian Grade 11 introductory biology is documented in the [package README](biologie-gymnasium-11/) and the [curriculum and legacy card comparison](docs/biologie-gymnasium-11-coverage.md).
 
 The [grade-9 coverage inventory](docs/realschule-9-coverage.md) distinguishes migrated packages, partial legacy material and still-open curriculum work.
 

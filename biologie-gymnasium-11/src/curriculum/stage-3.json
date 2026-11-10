@@ -1,0 +1,368 @@
+[
+  {
+    "id": "mikrobiom-und-infektion",
+    "lb": 3,
+    "title": "Mikrobiom, Übertragung und Schutz",
+    "period": "Einführungsklasse · Lernbereich 3",
+    "intro": "Du unterscheidest nützliche Mitbewohner von Krankheitserregern und ordnest Schutzmaßnahmen dem Übertragungsweg zu.",
+    "paragraphs": [
+      "Auf und im Körper leben viele Mikroorganismen. Hautbakterien können Krankheitserregern Platz und Nährstoffe streitig machen. Darmbakterien verarbeiten unter anderem Bestandteile der Nahrung, die wir selbst nicht vollständig abbauen. Manche Mitbewohner profitieren, ohne dem Menschen merklich zu nützen oder zu schaden. Parasiten profitieren auf Kosten ihres Wirts; eine Infektion beginnt, wenn ein Erreger in einen Wirt eindringt und sich dort vermehrt. Nicht jede Infektion führt zu Beschwerden.",
+      "Die Maßnahme muss den Übertragungsweg treffen. Bei SARS-CoV-2 können virushaltige Partikel eingeatmet werden; Lüften verdünnt in Innenräumen die angesammelten Partikel. HIV wird über bestimmte Körperflüssigkeiten übertragen, etwa bei ungeschütztem Sex oder gemeinsam benutzten Spritzen. Kondome senken das Risiko einer sexuellen Übertragung; Händeschütteln überträgt HIV nicht.",
+      "Beispiel: Wird ein Erreger über verunreinigte Hände auf Speisen übertragen, unterbricht gründliches Händewaschen vor der Zubereitung diesen Weg. Wird ein Atemwegsvirus eingeatmet, ist Händewaschen allein kein Ersatz für Maßnahmen, die die Luftübertragung betreffen. Hygiene soll gezielt Infektionen verhindern; sie hat nicht zum Ziel, alle Körperbakterien zu entfernen."
+    ],
+    "takeaway": "Eine Schutzmaßnahme wirkt, wenn sie einen tatsächlichen Übertragungsweg unterbricht.",
+    "keyTerms": ["Mikrobiom", "Symbiose", "Parasitismus", "Infektion", "Übertragungsweg"],
+    "sourceIds": ["isb", "atemwege", "hiv"],
+    "quiz": {
+      "question": "Welche Maßnahme wirkt unmittelbar gegen die Ansammlung virushaltiger Partikel in der Raumluft?",
+      "answer": "Frischluft durch regelmäßiges Lüften zuführen.",
+      "wrong": ["Nur die Trinkflaschen außen abwischen.", "Die Hände vor dem Essen waschen."],
+      "explanation": "Frischluft verdünnt Partikel in der Raumluft. Die anderen Maßnahmen betreffen Kontaktwege."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Welcher Weg spielt hier eine Rolle?",
+      "instruction": "Ordne die Situationen den passenden Übertragungswegen zu.",
+      "categories": [
+        "Einatmen",
+        "Hände oder Lebensmittel",
+        "Bestimmte Körperflüssigkeiten",
+        "Kein HIV-Übertragungsweg"
+      ],
+      "entries": [
+        {
+          "text": "SARS-CoV-2 in der Luft eines schlecht gelüfteten Raums.",
+          "target": 0,
+          "feedback": "Die relevanten Partikel werden eingeatmet."
+        },
+        {
+          "text": "Darmerreger gelangen von ungewaschenen Händen auf einen Snack.",
+          "target": 1,
+          "feedback": "Der Erreger kann über das Lebensmittel aufgenommen werden."
+        },
+        {
+          "text": "HIV-haltiges Blut an einer gemeinsam verwendeten Spritze.",
+          "target": 2,
+          "feedback": "Blut kann so direkt in den Körper gelangen."
+        },
+        {
+          "text": "Händedruck bei unverletzter Haut mit einem Menschen mit HIV.",
+          "target": 3,
+          "feedback": "Händeschütteln ist kein HIV-Übertragungsweg."
+        }
+      ],
+      "conclusion": "Vermeide unnötige Ausgrenzung: Schutz richtet sich nach dem Übertragungsweg, nicht nach einer Personengruppe."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre einen Nutzen von Darmbakterien und warum gründliches Händewaschen vor der Zubereitung von Speisen trotzdem sinnvoll ist.",
+        "hints": [
+          "Was können Bakterien im Darm mit Nahrungsresten tun?",
+          "Was könnte von Händen auf Lebensmittel gelangen?"
+        ],
+        "model": "Darmbakterien verwerten unter anderem Ballaststoffe und bilden dabei Stoffe, die der Darm nutzen kann. Über Hände können dagegen Erreger auf Lebensmittel und anschließend in den Körper gelangen. Gezielte Hygiene verhindert diese Übertragung, ohne das Darmmikrobiom entfernen zu sollen.",
+        "criteria": [
+          "Ich nenne eine Leistung des Mikrobioms.",
+          "Ich beschreibe den Weg von der Hand zum Körper.",
+          "Ich unterscheide gezielte Hygiene und Sterilität."
+        ]
+      },
+      "2": {
+        "prompt": "Für einen Schulabend werden Lüften im Saal und Händewaschen vor dem Buffet vorgeschlagen. Begründe beide Maßnahmen, nenne eine Grenze und erkläre, warum HIV kein Grund ist, Menschen vom Buffet auszuschließen.",
+        "hints": [
+          "Welchen Weg unterbricht jede Maßnahme?",
+          "Welche Kontakte übertragen HIV nicht?"
+        ],
+        "model": "Lüften verdünnt ausgeatmete Partikel; Händewaschen verringert die Übertragung über Speisen. Keine Maßnahme beseitigt jedes Risiko. Ein gemeinsam genutztes Buffet und alltäglicher Sozialkontakt sind keine HIV-Übertragungswege. Ein Ausschluss hätte hier keinen Schutzgrund.",
+        "criteria": [
+          "Ich ordne beide Maßnahmen einem Weg zu.",
+          "Ich nenne eine Grenze.",
+          "Ich begründe sachlich, warum ein Ausschluss nicht schützt."
+        ]
+      }
+    }
+  },
+  {
+    "id": "bakterien-und-viren",
+    "lb": 3,
+    "title": "Bakterielle und virale Infektionen",
+    "period": "Einführungsklasse · Lernbereich 3",
+    "intro": "Du vergleichst einen sich teilenden Erreger mit einem Virus, das eine Wirtszelle braucht.",
+    "paragraphs": [
+      "Bakterien sind Zellen. Bei günstigen Bedingungen können sie sich durch Zweiteilung vermehren: Aus 100 werden bei zwei Verdopplungen 400 Zellen. In einem Körper begrenzen Abwehr, Nährstoffmangel und Konkurrenz das Wachstum. Streptokokken können eine bakterielle Rachenentzündung auslösen; ähnliche Beschwerden können aber auch von Viren kommen.",
+      "In der Beispielkurve steigt die Zahl von 100 auf 200 und dann auf 400 Zellen. Später wird die Kurve flacher. Zwischen den letzten beiden Zeitschritten bleibt die Zahl bei 800. Ein Plateau kann entstehen, wenn sich in einem Zeitabschnitt etwa so viele Zellen teilen, wie absterben. Die Zahlen sind Übungsdaten und gelten nicht für einen bestimmten Erreger.",
+      "Viren enthalten Erbmaterial (DNA oder RNA), umgeben von einer Proteinhülle, manche zusätzlich von einer Lipidhülle. Sie besitzen keine Ribosomen und vermehren sich nur in Wirtszellen. Ein lytischer Bakteriophage bindet an ein Bakterium, schleust sein Erbmaterial ein, lässt neue Virusbestandteile herstellen und zusammenbauen und setzt Nachkommen bei der Lyse der Zelle frei. Andere Viren können anders freigesetzt werden.",
+      "Beispiel: Influenza wird durch Viren verursacht. Ein Antibiotikum, das den Aufbau einer Bakterienzellwand hemmt, hat bei Influenzaviren kein entsprechendes Ziel. Dass eine Entzündung ähnlich aussieht, verrät noch nicht, welche Art Erreger beteiligt ist."
+    ],
+    "dataset": {
+      "caption": "Übungsdaten zum begrenzten Bakterienwachstum",
+      "xLabel": "Zeitschritt",
+      "yLabel": "Anzahl der Bakterienzellen",
+      "ticks": ["0", "1", "2", "3", "4", "5", "6"],
+      "values": [100, 200, 400, 650, 770, 800, 800],
+      "max": 1000
+    },
+    "takeaway": "Bakterien teilen sich als Zellen; Viren nutzen Wirtszellen zur Vermehrung. Symptome allein unterscheiden beides nicht sicher.",
+    "keyTerms": [
+      "Zweiteilung",
+      "Wachstumskurve",
+      "Wirtszelle",
+      "Kapsid",
+      "lytischer Zyklus",
+      "Antibiotikum"
+    ],
+    "sourceIds": ["isb", "antibiotika"],
+    "quiz": {
+      "question": "Warum hemmt ein Antibiotikum gegen bakterielle Zellwände keine Influenzaviren?",
+      "answer": "Influenzaviren bauen keine Bakterienzellwand auf.",
+      "wrong": [
+        "Influenzaviren besitzen eine besonders dicke Zellwand.",
+        "Ein Mittel gegen Zellwände muss nur zuerst die Virushülle auflösen."
+      ],
+      "explanation": "Ein Mittel wirkt nur, wenn sein Angriffspunkt vorhanden ist."
+    },
+    "workshop": {
+      "kind": "timeline",
+      "title": "Ein Phage vermehrt sich",
+      "instruction": "Ordne die Schritte des lytischen Zyklus eines Bakteriophagen.",
+      "categories": [],
+      "entries": [
+        {
+          "text": "Der Phage bindet an eine passende Struktur auf dem Bakterium.",
+          "target": 0,
+          "feedback": "Passende Oberflächenstrukturen bestimmen, welche Wirte infiziert werden."
+        },
+        {
+          "text": "Das Erbmaterial gelangt in die Zelle.",
+          "target": 1,
+          "feedback": "Die Zelle enthält nun die Anweisungen des Phagen."
+        },
+        {
+          "text": "Die Zelle stellt Virusbestandteile her; neue Phagen werden zusammengesetzt.",
+          "target": 2,
+          "feedback": "Erbmaterial und Proteine werden zu Nachkommen zusammengefügt."
+        },
+        {
+          "text": "Die Zelle platzt und setzt die Phagen frei.",
+          "target": 3,
+          "feedback": "Die Lyse setzt Nachkommen frei, die weitere Zellen infizieren können."
+        }
+      ],
+      "conclusion": "Die Wirtszelle platzt im lytischen Beispiel; nicht jeder Viruszyklus endet mit einer Lyse."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Vergleiche die Vermehrung von Streptokokken und eines lytischen Phagen. Rechne für Bakterien im Modell: Wie viele Zellen entstehen aus 100 nach drei Verdopplungen?",
+        "hints": [
+          "Wie entsteht aus einer Bakterienzelle mehr als eine?",
+          "Wer stellt die Bestandteile der Phagen her?"
+        ],
+        "model": "Durch Zweiteilung entstehen aus 100 Zellen nacheinander 200, 400 und 800 Zellen. Ein Phage teilt sich nicht. Er bringt Erbmaterial in eine passende Bakterienzelle, lässt Bestandteile produzieren und setzt fertige Phagen bei der Lyse frei.",
+        "criteria": [
+          "Ich berechne 800 Zellen.",
+          "Ich beschreibe Zweiteilung.",
+          "Ich erkläre Wirtsabhängigkeit und Freisetzung."
+        ]
+      },
+      "2": {
+        "prompt": "Ein Zeitdiagramm eines Phagenversuchs zeigt zunächst keine freien neuen Viren und dann einen sprunghaften Anstieg. Jemand deutet den Sprung als bakterielle Verdopplung. Prüfe die Deutung.",
+        "hints": [
+          "Was misst das Diagramm genau?",
+          "Was geschieht in der Wirtszelle vor dem Sprung?"
+        ],
+        "model": "Das Diagramm zählt freie Phagen, nicht Bakterienzellen. Anfangs entstehen Virusbestandteile im Innern der Wirte. Bei der Lyse werden viele fertige Phagen auf einmal freigesetzt. Eine Reihe von Bakterienzählungen oder eine Messung im Zellinneren würde die Deutung ergänzen.",
+        "criteria": [
+          "Ich benenne die gemessene Population.",
+          "Ich erkläre Verzögerung und Anstieg.",
+          "Ich schlage eine ergänzende Messung vor."
+        ]
+      }
+    }
+  },
+  {
+    "id": "immunabwehr",
+    "lb": 3,
+    "title": "Angeborene und spezifische Abwehr",
+    "period": "Einführungsklasse · Lernbereich 3",
+    "intro": "Du verfolgst, was bei einer kleinen Hautverletzung zuerst geschieht und wie die gezielte Antwort hinzukommt.",
+    "paragraphs": [
+      "Haut und Schleimhäute, ihre Mitbewohner und die Magensäure bilden Barrieren. Gelangen Erreger durch eine Wunde, reagiert die angeborene Abwehr schnell. Bei einer Entzündung weiten sich Gefäße und werden durchlässiger. Dadurch kann die Stelle rot, warm und geschwollen werden. Fresszellen wie Makrophagen nehmen eingedrungene Teilchen auf.",
+      "Die erworbene Abwehr reagiert gezielt auf Antigene, also erkennbare Strukturen eines Erregers. Antigenpräsentierende Zellen zeigen Erregerbestandteile. T-Helferzellen können dann passende B-Zellen unterstützen. Aus aktivierten B-Zellen entstehen unter anderem Plasmazellen, die spezifische Antikörper freisetzen. Antikörper binden passende Antigene und können Erreger markieren oder neutralisieren. T-Killerzellen können bestimmte infizierte Körperzellen beseitigen.",
+      "Beispiel: Nach einem Kratzer reagieren Barrieren und Fresszellen früh. Bei einem passenden Antigen baut sich parallel eine gezielte Antwort auf. Gedächtniszellen können beim späteren Kontakt eine schnellere Antwort ermöglichen. Die beiden Teile des Immunsystems arbeiten zusammen."
+    ],
+    "takeaway": "Die angeborene Abwehr reagiert früh nach allgemeinen Mustern. Die erworbene Abwehr erkennt bestimmte Antigene und kann ein Gedächtnis bilden.",
+    "keyTerms": [
+      "Barriere",
+      "Makrophage",
+      "Entzündung",
+      "Antigen",
+      "Antikörper",
+      "Gedächtniszelle"
+    ],
+    "sourceIds": ["isb"],
+    "quiz": {
+      "question": "Welche Zelle gibt große Mengen passender Antikörper ab?",
+      "answer": "Eine aus einer aktivierten B-Zelle hervorgegangene Plasmazelle.",
+      "wrong": [
+        "Ein Makrophage, der Fremdmaterial aufnimmt.",
+        "Eine T-Killerzelle, die infizierte Körperzellen erkennt."
+      ],
+      "explanation": "Plasmazellen setzen Antikörper frei. Makrophagen und T-Killerzellen übernehmen andere Aufgaben."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Abwehr rund um eine Wunde",
+      "instruction": "Ordne jede Beobachtung dem Teil der Abwehr zu, der sie direkt erklärt.",
+      "categories": [
+        "Äußere Barriere",
+        "Angeborene Reaktion im Gewebe",
+        "Gezielte erworbene Antwort",
+        "Gedächtnis"
+      ],
+      "entries": [
+        {
+          "text": "Die intakte Haut erschwert das Eindringen.",
+          "target": 0,
+          "feedback": "Eine intakte Barriere wirkt bereits vor einer Infektion."
+        },
+        {
+          "text": "Gefäße werden durchlässiger und Makrophagen nehmen Teilchen auf.",
+          "target": 1,
+          "feedback": "Das sind frühe Vorgänge einer Entzündung."
+        },
+        {
+          "text": "Plasmazellen setzen Antikörper gegen passende Antigene frei.",
+          "target": 2,
+          "feedback": "Der Antikörper bindet gezielt an eine passende Struktur."
+        },
+        {
+          "text": "Nach dem späteren Kontakt antwortet das Immunsystem schneller.",
+          "target": 3,
+          "feedback": "Gedächtniszellen tragen zur beschleunigten Zweitantwort bei."
+        }
+      ],
+      "conclusion": "Früh und spezifisch sind keine getrennten Systeme: Die Signalwege der Abwehr greifen ineinander."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Eine Wunde wird warm und rot. Erkläre diese Zeichen und warum sie noch kein Nachweis passender Antikörper sind.",
+        "hints": [
+          "Was verändert sich an den Blutgefäßen?",
+          "Welche Zellen setzen Antikörper frei?"
+        ],
+        "model": "Bei der Entzündung weiten sich Gefäße; mehr Blut erreicht die Stelle. Das erklärt Wärme und Rötung. Diese Zeichen gehören zur frühen angeborenen Reaktion. Ob sich eine gezielte Antikörperantwort aufgebaut hat, lässt sich daran nicht erkennen.",
+        "criteria": [
+          "Ich erkläre Wärme und Rötung durch Gefäßreaktion.",
+          "Ich ordne die Entzündung richtig zu.",
+          "Ich unterscheide sie von der Antikörperantwort."
+        ]
+      },
+      "2": {
+        "prompt": "Ein Virus hat einige Zellen bereits infiziert, andere Viruspartikel befinden sich noch außerhalb von Zellen. Erkläre, warum Antikörper und T-Killerzellen unterschiedliche Beiträge leisten.",
+        "hints": [
+          "Woran können Antikörper direkt binden?",
+          "Woran erkennen T-Killerzellen infizierte Zellen?"
+        ],
+        "model": "Antikörper können freie Viruspartikel binden und zum Beispiel verhindern, dass diese in weitere Zellen gelangen. In bereits infizierten Zellen sind Virusbestandteile für solche Antikörper nicht direkt zugänglich. T-Killerzellen können infizierte Zellen anhand präsentierter Virusbestandteile erkennen und beseitigen.",
+        "criteria": [
+          "Ich unterscheide freie Partikel und infizierte Zellen.",
+          "Ich beschreibe die Wirkung von Antikörpern.",
+          "Ich beschreibe die Rolle von T-Killerzellen."
+        ]
+      }
+    }
+  },
+  {
+    "id": "immunisierung",
+    "lb": 3,
+    "title": "Aktive und passive Immunisierung",
+    "period": "Einführungsklasse · Lernbereich 3",
+    "intro": "Du vergleichst den zeitlichen Verlauf von Schutz und erklärst, wann die Gemeinschaft profitieren kann.",
+    "paragraphs": [
+      "Bei der aktiven Immunisierung begegnet das Immunsystem einem Antigen oder bildet es nach einer Anweisung des Impfstoffs. Der Aufbau der eigenen Antwort benötigt Zeit; Gedächtniszellen können danach eine schnellere und stärkere Antwort auf das bekannte Antigen ermöglichen. Das ist das Grundprinzip einer vorbeugenden Schutzimpfung. Empfehlungen prüfen Fachgremien anhand von Daten zu Nutzen und Risiken.",
+      "Bei passiver Immunisierung erhält der Körper passende fertige Antikörper. Sie stehen rasch zur Verfügung, werden aber abgebaut. Die zugeführten Antikörper bauen kein eigenes spezifisches Gedächtnis auf. Die Maßnahme eignet sich daher für andere Ziele als langfristige Vorsorge.",
+      "Beispiel: Im Modell steigt die Antikörpermenge nach einer ersten aktiven Immunisierung erst verzögert, beim erneuten Kontakt schneller. Zugeführte Antikörper sind im Modell sofort messbar und nehmen ab. Wenn Impfungen auch die Weitergabe eines Erregers verringern, können ausreichend viele immune Menschen andere indirekt schützen. Schlechter Zugang, Unsicherheit und Impfmüdigkeit können die Beteiligung senken; gut erreichbare Angebote und verständliche Informationen setzen an unterschiedlichen Ursachen an."
+    ],
+    "takeaway": "Aktiv: eigene Antwort mit Gedächtnis. Passiv: fertige Antikörper mit rascher, vorübergehender Wirkung.",
+    "keyTerms": [
+      "Primärantwort",
+      "Sekundärantwort",
+      "aktive Immunisierung",
+      "passive Immunisierung",
+      "Gemeinschaftsschutz"
+    ],
+    "sourceIds": ["isb", "rki"],
+    "quiz": {
+      "question": "Was erklärt im Modell die schnellere Antwort auf dasselbe Antigen beim zweiten Kontakt?",
+      "answer": "Passende Gedächtniszellen aus der ersten Immunantwort.",
+      "wrong": [
+        "Ein zweiter Erreger vermehrt sich immer langsamer.",
+        "Die angeborenen Barrieren bilden passende Antikörper."
+      ],
+      "explanation": "Gedächtniszellen können beim Wiederkontakt rasch eine gezielte Antwort auslösen."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Vergleiche drei Kurven",
+      "instruction": "Ordne die Beobachtungen dem passenden Modellverlauf oder der gesellschaftlichen Folge zu.",
+      "categories": [
+        "Aktiv: erste Antwort",
+        "Aktiv: erneuter Kontakt",
+        "Passiv",
+        "Gemeinschaftsschutz"
+      ],
+      "entries": [
+        {
+          "text": "Verzögerter Anstieg nach der ersten Begegnung mit dem Antigen.",
+          "target": 0,
+          "feedback": "Die gezielte Antwort muss erst aufgebaut werden."
+        },
+        {
+          "text": "Steilerer Anstieg nach Wiedererkennung desselben Antigens.",
+          "target": 1,
+          "feedback": "Ein vorhandenes Gedächtnis beschleunigt die Antwort."
+        },
+        {
+          "text": "Passende Antikörper sind früh vorhanden und werden allmählich abgebaut.",
+          "target": 2,
+          "feedback": "Hier stammen die Antikörper von außen."
+        },
+        {
+          "text": "Weniger Übertragungsketten erreichen Menschen mit wenig eigenem Schutz.",
+          "target": 3,
+          "feedback": "Dieser indirekte Effekt setzt verminderte Weitergabe voraus."
+        }
+      ],
+      "conclusion": "Die Modellkurven erklären das Prinzip. Sie geben keine Fristen oder individuellen Empfehlungen vor."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Vergleiche aktive und passive Immunisierung im Hinblick auf Beginn, Dauer und Gedächtnis.",
+        "hints": [
+          "Wer stellt die Antikörper her?",
+          "Was passiert nach dem Abbau zugeführter Antikörper?"
+        ],
+        "model": "Bei aktiver Immunisierung entsteht der Schutz erst mit der eigenen Antwort; Gedächtniszellen können ihn länger wirksam machen. Passiv zugeführte Antikörper stehen rasch zur Verfügung, werden aber abgebaut und hinterlassen durch die Gabe allein kein spezifisches Gedächtnis.",
+        "criteria": [
+          "Ich vergleiche den Beginn.",
+          "Ich erkläre die unterschiedliche Dauer.",
+          "Ich ordne Gedächtniszellen richtig zu."
+        ]
+      },
+      "2": {
+        "prompt": "Zwei Gemeinden haben ähnlich hohe Impfquoten. Für Erreger A verringert der Impfstoff auch die Weitergabe deutlich; für Erreger B verhindert er vor allem schwere Verläufe. Wo erwartest du eher indirekten Schutz? Begründe und nenne eine Grenze.",
+        "hints": [
+          "Welche Wirkung unterbricht Übertragungsketten?",
+          "Welche Angaben fehlen für eine genaue Vorhersage?"
+        ],
+        "model": "Bei Erreger A erwarte ich eher indirekten Schutz, weil durch die Impfung weniger Menschen den Erreger weitergeben und Ketten kürzer werden können. Schutz vor schweren Verläufen allein bewirkt das nicht in gleichem Maß. Wie stark der Effekt ist, hängt auch von Ansteckungsfähigkeit, Kontakten und tatsächlich aufgebauter Immunität ab.",
+        "criteria": [
+          "Ich begründe den Unterschied über Weitergabe.",
+          "Ich unterscheide eigenen und indirekten Schutz.",
+          "Ich nenne mindestens eine weitere Einflussgröße."
+        ]
+      }
+    },
+    "model": "immunisierung"
+  }
+]
