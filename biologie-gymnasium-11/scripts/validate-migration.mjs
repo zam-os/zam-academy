@@ -5,17 +5,19 @@ import { createHash } from "node:crypto";
 import { mkdtempSync, readFileSync, rmSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
+import { fileURLToPath } from "node:url";
+import { assertMappingApproved } from "../../scripts/mapping-approval.mjs";
 
 const read = (file) => readFileSync(new URL(`../${file}`, import.meta.url));
 const zam = await import(process.env.ZAM_CORE ?? "zam-core");
 const tile = JSON.parse(read("cell.json"));
 const mapping = JSON.parse(read("replaces-de-by.json"));
 const newItems = tile.atoms.flatMap((atom) => atom.practice_items);
-assert.equal(mapping.approved, null);
-assert.equal(mapping.status, "proposal-only");
+assert.equal(mapping.approved, "2026-11-10");
+assert.equal(mapping.status, "approved");
+assertMappingApproved(fileURLToPath(new URL("..", import.meta.url)), tile, "biologie-gymnasium-11");
 assert.equal(mapping.sources.length, 2);
 assert.ok(!("retired_items" in tile));
-assert.ok(newItems.every((item) => !("replaces" in item)));
 
 const legacy = mapping.sources.map((source) => {
   const bytes = read(source.file);
@@ -44,7 +46,7 @@ assert.deepEqual(
   mapping.rows.filter((row) => row.category !== "C"),
   [transfer],
 );
-assert.equal(transfer.action, "propose-replace");
+assert.equal(transfer.action, "replace");
 assert.ok(
   mapping.rows
     .filter((row) => row.category === "C")
@@ -54,14 +56,22 @@ const oldId = transfer.de_by_id;
 const kept = oldIds.filter((id) => id !== oldId);
 const successor = newItems.find((item) => item.slug === transfer.academy_slug);
 assert.ok(successor && successor.id !== oldId);
+assert.deepEqual(
+  newItems.filter((item) => item.replaces).map((item) => [item.slug, item.replaces]),
+  [[transfer.academy_slug, [oldId]]],
+);
 
-// Rehearse the proposal in memory only; this tile never goes to the catalog.
-const proposal = structuredClone(tile);
-const [year, month, revision] = proposal.version.split(".").map(Number);
-proposal.version = `${year}.${month}.${revision + 1}`;
-proposal.atoms
+// Recreate the previous draft in memory to test upgrades and conflicting histories.
+const previous = structuredClone(tile);
+previous.version = "2026.11.2";
+delete previous.atoms
   .flatMap((atom) => atom.practice_items)
-  .find((item) => item.id === successor.id).replaces = [oldId];
+  .find((item) => item.id === successor.id).replaces;
+const moved = (rows) =>
+  rows.map((row) => ({
+    ...row,
+    token_id: row.token_id === oldId ? successor.id : row.token_id,
+  }));
 
 const userId = tile.atoms[0].id;
 const snapshot = async (db) => ({
@@ -125,10 +135,15 @@ try {
     const before = await seedLegacy(db);
     await zam.installKvtTile(db, tile);
     const installed = await snapshot(db);
-    assert.deepEqual(installed.cards, before.cards);
-    assert.deepEqual(installed.reviews, before.reviews);
-    assert.deepEqual(installed.replacements, before.replacements);
-    assert.deepEqual(await activeQueue(db, oldIds), sorted(oldIds));
+    assert.deepEqual(installed.cards, moved(before.cards));
+    assert.deepEqual(installed.reviews, moved(before.reviews));
+    assert.deepEqual(
+      installed.replacements.map(({ old_item_id, new_item_id }) => [old_item_id, new_item_id]),
+      [[oldId, successor.id]],
+    );
+    for (const id of oldIds)
+      assert.equal(Boolean((await zam.getTokenById(db, id)).deprecated_at), id === oldId);
+    assert.deepEqual(await activeQueue(db, [...oldIds, successor.id]), sorted([...kept, successor.id]));
     const enroll = async () => {
       for (const item of newItems) {
         await zam.ensureCard(db, item.id, userId);
@@ -137,16 +152,22 @@ try {
     };
     await enroll();
     const enrolled = await snapshot(db);
-    assert.equal(enrolled.cards.length, oldIds.length + newItems.length);
-    assert.deepEqual(enrolled.reviews, before.reviews);
+    assert.equal(enrolled.cards.length, kept.length + newItems.length);
+    assert.deepEqual(enrolled.reviews, installed.reviews);
     assert.deepEqual(
-      enrolled.cards.filter((card) => oldIds.includes(card.token_id)),
-      before.cards,
+      enrolled.cards.filter((card) => installed.cards.some((old) => old.id === card.id)),
+      installed.cards,
     );
+    for (const card of enrolled.cards.filter((card) => !installed.cards.some((old) => old.id === card.id))) {
+      assert.equal(card.state, "new");
+      assert.equal(card.stability, 0);
+      assert.equal(card.reps, 0);
+      assert.equal(card.last_review_at, null);
+    }
     assert.deepEqual(
       await activeQueue(db, [...oldIds, ...newItems.map((item) => item.id)]),
       sorted([
-        ...oldIds,
+        ...kept,
         ...newItems.filter((item) => item.tier === "tier1_fast").map((item) => item.id),
       ]),
     );
@@ -154,20 +175,15 @@ try {
     await enroll();
     assert.deepEqual(await snapshot(db), enrolled);
     console.log(
-      `ok: ${newItems.length} new cards enrolled; 8 old cards and 16 reviews preserved; reinstall is idempotent`,
+      `ok: one approved history moved; all 8 card histories and 16 reviews preserved; ${newItems.length - 1} fresh cards enrolled; 7 C cards stay active; reinstall and enrolment are idempotent`,
     );
   });
 
-  await withLibrary("proposal", async (db) => {
+  await withLibrary("upgrade", async (db) => {
     const before = await seedLegacy(db);
+    await zam.installKvtTile(db, previous);
     await zam.installKvtTile(db, tile);
-    await zam.installKvtTile(db, proposal);
     const after = await snapshot(db);
-    const moved = (rows) =>
-      rows.map((row) => ({
-        ...row,
-        token_id: row.token_id === oldId ? successor.id : row.token_id,
-      }));
     assert.deepEqual(after.cards, moved(before.cards));
     assert.deepEqual(after.reviews, moved(before.reviews));
     assert.deepEqual(
@@ -179,21 +195,21 @@ try {
       await activeQueue(db, [...oldIds, successor.id]),
       sorted([...kept, successor.id]),
     );
-    await zam.installKvtTile(db, proposal);
+    await zam.installKvtTile(db, tile);
     assert.deepEqual(await snapshot(db), after);
     console.log(
-      "ok: proposed upgrade moves one history unchanged, leaves the seven C cards active, and can be repeated",
+      "ok: upgrading the previous draft moves one history unchanged, leaves the seven C cards active, and can be repeated",
     );
   });
 
   await withLibrary("collision", async (db) => {
     await seedLegacy(db);
-    await zam.installKvtTile(db, tile);
+    await zam.installKvtTile(db, previous);
     await review(db, successor.id, 3);
     const before = await snapshot(db);
-    await assert.rejects(() => zam.installKvtTile(db, proposal), /holds a card on both/);
+    await assert.rejects(() => zam.installKvtTile(db, tile), /holds a card on both/);
     assert.deepEqual(await snapshot(db), before);
-    console.log("ok: proposed upgrade refuses an automatic merge and rolls back");
+    console.log("ok: approved upgrade refuses an automatic merge of conflicting histories and rolls back");
   });
 } finally {
   rmSync(directory, { recursive: true, force: true });

@@ -100,7 +100,7 @@ jobs:
         run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node geographie-realschule-9/scripts/validate-migration.mjs
       - name: Preserve Biologie histories and refuse automatic merges
         run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node biologie-realschule-10/scripts/validate-migration.mjs
-      - name: Preserve Grade 11 introductory biology histories and rehearse the proposed match
+      - name: Move the approved Grade 11 introductory biology history and refuse automatic merges
         run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node biologie-gymnasium-11/scripts/validate-migration.mjs
       - name: Preserve Physik 10 histories and refuse automatic merges
         run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node physik-realschule-10/scripts/validate-migration.mjs

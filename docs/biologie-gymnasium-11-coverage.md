@@ -21,9 +21,11 @@ Microscopy and physical investigations still require classroom equipment and sup
 
 ## Legacy ZAM cards
 
-The [mapping proposal](../biologie-gymnasium-11/replaces-de-by.json) records both byte-identical Grade 11 biology fixtures from [ZAM release source](https://github.com/zam-os/zam/tree/ea825d1c1147fcc5f37de5817c2d6a7c05e2f7ed/tests/fixtures/curriculum), with SHA-256 hashes. It classifies all eight items: one proposed A match, no B matches, and seven C items that stay active. The A match is the atomic retrieval of water as the source of the oxygen released by photosynthesis. The other prompts ask for detailed mechanisms or wider syntheses that the introductory course does not assess.
+The [approved mapping](../biologie-gymnasium-11/replaces-de-by.json) records both byte-identical Grade 11 biology fixtures from [ZAM release source](https://github.com/zam-os/zam/tree/ea825d1c1147fcc5f37de5817c2d6a7c05e2f7ed/tests/fixtures/curriculum), with SHA-256 hashes. It classifies all eight items: one A match, no B matches, and seven C items that stay active. The A match is the atomic retrieval of water as the source of the oxygen released by photosynthesis. The other prompts ask for detailed mechanisms or wider syntheses that the introductory course does not assess.
 
-No replacement or retirement is declared in the draft cell. The proposal has `approved: null`. The migration test installs the unchanged legacy cells and the new cell, then rehearses the single proposed replacement in a separate disposable library. The rehearsal verifies preservation of FSRS and reviews, a repeat install, and rollback if a learner holds both the old card and the successor.
+Thomas explicitly approved this mapping in the package's Codex chat on November 10, 2026; the mapping records his exact words and approval date. Cell version `2026.11.3` declares `replaces` only for `01K8GBH0000000000000000J01` on `bio11-photosynthese-vergleichen-sauerstoffquelle`. No cards are retired. The package remains a local draft.
+
+The migration test installs the unchanged legacy cells and the approved cell in disposable libraries. It verifies that the one history moves with every FSRS and review field preserved, the seven C cards remain active, enrolment adds only fresh cards, and repeated installs and enrolment change nothing. A learner holding cards on both ids makes installation refuse an automatic merge and roll back.
 
 ## Verification
 

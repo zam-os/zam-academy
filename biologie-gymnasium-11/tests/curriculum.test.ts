@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import cell from "../cell.json";
 import matrix from "../coverage.json";
 import publication from "../publication.json";
+import mapping from "../replaces-de-by.json";
 import { CHECKED, CURRICULUM_URL, LESSONS, SOURCES, STAGES } from "../src/curriculum";
 import { checkWorkshop, initialOrder, moveEntry } from "../src/workshop";
 import {
@@ -24,6 +25,7 @@ interface Item {
   fast_check?: { type: string; correct_index: number; options: string[] };
   choice_distractors?: { text: string; reason: string }[];
   sample_solution?: unknown;
+  replaces?: string[];
 }
 const items = cell.atoms.flatMap<Item>((atom) => atom.practice_items);
 
@@ -127,7 +129,7 @@ describe("scope and coverage", () => {
 });
 
 describe("cell and permanent lesson anchors", () => {
-  it("pins all atom and practice identities and does not enable publication or history changes", () => {
+  it("pins all atom and practice identities and keeps the package local-only", () => {
     expect(publication.status).toBe("local-only");
     expect(cell.tile_id).toBe(ZAM_CELL_ID);
     expect(cell.title).toBe(ZAM_CELL_TITLE);
@@ -153,6 +155,33 @@ describe("cell and permanent lesson anchors", () => {
     expect(SOURCES.every((source) => cell.sources.some((entry) => entry.uri === source.url))).toBe(
       true,
     );
+  });
+
+  it("declares exactly the history transfer approved by Thomas", () => {
+    expect(mapping.status).toBe("approved");
+    expect(mapping.approved).toBe("2026-11-10");
+    expect(mapping.source).toContain("Thomas explicitly approved");
+    expect(mapping.source).toContain("Codex chat");
+    expect(mapping.source).toContain("Freigabe erteilt");
+    expect(mapping.rows.filter((row) => row.category === "A")).toEqual([
+      expect.objectContaining({
+        de_by_id: "01K8GBH0000000000000000J01",
+        academy_slug: "bio11-photosynthese-vergleichen-sauerstoffquelle",
+        action: "replace",
+      }),
+    ]);
+    expect(mapping.rows.filter((row) => row.category === "B")).toEqual([]);
+    const kept = mapping.rows.filter((row) => row.category === "C");
+    expect(kept).toHaveLength(7);
+    expect(kept.every((row) => row.action === "keep-active" && row.academy_slug === null)).toBe(true);
+    expect(items.filter((item) => item.replaces).map(({ id, slug, replaces }) => ({ id, slug, replaces }))).toEqual([
+      {
+        id: "01M724F0PY90SYN1414R4V383V",
+        slug: "bio11-photosynthese-vergleichen-sauerstoffquelle",
+        replaces: ["01K8GBH0000000000000000J01"],
+      },
+    ]);
+    expect("retired_items" in cell).toBe(false);
   });
 
   it.each(LESSONS)(
@@ -189,7 +218,6 @@ describe("cell and permanent lesson anchors", () => {
           lessonId: lesson.id,
         });
         expect(item.language).toBe("de");
-        expect("replaces" in item).toBe(false);
         expect(Boolean(item.concept)).not.toBe(Boolean(item.concept_segments));
         if (item.concept_segments) {
           for (const segment of item.concept_segments) {
