@@ -23,7 +23,7 @@ import {
   saveProgress,
   writingKey,
 } from "../src/storage/progress";
-import { renderModel } from "../src/ui/models";
+import { renderDataset, renderModel } from "../src/ui/models";
 import { canAcceptSelfAssessment, esc } from "../src/workshop";
 
 const kinds = Object.keys(MODELS) as ModelKind[];
@@ -105,6 +105,7 @@ describe("interactive biology models", () => {
   it("pairs DNA correctly and halves chromosome count before sister chromatids separate", () => {
     expect(dnaComplement("CAGT")).toBe("GTCA");
     expect(dnaComplement("AU")).toBeNull();
+    expect(divisionReadout(0, false)).toMatchObject({ nuclei: 1, chromosomes: 4, chromatids: 4 });
     expect(divisionReadout(1, false)).toMatchObject({ nuclei: 1, chromosomes: 4, chromatids: 8 });
     expect(divisionReadout(2, false)).toMatchObject({
       nuclei: 2,
@@ -118,6 +119,42 @@ describe("interactive biology models", () => {
       chromatids: 2,
       left: "1m + 2v",
     });
+  });
+
+  it("produces two complementary combinations in one model meiosis and four across orientations", () => {
+    const combinations = [false, true].flatMap((orientation) => {
+      const { left, right, nuclei } = divisionReadout(3, orientation);
+      expect(nuclei).toBe(4);
+      expect(left).not.toBe(right);
+      expect(left + right).toContain("1m");
+      expect(left + right).toContain("1v");
+      expect(left + right).toContain("2m");
+      expect(left + right).toContain("2v");
+      return [left, right];
+    });
+    expect(new Set(combinations).size).toBe(4);
+    const separated = MODELS.teilung.goals.find(({ id }) => id === "schwestern")!;
+    expect([0, 1, 2, 3].map((phase) => separated.reached([phase, 0]))).toEqual([
+      false,
+      false,
+      false,
+      true,
+    ]);
+  });
+
+  it("renders bacterial growth as a numeric curve and an equivalent table", () => {
+    const dataset = findLesson("bakterien-und-viren")!.dataset!;
+    expect(dataset.ticks.map(Number)).toEqual([0, 1, 2, 3, 4, 5, 6]);
+    expect(dataset.values.slice(0, 3)).toEqual([100, 200, 400]);
+    expect(dataset.values.at(-1)).toBe(dataset.values.at(-2));
+    expect(dataset.values.every((value) => Number.isFinite(value) && value <= dataset.max)).toBe(
+      true,
+    );
+    const markup = renderDataset(dataset);
+    expect(markup).toContain('<svg class="bio-figure"');
+    expect(markup).toContain("<caption>" + dataset.caption + "</caption>");
+    expect(markup.match(/<td>/g)).toHaveLength(dataset.values.length * 2);
+    expect(markup).not.toMatch(/\b(undefined|NaN|Infinity)\b/);
   });
 
   it("keeps the movement comparison separate from the feeding comparison", () => {

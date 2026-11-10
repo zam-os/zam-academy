@@ -554,7 +554,8 @@ export const MODELS = {
       },
       {
         id: "schwestern",
-        label: "Finde den Schritt mit einem Chromatid je Chromosom.",
+        label:
+          "Finde die Phase, in der nach der Trennung der Schwesterchromatiden jedes Chromosom aus einem Chromatid besteht.",
         reached: ([phase]) => phase === 3,
       },
       {

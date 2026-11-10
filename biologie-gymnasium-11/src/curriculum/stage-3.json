@@ -90,11 +90,27 @@
     "intro": "Du vergleichst einen sich teilenden Erreger mit einem Virus, das eine Wirtszelle braucht.",
     "paragraphs": [
       "Bakterien sind Zellen. Bei günstigen Bedingungen können sie sich durch Zweiteilung vermehren: Aus 100 werden bei zwei Verdopplungen 400 Zellen. In einem Körper begrenzen Abwehr, Nährstoffmangel und Konkurrenz das Wachstum. Streptokokken können eine bakterielle Rachenentzündung auslösen; ähnliche Beschwerden können aber auch von Viren kommen.",
+      "In der Beispielkurve steigt die Zahl von 100 auf 200 und dann auf 400 Zellen. Später wird die Kurve flacher. Zwischen den letzten beiden Zeitschritten bleibt die Zahl bei 800. Ein Plateau kann entstehen, wenn sich in einem Zeitabschnitt etwa so viele Zellen teilen, wie absterben. Die Zahlen sind Übungsdaten und gelten nicht für einen bestimmten Erreger.",
       "Viren enthalten Erbmaterial (DNA oder RNA), umgeben von einer Proteinhülle, manche zusätzlich von einer Lipidhülle. Sie besitzen keine Ribosomen und vermehren sich nur in Wirtszellen. Ein lytischer Bakteriophage bindet an ein Bakterium, schleust sein Erbmaterial ein, lässt neue Virusbestandteile herstellen und zusammenbauen und setzt Nachkommen bei der Lyse der Zelle frei. Andere Viren können anders freigesetzt werden.",
       "Beispiel: Influenza wird durch Viren verursacht. Ein Antibiotikum, das den Aufbau einer Bakterienzellwand hemmt, hat bei Influenzaviren kein entsprechendes Ziel. Dass eine Entzündung ähnlich aussieht, verrät noch nicht, welche Art Erreger beteiligt ist."
     ],
+    "dataset": {
+      "caption": "Übungsdaten zum begrenzten Bakterienwachstum",
+      "xLabel": "Zeitschritt",
+      "yLabel": "Anzahl der Bakterienzellen",
+      "ticks": ["0", "1", "2", "3", "4", "5", "6"],
+      "values": [100, 200, 400, 650, 770, 800, 800],
+      "max": 1000
+    },
     "takeaway": "Bakterien teilen sich als Zellen; Viren nutzen Wirtszellen zur Vermehrung. Symptome allein unterscheiden beides nicht sicher.",
-    "keyTerms": ["Zweiteilung", "Wirtszelle", "Kapsid", "lytischer Zyklus", "Antibiotikum"],
+    "keyTerms": [
+      "Zweiteilung",
+      "Wachstumskurve",
+      "Wirtszelle",
+      "Kapsid",
+      "lytischer Zyklus",
+      "Antibiotikum"
+    ],
     "sourceIds": ["isb", "antibiotika"],
     "quiz": {
       "question": "Warum hemmt ein Antibiotikum gegen bakterielle Zellwände keine Influenzaviren?",

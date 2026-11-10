@@ -2,13 +2,13 @@
 
 The scope is the **Einführungsklasse** at the Bavarian nine-year Gymnasium when biology is offered. The [standard timetable](https://www.gesetze-bayern.de/Content/Document/BayGSO-ANL_1) has no regular Grade 11 biology course. The [introductory class timetable](https://www.km.bayern.de/lernen/schularten/gymnasium/eignung-und-uebertritt/einfuehrungsklassen) allows two periods of chemistry or biology. There are no parallel biology tracks in the [ISB guidance for this class](https://www.isb.bayern.de/schularten/gymnasium/oberstufe/einfuehrungsklasse/).
 
-The [biology guidance](https://www.isb.bayern.de/fileadmin/user_upload/Gymnasium/Einfuehrungsklasse/biologie.pdf), valid from 2023/24 and checked on November 10, 2026, is the course source. The [coverage matrix](../biologie-gymnasium-11/coverage.json) maps each of its 36 competency bullets by area and position in the official list. The descriptions are paraphrased; each row points to the activity that addresses it. The guidance treats methods as cross-cutting, so the package gives them an entry point and returns to them in the subject lessons. The 54 hours below are ISB's classroom allocations.
+The [biology guidance](https://www.isb.bayern.de/fileadmin/user_upload/Gymnasium/Einfuehrungsklasse/biologie.pdf), valid from 2023/24 and checked on November 10, 2026, is the course source. The [coverage matrix](../biologie-gymnasium-11/coverage.json) maps each of its 36 competency bullets by area and position in the official list. Each row includes the original German wording, its PDF pages, an English paraphrase and the activity that addresses it. Line wrapping and split words are joined. The matrix attributes the official text to the ISB and records the source PDF's SHA-256. The guidance treats methods as cross-cutting, so the package gives them an entry point and returns to them in the subject lessons. The 54 hours below are ISB's classroom allocations.
 
 | ISB area | Hours | Lessons | Evidence in the app |
 | --- | ---: | ---: | --- |
 | LB 1 · Scientific inquiry, evaluation and communication | Across the course | 3 | Plan controls, display measurement data, test alternative explanations and defend a decision. |
 | LB 2 · Cell biology | 5 | 3 | Compare schematic tissue fields, identify cell structures and classify cells. |
-| LB 3 · Humans as an ecosystem | 8 | 4 | Relate microbiome and infection to transmission, compare pathogens and interpret immune response curves. |
+| LB 3 · Humans as an ecosystem | 8 | 4 | Relate microbiome and infection to transmission, compare bacterial growth with virus reproduction and interpret immune response curves. |
 | LB 4 · Matter and energy in humans | 20 | 10 | Follow nutrients and gases, vary enzyme and diffusion conditions, and compare ATP use, respiration and photosynthesis. |
 | LB 5 · Genetics | 15 | 5 | Compare proteins, pair DNA, read a schematic karyogram and track copying and division. |
 | LB 6 · Behavior | 6 | 3 | Trace a stimulus and response, control a dummy experiment and weigh evidence for inherited and learned components. |

@@ -22,6 +22,7 @@ interface Item {
   source_link: string;
   tier: string;
   fast_check?: { type: string; correct_index: number; options: string[] };
+  choice_distractors?: { text: string; reason: string }[];
   sample_solution?: unknown;
 }
 const items = cell.atoms.flatMap<Item>((atom) => atom.practice_items);
@@ -51,6 +52,11 @@ describe("scope and coverage", () => {
         row.lessons.some((id) => LESSONS.find((lesson) => lesson.id === id)?.lb === row.lb),
       ).toBe(true);
       expect(row.evidence.trim().length).toBeGreaterThan(25);
+      expect(row.official_text.trim().length).toBeGreaterThan(25);
+      expect(row.source_pages.length).toBeGreaterThan(0);
+      expect(
+        row.source_pages.every((page) => Number.isInteger(page) && page >= 1 && page <= 11),
+      ).toBe(true);
     }
     expect(
       cell.atoms
@@ -195,6 +201,11 @@ describe("cell and permanent lesson anchors", () => {
           expect(item.fast_check?.correct_index).toBe(0);
           expect(item.fast_check?.options[0]).toBe(item.concept);
           expect(new Set(item.fast_check?.options).size).toBe(2);
+          expect(item.choice_distractors).toHaveLength(2);
+          expect(new Set(item.choice_distractors?.map(({ text }) => text)).size).toBe(2);
+          expect(item.choice_distractors?.every(({ reason }) => reason.trim().length > 20)).toBe(
+            true,
+          );
         } else {
           expect(item.sample_solution).toBeTruthy();
         }

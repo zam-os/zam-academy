@@ -1,5 +1,7 @@
-export type Level = 1 | 2;
+import type { Chart } from "./readout";
 import type { ModelKind } from "../models";
+
+export type Level = 1 | 2;
 export interface Source {
   id: string;
   label: string;
@@ -35,6 +37,7 @@ export interface Lesson {
   period: string;
   intro: string;
   paragraphs: string[];
+  dataset?: Chart & { caption: string };
   takeaway: string;
   keyTerms: string[];
   sourceIds: string[];

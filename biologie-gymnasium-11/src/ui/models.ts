@@ -31,6 +31,11 @@ function table(readout: NonNullable<Readout["table"]>): string {
   </table></div>`;
 }
 
+export function renderDataset({ caption, ...chart }: NonNullable<Lesson["dataset"]>): string {
+  const rows = chart.ticks.map((tick, i) => [Number(tick), chart.values[i]]);
+  return lineChart(chart) + table({ caption, columns: [chart.xLabel, chart.yLabel], rows });
+}
+
 function microscope(figure: Extract<Diagram, { kind: "microscope" }>): string {
   const { sample, objective, centered } = figure;
   const size = objective === 4 ? 31 : objective === 10 ? 52 : 125;

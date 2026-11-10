@@ -1,7 +1,7 @@
 {
   "$schema": "https://zam.app/schemas/v1/kvt-tile.json",
   "tile_id": "zam-academy:biologie-gymnasium-11",
-  "version": "2026.11.1",
+  "version": "2026.11.2",
   "title": "Biologie 11 Gymnasium · Einführungsklasse (ZAM Academy)",
   "description": "Wiederholungskarten zu den sechs Lernbereichen der bayerischen Einführungsklasse: Erkenntnisgewinnung, Zellen, Ökosystem Mensch, Stoffwechsel, Genetik und Verhaltensbiologie.",
   "publisher": "ZAM Academy",
@@ -93,7 +93,17 @@
               "Sie beschreibt nur, was im Labor schon passiert ist."
             ],
             "correct_index": 0
-          }
+          },
+          "choice_distractors": [
+            {
+              "text": "Sie fasst eine Beobachtung zusammen, ohne ein Ergebnis vorhersagen zu müssen.",
+              "reason": "Verwechselt die Beobachtung mit einer überprüfbaren Vorhersage."
+            },
+            {
+              "text": "Sie erklärt ein Phänomen so allgemein, dass kein möglicher Befund sie infrage stellen kann.",
+              "reason": "Hält fehlende Widerlegbarkeit für ein Merkmal einer wissenschaftlichen Hypothese."
+            }
+          ]
         },
         {
           "id": "01M724F0PXTYHR7C10BW07C9A7",
@@ -111,7 +121,17 @@
               "Damit keine Wiederholung des Versuchs mehr nötig ist."
             ],
             "correct_index": 0
-          }
+          },
+          "choice_distractors": [
+            {
+              "text": "Damit im warmen Ansatz zusätzlich mehr Zellen zur Gasbildung beitragen.",
+              "reason": "Verändert mit der Hefemenge einen zweiten Einflussfaktor."
+            },
+            {
+              "text": "Damit Temperatur und Hefemenge gemeinsam als einzige Ursache untersucht werden können.",
+              "reason": "Verwechselt das gemeinsame Variieren zweier Faktoren mit der Prüfung eines einzelnen Faktors."
+            }
+          ]
         },
         {
           "id": "01M724F0PXRP17GFE9MZB5A6CJ",
@@ -177,7 +197,17 @@
               "Die pro Minute erzeugte Gasmenge."
             ],
             "correct_index": 0
-          }
+          },
+          "choice_distractors": [
+            {
+              "text": "Die gemessene Gasbildungsrate.",
+              "reason": "Verwechselt die Messgröße mit dem absichtlich veränderten Faktor."
+            },
+            {
+              "text": "Der berechnete Mittelwert der Gasbildung.",
+              "reason": "Ordnet eine Auswertung der abhängigen Größe der falschen Achse zu."
+            }
+          ]
         },
         {
           "id": "01M724F0PXAYWC8WRM4XPZ1A8Q",
@@ -195,7 +225,17 @@
               "Welche mittlere Rate in der Reihe am höchsten ist."
             ],
             "correct_index": 0
-          }
+          },
+          "choice_distractors": [
+            {
+              "text": "Welche durchschnittliche Rate bei jeder Temperatur gemessen wurde.",
+              "reason": "Übersieht, dass die Mittelwerte diese Information bereits zeigen."
+            },
+            {
+              "text": "Welche Temperatur im Versuch absichtlich eingestellt wurde.",
+              "reason": "Verwechselt die Versuchsbedingungen mit der Streuung der Wiederholungen."
+            }
+          ]
         },
         {
           "id": "01M724F0PX4XXN4P7763RX96BW",
@@ -261,7 +301,17 @@
               "Ob dieselbe Empfehlung auf vielen Webseiten steht."
             ],
             "correct_index": 0
-          }
+          },
+          "choice_distractors": [
+            {
+              "text": "Ob die Empfehlung in möglichst vielen anderen Beiträgen wiederholt wird.",
+              "reason": "Verwechselt häufige Wiederholung mit Eignung für eine andere Zielgruppe."
+            },
+            {
+              "text": "Ob eine bekannte Marke dieselbe Empfehlung für ihre Produkte verwendet.",
+              "reason": "Verwechselt Werbung und Bekanntheit mit einer passenden wissenschaftlichen Grundlage."
+            }
+          ]
         },
         {
           "id": "01M724F0PX943076X9GNKHK693",
@@ -270,16 +320,26 @@
           "source_link": "https://academy.zam-os.org/biologie-gymnasium-11/#lesson=quellen-und-urteile",
           "tier": "tier1_fast",
           "bloom_level": 1,
-          "question": "Was ist ein Bewertungskriterium für einen Wasserspender in der Schule?",
-          "concept": "Der freie Zugang für alle Klassen.",
+          "question": "Was ist ein Bewertungskriterium, wenn du biologische Handlungsoptionen vergleichst?",
+          "concept": "Ein Maßstab wie Gesundheit, Kosten oder gerechter Zugang.",
           "fast_check": {
             "type": "binary_choice",
             "options": [
-              "Der freie Zugang für alle Klassen.",
-              "Die Beschaffung eines neuen Geräts als Handlung."
+              "Ein Maßstab wie Gesundheit, Kosten oder gerechter Zugang.",
+              "Eine bereits ausgewählte Maßnahme wie der Kauf eines Geräts."
             ],
             "correct_index": 0
-          }
+          },
+          "choice_distractors": [
+            {
+              "text": "Eine bereits ausgewählte Maßnahme wie der Kauf eines Geräts.",
+              "reason": "Verwechselt eine Handlungsoption mit dem Maßstab zu ihrer Bewertung."
+            },
+            {
+              "text": "Ein einzelner Messwert, der alle gesellschaftlichen Ziele festlegt.",
+              "reason": "Verwechselt beschreibende Daten mit der Gewichtung von Werten und Zielen."
+            }
+          ]
         },
         {
           "id": "01M724F0PXEMC1APB6QHWTACJR",
@@ -340,7 +400,17 @@
               "Mit dem Objektiv der größten Vergrößerung."
             ],
             "correct_index": 0
-          }
+          },
+          "choice_distractors": [
+            {
+              "text": "Mit dem Objektiv der größten Vergrößerung.",
+              "reason": "Verkleinert das Bildfeld schon vor der Orientierung im Präparat."
+            },
+            {
+              "text": "Mit einem möglichst stark vergrößernden Okular zuerst.",
+              "reason": "Verwechselt den Okularwechsel mit der Wahl eines übersichtlichen Objektivs."
+            }
+          ]
         },
         {
           "id": "01M724F0PXW4QMAQ26CKXWEV86",
@@ -358,7 +428,17 @@
               "Du addierst die Vergrößerungen von Okular und Objektiv."
             ],
             "correct_index": 0
-          }
+          },
+          "choice_distractors": [
+            {
+              "text": "Du addierst die Vergrößerungen von Okular und Objektiv.",
+              "reason": "Verwechselt die Kombination zweier Vergrößerungsfaktoren mit einer Summe."
+            },
+            {
+              "text": "Du dividierst die Objektivvergrößerung durch die Okularvergrößerung.",
+              "reason": "Verwechselt das Zusammenwirken der Faktoren mit einem Verhältnis."
+            }
+          ]
         },
         {
           "id": "01M724F0PXA7Y1GND8QSP26CW8",
@@ -424,7 +504,17 @@
               "Der Sauerstoff in den Mitochondrien."
             ],
             "correct_index": 0
-          }
+          },
+          "choice_distractors": [
+            {
+              "text": "Die Zellwand allein, die unabhängig vom Wassergehalt dieselbe Spannung erzeugt.",
+              "reason": "Verwechselt die Festigkeit der Wand mit dem vom Wassergehalt abhängigen Innendruck."
+            },
+            {
+              "text": "Die starre Form der Chloroplasten, die das Zellinnere gegen die Zellwand abstützt.",
+              "reason": "Verwechselt Photosyntheseorganellen mit der wassergefüllten Zentralvakuole."
+            }
+          ]
         },
         {
           "id": "01M724F0PX3ZSXR9714QY1BAM2",
@@ -442,7 +532,17 @@
               "Das Mitochondrium."
             ],
             "correct_index": 0
-          }
+          },
+          "choice_distractors": [
+            {
+              "text": "Das Mitochondrium.",
+              "reason": "Verwechselt Zellatmung und Photosynthese."
+            },
+            {
+              "text": "Die Zentralvakuole.",
+              "reason": "Verwechselt Wasserspeicherung und Stütze mit lichtgetriebenem Stoffaufbau."
+            }
+          ]
         },
         {
           "id": "01M724F0PXSGRXHXEMQD9VY7YC",
@@ -508,7 +608,17 @@
               "Die Zelle besitzt überhaupt keine Erbinformation."
             ],
             "correct_index": 0
-          }
+          },
+          "choice_distractors": [
+            {
+              "text": "Die Erbinformation ist nur innerhalb eines membranumhüllten Zellkerns zugänglich.",
+              "reason": "Überträgt den eukaryotischen Zellkern auf ein Bakterium."
+            },
+            {
+              "text": "Die Erbinformation liegt ausschließlich in den Mitochondrien der Zelle.",
+              "reason": "Schreibt Prokaryoten Mitochondrien zu und verlegt ihr Chromosom dorthin."
+            }
+          ]
         },
         {
           "id": "01M724F0PXMENEHCN6Y4BQ4Q6P",
@@ -526,7 +636,17 @@
               "Eine Wand aus Cellulose."
             ],
             "correct_index": 0
-          }
+          },
+          "choice_distractors": [
+            {
+              "text": "Eine Wand mit Cellulose.",
+              "reason": "Verwechselt den typischen pflanzlichen Wandbaustoff mit dem von Pilzen."
+            },
+            {
+              "text": "Eine Wand mit Murein.",
+              "reason": "Verwechselt die Zellwand vieler Bakterien mit der von Pilzen."
+            }
+          ]
         },
         {
           "id": "01M724F0PXAVZRWBQNJG1331A7",
@@ -592,7 +712,17 @@
               "Sie bilden als Leukozyten spezifische Antikörper."
             ],
             "correct_index": 0
-          }
+          },
+          "choice_distractors": [
+            {
+              "text": "Sie setzen als körpereigene Abwehrzellen passende Antikörper frei.",
+              "reason": "Verwechselt Bakterien mit antikörperproduzierenden Körperzellen."
+            },
+            {
+              "text": "Sie machen die gesamte Körperoberfläche dauerhaft frei von Mikroorganismen.",
+              "reason": "Verwechselt Konkurrenz im Mikrobiom mit Sterilität."
+            }
+          ]
         },
         {
           "id": "01M724F0PXNQSB3HDM0J3WRMGC",
@@ -610,7 +740,17 @@
               "Alle Erreger werden unabhängig vom Weg gleich übertragen."
             ],
             "correct_index": 0
-          }
+          },
+          "choice_distractors": [
+            {
+              "text": "Sie muss bei allen Krankheitserregern denselben Körperbereich reinigen.",
+              "reason": "Ignoriert die unterschiedlichen Übertragungswege."
+            },
+            {
+              "text": "Sie muss die Beschwerden nach der Infektion mit einem passenden Wirkstoff behandeln.",
+              "reason": "Verwechselt Unterbrechen der Übertragung mit Behandlung einer bestehenden Erkrankung."
+            }
+          ]
         },
         {
           "id": "01M724F0PX6663GM1M1BSJWJ0T",
@@ -680,7 +820,17 @@
               "Es vermehrt sich selbst durch Zweiteilung und nutzt den Wirt nur als Schutz."
             ],
             "correct_index": 0
-          }
+          },
+          "choice_distractors": [
+            {
+              "text": "Es teilt seine vollständige Zelle und nutzt den Wirt nur für zusätzlichen Platz.",
+              "reason": "Verwechselt die Virusvermehrung mit der Zweiteilung einer Zelle."
+            },
+            {
+              "text": "Es nutzt eigene Ribosomen und braucht den Wirt ausschließlich als Energiequelle.",
+              "reason": "Schreibt Viren eine eigene Proteinsynthese zu."
+            }
+          ]
         },
         {
           "id": "01M724F0PXS819GS9W1EM18S3C",
@@ -698,7 +848,17 @@
               "Die Wirtszelle teilt sich und vererbt nur ihre eigene DNA."
             ],
             "correct_index": 0
-          }
+          },
+          "choice_distractors": [
+            {
+              "text": "Die Wirtszelle teilt sich in zwei Zellen mit gleicher Bakterien-DNA.",
+              "reason": "Verwechselt Lyse mit bakterieller Zweiteilung."
+            },
+            {
+              "text": "Das Viruserbmaterial wird kopiert, während die Wirtszelle erhalten bleibt.",
+              "reason": "Verwechselt die Herstellung von Virusbestandteilen mit deren Freisetzung bei der Lyse."
+            }
+          ]
         },
         {
           "id": "01M724F0PXNTMQ751H2HC7Q7ZS",
@@ -764,7 +924,17 @@
               "Plasmazellen als Produzenten spezifischer Antikörper."
             ],
             "correct_index": 0
-          }
+          },
+          "choice_distractors": [
+            {
+              "text": "Plasmazellen, die Antikörper freisetzen.",
+              "reason": "Verwechselt die Produktion von Antikörpern mit Phagozytose."
+            },
+            {
+              "text": "Rote Blutkörperchen mit Hämoglobin.",
+              "reason": "Verwechselt Sauerstofftransport mit der Aufnahme von Fremdteilchen."
+            }
+          ]
         },
         {
           "id": "01M724F0PXSP90R65GV7MCJXQD",
@@ -782,7 +952,17 @@
               "An jede Körperzelle unabhängig von ihrer Oberfläche."
             ],
             "correct_index": 0
-          }
+          },
+          "choice_distractors": [
+            {
+              "text": "An jede Zelle mit irgendeiner Oberfläche.",
+              "reason": "Verwechselt spezifische Bindung mit einer unspezifischen Zellreaktion."
+            },
+            {
+              "text": "An jedes Protein, weil Proteine denselben räumlichen Bau haben.",
+              "reason": "Übersieht die unterschiedlichen Oberflächenstrukturen von Proteinen."
+            }
+          ]
         },
         {
           "id": "01M724F0PXESDSGG86JRC939J7",
@@ -848,7 +1028,17 @@
               "Die von außen zugeführten Antikörper müssen erst abgebaut werden."
             ],
             "correct_index": 0
-          }
+          },
+          "choice_distractors": [
+            {
+              "text": "Die zugeführten fertigen Antikörper müssen erst ein eigenes Gedächtnis bilden.",
+              "reason": "Verwechselt passive Antikörpergabe mit dem Aufbau einer aktiven Immunantwort."
+            },
+            {
+              "text": "Der Schutz entsteht erst, nachdem der unveränderte Krankheitserreger eine Erkrankung ausgelöst hat.",
+              "reason": "Verwechselt vorbeugende Immunisierung mit der Voraussetzung, die Krankheit durchzumachen."
+            }
+          ]
         },
         {
           "id": "01M724F0PX90TNV7TV5CX569MZ",
@@ -866,7 +1056,17 @@
               "Nur ein Antigen für den Aufbau eines eigenen Gedächtnisses."
             ],
             "correct_index": 0
-          }
+          },
+          "choice_distractors": [
+            {
+              "text": "Antigene für eine spätere eigene Antwort.",
+              "reason": "Verwechselt passive Gabe mit dem Prinzip aktiver Immunisierung."
+            },
+            {
+              "text": "Neue Erreger für eine anhaltende Vermehrung.",
+              "reason": "Verwechselt Immunisierung mit dem Aufbau einer Infektion."
+            }
+          ]
         },
         {
           "id": "01M724F0PXZ6MB7558VN6Z2H2H",
@@ -932,7 +1132,17 @@
               "Er tauscht Energie aus, aber keine Stoffe."
             ],
             "correct_index": 0
-          }
+          },
+          "choice_distractors": [
+            {
+              "text": "Er tauscht Energie aus, seine Stoffmenge bleibt nach außen abgeschlossen.",
+              "reason": "Verwechselt ein offenes System mit einem für Stoffe geschlossenen System."
+            },
+            {
+              "text": "Er tauscht Stoffe aus, ohne Energie mit der Umgebung zu übertragen.",
+              "reason": "Übersieht Wärme und den Energieinhalt aufgenommener Stoffe."
+            }
+          ]
         },
         {
           "id": "01M724F0PXDV3FFSWY2GRETPDD",
@@ -950,7 +1160,17 @@
               "Unmittelbar aus unzerlegten Nahrungsproteinen."
             ],
             "correct_index": 0
-          }
+          },
+          "choice_distractors": [
+            {
+              "text": "Aus ganzen Nahrungsproteinen.",
+              "reason": "Übersieht die Zerlegung in kleinere Bausteine vor dem Wiederaufbau."
+            },
+            {
+              "text": "Aus aufgenommenen Fettsäuren als Proteinbausteinen.",
+              "reason": "Verwechselt die Bausteine von Fetten und Proteinen."
+            }
+          ]
         },
         {
           "id": "01M724F0PXC9XSR2PJVGHZF62X",
@@ -1016,7 +1236,17 @@
               "Aus Glycerin und Fettsäuren."
             ],
             "correct_index": 0
-          }
+          },
+          "choice_distractors": [
+            {
+              "text": "Aus Glycerin und Fettsäuren.",
+              "reason": "Verwechselt ein Polysaccharid mit einem typischen Fett."
+            },
+            {
+              "text": "Aus vielen Aminosäurebausteinen.",
+              "reason": "Verwechselt Kohlenhydrate und Proteine."
+            }
+          ]
         },
         {
           "id": "01M724F0PX7X6ETSJ0PY3XTP7E",
@@ -1034,7 +1264,17 @@
               "Der Körper speichert ihn immer unbegrenzt."
             ],
             "correct_index": 0
-          }
+          },
+          "choice_distractors": [
+            {
+              "text": "Der Körper benötigt ihn ausschließlich als besonders energiereichen Vorratsstoff.",
+              "reason": "Verwechselt die notwendige Zufuhr mit der Funktion als Energiespeicher."
+            },
+            {
+              "text": "Der Körper benötigt ihn nur bei einem besonders hohen Energieverbrauch.",
+              "reason": "Verwechselt notwendige Zufuhr mit einem erhöhten Energiebedarf."
+            }
+          ]
         },
         {
           "id": "01M724F0PXPRWTCF8Y9WVAJCV3",
@@ -1100,7 +1340,17 @@
               "Die Energie der fertigen Produkte."
             ],
             "correct_index": 0
-          }
+          },
+          "choice_distractors": [
+            {
+              "text": "Die Energie der Produkte.",
+              "reason": "Verwechselt die Aktivierungsbarriere mit dem Endniveau der Reaktion."
+            },
+            {
+              "text": "Die Menge der Substrate.",
+              "reason": "Verwechselt eine Energiegröße mit einer Stoffmenge."
+            }
+          ]
         },
         {
           "id": "01M724F0PX7JG8W8S6TQD40QFW",
@@ -1118,7 +1368,17 @@
               "Die hohe Temperatur in allen Verdauungsorganen."
             ],
             "correct_index": 0
-          }
+          },
+          "choice_distractors": [
+            {
+              "text": "Die gleich hohe Temperatur in allen Räumen des Verdauungstrakts.",
+              "reason": "Verwechselt passende Substratbindung mit einer äußeren Versuchsbedingung."
+            },
+            {
+              "text": "Die Substratmenge allein, unabhängig von den Eigenschaften des aktiven Zentrums.",
+              "reason": "Verwechselt das Substratangebot mit der strukturellen Passung eines Substrats."
+            }
+          ]
         },
         {
           "id": "01M724F0PXTH030PPMHT1518Z3",
@@ -1188,7 +1448,17 @@
               "Die Enzymmenge wächst bei Hitze unabhängig vom Versuch."
             ],
             "correct_index": 0
-          }
+          },
+          "choice_distractors": [
+            {
+              "text": "Die Enzymmoleküle werden bei jeder Reaktion als Brennstoff verbraucht.",
+              "reason": "Verwechselt den Biokatalysator mit einem verbrauchten Reaktionsstoff."
+            },
+            {
+              "text": "Die Aktivierungsenergie steigt ausschließlich wegen der schnelleren Teilchenbewegung.",
+              "reason": "Verwechselt Temperaturabhängigkeit der Teilchenbewegung mit der Änderung des Reaktionswegs."
+            }
+          ]
         },
         {
           "id": "01M724F0PY9X0AK5YVHSH7YPZR",
@@ -1206,7 +1476,17 @@
               "Es treffen bei hoher Substratmenge keine Teilchen mehr aufeinander."
             ],
             "correct_index": 0
-          }
+          },
+          "choice_distractors": [
+            {
+              "text": "Die Substratteilchen bewegen sich bei hoher Konzentration grundsätzlich nicht mehr.",
+              "reason": "Verwechselt begrenzte Enzymkapazität mit einem Stillstand der Teilchenbewegung."
+            },
+            {
+              "text": "Die eingesetzte Enzymmenge vergrößert sich bei jeder Erhöhung der Substratmenge.",
+              "reason": "Übersieht, dass die Enzymmenge im Vergleich konstant bleibt."
+            }
+          ]
         },
         {
           "id": "01M724F0PYBP7PW3R7C40C0QN7",
@@ -1272,7 +1552,17 @@
               "Durch Diffusion aus dem Magen."
             ],
             "correct_index": 0
-          }
+          },
+          "choice_distractors": [
+            {
+              "text": "Durch Diffusion aus dem Magen.",
+              "reason": "Verwechselt Teilchenbewegung mit dem Transport eines Nahrungsbissens."
+            },
+            {
+              "text": "Durch den Blutstrom der Darmzotten.",
+              "reason": "Verwechselt die Bewegung des Breis mit späterem Nährstofftransport."
+            }
+          ]
         },
         {
           "id": "01M724F0PYY8BMWCMYV3QRWMM3",
@@ -1290,7 +1580,17 @@
               "Sie spaltet Fett als Verdauungsenzym."
             ],
             "correct_index": 0
-          }
+          },
+          "choice_distractors": [
+            {
+              "text": "Sie spaltet Fett als Verdauungsenzym.",
+              "reason": "Verwechselt Emulgieren mit einer enzymatischen Spaltung."
+            },
+            {
+              "text": "Sie baut Fett zu Aminosäuren um.",
+              "reason": "Verwechselt Fettabbauprodukte mit Proteinbausteinen."
+            }
+          ]
         },
         {
           "id": "01M724F0PYJZ31FS6S0FKGJ9WQ",
@@ -1360,7 +1660,17 @@
               "Nur die Flüssigkeit im Darminneren."
             ],
             "correct_index": 0
-          }
+          },
+          "choice_distractors": [
+            {
+              "text": "Große Fetttröpfchen im Darminhalt.",
+              "reason": "Verwechselt die Oberfläche eines Nahrungsbestandteils mit der Darmwand."
+            },
+            {
+              "text": "Dicke Muskelschichten der Darmwand.",
+              "reason": "Verwechselt den Transport des Darminhalts mit seiner Aufnahmefläche."
+            }
+          ]
         },
         {
           "id": "01M724F0PY8MF0GGSC4EC613QD",
@@ -1378,7 +1688,17 @@
               "Passiver Transport befördert Stoffe nur gegen ihr Gefälle."
             ],
             "correct_index": 0
-          }
+          },
+          "choice_distractors": [
+            {
+              "text": "Passiver Transport bewegt Stoffe mit Energieaufwand gegen ihr Gefälle.",
+              "reason": "Vertauscht die Bedingungen von aktivem und passivem Transport."
+            },
+            {
+              "text": "Passiver Transport bezeichnet die Bewegung des Nahrungsbreis durch Muskelwellen.",
+              "reason": "Verwechselt Membrantransport mit Peristaltik."
+            }
+          ]
         },
         {
           "id": "01M724F0PYGMH6Y8VTKDVGNW7Y",
@@ -1444,7 +1764,17 @@
               "Aus dem Blut in die Luft der Lungenbläschen."
             ],
             "correct_index": 0
-          }
+          },
+          "choice_distractors": [
+            {
+              "text": "Aus dem Blut in die Luft der Lungenbläschen.",
+              "reason": "Vertauscht die Richtung des Sauerstoffgefälles."
+            },
+            {
+              "text": "Aus den Muskelzellen zurück in die Lungenbläschen.",
+              "reason": "Verwechselt Sauerstoffaufnahme und den Rücktransport eines Stoffwechselprodukts."
+            }
+          ]
         },
         {
           "id": "01M724F0PYE45X599CPSBHTERP",
@@ -1462,7 +1792,17 @@
               "Sie erhöht den Sauerstoffbedarf der Zelle."
             ],
             "correct_index": 0
-          }
+          },
+          "choice_distractors": [
+            {
+              "text": "Sie steigert den Sauerstoffbedarf.",
+              "reason": "Verwechselt günstige Austauschbedingungen mit einem höheren Bedarf."
+            },
+            {
+              "text": "Sie vergrößert den Weg eines Sauerstoffteilchens durch das Gewebe.",
+              "reason": "Leitet aus einer dünneren Schicht eine längere Strecke ab."
+            }
+          ]
         },
         {
           "id": "01M724F0PYH5GD180VYHRRZRPG",
@@ -1532,7 +1872,17 @@
               "Sie führt Blut zum Herzen hin."
             ],
             "correct_index": 0
-          }
+          },
+          "choice_distractors": [
+            {
+              "text": "Sie führt Blut zum Herzen hin.",
+              "reason": "Vertauscht die Definition von Arterie und Vene."
+            },
+            {
+              "text": "Sie führt immer sauerstoffreiches Blut.",
+              "reason": "Verwechselt Flussrichtung mit dem Sauerstoffgehalt."
+            }
+          ]
         },
         {
           "id": "01M724F0PYBCMZNP6GQNE7E0Z6",
@@ -1550,7 +1900,17 @@
               "Kollagen."
             ],
             "correct_index": 0
-          }
+          },
+          "choice_distractors": [
+            {
+              "text": "Kollagen.",
+              "reason": "Verwechselt ein Strukturprotein mit einem Sauerstofftransportprotein."
+            },
+            {
+              "text": "Myoglobin.",
+              "reason": "Verwechselt den Sauerstoffspeicher in Muskelzellen mit dem Haupttransporter im Blut."
+            }
+          ]
         },
         {
           "id": "01M724F0PYM8XMDDN870PQ9M3E",
@@ -1620,7 +1980,17 @@
               "Sauerstoff."
             ],
             "correct_index": 0
-          }
+          },
+          "choice_distractors": [
+            {
+              "text": "Sauerstoff.",
+              "reason": "Verwechselt den reduzierten Reaktionspartner mit dem oxidierten."
+            },
+            {
+              "text": "Wasser.",
+              "reason": "Verwechselt ein Reaktionsprodukt mit dem oxidierten Ausgangsstoff."
+            }
+          ]
         },
         {
           "id": "01M724F0PY8MXQMCPA0PGCRBW2",
@@ -1638,7 +2008,17 @@
               "Glucose und Sauerstoff."
             ],
             "correct_index": 0
-          }
+          },
+          "choice_distractors": [
+            {
+              "text": "Glucose und Sauerstoff.",
+              "reason": "Verwechselt die Umsetzung des ATP mit einer Gesamtbilanz der Photosynthese."
+            },
+            {
+              "text": "Glucose und Phosphat.",
+              "reason": "Verwechselt den Umbau eines Nukleotids mit der Freisetzung des Nährstoffs Glucose."
+            }
+          ]
         },
         {
           "id": "01M724F0PYMSYAE0SH9WD6ZADB",
@@ -1708,7 +2088,17 @@
               "Aus Kohlenstoffdioxid."
             ],
             "correct_index": 0
-          }
+          },
+          "choice_distractors": [
+            {
+              "text": "Aus Kohlenstoffdioxid.",
+              "reason": "Verwechselt die Kohlenstoffquelle mit der Quelle des freigesetzten Sauerstoffs."
+            },
+            {
+              "text": "Aus Glucose.",
+              "reason": "Verwechselt ein Produkt des Stoffaufbaus mit dem Ausgangsstoff der Sauerstofffreisetzung."
+            }
+          ]
         },
         {
           "id": "01M724F0PYNB73R8PT73XJ0ZY7",
@@ -1726,7 +2116,17 @@
               "Photosynthese mit Lichtenergie."
             ],
             "correct_index": 0
-          }
+          },
+          "choice_distractors": [
+            {
+              "text": "Photosynthese.",
+              "reason": "Verwechselt die lichtabhängige Energiebereitstellung mit Zellatmung."
+            },
+            {
+              "text": "Lichtreaktion.",
+              "reason": "Übersieht, dass photochemische Reaktionen Licht benötigen."
+            }
+          ]
         },
         {
           "id": "01M724F0PYEXCZD2CVYC6T98KB",
@@ -1838,7 +2238,17 @@
               "Nur die Menge an Kohlenstoffdioxid im Gewebe."
             ],
             "correct_index": 0
-          }
+          },
+          "choice_distractors": [
+            {
+              "text": "Ausschließlich die Größe der Zelle, in der die Kette gebildet wird.",
+              "reason": "Verwechselt den Ort der Proteinbildung mit den Eigenschaften der Kette."
+            },
+            {
+              "text": "Die Reihenfolge der Zuckerbausteine in der Nahrung des Organismus.",
+              "reason": "Verwechselt Aminosäuresequenz und Kohlenhydrataufbau."
+            }
+          ]
         },
         {
           "id": "01M724F0PYD4EX21DGJCYV01J9",
@@ -1856,7 +2266,17 @@
               "Sein aktives Zentrum spaltet Stärke."
             ],
             "correct_index": 0
-          }
+          },
+          "choice_distractors": [
+            {
+              "text": "Sein aktives Zentrum kann Stärke spalten.",
+              "reason": "Verwechselt mechanische Stabilität mit einer Enzymfunktion."
+            },
+            {
+              "text": "Seine Bindungsstelle kann Sauerstoff tragen.",
+              "reason": "Verwechselt die Strukturaufgabe mit der Funktion von Hämoglobin."
+            }
+          ]
         },
         {
           "id": "01M724F0PYGAFJEQSHFYS2G03C",
@@ -1922,7 +2342,17 @@
               "Thymin."
             ],
             "correct_index": 0
-          }
+          },
+          "choice_distractors": [
+            {
+              "text": "Thymin.",
+              "reason": "Verwechselt das Basenpaar A–T mit dem Partner von Guanin."
+            },
+            {
+              "text": "Adenin.",
+              "reason": "Verwechselt das Basenpaar A–T mit dem Partner von Guanin."
+            }
+          ]
         },
         {
           "id": "01M724F0PYQQ4F02B1AD5QRQGW",
@@ -1940,7 +2370,17 @@
               "Der von einer Kernhülle umgebene Hauptteil der Erbinformation."
             ],
             "correct_index": 0
-          }
+          },
+          "choice_distractors": [
+            {
+              "text": "Ein Protein zur DNA-Verpackung.",
+              "reason": "Verwechselt zusätzliche DNA mit einem Protein, das DNA organisiert."
+            },
+            {
+              "text": "Eine Membranhülle um das Bakterienchromosom.",
+              "reason": "Schreibt dem Plasmid die Abgrenzungsfunktion eines Zellkerns zu."
+            }
+          ]
         },
         {
           "id": "01M724F0PYTKSK6XVPSSQHS7PB",
@@ -2010,7 +2450,17 @@
               "Eine Aminosäurekette."
             ],
             "correct_index": 0
-          }
+          },
+          "choice_distractors": [
+            {
+              "text": "Protein.",
+              "reason": "Verwechselt Transkription mit Translation."
+            },
+            {
+              "text": "ATP.",
+              "reason": "Verwechselt die RNA-Abschrift mit einem Energieträger der Zelle."
+            }
+          ]
         },
         {
           "id": "01M724F0PYGSZ0Z4DZ5579FCK5",
@@ -2028,7 +2478,17 @@
               "Es verdoppelt die gesamte DNA vor der Teilung."
             ],
             "correct_index": 0
-          }
+          },
+          "choice_distractors": [
+            {
+              "text": "Es kopiert die gesamte DNA zur Vorbereitung einer Zellteilung.",
+              "reason": "Verwechselt Translation und DNA-Replikation."
+            },
+            {
+              "text": "Es zerlegt Nahrungsproteine in resorbierbare Aminosäuren.",
+              "reason": "Verwechselt den Proteinaufbau mit Verdauung."
+            }
+          ]
         },
         {
           "id": "01M724F0PYWWCKJWVQB0ZD3RP1",
@@ -2094,7 +2554,17 @@
               "Zwei neue Stränge; beide alten bleiben zusammen."
             ],
             "correct_index": 0
-          }
+          },
+          "choice_distractors": [
+            {
+              "text": "Zwei neu aufgebaute Stränge, während die alten zusammenbleiben.",
+              "reason": "Verwechselt semikonservative und konservative Verdopplung."
+            },
+            {
+              "text": "Einen alten Strang ohne einen passenden neuen Gegenstrang.",
+              "reason": "Übersieht, dass wieder eine vollständige Doppelhelix entsteht."
+            }
+          ]
         },
         {
           "id": "01M724F0PYV6PNZEQR2C0MNA8S",
@@ -2112,7 +2582,17 @@
               "Die Zahl der Zellkerne."
             ],
             "correct_index": 0
-          }
+          },
+          "choice_distractors": [
+            {
+              "text": "Die Kernzahl.",
+              "reason": "Verwechselt die DNA-Kopie mit einer Kernteilung."
+            },
+            {
+              "text": "Die Zellzahl.",
+              "reason": "Verwechselt die S-Phase mit der Teilung des Zellplasmas."
+            }
+          ]
         },
         {
           "id": "01M724F0PYT79XYW0211AWPFS4",
@@ -2178,7 +2658,17 @@
               "Die Schwesterchromatiden jedes Chromosoms."
             ],
             "correct_index": 0
-          }
+          },
+          "choice_distractors": [
+            {
+              "text": "Die Schwesterchromatiden.",
+              "reason": "Verwechselt die erste mit der zweiten Reifeteilung."
+            },
+            {
+              "text": "Die Basen der DNA-Stränge.",
+              "reason": "Verwechselt die Verteilung von Chromosomen mit der Trennung von DNA-Strängen."
+            }
+          ]
         },
         {
           "id": "01M724F0PYK9TJT25K7BX4W4J9",
@@ -2196,7 +2686,17 @@
               "Der Satz einer Keimzelle wird durch Verdauung halbiert."
             ],
             "correct_index": 0
-          }
+          },
+          "choice_distractors": [
+            {
+              "text": "Ein haploider Satz verdoppelt sich.",
+              "reason": "Verwechselt die Vereinigung zweier Keimzellen mit einer Verdopplung in einer einzelnen Keimzelle."
+            },
+            {
+              "text": "Zwei diploide Sätze werden ohne Änderung zusammengefügt.",
+              "reason": "Übersieht die Halbierung des Satzes bei der Keimzellbildung."
+            }
+          ]
         },
         {
           "id": "01M724F0PYCG82YM4A5FRNV8FQ",
@@ -2262,7 +2762,17 @@
               "Vom Zentralnervensystem zum Erfolgsorgan."
             ],
             "correct_index": 0
-          }
+          },
+          "choice_distractors": [
+            {
+              "text": "Zum Erfolgsorgan hin.",
+              "reason": "Vertauscht afferente und efferente Richtung."
+            },
+            {
+              "text": "Vom Muskel unmittelbar zur benachbarten Drüse.",
+              "reason": "Verwechselt die Richtung einer Bahn mit einer Verbindung beliebiger Organe."
+            }
+          ]
         },
         {
           "id": "01M724F0PY6MYGFWTBT23G22N4",
@@ -2280,7 +2790,17 @@
               "Eine durchgehende Verlängerung des Axons."
             ],
             "correct_index": 0
-          }
+          },
+          "choice_distractors": [
+            {
+              "text": "Ein Ausläufer des Axons.",
+              "reason": "Verwechselt den synaptischen Spalt mit einer durchgehenden Zellverbindung."
+            },
+            {
+              "text": "Ein isolierender Myelinring.",
+              "reason": "Verwechselt elektrische Isolation am Axon mit der Übertragung an der Synapse."
+            }
+          ]
         },
         {
           "id": "01M724F0PYYG04V4DR862X3KRP",
@@ -2350,7 +2870,17 @@
               "Vergleiche eine bewegte rote Attrappe vor der Fütterung mit einer unbewegten blauen danach."
             ],
             "correct_index": 0
-          }
+          },
+          "choice_distractors": [
+            {
+              "text": "Vergleiche eine bewegte rote Attrappe mit einer unbewegten blauen bei gleichem Fütterungszustand.",
+              "reason": "Verändert neben Bewegung gleichzeitig die Farbe."
+            },
+            {
+              "text": "Vergleiche dieselbe unbewegte Attrappe jeweils vor und nach der Fütterung.",
+              "reason": "Prüft den inneren Zustand statt des Reizmerkmals Bewegung."
+            }
+          ]
         },
         {
           "id": "01M724F0PYMHWZJY0Q4CWFZCND",
@@ -2368,7 +2898,17 @@
               "Die Farbe der Attrappe."
             ],
             "correct_index": 0
-          }
+          },
+          "choice_distractors": [
+            {
+              "text": "Die Farbe der Attrappe.",
+              "reason": "Verwechselt eine äußere Reizeigenschaft mit dem inneren Zustand."
+            },
+            {
+              "text": "Die Entfernung zur Attrappe.",
+              "reason": "Verwechselt eine äußere Versuchsbedingung mit dem inneren Zustand."
+            }
+          ]
         },
         {
           "id": "01M724F0PYT1FF91BJZ99K5XDN",
@@ -2438,7 +2978,17 @@
               "Jegliche Erfahrung ist für das Verhalten ausgeschlossen."
             ],
             "correct_index": 0
-          }
+          },
+          "choice_distractors": [
+            {
+              "text": "Dieses Verhalten kann sich durch jede weitere Erfahrung gar nicht mehr verändern.",
+              "reason": "Verallgemeinert den Ausschluss eines Vorbilds auf jede mögliche Lernerfahrung."
+            },
+            {
+              "text": "Dieses Verhalten muss ausschließlich durch das Verhalten eines Vorbilds ausgelöst werden.",
+              "reason": "Widerspricht dem Auftreten ohne das untersuchte Vorbild."
+            }
+          ]
         },
         {
           "id": "01M724F0PY07QGN7EJX5ASFDXZ",
@@ -2456,7 +3006,17 @@
               "Beide Gruppen zeigen von Anfang an dieselbe Grundbewegung."
             ],
             "correct_index": 0
-          }
+          },
+          "choice_distractors": [
+            {
+              "text": "Beide Gruppen zeigen bereits vor der Beobachtung dieselbe Grundbewegung.",
+              "reason": "Verwechselt einen gemeinsamen Ausgangsbefund mit einer Änderung durch Erfahrung."
+            },
+            {
+              "text": "Nach unterschiedlicher Übungszeit unterscheidet sich die Leistung beider Gruppen.",
+              "reason": "Übersieht die Übungszeit als Störfaktor beim Vergleich der Vorbilderfahrung."
+            }
+          ]
         },
         {
           "id": "01M724F0PYTKMH8D5KJ531JVJH",

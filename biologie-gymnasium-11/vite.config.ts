@@ -7,7 +7,7 @@ export default defineConfig({
   base: "/biologie-gymnasium-11/",
   plugins: [viteSingleFile()],
   server: {
-    port: 5226,
+    port: 5227,
     open: false,
   },
   build: {
