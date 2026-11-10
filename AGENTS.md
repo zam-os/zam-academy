@@ -63,7 +63,16 @@ builds and the tests pass" is not the bar.
   some networks and fetch tools; then use the Wayback Machine:
   `https://archive.org/wayback/available?url=lehrplanplus.bayern.de/fachlehrplan/…`
   names a snapshot, `curl -sL --compressed "https://web.archive.org/web/<timestamp>id_/<url>"`
-  fetches it. Note the snapshot date.
+  fetches it. Note the snapshot date. Try the live page first with a browser
+  User-Agent (`curl -sL --compressed -A "Mozilla/5.0" <url>`); that often
+  works where a fetch tool gets 403. The page holds every Lernbereich in its
+  HTML; strip `<script>`, `<style>` and tags to read it. Record the SHA-256 of
+  the fetched page (`curriculum_sha256` in `coverage.json`).
+- The Gymnasium has Ausbildungsrichtungen instead of Zweige. A subject can
+  have one Fachlehrplan for all of them with a Profilbereich only for the NTG
+  (Physik 11: Lernbereich 4). Such lessons carry `tracks: ["NTG"]`; their
+  atoms bind `track: "NTG"`, and the atoms for everyone bind no track at all.
+  ZAM expands combined tracks only for the Realschule.
 - Write down every Lernbereich with its hours and every Kompetenzerwartung
   verbatim, per Zweig. Zweige can differ in content, not only in depth: in
   Mathematik 10, Zweig I has Abbildungen and Logarithmusfunktionen, Zweig
@@ -80,6 +89,17 @@ builds and the tests pass" is not the bar.
   matrices keep their own schema and tests (Geographie `areas`, Biologie,
   Algorithmen and Datennetze `competencies`). Content beyond the curriculum
   is marked as such and stays small.
+- "Verbatim" is checked, not typed from memory: after writing `coverage.json`,
+  search every `competence` in the text of the fetched page with a short
+  script (whitespace normalised) and state the result, e.g. "34 rows, 0 not
+  found". The page uses the non-breaking hyphen U+2011 in places such as
+  "U‑I‑Kennlinie"; copy it.
+- Some competences cannot happen in an app: real Schülerexperimente, research,
+  group work, presentations, excursions. Do not claim them. Give the row
+  `"status": "supported"` and say in `evidence` what the package provides and
+  what stays in class; `"implemented"` is for competences the lessons cover
+  (`physik-gymnasium-11/coverage.json`). Where the curriculum says
+  "qualitativ", do not add formulas and calculation tasks for it.
 - Where a package has Zweige, every lesson names its `tracks` and a
   `lehrplan` label such as `M10 LB 1 (I) · M10 LB 1 (II/III): Trigonometrie`.
 
@@ -96,6 +116,7 @@ a lesson.
 | --- | --- | --- |
 | Mathematik | `mathematik-realschule-9` | HTML lesson shell, labs with draggable handles, exercise generators on two levels, the full test suite |
 | Physik, Chemie | `physik-realschule-10`, `chemie-realschule-9` | models, lessons per Zweig, migration validation |
+| Physik (Gymnasium) | `physik-gymnasium-11` | the Physik 10 shell with `coverage.json`, one accent per stage, a Formelsammlung, an Ausbildungsrichtung with Profilbereich, proposal-only mapping |
 | Biologie | `biologie-realschule-10` | one shared learning path (no Zweige), migration validation |
 | Geschichte | `geschichte-realschule-9` | source workshop, migration validation |
 | Geographie | `geographie-realschule-9` | map workshop, coverage matrix (own schema) |
@@ -110,6 +131,33 @@ never HTML, and shows the key rule as `takeaway`; its quiz is an `answer`
 with exactly two `wrong` answers. `chemie-realschule-9` keeps the rule in
 `rule` and asks its quick check with two options. Write lessons in the form of
 the shell you copied.
+
+Start by copying the reference folder (`cp -R <reference> <app>`), then
+delete `node_modules`, `dist`, `release` and the reference's
+`tests/fixtures`. Everything that still names the reference is a bug a
+learner will see or a collision with its data. Find it with
+`grep -rn "<old grade>\|<old school>\|<old app name>" <app> --exclude-dir=node_modules`
+and check these places by hand:
+
+- `index.html`: title, description, brand mark, footer link, and the theme
+  key in the inline script;
+- the `localStorage` keys (`STORAGE_KEY` in `src/storage/progress.ts`, the
+  theme key in `src/main.ts`): a copied key makes two packages overwrite each
+  other's progress on the shared origin `academy.zam-os.org`;
+- `vite.config.ts` (`base`, a free dev port: the highest in
+  `grep -o "port: [0-9]*" */vite.config.ts | sort -t' ' -k2 -n | tail -1`
+  plus one), `package.json` (name, description),
+  `scripts/build-release-zip.mjs` (file names and the README text),
+  `src/zam/zam-link.ts` (app URL, cell id and title);
+- texts in `src/main.ts` that state numbers (lessons, models, cards): count
+  them again at the end, and the package `README.md`, which is rewritten, not
+  edited.
+
+Write the content in pieces you can check: types and pure model functions
+first, then one lesson file per Lernbereich, and run `npx tsc --noEmit` and
+`npm test` after each piece instead of once at the end. Recalculate every
+number in an explanation, a worked example and a model solution before
+moving on; a wrong example is the most likely defect in a new lesson.
 
 Port the reference's test suite with the package: lesson metadata and pinned
 ids, the tests of the interactive parts and the exercise generators, the cell
@@ -145,11 +193,23 @@ Every lesson has
   targeted hint.
 
 Each stage (one per Lernbereich) gets its own accent colour instead of one
-palette for the whole package.
+palette for the whole package (`[data-lb]` blocks at the end of
+`physik-gymnasium-11/src/styles.css`, for light and both dark selectors).
+
+Every source link a lesson shows is fetched once and its real page title
+read (`curl -sL -A "Mozilla/5.0" <url> | grep -o "<title[^>]*>[^<]*"`); a
+status 200 alone proves nothing on sites that answer every path. Do not
+link pages you could not open (LEIFIphysik answers 403 to scripts). Give no
+current statistics from memory, such as shares of energy sources: link the
+official source and let the task ask for the research.
 
 German learner text uses "du", the terms of the LehrplanPLUS, the decimal
 comma (`fmt()`), the real minus sign "−" (U+2212), "·" for multiplication and
-a space before units. Bilingual apps keep their other language versions; each
+a space before units. Test these conventions instead of trusting the text:
+no `\d\.\d` in lesson text (mind section numbers such as "3.1" in labels),
+and no ASCII minus in generated tasks. `Intl.NumberFormat("de-DE")` writes
+negative numbers with the ASCII hyphen, so `fmt()` must replace it by "−";
+check the `fmt()` you copied. Bilingual apps keep their other language versions; each
 follows the conventions of its language, and their tests
 (`algorithmen/tests/i18n.test.ts`, `datennetze/tests/i18n.test.ts`) stay
 green. No hype, no filler.
@@ -183,7 +243,9 @@ worth something only after this check. To find candidates:
   (`mathematik-realschule-9` has atoms with up to seven).
 - Atom and item ids of a new cell are real ULIDs, generated once and then
   kept; no hand-made patterns, no renumbering (zam-core: the id "is the one
-  string that must not be improvised"). Published cells such as
+  string that must not be improvised"). A one-time script outside the repo
+  (in your scratch folder) may build the first `cell.json` and draw the ids;
+  it is not committed, and later changes edit `cell.json` directly. Published cells such as
   `mathematik-realschule-9` keep the ids they were published with.
 - Cards ask lasting knowledge: a short question and a short, exact answer.
   Tier 1 has a binary `fast_check` (`options` of length 2, `correct_index: 0`),
@@ -221,6 +283,20 @@ Learners have review histories on them.
   `bwr-realschule-9`): histories move unchanged, old ids leave active
   reviews, repeated installs change nothing, and a learner holding cards on
   both ids makes the install refuse an automatic merge.
+- Old cells follow older curricula. Look also at the `de-by` cells of the
+  neighbouring grades for topics that the LehrplanPLUS teaches in your grade
+  (Physik 11 Gymnasium: the old grade-10 cells on Kreisbewegung and Wellen),
+  and at the cells named after your grade whose topics now belong elsewhere
+  (they become C, keep-active). Say in `docs/` which cells you took in and
+  why, so no card is mapped by two packages; whether a neighbouring grade's
+  cell belongs to your mapping is a question for Thomas, so ask it in the PR.
+- A proposal-only file has `"status": "proposal-only"`, `"approved": null`
+  and per row an `action`: `propose-replace-after-approval` for A and B,
+  `keep-active` or `propose-retire-after-approval` for C. Its tests check
+  that every old id has exactly one row, that each proposed successor slug
+  exists once in the cell, and that the cell declares no `replaces` and no
+  `retired_items`. It needs no `validate-migration.mjs`; remove the copied
+  one together with its CI step.
 - By default (Thomas's decision of 2026-10-22) a new cell ships first
   without `replaces` and `retired_items`; it then needs no approval, and the
   mapping stays a proposal (`"status": "proposal-only"`) until the approved
@@ -285,7 +361,18 @@ chrome --headless=new --window-size=1280,2600 --screenshot=<png> "file:///<path>
 
 Look at every lesson and every view: the learning path, each lesson with its
 interactive part at the start, an exercise on both levels, reference views
-such as the Formelsammlung, in light and dark theme.
+such as the Formelsammlung, in light and dark theme (`--force-dark-mode`
+gives the dark scheme; a taller window such as `1280,5200` shows the tasks
+at the end of a lesson).
+
+For many lessons, add a check of the rendered page to the screenshots:
+`chrome --headless=new --virtual-time-budget=1500 --dump-dom "<url>#lesson=<id>&level=<n>"`
+for every lesson and level, then look inside `<main>` for the lesson title,
+the task prompt of that level, the interactive part and for `NaN` or
+`undefined`. Remove `<script>` and `<style>` first: the single-file build
+carries every lesson's text in its script, so a search over the whole dump
+finds everything even on a blank page. In zsh, loop over a list with a
+script file or `bash -c`; an unquoted `$ids` is not split into words.
 
 The PR description states what the package covers per Zweig, the evidence
 above (commands with their results; for added videos the table lesson → id →
