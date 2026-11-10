@@ -137,7 +137,7 @@ npm run build    # single-file build in dist/index.html
 npm run package:zip   # offline zip in release/
 ```
 
-CI (`.github/workflows/ci.yml`) tests and builds every app on each pull request and uploads the offline zip as an artifact. Pages (`.github/workflows/pages.yml`) publishes `index.html` plus every app's build on each push to `main`.
+CI (`.github/workflows/ci.yml`) tests and builds the apps a pull request or push changed and uploads their offline zips as artifacts: an app is tested when a file in its folder changed, every app when the package jobs of the CI workflow changed or the base commit is unknown (`scripts/changed-apps.mjs`). The `cells` job validates every cell on each run. Pages runs no test suites. Pages (`.github/workflows/pages.yml`) publishes `index.html` plus every app's build on each push to `main`.
 
 The [grade-9 coverage inventory](docs/realschule-9-coverage.md) distinguishes migrated packages, partial legacy material and still-open curriculum work.
 
