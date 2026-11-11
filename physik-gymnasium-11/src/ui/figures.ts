@@ -72,6 +72,11 @@ interface Figure {
   label: string;
   height: number;
   body: string;
+  /**
+   * Every colour the scene can show. The frame lists only the entries whose
+   * tone the current drawing uses, so the legend never names a line that a
+   * setting leaves out, such as the terminal speed without air resistance.
+   */
   legend: Array<[Tone, string]>;
   /** Scenes that can move say what the motion shows; the learner starts it. */
   motion?: string;
@@ -516,7 +521,7 @@ const FIGURES: Record<ModelKind, (v: Values) => Figure> = {
       [mx, my] = polar(cx, cy, earth, alpha),
       ring = (h: number) => (EARTH_RADIUS / 1000 + h) * scale;
     return {
-      label: `Erde mit maßstäblicher Kreisbahn in ${fmt(v.h)} Kilometer Höhe. Der Satellit hat ${fmt(r.v / 1000)} Kilometer pro Sekunde und braucht ${fmt(r.T / 3600)} Stunden für einen Umlauf. Die Gravitationskraft zeigt zur Erde.`,
+      label: `Erde mit maßstäblicher Kreisbahn in ${fmt(v.h)} Kilometer Höhe. Der Satellit hat ${fmt(r.v / 1000)} Kilometer pro Sekunde und braucht ${fmt(r.T / 3600)} Stunden für einen Umlauf. Die Gravitationskraft zeigt zur Erde. Gestrichelt zum Vergleich drei Bahnen: Raumstation in 400 Kilometer Höhe, im Maßstab dicht über der Erdoberfläche, Navigationssatelliten in ${fmt(20200)} und geostationäre Satelliten in ${fmt(35800)} Kilometer Höhe.`,
       height: 304,
       body:
         [400, 20200, 35800]
@@ -535,6 +540,9 @@ const FIGURES: Record<ModelKind, (v: Values) => Figure> = {
         arrow(x, y, x - Math.cos(rad) * lf, y + Math.sin(rad) * lf, "f") +
         dot(x, y, 6, "acc", "body") +
         "</g>" +
+        // The 400 km orbit lies 1 px above the Earth's disc at this scale, so
+        // a leader ties the name to its ring instead of leaving it in the gap.
+        line(cx, cy + ring(400), cx, cy + earth + 22, "mute", "thin") +
         text(cx, cy + earth + 34, "Raumstation", "mute", "middle", "tick"),
       legend: [
         ["v", "Bahngeschwindigkeit v"],
@@ -663,17 +671,21 @@ const FIGURES: Record<ModelKind, (v: Values) => Figure> = {
       radius = 7 + 9 * v.m,
       bx = px + L * Math.sin(angle),
       by = py + L * Math.cos(angle),
-      weight = 6.2 * place.g;
+      // The arrow shows g, the quantity the period depends on. A force arrow
+      // would have to grow with the mass, which leaves the period unchanged.
+      // It starts below the body, so the short arrow of the Moon stays visible.
+      fall = 6.2 * place.g,
+      from = by + radius + 3;
     return {
-      label: `Fadenpendel mit Länge ${fmt(v.l)} Meter und Masse ${fmt(v.m)} Kilogramm, Ort: ${place.name}. Der Pfeil der Gewichtskraft ist umso länger, je größer die Fallbeschleunigung ist. Periodendauer ${fmt(T)} Sekunden.`,
-      height: 318,
+      label: `Fadenpendel mit Länge ${fmt(v.l)} Meter und Masse ${fmt(v.m)} Kilogramm, Ort: ${place.name}. Der Pfeil am Pendelkörper zeigt die Fallbeschleunigung des Ortes, ${fmt(place.g)} Meter pro Sekunde zum Quadrat; die Masse ändert nur die Größe des Pendelkörpers. Periodendauer ${fmt(T)} Sekunden.`,
+      height: 332,
       body:
         `<rect x="${px - 46}" y="16" width="92" height="10" rx="2" class="wall"/>` +
         line(px, py, px, py + L + radius + 8, "mute", "dash thin") +
         `<path d="M${n(px - L * Math.sin(angle))} ${n(by)}A${n(L)} ${n(L)} 0 0 0 ${n(bx)} ${n(by)}" class="ln q-mute dash thin"/>` +
         `<circle cx="${n(px - L * Math.sin(angle))}" cy="${n(by)}" r="${n(radius)}" class="ln q-mute dash thin still"/>` +
-        arrow(bx, by, bx, by + weight, "f", "still") +
-        text(bx + 12, by + weight / 2 + 12, "F_G", "f", "start", "still") +
+        arrow(bx, from, bx, from + fall, "a", "still") +
+        text(bx + 10, from + fall / 2 + 5, "g", "a", "start", "still") +
         `<g class="swing" style="transform-origin:${px}px ${py}px;--half:${seconds(T / 2)}">` +
         line(px, py, px, py + L, "s") +
         dot(px, py + L, radius, "acc", "body") +
@@ -685,7 +697,7 @@ const FIGURES: Record<ModelKind, (v: Values) => Figure> = {
         text(62, 306, `g = ${fmt(place.g)} m/s²`, "mute", "middle", "tick"),
       legend: [
         ["s", "Pendellänge l"],
-        ["f", "Gewichtskraft F_G = m · g"],
+        ["a", "Fallbeschleunigung g am Ort"],
       ],
       motion: "Das Pendel schwingt in Echtzeit mit der berechneten Periodendauer.",
     };
@@ -1711,8 +1723,11 @@ const ILLUSTRATIONS: Record<string, () => Figure> = {
 };
 
 function frameFigure(figure: Figure, playing: boolean): string {
-  const moving = playing && figure.motion !== undefined;
-  return `<figure class="model-figure${moving ? " playing" : ""}"><svg class="physics-figure" viewBox="0 0 ${W} ${figure.height}" role="img" aria-label="${esc(figure.label)}">${figure.body}</svg>${figure.motion ? `<div class="motion-bar"><button type="button" class="button secondary motion-toggle" data-motion aria-pressed="${moving}">${moving ? "■ Bewegung anhalten" : "▶ Bewegung zeigen"}</button><span class="small">${esc(figure.motion)}</span></div>` : ""}<ul class="figure-legend">${figure.legend.map(([tone, label]) => `<li class="q-${tone}"><span class="swatch" aria-hidden="true"></span>${esc(label)}</li>`).join("")}</ul></figure>`;
+  const moving = playing && figure.motion !== undefined,
+    legend = figure.legend.filter(([tone]) =>
+      new RegExp(`q-${tone}(?![a-z])`).test(figure.body),
+    );
+  return `<figure class="model-figure${moving ? " playing" : ""}"><svg class="physics-figure" viewBox="0 0 ${W} ${figure.height}" role="img" aria-label="${esc(figure.label)}">${figure.body}</svg>${figure.motion ? `<div class="motion-bar"><button type="button" class="button secondary motion-toggle" data-motion aria-pressed="${moving}">${moving ? "■ Bewegung anhalten" : "▶ Bewegung zeigen"}</button><span class="small">${esc(figure.motion)}</span></div>` : ""}<ul class="figure-legend">${legend.map(([tone, label]) => `<li class="q-${tone}"><span class="swatch" aria-hidden="true"></span>${esc(label)}</li>`).join("")}</ul></figure>`;
 }
 
 /** Whether the scene of a model can be set in motion. */
@@ -1758,5 +1773,5 @@ export function renderGraph(
       xLabel,
       yLabel,
     });
-  return `<figure class="model-figure"><svg class="physics-figure" viewBox="0 0 ${W} 252" role="img" aria-label="${esc(yLabel)} in Abhängigkeit von ${esc(xLabel)}${marker ? `; markiert ist der Punkt ${fmt(marker[0])} | ${fmt(marker[1])}` : ""}">${fr.axes}${fr.plot(stroke(onFrame(fr, points), "acc") + (marker ? line(fr.x(marker[0]), fr.y(low), fr.x(marker[0]), fr.y(marker[1]), "e", "dash thin") + dot(fr.x(marker[0]), fr.y(marker[1]), 6, "e", "ring") : ""))}</svg></figure>`;
+  return `<figure class="model-figure"><svg class="physics-figure" viewBox="0 0 ${W} 252" role="img" aria-label="${esc(yLabel)} in Abhängigkeit von ${esc(xLabel)}${marker ? `; markiert ist der Punkt bei ${fmt(marker[0])} mit dem Wert ${fmt(marker[1])}` : ""}">${fr.axes}${fr.plot(stroke(onFrame(fr, points), "acc") + (marker ? line(fr.x(marker[0]), fr.y(low), fr.x(marker[0]), fr.y(marker[1]), "e", "dash thin") + dot(fr.x(marker[0]), fr.y(marker[1]), 6, "e", "ring") : ""))}</svg></figure>`;
 }

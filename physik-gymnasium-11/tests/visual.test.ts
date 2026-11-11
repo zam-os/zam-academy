@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { LESSONS } from "../src/curriculum";
 import type { ModelKind } from "../src/model/types";
-import { initialModelState, MODEL_SCENARIOS, PARAMS } from "../src/models";
+import { initialModelState, MODEL_SCENARIOS, PARAMS, PLACES } from "../src/models";
 import css from "../src/styles.css?raw";
 import {
   hasMotion,
@@ -9,7 +9,7 @@ import {
   renderFigure,
   renderIllustration,
 } from "../src/ui/figures";
-import { renderModel } from "../src/ui/models";
+import { renderModel, renderModelOutput } from "../src/ui/models";
 
 const KINDS = Object.keys(MODEL_SCENARIOS) as ModelKind[];
 /** Every innermost rule of the stylesheet as [selector, declarations]. */
@@ -42,6 +42,20 @@ function contrast(a: string, b: string): number {
 }
 const DARK = ':root[data-theme="dark"]',
   DARK_SYSTEM = ':root:not([data-theme="light"])';
+/** The drawing of a figure without the legend below it. */
+const drawing = (html: string): string =>
+  html.split('<ul class="figure-legend">')[0];
+const legendOf = (html: string): string =>
+  html.split('<ul class="figure-legend">')[1] ?? "";
+/** Length of the first arrow in a tone: from its start to the tip of its head. */
+function arrowLength(html: string, tone: string): number {
+  const match = new RegExp(
+    `<g class="q-${tone}[^"]*"><line x1="([\\d.]+)" y1="([\\d.]+)"[^>]*/><polygon points="([\\d.]+),([\\d.]+) `,
+  ).exec(html);
+  if (!match) throw new Error(`no arrow in tone ${tone}`);
+  const [x1, y1, x2, y2] = match.slice(1).map(Number);
+  return Math.hypot(x2 - x1, y2 - y1);
+}
 
 describe("figures of the model lab", () => {
   it("draws every comparison of every model with a text alternative and a legend", () => {
@@ -61,6 +75,126 @@ describe("figures of the model lab", () => {
             `${kind}: .q-${tone}`,
           ).toBe(true);
       }
+  });
+  it("names in the legend only what the drawing shows, on a grid of all sliders", () => {
+    const missing: string[] = [];
+    let drawings = 0;
+    for (const kind of KINDS) {
+      const params = PARAMS[kind],
+        // Both ends of a slider, their neighbours and the middle.
+        grid = params.map((param) => {
+          const steps = Math.round((param.max - param.min) / param.step);
+          return [...new Set([0, 1, Math.round(steps / 2), steps - 1, steps])]
+            .filter((i) => i >= 0 && i <= steps)
+            .map((i) => Number((param.min + i * param.step).toFixed(6)));
+        }),
+        settings = grid.reduce<Array<Record<string, number>>>(
+          (all, values, i) =>
+            all.flatMap((setting) =>
+              values.map((value) => ({ ...setting, [params[i].key]: value })),
+            ),
+          [{}],
+        );
+      for (const values of [
+        ...MODEL_SCENARIOS[kind].map((scenario) => scenario.values),
+        ...settings,
+      ]) {
+        const html = renderFigure(kind, values);
+        drawings++;
+        for (const [, tone, name] of legendOf(html).matchAll(
+          /<li class="q-([a-z]+)">.*?<\/span>([^<]*)<\/li>/g,
+        ))
+          if (!new RegExp(`q-${tone}(?![a-z])`).test(drawing(html)))
+            missing.push(`${kind} ${JSON.stringify(values)}: ${tone} "${name}"`);
+      }
+    }
+    expect(drawings).toBeGreaterThan(1000);
+    expect(missing).toEqual([]);
+  });
+  it("drops the legend entry of a line that a setting leaves out", () => {
+    const names = (kind: ModelKind, values: Record<string, number>) =>
+      [...legendOf(renderFigure(kind, values)).matchAll(/<\/span>([^<]*)<\/li>/g)].map(
+        (match) => match[1],
+      );
+    expect(names("superposition", { a1: 3, a2: 3, shift: 0.5 })).toContain("Gangunterschied Δs");
+    expect(names("superposition", { a1: 3, a2: 3, shift: 0 })).toEqual([
+      "Welle 1",
+      "Welle 2",
+      "Überlagerung: Summe der Auslenkungen",
+    ]);
+    expect(names("lorentz", { beta: 0.6, t0: 1 })).toContain("Geschwindigkeit des Raumschiffs");
+    expect(names("lorentz", { beta: 0, t0: 1 })).not.toContain("Geschwindigkeit des Raumschiffs");
+    expect(names("saving", { pOld: 60, pNew: 8, h: 3, price: 35 })).toContain("eingesparte Energie");
+    expect(names("saving", { pOld: 10, pNew: 12, h: 1, price: 20 })).not.toContain("eingesparte Energie");
+  });
+  it("reads no figure aloud with a vertical bar", () => {
+    for (const kind of KINDS)
+      for (const scenario of MODEL_SCENARIOS[kind]) {
+        const labels = [
+          ...renderModelOutput(kind, scenario.values).matchAll(/aria-label="([^"]*)"/g),
+        ];
+        expect(labels.length, kind).toBeGreaterThan(0);
+        for (const [, label] of labels) expect(label, kind).not.toContain("|");
+      }
+  });
+  it("ties the name Raumstation to the 400 km orbit", () => {
+    const html = renderFigure("orbit", MODEL_SCENARIOS.orbit[0].values),
+      // The reference orbits are the dashed circles; the innermost is 400 km.
+      rings = [
+        ...html.matchAll(/<circle cx="240" cy="152" r="([\d.]+)" class="ln q-mute dash thin"\/>/g),
+      ].map((match) => Number(match[1])),
+      leader = /<line x1="240" y1="([\d.]+)" x2="240" y2="([\d.]+)" class="ln q-mute thin"\/>/.exec(html),
+      name = /<text x="240" y="([\d.]+)"[^>]*>Raumstation<\/text>/.exec(html);
+    expect(rings).toHaveLength(3);
+    expect(leader).not.toBeNull();
+    expect(name).not.toBeNull();
+    // The leader starts on the ring and ends just above the name.
+    expect(Number(leader![1])).toBeCloseTo(152 + Math.min(...rings), 1);
+    const gap = Number(name![1]) - Number(leader![2]);
+    expect(gap).toBeGreaterThan(0);
+    expect(gap).toBeLessThanOrEqual(14);
+    expect(/aria-label="([^"]*)"/.exec(html)![1]).toContain("Raumstation in 400 Kilometer Höhe");
+  });
+  it("draws the pendulum's arrow as the Fallbeschleunigung, which the mass leaves alone", () => {
+    const at = (m: number, ort: number) =>
+        renderFigure("pendulum", { l: 0.5, m, ort }),
+      earth = PLACES.findIndex((place) => place.name === "Erde"),
+      moon = PLACES.findIndex((place) => place.name === "Mond");
+    for (const ort of PLACES.keys()) {
+      const html = at(0.2, ort);
+      expect(legendOf(html)).toContain("Fallbeschleunigung g am Ort");
+      expect(html).not.toContain("Gewichtskraft");
+      expect(html).not.toContain("F_G");
+      // Coordinates are rounded to a tenth, hence the tolerance.
+      expect(
+        Math.abs(arrowLength(at(1, ort), "a") - arrowLength(html, "a")),
+      ).toBeLessThan(0.15);
+    }
+    // The same length per m/s² on the Earth and on the Moon.
+    expect(
+      Math.abs(
+        arrowLength(at(0.2, earth), "a") / PLACES[earth].g -
+          arrowLength(at(0.2, moon), "a") / PLACES[moon].g,
+      ),
+    ).toBeLessThan(0.15);
+    // The arrow starts below the body, so even the shortest one shows whole.
+    for (const m of [0.1, 1]) {
+      const html = at(m, moon),
+        body = /<circle cx="[\d.]+" cy="([\d.]+)" r="([\d.]+)" class="ln q-mute dash thin still"\/>/.exec(html)!,
+        start = /<g class="q-a still"><line x1="[\d.]+" y1="([\d.]+)"/.exec(html)!;
+      expect(Number(start[1])).toBeGreaterThan(Number(body[1]) + Number(body[2]));
+    }
+  });
+  it("names the terminal speed only where air resistance gives one", () => {
+    const free = renderFigure("airfall", { m: 80, k: 0, dt: 0.1 }),
+      drag = renderFigure("airfall", { m: 80, k: 0.3, dt: 0.1 });
+    expect(legendOf(drag)).toContain("Endgeschwindigkeit");
+    expect(legendOf(drag)).toContain("Luftwiderstand");
+    expect(drawing(drag)).toContain('class="ln q-bad dash"');
+    expect(legendOf(free)).not.toContain("Endgeschwindigkeit");
+    expect(legendOf(free)).not.toContain("Luftwiderstand");
+    expect(drawing(free)).not.toContain("q-bad");
+    expect(drawing(free)).not.toContain("q-x");
   });
   it("changes the drawing with every comparison", () => {
     for (const kind of KINDS) {
