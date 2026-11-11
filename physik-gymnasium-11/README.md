@@ -11,7 +11,17 @@ Jeder Lernbereich ist eine Etappe mit eigener Akzentfarbe:
 3. **Eigenverantwortliche Arbeit an physikalischen Themen** (10): astronomische Weltbilder und Kepler’sche Gesetze, modernes Weltbild, Einsteins Postulate, Zeitdilatation, Längenkontraktion, „Deutsche Physik“, Energieentwertung, Nutzwertanalyse zur Energieversorgung, Energiesparen.
 4. **Profilbereich am NTG** (8): Methode der kleinen Schritte, Fall mit Luftwiderstand, simulierte Schwingung, Kennlinie und MPP der Solarzelle, Photovoltaikanlagen, Auswerten von Vorträgen und Stellungnahme, dazu aus der Vorschlagsliste 4.4 Jahrmarkt sowie Modelle und Chaos.
 
-Jede Lektion hat eine Erklärung mit Merksatz und Formeln, einen Schnellcheck, eine Werkstatt (zuordnen oder ordnen) und zwei Schreibaufgaben mit Vergleichslösung und drei Kriterien zur Selbsteinschätzung. 30 Lektionen haben ein veränderbares Modell mit benannten Vergleichssituationen und Schiebereglern; jede Ansicht nennt ihre Annahmen. 26 Lektionen haben Rechenaufgaben auf zwei Stufen: Level 1 geführt mit Formelhilfe, Level 2 als Transfer (Einheit umrechnen, Formel umstellen, zwei Schritte verbinden). Der Prüfer akzeptiert Dezimalkomma, Dezimalpunkt und das typografische Minus.
+Jede Lektion hat eine Erklärung mit Merksatz und Formeln, einen Schnellcheck, eine Werkstatt (zuordnen oder ordnen) und zwei Schreibaufgaben mit Vergleichslösung und drei Kriterien zur Selbsteinschätzung. 30 Lektionen haben ein veränderbares Modell mit benannten Vergleichssituationen und Schiebereglern; jede Ansicht nennt ihre Annahmen.
+
+## Zeichnungen und Farben
+
+Jedes der 30 Modelle zeigt eine Zeichnung, die den Schiebereglern beim Ziehen folgt: Kreisbahn mit Geschwindigkeits- und Kraftpfeil, Pendel, Wellenzug aus einzelnen Oszillatoren, maßstäbliche Satellitenbahn, Energieflussdiagramm, Kennlinie mit Leistungsfläche und so weiter (`src/ui/figures.ts`). Zwei Lektionen ohne Modell haben eine feste Abbildung (Weltbilder, Lichtmodelle). Jede Zeichnung trägt eine Textalternative und eine Legende.
+
+- **Eine Farbe je Lernbereich** (`[data-lb]` in `src/styles.css`): Blau für die Kreisbewegung, Grün für Schwingungen und Wellen, Violett für Lernbereich 3, Orange für den Profilbereich. Sie färbt Etappe, Lektionskopf, Regler und Schaltflächen.
+- **Eine Farbe je Art physikalischer Größe**, in allen Zeichnungen gleich und in der Legende benannt: Geschwindigkeit blau, Kraft rot, Beschleunigung orange, Weg und Länge grün, Zeit und Winkel violett, Energie und Licht gold.
+- **Urteile**: richtig grün, Hinweis und Merksatz gold, falsch rot.
+
+Neun Zeichnungen lassen sich in Bewegung setzen (Kreisbahn, Zentripetalkraft, Satellit, Schwingung, Feder- und Fadenpendel, Welle, stehende Welle, Karussell). Die Bewegung startet nie von selbst; „Bewegung zeigen“ startet und stoppt sie. `tests/visual.test.ts` prüft für das helle und das dunkle Farbschema, dass jede Textfarbe auf ihrem Untergrund einen Kontrast von mindestens 4,5 : 1 hat. 26 Lektionen haben Rechenaufgaben auf zwei Stufen: Level 1 geführt mit Formelhilfe, Level 2 als Transfer (Einheit umrechnen, Formel umstellen, zwei Schritte verbinden). Der Prüfer akzeptiert Dezimalkomma, Dezimalpunkt und das typografische Minus.
 
 Eine Lektion zählt als abgeschlossen nach Schnellcheck, Werkstatt und selbst eingeschätzter Begründung in Level 1, dazu gegebenenfalls allen Modellvergleichen und drei selbst gelösten Rechenaufgaben. Die Begründung wird **nicht automatisch bewertet**. Der Wechsel der Ausbildungsrichtung bewahrt alle Einträge.
 

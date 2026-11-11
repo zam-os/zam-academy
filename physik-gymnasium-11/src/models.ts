@@ -10,6 +10,8 @@ export interface Param {
   max: number;
   step: number;
   unit: string;
+  /** Names of the settings when the values stand for a choice instead of a number. */
+  options?: string[];
 }
 interface Scenario {
   id: string;
@@ -53,7 +55,11 @@ export const PARAMS: Record<ModelKind, Param[]> = {
     p("r", "Bahnradius", 0.5, 5, 0.5, "m"),
   ],
   centriexp: [
-    p("vary", "Variierte Größe: 0 Masse · 1 Radius · 2 Winkelgeschw.", 0, 2, 1, ""),
+    p("vary", "Variierte Größe", 0, 2, 1, "", [
+      "Masse",
+      "Radius",
+      "Winkelgeschwindigkeit",
+    ]),
     p("noise", "Messabweichung", 0, 5, 1, "%"),
   ],
   curve: [
@@ -80,7 +86,15 @@ export const PARAMS: Record<ModelKind, Param[]> = {
   pendulum: [
     p("l", "Pendellänge", 0.1, 2, 0.1, "m"),
     p("m", "Masse des Pendelkörpers", 0.1, 1, 0.1, "kg"),
-    p("ort", "Ort: 0 Erde · 1 Mond · 2 Mars", 0, 2, 1, ""),
+    p(
+      "ort",
+      "Ort",
+      0,
+      2,
+      1,
+      "",
+      PLACES.map((place) => place.name),
+    ),
   ],
   uncertainty: [
     p("n", "Anzahl der Messungen", 3, 10, 1, ""),
@@ -122,7 +136,10 @@ export const PARAMS: Record<ModelKind, Param[]> = {
   ],
   frames: [
     p("beta", "Geschwindigkeit des Zuges in c", 0, 0.9, 0.1, "c"),
-    p("obj", "Im Zug nach vorn gesendet: 0 Lichtblitz · 1 Körper mit 0,5 c", 0, 1, 1, ""),
+    p("obj", "Im Zug nach vorn gesendet", 0, 1, 1, "", [
+      "Lichtblitz",
+      "Körper mit 0,5 c",
+    ]),
   ],
   lorentz: [
     p("beta", "Geschwindigkeit in c", 0, 0.95, 0.05, "c"),
@@ -189,8 +206,9 @@ function p(
   max: number,
   step: number,
   unit: string,
+  options?: string[],
 ): Param {
-  return { key, label, min, max, step, unit };
+  return { key, label, min, max, step, unit, ...(options ? { options } : {}) };
 }
 function s(
   id: string,
