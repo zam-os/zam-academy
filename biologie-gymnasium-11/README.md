@@ -18,6 +18,6 @@ Extract `release/ZAM-Academy-Biologie-11-Einfuehrungsklasse-offline.zip` and ope
 
 ## ZAM recall and release status
 
-[`cell.json`](cell.json) has 28 lesson atoms and 84 recall cards with stable lesson links. All 56 fast-check cards have two curated choice distractors with explanations of the misconceptions they test. The app and cell are a local draft, so the public atlas, Pages build and catalog do not list them. Teacher review and video selection are separate steps.
+[`cell.json`](cell.json) has 28 lesson atoms and 84 recall cards with stable lesson links. All 56 fast-check cards have two curated choice distractors with explanations of the misconceptions they test. The package is configured for preview publication: after this change is merged and Pages deploys, the Academy atlas lists it under Grade 11 → Biology → Gymnasium and the catalog exposes its cell. The listing and app identify the scope as the Einführungsklasse. A visible preview notice explains that teacher review and videos are still open; it also appears in the offline HTML.
 
 The [curriculum coverage and legacy comparison](../docs/biologie-gymnasium-11-coverage.md) explains the school scope, the [36 competency mappings](coverage.json) and the [legacy card mapping](replaces-de-by.json) approved by Thomas on November 10, 2026. Cell version `2026.11.3` transfers the one equivalent photosynthesis history; the seven other legacy cards stay active.

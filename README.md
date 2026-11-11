@@ -30,6 +30,7 @@ Hands-on training apps that build understanding before [ZAM](https://github.com/
 | Geschichte 10 Realschule (LehrplanPLUS Bayern, gemeinsamer Lernpfad) | [`geschichte-realschule-10/`](geschichte-realschule-10/) | https://academy.zam-os.org/geschichte-realschule-10/ | `zam-academy:geschichte-realschule-10` |
 | Geographie 9 Realschule (LehrplanPLUS Bayern, gemeinsamer Lernpfad) | [`geographie-realschule-9/`](geographie-realschule-9/) | https://academy.zam-os.org/geographie-realschule-9/ | `zam-academy:geographie-realschule-9` |
 | Biologie 10 Realschule (LehrplanPLUS Bayern, gemeinsamer Lernpfad) | [`biologie-realschule-10/`](biologie-realschule-10/) | https://academy.zam-os.org/biologie-realschule-10/ | `zam-academy:biologie-realschule-10` |
+| Biology 11 Gymnasium (preview; Bavarian Einführungsklasse) | [`biologie-gymnasium-11/`](biologie-gymnasium-11/) | https://academy.zam-os.org/biologie-gymnasium-11/ | `zam-academy:biologie-gymnasium-11` |
 | Physik 10 Realschule (LehrplanPLUS Bayern, Zweig I und II/III) | [`physik-realschule-10/`](physik-realschule-10/) | https://academy.zam-os.org/physik-realschule-10/ | `zam-academy:physik-realschule-10` |
 | Algorithmen und Programmieren (DE/EN, LehrplanPLUS IT 2.6.1, jahrgangsübergreifend) | [`algorithmen/`](algorithmen/) | https://academy.zam-os.org/algorithmen/ | `zam-academy:algorithmen` |
 | Datennetze und Internet (DE/EN, LehrplanPLUS IT 2.5.1, HTTPS als Ergänzung) | [`datennetze/`](datennetze/) | https://academy.zam-os.org/datennetze/ | `zam-academy:datennetze` |
@@ -130,7 +131,7 @@ cd uml                 # or: cd physik-realschule-9 (dev server on :5181), cd sq
 # Englisch 5: cd englisch-realschule-5 (dev server on :5223)
 # Mathematik 13 Gymnasium (Vorschau): cd mathematik-gymnasium-13 (dev server on :5225)
 # Physik 11 Gymnasium: cd physik-gymnasium-11 (dev server on :5226)
-# Grade 11 introductory biology draft: cd biologie-gymnasium-11 (dev server on :5227)
+# Grade 11 introductory biology preview: cd biologie-gymnasium-11 (dev server on :5227)
 npm ci
 npm run dev      # http://localhost:5180/uml/
 npm test
@@ -140,7 +141,7 @@ npm run package:zip   # offline zip in release/
 
 CI (`.github/workflows/ci.yml`) tests and builds the apps a pull request or push changed and uploads their offline zips as artifacts: an app is tested when a file in its folder changed, every app when the package jobs of the CI workflow changed or the base commit is unknown (`scripts/changed-apps.mjs`). The `cells` job validates every cell on each run. Pages runs no test suites. Pages (`.github/workflows/pages.yml`) publishes `index.html` plus every app's build on each push to `main`.
 
-The local draft for Bavarian Grade 11 introductory biology is documented in the [package README](biologie-gymnasium-11/) and the [curriculum and legacy card comparison](docs/biologie-gymnasium-11-coverage.md).
+The preview for Bavarian Grade 11 introductory biology is documented in the [package README](biologie-gymnasium-11/) and the [curriculum and legacy card comparison](docs/biologie-gymnasium-11-coverage.md). It is for the Einführungsklasse when biology is offered. Teacher review and videos remain open; the Academy listing and app show the preview status.
 
 The [grade-9 coverage inventory](docs/realschule-9-coverage.md) distinguishes migrated packages, partial legacy material and still-open curriculum work.
 

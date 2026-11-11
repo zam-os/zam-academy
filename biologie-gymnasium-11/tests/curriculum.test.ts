@@ -129,8 +129,8 @@ describe("scope and coverage", () => {
 });
 
 describe("cell and permanent lesson anchors", () => {
-  it("pins all atom and practice identities and keeps the package local-only", () => {
-    expect(publication.status).toBe("local-only");
+  it("pins all atom and practice identities and declares preview publication", () => {
+    expect(publication.status).toBe("preview");
     expect(cell.tile_id).toBe(ZAM_CELL_ID);
     expect(cell.title).toBe(ZAM_CELL_TITLE);
     expect(cell.atoms).toHaveLength(28);
