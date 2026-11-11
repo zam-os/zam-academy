@@ -1,3 +1,4 @@
+/// <reference types="vitest/config" />
 import { defineConfig } from "vite";
 import { viteSingleFile } from "vite-plugin-singlefile";
 
@@ -6,6 +7,8 @@ import { viteSingleFile } from "vite-plugin-singlefile";
 export default defineConfig({
   base: "/physik-gymnasium-11/",
   plugins: [viteSingleFile()],
+  // Tests read the stylesheet to check the contrast of the colour system.
+  test: { css: true },
   server: {
     port: 5226,
     open: false,

@@ -6,7 +6,6 @@ import {
   centriSeries,
   chain,
   circular,
-  colourHex,
   colourName,
   curve,
   EARTH_MASS,
@@ -37,7 +36,6 @@ import {
   pvPlant,
   ride,
   saving,
-  solarCurrent,
   solarMpp,
   solarPoint,
   spring,
@@ -51,41 +49,16 @@ import {
   wave,
 } from "../models";
 import { esc } from "../workshop";
+import { renderFigure, renderGraph } from "./figures";
 
 export { applyScenario, initialModelState, type ModelState };
 
 const table = (heads: string[], rows: (string | number)[][], caption: string) =>
   `<div class="table-scroll"><table><caption>${esc(caption)}</caption><thead><tr>${heads.map((h) => `<th scope="col">${esc(h)}</th>`).join("")}</tr></thead><tbody>${rows.map((row) => `<tr>${row.map((c, i) => `<${i === 0 ? 'th scope="row"' : "td"}>${esc(typeof c === "number" ? fmt(c, 3) : c)}</${i === 0 ? "th" : "td"}>`).join("")}</tr>`).join("")}</tbody></table></div>`;
-function graph(
-  points: [number, number][],
-  xLabel: string,
-  yLabel: string,
-): string {
-  // Scale to the data, so small readouts such as 0,5 A fill the plot.
-  const maxX = Math.max(0, ...points.map((p) => p[0])) || 1,
-    maxY = Math.max(0, ...points.map((p) => p[1])) || 1,
-    minY = Math.min(0, ...points.map((p) => p[1])),
-    span = maxY - minY;
-  const x = (n: number) => 60 + (550 * n) / maxX,
-    y = (n: number) => 210 - (160 * (n - minY)) / span;
-  return `<svg class="physics-figure" viewBox="0 0 660 270" role="img" aria-label="${esc(yLabel)} in Abhängigkeit von ${esc(xLabel)}"><path d="M60 40V210H620" class="axis"/><path d="M60 ${y(0)}H620" class="base-link"/><polyline points="${points.map((p) => `${x(p[0])},${y(p[1])}`).join(" ")}" class="data-line"/><text x="60" y="24">${esc(yLabel)} · ${fmt(minY)} bis ${fmt(maxY)}</text><text x="60" y="232">0</text><text x="610" y="232" text-anchor="end">${fmt(maxX)}</text><text x="300" y="260">${esc(xLabel)}</text></svg>`;
-}
+/** Single values as tiles: the name of the quantity above, its value below. */
 const kv = (rows: (string | number)[][], caption: string) =>
-  table(["Größe", "Wert"], rows, caption);
-const note = (text: string) => `<p class="small">${text}</p>`;
-/** Bright and dark fringes of a double slit, spacing in mm on a 60-mm screen strip. */
-function fringes(spacing: number, colour: string, name: string): string {
-  const stripes: string[] = [];
-  for (let k = -40; k <= 40; k++) {
-    const centre = 330 + (k * spacing * 600) / 60;
-    if (centre < 30 || centre > 630) continue;
-    const width = Math.max(2, (spacing * 600) / 60 / 2);
-    stripes.push(
-      `<rect x="${centre - width / 2}" y="40" width="${width}" height="90" fill="${colour}" opacity="${k === 0 ? 1 : 0.8}"/>`,
-    );
-  }
-  return `<svg class="physics-figure" viewBox="0 0 660 170" role="img" aria-label="Schirmbild am Doppelspalt: helle Streifen in ${esc(name)} im Abstand ${fmt(spacing)} Millimeter"><rect x="30" y="40" width="600" height="90" fill="#101018"/>${stripes.join("")}<text x="30" y="24">Schirmausschnitt · 60 mm breit</text><text x="330" y="156" text-anchor="middle">Maximum 0. Ordnung in der Mitte</text></svg>`;
-}
+  `<div class="readouts"><p class="readout-caption">${esc(caption)}</p><dl>${rows.map(([label, value]) => `<div><dt>${esc(String(label))}</dt><dd>${esc(typeof value === "number" ? fmt(value, 3) : value)}</dd></div>`).join("")}</dl></div>`;
+const note = (text: string) => `<p class="small model-note">${text}</p>`;
 function modelBody(kind: ModelKind, v: Record<string, number>): string {
   switch (kind) {
     case "circular": {
@@ -191,11 +164,6 @@ function modelBody(kind: ModelKind, v: Record<string, number>): string {
     case "oscillation": {
       const y = harmonic(v.A, v.T, v.t);
       return (
-        graph(
-          Array.from({ length: 161 }, (_, i) => [i / 20, harmonic(v.A, v.T, i / 20)]),
-          "Zeit in s",
-          "Auslenkung in cm",
-        ) +
         kv(
           [
             ["Frequenz in Hz", 1 / v.T],
@@ -204,7 +172,7 @@ function modelBody(kind: ModelKind, v: Record<string, number>): string {
           ],
           "Harmonische Schwingung y(t) = A · sin(2π · t / T)",
         ) +
-        note("Start im Nulldurchgang nach oben, ohne Dämpfung. Die Achsenskalierung passt sich an; lies die Zahlen mit.")
+        note("Start im Nulldurchgang nach oben, ohne Dämpfung. Die Achsen passen sich der Amplitude an; lies die Zahlen mit.")
       );
     }
     case "spring": {
@@ -218,11 +186,6 @@ function modelBody(kind: ModelKind, v: Record<string, number>): string {
             ["Größte Geschwindigkeit in m/s", r.vMax],
           ],
           "Federpendel",
-        ) +
-        graph(
-          Array.from({ length: 121 }, (_, i) => [i / 30, v.A * Math.cos((2 * Math.PI * (i / 30)) / r.T)]),
-          "Zeit in s",
-          "Auslenkung in cm",
         ) +
         note("Ideale Feder ohne Reibung: T = 2π · √(m / D). Die Amplitude ändert die Energie, aber nicht die Periodendauer.")
       );
@@ -266,11 +229,6 @@ function modelBody(kind: ModelKind, v: Record<string, number>): string {
     case "wave": {
       const r = wave(v.lambda, v.f);
       return (
-        graph(
-          Array.from({ length: 161 }, (_, i) => [i / 20, v.A * Math.sin((2 * Math.PI * (i / 20)) / v.lambda)]),
-          "Ort in m",
-          "Auslenkung in cm",
-        ) +
         kv(
           [
             ["Ausbreitungsgeschwindigkeit c = λ · f in m/s", r.c],
@@ -285,14 +243,6 @@ function modelBody(kind: ModelKind, v: Record<string, number>): string {
     case "superposition": {
       const amplitude = superpose(v.a1, v.a2, v.shift);
       return (
-        graph(
-          Array.from({ length: 121 }, (_, i) => {
-            const x = i / 60;
-            return [x, v.a1 * Math.sin(2 * Math.PI * x) + v.a2 * Math.sin(2 * Math.PI * (x - v.shift))];
-          }),
-          "Ort in Wellenlängen",
-          "Summe der Auslenkungen in cm",
-        ) +
         `<p>Amplitude der Überlagerung: <strong>${fmt(amplitude)} cm</strong>. ${amplitude < 1e-9 ? "Die Wellen löschen sich aus." : amplitude > v.a1 + v.a2 - 1e-9 ? "Die Wellen verstärken sich maximal." : "Teilweise Verstärkung oder Abschwächung."}</p>` +
         note("Superpositionsprinzip: An jedem Ort addieren sich die Auslenkungen mit Vorzeichen. Zwei Wellen gleicher Frequenz und Wellenlänge.")
       );
@@ -314,14 +264,6 @@ function modelBody(kind: ModelKind, v: Record<string, number>): string {
     case "standing": {
       const r = standing(v.L, v.n, v.c);
       return (
-        graph(
-          Array.from({ length: 101 }, (_, i) => {
-            const x = (v.L * i) / 100;
-            return [x, Math.abs(Math.sin((v.n * Math.PI * x) / v.L))];
-          }),
-          "Ort in m",
-          "Schwingungsweite (relativ)",
-        ) +
         kv(
           [
             ["Wellenlänge in m", r.lambda],
@@ -336,7 +278,6 @@ function modelBody(kind: ModelKind, v: Record<string, number>): string {
     case "doubleslit": {
       const spacing = fringeSpacing(v.lambda, v.b, v.a);
       return (
-        fringes(spacing, colourHex(v.lambda), colourName(v.lambda)) +
         `<p>${esc(colourName(v.lambda))} · λ = ${fmt(v.lambda)} nm · Abstand benachbarter heller Streifen: <strong>${fmt(spacing)} mm</strong>.</p>` +
         note("Größere Wellenlänge oder kleinerer Spaltabstand: Die Streifen rücken auseinander. Der Lehrplan verlangt in Jahrgangsstufe 11 die qualitative Deutung; die Zahl dient nur dem Vergleich. Gleich helle Streifen sind eine Vereinfachung.")
       );
@@ -400,10 +341,11 @@ function modelBody(kind: ModelKind, v: Record<string, number>): string {
           ],
           "Bewegte Uhr",
         ) +
-        graph(
+        renderGraph(
           Array.from({ length: 96 }, (_, i) => [i / 100, gamma(i / 100)]),
           "Geschwindigkeit in c",
           "Lorentzfaktor γ",
+          [v.beta, g],
         ) +
         note("Δt = γ · Δt₀ mit γ = 1 / √(1 − v² / c²). Bei Alltagsgeschwindigkeiten ist γ praktisch 1: Dort stimmt die klassische Mechanik.")
       );
@@ -428,9 +370,7 @@ function modelBody(kind: ModelKind, v: Record<string, number>): string {
     }
     case "chain": {
       const r = chain(100, [v.e1, v.e2, v.e3]);
-      const bar = (label: string, n: number, color: string) =>
-        `<div class="energy-row"><span>${label}</span><span class="energy-bar" style="--bar:${n}%;--bar-color:${color}"></span><strong>${fmt(n)} kWh</strong></div>`;
-      return `<div class="energy-flow" role="img" aria-label="Von 100 Kilowattstunden werden ${fmt(r.useful)} genutzt und ${fmt(r.devalued)} entwertet">${bar("Genutzt", r.useful, "var(--accent)")}${bar("Entwertet", r.devalued, "var(--muted)")}</div><p>Gesamtwirkungsgrad: <strong>${fmt(r.total)} %</strong> von 100 kWh zugeführter Energie.</p>${note("Wirkungsgrade einer Kette multiplizieren sich. Die entwertete Energie ist nicht verschwunden; sie verteilt sich als innere Energie in der Umgebung. Frei gewählte Beispielwerte.")}`;
+      return `<p>Gesamtwirkungsgrad: <strong>${fmt(r.total)} %</strong>. Von 100 kWh zugeführter Energie werden ${fmt(r.useful)} kWh genutzt und ${fmt(r.devalued)} kWh entwertet.</p>${note("Wirkungsgrade einer Kette multiplizieren sich. Die entwertete Energie ist nicht verschwunden; sie verteilt sich als innere Energie in der Umgebung. Frei gewählte Beispielwerte.")}`;
     }
     case "utility": {
       const weights = [v.w1, v.w2, v.w3],
@@ -481,11 +421,6 @@ function modelBody(kind: ModelKind, v: Record<string, number>): string {
         rows = eulerFall(v.m, v.k, v.dt, steps),
         end = terminalSpeed(v.m, v.k);
       return (
-        graph(
-          rows.map((row) => [row.t, row.v]),
-          "Zeit in s",
-          "Geschwindigkeit in m/s",
-        ) +
         kv(
           [
             ["Geschwindigkeit nach 5 s in m/s", rows[Math.round(5 / v.dt)].v],
@@ -501,11 +436,6 @@ function modelBody(kind: ModelKind, v: Record<string, number>): string {
     case "eulerosc": {
       const r = eulerOscillation(v.m, v.D, v.dt);
       return (
-        graph(
-          r.points.map(([t, x]) => [t, x * 100]),
-          "Zeit in s",
-          "Auslenkung in cm",
-        ) +
         kv(
           [
             ["Periodendauer aus der Simulation in s", r.simulated ?? "–"],
@@ -521,11 +451,6 @@ function modelBody(kind: ModelKind, v: Record<string, number>): string {
       const point = solarPoint(v.irr, v.r),
         mpp = solarMpp(v.irr);
       return (
-        graph(
-          Array.from({ length: 66 }, (_, i) => [i / 100, Math.max(0, solarCurrent(v.irr, i / 100))]),
-          "Spannung in V",
-          "Stromstärke in A",
-        ) +
         kv(
           [
             ["Spannung am Lastwiderstand in V", point.u],
@@ -538,7 +463,7 @@ function modelBody(kind: ModelKind, v: Record<string, number>): string {
           "Arbeitspunkt auf der U-I-Kennlinie",
         ) +
         `<p>Du nutzt <strong>${fmt((100 * point.p) / mpp.p)} %</strong> der möglichen Leistung.</p>` +
-        note("Modellzelle mit Kurzschlussstromstärke 0,5 A bei 1000 W/m² und Leerlaufspannung etwa 0,6 V. Temperatur konstant. Die Achsenskalierung passt sich an.")
+        note("Modellzelle mit Kurzschlussstromstärke 0,5 A bei 1000 W/m² und Leerlaufspannung etwa 0,6 V. Temperatur konstant.")
       );
     }
     case "pvplant": {
@@ -588,12 +513,32 @@ function modelBody(kind: ModelKind, v: Record<string, number>): string {
     }
   }
 }
+/** Figure and readouts: the part of the lab that follows the sliders while they move. */
+export function renderModelOutput(
+  kind: ModelKind,
+  v: Record<string, number>,
+  playing = false,
+): string {
+  return `<div class="model-output">${renderFigure(kind, v, playing)}${modelBody(kind, v)}</div>`;
+}
+/** The value of a slider the way its label shows it. */
+export const controlValue = (kind: ModelKind, key: string, value: number) => {
+  const param = PARAMS[kind].find((p) => p.key === key);
+  return `${fmt(value)}${param?.unit ? ` ${param.unit}` : ""}`;
+};
 export function renderModel(
   lesson: Lesson,
   seen: string[],
   state: ModelState,
+  playing = false,
 ): string {
   const kind = lesson.model!,
     v = modelValues(kind, state);
-  return `<section class="panel exploration"><div class="panel-heading"><span class="eyebrow">MODELLLABOR</span><span>${modelReady(kind, seen) ? "✓ Vergleiche geöffnet" : `${seen.length} / ${MODEL_SCENARIOS[kind].length} Vergleiche geöffnet`}</span></div><h2>Verändern, vergleichen, erklären</h2><p>Öffne die Vergleichssituationen. Verändere danach eine Größe und begründe die Wirkung. Geöffnete Vergleiche sind noch kein Verständnisnachweis.</p><div class="scenario-buttons">${MODEL_SCENARIOS[kind].map((s) => `<button type="button" class="button secondary" data-scenario="${s.id}" aria-pressed="${state.selected === s.id}">${seen.includes(s.id) ? "✓ " : ""}${esc(s.label)}</button>`).join("")}</div><div class="model-controls">${PARAMS[kind].map((p) => `<label>${esc(p.label)}: ${fmt(v[p.key])} ${esc(p.unit)}<input type="range" data-model-range="${p.key}" min="${p.min}" max="${p.max}" step="${p.step}" value="${v[p.key]}"></label>`).join("")}</div>${modelBody(kind, v)}</section>`;
+  return `<section class="panel exploration"><div class="panel-heading"><span class="eyebrow">MODELLLABOR</span><span class="done-mark">${modelReady(kind, seen) ? "✓ Vergleiche geöffnet" : `${seen.length} / ${MODEL_SCENARIOS[kind].length} Vergleiche geöffnet`}</span></div><h2>Verändern, vergleichen, erklären</h2><p>Öffne die Vergleichssituationen. Verändere danach eine Größe und begründe die Wirkung. Geöffnete Vergleiche sind noch kein Verständnisnachweis.</p><div class="scenario-buttons">${MODEL_SCENARIOS[kind].map((s) => `<button type="button" class="button secondary${seen.includes(s.id) ? " seen" : ""}" data-scenario="${s.id}" aria-pressed="${state.selected === s.id}">${seen.includes(s.id) ? "✓ " : ""}${esc(s.label)}</button>`).join("")}</div><div class="model-controls">${PARAMS[kind]
+    .map((p) =>
+      p.options
+        ? `<fieldset class="control"><legend>${esc(p.label)}</legend><div class="segmented">${p.options.map((option, i) => `<button type="button" data-model-choice="${p.key}" data-value="${p.min + i * p.step}" aria-pressed="${v[p.key] === p.min + i * p.step}">${esc(option)}</button>`).join("")}</div></fieldset>`
+        : `<label class="control"><span class="control-head"><span>${esc(p.label)}</span><output data-value-for="${p.key}">${esc(controlValue(kind, p.key, v[p.key]))}</output></span><input type="range" data-model-range="${p.key}" min="${p.min}" max="${p.max}" step="${p.step}" value="${v[p.key]}"></label>`,
+    )
+    .join("")}</div>${renderModelOutput(kind, v, playing)}</section>`;
 }

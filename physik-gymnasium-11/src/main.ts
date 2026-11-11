@@ -1,6 +1,7 @@
 import {
   curriculumUrl,
   findLesson,
+  LESSONS,
   lessonsFor,
   SOURCES,
   STAGES,
@@ -18,6 +19,7 @@ import type { Lesson, Level, Track } from "./model/types";
 import {
   MODEL_SCENARIOS,
   modelReady,
+  modelValues,
   recordExploration,
   setModelValue,
 } from "./models";
@@ -32,11 +34,15 @@ import {
   saveProgress,
   writingKey,
 } from "./storage/progress";
+import { HERO_ART, ICONS, stageIcon } from "./ui/art";
+import { renderIllustration } from "./ui/figures";
 import {
   applyScenario,
+  controlValue,
   initialModelState,
   type ModelState,
   renderModel,
+  renderModelOutput,
 } from "./ui/models";
 import { showToast } from "./ui/toast";
 import {
@@ -65,6 +71,11 @@ const comparisons = new Set<string>();
 const rubricChecks = new Map<string, boolean[]>();
 let storageWarningShown = false;
 const modelStates = new Map<string, ModelState>();
+/** Lessons whose figure the learner has set in motion; motion never starts on its own. */
+const playing = new Set<string>();
+/** The label of a lesson step: an icon in the accent of the Lernbereich and its name. */
+const step = (icon: string, label: string): string =>
+  `<span class="eyebrow"><span class="step-icon" aria-hidden="true">${icon}</span>${label}</span>`;
 const activeExercises = new Map<string, ExerciseAttempt>();
 function exerciseFor(lesson: Lesson): ExerciseAttempt {
   const key = writingKey(lesson.id, progress.level);
@@ -80,7 +91,7 @@ function renderCalculation(lesson: Lesson): string {
   const key = writingKey(lesson.id, progress.level),
     entry = exerciseFor(lesson),
     task = entry.task;
-  return `<section class="panel calculation"><div class="panel-heading"><span class="eyebrow">SELBST RECHNEN · LEVEL ${progress.level}</span><span>${progress.calculationDone[key] ?? 0} / 3 eigenständig gelöst</span></div><h2>Mit Einheiten rechnen</h2><p>${esc(task.prompt)}</p>${progress.level === 1 ? `<details><summary>Formelhilfe</summary><p>${esc(task.formulaHint ?? "")}</p></details>` : ""}<form id="calculation-form"><label for="calculation-answer">Dein Ergebnis in ${esc(task.unit)}</label><div class="calculation-input"><input id="calculation-answer" type="text" inputmode="decimal" autocomplete="off" ${entry.finished ? "disabled" : ""}><span>${esc(task.unit)}</span><button type="submit" class="button accent" ${entry.finished ? "disabled" : ""}>Prüfen</button></div></form><p class="small">Dezimalkomma oder Dezimalpunkt sind möglich. Runde auf drei Nachkommastellen; ein passendes genaueres Ergebnis wird ebenfalls akzeptiert.</p>${entry.message ? `<p role="status" class="feedback ${entry.finished && !entry.assisted ? "success" : "hint"}">${esc(entry.message)}</p>` : ""}<div class="self-actions"><button type="button" id="show-calculation" class="text-button" ${entry.solution ? "disabled" : ""}>Lösung ansehen</button><button type="button" id="next-calculation" class="button secondary">Neue Aufgabe</button></div>${entry.solution ? `<div class="model-answer"><h3>Rechenweg</h3><p>${task.solutionHtml}</p><p class="small">Eine vor dem Lösen geöffnete Musterlösung zählt nicht als eigenständig gelöste Aufgabe.</p></div>` : ""}</section>`;
+  return `<section class="panel calculation"><div class="panel-heading">${step(ICONS.calculator, `SELBST RECHNEN · LEVEL ${progress.level}`)}<span class="done-mark">${progress.calculationDone[key] ?? 0} / 3 eigenständig gelöst</span></div><h2>Mit Einheiten rechnen</h2><p>${esc(task.prompt)}</p>${progress.level === 1 ? `<details><summary>Formelhilfe</summary><p>${esc(task.formulaHint ?? "")}</p></details>` : ""}<form id="calculation-form"><label for="calculation-answer">Dein Ergebnis in ${esc(task.unit)}</label><div class="calculation-input"><input id="calculation-answer" type="text" inputmode="decimal" autocomplete="off" ${entry.finished ? "disabled" : ""}><span>${esc(task.unit)}</span><button type="submit" class="button accent" ${entry.finished ? "disabled" : ""}>Prüfen</button></div></form><p class="small">Dezimalkomma oder Dezimalpunkt sind möglich. Runde auf drei Nachkommastellen; ein passendes genaueres Ergebnis wird ebenfalls akzeptiert.</p>${entry.message ? `<p role="status" class="feedback ${entry.finished && !entry.assisted ? "success" : "hint"}">${esc(entry.message)}</p>` : ""}<div class="self-actions"><button type="button" id="show-calculation" class="text-button" ${entry.solution ? "disabled" : ""}>Lösung ansehen</button><button type="button" id="next-calculation" class="button secondary">Neue Aufgabe</button></div>${entry.solution ? `<div class="model-answer"><h3>Rechenweg</h3><p>${task.solutionHtml}</p><p class="small">Eine vor dem Lösen geöffnete Musterlösung zählt nicht als eigenständig gelöste Aufgabe.</p></div>` : ""}</section>`;
 }
 function bindCalculation(lesson: Lesson): void {
   if (!lesson.calculation) return;
@@ -146,11 +157,11 @@ function experimentStatus(): string {
   return `${r.count} / ${r.total} Schülerexperimente als selbst durchgeführt dokumentiert. Die App prüft nur ausgefüllte Felder; Durchführung und fachliche Qualität werden im Unterricht besprochen.`;
 }
 function renderExperiments(): string {
-  return `<section class="reference"><span class="eyebrow">VOM MODELL ZUR MESSUNG</span><h1>Dein Versuchsnotizbuch</h1><p>Der Fachlehrplan nennt für alle Ausbildungsrichtungen zwei Schülerexperimente: die Abhängigkeit der Zentripetalkraft von verschiedenen Größen und die Schwingungsdauer eines Fadenpendels. Am NTG kommt die Kennlinie einer Solarzelle hinzu. Verwende schulische Geräte nach Anleitung.</p><p class="feedback hint" id="experiment-status" role="status">${esc(experimentStatus())}</p><p class="small">Simulationen gehören zum Modellvergleich und zählen hier nicht als selbst durchgeführte Experimente. Die Auswahl „selbst durchgeführt“ ist deine eigene Angabe und keine geprüfte Bestätigung. Alle Notizen bleiben in diesem Browser.</p>${progress.experiments
+  return `<section class="reference">${step(ICONS.flask, "VOM MODELL ZUR MESSUNG")}<h1>Dein Versuchsnotizbuch</h1><p>Der Fachlehrplan nennt für alle Ausbildungsrichtungen zwei Schülerexperimente: die Abhängigkeit der Zentripetalkraft von verschiedenen Größen und die Schwingungsdauer eines Fadenpendels. Am NTG kommt die Kennlinie einer Solarzelle hinzu. Verwende schulische Geräte nach Anleitung.</p><p class="feedback hint" id="experiment-status" role="status">${esc(experimentStatus())}</p><p class="small">Simulationen gehören zum Modellvergleich und zählen hier nicht als selbst durchgeführte Experimente. Die Auswahl „selbst durchgeführt“ ist deine eigene Angabe und keine geprüfte Bestätigung. Alle Notizen bleiben in diesem Browser.</p>${progress.experiments
     .map((e, i) =>
       e.lb === 4 && progress.track !== "NTG"
         ? ""
-        : `<section class="panel" data-lb="${e.lb}"><h2>${esc(EXPERIMENT_SLOTS[i].title)}</h2><div class="model-controls"><label>Stand<select data-experiment="${i}" data-field="status"><option value="planned" ${e.status === "planned" ? "selected" : ""}>Geplant</option><option value="done" ${e.status === "done" ? "selected" : ""}>Selbst durchgeführt · eigene Angabe</option></select></label></div>${Object.entries(
+        : `<section class="panel" data-lb="${e.lb}"><h2><span class="stage-icon" aria-hidden="true">${stageIcon(e.lb)}</span>${esc(EXPERIMENT_SLOTS[i].title)}</h2><div class="model-controls"><label>Stand<select data-experiment="${i}" data-field="status"><option value="planned" ${e.status === "planned" ? "selected" : ""}>Geplant</option><option value="done" ${e.status === "done" ? "selected" : ""}>Selbst durchgeführt · eigene Angabe</option></select></label></div>${Object.entries(
             experimentLabels,
           )
             .map(
@@ -199,15 +210,22 @@ function lessonModel(lesson: Lesson): string {
     lesson,
     progress.explored[lesson.id] ?? [],
     modelStates.get(lesson.id)!,
+    playing.has(lesson.id),
   );
 }
 function refreshLessonStatus(lesson: Lesson): void {
   const model = main.querySelector("#aside-model");
-  if (model && lesson.model)
-    model.textContent = `${modelReady(lesson.model, progress.explored[lesson.id] ?? []) ? "✓" : "○"} Vergleichssituationen geöffnet`;
+  if (model && lesson.model) {
+    const ready = modelReady(lesson.model, progress.explored[lesson.id] ?? []);
+    model.textContent = `${ready ? "✓" : "○"} Vergleichssituationen geöffnet`;
+    model.classList.toggle("done", ready);
+  }
   const calculation = main.querySelector("#aside-calculation");
-  if (calculation && lesson.calculation)
-    calculation.textContent = `${progress.calculationDone[writingKey(lesson.id, 1)] ?? 0} / 3 Rechenaufgaben in Level 1`;
+  if (calculation && lesson.calculation) {
+    const solved = progress.calculationDone[writingKey(lesson.id, 1)] ?? 0;
+    calculation.textContent = `${solved} / 3 Rechenaufgaben in Level 1`;
+    calculation.classList.toggle("done", solved >= 3);
+  }
   const notice = main.querySelector("#lesson-status");
   if (notice)
     notice.textContent = isComplete(progress, lesson.id)
@@ -293,17 +311,21 @@ function status(lesson: Lesson): string {
 function renderPath(): string {
   const stats = completion(progress);
   const resume = pathLesson(progress);
-  return `<section class="hero"><div><span class="eyebrow">PHYSIK 11 · GYMNASIUM BAYERN</span><h1>Kreisen, schwingen,<br> Weltbilder prüfen.</h1><p>Entdecke, welche Kraft einen Satelliten auf seiner Bahn hält, warum Licht Streifen wirft und wie Einstein Raum und Zeit neu ordnete. Vergleiche Modelle, rechne selbst und begründe deine Urteile.</p><button type="button" class="button accent" data-open="${esc(resume.id)}">${stats.completed ? "Weiterlernen" : "Loslegen"}</button></div><aside class="hero-note"><span class="eyebrow">DAS PHYSIKALISCHE WELTBILD IM WANDEL</span><strong>Vorhersagen → Prüfen → Begründen</strong><p>Drei Lernbereiche für alle · Profilbereich am NTG<br>26 Lektionen für alle · 34 am NTG<br>30 veränderbare Modelle · Aufgaben auf zwei Stufen</p><p class="small">Ein Abschluss verbindet Schnellcheck, Werkstatt und eine selbst eingeschätzte Begründung. Modelllektionen verlangen die Vergleiche, Rechenlektionen drei eigenständig gelöste Aufgaben in Level 1.</p></aside></section>
+  return `<section class="hero"><div class="hero-copy"><span class="eyebrow">PHYSIK 11 · GYMNASIUM BAYERN</span><h1><span data-lb="1">Kreisen,</span> <span data-lb="2">schwingen,</span><br> <span data-lb="3">Weltbilder prüfen.</span></h1><p>Entdecke, welche Kraft einen Satelliten auf seiner Bahn hält, warum Licht Streifen wirft und wie Einstein Raum und Zeit neu ordnete. Vergleiche Modelle, rechne selbst und begründe deine Urteile.</p><div class="hero-actions"><button type="button" class="button accent large" data-open="${esc(resume.id)}">${ICONS.play}${stats.completed ? "Weiterlernen" : "Loslegen"}</button><span class="hero-resume">${stats.completed ? "Weiter mit" : "Start mit"}: ${esc(resume.title)}</span></div></div><aside class="hero-card">${HERO_ART}<span class="eyebrow">DAS PHYSIKALISCHE WELTBILD IM WANDEL</span><strong class="hero-steps"><span>Vorhersagen</span><span>Prüfen</span><span>Begründen</span></strong><ul class="hero-facts"><li><b>${lessonsFor("ANDERE").length}</b> Lektionen für alle, ${lessonsFor("NTG").length} am NTG</li><li><b>${LESSONS.filter((l) => l.model).length}</b> Modelle mit Zeichnung zum Verändern</li><li><b>2</b> Stufen: geführt und Transfer</li></ul><p class="small">Drei Lernbereiche für alle, dazu der Profilbereich am NTG. Ein Abschluss verbindet Schnellcheck, Werkstatt und eine selbst eingeschätzte Begründung. Modelllektionen verlangen die Vergleiche, Rechenlektionen drei eigenständig gelöste Aufgaben in Level 1.</p></aside></section>
   <div class="path-heading"><div><h2>Dein Lernpfad</h2><p>Alle Lektionen sind frei zugänglich. Wähle deine Ausbildungsrichtung; dein Fortschritt bleibt beim Wechsel erhalten.</p></div><div class="path-filters"><label>Ausbildungsrichtung <select id="track"><option value="ANDERE" ${progress.track === "ANDERE" ? "selected" : ""}>SG, WSG, HG, MuG · Lernbereiche 1 bis 3</option><option value="NTG" ${progress.track === "NTG" ? "selected" : ""}>NTG · mit Profilbereich</option></select></label></div></div>
   <div class="stages">${STAGES.map((stage) => {
     const lessons = visibleLessons().filter((l) => l.lb === stage.lb);
     if (lessons.length === 0) return "";
-    const complete = lessons.filter(
-      (l) => !l.optional && isComplete(progress, l.id),
-    ).length;
-    return `<section class="stage" data-lb="${stage.lb}"><div class="stage-header"><span class="stage-icon" aria-hidden="true">${stage.icon}</span><div><span class="eyebrow">LERNBEREICH ${stage.lb}</span><h3>${esc(stage.shortTitle)}</h3><p class="small">${esc(stage.title)}</p></div><span class="stage-count">${complete} / ${lessons.filter((l) => !l.optional).length}</span></div><ol>${lessons.map((lesson) => `<li><button type="button" class="lesson-link ${isComplete(progress, lesson.id) ? "complete" : ""}" data-open="${lesson.id}"><span class="lesson-dot" aria-hidden="true">${isComplete(progress, lesson.id) ? "✓" : "·"}</span><span><strong>${esc(lesson.title)}</strong><small>${lesson.optional ? "Zusatz · optional" : esc(lesson.period)}</small></span><span class="lesson-status">${status(lesson)}</span></button></li>`).join("")}</ol></section>`;
+    const core = lessons.filter((l) => !l.optional),
+      complete = core.filter((l) => isComplete(progress, l.id)).length;
+    return `<section class="stage" data-lb="${stage.lb}"><div class="stage-header"><span class="stage-icon" aria-hidden="true">${stageIcon(stage.lb)}</span><div class="stage-title"><span class="eyebrow">LERNBEREICH ${stage.lb}</span><h3>${esc(stage.shortTitle)}</h3><p class="small">${esc(stage.title)}</p></div><div class="stage-meter"><span class="stage-count">${complete} / ${core.length}</span><span class="meter" aria-hidden="true"><span style="width:${core.length ? Math.round((100 * complete) / core.length) : 0}%"></span></span></div></div><ol>${lessons
+      .map((lesson, i) => {
+        const done = isComplete(progress, lesson.id);
+        return `<li><button type="button" class="lesson-link ${done ? "complete" : ""}" data-open="${lesson.id}"><span class="lesson-dot" aria-hidden="true">${done ? "✓" : i + 1}</span><span class="lesson-text"><strong>${esc(lesson.title)}</strong><small>${lesson.optional ? "Zusatz · optional" : esc(lesson.intro)}</small></span><span class="lesson-tags">${lesson.model ? `<span class="tag">${ICONS.lab}Modell</span>` : ""}${lesson.calculation ? `<span class="tag">${ICONS.calculator}Rechnen</span>` : ""}<span class="lesson-status">${status(lesson)}</span></span></button></li>`;
+      })
+      .join("")}</ol></section>`;
   }).join("")}</div>
-  <aside class="scope-note"><h2>Vom Modell zum echten Versuch</h2><p>Der Lehrplan nennt zwei Schülerexperimente für alle (Zentripetalkraft, Fadenpendel) und im Profilbereich des NTG ein drittes (Solarzelle). Die Modelle hier ersetzen sie nicht. Im Versuchsnotizbuch hältst du Planung und eigene Messungen fest; besprich sie im Unterricht.</p><button type="button" class="button secondary" data-view="experiments">Versuchsnotizbuch öffnen</button><p>Lernbereich 3 erarbeitest du im Unterricht in längeren eigenverantwortlichen Phasen, meist in Gruppen, mit Recherche und Präsentation. Die Lektionen hier liefern dafür das Fachwissen und Übungen im Prüfen von Quellen und Argumenten.</p><a href="${curriculumUrl(progress.track)}" target="_blank" rel="noopener">Zum offiziellen Fachlehrplan</a></aside><button type="button" id="reset" class="text-button">Lokalen Fortschritt zurücksetzen</button>`;
+  <aside class="scope-note"><h2>${ICONS.flask}Vom Modell zum echten Versuch</h2><p>Der Lehrplan nennt zwei Schülerexperimente für alle (Zentripetalkraft, Fadenpendel) und im Profilbereich des NTG ein drittes (Solarzelle). Die Modelle hier ersetzen sie nicht. Im Versuchsnotizbuch hältst du Planung und eigene Messungen fest; besprich sie im Unterricht.</p><button type="button" class="button secondary" data-view="experiments">Versuchsnotizbuch öffnen</button><p>Lernbereich 3 erarbeitest du im Unterricht in längeren eigenverantwortlichen Phasen, meist in Gruppen, mit Recherche und Präsentation. Die Lektionen hier liefern dafür das Fachwissen und Übungen im Prüfen von Quellen und Argumenten.</p><a href="${curriculumUrl(progress.track)}" target="_blank" rel="noopener">Zum offiziellen Fachlehrplan</a></aside><button type="button" id="reset" class="text-button">Lokalen Fortschritt zurücksetzen</button>`;
 }
 
 function renderWorkshop(lesson: Lesson): string {
@@ -319,7 +341,7 @@ function renderWorkshop(lesson: Lesson): string {
       : (assignments.get(lesson.id) ?? work.entries.map(() => -1));
   const feedback = workshopFeedback.has(lesson.id);
   const results = checkWorkshop(work, answer);
-  return `<section class="panel workshop" aria-labelledby="workshop-heading"><div class="panel-heading"><span class="eyebrow">02 · WERKSTATT</span><span class="done-mark">${progress.workshopDone.includes(lesson.id) ? "✓ Einmal gelöst" : ""}</span></div><h2 id="workshop-heading">${esc(work.title)}</h2><p>${esc(work.instruction)}</p>
+  return `<section class="panel workshop" aria-labelledby="workshop-heading"><div class="panel-heading">${step(ICONS.workshop, "02 · WERKSTATT")}<span class="done-mark">${progress.workshopDone.includes(lesson.id) ? "✓ Einmal gelöst" : ""}</span></div><h2 id="workshop-heading">${esc(work.title)}</h2><p>${esc(work.instruction)}</p>
   ${work.material ? `<div class="document"><span class="small">${esc(work.materialLabel ?? "Darstellungstext für diese Übung")}</span><p>${esc(work.material)}</p></div>` : ""}
   ${work.kind === "timeline" ? `<ol class="timeline">${order.map((entryIndex, position) => `<li><span class="position">${position + 1}</span><span class="event-text">${esc(work.entries[entryIndex].text)}</span><div class="move-buttons"><button type="button" data-move="${position}" data-delta="-1" aria-label="${esc(work.entries[entryIndex].text)} nach oben" ${position === 0 ? "disabled" : ""}>↑</button><button type="button" data-move="${position}" data-delta="1" aria-label="${esc(work.entries[entryIndex].text)} nach unten" ${position === order.length - 1 ? "disabled" : ""}>↓</button></div></li>`).join("")}</ol>` : `<div class="classification">${work.entries.map((entry, index) => `<label><span>${esc(entry.text)}</span><select data-assign="${index}" aria-label="${esc(entry.text)}"><option value="-1">Bitte zuordnen</option>${work.categories.map((category, value) => `<option value="${value}" ${answer[index] === value ? "selected" : ""}>${esc(category)}</option>`).join("")}</select></label>`).join("")}</div>`}
   <button type="button" id="check-workshop" class="button secondary">Zuordnung prüfen</button>
@@ -332,10 +354,17 @@ function renderWriting(lesson: Lesson): string {
   const draft = progress.drafts[key] ?? "";
   const comparing = comparisons.has(key);
   const checks = rubricChecks.get(key) ?? [false, false, false];
-  return `<section class="panel writing" aria-labelledby="writing-heading"><div class="panel-heading"><span class="eyebrow">03 · SELBST BEGRÜNDEN</span><span class="done-mark" id="writing-done">${progress.writingDone.includes(key) ? "✓ Selbst eingeschätzt" : ""}</span></div><h2 id="writing-heading">${progress.level === 1 ? "Mit Leitfragen arbeiten" : "Auf einen neuen Fall übertragen"}</h2><p class="task-prompt" lang="${"de"}">${esc(task.prompt)}</p>
+  return `<section class="panel writing" aria-labelledby="writing-heading"><div class="panel-heading">${step(ICONS.pencil, "03 · SELBST BEGRÜNDEN")}<span class="done-mark" id="writing-done">${progress.writingDone.includes(key) ? "✓ Selbst eingeschätzt" : ""}</span></div><h2 id="writing-heading">${progress.level === 1 ? "Mit Leitfragen arbeiten" : "Auf einen neuen Fall übertragen"}</h2><p class="task-prompt" lang="${"de"}">${esc(task.prompt)}</p>
   ${progress.level === 1 ? `<details><summary>Leitfragen anzeigen</summary><ul>${task.hints.map((hint) => `<li>${esc(hint)}</li>`).join("")}</ul></details>` : `<p class="small">Formuliere erst deinen eigenen Gedankengang. Die Vergleichsantwort folgt danach.</p>`}
   <label class="answer-label" for="draft">Deine Antwort</label><textarea id="draft" rows="5" maxlength="8000" placeholder="Schreibe zwei bis vier begründete Sätze …">${esc(draft)}</textarea><p class="small">Dein Text bleibt in diesem Browser. Er wird nicht automatisch bewertet.</p><button type="button" id="compare" class="button secondary" ${canReviewDraft(draft) ? "" : "disabled"}>Mit einer möglichen Antwort vergleichen</button><span class="small" id="draft-note">${canReviewDraft(draft) ? "" : "Schreibe zunächst mindestens 20 Zeichen."}</span>
   ${comparing ? `<div class="model-answer"><h3>Eine mögliche Antwort</h3><p lang="${"de"}">${esc(task.model)}</p><p>Andere Formulierungen und begründete Urteile sind möglich. Vergleiche deinen Text anhand dieser Kriterien:</p><div class="rubric">${task.criteria.map((criterion, i) => `<label><input type="checkbox" data-rubric="${i}" ${checks[i] ? "checked" : ""}>${esc(criterion)}</label>`).join("")}</div><div class="self-actions"><button type="button" class="button accent" id="accept-writing" ${canAcceptSelfAssessment(draft, checks) ? "" : "disabled"}>Meine Antwort erfüllt die Kriterien</button><button type="button" class="text-button" id="revise-writing">Ich überarbeite noch</button></div><p class="small">Diese Einschätzung gibst du selbst ab. Sie ist keine automatische Prüfung und verändert keine ZAM-Karten.</p></div>` : ""}</section>`;
+}
+
+/** A paragraph that opens with "Beispiel:" is set apart as the worked example. */
+function paragraph(text: string): string {
+  return text.startsWith("Beispiel: ")
+    ? `<p class="example"><strong>Beispiel</strong>${esc(text.slice(10))}</p>`
+    : `<p>${esc(text)}</p>`;
 }
 
 function renderLesson(): string {
@@ -346,17 +375,27 @@ function renderLesson(): string {
   const selected = quizSelections.get(lesson.id);
   const visible = visibleLessons();
   const index = visible.indexOf(lesson);
+  const inStage = visible.filter((entry) => entry.lb === lesson.lb);
   const scopeNotice =
     index < 0
       ? lesson.optional
         ? "Du siehst eine Zusatzlektion. Deine Auswahl im Lernpfad bleibt unverändert."
         : "Diese Lektion gehört zum Profilbereich des NTG. Dein Lernpfad bleibt bei deiner Ausbildungsrichtung; du kannst hier zusätzlich üben."
       : "";
+  const check = (done: boolean, id = "") =>
+    `<li${id ? ` id="${id}"` : ""}${done ? ' class="done"' : ""}>`;
+  const modelDone = lesson.model
+      ? modelReady(lesson.model, progress.explored[lesson.id] ?? [])
+      : false,
+    solved = progress.calculationDone[writingKey(lesson.id, 1)] ?? 0,
+    quizDone = progress.quizDone.includes(lesson.id),
+    workshopDone = progress.workshopDone.includes(lesson.id),
+    writingDone = progress.writingDone.includes(writingKey(lesson.id, 1));
   return `<article lang="de" data-lb="${lesson.lb}"><div class="lesson-top"><button type="button" class="text-button" data-view="path">← Zum Lernpfad</button><label class="level-select">Arbeitsweise <select id="level"><option value="1" ${progress.level === 1 ? "selected" : ""}>Level 1 · mit Leitfragen</option><option value="2" ${progress.level === 2 ? "selected" : ""}>Level 2 · Transfer</option></select></label></div>
-  <header class="lesson-heading"><span class="eyebrow">${esc(stage.shortTitle)}${lesson.optional ? " · ZUSATZ" : ""}</span><h1 lang="${"de"}">${esc(lesson.title)}</h1><p class="period">${esc(lesson.period)}</p><p class="intro">${esc(lesson.intro)}</p>${scopeNotice ? `<p class="feedback hint">${esc(scopeNotice)}</p>` : ""}</header>
-  <div class="lesson-columns"><div class="lesson-content"><section class="panel reading" lang="${"de"}"><span class="eyebrow">01 · VERSTEHEN</span>${lesson.paragraphs.map((paragraph) => `<p>${esc(paragraph)}</p>`).join("")}<p class="takeaway"><strong>Merke</strong>${esc(lesson.takeaway)}</p></section>
-  <section class="panel quiz" lang="${"de"}"><div class="panel-heading"><h2>Schnellcheck</h2><span class="done-mark">${progress.quizDone.includes(lesson.id) ? "✓ Einmal richtig" : ""}</span></div><p>${esc(lesson.quiz.question)}</p><div class="quiz-options">${options.map((i) => `<button type="button" data-choice="${i}" class="quiz-choice ${selected === i ? "selected" : ""}" aria-pressed="${selected === i}">${esc(labels[i])}</button>`).join("")}</div>${selected !== undefined ? `<p class="feedback ${selected === 0 ? "success" : "hint"}" role="status"><strong>${selected === 0 ? "Richtig. " : "Prüfe noch einmal. "}</strong>${esc(lesson.quiz.explanation)}</p>` : ""}</section>
-  ${lessonModel(lesson)}${renderWorkshop(lesson)}${renderCalculation(lesson)}${renderWriting(lesson)}</div><aside class="lesson-aside"><section class="aside-card"><h2>Dein Lernschritt</h2><ul class="checklist">${lesson.model ? `<li id="aside-model">${modelReady(lesson.model, progress.explored[lesson.id] ?? []) ? "✓" : "○"} Vergleichssituationen geöffnet</li>` : ""}${lesson.calculation ? `<li id="aside-calculation">${progress.calculationDone[writingKey(lesson.id, 1)] ?? 0} / 3 Rechenaufgaben in Level 1</li>` : ""}<li>${progress.quizDone.includes(lesson.id) ? "✓" : "○"} Schnellcheck</li><li>${progress.workshopDone.includes(lesson.id) ? "✓" : "○"} Werkstatt gelöst</li><li id="aside-writing">${progress.writingDone.includes(writingKey(lesson.id, 1)) ? "✓" : "○"} Level 1 selbst eingeschätzt</li></ul><p class="small" id="lesson-status">${isComplete(progress, lesson.id) ? "✓ Diese Lektion ist abgeschlossen." : "Bearbeite die offenen Lernschritte. Deine Texte schätzt du selbst ein."}</p><p class="small">Level 2 ist eine zusätzliche Vertiefung. Die Kernfortschritte zählen Level 1.</p></section><section class="aside-card"><h2>Belege & weiterlernen</h2><ul class="source-list">${lesson.sourceIds
+  <header class="lesson-heading"><div class="lesson-kicker"><span class="stage-icon" aria-hidden="true">${stageIcon(lesson.lb)}</span><span class="eyebrow">Lernbereich ${lesson.lb} · ${esc(stage.shortTitle)}${lesson.optional ? " · ZUSATZ" : ""}</span>${index >= 0 ? `<span class="lesson-count">Lektion ${inStage.indexOf(lesson) + 1} von ${inStage.length}</span>` : ""}</div><h1 lang="${"de"}">${esc(lesson.title)}</h1><p class="period">${esc(lesson.period)}</p><p class="intro">${esc(lesson.intro)}</p>${scopeNotice ? `<p class="feedback hint">${esc(scopeNotice)}</p>` : ""}</header>
+  <div class="lesson-columns"><div class="lesson-content"><section class="panel reading" lang="${"de"}">${step(ICONS.book, "01 · VERSTEHEN")}${lesson.paragraphs.map(paragraph).join("")}${renderIllustration(lesson.id)}<p class="takeaway"><span class="step-icon" aria-hidden="true">${ICONS.bulb}</span><strong>Merke</strong><span>${esc(lesson.takeaway)}</span></p>${lesson.formulas?.length ? `<div class="formula-strip"><span class="eyebrow">Formeln und Begriffe</span><ul>${lesson.formulas.map((formula) => `<li>${esc(formula)}</li>`).join("")}</ul></div>` : ""}</section>
+  <section class="panel quiz" lang="${"de"}"><div class="panel-heading"><h2 class="icon-heading"><span class="step-icon" aria-hidden="true">${ICONS.quiz}</span>Schnellcheck</h2><span class="done-mark">${quizDone ? "✓ Einmal richtig" : ""}</span></div><p>${esc(lesson.quiz.question)}</p><div class="quiz-options">${options.map((i, position) => `<button type="button" data-choice="${i}" class="quiz-choice ${selected === i ? `selected ${i === 0 ? "correct" : "wrong"}` : ""}" aria-pressed="${selected === i}"><span class="choice-key" aria-hidden="true">${selected === i ? (i === 0 ? "✓" : "✗") : "ABC"[position]}</span><span>${esc(labels[i])}</span></button>`).join("")}</div>${selected !== undefined ? `<p class="feedback ${selected === 0 ? "success" : "hint"}" role="status"><strong>${selected === 0 ? "Richtig. " : "Prüfe noch einmal. "}</strong>${esc(lesson.quiz.explanation)}</p>` : ""}</section>
+  ${lessonModel(lesson)}${renderWorkshop(lesson)}${renderCalculation(lesson)}${renderWriting(lesson)}</div><aside class="lesson-aside"><section class="aside-card"><h2>Dein Lernschritt</h2><ul class="checklist">${lesson.model ? `${check(modelDone, "aside-model")}${modelDone ? "✓" : "○"} Vergleichssituationen geöffnet</li>` : ""}${lesson.calculation ? `${check(solved >= 3, "aside-calculation")}${solved} / 3 Rechenaufgaben in Level 1</li>` : ""}${check(quizDone)}${quizDone ? "✓" : "○"} Schnellcheck</li>${check(workshopDone)}${workshopDone ? "✓" : "○"} Werkstatt gelöst</li>${check(writingDone, "aside-writing")}${writingDone ? "✓" : "○"} Level 1 selbst eingeschätzt</li></ul><p class="small" id="lesson-status">${isComplete(progress, lesson.id) ? "✓ Diese Lektion ist abgeschlossen." : "Bearbeite die offenen Lernschritte. Deine Texte schätzt du selbst ein."}</p><p class="small">Level 2 ist eine zusätzliche Vertiefung. Die Kernfortschritte zählen Level 1.</p></section><section class="aside-card"><h2>Belege & weiterlernen</h2><ul class="source-list">${lesson.sourceIds
     .map((id) => SOURCES.find((source) => source.id === id)!)
     .map(
       (source) =>
@@ -364,14 +403,14 @@ function renderLesson(): string {
     )
     .join(
       "",
-    )}</ul><p class="small">Die Texte und Übungsdaten sind eigens verfasst. Die verlinkten Fachquellen ermöglichen eine weitere Prüfung.</p></section><section class="aside-card"><h2>Damit es bleibt</h2><p class="small">ZAM hält das Wissen mit kurzen Wiederholungen fest. Jede Karte führt hierher zurück.</p><button type="button" class="button secondary" data-zam>In ZAM festigen</button></section></aside></div>
+    )}</ul><p class="small">Die Texte und Übungsdaten sind eigens verfasst. Die verlinkten Fachquellen ermöglichen eine weitere Prüfung.</p></section><section class="aside-card zam"><h2>Damit es bleibt</h2><p class="small">ZAM hält das Wissen mit kurzen Wiederholungen fest. Jede Karte führt hierher zurück.</p><button type="button" class="button secondary" data-zam>${ICONS.cards}In ZAM festigen</button></section></aside></div>
   <nav class="lesson-navigation" aria-label="Lektionen">${index > 0 ? `<button type="button" data-open="${visible[index - 1].id}" class="button secondary">← Vorherige Lektion</button>` : "<span></span>"}${index >= 0 && index < visible.length - 1 ? `<button type="button" data-open="${visible[index + 1].id}" class="button accent">Nächste Lektion →</button>` : `<button type="button" data-view="path" class="button accent">Zum Lernpfad</button>`}</nav></article>`;
 }
 
 function renderReference(): string {
-  return `<section class="reference"><span class="eyebrow">NACHSCHLAGEN</span><h1>Formelsammlung und Merksätze</h1><p>Merksätze, Formeln und Fachbegriffe der Lektionen deiner Ausbildungsrichtung. Für Herleitungen, Beispiele und Urteile öffnest du die jeweilige Lektion.</p>${STAGES.map(
+  return `<section class="reference">${step(ICONS.book, "NACHSCHLAGEN")}<h1>Formelsammlung und Merksätze</h1><p>Merksätze, Formeln und Fachbegriffe der Lektionen deiner Ausbildungsrichtung. Für Herleitungen, Beispiele und Urteile öffnest du die jeweilige Lektion.</p>${STAGES.map(
     (stage) =>
-      `<section class="panel" data-lb="${stage.lb}"><h2>${esc(stage.shortTitle)}</h2><dl>${visibleLessons()
+      `<section class="panel" data-lb="${stage.lb}"><h2><span class="stage-icon" aria-hidden="true">${stageIcon(stage.lb)}</span>${esc(stage.shortTitle)}</h2><dl>${visibleLessons()
         .filter((lesson) => lesson.lb === stage.lb)
         .map(
           (lesson) =>
@@ -514,9 +553,11 @@ function bindLesson(lesson: Lesson): void {
       ? ""
       : "Schreibe zunächst mindestens 20 Zeichen.";
     main.querySelector("#writing-done")!.textContent = "";
-    if (progress.level === 1)
-      main.querySelector("#aside-writing")!.textContent =
-        "○ Level 1 selbst eingeschätzt";
+    if (progress.level === 1) {
+      const aside = main.querySelector("#aside-writing")!;
+      aside.textContent = "○ Level 1 selbst eingeschätzt";
+      aside.classList.remove("done");
+    }
     persist();
     refreshLessonStatus(lesson);
   });
@@ -589,6 +630,26 @@ function bindModel(lesson: Lesson): void {
     if (selector)
       main.querySelector<HTMLElement>(selector)?.focus({ preventScroll: true });
   };
+  // Figure and readouts follow a slider while it moves; the slider itself stays in place.
+  const refreshOutput = () => {
+    const output = main.querySelector(".exploration .model-output");
+    if (output)
+      output.outerHTML = renderModelOutput(
+        kind,
+        modelValues(kind, modelStates.get(lesson.id)!),
+        playing.has(lesson.id),
+      );
+    bindMotion();
+  };
+  const bindMotion = () => {
+    main.querySelector("[data-motion]")?.addEventListener("click", () => {
+      if (!playing.delete(lesson.id)) playing.add(lesson.id);
+      refreshOutput();
+      main
+        .querySelector<HTMLElement>("[data-motion]")
+        ?.focus({ preventScroll: true });
+    });
+  };
   main
     .querySelectorAll<HTMLButtonElement>("[data-scenario]")
     .forEach((button) => {
@@ -609,15 +670,43 @@ function bindModel(lesson: Lesson): void {
   main
     .querySelectorAll<HTMLInputElement>("[data-model-range]")
     .forEach((input) => {
-      input.addEventListener("change", () => {
-        const key = input.dataset.modelRange!,
-          value = Number(input.value);
-        update(
+      const key = input.dataset.modelRange!;
+      input.addEventListener("input", () => {
+        const value = Number(input.value);
+        modelStates.set(
+          lesson.id,
           setModelValue(kind, modelStates.get(lesson.id)!, key, value),
+        );
+        const shown = main.querySelector(`[data-value-for="${key}"]`);
+        if (shown) shown.textContent = controlValue(kind, key, value);
+        refreshOutput();
+      });
+      // On release the whole lab is rendered again, so the comparison buttons follow.
+      input.addEventListener("change", () => {
+        update(
+          setModelValue(
+            kind,
+            modelStates.get(lesson.id)!,
+            key,
+            Number(input.value),
+          ),
           `[data-model-range="${key}"]`,
         );
       });
     });
+  main
+    .querySelectorAll<HTMLButtonElement>("[data-model-choice]")
+    .forEach((button) => {
+      button.addEventListener("click", () => {
+        const key = button.dataset.modelChoice!,
+          value = button.dataset.value!;
+        update(
+          setModelValue(kind, modelStates.get(lesson.id)!, key, Number(value)),
+          `[data-model-choice="${key}"][data-value="${value}"]`,
+        );
+      });
+    });
+  bindMotion();
 }
 
 function dialog(title: string, body: string): HTMLDialogElement {
@@ -660,6 +749,7 @@ function showReset(): void {
     view = "path";
     activeExercises.clear();
     modelStates.clear();
+    playing.clear();
     orders.clear();
     assignments.clear();
     workshopFeedback.clear();
