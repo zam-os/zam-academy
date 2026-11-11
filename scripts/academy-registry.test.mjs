@@ -460,8 +460,10 @@ test("the coverage matrix links all three paths to one future package and counts
   const before = descendants(matrix(registry).nodes.matrix)
     .find((n) => n.tag === "caption")
     .children.join("");
-  assert.ok(caption.includes("1 von "));
-  assert.equal(caption.replace("1 von ", "0 von "), before);
+  const readyBefore = Number(before.match(/(\d+) von /)?.[1]);
+  assert.ok(Number.isFinite(readyBefore));
+  assert.ok(caption.includes(`${readyBefore + 1} von `));
+  assert.equal(caption.replace(`${readyBefore + 1} von `, `${readyBefore} von `), before);
   const planned = descendants(matrix(registry).nodes.matrix).filter((n) =>
     n.attrs["aria-label"]?.startsWith(
       "Geschichte/Politik/Geographie Klasse 10,",
