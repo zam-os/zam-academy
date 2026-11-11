@@ -140,7 +140,11 @@ const stroke = (points: Point[], tone: Tone, extra = ""): string =>
 const area = (points: Point[], tone: Tone, extra = "soft"): string =>
   `<path d="${pathData(points)}Z" class="fl q-${tone} ${extra}"/>`;
 
-/** An arrow with a head drawn as a polygon, so it takes the tone in every browser. */
+/**
+ * An arrow with a head drawn as a polygon, so it takes the tone in every
+ * browser. With "over" it lies on a filled body and gets a rim in the colour
+ * of the figure below it: the tone alone may not stand out from the body.
+ */
 function arrow(
   x1: number,
   y1: number,
@@ -159,7 +163,12 @@ function arrow(
     half = head * 0.45,
     bx = x2 - ux * head,
     by = y2 - uy * head;
-  return `<g class="q-${tone}${extra ? ` ${extra}` : ""}"><line x1="${n(x1)}" y1="${n(y1)}" x2="${n(bx)}" y2="${n(by)}" class="ln thick"/><polygon points="${n(x2)},${n(y2)} ${n(bx - uy * half)},${n(by + ux * half)} ${n(bx + uy * half)},${n(by - ux * half)}" class="fl"/></g>`;
+  const shaft = `x1="${n(x1)}" y1="${n(y1)}" x2="${n(bx)}" y2="${n(by)}"`,
+    tip = `points="${n(x2)},${n(y2)} ${n(bx - uy * half)},${n(by + ux * half)} ${n(bx + uy * half)},${n(by - ux * half)}"`,
+    rim = extra.split(" ").includes("over")
+      ? `<g class="rim"><line ${shaft}/><polygon ${tip}/></g>`
+      : "";
+  return `${rim}<g class="q-${tone}${extra ? ` ${extra}` : ""}"><line ${shaft} class="ln thick"/><polygon ${tip} class="fl"/></g>`;
 }
 /** A horizontal measure with end ticks, for lengths, periods and differences. */
 const span = (x1: number, x2: number, y: number, tone: Tone): string =>

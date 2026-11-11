@@ -1543,9 +1543,21 @@ input[type="range"]::-moz-range-thumb {
 .physics-figure .dash {
   stroke-dasharray: 5 5;
 }
-/* An arrow that lies on a filled body gets a rim in the figure colour. */
-.physics-figure .over {
-  filter: drop-shadow(0 0 0.8px var(--fig-bg)) drop-shadow(0 0 0.8px var(--fig-bg));
+/* An arrow that lies on a filled body gets a rim in the figure colour: the
+   red of a force on the blue of the Earth has a contrast of only 1.2 : 1,
+   the rim separates both from each other with at least 3 : 1. */
+.physics-figure .rim line,
+.physics-figure .rim polygon {
+  fill: var(--fig-bg);
+  stroke: var(--fig-bg);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.physics-figure .rim line {
+  stroke-width: 7.4;
+}
+.physics-figure .rim polygon {
+  stroke-width: 3.6;
 }
 .physics-figure .fl {
   fill: var(--q);

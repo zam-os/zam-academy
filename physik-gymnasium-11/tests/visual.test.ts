@@ -387,6 +387,27 @@ describe("colour system", () => {
       expect(new Set(tones).size).toBe(tones.length);
     }
   });
+  it("sets the force arrow apart from the Earth's disc with a rim of 3 : 1", () => {
+    // Red on the blue of the Earth alone would not do.
+    const earth = /fill:\s*(#[0-9a-f]{6})/.exec(
+      RULES.find(([selector]) => selector.includes(".physics-figure .earth"))?.[1] ?? "",
+    )![1];
+    expect(contrast(light["--q-f"], earth)).toBeLessThan(3);
+    for (const base of [light, dark]) {
+      expect(contrast(base["--fig-bg"], earth)).toBeGreaterThanOrEqual(3);
+      expect(contrast(base["--q-f"], base["--fig-bg"])).toBeGreaterThanOrEqual(3);
+    }
+    for (const h of [200, 400, 36000]) {
+      const html = renderFigure("orbit", { h }),
+        rim = /<g class="rim"><line ([^>]*)\/><polygon ([^>]*)\/><\/g><g class="q-f over"><line ([^>]*) class="ln thick"\/><polygon ([^>]*) class="fl"\/>/.exec(html);
+      expect(rim, `${h} km`).not.toBeNull();
+      // The rim has the shape of the arrow it lies under.
+      expect(rim![1]).toBe(rim![3]);
+      expect(rim![2]).toBe(rim![4]);
+    }
+    const rimRule = RULES.find(([selector]) => selector.includes(".rim line"))?.[1] ?? "";
+    expect(rimRule).toContain("stroke: var(--fig-bg)");
+  });
   it("reaches a contrast of 4.5 : 1 for text colours on their surfaces", () => {
     const failures: string[] = [];
     const need = (name: string, fg: string, bg: string) => {
