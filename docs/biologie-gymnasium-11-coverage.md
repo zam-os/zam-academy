@@ -19,11 +19,17 @@ The cell uses an explicit `isb-bayern-einfuehrungsklasse` binding. ZAM's ordinar
 
 Microscopy and physical investigations still require classroom equipment and supervision. The app provides schematic images, simulated data and prompts for preparation and analysis. The simulation values, written example answers and local completion are for practice. Teacher review and video selection are open.
 
+## Preview publication
+
+On November 11, 2026, Thomas requested preparation of Biology 11 as an Academy preview and a pull request in this package's Codex chat. The publication marker is `preview`; `academy.json` registers 28 lessons and 84 cards for Grade 11, biology and Gymnasium, with the Einführungsklasse named in the title and description. The Pages build includes the app and its cell. After merge and deployment, the Academy atlas and catalog expose the preview.
+
+The app and offline HTML show the standard preview notice: teacher review and videos remain open. This publication change preserves the lesson and card identifiers and the approved cell version `2026.11.3`. Synchronizing the published catalog into ZAM is a separate step.
+
 ## Legacy ZAM cards
 
 The [approved mapping](../biologie-gymnasium-11/replaces-de-by.json) records both byte-identical Grade 11 biology fixtures from [ZAM release source](https://github.com/zam-os/zam/tree/ea825d1c1147fcc5f37de5817c2d6a7c05e2f7ed/tests/fixtures/curriculum), with SHA-256 hashes. It classifies all eight items: one A match, no B matches, and seven C items that stay active. The A match is the atomic retrieval of water as the source of the oxygen released by photosynthesis. The other prompts ask for detailed mechanisms or wider syntheses that the introductory course does not assess.
 
-Thomas explicitly approved this mapping in the package's Codex chat on November 10, 2026; the mapping records his exact words and approval date. Cell version `2026.11.3` declares `replaces` only for `01K8GBH0000000000000000J01` on `bio11-photosynthese-vergleichen-sauerstoffquelle`. No cards are retired. The package remains a local draft.
+Thomas explicitly approved this mapping in the package's Codex chat on November 10, 2026; the mapping records his exact words and approval date. Cell version `2026.11.3` declares `replaces` only for `01K8GBH0000000000000000J01` on `bio11-photosynthese-vergleichen-sauerstoffquelle`. No cards are retired.
 
 The migration test installs the unchanged legacy cells and the approved cell in disposable libraries. It verifies that the one history moves with every FSRS and review field preserved, the seven C cards remain active, enrolment adds only fresh cards, and repeated installs and enrolment change nothing. A learner holding cards on both ids makes installation refuse an automatic merge and roll back.
 
