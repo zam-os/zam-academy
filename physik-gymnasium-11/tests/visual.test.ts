@@ -1,7 +1,14 @@
 import { describe, expect, it } from "vitest";
 import { LESSONS } from "../src/curriculum";
 import type { ModelKind } from "../src/model/types";
-import { initialModelState, MODEL_SCENARIOS, PARAMS, PLACES } from "../src/models";
+import { fmt } from "../src/exercises/format";
+import {
+  EARTH_RADIUS,
+  initialModelState,
+  MODEL_SCENARIOS,
+  PARAMS,
+  PLACES,
+} from "../src/models";
 import css from "../src/styles.css?raw";
 import {
   hasMotion,
@@ -155,6 +162,38 @@ describe("figures of the model lab", () => {
     expect(gap).toBeLessThanOrEqual(14);
     expect(/aria-label="([^"]*)"/.exec(html)![1]).toContain("Raumstation in 400 Kilometer Höhe");
   });
+  it("shows the force on a satellite as a direction it can draw and states its share", () => {
+    const at = (h: number) => renderFigure("orbit", { h }),
+      heights = [200, 400, 20200, 36000];
+    for (const h of heights) {
+      const html = at(h),
+        length = arrowLength(html, "f"),
+        [x1, y1, x2, y2] = /<g class="q-f over"><line x1="([\d.]+)" y1="([\d.]+)"[^>]*\/><polygon points="([\d.]+),([\d.]+) /
+          .exec(html)!
+          .slice(1)
+          .map(Number),
+        [sx, sy] = /<circle cx="([\d.]+)" cy="([\d.]+)" r="6" class="fl q-acc body"\/>/
+          .exec(html)!
+          .slice(1)
+          .map(Number),
+        toCentre = (x: number, y: number) => Math.hypot(x - 240, y - 152);
+      // One length at every height: the arrow claims a direction, no size.
+      expect(Math.abs(length - arrowLength(at(heights[0]), "f")), `${h} km`).toBeLessThan(0.15);
+      // It starts outside the satellite's dot, so the body does not hide it,
+      expect(Math.hypot(x1 - sx, y1 - sy), `${h} km`).toBeGreaterThan(6);
+      // and runs straight towards the Earth's centre without passing it.
+      expect(
+        Math.abs(toCentre(x1, y1) - toCentre(x2, y2) - length),
+        `${h} km`,
+      ).toBeLessThan(0.3);
+      expect(html).toContain(
+        `Gravitationskraft: ${fmt(100 * (EARTH_RADIUS / (EARTH_RADIUS + h * 1000)) ** 2, 1)} % der Gewichtskraft am Boden`,
+      );
+      expect(legendOf(html)).toContain("Pfeil zeigt nur die Richtung");
+    }
+    expect(at(400)).toContain("88,5 % der Gewichtskraft am Boden");
+    expect(at(35800)).toContain("2,3 % der Gewichtskraft am Boden");
+  });
   it("draws the pendulum's arrow as the Fallbeschleunigung, which the mass leaves alone", () => {
     const at = (m: number, ort: number) =>
         renderFigure("pendulum", { l: 0.5, m, ort }),
@@ -297,6 +336,20 @@ describe("figures of the model lab", () => {
       expect(/aria-label="([^"]*)"/.exec(html)![1].length).toBeGreaterThan(60);
     }
     expect(renderIllustration("kb-groessen")).toBe("");
+  });
+});
+
+describe("layout of the model lab", () => {
+  it("lets the value of a slider wrap below a long name instead of leaving the card", () => {
+    const head = RULES.find(([selector]) => selector === ".control-head")?.[1] ?? "";
+    expect(head).toMatch(/flex-wrap:\s*wrap/);
+    // The longest name of a slider is longer than the card is wide at 13rem.
+    const longest = Math.max(
+      ...KINDS.flatMap((kind) =>
+        PARAMS[kind].filter((param) => !param.options).map((param) => param.label.length),
+      ),
+    );
+    expect(longest).toBeGreaterThan(20);
   });
 });
 

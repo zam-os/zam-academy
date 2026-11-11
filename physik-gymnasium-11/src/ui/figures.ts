@@ -517,11 +517,18 @@ const FIGURES: Record<ModelKind, (v: Values) => Figure> = {
       rad = (alpha * Math.PI) / 180,
       [x, y] = polar(cx, cy, R, alpha),
       lv = (11 * r.v) / 1000,
-      lf = clamp(52 * (EARTH_RADIUS / radius) ** 2, 5, Math.max(5, R - 8)),
+      // Over the range of the slider the force falls to a fortieth. No arrow
+      // to scale fits beside an orbit drawn to scale, so the arrow has one
+      // length and shows the direction; the figure states the share in words.
+      // It runs from the rim of the satellite and ends before the centre of
+      // the Earth even on the lowest orbit.
+      lf = 11,
+      [fx, fy] = polar(cx, cy, R - 7, alpha),
+      share = (EARTH_RADIUS / radius) ** 2,
       [mx, my] = polar(cx, cy, earth, alpha),
       ring = (h: number) => (EARTH_RADIUS / 1000 + h) * scale;
     return {
-      label: `Erde mit maßstäblicher Kreisbahn in ${fmt(v.h)} Kilometer Höhe. Der Satellit hat ${fmt(r.v / 1000)} Kilometer pro Sekunde und braucht ${fmt(r.T / 3600)} Stunden für einen Umlauf. Die Gravitationskraft zeigt zur Erde. Gestrichelt zum Vergleich drei Bahnen: Raumstation in 400 Kilometer Höhe, im Maßstab dicht über der Erdoberfläche, Navigationssatelliten in ${fmt(20200)} und geostationäre Satelliten in ${fmt(35800)} Kilometer Höhe.`,
+      label: `Erde mit maßstäblicher Kreisbahn in ${fmt(v.h)} Kilometer Höhe. Der Satellit hat ${fmt(r.v / 1000)} Kilometer pro Sekunde und braucht ${fmt(r.T / 3600)} Stunden für einen Umlauf. Die Gravitationskraft zeigt zur Erde und beträgt ${fmt(100 * share, 1)} Prozent der Gewichtskraft am Erdboden; ihr Pfeil zeigt nur die Richtung. Gestrichelt zum Vergleich drei Bahnen: Raumstation in 400 Kilometer Höhe, im Maßstab dicht über der Erdoberfläche, Navigationssatelliten in ${fmt(20200)} und geostationäre Satelliten in ${fmt(35800)} Kilometer Höhe.`,
       height: 304,
       body:
         [400, 20200, 35800]
@@ -537,16 +544,26 @@ const FIGURES: Record<ModelKind, (v: Values) => Figure> = {
         `<g class="spin" style="--turn:23.93s;transform-origin:${cx}px ${cy}px">${dot(mx, my, 4, "x", "ring")}</g>` +
         `<g class="spin" style="--turn:${seconds(r.T / 3600)};transform-origin:${cx}px ${cy}px">` +
         arrow(x, y, x - Math.sin(rad) * lv, y - Math.cos(rad) * lv, "v") +
-        arrow(x, y, x - Math.cos(rad) * lf, y + Math.sin(rad) * lf, "f") +
         dot(x, y, 6, "acc", "body") +
+        // On a low orbit the arrow lies on the Earth's disc: "over" gives it
+        // a rim in the colour of the figure.
+        arrow(fx, fy, fx - Math.cos(rad) * lf, fy + Math.sin(rad) * lf, "f", "over") +
         "</g>" +
         // The 400 km orbit lies 1 px above the Earth's disc at this scale, so
         // a leader ties the name to its ring instead of leaving it in the gap.
         line(cx, cy + ring(400), cx, cy + earth + 22, "mute", "thin") +
-        text(cx, cy + earth + 34, "Raumstation", "mute", "middle", "tick"),
+        text(cx, cy + earth + 34, "Raumstation", "mute", "middle", "tick") +
+        text(
+          W - 12,
+          296,
+          `Gravitationskraft: ${fmt(100 * share, 1)} % der Gewichtskraft am Boden`,
+          "f",
+          "end",
+          "tick",
+        ),
       legend: [
         ["v", "Bahngeschwindigkeit v"],
-        ["f", "Gravitationskraft als Zentripetalkraft"],
+        ["f", "Gravitationskraft als Zentripetalkraft (Pfeil zeigt nur die Richtung)"],
         ["x", "Ort am Äquator, dreht sich mit der Erde"],
       ],
       motion: "Zeitraffer: Eine Stunde läuft in einer Sekunde ab.",
