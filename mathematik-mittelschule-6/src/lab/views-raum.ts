@@ -11,7 +11,7 @@ import {
 } from "./svg";
 import { rail, railHandle, title } from "./view-helpers";
 
-/** Oblique drawing (Schrägbild): depth at 45° and half length, as learned in grade 5. */
+/** Oblique drawing (Schrägbild): depth at 45° and half length. */
 function project(
   x: number,
   y: number,

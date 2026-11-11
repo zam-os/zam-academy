@@ -522,15 +522,15 @@
           "bloom_level": 3,
           "question": "Eine Druckerei liefert 27 Paletten mit je 5.363 Heften. Wie viele Hefte sind das?",
           "concept": "Lösung: Wert des Produkts: 144.801.",
-          "sample_solution": "Multipliziere Quotient und Divisor und addiere den Rest; der Rest ist kleiner als der Divisor. Überschlag: 5.000 · 30. 5.363 · 27 = 144.801",
+          "sample_solution": "Zerlege 27 in 20 + 7. Die Teilprodukte sind 5.363 · 20 = 107.260 und 5.363 · 7 = 37.541. Addiere: 107.260 + 37.541 = 144.801. Es sind 144.801 Hefte. Der Überschlag 5.000 · 30 = 150.000 passt dazu.",
           "choice_distractors": [
             {
               "text": "Lösung: Wert des Produkts: 37.541.",
               "reason": "Du hast nur mit den Einern gerechnet. Multipliziere auch mit den Zehnern."
             },
             {
-              "text": "Lösung: Wert des Produkts: 72.400,5.",
-              "reason": "Der gesuchte Wert wird hier halbiert; prüfe, wie viele Teile oder Schritte wirklich gezählt werden."
+              "text": "Lösung: Wert des Produkts: 48.267.",
+              "reason": "Die 2 in 27 steht für 20, nicht für 2. Das Zehnerprodukt ist 107.260; ohne die Stellenverschiebung rechnest du nur 5.363 · 9."
             }
           ]
         }
@@ -1310,7 +1310,7 @@
             {
               "type": "math",
               "tex": "U = 2 \\cdot a + 2 \\cdot b",
-              "speech": "Umfang gleich zweimal die Summe aus Länge und Breite"
+              "speech": "Umfang gleich zweimal Länge plus zweimal Breite"
             }
           ]
         },

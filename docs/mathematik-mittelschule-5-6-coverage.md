@@ -52,8 +52,10 @@ and inverse volume problems. Fraction division is by a positive natural number.
 Negative repeated changes use natural step counts. General sign rules for two
 negative factors, percentage algorithms, areas of triangles and parallelograms,
 and volumes of other prisms belong to later grades. Circle-sector calculations
-were removed from the copied reference lesson. Filling tasks use familiar
-fractions rather than percentage algorithms.
+were removed from the circle-geometry lesson `ge-3-kreis`. The representation
+lesson `rz-9-darstellungen` still uses sector angles to visualize fractions and
+percentages in pie charts. Filling tasks use familiar fractions rather than
+percentage algorithms.
 
 Rows marked `supported` state what the app provides and what stays in class:
 physical measurement and construction, making and folding models, building with
@@ -110,7 +112,7 @@ package files and checks their curriculum snapshots and self-contained ZIPs.
 The shared registry regression test's former zero-package assumption for the
 Mittelschule was adjusted to assert an increase of exactly one when adding its
 synthetic GPG package; this preserves the test when real packages are present.
-No publication, push or ZAM bundle synchronization is part of this local build.
+ZAM bundle synchronization follows publication and is outside this Academy PR.
 
 The completed local run passed 34 Vitest tests per package and all 51 shared
 catalog/registry tests. Both production builds and ZIP-content checks passed.
@@ -137,3 +139,16 @@ tolerance could accept the neighbouring cent. Default checking now respects the
 requested decimal rounding, with regression cases for positive and negative
 halfway values. The Grade 6 volume tasks use integral bottle counts and German
 number formatting in their worked solutions.
+
+The review follow-up aligns the multiplication and prism worked solutions with
+their questions and keeps the fraction-addition answer in the requested improper
+fraction form. Related fraction explanations, speech text and distractors were
+also clarified. The Grade 6 reducing-fractions lesson now explains the greatest
+common divisor without claiming it was taught in Grade 5; the oblique-drawing
+comment likewise states only the construction rule. Public ids and slugs remain
+unchanged, as checked by the package contract tests.
+
+After these corrections, the package commands above passed again (34 tests per
+package), as did all 51 shared tests and the pinned-core cell/distractor check.
+The rebuilt Grade 6 reducing-fractions lesson was opened in Chrome via CUA: its
+new explanation and fraction lab rendered in dark mode.

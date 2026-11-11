@@ -1,4 +1,4 @@
-/** The arithmetic of grade 5 the labs and task generators share; tested on its own. */
+/** Shared arithmetic for the labs and task generators; tested on its own. */
 
 const SUPERSCRIPTS = "⁰¹²³⁴⁵⁶⁷⁸⁹";
 
