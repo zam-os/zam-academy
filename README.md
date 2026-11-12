@@ -6,6 +6,7 @@ Hands-on training apps that build understanding before [ZAM](https://github.com/
 | --- | --- | --- | --- |
 | Mathematics 5 Mittelschule (Bavaria) | [`mathematik-mittelschule-5/`](mathematik-mittelschule-5/) | Built by Pages on merge | `zam-academy:mathematik-mittelschule-5` |
 | Mathematics 6 Mittelschule (Bavaria) | [`mathematik-mittelschule-6/`](mathematik-mittelschule-6/) | Built by Pages on merge | `zam-academy:mathematik-mittelschule-6` |
+| Mathematik 7 Mittelschule (LehrplanPLUS Bayern, Regelklasse und M-Zug) | [`mathematik-mittelschule-7/`](mathematik-mittelschule-7/) | https://academy.zam-os.org/mathematik-mittelschule-7/ | `zam-academy:mathematik-mittelschule-7` |
 | Mathematik 8 Mittelschule (LehrplanPLUS Bayern, Regelklasse und M-Zug) | [`mathematik-mittelschule-8/`](mathematik-mittelschule-8/) | https://academy.zam-os.org/mathematik-mittelschule-8/ | `zam-academy:mathematik-mittelschule-8` |
 | German 5 Mittelschule (Bavaria) | [`deutsch-mittelschule-5/`](deutsch-mittelschule-5/) | Built by Pages on merge | `zam-academy:deutsch-mittelschule-5` |
 | German 6 Mittelschule (Bavaria) | [`deutsch-mittelschule-6/`](deutsch-mittelschule-6/) | Built by Pages on merge | `zam-academy:deutsch-mittelschule-6` |
@@ -140,6 +141,7 @@ cd uml                 # or: cd physik-realschule-9 (dev server on :5181), cd sq
 # German 6 Mittelschule: cd deutsch-mittelschule-6 (dev server on :5231)
 # Mathematics 5 Mittelschule: cd mathematik-mittelschule-5 (dev server on :5228)
 # Mathematics 6 Mittelschule: cd mathematik-mittelschule-6 (dev server on :5229)
+# Mathematik 7 Mittelschule: cd mathematik-mittelschule-7 (dev server on :5232)
 # Mathematik 8 Mittelschule: cd mathematik-mittelschule-8 (dev server on :5233)
 # Grade 11 introductory biology preview: cd biologie-gymnasium-11 (dev server on :5227)
 npm ci
