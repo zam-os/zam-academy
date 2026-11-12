@@ -6,6 +6,8 @@ Hands-on training apps that build understanding before [ZAM](https://github.com/
 | --- | --- | --- | --- |
 | Mathematics 5 Mittelschule (Bavaria) | [`mathematik-mittelschule-5/`](mathematik-mittelschule-5/) | Built by Pages on merge | `zam-academy:mathematik-mittelschule-5` |
 | Mathematics 6 Mittelschule (Bavaria) | [`mathematik-mittelschule-6/`](mathematik-mittelschule-6/) | Built by Pages on merge | `zam-academy:mathematik-mittelschule-6` |
+| German 5 Mittelschule (Bavaria) | [`deutsch-mittelschule-5/`](deutsch-mittelschule-5/) | Built by Pages on merge | `zam-academy:deutsch-mittelschule-5` |
+| German 6 Mittelschule (Bavaria) | [`deutsch-mittelschule-6/`](deutsch-mittelschule-6/) | Built by Pages on merge | `zam-academy:deutsch-mittelschule-6` |
 | UML 2.5.1 | [`uml/`](uml/) | https://academy.zam-os.org/uml/ | `zam-academy:uml` |
 | Physik 8 Realschule (LehrplanPLUS Bayern, Zweig I und II/III) | [`physik-realschule-8/`](physik-realschule-8/) | https://academy.zam-os.org/physik-realschule-8/ | `zam-academy:physik-realschule-8` |
 | Physik 11 Gymnasium (LehrplanPLUS Bayern, alle Ausbildungsrichtungen, Profilbereich NTG) | [`physik-gymnasium-11/`](physik-gymnasium-11/) | https://academy.zam-os.org/physik-gymnasium-11/ | `zam-academy:physik-gymnasium-11` |
@@ -135,6 +137,8 @@ cd uml                 # or: cd physik-realschule-9 (dev server on :5181), cd sq
 # Englisch 5: cd englisch-realschule-5 (dev server on :5223)
 # Mathematik 13 Gymnasium (Vorschau): cd mathematik-gymnasium-13 (dev server on :5225)
 # Physik 11 Gymnasium: cd physik-gymnasium-11 (dev server on :5226)
+# German 5 Mittelschule: cd deutsch-mittelschule-5 (dev server on :5230)
+# German 6 Mittelschule: cd deutsch-mittelschule-6 (dev server on :5231)
 # Mathematics 5 Mittelschule: cd mathematik-mittelschule-5 (dev server on :5228)
 # Mathematics 6 Mittelschule: cd mathematik-mittelschule-6 (dev server on :5229)
 # Deutsch 7 Mittelschule: cd deutsch-mittelschule-7 (dev server on :5232)
@@ -196,5 +200,12 @@ for local evaluation with 37 lessons and 77 ZAM cards. Run
 [Curriculum coverage and legacy card inventory](docs/deutsch-5-coverage.md)
 
 The [Englisch 5 package](englisch-realschule-5/) adds 43 lessons and 86 cards for all grade-5 pupils: English as a world language and the British Isles, everyday life and school in Great Britain, leisure and travel, the grade-5 vocabulary and grammar workshop (from `to be` and `have got` to the simple present, present progressive, simple past, modals, questions, imperatives, word order and IPA) and stories, reading logs and public-domain poems by Robert Louis Stevenson. Its [coverage matrix](englisch-realschule-5/coverage.json) maps all 36 Kompetenzerwartungen and topic rows plus all 33 listed vocabulary and grammar structures (with the two receptive future-meaning structures separated into their own `receptive` entries). The [legacy review](docs/englisch-5-bestandsabgleich.md) records a proposal (`proposal-only`, `approved: null`) for the eight old grade-5 grammar cards (4 A, 4 C); until approved, `cell.json` ships without `replaces` or `retired_items` so all eight old cards stay active.
+
+The German Mittelschule packages for [Grade 5](deutsch-mittelschule-5/) and
+[Grade 6](deutsch-mittelschule-6/) provide 51 and 52 lessons, with 102 and 104
+ZAM cards respectively. Both include local listening audio, checked case
+decisions, writing tasks on two levels and self-contained offline ZIPs.
+The [curriculum and existing-card inventory](docs/deutsch-mittelschule-5-6-coverage.md)
+records the verified official sources and the additional classroom practice.
 
 The [Deutsch 7 Mittelschule](deutsch-mittelschule-7/) and [Deutsch 8 Mittelschule](deutsch-mittelschule-8/) packages each add 37 lessons (36 per track: Regelklasse and M-Zug) and 74 linked ZAM cards across all four LehrplanPLUS Bayern areas (*Sprechen und Zuhören*, *Lesen, Literatur und Medien*, *Schreiben*, *Sprachgebrauch und Sprache*). Their [coverage and legacy inventory](docs/deutsch-mittelschule-7-8-coverage.md) checks all 142 Grade 7 and 144 Grade 8 verbatim expectations and confirms that no Mittelschule German `de-by` legacy cards exist.
