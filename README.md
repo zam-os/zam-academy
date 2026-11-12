@@ -6,6 +6,7 @@ Hands-on training apps that build understanding before [ZAM](https://github.com/
 | --- | --- | --- | --- |
 | Mathematics 5 Mittelschule (Bavaria) | [`mathematik-mittelschule-5/`](mathematik-mittelschule-5/) | Built by Pages on merge | `zam-academy:mathematik-mittelschule-5` |
 | Mathematics 6 Mittelschule (Bavaria) | [`mathematik-mittelschule-6/`](mathematik-mittelschule-6/) | Built by Pages on merge | `zam-academy:mathematik-mittelschule-6` |
+| Mathematik 7 Mittelschule (LehrplanPLUS Bayern, Regelklasse und M-Zug) | [`mathematik-mittelschule-7/`](mathematik-mittelschule-7/) | https://academy.zam-os.org/mathematik-mittelschule-7/ | `zam-academy:mathematik-mittelschule-7` |
 | UML 2.5.1 | [`uml/`](uml/) | https://academy.zam-os.org/uml/ | `zam-academy:uml` |
 | Physik 8 Realschule (LehrplanPLUS Bayern, Zweig I und II/III) | [`physik-realschule-8/`](physik-realschule-8/) | https://academy.zam-os.org/physik-realschule-8/ | `zam-academy:physik-realschule-8` |
 | Physik 11 Gymnasium (LehrplanPLUS Bayern, alle Ausbildungsrichtungen, Profilbereich NTG) | [`physik-gymnasium-11/`](physik-gymnasium-11/) | https://academy.zam-os.org/physik-gymnasium-11/ | `zam-academy:physik-gymnasium-11` |
@@ -135,6 +136,7 @@ cd uml                 # or: cd physik-realschule-9 (dev server on :5181), cd sq
 # Physik 11 Gymnasium: cd physik-gymnasium-11 (dev server on :5226)
 # Mathematics 5 Mittelschule: cd mathematik-mittelschule-5 (dev server on :5228)
 # Mathematics 6 Mittelschule: cd mathematik-mittelschule-6 (dev server on :5229)
+# Mathematik 7 Mittelschule: cd mathematik-mittelschule-7 (dev server on :5230)
 # Grade 11 introductory biology preview: cd biologie-gymnasium-11 (dev server on :5227)
 npm ci
 npm run dev      # http://localhost:5180/uml/
