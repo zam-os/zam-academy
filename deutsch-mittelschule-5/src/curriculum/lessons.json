@@ -1,0 +1,2994 @@
+[
+	{
+		"id": "d5-zuhoeren",
+		"stage": "sprechen",
+		"title": "Gehörtes festhalten",
+		"skill": "Hör auf die Hauptaussage und frag gezielt nach.",
+		"bindings": ["1.1"],
+		"paragraphs": [
+			"Beim ersten Hören fragst du dich, worum es insgesamt geht. Beim zweiten Hören notierst du wichtige Stichwörter. Wiederhole die Nachricht in eigenen Worten und frage gezielt nach Angaben, die dir fehlen.",
+			"Beispiel: Du hörst „Das Treffen wurde von Dienstag auf Donnerstag verlegt.“ Notiere „Treffen neu: Donnerstag“. Wenn der Raum zu leise genannt wurde, frage nach dem Raum."
+		],
+		"materialLabel": "Durchsage aus der Schule",
+		"material": "Am Mittwoch bleibt die Bücherei in der großen Pause geschlossen. Du kannst Bücher am Donnerstag in Raum 12 zurückgeben. Wenn du ein Buch verlängern willst, melde dich bei Frau Aydin.",
+		"sourceIds": ["lehrplan"],
+		"check": {
+			"wrong": "Warum ist das Treffen abgesagt?",
+			"explanation": "Die Frage nach der Uhrzeit klärt genau die Angabe, die du verpasst hast."
+		},
+		"takeaway": "Halte die Hauptaussage fest. Frag genau nach, wenn dir eine Angabe fehlt.",
+		"lehrplan": "D5 LB 1.1",
+		"cases": [
+			{
+				"prompt": "Welche Notiz sichert die Änderung?",
+				"options": [
+					"Mittwoch zu, Rückgabe Donnerstag in Raum 12.",
+					"Bücherei immer geschlossen."
+				],
+				"answer": "Mittwoch zu, Rückgabe Donnerstag in Raum 12.",
+				"feedback": "Die Notiz hält den Schließtag und die neue Rückgabemöglichkeit fest."
+			},
+			{
+				"prompt": "Du hörst den Namen zu leise. Was sagst du?",
+				"options": [
+					"Erzähl lieber von der Turnhalle.",
+					"Entschuldigung, bei wem kann ich verlängern?"
+				],
+				"answer": "Entschuldigung, bei wem kann ich verlängern?",
+				"feedback": "Eine gezielte Nachfrage klärt die unverständliche Stelle."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Hör die Durchsage oder lass sie dir vorlesen. Gib mit eigenen Worten weiter, wann die Bücherei schließt, wo und wann die Rückgabe möglich ist und wer beim Verlängern hilft.",
+				"model": "Am Mittwoch ist die Bücherei in der großen Pause zu. Am Donnerstag kannst du Bücher in Raum 12 zurückgeben. Wenn du ein Buch länger behalten willst, frag Frau Aydin.",
+				"criteria": [
+					"Ich nenne den Schließtag.",
+					"Ich nenne Rückgabetag und Ort.",
+					"Ich nenne die Ansprechperson."
+				]
+			},
+			"2": {
+				"prompt": "Dein Partner glaubt, die Bücherei sei am Donnerstag zu. Reagiere und frage ihn nach dem Verlängern.",
+				"model": "Du hast Donnerstag als Schließtag verstanden. Am Mittwoch ist sie zu. Hast du gehört, bei wem wir verlängern können?",
+				"criteria": [
+					"Ich greife seine Aussage auf.",
+					"Ich berichtige sie sachlich.",
+					"Ich frage gezielt nach."
+				]
+			}
+		},
+		"extension": "Lass dir eine neue Nachricht vorlesen. Klärt gemeinsam, ob Tempo, Lautstärke, Aussprache oder ein unbekanntes Wort das Hören erschwert hat. Lies sie danach selbst mit der vereinbarten Verbesserung vor."
+	},
+	{
+		"id": "d5-vortrag",
+		"stage": "sprechen",
+		"title": "Einen Kurzvortrag vorbereiten",
+		"skill": "Sprich verständlich und veranschauliche einen wichtigen Schritt.",
+		"bindings": ["1.2", "1.1"],
+		"paragraphs": [
+			"Entscheide zuerst, was deine Zuhörenden wissen sollen. Ordne Stichwörter als Einstieg, Hauptteil und Abschluss. Ein Plan, Bild oder Plakat hilft, wenn es eine wichtige Stelle sichtbar macht.",
+			"Beispiel: Für den Weg zur Bücherei zeichnest du Treppe und Pfeil. Auf dem Zettel steht „Aula – Treppe – links – Tür 12“. Nach jedem Richtungswechsel machst du eine kurze Pause."
+		],
+		"materialLabel": "Stichwortzettel für einen Weg",
+		"material": "Start: Aula\nEin Stockwerk hoch\nOben links\nTür 12 neben dem Fenster",
+		"sourceIds": ["lehrplan"],
+		"check": {
+			"wrong": "Eine Folie mit dem gesamten Vortrag in kleiner Schrift.",
+			"explanation": "Pfeile zeigen die Richtung. Du kannst jeden Schritt beim Sprechen auf dem Plan zeigen."
+		},
+		"takeaway": "Stichwörter geben dir die Reihenfolge. Dein Bild verdeutlicht eine schwierige Stelle.",
+		"lehrplan": "D5 LB 1.2, 1.1",
+		"cases": [
+			{
+				"prompt": "Welcher Einstieg hilft einem neuen Kind?",
+				"options": [
+					"Alle kennen den Weg doch schon.",
+					"Ich zeige dir den Weg von der Aula zur Bücherei."
+				],
+				"answer": "Ich zeige dir den Weg von der Aula zur Bücherei.",
+				"feedback": "Start und Ziel helfen einer Person, die das Gebäude noch nicht kennt."
+			},
+			{
+				"prompt": "Beim Abbiegen kommen viele Fragen. Was änderst du?",
+				"options": [
+					"Am Treppenabsatz kurz pausieren und den Pfeil zeigen.",
+					"Den Rest schneller aufsagen."
+				],
+				"answer": "Am Treppenabsatz kurz pausieren und den Pfeil zeigen.",
+				"feedback": "Pause und Zeigegeste helfen dort, wo der Weg unklar war."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Notiere einen Einstieg und zwei Schritte und sprich damit den Weg frei.",
+				"model": "Ich zeige dir den Weg zur Bücherei. Geh von der Aula die Treppe hoch. Bieg oben links ab. Tür 12 ist am Fenster.",
+				"criteria": [
+					"Ich nenne Start und Ziel.",
+					"Die Reihenfolge stimmt.",
+					"Mein Zettel stützt den freien Vortrag."
+				]
+			},
+			"2": {
+				"prompt": "Erkläre jüngeren Kindern die Ausleihe. Plane ein Bild und eine Pause.",
+				"model": "Buch auswählen – Ausweis zeigen (Bild vom Ausweis, Pause) – Rückgabedatum notieren. Zum Schluss bitte ich ein Kind, den letzten Schritt zu wiederholen.",
+				"criteria": [
+					"Ich ordne einen Vorgang.",
+					"Mein Bild hilft an einer Stelle.",
+					"Ich plane eine Pause."
+				]
+			}
+		},
+		"extension": "Trage deinen Plan vor. Bitte eine Person um Rückmeldung zu Tempo, Lautstärke und Aussprache."
+	},
+	{
+		"id": "d5-vorlesen",
+		"stage": "sprechen",
+		"title": "Erzählen und wirkungsvoll vorlesen",
+		"skill": "Setze Pausen, Betonung und Tempo ein.",
+		"bindings": ["1.2", "2.1"],
+		"paragraphs": [
+			"Erzähle mit einem roten Faden: Erst die Ausgangslage, dann die Schritte zum überraschenden Ereignis, danach der Ausgang. Beim Vorlesen zeigen Satzzeichen, Absätze und Sinnabschnitte, wo eine Pause passt.",
+			"Beispiel: Nach „Dann klopfte es.“ lässt eine Pause das Geräusch wichtig wirken. „Dreimal“ kannst du langsamer lesen. In einem Gedicht läuft ein Satz manchmal über zwei Verse hinweg."
+		],
+		"materialLabel": "Kurzer Erzähltext",
+		"material": "Mira holte ihr Rad aus dem Schuppen. Beim Aufschließen raschelte es. Sie wartete. Dann klopfte es. Dreimal. Unter dem Korb saß ein Spatz.",
+		"sourceIds": ["lehrplan"],
+		"check": {
+			"wrong": "Nach jedem zweiten Wort.",
+			"explanation": "Die Pause am Satzende lässt den Moment wirken und erhält den Sinn."
+		},
+		"takeaway": "Pausen gliedern den Text. Betonung und Tempo machen eine wichtige Stelle hörbar.",
+		"lehrplan": "D5 LB 1.2, 2.1",
+		"cases": [
+			{
+				"prompt": "Was erzählst du zuerst?",
+				"options": [
+					"Wo Mira ist und was sie macht.",
+					"Nur, dass der Spatz unter dem Korb saß."
+				],
+				"answer": "Wo Mira ist und was sie macht.",
+				"feedback": "Die Ausgangslage hilft, das Geräusch und die Überraschung einzuordnen."
+			},
+			{
+				"prompt": "Wie liest du „Unter dem Korb saß ein Spatz“?",
+				"options": [
+					"Mit einer Pause nach jeder Silbe.",
+					"In zusammenhängenden Wortgruppen."
+				],
+				"answer": "In zusammenhängenden Wortgruppen.",
+				"feedback": "Zusammengehörende Wörter bleiben beim sinnbezogenen Lesen beieinander."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Notiere zwei Pausen und erkläre eine davon.",
+				"model": "Nach „Sie wartete“ und nach „Dann klopfte es“. Die zweite Pause macht das Wort „Dreimal“ auffällig.",
+				"criteria": [
+					"Ich finde zwei Stellen.",
+					"Sie passen zum Sinn.",
+					"Ich erkläre eine Wirkung."
+				]
+			},
+			"2": {
+				"prompt": "Erzähle die Szene mündlich aus Miras Sicht. Notiere drei Stichwörter und deine wichtigste Betonung.",
+				"model": "Schuppen – Rascheln – Spatz. Ich las „Dreimal“ langsam, weil das Geräusch überraschend war.",
+				"criteria": [
+					"Ich bleibe bei Miras Sicht.",
+					"Meine Stichwörter sichern den Ablauf.",
+					"Ich erkläre ein Ausdrucksmittel."
+				]
+			}
+		},
+		"extension": "Erzähle zu einem eigenen Bild und lies ein Gedicht und einen kurzen Sachtext vor. Bitte um eine konkrete Rückmeldung und probiere einen zweiten Vortrag."
+	},
+	{
+		"id": "d5-gespraech",
+		"stage": "sprechen",
+		"title": "Im Gespräch einen Streit klären",
+		"skill": "Hör beiden Seiten zu und begründe deinen Vorschlag.",
+		"bindings": ["1.3", "1.2", "4.1"],
+		"paragraphs": [
+			"Lass die andere Person ausreden. Wiederhole ihre Sicht in eigenen Worten. Nenne deinen Wunsch als Ich-Satz und füge einen Grund an. Suche dann eine Lösung, die für beide passt.",
+			"Beispiel: „Du brauchst den Stift fürs Plakat. Ich brauche ihn für meine Überschrift. Darf ich ihn zwei Minuten nutzen?“ Unter Freunden klingt „Leihst du ihn mir kurz?“ passend. Eine neue Lehrkraft fragst du höflich in Standardsprache."
+		],
+		"materialLabel": "Streit im Klassenraum",
+		"material": "Ari möchte das Fenster öffnen, weil es stickig ist. Jo sitzt am Fenster und friert. Beide wollen konzentriert arbeiten.",
+		"sourceIds": ["lehrplan"],
+		"check": {
+			"wrong": "Jo soll sich einfach wärmer anziehen.",
+			"explanation": "Kurzes Lüften verbessert die Luft. Jo kann dabei dem Zug ausweichen."
+		},
+		"takeaway": "Zeige, was du verstanden hast. Nenne deinen Wunsch mit Grund und suche eine gemeinsame Lösung.",
+		"lehrplan": "D5 LB 1.3, 1.2, 4.1",
+		"cases": [
+			{
+				"prompt": "Ari unterbricht Jo. Was hilft?",
+				"options": [
+					"Jo, du hast sowieso Unrecht.",
+					"Jo, sag bitte erst zu Ende, was dich stört."
+				],
+				"answer": "Jo, sag bitte erst zu Ende, was dich stört.",
+				"feedback": "Ausreden lassen macht Platz für die zweite Sicht."
+			},
+			{
+				"prompt": "Wie fragst du eine Lehrkraft, die du kaum kennst?",
+				"options": [
+					"Entschuldigung, dürfen wir kurz das Fenster öffnen?",
+					"Hey, Fenster auf, okay?"
+				],
+				"answer": "Entschuldigung, dürfen wir kurz das Fenster öffnen?",
+				"feedback": "Eine höfliche Bitte in Standardsprache passt zu diesem Gespräch."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Formuliere Jos Sicht und einen Ich-Satz für Ari.",
+				"model": "Jo möchte nicht im Luftzug sitzen. Ich möchte kurz lüften, weil die Luft stickig ist.",
+				"criteria": [
+					"Ich gebe Jos Sicht richtig wieder.",
+					"Ich formuliere einen Ich-Satz.",
+					"Ich nenne einen sachlichen Grund."
+				]
+			},
+			"2": {
+				"prompt": "Zwei Gruppen brauchen denselben Tisch. Entschuldige dich für eine Unterbrechung und schlage eine Lösung vor.",
+				"model": "Tut mir leid, dass ich dich unterbrochen habe. Bastelt bis zehn Uhr hier. Danach brauchen wir den Tisch für zehn Minuten für unser Plakat.",
+				"criteria": [
+					"Meine Entschuldigung benennt eine Handlung.",
+					"Beide Gruppen kommen vor.",
+					"Die Zeit ist klar."
+				]
+			}
+		},
+		"extension": "Probiert ein Streitgespräch zu zweit. Vereinbart vorher zwei Gesprächsregeln und besprecht, wann sie euch geholfen haben."
+	},
+	{
+		"id": "d5-interview",
+		"stage": "sprechen",
+		"title": "Fragen stellen und Antworten zeigen",
+		"skill": "Plane ein kurzes Interview und halte Ergebnisse fest.",
+		"bindings": ["1.3", "1.2"],
+		"paragraphs": [
+			"Überlege vor dem Fragen, was du erfahren willst. Offene Fragen mit „wie“, „wo“ oder „was“ holen Einzelheiten ein. Frage nach, wenn eine Antwort ungenau bleibt. Notiere nur, was du wirklich erfahren hast.",
+			"Beispiel: Auf „Wo melde ich ein verlorenes Heft?“ hörst du „beim Fundregal“. „Wo steht es?“ klärt den Weg. Auf einem Plakat ordnest du die Ergebnisse nach Ort und Zeit."
+		],
+		"materialLabel": "Aus einem Interview mit der Hausmeisterin",
+		"material": "Gefundene Sportsachen liegen bis Freitag im Regal neben der Turnhalle. Wertsachen gibt die Hausmeisterin im Sekretariat ab.",
+		"sourceIds": ["lehrplan"],
+		"check": {
+			"wrong": "Ist mein Heft schön?",
+			"explanation": "„Wo genau steht das Fundregal?“ bittet um eine genaue Ortsangabe, damit du das Regal finden kannst."
+		},
+		"takeaway": "Frage nach fehlenden Angaben. Zeige gesicherte Antworten in einer klaren Ordnung.",
+		"lehrplan": "D5 LB 1.3, 1.2",
+		"cases": [
+			{
+				"prompt": "Welche Notiz stimmt?",
+				"options": [
+					"Sportsachen bis Freitag am Regal neben der Turnhalle.",
+					"Wertsachen immer bei der Turnhalle."
+				],
+				"answer": "Sportsachen bis Freitag am Regal neben der Turnhalle.",
+				"feedback": "Ort und Frist gelten hier für Sportsachen. Wertsachen kommen ins Sekretariat."
+			},
+			{
+				"prompt": "Was fragst du vor dem Besuch im Sekretariat?",
+				"options": [
+					"Ist die Turnhalle groß?",
+					"Wann ist das Sekretariat nachmittags geöffnet?"
+				],
+				"answer": "Wann ist das Sekretariat nachmittags geöffnet?",
+				"feedback": "Die Öffnungszeit ist unbekannt und für den Besuch nötig."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Schreibe eine Frage zum Ort und eine zur Frist. Antworte aus dem Interview.",
+				"model": "Wo liegen Sportsachen? Im Regal neben der Turnhalle. Wie lange liegen sie dort? Bis Freitag.",
+				"criteria": [
+					"Ich frage nach zwei Angaben.",
+					"Der Ort stimmt.",
+					"Die Frist stimmt."
+				]
+			},
+			"2": {
+				"prompt": "Plane ein Interview zur Schulbücherei und zwei Plakatfelder.",
+				"model": "Wann kann ich ausleihen? Wie lange darf ich Bücher behalten? Wo verlängere ich die Frist? Plakatfelder: „Ausleihe“ und „Rückgabe und Verlängerung“.",
+				"criteria": [
+					"Meine Fragen betreffen den Alltag.",
+					"Ich stelle eine Nachfrage.",
+					"Meine Plakatfelder helfen beim Finden."
+				]
+			}
+		},
+		"extension": "Befrage mit Erlaubnis eine Person in der Schule und stelle die Ergebnisse mit einem Plakat oder einer Skizze vor."
+	},
+	{
+		"id": "d5-rolle",
+		"stage": "sprechen",
+		"title": "Eine Figur spielen",
+		"skill": "Zeige ihr Motiv mit Stimme, Haltung und Handlung.",
+		"bindings": ["1.4", "2.2"],
+		"paragraphs": [
+			"Überlege, was deine Figur möchte und warum. Wähle eine Stimme, einen Blick oder eine Bewegung, die das Motiv erkennbar macht. Spiele dann eine zweite Lösung.",
+			"Beispiel: Eine Figur will einen Fehler verbergen. Sie hält ihre Tasche fest und spricht leise. In einer zweiten Fassung schaut sie ihr Gegenüber an und erklärt den Fehler. Rückmeldung nennt eine beobachtete Stelle und ihre Wirkung."
+		],
+		"materialLabel": "Erfundene Szene",
+		"material": "Nuri hat einen Riss ins gemeinsame Plakat gemacht. Als Sam fragt, warum Nuri das Papier umdreht, sagt Nuri: „Es ist nichts.“",
+		"sourceIds": ["lehrplan"],
+		"check": {
+			"wrong": "Nuri sollte immer lauter sein.",
+			"explanation": "Die konkrete Textstelle und Lautstärke machen die Wirkung nachvollziehbar."
+		},
+		"takeaway": "Spiele aus Sicht der Figur. Verbinde bei der Rückmeldung eine Beobachtung mit ihrer Wirkung.",
+		"lehrplan": "D5 LB 1.4, 2.2",
+		"cases": [
+			{
+				"prompt": "Welche Handlung passt zum Verbergen?",
+				"options": [
+					"Nuri zeigt Sam den Riss offen.",
+					"Nuri deckt den Riss mit der Hand ab."
+				],
+				"answer": "Nuri deckt den Riss mit der Hand ab.",
+				"feedback": "Die abdeckende Hand lässt den Riss aus Sams Blick verschwinden."
+			},
+			{
+				"prompt": "Was wäre eine faire Alternative?",
+				"options": [
+					"Nuri zeigt Sam den Riss und schlägt eine Reparatur vor.",
+					"Nuri gibt Sam ohne Grund die Schuld."
+				],
+				"answer": "Nuri zeigt Sam den Riss und schlägt eine Reparatur vor.",
+				"feedback": "Nuri übernimmt Verantwortung und bietet einen nächsten Schritt an."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Notiere ein Motiv und zwei sichtbare oder hörbare Zeichen.",
+				"model": "Nuri fürchtet Sams Ärger. Nuri schaut auf den Boden und hält das Blatt dicht an den Körper.",
+				"criteria": [
+					"Das Motiv passt zur Szene.",
+					"Ich beschreibe eine Haltung.",
+					"Ich nenne ein zweites Zeichen."
+				]
+			},
+			"2": {
+				"prompt": "Entwirf zwei Fassungen und gib zu einer Rückmeldung.",
+				"model": "A: Nuri dreht sich weg und flüstert. B: Nuri zeigt das Blatt und spricht ruhig. In B sieht man den Riss sofort. Das wirkt offen.",
+				"criteria": [
+					"Ich zeige zwei Handlungswege.",
+					"Ich ändere Stimme oder Haltung passend.",
+					"Meine Rückmeldung nennt Beobachtung und Wirkung."
+				]
+			}
+		},
+		"extension": "Spielt beide Fassungen. Eine dritte Person achtet auf Stimme, Mimik oder Gestik und gibt Rückmeldung zu einem vereinbarten Kriterium."
+	},
+	{
+		"id": "d5-lernziel",
+		"stage": "sprechen",
+		"title": "Deinen nächsten Lernschritt planen",
+		"skill": "Zeige ein Beispiel, setze ein kleines Ziel und prüfe es mit Rückmeldung.",
+		"bindings": ["1.3", "3.3"],
+		"paragraphs": [
+			"Ein Lerngespräch beginnt mit einem konkreten Beispiel. Nenne, was schon gelingt, und zeige eine Stelle, an der du Hilfe brauchst. Ein Ziel soll klein genug sein, dass du später prüfen kannst, ob du es erreicht hast.",
+			"Beispiel: „Meine Geschichte hat einen Anfang und ein Ende. In der Mitte fehlen Gedanken der Figur. Ich ergänze morgen zwei Gedanken und lasse prüfen, ob die Angst erkennbar wird.“ Das ist genauer als „Ich werde besser in Deutsch“."
+		],
+		"material": "Rückblick: Ich habe drei Sätze überarbeitet. Zwei beginnen noch mit „Dann“.\nWunsch: Mein Text soll abwechslungsreicher werden.",
+		"materialLabel": "Eigens geschriebenes Übungsmaterial",
+		"sourceIds": ["lehrplan"],
+		"check": {
+			"wrong": "Ich bin einfach schlecht in Deutsch.",
+			"explanation": "Ein beobachtbarer nächster Schritt lässt sich mit einem eigenen Text überprüfen."
+		},
+		"takeaway": "Zeige ein Beispiel, setze ein kleines Ziel und prüfe es mit Rückmeldung.",
+		"lehrplan": "D5 LB 1.3, 3.3",
+		"cases": [
+			{
+				"prompt": "Welche Frage hilft beim Rückblick?",
+				"options": [
+					"Welche Stelle habe ich verändert und warum?",
+					"Wer ist schlechter als ich?"
+				],
+				"answer": "Welche Stelle habe ich verändert und warum?",
+				"feedback": "Ein eigenes Beispiel zeigt den Lernfortschritt genauer als ein Vergleich mit anderen."
+			},
+			{
+				"prompt": "Wie reagierst du auf eine hilfreiche Rückmeldung?",
+				"options": [
+					"Ich nicke, ohne zu wissen, was ich ändern soll.",
+					"Ich fasse sie zusammen und vereinbare einen Schritt."
+				],
+				"answer": "Ich fasse sie zusammen und vereinbare einen Schritt.",
+				"feedback": "Du klärst das Ziel, bevor du selbst weiterarbeitest."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Schreibe aus dem Rückblick ein kleines Ziel und eine Prüffrage.",
+				"model": "Ich beginne zwei Sätze mit einer Zeit- oder Ortsangabe. Danach prüfe ich: Sind die Satzanfänge verschieden und passt die Reihenfolge?",
+				"criteria": [
+					"Mein Ziel bezieht sich auf das Beispiel.",
+					"Ich nenne eine Änderung.",
+					"Meine Frage prüft die Änderung."
+				]
+			},
+			"2": {
+				"prompt": "Plane ein Lerngespräch zu einem eigenen Text: Stärke, Hindernis, nächster Schritt und Rückblicktermin.",
+				"model": "Meine Figuren sprechen verständlich. Der Schluss kommt zu plötzlich. Ich ergänze eine Reaktion der Hauptfigur. Beim nächsten Lerngespräch zeige ich beide Fassungen und frage nach der Wirkung.",
+				"criteria": [
+					"Ich benenne eine Stärke mit Beispiel.",
+					"Ich leite einen Schritt aus einem Hindernis ab.",
+					"Ich plane die Überprüfung."
+				]
+			}
+		},
+		"extension": "Führe das Gespräch mit einer Lehrkraft oder einer kleinen Lerngruppe. Die App kann euren Austausch nicht beurteilen."
+	},
+	{
+		"id": "d5-fabelhoeren",
+		"stage": "sprechen",
+		"title": "Eine Hörgeschichte nacherzählen",
+		"skill": "Höre auf Problem, Handlung und Ausgang und gib die Geschichte in eigenen Worten wieder.",
+		"bindings": ["1.1", "2.2"],
+		"paragraphs": [
+			"Höre beim ersten Mal auf die Figuren und das Problem. Beim zweiten Mal achtest du auf die entscheidende Handlung und den Ausgang. Notiere nur Stichwörter. Erzähle danach in der richtigen Reihenfolge mit eigenen Worten.",
+			"Beispiel: Aus „Die Maus suchte einen trockenen Schlafplatz“ wird die Notiz „Maus: Schutz vor Regen“. Eine eigene Zusammenfassung nennt, was geschieht, statt jede Formulierung zu wiederholen. Eine genaue Nachfrage klärt eine Lücke."
+		],
+		"material": "Die Maus und das Blatt\nEine Maus suchte Schutz vor dem Regen. Ein Käfer bot ihr Platz unter einem Blatt an. „Du bist viel zu klein, um mir zu helfen“, sagte die Maus. Als der Regen stärker wurde, kroch sie doch zu ihm. Das Blatt hielt beide trocken. Die Maus bedankte sich und rückte zur Seite, damit auch der Käfer Platz hatte.",
+		"materialLabel": "Eigens geschriebene Fabel · lokale Computerstimme mit Textfassung",
+		"sourceIds": ["lehrplan"],
+		"check": {
+			"wrong": "Der Käfer braucht ein größeres Haus.",
+			"explanation": "Die Zusammenfassung hält die Veränderung der Maus fest, ohne eine neue Handlung zu erfinden."
+		},
+		"takeaway": "Höre auf Problem, Handlung und Ausgang und gib die Geschichte in eigenen Worten wieder.",
+		"lehrplan": "D5 LB 1.1, 2.2",
+		"cases": [
+			{
+				"prompt": "Warum nimmt die Maus das Angebot schließlich an?",
+				"options": [
+					"Der Regen wird stärker.",
+					"Das Blatt beginnt zu sprechen."
+				],
+				"answer": "Der Regen wird stärker.",
+				"feedback": "Der stärkere Regen wird im Hörtext ausdrücklich als nächster Anlass genannt."
+			},
+			{
+				"prompt": "Welche Lehre passt zur Handlung?",
+				"options": [
+					"Große Tiere brauchen nie Hilfe.",
+					"Auch ein kleines Tier kann helfen."
+				],
+				"answer": "Auch ein kleines Tier kann helfen.",
+				"feedback": "Der Käfer hilft der Maus trotz seiner geringen Größe."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Höre die Geschichte und erzähle sie in drei Sätzen nach.",
+				"model": "Eine Maus sucht Schutz und lehnt das Angebot eines Käfers zuerst ab. Als es stärker regnet, teilt sie das Blatt mit ihm. Sie bedankt sich und macht ihm Platz.",
+				"criteria": [
+					"Ich nenne das Problem.",
+					"Ich ordne die Handlungen richtig.",
+					"Ich zeige die Veränderung."
+				]
+			},
+			"2": {
+				"prompt": "Erzähle einem Kind, das nur den Anfang gehört hat, wie die Geschichte ausgeht. Formuliere danach eine Frage zum Verhalten der Maus.",
+				"model": "Das Blatt schützt beide. Die Maus merkt, dass der kleine Käfer ihr helfen kann, und bedankt sich. Warum hat sie ihn zuerst unterschätzt?",
+				"criteria": [
+					"Ich ergänze den richtigen Ausgang.",
+					"Ich erzähle mit eigenen Worten.",
+					"Meine Frage bezieht sich auf die Handlung."
+				]
+			}
+		},
+		"extension": "Höre danach eine neue kleine Erzählung oder Fabel und stelle einer anderen Person eine Verständnisfrage."
+	},
+	{
+		"id": "d5-lesespuren",
+		"stage": "lesen",
+		"title": "Lesespuren legen",
+		"skill": "Lies in Sinnabschnitten und mach den Ablauf sichtbar.",
+		"bindings": ["2.1", "2.3"],
+		"paragraphs": [
+			"Schau zuerst auf Überschrift und Aufbau. Überlege, was du schon weißt, und formuliere eine Frage. Lies dann aufmerksam in Abschnitten. Kläre unbekannte Wörter aus dem Zusammenhang oder schlage sie nach.",
+			"Beispiel: Unter der Überschrift „Der Eisvogel“ erwartest du Informationen zu einem Vogel. Du markierst „taucht nach kleinen Fischen“ und zeichnest für die Jagd „warten → tauchen → auftauchen“."
+		],
+		"materialLabel": "Aushang: Die Bücherkiste",
+		"material": "Dienstag: Bücher in der Aula abgeben.\nMittwoch: Die Klasse sortiert nach Themen.\nDonnerstag: Alle dürfen sich ein Buch aussuchen. Übrige Bücher werden gespendet.",
+		"sourceIds": ["lehrplan"],
+		"check": {
+			"wrong": "Welche Bücher sind besonders beliebt?",
+			"explanation": "Die Zeile enthält den Tag und die Handlung. Die anderen Angaben fehlen."
+		},
+		"takeaway": "Lies mit einer Frage. Markiere die Antwort und stelle den Ablauf mit Pfeilen dar.",
+		"lehrplan": "D5 LB 2.1, 2.3",
+		"cases": [
+			{
+				"prompt": "Welche Reihenfolge stimmt?",
+				"options": [
+					"Abgeben → sortieren → auswählen.",
+					"Sortieren → auswählen → abgeben."
+				],
+				"answer": "Abgeben → sortieren → auswählen.",
+				"feedback": "Die Wochentage im Aushang geben die zeitliche Reihenfolge vor."
+			},
+			{
+				"prompt": "Was bedeutet „übrige Bücher“?",
+				"options": [
+					"Alle Bücher, die am Dienstag abgegeben wurden.",
+					"Bücher, die nach dem Aussuchen noch da sind."
+				],
+				"answer": "Bücher, die nach dem Aussuchen noch da sind.",
+				"feedback": "„Übrig“ bezieht sich auf den Rest nach der Auswahl."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Zeichne die Zeitleiste mit drei Tagen in Textform. Markiere den Ort der Abgabe.",
+				"model": "Di: Abgabe (Aula) → Mi: sortieren → Do: auswählen.",
+				"criteria": [
+					"Alle Tage stehen in Reihenfolge.",
+					"Jede Handlung stimmt.",
+					"Der Abgabeort ist sichtbar."
+				]
+			},
+			"2": {
+				"prompt": "Stelle eine beantwortbare und eine offene Frage an den Aushang. Belege die Antwort auf die erste.",
+				"model": "Wann wähle ich? Am Donnerstag, das steht in der dritten Zeile. Offen bleibt: Wie viele Bücher darf ich abgeben?",
+				"criteria": [
+					"Ich stelle zwei verschiedene Fragen.",
+					"Ich zeige eine Fundstelle.",
+					"Meine offene Frage bleibt im Text unbeantwortet."
+				]
+			}
+		},
+		"extension": "Lies auch einen Abschnitt aus einem Lehrbuch und eine Tabelle aus einem anderen Fach. Teile die Sätze beim Vorlesen in Sinnabschnitte."
+	},
+	{
+		"id": "d5-textsorten",
+		"stage": "lesen",
+		"title": "Märchen, Fabel, Gedicht und Sachtext",
+		"skill": "Erkenne Textarten an Merkmalen und Zweck.",
+		"bindings": ["2.2", "2.1"],
+		"paragraphs": [
+			"Ein Märchen erzählt oft von Prüfungen und Wundern. Eine Fabel zeigt meist einen Konflikt mit handelnden Tieren, aus dem du eine Lehre ziehen kannst. Ein Gedicht besteht meist aus Versen. Es kann sich reimen, braucht aber keinen Reim.",
+			"Ein Sachtext vermittelt Informationen über Wirkliches. „Die Krähe versteckt im Herbst Nüsse“ kann eine Sachinformation sein. „Die Krähe prahlte vor dem Fuchs“ lässt ein Tier wie einen Menschen handeln."
+		],
+		"materialLabel": "Vier erfundene Miniaturen",
+		"material": "A: Es war einmal ein Kind, das einen sprechenden Stein fand.\nB: „Ich bin die Beste“, krächzte die Krähe. Vor lauter Prahlen bemerkte sie den Fuchs am Futter nicht.\nC: Blätter tanzen durch die Nacht.\n  Hat der Wind sie aufgeweckt?\nD: Krähen gehören zu den Rabenvögeln.",
+		"sourceIds": ["lehrplan"],
+		"check": {
+			"wrong": "Der Text ist kurz.",
+			"explanation": "Die Prahlerei und ihre Folge ergeben eine mögliche Lehre."
+		},
+		"takeaway": "Prüfe mehrere Merkmale. Ein Tier allein macht einen Text noch nicht zur Fabel.",
+		"lehrplan": "D5 LB 2.2, 2.1",
+		"cases": [
+			{
+				"prompt": "Welche Spur passt zu einem Märchen?",
+				"options": [
+					"Ein Lexikon nennt Gesteinsarten.",
+					"Ein Kind findet einen sprechenden Stein."
+				],
+				"answer": "Ein Kind findet einen sprechenden Stein.",
+				"feedback": "Der sprechende Stein ist ein wunderbares Element und passt zum Märchenanfang."
+			},
+			{
+				"prompt": "Müssen sich „Nacht“ und „aufgeweckt“ reimen, damit C ein Gedicht ist?",
+				"options": [
+					"Nein. Zeilen als Verse und die Bildsprache können ein Gedicht kennzeichnen.",
+					"Ja. Jedes Gedicht hat am Ende jeder Zeile einen Reim."
+				],
+				"answer": "Nein. Zeilen als Verse und die Bildsprache können ein Gedicht kennzeichnen.",
+				"feedback": "Gedichte können auch freie Verse ohne Reimschema haben."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Ordne A bis D zu. Erkläre, was die Krähe aus der Fabel lernen könnte und wozu D dient.",
+				"model": "A ist ein Märchen, B eine Fabel, C ein Gedicht und D ein Sachtext. Die Krähe könnte lernen, besser aufzupassen, statt mit ihrem Futter anzugeben. D informiert darüber, zu welcher Vogelfamilie Krähen gehören.",
+				"criteria": [
+					"Ich ordne alle vier Texte zu.",
+					"Ich begründe eine mögliche Lehre aus der Handlung.",
+					"Ich erkläre den Zweck des Sachtexts."
+				]
+			},
+			"2": {
+				"prompt": "Schreibe zum Thema Krähe zwei Sätze als Fabelbeginn und einen Satz für ein Tierlexikon. Benenne den Unterschied.",
+				"model": "„Die glänzende Nuss gehört mir!“, rief die Krähe. Sie merkte nicht, wie der Fuchs näher kam. Lexikon: Manche Krähen verstecken Nüsse als Vorrat. Die Fabel erfindet einen Konflikt, das Lexikon informiert.",
+				"criteria": [
+					"Mein Fabelbeginn zeigt menschliches Verhalten.",
+					"Mein Lexikonsatz informiert sachlich.",
+					"Ich erkläre den unterschiedlichen Zweck."
+				]
+			}
+		}
+	},
+	{
+		"id": "d5-figuren",
+		"stage": "lesen",
+		"title": "Figuren und ihre Entscheidungen verstehen",
+		"skill": "Begründe ein Motiv mit einer Stelle aus der Geschichte.",
+		"bindings": ["2.2", "1.4"],
+		"paragraphs": [
+			"Frage, was eine Figur tut, was sie will und was sie dabei hindert. Unterscheide Hinweise im Text von deiner Vermutung. Der Ort kann erklären, warum sich eine Figur auf eine bestimmte Weise verhält.",
+			"Beispiel: „Nuri drehte das Blatt um“ ist eine Beobachtung. „Nuri hat Angst vor Ärger“ ist eine Deutung, die du mit dem Riss im Plakat begründen kannst."
+		],
+		"materialLabel": "Erfundene Geschichte: Die fremde Melodie",
+		"material": "Beim Schulfest probte Leila am Rand des lauten Pausenhofs ein Lied, das ihr Großvater ihr beigebracht hatte. Als sie mitten in der Melodie stockte, summte Jona von der Bank aus weiter. Leila rückte zur Seite und lud Jona ein, mit auf die Bühne zu kommen.",
+		"sourceIds": ["lehrplan"],
+		"check": {
+			"wrong": "Leila hat das Lied selbst komponiert.",
+			"explanation": "Jonas Summen ist erzählt. Ein Motiv oder eine Urheberschaft steht dort nicht."
+		},
+		"takeaway": "Beschreibe zuerst Handlung und Ort. Leite ein mögliches Motiv aus einem Textsignal ab.",
+		"lehrplan": "D5 LB 2.2, 1.4",
+		"cases": [
+			{
+				"prompt": "Welche Reihenfolge stimmt?",
+				"options": [
+					"Leila stockt → Jona summt → Leila lädt Jona ein.",
+					"Jona tritt zuerst auf → Leila stockt → der Großvater ruft."
+				],
+				"answer": "Leila stockt → Jona summt → Leila lädt Jona ein.",
+				"feedback": "Die Sätze geben den Verlauf vom Proben bis zur Einladung vor."
+			},
+			{
+				"prompt": "Was zeigt Leilas Einladung am ehesten?",
+				"options": [
+					"Sie möchte das Lied vor Jona geheim halten.",
+					"Sie nimmt Jonas Hilfe an und möchte gemeinsam auftreten."
+				],
+				"answer": "Sie nimmt Jonas Hilfe an und möchte gemeinsam auftreten.",
+				"feedback": "Das Angebot, auf die Bühne zu kommen, öffnet die Situation für gemeinsames Handeln."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Beschreibe den Ort und erkläre Jonas mögliches Motiv mit einem Beleg.",
+				"model": "Die Szene spielt am Rand des lauten Pausenhofs. Jona will vielleicht helfen, denn Jona summt weiter, als Leila stockt.",
+				"criteria": [
+					"Ich nenne den Ort.",
+					"Ich kennzeichne das Motiv als Vermutung.",
+					"Ich belege es mit einer Handlung."
+				]
+			},
+			"2": {
+				"prompt": "Entwirf ein Standbild für die Einladung und vergleiche Leilas Entscheidung mit einer Alltagssituation.",
+				"model": "Leila rückt zur Seite und streckt Jona die Hand entgegen. Jona lehnt sich vor. Das erinnert mich daran, wie ich einen Mitschüler nach seiner Hilfe in unser Team eingeladen habe.",
+				"criteria": [
+					"Mein Standbild zeigt eine Beziehung.",
+					"Ich beschreibe die Haltungen.",
+					"Ich verbinde die Handlung mit einer Erfahrung."
+				]
+			}
+		},
+		"extension": "Setzt die Szene als Standbild, Zeichnung oder kurze Spielszene um. Besprecht, was sich dadurch anders erschließen lässt als beim Lesen."
+	},
+	{
+		"id": "d5-klang",
+		"stage": "lesen",
+		"title": "Klang und Bilder in Gedichten",
+		"skill": "Untersuche Vers, Reim und Lautmalerei.",
+		"bindings": ["2.2", "4.1"],
+		"paragraphs": [
+			"Jede Gedichtzeile heißt Vers. Mehrere zusammengehörende Verse bilden eine Strophe. Reimwörter klingen vom letzten betonten Vokal an ähnlich oder gleich. Lautmalerei lässt ein Geräusch anklingen, etwa „klack“ für einen aufschlagenden Stein.",
+			"Ein sprachliches Bild erzeugt eine Vorstellung. In „Der Bach flüstert“ erscheint das leise Wasser wie eine sprechende Person. Ein Vergleich mit „wie“ kann denselben Eindruck anders zeigen: „Der Bach klingt wie leises Flüstern“."
+		],
+		"materialLabel": "Erfundenes Gedicht: Am Bach",
+		"material": "Der Bach flüstert leise am Stein,\nein Blatt fällt in die Wellen hinein.\nKlack! Ein Kiesel springt und lacht,\ndann wird es still in dieser Nacht.",
+		"sourceIds": ["lehrplan"],
+		"check": {
+			"wrong": "lacht",
+			"explanation": "„Klack“ ahmt den kurzen, harten Klang des Kiesels nach."
+		},
+		"takeaway": "Nenne die Wörter, die du untersuchst, und beschreibe ihre Wirkung.",
+		"lehrplan": "D5 LB 2.2, 4.1",
+		"cases": [
+			{
+				"prompt": "Welche Wörter reimen sich?",
+				"options": ["Stein und Kiesel.", "Stein und hinein."],
+				"answer": "Stein und hinein.",
+				"feedback": "Von der betonten Lautfolge „ein“ an klingen die Enden gleich."
+			},
+			{
+				"prompt": "Welche Wirkung hat „dann wird es still“ nach „Klack“?",
+				"options": [
+					"Der Wechsel lässt die Ruhe nach dem Geräusch deutlich werden.",
+					"Das Wort „still“ macht den Kiesel lauter."
+				],
+				"answer": "Der Wechsel lässt die Ruhe nach dem Geräusch deutlich werden.",
+				"feedback": "Der laute Ausruf und die beschriebene Ruhe bilden einen Kontrast."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Nenne ein Reimpaar und erkläre die Wirkung eines Bildes.",
+				"model": "Stein und hinein reimen sich. „Der Bach flüstert“ lässt ihn leise und fast lebendig wirken.",
+				"criteria": [
+					"Mein Reimpaar stimmt.",
+					"Ich nenne ein konkretes Bild.",
+					"Ich erkläre seine Wirkung."
+				]
+			},
+			"2": {
+				"prompt": "Schreibe zwei eigene Verse über Regen. Setze ein Geräuschwort ein und erkläre es.",
+				"model": "Tipp, tapp am Fensterbrett,\nder Regen hüpft vom Dach ins Beet.\n„Tipp, tapp“ klingt wie zwei kurze Tropfen auf dem Brett.",
+				"criteria": [
+					"Ich schreibe zwei Verse.",
+					"Ein Wort ahmt ein Geräusch nach.",
+					"Ich erkläre den Klang."
+				]
+			}
+		}
+	},
+	{
+		"id": "d5-lesetagebuch",
+		"stage": "lesen",
+		"title": "Ein Buch auswählen und vorstellen",
+		"skill": "Halte Lesespuren fest und teile eine begründete Empfehlung.",
+		"bindings": ["2.2", "2.1", "2.4"],
+		"paragraphs": [
+			"Lies Klappentext und eine kurze Leseprobe. Entscheide, ob dich Thema, Figuren oder Erzählweise ansprechen. Führe beim Lesen ein Tagebuch: Seite oder Kapitel, Ereignis, eigene Gedanken und eine Frage.",
+			"Für eine Buchvorstellung nennst du Titel und Autor oder Autorin, stellst Ausgangslage und Figuren vor und begründest deine Empfehlung mit einer Stelle. Lass den Ausgang offen, wenn du andere neugierig machen willst."
+		],
+		"materialLabel": "Muster aus einem erfundenen Lesetagebuch",
+		"material": "Kapitel 2: Ein Hund taucht vor der Gartenlaube auf.\nEindruck: Ich fand Amiras Zögern mutig, weil sie erst die Lage prüft.\nFrage: Wem gehört der Hund?",
+		"sourceIds": ["lehrplan"],
+		"check": {
+			"wrong": "Nur eine Kopie des Klappentexts.",
+			"explanation": "Fundstelle und Ereignis zeigen, worauf dein eigener Eindruck beruht."
+		},
+		"takeaway": "Trenne das Ereignis von deinem Eindruck. Begründe eine Empfehlung mit einem Beispiel.",
+		"lehrplan": "D5 LB 2.2, 2.1, 2.4",
+		"cases": [
+			{
+				"prompt": "Welcher Satz ist ein eigener Eindruck?",
+				"options": [
+					"Ich fand Amiras Zögern mutig.",
+					"Ein Hund taucht vor der Laube auf."
+				],
+				"answer": "Ich fand Amiras Zögern mutig.",
+				"feedback": "„Ich fand“ leitet die persönliche Deutung der erzählten Handlung ein."
+			},
+			{
+				"prompt": "Eine Person liebt das Hörbuch, eine andere das gedruckte Buch. Was hilft beim Austausch?",
+				"options": [
+					"Eine Person entscheidet, welches Medium für alle richtig ist.",
+					"Beide nennen eine Stelle und erklären, was ihnen am jeweiligen Medium gefällt."
+				],
+				"answer": "Beide nennen eine Stelle und erklären, was ihnen am jeweiligen Medium gefällt.",
+				"feedback": "Ein konkretes Beispiel macht verschiedene Lese- und Hörerfahrungen vergleichbar."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Ergänze zum Muster eine Frage und begründe, warum sie dich weiterlesen lässt.",
+				"model": "Wie schafft Amira es, an das Halsband zu kommen? Ich möchte wissen, ob der Hund ihr vertraut und sich helfen lässt.",
+				"criteria": [
+					"Meine Frage passt zur Szene.",
+					"Sie verrät keine spätere Lösung.",
+					"Ich erkläre meine Neugier."
+				]
+			},
+			"2": {
+				"prompt": "Wähle ein Kinder- oder Jugendbuch aus und plane eine einminütige Vorstellung mit einer frühen Fundstelle.",
+				"model": "Titel und Autorin zuerst. Dann erzähle ich, wer am Anfang ein Problem hat. Eine Stelle aus Kapitel 2 zeigt den ersten Hinweis. Ich empfehle das Buch Kindern, die gern miträtseln.",
+				"criteria": [
+					"Ich nenne Buchdaten und Ausgangslage.",
+					"Ich wähle eine frühe Fundstelle.",
+					"Ich begründe meine Empfehlung."
+				]
+			}
+		},
+		"extension": "Leih oder wähle ein ganzes Kinder- oder Jugendbuch. Lies es vollständig, führe ein Lesetagebuch und tausche Empfehlungen aus."
+	},
+	{
+		"id": "d5-sachtext",
+		"stage": "lesen",
+		"title": "Sachtexte, Tabellen und Absichten",
+		"skill": "Finde Angaben im Layout und erkenne, was ein Text erreichen will.",
+		"bindings": ["2.3", "2.1"],
+		"paragraphs": [
+			"In einem Fließtext helfen Überschriften und Absätze. In einer Tabelle gehören Zeile und Spalte zusammen. Bei einem Plakat zeigen Größe und Anordnung, was besonders auffallen soll.",
+			"Unterscheide die wichtigste Absicht: informieren, auffordern, kritisieren oder unterhalten. „Abgabe: Dienstag“ informiert. „Bring ein Buch mit!“ fordert auf. Du kannst Angaben in eigenen Worten oder als Pfeilskizze weitergeben."
+		],
+		"materialLabel": "Plan, Plakat und Schülerzeitung zum Büchertausch",
+		"material": "Plakat: BRING EIN BUCH MIT! So finden Bücher neue Leserinnen und Leser.\n\nSchülerzeitung: Bei der Tauschbörse wollte ich ein dünnes Buch. Jetzt habe ich eins mit 400 Seiten. Wenigstens spare ich mir damit die Hanteln.",
+		"sourceIds": ["lehrplan"],
+		"check": {
+			"wrong": "Eine erfundene Geschichte erzählen.",
+			"explanation": "Der Imperativ „Bring“ und die große Schrift heben die Aufforderung hervor."
+		},
+		"takeaway": "Lies bei Tabellen die passende Zeile und Spalte. Frage bei jedem Text, was er beim Publikum erreichen will.",
+		"lehrplan": "D5 LB 2.3, 2.1",
+		"cases": [
+			{
+				"prompt": "Wo ist am Donnerstag die Auswahl?",
+				"options": ["In der Aula.", "In der Bücherei."],
+				"answer": "In der Bücherei.",
+				"feedback": "In der Donnerstag-Zeile gehört die Bücherei zur Auswahl."
+			},
+			{
+				"prompt": "Welche Überschrift passt zu einem kritischen Beitrag?",
+				"options": [
+					"Warum der Tauschtermin für Buskinder ungünstig ist.",
+					"Abgabe am Dienstag in der Aula."
+				],
+				"answer": "Warum der Tauschtermin für Buskinder ungünstig ist.",
+				"feedback": "Die erste Überschrift kündigt einen Einwand und eine Begründung an."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Erkläre den Ablauf in eigenen Worten und gib ihn mit zwei Kästen und einem Pfeil wieder.",
+				"model": "Dienstag geben wir Bücher in der Aula ab. Donnerstag wählen wir in der Bücherei. Di/Aula: abgeben → Do/Bücherei: auswählen.",
+				"criteria": [
+					"Ich verwende eigene Sätze.",
+					"Beide Orte stimmen.",
+					"Der Pfeil zeigt den Ablauf."
+				]
+			},
+			"2": {
+				"prompt": "Entwirf zwei Sätze fürs Plakat, einen informativen und einen auffordernden. Erkläre, wozu der Satz mit den Hanteln in der Schülerzeitung dient. Begründe deine Meinung zur Aktion.",
+				"model": "Am Dienstag kannst du dein Buch in der Aula abgeben. Mach mit und bring ein Buch mit! Der Satz mit den Hanteln soll unterhalten. Das dicke Buch erinnert an ein Gewicht. Ich finde den Tausch sinnvoll, weil gelesene Bücher weitergenutzt werden.",
+				"criteria": [
+					"Mein Plakat informiert und fordert zum Mitmachen auf.",
+					"Ich erkläre den Zweck des Witzes.",
+					"Ich begründe meine Meinung."
+				]
+			}
+		},
+		"extension": "Stelle Ergebnisse aus einem weiteren Sachtext mündlich vor und verwende ein Plakat oder eine einfache Pfeilskizze."
+	},
+	{
+		"id": "d5-medienwahl",
+		"stage": "lesen",
+		"title": "Medien passend auswählen",
+		"skill": "Vergleiche Angebote nach Zweck, Dauer und Verständlichkeit.",
+		"bindings": ["2.4", "2.1"],
+		"paragraphs": [
+			"Überlege, was du suchst: Information, Unterhaltung oder beides. Prüfe dann Thema, Länge, Zeitpunkt, Verständlichkeit und Altersempfehlung. Ein kurzes Radiointerview hilft anders als ein längerer Spielfilm.",
+			"Beispiel: Für drei Fakten zum Igel passt ein kurzer Beitrag mit einer Fachperson. Für einen Filmabend ist ein Spielfilm zur selben Tierwelt vielleicht unterhaltsamer. Musik und Titel können Erwartungen wecken, bevor du den Inhalt kennst."
+		],
+		"materialLabel": "Erfundene Programmübersicht",
+		"material": "Radio: „Igel im Garten“, 7 Minuten, Interview mit einer Tierpflegerin, verständlich ab 9 Jahren.\nTV: „Iggy sucht ein Zuhause“, 65 Minuten, Abenteuerfilm ab 6 Jahren, 19 Uhr.\nZeitschrift: „Tierbesuch“, zwei Seiten mit Bildern und einem Quiz.",
+		"sourceIds": ["lehrplan"],
+		"check": {
+			"wrong": "Ein Trailer mit Musik, der nur den Film ankündigt.",
+			"explanation": "Das Interview verspricht Sachinformationen und passt in die verfügbare Zeit."
+		},
+		"takeaway": "Wähle nach deinem Ziel. Nutze Angaben aus der Übersicht, um die Wahl zu begründen.",
+		"lehrplan": "D5 LB 2.4, 2.1",
+		"cases": [
+			{
+				"prompt": "Du suchst Unterhaltung für den Familienabend. Welches Angebot passt?",
+				"options": [
+					"Der Abenteuerfilm, wenn Dauer und Startzeit für euch passen.",
+					"Das Interview, weil ein Spielfilm grundsätzlich ungeeignet ist."
+				],
+				"answer": "Der Abenteuerfilm, wenn Dauer und Startzeit für euch passen.",
+				"feedback": "Der Abenteuerfilm passt zur gewünschten Unterhaltung. Die Zeit muss für die Familie passen."
+			},
+			{
+				"prompt": "Warum nutzt ein Trailer schnelle Musik?",
+				"options": [
+					"Sie beweist, dass alle Filmaussagen wahr sind.",
+					"Sie kann Spannung erzeugen und Lust auf den Film machen."
+				],
+				"answer": "Sie kann Spannung erzeugen und Lust auf den Film machen.",
+				"feedback": "Die Musik beeinflusst Erwartungen, ohne die Wahrheit von Aussagen zu belegen."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Wähle für ein Kurzreferat ein Angebot. Begründe mit zwei Kriterien.",
+				"model": "Das Radiointerview dauert nur sieben Minuten. Die Tierpflegerin gibt voraussichtlich verständliche Sachinformationen.",
+				"criteria": [
+					"Meine Wahl passt zum Referat.",
+					"Ich nenne ein Zeitkriterium.",
+					"Ich nenne ein Kriterium zum Inhalt."
+				]
+			},
+			"2": {
+				"prompt": "Vergleiche zwei deiner Medienerfahrungen. Nenne Ziel, Wirkung und eine bewusste Wahl für morgen.",
+				"model": "Ich schaute kurze Tierclips zur Unterhaltung und las für das Referat einen Tierartikel. Die Clips machten neugierig, der Artikel erklärte mehr. Morgen nehme ich fürs Referat zuerst den Artikel.",
+				"criteria": [
+					"Ich vergleiche zwei Erfahrungen.",
+					"Ich unterscheide zwei Zwecke.",
+					"Ich begründe eine künftige Wahl."
+				]
+			}
+		}
+	},
+	{
+		"id": "d5-recherche",
+		"stage": "lesen",
+		"title": "Eine Information finden und prüfen",
+		"skill": "Suche nach Stichwörtern und vergleiche verlässliche Fundstellen.",
+		"bindings": ["2.4", "2.3"],
+		"paragraphs": [
+			"Formuliere zuerst eine genaue Frage. Wähle Stichwörter und suche in einem Sachbuch, Lexikon oder einem angeleitet ausgewählten digitalen Angebot. Prüfe, wer die Angabe veröffentlicht hat und wann sie erschien.",
+			"Beispiel: Für „Wann ist die Stadtbücherei am Samstag offen?“ ist die aktuelle Seite der Bücherei geeigneter als ein alter Reisebericht. Bei widersprüchlichen Angaben überprüfst du Datum und Zuständigkeit."
+		],
+		"materialLabel": "Erfundene Suchtreffer",
+		"material": "Stadtbücherei – aktuelle Öffnungszeiten: Samstag 10–13 Uhr.\nBlog von 2019 – Samstags schließt die Bücherei um zwölf.\nBildersuche – Foto des Gebäudes ohne Datum.",
+		"sourceIds": ["lehrplan"],
+		"check": {
+			"wrong": "Das undatierte Foto des Gebäudes.",
+			"explanation": "Die Bücherei ist für ihre Zeiten zuständig. Ein alter Blog kann überholt sein."
+		},
+		"takeaway": "Halte die Fundstelle fest und überprüfe, ob sie deine Frage aktuell und nachvollziehbar beantwortet.",
+		"lehrplan": "D5 LB 2.4, 2.3",
+		"cases": [
+			{
+				"prompt": "Welcher Suchbegriff passt am besten?",
+				"options": [
+					"Schönes altes Gebäude.",
+					"Stadtbücherei Öffnungszeiten Samstag."
+				],
+				"answer": "Stadtbücherei Öffnungszeiten Samstag.",
+				"feedback": "Der Suchbegriff benennt Ort, gesuchte Angabe und Wochentag."
+			},
+			{
+				"prompt": "Die Bücherei hat an einem Feiertag vielleicht andere Zeiten. Wie prüfst du das?",
+				"options": [
+					"Ich schaue nach einem aktuellen Hinweis der Bücherei oder frage dort nach.",
+					"Ich übernehme immer die Zeiten des Blogs."
+				],
+				"answer": "Ich schaue nach einem aktuellen Hinweis der Bücherei oder frage dort nach.",
+				"feedback": "Eine Ausnahme lässt sich mit einer aktuellen Auskunft der zuständigen Stelle klären."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Beantworte aus den Übungstreffern die Frage nach Samstag und benenne deine Fundstelle.",
+				"model": "Am Samstag ist von zehn bis dreizehn Uhr geöffnet. Fundstelle: „Stadtbücherei – aktuelle Öffnungszeiten“.",
+				"criteria": [
+					"Ich gebe beide Zeiten richtig an.",
+					"Ich nenne die Fundstelle.",
+					"Ich stütze mich auf die zuständige Stelle."
+				]
+			},
+			"2": {
+				"prompt": "Plane, wie du die Frage „Welche Igelarten leben hier?“ in der Bibliothek und digital prüfst.",
+				"model": "Ich suche mit „Igel Arten Bayern“ im Katalog und schaue in einem Tierlexikon nach. Danach vergleiche ich die Angabe mit einer Naturschutzbehörde und notiere Buchseite sowie Seitentitel und Datum.",
+				"criteria": [
+					"Meine Suchbegriffe passen.",
+					"Ich verwende zwei nachvollziehbare Quellen.",
+					"Ich halte Fundstellen fest."
+				]
+			}
+		},
+		"extension": "Suche mit einer erwachsenen Person in einer Bibliothek oder einem geeigneten digitalen Nachschlagewerk und vergleiche zwei echte Fundstellen."
+	},
+	{
+		"id": "d5-medienzeit",
+		"stage": "lesen",
+		"title": "Medienzeit bewusst gestalten",
+		"skill": "Vergleiche Zweck, Dauer und Folgen deiner Mediennutzung und plane eine passende Veränderung.",
+		"bindings": ["2.4"],
+		"paragraphs": [
+			"Ein Medienprotokoll hält fest, welches Medium du wofür und wie lange nutzt. Notiere auch, wie es dir dabei und danach geht. Gleichzeitige Tätigkeiten addierst du nicht doppelt, wenn du die gesamte vergangene Zeit berechnen willst.",
+			"Beispiel: 20 Minuten Hörgeschichte zum Entspannen und danach 30 Minuten Spielen sind 50 Minuten nacheinander. Wenn du dabei Hausaufgaben aufschiebst oder müde wirst, plane eine Pause und einen passenden Endpunkt. Ein Protokoll bewertet keine Person, sondern hilft bei einer Entscheidung."
+		],
+		"material": "Montag: 20 Minuten Hörgeschichte, danach 30 Minuten Spiel. Danach war das Heft noch leer.\nDienstag: Erst Hausaufgaben, dann 20 Minuten Hörgeschichte. Danach zufrieden.",
+		"materialLabel": "Eigens geschriebenes Übungsmaterial",
+		"sourceIds": ["lehrplan"],
+		"check": {
+			"wrong": "Jede Mediennutzung ist gleich.",
+			"explanation": "Derselbe Zeitraum kann verschieden wirken, je nach Zweck und Situation."
+		},
+		"takeaway": "Vergleiche Zweck, Dauer und Folgen deiner Mediennutzung und plane eine passende Veränderung.",
+		"lehrplan": "D5 LB 2.4",
+		"cases": [
+			{
+				"prompt": "Wie lang dauern die beiden Tätigkeiten am Montag nacheinander?",
+				"options": ["50 Minuten.", "30 Minuten."],
+				"answer": "50 Minuten.",
+				"feedback": "20 und 30 Minuten nacheinander ergeben 50 Minuten."
+			},
+			{
+				"prompt": "Welche Änderung passt zum beobachteten Problem?",
+				"options": [
+					"Den gleichen Ablauf ohne Rückblick wiederholen.",
+					"Erst das Heft bearbeiten und dann eine Hörpause planen."
+				],
+				"answer": "Erst das Heft bearbeiten und dann eine Hörpause planen.",
+				"feedback": "Die Änderung greift genau das Aufschieben auf."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Vergleiche die beiden Tage mit einer Beobachtung und einem Vorschlag.",
+				"model": "Am Montag blieb das Heft leer. Am Dienstag half die Reihenfolge. Ich plane morgen zuerst eine Hausaufgabenzeit und danach eine Hörpause.",
+				"criteria": [
+					"Ich vergleiche die Reihenfolge.",
+					"Ich nenne eine Folge.",
+					"Mein Vorschlag passt dazu."
+				]
+			},
+			"2": {
+				"prompt": "Entwirf für einen eigenen Nachmittag ein Protokoll mit vier Spalten. Formuliere eine Regel, die du danach prüfen kannst.",
+				"model": "Zeit | Medium | Zweck | Gefühl danach. Meine Regel: Vor dem Spielen beende ich eine vereinbarte Aufgabe. Danach prüfe ich, ob genug Zeit für Bewegung und Schlaf blieb.",
+				"criteria": [
+					"Mein Protokoll erfasst Zweck und Dauer.",
+					"Ich berücksichtige eigene Folgen.",
+					"Meine Regel ist überprüfbar."
+				]
+			}
+		},
+		"extension": "Führe dein Protokoll an zwei echten Tagen und besprich eine Veränderung mit einer vertrauten Person. Du musst keine privaten Nutzungsdaten hier eingeben."
+	},
+	{
+		"id": "d5-chat",
+		"stage": "lesen",
+		"title": "Respektvoll und sicher schreiben",
+		"skill": "Schreibe klar und respektvoll, schütze persönliche Informationen und hole bei Angriffen Hilfe.",
+		"bindings": ["2.4", "4.1"],
+		"paragraphs": [
+			"Eine Kurznachricht braucht genug Zusammenhang. Ohne Stimme und Gesicht können Scherze verletzend wirken. Frage nach, bevor du eine Absicht unterstellst. Eine Nachricht an eine Lehrkraft braucht eine passende Anrede, ein klares Anliegen und einen Gruß.",
+			"Beispiel: „Das war ja toll!“ kann ehrlich oder spöttisch gemeint sein. „Meinst du den Vortrag oder die Gruppenarbeit?“ klärt den Bezug. Teile Fotos, Namen, private Nachrichten oder Kontaktdaten anderer nicht ohne deren Erlaubnis. Wenn jemand wiederholt angegriffen wird, mache nicht mit und hole Hilfe bei einer vertrauten erwachsenen Person."
+		],
+		"material": "Gruppenchat: „Schick das peinliche Foto von Jo an alle!“\nJo: „Ich möchte das nicht.“\nNeue Nachricht: „War doch nur Spaß.“",
+		"materialLabel": "Eigens geschriebenes Übungsmaterial",
+		"sourceIds": ["lehrplan"],
+		"check": {
+			"wrong": "Nur den Namen entfernen und es sofort posten.",
+			"explanation": "Jos Wunsch bleibt maßgeblich; ein vermeintlicher Spaß rechtfertigt das Weiterleiten nicht."
+		},
+		"takeaway": "Schreibe klar und respektvoll, schütze persönliche Informationen und hole bei Angriffen Hilfe.",
+		"lehrplan": "D5 LB 2.4, 4.1",
+		"cases": [
+			{
+				"prompt": "Welche Reaktion unterstützt Jo?",
+				"options": [
+					"Ich leite es nicht weiter. Wir hören damit auf.",
+					"Ich lache mit, damit ich dazugehöre."
+				],
+				"answer": "Ich leite es nicht weiter. Wir hören damit auf.",
+				"feedback": "Die erste Antwort stoppt die eigene Beteiligung und stärkt Jo."
+			},
+			{
+				"prompt": "Wie klärst du eine mehrdeutige Nachricht?",
+				"options": [
+					"Sofort eine böse Absicht behaupten.",
+					"Nachfragen, worauf sie sich bezieht."
+				],
+				"answer": "Nachfragen, worauf sie sich bezieht.",
+				"feedback": "Eine Nachfrage klärt den Zusammenhang, den Stimme und Mimik nicht liefern."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Schreibe eine kurze Antwort in den Chat, die Jos Wunsch schützt.",
+				"model": "Jo möchte das nicht. Bitte schickt das Foto nicht weiter. Wir können ein Bild von unserem Plakat ohne Personen nehmen.",
+				"criteria": [
+					"Ich unterstütze Jo.",
+					"Ich fordere zum Stoppen auf.",
+					"Ich bleibe respektvoll."
+				]
+			},
+			"2": {
+				"prompt": "Schreibe eine Nachricht an eine vertraute Lehrkraft, wenn die Angriffe weitergehen. Nutze erfundene Namen und keine privaten Details.",
+				"model": "Guten Tag Frau Kaya, im Gruppenchat wird ein Kind wiederholt mit einem Foto verspottet. Das Kind hat widersprochen. Können Sie uns helfen, die Angriffe zu stoppen? Viele Grüße, Alex",
+				"criteria": [
+					"Ich schildere das Problem sachlich.",
+					"Ich bitte klar um Hilfe.",
+					"Ich verwende eine passende Anrede und einen Gruß."
+				]
+			}
+		},
+		"extension": "Besprecht mit einer erwachsenen Person eure Regeln für einen Klassenchat. Veröffentlicht keine Übungsnachrichten mit echten persönlichen Daten."
+	},
+	{
+		"id": "d5-werbung",
+		"stage": "lesen",
+		"title": "Eine Werbeanzeige durchschauen",
+		"skill": "Unterscheide konkrete Produktangaben von Werbeversprechen und beschreibe ihre Wirkung.",
+		"bindings": ["2.4", "4.1"],
+		"paragraphs": [
+			"Eine Werbung möchte meist, dass du etwas kaufst, ausprobierst oder gut findest. Auffällige Schrift, ein Bild und ein kurzer Spruch lenken deine Aufmerksamkeit. Prüfe, welche Information belegt wird und welches Versprechen vor allem ein Gefühl auslöst.",
+			"Beispiel: „Der Stift für echte Genies!“ beweist nicht, dass du mit ihm klüger wirst. Das Adjektiv „einzigartig“ wertet den Stift auf. Die konkrete Angabe „blaue Tinte“ beschreibt dagegen eine überprüfbare Eigenschaft."
+		],
+		"material": "Anzeige: GENIAL SCHREIBEN!\nDer einzigartige Superstift für echte Genies.\nBlaue Tinte · Preis: 3 Euro\nBildidee: leuchtender Stift vor einem Stern.",
+		"materialLabel": "Eigens geschriebenes Übungsmaterial",
+		"sourceIds": ["lehrplan"],
+		"check": {
+			"wrong": "Der Stift macht alle Hausaufgaben selbst.",
+			"explanation": "Die Farbe der Tinte lässt sich prüfen; das Genie-Versprechen ist keine belegte Wirkung."
+		},
+		"takeaway": "Unterscheide konkrete Produktangaben von Werbeversprechen und beschreibe ihre Wirkung.",
+		"lehrplan": "D5 LB 2.4, 4.1",
+		"cases": [
+			{
+				"prompt": "Welche Wörter sollen besonders aufwerten?",
+				"options": ["einzigartig und genial", "blaue Tinte"],
+				"answer": "einzigartig und genial",
+				"feedback": "Die wertenden Wörter versprechen Besonderheit, ohne sie genau zu belegen."
+			},
+			{
+				"prompt": "Wozu dient der Stern hinter dem Stift?",
+				"options": [
+					"Er belegt die Qualität der Tinte.",
+					"Er lässt das Produkt auffallen."
+				],
+				"answer": "Er lässt das Produkt auffallen.",
+				"feedback": "Ein auffälliges Bild ersetzt keinen Nachweis für eine Produkteigenschaft."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Nenne zwei Gestaltungsmittel und formuliere die sachliche Produktinformation.",
+				"model": "Die große Überschrift und der Stern ziehen Aufmerksamkeit an. Sachlich steht dort: Der Stift hat blaue Tinte und kostet 3 Euro.",
+				"criteria": [
+					"Ich nenne Bild und Sprache.",
+					"Ich trenne Wirkung und Information.",
+					"Ich bleibe bei den Angaben."
+				]
+			},
+			"2": {
+				"prompt": "Entwirf eine ehrliche Anzeige für ein erfundenes Heft. Nutze ein Adjektiv und nenne eine überprüfbare Eigenschaft. Erkläre beide.",
+				"model": "Das handliche Heft passt in die Jackentasche. Es hat 40 linierte Seiten. „Handlich“ wertet; die Seitenzahl kann ich nachzählen.",
+				"criteria": [
+					"Meine Anzeige hat einen Zweck.",
+					"Ich nenne ein prüfbares Merkmal.",
+					"Ich erkläre die Wortwirkung."
+				]
+			}
+		},
+		"extension": "Untersuche eine echte Anzeige mit einer erwachsenen Person. Ein Werbeversprechen ist noch kein Beleg."
+	},
+	{
+		"id": "d5-realitaet",
+		"stage": "lesen",
+		"title": "Wirklichkeit und Erfindung unterscheiden",
+		"skill": "Prüfe einzelne Elemente einer Darstellung, auch wenn der Schauplatz wirklich existiert.",
+		"bindings": ["2.4", "2.2"],
+		"paragraphs": [
+			"Eine erfundene Geschichte kann an einem wirklichen Ort spielen. Trotzdem müssen ihre Handlungen nicht wirklich möglich sein. Prüfe einzelne Aussagen: Was ist erkennbar erfunden, was könnte man überprüfen und was weißt du noch nicht?",
+			"Beispiel: In einer Kinderserie fährt ein Zug nach München. Das ist möglich. Wenn der Zug plötzlich mit den Kindern spricht, ist das ein erfundenes Element. Ein realistisches Bild macht eine erfundene Handlung nicht automatisch zu einer Tatsache."
+		],
+		"material": "Serienidee: Ein Kind besucht eine echte Stadtbücherei. Nachts springen die Buchfiguren heraus, lesen die Gedanken des Kindes und sortieren alle Bücher durch Zauberei.",
+		"materialLabel": "Eigens geschriebenes Übungsmaterial",
+		"sourceIds": ["lehrplan"],
+		"check": {
+			"wrong": "Dass Menschen Bücher lesen können.",
+			"explanation": "Der reale Ort und die unmögliche Handlung gehören in der Serie zusammen, bleiben aber unterscheidbar."
+		},
+		"takeaway": "Prüfe einzelne Elemente einer Darstellung, auch wenn der Schauplatz wirklich existiert.",
+		"lehrplan": "D5 LB 2.4, 2.2",
+		"cases": [
+			{
+				"prompt": "Welche Handlung könnte wirklich geschehen?",
+				"options": [
+					"Ein Kind leiht ein Buch aus.",
+					"Ein Buch liest die Gedanken des Kindes."
+				],
+				"answer": "Ein Kind leiht ein Buch aus.",
+				"feedback": "Die Ausleihe ist möglich; Gedankenlesen durch ein Buch gehört zur Erfindung."
+			},
+			{
+				"prompt": "Wie prüfst du die Öffnungszeit einer echten Bücherei?",
+				"options": [
+					"An einer Zauberszene der Serie.",
+					"An der aktuellen Auskunft der Bücherei."
+				],
+				"answer": "An der aktuellen Auskunft der Bücherei.",
+				"feedback": "Eine erfundene Handlung ist keine verlässliche Auskunft für deinen Besuch."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Ordne zwei Elemente des Materials als möglich oder erfunden ein und begründe.",
+				"model": "Ein Kind kann eine Stadtbücherei besuchen. Buchfiguren können nicht aus dem Papier springen; das ist ein fantastisches Element.",
+				"criteria": [
+					"Ich trenne einzelne Elemente.",
+					"Ich begründe die Einordnung.",
+					"Ich behaupte keine ungeprüften Tatsachen."
+				]
+			},
+			"2": {
+				"prompt": "Erfinde eine kurze Szene an einem möglichen Ort mit einem unmöglichen Ereignis. Erkläre danach die Grenze.",
+				"model": "Auf dem Schulhof liest Kim ein Buch. Plötzlich flattert ein Satz als silberner Vogel davon. Ein Schulhof und ein lesendes Kind sind möglich; der verwandelte Satz ist erfunden.",
+				"criteria": [
+					"Mein Ort ist vorstellbar.",
+					"Meine Erfindung ist erkennbar.",
+					"Ich erkläre den Unterschied."
+				]
+			}
+		},
+		"extension": ""
+	},
+	{
+		"id": "d5-hoerspiel",
+		"stage": "lesen",
+		"title": "Mit Stimme und Geräuschen erzählen",
+		"skill": "Wähle Stimme, Geräusche und Pausen passend zu der Wirkung, die dein Hörspiel haben soll.",
+		"bindings": ["2.4", "1.4"],
+		"paragraphs": [
+			"Ein Hörspiel erzählt mit Stimmen, Geräuschen, Musik und Pausen. Das Publikum sieht die Handlung nicht. Ein Geräusch kann einen Ort erkennbar machen, eine Pause Erwartung wecken. Überlege, was du wirklich hörbar machen musst.",
+			"Beispiel: Schritte, ein Knarren und der leise Satz „Wer ist da?“ lassen eine Türszene spannend wirken. Mit fröhlicher Stimme und einem hellen Lachen kann dieselbe Handlung komisch werden. In einer gedruckten Fassung brauchst du Wörter, die den Ort beschreiben."
+		],
+		"material": "Türszene: Nuri öffnet die alte Tür. Dahinter sitzt nur die Katze.\nTonplan A: langsame Schritte – knarrende Tür – Pause – leises Miauen.\nTonplan B: schnelle Schritte – lautes Lachen – fröhliches Miauen.",
+		"materialLabel": "Eigens geschriebenes Übungsmaterial",
+		"sourceIds": ["lehrplan"],
+		"check": {
+			"wrong": "Ein Bild ohne hörbare Erklärung.",
+			"explanation": "In einem Hörspiel kann eine hörbare Pause die Erwartung auf das nächste Geräusch lenken."
+		},
+		"takeaway": "Wähle Stimme, Geräusche und Pausen passend zu der Wirkung, die dein Hörspiel haben soll.",
+		"lehrplan": "D5 LB 2.4, 1.4",
+		"cases": [
+			{
+				"prompt": "Welcher Tonplan wirkt eher unheimlich?",
+				"options": [
+					"A: langsame Schritte, Knarren, Pause.",
+					"B: Lachen und fröhliches Miauen."
+				],
+				"answer": "A: langsame Schritte, Knarren, Pause.",
+				"feedback": "Die Verzögerung und das Knarren lassen offen, was hinter der Tür wartet."
+			},
+			{
+				"prompt": "Welche Rückmeldung ist konkret?",
+				"options": [
+					"War halt gut.",
+					"Die Pause vor dem Miauen hat mich neugierig gemacht."
+				],
+				"answer": "Die Pause vor dem Miauen hat mich neugierig gemacht.",
+				"feedback": "Die Rückmeldung nennt eine hörbare Stelle und ihre Wirkung."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Schreibe drei Regieanweisungen für die spannende Fassung.",
+				"model": "Langsame Schritte. Die Tür knarrt. Zwei Sekunden Stille, dann ein leises Miauen.",
+				"criteria": [
+					"Ich ordne die Geräusche.",
+					"Ich setze eine Pause ein.",
+					"Mein Plan passt zur Handlung."
+				]
+			},
+			"2": {
+				"prompt": "Gestalte die Szene komisch statt spannend. Beschreibe danach den Unterschied zu einer gedruckten Fassung.",
+				"model": "Die Tür quietscht wie eine Hupe. Nuri ruft überrascht, dann lacht er. Im gedruckten Text muss ich das Quietschen und Nuris Reaktion beschreiben; im Hörspiel hört man beides.",
+				"criteria": [
+					"Ich ändere die Wirkung gezielt.",
+					"Ich plane Stimme und Geräusch.",
+					"Ich vergleiche Hören und Lesen."
+				]
+			}
+		},
+		"extension": "Spielt beide Fassungen zu zweit. Lasst das Publikum erst danach sagen, welche Mittel es bemerkt hat. Die App prüft eure Aufführung nicht."
+	},
+	{
+		"id": "d5-schreibplan",
+		"stage": "schreiben",
+		"title": "Mit einem Schreibplan starten",
+		"skill": "Wähle eine Textform, sammle Ideen und ordne sie.",
+		"bindings": ["3.1", "3.2"],
+		"paragraphs": [
+			"Frage zuerst, was dein Text tun soll: Erlebnisse erzählen, über etwas informieren oder eine Meinung begründen. Sammle Ideen in einem Ideenstern. Streiche Überflüssiges und ordne den Rest nach deinem Ziel.",
+			"Beispiel: Für einen Aushang zur Tauschbörse sammelst du „Tag, Zeit, Ort, Ablauf“. Die Überschrift nennt das Thema. Absätze trennen Abgabe und Auswahl. Lasse bei einem handschriftlichen Text Platz am Rand und schreibe gut lesbar."
+		],
+		"materialLabel": "Ideenstern für eine Buchtauschaktion",
+		"material": "Mitte: Büchertausch\nÄste: Dienstag Abgabe, Donnerstag Auswahl, Aula, Bücherei, Farbe des Lieblingsbuchs, Einladung für Klasse 5",
+		"sourceIds": ["lehrplan"],
+		"check": {
+			"wrong": "Das war die beste Aktion aller Zeiten.",
+			"explanation": "Tag und Ort geben der Leserin eine nutzbare Information."
+		},
+		"takeaway": "Wähle erst die Absicht, dann die wichtigen Ideen und die passende Reihenfolge.",
+		"lehrplan": "D5 LB 3.1, 3.2",
+		"cases": [
+			{
+				"prompt": "Welcher Satz beginnt eine Erzählung?",
+				"options": [
+					"Die Abgabe findet am Dienstag statt.",
+					"Als Lina in die Aula kam, lag ein nasses Buch vor der Tür."
+				],
+				"answer": "Als Lina in die Aula kam, lag ein nasses Buch vor der Tür.",
+				"feedback": "Der erste Satz führt Figur, Ort und ein ungewöhnliches Ereignis ein."
+			},
+			{
+				"prompt": "Welcher Satz begründet eine Meinung?",
+				"options": [
+					"Der Tausch ist sinnvoll, weil Bücher weitergelesen werden.",
+					"Die Kiste steht in der Aula."
+				],
+				"answer": "Der Tausch ist sinnvoll, weil Bücher weitergelesen werden.",
+				"feedback": "Der Weil-Satz stützt die Meinung mit einem Grund."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Plane einen Aushang mit Überschrift und zwei Absätzen. Nutze die Angaben aus dem Ideenstern.",
+				"model": "Büchertausch für Klasse 5\nDienstag: Abgabe in der Aula.\nDonnerstag: Auswahl in der Bücherei.",
+				"criteria": [
+					"Meine Überschrift nennt das Thema.",
+					"Abgabe und Auswahl sind getrennt.",
+					"Beide Ortsangaben passen."
+				]
+			},
+			"2": {
+				"prompt": "Schreibe drei kurze Einstiege über den Tausch: erzählend, informierend und begründend.",
+				"model": "Erzählung: Als Deniz die Kiste öffnete, lag oben sein verschollenes Buch. Info: Abgabe ist am Dienstag in der Aula. Meinung: Ich finde den Tausch sinnvoll, weil wir Bücher weitergeben können.",
+				"criteria": [
+					"Die Erzählung hat einen Handlungsbeginn.",
+					"Die Information ist überprüfbar.",
+					"Die Meinung hat einen Grund."
+				]
+			}
+		},
+		"extension": "Schreibe einen kurzen Text mit Überschrift, Absätzen und Rand von Hand. Bitte eine Person, eine wichtige Angabe darin zu finden."
+	},
+	{
+		"id": "d5-erzaehlen",
+		"stage": "schreiben",
+		"title": "Ein Erlebnis spannend erzählen",
+		"skill": "Plane Erzählsituation, Ereignis und Ausgang.",
+		"bindings": ["3.2", "1.2"],
+		"paragraphs": [
+			"Die Erzählsituation führt knapp ein: Wer ist wann und wo, und was geschieht am Anfang? Das Ereignis bringt eine Veränderung. Im Hauptteil steigt die Spannung bis zu einer entscheidenden Stelle. Der Ausgang zeigt, wie es weitergeht.",
+			"Beispiel: „Nach der Pause räumte Elif im Schulhof auf. Unter der Bank zitterte etwas. Elif kniete nieder. ‚Keine Angst‘, flüsterte sie. Ein kleiner Vogel hüpfte aus dem Schatten.“ Treffende Verben, Sinneseindrücke und Rede machen die Szene anschaulich. Erzähle in einer passenden, durchgehaltenen Zeitform."
+		],
+		"materialLabel": "Erzählplan: Das Geräusch in der Aula",
+		"material": "Erzählsituation: Sami, nach dem Unterricht, Aula, Jacke holen.\nEreignis: Ein Schlüssel klirrt hinter der Bühne. Der Vorhang bewegt sich.\nAusgang: Die Hausmeisterin sucht ihren Schlüsselbund. Sami hilft ihr.",
+		"sourceIds": ["lehrplan"],
+		"check": {
+			"wrong": "Welche Wörter reimen sich? Wie viele Verse gibt es?",
+			"explanation": "Die vier Fragen führen in Personen, Zeit, Ort und Ausgangslage ein."
+		},
+		"takeaway": "Führe knapp ein, gestalte den entscheidenden Moment und löse die Situation im Ausgang auf.",
+		"lehrplan": "D5 LB 3.2, 1.2",
+		"cases": [
+			{
+				"prompt": "Welche Formulierung lässt das Geräusch genauer hören?",
+				"options": [
+					"Hinter dem Vorhang klirrte ein Schlüssel.",
+					"Da passierte halt etwas."
+				],
+				"answer": "Hinter dem Vorhang klirrte ein Schlüssel.",
+				"feedback": "„Klirrte“ nennt ein konkretes Geräusch und lenkt die Aufmerksamkeit zur Bühne."
+			},
+			{
+				"prompt": "Was gehört ans Ende dieser Geschichte?",
+				"options": [
+					"Sami betritt nach dem Unterricht die Aula.",
+					"Sami findet mit der Hausmeisterin den Schlüsselbund."
+				],
+				"answer": "Sami findet mit der Hausmeisterin den Schlüsselbund.",
+				"feedback": "Der Fund löst die Situation. Das Betreten der Aula gehört zur Ausgangslage."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Schreibe eine knappe Einleitung und einen spannenden Satz zum bewegten Vorhang.",
+				"model": "Nach dem Unterricht holte Sami seine Jacke aus der Aula. Hinter der Bühne klirrte etwas. Plötzlich zuckte der Vorhang.",
+				"criteria": [
+					"Ich führe Person und Ort ein.",
+					"Ich nenne Zeit und Ausgangslage.",
+					"Ein treffendes Verb macht die Veränderung deutlich."
+				]
+			},
+			"2": {
+				"prompt": "Schreibe nach dem Plan eine kurze Erzählung. Verzögere den Moment der Entdeckung und verwende wörtliche Rede.",
+				"model": "Nach dem Unterricht schlich Sami zurück in die Aula. Metall klirrte hinter dem Vorhang. Er streckte die Hand aus und zögerte. „Hast du meinen Schlüsselbund gesehen?“, fragte die Hausmeisterin. Sami hob ihn neben dem Vorhang auf und reichte ihn ihr.",
+				"criteria": [
+					"Ausgangslage, Ereignis und Ausgang sind erkennbar.",
+					"Der entscheidende Moment bekommt Raum.",
+					"Wörtliche Rede passt in die Handlung."
+				]
+			}
+		}
+	},
+	{
+		"id": "d5-weiterschreiben",
+		"stage": "schreiben",
+		"title": "Eine Geschichte weiterschreiben",
+		"skill": "Halte dich an die Hinweise und entwickle eine passende Wendung.",
+		"bindings": ["3.2", "2.2"],
+		"paragraphs": [
+			"Sammle vor dem Weiterschreiben, was der Anfang festlegt: Figuren, Ort, Zeitform, Erzählperspektive und offenes Problem. Greife mindestens einen Hinweis auf. Du darfst Neues erfinden, wenn es zur Geschichte passt.",
+			"Beispiel: Wenn „Ich lauschte am Schuppen“ der Anfang ist, bleibst du beim Ich und beim Präteritum. Die Figur darf ein Geräusch deuten, kennt aber fremde Gedanken nur, wenn jemand sie verrät."
+		],
+		"materialLabel": "Erfundener Geschichtenanfang",
+		"material": "Ich stand mit nassen Schuhen in der Bücherei. Hinter dem Regal piepste etwas. Unter dem Brett sah ich eine rote Schnur verschwinden.",
+		"sourceIds": ["lehrplan"],
+		"check": {
+			"wrong": "Er geht am nächsten Morgen in die Bücherei.",
+			"explanation": "„Ich kniete“ bleibt bei derselben Perspektive und Zeitform."
+		},
+		"takeaway": "Schreibe mit derselben Stimme weiter und lass einen Hinweis aus dem Anfang wichtig werden.",
+		"lehrplan": "D5 LB 3.2, 2.2",
+		"cases": [
+			{
+				"prompt": "Welcher Einfall knüpft an beide Hinweise an?",
+				"options": [
+					"Ein Drache erscheint ohne Verbindung auf einem anderen Kontinent.",
+					"Die Schnur führt zu einem piepsenden Spielzeug."
+				],
+				"answer": "Die Schnur führt zu einem piepsenden Spielzeug.",
+				"feedback": "Spielzeug und Schnur können Piepsen und Bewegung erklären."
+			},
+			{
+				"prompt": "Welche Fassung hält die bisherige Zeitform?",
+				"options": [
+					"Ich zog vorsichtig an der Schnur.",
+					"Ich ziehe vorsichtig an der Schnur."
+				],
+				"answer": "Ich zog vorsichtig an der Schnur.",
+				"feedback": "„Zog“ setzt das Präteritum des Anfangs fort."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Schreibe zwei Sätze weiter. Behalte Perspektive und Zeitform bei.",
+				"model": "Ich kniete mich hin und zog vorsichtig an der roten Schnur. Dahinter piepste ein kleines Spielzeugauto.",
+				"criteria": [
+					"Ich bleibe beim Ich.",
+					"Ich verwende die bisherige Zeitform.",
+					"Ich greife einen Hinweis auf."
+				]
+			},
+			"2": {
+				"prompt": "Schreibe einen anderen Ausgang, der beide Hinweise auflöst. Erkläre danach einen Anschluss.",
+				"model": "Ich lauschte und folgte der Schnur. Am Ende hielt ein Kind hinter dem Regal einen kleinen Alarmknopf. „Mein Suchspiel ist kaputt“, sagte es. Der Alarmknopf erklärt das Piepsen. Die rote Schnur gehörte zu ihm.",
+				"criteria": [
+					"Ich löse beide Hinweise auf.",
+					"Der Ausgang ist anders als im ersten Muster.",
+					"Ich erkläre meinen Anschluss."
+				]
+			}
+		}
+	},
+	{
+		"id": "d5-tierbeschreibung",
+		"stage": "schreiben",
+		"title": "Ein Tier genau beschreiben",
+		"skill": "Ordne sichtbare Merkmale und finde treffende Wörter.",
+		"bindings": ["3.2", "4.2"],
+		"paragraphs": [
+			"Beginne mit einem Überblick. Beschreibe dann in einer erkennbaren Reihenfolge, etwa von Kopf bis Schwanz. Nenne sichtbare Formen, Farben, Größen und Bewegungen. Schreibe meist im Präsens.",
+			"Beispiel: „Der Hund hat kurzes, braunes Fell und einen weißen Fleck auf der Brust“ hilft beim Wiedererkennen. „Der Hund ist toll“ ist eine Meinung. Ein Vergleich wie „Die Ohren sind länger als seine Schnauze“ macht eine Beobachtung genauer."
+		],
+		"materialLabel": "Beobachtungskarte: Hund am Schultor",
+		"material": "Klein, kurzes braunes Fell, dunkle Schnauze, ein weißer Fleck an der Brust, hängende Ohren, kurzer Schwanz. Läuft mit kleinen schnellen Schritten.",
+		"sourceIds": ["lehrplan"],
+		"check": {
+			"wrong": "Ein bestimmt freundlicher Hund.",
+			"explanation": "Die Lage und Farbe des Flecks sind sichtbar und konkret."
+		},
+		"takeaway": "Wähle Merkmale, mit denen jemand das Tier wiedererkennen kann. Ordne sie vom Überblick zu Einzelheiten.",
+		"lehrplan": "D5 LB 3.2, 4.2",
+		"cases": [
+			{
+				"prompt": "Was lässt sich an der Karte belegen?",
+				"options": [
+					"Der Hund hat hängende Ohren.",
+					"Der Hund liebt laute Musik."
+				],
+				"answer": "Der Hund hat hängende Ohren.",
+				"feedback": "Die Ohren sind beobachtet. Vorlieben lassen sich aus der Karte nicht ableiten."
+			},
+			{
+				"prompt": "Welche Reihenfolge ist leichter nachzuvollziehen?",
+				"options": [
+					"Schwanz → Meinung → Ohren → Größe → Meinung.",
+					"Größe und Fell → Kopf → Brust → Schwanz."
+				],
+				"answer": "Größe und Fell → Kopf → Brust → Schwanz.",
+				"feedback": "Vom Gesamteindruck zu geordneten Körperteilen können Lesende dem Blick folgen."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Beschreibe den Hund in drei Sätzen so, dass ihn jemand erkennt.",
+				"model": "Der Hund ist klein und hat kurzes braunes Fell. Er hat eine dunkle Schnauze und hängende Ohren. Auf der Brust hat er einen weißen Fleck und sein Schwanz ist kurz.",
+				"criteria": [
+					"Ich beginne mit dem Überblick.",
+					"Ich nenne ein auffälliges Merkmal.",
+					"Ich verwende überwiegend Präsens."
+				]
+			},
+			"2": {
+				"prompt": "Eine Nachbarin sucht ihren Hund. Vergleiche eure Beobachtungen: Ihr Hund ist schwarz, groß und hat einen weißen Fleck am Hals.",
+				"model": "Beide Hunde haben einen weißen Fleck. Der Hund am Schultor ist kleiner und braun, der gesuchte groß und schwarz. Der Fleck sitzt bei unserem Hund auf der Brust statt am Hals.",
+				"criteria": [
+					"Ich nenne eine Gemeinsamkeit.",
+					"Ich verwende eine passende Vergleichsform.",
+					"Ich unterscheide die Lage der Flecken."
+				]
+			}
+		},
+		"extension": "Beobachte ein eigenes Tierbild und lass jemanden das Tier anhand deiner Beschreibung aus mehreren Bildern auswählen."
+	},
+	{
+		"id": "d5-brief",
+		"stage": "schreiben",
+		"title": "Einen persönlichen Brief schreiben",
+		"skill": "Reagiere auf die andere Person und formuliere dein Anliegen.",
+		"bindings": ["3.2", "4.3", "3.1"],
+		"paragraphs": [
+			"Ein persönlicher Brief hat meist Ort und Datum, Anrede, Text, Gruß und Namen. In einer persönlichen E-Mail übernehmen ein aussagekräftiger Betreff und eine passende Anrede die Orientierung. Gehe auf eine erhaltene Nachricht ein und nenne dann dein Anliegen.",
+			"Beispiel: „Liebe Mina,“ endet mit Komma. Der Text danach beginnt klein, sofern kein anderer Grund zur Großschreibung vorliegt: „vielen Dank für deine Karte.“ In deutschen Briefen steht die Grußformel „Viele Grüße“ üblicherweise ohne Satzzeichen. Der Name folgt in der nächsten Zeile."
+		],
+		"materialLabel": "Nachricht einer Freundin",
+		"material": "Hallo Lea,\nich kann am Donnerstag nicht zum Büchertausch. Kannst du mir erzählen, wie es war?\n\nLiebe Grüße\nMina",
+		"sourceIds": ["lehrplan"],
+		"check": {
+			"wrong": ", vielen Dank für deine Nachricht.",
+			"explanation": "Nach dem Komma beginnt „vielen“ hier klein. Nomen und andere Wörter, die großgeschrieben werden, bleiben groß."
+		},
+		"takeaway": "Mach klar, worauf du antwortest, was du mitteilst und was du dir von der Person wünschst.",
+		"lehrplan": "D5 LB 3.2, 4.3, 3.1",
+		"cases": [
+			{
+				"prompt": "Welcher Satz antwortet auf Minas Nachricht?",
+				"options": [
+					"Ich erzähle dir jetzt alles über mein Fahrrad.",
+					"Schade, dass du am Donnerstag nicht dabei sein kannst."
+				],
+				"answer": "Schade, dass du am Donnerstag nicht dabei sein kannst.",
+				"feedback": "Der Satz greift Minas Nachricht und die genannte Zeit auf."
+			},
+			{
+				"prompt": "Welcher Abschluss ist in einem persönlichen Brief in Deutschland üblich?",
+				"options": ["Viele Grüße\nLea", "Viele Grüße,\nLea"],
+				"answer": "Viele Grüße\nLea",
+				"feedback": "Üblich sind die Grußformel ohne Satzzeichen und der Name in der nächsten Zeile."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Antworte Mina mit Anrede, Bezug auf ihre Nachricht, einem Erlebnis und Gruß.",
+				"model": "Liebe Mina,\nschade, dass du nicht da warst. Ich habe ein Buch über Füchse gefunden. Ich zeige es dir morgen.\nViele Grüße\nLea",
+				"criteria": [
+					"Ich setze die Anrede richtig.",
+					"Ich antworte auf Minas Bitte.",
+					"Gruß und Name sind erkennbar."
+				]
+			},
+			"2": {
+				"prompt": "Schreibe eine E-Mail, in der du einen zweiten Tausch vorschlägst und deine Meinung begründest.",
+				"model": "Betreff: Noch ein Büchertausch?\nHallo Mina,\nich wünsche mir einen zweiten Termin, weil einige am Donnerstag gefehlt haben. Können wir die Klasse am Montag fragen?\nLiebe Grüße\nLea",
+				"criteria": [
+					"Der Betreff nennt das Thema.",
+					"Mein Vorschlag hat einen Grund.",
+					"Ich bitte um eine konkrete Reaktion."
+				]
+			}
+		}
+	},
+	{
+		"id": "d5-ueberarbeiten",
+		"stage": "schreiben",
+		"title": "Einen Entwurf gezielt überarbeiten",
+		"skill": "Prüfe Inhalt, Aufbau, Stil und Schreibweise nacheinander.",
+		"bindings": ["3.3", "4.3"],
+		"paragraphs": [
+			"Lies zuerst als Leserin: Fehlt etwas? Ist die Reihenfolge klar? Prüfe danach Sprache und Stil. Lies zum Schluss Satz für Satz auf Grammatik, Satzzeichen und Rechtschreibung. Schlage Zweifelsfälle nach.",
+			"Beispiel: In „Morgen Treffen am Tor“ fehlt vielleicht die Uhrzeit. In „Wir treffn uns“ hilft deutliches Mitsprechen. Wenn jemand sagt „Ich weiß nicht, welches Tor“, ergänze die genaue Stelle und prüfe, ob der Satz jetzt verständlich ist."
+		],
+		"materialLabel": "Erfundener Entwurf mit Fehlern",
+		"material": "Büchertausch morgen. wir geben die bücher ab dann sucht wir eins.\nRückmeldung: Wo und wann ist die Abgabe? Ich verstehe den zweiten Satz erst beim zweiten Lesen.",
+		"sourceIds": ["lehrplan"],
+		"check": {
+			"wrong": "Ob alle Wörter gleich lang sind.",
+			"explanation": "Fehlende Informationen und ein unklarer Ablauf betreffen Inhalt und Aufbau."
+		},
+		"takeaway": "Überarbeite in Runden. Prüfe zuletzt besonders deine häufigsten Fehler.",
+		"lehrplan": "D5 LB 3.3, 4.3",
+		"cases": [
+			{
+				"prompt": "Welche Änderung beantwortet die Rückmeldung zum Inhalt?",
+				"options": [
+					"Morgen um zehn Uhr geben wir die Bücher in der Aula ab.",
+					"Morgen geben wir die Bücher ab."
+				],
+				"answer": "Morgen um zehn Uhr geben wir die Bücher in der Aula ab.",
+				"feedback": "Die Ergänzung nennt Zeit und Ort."
+			},
+			{
+				"prompt": "Welche Änderung löst das Problem am Satzübergang?",
+				"options": [
+					"wir geben die Bücher ab dann sucht wir eins.",
+					"Wir geben die Bücher ab. Dann suchen wir uns eines aus."
+				],
+				"answer": "Wir geben die Bücher ab. Dann suchen wir uns eines aus.",
+				"feedback": "Zwei Sätze zeigen die Schritte. Beide Satzanfänge sind groß und „suchen“ passt zum Subjekt „wir“."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Überarbeite den Entwurf mit einer Überschrift und zwei Sätzen. Ergänze Uhrzeit und Ort und korrigiere die Schreibweise.",
+				"model": "Büchertausch morgen\nUm zehn Uhr geben wir die Bücher in der Aula ab. Danach wählen wir dort ein Buch aus.",
+				"criteria": [
+					"Zeit und Ort sind klar.",
+					"Die Schritte sind geordnet.",
+					"Satzanfänge, Nomen und Verbformen stimmen."
+				]
+			},
+			"2": {
+				"prompt": "Schreib zu einem eigenen Entwurf eine Rückmeldung in zwei Punkten und beschreibe deine Überarbeitung. Prüfe einen Zweifelsfall.",
+				"model": "„Welcher Eingang?“ Ich ergänze den Eingang an der Turnhalle. „Zwei Schritte stehen im selben Satz.“ Ich trenne sie. Für „Turnhalle“ prüfe ich im Wörterbuch den Artikel und die Schreibung.",
+				"criteria": [
+					"Meine Rückmeldung nennt zwei konkrete Stellen.",
+					"Meine Änderungen passen dazu.",
+					"Ich benenne eine passende Prüfstrategie."
+				]
+			}
+		},
+		"extension": "Tauscht Texte in einer Schreibkonferenz. Halte einen persönlichen Fehlerschwerpunkt fest und prüfe ihn in deinem nächsten Text."
+	},
+	{
+		"id": "d5-handschrift",
+		"stage": "schreiben",
+		"title": "Lesbar und entspannt schreiben",
+		"skill": "Passe Schriftgröße und Tempo an den Zweck an und überprüfe deine Handschrift auf Papier.",
+		"bindings": ["3.1", "4.3"],
+		"paragraphs": [
+			"Lesbarkeit entsteht durch erkennbare Buchstaben, Wortabstände, passende Größe und eine ruhige Zeile. Probiere eine lockere Stifthaltung aus und achte auf bequeme Sitzhaltung, entspannte Schultern und eine gut liegende Schreibunterlage. Drücke nicht unnötig fest auf.",
+			"Beispiel: Für eine Heftnotiz schreibst du kleiner als für ein Plakat. Vergleiche zwei handschriftliche Zeilen: Kann eine andere Person jedes Wort ohne Raten lesen? Ändere erst einen Punkt, etwa den Wortabstand, und prüfe die Wirkung. Druckbuchstaben helfen beim Beschriften von Skizzen."
+		],
+		"material": "Vorlage für die Heftseite: „Der Büchertausch beginnt am Donnerstag.“\nBeschriftung für das Plakat: „BÜCHERTAUSCH“.",
+		"materialLabel": "Eigens geschriebenes Übungsmaterial",
+		"sourceIds": ["lehrplan"],
+		"check": {
+			"wrong": "Du drückst besonders fest auf.",
+			"explanation": "Lesbarkeit prüfst du an erkennbaren Buchstaben und sinnvollen Abständen, nicht am Tempo allein."
+		},
+		"takeaway": "Passe Schriftgröße und Tempo an den Zweck an und überprüfe deine Handschrift auf Papier.",
+		"lehrplan": "D5 LB 3.1, 4.3",
+		"cases": [
+			{
+				"prompt": "Welche Schrift passt zur Plakatüberschrift?",
+				"options": [
+					"Größere, klar erkennbare Buchstaben.",
+					"Sehr kleine, eng gedrängte Schrift."
+				],
+				"answer": "Größere, klar erkennbare Buchstaben.",
+				"feedback": "Ein Plakat soll auch mit Abstand lesbar sein."
+			},
+			{
+				"prompt": "Deine Hand verkrampft. Was probierst du?",
+				"options": [
+					"Noch fester aufdrücken.",
+					"Druck verringern, Haltung prüfen und eine Pause machen."
+				],
+				"answer": "Druck verringern, Haltung prüfen und eine Pause machen.",
+				"feedback": "Lockerheit und eine kurze Pause helfen, die Haltung erneut zu prüfen."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Schreibe beide Vorlagen auf Papier. Notiere hier einen Unterschied und einen Verbesserungsschritt.",
+				"model": "Meine Plakatschrift ist größer. Auf der Heftseite stehen die Wörter zu eng. Ich vergrößere die Abstände und bitte jemanden, die neue Zeile zu lesen.",
+				"criteria": [
+					"Ich habe auf Papier geschrieben.",
+					"Ich benenne einen beobachteten Unterschied.",
+					"Ich plane eine prüfbare Verbesserung."
+				]
+			},
+			"2": {
+				"prompt": "Beschrifte eine eigene Skizze mit Druckbuchstaben und schreibe einen kurzen erklärenden Absatz von Hand. Prüfe mit einer anderen Person die Lesbarkeit.",
+				"model": "Ich beschrifte eine Skizze der Bücherei mit EINGANG und AUSLEIHE. Im Absatz lasse ich Wortabstände. Eine andere Person konnte „Ausleihe“ erst nach der Vergrößerung sicher lesen.",
+				"criteria": [
+					"Meine Beschriftung passt zur Skizze.",
+					"Ich überprüfe Haltung und Lesbarkeit.",
+					"Ich benenne eine echte Rückmeldung."
+				]
+			}
+		},
+		"extension": "Diese Aufgabe braucht Papier und Rückmeldung. Der Mustervergleich kann deine Handschrift, Haltung und Schreibgeschwindigkeit nicht prüfen."
+	},
+	{
+		"id": "d5-dokument",
+		"stage": "schreiben",
+		"title": "Eine Seite übersichtlich gestalten",
+		"skill": "Gliedere nach Inhalt und verwende Formatierung oder Bilder, um eine wichtige Information zu erklären.",
+		"bindings": ["3.1"],
+		"paragraphs": [
+			"Eine Überschrift nennt das Thema, Absätze ordnen die Gedanken. Setze wenige, gezielte Hervorhebungen ein. Richte Fließtext gut lesbar aus und wähle eine Schriftgröße, die zum Zweck passt. Bilder brauchen einen erkennbaren Bezug zum Text und eine verständliche Beschriftung.",
+			"Beispiel: Ein Aushang erhält die Überschrift „Büchertausch“, darunter die Abschnitte „Abgeben“ und „Auswählen“. Ein kleiner Lageplan zeigt die Aula. Ein beliebiges Tierfoto würde diese Information nicht erklären. In einem Textprogramm nutzt du Absatzumbrüche statt vieler Leerzeichen."
+		],
+		"material": "BÜCHERTAUSCH\nAbgeben: Dienstag in der Aula.\nAuswählen: Donnerstag in der Bücherei.\nBildidee: Lageplan mit markierter Aula.",
+		"materialLabel": "Eigens geschriebenes Übungsmaterial",
+		"sourceIds": ["lehrplan"],
+		"check": {
+			"wrong": "Alle Wörter in fünf verschiedenen Farben.",
+			"explanation": "Der Lageplan ergänzt die Ortsangabe und hat eine konkrete Aufgabe."
+		},
+		"takeaway": "Gliedere nach Inhalt und verwende Formatierung oder Bilder, um eine wichtige Information zu erklären.",
+		"lehrplan": "D5 LB 3.1",
+		"cases": [
+			{
+				"prompt": "Wie trennst du im Textprogramm zwei Sinnabschnitte?",
+				"options": ["Mit einem Absatz.", "Mit einer langen Reihe Leerzeichen."],
+				"answer": "Mit einem Absatz.",
+				"feedback": "Absätze erhalten die Gliederung auch bei einer anderen Fensterbreite."
+			},
+			{
+				"prompt": "Welche Angabe soll schnell auffallen?",
+				"options": [
+					"Eine zufällige Lieblingsfarbe.",
+					"Tag und Ort der Abgabe."
+				],
+				"answer": "Tag und Ort der Abgabe.",
+				"feedback": "Die wichtigen Angaben richten sich nach dem Zweck des Aushangs."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Entwirf eine gegliederte Fassung des Materials. Nenne eine sinnvolle Hervorhebung.",
+				"model": "Büchertausch\nAbgeben: Dienstag, Aula.\nAuswählen: Donnerstag, Bücherei.\nIch hebe die beiden Tage hervor.",
+				"criteria": [
+					"Ich verwende eine Überschrift.",
+					"Ich trenne zwei Abschnitte.",
+					"Ich begründe eine Hervorhebung."
+				]
+			},
+			"2": {
+				"prompt": "Erstelle in einem Textprogramm eine Seite für eine eigene Schulaktion mit einem passenden Bild oder einer Skizze. Beschreibe anschließend deine Entscheidungen.",
+				"model": "Ich setze die Überschrift über zwei Absätze zu Termin und Ablauf. Eine beschriftete Wegskizze erklärt den Treffpunkt. Ich nutze eine gut lesbare Schrift und nur eine Hervorhebungsart.",
+				"criteria": [
+					"Ich habe ein elektronisches Dokument erstellt.",
+					"Meine Text-Bild-Verknüpfung ist sinnvoll.",
+					"Ich prüfe die Seite aus Sicht der Lesenden."
+				]
+			}
+		},
+		"extension": "Erstelle das Dokument selbst im Textprogramm. Die App speichert deinen Entwurf als Text und setzt keine Schriftformatierung oder Bilder um."
+	},
+	{
+		"id": "d5-formular",
+		"stage": "schreiben",
+		"title": "Ein Formular sorgfältig ausfüllen",
+		"skill": "Ordne Angaben den richtigen Feldern zu und kläre Unbekanntes vor einer echten Anmeldung.",
+		"bindings": ["3.1"],
+		"paragraphs": [
+			"Lies zuerst, wofür das Formular da ist. Prüfe Feldnamen und geforderte Schreibweise. Schreibe jede Angabe in das passende Feld. Wenn du eine Angabe nicht kennst, frage nach, statt etwas zu erfinden.",
+			"Beispiel: Im Feld „Nachname“ steht „Yilmaz“, im Feld „Vorname“ „Deniz“. Eine Unterschrift ist nicht dasselbe wie ein eingetippter Name. Bei einer echten Anmeldung klärst du mit einer erwachsenen Person, was ausgefüllt werden muss. In der Übung nutzt du nur erfundene Daten."
+		],
+		"material": "Schulbücherei – Übungsanmeldung\nNachname: ____\nVorname: ____\nKlasse: ____\nDatum: ____\nName der Übungsfigur: Deniz Yilmaz, Klasse 5a.",
+		"materialLabel": "Eigens geschriebenes Übungsmaterial",
+		"sourceIds": ["lehrplan"],
+		"check": {
+			"wrong": "Deniz Yilmaz, Klasse 5a",
+			"explanation": "Ein Feld verlangt genau die bezeichnete Angabe; der Vorname steht im eigenen Feld."
+		},
+		"takeaway": "Ordne Angaben den richtigen Feldern zu und kläre Unbekanntes vor einer echten Anmeldung.",
+		"lehrplan": "D5 LB 3.1",
+		"cases": [
+			{
+				"prompt": "Welche Angabe gehört ins Klassenfeld? ",
+				"options": ["5a", "Yilmaz"],
+				"answer": "5a",
+				"feedback": "Die Klasse ist eine andere Angabe als Vor- oder Nachname."
+			},
+			{
+				"prompt": "Du kennst eine geforderte Angabe nicht. Was tust du?",
+				"options": [
+					"Eine plausible Angabe ausdenken.",
+					"Vor einer echten Anmeldung nachfragen."
+				],
+				"answer": "Vor einer echten Anmeldung nachfragen.",
+				"feedback": "Erfundene Angaben gehören nur in die ausdrücklich fiktive Übung."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Fülle die drei bekannten Felder mit den Übungsdaten aus. Erkläre, wie du mit dem Datum umgehst.",
+				"model": "Nachname: Yilmaz; Vorname: Deniz; Klasse: 5a. Für das Datum einer echten Anmeldung prüfe ich den tatsächlichen Tag.",
+				"criteria": [
+					"Ich trenne Vor- und Nachname.",
+					"Ich ordne die Klasse zu.",
+					"Ich erfinde keine reale Anmeldung."
+				]
+			},
+			"2": {
+				"prompt": "Entwirf ein Übungsformular für einen Lesekreis mit vier Feldnamen. Fülle es ausschließlich mit erfundenen Daten aus.",
+				"model": "Vorname: Kim; Nachname: Beispiel; Klasse: 5b; gewünschtes Buchthema: Tiere. Die Felder enthalten nur die Angaben, die der Lesekreis für diese Übung benötigt.",
+				"criteria": [
+					"Meine Feldnamen sind eindeutig.",
+					"Meine Daten sind erfunden.",
+					"Jede Angabe passt zum Feld."
+				]
+			}
+		},
+		"extension": "Bearbeite eine echte Anmeldung nur zusammen mit einer zuständigen erwachsenen Person. Hier brauchst du keine Adresse, Telefonnummer oder sonstige echte persönliche Daten."
+	},
+	{
+		"id": "d5-bericht",
+		"stage": "schreiben",
+		"title": "Ein Geschehen sachlich berichten",
+		"skill": "Berichte geordnet und sachlich; verwende gesicherte Angaben und erfinde keine Ursache.",
+		"bindings": ["3.2", "1.2", "3.1"],
+		"paragraphs": [
+			"Ein Bericht informiert über ein Geschehen. Kläre die W-Fragen: Wer, was, wann, wo, wie und gegebenenfalls warum? Ordne die gesicherten Angaben zeitlich. Unbekannte Gründe erfindest du nicht. Eigene Gefühle und Spannung gehören nur hinein, wenn sie für die Information wichtig und klar zugeordnet sind.",
+			"Beispiel: „Am Dienstag fiel in der Aula eine Bücherkiste um. Zwei Kinder sammelten die Bücher auf.“ Das berichtet sachlich. „Es war die schlimmste Katastrophe aller Zeiten!“ übertreibt. Ein Bericht über Vergangenes steht häufig im Präteritum."
+		],
+		"material": "Notizen: Dienstag, erste Pause, Aula. Eine Bücherkiste kippte beim Tragen. Drei Bücher fielen heraus. Zwei Kinder sammelten sie auf. Keine Schäden bemerkt. Ursache des Kippens nicht bekannt.",
+		"materialLabel": "Eigens geschriebenes Übungsmaterial",
+		"sourceIds": ["lehrplan"],
+		"check": {
+			"wrong": "Die Kiste war sicher verhext.",
+			"explanation": "Ein sachlicher Bericht macht die Wissenslücke kenntlich und beschuldigt niemanden ohne Beleg."
+		},
+		"takeaway": "Berichte geordnet und sachlich; verwende gesicherte Angaben und erfinde keine Ursache.",
+		"lehrplan": "D5 LB 3.2, 1.2, 3.1",
+		"cases": [
+			{
+				"prompt": "Welche Einleitung nennt Zeit und Ort?",
+				"options": [
+					"Am Dienstag kippte in der ersten Pause in der Aula eine Bücherkiste.",
+					"Du glaubst nicht, was plötzlich passierte!"
+				],
+				"answer": "Am Dienstag kippte in der ersten Pause in der Aula eine Bücherkiste.",
+				"feedback": "Zeit, Ort und Geschehen orientieren die Lesenden sofort."
+			},
+			{
+				"prompt": "Welche Angabe darfst du übernehmen?",
+				"options": [
+					"Die ganze Schule geriet in Panik.",
+					"Drei Bücher fielen heraus."
+				],
+				"answer": "Drei Bücher fielen heraus.",
+				"feedback": "Die Anzahl steht in den Notizen; Panik wird dort nicht belegt."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Schreibe aus den Notizen einen Bericht in drei Sätzen.",
+				"model": "Am Dienstag kippte in der ersten Pause in der Aula eine Bücherkiste. Drei Bücher fielen heraus und wurden von zwei Kindern aufgehoben. Schäden wurden nicht bemerkt; die Ursache ist nicht bekannt.",
+				"criteria": [
+					"Ich nenne Zeit, Ort und Geschehen.",
+					"Ich ordne die Handlungen.",
+					"Ich erfinde keinen Grund."
+				]
+			},
+			"2": {
+				"prompt": "Schreibe dieselbe Szene als kurzen Bericht und danach als erfundenen Erzählbeginn. Erkläre den Unterschied.",
+				"model": "Bericht: Am Dienstag kippte in der Aula eine Kiste; zwei Kinder sammelten die Bücher auf. Erzählung: Mit klopfendem Herzen hielt ich die Kiste fest. Da rutschte mir der Griff aus der Hand. Die Gefühle der Erzählung sind erfunden, im Bericht verwende ich nur die Notizen.",
+				"criteria": [
+					"Mein Bericht bleibt sachlich.",
+					"Meine Erzählung gestaltet die Erfahrung.",
+					"Ich kennzeichne erfundene Ergänzungen."
+				]
+			}
+		},
+		"extension": ""
+	},
+	{
+		"id": "d5-vorgang",
+		"stage": "schreiben",
+		"title": "Einen Vorgang verständlich beschreiben",
+		"skill": "Nenne Material und geordnete Schritte mit genauen Verben und gleicher Ansprache.",
+		"bindings": ["3.2"],
+		"paragraphs": [
+			"Eine Vorgangsbeschreibung zeigt, wie etwas gemacht wird. Nenne zuerst nötige Dinge, dann die Schritte in der richtigen Reihenfolge. Verwende genaue Verben und eine einheitliche Ansprache. Häufig passt das Präsens.",
+			"Beispiel: „Falte das Papier in der Mitte. Öffne es wieder.“ ist genauer als „Mach das Papier irgendwie“. Prüfe, ob eine Person ohne Vorwissen nach deiner Beschreibung handeln kann. Wörter wie „zuerst“, „danach“ und „zum Schluss“ helfen bei der Ordnung."
+		],
+		"material": "Papierlesezeichen: Ein Blatt, ein Stift. Blatt längs halbieren durch Falten, wieder öffnen, entlang der Faltlinie noch einmal zusammenlegen, flach drücken, Namen auf die Vorderseite schreiben. Es wird nichts abgeschnitten.",
+		"materialLabel": "Eigens geschriebenes Übungsmaterial",
+		"sourceIds": ["lehrplan"],
+		"check": {
+			"wrong": "Spannung bis zum letzten Satz.",
+			"explanation": "Lesende müssen wissen, was sie brauchen und welche Handlung jeweils folgt."
+		},
+		"takeaway": "Nenne Material und geordnete Schritte mit genauen Verben und gleicher Ansprache.",
+		"lehrplan": "D5 LB 3.2",
+		"cases": [
+			{
+				"prompt": "Welcher Satz ist genauer?",
+				"options": [
+					"Falte das Blatt längs in der Mitte.",
+					"Mach das Blatt passend."
+				],
+				"answer": "Falte das Blatt längs in der Mitte.",
+				"feedback": "Richtung und Tätigkeit lassen sich beim Falten unmittelbar umsetzen."
+			},
+			{
+				"prompt": "Was hilft bei einer unklaren Reihenfolge?",
+				"options": [
+					"Mehr schmückende Adjektive einfügen.",
+					"Die Schritte nummerieren und erproben."
+				],
+				"answer": "Die Schritte nummerieren und erproben.",
+				"feedback": "Die Reihenfolge und eine Erprobung zeigen fehlende Handlungsschritte."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Schreibe aus dem Material eine Anleitung mit Materialzeile und drei bis fünf Schritten.",
+				"model": "Material: ein Blatt und ein Stift. Falte das Blatt längs in der Mitte. Öffne es und lege es an der Faltlinie wieder zusammen. Drücke es flach. Schreibe deinen Namen auf die Vorderseite.",
+				"criteria": [
+					"Ich nenne das Material.",
+					"Meine Schritte sind geordnet.",
+					"Meine Verben sind genau."
+				]
+			},
+			"2": {
+				"prompt": "Beschreibe einen anderen einfachen Vorgang aus deinem Alltag. Plane eine Erprobung und eine Rückfrage.",
+				"model": "Material für das Einpacken eines Buchgeschenks: Papier, Klebeband, Buch. Ich beschreibe Einlegen, Falten und Befestigen in Reihenfolge. Danach frage ich eine Person: An welchem Schritt brauchtest du zusätzliche Hilfe?",
+				"criteria": [
+					"Ich wähle einen überschaubaren Vorgang.",
+					"Meine Beschreibung lässt sich ausführen.",
+					"Ich plane eine passende Überprüfung."
+				]
+			}
+		},
+		"extension": "Lass eine Person die Anleitung mit Papier ausprobieren. Beschreibe anschließend eine Stelle, die du aufgrund der Erprobung verbessert hast."
+	},
+	{
+		"id": "d5-sprachwahl",
+		"stage": "sprache",
+		"title": "Worte für die richtige Situation",
+		"skill": "Vergleiche Gespräch und Schrift, Anglizismen und Sprachbilder.",
+		"bindings": ["4.1", "1.2"],
+		"paragraphs": [
+			"Mit Freunden sprichst du vielleicht im Dialekt oder in Umgangssprache. Standardsprache hilft, wenn dein Publikum diese Wörter nicht kennt. Gesprochene Sprache hat Pausen und Füllwörter. Schriftliche Mitteilungen brauchen klare Sätze und eine Ordnung, weil Nachfragen erst später möglich sind.",
+			"Beispiel: Im Gespräch sagst du „Ähm, der Check-in ist da drüben“. Auf einem Schild hilft „Anmeldung am Eingang“. Ein Vergleich kann etwas anschaulich machen: „Das Papier flatterte wie ein Segel.“",
+			"In Sachfächern helfen genaue Fachwörter. „Verdunsten“ bedeutet, dass eine Flüssigkeit nach und nach gasförmig wird. „Wasser geht weg“ ist ungenauer. Erkläre ein unbekanntes Fachwort mit dem Textzusammenhang oder einem Nachschlagewerk und verwende es anschließend passend. Vergleiche „Check-in“ und „Anmeldung“ nach Bedeutung und Verwendung; bei weiteren Herkunftssprachen darfst du bekannte Beispiele beisteuern, musst aber nichts raten."
+		],
+		"materialLabel": "Zwei Fassungen für die Büchertauschaktion",
+		"material": "Im Gespräch: „Ähm, fürs Check-in, geht’s da lang.“\nAuf dem Schild: „Anmeldung am Eingang zur Aula.“\nErzählung: „Die Seiten flatterten wie kleine Segel.“",
+		"sourceIds": ["lehrplan"],
+		"check": {
+			"wrong": "Schilder dürfen keine Fremdwörter enthalten.",
+			"explanation": "Das deutsche Wort ist hier für mehr Personen verständlich. Der Kontext entscheidet."
+		},
+		"takeaway": "Wähle verständliche Wörter für dein Publikum. Nutze Vergleiche, wenn sie eine Vorstellung genauer machen.",
+		"lehrplan": "D5 LB 4.1, 1.2",
+		"cases": [
+			{
+				"prompt": "Was würdest du auf einem Aushang ergänzen?",
+				"options": [
+					"Ähm: eine hörbare Sprechpause.",
+					"Am Eingang zur Aula: den genauen Ort."
+				],
+				"answer": "Am Eingang zur Aula: den genauen Ort.",
+				"feedback": "Im schriftlichen Aushang ersetzt der Ortsname einen Hinweis wie „da lang“."
+			},
+			{
+				"prompt": "Welche Wirkung hat der Vergleich mit Segeln?",
+				"options": [
+					"Er lässt die Bewegung im Wind vorstellbar werden.",
+					"Er informiert über die Öffnungszeit."
+				],
+				"answer": "Er lässt die Bewegung im Wind vorstellbar werden.",
+				"feedback": "Papier und Segel bewegen sich ähnlich. Dieses gemeinsame Merkmal trägt das Bild."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Formuliere eine klare schriftliche Anweisung aus der gesprochenen Fassung. Erkläre „Check-in“.",
+				"model": "Melde dich am Eingang zur Aula an. „Check-in“ bedeutet hier Anmeldung.",
+				"criteria": [
+					"Ich nenne die Handlung.",
+					"Ich nenne den genauen Ort.",
+					"Ich erkläre das englische Wort."
+				]
+			},
+			"2": {
+				"prompt": "Schreibe eine Nachricht an die Schulleitung und einen Satz für eine Erzählung über denselben Wind. Nutze im Erzählsatz einen passenden Vergleich.",
+				"model": "Bitte sichern Sie die Bücherlisten am Eingang, weil sie im Wind wegfliegen. In der Erzählung: Die Blätter tanzten wie kleine Drachen über den Hof.",
+				"criteria": [
+					"Ich wähle für die Schulleitung eine passende Anrede.",
+					"Der Vergleich passt zur Bewegung.",
+					"Die Sätze erfüllen verschiedene Zwecke."
+				]
+			}
+		}
+	},
+	{
+		"id": "d5-wortarten",
+		"stage": "sprache",
+		"title": "Wortarten und ihre Aufgaben",
+		"skill": "Erkenne Wortarten an Form und Aufgabe im Satz.",
+		"bindings": ["4.2", "4.1"],
+		"paragraphs": [
+			"Nomen benennen etwa Personen, Tiere, Dinge oder Gedanken. Artikel begleiten Nomen und zeigen in der Grundform das grammatische Geschlecht: der Hund, die Katze, das Tor. Nomen und ihre Begleiter verändern ihre Form nach Zahl und Fall.",
+			"Verben drücken zum Beispiel Handlungen aus. Adjektive beschreiben Eigenschaften. Personalpronomen vertreten Personen oder Dinge; Possessivpronomen zeigen Zugehörigkeit. Beispiel: „Die kleine Katze schläft. Sie liegt in meinem Korb.“ Katze ist ein Nomen, die ein Artikel, kleine ein Adjektiv, schläft ein Verb, sie ein Personalpronomen und meinem eine Form von mein."
+		],
+		"materialLabel": "Beispielsätze",
+		"material": "Die kleine Katze schläft. Sie liegt in meinem Korb.",
+		"sourceIds": ["lehrplan"],
+		"check": {
+			"wrong": "Personalpronomen.",
+			"explanation": "„Kleine“ beschreibt eine Eigenschaft der Katze; das Verb ist „schläft“."
+		},
+		"takeaway": "Schau auf Form und Aufgabe im Satz. Artikel, Nomen und Adjektiv passen sich in der Wortgruppe aneinander an.",
+		"lehrplan": "D5 LB 4.2, 4.1",
+		"cases": [
+			{
+				"prompt": "Welches Wort bezeichnet die Handlung?",
+				"options": ["schläft", "kleine"],
+				"answer": "schläft",
+				"feedback": "„Schläft“ lässt sich konjugieren: ich schlafe, sie schläft."
+			},
+			{
+				"prompt": "Welches Wort vertritt die Katze im zweiten Satz?",
+				"options": ["meinem", "Sie"],
+				"answer": "Sie",
+				"feedback": "„Sie“ nimmt die Katze wieder auf; „meinem“ zeigt Zugehörigkeit."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Bestimme „die“, „kleine“, „Katze“ und „schläft“ nach ihrer Wortart.",
+				"model": "„die“: Artikel; „kleine“: Adjektiv; „Katze“: Nomen; „schläft“: Verb.",
+				"criteria": [
+					"Ich benenne den Artikel.",
+					"Ich unterscheide Eigenschaft und Handlung.",
+					"Ich erkenne das Nomen."
+				]
+			},
+			"2": {
+				"prompt": "Schreibe zwei Sätze über einen Hund mit allen sechs Wortarten. Benenne sie.",
+				"model": "Der flinke Hund wartet. Er sucht seinen Ball. Der: Artikel; flinke: Adjektiv; Hund und Ball: Nomen; wartet und sucht: Verben; er: Personalpronomen; seinen: Possessivpronomen.",
+				"criteria": [
+					"Ich verwende sechs Wortarten.",
+					"Die Bezüge sind eindeutig.",
+					"Ich bezeichne ihre Aufgaben."
+				]
+			}
+		}
+	},
+	{
+		"id": "d5-faelle",
+		"stage": "sprache",
+		"title": "Die vier Fälle bestimmen",
+		"skill": "Nutze Frageprobe, Artikelformen und Ersatzprobe.",
+		"bindings": ["4.2"],
+		"paragraphs": [
+			"Der Kasus zeigt, in welcher Beziehung eine Nomengruppe im Satz steht. Nominativ: Wer oder was? Genitiv: Wessen? Dativ: Wem? Akkusativ: Wen oder was? Manchmal klingen zwei Fälle gleich. Dann hilft eine Ersatzprobe mit „der Hund“, „des Hundes“, „dem Hund“, „den Hund“.",
+			"Beispiel: „Die Trainerin gibt der Katze einen Napf.“ Wem gibt sie einen Napf? Der Katze, also Dativ. Ersetzt du „der Katze“ durch „dem Hund“, wird die Form gut sichtbar. „Der Napf des Hundes“ antwortet dagegen auf „Wessen Napf?“."
+		],
+		"materialLabel": "Sätze zum Untersuchen",
+		"material": "Der Hund folgt der Trainerin. Sie zeigt dem Kind den Napf des Hundes. Das Kind füllt den Napf.",
+		"sourceIds": ["lehrplan"],
+		"check": {
+			"wrong": "Wessen?",
+			"explanation": "„Wem folgt der Hund?“ führt zu „der Trainerin“. Ersetze die Wortgruppe durch „dem Trainer“. Am Artikel „dem“ erkennst du den Dativ."
+		},
+		"takeaway": "Frag im ganzen Satz. Setze bei gleicher Form eine passende Nomengruppe mit eindeutigem Artikel ein.",
+		"lehrplan": "D5 LB 4.2",
+		"cases": [
+			{
+				"prompt": "In welchem Fall steht „des Hundes“?",
+				"options": ["Dativ.", "Genitiv."],
+				"answer": "Genitiv.",
+				"feedback": "„Wessen Napf?“ führt zu „des Hundes“."
+			},
+			{
+				"prompt": "In welchem Fall steht „den Napf“ in „Das Kind füllt den Napf“?",
+				"options": ["Akkusativ.", "Nominativ."],
+				"answer": "Akkusativ.",
+				"feedback": "„Wen oder was füllt das Kind?“ ergibt „den Napf“."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Bestimme die Fälle in „Die Trainerin zeigt dem Kind den Napf“. Notiere die drei Fragen.",
+				"model": "Wer zeigt? Die Trainerin, Nominativ. Wem zeigt sie den Napf? Dem Kind, Dativ. Was zeigt sie dem Kind? Den Napf, Akkusativ.",
+				"criteria": [
+					"Meine Wer-Frage passt.",
+					"Meine Wem-Frage passt.",
+					"Meine Was-Frage passt."
+				]
+			},
+			"2": {
+				"prompt": "Prüfe die Fälle von „die Tasche“ und „der Lehrerin“ in „Das Kind trägt die Tasche der Lehrerin“. Ersetze die Gruppen einzeln durch eine Form von „der Hund“.",
+				"model": "Was trägt das Kind? Die Tasche, ersetzbar durch „den Hund“: Akkusativ. Wessen Tasche? Die der Lehrerin, ersetzbar durch „des Hundes“: Genitiv.",
+				"criteria": [
+					"Ich frage bei der Tasche mit „was“.",
+					"Ich frage bei der Lehrerin mit „wessen“.",
+					"Meine Ersatzformen passen zu beiden Fällen."
+				]
+			}
+		},
+		"extension": "Schreibe „der flinke Hund“ in allen vier Fällen: der flinke Hund, des flinken Hundes, dem flinken Hund, den flinken Hund. Beschreibe, welche Endungen sich verändern. Prüfe anschließend die Formen in einem eigenen Brief."
+	},
+	{
+		"id": "d5-pronomen",
+		"stage": "sprache",
+		"title": "Mit Pronomen Bezüge klären",
+		"skill": "Unterscheide persönliche, besitzanzeigende, hinweisende und relative Formen.",
+		"bindings": ["4.2"],
+		"paragraphs": [
+			"Personalpronomen vertreten Personen oder Dinge: „Mira kommt. Sie winkt.“ Die Form richtet sich nach der Aufgabe im Satz: „Ich sehe sie. Ich helfe ihr.“ Possessivpronomen zeigen Zugehörigkeit: „mein Heft“, „deine Tasche“, „unser Buch“.",
+			"Beispiel: „Mira zeigt Jo ihr Heft.“ „Ihr“ bezeichnet hier Miras Heft. Bei mehreren möglichen Bezügen nennst du besser den Namen: „Mira gibt Jo Miras Heft“ klärt eine sonst unklare Aussage. Prüfe immer den ganzen Zusammenhang."
+		],
+		"materialLabel": "Vier Bezüge",
+		"material": "Mira sucht ihr Heft. Sie bittet Jo: „Hilfst du mir?“ Jo gibt Mira das Heft.",
+		"sourceIds": ["lehrplan"],
+		"check": {
+			"wrong": "laufen, helfen, lesen",
+			"explanation": "„Mein“, „dein“ und „unser“ gehören zu den Possessivpronomen."
+		},
+		"takeaway": "Verwende Pronomen, wenn Lesende erkennen können, auf wen oder was sie sich beziehen.",
+		"lehrplan": "D5 LB 4.2",
+		"cases": [
+			{
+				"prompt": "Was zeigt „ihr“ in „Mira sucht ihr Heft“?",
+				"options": ["Zugehörigkeit", "Eine Tätigkeit"],
+				"answer": "Zugehörigkeit",
+				"feedback": "Das Possessivpronomen zeigt, wem das Heft zugeordnet wird."
+			},
+			{
+				"prompt": "Welche Form passt: „Jo hilft …“ (Mira)?",
+				"options": ["sie", "ihr"],
+				"answer": "ihr",
+				"feedback": "„Helfen“ verlangt hier den Dativ: Wem hilft Jo? Ihr."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Bestimme „ihr“, „sie“, „du“ und „mir“ nach ihrer Aufgabe.",
+				"model": "„Ihr“ zeigt Zugehörigkeit. „Sie“ vertritt Mira, „du“ bezeichnet Jo und „mir“ bezeichnet Mira als Empfängerin der Hilfe.",
+				"criteria": [
+					"Ich erkenne die Besitzform.",
+					"Ich kläre die Bezüge.",
+					"Ich beachte die Form im Satz."
+				]
+			},
+			"2": {
+				"prompt": "Schreibe die Szene mit einem Jungen namens Tom statt Mira. Kläre, wem das Heft gehört.",
+				"model": "Tom sucht sein Heft. Er bittet Jo: „Hilfst du mir?“ Jo gibt ihm Toms Heft.",
+				"criteria": [
+					"Ich passe die Formen an.",
+					"Mein Dialog bleibt verständlich.",
+					"Der Besitzer ist eindeutig."
+				]
+			}
+		}
+	},
+	{
+		"id": "d5-adjektive",
+		"stage": "sprache",
+		"title": "Mit Adjektiven vergleichen",
+		"skill": "Bilde Steigerungsformen und wähle „als“ oder „wie“.",
+		"bindings": ["4.2", "3.2"],
+		"paragraphs": [
+			"Die Grundstufe heißt Positiv, die Höherstufe Komparativ, die Höchststufe Superlativ: „schnell – schneller – am schnellsten“. Manche Formen verändern sich stärker: „gut – besser – am besten“.",
+			"Beispiel: „Der braune Hund ist größer als der schwarze.“ Der Komparativ zeigt einen Unterschied. Gleichheit drückst du mit „so … wie“ aus: „Der braune Hund ist so alt wie der schwarze.“"
+		],
+		"materialLabel": "Messkarte mit erfundenen Angaben",
+		"material": "Milo: 38 cm hoch, 5 Jahre alt.\nLuna: 45 cm hoch, 5 Jahre alt.\nKeks: 31 cm hoch, 2 Jahre alt.",
+		"sourceIds": ["lehrplan"],
+		"check": {
+			"wrong": "so",
+			"explanation": "Der Komparativ „größer“ zeigt hier einen Unterschied. Dafür verwendest du „als“."
+		},
+		"takeaway": "In der Standardsprache gilt beim Vergleich „größer als“ und bei gleicher Eigenschaft „so groß wie“.",
+		"lehrplan": "D5 LB 4.2, 3.2",
+		"cases": [
+			{
+				"prompt": "Welche Aussage ist richtig?",
+				"options": ["Milo ist älter als Luna.", "Milo ist so alt wie Luna."],
+				"answer": "Milo ist so alt wie Luna.",
+				"feedback": "Beide Hunde sind fünf Jahre alt. „So … wie“ zeigt hier Gleichheit."
+			},
+			{
+				"prompt": "Welcher Hund ist am kleinsten?",
+				"options": ["Keks.", "Milo."],
+				"answer": "Keks.",
+				"feedback": "31 cm ist der kleinste der drei Messwerte."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Schreibe einen Vergleich mit „als“ und einen mit „so … wie“.",
+				"model": "Luna ist größer als Milo. Milo ist so alt wie Luna.",
+				"criteria": [
+					"Meine Aussage mit „als“ zeigt einen Unterschied.",
+					"Meine Aussage mit „wie“ zeigt Gleichheit.",
+					"Beide stimmen mit der Karte überein."
+				]
+			},
+			"2": {
+				"prompt": "Beschreibe die drei Hunde so, dass jemand sie nach Größe ordnen und ihre Altersgleichheit erkennen kann.",
+				"model": "Luna ist am größten. Milo ist kleiner als Luna, aber größer als Keks. Milo und Luna sind gleich alt. Keks ist jünger.",
+				"criteria": [
+					"Ich verwende eine Höchststufe.",
+					"Ich verwende eine Höherstufe.",
+					"Ich nenne die Altersgleichheit."
+				]
+			}
+		}
+	},
+	{
+		"id": "d5-zeitformen",
+		"stage": "sprache",
+		"title": "Verbformen und Zeitformen",
+		"skill": "Erkenne den finiten Teil und erzähle Zeitverhältnisse klar.",
+		"bindings": ["4.2", "3.2"],
+		"paragraphs": [
+			"Eine finite Verbform passt zu Person und Zahl: „ich finde“, „wir finden“. Im Präsens sagst du zum Beispiel, was gerade geschieht oder allgemein gilt. Das Präteritum ist eine häufige Zeitform geschriebener Erzählungen. Das Perfekt nutzt du oft beim mündlichen Erzählen.",
+			"Beispiel mit „finden“: Präsens „ich finde“, Präteritum „ich fand“, Perfekt „ich habe gefunden“. Das Perfekt besteht aus einer Form von haben oder sein und dem Partizip Perfekt: „Wir sind gelaufen.“ Halte beim Erzählen deine gewählte Zeitform sinnvoll durch."
+		],
+		"materialLabel": "Zeitlinie für eine Erzählung",
+		"material": "Heute: Ich finde das Heft.\nErzählung: Gestern fand ich das Heft.\nIm Gespräch: Ich habe das Heft gefunden.",
+		"sourceIds": ["lehrplan"],
+		"check": {
+			"wrong": "Wir",
+			"explanation": "„Sind“ passt sich an Person und Zahl an. „Gelaufen“ ist das Partizip Perfekt."
+		},
+		"takeaway": "Suche den finiten Verbteil. Wähle eine Zeitform, die zu Erzählzeit und zeitlicher Reihenfolge passt.",
+		"lehrplan": "D5 LB 4.2, 3.2",
+		"cases": [
+			{
+				"prompt": "Welche Fassung steht im Präteritum?",
+				"options": ["Wir liefen zum Tor.", "Wir laufen zum Tor."],
+				"answer": "Wir liefen zum Tor.",
+				"feedback": "„Liefen“ ist die Präteritumsform von laufen."
+			},
+			{
+				"prompt": "Welche Fassung ist ein korrektes Perfekt?",
+				"options": ["Sie hat das Buch las.", "Sie hat das Buch gelesen."],
+				"answer": "Sie hat das Buch gelesen.",
+				"feedback": "Das Perfekt benötigt das Partizip „gelesen“, nicht die finite Form „las“."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Bilde Präsens, Präteritum und Perfekt von „wir finden das Heft“.",
+				"model": "Wir finden das Heft. Wir fanden das Heft. Wir haben das Heft gefunden.",
+				"criteria": [
+					"Ich passe das Verb an „wir“ an.",
+					"Ich verwende die Präteritumsform.",
+					"Mein Perfekt enthält Hilfsverb und Partizip."
+				]
+			},
+			"2": {
+				"prompt": "Schreibe zwei Sätze über einen Fund im Präteritum. Erzähle den Fund dann im Gespräch im Perfekt.",
+				"model": "Ich suchte im Hof. Unter der Bank fand ich mein Heft. – Ich habe im Hof gesucht und unter der Bank mein Heft gefunden.",
+				"criteria": [
+					"Meine Erzählung steht im Präteritum.",
+					"Meine Gesprächsfassung steht im Perfekt.",
+					"Die Handlungen bleiben gleich."
+				]
+			}
+		}
+	},
+	{
+		"id": "d5-wortbildung",
+		"stage": "sprache",
+		"title": "Wörter ableiten und zusammensetzen",
+		"skill": "Erkenne Stamm, Wortbausteine und Wortfelder.",
+		"bindings": ["4.2", "4.3"],
+		"paragraphs": [
+			"Bei einer Ableitung kommt ein Präfix vor oder ein Suffix nach den Stamm: „vor-les-en“, „les-bar“. „Lesen“, „Leser“ und „lesbar“ gehören zur Wortfamilie. Die Stammformen von „lesen“ sind der Infinitiv „lesen“, die Präteritumsform „las“ und das Partizip Perfekt „gelesen“. Der Stammvokal wechselt von e zu a und zurück zu e. Ein Wortfeld sammelt bedeutungsähnliche Wörter wie „sagen, flüstern, rufen“.",
+			"Bei einem zusammengesetzten Nomen steht das Grundwort hinten. Es bestimmt oft Bedeutungskern und Artikel: „die Schultür“ ist eine Tür, „das Türschild“ ist ein Schild. Das Bestimmungswort grenzt ein. Ein bekanntes Präfix wie „vor-“ hilft beim Schreiben von „vorlesen“, während „Forscher“ nicht aus diesem Präfix besteht. In „verkaufen“ steht ver-, weil es ein Präfix vor „kaufen“ ist. In „freundlich“ schreibt man die Nachsilbe -lich. Das klappt auch mit einem Adjektiv als Grundwort: „Eis“ und „kalt“ ergeben „eiskalt“. Das zusammengesetzte Adjektiv wird im Satz kleingeschrieben."
+		],
+		"materialLabel": "Wörterwerkstatt",
+		"material": "lesen – vorlesen – lesbar – Leser\nSchulhof – Hoftür – Türschild\nsagen – rufen – flüstern",
+		"sourceIds": ["lehrplan"],
+		"check": {
+			"wrong": "Türschild",
+			"explanation": "Ein Türschild ist eine Art Schild. „Tür“ sagt, wofür oder wo es gebraucht wird."
+		},
+		"takeaway": "Prüfe den Wortaufbau und die Bedeutung. Wortfamilien teilen einen Stamm, Wortfelder ein Thema oder eine verwandte Bedeutung.",
+		"lehrplan": "D5 LB 4.2, 4.3",
+		"cases": [
+			{
+				"prompt": "Was ist „-bar“ in „lesbar“?",
+				"options": [
+					"Ein Präfix vor dem Stamm.",
+					"Ein Suffix hinter dem Stamm."
+				],
+				"answer": "Ein Suffix hinter dem Stamm.",
+				"feedback": "„-bar“ folgt auf den Stamm „les-“ und bildet hier ein Adjektiv."
+			},
+			{
+				"prompt": "Warum heißt es „die Hoftür“?",
+				"options": [
+					"Das Grundwort ist „die Tür“.",
+					"Das Bestimmungswort „Hof“ bestimmt hier den Artikel."
+				],
+				"answer": "Das Grundwort ist „die Tür“.",
+				"feedback": "Der Artikel der Zusammensetzung richtet sich hier nach dem Grundwort."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Zerlege „vorlesen“, „lesbar“ und „Schulhof“. Benenne Vorsilbe, Nachsilbe, Grundwort und Bestimmungswort.",
+				"model": "Vorlesen: Vorsilbe vor-, Stamm les-. Lesbar: Stamm les-, Nachsilbe -bar. Schulhof: Bestimmungswort Schul-, Grundwort Hof; es ist ein Hof.",
+				"criteria": [
+					"Ich benenne Vor- und Nachsilbe.",
+					"Ich erkenne den Wortstamm.",
+					"Ich bestimme Grund- und Bestimmungswort."
+				]
+			},
+			"2": {
+				"prompt": "Ersetze „sagte“ durch zwei Wörter aus dem Wortfeld. Bilde für die Szene ein zusammengesetztes Nomen. Verbinde „Eis“ und „kalt“ zu einem Adjektiv für die Szene.",
+				"model": "„Psst“, flüsterte Lea. „Da drüben!“, rief Jo. Die beiden standen vor der Hoftür. „Hof“ sagt, zu welchem Bereich die Tür gehört. Der Türgriff war eiskalt. Das Adjektiv „eiskalt“ schreibe ich zusammen und klein.",
+				"criteria": [
+					"Meine Verben passen zur Lautstärke.",
+					"Ich bilde ein Nomen und erkläre sein Bestimmungswort.",
+					"Ich schreibe „eiskalt“ als Adjektiv richtig."
+				]
+			}
+		}
+	},
+	{
+		"id": "d5-satzglieder",
+		"stage": "sprache",
+		"title": "Satzglieder finden und verschieben",
+		"skill": "Nutze Umstell- und Ersatzprobe für einen abwechslungsreichen Satz.",
+		"bindings": ["4.2"],
+		"paragraphs": [
+			"Ein Satzglied lässt sich als Einheit verschieben oder durch ein kürzeres Satzglied ersetzen. „Am frühen Morgen füttert Nele den Hund.“ Umgestellt: „Nele füttert am frühen Morgen den Hund.“ Ersetzt: „Heute füttert Nele ihn.“",
+			"Das Subjekt antwortet auf „Wer oder was?“. Das Prädikat besteht aus der finiten Verbform und gegebenenfalls weiteren Verbteilen. Ein Dativobjekt erfragst du mit „Wem?“, ein Akkusativobjekt mit „Wen oder was?“. Zeit und Ort geben Temporal- und Lokaladverbiale an: „am Morgen“, „im Hof“.",
+			"Ein Genitivobjekt ergänzt ein Verb, etwa „Wir gedenken der Opfer.“ Frage: Wessen gedenken wir? Der Opfer. Dagegen ist „des Hundes“ in „der Napf des Hundes“ ein Attribut zum Nomen Napf, kein eigenes Objekt. Mit der Weglassprobe erkennst du zum Beispiel, dass „im Hof“ in „Nele füttert im Hof den Hund“ eine zusätzliche Ortsangabe ist. Mit der Ergänzungsprobe kannst du den Satz etwa um „am Morgen“ erweitern."
+		],
+		"materialLabel": "Satz aus der Tierpflege",
+		"material": "Am Morgen gibt Nele dem Hund im Hof einen Napf. Am Abend hat sie das Tor abgeschlossen.",
+		"sourceIds": ["lehrplan"],
+		"check": {
+			"wrong": "dem Hund einen Napf",
+			"explanation": "„Ihm“ ersetzt hier das ganze Dativobjekt."
+		},
+		"takeaway": "Verschiebe oder ersetze die ganze Wortgruppe. Prüfe danach ihre Aufgabe mit einer Frage.",
+		"lehrplan": "D5 LB 4.2",
+		"cases": [
+			{
+				"prompt": "Welche Gruppe beantwortet „Wo gibt Nele dem Hund einen Napf?“",
+				"options": ["im Hof", "am Morgen"],
+				"answer": "im Hof",
+				"feedback": "„Im Hof“ gibt den Ort an. „Am Morgen“ beantwortet die Frage nach der Zeit."
+			},
+			{
+				"prompt": "Was ist im ersten Satz das Akkusativobjekt?",
+				"options": ["dem Hund", "einen Napf"],
+				"answer": "einen Napf",
+				"feedback": "„Was gibt Nele dem Hund?“ ergibt „einen Napf“. „Dem Hund“ antwortet auf „Wem?“."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Stelle den ersten Satz so um, dass zuerst der Ort kommt. Nenne Subjekt und Zeitangabe.",
+				"model": "Im Hof gibt Nele dem Hund am Morgen einen Napf. Subjekt: Nele. Zeitangabe: am Morgen.",
+				"criteria": [
+					"Der Ort steht vorne.",
+					"Ich erkenne das Subjekt.",
+					"Die Zeitangabe bleibt als Einheit zusammen."
+				]
+			},
+			"2": {
+				"prompt": "Vergleiche „Wir gedenken der Opfer“ und „Der Napf des Hundes steht im Hof“. Bestimme Genitivobjekt und Genitivattribut. Ersetze im zweiten Satz die ganze Subjektgruppe.",
+				"model": "„Der Opfer“ ergänzt das Verb gedenken: Genitivobjekt. „Des Hundes“ gehört zu Napf: Genitivattribut. Die Subjektgruppe „Der Napf des Hundes“ lässt sich als Ganze durch „Er“ ersetzen: Er steht im Hof.",
+				"criteria": [
+					"Ich frage vom Verb aus.",
+					"Ich unterscheide Objekt und Attribut.",
+					"Ich ersetze die ganze Nomengruppe."
+				]
+			}
+		}
+	},
+	{
+		"id": "d5-satzbau",
+		"stage": "sprache",
+		"title": "Hauptsatz und Nebensatz verbinden",
+		"skill": "Verbinde Sätze passend und erkenne die Stellung des finiten Verbs.",
+		"bindings": ["4.2", "4.3"],
+		"paragraphs": [
+			"In einem Aussagesatz steht die finite Verbform meist an zweiter Stelle, in einer Ja-Nein-Frage an erster: „Lina bleibt hier.“ „Bleibt Lina hier?“ Aufforderungen wie „Bleib hier!“ und Ausrufe wie „Wie laut das knallt!“ haben andere Aufgaben.",
+			"Zwei Hauptsätze können eine Satzreihe bilden: „Lina bleibt hier, denn es regnet.“ In einem Satzgefüge steht ein Nebensatz, meist mit dem finiten Verb am Ende: „Lina bleibt hier, weil es regnet.“ Der Nebensatz kann davor stehen („Weil es regnet, bleibt Lina hier“) oder eingeschoben sein („Lina, die keinen Schirm hat, bleibt hier“). Kommas grenzen ihn ab. Mit „und“ verbindest du auch Wörter oder Wortgruppen: „ein Schirm und zwei Jacken“."
+		],
+		"materialLabel": "Drei Fassungen",
+		"material": "Lina nimmt den Schirm mit, weil es regnet.\nWeil es regnet, nimmt Lina den Schirm mit.\nLina, die keinen Schirm hat, wartet.",
+		"sourceIds": ["lehrplan"],
+		"check": {
+			"wrong": "An der ersten Stelle des Hauptsatzes.",
+			"explanation": "„Weil“ leitet den Nebensatz ein. „Regnet“ steht am Ende des Nebensatzes."
+		},
+		"takeaway": "Bestimme die finite Verbform. Wähle eine Konjunktion, die die Beziehung deutlich macht.",
+		"lehrplan": "D5 LB 4.2, 4.3",
+		"cases": [
+			{
+				"prompt": "Welcher Satz ist eine Aufforderung?",
+				"options": ["Nimmst du den Schirm mit?", "Nimm den Schirm mit!"],
+				"answer": "Nimm den Schirm mit!",
+				"feedback": "„Nimm“ ist hier eine Aufforderungsform. Der zweite Satz fragt nach einer Entscheidung."
+			},
+			{
+				"prompt": "Welche Fassung hat einen eingeschobenen Nebensatz?",
+				"options": [
+					"Lina, die keinen Schirm hat, wartet.",
+					"Weil es regnet, nimmt Lina den Schirm mit."
+				],
+				"answer": "Lina, die keinen Schirm hat, wartet.",
+				"feedback": "Der Relativsatz steht mitten im Hauptsatz und wird auf beiden Seiten durch ein Komma abgegrenzt."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Stelle den Weil-Satz aus der ersten Fassung nach vorne. Markiere die finiten Verben in Worten.",
+				"model": "Weil es regnet, nimmt Lina den Schirm mit. „Regnet“ schließt den Nebensatz. „Nimmt“ folgt direkt nach dem Komma.",
+				"criteria": [
+					"Ich stelle den Nebensatz voran.",
+					"Ich setze das Komma.",
+					"Ich finde beide finiten Verben."
+				]
+			},
+			"2": {
+				"prompt": "Formuliere eine Satzreihe mit „denn“ und ein Satzgefüge mit eingeschobenem Relativsatz. Lass beide zu einem Ausflug passen.",
+				"model": "Wir bleiben in der Schule, denn der Bus kommt nicht. Der Bus, der uns zum See bringen sollte, steht im Stau.",
+				"criteria": [
+					"Meine Satzreihe hat zwei Hauptsätze.",
+					"Der Relativsatz steht eingeschoben.",
+					"Kommas grenzen den Einschub ab."
+				]
+			}
+		}
+	},
+	{
+		"id": "d5-dehnung",
+		"stage": "sprache",
+		"title": "Lange Vokale richtig schreiben",
+		"skill": "Unterscheide „ie“, Dehnungs-h, Doppelvokal und einfache Schreibung.",
+		"bindings": ["4.3"],
+		"paragraphs": [
+			"Ein langer Vokal braucht nicht immer ein besonderes Zeichen: „Tal“ und „Hut“. Langes i schreibst du in vielen heimischen Wörtern als „ie“, etwa „Brief“. Wörter wie „Tiger“ und „Igel“ haben langes i ohne „e“.",
+			"Ein Dehnungs-h kann vor l, m, n oder r stehen, etwa in „Wahl“, „nehmen“, „Zahn“ und „Ohr“. Aus dem langen Klang allein kannst du es nicht vorhersagen: „Tal“ und „Ton“ kommen ohne h aus. Einige Wörter haben einen Doppelvokal, zum Beispiel „Saal“, „See“ oder „Boot“."
+		],
+		"materialLabel": "Wörter vergleichen",
+		"material": "Tal – Saal – Wahl\nBrief – Tiger\nTon – Sohn\nBoot – Brot",
+		"sourceIds": ["lehrplan"],
+		"check": {
+			"wrong": "a, e, i und o",
+			"explanation": "In „Wahl“, „nehmen“, „Zahn“ und „Ohr“ steht nach dem h einer dieser Buchstaben. Nicht jedes passende Wort braucht h."
+		},
+		"takeaway": "Hör die Vokallänge. Merke oder prüfe die Schreibung, wenn derselbe lange Laut unterschiedlich geschrieben werden kann.",
+		"lehrplan": "D5 LB 4.3",
+		"cases": [
+			{
+				"prompt": "Welches Paar zeigt langes i auf zwei Schreibweisen?",
+				"options": ["Brief und Tiger.", "Saal und Zahn."],
+				"answer": "Brief und Tiger.",
+				"feedback": "„Brief“ hat ie, „Tiger“ hat einfaches i. Beide i-Laute sind lang."
+			},
+			{
+				"prompt": "Welche Schreibung passt zur Bedeutung „ein Raum für viele Menschen“?",
+				"options": ["Sahl", "Saal"],
+				"answer": "Saal",
+				"feedback": "„Saal“ hat einen Doppelvokal. „Wahl“ klingt ähnlich und hat Dehnungs-h."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Ordne „Wahl“, „See“, „Lied“ und „Tal“ nach ihrer Schreibung.",
+				"model": "Wahl: Dehnungs-h. See: Doppelvokal. Lied: ie. Tal: einfacher Vokal.",
+				"criteria": [
+					"Ich finde das Dehnungs-h.",
+					"Ich erkenne Doppelvokal und ie.",
+					"Ich erkenne die einfache Schreibung."
+				]
+			},
+			"2": {
+				"prompt": "Erkläre einer Person, warum der lange Laut nicht genügt, um „Ton“ und „Sohn“ richtig zu schreiben. Gib einen Merksatz.",
+				"model": "Beide Wörter haben ein langes o und danach ein n. „Sohn“ wird mit h geschrieben, „Ton“ ohne. Ich merke: Der Sohn hört einen Ton.",
+				"criteria": [
+					"Ich erkenne den langen Vokal in beiden.",
+					"Ich erkläre die verschiedenen Schreibweisen.",
+					"Mein Merksatz verwendet beide Wörter korrekt."
+				]
+			}
+		}
+	},
+	{
+		"id": "d5-schaerfung",
+		"stage": "sprache",
+		"title": "Kurze Vokale, Doppelkonsonanten, ck und tz",
+		"skill": "Hör den betonten Vokal und prüfe die Konsonanten danach.",
+		"bindings": ["4.3"],
+		"paragraphs": [
+			"Folgt in einem einfachen Wortstamm nach einem kurzen betonten Vokal nur ein Konsonantenlaut, wird dessen Buchstabe häufig verdoppelt: „rennen“, „Kamm“. Für k schreibt man dabei in der Regel „ck“ und für z „tz“: „backen“, „Katze“.",
+			"Bei mehreren verschiedenen Konsonanten nach dem kurzen Vokal ist keine zusätzliche Verdopplung nötig: „Kante“, „Winter“. Bei Fremdwörtern und häufigen kurzen Wörtern gibt es Ausnahmen. Sprich den Wortstamm deutlich und prüfe unsichere Wörter im Wörterbuch."
+		],
+		"materialLabel": "Wortpaare zum Hören",
+		"material": "Kamm – kam\nRate – Ratte\nbacken – Haken\nKatze – Kerze",
+		"sourceIds": ["lehrplan"],
+		"check": {
+			"wrong": "ch und ss",
+			"explanation": "„Backen“ und „Katze“ zeigen die üblichen Schreibungen nach kurzem betonten Vokal."
+		},
+		"takeaway": "Hör auf den betonten Vokal und zähle die Konsonantenlaute danach. Merke dir „ck“ und „tz“.",
+		"lehrplan": "D5 LB 4.3",
+		"cases": [
+			{
+				"prompt": "Welches Wort bezeichnet das Nagetier?",
+				"options": ["Rate", "Ratte"],
+				"answer": "Ratte",
+				"feedback": "Der Tiername hat kurzes a und zwei t. „Rate“ hat langes a."
+			},
+			{
+				"prompt": "Welche Schreibung passt zu „Brot im Ofen zubereiten“?",
+				"options": ["backen", "baken"],
+				"answer": "backen",
+				"feedback": "Der Vokal ist kurz. Im Wortstamm steht dafür vor der Endung ck."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Erkläre die Schreibung von „Kamm“, „Katze“ und „Kante“.",
+				"model": "Kamm: kurzes a und ein m-Laut, darum mm. Katze: nach kurzem a steht tz. Kante: Nach kurzem a folgen n und t.",
+				"criteria": [
+					"Ich höre das kurze a.",
+					"Ich erkläre mm und tz.",
+					"Ich erkläre die zwei Konsonanten in „Kante“."
+				]
+			},
+			"2": {
+				"prompt": "Schreibe je einen Satz mit „kam“ und „Kamm“. Erkläre, wie die Aussprache zur Schreibung passt.",
+				"model": "Sie kam zur Tür. Der Kamm lag auf dem Tisch. „Kam“ hat ein langes a und ein m, „Kamm“ hat ein kurzes a und zwei m.",
+				"criteria": [
+					"Ich verwende beide Wörter passend.",
+					"Ich höre den Unterschied in der Vokallänge.",
+					"Ich erkläre die Buchstaben am Ende."
+				]
+			}
+		}
+	},
+	{
+		"id": "d5-verlaengern",
+		"stage": "sprache",
+		"title": "Wörter verlängern und ableiten",
+		"skill": "Mach schwierige Endlaute hörbar und finde verwandte Wörter.",
+		"bindings": ["4.3"],
+		"paragraphs": [
+			"Am Wortende können b, d und g wie p, t und k klingen. Verlängere das Wort so, dass ein Vokal folgt: „Korb – Körbe“, „Hund – Hunde“, „Berg – Berge“. Bei Verben hilft oft die Grundform, bei Adjektiven eine gebeugte Form.",
+			"Beispiel: „Er schreibt“ prüfst du mit „schreiben“, „gelb“ mit „das gelbe Blatt“. Für ä und äu kann eine verwandte Form mit a oder au helfen: „Bäume – Baum“. Die Schreibung folgt oft dem Wortstamm."
+		],
+		"materialLabel": "Wortpaare zum Prüfen",
+		"material": "Hun? – Hunde\ngel? – gelbes Blatt\nflie?t – fliegen\nB?me – Baum",
+		"sourceIds": ["lehrplan"],
+		"check": {
+			"wrong": "Suche ein Wort mit der gleichen Bedeutung wie „Hund“.",
+			"explanation": "In „Hunde“ hörst du d vor dem Vokal. In „Hund“ klingt der Endlaut wie t."
+		},
+		"takeaway": "Verlängere, wenn ein Endlaut unklar ist. Suche beim Umlaut eine verwandte Form mit a oder au.",
+		"lehrplan": "D5 LB 4.3",
+		"cases": [
+			{
+				"prompt": "Welche Form hilft bei „Korb“?",
+				"options": ["Körbe", "Kiste"],
+				"answer": "Körbe",
+				"feedback": "„Körbe“ ist der Plural desselben Wortes. Vor e hörst du b."
+			},
+			{
+				"prompt": "Warum schreibt man „Bäume“ mit äu?",
+				"options": [
+					"Weil der letzte Laut hart klingt.",
+					"Weil das verwandte Wort „Baum“ au enthält."
+				],
+				"answer": "Weil das verwandte Wort „Baum“ au enthält.",
+				"feedback": "Die Beziehung zu „Baum“ hilft bei der Wahl zwischen äu und eu."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Ergänze die fehlenden Buchstaben in „Hun?“, „gel?“ und „flie?t“. Nenne jeweils eine Prüfform.",
+				"model": "Hund → Hunde, gelb → gelbes Blatt, fliegt → fliegen.",
+				"criteria": [
+					"Meine Nomenform zeigt d.",
+					"Meine Adjektivform zeigt b.",
+					"Meine Verbform zeigt g."
+				]
+			},
+			"2": {
+				"prompt": "Prüfe „Der Ber? ist steil. Oben stehen viele B?me.“ Erkläre zwei unterschiedliche Strategien.",
+				"model": "Der Berg ist steil. Oben stehen viele Bäume. „Berge“ verlängert den Endlaut. „Baum“ hilft durch das verwandte au beim Umlaut.",
+				"criteria": [
+					"Ich schreibe „Berg“ korrekt.",
+					"Ich leite „Bäume“ von „Baum“ ab.",
+					"Ich unterscheide beide Prüfwege."
+				]
+			}
+		}
+	},
+	{
+		"id": "d5-woertliche-rede",
+		"stage": "sprache",
+		"title": "Wörtliche Rede richtig setzen",
+		"skill": "Setze die Zeichen vor, nach und um einen Begleitsatz.",
+		"bindings": ["4.3", "3.2"],
+		"paragraphs": [
+			"Wörtliche Rede steht in Anführungszeichen. Steht der Begleitsatz vorne, folgt ein Doppelpunkt: Tim fragte: „Kommst du mit?“ Steht er hinten, folgt nach dem schließenden Anführungszeichen ein Komma: „Kommst du mit?“, fragte Tim. Frage- und Ausrufezeichen bleiben in der Rede, der Schlusspunkt einer Aussage entfällt hier.",
+			"Wenn der Begleitsatz die Rede mitten im Satz unterbricht, steht auf beiden Seiten ein Komma außerhalb der Anführungszeichen: „Morgen“, sagte Tim, „hole ich dich ab.“ Der zweite Teil setzt denselben Satz fort und beginnt hier klein."
+		],
+		"materialLabel": "Rohfassung für eine Szene",
+		"material": "Mia fragte Wo liegt mein Heft\nEs liegt im Regal sagte Sami\nMorgen flüsterte Mia bringe ich es zurück",
+		"sourceIds": ["lehrplan"],
+		"check": {
+			"wrong": "Ein Gedankenstrich.",
+			"explanation": "Der Doppelpunkt kündigt die Rede an: Mia fragte: „Wo liegt mein Heft?“"
+		},
+		"takeaway": "Entscheide zuerst, wo der Begleitsatz steht. Setze dann Anführungszeichen und die passenden Satzzeichen.",
+		"lehrplan": "D5 LB 4.3, 3.2",
+		"cases": [
+			{
+				"prompt": "Welche nachgestellte Fassung stimmt?",
+				"options": [
+					"„Es liegt im Regal“, sagte Sami.",
+					"„Es liegt im Regal.“, sagte Sami."
+				],
+				"answer": "„Es liegt im Regal“, sagte Sami.",
+				"feedback": "Vor dem nachgestellten Begleitsatz entfällt der Punkt innerhalb der Rede. Das Komma steht außen."
+			},
+			{
+				"prompt": "Welche Fassung behält das Fragezeichen korrekt?",
+				"options": [
+					"„Wo liegt mein Heft“, fragte Mia?",
+					"„Wo liegt mein Heft?“, fragte Mia."
+				],
+				"answer": "„Wo liegt mein Heft?“, fragte Mia.",
+				"feedback": "Das Fragezeichen gehört zu Mias Frage. Nach der schließenden Rede folgt das Komma."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Setze die Zeichen in den ersten beiden Zeilen des Materials.",
+				"model": "Mia fragte: „Wo liegt mein Heft?“\n„Es liegt im Regal“, sagte Sami.",
+				"criteria": [
+					"Der vordere Begleitsatz hat einen Doppelpunkt.",
+					"Die Frage endet in der Rede.",
+					"Der hintere Begleitsatz hat ein Komma davor."
+				]
+			},
+			"2": {
+				"prompt": "Schreibe Mias letzte Äußerung mit eingeschobenem Begleitsatz. Schreibe zusätzlich einen nachgestellten Ausruf.",
+				"model": "„Morgen“, flüsterte Mia, „bringe ich es zurück.“\n„Warte!“, rief Sami.",
+				"criteria": [
+					"Beide Kommas am Einschub stehen außen.",
+					"Die fortgesetzte Rede beginnt hier klein.",
+					"Das Ausrufezeichen bleibt in der Rede."
+				]
+			}
+		}
+	},
+	{
+		"id": "d5-kommas",
+		"stage": "sprache",
+		"title": "Kommas in Listen und Sätzen",
+		"skill": "Trenne Aufzählung, Anrede und Nebensatz richtig ab.",
+		"bindings": ["4.3", "4.2"],
+		"paragraphs": [
+			"In einer Aufzählung trennst du gleichrangige Teile mit Kommas: „Wir brauchen Papier, Stifte und Kleber.“ Vor „und“ oder „oder“ steht in einer einfachen Aufzählung kein Komma. Eine Anrede trennst du ab: „Mira, gib mir bitte das Papier.“",
+			"Nebensätze grenzt du mit Kommas ab: „Mira bleibt, weil sie hilft.“ Zwischen Hauptsätzen ohne verbindendes „und“ oder „oder“ steht bei einer Satzreihe ein Komma: „Mira holt Papier, Sami schneidet es.“ Vor „aber“ steht ein Komma. Bei zwei selbstständigen Hauptsätzen mit „und“ oder „oder“ kann ein Komma die Gliederung verdeutlichen."
+		],
+		"materialLabel": "Zeilen ohne Kommas",
+		"material": "Mira hol bitte Papier Stifte und Kleber.\nSami schneidet das Papier weil er ein Schild bastelt.\nMia trägt die Kiste Sami öffnet die Tür.",
+		"sourceIds": ["lehrplan"],
+		"check": {
+			"wrong": "Vor „Tür“.",
+			"explanation": "„Nuri“ ist die Anrede. Das Komma grenzt sie vom restlichen Satz ab."
+		},
+		"takeaway": "Finde zuerst die Satzgrenzen. Prüfe danach Aufzählungen und Anreden.",
+		"lehrplan": "D5 LB 4.3, 4.2",
+		"cases": [
+			{
+				"prompt": "Welche Aufzählung stimmt?",
+				"options": ["Papier Stifte, und Kleber", "Papier, Stifte und Kleber"],
+				"answer": "Papier, Stifte und Kleber",
+				"feedback": "Das Komma trennt Papier und Stifte. Vor dem einfachen „und“ steht hier keines."
+			},
+			{
+				"prompt": "Welche Satzreihe ist richtig gesetzt?",
+				"options": [
+					"Mia trägt die Kiste, Sami öffnet die Tür.",
+					"Mia trägt, die Kiste Sami öffnet die Tür."
+				],
+				"answer": "Mia trägt die Kiste, Sami öffnet die Tür.",
+				"feedback": "Das Komma steht zwischen zwei vollständigen Hauptsätzen, nicht zwischen Verb und Objekt."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Setze alle Kommas in den ersten beiden Zeilen des Materials.",
+				"model": "Mira, hol bitte Papier, Stifte und Kleber.\nSami schneidet das Papier, weil er ein Schild bastelt.",
+				"criteria": [
+					"Ich grenze die Anrede ab.",
+					"Ich setze das Aufzählungskomma.",
+					"Ich grenze den Weil-Satz ab."
+				]
+			},
+			"2": {
+				"prompt": "Schreibe eine Anrede mit einer Aufzählung und danach ein Satzgefüge mit vorangestelltem Nebensatz.",
+				"model": "Nuri, bring bitte Schere, Papier und Stifte.\nWeil wir ein Plakat basteln, brauchen wir alle drei Sachen.",
+				"criteria": [
+					"Die Anrede steht vor einem Komma.",
+					"Die Aufzählung ist korrekt.",
+					"Der Nebensatz hat ein Komma danach."
+				]
+			}
+		}
+	},
+	{
+		"id": "d5-woerterbuch",
+		"stage": "sprache",
+		"title": "Im Wörterbuch gezielt nachschlagen",
+		"skill": "Finde die Grundform und lies einen Wörterbuchartikel.",
+		"bindings": ["4.3", "3.3"],
+		"paragraphs": [
+			"Ein Wörterbuch ordnet Stichwörter nach dem Alphabet. Schau Buchstabe für Buchstabe. Suche Verben in der Grundform und Nomen meist im Singular: „gefunden“ unter „finden“, „Bücher“ unter „Buch“.",
+			"Ein Artikel beginnt oft mit einem hervorgehobenen Stichwort. Dahinter stehen Angaben wie „das“ für den Artikel oder „Pl.“ für Plural. Ein Eintrag zu „Interview“ zeigt dir Schreibung und oft auch „die Interviews“. Prüfe nach dem Nachschlagen, ob die gefundene Bedeutung zu deinem Satz passt."
+		],
+		"materialLabel": "Vereinfachte Wörterbucheinträge",
+		"material": "Buch, das. Pl.: Bücher.\nfinden. Prät.: fand. Part. II: gefunden.\nInterview, das. Pl.: Interviews.\nMannschaft, die. Pl.: Mannschaften.",
+		"sourceIds": ["lehrplan"],
+		"check": {
+			"wrong": "Fund",
+			"explanation": "„Finden“ ist die Grundform des Verbs. „Gefunden“ steht im Artikel als Partizip."
+		},
+		"takeaway": "Suche die Grundform und lies genau die Angabe, die du für deinen Text brauchst.",
+		"lehrplan": "D5 LB 4.3, 3.3",
+		"cases": [
+			{
+				"prompt": "In welcher Reihenfolge stehen „Fund“, „finden“ und „falten“?",
+				"options": ["falten – finden – Fund", "Fund – finden – falten"],
+				"answer": "falten – finden – Fund",
+				"feedback": "Alle beginnen mit f. Die zweiten Buchstaben stehen in der Reihenfolge a, i, u."
+			},
+			{
+				"prompt": "Welches Wort findest du im gedruckten Wörterbuch zuerst?",
+				"options": ["Interview", "Buch"],
+				"answer": "Buch",
+				"feedback": "B steht vor I im Alphabet."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Korrigiere „Wir haben die Büher gefonden“ mit den Einträgen. Nenne beide Stichwörter.",
+				"model": "Wir haben die Bücher gefunden. Stichwörter: Buch und finden.",
+				"criteria": [
+					"Ich finde beide Grundformen.",
+					"Ich lese die Pluralform.",
+					"Ich lese das Partizip."
+				]
+			},
+			"2": {
+				"prompt": "Prüfe „Wir führten zwei Interwievs“. Erkläre, wo du die Form findest, und bilde einen Satz im Singular.",
+				"model": "Wir führten zwei Interviews. Ich suche „Interview“ unter I und lese „Pl.: Interviews“. Singular: Wir führten ein Interview.",
+				"criteria": [
+					"Ich korrigiere die Schreibung.",
+					"Ich nenne die Angabe im Artikel.",
+					"Ich bilde einen passenden Singularsatz."
+				]
+			}
+		},
+		"extension": "Schlage zwei Wörter aus einem eigenen Entwurf nach. Halte Stichwort, benötigte Angabe und korrigierte Form fest."
+	},
+	{
+		"id": "d5-fehlerkartei",
+		"stage": "sprache",
+		"title": "Aus Fehlern einen Übungsplan machen",
+		"skill": "Ordne wiederholte Fehler einer Strategie zu und prüfe den Erfolg später ohne Vorlage.",
+		"bindings": ["4.3", "3.3"],
+		"paragraphs": [
+			"Verbessere einen Fehler nicht nur einmal. Finde heraus, welcher Fehlerart er angehört: Wortstamm, Silbe, Großschreibung, Merkwort oder Satzzeichen. Notiere die richtige Form und eine passende Prüfhilfe. Übe dann später erneut ohne Vorlage.",
+			"Beispiel: „Hunt“ wird zu „Hund“: Die Verlängerung „Hunde“ macht das d hörbar. Auf der Karte stehen das richtige Wort, ein Beispielsatz und die Prüfform. Wenn du es später ohne Vorlage richtig schreiben und begründen kannst, hat dir die Strategie geholfen."
+		],
+		"material": "Fehleranalyse: Hunt → Hund (mehrmals); bücher → Bücher (einmal); Tieger → Tiger (mehrmals).",
+		"materialLabel": "Eigens geschriebenes Übungsmaterial",
+		"sourceIds": ["lehrplan"],
+		"check": {
+			"wrong": "Nur die Schriftfarbe ändern.",
+			"explanation": "Beim Verlängern folgt auf d ein Vokal, sodass der Laut deutlicher hörbar wird."
+		},
+		"takeaway": "Ordne wiederholte Fehler einer Strategie zu und prüfe den Erfolg später ohne Vorlage.",
+		"lehrplan": "D5 LB 4.3, 3.3",
+		"cases": [
+			{
+				"prompt": "Welche zwei Wörter sind im Beispiel zuerst Übungsschwerpunkte?",
+				"options": ["Hund und Tiger.", "Nur Bücher."],
+				"answer": "Hund und Tiger.",
+				"feedback": "Hund und Tiger wurden wiederholt falsch geschrieben."
+			},
+			{
+				"prompt": "Wie prüfst du deinen Fortschritt?",
+				"options": [
+					"Das Wort nur ansehen.",
+					"Später ohne Vorlage schreiben und dann vergleichen."
+				],
+				"answer": "Später ohne Vorlage schreiben und dann vergleichen.",
+				"feedback": "Die spätere eigene Schreibung zeigt, ob die Übung geholfen hat."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Erstelle zu „Hund“ und „Tiger“ je eine Übungskarte mit unterschiedlicher Hilfe.",
+				"model": "Hund – Hunde: Am Wortende steht d. Satz: Der Hund schläft. Tiger: Merkwort mit langem i ohne e. Satz: Der Tiger liegt im Schatten.",
+				"criteria": [
+					"Ich schreibe beide Wörter richtig.",
+					"Ich unterscheide Strategie und Merkwort.",
+					"Ich ergänze Beispielsätze."
+				]
+			},
+			"2": {
+				"prompt": "Plane aus drei eigenen erfundenen Fehlerbeispielen eine Übungswoche. Erkläre, wie du den Erfolg prüfst.",
+				"model": "Montag sammle ich Fehlerarten. Dienstag übe ich Verlängerungen. Mittwoch prüfe ich Merkwörter. Freitag schreibe ich neue Sätze ohne Vorlage und vergleiche sie. Bleibende Fehler übe ich weiter.",
+				"criteria": [
+					"Ich benenne Fehlerarten.",
+					"Mein Plan verteilt die Übung.",
+					"Ich prüfe mit neuen Sätzen ohne Vorlage."
+				]
+			}
+		},
+		"extension": "Nutze echte Fehler aus deinem Heft und besprich die Einordnung mit deiner Lehrkraft. Die App ermittelt keine persönlichen Fehlerschwerpunkte automatisch."
+	},
+	{
+		"id": "d5-wortbausteine",
+		"stage": "sprache",
+		"title": "Laute, Buchstaben und Silben unterscheiden",
+		"skill": "Unterscheide Gehörtes und Geschriebenes; gliedere Wörter in Sprechsilben.",
+		"bindings": ["4.2", "4.3"],
+		"paragraphs": [
+			"Ein Laut ist etwas, das du hörst oder sprichst. Ein Buchstabe ist ein Schriftzeichen. Beides passt nicht immer eins zu eins zusammen: „sch“ sind drei Buchstaben für einen Laut. Silben sind Sprecheinheiten, die du langsam sprechen oder klatschen kannst.",
+			"Beispiel: „Schule“ hat sechs Buchstaben, aber das „sch“ steht zusammen für einen Laut. Du sprichst „Schu-le“ mit zwei Silben. Die erste Silbe endet auf einen Vokal und ist offen; in „Kat-ze“ endet die erste Silbe auf einen Konsonanten und ist geschlossen."
+		],
+		"material": "Schule: S c h u l e → Schu-le\nKatze → Kat-ze\ngehen → ge-hen",
+		"materialLabel": "Eigens geschriebenes Übungsmaterial",
+		"sourceIds": ["lehrplan"],
+		"check": {
+			"wrong": "Zwei Buchstaben.",
+			"explanation": "S, c und h sind drei Schriftzeichen, die in „Schule“ einen Laut wiedergeben."
+		},
+		"takeaway": "Unterscheide Gehörtes und Geschriebenes; gliedere Wörter in Sprechsilben.",
+		"lehrplan": "D5 LB 4.2, 4.3",
+		"cases": [
+			{
+				"prompt": "Welche erste Silbe ist offen?",
+				"options": ["Schu- in Schule", "Kat- in Katze"],
+				"answer": "Schu- in Schule",
+				"feedback": "„Schu“ endet auf einen Vokal; „Kat“ endet auf einen Konsonanten."
+			},
+			{
+				"prompt": "Welche Gliederung enthält zwei Sprechsilben?",
+				"options": ["g-e-h-e-n", "ge-hen"],
+				"answer": "ge-hen",
+				"feedback": "Einzelne Buchstaben sind nicht automatisch eigene Silben."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Gliedere Schule, Katze und gehen in Silben. Erkläre den Unterschied zwischen „sch“ und einem Laut.",
+				"model": "Schu-le, Kat-ze, ge-hen. In Schule schreiben drei Buchstaben gemeinsam einen Laut.",
+				"criteria": [
+					"Ich gliedere alle Wörter.",
+					"Ich unterscheide Buchstaben und Laut.",
+					"Ich erkenne die offene erste Silbe von Schule."
+				]
+			},
+			"2": {
+				"prompt": "Erkläre einem jüngeren Kind mit „Schule“ und „Katze“, warum Buchstaben zählen und Silben klatschen verschiedene Aufgaben sind.",
+				"model": "Bei Schule zähle ich sechs Buchstaben und spreche zwei Silben. Bei Katze spreche ich ebenfalls zwei Silben, aber nur fünf Buchstaben stehen auf dem Papier. Buchstaben sind Zeichen, Silben sind Sprecheinheiten.",
+				"criteria": [
+					"Ich verwende beide Beispiele.",
+					"Meine Zählungen stimmen.",
+					"Ich erkläre mit eigenen Worten."
+				]
+			}
+		},
+		"extension": ""
+	},
+	{
+		"id": "d5-nomen-gross",
+		"stage": "sprache",
+		"title": "Nomen mit Proben erkennen",
+		"skill": "Prüfe Begleiter, mögliche Erweiterung und typische Endungen, um Nomen großzuschreiben.",
+		"bindings": ["4.3"],
+		"paragraphs": [
+			"Nomen schreibst du groß. Ein Artikel oder ein Possessivpronomen kann dir helfen, den nominalen Kern zu finden: „das Haus“, „mein Haus“. Auch mit einer Erweiterung bleibt der Kern erkennbar: „mein kleines Haus“. Das Adjektiv dazwischen bleibt klein.",
+			"Viele Nomen erkennst du an Endungen wie -ung, -heit, -keit, -schaft, -nis und -tum: „die Hoffnung“, „die Freiheit“, „das Ergebnis“. Nutze Endung und Zusammenhang gemeinsam. Nicht nur Dinge, die du anfassen kannst, sind Nomen."
+		],
+		"material": "meine kleine wohnung\ndie große freiheit\nein neues ergebnis\ndie freundschaft",
+		"materialLabel": "Eigens geschriebenes Übungsmaterial",
+		"sourceIds": ["lehrplan"],
+		"check": {
+			"wrong": "meine",
+			"explanation": "„Meine“ begleitet den nominalen Kern Wohnung. „Kleine“ ist das beschreibende Adjektiv."
+		},
+		"takeaway": "Prüfe Begleiter, mögliche Erweiterung und typische Endungen, um Nomen großzuschreiben.",
+		"lehrplan": "D5 LB 4.3",
+		"cases": [
+			{
+				"prompt": "Welche Fassung ist richtig?",
+				"options": ["ein neues Ergebnis", "ein Neues ergebnis"],
+				"answer": "ein neues Ergebnis",
+				"feedback": "Der nominale Kern Ergebnis wird großgeschrieben, das Adjektiv neues klein."
+			},
+			{
+				"prompt": "Warum ist Freundschaft ein Nomen?",
+				"options": [
+					"Nur weil man Freundschaft anfassen kann.",
+					"Es kann mit Artikel und Erweiterung stehen: eine enge Freundschaft."
+				],
+				"answer": "Es kann mit Artikel und Erweiterung stehen: eine enge Freundschaft.",
+				"feedback": "Auch Gedanken und Beziehungen können als Nomen bezeichnet werden."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Schreibe die vier Wortgruppen aus dem Material richtig. Erweitere eine um ein weiteres Adjektiv.",
+				"model": "Meine kleine Wohnung; die große Freiheit; ein neues Ergebnis; die Freundschaft. Erweiterung: eine enge, langjährige Freundschaft.",
+				"criteria": [
+					"Ich schreibe die Nomen groß.",
+					"Die Adjektive bleiben klein.",
+					"Meine Erweiterung passt."
+				]
+			},
+			"2": {
+				"prompt": "Schreibe drei Sätze mit Nomen auf -ung, -keit und -nis. Begründe jeweils die Großschreibung mit einer Probe.",
+				"model": "Die Zeitung liegt hier. Seine Freundlichkeit hilft uns. Das Erlebnis bleibt in Erinnerung. Ich kann die Nomen mit Artikel und Adjektiv erweitern: die neue Zeitung, seine große Freundlichkeit, das schöne Erlebnis.",
+				"criteria": [
+					"Ich verwende die drei Endungen.",
+					"Meine Nomen sind großgeschrieben.",
+					"Ich zeige eine passende Probe."
+				]
+			}
+		},
+		"extension": ""
+	},
+	{
+		"id": "d5-silbentrennung",
+		"stage": "sprache",
+		"title": "Wörter am Zeilenende trennen",
+		"skill": "Trenne nach Silben und lass ck sowie sch an ihrer gemeinsamen Stelle zusammen.",
+		"bindings": ["4.3"],
+		"paragraphs": [
+			"Trenne Wörter am Zeilenende grundsätzlich nach Sprechsilben. Mehrere Konsonantenbuchstaben zwischen Vokalen trennst du meist vor dem letzten: „Kat-ze“, „Fens-ter“. Die Buchstabenverbindung „ck“ bleibt zusammen und kommt auf die neue Zeile: „ba-cken“.",
+			"Beispiel: „ge-hen“ macht das silbentrennende h sichtbar. „sch“ bleibt in Wörtern wie „wa-schen“ zusammen. Wenn du unsicher bist, schaue die möglichen Trennstellen im Wörterbuch nach. Nicht jede Stelle zwischen Buchstaben ist eine erlaubte Trennstelle."
+		],
+		"material": "Katze · Fenster · backen · gehen · waschen",
+		"materialLabel": "Eigens geschriebenes Übungsmaterial",
+		"sourceIds": ["lehrplan"],
+		"check": {
+			"wrong": "back-en",
+			"explanation": "„Ck“ wird bei der Trennung nicht geteilt und steht in der nächsten Silbe."
+		},
+		"takeaway": "Trenne nach Silben und lass ck sowie sch an ihrer gemeinsamen Stelle zusammen.",
+		"lehrplan": "D5 LB 4.3",
+		"cases": [
+			{
+				"prompt": "Welche Trennung passt?",
+				"options": ["Fens-ter", "Fe-nster"],
+				"answer": "Fens-ter",
+				"feedback": "Bei mehreren Konsonanten steht die Trennstelle hier vor dem letzten."
+			},
+			{
+				"prompt": "Welche Verbindung bleibt in „waschen“ zusammen?",
+				"options": ["Jeder Buchstabe wird einzeln getrennt.", "sch"],
+				"answer": "sch",
+				"feedback": "„Waschen“ wird wa-schen getrennt; sch bleibt zusammen."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Notiere die Trennstellen aller fünf Wörter.",
+				"model": "Kat-ze, Fens-ter, ba-cken, ge-hen, wa-schen.",
+				"criteria": [
+					"Ich gliedere nach Silben.",
+					"Ich halte ck zusammen.",
+					"Ich halte sch zusammen."
+				]
+			},
+			"2": {
+				"prompt": "Jemand trennt „bac-ken“ und „was-chen“. Korrigiere und erkläre die beiden Stellen.",
+				"model": "Richtig ist ba-cken und wa-schen. Ck und sch bleiben jeweils als Buchstabenverbindung zusammen. Die Trennstelle steht davor.",
+				"criteria": [
+					"Ich verbessere beide Wörter.",
+					"Ich benenne die Verbindungen.",
+					"Ich erkläre die Trennstelle."
+				]
+			}
+		},
+		"extension": ""
+	}
+]
