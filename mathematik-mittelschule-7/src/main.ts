@@ -36,7 +36,9 @@ import type {
 } from "./model/types";
 import { TRACK_LABELS, TRACK_LONG_LABELS } from "./model/types";
 import {
+  choiceOptionsForTrack,
   DEFAULT_LESSON_ID,
+  goalsForTrack,
   goalsReached,
   isLessonComplete,
   isQuizDone,
@@ -590,10 +592,19 @@ class MatheApp {
 
   private renderLab(container: HTMLElement, lesson: Lesson): void {
     const lab = lesson.lab;
-    const values = this.labValues.get(lesson.id) ?? defaultLabValues(lab);
+    const filter = this.progress.trackFilter;
+    const values = { ...(this.labValues.get(lesson.id) ?? defaultLabValues(lab)) };
+    for (const param of lab.params) {
+      if (param.type !== "choice") continue;
+      const opts = choiceOptionsForTrack(param, filter);
+      if (opts.length > 0 && !opts.some((o) => o.value === values[param.key])) {
+        values[param.key] = opts[0].value;
+      }
+    }
     this.labValues.set(lesson.id, values);
     const view = labView(lab.kind);
     const hasHandles = Object.keys(view.handles ?? {}).length > 0;
+    const visibleGoals = goalsForTrack(lesson, filter);
 
     container.innerHTML = `
       <div class="lab-head">
@@ -605,13 +616,13 @@ class MatheApp {
       <div class="lab-visual" id="lab-visual"></div>
       ${lab.actions?.length ? `<div class="lab-actions">${lab.actions.map((action) => `<button type="button" class="btn btn-secondary btn-sm" data-action="${action.id}">${esc(action.label)}</button>`).join("")}</div>` : ""}
       <div class="lab-controls">
-        ${lab.params.map((param) => controlHtml(param, values)).join("")}
+        ${lab.params.map((param) => controlHtml(param, values, filter)).join("")}
       </div>
       <dl class="readouts" id="lab-readouts"></dl>
       <div class="goals">
         <h5>Laboraufträge</h5>
         <ul id="lab-goals">
-          ${lab.goals.map((goal) => `<li data-goal="${goal.id}"><span class="goal-state">○</span> ${esc(goal.text)}</li>`).join("")}
+          ${visibleGoals.map((goal) => `<li data-goal="${goal.id}"><span class="goal-state">○</span> ${esc(goal.text)}</li>`).join("")}
         </ul>
       </div>
     `;
@@ -775,7 +786,12 @@ class MatheApp {
         .join("");
     }
 
-    const reached = reachedGoals(lab, values, readouts).map((goal) => goal.id);
+    const visibleGoalIds = new Set(
+      goalsForTrack(lesson, this.progress.trackFilter).map((g) => g.id),
+    );
+    const reached = reachedGoals(lab, values, readouts)
+      .map((goal) => goal.id)
+      .filter((id) => visibleGoalIds.has(id));
     const stored = goalsReached(this.progress, lesson.id);
     const newlyReached = reached.filter((id) => !stored.includes(id));
     if (newlyReached.length > 0) {
@@ -979,8 +995,10 @@ class MatheApp {
     const done = document.getElementById("status-done");
     if (!list || !done) return;
     const quiz = isQuizDone(this.progress, lesson.id);
-    const goals = goalsReached(this.progress, lesson.id).length;
-    const total = lesson.lab.goals.length;
+    const visibleGoals = goalsForTrack(lesson, this.progress.trackFilter);
+    const reachedSet = new Set(goalsReached(this.progress, lesson.id));
+    const goals = visibleGoals.filter((goal) => reachedSet.has(goal.id)).length;
+    const total = visibleGoals.length;
     const solved1 = solvedCount(this.progress, lesson.id, 1);
     const solved2 = solvedCount(this.progress, lesson.id, 2);
     const item = (ok: boolean, text: string) =>
@@ -1081,13 +1099,18 @@ class MatheApp {
 }
 
 /** The slider or choice for one parameter; state has no control. */
-function controlHtml(param: LabParam, values: LabValues): string {
+function controlHtml(
+  param: LabParam,
+  values: LabValues,
+  filter: TrackFilter,
+): string {
   if (param.type === "state") return "";
   if (param.type === "choice") {
+    const options = choiceOptionsForTrack(param, filter);
     return `<label class="lab-control" data-wrap="${param.key}">
       <span class="lab-label">${esc(param.label)}</span>
       <select data-param="${param.key}">
-        ${param.options.map((option) => `<option value="${option.value}" ${option.value === values[param.key] ? "selected" : ""}>${esc(option.label)}</option>`).join("")}
+        ${options.map((option) => `<option value="${option.value}" ${option.value === values[param.key] ? "selected" : ""}>${esc(option.label)}</option>`).join("")}
       </select>
     </label>`;
   }

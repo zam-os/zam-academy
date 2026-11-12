@@ -1,5 +1,5 @@
 import { fmt, frac } from "../exercises/format";
-import { choiceField, near, numberField } from "./helpers";
+import { choiceField, classifyGridTriangle, near, numberField } from "./helpers";
 import {
   BOTH,
   choice,
@@ -400,26 +400,8 @@ export const STAGE_GEOMETRIE = makeStage(
           range("cy", "Höhe y von C", 1, 6, 4, 0.5),
         ],
         [
-          output("type", "Klassifikation", (v) => {
-            const a = Math.hypot(3 - v.cx, v.cy);
-            const b = Math.hypot(-3 - v.cx, v.cy);
-            const c = 6;
-            const eqSide = Math.abs(a - b) < 0.25 && Math.abs(a - c) < 0.25;
-            const iso = Math.abs(a - b) < 0.1 || Math.abs(a - c) < 0.25 || Math.abs(b - c) < 0.25;
-            const right =
-              Math.abs(v.cx * v.cx + v.cy * v.cy - 9) < 0.4 ||
-              Math.abs((v.cx + 3) < 0.01 ? 0 : 1) === 0;
-            if (eqSide) return "gleichseitig";
-            if (iso && right) return "gleichschenklig-rechtw.";
-            if (iso) return "gleichschenklig";
-            return "allgemein";
-          }, "", 0, true),
-          output("gamma", "Winkel γ", (v) => {
-            const a = Math.hypot(3 - v.cx, v.cy);
-            const b = Math.hypot(-3 - v.cx, v.cy);
-            const cosG = (a * a + b * b - 36) / (2 * a * b);
-            return (Math.acos(Math.max(-1, Math.min(1, cosG))) * 180) / Math.PI;
-          }, "°", 1),
+          output("type", "Klassifikation", (v) => classifyGridTriangle(v.cx, v.cy).summary, "", 0, true),
+          output("gamma", "Winkel γ", (v) => classifyGridTriangle(v.cx, v.cy).gamma, "°", 1),
         ],
         [
           {
@@ -430,11 +412,11 @@ export const STAGE_GEOMETRIE = makeStage(
           {
             id: "thales-right",
             text: "Erzeuge ein rechtwinkliges Dreieck bei C (γ = 90°) mit x = 0 und y = 3!",
-            check: (_v, r) => near(Number(r.gamma), 90, 0.02),
+            check: (_v, r) => Math.abs(Number(r.gamma) - 90) < 0.02,
           },
           {
             id: "equilateral",
-            text: "Finde ein nahezu gleichseitiges Dreieck (alle Seiten ca. 6,0 cm → x = 0, y = 5).",
+            text: "Finde das beinahe gleichseitige Gitterdreieck (x = 0, y = 5 → Seiten ca. 5,8 cm und 6 cm).",
             check: (v) => v.cx === 0 && v.cy === 5,
           },
         ],
@@ -470,10 +452,11 @@ export const STAGE_GEOMETRIE = makeStage(
               [3, 4, 5, 2],
             ]);
             const idx = sides[3];
+            const extraHint = idx === 2 ? " (Hinweis: 3² + 4² = 5² ergibt 90°)" : "";
             return task(
               level,
               `Ordne das Dreieck mit a = ${sides[0]} cm, b = ${sides[1]} cm, c = ${sides[2]} cm richtig ein.`,
-              `Beim Bau eines Regals misst eine dreieckige Halterung ${sides[0]} cm, ${sides[1]} cm und ${sides[2]} cm (Hinweis: 3² + 4² = 5² ergibt 90°). Welche Bezeichnung passt am genauesten?`,
+              `Beim Bau eines Regals misst eine dreieckige Halterung ${sides[0]} cm, ${sides[1]} cm und ${sides[2]} cm${extraHint}. Welche Bezeichnung passt am genauesten?`,
               [
                 choiceField(
                   "Dreieckstyp",

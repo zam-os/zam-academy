@@ -1,4 +1,5 @@
 import { fmt } from "../exercises/format";
+import { classifyGridTriangle } from "../curriculum/helpers";
 import {
   open,
   text,
@@ -202,41 +203,21 @@ export const GEOMETRIE_VIEWS: Record<string, LabView> = {
       const B = { x: 3, y: 0 };
       const C = { x: v.cx ?? 0, y: clamp(v.cy ?? 4, 1, 6) };
 
-      const aLen = Math.hypot(B.x - C.x, B.y - C.y);
-      const bLen = Math.hypot(A.x - C.x, A.y - C.y);
-      const cLen = 6;
-      const radToDeg = 180 / Math.PI;
-      const alpha =
-        Math.acos(clamp((bLen * bLen + cLen * cLen - aLen * aLen) / (2 * bLen * cLen), -1, 1)) * radToDeg;
-      const beta =
-        Math.acos(clamp((aLen * aLen + cLen * cLen - bLen * bLen) / (2 * aLen * cLen), -1, 1)) * radToDeg;
-      const gamma = 180 - alpha - beta;
+      const { a: aLen, b: bLen, c: cLen, alpha, beta, gamma, rightVertex, summary } =
+        classifyGridTriangle(C.x, C.y);
 
       const sA = plot.P(A.x, A.y);
       const sB = plot.P(B.x, B.y);
       const sC = plot.P(C.x, C.y);
 
-      const angleType =
-        Math.abs(alpha - 90) < 1.5 || Math.abs(beta - 90) < 1.5 || Math.abs(gamma - 90) < 1.5
-          ? "rechtwinklig"
-          : alpha > 90 || beta > 90 || gamma > 90
-            ? "stumpfwinklig"
-            : "spitzwinklig";
-      const sideType =
-        Math.abs(aLen - bLen) < 0.15 && Math.abs(bLen - cLen) < 0.15
-          ? "gleichseitig"
-          : Math.abs(aLen - bLen) < 0.15 || Math.abs(bLen - cLen) < 0.15 || Math.abs(aLen - cLen) < 0.15
-            ? "gleichschenklig"
-            : "unregelmäßig";
-
       let out = open("Dreieck-Klassifikation und Innenwinkelsumme");
-      out += title(`${sideType}, ${angleType} (α + β + γ = 180°)`);
+      out += title(`${summary} (α + β + γ = 180°)`);
       out += plot.grid(1, 2);
 
       out += polygon([sA, sB, sC], "lab-fill-a", 'style="stroke:var(--lab-a);stroke-width:2.5"');
-      out += angleMark(sA, sB, sC, 22, "lab-angle", Math.abs(alpha - 90) < 1.5);
-      out += angleMark(sB, sC, sA, 22, "lab-angle", Math.abs(beta - 90) < 1.5);
-      out += angleMark(sC, sA, sB, 22, "lab-angle", Math.abs(gamma - 90) < 1.5);
+      out += angleMark(sA, sB, sC, 22, "lab-angle", rightVertex === "A");
+      out += angleMark(sB, sC, sA, 22, "lab-angle", rightVertex === "B");
+      out += angleMark(sC, sA, sB, 22, "lab-angle", rightVertex === "C");
 
       out += sideLabel(sA, sB, `c = ${fmt(cLen, 1)}`, 16);
       out += sideLabel(sB, sC, `a = ${fmt(aLen, 1)}`, 16);
@@ -368,32 +349,89 @@ export const GEOMETRIE_VIEWS: Record<string, LabView> = {
         out += text(x0 + (g * sc) / 2, y0 + 20, `g = ${fmt(g)} cm`, "lab-text", "middle");
         out += text(back[1].x + 12, (pts[1].y + back[1].y) / 2, `hₖ = ${fmt(hk)} cm`, "lab-text-b");
       } else {
-        // Unfolded net: mantle strip + 2 base polygons
-        const sc = 18;
-        const sides = shape === 2 ? 3 : 4;
-        const sw = g * sc * 0.85;
+        // Unfolded net: edge-matched mantle strip + 2 base polygons
+        const widthsCm =
+          shape === 2
+            ? (() => {
+                const leg = Math.hypot(g / 2, h);
+                return [leg, g, leg];
+              })()
+            : shape === 1
+              ? (() => {
+                  const slant = Math.hypot(1.5, h);
+                  return [g, slant, g, slant];
+                })()
+              : [g, h, g, h];
+        const totalCm = widthsCm.reduce((sum, w) => sum + w, 0);
+        const sc = Math.min(18, 280 / Math.max(totalCm, 1), 195 / Math.max(hk + 2 * h, 1));
         const mh = hk * sc;
-        const mx0 = 75;
-        const my0 = 135;
-        for (let i = 0; i < sides; i++) {
-          out += rect(mx0 + i * sw, my0, sw, mh, "lab-fill-a", 'style="stroke:var(--lab-a);stroke-width:1.6"');
+        const mx0 = 38;
+        const my0 = Math.round(170 - mh / 2);
+
+        let curX = mx0;
+        const stripStarts: number[] = [];
+        for (let i = 0; i < widthsCm.length; i++) {
+          const sw = widthsCm[i] * sc;
+          stripStarts.push(curX);
+          out += rect(curX, my0, sw, mh, "lab-fill-a", 'style="stroke:var(--lab-a);stroke-width:1.6"');
+          if (sw >= 24) {
+            out += text(curX + sw / 2, my0 + mh / 2 + 4, `${fmt(widthsCm[i], 1)}`, "lab-text-small", "middle");
+          }
+          curX += sw;
         }
+        const attachIdx = shape === 2 ? 1 : 0;
+        const baseX = stripStarts[attachIdx];
+        const baseW = widthsCm[attachIdx] * sc;
         if (shape === 2) {
-          out += polygon([{ x: mx0, y: my0 }, { x: mx0 + sw, y: my0 }, { x: mx0 + sw / 2, y: my0 - h * sc }], "lab-fill-b", 'style="stroke:var(--lab-b);stroke-width:2"');
-          out += polygon([{ x: mx0, y: my0 + mh }, { x: mx0 + sw, y: my0 + mh }, { x: mx0 + sw / 2, y: my0 + mh + h * sc }], "lab-fill-b", 'style="stroke:var(--lab-b);stroke-width:2"');
+          out += polygon(
+            [
+              { x: baseX, y: my0 },
+              { x: baseX + baseW, y: my0 },
+              { x: baseX + baseW / 2, y: my0 - h * sc },
+            ],
+            "lab-fill-b",
+            'style="stroke:var(--lab-b);stroke-width:2"',
+          );
+          out += polygon(
+            [
+              { x: baseX, y: my0 + mh },
+              { x: baseX + baseW, y: my0 + mh },
+              { x: baseX + baseW / 2, y: my0 + mh + h * sc },
+            ],
+            "lab-fill-b",
+            'style="stroke:var(--lab-b);stroke-width:2"',
+          );
         } else {
-          const shift = shape === 1 ? 14 : 0;
-          out += polygon([{ x: mx0, y: my0 }, { x: mx0 + sw, y: my0 }, { x: mx0 + sw + shift, y: my0 - h * sc }, { x: mx0 + shift, y: my0 - h * sc }], "lab-fill-b", 'style="stroke:var(--lab-b);stroke-width:2"');
-          out += polygon([{ x: mx0, y: my0 + mh }, { x: mx0 + sw, y: my0 + mh }, { x: mx0 + sw + shift, y: my0 + mh + h * sc }, { x: mx0 + shift, y: my0 + mh + h * sc }], "lab-fill-b", 'style="stroke:var(--lab-b);stroke-width:2"');
+          const shift = shape === 1 ? 1.5 * sc : 0;
+          out += polygon(
+            [
+              { x: baseX, y: my0 },
+              { x: baseX + baseW, y: my0 },
+              { x: baseX + baseW + shift, y: my0 - h * sc },
+              { x: baseX + shift, y: my0 - h * sc },
+            ],
+            "lab-fill-b",
+            'style="stroke:var(--lab-b);stroke-width:2"',
+          );
+          out += polygon(
+            [
+              { x: baseX, y: my0 + mh },
+              { x: baseX + baseW, y: my0 + mh },
+              { x: baseX + baseW + shift, y: my0 + mh + h * sc },
+              { x: baseX + shift, y: my0 + mh + h * sc },
+            ],
+            "lab-fill-b",
+            'style="stroke:var(--lab-b);stroke-width:2"',
+          );
         }
       }
 
       const flaechen = shape === 2 ? 5 : 6;
       const ecken = shape === 2 ? 6 : 8;
       const kanten = shape === 2 ? 9 : 12;
-      out += infoBox(335, 250, [
-        [`Ecken: ${ecken}  ·  Kanten: ${kanten}`, "lab-text"],
-        [`Flächen: ${flaechen} (2 Grundfl. + ${flaechen - 2} Mantel)`, "lab-text-a"],
+      out += infoBox(335, 272, [
+        [`Ecken: ${ecken} · Kanten: ${kanten}`, "lab-text"],
+        [`Flächen: ${flaechen} (2G + ${flaechen - 2}M)`, "lab-text-a"],
       ]);
       out += "</svg>";
       return out;

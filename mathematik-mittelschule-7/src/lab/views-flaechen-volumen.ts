@@ -273,13 +273,49 @@ export const FLAECHEN_VOLUMEN_VIEWS: Record<string, LabView> = {
         front.forEach((p, i) => out += line(p.x, p.y, back[i].x, back[i].y, "lab-axis"));
         out += polygon(front, "lab-fill-a", 'style="stroke:var(--lab-a);stroke-width:2.2"');
       } else {
-        const mw = Math.min(220, u * 11);
-        const mh = hk * 15;
-        out += rect(65, 130, mw, mh, "lab-fill-b", 'style="stroke:var(--lab-b);stroke-width:2"');
-        out += text(65 + mw / 2, 130 + mh / 2 + 5, `Mantel M = ${fmt(M, 1)} cm²`, "lab-text-b", "middle");
-        out += rect(65, 80, 60, 42, "lab-fill-a", 'style="stroke:var(--lab-a);stroke-width:2"');
-        out += rect(65, 130 + mh + 8, 60, 42, "lab-fill-a", 'style="stroke:var(--lab-a);stroke-width:2"');
-        out += text(135, 106, `G = ${fmt(G, 1)} cm²`, "lab-text-a");
+        const widthsCm = shape === 0 ? [sideLeg, g, sideLeg] : [g, h, g, h];
+        const totalCm = widthsCm.reduce((sum, w) => sum + w, 0);
+        const sc = Math.min(18, 225 / Math.max(totalCm, 1), 195 / Math.max(hk + 2 * h, 1));
+        const mh = hk * sc;
+        const mx0 = 38;
+        const my0 = Math.round(175 - mh / 2);
+
+        let curX = mx0;
+        const starts: number[] = [];
+        for (const wCm of widthsCm) {
+          const sw = wCm * sc;
+          starts.push(curX);
+          out += rect(curX, my0, sw, mh, "lab-fill-b", 'style="stroke:var(--lab-b);stroke-width:1.8"');
+          curX += sw;
+        }
+        const baseIdx = shape === 0 ? 1 : 0;
+        const baseX = starts[baseIdx];
+        const baseW = widthsCm[baseIdx] * sc;
+        if (shape === 0) {
+          out += polygon(
+            [
+              { x: baseX, y: my0 },
+              { x: baseX + baseW, y: my0 },
+              { x: baseX + baseW / 2, y: my0 - h * sc },
+            ],
+            "lab-fill-a",
+            'style="stroke:var(--lab-a);stroke-width:2"',
+          );
+          out += polygon(
+            [
+              { x: baseX, y: my0 + mh },
+              { x: baseX + baseW, y: my0 + mh },
+              { x: baseX + baseW / 2, y: my0 + mh + h * sc },
+            ],
+            "lab-fill-a",
+            'style="stroke:var(--lab-a);stroke-width:2"',
+          );
+        } else {
+          out += rect(baseX, my0 - h * sc, baseW, h * sc, "lab-fill-a", 'style="stroke:var(--lab-a);stroke-width:2"');
+          out += rect(baseX, my0 + mh, baseW, h * sc, "lab-fill-a", 'style="stroke:var(--lab-a);stroke-width:2"');
+        }
+        out += text(baseX + baseW + 10, my0 - Math.max(12, (h * sc) / 2), `G = ${fmt(G, 1)} cm²`, "lab-text-a");
+        out += text(mx0 + (totalCm * sc) / 2, my0 + mh / 2 + 5, `M = ${fmt(M, 1)} cm²`, "lab-text-b", "middle");
       }
 
       out += infoBox(305, 86, [
@@ -293,15 +329,37 @@ export const FLAECHEN_VOLUMEN_VIEWS: Record<string, LabView> = {
     },
   },
 
-  "prism-volume": {
+  "prism-volume": prismVolumeView(false),
+  "prism-gutter": prismVolumeView(true),
+};
+
+function prismVolumeView(isGutter: boolean): LabView {
+  return {
     render(v) {
-      const shape = v.shape ?? 0; // 0: Rechteck, 1: Dreieck, 2: Parallelogramm, 3: Trapez, 4: Drachen
+      const shape = v.shape ?? 0;
       const g = v.g ?? 6;
       const h = v.h ?? 4;
       const hk = v.hk ?? 5;
       const fill = v.fill ?? 100;
-      const G = shape === 0 || shape === 2 ? g * h : shape === 3 ? ((g + Math.max(2, g - 2)) / 2) * h : (g * h) / 2;
+
+      // In prism-volume: 0 Rechteck, 1 Dreieck, 2 Parallelogramm, 3 Trapez, 4 Drachen
+      // In prism-gutter: 0 Rechteck, 1 Dreieck, 2 Trapez
+      const kind = isGutter ? [0, 1, 3][shape] ?? 0 : shape;
+      const G =
+        kind === 0 || kind === 2
+          ? g * h
+          : kind === 3
+            ? ((g + Math.max(2, g - 2)) / 2) * h
+            : (g * h) / 2;
       const V = G * hk * (fill / 100);
+
+      const unitLen = isGutter ? "dm" : "cm";
+      const unitArea = isGutter ? "dm²" : "cm²";
+      const unitVol = isGutter ? "l" : "cm³";
+      const heading = isGutter
+        ? "Werkstück- & Behältervolumen (1 dm³ = 1 Liter)"
+        : "Rauminhalt gerader Prismen";
+      const shapeNames = ["Rechteck", "Dreieck", "Parallelogramm", "Trapez", "Drachenviereck"];
 
       const sc = 22;
       const x0 = 95;
@@ -310,10 +368,10 @@ export const FLAECHEN_VOLUMEN_VIEWS: Record<string, LabView> = {
       const bh = hk * sc * (fill / 100);
       const totalH = hk * sc;
 
-      let out = open("Rauminhalt gerader Prismen");
-      out += title(`V = G · hₖ = ${fmt(G, 1)} · ${fmt(hk * (fill / 100), 1)} = ${fmt(V, 1)} cm³`);
+      let out = open(heading);
+      out += title(`V = G · hₖ = ${fmt(G, 1)} · ${fmt(hk * (fill / 100), 1)} = ${fmt(V, 1)} ${unitVol}`);
 
-      // Standing prism container
+      // Standing container column
       out += rect(x0, y0 - totalH, bw, totalH, "lab-shape", 'style="stroke:var(--lab-axis);stroke-width:1.6"');
       out += rect(x0, y0 - bh, bw, bh, "lab-fill-a", 'style="stroke:var(--lab-a);stroke-width:2"');
       out += line(x0 + 22, y0 - totalH - 22, x0 + bw + 22, y0 - totalH - 22, "lab-axis");
@@ -322,14 +380,31 @@ export const FLAECHEN_VOLUMEN_VIEWS: Record<string, LabView> = {
       out += line(x0 + bw, y0, x0 + bw + 22, y0 - 22, "lab-axis");
       out += line(x0 + bw + 22, y0 - 22, x0 + bw + 22, y0 - totalH - 22, "lab-axis");
 
+      // Cross-section glyph in upper-right info panel
+      const gx = 32;
+      const gy = 86;
+      const gw = 46;
+      const gh = 34;
+      const profile =
+        kind === 0
+          ? [{ x: gx, y: gy }, { x: gx + gw, y: gy }, { x: gx + gw, y: gy + gh }, { x: gx, y: gy + gh }]
+          : kind === 1
+            ? [{ x: gx, y: gy + gh }, { x: gx + gw, y: gy + gh }, { x: gx + gw / 2, y: gy }]
+            : kind === 2
+              ? [{ x: gx, y: gy + gh }, { x: gx + gw - 10, y: gy + gh }, { x: gx + gw, y: gy }, { x: gx + 10, y: gy }]
+              : kind === 3
+                ? [{ x: gx, y: gy + gh }, { x: gx + gw, y: gy + gh }, { x: gx + gw - 8, y: gy }, { x: gx + 8, y: gy }]
+                : [{ x: gx + gw / 2, y: gy }, { x: gx + gw, y: gy + gh * 0.42 }, { x: gx + gw / 2, y: gy + gh }, { x: gx, y: gy + gh * 0.42 }];
+      out += polygon(profile, "lab-fill-b", 'style="stroke:var(--lab-b);stroke-width:1.8"');
+      out += text(gx + gw / 2, gy + gh + 14, "Querschnitt", "lab-text-small", "middle");
+
       out += handle("fill", x0 + bw / 2, y0 - bh, "Füllhöhe");
 
-      const shapeNames = ["Rechteck", "Dreieck", "Parallelogramm", "Trapez", "Drachenviereck"];
-      out += infoBox(290, 86, [
-        [`Grundfläche (${shapeNames[shape] ?? "Prisma"})`, "lab-text"],
-        [`G = ${fmt(G, 1)} cm²`, "lab-text-a"],
-        [`Körperhöhe hₖ = ${fmt(hk, 1)} cm (${fill} % gefüllt)`, "lab-text-b"],
-        [`Volumen V = ${fmt(V, 1)} cm³`, "lab-text-big"],
+      out += infoBox(280, 86, [
+        [`Grundfläche (${shapeNames[kind] ?? "Prisma"})`, "lab-text"],
+        [`G = ${fmt(G, 1)} ${unitArea}`, "lab-text-a"],
+        [`hₖ = ${fmt(hk, 1)} ${unitLen} (${fill} % voll)`, "lab-text-b"],
+        [`Volumen V = ${fmt(V, 1)} ${unitVol}`, "lab-text-big"],
       ]);
       out += "</svg>";
       return out;
@@ -343,5 +418,5 @@ export const FLAECHEN_VOLUMEN_VIEWS: Record<string, LabView> = {
         },
       },
     },
-  },
-};
+  };
+}

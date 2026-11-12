@@ -10,6 +10,8 @@ import {
   previousLesson,
 } from "../src/curriculum";
 import {
+  choiceOptionsForTrack,
+  goalsForTrack,
   isLessonComplete,
   isStageComplete,
   overallStats,
@@ -74,7 +76,9 @@ describe("Lehrplan und Umfang", () => {
       expect(lesson.explanationHtml).toContain('class="example"');
       expect(lesson.explanationHtml).toContain('class="merke"');
       expect(lesson.formulas.length).toBeGreaterThanOrEqual(1);
-      expect(lesson.lab.goals).toHaveLength(3);
+      for (const track of lesson.tracks) {
+        expect(goalsForTrack(lesson, track), `${lesson.id} (${track})`).toHaveLength(3);
+      }
       expect(lesson.exercises.length).toBeGreaterThanOrEqual(2);
       expect(lesson.requiredCorrect).toBe(3);
       expect(
@@ -96,6 +100,12 @@ describe("Lehrplan und Umfang", () => {
       expect(lesson.quiz.correctIndex).toBeLessThan(lesson.quiz.options.length);
       for (const track of lesson.tracks)
         expect(lesson.lehrplan).toContain(`(${track})`);
+      for (const param of lesson.lab.params) {
+        if (param.type !== "choice") continue;
+        for (const track of lesson.tracks) {
+          expect(choiceOptionsForTrack(param, track).length).toBeGreaterThan(0);
+        }
+      }
       const topic = STAGES.find(
         (stage) => stage.id === lesson.stageId,
       )!.lehrplanLabel.split(": ")[1];

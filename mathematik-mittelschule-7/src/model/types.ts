@@ -46,7 +46,7 @@ export interface RangeParam extends ParamBase {
 export interface ChoiceParam extends ParamBase {
   type: "choice";
   label: string;
-  options: Array<{ value: number; label: string }>;
+  options: Array<{ value: number; label: string; tracks?: Track[] }>;
   value: number;
 }
 
@@ -76,6 +76,7 @@ export interface LabReadout {
 export interface LabGoal {
   id: string;
   text: string;
+  tracks?: Track[];
   check: (values: LabValues, readouts: ReadoutValues) => boolean;
 }
 
@@ -107,6 +108,7 @@ export type LabKind =
   | "quad-special-area"
   | "prism-surface"
   | "prism-volume"
+  | "prism-gutter"
   | "chart-critique"
   | "stats-measures"
   | "term-eval"

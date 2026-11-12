@@ -292,11 +292,11 @@ export const STAGE_PROZENT = makeStage(
         <div class="example">
           <strong>Beispiel (alle drei Richtungen):</strong><br>
           1) <em>P gesucht:</em> 15 % von 240 € → 240 · 0,15 = <strong>36 €</strong> (Überschlag: 10 % = 24 €, 5 % = 12 €).<br>
-          2) <em>p gesucht (M7-Formel):</em> 36 € von 240 € → p = ${frac("P", "G")} = ${frac(36, 240)} = 0,15 = <strong>15 %</strong>.<br>
+          2) <em>p gesucht (M7-Formel):</em> 36 € von 240 € → Faktor q = ${frac("P", "G")} = ${frac(36, 240)} = 0,15 → p = 0,15 · 100 = <strong>15 %</strong>.<br>
           3) <em>G gesucht:</em> 15 % sind 36 € → 1 % = 36 : 15 = 2,40 € → 100 % = <strong>240 €</strong>.
         </div>
         <div class="merke">
-          <strong>Merke:</strong> Im M-Zug rechnest du schnell mit dem Faktor q = ${frac("p", 100)} (P = G · q) und der Formel p = ${frac("P", "G")}. Mit dem Dreisatz klappt es immer!
+          <strong>Merke:</strong> Im M-Zug rechnest du schnell mit dem Faktor q = ${frac("P", "G")} = ${frac("p", 100)} (so gilt P = G · q) und dem Prozentsatz p = ${frac("P", "G")} · 100 %. Mit dem Dreisatz klappt es immer!
         </div>
       `,
       formulas: [
@@ -307,8 +307,8 @@ export const STAGE_PROZENT = makeStage(
         },
         {
           name: "Prozentsatz p (Faktorform)",
-          html: `p = ${frac("P", "G")} = ${frac("P", "G")} · 100 %`,
-          quantities: "P Prozentwert, G Grundwert",
+          html: `q = ${frac("P", "G")} &nbsp;→&nbsp; p = ${frac("P", "G")} · 100 %`,
+          quantities: "P Prozentwert, G Grundwert, q Faktor",
         },
         {
           name: "Grundwert G",
@@ -326,7 +326,7 @@ export const STAGE_PROZENT = makeStage(
         ],
         correctIndex: 0,
         explanation:
-          "150 Plätze sind alle Plätze (Grundwert G = 150), 45 der Teil (Prozentwert P = 45). Gesucht ist p = 45 : 150 = 0,30 = 30 %.",
+          "150 Plätze sind alle Plätze (Grundwert G = 150), 45 der Teil (Prozentwert P = 45). Gesucht ist q = 45 : 150 = 0,30 → p = 0,30 · 100 % = 30 %.",
       },
       lab: lab(
         "percent-bar",

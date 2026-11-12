@@ -292,8 +292,8 @@ export const PROZENT_RATIONALE_VIEWS: Record<string, LabView> = {
       const b = v.b ?? -5;
       const op = v.op ?? 0; // 0 = +, 1 = -
       const res = op === 0 ? a + b : a - b;
-      const xMin = -12;
-      const xMax = 12;
+      const xMin = -16;
+      const xMax = 16;
       const toX = (n: number) => 45 + ((n - xMin) / (xMax - xMin)) * 430;
       const axisY = 195;
 
@@ -302,7 +302,7 @@ export const PROZENT_RATIONALE_VIEWS: Record<string, LabView> = {
       out += title(`${fmt(a)} ${op === 0 ? "+" : "−"} ${bStr} = ${fmt(res)}`);
 
       out += line(35, axisY, 485, axisY, "lab-axis");
-      for (let t = xMin; t <= xMax; t += 2) {
+      for (let t = xMin; t <= xMax; t += 4) {
         const tx = toX(t);
         out += line(tx, axisY - 5, tx, axisY + 5, "lab-axis");
         out += text(tx, axisY + 20, fmt(t), "lab-text-tick", "middle");
@@ -315,14 +315,13 @@ export const PROZENT_RATIONALE_VIEWS: Record<string, LabView> = {
       }
       out += text((toX(0) + toX(a)) / 2, 134, `a = ${fmt(a)}`, "lab-text-a", "middle");
 
-      // Second arrow from a to res (clipped visually to range)
-      const clampedRes = clamp(res, -12, 12);
+      // Second arrow from a to res (range ±16 covers full a, b ∈ [−8; 8])
       const stepDelta = op === 0 ? b : -b;
       if (stepDelta !== 0) {
-        out += arrow(toX(a), 108, toX(clampedRes), 108, "lab-curve-2", 3);
+        out += arrow(toX(a), 108, toX(res), 108, "lab-curve-2", 3);
       }
       out += text(
-        (toX(a) + toX(clampedRes)) / 2,
+        (toX(a) + toX(res)) / 2,
         96,
         `${op === 0 ? "+" : "−"} ${bStr}`,
         "lab-text-b",
@@ -330,23 +329,23 @@ export const PROZENT_RATIONALE_VIEWS: Record<string, LabView> = {
       );
 
       // Result dot
-      out += circle(toX(clampedRes), axisY, 6, "lab-dot-ok");
-      out += text(toX(clampedRes), axisY - 14, `Ergebnis: ${fmt(res)}`, "lab-text-ok", "middle");
+      out += circle(toX(res), axisY, 6, "lab-dot-ok");
+      out += text(toX(res), axisY - 14, `Ergebnis: ${fmt(res)}`, "lab-text-ok", "middle");
 
       out += handle("a", toX(a), 145, "Startwert a");
-      out += handle("b", toX(clampedRes), 108, "Zweiter Summand/Subtrahend b");
+      out += handle("b", toX(res), 108, "Zweiter Summand/Subtrahend b");
       out += "</svg>";
       return out;
     },
     handles: {
       a: {
         x: "a",
-        drag: (p) => ({ a: clamp(Math.round(-12 + ((p.x - 45) / 430) * 24), -8, 8) }),
+        drag: (p) => ({ a: clamp(Math.round(-16 + ((p.x - 45) / 430) * 32), -8, 8) }),
       },
       b: {
         x: "b",
         drag: (p, v) => {
-          const target = Math.round(-12 + ((p.x - 45) / 430) * 24);
+          const target = Math.round(-16 + ((p.x - 45) / 430) * 32);
           const diff = target - (v.a ?? 0);
           return { b: clamp(v.op === 1 ? -diff : diff, -8, 8) };
         },

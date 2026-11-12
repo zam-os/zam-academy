@@ -2,7 +2,6 @@ import { fmt, frac } from "../exercises/format";
 import { near, numberField } from "./helpers";
 import {
   BOTH,
-  choice,
   lab,
   makeLesson,
   makeStage,
@@ -64,7 +63,19 @@ export const STAGE_VOLUMEN = makeStage(
         "Prismen füllen (V = G · hₖ)",
         "Wähle die Form der Grundfläche und verändere den Füllstand sowie die Maße.",
         [
-          choice("shape", "Grundfläche", ["Rechteck", "Dreieck", "Parallelogramm", "Trapez (M7)", "Drachen (M7)"], 1),
+          {
+            key: "shape",
+            type: "choice",
+            label: "Grundfläche",
+            options: [
+              { value: 0, label: "Rechteck" },
+              { value: 1, label: "Dreieck" },
+              { value: 2, label: "Parallelogramm" },
+              { value: 3, label: "Trapez (M7)", tracks: ["M"] },
+              { value: 4, label: "Drachen (M7)", tracks: ["M"] },
+            ],
+            value: 1,
+          },
           range("g", "Grundseite / Diagonale", 3, 8, 6, 1, "cm"),
           range("h", "Grundflächenhöhe", 2, 6, 4, 1, "cm"),
           range("hk", "Körperhöhe hₖ", 3, 8, 5, 1, "cm"),
@@ -112,7 +123,14 @@ export const STAGE_VOLUMEN = makeStage(
             check: (v, r) => v.shape === 2 && v.fill === 100 && near(Number(r.V), 120, 0.01),
           },
           {
+            id: "rect-vol-R",
+            tracks: ["R"],
+            text: "Wähle Rechteck (g = 5 cm, h = 4 cm, hₖ = 6 cm, 100 % voll) → V = 120 cm³.",
+            check: (v, r) => v.shape === 0 && v.g === 5 && v.h === 4 && v.hk === 6 && v.fill === 100 && near(Number(r.V), 120, 0.01),
+          },
+          {
             id: "trap-vol",
+            tracks: ["M"],
             text: "Teste das Trapezprisma bei hₖ = 6 cm und 100 % Füllung.",
             check: (v) => v.shape === 3 && v.hk === 6 && v.fill === 100,
           },
@@ -199,11 +217,21 @@ export const STAGE_VOLUMEN = makeStage(
           "Quader: 6 · 4 · 2,5 = 60 m³. Plus Aufsatz 12 m³ = 72 m³.",
       },
       lab: lab(
-        "prism-volume",
+        "prism-gutter",
         "Werkstück- & Behältervolumen",
         "Stelle ein Aquarium oder eine Rinne ein und prüfe das Volumen bei Teil- und Vollfüllung.",
         [
-          choice("shape", "Querschnitt", ["Rechteck", "Dreieck", "Trapez (M7)"], 2),
+          {
+            key: "shape",
+            type: "choice",
+            label: "Querschnitt",
+            options: [
+              { value: 0, label: "Rechteck" },
+              { value: 1, label: "Dreieck" },
+              { value: 2, label: "Trapez (M7)", tracks: ["M"] },
+            ],
+            value: 0,
+          },
           range("g", "Breite / lange Parallelseite", 4, 8, 6, 1, "dm"),
           range("h", "Tiefe der Grundfläche", 2, 6, 3, 1, "dm"),
           range("hk", "Länge hₖ", 3, 8, 4, 1, "dm"),
@@ -234,7 +262,14 @@ export const STAGE_VOLUMEN = makeStage(
             check: (v, r) => v.shape === 0 && v.fill === 100 && near(Number(r.V), 96, 0.01),
           },
           {
+            id: "tri-liter-72",
+            tracks: ["R"],
+            text: "Stelle eine voll gefüllte Dreiecksrinne (g = 6 dm, h = 4 dm, hₖ = 6 dm, 100 %) auf 72 l.",
+            check: (v, r) => v.shape === 1 && v.g === 6 && v.h === 4 && v.hk === 6 && v.fill === 100 && near(Number(r.V), 72, 0.01),
+          },
+          {
             id: "trap-gutter",
+            tracks: ["M"],
             text: "Berechne eine 100 % gefüllte Trapezrinne (g = 6 dm, h = 4 dm, hₖ = 5 dm → 100 l).",
             check: (v, r) => v.shape === 2 && v.g === 6 && v.h === 4 && v.hk === 5 && v.fill === 100 && near(Number(r.V), 100, 0.01),
           },

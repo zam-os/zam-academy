@@ -119,10 +119,12 @@ export const GOAL_WITNESSES: Record<string, Record<string, LabValues>> = {
   "vo-1-prismenvolumen-grundidee": {
     "half-fill-tri": { shape: 1, g: 6, h: 4, hk: 5, fill: 50 },
     "para-vol": { shape: 2, g: 6, h: 4, hk: 5, fill: 100 },
+    "rect-vol-R": { shape: 0, g: 5, h: 4, hk: 6, fill: 100 },
     "trap-vol": { shape: 3, g: 6, h: 4, hk: 6, fill: 100 },
   },
   "vo-2-prismen-beruf-zusammengesetzt": {
     "full-rect-96": { shape: 0, g: 6, h: 4, hk: 4, fill: 100 },
+    "tri-liter-72": { shape: 1, g: 6, h: 4, hk: 6, fill: 100 },
     "trap-gutter": { shape: 2, g: 6, h: 4, hk: 5, fill: 100 },
     "tri-half": { shape: 1, g: 6, h: 4, hk: 8, fill: 40 },
   },

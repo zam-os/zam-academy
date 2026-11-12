@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
-import { ALL_LESSONS } from "../src/curriculum";
+import { ALL_LESSONS, findLessonById } from "../src/curriculum";
+import { classifyGridTriangle } from "../src/curriculum/helpers";
 import {
   checkTask,
   toleranceOf,
@@ -280,5 +281,39 @@ describe("Aufgaben", () => {
         }
       }
     }
+  });
+});
+
+describe("Review-Regressionen MS7", () => {
+  it("classifies right and obtuse grid triangles accurately without false isosceles matches", () => {
+    expect(classifyGridTriangle(3, 4).summary).toBe("unregelmäßig, rechtwinklig");
+    expect(classifyGridTriangle(0, 5).summary).toBe("gleichschenklig, spitzwinklig");
+    expect(classifyGridTriangle(-3, 1).summary).toBe("unregelmäßig, rechtwinklig");
+    expect(classifyGridTriangle(0, 3).summary).toBe("gleichschenklig, rechtwinklig");
+  });
+
+  it("handles negative slopes on balance scale and +/-16 range on number-line-op", () => {
+    const svg = labView("balance-scale").render({ a: -2, b: 5, xTrue: -3, guessX: 1 }, {});
+    expect(svg).toContain("verkleinere x");
+
+    const nlView = labView("number-line-op");
+    const nlSvg = nlView.render({ a: -8, b: -7, op: 0 }, {});
+    expect(nlSvg).toContain("15");
+    expect(nlSvg).not.toContain("12)");
+    const pos = handlePosition(nlSvg, "b")!;
+    expect(nlView.handles!.b.drag(pos, { a: -8, b: -7, op: 0 }).b).toBe(-7);
+  });
+
+  it("uses dm/l units and distinct triangle/trapezoid base nets for prism labs", () => {
+    const gutter = findLessonById("vo-2-prismen-beruf-zusammengesetzt")!.lesson;
+    const vals = { shape: 2, g: 6, h: 4, hk: 5, fill: 100 };
+    const r = computeReadouts(gutter.lab, vals);
+    expect(r.V).toBe(100);
+    const gutterSvg = labView("prism-gutter").render(vals, r);
+    expect(gutterSvg).toContain("100 l");
+    expect(gutterSvg).not.toContain("cm³");
+
+    const surfSvg = labView("prism-surface").render({ shape: 0, g: 6, h: 4, hk: 5, fold: 1 }, {});
+    expect(surfSvg).toContain("<polygon");
   });
 });

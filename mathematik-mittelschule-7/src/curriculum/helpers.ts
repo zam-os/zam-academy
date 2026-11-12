@@ -64,3 +64,69 @@ export function yesNo(label: string, yes: boolean): ChoiceField {
 /** The slip a calculator set to RAD gives for c · sin(α°), so the hint can name it. */
 export const RAD_HINT =
   "Steht dein Taschenrechner auf RAD? Für Winkel in Grad muss er auf DEG (D) stehen.";
+
+export interface GridTriangleClassification {
+  a: number;
+  b: number;
+  c: number;
+  alpha: number;
+  beta: number;
+  gamma: number;
+  sideType: "gleichseitig" | "gleichschenklig" | "unregelmäßig";
+  angleType: "rechtwinklig" | "stumpfwinklig" | "spitzwinklig";
+  rightVertex: "A" | "B" | "C" | null;
+  summary: string;
+}
+
+/** Exact geometric classification for base A = (−3|0), B = (3|0), C = (cx|cy). */
+export function classifyGridTriangle(cx: number, cy: number): GridTriangleClassification {
+  const ux = cx + 3;
+  const uy = cy;
+  const vx = cx - 3;
+  const vy = cy;
+  const a2 = vx * vx + vy * vy;
+  const b2 = ux * ux + uy * uy;
+  const c2 = 36;
+  const a = Math.sqrt(a2);
+  const b = Math.sqrt(b2);
+  const c = 6;
+  const radToDeg = 180 / Math.PI;
+  const cosA = Math.max(-1, Math.min(1, (b2 + c2 - a2) / (2 * b * c)));
+  const cosB = Math.max(-1, Math.min(1, (a2 + c2 - b2) / (2 * a * c)));
+  const alpha = Math.acos(cosA) * radToDeg;
+  const beta = Math.acos(cosB) * radToDeg;
+  const gamma = 180 - alpha - beta;
+
+  const eps = 1e-6;
+  const rightVertex: "A" | "B" | "C" | null =
+    Math.abs(a2 + b2 - c2) < eps || Math.abs(gamma - 90) < 0.05
+      ? "C"
+      : Math.abs(b2 + c2 - a2) < eps || Math.abs(alpha - 90) < 0.05
+        ? "A"
+        : Math.abs(a2 + c2 - b2) < eps || Math.abs(beta - 90) < 0.05
+          ? "B"
+          : null;
+  const angleType = rightVertex
+    ? "rechtwinklig"
+    : alpha > 90 + 0.05 || beta > 90 + 0.05 || gamma > 90 + 0.05
+      ? "stumpfwinklig"
+      : "spitzwinklig";
+  const sideType =
+    Math.abs(a - b) < 0.05 && Math.abs(b - c) < 0.05
+      ? "gleichseitig"
+      : Math.abs(a - b) < 0.05 || Math.abs(b - c) < 0.05 || Math.abs(a - c) < 0.05
+        ? "gleichschenklig"
+        : "unregelmäßig";
+  return {
+    a,
+    b,
+    c,
+    alpha,
+    beta,
+    gamma,
+    sideType,
+    angleType,
+    rightVertex,
+    summary: `${sideType}, ${angleType}`,
+  };
+}

@@ -1,4 +1,11 @@
-import type { DifficultyLevel, Lesson, Stage, Track } from "../model/types";
+import type {
+  ChoiceParam,
+  DifficultyLevel,
+  LabGoal,
+  Lesson,
+  Stage,
+  Track,
+} from "../model/types";
 
 const STORAGE_KEY = "mathe_ms7_academy_progress_v1";
 
@@ -130,22 +137,46 @@ export function isQuizDone(
   return progress.quizDone.includes(lessonId);
 }
 
+export function goalsForTrack(
+  lesson: Lesson,
+  filter: TrackFilter = "alle",
+): LabGoal[] {
+  if (filter === "alle") return lesson.lab.goals;
+  return lesson.lab.goals.filter(
+    (goal) => !goal.tracks || goal.tracks.includes(filter),
+  );
+}
+
+export function choiceOptionsForTrack(
+  param: ChoiceParam,
+  filter: TrackFilter = "alle",
+): ChoiceParam["options"] {
+  if (filter === "alle") return param.options;
+  return param.options.filter(
+    (opt) => !opt.tracks || opt.tracks.includes(filter),
+  );
+}
+
 export function allGoalsReached(
   progress: LearnerProgress,
   lesson: Lesson,
+  filter: TrackFilter = progress.trackFilter,
 ): boolean {
   const reached = goalsReached(progress, lesson.id);
-  return lesson.lab.goals.every((goal) => reached.includes(goal.id));
+  return goalsForTrack(lesson, filter).every((goal) =>
+    reached.includes(goal.id),
+  );
 }
 
 /** Quick check right, every lab goal reached and three tasks on each level solved. */
 export function isLessonComplete(
   progress: LearnerProgress,
   lesson: Lesson,
+  filter: TrackFilter = progress.trackFilter,
 ): boolean {
   return (
     isQuizDone(progress, lesson.id) &&
-    allGoalsReached(progress, lesson) &&
+    allGoalsReached(progress, lesson, filter) &&
     solvedCount(progress, lesson.id, 1) >= lesson.requiredCorrect &&
     solvedCount(progress, lesson.id, 2) >= lesson.requiredCorrect
   );

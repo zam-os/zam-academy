@@ -199,8 +199,16 @@ export const DATEN_ALGEBRA_VIEWS: Record<string, LabView> = {
       out += handle("guess", 55 + ((guessX + 4) / 10) * 410, 296, "Probe x");
       out += line(55, 296, 465, 296, "lab-axis");
 
+      const directionHint = (() => {
+        if (balanced) return `Waage im Gleichgewicht! Lösung x = ${fmt(guessX)}`;
+        const increaseX = (diff < 0 && a > 0) || (diff > 0 && a < 0);
+        const reason = diff < 0 ? "Links zu leicht" : "Links zu schwer";
+        return increaseX
+          ? `${reason} → vergrößere x!`
+          : `${reason} → verkleinere x!`;
+      })();
       out += infoBox(115, 232, [
-        [balanced ? `Waage im Gleichgewicht! Lösung x = ${fmt(guessX)}` : diff < 0 ? "Links zu leicht → vergrößere x!" : "Links zu schwer → verkleinere x!", balanced ? "lab-text-ok" : "lab-text-b"],
+        [directionHint, balanced ? "lab-text-ok" : "lab-text-b"],
       ]);
       out += "</svg>";
       return out;

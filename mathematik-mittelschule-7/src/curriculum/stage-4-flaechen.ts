@@ -504,13 +504,17 @@ export const STAGE_FLAECHEN = makeStage(
           <li><strong>Mantel M</strong> (alle Rechtecks-Seitenflächen zusammen ergeben ein großes Rechteck: <strong>M = u · h<sub>k</sub></strong>)</li>
         </ul>
         <div class="example">
-          <strong>Beispiel (Dreiecksprisma):</strong> Rechtwinkliges Dreieck mit Katheten 3 cm und 4 cm, dritte Seite 5 cm, Körperhöhe h<sub>k</sub> = 6 cm:<br>
+          <strong>Beispiel 1 (Dreiecksprisma):</strong> Rechtwinkliges Dreieck mit Katheten 3 cm und 4 cm, dritte Seite 5 cm, Körperhöhe h<sub>k</sub> = 6 cm:<br>
           • Grundfläche G = ${frac("3 · 4", 2)} = 6 cm² → 2 · G = 12 cm²<br>
           • Grundflächenumfang u = 3 + 4 + 5 = 12 cm → M = 12 cm · 6 cm = 72 cm²<br>
           • Oberfläche O = 12 cm² + 72 cm² = <strong>84 cm²</strong>.
         </div>
+        <div class="example">
+          <strong>Beispiel 2 (Zusammengesetzter Körper):</strong> Auf einen Quader (O<sub>1</sub> = 52 cm²) wird ein kleinerer Quader (O<sub>2</sub> = 32 cm²) so aufgesetzt, dass sie sich an einer Rechteckfläche A<sub>Kontakt</sub> = 6 cm² berühren:<br>
+          • Diese Kontaktfläche verschwindet bei <em>beiden</em> Körpern im Inneren → O<sub>ges</sub> = 52 + 32 − 2 · 6 = <strong>72 cm²</strong>.
+        </div>
         <div class="merke">
-          <strong>Merke:</strong> Immer <strong>O = 2 · G + M</strong> mit <strong>M = u · h<sub>k</sub></strong>! Achte darauf, G nicht nur einmal zu zählen.
+          <strong>Merke:</strong> Beim einzelnen Prisma gilt <strong>O = 2 · G + M</strong> mit <strong>M = u · h<sub>k</sub></strong>. Bei zusammengesetzten Körpern ziehst du verdeckte Klebe-/Kontaktflächen doppelt ab: <strong>O<sub>ges</sub> = O<sub>1</sub> + O<sub>2</sub> − 2 · A<sub>Kontakt</sub></strong>!
         </div>
       `,
       formulas: [
@@ -518,6 +522,11 @@ export const STAGE_FLAECHEN = makeStage(
           name: "Oberflächeninhalt Prisma",
           html: `O = 2 · G + M  &nbsp;mit&nbsp;  M = u · h<sub>k</sub>`,
           quantities: "G Grundfläche, u Grundflächenumfang, hₖ Körperhöhe",
+        },
+        {
+          name: "Zusammengesetzte Körper (Oberfläche)",
+          html: `O<sub>ges</sub> = O<sub>1</sub> + O<sub>2</sub> − 2 · A<sub>Kontakt</sub>`,
+          quantities: "O₁, O₂ Teiloberflächen, A_Kontakt verdeckte Berührungsfläche",
         },
       ],
       quiz: {
@@ -627,6 +636,85 @@ export const STAGE_FLAECHEN = makeStage(
                 `O = ${2 * G} + ${u * hk} = <strong>${O}</strong>`,
               ],
               { G, u, O },
+            );
+          },
+        },
+        {
+          id: "composite-prism-surface",
+          make(rng, level) {
+            if (level === 1) {
+              const a1 = rng.int(5, 8);
+              const b = rng.int(3, 5);
+              const h1 = rng.int(3, 5);
+              const a2 = rng.int(2, a1 - 1);
+              const h2 = rng.int(2, 4);
+              const O1 = 2 * (a1 * b + a1 * h1 + b * h1);
+              const O2 = 2 * (a2 * b + a2 * h2 + b * h2);
+              const aKontakt = a2 * b;
+              const Oges = O1 + O2 - 2 * aKontakt;
+              return task(
+                level,
+                `Zwei Quader stehen passgenau aufeinander: Unten ${a1} cm × ${b} cm × ${h1} cm, oben darauf mittig ${a2} cm × ${b} cm × ${h2} cm (Kontaktfläche A = ${a2} cm · ${b} cm). Berechne O_ges.`,
+                "",
+                [
+                  numberField("O_ges =", Oges, "cm²", 0, {
+                    slips: [
+                      {
+                        value: O1 + O2,
+                        hint: "Die verdeckte Kontaktfläche A zwischen beiden Quadern gehört nicht nach außen — ziehe 2 · A ab!",
+                      },
+                      {
+                        value: O1 + O2 - aKontakt,
+                        hint: "Die Kontaktfläche fehlt bei BEIDEN Teilkörpern — du musst 2 · A_Kontakt abziehen!",
+                      },
+                    ],
+                  }),
+                ],
+                "Rechne O_ges = O₁ + O₂ − 2 · A_Kontakt.",
+                [
+                  `O₁ = 2 · (${a1}·${b} + ${a1}·${h1} + ${b}·${h1}) = ${O1} cm²`,
+                  `O₂ = 2 · (${a2}·${b} + ${a2}·${h2} + ${b}·${h2}) = ${O2} cm²`,
+                  `A_Kontakt = ${a2} · ${b} = ${aKontakt} cm² → O_ges = ${O1} + ${O2} − 2 · ${aKontakt} = <strong>${Oges} cm²</strong>`,
+                ],
+                { O1, O2, aKontakt, Oges },
+              );
+            }
+            const use6 = rng.next() < 0.5;
+            const a = use6 ? 6 : 8;
+            const hD = use6 ? 4 : 3;
+            const leg = 5;
+            const b = rng.int(5, 10);
+            const h1 = rng.int(3, 6);
+            const O1 = 2 * (a * b + a * h1 + b * h1);
+            const gRoof = (a * hD) / 2;
+            const O2 = 2 * gRoof + (a + 2 * leg) * b;
+            const aKontakt = a * b;
+            const Oges = O1 + O2 - 2 * aKontakt;
+            return task(
+              level,
+              "",
+              `Ein Spielhaus besteht aus einem Quader-Unterbau (${a} dm breit, ${b} dm tief, ${h1} dm hoch) und einem aufgesetzten Satteldach-Dreiecksprisma (Giebelbreite ${a} dm, Giebelhöhe ${hD} dm, Dachschräge je ${leg} dm, Tiefe ${b} dm). Wie viel dm² Außenfläche (inkl. Boden) müssen gestrichen werden?`,
+              [
+                numberField("O_ges =", Oges, "dm²", 0, {
+                  slips: [
+                    {
+                      value: O1 + O2,
+                      hint: "Zwischen Quader und Dach liegt die verdeckte Kontaktfläche A = a · b — ziehe 2 · A_Kontakt ab!",
+                    },
+                    {
+                      value: O1 + O2 - aKontakt,
+                      hint: "Du hast die verdeckte Decken-/Dachbodenfläche nur einmal abgezogen. Ziehe 2 · A_Kontakt ab!",
+                    },
+                  ],
+                }),
+              ],
+              "Berechne die Teiloberflächen O₁ (Quader) und O₂ (Dreiecksprisma) und ziehe 2 · A_Kontakt ab.",
+              [
+                `Quader O₁ = 2 · (${a}·${b} + ${a}·${h1} + ${b}·${h1}) = ${O1} dm²`,
+                `Dach O₂ = 2 · (${a}·${hD} : 2) + (${a} + ${leg} + ${leg}) · ${b} = ${O2} dm²`,
+                `Kontaktfläche A = ${a} · ${b} = ${aKontakt} dm² → O_ges = ${O1} + ${O2} − 2 · ${aKontakt} = <strong>${Oges} dm²</strong>`,
+              ],
+              { O1, O2, aKontakt, Oges },
             );
           },
         },

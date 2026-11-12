@@ -326,10 +326,14 @@ export const STAGE_RATIONALE = makeStage(
             const a = rng.pick([-8, -6, -4, -3, -2, 3, 4, 6]) * 0.5;
             const b = rng.pick([-5, -4, -2, -1.5, 1.5, 2, 4]);
             const prod = Number((a * b).toFixed(2));
+            const timeText =
+              b >= 0
+                ? `Welcher Temperaturunterschied zu jetzt entsteht in ${fmt(b, 1)} Stunden (+${fmt(b, 1)} h)? Rechnung: (${fmt(a, 1)}) · (${fmt(b, 1)}).`
+                : `Wie groß war der Temperaturunterschied vor ${fmt(Math.abs(b), 1)} Stunden gegenüber jetzt (Rückschritt ${fmt(b, 1)} h)? Rechnung: (${fmt(a, 1)}) · (${fmt(b, 1)}).`;
             return task(
               level,
               `Berechne das Produkt mit Vorzeichen: (${fmt(a, 1)}) · (${fmt(b, 1)}).`,
-              `In einem Kühlhaus sinkt (negativ) bzw. steigt die Temperatur pro Stunde um ${fmt(a, 1)} °C. Welcher Temperaturunterschied entsteht verglichen mit vor ${Math.abs(b)} Stunden? Rechnung: (${fmt(a, 1)}) · (${fmt(b, 1)}).`,
+              `In einem Kühlhaus ändert sich die Temperatur pro Stunde um ${fmt(a, 1)} °C. ${timeText}`,
               [numberField("Produkt =", prod, "", 2, {
                 slips: [{ value: -prod, hint: "Prüfe das Vorzeichen: gleiche Vorzeichen ergeben +, ungleiche ergeben −!" }],
               })],
