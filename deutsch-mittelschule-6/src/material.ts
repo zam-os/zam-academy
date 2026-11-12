@@ -36,10 +36,10 @@ export function renderMaterial(lesson: Lesson): string {
 	if (lesson.id === "d6-film") return filmFrames + text;
 	if (lesson.id === "d6-sachtext") {
 		return `<table class="material-table">
-			<caption>Plan für den Büchertausch</caption>
-			<thead><tr><th scope="col">Tag</th><th scope="col">Was?</th><th scope="col">Wo?</th></tr></thead>
-			<tbody><tr><th scope="row">Dienstag</th><td>Abgabe</td><td>Aula</td></tr>
-			<tr><th scope="row">Donnerstag</th><td>Auswahl</td><td>Bücherei</td></tr></tbody>
+			<caption>Spieleausleihe in der großen Pause</caption>
+			<thead><tr><th scope="col">Tag</th><th scope="col">Ausleihen</th></tr></thead>
+			<tbody><tr><th scope="row">Montag</th><td>18</td></tr>
+			<tr><th scope="row">Dienstag</th><td>12</td></tr></tbody>
 		</table>${text}`;
 	}
 	return text;

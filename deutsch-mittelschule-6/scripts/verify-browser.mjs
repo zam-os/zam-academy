@@ -96,6 +96,29 @@ async function shot(name) {
 	});
 	writeFileSync(`${out}/${name}.jpg`, Buffer.from(data, "base64"));
 }
+function contrast(foreground, background) {
+	const rgb = (value) =>
+		value.startsWith("#")
+			? [1, 3, 5].map((i) => parseInt(value.slice(i, i + 2), 16))
+			: value
+					.match(/[\d.]+/g)
+					.slice(0, 3)
+					.map(Number);
+	const luminance = (value) =>
+		rgb(value)
+			.map((n) => n / 255)
+			.map((n) => (n <= 0.04045 ? n / 12.92 : ((n + 0.055) / 1.055) ** 2.4))
+			.reduce((sum, n, i) => sum + n * [0.2126, 0.7152, 0.0722][i], 0);
+	const a = luminance(foreground),
+		b = luminance(background);
+	return (Math.max(a, b) + 0.05) / (Math.min(a, b) + 0.05);
+}
+async function stageColours() {
+	return evaluate(
+		`Array.from(document.querySelectorAll('.stage')).map(stage => ({id:stage.dataset.stage,icon:getComputedStyle(stage.querySelector('.stage-icon')).color,border:getComputedStyle(stage).borderTopColor,surface:getComputedStyle(stage).getPropertyValue('--surface').trim()}))`,
+	);
+}
+
 const report = [];
 for (const grade of [coverage.grade]) {
 	// A dedicated developer browser profile is required: reset only this app's
@@ -111,6 +134,7 @@ for (const grade of [coverage.grade]) {
 	await send("Page.reload");
 	await pause(150);
 	let states = 0;
+	const themeColours = {};
 	for (const theme of ["light", "dark"]) {
 		await send("Page.navigate", { url: base });
 		await pause(100);
@@ -121,6 +145,17 @@ for (const grade of [coverage.grade]) {
 			await evaluate(`document.querySelectorAll('.lesson-link').length`),
 			lessons.length,
 		);
+
+		const colours = await stageColours();
+		assert.equal(new Set(colours.map((c) => c.icon)).size, 4);
+		for (const colour of colours) {
+			assert.equal(colour.icon, colour.border);
+			assert.ok(
+				contrast(colour.icon, colour.surface) >= 4.5,
+				`Stage ${colour.id} has insufficient contrast in ${theme}`,
+			);
+		}
+		themeColours[theme] = colours.map((c) => c.icon);
 		await shot(`g${grade}-${theme}-path`);
 		for (const level of [1, 2]) {
 			for (const lesson of lessons) {
@@ -135,6 +170,26 @@ for (const grade of [coverage.grade]) {
 				assert.equal(content.theme, theme);
 				assert.ok(!/NaN|undefined/.test(content.text));
 				assert.equal(content.overflow, false);
+
+				// Inspect the actual rendered model too: script text alone would also
+				// be present in a broken single-file build.
+				await evaluate(
+					`{const draft=document.querySelector('#draft');draft.value=${JSON.stringify(lesson.tasks[level].model)};draft.dispatchEvent(new Event('input',{bubbles:true}));document.querySelector('#compare').click();}`,
+				);
+				assert.equal(
+					await evaluate(
+						"document.querySelector('.model-answer .material')?.textContent",
+					),
+					lesson.tasks[level].model,
+				);
+				assert.equal(
+					await evaluate("document.querySelectorAll('.criterion').length"),
+					3,
+				);
+				assert.equal(
+					await evaluate("document.documentElement.scrollWidth>innerWidth"),
+					false,
+				);
 				await shot(`g${grade}-${theme}-l${level}-${lesson.id}`);
 				states++;
 			}
@@ -152,10 +207,43 @@ for (const grade of [coverage.grade]) {
 		);
 		await shot(`g${grade}-${theme}-reference`);
 	}
+
+	assert.notDeepEqual(themeColours.light, themeColours.dark);
+	await send("Page.navigate", { url: base });
+	await pause(100);
+	await send("Emulation.setEmulatedMedia", {
+		features: [{ name: "prefers-color-scheme", value: "dark" }],
+	});
+	await evaluate("delete document.documentElement.dataset.theme");
+	assert.deepEqual(
+		(await stageColours()).map((c) => c.icon),
+		themeColours.dark,
+	);
+	await evaluate("document.documentElement.dataset.theme='light'");
+	assert.deepEqual(
+		(await stageColours()).map((c) => c.icon),
+		themeColours.light,
+	);
+	await send("Emulation.setEmulatedMedia", { features: [] });
 	// Exercise actual UI completion and reload persistence on both levels.
 	const lesson = lessons[0],
 		atom = cell.atoms.find((a) => a.slug === lesson.id);
 	await go(`${base}#lesson=${lesson.id}&level=1`, lesson.title);
+
+	await evaluate(
+		`document.querySelectorAll('.quiz-choice').forEach(b=>{if(b.textContent===${JSON.stringify(atom.practice_items[0].fast_check.options[1])})b.click()})`,
+	);
+	assert.ok(
+		await evaluate(
+			`document.querySelector('#quiz-feedback').textContent.includes(${JSON.stringify(lesson.check.explanation)})`,
+		),
+	);
+	assert.equal(
+		await evaluate(
+			`JSON.parse(localStorage.getItem('deutsch_ms${grade}_progress_v1')).quizDone.includes('${lesson.id}')`,
+		),
+		false,
+	);
 	await evaluate(
 		`document.querySelectorAll('.quiz-choice').forEach(b=>{if(b.textContent===${JSON.stringify(atom.practice_items[0].concept)})b.click()})`,
 	);
@@ -231,6 +319,9 @@ for (const grade of [coverage.grade]) {
 		audio,
 		levelCompletionAndReload: true,
 		mobileOverflow: false,
+		themeAccentsVerified: true,
+		explanationAfterWrongAnswer: true,
+		modelComparisonVerified: true,
 	});
 }
 assert.deepEqual(exceptions, []);

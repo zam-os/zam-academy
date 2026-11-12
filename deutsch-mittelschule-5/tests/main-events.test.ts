@@ -1,5 +1,6 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { LESSONS } from "../src/curriculum";
+import { esc } from "../src/practice";
 import {
 	freshProgress,
 	STORAGE_KEY,
@@ -268,7 +269,7 @@ describe("Actual page event handlers", () => {
 		},
 	);
 	it.each(["d5-kommas", "d5-woertliche-rede", "d5-interview"])(
-		"does not disclose %s's explanation on a wrong click",
+		"explains %s after a wrong click without marking it correct",
 		async (id) => {
 			const lesson = LESSONS.find((l) => l.id === id);
 			if (!lesson) throw new Error("Missing lesson");
@@ -277,11 +278,9 @@ describe("Actual page event handlers", () => {
 				.quiz()
 				.find((button) => button.textContent === lesson.quiz.wrong[0])
 				?.click();
+			expect(app.node("quiz-feedback").innerHTML).toContain("Noch nicht.");
 			expect(app.node("quiz-feedback").innerHTML).toContain(
-				"Lies die drei Antworten noch einmal",
-			);
-			expect(app.node("quiz-feedback").innerHTML).not.toContain(
-				lesson.quiz.explanation,
+				esc(lesson.quiz.explanation),
 			);
 			expect(app.read().quizDone).not.toContain(id);
 			await app

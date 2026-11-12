@@ -1,7 +1,7 @@
 {
   "$schema": "https://zam.app/schemas/v1/kvt-tile.json",
   "tile_id": "zam-academy:deutsch-mittelschule-6",
-  "version": "2026.11.1",
+  "version": "2026.11.2",
   "title": "Deutsch 6 Mittelschule (ZAM Academy)",
   "description": "52 Lektionen mit Hörmaterial, Fallentscheidungen und eigenen Aufgaben auf zwei Stufen nach LehrplanPLUS Bayern. Gespräche, Handschrift, Ganzschriftlektüre, echte Recherche und Lehrkraftfeedback ergänzen die App.",
   "publisher": "ZAM Academy",
@@ -44,13 +44,13 @@
         {
           "tier": "tier1_fast",
           "bloom_level": 2,
-          "question": "Welches Medium hilft bei einer Wegbeschreibung in der Schule?",
-          "concept": "Ein einfacher Plan mit Pfeilen.",
+          "question": "Welche Rückmeldung hilft bei einem Vortrag mit richtigen Angaben, aber verdeckter Folie?",
+          "concept": "Die Angaben stimmen; stelle dich seitlich, damit wir den Plan sehen.",
           "fast_check": {
             "type": "binary_choice",
             "options": [
-              "Ein einfacher Plan mit Pfeilen.",
-              "Ein Foto ohne Bezug zum Weg."
+              "Die Angaben stimmen; stelle dich seitlich, damit wir den Plan sehen.",
+              "Dein Inhalt ist deshalb vollständig falsch."
             ],
             "correct_index": 0
           },
@@ -62,9 +62,9 @@
         {
           "tier": "tier2_synthesis",
           "bloom_level": 2,
-          "question": "Was gehört auf einen Stichwortzettel für freies Sprechen?",
-          "concept": "Geordnete Schlüsselwörter und bei Bedarf Zeichen für Pausen oder Bilder.",
-          "sample_solution": "„Aula – Treppe hoch – Pause – links – Tür 12“ genügt als Gedächtnisstütze.",
+          "question": "Wie formulierst du eine kriteriengeleitete Rückmeldung zu einem Kurzvortrag?",
+          "concept": "Benenne eine beobachtete Stelle, erkläre ihre Wirkung auf die Verständlichkeit und schlage eine konkrete Verbesserung vor.",
+          "sample_solution": "Benenne eine beobachtete Stelle, erkläre ihre Wirkung auf die Verständlichkeit und schlage eine konkrete Verbesserung vor.",
           "id": "01M78MVGD55NCKYXV02XD9W4PT",
           "slug": "d6-vortrag-recall",
           "language": "de",
@@ -111,13 +111,13 @@
         {
           "tier": "tier1_fast",
           "bloom_level": 2,
-          "question": "Lies: „Dann klopfte es. Dreimal. Unter dem Korb saß ein Spatz.“ Wo kann eine kurze Pause das Klopfen spannend wirken lassen?",
-          "concept": "Nach „Dann klopfte es.“",
+          "question": "Im Text atmet Elif aus und sagt „Zum Glück“. Welche Sprechweise stützt diese Haltung?",
+          "concept": "Eine ruhiger werdende Stimme mit weicher Betonung.",
           "fast_check": {
             "type": "binary_choice",
             "options": [
-              "Nach „Dann klopfte es.“",
-              "Mitten im Wort „klopfte“."
+              "Eine ruhiger werdende Stimme mit weicher Betonung.",
+              "Ein aggressiver Ruf ohne weiteren Textbeleg."
             ],
             "correct_index": 0
           },
@@ -129,9 +129,9 @@
         {
           "tier": "tier2_synthesis",
           "bloom_level": 2,
-          "question": "Wie machst du eine Überraschung beim Vorlesen hörbar?",
-          "concept": "Setze eine kurze Pause und betone die entscheidende Stelle.",
-          "sample_solution": "Warte kurz nach „Dann klopfte es“ und lies „Dreimal“ deutlich und langsam.",
+          "question": "Wie begründest du deine Stimmgestaltung beim sinngestaltenden Vorlesen?",
+          "concept": "Verknüpfe ein Textsignal zur Situation oder Haltung der Figur mit einer bewussten Entscheidung zu Tempo, Pause, Betonung oder Stimmführung.",
+          "sample_solution": "Verknüpfe ein Textsignal zur Situation oder Haltung der Figur mit einer bewussten Entscheidung zu Tempo, Pause, Betonung oder Stimmführung.",
           "id": "01M78MVGD53A2EKPV5TQ0V8DG3",
           "slug": "d6-vorlesen-recall",
           "language": "de",
@@ -178,13 +178,13 @@
         {
           "tier": "tier1_fast",
           "bloom_level": 2,
-          "question": "Ari möchte lüften, weil es stickig ist. Jo friert am Fenster. Welche Lösung berücksichtigt beide?",
-          "concept": "Wir lüften zwei Minuten und Jo rückt kurz vom Fenster weg.",
+          "question": "Jo verschränkt im Gruppengespräch die Arme und schweigt. Welche Reaktion ist angemessen?",
+          "concept": "Nachfragen, ob Jo noch Informationen oder Bedenken hat.",
           "fast_check": {
             "type": "binary_choice",
             "options": [
-              "Wir lüften zwei Minuten und Jo rückt kurz vom Fenster weg.",
-              "Ari entscheidet, weil er zuerst gesprochen hat."
+              "Nachfragen, ob Jo noch Informationen oder Bedenken hat.",
+              "Behaupten, Jo wolle die Arbeit sabotieren."
             ],
             "correct_index": 0
           },
@@ -196,9 +196,9 @@
         {
           "tier": "tier2_synthesis",
           "bloom_level": 2,
-          "question": "Wie begründest du eine Bitte im Streit sachlich?",
-          "concept": "Nenne deinen Wunsch und den Grund, ohne die Person anzugreifen.",
-          "sample_solution": "„Ich möchte kurz lüften, weil ich mich in der stickigen Luft schlecht konzentrieren kann.“",
+          "question": "Wie setzt du dich konstruktiv mit einem Einwand im Gruppengespräch auseinander?",
+          "concept": "Gib das Anliegen sinngemäß wieder, frage Unklares nach und ergänze einen begründeten Vorschlag, der den Einwand berücksichtigt.",
+          "sample_solution": "Gib das Anliegen sinngemäß wieder, frage Unklares nach und ergänze einen begründeten Vorschlag, der den Einwand berücksichtigt.",
           "id": "01M78MVGD54438KM1C16HB0HGX",
           "slug": "d6-gespraech-recall",
           "language": "de",
@@ -245,13 +245,13 @@
         {
           "tier": "tier1_fast",
           "bloom_level": 2,
-          "question": "Welche Rückmeldung nennt Beobachtung und Wirkung?",
-          "concept": "Du hast bei „Es ist nichts“ leise gesprochen. Das wirkte unsicher.",
+          "question": "Jo kennt den Fund eines Schlüssels, Mina sucht noch. Wozu hilft dieses unterschiedliche Figurenwissen beim Spiel?",
+          "concept": "Es begründet Jos Ausweichen und Minas Nachfragen.",
           "fast_check": {
             "type": "binary_choice",
             "options": [
-              "Du hast bei „Es ist nichts“ leise gesprochen. Das wirkte unsicher.",
-              "Du spielst schlecht."
+              "Es begründet Jos Ausweichen und Minas Nachfragen.",
+              "Es macht jede beliebige Stimmgestaltung gleich passend."
             ],
             "correct_index": 0
           },
@@ -263,9 +263,9 @@
         {
           "tier": "tier2_synthesis",
           "bloom_level": 2,
-          "question": "Wozu klärst du das Motiv einer Figur vor dem Spiel?",
-          "concept": "Du kannst Stimme, Haltung und Handlung passend zu ihrer Absicht wählen.",
-          "sample_solution": "Nuri will den Riss verbergen. Der Blick zum Boden und die leise Stimme zeigen das.",
+          "question": "Wie beurteilst du die Wirkung einer Rolleninterpretation?",
+          "concept": "Benenne ein beobachtetes stimmliches, körperliches oder akustisches Mittel, erkläre seine Wirkung und prüfe mit einer Textstelle, ob es zur Figur passt.",
+          "sample_solution": "Benenne ein beobachtetes stimmliches, körperliches oder akustisches Mittel, erkläre seine Wirkung und prüfe mit einer Textstelle, ob es zur Figur passt.",
           "id": "01M78MVGD5YTHXJ04K9H5N6E7Q",
           "slug": "d6-rolle-recall",
           "language": "de",
@@ -312,13 +312,13 @@
         {
           "tier": "tier1_fast",
           "bloom_level": 2,
-          "question": "Welches Lernziel ist überprüfbar?",
-          "concept": "In meinem nächsten Text ersetze ich zwei gleiche Satzanfänge.",
+          "question": "Ein Ziel verlangt zwei passende Textbelege. Einer passt, der andere nennt nur die Jackenfarbe. Wie ist das Ziel erreicht?",
+          "concept": "Teilweise: Ein passender Beleg fehlt noch.",
           "fast_check": {
             "type": "binary_choice",
             "options": [
-              "In meinem nächsten Text ersetze ich zwei gleiche Satzanfänge.",
-              "Ich mache irgendwann alles besser."
+              "Teilweise: Ein passender Beleg fehlt noch.",
+              "Vollständig, weil zwei Stellen vorhanden sind."
             ],
             "correct_index": 0
           },
@@ -330,9 +330,9 @@
         {
           "tier": "tier2_synthesis",
           "bloom_level": 2,
-          "question": "Was gehört zu einem hilfreichen Lerngespräch?",
-          "concept": "Ein Beispiel für den Lernstand, eine konkrete Schwierigkeit, ein erreichbares Ziel und ein Zeitpunkt zum Prüfen.",
-          "sample_solution": "Ein Beispiel für den Lernstand, eine konkrete Schwierigkeit, ein erreichbares Ziel und ein Zeitpunkt zum Prüfen.",
+          "question": "Wie leitest du aus einem Lernergebnis ein sinnvolles Folgeziel ab?",
+          "concept": "Vergleiche das Ergebnis mit dem ursprünglichen Ziel, benenne eine belegte Stärke und eine verbleibende Schwierigkeit und plane dafür einen überprüfbaren nächsten Schritt.",
+          "sample_solution": "Vergleiche das Ergebnis mit dem ursprünglichen Ziel, benenne eine belegte Stärke und eine verbleibende Schwierigkeit und plane dafür einen überprüfbaren nächsten Schritt.",
           "id": "01M78MVGD50JKNAES3H5HH2RBJ",
           "slug": "d6-lernziel-recall",
           "language": "de",
@@ -438,13 +438,13 @@
         {
           "tier": "tier1_fast",
           "bloom_level": 2,
-          "question": "Auf dem Plan zum Büchertausch steht „Mittwoch: Die Klasse sortiert nach Themen“. Welche Frage beantwortet die Zeile?",
-          "concept": "Wann sortiert die Klasse die Bücher?",
+          "question": "„Der Vorrat war erschöpft: Auch die letzte Kanne war leer.“ Was bedeutet erschöpft hier?",
+          "concept": "Aufgebraucht.",
           "fast_check": {
             "type": "binary_choice",
             "options": [
-              "Wann sortiert die Klasse die Bücher?",
-              "Wo werden die übrigen Bücher abgegeben?"
+              "Aufgebraucht.",
+              "Körperlich müde."
             ],
             "correct_index": 0
           },
@@ -456,9 +456,9 @@
         {
           "tier": "tier2_synthesis",
           "bloom_level": 2,
-          "question": "Wie erschließt du ein unbekanntes Wort beim Lesen?",
-          "concept": "Lies den Satz und die Nachbarsätze. Prüfe eine Vermutung und schlage bei Bedarf nach.",
-          "sample_solution": "Bei „übrige Bücher“ hilft die Reihenfolge: Erst wählen alle, dann werden die Bücher gespendet, die noch da sind.",
+          "question": "Wie überprüfst du eine Vermutung zur Bedeutung eines unbekannten Worts?",
+          "concept": "Setze die vermutete Bedeutung in den Satz ein und prüfe sie an den Nachbarsätzen und der Kernaussage; bei verbleibender Unsicherheit schlage nach.",
+          "sample_solution": "Setze die vermutete Bedeutung in den Satz ein und prüfe sie an den Nachbarsätzen und der Kernaussage; bei verbleibender Unsicherheit schlage nach.",
           "id": "01M78MVGD5XP97DANKVAFSAXY3",
           "slug": "d6-lesespuren-recall",
           "language": "de",
@@ -505,13 +505,13 @@
         {
           "tier": "tier1_fast",
           "bloom_level": 2,
-          "question": "Welches Wort ahmt in „Der Bach flüstert leise am Stein. Klack! Ein Kiesel springt und lacht“ ein Geräusch nach?",
-          "concept": "Klack",
+          "question": "Welches Mittel liegt in „Die Uhr tickt wie ein kleiner Hammer“ vor?",
+          "concept": "Ein Vergleich, der den Klang anschaulich macht.",
           "fast_check": {
             "type": "binary_choice",
             "options": [
-              "Klack",
-              "leise"
+              "Ein Vergleich, der den Klang anschaulich macht.",
+              "Eine überprüfbare Behauptung über einen echten Hammer."
             ],
             "correct_index": 0
           },
@@ -523,9 +523,9 @@
         {
           "tier": "tier2_synthesis",
           "bloom_level": 2,
-          "question": "Was kann ein sprachliches Bild in einem Gedicht bewirken?",
-          "concept": "Es lässt dich etwas anschaulich sehen, hören oder fühlen.",
-          "sample_solution": "„Der Bach flüstert“ lässt das leise Rauschen wie eine menschliche Stimme klingen.",
+          "question": "Wie begründest du die Wirkung eines Vergleichs in einem Gedicht?",
+          "concept": "Nenne die verglichenen Bereiche und ihr gemeinsames Merkmal und erkläre mit dem Textzusammenhang, welche Vorstellung oder Stimmung daraus entsteht.",
+          "sample_solution": "Nenne die verglichenen Bereiche und ihr gemeinsames Merkmal und erkläre mit dem Textzusammenhang, welche Vorstellung oder Stimmung daraus entsteht.",
           "id": "01M78MVGD5ZQBHEQWC7VW7YM6T",
           "slug": "d6-klang-recall",
           "language": "de",
@@ -564,13 +564,13 @@
         {
           "tier": "tier1_fast",
           "bloom_level": 2,
-          "question": "Was gehört zu einem nachvollziehbaren Lesetagebucheintrag?",
-          "concept": "Fundstelle, Ereignis und begründeter Eindruck.",
+          "question": "Woran zeigt ein Lesetagebuch eine veränderte Leseerwartung?",
+          "concept": "Es vergleicht eine frühere Vermutung mit einer späteren Textstelle.",
           "fast_check": {
             "type": "binary_choice",
             "options": [
-              "Fundstelle, Ereignis und begründeter Eindruck.",
-              "Nur die Zahl der gelesenen Seiten."
+              "Es vergleicht eine frühere Vermutung mit einer späteren Textstelle.",
+              "Es nennt nur die Anzahl gelesener Seiten."
             ],
             "correct_index": 0
           },
@@ -582,9 +582,9 @@
         {
           "tier": "tier2_synthesis",
           "bloom_level": 2,
-          "question": "Wie stellst du ein Lieblingsbuch vor, ohne das Ende zu verraten?",
-          "concept": "Nenne Titel und Autor, beschreibe die Ausgangslage und begründe deine Empfehlung an einer frühen Stelle.",
-          "sample_solution": "Stelle die Hauptfigur mit ihrem Anfangsproblem vor und lies auf Wunsch einen kurzen passenden Ausschnitt.",
+          "question": "Wie unterscheidest du Textbeobachtung und Deutung im Lesetagebuch?",
+          "concept": "Notiere die konkrete Handlung oder Äußerung mit Fundstelle und formuliere anschließend, was sie deiner Ansicht nach bedeutet; kennzeichne Unsicheres.",
+          "sample_solution": "Notiere die konkrete Handlung oder Äußerung mit Fundstelle und formuliere anschließend, was sie deiner Ansicht nach bedeutet; kennzeichne Unsicheres.",
           "id": "01M78MVGD6YX4Z25JSRB7S0WBS",
           "slug": "d6-lesetagebuch-recall",
           "language": "de",
@@ -623,13 +623,13 @@
         {
           "tier": "tier1_fast",
           "bloom_level": 2,
-          "question": "Auf einem Plakat steht groß: „BRING EIN BUCH MIT! So finden Bücher neue Leserinnen und Leser.“ Welche Absicht steht im Vordergrund?",
-          "concept": "Zum Mitmachen auffordern.",
+          "question": "Eine Tabelle nennt 18 Ausleihen am Montag und 12 am Dienstag. Was ist sicher ablesbar?",
+          "concept": "Am Dienstag gab es sechs Ausleihen weniger.",
           "fast_check": {
             "type": "binary_choice",
             "options": [
-              "Zum Mitmachen auffordern.",
-              "Über alle Termine informieren."
+              "Am Dienstag gab es sechs Ausleihen weniger.",
+              "Die Zahl der Kinder ist sicher um sechs gesunken."
             ],
             "correct_index": 0
           },
@@ -641,9 +641,9 @@
         {
           "tier": "tier2_synthesis",
           "bloom_level": 2,
-          "question": "Wie stellst du den Ablauf eines Sachtexts grafisch dar?",
-          "concept": "Schreibe die Schritte als kurze Stichwörter und verbinde sie in der richtigen Reihenfolge mit Pfeilen.",
-          "sample_solution": "„Di: Aula, Abgabe → Do: Bücherei, Auswahl“ zeigt Zeit, Ort und Ablauf auf einen Blick.",
+          "question": "Wie verbindest du einen Sachtext mit einer zugehörigen Tabelle?",
+          "concept": "Lies Überschrift, Zeilen, Spalten und Einheiten, gleiche die Angaben mit dem Text ab und trenne belegte Ergebnisse von offenen Ursachen oder Fragen.",
+          "sample_solution": "Lies Überschrift, Zeilen, Spalten und Einheiten, gleiche die Angaben mit dem Text ab und trenne belegte Ergebnisse von offenen Ursachen oder Fragen.",
           "id": "01M78MVGD6946WMGXBZRPA9HSP",
           "slug": "d6-sachtext-recall",
           "language": "de",
@@ -682,13 +682,13 @@
         {
           "tier": "tier1_fast",
           "bloom_level": 2,
-          "question": "Du hast zehn Minuten für drei Sachinformationen über Igel. Zur Wahl stehen ein siebenminütiges Radiointerview mit einer Tierpflegerin, ein 65-minütiger Spielfilm und sein Trailer. Was passt am besten?",
-          "concept": "Das siebenminütige Radiointerview.",
+          "question": "Was prüfst du zuerst bei der Wahl eines Mediums für eine Sachfrage?",
+          "concept": "Ob sein Inhalt die konkrete Frage behandelt.",
           "fast_check": {
             "type": "binary_choice",
             "options": [
-              "Das siebenminütige Radiointerview.",
-              "Der 65-minütige Spielfilm."
+              "Ob sein Inhalt die konkrete Frage behandelt.",
+              "Ob es unabhängig von der Frage möglichst spannend klingt."
             ],
             "correct_index": 0
           },
@@ -700,9 +700,9 @@
         {
           "tier": "tier2_synthesis",
           "bloom_level": 2,
-          "question": "Welche Kriterien helfen dir bei einer Medienwahl?",
-          "concept": "Zweck, Verständlichkeit, Alter, Dauer und Zeitpunkt.",
-          "sample_solution": "Vergleiche beim Lernauftrag etwa den kurzen Radiobeitrag mit dem Spielfilm am Abend.",
+          "question": "Warum kann dasselbe Medium für Freizeit und Recherche unterschiedlich geeignet sein?",
+          "concept": "Die Zwecke unterscheiden sich: Unterhaltung darf vor allem anregen, eine Recherche braucht passende überprüfbare Informationen zur konkreten Frage.",
+          "sample_solution": "Die Zwecke unterscheiden sich: Unterhaltung darf vor allem anregen, eine Recherche braucht passende überprüfbare Informationen zur konkreten Frage.",
           "id": "01M78MVGD6D9VS7PS2AQYTF19J",
           "slug": "d6-medienwahl-recall",
           "language": "de",
@@ -741,13 +741,13 @@
         {
           "tier": "tier1_fast",
           "bloom_level": 2,
-          "question": "Für die Öffnungszeiten gibt es drei Treffer: die aktuelle Auskunft der Stadtbücherei, einen Blogbeitrag von 2019 und ein undatiertes Foto. Welche Quelle ist am geeignetsten?",
-          "concept": "Die aktuelle Auskunft der Stadtbücherei.",
+          "question": "Eine Museumsseite verlangt Workshop-Anmeldung, ein Flyer wirbt mit spontanem Ausstellungsbesuch. Liegt sicher ein Widerspruch vor?",
+          "concept": "Nein; beide Angaben können verschiedene Besuchsformen betreffen.",
           "fast_check": {
             "type": "binary_choice",
             "options": [
-              "Die aktuelle Auskunft der Stadtbücherei.",
-              "Der Blogbeitrag von 2019."
+              "Nein; beide Angaben können verschiedene Besuchsformen betreffen.",
+              "Ja; jede unterschiedliche Formulierung ist ein Widerspruch."
             ],
             "correct_index": 0
           },
@@ -759,9 +759,9 @@
         {
           "tier": "tier2_synthesis",
           "bloom_level": 2,
-          "question": "Was notierst du, damit andere eine Angabe prüfen können?",
-          "concept": "Die Quelle, die genaue Fundstelle und bei veränderlichen Angaben das Datum.",
-          "sample_solution": "Bei einer Website helfen Seitentitel und Abrufdatum. In einem Buch helfen Titel und Seite.",
+          "question": "Welche Angaben sichern eine Rechercheantwort für andere nachvollziehbar ab?",
+          "concept": "Eine inhaltlich passende Quelle, die genaue Fundstelle und bei veränderlichen Informationen ein Datum sowie eine Prüfung von Zuständigkeit und Absicht.",
+          "sample_solution": "Eine inhaltlich passende Quelle, die genaue Fundstelle und bei veränderlichen Informationen ein Datum sowie eine Prüfung von Zuständigkeit und Absicht.",
           "id": "01M78MVGD63GJ4KE9QA59WDJKW",
           "slug": "d6-recherche-recall",
           "language": "de",
@@ -859,13 +859,13 @@
         {
           "tier": "tier1_fast",
           "bloom_level": 2,
-          "question": "Was hilft beim Nachdenken über Medienzeit?",
-          "concept": "Dauer, Zweck und Folgen gemeinsam betrachten.",
+          "question": "Während 30 Minuten Spielen laufen 15 Minuten lang gleichzeitig Lieder. Wie viel Zeit ist vergangen?",
+          "concept": "30 Minuten.",
           "fast_check": {
             "type": "binary_choice",
             "options": [
-              "Dauer, Zweck und Folgen gemeinsam betrachten.",
-              "Nur zählen, wie viele Geräte vorhanden sind."
+              "30 Minuten.",
+              "45 Minuten."
             ],
             "correct_index": 0
           },
@@ -877,9 +877,9 @@
         {
           "tier": "tier2_synthesis",
           "bloom_level": 2,
-          "question": "Wozu führst du ein Medienprotokoll?",
-          "concept": "Um Art, Dauer, Zweck und Folgen der Nutzung zu erkennen und eine passende Veränderung zu planen.",
-          "sample_solution": "Um Art, Dauer, Zweck und Folgen der Nutzung zu erkennen und eine passende Veränderung zu planen.",
+          "question": "Wie prüfst du, ob eine veränderte Medienregel hilft?",
+          "concept": "Leite sie aus einem beobachteten Problem ab, erprobe sie über einen vereinbarten Zeitraum und vergleiche danach die tatsächlichen Folgen mit deinem Ziel.",
+          "sample_solution": "Leite sie aus einem beobachteten Problem ab, erprobe sie über einen vereinbarten Zeitraum und vergleiche danach die tatsächlichen Folgen mit deinem Ziel.",
           "id": "01M78MVGD674MB12GSPBXN765Y",
           "slug": "d6-medienzeit-recall",
           "language": "de",
@@ -934,13 +934,13 @@
         {
           "tier": "tier1_fast",
           "bloom_level": 2,
-          "question": "Jo möchte nicht, dass sein Foto weitergeschickt wird. Was tust du?",
-          "concept": "Nicht weiterleiten und Jos Wunsch respektieren.",
+          "question": "Warum kann „Ganz toll gemacht!“ in einem Chat missverstanden werden?",
+          "concept": "Stimme und Mimik fehlen; der Zusammenhang kann unklar sein.",
           "fast_check": {
             "type": "binary_choice",
             "options": [
-              "Nicht weiterleiten und Jos Wunsch respektieren.",
-              "Trotzdem weiterleiten, weil es lustig ist."
+              "Stimme und Mimik fehlen; der Zusammenhang kann unklar sein.",
+              "Schriftliche Nachrichten haben immer nur eine mögliche Wirkung."
             ],
             "correct_index": 0
           },
@@ -952,9 +952,9 @@
         {
           "tier": "tier2_synthesis",
           "bloom_level": 2,
-          "question": "Wie reagierst du auf wiederholte verletzende Nachrichten gegen eine Person?",
-          "concept": "Nicht mitmachen oder weiterverbreiten, die betroffene Person unterstützen und Hilfe bei einer vertrauten erwachsenen Person holen.",
-          "sample_solution": "Nicht mitmachen oder weiterverbreiten, die betroffene Person unterstützen und Hilfe bei einer vertrauten erwachsenen Person holen.",
+          "question": "Wie passt du eine Hilfebitte im digitalen Konflikt an eine Lehrkraft an?",
+          "concept": "Schildere den Verlauf sachlich, nenne das Anliegen und bitte klar um Unterstützung; verwende passende Anrede und Gruß und verbreite keine unnötigen persönlichen Inhalte.",
+          "sample_solution": "Schildere den Verlauf sachlich, nenne das Anliegen und bitte klar um Unterstützung; verwende passende Anrede und Gruß und verbreite keine unnötigen persönlichen Inhalte.",
           "id": "01M78MVGD6T0V75V3R8GGZ7K1T",
           "slug": "d6-chat-recall",
           "language": "de",
@@ -1199,13 +1199,13 @@
         {
           "tier": "tier1_fast",
           "bloom_level": 2,
-          "question": "Dein Aushang soll Kindern erklären, wo und wann sie ihr Buch zum Büchertausch abgeben. Welche Angabe hilft am meisten?",
-          "concept": "Abgabe am Dienstag in der Aula.",
+          "question": "Eine Mindmap enthält Termin, Regenort und Geschichtenende. Was gehört für eine Einladung vorrangig in den Plan?",
+          "concept": "Termin und Regenort.",
           "fast_check": {
             "type": "binary_choice",
             "options": [
-              "Abgabe am Dienstag in der Aula.",
-              "Mein Lieblingsbuch ist grün."
+              "Termin und Regenort.",
+              "Nur das verratene Geschichtenende."
             ],
             "correct_index": 0
           },
@@ -1217,9 +1217,9 @@
         {
           "tier": "tier2_synthesis",
           "bloom_level": 2,
-          "question": "Wie machst du aus einem Ideenstern einen Schreibplan?",
-          "concept": "Wähle zum Ziel passende Ideen und ordne sie als Schritte oder Abschnitte.",
-          "sample_solution": "Für den Tauschplan zuerst Abgabe mit Ort und Termin, dann Auswahl mit Ort und Termin.",
+          "question": "Warum unterscheiden sich die Schreibpläne einer Einladung und eines Berichts zum selben Ereignis?",
+          "concept": "Die Einladung ermöglicht eine künftige Teilnahme; der Bericht informiert geordnet über einen tatsächlichen Ablauf. Deshalb brauchen sie andere Angaben und eine andere zeitliche Perspektive.",
+          "sample_solution": "Die Einladung ermöglicht eine künftige Teilnahme; der Bericht informiert geordnet über einen tatsächlichen Ablauf. Deshalb brauchen sie andere Angaben und eine andere zeitliche Perspektive.",
           "id": "01M78MVGD6AD6WGB4EGJ8E6K0N",
           "slug": "d6-schreibplan-recall",
           "language": "de",
@@ -1266,13 +1266,13 @@
         {
           "tier": "tier1_fast",
           "bloom_level": 2,
-          "question": "Welche Fragen helfen bei der Einleitung einer Erlebniserzählung?",
-          "concept": "Wer? Wann? Wo? Was geschieht zu Beginn?",
+          "question": "Welche Formulierung erzeugt Atmosphäre durch konkrete Wahrnehmung?",
+          "concept": "Im stillen Flur schabte etwas; unter der Tür flackerte Licht.",
           "fast_check": {
             "type": "binary_choice",
             "options": [
-              "Wer? Wann? Wo? Was geschieht zu Beginn?",
-              "Warum endet sie so? Wie lautet die Lösung?"
+              "Im stillen Flur schabte etwas; unter der Tür flackerte Licht.",
+              "Es war einfach unglaublich spannend und aufregend."
             ],
             "correct_index": 0
           },
@@ -1284,9 +1284,9 @@
         {
           "tier": "tier2_synthesis",
           "bloom_level": 2,
-          "question": "Wie baust du eine kurze Erlebniserzählung auf?",
-          "concept": "Erzählsituation einführen, Ereignis bis zum entscheidenden Moment entfalten, Ausgang zeigen.",
-          "sample_solution": "Sami holte die Jacke. Ein Klirren und der bewegte Vorhang machten ihn neugierig. Er entdeckte die Hausmeisterin und half bei der Suche.",
+          "question": "Wie erweiterst du eine Erzählung über einen bloßen Handlungsplan hinaus?",
+          "concept": "Wähle passende Sinneseindrücke, treffende Verben und Adjektive sowie Gedanken oder Rede und gestalte den entscheidenden Moment bewusst im Tempo.",
+          "sample_solution": "Wähle passende Sinneseindrücke, treffende Verben und Adjektive sowie Gedanken oder Rede und gestalte den entscheidenden Moment bewusst im Tempo.",
           "id": "01M78MVGD6X0QXYZFPV8YM8NW0",
           "slug": "d6-erzaehlen-recall",
           "language": "de",
@@ -1346,13 +1346,13 @@
         {
           "tier": "tier1_fast",
           "bloom_level": 2,
-          "question": "Die Geschichte beginnt mit „Ich stand mit nassen Schuhen in der Bücherei.“ Welcher Satz führt die Ich-Perspektive fort?",
-          "concept": "Ich kniete mich hin und folgte der roten Schnur.",
+          "question": "Ein Ich hört hinter einer geschlossenen Tür ein Klirren. Welche Aussage wahrt sein Wissen?",
+          "concept": "Vielleicht lag dort ein Schlüssel; sehen konnte ich ihn nicht.",
           "fast_check": {
             "type": "binary_choice",
             "options": [
-              "Ich kniete mich hin und folgte der roten Schnur.",
-              "Mira kniete sich hin und folgte der roten Schnur."
+              "Vielleicht lag dort ein Schlüssel; sehen konnte ich ihn nicht.",
+              "Ich sah durch die geschlossene Tür sicher den Schlüssel."
             ],
             "correct_index": 0
           },
@@ -1364,9 +1364,9 @@
         {
           "tier": "tier2_synthesis",
           "bloom_level": 2,
-          "question": "Was prüfst du, bevor du einen Geschichtenanfang fortsetzt?",
-          "concept": "Perspektive, Zeitform, Figuren, Ort und offene Hinweise.",
-          "sample_solution": "Hier erzähle ich im Präteritum aus meiner Sicht und greife das Piepsen oder die rote Schnur auf.",
+          "question": "Wie nutzt du offene Hinweise beim Weiterschreiben?",
+          "concept": "Sammle die festgelegten Hinweise, entwickle daraus eine passende Handlung und löse sie aus der gewählten Perspektive und Zeitform nachvollziehbar auf.",
+          "sample_solution": "Sammle die festgelegten Hinweise, entwickle daraus eine passende Handlung und löse sie aus der gewählten Perspektive und Zeitform nachvollziehbar auf.",
           "id": "01M78MVGD669QPM71Q5PER8MSH",
           "slug": "d6-weiterschreiben-recall",
           "language": "de",
@@ -1413,13 +1413,13 @@
         {
           "tier": "tier1_fast",
           "bloom_level": 2,
-          "question": "Ein Kind sucht seinen Hund. Welche Angabe in deiner Beschreibung hilft ihm, den Hund wiederzuerkennen?",
-          "concept": "Ein weißer Fleck auf der Brust.",
+          "question": "Was ist eine Beobachtung statt einer unbelegten Absichtsdeutung?",
+          "concept": "Die Katze duckt sich hinter den Eimer.",
           "fast_check": {
             "type": "binary_choice",
             "options": [
-              "Ein weißer Fleck auf der Brust.",
-              "Ein sehr süßer Hund."
+              "Die Katze duckt sich hinter den Eimer.",
+              "Die Katze plant bestimmt einen Angriff."
             ],
             "correct_index": 0
           },
@@ -1431,9 +1431,9 @@
         {
           "tier": "tier2_synthesis",
           "bloom_level": 2,
-          "question": "Warum ordnest du Merkmale bei einer Tierbeschreibung?",
-          "concept": "Lesende können sich das Tier Schritt für Schritt vorstellen und wichtige Merkmale wiederfinden.",
-          "sample_solution": "Beginne mit Größe und Fell. Beschreibe dann Kopf, Brust und Schwanz.",
+          "question": "Wie machst du eine Tierbeschreibung für das Wiedererkennen zuverlässig?",
+          "concept": "Ordne sichtbare Merkmale, nenne Besonderheiten präzise und trenne Beobachtung, Wertung und unsichere Deutung.",
+          "sample_solution": "Ordne sichtbare Merkmale, nenne Besonderheiten präzise und trenne Beobachtung, Wertung und unsichere Deutung.",
           "id": "01M78MVGD647MK291H0N8ZF2Y0",
           "slug": "d6-tierbeschreibung-recall",
           "language": "de",
@@ -1480,13 +1480,13 @@
         {
           "tier": "tier1_fast",
           "bloom_level": 2,
-          "question": "In der ersten Zeile steht „Liebe Mina,“. Wie schreibst du in der nächsten Zeile den Anfang „vielen Dank für deine Nachricht“?",
-          "concept": "vielen Dank für deine Nachricht.",
+          "question": "Eine Empfängerin befürchtet Lärm bei einer Lesung. Welcher Satz reagiert sachlich?",
+          "concept": "Wir teilen die Gruppe, damit andere Kinder ungestört lesen können.",
           "fast_check": {
             "type": "binary_choice",
             "options": [
-              "vielen Dank für deine Nachricht.",
-              "Vielen Dank für deine Nachricht."
+              "Wir teilen die Gruppe, damit andere Kinder ungestört lesen können.",
+              "Ihre Sorge ist unwichtig, weil wir unseren Plan mögen."
             ],
             "correct_index": 0
           },
@@ -1498,9 +1498,9 @@
         {
           "tier": "tier2_synthesis",
           "bloom_level": 2,
-          "question": "Welche Teile braucht ein persönlicher Brief, damit die Empfängerin sich orientieren kann?",
-          "concept": "Ort und Datum, Anrede, Brieftext, Gruß und Name.",
-          "sample_solution": "Eine persönliche Mail kann einen klaren Betreff statt einer Orts- und Datumszeile haben.",
+          "question": "Was unterscheidet eine begründete Antwortmail von einer bloßen neuen Mitteilung?",
+          "concept": "Sie nimmt auf das Anliegen der erhaltenen Nachricht Bezug, beantwortet es nachvollziehbar und gestaltet Sprache und Aufbau passend zur Empfängerin oder zum Empfänger.",
+          "sample_solution": "Sie nimmt auf das Anliegen der erhaltenen Nachricht Bezug, beantwortet es nachvollziehbar und gestaltet Sprache und Aufbau passend zur Empfängerin oder zum Empfänger.",
           "id": "01M78MVGD61Q2JVK7ED1D4G6C9",
           "slug": "d6-brief-recall",
           "language": "de",
@@ -1547,13 +1547,13 @@
         {
           "tier": "tier1_fast",
           "bloom_level": 2,
-          "question": "Du hast einen ersten Textentwurf geschrieben. Was prüfst du im ersten Durchgang der Überarbeitung?",
-          "concept": "Ob wichtige Angaben fehlen und der Text verständlich geordnet ist.",
+          "question": "„Dann machten wir es dann“ ist richtig abgeschrieben. Was bleibt dennoch zu überarbeiten?",
+          "concept": "Die ungenaue Handlung und der unklare Bezug von es.",
           "fast_check": {
             "type": "binary_choice",
             "options": [
-              "Ob wichtige Angaben fehlen und der Text verständlich geordnet ist.",
-              "Nur die Großschreibung einzelner Wörter."
+              "Die ungenaue Handlung und der unklare Bezug von es.",
+              "Nur die Farbe der Buchstaben."
             ],
             "correct_index": 0
           },
@@ -1565,9 +1565,9 @@
         {
           "tier": "tier2_synthesis",
           "bloom_level": 2,
-          "question": "Wie nutzt du eine konkrete Rückmeldung zu deinem Text?",
-          "concept": "Suche die genannte Stelle, ändere sie gezielt und prüfe danach die Wirkung.",
-          "sample_solution": "Auf „Wo treffen wir uns?“ ergänze „am Eingang zur Aula“ und lass die Person den Ort noch einmal finden.",
+          "question": "Wie unterscheidest du Wort-, Satz- und Textebene beim Überarbeiten?",
+          "concept": "Prüfe Wörter auf Treffgenauigkeit und Schreibung, Sätze auf Vollständigkeit und Verknüpfung und den Text auf Ziel, Aufbau und vollständige Informationen.",
+          "sample_solution": "Prüfe Wörter auf Treffgenauigkeit und Schreibung, Sätze auf Vollständigkeit und Verknüpfung und den Text auf Ziel, Aufbau und vollständige Informationen.",
           "id": "01M78MVGD6CT98000D9XKBP8R3",
           "slug": "d6-ueberarbeiten-recall",
           "language": "de",
@@ -1614,13 +1614,13 @@
         {
           "tier": "tier1_fast",
           "bloom_level": 2,
-          "question": "Was zeigt, ob deine Handschrift lesbar ist?",
-          "concept": "Eine andere Person kann die Wörter ohne Raten lesen.",
+          "question": "Eine lesbare Schreibprobe hinterlässt tiefe Druckspuren und die Hand verkrampft. Was überprüfst du?",
+          "concept": "Druck, Stifthaltung und eine mögliche Lockerung.",
           "fast_check": {
             "type": "binary_choice",
             "options": [
-              "Eine andere Person kann die Wörter ohne Raten lesen.",
-              "Du schreibst möglichst schnell ohne Abstände."
+              "Druck, Stifthaltung und eine mögliche Lockerung.",
+              "Nur die inhaltliche Überschrift des Texts."
             ],
             "correct_index": 0
           },
@@ -1632,9 +1632,9 @@
         {
           "tier": "tier2_synthesis",
           "bloom_level": 2,
-          "question": "Welche drei Merkmale machen Handschrift gut lesbar?",
-          "concept": "Erkennbare Buchstaben, deutliche Wortabstände und eine passende Schriftgröße.",
-          "sample_solution": "Erkennbare Buchstaben, deutliche Wortabstände und eine passende Schriftgröße.",
+          "question": "Wie korrigierst du eine Schreibgewohnheit selbständig?",
+          "concept": "Beobachte Haltung, Druck, Tempo und Lesbarkeit, verändere gezielt einen Punkt und vergleiche anschließend eine neue Schreibprobe unter ähnlichen Bedingungen.",
+          "sample_solution": "Beobachte Haltung, Druck, Tempo und Lesbarkeit, verändere gezielt einen Punkt und vergleiche anschließend eine neue Schreibprobe unter ähnlichen Bedingungen.",
           "id": "01M78MVGD7VPHCD8AH0TPXZQQP",
           "slug": "d6-handschrift-recall",
           "language": "de",
@@ -1673,13 +1673,13 @@
         {
           "tier": "tier1_fast",
           "bloom_level": 2,
-          "question": "Was hilft einem neuen Kind beim Finden der Aula?",
-          "concept": "Ein beschrifteter Lageplan neben der Ortsangabe.",
+          "question": "Was macht eine Text-Bild-Verknüpfung bei einer Anleitung sinnvoll?",
+          "concept": "Das Bild verdeutlicht einen im Text beschriebenen Schritt.",
           "fast_check": {
             "type": "binary_choice",
             "options": [
-              "Ein beschrifteter Lageplan neben der Ortsangabe.",
-              "Ein großes Tierfoto ohne Bezug."
+              "Das Bild verdeutlicht einen im Text beschriebenen Schritt.",
+              "Das Bild ist unabhängig vom Inhalt möglichst groß."
             ],
             "correct_index": 0
           },
@@ -1691,9 +1691,9 @@
         {
           "tier": "tier2_synthesis",
           "bloom_level": 2,
-          "question": "Wie gliederst du einen informierenden Aushang?",
-          "concept": "Mit einer klaren Überschrift, geordneten Abschnitten und gezielten Hervorhebungen der wichtigen Angaben.",
-          "sample_solution": "Mit einer klaren Überschrift, geordneten Abschnitten und gezielten Hervorhebungen der wichtigen Angaben.",
+          "question": "Wie beurteilst du die Gestaltung eines elektronischen Informationsblatts?",
+          "concept": "Prüfe Lesbarkeit, Gliederung, Auffindbarkeit wichtiger Angaben und den erklärenden Zusammenhang von Text, Bild und Beschriftung.",
+          "sample_solution": "Prüfe Lesbarkeit, Gliederung, Auffindbarkeit wichtiger Angaben und den erklärenden Zusammenhang von Text, Bild und Beschriftung.",
           "id": "01M78MVGD7BH4G6KTMZQATHEEJ",
           "slug": "d6-dokument-recall",
           "language": "de",
@@ -1732,13 +1732,13 @@
         {
           "tier": "tier1_fast",
           "bloom_level": 2,
-          "question": "Was gehört für Deniz Yilmaz in das Feld „Nachname“?",
-          "concept": "Yilmaz",
+          "question": "Ein Formular fragt nach „gewünschte Gruppe“. Deniz möchte Tischtennis lernen. Was passt?",
+          "concept": "Tischtennis.",
           "fast_check": {
             "type": "binary_choice",
             "options": [
-              "Yilmaz",
-              "Deniz"
+              "Tischtennis.",
+              "Yilmaz."
             ],
             "correct_index": 0
           },
@@ -1750,9 +1750,9 @@
         {
           "tier": "tier2_synthesis",
           "bloom_level": 2,
-          "question": "Was tust du, wenn dir eine notwendige Formularangabe fehlt?",
-          "concept": "Die Anweisung prüfen und bei einer zuständigen erwachsenen Person nachfragen, statt die Angabe zu erfinden.",
-          "sample_solution": "Die Anweisung prüfen und bei einer zuständigen erwachsenen Person nachfragen, statt die Angabe zu erfinden.",
+          "question": "Warum liest du Hinweise eines Formulars vor dem Ausfüllen vollständig?",
+          "concept": "Sie erklären zusätzlich zu den Feldnamen den Zweck, nötige Angaben und weitere Schritte wie eine Zustimmung; ausgefüllte Felder allein schließen den Vorgang nicht immer ab.",
+          "sample_solution": "Sie erklären zusätzlich zu den Feldnamen den Zweck, nötige Angaben und weitere Schritte wie eine Zustimmung; ausgefüllte Felder allein schließen den Vorgang nicht immer ab.",
           "id": "01M78MVGD7CJR1HMBY44N4Y99H",
           "slug": "d6-formular-recall",
           "language": "de",
@@ -1943,13 +1943,13 @@
         {
           "tier": "tier1_fast",
           "bloom_level": 2,
-          "question": "Die Ursache eines umgekippten Kartons ist unbekannt. Was passt in den Bericht?",
-          "concept": "Warum die Kiste kippte, ist nicht bekannt.",
+          "question": "Ein Protokoll nennt 24 Rückgaben und 19 Ausleihen. Welche Besucherzahl folgt daraus sicher?",
+          "concept": "Keine genaue Zahl verschiedener Kinder.",
           "fast_check": {
             "type": "binary_choice",
             "options": [
-              "Warum die Kiste kippte, ist nicht bekannt.",
-              "Ein Kind war bestimmt absichtlich unvorsichtig."
+              "Keine genaue Zahl verschiedener Kinder.",
+              "Genau 43 verschiedene Kinder."
             ],
             "correct_index": 0
           },
@@ -1961,9 +1961,9 @@
         {
           "tier": "tier2_synthesis",
           "bloom_level": 2,
-          "question": "Was unterscheidet einen sachlichen Bericht von einer spannenden Erzählung?",
-          "concept": "Ein Bericht ordnet gesicherte Angaben zum Geschehen und vermeidet erfundene Gedanken oder Spannungseffekte.",
-          "sample_solution": "Ein Bericht ordnet gesicherte Angaben zum Geschehen und vermeidet erfundene Gedanken oder Spannungseffekte.",
+          "question": "Wie verwendest du recherchierte Zahlen in einem Bericht?",
+          "concept": "Prüfe, was die Zahlen tatsächlich zählen, ordne sie einer Fundstelle zu und übertrage sie nicht ungeprüft auf andere Größen wie verschiedene Besucher.",
+          "sample_solution": "Prüfe, was die Zahlen tatsächlich zählen, ordne sie einer Fundstelle zu und übertrage sie nicht ungeprüft auf andere Größen wie verschiedene Besucher.",
           "id": "01M78MVGD7RCJJQN68Z2WZMCTZ",
           "slug": "d6-bericht-recall",
           "language": "de",
@@ -2015,13 +2015,13 @@
         {
           "tier": "tier1_fast",
           "bloom_level": 2,
-          "question": "Was braucht eine verständliche Vorgangsbeschreibung?",
-          "concept": "Material und Schritte in der richtigen Reihenfolge.",
+          "question": "Was verbessert „Lege den Streifen zwischen zwei Buchseiten“ gegenüber „Lege es rein“?",
+          "concept": "Gegenstand und Zielort der Handlung sind eindeutig.",
           "fast_check": {
             "type": "binary_choice",
             "options": [
-              "Material und Schritte in der richtigen Reihenfolge.",
-              "Nur das Ergebnis und deine Lieblingsfarbe."
+              "Gegenstand und Zielort der Handlung sind eindeutig.",
+              "Die Anleitung verrät keine Reihenfolge mehr."
             ],
             "correct_index": 0
           },
@@ -2033,9 +2033,9 @@
         {
           "tier": "tier2_synthesis",
           "bloom_level": 2,
-          "question": "Wie prüfst du, ob eine Vorgangsbeschreibung verständlich ist?",
-          "concept": "Eine andere Person führt sie ohne zusätzliche Erklärung aus; unklare oder fehlende Schritte überarbeitest du.",
-          "sample_solution": "Eine andere Person führt sie ohne zusätzliche Erklärung aus; unklare oder fehlende Schritte überarbeitest du.",
+          "question": "Wie nutzt du eine Erprobung zur Verbesserung einer Vorgangsbeschreibung?",
+          "concept": "Beobachte, wo eine andere Person ohne Zusatzhilfe stockt oder anders handelt, kläre die fehlende Information und prüfe die überarbeitete Stelle erneut.",
+          "sample_solution": "Beobachte, wo eine andere Person ohne Zusatzhilfe stockt oder anders handelt, kläre die fehlende Information und prüfe die überarbeitete Stelle erneut.",
           "id": "01M78MVGD78BXMR7RMGTHZRF23",
           "slug": "d6-vorgang-recall",
           "language": "de",
@@ -2082,13 +2082,13 @@
         {
           "tier": "tier1_fast",
           "bloom_level": 2,
-          "question": "Auf einem Schild am Schuleingang steht „Check-in“. Warum passt „Anmeldung“ dort für mehr Personen?",
-          "concept": "Auch Personen ohne Englischkenntnisse verstehen, was sie dort tun sollen.",
+          "question": "Was bedeutet „Mir fällt ein Stein vom Herzen“ nach dem Wiederfinden eines Koffers?",
+          "concept": "Die Person ist sehr erleichtert.",
           "fast_check": {
             "type": "binary_choice",
             "options": [
-              "Auch Personen ohne Englischkenntnisse verstehen, was sie dort tun sollen.",
-              "Englische Wörter sind in jedem Gespräch unhöflich."
+              "Die Person ist sehr erleichtert.",
+              "Die Person hat einen echten Stein getragen."
             ],
             "correct_index": 0
           },
@@ -2100,9 +2100,9 @@
         {
           "tier": "tier2_synthesis",
           "bloom_level": 2,
-          "question": "Woran erkennst du einen anschaulichen Vergleich?",
-          "concept": "Er verbindet zwei Dinge, die in einem Merkmal ähnlich sind, oft mit „wie“.",
-          "sample_solution": "„Die Seiten flatterten wie Segel“ betont, wie Wind die Seiten bewegt.",
+          "question": "Worin unterscheiden sich eine Redensart und ein Sprichwort?",
+          "concept": "Eine Redensart ist eine feste, oft bildhafte Wendung für eine Situation; ein Sprichwort formuliert meist als ganzer Satz eine allgemeine Erfahrung oder einen Rat.",
+          "sample_solution": "Eine Redensart ist eine feste, oft bildhafte Wendung für eine Situation; ein Sprichwort formuliert meist als ganzer Satz eine allgemeine Erfahrung oder einen Rat.",
           "id": "01M78MVGD7RCFKJ62WH8GPC4DQ",
           "slug": "d6-sprachwahl-recall",
           "language": "de",
@@ -2149,13 +2149,13 @@
         {
           "tier": "tier1_fast",
           "bloom_level": 2,
-          "question": "Welches Wort folgt in „Luna ist größer … Milo“?",
-          "concept": "als",
+          "question": "Welche Form passt: „Wir arbeiten mit …“ (der kleine rote Wagen)?",
+          "concept": "dem kleinen roten Wagen",
           "fast_check": {
             "type": "binary_choice",
             "options": [
-              "als",
-              "wie"
+              "dem kleinen roten Wagen",
+              "den kleine roten Wagen"
             ],
             "correct_index": 0
           },
@@ -2167,9 +2167,9 @@
         {
           "tier": "tier2_synthesis",
           "bloom_level": 2,
-          "question": "Wie heißen die drei Steigerungsstufen von „hoch“?",
-          "concept": "Hoch, höher, am höchsten.",
-          "sample_solution": "Ein hohes Tor, ein höheres Tor, das höchste Tor. Mit „am“ lautet die Höchststufe „am höchsten“.",
+          "question": "Warum darfst du aus „höher als“ nicht automatisch „insgesamt besser als“ machen?",
+          "concept": "Der Komparativ vergleicht ein bestimmtes Merkmal. Eine zweckbezogene Bewertung braucht weitere passende Kriterien.",
+          "sample_solution": "Der Komparativ vergleicht ein bestimmtes Merkmal. Eine zweckbezogene Bewertung braucht weitere passende Kriterien.",
           "id": "01M78MVGD7433TMEG1RA6CVKBQ",
           "slug": "d6-adjektive-recall",
           "language": "de",
@@ -2208,13 +2208,13 @@
         {
           "tier": "tier1_fast",
           "bloom_level": 2,
-          "question": "Was ist das Grundwort in „Türschild“?",
-          "concept": "Schild",
+          "question": "Was ist bei „Regenwasserspeicher“ das Grundwort und der Bedeutungskern?",
+          "concept": "Speicher: ein Speicher für Regenwasser.",
           "fast_check": {
             "type": "binary_choice",
             "options": [
-              "Schild",
-              "Tür"
+              "Speicher: ein Speicher für Regenwasser.",
+              "Regen: eine besondere Wettervorhersage."
             ],
             "correct_index": 0
           },
@@ -2226,9 +2226,9 @@
         {
           "tier": "tier2_synthesis",
           "bloom_level": 2,
-          "question": "Wie unterscheidest du Wortfamilie und Wortfeld?",
-          "concept": "Eine Wortfamilie enthält Wörter mit verwandtem Stamm. Ein Wortfeld sammelt Wörter mit verwandter Bedeutung.",
-          "sample_solution": "„Lesen, Leser, lesbar“ teilen einen Stamm. „Sagen, flüstern, rufen“ sind verschiedene Arten des Sprechens.",
+          "question": "Wie verwendest du Wortbildung zum Verstehen und Gestalten von Texten?",
+          "concept": "Zerlege Fachwörter in erkennbare Bausteine und prüfe die Bedeutung im Kontext; erkläre eigene Neuschöpfungen so, dass Lesende ihren gemeinten Zweck verstehen.",
+          "sample_solution": "Zerlege Fachwörter in erkennbare Bausteine und prüfe die Bedeutung im Kontext; erkläre eigene Neuschöpfungen so, dass Lesende ihren gemeinten Zweck verstehen.",
           "id": "01M78MVGD71AZ68364YR4VQVPD",
           "slug": "d6-wortbildung-recall",
           "language": "de",
@@ -2272,13 +2272,13 @@
         {
           "tier": "tier1_fast",
           "bloom_level": 2,
-          "question": "Welche Gruppe kannst du in „Am Morgen gibt Nele dem Hund einen Napf“ geschlossen durch „ihm“ ersetzen?",
-          "concept": "dem Hund",
+          "question": "Welche Funktion hat „vorsichtig“ in „Kira gibt ihrem Bruder vorsichtig die Lampe“?",
+          "concept": "Modaladverbiale: Art und Weise der Handlung.",
           "fast_check": {
             "type": "binary_choice",
             "options": [
-              "dem Hund",
-              "Hund"
+              "Modaladverbiale: Art und Weise der Handlung.",
+              "Temporaladverbiale: Zeitpunkt der Handlung."
             ],
             "correct_index": 0
           },
@@ -2290,9 +2290,9 @@
         {
           "tier": "tier2_synthesis",
           "bloom_level": 2,
-          "question": "Was ist das Prädikat in „Am Abend hat sie das Tor abgeschlossen“?",
-          "concept": "„Hat abgeschlossen“ besteht aus finitem Hilfsverb und Partizip Perfekt.",
-          "sample_solution": "„Hat“ steht im Satz getrennt von „abgeschlossen“, aber beide Teile gehören zum Prädikat.",
+          "question": "Warum reicht eine Dativform nicht aus, um ein Dativobjekt festzustellen?",
+          "concept": "Auch eine präpositionale Angabe kann im Dativ stehen. Prüfe zusätzlich die Bedeutung, die Beziehung zum Verb und passende Satzproben.",
+          "sample_solution": "Auch eine präpositionale Angabe kann im Dativ stehen. Prüfe zusätzlich die Bedeutung, die Beziehung zum Verb und passende Satzproben.",
           "id": "01M78MVGD7VJ7R1SY36VD74P52",
           "slug": "d6-satzglieder-recall",
           "language": "de",
@@ -2331,13 +2331,13 @@
         {
           "tier": "tier1_fast",
           "bloom_level": 2,
-          "question": "Vor welchen Buchstaben kann ein Dehnungs-h stehen?",
-          "concept": "l, m, n und r",
+          "question": "Welche Schreibung passt: „Das müde … am Auge senkte sich“?",
+          "concept": "Lid",
           "fast_check": {
             "type": "binary_choice",
             "options": [
-              "l, m, n und r",
-              "b, d, g und p"
+              "Lid",
+              "Lied"
             ],
             "correct_index": 0
           },
@@ -2349,9 +2349,9 @@
         {
           "tier": "tier2_synthesis",
           "bloom_level": 2,
-          "question": "Wie kann ein langer Vokal geschrieben werden?",
-          "concept": "Einfach, beim langen i oft als „ie“, in manchen Wörtern mit Dehnungs-h oder als Doppelvokal.",
-          "sample_solution": "„Tal“ hat einfaches a, „Lied“ hat ie, „Zahn“ hat Dehnungs-h und „Saal“ hat aa.",
+          "question": "Wozu brauchst du bei gleich klingenden Wörtern wie Lid und Lied den Satzkontext?",
+          "concept": "Der Kontext klärt die gemeinte Bedeutung und damit das passende Wort; die gleiche Vokallänge allein unterscheidet die Schreibungen nicht.",
+          "sample_solution": "Der Kontext klärt die gemeinte Bedeutung und damit das passende Wort; die gleiche Vokallänge allein unterscheidet die Schreibungen nicht.",
           "id": "01M78MVGD7ENB19NNKFD6S4TQS",
           "slug": "d6-dehnung-recall",
           "language": "de",
@@ -2390,13 +2390,13 @@
         {
           "tier": "tier1_fast",
           "bloom_level": 2,
-          "question": "Was steht bei der üblichen Schärfung anstelle von „kk“ und „zz“?",
-          "concept": "ck und tz",
+          "question": "Warum schreibt man „rennt“ mit nn, obwohl danach t folgt?",
+          "concept": "Die Form erhält den Stamm von rennen.",
           "fast_check": {
             "type": "binary_choice",
             "options": [
-              "ck und tz",
-              "k und z"
+              "Die Form erhält den Stamm von rennen.",
+              "Weil jedes Wort vor t nn braucht."
             ],
             "correct_index": 0
           },
@@ -2408,9 +2408,9 @@
         {
           "tier": "tier2_synthesis",
           "bloom_level": 2,
-          "question": "Warum hat „Kante“ kein doppeltes n?",
-          "concept": "Nach dem kurzen a folgen zwei verschiedene Konsonantenlaute, n und t.",
-          "sample_solution": "In „Kamm“ folgt nur m, daher steht dort mm. „Kante“ hat bereits n und t.",
+          "question": "Wie erklärst du die drei f in Schifffahrt?",
+          "concept": "Die Zusammensetzung besteht aus Schiff und Fahrt; an ihrer Grenze bleiben die beiden f des ersten und das erste f des zweiten Bestandteils erhalten.",
+          "sample_solution": "Die Zusammensetzung besteht aus Schiff und Fahrt; an ihrer Grenze bleiben die beiden f des ersten und das erste f des zweiten Bestandteils erhalten.",
           "id": "01M78MVGD77W1JKCJPJRRMZM5G",
           "slug": "d6-schaerfung-recall",
           "language": "de",
@@ -2449,13 +2449,13 @@
         {
           "tier": "tier1_fast",
           "bloom_level": 2,
-          "question": "Wie findest du sicher heraus, ob „Hund“ auf d oder t endet?",
-          "concept": "Verlängere zu „Hunde“.",
+          "question": "Welche Prüfform hilft beim b in „gelb“?",
+          "concept": "das gelbe Blatt",
           "fast_check": {
             "type": "binary_choice",
             "options": [
-              "Verlängere zu „Hunde“.",
-              "Schreib so, wie der letzte Laut im einzelnen Wort klingt."
+              "das gelbe Blatt",
+              "der blaue Rand"
             ],
             "correct_index": 0
           },
@@ -2467,9 +2467,9 @@
         {
           "tier": "tier2_synthesis",
           "bloom_level": 2,
-          "question": "Wie prüfst du „gelb“ und „fliegt“ mit der Verlängerungsprobe?",
-          "concept": "Bilde „gelbes Blatt“ und „fliegen“.",
-          "sample_solution": "In „gelbes“ folgt e auf b. In „fliegen“ folgt e auf g. So sind die Laute besser unterscheidbar.",
+          "question": "Wann ist ein verwandtes Wort als Prüfform geeignet?",
+          "concept": "Es muss in Bedeutung und Wortfamilie zum Ausgangswort gehören und die unsichere Stelle tatsächlich klären; bloße Klangähnlichkeit genügt nicht.",
+          "sample_solution": "Es muss in Bedeutung und Wortfamilie zum Ausgangswort gehören und die unsichere Stelle tatsächlich klären; bloße Klangähnlichkeit genügt nicht.",
           "id": "01M78MVGD7V9PY1YB83EQ62KDR",
           "slug": "d6-verlaengern-recall",
           "language": "de",
@@ -2516,13 +2516,13 @@
         {
           "tier": "tier1_fast",
           "bloom_level": 2,
-          "question": "Welches Zeichen folgt direkt auf einen vorangestellten Redebegleitsatz?",
-          "concept": "Ein Doppelpunkt.",
+          "question": "Welche Zeichenfolge passt bei nachgestelltem Begleitsatz zur Frage „Ist der Raum frei?“?",
+          "concept": "„Ist der Raum frei?“, fragte Mina.",
           "fast_check": {
             "type": "binary_choice",
             "options": [
-              "Ein Doppelpunkt.",
-              "Ein Komma."
+              "„Ist der Raum frei?“, fragte Mina.",
+              "„Ist der Raum frei“, fragte Mina?"
             ],
             "correct_index": 0
           },
@@ -2534,9 +2534,9 @@
         {
           "tier": "tier2_synthesis",
           "bloom_level": 2,
-          "question": "Wie setzt du die Zeichen, wenn ein Begleitsatz mitten in einer Äußerung steht?",
-          "concept": "Schließe die erste Rede, setze ein Komma, schreibe den Begleitsatz, setze ein zweites Komma und öffne die Rede wieder.",
-          "sample_solution": "„Morgen“, sagte Mia, „bringe ich es zurück.“ Beide Kommas stehen außerhalb der Anführungszeichen.",
+          "question": "Was prüfst du bei einem in die wörtliche Rede eingeschobenen Begleitsatz?",
+          "concept": "Beide Kommas stehen außerhalb der Anführungszeichen. Prüfe außerdem, ob derselbe Redesatz weitergeht und der zweite Teil deshalb hier klein beginnen muss.",
+          "sample_solution": "Beide Kommas stehen außerhalb der Anführungszeichen. Prüfe außerdem, ob derselbe Redesatz weitergeht und der zweite Teil deshalb hier klein beginnen muss.",
           "id": "01M78MVGD764PRJF6ESE2QB46C",
           "slug": "d6-woertliche-rede-recall",
           "language": "de",
@@ -2575,13 +2575,13 @@
         {
           "tier": "tier1_fast",
           "bloom_level": 2,
-          "question": "Wo steht das Komma in „Nuri komm bitte zur Tür“?",
-          "concept": "Direkt nach „Nuri“.",
+          "question": "Wo steht das notwendige erste Komma: „Wenn der Regen aufhört tragen wir Papier, Stifte und Kleber hinaus“?",
+          "concept": "Nach aufhört.",
           "fast_check": {
             "type": "binary_choice",
             "options": [
-              "Direkt nach „Nuri“.",
-              "Direkt nach „bitte“."
+              "Nach aufhört.",
+              "Nach und."
             ],
             "correct_index": 0
           },
@@ -2593,9 +2593,9 @@
         {
           "tier": "tier2_synthesis",
           "bloom_level": 2,
-          "question": "Wann setzt du in einem Satzgefüge ein Komma?",
-          "concept": "Du grenzt einen Nebensatz vom Hauptsatz ab, auch wenn der Nebensatz vorne oder in der Mitte steht.",
-          "sample_solution": "„Weil es regnet, bleiben wir hier.“ In „Das Kind, das hilft, bleibt hier“ stehen am Einschub zwei Kommas.",
+          "question": "Warum bestimmst du vor dem Kommasetzen die Satzstruktur?",
+          "concept": "So unterscheidest du Grenzen zwischen Haupt- und Nebensätzen, Hauptsatzverbindungen und bloße Aufzählungen, für die unterschiedliche Kommaregeln gelten.",
+          "sample_solution": "So unterscheidest du Grenzen zwischen Haupt- und Nebensätzen, Hauptsatzverbindungen und bloße Aufzählungen, für die unterschiedliche Kommaregeln gelten.",
           "id": "01M78MVGD77F1XKA76Y3QTBCP5",
           "slug": "d6-kommas-recall",
           "language": "de",
@@ -2642,13 +2642,13 @@
         {
           "tier": "tier1_fast",
           "bloom_level": 2,
-          "question": "Unter welchem Stichwort suchst du „gefunden“?",
-          "concept": "finden",
+          "question": "Welche Bedeutung von Schloss passt in „Sie kontrolliert das Schloss am Koffer“?",
+          "concept": "Eine Vorrichtung zum Verschließen.",
           "fast_check": {
             "type": "binary_choice",
             "options": [
-              "finden",
-              "fand"
+              "Eine Vorrichtung zum Verschließen.",
+              "Ein herrschaftliches Gebäude."
             ],
             "correct_index": 0
           },
@@ -2660,9 +2660,9 @@
         {
           "tier": "tier2_synthesis",
           "bloom_level": 2,
-          "question": "Was bedeutet „Pl.: Interviews“ in einem Wörterbuchartikel?",
-          "concept": "Die Pluralform des Stichworts ist „Interviews“.",
-          "sample_solution": "„Das Interview“ bezeichnet ein Gespräch, „die Interviews“ bezeichnet mehrere.",
+          "question": "Wie nutzt du Wörterbuch und Thesaurus bei einer Textüberarbeitung?",
+          "concept": "Suche die richtige Grundform, wähle die zum Satz passende Bedeutung und prüfe vorgeschlagene Ersatzwörter auf Sinn, Grammatik und Sprachsituation.",
+          "sample_solution": "Suche die richtige Grundform, wähle die zum Satz passende Bedeutung und prüfe vorgeschlagene Ersatzwörter auf Sinn, Grammatik und Sprachsituation.",
           "id": "01M78MVGD7W66596B188W2SFMH",
           "slug": "d6-woerterbuch-recall",
           "language": "de",
@@ -2714,13 +2714,13 @@
         {
           "tier": "tier1_fast",
           "bloom_level": 2,
-          "question": "Welche Prüfhilfe passt zu „Hund“?",
-          "concept": "Zu „Hunde“ verlängern.",
+          "question": "Nach einer Artikelproben-Übung sinken Nomenfehler, Merkwortfehler bleiben gleich. Was folgt für den Plan?",
+          "concept": "Für Merkwörter eine passende zusätzliche Übung mit neuer Kontrolle planen.",
           "fast_check": {
             "type": "binary_choice",
             "options": [
-              "Zu „Hunde“ verlängern.",
-              "Das Wort ohne Prüfung fünfmal falsch abschreiben."
+              "Für Merkwörter eine passende zusätzliche Übung mit neuer Kontrolle planen.",
+              "Alle Schreibweisen gelten ab sofort als dauerhaft beherrscht."
             ],
             "correct_index": 0
           },
@@ -2732,9 +2732,9 @@
         {
           "tier": "tier2_synthesis",
           "bloom_level": 2,
-          "question": "Was gehört auf eine hilfreiche Rechtschreibkarte?",
-          "concept": "Die richtige Schreibung, eine passende Strategie oder Merkhilfe und ein Beispielsatz; später wird ohne Vorlage geprüft.",
-          "sample_solution": "Die richtige Schreibung, eine passende Strategie oder Merkhilfe und ein Beispielsatz; später wird ohne Vorlage geprüft.",
+          "question": "Wie nutzt du einen Fehleranalysebogen zur Weiterplanung?",
+          "concept": "Ordne Fehler nach Art, vergleiche beobachtete Ergebnisse mit deinem Übungsziel und wähle für verbleibende Schwierigkeiten eine passende Strategie mit späterer Kontrolle.",
+          "sample_solution": "Ordne Fehler nach Art, vergleiche beobachtete Ergebnisse mit deinem Übungsziel und wähle für verbleibende Schwierigkeiten eine passende Strategie mit späterer Kontrolle.",
           "id": "01M78MVGD70MCM9Q6AHMXSMCM7",
           "slug": "d6-fehlerkartei-recall",
           "language": "de",

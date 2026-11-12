@@ -329,3 +329,45 @@ describe("Navigation and escaped text", () => {
 		);
 	});
 });
+
+describe("Learner-language and corrected examples", () => {
+	const prose = LESSONS.flatMap((l) => [
+		l.title,
+		l.skill,
+		...l.paragraphs,
+		l.material,
+		l.takeaway,
+		l.quiz.question,
+		l.quiz.answer,
+		...l.quiz.wrong,
+		l.quiz.explanation,
+		...l.cases.flatMap((c) => [c.prompt, ...c.options, c.feedback]),
+		...([1, 2] as const).flatMap((level) => [
+			l.tasks[level].prompt,
+			l.tasks[level].model,
+			...l.tasks[level].criteria,
+		]),
+		l.extension ?? "",
+	]);
+	it("uses German number and unit conventions in learner prose, excluding curriculum labels", () => {
+		for (const text of prose) {
+			expect(text).not.toMatch(/\d\.\d/);
+			expect(text).not.toMatch(/(?:^|[\s(])-[\s]*\d|\d\s*-\s*\d/);
+			expect(text).not.toMatch(/\d(?:cm|mm|km|kg|Euro|Minuten)\b/);
+		}
+	});
+	it("keeps model-email sign-offs consistent with the taught letter convention", () => {
+		for (const l of LESSONS)
+			for (const level of [1, 2] as const) {
+				expect(l.tasks[level].model).not.toMatch(/(?:Viele|Liebe) Grüße,/);
+				if (/(?:Viele|Liebe) Grüße\n/.test(l.tasks[level].model))
+					expect(l.tasks[level].model).toMatch(/\n(?:Viele|Liebe) Grüße\n\S/);
+			}
+	});
+	it("keeps cited grammatical forms distinct from surrounding case grammar", () => {
+		expect(prose.join("\n")).not.toContain("nach den Stamm");
+		expect(prose.join("\n")).not.toContain("in der Napf des Hundes");
+		for (const l of LESSONS)
+			for (const c of l.cases) expect(c.prompt).toBe(c.prompt.trim());
+	});
+});

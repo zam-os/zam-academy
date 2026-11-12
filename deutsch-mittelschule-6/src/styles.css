@@ -811,19 +811,8 @@ dialog::backdrop {
 }
 
 /* Text workshop, using the existing Academy shell and local fonts. */
-[data-stage="sprechen"] .stage-icon {
-	color: #926333;
-}
-[data-stage="lesen"] .stage-icon {
-	color: #2c6c70;
-}
-[data-stage="schreiben"] .stage-icon {
-	color: #4e6c49;
-}
-[data-stage="sprache"] .stage-icon {
-	color: #606d93;
-}
 .stage-icon {
+	color: var(--stage-accent);
 	font-family: ui-serif, Georgia, serif;
 	font-weight: 600;
 }
@@ -891,6 +880,33 @@ main,
 }
 [data-stage="sprache"] {
 	--stage-accent: #606d93;
+}
+/* Stage accents remain legible in explicit and system dark themes. */
+:root[data-theme="dark"] [data-stage="sprechen"] {
+	--stage-accent: #e6b77e;
+}
+:root[data-theme="dark"] [data-stage="lesen"] {
+	--stage-accent: #88ced1;
+}
+:root[data-theme="dark"] [data-stage="schreiben"] {
+	--stage-accent: #efb4b8;
+}
+:root[data-theme="dark"] [data-stage="sprache"] {
+	--stage-accent: #b5c1ed;
+}
+@media (prefers-color-scheme: dark) {
+	:root:not([data-theme="light"]) [data-stage="sprechen"] {
+		--stage-accent: #e6b77e;
+	}
+	:root:not([data-theme="light"]) [data-stage="lesen"] {
+		--stage-accent: #88ced1;
+	}
+	:root:not([data-theme="light"]) [data-stage="schreiben"] {
+		--stage-accent: #efb4b8;
+	}
+	:root:not([data-theme="light"]) [data-stage="sprache"] {
+		--stage-accent: #b5c1ed;
+	}
 }
 .stage[data-stage],
 .lesson-heading {

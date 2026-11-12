@@ -2,7 +2,7 @@
 
 52 lessons, 104 checked workshop decisions, 104 writing tasks on two levels and 104 ZAM cards. The common Fachlehrplan applies to Grade 6; there are no separate M-track bindings in this grade.
 
-The app builds on the German Realschule Grade 5 shell, including its separate level drafts, explicit form submission, safe text rendering and cross-tab progress merging. Lesson explanations, cases and writing tasks follow the Mittelschule curriculum. Card text lives only in `cell.json`; the quick check reads its tier-1 item. Every lesson has one atom and two cards.
+The app builds on the German Realschule Grade 5 shell, including its separate level drafts, explicit form submission, safe text rendering and cross-tab progress merging. Lesson explanations, cases and writing tasks follow the Mittelschule curriculum. All 35 topics shared with Grade 5 explicitly review their foundation and add new material, cases and tasks on both levels; no identical question–answer pair is repeated across the two cells. `tests/progression.test.ts` checks this against the Grade 5 package. Card text lives only in `cell.json`; the quick check reads its tier-1 item. Every lesson has one atom and two cards.
 
 ```sh
 npm ci

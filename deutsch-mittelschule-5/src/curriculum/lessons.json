@@ -369,7 +369,7 @@
 		"id": "d5-lernziel",
 		"stage": "sprechen",
 		"title": "Deinen nächsten Lernschritt planen",
-		"skill": "Zeige ein Beispiel, setze ein kleines Ziel und prüfe es mit Rückmeldung.",
+		"skill": "Begründe ein kleines Lernziel mit einem Beispiel aus deinem Text.",
 		"bindings": ["1.3", "3.3"],
 		"paragraphs": [
 			"Ein Lerngespräch beginnt mit einem konkreten Beispiel. Nenne, was schon gelingt, und zeige eine Stelle, an der du Hilfe brauchst. Ein Ziel soll klein genug sein, dass du später prüfen kannst, ob du es erreicht hast.",
@@ -430,7 +430,7 @@
 		"id": "d5-fabelhoeren",
 		"stage": "sprechen",
 		"title": "Eine Hörgeschichte nacherzählen",
-		"skill": "Höre auf Problem, Handlung und Ausgang und gib die Geschichte in eigenen Worten wieder.",
+		"skill": "Erzähle eine gehörte Fabel mit Problem, Handlung und Ausgang nach.",
 		"bindings": ["1.1", "2.2"],
 		"paragraphs": [
 			"Höre beim ersten Mal auf die Figuren und das Problem. Beim zweiten Mal achtest du auf die entscheidende Handlung und den Ausgang. Notiere nur Stichwörter. Erzähle danach in der richtigen Reihenfolge mit eigenen Worten.",
@@ -734,7 +734,8 @@
 		"bindings": ["2.2", "2.1", "2.4"],
 		"paragraphs": [
 			"Lies Klappentext und eine kurze Leseprobe. Entscheide, ob dich Thema, Figuren oder Erzählweise ansprechen. Führe beim Lesen ein Tagebuch: Seite oder Kapitel, Ereignis, eigene Gedanken und eine Frage.",
-			"Für eine Buchvorstellung nennst du Titel und Autor oder Autorin, stellst Ausgangslage und Figuren vor und begründest deine Empfehlung mit einer Stelle. Lass den Ausgang offen, wenn du andere neugierig machen willst."
+			"Für eine Buchvorstellung nennst du Titel und Autor oder Autorin, stellst Ausgangslage und Figuren vor und begründest deine Empfehlung mit einer Stelle. Lass den Ausgang offen, wenn du andere neugierig machen willst.",
+			"Beispiel aus einer erfundenen Geschichte: In Kapitel 2 wartet Amira erst, bevor sie sich einem fremden Hund nähert. Im Tagebuch notierst du: „Kapitel 2: Amira prüft die Lage. Ich finde sie vorsichtig, weil sie nicht sofort zugreift. Wem gehört der Hund?“ Ereignis, Eindruck und Frage bleiben unterscheidbar."
 		],
 		"materialLabel": "Muster aus einem erfundenen Lesetagebuch",
 		"material": "Kapitel 2: Ein Hund taucht vor der Gartenlaube auf.\nEindruck: Ich fand Amiras Zögern mutig, weil sie erst die Lage prüft.\nFrage: Wem gehört der Hund?",
@@ -970,7 +971,7 @@
 		"id": "d5-medienzeit",
 		"stage": "lesen",
 		"title": "Medienzeit bewusst gestalten",
-		"skill": "Vergleiche Zweck, Dauer und Folgen deiner Mediennutzung und plane eine passende Veränderung.",
+		"skill": "Lies ein Medienprotokoll und plane eine passende Veränderung.",
 		"bindings": ["2.4"],
 		"paragraphs": [
 			"Ein Medienprotokoll hält fest, welches Medium du wofür und wie lange nutzt. Notiere auch, wie es dir dabei und danach geht. Gleichzeitige Tätigkeiten addierst du nicht doppelt, wenn du die gesamte vergangene Zeit berechnen willst.",
@@ -1028,7 +1029,7 @@
 		"id": "d5-chat",
 		"stage": "lesen",
 		"title": "Respektvoll und sicher schreiben",
-		"skill": "Schreibe klar und respektvoll, schütze persönliche Informationen und hole bei Angriffen Hilfe.",
+		"skill": "Formuliere eine Klärungsfrage und eine respektvolle Hilfebitte.",
 		"bindings": ["2.4", "4.1"],
 		"paragraphs": [
 			"Eine Kurznachricht braucht genug Zusammenhang. Ohne Stimme und Gesicht können Scherze verletzend wirken. Frage nach, bevor du eine Absicht unterstellst. Eine Nachricht an eine Lehrkraft braucht eine passende Anrede, ein klares Anliegen und einen Gruß.",
@@ -1075,7 +1076,7 @@
 			},
 			"2": {
 				"prompt": "Schreibe eine Nachricht an eine vertraute Lehrkraft, wenn die Angriffe weitergehen. Nutze erfundene Namen und keine privaten Details.",
-				"model": "Guten Tag Frau Kaya, im Gruppenchat wird ein Kind wiederholt mit einem Foto verspottet. Das Kind hat widersprochen. Können Sie uns helfen, die Angriffe zu stoppen? Viele Grüße, Alex",
+				"model": "Guten Tag Frau Kaya,\nim Gruppenchat wird ein Kind wiederholt mit einem Foto verspottet. Das Kind hat widersprochen. Können Sie uns helfen, die Angriffe zu stoppen?\nViele Grüße\nAlex",
 				"criteria": [
 					"Ich schildere das Problem sachlich.",
 					"Ich bitte klar um Hilfe.",
@@ -1089,7 +1090,7 @@
 		"id": "d5-werbung",
 		"stage": "lesen",
 		"title": "Eine Werbeanzeige durchschauen",
-		"skill": "Unterscheide konkrete Produktangaben von Werbeversprechen und beschreibe ihre Wirkung.",
+		"skill": "Untersuche, welche Mittel einer Anzeige informieren und welche werben.",
 		"bindings": ["2.4", "4.1"],
 		"paragraphs": [
 			"Eine Werbung möchte meist, dass du etwas kaufst, ausprobierst oder gut findest. Auffällige Schrift, ein Bild und ein kurzer Spruch lenken deine Aufmerksamkeit. Prüfe, welche Information belegt wird und welches Versprechen vor allem ein Gefühl auslöst.",
@@ -1147,7 +1148,7 @@
 		"id": "d5-realitaet",
 		"stage": "lesen",
 		"title": "Wirklichkeit und Erfindung unterscheiden",
-		"skill": "Prüfe einzelne Elemente einer Darstellung, auch wenn der Schauplatz wirklich existiert.",
+		"skill": "Ordne realistische und fantastische Elemente einer Geschichte einzeln ein.",
 		"bindings": ["2.4", "2.2"],
 		"paragraphs": [
 			"Eine erfundene Geschichte kann an einem wirklichen Ort spielen. Trotzdem müssen ihre Handlungen nicht wirklich möglich sein. Prüfe einzelne Aussagen: Was ist erkennbar erfunden, was könnte man überprüfen und was weißt du noch nicht?",
@@ -1208,7 +1209,7 @@
 		"id": "d5-hoerspiel",
 		"stage": "lesen",
 		"title": "Mit Stimme und Geräuschen erzählen",
-		"skill": "Wähle Stimme, Geräusche und Pausen passend zu der Wirkung, die dein Hörspiel haben soll.",
+		"skill": "Entwirf zwei Tonpläne mit unterschiedlicher Stimmung.",
 		"bindings": ["2.4", "1.4"],
 		"paragraphs": [
 			"Ein Hörspiel erzählt mit Stimmen, Geräuschen, Musik und Pausen. Das Publikum sieht die Handlung nicht. Ein Geräusch kann einen Ort erkennbar machen, eine Pause Erwartung wecken. Überlege, was du wirklich hörbar machen musst.",
@@ -1629,7 +1630,7 @@
 		"id": "d5-handschrift",
 		"stage": "schreiben",
 		"title": "Lesbar und entspannt schreiben",
-		"skill": "Passe Schriftgröße und Tempo an den Zweck an und überprüfe deine Handschrift auf Papier.",
+		"skill": "Vergleiche zwei Schriftproben auf Papier und erprobe eine Verbesserung.",
 		"bindings": ["3.1", "4.3"],
 		"paragraphs": [
 			"Lesbarkeit entsteht durch erkennbare Buchstaben, Wortabstände, passende Größe und eine ruhige Zeile. Probiere eine lockere Stifthaltung aus und achte auf bequeme Sitzhaltung, entspannte Schultern und eine gut liegende Schreibunterlage. Drücke nicht unnötig fest auf.",
@@ -1690,7 +1691,7 @@
 		"id": "d5-dokument",
 		"stage": "schreiben",
 		"title": "Eine Seite übersichtlich gestalten",
-		"skill": "Gliedere nach Inhalt und verwende Formatierung oder Bilder, um eine wichtige Information zu erklären.",
+		"skill": "Plane eine gegliederte Seite mit einem erklärenden Bild.",
 		"bindings": ["3.1"],
 		"paragraphs": [
 			"Eine Überschrift nennt das Thema, Absätze ordnen die Gedanken. Setze wenige, gezielte Hervorhebungen ein. Richte Fließtext gut lesbar aus und wähle eine Schriftgröße, die zum Zweck passt. Bilder brauchen einen erkennbaren Bezug zum Text und eine verständliche Beschriftung.",
@@ -1748,7 +1749,7 @@
 		"id": "d5-formular",
 		"stage": "schreiben",
 		"title": "Ein Formular sorgfältig ausfüllen",
-		"skill": "Ordne Angaben den richtigen Feldern zu und kläre Unbekanntes vor einer echten Anmeldung.",
+		"skill": "Ordne erfundene Angaben den passenden Formularfeldern zu.",
 		"bindings": ["3.1"],
 		"paragraphs": [
 			"Lies zuerst, wofür das Formular da ist. Prüfe Feldnamen und geforderte Schreibweise. Schreibe jede Angabe in das passende Feld. Wenn du eine Angabe nicht kennst, frage nach, statt etwas zu erfinden.",
@@ -1765,7 +1766,7 @@
 		"lehrplan": "D5 LB 3.1",
 		"cases": [
 			{
-				"prompt": "Welche Angabe gehört ins Klassenfeld? ",
+				"prompt": "Welche Angabe gehört ins Klassenfeld?",
 				"options": ["5a", "Yilmaz"],
 				"answer": "5a",
 				"feedback": "Die Klasse ist eine andere Angabe als Vor- oder Nachname."
@@ -1806,7 +1807,7 @@
 		"id": "d5-bericht",
 		"stage": "schreiben",
 		"title": "Ein Geschehen sachlich berichten",
-		"skill": "Berichte geordnet und sachlich; verwende gesicherte Angaben und erfinde keine Ursache.",
+		"skill": "Schreibe aus Notizen einen sachlichen Bericht ohne erfundene Gründe.",
 		"bindings": ["3.2", "1.2", "3.1"],
 		"paragraphs": [
 			"Ein Bericht informiert über ein Geschehen. Kläre die W-Fragen: Wer, was, wann, wo, wie und gegebenenfalls warum? Ordne die gesicherten Angaben zeitlich. Unbekannte Gründe erfindest du nicht. Eigene Gefühle und Spannung gehören nur hinein, wenn sie für die Information wichtig und klar zugeordnet sind.",
@@ -1867,7 +1868,7 @@
 		"id": "d5-vorgang",
 		"stage": "schreiben",
 		"title": "Einen Vorgang verständlich beschreiben",
-		"skill": "Nenne Material und geordnete Schritte mit genauen Verben und gleicher Ansprache.",
+		"skill": "Überführe Stichwörter in eine ausführbare Schrittfolge.",
 		"bindings": ["3.2"],
 		"paragraphs": [
 			"Eine Vorgangsbeschreibung zeigt, wie etwas gemacht wird. Nenne zuerst nötige Dinge, dann die Schritte in der richtigen Reihenfolge. Verwende genaue Verben und eine einheitliche Ansprache. Häufig passt das Präsens.",
@@ -2263,7 +2264,7 @@
 		"skill": "Erkenne Stamm, Wortbausteine und Wortfelder.",
 		"bindings": ["4.2", "4.3"],
 		"paragraphs": [
-			"Bei einer Ableitung kommt ein Präfix vor oder ein Suffix nach den Stamm: „vor-les-en“, „les-bar“. „Lesen“, „Leser“ und „lesbar“ gehören zur Wortfamilie. Die Stammformen von „lesen“ sind der Infinitiv „lesen“, die Präteritumsform „las“ und das Partizip Perfekt „gelesen“. Der Stammvokal wechselt von e zu a und zurück zu e. Ein Wortfeld sammelt bedeutungsähnliche Wörter wie „sagen, flüstern, rufen“.",
+			"Bei einer Ableitung steht ein Präfix vor dem Stamm oder ein Suffix nach dem Stamm: „vor-les-en“, „les-bar“. „Lesen“, „Leser“ und „lesbar“ gehören zur Wortfamilie. Die Stammformen von „lesen“ sind der Infinitiv „lesen“, die Präteritumsform „las“ und das Partizip Perfekt „gelesen“. Der Stammvokal wechselt von e zu a und zurück zu e. Ein Wortfeld sammelt bedeutungsähnliche Wörter wie „sagen, flüstern, rufen“.",
 			"Bei einem zusammengesetzten Nomen steht das Grundwort hinten. Es bestimmt oft Bedeutungskern und Artikel: „die Schultür“ ist eine Tür, „das Türschild“ ist ein Schild. Das Bestimmungswort grenzt ein. Ein bekanntes Präfix wie „vor-“ hilft beim Schreiben von „vorlesen“, während „Forscher“ nicht aus diesem Präfix besteht. In „verkaufen“ steht ver-, weil es ein Präfix vor „kaufen“ ist. In „freundlich“ schreibt man die Nachsilbe -lich. Das klappt auch mit einem Adjektiv als Grundwort: „Eis“ und „kalt“ ergeben „eiskalt“. Das zusammengesetzte Adjektiv wird im Satz kleingeschrieben."
 		],
 		"materialLabel": "Wörterwerkstatt",
@@ -2769,7 +2770,7 @@
 		"id": "d5-fehlerkartei",
 		"stage": "sprache",
 		"title": "Aus Fehlern einen Übungsplan machen",
-		"skill": "Ordne wiederholte Fehler einer Strategie zu und prüfe den Erfolg später ohne Vorlage.",
+		"skill": "Wähle zu einem Fehler eine passende Strategie und eine spätere Prüfung.",
 		"bindings": ["4.3", "3.3"],
 		"paragraphs": [
 			"Verbessere einen Fehler nicht nur einmal. Finde heraus, welcher Fehlerart er angehört: Wortstamm, Silbe, Großschreibung, Merkwort oder Satzzeichen. Notiere die richtige Form und eine passende Prüfhilfe. Übe dann später erneut ohne Vorlage.",
@@ -2827,7 +2828,7 @@
 		"id": "d5-wortbausteine",
 		"stage": "sprache",
 		"title": "Laute, Buchstaben und Silben unterscheiden",
-		"skill": "Unterscheide Gehörtes und Geschriebenes; gliedere Wörter in Sprechsilben.",
+		"skill": "Vergleiche Buchstabenanzahl, Laute und Sprechsilben an Beispielen.",
 		"bindings": ["4.2", "4.3"],
 		"paragraphs": [
 			"Ein Laut ist etwas, das du hörst oder sprichst. Ein Buchstabe ist ein Schriftzeichen. Beides passt nicht immer eins zu eins zusammen: „sch“ sind drei Buchstaben für einen Laut. Silben sind Sprecheinheiten, die du langsam sprechen oder klatschen kannst.",
@@ -2882,7 +2883,7 @@
 		"id": "d5-nomen-gross",
 		"stage": "sprache",
 		"title": "Nomen mit Proben erkennen",
-		"skill": "Prüfe Begleiter, mögliche Erweiterung und typische Endungen, um Nomen großzuschreiben.",
+		"skill": "Begründe die Großschreibung mit Begleitern, Erweiterung und Endung.",
 		"bindings": ["4.3"],
 		"paragraphs": [
 			"Nomen schreibst du groß. Ein Artikel oder ein Possessivpronomen kann dir helfen, den nominalen Kern zu finden: „das Haus“, „mein Haus“. Auch mit einer Erweiterung bleibt der Kern erkennbar: „mein kleines Haus“. Das Adjektiv dazwischen bleibt klein.",
@@ -2940,7 +2941,7 @@
 		"id": "d5-silbentrennung",
 		"stage": "sprache",
 		"title": "Wörter am Zeilenende trennen",
-		"skill": "Trenne nach Silben und lass ck sowie sch an ihrer gemeinsamen Stelle zusammen.",
+		"skill": "Setze Trennstellen und erkläre Ausnahmen bei ck und sch.",
 		"bindings": ["4.3"],
 		"paragraphs": [
 			"Trenne Wörter am Zeilenende grundsätzlich nach Sprechsilben. Mehrere Konsonantenbuchstaben zwischen Vokalen trennst du meist vor dem letzten: „Kat-ze“, „Fens-ter“. Die Buchstabenverbindung „ck“ bleibt zusammen und kommt auf die neue Zeile: „ba-cken“.",

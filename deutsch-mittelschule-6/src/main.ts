@@ -183,7 +183,7 @@ function renderLesson(lesson: Lesson): void {
 					.querySelectorAll(".quiz-choice")
 					.forEach((b) => void b.classList.toggle("selected", b === button));
 				element("#quiz-feedback").innerHTML =
-					`<p class="feedback ${correct ? "success" : "hint"}">${correct ? `Richtig. ${esc(lesson.quiz.explanation)}` : "Prüfe noch einmal. Lies die drei Antworten noch einmal."}</p>`;
+					`<p class="feedback ${correct ? "success" : "hint"}">${correct ? `Richtig. ${esc(lesson.quiz.explanation)}` : `Noch nicht. ${esc(lesson.quiz.explanation)} Vergleiche die Antworten und entscheide erneut.`}</p>`;
 				void persist();
 			}),
 	);

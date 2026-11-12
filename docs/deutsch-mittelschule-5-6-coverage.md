@@ -48,16 +48,30 @@ node scripts/check-curriculum.mjs
 npm run package:zip
 ```
 
-The Grade 5 suite passes 96 tests; Grade 6 passes 97. Curriculum verification reports 71 and 76 rows respectively, with no missing text and matching source hashes. `package:zip` builds the self-contained HTML, creates Windows/macOS/Linux starters and compares the ZIP's exact HTML bytes. Its buffer is sized from the actual HTML so bundled audio above Node's default output-buffer size does not break verification.
+The Grade 5 suite passes 100 tests; Grade 6 passes 105. Curriculum verification reports 71 and 76 rows respectively, with no missing text and matching source hashes. `package:zip` builds the self-contained HTML, creates Windows/macOS/Linux starters and compares the ZIP's exact HTML bytes. Its buffer is sized from the actual HTML so bundled audio above Node's default output-buffer size does not break verification.
 
 At the repository root:
 
 ```sh
-node --test scripts/build-catalog.test.mjs scripts/academy-registry.test.mjs
+node --test scripts/build-catalog.test.mjs scripts/academy-registry.test.mjs scripts/changed-apps.test.mjs
 ZAM_CORE=file:///tmp/zam-ms-german-core/node_modules/zam-core/dist/index.js node scripts/validate-cells.mjs
 node scripts/build-catalog.mjs /tmp/zam-ms-german-catalog.json
 ```
 
-The registry/catalog tests pass 51 tests. `zam-core@0.54.0`, the version pinned in CI, installs all cells, including the 102- and 104-item additions. The catalog builder accepts both additions without a mapping approval and produces 53 published cell entries.
+The registry/catalog/package-discovery tests pass 56 tests. `zam-core@0.54.0`, the version pinned in CI, installs all cells, including the 102- and 104-item additions. The catalog builder accepts both additions without a mapping approval and produces 53 published cell entries.
 
-Each package also provides `npm run test:browser`. With a dedicated Chrome profile and remote debugging on port 9441, it opens the built file directly, checks all lesson titles, interactive cases and level-specific prompts, captures each lesson on both levels in light and dark themes, and checks path/reference views. It tests real completion on both levels, persistence after reload, local audio decoding, mobile layout and the ZAM dialog. It fails on app exceptions or external network requests. Grade 5 checks 204 lesson states and Grade 6 checks 208. Screenshots and a JSON report go to a temporary folder. The package README documents setup and the optional artifact directory. These automated and visual checks are not a substitute for classroom evaluation or an independent pre-merge review.
+Each package also provides `npm run test:browser`. With a dedicated Chrome profile and remote debugging on port 9441, it opens the built file directly, checks all lesson titles, interactive cases and level-specific prompts, captures each lesson on both levels in light and dark themes, opens and checks every displayed model comparison, and checks path/reference views. It tests real completion on both levels, persistence after reload, local audio decoding, mobile layout and the ZAM dialog. It fails on app exceptions or external network requests. Grade 5 checks 204 lesson states and Grade 6 checks 208. Screenshots and a JSON report go to a temporary folder. The package README documents setup and the optional artifact directory. These automated and visual checks are not a substitute for classroom evaluation or an independent pre-merge review.
+
+## Review follow-up (2026-11-12)
+
+The completed reviews identified repetition between the two grades and missing language outcomes. The revision keeps all lesson anchors, item slugs and ULIDs while advancing the 35 topics shared by the packages. Each Grade 6 topic now explicitly reviews the Grade 5 foundation and supplies new material, two new checked cases and different tasks on both levels. Its 70 linked cards use new application questions and answers. `tests/progression.test.ts` compares the actual Grade 5 files with Grade 6: no shared topic retains the same material, cases or task prompts, and no identical question–answer pair remains across the cells. This does not propose any review-history transfer. Both unpublished cells advance to `2026.11.2`.
+
+The Grade 6 narration task now creates atmosphere through concrete perceptions, precise verbs, thoughts and controlled pacing. Conversation tasks interpret nonverbal signals cautiously and respond to an actual objection. Learning reflection compares a goal with evidence before planning a next step. Handwriting tasks require independent comparison of pressure, pace and legibility on paper. The rest of the shared topics similarly use new contexts and observable task criteria rather than a grade-number substitution.
+
+D6 4.1.5 now has explicit work on a Redensart, a Sprichwort and appropriate contextual use alongside the poem's comparison. D6 4.2.2 analyses derivation and compounds in a pragmatic workshop text, then requires an explained Neuschöpfung and a comparison of informative and appealing language. The matrix evidence names these actual exercises. D5 4.3.1 also links the lesson that explains syllable-separating h.
+
+Other corrections cover the case after nach, quoted grammatical forms in the genitive-object explanation, sign-offs without a comma and with the name on the next line, and an unambiguous contrast between a passive sentence with a named agent and one without. Both reading-journal lessons include a worked example. The two long Grade 5 source/media quick-check prompts are shorter, and learning goals no longer duplicate the takeaway verbatim.
+
+A wrong quick-check answer now receives the explanation while remaining incorrect in stored progress. The event tests verify both parts. New convention checks scan learner prose separately from curriculum labels, including decimal punctuation, minus signs, spacing before units, model-email sign-offs and the corrected grammatical forms. Stage icons and lesson borders use the same accent; explicit and system dark modes have separate lighter accents. The browser verifier checks all four stage colours, a contrast ratio of at least 4.5 against their surface, the system-dark selector, the light override and explanation after a wrong answer. Each rendered model answer is checked against its lesson data with three visible self-assessment criteria.
+
+The follow-up responds to the [Antigravity review](https://github.com/zam-os/zam-academy/pull/118#issuecomment-6835509667), [Grok review](https://github.com/zam-os/zam-academy/pull/118#pullrequestreview-5881887492) and [OpenCode review](https://github.com/zam-os/zam-academy/pull/118#issuecomment-6835805554). It remains subject to re-review; this change does not merge the PR.
