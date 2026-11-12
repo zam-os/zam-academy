@@ -704,7 +704,7 @@
       "practice_items": [
         {
           "id": "01M78NF6SAB43KZXEJ0MN21HS3",
-          "slug": "ms8-halbkreis-winkel",
+          "slug": "ms8-vollkreis-winkel",
           "language": "de",
           "tier": "tier1_fast",
           "bloom_level": 1,
@@ -712,21 +712,21 @@
           "materiality": "material",
           "choice_distractors": [
             {
-              "text": "Genau 3,6 Grad wie am Vollkreis",
-              "reason": "Ein Halbkreis hat nur 180° Gesamtumfang, daher 180° : 100 = 1,8°."
+              "text": "Genau 1,8 Grad wie am Halbkreis",
+              "reason": "Ein Vollkreis misst 360°, daher gilt 360° : 100 = 3,6° (1,8° gehört zum Halbkreis)."
             },
             {
-              "text": "Genau 1,0 Grad bei hundert Teilen",
-              "reason": "Hundert Prozent füllen 180°, nicht hundert Grad."
+              "text": "Genau 10 Grad pro Prozentwert",
+              "reason": "Hundert Prozent ergeben 360 Grad, ein Prozent folglich 3,6 Grad."
             }
           ],
-          "question": "Welchem Mittelpunktswinkel entspricht 1 % im Halbkreisdiagramm (M8)?",
-          "concept": "Genau 1,8 Grad am Halbkreis",
+          "question": "Welchem Mittelpunktswinkel entspricht 1 % im Kreisdiagramm (Vollkreis)?",
+          "concept": "Genau 3,6 Grad am Vollkreis",
           "fast_check": {
             "type": "binary_choice",
             "options": [
-              "Genau 1,8 Grad am Halbkreis",
-              "Genau 3,6 Grad wie am Vollkreis"
+              "Genau 3,6 Grad am Vollkreis",
+              "Genau 1,8 Grad wie am Halbkreis"
             ],
             "correct_index": 0
           }
@@ -762,11 +762,128 @@
         },
         {
           "id": "01M78NF6SAS9RPMA9G4NVBYRP8",
-          "slug": "ms8-plus-minus-transfer",
+          "slug": "ms8-streifendiagramm-transfer",
           "language": "de",
           "tier": "tier2_transfer",
           "bloom_level": 3,
           "source_link": "https://academy.zam-os.org/mathematik-mittelschule-8/#lesson=pr-6-schaubilder-prozent",
+          "materiality": "material",
+          "choice_distractors": [
+            {
+              "text": "Genau 35 Zentimeter am Lineal",
+              "reason": "100 % füllen den 10-cm-Streifen — 35 % sind 35 mm, nicht 35 cm."
+            },
+            {
+              "text": "Genau 3,6 Millimeter Breite",
+              "reason": "3,6° gehören zum Vollkreiswinkel; beim 10-cm-Streifen gilt 1 % = 1 mm."
+            }
+          ],
+          "question": "Ein Streifendiagramm ist 10 cm (100 mm) lang. Wie lang zeichnest du einen Bereich mit 35 %?",
+          "concept": "Genau 3,5 Zentimeter am Lineal",
+          "sample_solution": "Bei 10 cm Gesamtlänge (100 mm) entspricht 1 % genau 1 mm. Für 35 % trägst du 35 mm = 3,5 cm ab."
+        }
+      ]
+    },
+    {
+      "id": "01M78W9FTMDQHV9JCF27KGJ3RZ",
+      "atom_uri": "urn:zam:atom:01M78W9FTMDQHV9JCF27KGJ3RZ",
+      "namespace": "zam-academy-mathematik-mittelschule-8",
+      "slug": "pr-6m-halbkreis-plus-minus",
+      "title": "Plus-Minus- & Halbkreisdiagramm (M8)",
+      "domain": "mathematik/prozentrechnung",
+      "reduction": "axiomatic",
+      "typical_age_min": 13,
+      "source_link": "https://academy.zam-os.org/mathematik-mittelschule-8/#lesson=pr-6m-halbkreis-plus-minus",
+      "prerequisites": [
+        {
+          "atom_id": "01M78NF6SAHF6SR8SKVCZ94VY6",
+          "type": "soft",
+          "rationale": "Vertieft die grundlegenden Prozentdiagramme um Halbkreis- und Plus-Minus-Darstellungen im M-Zug."
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "zam-academy",
+          "subject": "mathematik-mittelschule-8",
+          "topic_code": "stage-1-prozent",
+          "topic_title": "Etappe 1: Prozentrechnung"
+        },
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "mittelschule",
+          "grade": 8,
+          "subject": "mathematik",
+          "track": "M",
+          "topic_code": "lb1",
+          "topic_title": "Prozentrechnung"
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01M78W9FTMN0F2FEG3M92567EE",
+          "slug": "ms8-halbkreis-winkel",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/mathematik-mittelschule-8/#lesson=pr-6m-halbkreis-plus-minus",
+          "materiality": "material",
+          "choice_distractors": [
+            {
+              "text": "Genau 3,6 Grad wie am Vollkreis",
+              "reason": "Ein Halbkreis hat nur 180° Gesamtumfang, daher 180° : 100 = 1,8°."
+            },
+            {
+              "text": "Genau 1,0 Grad bei hundert Teilen",
+              "reason": "Hundert Prozent füllen 180°, nicht hundert Grad."
+            }
+          ],
+          "question": "Welchem Mittelpunktswinkel entspricht 1 % im Halbkreisdiagramm (M8)?",
+          "concept": "Genau 1,8 Grad am Halbkreis",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Genau 1,8 Grad am Halbkreis",
+              "Genau 3,6 Grad wie am Vollkreis"
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M78W9FTM66ZG9YDTQ98EWB2Q",
+          "slug": "ms8-plus-minus-nulllinie",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "source_link": "https://academy.zam-os.org/mathematik-mittelschule-8/#lesson=pr-6m-halbkreis-plus-minus",
+          "materiality": "material",
+          "choice_distractors": [
+            {
+              "text": "Zuwachs gegenüber dem Ausgangswert",
+              "reason": "Zuwächse werden rechts bzw. oberhalb der Nulllinie eingetragen."
+            },
+            {
+              "text": "Unveränderter Wert bei null Euro",
+              "reason": "Ohne Veränderung bleibt der Balken bei null; Balken links davon zeigen Abnahmen."
+            }
+          ],
+          "question": "Was zeigt ein Balken links oder unterhalb der Nulllinie im Plus-Minus-Diagramm an?",
+          "concept": "Prozentualer Rückgang unter Startwert",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Prozentualer Rückgang unter Startwert",
+              "Zuwachs gegenüber dem Ausgangswert"
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01M78W9FTMGQ1YG2DS2M69C8FP",
+          "slug": "ms8-plus-minus-transfer",
+          "language": "de",
+          "tier": "tier2_transfer",
+          "bloom_level": 3,
+          "source_link": "https://academy.zam-os.org/mathematik-mittelschule-8/#lesson=pr-6m-halbkreis-plus-minus",
           "materiality": "material",
           "choice_distractors": [
             {

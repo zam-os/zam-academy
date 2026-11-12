@@ -136,7 +136,7 @@ cd uml                 # or: cd physik-realschule-9 (dev server on :5181), cd sq
 # Physik 11 Gymnasium: cd physik-gymnasium-11 (dev server on :5226)
 # Mathematics 5 Mittelschule: cd mathematik-mittelschule-5 (dev server on :5228)
 # Mathematics 6 Mittelschule: cd mathematik-mittelschule-6 (dev server on :5229)
-# Mathematik 8 Mittelschule: cd mathematik-mittelschule-8 (dev server on :5231)
+# Mathematik 8 Mittelschule: cd mathematik-mittelschule-8 (dev server on :5233)
 # Grade 11 introductory biology preview: cd biologie-gymnasium-11 (dev server on :5227)
 npm ci
 npm run dev      # http://localhost:5180/uml/

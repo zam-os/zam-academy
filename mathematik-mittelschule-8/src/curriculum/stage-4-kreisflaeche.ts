@@ -394,14 +394,14 @@ export const STAGE_KREISFLAECHE = makeStage(
                 ? `Berechne die Fläche eines Kreissektors mit r = ${r} cm und μ = ${mu}°.`
                 : `Ein Kreissektor mit Radius r = ${r} cm hat eine Fläche von A = ${fmt(A, 2)} cm². Wie groß ist sein Mittelpunktswinkel μ?`,
               level === 1
-                ? `Ein Rasensprenger bestreicht eine Sektorfläche mit Radius ${r} m im Winkel ${mu}°. Berechne die bewässerte Fläche.`
+                ? `Ein Rasensprenger bestreicht eine Sektorfläche mit Radius ${r} cm im Winkel ${mu}°. Berechne die überstrichene Sektorfläche.`
                 : `Aus einem runden Blech (r = ${r} cm) wird ein Sektor mit Flächeninhalt ${fmt(A, 2)} cm² geschnitten. Wie viel Grad misst sein Mittelpunktswinkel?`,
               level === 1
-                ? [numberField("Sektorfläche =", A, "m²", 2, { tolerance: 0.005 })]
+                ? [numberField("Sektorfläche =", A, "cm²", 2, { tolerance: 0.005 })]
                 : [numberField("Winkel μ =", mu, "°", 0, { absTolerance: 0.6 })],
               level === 1 ? "A_Sektor = r² · π · (μ / 360°)" : "μ = (A_Sektor · 360°) : (r² · π)",
               level === 1
-                ? [`A = ${r}² · π · ${frac(mu, 360)}`, `<strong>${fmt(A, 2)} m²</strong>`]
+                ? [`A = ${r}² · π · ${frac(mu, 360)}`, `<strong>${fmt(A, 2)} cm²</strong>`]
                 : [`μ = (${fmt(A, 2)} · 360°) : (${r}² · π)`, `<strong>${mu}°</strong>`],
               { r, mu, A },
             );

@@ -3,6 +3,7 @@ import {
   Plot,
   W,
   circle,
+  clipped,
   handle,
   infoBox,
   line,
@@ -10,21 +11,19 @@ import {
   open,
   path,
   polygon,
-  polyline,
   r1,
   rect,
   sectorPath,
   text,
   type LabView,
-  type Pt,
 } from "./svg";
 import { coordinateHandle, title } from "./view-helpers";
 
 /** 16. Glücksrad & Gesetz der großen Zahlen (relative Häufigkeit vs. Laplace) */
 export const chanceWheelView: LabView = {
   render(v, r) {
-    const win = v.win ?? 3;
-    const totalSeg = v.totalSeg ?? 8;
+    const totalSeg = Math.max(1, v.totalSeg ?? 8);
+    const win = Math.min(v.win ?? 3, totalSeg);
     const trials = Math.max(0, v.trials ?? 0);
     const hits = Math.max(0, v.hits ?? 0);
     const cx = 132;
@@ -171,22 +170,19 @@ export const funcCompareView: LabView = {
     const plot = new Plot(0, 5, 0, yMax, { x: 72, y: 54, w: 340, h: 224 });
 
     const fn = (x: number) => (kind === 2 ? 0.5 * x * x : m * x + t);
-    const pts: Pt[] = [];
-    for (let x = 0; x <= 5.01; x += 0.25) {
-      const y = fn(x);
-      if (y <= yMax + 2) pts.push(plot.P(x, Math.min(yMax, y)));
-    }
-
     const cls = kind === 0 ? "proportional" : kind === 1 ? "linear" : "nicht linear";
-    const p0 = plot.P(0, Math.min(yMax, fn(0)));
-    const p3 = plot.P(3, Math.min(yMax, fn(3)));
+    const y0 = fn(0);
+    const y3 = fn(3);
+    const p0 = plot.P(0, y0);
+    const p3 = plot.P(3, y3);
     return (
       open("Funktionale Zusammenhänge") +
+      `<defs>${plot.clip("func-clip")}</defs>` +
       title(`Darstellung: ${cls} · Achsen-Obergrenze ${yMax}`) +
       plot.grid(1, yMax / 5, "x", "y") +
-      polyline(pts, "lab-curve") +
-      circle(p0.x, p0.y, 5, "lab-point") +
-      circle(p3.x, p3.y, 5, "lab-point") +
+      clipped("func-clip", plot.graph(fn, "lab-curve")) +
+      (plot.contains(0, y0) ? circle(p0.x, p0.y, 5, "lab-point") : "") +
+      (plot.contains(3, y3) ? circle(p3.x, p3.y, 5, "lab-point") : "") +
       infoBox(
         314,
         74,

@@ -1,7 +1,7 @@
 import type { LabValues } from "../src/model/types";
 
 /**
- * Konkrete Schieberegler- und Auswahlwerte (Zeugen) für jeden der 90 Laboraufträge.
+ * Konkrete Schieberegler- und Auswahlwerte (Zeugen) für jeden der 93 Laboraufträge.
  */
 export const GOAL_WITNESSES: Record<string, Record<string, LabValues>> = {
   "pr-1-rabatt-preisaenderung": {
@@ -30,6 +30,11 @@ export const GOAL_WITNESSES: Record<string, Record<string, LabValues>> = {
     "food-7pct": { ek: 200, hk: 20, gew: 10, ust: 7 },
   },
   "pr-6-schaubilder-prozent": {
+    "circle-90": { mode: 0, pA: 25, pB: 40, y0: 0 },
+    "trick-y0": { mode: 1, pA: 35, pB: 40, y0: 50 },
+    "fair-compare": { mode: 1, pA: 60, pB: 40, y0: 0 },
+  },
+  "pr-6m-halbkreis-plus-minus": {
     "plus-minus-zero": { mode: 0, a: 15, b: -30, c: 15, posA: 40, posB: 35 },
     "half-90": { mode: 1, a: 15, b: -10, c: 20, posA: 50, posB: 35 },
     "half-36": { mode: 1, a: 15, b: -10, c: 20, posA: 20, posB: 35 },

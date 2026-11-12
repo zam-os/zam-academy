@@ -236,7 +236,7 @@ export const STAGE_FUNKTIONEN = makeStage(
         {
           id: "read-m-and-t",
           make(rng, level) {
-            const dx = rng.pick([2, 3, 4]);
+            const dx = rng.pick([1, 2, 4, 5]);
             const dy = rng.pick([-4, -3, -2, 2, 3, 4, 6]);
             const m = Number((dy / dx).toFixed(2));
             const t = rng.int(-3, 5);

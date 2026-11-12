@@ -362,7 +362,7 @@ export const STAGE_GLEICHUNGEN = makeStage(
             return task(
               level,
               `Ein Rechteck mit Umfang U = ${U} cm ist ${diff} cm länger als breit. Berechne die Breite x in cm.`,
-              `Ein Gärtner zäunt ein rechteckiges Beet mit insgesamt ${U} m Maschendraht ein. Die Länge beträgt genau ${diff} m mehr als die Breite. Wie breit ist das Beet (und wie lang in Level 2)?`,
+              `Ein Gärtner zäunt ein rechteckiges Beet mit insgesamt ${U} m Maschendraht ein. Die Länge beträgt genau ${diff} m mehr als die Breite. Wie breit und wie lang ist das Beet?`,
               level === 1
                 ? [numberField("Breite x =", w, "cm", 0)]
                 : [

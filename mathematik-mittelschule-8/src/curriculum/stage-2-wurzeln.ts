@@ -94,7 +94,7 @@ export const STAGE_WURZELN = makeStage(
             return task(
               level,
               `Berechne die Seitenlänge eines Quadrats mit dem Flächeninhalt A = ${area} cm².`,
-              `Eine quadratische Werkplatte besitzt genau ${area} cm² Fläche. Wie lang ist eine Seite (und welcher Umfang ergibt sich daraus in Level 2)?`,
+              `Eine quadratische Werkplatte besitzt genau ${area} cm² Fläche. Wie lang ist eine Seite (und welcher Umfang ergibt sich daraus)?`,
               level === 1
                 ? [
                     numberField("Seitenlänge a =", side, "cm", 0, {

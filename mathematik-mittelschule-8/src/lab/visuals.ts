@@ -4,6 +4,7 @@ import {
   discountChainView,
   bruttoNettoTaraView,
   kalkulationSchemaView,
+  percentChartsBasicView,
   percentDiagrams8View,
   promilleScaleView,
   squareRootAreaView,
@@ -17,6 +18,7 @@ import {
   annulusSectorView,
   compositeCircleAreaView,
   cylinderVolumeView,
+  cylinderCompoundView,
   hollowCylinderView,
 } from "./views-kreis-zylinder";
 import {
@@ -31,6 +33,7 @@ const VIEWS: Record<LabKind, LabView> = {
   "discount-chain": discountChainView,
   "brutto-netto-tara": bruttoNettoTaraView,
   "kalkulation-schema": kalkulationSchemaView,
+  "percent-charts-basic": percentChartsBasicView,
   "percent-diagrams-8": percentDiagrams8View,
   "promille-scale": promilleScaleView,
   "square-root-area": squareRootAreaView,
@@ -42,6 +45,7 @@ const VIEWS: Record<LabKind, LabView> = {
   "annulus-sector": annulusSectorView,
   "composite-circle-area": compositeCircleAreaView,
   "cylinder-volume": cylinderVolumeView,
+  "cylinder-compound": cylinderCompoundView,
   "hollow-cylinder": hollowCylinderView,
   "chance-wheel": chanceWheelView,
   "term-distributive": termDistributiveView,

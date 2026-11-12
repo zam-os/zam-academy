@@ -184,7 +184,7 @@ export const STAGE_ZYLINDER = makeStage(
         explanation: "Das Dach ist nur ein halber Zylinder (120 : 2 = 60 m³), also 400 + 60 = 460 m³.",
       },
       lab: lab(
-        "cylinder-volume",
+        "cylinder-compound",
         "Teilfüllung & Volumenanteil prüfen",
         "Bestimme Volumina für volle und teilweise gefüllte Zylinder als Baustein zusammengesetzter Körper.",
         [
@@ -221,17 +221,18 @@ export const STAGE_ZYLINDER = makeStage(
             const r = rng.pick([2, 3, 4]);
             const hk = rng.pick([5, 8, 10]);
             const V = PI * r * r * hk;
+            const vRounded = Number(V.toFixed(2));
             const rho = rng.pick([2.7, 7.8]);
-            const mass = Number((V * rho).toFixed(1));
+            const mass = Number((vRounded * rho).toFixed(1));
             return task(
               level,
               `Ein Aluminium- bzw. Metallzylinder (r = ${r} cm, hₖ = ${hk} cm) hat Dichte ${fmt(rho, 1)} g/cm³. Berechne seine Masse in Gramm.`,
               `In der Metallwerkstatt wird ein Vollzylinder aus ${rho < 3 ? "Aluminium (2,7 g/cm³)" : "Stahl (7,8 g/cm³)"} mit r = ${r} cm und Länge ${hk} cm gedreht. Wie schwer ist das Werkstück in Gramm?`,
               [numberField("Masse m =", mass, "g", 1, { tolerance: 0.005 })],
-              "Erst V = r² · π · h_k, dann m = V · Dichte",
+              "Erst V = r² · π · h_k (auf 2 Dezimalen runden), dann m = V · Dichte",
               [
-                `V = ${r}² · π · ${hk} ≈ ${fmt(V, 2)} cm³`,
-                `m = ${fmt(V, 2)} · ${fmt(rho, 1)} = <strong>${fmt(mass, 1)} g</strong>`,
+                `V = ${r}² · π · ${hk} ≈ ${fmt(vRounded, 2)} cm³`,
+                `m = ${fmt(vRounded, 2)} · ${fmt(rho, 1)} = <strong>${fmt(mass, 1)} g</strong>`,
               ],
               { r, hk, V, rho, mass },
             );

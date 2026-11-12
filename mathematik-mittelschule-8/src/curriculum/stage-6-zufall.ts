@@ -78,7 +78,7 @@ export const STAGE_ZUFALL = makeStage(
           state("hits", 0),
         ],
         [
-          output("theoPct", "Chance P (Theorie)", (v) => (v.win / v.totalSeg) * 100, "%", 1, true),
+          output("theoPct", "Chance P (Theorie)", (v) => (Math.min(v.win, v.totalSeg) / v.totalSeg) * 100, "%", 1, true),
           output("relPct", "Rel. Häufigkeit h", (v) => (v.trials > 0 ? (v.hits / v.trials) * 100 : 0), "%", 1),
         ],
         [
@@ -103,7 +103,7 @@ export const STAGE_ZUFALL = makeStage(
             id: "spin-10",
             label: "10× drehen",
             apply: (v) => {
-              const w = Math.min(v.win, v.totalSeg - 1);
+              const w = Math.min(v.win, v.totalSeg);
               return {
                 trials: v.trials + 10,
                 hits: v.hits + simulateSpins(v.trials, 10, w, v.totalSeg),
@@ -226,7 +226,7 @@ export const STAGE_ZUFALL = makeStage(
           state("hits", 0),
         ],
         [
-          output("theoPct", "Theorie P", (v) => (v.win / v.totalSeg) * 100, "%", 1, true),
+          output("theoPct", "Theorie P", (v) => (Math.min(v.win, v.totalSeg) / v.totalSeg) * 100, "%", 1, true),
           output("relPct", "Rel. Häufigkeit h", (v) => (v.trials > 0 ? (v.hits / v.trials) * 100 : 0), "%", 1),
         ],
         [
@@ -251,7 +251,7 @@ export const STAGE_ZUFALL = makeStage(
             id: "spin-50",
             label: "50× drehen",
             apply: (v) => {
-              const w = Math.min(v.win, v.totalSeg - 1);
+              const w = Math.min(v.win, v.totalSeg);
               return {
                 trials: v.trials + 50,
                 hits: v.hits + simulateSpins(v.trials, 50, w, v.totalSeg),
@@ -385,7 +385,7 @@ export const STAGE_ZUFALL = makeStage(
           state("hits", 0),
         ],
         [
-          output("theoPct", "Gewinnchance P", (v) => (v.win / v.totalSeg) * 100, "%", 1, true),
+          output("theoPct", "Gewinnchance P", (v) => (Math.min(v.win, v.totalSeg) / v.totalSeg) * 100, "%", 1, true),
           output("relPct", "Test-Häufigkeit", (v) => (v.trials > 0 ? (v.hits / v.trials) * 100 : 0), "%", 1),
         ],
         [
@@ -410,7 +410,7 @@ export const STAGE_ZUFALL = makeStage(
             id: "spin-25",
             label: "25× testen",
             apply: (v) => {
-              const w = Math.min(v.win, v.totalSeg - 1);
+              const w = Math.min(v.win, v.totalSeg);
               return {
                 trials: v.trials + 25,
                 hits: v.hits + simulateSpins(v.trials, 25, w, v.totalSeg),

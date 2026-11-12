@@ -300,3 +300,121 @@ describe("Aufgaben", () => {
     }
   });
 });
+
+describe("Review-Regressionen MS8", () => {
+  it("allows 1 %-step changes and exact cent reversals in Prozentrechnung", () => {
+    const pr2 = ALL_LESSONS.find((l) => l.id === "pr-2-skonto-umsatzsteuer")!;
+    const p1Param = pr2.lab.params.find((p) => p.key === "p1")!;
+    expect(p1Param.type === "range" && p1Param.step).toBe(1);
+    const updated = withChanges(pr2.lab, defaultLabValues(pr2.lab), {
+      p1: 7,
+      p2: -3,
+    });
+    expect(updated.p1).toBe(7);
+    expect(updated.p2).toBe(-3);
+
+    const pr4 = ALL_LESSONS.find((l) => l.id === "pr-4-wachstumsfaktor")!;
+    const revGen = pr4.exercises.find((g) => g.id === "reverse-with-q")!;
+    for (let i = 0; i < 40; i++) {
+      const task = revGen.make(createRng(i + 1), 2);
+      const numField = task.fields.find((f) => f.kind === "number");
+      if (numField && numField.kind === "number") {
+        expect(Math.round(numField.answer * 100) / 100).toBe(numField.answer);
+      }
+    }
+
+    const pr6 = ALL_LESSONS.find((l) => l.id === "pr-6-schaubilder-prozent")!;
+    const pr6m = ALL_LESSONS.find((l) => l.id === "pr-6m-halbkreis-plus-minus")!;
+    expect(pr6.tracks).toEqual(["R", "M"]);
+    expect(pr6.lab.kind).toBe("percent-charts-basic");
+    expect(pr6m.tracks).toEqual(["M"]);
+    expect(pr6m.lab.kind).toBe("percent-diagrams-8");
+  });
+
+  it("caps Laplace probabilities at 100 % and supports 100 % hits when win >= totalSeg", () => {
+    const zf1 = ALL_LESSONS.find((l) => l.id === "zf-1-zufall-laplace")!;
+    const v = withChanges(zf1.lab, defaultLabValues(zf1.lab), {
+      win: 7,
+      totalSeg: 4,
+    });
+    const readouts = computeReadouts(zf1.lab, v);
+    expect(readouts.theoPct).toBe(100);
+    const svg = labView(zf1.lab.kind).render(v, readouts);
+    expect(svg).toContain("4 von 4 Treffer");
+
+    const spun = applyAction(zf1.lab, v, "spin-10");
+    expect(spun.trials).toBe(10);
+    expect(spun.hits).toBe(10);
+  });
+
+  it("clips function plots cleanly instead of flattening and marks exact squares vs approximations", () => {
+    const fk1 = ALL_LESSONS.find((l) => l.id === "fk-1-zuordnungen-massstab")!;
+    const v = withChanges(fk1.lab, defaultLabValues(fk1.lab), {
+      kind: 1,
+      m: 3,
+      t: 4,
+      scaleZoom: 1,
+    });
+    const fkSvg = labView(fk1.lab.kind).render(v, computeReadouts(fk1.lab, v));
+    expect(fkSvg).toContain('<clipPath id="func-clip">');
+    expect(fkSvg).toContain('clip-path="url(#func-clip)"');
+    // Only p0 (0, 4) is in [0; 10]; p3 (3, 13) is outside yMax=10 and omitted
+    const dotCount = (fkSvg.match(/class="lab-point"/g) ?? []).length;
+    expect(dotCount).toBe(1);
+
+    const wz1 = ALL_LESSONS.find((l) => l.id === "wz-1-quadrieren-radizieren")!;
+    const vExact = { area: 64 };
+    const exactSvg = labView(wz1.lab.kind).render(
+      vExact,
+      computeReadouts(wz1.lab, vExact),
+    );
+    expect(exactSvg).toContain("√64 = 8 (exakt!)");
+    expect(exactSvg).not.toContain("≈");
+    const vApprox = { area: 50 };
+    const approxSvg = labView(wz1.lab.kind).render(
+      vApprox,
+      computeReadouts(wz1.lab, vApprox),
+    );
+    expect(approxSvg).toContain("≈");
+    expect(approxSvg).toContain("&lt;");
+  });
+
+  it("aligns cylinder-liter units, sector units, and linear slope decimals", () => {
+    const zy2 = ALL_LESSONS.find(
+      (l) => l.id === "zy-2-zylinder-zusammengesetzt",
+    )!;
+    expect(zy2.lab.kind).toBe("cylinder-compound");
+    const zyDefaults = defaultLabValues(zy2.lab);
+    const zySvg = labView(zy2.lab.kind).render(
+      zyDefaults,
+      computeReadouts(zy2.lab, zyDefaults),
+    );
+    expect(zySvg).toContain("dm");
+    expect(zySvg).toContain("dm³ (l)");
+
+    const kf3 = ALL_LESSONS.find((l) => l.id === "kf-3-kreisring-sektor")!;
+    const secRev = kf3.exercises.find((g) => g.id === "sector-area-reverse")!;
+    for (let i = 0; i < 20; i++) {
+      const task = secRev.make(createRng(i + 10), 1);
+      const numField = task.fields.find((f) => f.kind === "number");
+      if (numField && numField.kind === "number") {
+        expect(numField.unit).toBe("cm²");
+      }
+      expect(task.prompt).toContain("cm");
+    }
+
+    const fk2 = ALL_LESSONS.find(
+      (l) => l.id === "fk-2-lineare-funktionen-mxt",
+    )!;
+    const mAndT = fk2.exercises.find((g) => g.id === "read-m-and-t")!;
+    for (let i = 0; i < 20; i++) {
+      const task = mAndT.make(createRng(i + 5), 1);
+      const mField = task.fields.find(
+        (f) => f.kind === "number" && f.label === "Steigung m",
+      );
+      if (mField && mField.kind === "number") {
+        expect(Math.round(mField.answer * 100) / 100).toBe(mField.answer);
+      }
+    }
+  });
+});

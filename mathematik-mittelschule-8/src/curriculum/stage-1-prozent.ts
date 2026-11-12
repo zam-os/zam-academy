@@ -190,7 +190,7 @@ export const STAGE_PROZENT = makeStage(
           238 € · 0,97 = <strong>230,86 €</strong>.
         </div>
         <div class="merke">
-          <strong>Merke:</strong> Vom Netto- zum Bruttopreis rechnet man mal 1,19 (oder 1,07). Willst du umgekehrt aus dem Bruttopreis den Nettopreis berechnen, entsprichen brutto 119 % — teile durch 1,19!
+          <strong>Merke:</strong> Vom Netto- zum Bruttopreis rechnet man mal 1,19 (oder 1,07). Willst du umgekehrt aus dem Bruttopreis den Nettopreis berechnen, entsprechen brutto 119 % — teile durch 1,19!
         </div>
       `,
       formulas: [
@@ -219,8 +219,8 @@ export const STAGE_PROZENT = makeStage(
         "Nutze Schritt 1 für die Umsatzsteuer (+7 % oder +19 %) und Schritt 2 für einen Abzug wie Skonto.",
         [
           range("start", "Nettobetrag", 50, 400, 100, 50, "€"),
-          range("p1", "1. USt / Rabatt (%)", -50, 50, 15, 5, "%"),
-          range("p2", "2. Skonto / Änderung (%)", -50, 50, -5, 5, "%"),
+          range("p1", "1. USt / Rabatt (%)", -50, 50, 15, 1, "%"),
+          range("p2", "2. Skonto / Änderung (%)", -50, 50, -5, 1, "%"),
         ],
         [
           output("mid", "Nach Schritt 1", (v) => v.start * (1 + v.p1 / 100), "€", 2),
@@ -549,8 +549,8 @@ export const STAGE_PROZENT = makeStage(
         {
           id: "reverse-with-q",
           make(rng, level) {
-            const orig = rng.pick([120, 150, 200, 250, 300]);
-            const rabatt = rng.pick([15, 20, 25]);
+            const orig = rng.pick([100, 200, 300, 400]);
+            const rabatt = rng.pick([10, 20, 25]);
             const skonto = rng.pick([2, 5]);
             const paid = Number((orig * (1 - rabatt / 100) * (1 - skonto / 100)).toFixed(2));
             return task(
@@ -694,7 +694,7 @@ export const STAGE_PROZENT = makeStage(
             const bruttoVk = Number((netVk * 1.19).toFixed(2));
             return task(
               level,
-              `Einkaufspreis ${ek} €, dazu ${hk} % Handlungskosten und ${gew} % Gewinn (Stufe 1: Berechne die Selbstkosten).`,
+              `Einkaufspreis ${ek} €, dazu ${hk} % Handlungskosten. Berechne die Selbstkosten als Basis für den Gewinnzuschlag.`,
               `Ein Elektrohändler kauft Kopfhörer für ${ek} € (EK) ein, rechnet ${hk} % Handlungskosten und ${gew} % Gewinn auf die Selbstkosten sowie 19 % USt. Wie hoch ist der Bruttoverkaufspreis?`,
               level === 1
                 ? [numberField("Selbstkosten =", sk, "€", 2)]
@@ -716,22 +716,158 @@ export const STAGE_PROZENT = makeStage(
       ],
     }),
 
-    // 1.6 Schaubilder kritisch bewerten & Plus-Minus/Halbkreis (R + M)
+    // 1.6 Schaubilder & Darstellungskritik (R + M)
     makeLesson(1, 6, LB, {
       id: "pr-6-schaubilder-prozent",
       title: "Schaubilder & Darstellungskritik",
-      subtitle: "Plus-Minus- & Halbkreisdiagramme (M8) sowie Manipulationen durchschauen",
+      subtitle: "Säulen-, Balken-, Streifen- & Kreisdiagramme darstellen und Manipulationen erkennen",
       tracks: BOTH,
       whyItMatters:
-        "In Nachrichten und Werbung tauchen Prozentangaben in Balken-, Halbkreis- oder Plus-Minus-Diagrammen auf — manche tricksen optisch mit abgeschnittenen Achsen.",
+        "In Nachrichten und Werbung begegnen dir Prozentangaben in Säulen-, Balken-, Streifen- oder Kreisdiagrammen — manche tricksen optisch mit abgeschnittenen Achsen.",
       explanationHtml: `
-        <p>Neben Säulen-, Balken-, Streifen- und Kreisdiagrammen nutzt man oft <strong>Plus-Minus-Diagramme</strong> (Zunahme nach rechts/oben, Abnahme nach links/unten) sowie <strong>Halbkreisdiagramme</strong> (im M-Zug: 180° entsprechen 100 % → 1 % = 1,8°).</p>
+        <p>Prozentanteile lassen sich im <strong>Säulen-, Balken-, Streifen- und Kreisdiagramm</strong> darstellen. Im Vollkreis entsprechen <strong>100 % = 360°</strong> (also <strong>1 % = 3,6°</strong>); beim 10 cm langen Streifendiagramm entspricht 1 % genau 1 mm.</p>
         <div class="example">
-          <strong>Beispiel:</strong> In einem Halbkreisdiagramm hat Partei/Kategorie A 40 % und B 35 %.<br>
+          <strong>Beispiel (Kreisdiagramm &amp; Achsenkritik):</strong><br>
+          In einem Kreisdiagramm erhält Kategorie A 25 % und B 40 %.<br>
+          Winkel A = 25 · 3,6° = <strong>90°</strong>; Winkel B = 40 · 3,6° = <strong>144°</strong>; Rest (35 %) = 126°.<br>
+          Beginnt ein Säulendiagramm erst bei 50 % statt bei 0 %, wirkt ein kleiner Vorsprung von 60 % gegenüber 55 % optisch verdoppelt!
+        </div>
+        <div class="merke">
+          <strong>Merke:</strong> Im Vollkreis gilt <strong>1 % = 3,6°</strong>, im 10-cm-Streifen <strong>1 % = 1 mm</strong>. Prüfe bei jedem Diagramm immer zuerst die Null-Linie (0 %) und den zugehörigen Grundwert!
+        </div>
+      `,
+      formulas: [
+        {
+          name: "Winkel im Vollkreisdiagramm",
+          html: "α = p · 3,6° (da 360° : 100 = 3,6°)",
+          quantities: "p Prozentsatz, α Mittelpunktswinkel im Vollkreis",
+        },
+        {
+          name: "Streifenlänge (10 cm = 100 mm)",
+          html: "Streckenlänge s = p · 1 mm",
+          quantities: "Gesamtlänge 10 cm entspricht 100 %",
+        },
+      ],
+      quiz: {
+        question: "Warum kann ein Säulendiagramm mit Achsenstart bei 50 % statt 0 % den Betrachter täuschen?",
+        options: [
+          "Weil die Säulen dadurch künstlich gestreckt wirken und kleine Unterschiede riesig erscheinen.",
+          "Weil Kreisdiagramme genauer ablesbar sind als Säulen.",
+          "Weil Prozentwerte über 50 % nicht auf einer Achse liegen dürfen.",
+        ],
+        correctIndex: 0,
+        explanation:
+          "Fehlt die Null-Linie, stimmt das Längenverhältnis der Säulen nicht mehr — 60 % sieht gegenüber 55 % dann doppelt so hoch aus, obwohl es nur 5 Prozentpunkte Unterschied sind.",
+      },
+      lab: lab(
+        "percent-charts-basic",
+        "Kreis-, Streifen- & Säulendiagramm prüfen",
+        "Vergleiche Vollkreis- und Streifendarstellung mit dem Säulendiagramm und verschiebe den Achsenstart y₀.",
+        [
+          choice("mode", "Darstellung", ["Kreis & Streifen (360°)", "Säulendiagramm & Achsenstart"], 0),
+          range("pA", "Bereich A (%)", 10, 60, 35, 5, "%"),
+          range("pB", "Bereich B (%)", 10, 40, 40, 5, "%"),
+          range("y0", "Achsenstart y₀ (%)", 0, 50, 0, 10, "%"),
+        ],
+        [
+          output("degA", "Vollkreiswinkel A", (v) => v.pA * 3.6, "°", 1, true),
+          output("diff", "Abstand A − B", (v) => v.pA - v.pB, "%-Pkt.", 0),
+        ],
+        [
+          {
+            id: "circle-90",
+            text: "Stelle Bereich A auf exakt 25 % (Vollkreiswinkel 90°).",
+            check: (v, r) => v.pA === 25 && near(Number(r.degA), 90, 0.01),
+          },
+          {
+            id: "trick-y0",
+            text: "Wechsle ins Säulendiagramm und schneide die Achse bei y₀ = 50 % ab.",
+            check: (v) => v.mode === 1 && v.y0 === 50,
+          },
+          {
+            id: "fair-compare",
+            text: "Zeige ein ehrliches Säulendiagramm ab y₀ = 0 % mit A = 60 % und B = 40 %.",
+            check: (v) => v.mode === 1 && v.y0 === 0 && v.pA === 60 && v.pB === 40,
+          },
+        ],
+      ),
+      exercises: [
+        {
+          id: "circle-sector-360",
+          make(rng, level) {
+            const p = rng.pick([15, 20, 25, 30, 35, 45]);
+            const deg = Number((p * 3.6).toFixed(1));
+            return task(
+              level,
+              `Für ein Kreisdiagramm (360° = 100 %) soll ein Anteil von ${p} % gezeichnet werden. Berechne den Sektorwinkel.`,
+              `Bei einer Schülersprecherwahl erhält ein Kandidat ${p} % aller Stimmen. Welchen Mittelpunktswinkel hat sein Sektor im Vollkreisdiagramm?`,
+              [
+                numberField("Winkel =", deg, "°", 1, {
+                  slips: [
+                    {
+                      value: p * 1.8,
+                      hint: "1,8° je Prozent gilt nur im Halbkreis — der Vollkreis hat 360°, also 3,6° pro Prozent!",
+                    },
+                  ],
+                }),
+              ],
+              "Winkel im Vollkreis = p · 3,6°",
+              [
+                `${p} · 3,6° = ${fmt(deg, 1)}°`,
+                `<strong>${fmt(deg, 1)}°</strong>`,
+              ],
+              { p, deg },
+            );
+          },
+        },
+        {
+          id: "axis-truncation-read",
+          make(rng, level) {
+            const pB = rng.pick([52, 56, 62, 68]);
+            const diff = rng.pick([4, 6, 8]);
+            const pA = pB + diff;
+            return task(
+              level,
+              `Ein Säulendiagramm startet auf der y-Achse erst bei 50 %. Produkt A steht bei ${pA} %, Produkt B bei ${pB} %. Wie groß ist der tatsächliche Unterschied in Prozentpunkten?`,
+              `Eine Werbung druckt ein Säulendiagramm mit abgeschnittener Achse (Start bei 50 %): Anbieter A wirkt doppelt so hoch wie Anbieter B, die Zahlenwerte sind ${pA} % und ${pB} %. Wie viele Prozentpunkte liegt A wirklich vor B?`,
+              [
+                numberField("Unterschied =", diff, "Prozentpunkte", 0, {
+                  slips: [
+                    {
+                      value: pA + pB,
+                      hint: "Ziehe den kleineren Wert vom größeren ab (Differenz statt Summe)!",
+                    },
+                  ],
+                }),
+              ],
+              "Unabhängig von der Achsenskalierung gilt: Unterschied = Wert A − Wert B.",
+              [
+                `${pA} % − ${pB} % = ${diff} Prozentpunkte`,
+                `<strong>${diff} Prozentpunkte</strong>`,
+              ],
+              { pA, pB, diff },
+            );
+          },
+        },
+      ],
+    }),
+
+    // 1.6b Plus-Minus- & Halbkreisdiagramme (M8)
+    makeLesson(1, 7, LB, {
+      id: "pr-6m-halbkreis-plus-minus",
+      title: "Plus-Minus- & Halbkreisdiagramm (M8)",
+      subtitle: "Veränderungen um Null sowie Winkel im 180°-Halbkreis berechnen",
+      tracks: ["M"],
+      whyItMatters:
+        "In Wahlstatistiken und Wirtschaftsgrafiken kommen im M-Zug neben dem Vollkreis häufig 180°-Halbkreisdiagramme sowie Plus-Minus-Diagramme für Zuwächse und Rückgänge vor.",
+      explanationHtml: `
+        <p>Neben Säulen-, Balken-, Streifen- und Kreisdiagrammen nutzt man im M-Zug <strong>Plus-Minus-Diagramme</strong> (Zunahme nach rechts/oben, Abnahme nach links/unten von der 0-%-Linie) sowie <strong>Halbkreisdiagramme</strong> (180° entsprechen 100 % → 1 % = 1,8°).</p>
+        <div class="example">
+          <strong>Beispiel:</strong> In einem Halbkreisdiagramm hat Kategorie A 40 % und B 35 %.<br>
           Winkel A = 40 · 1,8° = <strong>72°</strong>; Winkel B = 35 · 1,8° = <strong>63°</strong>; Rest (25 %) = 45°.
         </div>
         <div class="merke">
-          <strong>Merke:</strong> Im Vollkreis gilt 1 % = 3,6°, im Halbkreis <strong>1 % = 1,8°</strong>. Prüfe bei jedem Diagramm immer zuerst die Grundlinie (0-Linie) und die angegebenen Grundwerte!
+          <strong>Merke:</strong> Im Vollkreis gilt 1 % = 3,6°, im Halbkreis <strong>1 % = 1,8°</strong>. Im Plus-Minus-Diagramm zeigen Balken links (oder unterhalb) der Nulllinie eine prozentuale Abnahme an!
         </div>
       `,
       formulas: [
@@ -821,7 +957,7 @@ export const STAGE_PROZENT = makeStage(
             return task(
               level,
               `Ein Plus-Minus-Diagramm zeigt im Februar −${p} % bei einem Vorwert von ${base} €. Berechne den neuen Wert.`,
-              `Ein Säulendiagramm zeigt Umsatzveränderungen gegenüber ${base} €: Januar +10 %, Februar −${p} % gegenüber ${base} €. Welcher Betrag gehört zum Februar-Wert?`,
+              `Ein Plus-Minus-Diagramm zeigt Umsatzveränderungen gegenüber ${base} €: Januar +10 %, Februar −${p} % gegenüber ${base} €. Welcher Betrag gehört zum Februar-Wert?`,
               [numberField("Wert Februar =", after, "€", 0)],
               "Abzug −p % vom Grundwert abziehen.",
               [
@@ -836,7 +972,7 @@ export const STAGE_PROZENT = makeStage(
     }),
 
     // 1.7 Promille (R + M)
-    makeLesson(1, 7, LB, {
+    makeLesson(1, 8, LB, {
       id: "pr-7-promillerechnung",
       title: "Promillerechnung (‰)",
       subtitle: "Tausendstel verstehen und mit dem Grundwert sicher berechnen",
@@ -887,7 +1023,7 @@ export const STAGE_PROZENT = makeStage(
         [
           {
             id: "half-percent",
-            text: "Stelle exactement 5 ‰ (0,5 %) ein und prüfe 5 ‰ von 2 000.",
+            text: "Stelle genau 5 ‰ (0,5 %) ein und prüfe 5 ‰ von 2 000.",
             check: (v, r) => v.pm === 5 && v.base === 2000 && near(Number(r.val), 10, 0.01),
           },
           {

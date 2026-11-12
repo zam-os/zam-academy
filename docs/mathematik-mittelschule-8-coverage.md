@@ -4,11 +4,11 @@ Stand: 12. November 2026. Maßgeblich sind der [Fachlehrplan Mathematik 8 Regelk
 
 ## Umfang nach Zweigen und Lernbereichen
 
-Das Paket umfasst **30 Lektionen** in **8 Etappen** und **90 ZAM-Karten** (3 Karten pro Atom/Lektion). Im Zweigfilter stehen für die Regelklasse (`R`) **24 Lektionen** und für den M-Zug (`M`) alle **30 Lektionen** bereit. Sechs Themen vertieft der M-Zug exklusiv (`pr-4-wachstumsfaktor`, `wz-2-quadratwurzeln-ueberschlag`, `kz-3-kreisbogen-sektor`, `kf-3-kreisring-sektor`, `zy-3-kreisringzylinder`, `fk-2-lineare-funktionen-mxt`).
+Das Paket umfasst **31 Lektionen** in **8 Etappen** und **93 ZAM-Karten** (3 Karten pro Atom/Lektion). Im Zweigfilter stehen für die Regelklasse (`R`) **24 Lektionen** und für den M-Zug (`M`) alle **31 Lektionen** bereit. Sieben Themen vertieft der M-Zug exklusiv (`pr-4-wachstumsfaktor`, `pr-6m-halbkreis-plus-minus`, `wz-2-quadratwurzeln-ueberschlag`, `kz-3-kreisbogen-sektor`, `kf-3-kreisring-sektor`, `zy-3-kreisringzylinder`, `fk-2-lineare-funktionen-mxt`).
 
 | Etappe | Lernbereich (LehrplanPLUS M8 R & M) | KE (R / M) | Lektionen |
 | --- | --- | --- | --- |
-| 1 | M8 LB 1: Prozentrechnung | 4 / 4 | `pr-1-rabatt-preisaenderung`, `pr-2-skonto-umsatzsteuer`, `pr-3-brutto-netto-tara`, `pr-4-wachstumsfaktor` *(M)*, `pr-5-kalkulation-verkaufspreis`, `pr-6-schaubilder-prozent`, `pr-7-promillerechnung` |
+| 1 | M8 LB 1: Prozentrechnung | 4 / 4 | `pr-1-rabatt-preisaenderung`, `pr-2-skonto-umsatzsteuer`, `pr-3-brutto-netto-tara`, `pr-4-wachstumsfaktor` *(M)*, `pr-5-kalkulation-verkaufspreis`, `pr-6-schaubilder-prozent`, `pr-6m-halbkreis-plus-minus` *(M)*, `pr-7-promillerechnung` |
 | 2 | M8 LB 2: Quadratzahlen und Quadratwurzeln | 2 / 3 | `wz-1-quadrieren-radizieren`, `wz-2-quadratwurzeln-ueberschlag` *(M)* |
 | 3 | M8 LB 3: Geometrische Figuren, Körper und Lagebeziehungen | 5 / 6 | `kz-1-kreis-zirkel-pi`, `kz-2-kreisumfang-umkehrung`, `kz-3-kreisbogen-sektor` *(M)*, `kz-4-zusammengesetzte-umfaenge`, `kz-5-zylinder-netze-schraegbild` |
 | 4 | M8 LB 4: Flächeninhalt – Kreise | 4 / 5 | `kf-1-kreisflaeche-herleitung`, `kf-2-kreisflaeche-umkehrung`, `kf-3-kreisring-sektor` *(M)*, `kf-4-zusammengesetzte-kreisflaechen`, `kf-5-zylinder-oberflaeche` |
@@ -26,6 +26,6 @@ Alle in `R` sichtbaren Voraussetzungen in `cell.json` verweisen ausschließlich 
 
 ## Verifikation
 
-- Paket-Suite (`mathematik-mittelschule-8`): `npm ci && npx tsc --noEmit && npm test && npm run build && npm run package:zip` (3 Testdateien / 21 Tests bestanden, Offline-ZIP gebaut).
-- Zell- und Registry-Prüfung (Repo-Wurzel): `ZAM_CORE=... node scripts/validate-cells.mjs` (90 Items inkl. Distraktoren mit `zam-core@0.54.0` geprüft), `node --test scripts/build-catalog.test.mjs scripts/academy-registry.test.mjs` (51 Tests bestanden) und `node scripts/build-catalog.mjs`.
+- Paket-Suite (`mathematik-mittelschule-8`): `npm ci && npx tsc --noEmit && npm test && npm run build && npm run package:zip` (3 Testdateien / 25 Tests bestanden, Offline-ZIP gebaut).
+- Zell- und Registry-Prüfung (Repo-Wurzel): `ZAM_CORE=... node scripts/validate-cells.mjs` (93 Items inkl. Distraktoren mit `zam-core@0.54.0` geprüft), `node --test scripts/build-catalog.test.mjs scripts/academy-registry.test.mjs` (51 Tests bestanden) und `node scripts/build-catalog.mjs`.
 - Browser-Prüfung: Gebautes `dist/index.html` in headless Chrome für Lernpfad (R/M-Filter), eine Lektion pro Etappe, SVG-Labore, Level-1/Level-2-Aufgaben und Formelsammlung im hellen und dunklen Thema ohne Konsolen- oder Laufzeitfehler geprüft.

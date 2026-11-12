@@ -485,8 +485,7 @@ export const STAGE_KREIS = makeStage(
           id: "quarter-corner-perimeter",
           make(rng, level) {
             const r = rng.pick([4, 6, 8, 10]);
-            // Ein Quadrat der Seitenlänge r plus außen zwei Viertelkreis-Ohren oder ein Quadrant-Sektor selbst:
-            // Nehmen wir einen Viertelkreis (Tortenstück 90°) -> Umfang = 2*r + (pi*r)/2!
+            // Viertelkreis (90°-Sektor): Umfang = 2·r + (π·r)/2
             const arc = (PI * r) / 2;
             const u = Number((2 * r + arc).toFixed(2));
             return task(

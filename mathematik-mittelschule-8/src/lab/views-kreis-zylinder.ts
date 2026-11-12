@@ -360,43 +360,55 @@ export const compositeCircleAreaView: LabView = {
 };
 
 /** 14. Zylindervolumen V = G · hₖ = r² · π · hₖ mit Füllstand */
-export const cylinderVolumeView: LabView = {
-  render(v, r) {
-    const rad = v.r ?? 3;
-    const hk = v.hk ?? 6;
-    const fill = (v.fill ?? 100) / 100;
-    const rx = rad * 18;
-    const ry = Math.max(9, rad * 5.5);
-    const hPx = hk * 18;
-    const cx = 185;
-    const botY = 264;
-    const topY = botY - hPx;
-    const fillH = hPx * fill;
-    const fillTopY = botY - fillH;
+function createCylinderVolumeView(literMode: boolean): LabView {
+  return {
+    render(v, r) {
+      const rad = v.r ?? 3;
+      const hk = v.hk ?? 6;
+      const fill = (v.fill ?? 100) / 100;
+      const rx = rad * 18;
+      const ry = Math.max(9, rad * 5.5);
+      const hPx = hk * 18;
+      const cx = 185;
+      const botY = 264;
+      const topY = botY - hPx;
+      const fillH = hPx * fill;
+      const fillTopY = botY - fillH;
 
-    const shellPath = `M${r1(cx - rx)} ${r1(topY)} L${r1(cx - rx)} ${r1(botY)} A${r1(rx)} ${r1(ry)} 0 0 0 ${r1(cx + rx)} ${r1(botY)} L${r1(cx + rx)} ${r1(topY)} Z`;
-    const liquidPath = `M${r1(cx - rx)} ${r1(fillTopY)} L${r1(cx - rx)} ${r1(botY)} A${r1(rx)} ${r1(ry)} 0 0 0 ${r1(cx + rx)} ${r1(botY)} L${r1(cx + rx)} ${r1(fillTopY)} Z`;
+      const uLen = literMode ? "dm" : "cm";
+      const uArea = literMode ? "dm²" : "cm²";
+      const uVol = literMode ? "dm³ (l)" : "cm³";
+      const labelTitle = literMode
+        ? "Behälter- & Teilvolumen (1 dm³ = 1 Liter)"
+        : "Zylindervolumen V = G · hₖ = r² · π · hₖ";
 
-    return (
-      open("Zylindervolumen") +
-      title("Zylindervolumen V = G · hₖ = r² · π · hₖ") +
-      path(shellPath, "lab-plot-bg") +
-      (fill > 0 ? path(liquidPath, "lab-fill-a") : "") +
-      `<ellipse cx="${r1(cx)}" cy="${r1(fillTopY)}" rx="${r1(rx)}" ry="${r1(ry)}" class="lab-fill-b" />` +
-      `<ellipse cx="${r1(cx)}" cy="${r1(topY)}" rx="${r1(rx)}" ry="${r1(ry)}" class="lab-grid" />` +
-      text(cx, botY + 26, `r = ${fmt(rad, 1)} cm · hₖ = ${fmt(hk, 1)} cm`, "lab-text", "middle") +
-      infoBox(
-        318,
-        96,
-        [
-          [`G ≈ ${fmt(num(r, "G"), 1)} cm²`, "lab-text"],
-          [`V ≈ ${fmt(num(r, "V"), 1)} cm³ (${fmt(fill * 100, 0)} %)`, "lab-text-small"],
-        ],
-      ) +
-      "</svg>"
-    );
-  },
-};
+      const shellPath = `M${r1(cx - rx)} ${r1(topY)} L${r1(cx - rx)} ${r1(botY)} A${r1(rx)} ${r1(ry)} 0 0 0 ${r1(cx + rx)} ${r1(botY)} L${r1(cx + rx)} ${r1(topY)} Z`;
+      const liquidPath = `M${r1(cx - rx)} ${r1(fillTopY)} L${r1(cx - rx)} ${r1(botY)} A${r1(rx)} ${r1(ry)} 0 0 0 ${r1(cx + rx)} ${r1(botY)} L${r1(cx + rx)} ${r1(fillTopY)} Z`;
+
+      return (
+        open(labelTitle) +
+        title(labelTitle) +
+        path(shellPath, "lab-plot-bg") +
+        (fill > 0 ? path(liquidPath, "lab-fill-a") : "") +
+        `<ellipse cx="${r1(cx)}" cy="${r1(fillTopY)}" rx="${r1(rx)}" ry="${r1(ry)}" class="lab-fill-b" />` +
+        `<ellipse cx="${r1(cx)}" cy="${r1(topY)}" rx="${r1(rx)}" ry="${r1(ry)}" class="lab-grid" />` +
+        text(cx, botY + 26, `r = ${fmt(rad, 1)} ${uLen} · hₖ = ${fmt(hk, 1)} ${uLen}`, "lab-text", "middle") +
+        infoBox(
+          318,
+          96,
+          [
+            [`G ≈ ${fmt(num(r, "G"), 1)} ${uArea}`, "lab-text"],
+            [`V ≈ ${fmt(num(r, "V"), 1)} ${uVol} (${fmt(fill * 100, 0)} %)`, "lab-text-small"],
+          ],
+        ) +
+        "</svg>"
+      );
+    },
+  };
+}
+
+export const cylinderVolumeView = createCylinderVolumeView(false);
+export const cylinderCompoundView = createCylinderVolumeView(true);
 
 /** 15. Hohlzylinder / Rohrvolumen V = (R² − r²) · π · hₖ */
 export const hollowCylinderView: LabView = {

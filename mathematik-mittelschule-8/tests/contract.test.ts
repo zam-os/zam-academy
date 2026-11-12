@@ -60,11 +60,11 @@ const blank = (): LearnerProgress => ({
 });
 
 describe("Lehrplan und Umfang", () => {
-  it("covers eight areas in R and M with 30 substantive lessons and zero teacher videos", () => {
+  it("covers eight areas in R and M with 31 substantive lessons and zero teacher videos", () => {
     expect(STAGES).toHaveLength(8);
-    expect(ALL_LESSONS).toHaveLength(30);
+    expect(ALL_LESSONS).toHaveLength(31);
     expect(lessonsForTrack("R")).toHaveLength(24);
-    expect(lessonsForTrack("M")).toHaveLength(30);
+    expect(lessonsForTrack("M")).toHaveLength(31);
     expect(
       STAGES.filter((s) => s.lessons.some((l) => l.tracks.includes("R"))),
     ).toHaveLength(8);
@@ -152,6 +152,7 @@ describe("Lehrplan und Umfang", () => {
     expect(stageNumberForTrack(STAGES[4], "R")).toBe(5);
     const mOnly = new Set([
       "pr-4-wachstumsfaktor",
+      "pr-6m-halbkreis-plus-minus",
       "wz-2-quadratwurzeln-ueberschlag",
       "kz-3-kreisbogen-sektor",
       "kf-3-kreisring-sektor",
@@ -159,6 +160,12 @@ describe("Lehrplan und Umfang", () => {
       "fk-2-lineare-funktionen-mxt",
     ]);
     expect(lessonsForTrack("R").every((l) => !mOnly.has(l.id))).toBe(true);
+    expect(nextLesson("pr-6-schaubilder-prozent", "R")?.id).toBe(
+      "pr-7-promillerechnung",
+    );
+    expect(nextLesson("pr-6-schaubilder-prozent", "M")?.id).toBe(
+      "pr-6m-halbkreis-plus-minus",
+    );
   });
 });
 
@@ -180,7 +187,7 @@ describe("Fortschritt und Links", () => {
     const p = blank();
     for (const track of ["R", "M"] as const) {
       expect(overallStats(p, STAGES, track).total).toBe(
-        track === "R" ? 24 : 30,
+        track === "R" ? 24 : 31,
       );
       expect(isStageComplete(p, STAGES[0], track)).toBe(false);
     }
@@ -210,7 +217,7 @@ describe("Fortschritt und Links", () => {
 });
 
 describe("ZAM-Karten", () => {
-  it("pins all 30 lesson identities and 120 atom/item ULIDs", () => {
+  it("pins all 31 lesson identities and 124 atom/item ULIDs", () => {
     expect(
       cell.atoms.map((a) => ({
         lesson: a.slug,
@@ -221,13 +228,13 @@ describe("ZAM-Karten", () => {
     ).toEqual(contract);
     expect(cell.atoms.map((a) => a.slug)).toEqual(IDS);
     expect(cell.tile_id).toBe("zam-academy:mathematik-mittelschule-8");
-    expect(cell.atoms).toHaveLength(30);
-    expect(cell.atoms.flatMap((a) => a.practice_items)).toHaveLength(90);
+    expect(cell.atoms).toHaveLength(31);
+    expect(cell.atoms.flatMap((a) => a.practice_items)).toHaveLength(93);
     const ids = cell.atoms.flatMap((a) => [
       a.id,
       ...a.practice_items.map((i) => i.id),
     ]);
-    expect(new Set(ids).size).toBe(120);
+    expect(new Set(ids).size).toBe(124);
     for (const id of ids) expect(id).toMatch(/^[0-7][0-9A-HJKMNP-TV-Z]{25}$/);
   });
 

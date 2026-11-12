@@ -80,7 +80,7 @@ export const discountChainView: LabView = {
       x: "p1",
       drag(pt) {
         const p = -50 + ((pt.x - 120) / 280) * 100;
-        return { p1: Math.max(-50, Math.min(50, Math.round(p / 5) * 5)) };
+        return { p1: Math.max(-50, Math.min(50, Math.round(p))) };
       },
     },
   },
@@ -194,7 +194,7 @@ export const percentDiagrams8View: LabView = {
         open("Plus-Minus-Diagramm") +
         title("Plus-Minus-Diagramm (Abweichungen in %)") +
         line(260, 62, 260, 262, "lab-axis") +
-        text(260, 282, "0 % (Ausgangswert)", "lab-text-muted", "middle") +
+        text(254, 284, "0 % (Ausgangswert)", "lab-text-muted", "end") +
         vals
           .map((item) => {
             const w = Math.abs(item.p) * scale;
@@ -216,7 +216,7 @@ export const percentDiagrams8View: LabView = {
           })
           .join("") +
         infoBox(
-          304,
+          284,
           286,
           [
             [`Mittel: ${fmt(num(r, "avg"), 1)} %`, "lab-text"],
@@ -247,6 +247,80 @@ export const percentDiagrams8View: LabView = {
         [
           [`Feld A: ${fmt(pa, 0)} % (${fmt(a1, 1)}°)`, "lab-text"],
           [`Feld B: ${fmt(pb, 0)} % (${fmt(a2 - a1, 1)}°)`, "lab-text-small"],
+        ],
+      ) +
+      "</svg>"
+    );
+  },
+};
+
+/** 4b. Grundlegende Prozent-Schaubilder & Darstellungskritik (R8 + M8) */
+export const percentChartsBasicView: LabView = {
+  render(v, r) {
+    const mode = v.mode ?? 0;
+    const pa = Math.max(0, Math.min(100, v.pA ?? 35));
+    const pb = Math.max(0, Math.min(100 - pa, v.pB ?? 40));
+    const rest = 100 - pa - pb;
+
+    if (mode === 0) {
+      const cx = 135;
+      const cy = 172;
+      const rad = 84;
+      const a1 = pa * 3.6;
+      const a2 = a1 + pb * 3.6;
+      const sx = 250;
+      const sw = 230;
+      const wA = (pa / 100) * sw;
+      const wB = (pb / 100) * sw;
+      const wR = Math.max(0, sw - wA - wB);
+      return (
+        open("Kreis- und Streifendiagramm") +
+        title("Vollkreisdiagramm (360° = 100 % → 1 % = 3,6°) & Streifen") +
+        (pa > 0 ? path(sectorPath(cx, cy, rad, 90 - a1, 90), "lab-bar-a") : "") +
+        (pb > 0 ? path(sectorPath(cx, cy, rad, 90 - a2, 90 - a1), "lab-bar-b") : "") +
+        (rest > 0 ? path(sectorPath(cx, cy, rad, -270, 90 - a2), "lab-bar-c") : "") +
+        text(sx, 108, "Streifendiagramm (100 % = 10 cm):", "lab-text-small") +
+        (wA > 0 ? rect(sx, 122, wA, 32, "lab-bar-a") : "") +
+        (wB > 0 ? rect(sx + wA, 122, wB, 32, "lab-bar-b") : "") +
+        (wR > 0 ? rect(sx + wA + wB, 122, wR, 32, "lab-bar-c") : "") +
+        infoBox(
+          sx,
+          208,
+          [
+            [`A: ${fmt(pa, 0)} % (${fmt(num(r, "degA"), 1)}°)`, "lab-text"],
+            [`B: ${fmt(pb, 0)} % (${fmt(pb * 3.6, 1)}°) · Rest: ${fmt(rest, 0)} %`, "lab-text-small"],
+          ],
+        ) +
+        "</svg>"
+      );
+    }
+
+    const y0 = Math.max(0, Math.min(50, v.y0 ?? 0));
+    const plotX = 76;
+    const plotY = 66;
+    const plotW = 220;
+    const plotH = 190;
+    const span = 100 - y0;
+    const barH = (val: number) => Math.max(2, ((Math.max(y0, val) - y0) / span) * plotH);
+    const hA = barH(pa);
+    const hB = barH(pb);
+    return (
+      open("Säulendiagramm und Achsenstart") +
+      title(y0 > 0 ? `Vorsicht: Achse bei ${fmt(y0, 0)} % abgeschnitten!` : "Ehrliche Säulenhöhe ab 0 %") +
+      rect(plotX, plotY, plotW, plotH, "lab-plot-bg", 'rx="6"') +
+      line(plotX, plotY + plotH, plotX + plotW, plotY + plotH, "lab-axis") +
+      text(plotX - 8, plotY + 10, "100 %", "lab-text-tick", "end") +
+      text(plotX - 8, plotY + plotH, `${fmt(y0, 0)} %`, y0 > 0 ? "lab-bad" : "lab-text-tick", "end") +
+      rect(plotX + 42, plotY + plotH - hA, 48, hA, "lab-bar-a", 'rx="4"') +
+      rect(plotX + 130, plotY + plotH - hB, 48, hB, "lab-bar-b", 'rx="4"') +
+      text(plotX + 66, plotY + plotH + 18, `A (${fmt(pa, 0)} %)`, "lab-text-small", "middle") +
+      text(plotX + 154, plotY + plotH + 18, `B (${fmt(pb, 0)} %)`, "lab-text-small", "middle") +
+      infoBox(
+        314,
+        108,
+        [
+          [`Unterschied: ${fmt(Math.abs(pa - pb), 0)} %-Pkt.`, "lab-text"],
+          [y0 > 0 ? "Abgeschnittene Achse verzerrt!" : "Start bei 0 % → maßstäblich", y0 > 0 ? "lab-bad" : "lab-text-ok"],
         ],
       ) +
       "</svg>"
@@ -306,6 +380,7 @@ export const squareRootAreaView: LabView = {
 
     const lo = Math.floor(side);
     const hi = lo + 1;
+    const isExact = lo * lo === area;
     const barX = 276;
     const barY = 178;
     const barW = 200;
@@ -320,25 +395,39 @@ export const squareRootAreaView: LabView = {
       title("Quadratinhalt A und Quadratwurzel a = √A") +
       rect(ox, oy - sizePx, sizePx, sizePx, "lab-fill-a", 'rx="4"') +
       text(ox + sizePx / 2, oy - sizePx / 2 + 5, `A = ${fmt(area, 0)}`, "lab-text", "middle") +
-      text(ox + sizePx / 2, oy + 20, `a = √${fmt(area, 0)} ≈ ${fmt(side, 2)}`, "lab-text", "middle") +
+      text(ox + sizePx / 2, oy + 20, `a = √${fmt(area, 0)} ${isExact ? "=" : "≈"} ${fmt(side, isExact ? 0 : 2)}`, "lab-text", "middle") +
       handle("area", hx, hy, "A ändern") +
       rect(barX, 66, barW, 82, "lab-plot-bg", 'rx="8"') +
-      text(barX + 12, 92, "Benachbarte Quadratzahlen:", "lab-text-muted") +
-      text(barX + 12, 116, `${lo}² = ${lo * lo} ≤ ${fmt(area, 0)} ≤ ${hi * hi} = ${hi}²`, "lab-text") +
-      text(barX + 12, 136, `√${fmt(area, 0)} liegt zwischen ${lo} und ${hi}`, "lab-text-small") +
+      text(barX + 12, 92, isExact ? "Exakte Quadratzahl:" : "Benachbarte Quadratzahlen:", "lab-text-muted") +
+      text(
+        barX + 12,
+        116,
+        isExact
+          ? `${lo}² = ${fmt(area, 0)}`
+          : `${lo}² = ${lo * lo} < ${fmt(area, 0)} < ${hi * hi} = ${hi}²`,
+        "lab-text",
+      ) +
+      text(
+        barX + 12,
+        136,
+        isExact
+          ? `√${fmt(area, 0)} = ${lo} (exakt!)`
+          : `√${fmt(area, 0)} liegt zwischen ${lo} und ${hi}`,
+        "lab-text-small",
+      ) +
       line(barX, barY, barX + barW, barY, "lab-axis") +
       circle(barX, barY, 4, "lab-dot-small") +
       circle(barX + barW, barY, 4, "lab-dot-small") +
       circle(markerX, barY, 6, "lab-point") +
       text(barX, barY + 20, `${lo}`, "lab-text-small", "middle") +
       text(barX + barW, barY + 20, `${hi}`, "lab-text-small", "middle") +
-      text(markerX, barY - 12, fmt(side, 2), "lab-text", "middle") +
+      text(markerX, barY - 12, fmt(side, isExact ? 0 : 2), "lab-text", "middle") +
       infoBox(
         barX,
         242,
         [
-          [`Quadrieren: ${fmt(side, 2)}² = ${fmt(area, 0)}`, "lab-text-small"],
-          [`Radizieren: √${fmt(area, 0)} ≈ ${fmt(side, 2)}`, "lab-text-small"],
+          [`Quadrieren: ${fmt(side, isExact ? 0 : 2)}² ${isExact ? "=" : "≈"} ${fmt(area, 0)}`, "lab-text-small"],
+          [`Radizieren: √${fmt(area, 0)} ${isExact ? "=" : "≈"} ${fmt(side, isExact ? 0 : 2)}`, "lab-text-small"],
         ],
       ) +
       "</svg>"
