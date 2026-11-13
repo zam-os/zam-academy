@@ -39,18 +39,16 @@ The two bundled legacy Grade 5 German cells contain 16 practice items. The
 [proposal](../deutsch-realschule-5/replaces-de-by.json) pins both source
 snapshots and the ZAM commit and explains each proposed decision.
 
-- A · 8 single retrievals have a proposed one-to-one successor.
+- A · 8 single retrievals have an approved one-to-one successor (`replaces`).
 - B · 0 older multi-part prompts are carried forward in full.
-- C · 5 incorrect multi-part prompts are proposed for retirement after approval. The other 3 stay active.
+- C · 5 incorrect multi-part prompts are retired (`retired_items`). The other 3 stay active.
 
-The proposal has no approval date. The migration validator checks the pinned
-snapshots and seeds 32 review records in temporary libraries. It verifies
-that the package preserves all 16 legacy cards and their reviews through
-installation, enrollment and repetition. A separate rehearsal applies the
-proposed transfers and retirements to a clone of the cell in memory. It checks
-the review queue, evidence preservation, repeat installation and rollback if a
-learner already holds both cards. With zam-core 0.54.0, repeated retirement
-refreshes the retired token's update timestamp.
+Thomas approved [replaces-de-by.json](../deutsch-realschule-5/replaces-de-by.json)
+on 2026-11-13 (`status: "approved"`, `approved: "2026-11-13"`), and the package is
+published as a `preview` (`2026.11.2`). The migration validator checks the pinned
+snapshots and seeds 32 review records in temporary libraries. It verifies the
+approved transfers, retirements, active queue, evidence preservation, and
+rollback if a learner already holds both cards. With zam-core 0.54.0, repeated
+retirement refreshes the retired token's update timestamp.
 
-The local evaluation build includes exercises, the offline ZIP and the
-validated cell. Teacher review and videos remain open.
+Teacher review and videos remain open (marked by the preview notice).

@@ -53,15 +53,19 @@ describe("Lernpfad und veröffentlichbarer Vertrag", () => {
 		expect(new Set(ids).size).toBe(114);
 		for (const id of ids) expect(id).toMatch(/^[0-7][0-9A-HJKMNP-TV-Z]{25}$/);
 	});
-	it("keeps the additional cell separate from all 16 old retrievals", () => {
+	it("declares the eight approved A transfers and five retirements without collides on old ids", () => {
 		const oldIds = new Set(oldItems.map((item) => item.id));
 		expect(oldIds.size).toBe(16);
-		expect("retired_items" in tile).toBe(false);
+		const declaredTransfers = new Map<string, string[]>();
 		for (const atom of tile.atoms)
 			for (const item of atom.practice_items) {
-				expect("replaces" in item).toBe(false);
 				expect(oldIds.has(item.id)).toBe(false);
+				if ("replaces" in item && Array.isArray(item.replaces)) {
+					declaredTransfers.set(item.slug, item.replaces);
+				}
 			}
+		expect(declaredTransfers.size).toBe(8);
+		expect(tile.retired_items).toHaveLength(5);
 	});
 	it("traces 55 expectations to real lessons and matching sections, with limits", () => {
 		expect(coverage.rows).toHaveLength(55);
@@ -229,12 +233,12 @@ describe("Lernpfad und veröffentlichbarer Vertrag", () => {
 		},
 	);
 
-	it("keeps card texts in the cell and documents every old item without a transfer", () => {
+	it("keeps card texts in the cell and documents every approved old-item decision", () => {
 		expect(rawLessons.every((l) => !("quiz" in l) && !("recall" in l))).toBe(
 			true,
 		);
-		expect(mapping.status).toBe("proposal-only");
-		expect(mapping.approved).toBeNull();
+		expect(mapping.status).toBe("approved");
+		expect(mapping.approved).toBe("2026-11-13");
 		expect(
 			mapping.sources.map((source) => [source.tile_id, source.version]),
 		).toEqual(legacyTiles.map((legacy) => [legacy.tile_id, legacy.version]));
@@ -246,7 +250,7 @@ describe("Lernpfad und veröffentlichbarer Vertrag", () => {
 				atom.practice_items.map((item) => [item.slug, item] as const),
 			),
 		);
-		const proposed = new Set<string>();
+		const replaced = new Set<string>();
 		const retirements: string[] = [];
 		for (const row of mapping.rows) {
 			const legacy = legacyTiles.find(
@@ -259,18 +263,21 @@ describe("Lernpfad und veröffentlichbarer Vertrag", () => {
 			).toBe(true);
 			expect(row.reason.length).toBeGreaterThan(30);
 			if (row.category === "A" && row.academy_slug) {
-				expect(row.action).toBe("propose-replace");
-				expect(newItems.get(row.academy_slug)?.tier).toBe("tier1_fast");
-				proposed.add(row.academy_slug);
+				expect(row.action).toBe("replace");
+				const item = newItems.get(row.academy_slug) as
+					| { tier: string; replaces?: string[] }
+					| undefined;
+				expect(item?.tier).toBe("tier1_fast");
+				expect(item?.replaces).toEqual([row.de_by_id]);
+				replaced.add(row.academy_slug);
 			} else {
 				expect(row.category).toBe("C");
 				expect(row.academy_slug).toBeNull();
-				if (row.action === "propose-retire-after-approval")
-					retirements.push(row.de_by_id);
+				if (row.action === "retire") retirements.push(row.de_by_id);
 				else expect(row.action).toBe("keep-active");
 			}
 		}
-		expect(proposed.size).toBe(8);
+		expect(replaced.size).toBe(8);
 		expect(retirements).toEqual([
 			"01K4D5E0000000000000000J02",
 			"01K4D5R0000000000000000J02",
@@ -278,6 +285,7 @@ describe("Lernpfad und veröffentlichbarer Vertrag", () => {
 			"01K4D5R0000000000000000J06",
 			"01K4D5R0000000000000000J08",
 		]);
+		expect(tile.retired_items?.map((entry) => entry.id)).toEqual(retirements);
 	});
 
 	it("keeps prerequisites within the path and puts them before dependent atoms", () => {

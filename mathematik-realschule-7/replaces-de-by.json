@@ -1,8 +1,8 @@
 {
   "schema": 1,
-  "approved": null,
-  "status": "proposal-only",
-  "source": "Stand 23.10.2026 nach Review von PR 32: sieben A-Vorschläge, keine B-Übernahme; von 23 C-Zeilen bleiben 22 keep-active, für die fehlerhafte SsW-Synthesekarte wird Stilllegung ohne Übertragung vorgeschlagen. Keine Freigabe und keine Änderung persönlicher Historien. Veröffentlichung zunächst ohne replaces und retired_items gemäß Paketstandard.",
+  "approved": "2026-11-13",
+  "status": "approved",
+  "source": "Thomas in der ZAM-Release-Sitzung am 2026-11-13: „Falls irgendwo noch eine Mapping-Freigabe nicht protokolliert ist, dann gebe ich sie hiermit formal. Das Mergen bedeutet Zustimmung.“ Die Freigabe gilt der Zuordnung der 30 de-by-Karten in dieser Datei (7 A replace, 0 B, 1 C retire [01K4M7K0000000000000000J02], 22 C keep-active). Ab Zellversion 2026.11.1 tragen die 7 Nachfolger je ein replaces und retired_items legt 01K4M7K0000000000000000J02 still.",
   "source_repository": "zam-os/zam",
   "source_commit": "3ff6ee18389b6b2ac602a7265a2ecd695f395107",
   "sources": [
@@ -70,7 +70,7 @@
       "de_by_question": "Zu welcher Winkelsumme ergänzen sich zwei Nebenwinkel an einer Geradengeradenkreuzung?",
       "category": "A",
       "academy_slug": "m7-pv-6-parallelen-winkel-2",
-      "action": "propose-replace-after-approval",
+      "action": "replace",
       "reason": "Derselbe Einzelabruf: Nebenwinkel ergänzen sich zu 180 Grad. Nur Vorschlag; die ausgelieferte Zelle deklariert keine Ersetzung."
     },
     {
@@ -88,7 +88,7 @@
       "de_by_question": "Wie groß ist die Summe der Innenwinkel alpha + beta + gamma in JEDEM ebenen Dreieck?",
       "category": "A",
       "academy_slug": "m7-pv-7-winkelsummen-1",
-      "action": "propose-replace-after-approval",
+      "action": "replace",
       "reason": "Derselbe Einzelabruf: Innenwinkelsumme jedes ebenen Dreiecks. Nur Vorschlag; die ausgelieferte Zelle deklariert keine Ersetzung."
     },
     {
@@ -106,7 +106,7 @@
       "de_by_question": "Welche Bedingung muss beim Kongruenzsatz SsW (großes S, kleines s, Winkel W) zwingend erfüllt sein, damit das Dreieck eindeutig konstruierbar ist?",
       "category": "A",
       "academy_slug": "m7-dr-3-kongruenz-1",
-      "action": "propose-replace-after-approval",
+      "action": "replace",
       "reason": "Derselbe Einzelabruf der Gegenlage des gegebenen Winkels zur längeren Seite bei SsW; nur Zweig I. Nur Vorschlag; die ausgelieferte Zelle deklariert keine Ersetzung."
     },
     {
@@ -138,7 +138,7 @@
       ],
       "category": "C",
       "academy_slug": null,
-      "action": "propose-retire-after-approval",
+      "action": "retire",
       "reason": "Die alte Gesamtfrage wird auf mehrere neue Abrufe verteilt. Ihre Musterlösung behauptet fälschlich, ein Winkel gegenüber der kürzeren gegebenen Seite ergebe stets zwei Dreiecke; es können auch null oder eine Lösung sein. Daher Kategorie C mit vorgeschlagener Stilllegung ohne Historienübertrag. Bis Thomas dies ausdrücklich freigibt, deklariert die ausgelieferte Zelle keine Stilllegung."
     },
     {
@@ -161,7 +161,7 @@
       ],
       "category": "A",
       "academy_slug": "m7-ol-7-umkreis-inkreis-1",
-      "action": "propose-replace-after-approval",
+      "action": "replace",
       "reason": "Derselbe Einzelabruf: Umkreismittelpunkt als Schnitt der Mittelsenkrechten. Nur Vorschlag; die ausgelieferte Zelle deklariert keine Ersetzung."
     },
     {
@@ -306,7 +306,7 @@
       ],
       "category": "A",
       "academy_slug": "m7-pv-2-vektoren-3",
-      "action": "propose-replace-after-approval",
+      "action": "replace",
       "reason": "Gleiche Punkte A(2|1), B(7|4), gleiche Frage nach AB und gleiche Antwort (5|3). Nur Vorschlag; die ausgelieferte Zelle deklariert keine Ersetzung."
     },
     {
@@ -446,7 +446,7 @@
       "de_by_question": "Mit welchem Änderungsfaktor (Prozentfaktor q) muss ein Grundwert direkt multipliziert werden, um einen um 20 % reduzierten Preis zu berechnen?",
       "category": "A",
       "academy_slug": "m7-pr-1-veraenderter-grundwert-1",
-      "action": "propose-replace-after-approval",
+      "action": "replace",
       "reason": "Derselbe Einzelabruf des Faktors 0,8 bei einer Verminderung um 20 Prozent. Nur Vorschlag; die ausgelieferte Zelle deklariert keine Ersetzung."
     },
     {
@@ -464,7 +464,7 @@
       "de_by_question": "Welchem Begriff aus der Prozentrechnung entspricht das angelegte Kapital K in der Zinsrechnung?",
       "category": "A",
       "academy_slug": "m7-pr-3-zinsrechnung-1",
-      "action": "propose-replace-after-approval",
+      "action": "replace",
       "reason": "Derselbe Einzelabruf: Kapital entspricht dem Grundwert. Nur Vorschlag; die ausgelieferte Zelle deklariert keine Ersetzung."
     },
     {
