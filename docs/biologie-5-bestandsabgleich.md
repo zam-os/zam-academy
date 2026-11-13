@@ -28,3 +28,13 @@ Stand: `2026-11-13`
 
 1. Soll die vorgeschlagene **5-A / 19-C-Zuordnung** freigegeben werden (oder erst nach der Erstveröffentlichung)?
 2. Bestätigt die Einbindung der **NuT-5-Zelle** (`J01`, `J03` als Biologie-Anteil, `J05–J08` als Informatik `keep-active`), dass die beiden Mikroskop-/Erkenntnisweg-Karten künftig zu `biologie-realschule-5` gehören?
+
+## 3. Abgrenzung zu Nachbarjahrgängen und Gymnasium (`AGENTS.md` § 6)
+
+Folgende benachbarte Bündel im Quell-Repository `zam-os/zam` liegen außerhalb von Realschule Biologie 5 und wurden **bewusst nicht** in `replaces-de-by.json` aufgenommen (`nicht Teil dieses Mappings`):
+
+- `de-by:realschule-6-biologie-saeugetiere-wirbeltiere-hunde-katzen` (Realschule Jahrgangsstufe 6, eigene Wirbeltier-Inhalte)
+- `de-by:realschule-6-biologie-voegel-fische-amphibien-reptilien` (Realschule Jahrgangsstufe 6, Wirbeltierklassen)
+- `de-by:gymnasium-5-biologie-mensch-skelett-sexualbiologie` (Gymnasium Natur und Technik 5, enthält zudem Sexualbiologie, die an der Realschule in Klasse 6 liegt)
+- `de-by:gymnasium-5-biologie-pflanzen-bluetenbau-samen` (Gymnasium Natur und Technik 5, andere Schulart)
+- `de-by:gymnasium-5-natur-technik-mikroskop-experiment-oop` (Gymnasium Natur und Technik 5, andere Schulart)

@@ -30,6 +30,9 @@ import {
 	writingKey,
 } from "../src/storage/progress";
 import { parseTrainingDeepLink, trainingBaseUrl } from "../src/zam/zam-link";
+import legacyMensch from "./fixtures/de-by-realschule-5-biologie-mensch-skelett-bewegung-organe-kvt.json";
+import legacyNut from "./fixtures/de-by-realschule-5-natur-technik-mikroskop-experiment-dateien-kvt.json";
+import legacyPflanzen from "./fixtures/de-by-realschule-5-biologie-pflanzen-bluetenbau-samen-kvt.json";
 import contract from "./fixtures/public-contract.json";
 
 describe("Course and card contract", () => {
@@ -58,18 +61,24 @@ describe("Course and card contract", () => {
 	});
 
 	it("tracks every legacy item in replaces-de-by.json once with valid proposed slugs", () => {
-		const slugSet = new Set(
-			tile.atoms.flatMap((a) => a.practice_items.map((i) => i.slug)),
+		const allSlugs = tile.atoms.flatMap((a) =>
+			a.practice_items.map((i) => i.slug),
+		);
+		const fixtureItemIds = [legacyMensch, legacyPflanzen, legacyNut].flatMap(
+			(f) => f.atoms.flatMap((a) => a.practice_items.map((i) => i.id)),
 		);
 		const oldIds = mapping.rows.map((row) => row.de_by_id);
-		expect(new Set(oldIds).size).toBe(24);
+		expect(new Set(oldIds)).toEqual(new Set(fixtureItemIds));
+		expect(oldIds).toHaveLength(fixtureItemIds.length);
 		expect(mapping.rows.filter((row) => row.category === "A")).toHaveLength(5);
 		expect(mapping.rows.filter((row) => row.category === "C")).toHaveLength(19);
 		for (const row of mapping.rows) {
 			if (row.category === "A") {
 				expect(row.action).toBe("propose-replace-after-approval");
 				expect(row.academy_slug).not.toBeNull();
-				expect(slugSet.has(row.academy_slug as string)).toBe(true);
+				expect(
+					allSlugs.filter((slug) => slug === row.academy_slug),
+				).toHaveLength(1);
 			} else {
 				expect(row.category).toBe("C");
 				expect(row.action).toBe("keep-active");
@@ -163,6 +172,8 @@ describe("Biology 5 interactive lab models", () => {
 		expect(() => cellStructures("bacteria" as "plant")).toThrow();
 
 		expect(Object.keys(ORGAN_SYSTEMS)).toHaveLength(7);
+		expect(ORGAN_SYSTEMS.nerven.regions).toEqual(["head", "spine"]);
+		expect(ORGAN_SYSTEMS.ausscheidung.regions).toEqual(["abdomen", "pelvis"]);
 
 		expect(armState(55).pose).toBe("gebeugt");
 		expect(armState(55).biceps).toBe("spannt an (zieht den Unterarm hoch)");

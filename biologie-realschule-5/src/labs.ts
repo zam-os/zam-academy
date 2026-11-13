@@ -130,13 +130,21 @@ export function cellStructures(cellType: CellType): CellStructureInfo[] {
 		: ALL_CELL_STRUCTURES.filter((item) => item.group === "gemeinsam");
 }
 
+export type OrganRegion =
+	| "skeleton"
+	| "head"
+	| "spine"
+	| "chest"
+	| "abdomen"
+	| "pelvis";
+
 export interface OrganSystemInfo {
 	id: OrganSystemId;
 	name: string;
 	organs: string;
 	task: string;
 	cooperation: string;
-	region: "skeleton" | "head" | "chest" | "abdomen" | "pelvis";
+	regions: OrganRegion[];
 }
 
 export const ORGAN_SYSTEMS: Record<OrganSystemId, OrganSystemInfo> = {
@@ -147,7 +155,7 @@ export const ORGAN_SYSTEMS: Record<OrganSystemId, OrganSystemInfo> = {
 		task: "Stützt den Körper, schützt innere Organe und ermöglicht Bewegungen.",
 		cooperation:
 			"Das Nervensystem sendet Bewegungssignale an die Muskeln; das Herz-Kreislauf-System liefert Sauerstoff und Nährstoffe.",
-		region: "skeleton",
+		regions: ["skeleton"],
 	},
 	atmung: {
 		id: "atmung",
@@ -156,7 +164,7 @@ export const ORGAN_SYSTEMS: Record<OrganSystemId, OrganSystemInfo> = {
 		task: "Nimmt Sauerstoff aus der Atemluft auf und gibt Kohlenstoffdioxid ab.",
 		cooperation:
 			"Der aufgenommene Sauerstoff gelangt in der Lunge ins Blut und wird vom Herz-Kreislauf-System weitertransportiert.",
-		region: "chest",
+		regions: ["chest"],
 	},
 	kreislauf: {
 		id: "kreislauf",
@@ -165,7 +173,7 @@ export const ORGAN_SYSTEMS: Record<OrganSystemId, OrganSystemInfo> = {
 		task: "Pumpt Blut durch den Körper und transportiert Sauerstoff sowie Nährstoffe.",
 		cooperation:
 			"Verbindet Lunge, Verdauungstrakt, Nieren und Muskeln als gemeinsames Transportnetz.",
-		region: "chest",
+		regions: ["chest"],
 	},
 	verdauung: {
 		id: "verdauung",
@@ -174,7 +182,7 @@ export const ORGAN_SYSTEMS: Record<OrganSystemId, OrganSystemInfo> = {
 		task: "Zerkleinert Nahrung, zerlegt sie in verwertbare Bestandteile und nimmt Nährstoffe auf.",
 		cooperation:
 			"Die aufgenommenen Nährstoffe gelangen über das Blut zu Muskeln, Gehirn und allen Organen.",
-		region: "abdomen",
+		regions: ["abdomen"],
 	},
 	nerven: {
 		id: "nerven",
@@ -183,7 +191,7 @@ export const ORGAN_SYSTEMS: Record<OrganSystemId, OrganSystemInfo> = {
 		task: "Nimmt Reize auf, verarbeitet Informationen und steuert Reaktionen des Körpers.",
 		cooperation:
 			"Koordiniert Bewegungen, Atmung und Reaktionen auf die Umwelt mit allen anderen Organsystemen.",
-		region: "head",
+		regions: ["head", "spine"],
 	},
 	ausscheidung: {
 		id: "ausscheidung",
@@ -192,7 +200,7 @@ export const ORGAN_SYSTEMS: Record<OrganSystemId, OrganSystemInfo> = {
 		task: "Filtert überschüssige und nicht mehr benötigte Stoffe aus dem Blut und scheidet Harn aus.",
 		cooperation:
 			"Arbeitet eng mit dem Blutkreislauf zusammen, um den Wasser- und Stoffhaushalt im Gleichgewicht zu halten.",
-		region: "abdomen",
+		regions: ["abdomen", "pelvis"],
 	},
 	fortpflanzung: {
 		id: "fortpflanzung",
@@ -201,7 +209,7 @@ export const ORGAN_SYSTEMS: Record<OrganSystemId, OrganSystemInfo> = {
 		task: "Bildet Keimzellen und ermöglicht die Entstehung von Nachkommen.",
 		cooperation:
 			"Wird vom Gehirn über Botenstoffe gesteuert und vom Herz-Kreislauf-System versorgt.",
-		region: "pelvis",
+		regions: ["pelvis"],
 	},
 };
 
@@ -411,18 +419,21 @@ function cellCompareOutput(state: LabState): string {
 
 function torsoOutput(state: LabState): string {
 	const info = ORGAN_SYSTEMS[state.system];
-	const regionHighlight = (region: OrganSystemInfo["region"]) =>
-		info.region === region ? "var(--accent)" : "var(--line)";
-	const fillFor = (region: OrganSystemInfo["region"]) =>
-		info.region === region ? "var(--accent-soft)" : "var(--surface)";
+	const regionHighlight = (region: OrganRegion) =>
+		info.regions.includes(region) ? "var(--accent)" : "var(--line)";
+	const fillFor = (region: OrganRegion) =>
+		info.regions.includes(region) ? "var(--accent-soft)" : "var(--surface)";
 	return `${renderGoals(labGoals("torso", state))}
     <svg class="bio-chart" viewBox="0 0 640 240" role="img" aria-label="Schematischer Torso: ${esc(info.name)}">
       <circle cx="320" cy="36" r="22" fill="${fillFor("head")}" stroke="${regionHighlight("head")}" stroke-width="2.5"/>
+      <line x1="302" y1="50" x2="254" y2="68" stroke="${regionHighlight("spine")}" stroke-width="2.5" stroke-linecap="round"/>
+      <rect x="246" y="68" width="16" height="122" rx="6" fill="${fillFor("spine")}" stroke="${regionHighlight("spine")}" stroke-width="2.5"/>
       <rect x="274" y="66" width="92" height="135" rx="22" fill="${fillFor("skeleton")}" stroke="${regionHighlight("skeleton")}" stroke-width="2.5"/>
       <rect x="284" y="74" width="72" height="46" rx="12" fill="${fillFor("chest")}" stroke="${regionHighlight("chest")}" stroke-width="2.5"/>
       <rect x="284" y="126" width="72" height="40" rx="10" fill="${fillFor("abdomen")}" stroke="${regionHighlight("abdomen")}" stroke-width="2.5"/>
       <rect x="288" y="170" width="64" height="24" rx="8" fill="${fillFor("pelvis")}" stroke="${regionHighlight("pelvis")}" stroke-width="2.5"/>
       <text x="20" y="34">${esc(info.name)}</text>
+      <text x="236" y="133" text-anchor="end">Wirbelkanal</text>
       <text x="320" y="102" text-anchor="middle">Brustraum</text>
       <text x="320" y="151" text-anchor="middle">Bauchraum</text>
       <text x="320" y="186" text-anchor="middle">Becken</text>
