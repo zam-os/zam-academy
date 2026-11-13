@@ -56,6 +56,8 @@ Hands-on training apps that build understanding before [ZAM](https://github.com/
 | Informatik 8 Realschule (LehrplanPLUS Bayern, IT-Anfangsunterricht 1.1–1.9, alle Wahlpflichtfächergruppen) | [`informatik-realschule-8/`](informatik-realschule-8/) | https://academy.zam-os.org/informatik-realschule-8/ | `zam-academy:informatik-realschule-8` |
 | Deutsch 8 Realschule (LehrplanPLUS Bayern, alle Wahlpflichtfächergruppen) | [`deutsch-realschule-8/`](deutsch-realschule-8/) | https://academy.zam-os.org/deutsch-realschule-8/ | `zam-academy:deutsch-realschule-8` |
 | French 8 Realschule (Bavaria, IIIa) | [`franzoesisch-realschule-8/`](franzoesisch-realschule-8/) | Published by Pages on merge | `zam-academy:franzoesisch-realschule-8` |
+| Deutsch 7 Mittelschule (LehrplanPLUS Bayern, Regelklasse und M-Zug) | [`deutsch-mittelschule-7/`](deutsch-mittelschule-7/) | https://academy.zam-os.org/deutsch-mittelschule-7/ | `zam-academy:deutsch-mittelschule-7` |
+| Deutsch 8 Mittelschule (LehrplanPLUS Bayern, Regelklasse und M-Zug) | [`deutsch-mittelschule-8/`](deutsch-mittelschule-8/) | https://academy.zam-os.org/deutsch-mittelschule-8/ | `zam-academy:deutsch-mittelschule-8` |
 
 ## How an app and its ZAM cell fit together
 
@@ -143,6 +145,8 @@ cd uml                 # or: cd physik-realschule-9 (dev server on :5181), cd sq
 # Mathematics 6 Mittelschule: cd mathematik-mittelschule-6 (dev server on :5229)
 # Mathematik 7 Mittelschule: cd mathematik-mittelschule-7 (dev server on :5232)
 # Mathematik 8 Mittelschule: cd mathematik-mittelschule-8 (dev server on :5233)
+# Deutsch 7 Mittelschule: cd deutsch-mittelschule-7 (dev server on :5234)
+# Deutsch 8 Mittelschule: cd deutsch-mittelschule-8 (dev server on :5235)
 # Grade 11 introductory biology preview: cd biologie-gymnasium-11 (dev server on :5227)
 npm ci
 npm run dev      # http://localhost:5180/uml/
@@ -207,3 +211,5 @@ ZAM cards respectively. Both include local listening audio, checked case
 decisions, writing tasks on two levels and self-contained offline ZIPs.
 The [curriculum and existing-card inventory](docs/deutsch-mittelschule-5-6-coverage.md)
 records the verified official sources and the additional classroom practice.
+
+The [Deutsch 7 Mittelschule](deutsch-mittelschule-7/) and [Deutsch 8 Mittelschule](deutsch-mittelschule-8/) packages each add 37 lessons (36 per track: Regelklasse and M-Zug) and 74 linked ZAM cards across all four LehrplanPLUS Bayern areas (*Sprechen und Zuhören*, *Lesen, Literatur und Medien*, *Schreiben*, *Sprachgebrauch und Sprache*). Their [coverage and legacy inventory](docs/deutsch-mittelschule-7-8-coverage.md) checks all 142 Grade 7 and 144 Grade 8 verbatim expectations and confirms that no Mittelschule German `de-by` legacy cards exist.
