@@ -63,10 +63,10 @@ jobs:
       - name: Offline zip
         run: node scripts/build-release-zip.mjs
       - name: Check self-contained offline bundles
-        if: matrix.app == 'mathematik-mittelschule-5' || matrix.app == 'mathematik-mittelschule-6' || matrix.app == 'mathematik-grundschule-4' || matrix.app == 'deutsch-grundschule-4' || matrix.app == 'hsu-grundschule-4' || matrix.app == 'geographie-realschule-8' || matrix.app == 'chemie-realschule-8' || matrix.app == 'deutsch-realschule-10' || matrix.app == 'englisch-realschule-5' || matrix.app == 'englisch-realschule-10' || matrix.app == 'politik-realschule-10' || matrix.app == 'biologie-realschule-8' || matrix.app == 'informatik-realschule-8' || matrix.app == 'deutsch-realschule-5' || matrix.app == 'deutsch-realschule-8' || matrix.app == 'geschichte-realschule-8' || matrix.app == 'englisch-realschule-8' || matrix.app == 'franzoesisch-realschule-8'
+        if: matrix.app == 'mathematik-mittelschule-5' || matrix.app == 'mathematik-mittelschule-6' || matrix.app == 'mathematik-mittelschule-9' || matrix.app == 'mathematik-mittelschule-10' || matrix.app == 'mathematik-grundschule-4' || matrix.app == 'deutsch-grundschule-4' || matrix.app == 'hsu-grundschule-4' || matrix.app == 'geographie-realschule-8' || matrix.app == 'chemie-realschule-8' || matrix.app == 'deutsch-realschule-10' || matrix.app == 'englisch-realschule-5' || matrix.app == 'englisch-realschule-10' || matrix.app == 'politik-realschule-10' || matrix.app == 'biologie-realschule-8' || matrix.app == 'informatik-realschule-8' || matrix.app == 'deutsch-realschule-5' || matrix.app == 'deutsch-realschule-8' || matrix.app == 'geschichte-realschule-8' || matrix.app == 'englisch-realschule-8' || matrix.app == 'franzoesisch-realschule-8'
         run: node scripts/verify-release.mjs
       - name: Check verbatim Mittelschule curriculum coverage
-        if: matrix.app == 'mathematik-mittelschule-5' || matrix.app == 'mathematik-mittelschule-6'
+        if: matrix.app == 'mathematik-mittelschule-5' || matrix.app == 'mathematik-mittelschule-6' || matrix.app == 'mathematik-mittelschule-9' || matrix.app == 'mathematik-mittelschule-10'
         run: node scripts/check-curriculum.mjs
       - uses: actions/upload-artifact@v4
         with:

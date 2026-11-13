@@ -1,0 +1,305 @@
+{
+  "schema": 1,
+  "curriculum": "https://www.lehrplanplus.bayern.de/fachlehrplan/mittelschule/10/mathematik",
+  "checked": "2026-11-12",
+  "curriculum_sha256": "3d7b926d070190180d6428c09264cdd71a65d79b281dcdf9e7372339d1738225",
+  "curriculum_title": "LehrplanPLUS - Mittelschule - 10 - Mathematik - Fachlehrpläne",
+  "hours": null,
+  "hours_note": "The live Fachlehrplan M10 supplies no hour allocations for these learning areas.",
+  "scope_note": "Mathematik M10 is one Fachlehrplan for the M10 class of the Mittelschule (Mittlerer Schulabschluss); it has no Zug selector. Lessons build on M9 (power notation, interest, Pythagoras, linear functions, fractional and pure quadratic equations) and say so where they repeat it.",
+  "rows": [
+    {
+      "lb": 1,
+      "competence": "nutzen die Potenzschreibweise als eine andere Darstellung für die Multiplikation mit gleichen Faktoren und stellen Potenzen mit beliebiger Basis dar. Bei der Beschreibung des Potenzierens verwenden sie Fachbegriffe (Potenz, Basis, Exponent).",
+      "lessons": [
+        "pw-1-potenzen"
+      ],
+      "status": "implemented",
+      "evidence": "The power-chain lab writes products of equal factors as powers with any base, including negative bases and fractions; tasks name base, exponent and power and switch between both notations."
+    },
+    {
+      "lb": 1,
+      "competence": "begründen ausgehend von geeigneten Zahlenbeispielen die Potenzgesetze und nutzen diese für einfache Termumformungen.",
+      "lessons": [
+        "pw-2-potenzgesetze"
+      ],
+      "status": "implemented",
+      "evidence": "The rules lab shows each power law as written-out factors for chosen exponents, so learners justify the law from number examples; tasks simplify terms with the laws."
+    },
+    {
+      "lb": 1,
+      "competence": "stellen Brüche in Potenzschreibweise dar (z. B. b7 • c-3) und übertragen die Potenzgesetze auf Terme, die auch negative Exponenten enthalten, um diese zu vereinfachen.",
+      "lessons": [
+        "pw-3-negative-exponenten"
+      ],
+      "status": "implemented",
+      "evidence": "The ladder lab continues powers below exponent zero by dividing by the base; tasks write fractions such as b⁷ : c³ with negative exponents and simplify terms with the power laws."
+    },
+    {
+      "lb": 1,
+      "competence": "erklären das Potenzieren und Radizieren als Umkehrung des jeweils anderen Vorgangs und verwenden den Begriff n-te Wurzel (z. B. 5-te Wurzel, 6-te Wurzel).",
+      "lessons": [
+        "pw-4-wurzeln"
+      ],
+      "status": "implemented",
+      "evidence": "The root lab runs powering and taking roots as inverse operations for square, cube, fifth and sixth roots; tasks compute n-th roots and check them by powering."
+    },
+    {
+      "lb": 1,
+      "competence": "wechseln zwischen der Wurzelschreibweise und der Potenzschreibweise mit Stammbrüchen und erläutern die mathematischen Zusammenhänge zwischen den Potenzgesetzen und Wurzelgesetzen mit eigenen Worten sowie geeigneten Fachbegriffen, um in der Sprache der Mathematik zu argumentieren.",
+      "lessons": [
+        "pw-5-wurzelgesetze"
+      ],
+      "status": "supported",
+      "evidence": "The lab and tasks switch between root notation and powers with unit-fraction exponents and link the root laws to the power laws, with a worked argument in the explanation. Explaining the connection in their own words happens in class."
+    },
+    {
+      "lb": 1,
+      "competence": "verwenden den Logarithmus, um Exponenten von Potenzen zu ermitteln.",
+      "lessons": [
+        "pw-6-logarithmus"
+      ],
+      "status": "implemented",
+      "evidence": "The logarithm lab finds the exponent for a given base and power on a curve; tasks determine exponents with lg and the calculator."
+    },
+    {
+      "lb": 2,
+      "competence": "übersetzen Realsituationen mit exponentiellem Wachstum (Zu- und Abnahmeprozesse, z. B. Zinseszins, Bevölkerungsentwicklung, radioaktiver Zerfall) in mathematische Modelle (Tabellen, Graphen, Terme) und geben umgekehrt zu mathematischen Modellen eine passende Realsituation an, um exponentielles Wachstum deutlich von linearem Wachstum abzugrenzen sowie charakterisierende Eigenschaften (z. B. Geschwindigkeit des Wachstums) zu identifizieren.",
+      "lessons": [
+        "ex-1-linear-exponentiell",
+        "ex-2-wachstumsmodelle"
+      ],
+      "status": "implemented",
+      "evidence": "Labs compare linear and exponential growth in tables and graphs and model increase and decay with y = a · qˣ; tasks translate interest, population, medication and half-life situations into models and name a situation for a given model."
+    },
+    {
+      "lb": 2,
+      "competence": "verwenden die Potenz-, Wurzel- und Logarithmusgesetze beim Umgang mit Wachstumsprozessen, die sie ggf. auch computergestützt darstellen. Dabei ermitteln sie Anfangs- und Endwerte, Wachstumsfaktoren und ‑raten sowie die Dauer des Wachstums und überprüfen die Ergebnisse auf Plausibilität.",
+      "lessons": [
+        "ex-2-wachstumsmodelle",
+        "ex-3-wachstum-berechnen"
+      ],
+      "status": "implemented",
+      "evidence": "The solver lab computes factor, rate and doubling or halving time from start value, end value and duration; tasks determine start values, factors, rates and durations with roots and logarithms and check plausibility. The explanation shows the spreadsheet approach; working in a real spreadsheet happens in class."
+    },
+    {
+      "lb": 3,
+      "competence": "treffen anhand der jeweils vorliegenden Winkel und Streckenverhältnisse begründete Aussagen über die Ähnlichkeit von Figuren.",
+      "lessons": [
+        "ae-1-aehnliche-figuren"
+      ],
+      "status": "implemented",
+      "evidence": "The similarity lab compares the angles and the ratios of corresponding sides of two triangles; tasks decide similarity of triangles, rectangles and isosceles triangles with reasons."
+    },
+    {
+      "lb": 3,
+      "competence": "verwenden die Begriffe zentrische Streckung, Streckungszentrum und Streckungsfaktor k bei Vergrößerungen und Verkleinerungen geometrischer Figuren fachgerecht, um die Bedeutung einer Maßstabsangabe zu erklären.",
+      "lessons": [
+        "ae-2-zentrische-streckung"
+      ],
+      "status": "implemented",
+      "evidence": "The stretching lab moves the centre and the factor k and shows the scale as a ratio; tasks use centre, factor and scale on maps, plans and models."
+    },
+    {
+      "lb": 3,
+      "competence": "berechnen an ähnlichen Figuren und Körpern fehlende Seitenlängen, Flächeninhalte und Volumina auch in Sachzusammenhängen.",
+      "lessons": [
+        "ae-3-flaechen-volumen"
+      ],
+      "status": "implemented",
+      "evidence": "The cube lab shows lengths times k, areas times k² and volumes times k³; tasks compute missing sides, areas and volumes of similar figures and bodies such as sails and tank models."
+    },
+    {
+      "lb": 3,
+      "competence": "erklären die Strahlensätze basierend auf den Kenntnissen der zentrischen Streckung und wenden sie zur Berechnung unbekannter Strecken auch in Sachzusammenhängen an.",
+      "lessons": [
+        "ae-4-strahlensaetze"
+      ],
+      "status": "implemented",
+      "evidence": "The intercept lab derives both theorems from the central dilation and marks parallel segments; tasks compute unknown segments, tree heights by shadows and the shadow of a person under a street lamp."
+    },
+    {
+      "lb": 3,
+      "competence": "erklären Kathetensatz sowie Höhensatz und geben sie in rechtwinkligen Dreiecken mit verschiedenen Seitenvariablen an. Sie berechnen fehlende Streckenlängen auch in Sachzusammenhängen.",
+      "lessons": [
+        "ae-5-kathetensatz-hoehensatz"
+      ],
+      "status": "implemented",
+      "evidence": "The Thales lab shows the square and the rectangle of equal area for both theorems; tasks use other vertex names and compute heights and legs, also of a roof gable."
+    },
+    {
+      "lb": 4,
+      "competence": "beschreiben die Verhältnisse von Seitenlängen an ähnlichen rechtwinkligen Dreiecken und erläutern jeweils die Beziehung zwischen Winkelgröße und Seitenlängen unter Verwendung von Sinus, Kosinus und Tangens.",
+      "lessons": [
+        "tr-1-sin-cos-tan"
+      ],
+      "status": "implemented",
+      "evidence": "The ratio lab keeps the angle while the triangle grows, so sine, cosine and tangent stay the same; tasks name opposite and adjacent sides for different vertex names and compute angles from ratios."
+    },
+    {
+      "lb": 4,
+      "competence": "berechnen Streckenlängen und Winkelgrößen unter Nutzung der Winkelfunktionen in rechtwinkligen Dreiecken bei Figuren und Körpern.",
+      "lessons": [
+        "tr-2-berechnen"
+      ],
+      "status": "implemented",
+      "evidence": "The ladder lab and tasks compute sides and angles in right triangles, isosceles triangles, rectangles and square pyramids."
+    },
+    {
+      "lb": 4,
+      "competence": "lösen Sachaufgaben und berufsorientierende Aufgaben mithilfe der Winkelfunktionen. Dabei erstellen sie ggf. notwendige Skizzen und beschriften diese mit gegebenen Werten und gesuchten Größen.",
+      "lessons": [
+        "tr-3-sachaufgaben"
+      ],
+      "status": "supported",
+      "evidence": "The slope lab connects percent gradients and angles; tasks cover roads, wheelchair ramps, angles of elevation and roof pitches for carpenters and ask for a labelled sketch. Drawing the sketches by hand happens in class."
+    },
+    {
+      "lb": 4,
+      "competence": "veranschaulichen Sinus und Kosinus eines Winkels am Einheitskreis und geben deren Wertebereich an. Sie verwenden die Funktion mit der Gleichung y = sin α zur Beschreibung von periodischen Vorgängen (z. B. Schwingung eines Pendels).",
+      "lessons": [
+        "tr-4-einheitskreis",
+        "tr-5-sinusfunktion"
+      ],
+      "status": "implemented",
+      "evidence": "The unit-circle lab shows P(cos α | sin α) with quadrants and the range from −1 to 1; the sine lab unrolls the circle into y = sin α up to 720°, and tasks describe a Ferris wheel as a periodic process."
+    },
+    {
+      "lb": 5,
+      "competence": "erklären die Oberflächeninhaltsberechnung sowie die Volumenberechnung bei Kugeln anschaulich. Sie wenden die entsprechenden Formeln sicher an, auch bei Umkehraufgaben.",
+      "lessons": [
+        "ku-1-kugel"
+      ],
+      "status": "implemented",
+      "evidence": "The sphere lab sinks a ball into a full cylinder (two thirds overflow) and peels the surface into four great circles; tasks compute surface and volume and solve inverse problems for the radius."
+    },
+    {
+      "lb": 5,
+      "competence": "zerlegen und ergänzen bei komplexeren Sachaufgaben sowie berufsorientierenden Aufgaben (Teil-)Körper und berechnen entsprechende Oberflächeninhalte und Volumina. Dabei erstellen sie ggf. notwendige Skizzen und beschriften diese mit gegebenen Werten und gesuchten Größen.",
+      "lessons": [
+        "ku-2-zusammengesetzt"
+      ],
+      "status": "supported",
+      "evidence": "The composite lab combines cylinder, cone and cube with a hemisphere or sphere; tasks decompose silos, cones, packaging and a machined steel part. Drawing labelled sketches by hand happens in class."
+    },
+    {
+      "lb": 6,
+      "competence": "erstellen zu mehrstufigen Zufallsexperimenten (mit und ohne Zurücklegen) Baumdiagramme, um die jeweiligen Wahrscheinlichkeiten in den verschiedenen Stufen übersichtlich darzustellen.",
+      "lessons": [
+        "st-1-baumdiagramm"
+      ],
+      "status": "supported",
+      "evidence": "The urn lab draws the tree for two or three draws with and without replacement and simulates the draws; tasks read branch probabilities. Drawing the trees by hand happens in class."
+    },
+    {
+      "lb": 6,
+      "competence": "bestimmen und begründen, ausgehend von Baumdiagrammen, die Wahrscheinlichkeit eines Ereignisses bei mehrstufigen Zufallsexperimenten mithilfe der Pfadregeln (Multiplikations- und Additionsregel).",
+      "lessons": [
+        "st-2-pfadregeln"
+      ],
+      "status": "implemented",
+      "evidence": "The path-rule lab marks the paths of an event, the shortened tree and the complement; tasks apply the multiplication and addition rules, including penalties and quality control."
+    },
+    {
+      "lb": 6,
+      "competence": "bestimmen die Anzahl der verschiedenen Möglichkeiten bei kombinatorischen Aufgabenstellungen (Permutationen).",
+      "lessons": [
+        "st-3-permutationen"
+      ],
+      "status": "implemented",
+      "evidence": "The permutation lab counts orders seat by seat and lists them up to 24; tasks count arrangements of people, books, letters and podium places."
+    },
+    {
+      "lb": 6,
+      "competence": "nutzen die Kenntnisse über mehrstufige Zufallsexperimente und kombinatorische Überlegungen, um statistische Aussagen in Texten und Darstellungen zu interpretieren und um Fehldeutungen zu vermeiden.",
+      "lessons": [
+        "st-4-fehldeutungen"
+      ],
+      "status": "implemented",
+      "evidence": "The rapid-test lab counts 1,000 people in a contingency table; tasks check a newspaper claim about a test, the gambler's fallacy and a truncated bar chart."
+    },
+    {
+      "lb": 7,
+      "competence": "ermitteln durch Rechnung Funktionsgleichungen linearer Funktionen aus verschiedenen Vorgaben (zwei Punkte gegeben, Punkt und Steigung gegeben, Punkt und Steigung der Senkrechten bzw. Parallelen gegeben), um bei der Lösung von inner- und außermathematischen Problemen jeweils die Steigung m, den y-Achsenabschnitt t, mögliche Schnittpunkte sowie fehlende Werte zu bestimmen und die Funktion zu zeichnen.",
+      "lessons": [
+        "fz-1-geradengleichung",
+        "fz-2-parallel-senkrecht"
+      ],
+      "status": "supported",
+      "evidence": "Labs find lines from two points, from point and slope and from a parallel or perpendicular line; tasks determine m, t, missing values and intersections. Drawing the lines on paper happens in class."
+    },
+    {
+      "lb": 7,
+      "competence": "wandeln Terme zweiten Grades mithilfe der binomischen Formeln um.",
+      "lessons": [
+        "fz-3-binomische-formeln"
+      ],
+      "status": "implemented",
+      "evidence": "The area lab shows each binomial formula as squares and rectangles; tasks expand and factorise terms and use the formulas for mental arithmetic."
+    },
+    {
+      "lb": 7,
+      "competence": "bestimmen die Lösungsmengen von reinquadratischen sowie gemischtquadratischen Gleichungen mithilfe verschiedener Verfahren (z. B. quadratische Ergänzung, Lösungsformel, Zeichnung oder Faktorisierung) und bewerten diese Verfahren (z. B. hinsichtlich Einsetzbarkeit, Effizienz). In Sachzusammenhängen überprüfen sie die Plausibilität ihrer Ergebnisse.",
+      "lessons": [
+        "fz-4-quadratische-gleichungen"
+      ],
+      "status": "implemented",
+      "evidence": "The roots lab links solutions, factors and the parabola; tasks solve pure and mixed quadratic equations by formula and factorising, judge the number of solutions by the discriminant and reject implausible solutions in contexts."
+    },
+    {
+      "lb": 7,
+      "competence": "geben die Definitions- sowie die Lösungsmengen von Bruchgleichungen (Variable im Zähler und im Nenner) auch in Sachzusammenhängen an.",
+      "lessons": [
+        "fz-5-bruchgleichungen"
+      ],
+      "status": "implemented",
+      "evidence": "The fraction-equation lab shows the gap of the domain and the solution as an intersection; tasks state domain and solution set, also for sharing costs and prizes."
+    },
+    {
+      "lb": 7,
+      "competence": "erkennen und unterscheiden begründet lineare, umgekehrt proportionale und quadratische Abhängigkeiten in Sachsituationen, Tabellen und Graphen.",
+      "lessons": [
+        "fz-6-abhaengigkeiten"
+      ],
+      "status": "implemented",
+      "evidence": "The model lab fits linear, inverse proportional and quadratic models to data from three situations; tasks classify tables and situations."
+    },
+    {
+      "lb": 7,
+      "competence": "stellen quadratische Funktionen der Formen y = +/- (x-xs)2 + ys bzw. y = +/- x2 + px + q durch Tabellen, Graphen und Funktionsgleichung dar. Darüber hinaus beschreiben und interpretieren sie die Funktionen.",
+      "lessons": [
+        "fz-7-scheitelpunktform"
+      ],
+      "status": "implemented",
+      "evidence": "The vertex lab shifts the normal parabola, also opened downwards; tasks read the vertex, compute values and interpret a fountain jet."
+    },
+    {
+      "lb": 7,
+      "competence": "wechseln durch Umformung zwischen Normalform y = +/- x2 + px + q und Scheitelpunktform y = +/- (x-xs)2 + ys von quadratischen Funktionen, um die für die Aufgabenstellung geeignete Form zu ermitteln bzw. den Scheitelpunkt (xs; ys) zu bestimmen.",
+      "lessons": [
+        "fz-8-normalform"
+      ],
+      "status": "implemented",
+      "evidence": "The tile lab completes the square to reach the vertex form; tasks convert between normal and vertex form, including a profit maximum."
+    },
+    {
+      "lb": 7,
+      "competence": "ermitteln rechnerisch Funktionsgleichungen quadratischer Funktionen aus zwei jeweils gegebenen Punkten.",
+      "lessons": [
+        "fz-9-zwei-punkte"
+      ],
+      "status": "implemented",
+      "evidence": "The fit lab finds the parabola through two points; tasks solve the linear system for p and q, also for an arch through its feet."
+    },
+    {
+      "lb": 7,
+      "competence": "bestimmen durch Rechnung und Zeichnung die Achsenschnittpunkte quadratischer Funktionen sowie deren Schnittpunkte mit linearen bzw. quadratischen Funktionen und beschreiben ihre Vorgehensweise.",
+      "lessons": [
+        "fz-10-schnittpunkte"
+      ],
+      "status": "implemented",
+      "evidence": "The parabola-line lab shows two, one or no common points; tasks compute axis intercepts and intersections with lines and parabolas and describe the procedure."
+    }
+  ],
+  "optional_lessons": []
+}
