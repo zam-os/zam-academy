@@ -1,0 +1,789 @@
+[
+  {
+    "id": "gpg5-konflikte",
+    "lb": 4,
+    "title": "Konflikte im Alltag erkennen",
+    "period": "Zusammenleben · Peergroup, Familie, Schule",
+    "intro": "Streit gehört zum Leben. Wichtig ist, ihn früh zu erkennen und fair zu lösen.",
+    "review": "Wiederholung aus HSU 3/4: Zusammenleben",
+    "paragraphs": [
+      "Ein Konflikt entsteht, wenn Menschen unterschiedliche Wünsche, Meinungen oder Bedürfnisse haben, die nicht gleichzeitig erfüllt werden können. Konflikte gibt es überall: in der Familie, wenn zwei Geschwister dasselbe wollen, in der Schule, wenn eine Gruppenarbeit nicht klappt, und unter Freunden, deiner Peergroup, wenn sich jemand ausgeschlossen fühlt. Häufige Ursachen sind verschiedene Wünsche, Missverständnisse und verletzte Gefühle.",
+      "Ein Konflikt kann Stufe für Stufe schlimmer werden: aus einer Meinungsverschiedenheit werden Vorwürfe, dann Beleidigungen und Ausgrenzen, dann Drohungen und am Ende Gewalt. Je früher man einen Streit bemerkt und anspricht, desto leichter ist eine Lösung. Das nennt man Prävention, also Vorbeugen. Gewalt ist nie eine Lösung. Wird jemand bedroht oder verletzt, holst du sofort Hilfe bei einer Lehrkraft oder einem anderen Erwachsenen."
+    ],
+    "takeaway": "Konflikte entstehen aus verschiedenen Wünschen, Missverständnissen oder verletzten Gefühlen. Je früher sie angesprochen werden, desto leichter lassen sie sich lösen.",
+    "sourceIds": [
+      "lehrplan",
+      "hanisau-konflikt",
+      "hanisau-gewalt"
+    ],
+    "figures": [
+      "konflikttreppe"
+    ],
+    "quiz": {
+      "question": "Wann lässt sich ein Konflikt am leichtesten lösen?",
+      "answer": "früh, bevor er sich hochschaukelt",
+      "wrong": [
+        "erst, wenn sich alle beleidigt haben",
+        "gar nicht, Konflikte lösen sich immer von selbst"
+      ],
+      "explanation": "Auf den unteren Stufen der Konflikttreppe sind die Gefühle noch nicht so stark verletzt. Dann fällt eine Einigung leichter."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Woher kommt der Streit?",
+      "instruction": "Lies die Situationen. Was ist die Hauptursache des Konflikts? Ordne zu und prüfe dann deine Zuordnung.",
+      "categories": [
+        "verschiedene Wünsche",
+        "Missverständnis",
+        "verletzte Gefühle"
+      ],
+      "entries": [
+        {
+          "text": "Zwei Geschwister wollen am Abend unterschiedliche Sendungen sehen.",
+          "target": 0,
+          "feedback": "Beide wollen etwas anderes, aber es gibt nur einen Fernseher."
+        },
+        {
+          "text": "Ali glaubt, Ben lacht über ihn. Ben lacht aber über ein Video.",
+          "target": 1,
+          "feedback": "Ali hat Bens Lachen falsch verstanden."
+        },
+        {
+          "text": "Lea wird als Einzige nicht zur Party eingeladen.",
+          "target": 2,
+          "feedback": "Ausgeschlossen zu werden tut weh."
+        },
+        {
+          "text": "In der Pause wollen zwei Gruppen gleichzeitig auf den Fußballplatz.",
+          "target": 0,
+          "feedback": "Der Platz reicht nicht für beide Wünsche."
+        },
+        {
+          "text": "Mama denkt, Tim hat seine Hausaufgaben vergessen. Er hat sie aber in der Schule gemacht.",
+          "target": 1,
+          "feedback": "Ein Missverständnis lässt sich oft mit einer Frage klären."
+        },
+        {
+          "text": "Im Klassenchat wird über Sarahs Frisur gelästert.",
+          "target": 2,
+          "feedback": "Lästern verletzt, auch online."
+        }
+      ],
+      "conclusion": "Wer die Ursache kennt, findet leichter eine Lösung: Wünsche ausgleichen, Missverständnisse klären, Verletzungen entschuldigen."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Beschreibe einen Konflikt, den du aus deinem Alltag kennst (Familie, Schule oder Freunde). Was war die Ursache? Du musst keine echten Namen nennen.",
+        "hints": [
+          "Wer war beteiligt, worum ging es?",
+          "Waren es Wünsche, ein Missverständnis oder verletzte Gefühle?"
+        ],
+        "model": "Beispiel: Mein Freund und ich wollten in der Pause beide mit dem einzigen Basketball spielen. Wir haben gestritten, wer ihn zuerst bekommt. Die Ursache waren verschiedene Wünsche, denn es gab nur einen Ball für zwei Gruppen.",
+        "criteria": [
+          "Konflikt beschrieben",
+          "Beteiligte genannt",
+          "Ursache bestimmt"
+        ]
+      },
+      "2": {
+        "prompt": "In deiner Klasse wird eine Mitschülerin immer wieder ausgelacht. Ordne die Situation auf der Konflikttreppe ein und überlege, was du und andere tun könnt, damit es nicht schlimmer wird.",
+        "hints": [
+          "Welche Stufe ist Auslachen?",
+          "Wen kannst du um Hilfe bitten?"
+        ],
+        "model": "Auslachen gehört zur Stufe Beleidigen und Ausgrenzen, der Konflikt ist also schon weit oben. Ich kann zur Mitschülerin halten und sagen, dass ich das nicht in Ordnung finde. Wir können das Thema im Klassenrat ansprechen. Wenn es weitergeht, holen wir Hilfe bei der Klassenleitung oder der Schulsozialarbeit.",
+        "criteria": [
+          "Stufe richtig eingeordnet",
+          "eigene Handlung genannt",
+          "Hilfe durch Erwachsene einbezogen"
+        ]
+      }
+    }
+  },
+  {
+    "id": "gpg5-streit-loesen",
+    "lb": 4,
+    "title": "Streit fair lösen: Ich-Botschaften und Streitschlichtung",
+    "period": "Zusammenleben · Prävention und Intervention",
+    "intro": "Wie du sprichst, entscheidet oft, ob ein Streit größer wird oder sich löst.",
+    "paragraphs": [
+      "Eine Du-Botschaft wie „Du nimmst immer meine Sachen!“ klingt wie ein Angriff. Der andere verteidigt sich, und der Streit wird größer. Eine Ich-Botschaft beschreibt, was passiert ist, wie du dich fühlst und was du dir wünschst: „Ich ärgere mich, wenn mein Stift fehlt. Ich wünsche mir, dass du mich vorher fragst.“ Dazu gehört aktives Zuhören: Du lässt den anderen ausreden, schaust ihn an und wiederholst mit eigenen Worten, was du verstanden hast.",
+      "Wenn zwei sich allein nicht einigen, kann eine Streitschlichtung helfen. Eine neutrale Person, an vielen Schulen ausgebildete Schülerinnen und Schüler, leitet das Gespräch. Sie ergreift für niemanden Partei. Zuerst werden Regeln vereinbart: ausreden lassen, nicht beleidigen. Dann erzählt jeder seine Sicht, beide sagen, wie sie sich fühlen und was sie sich wünschen. Gemeinsam sammeln sie Lösungen und schreiben am Ende eine Vereinbarung auf, mit der beide leben können. Bei Gewalt oder Bedrohung muss sofort ein Erwachsener eingreifen."
+    ],
+    "takeaway": "Ich-Botschaften beschreiben, was passiert ist, wie du dich fühlst und was du dir wünschst. Bei der Streitschlichtung hilft eine neutrale Person, gemeinsam eine Lösung zu finden.",
+    "sourceIds": [
+      "lehrplan",
+      "hanisau-mediation",
+      "hanisau-konflikt"
+    ],
+    "figures": [
+      "ich-botschaft"
+    ],
+    "quiz": {
+      "question": "Welcher Satz ist eine Ich-Botschaft?",
+      "answer": "„Ich bin traurig, wenn ich nicht mitspielen darf.“",
+      "wrong": [
+        "„Du lässt mich nie mitspielen!“",
+        "„Ihr seid total gemein!“"
+      ],
+      "explanation": "Die Ich-Botschaft sagt, wie es dir geht, ohne den anderen anzugreifen. Die anderen Sätze sind Vorwürfe."
+    },
+    "workshop": {
+      "kind": "timeline",
+      "title": "Ablauf einer Streitschlichtung",
+      "instruction": "Bringe die Schritte einer Streitschlichtung in die richtige Reihenfolge: der erste Schritt nach oben. Prüfe dann deine Reihenfolge.",
+      "categories": [],
+      "entries": [
+        {
+          "text": "Begrüßen und Regeln vereinbaren: ausreden lassen, nicht beleidigen.",
+          "target": 0,
+          "feedback": "Ohne Regeln wird das Gespräch schnell wieder zum Streit."
+        },
+        {
+          "text": "Jeder erzählt nacheinander seine Sicht, der andere hört zu.",
+          "target": 1,
+          "feedback": "Beide Seiten werden gehört."
+        },
+        {
+          "text": "Beide sagen, wie sie sich fühlen und was sie sich wünschen.",
+          "target": 2,
+          "feedback": "Gefühle und Wünsche zeigen, was eine Lösung leisten muss."
+        },
+        {
+          "text": "Gemeinsam werden möglichst viele Lösungen gesammelt.",
+          "target": 3,
+          "feedback": "Erst sammeln, dann bewerten."
+        },
+        {
+          "text": "Eine Lösung wird ausgewählt und als Vereinbarung aufgeschrieben.",
+          "target": 4,
+          "feedback": "Die Vereinbarung macht die Lösung verbindlich."
+        }
+      ],
+      "conclusion": "Bei einer Streitschlichtung gibt es keine Verlierer: Beide arbeiten an einer Lösung, mit der sie leben können."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Verwandle die Du-Botschaft „Du störst mich immer bei den Hausaufgaben!“ in eine Ich-Botschaft mit drei Teilen.",
+        "hints": [
+          "Was passiert genau?",
+          "Wie fühlst du dich, was wünschst du dir?"
+        ],
+        "model": "„Wenn du beim Hausaufgabenmachen laut Musik hörst, kann ich mich nicht konzentrieren. Das ärgert mich, weil ich dann länger brauche. Ich wünsche mir, dass du in dieser halben Stunde Kopfhörer benutzt.“",
+        "criteria": [
+          "Situation beschrieben",
+          "Gefühl genannt",
+          "Wunsch formuliert"
+        ]
+      },
+      "2": {
+        "prompt": "Zwei Mitschüler streiten, weil einer das Handy des anderen fallen gelassen hat. Beschreibe, wie eine Streitschlichtung ablaufen könnte und welche Lösung beide annehmen könnten.",
+        "hints": [
+          "Gehe die fünf Schritte durch.",
+          "Was wäre eine faire Wiedergutmachung?"
+        ],
+        "model": "Die Streitschlichterin begrüßt beide und vereinbart, dass sie ausreden und sich nicht beleidigen. Dann erzählt jeder, was passiert ist: Der eine sagt, es war ein Versehen, der andere ist wütend, weil die Hülle kaputt ist. Beide sagen, was sie sich wünschen. Sie sammeln Lösungen, zum Beispiel eine Entschuldigung und dass der eine eine neue Hülle bezahlt. Diese Vereinbarung schreiben sie auf.",
+        "criteria": [
+          "Schritte in sinnvoller Reihenfolge",
+          "beide Sichtweisen berücksichtigt",
+          "faire Lösung genannt"
+        ]
+      }
+    }
+  },
+  {
+    "id": "gpg5-regeln",
+    "lb": 4,
+    "title": "Regeln für ein friedliches Zusammenleben",
+    "period": "Zusammenleben · Grundregeln",
+    "intro": "Gute Regeln schützen alle und machen das Zusammenleben leichter.",
+    "review": "Wiederholung aus HSU 3/4: Zusammenleben",
+    "paragraphs": [
+      "Überall, wo Menschen zusammenleben, braucht es Regeln: in der Familie, in der Klasse, im Sportverein und im Straßenverkehr. Regeln schützen die Schwächeren, sorgen für Fairness und helfen, Streit zu vermeiden. Sie gelten für alle gleich. Viele Regeln kann eine Gemeinschaft selbst beschließen, zum Beispiel eine Klasse ihre Klassenregeln.",
+      "Gute Regeln sind positiv formuliert: Sie sagen, was man tun soll, nicht nur, was verboten ist. Sie sind klar und überprüfbar, gelten für alle und werden gemeinsam beschlossen. Wer eine Regel bricht, soll eine faire Folge tragen, die zum Fehler passt, am besten eine Wiedergutmachung: Wer etwas kaputt macht, hilft beim Reparieren. Regeln sind nicht für immer festgeschrieben. Wenn eine Regel nicht funktioniert, kann die Gemeinschaft sie gemeinsam ändern."
+    ],
+    "takeaway": "Gute Regeln sind positiv formuliert, klar, für alle gleich und gemeinsam beschlossen. Wer sie bricht, macht den Schaden möglichst wieder gut.",
+    "sourceIds": [
+      "lehrplan",
+      "hanisau-konflikt",
+      "hanisau-kompromiss"
+    ],
+    "figures": [
+      "klassenregeln"
+    ],
+    "quiz": {
+      "question": "Welche Regel ist gut formuliert?",
+      "answer": "„Wir lassen andere ausreden.“",
+      "wrong": [
+        "„Nicht blöd sein!“",
+        "„Die Regeln gelten nicht für die Klassensprecher.“"
+      ],
+      "explanation": "Sie sagt klar und positiv, was alle tun sollen. „Nicht blöd sein“ ist unklar, und Regeln müssen für alle gleich gelten."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Regeln prüfen",
+      "instruction": "Prüfe jede Regel: Ist sie gut formuliert, oder sollte die Klasse sie verbessern? Prüfe dann deine Zuordnung.",
+      "categories": [
+        "gut formuliert",
+        "noch verbessern"
+      ],
+      "entries": [
+        {
+          "text": "Wir fragen, bevor wir uns etwas ausleihen.",
+          "target": 0,
+          "feedback": "Klar, positiv und für alle gleich."
+        },
+        {
+          "text": "Nicht nerven!",
+          "target": 1,
+          "feedback": "Was „nerven“ ist, versteht jeder anders. Die Regel ist unklar."
+        },
+        {
+          "text": "Wer stört, fliegt sofort raus.",
+          "target": 1,
+          "feedback": "Die Folge ist zu hart und hilft nicht, den Fehler wiedergutzumachen."
+        },
+        {
+          "text": "Wer etwas kaputt macht, hilft, es zu reparieren oder zu ersetzen.",
+          "target": 0,
+          "feedback": "Eine faire Wiedergutmachung."
+        },
+        {
+          "text": "Die Jungs dürfen den Fußball immer zuerst nehmen.",
+          "target": 1,
+          "feedback": "Eine Regel muss für alle gleich gelten."
+        },
+        {
+          "text": "Im Streit sprechen wir in Ich-Botschaften.",
+          "target": 0,
+          "feedback": "Die Regel ist klar und hilft, Streit zu lösen."
+        }
+      ],
+      "conclusion": "Gute Regeln sagen klar, was alle tun sollen, und sind fair. Schlechte Regeln lassen sich gemeinsam verbessern."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Formuliere drei gute Klassenregeln für ein friedliches Miteinander und begründe eine davon.",
+        "hints": [
+          "Formuliere positiv: „Wir …“.",
+          "Warum ist die Regel wichtig?"
+        ],
+        "model": "1. Wir lassen andere ausreden. 2. Wir lösen Streit mit Worten. 3. Wir helfen, wenn jemand etwas nicht versteht. Die zweite Regel ist wichtig, weil Gewalt niemandem hilft und einen Streit nur schlimmer macht. Mit Worten können beide Seiten sagen, was sie stört.",
+        "criteria": [
+          "drei positive Regeln",
+          "klar und für alle gleich",
+          "eine Regel begründet"
+        ]
+      },
+      "2": {
+        "prompt": "In deiner Klasse gilt die Regel „Wer zu spät kommt, muss nachsitzen“. Viele finden sie ungerecht, weil der Bus oft Verspätung hat. Schlage vor, wie die Klasse die Regel verbessern kann, und begründe.",
+        "hints": [
+          "Wann ist eine Folge fair?",
+          "Wie kann die Klasse eine Regel ändern?"
+        ],
+        "model": "Die Regel ist ungerecht, weil sie auch Kinder bestraft, die nichts für die Verspätung können. Ich schlage vor: „Wer ohne Grund zu spät kommt, holt das Verpasste in der Pause nach.“ Wer mit dem Bus zu spät kommt, wird nicht bestraft. Die Klasse kann den Vorschlag im Klassenrat besprechen und darüber abstimmen.",
+        "criteria": [
+          "Problem der Regel erkannt",
+          "verbesserte Regel formuliert",
+          "Weg der Änderung genannt"
+        ]
+      }
+    }
+  },
+  {
+    "id": "gpg5-klassensprecher",
+    "lb": 4,
+    "title": "Die Klassensprecherwahl",
+    "period": "Demokratie in der Schule",
+    "intro": "Ab der 5. Klasse wählt jede Klasse in Bayern eine Klassensprecherin oder einen Klassensprecher.",
+    "paragraphs": [
+      "Im bayerischen Schulgesetz steht: Ab Jahrgangsstufe 5 wählt jede Klasse aus ihrer Mitte eine Klassensprecherin oder einen Klassensprecher und eine Stellvertretung. Die Klassensprecher vertreten die Interessen der Klasse gegenüber Lehrkräften und Schulleitung. Sie geben Wünsche und Probleme weiter, vermitteln bei Streit und sind in der Klassensprecherversammlung dabei. Dort werden die Schülersprecherinnen und Schülersprecher der ganzen Schule gewählt.",
+      "Eine Wahl ist fair, wenn sie geheim ist, sodass niemand sieht, wen du wählst, wenn sie frei ist, sodass dich niemand unter Druck setzen darf, und wenn sie gleich ist, sodass jede Stimme gleich viel zählt. Vor der Wahl kann sich jeder melden, der kandidieren möchte, und sich und seine Ideen vorstellen. Danach schreiben alle geheim einen Namen auf, die Stimmzettel werden öffentlich ausgezählt. Gewählt ist, wer nach den Regeln eurer Schule die nötige Mehrheit bekommt. Wähle nicht nur deine beste Freundin, sondern die Person, die die Klasse gut vertreten kann."
+    ],
+    "takeaway": "Die Klassensprecherwahl ist geheim, frei und gleich. Klassensprecher vertreten die Interessen der ganzen Klasse.",
+    "sourceIds": [
+      "lehrplan",
+      "bayeug-62",
+      "kx-wahl"
+    ],
+    "figures": [
+      "klassensprecherwahl"
+    ],
+    "quiz": {
+      "question": "Warum ist die Klassensprecherwahl geheim?",
+      "answer": "damit jeder wählen kann, ohne unter Druck gesetzt zu werden",
+      "wrong": [
+        "damit die Lehrkraft allein entscheiden kann",
+        "damit niemand weiß, wer gewonnen hat"
+      ],
+      "explanation": "Wenn niemand sieht, was du wählst, kann dich auch niemand zu einer Stimme drängen. Das Ergebnis wird aber öffentlich ausgezählt."
+    },
+    "workshop": {
+      "kind": "timeline",
+      "title": "Ablauf der Wahl",
+      "instruction": "Bringe die Schritte der Klassensprecherwahl in die richtige Reihenfolge: der erste Schritt nach oben. Prüfe dann deine Reihenfolge.",
+      "categories": [],
+      "entries": [
+        {
+          "text": "Wer kandidieren möchte, meldet sich.",
+          "target": 0,
+          "feedback": "Niemand muss kandidieren, jeder darf."
+        },
+        {
+          "text": "Die Kandidatinnen und Kandidaten stellen sich und ihre Ideen vor.",
+          "target": 1,
+          "feedback": "So weiß die Klasse, wen sie wählt."
+        },
+        {
+          "text": "Alle schreiben geheim einen Namen auf ihren Stimmzettel.",
+          "target": 2,
+          "feedback": "Geheim wählen schützt vor Druck."
+        },
+        {
+          "text": "Die Stimmzettel werden vor der Klasse ausgezählt.",
+          "target": 3,
+          "feedback": "Öffentliches Auszählen sorgt für Vertrauen."
+        },
+        {
+          "text": "Die gewählte Person wird gefragt, ob sie die Wahl annimmt.",
+          "target": 4,
+          "feedback": "Niemand muss ein Amt gegen seinen Willen übernehmen."
+        },
+        {
+          "text": "Danach wird die Stellvertretung gewählt.",
+          "target": 5,
+          "feedback": "Die Stellvertretung springt ein, wenn die Klassensprecherin fehlt."
+        }
+      ],
+      "conclusion": "Eine faire Wahl braucht Kandidaten, Vorstellung, geheime Stimmabgabe und offenes Auszählen."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre, welche Aufgaben eine Klassensprecherin oder ein Klassensprecher hat und welche Eigenschaften dafür wichtig sind.",
+        "hints": [
+          "Wen vertritt die Person?",
+          "Was muss sie gut können?"
+        ],
+        "model": "Eine Klassensprecherin vertritt die Interessen der ganzen Klasse gegenüber Lehrkräften und Schulleitung. Sie gibt Wünsche und Probleme weiter und hilft bei Streit. Dafür sollte sie gut zuhören, für alle da sein, auch für die, die nicht ihre Freunde sind, und sich trauen, mit Erwachsenen zu sprechen.",
+        "criteria": [
+          "Aufgaben genannt",
+          "Vertretung der ganzen Klasse",
+          "passende Eigenschaften"
+        ]
+      },
+      "2": {
+        "prompt": "Du möchtest dich als Klassensprecherin oder Klassensprecher bewerben. Schreibe eine kurze Rede: Wer bist du, was möchtest du für die Klasse erreichen, warum sollte man dich wählen?",
+        "hints": [
+          "Nenne ein bis zwei konkrete Ideen.",
+          "Versprich nichts, was du nicht halten kannst."
+        ],
+        "model": "Hallo, ich bin Mia. Ich möchte eure Klassensprecherin werden, weil ich gerne zuhöre und mich für andere einsetze. Ich möchte einen Kummerkasten einrichten, damit jeder Probleme auch anonym sagen kann. Außerdem möchte ich mit der Schulleitung sprechen, ob wir in der Pause Bälle ausleihen können. Ich bin für alle da, nicht nur für meine Freunde. Bitte wählt mich!",
+        "criteria": [
+          "Vorstellung",
+          "konkrete, erreichbare Ideen",
+          "Begründung für die Wahl"
+        ]
+      }
+    }
+  },
+  {
+    "id": "gpg5-klassenrat",
+    "lb": 4,
+    "title": "Der Klassenrat: gemeinsam entscheiden",
+    "period": "Demokratie in der Schule · Gespräch und Beschluss",
+    "intro": "Im Klassenrat besprecht ihr eure Anliegen selbst und trefft gemeinsam Entscheidungen.",
+    "paragraphs": [
+      "Der Klassenrat ist eine regelmäßige Sitzung, zum Beispiel einmal pro Woche. Alle sitzen im Kreis. Feste Rollen helfen: Die Leitung führt durch das Gespräch, das Protokoll schreibt Beschlüsse auf, ein Zeitwächter achtet auf die Zeit, ein Regelwächter auf die Gesprächsregeln. Die Anliegen sammelt die Klasse vorher, etwa in einem Briefkasten: Lob, Probleme, Wünsche und Ideen.",
+      "Im Klassenrat übst du, was Demokratie ausmacht. Du hörst aktiv zu und lässt andere ausreden. Du sagst deinen Standpunkt und begründest ihn. Ihr verhandelt, wägt Vorschläge ab und sucht einen Kompromiss, wenn die Wünsche verschieden sind. Dann stimmt ihr ab und haltet den Beschluss fest. Ein Beschluss nützt nur, wenn ihr ihn auch umsetzt: Im Protokoll steht, wer was bis wann erledigt, und beim nächsten Mal prüft ihr, ob es geklappt hat."
+    ],
+    "takeaway": "Im Klassenrat hört ihr einander zu, begründet eure Meinung, sucht Kompromisse, fasst Beschlüsse und setzt sie gemeinsam um.",
+    "sourceIds": [
+      "lehrplan",
+      "hanisau-kompromiss",
+      "hanisau-demokratie"
+    ],
+    "figures": [
+      "klassenrat"
+    ],
+    "quiz": {
+      "question": "Was ist ein Kompromiss?",
+      "answer": "eine Lösung, bei der beide Seiten etwas nachgeben",
+      "wrong": [
+        "eine Lösung, bei der eine Seite alles bekommt",
+        "ein Streit ohne Ende"
+      ],
+      "explanation": "Bei einem Kompromiss kommt jede Seite der anderen ein Stück entgegen. Dann können alle mit der Lösung leben."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Was wird hier geübt?",
+      "instruction": "Welche demokratische Verhaltensweise zeigt jede Szene aus dem Klassenrat? Ordne zu und prüfe dann deine Zuordnung.",
+      "categories": [
+        "aktiv zuhören",
+        "Standpunkt begründen",
+        "Kompromiss finden",
+        "Beschluss umsetzen"
+      ],
+      "entries": [
+        {
+          "text": "Jonas wiederholt mit eigenen Worten, was Mia gesagt hat, bevor er antwortet.",
+          "target": 0,
+          "feedback": "So zeigt Jonas, dass er Mia verstanden hat."
+        },
+        {
+          "text": "Aylin sagt: „Ich bin für den Tierpark, weil wir dort Tiere aus dem Unterricht sehen.“",
+          "target": 1,
+          "feedback": "Aylin nennt ihre Meinung und einen Grund."
+        },
+        {
+          "text": "Die einen wollen Fußball, die anderen Basketball. Die Klasse wechselt jede Woche.",
+          "target": 2,
+          "feedback": "Beide Gruppen geben etwas nach."
+        },
+        {
+          "text": "Das Protokoll hält fest, wer bis Freitag die Bälle einsammelt.",
+          "target": 3,
+          "feedback": "Klare Aufgaben machen aus dem Beschluss eine Tat."
+        },
+        {
+          "text": "Ben fragt nach: „Meinst du, wir sollen die Regel ganz abschaffen?“",
+          "target": 0,
+          "feedback": "Nachfragen gehört zum aktiven Zuhören."
+        },
+        {
+          "text": "Nach zwei Wochen prüft der Klassenrat, ob die neue Pausenregel funktioniert.",
+          "target": 3,
+          "feedback": "Überprüfen gehört zur Umsetzung."
+        }
+      ],
+      "conclusion": "Demokratie übt man im Kleinen: zuhören, begründen, verhandeln, entscheiden und Verantwortung übernehmen."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Nenne vier Gesprächsregeln für den Klassenrat und erkläre, warum eine davon besonders wichtig ist.",
+        "hints": [
+          "Wie redet man, wie hört man zu?",
+          "Was passiert ohne diese Regel?"
+        ],
+        "model": "1. Wir melden uns und warten, bis wir dran sind. 2. Wir lassen andere ausreden. 3. Wir bleiben beim Thema. 4. Wir beleidigen niemanden. Besonders wichtig ist, andere ausreden zu lassen. Sonst fühlen sich manche nicht gehört, und es reden nur die Lautesten.",
+        "criteria": [
+          "vier Regeln",
+          "Regeln sind klar",
+          "eine Regel begründet"
+        ]
+      },
+      "2": {
+        "prompt": "Im Klassenrat wollen zehn Kinder einen Ausflug ins Schwimmbad, zwölf Kinder in den Kletterpark. Wie kann die Klasse zu einem Beschluss kommen, mit dem möglichst alle leben können? Beschreibe das Vorgehen.",
+        "hints": [
+          "Erst Argumente hören, dann abstimmen?",
+          "Gibt es einen Kompromiss?"
+        ],
+        "model": "Zuerst sagen beide Gruppen, warum sie ihren Vorschlag gut finden, und die anderen hören zu. Dann sammelt die Leitung Ideen für einen Kompromiss, zum Beispiel: dieses Jahr Kletterpark, im Sommer ein Badetag. Danach stimmt die Klasse ab. Das Protokoll hält den Beschluss und die Aufgaben fest, und beim nächsten Klassenrat wird geprüft, ob alles geplant ist.",
+        "criteria": [
+          "Argumente beider Seiten gehört",
+          "Kompromiss vorgeschlagen",
+          "Abstimmung und Umsetzung beschrieben"
+        ]
+      }
+    }
+  },
+  {
+    "id": "gpg5-familienformen",
+    "lb": 4,
+    "title": "Familien heute: viele Formen",
+    "period": "Gemeinschaft · Formen des Zusammenlebens",
+    "intro": "Familie ist dort, wo Menschen dauerhaft füreinander sorgen, und sie kann ganz unterschiedlich aussehen.",
+    "paragraphs": [
+      "Familien gibt es in vielen Formen. Manche Kinder leben mit Mutter und Vater, die verheiratet sind oder ohne Trauschein zusammenleben. In einer Ein-Eltern-Familie lebt ein Kind mit einem Elternteil. In einer Patchworkfamilie bringen Partner Kinder aus früheren Beziehungen mit. In einer Regenbogenfamilie haben Kinder zwei Mütter oder zwei Väter. Manche Familien leben mit den Großeltern unter einem Dach, andere Kinder wachsen in einer Pflege- oder Adoptivfamilie auf. Es gibt auch Paare ohne Kinder.",
+      "Wenn sich Eltern trennen oder scheiden lassen, ist das für Kinder oft schwer. Die Eltern bleiben aber Eltern. Kinder haben das Recht, mit beiden Elternteilen Kontakt zu haben, wenn das ihrem Wohl dient. Wichtig für jede Familie ist nicht ihre Form, sondern wie die Menschen miteinander umgehen: ob sie füreinander sorgen, einander zuhören und sich gegenseitig unterstützen. Über andere Familienformen spricht man deshalb mit Respekt."
+    ],
+    "takeaway": "Familien haben viele Formen: Eltern mit Kindern, Ein-Eltern-, Patchwork-, Regenbogen-, Mehrgenerationen- und Pflegefamilien. Entscheidend ist, dass Menschen füreinander sorgen.",
+    "sourceIds": [
+      "lehrplan",
+      "hanisau-familie",
+      "kx-ehe"
+    ],
+    "figures": [
+      "familienformen"
+    ],
+    "quiz": {
+      "question": "Was ist eine Patchworkfamilie?",
+      "answer": "Partner bringen Kinder aus früheren Beziehungen in die neue Familie mit.",
+      "wrong": [
+        "Ein Kind lebt allein mit einem Elternteil.",
+        "Großeltern, Eltern und Kinder wohnen in einem Haus."
+      ],
+      "explanation": "Wie bei einer Patchworkdecke werden Teile aus verschiedenen Familien zusammengefügt. Die anderen Antworten beschreiben Ein-Eltern- und Drei-Generationen-Familien."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Welche Familienform ist es?",
+      "instruction": "Lies die kurzen Beschreibungen. Wähle die passende Familienform und prüfe dann deine Zuordnung.",
+      "categories": [
+        "Ein-Eltern-Familie",
+        "Patchworkfamilie",
+        "Regenbogenfamilie",
+        "drei Generationen unter einem Dach",
+        "Pflegefamilie"
+      ],
+      "entries": [
+        {
+          "text": "Emil lebt bei seiner Mutter. Seinen Vater besucht er jedes zweite Wochenende.",
+          "target": 0,
+          "feedback": "Im Alltag lebt Emil mit einem Elternteil."
+        },
+        {
+          "text": "Zoe lebt mit ihrer Mutter, deren neuem Partner und seinen zwei Söhnen.",
+          "target": 1,
+          "feedback": "Zwei Familien sind zu einer neuen zusammengewachsen."
+        },
+        {
+          "text": "Finn hat zwei Mütter, die miteinander verheiratet sind.",
+          "target": 2,
+          "feedback": "Seit 2017 dürfen gleichgeschlechtliche Paare in Deutschland heiraten."
+        },
+        {
+          "text": "Bei Ayşe wohnen Oma und Opa mit im Haus.",
+          "target": 3,
+          "feedback": "Großeltern, Eltern und Kinder leben zusammen."
+        },
+        {
+          "text": "Lukas lebt bei einer Familie, die ihn betreut, weil seine Eltern sich gerade nicht um ihn kümmern können.",
+          "target": 4,
+          "feedback": "Pflegefamilien geben Kindern ein sicheres Zuhause."
+        }
+      ],
+      "conclusion": "Jede Familienform kann ein gutes Zuhause sein, wenn Menschen verlässlich füreinander da sind."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Beschreibe drei verschiedene Familienformen und nenne, was alle Familien gemeinsam haben sollten.",
+        "hints": [
+          "Wer lebt jeweils zusammen?",
+          "Was macht eine gute Familie aus?"
+        ],
+        "model": "In einer Ein-Eltern-Familie lebt ein Kind mit einem Elternteil. In einer Patchworkfamilie bringen Partner Kinder aus früheren Beziehungen mit. In einer Regenbogenfamilie hat ein Kind zwei Mütter oder zwei Väter. Gemeinsam sollte allen Familien sein, dass die Menschen füreinander sorgen, einander zuhören und sich unterstützen.",
+        "criteria": [
+          "drei Formen richtig beschrieben",
+          "Gemeinsamkeit genannt",
+          "respektvolle Sprache"
+        ]
+      },
+      "2": {
+        "prompt": "Ein neues Kind in der Klasse erzählt, dass seine Eltern sich getrennt haben. Einige lachen darüber. Wie kannst du reagieren? Begründe, warum das wichtig ist.",
+        "hints": [
+          "Wie fühlt sich das Kind vermutlich?",
+          "Was sagst du zu den anderen?"
+        ],
+        "model": "Ich würde zu den anderen sagen, dass es nichts zum Lachen gibt, weil eine Trennung für ein Kind sehr schwer sein kann. Dem neuen Kind zeige ich, dass ich auf seiner Seite bin, und frage, ob es in der Pause mit mir spielen möchte. Das ist wichtig, weil niemand wegen seiner Familie ausgegrenzt werden darf und sich in der Klasse jeder wohlfühlen soll.",
+        "criteria": [
+          "Gefühle des Kindes erkannt",
+          "konkrete Reaktion",
+          "Begründung mit Respekt"
+        ]
+      }
+    }
+  },
+  {
+    "id": "gpg5-familienwandel",
+    "lb": 4,
+    "title": "Warum sich Familien verändern",
+    "period": "Gemeinschaft · familiärer Wandel",
+    "intro": "Familien sehen heute oft anders aus als zur Zeit deiner Großeltern. Dafür gibt es Gründe.",
+    "paragraphs": [
+      "Vor einigen Jahrzehnten galt in Deutschland meist ein Bild als normal: Vater und Mutter sind verheiratet, der Vater verdient das Geld, die Mutter kümmert sich um Haushalt und Kinder. Heute sind Familien vielfältiger. Ein Grund ist die Gleichberechtigung: Im Grundgesetz steht, dass Männer und Frauen gleichberechtigt sind. Frauen haben eine Ausbildung und einen Beruf, oft arbeiten beide Eltern. Kinder werden dann auch in Krippe, Kita oder Ganztagsschule betreut.",
+      "Auch Gesetze haben sich geändert: Seit 2017 dürfen in Deutschland auch zwei Frauen oder zwei Männer heiraten. Viele Menschen finden es heute normal, ohne Trauschein zusammenzuleben, und Patchwork- und Ein-Eltern-Familien werden eher akzeptiert. Trennungen und neue Partnerschaften kommen häufiger vor als früher. Manche Familien ziehen für Arbeit oder Ausbildung weit weg von Großeltern und Verwandten. Wie viele Familien welche Form haben, kannst du in aktuellen Zahlen des Statistischen Bundesamts nachschlagen."
+    ],
+    "takeaway": "Familien wandeln sich durch Gleichberechtigung, Berufstätigkeit beider Eltern, neue Gesetze wie die Ehe für alle, mehr Akzeptanz und Trennungen.",
+    "sourceIds": [
+      "lehrplan",
+      "destatis-familien",
+      "hanisau-familie",
+      "kx-ehe"
+    ],
+    "figures": [
+      "familienwandel"
+    ],
+    "quiz": {
+      "question": "Seit wann dürfen in Deutschland auch zwei Frauen oder zwei Männer heiraten?",
+      "answer": "seit 2017",
+      "wrong": [
+        "seit 1949",
+        "seit 1990"
+      ],
+      "explanation": "Am 1. Oktober 2017 trat in Deutschland die Ehe für alle in Kraft. 1949 entstand das Grundgesetz, 1990 die deutsche Einheit."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Gründe für den Wandel",
+      "instruction": "Welcher Bereich steckt hinter jedem Grund? Ordne zu und prüfe dann deine Zuordnung.",
+      "categories": [
+        "Gesetze und Rechte",
+        "Arbeit und Ausbildung",
+        "Einstellungen der Menschen"
+      ],
+      "entries": [
+        {
+          "text": "Seit 2017 dürfen auch gleichgeschlechtliche Paare heiraten.",
+          "target": 0,
+          "feedback": "Ein Gesetz hat sich geändert."
+        },
+        {
+          "text": "Im Grundgesetz steht: Männer und Frauen sind gleichberechtigt.",
+          "target": 0,
+          "feedback": "Das ist ein Grundrecht."
+        },
+        {
+          "text": "Beide Eltern haben einen Beruf, die Kinder gehen in die Ganztagsschule.",
+          "target": 1,
+          "feedback": "Die Arbeitswelt prägt den Familienalltag."
+        },
+        {
+          "text": "Für eine neue Stelle zieht eine Familie weit weg von den Großeltern.",
+          "target": 1,
+          "feedback": "Arbeit verändert, wo und mit wem Familien leben."
+        },
+        {
+          "text": "Viele finden es normal, ohne Trauschein zusammenzuleben.",
+          "target": 2,
+          "feedback": "Die Meinung vieler Menschen hat sich gewandelt."
+        },
+        {
+          "text": "Patchworkfamilien werden kaum noch schief angeschaut.",
+          "target": 2,
+          "feedback": "Mehr Akzeptanz macht neue Formen leichter."
+        }
+      ],
+      "conclusion": "Gesetze, Arbeitswelt und Einstellungen wirken zusammen. Deshalb gibt es heute mehr verschiedene Familienformen."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Nenne drei Ursachen dafür, dass Familien heute vielfältiger sind, und erkläre eine davon.",
+        "hints": [
+          "Denke an Gleichberechtigung, Gesetze und Arbeit.",
+          "Wie verändert die Ursache das Familienleben?"
+        ],
+        "model": "Ursachen sind die Gleichberechtigung von Frauen und Männern, die Ehe für alle seit 2017 und dass heute oft beide Eltern arbeiten. Weil beide Eltern arbeiten, teilen sie sich Haushalt und Kinder anders auf als früher, und Kinder werden auch in Kita oder Ganztagsschule betreut.",
+        "criteria": [
+          "drei Ursachen",
+          "eine Ursache erklärt",
+          "Bezug zum Familienleben"
+        ]
+      },
+      "2": {
+        "prompt": "Recherchiere auf der Seite des Statistischen Bundesamts eine aktuelle Zahl zu Familien in Deutschland, zum Beispiel zu Alleinerziehenden. Schreibe die Zahl mit Jahr auf und erkläre, was sie über den Wandel aussagt.",
+        "hints": [
+          "Notiere, aus welchem Jahr die Zahl stammt.",
+          "Vergleiche, wenn möglich, mit einem früheren Jahr."
+        ],
+        "model": "Beispiel für den Aufbau: Auf der Seite „Haushalte und Familien“ des Statistischen Bundesamts habe ich gelesen, wie viele Familien im Jahr der Erhebung alleinerziehend waren. Ich schreibe die Zahl mit Jahr und Quelle auf. Wenn der Anteil höher ist als vor einigen Jahrzehnten, zeigt das, dass Ein-Eltern-Familien häufiger geworden sind und Familienformen vielfältiger werden.",
+        "criteria": [
+          "Zahl mit Jahr und Quelle",
+          "Zahl richtig beschrieben",
+          "Bezug zum Wandel"
+        ]
+      }
+    }
+  },
+  {
+    "id": "gpg5-inklusion",
+    "lb": 4,
+    "title": "Gemeinsam mit Menschen mit Behinderung",
+    "period": "Gemeinschaft · Inklusion",
+    "intro": "Inklusion heißt: Alle gehören von Anfang an dazu und können mitmachen.",
+    "paragraphs": [
+      "Manche Menschen können nicht oder nur schlecht sehen, hören, gehen oder lernen anders. Ob sie im Alltag behindert werden, hängt oft von Barrieren ab: Eine Treppe hält jemanden im Rollstuhl auf, eine Rampe nicht. Eine Durchsage erreicht gehörlose Menschen nicht, ein Text auf dem Bildschirm schon. Inklusion bedeutet, solche Barrieren abzubauen, damit alle teilnehmen können. In Deutschland gilt dafür seit 2009 die UN-Behindertenrechtskonvention.",
+      "Wertschätzend gehst du mit Menschen mit Behinderung um, wenn du sie wie alle anderen behandelst: Sprich direkt mit der Person, nicht mit ihrer Begleitung. Frag, ob und wie du helfen kannst, statt einfach anzufassen oder zu übernehmen. Bei gemeinsamen Vorhaben verteilt ihr die Aufgaben so, dass jede und jeder etwas beitragen kann, denn alle haben Stärken. Lachen über eine Behinderung verletzt. Zusammen etwas zu schaffen verbindet."
+    ],
+    "takeaway": "Inklusion heißt, Barrieren abzubauen, damit alle teilnehmen können. Wertschätzung zeigst du, wenn du direkt mit der Person sprichst, Hilfe anbietest statt sie aufzudrängen und alle mitarbeiten lässt.",
+    "sourceIds": [
+      "lehrplan",
+      "aktion-mensch",
+      "hanisau-inklusion",
+      "kx-behinderung"
+    ],
+    "figures": [
+      "inklusion"
+    ],
+    "quiz": {
+      "question": "Wie hilfst du einer Mitschülerin im Rollstuhl am besten?",
+      "answer": "Du fragst, ob und wie sie Hilfe möchte.",
+      "wrong": [
+        "Du schiebst sie ungefragt, wohin du denkst.",
+        "Du sprichst nur mit ihrer Begleitung."
+      ],
+      "explanation": "Sie weiß selbst am besten, was sie braucht. Ungefragtes Helfen kann übergriffig sein."
+    },
+    "workshop": {
+      "kind": "classify",
+      "title": "Wertschätzend oder nicht?",
+      "instruction": "Wie wirkt jedes Verhalten auf einen Menschen mit Behinderung? Ordne zu und prüfe dann deine Zuordnung.",
+      "categories": [
+        "wertschätzend",
+        "nicht wertschätzend"
+      ],
+      "entries": [
+        {
+          "text": "Du fragst Mira, ob du ihr die Tür aufhalten sollst.",
+          "target": 0,
+          "feedback": "Fragen zeigt Respekt vor ihrer Entscheidung."
+        },
+        {
+          "text": "Du sprichst mit der Begleitung statt mit dem Jungen, der langsamer spricht.",
+          "target": 1,
+          "feedback": "Sprich direkt mit der Person, um die es geht."
+        },
+        {
+          "text": "Lars ist blind und erzählt gut. In der Gruppenarbeit übernimmt er den Vortrag.",
+          "target": 0,
+          "feedback": "Alle bringen ihre Stärken ein."
+        },
+        {
+          "text": "Einige machen sich über die Gebärden einer gehörlosen Schülerin lustig.",
+          "target": 1,
+          "feedback": "Gebärdensprache ist eine vollwertige Sprache. Lachen darüber verletzt."
+        },
+        {
+          "text": "Die Klasse plant das Sommerfest an einem Ort, den alle erreichen können.",
+          "target": 0,
+          "feedback": "So werden Barrieren von Anfang an vermieden."
+        },
+        {
+          "text": "Du erledigst Pauls Aufgabe einfach selbst, ohne ihn zu fragen.",
+          "target": 1,
+          "feedback": "So nimmst du Paul die Chance, selbst beizutragen."
+        }
+      ],
+      "conclusion": "Wertschätzung heißt: auf Augenhöhe sprechen, fragen statt bestimmen und alle mitmachen lassen."
+    },
+    "tasks": {
+      "1": {
+        "prompt": "Erkläre mit einem Beispiel, was eine Barriere ist und wie man sie abbauen kann.",
+        "hints": [
+          "Schau dir die Grafik mit den Barrieren an.",
+          "Wer wird durch die Barriere ausgeschlossen?"
+        ],
+        "model": "Eine Barriere ist etwas, das Menschen daran hindert mitzumachen. Ein Beispiel ist eine Treppe vor dem Schuleingang: Ein Kind im Rollstuhl kommt nicht hinein. Mit einer Rampe oder einem Aufzug kann man die Barriere abbauen, dann können alle die Schule betreten.",
+        "criteria": [
+          "Barriere erklärt",
+          "Beispiel genannt",
+          "Lösung beschrieben"
+        ]
+      },
+      "2": {
+        "prompt": "Eure Klasse bereitet ein Theaterstück vor. Ein Mitschüler sitzt im Rollstuhl, eine Mitschülerin hört schlecht. Plane, wie alle gut mitmachen können.",
+        "hints": [
+          "Welche Aufgaben gibt es bei einem Theaterstück?",
+          "Welche Barrieren müsst ihr bedenken?"
+        ],
+        "model": "Wir fragen beide zuerst, welche Rolle oder Aufgabe sie sich wünschen und was sie brauchen. Die Bühne bauen wir ohne Stufen oder mit einer Rampe, damit der Mitschüler im Rollstuhl mitspielen kann. Für die Mitschülerin, die schlecht hört, sprechen wir deutlich, schauen sie bei den Proben an und geben Einsätze zusätzlich mit Handzeichen. Aufgaben wie Text, Kulissen und Licht verteilen wir nach den Stärken aller.",
+        "criteria": [
+          "Betroffene einbezogen",
+          "Barrieren erkannt und abgebaut",
+          "Aufgaben nach Stärken verteilt"
+        ]
+      }
+    }
+  }
+]

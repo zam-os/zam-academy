@@ -1,0 +1,23 @@
+{
+  "name": "zam-academy-gpg-mittelschule-5",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Geschichte/Politik/Geographie for Bavarian Mittelschule Grade 5: maps, timelines, historical reasoning, everyday democracy and linked recall cards.",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit",
+    "package:zip": "npm run build && node scripts/build-release-zip.mjs && node scripts/verify-release.mjs"
+  },
+  "devDependencies": {
+    "typescript": "^6.0.3",
+    "vite": "^8.1.5",
+    "vite-plugin-singlefile": "^2.3.3",
+    "vitest": "^4.1.10"
+  },
+  "license": "Apache-2.0"
+}
