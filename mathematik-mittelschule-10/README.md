@@ -48,7 +48,7 @@ package standard.
 
 ```sh
 npm ci
-npm run dev                 # http://localhost:5235/mathematik-mittelschule-10/
+npm run dev                 # http://localhost:5237/mathematik-mittelschule-10/
 npm run typecheck
 npm test
 npm run check:curriculum

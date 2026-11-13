@@ -7,7 +7,7 @@ export default defineConfig({
   base: "/mathematik-mittelschule-10/",
   plugins: [viteSingleFile()],
   server: {
-    port: 5235,
+    port: 5237,
     open: false,
   },
   build: {
