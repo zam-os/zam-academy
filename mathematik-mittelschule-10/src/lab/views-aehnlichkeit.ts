@@ -29,6 +29,11 @@ const same = (a: number, b: number) => Math.abs(a - b) < 1e-9;
 /** The fixed original of lesson 3.1: α = 40°, β = 60°, c = 5 cm. */
 export const REF_TRIANGLE = { alpha: 40, beta: 60, c: 5 };
 
+/** Whether three lengths form a real triangle: each side shorter than the other two together. */
+export function triangleExists(p: number, q: number, r: number): boolean {
+  return p < q + r && q < p + r && r < p + q;
+}
+
 /** Sides a, b, c of the triangle with angles α, β at A, B and the side c = AB. */
 export function triangleSides(alpha: number, beta: number, c: number): { a: number; b: number; c: number; gamma: number } {
   const gamma = 180 - alpha - beta;

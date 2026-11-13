@@ -24,6 +24,8 @@ import {
   yearInterest,
   yearsUntil,
 } from "../src/models";
+import { CUTS, FIGURES, figureOutline, figureParts, rightTriangleCount } from "../src/lab/views-geometrie";
+import { PART_TASKS } from "../src/curriculum/stage-3";
 
 describe("Zinsrechnung", () => {
   it("rechnet die Beispiele der Lektionen nach", () => {
@@ -126,5 +128,52 @@ describe("Wahrscheinlichkeiten", () => {
   it("listet Ereignisse als Mengen", () => {
     expect(outcomes(8, 2).favourable).toEqual([2, 3, 5, 7]);
     expect(setText([2, 4, 6])).toBe("{2; 4; 6}");
+  });
+});
+
+describe("Rechtwinklige Dreiecke als Teilfiguren", () => {
+  type P = { x: number; y: number };
+  const area = (pts: P[]) =>
+    Math.abs(pts.reduce((sum, p, i) => sum + p.x * pts[(i + 1) % pts.length].y - pts[(i + 1) % pts.length].x * p.y, 0)) / 2;
+  const angleIsRight = (o: P, p: P, q: P) => Math.abs((p.x - o.x) * (q.x - o.x) + (p.y - o.y) * (q.y - o.y)) < 1e-9;
+
+  it("zerlegt jede Figur vollständig, ohne Teile zu verlieren", () => {
+    for (let fig = 0; fig < FIGURES.length; fig++) {
+      const whole = area(figureOutline(fig));
+      for (let cut = 0; cut < CUTS.length; cut++) {
+        const parts = figureParts(fig, cut);
+        const sum = parts.reduce((total, part) => total + area(part.pts), 0);
+        expect(sum, `${FIGURES[fig]}, ${CUTS[cut]}`).toBeCloseTo(whole, 9);
+      }
+    }
+  });
+
+  it("fällt die Höhe von D senkrecht auf die Seite AB", () => {
+    for (let fig = 0; fig < FIGURES.length; fig++) {
+      const [A, B, , D] = figureOutline(fig);
+      const parts = figureParts(fig, 1);
+      if (parts.length === 1) continue;
+      const F = parts[0].pts[1];
+      // F lies on AB, between A and B, and DF is perpendicular to AB.
+      const cross = (B.x - A.x) * (F.y - A.y) - (B.y - A.y) * (F.x - A.x);
+      expect(Math.abs(cross), FIGURES[fig]).toBeLessThan(1e-9);
+      expect(Math.min(A.x, B.x) - 1e-9 <= F.x && F.x <= Math.max(A.x, B.x) + 1e-9, FIGURES[fig]).toBe(true);
+      expect(angleIsRight(F, D, B), FIGURES[fig]).toBe(true);
+      expect(parts[0].right, FIGURES[fig]).toBe(1);
+    }
+    // The kite, the parallelogram and the trapezoid each lose one right triangle to the height.
+    expect([2, 3, 4].map((fig) => rightTriangleCount(fig, 1))).toEqual([1, 1, 1]);
+  });
+
+  it("hat ein Drachenviereck ohne rechten Winkel, wie der Laborauftrag sagt", () => {
+    const corners = figureOutline(2);
+    for (let i = 0; i < 4; i++) {
+      expect(angleIsRight(corners[i], corners[(i + 1) % 4], corners[(i + 3) % 4]), `Ecke ${"ABCD"[i]}`).toBe(false);
+    }
+    expect(rightTriangleCount(2, 2)).toBe(4);
+  });
+
+  it("stellt auf Stufe 1 nur Fragen, deren Antwort aus der Art der Figur folgt", () => {
+    expect(PART_TASKS.map(({ fig, cut }) => rightTriangleCount(fig, cut))).toEqual([2, 4, 2, 0, 4, 1, 1]);
   });
 });

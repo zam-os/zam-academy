@@ -49,7 +49,8 @@ function figureCorners(fig: number): Pt[] {
     case 1:
       return [{ x: 0, y: 0 }, { x: 8, y: 0 }, { x: 8, y: 5 }, { x: 0, y: 5 }];
     case 2:
-      return [{ x: 0, y: 3 }, { x: 3, y: 0 }, { x: 8, y: 3 }, { x: 3, y: 6 }];
+      // A kite without a right angle: axis AC, angles at A and C acute, at B and D obtuse.
+      return [{ x: 0, y: 3 }, { x: 5, y: 0.5 }, { x: 8, y: 3 }, { x: 5, y: 5.5 }];
     case 3:
       return [{ x: 0, y: 0 }, { x: 6, y: 0 }, { x: 8, y: 5 }, { x: 2, y: 5 }];
     default:
@@ -67,15 +68,28 @@ function rightIndex(t: Pt[]): number {
   return -1;
 }
 
+/** The foot of the perpendicular from P onto the line AB, if it lies strictly between A and B. */
+export function heightFoot(P: Pt, A: Pt, B: Pt): Pt | null {
+  const t = dot(A, P, B) / dot(A, B, B);
+  if (t <= 1e-9 || t >= 1 - 1e-9) return null;
+  return { x: A.x + t * (B.x - A.x), y: A.y + t * (B.y - A.y) };
+}
+
+/** The corners of figure `fig` (model units), for tests and readouts. */
+export function figureOutline(fig: number): Pt[] {
+  return figureCorners(fig);
+}
+
 /** The parts a cut makes; the diagonals of a kite, a square and a rhombus cross at right angles. */
 export function figureParts(fig: number, cut: number): Part[] {
   const [A, B, C, D] = figureCorners(fig);
   let tris: Pt[][];
   if (cut === 0) tris = [[A, B, C], [A, C, D]];
   else if (cut === 1) {
-    // Height from D onto AB (from the top left corner straight down).
-    const F = { x: D.x, y: A.y };
-    tris = D.x === A.x ? [[A, B, C, D]] : [[A, F, D], [F, B, C, D]];
+    // Height from D onto the side AB: F is the foot of the perpendicular. If F is
+    // A itself (square, rectangle) or lies outside AB, the height cuts nothing off.
+    const F = heightFoot(D, A, B);
+    tris = F ? [[A, F, D], [F, B, C, D]] : [[A, B, C, D]];
   } else {
     // Intersection of AC and BD.
     const d1 = { x: C.x - A.x, y: C.y - A.y };

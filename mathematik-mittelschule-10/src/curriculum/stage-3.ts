@@ -1,9 +1,19 @@
 import { fmt } from "../exercises/format";
-import { chord, isParallel, isSimilar, scaleText, sortedRatios } from "../lab/views-aehnlichkeit";
+import { chord, isParallel, isSimilar, scaleText, sortedRatios, triangleExists } from "../lab/views-aehnlichkeit";
 import { numberField as num, yesNo } from "./helpers";
 import { choice, lab, makeLesson, makeStage, output as o, range as r, task } from "./builders";
 
 const L = (content: Parameters<typeof makeLesson>[1]) => makeLesson(3, content);
+
+/** Cuboid edges (cm) for the scaling tasks: O and V then belong to one real body. */
+const CUBOIDS: Array<[number, number, number]> = [
+  [1, 2, 3],
+  [2, 2, 3],
+  [2, 3, 4],
+  [2, 3, 5],
+  [2, 4, 4],
+  [3, 4, 5],
+];
 const same = (a: number, b: number) => Math.abs(a - b) < 1e-9;
 const eq = (value: number, digits = 2) => (same(value, Math.round(value * 10 ** digits) / 10 ** digits) ? "=" : "≈");
 const pt = (x: number, y: number) => `(${fmt(x)} | ${fmt(y)})`;
@@ -360,17 +370,19 @@ const berechnen = L({
       id: "flaeche-volumen",
       make: (rng, level) => {
         if (level === 1) {
-          const area = rng.pick([6, 8, 12, 20, 24]);
-          const volume = rng.pick([10, 20, 30, 50]);
+          // O and V belong to one real body: a cuboid with these edges.
+          const [a, b, c] = rng.pick(CUBOIDS);
+          const area = 2 * (a * b + a * c + b * c);
+          const volume = a * b * c;
           const k = rng.pick([2, 3, 1.5, 0.5]);
           return task(
             level,
-            `Ein Körper hat eine Oberfläche von ${area} cm² und ein Volumen von ${volume} cm³. Er wird mit k = ${fmt(k)} ähnlich vergrößert oder verkleinert. Berechne Oberfläche und Volumen des neuen Körpers.`,
+            `Ein Quader mit den Kanten ${a} cm, ${b} cm und ${c} cm hat die Oberfläche O = ${area} cm² und das Volumen V = ${volume} cm³. Er wird mit k = ${fmt(k)} ähnlich ${k > 1 ? "vergrößert" : "verkleinert"}. Berechne Oberfläche und Volumen des neuen Quaders.`,
             [num("O' =", area * k * k, "cm²", 2, { slips: [{ value: area * k, hint: "Flächen ändern sich mit k², nicht mit k." }] }), num("V' =", volume * k ** 3, "cm³", 3, { slips: [{ value: volume * k * k, hint: "Volumen ändern sich mit k³." }] })],
             "O' = k² · O und V' = k³ · V",
-            [`k² = ${fmt(k * k, 2)}, k³ = ${fmt(k ** 3, 3)}`, `O' = ${fmt(k * k, 2)} · ${area} cm²`, `V' = ${fmt(k ** 3, 3)} · ${volume} cm³`],
+            [`k² = ${fmt(k * k, 2)}, k³ = ${fmt(k ** 3, 3)}`, `O' = ${fmt(k * k, 2)} · ${area} cm²`, `V' = ${fmt(k ** 3, 3)} · ${volume} cm³`, `Probe mit den neuen Kanten: ${fmt(a * k, 1)} cm · ${fmt(b * k, 1)} cm · ${fmt(c * k, 1)} cm = ${fmt(volume * k ** 3, 3)} cm³`],
             `O' = ${fmt(area * k * k, 2)} cm², V' = ${fmt(volume * k ** 3, 3)} cm³`,
-            { area, volume, k },
+            { a, b, c, k },
           );
         }
         const n = rng.pick([10, 20, 25, 50]);
@@ -443,8 +455,13 @@ const strahlen = L({
         if (level === 1) {
           const za = rng.pick([2, 3, 4, 5]);
           const k = rng.pick([1.5, 2, 2.5, 3]);
-          const zb = rng.pick([2, 3, 4, 6]);
-          const ab = rng.pick([1.5, 2, 2.5, 3]);
+          // ZA, ZB and AB must form a real triangle ZAB.
+          let zb: number;
+          let ab: number;
+          do {
+            zb = rng.pick([2, 3, 4, 6]);
+            ab = rng.pick([1.5, 2, 2.5, 3]);
+          } while (!triangleExists(za, zb, ab));
           return task(
             level,
             `Zwei Strahlen von Z werden von den Parallelen AB und A'B' geschnitten. Es ist ZA = ${za} cm, ZA' = ${fmt(za * k)} cm, ZB = ${zb} cm und AB = ${fmt(ab)} cm. Berechne ZB' und A'B'.`,
@@ -457,8 +474,13 @@ const strahlen = L({
         }
         const a = rng.pick([2, 3, 4, 5, 6]);
         const d = rng.pick([1, 2, 3, 4]);
-        const b = rng.pick([3, 4, 5]);
-        const s = rng.pick([2, 3, 4, 5]);
+        // ZA, ZB and AB must form a real triangle ZAB.
+        let b: number;
+        let s: number;
+        do {
+          b = rng.pick([3, 4, 5]);
+          s = rng.pick([2, 3, 4, 5]);
+        } while (!triangleExists(a, b, s));
         const k = (a + d) / a;
         return task(
           level,

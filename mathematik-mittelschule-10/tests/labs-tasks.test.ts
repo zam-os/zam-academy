@@ -22,6 +22,7 @@ import type {
   LabValues,
 } from "../src/model/types";
 import { GOAL_WITNESSES } from "./witnesses";
+import { triangleExists } from "../src/lab/views-aehnlichkeit";
 function labGrid(lab: LabDefinition): LabValues[] {
   const sliders = lab.params.filter((p) => p.type === "range").length;
   if (sliders <= 6) {
@@ -285,6 +286,62 @@ describe("Aufgaben", () => {
           }
         }
       }
+    }
+  });
+});
+
+/** Tasks of one generator along the learners' task streams (main.ts, startTask). */
+function taskStream(lessonId: string, generatorId: string, level: 1 | 2, count = 400): ExerciseTask[] {
+  const lesson = ALL_LESSONS.find((l) => l.id === lessonId);
+  if (!lesson) throw new Error(lessonId);
+  const tasks: ExerciseTask[] = [];
+  for (let counter = 1; counter <= count; counter++) {
+    const generator = lesson.exercises[(counter - 1) % lesson.exercises.length];
+    if (generator.id !== generatorId) continue;
+    const rng = createRng(seedFrom(`${lesson.id}:${level}:${counter}`));
+    tasks.push(generator.make(rng, level));
+  }
+  expect(tasks.length, `${lessonId}/${generatorId}`).toBeGreaterThan(0);
+  return tasks;
+}
+
+const germanNumber = (text: string) => Number(text.replace(/\./g, "").replace(",", "."));
+
+describe("Plausible Aufgabenwerte", () => {
+  it("beschreiben in Strahlensatzfiguren ein Dreieck ZAB, das es gibt", () => {
+    for (const task of taskStream("ae-4-strahlensaetze", "strahlensatz", 1)) {
+      const { za, zb, ab } = task.meta as Record<string, number>;
+      expect(triangleExists(za, zb, ab), task.prompt).toBe(true);
+    }
+    for (const task of taskStream("ae-4-strahlensaetze", "strahlensatz", 2)) {
+      const { a, b, s } = task.meta as Record<string, number>;
+      expect(triangleExists(a, b, s), task.prompt).toBe(true);
+    }
+  });
+
+  it("geben Oberfläche und Volumen eines Körpers an, den es gibt", () => {
+    for (const task of taskStream("ae-3-flaechen-volumen", "flaeche-volumen", 1)) {
+      const match = /O = ([\d.,]+) cm² und das Volumen V = ([\d.,]+) cm³/.exec(task.prompt);
+      expect(match, task.prompt).not.toBeNull();
+      const O = germanNumber(match![1]);
+      const V = germanNumber(match![2]);
+      // Even a sphere encloses at most V = √(O³ : (36π)).
+      expect(36 * Math.PI * V * V, task.prompt).toBeLessThanOrEqual(O ** 3);
+    }
+  });
+
+  it("legen beim Kopfrechnen a und b fest, nach denen gefragt wird", () => {
+    for (const task of taskStream("fz-3-binomische-formeln", "faktorisieren", 2)) {
+      const match = /a = (\d+) und b = (\d+)/.exec(task.prompt);
+      expect(match, task.prompt).not.toBeNull();
+      const a = Number(match![1]);
+      const b = Number(match![2]);
+      const [result, middle] = task.fields;
+      if (result.kind !== "number" || middle.kind !== "number") throw new Error(task.prompt);
+      // kind 0: (a + b)², kind 1: (a − b)², kind 2: (a + b)(a − b)
+      const kind = task.meta?.kind;
+      expect(result.answer, task.prompt).toBe(kind === 0 ? (a + b) ** 2 : kind === 1 ? (a - b) ** 2 : a * a - b * b);
+      expect(middle.answer, task.prompt).toBe(kind === 2 ? b * b : 2 * a * b);
     }
   });
 });

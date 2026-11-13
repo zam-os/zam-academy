@@ -372,11 +372,13 @@ const binome = L({
         const kind = rng.int(0, 2);
         const value = kind === 0 ? (n + d) ** 2 : kind === 1 ? (n - d) ** 2 : (n + d) * (n - d);
         const shown = kind === 0 ? `${n + d}²` : kind === 1 ? `${n - d}²` : `${n + d} · ${n - d}`;
+        // The prompt fixes a and b: 67² could also be split as (60 + 7)², with another middle term.
+        const split = kind === 0 ? `(${n} + ${d})²` : kind === 1 ? `(${n} − ${d})²` : `(${n} + ${d}) · (${n} − ${d})`;
         return task(
           level,
-          `Rechne im Kopf mit einer binomischen Formel: ${shown}. Gib das Ergebnis und das Mittelglied 2ab (bei der 3. Formel: b²) an.`,
+          `Rechne im Kopf mit einer binomischen Formel: ${shown} = ${split}, also a = ${n} und b = ${d}. Gib das Ergebnis und ${kind === 2 ? "das Glied b²" : "das Mittelglied 2ab"} an.`,
           [num("Ergebnis:", value, "", 0), num(kind === 2 ? "b² =" : "2ab =", kind === 2 ? d * d : 2 * n * d, "", 0)],
-          "Zerlege in eine runde Zahl und einen kleinen Rest: a = Zehnerzahl, b = Rest.",
+          `${kind === 0 ? "(a + b)² = a² + 2ab + b²" : kind === 1 ? "(a − b)² = a² − 2ab + b²" : "(a + b)(a − b) = a² − b²"} mit a = ${n} und b = ${d}.`,
           [kind === 0 ? `(${n} + ${d})² = ${n * n} + ${2 * n * d} + ${d * d}` : kind === 1 ? `(${n} − ${d})² = ${n * n} − ${2 * n * d} + ${d * d}` : `(${n} + ${d})(${n} − ${d}) = ${n * n} − ${d * d}`],
           `${shown} = ${fmt(value)}`,
           { n, d, kind },

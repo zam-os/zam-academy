@@ -44,6 +44,20 @@ const NAME_SETS = [
   ["X", "Y", "Z"],
 ];
 
+/**
+ * Level-1 cuts whose answer follows from the kind of figure alone. Each names
+ * the lab figure and cut it matches; a test compares the counts with the lab.
+ */
+export const PART_TASKS: Array<{ fig: number; cut: number; text: string; why: string }> = [
+  { fig: 0, cut: 0, text: "Ein Quadrat wird entlang einer Diagonale zerschnitten.", why: "Jede Hälfte enthält eine Quadratecke mit ihrem rechten Winkel." },
+  { fig: 0, cut: 2, text: "Ein Quadrat wird entlang beider Diagonalen zerschnitten.", why: "Die Diagonalen des Quadrats stehen senkrecht aufeinander: Alle vier Teildreiecke haben im Schnittpunkt einen rechten Winkel." },
+  { fig: 1, cut: 0, text: "Ein Rechteck, das kein Quadrat ist, wird entlang einer Diagonale zerschnitten.", why: "Jede Hälfte enthält eine Rechteckecke mit ihrem rechten Winkel." },
+  { fig: 1, cut: 2, text: "Ein Rechteck, das kein Quadrat ist, wird entlang beider Diagonalen zerschnitten.", why: "Die Diagonalen teilen jede Rechteckecke und stehen nicht senkrecht aufeinander: Keines der vier Teildreiecke hat einen rechten Winkel." },
+  { fig: 2, cut: 2, text: "Ein Drachenviereck wird entlang beider Diagonalen zerschnitten.", why: "Die Diagonalen des Drachenvierecks stehen senkrecht aufeinander: Alle vier Teildreiecke haben im Schnittpunkt einen rechten Winkel." },
+  { fig: 3, cut: 1, text: "Im Parallelogramm ABCD trifft die Höhe von D die Seite AB zwischen A und B. Entlang dieser Höhe wird ein Stück abgeschnitten.", why: "Die Höhe steht senkrecht auf AB: Das abgeschnittene Dreieck hat am Fußpunkt einen rechten Winkel, der Rest ist ein Viereck." },
+  { fig: 4, cut: 1, text: "Im Trapez ABCD mit AB ∥ CD trifft die Höhe von D die Seite AB zwischen A und B. Entlang dieser Höhe wird ein Stück abgeschnitten.", why: "Die Höhe steht senkrecht auf AB: Das abgeschnittene Dreieck hat am Fußpunkt einen rechten Winkel, der Rest ist ein Viereck." },
+];
+
 // 3.1 Rechtwinklige Dreiecke erkennen ──────────────────────────────────────
 
 const rechtwinklig = L({
@@ -149,19 +163,19 @@ const rechtwinklig = L({
     {
       id: "teilfiguren",
       make: (rng, level) => {
-        const fig = rng.int(0, 4);
-        const cut = rng.int(0, 2);
-        const count = rightTriangleCount(fig, cut);
-        if (level === 1)
+        if (level === 1) {
+          const { fig, cut, text: situation, why } = rng.pick(PART_TASKS);
+          const count = rightTriangleCount(fig, cut);
           return task(
             level,
-            `Ein ${FIGURES[fig]} wird durch ${CUTS[cut]} zerlegt. Wie viele rechtwinklige Dreiecke entstehen dabei?`,
+            `${situation} Wie viele rechtwinklige Dreiecke entstehen dabei?`,
             [num("Anzahl:", count, "", 0)],
             "Diagonalen von Quadrat, Raute und Drachen stehen senkrecht aufeinander. Eine Diagonale im Rechteck ergibt zwei rechtwinklige Dreiecke. Eine Höhe steht senkrecht auf einer Seite.",
-            [count === 0 ? "Keine Teilfigur hat einen rechten Winkel." : `Es entstehen ${count} Teildreiecke mit einem rechten Winkel.`],
+            [why],
             `${count} rechtwinklige ${count === 1 ? "Dreieck" : "Dreiecke"}`,
             { fig, cut },
           );
+        }
         const a = rng.int(3, 9);
         const b = a + rng.int(1, 5);
         return task(
