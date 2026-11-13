@@ -1,0 +1,224 @@
+[
+	{
+		"id": "geo-aktuelle-frage",
+		"lb": 7,
+		"title": "Ein aktuelles Ereignis räumlich untersuchen",
+		"period": "Geo5 LB 7 · Ein aktuelles Ereignis räumlich untersuchen",
+		"intro": "Du wählst ein echtes aktuelles Thema mit Unterstützung im Unterricht.",
+		"paragraphs": [
+			"Ein geographisches Ereignis hat einen Ort und räumliche Folgen. Das kann zum Beispiel eine aktuelle Veränderung eines Flussraums oder eine örtliche Verkehrsplanung sein. Bevor du urteilst, klärst du was, wo, wann und wen es betrifft. Eine räumliche Untersuchungsfrage ist genauer als ein allgemeines Thema. Bei belastenden Nachrichten kannst du mit einer erwachsenen Begleitung ein anderes Thema wählen.",
+			"Beispiel, ausdrücklich erfunden: Eine Gemeinde berät über die Umgestaltung eines Platzes. Die Frage lautet, wie sich Wege und nutzbare Flächen für verschiedene Menschen ändern würden. Für dein eigenes Thema notierst du im Bogen einen öffentlichen Ort, das tatsächliche Ereignis, seinen aktuellen Anlass und eine überprüfbare Frage. Das Feld prüft nur die Form; du belegst Aktualität und Sachverhalt selbst. Dein Thema muss nicht im Nahraum liegen, soll aber verständlich verortet werden."
+		],
+		"takeaway": "Eine gute aktuelle Frage nennt Ereignis, Ort, Zeit und einen untersuchbaren räumlichen Zusammenhang.",
+		"sourceIds": ["lehrplan"],
+		"quiz": {
+			"question": "Welche Frage ist räumlich und untersuchbar?",
+			"answer": "Wie verändert die geplante Platzgestaltung die Wege zur Schule?",
+			"wrong": ["Ist die Welt gut?", "Welche Farbe mag ich am liebsten?"],
+			"explanation": "Die Frage nennt eine konkrete Veränderung und eine überprüfbare räumliche Folge."
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Werkstatt · Ein aktuelles Ereignis räumlich untersuchen",
+			"instruction": "Ordne die Beispiele zu. Lies bei der Prüfung auch die Begründungen.",
+			"categories": ["Ort", "Zeit", "Untersuchungsfrage"],
+			"entries": [
+				{
+					"text": "Der öffentliche Platz vor der Bücherei.",
+					"target": 0,
+					"feedback": "Das benennt den Untersuchungsraum."
+				},
+				{
+					"text": "Datum des aktuellen Beratungsstands.",
+					"target": 1,
+					"feedback": "Das klärt den zeitlichen Bezug."
+				},
+				{
+					"text": "Welche Wege ändern sich für Fußgänger?",
+					"target": 2,
+					"feedback": "Das lenkt die Untersuchung auf eine räumliche Folge."
+				}
+			],
+			"conclusion": "Der erfundene Fall ist ein Beispiel und kein Bericht über ein aktuelles Ereignis."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Formuliere aus dem erfundenen Platzumbau eine geographische Untersuchungsfrage mit Ort und Betroffenen.",
+				"hints": [
+					"Ich nenne Ort und Veränderung.",
+					"Ich berücksichtige Betroffene."
+				],
+				"model": "Ich frage, wie die geplante Umgestaltung des Platzes vor der Bücherei die Fußwege für Schülerinnen und Schüler verändert. Dazu brauche ich alte und geplante Wege sowie Angaben zu Zugängen. Die Beispielplanung ist erfunden und darf nicht als tatsächliche Nachricht ausgegeben werden.",
+				"criteria": [
+					"Ich nenne Ort und Veränderung.",
+					"Ich berücksichtige Betroffene.",
+					"Ich unterscheide Beispiel und Nachricht."
+				]
+			},
+			"2": {
+				"prompt": "Ein Artikel ist zwei Jahre alt, die Planung läuft aber noch. Kann das Thema aktuell sein?",
+				"hints": [
+					"Ich prüfe den aktuellen Anlass.",
+					"Ich trenne Hintergrund und Stand."
+				],
+				"model": "Das Datum allein entscheidet nicht. Ich suche den aktuellen Beratungsstand und begründe, was jetzt neu oder weiterhin offen ist. Den alten Artikel nutze ich als Hintergrund und trenne ihn von aktuellen Belegen. Ohne eine solche Prüfung behaupte ich keine Aktualität.",
+				"criteria": [
+					"Ich prüfe den aktuellen Anlass.",
+					"Ich trenne Hintergrund und Stand.",
+					"Ich begründe die Themenwahl."
+				]
+			}
+		},
+		"projectStep": "question"
+	},
+	{
+		"id": "geo-quellen",
+		"lb": 7,
+		"title": "Karte, Fachquelle und Nachricht vergleichen",
+		"period": "Geo5 LB 7 · Karte, Fachquelle und Nachricht vergleichen",
+		"intro": "Eine Webadresse ist erst der Anfang der Quellenprüfung.",
+		"paragraphs": [
+			"Für dein Ereignis brauchst du gezielte Informationen aus fachspezifischen Medien und Massenmedien. Eine amtliche Karte oder fachliche Erklärung kann räumliche Grundlagen liefern, ein journalistischer Bericht den aktuellen Anlass und unterschiedliche Stimmen. Prüfe Urheber, Datum, räumlichen Bezug und die Belege jeder Aussage. Zwei verschiedene Webadressen können denselben Bericht abschreiben und sind dann keine unabhängigen Bestätigungen.",
+			"Beispiel: Zum erfundenen Platzumbau vergleichst du einen Gemeindeplan mit einem Zeitungsbericht. Der Plan zeigt die vorgesehene Gestaltung und vertritt die Planungsperspektive; der Bericht kann Einwände von Anwohnern nennen. Beides sind Quellen mit eigenen Zwecken. Im Recherchebogen hältst du Quellen, Datum, Kartenbezug und konkrete Belege fest. Die App ruft keine Adressen ab und beurteilt weder Glaubwürdigkeit noch Unabhängigkeit."
+		],
+		"takeaway": "Vergleiche Aussagen und Herkunft der Quellen und trenne überprüfbare Tatsachen, Planungen und Meinungen.",
+		"sourceIds": ["lehrplan"],
+		"quiz": {
+			"question": "Was belegen zwei unterschiedliche Webadressen allein?",
+			"answer": "Noch keine voneinander unabhängige Bestätigung",
+			"wrong": [
+				"Immer zwei unabhängige Untersuchungen",
+				"Dass beide Texte aktuell sind"
+			],
+			"explanation": "Verschiedene Seiten können dieselbe Quelle übernehmen oder veraltete Angaben wiederholen."
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Werkstatt · Karte, Fachquelle und Nachricht vergleichen",
+			"instruction": "Ordne die Beispiele zu. Lies bei der Prüfung auch die Begründungen.",
+			"categories": ["Tatsachenangabe prüfen", "Planung", "Meinung"],
+			"entries": [
+				{
+					"text": "Der Bericht nennt das Datum einer Sitzung.",
+					"target": 0,
+					"feedback": "Das Datum lässt sich anhand eines Protokolls prüfen."
+				},
+				{
+					"text": "Der Entwurf sieht neue Sitzplätze vor.",
+					"target": 1,
+					"feedback": "Das beschreibt eine Absicht, keine fertige Umsetzung."
+				},
+				{
+					"text": "Eine befragte Person findet den Entwurf schön.",
+					"target": 2,
+					"feedback": "Das ist eine persönliche Bewertung."
+				}
+			],
+			"conclusion": "Eine Quelle kann Tatsachen, Absichten und Meinungen gleichzeitig enthalten."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Vergleiche Gemeindeplan und Zeitungsbericht zum erfundenen Platzumbau.",
+				"hints": [
+					"Ich unterscheide die Medien.",
+					"Ich prüfe Herkunft und Datum."
+				],
+				"model": "Der Gemeindeplan zeigt eine beabsichtigte räumliche Gestaltung. Der Zeitungsbericht ordnet den Anlass ein und kann verschiedene Stimmen enthalten. Ich prüfe bei beiden Datum, Urheber und Belege. Eine Planung ist keine ausgeführte Veränderung und eine zitierte Meinung kein Nachweis einer Wirkung.",
+				"criteria": [
+					"Ich unterscheide die Medien.",
+					"Ich prüfe Herkunft und Datum.",
+					"Ich trenne Plan, Tatsache und Meinung."
+				]
+			},
+			"2": {
+				"prompt": "Zwei Berichte haben denselben Wortlaut. Wie gehst du bei der Quellenprüfung vor?",
+				"hints": [
+					"Ich prüfe die Herkunft.",
+					"Ich erkläre fehlende Unabhängigkeit."
+				],
+				"model": "Ich suche die ursprüngliche Mitteilung oder Agenturquelle und prüfe, ob beide darauf beruhen. Gleicher Wortlaut ist keine zweite unabhängige Messung. Ich ergänze eine passende Fachquelle und kennzeichne, welche Aussagen tatsächlich eigenständig belegt sind und welche offenbleiben.",
+				"criteria": [
+					"Ich prüfe die Herkunft.",
+					"Ich erkläre fehlende Unabhängigkeit.",
+					"Ich ergänze Belege und Unsicherheiten."
+				]
+			}
+		},
+		"projectStep": "evidence"
+	},
+	{
+		"id": "geo-urteil",
+		"lb": 7,
+		"title": "Ein Urteil begründen und präsentieren",
+		"period": "Geo5 LB 7 · Ein Urteil begründen und präsentieren",
+		"intro": "Ein gutes Urteil zeigt seine Belege und seine Grenzen.",
+		"paragraphs": [
+			"Eine Bewertung nennt einen Maßstab, etwa Erreichbarkeit, Flächenbedarf oder Schutz eines Lebensraums. Du verknüpfst konkrete Belege mit diesem Kriterium und vergleichst Perspektiven. Eine Behauptung ohne Quelle bleibt offen. Unterschiedliche Interessen können zu verschiedenen Urteilen führen, auch wenn die zugrunde liegenden Tatsachen übereinstimmen.",
+			"Beispiel: Beim erfundenen Platzumbau können kürzere Wege und mehr Schatten für die Planung sprechen, entfallende Stellplätze dagegen. Dein Urteil erklärt, wie du die Kriterien gewichtest und welche Angaben noch fehlen. Für die Präsentation zeigst du eine Karte, die Untersuchungsfrage, Quellen, Ergebnisse und Grenzen. Du besprichst sie im Unterricht. Die App speichert deinen Entwurf und eine Selbsteinschätzung; sie bestätigt keine durchgeführte Präsentation und vergibt keine fachliche Note."
+		],
+		"takeaway": "Ein begründetes Urteil verbindet Beleg, Kriterium, Abwägung und eine offen benannte Unsicherheit.",
+		"sourceIds": ["lehrplan"],
+		"quiz": {
+			"question": "Was braucht ein nachvollziehbares geographisches Urteil?",
+			"answer": "Belege, Kriterien, Perspektiven und benannte Grenzen",
+			"wrong": [
+				"Nur eine möglichst laute Meinung",
+				"Nur ein einzelnes schönes Bild"
+			],
+			"explanation": "Andere können ein Urteil nur prüfen, wenn seine Grundlagen sichtbar sind."
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Werkstatt · Ein Urteil begründen und präsentieren",
+			"instruction": "Ordne die Beispiele zu. Lies bei der Prüfung auch die Begründungen.",
+			"categories": ["Beleg", "Kriterium", "Grenze"],
+			"entries": [
+				{
+					"text": "Die Karte zeigt einen zusätzlichen Fußweg.",
+					"target": 0,
+					"feedback": "Das ist ein konkreter räumlicher Befund der Planung."
+				},
+				{
+					"text": "Kurze und zugängliche Wege sind mir wichtig.",
+					"target": 1,
+					"feedback": "Das benennt einen Bewertungsmaßstab."
+				},
+				{
+					"text": "Ob der neue Weg genug Schatten hat, ist noch ungeklärt.",
+					"target": 2,
+					"feedback": "Eine fehlende Information begrenzt das Urteil."
+				}
+			],
+			"conclusion": "Die Gewichtung muss begründet werden und kann in der Klasse diskutiert werden."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Formuliere ein begrenztes Urteil zum erfundenen Platzumbau mit einem Beleg und einem Kriterium.",
+				"hints": [
+					"Ich verbinde Beleg und Kriterium.",
+					"Ich berücksichtige eine andere Perspektive."
+				],
+				"model": "Wenn der Plan einen kürzeren Fußweg zeigt, spricht das beim Kriterium Erreichbarkeit für den Umbau. Ich prüfe zugleich Zugänglichkeit und Folgen für andere Nutzungen. Ob der Weg ausreichend beschattet wird, bleibt ohne weitere Angaben offen. Mein Urteil ist deshalb vorläufig und kein Bericht über einen tatsächlichen Bau.",
+				"criteria": [
+					"Ich verbinde Beleg und Kriterium.",
+					"Ich berücksichtige eine andere Perspektive.",
+					"Ich benenne eine offene Frage."
+				]
+			},
+			"2": {
+				"prompt": "Plane eine Präsentation zu deinem echten Ereignis und erkläre, wie die Klasse dein Urteil prüfen kann.",
+				"hints": [
+					"Ich plane eine nachvollziehbare Reihenfolge.",
+					"Ich mache Quellen und Kriterien sichtbar."
+				],
+				"model": "Ich zeige Ort und Frage auf einer Karte, erläutere die wichtigsten Belege mit Quellen und Datum und begründe mein Urteil anhand offener Kriterien. Ich nenne Gegenargumente und Unsicherheiten. Anschließend bespreche ich Rückfragen. Die tatsächliche Präsentation erfolgt außerhalb der App.",
+				"criteria": [
+					"Ich plane eine nachvollziehbare Reihenfolge.",
+					"Ich mache Quellen und Kriterien sichtbar.",
+					"Ich plane Rückfragen und Grenzen."
+				]
+			}
+		},
+		"projectStep": "judgment"
+	}
+]

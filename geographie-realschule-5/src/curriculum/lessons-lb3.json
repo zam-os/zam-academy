@@ -1,0 +1,462 @@
+[
+	{
+		"id": "geo-weltkarte",
+		"lb": 3,
+		"title": "Kontinente, Ozeane und Weltbilder",
+		"period": "Geo5 LB 3 · Kontinente, Ozeane und Weltbilder",
+		"intro": "Es gibt keinen natürlichen oberen Kartenrand auf der Erde.",
+		"paragraphs": [
+			"Wir unterscheiden hier sieben Kontinente: Europa, Asien, Afrika, Nordamerika, Südamerika, Australien und Antarktika. Europa und Asien bilden eine zusammenhängende Landmasse und werden aus geschichtlichen Gründen getrennt benannt. Die fünf Ozeane heißen Pazifischer, Atlantischer, Indischer, Arktischer und Südlicher Ozean. Sie sind miteinander verbunden. Andere Darstellungen können Kontinente anders zusammenfassen.",
+			"Beispiel: Auf einem Globus vergleichst du Grönland mit Afrika. In manchen ebenen Weltkarten wirkt Grönland viel größer, als es im Flächenvergleich ist. Eine Kugel lässt sich nicht ohne Verzerrungen auf eine Ebene übertragen. Eine Karte mit dem Pazifik in der Mitte zeigt dieselbe Erde mit einem anderen Ausschnitt; Europa muss nicht in der Mitte liegen. Das Modell hier verwendet eine einfache längentreue Darstellung entlang des Äquators, die Flächen in Polnähe stark verzerrt."
+		],
+		"takeaway": "Jede ebene Weltkarte verzerrt Eigenschaften der Erdkugel; Mittelpunkt und Ausrichtung sind Entscheidungen.",
+		"sourceIds": ["lehrplan"],
+		"quiz": {
+			"question": "Warum braucht eine ebene Weltkarte einen kritischen Vergleich mit dem Globus?",
+			"answer": "Die Übertragung der Kugel auf die Ebene verzerrt Eigenschaften.",
+			"wrong": [
+				"Die Erde besitzt einen natürlichen oberen Rand.",
+				"Ozeane ändern beim Zeichnen ihre echte Größe."
+			],
+			"explanation": "Je nach Projektion werden etwa Flächen, Formen, Winkel oder Entfernungen unterschiedlich verzerrt."
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Werkstatt · Kontinente, Ozeane und Weltbilder",
+			"instruction": "Ordne die Beispiele zu. Lies bei der Prüfung auch die Begründungen.",
+			"categories": ["Kontinent", "Ozean", "Entscheidung der Darstellung"],
+			"entries": [
+				{
+					"text": "Afrika",
+					"target": 0,
+					"feedback": "Afrika ist einer der hier unterschiedenen Kontinente."
+				},
+				{
+					"text": "Indischer Ozean",
+					"target": 1,
+					"feedback": "Er liegt unter anderem zwischen Afrika, Asien und Australien."
+				},
+				{
+					"text": "Den Pazifik in die Kartenmitte setzen.",
+					"target": 2,
+					"feedback": "Der Mittelpunkt wird vom Kartenautor gewählt."
+				},
+				{
+					"text": "Antarktika",
+					"target": 0,
+					"feedback": "Der Kontinent liegt um den Südpol."
+				}
+			],
+			"conclusion": "Vergleiche Flächen und Nachbarschaften zusätzlich auf einem Globus."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Erkläre, warum Europa auf einer Weltkarte nicht in der Mitte liegen muss.",
+				"hints": [
+					"Ich erkläre die freie Mittelpunktwahl.",
+					"Ich nenne einen anderen Blickwinkel."
+				],
+				"model": "Eine Kugel hat keinen natürlichen Kartenmittelpunkt und keinen oberen Rand. Ein Kartenautor wählt Ausschnitt, Mittelpunkt und Ausrichtung. Eine pazifikzentrierte Karte kann die Nachbarschaft von Asien und Amerika besser zeigen. Die Lage der Kontinente selbst verändert sich dadurch nicht.",
+				"criteria": [
+					"Ich erkläre die freie Mittelpunktwahl.",
+					"Ich nenne einen anderen Blickwinkel.",
+					"Ich unterscheide Darstellung und Erde."
+				]
+			},
+			"2": {
+				"prompt": "Zwei Weltkarten zeigen Grönland verschieden groß. Wie entscheidest du, ob eine Flächenaussage stimmt?",
+				"hints": [
+					"Ich prüfe die Projektion.",
+					"Ich nenne einen passenden Vergleich."
+				],
+				"model": "Ich prüfe die Projektion und vergleiche mit einem Globus oder einer flächentreuen Karte. Die Größe auf dem Bildschirm allein reicht nicht. Eine Darstellung kann für Navigation nützlich sein und dennoch Flächen stark verzerren. Ich wähle das Modell passend zur Frage.",
+				"criteria": [
+					"Ich prüfe die Projektion.",
+					"Ich nenne einen passenden Vergleich.",
+					"Ich beachte den Darstellungszweck."
+				]
+			}
+		},
+		"model": "world"
+	},
+	{
+		"id": "geo-gradnetz",
+		"lb": 3,
+		"title": "Mit dem Gradnetz einen Ort angeben",
+		"period": "Geo5 LB 3 · Mit dem Gradnetz einen Ort angeben",
+		"intro": "Breite und Länge beantworten zwei unterschiedliche Lagefragen.",
+		"paragraphs": [
+			"Der Äquator ist der Breitenkreis bei 0° und trennt Nord- und Südhalbkugel. Breitenkreise verlaufen parallel zu ihm; die Breite reicht bis 90° Nord oder Süd. Meridiane sind Längenhalbkreise zwischen den Polen. Vom Nullmeridian durch Greenwich zählt man bis 180° nach Osten oder Westen. An den Polen laufen alle Meridiane zusammen.",
+			"Beispiel: München liegt ungefähr bei 48° Nord und 11,5° Ost. Zuerst suchst du die Breite nördlich des Äquators, dann die Länge östlich von Greenwich. Beide Angaben zusammen kennzeichnen die Lage. Ein einzelner Breitenkreis enthält viele Orte. Das Gradnetz ist ein gedachtes Hilfsnetz und keine sichtbare Bemalung auf der Erde. Das Weltkartenmodell vereinfacht die Umrisse und dient zur Orientierung."
+		],
+		"takeaway": "Geographische Koordinaten brauchen Breite mit Nord oder Süd und Länge mit Ost oder West.",
+		"sourceIds": ["lehrplan"],
+		"quiz": {
+			"question": "Welcher Breitenkreis liegt bei 0° und trennt Nord- und Südhalbkugel?",
+			"answer": "Der Äquator",
+			"wrong": ["Der Nullmeridian", "Der nördliche Polarkreis"],
+			"explanation": "Der Äquator ist der Ausgangskreis der geographischen Breite."
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Werkstatt · Mit dem Gradnetz einen Ort angeben",
+			"instruction": "Ordne die Beispiele zu. Lies bei der Prüfung auch die Begründungen.",
+			"categories": ["Geographische Breite", "Geographische Länge"],
+			"entries": [
+				{
+					"text": "48° Nord",
+					"target": 0,
+					"feedback": "Nord bezieht sich auf die Lage zum Äquator."
+				},
+				{
+					"text": "11,5° Ost",
+					"target": 1,
+					"feedback": "Ost bezieht sich auf die Lage zum Nullmeridian."
+				},
+				{
+					"text": "0° am Äquator",
+					"target": 0,
+					"feedback": "Der Äquator trägt die Breite null."
+				},
+				{
+					"text": "0° durch Greenwich",
+					"target": 1,
+					"feedback": "Hier liegt der Ausgangsmeridian der Länge."
+				}
+			],
+			"conclusion": "Ein Koordinatenpaar braucht beide Richtungsangaben."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Lies die ungefähre Lage Münchens bei 48° Nord und 11,5° Ost.",
+				"hints": [
+					"Ich erkläre Nord und Ost.",
+					"Ich unterscheide Breite und Länge."
+				],
+				"model": "München liegt nördlich des Äquators auf der Nordhalbkugel und östlich des Nullmeridians von Greenwich. Die erste Zahl bezeichnet die Breite, die zweite die Länge. Die gerundeten Werte grenzen den Ort ein, benennen aber keine genaue Haustür.",
+				"criteria": [
+					"Ich erkläre Nord und Ost.",
+					"Ich unterscheide Breite und Länge.",
+					"Ich beachte die Rundung."
+				]
+			},
+			"2": {
+				"prompt": "Ein Suchzettel nennt nur 48° Nord. Warum reicht das nicht für einen Treffpunkt?",
+				"hints": [
+					"Ich erkläre die Mehrdeutigkeit.",
+					"Ich ergänze die fehlende Länge."
+				],
+				"model": "Der Breitenkreis verläuft um die Erde und enthält viele Orte. Ohne Länge bleibt offen, wie weit östlich oder westlich von Greenwich der Treffpunkt liegt. Auch ein gerundetes Koordinatenpaar braucht für einen praktischen Treffpunkt eine genauere Ortsbeschreibung.",
+				"criteria": [
+					"Ich erkläre die Mehrdeutigkeit.",
+					"Ich ergänze die fehlende Länge.",
+					"Ich beachte praktische Genauigkeit."
+				]
+			}
+		},
+		"model": "world"
+	},
+	{
+		"id": "geo-massstab",
+		"lb": 3,
+		"title": "Maßstab und Entfernungen",
+		"period": "Geo5 LB 3 · Maßstab und Entfernungen",
+		"intro": "Kartenstrecke und wirkliche Strecke brauchen dieselbe Einheit.",
+		"paragraphs": [
+			"Der Maßstab 1 : 50 000 bedeutet: Eine Längeneinheit auf der Karte entspricht 50 000 gleichen Einheiten in der Wirklichkeit. Ein Zentimeter entspricht deshalb 50 000 cm, also 500 m. Bei 1 : 25 000 zeigt dieselbe Kartenlänge nur die halbe wirkliche Strecke. Der größere Maßstab hat die kleinere Verhältniszahl und zeigt bei gleicher Blattgröße einen kleineren Ausschnitt mit mehr Details.",
+			"Beispiel: Zwei Orte liegen auf einer Karte im Maßstab 1 : 25 000 genau 8 cm auseinander. Achtmal 25 000 cm sind 200 000 cm, also 2 000 m oder 2 km. Das ist die Luftlinie, wenn du gerade misst. Ein gekrümmter Weg kann länger sein. Auf dem Bildschirm verändert sich die Länge beim Zoomen; eine eingeblendete Maßstabsleiste passt sich an. Eine gedruckte Verhältniszahl gilt nur bei der vorgesehenen Ausgabegröße."
+		],
+		"takeaway": "Rechne zuerst mit gleichen Einheiten und unterscheide Luftlinie, Weglänge und Bildschirmzoom.",
+		"sourceIds": ["lehrplan"],
+		"quiz": {
+			"question": "Wie viel Wirklichkeit entspricht 1 cm bei 1 : 50 000?",
+			"answer": "500 m",
+			"wrong": ["50 m", "50 km"],
+			"explanation": "50 000 cm ergeben 500 m; ein Meter hat 100 cm."
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Werkstatt · Maßstab und Entfernungen",
+			"instruction": "Ordne die Beispiele zu. Lies bei der Prüfung auch die Begründungen.",
+			"categories": [
+				"1 : 25 000",
+				"1 : 50 000",
+				"Keine sichere Streckenangabe"
+			],
+			"entries": [
+				{
+					"text": "1 cm entspricht 250 m.",
+					"target": 0,
+					"feedback": "25 000 cm ergeben 250 m."
+				},
+				{
+					"text": "1 cm entspricht 500 m.",
+					"target": 1,
+					"feedback": "50 000 cm ergeben 500 m."
+				},
+				{
+					"text": "Ein vergrößertes Foto einer Karte ohne gültige Leiste.",
+					"target": 2,
+					"feedback": "Die ursprüngliche Verhältniszahl kann nach dem Vergrößern nicht einfach übernommen werden."
+				},
+				{
+					"text": "4 cm entsprechen 1 km.",
+					"target": 0,
+					"feedback": "Viermal 250 m ergeben 1 000 m."
+				}
+			],
+			"conclusion": "Die Rechnung ist erst nach der Einheitenkontrolle fertig."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Berechne die Luftlinie für 8 cm auf einer Karte mit 1 : 25 000 und erkläre deinen Weg.",
+				"hints": ["Ich erkläre den Maßstab.", "Ich rechne zu 2 km um."],
+				"model": "Ein Zentimeter entspricht 250 m. Acht Zentimeter entsprechen achtmal 250 m, also 2 000 m oder 2 km. Ich habe gerade zwischen den Orten gemessen. Für einen Straßenweg müsste ich dessen Verlauf messen; er kann länger sein.",
+				"criteria": [
+					"Ich erkläre den Maßstab.",
+					"Ich rechne zu 2 km um.",
+					"Ich unterscheide Luftlinie und Weg."
+				]
+			},
+			"2": {
+				"prompt": "Eine Karte wird doppelt so breit ausgedruckt. Kannst du mit der alten Verhältniszahl weiterrechnen?",
+				"hints": [
+					"Ich erkläre die Vergrößerung.",
+					"Ich prüfe Zahl oder Maßstabsleiste."
+				],
+				"model": "Alle Kartenstrecken sind nun doppelt so lang. Die alte Verhältniszahl würde zu große Wirklichkeitsstrecken liefern. Ich brauche den angepassten Maßstab oder eine mitvergrößerte Maßstabsleiste. Eine Strecke von zuvor 1 cm bei 1 : 50 000 ist nun 2 cm lang und entspricht weiterhin 500 m.",
+				"criteria": [
+					"Ich erkläre die Vergrößerung.",
+					"Ich prüfe Zahl oder Maßstabsleiste.",
+					"Ich nutze ein richtiges Beispiel."
+				]
+			}
+		},
+		"model": "scale"
+	},
+	{
+		"id": "geo-orientierung",
+		"lb": 3,
+		"title": "Himmelsrichtungen, Höhe und Landmarken",
+		"period": "Geo5 LB 3 · Himmelsrichtungen, Höhe und Landmarken",
+		"intro": "Absolute Lage und relative Lage ergänzen sich.",
+		"paragraphs": [
+			"Norden, Osten, Süden und Westen ordnen Richtungen. Auf einer genordeten Karte liegt Norden oben; bei anderen Karten prüfst du den Nordpfeil. Ein Kompass richtet sich am Erdmagnetfeld aus. Markante Gebäude, Berggipfel oder Kreuzungen können als Landmarken helfen. Im Realraum vergleichst du mehrere sichere Merkmale mit der Karte und richtest die Karte passend aus.",
+			"Beispiel: Die Schule liegt südlich des Bahnhofs und westlich des Parks. Das sind relative Lageangaben. Eine Koordinate oder eine Höhenangabe über einem festgelegten Bezug liefert eine absolute Lageangabe. Höhenlinien verbinden Punkte gleicher Höhe. Bei gleichem Höhenabstand bedeuten enge Linien einen steilen Hang, weite Linien einen flacheren. Eine Höhenfarbe sagt ohne Legende weder Wald noch Temperatur aus."
+		],
+		"takeaway": "Prüfe Nordrichtung und Legende; nutze mehrere Landmarken und unterscheide Lage, Höhe und Hangneigung.",
+		"sourceIds": ["lehrplan"],
+		"quiz": {
+			"question": "Was zeigen eng beieinanderliegende Höhenlinien bei gleichem Höhenabstand?",
+			"answer": "Einen steileren Hang",
+			"wrong": ["Immer einen Wald", "Immer einen Fluss"],
+			"explanation": "Auf kurzer waagerechter Strecke wird derselbe Höhenunterschied überwunden."
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Werkstatt · Himmelsrichtungen, Höhe und Landmarken",
+			"instruction": "Ordne die Beispiele zu. Lies bei der Prüfung auch die Begründungen.",
+			"categories": ["Relative Lage", "Absolute Lage", "Hangneigung"],
+			"entries": [
+				{
+					"text": "Die Schule liegt südlich des Bahnhofs.",
+					"target": 0,
+					"feedback": "Die Lage wird zu einem anderen Ort beschrieben."
+				},
+				{
+					"text": "Ein Ort liegt ungefähr bei 48° Nord und 11,5° Ost.",
+					"target": 1,
+					"feedback": "Die Koordinaten beziehen sich auf ein festgelegtes Netz."
+				},
+				{
+					"text": "Höhenlinien liegen bei gleichem Höhenabstand sehr dicht.",
+					"target": 2,
+					"feedback": "Das deutet auf einen steilen Hang."
+				},
+				{
+					"text": "Ein Gipfel liegt 800 m über dem Höhenbezug.",
+					"target": 1,
+					"feedback": "Die Höhe bezieht sich auf eine festgelegte Bezugsfläche."
+				}
+			],
+			"conclusion": "Eine hohe Lage ist nicht automatisch ein steiler Hang."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Beschreibe den Unterschied zwischen Höhenangabe und eng stehenden Höhenlinien.",
+				"hints": ["Ich erkläre die Höhe.", "Ich erkläre den Linienabstand."],
+				"model": "Eine Höhenangabe sagt, wie hoch ein Punkt über dem Bezug liegt. Enge Höhenlinien zeigen dagegen bei gleichem Höhenabstand eine große Steigung. Ein hoch gelegenes Plateau kann flach sein; ein tiefer gelegener Hang kann steil sein. Höhe und Neigung sind deshalb verschiedene Eigenschaften.",
+				"criteria": [
+					"Ich erkläre die Höhe.",
+					"Ich erkläre den Linienabstand.",
+					"Ich nenne einen passenden Vergleich."
+				]
+			},
+			"2": {
+				"prompt": "Beim Schulweg zeigt eine Karte Norden nach links. Wie vermeidest du eine falsche Richtung?",
+				"hints": ["Ich nutze den Nordpfeil.", "Ich vergleiche Landmarken."],
+				"model": "Ich suche den Nordpfeil und drehe die Karte passend zum Realraum. Danach vergleiche ich mindestens zwei eindeutige Landmarken. Ich setze den oberen Blattrand nicht automatisch mit Norden gleich. Den tatsächlichen Weg bespreche ich bei Unsicherheit mit einer erwachsenen Begleitung.",
+				"criteria": [
+					"Ich nutze den Nordpfeil.",
+					"Ich vergleiche Landmarken.",
+					"Ich benenne die falsche Annahme."
+				]
+			}
+		},
+		"model": "relief"
+	},
+	{
+		"id": "geo-forschungsreisen",
+		"lb": 3,
+		"title": "Forschungsreisen vergleichen",
+		"period": "Geo5 LB 3 · Forschungsreisen vergleichen",
+		"intro": "Eine Reiseerzählung zeigt auch die Sicht der Reisenden.",
+		"paragraphs": [
+			"Forschungsreisen verfolgen unterschiedliche Ziele: Räume kartieren, Natur untersuchen, Handelswege suchen oder Macht ausweiten. Historische Reisende waren von Schiffen, Vorräten und der Kenntnis örtlicher Menschen abhängig. Heutige Expeditionen nutzen zusätzlich Satelliten, Messgeräte und internationale Zusammenarbeit. Technische Hilfe beseitigt weder Wettergefahren noch die Verantwortung gegenüber Menschen und Umwelt.",
+			"Beispiel: Eine historische Polarreise wollte eine Route erkunden, eine heutige Expedition misst Veränderungen des Meereises. Beide müssen Versorgung und Gefahren planen; Fragestellung und Messmöglichkeiten unterscheiden sich. Ein Raum war für seine Bewohner nicht „unentdeckt“, nur weil europäische Reisende ihn erstmals beschrieben. Vergleiche Berichte mit der Perspektive der Menschen vor Ort und frage, wer sprechen darf und wer Nutzen oder Schäden trägt."
+		],
+		"takeaway": "Vergleiche Ziel, Bedingungen und Perspektiven einer Reise; „entdeckt“ ist eine Aussage aus einem Blickwinkel.",
+		"sourceIds": ["lehrplan"],
+		"quiz": {
+			"question": "Was gehört zu einem fairen Vergleich von Forschungsreisen?",
+			"answer": "Ziele, technische Möglichkeiten und Perspektiven prüfen",
+			"wrong": [
+				"Nur die gefahrenen Kilometer vergleichen",
+				"Bewohner eines Raums grundsätzlich übergehen"
+			],
+			"explanation": "Reisen finden unter unterschiedlichen Bedingungen statt und werden aus verschiedenen Perspektiven beschrieben."
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Werkstatt · Forschungsreisen vergleichen",
+			"instruction": "Ordne die Beispiele zu. Lies bei der Prüfung auch die Begründungen.",
+			"categories": ["Ziel", "Bedingung", "Perspektive"],
+			"entries": [
+				{
+					"text": "Die Dicke des Meereises untersuchen.",
+					"target": 0,
+					"feedback": "Das ist die wissenschaftliche Fragestellung."
+				},
+				{
+					"text": "Lebensmittel für einen langen Winter mitnehmen.",
+					"target": 1,
+					"feedback": "Versorgung begrenzt die Durchführung."
+				},
+				{
+					"text": "Eine bewohnte Region als menschenleer darstellen.",
+					"target": 2,
+					"feedback": "Eine solche Aussage blendet die Bewohner aus."
+				}
+			],
+			"conclusion": "Bewerte einen Bericht anhand seiner Aussagen und Auslassungen."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Vergleiche eine historische Polarreise und eine heutige Meereisexpedition nach Ziel und Bedingungen.",
+				"hints": [
+					"Ich unterscheide die Ziele.",
+					"Ich nenne gemeinsame Bedingungen."
+				],
+				"model": "Eine historische Reise konnte nach einer neuen Schiffsroute suchen, während eine heutige Expedition Messdaten zum Meereis gewinnt. Beide brauchen Versorgung und Schutz vor Kälte. Satelliten und moderne Kommunikation erweitern heutige Möglichkeiten, machen die Reise aber nicht gefahrlos.",
+				"criteria": [
+					"Ich unterscheide die Ziele.",
+					"Ich nenne gemeinsame Bedingungen.",
+					"Ich erkläre den technischen Unterschied."
+				]
+			},
+			"2": {
+				"prompt": "Ein Reisebericht nennt eine bewohnte Insel neu entdeckt. Wie formulierst du genauer?",
+				"hints": [
+					"Ich benenne den Blickwinkel.",
+					"Ich berücksichtige die Bewohner."
+				],
+				"model": "Ich schreibe, wer die Insel zu welchem Zeitpunkt aus seiner Perspektive erstmals beschrieb. Ich prüfe, welche Menschen schon dort lebten und welches Wissen sie hatten. Eine erstmalige europäische Kartierung ist nicht mit dem Beginn der Geschichte dieser Insel gleichzusetzen.",
+				"criteria": [
+					"Ich benenne den Blickwinkel.",
+					"Ich berücksichtige die Bewohner.",
+					"Ich formuliere historisch vorsichtig."
+				]
+			}
+		}
+	},
+	{
+		"id": "geo-lebensraeume",
+		"lb": 3,
+		"title": "Leben in Polargebiet und Wüste",
+		"period": "Geo5 LB 3 · Leben in Polargebiet und Wüste",
+		"intro": "Natürliche Bedingungen prägen Möglichkeiten, bestimmen Menschen aber nicht vollständig.",
+		"paragraphs": [
+			"Polargebiete erhalten im Jahreslauf sehr unterschiedlich viel Sonnenlicht und sind im Mittel kalt. Heiße Wüsten sind besonders trocken; Temperaturen können zwischen Tag und Nacht stark schwanken. Wasser, Kleidung, Bauweisen und Versorgung spielen in beiden Räumen eine wichtige Rolle. Wüste bedeutet vor allem Trockenheit, nicht automatisch Sand: Es gibt auch Fels- und Kieswüsten.",
+			"Beispiel: Zwei erfundene Familien planen ihren Alltag, eine in einer arktischen Siedlung und eine in einer Wüstenstadt. Beide nutzen örtliche Kenntnisse und moderne Technik; ihre Versorgung und Wünsche unterscheiden sich je nach Ort und Lebenssituation. Beschreibe konkrete Bedingungen und Handlungen statt „alle Menschen dort“ zu behaupten. Aus deiner Sicht ungewohnte Lebensweisen können aus einer anderen Perspektive gut begründet sein."
+		],
+		"takeaway": "Vergleiche konkrete Lebensbedingungen und Perspektiven, ohne eine ganze Bevölkerung auf ein Bild festzulegen.",
+		"sourceIds": ["lehrplan"],
+		"quiz": {
+			"question": "Welches Merkmal kennzeichnet eine Wüste vor allem?",
+			"answer": "Große Trockenheit",
+			"wrong": ["Überall meterhoher Sand", "Ganzjährig dieselbe Hitze"],
+			"explanation": "Wüsten werden durch Wassermangel geprägt; Oberfläche und Temperatur können sehr verschieden sein."
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Werkstatt · Leben in Polargebiet und Wüste",
+			"instruction": "Ordne die Beispiele zu. Lies bei der Prüfung auch die Begründungen.",
+			"categories": [
+				"Natürliche Bedingung",
+				"Menschliche Anpassung",
+				"Unzulässige Verallgemeinerung"
+			],
+			"entries": [
+				{
+					"text": "Wenig Niederschlag in einer heißen Wüste.",
+					"target": 0,
+					"feedback": "Trockenheit ist eine natürliche Bedingung."
+				},
+				{
+					"text": "Gebäude gegen starke Sonneneinstrahlung beschatten.",
+					"target": 1,
+					"feedback": "Menschen reagieren mit Bauweisen auf Bedingungen."
+				},
+				{
+					"text": "Alle Menschen in der Arktis leben gleich.",
+					"target": 2,
+					"feedback": "Lebensweisen unterscheiden sich zwischen Menschen und Orten."
+				},
+				{
+					"text": "Kleidung gegen starken Wärmeverlust wählen.",
+					"target": 1,
+					"feedback": "Kleidung kann an Kälte angepasst werden."
+				}
+			],
+			"conclusion": "Ein Vergleich braucht Beispiele, keine Rangliste von Kulturen."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Vergleiche eine arktische Siedlung und eine heiße Wüstenstadt mit je einer Bedingung und Anpassung.",
+				"hints": [
+					"Ich nenne je eine Bedingung.",
+					"Ich verbinde Anpassung und Bedingung."
+				],
+				"model": "In der arktischen Siedlung ist Schutz vor Kälte wichtig, etwa durch geeignete Kleidung und Gebäude. In der Wüstenstadt können Schatten und eine verlässliche Wasserversorgung besonders wichtig sein. Beide Beispiele sind vereinfacht; tatsächliche Lebensweisen unterscheiden sich auch innerhalb dieser Räume.",
+				"criteria": [
+					"Ich nenne je eine Bedingung.",
+					"Ich verbinde Anpassung und Bedingung.",
+					"Ich vermeide pauschale Aussagen."
+				]
+			},
+			"2": {
+				"prompt": "Ein Prospekt zeigt nur Zelte und Dünen. Wie prüfst du sein Bild einer Wüstenregion?",
+				"hints": [
+					"Ich prüfe Herkunft und Zweck.",
+					"Ich ergänze andere Perspektiven."
+				],
+				"model": "Ich frage nach Ort, Aufnahmedatum und Zweck des Prospekts. Ich ergänze Karten und Berichte von Bewohnern über Städte, Arbeit, Infrastruktur und unterschiedliche Lebensweisen. Das einzelne Bild zeigt einen Ausschnitt und kann keine ganze Region oder Kultur vertreten.",
+				"criteria": [
+					"Ich prüfe Herkunft und Zweck.",
+					"Ich ergänze andere Perspektiven.",
+					"Ich benenne die Grenze des Bildes."
+				]
+			}
+		}
+	}
+]
