@@ -1,0 +1,1681 @@
+[
+	{
+		"id": "b5-geraete",
+		"stage": "methoden",
+		"title": "Laborgeräte und Messgeräte sicher nutzen",
+		"skill": "Im Biologiesaal stehen Lupe, Meterstab, Waage, Reagenzglas und Petrischale bereit.",
+		"bindings": ["1"],
+		"paragraphs": [
+			"Für Untersuchungen im Biologieunterricht wählst du jeweils das passende Gerät. Eine Lupe vergrößert kleine Oberflächen oder Blütenbestandteile direkt mit der Hand. Im Reagenzglas beobachtest du Flüssigkeiten oder kleine Ansätze, in der Petrischale legst du Proben flach aus, und der Erlenmeyerkolben eignet sich mit seinem engen Hals zum Schwenken ohne Verschütten. Mit Präparierwanne und Präparierbesteck untersuchst du zum Beispiel Blüten oder Pflanzenteile sicher auf einer Unterlage.",
+			"Zum genauen Messen nutzt du Messgeräte mit eindeutigen Einheiten: den Meterstab für Längen in Zentimetern oder Metern, die Waage für Massen in Gramm, das Thermometer für Temperaturen in Grad Celsius und die Stoppuhr für Zeiten in Sekunden oder Minuten. Sorgfältiges Ablesen auf Augenhöhe und eine trockene, saubere Arbeitsfläche vermeiden Messfehler."
+		],
+		"materialLabel": "Geräteübersicht für eine 5. Klasse",
+		"material": "Untersuchung A: Länge einer Bohnenkeimpflanze messen.\nUntersuchung B: Samen in einer flachen Schale auf feuchtem Papier auslegen.\nUntersuchung C: Wassertemperatur in einem Glas bestimmen.\nFehlerquelle im Protokoll: Eine Schülerin liest das Thermometer schräg von oben ab und notiert „22“ ohne Einheit.",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"question": "Welches Gerät eignet sich am besten, um feuchte Samen flach ausgelegt zu beobachten?",
+			"answer": "Eine Petrischale.",
+			"wrong": [
+				"Eine Stoppuhr.",
+				"Ein Meterstab."
+			],
+			"explanation": "Die flache Petrischale bietet eine übersichtliche Fläche für Samen oder kleine Pflanzenteile; Stoppuhr und Meterstab sind Messgeräte für Zeit und Länge."
+		},
+		"cases": [
+			{
+				"prompt": "Du möchtest die Masse von zehn trockenen Bohnensamen in Gramm bestimmen.",
+				"options": ["Waage verwenden", "Lupe verwenden"],
+				"answer": "Waage verwenden",
+				"feedback": "Massen misst man mit einer Waage in Gramm; die Lupe vergrößert nur optisch."
+			},
+			{
+				"prompt": "Im Messprotokoll steht bei der Länge nur die Zahl „14“.",
+				"options": ["Einheit ergänzen (z. B. cm)", "Zahl einfach stehen lassen"],
+				"answer": "Einheit ergänzen (z. B. cm)",
+				"feedback": "Ohne Einheit ist ein Messwert nicht eindeutig – 14 mm sind etwas ganz anderes als 14 cm."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Ordne den Untersuchungen A, B und C jeweils ein passendes Mess- oder Laborgerät und die passende Einheit (falls gemessen wird) zu.",
+				"model": "Für Untersuchung A eignet sich ein Meterstab mit der Einheit Zentimeter (cm) oder Millimeter (mm). Für Untersuchung B passt eine Petrischale, weil Samen darin flach und gut sichtbar liegen. Für Untersuchung C misst ein Thermometer die Temperatur in Grad Celsius (°C).",
+				"criteria": [
+					"Jedem Fall ein passendes Gerät zugeordnet",
+					"Bei Längen- und Temperaturmessung richtige Einheiten genannt",
+					"Aufgaben von Mess- und Laborgeräten unterschieden"
+				],
+				"hints": [
+					"Trenne Messgeräte (mit Einheit) von Arbeitsgefäßen.",
+					"Denke an cm, °C und flache Schalen."
+				]
+			},
+			"2": {
+				"prompt": "Erkläre an der Fehlerquelle im Material zwei konkrete Regeln, die zuverlässige Messwerte sichern.",
+				"model": "Erstens muss das Thermometer senkrecht und auf Augenhöhe abgelesen werden, damit kein Ablesefehler entsteht. Zweitens gehört zu jedem Messwert immer die Einheit, also 22 °C statt nur 22, damit andere den Wert später eindeutig nachvollziehen können.",
+				"criteria": [
+					"Ablesefehler durch Augenhöhe erklärt",
+					"Notwendigkeit der Einheit begründet",
+					"Bezug auf das Beispiel 22 °C hergestellt"
+				],
+				"hints": [
+					"Achte auf die Blickrichtung beim Ablesen.",
+					"Überlege, was ohne die Angabe °C unklar bleibt."
+				]
+			}
+		},
+		"extension": "Übe den sicheren Umgang mit realen Labor- und Messgeräten nach Anleitung im Biologiesaal.",
+		"takeaway": "Messgeräte liefern Werte mit Einheit; Laborgeräte wie Petrischale, Reagenzglas und Lupe helfen beim sauberen Untersuchen."
+	},
+	{
+		"id": "b5-beobachten-vergleichen",
+		"stage": "methoden",
+		"title": "Genau beobachten, vergleichen und bestimmen",
+		"skill": "Zwei Blätter sehen auf den ersten Blick ähnlich aus, unterscheiden sich aber an Rand und Form.",
+		"bindings": ["1"],
+		"paragraphs": [
+			"Beim Beobachten schaust du genau hin und beschreibst nur das, was du anhand fester Kriterien wirklich wahrnimmst – zum Beispiel Blattform, Blattrand oder Fellfarbe. Vermutungen wie „Das Tier hat Angst“ gehören nicht in eine reine Beobachtung, sondern sind schon eine Deutung.",
+			"Beim Vergleichen ordnest du zwei oder mehr Lebewesen nach denselben Kriterien und hältst Gemeinsamkeiten und Unterschiede fest. Mithilfe einfacher, bebilderter Bestimmungshilfen kannst du Merkmale Schritt für Schritt abgleichen, das Lebewesen sicher benennen und seinem Lebensraum zuordnen."
+		],
+		"materialLabel": "Merkmalstabelle zweier heimischer Laubblätter",
+		"material": "Blatt 1 (Stieleiche): gebuchteter Blattrand, kurzer Blattstiel, derbe Oberfläche.\nBlatt 2 (Rotbuche): leicht gewellter bis glatter Blattrand, spitz-eiförmige Form, deutlich sichtbare Seitenadern.\nZusatznotiz eines Kindes: „Blatt 1 ist viel hübscher als Blatt 2.“",
+		"sourceIds": ["lp", "arten"],
+		"quiz": {
+			"question": "Worauf achtest du beim biologischen Vergleichen zweier Blätter besonders?",
+			"answer": "Beide Blätter nach denselben festgelegten Kriterien untersuchen und Gemeinsamkeiten wie Unterschiede nennen.",
+			"wrong": [
+				"Nur beschreiben, welches Blatt dir persönlich besser gefällt.",
+				"Beim ersten Blatt die Farbe nennen und beim zweiten nur die Größe."
+			],
+			"explanation": "Ein fairer Vergleich prüft immer dieselben Merkmale an beiden Objekten, damit Gemeinsamkeiten und Unterschiede sichtbar werden."
+		},
+		"cases": [
+			{
+				"prompt": "„Der Blattrand ist tief gebuchtet und der Stiel ist kurz.“",
+				"options": ["Beobachtung nach Kriterien", "Persönliche Bewertung"],
+				"answer": "Beobachtung nach Kriterien",
+				"feedback": "Blattrand und Stiellänge sind wahrnehmbare, überprüfbare Merkmale."
+			},
+			{
+				"prompt": "„Blatt 1 ist viel hübscher als Blatt 2.“",
+				"options": ["Geschmacksurteil, keine Beobachtung", "Exakte biologische Beschreibung"],
+				"answer": "Geschmacksurteil, keine Beobachtung",
+				"feedback": "„Hübsch“ ist ein persönliches Urteil und kein Merkmal für eine Bestimmungshilfe."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Vergleiche Blatt 1 und Blatt 2 aus dem Material anhand der Kriterien Blattrand und Aufbau und erkläre, warum die Zusatznotiz herausgestrichen werden muss.",
+				"model": "Beide Blätter besitzen einen Blattstiel und eine Blattspreite. Sie unterscheiden sich jedoch im Blattrand: Die Stieleiche hat einen tief gebuchteten Rand, die Rotbuche einen glatten bis leicht gewellten Rand und eine spitz-eiförmige Form. Die Notiz „viel hübscher“ ist eine persönliche Meinung und hilft beim Bestimmen nicht weiter.",
+				"criteria": [
+					"Gemeinsamkeit beider Blätter genannt",
+					"Unterschied anhand desselben Kriteriums (Blattrand) beschrieben",
+					"Subjektive Zusatznotiz als ungeeignet begründet"
+				],
+				"hints": [
+					"Nenne zuerst ein gemeinsames Kriterium, dann den Unterschied.",
+					"Erkläre kurz, warum „hübsch“ nicht überprüfbar ist."
+				]
+			},
+			"2": {
+				"prompt": "Beschreibe, wie du mithilfe einer bebilderten Bestimmungshilfe im Schulhof einen unbekannten Laubbaum bestimmst und seinem Standort zuordnest.",
+				"model": "Ich prüfe zuerst einzelne Merkmale wie die Blattform, den Blattrand und die Stellung der Blätter am Zweig. Dann vergleiche ich diese Kriterien Schritt für Schritt mit den Abbildungen und kurzen Beschreibungen der Bestimmungshilfe. Nach der Benennung der Art notiere ich den Standort (z. B. sonniger Schulhof oder schattiger Waldrand) und prüfe, ob der Baum dort typisch vorkommt.",
+				"criteria": [
+					"Konkrete Beobachtungskriterien genannt",
+					"Abgleich mit Abbildungen/Beschreibungen beschrieben",
+					"Zuordnung von Artname und Umgebung erklärt"
+				],
+				"hints": [
+					"Gehe Schritt für Schritt vom Merkmal zur Abbildung.",
+					"Vergiss die Zuordnung zur Umgebung nicht."
+				]
+			}
+		},
+		"extension": "Sammle bei einem Unterrichtsgang verschiedene Blätter oder bestimme heimische Arten mit einer echten Bestimmungshilfe.",
+		"takeaway": "Beobachten beschreibt nach festen Kriterien; Vergleichen prüft bei beiden Objekten dieselben Merkmale für Gemeinsamkeiten und Unterschiede."
+	},
+	{
+		"id": "b5-erkenntnisweg",
+		"stage": "methoden",
+		"title": "Der naturwissenschaftliche Erkenntnisweg",
+		"skill": "Keimen Kressesamen schneller, wenn sie Licht bekommen oder auch im Dunkeln?",
+		"bindings": ["1"],
+		"paragraphs": [
+			"Um biologische Fragen zu beantworten, gehen Naturwissenschaftlerinnen und Naturwissenschaftler in festen Phasen vor: Zuerst steht eine genaue Beobachtung und eine klare Frage. Danach formulierst du eine Hypothese – eine begründete Vermutung über den Ausgang. Anschließend planst und führst du eine Untersuchung durch, wertest die Daten aus und prüfst, ob deine Hypothese passt.",
+			"Nicht jede Frage braucht ein Experiment: Manchmal genügt Beobachten (z. B. Verhalten eines Igels) oder Vergleichen (z. B. Gebiss zweier Tiere). Bei einem Experiment veränderst du gezielt nur einen einzigen Faktor und richtest eine Vergleichsprobe ohne diese Veränderung ein. So vermeidest du Fehlerquellen wie unterschiedliche Wassermengen oder Temperaturen."
+		],
+		"materialLabel": "Geplanter Kresse-Versuch in zwei Petrischalen",
+		"material": "Schale 1 (hell): feuchtes Wattepad, 20 Kressesamen, auf der sonnigen Fensterbank (22 °C).\nSchale 2 (dunkel): trockenes Wattepad, 20 Kressesamen, im kühlen Schrank (15 °C).",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"question": "Wie nennt man in der Biologie eine begründete vorläufige Erklärung, die anschließend durch ein Experiment überprüft wird?",
+			"answer": "Eine Hypothese.",
+			"wrong": [
+				"Ein fertiges Messprotokoll.",
+				"Eine bewiesene Tatsache ohne Prüfung."
+			],
+			"explanation": "Eine Hypothese ist eine begründete Vermutung, die erst durch Beobachtung oder Experiment überprüft wird."
+		},
+		"cases": [
+			{
+				"prompt": "Du möchtest herausfinden, wie sich das Fell eines Eichhörnchens von dem eines Maulwurfs unterscheidet.",
+				"options": ["Vergleichen als Methode", "Ein Temperaturexperiment durchführen"],
+				"answer": "Vergleichen als Methode",
+				"feedback": "Körpermerkmale zweier Tiere untersucht man durch kriteriengeleitetes Vergleichen, nicht durch ein Experiment."
+			},
+			{
+				"prompt": "Im Kresse-Versuch hat Schale 2 sowohl weniger Licht als auch kein Wasser und eine niedrigere Temperatur.",
+				"options": ["Fehlerquelle in der Planung", "Saubere Kontrollprobe"],
+				"answer": "Fehlerquelle in der Planung",
+				"feedback": "Wenn mehrere Bedingungen gleichzeitig verändert werden, lässt sich kein eindeutiger Einfluss des Lichts ablesen."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Nenne die vier Phasen des naturwissenschaftlichen Erkenntnisweges am Kresse-Beispiel und korrigiere die Fehler in Schale 2.",
+				"model": "1. Frage: Beeinflusst Licht die Keimung von Kressesamen? 2. Hypothese: Auch im Dunkeln keimen feuchte Kressesamen. 3. Untersuchung planen und durchführen: Schale 1 und Schale 2 erhalten beide ein feuchtes Wattepad, jeweils 20 Samen und dieselbe Temperatur von 22 °C; nur Schale 2 wird lichtdicht abgedeckt. 4. Datenauswertung: Nach drei Tagen gekeimte Samen zählen und mit der Hypothese vergleichen.",
+				"criteria": [
+					"Alle vier Phasen in sinnvoller Reihenfolge genannt",
+					"Wasser und Temperatur als Fehlerquellen erkannt",
+					"Nur Licht als einzige veränderte Bedingung vorgeschlagen"
+				],
+				"hints": [
+					"Frage, Hypothese, Planung/Durchführung, Datenauswertung.",
+					"Prüfe im Material, was in Schale 2 außer dem Licht anders ist."
+				]
+			},
+			"2": {
+				"prompt": "Begründe für drei Fragestellungen die jeweils passende Erkenntnismethode: a) Wie viele Blütenblätter hat ein Scharbockskraut? b) Wächst eine Bohne mit Wasser besser als ohne? c) Worin unterscheiden sich Hundezähne und Rinderzähne?",
+				"model": "Zu a) passt das Beobachten, weil man ein vorliegendes Merkmal am Original genau erfasst. Zu b) passt das Experimentieren, weil gezielt eine Bedingung (Wasser) verändert und mit einer Kontrollgruppe verglichen wird. Zu c) passt das Vergleichen, weil zwei Gebisse nach denselben Kriterien auf Gemeinsamkeiten und Unterschiede untersucht werden.",
+				"criteria": [
+					"Beobachten, Experimentieren und Vergleichen richtig zugeordnet",
+					"Jede Auswahl fachlich begründet",
+					"Unterschied zwischen passivem Betrachten und aktivem Verändern deutlich gemacht"
+				],
+				"hints": [
+					"Überlege, wo du aktiv eine Bedingung änderst und wo nicht.",
+					"Ordne jeder Methode eine der drei Fragen zu."
+				]
+			}
+		},
+		"extension": "Führe einen geplanten Keimversuch mit Kresse oder Bohnen selbst unter Aufsicht im Unterricht durch.",
+		"takeaway": "Der Erkenntnisweg führt von Frage und Hypothese über geplante Untersuchung mit genau einer veränderten Bedingung zur Datenauswertung."
+	},
+	{
+		"id": "b5-mikroskop",
+		"stage": "methoden",
+		"title": "Das Lichtmikroskop und erste Präparate",
+		"lab": "microscope",
+		"skill": "Mit dem Lichtmikroskop werden Zellen sichtbar, die für das bloße Auge verborgen sind.",
+		"bindings": ["1", "2"],
+		"paragraphs": [
+			"Ein Lichtmikroskop vergrößert zweimal: Das Objektiv nahe am Präparat entwirft ein vergrößertes Bild, das du durch das Okular am Auge betrachtest. Die Gesamtvergrößerung berechnet sich als Produkt: Okularvergrößerung · Objektivvergrößerung. Bei einem 10-fach-Okular und einem 40-fach-Objektiv ergibt sich zum Beispiel 10 · 40 = 400-fach.",
+			"Beim Mikroskopieren drehst du immer zuerst das kleinste Objektiv ein, legst das Präparat auf den Objekttisch und stellst mit dem Grobtrieb vorsichtig scharf, während du von der Seite auf den Abstand achtest. Erst danach schaltest du weiter und nutzt den Feintrieb. Für ein Frischpräparat legst du ein dünnes Zwiebelhäutchen in einen Wassertropfen auf den Objektträger und senkst das Deckgläschen schräg ab, um Luftblasen zu vermeiden."
+		],
+		"materialLabel": "Schematische Mikroskopdaten im Schullabor",
+		"material": "Bauteile: Okular, Tubus, Objektivrevolver mit 4-fach-, 10-fach- und 40-fach-Objektiv, Objekttisch mit Klemmen, Blende, Lichtquelle, Grobtrieb und Feintrieb.\nProtokollfehler: „Ich habe sofort das 40-fach-Objektiv gewählt und mit dem Grobtrieb nach oben gedreht, während ich durchgeschaut habe.“",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"question": "Wie berechnest du die Gesamtvergrößerung eines Lichtmikroskops?",
+			"answer": "Okularvergrößerung · Objektivvergrößerung (z. B. 10 · 40 = 400-fach).",
+			"wrong": [
+				"Okularvergrößerung + Objektivvergrößerung (z. B. 10 + 40 = 50-fach).",
+				"Nur die Vergrößerung des größten Objektivs ablesen."
+			],
+			"explanation": "Beide Linsensysteme vergrößern nacheinander, deshalb werden die Werte von Okular und Objektiv miteinander multipliziert."
+		},
+		"cases": [
+			{
+				"prompt": "Das Okular vergrößert 10-fach, das eingesetzte Objektiv 4-fach. Wie hoch ist die Gesamtvergrößerung?",
+				"options": ["40-fach", "14-fach"],
+				"answer": "40-fach",
+				"feedback": "10 · 4 = 40. Okular- und Objektivvergrößerung werden multipliziert."
+			},
+			{
+				"prompt": "Beim Herstellen eines Frischpräparats fällt das Deckgläschen flach auf den Wassertropfen.",
+				"options": ["Es entstehen störende Luftblasen", "Das Präparat wird dadurch schärfer"],
+				"answer": "Es entstehen störende Luftblasen",
+				"feedback": "Deshalb setzt man das Deckgläschen schräg in einem spitzen Winkel an und senkt es langsam ab."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Nutze zuerst das Mikroskop-Modell oben und beschreibe danach in geordneten Schritten, wie du ein Frischpräparat der Zwiebelhaut herstellst und mit dem 4-fach-Objektiv scharf einstellst.",
+				"model": "Ich gebe einen Wassertropfen auf einen sauberen Objektträger, lege ein dünnes Stück Zwiebelhaut glatt hinein und senke das Deckgläschen schräg ab, damit keine Luftblasen bleiben. Danach drehe ich am Objektivrevolver das kleinste Objektiv (4-fach) ein, klemme das Präparat auf den Objekttisch, hebe den Tisch mit seitlichem Blick vorsichtig an und stelle beim Hineinschauen mit Grob- und Feintrieb scharf.",
+				"criteria": [
+					"Herstellung mit Wassertropfen und schrägem Deckgläschen beschrieben",
+					"Start mit kleinstem Objektiv genannt",
+					"Vorsichtiges Heben und Scharfstellen erklärt"
+				],
+				"hints": [
+					"Denke an Wassertropfen und schräges Aufsetzen des Deckgläschens.",
+					"Beginne immer mit der Übersichtsvergrößerung."
+				]
+			},
+			"2": {
+				"prompt": "Begründe, warum der Protokollfehler im Material gefährlich für Präparat und Linse ist, und korrigiere das Vorgehen.",
+				"model": "Das 40-fach-Objektiv hat einen sehr geringen Abstand zum Deckgläschen. Dreht man dabei ohne seitliche Kontrolle mit dem Grobtrieb nach oben, können Deckgläschen, Präparat und Frontlinse beschädigt werden. Richtig ist: Zuerst mit dem 4-fach-Objektiv scharfstellen, danach auf das nächste Objektiv umschwenken und nur noch mit dem Feintrieb nachstellen.",
+				"criteria": [
+					"Geringen Arbeitsabstand beim starken Objektiv erkannt",
+					"Risiko für Objektträger/Linse benannt",
+					"Korrekte Reihenfolge über Übersicht und Feintrieb angegeben"
+				],
+				"hints": [
+					"Überlege, wie groß der Abstand beim 40-fach-Objektiv ist.",
+					"Welcher Trieb ist für starke Vergrößerungen gedacht?"
+				]
+			}
+		},
+		"extension": "Stelle im Unterricht selbst ein einfaches Zwiebelhaut- oder Wasserpestpräparat her und fertige eine beschriftete Bleistiftzeichnung an.",
+		"takeaway": "Die Gesamtvergrößerung ist Okular · Objektiv; man beginnt immer mit dem kleinsten Objektiv und nutzt bei starker Vergrößerung nur den Feintrieb."
+	},
+	{
+		"id": "b5-modelle-protokolle",
+		"stage": "methoden",
+		"title": "Modelle, Protokolle und Darstellungsformen",
+		"skill": "Ein Kunststoff-Torso oder ein Flussdiagramm hilft, den eigenen Körper zu verstehen.",
+		"bindings": ["1"],
+		"paragraphs": [
+			"Anschauungsmodelle machen Dinge begreifbar, die zu groß, zu klein oder im Inneren verborgen sind – etwa das Modell eines menschlichen Torsos oder einer Pflanzenzelle. Jedes Modell hat Analogien zur Wirklichkeit, zum Beispiel die richtige Lage von Herz und Lunge, aber auch klare Unterschiede: Kunststoff bewegt sich nicht von selbst und besitzt keine echten Zellen.",
+			"Ergebnisse von Untersuchungen hältst du in einem geordneten Protokoll fest: Fragestellung, Material, Durchführung, Beobachtung und Auswertung. Je nach Aufgabe überführst du Informationen in passende Darstellungsformen: Wertetabellen oder Säulendiagramme für Messzahlen, Skizzen für den Bauplan oder ein Flussdiagramm für zeitliche Abläufe."
+		],
+		"materialLabel": "Vorgang für eine Überführung in ein Flussdiagramm",
+		"material": "Ablauf eines Experiments zur Bohnenkeimung:\n1. Samen in feuchte Erde legen -> 2. Täglich feucht halten und Temperatur messen -> 3. Keimblattdurchbruch und Stängellänge in Tabelle notieren -> 4. Ergebnis mit der Vermutung vergleichen.\nVergleichsobjekt: Kunststoff-Armmodell mit zwei Gummibändern statt echter Muskeln.",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"question": "Welche Aussage trifft auf jedes biologische Anschauungsmodell zu?",
+			"answer": "Es zeigt wichtige Strukturen oder Zusammenhänge vereinfacht und unterscheidet sich in Material oder Details von der Realität.",
+			"wrong": [
+				"Es ist in Größe, Material und allen Lebensvorgängen ein genaues Abbild der Natur.",
+				"Es ersetzt vollständig jede Untersuchung an echten Pflanzen oder Tieren."
+			],
+			"explanation": "Modelle heben wesentliche Merkmale hervor (Analogien), lassen aber Einzelheiten weg oder nutzen anderes Material (Unterschiede zur Realität)."
+		},
+		"cases": [
+			{
+				"prompt": "Du hast über fünf Tage jeden Nachmittag die Wuchshöhe einer Bohne in Zentimetern gemessen.",
+				"options": ["Wertetabelle und Säulendiagramm", "Steckbrief eines Säugetiers"],
+				"answer": "Wertetabelle und Säulendiagramm",
+				"feedback": "Messwerte über mehrere Tage lassen sich am übersichtlichsten als Tabelle und Diagramm darstellen."
+			},
+			{
+				"prompt": "Am Armmodell ziehen zwei Gummibänder die Holzleisten zueinander.",
+				"options": ["Analogie zur Zugwirkung von Muskeln", "Echtes Muskelgewebe aus Zellen"],
+				"answer": "Analogie zur Zugwirkung von Muskeln",
+				"feedback": "Das Modell bildet die Zugwirkung nach (Analogie), besteht aber nicht aus lebendem Gewebe (Unterschied)."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Stelle die vier Schritte des Bohnenversuchs als kurzes Flussdiagramm (mit Pfeilen) dar und nenne die fünf Standardabschnitte eines Versuchsprotokolls.",
+				"model": "Flussdiagramm: Samen in feuchte Erde legen → Täglich feucht halten und messen → Keimung und Länge in Tabelle notieren → Ergebnis mit Vermutung vergleichen. Ein Versuchsprotokoll gliedert sich in: Fragestellung (und Vermutung), Material, Durchführung, Beobachtung/Ergebnis und Auswertung.",
+				"criteria": [
+					"Zeitliche Reihenfolge mit Pfeilen korrekt dargestellt",
+					"Wesentliche Protokollabschnitte vollständig benannt",
+					"Trennung von Durchführung, Beobachtung und Auswertung erkennbar"
+				],
+				"hints": [
+					"Verbinde die vier Schritte knapp mit Pfeilen (→).",
+					"Denke an die fünf Überschriften eines Protokolls."
+				]
+			},
+			"2": {
+				"prompt": "Vergleiche das Kunststoff-Armmodell aus dem Material mit einem echten menschlichen Arm: Nenne zwei Analogien und zwei Grenzen des Modells.",
+				"model": "Analogien: Die Holzleisten stehen wie Knochen als feste Hebel zur Verfügung, und die Bänder wirken über einen Drehpunkt wie Muskeln als Gegenspieler durch Zug. Unterschiede zur Realität: Das Modell wächst und heilt nicht, weil es nicht aus lebenden Zellen besteht, und es fehlen Gelenkschmiere, Blutgefäße sowie Nervensteuerung.",
+				"criteria": [
+					"Mindestens zwei zutreffende Analogien benannt",
+					"Mindestens zwei klare Grenzen/Unterschiede zur Realität beschrieben",
+					"Fachbegriffe wie Struktur, Funktion oder Zelle passend genutzt"
+				],
+				"hints": [
+					"Was bildet das Modell gut nach?",
+					"Was fehlt dem Holz- und Gummimodell gegenüber lebendem Gewebe?"
+				]
+			}
+		},
+		"extension": "Zeichne eine eigene beschriftete Skizze eines einfachen Modells im Heft und notiere darunter eine Grenze des Modells.",
+		"takeaway": "Modelle zeigen Strukturen und Funktionen vereinfacht mit Analogien und Grenzen; Protokolle und Diagramme ordnen Abläufe und Messwerte."
+	},
+	{
+		"id": "b5-quellen-vortrag",
+		"stage": "methoden",
+		"title": "Quellen prüfen, Steckbriefe erstellen und begründen",
+		"skill": "Für einen Kurzvortrag über den Feldhasen musst du brauchbare Texte finden und klar begründen.",
+		"bindings": ["1"],
+		"paragraphs": [
+			"Wenn du Informationen zu einem Tier oder einer Pflanze suchst, wählst du geeignete Quellen anhand fester Kriterien aus: Ist der Text für dich verständlich geschrieben? Sind Abbildungen eindeutig beschriftet? Stammen die Angaben von einer fachlichen Stelle wie einem Schulbuch, Museum oder Landesamt statt aus einer unklaren Werbeseite?",
+			"Für einen Steckbrief oder Kurzvortrag ordnest du Fakten nach festen Punkten wie Lebensraum, Nahrung, Körperbau und Besonderheiten. Wenn du eine Behauptung vertrittst, belegst du sie mit einem passenden Faktum und einem konkreten Beispiel – statt nur zu sagen „Das stimmt halt“."
+		],
+		"materialLabel": "Zwei vorgegebene Texte über den Feldhasen",
+		"material": "Quelle 1 (Schullexikon / Landesamt): „Der Feldhase lebt in offenen Feldfluren, frisst Kräuter, Gräser und Knospen und nutzt seine langen Hinterbeine zur schnellen Flucht.“\nQuelle 2 (Werbeprospekt): „Dieses Kuschelhasen-Futter macht jeden Hasen im Garten sofort superglücklich!“",
+		"sourceIds": ["lp", "arten"],
+		"quiz": {
+			"question": "Woran erkennst du eine gute biologische Informationsquelle für ein Referat?",
+			"answer": "Sie ist verständlich, sachlich belegt, eindeutig beschriftet und verfolgt kein Verkaufsinteresse.",
+			"wrong": [
+				"Sie enthält möglichst viele Ausrufezeichen und Werbeversprechen.",
+				"Sie verzichtet komplett auf Abbildungen und Fachbegriffe."
+			],
+			"explanation": "Gute Informationsquellen erklären sachlich, klar und ohne Werbeabsicht; eindeutige Beschriftungen helfen beim Verstehen."
+		},
+		"cases": [
+			{
+				"prompt": "Du suchst verlässliche Fakten zu Nahrung und Lebensweise des Feldhasen.",
+				"options": ["Quelle 1 auswählen", "Quelle 2 auswählen"],
+				"answer": "Quelle 1 auswählen",
+				"feedback": "Quelle 1 liefert überprüfbare Sachangaben zu Lebensraum, Nahrung und Körperbau; Quelle 2 ist Werbung."
+			},
+			{
+				"prompt": "„Der Feldhase braucht offene Wiesen mit Feldhecken. Fakt ist, dass er sich von Wildkräutern ernährt und Deckung in Ackerfurchen nutzt.“",
+				"options": ["Behauptung mit Faktum begründet", "Unbelegte Behauptung"],
+				"answer": "Behauptung mit Faktum begründet",
+				"feedback": "Die Aussage nennt zur Behauptung ein passendes biologisches Faktum und ein konkretes Beispiel."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Erstelle anhand von Quelle 1 einen kurzen Steckbrief zum Feldhasen mit den Punkten Lebensraum, Nahrung und Körpermerkmal.",
+				"model": "Steckbrief Feldhase – Lebensraum: offene Feldfluren und Wiesen. Nahrung: Kräuter, Gräser und Knospen (Pflanzenfresser). Besonderes Körpermerkmal: kräftige, lange Hinterbeine für schnelle Haken und Flucht.",
+				"criteria": [
+					"Alle drei Steckbriefpunkte klar gegliedert",
+					"Aussagen ausschließlich sachlich aus Quelle 1 entnommen",
+					"Biologische Fachsprache altersgerecht eingesetzt"
+				],
+				"hints": [
+					"Gliedere den Text mit Stichpunkten oder kurzen Sätzen.",
+					"Übernimm keine Werbeaussagen aus Quelle 2."
+				]
+			},
+			"2": {
+				"prompt": "Begründe die vorgegebene Position „Hecken am Feldrand helfen dem Feldhasen“ mit einem Faktum und einem Beispiel.",
+				"model": "Behauptung: Hecken am Feldrand helfen dem Feldhasen. Begründung (Faktum): Feldhasen brauchen neben offenen Flächen zum Fressen auch Deckung vor Greifvögeln und Füchsen sowie vielfältige Wildkräuter als Nahrung. Beispiel: Am Rande eines abgeernteten Ackers bietet eine Hecke mit Kräutersaum Schutz und Futter zugleich.",
+				"criteria": [
+					"Klare Behauptung vorangestellt",
+					"Passendes biologisches Faktum zur Begründung genutzt",
+					"Konkretes Beispiel ausgeführt"
+				],
+				"hints": [
+					"Verbinde Behauptung + weil (Faktum) + zum Beispiel.",
+					"Denke an Nahrung und Schutz."
+				]
+			}
+		},
+		"extension": "Halte im Unterricht einen kurzen, gegliederten Vortrag anhand eines selbst erstellten Steckbriefs und nutze dazu eine Abbildung oder ein Modell.",
+		"takeaway": "Gute Quellen sind sachlich, verständlich und eindeutig; eine starke Begründung verbindet Behauptung, Faktum und konkretes Beispiel."
+	},
+	{
+		"id": "b5-fakten-bewerten",
+		"stage": "methoden",
+		"title": "Fakten trennen und Entscheidungen abwägen",
+		"skill": "Soll der Wolf in Bayern bleiben dürfen, und welches Haustier passt zu dir?",
+		"bindings": ["1", "4"],
+		"paragraphs": [
+			"In Diskussionen vermischen sich oft beschreibende und bewertende Aussagen. Ein Faktum beschreibt etwas Überprüfbares: „Ein Wolf frisst vor allem Rehe, Hirsche und Wildschweine.“ Eine Bewertung drückt eine Meinung oder ein Urteil aus: „Der Wolf ist zu gefährlich für unsere Wälder.“ Wer beides trennt, erkennt sofort die Absicht einer Aussage.",
+			"Bei Entscheidungen im Alltag helfen objektive Bewertungskriterien – etwa Zeitaufwand, Kosten, Platzbedarf oder mögliche Schädigungen für Mensch und Tier. Bei Konfliktfragen wie der Rückkehr des Wolfs nach Bayern überlegst du ausgehend von einer Gegenposition mindestens eine weitere Handlungsoption (z. B. Herdenschutz durch Zäune und Hunde) und nennst ihre kurzfristige Folge."
+		],
+		"materialLabel": "Aussagen zur Konfliktfrage „Wolf in Bayern“ und zur Haustierwahl",
+		"material": "Aussage A: „In Bayern wurden in den letzten Jahren wieder einzelne Wolfsrudel nachgewiesen.“\nAussage B: „Wölfe gehören auf keinen Fall in unsere Kulturlandschaft.“\nKonfliktfrage: Eine Schäferin fürchtet um ihre Schafherde und fordert den sofortigen Abschuss aller Wölfe.",
+		"sourceIds": ["lp", "wolf", "tierschutz"],
+		"quiz": {
+			"question": "Woran erkennst du eine beschreibende Aussage (Faktum) im Unterschied zu einer Bewertung?",
+			"answer": "Sie gibt beobachtbare oder messbare Tatsachen ohne eigenes Werturteil wieder.",
+			"wrong": [
+				"Sie enthält möglichst starke Gefühls- oder Wunschwörter wie „schlecht“ oder „unbedingt“.",
+				"Sie gilt nur dann als Faktum, wenn sie dir persönlich gefällt."
+			],
+			"explanation": "Fakten lassen sich prüfen und beschreiben einen Sachverhalt sachlich; Bewertungen drücken Meinungen oder Werturteile aus."
+		},
+		"cases": [
+			{
+				"prompt": "Ordne Aussage A („In Bayern wurden wieder einzelne Wolfsrudel nachgewiesen“) richtig ein.",
+				"options": ["Beschreibende Aussage (Faktum)", "Bewertende Aussage"],
+				"answer": "Beschreibende Aussage (Faktum)",
+				"feedback": "Ein Nachweis durch Monitoring lässt sich sachlich überprüfen und enthält kein Werturteil."
+			},
+			{
+				"prompt": "Welches objektive Kriterium gehört zur Frage, ob ein Hund in eine Familie passt?",
+				"options": ["Täglicher Zeitaufwand für Auslauf und laufende Futter-/Tierarztkosten", "Wie niedlich Welpen auf Fotos aussehen"],
+				"answer": "Täglicher Zeitaufwand für Auslauf und laufende Futter-/Tierarztkosten",
+				"feedback": "Zeitaufwand und Kosten sind objektive Kriterien neben dem spontanen Wunschgefühl."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Trenne Aussage A und Aussage B aus dem Material in Faktum und Bewertung und nenne drei objektive Kriterien für die Entscheidung, ob ein Kaninchen als Heimtier passt.",
+				"model": "Aussage A ist eine beschreibende Aussage (Faktum), weil Nachweise überprüfbar sind. Aussage B ist eine bewertende Aussage, weil sie eine persönliche Ablehnung ausdrückt. Objektive Kriterien für ein Kaninchen: genügend Platz für einen Auslauf samt Partnerkaninchen, täglicher Zeitaufwand für Fütterung und Reinigung sowie laufende Kosten für Frischfutter, Einstreu und Tierarzt.",
+				"criteria": [
+					"Faktum und Bewertung korrekt unterschieden",
+					"Unterschied kurz begründet",
+					"Drei objektive Kriterien (z. B. Platz, Aufwand, Kosten) genannt"
+				],
+				"hints": [
+					"Suche nach dem überprüfbaren Nachweis vs. der Meinungsäußerung.",
+					"Nutze Kriterien wie Kosten, Platz, Zeitaufwand oder Pflege."
+				]
+			},
+			"2": {
+				"prompt": "Gehe von der Forderung der Schäferin aus (Gegenposition zum reinen Schutz) und entwirf eine andere Handlungsoption samt einer wahrscheinlichen kurzfristigen Folge.",
+				"model": "Statt alle Wölfe abzuschießen, lässt sich die Schafherde durch wolfsabweisende Elektrozäune und ausgebildete Herdenschutzhunde sichern. Eine naheliegende kurzfristige Folge ist, dass die Weidetiere deutlich besser vor Übergriffen geschützt sind, zugleich aber für Aufbau, Kontrolle und Pflege der Zäune mehr Arbeitszeit und Unterstützungskosten entstehen.",
+				"criteria": [
+					"Alternative Handlungsoption konkret benannt",
+					"Bezug auf Interessenkonflikt zwischen Naturschutz und Weidetierhaltung",
+					"Eine realistische kurzfristige Folge genannt"
+				],
+				"hints": [
+					"Denke an Herdenschutzmaßnahmen auf der Weide.",
+					"Welche unmittelbare Auswirkung hat die Maßnahme auf Herde oder Aufwand?"
+				]
+			}
+		},
+		"extension": "Diskutiert im Unterricht weitere Konfliktfragen rund um Heimtiere oder heimische Wildtiere mit klaren Bewertungskriterien.",
+		"takeaway": "Fakten beschreiben Überprüfbares, Bewertungen urteilen; objektive Kriterien und Handlungsoptionen helfen bei fairen Entscheidungen."
+	},
+	{
+		"id": "b5-kennzeichen-tier",
+		"stage": "lebewesen",
+		"title": "Kennzeichen von Lebewesen am Beispiel Tier",
+		"skill": "Ein lebendiger Hamster und ein aufgezogenes Spielzeugauto bewegen sich beide – doch nur eines lebt.",
+		"bindings": ["2"],
+		"paragraphs": [
+			"Die Biologie ist die Naturwissenschaft, die sich mit allen Lebewesen beschäftigt. Um ein Tier eindeutig von unbelebten Dingen wie einem Stein oder einem Spielzeugroboter zu unterscheiden, prüfst du sechs Kennzeichen von Lebewesen: Aufbau aus Zellen, Stoffwechsel, Wachstum und Entwicklung, Reizbarkeit, eigenständige Bewegung sowie Fortpflanzung.",
+			"Ein Hund oder ein Regenwurm nimmt Nahrung und Sauerstoff auf, wandelt Stoffe um und scheidet Reste aus (Stoffwechsel). Er reagiert auf Licht, Berührung oder Gerüche (Reizbarkeit), wächst vom Jungtier zum ausgewachsenen Tier (Wachstum/Entwicklung), bewegt sich aus eigener Kraft, kann Nachkommen zeugen (Fortpflanzung) und besteht aus mikroskopisch kleinen Zellen."
+		],
+		"materialLabel": "Vergleich: Regenwurm vs. ferngesteuertes Auto",
+		"material": "Regenwurm: frisst verrottende Blätter, zieht sich bei hellem Licht oder Berührung zusammen, legt Eier in Kokons, wächst nach dem Schlüpfen, besteht unter dem Mikroskop aus Zellen.\nSpielzeugauto: rollt bei Knopfdruck, hat Scheinwerfer, braucht eine Batterie, kann weder wachsen noch kleine Autos hervorbringen.",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"question": "Wodurch unterscheidet sich ein lebendiges Tier grundsätzlich von einem beweglichen Spielzeugroboter?",
+			"answer": "Das Tier zeigt alle Kennzeichen von Lebewesen wie Zellaufbau, Stoffwechsel, Wachstum und Fortpflanzung.",
+			"wrong": [
+				"Nur das Spielzeugauto kann sich jemals von der Stelle bewegen.",
+				"Ein Tier reagiert niemals auf äußere Reize wie Licht oder Berührung."
+			],
+			"explanation": "Einzelne Merkmale wie Bewegung reichen nicht aus: Nur Lebewesen vereinen Aufbau aus Zellen, Stoffwechsel, Reizbarkeit, Wachstum und Fortpflanzung."
+		},
+		"cases": [
+			{
+				"prompt": "Der Regenwurm zieht sich sofort zurück, wenn er mit einer Taschenlampe angeleuchtet wird.",
+				"options": ["Reizbarkeit", "Fortpflanzung"],
+				"answer": "Reizbarkeit",
+				"feedback": "Das Wahrnehmen und Reagieren auf einen Lichtreiz nennt man Reizbarkeit."
+			},
+			{
+				"prompt": "Ein Kristall in einer Salzlösung wird über mehrere Tage größer.",
+				"options": ["Kein Lebewesen, da Stoffwechsel und Zellen fehlen", "Eindeutiges Lebewesen wegen Wachstum"],
+				"answer": "Kein Lebewesen, da Stoffwechsel und Zellen fehlen",
+				"feedback": "Ein Kristall lagert außen Salz an, besitzt aber keine Zellen, keinen Stoffwechsel und keine Fortpflanzung."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Ordne dem Regenwurm aus dem Material alle sechs Kennzeichen von Lebewesen jeweils mit einem kurzen Beispiel zu und leite daraus ab, womit sich die Biologie beschäftigt.",
+				"model": "1. Stoffwechsel: Er frisst Blätter und nutzt Sauerstoff. 2. Reizbarkeit: Er zieht sich bei Licht oder Berührung zurück. 3. Fortpflanzung: Er legt Eier in Kokons. 4. Wachstum/Entwicklung: Aus dem kleinen Jungwurm wird ein erwachsener Wurm. 5. Eigenständige Bewegung: Er kriecht durch den Boden. 6. Aufbau aus Zellen: Seine Gewebe bestehen aus Zellen. Die Biologie ist die Naturwissenschaft, die alle Lebewesen mit genau diesen Kennzeichen untersucht.",
+				"criteria": [
+					"Alle sechs Kennzeichen benannt",
+					"Jedes Kennzeichen am Regenwurm belegt",
+					"Biologie als Wissenschaft von den Lebewesen abgeleitet"
+				],
+				"hints": [
+					"Prüfe Schritt für Schritt: Stoffwechsel, Reizbarkeit, Wachstum, Fortpflanzung, Bewegung, Zellen.",
+					"Formuliere im letzten Satz die Definition von Biologie."
+				]
+			},
+			"2": {
+				"prompt": "Ein Kind behauptet: „Mein Saugroboter fährt allein zur Ladestation und frisst Staub – also ist er ein Lebewesen.“ Widerlege diese Aussage biologisch.",
+				"model": "Bewegung allein und das Aufnehmen von Staub machen den Roboter nicht lebendig. Er besteht nicht aus Zellen, sondern aus Kunststoff, Metall und Elektronik. Er betreibt keinen biologischen Stoffwechsel zum Wachsen, wächst und entwickelt sich nicht vom kleinen zum großen Gerät und kann sich nicht selbst fortpflanzen. Erst wenn alle Kennzeichen von Lebewesen erfüllt sind, handelt es sich um ein Lebewesen.",
+				"criteria": [
+					"Scheinähnlichkeit (Bewegung, Energieaufnahme) eingeordnet",
+					"Fehlende Kennzeichen (Zellen, Wachstum, Fortpflanzung) benannt",
+					"Gesamtbild der Kennzeichen betont"
+				],
+				"hints": [
+					"Reicht ein einzelnes Kennzeichen für ein Lebewesen aus?",
+					"Welche Kennzeichen fehlen dem Roboter völlig?"
+				]
+			}
+		},
+		"extension": "Beobachte einfache Kleintiere wie Regenwürmer oder Asseln unter Anleitung vorsichtig in der Natur oder im Glas und entlasse sie anschließend wieder.",
+		"takeaway": "Lebewesen vereinen Zellaufbau, Stoffwechsel, Reizbarkeit, Wachstum, eigenständige Bewegung und Fortpflanzung; die Biologie erforscht diese Lebewesen."
+	},
+	{
+		"id": "b5-pflanzen-leben",
+		"stage": "lebewesen",
+		"title": "Auch Pflanzen sind Lebewesen",
+		"skill": "Pflanzen laufen nicht davon – trotzdem zeigen sie alle Kennzeichen von Lebewesen.",
+		"bindings": ["1", "2"],
+		"paragraphs": [
+			"Auf den ersten Blick wirkt eine Topfpflanze unbewegt. Doch wenn du genauer untersuchst, erkennst du auch bei Pflanzen alle Kennzeichen von Lebewesen: Bohnen wachsen aus einem Samen zur blühenden Pflanze (Wachstum und Entwicklung) und bilden neue Bohnensamen (Fortpflanzung). Ihre Sprosse biegen sich zum hellen Fenster (Reizbarkeit und langsame eigenständige Bewegung).",
+			"Außerdem nehmen Pflanzen über Wurzeln Wasser und Nährsalze auf und stellen im Licht mithilfe grüner Blätter eigene Baustoffe her (Stoffwechsel). Im Mikroskop siehst du deutlich ihren Aufbau aus Zellen. Weil Pflanzen echte Lebewesen sind, gehen wir mit Zimmerpflanzen, dem Schulbeet und Pflanzen draußen achtungsvoll um und pflegen sie nach klaren Hinweisen mit passendem Wasser, Licht und Platz."
+		],
+		"materialLabel": "Beobachtungsprotokoll einer Feuerbohne am Klassenfenster",
+		"material": "Tag 1: Bohnensamen in feuchte Anzuchterde gesteckt.\nTag 6: Keimwurzel nach unten, Spross nach oben gewachsen.\nTag 12: Junge Pflanze biegt ihre Blätter deutlich zum hellen Fenster.\nPflegehinweis: Erde gleichmäßig feucht halten, Staunässe vermeiden, hell stellen.",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"question": "Woran erkennst du im Alltag, dass auch Pflanzen auf Reize reagieren und sich selbst bewegen?",
+			"answer": "Ihre Sprosse und Blätter wachsen und richten sich langsam zum Licht aus.",
+			"wrong": [
+				"Nur der Wind bewegt Pflanzen, sie selbst verändern ihre Lage nie.",
+				"Pflanzen bestehen aus Kristallen statt aus lebenden Zellen."
+			],
+			"explanation": "Die Ausrichtung der Blätter zur Lichtquelle zeigt sowohl Reizbarkeit als auch langsame eigenständige Bewegung."
+		},
+		"cases": [
+			{
+				"prompt": "Eine Bohne bildet neue Blüten und später reife Samen in einer Hülse.",
+				"options": ["Fortpflanzung und Entwicklung", "Unbelebter Vorgang"],
+				"answer": "Fortpflanzung und Entwicklung",
+				"feedback": "Aus Samen entstehen neue Pflanzen – das ist das Kennzeichen der Fortpflanzung."
+			},
+			{
+				"prompt": "Die Erde im Blumentopf schwimmt dauerhaft unter Wasser (Staunässe).",
+				"options": ["Pflegefehler, Wurzeln bekommen zu wenig Luft", "Ideal für jede Zimmerpflanze"],
+				"answer": "Pflegefehler, Wurzeln bekommen zu wenig Luft",
+				"feedback": "Staunässe schadet den Wurzeln vieler Pflanzen; feucht halten ohne Überschwemmung ist richtig."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Begründe anhand des Beobachtungsprotokolls mit mindestens vier Kennzeichen, warum die Feuerbohne ein Lebewesen ist.",
+				"model": "Die Feuerbohne ist ein Lebewesen, weil sie aus dem Samen keimt und größer wird (Wachstum/Entwicklung), sich selbst zum Fenster hin biegt (Reizbarkeit und eigenständige Bewegung), Wasser und Nährstoffe aus der Erde aufnimmt (Stoffwechsel) und später neue Samen bildet (Fortpflanzung). Außerdem besteht sie aus Pflanzenzellen.",
+				"criteria": [
+					"Mindestens vier Kennzeichen von Lebewesen genannt",
+					"Konkrete Belege aus dem Protokoll genutzt",
+					"Begründung klar auf die Pflanze bezogen"
+				],
+				"hints": [
+					"Suche im Protokoll nach Keimung, Fensterlicht und feuchter Erde.",
+					"Ergänze Zellaufbau und Samenbildung."
+				]
+			},
+			"2": {
+				"prompt": "Leite drei Pflegehinweise für eine selbst gezogene Bohnenpflanze ab und erkläre, warum wir Pflanzen draußen nicht achtlos abreißen.",
+				"model": "Für die Pflege braucht die Bohne einen hellen Platz am Fenster, lockere feuchte Erde ohne Staunässe und ausreichend Raum bzw. eine Kletterhilfe beim Wachsen. Weil Pflanzen genau wie Tiere lebendige Organismen mit Zellen, Stoffwechsel und Fortpflanzung sind, achten wir sie als Lebewesen und reißen draußen keine Blüten oder Triebe sinnlos ab.",
+				"criteria": [
+					"Drei konkrete Pflegebedingungen (Licht, Wasser ohne Staunässe, Platz) genannt",
+					"Achtung vor Pflanzen als Lebewesen begründet",
+					"Verbindung zu den Kennzeichen von Lebewesen gezogen"
+				],
+				"hints": [
+					"Denke an die Bedürfnisse bei Licht, Wasser und Platz.",
+					"Verknüpfe den Schutz mit dem Status als Lebewesen."
+				]
+			}
+		},
+		"extension": "Ziehe eine Bohne im Glas oder im Schulbeet selbst groß und führe ein kurzes Pflege- und Wachstumstagebuch.",
+		"takeaway": "Pflanzen wachsen, vermehren sich, betreiben Stoffwechsel, reagieren auf Reize wie Licht und bestehen aus Zellen – deshalb sind sie Lebewesen."
+	},
+	{
+		"id": "b5-zelle-grundbaustein",
+		"stage": "lebewesen",
+		"title": "Die Zelle – gemeinsamer Grundbaustein aller Lebewesen",
+		"lab": "cellCompare",
+		"skill": "Unter dem Mikroskop bestehen Zwiebelhaut und Mundschleimhaut beide aus Zellen.",
+		"bindings": ["1", "2"],
+		"paragraphs": [
+			"Ob Mensch, Hund, Baum oder Wasserpest: Jedes Lebewesen besteht aus mindestens einer Zelle. Unter dem Lichtmikroskop erkennst du bei tierischen und pflanzlichen Zellen drei gemeinsame Grundbestandteile: die dünne Zellmembran als äußere Abgrenzung nach innen, das Zellplasma als flüssigen Innenraum und den Zellkern als Steuerzentrale.",
+			"Pflanzenzellen besitzen darüber hinaus drei typische zusätzliche Bestandteile: eine feste Zellwand außen um die Zellmembran für Halt und eckige Form, eine große Vakuole als Speicher für Wasser und Nährstoffe sowie grüne Chloroplasten in grünen Pflanzenteilen (zum Beispiel im Wasserpestblatt), die Licht für den Stoffwechsel nutzen."
+		],
+		"materialLabel": "Mikroskop-Auswertung: Wasserpestblatt vs. Mundschleimhaut",
+		"material": "Präparat 1 (Wasserpestblatt): rechteckige, fest aneinander liegende Zellen mit Zellwand, großer zentraler Vakuole, Zellkern und vielen grünen Kügelchen (Chloroplasten).\nPräparat 2 (Mundschleimhaut): unregelmäßig abgerundete Zellen mit Zellmembran, Zellplasma und Zellkern; keine Zellwand und keine grünen Kügelchen.",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"question": "Welche drei Bestandteile besitzen sowohl Tierzellen als auch Pflanzenzellen gemeinsam?",
+			"answer": "Zellmembran, Zellplasma und Zellkern.",
+			"wrong": [
+				"Zellwand, Chloroplasten und große Vakuole.",
+				"Nur Zellwand und Zellkern."
+			],
+			"explanation": "Zellmembran, Zellplasma und Zellkern bilden den gemeinsamen Grundaufbau; Zellwand, Chloroplasten und große Vakuole kommen nur bei Pflanzenzellen vor."
+		},
+		"cases": [
+			{
+				"prompt": "Du beobachtest im Mikroskop bewegliche grüne Kügelchen in rechteckigen Zellen eines Wasserpestblatts.",
+				"options": ["Chloroplasten in einer Pflanzenzelle", "Zellkern einer Tierzelle"],
+				"answer": "Chloroplasten in einer Pflanzenzelle",
+				"feedback": "Chloroplasten und eine feste Zellwand zeigen eindeutig eine grüne Pflanzenzelle."
+			},
+			{
+				"prompt": "Warum bleiben Bäume aufrecht stehen, obwohl sie keine Knochen haben?",
+				"options": ["Feste Zellwände und wassergefüllte Vakuolen geben Halt", "Tierzellen in der Rinde bilden ein Skelett"],
+				"answer": "Feste Zellwände und wassergefüllte Vakuolen geben Halt",
+				"feedback": "Jede einzelne Pflanzenzelle besitzt außen eine stabile Zellwand und wird durch die wassergefüllte Vakuole gestrafft."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Vergleiche im Zellmodell oben Pflanzen- und Tierzelle und ordne dann den sechs Zellbestandteilen jeweils ihre Aufgabe zu.",
+				"model": "Gemeinsam haben beide: Zellmembran (Abgrenzung und Stoffaustausch), Zellplasma (Füllraum der Zelle) und Zellkern (Steuerung wichtiger Vorgänge). Nur die Pflanzenzelle besitzt zusätzlich: Zellwand (feste Form und Stabilität), Vakuole (Speicher für Wasser und Druckhaltung) sowie in grünen Teilen Chloroplasten (Stoffbildung mithilfe von Licht).",
+				"criteria": [
+					"Drei gemeinsame Bestandteile richtig benannt",
+					"Drei pflanzenspezifische Bestandteile richtig benannt",
+					"Kurze Funktion zu jedem Bestandteil angegeben"
+				],
+				"hints": [
+					"Nutze die Tabelle im Zellmodell oben als Checkliste.",
+					"Trenne sauber zwischen Tier- und Pflanzenzelle."
+				]
+			},
+			"2": {
+				"prompt": "Erkläre, warum die Entdeckung von Zellen in Zwiebelhaut und Mundschleimhaut zeigt, dass Tier und Pflanze trotz aller Unterschiede verwandt aufgebaut sind, und warum Zwiebelzellen im Gegensatz zu Wasserpestzellen keine Chloroplasten haben.",
+				"model": "Sowohl im Tier als auch in der Pflanze findet man dieselbe Grundidee: Lebewesen sind aus Zellen mit Zellmembran, Zellplasma und Zellkern aufgebaut. Das zeigt die Zelle als gemeinsamen Grundbaustein des Lebens. Die Zwiebelhaut stammt aus einer unterirdischen Speicherzwiebel ohne Sonnenlicht; dort braucht die Pflanze keine Chloroplasten, anders als im belichteten grünen Wasserpestblatt.",
+				"criteria": [
+					"Zelle als gemeinsamen Grundbaustein aller Lebewesen erklärt",
+					"Unterschied zwischen lichtexponiertem Blatt und unterirdischer Zwiebelhaut erklärt",
+					"Chloroplasten als lichtabhängigen Bestandteil eingeordnet"
+				],
+				"hints": [
+					"Wo wächst eine Küchenzwiebel – im Licht oder unter der Erde?",
+					"Wozu dienen Chloroplasten?"
+				]
+			}
+		},
+		"extension": "Mikroskopiere ein Fertig- oder Frischpräparat von Wasserpest und Zwiebelhaut im Unterricht und vergleiche beide Skizzen.",
+		"takeaway": "Die Zelle ist der gemeinsame Grundbaustein aller Lebewesen; Tier- und Pflanzenzellen teilen Zellmembran, Zellplasma und Zellkern, Pflanzenzellen haben zusätzlich Zellwand, Vakuole und oft Chloroplasten."
+	},
+	{
+		"id": "b5-organismus-ebenen",
+		"stage": "lebewesen",
+		"title": "Vom Baustein zum eigenständigen Organismus",
+		"skill": "Eine einzelne Herzzelle lebt im Körper – erst der ganze Mensch ist ein eigenständiger Organismus.",
+		"bindings": ["2", "3"],
+		"paragraphs": [
+			"Ein Organismus ist ein eigenständiges Lebewesen, das allein lebensfähig ist und sich selbst fortpflanzen kann – egal ob eine einzelne Hauskatze, ein Apfelbaum oder ein winziger Einzeller im Teich. Eine einzelne Muskelzelle oder ein einzelnes Laubblatt allein ist dagegen kein eigenständiger Organismus, sondern nur ein Teil davon.",
+			"Viele Lebewesen sind stufenweise in Organisationsebenen geordnet: Viele Zellen bilden gemeinsam ein Organ mit einer bestimmten Aufgabe (wie den Magen oder ein Laubblatt). Mehrere zusammenarbeitende Organe bilden ein Organsystem (wie das Verdauungssystem), und alle Organsysteme zusammen ergeben den eigenständigen Organismus."
+		],
+		"materialLabel": "Ordnungskärtchen zu Organisationsebenen",
+		"material": "Kärtchen: Herz · Blutkreislaufsystem · Muskelzelle des Herzens · Feldhase.\nFrage aus dem Heft: „Ist das Herz für sich allein schon ein Organismus?“",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"question": "Was kennzeichnet einen eigenständigen Organismus?",
+			"answer": "Er ist ein selbständig lebensfähiges Lebewesen, das alle Kennzeichen des Lebens einschließlich Fortpflanzung selbst erfüllen kann.",
+			"wrong": [
+				"Jedes einzelne Organ wie der Magen ist bereits ein eigenständiger Organismus.",
+				"Nur große Tiere zählen als Organismen, Pflanzen nicht."
+			],
+			"explanation": "Erst der gesamte Organismus – etwa eine Pflanze oder ein Tier – kann selbständig leben und sich fortpflanzen; einzelne Organe sind auf den Körper angewiesen."
+		},
+		"cases": [
+			{
+				"prompt": "Ordne die vier Ebenen von klein nach groß.",
+				"options": ["Zelle -> Organ -> Organsystem -> Organismus", "Organismus -> Zelle -> Organ -> Organsystem"],
+				"answer": "Zelle -> Organ -> Organsystem -> Organismus",
+				"feedback": "Aus vielen Zellen bestehen Organe, diese bilden Organsysteme und ergeben zusammen den Organismus."
+			},
+			{
+				"prompt": "Ein einzelnes vom Baum abgefallenes Laubblatt liegt auf dem Rasen.",
+				"options": ["Ein Organ der Pflanze, kein eigenständiger Organismus", "Ein vollständiger Organismus"],
+				"answer": "Ein Organ der Pflanze, kein eigenständiger Organismus",
+				"feedback": "Ohne Wurzel und Sprossachse kann das einzelne Laubblatt nicht dauerhaft eigenständig leben oder Samen bilden."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Bringe die vier Kärtchen aus dem Material in die richtige Reihenfolge von der kleinsten bis zur größten Organisationsebene und ordne jedem Begriff die passende Ebene zu.",
+				"model": "1. Muskelzelle des Herzens = Zelle (kleinster Grundbaustein). 2. Herz = Organ (abgegrenzte Funktionseinheit zum Pumpen). 3. Blutkreislaufsystem = Organsystem (Herz und Blutgefäße arbeiten zusammen). 4. Feldhase = Organismus (eigenständiges, fortpflanzungsfähiges Lebewesen).",
+				"criteria": [
+					"Reihenfolge Zelle -> Organ -> Organsystem -> Organismus korrekt",
+					"Alle vier Beispiele eindeutig zugeordnet",
+					"Merkmal der Eigenständigkeit beim Organismus betont"
+				],
+				"hints": [
+					"Beginne mit der kleinsten Einheit unter dem Mikroskop.",
+					"Wer kann sich allein fortpflanzen?"
+				]
+			},
+			"2": {
+				"prompt": "Beantworte die Heftfrage „Ist das Herz für sich allein schon ein Organismus?“ und erkläre, welche Rolle Zusammenarbeit der Ebenen im Körper spielt.",
+				"model": "Nein, das Herz ist ein Organ und kein Organismus. Allein außerhalb des Körpers kann es weder Nahrung aufnehmen noch sich fortpflanzen oder selbständig überleben. Im Körper ist es Teil des Herz-Kreislauf-Systems und arbeitet mit Lunge, Verdauungssystem und Nervensystem zusammen, damit der gesamte Organismus leben kann.",
+				"criteria": [
+					"Frage klar verneint und mit fehlender Eigenständigkeit begründet",
+					"Herz als Organ/Teil des Organsystems eingeordnet",
+					"Zusammenarbeit im Gesamtorganismus beschrieben"
+				],
+				"hints": [
+					"Kann ein einzelnes Herz allein überleben und Nachkommen haben?",
+					"Womit arbeitet das Herz im Körper zusammen?"
+				]
+			}
+		},
+		"extension": "Sammle im Heft drei weitere Beispiele für die vier Organisationsebenen bei Mensch und Pflanze.",
+		"takeaway": "Organisationsebenen führen von der Zelle über Organ und Organsystem zum Organismus, der allein lebens- und fortpflanzungsfähig ist."
+	},
+	{
+		"id": "b5-organe-arbeitsteilung",
+		"stage": "koerper",
+		"title": "Organe, Organsysteme und Arbeitsteilung",
+		"lab": "torso",
+		"skill": "Herz, Lunge, Magen und Gehirn liegen an festen Orten im Körper und teilen sich die Arbeit.",
+		"bindings": ["1", "3"],
+		"paragraphs": [
+			"Ein Organ ist eine abgegrenzte Funktionseinheit im Körper mit einer besonderen Aufgabe, zum Beispiel das Herz, der Magen oder das Gehirn. Mehrere Organe, die gemeinsam eine große Aufgabe übernehmen, bilden zusammen ein Organsystem – etwa Speiseröhre, Magen und Darm im Verdauungssystem.",
+			"Im menschlichen Körper herrscht Arbeitsteilung: Kein Organsystem arbeitet für sich allein. Das Atmungssystem holt Sauerstoff herein, das Verdauungssystem liefert Nährstoffe, das Herz-Kreislauf-System verteilt beides mit dem Blut, das Ausscheidungssystem filtert Abfallstoffe, das Nervensystem steuert Abläufe, das Stütz- und Bewegungssystem ermöglicht Haltung und Bewegung, und das Fortpflanzungssystem sichert Nachkommen. Am Torso-Modell ordnest du ihre genaue Lage zu."
+		],
+		"materialLabel": "Sieben wichtige Organsysteme am Torso",
+		"material": "Schädel und Wirbelkanal: Gehirn und Rückenmark.\nBrustraum (vom Brustkorb geschützt): Lunge und Herz.\nBauchraum: Magen, Dünn- und Dickdarm sowie Nieren.\nBeckenraum: Harnblase und innere Fortpflanzungsorgane.\nGesamter Körper: Knochen, Gelenke und Muskeln.",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"question": "Was versteht man in der Biologie unter einem Organsystem?",
+			"answer": "Eine Gruppe von Organen, die zusammen eine gemeinsame Hauptaufgabe erfüllen.",
+			"wrong": [
+				"Eine einzelne Zelle, die ohne weitere Organe arbeitet.",
+				"Zufällig nebeneinanderliegende Körperteile ohne gemeinsame Funktion."
+			],
+			"explanation": "Ein Organsystem bündelt mehrere Organe arbeitsteilig für eine gemeinsame Hauptaufgabe, wie Herz und Blutgefäße beim Transport."
+		},
+		"cases": [
+			{
+				"prompt": "Welchem Körperraum ordnest du am Torso Herz und Lunge zu?",
+				"options": ["Brustraum", "Schädelhöhle"],
+				"answer": "Brustraum",
+				"feedback": "Herz und Lunge liegen geschützt vom Brustkorb im Brustraum oberhalb des Zwerchfells."
+			},
+			{
+				"prompt": "Warum spricht man beim menschlichen Organismus von Arbeitsteilung?",
+				"options": ["Spezialisierte Organe übernehmen Teilaufgaben und arbeiten zusammen", "Jedes Organ macht einfach alle Aufgaben allein"],
+				"answer": "Spezialisierte Organe übernehmen Teilaufgaben und arbeiten zusammen",
+				"feedback": "Durch Spezialisierung und Zusammenarbeit funktionieren Atmung, Transport, Verdauung und Bewegung zuverlässig."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Erkunde zuerst das Torso-Modell oben und ordne danach mindestens fünf Organsysteme mit je einem Organ ihrer Lage im Körper zu.",
+				"model": "1. Nervensystem (Gehirn im Schädel, Rückenmark im Wirbelkanal). 2. Atmungssystem (Lunge im Brustraum). 3. Herz-Kreislauf-System (Herz im Brustraum). 4. Verdauungssystem (Magen und Darm im Bauchraum). 5. Ausscheidungssystem (Nieren im Bauchraum, Harnblase im Becken).",
+				"criteria": [
+					"Mindestens fünf Organsysteme genannt",
+					"Je ein passendes Organ angegeben",
+					"Körperregion (Schädel, Brust, Bauch, Becken) richtig zugeordnet"
+				],
+				"hints": [
+					"Nutze die Regionen Schädel, Brustraum, Bauchraum und Becken.",
+					"Schau dir die Übersicht im Torso-Modell an."
+				]
+			},
+			"2": {
+				"prompt": "Erkläre am Beispiel „Schnelles Laufen auf dem Sportplatz“, wie mindestens drei Organsysteme arbeitsteilig zusammenwirken.",
+				"model": "Beim Laufen ziehen sich die Muskeln des Bewegungsapparates zusammen und bewegen die Knochen über Gelenke. Damit sie arbeiten können, nimmt das Atmungssystem mehr Sauerstoff in die Lunge auf, und das Herz-Kreislauf-System pumpt sauerstoff- und nährstoffreiches Blut schneller zu den Beinmuskeln. Gleichzeitig steuert das Nervensystem Gleichgewicht und Schrittfolge.",
+				"criteria": [
+					"Bewegungssystem, Atmungssystem und Herz-Kreislauf-System (oder Nervensystem) verbunden",
+					"Konkrete Aufgabe jedes Systems beim Laufen benannt",
+					"Prinzip der Arbeitsteilung und Zusammenarbeit deutlich gemacht"
+				],
+				"hints": [
+					"Was braucht ein arbeitender Muskel?",
+					"Wer steuert die Bewegung und wer liefert Luft und Nährstoffe?"
+				]
+			}
+		},
+		"extension": "Untersuche im Biologiesaal ein echtes zerlegbares Torso-Modell und ordne die herausgenommenen Organe wieder richtig ein.",
+		"takeaway": "Organe und Organsysteme erfüllen spezialisierte Aufgaben an festen Orten im Körper und erhalten den Organismus gemeinsam durch Arbeitsteilung."
+	},
+	{
+		"id": "b5-atmung-kreislauf",
+		"stage": "koerper",
+		"title": "Atmungssystem und Herz-Kreislauf-System",
+		"skill": "Mit jedem Atemzug und jedem Herzschlag gelangt Sauerstoff bis in die Zehenspitzen.",
+		"bindings": ["3"],
+		"paragraphs": [
+			"Beim Einatmen strömt Luft durch die Nase (oder den Mund), Rachen, Kehlkopf und die durch Knorpelspangen offengehaltene Luftröhre in die beiden Bronchien und schließlich in die Lunge. Dort verzweigen sich die Atemwege in unzählige winzige Lungenbläschen. Durch ihre dünne, stark durchblutete Oberfläche geht Sauerstoff ins Blut über und Kohlenstoffdioxid aus dem Blut in die Atemluft zurück.",
+			"Das Herz liegt leicht links im Brustkorb und arbeitet als kräftiger Hohlmuskel wie eine Pumpe. Es treibt das Blut durch die Blutgefäße: Vom Herzen weg in den Körper und durch die Lunge wieder zurück. So versorgt das Herz-Kreislauf-System alle Organe ununterbrochen mit Sauerstoff und Nährstoffen – Bau und Funktion passen bei Lungenbläschen und Herzmuskel genau zusammen."
+		],
+		"materialLabel": "Weg der Atemluft und Bau des Herzens im Überblick",
+		"material": "Atemwege: Nase (erwärmt und reinigt Luft) -> Rachen -> Kehlkopf -> Luftröhre -> Bronchien -> Lungenbläschen (große Gesamtoberfläche mit feinen Blutgefäßen).\nHerz: muskuläre Pumpe mit Herzhöhlen und Herzklappen, die ein Zurückfließen des Blutes verhindern.",
+		"sourceIds": ["lp", "lunge", "herz"],
+		"quiz": {
+			"question": "Warum bilden die Lungenbläschen in der Lunge eine riesige feuchte Oberfläche mit vielen feinen Blutgefäßen?",
+			"answer": "Damit Sauerstoff schnell aus der Atemluft ins Blut gelangen und Kohlenstoffdioxid abgegeben werden kann.",
+			"wrong": [
+				"Damit in der Lunge Nahrung verdaut werden kann.",
+				"Damit das Blut dort komplett stillsteht."
+			],
+			"explanation": "Die große, dünne Oberfläche der Lungenbläschen erleichtert den Gasaustausch zwischen Atemluft und Blut."
+		},
+		"cases": [
+			{
+				"prompt": "Warum ist das Atmen durch die Nase meist günstiger als durch den offenen Mund?",
+				"options": ["Die Nase wärmt, befeuchtet und reinigt die Luft", "Durch die Nase gelangt kein Sauerstoff in die Lunge"],
+				"answer": "Die Nase wärmt, befeuchtet und reinigt die Luft",
+				"feedback": "Nasenhärchen und Schleimhaut halten Staub zurück und wärmen kalte Luft vor."
+			},
+			{
+				"prompt": "Welche Aufgabe haben die Klappen im Herzen?",
+				"options": ["Sie lassen das Blut nur in eine Richtung strömen", "Sie bilden neuen Sauerstoff"],
+				"answer": "Sie lassen das Blut nur in eine Richtung strömen",
+				"feedback": "Wie kleine Ventile verhindern Herzklappen, dass Blut zurückfließt."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Beschreibe den Weg der eingeatmeten Luft von der Nase bis zu den Lungenbläschen und erkläre die Hauptaufgabe von Herz und Blutgefäßen.",
+				"model": "Die Luft gelangt durch die Nase über Rachen, Kehlkopf und Luftröhre in die beiden Bronchien und verzweigt sich bis in die Lungenbläschen. Dort tritt Sauerstoff ins Blut über. Das Herz pumpt als kräftiger Hohlmuskel dieses Blut durch ein geschlossenes Netz aus Blutgefäßen in den ganzen Körper, damit jedes Organ Sauerstoff und Nährstoffe erhält.",
+				"criteria": [
+					"Stationen des Atemwegs in richtiger Reihenfolge genannt",
+					"Sauerstoffübergang in der Lunge erwähnt",
+					"Pumpfunktion des Herzens und Transport über Blutgefäße beschrieben"
+				],
+				"hints": [
+					"Folge dem Pfeilweg im Material von der Nase aus.",
+					"Verbinde Lunge und Herz als Transportteam."
+				]
+			},
+			"2": {
+				"prompt": "Erläutere an zwei Beispielen aus diesem Thema den biologischen Zusammenhang zwischen Bau und Funktion.",
+				"model": "Beispiel 1 (Luftröhre): Sie besitzt feste Knorpelspangen, damit sie auch beim Drehen des Kopfes immer offen bleibt und Luft frei strömen kann. Beispiel 2 (Lungenbläschen/Herz): Die vielen Lungenbläschen vergrößern die Oberfläche für den schnellen Gasaustausch, und die dicke Muskelwand des Herzens erzeugt genug Druck, um Blut durch den gesamten Körper zu pumpen.",
+				"criteria": [
+					"Zwei konkrete Strukturen aus Atmung oder Kreislauf gewählt",
+					"Jeweils Bau und passende Funktion verknüpft",
+					"Zusammenhang verständlich begründet"
+				],
+				"hints": [
+					"Denke an Knorpelspangen, viele kleine Lungenbläschen oder Herzklappen.",
+					"Frage jeweils: Warum ist dieses Teil genau so gebaut?"
+				]
+			}
+		},
+		"extension": "Zähle nach Anleitung im Sport oder Biologiesaal deinen Ruhepuls und vergleiche ihn mit dem Puls nach kurzem Hüpfen.",
+		"takeaway": "Das Atmungssystem tauscht über eine große Lungenoberfläche Gase aus; das Herz pumpt Blut als Transportmittel durch den Körper."
+	},
+	{
+		"id": "b5-verdauung-nerven",
+		"stage": "koerper",
+		"title": "Verdauung, Ausscheidung und Nervensystem",
+		"skill": "Ein Pausenbrot liefert Kraft für Muskeln und Gehirn – und die Hand zieht von heißen Töpfen zurück.",
+		"bindings": ["3"],
+		"paragraphs": [
+			"Im Verdauungssystem durchläuft die Nahrung einen langen Schlauch: Im Mund wird sie gekaut und angefeuchtet, über die Speiseröhre rutscht sie durch Muskelbewegungen in den Magen und wird dort weiter zerkleinert. Im langen, stark gefalteten Dünndarm werden die feinen Nährstoffe durch die Darmwand ins Blut aufgenommen. Der Dickdarm entzieht den Resten Wasser, bevor Unverdauliches ausgeschieden wird. Nieren und Harnblase filtern zusätzlich flüssige Abfallstoffe aus dem Blut.",
+			"Das Nervensystem besteht aus Gehirn, Rückenmark und einem Netz feiner Nervenbahnen im ganzen Körper. Es nimmt über Sinnesorgane Reize wie Licht, Geräusche, Druck oder Wärme auf, leitet Signale blitzschnell weiter, verarbeitet sie im Gehirn oder Rückenmark und steuert passende Reaktionen – vom bewussten Greifen eines Stiftes bis zum schnellen Wegziehen der Hand."
+		],
+		"materialLabel": "Steckbriefe zweier Körpersysteme",
+		"material": "Verdauungsschlauch: Mund -> Speiseröhre -> Magen -> langer, gefalteter Dünndarm (Nährstoffaufnahme) -> Dickdarm (Wasserentzug) -> After.\nNervensystem: Sinnesorgane -> Nervenbahnen -> Rückenmark und Gehirn -> Nervenbahnen -> Muskeln.",
+		"sourceIds": ["lp", "nerven"],
+		"quiz": {
+			"question": "Welche Hauptaufgabe erfüllt der stark gefaltete Dünndarm im Verdauungssystem?",
+			"answer": "Er zerlegt Nahrungsbestandteile weiter und nimmt die Nährstoffe über seine große Oberfläche ins Blut auf.",
+			"wrong": [
+				"Er pumpt das Blut in die Lunge.",
+				"Er speichert die gesamte Nahrung unverändert wie ein Rucksack."
+			],
+			"explanation": "Durch seine Länge und gefaltete Innenwand hat der Dünndarm eine sehr große Fläche, um Nährstoffe ins Blut aufzunehmen."
+		},
+		"cases": [
+			{
+				"prompt": "Welches Organ filtert flüssige Abfallstoffe aus dem Blut und bildet den Harn?",
+				"options": ["Die Nieren", "Die Speiseröhre"],
+				"answer": "Die Nieren",
+				"feedback": "Die beiden Nieren gehören zum Ausscheidungssystem und reinigen das Blut von gelösten Abfallstoffen."
+			},
+			{
+				"prompt": "Du hörst an der Straße ein Hupen und bleibst sofort stehen. Welches System leitet und verarbeitet diese Information?",
+				"options": ["Das Nervensystem", "Das Ausscheidungssystem"],
+				"answer": "Das Nervensystem",
+				"feedback": "Nerven leiten den Hörreiz zum Gehirn, das blitzschnell die Muskelreaktion zum Anhalten auslöst."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Beschreibe in vier kurzen Schritten den Weg eines Apfels durch das Verdauungssystem und nenne die Aufgabe der Nieren.",
+				"model": "1. Im Mund wird der Apfel zerkaut und eingespeichelt. 2. Über die Speiseröhre gelangt er in den Magen zur weiteren Durchmischung und Zerlegung. 3. Im Dünndarm werden die gelösten Nährstoffe durch die Darmwand ins Blut aufgenommen. 4. Im Dickdarm wird den Resten Wasser entzogen und der unverdauliche Rest ausgeschieden. Die Nieren filtern zudem gelöste Abfallstoffe aus dem Blut.",
+				"criteria": [
+					"Stationen Mund, Speiseröhre, Magen, Dünndarm und Dickdarm richtig geordnet",
+					"Nährstoffaufnahme im Dünndarm genannt",
+					"Filteraufgabe der Nieren ergänzt"
+				],
+				"hints": [
+					"Orientiere dich am Weg im Material.",
+					"Unterscheide Dünndarm (Nährstoffe) und Dickdarm (Wasser)."
+				]
+			},
+			"2": {
+				"prompt": "Erkläre den Bau-Funktions-Zusammenhang bei der gefalteten Dünndarmwand sowie beim Leitungsnetz des Nervensystems.",
+				"model": "Die Innenwand des langen Dünndarms ist stark gefaltet; dadurch entsteht auf kleinem Raum im Bauch eine sehr große Oberfläche, über die viele Nährstoffe gleichzeitig ins Blut gelangen können. Beim Nervensystem bilden weit verzweigte Nervenbahnen schnelle Leitungswege zwischen Sinnesorganen, Rückenmark, Gehirn und Muskeln, sodass der Körper ohne Verzögerung reagieren kann.",
+				"criteria": [
+					"Oberflächenvergrößerung beim Dünndarm erklärt",
+					"Verzweigtes Leitungsnetz des Nervensystems beschrieben",
+					"Beide Male Bau und Funktion klar verknüpft"
+				],
+				"hints": [
+					"Warum ist der Dünndarm so lang und gefaltet statt kurz und glatt?",
+					"Warum ziehen Nervenbahnen bis in jede Fingerspitze?"
+				]
+			}
+		},
+		"extension": "Vergleiche auf einem Torso-Modell die Lage von Magen, Dünndarm, Dickdarm und Nieren.",
+		"takeaway": "Der Verdauungsschlauch zerlegt Nahrung und nimmt im Dünndarm Nährstoffe auf; die Nieren filtern Blut; das Nervensystem empfängt Reize und steuert Reaktionen."
+	},
+	{
+		"id": "b5-skelett-wirbelsaeule",
+		"stage": "koerper",
+		"title": "Das Skelett und die Doppel-S-Form der Wirbelsäule",
+		"skill": "Das Skelett trägt dich beim Stehen und schützt empfindliche Organe wie Gehirn und Herz.",
+		"bindings": ["3"],
+		"paragraphs": [
+			"Über 200 Knochen bilden das menschliche Skelett. Es gibt dem Körper Halt und Form (Stützfunktion) und schützt lebenswichtige Organe: Der Schädel umhüllt das Gehirn, der Brustkorb aus Rippen und Brustbein schützt Herz und Lunge, und das Becken stützt Bauchorgane. Die Wirbelsäule bildet die zentrale Stütze des Rumpfes und schützt im Wirbelkanal das Rückenmark.",
+			"Von der Seite betrachtet zeigt die Wirbelsäule keine gerade Linie, sondern eine doppelte S-Form. Zusammen mit den elastischen Bandscheiben zwischen den knöchernen Wirbeln wirkt diese Krümmung wie eine Feder: Beim Gehen, Laufen und Springen werden harte Stöße abgefedert, bevor sie das Gehirn erschüttern, und der Rumpf bleibt dennoch beweglich."
+		],
+		"materialLabel": "Bauplan von Skelett und Wirbelsäule",
+		"material": "Hauptabschnitte des Skeletts: Schädel · Rumpfskelett (Wirbelsäule und Brustkorb) · Gliedmaßenskelett (Schultergürtel/Arme und Beckengürtel/Beine).\nWirbelsäule: einzelne Wirbelkörper, elastische Knorpel-Bandscheiben dazwischen, geschwungen in doppelter S-Form.",
+		"sourceIds": ["lp", "wirbel"],
+		"quiz": {
+			"question": "Welche Form zeigt die menschliche Wirbelsäule von der Seite, um Stöße beim Gehen wie eine Feder abzufedern?",
+			"answer": "Eine doppelte S-Form mit elastischen Bandscheiben zwischen den Wirbeln.",
+			"wrong": [
+				"Eine völlig gerade Säule ohne Krümmung.",
+				"Ein starres Knochenrohr ohne bewegliche Gelenke."
+			],
+			"explanation": "Die doppelte S-Form und die elastischen Bandscheiben verteilen und dämpfen Stöße beim aufrechten Gang und halten den Rücken beweglich."
+		},
+		"cases": [
+			{
+				"prompt": "Welcher Skelettabschnitt schützt Lunge und Herz besonders?",
+				"options": ["Der Brustkorb aus Rippen und Brustbein", "Die Fußwurzelknochen"],
+				"answer": "Der Brustkorb aus Rippen und Brustbein",
+				"feedback": "Der gewölbte Brustkorb bildet einen beweglichen Schutzkäfig rund um Herz und Lunge."
+			},
+			{
+				"prompt": "Warum besteht die Wirbelsäule aus vielen einzelnen Wirbeln statt aus einem einzigen langen Knochen?",
+				"options": ["Nur dadurch kann sich der Rumpf beugen und drehen", "Ein einziger Knochen wäre leichter zu bewegen"],
+				"answer": "Nur dadurch kann sich der Rumpf beugen und drehen",
+				"feedback": "Viele einzelne Wirbel mit Bandscheiben machen Bücken, Strecken und Drehen des Oberkörpers erst möglich."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Nenne die drei großen Abschnitte des Skeletts und beschreibe zwei Schutzfunktionen sowie den Aufbau der Wirbelsäule.",
+				"model": "Die drei großen Abschnitte sind Schädel, Rumpfskelett (Wirbelsäule und Brustkorb) und Gliedmaßenskelett (Arme und Beine mit Schulter- und Beckengürtel). Schutzfunktionen: Der Schädel schützt das Gehirn, der Brustkorb schützt Herz und Lunge. Die Wirbelsäule besteht aus vielen Wirbelkörpern mit elastischen Bandscheiben und ist doppelt S-förmig geschwungen.",
+				"criteria": [
+					"Schädel, Rumpfskelett und Gliedmaßenskelett genannt",
+					"Mindestens zwei Schutzaufgaben konkret benannt",
+					"Wirbel, Bandscheiben und Doppel-S-Form beschrieben"
+				],
+				"hints": [
+					"Schau auf die Liste der Skelettabschnitte im Material.",
+					"Denke an das Innere von Schädel und Brustkorb."
+				]
+			},
+			"2": {
+				"prompt": "Vergleiche eine gerade Holzstange mit der doppelt S-förmigen Wirbelsäule samt Bandscheiben beim Sprung von einer Turnbank.",
+				"model": "Bei einer geraden, starren Stange würde der Aufprall beim Landen ungebremst nach oben durchschlagen und Kopf und Gehirn hart erschüttern. Bei der Wirbelsäule geben die Krümmungen der Doppel-S-Form leicht federnd nach, und die weichen Bandscheiben werden kurz zusammengedrückt. So wird der Stoß abgedämpft und verteilt.",
+				"criteria": [
+					"Folge einer geraden starren Stütze beim Aufprall benannt",
+					"Federwirkung der Doppel-S-Form erklärt",
+					"Stoßdämpferfunktion der Bandscheiben einbezogen"
+				],
+				"hints": [
+					"Stelle dir eine Sprungfeder im Vergleich zu einem Besenstiel vor.",
+					"Welches Organ oben am Körper muss besonders geschützt werden?"
+				]
+			}
+		},
+		"extension": "Untersuche im Unterricht ein Skelettmodell und ertaste behutsam die eigene Wirbelsäule und deine Rippen.",
+		"takeaway": "Das Skelett stützt und schützt; die Wirbelsäule federt durch ihre Doppel-S-Form und elastische Bandscheiben Stöße ab und hält den Rumpf beweglich."
+	},
+	{
+		"id": "b5-muskeln-gelenke",
+		"stage": "koerper",
+		"title": "Zusammenspiel von Knochen, Muskeln, Gelenken, Sehnen und Bändern",
+		"lab": "armLever",
+		"skill": "Ein Muskel kann sich nur aktiv zusammenziehen – für die Gegenbewegung braucht er einen Partner.",
+		"bindings": ["3"],
+		"paragraphs": [
+			"Damit sich Knochen bewegen können, sind sie an Gelenken beweglich verbunden. In einem Gelenk greifen Gelenkkopf und Gelenkpfanne ineinander. Eine glatte Knorpelschicht und Gelenkschmiere in der Gelenkkapsel sorgen dafür, dass die Knochen reibungsarm gleiten. Feste Bänder verbinden Knochen miteinander und halten das Gelenk stabil, während Sehnen die Muskeln fest an den Knochen verankern.",
+			"Skelettmuskeln arbeiten immer nach dem Gegenspielerprinzip (Antagonistenprinzip), weil sich ein Muskel nur aktiv zusammenziehen, aber nicht aktiv ausdehnen kann. Beim Beugen des Unterarms verkürzt sich der zweiköpfige Armbeuger (Bizeps) auf der Vorderseite des Oberarms, während der dreiköpfige Armstrecker (Trizeps) entspannt und gedehnt wird. Beim Strecken arbeitet genau umgekehrt der Trizeps."
+		],
+		"materialLabel": "Bauteile einer Bewegungseinheit am Oberarm",
+		"material": "Knochen: Oberarmknochen, Elle und Speiche.\nGelenk: Ellbogengelenk mit Gelenkkopf, Gelenkpfanne, Gelenkknorpel, Gelenkkapsel mit Gelenkschmiere und Bändern.\nMuskeln & Sehnen: Bizeps (Beuger vorn) und Trizeps (Strecker hinten), über feste Sehnen am Knochen befestigt.",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"question": "Welcher Muskel arbeitet am menschlichen Oberarm als Gegenspieler (Strecker) zum Armbeuger Bizeps?",
+			"answer": "Der dreiköpfige Armstrecker (Trizeps).",
+			"wrong": [
+				"Der Unterarmbeuger.",
+				"Das Schulterband."
+			],
+			"explanation": "Da Muskeln nur ziehen können, streckt der Trizeps an der Rückseite des Oberarms den Unterarm wieder, während sich der Bizeps entspannt."
+		},
+		"cases": [
+			{
+				"prompt": "Welches Gewebe überträgt die Zugkraft des Bizeps auf den Unterarmknochen?",
+				"options": ["Sehnen", "Gelenkknorpel"],
+				"answer": "Sehnen",
+				"feedback": "Sehnen verbinden Muskeln mit Knochen; Bänder verbinden Knochen untereinander."
+			},
+			{
+				"prompt": "Was verhindert im Gelenk, dass Knochen direkt trocken aufeinander reiben?",
+				"options": ["Glatter Gelenkknorpel und Gelenkschmiere", "Feste Sehnen im Muskel"],
+				"answer": "Glatter Gelenkknorpel und Gelenkschmiere",
+				"feedback": "Knorpel und Gelenkschmiere in der Gelenkkapsel machen Bewegungen weich und reibungsarm."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Probiere zuerst das Armmodell oben aus und beschreibe dann, was beim Beugen und anschließend beim Strecken des Arms bei Bizeps, Trizeps, Sehnen und Ellbogengelenk passiert.",
+				"model": "Beim Beugen spannt sich der Bizeps an, verkürzt sich und zieht über seine Sehnen die Unterarmknochen im Ellbogengelenk nach oben; der Trizeps ist dabei entspannt. Beim Strecken entspannt der Bizeps, während der Trizeps sich zusammenzieht und über seine Sehne den Unterarm wieder nach unten zieht. Knorpel und Gelenkschmiere im Ellbogengelenk sorgen dabei für reibungsarmes Gleiten.",
+				"criteria": [
+					"Rolle von Bizeps und Trizeps beim Beugen und Strecken richtig dargestellt",
+					"Kraftübertragung durch Sehnen erwähnt",
+					"Rolle des Gelenks (Beweglichkeit/Schutz) einbezogen"
+				],
+				"hints": [
+					"Beachte: Ein Muskel zieht immer nur in eine Richtung.",
+					"Unterscheide Sehnen (Muskel–Knochen) und Bänder (Knochen–Knochen)."
+				]
+			},
+			"2": {
+				"prompt": "Erkläre, warum es zu einer Gelenkverletzung oder Bewegungseinschränkung kommt, wenn Bänder im Gelenk reißen oder die Gelenkschmiere fehlt.",
+				"model": "Bänder stabilisieren das Gelenk und verhindern unnatürliche Bewegungen. Reißt ein Band, verliert das Gelenk seinen sicheren Halt und kann wegknicken. Fehlt die Gelenkschmiere oder ist der Knorpel geschädigt, reiben die Knochenenden stark aneinander, was Schmerzen verursacht und die Beweglichkeit stark bremst.",
+				"criteria": [
+					"Stabilisierungsaufgabe der Bänder erklärt",
+					"Reibungsmindernde Aufgabe der Gelenkschmiere beschrieben",
+					"Folgen für Halt und Beweglichkeit logisch abgeleitet"
+				],
+				"hints": [
+					"Denke an die Rolle eines Scharniers ohne Öl und ohne Führung.",
+					"Trenne Bänder und Gelenkschmiere sauber."
+				]
+			}
+		},
+		"extension": "Fasse mit der freien Hand an deinen eigenen Oberarm und spüre beim Beugen und Strecken abwechselnd Bizeps und Trizeps.",
+		"takeaway": "Knochen, Gelenke, Bänder, Sehnen und Muskeln wirken zusammen; weil Muskeln nur ziehen können, arbeiten Beuger und Strecker als Gegenspieler."
+	},
+	{
+		"id": "b5-gesunderhaltung",
+		"stage": "koerper",
+		"title": "Den Bewegungsapparat gesund halten",
+		"skill": "Schweres Heben mit rundem Rücken oder ein schief getragener Schulranzen belasten die Wirbelsäule.",
+		"bindings": ["3"],
+		"paragraphs": [
+			"Knochen, Bandscheiben und Muskeln wachsen und bleiben belastbar, wenn wir sie richtig fordern und schützen. Regelmäßige Bewegung stärkt die Rücken- und Bauchmuskulatur, die die Wirbelsäule stützt, und versorgt Knorpel und Bandscheiben über Wechsel von Belastung und Entlastung mit Nährstoffen. Langes unbewegtes Sitzen lässt Muskeln hingegen verkümmern.",
+			"Im Alltag schützt rückengerechtes Verhalten: schwere Kisten aus den gebeugten Beinen statt mit rundem Rücken heben, den Schulranzen ordentlich auf beiden Schultern tragen, nicht unnötig schwer packen und beim Radfahren oder Inlineskaten Helm und Protektoren tragen. Auch ein guter Fahrradhelm schützt den Schädel und damit das Gehirn vor schweren Verletzungen im Straßenverkehr."
+		],
+		"materialLabel": "Alltagssituationen für den Stütz- und Bewegungsapparat",
+		"material": "Situation 1: Jonas hebt eine schwere Getränkekiste mit durchgestreckten Beinen und stark gekrümmtem Rücken hoch.\nSituation 2: Mia trägt ihren vollgepackten Rucksack täglich nur über einer Schulter.\nSituation 3: Lukas fährt ohne Fahrradhelm über Schotter.",
+		"sourceIds": ["lp", "wirbel"],
+		"quiz": {
+			"question": "Wie hebst du einen schweren Gegenstand richtig, um deine Bandscheiben zu schonen?",
+			"answer": "In die Knie gehen, den Rücken gerade halten und aus den kräftigen Beinmuskeln hochdrücken.",
+			"wrong": [
+				"Die Beine ganz gestreckt lassen und den Oberkörper weit nach vorn beugen.",
+				"Den Gegenstand möglichst weit weg vom Körper ruckartig hochreißen."
+			],
+			"explanation": "Beim Heben aus den Beinen mit geradem Rücken werden Bandscheiben gleichmäßig statt einseitig gequetscht belastet."
+		},
+		"cases": [
+			{
+				"prompt": "Warum tut regelmäßige Bewegung den Bandscheiben gut?",
+				"options": ["Durch Wechsel von Be- und Entlastung nehmen sie Nährstoffe auf", "Nur wer sich gar nicht bewegt, schützt Bandscheiben"],
+				"answer": "Durch Wechsel von Be- und Entlastung nehmen sie Nährstoffe auf",
+				"feedback": "Bandscheiben wirken wie Schwämme: Bewegung pumpt verbrauchte Flüssigkeit heraus und frische Nährstoffe hinein."
+			},
+			{
+				"prompt": "Warum gehört auch ein Fahrradhelm zum Schutz des Stütz- und Bewegungssystems?",
+				"options": ["Er dämpft Stöße und hilft dem Schädelknochen, das Gehirn zu schützen", "Er macht die Oberarmmuskeln schneller"],
+				"answer": "Er dämpft Stöße und hilft dem Schädelknochen, das Gehirn zu schützen",
+				"feedback": "Bei einem Sturz verteilt der Helm die Aufprallkraft und schützt Schädel und Gehirn vor Brüchen und Verletzungen."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Gib für alle drei Situationen aus dem Material einen konkreten Verbesserungsvorschlag und begründe ihn kurz.",
+				"model": "Zu 1: Jonas geht in die Knie, hält den Rücken gerade und hebt die Kiste nah am Körper hoch, damit seine Bandscheiben gleichmäßig belastet werden. Zu 2: Mia trägt ihren Rucksack mit beiden Gurten eng am Rücken und räumt Überflüssiges aus, um einseitige Wirbelsäulenbelastung zu vermeiden. Zu 3: Lukas setzt einen gut sitzenden Fahrradhelm auf, um seinen Schädel und das Gehirn bei Stürzen zu schützen.",
+				"criteria": [
+					"Für alle drei Situationen eine sinnvolle Änderung genannt",
+					"Jede Änderung biologisch oder gesundheitlich begründet",
+					"Bezug auf Wirbelsäule, Bandscheiben und Schädel hergestellt"
+				],
+				"hints": [
+					"Achte auf Hebetechnik, Trageweise und Kopfschutz.",
+					"Welcher Teil des Körpers wird jeweils geschont?"
+				]
+			},
+			"2": {
+				"prompt": "Entwirf für deinen Schulalltag drei feste Regeln, die Bewegung, Sitzen und Ranzengewicht verbinden, und erkläre den Unterschied zwischen gesunder Belastung und Überlastung.",
+				"model": "Regeln: 1. Alle Hefte ohne Bedarf zu Hause lassen und beide Schultergurte gleich lang einstellen. 2. In den Pausen aufstehen, gehen oder dehnen statt sitzen zu bleiben. 3. Mehrmals pro Woche Sport treiben, um Rumpfmuskeln zu stärken. Gesunde Belastung wechselt Anspannung und Pause ab und stärkt Muskeln und Knochen; Überlastung durch dauerhaftes Fehltragen oder falsches Heben quetscht Bandscheiben und überfordert Sehnen.",
+				"criteria": [
+					"Drei alltagstaugliche Schulregeln aufgestellt",
+					"Gesunde Belastung (Bewegung + Erholung) erläutert",
+					"Überlastung als dauerhafte oder einseitige Fehlbelastung abgegrenzt"
+				],
+				"hints": [
+					"Denke an Ranzen, Pause und Sport.",
+					"Warum ist Bewegung nicht gleich Überlastung?"
+				]
+			}
+		},
+		"extension": "Prüfe im Unterricht oder zu Hause gemeinsam das Gewicht und die Tragegurte deines eigenen Schulranzens.",
+		"takeaway": "Regelmäßige Bewegung, gerades Heben aus den Beinen, beidseitiges Tragen und Schutzausrüstung wie ein Helm halten Stütz- und Bewegungssystem gesund."
+	},
+	{
+		"id": "b5-wildtiere",
+		"stage": "umgebung",
+		"title": "Einheimische wild lebende Säugetiere und ihr Lebensraum",
+		"skill": "Feldhase, Rotfuchs, Eichhörnchen oder Igel sind genau an ihre Umgebung angepasst.",
+		"bindings": ["1", "4"],
+		"paragraphs": [
+			"In bayerischen Wäldern, Wiesen und Hecken leben viele wild lebende Säugetiere wie Igel, Eichhörnchen, Feldhase, Reh oder Rotfuchs. Ihr Körperbau, ihre Nahrungsgrundlage und ihre Lebensweise passen eng zu ihrem Lebensraum: Das Eichhörnchen klettert mit scharfen Krallen und nutzt seinen buschigen Schwanz als Balancierstange im Baum; der Igel sucht nachts Insekten und Schnecken in Hecken und hält im Laubhaufen Winterruhe.",
+			"Verliert ein Wildtier seine Hecken, Feuchtwiesen oder zusammenhängenden Wälder durch Straßenbau oder stark ausgeräumte Felder, gerät seine Lebensgrundlage in Gefahr. Deshalb sind Schutzmaßnahmen wie Wildbrücken, Heckenpflege, Rücksichtnahme im Wald und artenschützende Regeln wichtig, auch wenn es zwischen Landwirtschaft, Verkehr und Tierschutz manchmal Interessenskonflikte gibt."
+		],
+		"materialLabel": "Monografien zweier heimischer Säugetiere",
+		"material": "Braunbrustigel: dämmerungs- und nachtaktiv, Stachelkleid zur Abwehr, ernährt sich vor allem von Käfern, Larven, Würmern und Schnecken; braucht Hecken, Laub- und Reisighaufen.\nEichhörnchen: tagaktiver Baumbewohner, scharfe Kletterkrallen, Nagezähne zum Öffnen von Nüssen und Zapfen, legt Vorratsverstecke für den Winter an.",
+		"sourceIds": ["lp", "arten", "fledermaus"],
+		"quiz": {
+			"question": "Woran zeigt sich beim Eichhörnchen der enge Zusammenhang zwischen Körperbau und Lebensraum?",
+			"answer": "Scharfe Krallen und ein buschiger Schwanz helfen beim sicheren Klettern und Springen in Bäumen.",
+			"wrong": [
+				"Es besitzt Schwimmhäute, um tief im Meer zu tauchen.",
+				"Es hat breite Hufe für weite Wüstenwanderungen."
+			],
+			"explanation": "Körpermerkmale wie Kletterkrallen, kräftige Hinterbeine und der Gleichgewichtsschwanz sind genau auf das Leben in Bäumen abgestimmt."
+		},
+		"cases": [
+			{
+				"prompt": "Warum schadet ein völlig aufgeräumter Garten ohne Laubhaufen und Hecken dem Igel?",
+				"options": ["Es fehlen ihm Verstecke, Winterquartier und Insektennahrung", "Igel fressen am liebsten geschotterte Steinflächen"],
+				"answer": "Es fehlen ihm Verstecke, Winterquartier und Insektennahrung",
+				"feedback": "Ohne Laub und Sträucher findet der Igel weder ausreichende Nahrung noch einen geschützten Platz für den Winter."
+			},
+			{
+				"prompt": "Warum entstehen bei größeren Wildtieren wie dem Biber oder dem Wolf manchmal Interessenskonflikte?",
+				"options": ["Schutzziel des Wildtiers und wirtschaftliche Nutzung durch Menschen treffen aufeinander", "Wildtiere brauchen überhaupt keinen Lebensraum"],
+				"answer": "Schutzziel des Wildtiers und wirtschaftliche Nutzung durch Menschen treffen aufeinander",
+				"feedback": "Artenschutz kann mit Landwirtschaft oder Weidehaltung in Konflikt geraten, sodass Schutz- und Ausgleichslösungen nötig werden."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Beschreibe anhand des Materials für Igel oder Eichhörnchen die Nahrungsgrundlage, zwei passende Körpermerkmale und die Lebensweise.",
+				"model": "Beispiel Igel: Der Igel ist dämmerungs- und nachtaktiv und verbringt den Winter im geschützten Laub- oder Reisighaufen. Seine Nahrung besteht vor allem aus Insekten, Larven, Würmern und Schnecken. Sein Körperbau passt dazu: Das spitze Gesicht und feine Spürsinne helfen bei der Suche am Boden, während sein Stachelkleid ihn bei Gefahr schützt.",
+				"criteria": [
+					"Einheimisches wild lebendes Säugetier gewählt",
+					"Nahrung, zwei Körpermerkmale und Lebensweise richtig beschrieben",
+					"Zusammenhang zur Umgebung hergestellt"
+				],
+				"hints": [
+					"Stütze dich auf die Angaben aus der Monografie im Material.",
+					"Verbinde Körperteil und Nutzen im Lebensraum."
+				]
+			},
+			"2": {
+				"prompt": "Nenne zwei konkrete Gefahren für heimische Wildtiere in unserer Kulturlandschaft und erkläre zwei Schutzmaßnahmen, die Menschen umsetzen können.",
+				"model": "Gefahren sind der Verlust von Hecken und Laubhaufen sowie die Zerschneidung von Lebensräumen durch viel befahrene Straßen. Schutzmaßnahmen: Erstens Hecken, Feldraine und naturnahe Gartenecken mit Laub erhalten, damit Nahrung und Unterschlupf bleiben. Zweitens im Verkehr an Wildwechsel-Schildern Tempo drosseln sowie Grünbrücken und Kröten-/Kleintierdurchlässe anlegen.",
+				"criteria": [
+					"Zwei realistische Gefährdungen benannt",
+					"Zwei passende Schutzmaßnahmen erklärt",
+					"Verständnis für Verantwortung und Schutznotwendigkeit gezeigt"
+				],
+				"hints": [
+					"Denke an Straßen, ausgeräumte Landschaft und Gärten.",
+					"Welche Maßnahmen helfen direkt vor Ort?"
+				]
+			}
+		},
+		"extension": "Erstelle im Unterricht eine kurze Monografie (Steckbrief) über ein weiteres heimisches Wildtier wie Fledermaus, Reh oder Rotfuchs.",
+		"takeaway": "Wild lebende Säugetiere sind in Körperbau, Nahrung und Lebensweise an ihren Lebensraum angepasst und brauchen Schutz vor Lebensraumverlust."
+	},
+	{
+		"id": "b5-haustiere-zucht",
+		"stage": "umgebung",
+		"title": "Vom Wildtier zum Haus- und Nutztier",
+		"skill": "Dackel und Schäferhund sehen ganz verschieden aus – stammen aber beide vom Wolf ab.",
+		"bindings": ["4"],
+		"paragraphs": [
+			"Vor vielen tausend Jahren begannen Menschen, bestimmte Wildtiere an ihre Nähe zu gewöhnen und über viele Generationen gezielt zu verändern. Diesen Prozess nennt man Domestizierung. Aus dem wilden Wolf entstand der Haushund, aus dem Wildschwein das Hausschwein und aus dem Auerochsen das Hausrind.",
+			"Durch gezielte Züchtung wählte der Mensch immer wieder Tiere mit gewünschten Merkmalen aus – etwa ruhigeres Verhalten, bestimmte Fellfarben, höhere Milchleistung beim Rind oder besseren Geruchssinn beim Hund. So entstanden vielfältige Rassen. Nutztiere liefern Menschen Nahrung (Milch, Fleisch, Eier), Rohstoffe wie Wolle und Leder oder halfen früher bei schwerer Feldarbeit."
+		],
+		"materialLabel": "Vergleich Wildform und Zuchtform",
+		"material": "Wolf (Wildform): lebt im Familienrudel, großes Streifgebiet, scheu gegenüber Menschen, kräftiges Gebiss, ausdauernder Läufer.\nHaushund (Zuchtform): viele verschiedene Rassen (vom Hütehund bis zum Begleithund), häufig zutraulicher, geringere Scheu vor Menschen, teilweise stark veränderter Körperbau.",
+		"sourceIds": ["lp", "tierschutz", "nutztiere"],
+		"quiz": {
+			"question": "Was versteht man unter Domestizierung?",
+			"answer": "Die über viele Generationen verlaufende Umwandlung von Wildtieren in Haustiere durch den Menschen.",
+			"wrong": [
+				"Das Aussetzen eines Heimtiers im Wald.",
+				"Die einmalige Zähmung eines einzelnen wilden Tieres ohne Zucht."
+			],
+			"explanation": "Während Zähmung nur ein einzelnes Tier betrifft, verändert Domestizierung durch jahrhundertelange Zucht eine ganze Tierart dauerhaft."
+		},
+		"cases": [
+			{
+				"prompt": "Welches Merkmal unterscheidet ein Hausschwein deutlich vom Wildschwein?",
+				"options": ["Durch Züchtung weniger scheu, hellere Haut und geringere Behaarung", "Es frisst überhaupt keine Pflanzen mehr"],
+				"answer": "Durch Züchtung weniger scheu, hellere Haut und geringere Behaarung",
+				"feedback": "Züchtung veränderte Körperbau, Borstenkleid und Verhalten gegenüber dem ursprünglichen Wildschwein."
+			},
+			{
+				"prompt": "Welchen Nutzen bringt die Haltung von Schafen für den Menschen?",
+				"options": ["Sie liefern Rohstoffe wie Wolle, Nahrung und pflegen Weidelandschaften", "Sie wachsen auf Äckern wie Getreide"],
+				"answer": "Sie liefern Rohstoffe wie Wolle, Nahrung und pflegen Weidelandschaften",
+				"feedback": "Schafe liefern Wolle, Milch und Fleisch und halten durch Beweidung Hänge und Magerrasen offen."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Vergleiche Wolf und Haushund mithilfe des Materials und erkläre den Unterschied zwischen Domestizierung und Züchtung weiterer Rassen.",
+				"model": "Beide teilen Grundmerkmale wie Gebissaufbau, gute Sinne und soziales Verhalten. Der Wolf bleibt jedoch scheu und an ein Leben in der Wildnis angepasst, während der Haushund durch Domestizierung deutlich zutraulicher gegenüber Menschen wurde. Bei der Züchtung werden anschließend gezielt Tiere mit besonderen Eigenschaften verpaart, sodass unterschiedliche Hunderassen wie Hüte-, Jagd- oder Begleithunde entstehen.",
+				"criteria": [
+					"Gemeinsamkeit und Unterschied von Wolf und Hund genannt",
+					"Domestizierung als langen Prozess zum Haustier erklärt",
+					"Züchtung als gezielte Auswahl für Rassen beschrieben"
+				],
+				"hints": [
+					"Was blieb bei Wolf und Hund gleich, was veränderte sich?",
+					"Wozu wählt der Mensch bei der Züchtung bestimmte Elterntiere aus?"
+				]
+			},
+			"2": {
+				"prompt": "Nenne drei Vorteile der Nutztierhaltung für den Menschen und erkläre eine mögliche Kehrseite übertriebener Zucht auf einzelne Merkmale.",
+				"model": "Vorteile der Nutztierhaltung sind erstens die Versorgung mit Nahrungsmitteln wie Milch, Käse und Eiern, zweitens die Gewinnung von Rohstoffen wie Wolle und Leder und drittens frühere oder regionale Arbeitshilfe sowie Landschaftspflege durch Beweidung. Wenn Zucht allerdings einseitig nur auf riesige Leistung oder extremes Aussehen zielt, können Tiere gesundheitliche Schäden wie Gelenkprobleme oder Atemnot bekommen.",
+				"criteria": [
+					"Drei Vorteile der Nutztierhaltung benannt",
+					"Kehrseite einseitiger Leistungs- oder Extremzucht erkannt",
+					"Verantwortung für Tiergesundheit angedeutet"
+				],
+				"hints": [
+					"Denke an Nahrung, Rohstoffe und Pflege der Landschaft.",
+					"Was passiert, wenn man nur auf Aussehen oder Höchstleistung züchtet?"
+				]
+			}
+		},
+		"extension": "Vergleiche auf Bildern die Wildform Auerochse oder Wildschwein mit heutigen Rinder- oder Schweinerassen.",
+		"takeaway": "Durch Domestizierung und gezielte Züchtung entstanden aus Wildtieren vielfältige Haus- und Nutztiere, die Nahrung, Rohstoffe und Hilfe liefern."
+	},
+	{
+		"id": "b5-nutztiere-haltung",
+		"stage": "umgebung",
+		"title": "Körperbau und artgerechte Haltung von Nutztieren",
+		"skill": "Wie ein Hausrind frisst und lebt, bestimmt, was es im Stall und auf der Weide braucht.",
+		"bindings": ["4"],
+		"paragraphs": [
+			"Auch bei Nutztieren verraten Körperbau und Lebensweise genau, welche Bedingungen für eine artgerechte Haltung nötig sind. Das Hausrind ist ein pflanzenfressendes Herdentier und ein Wiederkäuer: Mit seinem mehrteiligen Magen verwertet es Gras und Heu und verbringt viele Stunden am Tag mit Fressen, Wiederkäuen und Ruhen im Sozialverband.",
+			"Aus dieser Lebensweise folgen klare Anforderungen: Rinder brauchen genügend Platz zum Gehen und Liegen auf weichem, sauberem Untergrund, Kontakt zu Artgenossen, frische Luft, Tageslicht sowie rohfaserreiches Grundfutter wie Gras und Heu und ständig frisches Wasser. Enge Anbindehaltung ohne Auslauf widerspricht dem natürlichen Bewegungs- und Sozialbedürfnis."
+		],
+		"materialLabel": "Steckbrief Hausrind (Lebensweise und Bedürfnisse)",
+		"material": "Körperbau: schweres Säugetier mit paarigen Klauen, breitem Maul und Mahlzähnen zum Zermahlen von Pflanzen, vierteiliger Wiederkäuermagen (Pansen, Netzmagen, Blättermagen, Labmagen).\nLebensweise: tagaktives Herdentier mit fester Rangordnung, liebt Weidegang und Scheuerbürsten; ruht viele Stunden im Liegen.",
+		"sourceIds": ["lp", "nutztiere", "rinder"],
+		"quiz": {
+			"question": "Welche Haltungsbedingung passt am besten zum natürlichen Verhalten des Hausrinds als Herdentier und Wiederkäuer?",
+			"answer": "Ein Laufstall oder Weidegang mit Artgenossen, weichen Liegeflächen, frischem Wasser und Raufutter wie Gras oder Heu.",
+			"wrong": [
+				"Dauerhafte Einzelhaltung im dunklen Raum ohne Auslauf.",
+				"Ausschließlich trockene Körner ohne Gras, Heu und Wasser."
+			],
+			"explanation": "Weil Rinder soziale Wiederkäuer sind, brauchen sie Kontakt zu anderen Rindern, Bewegungsraum, weiche Liegeplätze und faserreiches Futter."
+		},
+		"cases": [
+			{
+				"prompt": "Warum besitzt das Hausrind Mahlzähne mit rauer Oberfläche und einen mehrteiligen Magen?",
+				"options": ["Um harte Gräser und Heu gründlich zu zermahlen und zu verdauen", "Um als Fleischfresser Beutetiere zu jagen"],
+				"answer": "Um harte Gräser und Heu gründlich zu zermahlen und zu verdauen",
+				"feedback": "Breite Mahlzähne und das Wiederkäuen schließen schwer verdauliche Pflanzenfasern auf."
+			},
+			{
+				"prompt": "Welche Beobachtung spricht für eine tiergerechtere Haltung von Legehennen oder Rindern?",
+				"options": ["Auslauf, Tageslicht, Beschäftigung und Platz zum Ausweichen", "Möglichst wenig Platz und kein Tageslicht"],
+				"answer": "Auslauf, Tageslicht, Beschäftigung und Platz zum Ausweichen",
+				"feedback": "Bewegung, Tageslicht und Möglichkeiten für natürliches Verhalten sind zentrale Merkmale artgerechter Haltung."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Beschreibe anhand des Materials den Körperbau und die Lebensweise des Hausrinds und leite daraus vier konkrete Faktoren für eine artgerechte Haltung ab.",
+				"model": "Das Hausrind hat kräftige Klauen, Mahlzähne und einen vierteiligen Wiederkäuermagen für Gras und Heu; es lebt als ruhiges Herdentier. Daraus folgen vier Faktoren für eine artgerechte Haltung: 1. Leben in einer Herde mit Sozialkontakt, 2. ausreichend Bewegungsraum im Laufstall oder auf der Weide, 3. trockene und weiche Liegeflächen, 4. rohfaserreiches Futter (Gras, Heu) und jederzeit frisches Wasser.",
+				"criteria": [
+					"Körperbau (Gebiss/Magen/Klauen) und Lebensweise (Herdentier) beschrieben",
+					"Vier klare Haltungsfaktoren aus diesen Merkmalen abgeleitet",
+					"Zusammenhang zwischen Tiernatur und Haltung deutlich gemacht"
+				],
+				"hints": [
+					"Übersetze jedes Merkmal (Herde, Wiederkäuen, langes Liegen) in eine Stall-/Weideanforderung.",
+					"Denke an Futter, Platz, Sozialkontakt und Liegefläche."
+				]
+			},
+			"2": {
+				"prompt": "Beurteile die dauerhafte Anbindehaltung von Milchkühen im Vergleich zu einem offenen Laufstall mit Weidezugang anhand der Bedürfnisse eines Rindes.",
+				"model": "In der dauerhaften Anbindehaltung kann das Rind kaum gehen, sich nicht umdrehen und keine Artgenossen frei aufsuchen oder Konflikten ausweichen; auch die natürliche Fellpflege und Bewegung leiden stark. Ein heller Laufstall mit bequemen Liegeboxen, Kratzbürsten und Weidezugang ermöglicht hingegen Sozialkontakt, Bewegungsfreiheit und arteigenes Fress- und Ruheverhalten.",
+				"criteria": [
+					"Einschränkungen der Anbindehaltung benannt",
+					"Vorteile von Laufstall und Weide fachlich begründet",
+					"Kriterien artgerechter Tierhaltung konsequent angewendet"
+				],
+				"hints": [
+					"Was kann ein angebundenes Herdentier nicht tun?",
+					"Prüfe Bewegung, Sozialkontakt und Licht."
+				]
+			}
+		},
+		"extension": "Informiere dich bei einem Schulbauernhofbesuch oder über die Tierhaltungskennzeichnung beim Einkauf über verschiedene Haltungsformen.",
+		"takeaway": "Körperbau und Lebensweise eines Nutztiers bestimmen, wie viel Platz, Sozialkontakt, Licht, Pflege und passendes Futter für eine artgerechte Haltung nötig sind."
+	},
+	{
+		"id": "b5-heimtiere-verantwortung",
+		"stage": "umgebung",
+		"title": "Heimtiere artgerecht halten und Verantwortung übernehmen",
+		"skill": "Ein Meerschweinchen allein im kleinen Käfig leidet – Heimtiere sind lebende Mitgeschöpfe.",
+		"bindings": ["1", "4"],
+		"paragraphs": [
+			"Wer ein Heimtier wie Hund, Katze, Kaninchen oder Meerschweinchen hält, übernimmt Verantwortung für ein fühlendes Mitgeschöpf. Artgerecht bedeutet, dass das Tier seine natürlichen Verhaltensweisen ausleben darf: Kaninchen und Meerschweinchen sind zum Beispiel gesellige Tiere, die niemals einzeln gehalten werden dürfen und viel mehr Platz brauchen als einen winzigen Gitterkäfig.",
+			"Auch Katzen brauchen Möglichkeiten zum Klettern, Kratzen und Zurückziehen; Hunde benötigen täglichen Auslauf, Erziehung und engen Familienanschluss. Bevor man sich ein Tier anschafft, prüft man neben den eigenen Gefühlen sachlich Kriterien wie Zeitaufwand, Urlaubsbetreuung, Platz, Lebenserwartung und Tierarztkosten."
+		],
+		"materialLabel": "Vergleich zweier Kaninchenhaltungen",
+		"material": "Haltung A: Ein einzelnes Zwergkaninchen sitzt den ganzen Tag in einem 80 cm breiten Plastikkäfig im Kinderzimmer.\nHaltung B: Zwei kastrierte bzw. verträgliche Kaninchen leben gemeinsam in einem großen, gesicherten Gehege mit Versteckhäuschen, Nagematerial, frischem Heu und täglichem Auslauf.",
+		"sourceIds": ["lp", "tierschutz"],
+		"quiz": {
+			"question": "Welche Aussage gehört zu einer artgerechten Heimtierhaltung?",
+			"answer": "Soziale Tiere wie Kaninchen oder Meerschweinchen werden mindestens zu zweit mit ausreichend Platz und Beschäftigung gehalten.",
+			"wrong": [
+				"Ein einzeln gehaltenes Kaninchen gewöhnt sich einfach an einen engen Käfig.",
+				"Die Größe des Geheges spielt keine Rolle, solange das Fell sauber gebürstet wird."
+			],
+			"explanation": "Gesellige Tiere brauchen Artgenossen und viel Bewegungsfläche, um nicht zu vereinsamen oder krank zu werden."
+		},
+		"cases": [
+			{
+				"prompt": "Warum brauchen Kaninchen immer Heu und Zweige zum Knabbern?",
+				"options": ["Ihre Zähne wachsen lebenslang nach und müssen abgenutzt werden", "Sie mögen überhaupt kein frisches Wasser"],
+				"answer": "Ihre Zähne wachsen lebenslang nach und müssen abgenutzt werden",
+				"feedback": "Ohne Rohfasern und Nagematerial wachsen die Schneide- und Backenzähne zu lang und verletzen das Tier."
+			},
+			{
+				"prompt": "Eine Familie fährt gern drei Wochen pro Jahr weit weg und hat täglich wenig Zeit.",
+				"options": ["Anschaffung eines Hundes kritisch überdenken", "Einfach spontan einen Welpen kaufen"],
+				"answer": "Anschaffung eines Hundes kritisch überdenken",
+				"feedback": "Ein Hund braucht verlässlich jeden Tag mehrere Stunden Zeit, Auslauf und eine sichere Betreuung."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Beurteile Haltung A und Haltung B aus dem Material anhand von vier wichtigen Aspekten artgerechter Tierhaltung.",
+				"model": "Haltung A ist nicht artgerecht: Das Kaninchen hat keinen Artgenossen, kaum Platz zum Hoppeln oder Aufrichten und zu wenig Reize oder Versteckmöglichkeiten. Haltung B erfüllt wichtige Aspekte artgerechter Tierhaltung: Sie bietet Sozialkontakt zu einem Partner, deutlich mehr Bewegungsfläche, Verstecke gegen Stress sowie passendes Futter und Nagematerial.",
+				"criteria": [
+					"Sozialkontakt als Kriterium angewendet",
+					"Bewegungsraum/Platzbedarf verglichen",
+					"Beschäftigung/Verstecke und Fütterung einbezogen"
+				],
+				"hints": [
+					"Vergleiche Partner, Platz, Einrichtung und Futter.",
+					"Denke an das Verhalten wilder Kaninchen."
+				]
+			},
+			"2": {
+				"prompt": "Formuliere eine Checkliste aus vier Fragen, die ein Fünftklässler mit seinen Eltern vor dem Kauf eines Heimtiers ehrlich klären sollte, und begründe dies mit unserer Verantwortung als Mitgeschöpf.",
+				"model": "1. Wer füttert, reinigt und beschäftigt das Tier verlässlich jeden Tag – auch bei Schulstress? 2. Haben wir dauerhaft genug Platz und ein artgerechtes Zuhause samt Artgenossen? 3. Können wir regelmäßiges Futter, Einstreu und hohe Tierarztkosten über viele Jahre bezahlen? 4. Wer versorgt das Tier zuverlässig in den Ferien? Tiere sind fühlende Mitgeschöpfe und kein Spielzeug, das man bei Langeweile einfach abgibt.",
+				"criteria": [
+					"Vier sachliche Prüfungsfragen zu Zeit, Platz, Kosten und Betreuung formuliert",
+					"Verantwortung für Tiere als fühlende Mitgeschöpfe begründet",
+					"Langfristige Verpflichtung deutlich gemacht"
+				],
+				"hints": [
+					"Denke an Alltag, Platz, Kosten und Urlaub.",
+					"Warum ist ein Tier kein gewöhnlicher Gegenstand?"
+				]
+			}
+		},
+		"extension": "Vergleiche im Unterricht echte Haltungsbeispiele von Heim- und Nutztieren mit den Empfehlungen des Tierschutzes.",
+		"takeaway": "Artgerechte Haltung achtet Sozialverhalten, Platz, Nahrung, Beschäftigung und Pflege – als verantwortungsvoller Umgang mit Tieren als Mitgeschöpfen."
+	},
+	{
+		"id": "b5-bluetenpflanzen-bau",
+		"stage": "umgebung",
+		"title": "Grundbauplan der Blütenpflanze und Arbeitsteilung",
+		"skill": "Wurzel, Sprossachse, Laubblatt und Blüte erfüllen jeweils eine eigene Aufgabe für die ganze Pflanze.",
+		"bindings": ["4"],
+		"paragraphs": [
+			"Auch wenn Gänseblümchen, Tulpe und Apfelbaum äußerlich sehr verschieden aussehen, teilen alle Blütenpflanzen denselben Grundbauplan aus vier Pflanzenorganen: Wurzel, Sprossachse (Stängel oder Stamm), Laubblätter und Blüte.",
+			"Genau wie im menschlichen Körper gilt hier das biologische Grundprinzip der Arbeitsteilung: Die Wurzel verankert die Pflanze im Boden und nimmt Wasser sowie Mineralsalze auf. Die Sprossachse trägt Blätter und Blüten, hält sie ans Licht und leitet Wasser nach oben sowie Nährstoffe weiter. Die Laubblätter fangen Sonnenlicht ein und bilden mithilfe von Wasser und Luftzucker Nährstoffe. Die Blüte dient der Fortpflanzung durch Bildung von Samen und Früchten."
+		],
+		"materialLabel": "Grundbauplan einer Blütenpflanze (Beispiel Ackerbohne)",
+		"material": "Unter der Erde: verzweigte Wurzel.\nÜber der Erde: aufrechter Stängel (Sprossachse) mit grünen Laubblättern und weißen Blüten.\nSchüleraussage: „Nur Tiere haben Organe, Pflanzen bestehen bloß aus Stielen und Grünzeug.“",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"question": "Welche vier Grundorgane gehören zum Grundbauplan jeder Blütenpflanze?",
+			"answer": "Wurzel, Sprossachse, Laubblatt und Blüte.",
+			"wrong": [
+				"Herz, Lunge, Magen und Gehirn.",
+				"Nur Blüte und Samen ohne grüne Teile."
+			],
+			"explanation": "Jede Blütenpflanze teilt ihre Lebensaufgaben arbeitsteilig auf die vier Organe Wurzel, Sprossachse, Laubblatt und Blüte auf."
+		},
+		"cases": [
+			{
+				"prompt": "Welches Pflanzenorgan verankert die Pflanze im Boden und nimmt Wasser mit gelösten Salzen auf?",
+				"options": ["Die Wurzel", "Die Blüte"],
+				"answer": "Die Wurzel",
+				"feedback": "Die verzweigte Wurzel verankert und versorgt die ganze Pflanze aus dem Boden."
+			},
+			{
+				"prompt": "Warum ist die Sprossachse bei einer Sonnenblume stabil, aber dennoch mit Leitungsbahnen durchzogen?",
+				"options": ["Sie muss die Blätter ins Licht heben und Stoffe zwischen Wurzel und Blättern leiten", "Sie nimmt unter der Erde Regenwürmer auf"],
+				"answer": "Sie muss die Blätter ins Licht heben und Stoffe zwischen Wurzel und Blättern leiten",
+				"feedback": "Bau und Funktion passen zusammen: Stützfunktion für Lichtzugang und Transportverbindung zwischen Boden und Krone."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Nenne die vier Grundorgane einer Blütenpflanze und ordne jedem Organ seine Hauptaufgabe für die Pflanze zu.",
+				"model": "1. Wurzel: verankert die Pflanze im Boden und nimmt Wasser sowie Mineralsalze auf. 2. Sprossachse: stützt die Pflanze, richtet Blätter zum Licht aus und transportiert Wasser sowie Nährstoffe. 3. Laubblatt: fängt Licht ein und bildet Nährstoffe für die Pflanze. 4. Blüte: ermöglicht die Fortpflanzung und Samenbildung.",
+				"criteria": [
+					"Alle vier Grundorgane genannt",
+					"Zu jedem Organ eine passende Hauptaufgabe beschrieben",
+					"Aufgaben sauber voneinander abgegrenzt"
+				],
+				"hints": [
+					"Gehe von unten (im Boden) nach oben (zur Spitze).",
+					"Denke an Verankerung, Leitung, Nährstoffbildung und Fortpflanzung."
+				]
+			},
+			"2": {
+				"prompt": "Widerlege die Schüleraussage im Material und erkläre, warum „Arbeitsteilung“ als universelles Prinzip sowohl für den Menschen als auch für die Pflanze gilt.",
+				"model": "Auch Pflanzen besitzen Organe, denn ein Organ ist eine abgegrenzte Funktionseinheit mit einer besonderen Aufgabe. Wurzel, Sprossachse, Laubblatt und Blüte sind genau solche Organe. Wie bei Herz, Lunge und Magen im menschlichen Körper gilt auch bei Pflanzen das Prinzip der Arbeitsteilung: Kein Organ kann alles allein – erst durch Zusammenarbeit und Stoffaustausch über die Sprossachse überlebt der gesamte Pflanzenorganismus.",
+				"criteria": [
+					"Begriff „Organ“ fachlich auf die Pflanze angewendet",
+					"Prinzip der Arbeitsteilung erklärt",
+					"Vergleich zum menschlichen Körper gezogen"
+				],
+				"hints": [
+					"Was macht ein Körperteil zu einem Organ?",
+					"Warum überlebt ein abgeschnittenes Laubblatt nicht dauerhaft allein?"
+				]
+			}
+		},
+		"extension": "Untersuche im Unterricht eine echte, vorsichtig ausgegrabene Blütenpflanze (z. B. ein Gänseblümchen) und skizziere ihre vier Organe beschriftet.",
+		"takeaway": "Blütenpflanzen besitzen arbeitsteilig die vier Grundorgane Wurzel, Sprossachse, Laubblatt und Blüte – wie beim Menschen ermöglicht Zusammenarbeit das Überleben."
+	},
+	{
+		"id": "b5-bluete-vielfalt",
+		"stage": "umgebung",
+		"title": "Aufbau der Blüte und Vielfalt der Blütenpflanzen",
+		"skill": "Schaut man genau in eine Kirschblüte, erkennt man außen bunte Blätter und innen Staubblätter und Stempel.",
+		"bindings": ["1", "4"],
+		"paragraphs": [
+			"Bei vielen Blütenpflanzen wie der Kirsche oder dem Raps erkennst du von außen nach innen vier Bestandteile der Blüte: Grüne Kelchblätter schützen die noch geschlossene Knospe. Farbige Kronblätter locken Insekten an. Weiter innen sitzen die männlichen Staubblätter (aus Staubfaden und Staubbeutel mit Blütenstaub) und ganz in der Mitte der weibliche Stempel.",
+			"Der Stempel gliedert sich von oben nach unten in die oft klebrige Narbe, den Griffel und den unteren Fruchtknoten mit den Samenanlagen. Auf Wiesen und an Wegrändern zeigen Blütenpflanzen eine große Vielfalt in Farbe, Form und Blühzeit – etwa Frühblüher wie Schneeglöckchen oder Krokus im zeitigen Frühjahr sowie Sommerblumen wie Margerite und Klee. Diese heimische Biodiversität ist Lebensgrundlage für viele Insekten und verdient unseren Schutz."
+		],
+		"materialLabel": "Untersuchungsergebnisse zweier echter Wiesenblüten",
+		"material": "Kirschblüte (Insektenbestäubung): 5 grüne Kelchblätter, 5 weiße Kronblätter, zahlreiche Staubblätter rund um einen zentralen Stempel (Narbe, Griffel, Fruchtknoten), süßer Nektar.\nFrühblüher Schneeglöckchen: blüht schon im Februar/März mithilfe gespeicherter Nährstoffe in der unterirdischen Zwiebel.",
+		"sourceIds": ["lp", "arten"],
+		"quiz": {
+			"question": "Aus welchen drei Teilen besteht der weibliche Stempel in der Mitte einer Blüte von oben nach unten?",
+			"answer": "Narbe, Griffel und Fruchtknoten.",
+			"wrong": [
+				"Staubfaden, Staubbeutel und Blütenstaub.",
+				"Kelchblatt, Kronblatt und Sprossachse."
+			],
+			"explanation": "Oben nimmt die Narbe den Blütenstaub auf, der Griffel leitet weiter, und im Fruchtknoten liegen die Samenanlagen."
+		},
+		"cases": [
+			{
+				"prompt": "Welcher Blütenteil schützt die noch geschlossene Blütenknospe vor Kälte und Austrocknung?",
+				"options": ["Die meist grünen Kelchblätter", "Die Staubbeutel"],
+				"answer": "Die meist grünen Kelchblätter",
+				"feedback": "Die äußeren Kelchblätter umschließen die Knospe schützend, bevor sie sich öffnet."
+			},
+			{
+				"prompt": "Warum ist eine bunte Wiese mit vielen verschiedenen Blütenpflanzen für die Natur so wertvoll?",
+				"options": ["Hohe Biodiversität bietet verschiedenen Insekten zu unterschiedlichen Zeiten Nahrung", "Auf einer Wiese wächst am besten nur eine einzige Pflanzenart"],
+				"answer": "Hohe Biodiversität bietet verschiedenen Insekten zu unterschiedlichen Zeiten Nahrung",
+				"feedback": "Artenvielfalt sichert vielfältige Nahrungsquellen vom zeitigen Frühjahr bis in den Spätsommer."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Beschreibe den Aufbau einer vollständigen Blüte anhand der Kirschblüte von außen nach innen und nenne die Aufgabe jedes Teils.",
+				"model": "Ganz außen schützen die fünf grünen Kelchblätter die Knospe. Danach folgen die weißen Kronblätter, die Insekten anlocken. Weiter innen stehen die männlichen Staubblätter (Staubfaden und Staubbeutel), die den Blütenstaub bilden. In der Mitte sitzt der weibliche Stempel aus Narbe, Griffel und Fruchtknoten, in dem sich nach der Bestäubung die Samen entwickeln.",
+				"criteria": [
+					"Alle vier Blütenteile von außen nach innen geordnet",
+					"Staubblatt und Stempel jeweils genauer benannt",
+					"Aufgabe jedes Teils kurz erklärt"
+				],
+				"hints": [
+					"Starte bei der geschlossenen Knospe außen und arbeite dich zur Mitte vor.",
+					"Denke an Kelch, Krone, Staubblätter und Stempel."
+				]
+			},
+			"2": {
+				"prompt": "Erkläre, warum das Schneeglöckchen schon im zeitigen Frühjahr blühen kann, und begründe, warum wir seltene Wildblumen am natürlichen Standort stehen lassen.",
+				"model": "Das Schneeglöckchen nutzt die unterirdische Zwiebel als Speicherorgan für Nährstoffe aus dem Vorjahr. So treibt es sofort nach der Schneeschmelze aus, noch bevor hohe Bäume Schatten werfen. Seltene Wildblumen bleiben am Standort stehen, weil sie dort neue Samen bilden müssen und die Vielfalt der heimischen Pflanzenwelt sowie frühe Insekten auf sie angewiesen sind.",
+				"criteria": [
+					"Zwiebel als Nährstoffspeicher und Vorsprung vor Laubschatten erklärt",
+					"Schutz am natürlichen Standort begründet",
+					"Zusammenhang zu Biodiversität und Insekten hergestellt"
+				],
+				"hints": [
+					"Woher nimmt ein Frühblüher im kalten März die Energie?",
+					"Was passiert mit den Insekten und der Art, wenn man viele Wildblumen pflückt?"
+				]
+			}
+		},
+		"extension": "Untersuche im Unterricht echte Wiesen- oder Gartenblüten am natürlichen Standort mit der Lupe und zeichne die Blütenteile.",
+		"takeaway": "Eine Blüte besteht von außen nach innen aus Kelchblättern, Kronblättern, Staubblättern und Stempel (Narbe, Griffel, Fruchtknoten); vielfältige Blüten erhalten die heimische Biodiversität."
+	},
+	{
+		"id": "b5-wild-kulturpflanzen",
+		"stage": "umgebung",
+		"title": "Von der Wildpflanze zur Kulturpflanze",
+		"skill": "Der kleine, herbe Wildapfel schmeckt ganz anders als ein großer, saftiger Kulturapfel.",
+		"bindings": ["4"],
+		"paragraphs": [
+			"Fast alle Gemüse-, Obst- und Getreidesorten auf unseren Tellern stammen von Wildpflanzen ab. Über viele Jahrhunderte hinweg beobachteten Menschen Pflanzen und säten oder vermehrten gezielt jene Exemplare weiter, die größere Früchte, weniger Bitterstoffe, weniger Stacheln oder bessere Erträge lieferten. So entstanden durch gezielte Züchtung aus Wildpflanzen unsere Kulturpflanzen.",
+			"Beim Getreide führte das zum Beispiel dazu, dass Kulturweizen viel größere, dickere Körner trägt als Wildgräser und dass die reifen Körner in der Ähre fest bleiben, statt bei der Reife einfach auf den Boden auszufallen. Ohne Kulturpflanzen wäre die Ernährung vieler Milliarden Menschen nicht möglich – allerdings verlieren hochgezüchtete Sorten oft natürliche Abwehrkräfte und brauchen Pflege durch den Menschen."
+		],
+		"materialLabel": "Vergleich Wildpflanze und Kulturpflanze am Beispiel Kohl und Weizen",
+		"material": "Wildkohl (an Meeresküsten): lockere Einzelblätter, bitter, unscheinbare Pflanze.\nKulturformen aus dem Wildkohl: Weißkohl (großer geschlossener Blattkopf), Blumenkohl (verdickter Blütenstand), Kohlrabi (verdickte Sprossachse), Grünkohl (krause Blätter).\nWildgräser vs. Kulturweizen: kleine, leicht ausfallende Körner gegenüber dicken, festsitzenden Körnern in der Ähre.",
+		"sourceIds": ["lp", "acker"],
+		"quiz": {
+			"question": "Welche Veränderung hat der Mensch beim Züchten von Kulturweizen aus Wildgräsern gezielt gefördert?",
+			"answer": "Größere Körner, die bis zur Ernte fest in der Ähre sitzen bleiben.",
+			"wrong": [
+				"Körner, die sofort beim leichtesten Wind ausfallen und verschwinden.",
+				"Pflanzen ganz ohne Wurzeln und Blätter."
+			],
+			"explanation": "Festsitzende, große Körner erleichtern die Ernte mit Sichel oder Mähdrescher und liefern deutlich mehr Mehl."
+		},
+		"cases": [
+			{
+				"prompt": "Welcher Teil des Wildkohls wurde beim Kohlrabi besonders groß herausgezüchtet?",
+				"options": ["Die verdickte Sprossachse", "Die Blüte"],
+				"answer": "Die verdickte Sprossachse",
+				"feedback": "Beim Kohlrabi bildet die Sprossachse die knackige Knolle über der Erde."
+			},
+			{
+				"prompt": "Warum brauchen manche Kulturpflanzen mehr Pflege als verwandte Wildpflanzen?",
+				"options": ["Durch die Zucht auf Ertrag gingen oft Stacheln, Bitterstoffe oder Trockentoleranz verloren", "Kulturpflanzen betreiben keinen Stoffwechsel"],
+				"answer": "Durch die Zucht auf Ertrag gingen oft Stacheln, Bitterstoffe oder Trockentoleranz verloren",
+				"feedback": "Mildere, größere Sorten locken auch Schädlinge an und brauchen oft Bodenpflege oder Schutz."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Beschreibe am Beispiel Kohl oder Weizen aus dem Material, welche Merkmale Menschen bei der Züchtung von der Wildpflanze zur Kulturpflanze gezielt verändert haben.",
+				"model": "Beim Wildkohl haben Menschen gezielt unterschiedliche Pflanzenorgane vergrößert und gemildert: Beim Weißkohl bildete sich ein fester Blattkopf, beim Kohlrabi wurde die Sprossachse zur Knolle verdickt und beim Blumenkohl der Blütenstand vergrößert. Beim Weizen wurden größere Körner gezüchtet, die bis zur Ernte fest in der Ähre sitzen bleiben.",
+				"criteria": [
+					"Konkretes Beispiel (Kohl oder Weizen) genutzt",
+					"Gezielte Veränderungen konkret beschrieben",
+					"Bezug zu menschlicher Auswahl und Züchtung hergestellt"
+				],
+				"hints": [
+					"Vergleiche das Aussehen oder die Organe vor und nach der Züchtung.",
+					"Nutze die Angaben aus dem Material."
+				]
+			},
+			"2": {
+				"prompt": "Erkläre, warum der Erhalt alter Wildpflanzen und robuster Landsorten trotz moderner Kulturpflanzen auch heute wichtig ist.",
+				"model": "Moderne Kulturpflanzen liefern zwar hohe Erträge für unsere Ernährung, haben durch einseitige Zucht aber oft Widerstandskraft gegen Trockenheit, Frost oder Schädlinge verloren. Alte Wild- und Landsorten tragen wertvolle Eigenschaften in sich, mit denen Züchter künftig wieder widerstandsfähigere Pflanzen gegen neue Krankheiten oder Klimaschwankungen gewinnen können.",
+				"criteria": [
+					"Bedeutung der Kulturpflanzen für die Ernährung benannt",
+					"Schwäche einseitiger Züchtung (Anfälligkeit) erklärt",
+					"Nutzen robuster Wild-/Landsorten als Reserve begründet"
+				],
+				"hints": [
+					"Denke an Krankheiten oder Trockenheit auf dem Feld.",
+					"Woher nimmt man später robuste Eigenschaften zurück?"
+				]
+			}
+		},
+		"extension": "Vergleiche im Supermarkt oder auf dem Wochenmarkt verschiedene Kohlsorten oder Apfelsorten auf ihre unterschiedlichen Formen.",
+		"takeaway": "Durch gezielte Züchtung entstanden aus Wildpflanzen ertragreiche Kulturpflanzen, die unsere Ernährung sichern, aber meist menschliche Pflege brauchen."
+	},
+	{
+		"id": "b5-nutzpflanzen-getreide",
+		"stage": "umgebung",
+		"title": "Getreidearten und Bedeutung von Nutzpflanzen",
+		"skill": "Weizen, Roggen, Gerste, Hafer, Mais und Kartoffel liefern Essen, Energie und Rohstoffe.",
+		"bindings": ["4"],
+		"paragraphs": [
+			"Nutzpflanzen sind Kulturpflanzen, die Menschen gezielt für Ernährung, Tierfutter, Rohstoffe oder Energie anbauen. Zu den wichtigsten Getreidearten gehören Weizen (für Weißbrot und Nudeln), Roggen (für dunkles Mischbrot), Gerste (vor allem für Tierfutter und Malz), Hafer (für Haferflocken und Futter) sowie Mais (als Futterpflanze, Lebensmittel und für Biogasanlagen).",
+			"Eine bekannte Nutzpflanze ist die Kartoffel: Unter der Erde speichert sie in Sprossknollen reichlich Stärke, weshalb sie gehäufelt, vor Frost geschützt und bei Befall beobachtet wird. Neben Nahrungsmitteln liefern Nutzpflanzen auch Baumwolle und Flachs für Stoffe, Holz als Baustoff sowie Rapsöl. Gleichzeitig können riesige Monokulturen und starkes Düngen Böden, Grundwasser und Insektenvielfalt belasten."
+		],
+		"materialLabel": "Überblick zu Getreide und Kartoffelanbau",
+		"material": "Getreidearten: Weizen (dichte Ähre, kaum Grannen), Roggen (schlanke Ähre mit langen Grannen), Gerste (sehr lange Grannen), Hafer (lockere Rispe), Mais (große Kolben).\nKartoffel: Nachtschattengewächs, unterirdische Speicherknollen (Sprossachse); Früchte/grüne Teile sind ungenießbar bis giftig; braucht lockere Erde und Fruchtwechsel auf dem Acker.",
+		"sourceIds": ["lp", "kartoffeln", "acker"],
+		"quiz": {
+			"question": "Woran erkennst du Hafer auf dem Feld leicht im Vergleich zu Weizen, Roggen oder Gerste?",
+			"answer": "An der locker hängenden Rispe statt einer geschlossenen Ähre.",
+			"wrong": [
+				"Hafer trägt große gelbe Kolben am Stängel.",
+				"Hafer wächst als großer Baum im Wald."
+			],
+			"explanation": "Während Weizen, Roggen und Gerste geschlossene Ähren bilden, stehen die Körner des Hafers in einer ausgebreiteten Rispe."
+		},
+		"cases": [
+			{
+				"prompt": "Welchen Nutzen haben Nutzpflanzen über das Essen hinaus?",
+				"options": ["Sie liefern auch Fasern (Baumwolle/Flachs), Holz, Öle und Energiepflanzen", "Sie dienen ausschließlich zur Zierde in der Vase"],
+				"answer": "Sie liefern auch Fasern (Baumwolle/Flachs), Holz, Öle und Energiepflanzen",
+				"feedback": "Nutzpflanzen sind wichtige Lieferanten für Kleidung, Baustoffe, technische Öle und Energie."
+			},
+			{
+				"prompt": "Warum wechselt man auf einem Kartoffelacker jedes Jahr die angebaute Pflanzenart (Fruchtwechsel)?",
+				"options": ["Um den Boden zu schonen und Schädlinge nicht Jahr für Jahr zu vermehren", "Damit gar keine Wurzeln mehr wachsen"],
+				"answer": "Um den Boden zu schonen und Schädlinge nicht Jahr für Jahr zu vermehren",
+				"feedback": "Fruchtwechsel verhindert einseitiges Auslaugen des Bodens und bremst spezialisierte Schädlinge aus."
+			}
+		],
+		"tasks": {
+			"1": {
+				"prompt": "Kennzeichne die Kartoffel nach Aufbau, Pflege und Verwendung und ordne den fünf Getreidearten jeweils eine typische Verwendung zu.",
+				"model": "Die Kartoffel ist eine Nutzpflanze, deren unterirdische Sprossknollen reichlich Stärke speichern; grüne Teile und Beeren sind ungenießbar. Sie braucht lockere, angehäufelte Erde, Sonne und Fruchtwechsel und wird als Speisekartoffel oder zur Stärkegewinnung genutzt. Getreide: Weizen für Brot/Nudeln, Roggen für Mischbrot, Gerste für Futter/Malz, Hafer für Flocken/Futter, Mais für Futter/Lebensmittel/Biogas.",
+				"criteria": [
+					"Kartoffel mit Aufbau, Pflegehinweis und Verwendung beschrieben",
+					"Alle fünf Getreidearten genannt",
+					"Jedem Getreide eine richtige Nutzung zugeordnet"
+				],
+				"hints": [
+					"Beachte bei der Kartoffel, welcher Pflanzenteil gegessen wird.",
+					"Ordne Weizen, Roggen, Gerste, Hafer und Mais knapp zu."
+				]
+			},
+			"2": {
+				"prompt": "Erkläre, welche zwei großen Aufgaben Nutzpflanzen jenseits der Ernährung übernehmen und welches ökologische Problem entsteht, wenn immer nur eine Pflanzenart auf riesigen Feldern wächst.",
+				"model": "Nutzpflanzen liefern neben Nahrung wichtige Rohstoffe (wie Holz, Baumwolle oder Rapsöl) und Energie (wie Holz oder Mais für Biogas). Wächst auf riesigen Feldern immer nur eine einzige Pflanzenart in Monokultur, finden spezialisierte Schädlinge beste Bedingungen vor, sodass häufiger gespritzt wird; zugleich fehlen blühende Randstreifen und Vielfalt für Bienen, Schmetterlinge und Vögel.",
+				"criteria": [
+					"Energie- und Rohstoffgewinnung mit Beispielen genannt",
+					"Ökologisches Problem der Monokultur nachvollziehbar erklärt",
+					"Auswirkung auf Boden oder Artenvielfalt beschrieben"
+				],
+				"hints": [
+					"Denke an Kleidung, Bauen, Heizen/Strom.",
+					"Was passiert bei Insekten und Schädlingen auf einem riesigen Einheitsfeld?"
+				]
+			}
+		},
+		"extension": "Erstelle im Unterricht eine kleine Getreide- oder Nutzpflanzenübersicht mit echten Ähren, Körnern und Alltagsprodukten.",
+		"takeaway": "Nutzpflanzen liefern Nahrung, Rohstoffe und Energie; Getreidearten unterscheiden sich in Ähren-, Rispen- oder Kolbenform, und nachhaltiger Anbau schützt Böden und Artenvielfalt."
+	}
+]
