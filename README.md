@@ -142,6 +142,7 @@ cd uml                 # or: cd physik-realschule-9 (dev server on :5181), cd sq
 # Englisch 5: cd englisch-realschule-5 (dev server on :5223)
 # Mathematik 13 Gymnasium (Vorschau): cd mathematik-gymnasium-13 (dev server on :5225)
 # Physik 11 Gymnasium: cd physik-gymnasium-11 (dev server on :5226)
+# Geography 5 Realschule: cd geographie-realschule-5 (dev server on :5240)
 # German 5 Mittelschule: cd deutsch-mittelschule-5 (dev server on :5230)
 # German 6 Mittelschule: cd deutsch-mittelschule-6 (dev server on :5231)
 # Mathematics 5 Mittelschule: cd mathematik-mittelschule-5 (dev server on :5228)
@@ -219,5 +220,12 @@ The [curriculum and existing-card inventory](docs/deutsch-mittelschule-5-6-cover
 records the verified official sources and the additional classroom practice.
 
 The [Deutsch 7 Mittelschule](deutsch-mittelschule-7/) and [Deutsch 8 Mittelschule](deutsch-mittelschule-8/) packages each add 37 lessons (36 per track: Regelklasse and M-Zug) and 74 linked ZAM cards across all four LehrplanPLUS Bayern areas (*Sprechen und Zuhören*, *Lesen, Literatur und Medien*, *Schreiben*, *Sprachgebrauch und Sprache*). Their [coverage and legacy inventory](docs/deutsch-mittelschule-7-8-coverage.md) checks all 142 Grade 7 and 144 Grade 8 verbatim expectations and confirms that no Mittelschule German `de-by` legacy cards exist.
+
+[Grade 5 geography for Bavarian Realschule](geographie-realschule-5/) is a local
+draft with 31 lessons, seven learning areas and 62 linked ZAM cards. Run
+`npm ci && npm run dev` in its folder (port 5240), or create the offline ZIP
+with `npm run package:zip`. The [curriculum and legacy inventory](docs/geographie-5-coverage.md)
+records all 30 verbatim expectations and a proposal-only card mapping. The draft
+is excluded from the public catalog, atlas registry and Pages.
 
 The [Biologie 5 Realschule package](biologie-realschule-5/) adds 25 lessons, four interactive models (microscope, cell comparison, human torso, and arm lever), 50 case decisions, 50 two-level writing tasks, and 50 linked ZAM cards across all four LehrplanPLUS Bayern areas (`biologie-realschule-5/coverage.json`, all 40 verbatim expectations verified). The [legacy review](docs/biologie-5-bestandsabgleich.md) proposes 5 category-A replacements and retains 19 cards active across the three Grade 5 `de-by` cells (`proposal-only`, `approved: null`; `cell.json` ships without `replaces` or `retired_items` until approved).

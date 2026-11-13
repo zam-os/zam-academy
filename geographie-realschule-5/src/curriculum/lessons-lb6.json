@@ -1,0 +1,233 @@
+[
+	{
+		"id": "geo-stadt",
+		"lb": 6,
+		"title": "Dein Schulort und sein Umland",
+		"period": "Geo5 LB 6 · Dein Schulort und sein Umland",
+		"intro": "Stadtfunktionen lassen sich an beobachtbaren Merkmalen erkennen.",
+		"paragraphs": [
+			"Viele mitteleuropäische Städte besitzen einen älteren Kern mit engen Straßen, Marktplatz und historischen Gebäuden. Reste einer Stadtmauer können frühere Grenzen zeigen. Später entstandene Wohn- und Gewerbegebiete liegen häufig weiter außen. Das ist ein Grundmuster, kein Bauplan für jeden Ort. Wohnen, Arbeiten, Versorgung, Bildung, Erholung und Verkehr verbinden sich in verschiedenen Teilen der Stadt.",
+			"Beispiel: In einem gedachten Schulort liegen Markt und Rathaus im alten Kern, neuere Wohngebiete außen und ein Gewerbegebiet an einer Ausfallstraße. Menschen pendeln aus dem Umland zur Arbeit oder Schule hinein und später zurück. Einkäufe, Waren und Freizeitwege verbinden Stadt und Umland. Prüfe dieses Modell an deinem echten Schulort; aus dem Aussehen eines Gebäudes allein folgt seine heutige Nutzung nicht sicher."
+		],
+		"takeaway": "Beschreibe Stadtstruktur und Funktionen mit Belegen und beachte die Verbindungen zum Umland.",
+		"sourceIds": ["lehrplan"],
+		"quiz": {
+			"question": "Wie nennt man die regelmäßige Fahrt zwischen Wohnort und Arbeitsort ohne dauerhaften Umzug?",
+			"answer": "Berufspendeln",
+			"wrong": ["Binnenwanderung", "Gebirgsbildung"],
+			"explanation": "Beim Pendeln bleibt der Wohnort bestehen; ein dauerhafter Umzug wäre Wanderung."
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Werkstatt · Dein Schulort und sein Umland",
+			"instruction": "Ordne die Beispiele zu. Lies bei der Prüfung auch die Begründungen.",
+			"categories": [
+				"Historischer Kern",
+				"Heutige Funktion",
+				"Stadt-Umland-Beziehung"
+			],
+			"entries": [
+				{
+					"text": "Eine erhaltene Stadtmauer um einen alten Markt.",
+					"target": 0,
+					"feedback": "Das kann auf frühere Stadtgrenzen hinweisen."
+				},
+				{
+					"text": "Ein Gebäude wird als Schule genutzt.",
+					"target": 1,
+					"feedback": "Bildung ist eine Grundfunktion des Orts."
+				},
+				{
+					"text": "Menschen fahren täglich aus Nachbarorten zur Arbeit.",
+					"target": 2,
+					"feedback": "Pendeln verbindet Stadt und Umland."
+				},
+				{
+					"text": "Läden versorgen auch Bewohner des Umlands.",
+					"target": 2,
+					"feedback": "Auch Versorgung schafft räumliche Verflechtungen."
+				}
+			],
+			"conclusion": "Das Grundmuster muss durch Beobachtungen am eigenen Ort geprüft werden."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Beschreibe am gedachten Schulort einen Stadtkern, eine Funktion und eine Umlandbeziehung.",
+				"hints": [
+					"Ich nenne ein Strukturmerkmal.",
+					"Ich erläutere eine Funktion."
+				],
+				"model": "Ein alter Markt mit Rathaus kann zum historischen Kern gehören. Eine Schule erfüllt eine Bildungsfunktion. Pendelwege aus benachbarten Orten verbinden den Schulort mit seinem Umland. Für den tatsächlichen Schulort prüfe ich diese Aussagen mit Stadtplan und Beobachtung.",
+				"criteria": [
+					"Ich nenne ein Strukturmerkmal.",
+					"Ich erläutere eine Funktion.",
+					"Ich beschreibe eine Verflechtung."
+				]
+			},
+			"2": {
+				"prompt": "Eine alte Fabrik sieht nach Industrie aus, enthält aber Wohnungen. Was lehrt das für deine Kartierung?",
+				"hints": [
+					"Ich trenne Bauform und Nutzung.",
+					"Ich prüfe den aktuellen Zustand."
+				],
+				"model": "Ich muss die heutige Nutzung prüfen, statt sie allein aus der Bauform abzuleiten. Gebäude können ihre Funktion wechseln. Ich notiere eine überprüfte Beobachtung oder kennzeichne eine unsichere Zuordnung. Die Karte soll den gewählten Zeitpunkt und die tatsächlich untersuchte Funktion zeigen.",
+				"criteria": [
+					"Ich trenne Bauform und Nutzung.",
+					"Ich prüfe den aktuellen Zustand.",
+					"Ich kennzeichne Unsicherheit."
+				]
+			}
+		}
+	},
+	{
+		"id": "geo-exkursion",
+		"lb": 6,
+		"title": "Eine Exkursion vorbereiten und auswerten",
+		"period": "Geo5 LB 6 · Eine Exkursion vorbereiten und auswerten",
+		"intro": "Die App bereitet Feldarbeit vor; beobachten musst du draußen.",
+		"paragraphs": [
+			"Eine Exkursion beginnt mit einer räumlichen Frage, einer geeigneten Route und einem einfachen Beobachtungsbogen. Du nutzt den Stadtplan zur Orientierung und kartierst zum Beispiel Nutzungen an vereinbarten Straßenabschnitten. Für eine Befragung brauchst du gemeinsam abgestimmte, verständliche Fragen und eine freiwillige Teilnahme. Notiere keine Namen oder privaten Angaben; die Planung und Begleitung erfolgen im Unterricht.",
+			"Beispiel: Die Klasse untersucht, wo es am Weg zwischen Schule und Bücherei schattige Sitzplätze gibt. Sie markiert Haltepunkte, beobachtet zu einer festgelegten Zeit und trennt Beobachtung von Vermutung. Eine einzelne Beobachtung gilt nur für diesen Zeitpunkt. Anschließend ordnet ihr Ergebnisse in eine Skizze ein, benennt fehlende Angaben und präsentiert eure Aussagen. Ein vollständig ausgefüllter App-Text bestätigt weder die Durchführung noch die Qualität der Feldarbeit."
+		],
+		"takeaway": "Frage, Route, nachvollziehbare Beobachtung und begrenzte Auswertung machen Feldarbeit prüfbar.",
+		"sourceIds": ["lehrplan", "atlas"],
+		"quiz": {
+			"question": "Was ist eine überprüfbare Beobachtung bei einer Kartierung?",
+			"answer": "Am markierten Haltepunkt stehen zwei Bänke.",
+			"wrong": [
+				"Hier fühlt sich jeder Mensch wohl.",
+				"Die ganze Stadt ist immer ruhig."
+			],
+			"explanation": "Die Aussage nennt ein konkretes beobachtbares Merkmal statt eine pauschale Bewertung."
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Werkstatt · Eine Exkursion vorbereiten und auswerten",
+			"instruction": "Ordne die Beispiele zu. Lies bei der Prüfung auch die Begründungen.",
+			"categories": ["Vorbereitung", "Erhebung", "Auswertung"],
+			"entries": [
+				{
+					"text": "Route und Beobachtungszeiten gemeinsam festlegen.",
+					"target": 0,
+					"feedback": "Diese Schritte gehören vor die Exkursion."
+				},
+				{
+					"text": "An einem Haltepunkt Bänke und Schatten notieren.",
+					"target": 1,
+					"feedback": "Das ist eine örtliche Beobachtung."
+				},
+				{
+					"text": "Ergebnisse in einer Karte darstellen und Grenzen benennen.",
+					"target": 2,
+					"feedback": "Das ordnet und beurteilt die erhobenen Daten."
+				},
+				{
+					"text": "Eine freiwillige kurze Frage mit der Klasse abstimmen.",
+					"target": 0,
+					"feedback": "Auch eine Befragung wird vorab geplant."
+				}
+			],
+			"conclusion": "Reale Durchführung, Begleitung und Präsentation bleiben Unterrichtsarbeit."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Plane eine Kartierung schattiger Sitzplätze zwischen Schule und Bücherei.",
+				"hints": [
+					"Ich formuliere Frage und Route.",
+					"Ich plane konkrete Beobachtungen."
+				],
+				"model": "Ich formuliere die Frage, zeichne eine geeignete Route und lege mit der Klasse Haltepunkte und Zeit fest. Ich notiere Sitzplätze und sichtbaren Schatten getrennt. Nach der begleiteten Erhebung stelle ich die Beobachtungen in einer Skizze dar und begrenze sie auf den untersuchten Zeitraum.",
+				"criteria": [
+					"Ich formuliere Frage und Route.",
+					"Ich plane konkrete Beobachtungen.",
+					"Ich trenne Plan, Durchführung und Auswertung."
+				]
+			},
+			"2": {
+				"prompt": "Eine Gruppe beobachtet morgens, eine andere mittags. Warum sind ihre Schattenkarten nicht unmittelbar vergleichbar?",
+				"hints": ["Ich erkläre den Zeitunterschied.", "Ich prüfe Bedingungen."],
+				"model": "Schatten verändert sich mit Sonnenstand und Tageszeit. Ich vergleiche Datum, Uhrzeit und Wetter und kennzeichne die Unterschiede. Für einen direkten Vergleich brauchen wir abgestimmte Erhebungsbedingungen oder eine Fragestellung, die gerade die Veränderung im Tageslauf untersucht.",
+				"criteria": [
+					"Ich erkläre den Zeitunterschied.",
+					"Ich prüfe Bedingungen.",
+					"Ich schlage einen fairen Vergleich vor."
+				]
+			}
+		}
+	},
+	{
+		"id": "geo-lebensqualitaet",
+		"lb": 6,
+		"title": "Passende Karten und bessere Wege",
+		"period": "Geo5 LB 6 · Passende Karten und bessere Wege",
+		"intro": "Lebensqualität hängt auch davon ab, wessen Bedürfnisse du betrachtest.",
+		"paragraphs": [
+			"Für eine Wanderung eignet sich eine Karte mit Wegen, Gelände und Höhen. Ein Stadtplan zeigt Straßen und Einrichtungen, eine ÖPNV-Karte Linien und Haltestellen. Ein Linienplan kann Verbindungen deutlich zeigen, ohne Entfernungen maßstäblich abzubilden. Eine Radkarte ergänzt für das Radfahren wichtige Wege. Die beste Karte ist diejenige, die deine konkrete Frage beantworten kann.",
+			"Beispiel: Eine Schülerin möchte einen schattigen Fußweg, ein älterer Mensch kurze Wege mit Sitzplätzen, ein Rollstuhlfahrer stufenlose Zugänge. Ein Vorschlag für mehr Lebensqualität nennt Ort, Betroffene, Belege und mögliche Nachteile. Bevor ihr einen Weg empfehlt, prüft ihr vor Ort beziehungsweise mit verlässlichen Angaben, ob er wirklich passt. Eine schöne Linie auf einer Karte bestätigt weder Barrierefreiheit noch sichere Querungen."
+		],
+		"takeaway": "Wähle Karten nach der Frage und begründe Verbesserungen aus mehreren Perspektiven.",
+		"sourceIds": ["lehrplan"],
+		"quiz": {
+			"question": "Welche Karte hilft zuerst bei der Frage nach einer Busverbindung?",
+			"answer": "Eine ÖPNV-Karte mit Linien und Haltestellen",
+			"wrong": ["Eine Karte der Erdzeitalter", "Ein Globus ohne Ortsnamen"],
+			"explanation": "Die ÖPNV-Karte zeigt das für diese Frage relevante Verkehrsnetz."
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Werkstatt · Passende Karten und bessere Wege",
+			"instruction": "Ordne die Beispiele zu. Lies bei der Prüfung auch die Begründungen.",
+			"categories": [
+				"Wanderkarte",
+				"ÖPNV-Karte",
+				"Zusätzliche örtliche Prüfung"
+			],
+			"entries": [
+				{
+					"text": "Höhen und Wanderwege für eine Tour vergleichen.",
+					"target": 0,
+					"feedback": "Geländeangaben und Wege sind für die Wanderplanung wichtig."
+				},
+				{
+					"text": "Umsteigestellen zweier Buslinien finden.",
+					"target": 1,
+					"feedback": "Der Linienplan zeigt Verbindungen."
+				},
+				{
+					"text": "Ob eine Querung stufenlos und tatsächlich nutzbar ist.",
+					"target": 2,
+					"feedback": "Dafür braucht es verlässliche aktuelle Angaben und gegebenenfalls eine begleitete Ortsprüfung."
+				}
+			],
+			"conclusion": "Ein Linienplan liefert keine verlässliche Luftlinienentfernung, wenn er schematisch gezeichnet ist."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Wähle Karten für einen Busweg zur Bücherei und die anschließende kurze Wanderung und begründe.",
+				"hints": [
+					"Ich wähle zwei passende Medien.",
+					"Ich begründe nach der Frage."
+				],
+				"model": "Für die Busfahrt nutze ich einen Linienplan und aktuelle Fahrplanangaben. Für die Wanderung brauche ich Wege und Höhen aus einer Wanderkarte. Der Linienplan kann schematisch sein; ich leite daraus keine genaue Fußweglänge ab. Örtliche Zugänge und Querungen prüfe ich zusätzlich.",
+				"criteria": [
+					"Ich wähle zwei passende Medien.",
+					"Ich begründe nach der Frage.",
+					"Ich benenne eine Grenze."
+				]
+			},
+			"2": {
+				"prompt": "Bewerte den Vorschlag einer neuen Bank am Schulweg aus zwei Perspektiven.",
+				"hints": [
+					"Ich nenne zwei Perspektiven.",
+					"Ich verknüpfe Urteil mit Belegen."
+				],
+				"model": "Eine Bank kann älteren Menschen und Kindern eine Pause ermöglichen. Ihr Standort darf aber einen schmalen Gehweg nicht unpassierbar machen. Ich prüfe Wegbreite, Schatten und die Bedürfnisse verschiedener Nutzer. Erst danach formuliere ich einen begründeten Standortvorschlag und präsentiere ihn im Unterricht.",
+				"criteria": [
+					"Ich nenne zwei Perspektiven.",
+					"Ich verknüpfe Urteil mit Belegen.",
+					"Ich formuliere einen prüfbaren Vorschlag."
+				]
+			}
+		}
+	}
+]
