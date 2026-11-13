@@ -147,6 +147,37 @@ try {
 				assert.equal(data.svg, lesson.model ? 1 : 0);
 				assert.ok(!/NaN|undefined/.test(data.main));
 				assert.equal(data.over, false);
+
+				if (lesson.model === "germany" || lesson.model === "thematic") {
+					const geography = await evaluate(`(() => {
+            const svg = document.querySelector('.regional-map');
+            const width = 11 * Math.cos(51.5 * Math.PI / 180) / 9 * 380;
+            const point = (lon,lat) => new DOMPoint((700-width)/2 + (lon-5)/11*width,25+(56-lat)/9*380);
+            const samples = [['NLD',5.5,51.8],['FRA',6.2,48.7],['POL',15.5,52.5],['DNK',9.5,55.5]];
+            return {
+              land: samples.map(([code,lon,lat]) => {
+                const path=svg.querySelector('[data-map-country="'+code+'"]');
+                return path?.classList.contains('map-context') && path.isPointInFill(point(lon,lat));
+              }),
+              sea: Array.from(svg.querySelectorAll('[data-sea-label]')).map(label => {
+                const p=new DOMPoint(Number(label.getAttribute('x')),Number(label.getAttribute('y')));
+                const frame=svg.querySelector('rect.map-water').getBBox();
+                return p.x>frame.x && p.x<frame.x+frame.width && p.y>frame.y && p.y<frame.y+frame.height
+                  && !Array.from(svg.querySelectorAll('[data-map-country]')).some(path=>path.isPointInFill(p));
+              })
+            };
+          })()`);
+					assert.deepEqual(
+						geography.land,
+						[true, true, true, true],
+						`${lesson.id}: neighbouring countries remain land`,
+					);
+					assert.deepEqual(
+						geography.sea,
+						lesson.model === "germany" ? [true, true] : [],
+						`${lesson.id}: sea labels lie offshore inside the frame`,
+					);
+				}
 				await screenshot(`${lesson.id}-level${level}-${theme}`);
 				pages++;
 			}
@@ -312,6 +343,7 @@ try {
 					"scale slider",
 					"all model comparisons",
 					"keyboard map markers",
+					"regional land and offshore sea labels",
 				],
 			},
 			null,

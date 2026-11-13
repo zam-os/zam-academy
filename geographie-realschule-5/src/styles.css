@@ -1376,3 +1376,22 @@ dialog::backdrop {
 	stroke: var(--ink);
 	stroke-width: 3;
 }
+
+/* Neighbouring countries stay land; only gaps inside the geographic frame are sea. */
+.regional-map .map-context {
+	fill: var(--soft);
+	stroke: var(--muted);
+	stroke-width: 0.65;
+	fill-rule: evenodd;
+}
+.regional-map .map-country {
+	stroke: var(--ink);
+	stroke-width: 1.2;
+}
+
+.map-frame {
+	fill: none;
+	stroke: var(--muted);
+	stroke-width: 0.8;
+	pointer-events: none;
+}

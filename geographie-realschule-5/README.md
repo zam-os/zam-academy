@@ -11,7 +11,7 @@ npm ci
 npm run dev
 ```
 
-Open `http://localhost:5238/geographie-realschule-5/`. For an install-free build, run `npm run package:zip` and open the HTML inside `release/ZAM-Academy-Geographie-5-offline.zip`. The ZIP includes Windows, macOS and Linux launchers. No account, server or runtime third-party request is required. External source links open only on a click.
+Open `http://localhost:5240/geographie-realschule-5/`. For an install-free build, run `npm run package:zip` and open the HTML inside `release/ZAM-Academy-Geographie-5-offline.zip`. The ZIP includes Windows, macOS and Linux launchers. No account, server or runtime third-party request is required. External source links open only on a click.
 
 ## Learning path
 
@@ -32,7 +32,7 @@ Real atlas lookup, sketches, local observations, an accompanied excursion, conse
 ## Models and data
 
 - The world map uses bundled Natural Earth geometry, an equator, a prime meridian and three approximate coordinate examples. The equirectangular projection distorts polar areas.
-- The regional map uses a central-latitude longitude correction. It locates all 16 state capitals and the seven Bavarian government seats; Munich serves both roles. It does not draw state or district boundaries.
+- The regional map uses a central-latitude longitude correction. The projected frame includes muted neighbouring land and offshore sea labels. It locates all 16 state capitals and the seven Bavarian government seats; Munich serves both roles. It does not draw state or district boundaries.
 - The scale calculator checks all integer paper lengths from 1–8 cm at 1 : 25 000 and 1 : 50 000. Screen dimensions do not represent paper centimetres.
 - Relief and illumination diagrams are explicitly schematic. They do not provide measured profiles, calibrated distances or an orbital simulation.
 - The two thematic maps mark selected city and agricultural regions. They are qualitative teaching examples, not complete coverage, current statistics or measured density maps.

@@ -77,6 +77,7 @@ describe("official curriculum and authored content", () => {
 					expect(LESSONS.some((l) => l.id === id)).toBe(true);
 			}
 		}
+		expect(coverage.areas[3].competencies[3].status).toBe("supported");
 		expect(coverage.areas[5].competencies[3].status).toBe("supported");
 		expect(
 			coverage.areas[6].competencies.every((c) => c.status === "supported"),
@@ -207,6 +208,51 @@ describe("maps, model comparisons and arithmetic", () => {
 		expect(new Set(CAPITALS.map((c) => c[0])).size).toBe(22);
 		expect(THEMATIC_POINTS.settlement).toHaveLength(3);
 		expect(THEMATIC_POINTS.agriculture).toHaveLength(3);
+	});
+
+	it.each(["geo-deutschland", "geo-bayern", "geo-themenkarten"])(
+		"keeps neighbouring land and the sea background in the same projected frame: %s",
+		(id) => {
+			const lesson = LESSONS.find((l) => l.id === id)!;
+			const html = renderModel(lesson, [], initialModelState(lesson.model!));
+			for (const code of ["NLD", "POL", "DNK", "FRA"])
+				expect(html).toMatch(
+					new RegExp(
+						`<path data-map-country="${code}"[^>]*class="map-context"`,
+					),
+				);
+			expect(html).toMatch(
+				/<path data-map-country="DEU"[^>]*class="map-country"/,
+			);
+			expect(html).toContain('clip-path="url(#regional-map-frame)"');
+			const water = html.match(/<rect[^>]*class="map-water"[^>]*>/)![0];
+			const attribute = (name: string) =>
+				Number(water.match(new RegExp(`${name}="([^" ]+)"`))![1]);
+			expect(attribute("x")).toBeGreaterThan(200);
+			expect(attribute("width")).toBeGreaterThan(280);
+			expect(attribute("width")).toBeLessThan(300);
+			expect(attribute("y")).toBe(25);
+			expect(attribute("height")).toBe(380);
+		},
+	);
+	it("anchors both sea labels within the actual regional window", () => {
+		const lesson = LESSONS.find((l) => l.id === "geo-deutschland")!;
+		const html = renderModel(lesson, [], initialModelState("germany"));
+		for (const [id, lon, lat] of [
+			["north-sea", 7, 54.6],
+			["baltic-sea", 14.3, 54.8],
+		] as const) {
+			const tag = html.match(
+				new RegExp(`<text[^>]*data-sea-label="${id}"[^>]*>`),
+			)![0];
+			const x = Number(tag.match(/ x="([^"]+)"/)![1]);
+			const y = Number(tag.match(/ y="([^"]+)"/)![1]);
+			expect([x, y]).toEqual(mapPoint(lon, lat, [5, 16, 47, 56]));
+			expect(x).toBeGreaterThan(205);
+			expect(x).toBeLessThan(495);
+			expect(y).toBeGreaterThan(25);
+			expect(y).toBeLessThan(105);
+		}
 	});
 	it.each(LESSONS.filter((l) => l.model))(
 		"makes all comparisons reachable and retains explicit model limits: $id",

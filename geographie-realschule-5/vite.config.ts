@@ -7,7 +7,7 @@ export default defineConfig({
 	base: "/geographie-realschule-5/",
 	plugins: [viteSingleFile()],
 	server: {
-		port: 5238,
+		port: 5240,
 		open: false,
 	},
 	build: {

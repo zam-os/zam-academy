@@ -61,18 +61,35 @@ function path(ring: number[][], bounds: Bounds): string {
 			.join(" ") + "Z"
 	);
 }
-function geometry(bounds: Bounds, onlyGermany = false): string {
+function geometry(bounds: Bounds): string {
+	const isRegional = bounds !== world;
 	return countries
-		.filter((c) => !onlyGermany || c.code === "DEU")
-		.map((c) => {
-			const polys =
-				c.geometry.type === "Polygon"
-					? [c.geometry.coordinates]
-					: c.geometry.coordinates;
-			return `<path d="${(polys as number[][][][]).map((poly) => poly.map((ring) => path(ring, bounds)).join(" ")).join(" ")}" class="map-country"><title>${esc(c.name)}</title></path>`;
+		.map((country) => {
+			const polygons = (
+				country.geometry.type === "Polygon"
+					? [country.geometry.coordinates]
+					: country.geometry.coordinates
+			) as number[][][][];
+			// Keep neighbouring land in the same geographic window, including polygons
+			// whose edges cross the frame. SVG clipping trims them at the projected bounds.
+			const visible = polygons.filter(([outer]) => {
+				const longitudes = outer.map((point) => point[0]);
+				const latitudes = outer.map((point) => point[1]);
+				return (
+					Math.max(...longitudes) >= bounds[0] &&
+					Math.min(...longitudes) <= bounds[1] &&
+					Math.max(...latitudes) >= bounds[2] &&
+					Math.min(...latitudes) <= bounds[3]
+				);
+			});
+			if (!visible.length) return "";
+			const className =
+				isRegional && country.code !== "DEU" ? "map-context" : "map-country";
+			return `<path data-map-country="${country.code}" d="${visible.map((poly) => poly.map((ring) => path(ring, bounds)).join(" ")).join(" ")}" class="${className}"><title>${esc(country.name)}</title></path>`;
 		})
 		.join("");
 }
+
 function dot(
 	lon: number,
 	lat: number,
@@ -102,9 +119,26 @@ function graticule(): string {
 	);
 }
 function mapSvg(body: string, isWorld = false): string {
-	// Regional view uses a corrected width; world keeps the 2:1 equirectangular aspect.
-	return `<svg class="geo-map ${isWorld ? "world-map" : "regional-map"}" viewBox="0 0 700 440" role="img" aria-label="${isWorld ? "Weltkarte mit Gradnetz und ausgewähltem Ort" : "Deutschlandumriss mit ausgewählten Orientierungspunkten"}"><rect x="30" y="25" width="640" height="380" class="map-water"/>${geometry(isWorld ? world : germany, !isWorld)}${body}<text x="650" y="45">N ↑</text></svg>`;
+	// The sea background, land clipping and annotations share the same projection.
+	const bounds = isWorld ? world : germany;
+	const [x, y] = mapPoint(bounds[0], bounds[3], bounds);
+	const [right, bottom] = mapPoint(bounds[1], bounds[2], bounds);
+	const frame = `x="${x}" y="${y}" width="${right - x}" height="${bottom - y}"`;
+	const clipId = isWorld ? "world-map-frame" : "regional-map-frame";
+	return `<svg class="geo-map ${isWorld ? "world-map" : "regional-map"}" viewBox="0 0 700 440" role="img" aria-label="${isWorld ? "Weltkarte mit Gradnetz und ausgewähltem Ort" : "Deutschland und benachbarte Landflächen mit ausgewählten Orientierungspunkten"}"><defs><clipPath id="${clipId}"><rect ${frame}/></clipPath></defs><rect ${frame} class="map-water"/><g clip-path="url(#${clipId})">${geometry(bounds)}</g><rect ${frame} class="map-frame"/>${body}<text x="650" y="45">N ↑</text></svg>${isWorld ? "" : '<p class="small map-legend">Helle Landfläche: Deutschland. Gedämpfte Landflächen: Nachbarländer. Getönte Flächen innerhalb des Kartenrahmens: Meer.</p>'}`;
 }
+function seaLabels(): string {
+	return [
+		{ id: "north-sea", name: "Nordsee", lon: 7, lat: 54.6 },
+		{ id: "baltic-sea", name: "Ostsee", lon: 14.3, lat: 54.8 },
+	]
+		.map((sea) => {
+			const [x, y] = mapPoint(sea.lon, sea.lat, germany);
+			return `<text data-sea-label="${sea.id}" x="${x}" y="${y}" text-anchor="middle">${sea.name}</text>`;
+		})
+		.join("");
+}
+
 function content(kind: ModelKind, state: ModelState): string {
 	if (kind === "world") {
 		const selected = WORLD_PLACES.find((p) => p.id === state.selected);
@@ -112,8 +146,7 @@ function content(kind: ModelKind, state: ModelState): string {
 	}
 	if (kind === "germany") {
 		const selected = CAPITALS.find((p) => p[0] === state.selected);
-		const [x, y] = mapPoint(12.5, 55.5, germany);
-		return `${mapSvg(CAPITALS.map((p) => dot(p[3], p[4], p[1], germany, p[0] === state.selected, p[0] === state.selected, p[0])).join("") + `<text x="45" y="${y + 12}">Nordsee</text><text x="${x}" y="${y + 12}">Ostsee</text>`)}<p class="model-readout" role="status">${selected ? `${esc(selected[1])} · ${esc(selected[2])}` : "Wähle einen Hauptstadtpunkt. Das Modell zeichnet keine Länder- oder Bezirksgrenzen."}</p><details><summary>Alle 16 Landeshauptstädte und die sieben bayerischen Regierungssitze</summary><div class="scenario-buttons">${CAPITALS.map((p) => `<button type="button" data-country="${p[0]}" aria-pressed="${state.selected === p[0]}">${esc(p[1])} · ${esc(p[2])}</button>`).join("")}</div></details><p class="small">München ist zugleich Landeshauptstadt und Regierungssitz von Oberbayern. Punkte zeigen ungefähre Lagen; prüfe Verwaltungsgrenzen im Atlas.</p>`;
+		return `${mapSvg(CAPITALS.map((p) => dot(p[3], p[4], p[1], germany, p[0] === state.selected, p[0] === state.selected, p[0])).join("") + seaLabels())}<p class="model-readout" role="status">${selected ? `${esc(selected[1])} · ${esc(selected[2])}` : "Wähle einen Hauptstadtpunkt. Das Modell zeichnet keine Grenzen der Bundesländer oder Regierungsbezirke."}</p><details><summary>Alle 16 Landeshauptstädte und die sieben bayerischen Regierungssitze</summary><div class="scenario-buttons">${CAPITALS.map((p) => `<button type="button" data-country="${p[0]}" aria-pressed="${state.selected === p[0]}">${esc(p[1])} · ${esc(p[2])}</button>`).join("")}</div></details><p class="small">München ist zugleich Landeshauptstadt und Regierungssitz von Oberbayern. Punkte zeigen ungefähre Lagen; prüfe Verwaltungsgrenzen im Atlas.</p>`;
 	}
 	if (kind === "thematic") {
 		const mode =
