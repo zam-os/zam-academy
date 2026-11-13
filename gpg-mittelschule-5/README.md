@@ -23,7 +23,7 @@ Progress, theme and drafts stay in this browser under `gpg_ms5_academy_progress_
 
 ```sh
 npm ci
-npm run dev           # http://localhost:5239/gpg-mittelschule-5/
+npm run dev           # http://localhost:5241/gpg-mittelschule-5/
 npm test
 npm run typecheck
 npm run build

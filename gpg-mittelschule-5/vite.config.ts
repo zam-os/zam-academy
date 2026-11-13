@@ -7,7 +7,7 @@ export default defineConfig({
   base: "/gpg-mittelschule-5/",
   plugins: [viteSingleFile()],
   server: {
-    port: 5239,
+    port: 5241,
     open: false,
   },
   build: {

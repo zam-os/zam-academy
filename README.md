@@ -37,6 +37,7 @@ Hands-on training apps that build understanding before [ZAM](https://github.com/
 | Geschichte 9 Realschule (LehrplanPLUS Bayern, gemeinsamer Lernpfad) | [`geschichte-realschule-9/`](geschichte-realschule-9/) | https://academy.zam-os.org/geschichte-realschule-9/ | `zam-academy:geschichte-realschule-9` |
 | Geschichte 10 Realschule (LehrplanPLUS Bayern, gemeinsamer Lernpfad) | [`geschichte-realschule-10/`](geschichte-realschule-10/) | https://academy.zam-os.org/geschichte-realschule-10/ | `zam-academy:geschichte-realschule-10` |
 | Geographie 9 Realschule (LehrplanPLUS Bayern, gemeinsamer Lernpfad) | [`geographie-realschule-9/`](geographie-realschule-9/) | https://academy.zam-os.org/geographie-realschule-9/ | `zam-academy:geographie-realschule-9` |
+| Biology 6 Realschule (Bavaria; local draft) | [`biologie-realschule-6/`](biologie-realschule-6/) | Local offline package | `zam-academy:biologie-realschule-6` |
 | Biologie 10 Realschule (LehrplanPLUS Bayern, gemeinsamer Lernpfad) | [`biologie-realschule-10/`](biologie-realschule-10/) | https://academy.zam-os.org/biologie-realschule-10/ | `zam-academy:biologie-realschule-10` |
 | Biology 11 Gymnasium (preview; Bavarian Einführungsklasse) | [`biologie-gymnasium-11/`](biologie-gymnasium-11/) | https://academy.zam-os.org/biologie-gymnasium-11/ | `zam-academy:biologie-gymnasium-11` |
 | Physik 10 Realschule (LehrplanPLUS Bayern, Zweig I und II/III) | [`physik-realschule-10/`](physik-realschule-10/) | https://academy.zam-os.org/physik-realschule-10/ | `zam-academy:physik-realschule-10` |
@@ -155,7 +156,7 @@ cd uml                 # or: cd physik-realschule-9 (dev server on :5181), cd sq
 # Mathematics 9 Mittelschule: cd mathematik-mittelschule-9 (dev server on :5236)
 # Mathematics 10 Mittelschule: cd mathematik-mittelschule-10 (dev server on :5237)
 # Biologie 5 Realschule: cd biologie-realschule-5 (dev server on :5238)
-# Geschichte/Politik/Geographie 5 Mittelschule: cd gpg-mittelschule-5 (dev server on :5239)
+# Geschichte/Politik/Geographie 5 Mittelschule: cd gpg-mittelschule-5 (dev server on :5241)
 # Grade 11 introductory biology preview: cd biologie-gymnasium-11 (dev server on :5227)
 npm ci
 npm run dev      # http://localhost:5180/uml/

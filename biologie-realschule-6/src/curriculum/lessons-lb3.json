@@ -1,0 +1,608 @@
+[
+	{
+		"id": "b6-wirbeltierklassen",
+		"lb": 3,
+		"title": "Wirbeltiere nach Merkmalen ordnen",
+		"period": "B6 LB 3 · Vielfalt von Wirbeltieren",
+		"intro": "Ein Lebensraum allein verrät dir keine Tierklasse.",
+		"paragraphs": [
+			"Wirbeltiere besitzen ein inneres Skelett mit Wirbelsäule. Im schulischen Überblick vergleichst du Fische, Amphibien, Reptilien, Vögel und Säugetiere. Körperbedeckung, Atmung, Temperaturhaushalt und Fortpflanzung liefern gemeinsam Hinweise. Ein einzelnes Merkmal wie Schwimmen reicht nicht aus. Die Gruppen haben viele Gemeinsamkeiten im inneren Bau und unterschiedliche Angepasstheiten an ihre Lebensweise.",
+			"Beispiel: Ein Delfin lebt im Wasser, atmet aber mit Lungen und säugt seine Jungen. Er ist ein Säugetier. Eine Fledermaus fliegt, hat jedoch Haare statt Federn und säugt ebenfalls. Ein Pinguin besitzt Federn und gehört zu den Vögeln, obwohl er nicht fliegen kann. Eine Merkmalsübersicht ist ein Modell: Nicht jede Art entspricht jedem typischen Beispiel der Gruppe."
+		],
+		"takeaway": "Ordne Wirbeltiere mit mehreren Körper- und Entwicklungsmerkmalen, nicht allein nach ihrem Lebensraum.",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"question": "Warum gehört ein Delfin zu den Säugetieren?",
+			"answer": "Er atmet mit Lungen und säugt seine Jungen.",
+			"wrong": [
+				"Jedes Wassertier ist ein Säugetier.",
+				"Weil er eine fischähnliche Körperform besitzt."
+			],
+			"explanation": "Die Körperform passt zum Schwimmen; Säugen und weitere Merkmale bestimmen die Einordnung."
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Deine Werkstatt: Wirbeltiere nach Merkmalen ordnen",
+			"instruction": "Ordne jede Aussage zu. Begründe die Entscheidung zuerst für dich.",
+			"categories": ["Vogel", "Säugetier", "Amphibium"],
+			"entries": [
+				{
+					"text": "Amsel: Federn, Schnabel und Lungen.",
+					"target": 0,
+					"feedback": "Federn sind ein kennzeichnendes Vogelmerkmal."
+				},
+				{
+					"text": "Fledermaus: Haare und Milch für die Jungen.",
+					"target": 1,
+					"feedback": "Fliegen macht sie nicht zum Vogel."
+				},
+				{
+					"text": "Grasfrosch: feuchte Haut und Entwicklung aus einer Kaulquappe.",
+					"target": 2,
+					"feedback": "Diese Merkmalskombination passt zu Amphibien."
+				}
+			],
+			"conclusion": "Ordne Wirbeltiere mit mehreren Körper- und Entwicklungsmerkmalen, nicht allein nach ihrem Lebensraum."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Erkläre an Delfin und Pinguin, warum „lebt im Wasser“ keine Wirbeltierklasse festlegt.",
+				"model": "Der Delfin ist ein Säugetier: Er atmet mit Lungen und säugt seine Jungen. Der Pinguin besitzt Federn und gehört zu den Vögeln. Beide nutzen Wasser als Lebensraum, aber die Einordnung richtet sich nach mehreren Körper- und Entwicklungsmerkmalen.",
+				"hints": [
+					"Welche Körperbedeckung besitzt der Pinguin?",
+					"Wie werden Delfinjunge versorgt?"
+				],
+				"criteria": [
+					"Ich ordne beide Tiere richtig ein.",
+					"Ich nenne passende Merkmale.",
+					"Ich trenne Lebensraum und Tierklasse."
+				]
+			},
+			"2": {
+				"prompt": "Eine Bestimmungs-App ordnet alle fliegenden Wirbeltiere als Vögel ein. Finde ein Gegenbeispiel und formuliere eine bessere Prüffrage.",
+				"model": "Eine Fledermaus widerlegt die Regel: Sie fliegt, trägt aber Haare und säugt ihre Jungen. Besser prüfe ich Körperbedeckung und Jungenversorgung gemeinsam. Federn sprechen für Vögel; Haare und Säugen für Säugetiere. Ein unscharfes Bild kann dafür unzureichend sein.",
+				"hints": [
+					"Welches fliegende Säugetier kennst du?",
+					"Welche Merkmale sind aussagekräftiger als Bewegung?"
+				],
+				"criteria": [
+					"Ich nenne ein richtiges Gegenbeispiel.",
+					"Ich verbessere das Kriterium.",
+					"Ich beachte die Grenze unklarer Beobachtungen."
+				]
+			}
+		}
+	},
+	{
+		"id": "b6-fische",
+		"lb": 3,
+		"title": "Fische: Atmung und Bewegung im Wasser",
+		"period": "B6 LB 3 · Vielfalt von Wirbeltieren",
+		"intro": "Verbinde Körperbau und Lebensweise am Beispiel eines heimischen Fisches.",
+		"paragraphs": [
+			"Viele Fische besitzen eine stromlinienförmige Gestalt, Flossen und eine schleimige, oft beschuppte Haut. Flossen unterstützen Antrieb, Steuerung und Stabilisierung. Kiemen nehmen im Wasser gelösten Sauerstoff auf; Fische atmen nicht den Wasserstoff des Wassers. Bei vielen Knochenfischen hilft eine Schwimmblase, die Lage im Wasser zu halten. Es gibt auch Fische ohne Schwimmblase.",
+			"Beispiel: Eine Forelle nutzt Körper- und Schwanzbewegungen gegen die Strömung. Ihr länglicher Körper verringert den Wasserwiderstand. Ein stromlinienförmiges technisches Fahrzeug nutzt ein ähnliches Prinzip der Widerstandsverminderung. Ein starrer Modellkörper zeigt jedoch weder Muskelarbeit noch Kiemenfunktion. Für eine Artbestimmung vergleichst du zusätzliche Merkmale mit einer geeigneten Bestimmungshilfe."
+		],
+		"takeaway": "Kiemen nehmen gelösten Sauerstoff auf; Körperform und Flossen unterstützen Bewegung im Wasser.",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"question": "Welchen Stoff nehmen Kiemen aus dem Wasser auf?",
+			"answer": "Gelösten Sauerstoff.",
+			"wrong": [
+				"Den im Wasser gebundenen Wasserstoff als Atemgas.",
+				"Sand als Energiequelle."
+			],
+			"explanation": "Atmung nutzt Sauerstoff, der im Wasser gelöst ist."
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Deine Werkstatt: Fische: Atmung und Bewegung im Wasser",
+			"instruction": "Ordne jede Aussage zu. Begründe die Entscheidung zuerst für dich.",
+			"categories": [
+				"Atmung",
+				"Bewegung oder Stabilisierung",
+				"Lage im Wasser bei vielen Knochenfischen"
+			],
+			"entries": [
+				{
+					"text": "Kiemen.",
+					"target": 0,
+					"feedback": "Sie bieten eine große Austauschfläche für gelöste Atemgase."
+				},
+				{
+					"text": "Schwanz- und andere Flossen.",
+					"target": 1,
+					"feedback": "Sie übernehmen unterschiedliche Bewegungs- und Steuerungsaufgaben."
+				},
+				{
+					"text": "Schwimmblase.",
+					"target": 2,
+					"feedback": "Sie hilft vielen, aber nicht allen Fischen bei der Lage im Wasser."
+				}
+			],
+			"conclusion": "Kiemen nehmen gelösten Sauerstoff auf; Körperform und Flossen unterstützen Bewegung im Wasser."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Erkläre an einer Forelle zwei Angepasstheiten an das Leben im Wasser und nenne eine Grenze eines Papierfischmodells.",
+				"model": "Die stromlinienförmige Gestalt verringert den Wasserwiderstand; Flossen unterstützen Fortbewegung und Steuerung. Kiemen ermöglichen die Aufnahme gelösten Sauerstoffs. Ein Papiermodell kann die Form vergleichen, bildet aber weder Atmung noch aktive Muskelbewegung ab.",
+				"hints": [
+					"Welche Form hilft in Strömung?",
+					"Was kann Papier nicht leisten?"
+				],
+				"criteria": [
+					"Ich verknüpfe zwei Strukturen mit Funktionen.",
+					"Ich beschreibe Atmung sachlich.",
+					"Ich nenne eine Modellgrenze."
+				]
+			},
+			"2": {
+				"prompt": "In einem Bach steigen Wassertemperatur und Belastung, Fische schnappen an der Oberfläche. Jemand will nur die Uferform verändern. Erkläre, welche biologische Bedingung geprüft werden sollte, ohne eine Ursache allein aus dem Verhalten zu behaupten.",
+				"model": "Ich prüfe unter anderem Sauerstoffgehalt und Temperatur des Wassers, weil Kiemen gelösten Sauerstoff benötigen. Das Verhalten kann auf ungünstige Bedingungen hinweisen, beweist die Ursache aber nicht. Mehrere Messungen und Beobachtungen sind nötig; ein Eingriff sollte auf diesen Belegen beruhen.",
+				"hints": [
+					"Welchen Stoff brauchen Kiemen?",
+					"Was unterscheidet einen Hinweis von einem Beweis?"
+				],
+				"criteria": [
+					"Ich nenne relevante Messgrößen.",
+					"Ich erkläre den Bezug zur Atmung.",
+					"Ich vermeide eine unbelegte eindeutige Diagnose."
+				]
+			}
+		}
+	},
+	{
+		"id": "b6-amphibien",
+		"lb": 3,
+		"title": "Amphibien: Entwicklung zwischen Wasser und Land",
+		"period": "B6 LB 3 · Vielfalt von Wirbeltieren",
+		"intro": "Verfolge die Verwandlung eines Grasfroschs.",
+		"paragraphs": [
+			"Amphibien besitzen eine dünne, drüsenreiche Haut. Beim Grasfrosch werden Eier als Laich im Wasser abgelegt. Daraus schlüpfen Kaulquappen, die zunächst mit Kiemen atmen. Während der Metamorphose entstehen Beine, der Schwanz wird zurückgebildet und die Atmung verändert sich. Erwachsene Grasfrösche nutzen Lungen und Haut; ihre Lebensweise bleibt an Feuchtigkeit gebunden.",
+			"Beispiel: Ein Grasfrosch braucht nicht nur ein Laichgewässer, sondern auch geeignete Landlebensräume und sichere Wanderwege. Eine Straße zwischen diesen Bereichen kann viele Tiere gefährden. Nicht jede Amphibienart entwickelt sich genau wie der Grasfrosch. Beobachte Laich und Tiere ohne sie zu entnehmen oder zu stören; eine Bestimmungshilfe klärt Merkmale der konkreten Art."
+		],
+		"takeaway": "Die Metamorphose verändert Körperbau und Lebensweise; Amphibienschutz braucht verbundene Lebensräume.",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"question": "Was verändert sich beim Grasfrosch während der Metamorphose?",
+			"answer": "Aus der Kaulquappe entwickelt sich ein Frosch mit Beinen und verändertem Atmungssystem.",
+			"wrong": [
+				"Der erwachsene Frosch verwandelt sich in einen Fisch.",
+				"Nur die Farbe wechselt, alle Organe bleiben gleich."
+			],
+			"explanation": "Die Verwandlung umfasst mehrere Körperstrukturen und Funktionen."
+		},
+		"workshop": {
+			"kind": "timeline",
+			"title": "Deine Werkstatt: Amphibien: Entwicklung zwischen Wasser und Land",
+			"instruction": "Bringe die Schritte in die richtige Reihenfolge.",
+			"categories": [],
+			"entries": [
+				{
+					"text": "Laich mit sich entwickelnden Embryonen.",
+					"target": 0,
+					"feedback": "Die Entwicklung beginnt im Ei."
+				},
+				{
+					"text": "Kaulquappe mit Kiemen und Schwanz.",
+					"target": 1,
+					"feedback": "Das frühe Larvenstadium lebt im Wasser."
+				},
+				{
+					"text": "Beine entstehen, der Schwanz wird zurückgebildet.",
+					"target": 2,
+					"feedback": "Dies gehört zur Metamorphose."
+				},
+				{
+					"text": "Jungfrosch nutzt Lungen und Hautatmung.",
+					"target": 3,
+					"feedback": "Der Bau ermöglicht eine andere Lebensweise."
+				}
+			],
+			"conclusion": "Die Metamorphose verändert Körperbau und Lebensweise; Amphibienschutz braucht verbundene Lebensräume."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Beschreibe drei Veränderungen vom Laich zum jungen Grasfrosch und erkläre die Bedeutung eines erreichbaren Laichgewässers.",
+				"model": "Aus den Eiern schlüpfen Kaulquappen mit Kiemen und Schwanz. Später entstehen Beine, der Schwanz wird zurückgebildet und Lungen- sowie Hautatmung werden wichtig. Das Laichgewässer ermöglicht die frühe Entwicklung; es muss mit geeigneten Landlebensräumen verbunden bleiben.",
+				"hints": [
+					"Welche Organe ändern ihre Funktion?",
+					"Welchen Weg müssen erwachsene Frösche zurücklegen?"
+				],
+				"criteria": [
+					"Ich ordne die Entwicklungsphasen.",
+					"Ich nenne Körper- und Atmungsveränderungen.",
+					"Ich erkläre die Verbindung der Lebensräume."
+				]
+			},
+			"2": {
+				"prompt": "Ein neuer Teich liegt hinter einer stark befahrenen Straße. Reicht er allein als Schutzmaßnahme für Grasfrösche? Begründe und ergänze eine zweite Maßnahme.",
+				"model": "Ein Laichgewässer allein reicht nicht, wenn Tiere auf dem Weg dorthin getötet werden. Ich prüfe Wanderkorridore und passende Landlebensräume. Geeignete Leiteinrichtungen mit sicheren Querungen oder eine fachlich geplante zeitweise Straßensperrung können die Verbindung verbessern.",
+				"hints": [
+					"Was liegt zwischen Lebensraum und Laichplatz?",
+					"Welche Gefahr löst ein Teich allein nicht?"
+				],
+				"criteria": [
+					"Ich erkenne die Wandergefahr.",
+					"Ich begründe den Bedarf vernetzter Lebensräume.",
+					"Ich ergänze eine passende Schutzmaßnahme."
+				]
+			}
+		}
+	},
+	{
+		"id": "b6-reptilien",
+		"lb": 3,
+		"title": "Reptilien: An Land leben",
+		"period": "B6 LB 3 · Vielfalt von Wirbeltieren",
+		"intro": "Vergleiche eine Zauneidechse mit einem Grasfrosch.",
+		"paragraphs": [
+			"Reptilien besitzen eine trockene Haut mit Hornschuppen und atmen mit Lungen. Diese Körperbedeckung begrenzt Wasserverlust stärker als die dünne Amphibienhaut. Die Befruchtung erfolgt innerlich. Viele Arten legen Eier mit schützenden Hüllen an Land; andere bringen lebende Junge zur Welt. Reptilien sind wechselwarm und nutzen etwa Sonnenplätze und Verstecke, um günstige Körpertemperaturen zu erreichen.",
+			"Beispiel: Eine Zauneidechse legt Eier an einem geeigneten warmen Ort ab. Die Jungtiere sehen den Erwachsenen im Grundbauplan ähnlich; eine frei lebende Kaulquappenphase fehlt. Eine Blindschleiche gehört trotz fehlender Beine zu den Echsen. Form und Lebensraum allein reichen daher wieder nicht für die Einordnung. Sonnenplätze, Verstecke und geeignete Eiablageorte bilden gemeinsam ihren Lebensraum."
+		],
+		"takeaway": "Hornschuppen, Lungen und innere Befruchtung ermöglichen Reptilien eine andere Lebensweise als Amphibien.",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"question": "Welche Merkmalskombination passt zur Zauneidechse?",
+			"answer": "Trockene Hornschuppen und Lungenatmung.",
+			"wrong": [
+				"Federn und Säugen der Jungen.",
+				"Feuchte Haut und eine Kaulquappenphase."
+			],
+			"explanation": "Die trockene, hornige Körperbedeckung unterscheidet sie vom typischen Amphibienbeispiel."
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Deine Werkstatt: Reptilien: An Land leben",
+			"instruction": "Ordne jede Aussage zu. Begründe die Entscheidung zuerst für dich.",
+			"categories": ["Zauneidechse", "Grasfrosch"],
+			"entries": [
+				{
+					"text": "Trockene Haut mit Hornschuppen.",
+					"target": 0,
+					"feedback": "Sie begrenzt den Wasserverlust."
+				},
+				{
+					"text": "Frühe Larvenphase als Kaulquappe im Wasser.",
+					"target": 1,
+					"feedback": "Das passt zum Grasfrosch."
+				},
+				{
+					"text": "Junge ohne frei lebende Kaulquappenphase.",
+					"target": 0,
+					"feedback": "Der Grundbauplan ähnelt schon dem erwachsenen Tier."
+				}
+			],
+			"conclusion": "Hornschuppen, Lungen und innere Befruchtung ermöglichen Reptilien eine andere Lebensweise als Amphibien."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Vergleiche Haut und Entwicklung von Zauneidechse und Grasfrosch. Erkläre je einen Bezug zur Lebensweise.",
+				"model": "Die Zauneidechse hat trockene Hornschuppen und entwickelt sich ohne Kaulquappenphase. Das unterstützt ein Leben an Land. Beim Grasfrosch ist die Haut dünn und drüsenreich; die Larven leben im Wasser. Er braucht daher Feuchtigkeit und ein geeignetes Gewässer für die frühe Entwicklung.",
+				"hints": [
+					"Welche Haut verliert leichter Wasser?",
+					"Welches Tier besitzt eine Wasserlarve?"
+				],
+				"criteria": [
+					"Ich vergleiche dieselben zwei Kriterien.",
+					"Ich ordne die Merkmale richtig zu.",
+					"Ich erkläre Lebensraumbezüge."
+				]
+			},
+			"2": {
+				"prompt": "Eine Blindschleiche hat keine Beine. Jemand nennt sie deshalb einen Wurm. Erkläre den Fehler und plane eine fachlich bessere Bestimmung.",
+				"model": "Das Fehlen von Beinen allein legt keine Tiergruppe fest. Die Blindschleiche ist ein Wirbeltier und gehört zu den Echsen. Ich prüfe weitere Merkmale, etwa Hornschuppen, und benutze eine Bestimmungshilfe für heimische Reptilien. Ein einzelner Gesamteindruck ersetzt den Merkmalsvergleich nicht.",
+				"hints": [
+					"Reicht ein fehlendes Merkmal zur Einordnung?",
+					"Welche Bestimmungshilfe passt zur Fragestellung?"
+				],
+				"criteria": [
+					"Ich erkenne das unzureichende Kriterium.",
+					"Ich ordne die Blindschleiche richtig ein.",
+					"Ich plane einen Mehrmerkmalsvergleich."
+				]
+			}
+		}
+	},
+	{
+		"id": "b6-voegel",
+		"lb": 3,
+		"title": "Vögel: Federn, Flug und Entwicklung",
+		"period": "B6 LB 3 · Vielfalt von Wirbeltieren",
+		"intro": "Erkläre Funktionszusammenhänge und prüfe ein Modell.",
+		"paragraphs": [
+			"Federn kennzeichnen Vögel. Sie dienen je nach Bau etwa Flug, Wärmeisolation oder Schutz. Flügel sind umgebildete Vordergliedmaßen. Ein leichter und zugleich stabiler Körperbau unterstützt bei vielen Arten das Fliegen. Vögel atmen mit Lungen; Luftsäcke unterstützen die Belüftung. Vögel sind gleichwarm und besitzen eine innere Befruchtung; ihre Embryonen entwickeln sich in Eiern.",
+			"Beispiel: Bei einem Hühnerei schützt die poröse Schale, Eiweiß und Dotter versorgen den Embryo. Geeignete Wärme ist für seine Entwicklung nötig. Beim Vergleich echter Federn mit Papiermodellen kannst du Masse, Luftwiderstand oder Isolation untersuchen. Ein Papierflügel bildet aber weder die lebendige Federstruktur noch den aktiven Flügelschlag vollständig ab. Pinguine zeigen, dass Federn nicht gleich Flugfähigkeit bedeuten."
+		],
+		"takeaway": "Federn erfüllen verschiedene Aufgaben; Vogeleier ermöglichen geschützte Entwicklung außerhalb des Mutterkörpers.",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"question": "Welches Merkmal kennzeichnet Vögel?",
+			"answer": "Federn.",
+			"wrong": [
+				"Dass jede Art fliegen kann.",
+				"Dass sie als einzige Wirbeltiere Eier legen."
+			],
+			"explanation": "Auch flugunfähige Vögel haben Federn, und andere Tiergruppen legen ebenfalls Eier."
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Deine Werkstatt: Vögel: Federn, Flug und Entwicklung",
+			"instruction": "Ordne jede Aussage zu. Begründe die Entscheidung zuerst für dich.",
+			"categories": [
+				"Flug oder Luftwiderstand",
+				"Wärmeisolation",
+				"Entwicklung im Ei"
+			],
+			"entries": [
+				{
+					"text": "Große Flügelfedern bilden eine tragende Fläche.",
+					"target": 0,
+					"feedback": "Ihre Anordnung beeinflusst die Wechselwirkung mit Luft."
+				},
+				{
+					"text": "Ein lockeres Federkleid hält Luft am Körper.",
+					"target": 1,
+					"feedback": "Luftpolster begrenzen den Wärmeverlust."
+				},
+				{
+					"text": "Schale, Dotter und Eiweiß umgeben den Embryo.",
+					"target": 2,
+					"feedback": "Sie bieten Schutz und Versorgung während der Entwicklung."
+				}
+			],
+			"conclusion": "Federn erfüllen verschiedene Aufgaben; Vogeleier ermöglichen geschützte Entwicklung außerhalb des Mutterkörpers."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Erkläre zwei verschiedene Federfunktionen und nenne zwei Bedingungen oder Bestandteile für die Entwicklung eines Kükens im Ei.",
+				"model": "Flügelfedern unterstützen bei fliegenden Vögeln die Bewegung in der Luft. Isolierende Federn halten Luft am Körper und begrenzen Wärmeverlust. Für die Entwicklung im Ei sind unter anderem geeignete Wärme und Versorgung durch Dotter und Eiweiß wichtig; die poröse Schale ermöglicht Gasaustausch.",
+				"hints": [
+					"Welche Federn helfen beim Warmhalten?",
+					"Wovon lebt der Embryo vor dem Schlüpfen?"
+				],
+				"criteria": [
+					"Ich unterscheide zwei Federfunktionen.",
+					"Ich nenne Versorgung und eine Entwicklungsbedingung.",
+					"Ich verallgemeinere Flugfähigkeit nicht auf alle Vögel."
+				]
+			},
+			"2": {
+				"prompt": "Eine Papierfeder und eine echte Feder fallen verschieden schnell. Jemand erklärt damit den gesamten Vogelflug. Prüfe das Modell und verbessere einen Vergleich zur Isolation.",
+				"model": "Die Fallbewegung zeigt nur einen Ausschnitt der Wechselwirkung mit Luft. Aktiver Flug braucht weitere Strukturen und Bewegungen. Für Isolation vergleiche ich gleich warme Gefäße mit und ohne Federhülle bei gleichen Bedingungen und messe den Temperaturabfall mehrfach. Tiere werden dafür nicht verwendet.",
+				"hints": [
+					"Welche Funktion wurde tatsächlich untersucht?",
+					"Wie lässt sich Wärmeverlust ohne Tiere vergleichen?"
+				],
+				"criteria": [
+					"Ich benenne die Modellgrenze.",
+					"Ich plane einen kontrollierten Isolationsvergleich.",
+					"Ich nenne eine passende Messgröße."
+				]
+			}
+		}
+	},
+	{
+		"id": "b6-saeugetiere",
+		"lb": 3,
+		"title": "Säugetiere: vielfältig und verwandt",
+		"period": "B6 LB 3 · Vielfalt von Wirbeltieren",
+		"intro": "Erkläre gemeinsame Merkmale trotz unterschiedlicher Lebensweisen.",
+		"paragraphs": [
+			"Säugetiere säugen ihre Jungen mit Milch und besitzen zumindest in einer Lebensphase Haare. Sie atmen mit Lungen und halten als gleichwarme Tiere ihre Körpertemperatur in einem vergleichsweise engen Bereich. Die meisten bringen lebende Junge zur Welt; es gibt auch eierlegende Säugetiere. Verschiedene Gliedmaßenformen passen zum Laufen, Graben, Schwimmen oder Fliegen.",
+			"Beispiel: Ein Maulwurf besitzt kräftige Grabvordergliedmaßen, eine Fledermaus eine Flughaut zwischen verlängerten Fingern und dem Körper. Beide haben einen gemeinsamen Grundbauplan der Vordergliedmaßen, der für unterschiedliche Aufgaben abgewandelt ist. Eine Fledermaus benötigt trotz Flug keinen Vogelbauplan. Bei der Bestimmung heimischer Arten helfen mehrere Merkmale; Tiere in ihren Verstecken werden nicht gestört."
+		],
+		"takeaway": "Säugen, Haare und Lungenatmung verbinden Säugetiere mit sehr verschiedenen Lebensweisen.",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"question": "Welche gemeinsame Eigenschaft verbindet Fledermaus und Maulwurf?",
+			"answer": "Beide säugen ihre Jungen.",
+			"wrong": ["Beide besitzen Federn.", "Beide atmen mit Kiemen."],
+			"explanation": "Unterschiedliche Fortbewegung verändert ihre gemeinsamen Säugetiermerkmale nicht."
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Deine Werkstatt: Säugetiere: vielfältig und verwandt",
+			"instruction": "Ordne jede Aussage zu. Begründe die Entscheidung zuerst für dich.",
+			"categories": ["Graben", "Fliegen", "Gemeinsames Säugetiermerkmal"],
+			"entries": [
+				{
+					"text": "Kräftige Vordergliedmaßen des Maulwurfs.",
+					"target": 0,
+					"feedback": "Der Bau unterstützt das Graben."
+				},
+				{
+					"text": "Flughaut der Fledermaus zwischen verlängerten Fingern und Körper.",
+					"target": 1,
+					"feedback": "Die Vordergliedmaßen bilden einen Teil der Flugfläche."
+				},
+				{
+					"text": "Milch versorgt die Jungen.",
+					"target": 2,
+					"feedback": "Säugen kennzeichnet die Gruppe."
+				}
+			],
+			"conclusion": "Säugen, Haare und Lungenatmung verbinden Säugetiere mit sehr verschiedenen Lebensweisen."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Vergleiche die Vordergliedmaßen von Maulwurf und Fledermaus: Nenne Gemeinsamkeit, Abwandlung und Funktion.",
+				"model": "Beide besitzen Vordergliedmaßen mit einem vergleichbaren Grundbauplan. Beim Maulwurf unterstützt ein kräftiger Bau das Graben. Bei der Fledermaus tragen verlängerte Finger eine Flughaut. Die unterschiedlichen Formen passen zu verschiedenen Funktionen, ändern aber nicht die Einordnung als Säugetiere.",
+				"hints": [
+					"Was ist der gemeinsame Körperteil?",
+					"Welche Aufgabe erfüllt er jeweils?"
+				],
+				"criteria": [
+					"Ich benenne den gemeinsamen Grundbauplan.",
+					"Ich verknüpfe beide Abwandlungen mit Funktionen.",
+					"Ich ordne beide als Säugetiere ein."
+				]
+			},
+			"2": {
+				"prompt": "Eine neue Bestimmungskarte behauptet: „Alle Säugetiere leben an Land und bringen lebende Junge zur Welt.“ Prüfe beide Verallgemeinerungen.",
+				"model": "Wale und Delfine leben im Wasser und sind trotzdem Säugetiere. Die meisten Säugetiere bringen lebende Junge zur Welt, aber eierlegende Arten sind eine Ausnahme. Eine Bestimmung sollte kennzeichnende Merkmale wie Säugen und Haare im Lebenslauf berücksichtigen, statt typische Beispiele zu absoluten Regeln zu machen.",
+				"hints": [
+					"Welches Säugetier lebt im Meer?",
+					"Bedeutet meistens dasselbe wie immer?"
+				],
+				"criteria": [
+					"Ich widerlege die Landregel mit einem Beispiel.",
+					"Ich benenne die Ausnahme bei der Fortpflanzung.",
+					"Ich nutze kennzeichnende statt bloß typische Merkmale."
+				]
+			}
+		}
+	},
+	{
+		"id": "b6-temperatur",
+		"lb": 3,
+		"title": "Körpertemperatur regulieren",
+		"period": "B6 LB 3 · Vielfalt von Wirbeltieren",
+		"intro": "Vergleiche gleichwarme und wechselwarme Tiere.",
+		"paragraphs": [
+			"Bei gleichwarmen Tieren bleibt die Körpertemperatur trotz wechselnder Außentemperatur vergleichsweise stabil. Stoffwechselwärme, Isolation und Verhalten tragen dazu bei. Wechselwarme Tiere hängen stärker von der Umgebung ab, können aber durch Sonnenbaden oder Schattenwahl ihre Temperatur beeinflussen. Gleichwarm bedeutet nicht, dass jeder Körperteil immer exakt gleich warm ist; wechselwarm bedeutet nicht ohne jede Regulation.",
+			"Beispiel: Eine Amsel plustert Federn auf und hält dadurch mehr isolierende Luft fest. Eine Eidechse sucht morgens einen warmen Stein und bei Hitze Schatten. Im Winter können viele wechselwarme Tiere in Kältestarre fallen; manche Säugetiere halten Winterschlaf oder Winterruhe. Diese Strategien sind verschieden. Ein vereinfachtes Temperaturmodell zeigt nur Grundmuster und keine Messwerte einer konkreten Art."
+		],
+		"takeaway": "Gleichwarme Tiere erzeugen und halten Wärme; wechselwarme Tiere nutzen stärker die Umgebung.",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"question": "Wie kann eine Eidechse ihre Körpertemperatur beeinflussen?",
+			"answer": "Sie wechselt zwischen Sonnenplatz und Schatten.",
+			"wrong": [
+				"Sie hält durch Federn immer dieselbe Temperatur.",
+				"Sie kann ihre Umgebung grundsätzlich nicht nutzen."
+			],
+			"explanation": "Auch wechselwarme Tiere regulieren durch Verhalten."
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Deine Werkstatt: Körpertemperatur regulieren",
+			"instruction": "Ordne jede Aussage zu. Begründe die Entscheidung zuerst für dich.",
+			"categories": [
+				"Gleichwarm: Wärme halten oder abgeben",
+				"Wechselwarm: Umgebung gezielt nutzen"
+			],
+			"entries": [
+				{
+					"text": "Eine Amsel plustert ihr Gefieder auf.",
+					"target": 0,
+					"feedback": "Zusätzliche isolierende Luft verringert Wärmeverlust."
+				},
+				{
+					"text": "Eine Eidechse wechselt bei Hitze in den Schatten.",
+					"target": 1,
+					"feedback": "Sie nutzt einen kühleren Aufenthaltsort."
+				},
+				{
+					"text": "Eine Eidechse wärmt sich am Morgen auf einem Stein.",
+					"target": 1,
+					"feedback": "Die Umgebung liefert Wärme."
+				}
+			],
+			"conclusion": "Gleichwarme Tiere erzeugen und halten Wärme; wechselwarme Tiere nutzen stärker die Umgebung."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Vergleiche Amsel und Eidechse an einem kühlen Morgen. Erkläre Wärmequelle und je eine Verhaltensweise.",
+				"model": "Die Amsel erzeugt viel Wärme im Stoffwechsel und kann mit aufgeplusterten Federn Wärmeverlust begrenzen. Die Eidechse hängt stärker von äußerer Wärme ab und kann einen Sonnenplatz aufsuchen. Beide reagieren durch Verhalten, aber auf unterschiedliche physiologische Voraussetzungen.",
+				"hints": [
+					"Woher kommt Wärme?",
+					"Wie verändert Verhalten den Wärmehaushalt?"
+				],
+				"criteria": [
+					"Ich unterscheide die beiden Wärmetypen.",
+					"Ich verbinde Verhalten und Funktion.",
+					"Ich behaupte nicht, wechselwarme Tiere seien völlig unreguliert."
+				]
+			},
+			"2": {
+				"prompt": "Eine Kurve zeigt eine fast konstante Körpertemperatur bei wechselnder Außentemperatur. Eine zweite folgt der Umgebung stärker. Was vermutest du und was kannst du aus den Kurven nicht bestimmen?",
+				"model": "Die erste Kurve passt grundsätzlich zu einem gleichwarmen, die zweite zu einem wechselwarmen Tier. Die Kurven allein bestimmen keine Art und erklären nicht jede Regulationsweise. Für eine Einordnung brauche ich Messbedingungen, Zeiträume und zusätzliche Merkmale; das Modell ersetzt keine echten Messungen.",
+				"hints": [
+					"Was bleibt stabil?",
+					"Welche Information fehlt für die Artbestimmung?"
+				],
+				"criteria": [
+					"Ich ordne die Muster begründet zu.",
+					"Ich nenne fehlende Messinformationen.",
+					"Ich begrenze die Artbestimmung aus Kurven."
+				]
+			}
+		},
+		"model": "temperature"
+	},
+	{
+		"id": "b6-verhalten",
+		"lb": 3,
+		"title": "Verhalten und Kommunikation beobachten",
+		"period": "B6 LB 3 · Vielfalt von Wirbeltieren",
+		"intro": "Beschreibe Signale und ihren möglichen Nutzen.",
+		"paragraphs": [
+			"Tiere geben und empfangen Signale, etwa durch Laute, Bewegungen, Körperhaltung oder Duftstoffe. Innerartliche Kommunikation findet zwischen Angehörigen derselben Art statt; zwischenartliche Kommunikation verbindet verschiedene Arten. Balz, Revierverhalten, Brutpflege und Gruppenbildung können Überleben oder Fortpflanzung fördern. Eine Beobachtung beschreibt zunächst das Verhalten; seine Funktion muss mit Belegen begründet werden.",
+			"Beispiel: Eine Amsel singt im Frühjahr; Gesang kann Revierbesetzung anzeigen und bei der Partnerfindung eine Rolle spielen. Ein Jungvogel bettelt um Futter. Eine Katze faucht einen Hund an: Ein Signal wirkt über die Artgrenze hinweg. Ein einzelner Laut beweist keinen menschlichen Gefühlszustand. Beobachte aus Abstand mit Zeit, Situation und Reaktion; störe keine Nester und spiele keine Lockrufe ab."
+		],
+		"takeaway": "Beobachte Signal, Situation und Reaktion, bevor du eine Verhaltensfunktion deutest.",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"question": "Welches Beispiel ist zwischenartliche Kommunikation?",
+			"answer": "Eine Katze faucht einen Hund an.",
+			"wrong": [
+				"Eine Amsel singt gegenüber einer anderen Amsel.",
+				"Zwei Jungvögel derselben Art betteln."
+			],
+			"explanation": "Katze und Hund gehören verschiedenen Arten an."
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Deine Werkstatt: Verhalten und Kommunikation beobachten",
+			"instruction": "Ordne jede Aussage zu. Begründe die Entscheidung zuerst für dich.",
+			"categories": ["Innerartlich", "Zwischenartlich"],
+			"entries": [
+				{
+					"text": "Zwei Amseln reagieren aufeinander mit Gesang.",
+					"target": 0,
+					"feedback": "Beide gehören derselben Art an."
+				},
+				{
+					"text": "Ein Hund reagiert auf das Fauchen einer Katze.",
+					"target": 1,
+					"feedback": "Das Signal wirkt zwischen verschiedenen Arten."
+				},
+				{
+					"text": "Ein Jungvogel bettelt bei einem Elternvogel um Futter.",
+					"target": 0,
+					"feedback": "Die Kommunikation dient hier der Versorgung innerhalb der Art."
+				}
+			],
+			"conclusion": "Beobachte Signal, Situation und Reaktion, bevor du eine Verhaltensfunktion deutest."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Plane eine kurze Amselbeobachtung mit drei Protokollangaben und unterscheide Beobachtung und Deutung des Gesangs.",
+				"model": "Ich notiere Zeitpunkt, Situation und beobachtbare Reaktion anderer Tiere. „Die Amsel singt vom Ast“ ist eine Beobachtung. „Der Gesang grenzt ein Revier ab“ ist eine mögliche Funktionsdeutung, die weitere Belege braucht. Ich halte Abstand und störe keinen Brutplatz.",
+				"hints": [
+					"Was kannst du unmittelbar sehen oder hören?",
+					"Welche Reaktion wäre für die Funktion wichtig?"
+				],
+				"criteria": [
+					"Ich nenne drei Protokollangaben.",
+					"Ich trenne Beobachtung und Funktion.",
+					"Ich vermeide Störungen."
+				]
+			},
+			"2": {
+				"prompt": "Eine Gruppe erklärt jeden Vogelgesang mit „Der Vogel ist glücklich“. Entwickle eine prüfbare biologische Alternative und nenne ihre Grenze.",
+				"model": "Eine mögliche Alternative lautet, dass Gesang bei Revierabgrenzung oder Partnerfindung wirkt. Ich beobachte Zeitpunkt, Anwesenheit anderer Vögel und Reaktionen. Auch diese Daten erlauben nicht sofort einen sicheren Schluss für jedes Lied. Menschliche Gefühlswörter ersetzen keine Verhaltensuntersuchung.",
+				"hints": [
+					"Welche Wirkung auf andere Tiere ist beobachtbar?",
+					"Wie könntest du die Vermutung prüfen?"
+				],
+				"criteria": [
+					"Ich nenne eine biologische Funktionshypothese.",
+					"Ich plane passende Beobachtungen.",
+					"Ich benenne die Grenze der Deutung."
+				]
+			}
+		}
+	}
+]

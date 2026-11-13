@@ -1,0 +1,542 @@
+[
+	{
+		"id": "b6-lebensraum",
+		"lb": 4,
+		"title": "Ein Ökosystem vor deiner Haustür",
+		"period": "B6 LB 4 · Ein heimatnahes Ökosystem",
+		"intro": "Unterscheide Lebensraum, Lebensgemeinschaft und Umweltfaktoren.",
+		"paragraphs": [
+			"Ein Ökosystem besteht aus einem Lebensraum, dem Biotop, und der Lebensgemeinschaft, der Biozönose, mit ihren Wechselwirkungen. Licht, Temperatur, Wasser und Boden sind abiotische Faktoren. Fressfeinde, Nahrung und Konkurrenz gehören zu biotischen Beziehungen. Mehrere Faktoren wirken zusammen: Schatten kann Bodenfeuchte und Temperatur beeinflussen und damit Lebensbedingungen verändern.",
+			"Beispiel: Du untersuchst eine öffentliche Hecke am Schulweg. Beschreibe Lage und Umgebung, ohne private Adressen einzutragen. Eine angepflanzte Hecke ist Teil einer Kulturlandschaft und kann trotzdem vielen Arten Lebensraum bieten. Wildnis ist nicht einfach eine ungepflegte Ecke: Sie wird weitgehend von natürlichen Prozessen bestimmt. Dein Feldbogen beginnt mit einer Frage und Beobachtungen; die App bestätigt deren Inhalt nicht."
+		],
+		"takeaway": "Ökosystem bedeutet Lebensraum und Lebensgemeinschaft in Wechselwirkung.",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"question": "Was gehört zum Biotop?",
+			"answer": "Die unbelebten Bedingungen des Lebensraums.",
+			"wrong": ["Ausschließlich die Tiere.", "Nur eine einzelne Pflanzenart."],
+			"explanation": "Die Lebensgemeinschaft heißt Biozönose; Biotop bezeichnet den Lebensraum."
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Deine Werkstatt: Ein Ökosystem vor deiner Haustür",
+			"instruction": "Ordne jede Aussage zu. Begründe die Entscheidung zuerst für dich.",
+			"categories": ["Abiotischer Faktor", "Biotische Beziehung"],
+			"entries": [
+				{
+					"text": "Bodenfeuchte an der Hecke.",
+					"target": 0,
+					"feedback": "Sie ist eine unbelebte Bedingung."
+				},
+				{
+					"text": "Eine Meise frisst eine Raupe.",
+					"target": 1,
+					"feedback": "Hier wirken Lebewesen aufeinander."
+				},
+				{
+					"text": "Schatten verändert die Bodentemperatur.",
+					"target": 0,
+					"feedback": "Licht und Temperatur sind abiotische Größen."
+				}
+			],
+			"conclusion": "Ökosystem bedeutet Lebensraum und Lebensgemeinschaft in Wechselwirkung."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Beschreibe eine Hecke als Ökosystem. Nenne zwei abiotische Bedingungen und zwei Mitglieder der Lebensgemeinschaft.",
+				"model": "Zur Hecke gehören Lichtverhältnisse und Bodenfeuchte als abiotische Bedingungen. Sträucher und Insekten sind Teile der Lebensgemeinschaft. Ihre Beziehungen, etwa Nahrung und Schutz, verbinden sie mit dem Lebensraum. Eine gepflanzte Hecke ist dabei Kulturlandschaft und kein von Menschen völlig unbeeinflusster Ort.",
+				"hints": [
+					"Was ist unbelebt, was lebt?",
+					"Welche Beziehung kannst du beobachten?"
+				],
+				"criteria": [
+					"Ich unterscheide Biotop und Biozönose.",
+					"Ich nenne je zwei passende Beispiele.",
+					"Ich beschreibe eine Wechselwirkung."
+				]
+			},
+			"2": {
+				"prompt": "Unter einer dichten Hecke ist der Boden kühler und feuchter als daneben. Plane eine Untersuchung, die Lage und Messbedingungen nachvollziehbar macht.",
+				"model": "Ich beschreibe öffentlich Lage und Umgebung und messe an mehreren beschatteten und offenen Punkten zur gleichen Zeit mit denselben Geräten. Messhöhe, Bodentiefe und vorheriges Wetter werden notiert. So lassen sich Unterschiede vergleichen; eine Einzelmessung beweist keine dauerhafte Regel.",
+				"hints": [
+					"Was muss in beiden Bereichen gleich sein?",
+					"Was hältst du im Feldbogen fest?"
+				],
+				"criteria": [
+					"Ich plane mehrere vergleichbare Messpunkte.",
+					"Ich dokumentiere Lage und Messbedingungen.",
+					"Ich begrenze den Schluss aus Einzelmessungen."
+				]
+			}
+		},
+		"projectStep": "question"
+	},
+	{
+		"id": "b6-jahreszeiten",
+		"lb": 4,
+		"title": "Ein Lebensraum verändert sich",
+		"period": "B6 LB 4 · Ein heimatnahes Ökosystem",
+		"intro": "Lies eine Jahresreihe und unterscheide sie von langfristigem Wandel.",
+		"paragraphs": [
+			"Lichtdauer, Temperatur und Wasserangebot verändern sich im Jahreslauf. Pflanzen treiben aus, blühen oder verlieren Blätter; Tiere ändern Aktivität oder wandern. Langfristiger Wandel betrifft dagegen Veränderungen über mehrere Jahre, etwa eine austrocknende Senke oder zunehmende Bebauung. Um beides auseinanderzuhalten, vergleichst du ähnliche Zeitpunkte, Messorte und Methoden.",
+			"Beispiel mit erfundenen Übungsdaten: Eine Hecke trägt im April wenig, im Juni viel und im Dezember kein Laub. Das ist zunächst ein Jahresrhythmus. Wenn eine Feuchtstelle bei vergleichbarer Jahreszeit über viele Jahre seltener Wasser führt, kann das einen längerfristigen Wandel anzeigen. Für dessen Ursachen brauchst du zusätzliche Daten, etwa Niederschlag und Eingriffe. Der Feldbogen trennt Messwerte, Herkunft und Schlussfolgerung."
+		],
+		"takeaway": "Vergleiche gleiche Jahreszeiten über mehrere Jahre, wenn du langfristigen Wandel beurteilen willst.",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"question": "Was spricht zunächst für einen Jahresrhythmus?",
+			"answer": "Eine Hecke treibt im Frühling aus und verliert im Herbst Laub.",
+			"wrong": [
+				"Ein einmaliges Foto beweist einen dauerhaften Rückgang.",
+				"Jeder Temperaturunterschied ist langfristiger Klimawandel."
+			],
+			"explanation": "Wiederkehrende saisonale Veränderungen unterscheiden sich von mehrjährigem Wandel."
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Deine Werkstatt: Ein Lebensraum verändert sich",
+			"instruction": "Ordne jede Aussage zu. Begründe die Entscheidung zuerst für dich.",
+			"categories": [
+				"Jahresrhythmus",
+				"Möglicher langfristiger Wandel",
+				"Unzureichende Vergleichsbasis"
+			],
+			"entries": [
+				{
+					"text": "Laubaustrieb im Frühling und Laubfall im Herbst.",
+					"target": 0,
+					"feedback": "Dies wiederholt sich im Jahreslauf."
+				},
+				{
+					"text": "Ein Gewässer führt im selben Monat über viele Jahre weniger Wasser.",
+					"target": 1,
+					"feedback": "Vergleichbare Zeitpunkte können auf mehrjährigen Wandel hinweisen."
+				},
+				{
+					"text": "Ein Winterfoto wird direkt mit einem Sommerfoto verglichen.",
+					"target": 2,
+					"feedback": "Jahreszeit und Langzeitveränderung werden vermischt."
+				}
+			],
+			"conclusion": "Vergleiche gleiche Jahreszeiten über mehrere Jahre, wenn du langfristigen Wandel beurteilen willst."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Deute die erfundene Laubreihe April: wenig, Juni: viel, Dezember: kein Laub. Welche zusätzliche Reihe brauchst du für eine Aussage über mehrere Jahre?",
+				"model": "Die Reihe zeigt zunächst eine saisonale Veränderung. Für mehrjährigen Wandel vergleiche ich dieselben Monate über mehrere Jahre an derselben Hecke. Dazu dokumentiere ich Methode und Bedingungen. Eine sommerliche und eine winterliche Aufnahme allein reichen nicht als Beleg für dauerhaften Laubverlust.",
+				"hints": [
+					"Welche Änderung wiederholt sich jährlich?",
+					"Welche Zeitpunkte müssen vergleichbar sein?"
+				],
+				"criteria": [
+					"Ich erkenne den Jahresrhythmus.",
+					"Ich fordere vergleichbare mehrjährige Daten.",
+					"Ich benenne eine Grenze der Ausgangsdaten."
+				]
+			},
+			"2": {
+				"prompt": "Nach einer Uferrodung ist ein Bach im Sommer wärmer als auf einem alten Winterfoto. Prüfe den Vergleich und plane zwei passende Datenquellen.",
+				"model": "Der Vergleich vermischt Jahreszeit und Rodungswirkung. Ich brauche zum Beispiel Temperaturmessungen aus vergleichbaren Sommerzeiträumen vor und nach der Rodung sowie Daten einer ähnlichen, nicht gerodeten Strecke. Wetter und Messmethode müssen berücksichtigt werden; Fotos allein messen keine Wassertemperatur.",
+				"hints": [
+					"Welche Zeitverwechslung liegt vor?",
+					"Wie kann eine Vergleichsstrecke helfen?"
+				],
+				"criteria": [
+					"Ich erkenne den ungeeigneten Zeitvergleich.",
+					"Ich nenne zwei geeignete Vergleichsreihen.",
+					"Ich behaupte keine Ursache ohne Messbelege."
+				]
+			}
+		},
+		"projectStep": "evidence"
+	},
+	{
+		"id": "b6-nischen",
+		"lb": 4,
+		"title": "Angepasstheiten und ökologische Nischen",
+		"period": "B6 LB 4 · Ein heimatnahes Ökosystem",
+		"intro": "Ein Standort ist nur ein Teil der Lebensbedingungen einer Art.",
+		"paragraphs": [
+			"Die ökologische Nische umfasst die Ansprüche einer Art an ihre Umwelt und ihre Beziehungen zu anderen Lebewesen. Sie ist nicht bloß die Stelle, an der ein Tier sitzt. Nahrung, Aktivitätszeit, Feuchte, Temperatur und Fortpflanzungsbedingungen gehören dazu. Angepasstheiten des Körperbaus oder Verhaltens ermöglichen es Lebewesen, bestimmte Bedingungen zu nutzen; sie entstehen nicht aus einem bewussten Wunsch.",
+			"Beispiel: Eine Raupe frisst Blätter, eine erwachsene Schmetterlingsart saugt Nektar. Entwicklungsstadien können verschiedene Ressourcen nutzen. Moose an einer schattigen, feuchten Stelle liefern einen Hinweis auf Bedingungen, sind aber kein exaktes Messgerät. Zeigerorganismen weisen auf bestimmte Umweltverhältnisse hin; eine einzelne Art oder Beobachtung beweist deren Ursache nicht. Beschreibe Merkmale und beobachtete Beziehungen getrennt von Vermutungen."
+		],
+		"takeaway": "Eine Nische umfasst Ansprüche und Beziehungen einer Art, nicht nur ihren Aufenthaltsort.",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"question": "Was beschreibt eine ökologische Nische?",
+			"answer": "Umweltansprüche und Beziehungen einer Art.",
+			"wrong": [
+				"Nur die geografische Adresse eines Tiers.",
+				"Eine absichtlich gebaute Höhle für jede Art."
+			],
+			"explanation": "Die Nische umfasst beispielsweise Nahrung, Feuchte, Zeit und Beziehungen."
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Deine Werkstatt: Angepasstheiten und ökologische Nischen",
+			"instruction": "Ordne jede Aussage zu. Begründe die Entscheidung zuerst für dich.",
+			"categories": [
+				"Nahrungsbeziehung",
+				"Abiotischer Anspruch",
+				"Nicht ausreichend für die ganze Nische"
+			],
+			"entries": [
+				{
+					"text": "Eine Raupe nutzt bestimmte Blätter als Nahrung.",
+					"target": 0,
+					"feedback": "Die Nahrungswahl ist ein Teil ihrer Nische."
+				},
+				{
+					"text": "Eine Art braucht dauerhaft feuchten Boden.",
+					"target": 1,
+					"feedback": "Feuchtigkeit ist eine unbelebte Bedingung."
+				},
+				{
+					"text": "Die Angabe „sitzt auf einem Ast“.",
+					"target": 2,
+					"feedback": "Ein Ort allein beschreibt nicht alle Ansprüche und Beziehungen."
+				}
+			],
+			"conclusion": "Eine Nische umfasst Ansprüche und Beziehungen einer Art, nicht nur ihren Aufenthaltsort."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Beschreibe für eine blattfressende Raupe drei mögliche Bestandteile ihrer Nische. Erkläre, warum „lebt in der Hecke“ nicht reicht.",
+				"model": "Zur Nische gehören etwa die genutzte Nahrungspflanze, passende Temperatur und Beziehungen zu Fressfeinden. „In der Hecke“ nennt nur einen Aufenthaltsort. Verschiedene Arten am selben Ort können andere Nahrung, Zeiten und Bedingungen nutzen und deshalb unterschiedliche Nischen haben.",
+				"hints": [
+					"Was braucht die Raupe außer einem Ort?",
+					"Welche Lebewesen beeinflussen sie?"
+				],
+				"criteria": [
+					"Ich nenne drei passende Bestandteile.",
+					"Ich trenne Nische und Ort.",
+					"Ich erkläre verschiedene Nischen am selben Standort."
+				]
+			},
+			"2": {
+				"prompt": "An einer Mauer wächst viel Moos. Jemand behauptet: „Damit ist bewiesen, dass hier immer sauberes Wasser fließt.“ Prüfe den Schluss und schlage eine Untersuchung vor.",
+				"model": "Moos kann auf Feuchtigkeit hinweisen, beweist aber weder einen dauerhaften Wasserfluss noch Wasserqualität. Ich bestimme die Art soweit möglich und vergleiche wiederholte Feuchtebeobachtungen mit passenden Messungen. Zeigerorganismen geben Hinweise, deren Bedeutung weitere Belege braucht.",
+				"hints": [
+					"Welche Bedingung könnte angezeigt werden?",
+					"Welche behaupteten Eigenschaften wurden gar nicht geprüft?"
+				],
+				"criteria": [
+					"Ich unterscheide Hinweis und Beweis.",
+					"Ich benenne unbelegte Zusatzbehauptungen.",
+					"Ich plane ergänzende Beobachtungen oder Messungen."
+				]
+			}
+		}
+	},
+	{
+		"id": "b6-insekten",
+		"lb": 4,
+		"title": "Insekten: Bau, Entwicklung und Bedeutung",
+		"period": "B6 LB 4 · Ein heimatnahes Ökosystem",
+		"intro": "Vergleiche einen Schmetterling mit einer Heuschrecke.",
+		"paragraphs": [
+			"Erwachsene Insekten besitzen Kopf, Brust und Hinterleib sowie drei Beinpaare am Brustabschnitt. Meist haben sie ein Paar Fühler; nicht alle haben Flügel. Spinnen sind keine Insekten. Mundwerkzeuge und Beine sind für unterschiedliche Aufgaben abgewandelt. Larven können anders aussehen als Erwachsene. Bei Schmetterlingen folgt auf Ei und Raupe ein Puppenstadium, bevor der Falter schlüpft.",
+			"Beispiel: Eine Heuschrecke entwickelt sich aus dem Ei über mehrere Nymphenstadien zum erwachsenen Tier; ein Puppenstadium fehlt. Insekten können Pflanzen bestäuben, Blätter fressen, andere Tiere erbeuten oder an Zersetzungsprozessen mitwirken. Sie sind selbst Nahrung für viele Arten. Beobachte aus Abstand: Ein fremdartiges Aussehen ist kein Grund, ein Tier zu töten. Für echte Artkenntnis brauchst du passende Abbildungen und Beobachtungen."
+		],
+		"takeaway": "Sechs Beine am Brustabschnitt kennzeichnen erwachsene Insekten; Entwicklungswege können sich unterscheiden.",
+		"sourceIds": ["lp", "insects"],
+		"quiz": {
+			"question": "Welches Merkmal passt zum erwachsenen Insekt?",
+			"answer": "Drei Beinpaare am Brustabschnitt.",
+			"wrong": [
+				"Vier Beinpaare wie bei Spinnen.",
+				"Eine Wirbelsäule mit innerem Knochenskelett."
+			],
+			"explanation": "Der Grundbauplan unterscheidet Insekten von Spinnen und Wirbeltieren."
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Deine Werkstatt: Insekten: Bau, Entwicklung und Bedeutung",
+			"instruction": "Ordne jede Aussage zu. Begründe die Entscheidung zuerst für dich.",
+			"categories": [
+				"Vollständige Verwandlung",
+				"Unvollständige Verwandlung",
+				"Kein Insekt"
+			],
+			"entries": [
+				{
+					"text": "Schmetterling: Ei, Raupe, Puppe, Falter.",
+					"target": 0,
+					"feedback": "Das Puppenstadium gehört zur vollständigen Verwandlung."
+				},
+				{
+					"text": "Heuschrecke: Ei, Nymphe, erwachsenes Tier.",
+					"target": 1,
+					"feedback": "Die Entwicklung erfolgt ohne Puppe."
+				},
+				{
+					"text": "Spinne mit acht Beinen.",
+					"target": 2,
+					"feedback": "Spinnen gehören zu einer anderen Gliederfüßergruppe."
+				}
+			],
+			"conclusion": "Sechs Beine am Brustabschnitt kennzeichnen erwachsene Insekten; Entwicklungswege können sich unterscheiden."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Vergleiche die Entwicklung von Schmetterling und Heuschrecke. Nenne außerdem zwei ökologische Aufgaben von Insekten.",
+				"model": "Der Schmetterling entwickelt sich über Raupe und Puppe zum Falter. Die Heuschrecke hat Nymphenstadien ohne Puppe. Insekten wirken zum Beispiel als Bestäuber und als Nahrung anderer Tiere. Nicht jede Insektenart erfüllt alle Aufgaben; ihre Vielfalt ist Teil der Lebensgemeinschaft.",
+				"hints": [
+					"Welches Stadium unterscheidet die Wege?",
+					"Welche Beziehungen verbinden Insekten mit anderen Arten?"
+				],
+				"criteria": [
+					"Ich ordne beide Entwicklungswege richtig.",
+					"Ich nenne zwei ökologische Aufgaben.",
+					"Ich verallgemeinere einzelne Rollen nicht auf alle Arten."
+				]
+			},
+			"2": {
+				"prompt": "Ein Schulhofprojekt entfernt alle Wildpflanzen, lässt aber ein Insektenhotel stehen. Prüfe, ob damit die Lebensbedingungen umfassend gesichert sind.",
+				"model": "Ein Nistangebot allein ersetzt weder Nahrung noch geeignete Entwicklungsorte. Viele Arten benötigen bestimmte Pflanzen, andere Bodenstellen oder feuchte Bereiche. Ich plane blütenreiche Nahrung, passende ungestörte Strukturen und einen Verzicht auf unnötige Eingriffe. Die Bedürfnisse konkreter Arten bestimmen die Maßnahmen.",
+				"hints": [
+					"Wovon leben die Tiere und ihre Larven?",
+					"Was braucht eine Art außer einem Nistplatz?"
+				],
+				"criteria": [
+					"Ich erkenne fehlende Ressourcen.",
+					"Ich schlage mehrere passende Lebensraumelemente vor.",
+					"Ich beziehe Maßnahmen auf Artenansprüche."
+				]
+			}
+		}
+	},
+	{
+		"id": "b6-nahrungsnetz",
+		"lb": 4,
+		"title": "Nahrungskette, Netz und Pyramide",
+		"period": "B6 LB 4 · Ein heimatnahes Ökosystem",
+		"intro": "Verfolge Nahrung und nutzbare Energie durch eine Lebensgemeinschaft.",
+		"paragraphs": [
+			"In einer Nahrungskette zeigt der Pfeil hier von der Nahrung zum Fresser: Blatt → Raupe → Meise → Sperber. Mehrere verknüpfte Ketten bilden ein Nahrungsnetz. Pflanzen sind Produzenten, Pflanzen- und Tierfresser Konsumenten. Der Mensch ist ebenfalls Teil solcher Netze. Eine Art kann mehrere Nahrungsquellen haben und von mehreren anderen Arten gefressen werden.",
+			"Beispiel: Weniger Raupen können die Nahrungsgrundlage einer Meise verändern. Daraus folgt nicht, dass alle Bestände exakt gleich oder sofort reagieren. Auf jeder Ernährungsstufe wird Energie für Lebensvorgänge genutzt und als Wärme abgegeben; nur ein Teil steht der nächsten Stufe zur Verfügung. Eine Energiepyramide wird deshalb nach oben schmaler. Sie ist keine allgemeine Regel, dass immer weniger einzelne Tiere vorkommen müssen."
+		],
+		"takeaway": "Pfeile führen von Nahrung zum Fresser; Energie wird weitergegeben und teilweise als Wärme abgegeben.",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"question": "Was bedeutet der Pfeil Blatt → Raupe?",
+			"answer": "Die Raupe frisst das Blatt.",
+			"wrong": [
+				"Das Blatt frisst die Raupe.",
+				"Die Raupe verwandelt sich in ein Blatt."
+			],
+			"explanation": "Die festgelegte Pfeilrichtung beschreibt den Weg der Nahrung zum Fresser."
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Deine Werkstatt: Nahrungskette, Netz und Pyramide",
+			"instruction": "Ordne jede Aussage zu. Begründe die Entscheidung zuerst für dich.",
+			"categories": ["Produzent", "Konsument", "Beziehung im Netz"],
+			"entries": [
+				{
+					"text": "Eine grüne Pflanze bildet energiereiche Stoffe.",
+					"target": 0,
+					"feedback": "Sie nutzt Lichtenergie zum Aufbau von Biomasse."
+				},
+				{
+					"text": "Eine Meise frisst Raupen.",
+					"target": 1,
+					"feedback": "Sie nimmt organische Nahrung auf."
+				},
+				{
+					"text": "Eine Meise nutzt Raupen und weitere Insekten.",
+					"target": 2,
+					"feedback": "Mehrere Nahrungsquellen verbinden Ketten zum Netz."
+				}
+			],
+			"conclusion": "Pfeile führen von Nahrung zum Fresser; Energie wird weitergegeben und teilweise als Wärme abgegeben."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Erkläre die Nahrungskette Blatt → Raupe → Meise → Sperber. Warum steht nach oben weniger nutzbare Energie zur Verfügung?",
+				"model": "Die Raupe frisst das Blatt, die Meise frisst Raupen und der Sperber kann Meisen fressen. Auf jeder Stufe wird Energie für Lebensvorgänge verwendet und als Wärme abgegeben. Nur ein Teil gelangt als Nahrung an die nächste Stufe. Eine Energiepyramide bildet diese Verringerung ab.",
+				"hints": [
+					"In welche Richtung zeigen die Pfeile?",
+					"Was passiert mit Energie innerhalb einer Stufe?"
+				],
+				"criteria": [
+					"Ich lese die Pfeile richtig.",
+					"Ich ordne Produzent und Konsumenten.",
+					"Ich erkläre die Verringerung nutzbarer Energie."
+				]
+			},
+			"2": {
+				"prompt": "Eine Meise nutzt neben Raupen auch andere Insekten. Nach einem Raupenrückgang wird ihr Bestand nicht sofort halbiert. Widerspricht das dem Nahrungsnetz? Begründe mit zwei Modellgrenzen.",
+				"model": "Das widerspricht dem Netz nicht: Die Meise kann andere Nahrungsquellen nutzen. Außerdem hängen Bestände von Brutbedingungen, Wetter und zeitlichen Verzögerungen ab. Ein gezeichnetes Netz zeigt Beziehungen, sagt aber keine exakte Bestandszahl oder sofortige Reaktion voraus.",
+				"hints": [
+					"Welche Ersatznahrung ist vorhanden?",
+					"Welche Einflüsse fehlen in einer einfachen Zeichnung?"
+				],
+				"criteria": [
+					"Ich berücksichtige alternative Nahrung.",
+					"Ich nenne weitere Einflussgrößen oder Zeitverzug.",
+					"Ich trenne Beziehungen von exakten Bestandsprognosen."
+				]
+			}
+		},
+		"model": "foodweb"
+	},
+	{
+		"id": "b6-stoffkreislauf",
+		"lb": 4,
+		"title": "Stoffe kreisen, Energie fließt",
+		"period": "B6 LB 4 · Ein heimatnahes Ökosystem",
+		"intro": "Verbinde Produzenten, Konsumenten und Destruenten.",
+		"paragraphs": [
+			"Produzenten bauen mit Lichtenergie organische Stoffe auf. Konsumenten nehmen organische Nahrung auf. Destruenten, besonders Pilze und Bakterien, bauen tote organische Stoffe ab und setzen unter anderem Mineralsalze frei. Bodentiere zerkleinern Material und unterstützen den Abbau. Pflanzen können freigesetzte Mineralsalze wieder aufnehmen. Stoffe gelangen so in Kreisläufe, obwohl einzelne Vorgänge Zeit brauchen.",
+			"Beispiel: Ein abgefallenes Blatt wird von Bodentieren zerkleinert und von Pilzen und Bakterien weiter abgebaut. Freigesetzte Mineralsalze können von Wurzeln aufgenommen werden. Die Energie des Blatts kehrt nicht als Sonnenlicht zurück: Sie wird bei Lebensvorgängen weitergegeben und als Wärme abgegeben. Das biologische Gleichgewicht ist dynamisch; Bestände und Stoffflüsse schwanken, statt immer exakt gleich zu bleiben."
+		],
+		"takeaway": "Stoffe können wieder in den Kreislauf gelangen; nutzbare Energie braucht ständig neue Zufuhr.",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"question": "Welche Rolle haben Destruenten?",
+			"answer": "Sie bauen tote organische Stoffe ab und setzen unter anderem Mineralsalze frei.",
+			"wrong": [
+				"Sie verwandeln Wärme vollständig in Sonnenlicht.",
+				"Sie sind ausschließlich lebende grüne Blätter."
+			],
+			"explanation": "Zersetzung verbindet abgestorbenes Material mit erneut verfügbaren Stoffen."
+		},
+		"workshop": {
+			"kind": "timeline",
+			"title": "Deine Werkstatt: Stoffe kreisen, Energie fließt",
+			"instruction": "Bringe die Schritte in die richtige Reihenfolge.",
+			"categories": [],
+			"entries": [
+				{
+					"text": "Eine Pflanze baut organische Stoffe auf.",
+					"target": 0,
+					"feedback": "Licht liefert Energie für den Aufbau."
+				},
+				{
+					"text": "Ein Blatt wird gefressen oder fällt später ab.",
+					"target": 1,
+					"feedback": "Organische Stoffe werden weitergegeben oder sterben ab."
+				},
+				{
+					"text": "Bodentiere, Pilze und Bakterien wirken am Abbau mit.",
+					"target": 2,
+					"feedback": "Material wird zerkleinert und chemisch weiter abgebaut."
+				},
+				{
+					"text": "Freigesetzte Mineralsalze werden von Wurzeln aufgenommen.",
+					"target": 3,
+					"feedback": "Ein Teil der Stoffe gelangt erneut in Pflanzen."
+				}
+			],
+			"conclusion": "Stoffe können wieder in den Kreislauf gelangen; nutzbare Energie braucht ständig neue Zufuhr."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Beschreibe den Weg eines Stoffanteils vom abgefallenen Blatt zurück in eine Pflanze. Nenne die beteiligten Rollen.",
+				"model": "Bodentiere können das Blatt zerkleinern. Pilze und Bakterien bauen organisches Material weiter ab und setzen Mineralsalze frei. Pflanzenwurzeln nehmen solche Stoffe auf. Produzenten, Konsumenten und Destruenten sind so über Stoffflüsse verbunden; nicht alles wird sofort vollständig wieder aufgenommen.",
+				"hints": [
+					"Wer zerkleinert und wer baut weiter ab?",
+					"Wie gelangen Mineralsalze in eine neue Pflanze?"
+				],
+				"criteria": [
+					"Ich beschreibe den Abbauweg.",
+					"Ich erkläre die erneute Aufnahme.",
+					"Ich behaupte keinen sofort geschlossenen Kreislauf."
+				]
+			},
+			"2": {
+				"prompt": "Ein Plakat zeigt Stoffe und Energie als denselben geschlossenen Kreis. Korrigiere die Darstellung und erkläre, weshalb ein Ökosystem trotzdem schwanken kann.",
+				"model": "Stoffe können über Nahrung, Abbau und Aufnahme erneut genutzt werden. Energie wird dagegen zugeführt, weitergegeben und teilweise als Wärme abgegeben. Eine neue Zufuhr, meist Sonnenlicht, ist nötig. Bestände ändern sich durch Jahreszeiten, Fortpflanzung und weitere Einflüsse; Gleichgewicht bedeutet keine starre Unveränderlichkeit.",
+				"hints": [
+					"Was kommt von außen hinzu?",
+					"Was bedeutet dynamisch statt unverändert?"
+				],
+				"criteria": [
+					"Ich trenne Stoffkreislauf und Energiefluss.",
+					"Ich erkläre die erneute Energiezufuhr.",
+					"Ich erkenne Schwankungen als Teil dynamischer Systeme."
+				]
+			}
+		}
+	},
+	{
+		"id": "b6-schutz",
+		"lb": 4,
+		"title": "Eingriffe prüfen und Schutz begründen",
+		"period": "B6 LB 4 · Ein heimatnahes Ökosystem",
+		"intro": "Führe Belege, Maßstab und eigenes Handeln zusammen.",
+		"paragraphs": [
+			"Menschen verändern Lebensräume durch Bebauung, Entwässerung, Pflege oder Schutzmaßnahmen. Solche Eingriffe verändern abiotische Faktoren und damit die Lebensgemeinschaft. Eine Maßnahme sollte zur nachgewiesenen Ursache passen. Beschreibe mindestens zwei Optionen und ihre Folgen. Ein begründetes Urteil nennt Belege, einen Maßstab und offene Fragen; es ist mehr als eine persönliche Vorliebe.",
+			"Beispiel: Wird eine Hecke entfernt, können Schatten und Bodenfeuchte abnehmen sowie Nahrung und Brutplätze verloren gehen. Eine Ersatzpflanzung kann helfen, ersetzt aber nicht sofort eine alte Hecke. Eine Alternative ist abschnittsweise Pflege mit erhaltenen Rückzugsorten. Im Feldbogen hältst du eigene Beobachtungen, eine begründete Handlung und deren Grenzen fest. Besprich eine Schutzidee im Unterricht, bevor du am Lebensraum etwas veränderst."
+		],
+		"takeaway": "Verknüpfe Eingriff → Umweltfaktoren → Lebensgemeinschaft und begründe eine passende Schutzmaßnahme.",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"question": "Welche Begründung verbindet Eingriff und Wirkung nachvollziehbar?",
+			"answer": "Weniger Schatten kann den Boden erwärmen und feuchtigkeitsabhängige Arten beeinträchtigen.",
+			"wrong": [
+				"Jeder Eingriff hat immer dieselbe Wirkung.",
+				"Eine neue Pflanze ersetzt sofort alle Funktionen einer alten Hecke."
+			],
+			"explanation": "Die Wirkung wird über veränderte Bedingungen und Ansprüche der Arten erklärt."
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Deine Werkstatt: Eingriffe prüfen und Schutz begründen",
+			"instruction": "Ordne jede Aussage zu. Begründe die Entscheidung zuerst für dich.",
+			"categories": [
+				"Beleg oder Zusammenhang",
+				"Wertmaßstab",
+				"Handlungsoption"
+			],
+			"entries": [
+				{
+					"text": "Nach der Rodung fehlen schattige Bodenstellen.",
+					"target": 0,
+					"feedback": "Die beobachtete Bedingung ist ein prüfbarer Ausgangspunkt."
+				},
+				{
+					"text": "Ein wertvoller Brutplatz soll erhalten bleiben.",
+					"target": 1,
+					"feedback": "Das ist ein offengelegtes Schutzkriterium."
+				},
+				{
+					"text": "Nur einen Teil der Hecke auf einmal pflegen.",
+					"target": 2,
+					"feedback": "Das ist eine mögliche Maßnahme mit zu prüfenden Folgen."
+				}
+			],
+			"conclusion": "Verknüpfe Eingriff → Umweltfaktoren → Lebensgemeinschaft und begründe eine passende Schutzmaßnahme."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Eine Hecke soll vollständig entfernt werden. Beschreibe eine Wirkungskette und eine Alternative mit möglicher Grenze.",
+				"model": "Die Entfernung nimmt Schatten, verändert Bodenfeuchte und kann feuchtigkeitsabhängige Tiere sowie Brutvögel beeinträchtigen. Eine abschnittsweise Pflege erhält Rückzugsorte. Ob sie ausreicht, hängt von Arten und Zustand ab; eine sofortige vollständige Ersatzwirkung ist nicht garantiert.",
+				"hints": [
+					"Welche unbelebte Bedingung ändert sich?",
+					"Welche Artansprüche sind betroffen?"
+				],
+				"criteria": [
+					"Ich beschreibe eine vollständige Wirkungskette.",
+					"Ich nenne eine passende Alternative.",
+					"Ich benenne eine Grenze."
+				]
+			},
+			"2": {
+				"prompt": "Deine Klasse hat zwei Beobachtungen zur Hecke, soll aber schon eine Schutzempfehlung präsentieren. Plane eine ehrliche Aussage mit Beleg, Maßstab, zwei Optionen und eigener Verhaltensänderung.",
+				"model": "Ich nenne die beiden Beobachtungen mit Datum und trenne sie von Vermutungen. Als Maßstab wähle ich den Erhalt wichtiger Rückzugsorte. Ich vergleiche vollständige Entfernung und abschnittsweise Pflege samt möglichen Folgen. Weitere Beobachtungen bleiben nötig. Selbst bleibe ich auf Wegen und störe Brutplätze nicht.",
+				"hints": [
+					"Welche Daten sind tatsächlich vorhanden?",
+					"Welches Verhalten kannst du selbst beeinflussen?"
+				],
+				"criteria": [
+					"Ich trenne Beleg und Vermutung.",
+					"Ich vergleiche zwei Optionen anhand eines Maßstabs.",
+					"Ich nenne eine offene Frage und eigenes Handeln."
+				]
+			}
+		},
+		"projectStep": "judgment"
+	}
+]
