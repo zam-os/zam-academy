@@ -1,0 +1,754 @@
+[
+	{
+		"id": "b6-merkmale",
+		"lb": 2,
+		"title": "Erbanlagen und Umwelt wirken zusammen",
+		"period": "B6 LB 2 · Fortpflanzung und Sexualität",
+		"intro": "Erkläre Ähnlichkeiten, ohne alles auf Gene zu reduzieren.",
+		"paragraphs": [
+			"Gene sind Abschnitte der Erbsubstanz und tragen Erbinformation. Merkmale können von Erbanlagen, von Umweltbedingungen oder von beidem abhängen. Eine durch einen Unfall entstandene Narbe wird nicht als solche vererbt. Auch erlernte Fähigkeiten werden nicht einfach als fertige Fähigkeit weitergegeben. Viele Unterschiede lassen sich nicht mit einer einzigen Ursache erklären.",
+			"Beispiel: Zwei genetisch gleiche Stecklinge wachsen verschieden hoch, wenn einer zu wenig Wasser bekommt. Gleiche Anlagen garantieren also kein gleiches Ergebnis. Beim Menschen beeinflussen etwa Erbanlagen und Lebensbedingungen die Körpergröße. Aus einem Foto kannst du diese Anteile nicht ablesen. In dieser Jahrgangsstufe brauchst du dafür weder einen genetischen Code noch Kreuzungsschemata."
+		],
+		"takeaway": "Gene tragen Erbinformation; Umwelt und Erbanlagen können gemeinsam Merkmale prägen.",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"question": "Was ist ein Gen?",
+			"answer": "Ein Abschnitt der Erbsubstanz, der Erbinformation trägt.",
+			"wrong": [
+				"Eine beim Training fertig erworbene Fähigkeit.",
+				"Ein Organ, das nur Pflanzen besitzen."
+			],
+			"explanation": "Gene sind eine stoffliche Grundlage der Vererbung, keine erlernten Fertigkeiten."
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Deine Werkstatt: Erbanlagen und Umwelt wirken zusammen",
+			"instruction": "Ordne jede Aussage zu. Begründe die Entscheidung zuerst für dich.",
+			"categories": ["Erworben", "Anlagen und Umwelt wirken zusammen"],
+			"entries": [
+				{
+					"text": "Eine Narbe nach einem Sturz.",
+					"target": 0,
+					"feedback": "Die Verletzung verändert nicht die Erbanlagen so, dass die Narbe vererbt wird."
+				},
+				{
+					"text": "Die endgültige Körpergröße eines Menschen.",
+					"target": 1,
+					"feedback": "Anlagen und Lebensbedingungen beeinflussen sie."
+				},
+				{
+					"text": "Unterschiedliches Wachstum genetisch gleicher Stecklinge.",
+					"target": 1,
+					"feedback": "Die Anlagen sind gleich; unterschiedliche Bedingungen können das Ergebnis ändern."
+				}
+			],
+			"conclusion": "Gene tragen Erbinformation; Umwelt und Erbanlagen können gemeinsam Merkmale prägen."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Zwei gleiche Stecklinge erhalten verschieden viel Wasser und wachsen unterschiedlich. Was zeigt das über Erbanlagen und Umwelt?",
+				"model": "Gleiche Erbanlagen führen nicht unter allen Bedingungen zur gleichen Ausprägung. Unterschiedliche Wasserversorgung kann das Wachstum verändern. Der Vergleich spricht für einen Umwelteinfluss, wenn andere Bedingungen gleich bleiben. Er zeigt nicht, dass Erbanlagen unwichtig sind.",
+				"hints": [
+					"Was ist gleich, was ist verschieden?",
+					"Welche zu starke Schlussfolgerung wäre falsch?"
+				],
+				"criteria": [
+					"Ich benenne die gleichen Anlagen.",
+					"Ich erkläre den möglichen Wassereinfluss.",
+					"Ich schließe Gene nicht als Einfluss aus."
+				]
+			},
+			"2": {
+				"prompt": "Jemand behauptet: „Das Kind kann gut Klavier spielen, also hat es das Klavierspielen fertig geerbt.“ Prüfe die Aussage und verwende ein zweites Merkmal als Vergleich.",
+				"model": "Klavierspielen wird geübt und erlernt; eine fertige Fähigkeit wird nicht als solche vererbt. Anlagen können Lernvoraussetzungen beeinflussen, erklären das Können aber nicht allein. Auch Körpergröße entsteht durch das Zusammenwirken von Anlagen und Umwelt. Eine Narbe ist dagegen eine erworbene Veränderung.",
+				"hints": [
+					"Was muss das Kind lernen?",
+					"Welches Merkmal zeigt mehrere Einflüsse?"
+				],
+				"criteria": [
+					"Ich unterscheide Anlage und erlernte Fähigkeit.",
+					"Ich nenne einen passenden Vergleich.",
+					"Ich vermeide eine einzige Ursache für alles."
+				]
+			}
+		}
+	},
+	{
+		"id": "b6-keimzellen",
+		"lb": 2,
+		"title": "Befruchtung verbindet Erbinformation",
+		"period": "B6 LB 2 · Fortpflanzung und Sexualität",
+		"intro": "Vergleiche die Grundidee bei Menschen und Samenpflanzen.",
+		"paragraphs": [
+			"Bei geschlechtlicher Fortpflanzung verschmelzen eine männliche und eine weibliche Keimzelle; ihre Erbinformation wird zusammengeführt. Dadurch entstehen neue Kombinationen von Merkmalsanlagen. Beim Menschen sind das Spermium und Eizelle. Sie werden in unterschiedlichen Organen gebildet beziehungsweise reifen dort heran. Die neue Kombination erklärt, warum Geschwister einander ähneln können und trotzdem verschieden sind.",
+			"Beispiel Samenpflanze: Auch Samenpflanzen besitzen Eizellen und männliche Keimzellen. Ein Pollenkorn ist nicht einfach eine einzelne männliche Keimzelle: Es bildet einen Pollenschlauch, durch den männliche Keimzellen zur Samenanlage gelangen. Die Bestäubung bringt Pollen zunächst nur auf eine passende Narbe. Erst die anschließende Verschmelzung der Keimzellen ist Befruchtung. Das Grundprinzip ist vergleichbar, die beteiligten Organe unterscheiden sich."
+		],
+		"takeaway": "Bei der Befruchtung werden die Erbinformationen zweier Keimzellen neu kombiniert.",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"question": "Was kennzeichnet Befruchtung?",
+			"answer": "Die Verschmelzung einer männlichen und einer weiblichen Keimzelle.",
+			"wrong": [
+				"Allein der Transport von Pollen auf eine Narbe.",
+				"Das Wachstum eines bereits vorhandenen Blattes."
+			],
+			"explanation": "Transport und Wachstum sind andere Vorgänge; Befruchtung verbindet Keimzellen."
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Deine Werkstatt: Befruchtung verbindet Erbinformation",
+			"instruction": "Ordne jede Aussage zu. Begründe die Entscheidung zuerst für dich.",
+			"categories": ["Vor der Befruchtung", "Befruchtung"],
+			"entries": [
+				{
+					"text": "Ein Pollenkorn landet auf der Narbe.",
+					"target": 0,
+					"feedback": "Die Bestäubung ermöglicht den weiteren Weg."
+				},
+				{
+					"text": "Männliche und weibliche Keimzelle verschmelzen.",
+					"target": 1,
+					"feedback": "Dabei wird die Erbinformation zusammengeführt."
+				},
+				{
+					"text": "Ein Pollenschlauch wächst zur Samenanlage.",
+					"target": 0,
+					"feedback": "Die Keimzellen erreichen ihr Ziel erst noch."
+				}
+			],
+			"conclusion": "Bei der Befruchtung werden die Erbinformationen zweier Keimzellen neu kombiniert."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Vergleiche die Befruchtung beim Menschen und bei einer Samenpflanze. Nenne eine Gemeinsamkeit und einen Unterschied im Weg der Keimzellen.",
+				"model": "In beiden Fällen verschmelzen männliche und weibliche Keimzellen und kombinieren Erbinformation neu. Beim Menschen bewegt sich ein Spermium zur Eizelle. Bei einer Samenpflanze gelangen männliche Keimzellen mithilfe eines Pollenschlauchs zur Eizelle in der Samenanlage.",
+				"hints": [
+					"Was wird in beiden Fällen verbunden?",
+					"Welche Rolle spielt der Pollenschlauch?"
+				],
+				"criteria": [
+					"Ich nenne die Verschmelzung als Gemeinsamkeit.",
+					"Ich beschreibe unterschiedliche Wege.",
+					"Ich verwechsle Pollen nicht mit Befruchtung."
+				]
+			},
+			"2": {
+				"prompt": "Auf einem Plakat steht: „Geschwister müssten gleich aussehen, weil sie dieselben Eltern haben.“ Erkläre, warum das nicht folgt, ohne einzelne Merkmale als einfaches Ein-Gen-Beispiel festzulegen.",
+				"model": "Bei geschlechtlicher Fortpflanzung entstehen neue Kombinationen der elterlichen Erbinformation. Geschwister erhalten daher nicht einfach dieselbe vollständige Kombination. Außerdem können Umweltbedingungen Merkmale beeinflussen. Gleiche Eltern bedeuten somit nicht gleiche Merkmalsausprägungen.",
+				"hints": [
+					"Werden Anlagen nur kopiert?",
+					"Welche zweite Einflussgruppe kennst du?"
+				],
+				"criteria": [
+					"Ich erkläre Neukombination.",
+					"Ich beziehe Umweltbedingungen ein.",
+					"Ich behaupte keinen einfachen Erbgang für komplexe Merkmale."
+				]
+			}
+		}
+	},
+	{
+		"id": "b6-pubertaet",
+		"lb": 2,
+		"title": "Pubertät: Veränderungen verstehen",
+		"period": "B6 LB 2 · Fortpflanzung und Sexualität",
+		"intro": "Ordne Veränderungen ein und respektiere das persönliche Entwicklungstempo.",
+		"paragraphs": [
+			"In der Pubertät verändern sich Körper, Gefühle und Beziehungen. Hormone steuern viele körperliche Entwicklungen. Primäre Geschlechtsmerkmale sind die bereits vor der Pubertät angelegten Geschlechtsorgane. Sekundäre Geschlechtsmerkmale entwickeln sich stärker in der Pubertät, etwa Brustentwicklung, Bartwuchs oder eine tiefere Stimme. Wachstum und Entwicklung verlaufen unterschiedlich schnell; ein Vergleich mit anderen ist kein fester Zeitplan.",
+			"Beispiel: Zwei gleichaltrige Jugendliche verändern sich zu verschiedenen Zeiten. Daraus lässt sich keine Rangfolge von Reife oder Wert ableiten. Stimmungsschwankungen, Unsicherheit und ein stärkerer Wunsch nach Selbstständigkeit können dazugehören. Niemand muss persönliche Körpererfahrungen in der Klasse erzählen. Bei Sorgen kannst du mit einer vertrauten erwachsenen Person oder einer fachlichen Beratungsstelle sprechen."
+		],
+		"takeaway": "Pubertät verläuft individuell; körperliche Entwicklung verlangt Respekt und Privatsphäre.",
+		"sourceIds": ["lp", "puberty"],
+		"quiz": {
+			"question": "Welches Beispiel ist ein sekundäres Geschlechtsmerkmal?",
+			"answer": "Ein in der Pubertät wachsender Bart.",
+			"wrong": [
+				"Ein bereits vor der Pubertät angelegter Hoden.",
+				"Eine durch einen Unfall entstandene Narbe."
+			],
+			"explanation": "Bartwuchs entwickelt sich in der Pubertät; die Geschlechtsorgane sind primäre Merkmale."
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Deine Werkstatt: Pubertät: Veränderungen verstehen",
+			"instruction": "Ordne jede Aussage zu. Begründe die Entscheidung zuerst für dich.",
+			"categories": [
+				"Primäres Geschlechtsmerkmal",
+				"Sekundäres Geschlechtsmerkmal",
+				"Gefühl oder soziale Veränderung"
+			],
+			"entries": [
+				{
+					"text": "Die Eierstöcke sind bereits angelegt.",
+					"target": 0,
+					"feedback": "Sie gehören zu den Geschlechtsorganen."
+				},
+				{
+					"text": "Die Stimme wird während der Pubertät tiefer.",
+					"target": 1,
+					"feedback": "Diese Veränderung gehört zu den sekundären Merkmalen."
+				},
+				{
+					"text": "Der Wunsch nach mehr Selbstständigkeit nimmt zu.",
+					"target": 2,
+					"feedback": "Das ist eine mögliche geistig-seelische Veränderung."
+				}
+			],
+			"conclusion": "Pubertät verläuft individuell; körperliche Entwicklung verlangt Respekt und Privatsphäre."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Unterscheide primäre und sekundäre Geschlechtsmerkmale an zwei Beispielen. Erkläre, warum Gleichaltrige keinen identischen Entwicklungsplan haben.",
+				"model": "Hoden oder Eierstöcke sind primäre Geschlechtsmerkmale, weil sie bereits vor der Pubertät angelegt sind. Bartwuchs oder Brustentwicklung zählen zu den sekundären Merkmalen. Beginn und Geschwindigkeit der Pubertät unterscheiden sich; das sagt nichts über den Wert eines Menschen aus.",
+				"hints": [
+					"Was ist schon vorher angelegt?",
+					"Welche Veränderung entsteht erst stärker in der Pubertät?"
+				],
+				"criteria": [
+					"Ich nenne je ein richtiges Beispiel.",
+					"Ich erkläre den Unterschied.",
+					"Ich respektiere unterschiedliche Entwicklungsgeschwindigkeiten."
+				]
+			},
+			"2": {
+				"prompt": "Eine Klasse will alle nach sichtbaren Pubertätsmerkmalen sortieren. Begründe, warum das kein sinnvoller Reifetest ist, und schlage eine respektvolle Lernaufgabe vor.",
+				"model": "Sichtbare Körpermerkmale zeigen weder die persönliche Reife noch einen einheitlichen Entwicklungsstand. Eine öffentliche Sortierung verletzt leicht die Privatsphäre. Stattdessen ordnen wir erfundene Beispiele allgemeinen Veränderungsarten zu und besprechen, dass niemand eigene Erfahrungen offenlegen muss.",
+				"hints": [
+					"Was lässt sich aus dem Aussehen nicht ableiten?",
+					"Wie kannst du mit erfundenen Fällen lernen?"
+				],
+				"criteria": [
+					"Ich benenne eine fachliche Grenze des Tests.",
+					"Ich achte die Privatsphäre.",
+					"Ich schlage eine geeignete Alternative vor."
+				]
+			}
+		}
+	},
+	{
+		"id": "b6-organe",
+		"lb": 2,
+		"title": "Fortpflanzungsorgane arbeiten zusammen",
+		"period": "B6 LB 2 · Fortpflanzung und Sexualität",
+		"intro": "Verbinde Organe mit ihren Funktionen und lerne grundlegende Hygiene.",
+		"paragraphs": [
+			"In den Hoden entstehen Spermien. Sie reifen im Nebenhoden und gelangen über Samenleiter und Harnröhre nach außen; Drüsen steuern Flüssigkeit zum Sperma bei. In den Eierstöcken reifen Eizellen heran. Nach dem Eisprung gelangt eine Eizelle in den Eileiter; dort kann die Befruchtung stattfinden. In der Gebärmutter kann sich ein früher Embryo einnisten und entwickeln. Vagina und Gebärmutter sind verschiedene Organe; Vulva bezeichnet die äußeren Geschlechtsorgane.",
+			"Beispiel: Für den Weg einer Eizelle ordnest du Eierstock, Eileiter und Gebärmutter. Wenn keine Schwangerschaft entsteht, wird die aufgebaute Gebärmutterschleimhaut bei der Menstruation teilweise abgestoßen. Zur Hygiene gehören behutsames Waschen der äußeren Geschlechtsorgane und saubere Wäsche; die Vagina wird nicht innen ausgespült. Persönliche Beschwerden gehören in ein vertrauliches Gespräch mit einer medizinischen Fachperson."
+		],
+		"takeaway": "Ordne Bildung und Weg der Keimzellen, Befruchtungsort und Entwicklungsort auseinander.",
+		"sourceIds": ["lp", "puberty"],
+		"quiz": {
+			"question": "Wo entwickelt sich eine Schwangerschaft nach der Einnistung normalerweise weiter?",
+			"answer": "In der Gebärmutter.",
+			"wrong": ["Im Eierstock.", "In der Harnblase."],
+			"explanation": "Die Eizelle reift im Eierstock; die Gebärmutter trägt die weitere Entwicklung."
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Deine Werkstatt: Fortpflanzungsorgane arbeiten zusammen",
+			"instruction": "Ordne jede Aussage zu. Begründe die Entscheidung zuerst für dich.",
+			"categories": [
+				"Keimzellen bilden oder heranreifen lassen",
+				"Transportweg oder Befruchtungsort",
+				"Entwicklung nach Einnistung"
+			],
+			"entries": [
+				{
+					"text": "Hoden und Eierstöcke.",
+					"target": 0,
+					"feedback": "Hier entstehen Spermien beziehungsweise reifen Eizellen heran."
+				},
+				{
+					"text": "Eileiter.",
+					"target": 1,
+					"feedback": "Er nimmt die Eizelle auf und ist der übliche Befruchtungsort."
+				},
+				{
+					"text": "Gebärmutter.",
+					"target": 2,
+					"feedback": "Ihre Schleimhaut ermöglicht die Einnistung und Entwicklung."
+				}
+			],
+			"conclusion": "Ordne Bildung und Weg der Keimzellen, Befruchtungsort und Entwicklungsort auseinander."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Beschreibe den Weg einer Eizelle vom Eierstock bis zur möglichen Entwicklung in der Gebärmutter. Unterscheide Befruchtung und Einnistung.",
+				"model": "Eine Eizelle reift im Eierstock und gelangt nach dem Eisprung in den Eileiter. Dort kann ein Spermium mit ihr verschmelzen. Der frühe Embryo wird zur Gebärmutter transportiert und kann sich in deren Schleimhaut einnisten. Befruchtung und Einnistung sind verschiedene Schritte.",
+				"hints": [
+					"In welchem Organ reift die Eizelle heran?",
+					"Was geschieht erst nach der Befruchtung?"
+				],
+				"criteria": [
+					"Ich nenne die drei Organe in richtiger Folge.",
+					"Ich verorte die Befruchtung im Eileiter.",
+					"Ich unterscheide Einnistung und Befruchtung."
+				]
+			},
+			"2": {
+				"prompt": "Ein Modell zeigt Hoden, Samenleiter und Gebärmutter als einen einzigen Kanal. Prüfe das Modell und ergänze eine sachliche Hygieneregel.",
+				"model": "Das Modell verbindet Organe verschiedener Fortpflanzungssysteme falsch. Spermien gelangen aus den Hoden über ableitende Wege nach außen. Eizellen gelangen vom Eierstock über den Eileiter in Richtung Gebärmutter. Eine Hygieneregel lautet, äußere Geschlechtsorgane behutsam zu reinigen und die Vagina nicht innen auszuspülen.",
+				"hints": [
+					"Welche Organe gehören zu welchem Weg?",
+					"Was wird von außen gereinigt?"
+				],
+				"criteria": [
+					"Ich erkenne die falsche Verbindung.",
+					"Ich beschreibe zwei getrennte Wege.",
+					"Ich nenne eine geeignete Hygieneregel."
+				]
+			}
+		}
+	},
+	{
+		"id": "b6-verantwortung",
+		"lb": 2,
+		"title": "Befruchtung, Verhütung und Verantwortung",
+		"period": "B6 LB 2 · Fortpflanzung und Sexualität",
+		"intro": "Verstehe einen biologischen Ablauf und die Bedeutung freiwilliger Entscheidungen.",
+		"paragraphs": [
+			"Beim vaginalen Geschlechtsverkehr kann Sperma in die Vagina gelangen. Spermien können durch Gebärmutter und Eileiter zur Eizelle gelangen. Verschmelzen beide Keimzellen und entwickelt sich der frühe Embryo weiter, kann eine Schwangerschaft entstehen. Verhütungsmethoden greifen an verschiedenen Stellen ein. Ein Kondom hält Spermien zurück und verringert bei richtiger Verwendung auch das Risiko vieler sexuell übertragbarer Infektionen. Es gibt keine Garantie gegen jedes Risiko.",
+			"Hormonelle Verhütung beeinflusst je nach Methode etwa Eisprung und Schleim am Gebärmutterhals; sie schützt nicht vor sexuell übertragbaren Infektionen. Die Wahl einer Methode braucht verlässliche Information und bei medizinischen Fragen fachliche Beratung. Beispiel: „Es war das erste Mal“ verhindert keine Befruchtung. Verantwortung heißt auch: Einverständnis muss freiwillig sein, Grenzen gelten und niemand schuldet einer anderen Person sexuelle Handlungen."
+		],
+		"takeaway": "Verhütung, Schutz vor Infektionen und freiwilliges Einverständnis sind verschiedene Aufgaben.",
+		"sourceIds": ["lp", "condom"],
+		"quiz": {
+			"question": "Welche Aussage zum Kondom ist richtig?",
+			"answer": "Es hält Spermien zurück und senkt bei richtiger Verwendung auch viele Infektionsrisiken.",
+			"wrong": [
+				"Es verhindert grundsätzlich jede Infektion.",
+				"Es bewirkt, dass keine Eizelle mehr heranreift."
+			],
+			"explanation": "Das Kondom wirkt als Barriere; ein vollständiger Schutz vor jedem Risiko ist damit nicht zugesagt."
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Deine Werkstatt: Befruchtung, Verhütung und Verantwortung",
+			"instruction": "Ordne jede Aussage zu. Begründe die Entscheidung zuerst für dich.",
+			"categories": ["Sachlich begründet", "Irrtum"],
+			"entries": [
+				{
+					"text": "Auch beim ersten vaginalen Geschlechtsverkehr ist eine Schwangerschaft möglich.",
+					"target": 0,
+					"feedback": "Die biologische Möglichkeit hängt nicht von der Zahl früherer Kontakte ab."
+				},
+				{
+					"text": "Hormonelle Verhütung schützt automatisch vor Infektionen.",
+					"target": 1,
+					"feedback": "Sie bietet keinen Schutz vor sexuell übertragbaren Infektionen."
+				},
+				{
+					"text": "Ein Einverständnis darf jederzeit zurückgenommen werden.",
+					"target": 0,
+					"feedback": "Eine frühere Zustimmung verpflichtet niemanden zu weiteren Handlungen."
+				}
+			],
+			"conclusion": "Verhütung, Schutz vor Infektionen und freiwilliges Einverständnis sind verschiedene Aufgaben."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Erkläre, wie ein Kondom zur Schwangerschaftsverhütung beiträgt. Unterscheide diese Aufgabe vom Schutz vor Infektionen und vom Einverständnis.",
+				"model": "Ein Kondom bildet eine Barriere, sodass Spermien zurückgehalten werden. Richtige Verwendung verringert außerdem viele Infektionsrisiken, beseitigt aber nicht jedes Risiko. Ob Menschen einer Handlung freiwillig zustimmen, ist eine eigene Voraussetzung; Verhütung ersetzt kein Einverständnis.",
+				"hints": [
+					"Was muss für eine Befruchtung zusammenkommen?",
+					"Welche Aufgabe kann keine Verhütungsmethode übernehmen?"
+				],
+				"criteria": [
+					"Ich erkläre die Barrierewirkung.",
+					"Ich beschreibe den begrenzten Infektionsschutz.",
+					"Ich trenne Einverständnis von Verhütung."
+				]
+			},
+			"2": {
+				"prompt": "In einem fiktiven Chat steht: „Die Pille schützt vor allem, und nach einer Zusage darf niemand mehr Nein sagen.“ Korrigiere beide Aussagen sachlich und nenne eine verlässliche Informationsquelle.",
+				"model": "Hormonelle Verhütung schützt nicht vor sexuell übertragbaren Infektionen. Einverständnis bleibt freiwillig und kann zurückgenommen werden. Für sachliche Informationen eignen sich fachlich verantwortete Angebote wie familienplanung.de; persönliche medizinische Fragen klärt man vertraulich mit Fachpersonen.",
+				"hints": [
+					"Welche Schutzaufgabe fehlt?",
+					"Ist Zustimmung eine dauerhafte Verpflichtung?"
+				],
+				"criteria": [
+					"Ich korrigiere den Irrtum über Infektionen.",
+					"Ich erkläre die Freiwilligkeit.",
+					"Ich nenne eine fachlich verantwortete Informationsquelle."
+				]
+			}
+		}
+	},
+	{
+		"id": "b6-vermehrung",
+		"lb": 2,
+		"title": "Geschlechtlich oder ungeschlechtlich?",
+		"period": "B6 LB 2 · Fortpflanzung und Sexualität",
+		"intro": "Vergleiche Samen und Ausläufer als Wege zu neuen Pflanzen.",
+		"paragraphs": [
+			"Fortpflanzung erzeugt neue Individuen; Vermehrung betont die Zunahme ihrer Zahl. Bei geschlechtlicher Fortpflanzung werden Erbinformationen von Keimzellen neu kombiniert. Bei ungeschlechtlicher Fortpflanzung entsteht ein neues Individuum ohne Verschmelzung von Keimzellen, zum Beispiel aus einem Ausläufer oder Steckling. Die Nachkommen besitzen dabei weitgehend dieselben Erbanlagen wie die Ausgangspflanze.",
+			"Beispiel: Eine Erdbeerpflanze kann aus Samen wachsen oder über Ausläufer neue Pflanzen bilden. Samen entstehen nach geschlechtlicher Fortpflanzung, die Ausläufer ungeschlechtlich. Gleiche Anlagen bedeuten nicht, dass alle Pflanzen bei Trockenheit oder Schatten gleich wachsen. Ein Modell aus verbundenen Papierpflanzen zeigt die Ausläuferbeziehung, aber keine Versorgungsvorgänge oder vollständigen Entwicklungsprozesse."
+		],
+		"takeaway": "Ungeschlechtliche Fortpflanzung braucht keine Keimzellverschmelzung; geschlechtliche kombiniert Erbinformation neu.",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"question": "Welches Beispiel ist ungeschlechtliche Fortpflanzung?",
+			"answer": "Eine Erdbeerpflanze bildet eine neue Pflanze am Ausläufer.",
+			"wrong": [
+				"Eine Eizelle verschmilzt mit einer männlichen Keimzelle.",
+				"Aus einer befruchteten Eizelle entsteht ein Keimling."
+			],
+			"explanation": "Am Ausläufer entsteht ein neues Individuum ohne Befruchtung."
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Deine Werkstatt: Geschlechtlich oder ungeschlechtlich?",
+			"instruction": "Ordne jede Aussage zu. Begründe die Entscheidung zuerst für dich.",
+			"categories": ["Geschlechtlich", "Ungeschlechtlich"],
+			"entries": [
+				{
+					"text": "Eine neue Erdbeerpflanze wächst am Ausläufer.",
+					"target": 1,
+					"feedback": "Hier verschmelzen keine Keimzellen."
+				},
+				{
+					"text": "Nach einer Befruchtung entwickelt sich ein Samen.",
+					"target": 0,
+					"feedback": "Die Entwicklung beginnt mit neu kombinierter Erbinformation."
+				},
+				{
+					"text": "Ein Steckling bewurzelt sich und wächst weiter.",
+					"target": 1,
+					"feedback": "Der neue Organismus entsteht aus einem Pflanzenteil."
+				}
+			],
+			"conclusion": "Ungeschlechtliche Fortpflanzung braucht keine Keimzellverschmelzung; geschlechtliche kombiniert Erbinformation neu."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Vergleiche die Entstehung einer Erdbeerpflanze aus einem Samen und aus einem Ausläufer. Verwende Keimzellen und Erbinformation.",
+				"model": "Beim Samen ging der Entwicklung eine Verschmelzung von Keimzellen voraus; die Erbinformation ist neu kombiniert. Der Ausläufer bildet ohne Befruchtung eine neue Pflanze mit weitgehend gleichen Anlagen wie die Mutterpflanze. Umweltbedingungen beeinflussen beide Pflanzen zusätzlich.",
+				"hints": [
+					"Wo werden Keimzellen verschmolzen?",
+					"Sind Nachkommen bloße Kopien der Anlagen?"
+				],
+				"criteria": [
+					"Ich ordne beide Wege richtig zu.",
+					"Ich erkläre den Unterschied der Erbinformation.",
+					"Ich berücksichtige Umwelteinflüsse."
+				]
+			},
+			"2": {
+				"prompt": "Ein Betrieb vermehrt Erdbeeren nur über Ausläufer. Nach einer Trockenphase wachsen sie trotzdem unterschiedlich. Widerlegt das die Ähnlichkeit ihrer Erbanlagen? Begründe und nenne einen möglichen Vorteil neuer Kombinationen.",
+				"model": "Unterschiedliches Wachstum widerlegt ähnliche Anlagen nicht, weil Wasser und Standort verschieden sein können. Neue Kombinationen bei geschlechtlicher Fortpflanzung schaffen genetische Vielfalt. Unter veränderten Bedingungen können einige Kombinationen günstiger sein; einen Erfolg für jede neue Pflanze garantiert das nicht.",
+				"hints": [
+					"Was kann trotz gleicher Anlagen verschieden sein?",
+					"Wozu kann Vielfalt beitragen?"
+				],
+				"criteria": [
+					"Ich erkläre den Umwelteinfluss.",
+					"Ich nenne genetische Vielfalt als möglichen Vorteil.",
+					"Ich vermeide eine Erfolgsgarantie."
+				]
+			}
+		}
+	},
+	{
+		"id": "b6-bluete",
+		"lb": 2,
+		"title": "Die Blüte als Fortpflanzungsorgan",
+		"period": "B6 LB 2 · Fortpflanzung und Sexualität",
+		"intro": "Verbinde Blütenteile mit ihren Aufgaben.",
+		"paragraphs": [
+			"Eine vollständige Zwitterblüte besitzt Kelchblätter, Kronblätter, Staubblätter und Fruchtblätter. Kelchblätter schützen häufig die Knospe; auffällige Kronblätter können Tiere anlocken. Die Staubbeutel bilden Pollen. Der Stempel besteht aus Narbe, Griffel und Fruchtknoten. Im Fruchtknoten liegen Samenanlagen mit Eizellen. Nicht jede Blüte besitzt alle diese Teile in derselben Form.",
+			"Beispiel: An einem Kirschblütenmodell verfolgst du von außen nach innen Schutz, Anlockung, Pollenbildung und Samenanlagen. Eine echte Blüte untersuchst du nach Anleitung und zeichnest erkennbare Teile. Das Schema im Modell ist ein Längsschnitt, nicht die maßstabsgetreue Ansicht jeder Pflanzenart. Pollen ist kein fertiger Samen und eine Narbe ist kein Fruchtknoten."
+		],
+		"takeaway": "Staubbeutel bilden Pollen; Samenanlagen mit Eizellen liegen im Fruchtknoten.",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"question": "Wo liegen die Samenanlagen einer Blüte?",
+			"answer": "Im Fruchtknoten.",
+			"wrong": ["Im Staubbeutel.", "Auf den Kronblättern."],
+			"explanation": "Staubbeutel bilden Pollen; die Samenanlagen sind im Fruchtknoten geschützt."
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Deine Werkstatt: Die Blüte als Fortpflanzungsorgan",
+			"instruction": "Ordne jede Aussage zu. Begründe die Entscheidung zuerst für dich.",
+			"categories": [
+				"Schutz oder Anlockung",
+				"Pollenbildung",
+				"Teil des Stempels"
+			],
+			"entries": [
+				{
+					"text": "Kelch- und Kronblätter.",
+					"target": 0,
+					"feedback": "Sie schützen häufig die Knospe oder locken Bestäuber an."
+				},
+				{
+					"text": "Staubbeutel.",
+					"target": 1,
+					"feedback": "Hier werden Pollenkörner gebildet."
+				},
+				{
+					"text": "Narbe, Griffel und Fruchtknoten.",
+					"target": 2,
+					"feedback": "Diese Teile bilden den Stempel."
+				}
+			],
+			"conclusion": "Staubbeutel bilden Pollen; Samenanlagen mit Eizellen liegen im Fruchtknoten."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Beschreibe den Stempel einer Blüte von oben nach unten und erkläre die Lage der Eizelle.",
+				"model": "Oben liegt die Narbe, darunter der Griffel und an der Basis der Fruchtknoten. Im Fruchtknoten liegen Samenanlagen, in denen sich Eizellen befinden. Der Stempel bildet damit einen Weg von der Pollenaufnahme bis zum geschützten Ort der Befruchtung.",
+				"hints": [
+					"Wo wird Pollen aufgenommen?",
+					"Was liegt im verdickten unteren Teil?"
+				],
+				"criteria": [
+					"Ich nenne Narbe, Griffel und Fruchtknoten.",
+					"Ich ordne die Teile räumlich.",
+					"Ich verorte die Eizelle in der Samenanlage."
+				]
+			},
+			"2": {
+				"prompt": "Eine unscheinbare Blüte hat große Staubbeutel und weit herausragende Narben. Jemand erklärt sie wegen fehlender bunter Blätter für unfruchtbar. Prüfe die Behauptung.",
+				"model": "Bunte Kronblätter sind keine Voraussetzung für Fortpflanzung. Unscheinbare Blüten können Pollen durch Wind übertragen lassen. Herausstehende Staubbeutel und Narben können dazu passen. Für die genaue Zuordnung untersuche ich weitere Merkmale; fehlende Farbe allein beweist keine Unfruchtbarkeit.",
+				"hints": [
+					"Welche Aufgabe haben Farben bei vielen Blüten?",
+					"Kann Pollen auch ohne angelockte Tiere transportiert werden?"
+				],
+				"criteria": [
+					"Ich lehne Farbe als Fruchtbarkeitsbeweis ab.",
+					"Ich erkläre eine mögliche Windbestäubung.",
+					"Ich nenne die Grenze der einzelnen Beobachtung."
+				]
+			}
+		},
+		"model": "flower"
+	},
+	{
+		"id": "b6-bestaeubung",
+		"lb": 2,
+		"title": "Von Bestäubung zu Befruchtung",
+		"period": "B6 LB 2 · Fortpflanzung und Sexualität",
+		"intro": "Trenne zwei Schritte und vergleiche Insekten- und Windbestäubung.",
+		"paragraphs": [
+			"Bestäubung bedeutet, dass Pollen auf eine passende Narbe gelangt. Bei vielen Arten übernehmen Tiere oder Wind den Transport. Insektenbestäubte Blüten besitzen häufig auffällige Kronblätter, Duft und Nektar; Windblüten oft viel leicht transportierbaren Pollen und große Narbenflächen. Diese Merkmale sind Angepasstheiten, keine bewussten Entscheidungen der Pflanzen.",
+			"Beispiel: Eine Biene trägt Kirschpollen auf eine Kirschblütennarbe. Danach kann ein Pollenschlauch wachsen. Über ihn gelangen männliche Keimzellen zur Eizelle in der Samenanlage. Erst ihre Verschmelzung ist Befruchtung. Erfolgreiche Bestäubung ist dafür bei Samenpflanzen eine Voraussetzung, garantiert aber nicht bei jedem Pollenkorn einen Samen. Ein Modell zeigt die Reihenfolge und lässt viele Einzelheiten weg."
+		],
+		"takeaway": "Bestäubung transportiert Pollen; Befruchtung verbindet Keimzellen.",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"question": "Welcher Vorgang ist Bestäubung?",
+			"answer": "Pollen gelangt auf eine passende Narbe.",
+			"wrong": ["Eine Frucht fällt zu Boden.", "Zwei Keimzellen verschmelzen."],
+			"explanation": "Die Verschmelzung ist Befruchtung, die Übertragung auf die Narbe ist Bestäubung."
+		},
+		"workshop": {
+			"kind": "timeline",
+			"title": "Deine Werkstatt: Von Bestäubung zu Befruchtung",
+			"instruction": "Bringe die Schritte in die richtige Reihenfolge.",
+			"categories": [],
+			"entries": [
+				{
+					"text": "Pollen wird auf eine passende Narbe übertragen.",
+					"target": 0,
+					"feedback": "Dies ist die Bestäubung."
+				},
+				{
+					"text": "Ein Pollenschlauch wächst zur Samenanlage.",
+					"target": 1,
+					"feedback": "Er ermöglicht den Weg der männlichen Keimzellen."
+				},
+				{
+					"text": "Männliche Keimzelle und Eizelle verschmelzen.",
+					"target": 2,
+					"feedback": "Dies ist die Befruchtung."
+				},
+				{
+					"text": "Samen und Frucht entwickeln sich.",
+					"target": 3,
+					"feedback": "Die weitere Entwicklung folgt auf die Befruchtung."
+				}
+			],
+			"conclusion": "Bestäubung transportiert Pollen; Befruchtung verbindet Keimzellen."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Erkläre den Weg vom Pollentransport zur Befruchtung bei einer Kirschblüte. Nenne die Rolle des Pollenschlauchs.",
+				"model": "Pollen gelangt durch einen Bestäuber auf eine passende Narbe. Ein Pollenschlauch wächst durch den Griffel zur Samenanlage. Durch ihn gelangen männliche Keimzellen zur Eizelle. Deren Verschmelzung ist Befruchtung und unterscheidet sich vom bloßen Pollentransport.",
+				"hints": [
+					"Was geschieht zuerst an der Narbe?",
+					"Welcher Schritt verbindet Erbinformation?"
+				],
+				"criteria": [
+					"Ich beschreibe Bestäubung.",
+					"Ich erkläre den Pollenschlauch.",
+					"Ich benenne die Verschmelzung als Befruchtung."
+				]
+			},
+			"2": {
+				"prompt": "Eine Blütenart produziert viel leichten Pollen, hat keine auffälligen Kronblätter und große Narben. Eine zweite besitzt Duft und Nektar. Vergleiche die wahrscheinlichen Transportwege und die Grenze deiner Zuordnung.",
+				"model": "Die erste Merkmalskombination spricht für Windbestäubung: Viel Pollen und große Fangflächen erhöhen die Chance des zufälligen Transports. Duft und Nektar der zweiten Art sprechen für Tiere als Bestäuber. Die Zuordnung ist eine begründete Vermutung, die durch Beobachtungen geprüft werden muss.",
+				"hints": [
+					"Welche Merkmale helfen beim zufälligen Transport?",
+					"Welche Merkmale locken Tiere an?"
+				],
+				"criteria": [
+					"Ich ordne beide Merkmalskombinationen zu.",
+					"Ich erkläre deren Funktion.",
+					"Ich begrenze den Schluss auf eine prüfbare Vermutung."
+				]
+			}
+		},
+		"model": "flower"
+	},
+	{
+		"id": "b6-fruechte",
+		"lb": 2,
+		"title": "Samen ausbreiten: Natur als Vorbild",
+		"period": "B6 LB 2 · Fortpflanzung und Sexualität",
+		"intro": "Erkenne Früchte und übertrage ein Funktionsprinzip auf Technik.",
+		"paragraphs": [
+			"Nach der Befruchtung entwickelt sich aus der Samenanlage ein Samen mit einem Keimling. Aus dem Fruchtknoten entsteht die Frucht; bei manchen Arten wirken weitere Blütenteile mit. Früchte schützen Samen und unterstützen oft deren Ausbreitung. Bei der Kirsche liegt der Samen im harten Stein, beim Ahorn trägt eine geflügelte Frucht den Samen. Die Alltagssprache und die botanischen Begriffe stimmen nicht immer überein.",
+			"Beispiel: Löwenzahnfrüchte besitzen einen Haarkranz für den Windtransport, Klettfrüchte Haken zum Anhaften am Fell. Saftige Früchte können von Tieren gefressen und Samen an anderer Stelle ausgeschieden werden. Bionik überträgt untersuchte biologische Prinzipien auf Technik: Klettverschluss nutzt ein Hakenprinzip. Vergleiche selbst gebaute Papierflugfrüchte mit gleicher Masse aus gleicher Höhe; das Modell zeigt einen Effekt, nicht die gesamte Natur."
+		],
+		"takeaway": "Samen entstehen aus Samenanlagen; Fruchtmerkmale können die Ausbreitung unterstützen.",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"question": "Woraus entwickelt sich der Samen?",
+			"answer": "Aus der Samenanlage.",
+			"wrong": ["Aus dem Staubbeutel.", "Aus dem Kronblatt."],
+			"explanation": "Die Samenanlage entwickelt sich zum Samen, der Fruchtknoten zur Frucht."
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Deine Werkstatt: Samen ausbreiten: Natur als Vorbild",
+			"instruction": "Ordne jede Aussage zu. Begründe die Entscheidung zuerst für dich.",
+			"categories": [
+				"Windtransport",
+				"Anhaften an Tieren",
+				"Fraß und Ausscheidung"
+			],
+			"entries": [
+				{
+					"text": "Ahornfrucht mit Flügel.",
+					"target": 0,
+					"feedback": "Die Form kann die Sinkbewegung verändern und Windtransport ermöglichen."
+				},
+				{
+					"text": "Klettfrucht mit Haken.",
+					"target": 1,
+					"feedback": "Haken können am Fell hängen bleiben."
+				},
+				{
+					"text": "Saftige Kirsche mit geschütztem Samen.",
+					"target": 2,
+					"feedback": "Tiere können den Samen nach dem Fressen weitertragen oder ausscheiden."
+				}
+			],
+			"conclusion": "Samen entstehen aus Samenanlagen; Fruchtmerkmale können die Ausbreitung unterstützen."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Vergleiche Ahornfrucht und Klettfrucht: Nenne je ein Merkmal, seine Funktion und eine technische Übertragung.",
+				"model": "Der Flügel der Ahornfrucht verändert den Fall und kann Windtransport unterstützen. Haken der Klettfrucht haften am Fell. Ein Klettverschluss überträgt das Hakenprinzip auf ein technisches Produkt. Die Technik kopiert eine Funktion, nicht die ganze Pflanze oder ihre Fortpflanzung.",
+				"hints": [
+					"Welche Form erkennst du?",
+					"Welche Bewegung oder Verbindung ermöglicht sie?"
+				],
+				"criteria": [
+					"Ich verbinde zwei Merkmale mit ihren Funktionen.",
+					"Ich nenne eine technische Übertragung.",
+					"Ich unterscheide Funktionsprinzip und vollständige Kopie."
+				]
+			},
+			"2": {
+				"prompt": "Zwei Papierflugfrüchte fallen aus verschiedenen Höhen; die größere fliegt länger. Beweist das einen Vorteil der Flügelform? Verbessere den Versuch und plane eine Bestimmung echter Früchte.",
+				"model": "Verschiedene Abwurfhöhen verhindern den eindeutigen Vergleich. Ich halte Höhe, Masse, Luftbedingungen und Abwurf gleich und verändere nur die Form; mehrere Wiederholungen sind nötig. Echte Früchte bestimme ich mit Form, Größe und einer passenden Bestimmungshilfe, ohne allein aus dem Flug auf die Art zu schließen.",
+				"hints": [
+					"Welche Bedingungen müssen gleich sein?",
+					"Welche Merkmale reichen zur Artbestimmung?"
+				],
+				"criteria": [
+					"Ich benenne die veränderte Höhe als Fehlerquelle.",
+					"Ich plane einen fairen Formvergleich.",
+					"Ich nutze zusätzliche Merkmale zur Bestimmung."
+				]
+			}
+		}
+	},
+	{
+		"id": "b6-keimung",
+		"lb": 2,
+		"title": "Vom Samen zur neuen Generation",
+		"period": "B6 LB 2 · Fortpflanzung und Sexualität",
+		"intro": "Unterscheide Keimbedingungen und Bedingungen späteren Wachstums.",
+		"paragraphs": [
+			"Ein lebensfähiger Bohnensamen enthält einen Keimling und Reservestoffe. Zum Keimen braucht er Wasser, Sauerstoff und eine geeignete Temperatur. Wasser lässt ihn quellen; der Keimling nutzt zunächst Reserven. Bei Bohnen ist Licht keine notwendige Keimbedingung. Für dauerhaftes Wachstum benötigt die grüne Pflanze anschließend Licht, Wasser, Kohlenstoffdioxid und Mineralsalze. Keimen und späteres Wachstum sind verschiedene Phasen.",
+			"Beispiel: Feuchtes Papier mit Luftzugang unterstützt die Bohnenkeimung. Ein ganz unter Wasser liegender Samen kann unter Sauerstoffmangel leiden. Ein dunkler, sonst geeigneter Ansatz kann keimen, bildet auf Dauer aber keine kräftige grüne Pflanze. Aus Samen, Keimling, erwachsener Pflanze und ihren neuen Samen entsteht ein Entwicklungszyklus. Ein Modell gibt nur die gewählten Regeln wieder; echte Messungen kommen im Unterricht hinzu."
+		],
+		"takeaway": "Bohnenkeimung braucht Wasser, Sauerstoff und geeignete Wärme; spätere grüne Entwicklung braucht Licht.",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"question": "Was braucht ein lebensfähiger Bohnensamen zum Keimen?",
+			"answer": "Wasser, Sauerstoff und eine geeignete Temperatur.",
+			"wrong": [
+				"Zwingend Licht, aber kein Wasser.",
+				"Nur möglichst viel Dünger."
+			],
+			"explanation": "Die Anfangsentwicklung nutzt Reserven; Licht wird für das dauerhafte grüne Wachstum wichtig."
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Deine Werkstatt: Vom Samen zur neuen Generation",
+			"instruction": "Ordne jede Aussage zu. Begründe die Entscheidung zuerst für dich.",
+			"categories": ["Keimung möglich", "Keimung stark behindert"],
+			"entries": [
+				{
+					"text": "Lebensfähige Bohne auf feuchtem Papier mit Luft bei geeigneter Wärme.",
+					"target": 0,
+					"feedback": "Die notwendigen Bedingungen sind erfüllt."
+				},
+				{
+					"text": "Bohne bleibt vollständig trocken.",
+					"target": 1,
+					"feedback": "Ohne Wasser beginnt die Quellung nicht."
+				},
+				{
+					"text": "Dunkler Ansatz, sonst geeignete Bedingungen.",
+					"target": 0,
+					"feedback": "Bohnen können auch ohne Licht keimen."
+				}
+			],
+			"conclusion": "Bohnenkeimung braucht Wasser, Sauerstoff und geeignete Wärme; spätere grüne Entwicklung braucht Licht."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Vergleiche drei Bohnenansätze: trocken und warm; feucht mit Luft und warm; feucht mit Luft und dunkel bei gleicher Wärme. Was erwartest du zunächst und später?",
+				"model": "Der trockene Ansatz keimt zunächst nicht. Feuchte, warme Ansätze mit Luft können beide keimen, auch der dunkle. Für dauerhaftes grünes Wachstum fehlt dem dunklen Ansatz später Licht. Ein echter Versuch muss lebensfähige Samen und möglichst gleiche übrige Bedingungen verwenden.",
+				"hints": [
+					"Welche Ansätze bekommen Wasser?",
+					"Warum kann Keimung im Dunkeln beginnen?"
+				],
+				"criteria": [
+					"Ich unterscheide alle drei Ansätze.",
+					"Ich trenne Keimung und späteres Wachstum.",
+					"Ich begrenze die Erwartung auf passende Samen und Bedingungen."
+				]
+			},
+			"2": {
+				"prompt": "Eine Pflanze bildet Samen, daraus wachsen neue Pflanzen mit eigenen Samen. Beschreibe eine Generation und plane einen Kontrollversuch für die Behauptung „Dünger allein startet Keimung“.",
+				"model": "Eine Generation reicht von der Entstehung eines Individuums bis zu seiner Fortpflanzung mit neuen Nachkommen. Für die Behauptung vergleiche ich gleiche Samen unter kontrollierten Bedingungen. Dünger ersetzt kein Wasser, keinen Sauerstoff und keine geeignete Temperatur; ein trockener gedüngter Ansatz reicht daher nicht.",
+				"hints": [
+					"Wo beginnt und endet der Entwicklungszyklus?",
+					"Welche Grundbedingungen kann Dünger nicht ersetzen?"
+				],
+				"criteria": [
+					"Ich beschreibe den Generationszusammenhang.",
+					"Ich nenne notwendige Grundbedingungen.",
+					"Ich plane einen vergleichbaren Kontrollansatz."
+				]
+			}
+		},
+		"model": "germination"
+	}
+]
