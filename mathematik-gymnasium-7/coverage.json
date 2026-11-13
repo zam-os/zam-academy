@@ -1,0 +1,314 @@
+{
+  "schema": 1,
+  "checked": "2026-11-13",
+  "curriculum": "https://www.lehrplanplus.bayern.de/fachlehrplan/gymnasium/7/mathematik",
+  "curriculum_sha256": "0d3b0fe5c8823049f0f118a19fbf7aab66f64ee34781e743aef7f3a6c4785676",
+  "school_type": "gymnasium",
+  "grade": 7,
+  "subject": "mathematik",
+  "scope": "full",
+  "optional_lessons": [],
+  "rows": [
+    {
+      "lb": 1,
+      "competence": "verstehen Variablen als wichtiges Hilfsmittel, um mathematische Zusammenhänge kurz und prägnant zu formulieren. Sie strukturieren und abstrahieren unterschiedlich (z. B. sprachlich, numerisch, bildhaft) dargestellte inner- und außermathematische Zusammenhänge mithilfe von Termen mit einer oder mehreren Variablen und interpretieren vorgegebene Terme in derartigen Zusammenhängen.",
+      "status": "implemented",
+      "lessons": [
+        "tv-1-variablen",
+        "tv-2-interpretieren"
+      ],
+      "evidence": "tv-1-variablen (pattern-terms, term-muster, wort-zu-term) und tv-2-interpretieren (term-interpret, term-deuten, term-vergleich) übersetzen Beschreibungen und Muster in Terme und deuten Terme im Sachkontext."
+    },
+    {
+      "lb": 1,
+      "competence": "berechnen Werte von Termen, die auch Potenzen mit ganzzahligen Exponenten enthalten; dabei greifen sie auf die aus den vorhergehenden Jahrgangsstufen bekannten Rechenregeln für rationale Zahlen zurück und nutzen Wertetabellen zur Strukturierung und Veranschaulichung.",
+      "status": "implemented",
+      "lessons": [
+        "tv-3-termwerte"
+      ],
+      "evidence": "tv-3-termwerte (value-table, termwert-potenz, wertetabelle-luecke) berechnet Termwerte mit Potenzen mit ganzzahligen Exponenten anhand rationaler Rechenregeln und nutzt Wertetabellen."
+    },
+    {
+      "lb": 1,
+      "competence": "nutzen zur Berechnung von Termwerten ein Tabellenkalkulationsprogramm und wägen ab, wann der Einsatz eines solchen Programms dafür sinnvoll ist.",
+      "status": "supported",
+      "lessons": [
+        "tv-4-tabelle"
+      ],
+      "evidence": "tv-4-tabelle (spreadsheet-sim, tabelle-formel, tabelle-abwaegen) simuliert Formeln und Zellbezüge und wägt den Werkzeugeinsatz ab; die Arbeit in einer externen Tabellenkalkulation erfolgt im Unterricht."
+    },
+    {
+      "lb": 1,
+      "competence": "analysieren die Struktur von Termen, die Variablen enthalten, und beschreiben diese Struktur mithilfe von Fachbegriffen.",
+      "status": "implemented",
+      "lessons": [
+        "tv-5-struktur"
+      ],
+      "evidence": "tv-5-struktur (term-tree, term-struktur, fachbegriff-zu-term) zerlegt Terme in Rechenbäume und benennt äußere Verknüpfung sowie Glieder mit Fachbegriffen."
+    },
+    {
+      "lb": 1,
+      "competence": "fassen Produkte von Potenzen mit natürlichen Exponenten (bei gleicher Basis oder bei gleichem Exponenten) und Potenzen von Potenzen mit jeweils natürlichem Exponenten zu einer Potenz zusammen.",
+      "status": "implemented",
+      "lessons": [
+        "tu-1-potenzgesetze"
+      ],
+      "evidence": "tu-1-potenzgesetze (power-rules-n, potenzgesetz-nat, potenz-rechnen) leitet die Potenzgesetze für natürliche Exponenten her und wendet sie an."
+    },
+    {
+      "lb": 1,
+      "competence": "erfassen die Struktur von Termen angemessener Komplexität und formen diese in fortlaufender, klar strukturierter Rechnung zielgerichtet um (Zusammenfassen von Summen und von Produkten, Ausmultiplizieren, Multiplizieren von Summen), um insbesondere Terme zu vereinfachen und die Äquivalenz von Termen zu begründen. Sie präsentieren ihre Rechenwege, vollziehen Rechenwege nach und erläutern die einzelnen Rechenschritte unter Verwendung von Fachsprache.",
+      "status": "supported",
+      "lessons": [
+        "tu-2-zusammenfassen",
+        "tu-3-ausmultiplizieren",
+        "tu-5-summen-mal"
+      ],
+      "evidence": "tu-2-zusammenfassen (like-terms-probe, gleichartige-glieder, aequivalenz-probe), tu-3-ausmultiplizieren (distributive-area, ausmultiplizieren, minusklammer) und tu-5-summen-mal (sum-product-grid, summen-multiplizieren, rechteck-summe-produkt) trainieren Umformungsschritte und Nachweise; freie Präsentationen verbleiben im Unterricht."
+    },
+    {
+      "lb": 1,
+      "competence": "nutzen das Distributivgesetz in einfachen Fällen auch zum Faktorisieren von Summen und sind sich bewusst, dass durch Ausklammern eines gemeinsamen Faktors aus einer Summe ein Produkt entsteht.",
+      "status": "implemented",
+      "lessons": [
+        "tu-4-faktorisieren"
+      ],
+      "evidence": "tu-4-faktorisieren (factor-rect, faktorisieren, faktorisieren-vorzeichen) klammert gemeinsame Faktoren aus Summen aus und wandelt Summen in Produkte um."
+    },
+    {
+      "lb": 1,
+      "competence": "begründen die Gültigkeit der binomischen Formeln und wenden diese Formeln bei Termumformungen an, bei denen sich das Multiplizieren von Summen damit abkürzen lässt.",
+      "status": "implemented",
+      "lessons": [
+        "tu-6-binomisch"
+      ],
+      "evidence": "tu-6-binomisch (binomial-square, binomisch-umformen, binomisch-kopfrechnen) begründet alle drei binomischen Formeln geometrisch und nutzt sie zum Abkürzen."
+    },
+    {
+      "lb": 1,
+      "competence": "argumentieren auch in Sachzusammenhängen, indem sie geeignete Terme interpretieren, z. B. bezüglich der Änderung des Flächeninhalts eines Rechtecks bei Verdopplung der Seitenlängen.",
+      "status": "implemented",
+      "lessons": [
+        "tu-7-sachargument"
+      ],
+      "evidence": "tu-7-sachargument (area-scaling, skalierung-beweisen, zahlentrick-term) begründet Flächenänderungen und Zahleneigenschaften mithilfe passender Terme."
+    },
+    {
+      "lb": 2,
+      "competence": "konstruieren achsen- und punktsymmetrische Figuren mit Zirkel und Lineal im Bewusstsein der mathematik- und kulturhistorischen Bedeutung dieses Prinzips des Konstruierens. Sie verwenden die Eigenschaften zueinander symmetrischer Punkte, um die grundlegenden Konstruktionen von Symmetrieachse, Symmetriezentrum und Spiegelpunkt zu begründen.",
+      "status": "supported",
+      "lessons": [
+        "sy-1-achse",
+        "sy-2-punkt"
+      ],
+      "evidence": "sy-1-achse (axis-sym, achsenspiegelung-koordinaten, achsensymmetrie-eigenschaft) und sy-2-punkt (point-sym, punktspiegelung, achsen-vs-punkt) begründen Spiegelungen und Konstruktionen digital; das händische Zeichnen mit Zirkel und Lineal auf Papier erfolgt im Unterricht."
+    },
+    {
+      "lb": 2,
+      "competence": "konstruieren Mittelsenkrechte, Lote und Winkelhalbierende und beschreiben ihr Vorgehen. Zur Lösung realitätsnaher Problemstellungen, bei denen Abstände eine Rolle spielen, übersetzen sie die Situationen geeignet in geometrische Modelle und nutzen dabei auch die gemeinsame Eigenschaft aller Punkte einer Mittelsenkrechten bzw. eines Kreises; im Rahmen der Bewertung ihrer Ergebnisse benennen sie auch Grenzen des jeweiligen Modells.",
+      "status": "supported",
+      "lessons": [
+        "sy-3-abstand",
+        "sy-4-lot-winkel"
+      ],
+      "evidence": "sy-3-abstand (loci-model, ortsgebiet-abstand, modellgrenze-abstand) und sy-4-lot-winkel (perp-bisect-angle, winkelhalbierende-lot, konstruktion-begruenden) behandeln Abstandsmodelle, Modellgrenzen und Konstruktionsbegründungen; Papierkonstruktionen bleiben im Unterricht."
+    },
+    {
+      "lb": 2,
+      "competence": "ordnen auf der Grundlage eines gewachsenen inhaltlichen Begriffsverständnisses von geometrischen Objekten und Beziehungen die Menge aller symmetrischen Vierecke anhand ihrer Symmetrieeigenschaften; sie verwenden diese Symmetrieeigenschaften sowie weitere Eigenschaften von Vierecken, um insbesondere zu begründen, welche Arten von Vierecken Spezialfälle anderer sind, und erkennen Symmetrie als wesentliches Gestaltungsprinzip in Natur, Kunst und Design.",
+      "status": "implemented",
+      "lessons": [
+        "sy-5-vierecke"
+      ],
+      "evidence": "sy-5-vierecke (quad-house, viereck-symmetrie, viereck-spezialfall) ordnet symmetrische Vierecke nach ihren Symmetrieeigenschaften und begründet Spezialfallbeziehungen."
+    },
+    {
+      "lb": 2,
+      "competence": "beschreiben Winkelzusammenhänge an Geradenkreuzungen und Doppelkreuzungen unter Verwendung der Begriffe Scheitelwinkel, Nebenwinkel, Stufenwinkel und Wechselwinkel.",
+      "status": "implemented",
+      "lessons": [
+        "wi-1-kreuzung",
+        "wi-2-parallelen"
+      ],
+      "evidence": "wi-1-kreuzung (line-cross, scheitel-nebenwinkel, dreifachkreuzung-winkel) und wi-2-parallelen (parallel-transversal, stufen-wechselwinkel, parallelitaet-pruefen) behandeln Scheitelwinkel, Nebenwinkel, Stufenwinkel und Wechselwinkel."
+    },
+    {
+      "lb": 2,
+      "competence": "beweisen, ausgehend davon, dass Wechselwinkel an parallelen Geraden gleich groß sind, dass die Innenwinkelsumme im Dreieck 180° beträgt (oder umgekehrt), und stellen die dafür notwendige mehrschrittige Argumentation klar dar. Dabei ist ihnen sowohl die Bedeutung von Hilfslinien für Argumentationen als auch der Unterschied zwischen einem Fundamentalsatz und einem abgeleiteten Satz bewusst.",
+      "status": "implemented",
+      "lessons": [
+        "wi-3-dreiecksumme"
+      ],
+      "evidence": "wi-3-dreiecksumme (triangle-proof, dreieck-winkelsumme, dreieck-beweis) beweist die Innenwinkelsumme im Dreieck über eine Hilfsparallele und klärt Grundsatz gegenüber Folgesatz."
+    },
+    {
+      "lb": 2,
+      "competence": "erklären, wie von der Innenwinkelsumme im Dreieck auf die Innenwinkelsumme im Vieleck geschlossen werden kann.",
+      "status": "implemented",
+      "lessons": [
+        "wi-4-vielecksumme"
+      ],
+      "evidence": "wi-4-vielecksumme (polygon-triangulation, vieleck-winkelsumme, vieleck-restwinkel) leitet über Dreieckszerlegung die Innenwinkelsumme beliebiger Vielecke her."
+    },
+    {
+      "lb": 2,
+      "competence": "bestimmen bei Figuren mit mehrfachen Geradenkreuzungen aus gegebenen Winkelgrößen Größen anderer in der Figur auftretender Winkel, überprüfen anhand von Winkelgrößen die Parallelität von Geraden und begründen ihre Lösungsschritte.",
+      "status": "implemented",
+      "lessons": [
+        "wi-5-mehrfach"
+      ],
+      "evidence": "wi-5-mehrfach (multi-crossing, mehrfach-parallelitaet, zickzack-hilfslinie) berechnet Winkel an mehrfachen Geradenkreuzungen und prüft Parallelität begründet."
+    },
+    {
+      "lb": 3,
+      "competence": "stellen zu inner- und außermathematischen Fragestellungen – z. B. unter Nutzung des Invarianzprinzips – passende Gleichungen auf und beschreiben die dazu erforderlichen Gedankengänge.",
+      "status": "implemented",
+      "lessons": [
+        "gl-1-aufstellen"
+      ],
+      "evidence": "gl-1-aufstellen (equation-model, gleichung-invarianz, gleichung-aufstellen) stellt Gleichungen anhand innerer und äußerer Sachverhalte einschließlich Invarianzprinzip auf."
+    },
+    {
+      "lb": 3,
+      "competence": "lösen lineare Gleichungen durch gezielte Äquivalenzumformungen, erläutern, warum bei den einzelnen Umformungen die Lösungsmenge erhalten bleibt, stellen ihre Lösungsschritte auch formal korrekt dar und überprüfen ihre Lösungen (z. B. durch Einsetzen). Sie vergleichen dieses Verfahren anhand geeigneter Beispiele mit anderen Lösungsverfahren (z. B. Lösen durch systematisches Probieren).",
+      "status": "implemented",
+      "lessons": [
+        "gl-2-aequivalenz",
+        "gl-3-klammern"
+      ],
+      "evidence": "gl-2-aequivalenz (balance-scale, aequivalenzumformung, aequivalenz-begruenden) und gl-3-klammern (eq-vs-trial, klammergleichung, verfahren-vergleich) üben Äquivalenzumformungen, Einsetzproben und Verfahrensvergleiche."
+    },
+    {
+      "lb": 3,
+      "competence": "interpretieren und reflektieren die Lösungen von Gleichungen in Sachzusammenhängen.",
+      "status": "implemented",
+      "lessons": [
+        "gl-4-sonderfaelle"
+      ],
+      "evidence": "gl-4-sonderfaelle (eq-cases, sonderfaelle-gleichung, sachkontext-pruefen) deutet Lösungsfälle einschließlich keiner oder unendlich vieler Lösungen und prüft Ergebnisse im Sachkontext."
+    },
+    {
+      "lb": 3,
+      "competence": "lösen in Erweiterung ihrer in der Jahrgangsstufe 6 erworbenen Kenntnisse – auch auf der Grundlage eines gefestigten Verständnisses von linearen Gleichungen – komplexere Aufgabenstellungen zur Prozentrechnung (z. B. zu Aspekten der Globalisierung und nachhaltigen Entwicklung sowie zu politischen Sachverhalten). Dabei unterscheiden sie bei Aussagen, die Sachverhalte bewerten, mathematische von außerfachlichen Aspekten und prüfen insbesondere mathematische Argumente auf Korrektheit.",
+      "status": "implemented",
+      "lessons": [
+        "pr-1-gleichung",
+        "pr-2-wachstum",
+        "pr-3-pruefen"
+      ],
+      "evidence": "pr-1-gleichung (percent-equation, prozent-gleichung, prozent-teilsummen), pr-2-wachstum (chain-percent, prozent-verkettet, prozent-gegenaenderung) und pr-3-pruefen (claim-audit, prozentpunkte-pruefen, aussage-bewerten) lösen komplexe Prozentfragen und prüfen Argumente mathematisch."
+    },
+    {
+      "lb": 4,
+      "competence": "verwenden für die Beschreibung und Interpretation von Daten neben dem arithmetischen Mittel den Median als weiteren Mittelwert und vergleichen in Sachzusammenhängen kritisch die Aussagekraft dieser beiden Mittelwerte.",
+      "status": "implemented",
+      "lessons": [
+        "da-1-median",
+        "da-2-ausreisser"
+      ],
+      "evidence": "da-1-median (median-order, median-berechnen, median-vs-mittelwert) und da-2-ausreisser (outlier-shift, ausreisser-wirkung, kenngroesse-kontext) kontrastieren Median und arithmetisches Mittel bei Ausreißern."
+    },
+    {
+      "lb": 4,
+      "competence": "bestimmen Spannweite und Quartile als weitere Kenngrößen der beschreibenden Statistik, erstellen Boxplots und veranschaulichen damit wichtige Merkmale eines Datensatzes. Dazu verwenden sie auch geeignete Software.",
+      "status": "supported",
+      "lessons": [
+        "da-3-quartile",
+        "da-4-boxplot"
+      ],
+      "evidence": "da-3-quartile (quartiles-split, spannweite-quartile, quartilsabstand-streuung) und da-4-boxplot (boxplot-builder, boxplot-fuenf-werte, boxplot-viertel-regel) bestimmen Quartile, Spannweite und Boxplots interaktiv; externe Datensoftware wird im Unterricht eingesetzt."
+    },
+    {
+      "lb": 4,
+      "competence": "gewinnen aus den ihnen bekannten Kenngrößen sowie aus Boxplots Informationen über den jeweils zugrunde liegenden Datensatz; sie formulieren und beurteilen auf dieser Grundlage auch vergleichende Aussagen über Datensätze.",
+      "status": "implemented",
+      "lessons": [
+        "da-5-vergleich"
+      ],
+      "evidence": "da-5-vergleich (boxplot-compare, boxplot-vergleichen, boxplot-aussage-pruefen) liest Kennwerte aus Boxplots ab und beurteilt vergleichende Aussagen."
+    },
+    {
+      "lb": 5,
+      "competence": "erläutern anschaulich den Begriff der Kongruenz.",
+      "status": "implemented",
+      "lessons": [
+        "ko-1-kongruenz"
+      ],
+      "evidence": "ko-1-kongruenz (congruence-motion, kongruenz-ecken, kongruenz-kriterium) erklärt Kongruenz anschaulich über Verschiebung, Drehung, Spiegelung und Eckenzuordnung."
+    },
+    {
+      "lb": 5,
+      "competence": "erkennen unter Nutzung der Kongruenzsätze, ob sich ein Dreieck aus angegebenen Seitenlängen und Winkelgrößen eindeutig konstruieren lässt, und führen ggf. die Konstruktion durch.",
+      "status": "supported",
+      "lessons": [
+        "ko-2-sss-sws",
+        "ko-3-wsw-ssw"
+      ],
+      "evidence": "ko-2-sss-sws (sss-sws, dreiecksungleichung-sss, sws-kongruenz) und ko-3-wsw-ssw (wsw-ssw, wsw-sww-konstruktion, ssw-mehrdeutig) klären Eindeutigkeit nach den Kongruenzsätzen digital; das Konstruieren auf Papier erfolgt im Unterricht."
+    },
+    {
+      "lb": 5,
+      "competence": "verwenden die Eigenschaften von gleichschenkligen und gleichseitigen Dreiecken, um diese zu konstruieren, und beschreiben ihren jeweiligen Gedankengang.",
+      "status": "supported",
+      "lessons": [
+        "ko-4-gleichschenklig"
+      ],
+      "evidence": "ko-4-gleichschenklig (isosceles-lab, gleichschenklig-winkel, gleichschenklig-konstruieren) erschließt Eigenschaften und Konstruktionsideen gleichschenkliger und gleichseitiger Dreiecke digital; Papierzeichnungen verbleiben im Unterricht."
+    },
+    {
+      "lb": 5,
+      "competence": "unterscheiden klar zwischen Voraussetzung und Behauptung eines mathematischen Satzes und formulieren damit dessen Kehrsatz. Anhand von inner- und außermathematischen Beispielen erläutern sie, dass aus einer wahren Implikation im Allgemeinen nicht darauf geschlossen werden kann, dass auch deren Umkehrung wahr ist.",
+      "status": "implemented",
+      "lessons": [
+        "ko-5-kehrsatz"
+      ],
+      "evidence": "ko-5-kehrsatz (converse-checker, satz-und-kehrsatz, gegenbeispiel-umkehrung) trennt Voraussetzung und Behauptung, formuliert Kehrsätze und widerlegt falsche Umkehrungen durch Gegenbeispiele."
+    },
+    {
+      "lb": 5,
+      "competence": "nutzen eine dynamische Geometriesoftware als interaktives Werkzeug, um mathematische Zusammenhänge zu veranschaulichen bzw. experimentell zu untersuchen und zu erschließen sowie Vermutungen zu entwickeln (u. a. Umkreis eines Dreiecks, Inkreis eines Dreiecks, Satz des Thales).",
+      "status": "supported",
+      "lessons": [
+        "ko-6-umkreis-inkreis",
+        "ko-7-thales"
+      ],
+      "evidence": "ko-6-umkreis-inkreis (circum-in-circle, umkreis-vs-inkreis, umkreis-lage-winkel) und ko-7-thales (thales-lab, thales-winkel, thales-umkehrung) untersuchen Umkreis, Inkreis und Thaleskreis experimentell; eigenständige Erkundung mit externer Geometriesoftware erfolgt im Unterricht."
+    },
+    {
+      "lb": 5,
+      "competence": "verwenden ihre Kenntnisse über Winkelzusammenhänge, um den Satz des Thales sowie seine Umkehrung zu beweisen, und wenden den Satz sowie seine Umkehrung im Zusammenhang mit rechtwinkligen Dreiecken an.",
+      "status": "implemented",
+      "lessons": [
+        "ko-7-thales"
+      ],
+      "evidence": "ko-7-thales (thales-lab, thales-winkel, thales-umkehrung) beweist den Satz des Thales und seine Umkehrung über gleichschenklige Teildreiecke und Winkelsummen."
+    },
+    {
+      "lb": 5,
+      "competence": "begründen ihr Vorgehen bei der Konstruktion der Tangente an einen Kreis, die durch einen gegebenen Punkt außerhalb des Kreises verläuft.",
+      "status": "implemented",
+      "lessons": [
+        "ko-8-tangente"
+      ],
+      "evidence": "ko-8-tangente (tangent-thales, tangente-winkel, tangente-thaleskreis) begründet die Konstruktion der Kreistangente von einem Außenpunkt mithilfe des Thaleskreises."
+    },
+    {
+      "lb": 5,
+      "competence": "konstruieren Dreiecke aus verschiedenen Bestimmungsstücken (darunter insbesondere Höhen) und nutzen zur Ideenfindung Planfiguren. Sie dokumentieren und präsentieren ihre Lösungsschritte übersichtlich und nachvollziehbar, vollziehen Lösungswege nach und erläutern diese.",
+      "status": "supported",
+      "lessons": [
+        "ko-9-hoehen"
+      ],
+      "evidence": "ko-9-hoehen (height-construction, dreieck-hoehen, konstruktionsbericht) übt Planfiguren, Höhen und Konstruktionsberichte; freie Papierkonstruktionen und Schülervorträge bleiben im Unterricht."
+    },
+    {
+      "lb": 5,
+      "competence": "lösen anwendungsbezogene Aufgaben mithilfe von Konstruktionen, indem sie, v. a. mithilfe von Dreiecken, eine geeignete Modellierung durchführen.",
+      "status": "implemented",
+      "lessons": [
+        "ko-10-modellieren"
+      ],
+      "evidence": "ko-10-modellieren (survey-modeling, vermessung-massstab, vermessung-kongruenz) modelliert Vermessungsaufgaben mithilfe maßstäblicher Dreieckskonstruktionen."
+    }
+  ]
+}
