@@ -2210,8 +2210,8 @@
 				]
 			},
 			"2": {
-				"prompt": "Erkläre den Bedeutungsunterschied zwischen Futur I („Bis 16 Uhr bauen wir die Bühne auf“) und Futur II („Bis 16 Uhr werden wir die Bühne aufgebaut haben“) und zeige an einem Beispiel, wie Aktiv, Passiv und Konjunktiv I jeweils dieselbe Nachricht unterschiedlich beleuchten.",
-				"model": "Futur I kündigt an, dass der Aufbau um 16 Uhr stattfindet oder noch läuft. Futur II betont dagegen ausdrücklich, dass um 16 Uhr der Aufbau bereits abgeschlossen hinter uns liegt.\nVergleich einer Nachricht:\n• Aktiv: „Der Schülerrat verlegt das Sportfest auf Freitag.“ (Handelnder betont)\n• Passiv: „Das Sportfest wird auf Freitag verlegt.“ (Vorgang betont)\n• Konjunktiv I: „Laut Durchsage verlege der Schülerrat das Sportfest auf Freitag.“ (Fremde Aussage ohne eigene Garantie wiedergegeben.)",
+				"prompt": "Erkläre den Bedeutungsunterschied zwischen Futur I („Morgen werden wir die Bühne aufbauen“) und Futur II („Bis morgen um 16 Uhr werden wir die Bühne aufgebaut haben“) und zeige an einem Beispiel, wie Aktiv, Passiv und Konjunktiv I jeweils dieselbe Nachricht unterschiedlich beleuchten.",
+				"model": "Futur I („werden … aufbauen“) kündigt die künftige Handlung selbst als Vorhaben an: Morgen steht der Aufbau bevor. Futur II („Bis morgen um 16 Uhr werden wir die Bühne aufgebaut haben“) betont dagegen den künftigen Abschluss bis zu dieser Frist: Um 16 Uhr ist der Aufbau bereits beendet.\nVergleich einer Nachricht:\n• Aktiv: „Der Schülerrat verlegt das Sportfest auf Freitag.“ (Handelnder betont)\n• Passiv: „Das Sportfest wird auf Freitag verlegt.“ (Vorgang betont)\n• Konjunktiv I: „Laut Durchsage verlege der Schülerrat das Sportfest auf Freitag.“ (Fremde Aussage ohne eigene Garantie wiedergegeben.)",
 				"criteria": [
 					"Unterschied zwischen Futur I (Zukunft) und Futur II (abgeschlossene Zukunft) ist klar erklärt.",
 					"Alle drei Vergleiche (Aktiv, Passiv, Konjunktiv I) sind grammatisch fehlerfrei gebildet.",
@@ -2412,16 +2412,16 @@
 			"regelwerk"
 		],
 		"paragraphs": [
-			"Bei Verbindungen aus zwei Wörtern (z. B. Verb + Verb oder Adjektiv + Verb) hilft Raten nicht weiter – das Amtliche Regelwerk stützt sich auf zwei klare Proben. Bei der Betonungsprobe sprichst du die Fügung laut: Liegt eine einzige Hauptbetonung auf dem ersten Bestandteil („FREI|sprechen“, „KENNEN|lernen“ als Gesamtbegriff im übertragener/einheitlicher Bedeutung oder bei ‚schwer‘), neigt es eher zur Zusammenschreibung; tragen beide Wörter gleich starken Ton („RAD fahren“ mit Nomen, „schwer HEBEN“), trennt man.",
-			"Noch zuverlässiger greift bei Adjektiv + Verb die Erweiterungs- und Bedeutungsprobe: Kannst du ‚sehr‘ oder eine Steigerung vor das Adjektiv setzen („sehr schnell laufen“, „noch blanker putzen“), sind beide Teile eigenständig und werden getrennt geschrieben. Entsteht dagegen eine neue Gesamtbedeutung („kaltstellen“ im Sinne von ausschalten vs. „kalt stellen“ beim Getränk im Kühlschrank), schreibst du die übertragene Bedeutung zusammen."
+			"Bei Verbindungen aus zwei Wörtern (z. B. Verb + Verb oder Adjektiv + Verb) hilft Raten nicht weiter – das Amtliche Regelwerk stützt sich auf zwei klare Proben. Bei der Betonungsprobe sprichst du die Fügung laut: Liegt eine einzige Hauptbetonung auf dem ersten Bestandteil („FREI|sprechen“, „KENNEN|lernen“ als Gesamtbegriff in übertragener/einheitlicher Bedeutung), neigt es eher zur Zusammenschreibung; tragen beide Wörter gleich starken Ton („RAD fahren“ mit Nomen, „schwer HEBEN“), trennt man.",
+			"Noch zuverlässiger greift bei Adjektiv + Verb die Erweiterungs- und Bedeutungsprobe: Kannst du ‚sehr‘ oder eine Steigerung vor das Adjektiv setzen („sehr schnell laufen“, „noch blanker putzen“), sind beide Teile eigenständig und werden getrennt geschrieben. Entsteht dagegen eine neue, übertragene Gesamtbedeutung („kaltstellen“ im Sinne von ‚jemanden ausschalten‘), musst du zusammenschreiben; bei wörtlicher Bedeutung („den Saft kalt stellen / kaltstellen“) lässt das Regelwerk oft beide Schreibungen zu."
 		],
-		"takeaway": "Prüfe zweifach: Nomen + Verb bleiben im Kern meist getrennt (‚Rad fahren‘); bei Adjektiv + Verb zeigen Betonungs- und Erweiterungsprobe (‚sehr‘ / neuer Sinn) ob man trennt oder zusammenschreibt.",
+		"takeaway": "Prüfe zweifach: Nomen + Verb bleiben im Kern meist getrennt (‚Rad fahren‘); bei Adjektiv + Verb zeigen Betonungs- und Bedeutungsprobe, wann eine neue Gesamtbedeutung zwingend zusammengeschrieben wird und wann wörtlich Getrennt- oder Doppelschreibung gilt.",
 		"materialLabel": "Vier knifflige Fälle der Getrennt- und Zusammenschreibung",
 		"material": "1. „Am Nachmittag wollen wir zusammen (radfahren / Rad fahren).“\n2. „Du kannst den Saft für die Pause schon (kaltstellen / kalt stellen).“\n3. „Beim Schulfest soll niemand einen anderen (schlechtmachen / schlecht machen).“\n4. „Wir werden unsere neuen Nachbarn bald (kennenlernen / kennen lernen).“",
 		"tasks": {
 			"1": {
 				"prompt": "Entscheide zu allen vier Sätzen im Material die korrekte Schreibweise (inklusive Hinweis auf zulässige Doppelschreibung bei ‚kennenlernen / kennen lernen‘) und erkläre bei Satz 3 („schlechtmachen“) den Unterschied mit wörtlicher vs. übertragener Bedeutung.",
-				"model": "1. Rad fahren (eigenständiges Nomen + Verb → getrennt, Rad groß).\n2. kalt stellen (wörtliche Bedeutung, erweiterbar mit ‚ganz‘ → getrennt).\n3. schlechtmachen (übertragene Bedeutung = ‚jemanden herabsetzen/verleumden‘ → zusammen; dagegen wörtlich ein Bild ‚schlecht machen‘ = nicht gut malen → getrennt).\n4. kennenlernen / kennen lernen (beide Schreibungen sind nach dem Amtlichen Regelwerk zulässig; oft wird ‚kennenlernen‘ mit Erstbetonung zusammen bevorzugt).",
+				"model": "1. Rad fahren (eigenständiges Nomen + Verb → getrennt, Rad groß; als Ausnahme schreibt man ‚eislaufen‘ trotz Nomen kleingeschrieben zusammen).\n2. kalt stellen / kaltstellen (in wörtlicher Bedeutung ‚kühl stellen‘ sind nach Duden beide Schreibungen zulässig; zwingend zusammen steht nur die übertragene Bedeutung ‚kaltstellen‘ = jemanden ausschalten).\n3. schlechtmachen (übertragene Bedeutung = ‚jemanden herabsetzen/verleumden‘ → zusammen; dagegen wörtlich ein Bild ‚schlecht machen‘ = nicht gut malen → getrennt).\n4. kennenlernen / kennen lernen (beide Schreibungen sind nach dem Amtlichen Regelwerk zulässig; oft wird ‚kennenlernen‘ mit Erstbetonung zusammen bevorzugt).",
 				"criteria": [
 					"Alle vier Sätze sind normgerecht gelöst.",
 					"Die wörtliche vs. übertragene Bedeutung von ‚schlechtmachen‘ ist klar getrennt.",
@@ -2448,17 +2448,17 @@
 					"„Radfahren“ mitten im Satz nach ‚wollen‘ als Verb."
 				],
 				"answer": "„Rad fahren“ – denn „Rad“ ist hier ein eigenständiges Nomen (deshalb getrennt und groß).",
-				"feedback": "Verbindungen aus Nomen + Verb wie ‚Rad fahren‘, ‚Eis laufen‘, ‚Auto fahren‘ schreibt man nach dem Regelwerk getrennt und das Nomen groß (aber ‚beim Radfahren‘ als Nominalisierung groß zusammen)."
+				"feedback": "Verbindungen aus Nomen + Verb wie ‚Rad fahren‘, ‚Auto fahren‘ oder ‚Ball spielen‘ schreibt man getrennt und das Nomen groß (Ausnahme: verblasste Fügungen wie ‚eislaufen‘ schreibt man klein und zusammen; nominalisiert heißt es ‚beim Radfahren‘)."
 			},
 			{
-				"prompt": "Wie entscheidet die Bedeutungsprobe zwischen „kalt stellen“ und „kaltstellen“ in Satz 2?",
+				"prompt": "Welche Regel trifft bei Satz 2 („den Saft kalt stellen / kaltstellen“) auf die wörtliche und übertragene Bedeutung zu?",
 				"options": [
-					"Da Getränke in Flaschen immer klein und zusammen gehören: „kaltstellen“.",
-					"Weil nach ‚schon‘ nur noch ein einziges Wort folgen darf.",
-					"Da der Saft wörtlich kühl werden soll (erweiterbar: „ganz kalt stellen“), schreibt man getrennt: „kalt stellen“."
+					"Wörtlich darf beim Kühlen von Saft ausschließlich zusammengeschrieben werden („kaltstellen“).",
+					"Wörtlich muss der ganze Ausdruck immer groß mit Bindestrich stehen („Kalt-Stellen“).",
+					"Beide Schreibungen sind wörtlich zulässig („kalt stellen“ oder „kaltstellen“); zwingend zusammen schreibt man nur übertragen („jemanden ausschalten“)."
 				],
-				"answer": "Da der Saft wörtlich kühl werden soll (erweiterbar: „ganz kalt stellen“), schreibt man getrennt: „kalt stellen“.",
-				"feedback": "Wörtliche Eigenschaft + Verb bleibt getrennt („kalt stellen“); die übertragene Bedeutung „jemanden politisch ausschalten“ würde man zusammenschreiben."
+				"answer": "Beide Schreibungen sind wörtlich zulässig („kalt stellen“ oder „kaltstellen“); zwingend zusammen schreibt man nur übertragen („jemanden ausschalten“).",
+				"feedback": "In der wörtlichen Bedeutung (‚kühl lagern‘) lässt das Regelwerk ‚kalt stellen‘ und ‚kaltstellen‘ zu; die übertragene Bedeutung ‚jemanden politisch ausschalten‘ schreibt man zwingend zusammen."
 			}
 		],
 		"check": {
@@ -2634,9 +2634,9 @@
 		],
 		"paragraphs": [
 			"Kommas trennen für Leserinnen und Leser das Wichtige vom Zusätzlichen. Sicher beherrschen musst du vier Muster: 1. Aufzählungen gleichrangiger Wörter ohne ‚und‘/‚oder‘ („Hefte, Stifte, Lineal und Radiergummi“); 2. vollständige Satzreihen mit trennenden Konjunktionen wie ‚aber‘/‚sondern‘/‚denn‘ sowie Satzgefüge mit Nebensatz; 3. Einschübe zwischen zwei Kommas („Mein Bruder, sonst ein Langschläfer, stand heute früh auf“).",
-			"Besonders wichtig in Klasse 7 sind Infinitivgruppen mit ‚zu‘: Ein Komma steht Pflicht bei Einleitung durch ‚um‘, ‚ohne‘, ‚statt‘, ‚anstatt‘, ‚außer‘, ‚als‘ („Wir beeilten uns, um den Bus noch zu erreichen“), bei Verweiswörtern im Hauptsatz („Ich freue mich darauf, euch wiederzusehen“) und bei Abhängigkeit von einem Substantiv („Die Idee, ein Schulfest zu planen, begeisterte alle“)."
+			"Besonders wichtig in Klasse 7 sind Infinitivgruppen mit ‚zu‘ nach der seit 2024 gültigen Regelung (§ 73): Jede erweiterte Infinitivgruppe – also sobald neben ‚zu + Infinitiv‘ noch ein weiteres Wort steht – verlangt zwingend ein Komma („Sie hoffte, bald anzukommen“). Erst recht gilt Kommapflicht bei Einleitung durch ‚um‘, ‚ohne‘, ‚statt‘, ‚anstatt‘, ‚außer‘, ‚als‘ („Wir beeilten uns, um den Bus noch zu erreichen“), bei Verweiswörtern („Ich freue mich darauf, euch wiederzusehen“) und nach Substantiven („Die Idee, ein Schulfest zu planen, begeisterte alle“). Freiwillig bleibt das Komma nur bei einfachen, unerweiterten ‚zu‘-Infinitiven („Sie versuchte[,] zu lachen“)."
 		],
-		"takeaway": "Schließe Nebensätze und Einschübe paarig ein – und setze bei Infinitivgruppen mit ‚um … zu‘, ‚ohne … zu‘, ‚statt … zu‘ oder nach einem Substantiv bzw. Verweiswort immer ein Komma.",
+		"takeaway": "Schließe Nebensätze und Einschübe paarig ein – und setze bei jeder erweiterten Infinitivgruppe mit ‚zu‘ (sowie bei ‚um … zu‘, ‚ohne … zu‘, Bezugsnomen oder Verweiswort) immer ein Komma.",
 		"materialLabel": "Fünf Sätze ohne Kommas zum genauen Überprüfen",
 		"material": "1. „Paula packte Rucksack Kompass Wasserflasche und Regenjacke ein.“\n2. „Wir liefen schneller um vor dem Gewitter im Tal zu sein.“\n3. „Das alte Haus das am Waldrand steht gehört der Gemeinde.“\n4. „Unser Plan bereits im Mai zu starten fand großen Beifall.“\n5. „Tim hatte keine Lust mitzukommen sondern blieb lieber in der Bibliothek.“",
 		"tasks": {
@@ -2650,11 +2650,11 @@
 				]
 			},
 			"2": {
-				"prompt": "Bilde selbst je ein richtiges Satzbeispiel für: a) eine ‚ohne … zu‘-Infinitivgruppe, b) eine durch ein Verweiswort („darauf / daran / es“) angekündigte Infinitivgruppe und c) einen eingeschobenen Zusatz (Apposition oder Einschub) mitten im Hauptsatz – und erkläre, warum in „Sie hoffte bald anzukommen“ ohne ‚es/darauf‘ das Komma optional (kann), mit ‚es‘ („Sie hoffte es, …“) aber Pflicht ist.",
-				"model": "Beispiele:\na) Ohne ein Wort zu sagen, räumte Ben die Werkbank sauber auf.\nb) Ich freue mich schon sehr darauf, meine Großeltern am Sonntag zu besuchen.\nc) Herr Meier, der Leiter unserer Theater-AG, stellte die neuen Rollen vor.\nErklärung zum Pflichtkomma: Bei einer einfachen ‚zu‘-Gruppe ohne Signalwort wie ‚Sie hoffte[,] bald anzukommen‘ darf man das Komma weglassen oder setzen. Sobald aber im Hauptsatz ein Verweiswort wie ‚es‘, ‚darauf‘ oder ein Nomen (‚die Hoffnung‘) vorausgeht, schreibt das Amtliche Regelwerk das Komma verbindlich vor.",
+				"prompt": "Bilde selbst je ein richtiges Satzbeispiel für: a) eine ‚ohne … zu‘-Infinitivgruppe, b) eine durch ein Verweiswort („darauf / daran / es“) angekündigte Infinitivgruppe und c) einen eingeschobenen Zusatz (Apposition oder Einschub) mitten im Hauptsatz – und erkläre nach der seit 2024 gültigen Kommaregel, warum in „Sie hoffte, bald anzukommen“ ein Pflichtkomma steht, in „Sie versuchte[,] anzukommen“ aber nicht.",
+				"model": "Beispiele:\na) Ohne ein Wort zu sagen, räumte Ben die Werkbank sauber auf.\nb) Ich freue mich schon sehr darauf, meine Großeltern am Sonntag zu besuchen.\nc) Herr Meier, der Leiter unserer Theater-AG, stellte die neuen Rollen vor.\nErklärung zum Pflichtkomma: „Sie hoffte, bald anzukommen“ enthält durch das Zusatzwort ‚bald‘ eine erweiterte Infinitivgruppe – dafür schreibt das Regelwerk (seit 2024) verbindlich ein Komma vor. Nur bei einem bloßen, unerweiterten Infinitiv ohne Verweiswort oder Bezugsnomen wie „Sie versuchte[,] anzukommen“ bleibt das Komma freiwillig (sofern keine Verwechslung droht).",
 				"criteria": [
 					"Alle drei Satztypen sind korrekt gebaut und interpunktiert.",
-					"Die Unterscheidung von Kann- und Muss-Komma bei Infinitivgruppen stimmt nach aktuellem Regelwerk.",
+					"Die Unterscheidung zwischen erweiterter Infinitivgruppe (Kommapflicht) und bloßem ‚zu‘-Infinitiv stimmt nach aktuellem Regelwerk.",
 					"Die paarigen Einschubkommas (bei c) sind gesetzt."
 				]
 			}
@@ -2684,7 +2684,7 @@
 		],
 		"check": {
 			"wrong": "Nur wenn im Satz ein Fragezeichen statt eines Punkts steht.",
-			"explanation": "Die sechs Signalwörter (um, ohne, statt, anstatt, außer, als) sowie Bezugsnomen oder Verweiswörter machen das Komma zur Pflicht."
+			"explanation": "Alle erweiterten ‚zu‘-Infinitivgruppen sowie Fügungen mit Signalwörtern (um, ohne, statt, anstatt, außer, als), Bezugsnomen oder Verweiswörtern verlangen zwingend ein Komma."
 		}
 	}
 ]
