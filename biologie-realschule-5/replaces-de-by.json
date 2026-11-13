@@ -1,8 +1,9 @@
 {
   "schema": 1,
-  "status": "proposal-only",
-  "approved": null,
-  "note": "Vorschlag vor Freigabe durch Thomas: Abgleich aller 24 Altkarten der drei de-by:realschule-5-* Zellen aus zam-os/zam (Mensch/Skelett/Organe, Pflanzen/Blütenbau/Samen, NuT Mikroskop/Experiment/Dateien). 5 eindeutige Einzelabrufe (Kategorie A) werden zur Ersetzung nach Freigabe vorgeschlagen; die übrigen 19 Karten (Kategorie C: mehrteilige Abfragen, Sexualbiologie aus B6 LB 2, weiterführende Samen-/Bestäubungskarten oder Informatik-Karten aus NuT) bleiben ohne Stilllegung aktiv. Bis zur ausdrücklichen Freigabe deklariert cell.json keine replaces und keine retired_items.",
+  "status": "approved",
+  "approved": "2026-11-13",
+  "source": "Thomas am 2026-11-13 im Antigravity-Chat zur Freigabeanfrage von PR #124: „Freigabe erteilt - Du darfst als admin mergen“. Die Freigabe umfasst das 5-A / 0-B / 19-C-Mapping (inkl. NuT 5 J01 und J03) sowie den Ausschluss der Realschule-6- und Gymnasium-5-Zellen. Ab Zellversion 2026.11.1 tragen die 5 Nachfolger je ein replaces auf ihre alte Karte; alle 19 C-Karten bleiben aktiv.",
+  "note": "Freigegebenes Mapping aller 24 Altkarten der drei de-by:realschule-5-* Zellen aus zam-os/zam (Mensch/Skelett/Organe, Pflanzen/Blütenbau/Samen, NuT Mikroskop/Experiment/Dateien). 5 eindeutige Einzelabrufe (Kategorie A) werden in cell.json per replaces auf ihre Nachfolger überführt; die übrigen 19 Karten (Kategorie C) bleiben ohne Stilllegung aktiv.",
   "source_repository": "zam-os/zam",
   "source_commit": "b7fdfcc4e30d21bbbd97fb2025952ff7f4e296ac",
   "sources": [
@@ -32,7 +33,7 @@
       "de_by_question": "Welche charakteristische Form besitzt die menschliche Wirbelsäule in der Seitenansicht, um Erschütterungen beim aufrechten Gang wie eine elastische Feder abzufedern?",
       "category": "A",
       "academy_slug": "b5-skelett-wirbelsaeule-check",
-      "action": "propose-replace-after-approval",
+      "action": "replace",
       "reason": "Derselbe Einzelabruf zur doppelten S-Form der Wirbelsäule und den Bandscheiben als Stoßdämpfer."
     },
     {
@@ -50,7 +51,7 @@
       "de_by_question": "Welcher Muskel arbeitet als direkter Gegenspieler (Antagonist/Strecker) zum zweiköpfigen Armbeuger (Bizeps) am menschlichen Oberarm?",
       "category": "A",
       "academy_slug": "b5-muskeln-gelenke-check",
-      "action": "propose-replace-after-approval",
+      "action": "replace",
       "reason": "Derselbe Einzelabruf zum Trizeps als direktem Gegenspieler (Strecker) des Armbeugers Bizeps am Oberarm."
     },
     {
@@ -122,7 +123,7 @@
       "de_by_question": "Aus welchen drei Teilen besteht der weibliche Stempel (Fruchtblatt) im Zentrum einer Blütenpflanze von oben nach unten?",
       "category": "A",
       "academy_slug": "b5-bluete-vielfalt-check",
-      "action": "propose-replace-after-approval",
+      "action": "replace",
       "reason": "Derselbe Einzelabruf zu den drei Bestandteilen des weiblichen Stempels (Narbe, Griffel und Fruchtknoten von oben nach unten)."
     },
     {
@@ -176,7 +177,7 @@
       "de_by_question": "Wie nennt man eine wissenschaftlich begründete Vermutung über den Ausgang eines Experiments, die anschließend experimentell überprüft wird?",
       "category": "A",
       "academy_slug": "b5-erkenntnisweg-check",
-      "action": "propose-replace-after-approval",
+      "action": "replace",
       "reason": "Derselbe Einzelabruf zum Fachbegriff Hypothese als begründete, experimentell überprüfbare Vermutung im Erkenntnisweg."
     },
     {
@@ -194,7 +195,7 @@
       "de_by_question": "Wie berechnet man die optische Gesamtvergrößerung eines Lichtmikroskops?",
       "category": "A",
       "academy_slug": "b5-mikroskop-check",
-      "action": "propose-replace-after-approval",
+      "action": "replace",
       "reason": "Derselbe Einzelabruf zur Berechnung der Gesamtvergrößerung des Lichtmikroskops (Okularvergrößerung · Objektivvergrößerung)."
     },
     {

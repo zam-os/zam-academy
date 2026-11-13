@@ -40,8 +40,8 @@ describe("Course and card contract", () => {
 		expect(LESSONS.map((l) => l.id)).toEqual(contract.lessons);
 		expect(LESSONS).toHaveLength(25);
 		expect(tile.version).toBe("2026.11.1");
-		expect(mapping.status).toBe("proposal-only");
-		expect(mapping.approved).toBeNull();
+		expect(mapping.status).toBe("approved");
+		expect(mapping.approved).toBe("2026-11-13");
 		expect(mapping.rows).toHaveLength(24);
 		expect(
 			STAGES.map((s) => LESSONS.filter((l) => l.stage === s.id).length),
@@ -56,14 +56,15 @@ describe("Course and card contract", () => {
 		expect(tile.published_at).toMatch(/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z$/);
 		expect("retired_items" in tile).toBe(false);
 		expect(
-			tile.atoms.flatMap((a) => a.practice_items).some((i) => "replaces" in i),
-		).toBe(false);
+			tile.atoms
+				.flatMap((a) => a.practice_items)
+				.filter((i) => "replaces" in i),
+		).toHaveLength(5);
 	});
 
-	it("tracks every legacy item in replaces-de-by.json once with valid proposed slugs", () => {
-		const allSlugs = tile.atoms.flatMap((a) =>
-			a.practice_items.map((i) => i.slug),
-		);
+	it("tracks every legacy item in replaces-de-by.json once with valid approved replacements", () => {
+		const allItems = tile.atoms.flatMap((a) => a.practice_items);
+		const allSlugs = allItems.map((i) => i.slug);
 		const fixtureItemIds = [legacyMensch, legacyPflanzen, legacyNut].flatMap(
 			(f) => f.atoms.flatMap((a) => a.practice_items.map((i) => i.id)),
 		);
@@ -74,11 +75,15 @@ describe("Course and card contract", () => {
 		expect(mapping.rows.filter((row) => row.category === "C")).toHaveLength(19);
 		for (const row of mapping.rows) {
 			if (row.category === "A") {
-				expect(row.action).toBe("propose-replace-after-approval");
+				expect(row.action).toBe("replace");
 				expect(row.academy_slug).not.toBeNull();
 				expect(
 					allSlugs.filter((slug) => slug === row.academy_slug),
 				).toHaveLength(1);
+				const successor = allItems.find((i) => i.slug === row.academy_slug);
+				expect((successor as { replaces?: string[] } | undefined)?.replaces).toEqual([
+					row.de_by_id,
+				]);
 			} else {
 				expect(row.category).toBe("C");
 				expect(row.action).toBe("keep-active");

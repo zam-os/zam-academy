@@ -16,18 +16,18 @@ Stand: `2026-11-13`
   1. `de-by:realschule-5-biologie-mensch-skelett-bewegung-organe` (8 Karten, `01K4B5M0000000000000000J01`..`J08`)
   2. `de-by:realschule-5-biologie-pflanzen-bluetenbau-samen` (8 Karten, `01K4B5P0000000000000000J01`..`J08`)
   3. `de-by:realschule-5-natur-technik-mikroskop-experiment-dateien` (8 Karten, `01K4T5N0000000000000000J01`..`J08`)
-- Status in `replaces-de-by.json`: `proposal-only`, `"approved": null`. Bis zur ausdrücklichen Freigabe durch Thomas deklariert `biologie-realschule-5/cell.json` keine `replaces` und keine `retired_items`.
+- Status in `replaces-de-by.json`: `approved`, `"approved": "2026-11-13"` (Freigabe durch Thomas am `2026-11-13`: *„Freigabe erteilt - Du darfst als admin mergen“*). Die 5 Kategorie-A-Nachfolger in `biologie-realschule-5/cell.json` tragen jeweils `replaces`; alle 19 Kategorie-C-Karten bleiben ohne `retired_items` aktiv.
 
-| Kategorie | Anzahl | Bedeutung im Vorschlag |
+| Kategorie | Anzahl | Bedeutung im Mapping |
 | --- | --- | --- |
-| **A** (`propose-replace-after-approval`) | `5` | `Mensch J01 -> b5-skelett-wirbelsaeule-check` (Doppel-S-Form Wirbelsäule), `Mensch J03 -> b5-muskeln-gelenke-check` (Trizeps als Gegenspieler zum Bizeps), `Pflanzen J03 -> b5-bluete-vielfalt-check` (3 Teile des Stempels), `NuT J01 -> b5-erkenntnisweg-check` (Hypothese), `NuT J03 -> b5-mikroskop-check` (Gesamtvergrößerung). |
+| **A** (`replace`) | `5` | `Mensch J01 -> b5-skelett-wirbelsaeule-check` (Doppel-S-Form Wirbelsäule), `Mensch J03 -> b5-muskeln-gelenke-check` (Trizeps als Gegenspieler), `Pflanzen J03 -> b5-bluete-vielfalt-check` (3 Teile des Stempels), `NuT J01 -> b5-erkenntnisweg-check` (Hypothese), `NuT J03 -> b5-mikroskop-check` (Gesamtvergrößerung). |
 | **B** | `0` | Keine Sammel-Übertragung. |
 | **C** (`keep-active`) | `19` | Mehrteilige Sammel- und Feinbaufragen (`Mensch J02, J04`, `Pflanzen J01, J02, J04–J08`, `NuT J02, J04`), Themen aus Biologie 6 LB 2 (`Mensch J05–J08` zur Sexualbiologie) sowie Informatik-Inhalte aus NuT 5 (`NuT J05–J08` zu Objektorientierung und Dateisystem). Keine Karte wird stillgelegt. |
 
-### Offene Frage für die Review durch Thomas
+### Freigabe durch Thomas
 
-1. Soll die vorgeschlagene **5-A / 19-C-Zuordnung** freigegeben werden (oder erst nach der Erstveröffentlichung)?
-2. Bestätigt die Einbindung der **NuT-5-Zelle** (`J01`, `J03` als Biologie-Anteil, `J05–J08` als Informatik `keep-active`), dass die beiden Mikroskop-/Erkenntnisweg-Karten künftig zu `biologie-realschule-5` gehören?
+- Am `2026-11-13` erteilte Thomas die Freigabe für das **5-A / 19-C-Mapping** (einschließlich der Übernahme von `NuT 5 J01` und `J03` als Biologie-Anteil sowie des Ausschlusses der unten genannten Nachbar- und Gymnasium-5-Zellen).
+- `biologie-realschule-5/scripts/validate-migration.mjs` prüft die vollständige Historienübernahme, das Aktivbleiben aller 19 Kategorie-C-Karten, die Idempotenz wiederholter Installationen und den Kollisionsabbruch bei doppelt vorhandenen Karten.
 
 ## 3. Abgrenzung zu Nachbarjahrgängen und Gymnasium (`AGENTS.md` § 6)
 

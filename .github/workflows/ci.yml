@@ -189,5 +189,5 @@ jobs:
         run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node deutsch-mittelschule-7/scripts/validate-cell.mjs
       - name: Preserve existing histories when adding Deutsch 8 Mittelschule
         run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node deutsch-mittelschule-8/scripts/validate-cell.mjs
-      - name: Preserve existing histories when adding Biologie 5 Realschule
-        run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node biologie-realschule-5/scripts/validate-cell.mjs
+      - name: Move approved Biologie 5 histories to Biologie 5 Realschule in temporary libraries
+        run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node biologie-realschule-5/scripts/validate-migration.mjs
