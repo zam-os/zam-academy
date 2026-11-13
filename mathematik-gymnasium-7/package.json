@@ -1,0 +1,20 @@
+{
+  "name": "zam-academy-mathematik-gymnasium-7",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Mathematik 7 Gymnasium Bayern: fünf Lernbereiche mit Laboren und Aufgaben auf zwei Stufen.",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "package:zip": "npm run build && node scripts/build-release-zip.mjs"
+  },
+  "devDependencies": {
+    "typescript": "^6.0.3",
+    "vite": "^8.1.5",
+    "vite-plugin-singlefile": "^2.3.3",
+    "vitest": "^4.1.10"
+  }
+}

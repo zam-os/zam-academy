@@ -123,6 +123,8 @@ jobs:
         run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node mathematik-gymnasium-13/scripts/validate-migration.mjs
       - name: Preserve Mathematik 6 Gymnasium histories while adding fresh cards
         run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node mathematik-gymnasium-6/scripts/validate-migration.mjs
+      - name: Preserve Mathematik 7 Gymnasium histories while keeping the mapping proposal-only
+        run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node mathematik-gymnasium-7/scripts/validate-cell.mjs
       - name: Move the approved Mathematik 11 Gymnasium history, keep the C cards active and refuse automatic merges
         run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node mathematik-gymnasium-11/scripts/validate-migration.mjs
       - name: Move the approved Mathematik 12 Gymnasium histories in temporary libraries

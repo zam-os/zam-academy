@@ -1,0 +1,1599 @@
+{
+  "$schema": "https://zam.app/schemas/v1/kvt-tile.json",
+  "tile_id": "de-by:gymnasium-7-mathematik-symmetrie-winkel-dreiecke-kongruenz",
+  "version": "2026.08.1",
+  "title": "Mathematik 7: Symmetrie, Winkel an Parallelen, Dreieckskonstruktionen und Kongruenzsätze (Gymnasium 7 Bayern)",
+  "description": "Geerdetes KVT-Paket für Gymnasium Bayern Mathematik 7: Achsen- und Punktsymmetrie, Stufen- und Wechselwinkel an Parallelen, Winkelsumme im Dreieck (180°), Kongruenzsätze (SSS, SWS, WSW, SsW) und besondere Punkte im Dreieck (Umkreis, Inkreis, Schwerpunkt, Höhenschnittpunkt).",
+  "publisher": "ZAM Curriculum Working Group",
+  "published_at": "2026-08-15T23:25:00Z",
+  "sources": [
+    {
+      "uri": "https://www.lehrplanplus.bayern.de/fachlehrplan/gymnasium/7/mathematik",
+      "checked": "2026-08-15",
+      "label": "Gymnasium Mathematik 7, Lernbereiche Geometrische Grundbegriffe, Symmetrie und Dreiecke"
+    }
+  ],
+  "atoms": [
+    {
+      "id": "01K4M7W0000000000000000A01",
+      "atom_uri": "urn:zam:atom:01K4M7W0000000000000000A01",
+      "namespace": "gymnasium-mathematik-geometrie",
+      "slug": "symmetrie-achsenspiegelung-punktspiegelung-ortslinien",
+      "title": "Achsen- und Punktsymmetrie: Mittelsenkrechte, Winkelhalbierende und Abbildungseigenschaften",
+      "domain": "mathematik/geometrie",
+      "reduction": "formal",
+      "typical_age_min": 12.5,
+      "prerequisites": [],
+      "alignments": [
+        {
+          "target_uri": "http://www.wikidata.org/entity/Q12483",
+          "target_label": "Symmetry",
+          "alignment_type": "skos:broadMatch",
+          "provenance": "manual_curation_v1"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 7,
+          "subject": "mathematik",
+          "topic_code": "lb1",
+          "topic_title": "Symmetrie und elementare geometrische Konstruktionen",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01K4M7W0000000000000000J01",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Welche Ortslinie beschreibt die Menge aller Punkte der Ebene, die von zwei gegebenen Punkten "
+            },
+            {
+              "type": "math",
+              "tex": "A",
+              "speech": "A"
+            },
+            {
+              "type": "text",
+              "text": " und "
+            },
+            {
+              "type": "math",
+              "tex": "B",
+              "speech": "B"
+            },
+            {
+              "type": "text",
+              "text": " den gleichen Abstand haben ("
+            },
+            {
+              "type": "math",
+              "tex": "d(P, A) = d(P, B)",
+              "speech": "d von P und A gleich d von P und B"
+            },
+            {
+              "type": "text",
+              "text": ")?"
+            }
+          ],
+          "concept_segments": [
+            {
+              "type": "text",
+              "text": "Die Mittelsenkrechte "
+            },
+            {
+              "type": "math",
+              "tex": "m_{[AB]}",
+              "speech": "Mittelsenkrechte der Strecke A B"
+            },
+            {
+              "type": "text",
+              "text": " der Strecke "
+            },
+            {
+              "type": "math",
+              "tex": "[AB]",
+              "speech": "Strecke A B"
+            }
+          ],
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Die Mittelsenkrechte der Strecke [AB]",
+              "Die Winkelhalbierende"
+            ],
+            "correct_index": 0
+          },
+          "materiality": "cosmetic"
+        },
+        {
+          "id": "01K4M7W0000000000000000J02",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Analysiere Achsenspiegelung und Punktspiegelung sowie ihre elementaren Ortslinien: 1. Achsenspiegelung an der Geraden "
+            },
+            {
+              "type": "math",
+              "tex": "a",
+              "speech": "a"
+            },
+            {
+              "type": "text",
+              "text": ": Die Verbindungsstrecke "
+            },
+            {
+              "type": "math",
+              "tex": "[PP']",
+              "speech": "Strecke P P Strich"
+            },
+            {
+              "type": "text",
+              "text": " wird von der Spiegelachse "
+            },
+            {
+              "type": "math",
+              "tex": "a",
+              "speech": "a"
+            },
+            {
+              "type": "text",
+              "text": " rechtwinklig halbiert ("
+            },
+            {
+              "type": "math",
+              "tex": "a \\perp [PP']",
+              "speech": "a senkrecht zur Strecke P P Strich"
+            },
+            {
+              "type": "text",
+              "text": " und "
+            },
+            {
+              "type": "math",
+              "tex": "d(P, a) = d(P', a)",
+              "speech": "d von P und a gleich d von P Strich und a"
+            },
+            {
+              "type": "text",
+              "text": "); Eigenschaften: Längentreu, Winkeltreu, Kreistreu, Geradentreu, aber Orientierungssinn kehrt sich um (Gegensinnigkeit), 2. Punktspiegelung am Zentrum "
+            },
+            {
+              "type": "math",
+              "tex": "Z",
+              "speech": "Z"
+            },
+            {
+              "type": "text",
+              "text": ": Das Zentrum "
+            },
+            {
+              "type": "math",
+              "tex": "Z",
+              "speech": "Z"
+            },
+            {
+              "type": "text",
+              "text": " ist der Mittelpunkt der Strecke "
+            },
+            {
+              "type": "math",
+              "tex": "[PP']",
+              "speech": "Strecke P P Strich"
+            },
+            {
+              "type": "text",
+              "text": "; entspricht einer Drehung um "
+            },
+            {
+              "type": "math",
+              "tex": "180^\\circ",
+              "speech": "180 Grad"
+            },
+            {
+              "type": "text",
+              "text": "; Eigenschaften: Längen-, winkel- und gleichsinnig orientierungstreu, 3. Die beiden zentralen Ortslinien: Mittelsenkrechte "
+            },
+            {
+              "type": "math",
+              "tex": "m_{[AB]}",
+              "speech": "Mittelsenkrechte der Strecke A B"
+            },
+            {
+              "type": "text",
+              "text": " (Punkte mit gleichem Abstand zu zwei Punkten) und Winkelhalbierende "
+            },
+            {
+              "type": "math",
+              "tex": "w_\\alpha",
+              "speech": "w Alpha"
+            },
+            {
+              "type": "text",
+              "text": " (Punkte mit gleichem Abstand zu zwei sich schneidenden Geraden/Schenkeln)."
+            }
+          ],
+          "concept": "Achsenspiegelung (Achse halbiert [PP'] orthogonal, gegensinnig); Punktspiegelung (Z halbiert [PP'], Drehung um 180°, gleichsinnig); Mittelsenkrechte (Abstand zu zwei Punkten gleich); Winkelhalbierende (Abstand zu zwei Geraden gleich).",
+          "sample_solution": [
+            {
+              "type": "text",
+              "text": "1. Achsenspiegelung (Geradenspiegelung "
+            },
+            {
+              "type": "math",
+              "tex": "S_a"
+            },
+            {
+              "type": "text",
+              "text": "): - Konstruktionsvorschrift: Zu jedem Punkt "
+            },
+            {
+              "type": "math",
+              "tex": "P"
+            },
+            {
+              "type": "text",
+              "text": " ist der Bildpunkt "
+            },
+            {
+              "type": "math",
+              "tex": "P'"
+            },
+            {
+              "type": "text",
+              "text": " so definiert, dass die Spiegelachse "
+            },
+            {
+              "type": "math",
+              "tex": "a"
+            },
+            {
+              "type": "text",
+              "text": " die Strecke "
+            },
+            {
+              "type": "math",
+              "tex": "[PP']"
+            },
+            {
+              "type": "text",
+              "text": " orthogonal halbiert. Punkte auf der Achse sind Fixpunkte ("
+            },
+            {
+              "type": "math",
+              "tex": "A = A'"
+            },
+            {
+              "type": "text",
+              "text": "). - Abbildungseigenschaften:   * Längentreu: "
+            },
+            {
+              "type": "math",
+              "tex": "|\\overline{AB}| = |\\overline{A'B'}|"
+            },
+            {
+              "type": "text",
+              "text": "   * Winkeltreu: "
+            },
+            {
+              "type": "math",
+              "tex": "\\sphericalangle ABC = \\sphericalangle A'B'C'"
+            },
+            {
+              "type": "text",
+              "text": "   * Geradentreu und Kreistreu   * Orientierungsumkehrend (Gegensinnig): Ein gegen den Uhrzeigersinn orientiertes Dreieck "
+            },
+            {
+              "type": "math",
+              "tex": "ABC"
+            },
+            {
+              "type": "text",
+              "text": " wird zu einem im Uhrzeigersinn orientierten Bilddreieck "
+            },
+            {
+              "type": "math",
+              "tex": "A'B'C'"
+            },
+            {
+              "type": "text",
+              "text": " (Spiegelbildcharakter). 2. Punktspiegelung (Zentrische Spiegelung "
+            },
+            {
+              "type": "math",
+              "tex": "S_Z"
+            },
+            {
+              "type": "text",
+              "text": "): - Konstruktionsvorschrift: Der Bildpunkt "
+            },
+            {
+              "type": "math",
+              "tex": "P'"
+            },
+            {
+              "type": "text",
+              "text": " liegt auf dem Strahl "
+            },
+            {
+              "type": "math",
+              "tex": "[PZ"
+            },
+            {
+              "type": "text",
+              "text": " so, dass das Zentrum "
+            },
+            {
+              "type": "math",
+              "tex": "Z"
+            },
+            {
+              "type": "text",
+              "text": " die Strecke "
+            },
+            {
+              "type": "math",
+              "tex": "[PP']"
+            },
+            {
+              "type": "text",
+              "text": " genau halbiert ("
+            },
+            {
+              "type": "math",
+              "tex": "|\\overline{PZ}| = |\\overline{ZP'}|"
+            },
+            {
+              "type": "text",
+              "text": "). - Eigenschaften: Entspricht mathematisch einer Drehung um den Winkel "
+            },
+            {
+              "type": "math",
+              "tex": "\\alpha = 180^\\circ"
+            },
+            {
+              "type": "text",
+              "text": " um das Drehzentrum "
+            },
+            {
+              "type": "math",
+              "tex": "Z"
+            },
+            {
+              "type": "text",
+              "text": ". Sie ist gleichsinnig orientierungstreu und jede Gerade ist zu ihrer Bildgeraden parallel ("
+            },
+            {
+              "type": "math",
+              "tex": "g \\parallel g'"
+            },
+            {
+              "type": "text",
+              "text": "). 3. Die fundamentalen Ortslinien der Geometrie: - 1. Mittelsenkrechte "
+            },
+            {
+              "type": "math",
+              "tex": "m_{[AB]}"
+            },
+            {
+              "type": "text",
+              "text": ":   * Ortsliniendefinition: "
+            },
+            {
+              "type": "math",
+              "tex": "\\{P \\mid d(P, A) = d(P, B)\\}"
+            },
+            {
+              "type": "text",
+              "text": ". Die Menge aller Punkte, die von "
+            },
+            {
+              "type": "math",
+              "tex": "A"
+            },
+            {
+              "type": "text",
+              "text": " und "
+            },
+            {
+              "type": "math",
+              "tex": "B"
+            },
+            {
+              "type": "text",
+              "text": " denselben Abstand haben.   * Konstruktion: Zwei Kreise mit gleichem Radius "
+            },
+            {
+              "type": "math",
+              "tex": "r > \\frac{1}{2}|\\overline{AB}|"
+            },
+            {
+              "type": "text",
+              "text": " um "
+            },
+            {
+              "type": "math",
+              "tex": "A"
+            },
+            {
+              "type": "text",
+              "text": " und "
+            },
+            {
+              "type": "math",
+              "tex": "B"
+            },
+            {
+              "type": "text",
+              "text": "; die Gerade durch die Schnittpunkte ist "
+            },
+            {
+              "type": "math",
+              "tex": "m_{[AB]}"
+            },
+            {
+              "type": "text",
+              "text": ". - 2. Winkelhalbierende "
+            },
+            {
+              "type": "math",
+              "tex": "w_\\alpha"
+            },
+            {
+              "type": "text",
+              "text": ":   * Ortsliniendefinition: "
+            },
+            {
+              "type": "math",
+              "tex": "\\{P \\mid d(P, g) = d(P, h)\\}"
+            },
+            {
+              "type": "text",
+              "text": ". Die Menge aller Punkte im Winkelraum, die von den beiden Schenkelgeraden "
+            },
+            {
+              "type": "math",
+              "tex": "g"
+            },
+            {
+              "type": "text",
+              "text": " und "
+            },
+            {
+              "type": "math",
+              "tex": "h"
+            },
+            {
+              "type": "text",
+              "text": " den gleichen orthogonalen Abstand haben."
+            }
+          ],
+          "materiality": "cosmetic"
+        }
+      ]
+    },
+    {
+      "id": "01K4M7W0000000000000000A02",
+      "atom_uri": "urn:zam:atom:01K4M7W0000000000000000A02",
+      "namespace": "gymnasium-mathematik-geometrie",
+      "slug": "winkel-parallelen-stufen-wechselwinkel-winkelsumme-dreieck",
+      "title": "Winkel an Parallelen (Stufen- und Wechselwinkel) und Winkelsumme im Dreieck (180°)",
+      "domain": "mathematik/geometrie",
+      "reduction": "formal",
+      "typical_age_min": 12.5,
+      "prerequisites": [
+        {
+          "atom_id": "01K4M7W0000000000000000A01",
+          "type": "hard",
+          "rationale": "Winkelsätze an Parallelen begründen die Dreieckswinkelsumme."
+        }
+      ],
+      "alignments": [
+        {
+          "target_uri": "http://www.wikidata.org/entity/Q12483",
+          "target_label": "Sum of angles of a triangle",
+          "alignment_type": "skos:broadMatch",
+          "provenance": "manual_curation_v1"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 7,
+          "subject": "mathematik",
+          "topic_code": "lb1",
+          "topic_title": "Winkelbeziehungen und Dreiecksgeometrie",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01K4M7W0000000000000000J03",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Wie groß ist die Summe der drei Innenwinkel "
+            },
+            {
+              "type": "math",
+              "tex": "\\alpha + \\beta + \\gamma",
+              "speech": "Alpha plus Beta plus Gamma"
+            },
+            {
+              "type": "text",
+              "text": " in JEDEM beliebigen ebenen Dreieck der euklidischen Geometrie?"
+            }
+          ],
+          "concept": "Exakt 180° (entspricht einem gestreckten Winkel)",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Exakt 180°",
+              "Exakt 360°"
+            ],
+            "correct_index": 0
+          },
+          "materiality": "cosmetic"
+        },
+        {
+          "id": "01K4M7W0000000000000000J04",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Erkläre und beweise die Winkelbeziehungen an geschnittenen Geraden und die Innenwinkelsumme: 1. Winkel an sich schneidenden Geraden: Scheitelwinkel sind gleich groß ("
+            },
+            {
+              "type": "math",
+              "tex": "\\alpha = \\alpha'",
+              "speech": "Alpha gleich Alpha Strich"
+            },
+            {
+              "type": "text",
+              "text": "), Nebenwinkel ergänzen sich zu "
+            },
+            {
+              "type": "math",
+              "tex": "180^\\circ",
+              "speech": "180 Grad"
+            },
+            {
+              "type": "text",
+              "text": " ("
+            },
+            {
+              "type": "math",
+              "tex": "\\alpha + \\beta = 180^\\circ",
+              "speech": "Alpha plus Beta gleich 180 Grad"
+            },
+            {
+              "type": "text",
+              "text": "), 2. Winkel an Parallelen mit einer schneidenden Geraden "
+            },
+            {
+              "type": "math",
+              "tex": "g",
+              "speech": "g"
+            },
+            {
+              "type": "text",
+              "text": ": Stufenwinkel (F-Winkel) sind gleich groß ("
+            },
+            {
+              "type": "math",
+              "tex": "\\alpha = \\alpha_1",
+              "speech": "Alpha gleich Alpha eins"
+            },
+            {
+              "type": "text",
+              "text": "), Wechselwinkel (Z-Winkel) sind gleich groß ("
+            },
+            {
+              "type": "math",
+              "tex": "\\alpha = \\alpha_2",
+              "speech": "Alpha gleich Alpha zwei"
+            },
+            {
+              "type": "text",
+              "text": "), 3. Der mathematische Beweis der Dreieckswinkelsumme: Konstruktion einer Parallelen zur Grundseite "
+            },
+            {
+              "type": "math",
+              "tex": "AB",
+              "speech": "A B"
+            },
+            {
+              "type": "text",
+              "text": " durch den Eckpunkt "
+            },
+            {
+              "type": "math",
+              "tex": "C",
+              "speech": "C"
+            },
+            {
+              "type": "text",
+              "text": " und Nutzung von Wechselwinkeln "
+            },
+            {
+              "type": "math",
+              "tex": "\\rightarrow",
+              "speech": "führt zu"
+            },
+            {
+              "type": "text",
+              "text": " "
+            },
+            {
+              "type": "math",
+              "tex": "\\alpha + \\beta + \\gamma = 180^\\circ",
+              "speech": "Alpha plus Beta plus Gamma gleich 180 Grad"
+            },
+            {
+              "type": "text",
+              "text": ", 4. Formel für die Innenwinkelsumme eines beliebigen konvexen "
+            },
+            {
+              "type": "math",
+              "tex": "n",
+              "speech": "n"
+            },
+            {
+              "type": "text",
+              "text": "-Ecks: "
+            },
+            {
+              "type": "math",
+              "tex": "S_n = (n - 2) \\cdot 180^\\circ",
+              "speech": "S n gleich Klammer auf n minus 2 Klammer zu mal 180 Grad"
+            },
+            {
+              "type": "text",
+              "text": "."
+            }
+          ],
+          "concept": "Scheitelwinkel gleich; Nebenwinkel 180°; Stufenwinkel (F) & Wechselwinkel (Z) an Parallelen gleich; Beweis Dreieckswinkelsumme über Parallele durch C (Wechselwinkel ergeben gestreckten Winkel 180°); n-Eck Summe = (n-2) * 180°.",
+          "sample_solution": [
+            {
+              "type": "text",
+              "text": "1. Winkelpaare an Geradenkreuzungen: - Scheitelwinkel: Liegen sich an einem Schnittpunkt zweier Geraden gegenüber "
+            },
+            {
+              "type": "math",
+              "tex": "\\implies"
+            },
+            {
+              "type": "text",
+              "text": " sind immer exakt gleich groß ("
+            },
+            {
+              "type": "math",
+              "tex": "\\alpha = \\alpha'"
+            },
+            {
+              "type": "text",
+              "text": "). - Nebenwinkel: Liegen nebeneinander an einer Geraden "
+            },
+            {
+              "type": "math",
+              "tex": "\\implies"
+            },
+            {
+              "type": "text",
+              "text": " ergänzen sich immer zu einem gestreckten Winkel: "
+            },
+            {
+              "type": "math",
+              "tex": "\\mathbf{\\alpha + \\beta = 180^\\circ}"
+            },
+            {
+              "type": "text",
+              "text": ". 2. Winkel an Parallelen ("
+            },
+            {
+              "type": "math",
+              "tex": "g_1 \\parallel g_2"
+            },
+            {
+              "type": "text",
+              "text": " geschnitten von Gerade "
+            },
+            {
+              "type": "math",
+              "tex": "s"
+            },
+            {
+              "type": "text",
+              "text": "): - Stufenwinkel (F-Lage): Liegen auf derselben Seite der Schnittgeraden in derselben Relativlage zu den Parallelen "
+            },
+            {
+              "type": "math",
+              "tex": "\\implies"
+            },
+            {
+              "type": "text",
+              "text": " gleich groß: "
+            },
+            {
+              "type": "math",
+              "tex": "\\mathbf{\\alpha = \\alpha_{\\text{Stufe}}}"
+            },
+            {
+              "type": "text",
+              "text": ". - Wechselwinkel (Z-Lage): Liegen auf entgegengesetzten Seiten der Schnittgeraden und zwischen den Parallelen "
+            },
+            {
+              "type": "math",
+              "tex": "\\implies"
+            },
+            {
+              "type": "text",
+              "text": " gleich groß: "
+            },
+            {
+              "type": "math",
+              "tex": "\\mathbf{\\alpha = \\alpha_{\\text{Wechsel}}}"
+            },
+            {
+              "type": "text",
+              "text": ". - Nachbarwinkel (E-Lage): Ergänzen sich zu "
+            },
+            {
+              "type": "math",
+              "tex": "180^\\circ"
+            },
+            {
+              "type": "text",
+              "text": " ("
+            },
+            {
+              "type": "math",
+              "tex": "\\alpha + \\delta = 180^\\circ"
+            },
+            {
+              "type": "text",
+              "text": "). 3. Geometrischer Beweis der Innenwinkelsumme im Dreieck: - Gegeben sei ein beliebiges Dreieck "
+            },
+            {
+              "type": "math",
+              "tex": "ABC"
+            },
+            {
+              "type": "text",
+              "text": " mit Innenwinkeln "
+            },
+            {
+              "type": "math",
+              "tex": "\\alpha, \\beta, \\gamma"
+            },
+            {
+              "type": "text",
+              "text": ". - Konstruktionsschritt: Wir zeichnen eine Hilfsgerade "
+            },
+            {
+              "type": "math",
+              "tex": "h"
+            },
+            {
+              "type": "text",
+              "text": " durch den oberen Eckpunkt "
+            },
+            {
+              "type": "math",
+              "tex": "C"
+            },
+            {
+              "type": "text",
+              "text": ", die parallel zur Basis "
+            },
+            {
+              "type": "math",
+              "tex": "AB"
+            },
+            {
+              "type": "text",
+              "text": " verläuft ("
+            },
+            {
+              "type": "math",
+              "tex": "h \\parallel AB"
+            },
+            {
+              "type": "text",
+              "text": "). - Winkelbetrachtung am Punkt "
+            },
+            {
+              "type": "math",
+              "tex": "C"
+            },
+            {
+              "type": "text",
+              "text": ":   * Der Winkel zur Linken ist der Wechselwinkel zu "
+            },
+            {
+              "type": "math",
+              "tex": "\\alpha"
+            },
+            {
+              "type": "text",
+              "text": " an den Parallelen "
+            },
+            {
+              "type": "math",
+              "tex": "\\implies"
+            },
+            {
+              "type": "text",
+              "text": " Größe ist "
+            },
+            {
+              "type": "math",
+              "tex": "\\alpha"
+            },
+            {
+              "type": "text",
+              "text": ".   * Der Winkel in der Mitte ist der Innenwinkel "
+            },
+            {
+              "type": "math",
+              "tex": "\\gamma"
+            },
+            {
+              "type": "text",
+              "text": ".   * Der Winkel zur Rechten ist der Wechselwinkel zu "
+            },
+            {
+              "type": "math",
+              "tex": "\\beta"
+            },
+            {
+              "type": "text",
+              "text": " an den Parallelen "
+            },
+            {
+              "type": "math",
+              "tex": "\\implies"
+            },
+            {
+              "type": "text",
+              "text": " Größe ist "
+            },
+            {
+              "type": "math",
+              "tex": "\\beta"
+            },
+            {
+              "type": "text",
+              "text": ". - Da alle drei Winkel zusammen auf der Geraden "
+            },
+            {
+              "type": "math",
+              "tex": "h"
+            },
+            {
+              "type": "text",
+              "text": " einen gestreckten Winkel bilden, gilt zwingend:   "
+            },
+            {
+              "type": "math",
+              "tex": "\\mathbf{\\alpha + \\beta + \\gamma = 180^\\circ} \\quad \\blacksquare",
+              "block": true
+            },
+            {
+              "type": "text",
+              "text": " 4. Verallgemeinerung auf das konvexe "
+            },
+            {
+              "type": "math",
+              "tex": "n"
+            },
+            {
+              "type": "text",
+              "text": "-Eck: - Jedes "
+            },
+            {
+              "type": "math",
+              "tex": "n"
+            },
+            {
+              "type": "text",
+              "text": "-Eck kann von einem Eckpunkt aus in genau "
+            },
+            {
+              "type": "math",
+              "tex": "(n - 2)"
+            },
+            {
+              "type": "text",
+              "text": " Dreiecke zerlegt werden. - Daher beträgt die Summe aller Innenwinkel eines "
+            },
+            {
+              "type": "math",
+              "tex": "n"
+            },
+            {
+              "type": "text",
+              "text": "-Ecks:   "
+            },
+            {
+              "type": "math",
+              "tex": "\\mathbf{S_n = (n - 2) \\cdot 180^\\circ}",
+              "block": true
+            },
+            {
+              "type": "text",
+              "text": "   (Z. B. Viereck: "
+            },
+            {
+              "type": "math",
+              "tex": "(4-2)\\cdot 180^\\circ = 360^\\circ"
+            },
+            {
+              "type": "text",
+              "text": "; Fünfeck: "
+            },
+            {
+              "type": "math",
+              "tex": "(5-2)\\cdot 180^\\circ = 540^\\circ"
+            },
+            {
+              "type": "text",
+              "text": ")."
+            }
+          ],
+          "materiality": "cosmetic"
+        }
+      ]
+    },
+    {
+      "id": "01K4M7W0000000000000000A03",
+      "atom_uri": "urn:zam:atom:01K4M7W0000000000000000A03",
+      "namespace": "gymnasium-mathematik-geometrie",
+      "slug": "kongruenzsaetze-dreiecke-sss-sws-wsw-ssw-konstruktion",
+      "title": "Kongruenzsätze für Dreiecke: SSS, SWS, WSW, SsW und eindeutige Dreieckskonstruktionen",
+      "domain": "mathematik/geometrie",
+      "reduction": "formal",
+      "typical_age_min": 12.5,
+      "prerequisites": [
+        {
+          "atom_id": "01K4M7W0000000000000000A02",
+          "type": "hard",
+          "rationale": "Dreieckskonstruktionen erfordern Winkel- und Längenverständnis."
+        }
+      ],
+      "alignments": [
+        {
+          "target_uri": "http://www.wikidata.org/entity/Q12483",
+          "target_label": "Congruence (geometry)",
+          "alignment_type": "skos:broadMatch",
+          "provenance": "manual_curation_v1"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 7,
+          "subject": "mathematik",
+          "topic_code": "lb1",
+          "topic_title": "Kongruenz und Dreieckskonstruktionen",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01K4M7W0000000000000000J05",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question": "Unter welcher Bedingung ist ein Dreieck nach dem Kongruenzsatz 'SsW' (zwei Seiten und ein Gegenwinkel) EINDEUTIG konstruierbar und kongruent?",
+          "concept": "Wenn der gegebene Winkel der LÄNGEREN der beiden gegebenen Seiten gegenüberliegt (großes S = längere Seite)",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Winkel liegt der längeren Seite gegenüber (SsW)",
+              "Winkel liegt der kürzeren Seite gegenüber"
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "01K4M7W0000000000000000J06",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Definiere und systematisiere die 4 Kongruenzsätze für Dreiecke im Gymnasium: 1. SSS (Seite-Seite-Seite): Zwei Dreiecke sind kongruent (deckungsgleich "
+            },
+            {
+              "type": "math",
+              "tex": "\\Delta ABC \\cong \\Delta A'B'C'",
+              "speech": "Dreieck A B C kongruent zu Dreieck A Strich B Strich C Strich"
+            },
+            {
+              "type": "text",
+              "text": "), wenn sie in allen 3 Seitenlängen übereinstimmen (Dreiecksungleichung "
+            },
+            {
+              "type": "math",
+              "tex": "a + b > c",
+              "speech": "a plus b größer als c"
+            },
+            {
+              "type": "text",
+              "text": " vorausgesetzt), 2. SWS (Seite-Winkel-Seite): Übereinstimmung in 2 Seiten und dem von ihnen eingeschlossenen Winkel, 3. WSW / SWW (Winkel-Seite-Winkel): Übereinstimmung in einer Seite und 2 Winkeln, 4. SsW (Seite-Seite-Winkel): Übereinstimmung in 2 Seiten und dem Gegenwinkel der längeren Seite, 5. Warum ist 'WWW' (drei gleiche Winkel) kein Kongruenzsatz?"
+            }
+          ],
+          "concept": "4 Kongruenzsätze: SSS, SWS, WSW, SsW (Winkel gegenüber größerer Seite); WWW begründet nur Ähnlichkeit (gleiche Form, aber beliebig skalierte Größe), keine Kongruenz.",
+          "sample_solution": [
+            {
+              "type": "text",
+              "text": "1. Begriff der geometrischen Kongruenz (Deckungsgleichheit): - Zwei Dreiecke heißen kongruent (Symbol: "
+            },
+            {
+              "type": "math",
+              "tex": "\\cong"
+            },
+            {
+              "type": "text",
+              "text": "), wenn sie durch eine Folge von Kongruenzabbildungen (Verschiebung, Drehung, Spiegelung) exakt zur Deckung gebracht werden können (alle entsprechenden Seiten und Winkel sind gleich groß). 2. Die 4 grundlegenden Kongruenzsätze: - 1. Satz SSS (Seite-Seite-Seite):   * Stimmen zwei Dreiecke in den Längen aller drei Seiten "
+            },
+            {
+              "type": "math",
+              "tex": "a, b, c"
+            },
+            {
+              "type": "text",
+              "text": " überein, so sind sie kongruent.   * Existenzbedingung: Die Dreiecksungleichung muss erfüllt sein ("
+            },
+            {
+              "type": "math",
+              "tex": "a + b > c, a + c > b, b + c > a"
+            },
+            {
+              "type": "text",
+              "text": "; die Summe zweier Seiten muss stets echt größer als die dritte sein). - 2. Satz SWS (Seite-Winkel-Seite):   * Stimmen zwei Dreiecke in zwei Seiten und dem von diesen beiden Seiten eingeschlossenen Winkel überein (z. B. "
+            },
+            {
+              "type": "math",
+              "tex": "b, c"
+            },
+            {
+              "type": "text",
+              "text": " und "
+            },
+            {
+              "type": "math",
+              "tex": "\\alpha"
+            },
+            {
+              "type": "text",
+              "text": "), so sind sie kongruent. - 3. Satz WSW bzw. Sww (Winkel-Seite-Winkel):   * Stimmen zwei Dreiecke in einer Seitenlänge und zwei Winkeln überein (da der 3. Winkel über "
+            },
+            {
+              "type": "math",
+              "tex": "180^\\circ - (\\alpha+\\beta)"
+            },
+            {
+              "type": "text",
+              "text": " feststeht), so sind sie kongruent. - 4. Satz SsW (Seite-Seite-Winkel):   * Stimmen zwei Dreiecke in zwei Seiten und dem Gegenwinkel der längeren Seite überein ("
+            },
+            {
+              "type": "math",
+              "tex": "a > b"
+            },
+            {
+              "type": "text",
+              "text": " und "
+            },
+            {
+              "type": "math",
+              "tex": "\\alpha"
+            },
+            {
+              "type": "text",
+              "text": "), so sind sie kongruent.   * Wichtig: Läge der Winkel der kürzeren Seite gegenüber ("
+            },
+            {
+              "type": "math",
+              "tex": "sSW"
+            },
+            {
+              "type": "text",
+              "text": "), gäbe es zwei verschiedene Dreiecke (keine Eindeutigkeit!). 3. Warum WWW kein Kongruenzsatz ist: - Drei gegebene Winkel "
+            },
+            {
+              "type": "math",
+              "tex": "\\alpha, \\beta, \\gamma"
+            },
+            {
+              "type": "text",
+              "text": " mit "
+            },
+            {
+              "type": "math",
+              "tex": "\\alpha+\\beta+\\gamma=180^\\circ"
+            },
+            {
+              "type": "text",
+              "text": " legen zwar die Form und Seitenverhältnisse des Dreiecks fest, nicht aber dessen absolute Größe. - Dreiecke mit identischen Winkeln sind nur ähnlich (zentrische Streckung), aber nicht kongruent (z. B. ein gleichseitiges Dreieck mit "
+            },
+            {
+              "type": "math",
+              "tex": "a=1\\text{ cm}"
+            },
+            {
+              "type": "text",
+              "text": " und eines mit "
+            },
+            {
+              "type": "math",
+              "tex": "a=10\\text{ m}"
+            },
+            {
+              "type": "text",
+              "text": ")."
+            }
+          ],
+          "materiality": "cosmetic"
+        }
+      ]
+    },
+    {
+      "id": "01K4M7W0000000000000000A04",
+      "atom_uri": "urn:zam:atom:01K4M7W0000000000000000A04",
+      "namespace": "gymnasium-mathematik-geometrie",
+      "slug": "besondere-punkte-dreieck-umkreis-inkreis-schwerpunkt-hoehenschnittpunkt",
+      "title": "Besondere Punkte im Dreieck: Umkreismittelpunkt, Inkreismittelpunkt, Schwerpunkt und Höhenschnittpunkt",
+      "domain": "mathematik/geometrie",
+      "reduction": "formal",
+      "typical_age_min": 12.5,
+      "prerequisites": [
+        {
+          "atom_id": "01K4M7W0000000000000000A03",
+          "type": "hard",
+          "rationale": "Besondere Linien und Punkte vollenden die Dreieckslehre der 7. Klasse."
+        }
+      ],
+      "alignments": [
+        {
+          "target_uri": "http://www.wikidata.org/entity/Q12483",
+          "target_label": "Triangle center",
+          "alignment_type": "skos:broadMatch",
+          "provenance": "manual_curation_v1"
+        }
+      ],
+      "curricula": [
+        {
+          "provider": "lehrplanplus-bayern",
+          "school_type": "gymnasium",
+          "grade": 7,
+          "subject": "mathematik",
+          "topic_code": "lb1",
+          "topic_title": "Besondere Punkte und Linien im Dreieck",
+          "exam_relevant": true
+        }
+      ],
+      "practice_items": [
+        {
+          "id": "01K4M7W0000000000000000J07",
+          "language": "de",
+          "tier": "tier1_fast",
+          "bloom_level": 1,
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "In welchem Verhältnis teilt der physikalische Schwerpunkt "
+            },
+            {
+              "type": "math",
+              "tex": "S",
+              "speech": "S"
+            },
+            {
+              "type": "text",
+              "text": " eines Dreiecks jede der drei Seitenhalbierenden (vom Eckpunkt zur gegenüberliegenden Seite gemessen)?"
+            }
+          ],
+          "concept": "Im festen Teilungsverhältnis 2 : 1 (zwei Teile vom Eckpunkt zum Schwerpunkt, ein Teil vom Schwerpunkt zum Seitenmittelpunkt)",
+          "fast_check": {
+            "type": "binary_choice",
+            "options": [
+              "Im Verhältnis 2 : 1 (Ecke zu Seite)",
+              "Im Verhältnis 1 : 1 (genau in der Mitte)"
+            ],
+            "correct_index": 0
+          },
+          "materiality": "cosmetic"
+        },
+        {
+          "id": "01K4M7W0000000000000000J08",
+          "language": "de",
+          "tier": "tier2_synthesis",
+          "bloom_level": 2,
+          "question_segments": [
+            {
+              "type": "text",
+              "text": "Systematisiere die vier klassischen besonderen Punkte im Dreieck und ihre Linien: 1. Umkreismittelpunkt "
+            },
+            {
+              "type": "math",
+              "tex": "U",
+              "speech": "U"
+            },
+            {
+              "type": "text",
+              "text": ": Schnittpunkt der 3 Mittelsenkrechten ("
+            },
+            {
+              "type": "math",
+              "tex": "m_a, m_b, m_c",
+              "speech": "m a, m b, m c"
+            },
+            {
+              "type": "text",
+              "text": "); hat zu allen 3 Ecken den gleichen Abstand ("
+            },
+            {
+              "type": "math",
+              "tex": "r_u = |UA| = |UB| = |UC|",
+              "speech": "r u gleich Länge U A gleich Länge U B gleich Länge U C"
+            },
+            {
+              "type": "text",
+              "text": "; liegt bei rechtwinkligen Dreiecken genau in der Mitte der Hypotenuse [Thaleskreis] und bei stumpfwinkligen außerhalb), 2. Inkreismittelpunkt "
+            },
+            {
+              "type": "math",
+              "tex": "I",
+              "speech": "I"
+            },
+            {
+              "type": "text",
+              "text": ": Schnittpunkt der 3 Winkelhalbierenden ("
+            },
+            {
+              "type": "math",
+              "tex": "w_\\alpha, w_\\beta, w_\\gamma",
+              "speech": "w Alpha, w Beta, w Gamma"
+            },
+            {
+              "type": "text",
+              "text": "); berührt alle 3 Dreiecksseiten von innen ("
+            },
+            {
+              "type": "math",
+              "tex": "r_i = d(I, a) = d(I, b) = d(I, c)",
+              "speech": "r i gleich d von I und a gleich d von I und b gleich d von I und c"
+            },
+            {
+              "type": "text",
+              "text": "), 3. Schwerpunkt "
+            },
+            {
+              "type": "math",
+              "tex": "S",
+              "speech": "S"
+            },
+            {
+              "type": "text",
+              "text": ": Schnittpunkt der 3 Seitenhalbierenden ("
+            },
+            {
+              "type": "math",
+              "tex": "s_a, s_b, s_c",
+              "speech": "s a, s b, s c"
+            },
+            {
+              "type": "text",
+              "text": "); physikalischer Massenmittelpunkt mit Teilungsverhältnis 2:1, 4. Höhenschnittpunkt "
+            },
+            {
+              "type": "math",
+              "tex": "H",
+              "speech": "H"
+            },
+            {
+              "type": "text",
+              "text": ": Schnittpunkt der 3 Höhengeraden ("
+            },
+            {
+              "type": "math",
+              "tex": "h_a, h_b, h_c",
+              "speech": "h a, h b, h c"
+            },
+            {
+              "type": "text",
+              "text": " mit "
+            },
+            {
+              "type": "math",
+              "tex": "h_a \\perp a",
+              "speech": "h a senkrecht zu a"
+            },
+            {
+              "type": "text",
+              "text": "); liegt bei stumpfwinkligen Dreiecken außerhalb, 5. Die Eulersche Gerade: "
+            },
+            {
+              "type": "math",
+              "tex": "U, S, H",
+              "speech": "U, S, H"
+            },
+            {
+              "type": "text",
+              "text": " liegen auf einer gemeinsamen Geraden."
+            }
+          ],
+          "concept": "4 Besondere Punkte: U (Mittelsenkrechte, Umkreis), I (Winkelhalbierende, Inkreis), S (Seitenhalbierende, Schwerpunkt 2:1), H (Höhen); Eulersche Gerade verbindet U, S, H mit HS : SU = 2 : 1.",
+          "sample_solution": [
+            {
+              "type": "text",
+              "text": "1. Die vier klassischen merkwürdigen Punkte des Dreiecks: - 1. Der Umkreismittelpunkt "
+            },
+            {
+              "type": "math",
+              "tex": "U"
+            },
+            {
+              "type": "text",
+              "text": " (Schnittpunkt der Mittelsenkrechten "
+            },
+            {
+              "type": "math",
+              "tex": "m_a \\cap m_b \\cap m_c"
+            },
+            {
+              "type": "text",
+              "text": "):   * Eigenschaft: Da jeder Punkt auf "
+            },
+            {
+              "type": "math",
+              "tex": "m_c"
+            },
+            {
+              "type": "text",
+              "text": " gleichen Abstand zu "
+            },
+            {
+              "type": "math",
+              "tex": "A"
+            },
+            {
+              "type": "text",
+              "text": " und "
+            },
+            {
+              "type": "math",
+              "tex": "B"
+            },
+            {
+              "type": "text",
+              "text": " hat und auf "
+            },
+            {
+              "type": "math",
+              "tex": "m_a"
+            },
+            {
+              "type": "text",
+              "text": " gleichen Abstand zu "
+            },
+            {
+              "type": "math",
+              "tex": "B"
+            },
+            {
+              "type": "text",
+              "text": " und "
+            },
+            {
+              "type": "math",
+              "tex": "C"
+            },
+            {
+              "type": "text",
+              "text": ", ist der Abstand von "
+            },
+            {
+              "type": "math",
+              "tex": "U"
+            },
+            {
+              "type": "text",
+              "text": " zu allen drei Ecken identisch:   "
+            },
+            {
+              "type": "math",
+              "tex": "\\mathbf{r_u = |\\overline{UA}| = |\\overline{UB}| = |\\overline{UC}|}",
+              "block": true
+            },
+            {
+              "type": "text",
+              "text": "   * Lage: Bei spitzwinkligen Dreiecken im Inneren; bei rechtwinkligen Dreiecken exakt im Mittelpunkt der Hypotenuse (Satz des Thales); bei stumpfwinkligen Dreiecken außerhalb des Dreiecks. - 2. Der Inkreismittelpunkt "
+            },
+            {
+              "type": "math",
+              "tex": "I"
+            },
+            {
+              "type": "text",
+              "text": " (Schnittpunkt der Winkelhalbierenden "
+            },
+            {
+              "type": "math",
+              "tex": "w_\\alpha \\cap w_\\beta \\cap w_\\gamma"
+            },
+            {
+              "type": "text",
+              "text": "):   * Eigenschaft: Hat zu allen drei Begrenzungsgeraden "
+            },
+            {
+              "type": "math",
+              "tex": "a, b, c"
+            },
+            {
+              "type": "text",
+              "text": " denselben orthogonalen Abstand "
+            },
+            {
+              "type": "math",
+              "tex": "r_i"
+            },
+            {
+              "type": "text",
+              "text": ". Der Inkreis berührt alle drei Seiten von innen als Tangenten.   * Lage: Liegt immer im Inneren des Dreiecks. - 3. Der Schwerpunkt "
+            },
+            {
+              "type": "math",
+              "tex": "S"
+            },
+            {
+              "type": "text",
+              "text": " (Schnittpunkt der Seitenhalbierenden "
+            },
+            {
+              "type": "math",
+              "tex": "s_a \\cap s_b \\cap s_c"
+            },
+            {
+              "type": "text",
+              "text": "):   * Definition: Eine Seitenhalbierende verbindet einen Eckpunkt mit dem Mittelpunkt der gegenüberliegenden Seite (z. B. "
+            },
+            {
+              "type": "math",
+              "tex": "A"
+            },
+            {
+              "type": "text",
+              "text": " mit "
+            },
+            {
+              "type": "math",
+              "tex": "M_a"
+            },
+            {
+              "type": "text",
+              "text": ").   * Teilungssatz: Der Schwerpunkt "
+            },
+            {
+              "type": "math",
+              "tex": "S"
+            },
+            {
+              "type": "text",
+              "text": " teilt jede Seitenhalbierende im Verhältnis "
+            },
+            {
+              "type": "math",
+              "tex": "2 : 1"
+            },
+            {
+              "type": "text",
+              "text": " (der längere Abschnitt liegt stets an der Dreiecksecke):   "
+            },
+            {
+              "type": "math",
+              "tex": "\\mathbf{|\\overline{AS}| : |\\overline{SM_a}| = 2 : 1}",
+              "block": true
+            },
+            {
+              "type": "text",
+              "text": "   * Physik: Stützt man das homogene Dreieck im Schwerpunkt "
+            },
+            {
+              "type": "math",
+              "tex": "S"
+            },
+            {
+              "type": "text",
+              "text": ", befindet es sich im perfekten Drehmoment-Gleichgewicht. - 4. Der Höhenschnittpunkt "
+            },
+            {
+              "type": "math",
+              "tex": "H"
+            },
+            {
+              "type": "text",
+              "text": " (Schnittpunkt der Höhen "
+            },
+            {
+              "type": "math",
+              "tex": "h_a \\cap h_b \\cap h_c"
+            },
+            {
+              "type": "text",
+              "text": "):   * Definition: Eine Höhe ist das vom Eckpunkt auf die gegenüberliegende Seite (bzw. deren Trägergerade) gefällte Lot.   * Lage: Bei spitzwinkligen Dreiecken innen, beim rechtwinkligen Dreieck im Scheitel des rechten Winkels, beim stumpfwinkligen Dreieck außerhalb. 2. Die Eulersche Gerade: - In jedem nicht-gleichseitigen Dreieck liegen die drei Punkte Umkreismittelpunkt "
+            },
+            {
+              "type": "math",
+              "tex": "U"
+            },
+            {
+              "type": "text",
+              "text": ", Schwerpunkt "
+            },
+            {
+              "type": "math",
+              "tex": "S"
+            },
+            {
+              "type": "text",
+              "text": " und Höhenschnittpunkt "
+            },
+            {
+              "type": "math",
+              "tex": "H"
+            },
+            {
+              "type": "text",
+              "text": " auf einer einzigen gemeinsamen Geraden (Eulersche Gerade), wobei "
+            },
+            {
+              "type": "math",
+              "tex": "S"
+            },
+            {
+              "type": "text",
+              "text": " die Strecke "
+            },
+            {
+              "type": "math",
+              "tex": "[UH]"
+            },
+            {
+              "type": "text",
+              "text": " im Verhältnis "
+            },
+            {
+              "type": "math",
+              "tex": "|\\overline{HS}| : |\\overline{SU}| = 2 : 1"
+            },
+            {
+              "type": "text",
+              "text": " teilt."
+            }
+          ],
+          "materiality": "cosmetic"
+        }
+      ]
+    }
+  ]
+}

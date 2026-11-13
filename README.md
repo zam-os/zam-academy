@@ -24,6 +24,7 @@ Hands-on training apps that build understanding before [ZAM](https://github.com/
 | Mathematik 5 Realschule (LehrplanPLUS Bayern, für alle Schülerinnen und Schüler) | [`mathematik-realschule-5/`](mathematik-realschule-5/) | https://academy.zam-os.org/mathematik-realschule-5/ | `zam-academy:mathematik-realschule-5` |
 | Mathematik 5 Gymnasium (LehrplanPLUS Bayern) | [`mathematik-gymnasium-5/`](mathematik-gymnasium-5/) | https://academy.zam-os.org/mathematik-gymnasium-5/ | `zam-academy:mathematik-gymnasium-5` |
 | Mathematik 6 Gymnasium (LehrplanPLUS Bayern) | [`mathematik-gymnasium-6/`](mathematik-gymnasium-6/) | https://academy.zam-os.org/mathematik-gymnasium-6/ | `zam-academy:mathematik-gymnasium-6` |
+| Mathematik 7 Gymnasium (LehrplanPLUS Bayern) | [`mathematik-gymnasium-7/`](mathematik-gymnasium-7/) | https://academy.zam-os.org/mathematik-gymnasium-7/ | `zam-academy:mathematik-gymnasium-7` |
 | Mathematik 11 Gymnasium (LehrplanPLUS Bayern) | [`mathematik-gymnasium-11/`](mathematik-gymnasium-11/) | https://academy.zam-os.org/mathematik-gymnasium-11/ | `zam-academy:mathematik-gymnasium-11` |
 | Mathematik 12 Gymnasium (LehrplanPLUS Bayern) | [`mathematik-gymnasium-12/`](mathematik-gymnasium-12/) | https://academy.zam-os.org/mathematik-gymnasium-12/ | `zam-academy:mathematik-gymnasium-12` |
 | Mathematik 6 Realschule (LehrplanPLUS Bayern, alle Wahlpflichtfächergruppen) | [`mathematik-realschule-6/`](mathematik-realschule-6/) | https://academy.zam-os.org/mathematik-realschule-6/ | `zam-academy:mathematik-realschule-6` |
@@ -151,6 +152,7 @@ cd uml                 # or: cd physik-realschule-9 (dev server on :5181), cd sq
 # Deutsch 8 Mittelschule: cd deutsch-mittelschule-8 (dev server on :5235)
 # Mathematics 9 Mittelschule: cd mathematik-mittelschule-9 (dev server on :5236)
 # Mathematics 10 Mittelschule: cd mathematik-mittelschule-10 (dev server on :5237)
+# Mathematik 7 Gymnasium: cd mathematik-gymnasium-7 (dev server on :5239)
 # Grade 11 introductory biology preview: cd biologie-gymnasium-11 (dev server on :5227)
 npm ci
 npm run dev      # http://localhost:5180/uml/
