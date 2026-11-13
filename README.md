@@ -8,6 +8,8 @@ Hands-on training apps that build understanding before [ZAM](https://github.com/
 | Mathematics 6 Mittelschule (Bavaria) | [`mathematik-mittelschule-6/`](mathematik-mittelschule-6/) | Built by Pages on merge | `zam-academy:mathematik-mittelschule-6` |
 | Mathematik 7 Mittelschule (LehrplanPLUS Bayern, Regelklasse und M-Zug) | [`mathematik-mittelschule-7/`](mathematik-mittelschule-7/) | https://academy.zam-os.org/mathematik-mittelschule-7/ | `zam-academy:mathematik-mittelschule-7` |
 | Mathematik 8 Mittelschule (LehrplanPLUS Bayern, Regelklasse und M-Zug) | [`mathematik-mittelschule-8/`](mathematik-mittelschule-8/) | https://academy.zam-os.org/mathematik-mittelschule-8/ | `zam-academy:mathematik-mittelschule-8` |
+| Mathematics 9 Mittelschule (Bavaria, Regelklasse and Mittlere-Reife-Klasse) | [`mathematik-mittelschule-9/`](mathematik-mittelschule-9/) | Built by Pages on merge | `zam-academy:mathematik-mittelschule-9` |
+| Mathematics 10 Mittelschule (Bavaria, M10) | [`mathematik-mittelschule-10/`](mathematik-mittelschule-10/) | Built by Pages on merge | `zam-academy:mathematik-mittelschule-10` |
 | German 5 Mittelschule (Bavaria) | [`deutsch-mittelschule-5/`](deutsch-mittelschule-5/) | Built by Pages on merge | `zam-academy:deutsch-mittelschule-5` |
 | German 6 Mittelschule (Bavaria) | [`deutsch-mittelschule-6/`](deutsch-mittelschule-6/) | Built by Pages on merge | `zam-academy:deutsch-mittelschule-6` |
 | UML 2.5.1 | [`uml/`](uml/) | https://academy.zam-os.org/uml/ | `zam-academy:uml` |
@@ -147,6 +149,8 @@ cd uml                 # or: cd physik-realschule-9 (dev server on :5181), cd sq
 # Mathematik 8 Mittelschule: cd mathematik-mittelschule-8 (dev server on :5233)
 # Deutsch 7 Mittelschule: cd deutsch-mittelschule-7 (dev server on :5234)
 # Deutsch 8 Mittelschule: cd deutsch-mittelschule-8 (dev server on :5235)
+# Mathematics 9 Mittelschule: cd mathematik-mittelschule-9 (dev server on :5236)
+# Mathematics 10 Mittelschule: cd mathematik-mittelschule-10 (dev server on :5237)
 # Grade 11 introductory biology preview: cd biologie-gymnasium-11 (dev server on :5227)
 npm ci
 npm run dev      # http://localhost:5180/uml/
