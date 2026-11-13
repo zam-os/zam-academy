@@ -5,6 +5,12 @@ import {
 	SOURCES,
 	STAGES,
 } from "./curriculum";
+import {
+	FIGURES,
+	renderFigure,
+	renderHeroArt,
+	renderStageArt,
+} from "./figures";
 import type { Lesson, Level } from "./model/types";
 import { MODEL_SCENARIOS, modelReady, recordExploration } from "./models";
 import { PROJECT_FIELDS, type ProjectField, projectReady } from "./project";
@@ -50,6 +56,7 @@ const comparisons = new Set<string>();
 const rubricChecks = new Map<string, boolean[]>();
 let storageWarningShown = false;
 const modelStates = new Map<string, ModelState>();
+const figureFocus = new Map<string, number>();
 function visibleLessons(): Lesson[] {
 	return LESSONS;
 }
@@ -147,14 +154,14 @@ function status(lesson: Lesson): string {
 
 function renderPath(): string {
 	const stats = completion(progress);
-	return `<section class="hero"><div><span class="eyebrow">KLASSE 5 · ALLE ZWEIGE</span><h1>Räume verstehen.<br>Zusammenhänge entdecken.</h1><p>Vom Globus zum eigenen Schulort: Lies Karten, erkunde die Erde und untersuche eine aktuelle geographische Frage.</p><button type="button" class="button accent" data-open="${esc(progress.activeLessonId)}">${stats.completed ? "Weiterlernen" : "Loslegen"}</button></div><aside class="hero-note"><span class="eyebrow">DEIN WEG DURCH GEOGRAPHIE</span><strong>Verorten → Erklären → Beurteilen</strong><p>31 Lektionen · sieben Lernbereiche<br>Karten lesen · Naturkräfte verstehen · den Schulort erkunden</p><p class="small">Ein Abschluss verbindet Schnellcheck, Werkstatt und eine eigene Antwort mit Selbsteinschätzung; je nach Lektion auch Modellvergleich oder Nahraumrecherche. Level 2 vertieft den Transfer.</p></aside></section>
+	return `<section class="hero"><div><span class="eyebrow">KLASSE 5 · ALLE ZWEIGE</span><h1>Räume verstehen.<br>Zusammenhänge entdecken.</h1><p>Vom Globus zum eigenen Schulort: Lies Karten, erkunde die Erde und untersuche eine aktuelle geographische Frage.</p><div class="visual-pill">31 Bildwelten · Zusammenhänge Schritt für Schritt</div><br><button type="button" class="button accent" data-open="${esc(progress.activeLessonId)}">${stats.completed ? "Weiterlernen" : "Loslegen"}</button></div><aside class="hero-note">${renderHeroArt()}<span class="eyebrow">DEIN WEG DURCH GEOGRAPHIE</span><strong>Verorten → Erklären → Beurteilen</strong><p>31 Lektionen · sieben Lernbereiche<br>Karten lesen · Naturkräfte verstehen · den Schulort erkunden</p><p class="small">Ein Abschluss verbindet Schnellcheck, Werkstatt und eine eigene Antwort mit Selbsteinschätzung; je nach Lektion auch Modellvergleich oder Nahraumrecherche. Level 2 vertieft den Transfer.</p></aside></section>
   <div class="path-heading"><div><h2>Dein Lernpfad</h2><p>Jede Lektion ist frei zugänglich. Du kannst jederzeit zurückspringen.</p></div></div>
   <div class="stages">${STAGES.map((stage) => {
 		const lessons = LESSONS.filter((lesson) => lesson.lb === stage.lb);
 		const complete = lessons.filter((lesson) =>
 			isComplete(progress, lesson.id),
 		).length;
-		return `<section class="stage" data-lb="${stage.lb}"><div class="stage-header"><span class="stage-icon" aria-hidden="true">${stage.icon}</span><div><span class="eyebrow">LERNBEREICH ${stage.lb}</span><h3>${esc(stage.shortTitle)}</h3></div><span class="stage-count">${complete} / ${lessons.length}</span></div><ol>${lessons.map((lesson) => `<li><button type="button" class="lesson-link ${isComplete(progress, lesson.id) ? "complete" : ""}" data-open="${lesson.id}"><span class="lesson-dot" aria-hidden="true">${isComplete(progress, lesson.id) ? "✓" : "·"}</span><span><strong>${esc(lesson.title)}</strong><small>${esc(lesson.period)}</small></span><span class="lesson-status">${status(lesson)}</span></button></li>`).join("")}</ol></section>`;
+		return `<section class="stage" data-lb="${stage.lb}">${renderStageArt(stage.lb)}<div class="stage-header"><span class="stage-icon" aria-hidden="true">${stage.icon}</span><div><span class="eyebrow">LERNBEREICH ${stage.lb}</span><h3>${esc(stage.shortTitle)}</h3></div><span class="stage-count">${complete} / ${lessons.length}</span></div><ol>${lessons.map((lesson) => `<li><button type="button" class="lesson-link ${isComplete(progress, lesson.id) ? "complete" : ""}" data-open="${lesson.id}"><span class="lesson-dot" aria-hidden="true">${isComplete(progress, lesson.id) ? "✓" : "·"}</span><span><strong>${esc(lesson.title)}</strong><small>${esc(lesson.period)}</small></span><span class="lesson-status">${status(lesson)}</span></button></li>`).join("")}</ol></section>`;
 	}).join(
 		"",
 	)}</div><aside class="notice"><strong>Dein Ort gehört zum Lernpfad</strong><p>In Lernbereich 6 bereitest du eine echte Exkursion vor. In Lernbereich 7 untersuchst du ein reales aktuelles Ereignis. Der Recherchebogen begleitet deine Quellenarbeit und Präsentation. Quellenqualität und fachliches Urteil besprecht ihr selbst; die App bestätigt nur formal ausgefüllte Schritte.</p><a href="${CURRICULUM_URL}" target="_blank" rel="noopener">Zum offiziellen Lehrplan</a></aside><button type="button" id="reset" class="text-button">Lokalen Fortschritt zurücksetzen</button>`;
@@ -202,7 +209,7 @@ function renderLesson(): string {
 	const index = visible.indexOf(lesson);
 	return `<article lang="de" data-lb="${lesson.lb}"><div class="lesson-top"><button type="button" class="text-button" data-view="path">← Zum Lernpfad</button><label class="level-select">Arbeitsweise <select id="level"><option value="1" ${progress.level === 1 ? "selected" : ""}>Level 1 · mit Leitfragen</option><option value="2" ${progress.level === 2 ? "selected" : ""}>Level 2 · Transfer</option></select></label></div>
   <header class="lesson-heading"><span class="eyebrow">${esc(stage.shortTitle)}</span><h1 lang="${lesson.language ?? "de"}">${esc(lesson.title)}</h1><p class="period">${esc(lesson.period)}</p><p class="intro">${esc(lesson.intro)}</p></header>
-  <div class="lesson-columns"><div class="lesson-content"><section class="panel reading" lang="${lesson.language ?? "de"}"><span class="eyebrow">01 · VERSTEHEN</span>${lesson.paragraphs.map((paragraph) => `<p>${esc(paragraph)}</p>`).join("")}<p class="takeaway"><strong>Merke</strong>${esc(lesson.takeaway)}</p></section>
+  <div class="lesson-columns"><div class="lesson-content"><section class="panel reading" lang="${lesson.language ?? "de"}"><span class="eyebrow">01 · VERSTEHEN</span>${lesson.paragraphs.map((paragraph, i) => `<p>${esc(paragraph)}</p>${i === 0 ? renderFigure(lesson.id, figureFocus.get(lesson.id)) : ""}`).join("")}<p class="takeaway"><strong>Merke</strong>${esc(lesson.takeaway)}</p></section>
   <section class="panel quiz" lang="${lesson.language ?? "de"}"><div class="panel-heading"><h2>Schnellcheck</h2><span class="done-mark">${progress.quizDone.includes(lesson.id) ? "✓ Einmal richtig" : ""}</span></div><p>${esc(lesson.quiz.question)}</p><div class="quiz-options">${options.map((i) => `<button type="button" data-choice="${i}" class="quiz-choice ${selected === i ? "selected" : ""}" aria-pressed="${selected === i}">${esc(labels[i])}</button>`).join("")}</div>${selected !== undefined ? `<p class="feedback ${selected === 0 ? "success" : "hint"}" role="status"><strong>${selected === 0 ? "Richtig. " : "Prüfe noch einmal. "}</strong>${esc(lesson.quiz.explanation)}</p>` : ""}</section>
   ${lessonModel(lesson)}${renderWorkshop(lesson)}${lesson.projectStep ? renderProject(lesson, progress.project) : ""}${renderWriting(lesson)}</div><aside class="lesson-aside"><section class="aside-card"><h2>Dein Lernschritt</h2><ul class="checklist">${lesson.model ? `<li id="aside-model">${modelReady(lesson.model, progress.explored[lesson.id] ?? []) ? "✓" : "○"} Vergleichssituationen geöffnet</li>` : ""}${lesson.projectStep ? `<li id="aside-project">${projectReady(progress.project, lesson.projectStep) ? "✓" : "○"} Eigener Recherchebogen ausgefüllt</li>` : ""}<li>${progress.quizDone.includes(lesson.id) ? "✓" : "○"} Schnellcheck</li><li>${progress.workshopDone.includes(lesson.id) ? "✓" : "○"} Werkstatt gelöst</li><li id="aside-writing">${progress.writingDone.includes(writingKey(lesson.id, 1)) ? "✓" : "○"} Level 1 selbst eingeschätzt</li></ul><p class="small" id="lesson-status">${isComplete(progress, lesson.id) ? "✓ Diese Lektion ist abgeschlossen." : "Bearbeite die offenen Lernschritte. Deine Texte schätzt du selbst ein."}</p><p class="small">Level 2 ist eine zusätzliche Vertiefung. Die Kernfortschritte zählen Level 1.</p></section><section class="aside-card"><h2>Belege & weiterlernen</h2><ul class="source-list">${lesson.sourceIds
 		.map((id) => SOURCES.find((source) => source.id === id)!)
@@ -259,7 +266,70 @@ function render(): void {
 	if (view === "lesson") bindLesson(findLesson(progress.activeLessonId)!);
 }
 
+function bindFigure(lesson: Lesson): void {
+	const figure = main.querySelector<HTMLElement>(".concept-figure");
+	if (!figure) return;
+
+	const panToPart = (focus: number): void => {
+		const viewport = figure.querySelector<HTMLElement>(".figure-scroll")!;
+		if (viewport.scrollWidth <= viewport.clientWidth) return;
+		if (focus === 0) {
+			viewport.scrollLeft = 0;
+			return;
+		}
+		const bounds = Array.from(
+			figure.querySelectorAll<SVGGElement>(`[data-part="${focus}"]`),
+			(entry) => entry.getBoundingClientRect(),
+		);
+		if (!bounds.length) return;
+		const center =
+			(Math.min(...bounds.map((b) => b.left)) +
+				Math.max(...bounds.map((b) => b.right))) /
+			2;
+		viewport.scrollLeft +=
+			center - viewport.getBoundingClientRect().left - viewport.clientWidth / 2;
+	};
+	panToPart(figureFocus.get(lesson.id) ?? 0);
+	figure
+		.querySelectorAll<HTMLButtonElement>("[data-figure-focus]")
+		.forEach((button) => {
+			button.addEventListener("click", () => {
+				const focus = Number(button.dataset.figureFocus);
+				const definition = FIGURES[lesson.id];
+				if (
+					!Number.isInteger(focus) ||
+					focus < 0 ||
+					focus > definition.parts.length
+				)
+					return;
+				figureFocus.set(lesson.id, focus);
+				figure.dataset.focus = String(focus);
+				panToPart(focus);
+				figure
+					.querySelectorAll<HTMLButtonElement>("[data-figure-focus]")
+					.forEach((entry) =>
+						entry.setAttribute(
+							"aria-pressed",
+							String(Number(entry.dataset.figureFocus) === focus),
+						),
+					);
+				figure
+					.querySelectorAll<SVGGElement>(".visual-part")
+					.forEach((entry) =>
+						entry.classList.toggle(
+							"is-muted",
+							focus !== 0 && Number(entry.dataset.part) !== focus,
+						),
+					);
+				figure.querySelector(".figure-note")!.textContent = focus
+					? `${definition.parts[focus - 1].label}: ${definition.parts[focus - 1].note}`
+					: "Wähle einen Bildteil und entdecke den Zusammenhang. Mit „Alles ansehen“ hebst du alle Bildteile wieder hervor.";
+			});
+		});
+}
+
 function bindLesson(lesson: Lesson): void {
+	bindFigure(lesson);
 	const key = writingKey(lesson.id, progress.level);
 	const work = lesson.workshop;
 	bindModel(lesson);
@@ -537,6 +607,7 @@ function showReset(): void {
 		modelStates.clear();
 		orders.clear();
 		assignments.clear();
+		figureFocus.clear();
 		workshopFeedback.clear();
 		quizSelections.clear();
 		comparisons.clear();

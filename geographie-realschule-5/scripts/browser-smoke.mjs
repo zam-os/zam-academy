@@ -98,6 +98,8 @@ try {
 	session = (await send("Target.attachToTarget", { targetId, flatten: true }))
 		.sessionId;
 	await page("Page.enable");
+	await page("Page.bringToFront");
+	await page("Emulation.setFocusEmulationEnabled", { enabled: true });
 	await page("Runtime.enable");
 	await page("Network.enable");
 	await page("Emulation.setDeviceMetricsOverride", {
@@ -117,6 +119,8 @@ try {
 		31,
 	);
 	let pages = 0;
+	let figureInteractions = 0;
+	let mobilePages = 0;
 	for (const theme of ["light", "dark"]) {
 		await evaluate(
 			`document.documentElement.dataset.theme=${JSON.stringify(theme)}`,
@@ -147,6 +151,94 @@ try {
 				assert.equal(data.svg, lesson.model ? 1 : 0);
 				assert.ok(!/NaN|undefined/.test(data.main));
 				assert.equal(data.over, false);
+				const figure = await evaluate(`(() => {
+          const f=document.querySelector('.concept-figure');
+          const svg=f?.querySelector('svg');
+          const frame=svg?.getBoundingClientRect();
+          return {
+            count:document.querySelectorAll('.concept-figure').length,
+            lesson:f?.dataset.figure,
+            role:svg?.getAttribute('role'),
+            description:svg?.querySelector('desc')?.textContent,
+            selected:f?.querySelectorAll('[aria-pressed="true"]').length,
+            controls:f?.querySelectorAll('[data-figure-focus]').length,
+            clipped:Array.from(svg?.querySelectorAll('text')??[]).filter(e=>{
+              const b=e.getBoundingClientRect();
+              return b.left<frame.left-0.5||b.right>frame.right+0.5||b.top<frame.top-0.5||b.bottom>frame.bottom+0.5;
+            }).map(e=>e.textContent)
+          };
+        })()`);
+				assert.equal(figure.count, 1, lesson.id);
+				assert.equal(figure.lesson, lesson.id);
+				assert.equal(figure.role, "img");
+				assert.ok(figure.description.length > 80);
+				assert.equal(figure.selected, 1);
+				assert.ok(figure.controls >= 3);
+				assert.deepEqual(
+					figure.clipped,
+					[],
+					`${lesson.id}: labels stay within the figure`,
+				);
+				if (level === 1) {
+					await evaluate(
+						`window.figureDraft=document.querySelector('#draft');window.figureStorage=JSON.stringify({...localStorage});window.figureScroll=scrollY;`,
+					);
+					for (let part = 1; part < figure.controls; part++) {
+						await evaluate(
+							`document.querySelector('[data-figure-focus="${part}"]').click()`,
+						);
+						const state = await evaluate(
+							`({focus:document.querySelector('.concept-figure').dataset.focus,selected:document.querySelectorAll('.concept-figure [aria-pressed="true"]').length,note:document.querySelector('.figure-note').textContent,stable:window.figureDraft===document.querySelector('#draft'),storage:window.figureStorage===JSON.stringify({...localStorage}),scroll:window.figureScroll===scrollY})`,
+						);
+						assert.equal(state.focus, String(part));
+						assert.equal(state.selected, 1);
+						assert.ok(state.note.length > 60);
+						assert.equal(
+							state.stable,
+							true,
+							"figure selection preserves the draft element",
+						);
+						assert.equal(
+							state.storage,
+							true,
+							"figure selection records no mastery or progress",
+						);
+						assert.equal(
+							state.scroll,
+							true,
+							"figure selection preserves scroll position",
+						);
+						figureInteractions++;
+					}
+					await evaluate(
+						`document.querySelector('[data-figure-focus="0"]').focus()`,
+					);
+					await page("Input.dispatchKeyEvent", {
+						type: "keyDown",
+						key: "Enter",
+						code: "Enter",
+						text: "\r",
+						unmodifiedText: "\r",
+						windowsVirtualKeyCode: 13,
+					});
+					await page("Input.dispatchKeyEvent", {
+						type: "keyUp",
+						key: "Enter",
+						code: "Enter",
+						windowsVirtualKeyCode: 13,
+					});
+					assert.equal(
+						await evaluate(
+							`document.querySelector('.concept-figure').dataset.focus`,
+						),
+						"0",
+					);
+					assert.equal(
+						await evaluate(`document.activeElement.dataset.figureFocus`),
+						"0",
+					);
+					figureInteractions++;
+				}
 
 				if (lesson.model === "germany" || lesson.model === "thematic") {
 					const geography = await evaluate(`(() => {
@@ -303,23 +395,57 @@ try {
 		deviceScaleFactor: 1,
 		mobile: true,
 	});
-	for (const id of [
-		"",
-		...lessons.filter((l) => l.model || l.projectStep).map((l) => l.id),
-	]) {
+
+	for (const theme of ["light", "dark"]) {
 		await evaluate(
-			`location.hash=${JSON.stringify(id ? "#lesson=" + id + "&level=2" : "")}`,
+			`document.documentElement.dataset.theme=${JSON.stringify(theme)}`,
 		);
-		await evaluate(
-			"new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)))",
-		);
-		assert.equal(
-			await evaluate("document.documentElement.scrollWidth>innerWidth"),
-			false,
-			`mobile ${id}`,
-		);
-		await screenshot(`mobile-${id || "path"}`);
+		for (const id of ["", ...lessons.map((l) => l.id)]) {
+			await evaluate(
+				`location.hash=${JSON.stringify(id ? "#lesson=" + id + "&level=2" : "")}`,
+			);
+			await evaluate(
+				"new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)))",
+			);
+			assert.equal(
+				await evaluate("document.documentElement.scrollWidth>innerWidth"),
+				false,
+				`mobile ${id}`,
+			);
+			if (id) {
+				const pan = await evaluate(
+					`(()=>{const s=document.querySelector('.figure-scroll');const last=s.scrollWidth-s.clientWidth;s.scrollLeft=last;return {last,position:s.scrollLeft,tab:s.tabIndex,labelSize:parseFloat(getComputedStyle(document.querySelector('.concept-svg .visual-label:not(.micro)')).fontSize)*document.querySelector('.concept-svg').getBoundingClientRect().width/600};})()`,
+				);
+				assert.ok(pan.last > 0);
+				assert.ok(
+					Math.abs(pan.position - pan.last) < 1,
+					"mobile diagram can be panned to its end",
+				);
+				assert.equal(pan.tab, 0, "diagram viewport is keyboard accessible");
+				assert.ok(pan.labelSize >= 15.5, "main diagram labels remain readable");
+				await evaluate(`document.querySelector('.figure-scroll').scrollLeft=0`);
+				const focused = await evaluate(`(()=>{
+          document.querySelector('.figure-controls button:last-child').click();
+          const f=document.querySelector('.concept-figure');
+          const active=Array.from(f.querySelectorAll('[data-part="'+f.dataset.focus+'"]'),e=>e.getBoundingClientRect());
+          const center=(Math.min(...active.map(b=>b.left))+Math.max(...active.map(b=>b.right)))/2;
+          const viewport=f.querySelector('.figure-scroll').getBoundingClientRect();
+          return center>=viewport.left-1&&center<=viewport.right+1;
+        })()`);
+				assert.equal(
+					focused,
+					true,
+					`mobile ${id}: selected detail is brought into view`,
+				);
+				await evaluate(
+					`document.querySelector('[data-figure-focus="0"]').click()`,
+				);
+			}
+			await screenshot(`mobile-${id || "path"}-${theme}`);
+			mobilePages++;
+		}
 	}
+
 	assert.deepEqual(errors, []);
 	const external = requests.filter((url) => /^https?:/.test(url));
 	assert.deepEqual(external, []);
@@ -332,9 +458,16 @@ try {
 				themes: ["light", "dark"],
 				levels: [1, 2],
 				mobileWidths: [390],
+				mobilePages,
+				figureInteractions,
 				runtimeErrors: errors,
 				externalRequests: external,
 				interactionChecks: [
+					"31 accessible explanatory figures",
+					"figure label bounds",
+					"figure focus and keyboard reset",
+					"figure exploration preserves drafts, storage and scroll",
+					"mobile diagram panning, selected detail visibility and label size",
 					"quiz feedback",
 					"workshop solution",
 					"rubric gate",
@@ -351,7 +484,7 @@ try {
 		),
 	);
 	console.log(
-		`Artifacts: ${output}\n${pages} lesson/level/theme combinations; path and reference views; mobile checks; actual interaction checks; 0 runtime errors; 0 external requests.`,
+		`Artifacts: ${output}\n${pages} lesson/level/theme combinations; ${figureInteractions} figure interactions; ${mobilePages} mobile views; path and reference views; mobile checks; actual interaction checks; 0 runtime errors; 0 external requests.`,
 	);
 } finally {
 	await send("Browser.close").catch(() => {});
