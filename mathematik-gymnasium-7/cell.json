@@ -284,7 +284,7 @@
             }
           ],
           "concept": "Sie zeigt, um wie viele Euro b Einzeltickets teurer sind als die Saisonkarte.",
-          "sample_solution": "4b sind die Gesamtkosten mit Einzeltickets, 28 + 1,5b die Kosten mit Saisonkarte; positiv bedeutet Einzeltickets teurer, negativ Ersparnis ab b = 12."
+          "sample_solution": "4b sind die Gesamtkosten mit Einzeltickets, 28 + 1,5b die Kosten mit Saisonkarte. Positiv (2,5b − 28 > 0 ab b = 12) bedeutet: Einzeltickets sind teurer, die Saisonkarte spart Geld; negativ (b ≤ 11) bedeutet: Einzeltickets sind noch günstiger."
         }
       ]
     },
@@ -421,7 +421,7 @@
           "fast_check": {
             "type": "binary_choice",
             "options": [
-              "Bei (-3)² steht das Minus in der Basis und liefert +9, bei -3² steht es davor und ergibt −9.",
+              "Bei (−3)² steht das Minus in der Basis und liefert +9, bei −3² steht es davor und ergibt −9.",
               "Beide liefern dasselbe Ergebnis, weil eine gerade Hochzahl jedes Minus vorn tilgt."
             ],
             "correct_index": 0
@@ -2139,8 +2139,8 @@
               "reason": "Auf dem Thaleskreis entsteht ein rechter Winkel, nicht zwingend gleicher Abstand zu A und B."
             },
             {
-              "text": "Die Winkelhalbierende durch A zur Strecke [BC].",
-              "reason": "Eine Winkelhalbierende sichert gleichen Abstand zu zwei Schenkeln, nicht zu zwei Punkten."
+              "text": "Der Kreis um den Punkt A mit Radius der Länge [AB].",
+              "reason": "Der Kreis um A legt nur den Abstand zu A fest, sichert aber keinen gleichen Abstand zu A und B."
             }
           ],
           "question": "Welche Ortslinie enthält genau alle Punkte P, die von zwei Punkten A und B gleich weit entfernt sind?",
@@ -2906,7 +2906,7 @@
           "fast_check": {
             "type": "binary_choice",
             "options": [
-              "Man zerlegt das Vieleck in Dreiecke und nutzt die Formel (n - 2)·180°.",
+              "Man zerlegt das Vieleck in Dreiecke und nutzt die Formel (n − 2)·180°.",
               "Man multipliziert einfach jede einzelne Ecke mit 180 Grad als n · 180°."
             ],
             "correct_index": 0
@@ -3339,7 +3339,7 @@
             },
             {
               "type": "text",
-              "text": " und addiert 8 zu "
+              "text": " und addiert 8, sodass "
             },
             {
               "type": "math",
@@ -3348,7 +3348,7 @@
             },
             {
               "type": "text",
-              "text": ", woraus die Lösungsmenge "
+              "text": " entsteht, woraus die Lösungsmenge "
             },
             {
               "type": "math",
@@ -3363,7 +3363,7 @@
           "fast_check": {
             "type": "binary_choice",
             "options": [
-              "Man subtrahiert 2x und addiert 8 zu 3x = 21, woraus die Lösungsmenge L = {7} folgt.",
+              "Man subtrahiert 2x und addiert 8, sodass 3x = 21 entsteht, woraus die Lösungsmenge L = {7} folgt.",
               "Man addiert beide Seiten zu 7x = 5 und bekommt den krummen Bruch x = 5/7."
             ],
             "correct_index": 0

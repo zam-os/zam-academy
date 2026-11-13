@@ -1,5 +1,5 @@
 import { fmt } from "../exercises/format";
-import type { LabDefinition, LabParam, LabValues } from "../model/types";
+import type { LabDefinition, LabParam } from "../model/types";
 import { BALANCE_STEPS, eqSideText } from "../lab/views-gleichungen";
 import { PROBE_CLAIMS, probeStats } from "../lab/views-terme";
 import { QUADS } from "../lab/views-symmetrie";
@@ -52,34 +52,10 @@ const choice = (
   options,
 });
 
-export const WITNESSES: Record<string, Record<string, LabValues>> = {};
-
-function reg<K extends string>(
-  lessonId: string,
-  def: Omit<LabDefinition, "goals"> & {
-    goals: Array<{
-      id: K;
-      text: string;
-      check: LabDefinition["goals"][number]["check"];
-      witness: LabValues;
-    }>;
-  },
-): LabDefinition {
-  const defaults: LabValues = Object.fromEntries(
-    def.params.filter((p) => p.type !== "state").map((p) => [p.key, p.value]),
-  );
-  WITNESSES[lessonId] = Object.fromEntries(
-    def.goals.map((g) => [g.id, { ...defaults, ...g.witness }]),
-  );
-  return {
-    ...def,
-    goals: def.goals.map(({ id, text, check }) => ({ id, text, check })),
-  };
-}
 
 // ─── Etappe 1: Terme mit Variablen ─────────────────────────────────────────
 
-export const labPatternTerms = reg("tv-1-variablen", {
+export const labPatternTerms: LabDefinition = {
   kind: "pattern-terms",
   title: "Labor: Streichholzmuster als Term",
   intro:
@@ -94,20 +70,13 @@ export const labPatternTerms = reg("tv-1-variablen", {
     { key: "total", label: "Gesamtanzahl", emphasis: true, digits: 0, compute: (v) => v.a + v.b * v.n },
   ],
   goals: [
-    { id: "acht", text: "Erreiche bei Start a = 1 und Zuwachs b = 3 genau 25 Hölzer.", check: (v) => v.a === 1 && v.b === 3 && v.n === 8, witness: { n: 8 } },
-    { id: "quadrate", text: "Stelle eine Kette mit Zuwachs b = 4 und genau 30 Hölzern ein.", check: (v) => v.b === 4 && v.a + v.b * v.n === 30, witness: { a: 2, b: 4, n: 7 } },
-    { id: "doppelt", text: "Finde eine Einstellung mit genau doppelt so großem Zuwachs wie Start (b = 2·a) und Wert 21.", check: (v) => v.b === 2 * v.a && v.a + v.b * v.n === 21, witness: { a: 1, b: 2, n: 10 > 8 ? 5 : 1 } },
+    { id: "acht", text: "Erreiche bei Start a = 1 und Zuwachs b = 3 genau 25 Hölzer.", check: (v) => v.a === 1 && v.b === 3 && v.n === 8 },
+    { id: "quadrate", text: "Stelle eine Kette mit Zuwachs b = 4 und genau 30 Hölzern ein.", check: (v) => v.b === 4 && v.a + v.b * v.n === 30 },
+    { id: "doppelt", text: "Finde eine Einstellung mit b = 2·a und Gesamtanzahl genau 18.", check: (v) => v.b === 2 * v.a && v.a + v.b * v.n === 18 },
   ],
-});
-// Fix witness for "doppelt": a=3, b=6? Max b=5 -> choose a=1, b=2 -> 1+2n can reach 17 (n=8), or for 21 use a=1,b=2?Wait: 2*a <= 5 means a=1 (b=2 => max 1+16=17) or a=2 (b=4 => 2+4*n = 22 or 18!). Let's adjust "doppelt" to value 18!
-labPatternTerms.goals[2] = {
-  id: "doppelt",
-  text: "Finde eine Einstellung mit b = 2·a und Gesamtanzahl genau 18.",
-  check: (v) => v.b === 2 * v.a && v.a + v.b * v.n === 18,
 };
-WITNESSES["tv-1-variablen"].doppelt = { a: 2, b: 4, n: 4 };
 
-export const labTermInterpret = reg("tv-2-interpretieren", {
+export const labTermInterpret: LabDefinition = {
   kind: "term-interpret",
   title: "Labor: Term als ausgeschnittenes Rechteck",
   intro:
@@ -122,13 +91,13 @@ export const labTermInterpret = reg("tv-2-interpretieren", {
     { key: "alt", label: "Zerlegung (x−c)·y + c·(y−c)", digits: 0, compute: (v) => (v.x - v.c) * v.y + v.c * (v.y - v.c) },
   ],
   goals: [
-    { id: "fl20", text: "Stelle ein Rechteck mit Restfläche genau 20 ein.", check: (v) => v.x * v.y - v.c * v.c === 20, witness: { x: 6, y: 4, c: 2 } },
-    { id: "c2", text: "Wähle Ausschnitt c = 2 und eine Restfläche von 32.", check: (v) => v.c === 2 && v.x * v.y - 4 === 32, witness: { x: 6, y: 6, c: 2 } },
-    { id: "quadrat", text: "Mache die Außenmaße gleich groß (x = y) bei c = 1 und Restfläche 24.", check: (v) => v.x === v.y && v.c === 1 && v.x * v.y - 1 === 24, witness: { x: 5, y: 5, c: 1 } },
+    { id: "fl20", text: "Stelle ein Rechteck mit Restfläche genau 20 ein.", check: (v) => v.x * v.y - v.c * v.c === 20 },
+    { id: "c2", text: "Wähle Ausschnitt c = 2 und eine Restfläche von 32.", check: (v) => v.c === 2 && v.x * v.y - 4 === 32 },
+    { id: "quadrat", text: "Mache die Außenmaße gleich groß (x = y) bei c = 1 und Restfläche 24.", check: (v) => v.x === v.y && v.c === 1 && v.x * v.y - 1 === 24 },
   ],
-});
+};
 
-export const labValueTable = reg("tv-3-termwerte", {
+export const labValueTable: LabDefinition = {
   kind: "value-table",
   title: "Labor: Wertetabelle mit ganzzahligen Exponenten",
   intro:
@@ -143,13 +112,13 @@ export const labValueTable = reg("tv-3-termwerte", {
     { key: "val", label: "Termwert T(n)", emphasis: true, digits: 3, compute: (v) => v.a ** v.n + v.k },
   ],
   goals: [
-    { id: "bruch", text: "Stelle bei k = 0 einen Potenzwert von genau 0,25 ein.", check: (v) => v.k === 0 && Math.abs(v.a ** v.n - 0.25) < 1e-6, witness: { a: 2, n: -2, k: 0 } },
-    { id: "nullwert", text: "Bringe den Termwert T(n) genau auf 0.", check: (v) => Math.abs(v.a ** v.n + v.k) < 1e-6, witness: { a: 3, n: 0, k: -1 } },
-    { id: "fuenf", text: "Erzeuge T(n) = 1,04 (mit Basis 5).", check: (v) => v.a === 5 && Math.abs(v.a ** v.n + v.k - 1.04) < 1e-6, witness: { a: 5, n: -2, k: 1 } },
+    { id: "bruch", text: "Stelle bei k = 0 einen Potenzwert von genau 0,25 ein.", check: (v) => v.k === 0 && Math.abs(v.a ** v.n - 0.25) < 1e-6 },
+    { id: "nullwert", text: "Bringe den Termwert T(n) genau auf 0.", check: (v) => Math.abs(v.a ** v.n + v.k) < 1e-6 },
+    { id: "fuenf", text: "Erzeuge T(n) = 1,04 (mit Basis 5).", check: (v) => v.a === 5 && Math.abs(v.a ** v.n + v.k - 1.04) < 1e-6 },
   ],
-});
+};
 
-export const labSpreadsheetSim = reg("tv-4-tabelle", {
+export const labSpreadsheetSim: LabDefinition = {
   kind: "spreadsheet-sim",
   title: "Labor: Tabellenkalkulation",
   intro:
@@ -164,13 +133,13 @@ export const labSpreadsheetSim = reg("tv-4-tabelle", {
     { key: "b5", label: "Zelle B5 (x = A2 + 3)", emphasis: true, digits: 0, compute: (v) => v.m * (v.x0 + 3) + v.t },
   ],
   goals: [
-    { id: "nullstelle", text: "Stelle m = 2 und t = −4 so ein, dass B4 = 0 wird.", check: (v) => v.m === 2 && v.t === -4 && v.m * (v.x0 + 2) + v.t === 0, witness: { m: 2, t: -4, x0: 0 } },
-    { id: "negzero", text: "Erreiche genau B2 = 0 mit negativem Startwert A2 < 0.", check: (v) => v.x0 < 0 && v.m * v.x0 + v.t === 0, witness: { m: 2, t: 4, x0: -2 } },
-    { id: "b5zwanzig", text: "Bringe B5 auf mindestens 20.", check: (v) => v.m * (v.x0 + 3) + v.t >= 20, witness: { m: 4, t: 2, x0: 2 } },
+    { id: "nullstelle", text: "Stelle m = 2 und t = −4 so ein, dass B4 = 0 wird.", check: (v) => v.m === 2 && v.t === -4 && v.m * (v.x0 + 2) + v.t === 0 },
+    { id: "negzero", text: "Erreiche genau B2 = 0 mit negativem Startwert A2 < 0.", check: (v) => v.x0 < 0 && v.m * v.x0 + v.t === 0 },
+    { id: "b5zwanzig", text: "Bringe B5 auf mindestens 20.", check: (v) => v.m * (v.x0 + 3) + v.t >= 20 },
   ],
-});
+};
 
-export const labTermTree = reg("tv-5-struktur", {
+export const labTermTree: LabDefinition = {
   kind: "term-tree",
   title: "Labor: Termstruktur und Rechenbaum",
   intro:
@@ -200,13 +169,13 @@ export const labTermTree = reg("tv-5-struktur", {
     },
   ],
   goals: [
-    { id: "summe", text: "Wähle eine Summe und erreiche den Termwert 14.", check: (v) => v.mode === 1 && 2 * v.x + v.y === 14, witness: { mode: 1, x: 5, y: 4 } },
-    { id: "potenz", text: "Erzeuge beim Term „Potenz“ den Wert 16.", check: (v) => v.mode === 2 && (v.x - v.y) ** 2 === 16, witness: { mode: 2, x: 5, y: 1 } },
-    { id: "quotient", text: "Stelle beim Quotienten genau den Wert 3,5 ein.", check: (v) => v.mode === 3 && Math.abs((v.x + v.y) / 2 - 3.5) < 1e-6, witness: { mode: 3, x: 4, y: 3 } },
+    { id: "summe", text: "Wähle eine Summe und erreiche den Termwert 14.", check: (v) => v.mode === 1 && 2 * v.x + v.y === 14 },
+    { id: "potenz", text: "Erzeuge beim Term „Potenz“ den Wert 16.", check: (v) => v.mode === 2 && (v.x - v.y) ** 2 === 16 },
+    { id: "quotient", text: "Stelle beim Quotienten genau den Wert 3,5 ein.", check: (v) => v.mode === 3 && Math.abs((v.x + v.y) / 2 - 3.5) < 1e-6 },
   ],
-});
+};
 
-export const labPowerRulesN = reg("tu-1-potenzgesetze", {
+export const labPowerRulesN: LabDefinition = {
   kind: "power-rules-n",
   title: "Labor: Potenzgesetze mit natürlichen Exponenten",
   intro:
@@ -242,13 +211,13 @@ export const labPowerRulesN = reg("tu-1-potenzgesetze", {
     },
   ],
   goals: [
-    { id: "glBasis", text: "Erzeuge mit gleicher Basis genau 2⁶ = 64 (mit m ≠ n).", check: (v) => v.mode === 0 && v.a === 2 && v.m + v.n === 6 && v.m !== v.n, witness: { mode: 0, a: 2, m: 2, n: 4 } },
-    { id: "glExp", text: "Zeige beim Gesetz gleicher Exponenten den Wert 1296 (= 6⁴).", check: (v) => v.mode === 1 && v.a === 2 && v.n === 4, witness: { mode: 1, a: 2, n: 4 } },
-    { id: "potPot", text: "Stelle (aᵐ)ⁿ = 3⁸ = 6561 ein (mit m ≥ 2).", check: (v) => v.mode === 2 && v.a === 3 && v.m >= 2 && v.m * v.n === 8, witness: { mode: 2, a: 3, m: 2, n: 4 } },
+    { id: "glBasis", text: "Erzeuge mit gleicher Basis genau 2⁶ = 64 (mit m ≠ n).", check: (v) => v.mode === 0 && v.a === 2 && v.m + v.n === 6 && v.m !== v.n },
+    { id: "glExp", text: "Zeige beim Gesetz gleicher Exponenten den Wert 1296 (= 6⁴).", check: (v) => v.mode === 1 && v.a === 2 && v.n === 4 },
+    { id: "potPot", text: "Stelle (aᵐ)ⁿ = 3⁸ = 6561 ein (mit m ≥ 2).", check: (v) => v.mode === 2 && v.a === 3 && v.m >= 2 && v.m * v.n === 8 },
   ],
-});
+};
 
-export const labLikeTermsProbe = reg("tu-2-zusammenfassen", {
+export const labLikeTermsProbe: LabDefinition = {
   kind: "like-terms-probe",
   title: "Labor: Die Einsetzprobe",
   intro:
@@ -259,13 +228,13 @@ export const labLikeTermsProbe = reg("tu-2-zusammenfassen", {
     { key: "slipped", label: "noch unentdeckt", digits: 0, compute: (v) => probeStats(v.x, v.y).slipped },
   ],
   goals: [
-    { id: "eine", text: "Finde eine Einsetzung, bei der genau 1 falsche Umformung unentdeckt bleibt.", check: (v) => probeStats(v.x, v.y).slipped === 1, witness: { x: 2, y: 0 } },
-    { id: "zwei", text: "Wähle x ≠ 0, sodass mindestens 2 falsche Umformungen trotzdem stimmen.", check: (v) => v.x !== 0 && probeStats(v.x, v.y).slipped >= 2, witness: { x: 1, y: 0 } },
-    { id: "alle", text: "Finde eine Einsetzung, die alle 4 falschen Umformungen auf einmal entlarvt.", check: (v) => probeStats(v.x, v.y).exposed === 4, witness: { x: 2, y: 1 } },
+    { id: "eine", text: "Finde eine Einsetzung, bei der genau 1 falsche Umformung unentdeckt bleibt.", check: (v) => probeStats(v.x, v.y).slipped === 1 },
+    { id: "zwei", text: "Wähle x ≠ 0, sodass mindestens 2 falsche Umformungen trotzdem stimmen.", check: (v) => v.x !== 0 && probeStats(v.x, v.y).slipped >= 2 },
+    { id: "alle", text: "Finde eine Einsetzung, die alle 4 falschen Umformungen auf einmal entlarvt.", check: (v) => probeStats(v.x, v.y).exposed === 4 },
   ],
-});
+};
 
-export const labDistributiveArea = reg("tu-3-ausmultiplizieren", {
+export const labDistributiveArea: LabDefinition = {
   kind: "distributive-area",
   title: "Labor: Distributivgesetz k · (a + b)",
   intro:
@@ -281,13 +250,13 @@ export const labDistributiveArea = reg("tu-3-ausmultiplizieren", {
     { key: "total", label: "Gesamtprodukt", emphasis: true, digits: 0, compute: (v) => v.k * (v.a + v.b) },
   ],
   goals: [
-    { id: "null", text: "Mache das Gesamtprodukt mit b < 0 genau 0 (a = 2, k = 3).", check: (v) => v.k === 3 && v.a === 2 && v.b === -2, witness: { k: 3, a: 2, b: -2 } },
-    { id: "sub", text: "Stelle k = 4, a = 5 und negatives b so ein, dass k·(a + b) = 12.", check: (v) => v.k === 4 && v.a === 5 && v.b === -2, witness: { k: 4, a: 5, b: -2 } },
-    { id: "drei6", text: "Erreiche das Gesamtprodukt 36 mit k ≥ 3 und b ≥ 1.", check: (v) => v.k >= 3 && v.b >= 1 && v.k * (v.a + v.b) === 36, witness: { k: 4, a: 6, b: 3 } },
+    { id: "null", text: "Mache das Gesamtprodukt mit b < 0 genau 0 (a = 2, k = 3).", check: (v) => v.k === 3 && v.a === 2 && v.b === -2 },
+    { id: "sub", text: "Stelle k = 4, a = 5 und negatives b so ein, dass k·(a + b) = 12.", check: (v) => v.k === 4 && v.a === 5 && v.b === -2 },
+    { id: "drei6", text: "Erreiche das Gesamtprodukt 36 mit k ≥ 3 und b ≥ 1.", check: (v) => v.k >= 3 && v.b >= 1 && v.k * (v.a + v.b) === 36 },
   ],
-});
+};
 
-export const labFactorRect = reg("tu-4-faktorisieren", {
+export const labFactorRect: LabDefinition = {
   kind: "factor-rect",
   title: "Labor: Ausklammern = gemeinsamer Faktor",
   intro:
@@ -314,13 +283,13 @@ export const labFactorRect = reg("tu-4-faktorisieren", {
     },
   ],
   goals: [
-    { id: "zwei", text: "Finde für 12x + 18y einen gemeinsamen Faktor f ≥ 2.", check: (v) => v.preset === 0 && v.f >= 2 && 12 % v.f === 0 && 18 % v.f === 0, witness: { preset: 0, f: 2 } },
-    { id: "max0", text: "Klammere bei 12x + 18y den größtmöglichen Faktor aus.", check: (v) => v.preset === 0 && v.f === 6, witness: { preset: 0, f: 6 } },
-    { id: "max1", text: "Wähle 15a + 10b und klammere den größtmöglichen Faktor aus.", check: (v) => v.preset === 1 && v.f === 5, witness: { preset: 1, f: 5 } },
+    { id: "zwei", text: "Finde für 12x + 18y einen gemeinsamen Faktor f ≥ 2.", check: (v) => v.preset === 0 && v.f >= 2 && 12 % v.f === 0 && 18 % v.f === 0 },
+    { id: "max0", text: "Klammere bei 12x + 18y den größtmöglichen Faktor aus.", check: (v) => v.preset === 0 && v.f === 6 },
+    { id: "max1", text: "Wähle 15a + 10b und klammere den größtmöglichen Faktor aus.", check: (v) => v.preset === 1 && v.f === 5 },
   ],
-});
+};
 
-export const labSumProductGrid = reg("tu-5-summen-mal", {
+export const labSumProductGrid: LabDefinition = {
   kind: "sum-product-grid",
   title: "Labor: Summen multiplizieren (4 Felder)",
   intro:
@@ -336,13 +305,13 @@ export const labSumProductGrid = reg("tu-5-summen-mal", {
     { key: "prod", label: "(a+b)·(c+d)", emphasis: true, digits: 0, compute: (v) => (v.a + v.b) * (v.c + v.d) },
   ],
   goals: [
-    { id: "gleich", text: "Finde eine Rechteckfläche von genau 35 mit a > b.", check: (v) => v.a > v.b && (v.a + v.b) * (v.c + v.d) === 35, witness: { a: 5, b: 2, c: 3, d: 2 } },
-    { id: "misch", text: "Stelle a·d = b·c (gleich große Nebendiagonal-Felder) bei a ≠ b ein.", check: (v) => v.a !== v.b && v.a * v.d === v.b * v.c, witness: { a: 4, b: 2, c: 2, d: 1 } },
-    { id: "gross", text: "Erreiche (a + b)·(c + d) ≥ 72.", check: (v) => (v.a + v.b) * (v.c + v.d) >= 72, witness: { a: 6, b: 3, c: 5, d: 3 } },
+    { id: "gleich", text: "Finde eine Rechteckfläche von genau 35 mit a > b.", check: (v) => v.a > v.b && (v.a + v.b) * (v.c + v.d) === 35 },
+    { id: "misch", text: "Stelle a·d = b·c (gleich große Nebendiagonal-Felder) bei a ≠ b ein.", check: (v) => v.a !== v.b && v.a * v.d === v.b * v.c },
+    { id: "gross", text: "Erreiche (a + b)·(c + d) ≥ 72.", check: (v) => (v.a + v.b) * (v.c + v.d) >= 72 },
   ],
-});
+};
 
-export const labBinomialSquare = reg("tu-6-binomisch", {
+export const labBinomialSquare: LabDefinition = {
   kind: "binomial-square",
   title: "Labor: Binomische Formeln geometrisch",
   intro:
@@ -367,13 +336,13 @@ export const labBinomialSquare = reg("tu-6-binomisch", {
     },
   ],
   goals: [
-    { id: "erste", text: "Zeige bei der 1. Formel (a + b)² = 64 mit b = 3.", check: (v) => v.kind === 0 && v.b === 3 && (v.a + v.b) ** 2 === 64, witness: { kind: 0, a: 5, b: 3 } },
-    { id: "zweite", text: "Stelle bei der 2. Formel a = 6 und b = 2 ein und lies (a−b)² = 16 ab.", check: (v) => v.kind === 1 && v.a === 6 && v.b === 2, witness: { kind: 1, a: 6, b: 2 } },
-    { id: "dritte", text: "Finde bei der 3. Formel genau a² − b² = 40.", check: (v) => v.kind === 2 && v.a * v.a - v.b * v.b === 40, witness: { kind: 2, a: 7, b: 3 } },
+    { id: "erste", text: "Zeige bei der 1. Formel (a + b)² = 64 mit b = 3.", check: (v) => v.kind === 0 && v.b === 3 && (v.a + v.b) ** 2 === 64 },
+    { id: "zweite", text: "Stelle bei der 2. Formel a = 6 und b = 2 ein und lies (a−b)² = 16 ab.", check: (v) => v.kind === 1 && v.a === 6 && v.b === 2 },
+    { id: "dritte", text: "Finde bei der 3. Formel genau a² − b² = 40.", check: (v) => v.kind === 2 && v.a * v.a - v.b * v.b === 40 },
   ],
-});
+};
 
-export const labAreaScaling = reg("tu-7-sachargument", {
+export const labAreaScaling: LabDefinition = {
   kind: "area-scaling",
   title: "Labor: Flächenänderung beim Skalieren",
   intro:
@@ -389,15 +358,15 @@ export const labAreaScaling = reg("tu-7-sachargument", {
     { key: "area", label: "Neue Fläche", digits: 0, compute: (v) => v.a * v.b * v.kx * v.ky },
   ],
   goals: [
-    { id: "vier", text: "Verdopple beide Seiten (kx = 2, ky = 2) und bestätige den Flächenfaktor 4.", check: (v) => v.kx === 2 && v.ky === 2, witness: { kx: 2, ky: 2 } },
-    { id: "sechs", text: "Erreiche genau Faktor 6 zwischen neuer und alter Fläche.", check: (v) => v.kx * v.ky === 6, witness: { kx: 3, ky: 2 } },
-    { id: "neun", text: "Erhöhe den Faktor auf das 9-Fache bei Ausgangsfläche a·b = 8.", check: (v) => v.a * v.b === 8 && v.kx * v.ky === 9, witness: { a: 4, b: 2, kx: 3, ky: 3 } },
+    { id: "vier", text: "Verdopple beide Seiten (kx = 2, ky = 2) und bestätige den Flächenfaktor 4.", check: (v) => v.kx === 2 && v.ky === 2 },
+    { id: "sechs", text: "Erreiche genau Faktor 6 zwischen neuer und alter Fläche.", check: (v) => v.kx * v.ky === 6 },
+    { id: "neun", text: "Erhöhe den Faktor auf das 9-Fache bei Ausgangsfläche a·b = 8.", check: (v) => v.a * v.b === 8 && v.kx * v.ky === 9 },
   ],
-});
+};
 
 // ─── Etappe 2: Symmetrie und Winkel ────────────────────────────────────────
 
-export const labAxisSym = reg("sy-1-achse", {
+export const labAxisSym: LabDefinition = {
   kind: "axis-sym",
   title: "Labor: Achsenspiegelung",
   intro:
@@ -412,13 +381,13 @@ export const labAxisSym = reg("sy-1-achse", {
     { key: "mirror", label: "Gesuchtes P'", emphasis: true, compute: (v) => `(${fmt(2 * v.ax + 3, 0)}|2)` },
   ],
   goals: [
-    { id: "ach0", text: "Triff für Achse x = 0 den exakten Spiegelpunkt P' = (3|2).", check: (v) => v.ax === 0 && v.qx === 3 && v.qy === 2, witness: { ax: 0, qx: 3, qy: 2 } },
-    { id: "ach1", text: "Verschiebe die Achse auf x = 1 und finde den neuen Spiegelpunkt P'.", check: (v) => v.ax === 1 && v.qx === 5 && v.qy === 2, witness: { ax: 1, qx: 5, qy: 2 } },
-    { id: "achM1", text: "Stelle die Achse auf x = −1 und spiegle P dorthin.", check: (v) => v.ax === -1 && v.qx === 1 && v.qy === 2, witness: { ax: -1, qx: 1, qy: 2 } },
+    { id: "ach0", text: "Triff für Achse x = 0 den exakten Spiegelpunkt P' = (3|2).", check: (v) => v.ax === 0 && v.qx === 3 && v.qy === 2 },
+    { id: "ach1", text: "Verschiebe die Achse auf x = 1 und finde den neuen Spiegelpunkt P'.", check: (v) => v.ax === 1 && v.qx === 5 && v.qy === 2 },
+    { id: "achM1", text: "Stelle die Achse auf x = −1 und spiegle P dorthin.", check: (v) => v.ax === -1 && v.qx === 1 && v.qy === 2 },
   ],
-});
+};
 
-export const labPointSym = reg("sy-2-punkt", {
+export const labPointSym: LabDefinition = {
   kind: "point-sym",
   title: "Labor: Punktspiegelung am Zentrum Z",
   intro:
@@ -433,20 +402,20 @@ export const labPointSym = reg("sy-2-punkt", {
     { key: "target", label: "Gesuchtes P'", emphasis: true, compute: (v) => `(${fmt(2 * v.zx + 3, 0)}|−2)` },
   ],
   goals: [
-    { id: "z0", text: "Finde für Z(0|0) den Spiegelpunkt P'(3|−2).", check: (v) => v.zx === 0 && v.qx === 3 && v.qy === -2, witness: { zx: 0, qx: 3, qy: -2 } },
-    { id: "z1", text: "Stelle Z(1|0) ein und bringe M genau auf Z.", check: (v) => v.zx === 1 && v.qx === 5 && v.qy === -2, witness: { zx: 1, qx: 5, qy: -2 } },
-    { id: "zm1", text: "Spiegle P an Z(−1|0) auf seinen Spiegelpunkt.", check: (v) => v.zx === -1 && v.qx === 1 && v.qy === -2, witness: { zx: -1, qx: 1, qy: -2 } },
+    { id: "z0", text: "Finde für Z(0|0) den Spiegelpunkt P'(3|−2).", check: (v) => v.zx === 0 && v.qx === 3 && v.qy === -2 },
+    { id: "z1", text: "Stelle Z(1|0) ein und bringe M genau auf Z.", check: (v) => v.zx === 1 && v.qx === 5 && v.qy === -2 },
+    { id: "zm1", text: "Spiegle P an Z(−1|0) auf seinen Spiegelpunkt.", check: (v) => v.zx === -1 && v.qx === 1 && v.qy === -2 },
   ],
-});
+};
 
-export const labLociModel = reg("sy-3-abstand", {
+export const labLociModel: LabDefinition = {
   kind: "loci-model",
   title: "Labor: Mittelsenkrechte und Kreis",
   intro:
     "A(−3|0) und B(3|0) sind zwei Orte. Ziehe Standort P und stelle Radius r ein.",
   params: [
     range("px", "P x", -4, 4, -1, 0.5),
-    range("py", "P y", -3, 4, 2, 0.5),
+    range("py", "P y", -4, 4, 2, 0.5),
     range("r", "Kreisradius r", 2, 5, 4, 0.5),
   ],
   readouts: [
@@ -454,16 +423,13 @@ export const labLociModel = reg("sy-3-abstand", {
     { key: "dB", label: "d(P, B)", digits: 2, compute: (v) => dist2D({ x: v.px, y: v.py }, { x: 3, y: 0 }) },
   ],
   goals: [
-    { id: "mitte", text: "Bringe P auf die Mittelsenkrechte (d(P,A) = d(P,B) und py ≠ 0).", check: (v) => v.px === 0 && v.py !== 0, witness: { px: 0, py: 2 } },
-    { id: "kreis5", text: "Wähle Radius r = 5 und finde oben (py > 0) den Schnittpunkt von Mittelsenkrechte und Kreis.", check: (v) => v.r === 5 && v.px === 0 && v.py === 4, witness: { r: 5, px: 0, py: 4 } },
-    { id: "unten", text: "Finde auch unten (py < 0) einen Punkt mit d(P,A) = d(P,B) = 5.", check: (v) => v.px === 0 && Math.abs(dist2D({ x: v.px, y: v.py }, { x: -3, y: 0 }) - 5) < 0.05 && v.py < 0, witness: { px: 0, py: -3 > -4 ? -3 : -4 } }, // Note py min is -3, check range!
+    { id: "mitte", text: "Bringe P auf die Mittelsenkrechte (d(P,A) = d(P,B) und py ≠ 0).", check: (v) => v.px === 0 && v.py !== 0 },
+    { id: "kreis5", text: "Wähle Radius r = 5 und finde oben (py > 0) den Schnittpunkt von Mittelsenkrechte und Kreis.", check: (v) => v.r === 5 && v.px === 0 && v.py === 4 },
+    { id: "unten", text: "Finde auch unten (py < 0) einen Punkt mit d(P,A) = d(P,B) = 5.", check: (v) => v.px === 0 && Math.abs(dist2D({ x: v.px, y: v.py }, { x: -3, y: 0 }) - 5) < 0.05 && v.py < 0 },
   ],
-});
-// Wait: py min is -3 -> extend py min to -4 for (0,-4) or adjust witness to d = sqrt(18) / extend py min to -4! Let's extend py min to -4 right on the param:
-labLociModel.params[1] = range("py", "P y", -4, 4, 2, 0.5);
-WITNESSES["sy-3-abstand"].unten = { px: 0, py: -4, r: 5 };
+};
 
-export const labPerpBisectAngle = reg("sy-4-lot-winkel", {
+export const labPerpBisectAngle: LabDefinition = {
   kind: "perp-bisect-angle",
   title: "Labor: Lot und Winkelhalbierende",
   intro:
@@ -480,13 +446,13 @@ export const labPerpBisectAngle = reg("sy-4-lot-winkel", {
     { key: "pos", label: "Punkt F", emphasis: true, compute: (v) => `(${fmt(v.fx, 1)}|${fmt(v.fy, 1)})` },
   ],
   goals: [
-    { id: "lot", text: "Fälle im Modus „Lot fällen“ exakt auf den Lotfußpunkt F(4|0).", check: (v) => v.mode === 0 && v.fx === 4 && v.fy === 0, witness: { mode: 0, fx: 4, fy: 0 } },
-    { id: "kurz", text: "Prüfe, dass kein Punkt auf g näher an P(4|3,5) liegt als F(4|0): stelle (4|0) und Modus 0 ein.", check: (v) => v.mode === 0 && Math.abs(v.fy) < 0.05 && dist2D({ x: 4, y: 3.5 }, { x: v.fx, y: v.fy }) <= 3.51, witness: { mode: 0, fx: 4, fy: 0 } },
-    { id: "wh", text: "Wechsle zur Winkelhalbierenden und triff exakt den 30°-Strahl (Abweichung < 1,5°).", check: (v) => v.mode === 1 && v.fx > 1.3 && v.fy > 0.1 && Math.abs(angleDeg({ x: 1, y: 0 }, { x: 7.5, y: 0 }, { x: v.fx, y: v.fy }) - 30) < 1.5, witness: { mode: 1, fx: 4.5, fy: 2 } },
+    { id: "lot", text: "Fälle im Modus „Lot fällen“ exakt auf den Lotfußpunkt F(4|0).", check: (v) => v.mode === 0 && v.fx === 4 && v.fy === 0 },
+    { id: "kurz", text: "Prüfe, dass kein Punkt auf g näher an P(4|3,5) liegt als F(4|0): stelle (4|0) und Modus 0 ein.", check: (v) => v.mode === 0 && Math.abs(v.fy) < 0.05 && dist2D({ x: 4, y: 3.5 }, { x: v.fx, y: v.fy }) <= 3.51 },
+    { id: "wh", text: "Wechsle zur Winkelhalbierenden und triff exakt den 30°-Strahl (Abweichung < 1,5°).", check: (v) => v.mode === 1 && v.fx > 1.3 && v.fy > 0.1 && Math.abs(angleDeg({ x: 1, y: 0 }, { x: 7.5, y: 0 }, { x: v.fx, y: v.fy }) - 30) < 1.5 },
   ],
-});
+};
 
-export const labQuadHouse = reg("sy-5-vierecke", {
+export const labQuadHouse: LabDefinition = {
   kind: "quad-house",
   title: "Labor: Haus der symmetrischen Vierecke",
   intro:
@@ -500,13 +466,13 @@ export const labQuadHouse = reg("sy-5-vierecke", {
     { key: "axes", label: "Symmetrieachsen", digits: 0, compute: (v) => QUADS[v.shape]?.axes ?? 0 },
   ],
   goals: [
-    { id: "punkt", text: "Finde ein punktsymmetrisches Viereck ganz ohne Symmetrieachse.", check: (v) => v.shape === 2, witness: { shape: 2 } },
-    { id: "zwei", text: "Stelle eine Raute ein (2 Diagonalachsen und punktsymmetrisch).", check: (v) => v.shape === 3, witness: { shape: 3 } },
-    { id: "vier", text: "Öffne das Quadrat (alle 4 Symmetrieachsen).", check: (v) => v.shape === 5, witness: { shape: 5 } },
+    { id: "punkt", text: "Finde ein punktsymmetrisches Viereck ganz ohne Symmetrieachse.", check: (v) => v.shape === 2 },
+    { id: "zwei", text: "Stelle eine Raute ein (2 Diagonalachsen und punktsymmetrisch).", check: (v) => v.shape === 3 },
+    { id: "vier", text: "Öffne das Quadrat (alle 4 Symmetrieachsen).", check: (v) => v.shape === 5 },
   ],
-});
+};
 
-export const labLineCross = reg("wi-1-kreuzung", {
+export const labLineCross: LabDefinition = {
   kind: "line-cross",
   title: "Labor: Scheitel- und Nebenwinkel",
   intro:
@@ -517,13 +483,13 @@ export const labLineCross = reg("wi-1-kreuzung", {
     { key: "beta", label: "Nebenwinkel β", emphasis: true, digits: 0, compute: (v) => 180 - v.alpha },
   ],
   goals: [
-    { id: "gleich", text: "Wann werden α und sein Nebenwinkel β exakt gleich groß?", check: (v) => v.alpha === 90, witness: { alpha: 90 } },
-    { id: "doppelt", text: "Stelle einen stumpfen Winkel α ein, der genau doppelt so groß ist wie β.", check: (v) => v.alpha === 120, witness: { alpha: 120 } },
-    { id: "spitz", text: "Wähle β = 145°.", check: (v) => 180 - v.alpha === 145, witness: { alpha: 35 } },
+    { id: "gleich", text: "Wann werden α und sein Nebenwinkel β exakt gleich groß?", check: (v) => v.alpha === 90 },
+    { id: "doppelt", text: "Stelle einen stumpfen Winkel α ein, der genau doppelt so groß ist wie β.", check: (v) => v.alpha === 120 },
+    { id: "spitz", text: "Wähle β = 145°.", check: (v) => 180 - v.alpha === 145 },
   ],
-});
+};
 
-export const labParallelTransversal = reg("wi-2-parallelen", {
+export const labParallelTransversal: LabDefinition = {
   kind: "parallel-transversal",
   title: "Labor: Stufen- und Wechselwinkel",
   intro:
@@ -537,13 +503,13 @@ export const labParallelTransversal = reg("wi-2-parallelen", {
     { key: "par", label: "Lage", emphasis: true, compute: (v) => (v.tilt === 0 ? "g ∥ h (parallel)" : "Geraden schneiden sich") },
   ],
   goals: [
-    { id: "par70", text: "Stelle Parallelität (g ∥ h) mit α₁ = α₂ = 70° ein.", check: (v) => v.tilt === 0 && v.alpha === 70, witness: { alpha: 70, tilt: 0 } },
-    { id: "diff", text: "Erzeuge α₂ = 95° bei parallelen Geraden.", check: (v) => v.tilt === 0 && v.alpha === 95, witness: { alpha: 95, tilt: 0 } },
-    { id: "schräg", text: "Wähle eine nicht parallele Lage mit genau 15° Abweichung bei α₁ = 80°.", check: (v) => v.alpha === 80 && Math.abs(v.tilt) === 15, witness: { alpha: 80, tilt: -15 } },
+    { id: "par70", text: "Stelle Parallelität (g ∥ h) mit α₁ = α₂ = 70° ein.", check: (v) => v.tilt === 0 && v.alpha === 70 },
+    { id: "diff", text: "Erzeuge α₂ = 95° bei parallelen Geraden.", check: (v) => v.tilt === 0 && v.alpha === 95 },
+    { id: "schräg", text: "Wähle eine nicht parallele Lage mit genau 15° Abweichung bei α₁ = 80°.", check: (v) => v.alpha === 80 && Math.abs(v.tilt) === 15 },
   ],
-});
+};
 
-export const labTriangleProof = reg("wi-3-dreiecksumme", {
+export const labTriangleProof: LabDefinition = {
   kind: "triangle-proof",
   title: "Labor: Beweis der Innenwinkelsumme",
   intro:
@@ -573,13 +539,13 @@ export const labTriangleProof = reg("wi-3-dreiecksumme", {
     },
   ],
   goals: [
-    { id: "hilf", text: "Blende die Hilfsparallele h ∥ AB ein.", check: (v) => v.showAux === 1, witness: { showAux: 1 } },
-    { id: "sym", text: "Bringe C genau über die Mitte (cx = 260) mit Hilfslinie (gleichschenklig!).", check: (v) => v.showAux === 1 && v.cx === 260, witness: { cx: 260, showAux: 1 } },
-    { id: "flach", text: "Ziehe C weit nach links (cx ≤ 170) und prüfe die Summe mit Hilfslinie.", check: (v) => v.showAux === 1 && v.cx <= 170, witness: { cx: 160, showAux: 1 } },
+    { id: "hilf", text: "Blende die Hilfsparallele h ∥ AB ein.", check: (v) => v.showAux === 1 },
+    { id: "sym", text: "Bringe C genau über die Mitte (cx = 260) mit Hilfslinie (gleichschenklig!).", check: (v) => v.showAux === 1 && v.cx === 260 },
+    { id: "flach", text: "Ziehe C weit nach links (cx ≤ 170) und prüfe die Summe mit Hilfslinie.", check: (v) => v.showAux === 1 && v.cx <= 170 },
   ],
-});
+};
 
-export const labPolygonTriangulation = reg("wi-4-vielecksumme", {
+export const labPolygonTriangulation: LabDefinition = {
   kind: "polygon-triangulation",
   title: "Labor: Vieleck in Dreiecke zerlegen",
   intro:
@@ -596,13 +562,13 @@ export const labPolygonTriangulation = reg("wi-4-vielecksumme", {
     { key: "sum", label: "Innenwinkelsumme", emphasis: true, digits: 0, compute: (v) => polygonAngleSum(v.n) },
   ],
   goals: [
-    { id: "sechs", text: "Zerlege ein Sechseck sichtbar in 4 Dreiecke (720°).", check: (v) => v.n === 6 && v.showDiag === 1, witness: { n: 6, showDiag: 1 } },
-    { id: "acht", text: "Bestimme die Winkelsumme eines Achtecks mit sichtbaren Diagonalen.", check: (v) => v.n === 8 && v.showDiag === 1, witness: { n: 8, showDiag: 1 } },
-    { id: "eins35", text: "Finde ein regelmäßiges n-Eck mit Einzelwinkel 135°.", check: (v) => Math.abs(polygonAngleSum(v.n) / v.n - 135) < 1e-6, witness: { n: 8 } },
+    { id: "sechs", text: "Zerlege ein Sechseck sichtbar in 4 Dreiecke (720°).", check: (v) => v.n === 6 && v.showDiag === 1 },
+    { id: "acht", text: "Bestimme die Winkelsumme eines Achtecks mit sichtbaren Diagonalen.", check: (v) => v.n === 8 && v.showDiag === 1 },
+    { id: "eins35", text: "Finde ein regelmäßiges n-Eck mit Einzelwinkel 135°.", check: (v) => Math.abs(polygonAngleSum(v.n) / v.n - 135) < 1e-6 },
   ],
-});
+};
 
-export const labMultiCrossing = reg("wi-5-mehrfach", {
+export const labMultiCrossing: LabDefinition = {
   kind: "multi-crossing",
   title: "Labor: Parallelitätsprüfung durch Winkel",
   intro:
@@ -613,15 +579,15 @@ export const labMultiCrossing = reg("wi-5-mehrfach", {
     { key: "sup", label: "Nebenwinkel von ε", digits: 0, compute: (v) => 180 - v.eps },
   ],
   goals: [
-    { id: "parallel", text: "Stelle ε so ein, dass DE ∥ AB gilt.", check: (v) => v.eps === 65, witness: { eps: 65 } },
-    { id: "winkel90", text: "Stelle genau ε = 90° ein (rechter Winkel an D).", check: (v) => v.eps === 90, witness: { eps: 90 } },
-    { id: "klein", text: "Wähle einen Winkel mit Nebenwinkel 130°.", check: (v) => 180 - v.eps === 130, witness: { eps: 50 } },
+    { id: "parallel", text: "Stelle ε so ein, dass DE ∥ AB gilt.", check: (v) => v.eps === 65 },
+    { id: "winkel90", text: "Stelle genau ε = 90° ein (rechter Winkel an D).", check: (v) => v.eps === 90 },
+    { id: "klein", text: "Wähle einen Winkel mit Nebenwinkel 130°.", check: (v) => 180 - v.eps === 130 },
   ],
-});
+};
 
 // ─── Etappe 3: Lineare Gleichungen & Prozentrechnung ───────────────────────
 
-export const labEquationModel = reg("gl-1-aufstellen", {
+export const labEquationModel: LabDefinition = {
   kind: "equation-model",
   title: "Labor: Balkenmodell für lineare Gleichungen",
   intro:
@@ -637,13 +603,13 @@ export const labEquationModel = reg("gl-1-aufstellen", {
     { key: "diff", label: "Abweichung", emphasis: true, digits: 0, compute: (v) => v.a * v.x + v.b - v.target },
   ],
   goals: [
-    { id: "loes5", text: "Löse 3x + 4 = 19 am Balkenmodell.", check: (v) => v.a === 3 && v.b === 4 && v.target === 19 && v.x === 5, witness: { a: 3, b: 4, target: 19, x: 5 } },
-    { id: "neu", text: "Stelle 4x + 2 = 26 ein und löse die Gleichung.", check: (v) => v.a === 4 && v.b === 2 && v.target === 26 && v.x === 6, witness: { a: 4, b: 2, target: 26, x: 6 } },
-    { id: "x8", text: "Finde eine beliebige Gleichung mit a = 2 und Lösung x = 8.", check: (v) => v.a === 2 && v.x === 8 && v.a * v.x + v.b === v.target, witness: { a: 2, b: 4, x: 8, target: 20 } },
+    { id: "loes5", text: "Löse 3x + 4 = 19 am Balkenmodell.", check: (v) => v.a === 3 && v.b === 4 && v.target === 19 && v.x === 5 },
+    { id: "neu", text: "Stelle 4x + 2 = 26 ein und löse die Gleichung.", check: (v) => v.a === 4 && v.b === 2 && v.target === 26 && v.x === 6 },
+    { id: "x8", text: "Finde eine beliebige Gleichung mit a = 2 und Lösung x = 8.", check: (v) => v.a === 2 && v.x === 8 && v.a * v.x + v.b === v.target },
   ],
-});
+};
 
-export const labBalanceScale = reg("gl-2-aequivalenz", {
+export const labBalanceScale: LabDefinition = {
   kind: "balance-scale",
   title: "Labor: Balkenwaage und Äquivalenzumformungen",
   intro:
@@ -682,13 +648,13 @@ export const labBalanceScale = reg("gl-2-aequivalenz", {
     },
   ],
   goals: [
-    { id: "probe0", text: "Bringe die Startgleichung mit testX ins Gleichgewicht.", check: (v) => v.step === 0 && v.testX === 4, witness: { step: 0, testX: 4 } },
-    { id: "isoX", text: "Bringe alle x auf eine Seite (3x = 12) und prüfe das Gleichgewicht.", check: (v) => v.step === 2 && v.testX === 4, witness: { step: 2, testX: 4 } },
-    { id: "fertig", text: "Isoliere x vollständig zu x = 4 bei ausgeglichener Waage.", check: (v) => v.step === 3 && v.testX === 4, witness: { step: 3, testX: 4 } },
+    { id: "probe0", text: "Bringe die Startgleichung mit testX ins Gleichgewicht.", check: (v) => v.step === 0 && v.testX === 4 },
+    { id: "isoX", text: "Bringe alle x auf eine Seite (3x = 12) und prüfe das Gleichgewicht.", check: (v) => v.step === 2 && v.testX === 4 },
+    { id: "fertig", text: "Isoliere x vollständig zu x = 4 bei ausgeglichener Waage.", check: (v) => v.step === 3 && v.testX === 4 },
   ],
-});
+};
 
-export const labEqVsTrial = reg("gl-3-klammern", {
+export const labEqVsTrial: LabDefinition = {
   kind: "eq-vs-trial",
   title: "Labor: Klammergleichung und Dezimal-Lösung",
   intro:
@@ -702,13 +668,13 @@ export const labEqVsTrial = reg("gl-3-klammern", {
     { key: "gap", label: "Restfehler", digits: 1, compute: (v) => Math.abs(3 * (v.x - 1) - (v.x + v.b)) },
   ],
   goals: [
-    { id: "halb", text: "Finde die gebrochene Lösung x = 3,5 für b = 4.", check: (v) => v.b === 4 && v.x === 3.5, witness: { b: 4, x: 3.5 } },
-    { id: "ganz", text: "Stelle b = 5 ein und finde die ganzzahlige Lösung.", check: (v) => v.b === 5 && v.x === 4, witness: { b: 5, x: 4 } },
-    { id: "vier5", text: "Erzeuge die Lösung x = 4,5 durch passendes b.", check: (v) => v.b === 6 && v.x === 4.5, witness: { b: 6, x: 4.5 } },
+    { id: "halb", text: "Finde die gebrochene Lösung x = 3,5 für b = 4.", check: (v) => v.b === 4 && v.x === 3.5 },
+    { id: "ganz", text: "Stelle b = 5 ein und finde die ganzzahlige Lösung.", check: (v) => v.b === 5 && v.x === 4 },
+    { id: "vier5", text: "Erzeuge die Lösung x = 4,5 durch passendes b.", check: (v) => v.b === 6 && v.x === 4.5 },
   ],
-});
+};
 
-export const labEqCases = reg("gl-4-sonderfaelle", {
+export const labEqCases: LabDefinition = {
   kind: "eq-cases",
   title: "Labor: Die drei Lösungsfälle",
   intro:
@@ -726,13 +692,13 @@ export const labEqCases = reg("gl-4-sonderfaelle", {
     },
   ],
   goals: [
-    { id: "leer", text: "Erzeuge eine unlösbare Gleichung (parallele Geraden, 𝕃 = {}).", check: (v) => v.a === 3 && v.b !== 2, witness: { a: 3, b: 5 } },
-    { id: "alle", text: "Erzeuge eine allgemeingültige Gleichung (𝕃 = ℚ).", check: (v) => v.a === 3 && v.b === 2, witness: { a: 3, b: 2 } },
-    { id: "pos2", text: "Stelle genau eine Lösung bei x = 2 ein (Schnittpunkt der Geraden).", check: (v) => v.a !== 3 && Math.abs((v.b - 2) / (v.a - 3) - 2) < 1e-6, witness: { a: 5, b: 6 } },
+    { id: "leer", text: "Erzeuge eine unlösbare Gleichung (parallele Geraden, 𝕃 = {}).", check: (v) => v.a === 3 && v.b !== 2 },
+    { id: "alle", text: "Erzeuge eine allgemeingültige Gleichung (𝕃 = ℚ).", check: (v) => v.a === 3 && v.b === 2 },
+    { id: "pos2", text: "Stelle genau eine Lösung bei x = 2 ein (Schnittpunkt der Geraden).", check: (v) => v.a !== 3 && Math.abs((v.b - 2) / (v.a - 3) - 2) < 1e-6 },
   ],
-});
+};
 
-export const labPercentEquation = reg("pr-1-gleichung", {
+export const labPercentEquation: LabDefinition = {
   kind: "percent-equation",
   title: "Labor: Prozentgleichung und Rückrechnen",
   intro:
@@ -746,13 +712,13 @@ export const labPercentEquation = reg("pr-1-gleichung", {
     { key: "trap", label: "Falscher Rückweg", digits: 2, compute: (v) => percentAfter(percentAfter(v.net, v.p), -v.p) },
   ],
   goals: [
-    { id: "mwst", text: "Erzeuge mit G = 100 € einen um 20 % erhöhten Endwert von 120 €.", check: (v) => v.net === 100 && v.p === 20, witness: { net: 100, p: 20 } },
-    { id: "rabatt", text: "Stelle 25 % Rabatt auf 160 € ein (Endwert 120 €).", check: (v) => v.net === 160 && v.p === -25, witness: { net: 160, p: -25 } },
-    { id: "diff9", text: "Finde eine Einstellung mit Endwert 144 € und p = 20 % (Grundwert?).", check: (v) => v.p === 20 && Math.abs(percentAfter(v.net, v.p) - 144) < 1e-6, witness: { net: 120, p: 20 } },
+    { id: "mwst", text: "Erzeuge mit G = 100 € einen um 20 % erhöhten Endwert von 120 €.", check: (v) => v.net === 100 && v.p === 20 },
+    { id: "rabatt", text: "Stelle 25 % Rabatt auf 160 € ein (Endwert 120 €).", check: (v) => v.net === 160 && v.p === -25 },
+    { id: "diff9", text: "Finde eine Einstellung mit Endwert 144 € und p = 20 % (Grundwert?).", check: (v) => v.p === 20 && Math.abs(percentAfter(v.net, v.p) - 144) < 1e-6 },
   ],
-});
+};
 
-export const labChainPercent = reg("pr-2-wachstum", {
+export const labChainPercent: LabDefinition = {
   kind: "chain-percent",
   title: "Labor: Hintereinanderausführung von Prozenten",
   intro:
@@ -766,13 +732,13 @@ export const labChainPercent = reg("pr-2-wachstum", {
     { key: "pct", label: "Gesamtänderung (%)", digits: 2, compute: (v) => percentChainPercent(v.p1, v.p2) },
   ],
   goals: [
-    { id: "plusminus", text: "Zeige mit +20 % und −20 %, dass der Endwert unter 100 € sinkt (96 €).", check: (v) => v.p1 === 20 && v.p2 === -20, witness: { p1: 20, p2: -20 } },
-    { id: "doppel", text: "Erreiche genau 144 € nach zwei gleich großen Erhöhungen.", check: (v) => v.p1 === v.p2 && Math.abs(100 * (1 + v.p1 / 100) ** 2 - 144) < 1e-6, witness: { p1: 20, p2: 20 } },
-    { id: "neutral", text: "Finde zwei entgegengesetzte Änderungen mit Gesamtänderung genau −9 %.", check: (v) => v.p1 === -v.p2 && Math.abs(percentChainPercent(v.p1, v.p2) + 9) < 1e-6, witness: { p1: 30, p2: -30 } },
+    { id: "plusminus", text: "Zeige mit +20 % und −20 %, dass der Endwert unter 100 € sinkt (96 €).", check: (v) => v.p1 === 20 && v.p2 === -20 },
+    { id: "doppel", text: "Erreiche genau 144 € nach zwei gleich großen Erhöhungen.", check: (v) => v.p1 === v.p2 && Math.abs(100 * (1 + v.p1 / 100) ** 2 - 144) < 1e-6 },
+    { id: "neutral", text: "Finde zwei entgegengesetzte Änderungen mit Gesamtänderung genau −9 %.", check: (v) => v.p1 === -v.p2 && Math.abs(percentChainPercent(v.p1, v.p2) + 9) < 1e-6 },
   ],
-});
+};
 
-export const labClaimAudit = reg("pr-3-pruefen", {
+export const labClaimAudit: LabDefinition = {
   kind: "claim-audit",
   title: "Labor: Prozentpunkte vs. relative Veränderung",
   intro:
@@ -786,15 +752,15 @@ export const labClaimAudit = reg("pr-3-pruefen", {
     { key: "rel", label: "Relativ (%)", emphasis: true, digits: 1, compute: (v) => ((v.v1 - v.v0) / v.v0) * 100 },
   ],
   goals: [
-    { id: "verdopp", text: "Stelle einen Sprung um +10 Prozentpunkte ein, der relativ +100 % entspricht!", check: (v) => v.v1 - v.v0 === 10 && Math.abs(((v.v1 - v.v0) / v.v0) * 100 - 100) < 1e-6, witness: { v0: 10, v1: 20 } },
-    { id: "halb", text: "Zeige +25 % relative Steigerung bei Ausgangsanteil 40 %.", check: (v) => v.v0 === 40 && v.v1 === 50, witness: { v0: 40, v1: 50 } },
-    { id: "rueck", text: "Stelle einen Rückgang um −20 Prozentpunkte und relativ −50 % ein.", check: (v) => v.v1 - v.v0 === -20 && v.v0 === 40, witness: { v0: 40, v1: 20 } },
+    { id: "verdopp", text: "Stelle einen Sprung um +10 Prozentpunkte ein, der relativ +100 % entspricht!", check: (v) => v.v1 - v.v0 === 10 && Math.abs(((v.v1 - v.v0) / v.v0) * 100 - 100) < 1e-6 },
+    { id: "halb", text: "Zeige +25 % relative Steigerung bei Ausgangsanteil 40 %.", check: (v) => v.v0 === 40 && v.v1 === 50 },
+    { id: "rueck", text: "Stelle einen Rückgang um −20 Prozentpunkte und relativ −50 % ein.", check: (v) => v.v1 - v.v0 === -20 && v.v0 === 40 },
   ],
-});
+};
 
 // ─── Etappe 4: Kenngrößen von Daten ────────────────────────────────────────
 
-export const labMedianOrder = reg("da-1-median", {
+export const labMedianOrder: LabDefinition = {
   kind: "median-order",
   title: "Labor: Median und Mittelwert",
   intro:
@@ -819,13 +785,13 @@ export const labMedianOrder = reg("da-1-median", {
     },
   ],
   goals: [
-    { id: "ungerade", text: "Bringe bei n = 5 den Median genau auf 7.", check: (v) => v.n === 5 && median([...[4, 7, 9, 13], v.xVal]) === 7, witness: { n: 5, xVal: 6 } },
-    { id: "gerade", text: "Wähle n = 6 und stelle genau den Median 8,5 ein.", check: (v) => v.n === 6 && median([...[4, 7, 9, 13, 15], v.xVal]) === 8.5, witness: { n: 6, xVal: 8 } },
-    { id: "hoch", text: "Wähle n = 7 und schiebe den beweglichen Wert auf 12, sodass der Median 9 wird.", check: (v) => v.n === 7 && median([...[4, 7, 9, 13, 15, 6], v.xVal]) === 9, witness: { n: 7, xVal: 12 } },
+    { id: "ungerade", text: "Bringe bei n = 5 den Median genau auf 7.", check: (v) => v.n === 5 && median([...[4, 7, 9, 13], v.xVal]) === 7 },
+    { id: "gerade", text: "Wähle n = 6 und stelle genau den Median 8,5 ein.", check: (v) => v.n === 6 && median([...[4, 7, 9, 13, 15], v.xVal]) === 8.5 },
+    { id: "hoch", text: "Wähle n = 7 und schiebe den beweglichen Wert auf 12, sodass der Median 9 wird.", check: (v) => v.n === 7 && median([...[4, 7, 9, 13, 15, 6], v.xVal]) === 9 },
   ],
-});
+};
 
-export const labOutlierShift = reg("da-2-ausreisser", {
+export const labOutlierShift: LabDefinition = {
   kind: "outlier-shift",
   title: "Labor: Ausreißer verschieben",
   intro:
@@ -836,13 +802,13 @@ export const labOutlierShift = reg("da-2-ausreisser", {
     { key: "avg", label: "Mittelwert", digits: 0, compute: (v) => mean([2200, 2400, 2500, 2600, 2800, 3000, v.v7]) },
   ],
   goals: [
-    { id: "ausr", text: "Ziehe den 7. Wert auf mindestens 12 000 €: Der Median bleibt bei 2 600 €, der Mittelwert steigt über 3 900 €.", check: (v) => v.v7 >= 12000, witness: { v7: 12000 } },
-    { id: "exakt", text: "Finde den 7. Wert, bei dem der Mittelwert exakt 3 500 € beträgt.", check: (v) => Math.abs(mean([2200, 2400, 2500, 2600, 2800, 3000, v.v7]) - 3500) < 1e-6, witness: { v7: 9000 } },
-    { id: "unten", text: "Verschiebe den 7. Wert ganz nach links (< 2 200 €) und prüfe den neuen Median.", check: (v) => v.v7 < 2200, witness: { v7: 1500 } },
+    { id: "ausr", text: "Ziehe den 7. Wert auf mindestens 12 000 €: Der Median bleibt bei 2 600 €, der Mittelwert steigt über 3 900 €.", check: (v) => v.v7 >= 12000 },
+    { id: "exakt", text: "Finde den 7. Wert, bei dem der Mittelwert exakt 3 500 € beträgt.", check: (v) => Math.abs(mean([2200, 2400, 2500, 2600, 2800, 3000, v.v7]) - 3500) < 1e-6 },
+    { id: "unten", text: "Verschiebe den 7. Wert ganz nach links (< 2 200 €) und prüfe den neuen Median.", check: (v) => v.v7 < 2200 },
   ],
-});
+};
 
-export const labQuartilesSplit = reg("da-3-quartile", {
+export const labQuartilesSplit: LabDefinition = {
   kind: "quartiles-split",
   title: "Labor: Spannweite und Quartile",
   intro:
@@ -856,13 +822,13 @@ export const labQuartilesSplit = reg("da-3-quartile", {
     { key: "iqr", label: "Quartilsabstand", digits: 0, compute: (v) => fiveNumbers([v.low, 8, 10, 14, 16, 18, v.high]).iqr },
   ],
   goals: [
-    { id: "r24", text: "Stelle eine Spannweite von genau R = 24 ein.", check: (v) => v.high - v.low === 24, witness: { low: 4, high: 28 } },
-    { id: "r28", text: "Erreiche die größtmögliche Spannweite R = 28.", check: (v) => v.high - v.low === 28, witness: { low: 2, high: 30 } },
-    { id: "iqr8", text: "Stelle low = 8 und high = 18 ein und prüfe, dass der Quartilsabstand q₃ − q₁ unverändert 8 bleibt.", check: (v) => v.low === 8 && v.high === 18, witness: { low: 8, high: 18 } },
+    { id: "r24", text: "Stelle eine Spannweite von genau R = 24 ein.", check: (v) => v.high - v.low === 24 },
+    { id: "r28", text: "Erreiche die größtmögliche Spannweite R = 28.", check: (v) => v.high - v.low === 28 },
+    { id: "iqr10", text: "Stelle low = 8 und high = 18 ein und prüfe, dass der Quartilsabstand q₃ − q₁ unverändert 10 bleibt.", check: (v) => v.low === 8 && v.high === 18 },
   ],
-});
+};
 
-export const labBoxplotBuilder = reg("da-4-boxplot", {
+export const labBoxplotBuilder: LabDefinition = {
   kind: "boxplot-builder",
   title: "Labor: Boxplot aus fünf Kennwerten",
   intro:
@@ -878,13 +844,13 @@ export const labBoxplotBuilder = reg("da-4-boxplot", {
     { key: "span", label: "Spannweite", digits: 0, compute: (v) => v.max - 2 },
   ],
   goals: [
-    { id: "sym", text: "Baue einen symmetrischen Boxplot um Median 15 mit q₁ = 9 und q₃ = 21.", check: (v) => v.med === 15 && v.q1 === 9 && v.q3 === 21 && v.max === 28, witness: { q1: 9, med: 15, q3: 21, max: 28 } },
-    { id: "eng", text: "Mache die Box möglichst schmal (IQR = 7).", check: (v) => v.q3 - v.q1 === 7, witness: { q1: 9, q3: 16 } },
-    { id: "schief", text: "Erzeuge einen Boxplot mit langem oberem Antennen-Stück (max = 28, q₃ = 16).", check: (v) => v.max === 28 && v.q3 === 16, witness: { max: 28, q3: 16 } },
+    { id: "sym", text: "Baue einen symmetrischen Boxplot um Median 15 mit q₁ = 9 und q₃ = 21.", check: (v) => v.med === 15 && v.q1 === 9 && v.q3 === 21 && v.max === 28 },
+    { id: "eng", text: "Mache die Box möglichst schmal (IQR = 7).", check: (v) => v.q3 - v.q1 === 7 },
+    { id: "schief", text: "Erzeuge einen Boxplot mit langem oberem Antennen-Stück (max = 28, q₃ = 16).", check: (v) => v.max === 28 && v.q3 === 16 },
   ],
-});
+};
 
-export const labBoxplotCompare = reg("da-5-vergleich", {
+export const labBoxplotCompare: LabDefinition = {
   kind: "boxplot-compare",
   title: "Labor: Zwei Boxplots vergleichen",
   intro:
@@ -898,15 +864,15 @@ export const labBoxplotCompare = reg("da-5-vergleich", {
     { key: "iqrB", label: "IQR B", digits: 0, compute: (v) => 2 * v.spreadB },
   ],
   goals: [
-    { id: "besser", text: "Mache Gruppe B im Median um 4 Einheiten größer als Gruppe A.", check: (v) => v.shiftB === 4, witness: { shiftB: 4 } },
-    { id: "kleiner", text: "Schiebe die gesamte Box von B nach links (Median B = 14) bei schmaler Streuung (IQR = 4).", check: (v) => v.shiftB === -4 && v.spreadB === 2, witness: { shiftB: -4, spreadB: 2 } },
-    { id: "breit", text: "Lasse die Mediane genau gleich (18), aber verdopple die halbe Boxbreite auf 6 (IQR = 12).", check: (v) => v.shiftB === 0 && v.spreadB === 6, witness: { shiftB: 0, spreadB: 6 } },
+    { id: "besser", text: "Mache Gruppe B im Median um 4 Einheiten größer als Gruppe A.", check: (v) => v.shiftB === 4 },
+    { id: "kleiner", text: "Schiebe die gesamte Box von B nach links (Median B = 14) bei schmaler Streuung (IQR = 4).", check: (v) => v.shiftB === -4 && v.spreadB === 2 },
+    { id: "breit", text: "Lasse die Mediane genau gleich (18), aber vergrößere die halbe Boxbreite von 4 auf 6 (IQR = 12).", check: (v) => v.shiftB === 0 && v.spreadB === 6 },
   ],
-});
+};
 
 // ─── Etappe 5: Kongruenz und Dreieckskonstruktionen ────────────────────────
 
-export const labCongruenceMotion = reg("ko-1-kongruenz", {
+export const labCongruenceMotion: LabDefinition = {
   kind: "congruence-motion",
   title: "Labor: Kongruenz durch Bewegung",
   intro:
@@ -919,13 +885,13 @@ export const labCongruenceMotion = reg("ko-1-kongruenz", {
     { key: "cong", label: "Deckung", emphasis: true, compute: (v) => (v.dx === 0 && v.rot === 0 ? "deckungsgleich ✓" : "noch verschoben / gedreht") },
   ],
   goals: [
-    { id: "parallel", text: "Richte beide Dreiecke parallel aus (Drehwinkel 0°).", check: (v) => v.rot === 0 && v.dx > 0, witness: { dx: 120, rot: 0 } },
-    { id: "halb", text: "Drehe Δ₂ genau um eine halbe Drehung (180°).", check: (v) => v.rot === 180, witness: { rot: 180 } },
-    { id: "deck", text: "Bringe Δ₁ und Δ₂ exakt zur Deckung.", check: (v) => v.dx === 0 && v.rot === 0, witness: { dx: 0, rot: 0 } },
+    { id: "parallel", text: "Richte beide Dreiecke parallel aus (Drehwinkel 0°).", check: (v) => v.rot === 0 && v.dx > 0 },
+    { id: "halb", text: "Drehe Δ₂ genau um eine halbe Drehung (180°).", check: (v) => v.rot === 180 },
+    { id: "deck", text: "Bringe Δ₁ und Δ₂ exakt zur Deckung.", check: (v) => v.dx === 0 && v.rot === 0 },
   ],
-});
+};
 
-export const labSssSws = reg("ko-2-sss-sws", {
+export const labSssSws: LabDefinition = {
   kind: "sss-sws",
   title: "Labor: Kongruenzsätze SSS und SWS",
   intro:
@@ -952,13 +918,13 @@ export const labSssSws = reg("ko-2-sss-sws", {
     },
   ],
   goals: [
-    { id: "grenze", text: "Prüfe den Grenzfall a = 2 (2 + 4 = 6): Die Bögen treffen auf einer Gerade.", check: (v) => v.mode === 0 && v.a === 2, witness: { mode: 0, a: 2 } },
-    { id: "sssOk", text: "Finde eine Seite a, mit der im SSS-Modus ein eindeutiges Dreieck entsteht.", check: (v) => v.mode === 0 && triangleValid(v.a, 4, 6), witness: { mode: 0, a: 5 } },
-    { id: "sws90", text: "Konstruiere per SWS ein rechtwinkliges Dreieck (α = 90°).", check: (v) => v.mode === 1 && v.alpha === 90, witness: { mode: 1, alpha: 90 } },
+    { id: "grenze", text: "Prüfe den Grenzfall a = 2 (2 + 4 = 6): Die Bögen treffen auf einer Gerade.", check: (v) => v.mode === 0 && v.a === 2 },
+    { id: "sssOk", text: "Finde eine Seite a, mit der im SSS-Modus ein eindeutiges Dreieck entsteht.", check: (v) => v.mode === 0 && triangleValid(v.a, 4, 6) },
+    { id: "sws90", text: "Konstruiere per SWS ein rechtwinkliges Dreieck (α = 90°).", check: (v) => v.mode === 1 && v.alpha === 90 },
   ],
-});
+};
 
-export const labWswSsw = reg("ko-3-wsw-ssw", {
+export const labWswSsw: LabDefinition = {
   kind: "wsw-ssw",
   title: "Labor: Eindeutiges SsW vs. zweideutiges sSW",
   intro:
@@ -971,13 +937,13 @@ export const labWswSsw = reg("ko-3-wsw-ssw", {
     { key: "cnt", label: "Anzahl Dreiecke", emphasis: true, digits: 0, compute: (v) => sswSolutions(5, v.a, v.alpha).count },
   ],
   goals: [
-    { id: "nullL", text: "Mache Seite a bei α = 30° so klein, dass gar kein Dreieck entsteht.", check: (v) => v.alpha === 30 && sswSolutions(5, v.a, v.alpha).count === 0, witness: { alpha: 30, a: 2 } },
-    { id: "beruehr", text: "Triff bei α = 30° exakt die Höhe h_c = 2,5 (1 Berührpunkt!).", check: (v) => v.alpha === 30 && v.a === 2.5, witness: { alpha: 30, a: 2.5 } },
-    { id: "eindeutig", text: "Erfülle den Kongruenzsatz SsW (a > b = 5), sodass eindeutig 1 Dreieck entsteht.", check: (v) => v.a > 5 && sswSolutions(5, v.a, v.alpha).count === 1, witness: { a: 6, alpha: 45 } },
+    { id: "nullL", text: "Mache Seite a bei α = 30° so klein, dass gar kein Dreieck entsteht.", check: (v) => v.alpha === 30 && sswSolutions(5, v.a, v.alpha).count === 0 },
+    { id: "beruehr", text: "Triff bei α = 30° exakt die Höhe h_c = 2,5 (1 Berührpunkt!).", check: (v) => v.alpha === 30 && v.a === 2.5 },
+    { id: "eindeutig", text: "Erfülle den Kongruenzsatz SsW (a > b = 5), sodass eindeutig 1 Dreieck entsteht.", check: (v) => v.a > 5 && sswSolutions(5, v.a, v.alpha).count === 1 },
   ],
-});
+};
 
-export const labIsosceles = reg("ko-4-gleichschenklig", {
+export const labIsosceles: LabDefinition = {
   kind: "isosceles-lab",
   title: "Labor: Gleichschenklige & gleichseitige Dreiecke",
   intro:
@@ -996,13 +962,13 @@ export const labIsosceles = reg("ko-4-gleichschenklig", {
     },
   ],
   goals: [
-    { id: "ungleich", text: "Verletze die Dreiecksungleichung (2·a ≤ c): Die Schenkel erreichen sich nicht.", check: (v) => 2 * v.a <= v.c, witness: { c: 7, a: 3 } },
-    { id: "equi", text: "Erzeuge ein gleichseitiges Dreieck (alle Winkel 60°).", check: (v) => v.a === v.c, witness: { c: 5, a: 5 } },
-    { id: "steil", text: "Finde ein gleichschenkliges Dreieck mit spitzem Winkel γ < 40° an der Spitze C.", check: (v) => 2 * v.a > v.c && 180 - 2 * ((Math.acos(v.c / (2 * v.a)) * 180) / Math.PI) < 40, witness: { c: 3, a: 6 } },
+    { id: "ungleich", text: "Verletze die Dreiecksungleichung (2·a ≤ c): Die Schenkel erreichen sich nicht.", check: (v) => 2 * v.a <= v.c },
+    { id: "equi", text: "Erzeuge ein gleichseitiges Dreieck (alle Winkel 60°).", check: (v) => v.a === v.c },
+    { id: "steil", text: "Finde ein gleichschenkliges Dreieck mit spitzem Winkel γ < 40° an der Spitze C.", check: (v) => 2 * v.a > v.c && 180 - 2 * ((Math.acos(v.c / (2 * v.a)) * 180) / Math.PI) < 40 },
   ],
-});
+};
 
-export const labConverseChecker = reg("ko-5-kehrsatz", {
+export const labConverseChecker: LabDefinition = {
   kind: "converse-checker",
   title: "Labor: Satz und Kehrsatz prüfen",
   intro:
@@ -1029,13 +995,13 @@ export const labConverseChecker = reg("ko-5-kehrsatz", {
     },
   ],
   goals: [
-    { id: "recht", text: "Widerlege beim Quadrat-Satz den Kehrsatz (Rechteck ≠ Quadrat).", check: (v) => v.stmt === 0 && v.w !== 4, witness: { stmt: 0, w: 6 } },
-    { id: "schenk", text: "Zeige beim Dreieck ein gleichschenkliges, aber nicht gleichseitiges Gegenbeispiel.", check: (v) => v.stmt === 1 && v.w !== 4, witness: { stmt: 1, w: 3 } },
-    { id: "thales", text: "Öffne den Satz des Thales, dessen Kehrsatz immer wahr bleibt.", check: (v) => v.stmt === 2, witness: { stmt: 2 } },
+    { id: "recht", text: "Widerlege beim Quadrat-Satz den Kehrsatz (Rechteck ≠ Quadrat).", check: (v) => v.stmt === 0 && v.w !== 4 },
+    { id: "schenk", text: "Zeige beim Dreieck ein gleichschenkliges, aber nicht gleichseitiges Gegenbeispiel.", check: (v) => v.stmt === 1 && v.w !== 4 },
+    { id: "thales", text: "Öffne den Satz des Thales, dessen Kehrsatz immer wahr bleibt.", check: (v) => v.stmt === 2 },
   ],
-});
+};
 
-export const labCircumInCircle = reg("ko-6-umkreis-inkreis", {
+export const labCircumInCircle: LabDefinition = {
   kind: "circum-in-circle",
   title: "Labor: Umkreis und Inkreis (DGS)",
   intro:
@@ -1077,24 +1043,21 @@ export const labCircumInCircle = reg("ko-6-umkreis-inkreis", {
       id: "stumpf",
       text: "Mache γ > 95° (stumpfwinklig), sodass der Umkreismittelpunkt U unter [AB] herauswandert.",
       check: (v) => v.mode === 0 && angleDeg({ x: v.cx, y: v.cy }, { x: 2.5, y: 2 }, { x: 7.5, y: 2 }) > 95,
-      witness: { mode: 0, cx: 5, cy: 3.5 },
     },
     {
       id: "thalesPunkt",
       text: "Bringe U genau auf die Mitte von [AB] (γ = 90°, cx = 5, cy = 4,5).",
       check: (v) => v.mode === 0 && v.cx === 5 && v.cy === 4.5,
-      witness: { mode: 0, cx: 5, cy: 4.5 },
     },
     {
       id: "inkreis",
       text: "Schalte zum Inkreis um und wähle ρ ≥ 1,2.",
       check: (v) => v.mode === 1 && inradius({ x: 2.5, y: 2 }, { x: 7.5, y: 2 }, { x: v.cx, y: v.cy }) >= 1.2,
-      witness: { mode: 1, cx: 5, cy: 6.5 },
     },
   ],
-});
+};
 
-export const labThales = reg("ko-7-thales", {
+export const labThales: LabDefinition = {
   kind: "thales-lab",
   title: "Labor: Beweis zum Satz des Thales",
   intro:
@@ -1119,13 +1082,13 @@ export const labThales = reg("ko-7-thales", {
     },
   ],
   goals: [
-    { id: "auf", text: "Setze C auf den Thaleskreis (|MC| = 105): γ wird exakt 90°!", check: (v) => v.r === 105, witness: { r: 105 } },
-    { id: "wander", text: "Bewege C auf dem Thaleskreis weit nach links (φ ≥ 125°) und bestätige γ = 90°.", check: (v) => v.r === 105 && v.phi >= 125, witness: { r: 105, phi: 130 } },
-    { id: "aussen", text: "Lege C außerhalb des Kreises (|MC| = 135): γ wird spitz (< 90°).", check: (v) => v.r === 135, witness: { r: 135 } },
+    { id: "auf", text: "Setze C auf den Thaleskreis (|MC| = 105): γ wird exakt 90°!", check: (v) => v.r === 105 },
+    { id: "wander", text: "Bewege C auf dem Thaleskreis weit nach links (φ ≥ 125°) und bestätige γ = 90°.", check: (v) => v.r === 105 && v.phi >= 125 },
+    { id: "aussen", text: "Lege C außerhalb des Kreises (|MC| = 135): γ wird spitz (< 90°).", check: (v) => v.r === 135 },
   ],
-});
+};
 
-export const labTangentThales = reg("ko-8-tangente", {
+export const labTangentThales: LabDefinition = {
   kind: "tangent-thales",
   title: "Labor: Tangentenkonstruktion mit Thaleskreis",
   intro:
@@ -1153,13 +1116,13 @@ export const labTangentThales = reg("ko-8-tangente", {
     },
   ],
   goals: [
-    { id: "hilf", text: "Blende den Thaleskreis über [MP] ein.", check: (v) => v.showThales === 1, witness: { showThales: 1 } },
-    { id: "tangent", text: "Triff den Berührpunkt genau auf dem Schnittpunkt (φ = 60°, ∠MBP = 90°).", check: (v) => v.phi === 60, witness: { phi: 60 } },
-    { id: "beides", text: "Zeige mit Thaleskreis eine Sekante jenseits der Tangente (φ = 80°).", check: (v) => v.showThales === 1 && v.phi === 80, witness: { showThales: 1, phi: 80 } },
+    { id: "hilf", text: "Blende den Thaleskreis über [MP] ein.", check: (v) => v.showThales === 1 },
+    { id: "tangent", text: "Triff den Berührpunkt genau auf dem Schnittpunkt (φ = 60°, ∠MBP = 90°).", check: (v) => v.phi === 60 },
+    { id: "beides", text: "Zeige mit Thaleskreis eine Sekante jenseits der Tangente (φ = 80°).", check: (v) => v.showThales === 1 && v.phi === 80 },
   ],
-});
+};
 
-export const labHeightConstruction = reg("ko-9-hoehen", {
+export const labHeightConstruction: LabDefinition = {
   kind: "height-construction",
   title: "Labor: Dreieck aus c, h_c und α",
   intro:
@@ -1172,13 +1135,13 @@ export const labHeightConstruction = reg("ko-9-hoehen", {
     { key: "b", label: "Seite b = h_c / sin α", emphasis: true, digits: 2, compute: (v) => v.hc / Math.sin((v.alpha * Math.PI) / 180) },
   ],
   goals: [
-    { id: "senkr", text: "Stelle α = 90° ein: Dann fällt Seite b mit der Höhe h_c zusammen.", check: (v) => v.alpha === 90, witness: { alpha: 90 } },
-    { id: "stumpf", text: "Mache α stumpf (105°), sodass die Höhe h_c außerhalb der Grundseite c fällt.", check: (v) => v.alpha === 105, witness: { alpha: 105 } },
-    { id: "dopp", text: "Erreiche bei h_c = 4 cm eine Höhe auf dem Maximalstreifen mit α = 45°.", check: (v) => v.hc === 4 && v.alpha === 45, witness: { hc: 4, alpha: 45 } },
+    { id: "senkr", text: "Stelle α = 90° ein: Dann fällt Seite b mit der Höhe h_c zusammen.", check: (v) => v.alpha === 90 },
+    { id: "stumpf", text: "Mache α stumpf (105°), sodass die Höhe h_c außerhalb der Grundseite c fällt.", check: (v) => v.alpha === 105 },
+    { id: "dopp", text: "Erreiche bei h_c = 4 cm eine Höhe auf dem Maximalstreifen mit α = 45°.", check: (v) => v.hc === 4 && v.alpha === 45 },
   ],
-});
+};
 
-export const labSurveyModeling = reg("ko-10-modellieren", {
+export const labSurveyModeling: LabDefinition = {
   kind: "survey-modeling",
   title: "Labor: Flussbreite peilen (WSW)",
   intro:
@@ -1201,8 +1164,8 @@ export const labSurveyModeling = reg("ko-10-modellieren", {
     },
   ],
   goals: [
-    { id: "gleich", text: "Peile symmetrisch mit α = β = 45°: Welche exakte Breite entsteht bei einem halben Quadrat?", check: (v) => v.alpha === 45 && v.beta === 45, witness: { alpha: 45, beta: 45 } },
-    { id: "rechtw", text: "Mache das Peildreieck am Baum C rechtwinklig (α + β = 90°, z. B. 35° + 55°).", check: (v) => v.alpha + v.beta === 90, witness: { alpha: 35, beta: 55 } },
-    { id: "breit50", text: "Finde Winkel mit mindestens 55 m gemessener Flussbreite.", check: (v) => { const ra = (v.alpha * Math.PI) / 180; const rb = (v.beta * Math.PI) / 180; return (60 * Math.sin(ra) * Math.sin(rb)) / Math.sin(ra + rb) >= 55; }, witness: { alpha: 65, beta: 65 } },
+    { id: "gleich", text: "Peile symmetrisch mit α = β = 45°: Welche exakte Breite entsteht bei einem halben Quadrat?", check: (v) => v.alpha === 45 && v.beta === 45 },
+    { id: "rechtw", text: "Mache das Peildreieck am Baum C rechtwinklig (α + β = 90°, z. B. 35° + 55°).", check: (v) => v.alpha + v.beta === 90 },
+    { id: "breit50", text: "Finde Winkel mit mindestens 55 m gemessener Flussbreite.", check: (v) => { const ra = (v.alpha * Math.PI) / 180; const rb = (v.beta * Math.PI) / 180; return (60 * Math.sin(ra) * Math.sin(rb)) / Math.sin(ra + rb) >= 55; } },
   ],
-});
+};

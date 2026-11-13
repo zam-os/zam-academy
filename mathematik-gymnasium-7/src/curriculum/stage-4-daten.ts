@@ -108,7 +108,7 @@ const exMedianVsMean: ExerciseGenerator = {
     return task(
       level,
       `Eine Liste von 5 Taschengeldbeträgen (in €) lautet geordnet: ${valueList(cleanOrd, 0)}. Berechne arithmetisches Mittel und Median. Welcher Wert beschreibt die „typische“ Mitte der Mehrheit hier besser?`,
-      `In einer kleinen Firma verdienen vier Beschäftigte (${valueList(cleanOrd.slice(0, 4), 0)} h/Woche oder €/h) sehr ähnlich, die Leitung liegt bei ${cleanOrd[4]}. Berechne den Abstand (Mittelwert ${MINUS} Median) und beurteile, welches Maß sich z. B. für Werbung mit „typischem Lohn“ vs. Gesamtlohnsumme eignet.`,
+      `In einer kleinen Firma verdienen vier Beschäftigte (${valueList(cleanOrd.slice(0, 4), 0)} €/h) sehr ähnlich, die Leitung liegt bei ${cleanOrd[4]} €/h. Berechne den Abstand (Mittelwert ${MINUS} Median) und beurteile, welches Maß sich z. B. für Werbung mit „typischem Lohn“ vs. Gesamtlohnsumme eignet.`,
       [
         numberField(
           level === 1 ? "Arithmetisches Mittel" : "Abstand (Mittelwert − Median)",

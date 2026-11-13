@@ -452,17 +452,30 @@ const exQuadSym: ExerciseGenerator = {
       { name: "Raute (nicht quadratisch)", axes: 2, point: "ja", a: rng.int(4, 9), b: 0, angle: rng.pick([60, 70, 80]) },
       { name: "allgemeines Parallelogramm", axes: 0, point: "ja", a: rng.int(5, 9), b: rng.int(3, 4), angle: rng.pick([55, 65, 75]) },
       { name: "gleichschenkliges Trapez (kein Rechteck)", axes: 1, point: "nein", a: rng.int(6, 10), b: rng.int(3, 5), angle: rng.pick([65, 75]) },
-      { name: "symmetrisches Drachenviereck (keine Raute)", axes: 1, point: "nein", a: rng.int(3, 6), b: rng.int(7, 10), angle: rng.pick([80, 95]) },
+      { name: "symmetrisches Drachenviereck (keine Raute)", axes: 1, point: "nein", a: rng.int(3, 6), b: rng.int(7, 10), angle: rng.pick([65, 75, 80]) },
     ];
     const item = cases[level === 1 ? rng.int(0, 3) : rng.int(2, 5)];
+    const isTrapez = item.name.includes("Trapez");
+    const isDrachen = item.name.includes("Drachen");
     const adj = item.name.startsWith("Quadrat") || item.name.startsWith("Rechteck")
       ? 90
       : 180 - item.angle;
+    const expectedAngle = isTrapez || isDrachen ? item.angle : adj;
+    const level2Prompt = isTrapez
+      ? `Ein ${item.name} besitzt einen spitzen Basiswinkel α = ${item.angle}°. Wie viele Spiegelachsen hat diese Vierecksart, ist sie punktsymmetrisch, und wie groß ist der zweite Winkel β an derselben parallelen Grundseite?`
+      : isDrachen
+        ? `Ein ${item.name} besitzt einen spitzen Winkel α = ${item.angle}° an einer Ecke außerhalb der Symmetrieachse. Wie viele Spiegelachsen hat diese Vierecksart, ist sie punktsymmetrisch, und wie groß ist der zu α gegenüberliegende Winkel?`
+        : `Ein ${item.name} besitzt einen spitzen Innenwinkel α = ${item.angle}°. Wie viele Spiegelachsen hat diese Vierecksart, ist sie punktsymmetrisch, und wie groß ist der Nachbarwinkel β?`;
+    const level2AngleLabel = isTrapez
+      ? `Zweiter Basiswinkel β an derselben Grundseite (zu α = ${item.angle}°)`
+      : isDrachen
+        ? "Gegenüberliegender Winkel bei gleicher Achsenlage"
+        : `Nachbarwinkel β (zu α = ${item.angle}°)`;
 
     return task(
       level,
       `Untersuche die Symmetrieeigenschaften der Figur „${item.name}“. Wie viele Symmetrieachsen hat sie, und ist sie punktsymmetrisch?`,
-      `Ein ${item.name} besitzt einen spitzen Innenwinkel α = ${item.angle}°. Wie viele Spiegelachsen hat diese Vierecksart, ist sie punktsymmetrisch, und wie groß ist der Nachbarwinkel β an derselben parallelen Seite (oder beim Drachen: beim gegebenen Schenkelpaar mit Symmetrieachse)?`,
+      level2Prompt,
       [
         intField("Anzahl der Symmetrieachsen", item.axes, [
           {
@@ -478,8 +491,8 @@ const exQuadSym: ExerciseGenerator = {
         ...(level === 2
           ? [
               intField(
-                item.name.includes("Drachen") ? "Gegenüberliegender Winkel bei gleicher Achsenlage" : "Nachbarwinkel β (zu α = " + `${item.angle}°` + ")",
-                item.name.includes("Drachen") ? item.angle : adj,
+                level2AngleLabel,
+                expectedAngle,
                 undefined,
                 "°",
               ),
@@ -487,8 +500,8 @@ const exQuadSym: ExerciseGenerator = {
           : []),
       ],
       `Unterscheide genau zwischen Seitenmittenachsen (Rechteck/Gleichsch. Trapez), Diagonalachsen (Raute/Drachen) und Punktsymmetrie (Parallelogramm, Rechteck, Raute, Quadrat).`,
-      `Ein ${item.name} hat ${countPhrase(item.axes, "Symmetrieachse", "Symmetrieachsen")} und ist ${item.point === "ja" ? "" : "nicht "}punktsymmetrisch.`,
-      `Achsen: <strong>${item.axes}</strong>, punktsymmetrisch: <strong>${item.point}</strong>${level === 2 ? `, zugehöriger Winkel: <strong>${item.name.includes("Drachen") ? item.angle : adj}°</strong>` : ""}.`,
+      `Ein ${item.name} hat ${countPhrase(item.axes, "Symmetrieachse", "Symmetrieachsen")} und ist ${item.point === "ja" ? "" : "nicht "}punktsymmetrisch.${level === 2 ? ` ${isTrapez ? "Die beiden Basiswinkel an derselben parallelen Grundseite sind achsensymmetrisch und gleich groß." : isDrachen ? "Die Diagonal-Symmetrieachse bildet α auf die Gegenecke außerhalb der Achse ab." : "Bei parallelen Gegenseiten ergänzen sich Nachbarwinkel zu 180°."}` : ""}`,
+      `Achsen: <strong>${item.axes}</strong>, punktsymmetrisch: <strong>${item.point}</strong>${level === 2 ? `, zugehöriger Winkel: <strong>${expectedAngle}°</strong>` : ""}.`,
       { axes: item.axes, angle: item.angle },
     );
   },
@@ -1182,12 +1195,12 @@ export const STAGE_2_LESSONS = makeLessons([
         <li><strong>Rechteck:</strong> 2 Seitenmittenachsen, punktsymmetrisch (alle Winkel 90°).</li>
         <li><strong>Raute (Rhombus):</strong> 2 Diagonalachsen, punktsymmetrisch (alle 4 Seiten gleich lang).</li>
         <li><strong>Parallelogramm:</strong> i. Allg. 0 Spiegelachsen, aber <strong>punktsymmetrisch</strong>!</li>
-        <li><strong>Gleichschenkliges Trapez:</strong> genau 1 Seitenmittenachse, nicht punktsymmetrisch.</li>
-        <li><strong>Symmetrisches Drachenviereck:</strong> genau 1 Diagonalachse, nicht punktsymmetrisch.</li>
+        <li><strong>Gleichschenkliges Trapez:</strong> im allgemeinen Fall (kein Rechteck) genau 1 Seitenmittenachse, nicht punktsymmetrisch.</li>
+        <li><strong>Symmetrisches Drachenviereck:</strong> im allgemeinen Fall (keine Raute) genau 1 Diagonalachse, nicht punktsymmetrisch.</li>
       </ul>
       <div class="example">
         <strong>Beispiel – warum ist jedes Rechteck ein gleichschenkliges Trapez und ein Parallelogramm?</strong><br>
-        Ein Parallelogramm verlangt zwei Paare paralleler Gegenseiten; beim Rechteck sind alle Winkel 90°, also sind gegenüberliegende Seiten automatisch parallel (→ Parallelogramm) und es existiert sogar mindestens eine Seitenmitten-Symmetrieachse (→ gleichschenkliges Trapez).<br>
+        Ein Parallelogramm verlangt zwei Paare paralleler Gegenseiten; beim Rechteck sind alle Winkel 90°, also sind gegenüberliegende Seiten automatisch parallel (→ Parallelogramm) und es besitzt sogar zwei Seitenmitten-Symmetrieachsen (als Spezialfall des gleichschenkligen Trapezes kommt zur einen Achse noch die zweite Achse samt Punktsymmetrie hinzu).<br>
         In Natur, Architektur und Design (Bienenwaben, Fachwerk, Mosaike) schaffen solche Symmetrien Stabilität und Harmonie.
       </div>
       <div class="merke">

@@ -30,7 +30,7 @@ Zwei alte `de-by`-Zellen enthalten zusammen 12 Karten. Bytegleiche Schnappschüs
 
 ```bash
 npm ci
-npm run dev        # http://localhost:5239/mathematik-gymnasium-7/
+npm run dev        # http://localhost:5242/mathematik-gymnasium-7/
 npx tsc --noEmit
 npm test
 npm run build      # eine Datei in dist/index.html

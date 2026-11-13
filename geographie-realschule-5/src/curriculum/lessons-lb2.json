@@ -1,0 +1,376 @@
+[
+	{
+		"id": "geo-sonnensystem",
+		"lb": 2,
+		"title": "Unser Platz im Weltall",
+		"period": "Geo5 LB 2 · Unser Platz im Weltall",
+		"intro": "Sterne leuchten selbst; Planeten und Monde reflektieren unter anderem Sternenlicht.",
+		"paragraphs": [
+			"Die Sonne ist ein Stern. Acht Planeten umlaufen sie: Merkur, Venus, Erde, Mars, Jupiter, Saturn, Uranus und Neptun. Monde umlaufen Planeten oder andere kleine Körper. Asteroiden sind überwiegend kleine Gesteinskörper. Unser Sonnensystem liegt in der Milchstraße, einer Galaxie aus sehr vielen Sternen. Die Erde ist der dritte Planet von der Sonne aus.",
+			"Beispiel: Du ordnest Sonne, Erde, Mond und Milchstraße. Die Erde umläuft die Sonne, der Mond die Erde. Das Sonnensystem ist nur ein kleiner Teil der Milchstraße. Eine Zeichnung auf einer Buchseite kann Größen und Abstände nicht gleichzeitig sinnvoll maßstäblich darstellen: Die Sonne wäre gegenüber der Erde sehr groß, der Raum dazwischen weitgehend leer."
+		],
+		"takeaway": "Stern, Planet, Mond und Galaxie bezeichnen unterschiedliche Arten von Himmelsobjekten.",
+		"sourceIds": ["lehrplan", "nasa-solar"],
+		"quiz": {
+			"question": "Welches Objekt ist ein selbst leuchtender Stern?",
+			"answer": "Die Sonne",
+			"wrong": ["Die Erde", "Der Erdmond"],
+			"explanation": "Die Sonne erzeugt selbst Strahlung. Erde und Mond werden von ihr beleuchtet."
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Werkstatt · Unser Platz im Weltall",
+			"instruction": "Ordne die Beispiele zu. Lies bei der Prüfung auch die Begründungen.",
+			"categories": ["Stern", "Planet", "Mond", "Galaxie"],
+			"entries": [
+				{
+					"text": "Sonne",
+					"target": 0,
+					"feedback": "Die Sonne ist unser nächster Stern."
+				},
+				{
+					"text": "Erde",
+					"target": 1,
+					"feedback": "Die Erde umläuft die Sonne."
+				},
+				{
+					"text": "Erdmond",
+					"target": 2,
+					"feedback": "Der Mond umläuft die Erde."
+				},
+				{
+					"text": "Milchstraße",
+					"target": 3,
+					"feedback": "Diese Galaxie enthält unser Sonnensystem und viele weitere Sterne."
+				}
+			],
+			"conclusion": "Eine Umlaufbahn ist kein fester Ring oder eine Schiene."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Ordne Sonne, Erde, Erdmond und Milchstraße ein und beschreibe ihren Zusammenhang.",
+				"hints": [
+					"Ich ordne alle vier Begriffe ein.",
+					"Ich beschreibe zwei Umlaufbeziehungen."
+				],
+				"model": "Die Sonne ist ein Stern und die Erde ein Planet des Sonnensystems. Der Erdmond umläuft die Erde. Das gesamte Sonnensystem liegt in der Milchstraße. Sie ist eine Galaxie und umfasst sehr viele Sterne, also viel mehr als unser Sonnensystem.",
+				"criteria": [
+					"Ich ordne alle vier Begriffe ein.",
+					"Ich beschreibe zwei Umlaufbeziehungen.",
+					"Ich unterscheide Galaxie und Sonnensystem."
+				]
+			},
+			"2": {
+				"prompt": "In einer Zeichnung sind Erde und Sonne fast gleich groß und dicht nebeneinander. Wie liest du sie richtig?",
+				"hints": ["Ich prüfe den Modellzweck.", "Ich benenne zwei Grenzen."],
+				"model": "Ich prüfe zuerst, ob die Zeichnung maßstäblich ist. Häufig zeigt sie nur die Reihenfolge oder eine Bewegung. Aus solchen Symbolgrößen kann ich keine echten Größen oder Entfernungen ablesen. Für diese Fragen benötige ich zusätzliche Zahlen oder ein beschriftetes Maßstabsmodell.",
+				"criteria": [
+					"Ich prüfe den Modellzweck.",
+					"Ich benenne zwei Grenzen.",
+					"Ich nenne eine passende Ergänzung."
+				]
+			}
+		}
+	},
+	{
+		"id": "geo-erdbewegungen",
+		"lb": 2,
+		"title": "Tag, Nacht und Jahreszeiten",
+		"period": "Geo5 LB 2 · Tag, Nacht und Jahreszeiten",
+		"intro": "Zwei Bewegungen und eine geneigte Achse erklären unterschiedliche Beobachtungen.",
+		"paragraphs": [
+			"Die Erde dreht sich von Westen nach Osten um ihre Achse. Eine Drehung dauert ungefähr 24 Stunden: Die beleuchtete Seite hat Tag, die abgewandte Nacht. Zugleich umläuft die Erde die Sonne in etwa einem Jahr. Die Erdachse ist gegenüber der Senkrechten zur Bahnebene um ungefähr 23,5° geneigt und behält während eines Umlaufs annähernd dieselbe Richtung im Raum.",
+			"Beispiel: Im nördlichen Sommer ist die Nordhalbkugel zur Sonne geneigt. Dort sind die Tage länger und Sonnenstrahlen treffen steiler ein. Gleichzeitig ist auf der Südhalbkugel Winter. Ein halbes Jahr später ist es umgekehrt. Die Jahreszeiten entstehen also aus Achsenneigung und Umlauf. Die Entfernung zur Sonne erklärt diese gegensätzlichen Jahreszeiten nicht. Im Modell vergleichst du die Halbjahre; Kreise und Abstände sind schematisch."
+		],
+		"takeaway": "Rotation erklärt Tag und Nacht; Achsenneigung und Sonnenumlauf erklären die Jahreszeiten.",
+		"sourceIds": ["lehrplan", "nasa-earth"],
+		"quiz": {
+			"question": "Um wie viel ist die Erdachse gegen die Senkrechte zur Bahnebene geneigt?",
+			"answer": "Um ungefähr 23,5°",
+			"wrong": ["Um ungefähr 90°", "Sie ist überhaupt nicht geneigt."],
+			"explanation": "Die Achsenneigung verändert im Jahreslauf Beleuchtungswinkel und Tageslänge."
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Werkstatt · Tag, Nacht und Jahreszeiten",
+			"instruction": "Ordne die Beispiele zu. Lies bei der Prüfung auch die Begründungen.",
+			"categories": ["Tägliche Rotation", "Umlauf mit Achsenneigung"],
+			"entries": [
+				{
+					"text": "Ein Ort wechselt zwischen Tag- und Nachtseite.",
+					"target": 0,
+					"feedback": "Die Drehung um die Achse führt zu Tag und Nacht."
+				},
+				{
+					"text": "Im Juni sind die Tage auf der Nordhalbkugel besonders lang.",
+					"target": 1,
+					"feedback": "Neigung und Umlauf bestimmen den jahreszeitlichen Sonnenstand."
+				},
+				{
+					"text": "Die Sonne scheint im Tageslauf über den Himmel zu wandern.",
+					"target": 0,
+					"feedback": "Die scheinbare Bewegung hängt mit der Erdrotation zusammen."
+				},
+				{
+					"text": "Australien hat Sommer während des europäischen Winters.",
+					"target": 1,
+					"feedback": "Die Halbkugeln werden gegensätzlich beleuchtet."
+				}
+			],
+			"conclusion": "Tageszeit und Jahreszeit sind verschiedene Zeitskalen."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Erkläre, warum in Deutschland Sommer sein kann, während in Australien Winter ist.",
+				"hints": [
+					"Ich nenne die Achsenneigung.",
+					"Ich erkläre Tageslänge und Strahlenwinkel."
+				],
+				"model": "Im nördlichen Sommer ist die Nordhalbkugel zur Sonne geneigt. Ihre Tage sind länger und die Strahlen treffen steiler ein. Die Südhalbkugel ist zugleich von der Sonne weggeneigt und erhält weniger tägliche Sonnenenergie. Die Entfernung zur Sonne ist für beide Halbkugeln fast gleich.",
+				"criteria": [
+					"Ich nenne die Achsenneigung.",
+					"Ich erkläre Tageslänge und Strahlenwinkel.",
+					"Ich beschreibe die gegensätzlichen Jahreszeiten."
+				]
+			},
+			"2": {
+				"prompt": "Jemand behauptet: Im Sommer ist es warm, weil die ganze Erde dann näher an der Sonne ist. Prüfe das.",
+				"hints": [
+					"Ich nutze die entgegengesetzten Jahreszeiten.",
+					"Ich erkläre den richtigen Mechanismus."
+				],
+				"model": "Die Erklärung passt nicht dazu, dass Nord- und Südhalbkugel gleichzeitig unterschiedliche Jahreszeiten haben. Entscheidend sind die geneigte Erdachse und der Sonnenumlauf. Im Sommer der jeweiligen Halbkugel wirken längere Tage und ein steilerer Einfallswinkel zusammen.",
+				"criteria": [
+					"Ich nutze die entgegengesetzten Jahreszeiten.",
+					"Ich erkläre den richtigen Mechanismus.",
+					"Ich trenne Entfernung und Beleuchtung."
+				]
+			}
+		},
+		"model": "earth"
+	},
+	{
+		"id": "geo-leben",
+		"lb": 2,
+		"title": "Warum die Erde Leben ermöglicht",
+		"period": "Geo5 LB 2 · Warum die Erde Leben ermöglicht",
+		"intro": "Nicht eine einzige Eigenschaft, sondern mehrere Bedingungen wirken zusammen.",
+		"paragraphs": [
+			"Für das Leben, wie wir es kennen, sind flüssiges Wasser, geeignete Temperaturen und Energie wichtig. Die Sonne liefert Energie. Die Atmosphäre enthält lebenswichtige Gase, beeinflusst den Wärmehaushalt und schützt vor einem Teil der Strahlung. Nicht jeder Planet mit einer Atmosphäre ist bewohnbar. Entscheidend sind Zusammensetzung, Druck, Temperatur und das Zusammenwirken vieler Bedingungen.",
+			"Beispiel: Ein Wasserbecher ist flüssig, ein Eiswürfel fest. Auf einem Planeten muss Wasser über längere Zeit unter passenden Bedingungen vorkommen können. Die Erde besitzt große Ozeane und eine Atmosphäre. Daraus folgt keine Garantie für eine unbegrenzt stabile Umwelt. Menschen verändern Lebensräume und die Zusammensetzung der Atmosphäre. Der bekannte Lebensraum Erde verdient deshalb einen sorgsamen Umgang."
+		],
+		"takeaway": "Die Erde bietet ein Zusammenspiel aus Wasser, Energie und geeigneten Bedingungen für bekanntes Leben.",
+		"sourceIds": ["lehrplan", "nasa-earth"],
+		"quiz": {
+			"question": "Welche Aussage über Voraussetzungen bekannten Lebens ist sinnvoll?",
+			"answer": "Flüssiges Wasser, Energie und geeignete Umweltbedingungen wirken zusammen.",
+			"wrong": [
+				"Jeder Planet mit Gestein ist automatisch belebt.",
+				"Allein die Entfernung zur Sonne garantiert Leben."
+			],
+			"explanation": "Keine einzelne Eigenschaft belegt für sich allein lebensfreundliche Bedingungen."
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Werkstatt · Warum die Erde Leben ermöglicht",
+			"instruction": "Ordne die Beispiele zu. Lies bei der Prüfung auch die Begründungen.",
+			"categories": ["Hilfreiche Bedingung", "Unbelegter Schluss"],
+			"entries": [
+				{
+					"text": "Unter passendem Druck kann Wasser flüssig bleiben.",
+					"target": 0,
+					"feedback": "Flüssiges Wasser ist eine wichtige Bedingung bekannten Lebens."
+				},
+				{
+					"text": "Ein Gesteinsplanet ist sicher bewohnt.",
+					"target": 1,
+					"feedback": "Gestein allein beweist kein Leben."
+				},
+				{
+					"text": "Sonnenstrahlung liefert Energie für viele Lebensprozesse.",
+					"target": 0,
+					"feedback": "Energie ermöglicht beispielsweise Photosynthese."
+				}
+			],
+			"conclusion": "Bedingungen für Leben sind kein Nachweis von Leben auf einem anderen Planeten."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Erkläre drei zusammenwirkende Bedingungen, die Leben auf der Erde ermöglichen.",
+				"hints": [
+					"Ich beschreibe Wasser.",
+					"Ich beschreibe Energie und Atmosphäre."
+				],
+				"model": "Flüssiges Wasser dient vielen Lebensvorgängen. Sonnenenergie ermöglicht etwa Photosynthese. Die Atmosphäre beeinflusst Temperatur und Strahlung und enthält wichtige Gase. Diese Bedingungen wirken zusammen; keine davon ist allein ein ausreichender Beweis für Leben.",
+				"criteria": [
+					"Ich beschreibe Wasser.",
+					"Ich beschreibe Energie und Atmosphäre.",
+					"Ich erkläre das Zusammenwirken."
+				]
+			},
+			"2": {
+				"prompt": "Eine Raumsonde findet Eis auf einem fremden Himmelskörper. Darf eine Schlagzeile nun Leben melden?",
+				"hints": [
+					"Ich unterscheide Eis und flüssiges Wasser.",
+					"Ich trenne Hinweis und Lebensnachweis."
+				],
+				"model": "Der Nachweis von Eis zeigt Wasser in fester Form. Er belegt weder dauerhaft flüssiges Wasser noch lebende Organismen. Für eine solche Aussage wären weitere Untersuchungen und belastbare Nachweise notwendig. Ich unterscheide einen interessanten Hinweis von einem Ergebnis.",
+				"criteria": [
+					"Ich unterscheide Eis und flüssiges Wasser.",
+					"Ich trenne Hinweis und Lebensnachweis.",
+					"Ich fordere passende weitere Belege."
+				]
+			}
+		}
+	},
+	{
+		"id": "geo-satelliten",
+		"lb": 2,
+		"title": "Satelliten und eine Weltraummission",
+		"period": "Geo5 LB 2 · Satelliten und eine Weltraummission",
+		"intro": "Nutzung bringt Möglichkeiten und Risiken mit sich.",
+		"paragraphs": [
+			"Ein künstlicher Satellit ist ein von Menschen gebauter Körper auf einer Umlaufbahn. Satelliten unterstützen Wetterbeobachtung, Navigation und Kommunikation. Erdbeobachtung kann Veränderungen von Wäldern oder Wolken zeigen. Ein Satellitenbild ist eine Aufnahme mit Datum, Ausschnitt und einer bestimmten Messmethode; es beantwortet nicht jede Frage über den Boden.",
+			"Beispiel für eine geplante Präsentation: Eine gedachte Erdbeobachtungsmission soll Waldveränderungen erfassen. Du erläuterst ihr Ziel, die benötigten Bilder und ihren möglichen Nutzen. Zu den Risiken gehören Startfehler und Zusammenstöße mit Weltraumschrott. Kontrolliertes Missionsende und die Vermeidung neuer Trümmer sind wichtige Aufgaben. Für eine echte Mission recherchierst du aktuelle Angaben bei einer Raumfahrtorganisation und präsentierst sie anschließend im Unterricht."
+		],
+		"takeaway": "Beurteile eine Mission nach Ziel, Nutzen, Risiken und verantwortlichem Umgang mit dem Weltraum.",
+		"sourceIds": ["lehrplan", "esa"],
+		"quiz": {
+			"question": "Welche Aufgabe können Erdbeobachtungssatelliten übernehmen?",
+			"answer": "Wolken und Veränderungen der Erdoberfläche beobachten",
+			"wrong": [
+				"Jedes Erdbeben auf den Tag genau vorhersagen",
+				"Alle Gefahren am Boden beseitigen"
+			],
+			"explanation": "Satelliten liefern Messdaten; diese ersetzen weder Auswertung noch Schutzmaßnahmen."
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Werkstatt · Satelliten und eine Weltraummission",
+			"instruction": "Ordne die Beispiele zu. Lies bei der Prüfung auch die Begründungen.",
+			"categories": ["Nutzen", "Risiko", "Verantwortliche Planung"],
+			"entries": [
+				{
+					"text": "Wolkenbilder für die Wetterbeobachtung gewinnen.",
+					"target": 0,
+					"feedback": "Die Bilder ergänzen andere Messungen."
+				},
+				{
+					"text": "Ein Zusammenstoß erzeugt neue Trümmer.",
+					"target": 1,
+					"feedback": "Weltraumschrott gefährdet andere Raumfahrzeuge."
+				},
+				{
+					"text": "Ein Missionsende ohne neue Trümmer vorbereiten.",
+					"target": 2,
+					"feedback": "Zum Betrieb gehört eine Planung über das Nutzungsende hinaus."
+				}
+			],
+			"conclusion": "Die Werkstatt bereitet deine echte Recherche und Präsentation vor; sie ersetzt sie nicht."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Beschreibe Nutzen und Risiko einer Erdbeobachtungsmission für Wälder.",
+				"hints": [
+					"Ich nenne einen räumlichen Nutzen.",
+					"Ich beachte Grenzen der Daten."
+				],
+				"model": "Wiederholte Aufnahmen können große Waldflächen vergleichbar zeigen. Eine Auswertung muss Aufnahmezeit und Messmethode beachten. Starts oder Zusammenstöße können scheitern beziehungsweise Trümmer erzeugen. Zur Mission gehört daher auch ein verantwortlicher Plan für ihr Ende.",
+				"criteria": [
+					"Ich nenne einen räumlichen Nutzen.",
+					"Ich beachte Grenzen der Daten.",
+					"Ich erkläre ein Risiko und eine Vorsorge."
+				]
+			},
+			"2": {
+				"prompt": "Plane drei Folien zu einer selbst recherchierten Mission. Welche Angaben müssen belegt werden?",
+				"hints": [
+					"Ich plane Ziel, Daten und Bewertung.",
+					"Ich unterscheide Plan und Ergebnis."
+				],
+				"model": "Die erste Folie zeigt Ziel und Untersuchungsraum, die zweite erklärt Daten und Nutzen, die dritte Risiken und Missionsende. Namen, Termine und Ergebnisse belege ich mit aktuellen Quellen der zuständigen Organisation. Die tatsächliche Präsentation und die Quellenprüfung bespreche ich im Unterricht.",
+				"criteria": [
+					"Ich plane Ziel, Daten und Bewertung.",
+					"Ich unterscheide Plan und Ergebnis.",
+					"Ich nenne Quellen und offene Klassenarbeit."
+				]
+			}
+		}
+	},
+	{
+		"id": "geo-erdgeschichte",
+		"lb": 2,
+		"title": "Erdgeschichte und Schalenbau",
+		"period": "Geo5 LB 2 · Erdgeschichte und Schalenbau",
+		"intro": "Ein Menschenleben ist kurz gegenüber dem Alter der Erde.",
+		"paragraphs": [
+			"Die Erde ist ungefähr 4,6 Milliarden Jahre alt. Eine grobe Ordnung unterscheidet Erdurzeit beziehungsweise Erdfrühzeit, Erdaltertum, Erdmittelalter und Erdneuzeit. Diese Abschnitte sind sehr unterschiedlich lang. Dinosaurier lebten im Erdmittelalter; Menschen erschienen erst sehr spät in der Erdgeschichte. Die Einteilung hilft beim Vergleichen und ist keine gleichmäßig geteilte Uhr.",
+			"Beispiel: Auf einer gedachten Zeitlinie mit 46 gleichen Abschnitten steht jeder Abschnitt für 100 Millionen Jahre. Die ganze Erdgeschichte füllt diese Linie; die Menschheitsgeschichte nur einen winzigen Teil am Ende. Ein anderes Modell zeigt den Aufbau: außen die dünne Erdkruste, darunter der Mantel und innen der Kern. Große Teile des Mantels sind fest, können sich aber über lange Zeiträume langsam verformen; er ist kein durchgehender flüssiger Ozean."
+		],
+		"takeaway": "Zeitlinie und Schalenmodell erklären verschiedene Eigenschaften der Erde und haben eigene Grenzen.",
+		"sourceIds": ["lehrplan", "nasa-earth"],
+		"quiz": {
+			"question": "Wie lautet die grobe Reihenfolge der Erdschalen von außen nach innen?",
+			"answer": "Erdkruste, Erdmantel, Erdkern",
+			"wrong": ["Erdkern, Erdkruste, Erdmantel", "Atmosphäre, Ozean, Mond"],
+			"explanation": "Die Kruste bildet die äußere feste Schale; darunter liegen Mantel und Kern."
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Werkstatt · Erdgeschichte und Schalenbau",
+			"instruction": "Ordne die Beispiele zu. Lies bei der Prüfung auch die Begründungen.",
+			"categories": ["Zeitmodell", "Schalenmodell"],
+			"entries": [
+				{
+					"text": "Erdmittelalter vor Erdneuzeit einordnen.",
+					"target": 0,
+					"feedback": "Hier geht es um zeitliche Reihenfolge."
+				},
+				{
+					"text": "Erdkruste außen und Erdkern innen zeigen.",
+					"target": 1,
+					"feedback": "Hier geht es um den inneren Aufbau."
+				},
+				{
+					"text": "Die Menschheitsgeschichte am Ende einer langen Linie markieren.",
+					"target": 0,
+					"feedback": "Ein Zeitmodell macht Größenordnungen vergleichbar."
+				},
+				{
+					"text": "Den Mantel zwischen Kruste und Kern darstellen.",
+					"target": 1,
+					"feedback": "Die Schalen werden räumlich geordnet."
+				}
+			],
+			"conclusion": "Eine Modellzeichnung ist weder ein Blick ins Erdinnere noch eine vollständige Erdchronik."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Vergleiche die Modelle Erdgeschichte als Zeitlinie und Erde als Schalenbild.",
+				"hints": [
+					"Ich beschreibe beide Modellzwecke.",
+					"Ich nenne die drei Schalen."
+				],
+				"model": "Die Zeitlinie ordnet Ereignisse und Zeitspannen. Das Schalenbild zeigt Kruste, Mantel und Kern im räumlichen Aufbau. Die erste Darstellung beantwortet wann, die zweite wo im Inneren. Bei beiden prüfe ich, ob Abstände oder Dicken maßstäblich gezeichnet sind.",
+				"criteria": [
+					"Ich beschreibe beide Modellzwecke.",
+					"Ich nenne die drei Schalen.",
+					"Ich beachte den Maßstab."
+				]
+			},
+			"2": {
+				"prompt": "Eine Erduhr teilt Erdaltertum, Erdmittelalter und Erdneuzeit in gleich große Stücke. Welche Fehlvorstellung droht?",
+				"hints": [
+					"Ich benenne die Verzerrung.",
+					"Ich schlage eine Korrektur vor."
+				],
+				"model": "Die gleiche Größe kann fälschlich gleich lange Zeitspannen nahelegen. Die Abschnitte sind jedoch unterschiedlich lang. Ich ergänze Zeitangaben oder zeichne eine maßstäbliche Zeitlinie. Die Menschheitsgeschichte darf dabei nicht zu einem großen Teil der gesamten Erdgeschichte werden.",
+				"criteria": [
+					"Ich benenne die Verzerrung.",
+					"Ich schlage eine Korrektur vor.",
+					"Ich ordne die Menschheitsgeschichte ein."
+				]
+			}
+		}
+	}
+]

@@ -5,8 +5,22 @@ import replacesDeBy from "../replaces-de-by.json";
 import legacyAlg from "./fixtures/de-by-gymnasium-7-mathematik-rationale-zahlen-gleichungen-prozent-kvt.json";
 import legacyGeo from "./fixtures/de-by-gymnasium-7-mathematik-symmetrie-winkel-dreiecke-kongruenz-kvt.json";
 import publicContract from "./fixtures/public-contract.json";
-import { ALL_LESSONS, STAGES } from "../src/curriculum";
+import { ALL_LESSONS, STAGES, findLessonById } from "../src/curriculum";
+import { quizOrder } from "../src/exercises/quiz-order";
 import { createRng } from "../src/exercises/rng";
+import {
+  isLessonComplete,
+  isStageComplete,
+  isTransferDone,
+  overallStats,
+  type LearnerProgress,
+} from "../src/storage/progress";
+import {
+  ACADEMY_BASE_URL,
+  ZAM_CELL_ID,
+  lessonLink,
+  parseTrainingDeepLink,
+} from "../src/zam/zam-link";
 
 const ULID_RE = /^[0-9A-HJKMNP-TV-Z]{26}$/;
 const GRADE_8_FORBIDDEN =
@@ -72,12 +86,107 @@ describe("Lehrplan und Lektionsvertrag M7", () => {
       const combinedText = `${lesson.title} ${lesson.subtitle} ${lesson.whyItMatters} ${lesson.explanationHtml}`;
       expect(combinedText).not.toMatch(GRADE_8_FORBIDDEN);
       expect(lesson.title).not.toMatch(/\b\d+\.\d+\.\d+\b/);
-      // No unescaped ASCII minus inside numeric values (strip HTML tags & attributes first)
+      // No unescaped ASCII decimal points or ASCII minus signs in learner prose
       const proseOnly = lesson.explanationHtml
         .replace(/<[^>]+>/g, " ")
         .replace(/&[a-z]+;/g, " ");
       expect(proseOnly).not.toMatch(/\b\d+\.\d+\b/);
+
+      const lessonTexts = [
+        lesson.title,
+        lesson.subtitle,
+        lesson.whyItMatters,
+        proseOnly,
+        ...lesson.formulas.flatMap((f) => [f.name, f.html.replace(/<[^>]+>/g, " "), f.quantities ?? ""]),
+        lesson.quiz.question,
+        ...lesson.quiz.options,
+        lesson.quiz.explanation,
+        lesson.lab.title,
+        lesson.lab.intro,
+        ...lesson.lab.params.flatMap((p) =>
+          p.type === "state"
+            ? []
+            : p.type === "choice"
+              ? [p.label, ...p.options.map((o) => o.label)]
+              : [p.label],
+        ),
+        ...(lesson.lab.actions ?? []).map((a) => a.label),
+        ...lesson.lab.goals.map((g) => g.text),
+      ];
+      for (const txt of lessonTexts) {
+        const cleaned = txt.replace(/=[A-Za-z0-9*^+\-/]+/g, "");
+        expect(cleaned, `${lesson.id}: ASCII minus in "${txt}"`).not.toMatch(
+          /(^|[\s(|=])-(?=[\s\d(a-zα-ω])/,
+        );
+      }
     }
+  });
+
+  it("shows the right quick-check answer at different positions across lessons", () => {
+    const shownAt = new Set<number>();
+    for (const lesson of ALL_LESSONS) {
+      expect(lesson.quiz.options.length).toBeGreaterThanOrEqual(3);
+      expect(new Set(lesson.quiz.options).size).toBe(lesson.quiz.options.length);
+      expect(lesson.quiz.explanation.length).toBeGreaterThan(20);
+      const order = quizOrder(lesson);
+      expect([...order].sort()).toEqual(lesson.quiz.options.map((_, i) => i));
+      shownAt.add(order.indexOf(lesson.quiz.correctIndex));
+    }
+    expect([...shownAt].sort()).toEqual([0, 1, 2]);
+  });
+
+  it("requires quick check, all lab goals and both levels before marking a lesson complete", () => {
+    const blank = (): LearnerProgress => ({
+      activeLessonId: ALL_LESSONS[0].id,
+      difficultyLevel: 1,
+      quizDone: [],
+      labGoals: {},
+      solved: {},
+      attempts: {},
+      celebratedStageIds: [],
+      celebratedLessonIds: [],
+    });
+    const progress = blank();
+    const lesson = ALL_LESSONS[0];
+    expect(isLessonComplete(progress, lesson)).toBe(false);
+    progress.quizDone.push(lesson.id);
+    progress.labGoals[lesson.id] = lesson.lab.goals.map((g) => g.id);
+    progress.solved[lesson.id] = { 1: lesson.requiredCorrect, 2: lesson.requiredCorrect - 1 };
+    expect(isLessonComplete(progress, lesson)).toBe(false);
+    progress.solved[lesson.id] = { 1: lesson.requiredCorrect - 1, 2: lesson.requiredCorrect };
+    expect(isLessonComplete(progress, lesson)).toBe(false);
+    progress.solved[lesson.id] = { 1: lesson.requiredCorrect, 2: lesson.requiredCorrect };
+    expect(isLessonComplete(progress, lesson)).toBe(true);
+    expect(isTransferDone(progress, lesson)).toBe(true);
+
+    const stage = STAGES[0];
+    expect(isStageComplete(progress, stage)).toBe(false);
+    for (const entry of stage.lessons) {
+      if (!progress.quizDone.includes(entry.id)) progress.quizDone.push(entry.id);
+      progress.labGoals[entry.id] = entry.lab.goals.map((g) => g.id);
+      progress.solved[entry.id] = { 1: entry.requiredCorrect, 2: entry.requiredCorrect };
+    }
+    expect(isStageComplete(progress, stage)).toBe(true);
+    const stats = overallStats(progress, STAGES);
+    expect(stats.completedStages).toBe(1);
+    expect(stats.totalStages).toBe(5);
+    expect(stats.total).toBe(44);
+  });
+
+  it("opens every lesson from its ZAM deep link and validates deep-link parsing", () => {
+    for (const lesson of ALL_LESSONS) {
+      const link = lessonLink(lesson.id);
+      expect(link.startsWith(`${ACADEMY_BASE_URL}#lesson=`)).toBe(true);
+      const hash = link.slice(link.indexOf("#"));
+      expect(parseTrainingDeepLink(hash).lessonId).toBe(lesson.id);
+      expect(findLessonById(lesson.id)?.lesson.id).toBe(lesson.id);
+    }
+    expect(parseTrainingDeepLink("#lesson=tv-1-variablen&level=2")).toEqual({
+      lessonId: "tv-1-variablen",
+      level: 2,
+    });
+    expect(parseTrainingDeepLink("#lesson=%3Cscript%3E")).toEqual({});
+    expect(parseTrainingDeepLink("")).toEqual({});
   });
 
   it("maps all 32 curriculum competences to all 44 lessons", () => {
@@ -116,7 +225,7 @@ describe("Lehrplan und Lektionsvertrag M7", () => {
 
 describe("ZAM-Zelle und Vorschlags-Mapping M7", () => {
   it("aligns cell.json with 44 atoms, 132 cards and pinned public contract IDs", () => {
-    expect(cell.tile_id).toBe("zam-academy:mathematik-gymnasium-7");
+    expect(cell.tile_id).toBe(ZAM_CELL_ID);
     expect((cell as Record<string, unknown>).retired_items).toBeUndefined();
     expect(cell.atoms).toHaveLength(44);
     expect(publicContract).toHaveLength(44);
@@ -188,6 +297,28 @@ describe("ZAM-Zelle und Vorschlags-Mapping M7", () => {
 
         const plain = plainTextOf(item);
         expect(`${plain.question} ${plain.concept}`).not.toMatch(GRADE_8_FORBIDDEN);
+
+        const learnerTexts = [
+          item.question,
+          item.concept,
+          item.sample_solution,
+          ...(item.question_segments ?? [])
+            .filter((s) => s.type !== "math")
+            .map((s) => s.text),
+          ...(item.concept_segments ?? [])
+            .filter((s) => s.type !== "math")
+            .map((s) => s.text),
+          ...(item.fast_check?.options ?? []),
+          ...item.choice_distractors.flatMap((d) => [d.text, d.reason]),
+        ];
+        for (const txt of learnerTexts) {
+          if (!txt) continue;
+          // Spreadsheet cells require literal '=' formula syntax such as '=2*A2-1'
+          const cleaned = txt.replace(/=[A-Za-z0-9*^+\-/]+/g, "");
+          expect(cleaned, `${item.slug}: ASCII minus in "${txt}"`).not.toMatch(
+            /(^|[\s(|=])-(?=[\s\d(a-zα-ω])/,
+          );
+        }
       }
     }
 
@@ -232,7 +363,9 @@ describe("ZAM-Zelle und Vorschlags-Mapping M7", () => {
       expect(mappedLegacyIds.has(row.de_by_id)).toBe(false);
       mappedLegacyIds.add(row.de_by_id);
 
-      if (row.category === "A") {
+      expect(row.reason.trim().length).toBeGreaterThan(10);
+
+      if (row.category === "A" || row.category === "B") {
         expect(row.action).toBe("propose-replace-after-approval");
         expect(row.academy_slug).toBeTruthy();
         expect(cardSlugs.has(row.academy_slug!)).toBe(true);
@@ -240,7 +373,7 @@ describe("ZAM-Zelle und Vorschlags-Mapping M7", () => {
         proposedTargets.add(row.academy_slug!);
       } else {
         expect(row.category).toBe("C");
-        expect(row.action).toBe("keep-active");
+        expect(["keep-active", "propose-retire-after-approval"]).toContain(row.action);
         expect(row.academy_slug).toBeNull();
       }
     }

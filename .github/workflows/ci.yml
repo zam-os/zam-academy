@@ -62,11 +62,14 @@ jobs:
       - run: npm run build
       - name: Offline zip
         run: node scripts/build-release-zip.mjs
+      - name: Check Grade 5 geography curriculum and source snapshots
+        if: matrix.app == 'geographie-realschule-5'
+        run: node scripts/verify-content.mjs
       - name: Check self-contained offline bundles
-        if: matrix.app == 'deutsch-mittelschule-5' || matrix.app == 'deutsch-mittelschule-6' || matrix.app == 'deutsch-mittelschule-7' || matrix.app == 'deutsch-mittelschule-8' || matrix.app == 'mathematik-mittelschule-5' || matrix.app == 'mathematik-mittelschule-6' || matrix.app == 'mathematik-mittelschule-9' || matrix.app == 'mathematik-mittelschule-10' || matrix.app == 'mathematik-grundschule-4' || matrix.app == 'deutsch-grundschule-4' || matrix.app == 'hsu-grundschule-4' || matrix.app == 'geographie-realschule-8' || matrix.app == 'chemie-realschule-8' || matrix.app == 'deutsch-realschule-10' || matrix.app == 'englisch-realschule-5' || matrix.app == 'englisch-realschule-10' || matrix.app == 'politik-realschule-10' || matrix.app == 'biologie-realschule-5' || matrix.app == 'biologie-realschule-8' || matrix.app == 'informatik-realschule-8' || matrix.app == 'deutsch-realschule-5' || matrix.app == 'deutsch-realschule-8' || matrix.app == 'geschichte-realschule-8' || matrix.app == 'englisch-realschule-8' || matrix.app == 'franzoesisch-realschule-8'
+        if: matrix.app == 'gpg-mittelschule-5' || matrix.app == 'biologie-realschule-6' || matrix.app == 'geographie-realschule-5' || matrix.app == 'deutsch-mittelschule-5' || matrix.app == 'deutsch-mittelschule-6' || matrix.app == 'deutsch-mittelschule-7' || matrix.app == 'deutsch-mittelschule-8' || matrix.app == 'mathematik-mittelschule-5' || matrix.app == 'mathematik-mittelschule-6' || matrix.app == 'mathematik-mittelschule-9' || matrix.app == 'mathematik-mittelschule-10' || matrix.app == 'mathematik-grundschule-4' || matrix.app == 'deutsch-grundschule-4' || matrix.app == 'hsu-grundschule-4' || matrix.app == 'geographie-realschule-8' || matrix.app == 'chemie-realschule-8' || matrix.app == 'deutsch-realschule-10' || matrix.app == 'englisch-realschule-5' || matrix.app == 'englisch-realschule-10' || matrix.app == 'politik-realschule-10' || matrix.app == 'biologie-realschule-5' || matrix.app == 'biologie-realschule-8' || matrix.app == 'informatik-realschule-8' || matrix.app == 'deutsch-realschule-5' || matrix.app == 'deutsch-realschule-8' || matrix.app == 'geschichte-realschule-8' || matrix.app == 'englisch-realschule-8' || matrix.app == 'franzoesisch-realschule-8'
         run: node scripts/verify-release.mjs
       - name: Check verbatim Mittelschule curriculum coverage
-        if: matrix.app == 'deutsch-mittelschule-5' || matrix.app == 'deutsch-mittelschule-6' || matrix.app == 'deutsch-mittelschule-7' || matrix.app == 'deutsch-mittelschule-8' || matrix.app == 'mathematik-mittelschule-5' || matrix.app == 'mathematik-mittelschule-6' || matrix.app == 'mathematik-mittelschule-9' || matrix.app == 'mathematik-mittelschule-10'
+        if: matrix.app == 'gpg-mittelschule-5' || matrix.app == 'deutsch-mittelschule-5' || matrix.app == 'deutsch-mittelschule-6' || matrix.app == 'deutsch-mittelschule-7' || matrix.app == 'deutsch-mittelschule-8' || matrix.app == 'mathematik-mittelschule-5' || matrix.app == 'mathematik-mittelschule-6' || matrix.app == 'mathematik-mittelschule-9' || matrix.app == 'mathematik-mittelschule-10'
         run: node scripts/check-curriculum.mjs
       - uses: actions/upload-artifact@v4
         with:
@@ -157,6 +160,8 @@ jobs:
         run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node bwr-realschule-10/scripts/validate-migration.mjs
       - name: Preserve existing histories when adding Politik und Gesellschaft 10
         run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node politik-realschule-10/scripts/validate-cell.mjs
+      - name: Preserve existing histories when adding Grade 6 Biology
+        run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node biologie-realschule-6/scripts/validate-cell.mjs
       - name: Preserve existing histories when adding Biologie 8
         run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node biologie-realschule-8/scripts/validate-cell.mjs
       - name: Preserve existing Geographie histories when adding Geographie 8
@@ -193,3 +198,5 @@ jobs:
         run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node deutsch-mittelschule-8/scripts/validate-cell.mjs
       - name: Move approved Biologie 5 histories to Biologie 5 Realschule in temporary libraries
         run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node biologie-realschule-5/scripts/validate-migration.mjs
+      - name: Install and enrol Geschichte/Politik/Geographie 5 Mittelschule idempotently
+        run: ZAM_CORE="file://$RUNNER_TEMP/zam-core/node_modules/zam-core/dist/index.js" node gpg-mittelschule-5/scripts/validate-cell.mjs

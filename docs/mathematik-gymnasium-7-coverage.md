@@ -55,4 +55,4 @@ Noch keine (`AGENTS.md` §4). Sie werden in einem späteren Schritt ergänzt und
 
 ## Registrierung
 
-`academy.json`, `.github/workflows/ci.yml`, `.github/workflows/pages.yml` und `README.md` (inklusive Port `:5239`) führen `mathematik-gymnasium-7`.
+`academy.json`, `.github/workflows/ci.yml`, `.github/workflows/pages.yml` und `README.md` (inklusive Port `:5242`) führen `mathematik-gymnasium-7`.

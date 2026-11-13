@@ -265,9 +265,19 @@ test("GPG is reachable through all three paths in both lenses, including grades 
       const node = schoolSubject(trees, grade, path).children.find(
         (n) => n.school?.id === "mittelschule",
       );
-      assert.equal(node.combination.id, "gpg");
-      assert.equal(node.label, "Geschichte/Politik/Geographie");
-      assert.equal(node.planned, true);
+      // A registered GPG package replaces the shared placeholder of its grade.
+      const pkg = pakete.find(
+        (p) => p.fach === "gpg" && p.school === "mittelschule" && p.grade === grade,
+      );
+      if (pkg) {
+        assert.equal(node.pkg, pkg);
+        assert.equal(node.planned, false);
+        assert.equal(node.offerKey, `package:${pkg.id}`);
+      } else {
+        assert.equal(node.combination.id, "gpg");
+        assert.equal(node.label, "Geschichte/Politik/Geographie");
+        assert.equal(node.planned, true);
+      }
       offers.push(node.offerKey);
       const worldSubject = trees.welt.children
         .flatMap((n) => n.children)

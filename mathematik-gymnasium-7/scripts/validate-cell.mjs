@@ -50,9 +50,13 @@ for (const row of mapping.rows) {
   const entry = oldById.get(row.de_by_id);
   assert.equal(row.de_by_cell, entry.tileId);
   assert.equal(row.de_by_question, zam.kvtItemPlainTexts(entry.item).question);
+  assert.ok(typeof row.reason === "string" && row.reason.trim().length > 10, `missing reason for ${row.de_by_id}`);
   if (row.category === "C") {
     assert.equal(row.academy_slug, null);
-    assert.equal(row.action, "keep-active");
+    assert.ok(
+      row.action === "keep-active" || row.action === "propose-retire-after-approval",
+      `unexpected C action for ${row.de_by_id}: ${row.action}`,
+    );
   } else {
     assert.ok(row.category === "A" || row.category === "B");
     assert.equal(row.action, "propose-replace-after-approval");
