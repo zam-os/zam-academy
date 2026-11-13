@@ -1,9 +1,9 @@
 {
   "source_repository": "zam-os/zam",
   "source_commit": "a0ea7ff6ad23c57f6eb6c6523b2cc1876f998307",
-  "status": "proposal-only",
-  "approved": null,
-  "source": "Proposal recorded on 2026-11-07 from the two legacy snapshots listed below. The review confirmed eight single-retrieval matches and identified five inaccurate prompts for possible retirement. Explicit approval is pending.",
+  "status": "approved",
+  "approved": "2026-11-13",
+  "source": "Thomas in der ZAM-Release-Sitzung am 2026-11-13: „Falls irgendwo noch eine Mapping-Freigabe nicht protokolliert ist, dann gebe ich sie hiermit formal. Das Mergen bedeutet Zustimmung.“ Die Freigabe gilt der Zuordnung der 16 de-by-Karten in dieser Datei (8 A replace, 0 B, 5 C retire, 3 C keep-active). Ab Zellversion 2026.11.2 tragen die 8 Nachfolger je ein replaces und retired_items legt die 5 korrigierten Altfragen still.",
   "sources": [
     {
       "file": "tests/fixtures/de-by-realschule-5-deutsch-erzaehlen-wortarten-faelle-kvt.json",
@@ -24,7 +24,7 @@
       "de_by_id": "01K4D5E0000000000000000J01",
       "category": "A",
       "academy_slug": "d5-erzaehlen-check",
-      "action": "propose-replace",
+      "action": "replace",
       "reason": "Both prompts retrieve the four opening questions for a personal narrative: person, time, place and starting situation."
     },
     {
@@ -32,7 +32,7 @@
       "de_by_id": "01K4D5E0000000000000000J02",
       "category": "C",
       "academy_slug": null,
-      "action": "propose-retire-after-approval",
+      "action": "retire",
       "reason": "The old solution puts simultaneous events in the pluperfect and treats the preterite as mandatory. The new lessons practise narrative structure and earlier events separately."
     },
     {
@@ -40,7 +40,7 @@
       "de_by_id": "01K4D5E0000000000000000J03",
       "category": "A",
       "academy_slug": "d5-faelle-check",
-      "action": "propose-replace",
+      "action": "replace",
       "reason": "Both prompts retrieve Wem? as the diagnostic question for the dative."
     },
     {
@@ -56,7 +56,7 @@
       "de_by_id": "01K4D5E0000000000000000J05",
       "category": "A",
       "academy_slug": "d5-pronomen-check",
-      "action": "propose-replace",
+      "action": "replace",
       "reason": "Both prompts classify mein, dein and similar forms by the same possessive function."
     },
     {
@@ -72,7 +72,7 @@
       "de_by_id": "01K4D5E0000000000000000J07",
       "category": "A",
       "academy_slug": "d5-adjektive-check",
-      "action": "propose-replace",
+      "action": "replace",
       "reason": "Both prompts retrieve als in a standard-language comparison showing inequality after a comparative."
     },
     {
@@ -88,7 +88,7 @@
       "de_by_id": "01K4D5R0000000000000000J01",
       "category": "A",
       "academy_slug": "d5-dehnung-check",
-      "action": "propose-replace",
+      "action": "replace",
       "reason": "Both prompts retrieve l, m, n and r as the set of letters that can follow a lengthening h."
     },
     {
@@ -96,7 +96,7 @@
       "de_by_id": "01K4D5R0000000000000000J02",
       "category": "C",
       "academy_slug": null,
-      "action": "propose-retire-after-approval",
+      "action": "retire",
       "reason": "The old prompt bundles several spelling patterns and the solution reverses the position of h in its mnemonic. The new lesson keeps the patterns distinct and treats h as a possible marker."
     },
     {
@@ -104,7 +104,7 @@
       "de_by_id": "01K4D5R0000000000000000J03",
       "category": "A",
       "academy_slug": "d5-schaerfung-check",
-      "action": "propose-replace",
+      "action": "replace",
       "reason": "Both prompts retrieve ck and tz in place of the doubled letters kk and zz in this spelling pattern."
     },
     {
@@ -112,7 +112,7 @@
       "de_by_id": "01K4D5R0000000000000000J04",
       "category": "C",
       "academy_slug": null,
-      "action": "propose-retire-after-approval",
+      "action": "retire",
       "reason": "The old solution counts diphthongs as consonants. The new lesson distinguishes vowel length from the number of following consonants."
     },
     {
@@ -120,7 +120,7 @@
       "de_by_id": "01K4D5R0000000000000000J05",
       "category": "A",
       "academy_slug": "d5-verlaengern-check",
-      "action": "propose-replace",
+      "action": "replace",
       "reason": "Both prompts use the plural Hunde to reveal the final d of Hund by extension."
     },
     {
@@ -128,7 +128,7 @@
       "de_by_id": "01K4D5R0000000000000000J06",
       "category": "C",
       "academy_slug": null,
-      "action": "propose-retire-after-approval",
+      "action": "retire",
       "reason": "The old solution says the stem never changes spelling, despite its own vowel alternations. The new lesson uses specific extension and derivation probes."
     },
     {
@@ -136,7 +136,7 @@
       "de_by_id": "01K4D5R0000000000000000J07",
       "category": "A",
       "academy_slug": "d5-woertliche-rede-check",
-      "action": "propose-replace",
+      "action": "replace",
       "reason": "Both prompts retrieve the colon after a reporting clause placed before direct speech."
     },
     {
@@ -144,7 +144,7 @@
       "de_by_id": "01K4D5R0000000000000000J08",
       "category": "C",
       "academy_slug": null,
-      "action": "propose-retire-after-approval",
+      "action": "retire",
       "reason": "The old schema puts a comma inside the opening quote before an inserted reporting clause. The new lesson uses a comma outside the quote on each side of the reporting clause."
     }
   ]

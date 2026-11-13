@@ -1,4 +1,4 @@
-// Validate the shipped cell and rehearse the unapproved proposal in disposable libraries.
+// Validate the approved cell and collision rollback in disposable libraries.
 import assert from "node:assert/strict";
 import { createHash } from "node:crypto";
 import { mkdtempSync, readFileSync, rmSync } from "node:fs";
@@ -9,12 +9,43 @@ const read = (file) => readFileSync(new URL(`../${file}`, import.meta.url));
 const zam = await import(process.env.ZAM_CORE ?? "zam-core");
 const tile = JSON.parse(read("cell.json"));
 const mapping = JSON.parse(read("replaces-de-by.json"));
-assert.equal(mapping.approved, null);
-assert.equal(mapping.status, "proposal-only");
+assert.match(mapping.approved, /^\d{4}-\d{2}-\d{2}$/);
+assert.equal(mapping.status, "approved");
 assert.equal(mapping.sources.length, 2);
-assert.ok(!("retired_items" in tile));
 const newItems = tile.atoms.flatMap((atom) => atom.practice_items);
-assert.ok(newItems.every((item) => !("replaces" in item)));
+const successors = new Map(newItems.map((item) => [item.slug, item]));
+const transfers = new Map();
+const retirements = new Map();
+for (const row of mapping.rows) {
+	if (row.category === "A" || row.category === "B") {
+		assert.equal(row.action, "replace");
+		const successor = successors.get(row.academy_slug);
+		assert.ok(successor, `Missing successor for ${row.de_by_id}`);
+		assert.deepEqual(successor.replaces, [row.de_by_id]);
+		transfers.set(row.de_by_id, successor.id);
+	} else if (row.action === "retire") {
+		assert.equal(row.category, "C");
+		retirements.set(row.de_by_id, row.reason);
+	} else {
+		assert.equal(row.category, "C");
+		assert.equal(row.action, "keep-active");
+	}
+}
+assert.equal(transfers.size, 8);
+assert.equal(retirements.size, 5);
+assert.deepEqual(
+	newItems.filter((item) => item.replaces).map((item) => item.id).sort(),
+	[...transfers.values()].sort(),
+);
+assert.deepEqual(
+	tile.retired_items,
+	Array.from(retirements, ([id, reason]) => ({ id, reason })),
+);
+const previousTile = structuredClone(tile);
+previousTile.version = "2026.11.1";
+delete previousTile.retired_items;
+for (const atom of previousTile.atoms)
+	for (const item of atom.practice_items) delete item.replaces;
 const legacy = mapping.sources.map((source) => {
 	const bytes = read(source.file);
 	assert.equal(createHash("sha256").update(bytes).digest("hex"), source.sha256);
@@ -93,74 +124,9 @@ async function withLibrary(name, run) {
 }
 
 try {
-	await withLibrary("current", async (db) => {
+	await withLibrary("approved", async (db) => {
 		const before = await seedLegacy(db);
 		await zam.installKvtTile(db, tile);
-		const installed = await snapshot(db);
-		assert.deepEqual(installed.cards, before.cards);
-		assert.deepEqual(installed.reviews, before.reviews);
-		assert.deepEqual(installed.replacements, before.replacements);
-		assert.deepEqual(await activeQueue(db, oldIds), sorted(oldIds));
-		const enroll = async () => {
-			for (const item of newItems) await zam.ensureCard(db, item.id, userId);
-		};
-		await enroll();
-		const enrolled = await snapshot(db);
-		assert.equal(enrolled.cards.length, 16 + newItems.length);
-		assert.deepEqual(enrolled.reviews, before.reviews);
-		for (const card of before.cards)
-			assert.deepEqual(
-				enrolled.cards.find((current) => current.id === card.id),
-				card,
-			);
-		for (const item of newItems) {
-			const token = await zam.getTokenById(db, item.id);
-			assert.equal(token.source_link, item.source_link);
-		}
-		await zam.installKvtTile(db, tile);
-		await enroll();
-		assert.deepEqual(await snapshot(db), enrolled);
-		console.log(
-			`ok: ${newItems.length} new cards, 16 legacy cards and 32 reviews preserved; repeated installation and enrollment are idempotent.`,
-		);
-	});
-
-	// The cloned tile is passed directly to the kernel in tests. It is never
-	// written to the package or sent to the catalog.
-	const proposal = structuredClone(tile);
-	proposal.version = "2026.11.2";
-	const successors = new Map(
-		proposal.atoms.flatMap((atom) =>
-			atom.practice_items.map((item) => [item.slug, item]),
-		),
-	);
-	const transfers = new Map();
-	const retirements = new Map();
-	for (const row of mapping.rows) {
-		if (row.category === "A" || row.category === "B") {
-			const successor = successors.get(row.academy_slug);
-			assert.ok(successor, `Missing successor for ${row.de_by_id}`);
-			assert.equal(successor.replaces, undefined, "one history per successor");
-			successor.replaces = [row.de_by_id];
-			transfers.set(row.de_by_id, successor.id);
-		} else if (row.action === "propose-retire-after-approval") {
-			assert.equal(row.category, "C");
-			retirements.set(row.de_by_id, row.reason);
-		} else {
-			assert.equal(row.category, "C");
-			assert.equal(row.action, "keep-active");
-		}
-	}
-	assert.equal(transfers.size, 8);
-	assert.equal(retirements.size, 5);
-	proposal.retired_items = Array.from(retirements, ([id, reason]) => ({
-		id,
-		reason,
-	}));
-
-	await withLibrary("proposal", async (db) => {
-		const before = await seedLegacy(db);
-		await zam.installKvtTile(db, proposal);
 		const after = await snapshot(db);
 		const movedRows = (rows) =>
 			rows.map((row) => ({
@@ -191,7 +157,7 @@ try {
 			await activeQueue(db, [...oldIds, ...transfers.values()]),
 			sorted([...kept, ...transfers.values()]),
 		);
-		await zam.installKvtTile(db, proposal);
+		await zam.installKvtTile(db, tile);
 		const repeated = await snapshot(db);
 		// zam-core 0.54.0 refreshes only the updated_at stamp on explicitly
 		// retired tokens when it applies the same retirement again.
@@ -203,23 +169,23 @@ try {
 		});
 		assert.deepEqual(stable(repeated), stable(after));
 		console.log(
-			"ok: proposal rehearsal moved 8 histories and retired 5 cards with evidence intact; 3 old cards stay active.",
+			"ok: approved cell moved 8 histories and retired 5 cards with evidence intact; 3 old cards stay active.",
 		);
 	});
 
 	await withLibrary("collision", async (db) => {
 		await installLegacy(db);
-		await zam.installKvtTile(db, tile);
+		await zam.installKvtTile(db, previousTile);
 		const [oldId, successorId] = transfers.entries().next().value;
 		await reviewed(db, oldId, 1);
 		await reviewed(db, successorId, 3);
 		const before = await snapshot(db);
-		await assert.rejects(() => zam.installKvtTile(db, proposal), {
+		await assert.rejects(() => zam.installKvtTile(db, tile), {
 			message: `Cannot move ${oldId} to ${successorId}: ${userId} holds a card on both. That is a merge, and mastery is never merged automatically — resolve it explicitly and re-test.`,
 		});
 		assert.deepEqual(await snapshot(db), before);
 		console.log(
-			"ok: proposal refuses a learner holding both cards and rolls back all changes.",
+			"ok: approved cell refuses a learner holding both cards and rolls back all changes.",
 		);
 	});
 } finally {
