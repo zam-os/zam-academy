@@ -32,6 +32,7 @@ interface Item {
   sample_solution?: string;
   question_segments?: { type: string; speech?: string }[];
   concept_segments?: { type: string; speech?: string }[];
+  replaces?: string[];
 }
 interface Atom {
   id: string;
@@ -47,7 +48,11 @@ interface Atom {
   }[];
   practice_items: Item[];
 }
-const cell = rawCell as { tile_id: string; atoms: Atom[] };
+const cell = rawCell as {
+  tile_id: string;
+  atoms: Atom[];
+  retired_items?: { id: string; reason: string }[];
+};
 const FIRST_IDS = [
   "pt-1-negative-exponenten",
   "pt-2-gleiche-basis",
@@ -328,10 +333,11 @@ describe("ZAM-Karten", () => {
       }
       for (const i of a.practice_items) {
         expect(i.source_link).toBe(a.source_link);
-        expect("replaces" in i).toBe(false);
       }
     }
-    expect("retired_items" in cell).toBe(false);
+    expect(
+      cell.retired_items?.map((entry: { id: string }) => entry.id),
+    ).toEqual(["01K4M7K0000000000000000J02"]);
   });
   it("has binary checks, meaningful curated reasons, transfer solutions and spoken formulas", () => {
     for (const a of cell.atoms) {
@@ -351,9 +357,9 @@ describe("ZAM-Karten", () => {
       }
     }
   });
-  it("accounts for 30 old items with seven transfer proposals, one retirement proposal and no applied migration", () => {
-    expect(mapping.approved).toBeNull();
-    expect(mapping.status).toBe("proposal-only");
+  it("accounts for 30 old items with seven approved transfers, one retirement and 22 active C cards", () => {
+    expect(mapping.approved).toBe("2026-11-13");
+    expect(mapping.status).toBe("approved");
     expect(mapping.rows).toHaveLength(30);
     expect(new Set(mapping.rows.map((r) => r.de_by_id)).size).toBe(30);
     expect(mapping.sources).toHaveLength(4);
@@ -362,25 +368,22 @@ describe("ZAM-Karten", () => {
       22,
     );
     expect(
-      mapping.rows
-        .filter((r) => r.action === "propose-retire-after-approval")
-        .map((r) => r.de_by_id),
+      mapping.rows.filter((r) => r.action === "retire").map((r) => r.de_by_id),
     ).toEqual(["01K4M7K0000000000000000J02"]);
     for (const r of mapping.rows) {
       expect(r.reason.length).toBeGreaterThan(40);
       if (r.category === "A") {
-        expect(
-          cell.atoms
-            .flatMap((a) => a.practice_items)
-            .some((i) => i.slug === r.academy_slug),
-        ).toBe(true);
-        expect(r.action).toBe("propose-replace-after-approval");
+        const successor = cell.atoms
+          .flatMap((a) => a.practice_items)
+          .find((i) => i.slug === r.academy_slug);
+        expect(successor?.replaces).toEqual([r.de_by_id]);
+        expect(r.action).toBe("replace");
       } else {
         expect(r.category).toBe("C");
         expect(r.academy_slug).toBeNull();
         expect(r.action).toBe(
           r.de_by_id === "01K4M7K0000000000000000J02"
-            ? "propose-retire-after-approval"
+            ? "retire"
             : "keep-active",
         );
       }
