@@ -1,0 +1,385 @@
+[
+	{
+		"id": "b6-forschen",
+		"lb": 1,
+		"title": "Eine Frage fair untersuchen",
+		"period": "B6 LB 1 · Biologisch arbeiten",
+		"intro": "Plane einen Keimversuch, bei dem du eine Ursache prüfen kannst.",
+		"paragraphs": [
+			"Eine Beobachtung beschreibt, was du feststellst. Eine Frage legt fest, was du untersuchen möchtest. Eine Hypothese ist eine mögliche, prüfbare Antwort. Im Experiment veränderst du gezielt eine Größe, die Variable. Andere wichtige Bedingungen bleiben gleich: die Konstanten. Ein Kontrollansatz liefert den Vergleich. Mehrere Samen und Wiederholungen machen zufällige Unterschiede erkennbar.",
+			"Beispiel: Brauchen Bohnensamen Wasser zum Keimen? Du vergleichst gleich viele Samen derselben Art auf feuchtem und trockenem Papier bei gleicher Temperatur und Luftzufuhr. Protokolliere an gleichen Tagen, wie viele keimen. Ein Thermometer misst die Temperatur; lies es nach Anleitung ab. Unterschiedliche Temperaturen in den Ansätzen wären eine Fehlerquelle. Ein einzelner ungekeimter Same widerlegt die Hypothese noch nicht."
+		],
+		"takeaway": "Ändere eine Bedingung, halte andere gleich und vergleiche mit einem Kontrollansatz.",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"question": "Welche Planung prüft die Wirkung von Wasser?",
+			"answer": "Gleiche Samen und Bedingungen, nur die Wasserzugabe unterscheidet sich.",
+			"wrong": [
+				"Andere Samen im Kühlschrank werden mit warmen, feuchten Samen verglichen.",
+				"Nur ein feuchter Ansatz wird beobachtet."
+			],
+			"explanation": "Ohne Vergleich oder bei mehreren veränderten Größen bleibt die Ursache unklar."
+		},
+		"workshop": {
+			"kind": "timeline",
+			"title": "Deine Werkstatt: Eine Frage fair untersuchen",
+			"instruction": "Bringe die Schritte in die richtige Reihenfolge.",
+			"categories": [],
+			"entries": [
+				{
+					"text": "Frage und prüfbare Vermutung formulieren.",
+					"target": 0,
+					"feedback": "Erst legst du fest, welche Ursache du prüfen möchtest."
+				},
+				{
+					"text": "Versuch und Kontrolle mit gleichen übrigen Bedingungen planen.",
+					"target": 1,
+					"feedback": "Die Planung trennt Variable und Konstanten."
+				},
+				{
+					"text": "Durchführen und Beobachtungen protokollieren.",
+					"target": 2,
+					"feedback": "Notiere auch unerwartete Ergebnisse."
+				},
+				{
+					"text": "Ergebnisse vergleichen und die Vermutung prüfen.",
+					"target": 3,
+					"feedback": "Die Auswertung bezieht sich auf die Frage, nicht auf einen Wunsch."
+				}
+			],
+			"conclusion": "Ändere eine Bedingung, halte andere gleich und vergleiche mit einem Kontrollansatz."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Plane mit 20 Bohnensamen einen Vergleich zur Frage, ob Wasser die Keimung beeinflusst. Nenne Variable, zwei Konstanten und eine Fehlerquelle.",
+				"model": "Je zehn Samen liegen auf feuchtem oder trockenem Papier. Wasser ist die Variable; Samenart und Temperatur bleiben gleich. Ich zähle täglich zur gleichen Zeit. Trocknet der feuchte Ansatz unbemerkt aus, wird der Vergleich unbrauchbar.",
+				"hints": [
+					"Welche zwei Gruppen brauchst du?",
+					"Was darf außer Wasser nicht wechseln?"
+				],
+				"criteria": [
+					"Ich nenne einen feuchten und einen trockenen Ansatz.",
+					"Ich halte zwei Bedingungen gleich.",
+					"Ich benenne eine passende Fehlerquelle."
+				]
+			},
+			"2": {
+				"prompt": "Zehn Samen am warmen Fenster keimen, zehn im dunklen Kühlschrank nicht. Jemand erklärt: „Licht ist zum Keimen nötig.“ Prüfe den Schluss und verbessere den Versuch.",
+				"model": "Der Versuch verändert Licht und Temperatur gleichzeitig. Daher kann auch die Kälte den Unterschied erklären. Für die Lichtfrage müssen Temperatur, Wasser, Luft und Samenart übereinstimmen. Nur die Beleuchtung wird verändert; mehrere Samen pro Gruppe werden gleich lange beobachtet.",
+				"hints": [
+					"Welche Bedingungen unterscheiden sich?",
+					"Welche Ursache kann die Beobachtung ebenfalls erklären?"
+				],
+				"criteria": [
+					"Ich erkenne mindestens zwei veränderte Bedingungen.",
+					"Ich begründe, warum der Schluss nicht eindeutig ist.",
+					"Ich schlage einen kontrollierten Lichtvergleich vor."
+				]
+			}
+		}
+	},
+	{
+		"id": "b6-mikroskop",
+		"lb": 1,
+		"title": "Kleine Strukturen sichtbar machen",
+		"period": "B6 LB 1 · Biologisch arbeiten",
+		"intro": "Bereite dich auf die Arbeit mit Lupe, Mikroskop und Präparat vor.",
+		"paragraphs": [
+			"Eine Lupe vergrößert ganze kleine Gegenstände, etwa eine Feder. Beim Lichtmikroskop durchleuchtet Licht ein dünnes Präparat. Okular und Objektiv vergrößern gemeinsam. Beginne mit dem kleinsten Objektiv und stelle nach Anleitung scharf. Halte beim Objektivwechsel Abstand zum Präparat. Die App ersetzt weder den sicheren Umgang mit Geräten noch die Herstellung eines Präparats im Unterricht.",
+			"Beispiel: Ein Okular mit zehnfacher und ein Objektiv mit vierfacher Vergrößerung ergeben zusammen vierzigfache Vergrößerung. In einer Zeichnung einer dünnen Zwiebelhaut hältst du nur erkennbare Zellgrenzen und Strukturen fest, beschriftest sachlich und nennst die Vergrößerung. Du zeichnest keine Chloroplasten hinein, nur weil du sie erwartest. Ein zu dickes Präparat kann Strukturen verdecken."
+		],
+		"takeaway": "Beginne klein, stelle sorgfältig scharf und zeichne nur erkennbare Strukturen.",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"question": "Womit beginnst du beim Mikroskopieren?",
+			"answer": "Mit dem kleinsten Objektiv.",
+			"wrong": [
+				"Immer mit der stärksten Vergrößerung.",
+				"Mit einem möglichst dicken Präparat."
+			],
+			"explanation": "Bei kleiner Vergrößerung findest du die Probe leichter und hältst mehr Abstand."
+		},
+		"workshop": {
+			"kind": "timeline",
+			"title": "Deine Werkstatt: Kleine Strukturen sichtbar machen",
+			"instruction": "Bringe die Schritte in die richtige Reihenfolge.",
+			"categories": [],
+			"entries": [
+				{
+					"text": "Präparat nach Anleitung vorbereiten und auflegen.",
+					"target": 0,
+					"feedback": "Ein dünnes, geeignetes Präparat lässt Licht hindurch."
+				},
+				{
+					"text": "Kleinstes Objektiv einstellen und das Bild scharf stellen.",
+					"target": 1,
+					"feedback": "Zunächst findest du den Ausschnitt."
+				},
+				{
+					"text": "Bei Bedarf vorsichtig vergrößern und erneut scharf stellen.",
+					"target": 2,
+					"feedback": "Beobachte den Abstand und beachte die Anleitung."
+				},
+				{
+					"text": "Beobachtung zeichnen und beschriften.",
+					"target": 3,
+					"feedback": "Beschriftungen und Vergrößerung machen die Zeichnung nachvollziehbar."
+				}
+			],
+			"conclusion": "Beginne klein, stelle sorgfältig scharf und zeichne nur erkennbare Strukturen."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Du sollst Federäste betrachten. Begründe die Wahl einer Lupe und nenne zwei Angaben für deine Zeichnung.",
+				"model": "Federäste lassen sich als räumlicher Gegenstand gut mit einer Lupe betrachten. Für ein Durchlichtmikroskop wäre ein geeignetes dünnes Präparat nötig. Meine Zeichnung erhält einen Titel und beschriftete beobachtete Teile; die verwendete Vergrößerung wird angegeben.",
+				"hints": [
+					"Muss Licht durch die Probe gelangen?",
+					"Was hilft anderen beim Lesen der Zeichnung?"
+				],
+				"criteria": [
+					"Ich begründe die Gerätewahl.",
+					"Ich nenne zwei sinnvolle Zeichnungsangaben.",
+					"Ich trenne Beobachtung von Vermutung."
+				]
+			},
+			"2": {
+				"prompt": "Bei stärkerer Vergrößerung ist die Zwiebelhaut nur dunkel. Ein Mitschüler will den Tubus fest auf das Deckglas drücken. Entwickle einen sicheren nächsten Schritt und eine mögliche Fehlererklärung.",
+				"model": "Ich drücke das Objektiv nicht auf das Deckglas. Nach der Geräteanleitung gehe ich zur kleinen Vergrößerung zurück und prüfe Beleuchtung, Lage und Dicke des Präparats. Eine zu dicke oder schlecht beleuchtete Probe kann dunkel erscheinen. Bei Unsicherheit frage ich die Lehrkraft.",
+				"hints": [
+					"Wodurch könnte das Bild dunkel sein?",
+					"Wie vermeidest du Kontakt zwischen Glas und Objektiv?"
+				],
+				"criteria": [
+					"Ich lehne Druck auf das Deckglas ab.",
+					"Ich nenne eine plausible Fehlerquelle.",
+					"Ich beschreibe einen sicheren Prüfschritt."
+				]
+			}
+		}
+	},
+	{
+		"id": "b6-bestimmen",
+		"lb": 1,
+		"title": "Vergleichen und mit einem Schlüssel bestimmen",
+		"period": "B6 LB 1 · Biologisch arbeiten",
+		"intro": "Nutze Merkmale statt eines bloßen Gesamteindrucks.",
+		"paragraphs": [
+			"Bei einem Vergleich untersuchst du dieselben Merkmale an allen Beispielen. Für Wirbeltiere eignen sich etwa Körperbedeckung, Atmungsorgane und Entwicklung. Ein dichotomer Bestimmungsschlüssel bietet an jedem Schritt zwei Alternativen. Du wählst die passende, bis du beim Namen oder einer Tiergruppe ankommst. Ein Ergebnis gilt nur für die im Schlüssel enthaltenen Arten.",
+			"Beispiel: Für Amsel, Grasfrosch und Zauneidechse fragst du zuerst nach Federn: vorhanden bedeutet Amsel. Ohne Federn prüfst du die Haut: feucht und drüsenreich passt zum Grasfrosch, trocken mit Hornschuppen zur Zauneidechse. Ein unscharfes Bild erlaubt die Entscheidung vielleicht nicht. Dann hältst du die Bestimmung offen. Ein einfaches Modell oder Schema zeigt ausgewählte Merkmale und lässt andere weg."
+		],
+		"takeaway": "Vergleiche gleiche Merkmale; ein Bestimmungsschlüssel entscheidet schrittweise zwischen Alternativen.",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"question": "Was macht einen Vergleich aussagekräftig?",
+			"answer": "Du prüfst an allen Beispielen dieselben Merkmale.",
+			"wrong": [
+				"Du nennst zu jedem Tier irgendeine andere Eigenschaft.",
+				"Du entscheidest allein nach der Körpergröße."
+			],
+			"explanation": "Gleiche Kriterien machen Gemeinsamkeiten und Unterschiede erkennbar."
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Deine Werkstatt: Vergleichen und mit einem Schlüssel bestimmen",
+			"instruction": "Ordne jede Aussage zu. Begründe die Entscheidung zuerst für dich.",
+			"categories": [
+				"Beobachtbares Merkmal",
+				"Deutung oder unzureichender Beleg"
+			],
+			"entries": [
+				{
+					"text": "Auf der Nahaufnahme sind Federn sichtbar.",
+					"target": 0,
+					"feedback": "Die Körperbedeckung ist auf der Aufnahme erkennbar."
+				},
+				{
+					"text": "Das Tier sieht nett aus, also ist es ein Säugetier.",
+					"target": 1,
+					"feedback": "Ein Eindruck ersetzt kein Gruppenmerkmal."
+				},
+				{
+					"text": "Die Haut ist auf dem unscharfen Foto nicht erkennbar.",
+					"target": 1,
+					"feedback": "Hier fehlt der Beleg für die Bestimmung."
+				}
+			],
+			"conclusion": "Vergleiche gleiche Merkmale; ein Bestimmungsschlüssel entscheidet schrittweise zwischen Alternativen."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Entwirf einen Schlüssel für Amsel, Grasfrosch und Zauneidechse mit zwei aufeinanderfolgenden Fragen.",
+				"model": "Zuerst frage ich: Sind Federn vorhanden? Ja führt zur Amsel. Nein führt zur Hautfrage: Ist sie feucht und drüsenreich oder trocken mit Hornschuppen? Die erste Alternative führt zum Grasfrosch, die zweite zur Zauneidechse. Der Schlüssel gilt nur für diese drei Beispiele.",
+				"hints": [
+					"Welches Merkmal trennt die Amsel ab?",
+					"Wie unterscheiden sich die Hautbedeckungen?"
+				],
+				"criteria": [
+					"Ich verwende zwei Alternativen pro Schritt.",
+					"Jede Art ist eindeutig erreichbar.",
+					"Ich begrenze den Schlüssel auf die drei Arten."
+				]
+			},
+			"2": {
+				"prompt": "Ein selbst gebauter Papierfisch besitzt Flossen und Stromlinienform, aber keine Kiemen. Erkläre Nutzen und Grenze dieses Modells und plane einen fairen Vergleich zweier Körperformen.",
+				"model": "Das Modell macht den Einfluss der Körperform auf den Wasserwiderstand untersuchbar. Es erklärt keine Atmung oder vollständige Schwimmbewegung. Für den Vergleich bewege ich gleich große Modelle verschiedener Form mit gleicher Geschwindigkeit durch Wasser und wiederhole den Versuch.",
+				"hints": [
+					"Welche Eigenschaft bildet Papier ab?",
+					"Welche Bedingungen hältst du beim Vergleich gleich?"
+				],
+				"criteria": [
+					"Ich benenne einen Modellnutzen.",
+					"Ich benenne eine Grenze.",
+					"Ich plane einen Vergleich mit Konstanten."
+				]
+			}
+		}
+	},
+	{
+		"id": "b6-quellen",
+		"lb": 1,
+		"title": "Daten festhalten und Quellen prüfen",
+		"period": "B6 LB 1 · Biologisch arbeiten",
+		"intro": "Mache Beobachtungen und Erklärungen für andere nachvollziehbar.",
+		"paragraphs": [
+			"Ein Protokoll enthält Frage, Material, Durchführung, Beobachtung und Auswertung. In einer Tabelle stehen Größen mit Einheiten; ein Liniendiagramm zeigt zum Beispiel Veränderungen über die Zeit. Fachbegriffe sollten eindeutig verwendet werden. Eine Präsentation beginnt mit der Frage, zeigt ausgewählte Belege und endet mit der Antwort und ihren Grenzen. Eine Zeichnung oder ein Modell hilft, wenn es zur Frage passt.",
+			"Beispiel: In einer Übungsreihe ist ein Spross an Tag eins 2 cm, an Tag drei 4 cm und an Tag fünf 7 cm lang. Ein Liniendiagramm mit beschrifteten Achsen zeigt das Wachstum. Es erklärt dessen Ursache noch nicht. Für weitere Informationen prüfst du Autor, Belege, Absicht und Aktualität einer Quelle. Eine sachliche, fachlich verantwortete Darstellung ist für eine Biologiefrage geeigneter als anonyme Werbung."
+		],
+		"takeaway": "Nenne Herkunft und Einheiten deiner Daten und trenne Beobachtung von Erklärung.",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"question": "Welche Angabe gehört zu einer Messwerttabelle?",
+			"answer": "Die gemessene Größe mit ihrer Einheit.",
+			"wrong": [
+				"Nur eine Reihe unbeschrifteter Zahlen.",
+				"Eine Bewertung statt der Messwerte."
+			],
+			"explanation": "Ohne Größe und Einheit sind Zahlen nicht eindeutig interpretierbar."
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Deine Werkstatt: Daten festhalten und Quellen prüfen",
+			"instruction": "Ordne jede Aussage zu. Begründe die Entscheidung zuerst für dich.",
+			"categories": ["Geeignetes Vorgehen", "Unzureichendes Vorgehen"],
+			"entries": [
+				{
+					"text": "Eine Grafik nennt Zeit in Tagen und Sprosslänge in Zentimetern.",
+					"target": 0,
+					"feedback": "Beschriftete Größen machen die Daten verständlich."
+				},
+				{
+					"text": "Ein Werbetext gilt ohne Belege als Beweis.",
+					"target": 1,
+					"feedback": "Absicht und fehlende Belege müssen geprüft werden."
+				},
+				{
+					"text": "Ein Vortrag zeigt Frage, Beobachtung und begründete Antwort.",
+					"target": 0,
+					"feedback": "Die Struktur macht den Gedankengang nachvollziehbar."
+				}
+			],
+			"conclusion": "Nenne Herkunft und Einheiten deiner Daten und trenne Beobachtung von Erklärung."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Beschreibe die Sprosslängen von Tag eins, drei und fünf. Wähle eine Darstellung und trenne Ergebnis und Ursache.",
+				"model": "Die Sprosslänge steigt von 2 cm über 4 cm auf 7 cm. Ein Liniendiagramm mit Zeit und Länge zeigt die Veränderung; eine Tabelle bewahrt die Einzelwerte. Aus diesen drei Daten allein erkenne ich nicht, ob Licht, Wasser oder andere Bedingungen das Wachstum verursacht haben.",
+				"hints": [
+					"Welche Größen gehören auf die Achsen?",
+					"Was zeigt die Messung, was zeigt sie nicht?"
+				],
+				"criteria": [
+					"Ich beschreibe den Anstieg mit Werten.",
+					"Ich wähle eine beschriftete Darstellung.",
+					"Ich behaupte keine unbelegte Ursache."
+				]
+			},
+			"2": {
+				"prompt": "Eine anonyme Seite verkauft „Wachstumswasser“. Eine Fachquelle beschreibt einen kontrollierten Versuch. Welche Quelle wählst du für einen Kurzvortrag? Plane drei Vortragsschritte.",
+				"model": "Ich bevorzuge die Fachquelle, wenn Autor und Versuch nachvollziehbar sind. Die Verkaufsabsicht der anonymen Seite und fehlende Belege schwächen sie. Mein Vortrag nennt die Frage, zeigt Aufbau und Ergebnisse des Versuchs und erklärt anschließend den Schluss samt Grenzen. Auch eine Fachquelle prüfe ich auf ihre Belege.",
+				"hints": [
+					"Wer verantwortet die Information?",
+					"Wie zeigst du den Weg vom Beleg zur Behauptung?"
+				],
+				"criteria": [
+					"Ich begründe die Quellenwahl.",
+					"Ich plane drei nachvollziehbare Schritte.",
+					"Ich nenne eine Grenze der Aussagekraft."
+				]
+			}
+		}
+	},
+	{
+		"id": "b6-bewerten",
+		"lb": 1,
+		"title": "Fakten und Werte unterscheiden",
+		"period": "B6 LB 1 · Biologisch arbeiten",
+		"intro": "Begründe eine Entscheidung zum Schutz eines Lebensraums.",
+		"paragraphs": [
+			"Eine beschreibende Aussage lässt sich an Beobachtungen prüfen: Auf dem Weg liegen überfahrene Kröten. Eine Bewertung enthält einen Maßstab: Der Schutz wandernder Kröten ist uns besonders wichtig. Beide gehören zu einer Entscheidung, erfüllen aber unterschiedliche Aufgaben. Du kannst zwei Handlungsoptionen mit ihren unmittelbaren Folgen gegenüberstellen und ein ausschlaggebendes Kriterium nennen.",
+			"Beispiel: Ein Teichufer soll nachts beleuchtet werden. Mehr Licht erleichtert Menschen die Orientierung, kann aber nachtaktive Tiere stören. Die Gemeinde vergleicht Dauerlicht mit einer zeitlich begrenzten, abgeschirmten Beleuchtung. Sie kann einen Schwellenwert festlegen: Eine Option, die einen besonders empfindlichen Brutplatz stark stört, scheidet aus. Ein Vorteil an anderer Stelle gleicht dieses Kriterium dann nicht aus."
+		],
+		"takeaway": "Fakten liefern Belege; Werte und ein genanntes Entscheidungskriterium begründen das Urteil.",
+		"sourceIds": ["lp"],
+		"quiz": {
+			"question": "Welche Aussage enthält eine Bewertung?",
+			"answer": "Der Schutz des Brutplatzes hat für mich Vorrang.",
+			"wrong": [
+				"Am Ufer brüten zwei Vogelpaare.",
+				"Das Licht ist bis Mitternacht eingeschaltet."
+			],
+			"explanation": "Ein Vorrang drückt einen Wert aus; Anzahl und Uhrzeit sind überprüfbare Angaben."
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Deine Werkstatt: Fakten und Werte unterscheiden",
+			"instruction": "Ordne jede Aussage zu. Begründe die Entscheidung zuerst für dich.",
+			"categories": ["Beschreibung", "Bewertung"],
+			"entries": [
+				{
+					"text": "An der Straße wurden wandernde Kröten beobachtet.",
+					"target": 0,
+					"feedback": "Das lässt sich durch Beobachtung prüfen."
+				},
+				{
+					"text": "Eine starke Störung des Brutplatzes ist für uns nicht hinnehmbar.",
+					"target": 1,
+					"feedback": "Hier wird eine Grenze als Maßstab gesetzt."
+				},
+				{
+					"text": "Eine Nachtabschaltung sollte Vorrang haben.",
+					"target": 1,
+					"feedback": "Eine Empfehlung enthält eine Wertung."
+				}
+			],
+			"conclusion": "Fakten liefern Belege; Werte und ein genanntes Entscheidungskriterium begründen das Urteil."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Vergleiche Dauerlicht und zeitlich begrenztes Licht am Teich. Nenne zu jeder Option eine mögliche Folge und dein entscheidendes Kriterium.",
+				"model": "Dauerlicht kann die Orientierung nachts erleichtern, aber Tiere länger stören. Begrenztes, abgeschirmtes Licht verkürzt die Störung, erfordert aber eine passende Wegeplanung. Für mich scheidet eine Lösung aus, die einen empfindlichen Brutplatz stark stört. Ich brauche dazu Beobachtungen vor Ort.",
+				"hints": [
+					"Wer ist von der Entscheidung betroffen?",
+					"Welches Kriterium darf nicht überschritten werden?"
+				],
+				"criteria": [
+					"Ich vergleiche zwei Optionen.",
+					"Ich benenne Folgen für Menschen und Tiere.",
+					"Ich lege mein entscheidendes Kriterium offen."
+				]
+			},
+			"2": {
+				"prompt": "Ein Parkplatz soll eine Feuchtwiese ersetzen. Die Gemeinde sagt: „Mehr Stellplätze beweisen, dass der Bau richtig ist.“ Prüfe die Begründung und formuliere eine Alternative.",
+				"model": "Die Zahl zusätzlicher Plätze ist eine Sachangabe, beweist aber kein richtiges Urteil. Dafür braucht es Werte und weitere Fakten, etwa zu Lebensräumen und Wasserhaushalt. Als Alternative prüfe ich vorhandene Flächen. Ein unvertretbarer Verlust des Feuchtlebensraums könnte ein Ausschlusskriterium sein.",
+				"hints": [
+					"Was ist eine Zahl, was ein Urteil?",
+					"Welche zweite Option ist denkbar?"
+				],
+				"criteria": [
+					"Ich trenne Sachangabe und Werturteil.",
+					"Ich nenne fehlende biologische Belege.",
+					"Ich formuliere Alternative und Kriterium."
+				]
+			}
+		}
+	}
+]
