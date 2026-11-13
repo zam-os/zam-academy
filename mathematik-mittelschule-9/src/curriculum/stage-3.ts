@@ -172,7 +172,7 @@ const rechtwinklig = L({
             [num("Anzahl:", count, "", 0)],
             "Diagonalen von Quadrat, Raute und Drachen stehen senkrecht aufeinander. Eine Diagonale im Rechteck ergibt zwei rechtwinklige Dreiecke. Eine Höhe steht senkrecht auf einer Seite.",
             [why],
-            `${count} rechtwinklige ${count === 1 ? "Dreieck" : "Dreiecke"}`,
+            count === 1 ? "1 rechtwinkliges Dreieck" : `${count} rechtwinklige Dreiecke`,
             { fig, cut },
           );
         }

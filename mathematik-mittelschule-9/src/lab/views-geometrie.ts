@@ -113,7 +113,7 @@ const partsView: LabView = {
     const k = 34;
     const P = (p: Pt): Pt => ({ x: 70 + p.x * k, y: 290 - p.y * k });
     let out =
-      open(`${FIGURES[v.fig]}, zerlegt durch ${CUTS[v.cut]}: ${rightTriangleCount(v.fig, v.cut)} rechtwinklige Dreiecke`) +
+      open(`${FIGURES[v.fig]}, Zerlegung: ${CUTS[v.cut]}. ${rightTriangleCount(v.fig, v.cut) === 1 ? "1 rechtwinkliges Dreieck" : `${rightTriangleCount(v.fig, v.cut)} rechtwinklige Dreiecke`}`) +
       title(`${FIGURES[v.fig]} · ${CUTS[v.cut]}`);
     for (const part of parts) {
       const pts = part.pts.map(P);
@@ -139,8 +139,8 @@ const partsView: LabView = {
     });
     const count = rightTriangleCount(v.fig, v.cut);
     out += infoBox(380, 70, [
-      [`${count} rechtwinklige`, count ? "lab-text-ok" : "lab-text"],
-      ["Dreiecke", count ? "lab-text-ok" : "lab-text"],
+      [count === 1 ? "1 rechtwinkliges" : `${count} rechtwinklige`, count ? "lab-text-ok" : "lab-text"],
+      [count === 1 ? "Dreieck" : "Dreiecke", count ? "lab-text-ok" : "lab-text"],
     ]);
     out += legend(380, 150, [
       ["lab-fill-a", "Kathete"],

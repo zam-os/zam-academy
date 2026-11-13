@@ -379,7 +379,7 @@ const binome = L({
           `Rechne im Kopf mit einer binomischen Formel: ${shown} = ${split}, also a = ${n} und b = ${d}. Gib das Ergebnis und ${kind === 2 ? "das Glied b²" : "das Mittelglied 2ab"} an.`,
           [num("Ergebnis:", value, "", 0), num(kind === 2 ? "b² =" : "2ab =", kind === 2 ? d * d : 2 * n * d, "", 0)],
           `${kind === 0 ? "(a + b)² = a² + 2ab + b²" : kind === 1 ? "(a − b)² = a² − 2ab + b²" : "(a + b)(a − b) = a² − b²"} mit a = ${n} und b = ${d}.`,
-          [kind === 0 ? `(${n} + ${d})² = ${n * n} + ${2 * n * d} + ${d * d}` : kind === 1 ? `(${n} − ${d})² = ${n * n} − ${2 * n * d} + ${d * d}` : `(${n} + ${d})(${n} − ${d}) = ${n * n} − ${d * d}`],
+          [kind === 0 ? `(${n} + ${d})² = ${fmt(n * n)} + ${2 * n * d} + ${d * d}` : kind === 1 ? `(${n} − ${d})² = ${fmt(n * n)} − ${2 * n * d} + ${d * d}` : `(${n} + ${d})(${n} − ${d}) = ${fmt(n * n)} − ${d * d}`],
           `${shown} = ${fmt(value)}`,
           { n, d, kind },
         );
