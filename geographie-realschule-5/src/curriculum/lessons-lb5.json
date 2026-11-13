@@ -1,0 +1,371 @@
+[
+	{
+		"id": "geo-deutschland",
+		"lb": 5,
+		"title": "Deutschland politisch gliedern",
+		"period": "Geo5 LB 5 · Deutschland politisch gliedern",
+		"intro": "Eine politische Karte zeigt Grenzen und Verwaltungseinheiten.",
+		"paragraphs": [
+			"Deutschland besteht aus 16 Bundesländern. Berlin ist die Bundeshauptstadt und zugleich ein Bundesland. Bayern liegt im Südosten Deutschlands; München ist seine Landeshauptstadt. Die Nord- und Ostsee begrenzen Deutschland im Norden. Flüsse und Gebirge überschreiten Verwaltungsgrenzen: Politische Einteilung und natürliche Gliederung beantworten unterschiedliche Fragen.",
+			"Beispiel: Du beschreibst eine Reise von Berlin nach München. Berlin liegt nordöstlich von München; Bayern liegt südlich von Thüringen und Sachsen. Im Kartenmodell kannst du die Landeshauptstädte verorten. Zeichne danach eine eigene grobe Deutschlandskizze mit Küsten, Bayern, Berlin und München und prüfe sie im Atlas. Das Modell zeigt die Staatsgrenze und Hauptstadtpunkte, keine vollständigen Ländergrenzen. Deine Skizze soll Lagebeziehungen klären und muss keine perfekte Umrisszeichnung sein."
+		],
+		"takeaway": "Bundesländer gliedern den Staat politisch; Lagebeziehungen beschreibst du mit Karten und Himmelsrichtungen.",
+		"sourceIds": ["lehrplan"],
+		"quiz": {
+			"question": "Aus wie vielen Bundesländern besteht Deutschland?",
+			"answer": "Aus 16 Bundesländern",
+			"wrong": ["Aus 7 Bundesländern", "Aus 27 Bundesländern"],
+			"explanation": "Die sieben Regierungsbezirke sind eine Gliederung Bayerns, nicht Deutschlands."
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Werkstatt · Deutschland politisch gliedern",
+			"instruction": "Ordne die Beispiele zu. Lies bei der Prüfung auch die Begründungen.",
+			"categories": [
+				"Bundesland",
+				"Bundeshauptstadt",
+				"Landeshauptstadt Bayerns"
+			],
+			"entries": [
+				{
+					"text": "Bayern",
+					"target": 0,
+					"feedback": "Bayern ist eines der 16 Bundesländer."
+				},
+				{
+					"text": "Berlin als Hauptstadt Deutschlands",
+					"target": 1,
+					"feedback": "Berlin hat zusätzlich die Funktion eines Bundeslands."
+				},
+				{
+					"text": "München",
+					"target": 2,
+					"feedback": "München ist die Landeshauptstadt Bayerns."
+				}
+			],
+			"conclusion": "Ein Ort kann mehr als eine politische Funktion haben."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Beschreibe die Lage Bayerns und die politischen Funktionen von Berlin und München.",
+				"hints": ["Ich verorte Bayern.", "Ich erkläre Berlin und München."],
+				"model": "Bayern liegt im Südosten Deutschlands. München ist seine Landeshauptstadt. Berlin liegt nordöstlich von München und ist Bundeshauptstadt sowie ein eigenes Bundesland. Die politischen Funktionen sind von den natürlichen Eigenschaften eines Raums zu unterscheiden.",
+				"criteria": [
+					"Ich verorte Bayern.",
+					"Ich erkläre Berlin und München.",
+					"Ich nutze eine relative Lageangabe."
+				]
+			},
+			"2": {
+				"prompt": "Zeichne eine Deutschlandskizze aus dem Gedächtnis und prüfe anschließend drei Lagebeziehungen im Atlas.",
+				"hints": [
+					"Ich zeichne Orientierungspunkte.",
+					"Ich prüfe drei Lagebeziehungen."
+				],
+				"model": "Ich beginne mit einem groben Umriss und markiere Nord- und Ostsee, Bayern, Berlin und München. Danach prüfe ich Norden und Süden sowie die Lage Berlins zu München. Abweichungen verbessere ich mit einer anderen Farbe. Die Korrektur zeigt, welche räumliche Vorstellung noch ungenau war.",
+				"criteria": [
+					"Ich zeichne Orientierungspunkte.",
+					"Ich prüfe drei Lagebeziehungen.",
+					"Ich dokumentiere Korrekturen."
+				]
+			}
+		},
+		"model": "germany"
+	},
+	{
+		"id": "geo-bayern",
+		"lb": 5,
+		"title": "Bayern: Bezirke, Städte und Flüsse",
+		"period": "Geo5 LB 5 · Bayern: Bezirke, Städte und Flüsse",
+		"intro": "Verwaltung und Flussnetz sind zwei verschiedene Ordnungen desselben Raums.",
+		"paragraphs": [
+			"Bayern hat sieben Regierungsbezirke: Oberbayern mit München, Niederbayern mit Landshut, Oberpfalz mit Regensburg, Oberfranken mit Bayreuth, Mittelfranken mit Ansbach, Unterfranken mit Würzburg und Schwaben mit Augsburg. Unterhalb dieser Ebene liegen unter anderem Landkreise und kreisfreie Städte. Die eigene Gemeinde ist Teil dieser Verwaltungsgliederung.",
+			"Beispiel: Regensburg liegt an der Donau, Würzburg am Main. Die Donau durchquert Bayern überwiegend von Westen nach Osten; der Main entwässert über den Rhein zur Nordsee. Südliche Donauzuflüsse sind unter anderem Iller, Lech, Isar und Inn. Zeichne eine vereinfachte Bayernkarte mit Donau, Main, München und deinem Schulort. Flussläufe helfen bei der Orientierung, sind aber nicht automatisch Bezirksgrenzen. Prüfe Einzelheiten mit einer passenden Atlaskarte."
+		],
+		"takeaway": "Bayern gliedert sich in sieben Regierungsbezirke; Flüsse helfen bei der räumlichen Orientierung.",
+		"sourceIds": ["lehrplan", "bayern"],
+		"quiz": {
+			"question": "Wie viele Regierungsbezirke hat Bayern?",
+			"answer": "Sieben",
+			"wrong": ["Sechzehn", "Fünf"],
+			"explanation": "Die sieben Regierungsbezirke sind eine Verwaltungsebene innerhalb Bayerns."
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Werkstatt · Bayern: Bezirke, Städte und Flüsse",
+			"instruction": "Ordne die Beispiele zu. Lies bei der Prüfung auch die Begründungen.",
+			"categories": ["Donau", "Main", "Regierungssitz"],
+			"entries": [
+				{
+					"text": "Regensburg liegt an diesem großen Strom.",
+					"target": 0,
+					"feedback": "Regensburg liegt an der Donau."
+				},
+				{
+					"text": "Würzburg liegt an diesem Fluss.",
+					"target": 1,
+					"feedback": "Würzburg liegt am Main."
+				},
+				{
+					"text": "Ansbach ist Sitz der Regierung von Mittelfranken.",
+					"target": 2,
+					"feedback": "Die größte Stadt eines Bezirks muss nicht sein Regierungssitz sein."
+				},
+				{
+					"text": "Landshut ist Sitz der Regierung von Niederbayern.",
+					"target": 2,
+					"feedback": "Niederbayern ist einer der sieben Regierungsbezirke."
+				}
+			],
+			"conclusion": "Prüfe Flusslauf und Verwaltung jeweils mit einer passenden Karte."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Ordne München, Regensburg und Würzburg ihren Regierungsbezirken zu und ergänze zwei Flüsse.",
+				"hints": [
+					"Ich ordne die drei Städte richtig zu.",
+					"Ich nenne Donau und Main."
+				],
+				"model": "München gehört zu Oberbayern, Regensburg zur Oberpfalz und Würzburg zu Unterfranken. Regensburg liegt an der Donau, Würzburg am Main. Die Donau fließt in Bayern überwiegend nach Osten; der Main gehört zum Flusssystem des Rheins.",
+				"criteria": [
+					"Ich ordne die drei Städte richtig zu.",
+					"Ich nenne Donau und Main.",
+					"Ich unterscheide Fluss und Bezirk."
+				]
+			},
+			"2": {
+				"prompt": "Ein Mitschüler setzt Nürnberg als Regierungssitz Mittelfrankens ein. Wie prüfst und korrigierst du das?",
+				"hints": ["Ich unterscheide Größe und Funktion.", "Ich nenne Ansbach."],
+				"model": "Ich unterscheide die größte Stadt von der Stadt mit der Verwaltungsfunktion. Der Regierungssitz Mittelfrankens ist Ansbach. Ich kontrolliere die politische Karte oder eine amtliche Übersicht und verbessere die Skizze; Stadtgröße allein entscheidet nicht über den Regierungssitz.",
+				"criteria": [
+					"Ich unterscheide Größe und Funktion.",
+					"Ich nenne Ansbach.",
+					"Ich nenne eine geeignete Prüfung."
+				]
+			}
+		},
+		"model": "germany"
+	},
+	{
+		"id": "geo-grosslandschaften",
+		"lb": 5,
+		"title": "Von der Küste zu den Alpen",
+		"period": "Geo5 LB 5 · Von der Küste zu den Alpen",
+		"intro": "Vier Großlandschaften helfen beim Ordnen des Reliefs.",
+		"paragraphs": [
+			"Von Norden nach Süden unterscheidet man Norddeutsches Tiefland, Mittelgebirgsland, Alpenvorland und Alpen. Das Tiefland enthält neben Ebenen auch Hügel. Mittelgebirge sind ein vielfältiger Raum aus Gebirgen, Becken und Tälern. Das Alpenvorland liegt nördlich der Alpen und wurde teilweise durch Gletscher und Schmelzwasser geformt. Die Alpen bilden den Hochgebirgsraum ganz im Süden Deutschlands.",
+			"Beispiel: Hamburg liegt im Tiefland, der Harz ist ein Mittelgebirge, München liegt im Alpenvorland und die Zugspitze in den Alpen. Ein schematisches Nord-Süd-Profil macht die Abfolge sichtbar. Es bedeutet nicht, dass die Höhe an jedem Ort nach Süden zunimmt. Täler und Becken unterbrechen das Relief, und die Übergänge sind keine geraden Linien. Nutzung hängt außerdem von Boden, Wasser, Klima und Erreichbarkeit ab."
+		],
+		"takeaway": "Großlandschaften ordnen typische Oberflächenformen; ihre Grenzen sind Übergänge und keine Höhenlineale.",
+		"sourceIds": ["lehrplan"],
+		"quiz": {
+			"question": "Welche Großlandschaft reicht von den Küsten bis an den Mittelgebirgsraum?",
+			"answer": "Das Norddeutsche Tiefland",
+			"wrong": ["Das Alpenvorland", "Die Alpen"],
+			"explanation": "Das Tiefland bildet den großen nördlichen Landschaftsraum Deutschlands."
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Werkstatt · Von der Küste zu den Alpen",
+			"instruction": "Ordne die Beispiele zu. Lies bei der Prüfung auch die Begründungen.",
+			"categories": ["Tiefland", "Mittelgebirge", "Alpenvorland", "Alpen"],
+			"entries": [
+				{
+					"text": "Hamburg",
+					"target": 0,
+					"feedback": "Die Stadt liegt im Norddeutschen Tiefland."
+				},
+				{
+					"text": "Harz",
+					"target": 1,
+					"feedback": "Der Harz ist ein Mittelgebirge."
+				},
+				{
+					"text": "München",
+					"target": 2,
+					"feedback": "München liegt im Alpenvorland."
+				},
+				{
+					"text": "Zugspitze",
+					"target": 3,
+					"feedback": "Die Zugspitze liegt im Hochgebirgsraum der Alpen."
+				}
+			],
+			"conclusion": "Die vier Beispiele stehen für Räume und bilden kein genau vermessenes Geländeprofil."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Beschreibe die Abfolge der vier Großlandschaften von Norden nach Süden mit Beispielen.",
+				"hints": [
+					"Ich nenne alle vier Räume in Reihenfolge.",
+					"Ich ordne Beispiele zu."
+				],
+				"model": "Im Norden liegt das Norddeutsche Tiefland mit Hamburg. Südlich folgt das Mittelgebirgsland, etwa mit dem Harz. München liegt im Alpenvorland. Ganz im Süden schließen die Alpen mit der Zugspitze an. Die Abfolge vereinfacht eine Landschaft mit Tälern, Hügeln und Becken.",
+				"criteria": [
+					"Ich nenne alle vier Räume in Reihenfolge.",
+					"Ich ordne Beispiele zu.",
+					"Ich benenne die Vereinfachung."
+				]
+			},
+			"2": {
+				"prompt": "Ein Profil steigt als gerade Rampe von der Küste zur Zugspitze an. Was fehlt?",
+				"hints": ["Ich benenne fehlende Formen.", "Ich verbessere das Modell."],
+				"model": "Die Rampe verschweigt unterschiedliche Gebirge, Becken und Täler. Ich zeichne einen abwechslungsreichen Verlauf und kennzeichne ihn als schematisch. Für eine genaue Strecke brauche ich eine Höhenkarte entlang einer festgelegten Linie. Eine grobe Nord-Süd-Ordnung ist kein vermessenes Profil.",
+				"criteria": [
+					"Ich benenne fehlende Formen.",
+					"Ich verbessere das Modell.",
+					"Ich nenne eine Grundlage für ein echtes Profil."
+				]
+			}
+		},
+		"model": "relief"
+	},
+	{
+		"id": "geo-themenkarten",
+		"lb": 5,
+		"title": "Zwei thematische Karten vergleichen",
+		"period": "Geo5 LB 5 · Zwei thematische Karten vergleichen",
+		"intro": "Ein räumliches Muster ist der Anfang einer Erklärung.",
+		"paragraphs": [
+			"Eine thematische Karte zeigt ausgewählte Sachverhalte für einen Raum. Eine Karte zur Siedlung kann verdichtete Stadtregionen hervorheben, eine andere die landwirtschaftliche Nutzung. Du liest jede Karte zunächst einzeln: Titel, Raum, Datum, Legende und Maßstab. Erst danach vergleichst du Muster. Unterschiedliche Farben oder Klassen dürfen nicht ohne Prüfung gleichgesetzt werden.",
+			"Beispiel: Das Kartenmodell zeigt ausgewählte verdichtete Stadtregionen wie das Ruhrgebiet und München sowie Beispiele landwirtschaftlicher Räume wie die Lössbörden und das Allgäu. Die Markierungen sind qualitative Unterrichtsbeispiele, keine vollständige Statistik. Nähe zwischen Nutzung und Naturbedingungen kann eine Vermutung stützen, beweist aber keine einzige Ursache. Für aktuelle Verteilungen und Zahlen recherchierst du eine datierte amtliche Karte."
+		],
+		"takeaway": "Werte mindestens zwei Karten einzeln aus, vergleiche ihre Muster und trenne Beobachtung von Erklärung.",
+		"sourceIds": ["lehrplan"],
+		"quiz": {
+			"question": "Was prüfst du vor dem Vergleich zweier thematischer Karten?",
+			"answer": "Thema, Raum, Datum, Legende und Maßstab",
+			"wrong": ["Nur die schönere Farbe", "Nur die Anzahl der Städtenamen"],
+			"explanation": "Vergleichbarkeit hängt davon ab, was und wie die Karten darstellen."
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Werkstatt · Zwei thematische Karten vergleichen",
+			"instruction": "Ordne die Beispiele zu. Lies bei der Prüfung auch die Begründungen.",
+			"categories": ["Beobachtung", "Vermutung", "Unzulässiger Schluss"],
+			"entries": [
+				{
+					"text": "Die Karte markiert mehrere Stadtregionen.",
+					"target": 0,
+					"feedback": "Das ist direkt in der Darstellung erkennbar."
+				},
+				{
+					"text": "Gute Erreichbarkeit könnte eine Ansiedlung begünstigt haben.",
+					"target": 1,
+					"feedback": "Eine mögliche Erklärung benötigt weitere Belege."
+				},
+				{
+					"text": "Alle unmarkierten Flächen sind unbewohnt.",
+					"target": 2,
+					"feedback": "Die Karte kann Orte auswählen und vieles weglassen."
+				}
+			],
+			"conclusion": "Ein fehlendes Symbol bedeutet nicht automatisch, dass ein Sachverhalt dort nicht vorkommt."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Vergleiche die Unterrichtskarten Siedlung und Landwirtschaft nach je einem räumlichen Muster.",
+				"hints": [
+					"Ich beschreibe jede Karte einzeln.",
+					"Ich nenne konkrete Räume."
+				],
+				"model": "Die Siedlungskarte hebt ausgewählte Stadtregionen hervor, zum Beispiel das Ruhrgebiet und München. Die Landwirtschaftskarte zeigt ausgewählte Beispiele wie Ackerbauräume der Lössbörden und Grünland im Allgäu. Beide sind vereinfachte Auswahlen; sie liefern keine vollständige Dichte- oder Nutzungskarte.",
+				"criteria": [
+					"Ich beschreibe jede Karte einzeln.",
+					"Ich nenne konkrete Räume.",
+					"Ich begrenze die Aussage."
+				]
+			},
+			"2": {
+				"prompt": "Eine Karte von heute wird mit einer alten Karte in anderen Farbklassen verglichen. Wie vermeidest du einen falschen Wandel?",
+				"hints": ["Ich prüfe Datum und Raum.", "Ich vergleiche die Legenden."],
+				"model": "Ich prüfe Datumsangaben, Gebietsgrenzen und die Bedeutung der Farbklassen. Eine andere Farbe kann nur eine neue Klasseneinteilung bedeuten. Erst bei vergleichbaren Daten darf ich räumliche Veränderungen beschreiben. Unterschiede, die ich nicht bereinigen kann, kennzeichne ich ausdrücklich.",
+				"criteria": [
+					"Ich prüfe Datum und Raum.",
+					"Ich vergleiche die Legenden.",
+					"Ich begrenze Aussagen über Wandel."
+				]
+			}
+		},
+		"model": "thematic"
+	},
+	{
+		"id": "geo-schutzgebiete",
+		"lb": 5,
+		"title": "Landschaften schützen",
+		"period": "Geo5 LB 5 · Landschaften schützen",
+		"intro": "Schutzkategorie, Ort und Schutzziel gehören zusammen.",
+		"paragraphs": [
+			"Schutzgebiete haben unterschiedliche Ziele und Regeln. In Nationalparks soll sich Natur großflächig möglichst nach eigenen Abläufen entwickeln. Naturschutzgebiete schützen bestimmte Lebensräume oder Arten. Landschaftsschutzgebiete bewahren vor allem Eigenart und Leistungsfähigkeit von Landschaften. Die geltenden Regeln stehen in den jeweiligen örtlichen Bestimmungen; nicht jede Kategorie bedeutet ein vollständiges Betretungsverbot.",
+			"Beispiel: Der Nationalpark Bayerischer Wald liegt im Osten Bayerns an der Grenze zu Tschechien. Dort stehen Waldlebensräume und natürliche Entwicklung im Mittelpunkt. Die Wattenmeer-Nationalparks liegen an der deutschen Nordseeküste und schützen einen von Ebbe und Flut geprägten Lebensraum. Du vergleichst Wald und Watt nach Lage, Besonderheit, Gefährdung und Schutzidee. Eine Präsentation braucht dazu eine Karte und verlässliche örtliche Informationen."
+		],
+		"takeaway": "Begründe Schutz mit konkreten Landschaftseigenschaften und prüfe die Regeln am jeweiligen Ort.",
+		"sourceIds": ["lehrplan", "wald"],
+		"quiz": {
+			"question": "Welche Aussage beschreibt eine zentrale Idee eines Nationalparks?",
+			"answer": "Natur soll sich großflächig möglichst nach eigenen Abläufen entwickeln.",
+			"wrong": [
+				"Jede Fläche muss vollständig bebaut werden.",
+				"Überall gelten unabhängig vom Ort dieselben Besucherregeln."
+			],
+			"explanation": "Nationalparks schützen natürliche Prozesse; konkrete Regeln unterscheiden sich örtlich."
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Werkstatt · Landschaften schützen",
+			"instruction": "Ordne die Beispiele zu. Lies bei der Prüfung auch die Begründungen.",
+			"categories": ["Lage", "Schutzgrund", "Örtliche Regel prüfen"],
+			"entries": [
+				{
+					"text": "Bayerischer Wald an der Grenze zu Tschechien.",
+					"target": 0,
+					"feedback": "Das verortet das Beispiel in Ostbayern."
+				},
+				{
+					"text": "Lebensräume für Waldarten und natürliche Waldentwicklung erhalten.",
+					"target": 1,
+					"feedback": "Das begründet Schutzwürdigkeit."
+				},
+				{
+					"text": "Vor einer Wanderung die erlaubten Wege nachlesen.",
+					"target": 2,
+					"feedback": "Geltende Besucherregeln müssen ortsbezogen geprüft werden."
+				},
+				{
+					"text": "Wattenmeer an der deutschen Nordseeküste.",
+					"target": 0,
+					"feedback": "Das verortet das Küstenbeispiel."
+				}
+			],
+			"conclusion": "Deine tatsächliche Präsentation erfolgt mit Karte und Quellen im Unterricht."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Vergleiche den Bayerischen Wald und das Wattenmeer nach Lage und Schutzgrund.",
+				"hints": [
+					"Ich verorte beide Beispiele.",
+					"Ich nenne verschiedene Landschaftseigenschaften."
+				],
+				"model": "Der Bayerische Wald liegt in Ostbayern an Tschechiens Grenze und schützt unter anderem Waldlebensräume und natürliche Abläufe. Das Wattenmeer liegt an der Nordseeküste und ist durch den Wechsel von Ebbe und Flut geprägt. Beide Räume sind schutzwürdig, unterscheiden sich aber in Lebensräumen und örtlichen Regeln.",
+				"criteria": [
+					"Ich verorte beide Beispiele.",
+					"Ich nenne verschiedene Landschaftseigenschaften.",
+					"Ich begründe Schutz ohne Regeln zu erfinden."
+				]
+			},
+			"2": {
+				"prompt": "Plane eine kurze Vorstellung eines Schutzgebiets in deiner Region. Welche Belege brauchst du?",
+				"hints": [
+					"Ich wähle verlässliche Quellen.",
+					"Ich verbinde Lage und Schutzgrund."
+				],
+				"model": "Ich suche eine amtliche Karte, die Schutzkategorie und eine Erklärung der zuständigen Stelle zu Lebensräumen und Regeln. In der Vorstellung zeige ich Lage, Besonderheit und eine begründete Schutzidee. Die Präsentation und Rückfragen bearbeite ich im Unterricht; die App prüft diese Leistung nicht.",
+				"criteria": [
+					"Ich wähle verlässliche Quellen.",
+					"Ich verbinde Lage und Schutzgrund.",
+					"Ich plane eine reale Präsentation."
+				]
+			}
+		}
+	}
+]

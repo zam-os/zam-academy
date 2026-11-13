@@ -1,0 +1,371 @@
+[
+	{
+		"id": "geo-platten",
+		"lb": 4,
+		"title": "Kräfte aus dem Erdinneren",
+		"period": "Geo5 LB 4 · Kräfte aus dem Erdinneren",
+		"intro": "Vulkane, Erdbeben und Faltengebirge treten in räumlichen Mustern auf.",
+		"paragraphs": [
+			"Die feste äußere Erdhülle ist in bewegliche Platten gegliedert. Sie können auseinanderdriften, zusammenstoßen oder seitlich aneinander vorbeigleiten. Dabei entstehen unter anderem Erdbeben, Vulkane und Gebirge. Viele Ereignisse häufen sich an Plattengrenzen, aber nicht jeder Vulkan liegt dort. Endogen bedeutet, dass die antreibenden Kräfte aus dem Erdinneren kommen.",
+			"Beispiel: Island in Europa liegt an einer Grenze auseinanderdriftender Platten, Japan außerhalb Europas an Grenzen aufeinander zu gerichteter Platten. In beiden Räumen gibt es Vulkanismus und Erdbeben. Alpen und Himalaya sind Beispiele für Gebirgsbildung durch Annäherung und Kollision. Zeichne Pfeile für die Bewegung und verorte die Beispiele im Atlas. Das Muster erlaubt keine genaue Vorhersage des nächsten Bebens."
+		],
+		"takeaway": "Plattenbewegungen erklären viele Verteilungsmuster, sagen aber keinen genauen Erdbebentermin voraus.",
+		"sourceIds": ["lehrplan", "usgs"],
+		"quiz": {
+			"question": "Welcher Vorgang ist endogen?",
+			"answer": "Gebirgsbildung durch zusammenstoßende Platten",
+			"wrong": [
+				"Abtragung eines Ufers durch einen Fluss",
+				"Ausblasen von Sand durch Wind"
+			],
+			"explanation": "Endogene Kräfte haben ihren Antrieb im Erdinneren."
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Werkstatt · Kräfte aus dem Erdinneren",
+			"instruction": "Ordne die Beispiele zu. Lies bei der Prüfung auch die Begründungen.",
+			"categories": ["Auseinander", "Aufeinander zu", "Aneinander vorbei"],
+			"entries": [
+				{
+					"text": "Platten an Island entfernen sich voneinander.",
+					"target": 0,
+					"feedback": "Magma kann aufsteigen und neue Kruste bilden."
+				},
+				{
+					"text": "Kontinentale Bereiche bilden den Himalaya.",
+					"target": 1,
+					"feedback": "Die Kollision staucht und hebt Gestein."
+				},
+				{
+					"text": "Platten verschieben sich seitlich an einer Störung.",
+					"target": 2,
+					"feedback": "Spannungen können sich als Erdbeben lösen."
+				},
+				{
+					"text": "Eine ozeanische Platte taucht bei Japan unter eine andere.",
+					"target": 1,
+					"feedback": "Das ist ein Beispiel für Subduktion."
+				}
+			],
+			"conclusion": "Die Pfeile zeigen ein vereinfachtes Modell, nicht die genaue Bewegung jedes Ortes."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Vergleiche Island und Japan und erkläre das gemeinsame Verteilungsmuster.",
+				"hints": [
+					"Ich verorte Europa und Außereuropa.",
+					"Ich unterscheide die Bewegungen."
+				],
+				"model": "Island liegt an einer auseinanderdriftenden Plattengrenze, Japan an Grenzen, an denen Platten aufeinander zu driften und eine abtauchen kann. In beiden Räumen treten Vulkane und Erdbeben auf. Der Vergleich zeigt die Bedeutung von Plattengrenzen trotz unterschiedlicher Bewegung.",
+				"criteria": [
+					"Ich verorte Europa und Außereuropa.",
+					"Ich unterscheide die Bewegungen.",
+					"Ich erkläre das gemeinsame Muster."
+				]
+			},
+			"2": {
+				"prompt": "Eine Karte zeigt viele Erdbeben am Pazifikrand. Was darfst du daraus ableiten und was bleibt offen?",
+				"hints": ["Ich vergleiche zwei Karten.", "Ich erkläre das Muster."],
+				"model": "Ich vergleiche die Häufung mit einer Karte der Plattengrenzen. Eine räumliche Übereinstimmung stützt die Erklärung durch Plattenbewegungen. Die Karte sagt jedoch nicht, an welchem Tag und mit welcher Stärke das nächste Beben an einem Ort eintritt.",
+				"criteria": [
+					"Ich vergleiche zwei Karten.",
+					"Ich erkläre das Muster.",
+					"Ich begrenze die Vorhersage."
+				]
+			}
+		}
+	},
+	{
+		"id": "geo-gesteine",
+		"lb": 4,
+		"title": "Gesteine im Kreislauf",
+		"period": "Geo5 LB 4 · Gesteine im Kreislauf",
+		"intro": "Gestein kann sich bilden, zerbrechen und wieder verändern.",
+		"paragraphs": [
+			"Erstarrt Magma oder Lava, entstehen magmatische Gesteine. Ablagerungen wie Sand können über lange Zeit verdichtet und verkittet werden; so entstehen Sedimentgesteine. Unter hohem Druck und hoher Temperatur können vorhandene Gesteine ohne vollständiges Schmelzen umgewandelt werden. Diese Gruppen sind durch viele mögliche Wege verbunden, nicht durch eine einzige feste Reihenfolge.",
+			"Beispiel: Ein Gebirge wird verwittert und abgetragen. Sand gelangt über Flüsse in ein Becken und lagert sich ab. Später kann daraus Sandstein werden. Wird er tief versenkt, kann er umgewandelt werden; beim Schmelzen entsteht Magma. Hebung kann Gestein wieder an die Oberfläche bringen. Ein Kreislaufbild vereinfacht Prozesse, die unterschiedlich lange dauern und auch Abkürzungen nehmen können."
+		],
+		"takeaway": "Erstarrung, Ablagerung und Umwandlung sind verschiedene Wege der Gesteinsbildung.",
+		"sourceIds": ["lehrplan", "lfu"],
+		"quiz": {
+			"question": "Was kann aus verdichteten und verkitteten Sandablagerungen entstehen?",
+			"answer": "Sandstein",
+			"wrong": ["Frisch geschmolzenes Magma", "Ein künstlicher Satellit"],
+			"explanation": "Sandstein ist ein Sedimentgestein."
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Werkstatt · Gesteine im Kreislauf",
+			"instruction": "Ordne die Beispiele zu. Lies bei der Prüfung auch die Begründungen.",
+			"categories": ["Magmatisch", "Sedimentär", "Umgewandelt"],
+			"entries": [
+				{
+					"text": "Lava kühlt zu festem Gestein ab.",
+					"target": 0,
+					"feedback": "Erstarrung bildet magmatisches Gestein."
+				},
+				{
+					"text": "Sand wird abgelagert, verdichtet und verkittet.",
+					"target": 1,
+					"feedback": "Das ist ein Weg zur Bildung von Sedimentgestein."
+				},
+				{
+					"text": "Gestein verändert sich unter Druck und Hitze ohne vollständiges Schmelzen.",
+					"target": 2,
+					"feedback": "Das ist Metamorphose, also Umwandlung."
+				}
+			],
+			"conclusion": "Bei vollständigem Schmelzen entsteht Magma; das ist ein anderer Vorgang als feste Umwandlung."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Erkläre einen möglichen Weg vom Gebirge zum Sandstein.",
+				"hints": [
+					"Ich erkläre Abtrag und Transport.",
+					"Ich erkläre Ablagerung und Verfestigung."
+				],
+				"model": "Verwitterung lockert Material, Erosion trägt es ab und Flüsse transportieren den Sand. In einem Becken wird er abgelagert. Durch spätere Überlagerung, Verdichtung und Verkittung kann Sandstein entstehen. Dieser Weg dauert lange und ist nur eine Möglichkeit im Gesteinskreislauf.",
+				"criteria": [
+					"Ich erkläre Abtrag und Transport.",
+					"Ich erkläre Ablagerung und Verfestigung.",
+					"Ich vermeide eine starre Reihenfolge für alle Gesteine."
+				]
+			},
+			"2": {
+				"prompt": "Ein Schaubild sagt: Jedes Gestein muss zuerst Sandstein werden. Wie korrigierst du es?",
+				"hints": ["Ich nenne einen Gegenweg.", "Ich ergänze Verbindungen."],
+				"model": "Gesteine können verschiedene Wege nehmen. Magma kann unmittelbar erstarren; vorhandenes Gestein kann ohne vorherige Ablagerung umgewandelt werden. Ich zeichne deshalb mehrere Pfeile zwischen Vorgängen und Gruppen. Ein Kreislauf ist keine Pflichtreihenfolge für jedes einzelne Gestein.",
+				"criteria": [
+					"Ich nenne einen Gegenweg.",
+					"Ich ergänze Verbindungen.",
+					"Ich erkläre die Modellgrenze."
+				]
+			}
+		}
+	},
+	{
+		"id": "geo-abtragung",
+		"lb": 4,
+		"title": "Wasser, Wind und Temperatur",
+		"period": "Geo5 LB 4 · Wasser, Wind und Temperatur",
+		"intro": "Verwitterung, Abtragung und Ablagerung sind unterscheidbare Vorgänge.",
+		"paragraphs": [
+			"Exogene Kräfte wirken von außen auf die Erdoberfläche. Verwitterung lockert oder verändert Gestein am Ort, etwa durch starke Temperaturwechsel oder Frost. Erosion trägt Material ab, Wasser und Wind können es transportieren. Sedimentation bedeutet Ablagerung. Pflanzenbedeckung, Hangneigung und Bodenart beeinflussen, wie stark eine Fläche abgetragen wird.",
+			"Beispiel: Nach Frostwechsel liegen lose Stücke an einem Hang. Regenwasser nimmt einige mit, ein Bach transportiert sie und lagert sie an einer ruhigeren Stelle wieder ab. Ähnliche Abfolgen lassen sich an Flüssen in Europa und auf anderen Kontinenten beobachten. Wind kann feines ungeschütztes Material verwehen, beispielsweise auf trockenen Feldern oder in Wüsten. Nicht jede kleine Rinne beweist denselben Auslöser; Beobachtungen brauchen Kontext."
+		],
+		"takeaway": "Verwitterung verändert am Ort, Erosion entfernt, Transport verlagert und Sedimentation lagert ab.",
+		"sourceIds": ["lehrplan", "lfu"],
+		"quiz": {
+			"question": "Was bedeutet Erosion?",
+			"answer": "Abtragung von Boden oder Gestein",
+			"wrong": ["Erstarrung von Magma", "Drehung der Erde"],
+			"explanation": "Erosion ist das Entfernen von Material durch äußere Prozesse."
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Werkstatt · Wasser, Wind und Temperatur",
+			"instruction": "Ordne die Beispiele zu. Lies bei der Prüfung auch die Begründungen.",
+			"categories": ["Verwitterung", "Abtragung und Transport", "Ablagerung"],
+			"entries": [
+				{
+					"text": "Frost lockert Gestein in einer Spalte.",
+					"target": 0,
+					"feedback": "Das Material verändert sich zunächst am Ort."
+				},
+				{
+					"text": "Ein Bach nimmt Sand mit.",
+					"target": 1,
+					"feedback": "Wasser entfernt und bewegt Material."
+				},
+				{
+					"text": "Sand bleibt in einem ruhigeren Flussabschnitt liegen.",
+					"target": 2,
+					"feedback": "Die Teilchen werden abgelagert."
+				},
+				{
+					"text": "Wind trägt feinen Boden vom offenen Feld.",
+					"target": 1,
+					"feedback": "Auch Wind kann erodieren und transportieren."
+				}
+			],
+			"conclusion": "Mehrere Prozesse können an demselben Ort gleichzeitig ablaufen."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Beschreibe den Weg eines Sandkorns vom Hang bis zur Ablagerung im Bach.",
+				"hints": [
+					"Ich unterscheide die Vorgänge.",
+					"Ich verbinde sie durch einen Weg."
+				],
+				"model": "Verwitterung kann das Korn aus dem Gestein lösen. Regenwasser trägt es ab und transportiert es zum Bach. Dort wird es weiterbewegt und bei geringerer Transportkraft abgelagert. Später kann es erneut aufgenommen werden; der Weg endet nicht zwingend nach einer Ablagerung.",
+				"criteria": [
+					"Ich unterscheide die Vorgänge.",
+					"Ich verbinde sie durch einen Weg.",
+					"Ich beachte erneuten Transport."
+				]
+			},
+			"2": {
+				"prompt": "Zwei Felder bekommen gleich viel Regen. Warum kann eines mehr Boden verlieren?",
+				"hints": [
+					"Ich nenne zwei Standortfaktoren.",
+					"Ich erkläre deren Wirkung."
+				],
+				"model": "Ein steiler, unbedeckter Hang ist oft stärker gefährdet als eine flache Fläche mit Pflanzenbedeckung. Auch Bodenart und vorherige Feuchtigkeit wirken mit. Ich vergleiche deshalb Standort und Nutzung und erkläre den Unterschied nicht allein durch die gleiche Regenmenge.",
+				"criteria": [
+					"Ich nenne zwei Standortfaktoren.",
+					"Ich erkläre deren Wirkung.",
+					"Ich begrenze den Vergleich."
+				]
+			}
+		}
+	},
+	{
+		"id": "geo-naturrisiken",
+		"lb": 4,
+		"title": "Mit Naturkräften leben",
+		"period": "Geo5 LB 4 · Mit Naturkräften leben",
+		"intro": "Nutzen und Schutz lassen sich nur für einen konkreten Ort beurteilen.",
+		"paragraphs": [
+			"Vulkanische Böden können landwirtschaftlich genutzt werden, vulkanische Wärme kann Energie liefern. Gleichzeitig bedrohen Ausbrüche Siedlungen. Flüsse und Wind liefern Energie, können aber auch Schäden verursachen. Gefährdung, betroffene Menschen und Schutzmöglichkeiten müssen zusammen betrachtet werden. Warnsysteme, Bauweisen, freigehaltene Gefahrenzonen und geübte Abläufe können Risiken verringern.",
+			"Beispiel: Ein erfundenes Dorf am Vulkan nutzt fruchtbare Böden. Es plant Wege für eine geordnete Evakuierung und baut neue Häuser außerhalb besonders gefährdeter Zonen. Das senkt bestimmte Risiken, verhindert aber keinen Ausbruch. An einem Fluss können Rückhalteflächen Wasser zeitweise aufnehmen; sie ersetzen keine örtliche Gefahrenprüfung. Für echte Ereignisse gelten die Anweisungen der örtlichen Behörden und begleitenden Erwachsenen."
+		],
+		"takeaway": "Natürliche Prozesse lassen sich nutzen; Schutzmaßnahmen senken Risiken, ohne vollständige Sicherheit zu garantieren.",
+		"sourceIds": ["lehrplan"],
+		"quiz": {
+			"question": "Welche Aussage über Schutz vor Naturgefahren ist richtig?",
+			"answer": "Vorbereitung kann Risiken senken, aber nicht jede Gefahr beseitigen.",
+			"wrong": [
+				"Ein Warnsystem verhindert jeden Vulkanausbruch.",
+				"Eine Schutzmaßnahme wirkt an jedem Ort gleich."
+			],
+			"explanation": "Gefährdung und Wirkung von Maßnahmen hängen vom Ort und Ereignis ab."
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Werkstatt · Mit Naturkräften leben",
+			"instruction": "Ordne die Beispiele zu. Lies bei der Prüfung auch die Begründungen.",
+			"categories": ["Nutzen", "Vorsorge", "Unhaltbares Versprechen"],
+			"entries": [
+				{
+					"text": "Vulkanische Wärme zur Energiegewinnung einsetzen.",
+					"target": 0,
+					"feedback": "Das ist eine mögliche Nutzung natürlicher Wärme."
+				},
+				{
+					"text": "Gefahrenzonen bei der Siedlungsplanung berücksichtigen.",
+					"target": 1,
+					"feedback": "Weniger Menschen und Gebäude werden besonders hohen Gefahren ausgesetzt."
+				},
+				{
+					"text": "Ein Deich verhindert jedes denkbare Hochwasser.",
+					"target": 2,
+					"feedback": "Kein Bauwerk garantiert Schutz vor jedem Ereignis."
+				}
+			],
+			"conclusion": "Die Werkstatt ist keine Anleitung für das Verhalten in einer konkreten Notlage."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Erkläre am gedachten Vulkandorf einen Nutzen und zwei Möglichkeiten der Vorsorge.",
+				"hints": [
+					"Ich nenne den Nutzen.",
+					"Ich erkläre zwei Vorsorgemaßnahmen."
+				],
+				"model": "Die Bewohner können geeignete vulkanische Böden bewirtschaften. Gefahrenkarten helfen, neue Gebäude außerhalb besonders gefährdeter Zonen zu planen. Geübte Evakuierungswege unterstützen die Vorbereitung. Diese Maßnahmen verhindern keinen Ausbruch und brauchen örtliche Fachplanung.",
+				"criteria": [
+					"Ich nenne den Nutzen.",
+					"Ich erkläre zwei Vorsorgemaßnahmen.",
+					"Ich benenne die Schutzgrenze."
+				]
+			},
+			"2": {
+				"prompt": "Ein Ort plant Wasserkraft und möchte alle Auen bebauen. Welche räumliche Frage stellst du?",
+				"hints": [
+					"Ich berücksichtige Ober- und Unterlauf.",
+					"Ich unterscheide Ziele."
+				],
+				"model": "Ich frage, wo Wasser bei hohem Abfluss zurückgehalten werden kann und welche Orte flussabwärts betroffen sind. Energiegewinnung und Bebauung haben unterschiedliche Ziele. Vor einer Bewertung brauche ich Karten, örtliche Fachinformationen und die Perspektiven der betroffenen Menschen.",
+				"criteria": [
+					"Ich berücksichtige Ober- und Unterlauf.",
+					"Ich unterscheide Ziele.",
+					"Ich nenne benötigte Belege."
+				]
+			}
+		}
+	},
+	{
+		"id": "geo-umwelt",
+		"lb": 4,
+		"title": "Flächen nutzen und Natur schützen",
+		"period": "Geo5 LB 4 · Flächen nutzen und Natur schützen",
+		"intro": "Eine Fläche kann mehrere Ansprüche zugleich erfüllen müssen.",
+		"paragraphs": [
+			"Menschen nutzen Flächen zum Wohnen, für Landwirtschaft, Verkehr, Erholung und Energie. Diese Nutzungen können einander ergänzen oder in Konflikt geraten. Versiegelung erschwert das Versickern von Wasser und verändert Lebensräume. Naturschutz bedeutet, Folgen zu prüfen und begründete Entscheidungen zu treffen. Eine Maßnahme braucht ein klares Ziel und einen passenden Ort.",
+			"Beispiel: Auf einer gedachten Wiese sind ein Parkplatz, ein Spielbereich oder der Erhalt als Blühfläche im Gespräch. Du vergleichst Wege, Wasseraufnahme und Lebensräume sowie die Bedürfnisse verschiedener Menschen. Im eigenen Alltag kannst du Abfälle vermeiden, Dinge länger nutzen und geeignete Wege zu Fuß oder mit öffentlichen Verkehrsmitteln zurücklegen. Wähle eine umsetzbare Handlung und beobachte ihre Wirkung; ein angeklicktes Kästchen ersetzt diese Handlung nicht."
+		],
+		"takeaway": "Begründe eine Flächennutzung mit Folgen und Perspektiven und prüfe die Wirkung deines eigenen Handelns.",
+		"sourceIds": ["lehrplan"],
+		"quiz": {
+			"question": "Was ist ein Beispiel für einen Nutzungskonflikt?",
+			"answer": "Dieselbe Wiese wird als Parkplatz und als Lebensraum beansprucht.",
+			"wrong": [
+				"Zwei Namen bezeichnen dieselbe Straße.",
+				"Ein Globus wird um seine Achse gedreht."
+			],
+			"explanation": "Verschiedene Ansprüche konkurrieren hier um dieselbe Fläche."
+		},
+		"workshop": {
+			"kind": "classify",
+			"title": "Werkstatt · Flächen nutzen und Natur schützen",
+			"instruction": "Ordne die Beispiele zu. Lies bei der Prüfung auch die Begründungen.",
+			"categories": [
+				"Beobachtung",
+				"Begründetes Ziel",
+				"Noch zu prüfende Wirkung"
+			],
+			"entries": [
+				{
+					"text": "Eine Fläche ist vollständig asphaltiert.",
+					"target": 0,
+					"feedback": "Das lässt sich am Ort dokumentieren."
+				},
+				{
+					"text": "Wir wollen den Schulhof stärker beschatten.",
+					"target": 1,
+					"feedback": "Das ist ein benanntes Ziel."
+				},
+				{
+					"text": "Neue Bäume werden alle Hitzeprobleme lösen.",
+					"target": 2,
+					"feedback": "Die Wirkung hängt von Standort, Wachstum und weiteren Bedingungen ab."
+				}
+			],
+			"conclusion": "Setze eine passende Maßnahme wirklich um und bespreche die Beobachtungen im Unterricht."
+		},
+		"tasks": {
+			"1": {
+				"prompt": "Vergleiche Parkplatz und Blühfläche auf derselben gedachten Wiese mit zwei Kriterien.",
+				"hints": ["Ich nenne beide Nutzungen.", "Ich vergleiche zwei Folgen."],
+				"model": "Ein Parkplatz bietet Stellflächen, versiegelt aber meist Boden und verändert Lebensräume. Eine Blühfläche kann Insekten Nahrung bieten und Wasseraufnahme erhalten, schafft jedoch keine Stellplätze. Ich vergleiche Bedarf, Wasser und Artenvielfalt, statt nur eine Nutzung pauschal als gut zu bezeichnen.",
+				"criteria": [
+					"Ich nenne beide Nutzungen.",
+					"Ich vergleiche zwei Folgen.",
+					"Ich wäge mit Kriterien ab."
+				]
+			},
+			"2": {
+				"prompt": "Plane eine kleine Umweltschutzhandlung für deine Schule und eine Prüfung ihrer Wirkung.",
+				"hints": [
+					"Ich nenne eine umsetzbare Handlung.",
+					"Ich plane einen Vergleich."
+				],
+				"model": "Ich schlage zum Beispiel vor, gemeinsam wiederverwendbare Trinkflaschen zu nutzen. Vorher und nachher beobachten wir an vereinbarten Tagen, wie viele Einwegflaschen anfallen. Wir halten Unterschiede und mögliche andere Ursachen fest. Die Durchführung und Bewertung bleiben eine reale Klassenaufgabe.",
+				"criteria": [
+					"Ich nenne eine umsetzbare Handlung.",
+					"Ich plane einen Vergleich.",
+					"Ich unterscheide Planung und Durchführung."
+				]
+			}
+		}
+	}
+]
