@@ -103,7 +103,7 @@ export function newStoneAge(): string {
 
 export function huntersToFarmers(): string {
   const rows: Array<[string, string, string]> = [
-    ["Nahrung", "jagen, fischen und sammeln", "Getreide anbauen, Tiere halten"],
+    ["Nahrung", "jagen und sammeln", "Getreide anbauen, Tiere halten"],
     ["Wohnen", "Zelte und Höhlen, oft wechselnd", "feste Häuser im Dorf"],
     ["Lebensweise", "ziehen den Tieren nach", "bleiben am Feld: sesshaft"],
     ["Dinge", "Faustkeil, Speer, Kleidung aus Fell", "Tontöpfe, Sichel, geschliffenes Beil, Webstoff"],
@@ -197,18 +197,18 @@ export function nileAchievements(): string {
 
 export function limesStructure(): string {
   const body = `<rect class="sky" width="800" height="280"/><path class="ground-line" d="M0 220H800V280H0Z"/>
-  <path class="ditch" d="M90 220l40 34 40-34z"/>${label(130, 274, "Graben", "lbl tiny")}
-  <path class="wall-earth" d="M190 220q40-40 80 0z"/>${label(230, 238, "Wall", "lbl tiny")}
-  ${Array.from({ length: 9 }, (_, i) => `<rect class="palisade" x="${290 + i * 12}" y="150" width="9" height="70"/><path class="palisade" d="M${290 + i * 12} 150l4.5-8 4.5 8z"/>`).join("")}${label(342, 238, "Palisade aus Holz", "lbl tiny")}
+  ${Array.from({ length: 9 }, (_, i) => `<rect class="palisade" x="${90 + i * 12}" y="150" width="9" height="70"/><path class="palisade" d="M${90 + i * 12} 150l4.5-8 4.5 8z"/>`).join("")}${label(142, 238, "Palisade aus Holz", "lbl tiny")}
+  <path class="ditch" d="M222 220l40 34 40-34z"/>${label(262, 274, "Graben (später)", "lbl tiny")}
+  <path class="wall-earth" d="M318 220q40-40 80 0z"/>${label(358, 238, "Wall (später)", "lbl tiny")}
   <rect class="tower" x="430" y="100" width="56" height="120"/><rect class="tower-top" x="424" y="86" width="68" height="20"/><path class="roof" d="M420 88l38-30 38 30z"/><rect class="tower-window" x="450" y="120" width="16" height="16"/>${label(458, 238, "Wachturm", "lbl tiny")}
   <rect class="fort" x="560" y="160" width="200" height="60"/>${Array.from({ length: 10 }, (_, i) => `<rect class="fort" x="${560 + i * 20}" y="152" width="10" height="10"/>`).join("")}<rect class="gate" x="645" y="184" width="30" height="36" rx="15"/>${label(660, 238, "Kastell mit Soldaten", "lbl tiny")}
   ${person(520, 220, 1, "cloth-trader")}${arrow(500, 200, 470, 200, "arrow thin")}${labels(600, 120, "Händler durften an Toren\nmit Kontrolle passieren", "lbl tiny")}
   ${labels(50, 40, "← Gebiet freier Germanen", "lbl small", "start")}${labels(750, 40, "Römisches Reich →", "lbl small", "end")}
-  ${labels(400, 270, "In Raetien (Bayern) ersetzte später eine Steinmauer die Palisade.", "lbl tiny")}`;
+  ${labels(560, 270, "In Raetien (heute vor allem Bayern) ersetzte später eine Steinmauer die Palisade.", "lbl tiny")}`;
   return svg(
     800,
     280,
-    "Aufbau des Limes im Querschnitt: Graben, Wall, Palisade aus Holz, ein Wachturm und ein Kastell mit Tor, an dem Händler kontrolliert passieren durften",
+    "Aufbau des Limes in Obergermanien im Querschnitt, von den Germanen aus gesehen: Palisade aus Holz, dahinter später ein Graben und ein Wall, dann ein Wachturm und ein Kastell mit Tor, an dem Händler kontrolliert passieren durften",
     body,
   );
 }

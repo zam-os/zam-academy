@@ -55,6 +55,7 @@ const RIVER_IDS = new Set([
   "Isar",
   "Regnitz",
   "Salzach",
+  "Lech",
   "Nile",
 ]);
 const rivers = (m: MapData) =>
@@ -158,12 +159,25 @@ export function climateZones(): string {
     [-66.5, "Südlicher Polarkreis"],
   ];
   const [gx, gy] = at(m, 10.4, 51.2);
+  // Legend in the open South Pacific; the subtropics end at about 40°.
+  const entries: Array<[string, string]> = [
+    ["zone-tropic", "Tropen"],
+    ["zone-subtropic", "Subtropen (bis etwa 40°)"],
+    ["zone-temperate", "gemäßigte Zone"],
+    ["zone-polar", "polare Zone"],
+  ];
+  const legend = `<rect class="legend-panel" x="10" y="240" width="190" height="88" rx="8"/>${entries
+    .map(
+      ([cls, name], i) =>
+        `<rect class="swatch ${cls}" x="20" y="${250 + i * 19}" width="16" height="12" rx="2"/>${label(42, 260 + i * 19, name, "lbl tiny", "start")}`,
+    )
+    .join("")}`;
   const body = `<defs>${clip}</defs>${sea(m)}${zones}${lines
     .map(
       ([lat, name]) =>
         `<line class="${lat === 0 ? "equator" : "latitude"}" x1="0" x2="${w}" y1="${f1(y(lat))}" y2="${f1(y(lat))}"/>${label(w - 6, y(lat) - 4, name, "lbl small", "end")}`,
     )
-    .join("")}<path class="star" d="M${f1(gx)} ${f1(gy - 8)}l2.4 5.2 5.6.6-4.2 3.8 1.2 5.5-5-2.9-5 2.9 1.2-5.5-4.2-3.8 5.6-.6z"/>${label(gx + 10, gy - 8, "Deutschland", "lbl small", "start")}`;
+    .join("")}<path class="star" d="M${f1(gx)} ${f1(gy - 8)}l2.4 5.2 5.6.6-4.2 3.8 1.2 5.5-5-2.9-5 2.9 1.2-5.5-4.2-3.8 5.6-.6z"/>${label(gx + 10, gy - 8, "Deutschland", "lbl small", "start")}${legend}`;
   return svg(
     w,
     m.proj.height,
@@ -183,20 +197,21 @@ export function germany(): string {
   ${place(m, [
     [6.9, 54.55, "Nordsee", "lbl sea-label"],
     [12.9, 54.75, "Ostsee", "lbl sea-label"],
-    [9.5, 55.05, "Dänemark", "lbl small muted"],
-    [15.1, 52.0, "Polen", "lbl small muted"],
+    [9.7, 54.92, "Dänemark", "lbl small muted"],
+    [15.0, 53.4, "Polen", "lbl small muted"],
     [14.2, 49.75, "Tschechien", "lbl small muted"],
     [13.6, 47.5, "Österreich", "lbl small muted"],
     [8.1, 47.35, "Schweiz", "lbl small muted"],
     [6.2, 48.75, "Frankreich", "lbl small muted"],
-    [5.75, 50.45, "Belgien", "lbl small muted"],
+    [5.85, 50.3, "Bel-\ngien", "lbl small muted"],
+    [6.1, 49.72, "Lux.", "lbl tiny muted"],
     [6.0, 52.45, "Nieder-\nlande", "lbl small muted"],
     [6.35, 50.95, "Rhein", "lbl river-label"],
     [11.05, 53.15, "Elbe", "lbl river-label"],
     [10.9, 48.55, "Donau", "lbl river-label"],
     [10.25, 50.3, "Main", "lbl river-label"],
     [9.45, 52.6, "Weser", "lbl river-label"],
-    [14.9, 52.95, "Oder", "lbl river-label"],
+    [14.25, 52.3, "Oder", "lbl river-label"],
     [11.6, 49.15, "BAYERN", "lbl home-label"],
   ])}
   <path class="star" d="M${f1(bx)} ${f1(by - 8)}l2.4 5.2 5.6.6-4.2 3.8 1.2 5.5-5-2.9-5 2.9 1.2-5.5-4.2-3.8 5.6-.6z"/>${label(bx, by + 18, "Berlin", "lbl small")}
@@ -237,6 +252,8 @@ export function bavaria(): string {
     [12.75, 48.68, "Donau", "lbl river-label"],
     [12.25, 48.32, "Isar", "lbl river-label"],
     [12.6, 48.02, "Inn", "lbl river-label"],
+    [10.72, 48.2, "Lech", "lbl river-label"],
+    [11.12, 49.72, "Regnitz", "lbl river-label"],
   ])}
   <path class="peak" d="M${f1(zx - 8)} ${f1(zy + 6)}L${f1(zx)} ${f1(zy - 8)}L${f1(zx + 8)} ${f1(zy + 6)}Z"/>${label(zx + 11, zy + 4, "Zugspitze", "lbl small", "start")}
   ${BAVARIA_CITIES.map(([lon, lat, n]) => {
@@ -308,7 +325,7 @@ export const ROME_MARKERS: Array<[number, number, number]> = [
   [30.5, 26.5, 2],
   [9.6, 56.1, 3],
   [-1.5, 52.4, 4],
-  [9.5, 34.2, 5],
+  [10, 36, 5],
   [13.4, 52.5, 6],
   [22.2, 39.3, 7],
   [-8, 53.2, 8],

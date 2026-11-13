@@ -1310,6 +1310,26 @@ article[data-lb] .panel {
   font-weight: 700;
   font-size: 12px;
 }
+:root[data-theme="dark"] .figure-svg :is(.sea-label, .river-label) {
+  fill: #a9d8ff;
+}
+:root[data-theme="dark"] .figure-svg .germanic-label {
+  fill: #9be8b1;
+}
+:root[data-theme="dark"] .figure-svg .rome-label {
+  fill: #ffb4a6;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .figure-svg :is(.sea-label, .river-label) {
+    fill: #a9d8ff;
+  }
+  :root:not([data-theme="light"]) .figure-svg .germanic-label {
+    fill: #9be8b1;
+  }
+  :root:not([data-theme="light"]) .figure-svg .rome-label {
+    fill: #ffb4a6;
+  }
+}
 .figure-svg .limes-label {
   fill: var(--f-red);
   font-weight: 800;
@@ -1442,6 +1462,23 @@ article[data-lb] .panel {
 .figure-svg .zone-temperate path {
   fill: #6dbb5a;
   stroke: none;
+}
+.figure-svg .legend-panel {
+  fill: var(--f-halo);
+  opacity: 0.9;
+  stroke: var(--line);
+}
+.figure-svg .swatch.zone-tropic {
+  fill: #e2553f;
+}
+.figure-svg .swatch.zone-subtropic {
+  fill: #f4b13c;
+}
+.figure-svg .swatch.zone-temperate {
+  fill: #6dbb5a;
+}
+.figure-svg .swatch.zone-polar {
+  fill: #bfe1f5;
 }
 .figure-svg .zone-polar path {
   fill: #bfe1f5;

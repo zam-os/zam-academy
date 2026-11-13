@@ -13,6 +13,7 @@ import { FIGURES, renderFigure } from "../src/figures";
 import {
   BAVARIA_CITIES,
   CONTINENT_MARKERS,
+  MAPS,
   ROME_MARKERS,
 } from "../src/figures/maps";
 import {
@@ -114,6 +115,7 @@ describe("GPG 5 curriculum and teaching material", () => {
     expect(
       coverage.rows.filter((r) => r.status === "supported").map((r) => [r.lb, r.position]),
     ).toEqual([
+      [1, 4],
       [1, 5],
       [4, 2],
       [4, 4],
@@ -194,6 +196,32 @@ describe("figures and maps", () => {
     for (const id of ["sonnensystem", "rom-karte", "klimazonen", "landschaften-profil", "limes-karte"])
       expect(FIGURES[id].caption).toMatch(/vereinfacht|nicht maßstabsgetreu|überhöht|Skizze/i);
     expect(renderFigure("missing")).toBe("");
+  });
+
+  it("draws the farmers, not the slaves, as the widest layer of the pyramid", () => {
+    const svg = renderFigure("pyramide");
+    expect(svg).toContain("Bauern: die größte Gruppe");
+    expect(svg).toContain("kleine Gruppe, oft Kriegsgefangene");
+    const layer = (cls: string) =>
+      [...svg.matchAll(new RegExp(`<path class="${cls}" d="([^"]+)"`, "g"))].flatMap(
+        (m) => [...m[1].matchAll(/[ML]([\d.]+) /g)].map((x) => Number(x[1])),
+      );
+    const width = (xs: number[]) => Math.max(...xs) - Math.min(...xs);
+    for (const upper of ["layer-1", "layer-2", "layer-3", "layer-4"])
+      expect(width(layer("layer-5"))).toBeGreaterThan(width(layer(upper)));
+    const slaves = svg.match(/<rect class="layer-6"[^>]*width="(\d+)"/)!;
+    expect(Number(slaves[1])).toBeLessThan(width(layer("layer-5")) / 3);
+    const lesson = findLesson("gpg5-pyramide")!;
+    expect(lesson.quiz.answer).toBe("die Bauern");
+    expect(lesson.paragraphs.join(" ")).toContain("Sklaven und Unfreie, oft Kriegsgefangene, waren eine kleine Gruppe");
+  });
+
+  it("keeps Europe in Europe: no French Guiana or Siberia in the purple area", () => {
+    const europe = MAPS.world.layers.continents.find((c) => c.id === "Europe")!;
+    const xs = [...europe.d.matchAll(/[ML](-?[\d.]+) /g)].map((m) => Number(m[1]));
+    const lonOf = (x: number) => x / (MAPS.world.proj.k * MAPS.world.proj.c) + MAPS.world.proj.lonMin;
+    expect(lonOf(Math.min(...xs))).toBeGreaterThan(-32);
+    expect(lonOf(Math.max(...xs))).toBeLessThanOrEqual(60.5);
   });
 
   it("numbers map markers to match the workshops that ask for them", () => {
@@ -401,6 +429,30 @@ describe("independent cell and pinned contract", () => {
         expect(i.language).toBe("de");
         expect(i.concept).not.toMatch(/\d\.\d/);
       }
+    }
+  });
+
+  it("links prerequisites to earlier lessons and keeps fast checks answerable", () => {
+    const order = cell.atoms.map((a) => a.id);
+    let linked = 0;
+    for (const [i, a] of cell.atoms.entries())
+      for (const pre of a.prerequisites as Array<{ atom_id: string; type: string; rationale: string }>) {
+        expect(order.indexOf(pre.atom_id)).toBeGreaterThanOrEqual(0);
+        expect(order.indexOf(pre.atom_id)).toBeLessThan(i);
+        expect(pre.type).toBe("soft");
+        expect(pre.rationale.length).toBeGreaterThan(30);
+        linked++;
+      }
+    expect(linked).toBeGreaterThanOrEqual(14);
+    // A fast check that only works with the options in view names them.
+    for (const a of cell.atoms) {
+      const fast = a.practice_items[0];
+      if (/^(Was war früher\?|Welche Regel|Welcher Satz|Was ist für die Umwelt)/.test(fast.question))
+        for (const option of fast.fast_check!.options) expect(fast.question).toContain(option);
+    }
+    for (const slug of ["gpg5-zeitleiste", "gpg5-regeln", "gpg5-streit-loesen", "gpg5-umwelt-alltag"]) {
+      const fast = cell.atoms.find((a) => a.slug === slug)!.practice_items[0];
+      for (const option of fast.fast_check!.options) expect(fast.question).toContain(option);
     }
   });
 

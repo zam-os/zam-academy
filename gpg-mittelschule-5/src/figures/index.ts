@@ -108,7 +108,7 @@ export const FIGURES: Record<string, FigureDef> = {
   bayern: {
     title: "Bayern",
     caption:
-      "Die Zahlen markieren sechs große Städte. Die Flüsse helfen dir, sie zu finden. Kartengrundlage: Natural Earth (gemeinfrei).",
+      "Die Zahlen markieren sechs große Städte. Die Flüsse helfen dir, sie zu finden. Der Lech ist vereinfacht eingezeichnet. Kartengrundlage: Natural Earth (gemeinfrei).",
     draw: bavaria,
   },
   "alpen-kueste": {
@@ -190,7 +190,7 @@ export const FIGURES: Record<string, FigureDef> = {
   "limes-aufbau": {
     title: "So war der Limes gebaut",
     caption:
-      "Schema nach Funden. Nicht an jeder Stelle gab es alle Teile.",
+      "Schema nach Funden, Obergermanien. Graben und Wall kamen später hinzu oder ersetzten die Palisade; nicht an jeder Stelle gab es alle Teile.",
     draw: limesStructure,
   },
   "roemer-spuren": {
@@ -206,7 +206,7 @@ export const FIGURES: Record<string, FigureDef> = {
   pyramide: {
     title: "Die Gesellschaftspyramide",
     caption:
-      "Ein Modell: Es zeigt, wer viel und wer wenig Macht hatte. Einzelne Menschen konnten aufsteigen, etwa über die Schreiberschule.",
+      "Ein Modell: Die Breite zeigt, wie viele Menschen zu einer Gruppe gehörten, die Höhe, wie viel Macht sie hatten. Sklaven waren eine kleine Gruppe. Einzelne Menschen konnten aufsteigen, etwa über die Schreiberschule.",
     draw: societyPyramid,
   },
   volksversammlung: {
@@ -270,5 +270,5 @@ export const FIGURES: Record<string, FigureDef> = {
 export function renderFigure(id: string): string {
   const figure = FIGURES[id];
   if (!figure) return "";
-  return `<figure class="lesson-figure" data-figure="${esc(id)}">${figure.draw()}<figcaption><strong>${esc(figure.title)}.</strong> ${esc(figure.caption)}</figcaption></figure>`;
+  return `<figure class="lesson-figure" data-figure="${esc(id)}">${figure.draw()}<figcaption><strong>${esc(figure.title)}${figure.title.endsWith(".") ? "" : "."}</strong> ${esc(figure.caption)}</figcaption></figure>`;
 }

@@ -27,33 +27,37 @@ export function egyptWork(): string {
 }
 
 export function societyPyramid(): string {
-  const layers: Array<[string, string]> = [
-    ["Pharao", "layer-1"],
-    ["Wesir, Beamte, Priester", "layer-2"],
-    ["Schreiber", "layer-3"],
-    ["Handwerker, Händler, Soldaten", "layer-4"],
-    ["Bauern", "layer-5"],
-    ["Sklaven und Unfreie", "layer-6"],
+  // Five layers from the Pharao down to the farmers. The farmers' layer is
+  // the widest and tallest: they were by far the largest group. Slaves and
+  // unfree people were a small group and sit in a narrow box below.
+  const layers: Array<[string, string, number]> = [
+    ["Pharao", "layer-1", 46],
+    ["Wesir, Beamte, Priester", "layer-2", 46],
+    ["Schreiber", "layer-3", 46],
+    ["Handwerker, Händler, Soldaten", "layer-4", 46],
+    ["Bauern: die größte Gruppe", "layer-5", 70],
   ];
   const top = 20,
-    h = 46,
     cx = 360,
     slope = 1.15;
+  let y0 = top;
   const body = layers
-    .map(([name, cls], i) => {
-      const y0 = top + i * h,
-        y1 = y0 + h;
+    .map(([name, cls, h], i) => {
+      const y1 = y0 + h;
       const half0 = (y0 - top) * slope,
         half1 = (y1 - top) * slope;
-      return `<path class="${cls}" d="M${f1(cx - half0)} ${y0}L${f1(cx + half0)} ${y0}L${f1(cx + half1)} ${y1}L${f1(cx - half1)} ${y1}Z"/>${label(cx, y0 + 32, name, i === 0 ? "lbl tiny on-layer" : "lbl small on-layer")}`;
+      const shape = `<path class="${cls}" d="M${f1(cx - half0)} ${y0}L${f1(cx + half0)} ${y0}L${f1(cx + half1)} ${y1}L${f1(cx - half1)} ${y1}Z"/>${label(cx, y0 + (h > 46 ? 44 : 32), name, i === 0 ? "lbl tiny on-layer" : "lbl small on-layer")}`;
+      y0 = y1;
+      return shape;
     })
     .join("");
-  const yEnd = top + layers.length * h;
+  const yEnd = y0;
+  const slaves = `<rect class="layer-6" x="285" y="${yEnd + 10}" width="150" height="28" rx="4"/>${label(cx, yEnd + 29, "Sklaven und Unfreie", "lbl tiny on-layer")}${label(446, yEnd + 29, "kleine Gruppe, oft Kriegsgefangene, kaum Rechte", "lbl tiny", "start")}`;
   return svg(
     800,
-    340,
-    "Gesellschaftspyramide des alten Ägypten von oben nach unten: Pharao; Wesir, hohe Beamte und Priester; Schreiber; Handwerker, Händler und Soldaten; Bauern; Sklaven und Unfreie. Nach oben nehmen Macht und Ansehen zu, nach unten die Zahl der Menschen.",
-    `${body}${arrow(710, yEnd, 710, top + 10, "arrow power")}${labels(722, 120, "Macht und\nAnsehen\nnehmen zu", "lbl small", "start")}${arrow(24, top + 10, 24, yEnd, "arrow")}${labels(38, 60, "nach unten:\nmehr\nMenschen", "lbl small", "start")}${label(360, 328, "Modell: Die Wirklichkeit war vielfältiger.", "lbl tiny")}`,
+    350,
+    "Gesellschaftspyramide des alten Ägypten von oben nach unten: Pharao; Wesir, hohe Beamte und Priester; Schreiber; Handwerker, Händler und Soldaten; Bauern als größte Gruppe. Darunter in einem schmalen Kasten Sklaven und Unfreie, eine kleine Gruppe mit kaum Rechten. Nach oben nehmen Macht und Ansehen zu.",
+    `${body}${slaves}${arrow(710, yEnd, 710, top + 10, "arrow power")}${labels(722, 120, "Macht und\nAnsehen\nnehmen zu", "lbl small", "start")}${arrow(24, top + 10, 24, yEnd, "arrow")}${labels(38, 60, "nach unten:\nmehr\nMenschen", "lbl small", "start")}${label(360, 344, "Modell: Die Wirklichkeit war vielfältiger.", "lbl tiny")}`,
   );
 }
 

@@ -191,6 +191,13 @@ const ROMAN_EMPIRE_117 = [
   [11, 31.6], [9.5, 32.8], [8, 34], [6, 34.6], [3.5, 35.2], [1, 35.1],
   [-2, 35], [-4.5, 34.6], [-5.5, 33.9], [-7, 33.8],
 ];
+/**
+ * Simplified course of the Lech (Natural Earth has no Lech): Füssen,
+ * Schongau, Landsberg, Augsburg, mouth into the Danube near Marxheim.
+ */
+const LECH = [
+  [10.7, 47.57], [10.9, 47.81], [10.87, 48.05], [10.92, 48.37], [10.96, 48.73],
+];
 /** Simplified line of the Upper Germanic-Raetian Limes, Rhine to Danube. */
 const LIMES = [
   [7.33, 50.5], [7.75, 50.33], [8.1, 50.26], [8.57, 50.27], [8.67, 50.43],
@@ -212,6 +219,17 @@ const maps = {};
   for (const f of layer.ne_110m_admin_0_countries.features) {
     const continent = f.properties.CONTINENT;
     if (continent === "Seven seas (open ocean)") continue;
+    if (f.properties.ADM0_A3 === "FRA") {
+      // France's shape includes French Guiana: draw it with South America.
+      const all =
+        f.geometry.type === "Polygon" ? [f.geometry.coordinates] : f.geometry.coordinates;
+      for (const poly of all)
+        add(
+          poly[0].every(([lon]) => lon < -30) ? "South America" : continent,
+          polygonPath(p, { type: "Polygon", coordinates: poly }, 0.6),
+        );
+      continue;
+    }
     if (f.properties.ADM0_A3 !== "RUS") {
       add(continent, polygonPath(p, f.geometry, 0.6));
       continue;
@@ -266,7 +284,10 @@ const maps = {};
     layers: {
       countries: countries("ne_50m_admin_0_countries", p, (q) => q.ADM0_A3 !== "DEU"),
       states: states(p, () => true),
-      rivers: rivers(p, ["Donau", "Danube", "Main", "Isar", "Inn", "Regnitz", "Salzach"]),
+      rivers: [
+        ...rivers(p, ["Donau", "Danube", "Main", "Isar", "Inn", "Regnitz", "Salzach"]),
+        { id: "Lech", d: handPath(p, LECH, false) },
+      ],
       lakes: lakes(p, ["Bodensee"]),
     },
   };

@@ -148,7 +148,7 @@ export function readingMaps(): string {
   ${lines}${grid}
   <path class="north-arrow" d="M462 70l10-26 10 26-10-7z"/>${label(472, 92, "N", "lbl small")}
   <rect class="scale-a" x="40" y="${y0 + 4 * rh + 18}" width="55" height="8"/><rect class="scale-b" x="95" y="${y0 + 4 * rh + 18}" width="55" height="8"/>${label(40, y0 + 4 * rh + 44, "0", "lbl tiny")}${label(150, y0 + 4 * rh + 44, "500 m", "lbl tiny")}${label(200, y0 + 4 * rh + 28, "Maßstabsleiste", "lbl tiny", "start")}
-  ${panel(510, 40, 260, 300)}${label(530, 66, "Legende", "lbl strong", "start")}
+  ${panel(510, 40, 260, 320)}${label(530, 66, "Legende", "lbl strong", "start")}
   <circle class="forest" cx="540" cy="92" r="9"/>${label(560, 97, "Wald", "lbl small", "start")}
   <rect class="lake-fill" x="530" y="112" width="20" height="14" rx="5"/>${label(560, 124, "See", "lbl small", "start")}
   <path class="river-line" d="M530 150h22"/>${label(560, 154, "Fluss", "lbl small", "start")}
@@ -156,11 +156,12 @@ export function readingMaps(): string {
   <path class="rail" d="M530 206h22"/><path class="rail-ties" d="M530 206h22"/>${label(560, 210, "Bahnlinie", "lbl small", "start")}
   ${church(541, 240)}${label(560, 244, "Kirche", "lbl small", "start")}
   ${school(541, 276)}${label(560, 280, "Schule", "lbl small", "start")}
-  ${station(541, 312)}${label(560, 316, "Bahnhof", "lbl small", "start")}`;
+  ${station(541, 312)}${label(560, 316, "Bahnhof", "lbl small", "start")}
+  <rect class="house" x="534" y="334" width="14" height="12"/>${label(560, 345, "Wohnhaus", "lbl small", "start")}`;
   return svg(
     800,
     400,
-    "Erfundene Karte eines Dorfes mit Gitter aus den Spalten A bis D und den Zeilen 1 bis 4, mit Wald, See, Fluss, Straße, Bahnlinie, Kirche, Schule und Bahnhof, dazu Legende, Nordpfeil und Maßstabsleiste",
+    "Erfundene Karte eines Dorfes mit Gitter aus den Spalten A bis D und den Zeilen 1 bis 4, mit Wald, See, Fluss, Straße, Bahnlinie, Kirche, Schule, Bahnhof und Wohnhäusern, dazu Legende, Nordpfeil und Maßstabsleiste",
     body,
   );
 }

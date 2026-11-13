@@ -16,7 +16,7 @@ Registering the first real GPG package changed one shared test: `scripts/academy
 
 | LB | Kompetenzerwartungen | Lessons | Status |
 | --- | ---: | --- | --- |
-| 1 Lebensraum Erde | 5 | sonnensystem, erde-entstehung, kontinente, globus-karte, klimazonen, karten-lesen, deutschland, bayern, bayern-kueste, energie, umwelt-alltag | 4 implemented, 1 supported (own environmental behaviour) |
+| 1 Lebensraum Erde | 5 | sonnensystem, erde-entstehung, kontinente, globus-karte, klimazonen, karten-lesen, deutschland, bayern, bayern-kueste, energie, umwelt-alltag | 3 implemented, 2 supported (comparing the own region; own environmental behaviour) |
 | 2 Zeit und Wandel | 4 | zeitleiste, altsteinzeit, jungsteinzeit, jaeger-bauern, nil, nil-leistungen, nil-heute, rom-reich, limes, roemer-spuren | 4 implemented |
 | 3 Politik und Gesellschaft | 2 | aegypten-alltag, pyramide, volksversammlung, demokratie, griechen-erbe | 2 implemented |
 | 4 Lebenswelt | 4 | konflikte, streit-loesen, regeln, klassensprecher, klassenrat, familienformen, familienwandel, inklusion | 2 implemented, 2 supported (democratic behaviour in a real election and class council; respectful cooperation with people with disabilities) |
@@ -37,7 +37,7 @@ BayEUG Art. 62 Abs. 3 was read for the class-representative lesson: "Ab Jahrgang
 
 ## Maps and drawings
 
-Maps are prepared once from public-domain Natural Earth v5.1.1 data (file hashes in `gpg-mittelschule-5/src/data/NOTICE.md`) and stored as projected SVG paths (213 KB). Natural Earth files all of Russia under Europe; the script splits it at 60° E so Siberia is drawn as Asia. The Roman Empire around 117 AD and the Limes line are simplified hand-drawn sketches clipped to the land and labelled as such. Drawn scenes (Stone Age, Nile year, Assuan dam, society pyramid, Pnyx, conflict stairs, …) are labelled as simplified where that matters. Every lesson shows at least one figure; each Lernbereich has its own accent colour in light and both dark selectors.
+Maps are prepared once from public-domain Natural Earth v5.1.1 data (file hashes in `gpg-mittelschule-5/src/data/NOTICE.md`) and stored as projected SVG paths (213 KB). Natural Earth files all of Russia under Europe and French Guiana under France; the script draws Siberia as Asia (split at 60° E) and French Guiana as South America. The Lech is missing from Natural Earth and is drawn as a simplified line. The Roman Empire around 117 AD and the Limes line are simplified hand-drawn sketches clipped to the land and labelled as such. The Limes cross-section shows the palisade on the Germanic side with ditch and bank behind it, marked as later additions; the Wikipedia article „Obergermanisch-Raetischer Limes“ (read 2026-11-14) confirms that ditch and bank were added later or replaced the palisade and that Raetia got a stone wall instead, but does not state the order in so many words. Drawn scenes (Stone Age, Nile year, Assuan dam, society pyramid, Pnyx, conflict stairs, …) are labelled as simplified where that matters. Every lesson shows at least one figure; each Lernbereich has its own accent colour in light and both dark selectors.
 
 ## Existing ZAM cards
 
