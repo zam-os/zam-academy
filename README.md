@@ -27,6 +27,7 @@ Hands-on training apps that build understanding before [ZAM](https://github.com/
 | Mathematik 6 Gymnasium (LehrplanPLUS Bayern) | [`mathematik-gymnasium-6/`](mathematik-gymnasium-6/) | https://academy.zam-os.org/mathematik-gymnasium-6/ | `zam-academy:mathematik-gymnasium-6` |
 | Mathematik 7 Gymnasium (LehrplanPLUS Bayern) | [`mathematik-gymnasium-7/`](mathematik-gymnasium-7/) | https://academy.zam-os.org/mathematik-gymnasium-7/ | `zam-academy:mathematik-gymnasium-7` |
 | Geographie 5 Gymnasium (LehrplanPLUS Bayern) | [`geographie-gymnasium-5/`](geographie-gymnasium-5/) | Built by Pages on merge | `zam-academy:geographie-gymnasium-5` |
+| Biologie 5 Gymnasium: Natur und Technik 5, Schwerpunkt Biologie (LehrplanPLUS Bayern) | [`biologie-gymnasium-5/`](biologie-gymnasium-5/) | Built by Pages on merge | `zam-academy:biologie-gymnasium-5` |
 | Mathematik 11 Gymnasium (LehrplanPLUS Bayern) | [`mathematik-gymnasium-11/`](mathematik-gymnasium-11/) | https://academy.zam-os.org/mathematik-gymnasium-11/ | `zam-academy:mathematik-gymnasium-11` |
 | Mathematik 12 Gymnasium (LehrplanPLUS Bayern) | [`mathematik-gymnasium-12/`](mathematik-gymnasium-12/) | https://academy.zam-os.org/mathematik-gymnasium-12/ | `zam-academy:mathematik-gymnasium-12` |
 | Mathematik 6 Realschule (LehrplanPLUS Bayern, alle Wahlpflichtfächergruppen) | [`mathematik-realschule-6/`](mathematik-realschule-6/) | https://academy.zam-os.org/mathematik-realschule-6/ | `zam-academy:mathematik-realschule-6` |
@@ -165,6 +166,7 @@ cd uml                 # or: cd physik-realschule-9 (dev server on :5181), cd sq
 # Natur und Technik 5 Mittelschule: cd nt-mittelschule-5 (dev server on :5243)
 # Mathematik 7 Gymnasium: cd mathematik-gymnasium-7 (dev server on :5242)
 # Geographie 5 Gymnasium: cd geographie-gymnasium-5 (dev server on :5244)
+# Biologie 5 Gymnasium: cd biologie-gymnasium-5 (dev server on :5246)
 # French 5 Gymnasium: cd franzoesisch-gymnasium-5 (dev server on :5245)
 # Grade 11 introductory biology preview: cd biologie-gymnasium-11 (dev server on :5227)
 npm ci
