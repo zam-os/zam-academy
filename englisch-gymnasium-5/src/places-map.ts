@@ -52,12 +52,57 @@ export const HAWAII = [
 	[348, 248],
 ] as const satisfies readonly MapPoint[];
 
+export const SCOTLAND = [
+	[150, 36],
+	[190, 28],
+	[220, 70],
+	[200, 125],
+	[145, 115],
+	[125, 90],
+] as const satisfies readonly MapPoint[];
+
+export const ENGLAND = [
+	[145, 115],
+	[200, 125],
+	[230, 190],
+	[205, 270],
+	[168, 300],
+	[150, 230],
+	[155, 160],
+] as const satisfies readonly MapPoint[];
+
+export const WALES = [
+	[115, 170],
+	[150, 155],
+	[158, 210],
+	[140, 255],
+	[125, 250],
+] as const satisfies readonly MapPoint[];
+
+export const NORTHERN_IRELAND = [
+	[95, 145],
+	[112, 140],
+	[118, 175],
+	[100, 185],
+	[88, 165],
+] as const satisfies readonly MapPoint[];
+
+export const REPUBLIC_OF_IRELAND = [
+	[78, 175],
+	[100, 185],
+	[118, 190],
+	[100, 250],
+	[70, 255],
+	[55, 200],
+	[60, 175],
+] as const satisfies readonly MapPoint[];
+
 export const PLACES = {
-	london: { name: "London", pin: [190, 200], labelAt: [198, 196], land: "gb" },
-	edinburgh: { name: "Edinburgh", pin: [170, 70], labelAt: [178, 66], land: "gb" },
-	cardiff: { name: "Cardiff", pin: [145, 185], labelAt: [108, 178], land: "gb" },
-	dublin: { name: "Dublin", pin: [82, 200], labelAt: [20, 214], land: "ireland" },
-	belfast: { name: "Belfast", pin: [100, 160], labelAt: [20, 150], land: "ireland" },
+	london: { name: "London", pin: [190, 200], labelAt: [236, 204], land: "england" },
+	edinburgh: { name: "Edinburgh", pin: [170, 70], labelAt: [8, 74], land: "scotland" },
+	cardiff: { name: "Cardiff", pin: [140, 210], labelAt: [148, 248], land: "wales" },
+	dublin: { name: "Dublin", pin: [82, 210], labelAt: [8, 236], land: "republic" },
+	belfast: { name: "Belfast", pin: [100, 160], labelAt: [8, 148], land: "northern-ireland" },
 	ottawa: { name: "Ottawa", pin: [480, 90], labelAt: [488, 86], land: "canada" },
 	washington: { name: "Washington, D.C.", pin: [500, 190], labelAt: [508, 186], land: "lower48" },
 	newYork: { name: "New York", pin: [540, 175], labelAt: [548, 170], land: "lower48" },
@@ -78,10 +123,10 @@ function pins(ids: (keyof typeof PLACES)[]): string {
 export function renderBritishIsles(): string {
 	return `<figure class="places-map"><svg viewBox="0 0 320 360" role="img" aria-label="Lernskizze der Britischen Inseln. Norden ist oben. Nicht maßstäblich.">
 	<rect width="320" height="360" rx="16" class="sea"/>
-	<g data-map-layer="countries"><path class="land" data-land="gb" d="${path(GREAT_BRITAIN)} Z"/><path class="land" data-land="ireland" d="${path(IRELAND_ISLAND)} Z"/></g>
+	<g data-map-layer="countries"><path class="land region" data-land="scotland" d="${path(SCOTLAND)} Z"/><path class="land region" data-land="england" d="${path(ENGLAND)} Z"/><path class="land region" data-land="wales" d="${path(WALES)} Z"/><path class="land region" data-land="republic" d="${path(REPUBLIC_OF_IRELAND)} Z"/><path class="land region" data-land="northern-ireland" d="${path(NORTHERN_IRELAND)} Z"/><text class="region-name" x="168" y="88">Scotland</text><text class="region-name" x="175" y="180">England</text><text class="region-name" x="118" y="200">Wales</text></g>
 	<g data-map-layer="waters" class="water-labels"><text x="236" y="48">North Sea</text><text x="16" y="300">Atlantic</text><text x="70" y="340">English Channel</text><text x="270" y="24">N ↑</text></g>
 	<g data-map-layer="cities" class="map-cities">${pins(["edinburgh", "belfast", "dublin", "cardiff", "london"])}</g>
-	</svg><figcaption>Lernskizze · Norden oben · nicht maßstäblich. London, Edinburgh und Cardiff liegen auf Great Britain. Dublin und Belfast liegen auf der Insel Ireland.</figcaption></figure>
+	</svg><figcaption>Lernskizze · Norden oben · nicht maßstäblich. Scotland, England und Wales liegen auf Great Britain. Northern Ireland und die Republic of Ireland teilen sich die Insel Ireland.</figcaption></figure>
 	<div class="map-controls" aria-label="Kartenebenen">${[
 		["countries", "Länder"],
 		["cities", "Städte"],

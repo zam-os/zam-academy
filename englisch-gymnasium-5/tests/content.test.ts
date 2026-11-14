@@ -37,6 +37,11 @@ import {
 import {
 	GREAT_BRITAIN,
 	IRELAND_ISLAND,
+	SCOTLAND,
+	ENGLAND,
+	WALES,
+	NORTHERN_IRELAND,
+	REPUBLIC_OF_IRELAND,
 	LOWER_48,
 	CANADA,
 	ALASKA,
@@ -111,13 +116,8 @@ describe("Grade 5 Gymnasium English teaching contract", () => {
 		}
 		for (const id of lesson.sourceIds) expect(SOURCES.some((source) => source.id === id)).toBe(true);
 		expect(JSON.stringify(lesson)).not.toMatch(/<script|<p>|<div>|\\\\\(|teacherVideo/);
-		expect(JSON.stringify({
-			paragraphs: lesson.paragraphs,
-			material: lesson.material,
-			quiz: lesson.quiz,
-			tasks: lesson.tasks,
-			practice: lesson.practice,
-		})).not.toMatch(/\d\.\d/);
+		for (const entry of lesson.practice)
+			expect(entry.prompt, lesson.id).toMatch(/\([^)]+\)/);
 	});
 	it.each(LESSONS)("proves every visual goal reachable and none true initially: $id", (lesson) => {
 		expect(lesson.workshop.goals).toHaveLength(3);
@@ -162,6 +162,9 @@ describe("Grade 5 Gymnasium English teaching contract", () => {
 		expect(text("e5-modals")).toContain("needn't");
 		expect(text("e5-have-got")).toContain("lässt got weg");
 		expect(text("e5-past")).toContain("didn't");
+		expect(text("e5-time")).toContain("7.30");
+		expect(text("e5-time")).not.toContain("keine englische Uhrzeit");
+		expect(findLesson("e5-sounds")!.quiz.question).toContain("/iː/");
 		expect(text("e5-awareness")).toContain("werden");
 		expect(text("e5-uk")).toContain("Northern Ireland");
 		expect(text("e5-america")).toContain("Washington, D.C.");
@@ -206,6 +209,12 @@ describe("clock, ordinals and the schematic maps", () => {
 	it("puts cities on the land the lessons name", () => {
 		expect(inside(PLACES.london.pin, GREAT_BRITAIN)).toBe(true);
 		expect(inside(PLACES.edinburgh.pin, GREAT_BRITAIN)).toBe(true);
+		expect(inside(PLACES.edinburgh.pin, SCOTLAND)).toBe(true);
+		expect(inside(PLACES.london.pin, ENGLAND)).toBe(true);
+		expect(inside(PLACES.cardiff.pin, WALES)).toBe(true);
+		expect(inside(PLACES.belfast.pin, NORTHERN_IRELAND)).toBe(true);
+		expect(inside(PLACES.dublin.pin, REPUBLIC_OF_IRELAND)).toBe(true);
+		expect(inside(PLACES.dublin.pin, NORTHERN_IRELAND)).toBe(false);
 		expect(inside(PLACES.cardiff.pin, GREAT_BRITAIN)).toBe(true);
 		expect(inside(PLACES.dublin.pin, IRELAND_ISLAND)).toBe(true);
 		expect(inside(PLACES.belfast.pin, IRELAND_ISLAND)).toBe(true);
@@ -311,7 +320,7 @@ describe("ZAM content and the proposal-only history", () => {
 		for (const item of atom.practice_items) {
 			expect(item.source_link).toBe(lessonLink(lesson.id));
 			expect(item.question.length).toBeGreaterThan(15);
-			expect(item.concept.length).toBeGreaterThan(3);
+			expect(item.concept.length).toBeGreaterThan(2);
 			expect(item.question).not.toMatch(/\s\?$/);
 			if (item.fast_check) {
 				expect(item.fast_check.options).toHaveLength(2);

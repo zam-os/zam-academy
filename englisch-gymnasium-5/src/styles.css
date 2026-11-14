@@ -1144,6 +1144,34 @@ dialog::backdrop {
 	stroke: var(--muted);
 	stroke-width: 2;
 }
+.region {
+	stroke: var(--ink);
+	stroke-width: 1.6;
+}
+.region-name {
+	font-size: 11px;
+	fill: var(--muted);
+}
+.family-tree svg,
+.distance-scene svg {
+	width: 100%;
+	height: auto;
+}
+.family-tree rect,
+.distance-scene rect {
+	fill: var(--surface);
+	stroke: var(--ink);
+}
+.family-tree text,
+.distance-scene text {
+	fill: var(--ink);
+	font: 14px system-ui, sans-serif;
+}
+.family-tree path {
+	fill: none;
+	stroke: var(--muted);
+	stroke-width: 2;
+}
 .map-rivers path {
 	fill: none;
 	stroke: #297eaf;

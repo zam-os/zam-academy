@@ -4,7 +4,7 @@ import { checkPractice } from "../src/practice";
 import { clockLabel } from "../src/workshop";
 
 describe("reviewed learner-facing language", () => {
-	it("does not accept a dotted time as half past or quarter to", () => {
+	it("asks for the spoken time in words and still rejects bare digits", () => {
 		const lesson = findLesson("e5-time")!;
 		expect(checkPractice(lesson.practice, ["7.30", "7.45"])).toEqual([false, false]);
 		expect(checkPractice(lesson.practice, ["past", "to"])).toEqual([true, true]);

@@ -33,14 +33,14 @@
 		"takeaway": "Hello mit Namen passt zu Erwachsenen, Hi zu Freunden. Ein Ja zum Angebot heißt Yes, please, ein freundliches Nein heißt No, thank you.",
 		"practice": [
 			{
-				"prompt": "You meet your teacher: ___, Mrs Taylor.",
+				"prompt": "You meet your teacher: ___, Mrs Taylor. (förmliche Begrüßung)",
 				"answers": [
 					"Hello"
 				],
 				"feedback": "Hello eröffnet das Gespräch mit einer erwachsenen Person."
 			},
 			{
-				"prompt": "You do not want the biscuit: ___, thank you.",
+				"prompt": "You do not want the biscuit: ___, thank you. (höfliches Nein)",
 				"answers": [
 					"No"
 				],
@@ -146,14 +146,14 @@
 		"takeaway": "Eine Bitte im Unterricht benutzt die Grundform. Don't steht vor der Grundform. Please kann am Anfang oder am Ende stehen.",
 		"practice": [
 			{
-				"prompt": "A polite start: ___ open your book.",
+				"prompt": "A polite start: ___ open your book. (Höflichkeit)",
 				"answers": [
 					"Please"
 				],
 				"feedback": "Please steht vor der Bitte."
 			},
 			{
-				"prompt": "A ban: ___ run.",
+				"prompt": "A ban: ___ run. (Verbot)",
 				"answers": [
 					"Don't",
 					"Do not"
@@ -259,7 +259,7 @@
 		"takeaway": "1st, 2nd und 3rd sind die Sonderformen. 11th, 12th und 13th behalten th. Danach gilt wieder st, nd, rd, th.",
 		"practice": [
 			{
-				"prompt": "Write the ordinal for 3: ___.",
+				"prompt": "Write the ordinal for 3: ___. (Ordnungszahl)",
 				"answers": [
 					"3rd",
 					"third"
@@ -267,7 +267,7 @@
 				"feedback": "3 bekommt rd."
 			},
 			{
-				"prompt": "Write the ordinal for 11: ___.",
+				"prompt": "Write the ordinal for 11: ___. (Ordnungszahl)",
 				"answers": [
 					"11th",
 					"eleventh"
@@ -352,7 +352,7 @@
 		],
 		"paragraphs": [
 			"Die Uhr in der Werkstatt zeigt die Zeit digital und als englische Wendung. Volle Stunden heißen o'clock: three o'clock. Eine Viertelstunde nach der Stunde heißt quarter past: quarter past three. Die Hälfte heißt half past: half past three. Eine Viertelstunde vor der nächsten Stunde heißt quarter to: quarter to four. 12:00 liest du als twelve o'clock. 00:00 ist midnight.",
-			"at steht vor der Uhrzeit: at seven o'clock. in the morning, in the afternoon und in the evening nennen den Tagesabschnitt. on Monday nennt den Tag. Schreibe die Wörter aus. Eine Zahl mit Punkt ist keine englische Uhrzeit. Stelle die Zeiger auf 7:30 und lies half past seven. Stelle sie danach auf 7:45 und lies quarter to eight."
+			"at steht vor der Uhrzeit: at seven o'clock. in the morning, in the afternoon und in the evening nennen den Tagesabschnitt. on Monday nennt den Tag. Schreibe die Wörter aus. Geschrieben darfst du 7:30 oder im britischen Englisch 7.30 nutzen. Gesprochen heißt diese Zeit half past seven. Die Kurzaufgabe verlangt die Wörter. Stelle die Zeiger auf 7:30 und lies half past seven. Stelle sie danach auf 7:45 und lies quarter to eight."
 		],
 		"material": "three o'clock, quarter past three, half past three, quarter to four. at seven o'clock. in the morning. on Monday. 00:00 midnight. 12:00 twelve o'clock.",
 		"materialLabel": "Eigenes englisches Übungsmaterial · erfundene Personen und Angaben",
@@ -373,14 +373,14 @@
 		"takeaway": "o'clock für die volle Stunde, quarter past, half past und quarter to. at steht vor der Uhrzeit.",
 		"practice": [
 			{
-				"prompt": "7:30 in words: half ___ seven.",
+				"prompt": "7:30 in words: half ___ seven. (Wörter, nicht Ziffern)",
 				"answers": [
 					"past"
 				],
 				"feedback": "half past nennt 30 Minuten."
 			},
 			{
-				"prompt": "7:45 in words: quarter ___ eight.",
+				"prompt": "7:45 in words: quarter ___ eight. (Wörter, nicht Ziffern)",
 				"answers": [
 					"to"
 				],
@@ -399,12 +399,12 @@
 				"language": "en"
 			},
 			"2": {
-				"prompt": "Eine Freundin setzt einen Punkt zwischen Stunde und Minuten und meint halb acht. Antworte auf Englisch mit der richtigen Wendung und erkläre auf Deutsch, warum der Punkt nicht passt.",
-				"model": "It is half past seven. Ein Punkt zwischen den Zahlen ist keine englische Uhrzeit. Die Wörter half past seven nennen die Zeit.",
+				"prompt": "Deine Freundin liest 7.30 als sieben dreißig. Sag die Zeit auf Englisch in Wörtern und erkläre auf Deutsch, dass 7.30 und 7:30 dieselbe Uhrzeit meinen.",
+				"model": "It is half past seven. 7.30 und 7:30 sind dieselbe Uhrzeit. Gesprochen heißt sie half past seven.",
 				"criteria": [
 					"Ich nenne half past seven.",
-					"Ich lehne die Punktschreibweise ab.",
-					"Ich begründe die Lesart."
+					"Ich behandle 7.30 und 7:30 als dieselbe Zeit.",
+					"Ich unterscheide Schrift und gesprochene Form."
 				],
 				"language": "de"
 			}
@@ -487,14 +487,14 @@
 		"takeaway": "Englisch ist eine Weltsprache, weil viele Menschen es auch untereinander nutzen. Aktuelle Zahlen übernimmst du nur aus einer geöffneten Quelle.",
 		"practice": [
 			{
-				"prompt": "People use English ___ countries.",
+				"prompt": "People use English ___ countries. (zwischen)",
 				"answers": [
 					"between"
 				],
 				"feedback": "between countries nennt den Gebrauch zwischen Ländern."
 			},
 			{
-				"prompt": "I stay with ___ variety.",
+				"prompt": "I stay with ___ variety. (Zahlwort: eine)",
 				"answers": [
 					"one"
 				],
@@ -578,7 +578,7 @@
 			"5"
 		],
 		"paragraphs": [
-			"Familienwörter baust du auf der Grundschule auf: mother, father, sister, brother, parents, grandmother, grandfather, aunt, uncle, cousin. Der Possessivbegleiter steht vor dem Nomen und richtet sich nach dem Besitzer, nicht nach dem Gegenstand. I → my, you → your, he → his, she → her, it → its, we → our, they → their. its hat keinen Apostroph. it's bedeutet it is.",
+			"Familienwörter kennst du aus der Grundschule: mother, father, sister, brother, parents, grandmother, grandfather, aunt, uncle, cousin. Der Possessivbegleiter steht vor dem Nomen und richtet sich nach dem Besitzer, nicht nach dem Gegenstand. I → my, you → your, he → his, she → her, it → its, we → our, they → their. its hat keinen Apostroph. it's bedeutet it is.",
 			"Beispiel: Mia is my sister. Her rabbit is white. Its name is Snow. Our parents live in York. Their house is small. Sam is her cousin. Frage: Who is this? This is my brother. Beschreibe danach eine erfundene Familie mit mindestens vier Personen und den passenden Begleitern."
 		],
 		"material": "This is my family. Mia is my sister. Her rabbit is white. Its name is Snow. Our parents live in York. Their house is small. Sam is her cousin.",
@@ -600,14 +600,14 @@
 		"takeaway": "Der Possessivbegleiter steht vor dem Nomen: my, your, his, her, its, our, their. its gehört zu it, it's bedeutet it is.",
 		"practice": [
 			{
-				"prompt": "She → ___ rabbit.",
+				"prompt": "She → ___ rabbit. (Possessivbegleiter)",
 				"answers": [
 					"her"
 				],
 				"feedback": "she verlangt her."
 			},
 			{
-				"prompt": "The rabbit → ___ name.",
+				"prompt": "The rabbit → ___ name. (it, ohne Apostroph)",
 				"answers": [
 					"its"
 				],
@@ -711,14 +711,14 @@
 		"takeaway": "am, is und are gehören zu to be. In der bejahten Kurzantwort bleiben sie unverkürzt: Yes, I am. Yes, she is.",
 		"practice": [
 			{
-				"prompt": "She ___ my sister.",
+				"prompt": "She ___ my sister. (to be)",
 				"answers": [
 					"is"
 				],
 				"feedback": "he, she und it verlangen is."
 			},
 			{
-				"prompt": "Are they at school? No, they ___.",
+				"prompt": "Are they at school? No, they ___. (to be, verneint)",
 				"answers": [
 					"aren't",
 					"are not"
@@ -812,7 +812,7 @@
 			"lp"
 		],
 		"quiz": {
-			"question": "Wie lautet die korrekte bejahende Kurzantwort (Short Answer) auf die Frage 'Have you got a new computer?'?",
+			"question": "Wie lautet die bejahte Kurzantwort auf Have you got a new computer?",
 			"answer": "Yes, I have.",
 			"wrong": [
 				"Yes, I have got.",
@@ -824,14 +824,14 @@
 		"takeaway": "have got bei I, you, we, they. has got bei he, she, it. Die Kurzantwort heißt Yes, I have oder No, she hasn't, ohne got.",
 		"practice": [
 			{
-				"prompt": "She ___ got a rabbit.",
+				"prompt": "She ___ got a rabbit. (3. Person)",
 				"answers": [
 					"has"
 				],
 				"feedback": "he, she und it verlangen has got."
 			},
 			{
-				"prompt": "Have you got a bike? Yes, I ___.",
+				"prompt": "Have you got a bike? Yes, I ___. (Kurzantwort, ohne got)",
 				"answers": [
 					"have"
 				],
@@ -936,14 +936,14 @@
 		"takeaway": "there is für ein Ding, there are für mehrere. Zimmer und Möbel nennst du mit den gelernten Wörtern.",
 		"practice": [
 			{
-				"prompt": "One bed: There ___ a bed.",
+				"prompt": "One bed: There ___ a bed. (ein Ding)",
 				"answers": [
 					"is"
 				],
 				"feedback": "Einzahl verlangt is."
 			},
 			{
-				"prompt": "Two chairs: There ___ two chairs.",
+				"prompt": "Two chairs: There ___ two chairs. (mehrere)",
 				"answers": [
 					"are"
 				],
@@ -1048,14 +1048,14 @@
 		"takeaway": "Die meisten Nomen bilden den Plural mit s oder es. mouse, child, man, woman, sheep und fish lernst du als feste Ausnahmen.",
 		"practice": [
 			{
-				"prompt": "one mouse, two ___.",
+				"prompt": "one mouse, two ___. (unregelmäßiger Plural)",
 				"answers": [
 					"mice"
 				],
 				"feedback": "Der Plural heißt mice."
 			},
 			{
-				"prompt": "I ___ after the rabbit.",
+				"prompt": "I ___ after the rabbit. (phrasal verb, sich kümmern)",
 				"answers": [
 					"look"
 				],
@@ -1137,7 +1137,7 @@
 			"1.2"
 		],
 		"paragraphs": [
-			"a und an sind unbestimmt und stehen bei einem einzelnen zählbaren Nomen. Du hörst auf den Laut, nicht nur auf den Buchstaben. a book, a uniform, weil uniform mit dem Laut j beginnt. an apple, an hour, weil hour mit einem Vokal laut beginnt. the steht, wenn die Sache schon bekannt oder einmalig ist: the sun, the UK, the rabbit from the last sentence.",
+			"a und an sind unbestimmt und stehen bei einem einzelnen zählbaren Nomen. Du hörst auf den Laut, nicht nur auf den Buchstaben. a book, a uniform, weil uniform mit dem Laut j beginnt. an apple, an hour, weil hour mit einem Vokallaut beginnt. the steht, wenn die Sache schon bekannt oder einmalig ist: the sun, the UK, the rabbit from the last sentence.",
 			"Im Plural fällt a oder an weg: books, not a books. an apple, two apples. Beispiel: I've got an apple and a sandwich. The sandwich is for lunch. There is an hour before school. Uniform beginnt mit einem Konsonantenlaut, deshalb a uniform. Übe drei Wörter laut, bevor du den Artikel schreibst."
 		],
 		"material": "a book, an apple, an hour, a uniform. I've got an apple and a sandwich. The sandwich is for lunch. There are books on the table.",
@@ -1159,14 +1159,14 @@
 		"takeaway": "a vor einem Konsonantenlaut, an vor einem Vokallaut. the für Bekanntes oder Einmaliges. Vor dem Plural steht kein a und kein an.",
 		"practice": [
 			{
-				"prompt": "___ apple",
+				"prompt": "___ apple (a oder an)",
 				"answers": [
 					"an"
 				],
 				"feedback": "apple beginnt mit einem Vokal."
 			},
 			{
-				"prompt": "___ uniform",
+				"prompt": "___ uniform (a oder an)",
 				"answers": [
 					"a"
 				],
@@ -1270,14 +1270,14 @@
 		"takeaway": "Vor dem Verb steht I, he, she, we oder they. Nach dem Verb oder nach einer Präposition steht me, him, her, us oder them.",
 		"practice": [
 			{
-				"prompt": "Sam knows ___.",
+				"prompt": "Sam knows ___. (mich)",
 				"answers": [
 					"me"
 				],
 				"feedback": "Nach knows steht me."
 			},
 			{
-				"prompt": "The present is for ___.",
+				"prompt": "The present is for ___. (ihn)",
 				"answers": [
 					"him"
 				],
@@ -1372,8 +1372,8 @@
 			"question": "Wem gehört der Hund, wenn Anna die Besitzerin ist?",
 			"answer": "Anna's dog",
 			"wrong": [
-				"the dog of Anna's",
-				"Annas dog"
+				"Annas dog",
+				"the dog of Anna"
 			],
 			"explanation": "Personen nehmen 's: Anna's dog.",
 			"optionLanguage": "en"
@@ -1381,14 +1381,14 @@
 		"takeaway": "Personen und Tiere: 's. Plural auf s: nur der Apostroph. Dinge und Orte oft mit of.",
 		"practice": [
 			{
-				"prompt": "The dog belongs to Anna: ___ dog.",
+				"prompt": "The dog belongs to Anna: ___ dog. (s-Genitiv)",
 				"answers": [
 					"Anna's"
 				],
 				"feedback": "Anna's nennt die Besitzerin."
 			},
 			{
-				"prompt": "The capital ___ the UK.",
+				"prompt": "The capital ___ the UK. (of)",
 				"answers": [
 					"of"
 				],
@@ -1492,7 +1492,7 @@
 		"takeaway": "Nah: this, these. Weit: that, those. Einzahl this und that, Mehrzahl these und those. Vor einem Nomen sind es Begleiter, allein sind es Pronomen.",
 		"practice": [
 			{
-				"prompt": "One thing, near: ___ book.",
+				"prompt": "One thing, near: ___ book. (nah, Einzahl)",
 				"answers": [
 					"This",
 					"this"
@@ -1500,7 +1500,7 @@
 				"feedback": "Ein nahes Ding heißt this."
 			},
 			{
-				"prompt": "Many things, far: ___ bags.",
+				"prompt": "Many things, far: ___ bags. (weit, Mehrzahl)",
 				"answers": [
 					"Those",
 					"those"
@@ -1605,14 +1605,14 @@
 		"takeaway": "some in bejahten Sätzen und Angeboten. any in Verneinungen und den meisten Fragen. nobody, no one und nothing sind schon negativ.",
 		"practice": [
 			{
-				"prompt": "Would you like ___ juice?",
+				"prompt": "Would you like ___ juice? (Angebot)",
 				"answers": [
 					"some"
 				],
 				"feedback": "Ein Angebot nimmt some."
 			},
 			{
-				"prompt": "There is ___ in the kitchen.",
+				"prompt": "There is ___ in the kitchen. (niemand)",
 				"answers": [
 					"nobody",
 					"no one"
@@ -1688,7 +1688,7 @@
 	},
 	{
 		"id": "e5-quantifiers",
-		"stage": "saetze",
+		"stage": "woerter",
 		"title": "Much, many, a lot of",
 		"skill": "zählbare und unzählbare Mengen unterscheiden",
 		"bindings": [
@@ -1718,14 +1718,14 @@
 		"takeaway": "many bei zählbaren Pluralen, much bei unzählbaren Nomen. a lot of und lots of gehen mit beiden. information und homework bleiben ohne Plural s.",
 		"practice": [
 			{
-				"prompt": "How ___ apples?",
+				"prompt": "How ___ apples? (zählbar)",
 				"answers": [
 					"many"
 				],
 				"feedback": "apples ist ein zählbarer Plural."
 			},
 			{
-				"prompt": "a lot of ___.",
+				"prompt": "a lot of ___. (homework oder information)",
 				"answers": [
 					"information",
 					"homework"
@@ -1818,7 +1818,7 @@
 			"lp"
 		],
 		"quiz": {
-			"question": "Welche feste Satzstellung gilt im englischen Hauptsatz verbindlich für Subjekt (S), Verb (V) und Objekt (O)?",
+			"question": "Welche Reihenfolge gilt im Aussagesatz für Subjekt, Verb und Objekt?",
 			"answer": "S-V-O (Subject - Verb - Object)",
 			"wrong": [
 				"O-V-S (Object - Verb - Subject)",
@@ -1830,14 +1830,14 @@
 		"takeaway": "S-V-O im Aussagesatz. Ort vor Zeit. not nach be, don't oder doesn't vor dem Vollverb in der Grundform.",
 		"practice": [
 			{
-				"prompt": "She plays football in the park ___ Mondays.",
+				"prompt": "She plays football in the park ___ Mondays. (Wochentag)",
 				"answers": [
 					"on"
 				],
 				"feedback": "on steht vor dem Wochentag. Der Ort steht schon vor der Zeit."
 			},
 			{
-				"prompt": "She ___ read a book.",
+				"prompt": "She ___ read a book. (verneint, she)",
 				"answers": [
 					"doesn't",
 					"does not"
@@ -1942,14 +1942,14 @@
 		"takeaway": "Yes-no-Fragen mit do oder does und der Grundform. who oder what als Subjekt ohne do, als Objekt mit do oder does. whose fragt nach dem Besitzer.",
 		"practice": [
 			{
-				"prompt": "___ she play tennis?",
+				"prompt": "___ she play tennis? (simple present, Frage)",
 				"answers": [
 					"Does"
 				],
 				"feedback": "he, she und it fragen mit Does."
 			},
 			{
-				"prompt": "___ bag is this?",
+				"prompt": "___ bag is this? (Besitzer)",
 				"answers": [
 					"Whose"
 				],
@@ -2053,14 +2053,14 @@
 		"takeaway": "because nennt den Grund, when die Zeit, that einen Objektsatz. Ein vorangestellter when-Satz bekommt ein Komma.",
 		"practice": [
 			{
-				"prompt": "I stay at home ___ it is raining.",
+				"prompt": "I stay at home ___ it is raining. (Grund)",
 				"answers": [
 					"because"
 				],
 				"feedback": "because nennt den Grund."
 			},
 			{
-				"prompt": "I know ___ London is the capital.",
+				"prompt": "I know ___ London is the capital. (that)",
 				"answers": [
 					"that"
 				],
@@ -2165,14 +2165,14 @@
 		"takeaway": "become heißt werden, mean heißt bedeuten. happy und lucky, drive, ride und go teilen sich nicht ein deutsches Wort. Kurzformen und Langformen sind dasselbe, its bleibt ohne Apostroph.",
 		"practice": [
 			{
-				"prompt": "to become = ___.",
+				"prompt": "to become = ___. (Deutsch)",
 				"answers": [
 					"werden"
 				],
 				"feedback": "become heißt werden."
 			},
 			{
-				"prompt": "I ___ my bike.",
+				"prompt": "I ___ my bike. (Fahrrad)",
 				"answers": [
 					"ride"
 				],
@@ -2256,7 +2256,7 @@
 		],
 		"paragraphs": [
 			"Das simple present nennt Gewohnheiten, Wiederholungen und Tatsachen. I play football. We live in York. She walks to school. In der dritten Person Singular kommt ein s dazu: he plays, she reads, it rains. Nach einem Zischlaut oder nach o kommt es: she watches, he goes, she does. do wird zu does, go wird zu goes. Nach Konsonant plus y wird ies: she studies. Nach Vokal plus y bleibt s: he plays. goes gehört zur o-Regel, nicht zu den Zischlauten.",
-			"Signale sind always, usually, often, sometimes und never. They stehen vor dem Vollverb: She often reads. Bei to be stehen sie danach: She is usually tired. Verneint: I don't like milk. He doesn't eat meat. Das s wandert zu doesn't, das Vollverb bleibt die Grundform. Fragen: Do you like pizza? Does Peter speak English? Yes, I do. Yes, he does. No, he doesn't."
+			"Signale sind always, usually, often, sometimes und never. Sie stehen vor dem Vollverb: She often reads. Bei to be stehen sie danach: She is usually tired. Verneint: I don't like milk. He doesn't eat meat. Das s wandert zu doesn't, das Vollverb bleibt die Grundform. Fragen: Do you like pizza? Does Peter speak English? Yes, I do. Yes, he does. No, he doesn't."
 		],
 		"material": "I play football on Mondays. She walks to school. He watches a film. She goes home. He doesn't eat meat. Does Peter speak English? Yes, he does. She often reads. She is usually tired.",
 		"materialLabel": "Eigenes englisches Übungsmaterial · erfundene Personen und Angaben",
@@ -2265,7 +2265,7 @@
 			"lp"
 		],
 		"quiz": {
-			"question": "Welches Hilfsverb muss verwendet werden, um im Simple Present einen Fragesatz in der 3. Person Einzahl (he, she, it) zu bilden (z. B. '... he play tennis?')?",
+			"question": "Welches Hilfsverb bildet im simple present die Frage für he, she und it?",
 			"answer": "Does (Does he play...?)",
 			"wrong": [
 				"Do (Do he play...?)",
@@ -2277,14 +2277,14 @@
 		"takeaway": "Gewohnheiten und Tatsachen stehen im simple present. he, she und it bekommen s oder es. Fragen und Verneinungen nehmen do oder does, das Vollverb bleibt die Grundform.",
 		"practice": [
 			{
-				"prompt": "She ___ tennis on Mondays.",
+				"prompt": "She ___ tennis on Mondays. (3. Person, simple present)",
 				"answers": [
 					"plays"
 				],
 				"feedback": "she bekommt s: plays."
 			},
 			{
-				"prompt": "Does he play tennis? Yes, he ___.",
+				"prompt": "Does he play tennis? Yes, he ___. (Kurzantwort)",
 				"answers": [
 					"does"
 				],
@@ -2377,7 +2377,7 @@
 			"lp"
 		],
 		"quiz": {
-			"question": "Aus welchen zwei Komponenten wird die englische Verlaufsform Present Continuous (Progressive) gebildet?",
+			"question": "Woraus besteht das present progressive?",
 			"answer": "Form von 'to be' (am/is/are) + Verb-ing",
 			"wrong": [
 				"Hilfsverb 'do/does' + Verb-ing",
@@ -2389,14 +2389,14 @@
 		"takeaway": "am, is oder are plus ing beschreibt, was gerade läuft. Das simple present beschreibt die Gewohnheit. making und sitting zeigen die zwei häufigen Schreibregeln.",
 		"practice": [
 			{
-				"prompt": "She ___ reading now.",
+				"prompt": "She ___ reading now. (Verlauf, she)",
 				"answers": [
 					"is"
 				],
 				"feedback": "she verlangt is."
 			},
 			{
-				"prompt": "sit → ___",
+				"prompt": "sit → ___ (ing-Form)",
 				"answers": [
 					"sitting"
 				],
@@ -2500,14 +2500,14 @@
 		"takeaway": "can für Können, must für Müssen, mustn't für ein Verbot, needn't für fehlende Notwendigkeit. Danach steht die Grundform ohne to und ohne s.",
 		"practice": [
 			{
-				"prompt": "I ___ swim.",
+				"prompt": "I ___ swim. (Fähigkeit)",
 				"answers": [
 					"can"
 				],
 				"feedback": "can nennt die Fähigkeit."
 			},
 			{
-				"prompt": "You ___ run here.",
+				"prompt": "You ___ run here. (Verbot)",
 				"answers": [
 					"mustn't",
 					"must not"
@@ -2613,7 +2613,7 @@
 		"takeaway": "like plus ing für den Geschmack. I'd like to für einen Wunsch. I'd like you to für eine Bitte. Me, too bei Ja, I don't either bei Nein.",
 		"practice": [
 			{
-				"prompt": "I like ___.",
+				"prompt": "I like ___. (lesen, ing-Form)",
 				"answers": [
 					"reading",
 					"playing football"
@@ -2621,7 +2621,7 @@
 				"feedback": "Nach like steht hier die ing-Form."
 			},
 			{
-				"prompt": "I don't like spinach. I don't ___.",
+				"prompt": "I don't like spinach. I don't ___. (verneinte Zustimmung)",
 				"answers": [
 					"either"
 				],
@@ -2726,14 +2726,14 @@
 		"takeaway": "was und were für to be. ed für regelmäßige Verben, dazu die festen Formen went, saw, had, did und ate. did plus Grundform in Frage und Verneinung.",
 		"practice": [
 			{
-				"prompt": "Yesterday she ___ at home.",
+				"prompt": "Yesterday she ___ at home. (to be, Vergangenheit)",
 				"answers": [
 					"was"
 				],
 				"feedback": "she verlangt was."
 			},
 			{
-				"prompt": "Did she play? Yes, she ___.",
+				"prompt": "Did she play? Yes, she ___. (Kurzantwort, Vergangenheit)",
 				"answers": [
 					"did"
 				],
@@ -2838,14 +2838,14 @@
 		"takeaway": "Fächer stehen mit on und dem Wochentag. homework bleibt unzählbar: I do my homework. Year in England ist nicht automatisch Klasse.",
 		"practice": [
 			{
-				"prompt": "On Monday I ___ English.",
+				"prompt": "On Monday I ___ English. (Fach im Stundenplan)",
 				"answers": [
 					"have"
 				],
 				"feedback": "have nennt das Fach im Plan."
 			},
 			{
-				"prompt": "I do my ___.",
+				"prompt": "I do my ___. (unzählbare Hausaufgabe)",
 				"answers": [
 					"homework"
 				],
@@ -2864,7 +2864,7 @@
 				"language": "en"
 			},
 			"2": {
-				"prompt": "Erkläre auf Deutsch, warum du Klasse 5 nicht einfach Year 5 nennen musst. Schreibe danach einen englischen Satz über dein Lieblingsfach.",
+				"prompt": "Erkläre auf Deutsch, warum du Klasse 5 nicht einfach Year 5 nennen solltest. Schreibe danach einen englischen Satz über dein Lieblingsfach.",
 				"model": "Die Jahrgangszahlen sind verschieden, deshalb setze ich sie nicht gleich. My favourite subject is music.",
 				"criteria": [
 					"Ich erkläre die verschiedene Zählung.",
@@ -2951,14 +2951,14 @@
 		"takeaway": "have breakfast, lunch und dinner nennen die Mahlzeit. I'd like bestellt. How much fragt nach Menge oder Preis bei Unzählbarem, How many bei Stückzahlen.",
 		"practice": [
 			{
-				"prompt": "I'd like a ___, please.",
+				"prompt": "I'd like a ___, please. (belegtes Brot)",
 				"answers": [
 					"sandwich"
 				],
 				"feedback": "sandwich ist die Bestellung."
 			},
 			{
-				"prompt": "How ___ apples?",
+				"prompt": "How ___ apples? (zählbar)",
 				"answers": [
 					"many"
 				],
@@ -3063,20 +3063,18 @@
 		"takeaway": "Kleidung nennst du im Singular oder, bei trousers, jeans und shoes, im Plural. put on zieht an, take off zieht aus.",
 		"practice": [
 			{
-				"prompt": "I ___ on my jacket.",
+				"prompt": "I ___ on my jacket. (anziehen)",
 				"answers": [
 					"put"
 				],
 				"feedback": "put on zieht die Jacke an."
 			},
 			{
-				"prompt": "a pair of ___.",
+				"prompt": "a pair of ___. (Hose aus der Lektion)",
 				"answers": [
-					"trousers",
-					"shoes",
-					"jeans"
+					"trousers"
 				],
-				"feedback": "Diese Wörter stehen oft mit a pair of."
+				"feedback": "Die Hose aus der Lektion heißt trousers."
 			}
 		],
 		"tasks": {
@@ -3178,14 +3176,14 @@
 		"takeaway": "get up, have breakfast, go to school, do homework und go to bed sind feste Wendungen. Häufigkeit steht vor dem Vollverb und nach to be.",
 		"practice": [
 			{
-				"prompt": "I ___ up at seven.",
+				"prompt": "I ___ up at seven. (aufstehen)",
 				"answers": [
 					"get"
 				],
 				"feedback": "get up heißt aufstehen."
 			},
 			{
-				"prompt": "I ___ my homework.",
+				"prompt": "I ___ my homework. (feste Verbindung do)",
 				"answers": [
 					"do"
 				],
@@ -3291,7 +3289,7 @@
 		"takeaway": "Nenne Feste mit many families oder many people. Vergleiche höflich mit deiner eigenen Familie. Aktuelle Angaben kommen aus einer Quelle.",
 		"practice": [
 			{
-				"prompt": "___ families give presents.",
+				"prompt": "___ families give presents. (viele)",
 				"answers": [
 					"Many",
 					"many"
@@ -3299,7 +3297,7 @@
 				"feedback": "Many lässt Unterschiede zu."
 			},
 			{
-				"prompt": "Happy ___, Sam.",
+				"prompt": "Happy ___, Sam. (Geburtstag)",
 				"answers": [
 					"birthday"
 				],
@@ -3408,7 +3406,7 @@
 		"takeaway": "Das United Kingdom umfasst England, Scotland, Wales und Northern Ireland. Great Britain ist die Insel ohne Northern Ireland. Dublin ist die Hauptstadt der Republic of Ireland.",
 		"practice": [
 			{
-				"prompt": "London is the capital of the ___.",
+				"prompt": "London is the capital of the ___. (Abkürzung des Staates)",
 				"answers": [
 					"UK",
 					"United Kingdom"
@@ -3416,7 +3414,7 @@
 				"feedback": "London ist die Hauptstadt des UK."
 			},
 			{
-				"prompt": "Dublin is the capital of the Republic of ___.",
+				"prompt": "Dublin is the capital of the Republic of ___. (Land)",
 				"answers": [
 					"Ireland"
 				],
@@ -3526,19 +3524,18 @@
 		"takeaway": "London liegt am River Thames. Tower of London, Buckingham Palace und Big Ben sind drei verschiedene Orte oder Namen, nicht drei Wörter für dasselbe Gebäude.",
 		"practice": [
 			{
-				"prompt": "London is on the River ___.",
+				"prompt": "London is on the River ___. (Fluss)",
 				"answers": [
 					"Thames"
 				],
 				"feedback": "Die Themse heißt Thames."
 			},
 			{
-				"prompt": "Big Ben is a ___.",
+				"prompt": "Big Ben is a ___. (Glocke)",
 				"answers": [
-					"bell",
-					"nickname"
+					"bell"
 				],
-				"feedback": "Der Artikel nennt Big Ben als Glocke und Spitznamen."
+				"feedback": "Big Ben ist der Spitzname der großen Glocke."
 			}
 		],
 		"tasks": {
@@ -3645,7 +3642,7 @@
 		"takeaway": "Washington, D.C. ist die Hauptstadt der USA und kein Bundesstaat. New York City liegt im Staat New York. Ottawa ist die Hauptstadt Kanadas. Alaska und Hawaii liegen außerhalb der Lower 48.",
 		"practice": [
 			{
-				"prompt": "The capital of the USA is Washington, ___.",
+				"prompt": "The capital of the USA is Washington, ___. (District)",
 				"answers": [
 					"D.C.",
 					"DC"
@@ -3653,7 +3650,7 @@
 				"feedback": "D.C. nennt den District of Columbia."
 			},
 			{
-				"prompt": "The capital of Canada is ___.",
+				"prompt": "The capital of Canada is ___. (Hauptstadt)",
 				"answers": [
 					"Ottawa"
 				],
@@ -3758,14 +3755,14 @@
 		"takeaway": "Zuerst das Thema, dann ein Detail. Der Übungstext nennt ein weißes Kaninchen im Garten und Mias Freude. Natürliche Hörtexte übst du zusätzlich.",
 		"practice": [
 			{
-				"prompt": "The rabbit is ___.",
+				"prompt": "The rabbit is ___. (Farbe im Hörtext)",
 				"answers": [
 					"white"
 				],
 				"feedback": "white ist die Farbe."
 			},
 			{
-				"prompt": "Mia is ___.",
+				"prompt": "Mia is ___. (Gefühl im Hörtext)",
 				"answers": [
 					"happy"
 				],
@@ -3870,14 +3867,14 @@
 		"takeaway": "Die Postkarte nennt London und die Themse. Die Zoogeschichte nennt einen großen Löwen. Lautes Lesen und eine Ganzschrift bleiben zusätzliche Übung.",
 		"practice": [
 			{
-				"prompt": "Mia is in ___.",
+				"prompt": "Mia is in ___. (Ort auf der Postkarte)",
 				"answers": [
 					"London"
 				],
 				"feedback": "Die Postkarte nennt London."
 			},
 			{
-				"prompt": "The lion is ___.",
+				"prompt": "The lion is ___. (Zoogeschichte)",
 				"answers": [
 					"big"
 				],
@@ -3960,10 +3957,10 @@
 			"3"
 		],
 		"paragraphs": [
-			"Sprachmittlung gibt einer anderen Person die nötige Information, nicht jedes Wort. Ein deutscher Zettel sagt: Zoo geöffnet von 10 bis 16 Uhr. Eintritt 4 Euro. Für eine englische Freundin schreibst du: The zoo is open from 10 to 16. Tickets cost 4 euro. Die Uhrzeit und der Preis müssen stimmen. Eine spontane mündliche Vermittlung im echten Gespräch übst du mit Partnern. Hier bereitest du sie schriftlich vor.",
-			"In die andere Richtung: Eine Sprachnachricht sagt The party is on Saturday at 3. Please bring juice. Für deine Familie sagst du: Die Feier ist am Samstag um 3. Bitte Saft mitbringen. Beispiel für einen Einkauf: The apples cost 2 euro. Sie braucht zwei Äpfel, nicht den ganzen Satzbau. Prüfe Zahlen, Tage und Bitten zweimal."
+			"Sprachmittlung gibt einer anderen Person die nötige Information, nicht jedes Wort. Ein deutscher Zettel sagt: Zoo geöffnet von 10 bis 16 Uhr. Eintritt 4 Euro. Für eine englische Freundin schreibst du: The zoo is open from 10 am to 4 pm. Tickets cost 4 euros. Die 24-Stunden-Zeit aus dem deutschen Zettel sagst du auf Englisch meist mit am oder pm. Die Uhrzeit und der Preis müssen stimmen. Eine spontane mündliche Vermittlung im echten Gespräch übst du mit Partnern. Hier bereitest du sie schriftlich vor.",
+			"In die andere Richtung: Eine Sprachnachricht sagt The party is on Saturday at 3. Please bring juice. Für deine Familie sagst du: Die Feier ist am Samstag um 3. Bitte Saft mitbringen. Beispiel für einen Einkauf: The apples cost 2 euros. Sie braucht zwei Äpfel, nicht den ganzen Satzbau. Prüfe Zahlen, Tage und Bitten zweimal."
 		],
-		"material": "Zoo geöffnet von 10 bis 16 Uhr. Eintritt 4 Euro. The zoo is open from 10 to 16. Tickets cost 4 euro. The party is on Saturday at 3. Please bring juice.",
+		"material": "Zoo geöffnet von 10 bis 16 Uhr. Eintritt 4 Euro. The zoo is open from 10 am to 4 pm. Tickets cost 4 euros. The party is on Saturday at 3. Please bring juice.",
 		"materialLabel": "Eigenes englisches Übungsmaterial · erfundene Personen und Angaben",
 		"materialLanguage": "en",
 		"sourceIds": [
@@ -3971,38 +3968,40 @@
 		],
 		"quiz": {
 			"question": "Der Zettel sagt: Eintritt 4 Euro. Was muss die englische Mitteilung enthalten?",
-			"answer": "Tickets cost 4 euro.",
+			"answer": "Tickets cost 4 euros.",
 			"wrong": [
 				"The zoo is free.",
 				"Tickets cost four dollars only."
 			],
-			"explanation": "Der Preis muss als 4 euro erhalten bleiben.",
+			"explanation": "Der Preis bleibt 4 Euro. Im Englischen schreibst du euro oder euros.",
 			"optionLanguage": "en"
 		},
 		"takeaway": "Vermittle Zeit, Preis und Bitte sinngemäß. Die Zahl und der Wochentag dürfen sich nicht ändern. Echte Gespräche übst du zusätzlich mit Partnern.",
 		"practice": [
 			{
-				"prompt": "open from 10 to ___.",
+				"prompt": "The zoo is open from 10 am to ___. (Nachmittag)",
 				"answers": [
-					"16"
+					"4 pm",
+					"4pm"
 				],
-				"feedback": "16 Uhr bleibt 16."
+				"feedback": "16 Uhr sagst du hier als 4 pm."
 			},
 			{
-				"prompt": "Tickets cost 4 ___.",
+				"prompt": "Tickets cost 4 ___. (Währung, Einzahl oder Mehrzahl)",
 				"answers": [
-					"euro"
+					"euro",
+					"euros"
 				],
-				"feedback": "Die Währung bleibt euro."
+				"feedback": "euro und euros nennen dieselbe Währung."
 			}
 		],
 		"tasks": {
 			"1": {
 				"prompt": "Vermittle den Zoo-Zettel auf Englisch: Öffnung 10 bis 16 Uhr, Eintritt 4 Euro.",
-				"model": "The zoo is open from 10 to 16. Tickets cost 4 euro.",
+				"model": "The zoo is open from 10 am to 4 pm. Tickets cost 4 euros.",
 				"criteria": [
 					"Ich nenne die Öffnungszeit.",
-					"Ich nenne 4 euro.",
+					"Ich nenne 4 euros.",
 					"Ich lasse keine Angabe weg."
 				],
 				"language": "en"
@@ -4026,12 +4025,12 @@
 					"before": "open from →",
 					"after": "",
 					"options": [
-						"10 to 16",
-						"10 to 18",
-						"9 to 16"
+						"10 am to 4 pm",
+						"10 am to 6 pm",
+						"9 am to 4 pm"
 					],
-					"answer": "10 to 16",
-					"explanation": "Die Öffnungszeit bleibt gleich."
+					"answer": "10 am to 4 pm",
+					"explanation": "10 bis 16 Uhr wird zu 10 am to 4 pm."
 				},
 				{
 					"label": "Preis",
@@ -4094,14 +4093,14 @@
 		"takeaway": "Postkarte: Ort, Satz, Gruß. E-Mail an eine Freundin: Hi, zwei Sätze, Bye. Eine Bildbeschreibung kann mit In the picture beginnen.",
 		"practice": [
 			{
-				"prompt": "A postcard starts: ___ Sam,",
+				"prompt": "A postcard starts: ___ Sam, (Postkarte, nicht Hi)",
 				"answers": [
 					"Dear"
 				],
 				"feedback": "Dear plus Name eröffnet die Postkarte."
 			},
 			{
-				"prompt": "In the ___ there is a lion.",
+				"prompt": "In the ___ there is a lion. (Bild)",
 				"answers": [
 					"picture"
 				],
@@ -4178,7 +4177,7 @@
 		"id": "e5-sounds",
 		"stage": "koennen",
 		"title": "Sounds and symbols",
-		"skill": "erste Lautschriftzeichen und ein Minimales Paar hören",
+		"skill": "erste Lautschriftzeichen und ein minimales Paar hören",
 		"bindings": [
 			"1.2"
 		],
@@ -4193,26 +4192,26 @@
 			"lp"
 		],
 		"quiz": {
-			"question": "Welches Paar unterscheidet sich nur im Vokal von ship?",
+			"question": "Welches Wort hat statt /ɪ/ in ship den langen Laut /iː/?",
 			"answer": "sheep",
 			"wrong": [
 				"shape",
 				"shop"
 			],
-			"explanation": "ship und sheep sind das minimale Paar mit /ɪ/ und /iː/.",
+			"explanation": "sheep hat den langen Laut /iː/. shape und shop haben einen anderen Vokal.",
 			"optionLanguage": "en"
 		},
 		"takeaway": "/ɪ/ und /iː/ trennen ship und sheep. /æ/ und /ʌ/ trennen cat und cut. /θ/ und /ð/ trennen think und this. Die Rückmeldung zur Aussprache gibt ein Mensch.",
 		"practice": [
 			{
-				"prompt": "ship and ___.",
+				"prompt": "ship and ___. (langer Laut /iː/)",
 				"answers": [
 					"sheep"
 				],
 				"feedback": "sheep ist das Paar zu ship."
 			},
 			{
-				"prompt": "The symbol for the vowel in ship is /___/.",
+				"prompt": "The symbol for the vowel in ship is /___/. (kurzes i)",
 				"answers": [
 					"ɪ",
 					"ɪ/"
@@ -4246,7 +4245,7 @@
 			"kind": "sound",
 			"goals": [
 				{
-					"label": "ship",
+					"label": "kurzes i",
 					"before": "/ɪ/ →",
 					"after": "",
 					"options": [
@@ -4258,7 +4257,7 @@
 					"explanation": "ship hat den kurzen Laut."
 				},
 				{
-					"label": "sheep",
+					"label": "langes i",
 					"before": "/iː/ →",
 					"after": "",
 					"options": [
@@ -4270,7 +4269,7 @@
 					"explanation": "sheep hat den langen Laut."
 				},
 				{
-					"label": "think",
+					"label": "stimmloses th",
 					"before": "/θ/ →",
 					"after": "",
 					"options": [
@@ -4318,14 +4317,14 @@
 		"takeaway": "Wortfelder, Wortfamilien und chunks ordnen den Wortschatz. Typische Fehler schreibst du in der richtigen Form daneben. Fünf eigene Wörter bleiben deine Ergänzung.",
 		"practice": [
 			{
-				"prompt": "he ___ football.",
+				"prompt": "he ___ football. (3. Person, simple present)",
 				"answers": [
 					"plays"
 				],
 				"feedback": "Die dritte Person braucht plays."
 			},
 			{
-				"prompt": "Yes, I ___.",
+				"prompt": "Yes, I ___. (Kurzantwort have got, ohne got)",
 				"answers": [
 					"have"
 				],
@@ -4430,14 +4429,14 @@
 		"takeaway": "Die vier Zeilen sind ein gemeinfreier Reim. star reimt sich auf are, high auf sky. Sprechen, Abschreiben und zwei eigene Sätze gehören zur Aufgabe.",
 		"practice": [
 			{
-				"prompt": "little ___.",
+				"prompt": "little ___. (erste Zeile des Reims)",
 				"answers": [
 					"star"
 				],
 				"feedback": "Die erste Zeile endet auf star."
 			},
 			{
-				"prompt": "in the ___.",
+				"prompt": "in the ___. (vierte Zeile des Reims)",
 				"answers": [
 					"sky"
 				],
